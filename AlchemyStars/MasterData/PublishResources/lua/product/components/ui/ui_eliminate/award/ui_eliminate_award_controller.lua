@@ -1,168 +1,101 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/award/ui_eliminate_award_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateAwardController", UIController)
 UIEliminateAwardController = UIEliminateAwardController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateAwardController.Constructor = function(self)
-  -- function num : 0_0
+function UIEliminateAwardController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateAwardController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIEliminateAwardController:OnShow(uiParams)
   self.atlas = self:GetAsset("UIEliminate.spriteatlas", LoadType.SpriteAtlas)
   self:_GetComponent()
   self:InitComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateAwardController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AniPopRoundRes)
+function UIEliminateAwardController:OnHide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AniPopRoundRes)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateAwardController._GetComponent = function(self)
-  -- function num : 0_3
+function UIEliminateAwardController:_GetComponent()
   self._scoreTxt = self:GetUIComponent("UILocalizationText", "scoreTxt")
   self._awardArea = self:GetUIComponent("UISelectObjectPath", "awardArea")
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateAwardController.InitComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local anipopModule = (GameGlobal.GetModule)(AnipopModule)
+function UIEliminateAwardController:InitComponent()
+  local anipopModule = GameGlobal.GetModule(AnipopModule)
   local anipopInfo = anipopModule:GetAniPopInfo()
   local weekInfo = anipopInfo.week_info
   local scoreHardID = weekInfo.hard_id
-  local scoreHardCfg = (Cfg.cfg_anipop_hard)[scoreHardID]
-  local showTotalScore = (math.min)(weekInfo.total_score, scoreHardCfg.MaxScore)
+  local scoreHardCfg = Cfg.cfg_anipop_hard[scoreHardID]
+  local showTotalScore = math.min(weekInfo.total_score, scoreHardCfg.MaxScore)
   local scoreProcess = "<color=#ffe288>" .. showTotalScore .. "/" .. scoreHardCfg.MaxScore .. "</color>"
-  local awardList = (EliminateHelper.GetAwardList)()
-  ;
-  (self._scoreTxt):SetText((StringTable.Get)("str_eliminate_award_title_1", scoreProcess))
-  self._awards = (self._awardArea):SpawnObjects("UIEliminateAwardItem", #awardList)
-  for i,award in pairs(self._awards) do
+  local awardList = EliminateHelper.GetAwardList()
+  self._scoreTxt:SetText(StringTable.Get("str_eliminate_award_title_1", scoreProcess))
+  self._awards = self._awardArea:SpawnObjects("UIEliminateAwardItem", #awardList)
+  for i, award in pairs(self._awards) do
     award:SetData(awardList[i], i, function(cfgID)
-    -- function num : 0_4_0 , upvalues : self
-    self:StartTask(function(TT)
-      -- function num : 0_4_0_0 , upvalues : self
-      self:GetAllReward(TT)
-    end
-, self)
-  end
-, function(id, pos)
-    -- function num : 0_4_1 , upvalues : self
-    self:OnItemSelect(id, pos)
-  end
-)
+      self:StartTask(function(TT)
+        self:GetAllReward(TT)
+      end, self)
+    end, function(id, pos)
+      self:OnItemSelect(id, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateAwardController.OnItemSelect = function(self, id, pos)
-  -- function num : 0_5
-  do
-    if not self._selectInfo then
-      local selectInfoPool = self:GetUIComponent("UISelectObjectPath", "selectInfoPool")
-      self._selectInfo = selectInfoPool:SpawnObject("UISelectInfo")
-    end
-    ;
-    (self._selectInfo):SetData(id, pos)
+function UIEliminateAwardController:OnItemSelect(id, pos)
+  if not self._selectInfo then
+    local selectInfoPool = self:GetUIComponent("UISelectObjectPath", "selectInfoPool")
+    self._selectInfo = selectInfoPool:SpawnObject("UISelectInfo")
   end
+  self._selectInfo:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateAwardController.FullBtnOnClick = function(self)
-  -- function num : 0_6
+function UIEliminateAwardController:FullBtnOnClick()
   self:_Close()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateAwardController._Close = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIEliminateAwardController:_Close()
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV
     self:Lock("uieff_UIEliminateAwardController_out")
-    ;
-    (self._anim):Play("uieff_UIEliminateAwardController_out")
+    self._anim:Play("uieff_UIEliminateAwardController_out")
     YIELD(TT, 500)
     self:UnLock("uieff_UIEliminateAwardController_out")
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateAwardController.GetAllReward = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
+function UIEliminateAwardController:GetAllReward(TT)
   local showReward = {}
-  local anipopModule = (GameGlobal.GetModule)(AnipopModule)
+  local anipopModule = GameGlobal.GetModule(AnipopModule)
   self:Lock("UIEliminateAwardController_GetReward")
-  for _,award in pairs(self._awards) do
+  for _, award in pairs(self._awards) do
     local score = award:GetScore()
     local cfgID = award:GetCfgID()
     if self:CheckAwardCanReceive(cfgID, score) then
       local res, rewards = anipopModule:GetReward(TT, cfgID)
       if res:GetSucc() then
-        for _,v in pairs(rewards) do
-          (table.insert)(showReward, v)
+        for _, v in pairs(rewards) do
+          table.insert(showReward, v)
         end
       else
-        do
-          do
-            ;
-            (Log.fatal)("奖励领取失败：", res:GetResult())
-            -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        Log.fatal("奖励领取失败：", res:GetResult())
       end
     end
   end
   self:UnLock("UIEliminateAwardController_GetReward")
   self:ShowDialog("UIGetItemController", showReward, function()
-    -- function num : 0_8_0 , upvalues : self, _ENV
     self:InitComponent()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AniPopRefreshRedPoint)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AniPopRefreshRedPoint)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateAwardController.CheckAwardCanReceive = function(self, cfgID, score)
-  -- function num : 0_9 , upvalues : _ENV
-  local anipopModule = (GameGlobal.GetModule)(AnipopModule)
+function UIEliminateAwardController:CheckAwardCanReceive(cfgID, score)
+  local anipopModule = GameGlobal.GetModule(AnipopModule)
   local anipopInfo = anipopModule:GetAniPopInfo()
   local weekInfo = anipopInfo.week_info
-  if score <= weekInfo.total_score and not (table.icontains)(weekInfo.score_received, cfgID) then
+  if score <= weekInfo.total_score and not table.icontains(weekInfo.score_received, cfgID) then
     return true
   else
     return false
   end
 end
-
-

@@ -1,2455 +1,11273 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/skill/cfg_active_skill_preview.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, PreviewEffectType = 2, TargetType = 3, TargetTypeParam = 4, ScopeCenterType = 5, ScopeType = 6, ScopeParam = 7, ScopeCasterOccupiedFilter = 8, ScopeSpecialTerrainFilter = 9, ScopeObstructingTrapFilter = 10, ScopeMonsterOccupiedFilter = 11, TargetSelectionMode = 12, OnStart = 13, OnSelectValid = 14, OnSelectEmpty = 15, OnSelectCancel = 16, OnSelectInvalid = 17, OnCancelPreview = 18, OnActiveSkill = 19, OnPreActiveSkill = 20}
+local key = {
+  ID = 1,
+  PreviewEffectType = 2,
+  TargetType = 3,
+  TargetTypeParam = 4,
+  ScopeCenterType = 5,
+  ScopeType = 6,
+  ScopeParam = 7,
+  ScopeCasterOccupiedFilter = 8,
+  ScopeSpecialTerrainFilter = 9,
+  ScopeObstructingTrapFilter = 10,
+  ScopeMonsterOccupiedFilter = 11,
+  TargetSelectionMode = 12,
+  OnStart = 13,
+  OnSelectValid = 14,
+  OnSelectEmpty = 15,
+  OnSelectCancel = 16,
+  OnSelectInvalid = 17,
+  OnCancelPreview = 18,
+  OnActiveSkill = 19,
+  OnPreActiveSkill = 20
+}
 local common = {
-{5}
-, 
-{100}
-, 
-{
-[1] = {effectType = 3, type = 1, dir = 7, distance = 12, calcType = 1}
-, 
-[2] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 4, count = 200}
-}
-, 
-{12}
-, 
-{2, 1}
-, 
-{0}
-, 
-{1, 1}
-, 
-{3, 1}
-, 
-{2}
-, 
-{12, 0, 2}
-, 
-{
-[1] = {effectType = 3, type = 1, dir = 7, distance = 12, calcType = 1}
-}
-, 
-{1}
-, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 4, count = 1}
-}
-, 
-{9}
-, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 3, count = 10}
-}
-, 
-{3, 29}
-, 
-{
-[1] = {effectType = 58, 
-protectElementType = {2}
-}
-}
-, 
-{3}
-, 
-{
-[1] = {effectType = 58, 
-protectElementType = {1}
-, element = 1, percent = 0.3}
-}
-, 
-{
-[1] = {effectType = 67}
-}
-, 
-{10}
-, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 5, count = 4}
-}
-, 
-{
-[1] = {effectType = 1, 
-percent = {4}
-, formulaID = 4}
-}
-, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 2, count = 1}
-}
-, 
-{
-[1] = {effectType = 8, teleport = 0}
-}
-, 
-{
-[1] = {effectType = 1, 
-percent = {4}
-, formulaID = 5}
-, 
-[2] = {effectType = 8, teleport = 0, scopeCenterType = 4, scopeTargetType = 3, scopeType = 35, scopeParam = 0}
-}
-, 
-{widthThreshold = 1.414, noExtend = 1}
-, 
-{
-[1] = {effectType = 1, 
-percent = {3.2}
-, formulaID = 5}
-, 
-[2] = {effectType = 8, teleport = 0, scopeCenterType = 4, scopeTargetType = 3, scopeType = 35, scopeParam = 0}
-}
-, 
-{widthThreshold = 1.414}
-, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 2, count = 2}
-}
-, 
-{
-[1] = {effectType = 1, 
-percent = {3.2}
-, formulaID = 5}
-}
-, 
-{
-[1] = {effectType = 1, 
-percent = {4}
-, formulaID = 5}
-}
-, 
-{12, 0}
-, 
-{12, 1, 3, 0, 1}
-, 
-{
-[1] = {effectType = 3, type = 1, dir = 7, distance = 12, calcType = 1, enableByPickNum = 0, forceUseCasterPos = true}
-, 
-[2] = {effectType = 4, 
-src = {1, 2, 3, 4}
-, target = 1, count = 99}
-}
-, 
-{defaultDirType = 2, 
-[2] = {scopeType = 19, 
-scopeParam = {20, 0, 0, 1}
-}
-, 
-[3] = {scopeType = 114, 
-scopeParam = {20, 0, 0, 0, 1}
-}
-}
-, 
-{
-[1] = {effectType = 3, type = 1, dir = 7, distance = 12, calcType = 1, enableByPickNum = 0, forceUseCasterPos = true}
-}
-, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 3, count = 4}
-}
-, 
-{
-{}
-, 
-{}
-, 
-{scopeType = 99, 
-scopeParam = {}
-, centerPosIndex = 0}
-}
-, 
-{
-{scopeType = 4, scopeParam = 1}
-, 
-{scopeType = 86, 
-scopeParam = {
-{scopeType = 6, 
-scopeParam = {1, 1}
-, centerPosIndex = 1}
-, 
-{scopeType = 1, 
-scopeParam = {3, 3, 0; 
-bodyArea = {
-{0, 0}
-}
-}
-, centerPosIndex = 1}
-}
-}
-, 
-{}
-}
-, 
-{
-[1] = {effectType = 135, targetOrder = 4}
-}
-, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 4, count = 1}
-}
-, 
-{
-[1] = {effectType = 1, 
-percent = {2}
-, formulaID = 5}
-}
-, 
-{
-[1] = {effectType = 143, buffID = 4301481, 
-trapIDBuffTab = {[16014811] = 4301482}
-}
-}
-, 
-{
-{scopeType = 4, scopeParam = 1}
-, 
-{scopeType = 5, 
-scopeParam = {2, 0}
-, centerPosIndex = 1}
-, 
-{}
-}
-, 
-{
-{}
-, 
-{}
-, 
-{scopeType = 99, 
-scopeParam = {}
-, centerPosIndex = 0}
-}
-, 
-{8}
-, 
-{
-[1] = {effectType = 1, 
-percent = {1.6}
-, formulaID = 5}
-}
-, 
-{widthThreshold = 0.65, noExtend = 1}
-, 
-{
-[1] = {effectType = 1, 
-percent = {0.5}
-, formulaID = 5}
-}
-, 
-{
-[1] = {effectType = 1, 
-percent = {5}
-, formulaID = 5}
-}
-, 
-{
-[1] = {effectType = 1, 
-percent = {3}
-, formulaID = 5}
-}
-, 
-{
-[1] = {scopeType = 1, 
-scopeParam = {4}
-}
-, 
-[2] = {scopeType = 42, 
-scopeParam = {100}
-}
-}
-, 
-{gridCount = 100, 
-elementType = {1, 2, 3, 4}
-}
-, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 5, count = 5}
-}
-, 
-{
-[1] = {effectType = 1, 
-percent = {1.5}
-, formulaID = 5}
-}
-, 
-{
-{8001721, 5, 1, 1}
-, 
-{8001722, 7, 2, 1}
-}
-, 
-{
-[1] = {effectType = 3, type = 1, dir = 12, distance = 2, calcType = 1}
-}
-, 
-{
-[1] = {effectType = 3, type = 1, dir = 12, distance = 3, calcType = 1}
-}
-, 
-{
-[1] = {effectType = 1, 
-percent = {0}
-, formulaID = 5}
-}
-, 
-{
-[1] = {effectType = 8, teleport = 26}
-}
-, 
-{
-[1] = {effectType = 8, teleport = 28, scopeCenterType = 4, scopeTargetType = 3, scopeType = 35, 
-scopeParam = {0}
-}
-}
-, 
-{1, 1, 1}
-, 
-{4}
-, 
-{noExtend = 1, init = 1, dest = 2, useCenterPos = 1}
-, 
-{
-[1] = {effectType = 1, 
-percent = {6}
-, formulaID = 5}
-}
-, 
-{5, 11}
-, 
-{
-[1] = {effectType = 211, gridType = 1}
-}
-, 
-{
-{scopeType = 4, scopeParam = 1}
-, 
-{scopeType = 5, 
-scopeParam = {3, 0}
-, centerPosIndex = 1}
-, 
-{}
-}
-, 
-{
-[1] = {effectType = 228, baseValue = 2, mulValue = 1}
-}
-, 
-{
-[1] = {effectType = 3, type = 1, dir = 7, distance = 2, calcType = 1}
-}
-, 
-{
-[1] = {effectType = 3, type = 1, dir = 7, distance = 3, calcType = 1}
-}
-, 
-{400176, 1}
-, 
-{16018111}
+  {5},
+  {100},
+  {
+    [1] = {
+      effectType = 3,
+      type = 1,
+      dir = 7,
+      distance = 12,
+      calcType = 1
+    },
+    [2] = {
+      effectType = 4,
+      src = {
+        1,
+        2,
+        3,
+        4,
+        5
+      },
+      target = 4,
+      count = 200
+    }
+  },
+  {12},
+  {2, 1},
+  {0},
+  {1, 1},
+  {3, 1},
+  {2},
+  {
+    12,
+    0,
+    2
+  },
+  {
+    [1] = {
+      effectType = 3,
+      type = 1,
+      dir = 7,
+      distance = 12,
+      calcType = 1
+    }
+  },
+  {1},
+  {
+    [1] = {
+      effectType = 4,
+      src = {
+        1,
+        2,
+        3,
+        4,
+        5
+      },
+      target = 4,
+      count = 1
+    }
+  },
+  {9},
+  {
+    [1] = {
+      effectType = 4,
+      src = {
+        1,
+        2,
+        3,
+        4,
+        5
+      },
+      target = 3,
+      count = 10
+    }
+  },
+  {3, 29},
+  {
+    [1] = {
+      effectType = 58,
+      protectElementType = {2}
+    }
+  },
+  {3},
+  {
+    [1] = {
+      effectType = 58,
+      protectElementType = {1},
+      element = 1,
+      percent = 0.3
+    }
+  },
+  {
+    [1] = {effectType = 67}
+  },
+  {10},
+  {
+    [1] = {
+      effectType = 4,
+      src = {
+        1,
+        2,
+        3,
+        4,
+        5
+      },
+      target = 5,
+      count = 4
+    }
+  },
+  {
+    [1] = {
+      effectType = 1,
+      percent = {4},
+      formulaID = 4
+    }
+  },
+  {
+    [1] = {
+      effectType = 4,
+      src = {
+        1,
+        2,
+        3,
+        4,
+        5
+      },
+      target = 2,
+      count = 1
+    }
+  },
+  {
+    [1] = {effectType = 8, teleport = 0}
+  },
+  {
+    [1] = {
+      effectType = 1,
+      percent = {4},
+      formulaID = 5
+    },
+    [2] = {
+      effectType = 8,
+      teleport = 0,
+      scopeCenterType = 4,
+      scopeTargetType = 3,
+      scopeType = 35,
+      scopeParam = 0
+    }
+  },
+  {widthThreshold = 1.414, noExtend = 1},
+  {
+    [1] = {
+      effectType = 1,
+      percent = {3.2},
+      formulaID = 5
+    },
+    [2] = {
+      effectType = 8,
+      teleport = 0,
+      scopeCenterType = 4,
+      scopeTargetType = 3,
+      scopeType = 35,
+      scopeParam = 0
+    }
+  },
+  {widthThreshold = 1.414},
+  {
+    [1] = {
+      effectType = 4,
+      src = {
+        1,
+        2,
+        3,
+        4,
+        5
+      },
+      target = 2,
+      count = 2
+    }
+  },
+  {
+    [1] = {
+      effectType = 1,
+      percent = {3.2},
+      formulaID = 5
+    }
+  },
+  {
+    [1] = {
+      effectType = 1,
+      percent = {4},
+      formulaID = 5
+    }
+  },
+  {12, 0},
+  {
+    12,
+    1,
+    3,
+    0,
+    1
+  },
+  {
+    [1] = {
+      effectType = 3,
+      type = 1,
+      dir = 7,
+      distance = 12,
+      calcType = 1,
+      enableByPickNum = 0,
+      forceUseCasterPos = true
+    },
+    [2] = {
+      effectType = 4,
+      src = {
+        1,
+        2,
+        3,
+        4
+      },
+      target = 1,
+      count = 99
+    }
+  },
+  {
+    defaultDirType = 2,
+    [2] = {
+      scopeType = 19,
+      scopeParam = {
+        20,
+        0,
+        0,
+        1
+      }
+    },
+    [3] = {
+      scopeType = 114,
+      scopeParam = {
+        20,
+        0,
+        0,
+        0,
+        1
+      }
+    }
+  },
+  {
+    [1] = {
+      effectType = 3,
+      type = 1,
+      dir = 7,
+      distance = 12,
+      calcType = 1,
+      enableByPickNum = 0,
+      forceUseCasterPos = true
+    }
+  },
+  {
+    [1] = {
+      effectType = 4,
+      src = {
+        1,
+        2,
+        3,
+        4,
+        5
+      },
+      target = 3,
+      count = 4
+    }
+  },
+  {
+    {},
+    {},
+    {
+      scopeType = 99,
+      scopeParam = {},
+      centerPosIndex = 0
+    }
+  },
+  {
+    {scopeType = 4, scopeParam = 1},
+    {
+      scopeType = 86,
+      scopeParam = {
+        {
+          scopeType = 6,
+          scopeParam = {1, 1},
+          centerPosIndex = 1
+        },
+        {
+          scopeType = 1,
+          scopeParam = {
+            3,
+            3,
+            0,
+            bodyArea = {
+              {0, 0}
+            }
+          },
+          centerPosIndex = 1
+        }
+      }
+    },
+    {}
+  },
+  {
+    [1] = {effectType = 135, targetOrder = 4}
+  },
+  {
+    [1] = {
+      effectType = 4,
+      src = {
+        1,
+        2,
+        3,
+        4,
+        5
+      },
+      target = 4,
+      count = 1
+    }
+  },
+  {
+    [1] = {
+      effectType = 1,
+      percent = {2},
+      formulaID = 5
+    }
+  },
+  {
+    [1] = {
+      effectType = 143,
+      buffID = 4301481,
+      trapIDBuffTab = {
+        [16014811] = 4301482
+      }
+    }
+  },
+  {
+    {scopeType = 4, scopeParam = 1},
+    {
+      scopeType = 5,
+      scopeParam = {2, 0},
+      centerPosIndex = 1
+    },
+    {}
+  },
+  {
+    {},
+    {},
+    {
+      scopeType = 99,
+      scopeParam = {},
+      centerPosIndex = 0
+    }
+  },
+  {8},
+  {
+    [1] = {
+      effectType = 1,
+      percent = {1.6},
+      formulaID = 5
+    }
+  },
+  {widthThreshold = 0.65, noExtend = 1},
+  {
+    [1] = {
+      effectType = 1,
+      percent = {0.5},
+      formulaID = 5
+    }
+  },
+  {
+    [1] = {
+      effectType = 1,
+      percent = {5},
+      formulaID = 5
+    }
+  },
+  {
+    [1] = {
+      effectType = 1,
+      percent = {3},
+      formulaID = 5
+    }
+  },
+  {
+    [1] = {
+      scopeType = 1,
+      scopeParam = {4}
+    },
+    [2] = {
+      scopeType = 42,
+      scopeParam = {100}
+    }
+  },
+  {
+    gridCount = 100,
+    elementType = {
+      1,
+      2,
+      3,
+      4
+    }
+  },
+  {
+    [1] = {
+      effectType = 4,
+      src = {
+        1,
+        2,
+        3,
+        4,
+        5
+      },
+      target = 5,
+      count = 5
+    }
+  },
+  {
+    [1] = {
+      effectType = 1,
+      percent = {1.5},
+      formulaID = 5
+    }
+  },
+  {
+    {
+      8001721,
+      5,
+      1,
+      1
+    },
+    {
+      8001722,
+      7,
+      2,
+      1
+    }
+  },
+  {
+    [1] = {
+      effectType = 3,
+      type = 1,
+      dir = 12,
+      distance = 2,
+      calcType = 1
+    }
+  },
+  {
+    [1] = {
+      effectType = 3,
+      type = 1,
+      dir = 12,
+      distance = 3,
+      calcType = 1
+    }
+  },
+  {
+    [1] = {
+      effectType = 1,
+      percent = {0},
+      formulaID = 5
+    }
+  },
+  {
+    [1] = {effectType = 8, teleport = 26}
+  },
+  {
+    [1] = {
+      effectType = 8,
+      teleport = 28,
+      scopeCenterType = 4,
+      scopeTargetType = 3,
+      scopeType = 35,
+      scopeParam = {0}
+    }
+  },
+  {
+    1,
+    1,
+    1
+  },
+  {4},
+  {
+    noExtend = 1,
+    init = 1,
+    dest = 2,
+    useCenterPos = 1
+  },
+  {
+    [1] = {
+      effectType = 1,
+      percent = {6},
+      formulaID = 5
+    }
+  },
+  {5, 11},
+  {
+    [1] = {effectType = 211, gridType = 1}
+  },
+  {
+    {scopeType = 4, scopeParam = 1},
+    {
+      scopeType = 5,
+      scopeParam = {3, 0},
+      centerPosIndex = 1
+    },
+    {}
+  },
+  {
+    [1] = {
+      effectType = 228,
+      baseValue = 2,
+      mulValue = 1
+    }
+  },
+  {
+    [1] = {
+      effectType = 3,
+      type = 1,
+      dir = 7,
+      distance = 2,
+      calcType = 1
+    }
+  },
+  {
+    [1] = {
+      effectType = 3,
+      type = 1,
+      dir = 7,
+      distance = 3,
+      calcType = 1
+    }
+  },
+  {400176, 1},
+  {16018111}
 }
 local empty = {}
 local config = {
-[1000] = {1000, empty, 5, nil, 8, 1, common[1], nil, nil, nil, nil, nil, 1}
-, 
-[1001] = {1001, empty, 1, nil, 1, 11, common[2], nil, nil, nil, nil, nil, 2}
-, 
-[15121] = {15121, common[3], 10, nil, 1, 19, common[4], nil, nil, nil, nil, nil, 3}
-, 
-[15122] = {15122, common[3], 10, nil, 1, 13, common[4], nil, nil, nil, nil, nil, 3}
-, 
-[88001] = {88001, 
-{
-[1] = {effectType = 3, type = 1, dir = 7, distance = 12, calcType = 1}
-, 
-[2] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 2, count = 200}
-}
-, 10, nil, 1, 19, common[4], nil, nil, nil, nil, nil, 3}
-, 
-[300022] = {300022, 
-{
-[1] = {effectType = 3, type = 1, dir = 7, distance = 12, calcType = 1}
-}
-, 10, nil, 1, 13, common[4], nil, nil, nil, nil, nil, 300022}
-, 
-[1421] = {1421, 
-{
-[1] = {effectType = 3, type = 1, dir = 7, distance = 12, calcType = 1}
-, 
-[2] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 1, count = 200}
-}
-, 10, nil, 1, 19, common[4], nil, nil, nil, nil, nil, 3}
-, 
-[301001] = {301001, 
-{
-[1] = {effectType = 3, type = 1, dir = 7, distance = 12, calcType = 1}
-, 
-[2] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 3, count = 200}
-}
-, 10, nil, 1, 19, common[4], nil, nil, nil, nil, nil, 3}
-, 
-[1004] = {1004, 
-{
-[1] = {effectType = 4, 
-src = {2, 3}
-, target = 1, count = 10}
-}
-, 5, nil, 1, 14, 
-{gridCount = 10, 
-elementType = {2, 3}
-}
-, nil, nil, nil, nil, nil, 4}
-, 
-[1006] = {1006, empty, 3, nil, 1, 5, common[5], nil, nil, nil, nil, nil, 7}
-, 
-[300065] = {300065, empty, 3, nil, 1, 86, 
-{
-[1] = {scopeType = 5, 
-scopeParam = {2}
-}
-, 
-[2] = {scopeType = 47, 
-scopeParam = {1}
-}
-}
-, nil, nil, nil, nil, nil, 7}
-, 
-[1007] = {1007, empty, 3, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 5, 6}
-, 
-[59001] = {59001, empty, 3, nil, 1, 5, common[7], nil, nil, nil, nil, nil, 7}
-, 
-[59002] = {59002, empty, 3, nil, 1, 5, common[7], nil, nil, nil, nil, nil, 7}
-, 
-[59003] = {59003, empty, 3, nil, 1, 5, common[5], nil, nil, nil, nil, nil, 7}
-, 
-[59004] = {59004, empty, 3, nil, 1, 5, common[8], nil, nil, nil, nil, nil, 7}
-, 
-[59005] = {59005, empty, 3, nil, 1, 5, 
-{4, 1}
-, nil, nil, nil, nil, nil, 7}
-, 
-[59006] = {59006, empty, 3, nil, 1, 5, 
-{5, 1}
-, nil, nil, nil, nil, nil, 7}
-, 
-[1008] = {1008, empty, 10, nil, 3, 5, common[9], nil, nil, nil, nil, nil, 8, 5}
-, 
-[1009] = {1009, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 1}
-, 
-[1010] = {1010, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 12, nil, 12}
-, 
-[1011] = {1011, 
-{
-[1] = {effectType = 3, type = 1, dir = 5, distance = 12, calcType = 1, ignorePlayerBlock = true}
-, 
-[2] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 1, count = 200}
-}
-, 10, nil, 3, 28, common[10], nil, nil, nil, nil, nil, nil, 11}
-, 
-[1012] = {1012, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 12}
-, 
-[1013] = {1013, common[11], 10, nil, 3, 1, common[12], nil, nil, nil, nil, nil, nil, 1171}
-, 
-[10131] = {10131, common[11], 10, nil, 3, 10, common[6], nil, nil, nil, nil, nil, nil, 1171}
-, 
-[1014] = {1014, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 2, count = 1, ignoreBlock = 1}
-}
-, 3, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 4, 5802, 5802, 1296}
-, 
-[80001] = {80001, common[13], 3, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 4, 5802, 5802, 1296}
-, 
-[1015] = {1015, empty, 10, nil, 3, 28, 
-{1, 1, 2}
-, nil, nil, nil, nil, nil, nil, 15}
-, 
-[10151] = {10151, empty, 10, nil, 3, 7, common[5], nil, nil, nil, nil, nil, nil, 15}
-, 
-[10152] = {10152, empty, 10, nil, 3, 5, common[5], nil, nil, nil, nil, nil, nil, 15}
-, 
-[1016] = {1016, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 12}
-, 
-[1017] = {1017, 
-{
-[1] = {effectType = 62, targetGridElement = 4}
-}
-, 10, nil, 3, 7, common[5], nil, nil, nil, nil, nil, nil, 16}
-, 
-[1018] = {1018, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 17}
-, 
-[1019] = {1019, empty, 10, nil, 3, 7, common[5], nil, nil, nil, nil, nil, nil, 15}
-, 
-[1020] = {1020, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 12}
-, 
-[300122] = {300122, empty, 10, nil, 3, 79, common[9], nil, nil, nil, nil, nil, nil, 15}
-, 
-[3001221] = {3001221, empty, 10, nil, 3, 79, common[14], nil, nil, nil, nil, nil, nil, 15}
-, 
-[45001] = {45001, empty, 10, nil, 3, 8, common[12], nil, nil, nil, nil, nil, nil, 4502}
-, 
-[1021] = {1021, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 18, nil, 18}
-, 
-[1022] = {1022, common[15], 10, nil, 4, 25, common[4], nil, nil, nil, nil, nil, nil, 20, nil, 20}
-, 
-[10221] = {10221, common[15], 10, nil, 4, 35, common[6], nil, nil, nil, nil, nil, nil, 20, nil, 20}
-, 
-[1024] = {1024, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4}
-, target = 1, count = 8}
-}
-, 1, nil, 1, 8, common[12], nil, nil, nil, nil, nil, 4}
-, 
-[1025] = {1025, empty, 10, nil, 1, 16, 
-{29, 3}
-, nil, nil, nil, nil, nil, 2100111, nil, 210}
-, 
-[1026] = {1026, empty, 10, nil, 3, 33, common[16], nil, nil, nil, nil, nil, nil, 22, nil, 22}
-, 
-[1027] = {1027, common[17], 5, nil, 3, 33, common[16]}
-, 
-[1028] = {1028, 
-{
-[1] = {effectType = 3, type = 1, dir = 8, distance = 29, calcType = 1}
-}
-, 10, nil, 3, 33, common[16], nil, nil, nil, nil, nil, nil, 24, nil, 24}
-, 
-[1029] = {1029, empty}
-, 
-[1030] = {1030, empty, 10, nil, 4, 55, common[6], nil, nil, nil, nil, nil, nil, 26, nil, 26}
-, 
-[10301] = {10301, empty, 10, nil, 4, 46, common[6], nil, nil, nil, nil, nil, nil, 16126, nil, 16126}
-, 
-[1031] = {1031, empty, 10, nil, 1, 3, common[4], nil, nil, nil, nil, nil, 27, nil, 270, nil, nil, 271}
-, 
-[10311] = {10311, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 12, nil, 12}
-, 
-[1032] = {1032, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 28, nil, 31, nil, nil, 30}
-, 
-[1033] = {1033, empty, 1, nil, 3, 5, common[9], nil, nil, nil, nil, nil, nil, 29}
-, 
-[10331] = {10331, empty, 1, nil, 3, 5, common[18], nil, nil, nil, nil, nil, nil, 29}
-, 
-[1034] = {1034, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 4, count = 2, ignoreBlock = 1}
-}
-, 3, nil, 4, 35, common[6], nil, nil, nil, nil, nil, nil, 8901, nil, 8901}
-, 
-[1181] = {1181, 
-{
-[1] = {effectType = 3, type = 1, dir = 7, distance = 12, calcType = 1}
-}
-, 1, nil, 1, 11, common[2], nil, nil, nil, nil, nil, 1181}
-, 
-[9031] = {9031, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 9031}
-, 
-[1321] = {1321, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 1321}
-, 
-[1521] = {1521, empty, 3, nil, 1, 5, common[18], nil, nil, nil, nil, nil, 7, nil, 7}
-, 
-[1522] = {1522, empty, 10, nil, 3, 1, common[12], nil, nil, nil, nil, nil, nil, 1522, nil, 31}
-, 
-[15221] = {15221, empty, 10, nil, 3, 5, common[12], nil, nil, nil, nil, nil, nil, 1522, nil, 31}
-, 
-[1523] = {1523, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 6}
-, 
-[500150] = {500150, 
-{
-[1] = {effectType = 3, type = 1, dir = 7, distance = 1, calcType = 1}
-}
-, 1, nil, 1, 10, common[12], nil, nil, nil, nil, nil, 500150}
-, 
-[1511] = {1511, empty, 10, nil, 1, 3, common[4], nil, nil, nil, nil, nil, 27, nil, 270, nil, nil, 271}
-, 
-[1512] = {1512, empty, 10, nil, 9, 8, common[12], nil, nil, nil, nil, nil, nil, 1511}
-, 
-[1513] = {1513, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, 1513}
-, 
-[1331] = {1331, 
-{
-[1] = {effectType = 15, percent = 0.75, formulaID = 5, count = 5, serialScopeType = 5, radius = 1, pieceType = 1, onePieceAddAttackCount = 1}
-}
-, 1, nil, 1, 11, common[2], nil, nil, nil, nil, nil, 10005}
-, 
-[1332] = {1332, 
-{
-[1] = {effectType = 15, percent = 0.75, formulaID = 5, count = 6, serialScopeType = 7, radius = 2, pieceType = 1, onePieceAddAttackCount = 1}
-}
-, 1, nil, 1, 11, common[2], nil, nil, nil, nil, nil, 10005}
-, 
-[1701] = {1701, 
-{
-[1] = {effectType = 15, percent = 0.75, formulaID = 5, count = 5, serialScopeType = 5, radius = 1, pieceType = 2, onePieceAddAttackCount = 1}
-}
-, 1, nil, 1, 11, common[2], nil, nil, nil, nil, nil, 10005}
-, 
-[1702] = {1702, 
-{
-[1] = {effectType = 15, percent = 0.75, formulaID = 5, count = 5, serialScopeType = 7, radius = 2, pieceType = 2, onePieceAddAttackCount = 1}
-}
-, 1, nil, 1, 11, common[2], nil, nil, nil, nil, nil, 10005}
-, 
-[1291] = {1291, 
-{
-[1] = {effectType = 10, pieceType = 1, pieceCount = 15, addAttackPercent = 15, minAttackPercent = 0}
-}
-, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 1291}
-, 
-[1292] = {1292, empty, 10, nil, 1, 28, 
-{9, 1, 2}
-, nil, nil, nil, nil, nil, 1292}
-, 
-[1293] = {1293, empty, 10, nil, 1, 28, 
-{9, 2, 2}
-, nil, nil, nil, nil, nil, 1292}
-, 
-[1131] = {1131, empty, 3, nil, 1, 14, 
-{gridCount = 81, 
-elementType = {1}
-}
-, nil, nil, nil, nil, nil, 1131}
-, 
-[1261] = {1261, empty, 5, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 1261}
-, 
-[1281] = {1281, common[19], 5, nil, 1, 5, common[18], nil, nil, nil, nil, nil, 1261}
-, 
-[1282] = {1282, common[19], 5, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 1261}
-, 
-[1461] = {1461, common[20], 5, nil, 3, 8, common[18], nil, nil, nil, nil, nil, nil, 1461, nil, nil, nil, nil, 1462}
-, 
-[1462] = {1462, common[20], 5, nil, 1, 8, common[18], nil, nil, nil, nil, nil, nil, nil, 1462, nil, nil, 1462}
-, 
-[14611] = {14611, common[20], 5, nil, 3, 4, common[6], nil, nil, nil, nil, nil, nil, 1461, 1462, nil, nil, 1462, 1462}
-, 
-[1741] = {1741, common[20], 5, nil, 1, 1, common[21], nil, nil, nil, nil, nil, 1741}
-, 
-[1742] = {1742, empty, 10, nil, 1, 19, common[21], nil, nil, nil, nil, nil, 1742, nil, 301023}
-, 
-[300102] = {300102, 
-{
-[1] = {effectType = 67, casterCentered = 1}
-}
-, 5, nil, 3, 33, common[16], nil, nil, nil, nil, nil, nil, 301022}
-, 
-[1811] = {1811, common[20], 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 1741}
-, 
-[1770] = {1770, empty, 1, nil, 1, 14, 
-{gridCount = 100, 
-elementType = {1}
-}
-, nil, nil, nil, nil, nil, 1774, nil, 1774}
-, 
-[1771] = {1771, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 1, count = 4, scopeTargetType = 3}
-}
-, 1, nil, 4, 35, common[6], nil, nil, nil, nil, nil, nil, 4, nil, 4, 1773}
-, 
-[1772] = {1772, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 1, count = 5, scopeTargetType = 3}
-}
-, 1, nil, 4, 35, common[6], nil, nil, nil, nil, nil, nil, 4, nil, 4, 1773}
-, 
-[1541] = {1541, common[13], 14, nil, 3, 35, common[6], nil, nil, nil, nil, nil, 1541, 4, 12, 12, nil, 1542}
-, 
-[11271] = {11271, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 3, count = 1}
-}
-, 14, nil, 3, 35, common[6], nil, nil, nil, nil, nil, 10, 11271, 11272, 12, nil, 11272, 11272}
-, 
-[112711] = {112711, common[22], 14, nil, 4, 35, common[6], nil, nil, nil, nil, nil, 10, 11271, 11272, 11273, nil, 11272, 11272}
-, 
-[1294] = {1294, empty, 1, nil, 1, 47, 
-{1, 2, 4}
-, nil, nil, nil, nil, nil, 1294, nil, 1294, 1294, 1296}
-, 
-[1295] = {1295, empty, 1, nil, 3, 52, common[6], nil, nil, nil, nil, nil, nil, 1295}
-, 
-[1501] = {1501, 
-{
-[1] = {effectType = 1, 
-percent = {2.5}
-, formulaID = 5}
-, 
-[2] = {effectType = 3, type = 1, dir = 7, distance = 12, calcType = 1}
-}
-, 10, nil, 1, 21, common[9], nil, nil, nil, nil, nil, 1501}
-, 
-[4403] = {4403, common[23], 1, nil, 1, 5, common[18], nil, nil, nil, nil, nil, 4403}
-, 
-[4404] = {4404, common[23], 1, nil, 1, 5, common[4], nil, nil, nil, nil, nil, 4403}
-, 
-[1901] = {1901, common[23], 1, nil, 1, 54, 
-{3, 3}
-, nil, nil, nil, nil, nil, 4403}
-, 
-[1902] = {1902, common[23], 5, nil, 1, 5, common[18], nil, nil, nil, nil, nil, 6101}
-, 
-[1903] = {1903, common[23], 1, nil, 1, 11, common[18], nil, nil, nil, nil, nil, 4403}
-, 
-[1231] = {1231, common[23], 1, nil, 1, 5, common[18], nil, nil, nil, nil, nil, 4403}
-, 
-[1232] = {1232, common[23], 1, nil, 1, 5, common[4], nil, nil, nil, nil, nil, 4403}
-, 
-[6101] = {6101, empty, 1, nil, 1, 32, common[6], nil, nil, nil, nil, nil, 6101, nil, 6101}
-, 
-[6102] = {6102, common[24], 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 6102, 6101}
-, 
-[500251] = {500251, empty, 3, nil, 1, 31, common[6], nil, nil, nil, nil, nil, 500251}
-, 
-[6801] = {6801, common[25], 3, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 5, 6}
-, 
-[82100] = {82100, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 821001, nil, 821001}
-, 
-[82101] = {82101, empty, 1, nil, 4, 35, common[6], nil, nil, nil, nil, nil, nil, 821002, nil, 821003}
-, 
-[83100] = {83100, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 821001, nil, 821005}
-, 
-[83101] = {83101, common[11], 10, nil, 3, 1, common[12], nil, nil, nil, nil, nil, nil, 821004}
-, 
-[83102] = {83102, common[11], 10, nil, 3, 5, common[12], nil, nil, nil, nil, nil, nil, 821004}
-, 
-[86100] = {86100, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 861001, nil, 861001}
-, 
-[2701] = {2701, common[26], 10, nil, 3, 46, common[27], nil, nil, nil, nil, nil, 12}
-, 
-[2702] = {2702, common[26], 10, nil, 3, 46, common[27], nil, nil, nil, nil, nil, nil, 2702}
-, 
-[2703] = {2703, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 12, 2702}
-, 
-[5801] = {5801, common[13], 3, nil, 3, 35, common[6], nil, nil, nil, nil, nil, 10, 5801, 14}
-, 
-[9511] = {9511, empty, 5, nil, 3, 6, common[7], nil, 1, nil, 1, nil, nil, 15}
-, 
-[9801] = {9801, empty, 1, nil, 1, 5, common[18], nil, nil, nil, 1, nil, 9801, nil, 9801}
-, 
-[9802] = {9802, empty, 1, nil, 8, 35, common[6], nil, nil, nil, nil, nil, nil, 9802, nil, 9802}
-, 
-[9803] = {9803, empty, 1, nil, 1, 5, common[4], nil, nil, nil, 1, nil, 9801, nil, 9801}
-, 
-[9701] = {9701, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 12, nil, 12}
-, 
-[9704] = {9704, empty, 10, nil, 1, 5, common[18], nil, nil, nil, nil, nil, 7, nil, 150097101}
-, 
-[9702] = {9702, 
-{
-[1] = {effectType = 92, 
-percent = {4}
-, formulaID = 5, multiple = 4}
-, 
-[2] = {effectType = 8, teleport = 0, scopeTargetType = 1, scopeCenterType = 3, scopeType = 35, 
-scopeParam = {0}
-}
-}
-, 10, nil, 3, 57, common[6], nil, nil, nil, nil, nil, nil, 9702}
-, 
-[9703] = {9703, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 12}
-, 
-[6201] = {6201, common[28], 10, nil, 1, 58, common[12], nil, nil, nil, nil, nil, 6201, nil, 6201, 6201, 6202}
-, 
-[6202] = {6202, common[26], 10, nil, 3, 46, common[29], nil, nil, nil, nil, nil, nil, 2702}
-, 
-[6203] = {6203, common[28], 10, nil, 1, 58, common[6], nil, nil, nil, nil, nil, 6203, nil, 6203, 6203, 6202}
-, 
-[1711] = {1711, empty, 3, nil, 1, 1, common[4], nil, nil, nil, nil, nil, 1711, nil, 1711}
-, 
-[1712] = {1712, empty, 10, nil, 3, 59, 
-{24, 1, 1}
-, nil, nil, nil, nil, nil, nil, 1712}
-, 
-[1713] = {1713, empty, 10, nil, 1, 1, common[4], nil, nil, nil, nil, nil, nil, nil, 1711}
-, 
-[1714] = {1714, common[30], 10, nil, 3, 59, 
-{24, 0, 0, 1}
-, nil, nil, nil, nil, nil, nil, 1713, nil, 1711}
-, 
-[1715] = {1715, common[30], 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 1713, nil, 1711}
-, 
-[5601] = {5601, empty, 1, nil, 1, 5, common[18], nil, nil, nil, nil, nil, 5601, nil, 5601, 5601, 5602}
-, 
-[5603] = {5603, empty, 1, nil, 1, 5, common[4], nil, nil, nil, nil, nil, 5601, nil, 5601, 5601, 5602}
-, 
-[5602] = {5602, empty, 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 5602}
-, 
-[7501] = {7501, common[23], 1, nil, 1, 5, common[18], nil, nil, nil, nil, nil, 7501}
-, 
-[7502] = {7502, common[23], 1, nil, 1, 5, common[4], nil, nil, nil, nil, nil, 7501}
-, 
-[9301] = {9301, empty, 10, nil, 3, 5, common[12], nil, nil, nil, nil, nil, nil, 9301}
-, 
-[10901] = {10901, common[31], 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 10901, nil, 10903, 10903, 6202}
-, 
-[10902] = {10902, common[32], 10, nil, 3, 46, common[29], nil, nil, nil, nil, nil, nil, 10902}
-, 
-[10801] = {10801, empty, 1, nil, 1, 5, common[18], nil, nil, nil, nil, nil, 9801, nil, 9801}
-, 
-[10802] = {10802, empty, 1, nil, 1, 5, common[4], nil, nil, nil, nil, nil, 9801, nil, 9801}
-, 
-[10803] = {10803, empty, 10, nil, 3, 1, common[12], nil, nil, nil, nil, nil, nil, 10802}
-, 
-[10804] = {10804, empty, 10, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 10802}
-, 
-[300030] = {300030, empty, 10, nil, 1, 38, nil, nil, nil, nil, nil, nil, 21, nil, 3200303}
-, 
-[3000301] = {3000301, empty, 10, nil, 1, 61, common[12], nil, nil, nil, nil, nil, nil, 3200301, nil, 21}
-, 
-[320030] = {320030, empty, 10, nil, 1, 1, common[9], nil, nil, nil, nil, nil, 21, nil, 3200303}
-, 
-[3200301] = {3200301, empty, 10, nil, 1, 61, common[12], nil, nil, nil, nil, nil, nil, 3200301, nil, 21}
-, 
-[300112] = {300112, empty, 5, nil, 1, 5, common[8], nil, nil, nil, nil, nil, 7, nil, 300112, 300112}
-, 
-[303112] = {303112, empty, 5, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 7, nil, 300112, 300112}
-, 
-[3001121] = {3001121, empty, 1, nil, 3, 5, common[9], nil, nil, nil, nil, nil, nil, 29}
-, 
-[300114] = {300114, empty, 5, nil, 1, 64, nil, nil, nil, nil, nil, nil, 7, nil, 300112, 300112}
-, 
-[3001141] = {3001141, empty, 1, nil, 3, 5, common[12], nil, nil, nil, nil, nil, nil, 29}
-, 
-[3001130] = {3001130, empty, 10, nil, 1, 38, nil, nil, nil, nil, nil, nil, 2100111, nil, 210}
-, 
-[300113] = {300113, 
-{
-[1] = {effectType = 106, step = 1}
-}
-, 1, nil, 1, 32, common[6], nil, nil, nil, nil, nil, nil, 300113, nil, 300113}
-, 
-[300117] = {300117, empty, 5, nil, 1, 7, 
-{2, 1, 1}
-, nil, nil, nil, nil, nil, 7, nil, 300112, 300112}
-, 
-[306117] = {306117, empty, 5, nil, 1, 8, common[9], nil, nil, nil, nil, nil, 7, nil, 300112, 300112}
-, 
-[3001171] = {3001171, empty, 1, nil, 3, 72, common[9], nil, nil, nil, nil, nil, nil, 29}
-, 
-[300115] = {300115, empty, 5, nil, 1, 36, nil, nil, nil, nil, nil, nil, 7, nil, 300112, 300112}
-, 
-[3001151] = {3001151, empty, 1, nil, 3, 5, common[9], nil, nil, nil, nil, nil, nil, 29}
-, 
-[3001152] = {3001152, empty, 1, nil, 3, 5, common[18], nil, nil, nil, nil, nil, nil, 29}
-, 
-[300121] = {300121, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 300121, nil, 300121}
-, 
-[3001211] = {3001211, empty, 1, nil, 3, 1, common[12], nil, nil, nil, nil, nil, nil, 3001211, nil, 3001211}
-, 
-[3001212] = {3001212, empty, 1, nil, 8, 75, common[33], nil, nil, nil, nil, nil, nil, 3001212, nil, 3001212}
-, 
-[3061212] = {3061212, empty, 1, nil, 8, 75, common[33], nil, nil, nil, nil, nil, nil, 3001212, nil, 3001212}
-, 
-[3201212] = {3201212, empty, 1, nil, 8, 75, common[34], nil, nil, nil, nil, nil, nil, 3001212, nil, 3001212}
-, 
-[3261212] = {3261212, empty, 1, nil, 8, 75, common[34], nil, nil, nil, nil, nil, nil, 3001212, nil, 3001212}
-, 
-[3001261] = {3001261, empty, 1, nil, 1, 5, common[4], nil, nil, nil, nil, nil, 9801, nil, 3001262}
-, 
-[3001262] = {3001262, empty, 10, nil, 3, 1, common[12], nil, nil, nil, nil, nil, nil, 10802}
-, 
-[3001263] = {3001263, empty, 1, nil, 3, 1, common[12], nil, nil, nil, nil, nil, nil, 3001261, nil, nil, nil, nil, 3001262}
-, 
-[3001264] = {3001264, empty, 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, nil, 3001262, nil, nil, 3001262}
-, 
-[3000551] = {3000551, empty, 10, nil, 1, 3, common[14], nil, nil, nil, nil, nil, 3000551, nil, 10903, 10903, 6202}
-, 
-[3000552] = {3000552, 
-{
-[1] = {effectType = 1, 
-percent = {1.6}
-, formulaID = 5}
-, 
-[2] = {effectType = 3, type = 1, dir = 7, distance = 12, calcType = 1}
-}
-, 10, nil, 3, 46, common[6], nil, nil, nil, nil, nil, nil, 3000552, nil, 3000552}
-, 
-[300015] = {300015, empty, 10, nil, 3, 87, common[6], nil, nil, nil, nil, nil, nil, 9400, nil, 9401}
-, 
-[330015] = {330015, empty, 10, nil, 3, 87, common[6], nil, nil, nil, nil, nil, nil, 9400, nil, 9402}
-, 
-[3001201] = {3001201, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 12, nil, 12}
-, 
-[3001202] = {3001202, 
-{
-[1] = {effectType = 3, type = 1, dir = 5, distance = 12, calcType = 1, ignorePlayerBlock = true}
-, 
-[2] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 3, count = 200}
-}
-, 10, nil, 3, 28, common[10], nil, nil, nil, nil, nil, nil, 11}
-, 
-[3001203] = {3001203, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 12}
-, 
-[3001231] = {3001231, empty, 1, nil, 1, 5, common[12], nil, nil, nil, nil, nil, 3001230, nil, 3001231, 3001231, 3001232, 3001233, 3001233}
-, 
-[3001232] = {3001232, empty, 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3001232}
-, 
-[3001311] = {3001311, empty, 1, nil, 1, 7, common[9], nil, nil, nil, nil, nil, 3001310}
-, 
-[3001312] = {3001312, empty, 1, nil, 1, 5, common[9], nil, nil, nil, nil, nil, 3001310}
-, 
-[3001331] = {3001331, empty, 10, nil, 3, 4, common[6], nil, nil, nil, nil, nil, 3001331, nil, 3001331}
-, 
-[3001332] = {3001332, common[11], 10, nil, 3, 7, common[9], nil, nil, nil, nil, nil, nil, 3001332}
-, 
-[300135] = {300135, empty, 1, nil, 1, 1, common[4], nil, nil, nil, nil, nil, 300121, nil, 300121}
-, 
-[3001351] = {3001351, empty, 1, nil, 3, 1, common[12], nil, nil, nil, nil, nil, nil, 3001211, nil, 3001211}
-, 
-[3001352] = {3001352, empty, 1, nil, 8, 95, 
-{45}
-, nil, nil, nil, nil, nil, nil, 3001212, nil, 3001212}
-, 
-[3001353] = {3001353, empty, 1, nil, 8, 95, 
-{90}
-, nil, nil, nil, nil, nil, nil, 3001212, nil, 3001212}
-, 
-[3001371] = {3001371, empty, 1, nil, 1, 32, common[6], nil, nil, nil, nil, nil, 3001371, nil, 3001371}
-, 
-[3001372] = {3001372, common[24], 1, nil, 3, 97, common[6], nil, nil, nil, nil, nil, nil, 3001372}
-, 
-[3001341] = {3001341, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 3001341, nil, 3001341, 3001341, 6202}
-, 
-[3001342] = {3001342, 
-{
-[1] = {effectType = 1, 
-percent = {1.6}
-, formulaID = 5}
-, 
-[2] = {effectType = 3, type = 1, dir = 7, distance = 12, calcType = 1, forceUseCasterPos = true}
-}
-, 10, nil, 3, 46, common[29], nil, nil, nil, nil, nil, nil, 3001342, nil, 3001342}
-, 
-[300141] = {300141, common[35], 10, nil, 1, 104, common[36], nil, nil, nil, nil, nil, 306141, 306143, 306143}
-, 
-[300142] = {300142, common[37], 10, nil, 1, 104, common[36], nil, nil, nil, nil, nil, nil, 306144, 306144}
-, 
-[3001411] = {3001411, common[35], 10, nil, 1, 104, common[36], nil, nil, nil, nil, nil, 306141, 306143, 306143}
-, 
-[3001412] = {3001412, common[37], 10, nil, 1, 104, common[36], nil, nil, nil, nil, nil, nil, nil, 306144}
-, 
-[3001413] = {3001413, 
-{
-[1] = {effectType = 3, type = 2, dir = 19, distance = 12, calcType = 1, enableByPickNum = 1, forceUseCasterPos = true}
-}
-, 10, nil, 1, 104, common[36], nil, nil, nil, nil, nil, nil, 306144}
-, 
-[3001381] = {3001381, empty, 5, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 2, nil, 2, 2}
-, 
-[3001382] = {3001382, common[38], 5, nil, 4, 98, 
-{
-{scopeType = 4, scopeParam = 1}
-, 
-{scopeType = 6, 
-scopeParam = {1, 1}
-, centerPosIndex = 1}
-, 
-{}
-}
-, nil, nil, nil, nil, nil, nil, 7, nil, 7}
-, 
-[3001383] = {3001383, common[38], 5, nil, 4, 98, common[39], nil, nil, nil, nil, nil, nil, 4, nil, 4}
-, 
-[3001384] = {3001384, common[38], 5, nil, 4, 98, common[40], nil, nil, nil, nil, nil, nil, 7, nil, 7}
-, 
-[3001385] = {3001385, common[38], 5, nil, 4, 98, common[39], nil, nil, nil, nil, nil, nil, 4, nil, 4}
-, 
-[3001386] = {3001386, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 2}
-, 
-[3001421] = {3001421, empty, 1, nil, 1, 7, common[9], nil, nil, nil, nil, nil, 3001420, nil, 3001421, 3001421, 3001421, 3001423, 3001423}
-, 
-[3001422] = {3001422, 
-{
-[1] = {effectType = 67, scopeType = 5, 
-scopeParam = {2}
-, scopeTargetType = 5, scopeCenterType = 3, maxMoveStep = 2, forceMove = 1}
-}
-, 5, nil, 3, 5, common[5], nil, nil, nil, nil, nil, nil, 3001422}
-, 
-[3001423] = {3001423, 
-{
-[1] = {effectType = 67, scopeType = 5, 
-scopeParam = {3}
-, scopeTargetType = 5, scopeCenterType = 3, maxMoveStep = 2, forceMove = 1}
-}
-, 5, nil, 3, 5, common[8], nil, nil, nil, nil, nil, nil, 3001422}
-, 
-[3001431] = {3001431, empty, 1, nil, 1, 5, common[9], nil, nil, nil, nil, nil, 3001431}
-, 
-[3001441] = {3001441, common[41], 3, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 3001441, nil, nil, nil, nil, 3001441}
-, 
-[3001442] = {3001442, common[41], 3, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 3001442, 3001442}
-, 
-[3001451] = {3001451, empty, 5, nil, 1, 36, common[6], nil, nil, nil, nil, nil, 3001451, nil, 3001451, 3001451, nil, 3001453, 3001453}
-, 
-[3001452] = {3001452, 
-{
-[1] = {effectType = 8, teleport = 0, trapID = 16014511}
-, 
-[2] = {effectType = 11, trapID = 16014511, overlapFlag = 0}
-}
-, 3, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3001452}
-, 
-[3001453] = {3001453, 
-{
-[1] = {effectType = 8, teleport = 0, trapID = 16014511}
-, 
-[2] = {effectType = 11, trapID = 16014511, overlapFlag = 0}
-, 
-[3] = {effectType = 139, trapID = 16014511, basePercent = 0.6, damageScopeType = 5, 
-damageScopeParam = {12}
-, damageTargetType = 1, formulaID = 9}
-}
-, 3, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3001454}
-, 
-[3001631] = {3001631, empty, 1, nil, 1, 5, common[12], nil, nil, nil, nil, nil, 3001431}
-, 
-[280060103] = {280060103, empty, 1, nil, 1, 10, common[12], nil, nil, nil, nil, nil, 280060103}
-, 
-[280060104] = {280060104, empty, 1, nil, 1, 69, 
-{
-x = {}
-, 
-y = {11}
-}
-, nil, nil, nil, nil, nil, 280060103}
-, 
-[280060105] = {280060105, empty, 1, nil, 1, 69, 
-{
-x = {}
-, 
-y = {11, 10, 9}
-}
-, nil, nil, nil, nil, nil, 280060103}
-, 
-[280060106] = {280060106, empty, 1, nil, 1, 69, 
-{
-x = {}
-, 
-y = {11, 10, 9, 8, 7}
-}
-, nil, nil, nil, nil, nil, 280060103}
-, 
-[280060107] = {280060107, empty, 1, nil, 1, 69, 
-{
-x = {}
-, 
-y = {11, 10, 9, 8, 7, 6, 5}
-}
-, nil, nil, nil, nil, nil, 280060103}
-, 
-[280060108] = {280060108, empty, 1, nil, 1, 69, 
-{
-x = {}
-, 
-y = {11, 10, 9, 8, 7, 6, 5, 4, 3}
-}
-, nil, nil, nil, nil, nil, 280060103}
-, 
-[280060109] = {280060109, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 5, count = 1}
-}
-, 3, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 4, 5802, 5802, 1296}
-, 
-[280061101] = {280061101, 
-{
-[1] = {effectType = 11, trapID = 28006111, usePickupDir = 1}
-}
-, 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, 300121, nil, 300121}
-, 
-[280061102] = {280061102, 
-{
-[1] = {effectType = 11, trapID = 28006112, usePickupDir = 1}
-}
-, 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, 300121, nil, 300121}
-, 
-[280061103] = {280061103, 
-{
-[1] = {effectType = 11, trapID = 28006113, usePickupDir = 1}
-}
-, 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, 300121, nil, 300121}
-, 
-[280061104] = {280061104, 
-{
-[1] = {effectType = 79, destroyType = 3, 
-trapID = {28006111, 28006112, 28006113}
-}
-}
-, 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 4, 5802, 5802, 1296}
-, 
-[280061105] = {280061105, empty, 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 280061105, nil, 280061105}
-, 
-[3001490] = {3001490, empty, 5, nil, 1, 5, common[9], nil, nil, nil, nil, nil, 3001491, nil, 3001491, 3001491, nil, 3001494, 3001494}
-, 
-[3001491] = {3001491, empty, 5, nil, 1, 5, common[18], nil, nil, nil, nil, nil, 3001491, nil, 3001491, 3001491, nil, 3001494, 3001494}
-, 
-[3001492] = {3001492, empty, 5, nil, 1, 86, 
-{
-[1] = {scopeType = 5, 
-scopeParam = {2}
-}
-, 
-[2] = {scopeType = 118, 
-scopeParam = {15014911, 15014912}
-}
-}
-, nil, nil, nil, nil, nil, 3001491, nil, 3001491, 3001491, nil, 3001494, 3001494}
-, 
-[3001493] = {3001493, empty, 5, nil, 1, 86, 
-{
-[1] = {scopeType = 5, 
-scopeParam = {3}
-}
-, 
-[2] = {scopeType = 118, 
-scopeParam = {15014911, 15014912}
-}
-}
-, nil, nil, nil, nil, nil, 3001491, nil, 3001491, 3001491, nil, 3001494, 3001494}
-, 
-[3001494] = {3001494, common[42], 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3001492}
-, 
-[3001495] = {3001495, common[42], 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3001493}
-, 
-[3001481] = {3001481, empty, 5, nil, 3, 36, common[6], nil, nil, nil, nil, nil, 3001481, nil, 3001481, 3001481, nil, 3001483, 3001483}
-, 
-[3001482] = {3001482, common[42], 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3001482}
-, 
-[3001483] = {3001483, empty, 3, nil, 1, 74, 
-{16014811, 31, 0}
-, nil, nil, nil, nil, nil, 3001484, nil, nil, nil, nil, 6, 6}
-, 
-[16014811] = {16014811, common[43], 1, nil, 1, 7, common[9], nil, nil, nil, nil, nil, 16014811}
-, 
-[16014812] = {16014812, common[43], 1, nil, 1, 5, common[9], nil, nil, nil, nil, nil, 16014811}
-, 
-[3301481] = {3301481, common[44], 3, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3301481}
-, 
-[3301482] = {3301482, common[44], 3, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3301482}
-, 
-[3001501] = {3001501, empty, 5, nil, 1, 31, common[6], nil, nil, nil, nil, nil, 3001501, nil, 3001501, 3001501}
-, 
-[3001502] = {3001502, empty, 10, nil, 4, 98, common[45], nil, nil, nil, nil, nil, nil, 3001502, nil, 3001502}
-, 
-[3001503] = {3001503, empty, 10, nil, 4, 98, common[46], nil, nil, nil, nil, nil, nil, 3001503, nil, 3001503}
-, 
-[3001504] = {3001504, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 3001501}
-, 
-[30015011] = {30015011, empty, 5, nil, 1, 31, common[6], nil, nil, nil, nil, nil, 30015011, nil, 30015011, 30015011}
-, 
-[30015021] = {30015021, empty, 10, nil, 4, 98, common[45], nil, nil, nil, nil, nil, nil, 30015021, nil, 30015021}
-, 
-[30015031] = {30015031, empty, 10, nil, 4, 98, common[46], nil, nil, nil, nil, nil, nil, 30015031, nil, 30015031}
-, 
-[30015041] = {30015041, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 30015011}
-, 
-[300151] = {300151, empty, 1, nil, 1, 5, common[47], nil, nil, nil, nil, nil, 3001510, nil, 9801}
-, 
-[3001510] = {3001510, empty, 1, nil, 1, 5, common[47], nil, nil, nil, nil, nil, 30015100, nil, 9801}
-, 
-[3001511] = {3001511, empty, 1, nil, 1, 5, common[47], nil, nil, nil, nil, nil, 3001511, nil, 9801}
-, 
-[3001512] = {3001512, empty, 1, nil, 1, 5, common[47], nil, nil, nil, nil, nil, 3001512, nil, 9801}
-, 
-[3001513] = {3001513, empty, 1, nil, 1, 5, common[47], nil, nil, nil, nil, nil, 3001513, nil, 9801}
-, 
-[3001514] = {3001514, empty, 1, nil, 1, 5, common[47], nil, nil, nil, nil, nil, 3001514, nil, 9801}
-, 
-[300152] = {300152, empty, 5, nil, 3, 78, common[12], nil, nil, nil, nil, nil, nil, 300151}
-, 
-[3001520] = {3001520, empty, 5, nil, 3, 78, common[12], nil, nil, nil, nil, nil, nil, 30015120}
-, 
-[3001521] = {3001521, empty, 1, nil, 1, 5, common[47], nil, nil, nil, nil, nil, 3001521}
-, 
-[302152] = {302152, empty, 1, nil, 1, 5, common[47], nil, nil, nil, nil, nil, 302152}
-, 
-[305152] = {305152, empty, 1, nil, 1, 5, common[47], nil, nil, nil, nil, nil, 305152}
-, 
-[30015201] = {30015201, empty, 5, nil, 3, 78, common[12], nil, nil, nil, nil, nil, nil, 30015101}
-, 
-[30015202] = {30015202, empty, 5, nil, 3, 78, common[12], nil, nil, nil, nil, nil, nil, 30015102}
-, 
-[30015203] = {30015203, empty, 5, nil, 3, 78, common[12], nil, nil, nil, nil, nil, nil, 30015103}
-, 
-[30015204] = {30015204, empty, 5, nil, 3, 78, common[12], nil, nil, nil, nil, nil, nil, 30015104}
-, 
-[3001531] = {3001531, empty, 1, nil, 1, 31, common[6], nil, nil, nil, nil, nil, 3001531, nil, 3001531}
-, 
-[3001532] = {3001532, empty, 1, nil, 4, 35, common[6], nil, nil, nil, nil, nil, nil, 3001532, nil, 3001532}
-, 
-[3001571] = {3001571, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 3001571, nil, 3001571, 3001571, 6202}
-, 
-[3001572] = {3001572, common[48], 10, nil, 3, 46, common[49], nil, nil, nil, nil, nil, nil, 3001572, nil, 3001572}
-, 
-[3001573] = {3001573, empty, 14, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3001573, 3001571, 3001571, nil, 3001574, 3001574}
-, 
-[3001574] = {3001574, common[48], 10, nil, 3, 46, 
-{widthThreshold = 0.65, noExtend = 1, useTrapAsBegin = 1, 
-trapID = {15015710, 15015711, 15015712}
-}
-, nil, nil, nil, nil, nil, nil, 3001572, nil, 3001572}
-, 
-[3001561] = {3001561, empty, 10, nil, 3, 36, common[6], nil, nil, nil, nil, nil, 3001561, nil, 3001561, 3001561, 6202}
-, 
-[3001562] = {3001562, common[50], 10, nil, 3, 46, common[49], nil, nil, nil, nil, nil, nil, 3001562, nil, 3001562}
-, 
-[3001563] = {3001563, empty, 14, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3001563, 3001561, 3001561, nil, 3001564, 3001564}
-, 
-[3001564] = {3001564, common[51], 10, nil, 1, 46, 
-{useTrapAsBegin = 1, 
-trapID = {160156100, 160156101, 160156102, 160156103, 160156104, 160156105, 160156106, 160156107, 160156108, 160156109, 160156110, 160156111}
-, widthThreshold = 0.65, noExtend = 1}
-, nil, nil, nil, nil, nil, 3001565}
-, 
-[3001565] = {3001565, 
-{
-[1] = {effectType = 1, 
-percent = {0.6}
-, formulaID = 5}
-}
-, 10, nil, 3, 86, 
-{
-[1] = {scopeType = 46, 
-scopeParam = {widthThreshold = 0.65, noExtend = 1}
-}
-, 
-[2] = {scopeType = 5, 
-scopeParam = {1}
-}
-}
-, nil, nil, nil, nil, nil, nil, 3001562, nil, 3001562}
-, 
-[3001621] = {3001621, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 3001621, nil, 3001621, 3001621, 6202}
-, 
-[3001622] = {3001622, common[48], 10, nil, 3, 46, common[29], nil, nil, nil, nil, nil, nil, 3001622, nil, 3001622}
-, 
-[300160] = {300160, common[43], 1, nil, 1, 8, common[9], nil, nil, nil, nil, nil, 300160}
-, 
-[300161] = {300161, common[52], 1, nil, 3, 7, common[9], nil, nil, nil, nil, nil, nil, 300160}
-, 
-[3001641] = {3001641, empty, 5, nil, 1, 94, common[53], nil, nil, nil, nil, nil, 3001641, nil, 3001641, nil, nil, 3001643}
-, 
-[3001642] = {3001642, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 2, count = 2}
-}
-, 10, nil, 3, 136, nil, nil, nil, nil, nil, nil, nil, 3001642}
-, 
-[3001643] = {3001643, empty, 1, nil, 1, 94, common[53], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 3001643}
-, 
-[5220011] = {5220011, empty, 1, nil, 1, 14, common[54], nil, nil, nil, nil, nil, 1774, nil, 1774}
-, 
-[52200111] = {52200111, empty, 1, nil, 1, 14, common[54], nil, nil, nil, nil, nil, 17741, nil, 17741}
-, 
-[5220012] = {5220012, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 5, count = 4, scopeTargetType = 3}
-}
-, 1, nil, 4, 35, common[6], nil, nil, nil, nil, nil, nil, 4, nil, 4, 1773}
-, 
-[5220013] = {5220013, common[55], 1, nil, 4, 35, common[6], nil, nil, nil, nil, nil, nil, 4, nil, 4, 1773}
-, 
-[5220014] = {5220014, empty, 1, nil, 1, 14, 
-{gridCount = 100, 
-elementType = {1, 2, 3, 4, 5}
-}
-, nil, nil, nil, nil, nil, 1774, nil, 1774}
-, 
-[30013811] = {30013811, empty, 5, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 2, nil, 2, 2}
-, 
-[30013813] = {30013813, empty, 5, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 18, nil, 18}
-, 
-[30013841] = {30013841, common[22], 5, nil, 4, 98, common[40], nil, nil, nil, nil, nil, nil, 7, nil, 7}
-, 
-[30013842] = {30013842, empty, 5, nil, 4, 99, 
-{enableOnePick = 1}
-, nil, nil, nil, nil, nil, nil, 7, nil, 7}
-, 
-[30013851] = {30013851, common[22], 5, nil, 4, 98, common[39], nil, nil, nil, nil, nil, nil, 4, nil, 4}
-, 
-[30013861] = {30013861, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 2}
-, 
-[30013852] = {30013852, empty, 5, nil, 4, 98, common[39], nil, nil, nil, nil, nil, nil, 7, nil, 7}
-, 
-[30610511] = {30610511, empty, 5, nil, 3, 5, common[7], nil, nil, nil, nil, nil, nil, 30010511, nil, 30010511}
-, 
-[30013812] = {30013812, empty, 5, nil, 11, 4, common[6], nil, nil, nil, nil, nil, 2, nil, 2, 2}
-, 
-[30610512] = {30610512, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 4, count = 4}
-}
-, 5, nil, 4, 25, common[12], nil, nil, nil, nil, nil, nil, 4, nil, 4}
-, 
-[30610513] = {30610513, common[22], 5, nil, 4, 25, common[12], nil, nil, nil, nil, nil, nil, 4, nil, 4}
-, 
-[300167] = {300167, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 300167}
-, 
-[303167] = {303167, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 303167}
-, 
-[306167] = {306167, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 306167}
-, 
-[320167] = {320167, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 320167}
-, 
-[323167] = {323167, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 323167}
-, 
-[326167] = {326167, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 326167}
-, 
-[3001671] = {3001671, empty, 2, nil, 1, 9, common[6], nil, nil, nil, nil, nil, 3001671, nil, nil, nil, nil, 3001673, 3001673}
-, 
-[3001672] = {3001672, empty, 2, nil, 1, 9, common[6], nil, nil, nil, nil, nil, 3001672, nil, nil, nil, nil, 3001673, 3001673}
-, 
-[300168] = {300168, common[56], 10, nil, 1, 129, 
-{15016810, 1, 1, 1, 1}
-, nil, nil, nil, nil, nil, 300160}
-, 
-[320168] = {320168, common[56], 10, nil, 1, 129, 
-{15016810, 5, 1, 1}
-, nil, nil, nil, nil, nil, 300160}
-, 
-[3001661] = {3001661, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 3001661, nil, 3001661, 3001661, nil, 3001662, 3001662}
-, 
-[3001662] = {3001662, 
-{
-[1] = {effectType = 169, 
-trapIDList = {16016611}
-, buffID = 40016611, formulaID = 5, 
-percentList = {2.5, 2.5, 3.75, 5}
-, 
-skillList = {3001661, 3001662, 3001663, 3001664}
-}
-}
-, 10, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3001663}
-, 
-[3001301] = {3001301, empty, 10, nil, 3, 4, common[6], nil, nil, nil, nil, nil, 3001301, nil, 3001301, nil, nil, 3001303, 3001303}
-, 
-[3001302] = {3001302, empty, 10, nil, 3, 5, common[5], nil, nil, nil, nil, nil, nil, 3001302}
-, 
-[300170] = {300170, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 300170, nil, 300170}
-, 
-[3001701] = {3001701, empty, 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3001701}
-, 
-[3001702] = {3001702, 
-{
-[1] = {effectType = 168, isPickUp = 1, transportTarget = 1}
-}
-, 1, nil, 4, 146, common[6], nil, nil, nil, nil, nil, nil, 3001702, nil, 3001704, nil, nil, 3001705}
-, 
-[3001703] = {3001703, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 4, count = 99}
-}
-, 5, nil, 4, 140, nil, nil, nil, nil, nil, nil, nil, 3001703, nil, 3001704, nil, nil, 3001705}
-, 
-[3001704] = {3001704, 
-{
-[1] = {effectType = 168, isPickUp = 1, transportTarget = 0}
-}
-, 1, nil, 4, 146, common[6], nil, nil, nil, nil, nil, nil, 3001702, nil, 3001704, nil, nil, 3001705}
-, 
-[3001731] = {3001731, empty, 5, nil, 1, 31, common[6], nil, nil, nil, nil, nil, 3001731, nil, 3001731, 3001731}
-, 
-[3001732] = {3001732, empty, 1, nil, 4, 98, common[45], nil, nil, nil, nil, nil, nil, 3001732, nil, 3001732}
-, 
-[3001733] = {3001733, empty, 1, nil, 4, 98, common[46], nil, nil, nil, nil, nil, nil, 3001733, nil, 3001733}
-, 
-[3001734] = {3001734, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 3001731}
-, 
-[32017211] = {32017211, empty, 5, nil, 1, 148, common[57], nil, nil, nil, nil, nil, 7, nil, 300112, 300112}
-, 
-[32017212] = {32017212, common[25], 1, nil, 3, 149, common[57], nil, nil, nil, nil, nil, nil, 29}
-, 
-[3001691] = {3001691, common[58], 1, nil, 1, 1, common[12], nil, nil, nil, nil, nil, 3001691, nil, 3001691, 3001691}
-, 
-[3001692] = {3001692, common[58], 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3001692, nil, 3001691}
-, 
-[30016911] = {30016911, common[59], 1, nil, 1, 1, common[12], nil, nil, nil, nil, nil, 3001691, nil, 3001691, 3001691}
-, 
-[30016921] = {30016921, common[59], 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3001692, nil, 3001691}
-, 
-[30017211] = {30017211, empty, 5, nil, 1, 148, common[57], nil, nil, nil, nil, nil, 7, nil, 7}
-, 
-[30017212] = {30017212, common[25], 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 5, 6}
-, 
-[30017511] = {30017511, empty, 5, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 3001751, nil, 3001751, 3001751, nil, 3001753, 3001753}
-, 
-[30017512] = {30017512, empty, 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 30017521}
-, 
-[30017513] = {30017513, empty, 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 30017522}
-, 
-[30017514] = {30017514, empty, 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 30017523}
-, 
-[30017515] = {30017515, empty, 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 30017524}
-, 
-[30017531] = {30017531, empty, 5, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 30017531, nil, 30017531, 30017531, nil, 30017533, 30017533}
-, 
-[30017532] = {30017532, empty, 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 30017532}
-, 
-[30017533] = {30017533, empty, 5, nil, 1, 5, common[18], nil, nil, nil, nil, nil, 30017531, nil, 30017531, 30017531, nil, 30017533, 30017533}
-, 
-[30017611] = {30017611, common[60], 47, common[73], 1, 8, common[9], nil, nil, nil, nil, nil, 4403}
-, 
-[30017612] = {30017612, common[60], 47, common[73], 1, 8, common[18], nil, nil, nil, nil, nil, 4403}
-, 
-[30017811] = {30017811, common[43], 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 30017811}
-, 
-[30017812] = {30017812, common[43], 31, nil, 1, 4, common[12], nil, nil, nil, nil, nil, 30017812}
-, 
-[30017813] = {30017813, common[43], 62, nil, 1, 4, common[12], nil, nil, nil, nil, nil, 30017813}
-, 
-[300181101] = {300181101, empty, 1, nil, 1, 14, 
-{gridCount = 100, 
-elementType = {2}
-}
-, nil, nil, nil, nil, nil, 1774, nil, 1774}
-, 
-[300181102] = {300181102, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 2, count = 1, scopeTargetType = 3}
-}
-, 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 4, nil, 4, 1773}
-, 
-[300181211] = {300181211, empty, 5, nil, 1, 86, 
-{
-[1] = {scopeType = 152, 
-scopeParam = {2}
-, targetType = 5, scopeCenterType = 1}
-, 
-[2] = {scopeType = 118, 
-scopeParam = {16018111}
-, targetType = 5, scopeCenterType = 1}
-}
-, nil, nil, nil, nil, nil, 30018121, 30018121, 30018121, 30018121, nil, 30018122, 30018122}
-, 
-[300181212] = {300181212, empty, 64, common[74], 8, 35, common[6], nil, nil, nil, nil, nil, nil, 30018121}
-, 
-[300181213] = {300181213, empty, 64, common[74], 3, 35, common[6], nil, nil, nil, nil, nil, nil, 30018121}
-, 
-[30018211] = {30018211, common[52], 1, nil, 3, 5, common[7], nil, nil, nil, nil, nil, nil, 30018211, nil, 30018211}
-, 
-[31018211] = {31018211, common[23], 1, nil, 1, 5, common[4], nil, nil, nil, nil, nil, 4403}
-, 
-[31018212] = {31018212, common[52], 1, nil, 3, 5, common[7], nil, nil, nil, nil, nil, nil, 30018212, nil, 30018212}
-, 
-[32018211] = {32018211, common[52], 1, nil, 3, 7, common[5], nil, nil, nil, nil, nil, nil, 30018212, nil, 30018212}
-, 
-[30018511] = {30018511, empty, 5, nil, 1, 1, common[18], nil, nil, nil, nil, nil, 30018511, nil, 30018511}
-, 
-[30018512] = {30018512, common[25], 5, nil, 1, 1, common[18], nil, nil, nil, nil, nil, nil, 5, 6}
-, 
-[30018521] = {30018521, empty, 1, nil, 1, 32, common[6], nil, nil, nil, nil, nil, 30018520, nil, 30018520}
-, 
-[30018522] = {30018522, common[61], 1, nil, 3, 97, common[6], nil, nil, nil, nil, nil, nil, 30018521}
-, 
-[3061841] = {3061841, empty, 5, nil, 3, 5, common[12], nil, nil, nil, nil, nil, 7}
-, 
-[3061842] = {3061842, common[25], 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 5, 6, nil, nil, 6, 6}
-, 
-[3001841] = {3001841, empty, 5, nil, 1, 7, common[9], nil, nil, nil, nil, nil, 7}
-, 
-[3031841] = {3031841, empty, 5, nil, 1, 5, common[9], nil, nil, nil, nil, nil, 7}
-, 
-[3001842] = {3001842, common[62], 5, nil, 4, 98, 
-{
-{scopeType = 7, 
-scopeParam = {2}
-, useCasterPos = 1}
-, 
-{scopeType = 7, 
-scopeParam = {2}
-, centerPosIndex = -1, centerPosCheckTrapID = 14}
-; useLastAsDefault = 1, OnlyCanMove = true, ScopeCenterType = 4}
-, nil, nil, nil, nil, nil, nil, 3001841, 3001841, 3001841, nil, 6, 6}
-, 
-[3031842] = {3031842, common[62], 5, nil, 4, 98, 
-{
-{scopeType = 5, 
-scopeParam = {2}
-, useCasterPos = 1}
-, 
-{scopeType = 7, 
-scopeParam = {2}
-, centerPosIndex = -1, centerPosCheckTrapID = 14}
-; useLastAsDefault = 1, OnlyCanMove = true, ScopeCenterType = 4}
-, nil, nil, nil, nil, nil, nil, 3001841, 3001841, 3001841, nil, 6, 6}
-, 
-[888526101] = {888526101, empty, 5, nil, 1, 10, common[12], nil, nil, nil, nil, nil, 888526101}
-, 
-[888526102] = {888526102, empty, 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 888526101, 888526101}
-, 
-[3001891] = {3001891, empty, 10, nil, 1, 38, nil, nil, nil, nil, nil, nil, 3001891, nil, 3001893, 3001891}
-, 
-[3001892] = {3001892, empty, 10, nil, 1, 159, 
-{2, 40018910, 20, 1}
-, nil, nil, nil, nil, nil, nil, 3001892}
-, 
-[3061891] = {3061891, empty, 10, nil, 1, 1, common[63], nil, nil, nil, nil, nil, 3001891, nil, 3001893, 3001891}
-, 
-[3301892] = {3301892, empty, 1, nil, 1, 5, common[47], nil, nil, nil, nil, nil, 3301892}
-, 
-[30019310] = {30019310, empty, 10, nil, 1, 3, common[12], nil, nil, nil, nil, nil, 30019310, nil, 30019330}
-, 
-[30019320] = {30019320, empty, 10, nil, 3, 46, common[6], nil, nil, nil, nil, nil, nil, 30019320, nil, 30019310}
-, 
-[3001931] = {3001931, empty, 10, nil, 1, 3, common[9], nil, nil, nil, nil, nil, 3001931, nil, 3001933}
-, 
-[3001932] = {3001932, empty, 10, nil, 3, 46, common[6], nil, nil, nil, nil, nil, nil, 3001932, nil, 3001931}
-, 
-[3300931] = {3300931, empty, 3, nil, 1, 5, common[64], nil, nil, nil, nil, nil, 7, nil, 7}
-, 
-[3300932] = {3300932, empty, 3, nil, 1, 5, common[1], nil, nil, nil, nil, nil, 7, nil, 7}
-, 
-[3001911] = {3001911, empty, 10, nil, 1, 7, common[18], nil, nil, nil, nil, nil, 3001910, nil, 3001910}
-, 
-[3001912] = {3001912, common[61], 10, nil, 3, 97, common[6], nil, nil, nil, nil, nil, nil, 3001911}
-, 
-[3001913] = {3001913, empty, 10, nil, 1, 72, common[18], nil, nil, nil, nil, nil, 3001910, nil, 3001910}
-, 
-[3001914] = {3001914, common[61], 10, nil, 3, 97, common[6], nil, nil, nil, nil, nil, nil, 3001911}
-, 
-[3001915] = {3001915, empty, 10, nil, 1, 5, common[64], nil, nil, nil, nil, nil, 3001910, nil, 3001910}
-, 
-[3001916] = {3001916, empty, 10, nil, 1, 1, common[12], nil, nil, nil, nil, nil, 3001912}
-, 
-[3001917] = {3001917, empty, 10, nil, 1, 5, common[12], nil, nil, nil, nil, nil, 3001912}
-, 
-[3001992] = {3001992, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 4, count = 1, ignoreBlock = 1}
-}
-, 3, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 8901, nil, 8901}
-, 
-[30019211] = {30019211, common[52], 1, nil, 3, 7, common[5], nil, nil, nil, nil, nil, nil, 30018211, nil, 30018211}
-, 
-[30019213] = {30019213, common[23], 1, nil, 1, 5, common[4], nil, nil, nil, nil, nil, 4403}
-, 
-[30019212] = {30019212, common[52], 1, nil, 3, 5, common[5], nil, nil, nil, nil, nil, nil, 30018212, nil, 30018212}
-, 
-[3002001] = {3002001, empty, 1, nil, 1, 32, common[6], nil, nil, nil, nil, nil, 3002002, nil, 3002002, 3002002}
-, 
-[3002002] = {3002002, 
-{
-[1] = {effectType = 67, tractionCenterType = 1, canMoveToCenter = 1, finalDamageIncreaseRate = 0, isPreview = 1}
-}
-, 1, nil, 14, 145, common[65], nil, nil, nil, nil, nil, nil, 3002001, nil, 3002001}
-, 
-[3202002] = {3202002, 
-{
-[1] = {effectType = 67, tractionCenterType = 1, canMoveToCenter = 1, finalDamageIncreaseRate = 0, isPreview = 1, petANaTuoLiCanTractionSelf = 1}
-}
-, 1, nil, 15, 145, common[65], nil, nil, nil, nil, nil, nil, 3002004, nil, 3002004}
-, 
-[3002003] = {3002003, empty, 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3002003, nil, 3002003}
-, 
-[3002021] = {3002021, common[66], 1, nil, 1, 5, common[18], nil, nil, nil, nil, nil, 5601, nil, 5601, 5601, 5602}
-, 
-[3002022] = {3002022, common[66], 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 5602}
-, 
-[3302021] = {3302021, empty, 10, nil, 3, 36, common[6], nil, nil, nil, nil, nil, 3302021, nil, 3302021, 3302021, 6202}
-, 
-[3302022] = {3302022, common[50], 10, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3302022, nil, 3302022}
-, 
-[3002031] = {3002031, empty, 1, nil, 1, 5, common[4], nil, nil, nil, nil, nil, 3002031}
-, 
-[500001] = {500001, empty, 5, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 500012, nil, 500012}
-, 
-[500011] = {500011, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 1, count = 5}
-}
-, 5, nil, 3, 1, common[63], nil, nil, nil, nil, nil, nil, 500011}
-, 
-[500012] = {500012, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 500012}
-, 
-[3000651] = {3000651, empty, 5, nil, 1, 47, common[12], nil, nil, nil, nil, nil, 7}
-, 
-[1521001] = {1521001, empty, 3, nil, 1, 5, common[5], nil, nil, nil, nil, nil, 7, nil, 7}
-, 
-[15221001] = {15221001, empty, 5, nil, 3, 5, common[7], nil, nil, nil, nil, nil, nil, 7, nil, 31}
-, 
-[15221002] = {15221002, empty, 5, nil, 3, 113, 
-{
-[1] = {scopeType = 5, 
-scopeParam = {1, 1}
-}
-, 
-[2] = {scopeType = 47, 
-scopeParam = {4}
-}
-}
-, nil, nil, nil, nil, nil, nil, 1522, nil, 31}
-, 
-[1523001] = {1523001, empty, 5, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 6}
-, 
-[1025001] = {1025001, empty, 5, nil, 1, 16, 
-{11, 5}
-, nil, nil, nil, nil, nil, 2100111, nil, 210}
-, 
-[1026001] = {1026001, empty, 5, nil, 3, 33, common[67], nil, nil, nil, nil, nil, nil, 22, nil, 22}
-, 
-[1027001] = {1027001, common[17], 5, nil, 3, 33, common[67]}
-, 
-[1032001] = {1032001, empty, 5, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 28, nil, 31, nil, nil, 30}
-, 
-[1033001] = {1033001, empty, 5, nil, 3, 5, common[9], nil, nil, nil, nil, nil, nil, 7}
-, 
-[10330011] = {10330011, empty, 5, nil, 3, 113, 
-{
-[1] = {scopeType = 5, 
-scopeParam = {2, 1}
-}
-, 
-[2] = {scopeType = 47, 
-scopeParam = {3, 2}
-}
-}
-, nil, nil, nil, nil, nil, nil, 29}
-, 
-[10151001] = {10151001, empty, 5, nil, 3, 7, common[5], nil, nil, nil, nil, nil, nil, 7}
-, 
-[10151002] = {10151002, empty, 5, nil, 3, 113, 
-{
-[1] = {scopeType = 7, 
-scopeParam = {2, 1}
-}
-, 
-[2] = {scopeType = 47, 
-scopeParam = {3}
-}
-}
-, nil, nil, nil, nil, nil, nil, 1742001}
-, 
-[30003001] = {30003001, empty, 5, nil, 1, 38, nil, nil, nil, nil, nil, nil, 21, nil, 3200303}
-, 
-[30003002] = {30003002, empty, 5, nil, 1, 61, common[12], nil, nil, nil, nil, nil, nil, 7, nil, 21}
-, 
-[30003003] = {30003003, empty, 5, nil, 1, 113, 
-{
-[1] = {scopeType = 61, 
-scopeParam = {1}
-}
-, 
-[2] = {scopeType = 47, 
-scopeParam = {3, 4}
-}
-}
-, nil, nil, nil, nil, nil, nil, 3200301, nil, 21}
-, 
-[10301001] = {10301001, empty, 5, nil, 3, 46, common[6], nil, nil, nil, nil, nil, nil, 7, nil, 16126}
-, 
-[10301002] = {10301002, empty, 5, nil, 3, 113, 
-{
-[1] = {scopeType = 46, 
-scopeParam = {0}
-}
-, 
-[2] = {scopeType = 47, 
-scopeParam = {1, 2, 3}
-}
-}
-, nil, nil, nil, nil, nil, nil, 1742001, nil, 16126}
-, 
-[3002041] = {3002041, empty, 1, nil, 1, 32, common[6], nil, nil, nil, nil, nil, 3001371, nil, 3001371}
-, 
-[3002042] = {3002042, empty, 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3002042}
-, 
-[3002051] = {3002051, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 12, nil, 12}
-, 
-[3002052] = {3002052, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 1, count = 4}
-}
-, 5, nil, 3, 78, common[12], nil, nil, nil, nil, nil, nil, 3002052, nil, 3002052}
-, 
-[3002070] = {3002070, empty, 5, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 3002072, nil, 3002072, nil, nil, 3002074, 3002074}
-, 
-[3002071] = {3002071, common[68], 5, nil, 4, 172, common[6], nil, nil, nil, nil, nil, nil, 3002071}
-, 
-[3002072] = {3002072, 
-{
-[1] = {effectType = 4, 
-src = {2, 3, 4}
-, target = 1, count = 1}
-}
-, 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3002073}
-, 
-[3002073] = {3002073, common[68], 5, nil, 4, 172, common[6], nil, nil, nil, nil, nil, nil, 3002075}
-, 
-[3002061] = {3002061, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 3002062, nil, 3002062}
-, 
-[3002062] = {3002062, 
-{
-[1] = {effectType = 3, type = 1, dir = 5, distance = 12, calcType = 1}
-, 
-[2] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 2, count = 200}
-}
-, 10, nil, 3, 28, common[10], nil, nil, nil, nil, nil, nil, 3002061}
-, 
-[3002063] = {3002063, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 3002062}
-, 
-[3101691] = {3101691, empty, 1, nil, 1, 1, common[12], nil, nil, nil, nil, nil, 3102061, nil, 3102061, 3102061}
-, 
-[3101692] = {3101692, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 2, count = 1, scopeCenterType = 3, scopeTargetType = 5, scopeType = 35, 
-scopeParam = {}
-}
-}
-, 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3102062, nil, 3102061}
-, 
-[3301691] = {3301691, empty, 1, nil, 1, 5, common[12], nil, nil, nil, nil, nil, 3102061, nil, 3102061, 3102061}
-, 
-[3002091] = {3002091, empty, 10, nil, 3, 4, common[6], nil, nil, nil, nil, nil, 3001331, nil, 3001331}
-, 
-[3002092] = {3002092, empty, 10, nil, 3, 5, common[5], nil, nil, nil, nil, nil, nil, 3002091}
-, 
-[3002093] = {3002093, empty, 10, nil, 3, 5, common[7], nil, nil, nil, nil, nil, nil, 3002091}
-, 
-[3002094] = {3002094, empty, 10, nil, 3, 4, common[6], nil, nil, nil, nil, nil, 3002091}
-, 
-[3001051] = {3001051, empty, 1, nil, 1, 32, common[6], nil, nil, nil, nil, nil, 3001050, nil, 3001050}
-, 
-[3001052] = {3001052, empty, 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3001051, nil, 3001051}
-, 
-[52200131] = {52200131, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 4, count = 5}
-}
-, 1, nil, 4, 35, common[6], nil, nil, nil, nil, nil, nil, 4, nil, 4, 1773}
-, 
-[52200132] = {52200132, common[55], 1, nil, 4, 35, common[6], nil, nil, nil, nil, nil, nil, 4, nil, 4, 1773}
-, 
-[30013814] = {30013814, empty, 5, nil, 3, 4, common[6], nil, nil, nil, nil, nil, 2, nil, 2, 2}
-, 
-[30013815] = {30013815, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3}
-, target = 4, count = 3}
-, 
-[2] = {effectType = 4, 
-src = {1, 2, 3}
-, target = 5, count = 3}
-}
-, 5, nil, 3, 14, 
-{gridCount = 6, 
-elementType = {1, 2, 3}
-, 
-excludeTrap = {61, 64}
-}
-, nil, nil, nil, nil, nil, nil, 30013815, nil, 30013815, 1773}
-, 
-[30013816] = {30013816, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4}
-, target = 5, count = 6}
-}
-, 5, nil, 3, 14, 
-{gridCount = 6, 
-elementType = {1, 2, 3, 4}
-, 
-excludeTrap = {61, 64}
-}
-, nil, nil, nil, nil, nil, nil, 30013815, nil, 30013815, 1773}
-, 
-[30021010] = {30021010, empty, 10, nil, 1, 1, common[12], nil, nil, nil, nil, nil, 30021010, nil, 30021010}
-, 
-[30021020] = {30021020, 
-{
-[1] = {effectType = 8, teleport = 45}
-}
-, 10, nil, 3, 55, common[12], nil, nil, nil, nil, nil, nil, 30021020, nil, 30021010}
-, 
-[30221010] = {30221010, empty, 10, nil, 1, 5, common[12], nil, nil, nil, nil, nil, 30021010, nil, 30021010}
-, 
-[280240101] = {280240101, 
-{
-[1] = {effectType = 1, 
-percent = {0.05}
-, formulaID = 10}
-, 
-[2] = {effectType = 5, prob = 1, buffID = 290610106, buffTargetType = 29}
-}
-, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 280240101}
-, 
-[3002121] = {3002121, empty, 5, nil, 1, 31, common[6], nil, nil, nil, nil, nil, 3002121, nil, 3002121, 3002121}
-, 
-[3002122] = {3002122, empty, 1, nil, 4, 98, common[69], nil, nil, nil, nil, nil, nil, 3002122, nil, 3002122}
-, 
-[3002123] = {3002123, empty, 1, nil, 4, 98, common[46], nil, nil, nil, nil, nil, nil, 3002123, nil, 3002123}
-, 
-[3002124] = {3002124, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 3002121}
-, 
-[3002125] = {3002125, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 3, count = 2, scopeTargetType = 5, scopeCenterType = 4, scopeType = 35, scopeParam = 0}
-}
-, 1, nil, 4, 35, common[6], nil, nil, nil, nil, nil, nil, 4, nil, 4}
-, 
-[3002126] = {3002126, empty, 1, nil, 4, 98, 
-{
-{scopeType = 4, scopeParam = 1}
-, 
-{scopeType = 5, 
-scopeParam = {4, 0}
-, centerPosIndex = 1}
-, 
-{}
-}
-, nil, nil, nil, nil, nil, nil, 3002122, nil, 3002122}
-, 
-[3002131] = {3002131, empty, 5, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 3002131, nil, 3002131, 3002131, nil, nil, 3002135}
-, 
-[3002132] = {3002132, empty, 5, nil, 3, 5, common[5], nil, nil, nil, nil, nil, nil, 3002132, nil, 3002132}
-, 
-[3002133] = {3002133, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 3002131}
-, 
-[3002134] = {3002134, empty, 5, nil, 3, 5, common[5], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 3002134}
-, 
-[30013411] = {30013411, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 30013411, nil, 30013411}
-, 
-[30013412] = {30013412, 
-{
-[1] = {effectType = 3, type = 1, dir = 7, distance = 99, calcType = 1, usePickPosIndex = 1}
-}
-, 10, nil, 4, 145, 
-{widthThreshold = 1.414, noExtend = 0, init = 1, dest = 2}
-, nil, nil, nil, nil, nil, nil, 30013412, nil, 30013412}
-, 
-[300187] = {300187, empty, 1, nil, 3, 7, common[9], nil, nil, nil, nil, nil, nil, 300187}
-, 
-[300188] = {300188, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 18, nil, 18}
-, 
-[3001881] = {3001881, common[30], 10, nil, 4, 145, 
-{widthThreshold = 1.414, noExtend = 1, init = 1, dest = 2}
-, nil, nil, nil, nil, nil, nil, 20, nil, 20}
-, 
-[3002151] = {3002151, empty, 5, nil, 1, 152, common[9], nil, nil, nil, nil, nil, 3002152, 3002152, 3002152, 3002152, nil, 3002153, 3002153}
-, 
-[3002152] = {3002152, empty, 1, nil, 8, 35, common[6], nil, nil, nil, nil, nil, nil, 3002152}
-, 
-[30021411] = {30021411, empty, 1, nil, 3, 5, common[7], nil, nil, nil, nil, nil, nil, 30021411, nil, 30021411}
-, 
-[30621411] = {30621411, empty, 1, nil, 3, 7, common[5], nil, nil, nil, nil, nil, nil, 30021411, nil, 30021411}
-, 
-[30021415] = {30021415, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 30021410}
-, 
-[30021412] = {30021412, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 1, count = 1}
-}
-, 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 30021413, nil, 30021413}
-, 
-[30021413] = {30021413, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 1, count = 3}
-}
-, 5, nil, 3, 14, 
-{gridCount = 3, 
-elementType = {1}
-, 
-excludeTrap = {61, 64, 2803501}
-, excludeCenterPos = 1}
-, nil, nil, nil, nil, nil, nil, 30021413, nil, 30021413}
-, 
-[30021414] = {30021414, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 1, count = 5}
-}
-, 5, nil, 3, 14, 
-{gridCount = 5, 
-elementType = {1}
-, 
-excludeTrap = {61, 64, 2803501}
-, excludeCenterPos = 1}
-, nil, nil, nil, nil, nil, nil, 30021413, nil, 30021413}
-, 
-[30021410] = {30021410, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 12, nil, 12}
-, 
-[50546011] = {50546011, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 1294, nil, 1294, 1294, 1296}
-, 
-[50546012] = {50546012, empty, 1, nil, 3, 52, common[6], nil, nil, nil, nil, nil, nil, 1295}
-, 
-[50547011] = {50547011, empty, 5, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 2, nil, 2, 2}
-, 
-[50547012] = {50547012, empty, 5, nil, 3, 14, 
-{gridCount = 4, useCenterPosPieceType = 1, 
-excludeTrap = {61, 64}
-, excludeCenterPos = 1}
-, nil, nil, nil, nil, nil, nil, 30010511, nil, 30010511}
-, 
-[3002161] = {3002161, empty, 5, nil, 3, 4, common[6], nil, nil, nil, nil, nil, 3002160, nil, 3002160}
-, 
-[3002162] = {3002162, empty, 5, nil, 3, 5, common[5], nil, nil, nil, nil, nil, nil, 3002161}
-, 
-[3002163] = {3002163, empty, 5, nil, 3, 5, common[7], nil, nil, nil, nil, nil, nil, 3002161}
-, 
-[3002191] = {3002191, common[70], 5, nil, 3, 4, common[6], nil, nil, nil, nil, nil, 3002190, 3002193, 3002193, nil, nil, 3002192, 3002192}
-, 
-[3002192] = {3002192, empty, 5, nil, 3, 4}
-, 
-[3302191] = {3302191, common[70], 5, nil, 1, 118, 
-{16021913, 16021914, 16021917, 16021918, 160219111, 160219112, 160219115, 160219116, 160219117, 160219118}
-, nil, nil, nil, nil, nil, 3302190, 3302193, 3302191, 3302194, nil, 3302192, 3302192}
-, 
-[3302192] = {3302192, empty, 5, nil, 3, 4, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 3302194, 3302194}
-, 
-[16021911] = {16021911, empty, 5, nil, 1, 7, common[9], nil, nil, nil, nil, nil, 7, nil, 7}
-, 
-[16021912] = {16021912, common[25], 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 16021912}
-, 
-[16021913] = {16021913, empty, 5, nil, 1, 5, common[9], nil, nil, nil, nil, nil, 7, nil, 7}
-, 
-[3002181] = {3002181, empty, 5, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 3002160, nil, 3002160}
-, 
-[3002182] = {3002182, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 1, count = 1}
-}
-, 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3002181}
-, 
-[3002183] = {3002183, empty, 10, nil, 3, 1, common[12], nil, nil, nil, nil, nil, nil, 3002182, nil, 3002160}
-, 
-[3002184] = {3002184, empty, 10, nil, 3, 7, common[9], nil, nil, nil, nil, nil, nil, 3002182, nil, 3002160}
-, 
-[3002211] = {3002211, empty, 1, nil, 8, 35, nil, nil, nil, nil, nil, nil, 3002211, 3002212, 3002211, 3002216, nil, 3002215, 3002215, 3002215}
-, 
-[3002212] = {3002212, empty, 1, nil, 8, 5, common[12], nil, nil, nil, nil, nil, nil, 3002213, nil, 3002213}
-, 
-[3002213] = {3002213, empty, 1, nil, 4, 183, nil, nil, nil, nil, nil, nil, nil, nil, nil, 3002214}
-, 
-[3002214] = {3002214, empty, 1, nil, 8, 7, 
-{2, 0}
-, nil, nil, nil, nil, nil, nil, 3002213, nil, 3002213}
-, 
-[28029021] = {28029021, empty, 2, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 280240101}
-, 
-[3002231] = {3002231, empty, 5, nil, 1, 3, common[4], nil, nil, nil, nil, nil, 3002231, nil, 3002233, 3002233}
-, 
-[3002232] = {3002232, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 4, scopeTargetType = 5, count = 99}
-}
-, 5, nil, 3, 184, common[6], nil, nil, nil, nil, nil, nil, 3002232}
-, 
-[802401] = {802401, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 1774, nil, 1774}
-, 
-[802402] = {802402, empty, 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 7, nil, 7}
-, 
-[802403] = {802403, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 1774, nil, 802401}
-, 
-[802404] = {802404, 
-{
-[1] = {effectType = 1, 
-percent = {0.05}
-, formulaID = 11}
-, 
-[2] = {effectType = 3, type = 1, dir = 7, distance = 12, calcType = 1}
-}
-, 1, nil, 3, 5, common[12], nil, nil, nil, nil, nil, nil, 802402, nil, 802403}
-, 
-[5064701] = {5064701, empty, 5, nil, 3, 5, common[5], nil, nil, nil, nil, nil, nil, 30010511, nil, 30010511}
-, 
-[3002251] = {3002251, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 3002251, nil, 3002251, 3002251, 6202}
-, 
-[3002252] = {3002252, common[50], 10, nil, 3, 190, 
-{widthThreshold = 1.414, stepRate = 0.3}
-, nil, nil, nil, nil, nil, nil, 3002252}
-, 
-[3002281] = {3002281, empty, 5, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 7, nil, 7}
-, 
-[3002282] = {3002282, empty, 5, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3002282, nil, 3002282}
-, 
-[3002283] = {3002283, empty, 5, nil, 4, 35, common[6], nil, nil, nil, nil, nil, nil, 3002282, nil, 3002282}
-, 
-[300229101] = {300229101, 
-{
-[1] = {effectType = 4, 
-src = {1, 2, 3, 4, 5}
-, target = 2, count = 4, ignoreBlock = 1}
-}
-, 5, nil, 3, 194, 
-{
-{
-{
-{0, 0}
-, 
-{0, 1}
-, 
-{1, 0}
-, 
-{1, 1}
-}
-, 
-{
-{0, 0}
-, 
-{1, 0}
-, 
-{0, -1}
-, 
-{1, -1}
-}
-, 
-{
-{0, 0}
-, 
-{-1, 0}
-, 
-{0, -1}
-, 
-{-1, -1}
-}
-, 
-{
-{0, 0}
-, 
-{-1, 0}
-, 
-{-1, -1}
-, 
-{0, 1}
-}
-}
-, 
-{
-{
-{0, 0}
-, 
-{0, 1}
-, 
-{0, -1}
-, 
-{0, 2}
-}
-, 
-{
-{0, 0}
-, 
-{1, 0}
-, 
-{-1, 0}
-, 
-{2, 0}
-}
-, 
-{
-{0, 0}
-, 
-{0, -1}
-, 
-{0, 1}
-, 
-{0, -2}
-}
-, 
-{
-{0, 0}
-, 
-{1, 0}
-, 
-{-2, 0}
-, 
-{-1, 0}
-}
-}
-, 
-{
-{
-{0, 0}
-, 
-{0, 1}
-, 
-{0, -1}
-, 
-{-1, 0}
-}
-, 
-{
-{0, 0}
-, 
-{1, 0}
-, 
-{-1, 0}
-, 
-{0, 1}
-}
-, 
-{
-{0, 0}
-, 
-{0, -1}
-, 
-{0, 1}
-, 
-{1, 0}
-}
-, 
-{
-{0, 0}
-, 
-{1, 0}
-, 
-{-1, 0}
-, 
-{0, -1}
-}
-}
-, 
-{
-{
-{0, 0}
-, 
-{1, 0}
-, 
-{-1, 0}
-, 
-{-1, 1}
-}
-, 
-{
-{0, 0}
-, 
-{0, 1}
-, 
-{1, 1}
-, 
-{0, -1}
-}
-, 
-{
-{0, 0}
-, 
-{1, 0}
-, 
-{-1, 0}
-, 
-{1, -1}
-}
-, 
-{
-{0, 0}
-, 
-{0, 1}
-, 
-{0, -1}
-, 
-{-1, -1}
-}
-}
-, 
-{
-{
-{0, 0}
-, 
-{0, 1}
-, 
-{1, 1}
-, 
-{-1, 0}
-}
-, 
-{
-{0, 0}
-, 
-{0, 1}
-, 
-{1, 0}
-, 
-{1, -1}
-}
-, 
-{
-{0, 0}
-, 
-{1, 0}
-, 
-{0, -1}
-, 
-{-1, -1}
-}
-, 
-{
-{0, 0}
-, 
-{0, -1}
-, 
-{-1, 0}
-, 
-{-1, 1}
-}
-}
-, 
-{
-{
-{0, 0}
-, 
-{0, 1}
-, 
-{-1, 0}
-, 
-{-1, -1}
-}
-, 
-{
-{0, 0}
-, 
-{1, 0}
-, 
-{0, 1}
-, 
-{-1, 1}
-}
-, 
-{
-{0, 0}
-, 
-{1, 0}
-, 
-{1, 1}
-, 
-{0, -1}
-}
-, 
-{
-{0, 0}
-, 
-{0, -1}
-, 
-{1, -1}
-, 
-{-1, 0}
-}
-}
-, 
-{
-{
-{0, 0}
-, 
-{1, 0}
-, 
-{1, 1}
-, 
-{-1, 0}
-}
-, 
-{
-{0, 0}
-, 
-{0, -1}
-, 
-{1, -1}
-, 
-{0, 1}
-}
-, 
-{
-{0, 0}
-, 
-{1, 0}
-, 
-{-1, 0}
-, 
-{-1, -1}
-}
-, 
-{
-{0, 0}
-, 
-{0, 1}
-, 
-{0, -1}
-, 
-{-1, 1}
-}
-}
-}
-, nil, nil, nil, nil, nil, nil, 300229101, 300229102, 300229103, nil, 300229102}
-, 
-[300229102] = {300229102, empty, 1, nil, 4, 35, common[6], nil, nil, nil, nil, nil, nil, 300229104, 5802, nil, 1296}
-, 
-[3401091] = {3401091, common[31], 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 109011, nil, 10903, 10903, 6202}
-, 
-[3401092] = {3401092, common[32], 10, nil, 3, 189, 
-{widthThreshold = 1.414, bSortFromBack = 1}
-, nil, nil, nil, nil, nil, nil, 10902}
-, 
-[3002311] = {3002311, empty, 5, nil, 1, 31, common[6], nil, nil, nil, nil, nil, 3002311, nil, 3002311, 3002311}
-, 
-[3002312] = {3002312, empty, 10, nil, 4, 98, common[45], nil, nil, nil, nil, nil, nil, 3002312, nil, 3002312}
-, 
-[3002313] = {3002313, empty, 10, nil, 4, 98, common[46], nil, nil, nil, nil, nil, nil, 3002313, nil, 3002313}
-, 
-[3002314] = {3002314, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 3002311}
-, 
-[3032311] = {3032311, empty, 5, nil, 1, 31, common[6], nil, nil, nil, nil, nil, 3032311, nil, 3032311, 3032311}
-, 
-[3032312] = {3032312, empty, 10, nil, 4, 98, common[69], nil, nil, nil, nil, nil, nil, 3032312, nil, 3032312}
-, 
-[3032313] = {3032313, empty, 10, nil, 4, 98, common[46], nil, nil, nil, nil, nil, nil, 3032313, nil, 3032313}
-, 
-[3032314] = {3032314, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 3032311}
-, 
-[3202311] = {3202311, empty, 5, nil, 1, 31, common[6], nil, nil, nil, nil, nil, 3202311, nil, 3202311, 3202311}
-, 
-[3202312] = {3202312, empty, 10, nil, 4, 98, common[45], nil, nil, nil, nil, nil, nil, 3202312, nil, 3202312}
-, 
-[3202313] = {3202313, empty, 10, nil, 4, 98, common[46], nil, nil, nil, nil, nil, nil, 3202313, nil, 3202313}
-, 
-[3202314] = {3202314, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 3202311}
-, 
-[3232311] = {3232311, empty, 5, nil, 1, 31, common[6], nil, nil, nil, nil, nil, 3232311, nil, 3232311, 3232311}
-, 
-[3232312] = {3232312, empty, 10, nil, 4, 98, common[69], nil, nil, nil, nil, nil, nil, 3232312, nil, 3232312}
-, 
-[3232313] = {3232313, empty, 10, nil, 4, 98, common[46], nil, nil, nil, nil, nil, nil, 3232313, nil, 3232313}
-, 
-[3232314] = {3232314, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, nil, nil, 3232311}
-, 
-[300232101] = {300232101, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 300232101, nil, 300232101}
-, 
-[300232102] = {300232102, empty, 1, nil, 4, 35, common[6], nil, nil, nil, nil, nil, nil, 7, nil, 7, 1773}
-, 
-[3661081] = {3661081, empty, 1, nil, 1, 5, common[4], nil, nil, nil, nil, nil, 3661081, nil, 3661081, nil, nil, 3661083, 3661083}
-, 
-[3661082] = {3661082, empty, 10, nil, 3, 1, common[12], nil, nil, nil, nil, nil, nil, 3661082}
-, 
-[3661083] = {3661083, empty, 10, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3661082}
-, 
-[3002301] = {3002301, empty, 1, nil, 1, 32, common[6], nil, nil, nil, nil, nil, 3002301, nil, 3002301}
-, 
-[3002302] = {3002302, empty, 1, nil, 3, 97, common[6], nil, nil, nil, nil, nil, nil, 3002302}
-, 
-[3002303] = {3002303, empty, 1, nil, 1, 32, common[6], nil, nil, nil, nil, nil, 3002303, nil, 3002303}
-, 
-[3002304] = {3002304, empty, 1, nil, 3, 97, common[6], nil, nil, nil, nil, nil, nil, 3002304}
-, 
-[3002305] = {3002305, empty, 1, nil, 1, 32, common[6], nil, nil, nil, nil, nil, 3002305, nil, 3002305}
-, 
-[3002306] = {3002306, empty, 1, nil, 3, 97, common[6], nil, nil, nil, nil, nil, nil, 3002306}
-, 
-[3002307] = {3002307, empty, 1, nil, 1, 32, common[6], nil, nil, nil, nil, nil, 3002307, nil, 3002307}
-, 
-[3002308] = {3002308, empty, 1, nil, 3, 97, common[6], nil, nil, nil, nil, nil, nil, 3002308}
-, 
-[3002331] = {3002331, empty, 10, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 3002331, nil, 3002331}
-, 
-[3002332] = {3002332, empty, 10, nil, 3, 72, 
-{2, 0, 1}
-, nil, nil, nil, nil, nil, nil, 3002332}
-, 
-[3002341] = {3002341, empty, 1, nil, 1, 32, common[6], nil, nil, nil, nil, nil, 3002331, nil, 3002331}
-, 
-[3002342] = {3002342, empty, 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3002332}
-, 
-[3002371] = {3002371, empty, 10, nil, 1, 7, common[9], nil, nil, nil, nil, nil, 3002371, nil, 3002371}
-, 
-[3601691] = {3601691, common[71], 1, nil, 1, 5, common[12], nil, nil, nil, nil, nil, 3001691, nil, 3001691, 3001691}
-, 
-[3601692] = {3601692, common[71], 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3001692, nil, 3001691}
-, 
-[36016911] = {36016911, common[72], 1, nil, 1, 5, common[12], nil, nil, nil, nil, nil, 3001691, nil, 3001691, 3001691}
-, 
-[36016921] = {36016921, common[72], 1, nil, 3, 35, common[6], nil, nil, nil, nil, nil, nil, 3001692, nil, 3001691}
-, 
-[30023611] = {30023611, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 30023610, nil, 30023611, nil, nil, 30023612}
-, 
-[30023612] = {30023612, empty, 1, nil, 1, 4, common[6]}
-, 
-[30023613] = {30023613, empty, 1, nil, 1, 4, common[6]}
-, 
-[30023614] = {30023614, empty, 1, nil, 1, 4, common[6]}
-, 
-[30023615] = {30023615, common[51], 10, nil, 1, 46, 
-{useTrapAsBegin = 1, 
-trapID = {17023611}
-, widthThreshold = 0.65, noExtend = 1}
-, nil, nil, nil, nil, nil, 3001565}
-, 
-[3002381] = {3002381, empty, 1, nil, 1, 4, common[6], nil, nil, nil, nil, nil, 3002381, nil, 3002381}
-, 
-[3002382] = {3002382, empty, 1, nil, 4, 35, common[6], nil, nil, nil, nil, nil, nil, 3002382, nil, 3002382}
-, 
-[30018213] = {30018213, common[52], 1, nil, 3, 7, common[5], nil, nil, nil, nil, nil, nil, 30018211, nil, 30018211}
+  [1000] = {
+    1000,
+    empty,
+    5,
+    nil,
+    8,
+    1,
+    common[1],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1
+  },
+  [1001] = {
+    1001,
+    empty,
+    1,
+    nil,
+    1,
+    11,
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2
+  },
+  [15121] = {
+    15121,
+    common[3],
+    10,
+    nil,
+    1,
+    19,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3
+  },
+  [15122] = {
+    15122,
+    common[3],
+    10,
+    nil,
+    1,
+    13,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3
+  },
+  [88001] = {
+    88001,
+    {
+      [1] = {
+        effectType = 3,
+        type = 1,
+        dir = 7,
+        distance = 12,
+        calcType = 1
+      },
+      [2] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 2,
+        count = 200
+      }
+    },
+    10,
+    nil,
+    1,
+    19,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3
+  },
+  [300022] = {
+    300022,
+    {
+      [1] = {
+        effectType = 3,
+        type = 1,
+        dir = 7,
+        distance = 12,
+        calcType = 1
+      }
+    },
+    10,
+    nil,
+    1,
+    13,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300022
+  },
+  [1421] = {
+    1421,
+    {
+      [1] = {
+        effectType = 3,
+        type = 1,
+        dir = 7,
+        distance = 12,
+        calcType = 1
+      },
+      [2] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 1,
+        count = 200
+      }
+    },
+    10,
+    nil,
+    1,
+    19,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3
+  },
+  [301001] = {
+    301001,
+    {
+      [1] = {
+        effectType = 3,
+        type = 1,
+        dir = 7,
+        distance = 12,
+        calcType = 1
+      },
+      [2] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 3,
+        count = 200
+      }
+    },
+    10,
+    nil,
+    1,
+    19,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3
+  },
+  [1004] = {
+    1004,
+    {
+      [1] = {
+        effectType = 4,
+        src = {2, 3},
+        target = 1,
+        count = 10
+      }
+    },
+    5,
+    nil,
+    1,
+    14,
+    {
+      gridCount = 10,
+      elementType = {2, 3}
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4
+  },
+  [1006] = {
+    1006,
+    empty,
+    3,
+    nil,
+    1,
+    5,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7
+  },
+  [300065] = {
+    300065,
+    empty,
+    3,
+    nil,
+    1,
+    86,
+    {
+      [1] = {
+        scopeType = 5,
+        scopeParam = {2}
+      },
+      [2] = {
+        scopeType = 47,
+        scopeParam = {1}
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7
+  },
+  [1007] = {
+    1007,
+    empty,
+    3,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    6
+  },
+  [59001] = {
+    59001,
+    empty,
+    3,
+    nil,
+    1,
+    5,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7
+  },
+  [59002] = {
+    59002,
+    empty,
+    3,
+    nil,
+    1,
+    5,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7
+  },
+  [59003] = {
+    59003,
+    empty,
+    3,
+    nil,
+    1,
+    5,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7
+  },
+  [59004] = {
+    59004,
+    empty,
+    3,
+    nil,
+    1,
+    5,
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7
+  },
+  [59005] = {
+    59005,
+    empty,
+    3,
+    nil,
+    1,
+    5,
+    {4, 1},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7
+  },
+  [59006] = {
+    59006,
+    empty,
+    3,
+    nil,
+    1,
+    5,
+    {5, 1},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7
+  },
+  [1008] = {
+    1008,
+    empty,
+    10,
+    nil,
+    3,
+    5,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    8,
+    5
+  },
+  [1009] = {
+    1009,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1
+  },
+  [1010] = {
+    1010,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    12,
+    nil,
+    12
+  },
+  [1011] = {
+    1011,
+    {
+      [1] = {
+        effectType = 3,
+        type = 1,
+        dir = 5,
+        distance = 12,
+        calcType = 1,
+        ignorePlayerBlock = true
+      },
+      [2] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 1,
+        count = 200
+      }
+    },
+    10,
+    nil,
+    3,
+    28,
+    common[10],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11
+  },
+  [1012] = {
+    1012,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    12
+  },
+  [1013] = {
+    1013,
+    common[11],
+    10,
+    nil,
+    3,
+    1,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1171
+  },
+  [10131] = {
+    10131,
+    common[11],
+    10,
+    nil,
+    3,
+    10,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1171
+  },
+  [1014] = {
+    1014,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 2,
+        count = 1,
+        ignoreBlock = 1
+      }
+    },
+    3,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    5802,
+    5802,
+    1296
+  },
+  [80001] = {
+    80001,
+    common[13],
+    3,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    5802,
+    5802,
+    1296
+  },
+  [1015] = {
+    1015,
+    empty,
+    10,
+    nil,
+    3,
+    28,
+    {
+      1,
+      1,
+      2
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    15
+  },
+  [10151] = {
+    10151,
+    empty,
+    10,
+    nil,
+    3,
+    7,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    15
+  },
+  [10152] = {
+    10152,
+    empty,
+    10,
+    nil,
+    3,
+    5,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    15
+  },
+  [1016] = {
+    1016,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    12
+  },
+  [1017] = {
+    1017,
+    {
+      [1] = {effectType = 62, targetGridElement = 4}
+    },
+    10,
+    nil,
+    3,
+    7,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    16
+  },
+  [1018] = {
+    1018,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    17
+  },
+  [1019] = {
+    1019,
+    empty,
+    10,
+    nil,
+    3,
+    7,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    15
+  },
+  [1020] = {
+    1020,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    12
+  },
+  [300122] = {
+    300122,
+    empty,
+    10,
+    nil,
+    3,
+    79,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    15
+  },
+  [3001221] = {
+    3001221,
+    empty,
+    10,
+    nil,
+    3,
+    79,
+    common[14],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    15
+  },
+  [45001] = {
+    45001,
+    empty,
+    10,
+    nil,
+    3,
+    8,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4502
+  },
+  [1021] = {
+    1021,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    18,
+    nil,
+    18
+  },
+  [1022] = {
+    1022,
+    common[15],
+    10,
+    nil,
+    4,
+    25,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    20,
+    nil,
+    20
+  },
+  [10221] = {
+    10221,
+    common[15],
+    10,
+    nil,
+    4,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    20,
+    nil,
+    20
+  },
+  [1024] = {
+    1024,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4
+        },
+        target = 1,
+        count = 8
+      }
+    },
+    1,
+    nil,
+    1,
+    8,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4
+  },
+  [1025] = {
+    1025,
+    empty,
+    10,
+    nil,
+    1,
+    16,
+    {29, 3},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2100111,
+    nil,
+    210
+  },
+  [1026] = {
+    1026,
+    empty,
+    10,
+    nil,
+    3,
+    33,
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    22,
+    nil,
+    22
+  },
+  [1027] = {
+    1027,
+    common[17],
+    5,
+    nil,
+    3,
+    33,
+    common[16]
+  },
+  [1028] = {
+    1028,
+    {
+      [1] = {
+        effectType = 3,
+        type = 1,
+        dir = 8,
+        distance = 29,
+        calcType = 1
+      }
+    },
+    10,
+    nil,
+    3,
+    33,
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    24,
+    nil,
+    24
+  },
+  [1029] = {1029, empty},
+  [1030] = {
+    1030,
+    empty,
+    10,
+    nil,
+    4,
+    55,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    26,
+    nil,
+    26
+  },
+  [10301] = {
+    10301,
+    empty,
+    10,
+    nil,
+    4,
+    46,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    16126,
+    nil,
+    16126
+  },
+  [1031] = {
+    1031,
+    empty,
+    10,
+    nil,
+    1,
+    3,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    27,
+    nil,
+    270,
+    nil,
+    nil,
+    271
+  },
+  [10311] = {
+    10311,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    12,
+    nil,
+    12
+  },
+  [1032] = {
+    1032,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    28,
+    nil,
+    31,
+    nil,
+    nil,
+    30
+  },
+  [1033] = {
+    1033,
+    empty,
+    1,
+    nil,
+    3,
+    5,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29
+  },
+  [10331] = {
+    10331,
+    empty,
+    1,
+    nil,
+    3,
+    5,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29
+  },
+  [1034] = {
+    1034,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 4,
+        count = 2,
+        ignoreBlock = 1
+      }
+    },
+    3,
+    nil,
+    4,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    8901,
+    nil,
+    8901
+  },
+  [1181] = {
+    1181,
+    {
+      [1] = {
+        effectType = 3,
+        type = 1,
+        dir = 7,
+        distance = 12,
+        calcType = 1
+      }
+    },
+    1,
+    nil,
+    1,
+    11,
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1181
+  },
+  [9031] = {
+    9031,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    9031
+  },
+  [1321] = {
+    1321,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1321
+  },
+  [1521] = {
+    1521,
+    empty,
+    3,
+    nil,
+    1,
+    5,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    7
+  },
+  [1522] = {
+    1522,
+    empty,
+    10,
+    nil,
+    3,
+    1,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1522,
+    nil,
+    31
+  },
+  [15221] = {
+    15221,
+    empty,
+    10,
+    nil,
+    3,
+    5,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1522,
+    nil,
+    31
+  },
+  [1523] = {
+    1523,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6
+  },
+  [500150] = {
+    500150,
+    {
+      [1] = {
+        effectType = 3,
+        type = 1,
+        dir = 7,
+        distance = 1,
+        calcType = 1
+      }
+    },
+    1,
+    nil,
+    1,
+    10,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    500150
+  },
+  [1511] = {
+    1511,
+    empty,
+    10,
+    nil,
+    1,
+    3,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    27,
+    nil,
+    270,
+    nil,
+    nil,
+    271
+  },
+  [1512] = {
+    1512,
+    empty,
+    10,
+    nil,
+    9,
+    8,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1511
+  },
+  [1513] = {
+    1513,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1513
+  },
+  [1331] = {
+    1331,
+    {
+      [1] = {
+        effectType = 15,
+        percent = 0.75,
+        formulaID = 5,
+        count = 5,
+        serialScopeType = 5,
+        radius = 1,
+        pieceType = 1,
+        onePieceAddAttackCount = 1
+      }
+    },
+    1,
+    nil,
+    1,
+    11,
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10005
+  },
+  [1332] = {
+    1332,
+    {
+      [1] = {
+        effectType = 15,
+        percent = 0.75,
+        formulaID = 5,
+        count = 6,
+        serialScopeType = 7,
+        radius = 2,
+        pieceType = 1,
+        onePieceAddAttackCount = 1
+      }
+    },
+    1,
+    nil,
+    1,
+    11,
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10005
+  },
+  [1701] = {
+    1701,
+    {
+      [1] = {
+        effectType = 15,
+        percent = 0.75,
+        formulaID = 5,
+        count = 5,
+        serialScopeType = 5,
+        radius = 1,
+        pieceType = 2,
+        onePieceAddAttackCount = 1
+      }
+    },
+    1,
+    nil,
+    1,
+    11,
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10005
+  },
+  [1702] = {
+    1702,
+    {
+      [1] = {
+        effectType = 15,
+        percent = 0.75,
+        formulaID = 5,
+        count = 5,
+        serialScopeType = 7,
+        radius = 2,
+        pieceType = 2,
+        onePieceAddAttackCount = 1
+      }
+    },
+    1,
+    nil,
+    1,
+    11,
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10005
+  },
+  [1291] = {
+    1291,
+    {
+      [1] = {
+        effectType = 10,
+        pieceType = 1,
+        pieceCount = 15,
+        addAttackPercent = 15,
+        minAttackPercent = 0
+      }
+    },
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1291
+  },
+  [1292] = {
+    1292,
+    empty,
+    10,
+    nil,
+    1,
+    28,
+    {
+      9,
+      1,
+      2
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1292
+  },
+  [1293] = {
+    1293,
+    empty,
+    10,
+    nil,
+    1,
+    28,
+    {
+      9,
+      2,
+      2
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1292
+  },
+  [1131] = {
+    1131,
+    empty,
+    3,
+    nil,
+    1,
+    14,
+    {
+      gridCount = 81,
+      elementType = {1}
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1131
+  },
+  [1261] = {
+    1261,
+    empty,
+    5,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1261
+  },
+  [1281] = {
+    1281,
+    common[19],
+    5,
+    nil,
+    1,
+    5,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1261
+  },
+  [1282] = {
+    1282,
+    common[19],
+    5,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1261
+  },
+  [1461] = {
+    1461,
+    common[20],
+    5,
+    nil,
+    3,
+    8,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1461,
+    nil,
+    nil,
+    nil,
+    nil,
+    1462
+  },
+  [1462] = {
+    1462,
+    common[20],
+    5,
+    nil,
+    1,
+    8,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1462,
+    nil,
+    nil,
+    1462
+  },
+  [14611] = {
+    14611,
+    common[20],
+    5,
+    nil,
+    3,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1461,
+    1462,
+    nil,
+    nil,
+    1462,
+    1462
+  },
+  [1741] = {
+    1741,
+    common[20],
+    5,
+    nil,
+    1,
+    1,
+    common[21],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1741
+  },
+  [1742] = {
+    1742,
+    empty,
+    10,
+    nil,
+    1,
+    19,
+    common[21],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1742,
+    nil,
+    301023
+  },
+  [300102] = {
+    300102,
+    {
+      [1] = {effectType = 67, casterCentered = 1}
+    },
+    5,
+    nil,
+    3,
+    33,
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    301022
+  },
+  [1811] = {
+    1811,
+    common[20],
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1741
+  },
+  [1770] = {
+    1770,
+    empty,
+    1,
+    nil,
+    1,
+    14,
+    {
+      gridCount = 100,
+      elementType = {1}
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1774,
+    nil,
+    1774
+  },
+  [1771] = {
+    1771,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 1,
+        count = 4,
+        scopeTargetType = 3
+      }
+    },
+    1,
+    nil,
+    4,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    nil,
+    4,
+    1773
+  },
+  [1772] = {
+    1772,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 1,
+        count = 5,
+        scopeTargetType = 3
+      }
+    },
+    1,
+    nil,
+    4,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    nil,
+    4,
+    1773
+  },
+  [1541] = {
+    1541,
+    common[13],
+    14,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1541,
+    4,
+    12,
+    12,
+    nil,
+    1542
+  },
+  [11271] = {
+    11271,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 3,
+        count = 1
+      }
+    },
+    14,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    11271,
+    11272,
+    12,
+    nil,
+    11272,
+    11272
+  },
+  [112711] = {
+    112711,
+    common[22],
+    14,
+    nil,
+    4,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    11271,
+    11272,
+    11273,
+    nil,
+    11272,
+    11272
+  },
+  [1294] = {
+    1294,
+    empty,
+    1,
+    nil,
+    1,
+    47,
+    {
+      1,
+      2,
+      4
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1294,
+    nil,
+    1294,
+    1294,
+    1296
+  },
+  [1295] = {
+    1295,
+    empty,
+    1,
+    nil,
+    3,
+    52,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1295
+  },
+  [1501] = {
+    1501,
+    {
+      [1] = {
+        effectType = 1,
+        percent = {2.5},
+        formulaID = 5
+      },
+      [2] = {
+        effectType = 3,
+        type = 1,
+        dir = 7,
+        distance = 12,
+        calcType = 1
+      }
+    },
+    10,
+    nil,
+    1,
+    21,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1501
+  },
+  [4403] = {
+    4403,
+    common[23],
+    1,
+    nil,
+    1,
+    5,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4403
+  },
+  [4404] = {
+    4404,
+    common[23],
+    1,
+    nil,
+    1,
+    5,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4403
+  },
+  [1901] = {
+    1901,
+    common[23],
+    1,
+    nil,
+    1,
+    54,
+    {3, 3},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4403
+  },
+  [1902] = {
+    1902,
+    common[23],
+    5,
+    nil,
+    1,
+    5,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6101
+  },
+  [1903] = {
+    1903,
+    common[23],
+    1,
+    nil,
+    1,
+    11,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4403
+  },
+  [1231] = {
+    1231,
+    common[23],
+    1,
+    nil,
+    1,
+    5,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4403
+  },
+  [1232] = {
+    1232,
+    common[23],
+    1,
+    nil,
+    1,
+    5,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4403
+  },
+  [6101] = {
+    6101,
+    empty,
+    1,
+    nil,
+    1,
+    32,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6101,
+    nil,
+    6101
+  },
+  [6102] = {
+    6102,
+    common[24],
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6102,
+    6101
+  },
+  [500251] = {
+    500251,
+    empty,
+    3,
+    nil,
+    1,
+    31,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    500251
+  },
+  [6801] = {
+    6801,
+    common[25],
+    3,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    6
+  },
+  [82100] = {
+    82100,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    821001,
+    nil,
+    821001
+  },
+  [82101] = {
+    82101,
+    empty,
+    1,
+    nil,
+    4,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    821002,
+    nil,
+    821003
+  },
+  [83100] = {
+    83100,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    821001,
+    nil,
+    821005
+  },
+  [83101] = {
+    83101,
+    common[11],
+    10,
+    nil,
+    3,
+    1,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    821004
+  },
+  [83102] = {
+    83102,
+    common[11],
+    10,
+    nil,
+    3,
+    5,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    821004
+  },
+  [86100] = {
+    86100,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    861001,
+    nil,
+    861001
+  },
+  [2701] = {
+    2701,
+    common[26],
+    10,
+    nil,
+    3,
+    46,
+    common[27],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    12
+  },
+  [2702] = {
+    2702,
+    common[26],
+    10,
+    nil,
+    3,
+    46,
+    common[27],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2702
+  },
+  [2703] = {
+    2703,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    12,
+    2702
+  },
+  [5801] = {
+    5801,
+    common[13],
+    3,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    5801,
+    14
+  },
+  [9511] = {
+    9511,
+    empty,
+    5,
+    nil,
+    3,
+    6,
+    common[7],
+    nil,
+    1,
+    nil,
+    1,
+    nil,
+    nil,
+    15
+  },
+  [9801] = {
+    9801,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[18],
+    nil,
+    nil,
+    nil,
+    1,
+    nil,
+    9801,
+    nil,
+    9801
+  },
+  [9802] = {
+    9802,
+    empty,
+    1,
+    nil,
+    8,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    9802,
+    nil,
+    9802
+  },
+  [9803] = {
+    9803,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[4],
+    nil,
+    nil,
+    nil,
+    1,
+    nil,
+    9801,
+    nil,
+    9801
+  },
+  [9701] = {
+    9701,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    12,
+    nil,
+    12
+  },
+  [9704] = {
+    9704,
+    empty,
+    10,
+    nil,
+    1,
+    5,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    150097101
+  },
+  [9702] = {
+    9702,
+    {
+      [1] = {
+        effectType = 92,
+        percent = {4},
+        formulaID = 5,
+        multiple = 4
+      },
+      [2] = {
+        effectType = 8,
+        teleport = 0,
+        scopeTargetType = 1,
+        scopeCenterType = 3,
+        scopeType = 35,
+        scopeParam = {0}
+      }
+    },
+    10,
+    nil,
+    3,
+    57,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    9702
+  },
+  [9703] = {
+    9703,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    12
+  },
+  [6201] = {
+    6201,
+    common[28],
+    10,
+    nil,
+    1,
+    58,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6201,
+    nil,
+    6201,
+    6201,
+    6202
+  },
+  [6202] = {
+    6202,
+    common[26],
+    10,
+    nil,
+    3,
+    46,
+    common[29],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2702
+  },
+  [6203] = {
+    6203,
+    common[28],
+    10,
+    nil,
+    1,
+    58,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6203,
+    nil,
+    6203,
+    6203,
+    6202
+  },
+  [1711] = {
+    1711,
+    empty,
+    3,
+    nil,
+    1,
+    1,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1711,
+    nil,
+    1711
+  },
+  [1712] = {
+    1712,
+    empty,
+    10,
+    nil,
+    3,
+    59,
+    {
+      24,
+      1,
+      1
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1712
+  },
+  [1713] = {
+    1713,
+    empty,
+    10,
+    nil,
+    1,
+    1,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1711
+  },
+  [1714] = {
+    1714,
+    common[30],
+    10,
+    nil,
+    3,
+    59,
+    {
+      24,
+      0,
+      0,
+      1
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1713,
+    nil,
+    1711
+  },
+  [1715] = {
+    1715,
+    common[30],
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1713,
+    nil,
+    1711
+  },
+  [5601] = {
+    5601,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5601,
+    nil,
+    5601,
+    5601,
+    5602
+  },
+  [5603] = {
+    5603,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5601,
+    nil,
+    5601,
+    5601,
+    5602
+  },
+  [5602] = {
+    5602,
+    empty,
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5602
+  },
+  [7501] = {
+    7501,
+    common[23],
+    1,
+    nil,
+    1,
+    5,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7501
+  },
+  [7502] = {
+    7502,
+    common[23],
+    1,
+    nil,
+    1,
+    5,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7501
+  },
+  [9301] = {
+    9301,
+    empty,
+    10,
+    nil,
+    3,
+    5,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    9301
+  },
+  [10901] = {
+    10901,
+    common[31],
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10901,
+    nil,
+    10903,
+    10903,
+    6202
+  },
+  [10902] = {
+    10902,
+    common[32],
+    10,
+    nil,
+    3,
+    46,
+    common[29],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10902
+  },
+  [10801] = {
+    10801,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    9801,
+    nil,
+    9801
+  },
+  [10802] = {
+    10802,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    9801,
+    nil,
+    9801
+  },
+  [10803] = {
+    10803,
+    empty,
+    10,
+    nil,
+    3,
+    1,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10802
+  },
+  [10804] = {
+    10804,
+    empty,
+    10,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10802
+  },
+  [300030] = {
+    300030,
+    empty,
+    10,
+    nil,
+    1,
+    38,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    21,
+    nil,
+    3200303
+  },
+  [3000301] = {
+    3000301,
+    empty,
+    10,
+    nil,
+    1,
+    61,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3200301,
+    nil,
+    21
+  },
+  [320030] = {
+    320030,
+    empty,
+    10,
+    nil,
+    1,
+    1,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    21,
+    nil,
+    3200303
+  },
+  [3200301] = {
+    3200301,
+    empty,
+    10,
+    nil,
+    1,
+    61,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3200301,
+    nil,
+    21
+  },
+  [300112] = {
+    300112,
+    empty,
+    5,
+    nil,
+    1,
+    5,
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    300112,
+    300112
+  },
+  [303112] = {
+    303112,
+    empty,
+    5,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    300112,
+    300112
+  },
+  [3001121] = {
+    3001121,
+    empty,
+    1,
+    nil,
+    3,
+    5,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29
+  },
+  [300114] = {
+    300114,
+    empty,
+    5,
+    nil,
+    1,
+    64,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    300112,
+    300112
+  },
+  [3001141] = {
+    3001141,
+    empty,
+    1,
+    nil,
+    3,
+    5,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29
+  },
+  [3001130] = {
+    3001130,
+    empty,
+    10,
+    nil,
+    1,
+    38,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2100111,
+    nil,
+    210
+  },
+  [300113] = {
+    300113,
+    {
+      [1] = {effectType = 106, step = 1}
+    },
+    1,
+    nil,
+    1,
+    32,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300113,
+    nil,
+    300113
+  },
+  [300117] = {
+    300117,
+    empty,
+    5,
+    nil,
+    1,
+    7,
+    {
+      2,
+      1,
+      1
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    300112,
+    300112
+  },
+  [306117] = {
+    306117,
+    empty,
+    5,
+    nil,
+    1,
+    8,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    300112,
+    300112
+  },
+  [3001171] = {
+    3001171,
+    empty,
+    1,
+    nil,
+    3,
+    72,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29
+  },
+  [300115] = {
+    300115,
+    empty,
+    5,
+    nil,
+    1,
+    36,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    300112,
+    300112
+  },
+  [3001151] = {
+    3001151,
+    empty,
+    1,
+    nil,
+    3,
+    5,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29
+  },
+  [3001152] = {
+    3001152,
+    empty,
+    1,
+    nil,
+    3,
+    5,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29
+  },
+  [300121] = {
+    300121,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300121,
+    nil,
+    300121
+  },
+  [3001211] = {
+    3001211,
+    empty,
+    1,
+    nil,
+    3,
+    1,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001211,
+    nil,
+    3001211
+  },
+  [3001212] = {
+    3001212,
+    empty,
+    1,
+    nil,
+    8,
+    75,
+    common[33],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001212,
+    nil,
+    3001212
+  },
+  [3061212] = {
+    3061212,
+    empty,
+    1,
+    nil,
+    8,
+    75,
+    common[33],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001212,
+    nil,
+    3001212
+  },
+  [3201212] = {
+    3201212,
+    empty,
+    1,
+    nil,
+    8,
+    75,
+    common[34],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001212,
+    nil,
+    3001212
+  },
+  [3261212] = {
+    3261212,
+    empty,
+    1,
+    nil,
+    8,
+    75,
+    common[34],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001212,
+    nil,
+    3001212
+  },
+  [3001261] = {
+    3001261,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    9801,
+    nil,
+    3001262
+  },
+  [3001262] = {
+    3001262,
+    empty,
+    10,
+    nil,
+    3,
+    1,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10802
+  },
+  [3001263] = {
+    3001263,
+    empty,
+    1,
+    nil,
+    3,
+    1,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001261,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001262
+  },
+  [3001264] = {
+    3001264,
+    empty,
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001262,
+    nil,
+    nil,
+    3001262
+  },
+  [3000551] = {
+    3000551,
+    empty,
+    10,
+    nil,
+    1,
+    3,
+    common[14],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3000551,
+    nil,
+    10903,
+    10903,
+    6202
+  },
+  [3000552] = {
+    3000552,
+    {
+      [1] = {
+        effectType = 1,
+        percent = {1.6},
+        formulaID = 5
+      },
+      [2] = {
+        effectType = 3,
+        type = 1,
+        dir = 7,
+        distance = 12,
+        calcType = 1
+      }
+    },
+    10,
+    nil,
+    3,
+    46,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3000552,
+    nil,
+    3000552
+  },
+  [300015] = {
+    300015,
+    empty,
+    10,
+    nil,
+    3,
+    87,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    9400,
+    nil,
+    9401
+  },
+  [330015] = {
+    330015,
+    empty,
+    10,
+    nil,
+    3,
+    87,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    9400,
+    nil,
+    9402
+  },
+  [3001201] = {
+    3001201,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    12,
+    nil,
+    12
+  },
+  [3001202] = {
+    3001202,
+    {
+      [1] = {
+        effectType = 3,
+        type = 1,
+        dir = 5,
+        distance = 12,
+        calcType = 1,
+        ignorePlayerBlock = true
+      },
+      [2] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 3,
+        count = 200
+      }
+    },
+    10,
+    nil,
+    3,
+    28,
+    common[10],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11
+  },
+  [3001203] = {
+    3001203,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    12
+  },
+  [3001231] = {
+    3001231,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001230,
+    nil,
+    3001231,
+    3001231,
+    3001232,
+    3001233,
+    3001233
+  },
+  [3001232] = {
+    3001232,
+    empty,
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001232
+  },
+  [3001311] = {
+    3001311,
+    empty,
+    1,
+    nil,
+    1,
+    7,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001310
+  },
+  [3001312] = {
+    3001312,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001310
+  },
+  [3001331] = {
+    3001331,
+    empty,
+    10,
+    nil,
+    3,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001331,
+    nil,
+    3001331
+  },
+  [3001332] = {
+    3001332,
+    common[11],
+    10,
+    nil,
+    3,
+    7,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001332
+  },
+  [300135] = {
+    300135,
+    empty,
+    1,
+    nil,
+    1,
+    1,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300121,
+    nil,
+    300121
+  },
+  [3001351] = {
+    3001351,
+    empty,
+    1,
+    nil,
+    3,
+    1,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001211,
+    nil,
+    3001211
+  },
+  [3001352] = {
+    3001352,
+    empty,
+    1,
+    nil,
+    8,
+    95,
+    {45},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001212,
+    nil,
+    3001212
+  },
+  [3001353] = {
+    3001353,
+    empty,
+    1,
+    nil,
+    8,
+    95,
+    {90},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001212,
+    nil,
+    3001212
+  },
+  [3001371] = {
+    3001371,
+    empty,
+    1,
+    nil,
+    1,
+    32,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001371,
+    nil,
+    3001371
+  },
+  [3001372] = {
+    3001372,
+    common[24],
+    1,
+    nil,
+    3,
+    97,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001372
+  },
+  [3001341] = {
+    3001341,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001341,
+    nil,
+    3001341,
+    3001341,
+    6202
+  },
+  [3001342] = {
+    3001342,
+    {
+      [1] = {
+        effectType = 1,
+        percent = {1.6},
+        formulaID = 5
+      },
+      [2] = {
+        effectType = 3,
+        type = 1,
+        dir = 7,
+        distance = 12,
+        calcType = 1,
+        forceUseCasterPos = true
+      }
+    },
+    10,
+    nil,
+    3,
+    46,
+    common[29],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001342,
+    nil,
+    3001342
+  },
+  [300141] = {
+    300141,
+    common[35],
+    10,
+    nil,
+    1,
+    104,
+    common[36],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    306141,
+    306143,
+    306143
+  },
+  [300142] = {
+    300142,
+    common[37],
+    10,
+    nil,
+    1,
+    104,
+    common[36],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    306144,
+    306144
+  },
+  [3001411] = {
+    3001411,
+    common[35],
+    10,
+    nil,
+    1,
+    104,
+    common[36],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    306141,
+    306143,
+    306143
+  },
+  [3001412] = {
+    3001412,
+    common[37],
+    10,
+    nil,
+    1,
+    104,
+    common[36],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    306144
+  },
+  [3001413] = {
+    3001413,
+    {
+      [1] = {
+        effectType = 3,
+        type = 2,
+        dir = 19,
+        distance = 12,
+        calcType = 1,
+        enableByPickNum = 1,
+        forceUseCasterPos = true
+      }
+    },
+    10,
+    nil,
+    1,
+    104,
+    common[36],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    306144
+  },
+  [3001381] = {
+    3001381,
+    empty,
+    5,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    nil,
+    2,
+    2
+  },
+  [3001382] = {
+    3001382,
+    common[38],
+    5,
+    nil,
+    4,
+    98,
+    {
+      {scopeType = 4, scopeParam = 1},
+      {
+        scopeType = 6,
+        scopeParam = {1, 1},
+        centerPosIndex = 1
+      },
+      {}
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    7
+  },
+  [3001383] = {
+    3001383,
+    common[38],
+    5,
+    nil,
+    4,
+    98,
+    common[39],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    nil,
+    4
+  },
+  [3001384] = {
+    3001384,
+    common[38],
+    5,
+    nil,
+    4,
+    98,
+    common[40],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    7
+  },
+  [3001385] = {
+    3001385,
+    common[38],
+    5,
+    nil,
+    4,
+    98,
+    common[39],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    nil,
+    4
+  },
+  [3001386] = {
+    3001386,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2
+  },
+  [3001421] = {
+    3001421,
+    empty,
+    1,
+    nil,
+    1,
+    7,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001420,
+    nil,
+    3001421,
+    3001421,
+    3001421,
+    3001423,
+    3001423
+  },
+  [3001422] = {
+    3001422,
+    {
+      [1] = {
+        effectType = 67,
+        scopeType = 5,
+        scopeParam = {2},
+        scopeTargetType = 5,
+        scopeCenterType = 3,
+        maxMoveStep = 2,
+        forceMove = 1
+      }
+    },
+    5,
+    nil,
+    3,
+    5,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001422
+  },
+  [3001423] = {
+    3001423,
+    {
+      [1] = {
+        effectType = 67,
+        scopeType = 5,
+        scopeParam = {3},
+        scopeTargetType = 5,
+        scopeCenterType = 3,
+        maxMoveStep = 2,
+        forceMove = 1
+      }
+    },
+    5,
+    nil,
+    3,
+    5,
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001422
+  },
+  [3001431] = {
+    3001431,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001431
+  },
+  [3001441] = {
+    3001441,
+    common[41],
+    3,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001441,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001441
+  },
+  [3001442] = {
+    3001442,
+    common[41],
+    3,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001442,
+    3001442
+  },
+  [3001451] = {
+    3001451,
+    empty,
+    5,
+    nil,
+    1,
+    36,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001451,
+    nil,
+    3001451,
+    3001451,
+    nil,
+    3001453,
+    3001453
+  },
+  [3001452] = {
+    3001452,
+    {
+      [1] = {
+        effectType = 8,
+        teleport = 0,
+        trapID = 16014511
+      },
+      [2] = {
+        effectType = 11,
+        trapID = 16014511,
+        overlapFlag = 0
+      }
+    },
+    3,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001452
+  },
+  [3001453] = {
+    3001453,
+    {
+      [1] = {
+        effectType = 8,
+        teleport = 0,
+        trapID = 16014511
+      },
+      [2] = {
+        effectType = 11,
+        trapID = 16014511,
+        overlapFlag = 0
+      },
+      [3] = {
+        effectType = 139,
+        trapID = 16014511,
+        basePercent = 0.6,
+        damageScopeType = 5,
+        damageScopeParam = {12},
+        damageTargetType = 1,
+        formulaID = 9
+      }
+    },
+    3,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001454
+  },
+  [3001631] = {
+    3001631,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001431
+  },
+  [280060103] = {
+    280060103,
+    empty,
+    1,
+    nil,
+    1,
+    10,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    280060103
+  },
+  [280060104] = {
+    280060104,
+    empty,
+    1,
+    nil,
+    1,
+    69,
+    {
+      x = {},
+      y = {11}
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    280060103
+  },
+  [280060105] = {
+    280060105,
+    empty,
+    1,
+    nil,
+    1,
+    69,
+    {
+      x = {},
+      y = {
+        11,
+        10,
+        9
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    280060103
+  },
+  [280060106] = {
+    280060106,
+    empty,
+    1,
+    nil,
+    1,
+    69,
+    {
+      x = {},
+      y = {
+        11,
+        10,
+        9,
+        8,
+        7
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    280060103
+  },
+  [280060107] = {
+    280060107,
+    empty,
+    1,
+    nil,
+    1,
+    69,
+    {
+      x = {},
+      y = {
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    280060103
+  },
+  [280060108] = {
+    280060108,
+    empty,
+    1,
+    nil,
+    1,
+    69,
+    {
+      x = {},
+      y = {
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    280060103
+  },
+  [280060109] = {
+    280060109,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 5,
+        count = 1
+      }
+    },
+    3,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    5802,
+    5802,
+    1296
+  },
+  [280061101] = {
+    280061101,
+    {
+      [1] = {
+        effectType = 11,
+        trapID = 28006111,
+        usePickupDir = 1
+      }
+    },
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300121,
+    nil,
+    300121
+  },
+  [280061102] = {
+    280061102,
+    {
+      [1] = {
+        effectType = 11,
+        trapID = 28006112,
+        usePickupDir = 1
+      }
+    },
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300121,
+    nil,
+    300121
+  },
+  [280061103] = {
+    280061103,
+    {
+      [1] = {
+        effectType = 11,
+        trapID = 28006113,
+        usePickupDir = 1
+      }
+    },
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300121,
+    nil,
+    300121
+  },
+  [280061104] = {
+    280061104,
+    {
+      [1] = {
+        effectType = 79,
+        destroyType = 3,
+        trapID = {
+          28006111,
+          28006112,
+          28006113
+        }
+      }
+    },
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    5802,
+    5802,
+    1296
+  },
+  [280061105] = {
+    280061105,
+    empty,
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    280061105,
+    nil,
+    280061105
+  },
+  [3001490] = {
+    3001490,
+    empty,
+    5,
+    nil,
+    1,
+    5,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001491,
+    nil,
+    3001491,
+    3001491,
+    nil,
+    3001494,
+    3001494
+  },
+  [3001491] = {
+    3001491,
+    empty,
+    5,
+    nil,
+    1,
+    5,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001491,
+    nil,
+    3001491,
+    3001491,
+    nil,
+    3001494,
+    3001494
+  },
+  [3001492] = {
+    3001492,
+    empty,
+    5,
+    nil,
+    1,
+    86,
+    {
+      [1] = {
+        scopeType = 5,
+        scopeParam = {2}
+      },
+      [2] = {
+        scopeType = 118,
+        scopeParam = {15014911, 15014912}
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001491,
+    nil,
+    3001491,
+    3001491,
+    nil,
+    3001494,
+    3001494
+  },
+  [3001493] = {
+    3001493,
+    empty,
+    5,
+    nil,
+    1,
+    86,
+    {
+      [1] = {
+        scopeType = 5,
+        scopeParam = {3}
+      },
+      [2] = {
+        scopeType = 118,
+        scopeParam = {15014911, 15014912}
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001491,
+    nil,
+    3001491,
+    3001491,
+    nil,
+    3001494,
+    3001494
+  },
+  [3001494] = {
+    3001494,
+    common[42],
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001492
+  },
+  [3001495] = {
+    3001495,
+    common[42],
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001493
+  },
+  [3001481] = {
+    3001481,
+    empty,
+    5,
+    nil,
+    3,
+    36,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001481,
+    nil,
+    3001481,
+    3001481,
+    nil,
+    3001483,
+    3001483
+  },
+  [3001482] = {
+    3001482,
+    common[42],
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001482
+  },
+  [3001483] = {
+    3001483,
+    empty,
+    3,
+    nil,
+    1,
+    74,
+    {
+      16014811,
+      31,
+      0
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001484,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    6
+  },
+  [16014811] = {
+    16014811,
+    common[43],
+    1,
+    nil,
+    1,
+    7,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    16014811
+  },
+  [16014812] = {
+    16014812,
+    common[43],
+    1,
+    nil,
+    1,
+    5,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    16014811
+  },
+  [3301481] = {
+    3301481,
+    common[44],
+    3,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3301481
+  },
+  [3301482] = {
+    3301482,
+    common[44],
+    3,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3301482
+  },
+  [3001501] = {
+    3001501,
+    empty,
+    5,
+    nil,
+    1,
+    31,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001501,
+    nil,
+    3001501,
+    3001501
+  },
+  [3001502] = {
+    3001502,
+    empty,
+    10,
+    nil,
+    4,
+    98,
+    common[45],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001502,
+    nil,
+    3001502
+  },
+  [3001503] = {
+    3001503,
+    empty,
+    10,
+    nil,
+    4,
+    98,
+    common[46],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001503,
+    nil,
+    3001503
+  },
+  [3001504] = {
+    3001504,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001501
+  },
+  [30015011] = {
+    30015011,
+    empty,
+    5,
+    nil,
+    1,
+    31,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30015011,
+    nil,
+    30015011,
+    30015011
+  },
+  [30015021] = {
+    30015021,
+    empty,
+    10,
+    nil,
+    4,
+    98,
+    common[45],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30015021,
+    nil,
+    30015021
+  },
+  [30015031] = {
+    30015031,
+    empty,
+    10,
+    nil,
+    4,
+    98,
+    common[46],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30015031,
+    nil,
+    30015031
+  },
+  [30015041] = {
+    30015041,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30015011
+  },
+  [300151] = {
+    300151,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[47],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001510,
+    nil,
+    9801
+  },
+  [3001510] = {
+    3001510,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[47],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30015100,
+    nil,
+    9801
+  },
+  [3001511] = {
+    3001511,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[47],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001511,
+    nil,
+    9801
+  },
+  [3001512] = {
+    3001512,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[47],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001512,
+    nil,
+    9801
+  },
+  [3001513] = {
+    3001513,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[47],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001513,
+    nil,
+    9801
+  },
+  [3001514] = {
+    3001514,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[47],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001514,
+    nil,
+    9801
+  },
+  [300152] = {
+    300152,
+    empty,
+    5,
+    nil,
+    3,
+    78,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300151
+  },
+  [3001520] = {
+    3001520,
+    empty,
+    5,
+    nil,
+    3,
+    78,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30015120
+  },
+  [3001521] = {
+    3001521,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[47],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001521
+  },
+  [302152] = {
+    302152,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[47],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    302152
+  },
+  [305152] = {
+    305152,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[47],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    305152
+  },
+  [30015201] = {
+    30015201,
+    empty,
+    5,
+    nil,
+    3,
+    78,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30015101
+  },
+  [30015202] = {
+    30015202,
+    empty,
+    5,
+    nil,
+    3,
+    78,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30015102
+  },
+  [30015203] = {
+    30015203,
+    empty,
+    5,
+    nil,
+    3,
+    78,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30015103
+  },
+  [30015204] = {
+    30015204,
+    empty,
+    5,
+    nil,
+    3,
+    78,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30015104
+  },
+  [3001531] = {
+    3001531,
+    empty,
+    1,
+    nil,
+    1,
+    31,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001531,
+    nil,
+    3001531
+  },
+  [3001532] = {
+    3001532,
+    empty,
+    1,
+    nil,
+    4,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001532,
+    nil,
+    3001532
+  },
+  [3001571] = {
+    3001571,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001571,
+    nil,
+    3001571,
+    3001571,
+    6202
+  },
+  [3001572] = {
+    3001572,
+    common[48],
+    10,
+    nil,
+    3,
+    46,
+    common[49],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001572,
+    nil,
+    3001572
+  },
+  [3001573] = {
+    3001573,
+    empty,
+    14,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001573,
+    3001571,
+    3001571,
+    nil,
+    3001574,
+    3001574
+  },
+  [3001574] = {
+    3001574,
+    common[48],
+    10,
+    nil,
+    3,
+    46,
+    {
+      widthThreshold = 0.65,
+      noExtend = 1,
+      useTrapAsBegin = 1,
+      trapID = {
+        15015710,
+        15015711,
+        15015712
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001572,
+    nil,
+    3001572
+  },
+  [3001561] = {
+    3001561,
+    empty,
+    10,
+    nil,
+    3,
+    36,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001561,
+    nil,
+    3001561,
+    3001561,
+    6202
+  },
+  [3001562] = {
+    3001562,
+    common[50],
+    10,
+    nil,
+    3,
+    46,
+    common[49],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001562,
+    nil,
+    3001562
+  },
+  [3001563] = {
+    3001563,
+    empty,
+    14,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001563,
+    3001561,
+    3001561,
+    nil,
+    3001564,
+    3001564
+  },
+  [3001564] = {
+    3001564,
+    common[51],
+    10,
+    nil,
+    1,
+    46,
+    {
+      useTrapAsBegin = 1,
+      trapID = {
+        160156100,
+        160156101,
+        160156102,
+        160156103,
+        160156104,
+        160156105,
+        160156106,
+        160156107,
+        160156108,
+        160156109,
+        160156110,
+        160156111
+      },
+      widthThreshold = 0.65,
+      noExtend = 1
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001565
+  },
+  [3001565] = {
+    3001565,
+    {
+      [1] = {
+        effectType = 1,
+        percent = {0.6},
+        formulaID = 5
+      }
+    },
+    10,
+    nil,
+    3,
+    86,
+    {
+      [1] = {
+        scopeType = 46,
+        scopeParam = {widthThreshold = 0.65, noExtend = 1}
+      },
+      [2] = {
+        scopeType = 5,
+        scopeParam = {1}
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001562,
+    nil,
+    3001562
+  },
+  [3001621] = {
+    3001621,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001621,
+    nil,
+    3001621,
+    3001621,
+    6202
+  },
+  [3001622] = {
+    3001622,
+    common[48],
+    10,
+    nil,
+    3,
+    46,
+    common[29],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001622,
+    nil,
+    3001622
+  },
+  [300160] = {
+    300160,
+    common[43],
+    1,
+    nil,
+    1,
+    8,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300160
+  },
+  [300161] = {
+    300161,
+    common[52],
+    1,
+    nil,
+    3,
+    7,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300160
+  },
+  [3001641] = {
+    3001641,
+    empty,
+    5,
+    nil,
+    1,
+    94,
+    common[53],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001641,
+    nil,
+    3001641,
+    nil,
+    nil,
+    3001643
+  },
+  [3001642] = {
+    3001642,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 2,
+        count = 2
+      }
+    },
+    10,
+    nil,
+    3,
+    136,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001642
+  },
+  [3001643] = {
+    3001643,
+    empty,
+    1,
+    nil,
+    1,
+    94,
+    common[53],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001643
+  },
+  [5220011] = {
+    5220011,
+    empty,
+    1,
+    nil,
+    1,
+    14,
+    common[54],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1774,
+    nil,
+    1774
+  },
+  [52200111] = {
+    52200111,
+    empty,
+    1,
+    nil,
+    1,
+    14,
+    common[54],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    17741,
+    nil,
+    17741
+  },
+  [5220012] = {
+    5220012,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 5,
+        count = 4,
+        scopeTargetType = 3
+      }
+    },
+    1,
+    nil,
+    4,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    nil,
+    4,
+    1773
+  },
+  [5220013] = {
+    5220013,
+    common[55],
+    1,
+    nil,
+    4,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    nil,
+    4,
+    1773
+  },
+  [5220014] = {
+    5220014,
+    empty,
+    1,
+    nil,
+    1,
+    14,
+    {
+      gridCount = 100,
+      elementType = {
+        1,
+        2,
+        3,
+        4,
+        5
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1774,
+    nil,
+    1774
+  },
+  [30013811] = {
+    30013811,
+    empty,
+    5,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    nil,
+    2,
+    2
+  },
+  [30013813] = {
+    30013813,
+    empty,
+    5,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    18,
+    nil,
+    18
+  },
+  [30013841] = {
+    30013841,
+    common[22],
+    5,
+    nil,
+    4,
+    98,
+    common[40],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    7
+  },
+  [30013842] = {
+    30013842,
+    empty,
+    5,
+    nil,
+    4,
+    99,
+    {enableOnePick = 1},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    7
+  },
+  [30013851] = {
+    30013851,
+    common[22],
+    5,
+    nil,
+    4,
+    98,
+    common[39],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    nil,
+    4
+  },
+  [30013861] = {
+    30013861,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2
+  },
+  [30013852] = {
+    30013852,
+    empty,
+    5,
+    nil,
+    4,
+    98,
+    common[39],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    7
+  },
+  [30610511] = {
+    30610511,
+    empty,
+    5,
+    nil,
+    3,
+    5,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30010511,
+    nil,
+    30010511
+  },
+  [30013812] = {
+    30013812,
+    empty,
+    5,
+    nil,
+    11,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    nil,
+    2,
+    2
+  },
+  [30610512] = {
+    30610512,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 4,
+        count = 4
+      }
+    },
+    5,
+    nil,
+    4,
+    25,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    nil,
+    4
+  },
+  [30610513] = {
+    30610513,
+    common[22],
+    5,
+    nil,
+    4,
+    25,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    nil,
+    4
+  },
+  [300167] = {
+    300167,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300167
+  },
+  [303167] = {
+    303167,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    303167
+  },
+  [306167] = {
+    306167,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    306167
+  },
+  [320167] = {
+    320167,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    320167
+  },
+  [323167] = {
+    323167,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    323167
+  },
+  [326167] = {
+    326167,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    326167
+  },
+  [3001671] = {
+    3001671,
+    empty,
+    2,
+    nil,
+    1,
+    9,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001671,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001673,
+    3001673
+  },
+  [3001672] = {
+    3001672,
+    empty,
+    2,
+    nil,
+    1,
+    9,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001672,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001673,
+    3001673
+  },
+  [300168] = {
+    300168,
+    common[56],
+    10,
+    nil,
+    1,
+    129,
+    {
+      15016810,
+      1,
+      1,
+      1,
+      1
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300160
+  },
+  [320168] = {
+    320168,
+    common[56],
+    10,
+    nil,
+    1,
+    129,
+    {
+      15016810,
+      5,
+      1,
+      1
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300160
+  },
+  [3001661] = {
+    3001661,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001661,
+    nil,
+    3001661,
+    3001661,
+    nil,
+    3001662,
+    3001662
+  },
+  [3001662] = {
+    3001662,
+    {
+      [1] = {
+        effectType = 169,
+        trapIDList = {16016611},
+        buffID = 40016611,
+        formulaID = 5,
+        percentList = {
+          2.5,
+          2.5,
+          3.75,
+          5
+        },
+        skillList = {
+          3001661,
+          3001662,
+          3001663,
+          3001664
+        }
+      }
+    },
+    10,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001663
+  },
+  [3001301] = {
+    3001301,
+    empty,
+    10,
+    nil,
+    3,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001301,
+    nil,
+    3001301,
+    nil,
+    nil,
+    3001303,
+    3001303
+  },
+  [3001302] = {
+    3001302,
+    empty,
+    10,
+    nil,
+    3,
+    5,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001302
+  },
+  [300170] = {
+    300170,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300170,
+    nil,
+    300170
+  },
+  [3001701] = {
+    3001701,
+    empty,
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001701
+  },
+  [3001702] = {
+    3001702,
+    {
+      [1] = {
+        effectType = 168,
+        isPickUp = 1,
+        transportTarget = 1
+      }
+    },
+    1,
+    nil,
+    4,
+    146,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001702,
+    nil,
+    3001704,
+    nil,
+    nil,
+    3001705
+  },
+  [3001703] = {
+    3001703,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 4,
+        count = 99
+      }
+    },
+    5,
+    nil,
+    4,
+    140,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001703,
+    nil,
+    3001704,
+    nil,
+    nil,
+    3001705
+  },
+  [3001704] = {
+    3001704,
+    {
+      [1] = {
+        effectType = 168,
+        isPickUp = 1,
+        transportTarget = 0
+      }
+    },
+    1,
+    nil,
+    4,
+    146,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001702,
+    nil,
+    3001704,
+    nil,
+    nil,
+    3001705
+  },
+  [3001731] = {
+    3001731,
+    empty,
+    5,
+    nil,
+    1,
+    31,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001731,
+    nil,
+    3001731,
+    3001731
+  },
+  [3001732] = {
+    3001732,
+    empty,
+    1,
+    nil,
+    4,
+    98,
+    common[45],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001732,
+    nil,
+    3001732
+  },
+  [3001733] = {
+    3001733,
+    empty,
+    1,
+    nil,
+    4,
+    98,
+    common[46],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001733,
+    nil,
+    3001733
+  },
+  [3001734] = {
+    3001734,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001731
+  },
+  [32017211] = {
+    32017211,
+    empty,
+    5,
+    nil,
+    1,
+    148,
+    common[57],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    300112,
+    300112
+  },
+  [32017212] = {
+    32017212,
+    common[25],
+    1,
+    nil,
+    3,
+    149,
+    common[57],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29
+  },
+  [3001691] = {
+    3001691,
+    common[58],
+    1,
+    nil,
+    1,
+    1,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001691,
+    nil,
+    3001691,
+    3001691
+  },
+  [3001692] = {
+    3001692,
+    common[58],
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001692,
+    nil,
+    3001691
+  },
+  [30016911] = {
+    30016911,
+    common[59],
+    1,
+    nil,
+    1,
+    1,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001691,
+    nil,
+    3001691,
+    3001691
+  },
+  [30016921] = {
+    30016921,
+    common[59],
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001692,
+    nil,
+    3001691
+  },
+  [30017211] = {
+    30017211,
+    empty,
+    5,
+    nil,
+    1,
+    148,
+    common[57],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    7
+  },
+  [30017212] = {
+    30017212,
+    common[25],
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    6
+  },
+  [30017511] = {
+    30017511,
+    empty,
+    5,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001751,
+    nil,
+    3001751,
+    3001751,
+    nil,
+    3001753,
+    3001753
+  },
+  [30017512] = {
+    30017512,
+    empty,
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30017521
+  },
+  [30017513] = {
+    30017513,
+    empty,
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30017522
+  },
+  [30017514] = {
+    30017514,
+    empty,
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30017523
+  },
+  [30017515] = {
+    30017515,
+    empty,
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30017524
+  },
+  [30017531] = {
+    30017531,
+    empty,
+    5,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30017531,
+    nil,
+    30017531,
+    30017531,
+    nil,
+    30017533,
+    30017533
+  },
+  [30017532] = {
+    30017532,
+    empty,
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30017532
+  },
+  [30017533] = {
+    30017533,
+    empty,
+    5,
+    nil,
+    1,
+    5,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30017531,
+    nil,
+    30017531,
+    30017531,
+    nil,
+    30017533,
+    30017533
+  },
+  [30017611] = {
+    30017611,
+    common[60],
+    47,
+    common[73],
+    1,
+    8,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4403
+  },
+  [30017612] = {
+    30017612,
+    common[60],
+    47,
+    common[73],
+    1,
+    8,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4403
+  },
+  [30017811] = {
+    30017811,
+    common[43],
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30017811
+  },
+  [30017812] = {
+    30017812,
+    common[43],
+    31,
+    nil,
+    1,
+    4,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30017812
+  },
+  [30017813] = {
+    30017813,
+    common[43],
+    62,
+    nil,
+    1,
+    4,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30017813
+  },
+  [300181101] = {
+    300181101,
+    empty,
+    1,
+    nil,
+    1,
+    14,
+    {
+      gridCount = 100,
+      elementType = {2}
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1774,
+    nil,
+    1774
+  },
+  [300181102] = {
+    300181102,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 2,
+        count = 1,
+        scopeTargetType = 3
+      }
+    },
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    nil,
+    4,
+    1773
+  },
+  [300181211] = {
+    300181211,
+    empty,
+    5,
+    nil,
+    1,
+    86,
+    {
+      [1] = {
+        scopeType = 152,
+        scopeParam = {2},
+        targetType = 5,
+        scopeCenterType = 1
+      },
+      [2] = {
+        scopeType = 118,
+        scopeParam = {16018111},
+        targetType = 5,
+        scopeCenterType = 1
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30018121,
+    30018121,
+    30018121,
+    30018121,
+    nil,
+    30018122,
+    30018122
+  },
+  [300181212] = {
+    300181212,
+    empty,
+    64,
+    common[74],
+    8,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30018121
+  },
+  [300181213] = {
+    300181213,
+    empty,
+    64,
+    common[74],
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30018121
+  },
+  [30018211] = {
+    30018211,
+    common[52],
+    1,
+    nil,
+    3,
+    5,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30018211,
+    nil,
+    30018211
+  },
+  [31018211] = {
+    31018211,
+    common[23],
+    1,
+    nil,
+    1,
+    5,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4403
+  },
+  [31018212] = {
+    31018212,
+    common[52],
+    1,
+    nil,
+    3,
+    5,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30018212,
+    nil,
+    30018212
+  },
+  [32018211] = {
+    32018211,
+    common[52],
+    1,
+    nil,
+    3,
+    7,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30018212,
+    nil,
+    30018212
+  },
+  [30018511] = {
+    30018511,
+    empty,
+    5,
+    nil,
+    1,
+    1,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30018511,
+    nil,
+    30018511
+  },
+  [30018512] = {
+    30018512,
+    common[25],
+    5,
+    nil,
+    1,
+    1,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    6
+  },
+  [30018521] = {
+    30018521,
+    empty,
+    1,
+    nil,
+    1,
+    32,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30018520,
+    nil,
+    30018520
+  },
+  [30018522] = {
+    30018522,
+    common[61],
+    1,
+    nil,
+    3,
+    97,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30018521
+  },
+  [3061841] = {
+    3061841,
+    empty,
+    5,
+    nil,
+    3,
+    5,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7
+  },
+  [3061842] = {
+    3061842,
+    common[25],
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    6,
+    nil,
+    nil,
+    6,
+    6
+  },
+  [3001841] = {
+    3001841,
+    empty,
+    5,
+    nil,
+    1,
+    7,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7
+  },
+  [3031841] = {
+    3031841,
+    empty,
+    5,
+    nil,
+    1,
+    5,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7
+  },
+  [3001842] = {
+    3001842,
+    common[62],
+    5,
+    nil,
+    4,
+    98,
+    {
+      {
+        scopeType = 7,
+        scopeParam = {2},
+        useCasterPos = 1
+      },
+      {
+        scopeType = 7,
+        scopeParam = {2},
+        centerPosIndex = -1,
+        centerPosCheckTrapID = 14
+      },
+      useLastAsDefault = 1,
+      OnlyCanMove = true,
+      ScopeCenterType = 4
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001841,
+    3001841,
+    3001841,
+    nil,
+    6,
+    6
+  },
+  [3031842] = {
+    3031842,
+    common[62],
+    5,
+    nil,
+    4,
+    98,
+    {
+      {
+        scopeType = 5,
+        scopeParam = {2},
+        useCasterPos = 1
+      },
+      {
+        scopeType = 7,
+        scopeParam = {2},
+        centerPosIndex = -1,
+        centerPosCheckTrapID = 14
+      },
+      useLastAsDefault = 1,
+      OnlyCanMove = true,
+      ScopeCenterType = 4
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001841,
+    3001841,
+    3001841,
+    nil,
+    6,
+    6
+  },
+  [888526101] = {
+    888526101,
+    empty,
+    5,
+    nil,
+    1,
+    10,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    888526101
+  },
+  [888526102] = {
+    888526102,
+    empty,
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    888526101,
+    888526101
+  },
+  [3001891] = {
+    3001891,
+    empty,
+    10,
+    nil,
+    1,
+    38,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001891,
+    nil,
+    3001893,
+    3001891
+  },
+  [3001892] = {
+    3001892,
+    empty,
+    10,
+    nil,
+    1,
+    159,
+    {
+      2,
+      40018910,
+      20,
+      1
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001892
+  },
+  [3061891] = {
+    3061891,
+    empty,
+    10,
+    nil,
+    1,
+    1,
+    common[63],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001891,
+    nil,
+    3001893,
+    3001891
+  },
+  [3301892] = {
+    3301892,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[47],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3301892
+  },
+  [30019310] = {
+    30019310,
+    empty,
+    10,
+    nil,
+    1,
+    3,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30019310,
+    nil,
+    30019330
+  },
+  [30019320] = {
+    30019320,
+    empty,
+    10,
+    nil,
+    3,
+    46,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30019320,
+    nil,
+    30019310
+  },
+  [3001931] = {
+    3001931,
+    empty,
+    10,
+    nil,
+    1,
+    3,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001931,
+    nil,
+    3001933
+  },
+  [3001932] = {
+    3001932,
+    empty,
+    10,
+    nil,
+    3,
+    46,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001932,
+    nil,
+    3001931
+  },
+  [3300931] = {
+    3300931,
+    empty,
+    3,
+    nil,
+    1,
+    5,
+    common[64],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    7
+  },
+  [3300932] = {
+    3300932,
+    empty,
+    3,
+    nil,
+    1,
+    5,
+    common[1],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    7
+  },
+  [3001911] = {
+    3001911,
+    empty,
+    10,
+    nil,
+    1,
+    7,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001910,
+    nil,
+    3001910
+  },
+  [3001912] = {
+    3001912,
+    common[61],
+    10,
+    nil,
+    3,
+    97,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001911
+  },
+  [3001913] = {
+    3001913,
+    empty,
+    10,
+    nil,
+    1,
+    72,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001910,
+    nil,
+    3001910
+  },
+  [3001914] = {
+    3001914,
+    common[61],
+    10,
+    nil,
+    3,
+    97,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001911
+  },
+  [3001915] = {
+    3001915,
+    empty,
+    10,
+    nil,
+    1,
+    5,
+    common[64],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001910,
+    nil,
+    3001910
+  },
+  [3001916] = {
+    3001916,
+    empty,
+    10,
+    nil,
+    1,
+    1,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001912
+  },
+  [3001917] = {
+    3001917,
+    empty,
+    10,
+    nil,
+    1,
+    5,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001912
+  },
+  [3001992] = {
+    3001992,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 4,
+        count = 1,
+        ignoreBlock = 1
+      }
+    },
+    3,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    8901,
+    nil,
+    8901
+  },
+  [30019211] = {
+    30019211,
+    common[52],
+    1,
+    nil,
+    3,
+    7,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30018211,
+    nil,
+    30018211
+  },
+  [30019213] = {
+    30019213,
+    common[23],
+    1,
+    nil,
+    1,
+    5,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4403
+  },
+  [30019212] = {
+    30019212,
+    common[52],
+    1,
+    nil,
+    3,
+    5,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30018212,
+    nil,
+    30018212
+  },
+  [3002001] = {
+    3002001,
+    empty,
+    1,
+    nil,
+    1,
+    32,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002002,
+    nil,
+    3002002,
+    3002002
+  },
+  [3002002] = {
+    3002002,
+    {
+      [1] = {
+        effectType = 67,
+        tractionCenterType = 1,
+        canMoveToCenter = 1,
+        finalDamageIncreaseRate = 0,
+        isPreview = 1
+      }
+    },
+    1,
+    nil,
+    14,
+    145,
+    common[65],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002001,
+    nil,
+    3002001
+  },
+  [3202002] = {
+    3202002,
+    {
+      [1] = {
+        effectType = 67,
+        tractionCenterType = 1,
+        canMoveToCenter = 1,
+        finalDamageIncreaseRate = 0,
+        isPreview = 1,
+        petANaTuoLiCanTractionSelf = 1
+      }
+    },
+    1,
+    nil,
+    15,
+    145,
+    common[65],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002004,
+    nil,
+    3002004
+  },
+  [3002003] = {
+    3002003,
+    empty,
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002003,
+    nil,
+    3002003
+  },
+  [3002021] = {
+    3002021,
+    common[66],
+    1,
+    nil,
+    1,
+    5,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5601,
+    nil,
+    5601,
+    5601,
+    5602
+  },
+  [3002022] = {
+    3002022,
+    common[66],
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5602
+  },
+  [3302021] = {
+    3302021,
+    empty,
+    10,
+    nil,
+    3,
+    36,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3302021,
+    nil,
+    3302021,
+    3302021,
+    6202
+  },
+  [3302022] = {
+    3302022,
+    common[50],
+    10,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3302022,
+    nil,
+    3302022
+  },
+  [3002031] = {
+    3002031,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002031
+  },
+  [500001] = {
+    500001,
+    empty,
+    5,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    500012,
+    nil,
+    500012
+  },
+  [500011] = {
+    500011,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 1,
+        count = 5
+      }
+    },
+    5,
+    nil,
+    3,
+    1,
+    common[63],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    500011
+  },
+  [500012] = {
+    500012,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    500012
+  },
+  [3000651] = {
+    3000651,
+    empty,
+    5,
+    nil,
+    1,
+    47,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7
+  },
+  [1521001] = {
+    1521001,
+    empty,
+    3,
+    nil,
+    1,
+    5,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    7
+  },
+  [15221001] = {
+    15221001,
+    empty,
+    5,
+    nil,
+    3,
+    5,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    31
+  },
+  [15221002] = {
+    15221002,
+    empty,
+    5,
+    nil,
+    3,
+    113,
+    {
+      [1] = {
+        scopeType = 5,
+        scopeParam = {1, 1}
+      },
+      [2] = {
+        scopeType = 47,
+        scopeParam = {4}
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1522,
+    nil,
+    31
+  },
+  [1523001] = {
+    1523001,
+    empty,
+    5,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6
+  },
+  [1025001] = {
+    1025001,
+    empty,
+    5,
+    nil,
+    1,
+    16,
+    {11, 5},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2100111,
+    nil,
+    210
+  },
+  [1026001] = {
+    1026001,
+    empty,
+    5,
+    nil,
+    3,
+    33,
+    common[67],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    22,
+    nil,
+    22
+  },
+  [1027001] = {
+    1027001,
+    common[17],
+    5,
+    nil,
+    3,
+    33,
+    common[67]
+  },
+  [1032001] = {
+    1032001,
+    empty,
+    5,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    28,
+    nil,
+    31,
+    nil,
+    nil,
+    30
+  },
+  [1033001] = {
+    1033001,
+    empty,
+    5,
+    nil,
+    3,
+    5,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7
+  },
+  [10330011] = {
+    10330011,
+    empty,
+    5,
+    nil,
+    3,
+    113,
+    {
+      [1] = {
+        scopeType = 5,
+        scopeParam = {2, 1}
+      },
+      [2] = {
+        scopeType = 47,
+        scopeParam = {3, 2}
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29
+  },
+  [10151001] = {
+    10151001,
+    empty,
+    5,
+    nil,
+    3,
+    7,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7
+  },
+  [10151002] = {
+    10151002,
+    empty,
+    5,
+    nil,
+    3,
+    113,
+    {
+      [1] = {
+        scopeType = 7,
+        scopeParam = {2, 1}
+      },
+      [2] = {
+        scopeType = 47,
+        scopeParam = {3}
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1742001
+  },
+  [30003001] = {
+    30003001,
+    empty,
+    5,
+    nil,
+    1,
+    38,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    21,
+    nil,
+    3200303
+  },
+  [30003002] = {
+    30003002,
+    empty,
+    5,
+    nil,
+    1,
+    61,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    21
+  },
+  [30003003] = {
+    30003003,
+    empty,
+    5,
+    nil,
+    1,
+    113,
+    {
+      [1] = {
+        scopeType = 61,
+        scopeParam = {1}
+      },
+      [2] = {
+        scopeType = 47,
+        scopeParam = {3, 4}
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3200301,
+    nil,
+    21
+  },
+  [10301001] = {
+    10301001,
+    empty,
+    5,
+    nil,
+    3,
+    46,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    16126
+  },
+  [10301002] = {
+    10301002,
+    empty,
+    5,
+    nil,
+    3,
+    113,
+    {
+      [1] = {
+        scopeType = 46,
+        scopeParam = {0}
+      },
+      [2] = {
+        scopeType = 47,
+        scopeParam = {
+          1,
+          2,
+          3
+        }
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1742001,
+    nil,
+    16126
+  },
+  [3002041] = {
+    3002041,
+    empty,
+    1,
+    nil,
+    1,
+    32,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001371,
+    nil,
+    3001371
+  },
+  [3002042] = {
+    3002042,
+    empty,
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002042
+  },
+  [3002051] = {
+    3002051,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    12,
+    nil,
+    12
+  },
+  [3002052] = {
+    3002052,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 1,
+        count = 4
+      }
+    },
+    5,
+    nil,
+    3,
+    78,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002052,
+    nil,
+    3002052
+  },
+  [3002070] = {
+    3002070,
+    empty,
+    5,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002072,
+    nil,
+    3002072,
+    nil,
+    nil,
+    3002074,
+    3002074
+  },
+  [3002071] = {
+    3002071,
+    common[68],
+    5,
+    nil,
+    4,
+    172,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002071
+  },
+  [3002072] = {
+    3002072,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          2,
+          3,
+          4
+        },
+        target = 1,
+        count = 1
+      }
+    },
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002073
+  },
+  [3002073] = {
+    3002073,
+    common[68],
+    5,
+    nil,
+    4,
+    172,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002075
+  },
+  [3002061] = {
+    3002061,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002062,
+    nil,
+    3002062
+  },
+  [3002062] = {
+    3002062,
+    {
+      [1] = {
+        effectType = 3,
+        type = 1,
+        dir = 5,
+        distance = 12,
+        calcType = 1
+      },
+      [2] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 2,
+        count = 200
+      }
+    },
+    10,
+    nil,
+    3,
+    28,
+    common[10],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002061
+  },
+  [3002063] = {
+    3002063,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002062
+  },
+  [3101691] = {
+    3101691,
+    empty,
+    1,
+    nil,
+    1,
+    1,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3102061,
+    nil,
+    3102061,
+    3102061
+  },
+  [3101692] = {
+    3101692,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 2,
+        count = 1,
+        scopeCenterType = 3,
+        scopeTargetType = 5,
+        scopeType = 35,
+        scopeParam = {}
+      }
+    },
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3102062,
+    nil,
+    3102061
+  },
+  [3301691] = {
+    3301691,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3102061,
+    nil,
+    3102061,
+    3102061
+  },
+  [3002091] = {
+    3002091,
+    empty,
+    10,
+    nil,
+    3,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001331,
+    nil,
+    3001331
+  },
+  [3002092] = {
+    3002092,
+    empty,
+    10,
+    nil,
+    3,
+    5,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002091
+  },
+  [3002093] = {
+    3002093,
+    empty,
+    10,
+    nil,
+    3,
+    5,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002091
+  },
+  [3002094] = {
+    3002094,
+    empty,
+    10,
+    nil,
+    3,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002091
+  },
+  [3001051] = {
+    3001051,
+    empty,
+    1,
+    nil,
+    1,
+    32,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001050,
+    nil,
+    3001050
+  },
+  [3001052] = {
+    3001052,
+    empty,
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001051,
+    nil,
+    3001051
+  },
+  [52200131] = {
+    52200131,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 4,
+        count = 5
+      }
+    },
+    1,
+    nil,
+    4,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    nil,
+    4,
+    1773
+  },
+  [52200132] = {
+    52200132,
+    common[55],
+    1,
+    nil,
+    4,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    nil,
+    4,
+    1773
+  },
+  [30013814] = {
+    30013814,
+    empty,
+    5,
+    nil,
+    3,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    nil,
+    2,
+    2
+  },
+  [30013815] = {
+    30013815,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3
+        },
+        target = 4,
+        count = 3
+      },
+      [2] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3
+        },
+        target = 5,
+        count = 3
+      }
+    },
+    5,
+    nil,
+    3,
+    14,
+    {
+      gridCount = 6,
+      elementType = {
+        1,
+        2,
+        3
+      },
+      excludeTrap = {61, 64}
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30013815,
+    nil,
+    30013815,
+    1773
+  },
+  [30013816] = {
+    30013816,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4
+        },
+        target = 5,
+        count = 6
+      }
+    },
+    5,
+    nil,
+    3,
+    14,
+    {
+      gridCount = 6,
+      elementType = {
+        1,
+        2,
+        3,
+        4
+      },
+      excludeTrap = {61, 64}
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30013815,
+    nil,
+    30013815,
+    1773
+  },
+  [30021010] = {
+    30021010,
+    empty,
+    10,
+    nil,
+    1,
+    1,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30021010,
+    nil,
+    30021010
+  },
+  [30021020] = {
+    30021020,
+    {
+      [1] = {effectType = 8, teleport = 45}
+    },
+    10,
+    nil,
+    3,
+    55,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30021020,
+    nil,
+    30021010
+  },
+  [30221010] = {
+    30221010,
+    empty,
+    10,
+    nil,
+    1,
+    5,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30021010,
+    nil,
+    30021010
+  },
+  [280240101] = {
+    280240101,
+    {
+      [1] = {
+        effectType = 1,
+        percent = {0.05},
+        formulaID = 10
+      },
+      [2] = {
+        effectType = 5,
+        prob = 1,
+        buffID = 290610106,
+        buffTargetType = 29
+      }
+    },
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    280240101
+  },
+  [3002121] = {
+    3002121,
+    empty,
+    5,
+    nil,
+    1,
+    31,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002121,
+    nil,
+    3002121,
+    3002121
+  },
+  [3002122] = {
+    3002122,
+    empty,
+    1,
+    nil,
+    4,
+    98,
+    common[69],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002122,
+    nil,
+    3002122
+  },
+  [3002123] = {
+    3002123,
+    empty,
+    1,
+    nil,
+    4,
+    98,
+    common[46],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002123,
+    nil,
+    3002123
+  },
+  [3002124] = {
+    3002124,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002121
+  },
+  [3002125] = {
+    3002125,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 3,
+        count = 2,
+        scopeTargetType = 5,
+        scopeCenterType = 4,
+        scopeType = 35,
+        scopeParam = 0
+      }
+    },
+    1,
+    nil,
+    4,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    nil,
+    4
+  },
+  [3002126] = {
+    3002126,
+    empty,
+    1,
+    nil,
+    4,
+    98,
+    {
+      {scopeType = 4, scopeParam = 1},
+      {
+        scopeType = 5,
+        scopeParam = {4, 0},
+        centerPosIndex = 1
+      },
+      {}
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002122,
+    nil,
+    3002122
+  },
+  [3002131] = {
+    3002131,
+    empty,
+    5,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002131,
+    nil,
+    3002131,
+    3002131,
+    nil,
+    nil,
+    3002135
+  },
+  [3002132] = {
+    3002132,
+    empty,
+    5,
+    nil,
+    3,
+    5,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002132,
+    nil,
+    3002132
+  },
+  [3002133] = {
+    3002133,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002131
+  },
+  [3002134] = {
+    3002134,
+    empty,
+    5,
+    nil,
+    3,
+    5,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002134
+  },
+  [30013411] = {
+    30013411,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30013411,
+    nil,
+    30013411
+  },
+  [30013412] = {
+    30013412,
+    {
+      [1] = {
+        effectType = 3,
+        type = 1,
+        dir = 7,
+        distance = 99,
+        calcType = 1,
+        usePickPosIndex = 1
+      }
+    },
+    10,
+    nil,
+    4,
+    145,
+    {
+      widthThreshold = 1.414,
+      noExtend = 0,
+      init = 1,
+      dest = 2
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30013412,
+    nil,
+    30013412
+  },
+  [300187] = {
+    300187,
+    empty,
+    1,
+    nil,
+    3,
+    7,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300187
+  },
+  [300188] = {
+    300188,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    18,
+    nil,
+    18
+  },
+  [3001881] = {
+    3001881,
+    common[30],
+    10,
+    nil,
+    4,
+    145,
+    {
+      widthThreshold = 1.414,
+      noExtend = 1,
+      init = 1,
+      dest = 2
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    20,
+    nil,
+    20
+  },
+  [3002151] = {
+    3002151,
+    empty,
+    5,
+    nil,
+    1,
+    152,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002152,
+    3002152,
+    3002152,
+    3002152,
+    nil,
+    3002153,
+    3002153
+  },
+  [3002152] = {
+    3002152,
+    empty,
+    1,
+    nil,
+    8,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002152
+  },
+  [30021411] = {
+    30021411,
+    empty,
+    1,
+    nil,
+    3,
+    5,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30021411,
+    nil,
+    30021411
+  },
+  [30621411] = {
+    30621411,
+    empty,
+    1,
+    nil,
+    3,
+    7,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30021411,
+    nil,
+    30021411
+  },
+  [30021415] = {
+    30021415,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30021410
+  },
+  [30021412] = {
+    30021412,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 1,
+        count = 1
+      }
+    },
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30021413,
+    nil,
+    30021413
+  },
+  [30021413] = {
+    30021413,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 1,
+        count = 3
+      }
+    },
+    5,
+    nil,
+    3,
+    14,
+    {
+      gridCount = 3,
+      elementType = {1},
+      excludeTrap = {
+        61,
+        64,
+        2803501
+      },
+      excludeCenterPos = 1
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30021413,
+    nil,
+    30021413
+  },
+  [30021414] = {
+    30021414,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 1,
+        count = 5
+      }
+    },
+    5,
+    nil,
+    3,
+    14,
+    {
+      gridCount = 5,
+      elementType = {1},
+      excludeTrap = {
+        61,
+        64,
+        2803501
+      },
+      excludeCenterPos = 1
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30021413,
+    nil,
+    30021413
+  },
+  [30021410] = {
+    30021410,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    12,
+    nil,
+    12
+  },
+  [50546011] = {
+    50546011,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1294,
+    nil,
+    1294,
+    1294,
+    1296
+  },
+  [50546012] = {
+    50546012,
+    empty,
+    1,
+    nil,
+    3,
+    52,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1295
+  },
+  [50547011] = {
+    50547011,
+    empty,
+    5,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    nil,
+    2,
+    2
+  },
+  [50547012] = {
+    50547012,
+    empty,
+    5,
+    nil,
+    3,
+    14,
+    {
+      gridCount = 4,
+      useCenterPosPieceType = 1,
+      excludeTrap = {61, 64},
+      excludeCenterPos = 1
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30010511,
+    nil,
+    30010511
+  },
+  [3002161] = {
+    3002161,
+    empty,
+    5,
+    nil,
+    3,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002160,
+    nil,
+    3002160
+  },
+  [3002162] = {
+    3002162,
+    empty,
+    5,
+    nil,
+    3,
+    5,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002161
+  },
+  [3002163] = {
+    3002163,
+    empty,
+    5,
+    nil,
+    3,
+    5,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002161
+  },
+  [3002191] = {
+    3002191,
+    common[70],
+    5,
+    nil,
+    3,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002190,
+    3002193,
+    3002193,
+    nil,
+    nil,
+    3002192,
+    3002192
+  },
+  [3002192] = {
+    3002192,
+    empty,
+    5,
+    nil,
+    3,
+    4
+  },
+  [3302191] = {
+    3302191,
+    common[70],
+    5,
+    nil,
+    1,
+    118,
+    {
+      16021913,
+      16021914,
+      16021917,
+      16021918,
+      160219111,
+      160219112,
+      160219115,
+      160219116,
+      160219117,
+      160219118
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3302190,
+    3302193,
+    3302191,
+    3302194,
+    nil,
+    3302192,
+    3302192
+  },
+  [3302192] = {
+    3302192,
+    empty,
+    5,
+    nil,
+    3,
+    4,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3302194,
+    3302194
+  },
+  [16021911] = {
+    16021911,
+    empty,
+    5,
+    nil,
+    1,
+    7,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    7
+  },
+  [16021912] = {
+    16021912,
+    common[25],
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    16021912
+  },
+  [16021913] = {
+    16021913,
+    empty,
+    5,
+    nil,
+    1,
+    5,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    7
+  },
+  [3002181] = {
+    3002181,
+    empty,
+    5,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002160,
+    nil,
+    3002160
+  },
+  [3002182] = {
+    3002182,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 1,
+        count = 1
+      }
+    },
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002181
+  },
+  [3002183] = {
+    3002183,
+    empty,
+    10,
+    nil,
+    3,
+    1,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002182,
+    nil,
+    3002160
+  },
+  [3002184] = {
+    3002184,
+    empty,
+    10,
+    nil,
+    3,
+    7,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002182,
+    nil,
+    3002160
+  },
+  [3002211] = {
+    3002211,
+    empty,
+    1,
+    nil,
+    8,
+    35,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002211,
+    3002212,
+    3002211,
+    3002216,
+    nil,
+    3002215,
+    3002215,
+    3002215
+  },
+  [3002212] = {
+    3002212,
+    empty,
+    1,
+    nil,
+    8,
+    5,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002213,
+    nil,
+    3002213
+  },
+  [3002213] = {
+    3002213,
+    empty,
+    1,
+    nil,
+    4,
+    183,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002214
+  },
+  [3002214] = {
+    3002214,
+    empty,
+    1,
+    nil,
+    8,
+    7,
+    {2, 0},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002213,
+    nil,
+    3002213
+  },
+  [28029021] = {
+    28029021,
+    empty,
+    2,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    280240101
+  },
+  [3002231] = {
+    3002231,
+    empty,
+    5,
+    nil,
+    1,
+    3,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002231,
+    nil,
+    3002233,
+    3002233
+  },
+  [3002232] = {
+    3002232,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 4,
+        scopeTargetType = 5,
+        count = 99
+      }
+    },
+    5,
+    nil,
+    3,
+    184,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002232
+  },
+  [802401] = {
+    802401,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1774,
+    nil,
+    1774
+  },
+  [802402] = {
+    802402,
+    empty,
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    7
+  },
+  [802403] = {
+    802403,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1774,
+    nil,
+    802401
+  },
+  [802404] = {
+    802404,
+    {
+      [1] = {
+        effectType = 1,
+        percent = {0.05},
+        formulaID = 11
+      },
+      [2] = {
+        effectType = 3,
+        type = 1,
+        dir = 7,
+        distance = 12,
+        calcType = 1
+      }
+    },
+    1,
+    nil,
+    3,
+    5,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    802402,
+    nil,
+    802403
+  },
+  [5064701] = {
+    5064701,
+    empty,
+    5,
+    nil,
+    3,
+    5,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30010511,
+    nil,
+    30010511
+  },
+  [3002251] = {
+    3002251,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002251,
+    nil,
+    3002251,
+    3002251,
+    6202
+  },
+  [3002252] = {
+    3002252,
+    common[50],
+    10,
+    nil,
+    3,
+    190,
+    {widthThreshold = 1.414, stepRate = 0.3},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002252
+  },
+  [3002281] = {
+    3002281,
+    empty,
+    5,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    7
+  },
+  [3002282] = {
+    3002282,
+    empty,
+    5,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002282,
+    nil,
+    3002282
+  },
+  [3002283] = {
+    3002283,
+    empty,
+    5,
+    nil,
+    4,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002282,
+    nil,
+    3002282
+  },
+  [300229101] = {
+    300229101,
+    {
+      [1] = {
+        effectType = 4,
+        src = {
+          1,
+          2,
+          3,
+          4,
+          5
+        },
+        target = 2,
+        count = 4,
+        ignoreBlock = 1
+      }
+    },
+    5,
+    nil,
+    3,
+    194,
+    {
+      {
+        {
+          {0, 0},
+          {0, 1},
+          {1, 0},
+          {1, 1}
+        },
+        {
+          {0, 0},
+          {1, 0},
+          {0, -1},
+          {1, -1}
+        },
+        {
+          {0, 0},
+          {-1, 0},
+          {0, -1},
+          {-1, -1}
+        },
+        {
+          {0, 0},
+          {-1, 0},
+          {-1, -1},
+          {0, 1}
+        }
+      },
+      {
+        {
+          {0, 0},
+          {0, 1},
+          {0, -1},
+          {0, 2}
+        },
+        {
+          {0, 0},
+          {1, 0},
+          {-1, 0},
+          {2, 0}
+        },
+        {
+          {0, 0},
+          {0, -1},
+          {0, 1},
+          {0, -2}
+        },
+        {
+          {0, 0},
+          {1, 0},
+          {-2, 0},
+          {-1, 0}
+        }
+      },
+      {
+        {
+          {0, 0},
+          {0, 1},
+          {0, -1},
+          {-1, 0}
+        },
+        {
+          {0, 0},
+          {1, 0},
+          {-1, 0},
+          {0, 1}
+        },
+        {
+          {0, 0},
+          {0, -1},
+          {0, 1},
+          {1, 0}
+        },
+        {
+          {0, 0},
+          {1, 0},
+          {-1, 0},
+          {0, -1}
+        }
+      },
+      {
+        {
+          {0, 0},
+          {1, 0},
+          {-1, 0},
+          {-1, 1}
+        },
+        {
+          {0, 0},
+          {0, 1},
+          {1, 1},
+          {0, -1}
+        },
+        {
+          {0, 0},
+          {1, 0},
+          {-1, 0},
+          {1, -1}
+        },
+        {
+          {0, 0},
+          {0, 1},
+          {0, -1},
+          {-1, -1}
+        }
+      },
+      {
+        {
+          {0, 0},
+          {0, 1},
+          {1, 1},
+          {-1, 0}
+        },
+        {
+          {0, 0},
+          {0, 1},
+          {1, 0},
+          {1, -1}
+        },
+        {
+          {0, 0},
+          {1, 0},
+          {0, -1},
+          {-1, -1}
+        },
+        {
+          {0, 0},
+          {0, -1},
+          {-1, 0},
+          {-1, 1}
+        }
+      },
+      {
+        {
+          {0, 0},
+          {0, 1},
+          {-1, 0},
+          {-1, -1}
+        },
+        {
+          {0, 0},
+          {1, 0},
+          {0, 1},
+          {-1, 1}
+        },
+        {
+          {0, 0},
+          {1, 0},
+          {1, 1},
+          {0, -1}
+        },
+        {
+          {0, 0},
+          {0, -1},
+          {1, -1},
+          {-1, 0}
+        }
+      },
+      {
+        {
+          {0, 0},
+          {1, 0},
+          {1, 1},
+          {-1, 0}
+        },
+        {
+          {0, 0},
+          {0, -1},
+          {1, -1},
+          {0, 1}
+        },
+        {
+          {0, 0},
+          {1, 0},
+          {-1, 0},
+          {-1, -1}
+        },
+        {
+          {0, 0},
+          {0, 1},
+          {0, -1},
+          {-1, 1}
+        }
+      }
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300229101,
+    300229102,
+    300229103,
+    nil,
+    300229102
+  },
+  [300229102] = {
+    300229102,
+    empty,
+    1,
+    nil,
+    4,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300229104,
+    5802,
+    nil,
+    1296
+  },
+  [3401091] = {
+    3401091,
+    common[31],
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    109011,
+    nil,
+    10903,
+    10903,
+    6202
+  },
+  [3401092] = {
+    3401092,
+    common[32],
+    10,
+    nil,
+    3,
+    189,
+    {widthThreshold = 1.414, bSortFromBack = 1},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10902
+  },
+  [3002311] = {
+    3002311,
+    empty,
+    5,
+    nil,
+    1,
+    31,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002311,
+    nil,
+    3002311,
+    3002311
+  },
+  [3002312] = {
+    3002312,
+    empty,
+    10,
+    nil,
+    4,
+    98,
+    common[45],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002312,
+    nil,
+    3002312
+  },
+  [3002313] = {
+    3002313,
+    empty,
+    10,
+    nil,
+    4,
+    98,
+    common[46],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002313,
+    nil,
+    3002313
+  },
+  [3002314] = {
+    3002314,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002311
+  },
+  [3032311] = {
+    3032311,
+    empty,
+    5,
+    nil,
+    1,
+    31,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3032311,
+    nil,
+    3032311,
+    3032311
+  },
+  [3032312] = {
+    3032312,
+    empty,
+    10,
+    nil,
+    4,
+    98,
+    common[69],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3032312,
+    nil,
+    3032312
+  },
+  [3032313] = {
+    3032313,
+    empty,
+    10,
+    nil,
+    4,
+    98,
+    common[46],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3032313,
+    nil,
+    3032313
+  },
+  [3032314] = {
+    3032314,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3032311
+  },
+  [3202311] = {
+    3202311,
+    empty,
+    5,
+    nil,
+    1,
+    31,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3202311,
+    nil,
+    3202311,
+    3202311
+  },
+  [3202312] = {
+    3202312,
+    empty,
+    10,
+    nil,
+    4,
+    98,
+    common[45],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3202312,
+    nil,
+    3202312
+  },
+  [3202313] = {
+    3202313,
+    empty,
+    10,
+    nil,
+    4,
+    98,
+    common[46],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3202313,
+    nil,
+    3202313
+  },
+  [3202314] = {
+    3202314,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3202311
+  },
+  [3232311] = {
+    3232311,
+    empty,
+    5,
+    nil,
+    1,
+    31,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3232311,
+    nil,
+    3232311,
+    3232311
+  },
+  [3232312] = {
+    3232312,
+    empty,
+    10,
+    nil,
+    4,
+    98,
+    common[69],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3232312,
+    nil,
+    3232312
+  },
+  [3232313] = {
+    3232313,
+    empty,
+    10,
+    nil,
+    4,
+    98,
+    common[46],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3232313,
+    nil,
+    3232313
+  },
+  [3232314] = {
+    3232314,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3232311
+  },
+  [300232101] = {
+    300232101,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    300232101,
+    nil,
+    300232101
+  },
+  [300232102] = {
+    300232102,
+    empty,
+    1,
+    nil,
+    4,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    7,
+    nil,
+    7,
+    1773
+  },
+  [3661081] = {
+    3661081,
+    empty,
+    1,
+    nil,
+    1,
+    5,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3661081,
+    nil,
+    3661081,
+    nil,
+    nil,
+    3661083,
+    3661083
+  },
+  [3661082] = {
+    3661082,
+    empty,
+    10,
+    nil,
+    3,
+    1,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3661082
+  },
+  [3661083] = {
+    3661083,
+    empty,
+    10,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3661082
+  },
+  [3002301] = {
+    3002301,
+    empty,
+    1,
+    nil,
+    1,
+    32,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002301,
+    nil,
+    3002301
+  },
+  [3002302] = {
+    3002302,
+    empty,
+    1,
+    nil,
+    3,
+    97,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002302
+  },
+  [3002303] = {
+    3002303,
+    empty,
+    1,
+    nil,
+    1,
+    32,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002303,
+    nil,
+    3002303
+  },
+  [3002304] = {
+    3002304,
+    empty,
+    1,
+    nil,
+    3,
+    97,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002304
+  },
+  [3002305] = {
+    3002305,
+    empty,
+    1,
+    nil,
+    1,
+    32,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002305,
+    nil,
+    3002305
+  },
+  [3002306] = {
+    3002306,
+    empty,
+    1,
+    nil,
+    3,
+    97,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002306
+  },
+  [3002307] = {
+    3002307,
+    empty,
+    1,
+    nil,
+    1,
+    32,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002307,
+    nil,
+    3002307
+  },
+  [3002308] = {
+    3002308,
+    empty,
+    1,
+    nil,
+    3,
+    97,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002308
+  },
+  [3002331] = {
+    3002331,
+    empty,
+    10,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002331,
+    nil,
+    3002331
+  },
+  [3002332] = {
+    3002332,
+    empty,
+    10,
+    nil,
+    3,
+    72,
+    {
+      2,
+      0,
+      1
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002332
+  },
+  [3002341] = {
+    3002341,
+    empty,
+    1,
+    nil,
+    1,
+    32,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002331,
+    nil,
+    3002331
+  },
+  [3002342] = {
+    3002342,
+    empty,
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002332
+  },
+  [3002371] = {
+    3002371,
+    empty,
+    10,
+    nil,
+    1,
+    7,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002371,
+    nil,
+    3002371
+  },
+  [3601691] = {
+    3601691,
+    common[71],
+    1,
+    nil,
+    1,
+    5,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001691,
+    nil,
+    3001691,
+    3001691
+  },
+  [3601692] = {
+    3601692,
+    common[71],
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001692,
+    nil,
+    3001691
+  },
+  [36016911] = {
+    36016911,
+    common[72],
+    1,
+    nil,
+    1,
+    5,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001691,
+    nil,
+    3001691,
+    3001691
+  },
+  [36016921] = {
+    36016921,
+    common[72],
+    1,
+    nil,
+    3,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001692,
+    nil,
+    3001691
+  },
+  [30023611] = {
+    30023611,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30023610,
+    nil,
+    30023611,
+    nil,
+    nil,
+    30023612
+  },
+  [30023612] = {
+    30023612,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6]
+  },
+  [30023613] = {
+    30023613,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6]
+  },
+  [30023614] = {
+    30023614,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6]
+  },
+  [30023615] = {
+    30023615,
+    common[51],
+    10,
+    nil,
+    1,
+    46,
+    {
+      useTrapAsBegin = 1,
+      trapID = {17023611},
+      widthThreshold = 0.65,
+      noExtend = 1
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3001565
+  },
+  [3002381] = {
+    3002381,
+    empty,
+    1,
+    nil,
+    1,
+    4,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002381,
+    nil,
+    3002381
+  },
+  [3002382] = {
+    3002382,
+    empty,
+    1,
+    nil,
+    4,
+    35,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3002382,
+    nil,
+    3002382
+  },
+  [30018213] = {
+    30018213,
+    common[52],
+    1,
+    nil,
+    3,
+    7,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30018211,
+    nil,
+    30018211
+  }
 }
 return config, "ID", key
-

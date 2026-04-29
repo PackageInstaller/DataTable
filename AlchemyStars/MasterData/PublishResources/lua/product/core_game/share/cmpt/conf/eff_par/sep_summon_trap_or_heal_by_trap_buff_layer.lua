@@ -1,55 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_summon_trap_or_heal_by_trap_buff_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectParam_SummonTrapOrHealByTrapBuffLayer", SkillEffectParamBase)
 SkillEffectParam_SummonTrapOrHealByTrapBuffLayer = SkillEffectParam_SummonTrapOrHealByTrapBuffLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_SummonTrapOrHealByTrapBuffLayer.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_SummonTrapOrHealByTrapBuffLayer:Constructor(t)
   self._trapID = t.trapID
   self._layerBuffEffectType = t.layerBuffEffectType
   self._percentList = t.percentList
-  local debugParam = {effectType = 185, trapID = 16017511, layerBuffEffectType = 4001753, 
-percentList = {0.5, 1, 2, 3}
-}
+  local debugParam = {
+    effectType = 185,
+    trapID = 16017511,
+    layerBuffEffectType = 4001753,
+    percentList = {
+      0.5,
+      1,
+      2,
+      3
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_SummonTrapOrHealByTrapBuffLayer.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_SummonTrapOrHealByTrapBuffLayer:GetEffectType()
   return SkillEffectType.SummonTrapOrHealByTrapBuffLayer
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_SummonTrapOrHealByTrapBuffLayer.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectParam_SummonTrapOrHealByTrapBuffLayer:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_SummonTrapOrHealByTrapBuffLayer.GetLayerBuffEffectType = function(self)
-  -- function num : 0_3
+function SkillEffectParam_SummonTrapOrHealByTrapBuffLayer:GetLayerBuffEffectType()
   return self._layerBuffEffectType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_SummonTrapOrHealByTrapBuffLayer.GetPercentList = function(self)
-  -- function num : 0_4
+function SkillEffectParam_SummonTrapOrHealByTrapBuffLayer:GetPercentList()
   return self._percentList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_SummonTrapOrHealByTrapBuffLayer.GetDisableDieSkill = function(self)
-  -- function num : 0_5
+function SkillEffectParam_SummonTrapOrHealByTrapBuffLayer:GetDisableDieSkill()
   return false
 end
-
-

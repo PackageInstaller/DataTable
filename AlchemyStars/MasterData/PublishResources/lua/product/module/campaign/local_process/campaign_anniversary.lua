@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_anniversary.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("campaign_component_local_process_base")
 _class("CCampaignAnniversary", ICampaignComponentLocalProcessBase)
 CCampaignAnniversary = CCampaignAnniversary
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignAnniversary.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignAnniversary:Constructor()
   self._timeRewardComponent = nil
   self._timeRewardComponentInfo = nil
   self._resourceBoxComponent = nil
@@ -17,55 +10,37 @@ CCampaignAnniversary.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignAnniversary.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignAnniversary:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_ANNIVERSARY
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignAnniversary.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignAnniversary:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignAnniversary.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignAnniversary:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetTimeRewardComponent()
   self:_GetResourceBoxComponent()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignAnniversary._GetTimeRewardComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._timeRewardComponent = (self._campaignObj):GetComponent(ECampaignAnniversaryComponentID.ECAMPAIGN_ANNIVERSARY)
+function CCampaignAnniversary:_GetTimeRewardComponent()
+  self._timeRewardComponent = self._campaignObj:GetComponent(ECampaignAnniversaryComponentID.ECAMPAIGN_ANNIVERSARY)
   if not self._timeRewardComponent then
-    return 
+    return
   end
-  self._timeRewardComponentInfo = (self._timeRewardComponent):ComponentInfo()
+  self._timeRewardComponentInfo = self._timeRewardComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignAnniversary._GetResourceBoxComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._resourceBoxComponent = (self._campaignObj):GetComponent(ECampaignAnniversaryComponentID.ECAMPAIGN_RESOURCE_BOX)
+function CCampaignAnniversary:_GetResourceBoxComponent()
+  self._resourceBoxComponent = self._campaignObj:GetComponent(ECampaignAnniversaryComponentID.ECAMPAIGN_RESOURCE_BOX)
   if not self._resourceBoxComponent then
-    return 
+    return
   end
-  self._resourceBoxComponentInfo = (self._resourceBoxComponent):ComponentInfo()
+  self._resourceBoxComponentInfo = self._resourceBoxComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignAnniversary.GetComponent = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignAnniversary:GetComponent(componentID)
   if ECampaignAnniversaryComponentID.ECAMPAIGN_ANNIVERSARY == componentID then
     return self._timeRewardComponent
   end
@@ -75,10 +50,7 @@ CCampaignAnniversary.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignAnniversary.GetComponentInfo = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignAnniversary:GetComponentInfo(componentID)
   if ECampaignAnniversaryComponentID.ECAMPAIGN_ANNIVERSARY == componentID then
     return self._timeRewardComponentInfo
   end
@@ -87,5 +59,3 @@ CCampaignAnniversary.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/test_world.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_world")
 _class("TestWorld", BaseWorld)
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
 
-TestWorld.Internal_CreateSystems = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function TestWorld:Internal_CreateSystems()
   local systems = Systems:New()
   self.BW_Systems = systems
   systems:Add(InitializeWorldSystem:New(self))
@@ -20,36 +13,29 @@ TestWorld.Internal_CreateSystems = function(self)
   systems:Add(MainFSMSystem:New(self))
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-TestWorld.Internal_CreateComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self:AddSpawnMng(FixedPointsSpawnMng:New({[1] = Vector3(-1, 0, -4), [2] = Vector3(1, 0, -4), [3] = Vector3(0, 0, -4)}))
+function TestWorld:Internal_CreateComponents()
+  self:AddSpawnMng(FixedPointsSpawnMng:New({
+    [1] = Vector3(-1, 0, -4),
+    [2] = Vector3(1, 0, -4),
+    [3] = Vector3(0, 0, -4)
+  }))
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-TestWorld.Internal_CreateServices = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self.BW_Services = {Resource = UnityResourceService:New(), Network = DummyNetworkService:New(self)}
+function TestWorld:Internal_CreateServices()
+  self.BW_Services = {
+    Resource = UnityResourceService:New(),
+    Network = DummyNetworkService:New(self)
+  }
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-TestWorld.GetEntityByID = function(self, entityID)
-  -- function num : 0_3
-  return (self._entities):Find(entityID)
+function TestWorld:GetEntityByID(entityID)
+  return self._entities:Find(entityID)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-TestWorld.WorldHandleCommands = function(self, command_list)
-  -- function num : 0_4
+function TestWorld:WorldHandleCommands(command_list)
   for i = 1, command_list:Size() do
     local cmd = command_list:GetAt(i)
     local e = self:GetEntityByID(cmd.EntityID)
     e:ReceiveCommand(cmd)
   end
 end
-
-

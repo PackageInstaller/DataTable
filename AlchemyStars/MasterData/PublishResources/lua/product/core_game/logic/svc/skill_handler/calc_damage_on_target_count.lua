@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_damage_on_target_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_DamageOnTargetCount", Object)
 SkillEffectCalc_DamageOnTargetCount = SkillEffectCalc_DamageOnTargetCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_DamageOnTargetCount.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_DamageOnTargetCount:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DamageOnTargetCount.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_DamageOnTargetCount:DoSkillEffectCalculator(skillEffectCalcParam)
   local casterEntityID = skillEffectCalcParam.casterEntityID
-  local casterEntity = (self._world):GetEntityByID(casterEntityID)
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local skillEffectParam = skillEffectCalcParam.skillEffectParam
   local targetCount = #scopeResult:GetTargetIDs()
@@ -28,19 +18,15 @@ SkillEffectCalc_DamageOnTargetCount.DoSkillEffectCalculator = function(self, ski
     local targetIdsNoRepeat = {}
     for i = 1, #targetIds do
       local targetId = targetIds[i]
-      if (table.icontains)(targetIdsNoRepeat, targetId) == false then
-        (table.insert)(targetIdsNoRepeat, targetId)
+      if false == table.icontains(targetIdsNoRepeat, targetId) then
+        table.insert(targetIdsNoRepeat, targetId)
       end
     end
     targetCount = #targetIdsNoRepeat
   end
-  do
-    local damageEffectParam = skillEffectParam:GetDamageParamByCount(targetCount)
-    local damageCalcParam = SkillEffectCalcParam:New(skillEffectCalcParam:GetCasterEntityID(), skillEffectCalcParam:GetTargetEntityIDs(), damageEffectParam, skillEffectCalcParam:GetSkillID(), skillEffectCalcParam:GetSkillRange(), skillEffectCalcParam:GetAttackPos(), skillEffectCalcParam:GetGridPos())
-    local skillEffectCalc = SkillEffectCalc_Damage:New(self._world)
-    local result = skillEffectCalc:DoSkillEffectCalculator(damageCalcParam)
-    return result
-  end
+  local damageEffectParam = skillEffectParam:GetDamageParamByCount(targetCount)
+  local damageCalcParam = SkillEffectCalcParam:New(skillEffectCalcParam:GetCasterEntityID(), skillEffectCalcParam:GetTargetEntityIDs(), damageEffectParam, skillEffectCalcParam:GetSkillID(), skillEffectCalcParam:GetSkillRange(), skillEffectCalcParam:GetAttackPos(), skillEffectCalcParam:GetGridPos())
+  local skillEffectCalc = SkillEffectCalc_Damage:New(self._world)
+  local result = skillEffectCalc:DoSkillEffectCalculator(damageCalcParam)
+  return result
 end
-
-

@@ -1,37 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/favour_pet/vote2/ui_favour_pet_vote2_quest_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFavourPetVote2QuestItem", UICustomWidget)
 UIFavourPetVote2QuestItem = UIFavourPetVote2QuestItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFavourPetVote2QuestItem.SetData = function(self, roleAsset, isFin, tipsCallback)
-  -- function num : 0_0
+function UIFavourPetVote2QuestItem:SetData(roleAsset, isFin, tipsCallback)
   self._roleAsset = roleAsset
   self._tipsCallback = tipsCallback
   self:_SetItem(roleAsset)
-  ;
-  (self:GetGameObject("_isFin")):SetActive(isFin)
+  self:GetGameObject("_isFin"):SetActive(isFin)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2QuestItem._SetItem = function(self, roleAsset)
-  -- function num : 0_1 , upvalues : _ENV
-  (UIWidgetHelper.SetItemIcon)(self, roleAsset.assetid, "_icon")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtCount", roleAsset.count)
+function UIFavourPetVote2QuestItem:_SetItem(roleAsset)
+  UIWidgetHelper.SetItemIcon(self, roleAsset.assetid, "_icon")
+  UIWidgetHelper.SetLocalizationText(self, "_txtCount", roleAsset.count)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2QuestItem.IconOnClick = function(self, go)
-  -- function num : 0_2
+function UIFavourPetVote2QuestItem:IconOnClick(go)
   if self._tipsCallback then
-    (self._tipsCallback)((self._roleAsset).assetid, (go.transform).position)
+    self._tipsCallback(self._roleAsset.assetid, go.transform.position)
   end
 end
-
-

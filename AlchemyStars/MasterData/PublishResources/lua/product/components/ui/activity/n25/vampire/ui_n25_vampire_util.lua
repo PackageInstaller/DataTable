@@ -1,37 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/ui_n25_vampire_util.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireUtil", Object)
 UIN25VampireUtil = UIN25VampireUtil
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireUtil.ShowTryPetInfoUI = function(comp, petId)
-  -- function num : 0_0 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_bloodsucker_pet_attribute)({ComponentID = comp, PetId = petId})
-  for _,cfg in pairs(cfgs) do
+function UIN25VampireUtil.ShowTryPetInfoUI(comp, petId)
+  local cfgs = Cfg.cfg_component_bloodsucker_pet_attribute({ComponentID = comp, PetId = petId})
+  for _, cfg in pairs(cfgs) do
     local customPetData = UICustomPetData:New(cfg)
     customPetData:SetShowBtnStatus(true)
     customPetData:SetBtnInfoCallback(function()
-    -- function num : 0_0_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIN25VampireTips")
-  end
-)
+      GameGlobal.UIStateManager():ShowDialog("UIN25VampireTips")
+    end)
     customPetData:SetBtnInfoName("N25_mcwf_btn6")
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIShopPetDetailController", customPetData:GetPetId(), false, false, false, customPetData)
-    do return  end
+    GameGlobal.UIStateManager():ShowDialog("UIShopPetDetailController", customPetData:GetPetId(), false, false, false, customPetData)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.EnterBattle = function(TT, missionId)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN25VampireUtil.EnterBattle(TT, missionId)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local campaign = UIActivityCampaign:New()
   campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER)
   if res and not res:GetSucc() then
@@ -43,36 +30,29 @@ UIN25VampireUtil.EnterBattle = function(TT, missionId)
     return false
   end
   campaign:ReLoadCampaignInfo_Force(TT, res)
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R6 in 'UnsetPending'
-
   UIN25VampireUtil.BloodsuckerComponet = localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER)
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R6 in 'UnsetPending'
-
-  UIN25VampireUtil.BloodsuckerComponentId = (UIN25VampireUtil.BloodsuckerComponet):GetComponentCfgId()
+  UIN25VampireUtil.BloodsuckerComponentId = UIN25VampireUtil.BloodsuckerComponet:GetComponentCfgId()
   local bloodsuckerInfo = localProcess:GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER)
   local talentInfo = bloodsuckerInfo.talent_info
-  ;
-  (UIN25VampireUtil.SetOldLevel)(talentInfo.talent_level)
-  ;
-  (UIN25VampireUtil.SetOldExp)(talentInfo.cur_exp)
-  ;
-  (UIN25VampireUtil.SetOldInfo)(talentInfo)
-  ;
-  (UIN25VampireUtil.SetOldComponentInfo)(bloodsuckerInfo.pass_pet_list)
-  local missiontModule = (GameGlobal.GetModule)(MissionModule)
+  UIN25VampireUtil.SetOldLevel(talentInfo.talent_level)
+  UIN25VampireUtil.SetOldExp(talentInfo.cur_exp)
+  UIN25VampireUtil.SetOldInfo(talentInfo)
+  UIN25VampireUtil.SetOldComponentInfo(bloodsuckerInfo.pass_pet_list)
+  local missiontModule = GameGlobal.GetModule(MissionModule)
   local ctx = missiontModule:TeamCtx()
   ctx:InitVampireTeams()
-  ctx:Init(TeamOpenerType.Vampire, {missionId, ECampaignMissionComponentId.ECampaignMissionComponentId_Bloodsucker, UIN25VampireUtil.BloodsuckerComponentId})
+  ctx:Init(TeamOpenerType.Vampire, {
+    missionId,
+    ECampaignMissionComponentId.ECampaignMissionComponentId_Bloodsucker,
+    UIN25VampireUtil.BloodsuckerComponentId
+  })
   ctx:ShowDialogUITeams(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.SaveTeamInfo = function(TT, petids)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN25VampireUtil.SaveTeamInfo(TT, petids)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local campaign = UIActivityCampaign:New()
   campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER)
   if res and not res:GetSucc() then
@@ -85,9 +65,9 @@ UIN25VampireUtil.SaveTeamInfo = function(TT, petids)
   end
   campaign:ReLoadCampaignInfo_Force(TT, res)
   local bloodsuckerComponet = localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER)
-  local tryPetList = (UIN25VampireUtil.GetTryPetList)((UIN25VampireUtil.GetComponentConfigId)())
+  local tryPetList = UIN25VampireUtil.GetTryPetList(UIN25VampireUtil.GetComponentConfigId())
   local hasExpire = false
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   local petInfos = {}
   for i = 1, #petids do
     local petInfo = PetNodeInfo:New()
@@ -108,29 +88,15 @@ UIN25VampireUtil.SaveTeamInfo = function(TT, petids)
           end
         end
       end
-      do
-        do
-          do
-            if isFind == false then
-              if petInfo.pet_id ~= 0 then
-                hasExpire = true
-              end
-              petInfo.pet_id = 0
-              petids[i] = 0
-            end
-            petInfos[#petInfos + 1] = petInfo
-            -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+      if isFind == false then
+        if petInfo.pet_id ~= 0 then
+          hasExpire = true
         end
+        petInfo.pet_id = 0
+        petids[i] = 0
       end
     end
+    petInfos[#petInfos + 1] = petInfo
   end
   bloodsuckerComponet:HandleBloodsuckerChangeFormation(TT, res, petInfos)
   if res:GetSucc() then
@@ -139,57 +105,38 @@ UIN25VampireUtil.SaveTeamInfo = function(TT, petids)
   return false, hasExpire
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.GetOldLevel = function()
-  -- function num : 0_3 , upvalues : _ENV
+function UIN25VampireUtil.GetOldLevel()
   return UIN25VampireUtil.OLD_LEVEL
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.SetOldLevel = function(level)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN25VampireUtil.SetOldLevel(level)
   UIN25VampireUtil.OLD_LEVEL = level
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.GetOldExp = function()
-  -- function num : 0_5 , upvalues : _ENV
+function UIN25VampireUtil.GetOldExp()
   return UIN25VampireUtil.OLD_EXP
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.SetOldExp = function(exp)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN25VampireUtil.SetOldExp(exp)
   UIN25VampireUtil.OLD_EXP = exp
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.GetComponentConfigId = function()
-  -- function num : 0_7 , upvalues : _ENV
+function UIN25VampireUtil.GetComponentConfigId()
   return UIN25VampireUtil.BloodsuckerComponentId
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.CreatePetData = function(tmpId)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN25VampireUtil.CreatePetData(tmpId)
   if tmpId <= 0 then
     return nil
   end
-  local cfgs = (Cfg.cfg_component_bloodsucker_pet_attribute)({ComponentID = (UIN25VampireUtil.GetComponentConfigId)(), PetId = tmpId})
+  local cfgs = Cfg.cfg_component_bloodsucker_pet_attribute({
+    ComponentID = UIN25VampireUtil.GetComponentConfigId(),
+    PetId = tmpId
+  })
   if cfgs == nil then
     return nil
   end
-  for _,cfg in pairs(cfgs) do
+  for _, cfg in pairs(cfgs) do
     local tmp = _G.pet_data
     local tempData = tmp:New()
     tempData.pet_pstid = tmpId
@@ -202,32 +149,26 @@ UIN25VampireUtil.CreatePetData = function(tmpId)
     tempData.equip_lv = cfg.Equip
     tempData.affinity_level = pet:GetPetAffinityMaxLevel()
     pet:SetData(tempData)
-    do return pet end
+    return pet
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.PetCompleteFirstPass = function(templateId)
-  -- function num : 0_9 , upvalues : _ENV
-  local info = (UIN25VampireUtil.BloodsuckerComponet):GetComponentInfo()
+function UIN25VampireUtil.PetCompleteFirstPass(templateId)
+  local info = UIN25VampireUtil.BloodsuckerComponet:GetComponentInfo()
   if not info.pass_pet_list then
     return false
   end
   for i = 1, #info.pass_pet_list do
-    if (info.pass_pet_list)[i] == templateId then
+    if info.pass_pet_list[i] == templateId then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.IsTryPet = function(templateId)
-  -- function num : 0_10 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
+function UIN25VampireUtil.IsTryPet(templateId)
+  local petModule = GameGlobal.GetModule(PetModule)
   local pet = petModule:GetPetByTemplateId(templateId)
   if not pet then
     return true
@@ -235,19 +176,16 @@ UIN25VampireUtil.IsTryPet = function(templateId)
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.GetTryPetList = function(componentConfigId)
-  -- function num : 0_11 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_bloodsucker_try_pet)({ComponentID = componentConfigId})
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function UIN25VampireUtil.GetTryPetList(componentConfigId)
+  local cfgs = Cfg.cfg_component_bloodsucker_try_pet({ComponentID = componentConfigId})
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local nowTime = timeModule:GetServerTime() / 1000
-  local curCfg = nil
+  local curCfg
   local maxTime = 0
-  for k,cfg in pairs(cfgs) do
+  for k, cfg in pairs(cfgs) do
     local tryTime = loginModule:GetTimeStampByTimeStr(cfg.TryTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-    if tryTime < nowTime and maxTime <= tryTime then
+    if nowTime > tryTime and maxTime <= tryTime then
       maxTime = tryTime
       curCfg = cfg
     end
@@ -258,89 +196,56 @@ UIN25VampireUtil.GetTryPetList = function(componentConfigId)
   return {}
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.ShowRewards = function(rewards, callback)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN25VampireUtil.ShowRewards(rewards, callback)
   local petIdList = {}
-  local mPet = (GameGlobal.GetModule)(PetModule)
-  for _,reward in pairs(rewards) do
+  local mPet = GameGlobal.GetModule(PetModule)
+  for _, reward in pairs(rewards) do
     if mPet:IsPetID(reward.assetid) then
-      (table.insert)(petIdList, reward)
+      table.insert(petIdList, reward)
     end
   end
-  if (table.count)(petIdList) > 0 then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIPetObtain", petIdList, function()
-    -- function num : 0_12_0 , upvalues : _ENV, rewards, callback
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", rewards, function()
-      -- function num : 0_12_0_0 , upvalues : callback
-      if callback then
-        callback()
-      end
-    end
-)
+  if table.count(petIdList) > 0 then
+    GameGlobal.UIStateManager():ShowDialog("UIPetObtain", petIdList, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      GameGlobal.UIStateManager():ShowDialog("UIGetItemController", rewards, function()
+        if callback then
+          callback()
+        end
+      end)
+    end)
+    return
   end
-)
-    return 
-  end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_12_1 , upvalues : callback
+  GameGlobal.UIStateManager():ShowDialog("UIGetItemController", rewards, function()
     if callback then
       callback()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.SetOldInfo = function(info)
-  -- function num : 0_13 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN25VampireUtil.SetOldInfo(info)
   UIN25VampireUtil.OLD_INFO = info
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.GetOldInfo = function()
-  -- function num : 0_14 , upvalues : _ENV
+function UIN25VampireUtil.GetOldInfo()
   return UIN25VampireUtil.OLD_INFO
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.SetOldComponentInfo = function(info)
-  -- function num : 0_15 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN25VampireUtil.SetOldComponentInfo(info)
   UIN25VampireUtil.OLD_CptInfo = info
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.GetOldComponentInfo = function()
-  -- function num : 0_16 , upvalues : _ENV
+function UIN25VampireUtil.GetOldComponentInfo()
   return UIN25VampireUtil.OLD_CptInfo
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireUtil.GetVampireResultPets = function(petIds)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN25VampireUtil.GetVampireResultPets(petIds)
   if not petIds then
-    return 
+    return
   end
   local pets = {}
-  for index,petId in ipairs(petIds) do
+  for index, petId in ipairs(petIds) do
     local pet = VampirePet:New(petId)
-    ;
-    (table.insert)(pets, pet)
+    table.insert(pets, pet)
   end
   return pets
 end
-
-

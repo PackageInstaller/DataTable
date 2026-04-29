@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_grid_purify.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParam_GridPurify", SkillEffectParamBase)
 SkillEffectParam_GridPurify = SkillEffectParam_GridPurify
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_GridPurify.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_GridPurify:Constructor(t)
   self._purifyRate = tonumber(t.purifyRate)
   self._trapID = tonumber(t.trapID)
   self._trapMax = tonumber(t.trapMax)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_GridPurify.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_GridPurify:GetEffectType()
   return SkillEffectType.GridPurify
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_GridPurify.GetPurifyRate = function(self)
-  -- function num : 0_2
+function SkillEffectParam_GridPurify:GetPurifyRate()
   return self._purifyRate
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_GridPurify.GetTrapID = function(self)
-  -- function num : 0_3
+function SkillEffectParam_GridPurify:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_GridPurify.GetTrapMax = function(self)
-  -- function num : 0_4
+function SkillEffectParam_GridPurify:GetTrapMax()
   return self._trapMax
 end
-
-

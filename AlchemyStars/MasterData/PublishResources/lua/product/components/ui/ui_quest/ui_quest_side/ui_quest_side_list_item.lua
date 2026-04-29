@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_side/ui_quest_side_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestSideListItem", UICustomWidget)
 UIQuestSideListItem = UIQuestSideListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestSideListItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIQuestSideListItem:OnShow(uiParams)
   self._itemCountPerRow = 1
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   if self._questModule == nil then
-    (Log.fatal)("[quest] error --> self._questModule is nil !")
-    return 
+    Log.fatal("[quest] error --> self._questModule is nil !")
+    return
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideListItem.SetData = function(self, index, quest, callback, awardClick, playAnim)
-  -- function num : 0_1
+function UIQuestSideListItem:SetData(index, quest, callback, awardClick, playAnim)
   self:_GetComponents()
   self._index = index
   self._data = quest:QuestInfo()
@@ -30,62 +20,38 @@ UIQuestSideListItem.SetData = function(self, index, quest, callback, awardClick,
   if awardClick then
     self._awardClick = awardClick
   end
-  self._target = (self._data).QuestDesc
-  self._items = (self._data).rewards
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R6 in 'UnsetPending'
-
+  self._target = self._data.QuestDesc
+  self._items = self._data.rewards
   if playAnim then
-    (self._anim).enabled = false
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._anim).enabled = true
-    ;
-    (self._anim):Stop()
-    ;
-    (self._anim):Sample()
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._alpha).alpha = 0
+    self._anim.enabled = false
+    self._anim.enabled = true
+    self._anim:Stop()
+    self._anim:Sample()
+    self._alpha.alpha = 0
     self:PlayAnim()
   else
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._alpha).alpha = 1
+    self._alpha.alpha = 1
   end
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideListItem.PlayAnim = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIQuestSideListItem:PlayAnim()
   local yieldTime = self._index * 60
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
-  self._timer = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_2_0 , upvalues : self
-    (self._anim):Play("uieffanim_UIQuestSideListItem_in")
-  end
-)
+  self._timer = GameGlobal.Timer():AddEvent(yieldTime, function()
+    self._anim:Play("uieffanim_UIQuestSideListItem_in")
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideListItem._RefrenshInfo = function(self)
-  -- function num : 0_3
-  self._target = (self._data).QuestDesc
-  self._items = (self._data).rewards
+function UIQuestSideListItem:_RefrenshInfo()
+  self._target = self._data.QuestDesc
+  self._items = self._data.rewards
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideListItem._GetComponents = function(self)
-  -- function num : 0_4
+function UIQuestSideListItem:_GetComponents()
   self._targetTex = self:GetUIComponent("UILocalizationText", "targetTex")
   self._targetValueImg = self:GetUIComponent("Image", "targetValueImg")
   self._targetValueTex = self:GetUIComponent("UILocalizationText", "targetValueTex")
@@ -96,96 +62,68 @@ UIQuestSideListItem._GetComponents = function(self)
   self._anim = self:GetUIComponent("Animation", "UIQuestSideListItem")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideListItem._OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._gotoGo):SetActive(false)
-  ;
-  (self._getGo):SetActive(false)
-  local sprite = nil
-  if (self._data).status == QuestStatus.QUEST_Accepted then
-    (self._gotoGo):SetActive(true)
+function UIQuestSideListItem:_OnValue()
+  self._gotoGo:SetActive(false)
+  self._getGo:SetActive(false)
+  local sprite
+  if self._data.status == QuestStatus.QUEST_Accepted then
+    self._gotoGo:SetActive(true)
     sprite = ""
+  elseif self._data.status == QuestStatus.QUEST_Completed then
+    self._getGo:SetActive(true)
   else
-    if (self._data).status == QuestStatus.QUEST_Completed then
-      (self._getGo):SetActive(true)
-    else
-      ;
-      (Log.error)("###[Quest] get a quest , state is error , state --> ", (self._data).status, "|quest id  --> ", (self._data).quest_id)
-    end
+    Log.error("###[Quest] get a quest , state is error , state --> ", self._data.status, "|quest id  --> ", self._data.quest_id)
   end
-  local rate = (self._data).cur_progress / (self._data).total_progress
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._targetValueImg).fillAmount = rate
+  local rate = self._data.cur_progress / self._data.total_progress
+  self._targetValueImg.fillAmount = rate
   local progress = ""
-  if (self._data).ShowType == 1 then
-    local c, d = (math.modf)((self._data).cur_progress * 100 / (self._data).total_progress)
-    if c < 1 and d > 0 then
+  if self._data.ShowType == 1 then
+    local c, d = math.modf(self._data.cur_progress * 100 / self._data.total_progress)
+    if c < 1 and 0 < d then
       c = 1
     end
     progress = c .. "%"
   else
-    do
-      progress = (self._data).cur_progress .. " /" .. (self._data).total_progress
-      ;
-      (self._targetValueTex):SetText(progress)
-      ;
-      (self._targetTex):SetText((StringTable.Get)(self._target))
-      ;
-      (self._awardPool):SpawnObjects("UIQuestSideAwardItem", (table.count)(self._items))
-      local pools = (self._awardPool):GetAllSpawnList()
-      for i = 1, (table.count)(self._items) do
-        local id = ((self._items)[i]).assetid
-        local cfg_item = (Cfg.cfg_item)[id]
-        local params = {}
-        params.quality = cfg_item.Color
-        params.icon = cfg_item.Icon
-        params.text = ((self._items)[i]).count
-        ;
-        (pools[i]):SetData(id, params, self._awardClick)
-      end
-    end
+    progress = self._data.cur_progress .. " /" .. self._data.total_progress
+  end
+  self._targetValueTex:SetText(progress)
+  self._targetTex:SetText(StringTable.Get(self._target))
+  self._awardPool:SpawnObjects("UIQuestSideAwardItem", table.count(self._items))
+  local pools = self._awardPool:GetAllSpawnList()
+  for i = 1, table.count(self._items) do
+    local id = self._items[i].assetid
+    local cfg_item = Cfg.cfg_item[id]
+    local params = {}
+    params.quality = cfg_item.Color
+    params.icon = cfg_item.Icon
+    params.text = self._items[i].count
+    pools[i]:SetData(id, params, self._awardClick)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideListItem.GetOnClick = function(self)
-  -- function num : 0_6
+function UIQuestSideListItem:GetOnClick()
   if self._callback then
-    (self._callback)(self._data)
+    self._callback(self._data)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideListItem.GoToOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local jumpModule = (self._questModule).uiModule
+function UIQuestSideListItem:GoToOnClick()
+  local jumpModule = self._questModule.uiModule
   if jumpModule == nil then
-    (Log.fatal)("[quest] error --> uiModule is nil ! --> jumpModule")
-    return 
+    Log.fatal("[quest] error --> uiModule is nil ! --> jumpModule")
+    return
   end
   local fromParam = {}
-  ;
-  (table.insert)(fromParam, QuestType.QT_Branch)
+  table.insert(fromParam, QuestType.QT_Branch)
   jumpModule:SetFromUIData(FromUIType.NormalUI, "UIQuestController", UIStateType.UIMain, fromParam)
-  local jumpType = (self._data).JumpID
-  local jumpParams = (self._data).JumpParam
+  local jumpType = self._data.JumpID
+  local jumpParams = self._data.JumpParam
   jumpModule:SetJumpUIData(jumpType, jumpParams)
   jumpModule:Jump()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideListItem.OnHide = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIQuestSideListItem:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
-
-

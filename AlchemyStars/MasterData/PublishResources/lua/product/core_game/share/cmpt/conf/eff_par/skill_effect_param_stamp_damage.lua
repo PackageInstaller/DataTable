@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_stamp_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParam_StampDamage", SkillDamageEffectParam)
 SkillEffectParam_StampDamage = SkillEffectParam_StampDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_StampDamage.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_StampDamage:Constructor(t)
   self._addDamageByStamp = t.addDamageByStamp
   self._buffId = t.buffId
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_StampDamage.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_StampDamage:GetEffectType()
   return SkillEffectType.StampDamage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_StampDamage.GetBuffID = function(self)
-  -- function num : 0_2
+function SkillEffectParam_StampDamage:GetBuffID()
   return self._buffId
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_StampDamage.GetAddDamageByStamp = function(self)
-  -- function num : 0_3
+function SkillEffectParam_StampDamage:GetAddDamageByStamp()
   return self._addDamageByStamp
 end
-
-

@@ -1,69 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/maze/maze_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MazeModule", GameModule)
 MazeModule = MazeModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MazeModule.Constructor = function(self)
-  -- function num : 0_0
+function MazeModule:Constructor()
   self._mazeInfo = nil
   self._mazeInitTime = nil
   self._max_layer = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.GetMazeInfo = function(self)
-  -- function num : 0_1
+function MazeModule:GetMazeInfo()
   return self._mazeInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.SetMazeInfo = function(self, maze_info)
-  -- function num : 0_2 , upvalues : _ENV
-  if self._mazeInfo and (self._mazeInfo).maze_version ~= maze_info.maze_version and (GameGlobal:GetInstance()):IsCoreGameRunning() then
+function MazeModule:SetMazeInfo(maze_info)
+  if self._mazeInfo and self._mazeInfo.maze_version ~= maze_info.maze_version and GameGlobal:GetInstance():IsCoreGameRunning() then
     local matchMd = self:GetModule(MatchModule)
     local matchEnterData = matchMd:GetMatchEnterData()
     if matchEnterData:GetMatchType() == MatchType.MT_Maze then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MazeReset)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.MazeReset)
     end
   end
-  do
-    self._mazeInfo = maze_info
-    self:CalcResetTime()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MazeInfoUpdate)
-  end
+  self._mazeInfo = maze_info
+  self:CalcResetTime()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MazeInfoUpdate)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.SetMazeInitTime = function(self, maze_init_time)
-  -- function num : 0_3
+function MazeModule:SetMazeInitTime(maze_init_time)
   self._mazeInitTime = maze_init_time
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.IsMazeUseNewCfg = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function MazeModule:IsMazeUseNewCfg()
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local timeTransform = 1
   local timeStr = "2024-06-13 05:00:00"
   local switchTime = 0
   if timeTransform == 0 then
     switchTime = loginModule:GetTimeStampByTimeStr(timeStr, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  else
-    if timeTransform == 1 then
-      switchTime = loginModule:GetTimeStampByTimeStr(timeStr, Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone)
-    end
+  elseif timeTransform == 1 then
+    switchTime = loginModule:GetTimeStampByTimeStr(timeStr, Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone)
   end
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local svrTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local svrTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   if switchTime <= svrTime then
     return true
   else
@@ -71,23 +47,17 @@ MazeModule.IsMazeUseNewCfg = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.CalcResetTime = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local now = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() / 1000
-  local h = ((Cfg.cfg_global).maze_reset_hour).IntValue
+function MazeModule:CalcResetTime()
+  local now = GameGlobal.GetModule(SvrTimeModule):GetServerTime() / 1000
+  local h = Cfg.cfg_global.maze_reset_hour.IntValue
   if self:IsMazeUseNewCfg() then
-    h = ((Cfg.cfg_global).maze_reset_hour_new).IntValue
+    h = Cfg.cfg_global.maze_reset_hour_new.IntValue
   end
   self._mazeResetTime = now + h * 3600 - (now - self._mazeInitTime) % (h * 3600)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.GetSecToFinish = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local now = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() / 1000
+function MazeModule:GetSecToFinish()
+  local now = GameGlobal.GetModule(SvrTimeModule):GetServerTime() / 1000
   local diff = self._mazeResetTime - now + 1
   if diff < 0 then
     diff = 0
@@ -95,41 +65,28 @@ MazeModule.GetSecToFinish = function(self)
   return diff
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.Init = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self.caller):RegisterPushHandler(CEventNotifyMazeInfo, self.HandleMazeInfoChange, self)
+function MazeModule:Init()
+  self.caller:RegisterPushHandler(CEventNotifyMazeInfo, self.HandleMazeInfoChange, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.HandleMazeInfoChange = function(self, msg)
-  -- function num : 0_8
+function MazeModule:HandleMazeInfoChange(msg)
   self:SetMazeInfo(msg.data)
   self._max_layer = msg.max_layer
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.UnlockSweep = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function MazeModule:UnlockSweep()
   local maxlayer = 0
-  for k,v in pairs((Cfg.cfg_maze_layer)()) do
+  for k, v in pairs(Cfg.cfg_maze_layer()) do
     if maxlayer < v.Layer then
       maxlayer = v.Layer
     end
   end
-  do return self._max_layer == maxlayer end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return self._max_layer == maxlayer
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.RequestSweep = function(self, TT, roomIndex)
-  -- function num : 0_10 , upvalues : _ENV
+function MazeModule:RequestSweep(TT, roomIndex)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventSweepMazeReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventSweepMazeReq)
   request.maze_room_index = roomIndex
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -142,11 +99,8 @@ MazeModule.RequestSweep = function(self, TT, roomIndex)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.UpdateMazeFormationInfo = function(self, TT, formation_id, formation_name, pet_list)
-  -- function num : 0_11 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyChangeMazeFormationReq)
+function MazeModule:UpdateMazeFormationInfo(TT, formation_id, formation_name, pet_list)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyChangeMazeFormationReq)
   request.m_formation_id = formation_id
   request.m_formation_name = formation_name
   request.m_formation_pet_list = pet_list
@@ -165,13 +119,10 @@ MazeModule.UpdateMazeFormationInfo = function(self, TT, formation_id, formation_
   return res, replyEvent.m_formation_info
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.RequestMazeVersion = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
+function MazeModule:RequestMazeVersion(TT)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestMazeVersion)
-  request.maze_version = (self._mazeInfo).maze_version
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestMazeVersion)
+  request.maze_version = self._mazeInfo.maze_version
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     res:SetSucc(false)
@@ -184,28 +135,17 @@ MazeModule.RequestMazeVersion = function(self, TT)
   return res
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule._SetFormationInfos = function(self, formation_info)
-  -- function num : 0_13
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._mazeInfo).formation_info = formation_info
+function MazeModule:_SetFormationInfos(formation_info)
+  self._mazeInfo.formation_info = formation_info
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.GetFormationInfo = function(self)
-  -- function num : 0_14
-  return (self._mazeInfo).formation_info
+function MazeModule:GetFormationInfo()
+  return self._mazeInfo.formation_info
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.RequestSelectRelic = function(self, TT, relicid)
-  -- function num : 0_15 , upvalues : _ENV
+function MazeModule:RequestSelectRelic(TT, relicid)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestMazeSelectRelic)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestMazeSelectRelic)
   request.relic_id = relicid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -219,12 +159,9 @@ MazeModule.RequestSelectRelic = function(self, TT, relicid)
   return res
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.RequestUseDice = function(self, TT, relicid)
-  -- function num : 0_16 , upvalues : _ENV
+function MazeModule:RequestUseDice(TT, relicid)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestMazeUseDice)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestMazeUseDice)
   request.relic_id = relicid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -238,12 +175,9 @@ MazeModule.RequestUseDice = function(self, TT, relicid)
   return res, reply.msg
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.RequestEnterRoom = function(self, TT, roomIndex, bIsReLife)
-  -- function num : 0_17 , upvalues : _ENV
+function MazeModule:RequestEnterRoom(TT, roomIndex, bIsReLife)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestMazeEnterRoom)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestMazeEnterRoom)
   request.room_index = roomIndex
   request.is_random_relife_pet = bIsReLife
   local reply = self:Call(TT, request)
@@ -258,83 +192,64 @@ MazeModule.RequestEnterRoom = function(self, TT, roomIndex, bIsReLife)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.SingleMatch = function(self, room_index, teamid)
-  -- function num : 0_18 , upvalues : _ENV
-  local game = (GameGlobal.GetModule)(GameMatchModule)
+function MazeModule:SingleMatch(room_index, teamid)
+  local game = GameGlobal.GetModule(GameMatchModule)
   local info = MazeCreateInfo:New()
-  info.maze_version = (self._mazeInfo).maze_version
-  info.maze_layer = (self._mazeInfo).maze_layer
+  info.maze_version = self._mazeInfo.maze_version
+  info.maze_layer = self._mazeInfo.maze_layer
   info.maze_room_index = room_index
   game:StartMatch(MatchType.MT_Maze, teamid, info)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.GetRoomMonsterList = function(self, room_index)
-  -- function num : 0_19 , upvalues : _ENV
-  local room = ((self._mazeInfo).room_info)[room_index + 1]
-  if ((Cfg.cfg_maze_room)[room.room_id]).MazeRoomType == MazeRoomType.MazeRoomType_Battery then
+function MazeModule:GetRoomMonsterList(room_index)
+  local room = self._mazeInfo.room_info[room_index + 1]
+  if Cfg.cfg_maze_room[room.room_id].MazeRoomType == MazeRoomType.MazeRoomType_Battery then
     return {}
   end
-  local levelid = (room.level_info).level_id
-  local waveInfo = (room.level_info).wave_randoms
-  local cfg = (Cfg.cfg_level)[levelid]
+  local levelid = room.level_info.level_id
+  local waveInfo = room.level_info.wave_randoms
+  local cfg = Cfg.cfg_level[levelid]
   if cfg == nil then
-    (Log.exception)("找不到秘境关卡：", levelid)
+    Log.exception("找不到秘境关卡：", levelid)
   end
   local waveArr = cfg.MonsterWave
   local ret = {}
-  for i,wave in ipairs(waveArr) do
-    local wavecfg = (Cfg.cfg_monster_wave)[wave]
-    local refreshcfg = (Cfg.cfg_refresh)[wavecfg.WaveBeginRefreshID]
+  for i, wave in ipairs(waveArr) do
+    local wavecfg = Cfg.cfg_monster_wave[wave]
+    local refreshcfg = Cfg.cfg_refresh[wavecfg.WaveBeginRefreshID]
     local monsterWeight = refreshcfg.MonsterWeight
     local monsterRIds = refreshcfg.MonsterRefreshIDList
     local totalw = 0
-    for _,w in ipairs(monsterWeight) do
+    for _, w in ipairs(monsterWeight) do
       totalw = totalw + w
     end
     local monsterRefreshId = 0
-    local ww = waveInfo[2 * i - 1] * (totalw)
-    for j,w in ipairs(monsterWeight) do
+    local ww = waveInfo[2 * i - 1] * totalw
+    for j, w in ipairs(monsterWeight) do
       ww = ww - w
       if ww <= 0 then
         monsterRefreshId = monsterRIds[j]
         break
       end
     end
-    do
-      do
-        local monsters = ((Cfg.cfg_refresh_monster)[monsterRefreshId]).MonsterIDList
-        ;
-        (table.appendArray)(ret, monsters)
-        -- DECOMPILER ERROR at PC77: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    local monsters = Cfg.cfg_refresh_monster[monsterRefreshId].MonsterIDList
+    table.appendArray(ret, monsters)
   end
-  ret = (table.unique)(ret)
+  ret = table.unique(ret)
   return ret
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.GetPetPower = function(self, pet_pstid)
-  -- function num : 0_20
+function MazeModule:GetPetPower(pet_pstid)
   local max = self:_getPetPowerLimit(pet_pstid)
-  local l_pet_info = ((self._mazeInfo).pet_info)[pet_pstid]
+  local l_pet_info = self._mazeInfo.pet_info[pet_pstid]
   if l_pet_info then
     return l_pet_info.power, max
   end
   return -1, max
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule._getPetPowerLimit = function(self, pet_pstid)
-  -- function num : 0_21 , upvalues : _ENV
-  local petMd = ((GameGlobal:GetInstance()).GetModule)(PetModule)
+function MazeModule:_getPetPowerLimit(pet_pstid)
+  local petMd = GameGlobal:GetInstance().GetModule(PetModule)
   local pet = petMd:GetPet(pet_pstid)
   if not pet then
     return 0
@@ -344,12 +259,9 @@ MazeModule._getPetPowerLimit = function(self, pet_pstid)
   return cfg.TriggerParam
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.IsPetActiveSkillUseLegendEnergy = function(self, pet_pstid, peiCls)
-  -- function num : 0_22 , upvalues : _ENV
-  local petMd = (((GameGlobal:GetInstance()).GetModule)(PetModule))
-  local pet = nil
+function MazeModule:IsPetActiveSkillUseLegendEnergy(pet_pstid, peiCls)
+  local petMd = GameGlobal:GetInstance().GetModule(PetModule)
+  local pet
   if pet_pstid then
     pet = petMd:GetPet(pet_pstid)
   else
@@ -360,105 +272,76 @@ MazeModule.IsPetActiveSkillUseLegendEnergy = function(self, pet_pstid, peiCls)
   end
   local activeSkillID = pet:GetPetActiveSkill()
   local cfg = BattleSkillCfg(activeSkillID)
-  do return cfg.TriggerType == SkillTriggerType.LegendEnergy or cfg.TriggerType == SkillTriggerType.AlchemyEnergy end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return cfg.TriggerType == SkillTriggerType.LegendEnergy or cfg.TriggerType == SkillTriggerType.AlchemyEnergy
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.IsLastLayerRoom = function(self, version, layer, room_index)
-  -- function num : 0_23
-  if version ~= (self._mazeInfo).maze_version then
+function MazeModule:IsLastLayerRoom(version, layer, room_index)
+  if version ~= self._mazeInfo.maze_version then
     return false
   end
-  if layer ~= (self._mazeInfo).layer then
+  if layer ~= self._mazeInfo.layer then
     return false
   end
-  if room_index + 1 ~= #(self._mazeInfo).room_info then
+  if room_index + 1 ~= #self._mazeInfo.room_info then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.GetLastTeamID = function(self)
-  -- function num : 0_24
-  return (self._mazeInfo).team_id
+function MazeModule:GetLastTeamID()
+  return self._mazeInfo.team_id
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.GetCurrentRoom = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  local matchData = (((GameGlobal.GetModule)(MatchModule)):GetMatchEnterData()):GetMazeCreateInfo()
-  return ((self._mazeInfo).room_info)[matchData.maze_room_index + 1]
+function MazeModule:GetCurrentRoom()
+  local matchData = GameGlobal.GetModule(MatchModule):GetMatchEnterData():GetMazeCreateInfo()
+  return self._mazeInfo.room_info[matchData.maze_room_index + 1]
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.GetMazeRelicAddAttack = function(self, pet_pstid)
-  -- function num : 0_26
-  local l_pet_info = ((self._mazeInfo).pet_info)[pet_pstid]
+function MazeModule:GetMazeRelicAddAttack(pet_pstid)
+  local l_pet_info = self._mazeInfo.pet_info[pet_pstid]
   if l_pet_info then
     return l_pet_info.attack_mul
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.GetMazeRelicAddDefence = function(self, pet_pstid)
-  -- function num : 0_27
-  local l_pet_info = ((self._mazeInfo).pet_info)[pet_pstid]
+function MazeModule:GetMazeRelicAddDefence(pet_pstid)
+  local l_pet_info = self._mazeInfo.pet_info[pet_pstid]
   if l_pet_info then
     return l_pet_info.defense_mul
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.GetMazeRelicAddMaxHP = function(self, pet_pstid)
-  -- function num : 0_28
-  local l_pet_info = ((self._mazeInfo).pet_info)[pet_pstid]
+function MazeModule:GetMazeRelicAddMaxHP(pet_pstid)
+  local l_pet_info = self._mazeInfo.pet_info[pet_pstid]
   if l_pet_info then
     return l_pet_info.max_hp_mul
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.CalcGameOverAddBlood = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function MazeModule:CalcGameOverAddBlood()
   local addBlood = 0
-  for i,relic in ipairs((self._mazeInfo).relics) do
-    local cfg = ((Cfg.cfg_item).relic)[relic]
-    if cfg.OutGameTriggerType == MazeRelicOutGameTriggerType.MRTOGTT_GameOver and cfg.OutGameEffectType == MazeRelicOutGameEffectType.AddHP and ((self._mazeInfo).relic_counters)[relic] - 1 < cfg.OutGameTriggerCount then
+  for i, relic in ipairs(self._mazeInfo.relics) do
+    local cfg = Cfg.cfg_item.relic[relic]
+    if cfg.OutGameTriggerType == MazeRelicOutGameTriggerType.MRTOGTT_GameOver and cfg.OutGameEffectType == MazeRelicOutGameEffectType.AddHP and self._mazeInfo.relic_counters[relic] - 1 < cfg.OutGameTriggerCount then
       addBlood = addBlood + cfg.OutGameEffectParam
     end
   end
-  ;
-  (Log.error)("CalcGameOverAddBlood() addBlood=", addBlood)
+  Log.error("CalcGameOverAddBlood() addBlood=", addBlood)
   return addBlood
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.MazeIsPass = function(self)
-  -- function num : 0_30
-  if self._mazeInfo == nil or (self._mazeInfo).is_pass_all_maze == nil then
+function MazeModule:MazeIsPass()
+  if self._mazeInfo == nil or self._mazeInfo.is_pass_all_maze == nil then
     return false
   end
-  return (self._mazeInfo).is_pass_all_maze
+  return self._mazeInfo.is_pass_all_maze
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.GetMazePetInfoByPstId = function(self, pet_pst_id)
-  -- function num : 0_31
-  local l_pet_info = ((self._mazeInfo).pet_info)[pet_pst_id]
+function MazeModule:GetMazePetInfoByPstId(pet_pst_id)
+  local l_pet_info = self._mazeInfo.pet_info[pet_pst_id]
   if l_pet_info then
     return l_pet_info
   end
@@ -471,18 +354,12 @@ MazeModule.GetMazePetInfoByPstId = function(self, pet_pst_id)
   l_pet_info.power = -1
   l_pet_info.blood = 1
   l_pet_info.is_dead = false
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._mazeInfo).pet_info)[pet_pst_id] = l_pet_info
+  self._mazeInfo.pet_info[pet_pst_id] = l_pet_info
   return l_pet_info
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.GetCalPetADH = function(self, pet_pst_id)
-  -- function num : 0_32 , upvalues : _ENV
-  local l_pet_module = ((GameGlobal.GameLogic)()):GetModule(PetModule)
+function MazeModule:GetCalPetADH(pet_pst_id)
+  local l_pet_module = GameGlobal.GameLogic():GetModule(PetModule)
   if l_pet_module == nil then
     return -1, -1, -1
   end
@@ -494,7 +371,7 @@ MazeModule.GetCalPetADH = function(self, pet_pst_id)
   if l_pet_template_id == nil or l_pet_template_id <= 0 then
     return -1, -1, -1
   end
-  local l_cfg_maze_pet_info = (Cfg.cfg_maze_pet_info)[l_pet_template_id]
+  local l_cfg_maze_pet_info = Cfg.cfg_maze_pet_info[l_pet_template_id]
   if l_cfg_maze_pet_info == nil then
     return -1, -1, -1
   end
@@ -504,31 +381,28 @@ MazeModule.GetCalPetADH = function(self, pet_pst_id)
     return -1, -1, -1
   end
   local attack_base = l_cfg_maze_pet_info.Attack
-  local ak1 = (((self._mazeInfo).relic_attrs).attack_mul)[0] or 0
-  local ak2 = (((self._mazeInfo).relic_attrs).attack_mul)[l_elem] or 0
-  local ak3 = (((self._mazeInfo).relic_attrs).attack_mul)[l_job] or 0
+  local ak1 = self._mazeInfo.relic_attrs.attack_mul[0] or 0
+  local ak2 = self._mazeInfo.relic_attrs.attack_mul[l_elem] or 0
+  local ak3 = self._mazeInfo.relic_attrs.attack_mul[l_job] or 0
   local attack_mul = ak1 + ak2 + ak3
   local defense_base = l_cfg_maze_pet_info.Defence
-  local df1 = (((self._mazeInfo).relic_attrs).defense_mul)[0] or 0
-  local df2 = (((self._mazeInfo).relic_attrs).defense_mul)[l_elem] or 0
-  local df3 = (((self._mazeInfo).relic_attrs).defense_mul)[l_job] or 0
+  local df1 = self._mazeInfo.relic_attrs.defense_mul[0] or 0
+  local df2 = self._mazeInfo.relic_attrs.defense_mul[l_elem] or 0
+  local df3 = self._mazeInfo.relic_attrs.defense_mul[l_job] or 0
   local defense_mul = df1 + df2 + df3
   local max_hp_base = l_cfg_maze_pet_info.Health
-  local hp1 = (((self._mazeInfo).relic_attrs).maxhp_mul)[0] or 0
-  local hp2 = (((self._mazeInfo).relic_attrs).maxhp_mul)[l_elem] or 0
-  local hp3 = (((self._mazeInfo).relic_attrs).maxhp_mul)[l_job] or 0
+  local hp1 = self._mazeInfo.relic_attrs.maxhp_mul[0] or 0
+  local hp2 = self._mazeInfo.relic_attrs.maxhp_mul[l_elem] or 0
+  local hp3 = self._mazeInfo.relic_attrs.maxhp_mul[l_job] or 0
   local max_hp_mul = hp1 + hp2 + hp3
-  local attack = (math.floor)(attack_base * (1 + attack_mul))
-  local defense = (math.floor)(defense_base * (1 + defense_mul))
-  local max_hp = (math.floor)(max_hp_base * (1 + max_hp_mul))
+  local attack = math.floor(attack_base * (1 + attack_mul))
+  local defense = math.floor(defense_base * (1 + defense_mul))
+  local max_hp = math.floor(max_hp_base * (1 + max_hp_mul))
   return attack, defense, max_hp
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.GetCalPetMaxHp = function(self, pet_pst_id)
-  -- function num : 0_33 , upvalues : _ENV
-  local l_pet_module = ((GameGlobal.GameLogic)()):GetModule(PetModule)
+function MazeModule:GetCalPetMaxHp(pet_pst_id)
+  local l_pet_module = GameGlobal.GameLogic():GetModule(PetModule)
   if l_pet_module == nil then
     return -1
   end
@@ -540,7 +414,7 @@ MazeModule.GetCalPetMaxHp = function(self, pet_pst_id)
   if l_pet_template_id == nil or l_pet_template_id <= 0 then
     return -1
   end
-  local l_cfg_maze_pet_info = (Cfg.cfg_maze_pet_info)[l_pet_template_id]
+  local l_cfg_maze_pet_info = Cfg.cfg_maze_pet_info[l_pet_template_id]
   if l_cfg_maze_pet_info == nil then
     return -1
   end
@@ -550,27 +424,22 @@ MazeModule.GetCalPetMaxHp = function(self, pet_pst_id)
     return -1
   end
   local max_hp_base = l_cfg_maze_pet_info.Health
-  local hp1 = (((self._mazeInfo).relic_attrs).maxhp_mul)[0] or 0
-  local hp2 = (((self._mazeInfo).relic_attrs).maxhp_mul)[l_elem] or 0
-  local hp3 = (((self._mazeInfo).relic_attrs).maxhp_mul)[l_job] or 0
+  local hp1 = self._mazeInfo.relic_attrs.maxhp_mul[0] or 0
+  local hp2 = self._mazeInfo.relic_attrs.maxhp_mul[l_elem] or 0
+  local hp3 = self._mazeInfo.relic_attrs.maxhp_mul[l_job] or 0
   local max_hp_mul = hp1 + hp2 + hp3
-  return (math.floor)(max_hp_base * (1 + max_hp_mul) + 0.5)
+  return math.floor(max_hp_base * (1 + max_hp_mul) + 0.5)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeModule.GetErrorMsg = function(self, result)
-  -- function num : 0_34 , upvalues : _ENV
+function MazeModule:GetErrorMsg(result)
   local vecErrorMsg = {}
-  vecErrorMsg[FORMATION_RESUTL_CODE.FORMATION_DIRTY_NAME] = (StringTable.Get)("str_maze_FORMATION_DIRTY_NAME")
-  vecErrorMsg[FORMATION_RESUTL_CODE.FORMATION_DATA_INVALID] = (StringTable.Get)("str_maze_FORMATION_DATA_INVALID")
-  vecErrorMsg[FORMATION_RESUTL_CODE.MAZE_FORMATION_PET_DEADED] = (StringTable.Get)("str_maze_MAZE_FORMATION_PET_DEADED")
-  vecErrorMsg[FORMATION_RESUTL_CODE.FORMATION_NAME_BAN] = (StringTable.Get)("str_maze_FORMATION_NAME_BAN")
+  vecErrorMsg[FORMATION_RESUTL_CODE.FORMATION_DIRTY_NAME] = StringTable.Get("str_maze_FORMATION_DIRTY_NAME")
+  vecErrorMsg[FORMATION_RESUTL_CODE.FORMATION_DATA_INVALID] = StringTable.Get("str_maze_FORMATION_DATA_INVALID")
+  vecErrorMsg[FORMATION_RESUTL_CODE.MAZE_FORMATION_PET_DEADED] = StringTable.Get("str_maze_MAZE_FORMATION_PET_DEADED")
+  vecErrorMsg[FORMATION_RESUTL_CODE.FORMATION_NAME_BAN] = StringTable.Get("str_maze_FORMATION_NAME_BAN")
   local stErrorMsg = vecErrorMsg[result]
-  if stErrorMsg == nil then
-    return (StringTable.Get)("str_match_error_server_error")
+  if nil == stErrorMsg then
+    return StringTable.Get("str_match_error_server_error")
   end
   return stErrorMsg
 end
-
-

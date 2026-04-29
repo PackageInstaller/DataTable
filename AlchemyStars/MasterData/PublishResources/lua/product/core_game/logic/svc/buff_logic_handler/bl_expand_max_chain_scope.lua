@@ -1,42 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_expand_max_chain_scope.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicExpandMaxChainSkillScope", BuffLogicBase)
 BuffLogicExpandMaxChainSkillScope = BuffLogicExpandMaxChainSkillScope
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicExpandMaxChainSkillScope.Constructor = function(self, _buffIns, logicParam)
-  -- function num : 0_0
+function BuffLogicExpandMaxChainSkillScope:Constructor(_buffIns, logicParam)
   self._scopeType = logicParam.scopeType
   self._scopeParam = logicParam.scopeParam
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicExpandMaxChainSkillScope.DoLogic = function(self)
-  -- function num : 0_1
-  ((self._entity):BuffComponent()):SetBuffValue("ExpandMaxChainSkillScope", true)
-  ;
-  ((self._entity):BuffComponent()):SetBuffValue("ExpandMaxChainSkillScopeType", self._scopeType)
-  ;
-  ((self._entity):BuffComponent()):SetBuffValue("ExpandMaxChainSkillScopeParam", self._scopeParam)
+function BuffLogicExpandMaxChainSkillScope:DoLogic()
+  self._entity:BuffComponent():SetBuffValue("ExpandMaxChainSkillScope", true)
+  self._entity:BuffComponent():SetBuffValue("ExpandMaxChainSkillScopeType", self._scopeType)
+  self._entity:BuffComponent():SetBuffValue("ExpandMaxChainSkillScopeParam", self._scopeParam)
 end
 
 _class("BuffLogicRevertExpandMaxChainSkillScope", BuffLogicBase)
 BuffLogicRevertExpandMaxChainSkillScope = BuffLogicRevertExpandMaxChainSkillScope
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRevertExpandMaxChainSkillScope.Constructor = function(self, _buffIns, logicParam)
-  -- function num : 0_2
+function BuffLogicRevertExpandMaxChainSkillScope:Constructor(_buffIns, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRevertExpandMaxChainSkillScope.DoLogic = function(self)
-  -- function num : 0_3
-  ((self._entity):BuffComponent()):SetBuffValue("ExpandMaxChainSkillScope", nil)
+function BuffLogicRevertExpandMaxChainSkillScope:DoLogic()
+  self._entity:BuffComponent():SetBuffValue("ExpandMaxChainSkillScope", nil)
 end
-
-

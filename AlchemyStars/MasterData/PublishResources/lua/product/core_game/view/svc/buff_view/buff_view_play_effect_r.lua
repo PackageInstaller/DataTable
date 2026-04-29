@@ -1,21 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_play_effect_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewPlayEffect", BuffViewBase)
 BuffViewPlayEffect = BuffViewPlayEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewPlayEffect.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewPlayEffect:PlayView(TT)
   local buffResult = self._buffResult
-  local playerEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local playerEntity = self._world:Player():GetCurrentTeamEntity()
   local effectID = buffResult:GetEffectID()
   if effectID then
-    local effectService = (self._world):GetService("Effect")
+    local effectService = self._world:GetService("Effect")
     local effectEntity = effectService:CreateEffect(effectID, playerEntity)
   end
 end
-
-

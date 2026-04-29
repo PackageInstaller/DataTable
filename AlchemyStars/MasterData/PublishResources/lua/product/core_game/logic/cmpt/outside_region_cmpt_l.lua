@@ -1,85 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/outside_region_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("OutsideRegionComponent", Object)
 OutsideRegionComponent = OutsideRegionComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-OutsideRegionComponent.Constructor = function(self, boardIndex)
-  -- function num : 0_0
+function OutsideRegionComponent:Constructor(boardIndex)
   self._boardIndex = boardIndex
   self._monsterID = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-OutsideRegionComponent.GetBoardIndex = function(self)
-  -- function num : 0_1
+function OutsideRegionComponent:GetBoardIndex()
   return self._boardIndex
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-OutsideRegionComponent.SetBoardIndex = function(self, boardIndex)
-  -- function num : 0_2
+function OutsideRegionComponent:SetBoardIndex(boardIndex)
   self._boardIndex = boardIndex
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-OutsideRegionComponent.GetMonsterID = function(self)
-  -- function num : 0_3
+function OutsideRegionComponent:GetMonsterID()
   return self._monsterID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-OutsideRegionComponent.SetMonsterID = function(self, monsterID)
-  -- function num : 0_4
+function OutsideRegionComponent:SetMonsterID(monsterID)
   self._monsterID = monsterID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.OutsideRegion = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).OutsideRegion)
+function Entity:OutsideRegion()
+  return self:GetComponent(self.WEComponentsEnum.OutsideRegion)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasOutsideRegion = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).OutsideRegion)
+function Entity:HasOutsideRegion()
+  return self:HasComponent(self.WEComponentsEnum.OutsideRegion)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddOutsideRegion = function(self, boardIndex)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).OutsideRegion
+function Entity:AddOutsideRegion(boardIndex)
+  local index = self.WEComponentsEnum.OutsideRegion
   local component = OutsideRegionComponent:New(boardIndex)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceOutsideRegion = function(self, boardIndex)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).OutsideRegion
+function Entity:ReplaceOutsideRegion(boardIndex)
+  local index = self.WEComponentsEnum.OutsideRegion
   local component = OutsideRegionComponent:New(boardIndex)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveOutsideRegion = function(self)
-  -- function num : 0_9
+function Entity:RemoveOutsideRegion()
   if self:HasOutsideRegion() then
-    self:RemoveComponent((self.WEComponentsEnum).OutsideRegion)
+    self:RemoveComponent(self.WEComponentsEnum.OutsideRegion)
   end
 end
-
-

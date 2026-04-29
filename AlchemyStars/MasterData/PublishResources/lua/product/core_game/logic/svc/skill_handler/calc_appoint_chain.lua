@@ -1,79 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_appoint_chain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_AppointChain", Object)
 SkillEffectCalc_AppointChain = SkillEffectCalc_AppointChain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_AppointChain.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_AppointChain:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_AppointChain.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_AppointChain:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.insert)(results, result)
+      table.insert(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_AppointChain._CalculateSingleTarget = function(self, skillEffectCalcParam, defenderEntityID)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_AppointChain:_CalculateSingleTarget(skillEffectCalcParam, defenderEntityID)
   local skillEffectParam = skillEffectCalcParam:GetSkillEffectParam()
   local casterEntityID = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterEntityID)
-  local targetEntity = (self._world):GetEntityByID(defenderEntityID)
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
+  local targetEntity = self._world:GetEntityByID(defenderEntityID)
   local buffTarget = targetEntity
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local addCount = (skillEffectParam:GetAddCount())
-  local buffID = nil
+  local utilDataSvc = self._world:GetService("UtilData")
+  local addCount = skillEffectParam:GetAddCount()
+  local buffID
   if targetEntity:HasTrap() then
     buffID = skillEffectParam:GetTrapBuffID()
     buffTarget = casterEntity
-    ;
-    (casterEntity:BuffComponent()):SetBuffValue("EffectReplaceEntityID", targetEntity:GetID())
+    casterEntity:BuffComponent():SetBuffValue("EffectReplaceEntityID", targetEntity:GetID())
   else
     utilDataSvc:AddEntityIstavanActiveCount(targetEntity, addCount)
     buffID = skillEffectParam:GetPetBuffID()
-    local actualAttack = (casterEntity:Attributes()):GetAttribute("Attack")
-    ;
-    (targetEntity:BuffComponent()):SetBuffValue("GuestAttackAppointChain", actualAttack)
+    local actualAttack = casterEntity:Attributes():GetAttribute("Attack")
+    targetEntity:BuffComponent():SetBuffValue("GuestAttackAppointChain", actualAttack)
   end
-  do
-    local damageStageIndex = skillEffectParam:GetSkillEffectDamageStageIndex()
-    local buffResult = SkillBuffEffectResult:New(buffTarget:GetID())
-    buffResult:SetDamageStageIndex(damageStageIndex)
-    local cfgNewBuff = (Cfg.cfg_buff)[buffID]
-    if cfgNewBuff then
-      local skillID = skillEffectCalcParam:GetSkillID()
-      local attackRange = skillEffectCalcParam:GetSkillRange()
-      local sTrigger = (self._world):GetService("Trigger")
-      local buffLogicService = (self._world):GetService("BuffLogic")
-      local nt = NTEachAddBuffStart:New(skillID, casterEntity, buffTarget, attackRange)
-      sTrigger:Notify(nt)
-      local seqID = nil
-      local buff = buffLogicService:AddBuff(buffID, buffTarget, {casterEntity = casterEntity}, casterEntity)
-      seqID = buff:BuffSeq()
-      buffResult:AddBuffResult(seqID)
-      sTrigger:Notify(NTEachAddBuffEnd:New(skillID, casterEntity, buffTarget, attackRange, buffID, seqID))
-    end
-    do
-      return buffResult
-    end
+  local damageStageIndex = skillEffectParam:GetSkillEffectDamageStageIndex()
+  local buffResult = SkillBuffEffectResult:New(buffTarget:GetID())
+  buffResult:SetDamageStageIndex(damageStageIndex)
+  local cfgNewBuff = Cfg.cfg_buff[buffID]
+  if cfgNewBuff then
+    local skillID = skillEffectCalcParam:GetSkillID()
+    local attackRange = skillEffectCalcParam:GetSkillRange()
+    local sTrigger = self._world:GetService("Trigger")
+    local buffLogicService = self._world:GetService("BuffLogic")
+    local nt = NTEachAddBuffStart:New(skillID, casterEntity, buffTarget, attackRange)
+    sTrigger:Notify(nt)
+    local seqID
+    local buff = buffLogicService:AddBuff(buffID, buffTarget, {casterEntity = casterEntity}, casterEntity)
+    seqID = buff:BuffSeq()
+    buffResult:AddBuffResult(seqID)
+    sTrigger:Notify(NTEachAddBuffEnd:New(skillID, casterEntity, buffTarget, attackRange, buffID, seqID))
   end
+  return buffResult
 end
-
-

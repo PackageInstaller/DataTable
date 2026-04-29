@@ -1,38 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/maze/stn_maze_find_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Maze_FindRoom", CTestRobot_Base)
 Maze_FindRoom = Maze_FindRoom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Maze_FindRoom.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function Maze_FindRoom:OnWorking()
   local findMazeRoom = self:_FindNextRoom(self.m_mazeInfo)
-  if findMazeRoom == nil then
+  if nil == findMazeRoom then
     self.m_nLogicResult = 0
   else
     self.m_nLogicResult = 1
   end
   self.m_pReturnData = findMazeRoom
-  local mazeModule = (GameGlobal.GetModule)(MazeModule)
+  local mazeModule = GameGlobal.GetModule(MazeModule)
   local mazeInfo = mazeModule:GetMazeInfo()
   local count = 0
   for layer = 1, mazeInfo.layer - 1 do
-    local cfgMazeLayer = (Cfg.cfg_maze_layer)({Layer = layer})
+    local cfgMazeLayer = Cfg.cfg_maze_layer({Layer = layer})
     count = count + #cfgMazeLayer
   end
-  local cfgCurrentLayer = (Cfg.cfg_maze_layer)({Layer = mazeInfo.layer})
-  if cfgCurrentLayer and #cfgCurrentLayer > 0 and mazeInfo.room_index ~= -1 then
-    (table.sort)(cfgCurrentLayer, function(a, b)
-    -- function num : 0_0_0
-    do return a.Step < b.Step end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-    for _,e in ipairs(cfgCurrentLayer) do
+  local cfgCurrentLayer = Cfg.cfg_maze_layer({
+    Layer = mazeInfo.layer
+  })
+  if cfgCurrentLayer and 0 < #cfgCurrentLayer and mazeInfo.room_index ~= -1 then
+    table.sort(cfgCurrentLayer, function(a, b)
+      return a.Step < b.Step
+    end)
+    for _, e in ipairs(cfgCurrentLayer) do
       if e.Step < mazeInfo.room_index + 1 then
         count = count + 1
       else
@@ -40,64 +32,46 @@ Maze_FindRoom.OnWorking = function(self)
       end
     end
   end
-  do
-    local progressInfo = (self.m_pManager):GetProgressInfo()
-    if mazeInfo.room_index ~= -1 then
-      progressInfo:TickProgress(mazeInfo.room_index + mazeInfo.layer * 100)
-    end
-    return ((Maze_FindRoom.super).OnWorking)(self)
+  local progressInfo = self.m_pManager:GetProgressInfo()
+  if mazeInfo.room_index ~= -1 then
+    progressInfo:TickProgress(mazeInfo.room_index + mazeInfo.layer * 100)
   end
+  return Maze_FindRoom.super.OnWorking(self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze_FindRoom.OnBegin = function(self, ...)
-  -- function num : 0_1 , upvalues : _ENV
+function Maze_FindRoom:OnBegin(...)
   if self.m_pActionTree then
-    local listScanID = (self.m_pActionTree):GetScanActionID()
-    local nTreeID = (self.m_pActionTree):GetTreeID()
-    self:PrintLog("ScanPath TreeID = ", nTreeID, ", Path = [", (table.concat)(listScanID, ","), "]")
-    ;
-    (self.m_pActionTree):ResetScanActionID()
+    local listScanID = self.m_pActionTree:GetScanActionID()
+    local nTreeID = self.m_pActionTree:GetTreeID()
+    self:PrintLog("ScanPath TreeID = ", nTreeID, ", Path = [", table.concat(listScanID, ","), "]")
+    self.m_pActionTree:ResetScanActionID()
   end
-  do
-    local nReturn = ((Maze_FindRoom.super).OnBegin)(self, ...)
-    return nReturn
-  end
+  local nReturn = Maze_FindRoom.super.OnBegin(self, ...)
+  return nReturn
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze_FindRoom._GetMazeRoom = function(self, mazeInfo, nCppIndex)
-  -- function num : 0_2
-  return (mazeInfo.room_info)[nCppIndex + 1]
+function Maze_FindRoom:_GetMazeRoom(mazeInfo, nCppIndex)
+  return mazeInfo.room_info[nCppIndex + 1]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze_FindRoom._FindNextRoom = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function Maze_FindRoom:_FindNextRoom()
   local mazeModule = self:GetModule(MazeModule)
   local mazeInfo = mazeModule:GetMazeInfo()
-  if mazeInfo == nil then
+  if nil == mazeInfo then
     return nil
   end
-  do
-    if mazeInfo.room_index == -1 then
-      local nNextIndex = (math.random)(1, 2)
-      return (mazeInfo.room_info)[nNextIndex]
-    end
-    local roomInfo = self:_GetMazeRoom(mazeInfo, mazeInfo.room_index)
-    if (table.count)(roomInfo.next_rooms) <= 0 then
-      return nil
-    end
-    local nRoomSelect = (math.random)(1, (table.count)(roomInfo.next_rooms))
-    local nRoomNext = (roomInfo.next_rooms)[nRoomSelect]
-    if nRoomNext == nil then
-      return nil
-    end
-    return self:_GetMazeRoom(mazeInfo, nRoomNext)
+  if -1 == mazeInfo.room_index then
+    local nNextIndex = math.random(1, 2)
+    return mazeInfo.room_info[nNextIndex]
   end
+  local roomInfo = self:_GetMazeRoom(mazeInfo, mazeInfo.room_index)
+  if table.count(roomInfo.next_rooms) <= 0 then
+    return nil
+  end
+  local nRoomSelect = math.random(1, table.count(roomInfo.next_rooms))
+  local nRoomNext = roomInfo.next_rooms[nRoomSelect]
+  if nil == nRoomNext then
+    return nil
+  end
+  return self:_GetMazeRoom(mazeInfo, nRoomNext)
 end
-
-

@@ -1,48 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_daily/ui_quest_daily_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local UIQuestDailySpecialType = {DoOneDispatch = 20006, DoThreeDispatch = 20015}
 _enum("UIQuestDailySpecialType", UIQuestDailySpecialType)
 _class("UIQuestDailyListItem", UICustomWidget)
 UIQuestDailyListItem = UIQuestDailyListItem
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UIQuestDailyListItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._module = (GameGlobal.GetModule)(QuestModule)
+function UIQuestDailyListItem:OnShow(uiParams)
+  self._module = GameGlobal.GetModule(QuestModule)
   if self._module == nil then
-    (Log.fatal)("[quest] erro --> module is nil !")
-    return 
+    Log.fatal("[quest] erro --> module is nil !")
+    return
   end
-  self._atlas = (self:RootUIOwner()):GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
+  self._atlas = self:RootUIOwner():GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestDailyListItem.SetData = function(self, index, quest, callback, itemCallback)
-  -- function num : 0_1
+function UIQuestDailyListItem:SetData(index, quest, callback, itemCallback)
   self:_GetComponents()
   self._index = index
   self._quest = quest:QuestInfo()
   self._callback = callback
   self._itemCallback = itemCallback
   self:_OnValue()
-  ;
-  (self.rootAnim):Stop()
+  self.rootAnim:Stop()
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestDailyListItem.OnHide = function(self)
-  -- function num : 0_2
+function UIQuestDailyListItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestDailyListItem._GetComponents = function(self)
-  -- function num : 0_3
+function UIQuestDailyListItem:_GetComponents()
   self._typeTex = self:GetUIComponent("UILocalizationText", "typeTex")
   self._desTex = self:GetUIComponent("UILocalizationText", "desTex")
   self._awardPool = self:GetUIComponent("UISelectObjectPath", "awardPool")
@@ -61,172 +44,108 @@ UIQuestDailyListItem._GetComponents = function(self)
   self.canvasGroup = self:GetUIComponent("CanvasGroup", "UIQuestDailyListItem")
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestDailyListItem.InitAnim = function(self)
-  -- function num : 0_4
-  (self.rootAnim):Stop()
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.canvasGroup).alpha = 0
+function UIQuestDailyListItem:InitAnim()
+  self.rootAnim:Stop()
+  self.canvasGroup.alpha = 0
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestDailyListItem.PlayAnim = function(self, index)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.rootAnim).enabled = false
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.rootAnim).enabled = true
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.canvasGroup).alpha = 1
-  ;
-  (self.rootAnim):Play("uieff_UIQuestDailyListItem_in")
+function UIQuestDailyListItem:PlayAnim(index)
+  self.rootAnim.enabled = false
+  self.rootAnim.enabled = true
+  self.canvasGroup.alpha = 1
+  self.rootAnim:Play("uieff_UIQuestDailyListItem_in")
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestDailyListItem._OnValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._typeTex):SetText((StringTable.Get)((self._quest).QuestName))
-  local str = (StringTable.Get)((self._quest).CondDesc)
-  if (self._quest).status == QuestStatus.QUEST_Taken then
+function UIQuestDailyListItem:_OnValue()
+  self._typeTex:SetText(StringTable.Get(self._quest.QuestName))
+  local str = StringTable.Get(self._quest.CondDesc)
+  if self._quest.status == QuestStatus.QUEST_Taken then
     str = "<color=#e6e6e6>" .. str .. "</color>"
-    ;
-    (self._bg):SetActive(false)
-    ;
-    ((self._stateValueTex).gameObject):SetActive(false)
+    self._bg:SetActive(false)
+    self._stateValueTex.gameObject:SetActive(false)
   else
     str = "<color=#4c4b4b>" .. str .. "</color>"
-    ;
-    (self._bg):SetActive(true)
-    ;
-    ((self._stateValueTex).gameObject):SetActive(true)
+    self._bg:SetActive(true)
+    self._stateValueTex.gameObject:SetActive(true)
   end
-  ;
-  (self._desTex):SetText(str)
+  self._desTex:SetText(str)
   local progress = ""
-  if (self._quest).ShowType == 1 then
-    local c, d = (math.modf)((self._quest).cur_progress * 100 / (self._quest).total_progress)
-    if c < 1 and d > 0 then
+  if self._quest.ShowType == 1 then
+    local c, d = math.modf(self._quest.cur_progress * 100 / self._quest.total_progress)
+    if c < 1 and 0 < d then
       c = 1
     end
     progress = c .. "%"
   else
-    do
-      progress = (self._quest).cur_progress .. "/" .. (self._quest).total_progress
-      ;
-      (self._stateValueTex):SetText(progress)
-      local rate = (self._quest).cur_progress / (self._quest).total_progress
-      -- DECOMPILER ERROR at PC89: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._stateValueImg).fillAmount = rate
-      local btnTex = ""
-      local icon = ""
-      local img = ""
-      ;
-      (self._mask):SetActive(false)
-      ;
-      (self._select):SetActive(false)
-      if (self._quest).status == QuestStatus.QUEST_Taken then
-        (self._got):SetActive(true)
-        ;
-        (self._btn):SetActive(false)
-        ;
-        (self._bg):SetActive(false)
-      else
-        ;
-        (self._got):SetActive(false)
-        ;
-        (self._btn):SetActive(true)
-        ;
-        (self._bg):SetActive(true)
-        -- DECOMPILER ERROR at PC144: Confused about usage of register: R7 in 'UnsetPending'
-
-        if (self._quest).status <= QuestStatus.QUEST_Accepted then
-          (self._btnTex).color = Color(1, 1, 1)
-          btnTex = (StringTable.Get)("str_quest_base_go_to_with_space")
-          icon = "task_branch_qianwang1"
-          img = "task_branch_qianwang1"
-        else
-          if (self._quest).status == QuestStatus.QUEST_Completed then
-            btnTex = (StringTable.Get)("str_quest_base_get_with_space")
-            icon = "task_branch_ingqu1"
-            img = "task_branch_ingqu1"
-          end
-        end
-        ;
-        (self._btnTex):SetText(btnTex)
-        -- DECOMPILER ERROR at PC175: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self._btnImg).sprite = (self._atlas):GetSprite(img)
-      end
-      local reward = (self._quest).rewards
-      ;
-      (self._awardPool):SpawnObjects("UIQuestSmallAwardItem", (table.count)(reward))
-      local awards = (self._awardPool):GetAllSpawnList()
-      local awardsList = (self._quest).rewards
-      for i = 1, (table.count)(awardsList) do
-        (awards[i]):SetData(i, awardsList[i], self._itemCallback, UIItemScale.Level3)
-      end
-      local count = (((self._quest).rewards)[1]).count
-      ;
-      (self._daliyValueTex):SetText(count)
-    end
+    progress = self._quest.cur_progress .. "/" .. self._quest.total_progress
   end
+  self._stateValueTex:SetText(progress)
+  local rate = self._quest.cur_progress / self._quest.total_progress
+  self._stateValueImg.fillAmount = rate
+  local btnTex = ""
+  local icon = ""
+  local img = ""
+  self._mask:SetActive(false)
+  self._select:SetActive(false)
+  if self._quest.status == QuestStatus.QUEST_Taken then
+    self._got:SetActive(true)
+    self._btn:SetActive(false)
+    self._bg:SetActive(false)
+  else
+    self._got:SetActive(false)
+    self._btn:SetActive(true)
+    self._bg:SetActive(true)
+    if self._quest.status <= QuestStatus.QUEST_Accepted then
+      self._btnTex.color = Color(1, 1, 1)
+      btnTex = StringTable.Get("str_quest_base_go_to_with_space")
+      icon = "task_branch_qianwang1"
+      img = "task_branch_qianwang1"
+    elseif self._quest.status == QuestStatus.QUEST_Completed then
+      btnTex = StringTable.Get("str_quest_base_get_with_space")
+      icon = "task_branch_ingqu1"
+      img = "task_branch_ingqu1"
+    end
+    self._btnTex:SetText(btnTex)
+    self._btnImg.sprite = self._atlas:GetSprite(img)
+  end
+  local reward = self._quest.rewards
+  self._awardPool:SpawnObjects("UIQuestSmallAwardItem", table.count(reward))
+  local awards = self._awardPool:GetAllSpawnList()
+  local awardsList = self._quest.rewards
+  for i = 1, table.count(awardsList) do
+    awards[i]:SetData(i, awardsList[i], self._itemCallback, UIItemScale.Level3)
+  end
+  local count = self._quest.rewards[1].count
+  self._daliyValueTex:SetText(count)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestDailyListItem.btnOnClick = function(self)
-  -- function num : 0_7 , upvalues : UIQuestDailySpecialType, _ENV
-  if (self._quest).quest_id == UIQuestDailySpecialType.DoOneDispatch or (self._quest).quest_id == UIQuestDailySpecialType.DoThreeDispatch then
+function UIQuestDailyListItem:btnOnClick()
+  if self._quest.quest_id == UIQuestDailySpecialType.DoOneDispatch or self._quest.quest_id == UIQuestDailySpecialType.DoThreeDispatch then
     local aircraftModule = self:GetModule(AircraftModule)
     local unLock = aircraftModule:GetRoomWithType(AirRoomType.DispatchRoom)
     if not unLock then
-      (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_dispatchroom_unlock"))
-      return 
+      ToastManager.ShowToast(StringTable.Get("str_function_lock_dispatchroom_unlock"))
+      return
     end
   end
-  do
-    if (self._quest).status <= QuestStatus.QUEST_Accepted then
-      local jumpModule = (self._module).uiModule
-      if jumpModule == nil then
-        (Log.fatal)("[quest] error --> uiModule is nil ! --> jumpModule")
-        return 
-      end
-      local fromParam = {}
-      ;
-      (table.insert)(fromParam, QuestType.QT_Daily)
-      jumpModule:SetFromUIData(FromUIType.NormalUI, "UIQuestController", UIStateType.UIMain, fromParam)
-      local jumpType = (self._quest).JumpID
-      local jumpParams = (self._quest).JumpParam
-      jumpModule:SetJumpUIData(jumpType, jumpParams)
-      jumpModule:Jump()
-    else
-      do
-        if (self._quest).status == QuestStatus.QUEST_Completed and self._callback then
-          (self._callback)(self._quest)
-        end
-      end
+  if self._quest.status <= QuestStatus.QUEST_Accepted then
+    local jumpModule = self._module.uiModule
+    if jumpModule == nil then
+      Log.fatal("[quest] error --> uiModule is nil ! --> jumpModule")
+      return
     end
+    local fromParam = {}
+    table.insert(fromParam, QuestType.QT_Daily)
+    jumpModule:SetFromUIData(FromUIType.NormalUI, "UIQuestController", UIStateType.UIMain, fromParam)
+    local jumpType = self._quest.JumpID
+    local jumpParams = self._quest.JumpParam
+    jumpModule:SetJumpUIData(jumpType, jumpParams)
+    jumpModule:Jump()
+  elseif self._quest.status == QuestStatus.QUEST_Completed and self._callback then
+    self._callback(self._quest)
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestDailyListItem.GetBtnObj = function(self)
-  -- function num : 0_8
+function UIQuestDailyListItem:GetBtnObj()
   return self._btn
 end
-
-

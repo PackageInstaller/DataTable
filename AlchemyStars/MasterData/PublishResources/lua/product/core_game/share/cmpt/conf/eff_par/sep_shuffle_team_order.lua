@@ -1,35 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_shuffle_team_order.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParam_ShuffleTeamOrder", SkillEffectParamBase)
 SkillEffectParam_ShuffleTeamOrder = SkillEffectParam_ShuffleTeamOrder
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_ShuffleTeamOrder.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
-  if not paramList.shufflePos then
-    self._shufflePos = {2, 3, 4, 5}
-    if (table.icontains)(self._shufflePos, 1) then
-      (Log.exception)("shufflePos不支持1号位配置")
-    end
+function SkillEffectParam_ShuffleTeamOrder:Constructor(paramList)
+  self._shufflePos = paramList.shufflePos or {
+    2,
+    3,
+    4,
+    5
+  }
+  if table.icontains(self._shufflePos, 1) then
+    Log.exception("shufflePos不支持1号位配置")
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ShuffleTeamOrder.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_ShuffleTeamOrder:GetEffectType()
   return SkillEffectType.ShufflePetTeamOrder
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ShuffleTeamOrder.GetShufflePos = function(self)
-  -- function num : 0_2
+function SkillEffectParam_ShuffleTeamOrder:GetShufflePos()
   return self._shufflePos
 end
-
-

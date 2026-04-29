@@ -1,31 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_stunt_monster_animation_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayStuntMonsterAnimationInstruction", BaseInstruction)
 PlayStuntMonsterAnimationInstruction = PlayStuntMonsterAnimationInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayStuntMonsterAnimationInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayStuntMonsterAnimationInstruction:Constructor(paramList)
   self._stuntTag = paramList.tag or "default"
   self._animName = paramList.animName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayStuntMonsterAnimationInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayStuntMonsterAnimationInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if not casterEntity:HasStuntOwnerComponent() then
-    return 
+    return
   end
-  local e = (casterEntity:StuntOwnerComponent()):GetStuntByTag(self._stuntTag)
+  local e = casterEntity:StuntOwnerComponent():GetStuntByTag(self._stuntTag)
   if not e then
-    return 
+    return
   end
-  e:SetAnimatorControllerTriggers({self._animName})
+  e:SetAnimatorControllerTriggers({
+    self._animName
+  })
 end
-
-

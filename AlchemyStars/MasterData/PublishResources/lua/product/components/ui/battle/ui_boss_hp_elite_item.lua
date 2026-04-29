@@ -1,43 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_boss_hp_elite_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBossHPEliteItem", UICustomWidget)
 UIBossHPEliteItem = UIBossHPEliteItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBossHPEliteItem.Constructor = function(self)
-  -- function num : 0_0
+function UIBossHPEliteItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPEliteItem.OnShow = function(self)
-  -- function num : 0_1
+function UIBossHPEliteItem:OnShow()
   self._text = self:GetUIComponent("UILocalizationText", "text")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPEliteItem.OnHide = function(self)
-  -- function num : 0_2
+function UIBossHPEliteItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPEliteItem.OnSetData = function(self, eliteKey)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._text).text = (StringTable.Get)(eliteKey)
+function UIBossHPEliteItem:OnSetData(eliteKey)
+  self._text.text = StringTable.Get(eliteKey)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPEliteItem.OnGetTextWidth = function(self)
-  -- function num : 0_4
-  return (self._text).preferredWidth
+function UIBossHPEliteItem:OnGetTextWidth()
+  return self._text.preferredWidth
 end
-
-

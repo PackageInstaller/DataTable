@@ -1,263 +1,182 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/helper/battle_stat_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BattleStatHelper", Object)
 BattleStatHelper = BattleStatHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleStatHelper._GetBattleStatComponent = function()
-  -- function num : 0_0 , upvalues : _ENV
+function BattleStatHelper._GetBattleStatComponent()
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   if not mainWorld then
-    return 
+    return
   end
   return mainWorld:BattleStat()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper._GetMainWorld = function()
-  -- function num : 0_1 , upvalues : _ENV
+function BattleStatHelper._GetMainWorld()
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   return mainWorld
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.Get3StarProgress = function(conditionId)
-  -- function num : 0_2 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.Get3StarProgress(conditionId)
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   return statCmpt:Get3StarProgress(conditionId)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetBonusMatchResult = function()
-  -- function num : 0_3 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.GetBonusMatchResult()
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   return statCmpt:GetBonusMatchResult()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetDropCollectNum = function()
-  -- function num : 0_4 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.GetDropCollectNum()
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   return statCmpt:GetDropCollectNum()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.IsAssignWaveLevel = function()
-  -- function num : 0_5 , upvalues : _ENV
-  local l_mainworld = (BattleStatHelper._GetMainWorld)()
+function BattleStatHelper.IsAssignWaveLevel()
+  local l_mainworld = BattleStatHelper._GetMainWorld()
   local configService = l_mainworld:GetService("Config")
   local statCmpt = l_mainworld:BattleStat()
   if configService then
     local levelConfigData = configService:GetLevelConfigData()
     local levelCompleteConditionType = levelConfigData:GetLevelCompleteConditionType()
     if levelCompleteConditionType == CompleteConditionType.AssignWaveAndRandomNextWave then
-      local l_arrAssignWaveParams = (levelConfigData:GetLevelCompleteConditionParams())[1]
+      local l_arrAssignWaveParams = levelConfigData:GetLevelCompleteConditionParams()[1]
       local l_nAssignWave = l_arrAssignWaveParams[LevelCompleteAssignWaveParamExp.AssignWaveEnd]
       if l_nAssignWave ~= nil then
         return true, l_nAssignWave
       end
     end
   end
-  do
-    return false, statCmpt:GetTotalWaveCount()
-  end
+  return false, statCmpt:GetTotalWaveCount()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetCurWaveIndex = function()
-  -- function num : 0_6 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.GetCurWaveIndex()
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   local nCurWave = statCmpt:GetCurWaveIndex()
-  local isAssignLevel, nTotalWaveCount = (BattleStatHelper.IsAssignWaveLevel)()
-  if isAssignLevel and nTotalWaveCount < nCurWave then
+  local isAssignLevel, nTotalWaveCount = BattleStatHelper.IsAssignWaveLevel()
+  if isAssignLevel and nCurWave > nTotalWaveCount then
     return nTotalWaveCount
   else
     return nCurWave
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetTotalWaveCount = function()
-  -- function num : 0_7 , upvalues : _ENV
-  local isAssignLevel, nTotalWaveCount = (BattleStatHelper.IsAssignWaveLevel)()
+function BattleStatHelper.GetTotalWaveCount()
+  local isAssignLevel, nTotalWaveCount = BattleStatHelper.IsAssignWaveLevel()
   return nTotalWaveCount
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetTotalDropCoin = function()
-  -- function num : 0_8 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.GetTotalDropCoin()
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   local coinCount = statCmpt:GetDropRoleAssetNoDouble(RoleAssetID.RoleAssetGold)
   return coinCount
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetTotalDropMazeCoin = function()
-  -- function num : 0_9 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.GetTotalDropMazeCoin()
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   local coinCount = statCmpt:GetDropRoleAsset(RoleAssetID.RoleAssetMazeCoin)
   return coinCount
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetLevelTotalRoundCount = function()
-  -- function num : 0_10 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.GetLevelTotalRoundCount()
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   return statCmpt:GetLevelTotalRoundCount()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.CalcBonusObjective = function()
-  -- function num : 0_11 , upvalues : _ENV
-  local mainWorld = (BattleStatHelper._GetMainWorld)()
+function BattleStatHelper.CalcBonusObjective()
+  local mainWorld = BattleStatHelper._GetMainWorld()
   if not mainWorld then
-    return 
+    return
   end
   local bonusService = mainWorld:GetService("BonusCalc")
   bonusService:CalcBonusObjective()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetAutoFightStat = function()
-  -- function num : 0_12 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.GetAutoFightStat()
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   if not statCmpt then
     return false
   end
   return statCmpt:GetAutoFight()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetHandleShumolHPUI = function()
-  -- function num : 0_13 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.GetHandleShumolHPUI()
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   if not statCmpt then
     return false
   end
   return statCmpt:GetHandleShumolHPUI()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetDeadMonsterCount = function()
-  -- function num : 0_14 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.GetDeadMonsterCount()
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   if statCmpt then
     local deadMonsterList = statCmpt:GetCurWaveDeadMonsterIDList()
-    return (table.count)(deadMonsterList)
+    return table.count(deadMonsterList)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetBattleWaveResult = function()
-  -- function num : 0_15 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.GetBattleWaveResult()
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   if statCmpt then
     return statCmpt:GetBattleWaveResult()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetRoundBeginPlayerPos = function()
-  -- function num : 0_16 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.GetRoundBeginPlayerPos()
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   if statCmpt then
     return statCmpt:GetRoundBeginPlayerPos()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.CheckActiveSkillCastCondition = function(petPstID, skillID)
-  -- function num : 0_17 , upvalues : _ENV
+function BattleStatHelper.CheckActiveSkillCastCondition(petPstID, skillID)
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local utilData = mainWorld:GetService("UtilData")
   return utilData:CheckActiveSkillCastCondition(petPstID, skillID)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.IsSkillDisabledWhenCasterIsTeamLeader = function(petPstID, skillID)
-  -- function num : 0_18 , upvalues : _ENV
+function BattleStatHelper.IsSkillDisabledWhenCasterIsTeamLeader(petPstID, skillID)
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local utilData = mainWorld:GetService("UtilData")
   return utilData:IsSkillDisabledWhenCasterIsTeamLeader(petPstID, skillID)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.IsPetCurrentTeamLeader = function(petPstID)
-  -- function num : 0_19 , upvalues : _ENV
+function BattleStatHelper.IsPetCurrentTeamLeader(petPstID)
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local utilData = mainWorld:GetService("UtilData")
   return utilData:IsPetCurrentTeamLeader(petPstID)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.CheckCanCastActiveSkill_TeamLeaderCondi = function(petPstID, skillID)
-  -- function num : 0_20 , upvalues : _ENV
-  if (BattleStatHelper.IsPetCurrentTeamLeader)(petPstID) and (BattleStatHelper.IsSkillDisabledWhenCasterIsTeamLeader)(petPstID, skillID) then
+function BattleStatHelper.CheckCanCastActiveSkill_TeamLeaderCondi(petPstID, skillID)
+  if BattleStatHelper.IsPetCurrentTeamLeader(petPstID) and BattleStatHelper.IsSkillDisabledWhenCasterIsTeamLeader(petPstID, skillID) then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.CheckCanCastActiveSkill_SwapPetTeamOrder = function(petPstID, skillID)
-  -- function num : 0_21 , upvalues : _ENV
+function BattleStatHelper.CheckCanCastActiveSkill_SwapPetTeamOrder(petPstID, skillID)
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local utilData = mainWorld:GetService("UtilData")
   return utilData:CheckCanCastActiveSkillBySwapPetTeamOrder(petPstID, skillID)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetLogicCurrentLocalTeamOrder = function()
-  -- function num : 0_22 , upvalues : _ENV
+function BattleStatHelper.GetLogicCurrentLocalTeamOrder()
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
-  local eTeam = (mainWorld:Player()):GetLocalTeamEntity()
-  return (eTeam:Team()):CloneTeamOrder()
+  local eTeam = mainWorld:Player():GetLocalTeamEntity()
+  return eTeam:Team():CloneTeamOrder()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetCurRoundDoActiveSkillTimes = function(petPstID)
-  -- function num : 0_23 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.GetCurRoundDoActiveSkillTimes(petPstID)
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   return statCmpt:GetCurRoundDoActiveSkillTimes(petPstID)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetLevelOutOfRoundType = function()
-  -- function num : 0_24 , upvalues : _ENV
+function BattleStatHelper.GetLevelOutOfRoundType()
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local configService = mainWorld:GetService("Config")
@@ -265,10 +184,7 @@ BattleStatHelper.GetLevelOutOfRoundType = function()
   return levelConfigData:GetOutOfRoundType()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetOutOfRoundPunishHPPercent = function(preview)
-  -- function num : 0_25 , upvalues : _ENV
+function BattleStatHelper.GetOutOfRoundPunishHPPercent(preview)
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local battleStatCmpt = mainWorld:BattleStat()
@@ -277,7 +193,7 @@ BattleStatHelper.GetOutOfRoundPunishHPPercent = function(preview)
     punishmentRoundCount = punishmentRoundCount + 1
   end
   local punishPercent = 0
-  for round,percent in pairs(BattleConst.PunishmentRoundHPPercent) do
+  for round, percent in pairs(BattleConst.PunishmentRoundHPPercent) do
     if round <= punishmentRoundCount then
       punishPercent = percent
     end
@@ -285,65 +201,47 @@ BattleStatHelper.GetOutOfRoundPunishHPPercent = function(preview)
   return punishPercent
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetPreviousReadyRoundCount = function(petPstID)
-  -- function num : 0_26 , upvalues : _ENV
+function BattleStatHelper.GetPreviousReadyRoundCount(petPstID)
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local utilData = mainWorld:GetService("UtilData")
   return utilData:GetPreviousReadyRoundCount(petPstID)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetAllMiniMazeRelic = function()
-  -- function num : 0_27 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.GetAllMiniMazeRelic()
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   return statCmpt:GetAllMiniMazeRelicList()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetWaveChooseRelic = function()
-  -- function num : 0_28 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.GetWaveChooseRelic()
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   local waveIndex = statCmpt:GetCurWaveIndex()
   return statCmpt:GetWaveChooseRelic(waveIndex)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetWaveChoosePartner = function()
-  -- function num : 0_29 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.GetWaveChoosePartner()
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   local waveIndex = statCmpt:GetCurWaveIndex()
   return statCmpt:GetWaveChoosePartner(waveIndex)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetEliteIDArray = function(entityID, monsterID)
-  -- function num : 0_30 , upvalues : _ENV
-  local mainWorld = (BattleStatHelper._GetMainWorld)()
+function BattleStatHelper.GetEliteIDArray(entityID, monsterID)
+  local mainWorld = BattleStatHelper._GetMainWorld()
   if not mainWorld then
-    return 
+    return
   end
   local monster = mainWorld:GetEntityByID(entityID)
   if not monster:HasMonsterID() then
-    return 
+    return
   end
   local monsterIDCmpt = monster:MonsterID()
   if monsterID ~= monsterIDCmpt:GetMonsterID() then
-    return 
+    return
   end
   return monsterIDCmpt:GetEliteIDArray()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.CheckForceMatch = function(petPstID)
-  -- function num : 0_31 , upvalues : _ENV
+function BattleStatHelper.CheckForceMatch(petPstID)
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local utilData = mainWorld:GetService("UtilData")
@@ -351,59 +249,43 @@ BattleStatHelper.CheckForceMatch = function(petPstID)
   return utilData:GetEntityBuffValue(entity, "PetForceMatch")
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetAllFeatureSkillCdOff = function()
-  -- function num : 0_32 , upvalues : _ENV
-  local mainWorld = (BattleStatHelper._GetMainWorld)()
+function BattleStatHelper.GetAllFeatureSkillCdOff()
+  local mainWorld = BattleStatHelper._GetMainWorld()
   if not mainWorld then
-    return 
+    return
   end
   local lsvcFeature = mainWorld:GetService("FeatureLogic")
-  do
-    if lsvcFeature then
-      local cdOff = lsvcFeature:GetAllFeatureSkillCdOff()
-      return cdOff
-    end
-    return 0
+  if lsvcFeature then
+    local cdOff = lsvcFeature:GetAllFeatureSkillCdOff()
+    return cdOff
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetSpecificFeatureSkillCdOff = function(featureType)
-  -- function num : 0_33 , upvalues : _ENV
-  local mainWorld = (BattleStatHelper._GetMainWorld)()
+function BattleStatHelper.GetSpecificFeatureSkillCdOff(featureType)
+  local mainWorld = BattleStatHelper._GetMainWorld()
   if not mainWorld then
-    return 
+    return
   end
   local lsvcFeature = mainWorld:GetService("FeatureLogic")
-  do
-    if lsvcFeature then
-      local specificCdOff = lsvcFeature:GetSpecificFeatureSkillCdOff(featureType)
-      return specificCdOff
-    end
-    return 0
+  if lsvcFeature then
+    local specificCdOff = lsvcFeature:GetSpecificFeatureSkillCdOff(featureType)
+    return specificCdOff
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetPetSkillReadyAttr = function(petPstID, skillID)
-  -- function num : 0_34 , upvalues : _ENV
-  local mainWorld = (BattleStatHelper._GetMainWorld)()
+function BattleStatHelper.GetPetSkillReadyAttr(petPstID, skillID)
+  local mainWorld = BattleStatHelper._GetMainWorld()
   if not mainWorld then
-    return 
+    return
   end
   local utilData = mainWorld:GetService("UtilData")
   local entity = utilData:GetEntityByPstID(petPstID)
   return utilData:GetPetSkillReadyAttr(entity, skillID)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.CalcZhongxuForceMovementCostByPick = function(petPstID, skillID)
-  -- function num : 0_35 , upvalues : _ENV
+function BattleStatHelper.CalcZhongxuForceMovementCostByPick(petPstID, skillID)
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local utilData = mainWorld:GetService("UtilData")
@@ -411,10 +293,7 @@ BattleStatHelper.CalcZhongxuForceMovementCostByPick = function(petPstID, skillID
   return utilData:CalcZhongxuForceMovementCostByPick(entity, skillID)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.CalcZhongxuForceMovementNextMinCost = function(petPstID, skillID)
-  -- function num : 0_36 , upvalues : _ENV
+function BattleStatHelper.CalcZhongxuForceMovementNextMinCost(petPstID, skillID)
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local utilData = mainWorld:GetService("UtilData")
@@ -422,42 +301,31 @@ BattleStatHelper.CalcZhongxuForceMovementNextMinCost = function(petPstID, skillI
   return utilData:CalcZhongxuForceMovementNextMinCostForUI(entity, skillID)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.CheckCanCastActiveSkill_GetCantReadyReasonByBuff = function(petPstID, skillID)
-  -- function num : 0_37 , upvalues : _ENV
-  local mainWorld = (BattleStatHelper._GetMainWorld)()
+function BattleStatHelper.CheckCanCastActiveSkill_GetCantReadyReasonByBuff(petPstID, skillID)
+  local mainWorld = BattleStatHelper._GetMainWorld()
   if not mainWorld then
-    return 
+    return
   end
   local utilData = mainWorld:GetService("UtilData")
   local entity = utilData:GetEntityByPstID(petPstID)
   if not entity then
-    return 
+    return
   end
   if utilData:IsPetExtraActiveSkill(entity, skillID) then
     local canNotReady, reason = utilData:IsBuffSetExtraActiveSkillCanNotReady(petPstID, skillID)
     return reason
   else
-    do
-      local canNotReady, reason = utilData:IsBuffSetActiveSkillCanNotReady(petPstID)
-      do return reason end
-    end
+    local canNotReady, reason = utilData:IsBuffSetActiveSkillCanNotReady(petPstID)
+    return reason
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetMonsterBeHitDamageValue = function(entityID)
-  -- function num : 0_38 , upvalues : _ENV
-  local statCmpt = (BattleStatHelper._GetBattleStatComponent)()
+function BattleStatHelper.GetMonsterBeHitDamageValue(entityID)
+  local statCmpt = BattleStatHelper._GetBattleStatComponent()
   return statCmpt:GetMonsterBeHitDamageValue(entityID)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.CheckCanCastActiveSkill_MinimumCondition = function(petPstID, skillID)
-  -- function num : 0_39 , upvalues : _ENV
+function BattleStatHelper.CheckCanCastActiveSkill_MinimumCondition(petPstID, skillID)
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local utilData = mainWorld:GetService("UtilData")
@@ -465,51 +333,37 @@ BattleStatHelper.CheckCanCastActiveSkill_MinimumCondition = function(petPstID, s
   return utilData:CheckCanCastActiveSkillMinimumCondition(entity, skillID)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.GetCasterPickUpExtraChainPowerCount = function(petPstID, skillID)
-  -- function num : 0_40 , upvalues : _ENV
-  local mainWorld = (BattleStatHelper._GetMainWorld)()
+function BattleStatHelper.GetCasterPickUpExtraChainPowerCount(petPstID, skillID)
+  local mainWorld = BattleStatHelper._GetMainWorld()
   if not mainWorld then
-    return 
+    return
   end
   local utilData = mainWorld:GetService("UtilData")
   local entity = utilData:GetEntityByPstID(petPstID)
   return utilData:GetCasterPickUpExtraChainPowerCount(entity, skillID)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.IsPetJoinChainSpecial = function(petPstID, chainPathLen, elementType, firstElementType)
-  -- function num : 0_41 , upvalues : _ENV
+function BattleStatHelper.IsPetJoinChainSpecial(petPstID, chainPathLen, elementType, firstElementType)
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local utilData = mainWorld:GetService("UtilData")
   return utilData:IsPetJoinChainSpecial(petPstID, chainPathLen, elementType, firstElementType)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.OnCheckEntityHasBuffFlag = function(petPstID, BuffFlag)
-  -- function num : 0_42 , upvalues : _ENV
-  local mainWorld = (BattleStatHelper._GetMainWorld)()
+function BattleStatHelper.OnCheckEntityHasBuffFlag(petPstID, BuffFlag)
+  local mainWorld = BattleStatHelper._GetMainWorld()
   if not mainWorld then
-    return 
+    return
   end
   local utilData = mainWorld:GetService("UtilData")
   local entity = utilData:GetEntityByPstID(petPstID)
   return utilData:OnCheckEntityHasBuffFlag(entity, BuffFlag)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatHelper.CheckCanCastActiveSkill_ByExtraParam = function(petPstID, skillID)
-  -- function num : 0_43 , upvalues : _ENV
+function BattleStatHelper.CheckCanCastActiveSkill_ByExtraParam(petPstID, skillID)
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local utilData = mainWorld:GetService("UtilData")
   local entity = utilData:GetEntityByPstID(petPstID)
   return utilData:CheckSkillCanCastByExtraParam(entity, skillID)
 end
-
-

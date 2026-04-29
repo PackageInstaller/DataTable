@@ -1,187 +1,118 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/closing/ui_homeland_movie_save_name.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMovieSaveName", UIController)
 UIHomelandMovieSaveName = UIHomelandMovieSaveName
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMovieSaveName.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMovieSaveName:OnShow(uiParams)
   self:InitWidget()
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.roomName).text = ""
+  self.roomName.text = ""
   self._maxChar = 14
   self._homelandModule = self:GetModule(HomelandModule)
-  self._pstId = (MoviePrepareData:GetInstance()):GetPstId()
-  self._movieId = (MoviePrepareData:GetInstance()):GetMovieId()
+  self._pstId = MoviePrepareData:GetInstance():GetPstId()
+  self._movieId = MoviePrepareData:GetInstance():GetMovieId()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSaveName.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandMovieSaveName:InitWidget()
   self.roomName = self:GetUIComponent("EmojiFilteredInputField", "roomName")
-  self.OnIptValueChanged = function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
-    local s = (self.roomName).text
-    if (string.isnullorempty)(s) then
-      return 
+  
+  function self.OnIptValueChanged()
+    local s = self.roomName.text
+    if string.isnullorempty(s) then
+      return
     end
     local len = #s
     local curIdx = 1
     local asciiCount = 0
-    while 1 do
-      if curIdx <= len then
-        local c = (string.byte)(s, curIdx, curIdx)
-        local charSize = self:GetCharSize(c)
-        -- DECOMPILER ERROR at PC30: Unhandled construct in 'MakeBoolean' P1
-
-        if charSize == 1 and self._maxChar >= asciiCount + 1 then
-          asciiCount = asciiCount + 1
-          -- DECOMPILER ERROR at PC38: Unhandled construct in 'MakeBoolean' P1
-
-          if charSize > 1 and self._maxChar >= asciiCount + 2 then
-            asciiCount = asciiCount + 2
-            do
-              local tmp = (string.sub)(s, curIdx, curIdx + charSize - 1)
-              curIdx = curIdx + charSize
-              -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+    while len >= curIdx do
+      local c = string.byte(s, curIdx, curIdx)
+      local charSize = self:GetCharSize(c)
+      if charSize == 1 then
+        if asciiCount + 1 > self._maxChar then
+          break
         end
+        asciiCount = asciiCount + 1
+      elseif 1 < charSize then
+        if asciiCount + 2 > self._maxChar then
+          break
+        end
+        asciiCount = asciiCount + 2
       end
+      local tmp = string.sub(s, curIdx, curIdx + charSize - 1)
+      curIdx = curIdx + charSize
     end
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.roomName).text = (string.sub)(s, 1, curIdx - 1)
+    self.roomName.text = string.sub(s, 1, curIdx - 1)
   end
-
-  ;
-  ((self.roomName).onValueChanged):AddListener(self.OnIptValueChanged)
+  
+  self.roomName.onValueChanged:AddListener(self.OnIptValueChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSaveName.GetCharSize = function(self, char)
-  -- function num : 0_2
+function UIHomelandMovieSaveName:GetCharSize(char)
   if not char then
     return 0
+  elseif 240 < char then
+    return 4
+  elseif 225 < char then
+    return 3
+  elseif 192 < char then
+    return 2
   else
-    if char > 240 then
-      return 4
-    else
-      if char > 225 then
-        return 3
-      else
-        if char > 192 then
-          return 2
-        else
-          return 1
-        end
-      end
-    end
+    return 1
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSaveName.bgOnClick = function(self, go)
-  -- function num : 0_3
+function UIHomelandMovieSaveName:bgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSaveName.btnCancelOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomelandMovieSaveName:btnCancelOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSaveName.btnEnsureOnClick = function(self, go)
-  -- function num : 0_5
+function UIHomelandMovieSaveName:btnEnsureOnClick(go)
   self:StartTask(self.change, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSaveName.change = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  local str = (self.roomName).text
-  if (string.isnullorempty)(str) then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_movie_save_name_tips_empty"))
-    return 
+function UIHomelandMovieSaveName:change(TT)
+  local str = self.roomName.text
+  if string.isnullorempty(str) then
+    ToastManager.ShowHomeToast(StringTable.Get("str_movie_save_name_tips_empty"))
+    return
   end
-  local length = (HelperProxy:GetInstance()):GetCharLength(str)
-  if self._maxChar < length then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_movie_save_name_tips_toolong"))
-    return 
+  local length = HelperProxy:GetInstance():GetCharLength(str)
+  if length > self._maxChar then
+    ToastManager.ShowHomeToast(StringTable.Get("str_movie_save_name_tips_toolong"))
+    return
   end
-  local res = (self._homelandModule):HandleSubmitRecordName(TT, self._pstId, str)
+  local res = self._homelandModule:HandleSubmitRecordName(TT, self._pstId, str)
   if res:GetSucc() then
     self:SaveMovieName()
   else
     local errorCode = res:GetResult()
-    ;
-    (Log.fatal)("###domitory - RequestChangeName fail ! result - ", errorCode)
+    Log.fatal("###domitory - RequestChangeName fail ! result - ", errorCode)
     if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_LIMIT then
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_movie_save_name_tips_toolong"))
+      ToastManager.ShowHomeToast(StringTable.Get("str_movie_save_name_tips_toolong"))
+    elseif errorCode == ROLE_RESULT_CODE.ROLE_ERROR_DIRTY_NICK then
+      ToastManager.ShowHomeToast(StringTable.Get("str_movie_save_name_tips_banword"))
+    elseif errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_INVALID then
+      ToastManager.ShowToast(StringTable.Get("str_movie_save_name_tips_specialchar"))
     else
-      if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_DIRTY_NICK then
-        (ToastManager.ShowHomeToast)((StringTable.Get)("str_movie_save_name_tips_banword"))
-      else
-        if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_INVALID then
-          (ToastManager.ShowToast)((StringTable.Get)("str_movie_save_name_tips_specialchar"))
-        else
-          ;
-          (ToastManager.ShowHomeToast)(res:GetResult())
-        end
-      end
+      ToastManager.ShowHomeToast(res:GetResult())
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSaveName.SaveMovieName = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local movieId = (MoviePrepareData:GetInstance()):GetMovieId()
-  local records = (MovieDataManager:GetInstance()):GetMovieHistoryDataByID(movieId)
-  local recordCount = (table.count)(records)
+function UIHomelandMovieSaveName:SaveMovieName()
+  local movieId = MoviePrepareData:GetInstance():GetMovieId()
+  local records = MovieDataManager:GetInstance():GetMovieHistoryDataByID(movieId)
+  local recordCount = table.count(records)
   if recordCount == 3 then
     self:ShowDialog("UIHomelandMovieSaveReplaceController", records)
     self:CloseDialog()
   else
     self:Lock("UIHomelandMovieSaveName_SaveMovieName")
-    ;
-    (MovieDataManager:GetInstance()):SaveRecordData(0, function()
-    -- function num : 0_7_0 , upvalues : self, _ENV
-    self:UnLock("UIHomelandMovieSaveName_SaveMovieName")
-    self:CloseDialog()
-    ;
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_movie_save_success_tip"))
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIHomelandMovieSaved)
-  end
-)
+    MovieDataManager:GetInstance():SaveRecordData(0, function()
+      self:UnLock("UIHomelandMovieSaveName_SaveMovieName")
+      self:CloseDialog()
+      ToastManager.ShowHomeToast(StringTable.Get("str_movie_save_success_tip"))
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UIHomelandMovieSaved)
+    end)
   end
 end
-
-

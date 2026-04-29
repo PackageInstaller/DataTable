@@ -1,68 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_add_pet_legend_power_by_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultAddPetLegendPowerByHP", BuffResultBase)
 BuffResultAddPetLegendPowerByHP = BuffResultAddPetLegendPowerByHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddPetLegendPowerByHP.Constructor = function(self, pstID, power, ready, previouslyReady)
-  -- function num : 0_0
+function BuffResultAddPetLegendPowerByHP:Constructor(pstID, power, ready, previouslyReady)
   self._petPstID = pstID
   self._curPower = power
   self._ready = ready
   self._previouslyReady = previouslyReady
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddPetLegendPowerByHP.GetPetPstID = function(self)
-  -- function num : 0_1
+function BuffResultAddPetLegendPowerByHP:GetPetPstID()
   return self._petPstID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddPetLegendPowerByHP.GetCurrentPower = function(self)
-  -- function num : 0_2
+function BuffResultAddPetLegendPowerByHP:GetCurrentPower()
   return self._curPower
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddPetLegendPowerByHP.IsSkillReady = function(self)
-  -- function num : 0_3
+function BuffResultAddPetLegendPowerByHP:IsSkillReady()
   return self._ready
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddPetLegendPowerByHP.IsPreviouslyReady = function(self)
-  -- function num : 0_4
+function BuffResultAddPetLegendPowerByHP:IsPreviouslyReady()
   return self._previouslyReady
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddPetLegendPowerByHP.RequireNTPowerReady = function(self, petEntityID)
-  -- function num : 0_5
+function BuffResultAddPetLegendPowerByHP:RequireNTPowerReady(petEntityID)
   self._petEntityID = petEntityID
   self._requireNTPowerReady = true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddPetLegendPowerByHP.GetPetEntityID = function(self)
-  -- function num : 0_6
+function BuffResultAddPetLegendPowerByHP:GetPetEntityID()
   return self._petEntityID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddPetLegendPowerByHP.IsNTPowerReadyRequired = function(self)
-  -- function num : 0_7
+function BuffResultAddPetLegendPowerByHP:IsNTPowerReadyRequired()
   return self._requireNTPowerReady
 end
-
-

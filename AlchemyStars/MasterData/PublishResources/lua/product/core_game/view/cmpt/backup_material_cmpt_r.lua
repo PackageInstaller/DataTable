@@ -1,105 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/backup_material_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BackUpMaterialComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-BackUpMaterialComponent.Constructor = function(self)
-  -- function num : 0_0
+function BackUpMaterialComponent:Constructor()
   self._backUpMatDic = {}
   self._backUpReqDic = {}
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-BackUpMaterialComponent.SetBackUpMaterial = function(self, key, mat)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._backUpMatDic)[key] = mat
+function BackUpMaterialComponent:SetBackUpMaterial(key, mat)
+  self._backUpMatDic[key] = mat
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-BackUpMaterialComponent.SetBackUpRequest = function(self, name, resReq)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._backUpReqDic)[name] = resReq
+function BackUpMaterialComponent:SetBackUpRequest(name, resReq)
+  self._backUpReqDic[name] = resReq
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-BackUpMaterialComponent.GetBackUpMaterial = function(self, key)
-  -- function num : 0_3
-  return (self._backUpMatDic)[key]
+function BackUpMaterialComponent:GetBackUpMaterial(key)
+  return self._backUpMatDic[key]
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-BackUpMaterialComponent.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for k,v in pairs(self._backUpReqDic) do
+function BackUpMaterialComponent:Dispose()
+  for k, v in pairs(self._backUpReqDic) do
     v:Dispose()
   end
-  for k,v in pairs(self._backUpMatDic) do
-    ((UnityEngine.Object).Destroy)(v)
+  for k, v in pairs(self._backUpMatDic) do
+    UnityEngine.Object.Destroy(v)
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-BackUpMaterialComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_5
+function BackUpMaterialComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-BackUpMaterialComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_6
+function BackUpMaterialComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.BackUpMaterial = function(self)
-  -- function num : 0_7
-  return self:GetComponent((self.WEComponentsEnum).BackUpMaterial)
+function Entity:BackUpMaterial()
+  return self:GetComponent(self.WEComponentsEnum.BackUpMaterial)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasBackUpMaterial = function(self)
-  -- function num : 0_8
-  return self:HasComponent((self.WEComponentsEnum).BackUpMaterial)
+function Entity:HasBackUpMaterial()
+  return self:HasComponent(self.WEComponentsEnum.BackUpMaterial)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddBackUpMaterial = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BackUpMaterial
+function Entity:AddBackUpMaterial()
+  local index = self.WEComponentsEnum.BackUpMaterial
   local component = BackUpMaterialComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceBackUpMaterial = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BackUpMaterial
+function Entity:ReplaceBackUpMaterial()
+  local index = self.WEComponentsEnum.BackUpMaterial
   local component = BackUpMaterialComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveBackUpMaterial = function(self)
-  -- function num : 0_11
+function Entity:RemoveBackUpMaterial()
   if self:HasBackUpMaterial() then
-    self:RemoveComponent((self.WEComponentsEnum).BackUpMaterial)
+    self:RemoveComponent(self.WEComponentsEnum.BackUpMaterial)
   end
 end
-
-

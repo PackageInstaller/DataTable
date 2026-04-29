@@ -1,34 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_set_combo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSetCombo", BuffViewBase)
 BuffViewSetCombo = BuffViewSetCombo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSetCombo.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewSetCombo:PlayView(TT)
   local result = self._buffResult
-  local renderBattleSvc = (self._world):GetService("RenderBattle")
+  local renderBattleSvc = self._world:GetService("RenderBattle")
   local curComboNum = renderBattleSvc:GetComboNum()
   curComboNum = curComboNum + result:GetChangeValue()
   renderBattleSvc:SetComboNum(curComboNum)
-  ;
-  (Log.info)("SetComboNum = ", curComboNum, " ChangeValue=", result:GetChangeValue(), " result:GetPos() ", result:GetPos())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DisplayCombo, curComboNum)
+  Log.info("SetComboNum = ", curComboNum, " ChangeValue=", result:GetChangeValue(), " result:GetPos() ", result:GetPos())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.DisplayCombo, curComboNum)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewSetCombo.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewSetCombo:IsNotifyMatch(notify)
   local result = self._buffResult
   if notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveEnd and result:GetPos() == notify:GetPos() then
     return true
   end
   return false
 end
-
-

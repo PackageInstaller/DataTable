@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/pet/simple_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SimplePet", Object)
 SimplePet = SimplePet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SimplePet.Constructor = function(self)
-  -- function num : 0_0
+function SimplePet:Constructor()
   self._templateID = nil
   self._level = nil
   self._break = nil
   self._awake = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.SetData = function(self, serverData)
-  -- function num : 0_1 , upvalues : _ENV
+function SimplePet:SetData(serverData)
   self._templateID = serverData.template_id
   self._level = serverData.level
   self._break = serverData.awakening
@@ -27,157 +17,98 @@ SimplePet.SetData = function(self, serverData)
   self._skin = serverData.skin_id
   self._equipLv = serverData.equip_lv
   self._equipRefineLv = serverData.equip_refine_lv
-  self._cfg_pet = (Cfg.cfg_pet)[self._templateID]
+  self._cfg_pet = Cfg.cfg_pet[self._templateID]
   if self._cfg_pet == nil then
-    (Log.fatal)("[SimplePet] 找不到星灵ID：", self._templateID)
-    return 
+    Log.fatal("[SimplePet] 找不到星灵ID：", self._templateID)
+    return
   end
   if self._awake > 0 then
-    local gradeCfg = (Cfg.cfg_pet_grade)({PetID = self._templateID, Grade = self._awake})
+    local gradeCfg = Cfg.cfg_pet_grade({
+      PetID = self._templateID,
+      Grade = self._awake
+    })
     if gradeCfg == nil then
-      (Log.fatal)("[SimplePet] 找不到星灵觉醒数据，id：", self._templateID, "，觉醒：", self._awake)
-      return 
+      Log.fatal("[SimplePet] 找不到星灵觉醒数据，id：", self._templateID, "，觉醒：", self._awake)
+      return
     end
     self._cfg_grade = gradeCfg[1]
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetEquipRefineLv = function(self)
-  -- function num : 0_2
+function SimplePet:GetEquipRefineLv()
   return self._equipRefineLv
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetPstID = function(self)
-  -- function num : 0_3
+function SimplePet:GetPstID()
   return nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetTemplateID = function(self)
-  -- function num : 0_4
+function SimplePet:GetTemplateID()
   return self._templateID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetPetName = function(self)
-  -- function num : 0_5
-  return (self._cfg_pet).Name
+function SimplePet:GetPetName()
+  return self._cfg_pet.Name
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetPetLevel = function(self)
-  -- function num : 0_6
+function SimplePet:GetPetLevel()
   return self._level
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetPetAwakening = function(self)
-  -- function num : 0_7
+function SimplePet:GetPetAwakening()
   return self._break
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetPetGrade = function(self)
-  -- function num : 0_8
+function SimplePet:GetPetGrade()
   return self._awake
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetEquipLv = function(self)
-  -- function num : 0_9
+function SimplePet:GetEquipLv()
   return self._equipLv
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetSkinId = function(self)
-  -- function num : 0_10
+function SimplePet:GetSkinId()
   return self._skin
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetPetTeamBody = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):GetPetTeamBody(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), PetSkinEffectPath.CARD_TOWER_TEAM_BODY)
+function SimplePet:GetPetTeamBody()
+  return HelperProxy:GetInstance():GetPetTeamBody(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), PetSkinEffectPath.CARD_TOWER_TEAM_BODY)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetPetFirstElement = function(self)
-  -- function num : 0_12
-  return (self._cfg_pet).FirstElement
+function SimplePet:GetPetFirstElement()
+  return self._cfg_pet.FirstElement
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetPetSecondElement = function(self)
-  -- function num : 0_13
-  if (self._cfg_pet).Element2NeedGrade <= self._awake and (self._cfg_pet).SecondElement > 0 then
-    return (self._cfg_pet).SecondElement
+function SimplePet:GetPetSecondElement()
+  if self._awake >= self._cfg_pet.Element2NeedGrade and self._cfg_pet.SecondElement > 0 then
+    return self._cfg_pet.SecondElement
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetPetBody = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):GetPetBody(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), PetSkinEffectPath.CARD_TOWER)
+function SimplePet:GetPetBody()
+  return HelperProxy:GetInstance():GetPetBody(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), PetSkinEffectPath.CARD_TOWER)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetPetLogo = function(self)
-  -- function num : 0_15
-  return (self._cfg_pet).Logo
+function SimplePet:GetPetLogo()
+  return self._cfg_pet.Logo
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetPetStar = function(self)
-  -- function num : 0_16
-  return (self._cfg_pet).Star
+function SimplePet:GetPetStar()
+  return self._cfg_pet.Star
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetAwakeMatch = function(self)
-  -- function num : 0_17
-  if self._breakLock <= 0 or not self._breakLock then
-    return self._break
-  end
+function SimplePet:GetAwakeMatch()
+  return self._breakLock > 0 and self._breakLock or self._break
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.IsLegendPet = function(self)
-  -- function num : 0_18
-  do return (self._cfg_pet).LegendPet == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SimplePet:IsLegendPet()
+  return self._cfg_pet.LegendPet == 1
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetProf = function(self)
-  -- function num : 0_19
-  return (self._cfg_pet).Prof
+function SimplePet:GetProf()
+  return self._cfg_pet.Prof
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SimplePet.GetJob = function(self)
-  -- function num : 0_20
+function SimplePet:GetJob()
   return self:GetProf()
 end
-
-

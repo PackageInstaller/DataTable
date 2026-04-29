@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/cast_chess_pet_attack_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CastChessPetAttackCommand", IEntityCommand)
 CastChessPetAttackCommand = CastChessPetAttackCommand
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CastChessPetAttackCommand.Constructor = function(self)
-  -- function num : 0_0
+function CastChessPetAttackCommand:Constructor()
   self._commandType = "CastChessPetAttack"
   self._casterEntityID = -1
   self._targetEntityList = {}
@@ -16,17 +9,11 @@ CastChessPetAttackCommand.Constructor = function(self)
   self._pickUpPos = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetAttackCommand.GetCommandType = function(self)
-  -- function num : 0_1
+function CastChessPetAttackCommand:GetCommandType()
   return self._commandType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetAttackCommand.GetExecStateID = function(self, runAtClient)
-  -- function num : 0_2 , upvalues : _ENV
+function CastChessPetAttackCommand:GetExecStateID(runAtClient)
   if runAtClient then
     return GameStateID.PickUpChessPet
   else
@@ -34,80 +21,47 @@ CastChessPetAttackCommand.GetExecStateID = function(self, runAtClient)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetAttackCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function CastChessPetAttackCommand:IsExecExcluded()
   return 1
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetAttackCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function CastChessPetAttackCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetAttackCommand.GetCmdCasterEntityID = function(self)
-  -- function num : 0_5
+function CastChessPetAttackCommand:GetCmdCasterEntityID()
   return self._casterEntityID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetAttackCommand.GetCmdTargetEntityIDList = function(self)
-  -- function num : 0_6
+function CastChessPetAttackCommand:GetCmdTargetEntityIDList()
   return self._targetEntityList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetAttackCommand.SetCmdCasterEntityID = function(self, casterEntityID)
-  -- function num : 0_7
+function CastChessPetAttackCommand:SetCmdCasterEntityID(casterEntityID)
   self._casterEntityID = casterEntityID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetAttackCommand.SetCmdTargetEntityIDList = function(self, targetEntityIDList)
-  -- function num : 0_8
+function CastChessPetAttackCommand:SetCmdTargetEntityIDList(targetEntityIDList)
   self._targetEntityList = targetEntityIDList
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetAttackCommand.GetCmdChessPath = function(self)
-  -- function num : 0_9
+function CastChessPetAttackCommand:GetCmdChessPath()
   return self._chessPath
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetAttackCommand.SetCmdChessPath = function(self, chessPath)
-  -- function num : 0_10
+function CastChessPetAttackCommand:SetCmdChessPath(chessPath)
   self._chessPath = chessPath
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetAttackCommand.SetCmdPickUpResult = function(self, result)
-  -- function num : 0_11
+function CastChessPetAttackCommand:SetCmdPickUpResult(result)
   self._pickUpPos = result
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetAttackCommand.GetCmdPickUpResult = function(self)
-  -- function num : 0_12
+function CastChessPetAttackCommand:GetCmdPickUpResult()
   return self._pickUpPos
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetAttackCommand.ToNetMessage = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function CastChessPetAttackCommand:ToNetMessage()
   local msg = CEventCastChessPetAttackCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -116,19 +70,14 @@ CastChessPetAttackCommand.ToNetMessage = function(self)
   msg.CmdIndex = self.CmdIndex
   msg.casterEntityID = self:GetCmdCasterEntityID()
   msg.targetEntityList = self:GetCmdTargetEntityIDList()
-  for i,pos in ipairs(self._chessPath) do
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R7 in 'UnsetPending'
-
-    (msg.chessPath)[#msg.chessPath + 1] = (Vector2.Pos2Index)(pos)
+  for i, pos in ipairs(self._chessPath) do
+    msg.chessPath[#msg.chessPath + 1] = Vector2.Pos2Index(pos)
   end
-  msg.pickUpPos = (Vector2.Pos2Index)(self._pickUpPos)
+  msg.pickUpPos = Vector2.Pos2Index(self._pickUpPos)
   return msg
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetAttackCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_14 , upvalues : _ENV
+function CastChessPetAttackCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
@@ -136,12 +85,8 @@ CastChessPetAttackCommand.FromNetMessage = function(self, msg)
   self.CmdIndex = msg.CmdIndex
   self._casterEntityID = msg.casterEntityID
   self._targetEntityList = msg.targetEntityList
-  for i,v in ipairs(msg.chessPath) do
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._chessPath)[#self._chessPath + 1] = (Vector2.Index2Pos)(v)
+  for i, v in ipairs(msg.chessPath) do
+    self._chessPath[#self._chessPath + 1] = Vector2.Index2Pos(v)
   end
-  self._pickUpPos = (Vector2.Index2Pos)(msg.pickUpPos)
+  self._pickUpPos = Vector2.Index2Pos(msg.pickUpPos)
 end
-
-

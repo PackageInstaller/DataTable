@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/sakura/ui_sakura_draw_shop/ui_sakura_draw_shop_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISakuraDrawShopController", UIController)
 UISakuraDrawShopController = UISakuraDrawShopController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISakuraDrawShopController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISakuraDrawShopController:Constructor()
   self.clientHelper = ClientCampaignDrawShop:New()
   self.singleTimes = 1
   self.multiTimes = 10
@@ -17,42 +10,47 @@ UISakuraDrawShopController.Constructor = function(self)
   self.uiData = {}
   self.unlockBoxs = {}
   self._curPageIndex = 1
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
   self._curSpine = ""
   self.atlas = self:GetAsset("UISakura.spriteatlas", LoadType.SpriteAtlas)
   self.animNames = {
-out_anim = {bg_out = "uieff_UISakuraDrawShopController_b_out", ui_out = "uieff_UISakuraDrawShopController_u_out", time_len = 700}
-, 
-left_out = {name = "uieff_UISakuraDrawShopController_u_r_out", time_len = 700}
-, 
-left_in = {name = "uieff_UISakuraDrawShopController_u_r_in", time_len = 700}
-, 
-right_out = {name = "uieff_UISakuraDrawShopController_u_l_out", time_len = 700}
-, 
-right_in = {name = "uieff_UISakuraDrawShopController_u_l_in", time_len = 700}
-}
+    out_anim = {
+      bg_out = "uieff_UISakuraDrawShopController_b_out",
+      ui_out = "uieff_UISakuraDrawShopController_u_out",
+      time_len = 700
+    },
+    left_out = {
+      name = "uieff_UISakuraDrawShopController_u_r_out",
+      time_len = 700
+    },
+    left_in = {
+      name = "uieff_UISakuraDrawShopController_u_r_in",
+      time_len = 700
+    },
+    right_out = {
+      name = "uieff_UISakuraDrawShopController_u_l_out",
+      time_len = 700
+    },
+    right_in = {
+      name = "uieff_UISakuraDrawShopController_u_l_in",
+      time_len = 700
+    }
+  }
   self._timeEvents = {}
   self._lastUpdateSpineHolderAlpha = -1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UISakuraDrawShopController:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_HIIRO, ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_HIIRO, ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
     self:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UISakuraDrawShopController:OnShow(uiParams)
   self:InitWidget()
   self:_InitData(true, true)
   self:_InitBoxCoverSpine()
@@ -64,71 +62,48 @@ UISakuraDrawShopController.OnShow = function(self, uiParams)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISakuraDrawShopController:OnHide()
   if self._spine then
-    (self._spine):DestroyCurrentSpine()
+    self._spine:DestroyCurrentSpine()
     self._spine = nil
   end
   if self._drawTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._drawTask)
+    GameGlobal.TaskManager():KillTask(self._drawTask)
     self._drawTask = nil
   end
-  for key,value in pairs(self._timeEvents) do
-    ((GameGlobal.Timer)()):CancelEvent(value)
+  for key, value in pairs(self._timeEvents) do
+    GameGlobal.Timer():CancelEvent(value)
   end
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._AttachEvents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISakuraDrawShopController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.ItemCountChanged, self._OnItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._DetachEvents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISakuraDrawShopController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.ItemCountChanged, self._OnItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._CheckActivityClose = function(self, id)
-  -- function num : 0_6 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UISakuraDrawShopController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._ForceRefresh = function(self, isOpenNew)
-  -- function num : 0_7 , upvalues : _ENV
+function UISakuraDrawShopController:_ForceRefresh(isOpenNew)
   self:Lock("UISakuraDrawShopController:_ForceRefresh")
   self:_InitData(isOpenNew)
   self:_InitDrawBtn()
   self:_SetAwardListToPageIndex(self._initPageIndex)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._timeEvents)._delayUnlockTimeEvent = ((GameGlobal.Timer)()):AddEvent(1, function()
-    -- function num : 0_7_0 , upvalues : self
+  self._timeEvents._delayUnlockTimeEvent = GameGlobal.Timer():AddEvent(1, function()
     self:UnLock("UISakuraDrawShopController:_ForceRefresh")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.InitWidget = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UISakuraDrawShopController:InitWidget()
   self.awardList = self:GetUIComponent("UIDynamicScrollView", "AwardList")
   self.drawBtnAreaGo = self:GetGameObject("DrawBtnArea")
   self.lockInfoAreaGo = self:GetGameObject("LockInfoArea")
@@ -155,119 +130,80 @@ UISakuraDrawShopController.InitWidget = function(self)
   self.boxPicLoader = self:GetUIComponent("RawImageLoader", "BoxPic")
   local backBtnGen = self:GetUIComponent("UISelectObjectPath", "TopLeft")
   self.backBtns = backBtnGen:SpawnObject("UICommonTopButton")
-  ;
-  (self.backBtns):SetData(function()
-    -- function num : 0_8_0 , upvalues : self
+  self.backBtns:SetData(function()
     self:CloseDialogWithAnim()
-  end
-, function()
-    -- function num : 0_8_1 , upvalues : self
+  end, function()
     self:ShowDialog("UIHelpController", "UISakuraDrawShopController")
-  end
-)
+  end)
   self.curBoxRestText = self:GetUIComponent("UILocalizationText", "CurBoxRestText")
   self.awardListTitleText = self:GetUIComponent("UILocalizationText", "AwardListTitleText")
-  self.grayColor = Color(0.3921568627451, 0.3921568627451, 0.3921568627451)
-  self.clientCfg = (Cfg.cfg_activity_draw_shop_client)[(self._campaign)._id]
+  self.grayColor = Color(0.39215686274509803, 0.39215686274509803, 0.39215686274509803)
+  self.clientCfg = Cfg.cfg_activity_draw_shop_client[self._campaign._id]
   self.bgAnim = self:GetUIComponent("Animation", "BGCanvas")
   self.uiAnim = self:GetUIComponent("Animation", "uianim")
   self.spineHolderCG = self:GetUIComponent("CanvasGroup", "SpineHolder")
   self.slideAreaGo = self:GetGameObject("TestSlideArea")
   self.selfRect = self:GetUIComponent("RectTransform", "TestSlideArea")
-  self.etl = (UICustomUIEventListener.Get)(self.slideAreaGo)
+  self.etl = UICustomUIEventListener.Get(self.slideAreaGo)
   self:RegUIEventTriggerListener(function(ped)
-    -- function num : 0_8_2 , upvalues : self
     self:OnBeginDrag(ped)
-  end
-, function(ped)
-    -- function num : 0_8_3 , upvalues : self
+  end, function(ped)
     self:OnDrag(ped)
-  end
-, function(ped)
-    -- function num : 0_8_4 , upvalues : self
+  end, function(ped)
     self:OnEndDrag(ped)
-  end
-)
+  end)
   self.pointParentGO = self:GetGameObject("BoxImgPosPoint")
   self.points = {}
   for index = 1, 10 do
-    local trans = (GameObjectHelper.FindChild)((self.pointParentGO).transform, "p" .. index)
-    ;
-    (trans.gameObject):SetActive(false)
-    -- DECOMPILER ERROR at PC204: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.points)[index] = {}
-    -- DECOMPILER ERROR at PC207: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((self.points)[index]).trans = trans
-    -- DECOMPILER ERROR at PC213: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((self.points)[index]).rect = trans:GetComponent("RectTransform")
-    -- DECOMPILER ERROR at PC219: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((self.points)[index]).image = trans:GetComponent("Image")
+    local trans = GameObjectHelper.FindChild(self.pointParentGO.transform, "p" .. index)
+    trans.gameObject:SetActive(false)
+    self.points[index] = {}
+    self.points[index].trans = trans
+    self.points[index].rect = trans:GetComponent("RectTransform")
+    self.points[index].image = trans:GetComponent("Image")
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.RegUIEventTriggerListener = function(self, onBeginDrag, onDrag, onEndDrag)
-  -- function num : 0_9 , upvalues : _ENV
+function UISakuraDrawShopController:RegUIEventTriggerListener(onBeginDrag, onDrag, onEndDrag)
   self:AddUICustomEventListener(self.etl, UIEvent.BeginDrag, onBeginDrag)
   self:AddUICustomEventListener(self.etl, UIEvent.Drag, onDrag)
   self:AddUICustomEventListener(self.etl, UIEvent.EndDrag, onEndDrag)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.OnBeginDrag = function(self, ped)
-  -- function num : 0_10 , upvalues : _ENV
-  local deltaX = (ped.delta).x
+function UISakuraDrawShopController:OnBeginDrag(ped)
+  local deltaX = ped.delta.x
   if self:IsEdge(deltaX) then
-    return 
+    return
   end
-  local pos = (UISakuraDrawShopController.ScreenPointToLocalPointInRectangle)(self.selfRect, ped)
+  local pos = UISakuraDrawShopController.ScreenPointToLocalPointInRectangle(self.selfRect, ped)
   self._xBegainDrag = pos.x
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.OnDrag = function(self, ped)
-  -- function num : 0_11 , upvalues : _ENV
-  local pos = (UISakuraDrawShopController.ScreenPointToLocalPointInRectangle)(self.selfRect, ped)
+function UISakuraDrawShopController:OnDrag(ped)
+  local pos = UISakuraDrawShopController.ScreenPointToLocalPointInRectangle(self.selfRect, ped)
   self._xCurDrag = pos.x
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.OnEndDrag = function(self, ped)
-  -- function num : 0_12
+function UISakuraDrawShopController:OnEndDrag(ped)
   self:InitDragField()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._UpdateDragSwitch = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  if not (self.etl).IsDragging then
-    return 
+function UISakuraDrawShopController:_UpdateDragSwitch()
+  if not self.etl.IsDragging then
+    return
   end
   if not self._xBegainDrag or not self._xCurDrag then
-    return 
+    return
   end
   local deltaX = self._xCurDrag - self._xBegainDrag
   if deltaX == 0 then
-    return 
+    return
   end
   if self:IsEdge(deltaX) then
-    return 
+    return
   end
-  local absDeltaX = (math.abs)(deltaX)
-  if absDeltaX > 100 then
+  local absDeltaX = math.abs(deltaX)
+  if 100 < absDeltaX then
     self:OnEndDrag()
     if deltaX < 0 then
       self:BoxRightBtnOnClick()
@@ -277,19 +213,13 @@ UISakuraDrawShopController._UpdateDragSwitch = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.ScreenPointToLocalPointInRectangle = function(rect, ped)
-  -- function num : 0_14 , upvalues : _ENV
-  local res, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(rect, ped.position, ped.pressEventCamera, nil)
+function UISakuraDrawShopController.ScreenPointToLocalPointInRectangle(rect, ped)
+  local res, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(rect, ped.position, ped.pressEventCamera, nil)
   return pos
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.IsEdge = function(self, deltaX)
-  -- function num : 0_15
-  if deltaX > 0 and self._curPageIndex == 1 then
+function UISakuraDrawShopController:IsEdge(deltaX)
+  if 0 < deltaX and self._curPageIndex == 1 then
     return true
   end
   if deltaX < 0 and self._curPageIndex == #self.uiData then
@@ -298,23 +228,17 @@ UISakuraDrawShopController.IsEdge = function(self, deltaX)
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.InitDragField = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UISakuraDrawShopController:InitDragField()
   self._xBegainDrag = nil
   self._xCurDrag = nil
   self._posBGLogo = Vector2(-667, 0)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._InitData = function(self, isOpenNew, isOnShow)
-  -- function num : 0_17 , upvalues : _ENV
+function UISakuraDrawShopController:_InitData(isOpenNew, isOnShow)
   self.unlockBoxs = {}
   self.uiData = {}
   if self._campaign then
-    local component = (self._campaign):GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
+    local component = self._campaign:GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
     if component then
       local cmptInfo = component:GetComponentInfo()
       if cmptInfo then
@@ -323,94 +247,70 @@ UISakuraDrawShopController._InitData = function(self, isOpenNew, isOnShow)
         self.multiTimes = cmptInfo.m_multi_lottery
         self.multiPrice = cmptInfo.m_cost_count * cmptInfo.m_multi_lottery
         self.unlockBoxs = cmptInfo.m_unlock_jackpots
-        for index,value in ipairs(cmptInfo.m_jackpots) do
+        for index, value in ipairs(cmptInfo.m_jackpots) do
           local itemBox = DCampaignDrawShopItemBox:New()
           itemBox:Refresh(value, component)
-          ;
-          (table.insert)(self.uiData, itemBox)
+          table.insert(self.uiData, itemBox)
         end
         local unlockBoxNum = #self.unlockBoxs
         if isOnShow then
           self._initPageIndex = self:_GetDefaultPageIndexOnShow()
-        else
-          if isOpenNew then
-            if unlockBoxNum > 0 then
-              self._initPageIndex = (self.unlockBoxs)[unlockBoxNum]
-            else
-              self._initPageIndex = 1
-            end
+        elseif isOpenNew then
+          if 0 < unlockBoxNum then
+            self._initPageIndex = self.unlockBoxs[unlockBoxNum]
           else
-            self._initPageIndex = self._curPageIndex
+            self._initPageIndex = 1
           end
+        else
+          self._initPageIndex = self._curPageIndex
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.CloseDialogWithAnim = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UISakuraDrawShopController:CloseDialogWithAnim()
   if self.bgAnim and self.uiAnim then
     self:Lock("UISakuraDrawShopController:CloseDialogWithAnim")
     if self.bgAnim then
-      (self.bgAnim):Play(((self.animNames).out_anim).bg_out)
+      self.bgAnim:Play(self.animNames.out_anim.bg_out)
     end
     if self.uiAnim then
-      (self.uiAnim):Play(((self.animNames).out_anim).ui_out)
+      self.uiAnim:Play(self.animNames.out_anim.ui_out)
     end
     self:StartTask(function(TT)
-    -- function num : 0_18_0 , upvalues : _ENV, self
-    YIELD(TT, ((self.animNames).out_anim).time_len)
-    self:UnLock("UISakuraDrawShopController:CloseDialogWithAnim")
-    self:CloseDialog()
-  end
-, self)
+      YIELD(TT, self.animNames.out_anim.time_len)
+      self:UnLock("UISakuraDrawShopController:CloseDialogWithAnim")
+      self:CloseDialog()
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._InitShopBtn = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UISakuraDrawShopController:_InitShopBtn()
   if self.shopPointBtn then
-    (self.shopPointBtn):SetData(self._campaign, self.currencyId, false, true)
+    self.shopPointBtn:SetData(self._campaign, self.currencyId, false, true)
   end
-  local totalNum = (ClientCampaignDrawShop.GetMoney)(self.currencyId)
-  ;
-  (self.pointNumText):SetText(totalNum)
+  local totalNum = ClientCampaignDrawShop.GetMoney(self.currencyId)
+  self.pointNumText:SetText(totalNum)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._InitAwardListUi = function(self)
-  -- function num : 0_20
-  (self.awardList):InitListView(#self.uiData, function(scrollview, index)
-    -- function num : 0_20_0 , upvalues : self
+function UISakuraDrawShopController:_InitAwardListUi()
+  self.awardList:InitListView(#self.uiData, function(scrollview, index)
     return self:_OnGetAwardBoxCell(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._InitBoxCoverSpine = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UISakuraDrawShopController:_InitBoxCoverSpine()
   self._spine = self:GetUIComponent("SpineLoader", "spine")
   self._spineGo = self:GetGameObject("spine")
-  local uiCfg = (Cfg.cfg_sakura_draw_shop_box_ui_client)[1]
+  local uiCfg = Cfg.cfg_sakura_draw_shop_box_ui_client[1]
   if uiCfg and self._spine then
     self._curSpine = uiCfg.CoverBaseSpine
-    ;
-    (self._spine):LoadSpine(self._curSpine)
+    self._spine:LoadSpine(self._curSpine)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._OnGetAwardBoxCell = function(self, scrollview, index)
-  -- function num : 0_22
+function UISakuraDrawShopController:_OnGetAwardBoxCell(scrollview, index)
   local item = scrollview:NewListViewItem("AwardBoxCell")
   local cellPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -419,415 +319,261 @@ UISakuraDrawShopController._OnGetAwardBoxCell = function(self, scrollview, index
   end
   local rowList = cellPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      itemWidget:InitData((self.uiData)[itemIndex], function(data)
-    -- function num : 0_22_0 , upvalues : self
-    self:_ShowItemTips(data)
+  if itemWidget then
+    local itemIndex = index + 1
+    itemWidget:InitData(self.uiData[itemIndex], function(data)
+      self:_ShowItemTips(data)
+    end)
   end
-)
+  return item
+end
+
+function UISakuraDrawShopController:SetPointSelect(index, select)
+  if select then
+    if self.points[index] then
+      self.points[index].image.sprite = self.atlas:GetSprite("legend_chouka_di10")
+      self.points[index].rect.sizeDelta = Vector2(68, 26)
     end
-    return item
+  elseif self.points[index] then
+    self.points[index].image.sprite = self.atlas:GetSprite("legend_chouka_di11")
+    self.points[index].rect.sizeDelta = Vector2(26, 26)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.SetPointSelect = function(self, index, select)
-  -- function num : 0_23 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  if select and (self.points)[index] then
-    (((self.points)[index]).image).sprite = (self.atlas):GetSprite("legend_chouka_di10")
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (((self.points)[index]).rect).sizeDelta = Vector2(68, 26)
-  end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self.points)[index] then
-    (((self.points)[index]).image).sprite = (self.atlas):GetSprite("legend_chouka_di11")
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (((self.points)[index]).rect).sizeDelta = Vector2(26, 26)
-  end
-end
-
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.BoxLeftBtnOnClick = function(self, go)
-  -- function num : 0_24 , upvalues : _ENV
+function UISakuraDrawShopController:BoxLeftBtnOnClick(go)
   local nextIndex = self._curPageIndex - 1
   if nextIndex < 1 then
-    return 
+    return
   end
   self:PlayLeftOut()
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._timeEvents)._swithLeftTimeEvent = ((GameGlobal.Timer)()):AddEvent(((self.animNames).left_out).time_len, function()
-    -- function num : 0_24_0 , upvalues : self, nextIndex
+  self._timeEvents._swithLeftTimeEvent = GameGlobal.Timer():AddEvent(self.animNames.left_out.time_len, function()
     self:_SetAwardListToPageIndex(nextIndex)
     self:PlayLeftIn()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.BoxRightBtnOnClick = function(self, go)
-  -- function num : 0_25 , upvalues : _ENV
+function UISakuraDrawShopController:BoxRightBtnOnClick(go)
   local nextIndex = self._curPageIndex + 1
-  if #self.uiData < nextIndex then
-    return 
+  if nextIndex > #self.uiData then
+    return
   end
   self:PlayRightOut()
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._timeEvents)._swithRightTimeEvent = ((GameGlobal.Timer)()):AddEvent(((self.animNames).right_out).time_len, function()
-    -- function num : 0_25_0 , upvalues : self, nextIndex
+  self._timeEvents._swithRightTimeEvent = GameGlobal.Timer():AddEvent(self.animNames.right_out.time_len, function()
     self:_SetAwardListToPageIndex(nextIndex)
     self:PlayRightIn()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_26 , upvalues : _ENV
-  do
-    if self._spineSke and self.spineHolderCG then
-      local curAlpha = (self.spineHolderCG).alpha
-      if self._lastUpdateSpineHolderAlpha ~= curAlpha then
-        self._lastUpdateSpineHolderAlpha = curAlpha
-        -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._spineSke).color = Color(1, 1, 1, curAlpha)
-        -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        ((self._spineSke).Skeleton).A = curAlpha
-      end
+function UISakuraDrawShopController:OnUpdate(deltaTimeMS)
+  if self._spineSke and self.spineHolderCG then
+    local curAlpha = self.spineHolderCG.alpha
+    if self._lastUpdateSpineHolderAlpha ~= curAlpha then
+      self._lastUpdateSpineHolderAlpha = curAlpha
+      self._spineSke.color = Color(1, 1, 1, curAlpha)
+      self._spineSke.Skeleton.A = curAlpha
     end
-    self:_UpdateDragSwitch()
   end
+  self:_UpdateDragSwitch()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.PlayLeftOut = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UISakuraDrawShopController:PlayLeftOut()
   self:Lock("UISakuraDrawShopController:PlayLeftOut")
   if self.uiAnim then
-    (self.uiAnim):Play(((self.animNames).left_out).name)
+    self.uiAnim:Play(self.animNames.left_out.name)
   end
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._timeEvents)._leftOutTimeEvent = ((GameGlobal.Timer)()):AddEvent(((self.animNames).left_out).time_len, function()
-    -- function num : 0_27_0 , upvalues : self
+  self._timeEvents._leftOutTimeEvent = GameGlobal.Timer():AddEvent(self.animNames.left_out.time_len, function()
     self:UnLock("UISakuraDrawShopController:PlayLeftOut")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.PlayLeftIn = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UISakuraDrawShopController:PlayLeftIn()
   self:Lock("UISakuraDrawShopController:PlayLeftIn")
   if self.uiAnim then
-    (self.uiAnim):Play(((self.animNames).left_in).name)
+    self.uiAnim:Play(self.animNames.left_in.name)
   end
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._timeEvents)._leftInTimeEvent = ((GameGlobal.Timer)()):AddEvent(((self.animNames).left_in).time_len, function()
-    -- function num : 0_28_0 , upvalues : self
+  self._timeEvents._leftInTimeEvent = GameGlobal.Timer():AddEvent(self.animNames.left_in.time_len, function()
     self:UnLock("UISakuraDrawShopController:PlayLeftIn")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.PlayRightOut = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UISakuraDrawShopController:PlayRightOut()
   self:Lock("UISakuraDrawShopController:PlayRightOut")
   if self.uiAnim then
-    (self.uiAnim):Play(((self.animNames).right_out).name)
+    self.uiAnim:Play(self.animNames.right_out.name)
   end
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._timeEvents)._rightOutTimeEvent = ((GameGlobal.Timer)()):AddEvent(((self.animNames).right_out).time_len, function()
-    -- function num : 0_29_0 , upvalues : self
+  self._timeEvents._rightOutTimeEvent = GameGlobal.Timer():AddEvent(self.animNames.right_out.time_len, function()
     self:UnLock("UISakuraDrawShopController:PlayRightOut")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.PlayRightIn = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UISakuraDrawShopController:PlayRightIn()
   self:Lock("UISakuraDrawShopController:PlayRightIn")
   if self.uiAnim then
-    (self.uiAnim):Play(((self.animNames).right_in).name)
+    self.uiAnim:Play(self.animNames.right_in.name)
   end
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._timeEvents)._rightInTimeEvent = ((GameGlobal.Timer)()):AddEvent(((self.animNames).right_in).time_len, function()
-    -- function num : 0_30_0 , upvalues : self
+  self._timeEvents._rightInTimeEvent = GameGlobal.Timer():AddEvent(self.animNames.right_in.time_len, function()
     self:UnLock("UISakuraDrawShopController:PlayRightIn")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._ShowItemTips = function(self, data)
-  -- function num : 0_31
+function UISakuraDrawShopController:_ShowItemTips(data)
   self:ShowDialog("UISakuraDrawShopTipsController", data)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.NoRestItemTipsCoverOnClick = function(self, go)
-  -- function num : 0_32 , upvalues : _ENV
-  (ToastManager.ShowToast)((StringTable.Get)("str_sakura_draw_shop_no_item_tips"))
+function UISakuraDrawShopController:NoRestItemTipsCoverOnClick(go)
+  ToastManager.ShowToast(StringTable.Get("str_sakura_draw_shop_no_item_tips"))
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._IsBoxUnlock = function(self, boxIndex)
-  -- function num : 0_33 , upvalues : _ENV
-  do
-    if self._campaign then
-      local cmpt = (self._campaign):GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
-      if cmpt then
-        return cmpt:IsLotteryJackpotUnlock(boxIndex)
-      end
+function UISakuraDrawShopController:_IsBoxUnlock(boxIndex)
+  if self._campaign then
+    local cmpt = self._campaign:GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
+    if cmpt then
+      return cmpt:IsLotteryJackpotUnlock(boxIndex)
     end
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._SetAwardListToPageIndex = function(self, index)
-  -- function num : 0_34
+function UISakuraDrawShopController:_SetAwardListToPageIndex(index)
   self:SetPointSelect(self._curPageIndex, false)
   self._curPageIndex = index
   self:SetPointSelect(self._curPageIndex, true)
   if self._curPageIndex == 1 then
-    (self.boxLeftBtnGo):SetActive(false)
-    ;
-    (self.boxRightBtnGo):SetActive(true)
+    self.boxLeftBtnGo:SetActive(false)
+    self.boxRightBtnGo:SetActive(true)
+  elseif self._curPageIndex >= #self.uiData then
+    self.boxLeftBtnGo:SetActive(true)
+    self.boxRightBtnGo:SetActive(false)
   else
-    if #self.uiData <= self._curPageIndex then
-      (self.boxLeftBtnGo):SetActive(true)
-      ;
-      (self.boxRightBtnGo):SetActive(false)
-    else
-      ;
-      (self.boxLeftBtnGo):SetActive(true)
-      ;
-      (self.boxRightBtnGo):SetActive(true)
-    end
+    self.boxLeftBtnGo:SetActive(true)
+    self.boxRightBtnGo:SetActive(true)
   end
   self:_ResetBoxPosText()
-  ;
-  (self.awardList):MovePanelToItemIndex(self._curPageIndex - 1, 0)
-  ;
-  (self.awardList):RefreshAllShownItem()
+  self.awardList:MovePanelToItemIndex(self._curPageIndex - 1, 0)
+  self.awardList:RefreshAllShownItem()
   self:_RefreshDrawBtnArea()
   self:_RefreshBoxTitle()
   self:_RefreshCurBoxRest()
   self:_RefreshCurBoxCover()
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._ResetBoxPosText = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function UISakuraDrawShopController:_ResetBoxPosText()
   local curIndex = self._curPageIndex
-  local str = (StringTable.Get)("str_sakura_draw_shop_box_title", curIndex)
-  ;
-  (self.awardBoxPosText):SetText(str)
+  local str = StringTable.Get("str_sakura_draw_shop_box_title", curIndex)
+  self.awardBoxPosText:SetText(str)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._InitDrawBtn = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  (self.drawSingleCostText):SetText(self.singlePrice)
-  ;
-  (self.drawMultiCostText):SetText(self.multiPrice)
+function UISakuraDrawShopController:_InitDrawBtn()
+  self.drawSingleCostText:SetText(self.singlePrice)
+  self.drawMultiCostText:SetText(self.multiPrice)
   local singleText = "str_sakura_draw_shop_get_one"
   if self.clientCfg then
-    singleText = (self.clientCfg).DrawOnceText
+    singleText = self.clientCfg.DrawOnceText
   end
-  ;
-  (self.drawSingleBtnText):SetText((StringTable.Get)(singleText))
+  self.drawSingleBtnText:SetText(StringTable.Get(singleText))
   local multiText = "str_sakura_draw_shop_get_multi"
   if self.clientCfg then
-    multiText = (self.clientCfg).DrawMultiText
+    multiText = self.clientCfg.DrawMultiText
   end
-  ;
-  (self.drawMultiBtnText):SetText((StringTable.Get)(multiText))
+  self.drawMultiBtnText:SetText(StringTable.Get(multiText))
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._InitBoxPosPoint = function(self)
-  -- function num : 0_37
+function UISakuraDrawShopController:_InitBoxPosPoint()
   local count = #self.uiData
   for index = 1, 10 do
     if index <= count then
-      ((((self.points)[index]).trans).gameObject):SetActive(true)
+      self.points[index].trans.gameObject:SetActive(true)
     else
-      ;
-      ((((self.points)[index]).trans).gameObject):SetActive(false)
+      self.points[index].trans.gameObject:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._RefreshDrawBtnArea = function(self)
-  -- function num : 0_38
+function UISakuraDrawShopController:_RefreshDrawBtnArea()
   if not self:_IsBoxUnlock(self._curPageIndex) then
-    (self.drawBtnAreaGo):SetActive(false)
-    ;
-    (self.lockInfoAreaGo):SetActive(true)
+    self.drawBtnAreaGo:SetActive(false)
+    self.lockInfoAreaGo:SetActive(true)
     self:_RefreshLockInfoText()
   else
-    ;
-    (self.drawBtnAreaGo):SetActive(true)
-    ;
-    (self.lockInfoAreaGo):SetActive(false)
+    self.drawBtnAreaGo:SetActive(true)
+    self.lockInfoAreaGo:SetActive(false)
     self:_RefreshSingleDrawBtn()
     self:_RefreshMultiDrawBtn()
     self:_RefreshDrawBtnNoItemCover()
   end
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._RefreshLockInfoText = function(self)
-  -- function num : 0_39 , upvalues : _ENV
-  local str = (StringTable.Get)("str_sakura_draw_shop_box_unlock_intro", self._curPageIndex - 1)
-  ;
-  (self.lockInfoText):SetText(str)
+function UISakuraDrawShopController:_RefreshLockInfoText()
+  local str = StringTable.Get("str_sakura_draw_shop_box_unlock_intro", self._curPageIndex - 1)
+  self.lockInfoText:SetText(str)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._RefreshDrawBtnNoItemCover = function(self)
-  -- function num : 0_40
+function UISakuraDrawShopController:_RefreshDrawBtnNoItemCover()
   local hasRestItem = self:_CheckAwardRestSingle()
-  ;
-  (self.noRestItemTipsCoverGo):SetActive(not hasRestItem)
+  self.noRestItemTipsCoverGo:SetActive(not hasRestItem)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._RefreshSingleDrawBtn = function(self)
-  -- function num : 0_41
+function UISakuraDrawShopController:_RefreshSingleDrawBtn()
   local bEnableBtn = true
   if not self:_IsBoxUnlock(self._curPageIndex) then
     bEnableBtn = false
   end
-  if bEnableBtn then
-    bEnableBtn = self:_CheckCurrencyEnable(self.singlePrice)
-  end
-  if bEnableBtn then
-    bEnableBtn = self:_CheckAwardRestSingle()
-  end
+  bEnableBtn = bEnableBtn and self:_CheckCurrencyEnable(self.singlePrice)
+  bEnableBtn = bEnableBtn and self:_CheckAwardRestSingle()
   self:_EnableSingleDrawBtn(bEnableBtn)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._RefreshMultiDrawBtn = function(self)
-  -- function num : 0_42
+function UISakuraDrawShopController:_RefreshMultiDrawBtn()
   local bEnableBtn = true
   if not self:_IsBoxUnlock(self._curPageIndex) then
     bEnableBtn = false
   end
-  if bEnableBtn then
-    bEnableBtn = self:_CheckCurrencyEnable(self.multiPrice)
-  end
-  if bEnableBtn then
-    bEnableBtn = self:_CheckAwardRestMulti()
-  end
+  bEnableBtn = bEnableBtn and self:_CheckCurrencyEnable(self.multiPrice)
+  bEnableBtn = bEnableBtn and self:_CheckAwardRestMulti()
   self:_EnableMultiDrawBtn(bEnableBtn)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._RefreshBoxTitle = function(self)
-  -- function num : 0_43 , upvalues : _ENV
-  local boxNameText = (StringTable.Get)("str_sakura_draw_shop_box_title", self._curPageIndex)
+function UISakuraDrawShopController:_RefreshBoxTitle()
+  local boxNameText = StringTable.Get("str_sakura_draw_shop_box_title", self._curPageIndex)
   local tmpText = "<color=#F6A201>" .. boxNameText .. "</color>"
-  ;
-  (self.awardListTitleText):SetText(tmpText)
+  self.awardListTitleText:SetText(tmpText)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._RefreshCurBoxRest = function(self)
-  -- function num : 0_44 , upvalues : _ENV
+function UISakuraDrawShopController:_RefreshCurBoxRest()
   local curBoxRest = 0
   local curBoxTotal = 0
-  if #self.uiData < self._curPageIndex then
-    return 
+  if self._curPageIndex > #self.uiData then
+    return
   end
-  local boxData = (self.uiData)[self._curPageIndex]
+  local boxData = self.uiData[self._curPageIndex]
   if boxData then
-    curBoxRest = boxData:GetTotalRestItem()
+    curBoxRest, curBoxTotal = boxData:GetTotalRestItem()
   end
-  local tmpText = "(" .. (StringTable.Get)("str_sakura_draw_shop_award_rest_num") .. " " .. "<color=#F6A201>" .. curBoxRest .. "</color>" .. "/" .. curBoxTotal .. ")"
-  ;
-  (self.curBoxRestText):SetText(tmpText)
+  local tmpText = "(" .. StringTable.Get("str_sakura_draw_shop_award_rest_num") .. " " .. "<color=#F6A201>" .. curBoxRest .. "</color>" .. "/" .. curBoxTotal .. ")"
+  self.curBoxRestText:SetText(tmpText)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._RefreshCurBoxCover = function(self)
-  -- function num : 0_45 , upvalues : _ENV
-  local uiCfg = (Cfg.cfg_sakura_draw_shop_box_ui_client)[self._curPageIndex]
+function UISakuraDrawShopController:_RefreshCurBoxCover()
+  local uiCfg = Cfg.cfg_sakura_draw_shop_box_ui_client[self._curPageIndex]
   if uiCfg then
     if self._curSpine and uiCfg.CoverBaseSpine and self._curSpine ~= uiCfg.CoverBaseSpine then
       self._curSpine = uiCfg.CoverBaseSpine
-      ;
-      (self._spine):LoadSpine(uiCfg.CoverBaseSpine)
+      self._spine:LoadSpine(uiCfg.CoverBaseSpine)
     end
     if self._spine then
-      self._spineSke = (self._spine).CurrentSkeleton
+      self._spineSke = self._spine.CurrentSkeleton
       if not self._spineSke then
-        self._spineSke = (self._spine).CurrentMultiSkeleton
+        self._spineSke = self._spine.CurrentMultiSkeleton
       end
       if self._spineSke then
-        ((self._spineSke).AnimationState):SetAnimation(0, uiCfg.IdleAnim, true)
+        self._spineSke.AnimationState:SetAnimation(0, uiCfg.IdleAnim, true)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._CheckCurrencyEnable = function(self, price)
-  -- function num : 0_46
-  local haveCurrency = ((self.clientHelper).GetMoney)(self.currencyId)
+function UISakuraDrawShopController:_CheckCurrencyEnable(price)
+  local haveCurrency = self.clientHelper.GetMoney(self.currencyId)
   if price <= haveCurrency then
     return true
   else
@@ -835,33 +581,26 @@ UISakuraDrawShopController._CheckCurrencyEnable = function(self, price)
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._OnItemCountChanged = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function UISakuraDrawShopController:_OnItemCountChanged()
   self:_RefreshSingleDrawBtn()
   self:_RefreshMultiDrawBtn()
   self:_RefreshDrawBtnNoItemCover()
-  local totalNum = (ClientCampaignDrawShop.GetMoney)(self.currencyId)
-  ;
-  (self.pointNumText):SetText(totalNum)
+  local totalNum = ClientCampaignDrawShop.GetMoney(self.currencyId)
+  self.pointNumText:SetText(totalNum)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._GetDefaultPageIndexOnShow = function(self)
-  -- function num : 0_48 , upvalues : _ENV
+function UISakuraDrawShopController:_GetDefaultPageIndexOnShow()
   local pageIndex = 1
   if self._campaign then
-    local cmpt = (self._campaign):GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
+    local cmpt = self._campaign:GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
     if cmpt then
-      for index,value in ipairs(self.unlockBoxs) do
+      for index, value in ipairs(self.unlockBoxs) do
         local isNoRestBigReward = cmpt:IsLotteryJeckpotNoRestBigReward(value)
         if not isNoRestBigReward then
           return value
         end
       end
-      for index,value in ipairs(self.unlockBoxs) do
+      for index, value in ipairs(self.unlockBoxs) do
         local isEmpty = cmpt:IsLotteryJeckpotEmpty(value)
         if not isEmpty then
           return value
@@ -869,17 +608,12 @@ UISakuraDrawShopController._GetDefaultPageIndexOnShow = function(self)
       end
     end
   end
-  do
-    return pageIndex
-  end
+  return pageIndex
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._CheckAwardRestSingle = function(self)
-  -- function num : 0_49 , upvalues : _ENV
+function UISakuraDrawShopController:_CheckAwardRestSingle()
   if self._campaign then
-    local cmpt = (self._campaign):GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
+    local cmpt = self._campaign:GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
     if cmpt then
       local isEmpty = cmpt:IsLotteryJeckpotEmpty(self._curPageIndex)
       if isEmpty then
@@ -889,17 +623,12 @@ UISakuraDrawShopController._CheckAwardRestSingle = function(self)
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._CheckAwardRestMulti = function(self)
-  -- function num : 0_50 , upvalues : _ENV
+function UISakuraDrawShopController:_CheckAwardRestMulti()
   if self._campaign then
-    local cmpt = (self._campaign):GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
+    local cmpt = self._campaign:GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
     if cmpt then
       local canDraw = cmpt:IsLotteryJeckpotCanMutliLottery(self._curPageIndex)
       if canDraw then
@@ -909,136 +638,84 @@ UISakuraDrawShopController._CheckAwardRestMulti = function(self)
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.DrawSingleBtnOnClick = function(self, go)
-  -- function num : 0_51 , upvalues : _ENV
+function UISakuraDrawShopController:DrawSingleBtnOnClick(go)
   self:_DoDraw(ECampaignLotteryType.E_CLT_SINGLE)
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.DrawMultiBtnOnClick = function(self, go)
-  -- function num : 0_52 , upvalues : _ENV
+function UISakuraDrawShopController:DrawMultiBtnOnClick(go)
   self:_DoDraw(ECampaignLotteryType.E_CLT_MULTI)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._EnableSingleDrawBtn = function(self, enable)
-  -- function num : 0_53
-  (self.drawSingleBtnGreyCoverGo):SetActive(not enable)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
+function UISakuraDrawShopController:_EnableSingleDrawBtn(enable)
+  self.drawSingleBtnGreyCoverGo:SetActive(not enable)
   if enable then
-    (self.drawSingleBtn).interactable = enable
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.drawSingleBtnCanvas).blocksRaycasts = enable
+  else
   end
+  self.drawSingleBtn.interactable = enable
+  self.drawSingleBtnCanvas.blocksRaycasts = enable
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._EnableMultiDrawBtn = function(self, enable)
-  -- function num : 0_54
-  (self.drawMultiBtnGreyCoverGo):SetActive(not enable)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
+function UISakuraDrawShopController:_EnableMultiDrawBtn(enable)
+  self.drawMultiBtnGreyCoverGo:SetActive(not enable)
   if enable then
-    (self.drawMultiBtn).interactable = enable
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.drawMultiBtnCanvas).blocksRaycasts = enable
+  else
   end
+  self.drawMultiBtn.interactable = enable
+  self.drawMultiBtnCanvas.blocksRaycasts = enable
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController.GetNumberCN = function(self, num)
-  -- function num : 0_55 , upvalues : _ENV
+function UISakuraDrawShopController:GetNumberCN(num)
   if num <= 0 then
     return nil
-  else
-    if num < 11 then
-      return (StringTable.Get)("str_sakura_draw_shop_number_" .. num)
+  elseif num < 11 then
+    return StringTable.Get("str_sakura_draw_shop_number_" .. num)
+  elseif num < 100 then
+    local gewei = num % 10
+    local shiwei = math.floor(num / 10)
+    local str = ""
+    if shiwei == 1 then
+      str = str .. StringTable.Get("str_sakura_draw_shop_number_10")
     else
-      if num < 100 then
-        local gewei = num % 10
-        local shiwei = (math.floor)(num / 10)
-        local str = ""
-        if shiwei == 1 then
-          str = str .. (StringTable.Get)("str_sakura_draw_shop_number_10")
-        else
-          str = str .. (StringTable.Get)("str_sakura_draw_shop_number_" .. shiwei) .. (StringTable.Get)("str_sakura_draw_shop_number_10")
-        end
-        if gewei == 0 then
-          return str
-        else
-          return str .. (StringTable.Get)("str_sakura_draw_shop_number_" .. gewei)
-        end
-      else
-        do
-          do return (StringTable.Get)("str_sakura_draw_shop_number_99") end
-        end
-      end
+      str = str .. StringTable.Get("str_sakura_draw_shop_number_" .. shiwei) .. StringTable.Get("str_sakura_draw_shop_number_10")
     end
+    if gewei == 0 then
+      return str
+    else
+      return str .. StringTable.Get("str_sakura_draw_shop_number_" .. gewei)
+    end
+  else
+    return StringTable.Get("str_sakura_draw_shop_number_99")
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._CheckCanDrawOnceMore = function(self, lotteryType)
-  -- function num : 0_56 , upvalues : _ENV
+function UISakuraDrawShopController:_CheckCanDrawOnceMore(lotteryType)
   if lotteryType == ECampaignLotteryType.E_CLT_SINGLE then
     local bEnable = true
     if not self:_IsBoxUnlock(self._curPageIndex) then
       bEnable = false
     end
-    if bEnable then
-      bEnable = self:_CheckCurrencyEnable(self.singlePrice)
-    end
-    if bEnable then
-      bEnable = self:_CheckAwardRestSingle()
-    end
+    bEnable = bEnable and self:_CheckCurrencyEnable(self.singlePrice)
+    bEnable = bEnable and self:_CheckAwardRestSingle()
     return bEnable
-  else
-    do
-      do
-        if lotteryType == ECampaignLotteryType.E_CLT_MULTI then
-          local bEnable = true
-          if not self:_IsBoxUnlock(self._curPageIndex) then
-            bEnable = false
-          end
-          if bEnable then
-            bEnable = self:_CheckCurrencyEnable(self.multiPrice)
-          end
-          if bEnable then
-            bEnable = self:_CheckAwardRestMulti()
-          end
-          return bEnable
-        end
-        return false
-      end
+  elseif lotteryType == ECampaignLotteryType.E_CLT_MULTI then
+    local bEnable = true
+    if not self:_IsBoxUnlock(self._curPageIndex) then
+      bEnable = false
     end
+    bEnable = bEnable and self:_CheckCurrencyEnable(self.multiPrice)
+    bEnable = bEnable and self:_CheckAwardRestMulti()
+    return bEnable
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._DoDraw = function(self, lotteryType)
-  -- function num : 0_57 , upvalues : _ENV
-  local funcModule = (self:GetModule(RoleModule)).uiModule
+function UISakuraDrawShopController:_DoDraw(lotteryType)
+  local funcModule = self:GetModule(RoleModule).uiModule
   funcModule:LockAchievementFinishPanel(true)
   self._drawTask = self:StartTask(function(TT)
-    -- function num : 0_57_0 , upvalues : self, _ENV, lotteryType
     self:Lock("UISakuraDrawShopController:doDraw")
     local res = AsyncRequestRes:New()
     local getRewards, isOpenNew = self:_SendDrawReq(TT, res, self._curPageIndex, lotteryType)
@@ -1052,51 +729,36 @@ UISakuraDrawShopController._DoDraw = function(self, lotteryType)
         self:UnLock("UISakuraDrawShopController:doDraw")
       end
     else
-      do
-        local funcModule = (self:GetModule(RoleModule)).uiModule
-        funcModule:LockAchievementFinishPanel(false)
-        self:UnLock("UISakuraDrawShopController:doDraw")
-        local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-        campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, function()
-      -- function num : 0_57_0_0 , upvalues : self, isOpenNew
-      self:_ForceRefresh(isOpenNew)
+      local funcModule = self:GetModule(RoleModule).uiModule
+      funcModule:LockAchievementFinishPanel(false)
+      self:UnLock("UISakuraDrawShopController:doDraw")
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      campaignModule:CheckErrorCode(res.m_result, self._campaign._id, function()
+        self:_ForceRefresh(isOpenNew)
+      end, function()
+        self:CloseDialog()
+      end)
     end
-, function()
-      -- function num : 0_57_0_1 , upvalues : self
-      self:CloseDialog()
-    end
-)
-      end
-    end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._SendDrawReq = function(self, TT, res, boxIndex, lotteryType)
-  -- function num : 0_58 , upvalues : _ENV
-  do
-    if self._campaign then
-      local component = (self._campaign):GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
-      if component then
-        return component:HandleLottery(TT, res, boxIndex, lotteryType)
-      end
+function UISakuraDrawShopController:_SendDrawReq(TT, res, boxIndex, lotteryType)
+  if self._campaign then
+    local component = self._campaign:GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
+    if component then
+      return component:HandleLottery(TT, res, boxIndex, lotteryType)
     end
-    res:SetSucc(false)
-    return nil
   end
+  res:SetSucc(false)
+  return nil
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._ShowGetReward = function(self, record)
-  -- function num : 0_59 , upvalues : _ENV
-  local funcModule = (self:GetModule(RoleModule)).uiModule
+function UISakuraDrawShopController:_ShowGetReward(record)
+  local funcModule = self:GetModule(RoleModule).uiModule
   funcModule:LockAchievementFinishPanel(false)
   self:UnLock("UISakuraDrawShopController:doDraw")
   if not record then
-    return 
+    return
   end
   local rewards = record.m_getRewards
   local lotteryType = record.m_lotteryType
@@ -1105,198 +767,145 @@ UISakuraDrawShopController._ShowGetReward = function(self, record)
   local canDrawOnceMore = record.m_canDrawOnceMore
   local assetAwards = {}
   local tempPets = {}
-  if #rewards > 0 then
+  if 0 < #rewards then
     for i = 1, #rewards do
       local roleAsset = RoleAsset:New()
-      roleAsset.assetid = (rewards[i]).m_item_id
-      roleAsset.count = (rewards[i]).m_count
-      local ispet = (self._petModule):IsPetID(roleAsset.assetid)
+      roleAsset.assetid = rewards[i].m_item_id
+      roleAsset.count = rewards[i].m_count
+      local ispet = self._petModule:IsPetID(roleAsset.assetid)
       if ispet then
-        (table.insert)(tempPets, roleAsset)
+        table.insert(tempPets, roleAsset)
       end
-      ;
-      (table.insert)(assetAwards, roleAsset)
+      table.insert(assetAwards, roleAsset)
     end
   end
-  do
-    local cbFunc = nil
-    if isOpenNew then
-      if self:_CheckIsRestRepeatBox() then
-        cbFunc = function()
-    -- function num : 0_59_0 , upvalues : self
-    self:_LoopBoxRestTips()
-  end
-
-      else
-        cbFunc = function()
-    -- function num : 0_59_1 , upvalues : self
-    self:_ConfirmToNextBox()
-  end
-
+  local cbFunc
+  if isOpenNew then
+    if self:_CheckIsRestRepeatBox() then
+      function cbFunc()
+        self:_LoopBoxRestTips()
       end
     else
-      if not curBoxHasRest then
-        cbFunc = function()
-    -- function num : 0_59_2 , upvalues : self
-    self:_ForceRefresh(false)
-  end
-
-      else
-        if canDrawOnceMore then
-          cbFunc = function()
-    -- function num : 0_59_3 , upvalues : self
-    self:_ForceRefresh(false)
-  end
-
-        else
-          cbFunc = function()
-    -- function num : 0_59_4 , upvalues : self
-    self:_ForceRefresh(false)
-  end
-
-        end
+      function cbFunc()
+        self:_ConfirmToNextBox()
       end
     end
-    local getItemCtrl = "UIGetItemController"
-    if #tempPets > 0 then
-      self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_59_5 , upvalues : _ENV, self, getItemCtrl, assetAwards, cbFunc
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
+  elseif not curBoxHasRest then
+    function cbFunc()
+      self:_ForceRefresh(false)
+    end
+  elseif canDrawOnceMore then
+    function cbFunc()
+      self:_ForceRefresh(false)
+    end
+  else
+    function cbFunc()
+      self:_ForceRefresh(false)
+    end
+  end
+  local getItemCtrl = "UIGetItemController"
+  if 0 < #tempPets then
+    self:ShowDialog("UIPetObtain", tempPets, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      self:ShowDialog(getItemCtrl, assetAwards, cbFunc)
+    end)
+  else
     self:ShowDialog(getItemCtrl, assetAwards, cbFunc)
   end
-)
-    else
-      self:ShowDialog(getItemCtrl, assetAwards, cbFunc)
-    end
-  end
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._ConfirmToNextBox = function(self)
-  -- function num : 0_60 , upvalues : _ENV
-  local strTitle = (StringTable.Get)("str_sakura_draw_shop_new_box_unlock_title")
-  local strText = (StringTable.Get)("str_sakura_draw_shop_open_next_text", self._curPageIndex, self._curPageIndex + 1)
+function UISakuraDrawShopController:_ConfirmToNextBox()
+  local strTitle = StringTable.Get("str_sakura_draw_shop_new_box_unlock_title")
+  local strText = StringTable.Get("str_sakura_draw_shop_open_next_text", self._curPageIndex, self._curPageIndex + 1)
   local curCost = 10
-  local okCb = function()
-    -- function num : 0_60_0 , upvalues : self
+  
+  local function okCb()
     self:_ForceRefresh(true)
   end
-
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, strTitle, strText, okCb, nil)
+  
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, strTitle, strText, okCb, nil)
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._LoopBoxRestTips = function(self)
-  -- function num : 0_61 , upvalues : _ENV
+function UISakuraDrawShopController:_LoopBoxRestTips()
   local strTitle = ""
-  local strText = (StringTable.Get)("str_sakura_draw_shop_loop_box_reset_tips")
+  local strText = StringTable.Get("str_sakura_draw_shop_loop_box_reset_tips")
   local curCost = 10
-  local okCb = function()
-    -- function num : 0_61_0 , upvalues : self
+  
+  local function okCb()
     self:_ForceRefresh(true)
   end
-
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, strTitle, strText, okCb, nil)
+  
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, strTitle, strText, okCb, nil)
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._ConfirmDrawOnceMore = function(self, lotteryType)
-  -- function num : 0_62 , upvalues : _ENV
+function UISakuraDrawShopController:_ConfirmDrawOnceMore(lotteryType)
   local price = self.singlePrice
   if lotteryType == ECampaignLotteryType.E_CLT_MULTI then
     price = self.multiPrice
   end
-  local strText = (StringTable.Get)("str_sakura_draw_shop_draw_once_more_text", price)
-  local okCb = function()
-    -- function num : 0_62_0 , upvalues : self, lotteryType
+  local strText = StringTable.Get("str_sakura_draw_shop_draw_once_more_text", price)
+  
+  local function okCb()
     self:_ForceRefresh(false)
     self:_DoDraw(lotteryType)
   end
-
-  local cancelCb = function()
-    -- function num : 0_62_1 , upvalues : self
+  
+  local function cancelCb()
     self:_ForceRefresh(false)
   end
-
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", strText, okCb, nil, cancelCb)
+  
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", strText, okCb, nil, cancelCb)
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._RecordRewardsInfo = function(self, getRewards, lotteryType, curBoxHasRest, isOpenNew, canDrawOnceMore)
-  -- function num : 0_63 , upvalues : _ENV
+function UISakuraDrawShopController:_RecordRewardsInfo(getRewards, lotteryType, curBoxHasRest, isOpenNew, canDrawOnceMore)
   if not self.rewardRecord then
     self.rewardRecord = DCampaignDrawShopDrawResultRecord:New()
   end
-  ;
-  (self.rewardRecord):Record(getRewards, lotteryType, curBoxHasRest, isOpenNew, canDrawOnceMore)
+  self.rewardRecord:Record(getRewards, lotteryType, curBoxHasRest, isOpenNew, canDrawOnceMore)
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._ShowDrawAnim = function(self, lotteryType)
-  -- function num : 0_64 , upvalues : _ENV
+function UISakuraDrawShopController:_ShowDrawAnim(lotteryType)
   local delayTime = 2000
   local criAudioID = CriAudioIDConst.SakuraTenLottery
-  local uiCfg = (Cfg.cfg_sakura_draw_shop_box_ui_client)[self._curPageIndex]
+  local uiCfg = Cfg.cfg_sakura_draw_shop_box_ui_client[self._curPageIndex]
   if uiCfg and self._spine then
-    self._spineSke = (self._spine).CurrentSkeleton
+    self._spineSke = self._spine.CurrentSkeleton
     if not self._spineSke then
-      self._spineSke = (self._spine).CurrentMultiSkeleton
+      self._spineSke = self._spine.CurrentMultiSkeleton
     end
     local anim = uiCfg.DrawOnceAnim
     if lotteryType == ECampaignLotteryType.E_CLT_SINGLE then
       anim = uiCfg.DrawOnceAnim
       delayTime = uiCfg.DrawOnceAnimTime
       criAudioID = CriAudioIDConst.SakuraOneLottery
-    else
-      if lotteryType == ECampaignLotteryType.E_CLT_MULTI then
-        anim = uiCfg.DrawMultiAnim
-        delayTime = uiCfg.DrawMultiAnimTime
-        criAudioID = CriAudioIDConst.SakuraTenLottery
-      end
+    elseif lotteryType == ECampaignLotteryType.E_CLT_MULTI then
+      anim = uiCfg.DrawMultiAnim
+      delayTime = uiCfg.DrawMultiAnimTime
+      criAudioID = CriAudioIDConst.SakuraTenLottery
     end
     if self._spineSke then
-      ((self._spineSke).AnimationState):SetAnimation(0, anim, false)
-      ;
-      (AudioHelperController.PlayUISoundAutoRelease)(criAudioID)
+      self._spineSke.AnimationState:SetAnimation(0, anim, false)
+      AudioHelperController.PlayUISoundAutoRelease(criAudioID)
     end
   end
-  do
-    -- DECOMPILER ERROR at PC64: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._timeEvents)._delayShowRewardTimeEvent = ((GameGlobal.Timer)()):AddEvent(delayTime, UISakuraDrawShopController._ShowGetReward, self, self.rewardRecord)
-  end
+  self._timeEvents._delayShowRewardTimeEvent = GameGlobal.Timer():AddEvent(delayTime, UISakuraDrawShopController._ShowGetReward, self, self.rewardRecord)
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopController._CheckIsRestRepeatBox = function(self)
-  -- function num : 0_65 , upvalues : _ENV
+function UISakuraDrawShopController:_CheckIsRestRepeatBox()
   if self._campaign then
-    local component = (self._campaign):GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
+    local component = self._campaign:GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
     if component then
       local cmptInfo = component:GetComponentInfo()
       if cmptInfo then
         self.unlockBoxs = cmptInfo.m_unlock_jackpots
         local unlockBoxNum = #self.unlockBoxs
         local newIndex = 1
-        if unlockBoxNum > 0 then
-          newIndex = (self.unlockBoxs)[unlockBoxNum]
+        if 0 < unlockBoxNum then
+          newIndex = self.unlockBoxs[unlockBoxNum]
         end
         return self._curPageIndex == newIndex
       end
     end
   end
-  do return false end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return false
 end
-
-

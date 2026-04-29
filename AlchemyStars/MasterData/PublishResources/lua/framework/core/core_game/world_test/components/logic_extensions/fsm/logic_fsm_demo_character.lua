@@ -1,121 +1,81 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/components/logic_extensions/fsm/logic_fsm_demo_character.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("entity_ability")
-_enum("CharacterStateID", {Invalid = 0, Idle = 1, Move = 2, Skill = 3})
+_enum("CharacterStateID", {
+  Invalid = 0,
+  Idle = 1,
+  Move = 2,
+  Skill = 3
+})
 _class("EntityStateNode", StateNode)
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-EntityStateNode.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.debug)("EntityStateNode:Constructor()")
+function EntityStateNode:Constructor()
+  Log.debug("EntityStateNode:Constructor()")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityStateNode.InitializeNode = function(self, cfg, context)
-  -- function num : 0_1 , upvalues : _ENV
-  ((EntityStateNode.super).InitializeNode)(self, cfg, context)
-  self.m_owner = (context.GenInfo).OwnerEntity
-  self.m_world = (context.GenInfo).World
+function EntityStateNode:InitializeNode(cfg, context)
+  EntityStateNode.super.InitializeNode(self, cfg, context)
+  self.m_owner = context.GenInfo.OwnerEntity
+  self.m_world = context.GenInfo.World
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityStateNode.Enter = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((EntityStateNode.super).Enter)(self)
+function EntityStateNode:Enter()
+  EntityStateNode.super.Enter(self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityStateNode.Exit = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((EntityStateNode.super).Exit)(self)
+function EntityStateNode:Exit()
+  EntityStateNode.super.Exit(self)
 end
 
 _class("CharacterIdleState", EntityStateNode)
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
 
-CharacterIdleState.Enter = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((CharacterIdleState.super).Enter)(self)
-  ;
-  (self.m_owner):EnableAbility(EntityAbilitysLookup.GroundMotion)
+function CharacterIdleState:Enter()
+  CharacterIdleState.super.Enter(self)
+  self.m_owner:EnableAbility(EntityAbilitysLookup.GroundMotion)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-CharacterIdleState.CheckTransitions = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self.m_owner):HasMovement() then
+function CharacterIdleState:CheckTransitions()
+  if self.m_owner:HasMovement() then
     return CharacterStateID.Move
   end
-  return ((CharacterIdleState.super).CheckTransitions)(self)
+  return CharacterIdleState.super.CheckTransitions(self)
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-CharacterIdleState.HandleCommand = function(self, cmd)
-  -- function num : 0_6
+function CharacterIdleState:HandleCommand(cmd)
   return true
 end
 
 _class("CharacterMoveState", EntityStateNode)
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
 
-CharacterMoveState.Enter = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((CharacterMoveState.super).Enter)(self)
-  ;
-  (self.m_owner):EnableAbility(EntityAbilitysLookup.GroundMotion)
+function CharacterMoveState:Enter()
+  CharacterMoveState.super.Enter(self)
+  self.m_owner:EnableAbility(EntityAbilitysLookup.GroundMotion)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R0 in 'UnsetPending'
-
-CharacterMoveState.CheckTransitions = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if not (self.m_owner):HasMovement() then
+function CharacterMoveState:CheckTransitions()
+  if not self.m_owner:HasMovement() then
     return CharacterStateID.Idle
   end
-  return ((CharacterIdleState.super).CheckTransitions)(self)
+  return CharacterIdleState.super.CheckTransitions(self)
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R0 in 'UnsetPending'
-
-CharacterMoveState.HandleCommand = function(self, cmd)
-  -- function num : 0_9
+function CharacterMoveState:HandleCommand(cmd)
   return true
 end
 
 _class("CharacterSkillState", EntityStateNode)
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
 
-CharacterSkillState.Enter = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  ((CharacterSkillState.super).Enter)(self)
-  ;
-  (self.m_owner):DisableAbility(EntityAbilitysLookup.GroundMotion)
+function CharacterSkillState:Enter()
+  CharacterSkillState.super.Enter(self)
+  self.m_owner:DisableAbility(EntityAbilitysLookup.GroundMotion)
   self.testTime = 2
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-CharacterSkillState.CheckTransitions = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function CharacterSkillState:CheckTransitions()
   if self.testTime <= 0 then
     return CharacterStateID.Idle
   end
-  return ((CharacterIdleState.super).CheckTransitions)(self)
+  return CharacterIdleState.super.CheckTransitions(self)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-CharacterSkillState.Update = function(self, dt)
-  -- function num : 0_12
+function CharacterSkillState:Update(dt)
   self.testTime = self.testTime - dt
 end
-
-

@@ -1,68 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/ui_n25_idol_achieve_title.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolAchieveTitle", UICustomWidget)
 UIN25IdolAchieveTitle = UIN25IdolAchieveTitle
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolAchieveTitle.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolAchieveTitle:Constructor()
   self._parent = nil
   self._cfg = nil
-  self._urlIcon = {[4] = "n25_ych_di26", [5] = "n25_ych_di27", [6] = "n25_ych_di25"}
+  self._urlIcon = {
+    [4] = "n25_ych_di26",
+    [5] = "n25_ych_di27",
+    [6] = "n25_ych_di25"
+  }
   self._nameColor = self:GetNameColor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolAchieveTitle.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25IdolAchieveTitle:OnShow(uiParams)
   self._imgBg = self:GetUIComponent("Image", "imgBg")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolAchieveTitle.OnHide = function(self)
-  -- function num : 0_2
+function UIN25IdolAchieveTitle:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolAchieveTitle.GetNameColor = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return {[0] = Color(0.34901960784314, 0.34901960784314, 0.34901960784314, 1), [4] = Color(1, 0.55294117647059, 0.25882352941176, 1), [5] = Color(0.49803921568627, 0.34117647058824, 0.92156862745098, 1), [6] = Color(0.95686274509804, 0.48627450980392, 0.5843137254902, 1)}
+function UIN25IdolAchieveTitle:GetNameColor()
+  return {
+    [0] = Color(0.34901960784313724, 0.34901960784313724, 0.34901960784313724, 1),
+    [4] = Color(1.0, 0.5529411764705883, 0.25882352941176473, 1),
+    [5] = Color(0.4980392156862745, 0.3411764705882353, 0.9215686274509803, 1),
+    [6] = Color(0.9568627450980393, 0.48627450980392156, 0.5843137254901961, 1)
+  }
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolAchieveTitle.SetData = function(self, parent, cfg)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN25IdolAchieveTitle:SetData(parent, cfg)
   self._parent = parent
   self._cfg = cfg
-  local url = (self._urlIcon)[cfg.StateIcon]
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
+  local url = self._urlIcon[cfg.StateIcon]
   if url ~= nil then
-    (self._imgBg).enabled = true
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._imgBg).sprite = ((self._parent):GetAtlas()):GetSprite(url)
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._txtName).color = (self._nameColor)[cfg.StateIcon]
+    self._imgBg.enabled = true
+    self._imgBg.sprite = self._parent:GetAtlas():GetSprite(url)
+    self._txtName.color = self._nameColor[cfg.StateIcon]
   else
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._imgBg).enabled = false
+    self._imgBg.enabled = false
   end
-  ;
-  (self._txtName):SetText((StringTable.Get)((self._cfg).Name))
+  self._txtName:SetText(StringTable.Get(self._cfg.Name))
 end
-
-

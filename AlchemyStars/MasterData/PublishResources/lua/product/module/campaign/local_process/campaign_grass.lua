@@ -1,70 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_grass.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CampaignGrass", ICampaignComponentLocalProcessBase)
 CampaignGrass = CampaignGrass
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CampaignGrass.Constructor = function(self)
-  -- function num : 0_0
+function CampaignGrass:Constructor()
   self._missionComponent = nil
   self._missionCompInfo = nil
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignGrass.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CampaignGrass:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_GRASS
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignGrass.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CampaignGrass:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignGrass.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CampaignGrass:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetMissionComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignGrass._GetMissionComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._missionComponent = (self._campaignObj):GetComponent(ECampaignGrassComponentID.ECAMPAIGN_GRASS_MISSION)
+function CampaignGrass:_GetMissionComponent()
+  self._missionComponent = self._campaignObj:GetComponent(ECampaignGrassComponentID.ECAMPAIGN_GRASS_MISSION)
   if not self._missionComponent then
-    return 
+    return
   end
-  self._missionCompInfo = (self._missionComponent):ComponentInfo()
+  self._missionCompInfo = self._missionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignGrass.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CampaignGrass:GetComponent(componentID)
   if ECampaignGrassComponentID.ECAMPAIGN_GRASS_MISSION == componentID then
     return self._missionComponent
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignGrass.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CampaignGrass:GetComponentInfo(componentID)
   if ECampaignGrassComponentID.ECAMPAIGN_GRASS_MISSION == componentID then
     return self._missionCompInfo
   end
   return nil
 end
-
-

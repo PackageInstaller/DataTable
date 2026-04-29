@@ -1,107 +1,82 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_across_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMoveAcrossTeam", ActionMoveBase)
 ActionMoveAcrossTeam = ActionMoveAcrossTeam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveAcrossTeam.Constructor = function(self)
-  -- function num : 0_0
+function ActionMoveAcrossTeam:Constructor()
   self:_Reset()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveAcrossTeam.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionMoveAcrossTeam.super).Reset)(self)
+function ActionMoveAcrossTeam:Reset()
+  ActionMoveAcrossTeam.super.Reset(self)
   self:_Reset()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveAcrossTeam._Reset = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._targetMoveOffsetList = {Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vector2(-1, 0)}
+function ActionMoveAcrossTeam:_Reset()
+  self._targetMoveOffsetList = {
+    Vector2(0, 1),
+    Vector2(1, 0),
+    Vector2(0, -1),
+    Vector2(-1, 0)
+  }
   self._targetPos = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveAcrossTeam.InitTargetPosList = function(self, listPosTarget)
-  -- function num : 0_3 , upvalues : _ENV
-  local posSelf = (self.m_entityOwn):GetGridPosition()
-  local aiCmpt = (self.m_entityOwn):AI()
+function ActionMoveAcrossTeam:InitTargetPosList(listPosTarget)
+  local posSelf = self.m_entityOwn:GetGridPosition()
+  local aiCmpt = self.m_entityOwn:AI()
   local remainMobility = aiCmpt:GetMobilityValid()
   if remainMobility <= 0 then
     self._targetPos = posSelf
-    return 
+    return
   end
   local canMoveAndAcrossPosList = {}
   local canAcrossPosList = {}
   local canMovePosList = {}
   local targetPos = listPosTarget[1]
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  for _,pos in ipairs(self._targetMoveOffsetList) do
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  for _, pos in ipairs(self._targetMoveOffsetList) do
     local posAcross = targetPos - pos
-    do
-      if not boardServiceLogic:IsPosBlock(posAcross, BlockFlag.MonsterLand) then
-        local posMoveAndAcross = targetPos + pos
-        if not boardServiceLogic:IsPosBlock(posMoveAndAcross, BlockFlag.MonsterLand) or posMoveAndAcross == posSelf then
-          (table.insert)(canAcrossPosList, posAcross)
-          ;
-          (table.insert)(canMoveAndAcrossPosList, posMoveAndAcross)
-        end
-      end
-      do
-        local posMove = targetPos + pos
-        if not boardServiceLogic:IsPosBlock(posMove, BlockFlag.MonsterLand) or posMove == posSelf then
-          (table.insert)(canMovePosList, posMove)
-        end
-        -- DECOMPILER ERROR at PC67: LeaveBlock: unexpected jumping out DO_STMT
-
+    if not boardServiceLogic:IsPosBlock(posAcross, BlockFlag.MonsterLand) then
+      local posMoveAndAcross = targetPos + pos
+      if not boardServiceLogic:IsPosBlock(posMoveAndAcross, BlockFlag.MonsterLand) or posMoveAndAcross == posSelf then
+        table.insert(canAcrossPosList, posAcross)
+        table.insert(canMoveAndAcrossPosList, posMoveAndAcross)
       end
     end
+    local posMove = targetPos + pos
+    if not boardServiceLogic:IsPosBlock(posMove, BlockFlag.MonsterLand) or posMove == posSelf then
+      table.insert(canMovePosList, posMove)
+    end
   end
-  if (table.intable)(canAcrossPosList, posSelf) then
+  if table.intable(canAcrossPosList, posSelf) then
     self._targetPos = posSelf
-    return 
+    return
   end
-  if (table.count)(canAcrossPosList) == 0 then
-    if (table.count)(canMovePosList) == 0 then
+  if table.count(canAcrossPosList) == 0 then
+    if table.count(canMovePosList) == 0 then
       self._targetPos = targetPos
     else
       self._targetPos = canMovePosList[1]
-      for _,pos in ipairs(canMovePosList) do
-        local nearestPosToTargetDis = (Vector2.Distance)(self._targetPos, posSelf)
-        local workPosToTargetDis = (Vector2.Distance)(pos, posSelf)
-        if workPosToTargetDis < nearestPosToTargetDis then
+      for _, pos in ipairs(canMovePosList) do
+        local nearestPosToTargetDis = Vector2.Distance(self._targetPos, posSelf)
+        local workPosToTargetDis = Vector2.Distance(pos, posSelf)
+        if nearestPosToTargetDis > workPosToTargetDis then
           self._targetPos = pos
         end
       end
     end
   else
-    do
-      self._targetPos = canMoveAndAcrossPosList[1]
-      for _,pos in ipairs(canMoveAndAcrossPosList) do
-        local nearestPosToTargetDis = (Vector2.Distance)(self._targetPos, posSelf)
-        local workPosToTargetDis = (Vector2.Distance)(pos, posSelf)
-        if workPosToTargetDis < nearestPosToTargetDis then
-          self._targetPos = pos
-        end
+    self._targetPos = canMoveAndAcrossPosList[1]
+    for _, pos in ipairs(canMoveAndAcrossPosList) do
+      local nearestPosToTargetDis = Vector2.Distance(self._targetPos, posSelf)
+      local workPosToTargetDis = Vector2.Distance(pos, posSelf)
+      if nearestPosToTargetDis > workPosToTargetDis then
+        self._targetPos = pos
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveAcrossTeam.FindNewTargetPos = function(self)
-  -- function num : 0_4
+function ActionMoveAcrossTeam:FindNewTargetPos()
   return self._targetPos
 end
-
-

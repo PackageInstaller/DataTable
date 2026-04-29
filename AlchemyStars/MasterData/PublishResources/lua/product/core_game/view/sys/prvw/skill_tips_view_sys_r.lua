@@ -1,109 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/skill_tips_view_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillTipsViewSystem_Render", ReactiveSystem)
 SkillTipsViewSystem_Render = SkillTipsViewSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillTipsViewSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillTipsViewSystem_Render:Constructor(world)
   self._world = world
   local baseWidth = 1920
   local baseHeight = 1080
   self._offsetDic = {}
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._offsetDic)[1] = Vector3(400, 80, 0)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._offsetDic)[2] = Vector3(400, -80, 0)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._offsetDic)[3] = Vector3(-400, 80, 0)
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._offsetDic)[4] = Vector3(-400, -80, 0)
-  for k,v in ipairs(self._offsetDic) do
+  self._offsetDic[1] = Vector3(400, 80, 0)
+  self._offsetDic[2] = Vector3(400, -80, 0)
+  self._offsetDic[3] = Vector3(-400, 80, 0)
+  self._offsetDic[4] = Vector3(-400, -80, 0)
+  for k, v in ipairs(self._offsetDic) do
     local offset = v
-    local adaptWidth = (UnityEngine.Screen).width * offset.x / baseWidth
-    local adaptHeight = (UnityEngine.Screen).height * offset.y / baseHeight
+    local adaptWidth = UnityEngine.Screen.width * offset.x / baseWidth
+    local adaptHeight = UnityEngine.Screen.height * offset.y / baseHeight
     offset.x = adaptWidth
     offset.y = adaptHeight
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTipsViewSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).View)
-  local skillTipsGroup = world:GetGroup((world.BW_WEMatchers).SkillTips)
+function SkillTipsViewSystem_Render:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.View)
+  local skillTipsGroup = world:GetGroup(world.BW_WEMatchers.SkillTips)
   local c = Collector:New({group, skillTipsGroup}, {"Added", "Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTipsViewSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
+function SkillTipsViewSystem_Render:Filter(entity)
   if entity:HasSkillTips() and entity:HasView() then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTipsViewSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function SkillTipsViewSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
-    if (entities[i]):HasSkillTips() then
+    if entities[i]:HasSkillTips() then
       self:ShowSkillTips(entities[i])
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTipsViewSystem_Render.ShowSkillTips = function(self, skillTipsEntity)
-  -- function num : 0_4
+function SkillTipsViewSystem_Render:ShowSkillTips(skillTipsEntity)
   local skillTipsCmpt = skillTipsEntity:SkillTips()
-  local reBoard = ((self._world):GetRenderBoardEntity())
-  local touchPos = nil
+  local reBoard = self._world:GetRenderBoardEntity()
+  local touchPos
   local previewCmpt = reBoard:PreviewMonsterAction()
   local previewTrapCmpt = reBoard:PreviewTrapAction()
   if previewCmpt and previewCmpt:IsShowMonsterAction() then
     touchPos = previewCmpt:GetTouchPosition()
-  else
-    if previewTrapCmpt and previewTrapCmpt:IsShowTrapAction() then
-      touchPos = previewTrapCmpt:GetTouchPosition()
-    end
+  elseif previewTrapCmpt and previewTrapCmpt:IsShowTrapAction() then
+    touchPos = previewTrapCmpt:GetTouchPosition()
   end
   local hudWorldPos = self:_CalcGridHUDWorldPos(touchPos)
   if hudWorldPos == nil then
-    return 
+    return
   end
   local viewCmpt = skillTipsEntity:View()
   local viewWrapper = viewCmpt.ViewWrapper
   local skillTipsView = viewWrapper.GameObject
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (skillTipsView.transform).position = hudWorldPos
+  skillTipsView.transform.position = hudWorldPos
   local uiViewCmpt = skillTipsView:GetComponent("UIView")
   self:_FlushUI(uiViewCmpt, skillTipsCmpt)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTipsViewSystem_Render._FlushUI = function(self, uiViewCmpt, skillTipsCmpt)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillTipsViewSystem_Render:_FlushUI(uiViewCmpt, skillTipsCmpt)
   local csTextSkillName = uiViewCmpt:GetUIComponent("UILocalizationText", "Name")
   local csTextSkillDesc = uiViewCmpt:GetUIComponent("UILocalizationText", "Desc")
   local trapGO = uiViewCmpt:GetGameObject("trap")
@@ -113,75 +74,57 @@ SkillTipsViewSystem_Render._FlushUI = function(self, uiViewCmpt, skillTipsCmpt)
     trapGO:SetActive(false)
     skillGO:SetActive(false)
     chessGO:SetActive(true)
+  elseif skillTipsCmpt:GetTrapDesc() then
+    trapGO:SetActive(true)
+    skillGO:SetActive(false)
+    chessGO:SetActive(false)
   else
-    if skillTipsCmpt:GetTrapDesc() then
-      trapGO:SetActive(true)
-      skillGO:SetActive(false)
-      chessGO:SetActive(false)
-    else
-      trapGO:SetActive(false)
-      skillGO:SetActive(true)
-      chessGO:SetActive(false)
-    end
+    trapGO:SetActive(false)
+    skillGO:SetActive(true)
+    chessGO:SetActive(false)
   end
   local skillNameID = skillTipsCmpt:GetSkillName()
   local skillDescID = skillTipsCmpt:GetSkillDesc()
-  local skillName = (StringTable.Get)(skillNameID)
-  local skillDesc = (StringTable.Get)(skillDescID)
+  local skillName = StringTable.Get(skillNameID)
+  local skillDesc = StringTable.Get(skillDescID)
   csTextSkillName:SetText(skillName)
   csTextSkillDesc:SetText(skillDesc)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTipsViewSystem_Render._CalcGridHUDWorldPos = function(self, gridPos)
-  -- function num : 0_6 , upvalues : _ENV
-  local camera = ((self._world):MainCamera()):Camera()
-  local inputCmpt = (self._world):Input()
+function SkillTipsViewSystem_Render:_CalcGridHUDWorldPos(gridPos)
+  local camera = self._world:MainCamera():Camera()
+  local inputCmpt = self._world:Input()
   local inputPos = inputCmpt:GetTouchBeginPosition()
-  if (self._world):MatchType() == MatchType.MT_Chess then
-    local chessPickUpCmpt = (self._world):ChessPickUp()
+  if self._world:MatchType() == MatchType.MT_Chess then
+    local chessPickUpCmpt = self._world:ChessPickUp()
     inputPos = chessPickUpCmpt:GetChessClickPos()
-  else
-    do
-      do
-        if (self._world):MatchType() == MatchType.MT_PopStar or (self._world):MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
-          local popStarPickUpCmpt = (self._world):PopStarPickUp()
-          inputPos = popStarPickUpCmpt:GetPopStarClickPos()
-        end
-        local screenPos = camera:WorldToScreenPoint(inputPos)
-        local areaIndex = self:_CalcAreaIndex(screenPos, camera)
-        local areaOffset = (self._offsetDic)[areaIndex]
-        local targetScreenPos = areaOffset + screenPos
-        local hudCamera = ((self._world):MainCamera()):HUDCamera()
-        local hudWorldPos = hudCamera:ScreenToWorldPoint(targetScreenPos)
-        return hudWorldPos
-      end
-    end
+  elseif self._world:MatchType() == MatchType.MT_PopStar or self._world:MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
+    local popStarPickUpCmpt = self._world:PopStarPickUp()
+    inputPos = popStarPickUpCmpt:GetPopStarClickPos()
   end
+  local screenPos = camera:WorldToScreenPoint(inputPos)
+  local areaIndex = self:_CalcAreaIndex(screenPos, camera)
+  local areaOffset = self._offsetDic[areaIndex]
+  local targetScreenPos = areaOffset + screenPos
+  local hudCamera = self._world:MainCamera():HUDCamera()
+  local hudWorldPos = hudCamera:ScreenToWorldPoint(targetScreenPos)
+  return hudWorldPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTipsViewSystem_Render._CalcAreaIndex = function(self, screenPos, camera)
-  -- function num : 0_7
+function SkillTipsViewSystem_Render:_CalcAreaIndex(screenPos, camera)
   local halfPixelWidth = camera.pixelWidth / 2
   local halfPixelHeight = camera.pixelHeight / 2
   local areaIndex = 0
-  if screenPos.x <= halfPixelWidth then
-    if screenPos.y <= halfPixelHeight then
+  if halfPixelWidth >= screenPos.x then
+    if halfPixelHeight >= screenPos.y then
       areaIndex = 1
     else
       areaIndex = 2
     end
+  elseif halfPixelHeight >= screenPos.y then
+    areaIndex = 3
   else
-    if screenPos.y <= halfPixelHeight then
-      areaIndex = 3
-    else
-      areaIndex = 4
-    end
+    areaIndex = 4
   end
   return areaIndex
 end
-
-

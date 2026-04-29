@@ -1,21 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1601121/cfg_skill_view_130112.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
+}
 local config = {
-{1, 1, 1, 1, 0, 0, 
-{castEffectID = 2528, castAnimation = "Atk", castLongAnimation = "Atk_Long", atkEffectDelay = 0, longAtkEffectDelay = 66, hitPointDelay = 150, longHitPointDelay = 216, onHitAnimation = "Hit", hitEffectID = 2527, castTotalTime = 333, longCastTotalTime = 500, hpDelayTime = 0}
-}
-, 
-{2, 2, 43, 1, 1, 0, 
-{audioID = 2320, atkSoundDelay = 0, longAtkSoundDelay = 66, audioType = 1}
-}
-, 
-{3, 3, 0, 1, 1, 0, 
-{"DataSelectBuff,buffIndex=1; PlayTargetAddBuff,buffID=430112,label=addbuff; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=addbuff; "}
-}
+  {
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    {
+      castEffectID = 2528,
+      castAnimation = "Atk",
+      castLongAnimation = "Atk_Long",
+      atkEffectDelay = 0,
+      longAtkEffectDelay = 66,
+      hitPointDelay = 150,
+      longHitPointDelay = 216,
+      onHitAnimation = "Hit",
+      hitEffectID = 2527,
+      castTotalTime = 333,
+      longCastTotalTime = 500,
+      hpDelayTime = 0
+    }
+  },
+  {
+    2,
+    2,
+    43,
+    1,
+    1,
+    0,
+    {
+      audioID = 2320,
+      atkSoundDelay = 0,
+      longAtkSoundDelay = 66,
+      audioType = 1
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    1,
+    0,
+    {
+      "DataSelectBuff,buffIndex=1; PlayTargetAddBuff,buffID=430112,label=addbuff; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=addbuff; "
+    }
+  }
 }
 return config, "ID", key
-

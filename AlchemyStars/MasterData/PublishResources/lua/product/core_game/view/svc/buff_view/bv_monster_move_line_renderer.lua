@@ -1,106 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_monster_move_line_renderer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewInitMonsterMoveGroupLineRenderer", BuffViewBase)
 BuffViewInitMonsterMoveGroupLineRenderer = BuffViewInitMonsterMoveGroupLineRenderer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewInitMonsterMoveGroupLineRenderer.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewInitMonsterMoveGroupLineRenderer:PlayView(TT)
   local entity = self._entity
   if not entity:HasView() then
-    return 
+    return
   end
-  local monsterIDCmpt = (self._entity):MonsterID()
-  local utilCalcServiceShare = (self._world):GetService("UtilCalc")
+  local monsterIDCmpt = self._entity:MonsterID()
+  local utilCalcServiceShare = self._world:GetService("UtilCalc")
   local myGroupMonsterList = utilCalcServiceShare:FindMonsterByMoveGroupID(monsterIDCmpt:GetMoveGroupID())
   local beginEntityList = {}
   local endEntityList = {}
-  for i,startMonsterEntity in ipairs(myGroupMonsterList) do
+  for i, startMonsterEntity in ipairs(myGroupMonsterList) do
     local beginPos = startMonsterEntity:GetGridPosition()
-    for j,endMonsterEntity in ipairs(myGroupMonsterList) do
+    for j, endMonsterEntity in ipairs(myGroupMonsterList) do
       if i ~= j then
         local endPos = endMonsterEntity:GetGridPosition()
         if utilCalcServiceShare:IsNeedShowMoveGroupLine(beginPos, endPos) then
           local flag = true
-          if ((table.intable)(beginEntityList, startMonsterEntity:GetID()) or (table.intable)(endEntityList, startMonsterEntity:GetID())) and ((table.ikey)(beginEntityList, startMonsterEntity:GetID()) == (table.ikey)(endEntityList, endMonsterEntity:GetID()) or (table.ikey)(endEntityList, startMonsterEntity:GetID()) == (table.ikey)(beginEntityList, endMonsterEntity:GetID())) then
+          if (table.intable(beginEntityList, startMonsterEntity:GetID()) or table.intable(endEntityList, startMonsterEntity:GetID())) and (table.ikey(beginEntityList, startMonsterEntity:GetID()) == table.ikey(endEntityList, endMonsterEntity:GetID()) or table.ikey(endEntityList, startMonsterEntity:GetID()) == table.ikey(beginEntityList, endMonsterEntity:GetID())) then
             flag = false
           end
           if flag then
-            (table.insert)(beginEntityList, startMonsterEntity:GetID())
-            ;
-            (table.insert)(endEntityList, endMonsterEntity:GetID())
+            table.insert(beginEntityList, startMonsterEntity:GetID())
+            table.insert(endEntityList, endMonsterEntity:GetID())
           end
         end
       end
     end
-  end
-  do
-    if #beginEntityList ~= #myGroupMonsterList - 1 then
-      local effectID = (self._buffResult)[1]
-      local effectSvc = (self._world):GetService("Effect")
-      effectSvc:CreateMonsterMoveLineEffects(TT, effectID, entity, beginEntityList, "Hit", endEntityList, "Hit")
+    if #beginEntityList == #myGroupMonsterList - 1 then
+      break
     end
   end
+  local effectID = self._buffResult[1]
+  local effectSvc = self._world:GetService("Effect")
+  effectSvc:CreateMonsterMoveLineEffects(TT, effectID, entity, beginEntityList, "Hit", endEntityList, "Hit")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewInitMonsterMoveGroupLineRenderer.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
-  local myGroupID = (self._buffResult)[2]
-  do return notify:GetGroupID() == myGroupID end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function BuffViewInitMonsterMoveGroupLineRenderer:IsNotifyMatch(notify)
+  local myGroupID = self._buffResult[2]
+  return notify:GetGroupID() == myGroupID
 end
 
 _class("BuffViewUpdateMonsterMoveGroupLineRenderer", BuffViewBase)
 BuffViewUpdateMonsterMoveGroupLineRenderer = BuffViewUpdateMonsterMoveGroupLineRenderer
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewUpdateMonsterMoveGroupLineRenderer.PlayView = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffViewUpdateMonsterMoveGroupLineRenderer:PlayView(TT)
   local buffResult = self._buffResult
   local entity = self._entity
   if not entity:HasView() then
-    return 
+    return
   end
-  local entityViewRoot = (((entity:View()).ViewWrapper).GameObject).transform
-  local curRoot = ((GameObjectHelper.FindChild)(entityViewRoot, buffResult:GetCurrent()))
-  local targetRoot = nil
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,monsterEntity in pairs(monsterGroup:GetEntities()) do
+  local entityViewRoot = entity:View().ViewWrapper.GameObject.transform
+  local curRoot = GameObjectHelper.FindChild(entityViewRoot, buffResult:GetCurrent())
+  local targetRoot
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, monsterEntity in pairs(monsterGroup:GetEntities()) do
     local cBuff = monsterEntity:BuffView()
     if cBuff and cBuff:HasBuffEffect(buffResult:GetBuffEffect()) then
-      targetRoot = (GameObjectHelper.FindChild)((((monsterEntity:View()).ViewWrapper).GameObject).transform, buffResult:GetTarget())
+      targetRoot = GameObjectHelper.FindChild(monsterEntity:View().ViewWrapper.GameObject.transform, buffResult:GetTarget())
       break
     end
   end
-  do
-    if not curRoot or not targetRoot then
-      return 
-    end
-    local effectHolderCmpt = entity:EffectHolder()
-    if not effectHolderCmpt then
-      return 
-    end
-    local effectList = effectHolderCmpt:GetPermanentEffect()
-    for i,eff in ipairs(effectList) do
-      local e = (self._world):GetEntityByID(eff)
-      if e:HasView() then
-        local go = (e:View()):GetGameObject()
-        local renderers = go:GetComponentsInChildren(typeof(UnityEngine.LineRenderer), true)
-        for i = 0, renderers.Length - 1 do
-          local line = renderers[i]
-          if line then
-            local currentPos = curRoot.position - entityViewRoot.position
-            local targetPos = targetRoot.position - entityViewRoot.position
-            ;
-            (line.gameObject):SetActive(true)
-            line:SetPosition(0, currentPos)
-            line:SetPosition(1, targetPos)
-          end
+  if not curRoot or not targetRoot then
+    return
+  end
+  local effectHolderCmpt = entity:EffectHolder()
+  if not effectHolderCmpt then
+    return
+  end
+  local effectList = effectHolderCmpt:GetPermanentEffect()
+  for i, eff in ipairs(effectList) do
+    local e = self._world:GetEntityByID(eff)
+    if e:HasView() then
+      local go = e:View():GetGameObject()
+      local renderers = go:GetComponentsInChildren(typeof(UnityEngine.LineRenderer), true)
+      for i = 0, renderers.Length - 1 do
+        local line = renderers[i]
+        if line then
+          local currentPos = curRoot.position - entityViewRoot.position
+          local targetPos = targetRoot.position - entityViewRoot.position
+          line.gameObject:SetActive(true)
+          line:SetPosition(0, currentPos)
+          line:SetPosition(1, targetPos)
         end
       end
     end
@@ -109,34 +91,27 @@ end
 
 _class("BuffViewDeleteMonsterMoveGroupLineRenderer", BuffViewBase)
 BuffViewDeleteMonsterMoveGroupLineRenderer = BuffViewDeleteMonsterMoveGroupLineRenderer
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewDeleteMonsterMoveGroupLineRenderer.PlayView = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffViewDeleteMonsterMoveGroupLineRenderer:PlayView(TT)
   local entity = self._entity
   if not entity then
-    return 
+    return
   end
   local cEffectHolder = entity:EffectHolder()
   if not cEffectHolder then
-    return 
+    return
   end
   local effectID = self._buffResult
-  local effectIDEntityDic = (cEffectHolder:GetEffectIDEntityDic())[effectID]
+  local effectIDEntityDic = cEffectHolder:GetEffectIDEntityDic()[effectID]
   if effectIDEntityDic then
-    for _,entityID in pairs(effectIDEntityDic) do
-      local effectEntity = (self._world):GetEntityByID(entityID)
+    for _, entityID in pairs(effectIDEntityDic) do
+      local effectEntity = self._world:GetEntityByID(entityID)
       if effectEntity ~= nil then
-        (self._world):DestroyEntity(effectEntity)
+        self._world:DestroyEntity(effectEntity)
       end
     end
   end
-  do
-    effectIDEntityDic = {}
-    entity:RemoveEffectLineRenderer()
-    ;
-    (Log.fatal)("BuffRemoveEffectLineRenderer")
-  end
+  effectIDEntityDic = {}
+  entity:RemoveEffectLineRenderer()
+  Log.fatal("BuffRemoveEffectLineRenderer")
 end
-
-

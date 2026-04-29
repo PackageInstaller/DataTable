@@ -1,163 +1,110 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/idol_ap/ui_n25_idol_ap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolApController", UIController)
 UIN25IdolApController = UIN25IdolApController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolApController.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolApController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._campaign = (UIActivityCampaign.New)()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+function UIN25IdolApController:LoadDataOnEnter(TT, res, uiParams)
+  self._campaign = UIActivityCampaign.New()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_1_0
+    self._campaign:CheckErrorCode(res.m_result, function()
+    end, function()
+      self:SwitchState(UIStateType.UIMain)
+    end)
   end
-, function()
-    -- function num : 0_1_1 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIMain)
-  end
-)
-  end
-  self.component = (self._campaign):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+  self.component = self._campaign:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN25IdolApController:OnShow(uiParams)
   self.apID = uiParams[1]
   self:GetStoryID()
   self:OpenAp()
   self:AttachEvent(GameEventType.OnN25IdolCheckState, self.OnN25IdolCheckState)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN25IdolCheckState, self:GetName())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN25IdolCheckState, self:GetName())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApController.GetStoryID = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = ((Cfg.cfg_component_idol_event)({EventId = self.apID}))[1]
+function UIN25IdolApController:GetStoryID()
+  local cfg = Cfg.cfg_component_idol_event({
+    EventId = self.apID
+  })[1]
   self.storyID = cfg.StoryId
   if not self.storyID then
-    (Log.fatal)("###[UIN25IdolApController] storyID is nil ! apid:", self.apID)
+    Log.fatal("###[UIN25IdolApController] storyID is nil ! apid:", self.apID)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApController.CheckOptionCantClick = function(self, condition)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN25IdolApController:CheckOptionCantClick(condition)
   local conditionTab = condition
-  for key,value in pairs(condition) do
-    if not (self.component):UI_IsFinishAgreedEvent(value) then
+  for key, value in pairs(condition) do
+    if not self.component:UI_IsFinishAgreedEvent(value) then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApController.AddThreeD = function(self, idx, callback)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN25IdolApController:AddThreeD(idx, callback)
   self.eventType = IdolEventType.IdolEventType_Agree
   self.chooseIdx = idx
   self.callback = callback or nil
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.FinishAp, self)
+  GameGlobal.TaskManager():StartTask(self.FinishAp, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApController.FinishAp = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN25IdolApController:FinishAp(TT)
   self:Lock("UIN25IdolApController:FinishAp")
   local res = AsyncRequestRes:New()
   local optionType = IdolOptionType.IdolOptionType_None
   if self.chooseIdx == 1 then
     optionType = IdolOptionType.IdolOptionType_First
-  else
-    if self.chooseIdx == 2 then
-      optionType = IdolOptionType.IdolOptionType_Second
-    else
-      if self.chooseIdx == 3 then
-        optionType = IdolOptionType.IdolOptionType_Third
-      end
-    end
+  elseif self.chooseIdx == 2 then
+    optionType = IdolOptionType.IdolOptionType_Second
+  elseif self.chooseIdx == 3 then
+    optionType = IdolOptionType.IdolOptionType_Third
   end
-  ;
-  (self.component):HandleIdolCompleteEvent(TT, res, self.eventType, optionType, self.apID)
+  self.component:HandleIdolCompleteEvent(TT, res, self.eventType, optionType, self.apID)
   self:UnLock("UIN25IdolApController:FinishAp")
   if res:GetSucc() then
-    local cfg = ((Cfg.cfg_component_idol_event)({EventId = self.apID}))[1]
+    local cfg = Cfg.cfg_component_idol_event({
+      EventId = self.apID
+    })[1]
     if not cfg then
-      (Log.error)("###[UIN25IdolApController] not cfg ! ap id :", self.apID)
+      Log.error("###[UIN25IdolApController] not cfg ! ap id :", self.apID)
     end
     local limit = cfg.AddValue
-    if limit and (table.count)(limit) > 0 then
-      self.threeType = (limit[self.chooseIdx])[1]
-      self.threeValue = (limit[self.chooseIdx])[2]
+    if limit and table.count(limit) > 0 then
+      self.threeType = limit[self.chooseIdx][1]
+      self.threeValue = limit[self.chooseIdx][2]
     else
-      ;
-      (Log.error)("###[UIN25IdolApController] cfg.AddValue is nil ! id :", self.apID)
+      Log.error("###[UIN25IdolApController] cfg.AddValue is nil ! id :", self.apID)
     end
     if self.callback then
-      (self.callback)(true, self.threeType, self.threeValue, res)
+      self.callback(true, self.threeType, self.threeValue, res)
     end
   else
-    do
-      local result = res:GetResult()
-      ;
-      (Log.fatal)("###[UIN25IdolApController] HandleIdolCompleteEvent fail ! result:", result)
-      if self.callback then
-        (self.callback)(false, nil, nil, res)
-      end
+    local result = res:GetResult()
+    Log.fatal("###[UIN25IdolApController] HandleIdolCompleteEvent fail ! result:", result)
+    if self.callback then
+      self.callback(false, nil, nil, res)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApController.CheckAp = function(self, currentTurn)
-  -- function num : 0_7
+function UIN25IdolApController:CheckAp(currentTurn)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApController.OpenAp = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN25IdolApController:OpenAp()
   self:ShowDialog("UIN25IdolStoryController", self.storyID, function()
-    -- function num : 0_8_0 , upvalues : _ENV
-    (CutsceneManager.ExcuteCutsceneIn)("UIN25Idol_Common_Switch", function()
-      -- function num : 0_8_0_0 , upvalues : _ENV
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.N25IdolGameNextDay)
-      ;
-      (CutsceneManager.ExcuteCutsceneOut)()
-    end
-)
-  end
-)
+    CutsceneManager.ExcuteCutsceneIn("UIN25Idol_Common_Switch", function()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.N25IdolGameNextDay)
+      CutsceneManager.ExcuteCutsceneOut()
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApController.OnN25IdolCheckState = function(self, openDialog)
-  -- function num : 0_9
+function UIN25IdolApController:OnN25IdolCheckState(openDialog)
   local diaName = self:GetName()
   if diaName ~= openDialog then
     self:CloseDialog()
   end
 end
-
-

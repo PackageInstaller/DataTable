@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/ui_spine_bg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISpineBg", UICustomWidget)
 UISpineBg = UISpineBg
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISpineBg.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISpineBg:OnShow()
   self._petAudioModule = self:GetModule(PetAudioModule)
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
+  self._roleModule = GameGlobal.GetModule(RoleModule)
   self._freeTime = 0
-  self._maxFreeTime = ((Cfg.cfg_global).MainUIFreeTime).IntValue * 1000
+  self._maxFreeTime = Cfg.cfg_global.MainUIFreeTime.IntValue * 1000
   self._cgSpineGo = self:GetGameObject("posAndScale")
   self._spineGo = self:GetGameObject("spine")
   self._spine = self:GetUIComponent("SpineLoader", "spine")
@@ -24,182 +17,133 @@ UISpineBg.OnShow = function(self)
   self._spineLoaderObj1 = self:GetGameObject("bg_spine1")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpineBg.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISpineBg:OnHide()
   if self._spineEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+    GameGlobal.Timer():CancelEvent(self._spineEvent)
     self._spineEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpineBg.SetData = function(self, skinId)
-  -- function num : 0_2 , upvalues : _ENV
+function UISpineBg:SetData(skinId)
   self._skinId = skinId
-  self._cfg = (Cfg.cfg_senior_skin)[skinId]
+  self._cfg = Cfg.cfg_senior_skin[skinId]
   if not self._cfg then
-    (Log.error)("UISpineBg can\'t find cfg_pet_skin : ", skinId)
-    return 
+    Log.error("UISpineBg can't find cfg_pet_skin : ", skinId)
+    return
   end
-  self._spineName = (self._cfg).Spine
+  self._spineName = self._cfg.Spine
   self:ShowSkinSpine()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpineBg.ShowSkinSpine = function(self)
-  -- function num : 0_3
+function UISpineBg:ShowSkinSpine()
   self._assistantSkinID = self._skinId
-  ;
-  (self._cgSpineGo):SetActive(true)
+  self._cgSpineGo:SetActive(true)
   if not self._spineLoaded then
-    (self._spine):DestroyCurrentSpine()
-    ;
-    (self._spine):LoadSpine(self._spineName)
+    self._spine:DestroyCurrentSpine()
+    self._spine:LoadSpine(self._spineName)
     self._spineLoaded = true
   end
-  self._spineSke = (self._spine).CurrentSkeleton
+  self._spineSke = self._spine.CurrentSkeleton
   if not self._spineSke then
-    self._spineSke = (self._spine).CurrentMultiSkeleton
+    self._spineSke = self._spine.CurrentMultiSkeleton
   end
-  ;
-  (self._spineGo):SetActive(true)
-  local spineAnim = (self._cfg).EnterAnim
+  self._spineGo:SetActive(true)
+  local spineAnim = self._cfg.EnterAnim
   if spineAnim then
     self:PlayEnterAni(spineAnim)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpineBg.PlayEnterAni = function(self, spineAnim)
-  -- function num : 0_4 , upvalues : _ENV
+function UISpineBg:PlayEnterAni(spineAnim)
   if spineAnim then
     if not self._spineSke then
-      (Log.debug)("###[UISpineBg] not self._spineSke spine --> ", self._spineName)
-      return 
+      Log.debug("###[UISpineBg] not self._spineSke spine --> ", self._spineName)
+      return
     end
-    local entry = nil
-    do
-      local _f = function()
-    -- function num : 0_4_0 , upvalues : self, entry, spineAnim
-    (self._spineSke):Initialize(true)
-    entry = ((self._spineSke).AnimationState):SetAnimation(0, spineAnim, false)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (((self._spine).AnimationState).Data).DefaultMix = 0
-    ;
-    (self._spineSke):Update(0)
-  end
-
-      local succ = pcall(_f)
-      if not succ then
-        (Log.error)("###[UISpineBg] set spine anim fail ! spine[", self._spineName, "] anim[", spineAnim, "]")
-        return 
-      end
-      if not entry then
-        (Log.error)("###[UISpineBg] entry is nil ! spine[", self._spineName, "] anim[", spineAnim, "]")
-        return 
-      end
-      local anim = entry.Animation
-      local duration = anim.Duration
-      local yieldTime = (math.floor)(duration * 1000)
-      self._playSpineAnim = true
-      if self._spineEvent then
-        ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
-        self._spineEvent = nil
-      end
-      self._spineEvent = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_4_1 , upvalues : self
-    self._playSpineAnim = false
-    local animationName = "idle"
-    ;
-    ((self._spineSke).AnimationState):SetAnimation(0, animationName, true)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (((self._spine).AnimationState).Data).DefaultMix = 0
-    ;
-    (self._spineSke):Update(0)
-  end
-)
+    local entry
+    
+    local function _f()
+      self._spineSke:Initialize(true)
+      entry = self._spineSke.AnimationState:SetAnimation(0, spineAnim, false)
+      self._spine.AnimationState.Data.DefaultMix = 0
+      self._spineSke:Update(0)
     end
+    
+    local succ = pcall(_f)
+    if not succ then
+      Log.error("###[UISpineBg] set spine anim fail ! spine[", self._spineName, "] anim[", spineAnim, "]")
+      return
+    end
+    if not entry then
+      Log.error("###[UISpineBg] entry is nil ! spine[", self._spineName, "] anim[", spineAnim, "]")
+      return
+    end
+    local anim = entry.Animation
+    local duration = anim.Duration
+    local yieldTime = math.floor(duration * 1000)
+    self._playSpineAnim = true
+    if self._spineEvent then
+      GameGlobal.Timer():CancelEvent(self._spineEvent)
+      self._spineEvent = nil
+    end
+    self._spineEvent = GameGlobal.Timer():AddEvent(yieldTime, function()
+      self._playSpineAnim = false
+      local animationName = "idle"
+      self._spineSke.AnimationState:SetAnimation(0, animationName, true)
+      self._spine.AnimationState.Data.DefaultMix = 0
+      self._spineSke:Update(0)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpineBg.PlayClickAni = function(self)
-  -- function num : 0_5
+function UISpineBg:PlayClickAni()
   self:PlaySpineAnim(self._skinId)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpineBg.PlaySpineAnim = function(self, skinid)
-  -- function num : 0_6 , upvalues : _ENV
+function UISpineBg:PlaySpineAnim(skinid)
   if not self._spineSke or not self._cfg then
-    return 
+    return
   end
   if self._playSpineAnim then
-    return 
+    return
   end
   local cfg_pet_skin = self._cfg
   local spineAnims = cfg_pet_skin.ClickAni
   if not spineAnims then
-    return 
+    return
   end
   local animList = {}
   for i = 1, #spineAnims do
     local spineAnim = spineAnims[i]
-    ;
-    (table.insert)(animList, spineAnim)
+    table.insert(animList, spineAnim)
   end
   if #animList == 0 then
-    (Log.error)("###[UISpineBg] animList is nil ! skinid --> ", skinid)
-    return 
+    Log.error("###[UISpineBg] animList is nil ! skinid --> ", skinid)
+    return
   end
-  local randomVal = (math.random)(#animList)
+  local randomVal = math.random(#animList)
   local anim = animList[randomVal]
   local animationName = anim
-  local entry = ((self._spineSke).AnimationState):SetAnimation(0, animationName, false)
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (((self._spine).AnimationState).Data).DefaultMix = 0
-  ;
-  (self._spineSke):Update(0)
+  local entry = self._spineSke.AnimationState:SetAnimation(0, animationName, false)
+  self._spine.AnimationState.Data.DefaultMix = 0
+  self._spineSke:Update(0)
   if not entry then
-    return 
+    return
   end
   local anim = entry.Animation
   local duration = anim.Duration
-  local yieldTime = (math.floor)(duration * 1000)
+  local yieldTime = math.floor(duration * 1000)
   self._playSpineAnim = true
   if self._spineEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+    GameGlobal.Timer():CancelEvent(self._spineEvent)
     self._spineEvent = nil
   end
-  self._spineEvent = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_6_0 , upvalues : self
+  self._spineEvent = GameGlobal.Timer():AddEvent(yieldTime, function()
     self._playSpineAnim = false
     local animationName = "idle"
-    ;
-    ((self._spineSke).AnimationState):SetAnimation(0, animationName, true)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (((self._spine).AnimationState).Data).DefaultMix = 0
-    ;
-    (self._spineSke):Update(0)
-  end
-)
-  ;
-  (Log.debug)("###[UISpineBg] spine 动画名字[", animationName, "] 动画时长[", duration, "]")
+    self._spineSke.AnimationState:SetAnimation(0, animationName, true)
+    self._spine.AnimationState.Data.DefaultMix = 0
+    self._spineSke:Update(0)
+  end)
+  Log.debug("###[UISpineBg] spine 动画名字[", animationName, "] 动画时长[", duration, "]")
 end
-
-

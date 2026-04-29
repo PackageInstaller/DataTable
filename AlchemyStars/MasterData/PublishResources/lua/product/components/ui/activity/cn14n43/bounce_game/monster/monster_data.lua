@@ -1,49 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/monster/monster_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MonsterData", Object)
 MonsterData = MonsterData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterData.Constructor = function(self, monsterId)
-  -- function num : 0_0 , upvalues : _ENV
+function MonsterData:Constructor(monsterId)
   self.camp = BounceCamp.Monster
-  local cfg = (Cfg.cfg_bounce_monster)[monsterId]
+  local cfg = Cfg.cfg_bounce_monster[monsterId]
   self.initHp = cfg.InitHp
   self.hp = self.initHp
   self.durationMS = 0
   self.cfg = cfg
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterData.ChgCamp = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function MonsterData:ChgCamp()
   if self.camp == BounceCamp.Player then
     self.camp = BounceCamp.Monster
-  else
-    if self.camp == BounceCamp.Monster then
-      self.camp = BounceCamp.Player
-    end
+  elseif self.camp == BounceCamp.Monster then
+    self.camp = BounceCamp.Player
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterData.Reset = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function MonsterData:Reset()
   self.camp = BounceCamp.Monster
   self.durationMS = 0
   self.underPlayer = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterData.GetMaxHp = function(self)
-  -- function num : 0_3
+function MonsterData:GetMaxHp()
   return self.initHp
 end
-
-

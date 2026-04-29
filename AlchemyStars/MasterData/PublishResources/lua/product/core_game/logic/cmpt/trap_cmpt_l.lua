@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/trap_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("trap_destroy_type")
 _class("TrapComponent", Object)
 TrapComponent = TrapComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-TrapComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function TrapComponent:Constructor()
   self._trapType = TrapType.None
   self._trapEffectType = TrapEffectType.None
   self._trapEffectParam = nil
@@ -75,309 +68,193 @@ TrapComponent.Constructor = function(self)
   self._auraRange = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.SetTrapID = function(self, trapID)
-  -- function num : 0_1
+function TrapComponent:SetTrapID(trapID)
   self._trapID = trapID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetTrapID = function(self)
-  -- function num : 0_2
+function TrapComponent:GetTrapID()
   if self:GetFakeTrapID() then
     return self:GetFakeTrapID()
   end
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.SetTrapType = function(self, trapType)
-  -- function num : 0_3
+function TrapComponent:SetTrapType(trapType)
   self._trapType = trapType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.SetTypeParam = function(self, typeParam)
-  -- function num : 0_4
+function TrapComponent:SetTypeParam(typeParam)
   if not typeParam then
-    return 
+    return
   end
-  if not typeParam.triggerException then
-    self._triggerException = {}
-    self._triggerMaxCount = typeParam.triggerMaxCount or -1
-    self._scopeCenterGroupId = typeParam.ScopeCenter or 0
-    self._isExit = typeParam.isExit or false
-    self._isDimensionDoor = typeParam.isDimensionDoor or false
-    self._isSuperGrid = typeParam.isSuperGrid or false
-    self._isPoorGrid = typeParam.isPoorGrid or false
-    self._isAircraftCore = typeParam.isAircraftCore or false
-    self._isBenumbTrigger = typeParam.isBenumbTrigger or false
-    self._isBrokenGrid = typeParam.isBrokenGrid or false
-    self._isLockedGrid = typeParam.isLockGrid or false
-    self._isPrismGrid = typeParam.isPrismGrid or false
-    self._prismScopeType = typeParam.prismScopeType or nil
-    if not typeParam.prismScopeParam then
-      self._prismScopeParam = {}
-      self._isSticker = typeParam.isSticker or false
-      self._isCastSkillByRound = typeParam.isCastSkillByRound or false
-      self._isPetTrapCastSkill = typeParam.isPetTrapCastSkill or false
-      self._isBlockSummon = typeParam.isBlockSummon or false
-      self._auraGroupID = typeParam.groupID
-      self._deadNotPlayDisappear = typeParam.deadNotPlayDisappear
-      self._canStayBoardSplice = typeParam.canStayBoardSplice
-      self._isMaintainColorGrid = typeParam.isMaintainColorGrid or false
-      self._fakeTrapID = typeParam.fakeTrapID
-    end
-  end
+  self._triggerException = typeParam.triggerException or {}
+  self._triggerMaxCount = typeParam.triggerMaxCount or -1
+  self._scopeCenterGroupId = typeParam.ScopeCenter or 0
+  self._isExit = typeParam.isExit or false
+  self._isDimensionDoor = typeParam.isDimensionDoor or false
+  self._isSuperGrid = typeParam.isSuperGrid or false
+  self._isPoorGrid = typeParam.isPoorGrid or false
+  self._isAircraftCore = typeParam.isAircraftCore or false
+  self._isBenumbTrigger = typeParam.isBenumbTrigger or false
+  self._isBrokenGrid = typeParam.isBrokenGrid or false
+  self._isLockedGrid = typeParam.isLockGrid or false
+  self._isPrismGrid = typeParam.isPrismGrid or false
+  self._prismScopeType = typeParam.prismScopeType or nil
+  self._prismScopeParam = typeParam.prismScopeParam or {}
+  self._isSticker = typeParam.isSticker or false
+  self._isCastSkillByRound = typeParam.isCastSkillByRound or false
+  self._isPetTrapCastSkill = typeParam.isPetTrapCastSkill or false
+  self._isBlockSummon = typeParam.isBlockSummon or false
+  self._auraGroupID = typeParam.groupID
+  self._deadNotPlayDisappear = typeParam.deadNotPlayDisappear
+  self._canStayBoardSplice = typeParam.canStayBoardSplice
+  self._isMaintainColorGrid = typeParam.isMaintainColorGrid or false
+  self._fakeTrapID = typeParam.fakeTrapID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetFakeTrapID = function(self)
-  -- function num : 0_5
+function TrapComponent:GetFakeTrapID()
   return self._fakeTrapID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetTriggerException = function(self)
-  -- function num : 0_6
+function TrapComponent:GetTriggerException()
   return self._triggerException
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetTriggerMaxCount = function(self)
-  -- function num : 0_7
+function TrapComponent:GetTriggerMaxCount()
   return self._triggerMaxCount
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetScopeCenterGroupId = function(self)
-  -- function num : 0_8
+function TrapComponent:GetScopeCenterGroupId()
   return self._scopeCenterGroupId
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.FallWithGrid = function(self)
-  -- function num : 0_9
+function TrapComponent:FallWithGrid()
   return self._fallWithGrid
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.SetFallWithGrid = function(self, flag)
-  -- function num : 0_10
+function TrapComponent:SetFallWithGrid(flag)
   self._fallWithGrid = flag
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetCurrentTriggerCount = function(self)
-  -- function num : 0_11
+function TrapComponent:GetCurrentTriggerCount()
   return self._currentTriggerCount
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.SetCurrentTriggerCount = function(self, count)
-  -- function num : 0_12
+function TrapComponent:SetCurrentTriggerCount(count)
   self._currentTriggerCount = count
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.AddCurrentTriggerCount = function(self)
-  -- function num : 0_13
+function TrapComponent:AddCurrentTriggerCount()
   self:SetCurrentTriggerCount(self._currentTriggerCount + 1)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetTrapType = function(self)
-  -- function num : 0_14
+function TrapComponent:GetTrapType()
   return self._trapType
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.SetNeedDestory = function(self, bdestory)
-  -- function num : 0_15
+function TrapComponent:SetNeedDestory(bdestory)
   self._needDestory = bdestory
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetNeedDestory = function(self)
-  -- function num : 0_16
+function TrapComponent:GetNeedDestory()
   return self._needDestory
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.SetOrgDir = function(self, trapRotation)
-  -- function num : 0_17
+function TrapComponent:SetOrgDir(trapRotation)
   self._orgDir = trapRotation
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetOrgDir = function(self)
-  -- function num : 0_18
+function TrapComponent:GetOrgDir()
   return self._orgDir
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.SetTrapLevel = function(self, trapLevel)
-  -- function num : 0_19
+function TrapComponent:SetTrapLevel(trapLevel)
   self._trapLevel = trapLevel
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetTrapLevel = function(self)
-  -- function num : 0_20
+function TrapComponent:GetTrapLevel()
   return self._trapLevel
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.SetReplaceLevel = function(self, replaceLevel)
-  -- function num : 0_21
+function TrapComponent:SetReplaceLevel(replaceLevel)
   self._replaceLevel = replaceLevel
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetReplaceLevel = function(self)
-  -- function num : 0_22
+function TrapComponent:GetReplaceLevel()
   return self._replaceLevel
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.SetTrapEffect = function(self, trapEffectType, trapEffectParam)
-  -- function num : 0_23 , upvalues : _ENV
-  if not trapEffectType then
-    self._trapEffectType = TrapEffectType.None
-    self._trapEffectParam = trapEffectParam
-  end
+function TrapComponent:SetTrapEffect(trapEffectType, trapEffectParam)
+  self._trapEffectType = trapEffectType or TrapEffectType.None
+  self._trapEffectParam = trapEffectParam
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetTrapEffectType = function(self)
-  -- function num : 0_24
+function TrapComponent:GetTrapEffectType()
   return self._trapEffectType
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.IsRuneChange = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  do return self._trapEffectType == TrapEffectType.RuneChange end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function TrapComponent:IsRuneChange()
+  return self._trapEffectType == TrapEffectType.RuneChange
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.IsExit = function(self)
-  -- function num : 0_26
+function TrapComponent:IsExit()
   return self._isExit
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.IsDimensionDoor = function(self)
-  -- function num : 0_27
+function TrapComponent:IsDimensionDoor()
   return self._isDimensionDoor
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.IsAircraftCore = function(self)
-  -- function num : 0_28
+function TrapComponent:IsAircraftCore()
   return self._isAircraftCore
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.IsBenumbTrigger = function(self)
-  -- function num : 0_29
+function TrapComponent:IsBenumbTrigger()
   return self._isBenumbTrigger
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.IsCastSkillByRound = function(self)
-  -- function num : 0_30
+function TrapComponent:IsCastSkillByRound()
   return self._isCastSkillByRound
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.IsPetTrapCastSkill = function(self)
-  -- function num : 0_31
+function TrapComponent:IsPetTrapCastSkill()
   return self._isPetTrapCastSkill
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetTrapEffectParam = function(self)
-  -- function num : 0_32
+function TrapComponent:GetTrapEffectParam()
   return self._trapEffectParam
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.SetTrapRaceType = function(self, raceType, raceParam)
-  -- function num : 0_33
+function TrapComponent:SetTrapRaceType(raceType, raceParam)
   self._raceType = raceType
   self._raceParams = raceParam
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetTrapRaceType = function(self)
-  -- function num : 0_34
+function TrapComponent:GetTrapRaceType()
   return self._raceType
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetTrapRaceParam = function(self)
-  -- function num : 0_35
+function TrapComponent:GetTrapRaceParam()
   return self._raceParams
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetTrapDestroyType = function(self)
-  -- function num : 0_36
+function TrapComponent:GetTrapDestroyType()
   return self._destroyType
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapComponent.GetTrapDestroyParam = function(self)
-  -- function num : 0_37
+function TrapComponent:GetTrapDestroyParam()
   return self._destroyParam
 end
 
-local destroyParamTypeList = {TrapDestroyType.DestroyByRound, TrapDestroyType.DestoryByWave, TrapDestroyType.DestroyAtRoundResult}
--- DECOMPILER ERROR at PC133: Confused about usage of register: R1 in 'UnsetPending'
+local destroyParamTypeList = {
+  TrapDestroyType.DestroyByRound,
+  TrapDestroyType.DestoryByWave,
+  TrapDestroyType.DestroyAtRoundResult
+}
 
-TrapComponent.SetTrapDestroy = function(self, trapDestroyType, trapDestroyParam)
-  -- function num : 0_38 , upvalues : _ENV, destroyParamTypeList
+function TrapComponent:SetTrapDestroy(trapDestroyType, trapDestroyParam)
   self._destroyType = trapDestroyType
-  if (table.icontains)(destroyParamTypeList, self._destroyType) then
+  if table.icontains(destroyParamTypeList, self._destroyType) then
     local num = 0
     if trapDestroyParam then
       num = tonumber(trapDestroyParam[1])
@@ -386,96 +263,57 @@ TrapComponent.SetTrapDestroy = function(self, trapDestroyType, trapDestroyParam)
   end
 end
 
--- DECOMPILER ERROR at PC136: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetFakeTriggerSkillID = function(self)
-  -- function num : 0_39
+function TrapComponent:GetFakeTriggerSkillID()
   return self._fakeTriggerSkillID
 end
 
--- DECOMPILER ERROR at PC139: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetTriggerSkillID = function(self)
-  -- function num : 0_40
+function TrapComponent:GetTriggerSkillID()
   return self._triggerSkillID
 end
 
--- DECOMPILER ERROR at PC142: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetAppearSkillID = function(self)
-  -- function num : 0_41
+function TrapComponent:GetAppearSkillID()
   return self._appearSkillID
 end
 
--- DECOMPILER ERROR at PC145: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetDisappearSkillID = function(self)
-  -- function num : 0_42
+function TrapComponent:GetDisappearSkillID()
   return self._disappearSkillID
 end
 
--- DECOMPILER ERROR at PC148: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetWarningSkillID = function(self)
-  -- function num : 0_43
+function TrapComponent:GetWarningSkillID()
   return self._warningSkillID
 end
 
--- DECOMPILER ERROR at PC151: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetMoveSkillID = function(self)
-  -- function num : 0_44
+function TrapComponent:GetMoveSkillID()
   return self._moveSkillID
 end
 
--- DECOMPILER ERROR at PC154: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetDieSkillID = function(self)
-  -- function num : 0_45
+function TrapComponent:GetDieSkillID()
   return self._dieSkillID
 end
 
--- DECOMPILER ERROR at PC157: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetActiveSkillID = function(self)
-  -- function num : 0_46
+function TrapComponent:GetActiveSkillID()
   return self._activeSkillID
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetActiveSkillID = function(self, activeSkillID)
-  -- function num : 0_47
+function TrapComponent:SetActiveSkillID(activeSkillID)
   self._activeSkillID = activeSkillID
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetPreChainSkillID = function(self)
-  -- function num : 0_48
+function TrapComponent:GetPreChainSkillID()
   return self._preChainSkillID
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetVictorySkillID = function(self)
-  -- function num : 0_49
+function TrapComponent:GetVictorySkillID()
   return self._victorySkillID
 end
 
--- DECOMPILER ERROR at PC169: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetTriggerSkillByRaceType = function(self)
-  -- function num : 0_50
+function TrapComponent:GetTriggerSkillByRaceType()
   return self._triggerSkillByRaceType
 end
 
--- DECOMPILER ERROR at PC172: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetSkillID = function(self, skillID)
-  -- function num : 0_51 , upvalues : _ENV
+function TrapComponent:SetSkillID(skillID)
   if not skillID then
-    return 
+    return
   end
   self._triggerSkillID = skillID.Trigger or 0
   self._fakeTriggerSkillID = skillID.FakeTrigger
@@ -484,7 +322,7 @@ TrapComponent.SetSkillID = function(self, skillID)
   self._dieSkillID = skillID.Die or 0
   self._activeSkillID = {}
   if type(skillID.Active) == "table" then
-    (table.appendArray)(self._activeSkillID, skillID.Active)
+    table.appendArray(self._activeSkillID, skillID.Active)
   end
   self._preChainSkillID = skillID.PreChain or 0
   self._victorySkillID = skillID.Victory or 0
@@ -492,399 +330,236 @@ TrapComponent.SetSkillID = function(self, skillID)
   self._moveSkillID = skillID.Move or 0
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetTriggerSkillType = function(self)
-  -- function num : 0_52
+function TrapComponent:GetTriggerSkillType()
   return self._triggerSkillType
 end
 
--- DECOMPILER ERROR at PC178: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetSkillType = function(self, skillID)
-  -- function num : 0_53
+function TrapComponent:SetSkillType(skillID)
   if not skillID then
-    return 
+    return
   end
   self._triggerSkillType = skillID.Trigger or 0
   self._appearSkillType = skillID.Appear or 0
   self._disappearSkillType = skillID.Disappear or 0
   self._dieSkillType = skillID.Die or 0
-  if not skillID.Active then
-    self._activeSkillType = {}
-    self._preChainSkillType = skillID.PreChain or 0
-    self._victorySkillType = skillID.Victory or 0
-  end
+  self._activeSkillType = skillID.Active or {}
+  self._preChainSkillType = skillID.PreChain or 0
+  self._victorySkillType = skillID.Victory or 0
 end
 
--- DECOMPILER ERROR at PC181: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetTriggerByRace = function(self, triggerByRace)
-  -- function num : 0_54
+function TrapComponent:SetTriggerByRace(triggerByRace)
   self._triggerSkillByRaceType = triggerByRace
 end
 
--- DECOMPILER ERROR at PC184: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetBlockByRaceType = function(self)
-  -- function num : 0_55
+function TrapComponent:GetBlockByRaceType()
   return self._blockByRaceType
 end
 
--- DECOMPILER ERROR at PC187: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetBlockByRaceType = function(self, blockByRaceType)
-  -- function num : 0_56
+function TrapComponent:SetBlockByRaceType(blockByRaceType)
   self._blockByRaceType = blockByRaceType
 end
 
--- DECOMPILER ERROR at PC190: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetGroupID = function(self, groupId)
-  -- function num : 0_57
+function TrapComponent:SetGroupID(groupId)
   self._groupId = groupId or 0
 end
 
--- DECOMPILER ERROR at PC193: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetGroupID = function(self)
-  -- function num : 0_58
+function TrapComponent:GetGroupID()
   return self._groupId
 end
 
--- DECOMPILER ERROR at PC196: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetGroupTriggerTrapID = function(self, trapID)
-  -- function num : 0_59
+function TrapComponent:SetGroupTriggerTrapID(trapID)
   self._groupTriggerTrapID = trapID
 end
 
--- DECOMPILER ERROR at PC199: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetGroupTriggerTrapID = function(self)
-  -- function num : 0_60
+function TrapComponent:GetGroupTriggerTrapID()
   return self._groupTriggerTrapID
 end
 
--- DECOMPILER ERROR at PC202: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetOwnerID = function(self)
-  -- function num : 0_61
+function TrapComponent:GetOwnerID()
   return self._ownerID
 end
 
--- DECOMPILER ERROR at PC205: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.IsTrapHaveOwner = function(self, nOwnerRound)
-  -- function num : 0_62
-  if self._ownerRound == nil or self._ownerRound < nOwnerRound then
+function TrapComponent:IsTrapHaveOwner(nOwnerRound)
+  if nil == self._ownerRound or nOwnerRound > self._ownerRound then
     return false
   end
   return self._ownerID
 end
 
--- DECOMPILER ERROR at PC208: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetOwner = function(self, nOwnerID, nOwnerRound)
-  -- function num : 0_63
+function TrapComponent:SetOwner(nOwnerID, nOwnerRound)
   self._ownerID = nOwnerID
   self._ownerRound = nOwnerRound
 end
 
--- DECOMPILER ERROR at PC211: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetBombSelected = function(self, selected)
-  -- function num : 0_64
+function TrapComponent:SetBombSelected(selected)
   self._hasSelected = selected
 end
 
--- DECOMPILER ERROR at PC214: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.IsBombSelected = function(self)
-  -- function num : 0_65
+function TrapComponent:IsBombSelected()
   return self._hasSelected
 end
 
--- DECOMPILER ERROR at PC217: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetReplaceTrap = function(self, replaceTrap)
-  -- function num : 0_66
+function TrapComponent:SetReplaceTrap(replaceTrap)
   self._replaceTrap = replaceTrap
 end
 
--- DECOMPILER ERROR at PC220: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetReplaceTrap = function(self)
-  -- function num : 0_67
+function TrapComponent:GetReplaceTrap()
   return self._replaceTrap
 end
 
--- DECOMPILER ERROR at PC223: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.IsHadCalcDead = function(self)
-  -- function num : 0_68
+function TrapComponent:IsHadCalcDead()
   return self._hadCalcDead
 end
 
--- DECOMPILER ERROR at PC226: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetHadCalcDead = function(self)
-  -- function num : 0_69
+function TrapComponent:SetHadCalcDead()
   self._hadCalcDead = true
 end
 
--- DECOMPILER ERROR at PC229: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.IsSuperGrid = function(self)
-  -- function num : 0_70
+function TrapComponent:IsSuperGrid()
   return self._isSuperGrid
 end
 
--- DECOMPILER ERROR at PC232: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.IsPoorGrid = function(self)
-  -- function num : 0_71
+function TrapComponent:IsPoorGrid()
   return self._isPoorGrid
 end
 
--- DECOMPILER ERROR at PC235: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.IsBrokenGrid = function(self)
-  -- function num : 0_72
+function TrapComponent:IsBrokenGrid()
   return self._isBrokenGrid
 end
 
--- DECOMPILER ERROR at PC238: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.IsLockedGrid = function(self)
-  -- function num : 0_73
+function TrapComponent:IsLockedGrid()
   return self._isLockedGrid
 end
 
--- DECOMPILER ERROR at PC241: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.IsPrismGrid = function(self)
-  -- function num : 0_74
+function TrapComponent:IsPrismGrid()
   return self._isPrismGrid
 end
 
--- DECOMPILER ERROR at PC244: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetPrismGridValue = function(self)
-  -- function num : 0_75
+function TrapComponent:GetPrismGridValue()
   return self._isPrismGrid
 end
 
--- DECOMPILER ERROR at PC247: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetCustomPrismGridScopeType = function(self)
-  -- function num : 0_76
+function TrapComponent:GetCustomPrismGridScopeType()
   return self._prismScopeType
 end
 
--- DECOMPILER ERROR at PC250: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetCustomPrismGridScopeParam = function(self)
-  -- function num : 0_77
+function TrapComponent:GetCustomPrismGridScopeParam()
   return self._prismScopeParam
 end
 
--- DECOMPILER ERROR at PC253: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.IsSticker = function(self)
-  -- function num : 0_78
+function TrapComponent:IsSticker()
   return self._isSticker
 end
 
--- DECOMPILER ERROR at PC256: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetHadCalcSkill = function(self, skillID)
-  -- function num : 0_79 , upvalues : _ENV
-  (table.insert)(self._hadCalcSkill, skillID)
+function TrapComponent:SetHadCalcSkill(skillID)
+  table.insert(self._hadCalcSkill, skillID)
 end
 
--- DECOMPILER ERROR at PC259: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.IsSkillHadCalc = function(self, skillID)
-  -- function num : 0_80 , upvalues : _ENV
+function TrapComponent:IsSkillHadCalc(skillID)
   if not skillID then
     return false
   end
-  return (table.icontains)(self._hadCalcSkill, skillID)
+  return table.icontains(self._hadCalcSkill, skillID)
 end
 
--- DECOMPILER ERROR at PC262: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetCanBePurified = function(self, b)
-  -- function num : 0_81
+function TrapComponent:SetCanBePurified(b)
   self._canBePurified = b
 end
 
--- DECOMPILER ERROR at PC265: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.CanBePurified = function(self)
-  -- function num : 0_82
+function TrapComponent:CanBePurified()
   return self._canBePurified
 end
 
--- DECOMPILER ERROR at PC268: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetRecordPieceType = function(self, pieceType)
-  -- function num : 0_83
+function TrapComponent:SetRecordPieceType(pieceType)
   self._recordPieceType = pieceType
 end
 
--- DECOMPILER ERROR at PC271: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetRecordPieceType = function(self)
-  -- function num : 0_84
+function TrapComponent:GetRecordPieceType()
   return self._recordPieceType
 end
 
--- DECOMPILER ERROR at PC274: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetSpecialDestroy = function(self, specialestroy)
-  -- function num : 0_85
+function TrapComponent:SetSpecialDestroy(specialestroy)
   self._specialDestroy = specialestroy
 end
 
--- DECOMPILER ERROR at PC277: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetSpecialDestroy = function(self)
-  -- function num : 0_86
+function TrapComponent:GetSpecialDestroy()
   return self._specialDestroy
 end
 
--- DECOMPILER ERROR at PC280: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetTriggerWhileSpawnEntity = function(self, e)
-  -- function num : 0_87
+function TrapComponent:SetTriggerWhileSpawnEntity(e)
   self._triggerWhileSpawnEntity = e
 end
 
--- DECOMPILER ERROR at PC283: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetTriggerWhileSpawnEntity = function(self)
-  -- function num : 0_88
+function TrapComponent:GetTriggerWhileSpawnEntity()
   return self._triggerWhileSpawnEntity
 end
 
--- DECOMPILER ERROR at PC286: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetTrapBornRound = function(self, round)
-  -- function num : 0_89
+function TrapComponent:SetTrapBornRound(round)
   self._bornRound = round
 end
 
--- DECOMPILER ERROR at PC289: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetTrapBornRound = function(self)
-  -- function num : 0_90
+function TrapComponent:GetTrapBornRound()
   return self._bornRound
 end
 
--- DECOMPILER ERROR at PC292: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.IsBlockSummon = function(self)
-  -- function num : 0_91
+function TrapComponent:IsBlockSummon()
   return self._isBlockSummon
 end
 
--- DECOMPILER ERROR at PC295: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetAuraGroupID = function(self)
-  -- function num : 0_92
+function TrapComponent:GetAuraGroupID()
   return self._auraGroupID
 end
 
--- DECOMPILER ERROR at PC298: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetDeadNotPlayDisappear = function(self)
-  -- function num : 0_93
+function TrapComponent:GetDeadNotPlayDisappear()
   return self._deadNotPlayDisappear
 end
 
--- DECOMPILER ERROR at PC301: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetCanStayBoardSplice = function(self)
-  -- function num : 0_94
+function TrapComponent:GetCanStayBoardSplice()
   return self._canStayBoardSplice
 end
 
--- DECOMPILER ERROR at PC304: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetAuraRange = function(self, auraRange)
-  -- function num : 0_95
+function TrapComponent:SetAuraRange(auraRange)
   self._auraRange = auraRange
 end
 
--- DECOMPILER ERROR at PC307: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetAuraRange = function(self)
-  -- function num : 0_96
+function TrapComponent:GetAuraRange()
   return self._auraRange
 end
 
--- DECOMPILER ERROR at PC310: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.SetCantAutoSkill = function(self, cantAutoSkill)
-  -- function num : 0_97
+function TrapComponent:SetCantAutoSkill(cantAutoSkill)
   self._cantAutoSkill = cantAutoSkill
 end
 
--- DECOMPILER ERROR at PC313: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.GetCantAutoSkill = function(self)
-  -- function num : 0_98
+function TrapComponent:GetCantAutoSkill()
   return self._cantAutoSkill
 end
 
--- DECOMPILER ERROR at PC316: Confused about usage of register: R1 in 'UnsetPending'
-
-TrapComponent.IsMaintainColorGrid = function(self)
-  -- function num : 0_99
+function TrapComponent:IsMaintainColorGrid()
   return self._isMaintainColorGrid
 end
 
--- DECOMPILER ERROR at PC319: Confused about usage of register: R1 in 'UnsetPending'
-
-Entity.Trap = function(self)
-  -- function num : 0_100
-  return self:GetComponent((self.WEComponentsEnum).Trap)
+function Entity:Trap()
+  return self:GetComponent(self.WEComponentsEnum.Trap)
 end
 
--- DECOMPILER ERROR at PC322: Confused about usage of register: R1 in 'UnsetPending'
-
-Entity.HasTrap = function(self)
-  -- function num : 0_101
-  return self:HasComponent((self.WEComponentsEnum).Trap)
+function Entity:HasTrap()
+  return self:HasComponent(self.WEComponentsEnum.Trap)
 end
 
--- DECOMPILER ERROR at PC325: Confused about usage of register: R1 in 'UnsetPending'
-
-Entity.AddTrap = function(self)
-  -- function num : 0_102 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Trap
+function Entity:AddTrap()
+  local index = self.WEComponentsEnum.Trap
   local component = TrapComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC328: Confused about usage of register: R1 in 'UnsetPending'
-
-Entity.ReplaceTrap = function(self)
-  -- function num : 0_103 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Trap
+function Entity:ReplaceTrap()
+  local index = self.WEComponentsEnum.Trap
   local component = TrapComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC331: Confused about usage of register: R1 in 'UnsetPending'
-
-Entity.RemoveTrap = function(self)
-  -- function num : 0_104
+function Entity:RemoveTrap()
   if self:HasTrap() then
-    self:RemoveComponent((self.WEComponentsEnum).Trap)
+    self:RemoveComponent(self.WEComponentsEnum.Trap)
   end
 end
-
-

@@ -1,147 +1,119 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_steal_pet_attributes.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_type")
 require("buff_logic_base")
 _class("BuffLogicStealPetAttributes", BuffLogicBase)
 BuffLogicStealPetAttributes = BuffLogicStealPetAttributes
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicStealPetAttributes.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicStealPetAttributes:Constructor(buffInstance, logicParam)
   self.hpPercent = logicParam.hpPercent or 0
   self.atkPercent = logicParam.atkPercent or 0
   self.defPercent = logicParam.defPercent or 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicStealPetAttributes.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
+function BuffLogicStealPetAttributes:DoLogic(notify)
+  local entity = self._buffInstance:Entity()
   if entity:HasDeadMark() or entity:HasPetDeadMark() then
-    return 
+    return
   end
   local buffSeqID = self:GetBuffSeq()
-  local casterEntity = (self._buffInstance):Context() and ((self._buffInstance):Context()).casterEntity or nil
-  local teamEntity = nil
-  local battleService = (self._world):GetService("Battle")
+  local casterEntity = self._buffInstance:Context() and self._buffInstance:Context().casterEntity or nil
+  local teamEntity
+  local battleService = self._world:GetService("Battle")
   if entity:HasPetPstID() then
-    local pstId = (entity:PetPstID()):GetPstID()
-    local petData = (self._world):GetPetData(pstId)
+    local pstId = entity:PetPstID():GetPstID()
+    local petData = self._world:GetPetData(pstId)
     local atk = petData:GetPetAttack()
     local def = petData:GetPetDefence()
-    teamEntity = (entity:Pet()):GetOwnerTeamEntity()
-    local atkChange = (math.floor)(self.atkPercent * atk)
-    local defChange = (math.floor)(self.defPercent * def)
-    ;
-    (self._buffLogicService):ChangeBaseAttack(entity, buffSeqID, ModifyBaseAttackType.AttackConstantFix, -atkChange)
-    ;
-    (self._buffLogicService):ChangeBaseAttack(casterEntity, buffSeqID, ModifyBaseAttackType.AttackConstantFix, atkChange)
-    ;
-    (self._buffLogicService):ChangeBaseDefence(entity, buffSeqID, ModifyBaseDefenceType.DefenceConstantFix, -defChange)
-    ;
-    (self._buffLogicService):ChangeBaseDefence(casterEntity, buffSeqID, ModifyBaseDefenceType.DefenceConstantFix, defChange)
+    teamEntity = entity:Pet():GetOwnerTeamEntity()
+    local atkChange = math.floor(self.atkPercent * atk)
+    local defChange = math.floor(self.defPercent * def)
+    self._buffLogicService:ChangeBaseAttack(entity, buffSeqID, ModifyBaseAttackType.AttackConstantFix, -atkChange)
+    self._buffLogicService:ChangeBaseAttack(casterEntity, buffSeqID, ModifyBaseAttackType.AttackConstantFix, atkChange)
+    self._buffLogicService:ChangeBaseDefence(entity, buffSeqID, ModifyBaseDefenceType.DefenceConstantFix, -defChange)
+    self._buffLogicService:ChangeBaseDefence(casterEntity, buffSeqID, ModifyBaseDefenceType.DefenceConstantFix, defChange)
     battleService:UpdateTeamDefenceLogic(teamEntity)
   end
-  do
-    if entity:HasTeam() and self.hpPercent ~= 0 then
-      teamEntity = entity
-      local attributeComponent = teamEntity:Attributes()
-      local maxHpBase = attributeComponent:GetAttribute("MaxHP")
-      local hpReduceCeiling = (math.floor)(self.hpPercent * maxHpBase)
-      local maxHp = attributeComponent:CalcMaxHp()
-      local curHp = attributeComponent:GetCurrentHP()
-      local curHpPercent = (math.floor)(curHp / maxHp * 10000 + 0.5) / 10000
-      local newHPMax = maxHp - hpReduceCeiling
-      if newHPMax < 1 then
-        newHPMax = 1
-        hpReduceCeiling = maxHp - newHPMax
+  if entity:HasTeam() and self.hpPercent ~= 0 then
+    teamEntity = entity
+    local attributeComponent = teamEntity:Attributes()
+    local maxHpBase = attributeComponent:GetAttribute("MaxHP")
+    local hpReduceCeiling = math.floor(self.hpPercent * maxHpBase)
+    local maxHp = attributeComponent:CalcMaxHp()
+    local curHp = attributeComponent:GetCurrentHP()
+    local curHpPercent = math.floor(curHp / maxHp * 10000 + 0.5) / 10000
+    local newHPMax = maxHp - hpReduceCeiling
+    if newHPMax < 1 then
+      newHPMax = 1
+      hpReduceCeiling = maxHp - newHPMax
+    end
+    if hpReduceCeiling ~= 0 then
+      local newHp = math.floor(newHPMax * curHpPercent)
+      if newHp < 1 then
+        newHp = 1
       end
-      if hpReduceCeiling ~= 0 then
-        local newHp = (math.floor)(newHPMax * curHpPercent)
-        if newHp < 1 then
-          newHp = 1
-        end
-        ;
-        (self._buffLogicService):ChangeBaseMaxHP(teamEntity, buffSeqID, ModifyBaseMaxHPType.MaxHPConstantFix, -(hpReduceCeiling))
-        attributeComponent:Modify("HP", newHp)
-        battleService:UpdateTeamHPLogic(teamEntity)
-        local hpDamage = curHp - newHp
-        local casterAttributeCmpt = casterEntity:Attributes()
-        local maxHpCaster = casterAttributeCmpt:CalcMaxHp()
-        local curHpCaster = casterAttributeCmpt:GetCurrentHP()
-        ;
-        (self._buffLogicService):ChangeBaseMaxHP(casterEntity, buffSeqID, ModifyBaseMaxHPType.MaxHPConstantFix, hpReduceCeiling)
-        local newHpCaster = curHpCaster + (hpReduceCeiling)
-        local newHPMaxCaster = maxHpCaster + (hpReduceCeiling)
-        casterAttributeCmpt:Modify("HP", newHpCaster)
-        local buffResult = BuffResultStealPetAttributes:New(newHp, newHPMax, newHpCaster, newHPMaxCaster)
-        return buffResult
-      end
+      self._buffLogicService:ChangeBaseMaxHP(teamEntity, buffSeqID, ModifyBaseMaxHPType.MaxHPConstantFix, -hpReduceCeiling)
+      attributeComponent:Modify("HP", newHp)
+      battleService:UpdateTeamHPLogic(teamEntity)
+      local hpDamage = curHp - newHp
+      local casterAttributeCmpt = casterEntity:Attributes()
+      local maxHpCaster = casterAttributeCmpt:CalcMaxHp()
+      local curHpCaster = casterAttributeCmpt:GetCurrentHP()
+      self._buffLogicService:ChangeBaseMaxHP(casterEntity, buffSeqID, ModifyBaseMaxHPType.MaxHPConstantFix, hpReduceCeiling)
+      local newHpCaster = curHpCaster + hpReduceCeiling
+      local newHPMaxCaster = maxHpCaster + hpReduceCeiling
+      casterAttributeCmpt:Modify("HP", newHpCaster)
+      local buffResult = BuffResultStealPetAttributes:New(newHp, newHPMax, newHpCaster, newHPMaxCaster)
+      return buffResult
     end
   end
 end
 
 _class("BuffLogicResetStealPetAttributes", BuffLogicBase)
 BuffLogicResetStealPetAttributes = BuffLogicResetStealPetAttributes
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetStealPetAttributes.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetStealPetAttributes:Constructor(buffInstance, logicParam)
   self.hpPercent = logicParam.hpPercent or 0
   self.atkPercent = logicParam.atkPercent or 0
   self.defPercent = logicParam.defPercent or 0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetStealPetAttributes.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
+function BuffLogicResetStealPetAttributes:DoLogic()
+  local entity = self._buffInstance:Entity()
   if entity:HasDeadMark() or entity:HasPetDeadMark() then
-    return 
+    return
   end
-  local casterEntity = (self._buffInstance):Context() and ((self._buffInstance):Context()).casterEntity or nil
-  local teamEntity = nil
+  local casterEntity = self._buffInstance:Context() and self._buffInstance:Context().casterEntity or nil
+  local teamEntity
   local buffSeqID = self:GetBuffSeq()
-  local calcDamageService = (self._world):GetService("CalcDamage")
-  local battleService = (self._world):GetService("Battle")
+  local calcDamageService = self._world:GetService("CalcDamage")
+  local battleService = self._world:GetService("Battle")
   if entity:HasPetPstID() then
-    (self._buffLogicService):RemoveBaseAttack(entity, buffSeqID, ModifyBaseAttackType.AttackConstantFix)
-    ;
-    (self._buffLogicService):RemoveBaseDefence(entity, buffSeqID, ModifyBaseDefenceType.DefenceConstantFix)
-    teamEntity = (entity:Pet()):GetOwnerTeamEntity()
-    ;
-    (self._buffLogicService):RemoveBaseAttack(casterEntity, buffSeqID, ModifyBaseAttackType.AttackConstantFix)
-    ;
-    (self._buffLogicService):RemoveBaseDefence(casterEntity, buffSeqID, ModifyBaseDefenceType.DefenceConstantFix)
+    self._buffLogicService:RemoveBaseAttack(entity, buffSeqID, ModifyBaseAttackType.AttackConstantFix)
+    self._buffLogicService:RemoveBaseDefence(entity, buffSeqID, ModifyBaseDefenceType.DefenceConstantFix)
+    teamEntity = entity:Pet():GetOwnerTeamEntity()
+    self._buffLogicService:RemoveBaseAttack(casterEntity, buffSeqID, ModifyBaseAttackType.AttackConstantFix)
+    self._buffLogicService:RemoveBaseDefence(casterEntity, buffSeqID, ModifyBaseDefenceType.DefenceConstantFix)
     battleService:UpdateTeamDefenceLogic(teamEntity)
   end
   if entity:HasTeam() then
     teamEntity = entity
-    local teamModifier = (self._buffLogicService):_GetAttributeModifier(teamEntity, "MaxHPConstantFix")
+    local teamModifier = self._buffLogicService:_GetAttributeModifier(teamEntity, "MaxHPConstantFix")
     if not teamModifier then
-      return 
+      return
     end
     local alreadyAbsorbValue = teamModifier:GetModifyValue(buffSeqID)
     local attributeComponent = teamEntity:Attributes()
     local maxHp = attributeComponent:CalcMaxHp()
     local curHp = attributeComponent:GetCurrentHP()
-    local curHpPercent = (math.floor)(curHp / maxHp * 10000 + 0.5) / 10000
+    local curHpPercent = math.floor(curHp / maxHp * 10000 + 0.5) / 10000
     local newHPMax = maxHp - alreadyAbsorbValue
-    local newHp = (math.floor)(newHPMax * curHpPercent)
+    local newHp = math.floor(newHPMax * curHpPercent)
     attributeComponent:Modify("HP", newHp)
-    ;
-    (self._buffLogicService):RemoveBaseMaxHP(teamEntity, buffSeqID, ModifyBaseMaxHPType.MaxHPConstantFix)
+    self._buffLogicService:RemoveBaseMaxHP(teamEntity, buffSeqID, ModifyBaseMaxHPType.MaxHPConstantFix)
     battleService:UpdateTeamHPLogic(teamEntity)
     local casterAttributeCmpt = casterEntity:Attributes()
     local maxHpCaster = casterAttributeCmpt:CalcMaxHp()
     local curHpCaster = casterAttributeCmpt:GetCurrentHP()
-    ;
-    (self._buffLogicService):RemoveBaseMaxHP(casterEntity, buffSeqID, ModifyBaseMaxHPType.MaxHPConstantFix)
+    self._buffLogicService:RemoveBaseMaxHP(casterEntity, buffSeqID, ModifyBaseMaxHPType.MaxHPConstantFix)
     local newHpCaster = curHpCaster + alreadyAbsorbValue
     local newHPMaxCaster = maxHpCaster + alreadyAbsorbValue
     casterAttributeCmpt:Modify("HP", newHpCaster)
@@ -149,5 +121,3 @@ BuffLogicResetStealPetAttributes.DoLogic = function(self)
     return buffResult
   end
 end
-
-

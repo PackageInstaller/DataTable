@@ -1,126 +1,81 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/sync_move_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SyncMoveServiceLogic", BaseService)
 SyncMoveServiceLogic = SyncMoveServiceLogic
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SyncMoveServiceLogic.OnMovePathDone = function(self, chainPath)
-  -- function num : 0_0 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).SyncMoveWithTeam)
+function SyncMoveServiceLogic:OnMovePathDone(chainPath)
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.SyncMoveWithTeam)
   local syncMoveEntites = group:GetEntities()
-  for _,entity in ipairs(syncMoveEntites) do
+  for _, entity in ipairs(syncMoveEntites) do
     local syncCmpt = entity:SyncMoveWithTeam()
     syncCmpt:RecordTeamMovePath(chainPath)
-    local startPos = (entity:GridLocation()).Position
+    local startPos = entity:GridLocation().Position
     local syncMovePath = self:_CalcSyncMovePath(startPos, chainPath)
     syncCmpt:RecordSyncMovePath(syncMovePath)
-    local finalPos = (syncMovePath[#syncMovePath]).tarPos
+    local finalPos = syncMovePath[#syncMovePath].tarPos
     local newDirection = entity:GetGridDirection()
-    if #syncMovePath > 1 then
-      newDirection = (syncMovePath[#syncMovePath]).tarPos - (syncMovePath[#syncMovePath - 1]).tarPos
+    if 1 < #syncMovePath then
+      newDirection = syncMovePath[#syncMovePath].tarPos - syncMovePath[#syncMovePath - 1].tarPos
     end
-    local svc = (self._world):GetService("L2R")
+    local svc = self._world:GetService("L2R")
     svc:L2RSyncMoveData(entity:GetID(), syncMovePath)
-    for pathIndex,path in ipairs(syncMovePath) do
+    for pathIndex, path in ipairs(syncMovePath) do
       self:_NotifyEachMove(entity, syncMovePath, pathIndex)
     end
     entity:SetGridLocation(finalPos, newDirection)
-    ;
-    (entity:GridLocation()):SetMoveLastPosition(finalPos)
-    local sBoard = (self._world):GetService("BoardLogic")
+    entity:GridLocation():SetMoveLastPosition(finalPos)
+    local sBoard = self._world:GetService("BoardLogic")
     sBoard:UpdateEntityBlockFlag(entity, startPos, finalPos)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncMoveServiceLogic.CalcSyncMovePreviewPos = function(self, startPos, chainPath)
-  -- function num : 0_1
+function SyncMoveServiceLogic:CalcSyncMovePreviewPos(startPos, chainPath)
   local syncMovePath = self:_CalcSyncMovePath(startPos, chainPath)
-  if syncMovePath and #syncMovePath > 0 then
-    local finalPos = (syncMovePath[#syncMovePath]).tarPos
+  if syncMovePath and 0 < #syncMovePath then
+    local finalPos = syncMovePath[#syncMovePath].tarPos
     return finalPos
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncMoveServiceLogic._CalcSyncMovePath = function(self, startPos, chainPath)
-  -- function num : 0_2 , upvalues : _ENV
-  local lastPos, lastChainPos = nil, nil
+function SyncMoveServiceLogic:_CalcSyncMovePath(startPos, chainPath)
+  local lastPos, lastChainPos
   local syncMovePath = {}
-  for index,chainPos in ipairs(chainPath) do
-    local movePos = nil
+  for index, chainPos in ipairs(chainPath) do
+    local movePos
     if not lastChainPos then
       movePos = startPos
       local moveInfo = {}
       moveInfo.tarPos = movePos
-      ;
-      (table.insert)(syncMovePath, moveInfo)
+      table.insert(syncMovePath, moveInfo)
     else
-      do
-        local moveDir = chainPos - lastChainPos
-        local tarPos = lastPos + moveDir
-        if self:_PosCanMove(tarPos) then
-          movePos = tarPos
-          local moveInfo = {}
-          moveInfo.tarPos = movePos
-          ;
-          (table.insert)(syncMovePath, moveInfo)
-        else
-          do
-            movePos = lastPos
-            do
-              do
-                local moveInfo = {}
-                moveInfo.tarPos = movePos
-                ;
-                (table.insert)(syncMovePath, moveInfo)
-                lastPos = movePos
-                lastChainPos = chainPos
-                -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
-        end
+      local moveDir = chainPos - lastChainPos
+      local tarPos = lastPos + moveDir
+      if self:_PosCanMove(tarPos) then
+        movePos = tarPos
+        local moveInfo = {}
+        moveInfo.tarPos = movePos
+        table.insert(syncMovePath, moveInfo)
+      else
+        movePos = lastPos
+        local moveInfo = {}
+        moveInfo.tarPos = movePos
+        table.insert(syncMovePath, moveInfo)
       end
     end
+    lastPos = movePos
+    lastChainPos = chainPos
   end
   return syncMovePath
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncMoveServiceLogic._PosCanMove = function(self, tarPos)
-  -- function num : 0_3
-  local boardService = (self._world):GetService("BoardLogic")
-  local utilDataSvc = (self._world):GetService("UtilData")
+function SyncMoveServiceLogic:_PosCanMove(tarPos)
+  local boardService = self._world:GetService("BoardLogic")
+  local utilDataSvc = self._world:GetService("UtilData")
   if utilDataSvc:IsValidPiecePos(tarPos) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncMoveServiceLogic._NotifyEachMove = function(self, e, syncPath, pathIndex)
-  -- function num : 0_4 , upvalues : _ENV
+function SyncMoveServiceLogic:_NotifyEachMove(e, syncPath, pathIndex)
   local tarPath = syncPath[pathIndex]
   if tarPath then
     local oldPos = tarPath.tarPos
@@ -130,10 +85,8 @@ SyncMoveServiceLogic._NotifyEachMove = function(self, e, syncPath, pathIndex)
     end
     local newDirection = e:GetGridDirection()
     e:SetGridLocation(tarPath.tarPos, newDirection)
-    local triggerSvc = (self._world):GetService("Trigger")
+    local triggerSvc = self._world:GetService("Trigger")
     local ntSyncMoveEachMoveEnd = NTSyncMoveEachMoveEnd:New(e, tarPath.tarPos, oldPos, pathIndex)
     triggerSvc:Notify(ntSyncMoveEachMoveEnd)
   end
 end
-
-

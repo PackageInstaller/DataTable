@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/forge/ui_forge_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIForgeDetail", UIController)
 UIForgeDetail = UIForgeDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIForgeDetail.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetForgeData()
+function UIForgeDetail:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetForgeData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeDetail.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIForgeDetail:OnShow(uiParams)
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.imgQuality = self:GetUIComponent("Image", "imgQuality")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
@@ -41,188 +31,120 @@ UIForgeDetail.OnShow = function(self, uiParams)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeDetail.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIcon):DestoryLastImage()
+function UIForgeDetail:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeDetail.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local item = (self.data):GetForgeInfoItemById(self.id)
+function UIForgeDetail:Flush()
+  local item = self.data:GetForgeInfoItemById(self.id)
   if item.unlocked then
-    (self.lock):SetActive(false)
-    ;
-    (self.forge):SetActive(true)
-    local len = (table.count)(item.forgeCosts)
-    ;
-    (self.costForge):SpawnObjects("UIItemHomeland", len)
-    local uis = (self.costForge):GetAllSpawnList()
-    for i,ui in ipairs(uis) do
-      local ra = (item.forgeCosts)[i]
+    self.lock:SetActive(false)
+    self.forge:SetActive(true)
+    local len = table.count(item.forgeCosts)
+    self.costForge:SpawnObjects("UIItemHomeland", len)
+    local uis = self.costForge:GetAllSpawnList()
+    for i, ui in ipairs(uis) do
+      local ra = item.forgeCosts[i]
       ui:Flush(ra, nil)
       ui:TxtCountRedIfNotEnough(ra.count)
     end
     self:FlushForge(item)
   else
-    do
-      ;
-      (self.lock):SetActive(true)
-      ;
-      (self.forge):SetActive(false)
-      local len = (table.count)(item.unlockCosts)
-      ;
-      (self.costLock):SpawnObjects("UIItemHomeland", len)
-      local uis = (self.costLock):GetAllSpawnList()
-      for i,ui in ipairs(uis) do
-        local ra = (item.unlockCosts)[i]
-        ui:Flush(ra, nil)
-        ui:TxtCountRedIfNotEnough(ra.count)
-      end
-      do
-        self:FlushInfo(item)
-      end
+    self.lock:SetActive(true)
+    self.forge:SetActive(false)
+    local len = table.count(item.unlockCosts)
+    self.costLock:SpawnObjects("UIItemHomeland", len)
+    local uis = self.costLock:GetAllSpawnList()
+    for i, ui in ipairs(uis) do
+      local ra = item.unlockCosts[i]
+      ui:Flush(ra, nil)
+      ui:TxtCountRedIfNotEnough(ra.count)
     end
   end
+  self:FlushInfo(item)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeDetail.FlushForge = function(self, item)
-  -- function num : 0_4 , upvalues : _ENV
-  local canCount, max = (self.data):GetCanForgeCountAndMax(item)
+function UIForgeDetail:FlushForge(item)
+  local canCount, max = self.data:GetCanForgeCountAndMax(item)
   if max <= -1 then
-    (self.canForgeCount):SetActive(false)
+    self.canForgeCount:SetActive(false)
   else
-    ;
-    (self.canForgeCount):SetActive(true)
-    ;
-    (self.txtCanForgeCount):SetText(canCount .. "/" .. max)
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
-    if canCount > 0 then
-      (self.btnForge).interactable = true
-      ;
-      (self.txtBtnForge):SetText((StringTable.Get)("str_homeland_forge_detail_order"))
+    self.canForgeCount:SetActive(true)
+    self.txtCanForgeCount:SetText(canCount .. "/" .. max)
+    if 0 < canCount then
+      self.btnForge.interactable = true
+      self.txtBtnForge:SetText(StringTable.Get("str_homeland_forge_detail_order"))
     else
-      -- DECOMPILER ERROR at PC35: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self.btnForge).interactable = false
-      ;
-      (self.txtBtnForge):SetText((StringTable.Get)("str_homeland_forge_can_forge_count_max"))
+      self.btnForge.interactable = false
+      self.txtBtnForge:SetText(StringTable.Get("str_homeland_forge_can_forge_count_max"))
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeDetail.FlushInfo = function(self, item)
-  -- function num : 0_5 , upvalues : _ENV
-  (self.imgIcon):LoadImage(item.icon)
-  ;
-  (self.txtName):SetText((StringTable.Get)("str_homeland_forge_detail_name", (StringTable.Get)("str_homeland_quality_" .. item.quality), item.name))
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.imgQuality).color = (UIForgeData.qualityColors)[item.quality]
-  ;
-  (self.txtSize):SetText((item.size).x .. "*" .. (item.size).y)
-  ;
-  (self.txtLiveable):SetText(item.livableValue)
-  local curCount, placedCount = (UIForgeData.GetOwnPlaceCount)(item.id)
-  ;
-  (self.txtOwn):SetText((StringTable.Get)("str_homeland_forge_detail_own", curCount))
-  ;
-  (self.txtPlace):SetText((StringTable.Get)("str_homeland_forge_detail_place", placedCount))
-  local s = (UIForge.GetTimestampStr)(item.forgeSecond, (self.data).strsWillGetable)
-  ;
-  (self.txtCostTime):SetText(s)
-  if (self.data):IsUnforged(item.id) then
-    ((self.txtExp).gameObject):SetActive(true)
-    ;
-    (self.txtExp):SetText((StringTable.Get)("str_homeland_forge_first_exp", item.firstExp))
+function UIForgeDetail:FlushInfo(item)
+  self.imgIcon:LoadImage(item.icon)
+  self.txtName:SetText(StringTable.Get("str_homeland_forge_detail_name", StringTable.Get("str_homeland_quality_" .. item.quality), item.name))
+  self.imgQuality.color = UIForgeData.qualityColors[item.quality]
+  self.txtSize:SetText(item.size.x .. "*" .. item.size.y)
+  self.txtLiveable:SetText(item.livableValue)
+  local curCount, placedCount = UIForgeData.GetOwnPlaceCount(item.id)
+  self.txtOwn:SetText(StringTable.Get("str_homeland_forge_detail_own", curCount))
+  self.txtPlace:SetText(StringTable.Get("str_homeland_forge_detail_place", placedCount))
+  local s = UIForge.GetTimestampStr(item.forgeSecond, self.data.strsWillGetable)
+  self.txtCostTime:SetText(s)
+  if self.data:IsUnforged(item.id) then
+    self.txtExp.gameObject:SetActive(true)
+    self.txtExp:SetText(StringTable.Get("str_homeland_forge_first_exp", item.firstExp))
   end
-  ;
-  (self.forgeCount):SetText("×" .. item.forgeCount)
-  ;
-  (self.forgeCountParent):SetActive(item.forgeCount > 1)
+  self.forgeCount:SetText("×" .. item.forgeCount)
+  self.forgeCountParent:SetActive(item.forgeCount > 1)
   local atlas = self:GetAsset("UIHomelandBuildInfo.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC112: Confused about usage of register: R6 in 'UnsetPending'
-
   if item.forgeCount > 1 then
-    (self.sealIcon).sprite = atlas:GetSprite("N17_produce_icon_seal2")
+    self.sealIcon.sprite = atlas:GetSprite("N17_produce_icon_seal2")
   else
-    -- DECOMPILER ERROR at PC118: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self.sealIcon).sprite = atlas:GetSprite("N17_produce_icon_seal")
+    self.sealIcon.sprite = atlas:GetSprite("N17_produce_icon_seal")
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeDetail.btnCloseOnClick = function(self, go)
-  -- function num : 0_6
+function UIForgeDetail:btnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeDetail.btnUnlockOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
+function UIForgeDetail:btnUnlockOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV
     local key = "CancelForgeUnlockTask"
     self:Lock(key)
-    local item = (self.data):GetForgeInfoItemById(self.id)
-    local res, unlock_architecture_list = (self.mHomeland):HandleUnlock(TT, item.id)
-    if (UIForgeData.CheckCode)(res:GetResult()) then
-      (self.data):InitList(unlock_architecture_list)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeUpdateList)
-      ;
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_forge_unlock_success", item.name))
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshInteractUI)
+    local item = self.data:GetForgeInfoItemById(self.id)
+    local res, unlock_architecture_list = self.mHomeland:HandleUnlock(TT, item.id)
+    if UIForgeData.CheckCode(res:GetResult()) then
+      self.data:InitList(unlock_architecture_list)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeUpdateList)
+      ToastManager.ShowHomeToast(StringTable.Get("str_homeland_forge_unlock_success", item.name))
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshInteractUI)
       self:CloseDialog()
     end
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeDetail.btnForgeOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  local s = (self.data):Get1stIdleSequence()
+function UIForgeDetail:btnForgeOnClick(go)
+  local s = self.data:Get1stIdleSequence()
   if not s then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_forge_error_101"))
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_forge_error_101"))
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, s, _ENV
     local key = "CancelForgeTask"
     self:Lock(key)
-    local item = (self.data):GetForgeInfoItemById(self.id)
-    local res, forge_list = (self.mHomeland):HandleForge(TT, item.id, s.index)
-    if (UIForgeData.CheckCode)(res:GetResult()) then
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_forge_start_forge", item.name))
-      ;
-      (self.data):InitSequence(forge_list)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeUpdateSequence)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeUpdateList)
+    local item = self.data:GetForgeInfoItemById(self.id)
+    local res, forge_list = self.mHomeland:HandleForge(TT, item.id, s.index)
+    if UIForgeData.CheckCode(res:GetResult()) then
+      ToastManager.ShowHomeToast(StringTable.Get("str_homeland_forge_start_forge", item.name))
+      self.data:InitSequence(forge_list)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeUpdateSequence)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeUpdateList)
     end
     self:UnLock(key)
     self:CloseDialog()
-  end
-, self)
+  end, self)
 end
-
-

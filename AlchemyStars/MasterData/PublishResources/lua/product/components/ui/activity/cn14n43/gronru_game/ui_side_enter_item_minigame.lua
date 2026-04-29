@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/gronru_game/ui_side_enter_item_minigame.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_campaign")
 _class("UISideEnterItemMiniGame", UISideEnterItem_Campaign)
 UISideEnterItemMiniGame = UISideEnterItemMiniGame
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterItemMiniGame._CalcRed = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.debug)("[UISideEnterItemMiniGame ]00000 :")
+function UISideEnterItemMiniGame:_CalcRed()
+  Log.debug("[UISideEnterItemMiniGame ]00000 :")
   self.showRed = 0
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV, self
+  GameGlobal.TaskManager():StartTask(function(TT)
     local res = UIStateSwitchReq:New()
     res:SetSucc(true)
-    local campaign = (UIActivityCampaign.New)()
+    local campaign = UIActivityCampaign.New()
     campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N28_MINI_GAME, ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
     self._localProcess = campaign:GetLocalProcess()
-    self._missionComponent = (self._localProcess):GetComponent(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
-    self.showRed = (self._missionComponent):MissionCanRecvReward()
-  end
-)
-  ;
-  (Log.debug)("[UISideEnterItemMiniGame ]showRed :" .. tostring(self.showRed))
+    self._missionComponent = self._localProcess:GetComponent(ECampaignN28MiniGameComponentID.ECAMPAIGN_BOUNCE_MISSION)
+    self.showRed = self._missionComponent:MissionCanRecvReward()
+  end)
+  Log.debug("[UISideEnterItemMiniGame ]showRed :" .. tostring(self.showRed))
   return self.showRed and 1 or 0
 end
-
-

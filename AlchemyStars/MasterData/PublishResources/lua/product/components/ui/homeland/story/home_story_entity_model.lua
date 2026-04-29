@@ -1,202 +1,138 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/story/home_story_entity_model.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeStoryEntityModel", HomeStoryEntityMovable)
 HomeStoryEntityModel = HomeStoryEntityModel
-local ModelSubType = {Player = 1, Pet = 10, Other = 100}
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
+local ModelSubType = {
+  Player = 1,
+  Pet = 10,
+  Other = 100
+}
 
-HomeStoryEntityModel.Constructor = function(self, ID, gameObject, resRequest, storyManager, cfg, parent, skinid)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomeStoryEntityModel.super).Constructor)(self, ID, gameObject, resRequest, storyManager)
+function HomeStoryEntityModel:Constructor(ID, gameObject, resRequest, storyManager, cfg, parent, skinid)
+  HomeStoryEntityModel.super.Constructor(self, ID, gameObject, resRequest, storyManager)
   self._skinID = skinid
   if self._skinID then
     local face_name = self._skinID .. "_face"
-    local face = (GameObjectHelper.FindChild)((self._gameObject).transform, face_name)
+    local face = GameObjectHelper.FindChild(self._gameObject.transform, face_name)
     if face then
-      local render = (face.gameObject):GetComponent(typeof(UnityEngine.SkinnedMeshRenderer))
+      local render = face.gameObject:GetComponent(typeof(UnityEngine.SkinnedMeshRenderer))
       if not render then
-        (Log.error)("###[HomeStoryEntityModel] 面部表情节点上找不到SkinnedMeshRenderer：", face_name)
+        Log.error("###[HomeStoryEntityModel] 面部表情节点上找不到SkinnedMeshRenderer：", face_name)
       else
         self._faceMat = render.material
       end
     else
-      do
-        do
-          ;
-          (Log.error)("###[HomeStoryEntityModel] 找不到面部表情节点：", face_name)
-          self._headSlot = (GameObjectHelper.FindChild)((self._gameObject).transform, "Bip001 Head")
-          if not self._headSlot then
-            (Log.error)("###[HomeStoryEntityModel] model Bip001 Head Not Found. ID-->", ID)
-          end
-          self._type = HomeStoryEntityType.Model
-          self._showBubble = {}
-        end
-      end
+      Log.error("###[HomeStoryEntityModel] 找不到面部表情节点：", face_name)
     end
   end
+  self._headSlot = GameObjectHelper.FindChild(self._gameObject.transform, "Bip001 Head")
+  if not self._headSlot then
+    Log.error("###[HomeStoryEntityModel] model Bip001 Head Not Found. ID-->", ID)
+  end
+  self._type = HomeStoryEntityType.Model
+  self._showBubble = {}
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeStoryEntityModel.HeadPos = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomeStoryEntityModel:HeadPos()
   if self._headSlot then
-    return (self._headSlot).position
+    return self._headSlot.position
   else
-    return ((self._gameObject).transform).position + Vector3(0, 1.5, 0)
+    return self._gameObject.transform.position + Vector3(0, 1.5, 0)
   end
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeStoryEntityModel.Pos = function(self)
-  -- function num : 0_2
-  return ((self._gameObject).transform).position
+function HomeStoryEntityModel:Pos()
+  return self._gameObject.transform.position
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeStoryEntityModel.GetFaceMat = function(self)
-  -- function num : 0_3
+function HomeStoryEntityModel:GetFaceMat()
   return self._faceMat
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeStoryEntityModel._TriggerKeyframe = function(self, keyframeData)
-  -- function num : 0_4 , upvalues : _ENV
-  ((HomeStoryEntityModel.super)._TriggerKeyframe)(self, keyframeData)
+function HomeStoryEntityModel:_TriggerKeyframe(keyframeData)
+  HomeStoryEntityModel.super._TriggerKeyframe(self, keyframeData)
   if keyframeData.FaceSeq ~= nil then
     self:PlayFace(keyframeData.FaceSeq)
   end
   if keyframeData.FaceTo then
-    local entityid = (keyframeData.FaceTo).ID
-    local duration = (keyframeData.FaceTo).Duration or 0
-    local pos1 = (self._storyManager):GetEntityPos(entityid)
+    local entityid = keyframeData.FaceTo.ID
+    local duration = keyframeData.FaceTo.Duration or 0
+    local pos1 = self._storyManager:GetEntityPos(entityid)
     self:_SetLook(pos1, duration)
-  else
-    do
-      if keyframeData.BackTo then
-        local entityid = (keyframeData.BackTo).ID
-        local duration = (keyframeData.BackTo).Duration or 0
-        local pos1 = (self._storyManager):GetEntityPos(entityid)
-        self:_SetLook(pos1, duration)
-      end
-      do
-        if keyframeData.HeadPos then
-          local targetEntityID = keyframeData.HeadPos
-          local headPos = (self._storyManager):GetEntityHeadPos(targetEntityID)
-          self:_SetPosition(headPos)
-        end
-        do
-          if keyframeData.Bubble then
-            local bubble = (keyframeData.Bubble).ID
-            local offset = Vector3(0, 0, 0)
-            if (keyframeData.Bubble).Offset then
-              offset = Vector3(((keyframeData.Bubble).Offset)[1], ((keyframeData.Bubble).Offset)[2], ((keyframeData.Bubble).Offset)[3])
-            end
-            local pos = self:HeadPos() + offset * (self._storyManager).RootRotation
-            ;
-            (self._storyManager):ActiveEntity(bubble, true)
-            ;
-            (self._storyManager):SetEntityPos(bubble, pos)
-          end
-          do
-            if keyframeData.HideBubble then
-              local bubble = keyframeData.HideBubble
-              ;
-              (self._storyManager):ActiveEntity(bubble, false)
-            end
-          end
-        end
-      end
+  elseif keyframeData.BackTo then
+    local entityid = keyframeData.BackTo.ID
+    local duration = keyframeData.BackTo.Duration or 0
+    local pos1 = self._storyManager:GetEntityPos(entityid)
+    self:_SetLook(pos1, duration)
+  end
+  if keyframeData.HeadPos then
+    local targetEntityID = keyframeData.HeadPos
+    local headPos = self._storyManager:GetEntityHeadPos(targetEntityID)
+    self:_SetPosition(headPos)
+  end
+  if keyframeData.Bubble then
+    local bubble = keyframeData.Bubble.ID
+    local offset = Vector3(0, 0, 0)
+    if keyframeData.Bubble.Offset then
+      offset = Vector3(keyframeData.Bubble.Offset[1], keyframeData.Bubble.Offset[2], keyframeData.Bubble.Offset[3])
     end
+    local pos = self:HeadPos() + offset * self._storyManager.RootRotation
+    self._storyManager:ActiveEntity(bubble, true)
+    self._storyManager:SetEntityPos(bubble, pos)
+  end
+  if keyframeData.HideBubble then
+    local bubble = keyframeData.HideBubble
+    self._storyManager:ActiveEntity(bubble, false)
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeStoryEntityModel.SetActive = function(self, active)
-  -- function num : 0_5
-  (self._gameObject):SetActive(active)
+function HomeStoryEntityModel:SetActive(active)
+  self._gameObject:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeStoryEntityModel.SetPos = function(self, pos)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._gameObject).transform).position = pos
+function HomeStoryEntityModel:SetPos(pos)
+  self._gameObject.transform.position = pos
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeStoryEntityModel.GetBubble = function(self, name)
-  -- function num : 0_7 , upvalues : _ENV
+function HomeStoryEntityModel:GetBubble(name)
   if not self._bubblePool then
     self._bubblePool = {}
   end
-  if not (self._bubblePool)[name] then
-    local request = (ResourceManager:GetInstance()):SyncLoadAsset(bubbleName, LoadType.GameObject)
+  if not self._bubblePool[name] then
+    local request = ResourceManager:GetInstance():SyncLoadAsset(bubbleName, LoadType.GameObject)
     local go = request.Obj
     local data = {}
     data.req = request
     data.go = go
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._bubblePool)[name] = data
+    self._bubblePool[name] = data
   end
-  do
-    local data = (self._bubblePool)[name]
-    return data.go
-  end
+  local data = self._bubblePool[name]
+  return data.go
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeStoryEntityModel.Dispose = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function HomeStoryEntityModel:Dispose()
   if self._bubblePool then
-    for key,value in pairs(self._bubblePool) do
+    for key, value in pairs(self._bubblePool) do
       local req = value.req
       req:Dispose()
     end
-    ;
-    (table.clear)(self._bubblePool)
+    table.clear(self._bubblePool)
     self._bubblePool = nil
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeStoryEntityModel.Destroy = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  ((HomeStoryEntityModel.super).Destroy)(self)
+function HomeStoryEntityModel:Destroy()
+  HomeStoryEntityModel.super.Destroy(self)
   self:Dispose()
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeStoryEntityModel.PlayFace = function(self, frame)
-  -- function num : 0_10
+function HomeStoryEntityModel:PlayFace(frame)
   local mat = self:GetFaceMat()
   if mat then
     mat:SetInt("_Frame", frame)
   end
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-HomeStoryEntityModel._UpdateAnimation = function(self, time)
-  -- function num : 0_11 , upvalues : _ENV
-  local res = ((HomeStoryEntityModel.super)._UpdateAnimation)(self, time)
+function HomeStoryEntityModel:_UpdateAnimation(time)
+  local res = HomeStoryEntityModel.super._UpdateAnimation(self, time)
   local allEnd = true
-  return not res or allEnd
+  return res and allEnd
 end
-
-

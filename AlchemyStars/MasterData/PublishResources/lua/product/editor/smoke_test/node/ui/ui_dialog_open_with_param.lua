@@ -1,18 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/ui/ui_dialog_open_with_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("CTestRobot_ShowUIByRunData", CTestRobot_ShowUI)
 CTestRobot_ShowUIByRunData = CTestRobot_ShowUIByRunData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CTestRobot_ShowUIByRunData._ShowUI = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CTestRobot_ShowUIByRunData:_ShowUI()
   local showParam = self.m_pRunData
   self:PrintLog("ShowUI By UserData, UI = ", self.m_stName)
-  return ((GameGlobal.UIStateManager)()):ShowDialog(self.m_stName, showParam)
+  return GameGlobal.UIStateManager():ShowDialog(self.m_stName, showParam)
 end
-
-

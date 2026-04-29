@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/prepare/furniture/ui_homeland_movie_prepare_furniture.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMoviePrepareFurniture", UIHomelandMoviePrepareBase)
 UIHomelandMoviePrepareFurniture = UIHomelandMoviePrepareFurniture
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMoviePrepareFurniture.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMoviePrepareFurniture:OnShow()
   local freeStagePool = self:GetUIComponent("UISelectObjectPath", "editList")
-  local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIHomelandMoviePrepareMainController")
+  local camera = GameGlobal.UIStateManager():GetControllerCamera("UIHomelandMoviePrepareMainController")
   self.editList = freeStagePool:SpawnObject("UIHomelandBuildEditList")
-  ;
-  (self.editList):Init(camera, BuildEditListType.BT_MakeMovie)
-  self.fatherBuilding = (MoviePrepareData:GetInstance()):GetFatherBuild()
-  self.mUIHomeland = ((GameGlobal.GetModule)(HomelandModule)):GetUIModule()
+  self.editList:Init(camera, BuildEditListType.BT_MakeMovie)
+  self.fatherBuilding = MoviePrepareData:GetInstance():GetFatherBuild()
+  self.mUIHomeland = GameGlobal.GetModule(HomelandModule):GetUIModule()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareFurniture.OnEnter = function(self, prepareType)
-  -- function num : 0_1
+function UIHomelandMoviePrepareFurniture:OnEnter(prepareType)
   self:Refresh(prepareType)
-  ;
-  (self.mUIHomeland):ShowHightLightFreeArea(self.fatherBuilding, true)
+  self.mUIHomeland:ShowHightLightFreeArea(self.fatherBuilding, true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareFurniture.OnExit = function(self, prepareType)
-  -- function num : 0_2
-  (self.mUIHomeland):ShowHightLightFreeArea(self.fatherBuilding, false)
+function UIHomelandMoviePrepareFurniture:OnExit(prepareType)
+  self.mUIHomeland:ShowHightLightFreeArea(self.fatherBuilding, false)
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareFurniture.Refresh = function(self, prepareType)
-  -- function num : 0_3 , upvalues : _ENV
-  (HomelandMoviePrepareManager:GetInstance()):SetPhaseType(prepareType)
-  ;
-  (self.editList):FlushArrange()
+function UIHomelandMoviePrepareFurniture:Refresh(prepareType)
+  HomelandMoviePrepareManager:GetInstance():SetPhaseType(prepareType)
+  self.editList:FlushArrange()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareFurniture.SetUIWidgetHomelandBuildController = function(self, mobileControl)
-  -- function num : 0_4
-  (self.editList):SetUIWidgetHomelandBuildController(mobileControl)
+function UIHomelandMoviePrepareFurniture:SetUIWidgetHomelandBuildController(mobileControl)
+  self.editList:SetUIWidgetHomelandBuildController(mobileControl)
 end
-
-

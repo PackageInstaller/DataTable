@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_gift_pack_tab_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopGiftPackTabBtn", UICustomWidget)
 UIShopGiftPackTabBtn = UIShopGiftPackTabBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopGiftPackTabBtn.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopGiftPackTabBtn:OnShow()
   self._isSelected = false
   self._uiUnsel = self:GetUIComponent("RectTransform", "uiUnsel")
   self._uiSel = self:GetUIComponent("RectTransform", "uiSel")
@@ -16,89 +9,56 @@ UIShopGiftPackTabBtn.OnShow = function(self)
   self._selName = self:GetUIComponent("UILocalizedTMP", "selName")
   self._limitedTime = self:GetUIComponent("RectTransform", "limitedTime")
   self._new = self:GetGameObject("new")
-  self.animation = (self:GetGameObject()):GetComponent("Animation")
+  self.animation = self:GetGameObject():GetComponent("Animation")
   self:AttachEvent(GameEventType.ShopNew, self.ShopNew)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTabBtn.GiftPackTabDetachEvent = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopGiftPackTabBtn:GiftPackTabDetachEvent()
   self:DetachEvent(GameEventType.ShopNew, self.ShopNew)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTabBtn.FlushNew = function(self, isNew)
-  -- function num : 0_2
-  (self._new):SetActive(isNew)
+function UIShopGiftPackTabBtn:FlushNew(isNew)
+  self._new:SetActive(isNew)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTabBtn.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIShopGiftPackTabBtn:OnHide()
   self:DetachEvent(GameEventType.ShopNew, self.ShopNew)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTabBtn.Init = function(self, tabId, name, onClickTabBtn, param)
-  -- function num : 0_4 , upvalues : _ENV
+function UIShopGiftPackTabBtn:Init(tabId, name, onClickTabBtn, param)
   self.tabId = tabId
   self.onClickTabBtn = onClickTabBtn
   self.param = param
-  ;
-  (self._unselName):SetText(name or "")
-  ;
-  (self._selName):SetText(name or "")
-  ;
-  ((self._limitedTime).gameObject):SetActive(tabId ~= nil and MarketType.Shop_CampaignMarket <= tabId)
+  self._unselName:SetText(name or "")
+  self._selName:SetText(name or "")
+  self._limitedTime.gameObject:SetActive(tabId ~= nil and tabId >= MarketType.Shop_CampaignMarket)
   self:Select(false)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTabBtn.SetData = function(self, tabId, k, name, onClickTabBtn)
-  -- function num : 0_5
+function UIShopGiftPackTabBtn:SetData(tabId, k, name, onClickTabBtn)
   self.onClickTabBtn = onClickTabBtn
   self.param = k
-  ;
-  (self._unselName):SetText(name or "")
-  ;
-  (self._selName):SetText(name or "")
+  self._unselName:SetText(name or "")
+  self._selName:SetText(name or "")
   self.tabId = tabId
   self.giftPackTabId = k
-  ;
-  ((self._limitedTime).gameObject):SetActive(false)
+  self._limitedTime.gameObject:SetActive(false)
   self:Select(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTabBtn.GetTabId = function(self)
-  -- function num : 0_6
+function UIShopGiftPackTabBtn:GetTabId()
   return self.tabId
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTabBtn.GetTiftPackTabId = function(self)
-  -- function num : 0_7
+function UIShopGiftPackTabBtn:GetTiftPackTabId()
   return self.giftPackTabId
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTabBtn.Select = function(self, isSelect)
-  -- function num : 0_8
+function UIShopGiftPackTabBtn:Select(isSelect)
   local preSelected = self._isSelected
   self._isSelected = isSelect
-  ;
-  ((self._uiUnsel).gameObject):SetActive(not isSelect)
-  ;
-  ((self._uiSel).gameObject):SetActive(isSelect)
+  self._uiUnsel.gameObject:SetActive(not isSelect)
+  self._uiSel.gameObject:SetActive(isSelect)
   if preSelected ~= self._isSelected then
     if self._isSelected then
       self:PlayInAnimation()
@@ -108,55 +68,33 @@ UIShopGiftPackTabBtn.Select = function(self, isSelect)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTabBtn.SetSelected = function(self, isSelect)
-  -- function num : 0_9
+function UIShopGiftPackTabBtn:SetSelected(isSelect)
   self:Select(isSelect)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTabBtn.IsSelected = function(self)
-  -- function num : 0_10
+function UIShopGiftPackTabBtn:IsSelected()
   return self._isSelected
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTabBtn.BtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
-  ;
-  (self.onClickTabBtn)(self.tabId, go)
+function UIShopGiftPackTabBtn:BtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
+  self.onClickTabBtn(self.tabId, go)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTabBtn.PlayInAnimation = function(self)
-  -- function num : 0_12
-  (self.animation):Play("uianim_UIShopSecretTabBtn_in")
+function UIShopGiftPackTabBtn:PlayInAnimation()
+  self.animation:Play("uianim_UIShopSecretTabBtn_in")
   return 333
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTabBtn.PlayOutAnimation = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  ((self._uiSel).gameObject):SetActive(true)
-  ;
-  (self.animation):Play("uianim_UIShopSecretTabBtn_out")
+function UIShopGiftPackTabBtn:PlayOutAnimation()
+  self._uiSel.gameObject:SetActive(true)
+  self.animation:Play("uianim_UIShopSecretTabBtn_out")
   local animLength = 250
   self:StartSafeTask("UIShopSecretTabBtn::PlayOutAnimation", function(lockName, TT)
-    -- function num : 0_13_0 , upvalues : self, _ENV, animLength
     self:Lock(lockName)
     YIELD(TT, animLength)
     self:UnLock(lockName)
-    ;
-    ((self._uiSel).gameObject):SetActive(self._isSelected)
-  end
-)
+    self._uiSel.gameObject:SetActive(self._isSelected)
+  end)
   return animLength
 end
-
-

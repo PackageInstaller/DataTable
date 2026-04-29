@@ -1,22 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/cls/ui_season_cfg_s7.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_season_id_enum")
 require("ui_season_cfgs")
 require("state_register")
--- DECOMPILER ERROR at PC64: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCfgs[UISeasonID.S7] = {MainController = "UIS7MainController", CollageUI = "UISeasonSeasonCollages", 
-CollageUI_Cfg = {
-TabBtnNames = {[2] = "str_season_s7_cg", [3] = "str_season_s7_music"}
+UISeasonCfgs[UISeasonID.S7] = {
+  MainController = "UIS7MainController",
+  CollageUI = "UISeasonSeasonCollages",
+  CollageUI_Cfg = {
+    TabBtnNames = {
+      [2] = "str_season_s7_cg",
+      [3] = "str_season_s7_music"
+    }
+  },
+  ExchangeUI = "UISeasonExchangeController",
+  ExchangeUI_Cfg = {
+    Spine = "1500424_spine_idle",
+    SpineOffsetY = -369,
+    LogoName = "exp_s7_shop_tittle01",
+    GoodBgName = "exp_s7_shop_btn01",
+    DiscountBgColor = Color(0.8352941176470589, 0.2980392156862745, 0.24705882352941178),
+    Desc = "str_season_s7_exchange_desc"
+  },
+  QuestContent = "UIS7QuestContent",
+  TaskList = {
+    Navi = "UIS3TaskListNavi",
+    Btn = "UIS3TaskListBtn",
+    Content = "UIS3TaskListContent"
+  },
+  SceneUI = "UISeasonMainS7",
+  SceneState = UIStateType.UISeasonS7,
+  StageUI = "UISeasonLevelStageS7",
+  TaskStageUI = "UISeasonTaskLevelStageS7",
+  HelperUI = "UIS7HelperController",
+  CollectionPanel = "UISeasonShowCollectionAwardS7",
+  GetItemPanel = "UIGetItemController",
+  EvidencePanel = "UISeasonShowNormalAwardS7",
+  BuffIconInBattle = "exp_s7_buff_toptoon",
+  BuffTitleInBattle = "str_season_s7_buff_title",
+  BattleResultAwardList = "UISeasonResultMultiAwardListS7",
+  PlayIconAtlas = "UIS7Scene.spriteatlas",
+  StoryUI = "UISeasonStoryController",
+  MainAtlas = "UIS7Main.spriteatlas",
+  Level = {
+    atlas = "UIS7Scene.spriteatlas",
+    widget = "SeasonUILevelS7",
+    sprite = "exp_s7_map_star01",
+    spriteGray = "exp_s7_map_star02"
+  },
+  FuncAtlas = "UIS7Main.spriteatlas"
 }
-, ExchangeUI = "UISeasonExchangeController", 
-ExchangeUI_Cfg = {Spine = "1500424_spine_idle", SpineOffsetY = -369, LogoName = "exp_s7_shop_tittle01", GoodBgName = "exp_s7_shop_btn01", DiscountBgColor = Color(0.83529411764706, 0.29803921568627, 0.24705882352941), Desc = "str_season_s7_exchange_desc"}
-, QuestContent = "UIS7QuestContent", 
-TaskList = {Navi = "UIS3TaskListNavi", Btn = "UIS3TaskListBtn", Content = "UIS3TaskListContent"}
-, SceneUI = "UISeasonMainS7", SceneState = UIStateType.UISeasonS7, StageUI = "UISeasonLevelStageS7", TaskStageUI = "UISeasonTaskLevelStageS7", HelperUI = "UIS7HelperController", CollectionPanel = "UISeasonShowCollectionAwardS7", GetItemPanel = "UIGetItemController", EvidencePanel = "UISeasonShowNormalAwardS7", BuffIconInBattle = "exp_s7_buff_toptoon", BuffTitleInBattle = "str_season_s7_buff_title", BattleResultAwardList = "UISeasonResultMultiAwardListS7", PlayIconAtlas = "UIS7Scene.spriteatlas", StoryUI = "UISeasonStoryController", MainAtlas = "UIS7Main.spriteatlas", 
-Level = {atlas = "UIS7Scene.spriteatlas", widget = "SeasonUILevelS7", sprite = "exp_s7_map_star01", spriteGray = "exp_s7_map_star02"}
-, FuncAtlas = "UIS7Main.spriteatlas"}
-

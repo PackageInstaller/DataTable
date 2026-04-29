@@ -1,18 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_chess_pet_move_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("chess_pet_move_system")
 _class("ClientChessPetMoveSystem_Render", ChessPetMoveSystem)
 ClientChessPetMoveSystem_Render = ClientChessPetMoveSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientChessPetMoveSystem_Render._DoRenderChessPetMove = function(self, TT)
-  -- function num : 0_0
-  local chessSvcRender = (self._world):GetService("ChessRender")
+function ClientChessPetMoveSystem_Render:_DoRenderChessPetMove(TT)
+  local chessSvcRender = self._world:GetService("ChessRender")
   chessSvcRender:DoRenderChessPetPathMove(TT)
   chessSvcRender:ShowCurChessPetEndTurnEffect(TT)
 end
-
-

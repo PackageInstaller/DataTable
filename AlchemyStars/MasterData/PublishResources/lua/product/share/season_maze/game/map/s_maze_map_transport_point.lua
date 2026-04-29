@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/map/s_maze_map_transport_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeMapTransportPoint", Object)
 SMazeMapTransportPoint = SMazeMapTransportPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeMapTransportPoint.Constructor = function(self, node)
-  -- function num : 0_0 , upvalues : _ENV
+function SMazeMapTransportPoint:Constructor(node)
   self._id = node:ID()
-  self._req = (ResourceManager:GetInstance()):SyncLoadAsset("pfb_Scene_Waypoint08.prefab", LoadType.GameObject)
-  local transportObj = (self._req).Obj
+  self._req = ResourceManager:GetInstance():SyncLoadAsset("pfb_Scene_Waypoint08.prefab", LoadType.GameObject)
+  local transportObj = self._req.Obj
   if EDITOR then
     transportObj.name = self._id
   end
@@ -23,44 +16,33 @@ SMazeMapTransportPoint.Constructor = function(self, node)
   tr.rotation = Quaternion.identity
   tr.localScale = Vector3.one
   self._animation = transportObj:GetComponentInChildren(typeof(UnityEngine.Animation))
-  self._animName = {OpenLoop = "pfb_ludian_open_blueloop", OpenOut = "pfb_ludian_open_blueout", CloseLoop = "pfb_ludian_close_blueloop"}
+  self._animName = {
+    OpenLoop = "pfb_ludian_open_blueloop",
+    OpenOut = "pfb_ludian_open_blueout",
+    CloseLoop = "pfb_ludian_close_blueloop"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapTransportPoint.Dispose = function(self)
-  -- function num : 0_1
-  (self._req):Dispose()
+function SMazeMapTransportPoint:Dispose()
+  self._req:Dispose()
   self._req = nil
   self._gameObject = nil
   self._animation = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapTransportPoint.Anim_Reachable = function(self, reachable, onInit)
-  -- function num : 0_2
+function SMazeMapTransportPoint:Anim_Reachable(reachable, onInit)
   if onInit then
     if reachable then
-      (self._animation):Play((self._animName).OpenLoop)
+      self._animation:Play(self._animName.OpenLoop)
     else
-      ;
-      (self._animation):Play((self._animName).CloseLoop)
+      self._animation:Play(self._animName.CloseLoop)
     end
-  else
-    if not reachable then
-      (self._animation):Play((self._animName).OpenOut)
-      ;
-      (self._animation):PlayQueued((self._animName).CloseLoop)
-    end
+  elseif not reachable then
+    self._animation:Play(self._animName.OpenOut)
+    self._animation:PlayQueued(self._animName.CloseLoop)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapTransportPoint.GameObject = function(self)
-  -- function num : 0_3
+function SMazeMapTransportPoint:GameObject()
   return self._gameObject
 end
-
-

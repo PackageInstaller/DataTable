@@ -1,20 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_colorrow_byedgepos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_ColOrRowByEdgePos", SkillScopeCalculator_Base)
 SkillScopeCalculator_ColOrRowByEdgePos = SkillScopeCalculator_ColOrRowByEdgePos
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_ColOrRowByEdgePos.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
-  local boardSvc = ((self._gridFilter)._world):GetService("BoardLogic")
+function SkillScopeCalculator_ColOrRowByEdgePos:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  local boardSvc = self._gridFilter._world:GetService("BoardLogic")
   local cross_area = boardSvc:CalcScopeColOrRowByEdgePos(casterPos, true)
   local wholeArea = cross_area
   local result = SkillScopeResult:New(SkillScopeType.ColOrRowByEdgePos, casterPos, cross_area, wholeArea)
   return result
 end
-
-

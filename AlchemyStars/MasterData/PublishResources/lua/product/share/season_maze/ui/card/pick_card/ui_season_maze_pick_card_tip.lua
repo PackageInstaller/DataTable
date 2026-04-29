@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/card/pick_card/ui_season_maze_pick_card_tip.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazePickCardTip", UICustomWidget)
 UISeasonMazePickCardTip = UISeasonMazePickCardTip
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazePickCardTip.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMazePickCardTip:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePickCardTip.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazePickCardTip:InitWidget()
   self.root = self:GetUIComponent("RectTransform", "Root")
   self.steps = self:GetUIComponent("UILocalizationText", "Steps")
   self.asset = self:GetUIComponent("UILocalizationText", "Asset")
@@ -26,56 +16,35 @@ UISeasonMazePickCardTip.InitWidget = function(self)
   self._effectRoot = self:GetGameObject("EffectRoot")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePickCardTip.CloseMaskOnClick = function(self, go)
-  -- function num : 0_2
+function UISeasonMazePickCardTip:CloseMaskOnClick(go)
   self:DoHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePickCardTip.DoShow = function(self, cfg_id, pos)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._anchor).position = pos
-  ;
-  (self:GetGameObject()):SetActive(true)
-  local stepDes, eftDes, exteaEftDes = (SeasonMazeTool:GetInstance()):GetCardDesc(cfg_id)
+function UISeasonMazePickCardTip:DoShow(cfg_id, pos)
+  self._anchor.position = pos
+  self:GetGameObject():SetActive(true)
+  local stepDes, eftDes, exteaEftDes = SeasonMazeTool:GetInstance():GetCardDesc(cfg_id)
   if stepDes then
-    (self.steps):SetText(stepDes)
-    ;
-    (self._stepRoot):SetActive(true)
+    self.steps:SetText(stepDes)
+    self._stepRoot:SetActive(true)
   else
-    ;
-    (self._stepRoot):SetActive(false)
+    self._stepRoot:SetActive(false)
   end
   if eftDes then
-    (self.asset):SetText(eftDes)
-    ;
-    (self._assetRoot):SetActive(true)
+    self.asset:SetText(eftDes)
+    self._assetRoot:SetActive(true)
   else
-    ;
-    (self._assetRoot):SetActive(false)
+    self._assetRoot:SetActive(false)
   end
   if exteaEftDes then
-    (self.effect):SetText(exteaEftDes)
-    ;
-    (self._effectRoot):SetActive(true)
+    self.effect:SetText(exteaEftDes)
+    self._effectRoot:SetActive(true)
   else
-    ;
-    (self._effectRoot):SetActive(false)
+    self._effectRoot:SetActive(false)
   end
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.root)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.root)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePickCardTip.DoHide = function(self)
-  -- function num : 0_4
-  (self:GetGameObject()):SetActive(false)
+function UISeasonMazePickCardTip:DoHide()
+  self:GetGameObject():SetActive(false)
 end
-
-

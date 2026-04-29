@@ -1,64 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpressBase", Object)
 SeasonMapExpressBase = SeasonMapExpressBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressBase.Constructor = function(self, cfg, eventPoint)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMapExpressBase:Constructor(cfg, eventPoint)
   self._cfg = cfg
   self._eventPoint = eventPoint
   self._state = SeasonExpressState.NotStart
   self._content = nil
   self._param = nil
-  self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  self._componentInfo = ((self._seasonModule):GetCurSeasonObj()):GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
+  self._seasonModule = GameGlobal.GetModule(SeasonModule)
+  self._componentInfo = self._seasonModule:GetCurSeasonObj():GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
   self._isSyncExpress = false
-  self._uiSeasonModule = (GameGlobal.GetUIModule)(SeasonModule)
+  self._uiSeasonModule = GameGlobal.GetUIModule(SeasonModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBase.BTrackPermanen = function(self)
-  -- function num : 0_1
-  return (self._eventPoint):BTrackPermanen()
+function SeasonMapExpressBase:BTrackPermanen()
+  return self._eventPoint:BTrackPermanen()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBase.ExpressType = function(self)
-  -- function num : 0_2
-  return (self._cfg).ExpressType
+function SeasonMapExpressBase:ExpressType()
+  return self._cfg.ExpressType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBase.Content = function(self)
-  -- function num : 0_3
+function SeasonMapExpressBase:Content()
   return self._content
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBase.Update = function(self, deltaTime)
-  -- function num : 0_4
+function SeasonMapExpressBase:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBase.Dispose = function(self)
-  -- function num : 0_5
+function SeasonMapExpressBase:Dispose()
   self._param = nil
   self:_KillSyncTask()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBase.Play = function(self, param)
-  -- function num : 0_6
+function SeasonMapExpressBase:Play(param)
   self._param = param
   self._isSyncExpress = false
   if self._content ~= nil then
@@ -75,154 +50,113 @@ SeasonMapExpressBase.Play = function(self, param)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBase.OnPlay = function(self)
-  -- function num : 0_7
+function SeasonMapExpressBase:OnPlay()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBase._Next = function(self)
-  -- function num : 0_8
-  (self._eventPoint):PlayNextExpress(self._param)
+function SeasonMapExpressBase:_Next()
+  self._eventPoint:PlayNextExpress(self._param)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBase.Reset = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function SeasonMapExpressBase:Reset()
   self._state = SeasonExpressState.NotStart
   self:_KillSyncTask()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBase.State = function(self)
-  -- function num : 0_10
+function SeasonMapExpressBase:State()
   return self._state
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBase._KillSyncTask = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function SeasonMapExpressBase:_KillSyncTask()
   if self._syncTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._syncTask)
+    GameGlobal.TaskManager():KillTask(self._syncTask)
     self._syncTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBase.NoRepeat = function(self)
-  -- function num : 0_12
-  do return (self._cfg).NoRepeat == true end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SeasonMapExpressBase:NoRepeat()
+  return self._cfg.NoRepeat == true
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBase.IsPlayed = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  if (self._cfg).NoRepeat == true then
-    local id = (self._eventPoint):GetID()
-    local progress = (self._eventPoint):CurProgress()
-    local index = (self._eventPoint):GetCurExpressIndex()
+function SeasonMapExpressBase:IsPlayed()
+  if self._cfg.NoRepeat == true then
+    local id = self._eventPoint:GetID()
+    local progress = self._eventPoint:CurProgress()
+    local index = self._eventPoint:GetCurExpressIndex()
     if id and progress and index then
       local key = id .. progress .. index
-      local clientInfo = (self._componentInfo).m_client_info
-      return (clientInfo.ext)[tonumber(key)] == 1
+      local clientInfo = self._componentInfo.m_client_info
+      return clientInfo.ext[tonumber(key)] == 1
     end
   end
-  do return false end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBase.SyncExpress = function(self, callBack)
-  -- function num : 0_14 , upvalues : _ENV
-  self._syncTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : self, callBack
+function SeasonMapExpressBase:SyncExpress(callBack)
+  self._syncTask = GameGlobal.TaskManager():StartTask(function(TT)
     self:_SyncExpress(TT, callBack)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBase._SyncExpress = function(self, TT, callBack)
-  -- function num : 0_15 , upvalues : _ENV
+function SeasonMapExpressBase:_SyncExpress(TT, callBack)
   local info = {}
-  local id = (self._eventPoint):GetID()
-  local progress = (self._eventPoint):CurProgress()
-  local index = ((self._eventPoint):GetCurExpressIndex())
-  local reqId = nil
+  local id = self._eventPoint:GetID()
+  local progress = self._eventPoint:CurProgress()
+  local index = self._eventPoint:GetCurExpressIndex()
+  local reqId
   if id and progress and index then
     local key = id .. progress .. index
     reqId = tonumber(key)
     info[reqId] = 1
-    if (self._eventPoint):GroupID() > 0 then
-      local cfgs = (Cfg.cfg_season_mission)({GroupID = (self._eventPoint):GroupID()})
+    if self._eventPoint:GroupID() > 0 then
+      local cfgs = Cfg.cfg_season_mission({
+        GroupID = self._eventPoint:GroupID()
+      })
       if cfgs then
-        for _,cfg in pairs(cfgs) do
-          if cfg.ID ~= (self._eventPoint):GetID() then
+        for _, cfg in pairs(cfgs) do
+          if cfg.ID ~= self._eventPoint:GetID() then
             key = cfg.ID .. progress .. index
             info[tonumber(key)] = 1
           end
         end
       end
     end
-    do
-      if (self._uiSeasonModule):IsBackTrack() and self:BTrackPermanen() and reqId then
+    if self._uiSeasonModule:IsBackTrack() then
+      if self:BTrackPermanen() and reqId then
         local reqInfo = EvenPointInfo:New()
         reqInfo.event_id = reqId
         reqInfo.status = info[reqId]
-        local req = ((GameGlobal.GetModule)(SeasonTaskModule)):ReqSubmitEventPointInfo(TT, reqInfo)
+        local req = GameGlobal.GetModule(SeasonTaskModule):ReqSubmitEventPointInfo(TT, reqInfo)
         if req:GetSucc() then
           if callBack then
             callBack()
           end
-          ;
-          (Log.info)("SeasonMapExpressBase sync express success.", id, progress, index)
+          Log.info("SeasonMapExpressBase sync express success.", id, progress, index)
         else
-          ;
-          (self._eventPoint):InterruptExpress()
+          self._eventPoint:InterruptExpress()
         end
       end
-      do
-        local req = (self._seasonModule):HandleSeasonClientDataExt(TT, info)
-        if req:GetSucc() then
-          if callBack then
-            callBack()
-          end
-          ;
-          (Log.info)("SeasonMapExpressBase sync express success.", id, progress, index)
-        else
-          ;
-          (self._eventPoint):InterruptExpress()
+    else
+      local req = self._seasonModule:HandleSeasonClientDataExt(TT, info)
+      if req:GetSucc() then
+        if callBack then
+          callBack()
         end
+        Log.info("SeasonMapExpressBase sync express success.", id, progress, index)
+      else
+        self._eventPoint:InterruptExpress()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBase.Next = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function SeasonMapExpressBase:Next()
   if self._isSyncExpress then
     self:SyncExpress(function()
-    -- function num : 0_16_0 , upvalues : self, _ENV
-    self._state = SeasonExpressState.Over
-    self:_Next()
-  end
-)
+      self._state = SeasonExpressState.Over
+      self:_Next()
+    end)
   else
     self._state = SeasonExpressState.Over
     self:_Next()
   end
 end
-
-

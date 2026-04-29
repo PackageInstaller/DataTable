@@ -1,87 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/result/logic_result_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LogicResultComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-LogicResultComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LogicResultComponent:Constructor()
   self._logicStep = LogicStepType.Init
   self._result = {}
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicResultComponent.SetLogicResult = function(self, logicStep, result)
-  -- function num : 0_1 , upvalues : _ENV
+function LogicResultComponent:SetLogicResult(logicStep, result)
   if self.logicStep == logicStep then
-    (Log.fatal)("AddLogicResult() error: duplicate logic step result! step=", logicStep)
-    return 
+    Log.fatal("AddLogicResult() error: duplicate logic step result! step=", logicStep)
+    return
   end
   self._logicStep = logicStep
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._result)[logicStep] = result
+  self._result[logicStep] = result
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicResultComponent.ClearLogicResult = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function LogicResultComponent:ClearLogicResult()
   self._logicStep = LogicStepType.Init
   self._result = {}
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicResultComponent.GetLogicStep = function(self)
-  -- function num : 0_3
+function LogicResultComponent:GetLogicStep()
   return self._logicStep
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicResultComponent.GetLogicResult = function(self, logicStep)
-  -- function num : 0_4 , upvalues : _ENV
+function LogicResultComponent:GetLogicResult(logicStep)
   if logicStep ~= self._logicStep then
-    (Log.info)("GetLogicResult() error: logic step not match! selfstep=", self._logicStep, " step=", logicStep)
+    Log.info("GetLogicResult() error: logic step not match! selfstep=", self._logicStep, " step=", logicStep)
   end
-  return (self._result)[logicStep]
+  return self._result[logicStep]
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LogicResult = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).LogicResult)
+function Entity:LogicResult()
+  return self:GetComponent(self.WEComponentsEnum.LogicResult)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLogicResult = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).LogicResult)
+function Entity:HasLogicResult()
+  return self:HasComponent(self.WEComponentsEnum.LogicResult)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLogicResult = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicResult
+function Entity:AddLogicResult()
+  local index = self.WEComponentsEnum.LogicResult
   local component = LogicResultComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLogicResult = function(self)
-  -- function num : 0_8
+function Entity:RemoveLogicResult()
   if self:HasLogicResult() then
-    self:RemoveComponent((self.WEComponentsEnum).LogicResult)
+    self:RemoveComponent(self.WEComponentsEnum.LogicResult)
   end
 end
-
-

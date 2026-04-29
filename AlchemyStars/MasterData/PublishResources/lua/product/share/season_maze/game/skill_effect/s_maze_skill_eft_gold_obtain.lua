@@ -1,27 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/skill_effect/s_maze_skill_eft_gold_obtain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeSkillEft_GoldObtain", EZTL_Base)
 SMazeSkillEft_GoldObtain = SMazeSkillEft_GoldObtain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeSkillEft_GoldObtain.Start = function(self)
-  -- function num : 0_0
+function SMazeSkillEft_GoldObtain:Start()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeSkillEft_GoldObtain.Stop = function(self)
-  -- function num : 0_1
-  ((self.super).Stop)()
+function SMazeSkillEft_GoldObtain:Stop()
+  self.super.Stop()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeSkillEft_GoldObtain.Update = function(self, dt)
-  -- function num : 0_2
+function SMazeSkillEft_GoldObtain:Update(dt)
 end
-
-

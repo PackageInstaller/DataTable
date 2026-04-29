@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_switch_body_part.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamSwitchBodyPart", SkillEffectParamBase)
 SkillEffectParamSwitchBodyPart = SkillEffectParamSwitchBodyPart
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamSwitchBodyPart.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamSwitchBodyPart:Constructor(t)
   self._showID = t.showID
   self._hideID = t.hideID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSwitchBodyPart.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamSwitchBodyPart:GetEffectType()
   return SkillEffectType.SwitchBodyPart
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSwitchBodyPart.GetShowID = function(self)
-  -- function num : 0_2
+function SkillEffectParamSwitchBodyPart:GetShowID()
   return self._showID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSwitchBodyPart.GetHideID = function(self)
-  -- function num : 0_3
+function SkillEffectParamSwitchBodyPart:GetHideID()
   return self._hideID
 end
-
-

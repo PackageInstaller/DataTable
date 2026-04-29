@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_pickup_front_extend_with_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_PickUpFrontExtendWithDamage", SkillScopeCalculator_Base)
 SkillScopeCalculator_PickUpFrontExtendWithDamage = SkillScopeCalculator_PickUpFrontExtendWithDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_PickUpFrontExtendWithDamage.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity, calcEffectFcuntion)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_PickUpFrontExtendWithDamage:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity, calcEffectFcuntion)
   self._baseLength = scopeParam[1]
   self._calcExtend = scopeParam[2] or 1
   self._crossExtendLength = scopeParam[3] or 0
@@ -18,8 +11,8 @@ SkillScopeCalculator_PickUpFrontExtendWithDamage.CalcRange = function(self, scop
   self._oneGridAddDamagePercent = scopeParam[6] or 0
   self._hadExtendTargetIDs = {}
   self._calcEffectFcuntion = calcEffectFcuntion
-  self._blocks = (self._gridFilter):GetBlockGridTrapPosList()
-  local world = (self._gridFilter)._world
+  self._blocks = self._gridFilter:GetBlockGridTrapPosList()
+  local world = self._gridFilter._world
   local pickUpCenterPos = centerPos[1]
   local pickUpSecondPos = centerPos[2]
   local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
@@ -38,64 +31,54 @@ SkillScopeCalculator_PickUpFrontExtendWithDamage.CalcRange = function(self, scop
   self._hadCalcDamageGridList = {}
   local stepOneGridList = {}
   stepOneGridList = self:_CalcScopeWithDirAndBlock(pickUpCenterPos, pickUpDir, self._baseLength - 1)
-  do
-    if self._calcExtend == 0 then
-      local resultNotExtend = SkillScopeResult:New(SkillScopeType.PickUpFrontExtendWithDamage, pickUpCenterPos, stepOneGridList, stepOneGridList)
-      return resultNotExtend
-    end
-    local stepThreeGridList = {}
-    stepThreeGridList = self:_CalcEachPosCross(stepOneGridList, true, casterEntity)
-    local scopeResultRange = {}
-    local specialScopeResult = {}
-    for i,posList in ipairs(self._scopeGridDictionary) do
-      (table.appendArray)(scopeResultRange, posList)
-      for _,pos in ipairs(posList) do
-        local specialScope = SkillScopeGrid:New(i, pos)
-        ;
-        (table.insert)(specialScopeResult, specialScope)
-      end
-    end
-    local result = SkillScopeResult:New(SkillScopeType.PickUpFrontExtendWithDamage, pickUpCenterPos, scopeResultRange, scopeResultRange)
-    result:SetSpecialScopeResult(specialScopeResult)
-    return result
+  if self._calcExtend == 0 then
+    local resultNotExtend = SkillScopeResult:New(SkillScopeType.PickUpFrontExtendWithDamage, pickUpCenterPos, stepOneGridList, stepOneGridList)
+    return resultNotExtend
   end
+  local stepThreeGridList = {}
+  stepThreeGridList = self:_CalcEachPosCross(stepOneGridList, true, casterEntity)
+  local scopeResultRange = {}
+  local specialScopeResult = {}
+  for i, posList in ipairs(self._scopeGridDictionary) do
+    table.appendArray(scopeResultRange, posList)
+    for _, pos in ipairs(posList) do
+      local specialScope = SkillScopeGrid:New(i, pos)
+      table.insert(specialScopeResult, specialScope)
+    end
+  end
+  local result = SkillScopeResult:New(SkillScopeType.PickUpFrontExtendWithDamage, pickUpCenterPos, scopeResultRange, scopeResultRange)
+  result:SetSpecialScopeResult(specialScopeResult)
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_PickUpFrontExtendWithDamage._CalcEachPosCross = function(self, gridPosList, firstCalc, casterEntity)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_PickUpFrontExtendWithDamage:_CalcEachPosCross(gridPosList, firstCalc, casterEntity)
   local addGridList = {}
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local targetSelector = world:GetSkillScopeTargetSelector()
   local configService = world:GetService("Config")
   local trapConfigData = configService:GetTrapConfigData()
   local dirExtendList = {}
-  ;
-  (table.insert)(dirExtendList, Vector2(1, 0))
-  ;
-  (table.insert)(dirExtendList, Vector2(-1, 0))
-  ;
-  (table.insert)(dirExtendList, Vector2(0, 1))
-  ;
-  (table.insert)(dirExtendList, Vector2(0, -1))
-  for i,pos in ipairs(gridPosList) do
-    if firstCalc or not (table.icontains)(self._hadCalcDamageGridList, pos) then
-      (table.insert)(self._hadCalcDamageGridList, pos)
+  table.insert(dirExtendList, Vector2(1, 0))
+  table.insert(dirExtendList, Vector2(-1, 0))
+  table.insert(dirExtendList, Vector2(0, 1))
+  table.insert(dirExtendList, Vector2(0, -1))
+  for i, pos in ipairs(gridPosList) do
+    if firstCalc or not table.icontains(self._hadCalcDamageGridList, pos) then
+      table.insert(self._hadCalcDamageGridList, pos)
       local scope = SkillScopeResult:New(SkillScopeType.None, pos, {pos}, {pos})
       local targetIDArray = targetSelector:DoSelectSkillTarget(casterEntity, SkillTargetType.MonsterTrap, scope)
       local canExtend = false
-      if targetIDArray and (table.count)(targetIDArray) > 0 then
+      if targetIDArray and 0 < table.count(targetIDArray) then
         local hasDamage = true
         if self._extendDamage == 1 and self._calcEffectFcuntion ~= nil then
           local baseIndex = self:_CalcBaseIndex(pos)
           local addDamagePercent = self._oneGridAddDamagePercent * (baseIndex - 1)
-          local results = (self._calcEffectFcuntion)(pos, targetIDArray, addDamagePercent)
-          for _,result in ipairs(results) do
+          local results = self._calcEffectFcuntion(pos, targetIDArray, addDamagePercent)
+          for _, result in ipairs(results) do
             local damageResult = result
             local damageInfoArray = damageResult:GetDamageInfoArray()
             if damageInfoArray then
-              for _,damageInfo in ipairs(damageInfoArray) do
+              for _, damageInfo in ipairs(damageInfoArray) do
                 if damageInfo:GetDamageType() == DamageType.Miss then
                   hasDamage = false
                   break
@@ -104,158 +87,94 @@ SkillScopeCalculator_PickUpFrontExtendWithDamage._CalcEachPosCross = function(se
             end
           end
         end
-        do
-          for _,id in ipairs(targetIDArray) do
-            local entity = world:GetEntityByID(R26_PC137)
-            -- DECOMPILER ERROR at PC148: Overwrote pending register: R26 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC154: Overwrote pending register: R26 in 'AssignReg'
-
-            if not (table.icontains)(R26_PC137, entity:GetID()) and hasDamage then
-              if entity:HasMonsterID() then
-                (table.insert)(R26_PC137, entity:GetID())
+        for _, id in ipairs(targetIDArray) do
+          local entity = world:GetEntityByID(id)
+          if not table.icontains(self._hadExtendTargetIDs, entity:GetID()) and hasDamage then
+            if entity:HasMonsterID() then
+              table.insert(self._hadExtendTargetIDs, entity:GetID())
+              canExtend = true
+            elseif entity:HasTrap() then
+              local trapID = entity:TrapID():GetTrapID()
+              local trapData = trapConfigData:GetTrapData(trapID)
+              if trapData.HPSliderType ~= 1 then
+                table.insert(self._hadExtendTargetIDs, entity:GetID())
                 canExtend = true
-              else
-                -- DECOMPILER ERROR at PC160: Overwrote pending register: R26 in 'AssignReg'
-
-                -- DECOMPILER ERROR at PC164: Overwrote pending register: R26 in 'AssignReg'
-
-                -- DECOMPILER ERROR at PC166: Overwrote pending register: R26 in 'AssignReg'
-
-                if entity:HasTrap() then
-                  local trapID = (entity:TrapID()):GetTrapID()
-                  -- DECOMPILER ERROR at PC168: Overwrote pending register: R26 in 'AssignReg'
-
-                  R26_PC137 = R26_PC137(trapConfigData, trapID)
-                  local trapData = nil
-                  if trapData.HPSliderType ~= 1 then
-                    (table.insert)(self._hadExtendTargetIDs, entity:GetID())
-                    canExtend = true
-                  end
-                end
               end
-            end
-          end
-          do
-            if canExtend then
-              for _,dir in ipairs(dirExtendList) do
-                local curDirAddGridList = self:_CalcScopeWithDirAndBlock(pos, dir, self._crossExtendLength)
-                ;
-                (table.appendArray)(addGridList, curDirAddGridList)
-              end
-            end
-            do
-              -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out IF_STMT
-
             end
           end
         end
       end
+      if canExtend then
+        for _, dir in ipairs(dirExtendList) do
+          local curDirAddGridList = self:_CalcScopeWithDirAndBlock(pos, dir, self._crossExtendLength)
+          table.appendArray(addGridList, curDirAddGridList)
+        end
+      end
     end
   end
-  do
-    if (table.count)(addGridList) > 0 then
-      local nextAddGridList = self:_CalcEachPosCross(addGridList, false, casterEntity)
-      ;
-      (table.appendArray)(addGridList, nextAddGridList)
-    end
-    return addGridList
+  if 0 < table.count(addGridList) then
+    local nextAddGridList = self:_CalcEachPosCross(addGridList, false, casterEntity)
+    table.appendArray(addGridList, nextAddGridList)
   end
+  return addGridList
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_PickUpFrontExtendWithDamage._CalcScopeWithDirAndBlock = function(self, gridPos, dir, length)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillScopeCalculator_PickUpFrontExtendWithDamage:_CalcScopeWithDirAndBlock(gridPos, dir, length)
   local addGridList = {}
   local baseIndex = -1
   local isBlocked = false
   for i = 0, length do
     local nextPos = Vector2(gridPos.x + i * dir.x, gridPos.y + i * dir.y)
-    if (self._gridFilter):IsValidPiecePos(nextPos) and not isBlocked and (self._calcBlock == 0 or not (table.icontains)(self._blocks, nextPos)) and not (table.icontains)(self._scopeGridList, nextPos) then
-      if baseIndex == -1 then
-        baseIndex = self:_CalcBaseIndex(gridPos)
-      end
-      local curIndex = baseIndex + i
-      -- DECOMPILER ERROR at PC55: Confused about usage of register: R13 in 'UnsetPending'
-
-      if not (self._scopeGridDictionary)[curIndex] then
-        (self._scopeGridDictionary)[curIndex] = {}
-      end
-      ;
-      (table.insert)((self._scopeGridDictionary)[curIndex], nextPos)
-      ;
-      (table.insert)(self._scopeGridList, nextPos)
-      ;
-      (table.insert)(addGridList, nextPos)
-    end
-    do
-      do
+    if self._gridFilter:IsValidPiecePos(nextPos) then
+      if not isBlocked and (self._calcBlock == 0 or not table.icontains(self._blocks, nextPos)) then
+        if not table.icontains(self._scopeGridList, nextPos) then
+          if baseIndex == -1 then
+            baseIndex = self:_CalcBaseIndex(gridPos)
+          end
+          local curIndex = baseIndex + i
+          if not self._scopeGridDictionary[curIndex] then
+            self._scopeGridDictionary[curIndex] = {}
+          end
+          table.insert(self._scopeGridDictionary[curIndex], nextPos)
+          table.insert(self._scopeGridList, nextPos)
+          table.insert(addGridList, nextPos)
+        end
+      else
         isBlocked = true
-        -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out DO_STMT
-
       end
     end
   end
   return addGridList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_PickUpFrontExtendWithDamage._CalcBaseIndex = function(self, gridPos)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillScopeCalculator_PickUpFrontExtendWithDamage:_CalcBaseIndex(gridPos)
   local baseIndex = 1
-  for i,posList in ipairs(self._scopeGridDictionary) do
-    if (table.icontains)(posList, gridPos) then
+  for i, posList in ipairs(self._scopeGridDictionary) do
+    if table.icontains(posList, gridPos) then
       baseIndex = i
       break
     end
   end
-  do
-    return baseIndex
-  end
+  return baseIndex
 end
 
 _class("SkillScopeGrid", Object)
 SkillScopeGrid = SkillScopeGrid
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeGrid.Constructor = function(self, index, gridPos, percent)
-  -- function num : 0_4
+function SkillScopeGrid:Constructor(index, gridPos, percent)
   self._index = index
   self._gridPos = gridPos
   self._percent = percent
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeGrid.GetIndex = function(self)
-  -- function num : 0_5
+function SkillScopeGrid:GetIndex()
   return self._index
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeGrid.GetGridPos = function(self)
-  -- function num : 0_6
+function SkillScopeGrid:GetGridPos()
   return self._gridPos
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeGrid.GetPercent = function(self)
-  -- function num : 0_7
+function SkillScopeGrid:GetPercent()
   return self._percent
 end
-
-

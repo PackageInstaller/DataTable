@@ -1,43 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_fade_in_out_entity_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayFadeInOutEntityInstruction", BaseInstruction)
 PlayFadeInOutEntityInstruction = PlayFadeInOutEntityInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayFadeInOutEntityInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayFadeInOutEntityInstruction:Constructor(paramList)
   self._fadeIn = paramList.fadeIn == "true"
   self._target = paramList.target
   self._duration = tonumber(paramList.duration)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFadeInOutEntityInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayFadeInOutEntityInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   if self._target == "self" then
     casterEntity:NewEnableGhost()
     self:DOFade(casterEntity, world)
-  else
-    if self._target == "player" then
-      local teamEntity = (world:Player()):GetCurrentTeamEntity()
-      local ePlayer = teamEntity:GetTeamLeaderPetEntity()
-      ePlayer:NewEnableGhost()
-      self:DOFade(ePlayer, world)
-    end
+  elseif self._target == "player" then
+    local teamEntity = world:Player():GetCurrentTeamEntity()
+    local ePlayer = teamEntity:GetTeamLeaderPetEntity()
+    ePlayer:NewEnableGhost()
+    self:DOFade(ePlayer, world)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFadeInOutEntityInstruction.DOFade = function(self, e, world)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayFadeInOutEntityInstruction:DOFade(e, world)
   local fadeIn = self._fadeIn
   self._duration = self._duration * 0.001
   if self._duration <= 0 then
@@ -46,43 +30,34 @@ PlayFadeInOutEntityInstruction.DOFade = function(self, e, world)
     else
       e:SetTransparentValue(0)
     end
-    return 
+    return
   end
   local tmpDuration = 0
   local factor = 0
-  local func = nil
+  local func
   if fadeIn then
     tmpDuration = 0
     factor = 1
-    func = function()
-    -- function num : 0_2_0 , upvalues : tmpDuration
-    do return tmpDuration <= 1 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
+    
+    function func()
+      return tmpDuration <= 1
+    end
   else
     tmpDuration = self._duration
     factor = -1
-    func = function()
-    -- function num : 0_2_1 , upvalues : tmpDuration
-    do return tmpDuration >= 0 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
+    
+    function func()
+      return 0 <= tmpDuration
+    end
   end
   local mathService = world:GetService("Math")
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_2 , upvalues : func, tmpDuration, _ENV, factor, self, mathService, e
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     while func() do
-      tmpDuration = tmpDuration + (UnityEngine.Time).deltaTime * factor
+      tmpDuration = tmpDuration + UnityEngine.Time.deltaTime * factor
       local tran = tmpDuration / self._duration
       tran = mathService:ClampValue(tran, 0, 1)
       e:SetTransparentValue(tran)
       YIELD(TT)
     end
-  end
-, self)
+  end, self)
 end
-
-

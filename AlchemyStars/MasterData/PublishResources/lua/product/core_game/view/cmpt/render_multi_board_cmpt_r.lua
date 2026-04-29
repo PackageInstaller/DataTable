@@ -1,145 +1,86 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/render_multi_board_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RenderMultiBoardComponent", Object)
 RenderMultiBoardComponent = RenderMultiBoardComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderMultiBoardComponent.Constructor = function(self)
-  -- function num : 0_0
+function RenderMultiBoardComponent:Constructor()
   self._multiBoard = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderMultiBoardComponent.Dispose = function(self)
-  -- function num : 0_1
+function RenderMultiBoardComponent:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderMultiBoardComponent.GetCurBoard = function(self, boardIndex)
-  -- function num : 0_2
+function RenderMultiBoardComponent:GetCurBoard(boardIndex)
   if not self._multiBoard then
     self._multiBoard = {}
   end
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._multiBoard)[boardIndex] then
-    (self._multiBoard)[boardIndex] = {}
+  if not self._multiBoard[boardIndex] then
+    self._multiBoard[boardIndex] = {}
   end
-  local curBoard = (self._multiBoard)[boardIndex]
+  local curBoard = self._multiBoard[boardIndex]
   return curBoard
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderMultiBoardComponent.GetGridRenderEntity = function(self, boardIndex, pos)
-  -- function num : 0_3
+function RenderMultiBoardComponent:GetGridRenderEntity(boardIndex, pos)
   local curBoard = self:GetCurBoard(boardIndex)
-  if not curBoard or not pos or not (curBoard._gridEntityTable)[pos.x] or not ((curBoard._gridEntityTable)[pos.x])[pos.y] then
+  if not (curBoard and pos and curBoard._gridEntityTable[pos.x]) or not curBoard._gridEntityTable[pos.x][pos.y] then
     return nil
   end
-  return ((curBoard._gridEntityTable)[pos.x])[pos.y]
+  return curBoard._gridEntityTable[pos.x][pos.y]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderMultiBoardComponent.SetGridRenderEntityData = function(self, boardIndex, pos, gridEntity)
-  -- function num : 0_4
+function RenderMultiBoardComponent:SetGridRenderEntityData(boardIndex, pos, gridEntity)
   local curBoard = self:GetCurBoard(boardIndex)
   if not curBoard._gridEntityTable then
     curBoard._gridEntityTable = {}
   end
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R5 in 'UnsetPending'
-
-  if not (curBoard._gridEntityTable)[pos.x] then
-    (curBoard._gridEntityTable)[pos.x] = {}
+  if not curBoard._gridEntityTable[pos.x] then
+    curBoard._gridEntityTable[pos.x] = {}
   end
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R5 in 'UnsetPending'
-
-  if not ((curBoard._gridEntityTable)[pos.x])[pos.y] then
-    ((curBoard._gridEntityTable)[pos.x])[pos.y] = {}
+  if not curBoard._gridEntityTable[pos.x][pos.y] then
+    curBoard._gridEntityTable[pos.x][pos.y] = {}
   end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((curBoard._gridEntityTable)[pos.x])[pos.y] = gridEntity
+  curBoard._gridEntityTable[pos.x][pos.y] = gridEntity
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderMultiBoardComponent.RemoveGridRenderEntityData = function(self, boardIndex, pos)
-  -- function num : 0_5
+function RenderMultiBoardComponent:RemoveGridRenderEntityData(boardIndex, pos)
   local curBoard = self:GetCurBoard(boardIndex)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not ((curBoard._gridEntityTable)[pos.x])[pos.y] then
-    ((curBoard._gridEntityTable)[pos.x])[pos.y] = {}
+  if not curBoard._gridEntityTable[pos.x][pos.y] then
+    curBoard._gridEntityTable[pos.x][pos.y] = {}
   end
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((curBoard._gridEntityTable)[pos.x])[pos.y] = nil
+  curBoard._gridEntityTable[pos.x][pos.y] = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderMultiBoardComponent.SetMultiBoardRootGameObject = function(self, boardIndex, boardRootGameObject)
-  -- function num : 0_6
+function RenderMultiBoardComponent:SetMultiBoardRootGameObject(boardIndex, boardRootGameObject)
   local curBoard = self:GetCurBoard(boardIndex)
   curBoard.boardRoot = boardRootGameObject
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderMultiBoardComponent.GetMultiBoardRootGameObject = function(self, boardIndex)
-  -- function num : 0_7
+function RenderMultiBoardComponent:GetMultiBoardRootGameObject(boardIndex)
   local curBoard = self:GetCurBoard(boardIndex)
   return curBoard.boardRoot
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RenderMultiBoard = function(self)
-  -- function num : 0_8
-  return self:GetComponent((self.WEComponentsEnum).RenderMultiBoard)
+function Entity:RenderMultiBoard()
+  return self:GetComponent(self.WEComponentsEnum.RenderMultiBoard)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasRenderMultiBoard = function(self)
-  -- function num : 0_9
-  return self:HasComponent((self.WEComponentsEnum).RenderMultiBoard)
+function Entity:HasRenderMultiBoard()
+  return self:HasComponent(self.WEComponentsEnum.RenderMultiBoard)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddRenderMultiBoard = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderMultiBoard
+function Entity:AddRenderMultiBoard()
+  local index = self.WEComponentsEnum.RenderMultiBoard
   local component = RenderMultiBoardComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRenderMultiBoard = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderMultiBoard
+function Entity:ReplaceRenderMultiBoard()
+  local index = self.WEComponentsEnum.RenderMultiBoard
   local component = RenderMultiBoardComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveRenderMultiBoard = function(self)
-  -- function num : 0_12
+function Entity:RemoveRenderMultiBoard()
   if self:HasRenderMultiBoard() then
-    self:RemoveComponent((self.WEComponentsEnum).RenderMultiBoard)
+    self:RemoveComponent(self.WEComponentsEnum.RenderMultiBoard)
   end
 end
-
-

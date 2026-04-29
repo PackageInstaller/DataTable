@@ -1,60 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_gl/ui_haute_couture_draw_charge_main_gl.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawChargeMainGL", UIHauteCoutureDrawChargeBase)
 UIHauteCoutureDrawChargeMainGL = UIHauteCoutureDrawChargeMainGL
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawChargeMainGL.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawChargeMainGL:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeMainGL.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCoutureDrawChargeMainGL:OnShow(uiParams)
   self:InitWidgets()
   self:_OnValue()
   self:AddEventBase()
   self:AttachEvent(GameEventType.ItemCountChanged, self.OnItemCountChange)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeMainGL.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHauteCoutureDrawChargeMainGL:OnHide()
   self:RemoveEventBase()
   self:DetachEvent(GameEventType.ItemCountChanged, self.OnItemCountChange)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeMainGL.OnItemCountChange = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshSeniorSkinRedPoint)
+function UIHauteCoutureDrawChargeMainGL:OnItemCountChange()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshSeniorSkinRedPoint)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeMainGL.InitWidgets = function(self)
-  -- function num : 0_4
+function UIHauteCoutureDrawChargeMainGL:InitWidgets()
   self:InitWidgetsBase()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeMainGL._OnValue = function(self)
-  -- function num : 0_5
+function UIHauteCoutureDrawChargeMainGL:_OnValue()
   self:_OnValueBase()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeMainGL.GetItemImpl = function(self)
-  -- function num : 0_6
+function UIHauteCoutureDrawChargeMainGL:GetItemImpl()
   return "UIHauteCoutureDrawChargeItemGL"
 end
-
-

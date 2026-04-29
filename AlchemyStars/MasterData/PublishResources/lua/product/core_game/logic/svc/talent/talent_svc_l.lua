@@ -1,85 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/talent/talent_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("TalentService", BaseService)
 TalentService = TalentService
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-TalentService.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function TalentService:Constructor(world)
   self._world = world
   self._parseTalentParam = {}
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseTalentParam)[TalentType.Buff] = TalentAddBuffParam
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseTalentParam)[TalentType.MasterSkill] = TalentMasterSkillParam
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseTalentParam)[TalentType.AddRoundCount] = TalentAddRoundCountParam
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseTalentParam)[TalentType.AddChangeTeamLeaderCount] = TalentAddChangeTeamLeaderCountParam
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseTalentParam)[TalentType.ChooseRelic] = TalentChooseRelicParam
+  self._parseTalentParam[TalentType.Buff] = TalentAddBuffParam
+  self._parseTalentParam[TalentType.MasterSkill] = TalentMasterSkillParam
+  self._parseTalentParam[TalentType.AddRoundCount] = TalentAddRoundCountParam
+  self._parseTalentParam[TalentType.AddChangeTeamLeaderCount] = TalentAddChangeTeamLeaderCountParam
+  self._parseTalentParam[TalentType.ChooseRelic] = TalentChooseRelicParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentService.GetTalentComponent = function(self)
-  -- function num : 0_1
-  local talentCmpt = ((self._world):GetBoardEntity()):Talent()
+function TalentService:GetTalentComponent()
+  local talentCmpt = self._world:GetBoardEntity():Talent()
   return talentCmpt
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentService.HasTalentData = function(self, talentType)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._world):GetRunningPosition() == WorldRunPostion.Performance then
+function TalentService:HasTalentData(talentType)
+  if self._world:GetRunningPosition() == WorldRunPostion.Performance then
     return false
   end
   local talentCmpt = self:GetTalentComponent()
   return talentCmpt:HasTalentData(talentType)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentService.GetTalentData = function(self, talentType)
-  -- function num : 0_3
+function TalentService:GetTalentData(talentType)
   local talentCmpt = self:GetTalentComponent()
   return talentCmpt:GetTalentDataList(talentType)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentService.ParseTalentData_MiniMaze = function(self, talentTreeSkills, unlockRelicIDs)
-  -- function num : 0_4 , upvalues : _ENV
+function TalentService:ParseTalentData_MiniMaze(talentTreeSkills, unlockRelicIDs)
   local talentCmpt = self:GetTalentComponent()
   talentCmpt:SetUnlockRelicIDList(unlockRelicIDs)
-  if (table.count)(talentTreeSkills) < 1 then
-    return 
+  if table.count(talentTreeSkills) < 1 then
+    return
   end
-  for _,talent in ipairs(talentTreeSkills) do
-    local talentCfg = (Cfg.cfg_mini_maze_talent)[talent.skill_id]
+  for _, talent in ipairs(talentTreeSkills) do
+    local talentCfg = Cfg.cfg_mini_maze_talent[talent.skill_id]
     if not talentCfg or not talentCfg.Param then
-      (Log.exception)("ParseTalentData cant find talent :", talent.skill_id)
-      return 
+      Log.exception("ParseTalentData cant find talent :", talent.skill_id)
+      return
     end
-    local paramClassType = (self._parseTalentParam)[talentCfg.Type]
+    local paramClassType = self._parseTalentParam[talentCfg.Type]
     if paramClassType == nil then
-      (Log.exception)("ParseTalentData cant find talentType :", talentCfg.Type)
-      return 
+      Log.exception("ParseTalentData cant find talentType :", talentCfg.Type)
+      return
     end
     if talentCfg.Type ~= TalentType.MasterSkill or talent.select ~= 0 then
       local talentParam = paramClassType:New(talentCfg.Param, talentCfg.Type, talent.level)
@@ -88,28 +54,25 @@ TalentService.ParseTalentData_MiniMaze = function(self, talentTreeSkills, unlock
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentService.ParseTalentData_Campaign = function(self, talentTreeSkills)
-  -- function num : 0_5 , upvalues : _ENV
+function TalentService:ParseTalentData_Campaign(talentTreeSkills)
   if not talentTreeSkills then
-    return 
+    return
   end
   local talentCmpt = self:GetTalentComponent()
-  if (table.count)(talentTreeSkills) < 1 then
-    return 
+  if table.count(talentTreeSkills) < 1 then
+    return
   end
-  for _,talentID in ipairs(talentTreeSkills) do
-    local talentCfg = (Cfg.cfg_battle_talent)[talentID]
+  for _, talentID in ipairs(talentTreeSkills) do
+    local talentCfg = Cfg.cfg_battle_talent[talentID]
     if not talentCfg then
-      (Log.exception)("ParseTalentData_Campaign cant find talent :", talentID)
-      return 
+      Log.exception("ParseTalentData_Campaign cant find talent :", talentID)
+      return
     end
     if talentCfg.Param then
-      local paramClassType = (self._parseTalentParam)[talentCfg.Type]
+      local paramClassType = self._parseTalentParam[talentCfg.Type]
       if paramClassType == nil then
-        (Log.exception)("ParseTalentData_Campaign cant find talentType :", talentCfg.Type)
-        return 
+        Log.exception("ParseTalentData_Campaign cant find talentType :", talentCfg.Type)
+        return
       end
       local talentLevel = 1
       local talentParam = paramClassType:New(talentCfg.Param, talentCfg.Type, talentLevel)
@@ -118,18 +81,12 @@ TalentService.ParseTalentData_Campaign = function(self, talentTreeSkills)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentService.GetUnlockRelicIDList = function(self)
-  -- function num : 0_6
+function TalentService:GetUnlockRelicIDList()
   local talentCmpt = self:GetTalentComponent()
   return talentCmpt:GetUnlockRelicIDList()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentService.NeedChooseOpeningRelic = function(self)
-  -- function num : 0_7
+function TalentService:NeedChooseOpeningRelic()
   local talentCmpt = self:GetTalentComponent()
   if talentCmpt:IsChosenOpeningRelic() then
     return false
@@ -141,37 +98,34 @@ TalentService.NeedChooseOpeningRelic = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentService.InitTalentBuff = function(self, GameStartBuffs)
-  -- function num : 0_8 , upvalues : _ENV
+function TalentService:InitTalentBuff(GameStartBuffs)
   if not self:HasTalentData(TalentType.Buff) then
-    return 
+    return
   end
-  local buffLogic = (self._world):GetService("BuffLogic")
+  local buffLogic = self._world:GetService("BuffLogic")
   local paramList = self:GetTalentData(TalentType.Buff)
-  for _,param in ipairs(paramList) do
+  for _, param in ipairs(paramList) do
     local ret = buffLogic:AddBuffByTargetType(param:GetBuffID(), param:GetBuffTargetType(), param:GetBuffTargetParam())
-    for _,inst in ipairs(ret) do
-      GameStartBuffs[#GameStartBuffs + 1] = {inst:Entity(), inst:BuffSeq()}
+    for _, inst in ipairs(ret) do
+      GameStartBuffs[#GameStartBuffs + 1] = {
+        inst:Entity(),
+        inst:BuffSeq()
+      }
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentService.ChangeFeature = function(self, featureList)
-  -- function num : 0_9 , upvalues : _ENV
+function TalentService:ChangeFeature(featureList)
   if not self:HasTalentData(TalentType.MasterSkill) then
-    return 
+    return
   end
   local paramList = self:GetTalentData(TalentType.MasterSkill)
-  for _,param in ipairs(paramList) do
+  for _, param in ipairs(paramList) do
     local cfgFeatureList = param:GetFeatureList()
     if cfgFeatureList then
       local featureCfg = cfgFeatureList.feature
       if featureCfg then
-        for type,data in pairs(featureCfg) do
+        for type, data in pairs(featureCfg) do
           featureList[type] = data
         end
       end
@@ -179,62 +133,43 @@ TalentService.ChangeFeature = function(self, featureList)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentService.GetAddRoundCount = function(self, levelID)
-  -- function num : 0_10 , upvalues : _ENV
+function TalentService:GetAddRoundCount(levelID)
   local count = 0
   if self:HasTalentData(TalentType.AddRoundCount) then
     local paramList = self:GetTalentData(TalentType.AddRoundCount)
-    for _,param in ipairs(paramList) do
+    for _, param in ipairs(paramList) do
       count = count + param:GetAddCountByLevelID(levelID)
     end
   end
-  do
-    return count
-  end
+  return count
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentService.GetAddChangeTeamLeaderCount = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function TalentService:GetAddChangeTeamLeaderCount()
   local count = 0
   if self:HasTalentData(TalentType.AddChangeTeamLeaderCount) then
     local paramList = self:GetTalentData(TalentType.AddChangeTeamLeaderCount)
-    for _,param in ipairs(paramList) do
+    for _, param in ipairs(paramList) do
       count = count + param:GetAddCount()
     end
   end
-  do
-    return count
-  end
+  return count
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentService.GetChooseRelicParam = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function TalentService:GetChooseRelicParam()
   local groupID = 0
   local randomCount = 0
   if self:HasTalentData(TalentType.ChooseRelic) then
     local paramList = self:GetTalentData(TalentType.ChooseRelic)
-    for _,param in ipairs(paramList) do
+    for _, param in ipairs(paramList) do
       local tempGroupID = param:GetGroupID()
       local tempRandomCount = param:GetRandomCount()
       if groupID < tempGroupID then
         groupID = tempGroupID
         randomCount = tempRandomCount
-      else
-        if tempGroupID == groupID and randomCount < tempRandomCount then
-          randomCount = tempRandomCount
-        end
+      elseif tempGroupID == groupID and tempRandomCount > randomCount then
+        randomCount = tempRandomCount
       end
     end
   end
-  do
-    return groupID, randomCount
-  end
+  return groupID, randomCount
 end
-
-

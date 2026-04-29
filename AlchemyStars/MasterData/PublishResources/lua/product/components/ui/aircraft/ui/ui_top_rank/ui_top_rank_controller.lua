@@ -1,70 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_top_rank/ui_top_rank_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITopRankController", UIController)
 UITopRankController = UITopRankController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITopRankController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UITopRankController:OnShow(uiParams)
   self._animPlaying = false
-  local frameTime = 16.666666666667
+  local frameTime = 16.666666666666668
   self.maxLvTime_start = frameTime * 0
   self.maxLvTime_end = frameTime * 40
   self.maxLvTime_Gaps = self.maxLvTime_end - self.maxLvTime_start
   self.accTime = 0
   self._showCountMax = 5
   self._itemCountPerRow = 1
-  self._petModule = (GameGlobal.GetModule)(PetModule)
-  self._passList = (self._module):TacticPeakRewardedList()
+  self._petModule = GameGlobal.GetModule(PetModule)
+  self._passList = self._module:TacticPeakRewardedList()
   self:GetComponents()
   self:OnValue()
   self:AddListeners()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._module = (GameGlobal.GetModule)(AircraftModule)
-  local req = (self._module):RequestRefreshTacticRoom(TT)
+function UITopRankController:LoadDataOnEnter(TT, res, uiParams)
+  self._module = GameGlobal.GetModule(AircraftModule)
+  local req = self._module:RequestRefreshTacticRoom(TT)
   if req:GetSucc() then
     res:SetSucc(true)
   else
     res:SetSucc(false)
     local result = req:GetResult()
-    ;
-    (Log.error)("###[UITopRankController] RequestRefreshTacticRoom fail ! result --> ", result)
+    Log.error("###[UITopRankController] RequestRefreshTacticRoom fail ! result --> ", result)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.BackBtn = function(self)
-  -- function num : 0_2
+function UITopRankController:BackBtn()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.HelpBtn = function(self)
-  -- function num : 0_3
+function UITopRankController:HelpBtn()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.GetComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UITopRankController:GetComponents()
   self._ltBtn = self:GetUIComponent("UISelectObjectPath", "backBtns")
-  self._backBtns = (self._ltBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_4_0 , upvalues : self
+  self._backBtns = self._ltBtn:SpawnObject("UICommonTopButton")
+  self._backBtns:SetData(function()
     self:BackBtn()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "scrollView")
   self._scrollViewRect = self:GetUIComponent("RectTransform", "scrollView")
   self._lvTex = self:GetUIComponent("UILocalizationText", "lv")
@@ -75,311 +52,231 @@ UITopRankController.GetComponents = function(self)
   local s = self:GetUIComponent("UISelectObjectPath", "itemTips")
   self._tips = s:SpawnObject("UISelectInfo")
   self._atlas = self:GetAsset("UIAircraftDataBase.spriteatlas", LoadType.SpriteAtlas)
-  self._sp1 = (self._atlas):GetSprite("n8_simulator_rank_list1")
-  self._sp2 = (self._atlas):GetSprite("n8_simulator_rank_list2")
+  self._sp1 = self._atlas:GetSprite("n8_simulator_rank_list1")
+  self._sp2 = self._atlas:GetSprite("n8_simulator_rank_list2")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.AddListeners = function(self)
-  -- function num : 0_5
+function UITopRankController:AddListeners()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.OnValue = function(self)
-  -- function num : 0_6
+function UITopRankController:OnValue()
   self:Icon()
   self:Exp()
   self:Award()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.Icon = function(self)
-  -- function num : 0_7
+function UITopRankController:Icon()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.Exp = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UITopRankController:Exp()
   self._exp = self:GetExp()
-  local cfg_top_rank = (Cfg.cfg_peak)({})
+  local cfg_top_rank = Cfg.cfg_peak({})
   local cfg_max = cfg_top_rank[#cfg_top_rank]
   if not cfg_max then
-    (Log.error)("###[UITopRankController] cfg_max is nil !")
+    Log.error("###[UITopRankController] cfg_max is nil !")
   end
-  self._currentLv = (self._module):GetLvByExp(self._exp)
-  local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+  self._currentLv = self._module:GetLvByExp(self._exp)
+  local open_id = GameGlobal.GameLogic():GetOpenId()
   local key = "rank_save_lv_controller_" .. open_id
-  local saveExp = (LocalDB.GetInt)(key, 0)
-  ;
-  (LocalDB.SetInt)(key, self._exp)
-  local lastLv = (self._module):GetLvByExp(saveExp)
+  local saveExp = LocalDB.GetInt(key, 0)
+  LocalDB.SetInt(key, self._exp)
+  local lastLv = self._module:GetLvByExp(saveExp)
   self._expSliderAnim = false
   self._expSliderAnimStart = false
   if lastLv < self._currentLv then
     self.lastMaxLv = lastLv
     self.nowMaxLv = self._currentLv
-    ;
-    (Log.debug)("###[UITopRankController] 变化的等级:start->", lastLv, "|end->", self._currentLv)
+    Log.debug("###[UITopRankController] 变化的等级:start->", lastLv, "|end->", self._currentLv)
     self._expSliderAnim = true
     self._startExp = saveExp
     self._endExp = self._exp
   end
   if saveExp < self._exp then
-    (Log.debug)("###[UITopRankController] 变化的经验:start->", saveExp, "|end->", self._exp)
+    Log.debug("###[UITopRankController] 变化的经验:start->", saveExp, "|end->", self._exp)
   end
-  ;
-  (Log.debug)("###[UITopRankController] self._currentLv --> ", self._currentLv)
-  ;
-  (self._lvStrTex):SetText((StringTable.Get)("str_aircraft_tactic_rank_lv") .. ".")
-  ;
-  (self._lvTex):SetText(lastLv)
+  Log.debug("###[UITopRankController] self._currentLv --> ", self._currentLv)
+  self._lvStrTex:SetText(StringTable.Get("str_aircraft_tactic_rank_lv") .. ".")
+  self._lvTex:SetText(lastLv)
   local lvMax = cfg_max.ID
-  ;
-  (Log.debug)("###[UITopRankController] lvMax --> ", lvMax)
+  Log.debug("###[UITopRankController] lvMax --> ", lvMax)
   self._isExpFull = false
-  local rate, expTex = nil, nil
+  local rate, expTex
   if lvMax <= self._currentLv then
     self._isExpFull = true
     local lastLv = lvMax - 1
     local last_cfg = cfg_top_rank[lastLv]
     if not last_cfg then
-      (Log.error)("###[UITopRankController] cfg_top_rank is nil ! id --> ", lastLv)
+      Log.error("###[UITopRankController] cfg_top_rank is nil ! id --> ", lastLv)
     end
     local expLast = last_cfg.Exp
     local current_cfg = cfg_top_rank[lvMax]
     if not current_cfg then
-      (Log.error)("###[UITopRankController] cfg_top_rank is nil ! id --> ", lvMax)
+      Log.error("###[UITopRankController] cfg_top_rank is nil ! id --> ", lvMax)
     end
     local expCurrent = current_cfg.Exp
     rate = 1
     expTex = "<color=#fddb6f><size=50>" .. expCurrent - expLast .. "</size></color>/<color=#ffffff><size=40>" .. expCurrent - expLast .. "</size></color>"
   else
-    do
-      local nextLv = self._currentLv + 1
-      local nextExp = nil
-      local next_cfg = cfg_top_rank[nextLv]
-      if not next_cfg then
-        (Log.error)("###[UITopRankController] cfg_top_rank is nil ! id --> ", nextLv)
-      end
-      nextExp = next_cfg.Exp
-      local currentExp = nil
-      if self._currentLv == 0 then
-        currentExp = 0
-      else
-        local current_cfg = cfg_top_rank[self._currentLv]
-        if not current_cfg then
-          (Log.error)("###[UITopRankController] cfg_top_rank is nil ! id --> ", self._currentLv)
-        end
-        currentExp = current_cfg.Exp
-      end
-      do
-        do
-          if nextExp == currentExp then
-            (Log.error)("###[UITopRankController] nextExp == currentExp !")
-          end
-          rate = (self._exp - currentExp) / (nextExp - currentExp)
-          expTex = "<color=#fddb6f><size=50>" .. self._exp - currentExp .. "</size></color>/<color=#ffffff><size=40>" .. nextExp - currentExp .. "</size></color>"
-          ;
-          (self._expTex):SetText(expTex)
-          if self._expSliderAnim then
-            self:PlayExpSliderTween()
-          else
-            -- DECOMPILER ERROR at PC184: Confused about usage of register: R10 in 'UnsetPending'
-
-            ;
-            (self._expImg).fillAmount = rate
-          end
-        end
-      end
+    local nextLv = self._currentLv + 1
+    local nextExp
+    local next_cfg = cfg_top_rank[nextLv]
+    if not next_cfg then
+      Log.error("###[UITopRankController] cfg_top_rank is nil ! id --> ", nextLv)
     end
+    nextExp = next_cfg.Exp
+    local currentExp
+    if self._currentLv == 0 then
+      currentExp = 0
+    else
+      local current_cfg = cfg_top_rank[self._currentLv]
+      if not current_cfg then
+        Log.error("###[UITopRankController] cfg_top_rank is nil ! id --> ", self._currentLv)
+      end
+      currentExp = current_cfg.Exp
+    end
+    if nextExp == currentExp then
+      Log.error("###[UITopRankController] nextExp == currentExp !")
+    end
+    rate = (self._exp - currentExp) / (nextExp - currentExp)
+    expTex = "<color=#fddb6f><size=50>" .. self._exp - currentExp .. "</size></color>/<color=#ffffff><size=40>" .. nextExp - currentExp .. "</size></color>"
+  end
+  self._expTex:SetText(expTex)
+  if self._expSliderAnim then
+    self:PlayExpSliderTween()
+  else
+    self._expImg.fillAmount = rate
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.GetRateByExpAndLv = function(self, exp, lv)
-  -- function num : 0_9 , upvalues : _ENV
+function UITopRankController:GetRateByExpAndLv(exp, lv)
   local rate = 0
   local nextLv = lv + 1
-  local cfg_top_rank = ((Cfg.cfg_peak)({}))
-  local nextExp = nil
+  local cfg_top_rank = Cfg.cfg_peak({})
+  local nextExp
   local next_cfg = cfg_top_rank[nextLv]
   if not next_cfg then
-    (Log.error)("###[UITopRankController] cfg_top_rank is nil ! id --> ", nextLv)
+    Log.error("###[UITopRankController] cfg_top_rank is nil ! id --> ", nextLv)
   end
   nextExp = next_cfg.Exp
-  local currentExp = nil
+  local currentExp
   if lv == 0 then
     currentExp = 0
   else
     local current_cfg = cfg_top_rank[lv]
     if not current_cfg then
-      (Log.error)("###[UITopRankController] cfg_top_rank is nil ! id --> ", lv)
+      Log.error("###[UITopRankController] cfg_top_rank is nil ! id --> ", lv)
     end
     currentExp = current_cfg.Exp
   end
-  do
-    if nextExp == currentExp then
-      (Log.error)("###[UITopRankController] nextExp == currentExp !")
-    end
-    local rate = (exp - currentExp) / (nextExp - currentExp)
-    return rate
+  if nextExp == currentExp then
+    Log.error("###[UITopRankController] nextExp == currentExp !")
   end
+  local rate = (exp - currentExp) / (nextExp - currentExp)
+  return rate
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.PlayExpSliderTween = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UITopRankController:PlayExpSliderTween()
   if self._expSliderAnim then
     self._sliderAnimTime = 1.333
-    ;
-    (self:GetRateByExpAndLv(self._startExp, self.lastMaxLv))
-    local lastRate = nil
-    do
-      local nextRate = nil
-      if self._isExpFull then
-        nextRate = 1
-      else
-        nextRate = self:GetRateByExpAndLv(self._endExp, self.nowMaxLv)
-      end
-      -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._expImg).fillAmount = lastRate
-      if self._sliderTweener then
-        (self._sliderTweener):Kill()
-      end
-      if self._event then
-        ((GameGlobal.Timer)()):CancelEvent(self._event)
-        self._event = nil
-      end
-      self._event = ((GameGlobal.Timer)()):AddEvent(500, function()
-    -- function num : 0_10_0 , upvalues : self, _ENV, lastRate, nextRate
-    self._animPlaying = true
+    local lastRate = self:GetRateByExpAndLv(self._startExp, self.lastMaxLv)
+    local nextRate
     if self._isExpFull then
-      self._sliderTweener = ((self._expImg):DOFillAmount(1, self._sliderAnimTime)):SetEase(((DG.Tweening).Ease).OutQuad)
+      nextRate = 1
     else
-      local timeRate1 = (1 - lastRate) / (1 - lastRate + nextRate)
-      do
+      nextRate = self:GetRateByExpAndLv(self._endExp, self.nowMaxLv)
+    end
+    self._expImg.fillAmount = lastRate
+    if self._sliderTweener then
+      self._sliderTweener:Kill()
+    end
+    if self._event then
+      GameGlobal.Timer():CancelEvent(self._event)
+      self._event = nil
+    end
+    self._event = GameGlobal.Timer():AddEvent(500, function()
+      self._animPlaying = true
+      if self._isExpFull then
+        self._sliderTweener = self._expImg:DOFillAmount(1, self._sliderAnimTime):SetEase(DG.Tweening.Ease.OutQuad)
+      else
+        local timeRate1 = (1 - lastRate) / (1 - lastRate + nextRate)
         local timeRate2 = nextRate / (1 - lastRate + nextRate)
         local time1 = self._sliderAnimTime * timeRate1
         local time2 = self._sliderAnimTime * timeRate2
-        self._sliderTweener = (((self._expImg):DOFillAmount(1, time1)):SetEase(((DG.Tweening).Ease).Linear)):OnComplete(function()
-      -- function num : 0_10_0_0 , upvalues : self, nextRate, time2, _ENV
-      -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-      (self._expImg).fillAmount = 0
-      self._sliderTweener = ((self._expImg):DOFillAmount(nextRate, time2)):SetEase(((DG.Tweening).Ease).OutQuad)
-    end
-)
+        self._sliderTweener = self._expImg:DOFillAmount(1, time1):SetEase(DG.Tweening.Ease.Linear):OnComplete(function()
+          self._expImg.fillAmount = 0
+          self._sliderTweener = self._expImg:DOFillAmount(nextRate, time2):SetEase(DG.Tweening.Ease.OutQuad)
+        end)
       end
-    end
-  end
-)
-    end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.OnHide = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UITopRankController:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
   if self._sliderTweener then
-    (self._sliderTweener):Kill()
+    self._sliderTweener:Kill()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_12 , upvalues : _ENV
+function UITopRankController:OnUpdate(deltaTimeMS)
   if self._animPlaying then
     self.accTime = self.accTime + deltaTimeMS
     local percent_lv = (self.accTime - self.maxLvTime_start) / self.maxLvTime_Gaps
-    if self.maxLvTime_end <= self.accTime then
+    if self.accTime >= self.maxLvTime_end then
       percent_lv = 1
     end
-    do
-      if percent_lv <= 1 and percent_lv >= 0 then
-        local lvRec = (((DG.Tweening).DOVirtual).EasedValue)(self.lastMaxLv, self.nowMaxLv, percent_lv, ((DG.Tweening).Ease).OutQuad)
-        ;
-        (self._lvTex):SetText((math.floor)(lvRec))
-      end
-      if self.maxLvTime_end <= self.accTime then
-        self._animPlaying = false
-        ;
-        (Log.debug)("###[UITopRankController] 播放滚字动画结束,开始闪特效动画")
-        self:PlayLvEff()
-      end
+    if percent_lv <= 1 and 0 <= percent_lv then
+      local lvRec = DG.Tweening.DOVirtual.EasedValue(self.lastMaxLv, self.nowMaxLv, percent_lv, DG.Tweening.Ease.OutQuad)
+      self._lvTex:SetText(math.floor(lvRec))
+    end
+    if self.accTime >= self.maxLvTime_end then
+      self._animPlaying = false
+      Log.debug("###[UITopRankController] 播放滚字动画结束,开始闪特效动画")
+      self:PlayLvEff()
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.PlayLvEff = function(self)
-  -- function num : 0_13
-  (self._lvAnim):Play("uieff_TopRank_ChangeLevel")
+function UITopRankController:PlayLvEff()
+  self._lvAnim:Play("uieff_TopRank_ChangeLevel")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.GetExp = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local expID = ((Cfg.cfg_aircraft_values)[36]).IntValue
-  do
-    if expID then
-      local count = ((GameGlobal.GetModule)(RoleModule)):GetAssetCount(expID)
-      ;
-      (Log.debug)("###[UITopRankController] exp --> ", count)
-      return count
-    end
-    ;
-    (Log.error)("###[UITopRankController] expID is nil !")
-    return 0
+function UITopRankController:GetExp()
+  local expID = Cfg.cfg_aircraft_values[36].IntValue
+  if expID then
+    local count = GameGlobal.GetModule(RoleModule):GetAssetCount(expID)
+    Log.debug("###[UITopRankController] exp --> ", count)
+    return count
   end
+  Log.error("###[UITopRankController] expID is nil !")
+  return 0
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.Award = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local cfg_top_rank = (Cfg.cfg_peak)({})
+function UITopRankController:Award()
+  local cfg_top_rank = Cfg.cfg_peak({})
   local haveAwards = {}
-  for key,value in pairs(cfg_top_rank) do
+  for key, value in pairs(cfg_top_rank) do
     local awards = value.Award
     if awards then
-      (table.insert)(haveAwards, value)
+      table.insert(haveAwards, value)
     end
   end
-  ;
-  (table.sort)(haveAwards, function(a, b)
-    -- function num : 0_15_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(haveAwards, function(a, b)
+    return a.ID < b.ID
+  end)
   local stopList = {}
   local itemHeigth = 183
-  local scrollViewHeight = (((self._scrollViewRect).rect).size).y
-  local showCount = (math.ceil)(scrollViewHeight / itemHeigth)
-  ;
-  (Log.debug)("###[UITopRankController] showCount --> ", showCount)
+  local scrollViewHeight = self._scrollViewRect.rect.size.y
+  local showCount = math.ceil(scrollViewHeight / itemHeigth)
+  Log.debug("###[UITopRankController] showCount --> ", showCount)
   for i = 1, #haveAwards do
-    (table.insert)(stopList, haveAwards[i])
+    table.insert(stopList, haveAwards[i])
   end
   local count = #stopList
-  ;
-  (Log.debug)("###[UITopRankController] stopList count --> ", count)
+  Log.debug("###[UITopRankController] stopList count --> ", count)
   local revertList = {}
   for i = 1, #stopList do
     local item = stopList[#stopList - i + 1]
@@ -390,42 +287,28 @@ UITopRankController.Award = function(self)
   self:MoveContentPos()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.MoveContentPos = function(self)
-  -- function num : 0_16
+function UITopRankController:MoveContentPos()
   local gotIdx = #self._awardList
   for i = 1, #self._awardList do
-    local lv = ((self._awardList)[i]).ID
+    local lv = self._awardList[i].ID
     if lv <= self._currentLv then
       gotIdx = i - 1
       break
     end
   end
-  do
-    if gotIdx > 0 then
-      gotIdx = gotIdx - 1
-    end
-    ;
-    (self._scrollView):MovePanelToItemIndex(gotIdx, 0)
+  if 0 < gotIdx then
+    gotIdx = gotIdx - 1
   end
+  self._scrollView:MovePanelToItemIndex(gotIdx, 0)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController._ScrollView = function(self)
-  -- function num : 0_17
-  (self._scrollView):InitListView(#self._awardList, function(scrollView, index)
-    -- function num : 0_17_0 , upvalues : self
+function UITopRankController:_ScrollView()
+  self._scrollView:InitListView(#self._awardList, function(scrollView, index)
     return self:_InitRowItem(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController._InitRowItem = function(self, scrollView, index)
-  -- function num : 0_18
+function UITopRankController:_InitRowItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -444,136 +327,92 @@ UITopRankController._InitRowItem = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController._InitAwardItem = function(self, widget, index)
-  -- function num : 0_19
-  local awards = ((self._awardList)[index]).Award
-  local lv = ((self._awardList)[index]).ID
+function UITopRankController:_InitAwardItem(widget, index)
+  local awards = self._awardList[index].Award
+  local lv = self._awardList[index].ID
   local got = self:GetGotStateByLv(lv)
   widget:SetData(index, lv, self._currentLv, got, awards, self._sp1, self._sp2, function(lv)
-    -- function num : 0_19_0 , upvalues : self
     self:itemGetBtnClick(lv)
-  end
-, function(id, pos)
-    -- function num : 0_19_1 , upvalues : self
+  end, function(id, pos)
     self:itemIconClick(id, pos)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.GetGotStateByLv = function(self, lv)
-  -- function num : 0_20 , upvalues : _ENV
-  self._passList = (self._module):TacticPeakRewardedList()
-  return (table.icontains)(self._passList, lv)
+function UITopRankController:GetGotStateByLv(lv)
+  self._passList = self._module:TacticPeakRewardedList()
+  return table.icontains(self._passList, lv)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.itemIconClick = function(self, id, pos)
-  -- function num : 0_21
-  (self._tips):SetData(id, pos)
+function UITopRankController:itemIconClick(id, pos)
+  self._tips:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.itemGetBtnClick = function(self, lv)
-  -- function num : 0_22 , upvalues : _ENV
+function UITopRankController:itemGetBtnClick(lv)
   local lvList = {}
   lvList[1] = lv
-  ;
-  (Log.debug)("###[UITopRankController] itemGetBtnClick lv --> ", lv)
+  Log.debug("###[UITopRankController] itemGetBtnClick lv --> ", lv)
   self:GetRewardRequest(lvList)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController._ShowAwards = function(self, awards)
-  -- function num : 0_23 , upvalues : _ENV
+function UITopRankController:_ShowAwards(awards)
   local tempPets = {}
-  if #awards > 0 then
+  if 0 < #awards then
     for i = 1, #awards do
-      local ispet = (self._petModule):IsPetID((awards[i]).assetid)
+      local ispet = self._petModule:IsPetID(awards[i].assetid)
       if ispet then
-        (table.insert)(tempPets, awards[i])
+        table.insert(tempPets, awards[i])
       end
     end
   end
-  do
-    if #tempPets > 0 then
-      self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_23_0 , upvalues : _ENV, self, awards
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", awards)
-  end
-)
-    else
+  if 0 < #tempPets then
+    self:ShowDialog("UIPetObtain", tempPets, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
       self:ShowDialog("UIGetItemController", awards)
-    end
+    end)
+  else
+    self:ShowDialog("UIGetItemController", awards)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.oneKeyBtnOnClick = function(self, go)
-  -- function num : 0_24 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N8DefaultClick)
+function UITopRankController:oneKeyBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N8DefaultClick)
   local levelList = {}
   for i = 1, #self._awardList do
-    local lv = ((self._awardList)[i]).ID
+    local lv = self._awardList[i].ID
     local got = self:GetGotStateByLv(lv)
     if not got and lv <= self._currentLv then
-      (table.insert)(levelList, lv)
+      table.insert(levelList, lv)
     end
   end
-  if #levelList > 0 then
+  if 0 < #levelList then
     local lvStr = ""
     for i = 1, #levelList do
       lvStr = lvStr .. "|" .. i
     end
-    ;
-    (Log.debug)("###[UITopRankController] oneKeyBtnOnClick lvStr --> ", lvStr)
+    Log.debug("###[UITopRankController] oneKeyBtnOnClick lvStr --> ", lvStr)
     self:GetRewardRequest(levelList)
   else
-    do
-      ;
-      (Log.debug)("###[UITopRankController] oneKeyBtnOnClick lvStr is nil !")
-    end
+    Log.debug("###[UITopRankController] oneKeyBtnOnClick lvStr is nil !")
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.GetRewardRequest = function(self, levelList)
-  -- function num : 0_25 , upvalues : _ENV
+function UITopRankController:GetRewardRequest(levelList)
   self:Lock("UITopRankController:GetRewardRequest")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnGetRewardRequest, self, levelList)
+  GameGlobal.TaskManager():StartTask(self.OnGetRewardRequest, self, levelList)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopRankController.OnGetRewardRequest = function(self, TT, lvlist)
-  -- function num : 0_26 , upvalues : _ENV
-  local res, getLvList, rewardList = (self._module):TacticPeakReward(TT, lvlist)
+function UITopRankController:OnGetRewardRequest(TT, lvlist)
+  local res, getLvList, rewardList = self._module:TacticPeakReward(TT, lvlist)
   self:UnLock("UITopRankController:GetRewardRequest")
   if res:GetSucc() then
     local awards = rewardList
-    if awards ~= nil and #awards > 0 then
+    if awards ~= nil and 0 < #awards then
       self:_ShowAwards(awards)
     end
-    self._passList = (self._module):TacticPeakRewardedList()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTopRankGetAward, getLvList)
+    self._passList = self._module:TacticPeakRewardedList()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTopRankGetAward, getLvList)
   else
-    do
-      local result = res:GetResult()
-      ;
-      (Log.error)("###[UITopRankController] GetAward fail ! result --> ", result)
-    end
+    local result = res:GetResult()
+    Log.error("###[UITopRankController] GetAward fail ! result --> ", result)
   end
 end
-
-

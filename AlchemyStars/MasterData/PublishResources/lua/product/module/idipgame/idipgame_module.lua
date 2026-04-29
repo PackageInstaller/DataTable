@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/idipgame/idipgame_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("IdipgameModule", GameModule)
 IdipgameModule = IdipgameModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-IdipgameModule.Constructor = function(self)
-  -- function num : 0_0
+function IdipgameModule:Constructor()
   self._banacc_end_time = 0
   self._banacc_cause = ""
   self._shutup_end_time = 0
@@ -22,42 +15,24 @@ IdipgameModule.Constructor = function(self)
   self._relogin = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-IdipgameModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((IdipgameModule.super).Init)(self)
-  ;
-  (self.caller):RegisterPushHandler(CEventNotifyIDIPBan, self.HandleMsg, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventNotifyIDIPRelogin, self.HandleReloginMsg, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushGuideChange, self.HandleGuide, self)
+function IdipgameModule:Init()
+  IdipgameModule.super.Init(self)
+  self.caller:RegisterPushHandler(CEventNotifyIDIPBan, self.HandleMsg, self)
+  self.caller:RegisterPushHandler(CEventNotifyIDIPRelogin, self.HandleReloginMsg, self)
+  self.caller:RegisterPushHandler(CEventPushGuideChange, self.HandleGuide, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-IdipgameModule.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.caller):UnRegisterPushHandler(CEventNotifyIDIPBan)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventNotifyIDIPRelogin)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventPushGuideChange)
-  ;
-  ((IdipgameModule.super).Dispose)(self)
+function IdipgameModule:Dispose()
+  self.caller:UnRegisterPushHandler(CEventNotifyIDIPBan)
+  self.caller:UnRegisterPushHandler(CEventNotifyIDIPRelogin)
+  self.caller:UnRegisterPushHandler(CEventPushGuideChange)
+  IdipgameModule.super.Dispose(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-IdipgameModule.Update = function(self)
-  -- function num : 0_3
+function IdipgameModule:Update()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-IdipgameModule.ClearData = function(self)
-  -- function num : 0_4
+function IdipgameModule:ClearData()
   self._banacc_end_time = 0
   self._banacc_cause = ""
   self._shutup_end_time = 0
@@ -71,22 +46,16 @@ IdipgameModule.ClearData = function(self)
   self._relogin = false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-IdipgameModule.ShutupHandle = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function IdipgameModule:ShutupHandle()
   self:CheckTime()
   if self._shutup_end_time > 0 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.IdipBanDataEvent, IDIPBanType.IDIPBan_Shutup)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.IdipBanDataEvent, IDIPBanType.IDIPBan_Shutup)
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-IdipgameModule.TextBanHandle = function(self, idipType)
-  -- function num : 0_6 , upvalues : _ENV
+function IdipgameModule:TextBanHandle(idipType)
   if idipType ~= IDIPBanType.IDIPBan_Nick and idipType ~= IDIPBanType.IDIPBan_Signs and idipType ~= IDIPBanType.IDIPBan_Teamdes then
     return false
   end
@@ -94,33 +63,26 @@ IdipgameModule.TextBanHandle = function(self, idipType)
   if ct <= 0 then
     return false
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.IdipBanDataEvent, idipType)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.IdipBanDataEvent, idipType)
   return true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-IdipgameModule.GetServerTime = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local tmSecond, nMilliSecond = (math.modf)(time_mod:GetServerTime() / 1000)
+function IdipgameModule:GetServerTime()
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local tmSecond, nMilliSecond = math.modf(time_mod:GetServerTime() / 1000)
   return tmSecond
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-IdipgameModule.CheckTime = function(self)
-  -- function num : 0_8
+function IdipgameModule:CheckTime()
   local ct = self:GetServerTime()
-  local cb = function(timeField, descField)
-    -- function num : 0_8_0 , upvalues : ct, self
-    if self["_" .. timeField] <= ct then
+  
+  local function cb(timeField, descField)
+    if ct >= self["_" .. timeField] then
       self["_" .. timeField] = 0
       self["_" .. descField] = ""
     end
   end
-
+  
   cb("banacc_end_time", "banacc_cause")
   cb("shutup_end_time", "shutup_cause")
   cb("nick_end_time", "nick_cause")
@@ -128,90 +90,60 @@ IdipgameModule.CheckTime = function(self)
   cb("teamdes_end_time", "teamdes_cause")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-IdipgameModule.GetData = function(self, idipType)
-  -- function num : 0_9 , upvalues : _ENV
+function IdipgameModule:GetData(idipType)
   self:CheckTime()
   if idipType == IDIPBanType.IDIPBan_Account then
     return self._banacc_end_time, self._banacc_cause
+  elseif idipType == IDIPBanType.IDIPBan_Shutup then
+    return self._shutup_end_time, self._shutup_cause
+  elseif idipType == IDIPBanType.IDIPBan_Nick then
+    return self._nick_end_time, self._nick_cause
+  elseif idipType == IDIPBanType.IDIPBan_Signs then
+    return self._signs_end_time, self._signs_cause
   else
-    if idipType == IDIPBanType.IDIPBan_Shutup then
-      return self._shutup_end_time, self._shutup_cause
-    else
-      if idipType == IDIPBanType.IDIPBan_Nick then
-        return self._nick_end_time, self._nick_cause
-      else
-        if idipType == IDIPBanType.IDIPBan_Signs then
-          return self._signs_end_time, self._signs_cause
-        else
-          return self._teamdes_end_time, self._teamdes_cause
-        end
-      end
-    end
+    return self._teamdes_end_time, self._teamdes_cause
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-IdipgameModule.IsRelogin = function(self)
-  -- function num : 0_10
+function IdipgameModule:IsRelogin()
   return self._relogin
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-IdipgameModule.HandleMsg = function(self, msg)
-  -- function num : 0_11
+function IdipgameModule:HandleMsg(msg)
   if msg == nil or msg.info == nil then
-    return 
+    return
   end
   self:SetMsgInfo(msg.info)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-IdipgameModule.HandleReloginMsg = function(self, msg)
-  -- function num : 0_12 , upvalues : _ENV
+function IdipgameModule:HandleReloginMsg(msg)
   if msg == nil then
-    return 
+    return
   end
   self._relogin = true
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.IdipBanDataEvent, nil)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.IdipBanDataEvent, nil)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-IdipgameModule.HandleGuide = function(self, msg)
-  -- function num : 0_13 , upvalues : _ENV
+function IdipgameModule:HandleGuide(msg)
   if msg == nil or msg.values == nil then
-    return 
+    return
   end
   SetGuideServerClose(msg.values)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-IdipgameModule.ChangeData = function(self, msgData, timeField, descField)
-  -- function num : 0_14
+function IdipgameModule:ChangeData(msgData, timeField, descField)
   self["_" .. timeField] = msgData[timeField]
   self["_" .. descField] = msgData[descField]
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-IdipgameModule.SetMsgInfo = function(self, info)
-  -- function num : 0_15 , upvalues : _ENV
+function IdipgameModule:SetMsgInfo(info)
   self:ChangeData(info, "banacc_end_time", "banacc_cause")
   self:ChangeData(info, "shutup_end_time", "shutup_cause")
   self:ChangeData(info, "nick_end_time", "nick_cause")
   self:ChangeData(info, "signs_end_time", "signs_cause")
   self:ChangeData(info, "teamdes_end_time", "teamdes_cause")
   if self._banacc_end_time > 0 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.IdipBanDataEvent, IDIPBanType.IDIPBan_Account)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.IdipBanDataEvent, IDIPBanType.IDIPBan_Account)
   end
 end
-
-

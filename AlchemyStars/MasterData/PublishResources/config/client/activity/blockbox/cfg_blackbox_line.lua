@@ -1,70 +1,193 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/blockbox/cfg_blackbox_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Position = 2, Rotation = 3, Pic = 4, ComponentID = 5}
+local key = {
+  ID = 1,
+  Position = 2,
+  Rotation = 3,
+  Pic = 4,
+  ComponentID = 5
+}
 local common = {
-{379, 13}
-, 
-{711, 13}
-, 
-{940, -10}
-, 
-{1308, 0}
-, 
-{1498, 64}
-, "bb_hxzt_di07"}
+  {379, 13},
+  {711, 13},
+  {940, -10},
+  {1308, 0},
+  {1498, 64},
+  "bb_hxzt_di07"
+}
 local config = {
-{1, common[1], 36, common[6], 110602801}
-, 
-{2, common[2], -38, common[6], 110602801}
-, 
-{3, common[3], 50, common[6], 110602801}
-, 
-{4, common[4], -42, common[6], 110602801}
-, 
-{5, common[5], 58, common[6], 110602801}
-, 
-{6, common[1], 36, common[6], 502902801}
-, 
-{7, common[2], -38, common[6], 502902801}
-, 
-{8, common[3], 50, common[6], 502902801}
-, 
-{9, common[4], -42, common[6], 502902801}
-, 
-{10, common[5], 58, common[6], 502902801}
-, 
-{11, common[1], 36, common[6], 507002801}
-, 
-{12, common[2], -38, common[6], 507002801}
-, 
-{13, common[3], 50, common[6], 507002801}
-, 
-{14, common[4], -42, common[6], 507002801}
-, 
-{15, common[5], 58, common[6], 507002801}
-, 
-{16, common[1], 36, common[6], 600102801}
-, 
-{17, common[2], -38, common[6], 600102801}
-, 
-{18, common[3], 50, common[6], 600102801}
-, 
-{19, common[4], -42, common[6], 600102801}
-, 
-{20, common[5], 58, common[6], 600102801}
-, 
-{21, common[1], 36, common[6], 509202801}
-, 
-{22, common[2], -38, common[6], 509202801}
-, 
-{23, common[3], 50, common[6], 509202801}
-, 
-{24, common[4], -42, common[6], 509202801}
-, 
-{25, common[5], 58, common[6], 509202801}
+  {
+    1,
+    common[1],
+    36,
+    common[6],
+    110602801
+  },
+  {
+    2,
+    common[2],
+    -38,
+    common[6],
+    110602801
+  },
+  {
+    3,
+    common[3],
+    50,
+    common[6],
+    110602801
+  },
+  {
+    4,
+    common[4],
+    -42,
+    common[6],
+    110602801
+  },
+  {
+    5,
+    common[5],
+    58,
+    common[6],
+    110602801
+  },
+  {
+    6,
+    common[1],
+    36,
+    common[6],
+    502902801
+  },
+  {
+    7,
+    common[2],
+    -38,
+    common[6],
+    502902801
+  },
+  {
+    8,
+    common[3],
+    50,
+    common[6],
+    502902801
+  },
+  {
+    9,
+    common[4],
+    -42,
+    common[6],
+    502902801
+  },
+  {
+    10,
+    common[5],
+    58,
+    common[6],
+    502902801
+  },
+  {
+    11,
+    common[1],
+    36,
+    common[6],
+    507002801
+  },
+  {
+    12,
+    common[2],
+    -38,
+    common[6],
+    507002801
+  },
+  {
+    13,
+    common[3],
+    50,
+    common[6],
+    507002801
+  },
+  {
+    14,
+    common[4],
+    -42,
+    common[6],
+    507002801
+  },
+  {
+    15,
+    common[5],
+    58,
+    common[6],
+    507002801
+  },
+  {
+    16,
+    common[1],
+    36,
+    common[6],
+    600102801
+  },
+  {
+    17,
+    common[2],
+    -38,
+    common[6],
+    600102801
+  },
+  {
+    18,
+    common[3],
+    50,
+    common[6],
+    600102801
+  },
+  {
+    19,
+    common[4],
+    -42,
+    common[6],
+    600102801
+  },
+  {
+    20,
+    common[5],
+    58,
+    common[6],
+    600102801
+  },
+  {
+    21,
+    common[1],
+    36,
+    common[6],
+    509202801
+  },
+  {
+    22,
+    common[2],
+    -38,
+    common[6],
+    509202801
+  },
+  {
+    23,
+    common[3],
+    50,
+    common[6],
+    509202801
+  },
+  {
+    24,
+    common[4],
+    -42,
+    common[6],
+    509202801
+  },
+  {
+    25,
+    common[5],
+    58,
+    common[6],
+    509202801
+  }
 }
 return config, "ID", key
-

@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/gm/gm_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("gm_cmd_info", Object)
 gm_cmd_info = gm_cmd_info
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-gm_cmd_info.Constructor = function(self)
-  -- function num : 0_0
+function gm_cmd_info:Constructor()
   self.m_cmd_type = ""
   self.m_cmd_name = ""
   self.m_cmd_desc = ""
   self.m_cmd_demo = ""
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
 gm_cmd_info._proto = {
-[1] = {"m_cmd_type", "string"}
-, 
-[2] = {"m_cmd_name", "string"}
-, 
-[3] = {"m_cmd_desc", "string"}
-, 
-[4] = {"m_cmd_demo", "string"}
+  [1] = {"m_cmd_type", "string"},
+  [2] = {"m_cmd_name", "string"},
+  [3] = {"m_cmd_desc", "string"},
+  [4] = {"m_cmd_demo", "string"}
 }
-

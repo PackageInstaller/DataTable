@@ -1,263 +1,176 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/build/home_build_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeBuildArea", Object)
 HomeBuildArea = HomeBuildArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeBuildArea.Constructor = function(self, area, belongBuildingArea)
-  -- function num : 0_0 , upvalues : _ENV
+function HomeBuildArea:Constructor(area, belongBuildingArea)
   self._homeArea = area
-  self._trans = (self._homeArea).transform
+  self._trans = self._homeArea.transform
   self._showGrid = false
   local inPoints = {}
-  for i = 1, ((self._homeArea).InterPoints).Count do
-    local p = ((self._homeArea).InterPoints)[i - 1]
+  for i = 1, self._homeArea.InterPoints.Count do
+    local p = self._homeArea.InterPoints[i - 1]
     inPoints[i] = Vector2(p.x, p.z)
   end
   inPoints[#inPoints + 1] = inPoints[1]
   local outPoints = {}
-  for i = 1, ((self._homeArea).ExterPoints).Count do
-    local p = ((self._homeArea).ExterPoints)[i - 1]
+  for i = 1, self._homeArea.ExterPoints.Count do
+    local p = self._homeArea.ExterPoints[i - 1]
     outPoints[i] = Vector2(p.x, p.z)
   end
   outPoints[#outPoints + 1] = outPoints[1]
-  self._buildHeight = (((self._homeArea).transform).position).y
+  self._buildHeight = self._homeArea.transform.position.y
   self._inPoly = BuildPoly:New(inPoints)
   self._outPoly = BuildPoly:New(outPoints)
   if not belongBuildingArea then
-    ((self._homeArea).gameObject):SetActive(false)
-    local terrainPlain = (GameObjectHelper.CreateEmpty)("TerrainPlain", nil)
-    local dragPlain = (GameObjectHelper.CreateEmpty)("DragPlain", nil)
-    ;
-    (GameObjectHelper.SetGameObjectLayer)(terrainPlain, HomeBuildLayer.Surface)
-    ;
-    (GameObjectHelper.SetGameObjectLayer)(dragPlain, HomeBuildLayer.Drag)
-    local plainPos = (BuildConfig.MaxCircle).Center
-    plainPos = Vector3(plainPos.x, self._buildHeight - 5e-05, plainPos.y)
-    local plainSize = Vector3((BuildConfig.MaxCircle).Radius * 2 + 100, 0.0001, (BuildConfig.MaxCircle).Radius * 2 + 100)
+    self._homeArea.gameObject:SetActive(false)
+    local terrainPlain = GameObjectHelper.CreateEmpty("TerrainPlain", nil)
+    local dragPlain = GameObjectHelper.CreateEmpty("DragPlain", nil)
+    GameObjectHelper.SetGameObjectLayer(terrainPlain, HomeBuildLayer.Surface)
+    GameObjectHelper.SetGameObjectLayer(dragPlain, HomeBuildLayer.Drag)
+    local plainPos = BuildConfig.MaxCircle.Center
+    plainPos = Vector3(plainPos.x, self._buildHeight - 5.0E-5, plainPos.y)
+    local plainSize = Vector3(BuildConfig.MaxCircle.Radius * 2 + 100, 1.0E-4, BuildConfig.MaxCircle.Radius * 2 + 100)
     self._terrainCollider = terrainPlain:AddComponent(typeof(UnityEngine.BoxCollider))
     self._dragCollider = dragPlain:AddComponent(typeof(UnityEngine.BoxCollider))
-    -- DECOMPILER ERROR at PC129: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (terrainPlain.transform).position = plainPos
-    -- DECOMPILER ERROR at PC131: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (dragPlain.transform).position = plainPos
-    -- DECOMPILER ERROR at PC133: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._terrainCollider).size = plainSize
-    -- DECOMPILER ERROR at PC135: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._dragCollider).size = plainSize
+    terrainPlain.transform.position = plainPos
+    dragPlain.transform.position = plainPos
+    self._terrainCollider.size = plainSize
+    self._dragCollider.size = plainSize
   else
-    do
-      self._belongBuildingArea = belongBuildingArea
-      self._meshRenderer = ((self._homeArea).gameObject):GetComponent(typeof(UnityEngine.MeshRenderer))
-      self._exterMat = ((self._meshRenderer).materials)[1]
-      local color = (self._exterMat):GetColor("_Color")
-      self._gridColor = Color(color:Get())
-      self:ShowGrid(false)
-      self:SetGridSpace(1)
-    end
+    self._belongBuildingArea = belongBuildingArea
   end
+  self._meshRenderer = self._homeArea.gameObject:GetComponent(typeof(UnityEngine.MeshRenderer))
+  self._exterMat = self._meshRenderer.materials[1]
+  local color = self._exterMat:GetColor("_Color")
+  self._gridColor = Color(color:Get())
+  self:ShowGrid(false)
+  self:SetGridSpace(1)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildArea.GetHeight = function(self)
-  -- function num : 0_1
+function HomeBuildArea:GetHeight()
   return self._buildHeight
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildArea.GetBelongBuildingArea = function(self)
-  -- function num : 0_2
+function HomeBuildArea:GetBelongBuildingArea()
   return self._belongBuildingArea
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildArea.Contains = function(self, pos)
-  -- function num : 0_3 , upvalues : _ENV
-  do
-    if self._belongBuildingArea then
-      local needRefreshPoly = false
-      if not self._pos or self._pos ~= (self._trans).position then
-        self._pos = (self._trans).position
-        needRefreshPoly = true
-      end
-      if not self._rot or self._rot ~= ((self._trans).eulerAngles).y then
-        self._rot = ((self._trans).eulerAngles).y
-        needRefreshPoly = true
-      end
-      if needRefreshPoly then
-        self:RefreshPolyWithOffset(Vector2((self._pos).x, (self._pos).z), self._rot)
-      end
+function HomeBuildArea:Contains(pos)
+  if self._belongBuildingArea then
+    local needRefreshPoly = false
+    if not self._pos or self._pos ~= self._trans.position then
+      self._pos = self._trans.position
+      needRefreshPoly = true
     end
-    do return (not (self._inPoly):Contains(pos) and (self._outPoly):Contains(pos)) end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+    if not self._rot or self._rot ~= self._trans.eulerAngles.y then
+      self._rot = self._trans.eulerAngles.y
+      needRefreshPoly = true
+    end
+    if needRefreshPoly then
+      self:RefreshPolyWithOffset(Vector2(self._pos.x, self._pos.z), self._rot)
+    end
   end
+  return not self._inPoly:Contains(pos) and self._outPoly:Contains(pos)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildArea.OnOutSide = function(self, pos)
-  -- function num : 0_4 , upvalues : _ENV
-  do
-    if self._belongBuildingArea then
-      local needRefreshPoly = false
-      if not self._pos or self._pos ~= (self._trans).position then
-        self._pos = (self._trans).position
-        needRefreshPoly = true
-      end
-      if not self._rot or self._rot ~= ((self._trans).eulerAngles).y then
-        self._rot = ((self._trans).eulerAngles).y
-        needRefreshPoly = true
-      end
-      if needRefreshPoly then
-        self:RefreshPolyWithOffset(Vector2((self._pos).x, (self._pos).z), self._rot)
-      end
+function HomeBuildArea:OnOutSide(pos)
+  if self._belongBuildingArea then
+    local needRefreshPoly = false
+    if not self._pos or self._pos ~= self._trans.position then
+      self._pos = self._trans.position
+      needRefreshPoly = true
     end
-    return not (self._outPoly):Contains(pos)
+    if not self._rot or self._rot ~= self._trans.eulerAngles.y then
+      self._rot = self._trans.eulerAngles.y
+      needRefreshPoly = true
+    end
+    if needRefreshPoly then
+      self:RefreshPolyWithOffset(Vector2(self._pos.x, self._pos.z), self._rot)
+    end
   end
+  return not self._outPoly:Contains(pos)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildArea.RefreshPolyWithOffset = function(self, offset, rot)
-  -- function num : 0_5 , upvalues : _ENV
-  if not offset then
-    offset = Vector2.zero
-  end
-  if not rot then
-    rot = 0
-  end
+function HomeBuildArea:RefreshPolyWithOffset(offset, rot)
+  offset = offset or Vector2.zero
+  rot = rot or 0
   local inPoints = {}
-  for i = 1, ((self._homeArea).InterPoints).Count do
-    local p = ((self._homeArea).InterPoints)[i - 1]
+  for i = 1, self._homeArea.InterPoints.Count do
+    local p = self._homeArea.InterPoints[i - 1]
     inPoints[i] = self:RotPoint(Vector2(p.x, p.z), rot) + offset
   end
   inPoints[#inPoints + 1] = inPoints[1]
   local outPoints = {}
-  for i = 1, ((self._homeArea).ExterPoints).Count do
-    local p = ((self._homeArea).ExterPoints)[i - 1]
+  for i = 1, self._homeArea.ExterPoints.Count do
+    local p = self._homeArea.ExterPoints[i - 1]
     outPoints[i] = self:RotPoint(Vector2(p.x, p.z), rot) + offset
   end
   outPoints[#outPoints + 1] = outPoints[1]
-  self._buildHeight = (((self._homeArea).transform).position).y
+  self._buildHeight = self._homeArea.transform.position.y
   self._inPoly = BuildPoly:New(inPoints)
   self._outPoly = BuildPoly:New(outPoints)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildArea.RotPoint = function(self, point, rot)
-  -- function num : 0_6 , upvalues : _ENV
+function HomeBuildArea:RotPoint(point, rot)
   if rot == 0 then
     return point
   end
   local rad = lmathext.deg2rad * rot
-  local sin = (math.sin)(rad)
-  local cos = (math.cos)(rad)
+  local sin = math.sin(rad)
+  local cos = math.cos(rad)
   local newX = point.x * cos + point.y * sin
   local newY = -point.x * sin + point.y * cos
   return Vector2(newX, newY)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildArea.SetDragHeight = function(self, posY)
-  -- function num : 0_7 , upvalues : _ENV
+function HomeBuildArea:SetDragHeight(posY)
   if self._dragCollider then
-    local pos = (self._dragCollider).center
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._dragCollider).center = Vector3(pos.x, posY - self._buildHeight, pos.z)
+    local pos = self._dragCollider.center
+    self._dragCollider.center = Vector3(pos.x, posY - self._buildHeight, pos.z)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildArea.ShowGrid = function(self, show)
-  -- function num : 0_8 , upvalues : _ENV
+function HomeBuildArea:ShowGrid(show)
   if show then
-    (self._exterMat):SetColor("_Color", self._gridColor)
+    self._exterMat:SetColor("_Color", self._gridColor)
   else
-    ;
-    (self._exterMat):SetColor("_Color", Color.clear)
+    self._exterMat:SetColor("_Color", Color.clear)
   end
   self._showGrid = show
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildArea.GetShowGrid = function(self)
-  -- function num : 0_9
+function HomeBuildArea:GetShowGrid()
   return self._showGrid
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildArea.ShowArea = function(self, show)
-  -- function num : 0_10
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
+function HomeBuildArea:ShowArea(show)
   if self._belongBuildingArea then
-    (self._meshRenderer).enabled = show
+    self._meshRenderer.enabled = show
   else
-    ;
-    ((self._homeArea).gameObject):SetActive(show)
+    self._homeArea.gameObject:SetActive(show)
   end
-  local exterArea = (((self._homeArea).gameObject).transform):Find("ExterArea")
+  local exterArea = self._homeArea.gameObject.transform:Find("ExterArea")
   if exterArea ~= nil then
-    (exterArea.gameObject):SetActive(show)
+    exterArea.gameObject:SetActive(show)
   end
   self:ShowGrid(false)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildArea.ShowMindMesh = function(self, isShow)
-  -- function num : 0_11
+function HomeBuildArea:ShowMindMesh(isShow)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildArea.GetArea = function(self)
-  -- function num : 0_12
+function HomeBuildArea:GetArea()
   return self._homeArea
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildArea.SetGridSpace = function(self, space)
-  -- function num : 0_13
+function HomeBuildArea:SetGridSpace(space)
   self._gridSpace = space
-  ;
-  (self._exterMat):SetFloat("_GridStep", space)
+  self._exterMat:SetFloat("_GridStep", space)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildArea.GetGridSpace = function(self)
-  -- function num : 0_14
+function HomeBuildArea:GetGridSpace()
   return self._gridSpace
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildArea.MinSpace = function(self)
-  -- function num : 0_15
+function HomeBuildArea:MinSpace()
   return 1
 end
-
-

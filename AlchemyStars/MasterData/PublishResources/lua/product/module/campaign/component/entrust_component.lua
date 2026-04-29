@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/entrust_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EntrustComponent", ICampaignComponent)
 EntrustComponent = EntrustComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-EntrustComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function EntrustComponent:Constructor()
   self.m_component_info = EntrustComponentInfo:New()
   self.m_client_data = EntrustComponetClientData:New()
   self.m_flag_levelId = 0
@@ -17,78 +10,57 @@ EntrustComponent.Constructor = function(self)
   self.m_local_last_mission = -1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function EntrustComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = EntrustComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function EntrustComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function EntrustComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_ENTRUST
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function EntrustComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   self:_RefreshClientData()
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent.GetCampaignMissionComponentId = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function EntrustComponent:GetCampaignMissionComponentId()
   return ECampaignMissionComponentId.ECampaignMissionComponentId_Entrust
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent.GetCampaignMissionParamKeyMap = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function EntrustComponent:GetCampaignMissionParamKeyMap()
   local ComponentInfo = self:ComponentInfo()
   local nCfgId = self:GetComponetCfgId(ComponentInfo.m_campaign_id, ComponentInfo.m_component_id)
-  return {[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId}
+  return {
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId
+  }
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent._inference_open = function(self, openlines, openevents, alllines, rewared_events)
-  -- function num : 0_7 , upvalues : _ENV
+function EntrustComponent:_inference_open(openlines, openevents, alllines, rewared_events)
   if alllines == nil then
-    return 
+    return
   end
-  for k,v in pairs(alllines) do
-    local cfg_entrust_line = (Cfg.cfg_campaign_entrust_line)[v]
-    for i,eventid in pairs(rewared_events) do
+  for k, v in pairs(alllines) do
+    local cfg_entrust_line = Cfg.cfg_campaign_entrust_line[v]
+    for i, eventid in pairs(rewared_events) do
       local peer_event_id = 0
       if eventid == cfg_entrust_line.LeftEventID then
         peer_event_id = cfg_entrust_line.RightEventID
-      else
-        if eventid == cfg_entrust_line.RightEventID then
-          peer_event_id = cfg_entrust_line.LeftEventID
-        end
+      elseif eventid == cfg_entrust_line.RightEventID then
+        peer_event_id = cfg_entrust_line.LeftEventID
       end
       if peer_event_id ~= 0 then
         openlines[v] = v
         openevents[peer_event_id] = peer_event_id
       end
-      local cfg_entrust_event = (Cfg.cfg_campaign_entrust_event)[eventid]
+      local cfg_entrust_event = Cfg.cfg_campaign_entrust_event[eventid]
       if cfg_entrust_event and cfg_entrust_event.TargetID then
         openevents[cfg_entrust_event.TargetID] = cfg_entrust_event.TargetID
       end
@@ -96,15 +68,12 @@ EntrustComponent._inference_open = function(self, openlines, openevents, allline
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent._passed = function(self, rewarded_events)
-  -- function num : 0_8 , upvalues : _ENV
+function EntrustComponent:_passed(rewarded_events)
   if rewarded_events == nil then
     return false
   end
-  for k,v in pairs(rewarded_events) do
-    local cfg_event = (Cfg.cfg_campaign_entrust_event)[v]
+  for k, v in pairs(rewarded_events) do
+    local cfg_event = Cfg.cfg_campaign_entrust_event[v]
     if cfg_event.EventType == EntrustEventType.EntrustEventType_End then
       return true
     end
@@ -112,329 +81,240 @@ EntrustComponent._passed = function(self, rewarded_events)
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent._IsNotCountEventType = function(self, eventType)
-  -- function num : 0_9 , upvalues : _ENV
-  local tb = {[EntrustEventType.EntrustEventType_Start] = true, [EntrustEventType.EntrustEventType_Transfer] = true}
+function EntrustComponent:_IsNotCountEventType(eventType)
+  local tb = {
+    [EntrustEventType.EntrustEventType_Start] = true,
+    [EntrustEventType.EntrustEventType_Transfer] = true
+  }
   return tb[eventType]
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent._IsBoxEventType = function(self, eventType)
-  -- function num : 0_10 , upvalues : _ENV
-  do return eventType == EntrustEventType.EntrustEventType_Box end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function EntrustComponent:_IsBoxEventType(eventType)
+  return eventType == EntrustEventType.EntrustEventType_Box
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent._totalevents = function(self, entrustid)
-  -- function num : 0_11 , upvalues : _ENV
-  local cfg_entrust = (Cfg.cfg_component_entrust)[entrustid]
+function EntrustComponent:_totalevents(entrustid)
+  local cfg_entrust = Cfg.cfg_component_entrust[entrustid]
   local total = 0
   local box_num = 0
   if cfg_entrust == nil then
     return box_num, total
   end
-  for k,v in pairs(cfg_entrust.EventID) do
-    local cfg_event = (Cfg.cfg_campaign_entrust_event)[v]
-    if not self:_IsBoxEventType(cfg_event.EventType) or not 1 then
-      local isBox = cfg_event == nil or 0
+  for k, v in pairs(cfg_entrust.EventID) do
+    local cfg_event = Cfg.cfg_campaign_entrust_event[v]
+    if cfg_event ~= nil then
+      local isBox = self:_IsBoxEventType(cfg_event.EventType) and 1 or 0
+      box_num = box_num + isBox
+      local notCount = self:_IsNotCountEventType(cfg_event.EventType) and -1 or 0
+      total = total + 1 + notCount
     end
-    box_num = box_num + isBox
-    local notCount = self:_IsNotCountEventType(cfg_event.EventType) and -1 or 0
-    total = total + 1 + notCount
   end
   return box_num, total
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent._completeddevents = function(self, rewarded_events)
-  -- function num : 0_12 , upvalues : _ENV
+function EntrustComponent:_completeddevents(rewarded_events)
   local completed = 0
   local box_num = 0
   if rewarded_events == nil then
     return box_num, completed
   end
-  for k,v in pairs(rewarded_events) do
-    local cfg_event = (Cfg.cfg_campaign_entrust_event)[v]
-    if not self:_IsBoxEventType(cfg_event.EventType) or not 1 then
-      local isBox = cfg_event == nil or 0
+  for k, v in pairs(rewarded_events) do
+    local cfg_event = Cfg.cfg_campaign_entrust_event[v]
+    if cfg_event ~= nil then
+      local isBox = self:_IsBoxEventType(cfg_event.EventType) and 1 or 0
+      box_num = box_num + isBox
+      local notCount = self:_IsNotCountEventType(cfg_event.EventType) and -1 or 0
+      completed = completed + 1 + notCount
     end
-    box_num = box_num + isBox
-    local notCount = self:_IsNotCountEventType(cfg_event.EventType) and -1 or 0
-    completed = completed + 1 + notCount
   end
   return box_num, completed
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent._put_start_to_open_events = function(self, openevents, allevents)
-  -- function num : 0_13 , upvalues : _ENV
-  for k,v in pairs(allevents) do
-    local cfg_event = (Cfg.cfg_campaign_entrust_event)[v]
+function EntrustComponent:_put_start_to_open_events(openevents, allevents)
+  for k, v in pairs(allevents) do
+    local cfg_event = Cfg.cfg_campaign_entrust_event[v]
     if cfg_event.EventType == EntrustEventType.EntrustEventType_Start then
       openevents[v] = v
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent._get_rewards = function(self, allevents)
-  -- function num : 0_14 , upvalues : _ENV
+function EntrustComponent:_get_rewards(allevents)
   local box_rewards = {}
   local passed_rewards = {}
-  for k,v in pairs(allevents) do
-    local cfg_event = (Cfg.cfg_campaign_entrust_event)[v]
+  for k, v in pairs(allevents) do
+    local cfg_event = Cfg.cfg_campaign_entrust_event[v]
     if cfg_event.EventType == EntrustEventType.EntrustEventType_End then
       for i = 1, #cfg_event.RewardList do
         local reward = RoleAsset:New()
-        reward.assetid = ((cfg_event.RewardList)[i])[1]
-        reward.count = ((cfg_event.RewardList)[i])[2]
-        ;
-        (table.insert)(passed_rewards, reward)
+        reward.assetid = cfg_event.RewardList[i][1]
+        reward.count = cfg_event.RewardList[i][2]
+        table.insert(passed_rewards, reward)
       end
-    else
-      do
-        if cfg_event.EventType == EntrustEventType.EntrustEventType_Box then
-          for i = 1, #cfg_event.RewardList do
-            local reward = RoleAsset:New()
-            reward.assetid = ((cfg_event.RewardList)[i])[1]
-            reward.count = ((cfg_event.RewardList)[i])[2]
-            ;
-            (table.insert)(box_rewards, reward)
-          end
-        end
-        do
-          -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+    elseif cfg_event.EventType == EntrustEventType.EntrustEventType_Box then
+      for i = 1, #cfg_event.RewardList do
+        local reward = RoleAsset:New()
+        reward.assetid = cfg_event.RewardList[i][1]
+        reward.count = cfg_event.RewardList[i][2]
+        table.insert(box_rewards, reward)
       end
     end
   end
   return box_rewards, passed_rewards
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent._RefreshClientData = function(self)
-  -- function num : 0_15
+function EntrustComponent:_RefreshClientData()
   local refreshClientData = self.RefreshClientData
   local id = self:GetComponentCfgId()
-  if self._hook ~= nil and (self._hook)[id] ~= nil then
-    refreshClientData = (self._hook)[id]
+  if self._hook ~= nil and self._hook[id] ~= nil then
+    refreshClientData = self._hook[id]
   end
   refreshClientData(self)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent.RefreshClientData = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function EntrustComponent:RefreshClientData()
   self.m_client_data = EntrustComponetClientData:New()
-  local cfg_entrust = (Cfg.cfg_component_entrust)({ComponentID = self:GetComponentCfgId()})
-  for _,v in pairs(cfg_entrust) do
+  local cfg_entrust = Cfg.cfg_component_entrust({
+    ComponentID = self:GetComponentCfgId()
+  })
+  for _, v in pairs(cfg_entrust) do
     local k = v.ID
     local data = EntrustLevelData:New()
-    if ((self.m_component_info).rewarded_events)[k] ~= nil then
-      data.rewarded_events = ((self.m_component_info).rewarded_events)[k]
+    if self.m_component_info.rewarded_events[k] ~= nil then
+      data.rewarded_events = self.m_component_info.rewarded_events[k]
     end
     self:_inference_open(data.open_lines, data.open_events, v.LineID, data.rewarded_events)
     data.passed = self:_passed(data.rewarded_events)
-    data.total_box = self:_totalevents(k)
-    data.opened_box = self:_completeddevents(data.rewarded_events)
-    if ((self.m_component_info).open_time)[k] ~= nil then
-      data.open_time = ((self.m_component_info).open_time)[k]
+    data.total_box, data.total_events = self:_totalevents(k)
+    data.opened_box, data.complete_events = self:_completeddevents(data.rewarded_events)
+    if self.m_component_info.open_time[k] ~= nil then
+      data.open_time = self.m_component_info.open_time[k]
     end
     if data.open_events == nil or #data.open_events == 0 then
       self:_put_start_to_open_events(data.open_events, v.EventID)
     end
-    data.box_rewards = self:_get_rewards(v.EventID)
-    -- DECOMPILER ERROR at PC75: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    ((self.m_client_data).datas)[k] = data
+    data.box_rewards, data.passed_rewards = self:_get_rewards(v.EventID)
+    self.m_client_data.datas[k] = data
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent.GetRewardedEvents = function(self)
-  -- function num : 0_17
-  return (self.m_component_info).rewarded_events
+function EntrustComponent:GetRewardedEvents()
+  return self.m_component_info.rewarded_events
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent.GetClientData = function(self)
-  -- function num : 0_18
+function EntrustComponent:GetClientData()
   return self.m_client_data
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent.HookClientData = function(self, cfgId, target)
-  -- function num : 0_19
+function EntrustComponent:HookClientData(cfgId, target)
   if self._hook == nil then
-    self._hook = {[cfgId] = target}
+    self._hook = {
+      [cfgId] = target
+    }
   else
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._hook)[cfgId] = target
+    self._hook[cfgId] = target
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_20 , upvalues : _ENV
+function EntrustComponent:CampaignComponentPushNotify(notify_data)
   if EntrustComponentNotifyType.EntrustComponentNotifyType_EventsRefresh == notify_data.m_notify_type then
     local ev = NotifyEntrustEventsRefresh:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
       self:EventsRefresh(ev)
     else
-      ;
-      (Log.error)("[CampaignCom][EntrustComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][EntrustComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent.EventsRefresh = function(self, notify_data)
-  -- function num : 0_21
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_component_info).rewarded_events = notify_data.rewarded_events
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).mission_infos = notify_data.mission_infos
+function EntrustComponent:EventsRefresh(notify_data)
+  self.m_component_info.rewarded_events = notify_data.rewarded_events
+  self.m_component_info.mission_infos = notify_data.mission_infos
   self:_RefreshClientData()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent.HandleCompleteEvent = function(self, TT, asyncRes, entrustid, eventid)
-  -- function num : 0_22 , upvalues : _ENV
+function EntrustComponent:HandleCompleteEvent(TT, asyncRes, entrustid, eventid)
   local request = EntrustComponentCompleteReq:New()
   request.entrustid = entrustid
   request.eventid = eventid
   local response = EntrustComponentCompleteRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][EntrustComponent] HandleCompleteEvent ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][EntrustComponent] HandleCompleteEvent ret:", asyncRes.m_result)
     return asyncRes, nil
   end
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R8 in 'UnsetPending'
-
-  if ((self.m_component_info).rewarded_events)[entrustid] == nil then
-    ((self.m_component_info).rewarded_events)[entrustid] = {}
-    ;
-    (table.insert)(((self.m_component_info).rewarded_events)[entrustid], eventid)
+  if self.m_component_info.rewarded_events[entrustid] == nil then
+    self.m_component_info.rewarded_events[entrustid] = {}
+    table.insert(self.m_component_info.rewarded_events[entrustid], eventid)
   else
-    ;
-    (table.insert)(((self.m_component_info).rewarded_events)[entrustid], eventid)
+    table.insert(self.m_component_info.rewarded_events[entrustid], eventid)
   end
   self:_RefreshClientData()
   return asyncRes, response
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponent.HandleMoveCompleteEvent = function(self, TT, asyncRes, entrustid, teamevents)
-  -- function num : 0_23 , upvalues : _ENV
+function EntrustComponent:HandleMoveCompleteEvent(TT, asyncRes, entrustid, teamevents)
   local request = EntrustComponentMoveEventReq:New()
   request.entrustid = entrustid
   request.team_events = teamevents
   local response = EntrustComponentMoveEventRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][EntrustComponent] HandleMoveCompleteEvent ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][EntrustComponent] HandleMoveCompleteEvent ret:", asyncRes.m_result)
     return asyncRes, nil
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  ((self.m_component_info).mission_infos)[entrustid] = response.mission_info
+  self.m_component_info.mission_infos[entrustid] = response.mission_info
   return asyncRes, response
 end
 
-local EEntrustStageNodeState = {LockWithTime = 1, Lock = 2, Unlock = 3, Pass = 4}
+local EEntrustStageNodeState = {
+  LockWithTime = 1,
+  Lock = 2,
+  Unlock = 3,
+  Pass = 4
+}
 _enum("EEntrustStageNodeState", EEntrustStageNodeState)
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
 
-EntrustComponent.Start_HandleCompleteEvent = function(self, entrustid, eventid, callback)
-  -- function num : 0_24 , upvalues : _ENV
+function EntrustComponent:Start_HandleCompleteEvent(entrustid, eventid, callback)
   local lockName = "EntrustComponent:Start_HandleCompleteEvent"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_24_0 , upvalues : _ENV, self, entrustid, eventid, lockName, callback
+  GameGlobal.UIStateManager():Lock(lockName)
+  GameGlobal.TaskManager():StartTask(function(TT)
     local AsyncRequestRes = AsyncRequestRes:New()
     local res, msg = self:HandleCompleteEvent(TT, AsyncRequestRes, entrustid, eventid)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
+    GameGlobal.UIStateManager():UnLock(lockName)
     if res:GetSucc() then
       local rewards = msg.rewards
       callback(res, rewards)
     else
-      do
-        local result = res:GetResult()
-        ;
-        (Log.error)("EntrustComponent:Start_HandleCompleteEvent() fail ! ", "stageId[", entrustid, "] eventId[", eventid, "] result = ", result)
-        callback(res, {})
-      end
+      local result = res:GetResult()
+      Log.error("EntrustComponent:Start_HandleCompleteEvent() fail ! ", "stageId[", entrustid, "] eventId[", eventid, "] result = ", result)
+      callback(res, {})
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent._Map2List = function(self, tb_in)
-  -- function num : 0_25 , upvalues : _ENV
+function EntrustComponent:_Map2List(tb_in)
   local tb_out = {}
-  for k,v in pairs(tb_in) do
-    (table.insert)(tb_out, k)
+  for k, v in pairs(tb_in) do
+    table.insert(tb_out, k)
   end
-  ;
-  (table.sort)(tb_out)
+  table.sort(tb_out)
   return tb_out
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetAllLevelId = function(self)
-  -- function num : 0_26
-  return self:_Map2List((self.m_client_data).datas)
+function EntrustComponent:GetAllLevelId()
+  return self:_Map2List(self.m_client_data.datas)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.CheckStageState = function(self, entrustid)
-  -- function num : 0_27 , upvalues : _ENV, EEntrustStageNodeState
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+function EntrustComponent:CheckStageState(entrustid)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local _time = self:GetStageOpenTime(entrustid) or 0
   local stamp = _time - curTime
-  if stamp > 0 then
+  if 0 < stamp then
     return EEntrustStageNodeState.LockWithTime
   end
   if not self:GetStagePreUnlock(entrustid) then
@@ -446,158 +326,110 @@ EntrustComponent.CheckStageState = function(self, entrustid)
   return EEntrustStageNodeState.Pass
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetStageOpenTime = function(self, entrustid)
-  -- function num : 0_28
-  local clientData = ((self.m_client_data).datas)[entrustid]
+function EntrustComponent:GetStageOpenTime(entrustid)
+  local clientData = self.m_client_data.datas[entrustid]
   return clientData.open_time
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetStagePointPos = function(self, entrustid)
-  -- function num : 0_29 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_entrust)[entrustid]
-  local x = cfg.PointPos and (cfg.PointPos)[1] or 0
-  local y = cfg.PointPos and (cfg.PointPos)[2] or 0
+function EntrustComponent:GetStagePointPos(entrustid)
+  local cfg = Cfg.cfg_component_entrust[entrustid]
+  local x = cfg.PointPos and cfg.PointPos[1] or 0
+  local y = cfg.PointPos and cfg.PointPos[2] or 0
   return Vector2(x, y)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetStagePreUnlock = function(self, entrustid)
-  -- function num : 0_30 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_entrust)[entrustid]
-  -- DECOMPILER ERROR at PC11: Unhandled construct in 'MakeBoolean' P3
-
-  do return (cfg ~= nil and cfg.PreID == 0) end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function EntrustComponent:GetStagePreUnlock(entrustid)
+  local cfg = Cfg.cfg_component_entrust[entrustid]
+  return cfg ~= nil and (cfg.PreID == 0 or self:IsStagePass(cfg.PreID))
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetStageTitleDesc = function(self, entrustid)
-  -- function num : 0_31 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_entrust)[entrustid]
+function EntrustComponent:GetStageTitleDesc(entrustid)
+  local cfg = Cfg.cfg_component_entrust[entrustid]
   return cfg.StrTitle, cfg.StrDesc
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetStagePassReward = function(self, entrustid)
-  -- function num : 0_32 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_entrust)[entrustid]
+function EntrustComponent:GetStagePassReward(entrustid)
+  local cfg = Cfg.cfg_component_entrust[entrustid]
   local stage_rewards = {}
   local received = {}
-  for k,v in pairs(cfg.EventID) do
-    local cfg_event = (Cfg.cfg_campaign_entrust_event)[v]
+  for k, v in pairs(cfg.EventID) do
+    local cfg_event = Cfg.cfg_campaign_entrust_event[v]
     if cfg_event.EventType == EntrustEventType.EntrustEventType_End then
       local flag = self:IsStagePass(entrustid)
       for i = 1, #cfg_event.RewardList do
         local reward = RoleAsset:New()
-        reward.assetid = ((cfg_event.RewardList)[i])[1]
-        reward.count = ((cfg_event.RewardList)[i])[2]
-        ;
-        (table.insert)(stage_rewards, reward)
-        ;
-        (table.insert)(received, flag)
+        reward.assetid = cfg_event.RewardList[i][1]
+        reward.count = cfg_event.RewardList[i][2]
+        table.insert(stage_rewards, reward)
+        table.insert(received, flag)
       end
     end
   end
   return stage_rewards, received
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetStageBoxReward = function(self, entrustid)
-  -- function num : 0_33 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_entrust)[entrustid]
+function EntrustComponent:GetStageBoxReward(entrustid)
+  local cfg = Cfg.cfg_component_entrust[entrustid]
   local box_rewards = {}
   local received = {}
-  for k,v in pairs(cfg.EventID) do
-    local cfg_event = (Cfg.cfg_campaign_entrust_event)[v]
+  for k, v in pairs(cfg.EventID) do
+    local cfg_event = Cfg.cfg_campaign_entrust_event[v]
     if cfg_event.EventType == EntrustEventType.EntrustEventType_Box then
       local flag = self:IsEventPass(entrustid, v)
       for i = 1, #cfg_event.RewardList do
         local reward = RoleAsset:New()
-        reward.assetid = ((cfg_event.RewardList)[i])[1]
-        reward.count = ((cfg_event.RewardList)[i])[2]
-        ;
-        (table.insert)(box_rewards, reward)
-        ;
-        (table.insert)(received, flag)
+        reward.assetid = cfg_event.RewardList[i][1]
+        reward.count = cfg_event.RewardList[i][2]
+        table.insert(box_rewards, reward)
+        table.insert(received, flag)
       end
     end
   end
   return box_rewards, received
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetExplorNum = function(self, entrustid)
-  -- function num : 0_34 , upvalues : _ENV
-  local clientData = ((self.m_client_data).datas)[entrustid]
-  local n = (math.floor)(100 * clientData.complete_events / clientData.total_events)
+function EntrustComponent:GetExplorNum(entrustid)
+  local clientData = self.m_client_data.datas[entrustid]
+  local n = math.floor(100 * clientData.complete_events / clientData.total_events)
   return n
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.IsStagePass = function(self, entrustid)
-  -- function num : 0_35
-  local clientData = ((self.m_client_data).datas)[entrustid]
+function EntrustComponent:IsStagePass(entrustid)
+  local clientData = self.m_client_data.datas[entrustid]
   return clientData.passed
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetTreasureBoxText = function(self, entrustid)
-  -- function num : 0_36
-  local clientData = ((self.m_client_data).datas)[entrustid]
+function EntrustComponent:GetTreasureBoxText(entrustid)
+  local clientData = self.m_client_data.datas[entrustid]
   return clientData.opened_box .. "/" .. clientData.total_box
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetAllOpenEvents = function(self, entrustid)
-  -- function num : 0_37
-  return self:_Map2List((((self.m_client_data).datas)[entrustid]).open_events)
+function EntrustComponent:GetAllOpenEvents(entrustid)
+  return self:_Map2List(self.m_client_data.datas[entrustid].open_events)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.FindEventStart = function(self, entrustid)
-  -- function num : 0_38 , upvalues : _ENV
+function EntrustComponent:FindEventStart(entrustid)
   local tb = self:GetAllOpenEvents(entrustid)
-  for _,v in ipairs(tb) do
+  for _, v in ipairs(tb) do
     if self:GetEventType(v) == EntrustEventType.EntrustEventType_Start then
       return v
     end
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetOpenAdjacentNode = function(self, entrustid, eventid)
-  -- function num : 0_39 , upvalues : _ENV
+function EntrustComponent:GetOpenAdjacentNode(entrustid, eventid)
   local tb_out = {}
   local lines = self:GetOpenAdjacentLineByNode(entrustid, eventid)
-  for lineid,_ in pairs(lines) do
+  for lineid, _ in pairs(lines) do
     local leftEventId, rightEventId = self:GetLineConecctEvents(lineid)
-    ;
-    (table.insert)(tb_out, leftEventId)
-    ;
-    (table.insert)(tb_out, rightEventId)
+    table.insert(tb_out, leftEventId)
+    table.insert(tb_out, rightEventId)
   end
   return tb_out
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.IsEventPass = function(self, entrustid, eventid)
-  -- function num : 0_40 , upvalues : _ENV
-  for _,v in ipairs((((self.m_client_data).datas)[entrustid]).rewarded_events) do
+function EntrustComponent:IsEventPass(entrustid, eventid)
+  for _, v in ipairs(self.m_client_data.datas[entrustid].rewarded_events) do
     if eventid == v then
       return true
     end
@@ -605,268 +437,180 @@ EntrustComponent.IsEventPass = function(self, entrustid, eventid)
   return false
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetEventType = function(self, eventid)
-  -- function num : 0_41 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign_entrust_event)[eventid]
+function EntrustComponent:GetEventType(eventid)
+  local cfg = Cfg.cfg_campaign_entrust_event[eventid]
   local type = cfg.EventType
-  local subType = type == 3 and cfg.Params and ((cfg.Params)[1]).Type == 1 and 2 or 1
+  local subType = type == 3 and cfg.Params and cfg.Params[1].Type == 1 and 2 or 1
   return type, subType
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetEventPointPos = function(self, eventid)
-  -- function num : 0_42 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign_entrust_event)[eventid]
-  local x = cfg.PointPos and (cfg.PointPos)[1] or 0
-  local y = cfg.PointPos and (cfg.PointPos)[2] or 0
+function EntrustComponent:GetEventPointPos(eventid)
+  local cfg = Cfg.cfg_campaign_entrust_event[eventid]
+  local x = cfg.PointPos and cfg.PointPos[1] or 0
+  local y = cfg.PointPos and cfg.PointPos[2] or 0
   return Vector2(x, y)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetOpenEventLine = function(self, entrustid)
-  -- function num : 0_43
-  return self:_Map2List((((self.m_client_data).datas)[entrustid]).open_lines)
+function EntrustComponent:GetOpenEventLine(entrustid)
+  return self:_Map2List(self.m_client_data.datas[entrustid].open_lines)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetLineConecctEvents = function(self, lineid)
-  -- function num : 0_44 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign_entrust_line)[lineid]
-  if not cfg.ExtraPointPos then
-    local extra = {}
-  end
+function EntrustComponent:GetLineConecctEvents(lineid)
+  local cfg = Cfg.cfg_campaign_entrust_line[lineid]
+  local extra = cfg.ExtraPointPos or {}
   return cfg.LeftEventID, cfg.RightEventID, extra
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetOpenAdjacentLineByNode = function(self, entrustid, eventid)
-  -- function num : 0_45 , upvalues : _ENV
-  local openEvents = (((self.m_client_data).datas)[entrustid]).open_events
-  local tb_in = self:_Map2List((((self.m_client_data).datas)[entrustid]).open_lines)
+function EntrustComponent:GetOpenAdjacentLineByNode(entrustid, eventid)
+  local openEvents = self.m_client_data.datas[entrustid].open_events
+  local tb_in = self:_Map2List(self.m_client_data.datas[entrustid].open_lines)
   local tb_out = {}
-  for _,v in ipairs(tb_in) do
+  for _, v in ipairs(tb_in) do
     local leftEventId, rightEventId = self:GetLineConecctEvents(v)
     if openEvents[leftEventId] and openEvents[rightEventId] then
       if leftEventId == eventid then
         tb_out[v] = true
-      else
-        if rightEventId == eventid then
-          tb_out[v] = false
-        end
+      elseif rightEventId == eventid then
+        tb_out[v] = false
       end
     end
   end
   return tb_out
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetLinePosWithDirection = function(self, lineid, dir)
-  -- function num : 0_46 , upvalues : _ENV
+function EntrustComponent:GetLinePosWithDirection(lineid, dir)
   local tb_out = {}
   local leftEventId, rightEventId, extraPos = self:GetLineConecctEvents(lineid)
   local left = self:GetEventPointPos(leftEventId)
   local right = self:GetEventPointPos(rightEventId)
-  for i = 1, (table.count)(extraPos), 2 do
+  for i = 1, table.count(extraPos), 2 do
     local x, y = extraPos[i], extraPos[i + 1]
-    ;
-    (table.insert)(tb_out, {left, Vector2(x, y)})
+    table.insert(tb_out, {
+      left,
+      Vector2(x, y)
+    })
     left = Vector2(x, y)
   end
-  ;
-  (table.insert)(tb_out, {left, right})
+  table.insert(tb_out, {left, right})
   if dir then
     for i = 1, #tb_out / 2 do
-      tb_out[i] = tb_out[#tb_out - i + 1]
+      tb_out[i], tb_out[#tb_out - i + 1] = tb_out[#tb_out - i + 1], tb_out[i]
     end
-    for _,v in ipairs(tb_out) do
-      v[1] = v[2]
+    for _, v in ipairs(tb_out) do
+      v[1], v[2] = v[2], v[1]
     end
   end
-  do
-    return tb_out
-  end
+  return tb_out
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.SetCurLevelId = function(self, entrustid)
-  -- function num : 0_47
+function EntrustComponent:SetCurLevelId(entrustid)
   self.m_flag_levelId = entrustid
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetCurLevelId = function(self)
-  -- function num : 0_48
+function EntrustComponent:GetCurLevelId()
   return self.m_flag_levelId
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.SetPlayerPos = function(self, eventid)
-  -- function num : 0_49
+function EntrustComponent:SetPlayerPos(eventid)
   self.m_flag_player = eventid
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetPlayerPos = function(self)
-  -- function num : 0_50
+function EntrustComponent:GetPlayerPos()
   return self.m_flag_player
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.SetBannerState = function(self, flag)
-  -- function num : 0_51
+function EntrustComponent:SetBannerState(flag)
   self.m_flag_Banner = flag
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetBannerState = function(self)
-  -- function num : 0_52
-  do return self.m_flag_Banner == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function EntrustComponent:GetBannerState()
+  return self.m_flag_Banner == 0
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.HaveRedPoint = function(self)
-  -- function num : 0_53
+function EntrustComponent:HaveRedPoint()
   local id = self:GetComponentCfgId()
-  if self._hook ~= nil and (self._hook)[id] ~= nil then
-    return (self.m_client_data):HasNew()
+  if self._hook ~= nil and self._hook[id] ~= nil then
+    return self.m_client_data:HasNew()
   end
   return false
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.HasNew = function(self)
-  -- function num : 0_54 , upvalues : _ENV
+function EntrustComponent:HasNew()
   local key = self:GetEntrustNewKey()
-  local isNew = (LocalDB.HasKey)(key)
-  if not isNew then
-    return self:EntrustStageHasNew()
-  end
+  local isNew = LocalDB.HasKey(key)
+  return isNew or self:EntrustStageHasNew()
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetEntrustNewKey = function(self)
-  -- function num : 0_55 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function EntrustComponent:GetEntrustNewKey()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local componentId = self:GetComponentCfgId()
   return "EntrustComponent_GetEntrustNewKey_" .. pstId .. "_" .. componentId
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetEntrustEventNewKey = function(self, eventid)
-  -- function num : 0_56
+function EntrustComponent:GetEntrustEventNewKey(eventid)
   local key = self:GetEntrustNewKey()
   return key .. "_Event_" .. eventid
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetEntrustStageNewKey = function(self)
-  -- function num : 0_57
+function EntrustComponent:GetEntrustStageNewKey()
   local key = self:GetEntrustNewKey()
   return key .. "_Stage"
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.EntrustStageHasNew = function(self)
-  -- function num : 0_58 , upvalues : _ENV
+function EntrustComponent:EntrustStageHasNew()
   local key = self:GetEntrustStageNewKey()
   local historyTime = 0
-  if (LocalDB.HasKey)(key) then
-    historyTime = (LocalDB.GetFloat)(key)
+  if LocalDB.HasKey(key) then
+    historyTime = LocalDB.GetFloat(key)
   end
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime()
-  ;
-  (Log.info)("EntrustComponent:EntrustStageHasNew() key = ", key, " nowTime = ", nowTime, " historyTime = ", historyTime)
+  Log.info("EntrustComponent:EntrustStageHasNew() key = ", key, " nowTime = ", nowTime, " historyTime = ", historyTime)
   local levels = self:GetAllLevelId()
-  for _,levelId in ipairs(levels) do
+  for _, levelId in ipairs(levels) do
     local openTime = self:GetStageOpenTime(levelId) * 1000
-    if openTime <= nowTime and historyTime < openTime then
-      (Log.info)("UIN22EntrustHelper.EntrustStageHasNew() return true, levelId = ", levelId, " openTime = ", openTime)
+    if nowTime >= openTime and historyTime < openTime then
+      Log.info("UIN22EntrustHelper.EntrustStageHasNew() return true, levelId = ", levelId, " openTime = ", openTime)
       return true
     end
   end
-  ;
-  (Log.info)("EntrustComponent:EntrustStageHasNew() return false")
+  Log.info("EntrustComponent:EntrustStageHasNew() return false")
   return false
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.EntrustStageClearNew = function(self)
-  -- function num : 0_59 , upvalues : _ENV
+function EntrustComponent:EntrustStageClearNew()
   local key = self:GetEntrustStageNewKey()
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime()
-  ;
-  (Log.info)("EntrustComponent:EntrustStageClearNew() key = ", key, " nowTime = ", nowTime)
-  ;
-  (LocalDB.SetFloat)(key, nowTime)
+  Log.info("EntrustComponent:EntrustStageClearNew() key = ", key, " nowTime = ", nowTime)
+  LocalDB.SetFloat(key, nowTime)
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R1 in 'UnsetPending'
-
-EntrustComponent.GetPath_BFS = function(self, entrustid, start_id, target_id, limit_step)
-  -- function num : 0_60 , upvalues : _ENV
-  if not limit_step then
-    limit_step = 100
-  end
+function EntrustComponent:GetPath_BFS(entrustid, start_id, target_id, limit_step)
+  limit_step = limit_step or 100
   local queue = {start_id}
   local path = {
-[start_id] = {start_id}
-}
-  while 1 do
-    if (table.count)(queue) ~= 0 then
-      local cur = queue[1]
-      ;
-      (table.remove)(queue, 1)
-      if target_id == cur then
-        return path[cur]
-      end
-      local step = #path[cur] - 1
-      if step ~= limit_step then
-        local next = self:GetOpenAdjacentNode(entrustid, cur)
-        for _,v in ipairs(next) do
-          if not path[v] then
-            path[v] = (table.collect)(path[cur])
-            ;
-            (table.insert)(path[v], v)
-            ;
-            (table.insert)(queue, v)
-          end
-        end
-        -- DECOMPILER ERROR at PC60: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC60: LeaveBlock: unexpected jumping out IF_STMT
-
-        -- DECOMPILER ERROR at PC60: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC60: LeaveBlock: unexpected jumping out IF_STMT
-
+    [start_id] = {start_id}
+  }
+  while table.count(queue) ~= 0 do
+    local cur = queue[1]
+    table.remove(queue, 1)
+    if target_id == cur then
+      return path[cur]
+    end
+    local step = #path[cur] - 1
+    if step == limit_step then
+      break
+    end
+    local next = self:GetOpenAdjacentNode(entrustid, cur)
+    for _, v in ipairs(next) do
+      if not path[v] then
+        path[v] = table.collect(path[cur])
+        table.insert(path[v], v)
+        table.insert(queue, v)
       end
     end
   end
   return {}
 end
-
-

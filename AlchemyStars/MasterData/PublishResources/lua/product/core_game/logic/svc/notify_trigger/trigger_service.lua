@@ -1,43 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/notify_trigger/trigger_service.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TriggerService", BaseService)
 TriggerService = TriggerService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TriggerService.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function TriggerService:Constructor(world)
   self._listeners = {}
   self._factory = TriggerFactory:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerService.ClearTriggers = function(self)
-  -- function num : 0_1
+function TriggerService:ClearTriggers()
   self._listeners = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerService.Initialize = function(self)
-  -- function num : 0_2
-  self._showLog = (self._world):RunAtClient()
+function TriggerService:Initialize()
+  self._showLog = self._world:RunAtClient()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerService.CreateTrigger = function(self, triggerOwner, triggerCond, world)
-  -- function num : 0_3
-  return (self._factory):CreateTrigger(triggerOwner, triggerCond, world)
+function TriggerService:CreateTrigger(triggerOwner, triggerCond, world)
+  return self._factory:CreateTrigger(triggerOwner, triggerCond, world)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerService.Notify = function(self, notify)
-  -- function num : 0_4 , upvalues : _ENV
+function TriggerService:Notify(notify)
   local notifyEntity = notify:GetNotifyEntity()
   local notifyEntityID = 0
   if notifyEntity then
@@ -45,38 +26,38 @@ TriggerService.Notify = function(self, notify)
   end
   local canNotify = self:_CheckEntityCanNotify(notifyEntity, notify)
   if not canNotify then
-    (Log.debug)("[TriggerService] Notify is Forbidden, entityID=", notifyEntityID, " notifyType=", notify:GetNotifyType())
-    return 
+    Log.debug("[TriggerService] Notify is Forbidden, entityID=", notifyEntityID, " notifyType=", notify:GetNotifyType())
+    return
   end
   self:SaveConvertInfo(notify)
   if self._showLog then
-    (Log.debug)("TriggerService Notify ", notify:GetNotifyType(), GetEnumKey("NotifyType", notify:GetNotifyType()), " NotifyEntity=", notifyEntityID)
+    Log.debug("TriggerService Notify ", notify:GetNotifyType(), GetEnumKey("NotifyType", notify:GetNotifyType()), " NotifyEntity=", notifyEntityID)
   end
-  local detailLogger = (self._world):GetDetailMatchLogger()
+  local detailLogger = self._world:GetDetailMatchLogger()
   detailLogger:BeginNotify(notify)
   local notifyType = notify:GetNotifyType()
-  local listeners = (self._listeners)[notifyType]
+  local listeners = self._listeners[notifyType]
   if not listeners then
     detailLogger:EndNotify(notify)
-    return 
+    return
   end
   local triggers = {}
-  for i,combinedTrigger in ipairs(listeners) do
+  for i, combinedTrigger in ipairs(listeners) do
     if combinedTrigger:IsActive() and self:IsNotifyCanTrigger(notify, combinedTrigger) then
       combinedTrigger:OnNotifyWrapper(notify)
       if combinedTrigger:IsSatisfied(notify) then
-        (table.insert)(triggers, combinedTrigger)
+        table.insert(triggers, combinedTrigger)
       end
     end
   end
   local needDetailLog = false
-  if #triggers > 0 then
+  if 0 < #triggers then
     needDetailLog = true
   end
   if needDetailLog then
     detailLogger:BeginTriggerSuccess(triggers)
   end
-  for i,trigger in ipairs(triggers) do
+  for i, trigger in ipairs(triggers) do
     detailLogger:RecordTriggerSuccess(trigger)
     trigger:OnTrigger(notify)
   end
@@ -90,142 +71,99 @@ TriggerService.Notify = function(self, notify)
   detailLogger:EndNotify(notify)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerService.Attach = function(self, trigger)
-  -- function num : 0_5 , upvalues : _ENV
+function TriggerService:Attach(trigger)
   local notifyTypeList = trigger:GetNotifyType()
-  for k,notifyType in ipairs(notifyTypeList) do
-    local listeners = (self._listeners)[notifyType]
+  for k, notifyType in ipairs(notifyTypeList) do
+    local listeners = self._listeners[notifyType]
     if not listeners then
       listeners = {}
-      -- DECOMPILER ERROR at PC13: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._listeners)[notifyType] = listeners
+      self._listeners[notifyType] = listeners
     end
     listeners[#listeners + 1] = trigger
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerService.Detach = function(self, trigger)
-  -- function num : 0_6 , upvalues : _ENV
+function TriggerService:Detach(trigger)
   local notifyTypeList = trigger:GetNotifyType()
-  for k,notifyType in ipairs(notifyTypeList) do
-    local listeners = (self._listeners)[notifyType]
+  for k, notifyType in ipairs(notifyTypeList) do
+    local listeners = self._listeners[notifyType]
     if not listeners then
-      (Log.error)("detach trigger error, not attached!")
-      return 
+      Log.error("detach trigger error, not attached!")
+      return
     end
-    ;
-    (table.removev)(listeners, trigger)
+    table.removev(listeners, trigger)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerService.IsNotifyCanTrigger = function(self, notify, combinedTrigger)
-  -- function num : 0_7 , upvalues : _ENV
+function TriggerService:IsNotifyCanTrigger(notify, combinedTrigger)
   if notify:GetNotifyType() == NotifyType.MonsterDead or notify:GetNotifyType() == NotifyType.AddControlBuffEnd or notify:GetNotifyType() == NotifyType.HitBackEnd or notify:GetNotifyType() == NotifyType.TractionEnd then
     return true
   end
   local triggerList = combinedTrigger:GetTriggers()
-  for _,trigger in ipairs(triggerList) do
+  for _, trigger in ipairs(triggerList) do
     local entity = trigger:GetOwnerEntity()
     if entity then
-      return not (entity:BuffComponent()):IsBuffFreeze()
+      return not entity:BuffComponent():IsBuffFreeze()
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerService._CheckEntityCanNotify = function(self, notifyEntity, notify)
-  -- function num : 0_8
+function TriggerService:_CheckEntityCanNotify(notifyEntity, notify)
   if not notifyEntity then
     return true
   end
   local notifyType = notify:GetNotifyType()
-  local buffSvc = (self._world):GetService("BuffLogic")
+  local buffSvc = self._world:GetService("BuffLogic")
   if buffSvc:IsPetNotifyTypeDisable(notifyEntity, notifyType) then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerService.GetPlayerMoveEndPosByNotify = function(self, notify)
-  -- function num : 0_9 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local posTeam = (teamEntity:GridLocation()).Position
+function TriggerService:GetPlayerMoveEndPosByNotify(notify)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local posTeam = teamEntity:GridLocation().Position
   local curMovePos = posTeam
   if notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveStart or notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveEnd then
     curMovePos = notify:GetPos()
-  else
-    if notify:GetNotifyType() == NotifyType.Teleport or notify:GetNotifyType() == NotifyType.EntityMoveEnd then
-      local notifyEntity = notify:GetNotifyEntity()
-      if notifyEntity:HasPet() then
-        notifyEntity = (notifyEntity:Pet()):GetOwnerTeamEntity()
-      end
-      if teamEntity:GetID() == notifyEntity:GetID() then
-        curMovePos = notify:GetPosNew()
-      end
-    else
-      do
-        if notify:GetNotifyType() == NotifyType.HitBackEnd and notify:GetDefenderId() == teamEntity:GetID() then
-          curMovePos = notify:GetPosEnd()
-        else
-          if notify:GetNotifyType() == NotifyType.TractionEnd and notify:GetDefenderId() == teamEntity:GetID() then
-            curMovePos = notify:GetPosEnd()
-          end
-        end
-        return curMovePos
-      end
+  elseif notify:GetNotifyType() == NotifyType.Teleport or notify:GetNotifyType() == NotifyType.EntityMoveEnd then
+    local notifyEntity = notify:GetNotifyEntity()
+    if notifyEntity:HasPet() then
+      notifyEntity = notifyEntity:Pet():GetOwnerTeamEntity()
     end
+    if teamEntity:GetID() == notifyEntity:GetID() then
+      curMovePos = notify:GetPosNew()
+    end
+  elseif notify:GetNotifyType() == NotifyType.HitBackEnd and notify:GetDefenderId() == teamEntity:GetID() then
+    curMovePos = notify:GetPosEnd()
+  elseif notify:GetNotifyType() == NotifyType.TractionEnd and notify:GetDefenderId() == teamEntity:GetID() then
+    curMovePos = notify:GetPosEnd()
   end
+  return curMovePos
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerService.GetPlayerMoveBeginPosByNotify = function(self, notify)
-  -- function num : 0_10 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local posTeam = (teamEntity:GridLocation()).Position
+function TriggerService:GetPlayerMoveBeginPosByNotify(notify)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local posTeam = teamEntity:GridLocation().Position
   local moveBeginPos = posTeam
   if notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveStart or notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveEnd then
     moveBeginPos = notify:GetOldPos()
-  else
-    if notify:GetNotifyType() == NotifyType.Teleport or notify:GetNotifyType() == NotifyType.EntityMoveEnd then
-      local notifyEntity = notify:GetNotifyEntity()
-      if notifyEntity:HasPet() then
-        notifyEntity = (notifyEntity:Pet()):GetOwnerTeamEntity()
-      end
-      if teamEntity:GetID() == notifyEntity:GetID() then
-        moveBeginPos = notify:GetPosOld()
-      end
-    else
-      do
-        if notify:GetNotifyType() == NotifyType.HitBackEnd and notify:GetDefenderId() == teamEntity:GetID() then
-          moveBeginPos = notify:GetPosStart()
-        else
-          if notify:GetNotifyType() == NotifyType.TractionEnd and notify:GetDefenderId() == teamEntity:GetID() then
-            moveBeginPos = notify:GetPosStart()
-          end
-        end
-        return moveBeginPos
-      end
+  elseif notify:GetNotifyType() == NotifyType.Teleport or notify:GetNotifyType() == NotifyType.EntityMoveEnd then
+    local notifyEntity = notify:GetNotifyEntity()
+    if notifyEntity:HasPet() then
+      notifyEntity = notifyEntity:Pet():GetOwnerTeamEntity()
     end
+    if teamEntity:GetID() == notifyEntity:GetID() then
+      moveBeginPos = notify:GetPosOld()
+    end
+  elseif notify:GetNotifyType() == NotifyType.HitBackEnd and notify:GetDefenderId() == teamEntity:GetID() then
+    moveBeginPos = notify:GetPosStart()
+  elseif notify:GetNotifyType() == NotifyType.TractionEnd and notify:GetDefenderId() == teamEntity:GetID() then
+    moveBeginPos = notify:GetPosStart()
   end
+  return moveBeginPos
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerService.SaveConvertInfo = function(self, notify)
-  -- function num : 0_11
+function TriggerService:SaveConvertInfo(notify)
 end
-
-

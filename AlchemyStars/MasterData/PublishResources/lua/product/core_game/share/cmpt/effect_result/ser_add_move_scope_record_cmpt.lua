@@ -1,51 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_add_move_scope_record_cmpt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResultAddMoveScopeRecordCmpt", SkillEffectResultBase)
 SkillEffectResultAddMoveScopeRecordCmpt = SkillEffectResultAddMoveScopeRecordCmpt
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultAddMoveScopeRecordCmpt.Constructor = function(self, hostEntityID, offSet)
-  -- function num : 0_0
+function SkillEffectResultAddMoveScopeRecordCmpt:Constructor(hostEntityID, offSet)
   self._hostEntityID = hostEntityID
   self._offSet = offSet
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultAddMoveScopeRecordCmpt.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultAddMoveScopeRecordCmpt:GetEffectType()
   return SkillEffectType.AddMoveScopeRecordCmpt
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultAddMoveScopeRecordCmpt.SetHostEntityID = function(self, hostEntityID)
-  -- function num : 0_2
+function SkillEffectResultAddMoveScopeRecordCmpt:SetHostEntityID(hostEntityID)
   self._hostEntityID = hostEntityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultAddMoveScopeRecordCmpt.GetHostEntityID = function(self)
-  -- function num : 0_3
+function SkillEffectResultAddMoveScopeRecordCmpt:GetHostEntityID()
   return self._hostEntityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultAddMoveScopeRecordCmpt.SetOffSet = function(self, offSet)
-  -- function num : 0_4
+function SkillEffectResultAddMoveScopeRecordCmpt:SetOffSet(offSet)
   self._offSet = offSet
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultAddMoveScopeRecordCmpt.GetOffSet = function(self)
-  -- function num : 0_5
+function SkillEffectResultAddMoveScopeRecordCmpt:GetOffSet()
   return self._offSet
 end
-
-

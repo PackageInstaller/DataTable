@@ -1,41 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_hitback_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillHitBackPhase", PlaySkillPhaseBase)
 PlaySkillHitBackPhase = PlaySkillHitBackPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillHitBackPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillHitBackPhase:PlayFlight(TT, casterEntity, phaseParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local result = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.HitBack)
   if not result then
-    return 
+    return
   end
   local beHitbackEntityID = result:GetTargetID()
-  local targetEntity = (self._world):GetEntityByID(beHitbackEntityID)
+  local targetEntity = self._world:GetEntityByID(beHitbackEntityID)
   local hitEffectID = phaseParam:GetHitEffectID()
-  if hitEffectID > 0 then
-    ((self._world):GetService("Effect")):CreateBeHitEffect(hitEffectID, targetEntity)
+  if 0 < hitEffectID then
+    self._world:GetService("Effect"):CreateBeHitEffect(hitEffectID, targetEntity)
   end
   local hitTurnTarget = phaseParam:GetTurnToTarget()
-  do
-    if hitTurnTarget == TurnToTargetType.Caster then
-      local resvc = (self._world):GetService("RenderEntity")
-      resvc:TurnToTarget(targetEntity, casterEntity, nil, nil, hitTurnTarget)
-    end
-    local processHitTaskID = nil
-    if result and not targetEntity:HasHitback() and not result:GetHadPlay() then
-      result:SetHadPlay(true)
-      processHitTaskID = (self:SkillService()):ProcessHit(casterEntity, targetEntity, result)
-    end
-    while processHitTaskID and not (TaskHelper:GetInstance()):IsTaskFinished(processHitTaskID) do
+  if hitTurnTarget == TurnToTargetType.Caster then
+    local resvc = self._world:GetService("RenderEntity")
+    resvc:TurnToTarget(targetEntity, casterEntity, nil, nil, hitTurnTarget)
+  end
+  local processHitTaskID
+  if result and not targetEntity:HasHitback() and not result:GetHadPlay() then
+    result:SetHadPlay(true)
+    processHitTaskID = self:SkillService():ProcessHit(casterEntity, targetEntity, result)
+  end
+  if processHitTaskID then
+    while not TaskHelper:GetInstance():IsTaskFinished(processHitTaskID) do
       YIELD(TT)
     end
   end
 end
-
-

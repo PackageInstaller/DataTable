@@ -1,55 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_after_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddAfterDamage", BuffLogicBase)
 BuffLogicAddAfterDamage = BuffLogicAddAfterDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddAfterDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddAfterDamage:Constructor(buffInstance, logicParam)
   self._addValue = logicParam.addValue or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddAfterDamage.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
+function BuffLogicAddAfterDamage:DoLogic()
+  local e = self._buffInstance:Entity()
   local attrCmpt = e:Attributes()
-  attrCmpt:Modify("AfterDamage", self._addValue, (self._buffInstance):BuffSeq())
+  attrCmpt:Modify("AfterDamage", self._addValue, self._buffInstance:BuffSeq())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddAfterDamage.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicAddAfterDamage:DoOverlap(logicParam)
   return self:DoLogic()
 end
 
 _class("BuffLogicResetAfterDamage", BuffLogicBase)
 BuffLogicResetAfterDamage = BuffLogicResetAfterDamage
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetAfterDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicResetAfterDamage:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetAfterDamage.DoLogic = function(self)
-  -- function num : 0_4
-  local e = (self._buffInstance):Entity()
+function BuffLogicResetAfterDamage:DoLogic()
+  local e = self._buffInstance:Entity()
   local attrCmpt = e:Attributes()
-  attrCmpt:RemoveModify("AfterDamage", (self._buffInstance):BuffSeq())
+  attrCmpt:RemoveModify("AfterDamage", self._buffInstance:BuffSeq())
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetAfterDamage.DoOverlap = function(self, logicParam)
-  -- function num : 0_5
+function BuffLogicResetAfterDamage:DoOverlap(logicParam)
 end
-
-

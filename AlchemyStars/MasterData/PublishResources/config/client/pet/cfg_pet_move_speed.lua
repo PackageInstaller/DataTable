@@ -1,11 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/pet/cfg_pet_move_speed.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, AircraftSpeed = 2, HomeWalk = 3, HomeRun = 4}
+local key = {
+  ID = 1,
+  AircraftSpeed = 2,
+  HomeWalk = 3,
+  HomeRun = 4
+}
 local config = {
-[1601811] = {1601811, 0.9, 0.9, 0.9}
+  [1601811] = {
+    1601811,
+    0.9,
+    0.9,
+    0.9
+  }
 }
 return config, "ID", key
-

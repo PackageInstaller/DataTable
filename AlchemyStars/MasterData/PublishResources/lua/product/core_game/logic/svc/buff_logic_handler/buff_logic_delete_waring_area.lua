@@ -1,34 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_delete_waring_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDeleteWaringArea", BuffLogicBase)
 BuffLogicDeleteWaringArea = BuffLogicDeleteWaringArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDeleteWaringArea.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicDeleteWaringArea:Constructor(buffInstance, logicParam)
   self._skillHolderName = logicParam.skillHolderName or "self"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDeleteWaringArea.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((self._buffInstance):Entity())
-  local e = nil
-  local skillHolder = nil
+function BuffLogicDeleteWaringArea:DoLogic()
+  local e = self._buffInstance:Entity()
+  local skillHolder
   local skillHolderName = self._skillHolderName .. e:GetID()
   local skillHolderID = e:GetSkillHolder(skillHolderName)
   if skillHolderID then
-    skillHolder = (self._world):GetEntityByID(skillHolderID)
+    skillHolder = self._world:GetEntityByID(skillHolderID)
   end
   if not skillHolder then
-    return 
+    return
   end
   local result = BuffResultDeleteWaringArea:New(skillHolderID)
   return result
 end
-
-

@@ -1,22 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_detail/ui_spirit_detail_look_cg_and_spine_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISpiritDetailLookCgAndSpineController", UIController)
 UISpiritDetailLookCgAndSpineController = UISpiritDetailLookCgAndSpineController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISpiritDetailLookCgAndSpineController.Constructor = function(self)
-  -- function num : 0_0
+function UISpiritDetailLookCgAndSpineController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpiritDetailLookCgAndSpineController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISpiritDetailLookCgAndSpineController:OnShow(uiParams)
   local isCg = true
-  isCg = not uiParams[2] or uiParams[2] ~= DynamicAndStaticState.Dynamic
+  if uiParams[2] then
+    isCg = uiParams[2] ~= DynamicAndStaticState.Dynamic
+  end
   self._isCg = uiParams[2]
   self._tr = self:GetUIComponent("Transform", "root")
   self._scaleRoot = self:GetUIComponent("Transform", "scale")
@@ -31,32 +23,27 @@ UISpiritDetailLookCgAndSpineController.OnShow = function(self, uiParams)
   if isCg then
     self._cg = self:GetUIComponent("RawImageLoader", "cg")
     local cgName = pet:GetPetStaticBody(PetSkinEffectPath.BODY_PET_DETAIL)
-    ;
-    (self._cg):LoadImage(cgName)
-    ;
-    (UICG.SetTransform)((self._tr).transform, "UIPetDetailItem", cgName)
+    self._cg:LoadImage(cgName)
+    UICG.SetTransform(self._tr.transform, "UIPetDetailItem", cgName)
   else
     self._spine = self:GetUIComponent("SpineLoader", "spine")
     local dynamicCGName = pet:GetPetSpine(PetSkinEffectPath.BODY_PET_DETAIL)
-    self._dcgHandle = (DynamicCG.SyncLoad)(dynamicCGName, self._spine)
-    ;
-    (UICG.SetTransform)((self._tr).transform, "UIPetDetailItem", dynamicCGName)
+    self._dcgHandle = DynamicCG.SyncLoad(dynamicCGName, self._spine)
+    UICG.SetTransform(self._tr.transform, "UIPetDetailItem", dynamicCGName)
   end
   local imageLoader = self:GetUIComponent("RawImageLoader", "BgLoader")
-  ;
-  (UICommonHelper:GetInstance()):ChangePetTagBackground(pet:GetTemplateID(), imageLoader, true)
+  UICommonHelper:GetInstance():ChangePetTagBackground(pet:GetTemplateID(), imageLoader, true)
   local pos = Vector2(-10, 0)
-  local cfg_pet_view_pos = (Cfg.cfg_pet_view_pos)[pet:GetTemplateID()]
+  local cfg_pet_view_pos = Cfg.cfg_pet_view_pos[pet:GetTemplateID()]
   if cfg_pet_view_pos then
     if isCg then
-      pos = Vector2((cfg_pet_view_pos.CgOffset)[1], (cfg_pet_view_pos.CgOffset)[2])
+      pos = Vector2(cfg_pet_view_pos.CgOffset[1], cfg_pet_view_pos.CgOffset[2])
     else
-      pos = Vector2((cfg_pet_view_pos.SpineOffset)[1], (cfg_pet_view_pos.SpineOffset)[2])
+      pos = Vector2(cfg_pet_view_pos.SpineOffset[1], cfg_pet_view_pos.SpineOffset[2])
     end
   end
-  local anchoredPosition = (self._rect).anchoredPosition
-  ;
-  (self._rect):DOAnchorPos(Vector2(anchoredPosition.x + pos.x, anchoredPosition.y + pos.y), 0.5)
+  local anchoredPosition = self._rect.anchoredPosition
+  self._rect:DOAnchorPos(Vector2(anchoredPosition.x + pos.x, anchoredPosition.y + pos.y), 0.5)
   self._scaleK = 0.2
   self._touchScaleK = 0.001
   self._scaleMax = 1.5
@@ -74,168 +61,125 @@ UISpiritDetailLookCgAndSpineController.OnShow = function(self, uiParams)
   self._touch0Pos2 = 0
   self._touchDis = 0
   self._touchDis2 = 0
-  local pixels = ((Cfg.cfg_aircraft_camera).clickAndDragPixelLength).Value
+  local pixels = Cfg.cfg_aircraft_camera.clickAndDragPixelLength.Value
   self._startMove = pixels * pixels
   self:Init()
-  ;
-  ((GameGlobal.EngineInput)()).multiTouchEnabled = true
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  GameGlobal.EngineInput().multiTouchEnabled = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpiritDetailLookCgAndSpineController.Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._mousePresent = ((GameGlobal.EngineInput)()).mousePresent
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = true
+function UISpiritDetailLookCgAndSpineController:Init()
+  self._mousePresent = GameGlobal.EngineInput().mousePresent
+  UnityEngine.Input.multiTouchEnabled = true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpiritDetailLookCgAndSpineController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISpiritDetailLookCgAndSpineController:OnHide()
   self._mousePresent = nil
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = false
+  UnityEngine.Input.multiTouchEnabled = false
   if self._spineEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+    GameGlobal.Timer():CancelEvent(self._spineEvent)
     self._spineEvent = nil
     self._playSpineAnim = false
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpiritDetailLookCgAndSpineController.BgOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._backObj):SetActive(not (self._backObj).activeSelf)
+function UISpiritDetailLookCgAndSpineController:BgOnClick()
+  self._backObj:SetActive(not self._backObj.activeSelf)
   if self._isCg ~= DynamicAndStaticState.Dynamic then
-    return 
+    return
   end
   if self._playSpineAnim then
-    return 
+    return
   end
-  local dynamicCGName = (self._pet):GetPetSpine(PetSkinEffectPath.BODY_PET_DETAIL)
-  local cfg_pet_skin = (Cfg.cfg_pet_skin)({Spine = dynamicCGName})
+  local dynamicCGName = self._pet:GetPetSpine(PetSkinEffectPath.BODY_PET_DETAIL)
+  local cfg_pet_skin = Cfg.cfg_pet_skin({Spine = dynamicCGName})
   if not cfg_pet_skin then
-    (Log.error)("###[UIMainLobbyFinal] cfg_pet_skin is nil ! id --> ", skinid)
-    return 
+    Log.error("###[UIMainLobbyFinal] cfg_pet_skin is nil ! id --> ", skinid)
+    return
   else
     cfg_pet_skin = cfg_pet_skin[1]
   end
   local spineAnims = cfg_pet_skin.MainLobbySpineAnim
   if not spineAnims then
-    return 
+    return
   end
   local animList = {}
   for i = 1, #spineAnims do
     local spineAnim = spineAnims[i]
-    ;
-    (table.insert)(animList, spineAnim)
+    table.insert(animList, spineAnim)
   end
   if #animList == 0 then
-    (Log.error)("###[UIMainLobbyFinal] animList is nil ! skinid --> ", skinid)
-    return 
+    Log.error("###[UIMainLobbyFinal] animList is nil ! skinid --> ", skinid)
+    return
   end
-  local randomVal = (math.random)(#animList)
+  local randomVal = math.random(#animList)
   local anim = animList[randomVal]
   local animationName = anim
   if not self._dcgHandle then
-    (Log.debug)("###[UIMainLobbyFinal] self._dcgHandle is nil --> ", self._dynamicSpineSettings)
-    return 
+    Log.debug("###[UIMainLobbyFinal] self._dcgHandle is nil --> ", self._dynamicSpineSettings)
+    return
   end
-  local entry = (self._dcgHandle):SetAnimationWithTrackEntryReturn(0, animationName, false)
-  ;
-  (self._dcgHandle):SetAnimMixTime(0)
-  ;
-  (self._dcgHandle):Update(0)
-  if (self._dcgHandle):GetCurDynamicCGType() == DynamicCGType.Spine or (self._dcgHandle):GetCurDynamicCGType() == DynamicCGType.None then
+  local entry = self._dcgHandle:SetAnimationWithTrackEntryReturn(0, animationName, false)
+  self._dcgHandle:SetAnimMixTime(0)
+  self._dcgHandle:Update(0)
+  if self._dcgHandle:GetCurDynamicCGType() == DynamicCGType.Spine or self._dcgHandle:GetCurDynamicCGType() == DynamicCGType.None then
     self:PlayClickAnimBackIdleBySpine(entry)
-  else
-    if (self._dcgHandle):GetCurDynamicCGType() == DynamicCGType.Live2D then
-      self:PlayClickAnimBackIdleByLive2d(entry)
-    end
+  elseif self._dcgHandle:GetCurDynamicCGType() == DynamicCGType.Live2D then
+    self:PlayClickAnimBackIdleByLive2d(entry)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpiritDetailLookCgAndSpineController.PlayClickAnimBackIdleBySpine = function(self, entry)
-  -- function num : 0_5 , upvalues : _ENV
+function UISpiritDetailLookCgAndSpineController:PlayClickAnimBackIdleBySpine(entry)
   if not entry then
-    return 
+    return
   end
   local anim = entry.Animation
   local duration = anim.Duration
-  local yieldTime = (math.floor)(duration * 1000)
+  local yieldTime = math.floor(duration * 1000)
   if self._spineEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+    GameGlobal.Timer():CancelEvent(self._spineEvent)
     self._spineEvent = nil
     self._playSpineAnim = false
   end
   self._playSpineAnim = true
-  self._spineEvent = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_5_0 , upvalues : self
+  self._spineEvent = GameGlobal.Timer():AddEvent(yieldTime, function()
     self._playSpineAnim = false
     local animationName = "idle"
-    ;
-    (self._dcgHandle):SetAnimation(0, animationName, true)
-    ;
-    (self._dcgHandle):SetAnimMixTime(0)
-    ;
-    (self._dcgHandle):Update(0)
-  end
-)
-  ;
-  (Log.debug)("###[UIMainLobbyFinal] spine 动画名字[", animationName, "] 动画时长[", duration, "]")
+    self._dcgHandle:SetAnimation(0, animationName, true)
+    self._dcgHandle:SetAnimMixTime(0)
+    self._dcgHandle:Update(0)
+  end)
+  Log.debug("###[UIMainLobbyFinal] spine 动画名字[", animationName, "] 动画时长[", duration, "]")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpiritDetailLookCgAndSpineController.PlayClickAnimBackIdleByLive2d = function(self, anim)
-  -- function num : 0_6 , upvalues : _ENV
+function UISpiritDetailLookCgAndSpineController:PlayClickAnimBackIdleByLive2d(anim)
   if anim then
     local duration = anim.length
-    local yieldTime = (math.floor)(duration * 1000)
+    local yieldTime = math.floor(duration * 1000)
     if self._spineEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+      GameGlobal.Timer():CancelEvent(self._spineEvent)
       self._spineEvent = nil
       self._playSpineAnim = false
     end
     self._playSpineAnim = true
-    self._spineEvent = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_6_0 , upvalues : self
-    self._playSpineAnim = false
-    local animationName = "idle"
-    ;
-    (self._dcgHandle):SetAnimationWithTrackEntryReturn(0, animationName, true)
-  end
-)
+    self._spineEvent = GameGlobal.Timer():AddEvent(yieldTime, function()
+      self._playSpineAnim = false
+      local animationName = "idle"
+      self._dcgHandle:SetAnimationWithTrackEntryReturn(0, animationName, true)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpiritDetailLookCgAndSpineController.BackOnClick = function(self)
-  -- function num : 0_7
+function UISpiritDetailLookCgAndSpineController:BackOnClick()
   if self._draging then
-    return 
+    return
   end
   if self._scaling then
-    return 
+    return
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpiritDetailLookCgAndSpineController.Update = function(self, deltaTimeMS)
-  -- function num : 0_8
+function UISpiritDetailLookCgAndSpineController:Update(deltaTimeMS)
   if self._mousePresent then
     self:EditorInput(deltaTimeMS / 1000)
   else
@@ -243,18 +187,15 @@ UISpiritDetailLookCgAndSpineController.Update = function(self, deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpiritDetailLookCgAndSpineController.TouchInput = function(self, deltaTime)
-  -- function num : 0_9 , upvalues : _ENV
-  local touchCount = ((GameGlobal.EngineInput)()).touchCount
-  local touch0 = nil
-  if touchCount > 0 then
-    touch0 = (((GameGlobal.EngineInput)()).GetTouch)(0)
+function UISpiritDetailLookCgAndSpineController:TouchInput(deltaTime)
+  local touchCount = GameGlobal.EngineInput().touchCount
+  local touch0
+  if 0 < touchCount then
+    touch0 = GameGlobal.EngineInput().GetTouch(0)
   end
-  local touch1 = nil
-  if touchCount > 1 then
-    touch1 = (((GameGlobal.EngineInput)()).GetTouch)(1)
+  local touch1
+  if 1 < touchCount then
+    touch1 = GameGlobal.EngineInput().GetTouch(1)
   end
   if touch0 and touch0.phase == TouchPhase.Began then
     self._touch0DownPos = touch0.position
@@ -262,103 +203,80 @@ UISpiritDetailLookCgAndSpineController.TouchInput = function(self, deltaTime)
   if not touch1 and touch0 and touch0.phase == TouchPhase.Moved then
     self._touch0Pos = touch0.position
     if self._touch0Pos2 ~= 0 and self._touch0DownPos then
-      if self._draging == false and self._startMove < (self._touch0Pos - self._touch0DownPos).sqrMagnitude then
+      if self._draging == false and (self._touch0Pos - self._touch0DownPos).sqrMagnitude > self._startMove then
         self._draging = true
       end
       local offset = self._touch0Pos - self._touch0Pos2
       self._moveGap = offset * self._moveK
-      local targetPos = (self._rect).anchoredPosition + Vector2((self._moveGap).x, (self._moveGap).y)
-      -- DECOMPILER ERROR at PC91: Confused about usage of register: R7 in 'UnsetPending'
-
-      if targetPos.x < self._moveMaxX and self._moveMinX < targetPos.x then
-        (self._rect).anchoredPosition = Vector2(targetPos.x, ((self._rect).anchoredPosition).y)
+      local targetPos = self._rect.anchoredPosition + Vector2(self._moveGap.x, self._moveGap.y)
+      if targetPos.x < self._moveMaxX and targetPos.x > self._moveMinX then
+        self._rect.anchoredPosition = Vector2(targetPos.x, self._rect.anchoredPosition.y)
       end
-      -- DECOMPILER ERROR at PC107: Confused about usage of register: R7 in 'UnsetPending'
-
-      if targetPos.y < self._moveMaxY and self._moveMinY < targetPos.y then
-        (self._rect).anchoredPosition = Vector2(((self._rect).anchoredPosition).x, targetPos.y)
+      if targetPos.y < self._moveMaxY and targetPos.y > self._moveMinY then
+        self._rect.anchoredPosition = Vector2(self._rect.anchoredPosition.x, targetPos.y)
       end
     end
-    do
-      self._touch0Pos2 = self._touch0Pos
-      if touchCount == 0 then
-        self._draging = false
-        self._scaling = false
-        self._touchDis = 0
-        self._touchDis2 = 0
-        self._touchDownDis = 0
-        self._touch0Pos = 0
-        self._touch0Pos2 = 0
-      end
-      if touch1 then
-        self._scaling = true
-        local lastLength = (Vector2.Distance)(touch0.position - touch0.deltaPosition, touch1.position - touch1.deltaPosition)
-        local length = (Vector2.Distance)(touch0.position, touch1.position)
-        local offset = length - lastLength
-        self._scaleValue = offset * self._touchScaleK
-        local targetScale = (self._scaleRoot).localScale + Vector3(self._scaleValue, self._scaleValue, self._scaleValue)
-        -- DECOMPILER ERROR at PC157: Confused about usage of register: R9 in 'UnsetPending'
-
-        if targetScale.x < self._scaleMax and self._scaleMin < targetScale.x then
-          (self._scaleRoot).localScale = targetScale
-        end
-      end
+    self._touch0Pos2 = self._touch0Pos
+  end
+  if touchCount == 0 then
+    self._draging = false
+    self._scaling = false
+    self._touchDis = 0
+    self._touchDis2 = 0
+    self._touchDownDis = 0
+    self._touch0Pos = 0
+    self._touch0Pos2 = 0
+  end
+  if touch1 then
+    self._scaling = true
+    local lastLength = Vector2.Distance(touch0.position - touch0.deltaPosition, touch1.position - touch1.deltaPosition)
+    local length = Vector2.Distance(touch0.position, touch1.position)
+    local offset = length - lastLength
+    self._scaleValue = offset * self._touchScaleK
+    local targetScale = self._scaleRoot.localScale + Vector3(self._scaleValue, self._scaleValue, self._scaleValue)
+    if targetScale.x < self._scaleMax and targetScale.x > self._scaleMin then
+      self._scaleRoot.localScale = targetScale
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpiritDetailLookCgAndSpineController.EditorInput = function(self, deltaTime)
-  -- function num : 0_10 , upvalues : _ENV
-  if (((GameGlobal.EngineInput)()).GetMouseButtonDown)(0) then
+function UISpiritDetailLookCgAndSpineController:EditorInput(deltaTime)
+  if GameGlobal.EngineInput().GetMouseButtonDown(0) then
     self._mousePos2 = 0
     self._mousePos = 0
-    self._mouseDpwnPos = ((GameGlobal.EngineInput)()).mousePosition
+    self._mouseDpwnPos = GameGlobal.EngineInput().mousePosition
   end
-  if (((GameGlobal.EngineInput)()).GetMouseButton)(0) then
-    self._mousePos = ((GameGlobal.EngineInput)()).mousePosition
+  if GameGlobal.EngineInput().GetMouseButton(0) then
+    self._mousePos = GameGlobal.EngineInput().mousePosition
     if self._mousePos2 ~= 0 and self._mouseDpwnPos then
-      if self._draging == false and self._startMove < (self._mousePos - self._mouseDpwnPos).sqrMagnitude then
+      if self._draging == false and (self._mousePos - self._mouseDpwnPos).sqrMagnitude > self._startMove then
         self._draging = true
       end
       local offset = self._mousePos - self._mousePos2
       self._moveGap = offset * self._moveK
-      local targetPos = (self._rect).anchoredPosition + Vector2((self._moveGap).x, (self._moveGap).y)
-      -- DECOMPILER ERROR at PC75: Confused about usage of register: R4 in 'UnsetPending'
-
-      if targetPos.x < self._moveMaxX and self._moveMinX < targetPos.x then
-        (self._rect).anchoredPosition = Vector2(targetPos.x, ((self._rect).anchoredPosition).y)
+      local targetPos = self._rect.anchoredPosition + Vector2(self._moveGap.x, self._moveGap.y)
+      if targetPos.x < self._moveMaxX and targetPos.x > self._moveMinX then
+        self._rect.anchoredPosition = Vector2(targetPos.x, self._rect.anchoredPosition.y)
       end
-      -- DECOMPILER ERROR at PC91: Confused about usage of register: R4 in 'UnsetPending'
-
-      if targetPos.y < self._moveMaxY and self._moveMinY < targetPos.y then
-        (self._rect).anchoredPosition = Vector2(((self._rect).anchoredPosition).x, targetPos.y)
+      if targetPos.y < self._moveMaxY and targetPos.y > self._moveMinY then
+        self._rect.anchoredPosition = Vector2(self._rect.anchoredPosition.x, targetPos.y)
       end
     end
-    do
-      self._mousePos2 = self._mousePos
-      self._scaleLength = (((GameGlobal.EngineInput)()).GetAxis)("Mouse ScrollWheel")
-      if self._scaleLength > 0 or self._scaleLength < 0 then
-        local gap = self._scaleLength * self._scaleK
-        local targetScale = (self._scaleRoot).localScale + Vector3(gap, gap, gap)
-        -- DECOMPILER ERROR at PC127: Confused about usage of register: R4 in 'UnsetPending'
-
-        if targetScale.x < self._scaleMax and self._scaleMin < targetScale.x then
-          (self._scaleRoot).localScale = targetScale
-        end
-      end
-      do
-        if (((GameGlobal.EngineInput)()).GetMouseButtonUp)(0) then
-          self._mousePos2 = 0
-          self._mousePos = 0
-          if self._draging then
-            self._draging = false
-          end
-        end
-      end
+    self._mousePos2 = self._mousePos
+  end
+  self._scaleLength = GameGlobal.EngineInput().GetAxis("Mouse ScrollWheel")
+  if 0 < self._scaleLength or 0 > self._scaleLength then
+    local gap = self._scaleLength * self._scaleK
+    local targetScale = self._scaleRoot.localScale + Vector3(gap, gap, gap)
+    if targetScale.x < self._scaleMax and targetScale.x > self._scaleMin then
+      self._scaleRoot.localScale = targetScale
+    end
+  end
+  if GameGlobal.EngineInput().GetMouseButtonUp(0) then
+    self._mousePos2 = 0
+    self._mousePos = 0
+    if self._draging then
+      self._draging = false
     end
   end
 end
-
-

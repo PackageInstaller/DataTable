@@ -1,25 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_talent_tree_slot.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, SlotID = 2, ComponentID = 3, TypeLimit = 4, MainSkillId = 5, MainSkillLV = 6}
+local key = {
+  ID = 1,
+  SlotID = 2,
+  ComponentID = 3,
+  TypeLimit = 4,
+  MainSkillId = 5,
+  MainSkillLV = 6
+}
 local config = {
-{1, 1, 800407812, 3}
-, 
-{2, 2, 800407812, 2, 100, 1}
-, 
-{3, 3, 800407812, 2, 200, 1}
-, 
-{4, 4, 800407812, 2, 300, 1}
-, 
-{5, 1, 506807804, 3}
-, 
-{6, 2, 506807804, 2, 110, 1}
-, 
-{8, 3, 506807804, 2, 210, 1}
-, 
-{7, 4, 506807804, 2, 310, 1}
+  {
+    1,
+    1,
+    800407812,
+    3
+  },
+  {
+    2,
+    2,
+    800407812,
+    2,
+    100,
+    1
+  },
+  {
+    3,
+    3,
+    800407812,
+    2,
+    200,
+    1
+  },
+  {
+    4,
+    4,
+    800407812,
+    2,
+    300,
+    1
+  },
+  {
+    5,
+    1,
+    506807804,
+    3
+  },
+  {
+    6,
+    2,
+    506807804,
+    2,
+    110,
+    1
+  },
+  {
+    8,
+    3,
+    506807804,
+    2,
+    210,
+    1
+  },
+  {
+    7,
+    4,
+    506807804,
+    2,
+    310,
+    1
+  }
 }
 return config, "ID", key
-

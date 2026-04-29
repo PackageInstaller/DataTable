@@ -1,16 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_skins/pet_skin_show_model_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local PetSkinModelAnimType = {BattleIdle = 1, AirStand = 2, AirClick = 3, AirWalk = 4, AirSit = 5}
+local PetSkinModelAnimType = {
+  BattleIdle = 1,
+  AirStand = 2,
+  AirClick = 3,
+  AirWalk = 4,
+  AirSit = 5
+}
 _enum("PetSkinModelAnimType", PetSkinModelAnimType)
 _class("PetSkinShowModelManager", Object)
 PetSkinShowModelManager = PetSkinShowModelManager
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-PetSkinShowModelManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : PetSkinModelAnimType
+function PetSkinShowModelManager:Constructor()
   self._petSkin3dRoot = nil
   self._moduleGo = nil
   self._modelParentTrans = nil
@@ -23,42 +22,33 @@ PetSkinShowModelManager.Constructor = function(self)
   self._debugActionType = PetSkinModelAnimType.BattleIdle
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-PetSkinShowModelManager.SetRenderTexture = function(self, renderTexture)
-  -- function num : 0_1
+function PetSkinShowModelManager:SetRenderTexture(renderTexture)
   self._renderTexture = renderTexture
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-PetSkinShowModelManager.Reset = function(self)
-  -- function num : 0_2
+function PetSkinShowModelManager:Reset()
   self:_ReleaseCurModule()
   self._curSkinId = 0
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-PetSkinShowModelManager._ReleaseCurModule = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PetSkinShowModelManager:_ReleaseCurModule()
   if self._timeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._timeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._timeEvent)
     self._timeEvent = nil
   end
   if self._model then
-    (UIHelper.DestroyGameObject)(self._model)
+    UIHelper.DestroyGameObject(self._model)
     self._model = nil
   end
   if self._moduleGo then
-    (UIHelper.DestroyGameObject)(self._moduleGo)
+    UIHelper.DestroyGameObject(self._moduleGo)
     self._moduleGo = nil
   end
   if self._petSkin3dRoot then
-    (UIHelper.DestroyGameObject)(self._petSkin3dRoot)
+    UIHelper.DestroyGameObject(self._petSkin3dRoot)
     self._petSkin3dRoot = nil
   end
-  for index,value in ipairs(self._aniReqs) do
+  for index, value in ipairs(self._aniReqs) do
     if value then
       value:Dispose()
     end
@@ -66,45 +56,38 @@ PetSkinShowModelManager._ReleaseCurModule = function(self)
   self._aniReqs = {}
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-PetSkinShowModelManager.Dispose = function(self)
-  -- function num : 0_4
+function PetSkinShowModelManager:Dispose()
   self:Reset()
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-PetSkinShowModelManager.ShowPetSkinModel = function(self, skinId)
-  -- function num : 0_5 , upvalues : _ENV
+function PetSkinShowModelManager:ShowPetSkinModel(skinId)
   if self._curSkinId == skinId then
-    return 
+    return
   else
     self._curSkinId = skinId
   end
   if not self._renderTexture then
-    return 
+    return
   end
   self:_ReleaseCurModule()
   self:_InitRoot()
   if not self._petSkin3dRoot then
-    return 
+    return
   end
   local modelName = self:_GetModelName(skinId)
   if not modelName or modelName == "" then
-    return 
+    return
   end
   self:_SetModel(modelName)
   self:_ShowModel(false)
   if self._timeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._timeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._timeEvent)
     self._timeEvent = nil
   end
   self:_SetDefaultAction(modelName)
 end
 
-local _createV4FromV3 = function(v3)
-  -- function num : 0_6 , upvalues : _ENV
+local function _createV4FromV3(v3)
   local v4 = Vector4.zero
   v4.x = v3.x
   v4.y = v3.y
@@ -113,248 +96,178 @@ local _createV4FromV3 = function(v3)
   return v4
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-PetSkinShowModelManager._InitRoot = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function PetSkinShowModelManager:_InitRoot()
   if self._petSkin3dRoot then
-    return 
+    return
   end
-  local uiRoot = ((UnityEngine.GameObject).Find)("UIRoot")
-  self._petSkin3dRoot = (GameObjectHelper.CreateEmpty)("UIPetSkin3dModules", uiRoot.transform)
+  local uiRoot = UnityEngine.GameObject.Find("UIRoot")
+  self._petSkin3dRoot = GameObjectHelper.CreateEmpty("UIPetSkin3dModules", uiRoot.transform)
   if not self._petSkin3dRoot then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._petSkin3dRoot).transform).localPosition = Vector3.zero
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._petSkin3dRoot).transform).localEulerAngles = Vector3.zero
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._petSkin3dRoot).transform).localScale = Vector3.one
-  self._moduleGo = (UIHelper.GetGameObject)("UIPetSkin3DModule.prefab")
+  self._petSkin3dRoot.transform.localPosition = Vector3.zero
+  self._petSkin3dRoot.transform.localEulerAngles = Vector3.zero
+  self._petSkin3dRoot.transform.localScale = Vector3.one
+  self._moduleGo = UIHelper.GetGameObject("UIPetSkin3DModule.prefab")
   if not self._moduleGo then
-    return 
+    return
   end
-  self._modelParentTrans = ((self._moduleGo).transform):Find("ModelShow/ShowPlayer/Model")
-  local moduleTrans = (self._moduleGo).transform
-  moduleTrans.parent = (self._petSkin3dRoot).transform
+  self._modelParentTrans = self._moduleGo.transform:Find("ModelShow/ShowPlayer/Model")
+  local moduleTrans = self._moduleGo.transform
+  moduleTrans.parent = self._petSkin3dRoot.transform
   moduleTrans.localPosition = Vector3.zero
   moduleTrans.localEulerAngles = Vector3.zero
   moduleTrans.localScale = Vector3.one
-  local trans = (self._moduleGo).transform
+  local trans = self._moduleGo.transform
   if trans then
     local camGoTrans = trans:Find("ModelShow/ShowPlayer/UIModelCam/ModelCam")
-    local cam = (camGoTrans:Find("UIModelCamera")):GetComponent("Camera")
+    local cam = camGoTrans:Find("UIModelCamera"):GetComponent("Camera")
     if cam then
       cam.targetTexture = self._renderTexture
     end
   end
-  do
-    self:_SetRenderParam()
-  end
+  self:_SetRenderParam()
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
-PetSkinShowModelManager._SetRenderParam = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  ((UnityEngine.Shader).SetGlobalVector)("_H3D_CustomLightDir", Vector4(0.33, 0.18, 0.93, 1))
-  ;
-  ((UnityEngine.Shader).SetGlobalVector)("_H3D_CustomShadowDir", Vector4(0.14, 0.55, 0.83, 1))
-  ;
-  ((UnityEngine.Shader).SetGlobalVector)("_H3D_ShowdowColor", Vector4(0.092, 0.058, 0.11, 0.3))
+function PetSkinShowModelManager:_SetRenderParam()
+  UnityEngine.Shader.SetGlobalVector("_H3D_CustomLightDir", Vector4(0.33, 0.18, 0.93, 1))
+  UnityEngine.Shader.SetGlobalVector("_H3D_CustomShadowDir", Vector4(0.14, 0.55, 0.83, 1))
+  UnityEngine.Shader.SetGlobalVector("_H3D_ShowdowColor", Vector4(0.092, 0.058, 0.11, 0.3))
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-PetSkinShowModelManager._GetModelName = function(self, skinId)
-  -- function num : 0_9 , upvalues : _ENV
+function PetSkinShowModelManager:_GetModelName(skinId)
   local modelName = "1500921.prefab"
-  local curSkinCfg = (Cfg.cfg_pet_skin)[skinId]
+  local curSkinCfg = Cfg.cfg_pet_skin[skinId]
   if curSkinCfg then
     modelName = curSkinCfg.Prefab
     if not modelName then
-      return 
+      return
     end
   end
   return modelName
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-PetSkinShowModelManager._SetModel = function(self, modelName)
-  -- function num : 0_10 , upvalues : _ENV
+function PetSkinShowModelManager:_SetModel(modelName)
   if self._model then
-    (UIHelper.DestroyGameObject)(self._model)
+    UIHelper.DestroyGameObject(self._model)
     self._model = nil
   end
-  self._model = (UIHelper.GetGameObject)(modelName)
+  self._model = UIHelper.GetGameObject(modelName)
   if not self._model then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._model).transform).parent = self._modelParentTrans
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._model).transform).localPosition = Vector3.zero
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._model).transform).localEulerAngles = Vector3.zero
+  self._model.transform.parent = self._modelParentTrans
+  self._model.transform.localPosition = Vector3.zero
+  self._model.transform.localEulerAngles = Vector3.zero
   local scaleParam = 1
-  local cfgSkin = (Cfg.cfg_pet_skin)[self._curSelSkinId]
+  local cfgSkin = Cfg.cfg_pet_skin[self._curSelSkinId]
   if cfgSkin and cfgSkin.UiModelScale then
     scaleParam = cfgSkin.UiModelScale
   end
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._model).transform).localScale = Vector3(scaleParam, scaleParam, scaleParam)
+  self._model.transform.localScale = Vector3(scaleParam, scaleParam, scaleParam)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-PetSkinShowModelManager._ShowModel = function(self, bShow)
-  -- function num : 0_11 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
+function PetSkinShowModelManager:_ShowModel(bShow)
   if bShow then
-    ((self._model).transform).localPosition = Vector3.zero
+    self._model.transform.localPosition = Vector3.zero
   else
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._model).transform).localPosition = Vector3(0, -100, 0)
+    self._model.transform.localPosition = Vector3(0, -100, 0)
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-PetSkinShowModelManager._SetDefaultAction = function(self, modelName)
-  -- function num : 0_12 , upvalues : _ENV, PetSkinModelAnimType
+function PetSkinShowModelManager:_SetDefaultAction(modelName)
   if not self._model then
-    return 
+    return
   end
-  local animator = (self._moduleGo):GetComponentInChildren(typeof(UnityEngine.Animator))
+  local animator = self._moduleGo:GetComponentInChildren(typeof(UnityEngine.Animator))
   if not animator then
-    return 
+    return
   end
   local controllerType = PetAnimatorControllerType.Aircraft
   if self._debugActionType == PetSkinModelAnimType.BattleIdle then
     controllerType = PetAnimatorControllerType.Battle
   end
-  local ancName = (HelperProxy:GetInstance()):GetPetAnimatorControllerName(modelName, controllerType)
-  self.ani_request = (ResourceManager:GetInstance()):SyncLoadAsset(ancName, LoadType.GameObject)
-  ;
-  (table.insert)(self._aniReqs, self.ani_request)
+  local ancName = HelperProxy:GetInstance():GetPetAnimatorControllerName(modelName, controllerType)
+  self.ani_request = ResourceManager:GetInstance():SyncLoadAsset(ancName, LoadType.GameObject)
+  table.insert(self._aniReqs, self.ani_request)
   if self.ani_request == nil then
-    (Log.fatal)("LoadGameObject failed", "[" .. ancName .. "]")
-    return 
+    Log.fatal("LoadGameObject failed", "[" .. ancName .. "]")
+    return
   end
   if isBattleAct then
-    local animatorController = (((self.ani_request).Obj):GetComponent(typeof(UnityEngine.Animator))).runtimeAnimatorController
+    local animatorController = self.ani_request.Obj:GetComponent(typeof(UnityEngine.Animator)).runtimeAnimatorController
     if animatorController == nil then
-      (Log.fatal)("[ani] getAnimatorController Error", (self.ani_request).m_Name)
-      return 
+      Log.fatal("[ani] getAnimatorController Error", self.ani_request.m_Name)
+      return
     end
     animator.runtimeAnimatorController = animatorController
     animator:Play("idle")
-    ;
-    ((self.ani_request).Obj):SetActive(false)
+    self.ani_request.Obj:SetActive(false)
     self:_ShowModel(true)
   else
-    do
-      local anim = ((self.ani_request).Obj):GetComponent("Animation")
-      self:_SetAirAction(anim)
-    end
+    local anim = self.ani_request.Obj:GetComponent("Animation")
+    self:_SetAirAction(anim)
   end
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-PetSkinShowModelManager._SetAirAction = function(self, anim)
-  -- function num : 0_13 , upvalues : _ENV, PetSkinModelAnimType
-  local root = (((self._model).transform):Find("Root")).gameObject
+function PetSkinShowModelManager:_SetAirAction(anim)
+  local root = self._model.transform:Find("Root").gameObject
   if anim == nil then
-    (Log.fatal)("找不到Animation组件，加载pet模型失败：", self._petID)
-    return 
+    Log.fatal("找不到Animation组件，加载pet模型失败：", self._petID)
+    return
   end
   if anim.clip == nil then
-    (Log.exception)("星灵没有默认的Stand动作：", self._petID)
-    return 
+    Log.exception("星灵没有默认的Stand动作：", self._petID)
+    return
   end
   local animator = root:GetComponent(typeof(UnityEngine.Animator))
   if animator then
-    ((UnityEngine.Object).Destroy)(animator)
+    UnityEngine.Object.Destroy(animator)
   end
   local petAnim = root:AddComponent(typeof(UnityEngine.Animation))
-  local clips = (HelperProxy:GetInstance()):GetAllAnimationClip(anim)
+  local clips = HelperProxy:GetInstance():GetAllAnimationClip(anim)
   for i = 0, clips.Length - 1 do
     local clip = clips[i]
     if clip == nil then
-      (Log.exception)("星灵动作为空:", self._petID, "，索引：", i)
+      Log.exception("星灵动作为空:", self._petID, "，索引：", i)
     else
       petAnim:AddClip(clip, clip.name)
     end
   end
   petAnim.clip = anim.clip
-  local AirPetAnimName = {Stand = "stand", Walk = "walk", Click = "click01", Sit = "sit"}
+  local AirPetAnimName = {
+    Stand = "stand",
+    Walk = "walk",
+    Click = "click01",
+    Sit = "sit"
+  }
   local act = ""
   if self._debugActionType == PetSkinModelAnimType.AirStand then
     act = AirPetAnimName.Stand
-  else
-    if self._debugActionType == PetSkinModelAnimType.AirClick then
-      act = AirPetAnimName.Click
-    else
-      if self._debugActionType == PetSkinModelAnimType.AirWalk then
-        act = AirPetAnimName.Walk
-      else
-        if self._debugActionType == PetSkinModelAnimType.AirSit then
-          act = AirPetAnimName.Sit
-        end
-      end
-    end
+  elseif self._debugActionType == PetSkinModelAnimType.AirClick then
+    act = AirPetAnimName.Click
+  elseif self._debugActionType == PetSkinModelAnimType.AirWalk then
+    act = AirPetAnimName.Walk
+  elseif self._debugActionType == PetSkinModelAnimType.AirSit then
+    act = AirPetAnimName.Sit
   end
   petAnim:Play(AirPetAnimName.Stand)
-  ;
-  ((GameGlobal.Timer)()):AddEvent(1, function()
-    -- function num : 0_13_0 , upvalues : petAnim, act, _ENV, self
+  GameGlobal.Timer():AddEvent(1, function()
     petAnim:Play(act)
-    ;
-    ((GameGlobal.Timer)()):AddEvent(1, function()
-      -- function num : 0_13_0_0 , upvalues : self
+    GameGlobal.Timer():AddEvent(1, function()
       self:_ShowModel(true)
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-PetSkinShowModelManager.OnDrag = function(self, eventData)
-  -- function num : 0_14 , upvalues : _ENV
+function PetSkinShowModelManager:OnDrag(eventData)
   if not self._model then
-    return 
+    return
   end
   local Abs = math.abs
   local delta = eventData.delta
   if delta and Abs(delta.x) >= 1 then
     local rot = -1 * self._dragRotateSpeed * delta.x
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    ((self._model).transform).localEulerAngles = Vector3(0, (((self._model).transform).localEulerAngles).y + rot, 0)
+    self._model.transform.localEulerAngles = Vector3(0, self._model.transform.localEulerAngles.y + rot, 0)
   end
 end
-
-

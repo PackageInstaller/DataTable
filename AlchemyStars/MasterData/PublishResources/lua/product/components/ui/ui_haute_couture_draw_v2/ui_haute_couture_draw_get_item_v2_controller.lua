@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/ui_haute_couture_draw_get_item_v2_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawGetItemV2Controller", UIController)
 UIHauteCoutureDrawGetItemV2Controller = UIHauteCoutureDrawGetItemV2Controller
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawGetItemV2Controller.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawGetItemV2Controller:Constructor()
   self.main = nil
   self.bg = nil
   self.items = {}
@@ -17,31 +10,23 @@ UIHauteCoutureDrawGetItemV2Controller.Constructor = function(self)
   self.callback = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawGetItemV2Controller.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCoutureDrawGetItemV2Controller:OnShow(uiParams)
   self.items = uiParams[1]
   self.titleTex = uiParams[2]
   self.noSort = uiParams[3]
   self.callback = uiParams[4]
   self._ctx = uiParams[5]
   local main = self:GetUIComponent("UISelectObjectPath", "uiRoot")
-  self.hcType = (HauteCouture:GetInstance()).HcType
+  self.hcType = HauteCouture:GetInstance().HcType
   if self.hcType == HauteCoutureType.HC_GL then
-    (main.dynamicInfoOfEngine):SetObjectName("UIHauteCoutureDrawGetItemMainGL.prefab")
+    main.dynamicInfoOfEngine:SetObjectName("UIHauteCoutureDrawGetItemMainGL.prefab")
     self.main = main:SpawnObject("UIHauteCoutureDrawGetItemMainGL")
+  elseif self.hcType == HauteCoutureType.HC_KR then
+    main.dynamicInfoOfEngine:SetObjectName("UIHauteCoutureDrawGetItemMainKR.prefab")
+    self.main = main:SpawnObject("UIHauteCoutureDrawGetItemMainKR")
   else
-    if self.hcType == HauteCoutureType.HC_KR then
-      (main.dynamicInfoOfEngine):SetObjectName("UIHauteCoutureDrawGetItemMainKR.prefab")
-      self.main = main:SpawnObject("UIHauteCoutureDrawGetItemMainKR")
-    else
-      local prefab, class = (self._ctx):GetGetItemUIInfo()
-      ;
-      (main.dynamicInfoOfEngine):SetObjectName(prefab)
-      self.main = main:SpawnObject(class._className)
-    end
+    local prefab, class = self._ctx:GetGetItemUIInfo()
+    main.dynamicInfoOfEngine:SetObjectName(prefab)
+    self.main = main:SpawnObject(class._className)
   end
 end
-
-

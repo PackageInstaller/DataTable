@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/unique/main_camera_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MainCameraComponent", Object)
 MainCameraComponent = MainCameraComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MainCameraComponent.Constructor = function(self, world)
-  -- function num : 0_0
+function MainCameraComponent:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
+  self._configService = self._world:GetService("Config")
   self.camera = nil
   self._hudCamera = nil
   self._hudCameraResPath = "HUD Camera.prefab"
@@ -58,10 +51,7 @@ MainCameraComponent.Constructor = function(self, world)
   self._enableDarkCamera = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function MainCameraComponent:Dispose()
   self:_DisposeRes()
   self._auroraTimeFxRequest = nil
   self._auroraTimeFx = nil
@@ -89,113 +79,85 @@ MainCameraComponent.Dispose = function(self)
   self._request = nil
   self._goEffRuchangActorpoint = nil
   if self._csTex2dSceneCameraScreenshot and tostring(self._csTex2dSceneCameraScreenshot) ~= "null" then
-    (self._csTex2dSceneCameraScreenshot):Destroy()
+    self._csTex2dSceneCameraScreenshot:Destroy()
     self._csTex2dSceneCameraScreenshot = nil
   end
   local darkParamName = "H3DDarkLevel"
-  ;
-  ((UnityEngine.Shader).SetGlobalFloat)(darkParamName, 0)
+  UnityEngine.Shader.SetGlobalFloat(darkParamName, 0)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent._DisposeRes = function(self)
-  -- function num : 0_2
+function MainCameraComponent:_DisposeRes()
   if self._hudCameraRequest ~= nil then
-    (self._hudCameraRequest):Dispose()
+    self._hudCameraRequest:Dispose()
   end
   if self._hudBgRequest ~= nil then
-    (self._hudBgRequest):Dispose()
+    self._hudBgRequest:Dispose()
   end
   if self._hudDarkCameraRequest ~= nil then
-    (self._hudDarkCameraRequest):Dispose()
+    self._hudDarkCameraRequest:Dispose()
   end
   if self._darkSceneCameraRequest ~= nil then
-    (self._darkSceneCameraRequest):Dispose()
+    self._darkSceneCameraRequest:Dispose()
   end
   if self._darkSceneCameraRequest ~= nil then
-    (self._darkSceneCameraRequest):Dispose()
+    self._darkSceneCameraRequest:Dispose()
   end
   if self._hudCanvasRequest ~= nil then
-    (self._hudCanvasRequest):Dispose()
+    self._hudCanvasRequest:Dispose()
   end
   if self._effectCameraRequest then
-    (self._effectCameraRequest):Dispose()
+    self._effectCameraRequest:Dispose()
   end
   if self._sceneCameraRequest then
-    (self._sceneCameraRequest):Dispose()
+    self._sceneCameraRequest:Dispose()
   end
   if self._auroraTimeFxRequest then
-    (self._auroraTimeFxRequest):Dispose()
+    self._auroraTimeFxRequest:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.Initialize = function(self)
-  -- function num : 0_3
+function MainCameraComponent:Initialize()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.Camera = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if not (tolua.isnull)(self.camera) and self.camera ~= nil then
+function MainCameraComponent:Camera()
+  if not tolua.isnull(self.camera) and self.camera ~= nil then
     return self.camera
   end
-  local go = ((UnityEngine.GameObject).Find)(self._MainCameraName)
+  local go = UnityEngine.GameObject.Find(self._MainCameraName)
   if not go then
-    self._request = (UnityResourceService:GetInstance()):LoadGameObject(self._MainCameraName .. ".prefab")
-    go = (self._request).Obj
+    self._request = UnityResourceService:GetInstance():LoadGameObject(self._MainCameraName .. ".prefab")
+    go = self._request.Obj
     go.name = self._MainCameraName
   end
   self.camera = go:GetComponent("Camera")
-  self.darkCameraHelperGo = (UnityEngine.GameObject):New("DarkCameraHelperGo")
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self.darkCameraHelperGo).transform).parent = go.transform
+  self.darkCameraHelperGo = UnityEngine.GameObject:New("DarkCameraHelperGo")
+  self.darkCameraHelperGo.transform.parent = go.transform
   self._postProcessingCmpt = go:GetComponent("UnityEngine.H3DPostProcessing.PostProcessing")
   return self.camera
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.HUDCamera = function(self)
-  -- function num : 0_5
+function MainCameraComponent:HUDCamera()
   if self._hudCamera ~= nil then
     return self._hudCamera
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.HUDCanvas = function(self)
-  -- function num : 0_6
+function MainCameraComponent:HUDCanvas()
   if self._hudCanvas ~= nil then
     return self._hudCanvas
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.GetFocusTargetPos = function(self)
-  -- function num : 0_7
+function MainCameraComponent:GetFocusTargetPos()
   return self._cameraFocusTargetPos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.ClearDarkCameraValue = function(self)
-  -- function num : 0_8
+function MainCameraComponent:ClearDarkCameraValue()
   self._darkCameraValue = 0
   self:EnableDarkCamera(false)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.AddDarkCameraValue = function(self, value)
-  -- function num : 0_9
+function MainCameraComponent:AddDarkCameraValue(value)
   self._darkCameraValue = value + self._darkCameraValue
   if self._darkCameraValue < 0 then
     self._darkCameraValue = 0
@@ -203,146 +165,93 @@ MainCameraComponent.AddDarkCameraValue = function(self, value)
   self:EnableDarkCamera(true, self._darkCameraValue)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.SetDarkShaderValue = function(self, value)
-  -- function num : 0_10 , upvalues : _ENV
+function MainCameraComponent:SetDarkShaderValue(value)
   local darkParamName = "H3DDarkLevel"
-  local darkVal = ((UnityEngine.Shader).GetGlobalFloat)(darkParamName)
+  local darkVal = UnityEngine.Shader.GetGlobalFloat(darkParamName)
   local duration = BattleConst.DarkShaderDuration
   if self.darkCameraHelperGo then
-    local helpTrans = (self.darkCameraHelperGo).transform
-    do
-      if self.darkFadeTweener then
-        (self.darkFadeTweener):Kill()
-        self.darkFadeTweener = nil
-      end
-      helpTrans.localPosition = Vector3(0, 0, darkVal)
-      self.darkFadeTweener = ((helpTrans:DOLocalMoveZ(value, duration)):OnUpdate(function()
-    -- function num : 0_10_0 , upvalues : helpTrans, _ENV, darkParamName
-    local num = (helpTrans.localPosition).z
-    ;
-    ((UnityEngine.Shader).SetGlobalFloat)(darkParamName, num)
-  end
-)):OnComplete(function()
-    -- function num : 0_10_1 , upvalues : _ENV, darkParamName, value
-    ((UnityEngine.Shader).SetGlobalFloat)(darkParamName, value)
-  end
-)
+    local helpTrans = self.darkCameraHelperGo.transform
+    if self.darkFadeTweener then
+      self.darkFadeTweener:Kill()
+      self.darkFadeTweener = nil
     end
+    helpTrans.localPosition = Vector3(0, 0, darkVal)
+    self.darkFadeTweener = helpTrans:DOLocalMoveZ(value, duration):OnUpdate(function()
+      local num = helpTrans.localPosition.z
+      UnityEngine.Shader.SetGlobalFloat(darkParamName, num)
+    end):OnComplete(function()
+      UnityEngine.Shader.SetGlobalFloat(darkParamName, value)
+    end)
   else
-    do
-      if self.darkFadeTweener then
-        (self.darkFadeTweener):Kill()
-        self.darkFadeTweener = nil
-      end
-      ;
-      ((UnityEngine.Shader).SetGlobalFloat)(darkParamName, value)
+    if self.darkFadeTweener then
+      self.darkFadeTweener:Kill()
+      self.darkFadeTweener = nil
     end
+    UnityEngine.Shader.SetGlobalFloat(darkParamName, value)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.EnableDarkCamera = function(self, enable, value)
-  -- function num : 0_11 , upvalues : _ENV
+function MainCameraComponent:EnableDarkCamera(enable, value)
   local goEnable = enable
   if self._darkCameraValue ~= 0 then
     goEnable = true
   end
-  ;
-  ((self._darkHUDCamera).gameObject):SetActive(goEnable)
-  ;
-  ((self._darkSceneCamera).gameObject):SetActive(goEnable)
-  ;
-  (self._hudBgObj):SetActive(goEnable)
+  self._darkHUDCamera.gameObject:SetActive(goEnable)
+  self._darkSceneCamera.gameObject:SetActive(goEnable)
+  self._hudBgObj:SetActive(goEnable)
   self._enableDarkCamera = enable
   if enable == true then
-    if not value then
-      value = BattleConst.DarkShaderValue
-    end
+    value = value or BattleConst.DarkShaderValue
     self:SetDarkShaderValue(value)
   else
     self:SetDarkShaderValue(self._darkCameraValue)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.SetHudBgAlpha = function(self, targetAlpha)
-  -- function num : 0_12
-  local color = (self._hudBgImg).color
+function MainCameraComponent:SetHudBgAlpha(targetAlpha)
+  local color = self._hudBgImg.color
   color.a = targetAlpha
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._hudBgImg).color = color
+  self._hudBgImg.color = color
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.ScreenPointToRay = function(self, point)
-  -- function num : 0_13
+function MainCameraComponent:ScreenPointToRay(point)
   local camera = self:Camera()
   return camera:ScreenPointToRay(point)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.IsFocusPlayer = function(self)
-  -- function num : 0_14
+function MainCameraComponent:IsFocusPlayer()
   return self._focusPlayer
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.IsNormalState = function(self)
-  -- function num : 0_15
-  do return self._focusPlayer == false and self._movingToNormal == false and self._movingToFocus == false end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainCameraComponent:IsNormalState()
+  return self._focusPlayer == false and self._movingToNormal == false and self._movingToFocus == false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.SetCameraPos = function(self, pos)
-  -- function num : 0_16
+function MainCameraComponent:SetCameraPos(pos)
   self._curMainCameraPos = pos
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent._MoveCameraToNormal = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function MainCameraComponent:_MoveCameraToNormal()
   self._focusPlayer = false
   self._movingToNormal = true
-  local cameraTransform = ((self:Camera()).gameObject).transform
-  local levelConfigData = (self._configService):GetLevelConfigData()
+  local cameraTransform = self:Camera().gameObject.transform
+  local levelConfigData = self._configService:GetLevelConfigData()
   local cameraParam = levelConfigData:GetCameraParam()
   local targetFov = cameraParam:GetFov()
-  if not self._curMainCameraPos then
-    local originalCameraPos = cameraParam:GetCameraPosition()
-  end
+  local originalCameraPos = self._curMainCameraPos or cameraParam:GetCameraPosition()
   local duration = BattleConst.FocusToNormalTimeLen
-  self._toNormalTweener = (cameraTransform:DOMove(originalCameraPos, duration)):OnComplete(function()
-    -- function num : 0_17_0 , upvalues : self, _ENV
-    local guideService = (self._world):GetService("Guide")
+  self._toNormalTweener = cameraTransform:DOMove(originalCameraPos, duration):OnComplete(function()
+    local guideService = self._world:GetService("Guide")
     guideService:HandleCameraMoveToNormalTrigger()
     guideService:HandlePLLCameraMoveToNormalTrigger()
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-      -- function num : 0_17_0_0 , upvalues : _ENV, self
+    GameGlobal.TaskManager():CoreGameStartTask(function(TT)
       YIELD(TT, 200)
       self._movingToNormal = false
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent._MoveCameraToFocus = function(self, dur)
-  -- function num : 0_18 , upvalues : _ENV
+function MainCameraComponent:_MoveCameraToFocus(dur)
   self._movingToFocus = true
   self._cameraFocusMoving = true
   local targetFov = BattleConst.FocusPlayerFov
@@ -350,528 +259,330 @@ MainCameraComponent._MoveCameraToFocus = function(self, dur)
   if dur then
     duration = dur
   end
-  local cameraTransform = ((self:Camera()).gameObject).transform
-  local levelConfigData = (self._configService):GetLevelConfigData()
+  local cameraTransform = self:Camera().gameObject.transform
+  local levelConfigData = self._configService:GetLevelConfigData()
   local cameraParam = levelConfigData:GetCameraParam()
   local originalCameraPos = cameraParam:GetCameraPosition()
   local targetPos = self:_CalcZoomToPlayerTarget()
   self._cameraFocusTargetPos = targetPos
-  local easeType = ((DG.Tweening).Ease).OutCubic
-  self._toFocusTweener = ((cameraTransform:DOMove(targetPos, duration)):OnComplete(function()
-    -- function num : 0_18_0 , upvalues : self
+  local easeType = DG.Tweening.Ease.OutCubic
+  self._toFocusTweener = cameraTransform:DOMove(targetPos, duration):OnComplete(function()
     self._movingToFocus = false
     self._focusPlayer = true
-  end
-)):SetEase(easeType)
-  local guideService = (self._world):GetService("Guide")
+  end):SetEase(easeType)
+  local guideService = self._world:GetService("Guide")
   guideService:HandleCameraMoveToFocusTrigger()
   guideService:HandlePLLCameraMoveToFocusTrigger()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.IsMovingToFocus = function(self)
-  -- function num : 0_19
+function MainCameraComponent:IsMovingToFocus()
   return self._movingToFocus
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.MoveCameraToFocusImmediately = function(self)
-  -- function num : 0_20
+function MainCameraComponent:MoveCameraToFocusImmediately()
   if self._toFocusTweener then
-    (self._toFocusTweener):Kill()
+    self._toFocusTweener:Kill()
     self._toFocusTweener = nil
-    local cameraTransform = ((self:Camera()).gameObject).transform
+    local cameraTransform = self:Camera().gameObject.transform
     cameraTransform.position = self._cameraFocusTargetPos
   end
-  do
-    self._movingToFocus = false
-    self._focusPlayer = true
-  end
+  self._movingToFocus = false
+  self._focusPlayer = true
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent._CalcZoomToPlayerTarget = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local cameraTransform = ((self:Camera()).gameObject).transform
+function MainCameraComponent:_CalcZoomToPlayerTarget()
+  local cameraTransform = self:Camera().gameObject.transform
   local cameraPos = cameraTransform.position
   local playerWorldPos = self:_GetMainCameraPlayerRenderPos()
-  local pickUpCmpt = (self._world):PickUp()
+  local pickUpCmpt = self._world:PickUp()
   local skillID = pickUpCmpt:GetCurActiveSkillID()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
   local activeSkillPickUpType = skillConfigData:GetSkillPickType()
   if activeSkillPickUpType == SkillPickUpType.Moye then
-    local previewEntity = (self._world):GetPreviewEntity()
+    local previewEntity = self._world:GetPreviewEntity()
     local previewLinkLineCmpt = previewEntity:PreviewLinkLine()
     local chainPath = previewLinkLineCmpt:GetPreviewChainPath()
-    if #chainPath > 0 then
-      local pieceSvc = (self._world):GetService("Piece")
+    if 0 < #chainPath then
+      local pieceSvc = self._world:GetService("Piece")
       local entity = pieceSvc:FindPieceEntity(chainPath[1])
-      playerWorldPos = (entity:Location()).Position
+      playerWorldPos = entity:Location().Position
     end
   end
-  do
-    local configService = self._configService
-    local levelConfig = configService:GetLevelConfigData()
-    local centerPos = levelConfig:GetBoardCenterPos()
-    local battleRenderCmpt = (self._world):BattleRenderConfig()
-    local curWaveBoardCenter = battleRenderCmpt:GetCurWaveBoardCenter()
-    if curWaveBoardCenter then
-      centerPos = curWaveBoardCenter
-    end
-    local playerToCenterDistance = (Vector3.Distance)(playerWorldPos, centerPos)
-    local moveDistance = BattleConst.CameraNormalTranslate
-    if BattleConst.BorderDistance < playerToCenterDistance then
-      moveDistance = BattleConst.CameraMaxTranslate
-    end
-    local moveDir = (Vector3.Normalize)(playerWorldPos - cameraPos)
-    local targetPos = cameraPos + moveDir:Mul(moveDistance)
-    return targetPos
+  local configService = self._configService
+  local levelConfig = configService:GetLevelConfigData()
+  local centerPos = levelConfig:GetBoardCenterPos()
+  local battleRenderCmpt = self._world:BattleRenderConfig()
+  local curWaveBoardCenter = battleRenderCmpt:GetCurWaveBoardCenter()
+  if curWaveBoardCenter then
+    centerPos = curWaveBoardCenter
   end
+  local playerToCenterDistance = Vector3.Distance(playerWorldPos, centerPos)
+  local moveDistance = BattleConst.CameraNormalTranslate
+  if playerToCenterDistance > BattleConst.BorderDistance then
+    moveDistance = BattleConst.CameraMaxTranslate
+  end
+  local moveDir = Vector3.Normalize(playerWorldPos - cameraPos)
+  local targetPos = cameraPos + moveDir:Mul(moveDistance)
+  return targetPos
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent._GetMainCameraPlayerRenderPos = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  if (self._world):GetRunningPosition() == WorldRunPostion.Performance then
+function MainCameraComponent:_GetMainCameraPlayerRenderPos()
+  if self._world:GetRunningPosition() == WorldRunPostion.Performance then
     return Vector2(0, 0)
   end
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local teamLeaderEntity = teamEntity:GetTeamLeaderPetEntity()
-  local playerWorldPos = (teamEntity:Location()).Position
+  local playerWorldPos = teamEntity:Location().Position
   return playerWorldPos
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.DoMoveCamera = function(self, isMoveToFocus)
-  -- function num : 0_23
+function MainCameraComponent:DoMoveCamera(isMoveToFocus)
   if isMoveToFocus == true then
     if self._movingToNormal == true then
       if self._toNormalTweener ~= nil then
-        (self._toNormalTweener):Kill()
+        self._toNormalTweener:Kill()
       end
       if self._fovTweener ~= nil then
-        (self._fovTweener):Kill()
+        self._fovTweener:Kill()
       end
       self:_MoveCameraToFocus()
-    else
-      if self._movingToFocus == false then
-        self:_MoveCameraToFocus()
-      end
+    elseif self._movingToFocus == false then
+      self:_MoveCameraToFocus()
     end
     self._movingToNormal = false
   else
     if self._movingToFocus == true then
       if self._toFocusTweener ~= nil then
-        (self._toFocusTweener):Kill()
+        self._toFocusTweener:Kill()
       end
       if self._fovTweener ~= nil then
-        (self._fovTweener):Kill()
+        self._fovTweener:Kill()
       end
       self:_MoveCameraToNormal()
-    else
-      if self._movingToNormal == false then
-        self:_MoveCameraToNormal()
-      end
+    elseif self._movingToNormal == false then
+      self:_MoveCameraToNormal()
     end
     self._movingToFocus = false
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.LoadHUDCamera = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  self._hudCameraRequest = (UnityResourceService:GetInstance()):LoadGameObject(self._hudCameraResPath)
-  local hudCameraObj = (self._hudCameraRequest).Obj
+function MainCameraComponent:LoadHUDCamera()
+  self._hudCameraRequest = UnityResourceService:GetInstance():LoadGameObject(self._hudCameraResPath)
+  local hudCameraObj = self._hudCameraRequest.Obj
   self._hudCamera = hudCameraObj:GetComponent("Camera")
-  self._hudCanvasRequest = (UnityResourceService:GetInstance()):LoadGameObject(self._hudCanvasResPath)
-  local hudCanvasObj = (self._hudCanvasRequest).Obj
+  self._hudCanvasRequest = UnityResourceService:GetInstance():LoadGameObject(self._hudCanvasResPath)
+  local hudCanvasObj = self._hudCanvasRequest.Obj
   self._hudCanvas = hudCanvasObj:GetComponent("Canvas")
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._hudCanvas).worldCamera = self._hudCamera
-  self._hudDarkCameraRequest = (UnityResourceService:GetInstance()):LoadGameObject(self._hudDarkCameraResPath)
-  local hudDarkCameraObj = (self._hudDarkCameraRequest).Obj
+  self._hudCanvas.worldCamera = self._hudCamera
+  self._hudDarkCameraRequest = UnityResourceService:GetInstance():LoadGameObject(self._hudDarkCameraResPath)
+  local hudDarkCameraObj = self._hudDarkCameraRequest.Obj
   self._darkHUDCamera = hudDarkCameraObj:GetComponent("Camera")
-  ;
-  ((self._hudDarkCameraRequest).Obj):SetActive(false)
-  self._hudBgRequest = (UnityResourceService:GetInstance()):LoadGameObject(self._hudBgResPath)
-  self._hudBgObj = (self._hudBgRequest).Obj
-  local canvasTransform = (GameObjectHelper.FindChild)((self._hudBgObj).transform, "Canvas")
-  local canvasCmpt = (canvasTransform.gameObject):GetComponent("Canvas")
+  self._hudDarkCameraRequest.Obj:SetActive(false)
+  self._hudBgRequest = UnityResourceService:GetInstance():LoadGameObject(self._hudBgResPath)
+  self._hudBgObj = self._hudBgRequest.Obj
+  local canvasTransform = GameObjectHelper.FindChild(self._hudBgObj.transform, "Canvas")
+  local canvasCmpt = canvasTransform.gameObject:GetComponent("Canvas")
   canvasCmpt.worldCamera = self._darkHUDCamera
-  ;
-  (self._hudBgObj):SetActive(false)
-  local hudImgCanvasTransform = (GameObjectHelper.FindChild)((self._hudBgObj).transform, "Image")
-  self._hudBgImg = (hudImgCanvasTransform.gameObject):GetComponent("Image")
+  self._hudBgObj:SetActive(false)
+  local hudImgCanvasTransform = GameObjectHelper.FindChild(self._hudBgObj.transform, "Image")
+  self._hudBgImg = hudImgCanvasTransform.gameObject:GetComponent("Image")
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.LoadDarkCamera = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  self._darkSceneCameraRequest = (UnityResourceService:GetInstance()):LoadGameObject(self._darkSceneCameraResPath)
-  local darkSceneCameraObj = (self._darkSceneCameraRequest).Obj
-  ;
-  ((self._darkSceneCameraRequest).Obj):SetActive(false)
+function MainCameraComponent:LoadDarkCamera()
+  self._darkSceneCameraRequest = UnityResourceService:GetInstance():LoadGameObject(self._darkSceneCameraResPath)
+  local darkSceneCameraObj = self._darkSceneCameraRequest.Obj
+  self._darkSceneCameraRequest.Obj:SetActive(false)
   self._darkSceneCamera = darkSceneCameraObj:GetComponent("Camera")
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._darkSceneCamera).fieldOfView = (self.camera).fieldOfView
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._darkSceneCamera).nearClipPlane = (self.camera).nearClipPlane
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._darkSceneCamera).farClipPlane = (self.camera).farClipPlane
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._darkSceneCamera).transform).position = ((self.camera).transform).position
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._darkSceneCamera).transform).rotation = ((self.camera).transform).rotation
+  self._darkSceneCamera.fieldOfView = self.camera.fieldOfView
+  self._darkSceneCamera.nearClipPlane = self.camera.nearClipPlane
+  self._darkSceneCamera.farClipPlane = self.camera.farClipPlane
+  self._darkSceneCamera.transform.position = self.camera.transform.position
+  self._darkSceneCamera.transform.rotation = self.camera.transform.rotation
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.LoadEffectCamera = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  self._effectCameraRequest = (UnityResourceService:GetInstance()):LoadGameObject(self._effectCameraResPath)
-  local effectCameraObj = (self._effectCameraRequest).Obj
-  ;
-  ((self._effectCameraRequest).Obj):SetActive(false)
+function MainCameraComponent:LoadEffectCamera()
+  self._effectCameraRequest = UnityResourceService:GetInstance():LoadGameObject(self._effectCameraResPath)
+  local effectCameraObj = self._effectCameraRequest.Obj
+  self._effectCameraRequest.Obj:SetActive(false)
   self._effectCamera = effectCameraObj:GetComponent("Camera")
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._effectCamera).fieldOfView = (self.camera).fieldOfView
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._effectCamera).nearClipPlane = (self.camera).nearClipPlane
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._effectCamera).farClipPlane = (self.camera).farClipPlane
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._effectCamera).transform).position = ((self.camera).transform).position
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._effectCamera).transform).rotation = ((self.camera).transform).rotation
+  self._effectCamera.fieldOfView = self.camera.fieldOfView
+  self._effectCamera.nearClipPlane = self.camera.nearClipPlane
+  self._effectCamera.farClipPlane = self.camera.farClipPlane
+  self._effectCamera.transform.position = self.camera.transform.position
+  self._effectCamera.transform.rotation = self.camera.transform.rotation
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.LoadSceneCamera = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  self._sceneCameraRequest = (UnityResourceService:GetInstance()):LoadGameObject(self._sceneCameraResPath)
-  local sceneCameraObj = (self._sceneCameraRequest).Obj
-  ;
-  ((self._sceneCameraRequest).Obj):SetActive(false)
+function MainCameraComponent:LoadSceneCamera()
+  self._sceneCameraRequest = UnityResourceService:GetInstance():LoadGameObject(self._sceneCameraResPath)
+  local sceneCameraObj = self._sceneCameraRequest.Obj
+  self._sceneCameraRequest.Obj:SetActive(false)
   self._sceneCamera = sceneCameraObj:GetComponent("Camera")
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._sceneCamera).fieldOfView = (self.camera).fieldOfView
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._sceneCamera).nearClipPlane = (self.camera).nearClipPlane
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._sceneCamera).farClipPlane = (self.camera).farClipPlane
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._sceneCamera).transform).position = ((self.camera).transform).position
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._sceneCamera).transform).rotation = ((self.camera).transform).rotation
-  ;
-  ((self._sceneCamera).transform):SetParent((self.camera).transform)
+  self._sceneCamera.fieldOfView = self.camera.fieldOfView
+  self._sceneCamera.nearClipPlane = self.camera.nearClipPlane
+  self._sceneCamera.farClipPlane = self.camera.farClipPlane
+  self._sceneCamera.transform.position = self.camera.transform.position
+  self._sceneCamera.transform.rotation = self.camera.transform.rotation
+  self._sceneCamera.transform:SetParent(self.camera.transform)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.LoadAuroraTimeFx = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  self._auroraTimeFxRequest = (UnityResourceService:GetInstance()):LoadGameObject(self._auroraTimeFxResPath)
-  local auroraTimeFx = (self._auroraTimeFxRequest).Obj
+function MainCameraComponent:LoadAuroraTimeFx()
+  self._auroraTimeFxRequest = UnityResourceService:GetInstance():LoadGameObject(self._auroraTimeFxResPath)
+  local auroraTimeFx = self._auroraTimeFxRequest.Obj
   self._auroraTimeFx = auroraTimeFx
-  ;
-  (self._auroraTimeFx):SetActive(false)
+  self._auroraTimeFx:SetActive(false)
   self._auroraTimeFxAnimation = auroraTimeFx:GetComponentInChildren(typeof(UnityEngine.Animation))
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.EnableEffectCamera = function(self, enable)
-  -- function num : 0_29
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._effectCamera).transform).position = ((self.camera).transform).position
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._effectCamera).transform).rotation = ((self.camera).transform).rotation
-  ;
-  ((self._effectCamera).gameObject):SetActive(enable)
+function MainCameraComponent:EnableEffectCamera(enable)
+  self._effectCamera.transform.position = self.camera.transform.position
+  self._effectCamera.transform.rotation = self.camera.transform.rotation
+  self._effectCamera.gameObject:SetActive(enable)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.ShakeCamera = function(self, oriPos, offset)
-  -- function num : 0_30
-  local currentRotation = ((self.camera).transform).rotation
+function MainCameraComponent:ShakeCamera(oriPos, offset)
+  local currentRotation = self.camera.transform.rotation
   local deltaPos = currentRotation:MulVec3(offset)
   local targetPos = oriPos + deltaPos
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self.camera).transform).position = targetPos
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self._darkSceneCamera).transform).position = targetPos
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self._effectCamera).transform).position = targetPos
+  self.camera.transform.position = targetPos
+  self._darkSceneCamera.transform.position = targetPos
+  self._effectCamera.transform.position = targetPos
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.EnableSceneTiltShift = function(self, enable)
-  -- function num : 0_31 , upvalues : _ENV
+function MainCameraComponent:EnableSceneTiltShift(enable)
   if not self._enalbeTileShift then
-    return 
+    return
   end
   if self._postProcessingCmpt == nil then
-    (Log.fatal)("Can not find main camera post processing component!")
-    ;
-    (Log.error)((Log.traceback)())
-    return 
+    Log.fatal("Can not find main camera post processing component!")
+    Log.error(Log.traceback())
+    return
   end
-  ;
-  (self._postProcessingCmpt):SetTiltShiftActive(enable)
+  self._postProcessingCmpt:SetTiltShiftActive(enable)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.ToggleAuroraTime = function(self, active)
-  -- function num : 0_32 , upvalues : _ENV
+function MainCameraComponent:ToggleAuroraTime(active)
   if self._auroraTimeFxActive == active then
-    return 
+    return
   end
   self._auroraTimeFxActive = active
   if active then
-    local utilStatSvc = (self._world):GetService("UtilData")
+    local utilStatSvc = self._world:GetService("UtilData")
     local curRound = utilStatSvc:GetStatCurWaveRoundNum()
-    ;
-    (GameGlobal.UAReportForceGuideEvent)("FightAuroraTime", {curRound}, false, true)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundAuroraTimeActive)
-    ;
-    (self._auroraTimeFxAnimation):Play("uieff_jgsk_in")
+    GameGlobal.UAReportForceGuideEvent("FightAuroraTime", {curRound}, false, true)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundAuroraTimeActive)
+    self._auroraTimeFxAnimation:Play("uieff_jgsk_in")
     if self._auroraTimeFx then
-      local auroraTimeFxQuad = (GameObjectHelper.FindChild)((self._auroraTimeFx).transform, "Quad")
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R5 in 'UnsetPending'
-
+      local auroraTimeFxQuad = GameObjectHelper.FindChild(self._auroraTimeFx.transform, "Quad")
       if auroraTimeFxQuad then
-        (auroraTimeFxQuad.transform).localPosition = Vector3(0, BattleConst.AuroraTimeFxQuadHeight, 0)
+        auroraTimeFxQuad.transform.localPosition = Vector3(0, BattleConst.AuroraTimeFxQuadHeight, 0)
       end
     end
   else
-    do
-      ;
-      (self._auroraTimeFxAnimation):Play("uieff_jgsk_out")
-      if self._auroraTimeFx then
-        local auroraTimeFxQuad = (GameObjectHelper.FindChild)((self._auroraTimeFx).transform, "Quad")
-        -- DECOMPILER ERROR at PC72: Confused about usage of register: R3 in 'UnsetPending'
-
-        if auroraTimeFxQuad then
-          (auroraTimeFxQuad.transform).localPosition = Vector3(0, -10, 0)
-        end
+    self._auroraTimeFxAnimation:Play("uieff_jgsk_out")
+    if self._auroraTimeFx then
+      local auroraTimeFxQuad = GameObjectHelper.FindChild(self._auroraTimeFx.transform, "Quad")
+      if auroraTimeFxQuad then
+        auroraTimeFxQuad.transform.localPosition = Vector3(0, -10, 0)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.SetAuroaTimeObjActive = function(self, active)
-  -- function num : 0_33
+function MainCameraComponent:SetAuroaTimeObjActive(active)
   if self._auroraTimeFx then
-    (self._auroraTimeFx):SetActive(active)
+    self._auroraTimeFx:SetActive(active)
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.CloseCamera = function(self)
-  -- function num : 0_34
+function MainCameraComponent:CloseCamera()
   if self.camera then
-    ((self.camera).gameObject):SetActive(false)
+    self.camera.gameObject:SetActive(false)
   end
   if self._darkSceneCamera then
-    ((self._darkSceneCamera).gameObject):SetActive(false)
+    self._darkSceneCamera.gameObject:SetActive(false)
   end
   if self._darkHUDCamera then
-    ((self._darkHUDCamera).gameObject):SetActive(false)
+    self._darkHUDCamera.gameObject:SetActive(false)
   end
   if self._effectCamera then
-    ((self._effectCamera).gameObject):SetActive(false)
+    self._effectCamera.gameObject:SetActive(false)
   end
   if self._sceneCamera then
-    ((self._sceneCamera).gameObject):SetActive(false)
+    self._sceneCamera.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.AttachScreenEffPoint = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function MainCameraComponent:AttachScreenEffPoint()
   local cam = self:Camera()
-  self._goScreenEffPoint = (GameObjectHelper.CreateEmpty)(self:ScreenEffPoint(), cam.transform)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._goScreenEffPoint).transform).localPosition = Vector3(0, 0, 20)
+  self._goScreenEffPoint = GameObjectHelper.CreateEmpty(self:ScreenEffPoint(), cam.transform)
+  self._goScreenEffPoint.transform.localPosition = Vector3(0, 0, 20)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.ScreenEffPoint = function(self)
-  -- function num : 0_36
+function MainCameraComponent:ScreenEffPoint()
   return "ScreenEffPoint"
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.ScreenEffPointGo = function(self)
-  -- function num : 0_37
+function MainCameraComponent:ScreenEffPointGo()
   return self._goScreenEffPoint
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.EffectCamera = function(self)
-  -- function num : 0_38
+function MainCameraComponent:EffectCamera()
   return self._effectCamera
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.SetGoEffRuchangActorpoint = function(self, goEffRuchangActorpoint)
-  -- function num : 0_39
+function MainCameraComponent:SetGoEffRuchangActorpoint(goEffRuchangActorpoint)
   self._goEffRuchangActorpoint = goEffRuchangActorpoint
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.GetGoEffRuchangActorpoint = function(self)
-  -- function num : 0_40
+function MainCameraComponent:GetGoEffRuchangActorpoint()
   return self._goEffRuchangActorpoint
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.SetScreenCameraScreenshot = function(self, csTex2d)
-  -- function num : 0_41
+function MainCameraComponent:SetScreenCameraScreenshot(csTex2d)
   self._csTex2dSceneCameraScreenshot = csTex2d
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.GetScreenCameraScreenshot = function(self)
-  -- function num : 0_42
+function MainCameraComponent:GetScreenCameraScreenshot()
   return self._csTex2dSceneCameraScreenshot
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.SetPostProcessingProfile = function(self, profile)
-  -- function num : 0_43
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._postProcessingCmpt).profile = profile
+function MainCameraComponent:SetPostProcessingProfile(profile)
+  self._postProcessingCmpt.profile = profile
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-MainCameraComponent.ResetFov_ForFoldableDevice = function(self)
-  -- function num : 0_44
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
+function MainCameraComponent:ResetFov_ForFoldableDevice()
   if self._darkSceneCamera then
-    (self._darkSceneCamera).fieldOfView = (self.camera).fieldOfView
+    self._darkSceneCamera.fieldOfView = self.camera.fieldOfView
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
   if self._darkHUDCamera then
-    (self._darkHUDCamera).fieldOfView = (self.camera).fieldOfView
+    self._darkHUDCamera.fieldOfView = self.camera.fieldOfView
   end
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
   if self._effectCamera then
-    (self._effectCamera).fieldOfView = (self.camera).fieldOfView
+    self._effectCamera.fieldOfView = self.camera.fieldOfView
   end
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
   if self._sceneCamera then
-    (self._sceneCamera).fieldOfView = (self.camera).fieldOfView
+    self._sceneCamera.fieldOfView = self.camera.fieldOfView
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.MainCamera = function(self)
-  -- function num : 0_45
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).MainCamera)
+function MainWorld:MainCamera()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.MainCamera)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.HasMainCamera = function(self)
-  -- function num : 0_46
-  do return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).MainCamera) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorld:HasMainCamera()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.MainCamera) ~= nil
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.AddMainCamera = function(self)
-  -- function num : 0_47 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).MainCamera
+function MainWorld:AddMainCamera()
+  local index = self.BW_UniqueComponentsEnum.MainCamera
   local component = MainCameraComponent:New(self)
   component:Initialize()
   self:SetUniqueComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.RemoveMainCamera = function(self)
-  -- function num : 0_48
+function MainWorld:RemoveMainCamera()
   if self:HasMainCamera() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).MainCamera, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.MainCamera, nil)
   end
 end
-
-

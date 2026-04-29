@@ -1,354 +1,1431 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_business_option.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, Boatload = 3, Odds = 4, GroupID = 5, ProValue = 6, OptionName = 7}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  Boatload = 3,
+  Odds = 4,
+  GroupID = 5,
+  ProValue = 6,
+  OptionName = 7
+}
 local common = {
-{0, 40, 0}
-, 
-{10, 0, 0}
-, 
-{0, 80, 0}
-, 
-{0, 0, -20}
-, 
-{0, 60, 0}
-, 
-{0, 0, -10}
-, 
-{20, 0, 0}
-, 
-{0, 0, 0}
-, 
-{-30, 0, 0}
-, 
-{30, 0, 0}
-, 
-{0, -10, 0}
-, 
-{-10, 0, 0}
-, 
-{0, 0, -60}
-, 
-{0, -30, 0}
-, 
-{0, 0, -50}
-, 
-{40, 0, 0}
-, 
-{0, 20, 0}
-, 
-{0, 0, 100}
-, 
-{0, -40, 0}
-, 
-{0, 0, 30}
-, 
-{0, 0, 80}
-, 
-{0, -20, 0}
-, 
-{0, 0, 20}
-, 
-{0, 30, 0}
-, 
-{-20, 0, 0}
-, 
-{0, 0, 40}
-, 
-{0, 50, 0}
-, "str_season_s4_trade_harbor_event_option1", "str_season_s4_trade_harbor_event_option2", "str_season_s4_trade_harbor_event_option3", "str_season_s4_trade_harbor_event_option5", "str_season_s4_trade_harbor_event_option6", "str_season_s4_trade_harbor_event_option8", "str_season_s4_trade_harbor_event_option9", "str_season_s4_trade_harbor_event_option10", "str_season_s4_trade_harbor_event_option11", "str_season_s4_trade_harbor_event_option12", "str_season_s4_trade_harbor_event_option14", "str_season_s4_trade_harbor_event_option15", "str_season_s4_trade_harbor_event_option17", "str_season_s4_trade_harbor_event_option18", "str_season_s4_trade_harbor_event_option19", "str_season_s4_trade_harbor_event_option20", "str_season_s4_trade_harbor_event_option22", "str_season_s4_trade_harbor_event_option23", "str_season_s4_trade_harbor_event_option25", "str_season_s4_trade_harbor_event_option26", "str_season_s4_trade_harbor_event_option27", "str_season_s4_trade_harbor_event_option28", "str_season_s4_trade_harbor_event_option29", "str_season_s4_trade_harbor_event_option30", "str_season_s4_trade_harbor_event_option31", "str_season_s4_trade_harbor_event_option33", "str_season_s4_trade_harbor_event_option34", "str_season_s4_trade_harbor_event_option35", "str_season_s4_trade_harbor_event_option37", "str_season_s4_trade_harbor_event_option38", "str_season_s4_trade_harbor_event_option39", "str_season_s4_trade_harbor_event_option41", "str_season_s4_trade_harbor_event_option43", "str_season_s4_trade_harbor_event_option44", "str_season_s4_trade_harbor_event_option45", "str_season_s4_trade_harbor_event_option47", "str_season_s4_trade_harbor_event_option48", "str_season_s4_trade_harbor_event_option50", "str_season_s4_trade_harbor_event_option51", "str_season_s4_trade_harbor_event_option52", "str_season_s4_trade_harbor_event_option53", "str_season_s4_trade_harbor_event_option54", "str_season_s4_trade_harbor_event_option55", "str_season_s4_trade_harbor_event_option56", "str_season_s4_trade_harbor_event_option59", "str_season_s4_trade_harbor_event_option60", "str_season_s4_trade_harbor_event_option61", "str_season_s4_trade_harbor_event_option62", "str_season_s4_trade_harbor_event_option63", "str_season_s4_trade_harbor_event_option65", "str_season_s4_trade_harbor_event_option66", "str_season_s4_trade_harbor_event_option67", "str_season_s4_trade_harbor_event_option68", "str_season_s4_trade_harbor_event_option69", "str_season_s4_trade_harbor_event_option70", "str_season_s4_trade_harbor_event_option71", "str_season_s4_trade_harbor_event_option72"}
+  {
+    0,
+    40,
+    0
+  },
+  {
+    10,
+    0,
+    0
+  },
+  {
+    0,
+    80,
+    0
+  },
+  {
+    0,
+    0,
+    -20
+  },
+  {
+    0,
+    60,
+    0
+  },
+  {
+    0,
+    0,
+    -10
+  },
+  {
+    20,
+    0,
+    0
+  },
+  {
+    0,
+    0,
+    0
+  },
+  {
+    -30,
+    0,
+    0
+  },
+  {
+    30,
+    0,
+    0
+  },
+  {
+    0,
+    -10,
+    0
+  },
+  {
+    -10,
+    0,
+    0
+  },
+  {
+    0,
+    0,
+    -60
+  },
+  {
+    0,
+    -30,
+    0
+  },
+  {
+    0,
+    0,
+    -50
+  },
+  {
+    40,
+    0,
+    0
+  },
+  {
+    0,
+    20,
+    0
+  },
+  {
+    0,
+    0,
+    100
+  },
+  {
+    0,
+    -40,
+    0
+  },
+  {
+    0,
+    0,
+    30
+  },
+  {
+    0,
+    0,
+    80
+  },
+  {
+    0,
+    -20,
+    0
+  },
+  {
+    0,
+    0,
+    20
+  },
+  {
+    0,
+    30,
+    0
+  },
+  {
+    -20,
+    0,
+    0
+  },
+  {
+    0,
+    0,
+    40
+  },
+  {
+    0,
+    50,
+    0
+  },
+  "str_season_s4_trade_harbor_event_option1",
+  "str_season_s4_trade_harbor_event_option2",
+  "str_season_s4_trade_harbor_event_option3",
+  "str_season_s4_trade_harbor_event_option5",
+  "str_season_s4_trade_harbor_event_option6",
+  "str_season_s4_trade_harbor_event_option8",
+  "str_season_s4_trade_harbor_event_option9",
+  "str_season_s4_trade_harbor_event_option10",
+  "str_season_s4_trade_harbor_event_option11",
+  "str_season_s4_trade_harbor_event_option12",
+  "str_season_s4_trade_harbor_event_option14",
+  "str_season_s4_trade_harbor_event_option15",
+  "str_season_s4_trade_harbor_event_option17",
+  "str_season_s4_trade_harbor_event_option18",
+  "str_season_s4_trade_harbor_event_option19",
+  "str_season_s4_trade_harbor_event_option20",
+  "str_season_s4_trade_harbor_event_option22",
+  "str_season_s4_trade_harbor_event_option23",
+  "str_season_s4_trade_harbor_event_option25",
+  "str_season_s4_trade_harbor_event_option26",
+  "str_season_s4_trade_harbor_event_option27",
+  "str_season_s4_trade_harbor_event_option28",
+  "str_season_s4_trade_harbor_event_option29",
+  "str_season_s4_trade_harbor_event_option30",
+  "str_season_s4_trade_harbor_event_option31",
+  "str_season_s4_trade_harbor_event_option33",
+  "str_season_s4_trade_harbor_event_option34",
+  "str_season_s4_trade_harbor_event_option35",
+  "str_season_s4_trade_harbor_event_option37",
+  "str_season_s4_trade_harbor_event_option38",
+  "str_season_s4_trade_harbor_event_option39",
+  "str_season_s4_trade_harbor_event_option41",
+  "str_season_s4_trade_harbor_event_option43",
+  "str_season_s4_trade_harbor_event_option44",
+  "str_season_s4_trade_harbor_event_option45",
+  "str_season_s4_trade_harbor_event_option47",
+  "str_season_s4_trade_harbor_event_option48",
+  "str_season_s4_trade_harbor_event_option50",
+  "str_season_s4_trade_harbor_event_option51",
+  "str_season_s4_trade_harbor_event_option52",
+  "str_season_s4_trade_harbor_event_option53",
+  "str_season_s4_trade_harbor_event_option54",
+  "str_season_s4_trade_harbor_event_option55",
+  "str_season_s4_trade_harbor_event_option56",
+  "str_season_s4_trade_harbor_event_option59",
+  "str_season_s4_trade_harbor_event_option60",
+  "str_season_s4_trade_harbor_event_option61",
+  "str_season_s4_trade_harbor_event_option62",
+  "str_season_s4_trade_harbor_event_option63",
+  "str_season_s4_trade_harbor_event_option65",
+  "str_season_s4_trade_harbor_event_option66",
+  "str_season_s4_trade_harbor_event_option67",
+  "str_season_s4_trade_harbor_event_option68",
+  "str_season_s4_trade_harbor_event_option69",
+  "str_season_s4_trade_harbor_event_option70",
+  "str_season_s4_trade_harbor_event_option71",
+  "str_season_s4_trade_harbor_event_option72"
+}
 local config = {
-{1, 800407708, 0, 100, 1, common[1], common[28]}
-, 
-{2, 800407708, 0, 100, 1, common[2], common[28]}
-, 
-{3, 800407708, 0, 100, 2, common[3], common[29]}
-, 
-{4, 800407708, 0, 100, 2, common[4], common[29]}
-, 
-{5, 800407708, 0, 60, 3, 
-{0, 160, 0}
-, common[30]}
-, 
-{6, 800407708, 0, 100, 3, 
-{0, 0, -40}
-, common[30]}
-, 
-{7, 800407708, 0, 100, 4, 
-{50, 0, 0}
-, "str_season_s4_trade_harbor_event_option4"}
-; 
-[9] = {9, 800407708, 0, 100, 5, common[5], common[31]}
-, 
-[10] = {10, 800407708, 0, 50, 5, common[6], common[31]}
-, 
-[11] = {11, 800407708, 0, 80, 6, common[5], common[32]}
-, 
-[12] = {12, 800407708, 0, 60, 6, common[7], common[32]}
-, 
-[13] = {13, 800407708, 100, 100, 7, common[8], "str_season_s4_trade_harbor_event_option7"}
-, 
-[15] = {15, 800407708, 200, 100, 8, common[8], common[33]}
-, 
-[16] = {16, 800407708, 0, 100, 8, common[9], common[33]}
-, 
-[17] = {17, 800407708, 400, 100, 9, common[8], common[34]}
-, 
-[18] = {18, 800407708, 0, 100, 9, 
-{0, -150, 0}
-, common[34]}
-, 
-[19] = {19, 800407708, 0, 100, 10, common[10], common[35]}
-, 
-[20] = {20, 800407708, 0, 100, 10, common[11], common[35]}
-, 
-[21] = {21, 800407708, 0, 80, 11, common[1], common[36]}
-, 
-[22] = {22, 800407708, 0, 40, 11, common[12], common[36]}
-, 
-[23] = {23, 800407708, 200, 50, 12, common[8], common[37]}
-, 
-[24] = {24, 800407708, 0, 100, 12, common[4], common[37]}
-, 
-[25] = {25, 800407708, 0, 100, 13, 
-{25, 0, 0}
-, "str_season_s4_trade_harbor_event_option13"}
-, 
-[27] = {27, 800407708, 0, 100, 14, common[1], common[38]}
-, 
-[28] = {28, 800407708, 0, 100, 14, common[12], common[38]}
-, 
-[29] = {29, 800407708, 150, 80, 15, common[8], common[39]}
-, 
-[30] = {30, 800407708, 0, 50, 15, common[13], common[39]}
-, 
-[31] = {31, 800407708, 0, 100, 16, common[14], "str_season_s4_trade_harbor_event_option16"}
-, 
-[33] = {33, 800407708, 0, 100, 17, common[11], common[40]}
-, 
-[34] = {34, 800407708, 0, 50, 17, common[15], common[40]}
-, 
-[35] = {35, 800407708, 0, 100, 18, 
-{0, 10, 0}
-, common[41]}
-, 
-[36] = {36, 800407708, -200, 50, 18, common[8], common[41]}
-, 
-[37] = {37, 800407708, 0, 100, 19, common[16], common[42]}
-, 
-[38] = {38, 800407708, 0, 50, 19, common[17], common[42]}
-, 
-[39] = {39, 800407708, 0, 100, 20, common[18], common[43]}
-, 
-[40] = {40, 800407708, 0, 100, 20, common[19], common[43]}
-, 
-[41] = {41, 800407708, 0, 60, 21, 
-{100, 0, 0}
-, "str_season_s4_trade_harbor_event_option21"}
-, 
-[43] = {43, 800407708, 0, 100, 22, common[20], common[44]}
-, 
-[44] = {44, 800407708, 0, 100, 22, common[7], common[44]}
-, 
-[45] = {45, 800407708, 0, 100, 23, common[21], common[45]}
-, 
-[46] = {46, 800407708, 0, 100, 23, common[22], common[45]}
-, 
-[47] = {47, 800407708, 0, 60, 24, common[18], "str_season_s4_trade_harbor_event_option24"}
-, 
-[49] = {49, 800407708, 0, 100, 25, common[17], common[46]}
-, 
-[50] = {50, 800407708, 0, 100, 25, common[10], common[46]}
-, 
-[51] = {51, 800407708, 300, 40, 26, common[8], common[47]}
-, 
-[52] = {52, 800407708, 0, 100, 26, common[12], common[47]}
-, 
-[53] = {53, 800407708, 300, 80, 27, common[8], common[48]}
-, 
-[54] = {54, 800407708, 0, 100, 27, common[13], common[48]}
-, 
-[55] = {55, 800407708, 0, 100, 28, common[10], common[49]}
-, 
-[56] = {56, 800407708, 0, 100, 28, common[23], common[49]}
-, 
-[57] = {57, 800407708, 400, 50, 29, common[8], common[50]}
-, 
-[58] = {58, 800407708, -300, 30, 29, common[8], common[50]}
-, 
-[59] = {59, 800407708, 0, 100, 30, common[18], common[51]}
-, 
-[60] = {60, 800407708, -100, 100, 30, common[8], common[51]}
-, 
-[61] = {61, 800407708, 0, 100, 31, common[9], common[52]}
-, 
-[62] = {62, 800407708, 0, 10, 31, common[24], common[52]}
-, 
-[63] = {63, 800407708, 0, 75, 32, common[19], "str_season_s4_trade_harbor_event_option32"}
-, 
-[65] = {65, 800407708, 0, 50, 33, common[15], common[53]}
-, 
-[66] = {66, 800407708, -100, 20, 33, common[8], common[53]}
-, 
-[67] = {67, 800407708, 0, 100, 34, common[17], common[54]}
-, 
-[68] = {68, 800407708, 0, 100, 34, common[15], common[54]}
-, 
-[69] = {69, 800407708, 0, 100, 35, common[25], common[55]}
-, 
-[70] = {70, 800407708, -100, 30, 35, common[8], common[55]}
-, 
-[71] = {71, 800407708, -150, 50, 36, common[8], "str_season_s4_trade_harbor_event_option36"}
-, 
-[73] = {73, 800407708, 0, 100, 37, common[24], common[56]}
-, 
-[74] = {74, 800407708, 0, 100, 37, common[23], common[56]}
-, 
-[75] = {75, 800407708, 0, 100, 38, common[22], common[57]}
-, 
-[76] = {76, 800407708, 0, 100, 38, common[21], common[57]}
-, 
-[77] = {77, 800407708, 0, 100, 39, common[3], common[58]}
-, 
-[78] = {78, 800407708, 0, 100, 39, common[25], common[58]}
-, 
-[79] = {79, 800407708, 0, 100, 40, 
-{55, 0, 0}
-, "str_season_s4_trade_harbor_event_option40"}
-, 
-[81] = {81, 800407708, 200, 50, 41, common[8], common[59]}
-, 
-[82] = {82, 800407708, 0, 100, 41, common[2], common[59]}
-, 
-[83] = {83, 800407708, 0, 50, 42, common[18], "str_season_s4_trade_harbor_event_option42"}
-, 
-[85] = {85, 800407708, 0, 100, 43, common[10], common[60]}
-, 
-[86] = {86, 800407708, 0, 100, 43, common[17], common[60]}
-, 
-[87] = {87, 800407708, 300, 60, 44, common[8], common[61]}
-, 
-[88] = {88, 800407708, -200, 20, 44, common[8], common[61]}
-, 
-[89] = {89, 800407708, 0, 100, 45, 
-{0, 200, 0}
-, common[62]}
-, 
-[90] = {90, 800407708, -300, 100, 45, common[8], common[62]}
-, 
-[91] = {91, 800407708, 0, 75, 46, common[26], "str_season_s4_trade_harbor_event_option46"}
-, 
-[93] = {93, 800407708, 0, 60, 47, 
-{60, 0, 0}
-, common[63]}
-, 
-[94] = {94, 800407708, 0, 20, 47, common[25], common[63]}
-, 
-[95] = {95, 800407708, 0, 20, 48, 
-{0, 0, 250}
-, common[64]}
-, 
-[96] = {96, 800407708, 0, 100, 48, common[22], common[64]}
-, 
-[97] = {97, 800407708, 0, 100, 49, common[19], "str_season_s4_trade_harbor_event_option49"}
-, 
-[99] = {99, 800407708, 0, 100, 50, common[25], common[65]}
-, 
-[100] = {100, 800407708, 0, 60, 50, common[22], common[65]}
-, 
-[101] = {101, 800407708, 0, 30, 51, common[27], common[66]}
-, 
-[102] = {102, 800407708, 0, 50, 51, 
-{0, -100, 0}
-, common[66]}
-, 
-[103] = {103, 800407708, 0, 100, 52, common[19], common[67]}
-, 
-[104] = {104, 800407708, 0, 100, 52, common[2], common[67]}
-, 
-[105] = {105, 800407708, 0, 100, 53, common[15], common[68]}
-, 
-[106] = {106, 800407708, 0, 50, 53, common[7], common[68]}
-, 
-[107] = {107, 800407708, 0, 30, 54, common[1], common[69]}
-, 
-[108] = {108, 800407708, 0, 50, 54, 
-{0, 0, -100}
-, common[69]}
-, 
-[109] = {109, 800407708, 0, 100, 55, common[20], common[70]}
-, 
-[110] = {110, 800407708, 0, 80, 55, common[17], common[70]}
-, 
-[111] = {111, 800407708, 0, 100, 56, common[16], common[71]}
-, 
-[112] = {112, 800407708, 0, 50, 56, common[24], common[71]}
-, 
-[113] = {113, 800407708, 0, 80, 57, 
-{0, 70, 0}
-, "str_season_s4_trade_harbor_event_option57"}
-, 
-[115] = {115, 800407708, 0, 100, 58, 
-{0, 0, 50}
-, "str_season_s4_trade_harbor_event_option58"}
-, 
-[117] = {117, 800407708, 0, 100, 59, common[26], common[72]}
-, 
-[118] = {118, 800407708, 0, 80, 59, common[17], common[72]}
-, 
-[119] = {119, 800407708, 0, 80, 60, common[21], common[73]}
-, 
-[120] = {120, 800407708, 0, 10, 60, common[15], common[73]}
-, 
-[121] = {121, 800407708, 0, 100, 61, common[1], common[74]}
-, 
-[122] = {122, 800407708, 0, 100, 61, common[6], common[74]}
-, 
-[123] = {123, 800407708, 300, 40, 62, common[8], common[75]}
-, 
-[124] = {124, 800407708, 0, 100, 62, common[9], common[75]}
-, 
-[125] = {125, 800407708, 300, 40, 63, common[8], common[76]}
-, 
-[126] = {126, 800407708, -300, 40, 63, common[8], common[76]}
-, 
-[127] = {127, 800407708, 0, 100, 64, common[7], "str_season_s4_trade_harbor_event_option64"}
-, 
-[129] = {129, 800407708, 0, 80, 65, common[27], common[77]}
-, 
-[130] = {130, 800407708, 0, 100, 65, common[12], common[77]}
-, 
-[131] = {131, 800407708, 0, 60, 66, common[21], common[78]}
-, 
-[132] = {132, 800407708, 0, 100, 66, common[22], common[78]}
-, 
-[133] = {133, 800407708, 0, 100, 67, common[22], common[79]}
-, 
-[134] = {134, 800407708, 0, 100, 67, common[12], common[79]}
-, 
-[135] = {135, 800407708, 0, 50, 68, common[14], common[80]}
-, 
-[136] = {136, 800407708, 0, 20, 68, common[13], common[80]}
-, 
-[137] = {137, 800407708, 0, 30, 69, common[24], common[81]}
-, 
-[138] = {138, 800407708, 0, 50, 69, 
-{0, 0, -80}
-, common[81]}
-, 
-[139] = {139, 800407708, 0, 100, 70, common[11], common[82]}
-, 
-[140] = {140, 800407708, -200, 20, 70, common[8], common[82]}
-, 
-[141] = {141, 800407708, 0, 100, 71, common[6], common[83]}
-, 
-[142] = {142, 800407708, -100, 50, 71, common[8], common[83]}
-, 
-[143] = {143, 800407708, 0, 100, 72, common[17], common[84]}
-, 
-[144] = {144, 800407708, -200, 60, 72, common[8], common[84]}
+  {
+    1,
+    800407708,
+    0,
+    100,
+    1,
+    common[1],
+    common[28]
+  },
+  {
+    2,
+    800407708,
+    0,
+    100,
+    1,
+    common[2],
+    common[28]
+  },
+  {
+    3,
+    800407708,
+    0,
+    100,
+    2,
+    common[3],
+    common[29]
+  },
+  {
+    4,
+    800407708,
+    0,
+    100,
+    2,
+    common[4],
+    common[29]
+  },
+  {
+    5,
+    800407708,
+    0,
+    60,
+    3,
+    {
+      0,
+      160,
+      0
+    },
+    common[30]
+  },
+  {
+    6,
+    800407708,
+    0,
+    100,
+    3,
+    {
+      0,
+      0,
+      -40
+    },
+    common[30]
+  },
+  {
+    7,
+    800407708,
+    0,
+    100,
+    4,
+    {
+      50,
+      0,
+      0
+    },
+    "str_season_s4_trade_harbor_event_option4"
+  },
+  [9] = {
+    9,
+    800407708,
+    0,
+    100,
+    5,
+    common[5],
+    common[31]
+  },
+  [10] = {
+    10,
+    800407708,
+    0,
+    50,
+    5,
+    common[6],
+    common[31]
+  },
+  [11] = {
+    11,
+    800407708,
+    0,
+    80,
+    6,
+    common[5],
+    common[32]
+  },
+  [12] = {
+    12,
+    800407708,
+    0,
+    60,
+    6,
+    common[7],
+    common[32]
+  },
+  [13] = {
+    13,
+    800407708,
+    100,
+    100,
+    7,
+    common[8],
+    "str_season_s4_trade_harbor_event_option7"
+  },
+  [15] = {
+    15,
+    800407708,
+    200,
+    100,
+    8,
+    common[8],
+    common[33]
+  },
+  [16] = {
+    16,
+    800407708,
+    0,
+    100,
+    8,
+    common[9],
+    common[33]
+  },
+  [17] = {
+    17,
+    800407708,
+    400,
+    100,
+    9,
+    common[8],
+    common[34]
+  },
+  [18] = {
+    18,
+    800407708,
+    0,
+    100,
+    9,
+    {
+      0,
+      -150,
+      0
+    },
+    common[34]
+  },
+  [19] = {
+    19,
+    800407708,
+    0,
+    100,
+    10,
+    common[10],
+    common[35]
+  },
+  [20] = {
+    20,
+    800407708,
+    0,
+    100,
+    10,
+    common[11],
+    common[35]
+  },
+  [21] = {
+    21,
+    800407708,
+    0,
+    80,
+    11,
+    common[1],
+    common[36]
+  },
+  [22] = {
+    22,
+    800407708,
+    0,
+    40,
+    11,
+    common[12],
+    common[36]
+  },
+  [23] = {
+    23,
+    800407708,
+    200,
+    50,
+    12,
+    common[8],
+    common[37]
+  },
+  [24] = {
+    24,
+    800407708,
+    0,
+    100,
+    12,
+    common[4],
+    common[37]
+  },
+  [25] = {
+    25,
+    800407708,
+    0,
+    100,
+    13,
+    {
+      25,
+      0,
+      0
+    },
+    "str_season_s4_trade_harbor_event_option13"
+  },
+  [27] = {
+    27,
+    800407708,
+    0,
+    100,
+    14,
+    common[1],
+    common[38]
+  },
+  [28] = {
+    28,
+    800407708,
+    0,
+    100,
+    14,
+    common[12],
+    common[38]
+  },
+  [29] = {
+    29,
+    800407708,
+    150,
+    80,
+    15,
+    common[8],
+    common[39]
+  },
+  [30] = {
+    30,
+    800407708,
+    0,
+    50,
+    15,
+    common[13],
+    common[39]
+  },
+  [31] = {
+    31,
+    800407708,
+    0,
+    100,
+    16,
+    common[14],
+    "str_season_s4_trade_harbor_event_option16"
+  },
+  [33] = {
+    33,
+    800407708,
+    0,
+    100,
+    17,
+    common[11],
+    common[40]
+  },
+  [34] = {
+    34,
+    800407708,
+    0,
+    50,
+    17,
+    common[15],
+    common[40]
+  },
+  [35] = {
+    35,
+    800407708,
+    0,
+    100,
+    18,
+    {
+      0,
+      10,
+      0
+    },
+    common[41]
+  },
+  [36] = {
+    36,
+    800407708,
+    -200,
+    50,
+    18,
+    common[8],
+    common[41]
+  },
+  [37] = {
+    37,
+    800407708,
+    0,
+    100,
+    19,
+    common[16],
+    common[42]
+  },
+  [38] = {
+    38,
+    800407708,
+    0,
+    50,
+    19,
+    common[17],
+    common[42]
+  },
+  [39] = {
+    39,
+    800407708,
+    0,
+    100,
+    20,
+    common[18],
+    common[43]
+  },
+  [40] = {
+    40,
+    800407708,
+    0,
+    100,
+    20,
+    common[19],
+    common[43]
+  },
+  [41] = {
+    41,
+    800407708,
+    0,
+    60,
+    21,
+    {
+      100,
+      0,
+      0
+    },
+    "str_season_s4_trade_harbor_event_option21"
+  },
+  [43] = {
+    43,
+    800407708,
+    0,
+    100,
+    22,
+    common[20],
+    common[44]
+  },
+  [44] = {
+    44,
+    800407708,
+    0,
+    100,
+    22,
+    common[7],
+    common[44]
+  },
+  [45] = {
+    45,
+    800407708,
+    0,
+    100,
+    23,
+    common[21],
+    common[45]
+  },
+  [46] = {
+    46,
+    800407708,
+    0,
+    100,
+    23,
+    common[22],
+    common[45]
+  },
+  [47] = {
+    47,
+    800407708,
+    0,
+    60,
+    24,
+    common[18],
+    "str_season_s4_trade_harbor_event_option24"
+  },
+  [49] = {
+    49,
+    800407708,
+    0,
+    100,
+    25,
+    common[17],
+    common[46]
+  },
+  [50] = {
+    50,
+    800407708,
+    0,
+    100,
+    25,
+    common[10],
+    common[46]
+  },
+  [51] = {
+    51,
+    800407708,
+    300,
+    40,
+    26,
+    common[8],
+    common[47]
+  },
+  [52] = {
+    52,
+    800407708,
+    0,
+    100,
+    26,
+    common[12],
+    common[47]
+  },
+  [53] = {
+    53,
+    800407708,
+    300,
+    80,
+    27,
+    common[8],
+    common[48]
+  },
+  [54] = {
+    54,
+    800407708,
+    0,
+    100,
+    27,
+    common[13],
+    common[48]
+  },
+  [55] = {
+    55,
+    800407708,
+    0,
+    100,
+    28,
+    common[10],
+    common[49]
+  },
+  [56] = {
+    56,
+    800407708,
+    0,
+    100,
+    28,
+    common[23],
+    common[49]
+  },
+  [57] = {
+    57,
+    800407708,
+    400,
+    50,
+    29,
+    common[8],
+    common[50]
+  },
+  [58] = {
+    58,
+    800407708,
+    -300,
+    30,
+    29,
+    common[8],
+    common[50]
+  },
+  [59] = {
+    59,
+    800407708,
+    0,
+    100,
+    30,
+    common[18],
+    common[51]
+  },
+  [60] = {
+    60,
+    800407708,
+    -100,
+    100,
+    30,
+    common[8],
+    common[51]
+  },
+  [61] = {
+    61,
+    800407708,
+    0,
+    100,
+    31,
+    common[9],
+    common[52]
+  },
+  [62] = {
+    62,
+    800407708,
+    0,
+    10,
+    31,
+    common[24],
+    common[52]
+  },
+  [63] = {
+    63,
+    800407708,
+    0,
+    75,
+    32,
+    common[19],
+    "str_season_s4_trade_harbor_event_option32"
+  },
+  [65] = {
+    65,
+    800407708,
+    0,
+    50,
+    33,
+    common[15],
+    common[53]
+  },
+  [66] = {
+    66,
+    800407708,
+    -100,
+    20,
+    33,
+    common[8],
+    common[53]
+  },
+  [67] = {
+    67,
+    800407708,
+    0,
+    100,
+    34,
+    common[17],
+    common[54]
+  },
+  [68] = {
+    68,
+    800407708,
+    0,
+    100,
+    34,
+    common[15],
+    common[54]
+  },
+  [69] = {
+    69,
+    800407708,
+    0,
+    100,
+    35,
+    common[25],
+    common[55]
+  },
+  [70] = {
+    70,
+    800407708,
+    -100,
+    30,
+    35,
+    common[8],
+    common[55]
+  },
+  [71] = {
+    71,
+    800407708,
+    -150,
+    50,
+    36,
+    common[8],
+    "str_season_s4_trade_harbor_event_option36"
+  },
+  [73] = {
+    73,
+    800407708,
+    0,
+    100,
+    37,
+    common[24],
+    common[56]
+  },
+  [74] = {
+    74,
+    800407708,
+    0,
+    100,
+    37,
+    common[23],
+    common[56]
+  },
+  [75] = {
+    75,
+    800407708,
+    0,
+    100,
+    38,
+    common[22],
+    common[57]
+  },
+  [76] = {
+    76,
+    800407708,
+    0,
+    100,
+    38,
+    common[21],
+    common[57]
+  },
+  [77] = {
+    77,
+    800407708,
+    0,
+    100,
+    39,
+    common[3],
+    common[58]
+  },
+  [78] = {
+    78,
+    800407708,
+    0,
+    100,
+    39,
+    common[25],
+    common[58]
+  },
+  [79] = {
+    79,
+    800407708,
+    0,
+    100,
+    40,
+    {
+      55,
+      0,
+      0
+    },
+    "str_season_s4_trade_harbor_event_option40"
+  },
+  [81] = {
+    81,
+    800407708,
+    200,
+    50,
+    41,
+    common[8],
+    common[59]
+  },
+  [82] = {
+    82,
+    800407708,
+    0,
+    100,
+    41,
+    common[2],
+    common[59]
+  },
+  [83] = {
+    83,
+    800407708,
+    0,
+    50,
+    42,
+    common[18],
+    "str_season_s4_trade_harbor_event_option42"
+  },
+  [85] = {
+    85,
+    800407708,
+    0,
+    100,
+    43,
+    common[10],
+    common[60]
+  },
+  [86] = {
+    86,
+    800407708,
+    0,
+    100,
+    43,
+    common[17],
+    common[60]
+  },
+  [87] = {
+    87,
+    800407708,
+    300,
+    60,
+    44,
+    common[8],
+    common[61]
+  },
+  [88] = {
+    88,
+    800407708,
+    -200,
+    20,
+    44,
+    common[8],
+    common[61]
+  },
+  [89] = {
+    89,
+    800407708,
+    0,
+    100,
+    45,
+    {
+      0,
+      200,
+      0
+    },
+    common[62]
+  },
+  [90] = {
+    90,
+    800407708,
+    -300,
+    100,
+    45,
+    common[8],
+    common[62]
+  },
+  [91] = {
+    91,
+    800407708,
+    0,
+    75,
+    46,
+    common[26],
+    "str_season_s4_trade_harbor_event_option46"
+  },
+  [93] = {
+    93,
+    800407708,
+    0,
+    60,
+    47,
+    {
+      60,
+      0,
+      0
+    },
+    common[63]
+  },
+  [94] = {
+    94,
+    800407708,
+    0,
+    20,
+    47,
+    common[25],
+    common[63]
+  },
+  [95] = {
+    95,
+    800407708,
+    0,
+    20,
+    48,
+    {
+      0,
+      0,
+      250
+    },
+    common[64]
+  },
+  [96] = {
+    96,
+    800407708,
+    0,
+    100,
+    48,
+    common[22],
+    common[64]
+  },
+  [97] = {
+    97,
+    800407708,
+    0,
+    100,
+    49,
+    common[19],
+    "str_season_s4_trade_harbor_event_option49"
+  },
+  [99] = {
+    99,
+    800407708,
+    0,
+    100,
+    50,
+    common[25],
+    common[65]
+  },
+  [100] = {
+    100,
+    800407708,
+    0,
+    60,
+    50,
+    common[22],
+    common[65]
+  },
+  [101] = {
+    101,
+    800407708,
+    0,
+    30,
+    51,
+    common[27],
+    common[66]
+  },
+  [102] = {
+    102,
+    800407708,
+    0,
+    50,
+    51,
+    {
+      0,
+      -100,
+      0
+    },
+    common[66]
+  },
+  [103] = {
+    103,
+    800407708,
+    0,
+    100,
+    52,
+    common[19],
+    common[67]
+  },
+  [104] = {
+    104,
+    800407708,
+    0,
+    100,
+    52,
+    common[2],
+    common[67]
+  },
+  [105] = {
+    105,
+    800407708,
+    0,
+    100,
+    53,
+    common[15],
+    common[68]
+  },
+  [106] = {
+    106,
+    800407708,
+    0,
+    50,
+    53,
+    common[7],
+    common[68]
+  },
+  [107] = {
+    107,
+    800407708,
+    0,
+    30,
+    54,
+    common[1],
+    common[69]
+  },
+  [108] = {
+    108,
+    800407708,
+    0,
+    50,
+    54,
+    {
+      0,
+      0,
+      -100
+    },
+    common[69]
+  },
+  [109] = {
+    109,
+    800407708,
+    0,
+    100,
+    55,
+    common[20],
+    common[70]
+  },
+  [110] = {
+    110,
+    800407708,
+    0,
+    80,
+    55,
+    common[17],
+    common[70]
+  },
+  [111] = {
+    111,
+    800407708,
+    0,
+    100,
+    56,
+    common[16],
+    common[71]
+  },
+  [112] = {
+    112,
+    800407708,
+    0,
+    50,
+    56,
+    common[24],
+    common[71]
+  },
+  [113] = {
+    113,
+    800407708,
+    0,
+    80,
+    57,
+    {
+      0,
+      70,
+      0
+    },
+    "str_season_s4_trade_harbor_event_option57"
+  },
+  [115] = {
+    115,
+    800407708,
+    0,
+    100,
+    58,
+    {
+      0,
+      0,
+      50
+    },
+    "str_season_s4_trade_harbor_event_option58"
+  },
+  [117] = {
+    117,
+    800407708,
+    0,
+    100,
+    59,
+    common[26],
+    common[72]
+  },
+  [118] = {
+    118,
+    800407708,
+    0,
+    80,
+    59,
+    common[17],
+    common[72]
+  },
+  [119] = {
+    119,
+    800407708,
+    0,
+    80,
+    60,
+    common[21],
+    common[73]
+  },
+  [120] = {
+    120,
+    800407708,
+    0,
+    10,
+    60,
+    common[15],
+    common[73]
+  },
+  [121] = {
+    121,
+    800407708,
+    0,
+    100,
+    61,
+    common[1],
+    common[74]
+  },
+  [122] = {
+    122,
+    800407708,
+    0,
+    100,
+    61,
+    common[6],
+    common[74]
+  },
+  [123] = {
+    123,
+    800407708,
+    300,
+    40,
+    62,
+    common[8],
+    common[75]
+  },
+  [124] = {
+    124,
+    800407708,
+    0,
+    100,
+    62,
+    common[9],
+    common[75]
+  },
+  [125] = {
+    125,
+    800407708,
+    300,
+    40,
+    63,
+    common[8],
+    common[76]
+  },
+  [126] = {
+    126,
+    800407708,
+    -300,
+    40,
+    63,
+    common[8],
+    common[76]
+  },
+  [127] = {
+    127,
+    800407708,
+    0,
+    100,
+    64,
+    common[7],
+    "str_season_s4_trade_harbor_event_option64"
+  },
+  [129] = {
+    129,
+    800407708,
+    0,
+    80,
+    65,
+    common[27],
+    common[77]
+  },
+  [130] = {
+    130,
+    800407708,
+    0,
+    100,
+    65,
+    common[12],
+    common[77]
+  },
+  [131] = {
+    131,
+    800407708,
+    0,
+    60,
+    66,
+    common[21],
+    common[78]
+  },
+  [132] = {
+    132,
+    800407708,
+    0,
+    100,
+    66,
+    common[22],
+    common[78]
+  },
+  [133] = {
+    133,
+    800407708,
+    0,
+    100,
+    67,
+    common[22],
+    common[79]
+  },
+  [134] = {
+    134,
+    800407708,
+    0,
+    100,
+    67,
+    common[12],
+    common[79]
+  },
+  [135] = {
+    135,
+    800407708,
+    0,
+    50,
+    68,
+    common[14],
+    common[80]
+  },
+  [136] = {
+    136,
+    800407708,
+    0,
+    20,
+    68,
+    common[13],
+    common[80]
+  },
+  [137] = {
+    137,
+    800407708,
+    0,
+    30,
+    69,
+    common[24],
+    common[81]
+  },
+  [138] = {
+    138,
+    800407708,
+    0,
+    50,
+    69,
+    {
+      0,
+      0,
+      -80
+    },
+    common[81]
+  },
+  [139] = {
+    139,
+    800407708,
+    0,
+    100,
+    70,
+    common[11],
+    common[82]
+  },
+  [140] = {
+    140,
+    800407708,
+    -200,
+    20,
+    70,
+    common[8],
+    common[82]
+  },
+  [141] = {
+    141,
+    800407708,
+    0,
+    100,
+    71,
+    common[6],
+    common[83]
+  },
+  [142] = {
+    142,
+    800407708,
+    -100,
+    50,
+    71,
+    common[8],
+    common[83]
+  },
+  [143] = {
+    143,
+    800407708,
+    0,
+    100,
+    72,
+    common[17],
+    common[84]
+  },
+  [144] = {
+    144,
+    800407708,
+    -200,
+    60,
+    72,
+    common[8],
+    common[84]
+  }
 }
 return config, "ID", key
-

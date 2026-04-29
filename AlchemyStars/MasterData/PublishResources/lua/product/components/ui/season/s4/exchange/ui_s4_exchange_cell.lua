@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/exchange/ui_s4_exchange_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4ExchangeCell", UICustomWidget)
 UIS4ExchangeCell = UIS4ExchangeCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4ExchangeCell.SetData = function(self, index, info, seasonId, component, tipsCallback)
-  -- function num : 0_0
+function UIS4ExchangeCell:SetData(index, info, seasonId, component, tipsCallback)
   self._index = index
   self._info = info
   self._seasonId = seasonId
@@ -23,136 +16,116 @@ UIS4ExchangeCell.SetData = function(self, index, info, seasonId, component, tips
   self:_SetSoldout(type)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ExchangeCell.PlayAnimationInSequence = function(self, index)
-  -- function num : 0_1 , upvalues : _ENV
+function UIS4ExchangeCell:PlayAnimationInSequence(index)
   local tb = {
-{animName = "uieff_UIS2Exchange_Cell_Large", duration = 600}
-, 
-{animName = "uieff_UIS2Exchange_Cell_Small", duration = 600}
-, 
-{animName = "uieff_UIS2Exchange_Cell_Small", duration = 600}
-}
+    {
+      animName = "uieff_UIS2Exchange_Cell_Large",
+      duration = 600
+    },
+    {
+      animName = "uieff_UIS2Exchange_Cell_Small",
+      duration = 600
+    },
+    {
+      animName = "uieff_UIS2Exchange_Cell_Small",
+      duration = 600
+    }
+  }
   local type = self:_GetType()
-  local animName, duration = (tb[type]).animName, (tb[type]).duration
+  local animName, duration = tb[type].animName, tb[type].duration
   local delay = index * 40
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_anim", animName, delay, duration)
+  UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_anim", animName, delay, duration)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ExchangeCell._GetType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local special = (self._info).m_is_special
-  local bold = (UISeasonExchangeHelper.GetBold)(self._component, (self._info).m_id)
-  local type = (special and 1) or (bold and 2) or 3
+function UIS4ExchangeCell:_GetType()
+  local special = self._info.m_is_special
+  local bold = UISeasonExchangeHelper.GetBold(self._component, self._info.m_id)
+  local type = special and 1 or bold and 2 or 3
   return type
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ExchangeCell._SetBg = function(self, type)
-  -- function num : 0_3 , upvalues : _ENV
-  local tb = {[1] = "exp_s4_shop_btn01", [2] = "exp_s4_shop_btn02", [3] = "exp_s4_shop_btn03"}
+function UIS4ExchangeCell:_SetBg(type)
+  local tb = {
+    [1] = "exp_s4_shop_btn01",
+    [2] = "exp_s4_shop_btn02",
+    [3] = "exp_s4_shop_btn03"
+  }
   local atlasName = "UIS4Exchange.spriteatlas"
   local spriteName = tb[type]
-  ;
-  (UIWidgetHelper.SetImageSprite)(self, "_bg", atlasName, spriteName)
+  UIWidgetHelper.SetImageSprite(self, "_bg", atlasName, spriteName)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ExchangeCell._SetRemain = function(self, type)
-  -- function num : 0_4 , upvalues : _ENV
+function UIS4ExchangeCell:_SetRemain(type)
   local constHide = 0
-  local remain = (self._component):GetCanExchangeCount(self._info, constHide)
-  local str = (StringTable.Get)("str_season_s1_exchange_remain", remain)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_remainText", str)
-  ;
-  (self:GetGameObject("_remainBg")):SetActive(remain ~= 0)
-  local tb = {[1] = "#C64939", [2] = "#C64939", [3] = "#9E7673"}
-  ;
-  (UIStyleHelper.FitStyle_Widget)({type = "LocalizationText", textColor = tb[type]}, self, "_remainText")
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local remain = self._component:GetCanExchangeCount(self._info, constHide)
+  local str = StringTable.Get("str_season_s1_exchange_remain", remain)
+  UIWidgetHelper.SetLocalizationText(self, "_remainText", str)
+  self:GetGameObject("_remainBg"):SetActive(remain ~= 0)
+  local tb = {
+    [1] = "#C64939",
+    [2] = "#C64939",
+    [3] = "#9E7673"
+  }
+  UIStyleHelper.FitStyle_Widget({
+    type = "LocalizationText",
+    textColor = tb[type]
+  }, self, "_remainText")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ExchangeCell._SetDiscount = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local discount = (UISeasonExchangeHelper.GetDiscount)(self._component, (self._info).m_id)
+function UIS4ExchangeCell:_SetDiscount()
+  local discount = UISeasonExchangeHelper.GetDiscount(self._component, self._info.m_id)
   local str = "-" .. discount .. "%"
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_discountText", str)
-  ;
-  (self:GetGameObject("_discountBg")):SetActive(discount ~= 0)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  UIWidgetHelper.SetLocalizationText(self, "_discountText", str)
+  self:GetGameObject("_discountBg"):SetActive(discount ~= 0)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ExchangeCell._SetItem = function(self, type)
-  -- function num : 0_6 , upvalues : _ENV
-  local roleAsset = (self._info).m_reward
-  ;
-  (UIWidgetHelper.SetItemIcon)(self, roleAsset.assetid, "_icon")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_count", roleAsset.count)
-  ;
-  (UIWidgetHelper.SetItemText)(self, roleAsset.assetid, "_title")
-  local tb = {[1] = "#68625D", [2] = "#68625D", [3] = "#68625D"}
-  ;
-  (UIStyleHelper.FitStyle_Widget)({type = "LocalizationText", textColor = tb[type]}, self, "_title")
+function UIS4ExchangeCell:_SetItem(type)
+  local roleAsset = self._info.m_reward
+  UIWidgetHelper.SetItemIcon(self, roleAsset.assetid, "_icon")
+  UIWidgetHelper.SetLocalizationText(self, "_count", roleAsset.count)
+  UIWidgetHelper.SetItemText(self, roleAsset.assetid, "_title")
+  local tb = {
+    [1] = "#68625D",
+    [2] = "#68625D",
+    [3] = "#68625D"
+  }
+  UIStyleHelper.FitStyle_Widget({
+    type = "LocalizationText",
+    textColor = tb[type]
+  }, self, "_title")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ExchangeCell._SetCoin = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local itemId = (self._component):GetCostItemId((self._info).m_is_special)
+function UIS4ExchangeCell:_SetCoin()
+  local itemId = self._component:GetCostItemId(self._info.m_is_special)
   local atlasName = "UICommon.spriteatlas"
   local spriteName = "toptoon_" .. itemId
-  ;
-  (UIWidgetHelper.SetImageSprite)(self, "_coin", atlasName, spriteName)
-  local price1 = (UISeasonExchangeHelper.GetPrice)(self._component, (self._info).m_id)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_price1", price1)
-  ;
-  (self:GetGameObject("_price1")):SetActive(price1 ~= 0)
-  local price2 = (self._info).m_cost_count
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_price2", price2)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  UIWidgetHelper.SetImageSprite(self, "_coin", atlasName, spriteName)
+  local price1 = UISeasonExchangeHelper.GetPrice(self._component, self._info.m_id)
+  UIWidgetHelper.SetLocalizationText(self, "_price1", price1)
+  self:GetGameObject("_price1"):SetActive(price1 ~= 0)
+  local price2 = self._info.m_cost_count
+  UIWidgetHelper.SetLocalizationText(self, "_price2", price2)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ExchangeCell._SetSoldout = function(self, type)
-  -- function num : 0_8 , upvalues : _ENV
-  local tb = {[1] = "exp_s4_shop_btnmask01", [2] = "exp_s4_shop_btnmask02", [3] = "exp_s4_shop_btnmask03"}
+function UIS4ExchangeCell:_SetSoldout(type)
+  local tb = {
+    [1] = "exp_s4_shop_btnmask01",
+    [2] = "exp_s4_shop_btnmask02",
+    [3] = "exp_s4_shop_btnmask03"
+  }
   local atlasName = "UIS4Exchange.spriteatlas"
   local spriteName = tb[type]
-  ;
-  (UIWidgetHelper.SetImageSprite)(self, "_soldout", atlasName, spriteName)
-  local isSoldout = (self._component):IsExchangeItemSoldout(self._info)
-  ;
-  (self:GetGameObject("_soldout")):SetActive(isSoldout)
+  UIWidgetHelper.SetImageSprite(self, "_soldout", atlasName, spriteName)
+  local isSoldout = self._component:IsExchangeItemSoldout(self._info)
+  self:GetGameObject("_soldout"):SetActive(isSoldout)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ExchangeCell.BtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.info)("UIS4ExchangeCell:BtnOnClick index = ", self._index)
-  local isSoldout = (self._component):IsExchangeItemSoldout(self._info)
+function UIS4ExchangeCell:BtnOnClick()
+  Log.info("UIS4ExchangeCell:BtnOnClick index = ", self._index)
+  local isSoldout = self._component:IsExchangeItemSoldout(self._info)
   if isSoldout then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_shop_sold_out_msg"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_shop_sold_out_msg"))
   else
     self:ShowDialog("UIS4ExchangeConfirm", self._seasonId, self._component, self._info)
   end
 end
-
-

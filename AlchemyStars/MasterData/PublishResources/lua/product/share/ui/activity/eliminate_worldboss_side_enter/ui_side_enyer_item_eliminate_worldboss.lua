@@ -1,76 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/eliminate_worldboss_side_enter/ui_side_enyer_item_eliminate_worldboss.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_base")
 _class("UISideEnterItem_EliminateWorldBoss", UISideEnterItem_Base)
 UISideEnterItem_EliminateWorldBoss = UISideEnterItem_EliminateWorldBoss
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterItem_EliminateWorldBoss.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local pstID = ((GameGlobal.GetModule)(RoleModule)):GetPstId()
+function UISideEnterItem_EliminateWorldBoss:Constructor()
+  local pstID = GameGlobal.GetModule(RoleModule):GetPstId()
   self._newKey = "EliminateWorldBossNew_" .. pstID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_EliminateWorldBoss._CheckOpen = function(self, TT)
-  -- function num : 0_1
+function UISideEnterItem_EliminateWorldBoss:_CheckOpen(TT)
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_EliminateWorldBoss.GetSideEnterRawImage = function(self)
-  -- function num : 0_2
-  return (self._btnCfg).SideEnterIcon
+function UISideEnterItem_EliminateWorldBoss:GetSideEnterRawImage()
+  return self._btnCfg.SideEnterIcon
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_EliminateWorldBoss.DoShow = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISideEnterItem_EliminateWorldBoss:DoShow()
   self:AttachEvent(GameEventType.OnShowEliminateWorldBoss, self._CancelNew)
   self:AttachEvent(GameEventType.OnEliminateWorldBossClosed, self._OnClose)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_EliminateWorldBoss._CalcNew = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  do return (LocalDB.GetInt)(self._newKey, 0) == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UISideEnterItem_EliminateWorldBoss:_CalcNew()
+  return LocalDB.GetInt(self._newKey, 0) == 0
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_EliminateWorldBoss._CalcRed = function(self)
-  -- function num : 0_5
+function UISideEnterItem_EliminateWorldBoss:_CalcRed()
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_EliminateWorldBoss._CancelNew = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISideEnterItem_EliminateWorldBoss:_CancelNew()
   if self:_CalcNew() then
-    (LocalDB.SetInt)(self._newKey, 1)
+    LocalDB.SetInt(self._newKey, 1)
     local new = self:_CalcNew()
     local red = self:_CalcRed()
-    ;
-    (UIWidgetHelper.SetNewAndReds)(self, new, red, "new", "red")
+    UIWidgetHelper.SetNewAndReds(self, new, red, "new", "red")
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_EliminateWorldBoss._OnClose = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_109"))
-  ;
-  (self._setShowCallback)(false)
+function UISideEnterItem_EliminateWorldBoss:_OnClose()
+  ToastManager.ShowToast(StringTable.Get("str_activity_error_109"))
+  self._setShowCallback(false)
 end
-
-

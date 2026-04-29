@@ -1,26 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_num_lock_hp_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewNumLockHP", BuffViewBase)
 BuffViewNumLockHP = BuffViewNumLockHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewNumLockHP.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewNumLockHP:PlayView(TT)
   local buffResult = self._buffResult
   local numLockHP = buffResult:GetNumLockHP()
-  local buffView = (self._entity):BuffView()
+  local buffView = self._entity:BuffView()
   buffView:SetBuffValue("NumLockHP", numLockHP)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewNumLockHP.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewNumLockHP:IsNotifyMatch(notify)
   local buffResult = self._buffResult
   return true
 end
-
-

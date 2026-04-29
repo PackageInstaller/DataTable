@@ -1,125 +1,72 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/ai_result/ai_result_collection.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AIResultCollection", Object)
 AIResultCollection = AIResultCollection
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AIResultCollection.Constructor = function(self)
-  -- function num : 0_0
+function AIResultCollection:Constructor()
   self._normalAttackResultList = {}
   self._spellResultList = {}
   self._walkResultList = {}
   self._rotateBodyAreaResultList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AIResultCollection.ClearCollection = function(self)
-  -- function num : 0_1
+function AIResultCollection:ClearCollection()
   self._normalAttackResultList = {}
   self._spellResultList = {}
   self._walkResultList = {}
   self._rotateBodyAreaResultList = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AIResultCollection.HasNormalAttackResult = function(self)
-  -- function num : 0_2
+function AIResultCollection:HasNormalAttackResult()
   local resCount = #self._normalAttackResultList
-  if resCount > 0 then
+  if 0 < resCount then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AIResultCollection.GetNormalAttackResultList = function(self)
-  -- function num : 0_3
+function AIResultCollection:GetNormalAttackResultList()
   return self._normalAttackResultList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AIResultCollection.HasSpellResult = function(self)
-  -- function num : 0_4
+function AIResultCollection:HasSpellResult()
   local resCount = #self._spellResultList
-  if resCount > 0 then
+  if 0 < resCount then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AIResultCollection.GetSpellResultList = function(self)
-  -- function num : 0_5
+function AIResultCollection:GetSpellResultList()
   return self._spellResultList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AIResultCollection.AddSpellResult = function(self, res)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._spellResultList)[#self._spellResultList + 1] = res
+function AIResultCollection:AddSpellResult(res)
+  self._spellResultList[#self._spellResultList + 1] = res
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AIResultCollection.AddNormalAttackResult = function(self, res)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._normalAttackResultList)[#self._normalAttackResultList + 1] = res
+function AIResultCollection:AddNormalAttackResult(res)
+  self._normalAttackResultList[#self._normalAttackResultList + 1] = res
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AIResultCollection.GetWalkResultList = function(self)
-  -- function num : 0_8
+function AIResultCollection:GetWalkResultList()
   return self._walkResultList
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AIResultCollection.AddWalkResult = function(self, walkResult)
-  -- function num : 0_9
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._walkResultList)[#self._walkResultList + 1] = walkResult
+function AIResultCollection:AddWalkResult(walkResult)
+  self._walkResultList[#self._walkResultList + 1] = walkResult
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AIResultCollection.HasRotateBodyAreaResult = function(self)
-  -- function num : 0_10
+function AIResultCollection:HasRotateBodyAreaResult()
   local resCount = #self._rotateBodyAreaResultList
-  if resCount > 0 then
+  if 0 < resCount then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AIResultCollection.GetRotateBodyAreaResultList = function(self)
-  -- function num : 0_11
+function AIResultCollection:GetRotateBodyAreaResultList()
   return self._rotateBodyAreaResultList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AIResultCollection.AddRotateBodyAreaResult = function(self, aiResult)
-  -- function num : 0_12
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._rotateBodyAreaResultList)[#self._rotateBodyAreaResultList + 1] = aiResult
+function AIResultCollection:AddRotateBodyAreaResult(aiResult)
+  self._rotateBodyAreaResultList[#self._rotateBodyAreaResultList + 1] = aiResult
 end
-
-

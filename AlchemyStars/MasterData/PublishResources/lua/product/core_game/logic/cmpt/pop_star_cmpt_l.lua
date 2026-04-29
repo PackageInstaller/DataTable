@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/pop_star_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PopStarLogicComponent", Object)
 PopStarLogicComponent = PopStarLogicComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarLogicComponent.Constructor = function(self)
-  -- function num : 0_0
+function PopStarLogicComponent:Constructor()
   self._popConnectPieces = {}
   self._popGridNum = 0
   self._lastPopGridNum = 0
@@ -20,169 +13,99 @@ PopStarLogicComponent.Constructor = function(self)
   self._campID = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLogicComponent.GetPopConnectPieces = function(self)
-  -- function num : 0_1
+function PopStarLogicComponent:GetPopConnectPieces()
   return self._popConnectPieces
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLogicComponent.SetPopConnectPieces = function(self, connectPieces)
-  -- function num : 0_2
+function PopStarLogicComponent:SetPopConnectPieces(connectPieces)
   self._popConnectPieces = connectPieces
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLogicComponent.GetPopGridNum = function(self)
-  -- function num : 0_3
+function PopStarLogicComponent:GetPopGridNum()
   return self._popGridNum
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLogicComponent.GetLastPopGridNum = function(self)
-  -- function num : 0_4
+function PopStarLogicComponent:GetLastPopGridNum()
   return self._lastPopGridNum
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLogicComponent.AddPopGridNum = function(self, num)
-  -- function num : 0_5
+function PopStarLogicComponent:AddPopGridNum(num)
   self._popGridNum = self._popGridNum + num
   self._lastPopGridNum = num
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLogicComponent.GetChallengeIndex = function(self)
-  -- function num : 0_6
+function PopStarLogicComponent:GetChallengeIndex()
   return self._challengeIndex
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLogicComponent.SetChallengeIndex = function(self, index)
-  -- function num : 0_7
+function PopStarLogicComponent:SetChallengeIndex(index)
   self._challengeIndex = index
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLogicComponent.GetTrapRandomData = function(self)
-  -- function num : 0_8
+function PopStarLogicComponent:GetTrapRandomData()
   return self._totalWeight, self._trapRandomTab
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLogicComponent.SetTrapRandomData = function(self, totalWeight, trapRandomTab)
-  -- function num : 0_9
+function PopStarLogicComponent:SetTrapRandomData(totalWeight, trapRandomTab)
   self._totalWeight = totalWeight
   self._trapRandomTab = trapRandomTab
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLogicComponent.GetTrapRandomCount = function(self, trapID)
-  -- function num : 0_10
-  if not (self._trapCountDic)[trapID] then
+function PopStarLogicComponent:GetTrapRandomCount(trapID)
+  if not self._trapCountDic[trapID] then
     return 0
   end
-  return (self._trapCountDic)[trapID]
+  return self._trapCountDic[trapID]
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLogicComponent.AddTrapRandomCount = function(self, trapID)
-  -- function num : 0_11
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._trapCountDic)[trapID] then
-    (self._trapCountDic)[trapID] = 0
+function PopStarLogicComponent:AddTrapRandomCount(trapID)
+  if not self._trapCountDic[trapID] then
+    self._trapCountDic[trapID] = 0
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._trapCountDic)[trapID] = (self._trapCountDic)[trapID] + 1
+  self._trapCountDic[trapID] = self._trapCountDic[trapID] + 1
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLogicComponent.AddPropID = function(self, num, propID)
-  -- function num : 0_12
-  if (self._propIDDic)[num] then
-    return 
+function PopStarLogicComponent:AddPropID(num, propID)
+  if self._propIDDic[num] then
+    return
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._propIDDic)[num] = propID
+  self._propIDDic[num] = propID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLogicComponent.GetPropIDByPopNum = function(self, num)
-  -- function num : 0_13
-  return (self._propIDDic)[num]
+function PopStarLogicComponent:GetPropIDByPopNum(num)
+  return self._propIDDic[num]
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLogicComponent.GetCampID = function(self)
-  -- function num : 0_14
+function PopStarLogicComponent:GetCampID()
   return self._campID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLogicComponent.SetCampID = function(self, campID)
-  -- function num : 0_15
+function PopStarLogicComponent:SetCampID(campID)
   self._campID = campID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PopStarLogic = function(self)
-  -- function num : 0_16
-  return self:GetComponent((self.WEComponentsEnum).PopStarLogic)
+function Entity:PopStarLogic()
+  return self:GetComponent(self.WEComponentsEnum.PopStarLogic)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPopStarLogic = function(self)
-  -- function num : 0_17
-  return self:HasComponent((self.WEComponentsEnum).PopStarLogic)
+function Entity:HasPopStarLogic()
+  return self:HasComponent(self.WEComponentsEnum.PopStarLogic)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPopStarLogic = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PopStarLogic
+function Entity:AddPopStarLogic()
+  local index = self.WEComponentsEnum.PopStarLogic
   local component = PopStarLogicComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePopStarLogic = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PopStarLogic
+function Entity:ReplacePopStarLogic()
+  local index = self.WEComponentsEnum.PopStarLogic
   local component = PopStarLogicComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePopStarLogic = function(self)
-  -- function num : 0_20
+function Entity:RemovePopStarLogic()
   if self:HasPopStarLogic() then
-    self:RemoveComponent((self.WEComponentsEnum).PopStarLogic)
+    self:RemoveComponent(self.WEComponentsEnum.PopStarLogic)
   end
 end
-
-

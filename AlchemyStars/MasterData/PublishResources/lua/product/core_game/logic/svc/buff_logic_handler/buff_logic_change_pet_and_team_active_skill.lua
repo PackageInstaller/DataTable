@@ -1,29 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_pet_and_team_active_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangePetAndTeamActiveSkill", BuffLogicBase)
 BuffLogicChangePetAndTeamActiveSkill = BuffLogicChangePetAndTeamActiveSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangePetAndTeamActiveSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangePetAndTeamActiveSkill:Constructor(buffInstance, logicParam)
   self._skillID = logicParam.skillID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangePetAndTeamActiveSkill.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillInfoComponent = (self._entity):SkillInfo()
+function BuffLogicChangePetAndTeamActiveSkill:DoLogic()
+  local skillInfoComponent = self._entity:SkillInfo()
   skillInfoComponent:SetActiveSkillID(self._skillID)
-  local teamEntity = ((self._entity):Pet()):GetOwnerTeamEntity()
+  local teamEntity = self._entity:Pet():GetOwnerTeamEntity()
   local activeSkillCmpt = teamEntity:ActiveSkill()
-  activeSkillCmpt:SetActiveSkillID(self._skillID, (self._entity):GetID())
-  local petPstID = ((self._entity):PetPstID()):GetPstID()
+  activeSkillCmpt:SetActiveSkillID(self._skillID, self._entity:GetID())
+  local petPstID = self._entity:PetPstID():GetPstID()
   local buffResult = BuffResultChangePetAndTeamActiveSkill:New(petPstID, self._skillID)
   return buffResult
 end
-
-

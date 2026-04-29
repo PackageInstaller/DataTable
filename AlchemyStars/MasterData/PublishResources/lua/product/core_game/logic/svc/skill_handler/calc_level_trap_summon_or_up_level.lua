@@ -1,113 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_level_trap_summon_or_up_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_LevelTrapSummonOrUpLevel", SkillEffectCalc_Base)
 SkillEffectCalc_LevelTrapSummonOrUpLevel = SkillEffectCalc_LevelTrapSummonOrUpLevel
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_LevelTrapSummonOrUpLevel.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_LevelTrapSummonOrUpLevel:DoSkillEffectCalculator(skillEffectCalcParam)
   local param = skillEffectCalcParam:GetSkillEffectParam()
   if param then
-    local centerPos = (skillEffectCalcParam.skillRange)[1]
-    do
-      local checkTrapIDs = param:GetCheckTrapIDs()
-      local tarTrapID = param:GetSummonTrapID()
-      local block = param:GetBlock()
-      local boardCmpt = ((self._world):GetBoardEntity()):Board()
-      local hostEntityID = skillEffectCalcParam.casterEntityID
-      local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-      if casterEntity and casterEntity:HasSuperEntity() then
-        local superEntity = casterEntity:GetSuperEntity()
-        if superEntity then
-          local superEntityID = superEntity:GetID()
-          hostEntityID = superEntityID
-        end
+    local centerPos = skillEffectCalcParam.skillRange[1]
+    local checkTrapIDs = param:GetCheckTrapIDs()
+    local tarTrapID = param:GetSummonTrapID()
+    local block = param:GetBlock()
+    local boardCmpt = self._world:GetBoardEntity():Board()
+    local hostEntityID = skillEffectCalcParam.casterEntityID
+    local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+    if casterEntity and casterEntity:HasSuperEntity() then
+      local superEntity = casterEntity:GetSuperEntity()
+      if superEntity then
+        local superEntityID = superEntity:GetID()
+        hostEntityID = superEntityID
       end
-      do
-        local checkTraps = boardCmpt:GetPieceEntities(centerPos, function(e)
-    -- function num : 0_0_0 , upvalues : hostEntityID, _ENV, checkTrapIDs
-    local isOwner = false
-    if e:HasSummoner() then
-      if (e:Summoner()):GetSummonerEntityID() == hostEntityID then
-        isOwner = true
-      else
-        local summonEntity = e:GetSummonerEntity()
-        if summonEntity and summonEntity:HasSuperEntity() then
-          local superEntity = summonEntity:GetSuperEntity()
-          if superEntity then
-            local summonEntityID = superEntity:GetID()
-            if summonEntityID == hostEntityID then
-              isOwner = true
+    end
+    local checkTraps = boardCmpt:GetPieceEntities(centerPos, function(e)
+      local isOwner = false
+      if e:HasSummoner() then
+        if e:Summoner():GetSummonerEntityID() == hostEntityID then
+          isOwner = true
+        else
+          local summonEntity = e:GetSummonerEntity()
+          if summonEntity and summonEntity:HasSuperEntity() then
+            local superEntity = summonEntity:GetSuperEntity()
+            if superEntity then
+              local summonEntityID = superEntity:GetID()
+              if summonEntityID == hostEntityID then
+                isOwner = true
+              end
             end
           end
         end
+      else
+        isOwner = true
+      end
+      return isOwner and e:HasTrap() and table.icontains(checkTrapIDs, e:Trap():GetTrapID()) and not e:HasDeadMark()
+    end)
+    if 0 < #checkTraps then
+      local tarLevel = 1
+      local desTrapLevel = 1
+      local desTrap = checkTraps[1]
+      if desTrap then
+        local desTrapID = desTrap:Trap():GetTrapID()
+        desTrapLevel = param:GetTrapModelLevel(desTrapID)
+      end
+      tarLevel = desTrapLevel + 1
+      local tarTrapID = 0
+      local isTarTrapMaxLevel = false
+      local modelLevelDic = param:GetModelLevels()
+      if modelLevelDic then
+        tarTrapID = modelLevelDic[tarLevel] or modelLevelDic[#modelLevelDic]
+        if tarLevel >= #modelLevelDic then
+          isTarTrapMaxLevel = true
+        end
+      end
+      if tarTrapID and 0 < tarTrapID then
+        local summonList = {}
+        local destroyList = {}
+        local summonTrapResult = SkillSummonTrapEffectResult:New(tarTrapID, centerPos, param:IsTransferDisabled(), param:GetSkillEffectDamageStageIndex())
+        table.insert(summonList, summonTrapResult)
+        local desTrapEntityID = desTrap:GetID()
+        local cTrap = desTrap:Trap()
+        local desTrapID = cTrap:GetTrapID()
+        local destroyTrapResult = SkillEffectDestroyTrapResult:New(desTrapEntityID, desTrapID)
+        table.insert(destroyList, destroyTrapResult)
+        return SkillEffectResultLevelTrapSummonOrUpLevel:New(summonList, destroyList, isTarTrapMaxLevel)
       end
     else
       do
-        isOwner = true
-        if isOwner and e:HasTrap() and (table.icontains)(checkTrapIDs, (e:Trap()):GetTrapID()) then
-          return not e:HasDeadMark()
-        end
-      end
-    end
-  end
-)
-        if #checkTraps > 0 then
-          local tarLevel = 1
-          local desTrapLevel = 1
-          local desTrap = checkTraps[1]
-          do
-            if desTrap then
-              local desTrapID = (desTrap:Trap()):GetTrapID()
-              desTrapLevel = param:GetTrapModelLevel(desTrapID)
-            end
-            tarLevel = desTrapLevel + 1
-            local tarTrapID = 0
-            local isTarTrapMaxLevel = false
-            local modelLevelDic = param:GetModelLevels()
-            if modelLevelDic then
-              if not modelLevelDic[tarLevel] then
-                tarTrapID = modelLevelDic[#modelLevelDic]
-              end
-              if #modelLevelDic <= tarLevel then
-                isTarTrapMaxLevel = true
-              end
-            end
-            if tarTrapID and tarTrapID > 0 then
-              local summonList = {}
-              local destroyList = {}
-              local summonTrapResult = SkillSummonTrapEffectResult:New(tarTrapID, centerPos, param:IsTransferDisabled(), param:GetSkillEffectDamageStageIndex())
-              ;
-              (table.insert)(summonList, summonTrapResult)
-              local desTrapEntityID = desTrap:GetID()
-              local cTrap = desTrap:Trap()
-              local desTrapID = cTrap:GetTrapID()
-              local destroyTrapResult = SkillEffectDestroyTrapResult:New(desTrapEntityID, desTrapID)
-              ;
-              (table.insert)(destroyList, destroyTrapResult)
-              return SkillEffectResultLevelTrapSummonOrUpLevel:New(summonList, destroyList, isTarTrapMaxLevel)
-            end
-            do
-              local isTarTrapMaxLevel = false
-              local trapSvc = (self._world):GetService("TrapLogic")
-              if block == 0 or trapSvc:CanSummonTrapOnPos(centerPos, tarTrapID) then
-                local summonList = {}
-                local destroyList = {}
-                local summonTrapResult = SkillSummonTrapEffectResult:New(tarTrapID, centerPos, param:IsTransferDisabled(), param:GetSkillEffectDamageStageIndex())
-                ;
-                (table.insert)(summonList, summonTrapResult)
-                return SkillEffectResultLevelTrapSummonOrUpLevel:New(summonList, destroyList, isTarTrapMaxLevel)
-              end
-            end
-          end
+        local isTarTrapMaxLevel = false
+        local trapSvc = self._world:GetService("TrapLogic")
+        if block == 0 or trapSvc:CanSummonTrapOnPos(centerPos, tarTrapID) then
+          local summonList = {}
+          local destroyList = {}
+          local summonTrapResult = SkillSummonTrapEffectResult:New(tarTrapID, centerPos, param:IsTransferDisabled(), param:GetSkillEffectDamageStageIndex())
+          table.insert(summonList, summonTrapResult)
+          return SkillEffectResultLevelTrapSummonOrUpLevel:New(summonList, destroyList, isTarTrapMaxLevel)
         end
       end
     end
   end
 end
-
-

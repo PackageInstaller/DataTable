@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn16n45/sea_note/ui_cn16n45_sea_note_level_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN16N45SeaNoteLevelDetail", UIController)
 UICN16N45SeaNoteLevelDetail = UICN16N45SeaNoteLevelDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN16N45SeaNoteLevelDetail.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UICN16N45SeaNoteLevelDetail:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UICN16N45SeaNoteLevelDetail:OnShow(uiParams)
   self._ASheepCom = uiParams[1]
   self._ASheeoComInfo = uiParams[2]
   self._id = uiParams[3]
@@ -23,15 +13,12 @@ UICN16N45SeaNoteLevelDetail.OnShow = function(self, uiParams)
   self._refreshPoint = uiParams[5]
   self._refreshBookRed = uiParams[6]
   self._campaign = uiParams[7]
-  self._BestScore = ((self._ASheeoComInfo).m_info).m_max_score
+  self._BestScore = self._ASheeoComInfo.m_info.m_max_score
   self:InitWidget()
   self:SetDetail()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN16N45SeaNoteLevelDetail:InitWidget()
   self._SpecialDetail = self:GetGameObject("SpecialDetail")
   self._SpecialContent = self:GetUIComponent("UISelectObjectPath", "SpecialContent")
   self._LevelNameS = self:GetUIComponent("UILocalizationText", "LevelNameS")
@@ -44,59 +31,43 @@ UICN16N45SeaNoteLevelDetail.InitWidget = function(self)
   self._tips = s:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN16N45SeaNoteLevelDetail:OnHide()
   self.hid = true
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowTips)
   if self.taskID then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskID)
+    GameGlobal.TaskManager():KillTask(self.taskID)
     local lockName = "UICN16N45SeaNoteLevelDetail:HandleScore"
     self:UnLock(lockName)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.ShowTips = function(self, itemId, pos)
-  -- function num : 0_4
-  (self._tips):SetData(itemId, pos)
+function UICN16N45SeaNoteLevelDetail:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.SetDetail = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self.cfg = (Cfg.cfg_component_asheep_mission)[self._id]
-  local name = (self.cfg).MissionName
-  self._MissionID = (self.cfg).MissionID
-  ;
-  (self._LevelNameS):SetText((StringTable.Get)(name))
-  ;
-  (self._LevelNameN):SetText((StringTable.Get)(name))
-  if (self.cfg).Type == CN9SouthSeaRoadType.Normal then
-    (self._NormalDetail):SetActive(true)
+function UICN16N45SeaNoteLevelDetail:SetDetail()
+  self.cfg = Cfg.cfg_component_asheep_mission[self._id]
+  local name = self.cfg.MissionName
+  self._MissionID = self.cfg.MissionID
+  self._LevelNameS:SetText(StringTable.Get(name))
+  self._LevelNameN:SetText(StringTable.Get(name))
+  if self.cfg.Type == CN9SouthSeaRoadType.Normal then
+    self._NormalDetail:SetActive(true)
     self:SetNormal()
   else
-    ;
-    (self._BestScoreTxt):SetText(self._BestScore)
-    ;
-    (self._SpecialDetail):SetActive(true)
+    self._BestScoreTxt:SetText(self._BestScore)
+    self._SpecialDetail:SetActive(true)
     self:SetSpecial()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.SetNormal = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._NormalContent):SpawnObjects("UICN16N45SeaNoteLevelAwardItem", 1)
-  local pass = nil
+function UICN16N45SeaNoteLevelDetail:SetNormal()
+  self._NormalContent:SpawnObjects("UICN16N45SeaNoteLevelAwardItem", 1)
+  local pass
   if not self._passmission then
     pass = false
   else
-    for i,v in pairs(self._passmission) do
+    for i, v in pairs(self._passmission) do
       if self._MissionID == i then
         pass = true
         break
@@ -105,26 +76,20 @@ UICN16N45SeaNoteLevelDetail.SetNormal = function(self)
       end
     end
   end
-  do
-    self._NormalNodes = (self._NormalContent):GetAllSpawnList()
-    for i,v in ipairs(self._NormalNodes) do
-      v:SetData(CN9SouthSeaRoadType.Normal, self._id, pass, self._MissionID)
-    end
+  self._NormalNodes = self._NormalContent:GetAllSpawnList()
+  for i, v in ipairs(self._NormalNodes) do
+    v:SetData(CN9SouthSeaRoadType.Normal, self._id, pass, self._MissionID)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.SetSpecial = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local campaignId = (self._ASheepCom):GetComponentCfgId()
-  self.SpecialCfg = (Cfg.cfg_component_asheep_mission_reward)({ComponentID = campaignId})
-  ;
-  (self._SpecialContent):SpawnObjects("UICN16N45SeaNoteLevelAwardItem", 3)
-  self._SpecialNodes = (self._SpecialContent):GetAllSpawnList()
-  for i,v in ipairs(self._SpecialNodes) do
-    local ScoreLimit = ((self.SpecialCfg)[i]).ScoreLimit
-    local get = nil
+function UICN16N45SeaNoteLevelDetail:SetSpecial()
+  local campaignId = self._ASheepCom:GetComponentCfgId()
+  self.SpecialCfg = Cfg.cfg_component_asheep_mission_reward({ComponentID = campaignId})
+  self._SpecialContent:SpawnObjects("UICN16N45SeaNoteLevelAwardItem", 3)
+  self._SpecialNodes = self._SpecialContent:GetAllSpawnList()
+  for i, v in ipairs(self._SpecialNodes) do
+    local ScoreLimit = self.SpecialCfg[i].ScoreLimit
+    local get
     if ScoreLimit <= self._BestScore then
       get = true
     else
@@ -134,146 +99,107 @@ UICN16N45SeaNoteLevelDetail.SetSpecial = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.Refresh = function(self, score)
-  -- function num : 0_8 , upvalues : _ENV
+function UICN16N45SeaNoteLevelDetail:Refresh(score)
   if self._refreshPoint then
-    (self._refreshPoint)()
+    self._refreshPoint()
   end
-  if (self.cfg).Type == CN9SouthSeaRoadType.Normal then
-    for i,v in ipairs(self._NormalNodes) do
+  if self.cfg.Type == CN9SouthSeaRoadType.Normal then
+    for i, v in ipairs(self._NormalNodes) do
       v:SetPass(true)
     end
   else
-    do
-      if self._BestScore < score then
-        self._BestScore = score
-        ;
-        (self._BestScoreTxt):SetText(score)
+    if score > self._BestScore then
+      self._BestScore = score
+      self._BestScoreTxt:SetText(score)
+    end
+    for i, v in ipairs(self._SpecialNodes) do
+      local ScoreLimit = self.SpecialCfg[i].ScoreLimit
+      local get
+      if score >= ScoreLimit or ScoreLimit <= self._BestScore then
+        get = true
+      else
+        get = false
       end
-      for i,v in ipairs(self._SpecialNodes) do
-        local ScoreLimit = ((self.SpecialCfg)[i]).ScoreLimit
-        local get = nil
-        if ScoreLimit <= score or ScoreLimit <= self._BestScore then
-          get = true
-        else
-          get = false
-        end
-        v:SetPass(get)
-      end
+      v:SetPass(get)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.CloseBtnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UICN16N45SeaNoteLevelDetail:CloseBtnOnClick(go)
   self._Anim = self:GetUIComponent("Animation", "Anim")
   local LockName = "UICN16N45SeaNoteLevelDetail_AnimOUT"
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, LockName, _ENV
     self:Lock(LockName)
-    ;
-    (self._Anim):Play("uianim_UICN16N45SeaNoteLevelDetail_out")
+    self._Anim:Play("uianim_UICN16N45SeaNoteLevelDetail_out")
     YIELD(TT, 500)
     self:CloseDialog()
     self:UnLock(LockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.CheckActivityEnd = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local sample = (self._campaign):GetSample()
+function UICN16N45SeaNoteLevelDetail:CheckActivityEnd()
+  local sample = self._campaign:GetSample()
   if sample == nil then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.CheckClose = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  if not (self._campaign):CheckComponentOpen(ECampaignN9CenterComponentID.ECAMPAIGN_N9_ASHEEP) then
-    if ((GameGlobal.UIStateManager)()):IsShow("UICN16N45SeaNoteLevelDetail") then
-      ((GameGlobal.UIStateManager)()):CloseDialog("UICN16N45SeaNoteLevelDetail")
+function UICN16N45SeaNoteLevelDetail:CheckClose()
+  if not self._campaign:CheckComponentOpen(ECampaignN9CenterComponentID.ECAMPAIGN_N9_ASHEEP) then
+    if GameGlobal.UIStateManager():IsShow("UICN16N45SeaNoteLevelDetail") then
+      GameGlobal.UIStateManager():CloseDialog("UICN16N45SeaNoteLevelDetail")
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.SpecialStartBtnOnClick = function(self, go)
-  -- function num : 0_12
+function UICN16N45SeaNoteLevelDetail:SpecialStartBtnOnClick(go)
   if self:CheckActivityEnd() then
     self:CheckClose()
-    return 
+    return
   end
   self:StartGame()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.NormalStartBtnOnClick = function(self, go)
-  -- function num : 0_13
+function UICN16N45SeaNoteLevelDetail:NormalStartBtnOnClick(go)
   if self:CheckActivityEnd() then
     self:CheckClose()
-    return 
+    return
   end
   self:StartGame()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.StartGame = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local bgmid = (AudioHelperController.GetCurrentBgm)()
+function UICN16N45SeaNoteLevelDetail:StartGame()
+  local bgmid = AudioHelperController.GetCurrentBgm()
   self:ShowDialog("UICN16N45SeaNoteMainGameController", self._MissionID, function(id, score)
-    -- function num : 0_14_0 , upvalues : self
     self:OnFinishGame(id, score)
     if self._refreshPoint then
-      (self._refreshPoint)()
+      self._refreshPoint()
     end
-  end
-, bgmid, function()
-    -- function num : 0_14_1 , upvalues : self
+  end, bgmid, function()
     if self._refreshPoint then
-      (self._refreshPoint)()
+      self._refreshPoint()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.OnFinishGame = function(self, missionId, score)
-  -- function num : 0_15
+function UICN16N45SeaNoteLevelDetail:OnFinishGame(missionId, score)
   self.taskID = self:StartTask(self.HandleScore, self, missionId, score)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.HandleScore = function(self, TT, id, score)
-  -- function num : 0_16 , upvalues : _ENV
+function UICN16N45SeaNoteLevelDetail:HandleScore(TT, id, score)
   local lockName = "UICN16N45SeaNoteLevelDetail:HandleScore"
   self:Lock(lockName)
   local res = AsyncRequestRes:New()
-  local ret, rewards = (self._ASheepCom):HandleCompleteASheepMission(TT, res, id, score)
+  local ret, rewards = self._ASheepCom:HandleCompleteASheepMission(TT, res, id, score)
   self:UnLock(lockName)
   if res:GetSucc() then
     self:ShowRewards(rewards)
     YIELD(TT, 1000)
-    while ((GameGlobal.UIStateManager)()):IsShow("UIGetItemController") do
+    while GameGlobal.UIStateManager():IsShow("UIGetItemController") do
       YIELD(TT)
     end
     self:Lock(lockName)
@@ -283,24 +209,18 @@ UICN16N45SeaNoteLevelDetail.HandleScore = function(self, TT, id, score)
     end
     self.taskID = nil
   else
-    ;
-    (Log.error)("###[UICN16N45SeaNoteLevelDetail] HandleScore fail, result:", res:GetResult())
+    Log.error("###[UICN16N45SeaNoteLevelDetail] HandleScore fail, result:", res:GetResult())
     self.taskID = nil
   end
   YIELD(TT)
   self:UnLock(lockName)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteLevelDetail.ShowRewards = function(self, rewards)
-  -- function num : 0_17 , upvalues : _ENV
+function UICN16N45SeaNoteLevelDetail:ShowRewards(rewards)
   if rewards then
-    (UIActivityHelper.ShowUIGetRewards)(rewards, true)
+    UIActivityHelper.ShowUIGetRewards(rewards, true)
     if self._refreshBookRed then
-      (self._refreshBookRed)()
+      self._refreshBookRed()
     end
   end
 end
-
-

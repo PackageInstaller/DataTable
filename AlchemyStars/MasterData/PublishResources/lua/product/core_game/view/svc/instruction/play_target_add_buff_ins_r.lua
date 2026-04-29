@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_target_add_buff_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTargetAddBuffInstruction", BaseInstruction)
 PlayTargetAddBuffInstruction = PlayTargetAddBuffInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTargetAddBuffInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTargetAddBuffInstruction:Constructor(paramList)
   self._buffID = tonumber(paramList.buffID)
   self._buffEffectType = tonumber(paramList.buffEffectType)
   if paramList.animName then
@@ -31,94 +24,84 @@ PlayTargetAddBuffInstruction.Constructor = function(self, paramList)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTargetAddBuffInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTargetAddBuffInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local playBuffService = world:GetService("PlayBuff")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   local buffResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddBuff, self._stageIndex)
   if not buffResultArray then
-    return 
+    return
   end
   local targetEntity = world:GetEntityByID(targetEntityID)
   if targetEntity == nil then
-    return 
+    return
   end
   local utilDataSvc = world:GetService("UtilData")
   self._buffID = utilDataSvc:GetReplacedBuffIdForPlayIns(targetEntity, self._buffID)
   self._buffEffectType = utilDataSvc:GetReplacedBuffEffectTypeForPlayIns(targetEntity, self._buffEffectType)
-  for _,v in pairs(buffResultArray) do
+  for _, v in pairs(buffResultArray) do
     local eid = v:GetEntityID()
     local buffArray = v:GetAddBuffResult()
     if targetEntityID == eid and buffArray then
-      for _,seq in pairs(buffArray) do
-        (Log.debug)("PlayTargetAddBuff entityid=", eid, " buffseq=", seq, " isRemove=", self._isRemove)
-        local buffViewInst = (targetEntity:BuffView()):GetBuffViewInstance(seq)
+      for _, seq in pairs(buffArray) do
+        Log.debug("PlayTargetAddBuff entityid=", eid, " buffseq=", seq, " isRemove=", self._isRemove)
+        local buffViewInst = targetEntity:BuffView():GetBuffViewInstance(seq)
         if buffViewInst then
           local buffID = buffViewInst:BuffID()
           local buffEffectType = buffViewInst:GetBuffEffectType()
-          local buffMatch = (self._buffID and self._buffID == buffID) or self._buffEffectType == buffEffectType
+          local buffMatch = self._buffID and self._buffID == buffID or self._buffEffectType == buffEffectType
           if buffMatch then
             if self._animName then
-              targetEntity:SetAnimatorControllerTriggers({self._animName})
+              targetEntity:SetAnimatorControllerTriggers({
+                self._animName
+              })
             end
-            do
-              if self._effectId then
-                local effect = (world:GetService("Effect")):CreateEffect(self._effectId, targetEntity)
-              end
-              if self._isRemove then
-                local checkOk = false
-                if self._checkUnload and buffViewInst:IsUnload() then
+            if self._effectId then
+              local effect = world:GetService("Effect"):CreateEffect(self._effectId, targetEntity)
+            end
+            if self._isRemove then
+              local checkOk = false
+              if self._checkUnload then
+                if buffViewInst:IsUnload() then
                   checkOk = true
-                end
-                checkOk = true
-                if checkOk then
-                  playBuffService:PlayRemoveBuff(TT, buffViewInst, NTBuffUnload:New())
                 end
               else
-                local checkOk = false
-                if self._checkUnload and not buffViewInst:IsUnload() then
+                checkOk = true
+              end
+              if checkOk then
+                playBuffService:PlayRemoveBuff(TT, buffViewInst, NTBuffUnload:New())
+              end
+            else
+              local checkOk = false
+              if self._checkUnload then
+                if not buffViewInst:IsUnload() then
                   checkOk = true
                 end
+              else
                 checkOk = true
-                if checkOk then
-                  if v:GetBuffInitLayer() then
-                    (targetEntity:BuffView()):SetBuffValue(buffViewInst._buffLayerName, v:GetBuffInitLayer())
-                  end
-                  playBuffService:PlayAddBuff(TT, buffViewInst, casterEntity:GetID())
-                end
               end
-              -- DECOMPILER ERROR at PC159: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC159: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC159: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC159: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC159: LeaveBlock: unexpected jumping out IF_STMT
-
+              if checkOk then
+                if v:GetBuffInitLayer() then
+                  targetEntity:BuffView():SetBuffValue(buffViewInst._buffLayerName, v:GetBuffInitLayer())
+                end
+                playBuffService:PlayAddBuff(TT, buffViewInst, casterEntity:GetID())
+              end
             end
           end
         end
       end
     end
   end
-  -- DECOMPILER ERROR: 11 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTargetAddBuffInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayTargetAddBuffInstruction:GetCacheResource()
   local t = {}
   if self._effectId and self._effectId > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectId]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectId].ResPath,
+      1
+    })
   end
   return t
 end
-
-

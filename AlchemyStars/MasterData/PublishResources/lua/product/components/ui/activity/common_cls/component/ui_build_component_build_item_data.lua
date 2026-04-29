@@ -1,52 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_cls/component/ui_build_component_build_item_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIBuildComponentBuildStatus = {Init = 0, CleanUpComplete = 1, RepairComplete = 2, DecorateComplete = 4, Picnic = 1024}
+local UIBuildComponentBuildStatus = {
+  Init = 0,
+  CleanUpComplete = 1,
+  RepairComplete = 2,
+  DecorateComplete = 4,
+  Picnic = 1024
+}
 _enum("UIBuildComponentBuildStatus", UIBuildComponentBuildStatus)
 _class("UIBuildComponentBuildItemData", Object)
 UIBuildComponentBuildItemData = UIBuildComponentBuildItemData
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-UIBuildComponentBuildItemData.Constructor = function(self, componentCfgID)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBuildComponentBuildItemData:Constructor(componentCfgID)
   self._componentCfgID = componentCfgID
-  local cfgs = (Cfg.cfg_component_build_item)({ComponentID = componentCfgID})
+  local cfgs = Cfg.cfg_component_build_item({ComponentID = componentCfgID})
   self._buildDataMap = self:_InitBuildDataMap(cfgs)
   self._buildDataStoryReviewIdMap = self:_InitBuildDataStoryReviewIdMap(cfgs)
   self._buildDataItemId = self:_InitBuildDataCostItemId(cfgs)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData._InitBuildDataMap = function(self, tb_in)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBuildComponentBuildItemData:_InitBuildDataMap(tb_in)
   local tb_out = {}
-  for _,v in pairs(tb_in) do
+  for _, v in pairs(tb_in) do
     local id, st = self:GetItemIdAndStatus(v)
     if not tb_out[id] then
       tb_out[id] = {}
     end
     local item = tb_out[id]
     if item[st] then
-      (Log.exception)("UIBuildComponentBuildItemData:GetBuildStatusMap()", " repeat [BuildItemId, BuildStatus] in cfg_component_build_item", " componentCfgID = " .. self._componentCfgID)
+      Log.exception("UIBuildComponentBuildItemData:GetBuildStatusMap()", " repeat [BuildItemId, BuildStatus] in cfg_component_build_item", " componentCfgID = " .. self._componentCfgID)
     end
     item[st] = v
   end
   return tb_out
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData._InitBuildDataStoryReviewIdMap = function(self, tb_in)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBuildComponentBuildItemData:_InitBuildDataStoryReviewIdMap(tb_in)
   local tb_out = {}
-  for _,v in pairs(tb_in) do
+  for _, v in pairs(tb_in) do
     local reviewId = self:GetStoryReviewId(v)
     if reviewId then
       if tb_out[reviewId] then
-        (Log.exception)("UIBuildComponentBuildItemData:_InitBuildDataStoryReviewIdMap()", " repeat [StoryReviewId] in cfg_component_build_item", " componentCfgID = " .. self._componentCfgID, " StoryReviewId = " .. reviewId)
+        Log.exception("UIBuildComponentBuildItemData:_InitBuildDataStoryReviewIdMap()", " repeat [StoryReviewId] in cfg_component_build_item", " componentCfgID = " .. self._componentCfgID, " StoryReviewId = " .. reviewId)
       end
       local id, st = self:GetItemIdAndStatus(v)
       tb_out[reviewId] = {buildItemId = id, status = st}
@@ -55,11 +48,8 @@ UIBuildComponentBuildItemData._InitBuildDataStoryReviewIdMap = function(self, tb
   return tb_out
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData._InitBuildDataCostItemId = function(self, tb_in)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,v in pairs(tb_in) do
+function UIBuildComponentBuildItemData:_InitBuildDataCostItemId(tb_in)
+  for _, v in pairs(tb_in) do
     local itemId = self:GetCostItemId(v)
     if itemId then
       return itemId
@@ -67,302 +57,180 @@ UIBuildComponentBuildItemData._InitBuildDataCostItemId = function(self, tb_in)
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetBuildItemDataMap = function(self)
-  -- function num : 0_4
+function UIBuildComponentBuildItemData:GetBuildItemDataMap()
   return self._buildDataMap
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetBuildItemIdList = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local tb_out = (table.keys)(self._buildDataMap)
+function UIBuildComponentBuildItemData:GetBuildItemIdList()
+  local tb_out = table.keys(self._buildDataMap)
   return tb_out
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetBuildItemIdList_Picnic = function(self)
-  -- function num : 0_6 , upvalues : _ENV, UIBuildComponentBuildStatus
+function UIBuildComponentBuildItemData:GetBuildItemIdList_Picnic()
   local tb_out = {}
-  for k,v in pairs(self._buildDataMap) do
+  for k, v in pairs(self._buildDataMap) do
     if v[UIBuildComponentBuildStatus.Picnic] then
-      (table.insert)(tb_out, k)
+      table.insert(tb_out, k)
     end
   end
   return tb_out
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetBuildItemStatusList = function(self, buildItemId)
-  -- function num : 0_7 , upvalues : _ENV
-  local tb_out = (table.keys)((self._buildDataMap)[buildItemId])
-  ;
-  (table.sort)(tb_out)
+function UIBuildComponentBuildItemData:GetBuildItemStatusList(buildItemId)
+  local tb_out = table.keys(self._buildDataMap[buildItemId])
+  table.sort(tb_out)
   return tb_out
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetBuildItemData = function(self, buildItemId, buildStatus)
-  -- function num : 0_8 , upvalues : _ENV
-  local data = ((self._buildDataMap)[buildItemId])[buildStatus]
+function UIBuildComponentBuildItemData:GetBuildItemData(buildItemId, buildStatus)
+  local data = self._buildDataMap[buildItemId][buildStatus]
   if not data then
-    (Log.exception)("UIBuildComponentBuildItemData:GetBuildItemData() buildItemId = ", buildItemId, " buildStatus = ", buildStatus)
+    Log.exception("UIBuildComponentBuildItemData:GetBuildItemData() buildItemId = ", buildItemId, " buildStatus = ", buildStatus)
   end
   return data
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetNeedBuildItemIdAndStatus = function(self, buildItemId, buildStatus)
-  -- function num : 0_9
+function UIBuildComponentBuildItemData:GetNeedBuildItemIdAndStatus(buildItemId, buildStatus)
   local data = self:GetBuildItemData(buildItemId, buildStatus)
   return self:GetNeedItemIdAndStatus(data)
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetBuildDataStoryReviewIdMap = function(self)
-  -- function num : 0_10
+function UIBuildComponentBuildItemData:GetBuildDataStoryReviewIdMap()
   return self._buildDataStoryReviewIdMap
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetBuildDataItemId = function(self)
-  -- function num : 0_11
+function UIBuildComponentBuildItemData:GetBuildDataItemId()
   return self._buildDataItemId
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetItemIdAndStatus = function(self, cfg)
-  -- function num : 0_12
+function UIBuildComponentBuildItemData:GetItemIdAndStatus(cfg)
   return cfg.BuildItemId, cfg.BuildStatus
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetNeedItemIdAndStatus = function(self, cfg)
-  -- function num : 0_13
+function UIBuildComponentBuildItemData:GetNeedItemIdAndStatus(cfg)
   return cfg.NeedItemId, cfg.NeedItemStatus
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetWidgetDesPos = function(self, cfg)
-  -- function num : 0_14 , upvalues : _ENV
-  return Vector2((cfg.WidgetDesPos)[1], (cfg.WidgetDesPos)[2])
+function UIBuildComponentBuildItemData:GetWidgetDesPos(cfg)
+  return Vector2(cfg.WidgetDesPos[1], cfg.WidgetDesPos[2])
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetWidgetPos = function(self, cfg)
-  -- function num : 0_15 , upvalues : _ENV
-  return Vector2((cfg.WidgetPos)[1], (cfg.WidgetPos)[2])
+function UIBuildComponentBuildItemData:GetWidgetPos(cfg)
+  return Vector2(cfg.WidgetPos[1], cfg.WidgetPos[2])
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetIconPos = function(self, cfg)
-  -- function num : 0_16 , upvalues : _ENV
-  return Vector2((cfg.IconConfig)[1], (cfg.IconConfig)[2])
+function UIBuildComponentBuildItemData:GetIconPos(cfg)
+  return Vector2(cfg.IconConfig[1], cfg.IconConfig[2])
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetIconWidth = function(self, cfg)
-  -- function num : 0_17
-  return (cfg.IconConfig)[3]
+function UIBuildComponentBuildItemData:GetIconWidth(cfg)
+  return cfg.IconConfig[3]
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetIconHeight = function(self, cfg)
-  -- function num : 0_18
-  return (cfg.IconConfig)[4]
+function UIBuildComponentBuildItemData:GetIconHeight(cfg)
+  return cfg.IconConfig[4]
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetIconRotate = function(self, cfg)
-  -- function num : 0_19
-  return (cfg.IconConfig)[5]
+function UIBuildComponentBuildItemData:GetIconRotate(cfg)
+  return cfg.IconConfig[5]
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetTriggerPos = function(self, cfg)
-  -- function num : 0_20 , upvalues : _ENV
-  return Vector2((cfg.TriggerArea)[1], (cfg.TriggerArea)[2])
+function UIBuildComponentBuildItemData:GetTriggerPos(cfg)
+  return Vector2(cfg.TriggerArea[1], cfg.TriggerArea[2])
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetTriggerWidth = function(self, cfg)
-  -- function num : 0_21
-  return (cfg.TriggerArea)[3]
+function UIBuildComponentBuildItemData:GetTriggerWidth(cfg)
+  return cfg.TriggerArea[3]
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetTriggerHeight = function(self, cfg)
-  -- function num : 0_22
-  return (cfg.TriggerArea)[4]
+function UIBuildComponentBuildItemData:GetTriggerHeight(cfg)
+  return cfg.TriggerArea[4]
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetTriggerRotate = function(self, cfg)
-  -- function num : 0_23
-  return (cfg.TriggerArea)[5]
+function UIBuildComponentBuildItemData:GetTriggerRotate(cfg)
+  return cfg.TriggerArea[5]
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetEffectAreaPos = function(self, cfg)
-  -- function num : 0_24 , upvalues : _ENV
-  local x = (cfg.EffectArea)[1] or 0
-  local y = (cfg.EffectArea)[2] or 0
+function UIBuildComponentBuildItemData:GetEffectAreaPos(cfg)
+  local x = cfg.EffectArea[1] or 0
+  local y = cfg.EffectArea[2] or 0
   return Vector2(x, y)
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetEffectAreaScale = function(self, cfg)
-  -- function num : 0_25
-  return (cfg.EffectArea)[3] and (cfg.EffectArea)[3] / 100 or 1
+function UIBuildComponentBuildItemData:GetEffectAreaScale(cfg)
+  return cfg.EffectArea[3] and cfg.EffectArea[3] / 100 or 1
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetLayer = function(self, cfg)
-  -- function num : 0_26
+function UIBuildComponentBuildItemData:GetLayer(cfg)
   return cfg.Layer
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetCost = function(self, cfg)
-  -- function num : 0_27
+function UIBuildComponentBuildItemData:GetCost(cfg)
   return cfg.BuildCost
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetCostItemId = function(self, cfg)
-  -- function num : 0_28
-  if cfg.BuildCost and (cfg.BuildCost)[1] then
-    return ((cfg.BuildCost)[1])[1]
-  end
+function UIBuildComponentBuildItemData:GetCostItemId(cfg)
+  return cfg.BuildCost and cfg.BuildCost[1] and cfg.BuildCost[1][1]
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetCostCount = function(self, cfg)
-  -- function num : 0_29
-  if cfg.BuildCost and ((cfg.BuildCost)[1])[1] then
-    return ((cfg.BuildCost)[1])[2]
-  end
+function UIBuildComponentBuildItemData:GetCostCount(cfg)
+  return cfg.BuildCost and cfg.BuildCost[1][1] and cfg.BuildCost[1][2]
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetBuildReward = function(self, cfg)
-  -- function num : 0_30 , upvalues : _ENV
+function UIBuildComponentBuildItemData:GetBuildReward(cfg)
   local tb_out = {}
   if cfg.BuildReward then
     for i = 1, #cfg.BuildReward do
       local roleAsset = RoleAsset:New()
-      roleAsset.assetid = ((cfg.BuildReward)[i])[1]
-      roleAsset.count = ((cfg.BuildReward)[i])[2]
-      ;
-      (table.insert)(tb_out, roleAsset)
+      roleAsset.assetid = cfg.BuildReward[i][1]
+      roleAsset.count = cfg.BuildReward[i][2]
+      table.insert(tb_out, roleAsset)
     end
   end
-  do
-    return tb_out
-  end
+  return tb_out
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetStoryId = function(self, cfg)
-  -- function num : 0_31
+function UIBuildComponentBuildItemData:GetStoryId(cfg)
   return cfg.StoryId
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetStoryType = function(self, cfg)
-  -- function num : 0_32
+function UIBuildComponentBuildItemData:GetStoryType(cfg)
   return cfg.StoryType
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetStoryReviewId = function(self, cfg)
-  -- function num : 0_33
+function UIBuildComponentBuildItemData:GetStoryReviewId(cfg)
   return cfg.StoryReviewId
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetStatusName = function(self, cfg)
-  -- function num : 0_34 , upvalues : _ENV
-  return cfg.StatusName and (StringTable.Get)(cfg.StatusName) or ""
+function UIBuildComponentBuildItemData:GetStatusName(cfg)
+  return cfg.StatusName and StringTable.Get(cfg.StatusName) or ""
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetDes = function(self, cfg)
-  -- function num : 0_35 , upvalues : _ENV
-  return cfg.Des and (StringTable.Get)(cfg.Des) or ""
+function UIBuildComponentBuildItemData:GetDes(cfg)
+  return cfg.Des and StringTable.Get(cfg.Des) or ""
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetIcon = function(self, cfg)
-  -- function num : 0_36
+function UIBuildComponentBuildItemData:GetIcon(cfg)
   return cfg.Icon or ""
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetSpine = function(self, cfg)
-  -- function num : 0_37
+function UIBuildComponentBuildItemData:GetSpine(cfg)
   if not cfg.SpineName then
-    return 
+    return
   end
-  local name = (cfg.SpineName)[1] or ""
-  local ani = (cfg.SpineName)[2] or ""
+  local name = cfg.SpineName[1] or ""
+  local ani = cfg.SpineName[2] or ""
   return name, ani
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetName = function(self, cfg)
-  -- function num : 0_38 , upvalues : _ENV
-  return (StringTable.Get)(cfg.Name)
+function UIBuildComponentBuildItemData:GetName(cfg)
+  return StringTable.Get(cfg.Name)
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.IsShow = function(self, cfg)
-  -- function num : 0_39
-  do return cfg.IsShow == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIBuildComponentBuildItemData:IsShow(cfg)
+  return cfg.IsShow == 1
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBuildComponentBuildItemData.GetTipsIcon = function(self, cfg)
-  -- function num : 0_40
+function UIBuildComponentBuildItemData:GetTipsIcon(cfg)
   return cfg.TipsIcon
 end
-
-

@@ -1,27 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_driller_sacrifice_trap_and_damage_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillDrillerSacrificeTrapAndDamagePhase", PlaySkillPhaseBase)
 PlaySkillDrillerSacrificeTrapAndDamagePhase = PlaySkillDrillerSacrificeTrapAndDamagePhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillDrillerSacrificeTrapAndDamagePhase.PlayFlight = function(self, TT, casterEntity, phaseParam, phaseIndex, phaseAdapter)
-  -- function num : 0_0 , upvalues : _ENV
-  local effectService = (self._world):GetService("Effect")
-  local trapServiceRender = (self._world):GetService("TrapRender")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillDrillerSacrificeTrapAndDamagePhase:PlayFlight(TT, casterEntity, phaseParam, phaseIndex, phaseAdapter)
+  local effectService = self._world:GetService("Effect")
+  local trapServiceRender = self._world:GetService("TrapRender")
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.SacrificeTargetNearestTrapsAndDamage)
   if not skillResult then
-    return 
+    return
   end
   local sacrificeTrapEntityIDs = skillResult:GetTrapIDArray()
   local damageResults = skillResult:GetDamageResultArray()
-  if not sacrificeTrapEntityIDs then
-    sacrificeTrapEntityIDs = {}
-  end
+  sacrificeTrapEntityIDs = sacrificeTrapEntityIDs or {}
   local startAction = phaseParam:GetStartAction()
   casterEntity:SetAnimatorControllerTriggers({startAction})
   local startEffectID = phaseParam:GetStartEffectID()
@@ -31,85 +22,62 @@ PlaySkillDrillerSacrificeTrapAndDamagePhase.PlayFlight = function(self, TT, cast
   local lineDelayMs = phaseParam:GetLineDelayMs()
   YIELD(TT, lineDelayMs)
   local trapEntitys = {}
-  local playSkillInstructionService = (self._world):GetService("PlaySkillInstruction")
-  for index,trapEntityID in ipairs(sacrificeTrapEntityIDs) do
-    local trapEntity = (self._world):GetEntityByID(trapEntityID)
+  local playSkillInstructionService = self._world:GetService("PlaySkillInstruction")
+  for index, trapEntityID in ipairs(sacrificeTrapEntityIDs) do
+    local trapEntity = self._world:GetEntityByID(trapEntityID)
     if trapEntity and not trapEntity:HasDeadFlag() then
-      (table.insert)(trapEntitys, trapEntity)
+      table.insert(trapEntitys, trapEntity)
     end
   end
   local mainLineEffectID = phaseParam:GetMainLineEffectID()
   local mainLineMonsterBone = phaseParam:GetMainLineMonsterBone()
   local mainLinePetBone = phaseParam:GetMainLinePetBone()
-  local teamEntity = (((self._world):Player()):GetCurrentTeamEntity())
-  local teamLeaderEntity = nil
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local teamLeaderEntity
   if teamEntity then
-    teamLeaderEntity = (teamEntity:Team()):GetTeamLeaderEntity()
+    teamLeaderEntity = teamEntity:Team():GetTeamLeaderEntity()
   end
   local monsterLineOff = phaseParam:GetMonsterLineOff()
   effectService:CreateLineEffects(TT, mainLineEffectID, teamLeaderEntity, mainLinePetBone, {casterEntity}, mainLineMonsterBone, nil, monsterLineOff)
   local trapPosEffectID = phaseParam:GetTrapPosEffectID()
-  do
-    for index,trapEntity in ipairs(trapEntitys) do
-      local trapPos = trapEntity:GetGridPosition()
-      effectService:CreateCommonGridEffect(trapPosEffectID, trapPos)
-    end
+  for index, trapEntity in ipairs(trapEntitys) do
+    local trapPos = trapEntity:GetGridPosition()
+    effectService:CreateCommonGridEffect(trapPosEffectID, trapPos)
   end
   local subLineEffectID = phaseParam:GetSubLineEffectID()
   local subLinePetBone = phaseParam:GetSubLinePetBone()
   local subLineTrapBone = phaseParam:GetSubLineTrapBone()
   effectService:CreateLineEffects(TT, subLineEffectID, teamLeaderEntity, subLinePetBone, trapEntitys, subLineTrapBone)
-  for index,eTrap in ipairs(trapEntitys) do
+  for index, eTrap in ipairs(trapEntitys) do
     local donotPlayDie = false
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(function()
-    -- function num : 0_0_0 , upvalues : trapServiceRender, TT, eTrap, donotPlayDie
-    trapServiceRender:PlayTrapDieSkill(TT, {eTrap}, donotPlayDie)
+    GameGlobal.TaskManager():CoreGameStartTask(function()
+      trapServiceRender:PlayTrapDieSkill(TT, {eTrap}, donotPlayDie)
+    end)
   end
-)
-  end
-  local hitDelayMs = nil
-  hitDelayMs(TT, phaseParam:GetHitDelayMs())
-  -- DECOMPILER ERROR at PC158: Overwrote pending register: R28 in 'AssignReg'
-
-  hitDelayMs = hitDelayMs(phaseParam)
-  local hitAnim = nil
-  hitAnim = hitAnim(phaseParam)
-  local hitEffectID = nil
-  hitEffectID = hitEffectID(teamLeaderEntity)
-  local hitPos = nil
-  hitPos = hitPos(skillEffectResultContainer)
-  local skillID = nil
-  skillID = false
-  local hitTurnToTarget = nil
-  hitTurnToTarget = ipairs
-  hitTurnToTarget = hitTurnToTarget(damageResults)
-  for index,damageResult in hitTurnToTarget do
-    local damageResult = nil
-    if index then
-      damageResult(self, index, skillEffectResultContainer, hitDelayMs, hitAnim, casterEntity, hitEffectID, skillID, hitPos)
+  local hitDelayMs = phaseParam:GetHitDelayMs()
+  YIELD(TT, hitDelayMs)
+  local hitAnim = phaseParam:GetHitAnim()
+  local hitEffectID = phaseParam:GetHitEffectID()
+  local hitPos = teamLeaderEntity:GetGridPosition()
+  local skillID = skillEffectResultContainer:GetSkillID()
+  local hitTurnToTarget = false
+  for index, damageResult in ipairs(damageResults) do
+    if damageResult then
+      self:_ShowDamage(damageResult, skillEffectResultContainer, hitAnim, hitEffectID, casterEntity, hitPos, hitTurnToTarget, skillID)
     end
   end
-  local trapDieDelayMs = nil
-  trapDieDelayMs(TT, phaseParam:GetTrapDieDelayMs())
-  -- DECOMPILER ERROR at PC191: Overwrote pending register: R34 in 'AssignReg'
-
-  trapDieDelayMs(TT, 100)
+  local trapDieDelayMs = phaseParam:GetTrapDieDelayMs()
+  YIELD(TT, trapDieDelayMs)
+  YIELD(TT, 100)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillDrillerSacrificeTrapAndDamagePhase._ShowDamage = function(self, damageResult, skillEffectResultContainer, hitAnimName, hitEffectID, casterEntity, gridPos, hitTurnToTarget, skillID)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillDrillerSacrificeTrapAndDamagePhase:_ShowDamage(damageResult, skillEffectResultContainer, hitAnimName, hitEffectID, casterEntity, gridPos, hitTurnToTarget, skillID)
   local targetEntityID = damageResult:GetTargetID()
-  local targetEntity = (self._world):GetEntityByID(targetEntityID)
+  local targetEntity = self._world:GetEntityByID(targetEntityID)
   if targetEntity ~= nil then
     local skillService = self:SkillService()
     local targetDamage = damageResult:GetDamageInfo(1)
-    local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(hitAnimName)):SetHandleBeHitParam_HitEffectID(hitEffectID)):SetHandleBeHitParam_DamageInfo(targetDamage)):SetHandleBeHitParam_DamagePos(gridPos)):SetHandleBeHitParam_HitTurnTarget(hitTurnToTarget)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(skillEffectResultContainer:IsFinalAttack())):SetHandleBeHitParam_SkillID(skillID)
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(skillService.HandleBeHit, skillService, beHitParam)
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(hitAnimName):SetHandleBeHitParam_HitEffectID(hitEffectID):SetHandleBeHitParam_DamageInfo(targetDamage):SetHandleBeHitParam_DamagePos(gridPos):SetHandleBeHitParam_HitTurnTarget(hitTurnToTarget):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(skillEffectResultContainer:IsFinalAttack()):SetHandleBeHitParam_SkillID(skillID)
+    GameGlobal.TaskManager():CoreGameStartTask(skillService.HandleBeHit, skillService, beHitParam)
   end
 end
-
-

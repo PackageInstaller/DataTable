@@ -1,43 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/UnityEngine/LayerMask.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local Layer = Layer
-local rawget = rawget
-local setmetatable = setmetatable
+local Layer = _ENV.Layer
+local rawget = _ENV.rawget
+local setmetatable = _ENV.setmetatable
 local LayerMask = {}
-LayerMask.__index = function(t, k)
-  -- function num : 0_0 , upvalues : rawget, LayerMask
+
+function LayerMask.__index(t, k)
   return rawget(LayerMask, k)
 end
 
-LayerMask.__call = function(t, v)
-  -- function num : 0_1 , upvalues : setmetatable, _ENV, LayerMask
-  return setmetatable({value = value or 0}, LayerMask)
+function LayerMask.__call(t, v)
+  return setmetatable({
+    value = value or 0
+  }, LayerMask)
 end
 
-LayerMask.New = function(value)
-  -- function num : 0_2 , upvalues : setmetatable, LayerMask
-  return setmetatable({value = value or 0}, LayerMask)
+function LayerMask.New(value)
+  return setmetatable({
+    value = value or 0
+  }, LayerMask)
 end
 
-LayerMask.Get = function(self)
-  -- function num : 0_3
+function LayerMask:Get()
   return self.value
 end
 
-LayerMask.NameToLayer = function(name)
-  -- function num : 0_4 , upvalues : Layer
+function LayerMask.NameToLayer(name)
   return Layer[name]
 end
 
-LayerMask.GetMask = function(...)
-  -- function num : 0_5 , upvalues : LayerMask
-  local arg = {...}
+function LayerMask.GetMask(...)
+  local arg = {
+    ...
+  }
   local value = 0
   for i = 1, #arg do
-    local n = (LayerMask.NameToLayer)(arg[i])
+    local n = LayerMask.NameToLayer(arg[i])
     if n ~= nil then
       value = value + 2 ^ n
     end
@@ -45,9 +41,6 @@ LayerMask.GetMask = function(...)
   return value
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
 UnityEngine.LayerMask = LayerMask
 setmetatable(LayerMask, LayerMask)
 return LayerMask
-

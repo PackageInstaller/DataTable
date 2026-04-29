@@ -1,25 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_n5/main/ui_activity_battlepass_n5_reward_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBattlePassN5RewardListItem", UICustomWidget)
 UIActivityBattlePassN5RewardListItem = UIActivityBattlePassN5RewardListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBattlePassN5RewardListItem.SetData_Fixed = function(self, component)
-  -- function num : 0_0
+function UIActivityBattlePassN5RewardListItem:SetData_Fixed(component)
   self._component = component
   self._info = component:ComponentInfo()
   self:_SetLevel()
-  self:_SetCell({adv = false, fix = true, sp = false})
-  self:_SetCell({adv = true, fix = true, sp = false})
+  self:_SetCell({
+    adv = false,
+    fix = true,
+    sp = false
+  })
+  self:_SetCell({
+    adv = true,
+    fix = true,
+    sp = false
+  })
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5RewardListItem.SetData = function(self, index, component, clickCallback, tipCallback)
-  -- function num : 0_1
+function UIActivityBattlePassN5RewardListItem:SetData(index, component, clickCallback, tipCallback)
   self._index = index
   self._component = component
   self._info = component:ComponentInfo()
@@ -31,61 +29,55 @@ UIActivityBattlePassN5RewardListItem.SetData = function(self, index, component, 
   self:_SetCell({adv = true, fix = false})
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5RewardListItem.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIActivityBattlePassN5RewardListItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5RewardListItem.OnHide = function(self)
-  -- function num : 0_3
+function UIActivityBattlePassN5RewardListItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5RewardListItem._SetState = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local lvUnlock = self._index <= (self._info).m_current_level and 1 or 2
+function UIActivityBattlePassN5RewardListItem:_SetState()
+  local lvUnlock = self._index <= self._info.m_current_level and 1 or 2
   local tb_lv = {
-{self:GetGameObject("state_LvUnlock")}
-, 
-{self:GetGameObject("state_LvLock")}
-}
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(tb_lv, lvUnlock)
-  local goldReward = (self._component):IsPreviewLvFromConfig(self._index) and 1 or 2
+    {
+      self:GetGameObject("state_LvUnlock")
+    },
+    {
+      self:GetGameObject("state_LvLock")
+    }
+  }
+  UIWidgetHelper.SetObjGroupShow(tb_lv, lvUnlock)
+  local goldReward = self._component:IsPreviewLvFromConfig(self._index) and 1 or 2
   local tb_reward = {
-{self:GetGameObject("state_GoldReward"), self:GetGameObject("state_GoldReward2")}
-, 
-{self:GetGameObject("state_NormalReward"), self:GetGameObject("state_NormalReward2")}
-}
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(tb_reward, goldReward)
+    {
+      self:GetGameObject("state_GoldReward"),
+      self:GetGameObject("state_GoldReward2")
+    },
+    {
+      self:GetGameObject("state_NormalReward"),
+      self:GetGameObject("state_NormalReward2")
+    }
+  }
+  UIWidgetHelper.SetObjGroupShow(tb_reward, goldReward)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5RewardListItem._SetLevel = function(self, lv)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityBattlePassN5RewardListItem:_SetLevel(lv)
   if lv and lv < 10 then
     lv = "0" .. lv
-  else
-    if (string.isnullorempty)(lv) then
-      lv = ""
-    end
+  elseif string.isnullorempty(lv) then
+    lv = ""
   end
-  local tb = {self:GetUIComponent("UILocalizationText", "txt_Unlock_Gold"), self:GetUIComponent("UILocalizationText", "txt_Unlock_Normal"), self:GetUIComponent("UILocalizationText", "txt_Lock_Gold"), self:GetUIComponent("UILocalizationText", "txt_Lock_Normal")}
-  for _,v in pairs(tb) do
+  local tb = {
+    self:GetUIComponent("UILocalizationText", "txt_Unlock_Gold"),
+    self:GetUIComponent("UILocalizationText", "txt_Unlock_Normal"),
+    self:GetUIComponent("UILocalizationText", "txt_Lock_Gold"),
+    self:GetUIComponent("UILocalizationText", "txt_Lock_Normal")
+  }
+  for _, v in pairs(tb) do
     v:SetText(tostring(lv))
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5RewardListItem._SetCell = function(self, args)
-  -- function num : 0_6
+function UIActivityBattlePassN5RewardListItem:_SetCell(args)
   local id = args.adv and "deluxePool" or "standardPool"
   local sop = self:GetUIComponent("UISelectObjectPath", id)
   local obj = sop:SpawnObject("UIActivityBattlePassN5ItemIconReward")
@@ -95,5 +87,3 @@ UIActivityBattlePassN5RewardListItem._SetCell = function(self, args)
     obj:SetData_Fixed(args.adv, self._component)
   end
 end
-
-

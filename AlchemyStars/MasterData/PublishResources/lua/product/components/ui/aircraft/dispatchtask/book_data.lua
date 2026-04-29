@@ -1,16 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/dispatchtask/book_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local BookParagraphType = {Title = 1, Text = 2, Image = 3, UnOpen = 4}
+local BookParagraphType = {
+  Title = 1,
+  Text = 2,
+  Image = 3,
+  UnOpen = 4
+}
 _enum("BookParagraphType", BookParagraphType)
 _class("BookParagraphData", Object)
 BookParagraphData = BookParagraphData
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-BookParagraphData.Constructor = function(self, paragraphType, title, text, image, chapterData, isEnd)
-  -- function num : 0_0
+function BookParagraphData:Constructor(paragraphType, title, text, image, chapterData, isEnd)
   self._paragraphType = paragraphType
   self._title = title
   self._text = text
@@ -19,324 +17,209 @@ BookParagraphData.Constructor = function(self, paragraphType, title, text, image
   self._isEnd = isEnd
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-BookParagraphData.GetParagraphType = function(self)
-  -- function num : 0_1
+function BookParagraphData:GetParagraphType()
   return self._paragraphType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-BookParagraphData.GetTitle = function(self)
-  -- function num : 0_2
+function BookParagraphData:GetTitle()
   return self._title
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-BookParagraphData.GetText = function(self)
-  -- function num : 0_3
+function BookParagraphData:GetText()
   return self._text
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-BookParagraphData.GetImage = function(self)
-  -- function num : 0_4
+function BookParagraphData:GetImage()
   return self._image
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-BookParagraphData.GetChapterData = function(self)
-  -- function num : 0_5
+function BookParagraphData:GetChapterData()
   return self._chapterData
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-BookParagraphData.IsEnd = function(self)
-  -- function num : 0_6
+function BookParagraphData:IsEnd()
   return self._isEnd
 end
 
 _class("BookChapterData", Object)
 BookChapterData = BookChapterData
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
 
-BookChapterData.Constructor = function(self, cfg)
-  -- function num : 0_7 , upvalues : _ENV
+function BookChapterData:Constructor(cfg)
   self._index = cfg.ID
   self._chapterId = cfg.ChapterId
   self._bookId = cfg.BookId
   self._itemId = cfg.ItemId
-  self._name = (StringTable.Get)(cfg.Name)
-  self._des = (StringTable.Get)(cfg.Des)
-  self._getDes = (StringTable.Get)(cfg.GetDes)
-  self:_ParseContent((StringTable.Get)(cfg.Content))
+  self._name = StringTable.Get(cfg.Name)
+  self._des = StringTable.Get(cfg.Des)
+  self._getDes = StringTable.Get(cfg.GetDes)
+  self:_ParseContent(StringTable.Get(cfg.Content))
   self._isOpen = false
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
-  if self._itemId == nil or self._itemId <= 0 or (self.itemModule):GetItemCount(self._itemId) > 0 then
+  self.itemModule = GameGlobal.GetModule(ItemModule)
+  if self._itemId == nil or self._itemId <= 0 or 0 < self.itemModule:GetItemCount(self._itemId) then
     self._isOpen = true
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-BookChapterData._ParseContent = function(self, content)
-  -- function num : 0_8 , upvalues : _ENV, BookParagraphType
+function BookChapterData:_ParseContent(content)
   self._contentCount = 0
   self._contents = {}
-  local startIndex, endIndex = (string.find)(content, "<image>")
+  local startIndex, endIndex = string.find(content, "<image>")
   if startIndex then
     local tempContent = content
     while startIndex do
-      local desContent = (string.sub)(tempContent, 1, startIndex - 1)
+      local desContent = string.sub(tempContent, 1, startIndex - 1)
       self._contentCount = self._contentCount + 1
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._contents)[#self._contents + 1] = BookParagraphData:New(BookParagraphType.Text, nil, desContent, nil, nil, false)
-      local _, imageStartIndex = (string.find)(tempContent, "<image>")
-      local imageEndIndex, endIndex = (string.find)(tempContent, "</image>")
-      local imageName = (string.sub)(tempContent, imageStartIndex + 1, imageEndIndex - 1)
-      local len = (string.len)(tempContent)
-      tempContent = (string.sub)(tempContent, endIndex + 1, len)
-      startIndex = (string.find)(tempContent, "<image>")
+      self._contents[#self._contents + 1] = BookParagraphData:New(BookParagraphType.Text, nil, desContent, nil, nil, false)
+      local _, imageStartIndex = string.find(tempContent, "<image>")
+      local imageEndIndex, endIndex = string.find(tempContent, "</image>")
+      local imageName = string.sub(tempContent, imageStartIndex + 1, imageEndIndex - 1)
+      local len = string.len(tempContent)
+      tempContent = string.sub(tempContent, endIndex + 1, len)
+      startIndex, _ = string.find(tempContent, "<image>")
       local isEnd = false
-      if (string.isnullorempty)(tempContent) then
+      if string.isnullorempty(tempContent) then
         isEnd = true
       end
       self._contentCount = self._contentCount + 1
-      -- DECOMPILER ERROR at PC92: Confused about usage of register: R13 in 'UnsetPending'
-
-      ;
-      (self._contents)[#self._contents + 1] = BookParagraphData:New(BookParagraphType.Image, nil, nil, imageName, nil, isEnd)
+      self._contents[#self._contents + 1] = BookParagraphData:New(BookParagraphType.Image, nil, nil, imageName, nil, isEnd)
     end
-    do
-      do
-        -- DECOMPILER ERROR at PC96: Overwrote pending register: R6 in 'AssignReg'
-
-        if not (string.isnullorempty)(_) then
-          self._contentCount = self._contentCount + 1
-          -- DECOMPILER ERROR at PC115: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._contents)[#self._contents + 1] = BookParagraphData:New(BookParagraphType.Text, nil, tempContent, nil, nil, true)
-        end
-        self._contentCount = self._contentCount + 1
-        -- DECOMPILER ERROR at PC129: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._contents)[1] = BookParagraphData:New(BookParagraphType.Text, nil, content, nil, nil, true)
-      end
+    if not string.isnullorempty(tempContent) then
+      self._contentCount = self._contentCount + 1
+      self._contents[#self._contents + 1] = BookParagraphData:New(BookParagraphType.Text, nil, tempContent, nil, nil, true)
     end
+  else
+    self._contentCount = self._contentCount + 1
+    self._contents[1] = BookParagraphData:New(BookParagraphType.Text, nil, content, nil, nil, true)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-BookChapterData.GetIndex = function(self)
-  -- function num : 0_9
+function BookChapterData:GetIndex()
   return self._index
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-BookChapterData.GetChapterId = function(self)
-  -- function num : 0_10
+function BookChapterData:GetChapterId()
   return self._chapterId
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-BookChapterData.GetBookId = function(self)
-  -- function num : 0_11
+function BookChapterData:GetBookId()
   return self._bookId
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-BookChapterData.GetItemId = function(self)
-  -- function num : 0_12
+function BookChapterData:GetItemId()
   return self._itemId
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-BookChapterData.GetName = function(self)
-  -- function num : 0_13
+function BookChapterData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-BookChapterData.GetDes = function(self)
-  -- function num : 0_14
+function BookChapterData:GetDes()
   return self._des
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-BookChapterData.GetGetDes = function(self)
-  -- function num : 0_15
+function BookChapterData:GetGetDes()
   return self._getDes
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-BookChapterData.IsOpen = function(self)
-  -- function num : 0_16
+function BookChapterData:IsOpen()
   return self._isOpen
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-BookChapterData.GetContents = function(self)
-  -- function num : 0_17
+function BookChapterData:GetContents()
   return self._contents
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-BookChapterData.IsNew = function(self)
-  -- function num : 0_18
-  return (self.itemModule):IsNewBookChapter(self._itemId)
+function BookChapterData:IsNew()
+  return self.itemModule:IsNewBookChapter(self._itemId)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-BookChapterData.SetNewStatus = function(self, TT, status)
-  -- function num : 0_19
-  (self.itemModule):SetBookChapterStatus(TT, self._itemId)
+function BookChapterData:SetNewStatus(TT, status)
+  self.itemModule:SetBookChapterStatus(TT, self._itemId)
 end
 
 _class("BookData", Object)
 BookData = BookData
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
 
-BookData.Constructor = function(self, bookCfg)
-  -- function num : 0_20 , upvalues : _ENV
+function BookData:Constructor(bookCfg)
   self._index = bookCfg.ID
   self._id = bookCfg.BookId
-  self._name = (StringTable.Get)(bookCfg.Name)
-  self._des = (StringTable.Get)(bookCfg.Desc)
+  self._name = StringTable.Get(bookCfg.Name)
+  self._des = StringTable.Get(bookCfg.Desc)
   self._icon = bookCfg.Icon
   self._chapters = {}
   self._openCount = 0
-  local chapterCfgs = (Cfg.cfg_book_chapter)({BookId = self._id})
+  local chapterCfgs = Cfg.cfg_book_chapter({
+    BookId = self._id
+  })
   if chapterCfgs then
-    for k,v in pairs(chapterCfgs) do
+    for k, v in pairs(chapterCfgs) do
       local bookChapter = BookChapterData:New(v)
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._chapters)[#self._chapters + 1] = bookChapter
+      self._chapters[#self._chapters + 1] = bookChapter
       if bookChapter:IsOpen() then
         self._openCount = self._openCount + 1
       end
     end
-    ;
-    (table.sort)(self._chapters, function(a, b)
-    -- function num : 0_20_0
-    local aChapterId = a:GetChapterId()
-    local bChapterId = b:GetChapterId()
-    if a:GetIndex() >= b:GetIndex() then
-      do return aChapterId ~= bChapterId end
-      do return aChapterId < bChapterId end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
+    table.sort(self._chapters, function(a, b)
+      local aChapterId = a:GetChapterId()
+      local bChapterId = b:GetChapterId()
+      if aChapterId == bChapterId then
+        return a:GetIndex() < b:GetIndex()
+      end
+      return aChapterId < bChapterId
+    end)
   end
-)
-  end
-  self._chapterCount = (table.count)(self._chapters)
+  self._chapterCount = table.count(self._chapters)
   self._isSelected = false
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-BookData.GetIndex = function(self)
-  -- function num : 0_21
+function BookData:GetIndex()
   return self._index
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-BookData.GetId = function(self)
-  -- function num : 0_22
+function BookData:GetId()
   return self._id
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-BookData.GetName = function(self)
-  -- function num : 0_23
+function BookData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-BookData.GetDes = function(self)
-  -- function num : 0_24
+function BookData:GetDes()
   return self._des
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-BookData.GetIcon = function(self)
-  -- function num : 0_25
+function BookData:GetIcon()
   return self._icon
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-BookData.IsSelected = function(self)
-  -- function num : 0_26
+function BookData:IsSelected()
   return self._isSelected
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-BookData.SetSelectedStatus = function(self, isSelected)
-  -- function num : 0_27
+function BookData:SetSelectedStatus(isSelected)
   self._isSelected = isSelected
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-BookData.GetChapters = function(self)
-  -- function num : 0_28
+function BookData:GetChapters()
   return self._chapters
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-BookData.GetChapterCount = function(self)
-  -- function num : 0_29
+function BookData:GetChapterCount()
   return self._chapterCount
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R1 in 'UnsetPending'
-
-BookData.GetOpenChapterCount = function(self)
-  -- function num : 0_30
+function BookData:GetOpenChapterCount()
   return self._openCount
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
-
-BookData.IsNew = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function BookData:IsNew()
   if not self._chapters then
     return false
   end
-  for k,chapter in pairs(self._chapters) do
+  for k, chapter in pairs(self._chapters) do
     if chapter:IsNew() then
       return true
     end
   end
   return false
 end
-
-

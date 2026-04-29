@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/task/ui_n25_vampire_challenge_task_gain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireChallengeTaskGain", UIController)
 UIN25VampireChallengeTaskGain = UIN25VampireChallengeTaskGain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireChallengeTaskGain.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIN25VampireChallengeTaskGain:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskGain.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25VampireChallengeTaskGain:OnShow(uiParams)
   self._bloodsuckerComponentInfo = uiParams[1]
   self._rewards = uiParams[2]
   self._lastdata = uiParams[3]
@@ -39,24 +29,24 @@ UIN25VampireChallengeTaskGain.OnShow = function(self, uiParams)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskGain.Flush = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local data = (self._bloodsuckerComponentInfo).talent_info
-  local cfg = (Cfg.cfg_component_bloodsucker_talent_level)({Level = data.talent_level})
-  local prelevelCfg = (Cfg.cfg_component_bloodsucker_talent_level)({Level = data.talent_level - 1})
+function UIN25VampireChallengeTaskGain:Flush()
+  local data = self._bloodsuckerComponentInfo.talent_info
+  local cfg = Cfg.cfg_component_bloodsucker_talent_level({
+    Level = data.talent_level
+  })
+  local prelevelCfg = Cfg.cfg_component_bloodsucker_talent_level({
+    Level = data.talent_level - 1
+  })
   local addExpCount = 0
   local addpoint = 0
   local changeLv = false
-  if data.talent_level ~= (self._lastdata).talent_level then
+  if data.talent_level ~= self._lastdata.talent_level then
     changeLv = true
     self:PlayLvAnim(data.talent_level)
   else
-    ;
-    (self.levelText):SetText(data.talent_level)
+    self.levelText:SetText(data.talent_level)
   end
-  for index,value in ipairs(self._rewards) do
+  for index, value in ipairs(self._rewards) do
     if value.assetid == 3000289 then
       addExpCount = value.count
     end
@@ -64,194 +54,122 @@ UIN25VampireChallengeTaskGain.Flush = function(self)
       addpoint = value.count
     end
   end
-  if addExpCount > 0 then
-    (self.lInfoText):SetText(0)
+  if 0 < addExpCount then
+    self.lInfoText:SetText(0)
     self:ShowTweenAni(self.lInfoText, 0, data.cur_exp, 1200)
-    ;
-    (self.rInfoText):SetText("/" .. (cfg[1]).Exp)
+    self.rInfoText:SetText("/" .. cfg[1].Exp)
   else
-    ;
-    (self.lInfoText):SetText(data.cur_exp)
-    ;
-    (self.rInfoText):SetText("/" .. (cfg[1]).Exp)
+    self.lInfoText:SetText(data.cur_exp)
+    self.rInfoText:SetText("/" .. cfg[1].Exp)
   end
-  if addpoint > 0 then
-    (self.prenochangeGo):SetActive(false)
-    ;
-    (self.preGo):SetActive(true)
-    ;
-    (self.upGo):SetActive(true)
+  if 0 < addpoint then
+    self.prenochangeGo:SetActive(false)
+    self.preGo:SetActive(true)
+    self.upGo:SetActive(true)
     local point = data.cur_talent_point - addpoint
-    if data.talent_level ~= (self._lastdata).talent_level and prelevelCfg then
-      point = point - (prelevelCfg[1]).TalentPoint
+    if data.talent_level ~= self._lastdata.talent_level and prelevelCfg then
+      point = point - prelevelCfg[1].TalentPoint
     end
-    ;
-    (self.preText):SetText(point)
-    ;
-    (self.lastText):SetText(point)
+    self.preText:SetText(point)
+    self.lastText:SetText(point)
     self:PlayPointAnim(changeLv)
     self:ShowTweenAni(self.lastText, point, data.cur_talent_point, 1400)
   else
-    do
-      ;
-      (self.prenochangeGo):SetActive(true)
-      ;
-      (self.prenochangeText):SetText(data.cur_talent_point)
-      ;
-      (self.upGo):SetActive(false)
-      ;
-      (self.preGo):SetActive(false)
-      ;
-      (self.addText):SetText("+" .. addExpCount)
-      ;
-      (self.btnGo):SetActive(false)
-      self:PlayBtnAnim()
-      self:PlaySliderAnim(data, cfg, prelevelCfg)
-    end
+    self.prenochangeGo:SetActive(true)
+    self.prenochangeText:SetText(data.cur_talent_point)
+    self.upGo:SetActive(false)
+    self.preGo:SetActive(false)
   end
+  self.addText:SetText("+" .. addExpCount)
+  self.btnGo:SetActive(false)
+  self:PlayBtnAnim()
+  self:PlaySliderAnim(data, cfg, prelevelCfg)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskGain.OnHide = function(self)
-  -- function num : 0_3
+function UIN25VampireChallengeTaskGain:OnHide()
   self._rewards = nil
   if self._hidecallback then
-    (self._hidecallback)(self._taskid)
+    self._hidecallback(self._taskid)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskGain.BtnOnClick = function(self)
-  -- function num : 0_4
+function UIN25VampireChallengeTaskGain:BtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskGain.CloseOnClick = function(self)
-  -- function num : 0_5
+function UIN25VampireChallengeTaskGain:CloseOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskGain.ShowTweenAni = function(self, textCom, startvalue, endvalue, yeildtime)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN25VampireChallengeTaskGain:ShowTweenAni(textCom, startvalue, endvalue, yeildtime)
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV, yeildtime, startvalue, endvalue, textCom
     local lockName = self:GetName() .. "HideCallBack"
     self:Lock(lockName)
     YIELD(TT, yeildtime)
-    ;
-    (DoTweenHelper.DoUpdateInt)(startvalue, endvalue, 0.5, function(val)
-      -- function num : 0_6_0_0 , upvalues : _ENV, textCom
-      local num = (math.floor)(val)
+    DoTweenHelper.DoUpdateInt(startvalue, endvalue, 0.5, function(val)
+      local num = math.floor(val)
       textCom:SetText(num)
-    end
-)
+    end)
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskGain.PlayLvAnim = function(self, level)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN25VampireChallengeTaskGain:PlayLvAnim(level)
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV, level
     local lockName = self:GetName() .. "PlayLvAni"
     self:Lock(lockName)
-    ;
-    (self.levelText):SetText((self._lastdata).talent_level)
+    self.levelText:SetText(self._lastdata.talent_level)
     YIELD(TT, 2000)
-    ;
-    (self._anim):Play("uieffanim_UIN25VampireChallengeTaskGain_level")
-    ;
-    (self.levelText):SetText(level)
-    ;
-    (self.uplevelGo):SetActive(true)
+    self._anim:Play("uieffanim_UIN25VampireChallengeTaskGain_level")
+    self.levelText:SetText(level)
+    self.uplevelGo:SetActive(true)
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskGain.PlayPointAnim = function(self, changeLv)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN25VampireChallengeTaskGain:PlayPointAnim(changeLv)
   local time = changeLv and 2000 or 1200
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV, time
     local lockName = self:GetName() .. "PlayPointAnim"
     self:Lock(lockName)
     YIELD(TT, time)
-    ;
-    (self.arrGo):SetActive(true)
+    self.arrGo:SetActive(true)
     YIELD(TT, 300)
-    ;
-    (self.lastGo):SetActive(true)
+    self.lastGo:SetActive(true)
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskGain.PlayBtnAnim = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN25VampireChallengeTaskGain:PlayBtnAnim()
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
     local lockName = self:GetName() .. "PlayBtnAnim"
     self:Lock(lockName)
     YIELD(TT, 1600)
-    ;
-    (self.btnGo):SetActive(true)
+    self.btnGo:SetActive(true)
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskGain.PlaySliderAnim = function(self, data, cfg, prelevelCfg)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN25VampireChallengeTaskGain:PlaySliderAnim(data, cfg, prelevelCfg)
   self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, data, prelevelCfg, _ENV, cfg
     local lockName = self:GetName() .. "PlaySliderAnim"
     self:Lock(lockName)
     local changelv = false
-    if data.talent_level ~= (self._lastdata).talent_level then
+    if data.talent_level ~= self._lastdata.talent_level then
       changelv = true
     end
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
     if changelv then
-      (self.slider).value = (self._lastdata).cur_exp / (prelevelCfg[1]).Exp
+      self.slider.value = self._lastdata.cur_exp / prelevelCfg[1].Exp
       YIELD(TT, 1200)
-      ;
-      (self.slider):DOValue(1, 1)
+      self.slider:DOValue(1, 1)
       YIELD(TT, 1100)
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.slider).value = 0
+      self.slider.value = 0
       YIELD(TT, 100)
-      ;
-      (self.slider):DOValue(data.cur_exp / (cfg[1]).Exp, 1)
+      self.slider:DOValue(data.cur_exp / cfg[1].Exp, 1)
     else
-      -- DECOMPILER ERROR at PC59: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.slider).value = (self._lastdata).cur_exp / (cfg[1]).Exp
-      ;
-      (self.slider):DOValue(data.cur_exp / (cfg[1]).Exp, 1)
+      self.slider.value = self._lastdata.cur_exp / cfg[1].Exp
+      self.slider:DOValue(data.cur_exp / cfg[1].Exp, 1)
     end
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
-
-

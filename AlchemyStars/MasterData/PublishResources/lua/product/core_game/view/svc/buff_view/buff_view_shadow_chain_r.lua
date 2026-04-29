@@ -1,54 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_shadow_chain_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewShadowChain", BuffViewBase)
 BuffViewShadowChain = BuffViewShadowChain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewShadowChain.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewShadowChain:PlayView(TT)
   local result = self._buffResult
   local shadowPrefab = result:GetShadowPrefab()
   local shadowCreate = result:GetShadowCreate()
   local petPstID = result:GetPetPstID()
   local shadowEntityID = result:GetShadowEntityID()
-  local bvcmpt = (self._entity):BuffView()
+  local bvcmpt = self._entity:BuffView()
   bvcmpt:SetBuffValue("ShadowChainEntityID", shadowEntityID)
-  local shadowEntity = ((self._world):GetEntityByID(shadowEntityID))
-  local petPrefab = nil
+  local shadowEntity = self._world:GetEntityByID(shadowEntityID)
+  local petPrefab
   if shadowPrefab then
     petPrefab = shadowPrefab
   else
-    local petData = (self._world):GetPetData(petPstID)
+    local petData = self._world:GetPetData(petPstID)
     petPrefab = petData:GetPetPrefab(PetSkinEffectPath.MODEL_INGAME)
   end
-  do
-    if shadowCreate == 1 then
-      shadowEntity:ReplaceAsset(NativeUnityPrefabAsset:New(petPrefab, false))
-      local ancName = HelperProxy:GetPetAnimatorControllerName(petPrefab, PetAnimatorControllerType.Battle)
-      if ancName then
-        local req2 = (ResourceManager:GetInstance()):SyncLoadAsset(ancName, LoadType.GameObject)
-        local anim = (req2.Obj):GetComponent(typeof(UnityEngine.Animator))
-        if anim == nil then
-          (Log.fatal)("找不到Animator组件，加载pet模型失败：", ancName)
-          return nil
-        end
-        local pet = ((shadowEntity:View()).ViewWrapper).GameObject
-        local petAnim = pet:GetComponentInChildren(typeof(UnityEngine.Animator))
-        petAnim.runtimeAnimatorController = anim.runtimeAnimatorController
+  if shadowCreate == 1 then
+    shadowEntity:ReplaceAsset(NativeUnityPrefabAsset:New(petPrefab, false))
+    local ancName = HelperProxy:GetPetAnimatorControllerName(petPrefab, PetAnimatorControllerType.Battle)
+    if ancName then
+      local req2 = ResourceManager:GetInstance():SyncLoadAsset(ancName, LoadType.GameObject)
+      local anim = req2.Obj:GetComponent(typeof(UnityEngine.Animator))
+      if anim == nil then
+        Log.fatal("找不到Animator组件，加载pet模型失败：", ancName)
+        return nil
       end
-    end
-    do
-      if shadowEntity then
-        shadowEntity:AddPetShadowRender()
-        local petShadowRenderComponent = shadowEntity:PetShadowRender()
-        local ownerEntityID = result:GetOwnerEntityID()
-        petShadowRenderComponent:SetOwnerEntityID(ownerEntityID)
-      end
+      local pet = shadowEntity:View().ViewWrapper.GameObject
+      local petAnim = pet:GetComponentInChildren(typeof(UnityEngine.Animator))
+      petAnim.runtimeAnimatorController = anim.runtimeAnimatorController
     end
   end
+  if shadowEntity then
+    shadowEntity:AddPetShadowRender()
+    local petShadowRenderComponent = shadowEntity:PetShadowRender()
+    local ownerEntityID = result:GetOwnerEntityID()
+    petShadowRenderComponent:SetOwnerEntityID(ownerEntityID)
+  end
 end
-
-

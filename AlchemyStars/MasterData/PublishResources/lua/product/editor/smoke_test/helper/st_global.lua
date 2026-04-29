@@ -1,33 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/helper/st_global.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 if not EDITOR then
-  return 
+  return
 end
-TestRobotStartup = function(rawParam)
-  -- function num : 0_0 , upvalues : _ENV
-  local tmodule = (GameGlobal.GetModule)(TestRobotModule)
+
+function TestRobotStartup(rawParam)
+  local tmodule = GameGlobal.GetModule(TestRobotModule)
   tmodule:StartAutoTestTask(rawParam)
 end
 
-ST_ExceptionHandler = function(message)
-  -- function num : 0_1 , upvalues : _ENV
-  local stModule = (GameGlobal.GetModule)(TestRobotModule)
+function ST_ExceptionHandler(message)
+  local stModule = GameGlobal.GetModule(TestRobotModule)
   stModule:Exception_DeclareExceptionThrew(message)
 end
 
-sttraceon = function(tag)
-  -- function num : 0_2
+function sttraceon(tag)
 end
 
-sttrace = function(msg)
-  -- function num : 0_3
+function sttrace(msg)
 end
 
-sttraceoff = function()
-  -- function num : 0_4
+function sttraceoff()
 end
-
-

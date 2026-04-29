@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_transport_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectTransportParam", SkillEffectParamBase)
 SkillEffectTransportParam = SkillEffectTransportParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectTransportParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectTransportParam:Constructor(t)
   self._times = t.times or 1
   self._isLoop = t.isLoop or 1
   self._offsetPosX = t.offsetPosX or 0
@@ -17,39 +10,22 @@ SkillEffectTransportParam.Constructor = function(self, t)
   self._offsetBodyAreaTimes = t.offsetBodyAreaTimes or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectTransportParam:GetEffectType()
   return SkillEffectType.Transport
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportParam.GetTimes = function(self)
-  -- function num : 0_2
+function SkillEffectTransportParam:GetTimes()
   return self._times
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportParam.GetIsLoop = function(self)
-  -- function num : 0_3
+function SkillEffectTransportParam:GetIsLoop()
   return self._isLoop
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportParam.GetOffsetPos = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillEffectTransportParam:GetOffsetPos()
   return Vector2(self._offsetPosX, self._offsetPosY)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTransportParam.GetOffsetBodyAreaTimes = function(self)
-  -- function num : 0_5
+function SkillEffectTransportParam:GetOffsetBodyAreaTimes()
   return self._offsetBodyAreaTimes
 end
-
-

@@ -1,195 +1,126 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_smelt_room/ui_aircraft_smelt_mat_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftItemSmeltMatItem", UICustomWidget)
 UIAircraftItemSmeltMatItem = UIAircraftItemSmeltMatItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftItemSmeltMatItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftItemSmeltMatItem:OnShow(uiParams)
   self._roleModule = self:GetModule(RoleModule)
-  self._waitTime = ((Cfg.cfg_global).shakeWaitTime).IntValue or 2000
-  self._shakeX = ((Cfg.cfg_global).shakeOffsetX).IntValue or 10
-  self._shakeY = ((Cfg.cfg_global).shakeOffsetY).IntValue or 10
+  self._waitTime = Cfg.cfg_global.shakeWaitTime.IntValue or 2000
+  self._shakeX = Cfg.cfg_global.shakeOffsetX.IntValue or 10
+  self._shakeY = Cfg.cfg_global.shakeOffsetY.IntValue or 10
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftItemSmeltMatItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIAircraftItemSmeltMatItem:InitWidget()
   self.name = self:GetUIComponent("UILocalizationText", "name")
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.count = self:GetUIComponent("UILocalizationText", "itemCount")
   self._root = self:GetUIComponent("RectTransform", "root")
   self._go = self:GetGameObject("root")
   self._selector = self:GetGameObject("selector")
-  ;
-  (self._selector):SetActive(false)
+  self._selector:SetActive(false)
   self.quality = self:GetUIComponent("Image", "quality")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftItemSmeltMatItem.SetData = function(self, id, count, onClick, idx)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftItemSmeltMatItem:SetData(id, count, onClick, idx)
   self._matid = id
   self._count = count
-  self._currentCount = (self._roleModule):GetAssetCount(self._matid)
+  self._currentCount = self._roleModule:GetAssetCount(self._matid)
   self._onClick = onClick
   self._idx = idx
-  local cfg_item = (Cfg.cfg_item)[id]
-  ;
-  (self.icon):LoadImage(cfg_item.Icon)
+  local cfg_item = Cfg.cfg_item[id]
+  self.icon:LoadImage(cfg_item.Icon)
   local quality = cfg_item.Color
   local spriteName = "spirit_shengji_se" .. quality
   local atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self.quality).sprite = atlas:GetSprite(spriteName)
+  self.quality.sprite = atlas:GetSprite(spriteName)
   self:SetCount()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftItemSmeltMatItem.ResetCount = function(self, count)
-  -- function num : 0_3
+function UIAircraftItemSmeltMatItem:ResetCount(count)
   self._count = count
   self:SetCount()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftItemSmeltMatItem.SetCount = function(self)
-  -- function num : 0_4
-  local str, color = nil, nil
-  if self._currentCount < self._count then
+function UIAircraftItemSmeltMatItem:SetCount()
+  local str, color
+  if self._count > self._currentCount then
     color = "<color=#ff0000>"
   else
     color = "<color=#ffffff>"
   end
   str = color .. self._count .. "</color>/" .. self:GetCurrentMaterialCountStr()
-  ;
-  (self.count):SetText(str)
+  self.count:SetText(str)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftItemSmeltMatItem.GetCurrentMaterialCountStr = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):FormatItemCount(self._currentCount)
+function UIAircraftItemSmeltMatItem:GetCurrentMaterialCountStr()
+  return HelperProxy:GetInstance():FormatItemCount(self._currentCount)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftItemSmeltMatItem.ShakeAndHighlight = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundUIMaterialNotEnough)
+function UIAircraftItemSmeltMatItem:ShakeAndHighlight()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundUIMaterialNotEnough)
   if self.shakeTweener then
-    (self.shakeTweener):Kill()
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._root).anchoredPosition = Vector2(0, 0)
+    self.shakeTweener:Kill()
+    self._root.anchoredPosition = Vector2(0, 0)
   end
   if self.highLightTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self.highLightTimer)
+    GameGlobal.Timer():CancelEvent(self.highLightTimer)
   end
   local str = "<color=#ff0000>" .. self:GetCurrentMaterialCountStr() .. "/" .. self._count .. "</color>"
-  ;
-  (self.count):SetText(str)
-  self.shakeTweener = ((self._root):DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0))):OnComplete(function()
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    self.highLightTimer = ((GameGlobal.Timer)()):AddEvent(self._waitTime, function()
-      -- function num : 0_6_0_0 , upvalues : self
+  self.count:SetText(str)
+  self.shakeTweener = self._root:DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0)):OnComplete(function()
+    self.highLightTimer = GameGlobal.Timer():AddEvent(self._waitTime, function()
       self:SetCount()
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftItemSmeltMatItem.TryStopShake = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  if self._count <= self._currentCount then
+function UIAircraftItemSmeltMatItem:TryStopShake()
+  if self._currentCount >= self._count then
     if self.shakeTweener then
-      (self.shakeTweener):Kill()
-      -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._root).anchoredPosition = Vector2(0, 0)
+      self.shakeTweener:Kill()
+      self._root.anchoredPosition = Vector2(0, 0)
       self.shakeTweener = nil
     end
     if self.highLightTimer then
-      ((GameGlobal.Timer)()):CancelEvent(self.highLightTimer)
+      GameGlobal.Timer():CancelEvent(self.highLightTimer)
       self.highLightTimer = nil
     end
     self:SetCount()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftItemSmeltMatItem.Active = function(self, active)
-  -- function num : 0_8
-  (self._go):SetActive(active)
+function UIAircraftItemSmeltMatItem:Active(active)
+  self._go:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftItemSmeltMatItem.OnHide = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIAircraftItemSmeltMatItem:OnHide()
   if self.shakeTweener then
-    (self.shakeTweener):Kill()
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._root).anchoredPosition = Vector2(0, 0)
+    self.shakeTweener:Kill()
+    self._root.anchoredPosition = Vector2(0, 0)
   end
   if self.highLightTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self.highLightTimer)
+    GameGlobal.Timer():CancelEvent(self.highLightTimer)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftItemSmeltMatItem.iconOnClick = function(self, go)
-  -- function num : 0_10
+function UIAircraftItemSmeltMatItem:iconOnClick(go)
   if self._onClick then
-    (self._onClick)(self._matid, go, self._idx)
+    self._onClick(self._matid, go, self._idx)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftItemSmeltMatItem.Select = function(self, select)
-  -- function num : 0_11
-  (self._selector):SetActive(select)
+function UIAircraftItemSmeltMatItem:Select(select)
+  self._selector:SetActive(select)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftItemSmeltMatItem.SetCamp = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIAircraftItemSmeltMatItem:SetCamp()
   if not self._camp then
     self._camp = self:GetUIComponent("Image", "camp")
     self._atlas = self:GetAsset("UIAircraftSmeltRoom.spriteatlas", LoadType.SpriteAtlas)
   end
-  local cfg = (Cfg.cfg_aircraft_smelt_camp)[self._matid]
+  local cfg = Cfg.cfg_aircraft_smelt_camp[self._matid]
   if not cfg.Camp then
-    (Log.exception)("势力材料没有配置在cfg_aircraft_smelt_camp中:", self._matid)
+    Log.exception("势力材料没有配置在cfg_aircraft_smelt_camp中:", self._matid)
   end
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._camp).sprite = (self._atlas):GetSprite("wind_shili_di" .. cfg.Camp)
-  ;
-  ((self._camp).gameObject):SetActive(true)
+  self._camp.sprite = self._atlas:GetSprite("wind_shili_di" .. cfg.Camp)
+  self._camp.gameObject:SetActive(true)
 end
-
-

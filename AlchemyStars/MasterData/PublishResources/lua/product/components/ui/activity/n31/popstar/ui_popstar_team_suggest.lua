@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/popstar/ui_popstar_team_suggest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPopStarTeamSuggest", UIController)
 UIPopStarTeamSuggest = UIPopStarTeamSuggest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPopStarTeamSuggest.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPopStarTeamSuggest:OnShow(uiParams)
   self._levelData = uiParams[1]
   self._callback = uiParams[2]
   self._loader = self:GetUIComponent("UISelectObjectPath", "Content")
@@ -19,48 +12,31 @@ UIPopStarTeamSuggest.OnShow = function(self, uiParams)
   self:PlayAnimation()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeamSuggest.Init = function(self)
-  -- function num : 0_1
-  local suggestTeams = (self._levelData):GetSuggestTeams()
-  ;
-  (self._loader):SpawnObjects("UIPopStarTeamSuggestItem", #suggestTeams)
+function UIPopStarTeamSuggest:Init()
+  local suggestTeams = self._levelData:GetSuggestTeams()
+  self._loader:SpawnObjects("UIPopStarTeamSuggestItem", #suggestTeams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeamSuggest.Refresh = function(self)
-  -- function num : 0_2
-  local suggestTeams = (self._levelData):GetSuggestTeams()
-  local list = (self._loader):GetAllSpawnList()
+function UIPopStarTeamSuggest:Refresh()
+  local suggestTeams = self._levelData:GetSuggestTeams()
+  local list = self._loader:GetAllSpawnList()
   for i = 1, #list do
     local item = list[i]
     item:SetData(suggestTeams[i], self._levelData, function(id, pos)
-    -- function num : 0_2_0 , upvalues : self
-    self:ShowSkillTips(id, pos)
-  end
-, function(data)
-    -- function num : 0_2_1 , upvalues : self
-    self:Use(data)
-  end
-)
+      self:ShowSkillTips(id, pos)
+    end, function(data)
+      self:Use(data)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeamSuggest.PlayAnimation = function(self)
-  -- function num : 0_3
+function UIPopStarTeamSuggest:PlayAnimation()
   self:StartTask(self.PlayAnimationCoro, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeamSuggest.PlayAnimationCoro = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIPopStarTeamSuggest:PlayAnimationCoro(TT)
   self:Lock("UIPopStarTeamSuggest_PlayAnimationCoro")
-  local list = (self._loader):GetAllSpawnList()
+  local list = self._loader:GetAllSpawnList()
   for i = 1, #list do
     local item = list[i]
     item:SetActive(false)
@@ -80,52 +56,35 @@ UIPopStarTeamSuggest.PlayAnimationCoro = function(self, TT)
   self:UnLock("UIPopStarTeamSuggest_PlayAnimationCoro")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeamSuggest.ShowSkillTips = function(self, petId, pos)
-  -- function num : 0_5
-  (self._skilltips):SetData(pos, 0, petId, nil)
+function UIPopStarTeamSuggest:ShowSkillTips(petId, pos)
+  self._skilltips:SetData(pos, 0, petId, nil)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeamSuggest.Use = function(self, data)
-  -- function num : 0_6
+function UIPopStarTeamSuggest:Use(data)
   self:StartTask(self.UseCoro, self, data)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeamSuggest.UseCoro = function(self, TT, data)
-  -- function num : 0_7 , upvalues : _ENV
-  if not (self._levelData):IsActivityOpen() then
-    return 
+function UIPopStarTeamSuggest:UseCoro(TT, data)
+  if not self._levelData:IsActivityOpen() then
+    return
   end
   self:Lock("UIPopStarTeamSuggest_UseCoro")
-  local team = (self._levelData):TeamClone()
-  ;
-  (self._levelData):UseTeam(data:GetTeam())
-  local result = (self._levelData):UpdateTeam(TT)
+  local team = self._levelData:TeamClone()
+  self._levelData:UseTeam(data:GetTeam())
+  local result = self._levelData:UpdateTeam(TT)
   if result == false then
-    (self._levelData):UseTeam(team)
+    self._levelData:UseTeam(team)
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_n31_popstar_tishi_3"))
+    ToastManager.ShowToast(StringTable.Get("str_n31_popstar_tishi_3"))
   end
   self:Refresh()
   self:UnLock("UIPopStarTeamSuggest_UseCoro")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeamSuggest.BtnCloseOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIPopStarTeamSuggest:BtnCloseOnClick()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
   self:CloseDialog()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PopStarRefreshTeam)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PopStarRefreshTeam)
 end
-
-

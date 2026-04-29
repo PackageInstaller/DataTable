@@ -1,149 +1,99 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/shop/ui_homeland_shop_tab_buy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandShopTabBuy", UICustomWidget)
 UIHomelandShopTabBuy = UIHomelandShopTabBuy
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandShopTabBuy.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandShopTabBuy:OnShow(uiParams)
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuy.OnHide = function(self)
-  -- function num : 0_1
+function UIHomelandShopTabBuy:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuy.SetData = function(self, shop_info)
-  -- function num : 0_2
+function UIHomelandShopTabBuy:SetData(shop_info)
   self._shop_info = shop_info
   self:_SetDynamicList()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuy._GetDynamicListData = function(self, first)
-  -- function num : 0_3 , upvalues : _ENV
-  local map = (self._shop_info).chs_map
-  local cfg = (Cfg.cfg_homeland_shop)({})
+function UIHomelandShopTabBuy:_GetDynamicListData(first)
+  local map = self._shop_info.chs_map
+  local cfg = Cfg.cfg_homeland_shop({})
   local tb_normal = {}
   local tb_limit = {}
-  for i,v in pairs(cfg) do
+  for i, v in pairs(cfg) do
     local id = v.ID
     local flag_show = true
     local flag_soldout = false
     local soldCount = map[id] or 0
-    if v.Limit > soldCount then
-      flag_soldout = v.Type == 0
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R15 in 'UnsetPending'
-
+    if v.Type ~= 0 then
+      flag_soldout = soldCount >= v.Limit
       if v.Type == 2 and flag_soldout and first then
-        (self._limit_soldout)[v.ID] = true
-      end
-      do
-        if v.Type ~= 0 or not tb_normal then
-          local tb = (self._limit_soldout)[v.ID] or tb_limit
-        end
-        ;
-        (table.insert)(tb, {id = id, soldout = flag_soldout, soldCount = soldCount, week_time = (self._shop_info).goods_week_time, moth_time = (self._shop_info).goods_moth_time, cfg = v})
-        -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out IF_STMT
-
+        self._limit_soldout[v.ID] = true
       end
     end
-  end
-  ;
-  (table.sort)(tb_normal, function(a, b)
-    -- function num : 0_3_0
-    if (a.cfg).SortValue >= (b.cfg).SortValue then
-      do return (a.cfg).SortValue == (b.cfg).SortValue end
-      do return a.id < b.id end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+    if not self._limit_soldout[v.ID] then
+      local tb = v.Type == 0 and tb_normal or tb_limit
+      table.insert(tb, {
+        id = id,
+        soldout = flag_soldout,
+        soldCount = soldCount,
+        week_time = self._shop_info.goods_week_time,
+        moth_time = self._shop_info.goods_moth_time,
+        cfg = v
+      })
     end
   end
-)
-  ;
-  (table.sort)(tb_limit, function(a, b)
-    -- function num : 0_3_1
+  table.sort(tb_normal, function(a, b)
+    if a.cfg.SortValue ~= b.cfg.SortValue then
+      return a.cfg.SortValue < b.cfg.SortValue
+    else
+      return a.id < b.id
+    end
+  end)
+  table.sort(tb_limit, function(a, b)
     if a.soldout and not b.soldout then
       return false
+    elseif not a.soldout and b.soldout then
+      return true
+    elseif a.cfg.SortValue ~= b.cfg.SortValue then
+      return a.cfg.SortValue < b.cfg.SortValue
     else
-      if not a.soldout and b.soldout then
-        return true
-      else
-        if (a.cfg).SortValue >= (b.cfg).SortValue then
-          do return (a.cfg).SortValue == (b.cfg).SortValue end
-          do return a.id < b.id end
-          -- DECOMPILER ERROR: 4 unprocessed JMP targets
-        end
-      end
+      return a.id < b.id
     end
-  end
-)
-  do return tb_normal, tb_limit end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  end)
+  return tb_normal, tb_limit
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuy._SetDynamicListData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandShopTabBuy:_SetDynamicListData()
   self._first_flag = self._first_flag and self._first_flag + 1 or 1
-  if not self._limit_soldout then
-    self._limit_soldout = {}
-    self._list_normal = self:_GetDynamicListData(self._first_flag == 1)
-    self._itemCountPerRow = 5
-    self._size_normal = (math.floor)(((table.count)(self._list_normal) - 1) / self._itemCountPerRow + 1)
-    self._size_limit = #self._list_limit > 0 and 1 or 0
-    self._dynamicListSize = self._size_normal + self._size_limit
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
-  end
+  self._limit_soldout = self._limit_soldout or {}
+  self._list_normal, self._list_limit = self:_GetDynamicListData(self._first_flag == 1)
+  self._itemCountPerRow = 5
+  self._size_normal = math.floor((table.count(self._list_normal) - 1) / self._itemCountPerRow + 1)
+  self._size_limit = #self._list_limit > 0 and 1 or 0
+  self._dynamicListSize = self._size_normal + self._size_limit
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuy._SetDynamicList = function(self)
-  -- function num : 0_5
+function UIHomelandShopTabBuy:_SetDynamicList()
   self:_SetDynamicListData()
   if not self._isDynamicInited then
     self._isDynamicInited = true
     self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "_dynamicList")
-    ;
-    (self._dynamicList):InitListView(self._dynamicListSize, function(scrollView, index)
-    -- function num : 0_5_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
+    self._dynamicList:InitListView(self._dynamicListSize, function(scrollView, index)
+      return self:_SpawnListItem(scrollView, index)
+    end)
   else
     self:_RefreshList(self._dynamicListSize, self._dynamicList)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuy._RefreshList = function(self, count, list)
-  -- function num : 0_6
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIHomelandShopTabBuy:_RefreshList(count, list)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((list.ScrollRect).content).localPosition = contentPos
+  list.ScrollRect.content.localPosition = contentPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuy._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_7
+function UIHomelandShopTabBuy:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -153,10 +103,7 @@ UIHomelandShopTabBuy._SpawnListItem = function(self, scrollView, index)
   return self:_SpawnListItem_Normal(scrollView, index)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuy._SpawnListItem_Limit = function(self, scrollView, index)
-  -- function num : 0_8
+function UIHomelandShopTabBuy:_SpawnListItem_Limit(scrollView, index)
   local _className = "UIHomelandShopTabBuyListItem"
   local item = scrollView:NewListViewItem("RowItem2")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
@@ -167,26 +114,22 @@ UIHomelandShopTabBuy._SpawnListItem_Limit = function(self, scrollView, index)
   local rowList = rowPool:GetAllSpawnList()
   for i = 1, #rowList do
     local listItem = rowList[i]
-    ;
-    (listItem:GetGameObject()):SetActive(false)
+    listItem:GetGameObject():SetActive(false)
     if i <= #self._list_limit then
-      (listItem:GetGameObject()):SetActive(true)
-      local info = (self._list_limit)[i]
+      listItem:GetGameObject():SetActive(true)
+      local info = self._list_limit[i]
       listItem:SetData(i, info)
       if not self.firstBuyBtn then
         self.firstBuyBtn = listItem:GetBuyBtn()
       end
     end
   end
-  local rect = (item.gameObject):GetComponent("RectTransform")
+  local rect = item.gameObject:GetComponent("RectTransform")
   self:_ReCalcSize(rect)
   return item
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuy._SpawnListItem_Normal = function(self, scrollView, index)
-  -- function num : 0_9
+function UIHomelandShopTabBuy:_SpawnListItem_Normal(scrollView, index)
   local _className = "UIHomelandShopTabBuyListItem"
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
@@ -199,12 +142,11 @@ UIHomelandShopTabBuy._SpawnListItem_Normal = function(self, scrollView, index)
   for i = 1, self._itemCountPerRow do
     local listItem = rowList[i]
     local itemIndex = _index * self._itemCountPerRow + i
-    if #self._list_normal < itemIndex then
-      (listItem:GetGameObject()):SetActive(false)
+    if itemIndex > #self._list_normal then
+      listItem:GetGameObject():SetActive(false)
     else
-      ;
-      (listItem:GetGameObject()):SetActive(true)
-      local info = (self._list_normal)[itemIndex]
+      listItem:GetGameObject():SetActive(true)
+      local info = self._list_normal[itemIndex]
       listItem:SetData(itemIndex, info)
       if not self.firstBuyBtn then
         self.firstBuyBtn = listItem:GetBuyBtn()
@@ -214,27 +156,15 @@ UIHomelandShopTabBuy._SpawnListItem_Normal = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuy._ReCalcSize = function(self, rect)
-  -- function num : 0_10 , upvalues : _ENV
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(rect)
-  ;
-  (self._dynamicList):OnItemSizeChanged(0)
+function UIHomelandShopTabBuy:_ReCalcSize(rect)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(rect)
+  self._dynamicList:OnItemSizeChanged(0)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuy.GetBuyBtn = function(self)
-  -- function num : 0_11
+function UIHomelandShopTabBuy:GetBuyBtn()
   return self.firstBuyBtn
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuy.GetMask = function(self)
-  -- function num : 0_12
+function UIHomelandShopTabBuy:GetMask()
   return self:GetGameObject("Mask")
 end
-
-

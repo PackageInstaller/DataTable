@@ -1,78 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/anim/ui_draw_card_view_data_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardViewDataItem", Object)
 UIDrawCardViewDataItem = UIDrawCardViewDataItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardViewDataItem.Constructor = function(self, id)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDrawCardViewDataItem:Constructor(id)
   self._id = id
-  local cfg = (Cfg.cfg_pet)[self._id]
+  local cfg = Cfg.cfg_pet[self._id]
   self._star = cfg.Star
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardViewDataItem.ID = function(self)
-  -- function num : 0_1
+function UIDrawCardViewDataItem:ID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardViewDataItem.IsDuplicate = function(self)
-  -- function num : 0_2
+function UIDrawCardViewDataItem:IsDuplicate()
   return self._isDuplicate
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardViewDataItem.Star = function(self)
-  -- function num : 0_3
+function UIDrawCardViewDataItem:Star()
   return self._star
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardViewDataItem.ConvertItems = function(self)
-  -- function num : 0_4
+function UIDrawCardViewDataItem:ConvertItems()
   return self._convertItems
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardViewDataItem.SetDuplicate = function(self, isDuplicate, times)
-  -- function num : 0_5 , upvalues : _ENV
+function UIDrawCardViewDataItem:SetDuplicate(isDuplicate, times)
   self._isDuplicate = isDuplicate
   if self._isDuplicate then
     local items = {}
-    local coinCfg = (Cfg.cfg_pet_coin)({PetID = self._id})
-    local module = (GameGlobal.GetModule)(PetModule)
-    if coinCfg and #coinCfg > 0 then
+    local coinCfg = Cfg.cfg_pet_coin({
+      PetID = self._id
+    })
+    local module = GameGlobal.GetModule(PetModule)
+    if coinCfg and 0 < #coinCfg then
       coinCfg = coinCfg[1]
       local pet = module:GetPetByTemplateId(self._id)
       local times = pet:RepeatGetTimes() - times + 1
       if coinCfg.CoinRewardCount then
-        times = (math.min)(times, #coinCfg.CoinRewardCount)
+        times = math.min(times, #coinCfg.CoinRewardCount)
         local id = coinCfg.CoinID
-        local count = (coinCfg.CoinRewardCount)[times]
+        local count = coinCfg.CoinRewardCount[times]
         items[#items + 1] = NewRoleAsset(id, count)
       end
     end
-    do
-      local cfg = (Cfg.cfg_pet)[self._id]
-      for i = 1, #cfg.ExchangeItem do
-        local val = (string.split)((cfg.ExchangeItem)[i], ",")
-        local id = tonumber(val[1])
-        local count = tonumber(val[2])
-        items[#items + 1] = NewRoleAsset(id, count)
-      end
-      self._convertItems = items
+    local cfg = Cfg.cfg_pet[self._id]
+    for i = 1, #cfg.ExchangeItem do
+      local val = string.split(cfg.ExchangeItem[i], ",")
+      local id = tonumber(val[1])
+      local count = tonumber(val[2])
+      items[#items + 1] = NewRoleAsset(id, count)
     end
+    self._convertItems = items
   end
 end
-
-

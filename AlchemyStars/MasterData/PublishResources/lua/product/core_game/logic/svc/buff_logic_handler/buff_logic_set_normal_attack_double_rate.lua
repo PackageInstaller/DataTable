@@ -1,27 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_normal_attack_double_rate.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetNormalAttackDoubleRate", BuffLogicBase)
 BuffLogicSetNormalAttackDoubleRate = BuffLogicSetNormalAttackDoubleRate
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetNormalAttackDoubleRate.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetNormalAttackDoubleRate:Constructor(buffInstance, logicParam)
   self._baseRate = logicParam.baseRate or 0
   self._eachMoveIncreaseRate = logicParam.eachMoveIncreaseRate or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetNormalAttackDoubleRate.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("NormalAttackDoubleBaseRate", self._baseRate)
-  ;
-  (e:BuffComponent()):SetBuffValue("NormalAttackDoubleEachMoveIncreaseRate", self._eachMoveIncreaseRate)
+function BuffLogicSetNormalAttackDoubleRate:DoLogic(notify)
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("NormalAttackDoubleBaseRate", self._baseRate)
+  e:BuffComponent():SetBuffValue("NormalAttackDoubleEachMoveIncreaseRate", self._eachMoveIncreaseRate)
 end
-
-

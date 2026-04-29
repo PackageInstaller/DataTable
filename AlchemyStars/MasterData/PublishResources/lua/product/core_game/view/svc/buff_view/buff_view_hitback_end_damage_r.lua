@@ -1,47 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_hitback_end_damage_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewHitBackEndDamage", BuffViewBase)
 BuffViewHitBackEndDamage = BuffViewHitBackEndDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewHitBackEndDamage.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local targetId = (self._buffResult):GetDefenderID()
-  local damageInfo = (self._buffResult):GetDamageInfo()
+function BuffViewHitBackEndDamage:PlayView(TT)
+  local targetId = self._buffResult:GetDefenderID()
+  local damageInfo = self._buffResult:GetDamageInfo()
   if not damageInfo then
-    return 
+    return
   end
-  local viewParams = ((self._viewInstance):BuffConfigData()):GetViewParams()
-  local targetEntity = (self._world):GetEntityByID(targetId)
+  local viewParams = self._viewInstance:BuffConfigData():GetViewParams()
+  local targetEntity = self._world:GetEntityByID(targetId)
   local damageType = damageInfo:GetDamageType()
   local targetDamage = damageInfo:GetDamageValue()
   local shieldLayer = damageInfo:GetShieldLayer()
   local hitEffectID = viewParams.HitEffectId
-  if damageType ~= DamageType.Guard or damageType == DamageType.Normal then
-    if hitEffectID > 0 then
-      ((self._world):GetService("Effect")):CreateBeHitEffect(hitEffectID, targetEntity)
+  if damageType == DamageType.Guard then
+  elseif damageType == DamageType.Normal then
+    if 0 < hitEffectID then
+      self._world:GetService("Effect"):CreateBeHitEffect(hitEffectID, targetEntity)
     end
     local hitAnim = "Hit"
     targetEntity:SetAnimatorControllerTriggers({hitAnim})
   end
-  do
-    local playDamageService = (self._world):GetService("PlayDamage")
-    playDamageService:AsyncUpdateHPAndDisplayDamage(targetEntity, damageInfo)
-  end
+  local playDamageService = self._world:GetService("PlayDamage")
+  playDamageService:AsyncUpdateHPAndDisplayDamage(targetEntity, damageInfo)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewHitBackEndDamage.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewHitBackEndDamage:IsNotifyMatch(notify)
   local defenderId = notify:GetDefenderId()
-  if (self._buffResult):GetDefenderID() == defenderId then
+  if self._buffResult:GetDefenderID() == defenderId then
     return true
   end
   return false
 end
-
-

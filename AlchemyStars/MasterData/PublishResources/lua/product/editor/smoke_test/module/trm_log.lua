@@ -1,73 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/module/trm_log.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("test_robot_module")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotModule.Log = function(self, ...)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.debug)("[TestRobot]", ...)
-  local tmp = {...}
+function TestRobotModule:Log(...)
+  Log.debug("[TestRobot]", ...)
+  local tmp = {
+    ...
+  }
   local t = {}
-  for _,v in ipairs(tmp) do
-    (table.insert)(t, tostring(v))
+  for _, v in ipairs(tmp) do
+    table.insert(t, tostring(v))
   end
-  ;
-  (SmokingTestHub.WriteFullLog)((table.concat)(t, " "))
+  SmokingTestHub.WriteFullLog(table.concat(t, " "))
 end
 
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.Warn = function(self, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.debug)("[TestRobot][?]", ...)
-  local tmp = {...}
+function TestRobotModule:Warn(...)
+  Log.debug("[TestRobot][?]", ...)
+  local tmp = {
+    ...
+  }
   local t = {}
-  for _,v in ipairs(tmp) do
-    (table.insert)(t, tostring(v))
+  for _, v in ipairs(tmp) do
+    table.insert(t, tostring(v))
   end
-  ;
-  (table.insert)(t, 1, "[?]")
-  ;
-  (SmokingTestHub.WriteFullLog)((table.concat)(t, " "))
+  table.insert(t, 1, "[?]")
+  SmokingTestHub.WriteFullLog(table.concat(t, " "))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.Error = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  (Log.debug)("[TestRobot][!]", ...)
-  local tmp = {...}
+function TestRobotModule:Error(...)
+  Log.debug("[TestRobot][!]", ...)
+  local tmp = {
+    ...
+  }
   local t = {}
-  for _,v in ipairs(tmp) do
-    (table.insert)(t, tostring(v))
+  for _, v in ipairs(tmp) do
+    table.insert(t, tostring(v))
   end
-  ;
-  (table.insert)(t, 1, "[!]")
-  local msg = (table.concat)(t, " ")
-  ;
-  (SmokingTestHub.WriteFullLog)(msg)
+  table.insert(t, 1, "[!]")
+  local msg = table.concat(t, " ")
+  SmokingTestHub.WriteFullLog(msg)
   self:Exception_DeclareExceptionThrew(msg)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.Panic = function(self, ...)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.debug)("[TestRobot][!]", ...)
-  local t = {...}
-  ;
-  (table.insert)(t, 1, "[!]")
-  local msg = (table.concat)(t, " ")
-  ;
-  (SmokingTestHub.WriteFullLog)(msg)
+function TestRobotModule:Panic(...)
+  Log.debug("[TestRobot][!]", ...)
+  local t = {
+    ...
+  }
+  table.insert(t, 1, "[!]")
+  local msg = table.concat(t, " ")
+  SmokingTestHub.WriteFullLog(msg)
   self:Exception_SendWorkWXError(msg)
   if self:GetMissionRunData() then
-    (self:GetMissionRunData()):DeclareException()
+    self:GetMissionRunData():DeclareException()
   end
   self:WriteProgressLog()
 end
-
-

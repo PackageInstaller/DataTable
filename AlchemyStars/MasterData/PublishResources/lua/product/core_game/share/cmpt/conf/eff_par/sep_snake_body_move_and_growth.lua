@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_snake_body_move_and_growth.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamSnakeBodyMoveAndGrowth", SkillEffectParamBase)
 SkillEffectParamSnakeBodyMoveAndGrowth = SkillEffectParamSnakeBodyMoveAndGrowth
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamSnakeBodyMoveAndGrowth.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamSnakeBodyMoveAndGrowth:Constructor(t)
   self._moveType = t.moveType
   self._headMonsterID = t.headMonsterID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSnakeBodyMoveAndGrowth.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamSnakeBodyMoveAndGrowth:GetEffectType()
   return SkillEffectType.SnakeBodyMoveAndGrowth
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSnakeBodyMoveAndGrowth.GetMoveType = function(self)
-  -- function num : 0_2
+function SkillEffectParamSnakeBodyMoveAndGrowth:GetMoveType()
   return self._moveType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSnakeBodyMoveAndGrowth.GetHeadMonsterID = function(self)
-  -- function num : 0_3
+function SkillEffectParamSnakeBodyMoveAndGrowth:GetHeadMonsterID()
   return self._headMonsterID
 end
-
-

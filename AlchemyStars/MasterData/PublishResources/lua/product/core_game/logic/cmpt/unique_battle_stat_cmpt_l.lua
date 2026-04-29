@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/unique_battle_stat_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BattleStatComponent", Object)
 BattleStatComponent = BattleStatComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleStatComponent.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function BattleStatComponent:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
+  self._configService = self._world:GetService("Config")
   self._curWaveIndex = 1
   self._totalWaveCount = 0
   self._isSuperChain = false
@@ -32,25 +25,16 @@ BattleStatComponent.Constructor = function(self, world)
   self._oneActiveSkillKillCount = 0
   self._oneChainMaxNormalAttack = 0
   self._oneChainKillCount = 0
-  self._oneMatchMaxNum = {one_match_num = 0, element_type = PieceType.None}
+  self._oneMatchMaxNum = {
+    one_match_num = 0,
+    element_type = PieceType.None
+  }
   self._totalMatchNum = 0
   self._totalElementMatchNum = {}
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._totalElementMatchNum)[ElementType.ElementType_Blue] = 0
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._totalElementMatchNum)[ElementType.ElementType_Red] = 0
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._totalElementMatchNum)[ElementType.ElementType_Green] = 0
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._totalElementMatchNum)[ElementType.ElementType_Yellow] = 0
+  self._totalElementMatchNum[ElementType.ElementType_Blue] = 0
+  self._totalElementMatchNum[ElementType.ElementType_Red] = 0
+  self._totalElementMatchNum[ElementType.ElementType_Green] = 0
+  self._totalElementMatchNum[ElementType.ElementType_Yellow] = 0
   self._curWaveDeadMonsterIDArray = {}
   self._curWaveDeadMonsterParam = {}
   self._totalDeadMonsterIDArray = {}
@@ -86,8 +70,7 @@ BattleStatComponent.Constructor = function(self, world)
   self.m_nAutoSummon_Index = 0
   self.m_nAutoSummon_TeamIndex = 0
   self.m_listAutoSummon = SortedArray:New(Algorithm.COMPARE_CUSTOM, BattleStatComponent._LessComparerByRefreshID)
-  ;
-  (self.m_listAutoSummon):AllowDuplicate()
+  self.m_listAutoSummon:AllowDuplicate()
   self.m_nAutoSummonLevel = 0
   self._triggerDimensionFlag = TriggerDimensionFlag.None
   self._normalAttackKillCount = 0
@@ -141,296 +124,174 @@ BattleStatComponent.Constructor = function(self, world)
   self._monsterMoveGroupID = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GeneMonsterMoveGroupID = function(self)
-  -- function num : 0_1
+function BattleStatComponent:GeneMonsterMoveGroupID()
   self._monsterMoveGroupID = self._monsterMoveGroupID + 1
   return self._monsterMoveGroupID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddMonsterClassIDCreate = function(self, monsterClassID)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._createMonsterClassIDRecord)[monsterClassID] then
-    (self._createMonsterClassIDRecord)[monsterClassID] = (not monsterClassID or 0) + 1
+function BattleStatComponent:AddMonsterClassIDCreate(monsterClassID)
+  if monsterClassID then
+    self._createMonsterClassIDRecord[monsterClassID] = (self._createMonsterClassIDRecord[monsterClassID] or 0) + 1
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetMonsterClassIDCount = function(self, monsterClassID)
-  -- function num : 0_3
-  return (self._createMonsterClassIDRecord)[monsterClassID] or 0
+function BattleStatComponent:GetMonsterClassIDCount(monsterClassID)
+  return self._createMonsterClassIDRecord[monsterClassID] or 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddMonsterIDCreate = function(self, monsterID)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._createMonsterIDRecord)[monsterID] then
-    (self._createMonsterIDRecord)[monsterID] = (not monsterID or 0) + 1
+function BattleStatComponent:AddMonsterIDCreate(monsterID)
+  if monsterID then
+    self._createMonsterIDRecord[monsterID] = (self._createMonsterIDRecord[monsterID] or 0) + 1
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetMonsterIDCount = function(self, monsterID)
-  -- function num : 0_5
-  return (self._createMonsterIDRecord)[monsterID] or 0
+function BattleStatComponent:GetMonsterIDCount(monsterID)
+  return self._createMonsterIDRecord[monsterID] or 0
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetCastChainByDimensionDoorState = function(self, state)
-  -- function num : 0_6
+function BattleStatComponent:SetCastChainByDimensionDoorState(state)
   self._isCastChainByDimensionDoor = state
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IsCastChainByDimensionDoor = function(self)
-  -- function num : 0_7
+function BattleStatComponent:IsCastChainByDimensionDoor()
   return self._isCastChainByDimensionDoor
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.ClearCastChainByDimensionDoorState = function(self)
-  -- function num : 0_8
+function BattleStatComponent:ClearCastChainByDimensionDoorState()
   self._isCastChainByDimensionDoor = false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IsPunishmentRoundExecuted = function(self, punishmentRoundCount)
-  -- function num : 0_9
-  return (self._isPunishmentRoundExecuted)[punishmentRoundCount]
+function BattleStatComponent:IsPunishmentRoundExecuted(punishmentRoundCount)
+  return self._isPunishmentRoundExecuted[punishmentRoundCount]
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.MarkPunishmentRoundExecuted = function(self, punishmentRoundCount)
-  -- function num : 0_10
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._isPunishmentRoundExecuted)[punishmentRoundCount] = true
+function BattleStatComponent:MarkPunishmentRoundExecuted(punishmentRoundCount)
+  self._isPunishmentRoundExecuted[punishmentRoundCount] = true
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.FetchNewDeadMarkAddCount = function(self)
-  -- function num : 0_11
+function BattleStatComponent:FetchNewDeadMarkAddCount()
   self._deadMarkAddCount = self._deadMarkAddCount + 1
   return self._deadMarkAddCount
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddPlayerSkillHitCount = function(self, skillID)
-  -- function num : 0_12
+function BattleStatComponent:AddPlayerSkillHitCount(skillID)
   if not skillID then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._playerSkillHitCount)[skillID] then
-    (self._playerSkillHitCount)[skillID] = 0
+  if not self._playerSkillHitCount[skillID] then
+    self._playerSkillHitCount[skillID] = 0
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._playerSkillHitCount)[skillID] = (self._playerSkillHitCount)[skillID] + 1
+  self._playerSkillHitCount[skillID] = self._playerSkillHitCount[skillID] + 1
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetPlayerSkillHitCount = function(self, skillID)
-  -- function num : 0_13
-  return (self._playerSkillHitCount)[skillID] or 0
+function BattleStatComponent:GetPlayerSkillHitCount(skillID)
+  return self._playerSkillHitCount[skillID] or 0
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetChessDeadPlayerPawnCount = function(self, t)
-  -- function num : 0_14 , upvalues : _ENV
-  for _,id in ipairs(t) do
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._chessDeadPlayerPawnIDChecker)[id] = true
+function BattleStatComponent:SetChessDeadPlayerPawnCount(t)
+  for _, id in ipairs(t) do
+    self._chessDeadPlayerPawnIDChecker[id] = true
   end
   local v = 0
-  for id,_ in pairs(self._chessDeadPlayerPawnIDChecker) do
+  for id, _ in pairs(self._chessDeadPlayerPawnIDChecker) do
     v = v + 1
   end
   self._chessDeadPlayerPawnCount = v
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetChessDeadPlayerPawnCount = function(self)
-  -- function num : 0_15
+function BattleStatComponent:GetChessDeadPlayerPawnCount()
   return self._chessDeadPlayerPawnCount
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetHandleShumolHPUI = function(self, val)
-  -- function num : 0_16
+function BattleStatComponent:SetHandleShumolHPUI(val)
   self._handleShumolHPUI = val
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetHandleShumolHPUI = function(self)
-  -- function num : 0_17
+function BattleStatComponent:GetHandleShumolHPUI()
   return self._handleShumolHPUI
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IncWaitInputCount = function(self)
-  -- function num : 0_18
+function BattleStatComponent:IncWaitInputCount()
   self._waitInputCount = self._waitInputCount + 1
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetWaitInputCount = function(self)
-  -- function num : 0_19
+function BattleStatComponent:GetWaitInputCount()
   return self._waitInputCount
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IncGameRoundCount = function(self)
-  -- function num : 0_20
+function BattleStatComponent:IncGameRoundCount()
   self._roundCount = self._roundCount + 1
   return self._roundCount
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetGameRoundCount = function(self)
-  -- function num : 0_21
+function BattleStatComponent:GetGameRoundCount()
   return self._roundCount
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetDamageIndex = function(self)
-  -- function num : 0_22
+function BattleStatComponent:GetDamageIndex()
   self._damageIndex = self._damageIndex + 1
   return self._damageIndex
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IncPushCommandIndex = function(self)
-  -- function num : 0_23
+function BattleStatComponent:IncPushCommandIndex()
   self._pushCommandIndex = self._pushCommandIndex + 1
   return self._pushCommandIndex
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetPushCommandIndex = function(self)
-  -- function num : 0_24
+function BattleStatComponent:GetPushCommandIndex()
   return self._pushCommandIndex
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent._LessComparerByRefreshID = function(dataA, dataB)
-  -- function num : 0_25
+function BattleStatComponent._LessComparerByRefreshID(dataA, dataB)
   local nCompare = dataB.m_nRefreshID - dataA.m_nRefreshID
   return nCompare
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.Destructor = function(self)
-  -- function num : 0_26
+function BattleStatComponent:Destructor()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.Initialize = function(self)
-  -- function num : 0_27
+function BattleStatComponent:Initialize()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetFirstDeadPetEntity = function(self, pet)
-  -- function num : 0_28
+function BattleStatComponent:SetFirstDeadPetEntity(pet)
   self._firstDeadPetEntity = pet
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetFirstDeadPetEntity = function(self)
-  -- function num : 0_29
+function BattleStatComponent:GetFirstDeadPetEntity()
   return self._firstDeadPetEntity
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetTotalWaveCount = function(self, waveCount)
-  -- function num : 0_30
+function BattleStatComponent:SetTotalWaveCount(waveCount)
   self._totalWaveCount = waveCount
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetTotalWaveCount = function(self)
-  -- function num : 0_31
+function BattleStatComponent:GetTotalWaveCount()
   return self._totalWaveCount
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IsCurWaveHasDeadRefreshMonster = function(self)
-  -- function num : 0_32
+function BattleStatComponent:IsCurWaveHasDeadRefreshMonster()
   return self._curWaveHasDeadRefreshMonsterState
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetCurWaveHasDeadRefreshMonsterState = function(self, state)
-  -- function num : 0_33
+function BattleStatComponent:SetCurWaveHasDeadRefreshMonsterState(state)
   self._curWaveHasDeadRefreshMonsterState = state
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddDeadMonsterID = function(self, monsterID)
-  -- function num : 0_34 , upvalues : _ENV
+function BattleStatComponent:AddDeadMonsterID(monsterID)
   local monsterDeadParam = MonsterDeadParam:New(monsterID, self:GetCurWaveIndex(), self:GetCurWaveTotalRoundCount())
-  ;
-  (table.insert)(self._curWaveDeadMonsterIDArray, monsterID)
-  ;
-  (table.insert)(self._curWaveDeadMonsterParam, monsterDeadParam)
-  ;
-  (table.insert)(self._totalDeadMonsterIDArray, monsterDeadParam)
-  local cfg = (self._world):GetService("Config")
-  local isBoss = (cfg:GetMonsterConfigData()):IsBoss(monsterID)
+  table.insert(self._curWaveDeadMonsterIDArray, monsterID)
+  table.insert(self._curWaveDeadMonsterParam, monsterDeadParam)
+  table.insert(self._totalDeadMonsterIDArray, monsterDeadParam)
+  local cfg = self._world:GetService("Config")
+  local isBoss = cfg:GetMonsterConfigData():IsBoss(monsterID)
   if isBoss then
     self._killBossCount = self._killBossCount + 1
-    ;
-    (Log.notice)("BattleStatComponent:AddDeadMonsterID() - Boss count=", self._killBossCount)
+    Log.notice("BattleStatComponent:AddDeadMonsterID() - Boss count=", self._killBossCount)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IsMonsterHasDead = function(self, monsterID)
-  -- function num : 0_35 , upvalues : _ENV
-  for _,v in ipairs(self._totalDeadMonsterIDArray) do
+function BattleStatComponent:IsMonsterHasDead(monsterID)
+  for _, v in ipairs(self._totalDeadMonsterIDArray) do
     if v:GetMonsterID() == monsterID then
       return true
     end
@@ -438,307 +299,193 @@ BattleStatComponent.IsMonsterHasDead = function(self, monsterID)
   return false
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetCurWaveDeadMonsterIDList = function(self)
-  -- function num : 0_36
+function BattleStatComponent:GetCurWaveDeadMonsterIDList()
   return self._curWaveDeadMonsterIDArray
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetCurWaveDeadMonsterParam = function(self)
-  -- function num : 0_37
+function BattleStatComponent:GetCurWaveDeadMonsterParam()
   return self._curWaveDeadMonsterParam
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetTotalDeadMonsterIDList = function(self)
-  -- function num : 0_38
+function BattleStatComponent:GetTotalDeadMonsterIDList()
   return self._totalDeadMonsterIDArray
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent._ClearCurWaveDeadMonsterIDList = function(self)
-  -- function num : 0_39
+function BattleStatComponent:_ClearCurWaveDeadMonsterIDList()
   self._curWaveDeadMonsterIDArray = {}
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent._ClearCurWaveDeadMonsterParam = function(self)
-  -- function num : 0_40
+function BattleStatComponent:_ClearCurWaveDeadMonsterParam()
   self._curWaveDeadMonsterParam = {}
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetCurWaveIndex = function(self)
-  -- function num : 0_41
+function BattleStatComponent:GetCurWaveIndex()
   return self._curWaveIndex
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetCurWaveRound = function(self)
-  -- function num : 0_42
+function BattleStatComponent:GetCurWaveRound()
   return self._curWaveLeftRoundCount
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetLevelRound = function(self, roundCount)
-  -- function num : 0_43
+function BattleStatComponent:SetLevelRound(roundCount)
   self._levelInitRound = roundCount
   self._levelLeftRoundCount = roundCount
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.InitLevelRound = function(self, roundCount)
-  -- function num : 0_44
+function BattleStatComponent:InitLevelRound(roundCount)
   self:SetLevelRound(roundCount)
   self._levelTotalRoundCount = 1
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetMazeAddLight = function(self)
-  -- function num : 0_45
+function BattleStatComponent:GetMazeAddLight()
   return self._mazeAddLight
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.MazeAddLight = function(self, value)
-  -- function num : 0_46
+function BattleStatComponent:MazeAddLight(value)
   self._mazeAddLight = self._mazeAddLight + value
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.InitCurWaveAllMonsterDeadTimes = function(self)
-  -- function num : 0_47
+function BattleStatComponent:InitCurWaveAllMonsterDeadTimes()
   self._curWaveAllMonsterDeadTimes = 0
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddCurWaveAllmonsterDeadTimes = function(self)
-  -- function num : 0_48
+function BattleStatComponent:AddCurWaveAllmonsterDeadTimes()
   self._curWaveAllMonsterDeadTimes = self._curWaveAllMonsterDeadTimes + 1
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetCurWaveAllMonsterDeadTimes = function(self)
-  -- function num : 0_49
+function BattleStatComponent:GetCurWaveAllMonsterDeadTimes()
   return self._curWaveAllMonsterDeadTimes
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.InitCurWaveRound = function(self, roundCount)
-  -- function num : 0_50
+function BattleStatComponent:InitCurWaveRound(roundCount)
   self:SetCurWaveRound(roundCount)
   self._curWaveTotalRoundCount = 1
   self._curWavePunishmentRoundCount = 0
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetLevelTotalRoundCount = function(self)
-  -- function num : 0_51
+function BattleStatComponent:GetLevelTotalRoundCount()
   return self._levelTotalRoundCount
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetLevelLeftRoundCount = function(self)
-  -- function num : 0_52
+function BattleStatComponent:GetLevelLeftRoundCount()
   return self._levelLeftRoundCount
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IsFirstRound = function(self)
-  -- function num : 0_53
-  do return self._levelTotalRoundCount == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function BattleStatComponent:IsFirstRound()
+  return self._levelTotalRoundCount == 1
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetPieceRefreshCount = function(self)
-  -- function num : 0_54
+function BattleStatComponent:GetPieceRefreshCount()
   return self._pieceRefreshCount
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddPieceRefreshCount = function(self, cnt)
-  -- function num : 0_55
+function BattleStatComponent:AddPieceRefreshCount(cnt)
   self._pieceRefreshCount = self._pieceRefreshCount + cnt
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetLevelSupplementRoundCount = function(self)
-  -- function num : 0_56
+function BattleStatComponent:GetLevelSupplementRoundCount()
   return self._levelSupplementRoundCount
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetLevelSupplementRoundCount = function(self, roundCount)
-  -- function num : 0_57
+function BattleStatComponent:SetLevelSupplementRoundCount(roundCount)
   self._levelSupplementRoundCount = roundCount
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetCurWaveRound = function(self, roundCount)
-  -- function num : 0_58
+function BattleStatComponent:SetCurWaveRound(roundCount)
   self._curWaveLeftRoundCount = roundCount
   self._curWaveInitRound = roundCount
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SubLevelRound = function(self, count)
-  -- function num : 0_59 , upvalues : _ENV
+function BattleStatComponent:SubLevelRound(count)
   self._levelTotalRoundCount = self._levelTotalRoundCount + 1
   if self._levelLeftRoundCount ~= 0 then
     if count <= self._levelLeftRoundCount then
       self._levelLeftRoundCount = self._levelLeftRoundCount - count
     else
-      ;
-      (Log.fatal)("left_trun_count: " .. self._levelLeftRoundCount .. "not enough to sub:；" .. count)
+      Log.fatal("left_trun_count: " .. self._levelLeftRoundCount .. "not enough to sub:；" .. count)
     end
   end
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SubCurWaveRound = function(self, count)
-  -- function num : 0_60 , upvalues : _ENV
+function BattleStatComponent:SubCurWaveRound(count)
   self._curWaveTotalRoundCount = self._curWaveTotalRoundCount + 1
   if self._curWaveLeftRoundCount ~= 0 then
     if count <= self._curWaveLeftRoundCount then
       self._curWaveLeftRoundCount = self._curWaveLeftRoundCount - count
     else
-      ;
-      (Log.fatal)("left_trun_count: " .. self._curWaveLeftRoundCount .. "not enough to sub:；" .. count)
+      Log.fatal("left_trun_count: " .. self._curWaveLeftRoundCount .. "not enough to sub:；" .. count)
     end
   end
   if self._curWaveLeftRoundCount == 0 then
     self._curWavePunishmentRoundCount = self._curWavePunishmentRoundCount + 1
   end
-  do
-    if (self._world):MatchType() == MatchType.MT_Maze then
-      local mazeService = (self._world):GetService("Maze")
-      mazeService:UseLight()
-    end
-    do
-      if (self._world):MatchType() == MatchType.MT_SeasonMaze then
-        local seasonMazeService = (self._world):GetService("SeasonMaze")
-        seasonMazeService:UseMs()
-      end
-      self:SubLevelRound(count)
-      return self._curWaveLeftRoundCount
-    end
+  if self._world:MatchType() == MatchType.MT_Maze then
+    local mazeService = self._world:GetService("Maze")
+    mazeService:UseLight()
   end
+  if self._world:MatchType() == MatchType.MT_SeasonMaze then
+    local seasonMazeService = self._world:GetService("SeasonMaze")
+    seasonMazeService:UseMs()
+  end
+  self:SubLevelRound(count)
+  return self._curWaveLeftRoundCount
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetCurWavePunishmentRoundCount = function(self)
-  -- function num : 0_61
+function BattleStatComponent:GetCurWavePunishmentRoundCount()
   return self._curWavePunishmentRoundCount
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetCurWaveTotalRoundCount = function(self)
-  -- function num : 0_62
+function BattleStatComponent:GetCurWaveTotalRoundCount()
   return self._curWaveTotalRoundCount
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetCurWaveTotalRoundCount = function(self, cnt)
-  -- function num : 0_63
+function BattleStatComponent:SetCurWaveTotalRoundCount(cnt)
   self._curWaveTotalRoundCount = cnt
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SubCurWaveRoundByEffect = function(self, count)
-  -- function num : 0_64 , upvalues : _ENV
+function BattleStatComponent:SubCurWaveRoundByEffect(count)
   if self._curWaveLeftRoundCount ~= 0 then
     if count <= self._curWaveLeftRoundCount then
       self._curWaveLeftRoundCount = self._curWaveLeftRoundCount - count
     else
-      ;
-      (Log.warn)("left_trun_count: " .. self._curWaveLeftRoundCount .. "not enough to sub:；" .. count)
+      Log.warn("left_trun_count: " .. self._curWaveLeftRoundCount .. "not enough to sub:；" .. count)
     end
   end
-  if (self._world):MatchType() == MatchType.MT_Maze then
-    (Log.exception)(self._className, "通过逻辑效果扣除额外当前回合数的逻辑不能用在秘境规则内，请对过需求后实现这一分支。")
+  if self._world:MatchType() == MatchType.MT_Maze then
+    Log.exception(self._className, "通过逻辑效果扣除额外当前回合数的逻辑不能用在秘境规则内，请对过需求后实现这一分支。")
     return self._curWaveLeftRoundCount
   end
   if self._levelLeftRoundCount ~= 0 then
     if count <= self._levelLeftRoundCount then
       self._levelLeftRoundCount = self._levelLeftRoundCount - count
     else
-      ;
-      (Log.warn)("left_trun_count: " .. self._levelLeftRoundCount .. "not enough to sub:；" .. count)
+      Log.warn("left_trun_count: " .. self._levelLeftRoundCount .. "not enough to sub:；" .. count)
     end
   end
   return self._curWaveLeftRoundCount
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.MoveToNextWave = function(self)
-  -- function num : 0_65
+function BattleStatComponent:MoveToNextWave()
   self._curWaveIndex = self._curWaveIndex + 1
   self:_ClearCurWaveDeadMonsterIDList()
   self:_ClearCurWaveDeadMonsterParam()
   self:SetCurWaveHasDeadRefreshMonsterState(false)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._waveEnterRound)[self._curWaveIndex] = self._curWaveLeftRoundCount
+  self._waveEnterRound[self._curWaveIndex] = self._curWaveLeftRoundCount
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetCurChainIndex = function(self)
-  -- function num : 0_66
+function BattleStatComponent:GetCurChainIndex()
   return self._curChainIndex
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddChainIndex = function(self)
-  -- function num : 0_67
+function BattleStatComponent:AddChainIndex()
   self._curChainIndex = self._curChainIndex + 1
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.ResetChainIndex = function(self)
-  -- function num : 0_68
+function BattleStatComponent:ResetChainIndex()
   self._curChainIndex = 1
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.MoveToNextRound = function(self, roundCount)
-  -- function num : 0_69
+function BattleStatComponent:MoveToNextRound(roundCount)
   if not roundCount then
     return self:SubCurWaveRound(1)
   else
@@ -746,11 +493,8 @@ BattleStatComponent.MoveToNextRound = function(self, roundCount)
   end
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetLeftBlood = function(self)
-  -- function num : 0_70
-  local heroEntity = ((self._world):Player()):GetLocalTeamEntity()
+function BattleStatComponent:GetLeftBlood()
+  local heroEntity = self._world:Player():GetLocalTeamEntity()
   if heroEntity == nil then
     return 0
   end
@@ -761,26 +505,19 @@ BattleStatComponent.GetLeftBlood = function(self)
   return blood
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IsFullBlood = function(self)
-  -- function num : 0_71
-  local heroEntity = ((self._world):Player()):GetLocalTeamEntity()
+function BattleStatComponent:IsFullBlood()
+  local heroEntity = self._world:Player():GetLocalTeamEntity()
   if heroEntity == nil then
     return 0
   end
   local attrCmpt = heroEntity:Attributes()
   local hp = attrCmpt:GetCurrentHP()
   local maxhp = attrCmpt:CalcMaxHp()
-  do return hp == maxhp end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return hp == maxhp
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetPlayerHP = function(self)
-  -- function num : 0_72
-  local heroEntity = ((self._world):Player()):GetLocalTeamEntity()
+function BattleStatComponent:GetPlayerHP()
+  local heroEntity = self._world:Player():GetLocalTeamEntity()
   if heroEntity == nil then
     return 0
   end
@@ -789,219 +526,134 @@ BattleStatComponent.GetPlayerHP = function(self)
   return hp
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetSuperChainCount = function(self)
-  -- function num : 0_73
+function BattleStatComponent:GetSuperChainCount()
   return self._superChainCount
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetActiveSkillCount = function(self)
-  -- function num : 0_74
+function BattleStatComponent:GetActiveSkillCount()
   return self._activeSkillCount
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetChainSkillCount = function(self)
-  -- function num : 0_75
+function BattleStatComponent:GetChainSkillCount()
   return self._chainSkillCount
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetColorSkillCount = function(self)
-  -- function num : 0_76
+function BattleStatComponent:GetColorSkillCount()
   return self._colorSkillCount
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetKillBossCount = function(self)
-  -- function num : 0_77
+function BattleStatComponent:GetKillBossCount()
   return self._killBossCount
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetKillMonsterCount = function(self)
-  -- function num : 0_78
+function BattleStatComponent:GetKillMonsterCount()
   return #self._totalDeadMonsterIDArray
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetOneMatchMaxNum = function(self)
-  -- function num : 0_79
-  return (self._oneMatchMaxNum).one_match_num
+function BattleStatComponent:GetOneMatchMaxNum()
+  return self._oneMatchMaxNum.one_match_num
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetOneMatchMaxNumType = function(self)
-  -- function num : 0_80
-  return (self._oneMatchMaxNum).element_type
+function BattleStatComponent:GetOneMatchMaxNumType()
+  return self._oneMatchMaxNum.element_type
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetTotalMatchNum = function(self)
-  -- function num : 0_81
+function BattleStatComponent:GetTotalMatchNum()
   return self._totalMatchNum
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetElementMatchNum = function(self)
-  -- function num : 0_82
+function BattleStatComponent:GetElementMatchNum()
   return self._totalElementMatchNum
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetOneActiveSkillKillCount = function(self)
-  -- function num : 0_83
+function BattleStatComponent:GetOneActiveSkillKillCount()
   return self._oneActiveSkillKillCount
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetOneChainKillCount = function(self)
-  -- function num : 0_84
+function BattleStatComponent:GetOneChainKillCount()
   return self._oneChainKillCount
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetOneChainNormalAttackCount = function(self)
-  -- function num : 0_85
+function BattleStatComponent:GetOneChainNormalAttackCount()
   return self._oneChainMaxNormalAttack
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddSuperChainCount = function(self, teamEntity)
-  -- function num : 0_86
+function BattleStatComponent:AddSuperChainCount(teamEntity)
   if not self:_IsLocalTeam(teamEntity) then
-    return 
+    return
   end
   self._superChainCount = self._superChainCount + 1
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddAuroraTimeCount = function(self)
-  -- function num : 0_87
+function BattleStatComponent:AddAuroraTimeCount()
   if self._isAuroraTime then
     self._auroraTimeCount = self._auroraTimeCount + 1
   end
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetAuroraTimeCount = function(self)
-  -- function num : 0_88
+function BattleStatComponent:GetAuroraTimeCount()
   return self._auroraTimeCount
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetRoundSuperChain = function(self, spc)
-  -- function num : 0_89
+function BattleStatComponent:SetRoundSuperChain(spc)
   self._isSuperChain = spc
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IsRoundSuperChain = function(self)
-  -- function num : 0_90
+function BattleStatComponent:IsRoundSuperChain()
   return self._isSuperChain
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetRoundChainPath = function(self, chainPath)
-  -- function num : 0_91
+function BattleStatComponent:SetRoundChainPath(chainPath)
   self._chainPath = chainPath
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetRoundChainPath = function(self)
-  -- function num : 0_92
+function BattleStatComponent:GetRoundChainPath()
   return self._chainPath
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetRoundAuroraTime = function(self, value)
-  -- function num : 0_93
+function BattleStatComponent:SetRoundAuroraTime(value)
   self._isAuroraTime = value
   if value then
-    ((self._world):GetDataLogger()):AddDataLog("OnAuroraStart")
+    self._world:GetDataLogger():AddDataLog("OnAuroraStart")
   else
-    ;
-    ((self._world):GetDataLogger()):AddDataLog("OnAuroraEnd")
+    self._world:GetDataLogger():AddDataLog("OnAuroraEnd")
   end
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IsRoundAuroraTime = function(self)
-  -- function num : 0_94
+function BattleStatComponent:IsRoundAuroraTime()
   return self._isAuroraTime
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetReEnterAuroraTime = function(self, value)
-  -- function num : 0_95
+function BattleStatComponent:SetReEnterAuroraTime(value)
   self._isReEnterAuroraTime = value
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IsReEnterAuroraTime = function(self)
-  -- function num : 0_96
+function BattleStatComponent:IsReEnterAuroraTime()
   return self._isReEnterAuroraTime
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddActiveSkillCount = function(self, teamEntity)
-  -- function num : 0_97
+function BattleStatComponent:AddActiveSkillCount(teamEntity)
   if not self:_IsLocalTeam(teamEntity) then
-    return 
+    return
   end
   self._activeSkillCount = self._activeSkillCount + 1
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddChainSkillCount = function(self, teamEntity, addCount)
-  -- function num : 0_98
+function BattleStatComponent:AddChainSkillCount(teamEntity, addCount)
   if not self:_IsLocalTeam(teamEntity) then
-    return 
+    return
   end
   self._chainSkillCount = self._chainSkillCount + addCount
 end
 
--- DECOMPILER ERROR at PC305: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddColorSkillCount = function(self, teamEntity)
-  -- function num : 0_99
+function BattleStatComponent:AddColorSkillCount(teamEntity)
   if not self:_IsLocalTeam(teamEntity) then
-    return 
+    return
   end
   self._colorSkillCount = self._colorSkillCount + 1
 end
 
--- DECOMPILER ERROR at PC308: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.StatisticsColorSkillCount = function(self, teamEntity, skillEffectType)
-  -- function num : 0_100 , upvalues : _ENV
+function BattleStatComponent:StatisticsColorSkillCount(teamEntity, skillEffectType)
   if skillEffectType == SkillEffectType.ConvertGridElement or skillEffectType == SkillEffectType.ManualConvert or skillEffectType == SkillEffectType.ResetGridElement or skillEffectType == SkillEffectType.PullAround or skillEffectType == SkillEffectType.Teleport or skillEffectType == SkillEffectType.HitBack then
     self:AddColorSkillCount(teamEntity)
     return true
@@ -1009,144 +661,88 @@ BattleStatComponent.StatisticsColorSkillCount = function(self, teamEntity, skill
   return false
 end
 
--- DECOMPILER ERROR at PC311: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetOneActiveSkillKillCount = function(self, teamEntity, cnt)
-  -- function num : 0_101
+function BattleStatComponent:SetOneActiveSkillKillCount(teamEntity, cnt)
   if not self:_IsLocalTeam(teamEntity) then
-    return 
+    return
   end
-  if self._oneActiveSkillKillCount < cnt then
+  if cnt > self._oneActiveSkillKillCount then
     self._oneActiveSkillKillCount = cnt
   end
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetOneChainKillCount = function(self, teamEntity, cnt)
-  -- function num : 0_102
+function BattleStatComponent:SetOneChainKillCount(teamEntity, cnt)
   if not self:_IsLocalTeam(teamEntity) then
-    return 
+    return
   end
-  if self._oneChainKillCount < cnt then
+  if cnt > self._oneChainKillCount then
     self._oneChainKillCount = cnt
   end
 end
 
--- DECOMPILER ERROR at PC317: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetOneChainMaxNormalAttack = function(self, teamEntity, cnt)
-  -- function num : 0_103
+function BattleStatComponent:SetOneChainMaxNormalAttack(teamEntity, cnt)
   if not self:_IsLocalTeam(teamEntity) then
-    return 
+    return
   end
-  if self._oneChainMaxNormalAttack < cnt then
+  if cnt > self._oneChainMaxNormalAttack then
     self._oneChainMaxNormalAttack = cnt
   end
 end
 
--- DECOMPILER ERROR at PC320: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddTakeAttackTimesByTrap = function(self, trapId, cnt)
-  -- function num : 0_104
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._takeAttackTimesByTrap)[trapId] then
-    (self._takeAttackTimesByTrap)[trapId] = cnt
+function BattleStatComponent:AddTakeAttackTimesByTrap(trapId, cnt)
+  if not self._takeAttackTimesByTrap[trapId] then
+    self._takeAttackTimesByTrap[trapId] = cnt
   else
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._takeAttackTimesByTrap)[trapId] = (self._takeAttackTimesByTrap)[trapId] + cnt
+    self._takeAttackTimesByTrap[trapId] = self._takeAttackTimesByTrap[trapId] + cnt
   end
 end
 
--- DECOMPILER ERROR at PC323: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetTakeAttackTimesByTrap = function(self)
-  -- function num : 0_105
+function BattleStatComponent:GetTakeAttackTimesByTrap()
   return self._takeAttackTimesByTrap
 end
 
--- DECOMPILER ERROR at PC326: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddTakeAttackDamageByTrap = function(self, trapId, damage)
-  -- function num : 0_106
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._takeAttackDamageByTrap)[trapId] then
-    (self._takeAttackDamageByTrap)[trapId] = damage
+function BattleStatComponent:AddTakeAttackDamageByTrap(trapId, damage)
+  if not self._takeAttackDamageByTrap[trapId] then
+    self._takeAttackDamageByTrap[trapId] = damage
   else
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._takeAttackDamageByTrap)[trapId] = (self._takeAttackDamageByTrap)[trapId] + damage
+    self._takeAttackDamageByTrap[trapId] = self._takeAttackDamageByTrap[trapId] + damage
   end
 end
 
--- DECOMPILER ERROR at PC329: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetTakeAttackDamageByTrap = function(self)
-  -- function num : 0_107
+function BattleStatComponent:GetTakeAttackDamageByTrap()
   return self._takeAttackDamageByTrap
 end
 
--- DECOMPILER ERROR at PC332: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddSmashTrapCount = function(self, trapId, count)
-  -- function num : 0_108
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._smashTrapCount)[trapId] then
-    (self._smashTrapCount)[trapId] = count
+function BattleStatComponent:AddSmashTrapCount(trapId, count)
+  if not self._smashTrapCount[trapId] then
+    self._smashTrapCount[trapId] = count
   else
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._smashTrapCount)[trapId] = (self._smashTrapCount)[trapId] + count
+    self._smashTrapCount[trapId] = self._smashTrapCount[trapId] + count
   end
 end
 
--- DECOMPILER ERROR at PC335: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetSmashTrapCount = function(self)
-  -- function num : 0_109
+function BattleStatComponent:GetSmashTrapCount()
   return self._smashTrapCount
 end
 
--- DECOMPILER ERROR at PC338: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetOneMatchMaxNum = function(self, teamEntity, elementType, matchNum)
-  -- function num : 0_110 , upvalues : _ENV
+function BattleStatComponent:SetOneMatchMaxNum(teamEntity, elementType, matchNum)
   if not self:_IsLocalTeam(teamEntity) then
-    return 
+    return
   end
-  local curElementNum = (self._totalElementMatchNum)[elementType]
+  local curElementNum = self._totalElementMatchNum[elementType]
   if not curElementNum then
-    (Log.fatal)("格子颜色" .. elementType .. "的连线统计信息未初始化！")
-    return 
+    Log.fatal("格子颜色" .. elementType .. "的连线统计信息未初始化！")
+    return
   end
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-  if (self._oneMatchMaxNum).one_match_num < matchNum then
-    (self._oneMatchMaxNum).one_match_num = matchNum
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._oneMatchMaxNum).element_type = elementType
+  if matchNum > self._oneMatchMaxNum.one_match_num then
+    self._oneMatchMaxNum.one_match_num = matchNum
+    self._oneMatchMaxNum.element_type = elementType
   end
   self._totalMatchNum = self._totalMatchNum + matchNum
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._totalElementMatchNum)[elementType] = curElementNum + matchNum
+  self._totalElementMatchNum[elementType] = curElementNum + matchNum
 end
 
--- DECOMPILER ERROR at PC341: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IsLastWave = function(self)
-  -- function num : 0_111
-  local levelConfigData = (self._configService):GetLevelConfigData()
+function BattleStatComponent:IsLastWave()
+  local levelConfigData = self._configService:GetLevelConfigData()
   local maxWaveCount = levelConfigData:GetWaveCount()
   if maxWaveCount <= self._curWaveIndex then
     return true
@@ -1154,12 +750,9 @@ BattleStatComponent.IsLastWave = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC344: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetAssignWaveResult = function(self, bRefreshSpecialWave)
-  -- function num : 0_112
+function BattleStatComponent:SetAssignWaveResult(bRefreshSpecialWave)
   if bRefreshSpecialWave == self._AssignWaveResult then
-    return 
+    return
   end
   if bRefreshSpecialWave == true then
     self._AssignWaveResult = true
@@ -1168,92 +761,64 @@ BattleStatComponent.SetAssignWaveResult = function(self, bRefreshSpecialWave)
   end
 end
 
--- DECOMPILER ERROR at PC347: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AssignWaveResult = function(self)
-  -- function num : 0_113
+function BattleStatComponent:AssignWaveResult()
   return self._AssignWaveResult
 end
 
--- DECOMPILER ERROR at PC350: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetBonusMatchResult = function(self, matchResult)
-  -- function num : 0_114 , upvalues : _ENV
+function BattleStatComponent:SetBonusMatchResult(matchResult)
   self._matchResult = matchResult
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ShowGuideCondition, self._matchResult)
+  self._world:EventDispatcher():Dispatch(GameEventType.ShowGuideCondition, self._matchResult)
 end
 
--- DECOMPILER ERROR at PC353: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.Set3StarProgress = function(self, progressResult)
-  -- function num : 0_115
+function BattleStatComponent:Set3StarProgress(progressResult)
   self._star3Progress = progressResult
 end
 
--- DECOMPILER ERROR at PC356: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.UpdateA3StarProgress = function(self, keyId, value)
-  -- function num : 0_116
+function BattleStatComponent:UpdateA3StarProgress(keyId, value)
   if keyId == nil then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._star3Progress)[keyId] = value
-  return 
+  self._star3Progress[keyId] = value
+  return
 end
 
--- DECOMPILER ERROR at PC359: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.Get3StarProgress = function(self, conditionId)
-  -- function num : 0_117 , upvalues : _ENV
+function BattleStatComponent:Get3StarProgress(conditionId)
   if conditionId == nil then
-    (Log.fatal)("未找到三星条件进度 id：", conditionId)
+    Log.fatal("未找到三星条件进度 id：", conditionId)
     return ""
   end
-  local retStr = (self._star3Progress)[conditionId]
+  local retStr = self._star3Progress[conditionId]
   if retStr == nil then
-    (Log.fatal)("此时尚未结算三星进度")
+    Log.fatal("此时尚未结算三星进度")
     return ""
   end
   return retStr
 end
 
--- DECOMPILER ERROR at PC362: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetBonusMatchResult = function(self)
-  -- function num : 0_118
+function BattleStatComponent:GetBonusMatchResult()
   return self._matchResult
 end
 
--- DECOMPILER ERROR at PC365: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IsRealZeroRound = function(self)
-  -- function num : 0_119
+function BattleStatComponent:IsRealZeroRound()
   if self:GetCurWaveRound() == 0 and self:GetCurWavePunishmentRoundCount() == 1 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC368: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.LevelCompleteLimitAllRoundCount = function(self)
-  -- function num : 0_120 , upvalues : _ENV
-  local curLevelData = (self._configService):GetLevelConfigData()
+function BattleStatComponent:LevelCompleteLimitAllRoundCount()
+  local curLevelData = self._configService:GetLevelConfigData()
   local completeType = curLevelData:GetLevelCompleteConditionType()
   if CompleteConditionType.RoundCountLimit == completeType then
     local curRound = curLevelData:GetLevelRoundCount()
-    local conditionParam = (curLevelData:GetLevelCompleteConditionParams())[1]
+    local conditionParam = curLevelData:GetLevelCompleteConditionParams()[1]
     local configRound = conditionParam[1]
     return curRound == configRound
   elseif CompleteConditionType.AssignWaveAndRandomNextWave == completeType then
     return self:AssignWaveResult()
   elseif CompleteConditionType.RoundCountLimitAndCheckMonsterEscape == completeType then
     local curRound = curLevelData:GetLevelRoundCount()
-    local conditionParam = (curLevelData:GetLevelCompleteConditionParams())[1]
+    local conditionParam = curLevelData:GetLevelCompleteConditionParams()[1]
     local configRound = conditionParam[1]
     return curRound == configRound
   elseif CompleteConditionType.CombinedCompleteCondition == completeType then
@@ -1266,31 +831,27 @@ BattleStatComponent.LevelCompleteLimitAllRoundCount = function(self)
     local paramB = combinedCompleteConditionArgs.conditionParamB
     if typeA == CompleteConditionType.RoundCountLimit then
       local curRound = curLevelData:GetLevelRoundCount()
-      return curRound == (paramA[1])[1]
+      return curRound == paramA[1][1]
     elseif typeA == CompleteConditionType.AssignWaveAndRandomNextWave then
       return self:AssignWaveResult()
     end
     if typeB == CompleteConditionType.RoundCountLimit then
       local curRound = curLevelData:GetLevelRoundCount()
-      return curRound == (paramB[1])[1]
+      return curRound == paramB[1][1]
     elseif typeB == CompleteConditionType.AssignWaveAndRandomNextWave then
       return self:AssignWaveResult()
     end
   elseif CompleteConditionType.KillMoreThanPetMonster == completeType then
-    local battleStatCmpt = (self._world):BattleStat()
+    local battleStatCmpt = self._world:BattleStat()
     local levelRoundCount = battleStatCmpt:GetLevelLeftRoundCount()
     return levelRoundCount == 0
   end
-  do return false end
-  -- DECOMPILER ERROR: 13 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC371: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.HasNextWave = function(self)
-  -- function num : 0_121
+function BattleStatComponent:HasNextWave()
   local curWaveNum = self:GetCurWaveIndex()
-  local levelConfigData = (self._configService):GetLevelConfigData()
+  local levelConfigData = self._configService:GetLevelConfigData()
   local maxWaveCount = levelConfigData:GetWaveCount()
   if curWaveNum < maxWaveCount then
     return true
@@ -1298,11 +859,8 @@ BattleStatComponent.HasNextWave = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC374: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddTotalDropAssets = function(self, assetID, count)
-  -- function num : 0_122 , upvalues : _ENV
-  local asset = (self._totalDropAssets)[assetID]
+function BattleStatComponent:AddTotalDropAssets(assetID, count)
+  local asset = self._totalDropAssets[assetID]
   if not asset then
     asset = RoleAsset:New()
     asset.assetid = assetID
@@ -1310,45 +868,32 @@ BattleStatComponent.AddTotalDropAssets = function(self, assetID, count)
   else
     asset.count = asset.count + count
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._totalDropAssets)[assetID] = asset
+  self._totalDropAssets[assetID] = asset
 end
 
--- DECOMPILER ERROR at PC377: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetTotalDropAssets = function(self)
-  -- function num : 0_123
+function BattleStatComponent:GetTotalDropAssets()
   return self._totalDropAssets
 end
 
--- DECOMPILER ERROR at PC380: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddDropRoleAsset = function(self, assetid, count)
-  -- function num : 0_124 , upvalues : _ENV
+function BattleStatComponent:AddDropRoleAsset(assetid, count)
   self:AddTotalDropAssets(assetid, count)
-  for k,v in ipairs(self._dropRoleAssetList) do
+  for k, v in ipairs(self._dropRoleAssetList) do
     if v.assetid == assetid then
       v.count = count + v.count
-      return 
+      return
     end
   end
   local asset = RoleAsset:New()
   asset.assetid = assetid
   asset.count = count
-  ;
-  (table.insert)(self._dropRoleAssetList, asset)
+  table.insert(self._dropRoleAssetList, asset)
 end
 
--- DECOMPILER ERROR at PC383: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetDropRoleAsset = function(self, assetID)
-  -- function num : 0_125 , upvalues : _ENV
+function BattleStatComponent:GetDropRoleAsset(assetID)
   if not assetID then
     return self._dropRoleAssetList
   end
-  for k,v in ipairs(self._dropRoleAssetList) do
+  for k, v in ipairs(self._dropRoleAssetList) do
     if v.assetid == assetID then
       return v.count
     end
@@ -1356,10 +901,7 @@ BattleStatComponent.GetDropRoleAsset = function(self, assetID)
   return 0
 end
 
--- DECOMPILER ERROR at PC386: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetArchivedDrops = function(self)
-  -- function num : 0_126
+function BattleStatComponent:GetArchivedDrops()
   local drops = {}
   drops.noDoubleList = self._dropRoleAssetNoDoubleList
   drops.assetList = self._dropRoleAssetList
@@ -1367,44 +909,34 @@ BattleStatComponent.GetArchivedDrops = function(self)
   return drops
 end
 
--- DECOMPILER ERROR at PC389: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetArchivedDrops = function(self, drops)
-  -- function num : 0_127
+function BattleStatComponent:SetArchivedDrops(drops)
   if not drops then
-    return 
+    return
   end
   self._dropRoleAssetList = drops.assetList
   self._dropRoleAssetNoDoubleList = drops.noDoubleList
   self._totalDropAssets = drops.totalList
 end
 
--- DECOMPILER ERROR at PC392: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddDropRoleAssetNoDouble = function(self, assetid, count)
-  -- function num : 0_128 , upvalues : _ENV
+function BattleStatComponent:AddDropRoleAssetNoDouble(assetid, count)
   self:AddTotalDropAssets(assetid, count)
-  for k,v in ipairs(self._dropRoleAssetNoDoubleList) do
+  for k, v in ipairs(self._dropRoleAssetNoDoubleList) do
     if v.assetid == assetid then
       v.count = count + v.count
-      return 
+      return
     end
   end
   local asset = RoleAsset:New()
   asset.assetid = assetid
   asset.count = count
-  ;
-  (table.insert)(self._dropRoleAssetNoDoubleList, asset)
+  table.insert(self._dropRoleAssetNoDoubleList, asset)
 end
 
--- DECOMPILER ERROR at PC395: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetDropRoleAssetNoDouble = function(self, assetID)
-  -- function num : 0_129 , upvalues : _ENV
+function BattleStatComponent:GetDropRoleAssetNoDouble(assetID)
   if not assetID then
     return self._dropRoleAssetNoDoubleList
   end
-  for k,v in ipairs(self._dropRoleAssetNoDoubleList) do
+  for k, v in ipairs(self._dropRoleAssetNoDoubleList) do
     if v.assetid == assetID then
       return v.count
     end
@@ -1412,328 +944,193 @@ BattleStatComponent.GetDropRoleAssetNoDouble = function(self, assetID)
   return 0
 end
 
--- DECOMPILER ERROR at PC398: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.CollectDrop = function(self, dropItemID)
-  -- function num : 0_130
-  if not dropItemID then
-    dropItemID = -1
+function BattleStatComponent:CollectDrop(dropItemID)
+  dropItemID = dropItemID or -1
+  if not self._collectDropNumItemIDDic[dropItemID] then
+    self._collectDropNumItemIDDic[dropItemID] = 0
   end
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._collectDropNumItemIDDic)[dropItemID] then
-    (self._collectDropNumItemIDDic)[dropItemID] = 0
-  end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._collectDropNumItemIDDic)[dropItemID] = (self._collectDropNumItemIDDic)[dropItemID] + 1
+  self._collectDropNumItemIDDic[dropItemID] = self._collectDropNumItemIDDic[dropItemID] + 1
   self._collectDropNum = self._collectDropNum + 1
   return self._collectDropNum
 end
 
--- DECOMPILER ERROR at PC401: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetDropCollectNum = function(self)
-  -- function num : 0_131
+function BattleStatComponent:GetDropCollectNum()
   return self._collectDropNum
 end
 
--- DECOMPILER ERROR at PC404: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetDropCollectNumByItemID = function(self, itemID)
-  -- function num : 0_132
-  if not itemID then
-    itemID = -1
-  end
-  return (self._collectDropNumItemIDDic)[itemID] or 0
+function BattleStatComponent:GetDropCollectNumByItemID(itemID)
+  itemID = itemID or -1
+  return self._collectDropNumItemIDDic[itemID] or 0
 end
 
--- DECOMPILER ERROR at PC407: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetDropCollectNum = function(self, num)
-  -- function num : 0_133
+function BattleStatComponent:SetDropCollectNum(num)
   self._collectDropNum = num
 end
 
--- DECOMPILER ERROR at PC410: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetBattleLevelResult = function(self, battleLevelResult)
-  -- function num : 0_134
+function BattleStatComponent:SetBattleLevelResult(battleLevelResult)
   self._battleLevelResult = battleLevelResult
 end
 
--- DECOMPILER ERROR at PC413: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetBattleLevelResult = function(self)
-  -- function num : 0_135
+function BattleStatComponent:GetBattleLevelResult()
   return self._battleLevelResult
 end
 
--- DECOMPILER ERROR at PC416: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetBattleWaveResult = function(self, battleWaveResult)
-  -- function num : 0_136
+function BattleStatComponent:SetBattleWaveResult(battleWaveResult)
   self._battleWaveResult = battleWaveResult
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._passWaveList)[self:GetCurWaveIndex()] = battleWaveResult
+  self._passWaveList[self:GetCurWaveIndex()] = battleWaveResult
 end
 
--- DECOMPILER ERROR at PC419: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetBattleWaveResult = function(self)
-  -- function num : 0_137
+function BattleStatComponent:GetBattleWaveResult()
   return self._battleWaveResult
 end
 
--- DECOMPILER ERROR at PC422: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IsMonsterShowBannerCurWave = function(self, monsterID)
-  -- function num : 0_138 , upvalues : _ENV
+function BattleStatComponent:IsMonsterShowBannerCurWave(monsterID)
   local wave = self:GetCurWaveIndex()
-  if not (self._deadMonsterShowBannerList)[wave] then
+  if not self._deadMonsterShowBannerList[wave] then
     return false
   else
-    local deadList = (self._deadMonsterShowBannerList)[wave]
-    return (table.icontains)(deadList, monsterID)
+    local deadList = self._deadMonsterShowBannerList[wave]
+    return table.icontains(deadList, monsterID)
   end
 end
 
--- DECOMPILER ERROR at PC425: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddDeadMonsterShowBanner = function(self, monsterID)
-  -- function num : 0_139 , upvalues : _ENV
+function BattleStatComponent:AddDeadMonsterShowBanner(monsterID)
   local wave = self:GetCurWaveIndex()
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._deadMonsterShowBannerList)[wave] then
-    (self._deadMonsterShowBannerList)[wave] = {}
+  if not self._deadMonsterShowBannerList[wave] then
+    self._deadMonsterShowBannerList[wave] = {}
   end
-  ;
-  (table.insert)((self._deadMonsterShowBannerList)[wave], monsterID)
+  table.insert(self._deadMonsterShowBannerList[wave], monsterID)
 end
 
--- DECOMPILER ERROR at PC428: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetCurWaveRoundNum = function(self)
-  -- function num : 0_140
+function BattleStatComponent:GetCurWaveRoundNum()
   return self._curWaveTotalRoundCount
 end
 
--- DECOMPILER ERROR at PC431: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetBattleMatchResult = function(self, matchResult)
-  -- function num : 0_141
+function BattleStatComponent:SetBattleMatchResult(matchResult)
   self._battleResult = matchResult
 end
 
--- DECOMPILER ERROR at PC434: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetBattleMatchResult = function(self)
-  -- function num : 0_142
+function BattleStatComponent:GetBattleMatchResult()
   return self._battleResult
 end
 
--- DECOMPILER ERROR at PC437: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetAutoFight = function(self)
-  -- function num : 0_143
+function BattleStatComponent:GetAutoFight()
   return self._autoFight
 end
 
--- DECOMPILER ERROR at PC440: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetAutoFight = function(self, autoFight)
-  -- function num : 0_144
+function BattleStatComponent:SetAutoFight(autoFight)
   self._autoFight = autoFight or false
   self:SetEverAutoFight()
   if not autoFight then
-    ((self._world):GetDataLogger()):AddDataLog("OnCancelAutoFight")
+    self._world:GetDataLogger():AddDataLog("OnCancelAutoFight")
   end
 end
 
--- DECOMPILER ERROR at PC443: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetEverAutoFight = function(self)
-  -- function num : 0_145
+function BattleStatComponent:GetEverAutoFight()
   return self._everAutoFight
 end
 
--- DECOMPILER ERROR at PC446: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetEverAutoFight = function(self)
-  -- function num : 0_146
+function BattleStatComponent:SetEverAutoFight()
   self._everAutoFight = 1
 end
 
--- DECOMPILER ERROR at PC449: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetLastDoActiveSkillRound = function(self, petPstID, extraSkillIndex)
-  -- function num : 0_147
+function BattleStatComponent:GetLastDoActiveSkillRound(petPstID, extraSkillIndex)
   local recordSkillIndex = extraSkillIndex or 0
-  if not (self._lastDoActiveSkillRound)[petPstID] then
-    return 
+  if not self._lastDoActiveSkillRound[petPstID] then
+    return
   end
-  return ((self._lastDoActiveSkillRound)[petPstID])[recordSkillIndex]
+  return self._lastDoActiveSkillRound[petPstID][recordSkillIndex]
 end
 
--- DECOMPILER ERROR at PC452: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetLastDoActiveSkillRound = function(self, petPstID, round, extraSkillIndex)
-  -- function num : 0_148
+function BattleStatComponent:SetLastDoActiveSkillRound(petPstID, round, extraSkillIndex)
   local recordSkillIndex = extraSkillIndex or 0
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R5 in 'UnsetPending'
-
-  if not (self._lastDoActiveSkillRound)[petPstID] then
-    (self._lastDoActiveSkillRound)[petPstID] = {}
+  if not self._lastDoActiveSkillRound[petPstID] then
+    self._lastDoActiveSkillRound[petPstID] = {}
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._lastDoActiveSkillRound)[petPstID])[recordSkillIndex] = round
+  self._lastDoActiveSkillRound[petPstID][recordSkillIndex] = round
 end
 
--- DECOMPILER ERROR at PC455: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetCurRoundDoActiveSkillTimes = function(self, petPstID)
-  -- function num : 0_149
-  return (self._curRoundDoActiveSkillTimes)[petPstID] or 0
+function BattleStatComponent:GetCurRoundDoActiveSkillTimes(petPstID)
+  return self._curRoundDoActiveSkillTimes[petPstID] or 0
 end
 
--- DECOMPILER ERROR at PC458: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.RecordCurRoundDoActiveSkillTimes = function(self, petPstID)
-  -- function num : 0_150
-  if (self._curRoundDoActiveSkillTimes)[petPstID] then
-    local curTimes = (self._curRoundDoActiveSkillTimes)[petPstID]
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._curRoundDoActiveSkillTimes)[petPstID] = curTimes + 1
+function BattleStatComponent:RecordCurRoundDoActiveSkillTimes(petPstID)
+  if self._curRoundDoActiveSkillTimes[petPstID] then
+    local curTimes = self._curRoundDoActiveSkillTimes[petPstID]
+    self._curRoundDoActiveSkillTimes[petPstID] = curTimes + 1
   else
-    do
-      -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._curRoundDoActiveSkillTimes)[petPstID] = 1
-    end
+    self._curRoundDoActiveSkillTimes[petPstID] = 1
   end
 end
 
--- DECOMPILER ERROR at PC461: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.ClearCurRoundDoActiveSkillTimes = function(self)
-  -- function num : 0_151
+function BattleStatComponent:ClearCurRoundDoActiveSkillTimes()
   self._curRoundDoActiveSkillTimes = {}
 end
 
--- DECOMPILER ERROR at PC464: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetPetDoActiveSkillRecord = function(self, petPstID, round)
-  -- function num : 0_152
-  if not (self._petDoActiveSkillRecord)[petPstID] then
+function BattleStatComponent:GetPetDoActiveSkillRecord(petPstID, round)
+  if not self._petDoActiveSkillRecord[petPstID] then
     return {}
   end
-  return ((self._petDoActiveSkillRecord)[petPstID])[round]
+  return self._petDoActiveSkillRecord[petPstID][round]
 end
 
--- DECOMPILER ERROR at PC467: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetPetDoActiveSkillRecord = function(self, petPstID, round, skillID)
-  -- function num : 0_153 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not (self._petDoActiveSkillRecord)[petPstID] then
-    (self._petDoActiveSkillRecord)[petPstID] = {}
+function BattleStatComponent:SetPetDoActiveSkillRecord(petPstID, round, skillID)
+  if not self._petDoActiveSkillRecord[petPstID] then
+    self._petDoActiveSkillRecord[petPstID] = {}
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not ((self._petDoActiveSkillRecord)[petPstID])[round] then
-    ((self._petDoActiveSkillRecord)[petPstID])[round] = {}
+  if not self._petDoActiveSkillRecord[petPstID][round] then
+    self._petDoActiveSkillRecord[petPstID][round] = {}
   end
-  ;
-  (table.insert)(((self._petDoActiveSkillRecord)[petPstID])[round], skillID)
+  table.insert(self._petDoActiveSkillRecord[petPstID][round], skillID)
 end
 
--- DECOMPILER ERROR at PC470: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GuideShowStarTime = function(self, missionId)
-  -- function num : 0_154 , upvalues : _ENV
-  if missionId and missionId > 0 then
+function BattleStatComponent:GuideShowStarTime(missionId)
+  if missionId and 0 < missionId then
     if not self.starTimeLimitMissionId then
-      self.starTimeLimitMissionId = ((Cfg.cfg_guide_const).guide_star_time_limit_mission).IntValue
+      self.starTimeLimitMissionId = Cfg.cfg_guide_const.guide_star_time_limit_mission.IntValue
     end
-    return self.starTimeLimitMissionId < missionId
+    return missionId > self.starTimeLimitMissionId
   else
     return true
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC473: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetAutoSummonIndex = function(self)
-  -- function num : 0_155
+function BattleStatComponent:GetAutoSummonIndex()
   return self.m_nAutoSummon_Index
 end
 
--- DECOMPILER ERROR at PC476: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetAutoSommonIndex = function(self, nIndex)
-  -- function num : 0_156
+function BattleStatComponent:SetAutoSommonIndex(nIndex)
   self.m_nAutoSummon_Index = nIndex
 end
 
--- DECOMPILER ERROR at PC479: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetAutoSummonMonsterList = function(self)
-  -- function num : 0_157
+function BattleStatComponent:GetAutoSummonMonsterList()
   return self.m_listSummonMonsterID
 end
 
--- DECOMPILER ERROR at PC482: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetAutoSummonList = function(self)
-  -- function num : 0_158
+function BattleStatComponent:GetAutoSummonList()
   return self.m_listAutoSummon
 end
 
--- DECOMPILER ERROR at PC485: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetAutoSummonLevel = function(self)
-  -- function num : 0_159
+function BattleStatComponent:GetAutoSummonLevel()
   return self.m_nAutoSummonLevel
 end
 
--- DECOMPILER ERROR at PC488: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetAutoSummonLevel = function(self, nLevel)
-  -- function num : 0_160
+function BattleStatComponent:SetAutoSummonLevel(nLevel)
   self.m_nAutoSummonLevel = nLevel
 end
 
--- DECOMPILER ERROR at PC491: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddTotalChainNum = function(self)
-  -- function num : 0_161
+function BattleStatComponent:AddTotalChainNum()
   self._totalChainNum = self._totalChainNum + 1
 end
 
--- DECOMPILER ERROR at PC494: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetTotalChainNum = function(self)
-  -- function num : 0_162
+function BattleStatComponent:GetTotalChainNum()
   return self._totalChainNum
 end
 
 _class("MSummonRefresh", Object)
 MSummonRefresh = MSummonRefresh
--- DECOMPILER ERROR at PC503: Confused about usage of register: R0 in 'UnsetPending'
 
-MSummonRefresh.Constructor = function(self, nRefreshID)
-  -- function num : 0_163
+function MSummonRefresh:Constructor(nRefreshID)
   self.m_nSummonIndex = 0
   self.m_nLevelID = self:_FindLevelID(nRefreshID)
   self.m_nRefreshID = nRefreshID
@@ -1745,13 +1142,10 @@ MSummonRefresh.Constructor = function(self, nRefreshID)
   self.m_nAutoAttack = nil
 end
 
--- DECOMPILER ERROR at PC506: Confused about usage of register: R0 in 'UnsetPending'
-
-MSummonRefresh._FindLevelID = function(self, nRefreshID)
-  -- function num : 0_164 , upvalues : _ENV
-  local listLevelConfig = (Cfg.cfg_level)()
-  for nLevelID,cfgLevel in pairs(listLevelConfig) do
-    for key,nWaveID in ipairs(cfgLevel.MonsterWave) do
+function MSummonRefresh:_FindLevelID(nRefreshID)
+  local listLevelConfig = Cfg.cfg_level()
+  for nLevelID, cfgLevel in pairs(listLevelConfig) do
+    for key, nWaveID in ipairs(cfgLevel.MonsterWave) do
       if nWaveID == nRefreshID then
         return nLevelID
       end
@@ -1759,50 +1153,36 @@ MSummonRefresh._FindLevelID = function(self, nRefreshID)
   end
 end
 
--- DECOMPILER ERROR at PC509: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent._InitRefreshMonster = function(self, nRefreshID)
-  -- function num : 0_165 , upvalues : _ENV
-  local cfgRefreshMonster = (Cfg.cfg_refresh_monster)[nRefreshID]
+function BattleStatComponent:_InitRefreshMonster(nRefreshID)
+  local cfgRefreshMonster = Cfg.cfg_refresh_monster[nRefreshID]
   if cfgRefreshMonster then
     local levelMonsterRefreshParam = LevelMonsterRefreshParam:New(self._world)
     local listID = levelMonsterRefreshParam:ParseMonsterRefreshParam(cfgRefreshMonster)
     return levelMonsterRefreshParam
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC512: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent._InitRefreshTrap = function(self, nRefreshID)
-  -- function num : 0_166 , upvalues : _ENV
-  local cfgRefreshMonster = (Cfg.cfg_refresh_trap)[nRefreshID]
+function BattleStatComponent:_InitRefreshTrap(nRefreshID)
+  local cfgRefreshMonster = Cfg.cfg_refresh_trap[nRefreshID]
   if cfgRefreshMonster then
     local levelMonsterRefreshParam = LevelMonsterRefreshParam:New(self._world)
     local listSummon = levelMonsterRefreshParam:ParseTrapRefreshParam(cfgRefreshMonster)
     return levelMonsterRefreshParam
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC515: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.InitAutoSommonList = function(self, nMaxCount)
-  -- function num : 0_167 , upvalues : _ENV
-  local cfgService = (self._world):GetService("Config")
-  ;
-  (self.m_listAutoSummon):Clear()
-  local cfgRefresh = (Cfg.cfg_refresh)()
-  for key,value in pairs(cfgRefresh) do
+function BattleStatComponent:InitAutoSommonList(nMaxCount)
+  local cfgService = self._world:GetService("Config")
+  self.m_listAutoSummon:Clear()
+  local cfgRefresh = Cfg.cfg_refresh()
+  for key, value in pairs(cfgRefresh) do
     local nAutoSummon = value.AutoSummon
-    if nAutoSummon and nAutoSummon > 0 then
+    if nAutoSummon and 0 < nAutoSummon then
       local listRefresh_Monster = value.TrapRefreshIDList
       local listRefresh_Trap = value.MonsterRefreshIDList
-      local nMaxCount = (math.max)((table.count)(listRefresh_Monster), (table.count)(listRefresh_Trap))
+      local nMaxCount = math.max(table.count(listRefresh_Monster), table.count(listRefresh_Trap))
       for i = 1, nMaxCount do
         local refreshData = MSummonRefresh:New(key)
         refreshData.m_stLevelName = value.desc
@@ -1817,754 +1197,475 @@ BattleStatComponent.InitAutoSommonList = function(self, nMaxCount)
           refreshData.m_nRefreshID_Trap = nRefreshID_Trap
           refreshData.m_cfgRefreshTrap = self:_InitRefreshTrap(nRefreshID_Trap)
         end
-        refreshData.m_nSummonIndex = (table.count)(self.m_listAutoSummon)
-        ;
-        (self.m_listAutoSummon):Insert(refreshData)
+        refreshData.m_nSummonIndex = table.count(self.m_listAutoSummon)
+        self.m_listAutoSummon:Insert(refreshData)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC518: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetAutoSommonTeam = function(self)
-  -- function num : 0_168
+function BattleStatComponent:GetAutoSommonTeam()
   return self.m_nAutoSummon_TeamIndex
 end
 
--- DECOMPILER ERROR at PC521: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetAutoSommonTeam = function(self, nIndex)
-  -- function num : 0_169
+function BattleStatComponent:SetAutoSommonTeam(nIndex)
   self.m_nAutoSummon_TeamIndex = nIndex
 end
 
--- DECOMPILER ERROR at PC524: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetTriggerDimensionFlag = function(self)
-  -- function num : 0_170
+function BattleStatComponent:GetTriggerDimensionFlag()
   return self._triggerDimensionFlag
 end
 
--- DECOMPILER ERROR at PC527: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetTriggerDimensionFlag = function(self, flag)
-  -- function num : 0_171
+function BattleStatComponent:SetTriggerDimensionFlag(flag)
   self._triggerDimensionFlag = flag
 end
 
-TriggerDimensionFlag = {None = 0, ChainAttack = 1, WaitInput = 2, RoundResult = 3}
--- DECOMPILER ERROR at PC536: Confused about usage of register: R0 in 'UnsetPending'
+TriggerDimensionFlag = {
+  None = 0,
+  ChainAttack = 1,
+  WaitInput = 2,
+  RoundResult = 3
+}
 
-BattleStatComponent.SetNormalAttackKillCount = function(self, count)
-  -- function num : 0_172
+function BattleStatComponent:SetNormalAttackKillCount(count)
   self._normalAttackKillCount = count
 end
 
--- DECOMPILER ERROR at PC539: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetNormalAttackKillCount = function(self)
-  -- function num : 0_173
+function BattleStatComponent:GetNormalAttackKillCount()
   return self._normalAttackKillCount
 end
 
--- DECOMPILER ERROR at PC542: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetTeamLeaderChangeNum = function(self)
-  -- function num : 0_174
+function BattleStatComponent:GetTeamLeaderChangeNum()
   return self._changeTeamLeaderNum
 end
 
--- DECOMPILER ERROR at PC545: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddTeamLeaderChangeNum = function(self)
-  -- function num : 0_175
+function BattleStatComponent:AddTeamLeaderChangeNum()
   self._changeTeamLeaderNum = self._changeTeamLeaderNum + 1
 end
 
--- DECOMPILER ERROR at PC548: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetPassiveTeamLeaderChangeNum = function(self)
-  -- function num : 0_176
+function BattleStatComponent:GetPassiveTeamLeaderChangeNum()
   return self._passiveChangeTeamLeaderNum
 end
 
--- DECOMPILER ERROR at PC551: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddPassiveTeamLeaderChangeNum = function(self)
-  -- function num : 0_177
+function BattleStatComponent:AddPassiveTeamLeaderChangeNum()
   self._passiveChangeTeamLeaderNum = self._passiveChangeTeamLeaderNum + 1
 end
 
--- DECOMPILER ERROR at PC554: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SaveProtectTrap = function(self, trapId, pos, dir)
-  -- function num : 0_178
+function BattleStatComponent:SaveProtectTrap(trapId, pos, dir)
   if not self._protectTrap then
     self._protectTrap = {}
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._protectTrap)[#self._protectTrap + 1] = {trapID = trapId, pos = pos, dir = dir}
+  self._protectTrap[#self._protectTrap + 1] = {
+    trapID = trapId,
+    pos = pos,
+    dir = dir
+  }
 end
 
--- DECOMPILER ERROR at PC557: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetSavedProtectTrap = function(self)
-  -- function num : 0_179
+function BattleStatComponent:GetSavedProtectTrap()
   return self._protectTrap
 end
 
--- DECOMPILER ERROR at PC560: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddBuffIntensifyParam = function(self, intensifyParam)
-  -- function num : 0_180 , upvalues : _ENV
-  for _,param in ipairs(intensifyParam) do
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R7 in 'UnsetPending'
-
-    if not (self._exChangeBuffMap)[param.BuffID] then
-      (self._exChangeBuffMap)[param.BuffID] = param
+function BattleStatComponent:AddBuffIntensifyParam(intensifyParam)
+  for _, param in ipairs(intensifyParam) do
+    if not self._exChangeBuffMap[param.BuffID] then
+      self._exChangeBuffMap[param.BuffID] = param
     else
-      ;
-      (Log.fatal)("Already Has Buff ExchangeConfig BuffID:", param.BuffID, "Trace:", (Log.traceback)())
+      Log.fatal("Already Has Buff ExchangeConfig BuffID:", param.BuffID, "Trace:", Log.traceback())
     end
   end
 end
 
--- DECOMPILER ERROR at PC563: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetBuffIntensifyParam = function(self, buffID)
-  -- function num : 0_181
-  if (self._exChangeBuffMap)[buffID] then
-    return (self._exChangeBuffMap)[buffID]
+function BattleStatComponent:GetBuffIntensifyParam(buffID)
+  if self._exChangeBuffMap[buffID] then
+    return self._exChangeBuffMap[buffID]
   end
 end
 
--- DECOMPILER ERROR at PC566: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddBuffEquipRefineParam = function(self, intensifyParam)
-  -- function num : 0_182 , upvalues : _ENV
-  for _,param in ipairs(intensifyParam) do
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._exChangeBuffMap)[param.BuffID] = param
+function BattleStatComponent:AddBuffEquipRefineParam(intensifyParam)
+  for _, param in ipairs(intensifyParam) do
+    self._exChangeBuffMap[param.BuffID] = param
   end
 end
 
--- DECOMPILER ERROR at PC569: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddPlayerBeHitCount = function(self, cnt)
-  -- function num : 0_183
+function BattleStatComponent:AddPlayerBeHitCount(cnt)
   self._playerBeHitCount = self._playerBeHitCount + cnt
 end
 
--- DECOMPILER ERROR at PC572: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetPlayerBeHitCount = function(self)
-  -- function num : 0_184
+function BattleStatComponent:GetPlayerBeHitCount()
   return self._playerBeHitCount
 end
 
--- DECOMPILER ERROR at PC575: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetHeroLastAttackMonster = function(self, t)
-  -- function num : 0_185
+function BattleStatComponent:SetHeroLastAttackMonster(t)
   self._heroLastAttackMonster = t
 end
 
--- DECOMPILER ERROR at PC578: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetHeroLastAttackMonster = function(self)
-  -- function num : 0_186
+function BattleStatComponent:GetHeroLastAttackMonster()
   return self._heroLastAttackMonster
 end
 
--- DECOMPILER ERROR at PC581: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetFirstWaveMonsterIDList = function(self, monsterEntityList)
-  -- function num : 0_187 , upvalues : _ENV
-  for _,entity in ipairs(monsterEntityList) do
-    (table.insert)(self._firstWaveMonsterIDList, entity:GetID())
+function BattleStatComponent:SetFirstWaveMonsterIDList(monsterEntityList)
+  for _, entity in ipairs(monsterEntityList) do
+    table.insert(self._firstWaveMonsterIDList, entity:GetID())
   end
 end
 
--- DECOMPILER ERROR at PC584: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetFirstWaveMonsterIDList = function(self)
-  -- function num : 0_188
+function BattleStatComponent:GetFirstWaveMonsterIDList()
   return self._firstWaveMonsterIDList
 end
 
--- DECOMPILER ERROR at PC587: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetFirstWaveTrapIDList = function(self, trapEntityList)
-  -- function num : 0_189 , upvalues : _ENV
-  for i,entity in ipairs(trapEntityList) do
-    (table.insert)(self._firstWaveTrapIDList, entity:GetID())
+function BattleStatComponent:SetFirstWaveTrapIDList(trapEntityList)
+  for i, entity in ipairs(trapEntityList) do
+    table.insert(self._firstWaveTrapIDList, entity:GetID())
   end
 end
 
--- DECOMPILER ERROR at PC590: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetFirstWaveTrapIDList = function(self)
-  -- function num : 0_190
+function BattleStatComponent:GetFirstWaveTrapIDList()
   return self._firstWaveTrapIDList
 end
 
--- DECOMPILER ERROR at PC593: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetRoundBeginPlayerPos = function(self, pos)
-  -- function num : 0_191
+function BattleStatComponent:SetRoundBeginPlayerPos(pos)
   self._roundBeginPlayerPos = pos
 end
 
--- DECOMPILER ERROR at PC596: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetRoundBeginPlayerPos = function(self)
-  -- function num : 0_192
+function BattleStatComponent:GetRoundBeginPlayerPos()
   return self._roundBeginPlayerPos
 end
 
--- DECOMPILER ERROR at PC599: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IsWavePass = function(self, waveIndex)
-  -- function num : 0_193 , upvalues : _ENV
-  do
-    if waveIndex <= self._curWaveIndex then
-      local waveResult = (self._passWaveList)[waveIndex]
-      if not waveResult then
-        (Log.fatal)("[SyncLog],type:", BattleFailedType.WavePassInvalid, " info:", "wave: ", waveIndex, " NotPass")
-      end
-      return waveResult
+function BattleStatComponent:IsWavePass(waveIndex)
+  if waveIndex <= self._curWaveIndex then
+    local waveResult = self._passWaveList[waveIndex]
+    if not waveResult then
+      Log.fatal("[SyncLog],type:", BattleFailedType.WavePassInvalid, " info:", "wave: ", waveIndex, " NotPass")
     end
-    return false
+    return waveResult
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC602: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddMonsterBeHitDamageValue = function(self, entityID, value, skillID)
-  -- function num : 0_194 , upvalues : _ENV
-  if BattleConst.SingleDamageMaxValue < value then
+function BattleStatComponent:AddMonsterBeHitDamageValue(entityID, value, skillID)
+  if value > BattleConst.SingleDamageMaxValue then
     if EDITOR then
-      (Log.exception)("[SyncLog],type:", BattleFailedType.SingleDamageTooLarge, " SingleDamageValue:", value, " SkillID:", skillID)
+      Log.exception("[SyncLog],type:", BattleFailedType.SingleDamageTooLarge, " SingleDamageValue:", value, " SkillID:", skillID)
     else
-      ;
-      (Log.fatal)("[SyncLog],type:", BattleFailedType.SingleDamageTooLarge, " SingleDamageValue:", value, " SkillID:", skillID)
+      Log.fatal("[SyncLog],type:", BattleFailedType.SingleDamageTooLarge, " SingleDamageValue:", value, " SkillID:", skillID)
     end
     value = 0
   end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not (self._monsterBeHitDamageValue)[entityID] then
-    (self._monsterBeHitDamageValue)[entityID] = 0
+  if not self._monsterBeHitDamageValue[entityID] then
+    self._monsterBeHitDamageValue[entityID] = 0
   end
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._monsterBeHitDamageValue)[entityID] = (self._monsterBeHitDamageValue)[entityID] + value
+  self._monsterBeHitDamageValue[entityID] = self._monsterBeHitDamageValue[entityID] + value
 end
 
--- DECOMPILER ERROR at PC605: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SubMonsterBeHitDamageValue = function(self, entityID, value)
-  -- function num : 0_195
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._monsterBeHitDamageValue)[entityID] then
-    (self._monsterBeHitDamageValue)[entityID] = 0
+function BattleStatComponent:SubMonsterBeHitDamageValue(entityID, value)
+  if not self._monsterBeHitDamageValue[entityID] then
+    self._monsterBeHitDamageValue[entityID] = 0
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._monsterBeHitDamageValue)[entityID] = (self._monsterBeHitDamageValue)[entityID] - value
+  self._monsterBeHitDamageValue[entityID] = self._monsterBeHitDamageValue[entityID] - value
 end
 
--- DECOMPILER ERROR at PC608: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetTotalMonsterBeHitDamageValue = function(self)
-  -- function num : 0_196 , upvalues : _ENV
+function BattleStatComponent:GetTotalMonsterBeHitDamageValue()
   local totalDamage = 0
-  for k,damage in pairs(self._monsterBeHitDamageValue) do
+  for k, damage in pairs(self._monsterBeHitDamageValue) do
     totalDamage = damage + totalDamage
   end
   return totalDamage
 end
 
--- DECOMPILER ERROR at PC611: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetMainWorldBossBeHitDamageValue = function(self)
-  -- function num : 0_197
+function BattleStatComponent:GetMainWorldBossBeHitDamageValue()
   local mainWorldBossID = self:GetMainWorldBossID()
   if mainWorldBossID then
     local dmg = self:GetMonsterBeHitDamageValue(mainWorldBossID)
     return dmg
   else
-    do
-      do return 0 end
-    end
+    return 0
   end
 end
 
--- DECOMPILER ERROR at PC614: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetMonsterBeHitDamageValue = function(self, entityID)
-  -- function num : 0_198
-  local totalDamage = (self._monsterBeHitDamageValue)[entityID]
+function BattleStatComponent:GetMonsterBeHitDamageValue(entityID)
+  local totalDamage = self._monsterBeHitDamageValue[entityID]
   return totalDamage or 0
 end
 
--- DECOMPILER ERROR at PC617: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetLastAntiTriggerEntityID = function(self, id)
-  -- function num : 0_199
+function BattleStatComponent:SetLastAntiTriggerEntityID(id)
   self._lastAntiTriggerEntityID = id
 end
 
--- DECOMPILER ERROR at PC620: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetLastAntiTriggerEntityID = function(self)
-  -- function num : 0_200
+function BattleStatComponent:GetLastAntiTriggerEntityID()
   return self._lastAntiTriggerEntityID
 end
 
--- DECOMPILER ERROR at PC623: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetLastActiveSkillID = function(self)
-  -- function num : 0_201
+function BattleStatComponent:GetLastActiveSkillID()
   return self._lastActiveSkillID
 end
 
--- DECOMPILER ERROR at PC626: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetLastActiveSkillID = function(self, activeSkillID)
-  -- function num : 0_202
+function BattleStatComponent:SetLastActiveSkillID(activeSkillID)
   self._lastActiveSkillID = activeSkillID
 end
 
--- DECOMPILER ERROR at PC629: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetLastActiveSkillCasterID = function(self)
-  -- function num : 0_203
+function BattleStatComponent:GetLastActiveSkillCasterID()
   return self._lastActiveSkillCasterID
 end
 
--- DECOMPILER ERROR at PC632: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetLastActiveSkillCasterID = function(self, casterID)
-  -- function num : 0_204
+function BattleStatComponent:SetLastActiveSkillCasterID(casterID)
   self._lastActiveSkillCasterID = casterID
 end
 
--- DECOMPILER ERROR at PC635: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetCurWaveEnterRound = function(self)
-  -- function num : 0_205
-  return (self._waveEnterRound)[self._curWaveIndex]
+function BattleStatComponent:GetCurWaveEnterRound()
+  return self._waveEnterRound[self._curWaveIndex]
 end
 
--- DECOMPILER ERROR at PC638: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetCurWaveTotalRound = function(self)
-  -- function num : 0_206
-  return self._curWaveLeftRoundCount - (self._waveEnterRound)[self._curWaveIndex]
+function BattleStatComponent:GetCurWaveTotalRound()
+  return self._curWaveLeftRoundCount - self._waveEnterRound[self._curWaveIndex]
 end
 
--- DECOMPILER ERROR at PC641: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddDeadMonsterBuffInfo = function(self, entity)
-  -- function num : 0_207 , upvalues : _ENV
+function BattleStatComponent:AddDeadMonsterBuffInfo(entity)
   local cBuff = entity:BuffComponent()
   local tBuffInstance = cBuff:GetBuffArray()
   local tBuffID = {}
-  for _,ins in ipairs(tBuffInstance) do
+  for _, ins in ipairs(tBuffInstance) do
     if not ins:IsUnload() then
-      (table.insert)(tBuffID, ins:BuffID())
+      table.insert(tBuffID, ins:BuffID())
     end
   end
-  local monsterID = (entity:MonsterID()):GetMonsterID()
-  local buffInfo = {entityID = entity:GetID(), buffIDs = tBuffID}
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R7 in 'UnsetPending'
-
-  if not (self._curWaveDeadMonsterBuffTable)[monsterID] then
-    (self._curWaveDeadMonsterBuffTable)[monsterID] = {}
+  local monsterID = entity:MonsterID():GetMonsterID()
+  local buffInfo = {
+    entityID = entity:GetID(),
+    buffIDs = tBuffID
+  }
+  if not self._curWaveDeadMonsterBuffTable[monsterID] then
+    self._curWaveDeadMonsterBuffTable[monsterID] = {}
   end
-  ;
-  (table.insert)(self._curWaveDeadMonsterBuffTable, buffInfo)
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R7 in 'UnsetPending'
-
-  if not (self._totalDeadMonsterBuffTable)[monsterID] then
-    (self._totalDeadMonsterBuffTable)[monsterID] = {}
+  table.insert(self._curWaveDeadMonsterBuffTable, buffInfo)
+  if not self._totalDeadMonsterBuffTable[monsterID] then
+    self._totalDeadMonsterBuffTable[monsterID] = {}
   end
-  ;
-  (table.insert)((self._totalDeadMonsterBuffTable)[monsterID], buffInfo)
+  table.insert(self._totalDeadMonsterBuffTable[monsterID], buffInfo)
 end
 
--- DECOMPILER ERROR at PC644: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetTotalDeadMonsterBuffInfo = function(self)
-  -- function num : 0_208
+function BattleStatComponent:GetTotalDeadMonsterBuffInfo()
   return self._totalDeadMonsterBuffTable
 end
 
--- DECOMPILER ERROR at PC647: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetWaveChooseRelic = function(self, waveIndex, relicID)
-  -- function num : 0_209 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._waveRelicIDDic)[waveIndex] then
-    (self._waveRelicIDDic)[waveIndex] = relicID
-    ;
-    (table.insert)(self._waveRelicIDList, relicID)
+function BattleStatComponent:SetWaveChooseRelic(waveIndex, relicID)
+  if not self._waveRelicIDDic[waveIndex] then
+    self._waveRelicIDDic[waveIndex] = relicID
+    table.insert(self._waveRelicIDList, relicID)
   else
-    ;
-    (Log.error)("MiniMaze 波次圣物已设置完毕")
+    Log.error("MiniMaze 波次圣物已设置完毕")
   end
 end
 
--- DECOMPILER ERROR at PC650: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetChooseRelic = function(self, relicID)
-  -- function num : 0_210 , upvalues : _ENV
-  (table.insert)(self._waveRelicIDList, relicID)
+function BattleStatComponent:SetChooseRelic(relicID)
+  table.insert(self._waveRelicIDList, relicID)
 end
 
--- DECOMPILER ERROR at PC653: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetWaveChooseRelic = function(self, waveIndex)
-  -- function num : 0_211
-  return (self._waveRelicIDDic)[waveIndex] or 0
+function BattleStatComponent:GetWaveChooseRelic(waveIndex)
+  return self._waveRelicIDDic[waveIndex] or 0
 end
 
--- DECOMPILER ERROR at PC656: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetAllMiniMazeRelicList = function(self)
-  -- function num : 0_212 , upvalues : _ENV
-  local relicIDArray = (table.cloneconf)(self._waveRelicIDList)
+function BattleStatComponent:GetAllMiniMazeRelicList()
+  local relicIDArray = table.cloneconf(self._waveRelicIDList)
   return relicIDArray
 end
 
--- DECOMPILER ERROR at PC659: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetWaveChoosePartner = function(self, waveIndex, partner)
-  -- function num : 0_213 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._wavePartnerDic)[waveIndex] then
-    (self._wavePartnerDic)[waveIndex] = partner
-    ;
-    (table.insert)(self._wavePartnerIDList, partner)
+function BattleStatComponent:SetWaveChoosePartner(waveIndex, partner)
+  if not self._wavePartnerDic[waveIndex] then
+    self._wavePartnerDic[waveIndex] = partner
+    table.insert(self._wavePartnerIDList, partner)
   else
-    ;
-    (Log.error)("MiniMaze 波次伙伴已设置完毕")
+    Log.error("MiniMaze 波次伙伴已设置完毕")
   end
 end
 
--- DECOMPILER ERROR at PC662: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetWaveChoosePartner = function(self, waveIndex)
-  -- function num : 0_214
-  return (self._wavePartnerDic)[waveIndex] or 0
+function BattleStatComponent:GetWaveChoosePartner(waveIndex)
+  return self._wavePartnerDic[waveIndex] or 0
 end
 
--- DECOMPILER ERROR at PC665: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetAllMiniMazePartnerList = function(self)
-  -- function num : 0_215 , upvalues : _ENV
-  local array = (table.cloneconf)(self._wavePartnerIDList)
+function BattleStatComponent:GetAllMiniMazePartnerList()
+  local array = table.cloneconf(self._wavePartnerIDList)
   return array
 end
 
--- DECOMPILER ERROR at PC668: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetWaveOptionalPartnerIDList = function(self, waveIndex, partnerIDList)
-  -- function num : 0_216
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._waveOptionalPartnerListDic)[waveIndex] then
-    (self._waveOptionalPartnerListDic)[waveIndex] = partnerIDList
+function BattleStatComponent:SetWaveOptionalPartnerIDList(waveIndex, partnerIDList)
+  if not self._waveOptionalPartnerListDic[waveIndex] then
+    self._waveOptionalPartnerListDic[waveIndex] = partnerIDList
+  else
   end
 end
 
--- DECOMPILER ERROR at PC671: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetWaveOptionalPartnerIDList = function(self, waveIndex)
-  -- function num : 0_217
-  return (self._waveOptionalPartnerListDic)[waveIndex]
+function BattleStatComponent:GetWaveOptionalPartnerIDList(waveIndex)
+  return self._waveOptionalPartnerListDic[waveIndex]
 end
 
--- DECOMPILER ERROR at PC674: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetInvalidRelicIDList = function(self, groupID, relicIDList)
-  -- function num : 0_218 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._relicGroupInvalidIDDic)[groupID] then
-    (self._relicGroupInvalidIDDic)[groupID] = {}
+function BattleStatComponent:SetInvalidRelicIDList(groupID, relicIDList)
+  if not self._relicGroupInvalidIDDic[groupID] then
+    self._relicGroupInvalidIDDic[groupID] = {}
   end
-  ;
-  (table.appendArray)((self._relicGroupInvalidIDDic)[groupID], relicIDList)
+  table.appendArray(self._relicGroupInvalidIDDic[groupID], relicIDList)
 end
 
--- DECOMPILER ERROR at PC677: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetInvalidRelicIDList = function(self, groupID)
-  -- function num : 0_219 , upvalues : _ENV
-  local invalidArray = (self._relicGroupInvalidIDDic)[groupID]
-  local cloneArray = (table.cloneconf)(invalidArray)
+function BattleStatComponent:GetInvalidRelicIDList(groupID)
+  local invalidArray = self._relicGroupInvalidIDDic[groupID]
+  local cloneArray = table.cloneconf(invalidArray)
   return cloneArray
 end
 
--- DECOMPILER ERROR at PC680: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddAbandonedPartnerIDList = function(self, partnerIDList)
-  -- function num : 0_220 , upvalues : _ENV
-  for _,partnerID in ipairs(partnerIDList) do
-    (table.insert)(self._wavePartnerAbandonedList, partnerID)
+function BattleStatComponent:AddAbandonedPartnerIDList(partnerIDList)
+  for _, partnerID in ipairs(partnerIDList) do
+    table.insert(self._wavePartnerAbandonedList, partnerID)
   end
 end
 
--- DECOMPILER ERROR at PC683: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetAbandonedPartnerIDList = function(self)
-  -- function num : 0_221
+function BattleStatComponent:GetAbandonedPartnerIDList()
   return self._wavePartnerAbandonedList
 end
 
--- DECOMPILER ERROR at PC686: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetWaveWaitApplyAward = function(self, relicID, isOpening, partnerID)
-  -- function num : 0_222
+function BattleStatComponent:SetWaveWaitApplyAward(relicID, isOpening, partnerID)
   self._waveWaitApplyRelicID = relicID
   self._waveWaitApplyRelicIsOpening = isOpening
   self._waveWaitApplyPartnerID = partnerID
 end
 
--- DECOMPILER ERROR at PC689: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetWaveWaitApplyAward = function(self)
-  -- function num : 0_223
+function BattleStatComponent:GetWaveWaitApplyAward()
   return self._waveWaitApplyRelicID, self._waveWaitApplyRelicIsOpening, self._waveWaitApplyPartnerID
 end
 
--- DECOMPILER ERROR at PC692: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.ClearWaveWaitApplyAward = function(self)
-  -- function num : 0_224
+function BattleStatComponent:ClearWaveWaitApplyAward()
   self._waveWaitApplyRelicID = 0
   self._waveWaitApplyRelicIsOpening = false
   self._waveWaitApplyPartnerID = 0
 end
 
--- DECOMPILER ERROR at PC695: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddScanTrapIDInMatch = function(self, id)
-  -- function num : 0_225 , upvalues : _ENV
-  if not (table.icontains)(self._allLocalTeamScanTrapIDInMatch, id) then
-    (table.insert)(self._allLocalTeamScanTrapIDInMatch, id)
+function BattleStatComponent:AddScanTrapIDInMatch(id)
+  if not table.icontains(self._allLocalTeamScanTrapIDInMatch, id) then
+    table.insert(self._allLocalTeamScanTrapIDInMatch, id)
   end
 end
 
--- DECOMPILER ERROR at PC698: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetAllScanTrapIDInMatch = function(self)
-  -- function num : 0_226
+function BattleStatComponent:GetAllScanTrapIDInMatch()
   return self._allLocalTeamScanTrapIDInMatch
 end
 
--- DECOMPILER ERROR at PC701: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddTrapIDByCasterEntityID = function(self, trapID, casterEntityID)
-  -- function num : 0_227 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._trapIDBySummonCasterEntityID)[casterEntityID] then
-    (self._trapIDBySummonCasterEntityID)[casterEntityID] = {}
+function BattleStatComponent:AddTrapIDByCasterEntityID(trapID, casterEntityID)
+  if not self._trapIDBySummonCasterEntityID[casterEntityID] then
+    self._trapIDBySummonCasterEntityID[casterEntityID] = {}
   end
-  if not (table.icontains)((self._trapIDBySummonCasterEntityID)[casterEntityID], trapID) then
-    (table.insert)((self._trapIDBySummonCasterEntityID)[casterEntityID], trapID)
+  if not table.icontains(self._trapIDBySummonCasterEntityID[casterEntityID], trapID) then
+    table.insert(self._trapIDBySummonCasterEntityID[casterEntityID], trapID)
   end
 end
 
--- DECOMPILER ERROR at PC704: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IsTrapSummonedByCasterBefore = function(self, trapID, casterEntityID)
-  -- function num : 0_228 , upvalues : _ENV
-  if not (self._trapIDBySummonCasterEntityID)[casterEntityID] then
+function BattleStatComponent:IsTrapSummonedByCasterBefore(trapID, casterEntityID)
+  if not self._trapIDBySummonCasterEntityID[casterEntityID] then
     return false
   end
-  return (table.icontains)((self._trapIDBySummonCasterEntityID)[casterEntityID], trapID)
+  return table.icontains(self._trapIDBySummonCasterEntityID[casterEntityID], trapID)
 end
 
--- DECOMPILER ERROR at PC707: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent._IsLocalTeam = function(self, teamEntity)
-  -- function num : 0_229
-  local localTeamEntity = ((self._world):Player()):GetLocalTeamEntity()
+function BattleStatComponent:_IsLocalTeam(teamEntity)
+  local localTeamEntity = self._world:Player():GetLocalTeamEntity()
   if localTeamEntity and teamEntity and localTeamEntity:GetID() ~= teamEntity:GetID() then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC710: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetMonsterEscapeNum = function(self)
-  -- function num : 0_230
+function BattleStatComponent:GetMonsterEscapeNum()
   return self._monsterEscapeNum
 end
 
--- DECOMPILER ERROR at PC713: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddMonsterEscapeNum = function(self, count)
-  -- function num : 0_231
+function BattleStatComponent:AddMonsterEscapeNum(count)
   local addNum = count or 1
   self._monsterEscapeNum = self._monsterEscapeNum + 1
 end
 
--- DECOMPILER ERROR at PC716: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AppendCombinedConditionRecord = function(self, resultA, resultB)
-  -- function num : 0_232 , upvalues : _ENV
-  (table.insert)(self._combinedConditionRecords, {resultA = resultA, resultB = resultB})
+function BattleStatComponent:AppendCombinedConditionRecord(resultA, resultB)
+  table.insert(self._combinedConditionRecords, {resultA = resultA, resultB = resultB})
 end
 
--- DECOMPILER ERROR at PC719: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetCombinedConditionRecord = function(self)
-  -- function num : 0_233
+function BattleStatComponent:GetCombinedConditionRecord()
   return self._combinedConditionRecords
 end
 
--- DECOMPILER ERROR at PC722: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetMainWorldBossID = function(self)
-  -- function num : 0_234
+function BattleStatComponent:GetMainWorldBossID()
   return self._mainWorldBossID
 end
 
--- DECOMPILER ERROR at PC725: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetMainWorldBossID = function(self, id)
-  -- function num : 0_235
+function BattleStatComponent:SetMainWorldBossID(id)
   self._mainWorldBossID = id
 end
 
 _class("AffixSkillDamageRecordData", Object)
 AffixSkillDamageRecordData = AffixSkillDamageRecordData
--- DECOMPILER ERROR at PC734: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixSkillDamageRecordData.Constructor = function(self, casterEntityID, skillID)
-  -- function num : 0_236
+function AffixSkillDamageRecordData:Constructor(casterEntityID, skillID)
   self.casterEntityID = casterEntityID
   self.skillID = skillID
   self.targetList = {}
 end
 
--- DECOMPILER ERROR at PC737: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.EnableAffixUseSkillDamageRecord = function(self)
-  -- function num : 0_237
+function BattleStatComponent:EnableAffixUseSkillDamageRecord()
   self._enablenAffixUseSkillDamageRecord = true
   self:AffixClearAllSkillDamageRecord()
 end
 
--- DECOMPILER ERROR at PC740: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.DisableAffixUseSkillDamageRecord = function(self)
-  -- function num : 0_238
+function BattleStatComponent:DisableAffixUseSkillDamageRecord()
   self._enablenAffixUseSkillDamageRecord = false
   self:AffixClearAllSkillDamageRecord()
 end
 
--- DECOMPILER ERROR at PC743: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AffixBeginSkillDamageRecord = function(self, casterEntityID, skillID)
-  -- function num : 0_239 , upvalues : _ENV
+function BattleStatComponent:AffixBeginSkillDamageRecord(casterEntityID, skillID)
   if not self._enablenAffixUseSkillDamageRecord then
-    return 
+    return
   end
   local curData = AffixSkillDamageRecordData:New(casterEntityID, skillID)
-  ;
-  (table.insert)(self._affixUseSkillDamageRecords, curData)
+  table.insert(self._affixUseSkillDamageRecords, curData)
   self._curRecordData = curData
-  ;
-  (table.insert)(self._useRecordList, 1, self._curRecordData)
+  table.insert(self._useRecordList, 1, self._curRecordData)
 end
 
--- DECOMPILER ERROR at PC746: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AffixEndSkillDamageRecord = function(self, casterEntityID, skillID)
-  -- function num : 0_240 , upvalues : _ENV
+function BattleStatComponent:AffixEndSkillDamageRecord(casterEntityID, skillID)
   if not self._enablenAffixUseSkillDamageRecord then
-    return 
+    return
   end
-  ;
-  (table.remove)(self._useRecordList, 1)
+  table.remove(self._useRecordList, 1)
   if #self._useRecordList > 0 then
-    self._curRecordData = (self._useRecordList)[#self._useRecordList]
+    self._curRecordData = self._useRecordList[#self._useRecordList]
   else
     self._curRecordData = nil
   end
 end
 
--- DECOMPILER ERROR at PC749: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AffixRecordSkillDamage = function(self, casterEntityID, skillID, defenderID)
-  -- function num : 0_241
+function BattleStatComponent:AffixRecordSkillDamage(casterEntityID, skillID, defenderID)
   if not self._enablenAffixUseSkillDamageRecord then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-  if self._curRecordData and (self._curRecordData).casterEntityID == casterEntityID and (self._curRecordData).skillID == skillID then
-    if not (self._curRecordData).targetList then
-      (self._curRecordData).targetList = {}
+  if self._curRecordData and self._curRecordData.casterEntityID == casterEntityID and self._curRecordData.skillID == skillID then
+    if not self._curRecordData.targetList then
+      self._curRecordData.targetList = {}
     end
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R4 in 'UnsetPending'
-
-    if ((self._curRecordData).targetList)[defenderID] then
-      ((self._curRecordData).targetList)[defenderID] = ((self._curRecordData).targetList)[defenderID] + 1
+    if self._curRecordData.targetList[defenderID] then
+      self._curRecordData.targetList[defenderID] = self._curRecordData.targetList[defenderID] + 1
     else
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      ((self._curRecordData).targetList)[defenderID] = 1
+      self._curRecordData.targetList[defenderID] = 1
     end
   end
 end
 
--- DECOMPILER ERROR at PC752: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AffixGetSkillDamageTargetCount = function(self, casterEntityID, skillID)
-  -- function num : 0_242 , upvalues : _ENV
+function BattleStatComponent:AffixGetSkillDamageTargetCount(casterEntityID, skillID)
   if not self._enablenAffixUseSkillDamageRecord then
     return -1
   end
   if self._affixUseSkillDamageRecords then
-    for index,value in ipairs(self._affixUseSkillDamageRecords) do
+    for index, value in ipairs(self._affixUseSkillDamageRecords) do
       if value.casterEntityID == casterEntityID and value.skillID == skillID then
         if value.targetList then
-          local count = (table.count)(value.targetList)
+          local count = table.count(value.targetList)
           return count
         else
-          do
-            do
-              do return 0 end
-              -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+          return 0
         end
       end
     end
@@ -2572,60 +1673,43 @@ BattleStatComponent.AffixGetSkillDamageTargetCount = function(self, casterEntity
   return -1
 end
 
--- DECOMPILER ERROR at PC756: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AffixRemoveSkillDamageRecord = function(self, casterEntityID, skillID)
-  -- function num : 0_243 , upvalues : _ENV
+function BattleStatComponent:AffixRemoveSkillDamageRecord(casterEntityID, skillID)
   if not self._enablenAffixUseSkillDamageRecord then
-    return 
+    return
   end
   local restRecords = {}
   if self._affixUseSkillDamageRecords then
-    for index,value in ipairs(self._affixUseSkillDamageRecords) do
+    for index, value in ipairs(self._affixUseSkillDamageRecords) do
       if value.casterEntityID == casterEntityID and value.skillID == skillID then
-        do
-          (table.insert)(restRecords, value)
-          -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      else
+        table.insert(restRecords, value)
       end
     end
     self._affixUseSkillDamageRecords = restRecords
   end
 end
 
--- DECOMPILER ERROR at PC760: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AffixEndSkillDamageRecordAndGetCount = function(self, casterEntityID, skillID)
-  -- function num : 0_244
+function BattleStatComponent:AffixEndSkillDamageRecordAndGetCount(casterEntityID, skillID)
   local count = self:AffixGetSkillDamageTargetCount(casterEntityID, skillID)
   self:AffixRemoveSkillDamageRecord(casterEntityID, skillID)
   return count
 end
 
--- DECOMPILER ERROR at PC764: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AffixClearAllSkillDamageRecord = function(self)
-  -- function num : 0_245
+function BattleStatComponent:AffixClearAllSkillDamageRecord()
   if not self._enablenAffixUseSkillDamageRecord then
-    return 
+    return
   end
   self._affixUseSkillDamageRecords = {}
   self._useRecordList = {}
   self._curRecordData = nil
 end
 
--- DECOMPILER ERROR at PC768: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.AddMonsterKilledRecordData = function(self, casterID, defenderID)
-  -- function num : 0_246 , upvalues : _ENV
-  local defenderEntity = (self._world):GetEntityByID(defenderID)
+function BattleStatComponent:AddMonsterKilledRecordData(casterID, defenderID)
+  local defenderEntity = self._world:GetEntityByID(defenderID)
   if not defenderEntity:HasMonsterID() then
-    return 
+    return
   end
-  local casterEntity = (self._world):GetEntityByID(casterID)
+  local casterEntity = self._world:GetEntityByID(casterID)
   local petTemplateID = -1
   local monsterID = -1
   if casterEntity then
@@ -2636,59 +1720,42 @@ BattleStatComponent.AddMonsterKilledRecordData = function(self, casterID, defend
       casterEntity = casterEntity:GetSuperEntity()
     end
     if casterEntity:HasPetPstID() then
-      petTemplateID = (casterEntity:PetPstID()):GetTemplateID()
+      petTemplateID = casterEntity:PetPstID():GetTemplateID()
     end
     if casterEntity:HasMonsterID() then
-      monsterID = (casterEntity:MonsterID()):GetMonsterID()
+      monsterID = casterEntity:MonsterID():GetMonsterID()
     end
   end
   self._monsterKilledCount = self._monsterKilledCount + 1
-  -- DECOMPILER ERROR at PC68: Confused about usage of register: R7 in 'UnsetPending'
-
   if petTemplateID ~= -1 then
-    if not (self._monsterKilledRecordData)[petTemplateID] then
-      (self._monsterKilledRecordData)[petTemplateID] = {}
+    if not self._monsterKilledRecordData[petTemplateID] then
+      self._monsterKilledRecordData[petTemplateID] = {}
     end
-    ;
-    (table.insert)((self._monsterKilledRecordData)[petTemplateID], {entityID = defenderID, petTemplateID = petTemplateID})
-  else
-    -- DECOMPILER ERROR at PC86: Confused about usage of register: R7 in 'UnsetPending'
-
-    if monsterID ~= -1 then
-      if not (self._monsterKilledRecordData)[monsterID] then
-        (self._monsterKilledRecordData)[monsterID] = {}
-      end
-      ;
-      (table.insert)((self._monsterKilledRecordData)[monsterID], {entityID = defenderID, monsterID = monsterID})
+    table.insert(self._monsterKilledRecordData[petTemplateID], {entityID = defenderID, petTemplateID = petTemplateID})
+  elseif monsterID ~= -1 then
+    if not self._monsterKilledRecordData[monsterID] then
+      self._monsterKilledRecordData[monsterID] = {}
     end
+    table.insert(self._monsterKilledRecordData[monsterID], {entityID = defenderID, monsterID = monsterID})
   end
 end
 
--- DECOMPILER ERROR at PC772: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetMonsterKilledCount = function(self)
-  -- function num : 0_247
+function BattleStatComponent:GetMonsterKilledCount()
   return self._monsterKilledCount
 end
 
--- DECOMPILER ERROR at PC776: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetMonsterKilledCountByMonsterID = function(self, monsterID)
-  -- function num : 0_248 , upvalues : _ENV
-  local curMonsterKillData = (self._monsterKilledRecordData)[monsterID]
+function BattleStatComponent:GetMonsterKilledCountByMonsterID(monsterID)
+  local curMonsterKillData = self._monsterKilledRecordData[monsterID]
   if not curMonsterKillData then
     return 0
   end
-  return (table.count)(curMonsterKillData)
+  return table.count(curMonsterKillData)
 end
 
--- DECOMPILER ERROR at PC780: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetMonsterKilledCountByMonsterByPet = function(self)
-  -- function num : 0_249 , upvalues : _ENV
+function BattleStatComponent:GetMonsterKilledCountByMonsterByPet()
   local monsterKillCount = 0
-  for index,monsterKilledRecordData in ipairs(self._monsterKilledRecordData) do
-    for _,value in ipairs(monsterKilledRecordData) do
+  for index, monsterKilledRecordData in ipairs(self._monsterKilledRecordData) do
+    for _, value in ipairs(monsterKilledRecordData) do
       if value.petTemplateID then
         monsterKillCount = monsterKillCount + 1
       end
@@ -2697,113 +1764,68 @@ BattleStatComponent.GetMonsterKilledCountByMonsterByPet = function(self)
   return monsterKillCount
 end
 
--- DECOMPILER ERROR at PC784: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetActiveSkillLinkLineState = function(self, state, casterEntityID, skillID)
-  -- function num : 0_250
+function BattleStatComponent:SetActiveSkillLinkLineState(state, casterEntityID, skillID)
   self._isActiveSkillLinkLine = state
   self._activeSkillLinkLineCasterEntityID = casterEntityID
   self._activeSkillLinkLineSkillID = skillID
 end
 
--- DECOMPILER ERROR at PC788: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetActiveSkillLinkLineSkillID = function(self)
-  -- function num : 0_251
+function BattleStatComponent:GetActiveSkillLinkLineSkillID()
   return self._activeSkillLinkLineSkillID
 end
 
--- DECOMPILER ERROR at PC792: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetActiveSkillLinkLineCasterEntityID = function(self)
-  -- function num : 0_252
+function BattleStatComponent:GetActiveSkillLinkLineCasterEntityID()
   return self._activeSkillLinkLineCasterEntityID
 end
 
--- DECOMPILER ERROR at PC796: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.IsActiveSkillLinkLine = function(self)
-  -- function num : 0_253
+function BattleStatComponent:IsActiveSkillLinkLine()
   return self._isActiveSkillLinkLine
 end
 
--- DECOMPILER ERROR at PC800: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetLogicActiveSkillLinkLineTeamPos = function(self, pos, dir)
-  -- function num : 0_254
+function BattleStatComponent:SetLogicActiveSkillLinkLineTeamPos(pos, dir)
   self._activeSkillLinkLineTeamLogicPos = pos
   self._activeSkillLinkLineTeamLogicDir = dir
 end
 
--- DECOMPILER ERROR at PC804: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetLogicActiveSkillLinkLineTeamPos = function(self)
-  -- function num : 0_255
+function BattleStatComponent:GetLogicActiveSkillLinkLineTeamPos()
   return self._activeSkillLinkLineTeamLogicPos, self._activeSkillLinkLineTeamLogicDir
 end
 
--- DECOMPILER ERROR at PC808: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.SetRenderActiveSkillLinkLineTeamPos = function(self, pos, dir)
-  -- function num : 0_256
+function BattleStatComponent:SetRenderActiveSkillLinkLineTeamPos(pos, dir)
   self._activeSkillLinkLineTeamRenderPos = pos
   self._activeSkillLinkLineTeamRenderDir = dir
 end
 
--- DECOMPILER ERROR at PC812: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStatComponent.GetRenderActiveSkillLinkLineTeamPos = function(self)
-  -- function num : 0_257
+function BattleStatComponent:GetRenderActiveSkillLinkLineTeamPos()
   return self._activeSkillLinkLineTeamRenderPos, self._activeSkillLinkLineTeamRenderDir
 end
 
--- DECOMPILER ERROR at PC817: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.MainWorld).BattleStat = function(self)
-  -- function num : 0_258 , upvalues : _ENV
+function MainWorld:BattleStat()
   if EDITOR and CHECK_RENDER_ACCESS_LOGIC then
-    local debugInfo = (debug.getinfo)(2, "S")
+    local debugInfo = debug.getinfo(2, "S")
     local filePath = debugInfo.short_src
-    local renderIndex = (string.find)(filePath, "_r.lua")
+    local renderIndex = string.find(filePath, "_r.lua")
     if renderIndex ~= nil then
-      (Log.exception)("render file :", filePath, " call BattleStat() ", (Log.traceback)())
+      Log.exception("render file :", filePath, " call BattleStat() ", Log.traceback())
       return nil
     end
   end
-  do
-    return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).BattleStat)
-  end
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.BattleStat)
 end
 
--- DECOMPILER ERROR at PC822: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.MainWorld).HasBattleStat = function(self)
-  -- function num : 0_259
-  do return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).BattleStat) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorld:HasBattleStat()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.BattleStat) ~= nil
 end
 
--- DECOMPILER ERROR at PC827: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.MainWorld).AddBattleStat = function(self)
-  -- function num : 0_260 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).BattleStat
+function MainWorld:AddBattleStat()
+  local index = self.BW_UniqueComponentsEnum.BattleStat
   local component = BattleStatComponent:New(self)
   component:Initialize()
   self:SetUniqueComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC832: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.MainWorld).RemoveBattleStat = function(self)
-  -- function num : 0_261
+function MainWorld:RemoveBattleStat()
   if self:HasBattleStat() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).BattleStat, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.BattleStat, nil)
   end
 end
-
-

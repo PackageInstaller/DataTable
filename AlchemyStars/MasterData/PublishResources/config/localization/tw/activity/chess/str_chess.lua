@@ -1,8 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/activity/chess/str_chess.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_chess_title = "拆車大作戰", str_chess_content = "拆了他們的車！\n據稱，這種遊戲棋的設計初衷是讓紅油扳手的年輕光靈們學會換位思考，藉由操縱暗鬼熟悉牠們的行動，以在戰鬥中獲得優勢，但因為很好玩，現已成為了在整個紅油沙漠地區流行的遊戲。隨著時間的發展，其玩法似乎已經不只侷限在「拆車」上了。", str_chess_remain_time = "<color= #c3b7ac>距離活動結束還有{1}</color>", str_chess_side_title = "拆車大作戰", str_chess_intro = "一、拆車大作戰中將控制暗鬼與光靈展開模擬戰鬥\n二、當我方暗鬼全部陣亡或剩餘回合數為0時，關卡失敗；需操縱我方暗鬼達成關卡條件才能獲得勝利\n三、關卡中光靈只能在與其屬性相同的格子上行走，且光靈走過的格子不會更新\n四、不同暗鬼具有不同的特性，合理規劃戰術能夠讓牠們發揮更強的實力", str_chess_1_name = "N1-舊逢", str_chess_2_name = "N2-僵持", str_chess_3_name = "N3-亡地", str_chess_4_name = "N4-拒馬", str_chess_5_name = "N5-遁走", str_chess_6_name = "N6-破盾", str_chess_7_name = "N7-爭殺", str_chess_8_name = "N8-壁礙", str_chess_9_name = "N9-王絕", str_chess_1_desc = "曾經遭遇過的場景，曾經遭遇過的敵人，卻有一種預感持續縈繞心頭：接下來的戰局恐怕會與過去大相逕庭……", str_chess_2_desc = "其實，這才剛開始，因此僵持算是自然狀況，不必畏懼，也不要衝動，慢慢熟悉這種戰鬥吧。", str_chess_3_desc = "衝撞！擊退！不計手段，務必要讓那些可惡的傢伙踏入死亡陷阱，那樣就一切順利了！", str_chess_4_desc = "他們真的有馬！而且還會跳！務必小心！", str_chess_5_desc = "並非所有戰鬥都必須擊倒對手，有時平安撤退便是勝利。", str_chess_6_desc = "他們依靠的無非是堅甲硬盾，一旦破除，便可一氣呵成擊敗他們！", str_chess_7_desc = "獲得勝利的關鍵就是速度、速度、還是速度，重要的事要說三次。", str_chess_8_desc = "面對堅硬的盾牌和光能的壁壘，不可衝動蠻幹，應該多多依靠智慧。", str_chess_9_desc = "敵人的王強大無比，如何找到擊敗對方的訣竅？", str_chess_1_desc_long = "曾經遭遇過的場景，曾經遭遇過的敵人，卻有一種預感持續縈繞心頭：接下來的戰局恐怕會與過去大相逕庭……", str_chess_2_desc_long = "其實，這才剛開始，因此僵持算是自然狀況，不必畏懼，也不要衝動，慢慢熟悉這種戰鬥吧。", str_chess_3_desc_long = "衝撞！擊退！不計手段，務必要讓那些可惡的傢伙踏入死亡陷阱，那樣就一切順利了！", str_chess_4_desc_long = "他們真的有馬！而且還會跳！務必小心！", str_chess_5_desc_long = "並非所有戰鬥都必須擊倒對手，有時平安撤退便是勝利。", str_chess_6_desc_long = "他們依靠的無非是堅甲硬盾，一旦破除，便可一氣呵成擊敗他們！", str_chess_7_desc_long = "獲得勝利的關鍵就是速度、速度、還是速度，重要的事要說三次。", str_chess_8_desc_long = "面對堅硬的盾牌和光能的壁壘，不可衝動蠻幹，應該多多依靠智慧。", str_chess_9_desc_long = "敵人的王強大無比，如何找到擊敗對方的訣竅？"}
+local config = {
+  str_chess_title = "拆車大作戰",
+  str_chess_content = "拆了他們的車！\n據稱，這種遊戲棋的設計初衷是讓紅油扳手的年輕光靈們學會換位思考，藉由操縱暗鬼熟悉牠們的行動，以在戰鬥中獲得優勢，但因為很好玩，現已成為了在整個紅油沙漠地區流行的遊戲。隨著時間的發展，其玩法似乎已經不只侷限在「拆車」上了。",
+  str_chess_remain_time = "<color= #c3b7ac>距離活動結束還有{1}</color>",
+  str_chess_side_title = "拆車大作戰",
+  str_chess_intro = "一、拆車大作戰中將控制暗鬼與光靈展開模擬戰鬥\n二、當我方暗鬼全部陣亡或剩餘回合數為0時，關卡失敗；需操縱我方暗鬼達成關卡條件才能獲得勝利\n三、關卡中光靈只能在與其屬性相同的格子上行走，且光靈走過的格子不會更新\n四、不同暗鬼具有不同的特性，合理規劃戰術能夠讓牠們發揮更強的實力",
+  str_chess_1_name = "N1-舊逢",
+  str_chess_2_name = "N2-僵持",
+  str_chess_3_name = "N3-亡地",
+  str_chess_4_name = "N4-拒馬",
+  str_chess_5_name = "N5-遁走",
+  str_chess_6_name = "N6-破盾",
+  str_chess_7_name = "N7-爭殺",
+  str_chess_8_name = "N8-壁礙",
+  str_chess_9_name = "N9-王絕",
+  str_chess_1_desc = "曾經遭遇過的場景，曾經遭遇過的敵人，卻有一種預感持續縈繞心頭：接下來的戰局恐怕會與過去大相逕庭……",
+  str_chess_2_desc = "其實，這才剛開始，因此僵持算是自然狀況，不必畏懼，也不要衝動，慢慢熟悉這種戰鬥吧。",
+  str_chess_3_desc = "衝撞！擊退！不計手段，務必要讓那些可惡的傢伙踏入死亡陷阱，那樣就一切順利了！",
+  str_chess_4_desc = "他們真的有馬！而且還會跳！務必小心！",
+  str_chess_5_desc = "並非所有戰鬥都必須擊倒對手，有時平安撤退便是勝利。",
+  str_chess_6_desc = "他們依靠的無非是堅甲硬盾，一旦破除，便可一氣呵成擊敗他們！",
+  str_chess_7_desc = "獲得勝利的關鍵就是速度、速度、還是速度，重要的事要說三次。",
+  str_chess_8_desc = "面對堅硬的盾牌和光能的壁壘，不可衝動蠻幹，應該多多依靠智慧。",
+  str_chess_9_desc = "敵人的王強大無比，如何找到擊敗對方的訣竅？",
+  str_chess_1_desc_long = "曾經遭遇過的場景，曾經遭遇過的敵人，卻有一種預感持續縈繞心頭：接下來的戰局恐怕會與過去大相逕庭……",
+  str_chess_2_desc_long = "其實，這才剛開始，因此僵持算是自然狀況，不必畏懼，也不要衝動，慢慢熟悉這種戰鬥吧。",
+  str_chess_3_desc_long = "衝撞！擊退！不計手段，務必要讓那些可惡的傢伙踏入死亡陷阱，那樣就一切順利了！",
+  str_chess_4_desc_long = "他們真的有馬！而且還會跳！務必小心！",
+  str_chess_5_desc_long = "並非所有戰鬥都必須擊倒對手，有時平安撤退便是勝利。",
+  str_chess_6_desc_long = "他們依靠的無非是堅甲硬盾，一旦破除，便可一氣呵成擊敗他們！",
+  str_chess_7_desc_long = "獲得勝利的關鍵就是速度、速度、還是速度，重要的事要說三次。",
+  str_chess_8_desc_long = "面對堅硬的盾牌和光能的壁壘，不可衝動蠻幹，應該多多依靠智慧。",
+  str_chess_9_desc_long = "敵人的王強大無比，如何找到擊敗對方的訣竅？"
+}
 return config
-

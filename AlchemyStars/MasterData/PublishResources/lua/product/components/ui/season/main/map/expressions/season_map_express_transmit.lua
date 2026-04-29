@@ -1,39 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_transmit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpressTransmit", SeasonMapExpressBase)
 SeasonMapExpressTransmit = SeasonMapExpressTransmit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressTransmit.Constructor = function(self, cfg, eventPoint)
-  -- function num : 0_0 , upvalues : _ENV
-  self._content = (self._cfg).Transmit
-  self._seasonManager = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
+function SeasonMapExpressTransmit:Constructor(cfg, eventPoint)
+  self._content = self._cfg.Transmit
+  self._seasonManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressTransmit.Update = function(self, deltaTime)
-  -- function num : 0_1
+function SeasonMapExpressTransmit:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressTransmit.OnPlay = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonMapExpressTransmit:OnPlay()
   if self._content then
-    (Vector3(((self._content).position)[1], ((self._content).position)[2], ((self._content).position)[3]))
-    local position = nil
-    local direction = nil
-    if (self._content).direction then
-      direction = Vector3(((self._content).direction)[1], ((self._content).direction)[2], ((self._content).direction)[3])
+    local position = Vector3(self._content.position[1], self._content.position[2], self._content.position[3])
+    local direction
+    if self._content.direction then
+      direction = Vector3(self._content.direction[1], self._content.direction[2], self._content.direction[3])
     end
-    ;
-    (((self._seasonManager):SeasonPlayerManager()):GetPlayer()):Transmit(position, direction)
+    self._seasonManager:SeasonPlayerManager():GetPlayer():Transmit(position, direction)
     self:Next()
   end
 end
-
-

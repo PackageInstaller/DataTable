@@ -1,8 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/activity/n10/str_n10.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_n10_name = "小林家", str_n10_sub_name = "龍女僕", str_n10_remaining_time = "剩餘時間", str_n10_activity_intro = "活動說明", str_n10_story_replay = "劇情回顧", str_n10_battle_pass = "特別事件薄", str_n10_login_award = "登入獎勵", str_n10_pet = "光靈初見", str_n10_shop = "獎勵商店", str_n10_activity_remaining_time = "領獎剩餘時間：", str_n10_drop_time = "活動剩餘時間：", str_n10_intro_title = "龍女僕的假日活動說明", str_n10_intro_content = "【餐盤】取得方式：\n1.活動期間，完成消耗稜鏡的主線或資源整備關卡時，即可獲得【餐盤】。\n2.活動結束後，上述關卡不再掉落【餐盤】。\n\n【餐盤】道具使用：\n1.活動期間，可以消耗【餐盤】在【朵露廚房】中取餐。\n2.活動結束後，【朵露廚房】還會開放3天，請及時使用【餐盤】取餐。【朵露廚房】關閉後，未使用的【餐盤】將依1:10的比例轉換為白夜幣。", str_n10_lottery_one = "取餐一次", str_n10_lottery_multi = "取餐十次", str_n10_lottery_intro_title = "餐桌說明", str_n10_lottery_intro_content = "1.活動期間共開放5張【餐桌】，每張【餐桌】可取餐100次。\n2.需消耗【餐盤】取餐。\n3.取餐時，拿到目前餐桌的【主菜】後，即可解鎖下一張【餐桌】，之前的【餐桌】可以繼續取餐。\n4.【朵露廚房】關閉後，剩餘的【餐盤】將依1:10的比例轉換為白夜幣。", str_n10_lottery_pool = "餐桌{1}", str_n10_shop_no_item_tips = "已獲得該餐桌所有菜餚，無法再取餐！", str_n10_shop_box_unlock_intro = "獲得<color=#F6A201>餐桌{1}</color>主菜後解鎖該餐桌！", str_n10_shop_award_rest_num = "剩餘", str_n10_shop_number_1 = "一", str_n10_shop_number_2 = "二", str_n10_shop_number_3 = "三", str_n10_shop_number_4 = "四", str_n10_shop_number_5 = "五", str_n10_shop_number_6 = "六", str_n10_shop_number_7 = "七", str_n10_shop_number_8 = "八", str_n10_shop_number_9 = "九", str_n10_shop_number_10 = "十", str_n10_shop_number_99 = "九十九", str_n10_shop_new_box_unlock_title = "新餐桌解鎖", str_n10_shop_open_next_text = "已取得餐桌{1}主菜，餐桌{2}解鎖！", str_n10_shop_loop_box_reset_tips = "已取得所有主菜，餐桌重設。", str_n10_shop_draw_once_more_text = "是否消耗{1}餐盤繼續取餐？", str_n10_rule_description = "規則說明", str_n10_draw_shop_box_locked = "餐桌尚未解鎖", str_n10_shop_intro_title = "餐桌說明", str_n10_shop_intro_content = "1.活動期間共開放5張【餐桌】，每張【餐桌】可取餐100次。\n2.需消耗【餐盤】取餐。\n3.取餐時，拿到目前餐桌的【主菜】後，即可解鎖下一張【餐桌】，之前的【餐桌】可以繼續取餐。\n4.【朵露廚房】關閉後，剩餘的【餐盤】將依1:10的比例轉換為白夜幣。", str_n10_sign_title = "活動期間累積登入{1}天\n領取光珀與限定頭像！"}
+local config = {
+  str_n10_name = "小林家",
+  str_n10_sub_name = "龍女僕",
+  str_n10_remaining_time = "剩餘時間",
+  str_n10_activity_intro = "活動說明",
+  str_n10_story_replay = "劇情回顧",
+  str_n10_battle_pass = "特別事件薄",
+  str_n10_login_award = "登入獎勵",
+  str_n10_pet = "光靈初見",
+  str_n10_shop = "獎勵商店",
+  str_n10_activity_remaining_time = "領獎剩餘時間：",
+  str_n10_drop_time = "活動剩餘時間：",
+  str_n10_intro_title = "龍女僕的假日活動說明",
+  str_n10_intro_content = "【餐盤】取得方式：\n1.活動期間，完成消耗稜鏡的主線或資源整備關卡時，即可獲得【餐盤】。\n2.活動結束後，上述關卡不再掉落【餐盤】。\n\n【餐盤】道具使用：\n1.活動期間，可以消耗【餐盤】在【朵露廚房】中取餐。\n2.活動結束後，【朵露廚房】還會開放3天，請及時使用【餐盤】取餐。【朵露廚房】關閉後，未使用的【餐盤】將依1:10的比例轉換為白夜幣。",
+  str_n10_lottery_one = "取餐一次",
+  str_n10_lottery_multi = "取餐十次",
+  str_n10_lottery_intro_title = "餐桌說明",
+  str_n10_lottery_intro_content = "1.活動期間共開放5張【餐桌】，每張【餐桌】可取餐100次。\n2.需消耗【餐盤】取餐。\n3.取餐時，拿到目前餐桌的【主菜】後，即可解鎖下一張【餐桌】，之前的【餐桌】可以繼續取餐。\n4.【朵露廚房】關閉後，剩餘的【餐盤】將依1:10的比例轉換為白夜幣。",
+  str_n10_lottery_pool = "餐桌{1}",
+  str_n10_shop_no_item_tips = "已獲得該餐桌所有菜餚，無法再取餐！",
+  str_n10_shop_box_unlock_intro = "獲得<color=#F6A201>餐桌{1}</color>主菜後解鎖該餐桌！",
+  str_n10_shop_award_rest_num = "剩餘",
+  str_n10_shop_number_1 = "一",
+  str_n10_shop_number_2 = "二",
+  str_n10_shop_number_3 = "三",
+  str_n10_shop_number_4 = "四",
+  str_n10_shop_number_5 = "五",
+  str_n10_shop_number_6 = "六",
+  str_n10_shop_number_7 = "七",
+  str_n10_shop_number_8 = "八",
+  str_n10_shop_number_9 = "九",
+  str_n10_shop_number_10 = "十",
+  str_n10_shop_number_99 = "九十九",
+  str_n10_shop_new_box_unlock_title = "新餐桌解鎖",
+  str_n10_shop_open_next_text = "已取得餐桌{1}主菜，餐桌{2}解鎖！",
+  str_n10_shop_loop_box_reset_tips = "已取得所有主菜，餐桌重設。",
+  str_n10_shop_draw_once_more_text = "是否消耗{1}餐盤繼續取餐？",
+  str_n10_rule_description = "規則說明",
+  str_n10_draw_shop_box_locked = "餐桌尚未解鎖",
+  str_n10_shop_intro_title = "餐桌說明",
+  str_n10_shop_intro_content = "1.活動期間共開放5張【餐桌】，每張【餐桌】可取餐100次。\n2.需消耗【餐盤】取餐。\n3.取餐時，拿到目前餐桌的【主菜】後，即可解鎖下一張【餐桌】，之前的【餐桌】可以繼續取餐。\n4.【朵露廚房】關閉後，剩餘的【餐盤】將依1:10的比例轉換為白夜幣。",
+  str_n10_sign_title = "活動期間累積登入{1}天\n領取光珀與限定頭像！"
+}
 return config
-

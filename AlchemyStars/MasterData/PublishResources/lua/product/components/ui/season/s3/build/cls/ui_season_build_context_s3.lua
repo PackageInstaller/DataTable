@@ -1,93 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/build/cls/ui_season_build_context_s3.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuildContextS3", Object)
 UISeasonBuildContextS3 = UISeasonBuildContextS3
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuildContextS3.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._questModuel = (GameGlobal.GetModule)(QuestModule)
-  self._seasonModuel = (GameGlobal.GetModule)(SeasonModule)
+function UISeasonBuildContextS3:Constructor()
+  self._questModuel = GameGlobal.GetModule(QuestModule)
+  self._seasonModuel = GameGlobal.GetModule(SeasonModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildContextS3.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._seasonId = (self._seasonModuel):GetCurSeasonID()
-  self._levelCfgs = (Cfg.cfg_season_castle)({SeasonID = self._seasonId})
+function UISeasonBuildContextS3:Init()
+  self._seasonId = self._seasonModuel:GetCurSeasonID()
+  self._levelCfgs = Cfg.cfg_season_castle({
+    SeasonID = self._seasonId
+  })
   if not self._levelCfgs then
-    (Log.error)("err cfg_season_castle no config for seasonId ", self._seasonId)
-    return 
+    Log.error("err cfg_season_castle no config for seasonId ", self._seasonId)
+    return
   end
-  ;
-  (table.sort)(self._levelCfgs, function(a, b)
-    -- function num : 0_1_0
-    do return a.Lv < b.Lv end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._levelCfgs, function(a, b)
+    return a.Lv < b.Lv
+  end)
   self._maxLevel = #self._levelCfgs
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildContextS3.GetSeasonId = function(self)
-  -- function num : 0_2
+function UISeasonBuildContextS3:GetSeasonId()
   return self._seasonId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildContextS3.GetMaxLevel = function(self)
-  -- function num : 0_3
+function UISeasonBuildContextS3:GetMaxLevel()
   return self._maxLevel
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildContextS3.GetCurLevel = function(self)
-  -- function num : 0_4
-  return (self._seasonModuel):GetCastleLv(self._seasonId)
+function UISeasonBuildContextS3:GetCurLevel()
+  return self._seasonModuel:GetCastleLv(self._seasonId)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildContextS3.BuildLevelIsFull = function(self)
-  -- function num : 0_5
-  do return self:GetCurLevel() == self:GetMaxLevel() end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UISeasonBuildContextS3:BuildLevelIsFull()
+  return self:GetCurLevel() == self:GetMaxLevel()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildContextS3.GetLevelCfgs = function(self)
-  -- function num : 0_6
+function UISeasonBuildContextS3:GetLevelCfgs()
   return self._levelCfgs
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildContextS3.GetBuildCfgByLevel = function(self, level)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg = (self._levelCfgs)[level]
+function UISeasonBuildContextS3:GetBuildCfgByLevel(level)
+  local cfg = self._levelCfgs[level]
   if not cfg then
-    (Log.error)("err can\'t find cfg with level ", level)
-    return 
+    Log.error("err can't find cfg with level ", level)
+    return
   end
   return cfg
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildContextS3.GetQuestByBuildLevel = function(self, level)
-  -- function num : 0_8
+function UISeasonBuildContextS3:GetQuestByBuildLevel(level)
   local cfg = self:GetBuildCfgByLevel(level)
   if not cfg then
-    return 
+    return
   end
   local ids = cfg.QuestList
   local id = ids[1]
@@ -99,13 +65,10 @@ UISeasonBuildContextS3.GetQuestByBuildLevel = function(self, level)
   return d
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildContextS3.GetQuestStatus = function(self, questId)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonBuildContextS3:GetQuestStatus(questId)
   local open = false
   local finish = false
-  local quest = (self._questModuel):GetQuest(questId)
+  local quest = self._questModuel:GetQuest(questId)
   if quest then
     local questInfo = quest:QuestInfo()
     local status = questInfo.status
@@ -114,14 +77,10 @@ UISeasonBuildContextS3.GetQuestStatus = function(self, questId)
   else
     open = false
   end
-  do return open, finish end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return open, finish
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildContextS3.CanBuild = function(self)
-  -- function num : 0_10
+function UISeasonBuildContextS3:CanBuild()
   local level = self:GetCurLevel()
   if level == self:GetMaxLevel() then
     return false
@@ -132,5 +91,3 @@ UISeasonBuildContextS3.CanBuild = function(self)
   end
   return false
 end
-
-

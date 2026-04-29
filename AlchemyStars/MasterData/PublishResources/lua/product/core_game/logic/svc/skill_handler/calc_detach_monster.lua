@@ -1,51 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_detach_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalcDetachMonster", SkillEffectCalc_Base)
 SkillEffectCalcDetachMonster = SkillEffectCalcDetachMonster
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalcDetachMonster.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalcDetachMonster:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcDetachMonster.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalcDetachMonster:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.insert)(results, result)
+      table.insert(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcDetachMonster._CalculateSingleTarget = function(self, skillEffectCalcParam, targetID)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalcDetachMonster:_CalculateSingleTarget(skillEffectCalcParam, targetID)
   local skillParam = skillEffectCalcParam:GetSkillEffectParam()
   local casterID = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterID)
+  local casterEntity = self._world:GetEntityByID(casterID)
   local aiComponent = casterEntity:AI()
   local attachMonsterID = aiComponent:GetRuntimeData("AttachMonsterID")
-  local attachMonsterEntity = (self._world):GetEntityByID(attachMonsterID)
+  local attachMonsterEntity = self._world:GetEntityByID(attachMonsterID)
   local attachMonsterPos = attachMonsterEntity:GetGridPosition()
   casterEntity:SetGridPosition(attachMonsterPos)
   aiComponent:SetRuntimeData("AttachMonsterID", nil)
   aiComponent:SetRuntimeData("Target", nil)
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local round = battleStatCmpt:GetCurWaveTotalRoundCount()
   local waveIndex = battleStatCmpt:GetCurWaveIndex()
-  local curState = ((self._world):GameFSM()):CurStateID()
+  local curState = self._world:GameFSM():CurStateID()
   if curState == GameStateID.MonsterTurn then
     round = round + 1
   end
@@ -53,5 +40,3 @@ SkillEffectCalcDetachMonster._CalculateSingleTarget = function(self, skillEffect
   aiComponent:SetRuntimeData("DetachBeginWaveIndex", waveIndex)
   return SkillEffectDetachMonsterResult:New(attachMonsterPos, attachMonsterID)
 end
-
-

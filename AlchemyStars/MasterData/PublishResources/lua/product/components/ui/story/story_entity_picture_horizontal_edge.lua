@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/story/story_entity_picture_horizontal_edge.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StoryEntityPictureHorizontalEdge", StoryEntityMovable)
 StoryEntityPictureHorizontalEdge = StoryEntityPictureHorizontalEdge
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StoryEntityPictureHorizontalEdge.Constructor = function(self, ID, gameObject, resRequest, storyManager, entityConfig)
-  -- function num : 0_0 , upvalues : _ENV
-  ((StoryEntityPictureHorizontalEdge.super).Constructor)(self, ID, gameObject, resRequest, storyManager)
+function StoryEntityPictureHorizontalEdge:Constructor(ID, gameObject, resRequest, storyManager, entityConfig)
+  StoryEntityPictureHorizontalEdge.super.Constructor(self, ID, gameObject, resRequest, storyManager)
   self._type = StoryEntityType.PictureSliceHorizontalEdge
   self._picObject = gameObject
   self._picCmp = gameObject:GetComponent("RawImage")
-  self._picColor = (self._picCmp).color
+  self._picColor = self._picCmp.color
   self._inScrolling = false
   self._scrollStartFromCover = true
   self._scrollType = nil
@@ -25,68 +18,47 @@ StoryEntityPictureHorizontalEdge.Constructor = function(self, ID, gameObject, re
   self._defaultEdgeSliceHeight = 540
   self._edgeSliceHeight = 540
   self._edgeSliceWidth = 2539
-  local rootGO = (UnityEngine.GameObject):New(gameObject.name)
-  ;
-  (rootGO.transform):SetParent((gameObject.transform).parent, false)
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (rootGO.transform).localPosition = (gameObject.transform).localPosition
+  local rootGO = UnityEngine.GameObject:New(gameObject.name)
+  rootGO.transform:SetParent(gameObject.transform.parent, false)
+  rootGO.transform.localPosition = gameObject.transform.localPosition
   rootGO:SetActive(gameObject.activeSelf)
   self._gameObject = rootGO
-  self._maskObject = ((UnityEngine.GameObject).Instantiate)(storyManager:GetMaskTemplate(), rootGO.transform)
-  ;
-  (self._maskObject):SetActive(true)
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  ((self._maskObject).transform).localPosition = Vector3.zero
-  ;
-  (gameObject.transform):SetParent((self._maskObject).transform, false)
+  self._maskObject = UnityEngine.GameObject.Instantiate(storyManager:GetMaskTemplate(), rootGO.transform)
+  self._maskObject:SetActive(true)
+  self._maskObject.transform.localPosition = Vector3.zero
+  gameObject.transform:SetParent(self._maskObject.transform, false)
   gameObject:SetActive(true)
-  self._edgeResRequest = (ResourceManager:GetInstance()):SyncLoadAsset("StorySliceHorizontalEdge.prefab", LoadType.GameObject)
-  self._edgeMaskObject = ((UnityEngine.GameObject).Instantiate)(storyManager:GetMaskHorizontalTemplate(), rootGO.transform)
-  ;
-  (self._edgeMaskObject):SetActive(true)
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  ((self._edgeMaskObject).transform).localPosition = Vector3.zero
-  self._edgeObject = (self._edgeResRequest).Obj
+  self._edgeResRequest = ResourceManager:GetInstance():SyncLoadAsset("StorySliceHorizontalEdge.prefab", LoadType.GameObject)
+  self._edgeMaskObject = UnityEngine.GameObject.Instantiate(storyManager:GetMaskHorizontalTemplate(), rootGO.transform)
+  self._edgeMaskObject:SetActive(true)
+  self._edgeMaskObject.transform.localPosition = Vector3.zero
+  self._edgeObject = self._edgeResRequest.Obj
   if self._edgeObject then
-    ((self._edgeObject).transform):SetParent((self._edgeMaskObject).transform, false)
-    ;
-    (self._edgeObject):SetActive(true)
+    self._edgeObject.transform:SetParent(self._edgeMaskObject.transform, false)
+    self._edgeObject:SetActive(true)
   end
-  self._edgeImg = (self._edgeObject):GetComponent("RawImage")
-  self._edgeImgColor = (self._edgeImg).color
+  self._edgeImg = self._edgeObject:GetComponent("RawImage")
+  self._edgeImgColor = self._edgeImg.color
   if entityConfig.FitSize then
     local canvasRect = storyManager:GetCanvasRect()
     local picRect = gameObject:GetComponent("RectTransform")
     local targetWidth = canvasRect.width + 300
-    local targetHeight = (picRect.sizeDelta).y * targetWidth / (picRect.sizeDelta).x
+    local targetHeight = picRect.sizeDelta.y * targetWidth / picRect.sizeDelta.x
     picRect.sizeDelta = Vector2(targetWidth, targetHeight)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityPictureHorizontalEdge._TriggerKeyframe = function(self, keyframeData)
-  -- function num : 0_1 , upvalues : _ENV
-  ((StoryEntityPictureHorizontalEdge.super)._TriggerKeyframe)(self, keyframeData)
+function StoryEntityPictureHorizontalEdge:_TriggerKeyframe(keyframeData)
+  StoryEntityPictureHorizontalEdge.super._TriggerKeyframe(self, keyframeData)
   if keyframeData.SliceHeightScaleAnim then
     self._inScaling = true
-    ;
-    ((self._maskObject):GetComponent("Image")).enabled = true
-    ;
-    ((self._maskObject):GetComponent("Mask")).enabled = true
-    ;
-    ((self._edgeMaskObject):GetComponent("Image")).enabled = true
-    ;
-    ((self._edgeMaskObject):GetComponent("Mask")).enabled = true
-    self._scalingStartValue = (keyframeData.SliceHeightScaleAnim).StartValue
-    self._scalingEndValue = (keyframeData.SliceHeightScaleAnim).EndValue
-    self._scalingDuration = (keyframeData.SliceHeightScaleAnim).Duration
+    self._maskObject:GetComponent("Image").enabled = true
+    self._maskObject:GetComponent("Mask").enabled = true
+    self._edgeMaskObject:GetComponent("Image").enabled = true
+    self._edgeMaskObject:GetComponent("Mask").enabled = true
+    self._scalingStartValue = keyframeData.SliceHeightScaleAnim.StartValue
+    self._scalingEndValue = keyframeData.SliceHeightScaleAnim.EndValue
+    self._scalingDuration = keyframeData.SliceHeightScaleAnim.Duration
     self._scalingStartTime = keyframeData.Time
   end
   if keyframeData.SliceHeightScale then
@@ -95,203 +67,125 @@ StoryEntityPictureHorizontalEdge._TriggerKeyframe = function(self, keyframeData)
   end
   if keyframeData.Scroll ~= nil then
     self._inScrolling = true
-    self._scrollStartFromCover = (keyframeData.Scroll).StartFromCover
-    self._scrollType = StoryPictureScrollType[(keyframeData.Scroll).Toward]
+    self._scrollStartFromCover = keyframeData.Scroll.StartFromCover
+    self._scrollType = StoryPictureScrollType[keyframeData.Scroll.Toward]
     self._scrollStartTime = keyframeData.Time
-    self._scrollDuration = (keyframeData.Scroll).Duration
-    ;
-    ((self._maskObject):GetComponent("Image")).enabled = true
-    ;
-    ((self._maskObject):GetComponent("Mask")).enabled = true
-    ;
-    ((self._edgeMaskObject):GetComponent("Image")).enabled = true
-    ;
-    ((self._edgeMaskObject):GetComponent("Mask")).enabled = true
-    local maskRect = (self._maskObject):GetComponent("RectTransform")
-    local picRect = (self._picObject):GetComponent("RectTransform")
-    local edgeMaskRect = (self._edgeMaskObject):GetComponent("RectTransform")
-    local edgeImgRect = (self._edgeObject):GetComponent("RectTransform")
+    self._scrollDuration = keyframeData.Scroll.Duration
+    self._maskObject:GetComponent("Image").enabled = true
+    self._maskObject:GetComponent("Mask").enabled = true
+    self._edgeMaskObject:GetComponent("Image").enabled = true
+    self._edgeMaskObject:GetComponent("Mask").enabled = true
+    local maskRect = self._maskObject:GetComponent("RectTransform")
+    local picRect = self._picObject:GetComponent("RectTransform")
+    local edgeMaskRect = self._edgeMaskObject:GetComponent("RectTransform")
+    local edgeImgRect = self._edgeObject:GetComponent("RectTransform")
     edgeImgRect.sizeDelta = Vector2(self._edgeSliceHeight, self._edgeSliceWidth)
     if self._scrollStartFromCover then
       if self._scrollType == StoryPictureScrollType.LeftToRight or self._scrollType == StoryPictureScrollType.RightToLeft or self._scrollType == StoryPictureScrollType.HorizontalSpread then
         maskRect.sizeDelta = Vector2(0, self._sliceHeight)
         edgeMaskRect.sizeDelta = Vector2(self._edgeSliceHeight, 0)
-      else
-        if self._scrollType == StoryPictureScrollType.UpToDown or self._scrollType == StoryPictureScrollType.DownToUp or self._scrollType == StoryPictureScrollType.VerticalSpread then
-          maskRect.sizeDelta = Vector2(self._sliceWidth, 0)
-          edgeMaskRect.sizeDelta = Vector2(0, self._edgeSliceWidth)
-        else
-          if self._scrollType == StoryPictureScrollType.Spread then
-            maskRect.sizeDelta = Vector2.zero
-            edgeMaskRect.sizeDelta = Vector2.zero
-          end
-        end
+      elseif self._scrollType == StoryPictureScrollType.UpToDown or self._scrollType == StoryPictureScrollType.DownToUp or self._scrollType == StoryPictureScrollType.VerticalSpread then
+        maskRect.sizeDelta = Vector2(self._sliceWidth, 0)
+        edgeMaskRect.sizeDelta = Vector2(0, self._edgeSliceWidth)
+      elseif self._scrollType == StoryPictureScrollType.Spread then
+        maskRect.sizeDelta = Vector2.zero
+        edgeMaskRect.sizeDelta = Vector2.zero
       end
     else
       maskRect.sizeDelta = Vector2(self._sliceWidth, self._sliceHeight)
       edgeMaskRect.sizeDelta = Vector2(self._edgeSliceHeight, self._edgeSliceWidth)
     end
-    if (self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.LeftToRight) or not self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.RightToLeft then
+    if self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.LeftToRight or not self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.RightToLeft then
       maskRect.pivot = Vector2(0, 0.5)
-      -- DECOMPILER ERROR at PC220: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (maskRect.transform).localPosition = Vector3(-self._sliceWidth / 2, ((maskRect.transform).localPosition).y, ((maskRect.transform).localPosition).z)
+      maskRect.transform.localPosition = Vector3(-self._sliceWidth / 2, maskRect.transform.localPosition.y, maskRect.transform.localPosition.z)
       picRect.anchorMin = Vector2(0, 0.5)
       picRect.anchorMax = Vector2(0, 0.5)
-      -- DECOMPILER ERROR at PC243: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (picRect.transform).localPosition = Vector3((picRect.sizeDelta).x / 2, ((picRect.transform).localPosition).y, ((picRect.transform).localPosition).z)
+      picRect.transform.localPosition = Vector3(picRect.sizeDelta.x / 2, picRect.transform.localPosition.y, picRect.transform.localPosition.z)
       edgeMaskRect.pivot = Vector2(0.5, 1)
-      -- DECOMPILER ERROR at PC261: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (edgeMaskRect.transform).localPosition = Vector3(-self._edgeSliceWidth / 2, ((edgeMaskRect.transform).localPosition).y, ((edgeMaskRect.transform).localPosition).z)
+      edgeMaskRect.transform.localPosition = Vector3(-self._edgeSliceWidth / 2, edgeMaskRect.transform.localPosition.y, edgeMaskRect.transform.localPosition.z)
       edgeImgRect.anchorMin = Vector2(0.5, 1)
       edgeImgRect.anchorMax = Vector2(0.5, 1)
-      -- DECOMPILER ERROR at PC284: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (edgeImgRect.transform).localPosition = Vector3(((edgeImgRect.transform).localPosition).x, -self._edgeSliceWidth / 2, ((edgeImgRect.transform).localPosition).z)
-    else
-      if (self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.RightToLeft) or not self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.LeftToRight then
-        maskRect.pivot = Vector2(1, 0.5)
-        -- DECOMPILER ERROR at PC318: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (maskRect.transform).localPosition = Vector3(self._sliceWidth / 2, ((maskRect.transform).localPosition).y, ((maskRect.transform).localPosition).z)
-        picRect.anchorMin = Vector2(1, 0.5)
-        picRect.anchorMax = Vector2(1, 0.5)
-        -- DECOMPILER ERROR at PC342: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (picRect.transform).localPosition = Vector3(-(picRect.sizeDelta).x / 2, ((picRect.transform).localPosition).y, ((picRect.transform).localPosition).z)
-        edgeMaskRect.pivot = Vector2(0.5, 0)
-        -- DECOMPILER ERROR at PC359: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (edgeMaskRect.transform).localPosition = Vector3(self._edgeSliceWidth / 2, ((edgeMaskRect.transform).localPosition).y, ((edgeMaskRect.transform).localPosition).z)
-        edgeImgRect.anchorMin = Vector2(0.5, 0)
-        edgeImgRect.anchorMax = Vector2(0.5, 0)
-        -- DECOMPILER ERROR at PC381: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (edgeImgRect.transform).localPosition = Vector3(((edgeImgRect.transform).localPosition).x, self._edgeSliceWidth / 2, ((edgeImgRect.transform).localPosition).z)
-      else
-        if (self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.UpToDown) or not self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.DownToUp then
-          maskRect.pivot = Vector2(0.5, 1)
-          -- DECOMPILER ERROR at PC415: Confused about usage of register: R6 in 'UnsetPending'
-
-          ;
-          (maskRect.transform).localPosition = Vector3(((maskRect.transform).localPosition).x, self._sliceHeight / 2, ((maskRect.transform).localPosition).z)
-          picRect.anchorMin = Vector2(0.5, 1)
-          picRect.anchorMax = Vector2(0.5, 1)
-          -- DECOMPILER ERROR at PC439: Confused about usage of register: R6 in 'UnsetPending'
-
-          ;
-          (picRect.transform).localPosition = Vector3(((picRect.transform).localPosition).x, -(picRect.sizeDelta).y / 2, ((picRect.transform).localPosition).z)
-          edgeMaskRect.pivot = Vector2(1, 0.5)
-          -- DECOMPILER ERROR at PC456: Confused about usage of register: R6 in 'UnsetPending'
-
-          ;
-          (edgeMaskRect.transform).localPosition = Vector3(((edgeMaskRect.transform).localPosition).x, self._edgeSliceHeight / 2, ((edgeMaskRect.transform).localPosition).z)
-          edgeImgRect.anchorMin = Vector2(1, 0.5)
-          edgeImgRect.anchorMax = Vector2(1, 0.5)
-          -- DECOMPILER ERROR at PC479: Confused about usage of register: R6 in 'UnsetPending'
-
-          ;
-          (edgeImgRect.transform).localPosition = Vector3(-self._edgeSliceHeight / 2, ((edgeImgRect.transform).localPosition).y, ((edgeImgRect.transform).localPosition).z)
-        else
-          if (self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.DownToUp) or not self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.UpToDown then
-            maskRect.pivot = Vector2(0.5, 0)
-            -- DECOMPILER ERROR at PC514: Confused about usage of register: R6 in 'UnsetPending'
-
-            ;
-            (maskRect.transform).localPosition = Vector3(((maskRect.transform).localPosition).x, -self._sliceHeight / 2, ((maskRect.transform).localPosition).z)
-            picRect.anchorMin = Vector2(0.5, 0)
-            picRect.anchorMax = Vector2(0.5, 0)
-            -- DECOMPILER ERROR at PC537: Confused about usage of register: R6 in 'UnsetPending'
-
-            ;
-            (picRect.transform).localPosition = Vector3(((picRect.transform).localPosition).x, (picRect.sizeDelta).y / 2, ((picRect.transform).localPosition).z)
-            edgeMaskRect.pivot = Vector2(0, 0.5)
-            -- DECOMPILER ERROR at PC555: Confused about usage of register: R6 in 'UnsetPending'
-
-            ;
-            (edgeMaskRect.transform).localPosition = Vector3(((edgeMaskRect.transform).localPosition).x, -self._edgeSliceHeight / 2, ((edgeMaskRect.transform).localPosition).z)
-            edgeImgRect.anchorMin = Vector2(0, 0.5)
-            edgeImgRect.anchorMax = Vector2(0, 0.5)
-            -- DECOMPILER ERROR at PC578: Confused about usage of register: R6 in 'UnsetPending'
-
-            ;
-            (edgeImgRect.transform).localPosition = Vector3((edgeImgRect.sizeDelta).x / 2, ((edgeImgRect.transform).localPosition).y, ((edgeImgRect.transform).localPosition).z)
-          else
-          end
-        end
-      end
+      edgeImgRect.transform.localPosition = Vector3(edgeImgRect.transform.localPosition.x, -self._edgeSliceWidth / 2, edgeImgRect.transform.localPosition.z)
+    elseif self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.RightToLeft or not self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.LeftToRight then
+      maskRect.pivot = Vector2(1, 0.5)
+      maskRect.transform.localPosition = Vector3(self._sliceWidth / 2, maskRect.transform.localPosition.y, maskRect.transform.localPosition.z)
+      picRect.anchorMin = Vector2(1, 0.5)
+      picRect.anchorMax = Vector2(1, 0.5)
+      picRect.transform.localPosition = Vector3(-picRect.sizeDelta.x / 2, picRect.transform.localPosition.y, picRect.transform.localPosition.z)
+      edgeMaskRect.pivot = Vector2(0.5, 0)
+      edgeMaskRect.transform.localPosition = Vector3(self._edgeSliceWidth / 2, edgeMaskRect.transform.localPosition.y, edgeMaskRect.transform.localPosition.z)
+      edgeImgRect.anchorMin = Vector2(0.5, 0)
+      edgeImgRect.anchorMax = Vector2(0.5, 0)
+      edgeImgRect.transform.localPosition = Vector3(edgeImgRect.transform.localPosition.x, self._edgeSliceWidth / 2, edgeImgRect.transform.localPosition.z)
+    elseif self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.UpToDown or not self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.DownToUp then
+      maskRect.pivot = Vector2(0.5, 1)
+      maskRect.transform.localPosition = Vector3(maskRect.transform.localPosition.x, self._sliceHeight / 2, maskRect.transform.localPosition.z)
+      picRect.anchorMin = Vector2(0.5, 1)
+      picRect.anchorMax = Vector2(0.5, 1)
+      picRect.transform.localPosition = Vector3(picRect.transform.localPosition.x, -picRect.sizeDelta.y / 2, picRect.transform.localPosition.z)
+      edgeMaskRect.pivot = Vector2(1, 0.5)
+      edgeMaskRect.transform.localPosition = Vector3(edgeMaskRect.transform.localPosition.x, self._edgeSliceHeight / 2, edgeMaskRect.transform.localPosition.z)
+      edgeImgRect.anchorMin = Vector2(1, 0.5)
+      edgeImgRect.anchorMax = Vector2(1, 0.5)
+      edgeImgRect.transform.localPosition = Vector3(-self._edgeSliceHeight / 2, edgeImgRect.transform.localPosition.y, edgeImgRect.transform.localPosition.z)
+    elseif self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.DownToUp or not self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.UpToDown then
+      maskRect.pivot = Vector2(0.5, 0)
+      maskRect.transform.localPosition = Vector3(maskRect.transform.localPosition.x, -self._sliceHeight / 2, maskRect.transform.localPosition.z)
+      picRect.anchorMin = Vector2(0.5, 0)
+      picRect.anchorMax = Vector2(0.5, 0)
+      picRect.transform.localPosition = Vector3(picRect.transform.localPosition.x, picRect.sizeDelta.y / 2, picRect.transform.localPosition.z)
+      edgeMaskRect.pivot = Vector2(0, 0.5)
+      edgeMaskRect.transform.localPosition = Vector3(edgeMaskRect.transform.localPosition.x, -self._edgeSliceHeight / 2, edgeMaskRect.transform.localPosition.z)
+      edgeImgRect.anchorMin = Vector2(0, 0.5)
+      edgeImgRect.anchorMax = Vector2(0, 0.5)
+      edgeImgRect.transform.localPosition = Vector3(edgeImgRect.sizeDelta.x / 2, edgeImgRect.transform.localPosition.y, edgeImgRect.transform.localPosition.z)
+    elseif self._scrollType == StoryPictureScrollType.Spread then
+    elseif self._scrollType == StoryPictureScrollType.HorizontalSpread then
+    elseif self._scrollType == StoryPictureScrollType.VerticalSpread then
     end
   end
-  do
-    if (((self._scrollType ~= StoryPictureScrollType.Spread or self._scrollType == StoryPictureScrollType.HorizontalSpread) and self._scrollType ~= StoryPictureScrollType.VerticalSpread)) or keyframeData.FullScreen ~= nil then
-      if keyframeData.FullScreen then
-        local rectTrans = (self._picObject):GetComponent("RectTransform")
-        if rectTrans then
-          self:_SetPicFullScreen(rectTrans)
-        end
-      else
-        do
-          ;
-          (self._storyManager):SetUIBlackSideSize(0, 0)
-        end
+  if keyframeData.FullScreen ~= nil then
+    if keyframeData.FullScreen then
+      local rectTrans = self._picObject:GetComponent("RectTransform")
+      if rectTrans then
+        self:_SetPicFullScreen(rectTrans)
       end
+    else
+      self._storyManager:SetUIBlackSideSize(0, 0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityPictureHorizontalEdge._SetPicFullScreen = function(self, rectTrans)
-  -- function num : 0_2 , upvalues : _ENV
+function StoryEntityPictureHorizontalEdge:_SetPicFullScreen(rectTrans)
   local fullPicWidth = 2532
   local fullPicHeight = 1170
-  local screenWidth, screenHeight = (self._storyManager):GetUICanvasSize()
+  local screenWidth, screenHeight = self._storyManager:GetUICanvasSize()
   local picAspect = fullPicWidth / fullPicHeight
   local screenAspect = screenWidth / screenHeight
   local blackSideHeight = 0
   local blackSideWidth = 0
-  if screenAspect < picAspect then
+  if picAspect > screenAspect then
     local picHeight = fullPicHeight * screenWidth / fullPicWidth
     rectTrans.sizeDelta = Vector2(screenWidth, picHeight)
-    blackSideHeight = (math.abs)(screenHeight - picHeight) / 2
+    blackSideHeight = math.abs(screenHeight - picHeight) / 2
+  elseif picAspect < screenAspect then
+    local picWidth = fullPicWidth * screenHeight / fullPicHeight
+    rectTrans.sizeDelta = Vector2(picWidth, screenHeight)
+    blackSideWidth = math.abs(screenWidth - picWidth) / 2
   else
-    do
-      if picAspect < screenAspect then
-        local picWidth = fullPicWidth * screenHeight / fullPicHeight
-        rectTrans.sizeDelta = Vector2(picWidth, screenHeight)
-        blackSideWidth = (math.abs)(screenWidth - picWidth) / 2
-      else
-        do
-          rectTrans.sizeDelta = Vector2(screenWidth, screenHeight)
-          ;
-          (self._storyManager):SetUIBlackSideSize(blackSideWidth, blackSideHeight)
-        end
-      end
-    end
+    rectTrans.sizeDelta = Vector2(screenWidth, screenHeight)
   end
+  self._storyManager:SetUIBlackSideSize(blackSideWidth, blackSideHeight)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityPictureHorizontalEdge._UpdateAnimation = function(self, time)
-  -- function num : 0_3 , upvalues : _ENV
-  local res = ((StoryEntityPictureHorizontalEdge.super)._UpdateAnimation)(self, time)
+function StoryEntityPictureHorizontalEdge:_UpdateAnimation(time)
+  local res = StoryEntityPictureHorizontalEdge.super._UpdateAnimation(self, time)
   if self._inScrolling and self._scrollType then
     local t = 1
     if self._scrollDuration > 0 then
       t = (time - self._scrollStartTime) / self._scrollDuration
     end
-    if t > 1 then
+    if 1 < t then
       t = 1
     end
     local effectT = t
@@ -299,221 +193,127 @@ StoryEntityPictureHorizontalEdge._UpdateAnimation = function(self, time)
       effectT = 1 - effectT
     end
     if not self._maskRect then
-      self._maskRect = (self._maskObject):GetComponent("RectTransform")
+      self._maskRect = self._maskObject:GetComponent("RectTransform")
     end
     if not self._edgeMaskRect then
-      self._edgeMaskRect = (self._edgeMaskObject):GetComponent("RectTransform")
+      self._edgeMaskRect = self._edgeMaskObject:GetComponent("RectTransform")
     end
     if not self._edgeRect then
-      self._edgeRect = (self._edgeObject):GetComponent("RectTransform")
+      self._edgeRect = self._edgeObject:GetComponent("RectTransform")
     end
     if self._scrollType == StoryPictureScrollType.LeftToRight or self._scrollType == StoryPictureScrollType.RightToLeft or self._scrollType == StoryPictureScrollType.HorizontalSpread then
-      local deltaWidth = (lmathext.lerp)(0, self._edgeSliceWidth, effectT)
-      -- DECOMPILER ERROR at PC82: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._maskRect).sizeDelta = Vector2((math.min)(deltaWidth, self._sliceWidth), self._sliceHeight)
-      -- DECOMPILER ERROR at PC88: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._edgeMaskRect).sizeDelta = Vector2(self._edgeSliceHeight, deltaWidth)
-    else
-      do
-        if self._scrollType == StoryPictureScrollType.UpToDown or self._scrollType == StoryPictureScrollType.DownToUp or self._scrollType == StoryPictureScrollType.VerticalSpread then
-          local deltaMaskHeight = (lmathext.lerp)(0, self._sliceHeight, effectT)
-          local deltaEdgeHeight = (lmathext.lerp)(0, self._edgeSliceHeight, effectT)
-          if self._scrollType ~= StoryPictureScrollType.VerticalSpread then
-            deltaMaskHeight = (math.min)(deltaEdgeHeight, self._sliceHeight)
-          end
-          -- DECOMPILER ERROR at PC133: Confused about usage of register: R7 in 'UnsetPending'
-
-          ;
-          (self._maskRect).sizeDelta = Vector2(self._sliceWidth, deltaMaskHeight)
-          -- DECOMPILER ERROR at PC139: Confused about usage of register: R7 in 'UnsetPending'
-
-          ;
-          (self._edgeMaskRect).sizeDelta = Vector2(deltaEdgeHeight, self._edgeSliceWidth)
-          -- DECOMPILER ERROR at PC150: Confused about usage of register: R7 in 'UnsetPending'
-
-          if self._scrollType == StoryPictureScrollType.VerticalSpread then
-            (self._edgeRect).sizeDelta = Vector2(deltaEdgeHeight, self._edgeSliceWidth)
-          end
-        else
-          do
-            if self._scrollType == StoryPictureScrollType.Spread then
-              local deltaMaskWidth = (lmathext.lerp)(0, self._sliceWidth, effectT)
-              local deltaMaskHeight = (lmathext.lerp)(0, self._sliceHeight, effectT)
-              -- DECOMPILER ERROR at PC174: Confused about usage of register: R7 in 'UnsetPending'
-
-              ;
-              (self._maskRect).sizeDelta = Vector2(deltaMaskWidth, deltaMaskHeight)
-              local deltaEdgeWidth = (lmathext.lerp)(0, self._edgeSliceWidth, effectT)
-              local deltaEdgeHeight = (lmathext.lerp)(0, self._edgeSliceHeight, effectT)
-              -- DECOMPILER ERROR at PC192: Confused about usage of register: R9 in 'UnsetPending'
-
-              ;
-              (self._edgeMaskRect).sizeDelta = Vector2(deltaEdgeHeight, deltaEdgeWidth)
-              -- DECOMPILER ERROR at PC198: Confused about usage of register: R9 in 'UnsetPending'
-
-              ;
-              (self._edgeRect).sizeDelta = Vector2(deltaEdgeHeight, deltaEdgeWidth)
-            end
-            do
-              do
-                if t >= 1 then
-                  self._inScrolling = false
-                end
-                do return false end
-                if self._inScaling then
-                  local t = 1
-                  if self._scalingDuration > 0 then
-                    t = (time - self._scalingStartTime) / self._scalingDuration
-                  end
-                  if t > 1 then
-                    t = 1
-                  end
-                  if not self._maskRect then
-                    self._maskRect = (self._maskObject):GetComponent("RectTransform")
-                  end
-                  if not self._edgeMaskRect then
-                    self._edgeMaskRect = (self._edgeMaskObject):GetComponent("RectTransform")
-                  end
-                  if not self._edgeRect then
-                    self._edgeRect = (self._edgeObject):GetComponent("RectTransform")
-                  end
-                  self._sliceHeight = self._defaultSliceHeight * (lmathext.lerp)(self._scalingStartValue, self._scalingEndValue, t)
-                  -- DECOMPILER ERROR at PC257: Confused about usage of register: R4 in 'UnsetPending'
-
-                  ;
-                  (self._maskRect).sizeDelta = Vector2(self._sliceWidth, self._sliceHeight)
-                  self._edgeSliceHeight = self._defaultEdgeSliceHeight * (lmathext.lerp)(self._scalingStartValue, self._scalingEndValue, t)
-                  -- DECOMPILER ERROR at PC272: Confused about usage of register: R4 in 'UnsetPending'
-
-                  ;
-                  (self._edgeMaskRect).sizeDelta = Vector2(self._edgeSliceHeight, self._edgeSliceWidth)
-                  -- DECOMPILER ERROR at PC278: Confused about usage of register: R4 in 'UnsetPending'
-
-                  ;
-                  (self._edgeRect).sizeDelta = Vector2(self._edgeSliceHeight, self._edgeSliceWidth)
-                  if t >= 1 then
-                    self._inScaling = false
-                  end
-                  return false
-                else
-                  do
-                    do return res end
-                  end
-                end
-              end
-            end
-          end
-        end
+      local deltaWidth = lmathext.lerp(0, self._edgeSliceWidth, effectT)
+      self._maskRect.sizeDelta = Vector2(math.min(deltaWidth, self._sliceWidth), self._sliceHeight)
+      self._edgeMaskRect.sizeDelta = Vector2(self._edgeSliceHeight, deltaWidth)
+    elseif self._scrollType == StoryPictureScrollType.UpToDown or self._scrollType == StoryPictureScrollType.DownToUp or self._scrollType == StoryPictureScrollType.VerticalSpread then
+      local deltaMaskHeight = lmathext.lerp(0, self._sliceHeight, effectT)
+      local deltaEdgeHeight = lmathext.lerp(0, self._edgeSliceHeight, effectT)
+      if self._scrollType ~= StoryPictureScrollType.VerticalSpread then
+        deltaMaskHeight = math.min(deltaEdgeHeight, self._sliceHeight)
       end
+      self._maskRect.sizeDelta = Vector2(self._sliceWidth, deltaMaskHeight)
+      self._edgeMaskRect.sizeDelta = Vector2(deltaEdgeHeight, self._edgeSliceWidth)
+      if self._scrollType == StoryPictureScrollType.VerticalSpread then
+        self._edgeRect.sizeDelta = Vector2(deltaEdgeHeight, self._edgeSliceWidth)
+      end
+    elseif self._scrollType == StoryPictureScrollType.Spread then
+      local deltaMaskWidth = lmathext.lerp(0, self._sliceWidth, effectT)
+      local deltaMaskHeight = lmathext.lerp(0, self._sliceHeight, effectT)
+      self._maskRect.sizeDelta = Vector2(deltaMaskWidth, deltaMaskHeight)
+      local deltaEdgeWidth = lmathext.lerp(0, self._edgeSliceWidth, effectT)
+      local deltaEdgeHeight = lmathext.lerp(0, self._edgeSliceHeight, effectT)
+      self._edgeMaskRect.sizeDelta = Vector2(deltaEdgeHeight, deltaEdgeWidth)
+      self._edgeRect.sizeDelta = Vector2(deltaEdgeHeight, deltaEdgeWidth)
     end
+    if 1 <= t then
+      self._inScrolling = false
+    end
+    return false
+  elseif self._inScaling then
+    local t = 1
+    if 0 < self._scalingDuration then
+      t = (time - self._scalingStartTime) / self._scalingDuration
+    end
+    if 1 < t then
+      t = 1
+    end
+    if not self._maskRect then
+      self._maskRect = self._maskObject:GetComponent("RectTransform")
+    end
+    if not self._edgeMaskRect then
+      self._edgeMaskRect = self._edgeMaskObject:GetComponent("RectTransform")
+    end
+    if not self._edgeRect then
+      self._edgeRect = self._edgeObject:GetComponent("RectTransform")
+    end
+    self._sliceHeight = self._defaultSliceHeight * lmathext.lerp(self._scalingStartValue, self._scalingEndValue, t)
+    self._maskRect.sizeDelta = Vector2(self._sliceWidth, self._sliceHeight)
+    self._edgeSliceHeight = self._defaultEdgeSliceHeight * lmathext.lerp(self._scalingStartValue, self._scalingEndValue, t)
+    self._edgeMaskRect.sizeDelta = Vector2(self._edgeSliceHeight, self._edgeSliceWidth)
+    self._edgeRect.sizeDelta = Vector2(self._edgeSliceHeight, self._edgeSliceWidth)
+    if 1 <= t then
+      self._inScaling = false
+    end
+    return false
+  else
+    return res
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityPictureHorizontalEdge._SetAlpha = function(self, alpha)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._picColor).a = alpha
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._picCmp).color = self._picColor
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._edgeImgColor).a = alpha
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._edgeImg).color = self._edgeImgColor
+function StoryEntityPictureHorizontalEdge:_SetAlpha(alpha)
+  self._picColor.a = alpha
+  self._picCmp.color = self._picColor
+  self._edgeImgColor.a = alpha
+  self._edgeImg.color = self._edgeImgColor
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityPictureHorizontalEdge._SetBrightness = function(self, brightness)
-  -- function num : 0_5
-  (self._picColor):Set(brightness, brightness, brightness, (self._picColor).a)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._picCmp).color = self._picColor
-  ;
-  (self._edgeImgColor):Set(brightness, brightness, brightness, (self._edgeImgColor).a)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._edgeImg).color = self._edgeImgColor
+function StoryEntityPictureHorizontalEdge:_SetBrightness(brightness)
+  self._picColor:Set(brightness, brightness, brightness, self._picColor.a)
+  self._picCmp.color = self._picColor
+  self._edgeImgColor:Set(brightness, brightness, brightness, self._edgeImgColor.a)
+  self._edgeImg.color = self._edgeImgColor
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityPictureHorizontalEdge.Destroy = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((StoryEntityPictureHorizontalEdge.super).Destroy)(self)
+function StoryEntityPictureHorizontalEdge:Destroy()
+  StoryEntityPictureHorizontalEdge.super.Destroy(self)
   if self._edgeResRequest ~= nil then
-    (self._edgeResRequest):Dispose()
+    self._edgeResRequest:Dispose()
     self._edgeResRequest = nil
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityPictureHorizontalEdge._SetPicBlur = function(self, blurType, blurDirection, blur)
-  -- function num : 0_7 , upvalues : _ENV
+function StoryEntityPictureHorizontalEdge:_SetPicBlur(blurType, blurDirection, blur)
   blurType = blurType + 1
-  ;
-  ((self._picCmp).material):DisableKeyword("_BLUR_NONE")
-  ;
-  ((self._picCmp).material):DisableKeyword("_BLUR_GAUSSIAN")
-  ;
-  ((self._picCmp).material):DisableKeyword("_BLUR_RADIAL")
-  ;
-  ((self._picCmp).material):DisableKeyword("_BLUR_DIRECTIONAL")
+  self._picCmp.material:DisableKeyword("_BLUR_NONE")
+  self._picCmp.material:DisableKeyword("_BLUR_GAUSSIAN")
+  self._picCmp.material:DisableKeyword("_BLUR_RADIAL")
+  self._picCmp.material:DisableKeyword("_BLUR_DIRECTIONAL")
   if blurType == StoryPictureBlurType.None then
-    ((self._picCmp).material):EnableKeyword("_BLUR_NONE")
-    ;
-    ((self._picCmp).material):SetFloat("_BlurSize", 0)
+    self._picCmp.material:EnableKeyword("_BLUR_NONE")
+    self._picCmp.material:SetFloat("_BlurSize", 0)
+  elseif blurType == StoryPictureBlurType.RadialBlur then
+    self._picCmp.material:SetFloat("_BlurSize", blur)
   else
-    if blurType == StoryPictureBlurType.RadialBlur then
-      ((self._picCmp).material):SetFloat("_BlurSize", blur)
-    else
-      ;
-      ((self._picCmp).material):SetFloat("_BlurSize", blur * 5)
-    end
+    self._picCmp.material:SetFloat("_BlurSize", blur * 5)
   end
-  ;
-  ((self._picCmp).material):EnableKeyword("_BLUR_DIRECTIONAL")
+  self._picCmp.material:EnableKeyword("_BLUR_DIRECTIONAL")
   if blurType == StoryPictureBlurType.MotionBlur then
     if blurDirection == 0 then
-      ((self._picCmp).material):SetFloat("_DirectionalAngle", 90)
+      self._picCmp.material:SetFloat("_DirectionalAngle", 90)
     else
-      ;
-      ((self._picCmp).material):SetFloat("_DirectionalAngle", 180)
+      self._picCmp.material:SetFloat("_DirectionalAngle", 180)
     end
   end
   if blurType == StoryPictureBlurType.GaussianBlur then
-    ((self._picCmp).material):EnableKeyword("_BLUR_GAUSSIAN")
+    self._picCmp.material:EnableKeyword("_BLUR_GAUSSIAN")
   end
   if blurType == StoryPictureBlurType.RadialBlur then
-    ((self._picCmp).material):EnableKeyword("_BLUR_RADIAL")
-    ;
-    ((self._picCmp).material):SetFloat("_RadialCenterX", 0)
-    ;
-    ((self._picCmp).material):SetFloat("_RadialCenterY", 0)
+    self._picCmp.material:EnableKeyword("_BLUR_RADIAL")
+    self._picCmp.material:SetFloat("_RadialCenterX", 0)
+    self._picCmp.material:SetFloat("_RadialCenterY", 0)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityPictureHorizontalEdge.GetMaterial = function(self)
-  -- function num : 0_8
-  return (self._picCmp).material
+function StoryEntityPictureHorizontalEdge:GetMaterial()
+  return self._picCmp.material
 end
-
-

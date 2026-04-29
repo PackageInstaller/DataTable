@@ -1,86 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/components/ui/monitor/ui_monitor_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMonitorController", UIController)
 UIMonitorController = UIMonitorController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMonitorController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIMonitorController:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnCloseOnClick = function(self, go)
-  -- function num : 0_1
+function UIMonitorController:btnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnResLeakOnClick = function(self, go)
-  -- function num : 0_2
+function UIMonitorController:btnResLeakOnClick(go)
   self:ShowDialog("UIResLeak")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnGameStatusOnClick = function(self, go)
-  -- function num : 0_3
+function UIMonitorController:btnGameStatusOnClick(go)
   self:ShowDialog("UIGameStatus")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnAbLoadTimeOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  local path = (Monitor:GetInstance()):ABLoadTimes()
+function UIMonitorController:btnAbLoadTimeOnClick(go)
+  local path = Monitor:GetInstance():ABLoadTimes()
   if not path then
-    return 
+    return
   end
   local content = "ab加载时间，记录成功！\n保存路径：" .. path
   self:ShowDialog("UIGameStatus", "ab加载时间统计", content)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnAssetLoadTimeOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  local path = (Monitor:GetInstance()):AssetLoadTimes()
+function UIMonitorController:btnAssetLoadTimeOnClick(go)
+  local path = Monitor:GetInstance():AssetLoadTimes()
   if not path then
-    return 
+    return
   end
   local content = "asset加载时间，记录成功！\n保存路径：" .. path
   self:ShowDialog("UIGameStatus", "asset加载时间统计", content)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnGameObjectLoadTimeOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  local path = (Monitor:GetInstance()):GameObjectLoadTimes()
+function UIMonitorController:btnGameObjectLoadTimeOnClick(go)
+  local path = Monitor:GetInstance():GameObjectLoadTimes()
   if not path then
-    return 
+    return
   end
   local content = "gameobject加载时间，记录成功！\n保存路径：" .. path
   self:ShowDialog("UIGameStatus", "gameobject加载时间统计", content)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnBigTableOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "提示", "此操作会造成严重卡顿，卡顿时间非常久。是否确定执行此操作", function()
-    -- function num : 0_7_0 , upvalues : _ENV, self
-    (Log.error)("-----------------打印大表--------------------------")
-    local paths, tbs = (debug.findexceedtb)()
-    for k,n in next do
-      if not (string.find)(k, "conf.lua") then
+function UIMonitorController:btnBigTableOnClick(go)
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "提示", "此操作会造成严重卡顿，卡顿时间非常久。是否确定执行此操作", function()
+    Log.error("-----------------打印大表--------------------------")
+    local paths, tbs = debug.findexceedtb()
+    for k, n in next, paths, nil do
+      if not string.find(k, "conf.lua") then
         local tb = tbs[k]
-        local strs = {"[exceed]", k, "\n"}
-        for k2,v2 in next do
+        local strs = {
+          "[exceed]",
+          k,
+          "\n"
+        }
+        for k2, v2 in next, tb, nil do
           strs[#strs + 1] = tostring(k2)
           strs[#strs + 1] = tostring("=")
           strs[#strs + 1] = tostring(v2)
@@ -88,116 +63,76 @@ UIMonitorController.btnBigTableOnClick = function(self, go)
         end
       end
     end
-    local log = (table.tostr)(paths)
-    local dir = (string.format)("%sAssetMemoryProfileOutput/", App.StoragePath)
-    local file = dir .. (string.format)("BigTab_%s.txt", TimeToDate2(_now()))
-    ;
-    (Monitor:GetInstance()):WriteToFile(dir, file, log)
+    local log = table.tostr(paths)
+    local dir = string.format("%sAssetMemoryProfileOutput/", App.StoragePath)
+    local file = dir .. string.format("BigTab_%s.txt", TimeToDate2(_now()))
+    Monitor:GetInstance():WriteToFile(dir, file, log)
     local content = "打印大表成功！\n保存路径：" .. file
     self:ShowDialog("UIGameStatus", "打印大表", content)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnAbDistributeOnClick = function(self, go)
-  -- function num : 0_8
+function UIMonitorController:btnAbDistributeOnClick(go)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnFindAssetOnClick = function(self, go)
-  -- function num : 0_9
+function UIMonitorController:btnFindAssetOnClick(go)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnMutilFuncOnClick = function(self, go)
-  -- function num : 0_10
+function UIMonitorController:btnMutilFuncOnClick(go)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnPrintNullOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  local path = (Monitor:GetInstance()):NullObjectPrint()
+function UIMonitorController:btnPrintNullOnClick(go)
+  local path = Monitor:GetInstance():NullObjectPrint()
   if not path then
-    return 
+    return
   end
   local content = "打印null对象成功！\n保存路径：" .. path
   self:ShowDialog("UIGameStatus", "打印null对象", content)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnCPrintNullOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  local path = (Monitor:GetInstance()):CNullObjectPrint()
+function UIMonitorController:btnCPrintNullOnClick(go)
+  local path = Monitor:GetInstance():CNullObjectPrint()
   if not path then
-    return 
+    return
   end
   local content = "C#打印null对象成功！\n保存路径：" .. path
   self:ShowDialog("UIGameStatus", "C#打印null对象", content)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnPrintAbsOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  local path = (Monitor:GetInstance()):AllAbsPrint()
+function UIMonitorController:btnPrintAbsOnClick(go)
+  local path = Monitor:GetInstance():AllAbsPrint()
   if not path then
-    return 
+    return
   end
   local content = "打印所有加载的ab成功！\n保存路径：" .. path
   self:ShowDialog("UIGameStatus", "打印所有加载的ab", content)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnPrintAbLeaksOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
-  local path = (Monitor:GetInstance()):AbLeaksPrint()
+function UIMonitorController:btnPrintAbLeaksOnClick(go)
+  local path = Monitor:GetInstance():AbLeaksPrint()
   if not path then
     self:ShowDialog("UIGameStatus", "无ab泄露")
-    return 
+    return
   end
   local content = "打印泄露的ab成功！\n保存路径：" .. path
   self:ShowDialog("UIGameStatus", "打印泄露的ab", content)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnGCOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  (Monitor:GetInstance()):GC()
+function UIMonitorController:btnGCOnClick(go)
+  Monitor:GetInstance():GC()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnLuaObjLeakOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
-  (Monitor:GetInstance()):Profile()
+function UIMonitorController:btnLuaObjLeakOnClick(go)
+  Monitor:GetInstance():Profile()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnLuaLeakOnClick = function(self, go)
-  -- function num : 0_17
+function UIMonitorController:btnLuaLeakOnClick(go)
   self:ShowDialog("UILuaLeak")
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnUnloadAllOnClick = function(self, go)
-  -- function num : 0_18 , upvalues : _ENV
-  (Monitor:GetInstance()):DisposeAll()
+function UIMonitorController:btnUnloadAllOnClick(go)
+  Monitor:GetInstance():DisposeAll()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonitorController.btnUnloadImpOnClick = function(self, go)
-  -- function num : 0_19
+function UIMonitorController:btnUnloadImpOnClick(go)
 end
-
-

@@ -1,70 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n33_eight_pets.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignN33EightPetsMission", ICampaignComponentLocalProcessBase)
 CCampaignN33EightPetsMission = CCampaignN33EightPetsMission
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignN33EightPetsMission.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignN33EightPetsMission:Constructor()
   self._eightPetsMissionComponent = nil
   self._eightPetsMissionComponentInfo = nil
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN33EightPetsMission.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignN33EightPetsMission:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N33_EIGHT_PETS
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN33EightPetsMission.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignN33EightPetsMission:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN33EightPetsMission.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignN33EightPetsMission:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetEightPetsMissionComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN33EightPetsMission._GetEightPetsMissionComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._eightPetsMissionComponent = (self._campaignObj):GetComponent(ECampaignN33EightPetsMissionComponentID.ECAMPAIGN_N33_Eight_Pets_MISSION)
+function CCampaignN33EightPetsMission:_GetEightPetsMissionComponent()
+  self._eightPetsMissionComponent = self._campaignObj:GetComponent(ECampaignN33EightPetsMissionComponentID.ECAMPAIGN_N33_Eight_Pets_MISSION)
   if not self._eightPetsMissionComponent then
-    return 
+    return
   end
-  self._eightPetsMissionComponentInfo = (self._eightPetsMissionComponent):ComponentInfo()
+  self._eightPetsMissionComponentInfo = self._eightPetsMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN33EightPetsMission.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CCampaignN33EightPetsMission:GetComponent(componentID)
   if ECampaignN33EightPetsMissionComponentID.ECAMPAIGN_N33_Eight_Pets_MISSION == componentID then
     return self._eightPetsMissionComponent
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN33EightPetsMission.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignN33EightPetsMission:GetComponentInfo(componentID)
   if ECampaignN33EightPetsMissionComponentID.ECAMPAIGN_N33_Eight_Pets_MISSION == componentID then
     return self._eightPetsMissionComponentInfo
   end
   return nil
 end
-
-

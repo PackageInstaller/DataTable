@@ -1,47 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_grid_flush_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayGridFlushInstruction", BaseInstruction)
 PlayGridFlushInstruction = PlayGridFlushInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayGridFlushInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayGridFlushInstruction:Constructor(paramList)
   self.flushDelayTime = tonumber(paramList.flushDelayTime)
   self.layerDelatTime = tonumber(paramList.layerDelayTime)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridFlushInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local scope = (((casterEntity:SkillRoutine()):GetResultContainer()):GetScopeResult()):GetWholeGridRange()
+function PlayGridFlushInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local scope = casterEntity:SkillRoutine():GetResultContainer():GetScopeResult():GetWholeGridRange()
   local world = casterEntity:GetOwnerWorld()
   local utilData = world:GetService("UtilData")
   local maxLen = utilData:GetCurBoardMaxLen()
   local center = Vector2(5, 5)
   local edges = {
-[1] = {origin = Vector2(-1, 1), dir = Vector2(1, 0)}
-, 
-[2] = {origin = Vector2(1, 1), dir = Vector2(0, -1)}
-, 
-[3] = {origin = Vector2(1, -1), dir = Vector2(-1, 0)}
-, 
-[4] = {origin = Vector2(-1, -1), dir = Vector2(0, 1)}
-}
+    [1] = {
+      origin = Vector2(-1, 1),
+      dir = Vector2(1, 0)
+    },
+    [2] = {
+      origin = Vector2(1, 1),
+      dir = Vector2(0, -1)
+    },
+    [3] = {
+      origin = Vector2(1, -1),
+      dir = Vector2(-1, 0)
+    },
+    [4] = {
+      origin = Vector2(-1, -1),
+      dir = Vector2(0, 1)
+    }
+  }
   local waitTasks = {}
   local layers = {}
   layers[1] = {center}
   for i = 6, maxLen do
     local grids = {}
     local layer = i - 5
-    for _,edge in ipairs(edges) do
+    for _, edge in ipairs(edges) do
       local start = edge.origin * layer + center
       for j = 1, layer * 2 do
         local pos = start + (j - 1) * edge.dir
-        if (table.icontains)(scope, pos) then
+        if table.icontains(scope, pos) then
           grids[#grids + 1] = pos
         end
       end
@@ -51,30 +50,23 @@ PlayGridFlushInstruction.DoInstruction = function(self, TT, casterEntity, phaseC
   for i = 1, #layers do
     local grids = layers[i]
     local waitTime = (i - 1) * self.layerDelatTime
-    waitTasks[#waitTasks + 1] = ((GameGlobal.TaskManager)()):CoreGameStartTask(self.FlushGrids, self, waitTime, casterEntity, grids)
+    waitTasks[#waitTasks + 1] = GameGlobal.TaskManager():CoreGameStartTask(self.FlushGrids, self, waitTime, casterEntity, grids)
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(waitTasks) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(waitTasks) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridFlushInstruction.FlushGrids = function(self, TT, delay, casterEntity, grids)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayGridFlushInstruction:FlushGrids(TT, delay, casterEntity, grids)
   local world = casterEntity:GetOwnerWorld()
   local pieceService = world:GetService("Piece")
   YIELD(TT, delay)
-  for _,grid in ipairs(grids) do
+  for _, grid in ipairs(grids) do
     pieceService:SetPieceAnimMoveDone(grid)
   end
   YIELD(TT, self.flushDelayTime)
   local playSkillInstructionService = world:GetService("PlaySkillInstruction")
-  for _,grid in ipairs(grids) do
+  for _, grid in ipairs(grids) do
     playSkillInstructionService:GridConvert(TT, casterEntity, grid, SkillEffectType.ResetGridElement, nil)
   end
 end
-
-

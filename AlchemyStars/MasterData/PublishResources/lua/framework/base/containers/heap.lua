@@ -1,119 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/containers/heap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local floor = math.floor
 _class("Heap", Object)
 Heap = Heap
--- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
 Heap.CPM_CUSTOM = 1
--- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
 Heap.CPM_GREATER = 2
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
 Heap.CPM_LESS = 3
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-Heap.Constructor = function(self, cpm, comparer)
-  -- function num : 0_0 , upvalues : _ENV
+function Heap:Constructor(cpm, comparer)
   self.array = {}
   self.size = 0
   self.item_ever_enqueued = 0
   if cpm == Heap.CPM_CUSTOM then
     self.CheckPriority = Heap.CheckPriorityByComparer
     self.comparer = comparer
+  elseif cpm == Heap.CPM_GREATER then
+    self.CheckPriority = Heap.CheckPriorityByGreater
+  elseif cpm == Heap.CPM_LESS then
+    self.CheckPriority = Heap.CheckPriorityByLess
   else
-    if cpm == Heap.CPM_GREATER then
-      self.CheckPriority = Heap.CheckPriorityByGreater
-    else
-      if cpm == Heap.CPM_LESS then
-        self.CheckPriority = Heap.CheckPriorityByLess
-      else
-        self.CheckPriority = Heap.CheckPriorityByGreater
-      end
-    end
+    self.CheckPriority = Heap.CheckPriorityByGreater
   end
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.BuildHeapPriorityQueue = function(self)
-  -- function num : 0_1 , upvalues : floor
+function Heap:BuildHeapPriorityQueue()
   local last_parent = floor(self.size * 0.5)
   for hi = last_parent, 1, -1 do
     self:CascadeDown(hi)
   end
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.Clear = function(self)
-  -- function num : 0_2
+function Heap:Clear()
   self.array = {}
   self.size = 0
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.Size = function(self)
-  -- function num : 0_3
+function Heap:Size()
   return self.size
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.Empty = function(self)
-  -- function num : 0_4
-  do return self.size == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Heap:Empty()
+  return self.size == 0
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.Peek = function(self)
-  -- function num : 0_5
+function Heap:Peek()
   if self.size > 0 then
-    return (self.array)[1]
+    return self.array[1]
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.GetAt = function(self, hi)
-  -- function num : 0_6
-  if hi > 0 and hi <= self.size then
-    return (self.array)[hi]
+function Heap:GetAt(hi)
+  if 0 < hi and hi <= self.size then
+    return self.array[hi]
   end
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.Contains = function(self, item)
-  -- function num : 0_7
+function Heap:Contains(item)
   local hi = item._heap_index
-  if hi and hi > 0 then
+  if hi and 0 < hi then
     return true
   end
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.Enqueue = function(self, item)
-  -- function num : 0_8
+function Heap:Enqueue(item)
   local hi = item._heap_index
-  if hi and hi > 0 then
+  if hi and 0 < hi then
     self:UpdatePriorityByIndex(hi)
-    return 
+    return
   end
   hi = self.size + 1
   self.size = hi
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.array)[hi] = item
+  self.array[hi] = item
   item._heap_index = hi
   local ii = self.item_ever_enqueued + 1
   self.item_ever_enqueued = ii
@@ -121,115 +76,76 @@ Heap.Enqueue = function(self, item)
   self:CascadeUp(hi)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.Dequeue = function(self)
-  -- function num : 0_9
+function Heap:Dequeue()
   local size = self.size
   if size == 0 then
-    return 
+    return
   end
-  local item = (self.array)[1]
+  local item = self.array[1]
   item._heap_index = -1
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
   if size == 1 then
-    (self.array)[1] = nil
+    self.array[1] = nil
     self.size = 0
   else
-    local temp = (self.array)[size]
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.array)[1] = temp
+    local temp = self.array[size]
+    self.array[1] = temp
     temp._heap_index = 1
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.array)[size] = nil
+    self.array[size] = nil
     self.size = size - 1
     self:CascadeDown(1)
   end
-  do
-    return item
-  end
+  return item
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.UpdatePriority = function(self, item)
-  -- function num : 0_10
+function Heap:UpdatePriority(item)
   local hi = item._heap_index
-  if hi and hi > 0 then
+  if hi and 0 < hi then
     self:UpdatePriorityByIndex(hi)
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.UpdatePriorityByIndex = function(self, hi)
-  -- function num : 0_11 , upvalues : floor
-  if hi < 1 or self.size < hi then
-    return 
+function Heap:UpdatePriorityByIndex(hi)
+  if hi < 1 or hi > self.size then
+    return
   end
   local parent = floor(hi * 0.5)
-  if parent > 0 and self:CheckPriority((self.array)[hi], (self.array)[parent]) then
+  if 0 < parent and self:CheckPriority(self.array[hi], self.array[parent]) then
     self:CascadeUp(hi)
   else
     self:CascadeDown(hi)
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.Remove = function(self, item)
-  -- function num : 0_12
+function Heap:Remove(item)
   local hi = item._heap_index
-  if hi and hi > 0 then
+  if hi and 0 < hi then
     self:RemoveByIndex(hi)
   end
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.RemoveByIndex = function(self, hi)
-  -- function num : 0_13 , upvalues : _ENV
-  if hi < 1 or self.size < hi then
-    (Log.error)("Heap:RemoveByIndex error index ", hi, self.size, (Log.traceback)())
-    return 
+function Heap:RemoveByIndex(hi)
+  if hi < 1 or hi > self.size then
+    Log.error("Heap:RemoveByIndex error index ", hi, self.size, Log.traceback())
+    return
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self.array)[hi])._heap_index = -1
+  self.array[hi]._heap_index = -1
   local size = self.size
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
   if hi == size then
-    (self.array)[hi] = nil
+    self.array[hi] = nil
     self.size = size - 1
   else
-    local temp = (self.array)[size]
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.array)[hi] = temp
+    local temp = self.array[size]
+    self.array[hi] = temp
     temp._heap_index = hi
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.array)[size] = nil
+    self.array[size] = nil
     self.size = size - 1
     self:UpdatePriorityByIndex(hi)
   end
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.Check = function(self, must_less_priority_than_this)
-  -- function num : 0_14 , upvalues : floor
+function Heap:Check(must_less_priority_than_this)
   for hi = 1, #self.array do
-    local item = (self.array)[hi]
+    local item = self.array[hi]
     if item._heap_index ~= hi then
       return false
     end
@@ -237,8 +153,8 @@ Heap.Check = function(self, must_less_priority_than_this)
       return false
     end
     local pi = floor(hi * 0.5)
-    if pi > 0 then
-      local parent = (self.array)[pi]
+    if 0 < pi then
+      local parent = self.array[pi]
       if self:CheckPriority(item, parent) then
         return false
       end
@@ -247,112 +163,75 @@ Heap.Check = function(self, must_less_priority_than_this)
   return true
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.Swap = function(self, i, j)
-  -- function num : 0_15
-  local item_i = (self.array)[i]
-  local item_j = (self.array)[j]
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.array)[i] = item_j
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.array)[j] = item_i
+function Heap:Swap(i, j)
+  local item_i = self.array[i]
+  local item_j = self.array[j]
+  self.array[i] = item_j
+  self.array[j] = item_i
   item_i._heap_index = j
   item_j._heap_index = i
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.CascadeUp = function(self, hi)
-  -- function num : 0_16 , upvalues : floor
+function Heap:CascadeUp(hi)
   local parent = floor(hi * 0.5)
-  while 1 do
-    while parent > 0 and self:CheckPriority((self.array)[hi], (self.array)[parent]) do
+  while 0 < parent do
+    if self:CheckPriority(self.array[hi], self.array[parent]) then
       self:Swap(hi, parent)
       hi = parent
       parent = floor(hi * 0.5)
+    else
+      break
     end
-    break
   end
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.CascadeDown = function(self, hi)
-  -- function num : 0_17
-  local l, r = nil, nil
+function Heap:CascadeDown(hi)
+  local l, r
   local largest = hi
-  while 1 do
+  while true do
     l = 2 * hi
     r = 2 * hi + 1
-    if l <= self.size and self:CheckPriority((self.array)[l], (self.array)[largest]) then
+    if l <= self.size and self:CheckPriority(self.array[l], self.array[largest]) then
       largest = l
     end
-    if r <= self.size and self:CheckPriority((self.array)[r], (self.array)[largest]) then
+    if r <= self.size and self:CheckPriority(self.array[r], self.array[largest]) then
       largest = r
     end
-    if largest ~= hi then
-      self:Swap(hi, largest)
-      hi = largest
-      -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-      -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out IF_STMT
-
+    if largest == hi then
+      break
     end
+    self:Swap(hi, largest)
+    hi = largest
   end
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.CheckPriorityByGreater = function(self, higher, lower)
-  -- function num : 0_18
+function Heap:CheckPriorityByGreater(higher, lower)
   if lower < higher then
     return true
+  elseif higher < lower then
+    return false
   else
-    if higher < lower then
-      return false
-    else
-      return higher._insertion_index < lower._insertion_index
-    end
+    return higher._insertion_index < lower._insertion_index
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.CheckPriorityByLess = function(self, higher, lower)
-  -- function num : 0_19
+function Heap:CheckPriorityByLess(higher, lower)
   if higher < lower then
     return true
+  elseif lower < higher then
+    return false
   else
-    if lower < higher then
-      return false
-    else
-      return higher._insertion_index < lower._insertion_index
-    end
+    return higher._insertion_index < lower._insertion_index
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-Heap.CheckPriorityByComparer = function(self, higher, lower)
-  -- function num : 0_20
-  local result = (self.comparer)(higher, lower)
-  if result > 0 then
+function Heap:CheckPriorityByComparer(higher, lower)
+  local result = self.comparer(higher, lower)
+  if 0 < result then
     return true
+  elseif result < 0 then
+    return false
   else
-    if result < 0 then
-      return false
-    else
-      return higher._insertion_index < lower._insertion_index
-    end
+    return higher._insertion_index < lower._insertion_index
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
-
-

@@ -1,61 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_shader_set_global_float_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayShaderSetGlobalFloatInstruction", BaseInstruction)
 PlayShaderSetGlobalFloatInstruction = PlayShaderSetGlobalFloatInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayShaderSetGlobalFloatInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayShaderSetGlobalFloatInstruction:Constructor(paramList)
   self._paramName = paramList.paramName
   self._value = tonumber(paramList.value) or 0
   self._duration = tonumber(paramList.duration)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayShaderSetGlobalFloatInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayShaderSetGlobalFloatInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if self._duration and self._duration > 0 then
     local duration = self._duration * 0.001
-    do
-      local baseValue = ((UnityEngine.Shader).GetGlobalFloat)(self._paramName)
-      if baseValue == self._value then
-        return 
-      end
-      local factor = 0
-      if baseValue < self._value then
-        factor = 1
-      else
-        if self._value < baseValue then
-          factor = -1
-        end
-      end
-      local runTime = 0
-      ;
-      ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : runTime, duration, _ENV, baseValue, factor, self
-    while runTime <= duration do
-      runTime = runTime + (UnityEngine.Time).deltaTime
-      local timePercent = runTime / duration
-      local newValue = baseValue + timePercent * factor * (math.abs)(baseValue - self._value)
-      newValue = (Mathf.Clamp)(timePercent, newValue, self._value)
-      ;
-      ((UnityEngine.Shader).SetGlobalFloat)(self._paramName, newValue)
-      YIELD(TT)
+    local baseValue = UnityEngine.Shader.GetGlobalFloat(self._paramName)
+    if baseValue == self._value then
+      return
     end
-  end
-)
+    local factor = 0
+    if baseValue < self._value then
+      factor = 1
+    elseif baseValue > self._value then
+      factor = -1
     end
+    local runTime = 0
+    GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      while runTime <= duration do
+        runTime = runTime + UnityEngine.Time.deltaTime
+        local timePercent = runTime / duration
+        local newValue = baseValue + timePercent * factor * math.abs(baseValue - self._value)
+        newValue = Mathf.Clamp(timePercent, newValue, self._value)
+        UnityEngine.Shader.SetGlobalFloat(self._paramName, newValue)
+        YIELD(TT)
+      end
+    end)
   else
-    do
-      ;
-      ((UnityEngine.Shader).SetGlobalFloat)(self._paramName, self._value)
-    end
+    UnityEngine.Shader.SetGlobalFloat(self._paramName, self._value)
   end
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_2802901_laser_damage_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("Play2802901LaserDamageInstruction", BaseInstruction)
 Play2802901LaserDamageInstruction = Play2802901LaserDamageInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Play2802901LaserDamageInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function Play2802901LaserDamageInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._hitEffectID = tonumber(paramList.hitEffectID)
   self._startWaitTime = tonumber(paramList.startWaitTime) or 1000
@@ -17,12 +10,9 @@ Play2802901LaserDamageInstruction.Constructor = function(self, paramList)
   self._endtWaitTime = tonumber(paramList.endtWaitTime) or 1000
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Play2802901LaserDamageInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function Play2802901LaserDamageInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local damageResults1 = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, 1)
   local damageResults2 = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, 2)
@@ -33,105 +23,64 @@ Play2802901LaserDamageInstruction.DoInstruction = function(self, TT, casterEntit
   local gridPosStart2 = Vector2(1, 1)
   local gridPosList1 = {}
   local gridPosList2 = {}
-  for _,pos in pairs(attackRange) do
-    do
-      if pos.y == gridPosStart1.y then
-        (table.insert)(gridPosList1, pos)
-      end
-      if pos.x == gridPosStart2.x then
-        do
-          (table.insert)(gridPosList2, pos)
-          -- DECOMPILER ERROR at PC58: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC58: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  for _, pos in pairs(attackRange) do
+    if pos.y == gridPosStart1.y then
+      table.insert(gridPosList1, pos)
+    end
+    if pos.x == gridPosStart2.x then
+      table.insert(gridPosList2, pos)
     end
   end
-  if damageResults1 and (table.count)(damageResults1) > 0 then
-    for _,result in pairs(damageResults1) do
+  if damageResults1 and table.count(damageResults1) > 0 then
+    for _, result in pairs(damageResults1) do
       local targetEntityID = result:GetTargetID()
       local targetEntity = world:GetEntityByID(targetEntityID)
       local pos = result:GetGridPos()
-      if targetEntity and (table.icontains)(gridPosList1, pos) then
-        ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, pos, gridPosStart1, self, result, casterEntity, targetEntity
-    local hitTime = (Vector2.Distance)(pos, gridPosStart1) * self._oneGridTime
-    YIELD(TT, hitTime)
-    local targetDamage = result:GetDamageInfo(1)
-    self:_PlayAttackOnPos(TT, casterEntity, pos, targetEntity, targetDamage)
-  end
-)
+      if targetEntity and table.icontains(gridPosList1, pos) then
+        GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+          local hitTime = Vector2.Distance(pos, gridPosStart1) * self._oneGridTime
+          YIELD(TT, hitTime)
+          local targetDamage = result:GetDamageInfo(1)
+          self:_PlayAttackOnPos(TT, casterEntity, pos, targetEntity, targetDamage)
+        end)
       end
     end
   end
-  do
-    if damageResults2 and (table.count)(damageResults2) > 0 then
-      for _,result in pairs(damageResults2) do
-        local l_0_1_30, _, result = nil
-        l_0_1_30, _ = l_0_1_29:GetTargetID, l_0_1_29
-        l_0_1_30 = l_0_1_30(_)
-        local targetEntityID = nil
-        _, result = world:GetEntityByID, world
-        targetEntityID = l_0_1_30
-        _ = _(result, targetEntityID)
-        local targetEntity = nil
-        result, targetEntityID = l_0_1_29:GetGridPos, l_0_1_29
-        result = result(targetEntityID)
-        local pos = nil
-        if _ then
-          targetEntityID = table
-          targetEntityID = targetEntityID.icontains
-          targetEntity = gridPosList2
-          pos = result
-          targetEntityID = targetEntityID(targetEntity, pos)
-          if targetEntityID then
-            targetEntityID = GameGlobal
-            targetEntityID = targetEntityID.TaskManager
-            targetEntityID = targetEntityID()
-            targetEntityID, targetEntity = targetEntityID:CoreGameStartTask, targetEntityID
-            pos = function(TT)
-    -- function num : 0_1_1 , upvalues : _ENV, pos, gridPosStart2, self, result, casterEntity, targetEntity
-    local hitTime = (Vector2.Distance)(pos, gridPosStart2) * self._oneGridTime
-    YIELD(TT, hitTime)
-    local targetDamage = result:GetDamageInfo(1)
-    self:_PlayAttackOnPos(TT, casterEntity, pos, targetEntity, targetDamage)
-  end
-
-            targetEntityID(targetEntity, pos)
-          end
-        end
+  if damageResults2 and table.count(damageResults2) > 0 then
+    for _, result in pairs(damageResults2) do
+      local targetEntityID = result:GetTargetID()
+      local targetEntity = world:GetEntityByID(targetEntityID)
+      local pos = result:GetGridPos()
+      if targetEntity and table.icontains(gridPosList2, pos) then
+        GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+          local hitTime = Vector2.Distance(pos, gridPosStart2) * self._oneGridTime
+          YIELD(TT, hitTime)
+          local targetDamage = result:GetDamageInfo(1)
+          self:_PlayAttackOnPos(TT, casterEntity, pos, targetEntity, targetDamage)
+        end)
       end
     end
-    do
-      YIELD(TT, self._endtWaitTime)
-    end
   end
+  YIELD(TT, self._endtWaitTime)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Play2802901LaserDamageInstruction._PlayAttackOnPos = function(self, TT, casterEntity, pos, targetEntity, targetDamage)
-  -- function num : 0_2 , upvalues : _ENV
+function Play2802901LaserDamageInstruction:_PlayAttackOnPos(TT, casterEntity, pos, targetEntity, targetDamage)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local isFinalAttack = false
-  local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName("Hit")):SetHandleBeHitParam_HitEffectID(self._hitEffectID)):SetHandleBeHitParam_DamageInfo(targetDamage)):SetHandleBeHitParam_DamagePos(pos)):SetHandleBeHitParam_HitTurnTarget(TurnToTargetType.Caster)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(isFinalAttack)):SetHandleBeHitParam_SkillID(skillID)
+  local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName("Hit"):SetHandleBeHitParam_HitEffectID(self._hitEffectID):SetHandleBeHitParam_DamageInfo(targetDamage):SetHandleBeHitParam_DamagePos(pos):SetHandleBeHitParam_HitTurnTarget(TurnToTargetType.Caster):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(isFinalAttack):SetHandleBeHitParam_SkillID(skillID)
   local playSkillService = world:GetService("PlaySkill")
   playSkillService:HandleBeHit(TT, beHitParam)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Play2802901LaserDamageInstruction.GetCacheResource = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function Play2802901LaserDamageInstruction:GetCacheResource()
   local t = {}
   if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 7})
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      7
+    })
   end
   return t
 end
-
-

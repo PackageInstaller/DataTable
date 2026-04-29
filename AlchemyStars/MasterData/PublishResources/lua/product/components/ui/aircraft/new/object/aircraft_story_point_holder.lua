@@ -1,96 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_story_point_holder.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftStoryPointHolder", Object)
 AircraftStoryPointHolder = AircraftStoryPointHolder
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftStoryPointHolder.Constructor = function(self, trans, floor)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftStoryPointHolder:Constructor(trans, floor)
   self._point = {}
   if trans == nil then
-    (Log.fatal)("###父节点空")
+    Log.fatal("###父节点空")
   end
   if trans.childCount > 0 then
     for i = 1, trans.childCount do
       local point = trans:GetChild(i - 1)
-      ;
-      (point.gameObject):SetActive(false)
+      point.gameObject:SetActive(false)
       local id = tonumber(point.name)
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._point)[id] = {}
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      ((self._point)[id]).storyid = 0
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      ((self._point)[id]).floor = floor
+      self._point[id] = {}
+      self._point[id].storyid = 0
+      self._point[id].floor = floor
       local aircraftStorySmallPointHolder = AircraftStorySmallPointHolder:New(point, floor)
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      ((self._point)[id]).points = aircraftStorySmallPointHolder
+      self._point[id].points = aircraftStorySmallPointHolder
     end
   else
-    do
-      ;
-      (Log.debug)("###AircraftStoryPointHolder:AddPoint --> trans.childCount <= 0 ! name --> ", trans.name)
-    end
+    Log.debug("###AircraftStoryPointHolder:AddPoint --> trans.childCount <= 0 ! name --> ", trans.name)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftStoryPointHolder.GetPoint = function(self, id, storyid)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._point)[id] then
-    local point2storyid = ((self._point)[id]).storyid
+function AircraftStoryPointHolder:GetPoint(id, storyid)
+  if self._point[id] then
+    local point2storyid = self._point[id].storyid
     if point2storyid ~= 0 and point2storyid ~= storyid then
-      (Log.fatal)("###[RandomStory]该剧情点已被[", point2storyid, "]占用,无法提供给[", storyid, "]")
+      Log.fatal("###[RandomStory]该剧情点已被[", point2storyid, "]占用,无法提供给[", storyid, "]")
       return nil
     end
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    ((self._point)[id]).storyid = storyid
-    local aircraftStorySmallPointHolder = ((self._point)[id]).points
+    self._point[id].storyid = storyid
+    local aircraftStorySmallPointHolder = self._point[id].points
     local petCount = 1
-    local cfg_random_story = (Cfg.cfg_aircraft_pet_stroy_refresh)[storyid]
-    if cfg_random_story.EnterTriggerNeedPetsArray and (table.count)(cfg_random_story.EnterTriggerNeedPetsArray) > 0 then
-      petCount = (table.count)(cfg_random_story.EnterTriggerNeedPetsArray) + 1
-      ;
-      (Log.debug)("###[AircraftStoryPointHolder] 获得多任务剧情人数 coutn --> ", petCount)
+    local cfg_random_story = Cfg.cfg_aircraft_pet_stroy_refresh[storyid]
+    if cfg_random_story.EnterTriggerNeedPetsArray and 0 < table.count(cfg_random_story.EnterTriggerNeedPetsArray) then
+      petCount = table.count(cfg_random_story.EnterTriggerNeedPetsArray) + 1
+      Log.debug("###[AircraftStoryPointHolder] 获得多任务剧情人数 coutn --> ", petCount)
     end
     local point = aircraftStorySmallPointHolder:GetPoint(petCount)
     return point
   end
-  do
-    ;
-    (Log.fatal)("###[RandomStory]点不够用了，点id--", id, "|剧情id--", storyid)
-    return nil
-  end
+  Log.fatal("###[RandomStory]点不够用了，点id--", id, "|剧情id--", storyid)
+  return nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftStoryPointHolder.Floor = function(self, id)
-  -- function num : 0_2
-  return ((self._point)[id]).floor
+function AircraftStoryPointHolder:Floor(id)
+  return self._point[id].floor
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftStoryPointHolder.CheckPointOccupy = function(self, id, storyid)
-  -- function num : 0_3
-  local occupy = nil
-  if ((self._point)[id]).storyid ~= 0 then
-    if ((self._point)[id]).storyid == storyid then
+function AircraftStoryPointHolder:CheckPointOccupy(id, storyid)
+  local occupy
+  if self._point[id].storyid ~= 0 then
+    if self._point[id].storyid == storyid then
       occupy = false
     else
       occupy = true
@@ -101,26 +62,14 @@ AircraftStoryPointHolder.CheckPointOccupy = function(self, id, storyid)
   return occupy
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftStoryPointHolder.ReleasePoint = function(self, id)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._point)[id]).storyid = 0
-  ;
-  (((self._point)[id]).points):ReleasePoint()
+function AircraftStoryPointHolder:ReleasePoint(id)
+  self._point[id].storyid = 0
+  self._point[id].points:ReleasePoint()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftStoryPointHolder.ReleaseAll = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  for idx,point in pairs(self._point) do
+function AircraftStoryPointHolder:ReleaseAll()
+  for idx, point in pairs(self._point) do
     point.storyid = 0
-    ;
-    (point.points):ReleasePoint()
+    point.points:ReleasePoint()
   end
 end
-
-

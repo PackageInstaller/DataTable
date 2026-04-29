@@ -1,185 +1,126 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/main/ui_activity_returnsystem_tab_login.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemTabLogin", UICustomWidget)
 UIActivityReturnSystemTabLogin = UIActivityReturnSystemTabLogin
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemTabLogin.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityReturnSystemTabLogin:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLogin.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityReturnSystemTabLogin:OnHide()
   self.remainingTimeCallback = nil
   self:CancelTimerEventNextTime()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLogin.SetData = function(self, campaign, remainingTimeCallback, tipsCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityReturnSystemTabLogin:SetData(campaign, remainingTimeCallback, tipsCallback)
   self._campaign = campaign
-  self._componentPlayerBack = (UIActivityReturnSystemHelper.GetComponentByTabName)(self._campaign, "welecome", 1)
-  self._componentLogin = (UIActivityReturnSystemHelper.GetComponentByTabName)(self._campaign, "login", 1)
+  self._componentPlayerBack = UIActivityReturnSystemHelper.GetComponentByTabName(self._campaign, "welecome", 1)
+  self._componentLogin = UIActivityReturnSystemHelper.GetComponentByTabName(self._campaign, "login", 1)
   self:InitLoginAwards()
   self.remainingTimeCallback = remainingTimeCallback
   self._tipsCallback = tipsCallback
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLogin.ReFlush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityReturnSystemTabLogin:ReFlush()
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
-    ;
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
     self:Flush()
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLogin.Flush = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityReturnSystemTabLogin:Flush()
   if not self.remainingTimeCallback then
-    return 
+    return
   end
-  local sampleInfo = (self._campaign):GetSample()
+  local sampleInfo = self._campaign:GetSample()
   if sampleInfo then
-    local RegisterTimeEvent = function(seconds)
-    -- function num : 0_4_0 , upvalues : self, _ENV
-    self:CancelTimerEventNextTime()
-    self.te = ((GameGlobal.Timer)()):AddEvent(seconds * 1000, function()
-      -- function num : 0_4_0_0 , upvalues : self
-      self:ReFlush()
+    local function RegisterTimeEvent(seconds)
+      self:CancelTimerEventNextTime()
+      
+      self.te = GameGlobal.Timer():AddEvent(seconds * 1000, function()
+        self:ReFlush()
+      end)
     end
-)
-  end
-
-    local sTimestamp, eTimestamp = (self._componentPlayerBack):GetTimeStampStartEnd()
-    local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
-    local nextRefreshTime = (sampleInfo.m_extend_info_time)[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_NEXT_REFRESH_TIME]
+    
+    local sTimestamp, eTimestamp = self._componentPlayerBack:GetTimeStampStartEnd()
+    local nowTimestamp = UICommonHelper.GetNowTimestamp()
+    local nextRefreshTime = sampleInfo.m_extend_info_time[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_NEXT_REFRESH_TIME]
     if eTimestamp < nextRefreshTime then
       self:CancelTimerEventNextTime()
-      ;
-      (self.remainingTimeCallback)(0, true)
+      self.remainingTimeCallback(0, true)
     else
       RegisterTimeEvent(nextRefreshTime - nowTimestamp)
-      ;
-      (self.remainingTimeCallback)(nextRefreshTime)
+      self.remainingTimeCallback(nextRefreshTime)
     end
   end
-  do
-    self:FlushItems()
-  end
+  self:FlushItems()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLogin.CancelTimerEventNextTime = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityReturnSystemTabLogin:CancelTimerEventNextTime()
   if self.te then
-    ((GameGlobal.Timer)()):CancelEvent(self.te)
+    GameGlobal.Timer():CancelEvent(self.te)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLogin.FlushItems = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityReturnSystemTabLogin:FlushItems()
   local awards = self.loginAwards
-  local len = (table.count)(awards)
-  local uiCells = (UIWidgetHelper.SpawnObjects)(self, "Content", "UIActivityReturnSystemTabLoginAwardCell", len)
-  for i,uiCell in ipairs(uiCells) do
+  local len = table.count(awards)
+  local uiCells = UIWidgetHelper.SpawnObjects(self, "Content", "UIActivityReturnSystemTabLoginAwardCell", len)
+  for i, uiCell in ipairs(uiCells) do
     uiCell:Flush(awards[i], function(loginAward)
-    -- function num : 0_6_0 , upvalues : self
-    self:GetAward(loginAward)
-  end
-, self._tipsCallback)
+      self:GetAward(loginAward)
+    end, self._tipsCallback)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLogin.GetAward = function(self, loginAward)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityReturnSystemTabLogin:GetAward(loginAward)
   if loginAward.status ~= ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : _ENV, loginAward, self
     local res = AsyncRequestRes:New()
     local day = loginAward.day
-    ;
-    (self._componentLogin):HandleReceiveCumulativeLoginReward(TT, res, day)
+    self._componentLogin:HandleReceiveCumulativeLoginReward(TT, res, day)
     if res:GetSucc() then
       self:SetLoginAwardRecieved(day)
       self:Flush()
       local awards = loginAward.awards
       self:ShowDialog("UIActivityReturnSystemGetItem", awards, loginAward.petIcon, loginAward.petName, loginAward.petGreeting)
     else
-      do
-        ;
-        (Log.fatal)("### HandleRecvBackReward failed.")
-      end
+      Log.fatal("### HandleRecvBackReward failed.")
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLogin.ShowItemInfo = function(self, matid, pos)
-  -- function num : 0_8
-  (self.tips):SetData(matid, pos)
+function UIActivityReturnSystemTabLogin:ShowItemInfo(matid, pos)
+  self.tips:SetData(matid, pos)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLogin.InitLoginAwards = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityReturnSystemTabLogin:InitLoginAwards()
   self.loginAwards = {}
-  local component = (UIActivityReturnSystemHelper.GetComponentByTabName)(self._campaign, "login", 1)
+  local component = UIActivityReturnSystemHelper.GetComponentByTabName(self._campaign, "login", 1)
   local cInfo = component:GetComponentInfo()
   local sAwards = cInfo.m_cumulative_info
-  if sAwards and (table.count)(sAwards) then
-    for k,v in pairs(sAwards) do
+  if sAwards and table.count(sAwards) then
+    for k, v in pairs(sAwards) do
       local award = ActivityReturnSystemLoginAward:New()
       local day = v.m_login_days
       award.day = day
-      local cfgv = (Cfg.cfg_return_system)[day]
+      local cfgv = Cfg.cfg_return_system[day]
       if cfgv then
         award:InitPetInfo(cfgv.PetId)
       else
-        ;
-        (Log.fatal)("### no data in cfg_return_system. day=", day)
+        Log.fatal("### no data in cfg_return_system. day=", day)
       end
       award:SetStatus(v.m_reward_status)
       award.awards = v.m_rewards
-      -- DECOMPILER ERROR at PC48: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self.loginAwards)[day] = award
+      self.loginAwards[day] = award
     end
+  else
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabLogin.SetLoginAwardRecieved = function(self, day)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self.loginAwards)[day] then
-    ((self.loginAwards)[day]):SetStatus(ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED)
+function UIActivityReturnSystemTabLogin:SetLoginAwardRecieved(day)
+  if self.loginAwards[day] then
+    self.loginAwards[day]:SetStatus(ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED)
   end
 end
-
-

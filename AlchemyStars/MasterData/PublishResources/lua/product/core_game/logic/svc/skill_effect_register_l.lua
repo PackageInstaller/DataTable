@@ -1,769 +1,193 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_effect_register_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
--- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.RegistSkillEffectCalculator = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalcService:RegistSkillEffectCalculator()
   self._skillEffectCalculatorDic = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.Damage] = SkillEffectCalc_Damage
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.HitBack] = SkillEffectCalc_HitBack
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ConvertGridElement] = SkillEffectCalc_ConvertGridElement
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AddBuff] = SkillEffectCalc_AddBuff
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AddGridEffect] = SkillEffectCalc_AddGridEffect
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.LeaveEnterBattleField] = SkillEffectCalc_LeaveEnterBattleField
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.Teleport] = SkillEffectCalc_Teleport
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.Escape] = SkillEffectCalc_Escape
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AbsorbPiece] = SkillEffectCalc_AbsorbPiece
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SummonTrap] = SkillEffectCalc_SummonTrap
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.Rotate] = SkillEffectCalc_Rotate
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.PullAround] = SkillEffectCalc_PullAround
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.CalEdgePos] = SkillEffectCalc_CalEdgePos
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.StampDamage] = SkillEffectCalc_StampDamage
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.EachGridAddBuff] = SkillEffectCalc_EachGridAddBuff
-  -- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AddCollectDropNum] = SkillEffectCalc_AddCollectDropNum
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DimensionTransport] = SkillEffectCalc_DimensionTransport
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AddDimensionFlag] = SkillEffectCalc_AddDimensionFlag
-  -- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AddBloodOverFlow] = SkillEffectCalc_AddBloodOverFlow
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.CreateDestroyGrid] = SkillEffectCalc_CreateDestroyGrid
-  -- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ShowWarningArea] = SkillEffectCalc_ShowWarningArea
-  -- DECOMPILER ERROR at PC111: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SummonEverything] = SkillEffectCalc_SummonEverything
-  -- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AddBlood] = SkillEffectCalc_AddBlood
-  -- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.EachGridAddBlood] = SkillEffectCalc_EachGridAddBlood
-  -- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ResetGridElement] = SkillEffectCalc_ResetGridElement
-  -- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ConvertOccupiedGridElement] = SkillEffectCalc_ConvertOccupiedGridElement
-  -- DECOMPILER ERROR at PC136: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SummonMultipleTrap] = SkillEffectCalc_SummonMultipleTrap
-  -- DECOMPILER ERROR at PC141: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.Transport] = SkillEffectCalc_Transport
-  -- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.MultiTraction] = SkillEffectCalc_MultiTraction
-  -- DECOMPILER ERROR at PC151: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SummonOnHitbackPosition] = SkillEffectCalc_SummonOnHitbackPosition
-  -- DECOMPILER ERROR at PC156: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.MakePhantom] = SkillEffectCalc_MakePhantom
-  -- DECOMPILER ERROR at PC161: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AbsorbPhantom] = SkillEffectCalc_AbsorbPhantom
-  -- DECOMPILER ERROR at PC166: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.Transformation] = SkillEffectCalc_Transformation
-  -- DECOMPILER ERROR at PC171: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SacrificeTrapsAndDamage] = SkillEffectCalc_SacrificeTrapsAndDamage
-  -- DECOMPILER ERROR at PC176: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AddRoundCount] = SkillEffectCalc_AddRoundCount
-  -- DECOMPILER ERROR at PC181: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ResetSelectGridElement] = SkillEffectCalc_ResetSelectGridElement
-  -- DECOMPILER ERROR at PC186: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ModifyBuffValue] = SkillEffectCalc_ModifyBuffValue
-  -- DECOMPILER ERROR at PC191: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DamageOnTargetCount] = SkillEffectCalc_DamageOnTargetCount
-  -- DECOMPILER ERROR at PC196: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DestroyTrap] = SkillEffectCalc_DestroyTrap
-  -- DECOMPILER ERROR at PC201: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SplashDamage] = SkillEffectCalc_SplashDamage
-  -- DECOMPILER ERROR at PC206: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AngleFreeLineDamage] = SkillEffectCalc_AngleFreeLine
-  -- DECOMPILER ERROR at PC211: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.IslandConvert] = SkillEffectCalc_IslandConvert
-  -- DECOMPILER ERROR at PC216: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ResetSingleColorGridElement] = SkillEffectCalcResetSingleColorGridElement
-  -- DECOMPILER ERROR at PC221: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.EnhanceOccupiedGrid] = SkillEffectCalc_EnhanceOccupiedGrid
-  -- DECOMPILER ERROR at PC226: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.Suicide] = SkillEffectCalcSuicide
-  -- DECOMPILER ERROR at PC231: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.CostCasterHP] = SkillEffectCalcCostCasterHP
-  -- DECOMPILER ERROR at PC236: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ExChangeGridColor] = SkillEffectCalcExchangeGridColor
-  -- DECOMPILER ERROR at PC241: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ChangeElement] = SkillEffectCalc_ChangeElement
-  -- DECOMPILER ERROR at PC246: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.IsolateConvert] = SkillEffectCalc_IsolateConvert
-  -- DECOMPILER ERROR at PC251: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.RandDamageSameHalf] = SkillEffectCalcRandDamageSameHalf
-  -- DECOMPILER ERROR at PC256: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DamageBasedOnTargetAttribute] = SkillEffectCalc_DamageBasedOnTargetAttribute
-  -- DECOMPILER ERROR at PC261: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DamageBasedOnPickUpRect] = SkillEffectCalc_DamageBasedOnPickUpRect
-  -- DECOMPILER ERROR at PC266: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AddComboNum] = SkillEffectCalc_AddComboNum
-  -- DECOMPILER ERROR at PC271: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DeathBomb] = SkillEffectCalcDeathBomb
-  -- DECOMPILER ERROR at PC276: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ConductDamage] = SkillEffectCalc_ConductDamage
-  -- DECOMPILER ERROR at PC281: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AttachMonster] = SkillEffectCalcAttachMonster
-  -- DECOMPILER ERROR at PC286: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DetachMonster] = SkillEffectCalcDetachMonster
-  -- DECOMPILER ERROR at PC291: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.MultipleScopesDealMultipleDamage] = SkillEffectCalc_MultipleScopesDealMultipleDamage
-  -- DECOMPILER ERROR at PC296: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.RotateToPickup] = SkillEffectCalc_RotateToPickup
-  -- DECOMPILER ERROR at PC301: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DamageToBuffTarget] = SkillEffectCalc_DamageToBuffTarget
-  -- DECOMPILER ERROR at PC306: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ChangeBlockData] = SkillEffectCalc_ChangeBlockData
-  -- DECOMPILER ERROR at PC311: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ChangeGridPrism] = SkillEffectCalc_ChangeGridPrism
-  -- DECOMPILER ERROR at PC316: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SchummerHitback] = SkillEffectCalc_SchummerHitback
-  -- DECOMPILER ERROR at PC321: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.StickerLeave] = SkillEffectCalc_StickerLeave
-  -- DECOMPILER ERROR at PC326: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ConvertWithTrapRecord] = SkillEffectCalc_ConvertWithTrapRecord
-  -- DECOMPILER ERROR at PC331: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.FrontExtendDegressiveDamage] = SkillEffectCalc_FrontExtendDegressiveDamage
-  -- DECOMPILER ERROR at PC336: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.TeleportAndSummonTrap] = SkillEffectCalc_TeleportAndSummonTrap
-  -- DECOMPILER ERROR at PC341: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ChangeBuffLayer] = SkillEffectCalc_ChangeBuffLayer
-  -- DECOMPILER ERROR at PC346: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SummonMeantimeLimit] = SkillEffectCalc_SummonMeantimeLimit
-  -- DECOMPILER ERROR at PC351: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.MoveTrap] = SkillEffectCalc_MoveTrap
-  -- DECOMPILER ERROR at PC356: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.MultipleDamageWithBuffLayer] = SkillEffectCalc_MultipleDamageWithBuffLayer
-  -- DECOMPILER ERROR at PC361: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DestroyMonster] = SkillEffectCalc_DestroyMonster
-  -- DECOMPILER ERROR at PC366: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SealedCurse] = SkillEffectCalc_SealedCurse
-  -- DECOMPILER ERROR at PC371: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DamageOnTargetDistance] = SkillEffectCalc_DamageOnTargetDistance
-  -- DECOMPILER ERROR at PC376: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.MonsterMoveGrid] = SkillEffectCalc_MonsterMoveGrid
-  -- DECOMPILER ERROR at PC381: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.KillPlayer] = SkillEffectCalc_KillPlayer
-  -- DECOMPILER ERROR at PC386: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AddBloodOverFlowForDamage] = SkillEffectCalc_AddBloodOverFlowForDamage
-  -- DECOMPILER ERROR at PC391: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DamageBasedOnSectorAngle] = SkillEffectCalc_DamageBasedOnSectorAngle
-  -- DECOMPILER ERROR at PC396: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SplashPreDamage] = SkillEffectCalc_SplashPreDamage
-  -- DECOMPILER ERROR at PC401: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.RotateByPickSector] = SkillEffectCalc_RotateByPickSector
-  -- DECOMPILER ERROR at PC406: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SummonOnFixPosLimit] = SkillEffectCalc_SummonOnFixPosLimit
-  -- DECOMPILER ERROR at PC411: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SwitchBodyPart] = SkillEffectCalc_SwitchBodyPart
-  -- DECOMPILER ERROR at PC416: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.VictoriaSuckBlood] = SkillEffectCalc_VictoriaSuckBlood
-  -- DECOMPILER ERROR at PC421: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.GatherThrowDamage] = SkillEffectCalc_GatherThrowDamage
-  -- DECOMPILER ERROR at PC426: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.TriggerTrap] = SkillEffectCalc_TriggerTrap
-  -- DECOMPILER ERROR at PC431: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AbsorbTrapsAndDamageByPickupTarget] = SkillEffectCalc_AbsorbTrapsAndDamageByPickupTarget
-  -- DECOMPILER ERROR at PC436: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.MoveBoard] = SkillEffectCalc_MoveBoard
-  -- DECOMPILER ERROR at PC441: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.MonsterMoveGridByMonsterElement] = SkillEffectCalc_MonsterMoveGridByElement
-  -- DECOMPILER ERROR at PC446: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.EachTrapAddBlood] = SkillEffectCalc_EachTrapAddBlood
-  -- DECOMPILER ERROR at PC451: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AddBuffByPickupTarget] = SkillEffectCalc_AddBuffByPickupTarget
-  -- DECOMPILER ERROR at PC456: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.RecoverFromGreyHP] = SkillEffectCalc_RecoverFromGreyHP
-  -- DECOMPILER ERROR at PC461: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.IncreaseSan] = SkillEffectCalc_IncreaseSan
-  -- DECOMPILER ERROR at PC466: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SwitchBodyAreaByTargetPos] = SkillEffectCalc_SwitchBodyAreaByTargetPos
-  -- DECOMPILER ERROR at PC471: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.TransferTarget] = SkillEffectCalc_TransferTarget
-  -- DECOMPILER ERROR at PC476: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AlphaThrowTrap] = SkillEffectCalc_AlphaThrowTrap
-  -- DECOMPILER ERROR at PC481: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AlphaBlinkAttack] = SkillEffectCalc_AlphaBlinkAttack
-  -- DECOMPILER ERROR at PC486: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.MonsterMoveGridToSkillRangeFar] = SkillEffectCalc_MonsterMoveGridToSkillRangeFar
-  -- DECOMPILER ERROR at PC491: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.RideOn] = SkillEffectCalc_RideOn
-  -- DECOMPILER ERROR at PC496: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.MonsterMoveLongestGrid] = SkillEffectCalc_MonsterMoveLongestGrid
-  -- DECOMPILER ERROR at PC501: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.MultiplyBuffLayer] = SkillEffectCalc_MultiplyBuffLayer
-  -- DECOMPILER ERROR at PC506: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.MonsterMoveGridFarthest] = SkillEffectCalc_MonsterMoveGridFarthest
-  -- DECOMPILER ERROR at PC511: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DamageSamePosReduce] = SkillEffectCalcDamageSamePosReduce
-  -- DECOMPILER ERROR at PC516: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SacrificeTraps] = SkillEffectCalc_SacrificeTraps
-  -- DECOMPILER ERROR at PC521: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DamageBySacrificeTraps] = SkillEffectCalc_DamageBySacrificeTraps
-  -- DECOMPILER ERROR at PC526: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.RubikCube] = SkillEffectCalc_RubikCube
-  -- DECOMPILER ERROR at PC531: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ChangeBodyArea] = SkillEffectCalc_ChangeBodyArea
-  -- DECOMPILER ERROR at PC536: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.TrapSummonMonster] = SkillEffectCalcTrapSummonMonster
-  -- DECOMPILER ERROR at PC541: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DrawCard] = SkillEffectCalc_DrawCard
-  -- DECOMPILER ERROR at PC546: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.MonsterMoveFrontAttack] = SkillEffectCalc_MonsterMoveFrontAttack
-  -- DECOMPILER ERROR at PC551: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.PickUpTrapAndBuffDamage] = SkillEffectCalc_PickUpTrapAndBuffDamage
-  -- DECOMPILER ERROR at PC556: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AddBuffByPickupBuffLayer] = SkillEffectCalc_AddBuffByPickupBuffLayer
-  -- DECOMPILER ERROR at PC561: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DamageTargetCanRepeat] = SkillEffectCalc_DamageCanRepeat
-  -- DECOMPILER ERROR at PC566: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.LevelTrapAbsortSummon] = SkillEffectCalc_LevelTrapAbsortSummon
-  -- DECOMPILER ERROR at PC571: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.LevelTrapUpLevel] = SkillEffectCalc_LevelTrapUpLevel
-  -- DECOMPILER ERROR at PC576: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.LevelTrapSummonOrUpLevel] = SkillEffectCalc_LevelTrapSummonOrUpLevel
-  -- DECOMPILER ERROR at PC581: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ModifyAntiAttackParam] = SkillEffectCalc_ModifyAntiAttackParam
-  -- DECOMPILER ERROR at PC586: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.TransportByRange] = SkillEffectCalc_TransportByRange
-  -- DECOMPILER ERROR at PC591: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.PetSacrificeSuperGridTraps] = SkillEffectCalc_PetSacrificeSuperGridTraps
-  -- DECOMPILER ERROR at PC596: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.PetMinosGhostDamage] = SkillEffectCalc_PetMinosGhostDamage
-  -- DECOMPILER ERROR at PC601: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.CoffinMusumeCandle] = SkillEffectCalc_CoffinMusumeCandle
-  -- DECOMPILER ERROR at PC606: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DamageAndAddBuffByHitBack] = SkillEffectCalc_DamageAndAddBuffByHitBack
-  -- DECOMPILER ERROR at PC611: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.CoffinMusumeSetCandleLight] = SkillEffectCalc_CoffinMusumeSetCandleLight
-  -- DECOMPILER ERROR at PC616: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.Transposition] = SkillEffectCalc_Transposition
-  -- DECOMPILER ERROR at PC621: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SummonScanTrap] = SkillEffectCalc_SummonScanTrap
-  -- DECOMPILER ERROR at PC626: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SnakeHeadMove] = SkillEffectCalc_SnakeHeadMove
-  -- DECOMPILER ERROR at PC631: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SnakeTailMove] = SkillEffectCalc_SnakeTailMove
-  -- DECOMPILER ERROR at PC636: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SnakeBodyMoveAndGrowth] = SkillEffectCalc_SnakeBodyMoveAndGrowth
-  -- DECOMPILER ERROR at PC643: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SummonTrapByCasterPos] = _ENV.SkillEffectCalc_SummonTrapByCasterPos
-  -- DECOMPILER ERROR at PC650: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SummonTrapOrHealByTrapBuffLayer] = _ENV.SkillEffectCalc_SummonTrapOrHealByTrapBuffLayer
-  -- DECOMPILER ERROR at PC657: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.KillTargets] = _ENV.SkillEffectCalc_KillTargets
-  -- DECOMPILER ERROR at PC664: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.WeikeNotify] = _ENV.SkillEffectCalc_WeikeNotify
-  -- DECOMPILER ERROR at PC671: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SetMonsterOffBoard] = _ENV.SkillEffectCalc_SetMonsterOffBoard
-  -- DECOMPILER ERROR at PC678: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.MonsterMoveGridByParam] = _ENV.SkillEffectCalc_MonsterMoveGridByParam
-  -- DECOMPILER ERROR at PC685: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SplashDamageAndAddBuff] = _ENV.SkillEffectCalc_SplashDamageAndAddBuff
-  -- DECOMPILER ERROR at PC692: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DynamicCenterDamage] = _ENV.SkillEffectCalc_DynamicCenterDamage
-  -- DECOMPILER ERROR at PC699: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.EnterMirage] = _ENV.SkillEffectCalc_EnterMirage
-  -- DECOMPILER ERROR at PC706: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.TrapMoveAndDamage] = _ENV.SkillEffectCalc_TrapMoveAndDamage
-  -- DECOMPILER ERROR at PC713: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AddMoveScopeRecordCmpt] = _ENV.SkillEffectCalc_AddMoveScopeRecordCmpt
-  -- DECOMPILER ERROR at PC720: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ThrowMonsterAndDamage] = _ENV.SkillEffectCalc_ThrowMonsterAndDamage
-  -- DECOMPILER ERROR at PC727: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DamageByBuffLayer] = _ENV.SkillEffectCalc_DamageByBuffLayer
-  -- DECOMPILER ERROR at PC734: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.TeleportTeamAroundAndSummonTrapLine] = _ENV.SkillEffectCalc_TeleportTeamAroundAndSummonTrapLine
-  -- DECOMPILER ERROR at PC741: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.TurnToTargetChangeBodyAreaAndDir] = _ENV.SkillEffectCalc_TurnToTargetChangeBodyAreaAndDir
-  -- DECOMPILER ERROR at PC748: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ControlMonsterMove] = _ENV.SkillEffectCalc_ControlMonsterMove
-  -- DECOMPILER ERROR at PC755: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ConvertAndDamageByLinkLine] = _ENV.SkillEffectCalc_ConvertAndDamageByLinkLine
-  -- DECOMPILER ERROR at PC762: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.PetTrapMove] = _ENV.SkillEffectCalc_PetTrapMove
-  -- DECOMPILER ERROR at PC769: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SacrificeTargetNearestTrapsAndDamage] = _ENV.SkillEffectCalc_SacrificeTargetNearestTrapsAndDamage
-  -- DECOMPILER ERROR at PC776: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DynamicScopeChainDamage] = _ENV.SkillEffectCalc_DynamicScopeChainDamage
-  -- DECOMPILER ERROR at PC783: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.RefreshGridByBoardID] = _ENV.SkillEffectCalc_RefreshGridByBoardID
-  -- DECOMPILER ERROR at PC790: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SpliceBoard] = _ENV.SkillEffectCalc_SpliceBoard
-  -- DECOMPILER ERROR at PC797: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DamageBySelectPieceCount] = _ENV.SkillEffectCalc_DamageBySelectPieceCount
-  -- DECOMPILER ERROR at PC804: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.PopStar] = _ENV.SkillEffectCalc_PopStar
-  -- DECOMPILER ERROR at PC811: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SummonFourAreaMonsterOnBoardEdge] = _ENV.SkillEffectCalc_SummonFourAreaMonsterOnBoardEdge
-  -- DECOMPILER ERROR at PC818: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.PickUpGridTogether] = _ENV.SkillEffectCalc_PickUpGridTogether
-  -- DECOMPILER ERROR at PC825: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ButterflySummon] = _ENV.SkillEffectCalc_ButterflySummon
-  -- DECOMPILER ERROR at PC832: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.TankRushPerGrid] = _ENV.SkillEffectCalc_TankRushPerGrid
-  -- DECOMPILER ERROR at PC839: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DamageByConvertGridCount] = _ENV.SkillEffectCalc_DamageByConvertGridCount
-  -- DECOMPILER ERROR at PC846: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DamageCountByBuffLayer] = _ENV.SkillEffectCalc_DamageCountByBuffLayer
-  -- DECOMPILER ERROR at PC853: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DamageCountByBuffLayer2] = _ENV.SkillEffectCalc_DamageCountByBuffLayer2
-  -- DECOMPILER ERROR at PC860: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ControlMonsterCastHitBackTeam] = _ENV.SkillEffectCalc_ControlMonsterCastHitBackTeam
-  -- DECOMPILER ERROR at PC867: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SummonMonster] = _ENV.SkillEffectCalc_SummonMonster
-  -- DECOMPILER ERROR at PC874: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.PushBoard] = _ENV.SkillEffectCalc_PushBoard
-  -- DECOMPILER ERROR at PC881: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.MarchForward] = _ENV.SkillEffectCalc_MarchForward
-  -- DECOMPILER ERROR at PC888: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.Puzzle] = _ENV.SkillEffectCalc_Puzzle
-  -- DECOMPILER ERROR at PC895: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.HitBackAndDamage] = _ENV.SkillEffectCalc_HitBackAndDamage
-  -- DECOMPILER ERROR at PC902: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.TeleportAndTurnBodyArea] = _ENV.SkillEffectCalc_TeleportAndTurnBodyArea
-  -- DECOMPILER ERROR at PC909: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.FixTrapWall] = _ENV.SkillEffectCalc_FixTrapWall
-  -- DECOMPILER ERROR at PC916: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SetGridMaintainColorForSupply] = _ENV.SkillEffectCalc_SetGridMaintainColorForSupply
-  -- DECOMPILER ERROR at PC923: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.CreateAurasTrapByPickUp] = _ENV.SkillEffectCalc_CreateAurasTrapByPickUp
-  -- DECOMPILER ERROR at PC930: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.CrabMoveAndAttack] = _ENV.SkillEffectCalc_CrabMoveAndAttack
-  -- DECOMPILER ERROR at PC937: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AppointCastChain] = _ENV.SkillEffectCalc_AppointChain
-  -- DECOMPILER ERROR at PC944: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.Switch2GridTrap] = _ENV.SkillEffectCalc_Switch2GridTrap
-  -- DECOMPILER ERROR at PC951: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SkillCostFeatureStepPoint] = _ENV.SkillEffectCalc_SkillCostFeatureStepPoint
-  -- DECOMPILER ERROR at PC958: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.AddMonsterWeak] = _ENV.SkillEffectCalc_AddMonsterWeak
-  -- DECOMPILER ERROR at PC965: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DetonateMonsterWeak] = _ENV.SkillEffectCalc_DetonateMonsterWeak
-  -- DECOMPILER ERROR at PC972: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.TransferMonsterWeak] = _ENV.SkillEffectCalc_TransferMonsterWeak
-  -- DECOMPILER ERROR at PC979: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ClingySummon] = _ENV.SkillEffectCalc_ClingySummon
-  -- DECOMPILER ERROR at PC986: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.TeleportAndReplaceBodyArea] = _ENV.SkillEffectCalc_TeleportAndReplaceBodyArea
-  -- DECOMPILER ERROR at PC993: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.DamageAfterHitBack] = _ENV.SkillEffectCalc_DamageAfterHitBack
-  -- DECOMPILER ERROR at PC1000: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.PetAbsorbMaintainColorGrid] = _ENV.SkillEffectCalc_PetAbsorbMaintainColorGrid
-  -- DECOMPILER ERROR at PC1007: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ColorPaletteCharge] = _ENV.SkillEffectCalc_ColorPaletteCharge
-  -- DECOMPILER ERROR at PC1014: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.RobotBomb] = _ENV.SkillEffectCalc_RobotBomb
-  -- DECOMPILER ERROR at PC1021: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ScorpionSummon] = _ENV.SkillEffectCalc_ScorpionSummon
-  -- DECOMPILER ERROR at PC1028: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ScorpionHitBack] = _ENV.SkillEffectCalc_ScorpionHitBack
-  -- DECOMPILER ERROR at PC1035: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ChangeSanMax] = _ENV.SkillEffectCalc_ChangeSanMax
-  -- DECOMPILER ERROR at PC1042: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SwapSan2TeamHp] = _ENV.SkillEffectCalc_SwapSan2TeamHp
-  -- DECOMPILER ERROR at PC1049: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SummonWithCasterAttribute] = _ENV.SkillEffectCalc_SummonWithCasterAttribute
-  -- DECOMPILER ERROR at PC1056: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.SummonTrapByTargetPos] = _ENV.SkillEffectCalc_SummonTrapByTargetPos
-  -- DECOMPILER ERROR at PC1063: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.MoyeMove] = _ENV.SkillEffectCalc_MoyeMove
-  -- DECOMPILER ERROR at PC1070: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCalculatorDic)[SkillEffectType.ControlMonsterTeleportAndAttack] = _ENV.SkillEffectCalc_ControlMonsterTeleportAndAttack
+  
+  self._skillEffectCalculatorDic[SkillEffectType.Damage] = SkillEffectCalc_Damage
+  self._skillEffectCalculatorDic[SkillEffectType.HitBack] = SkillEffectCalc_HitBack
+  self._skillEffectCalculatorDic[SkillEffectType.ConvertGridElement] = SkillEffectCalc_ConvertGridElement
+  self._skillEffectCalculatorDic[SkillEffectType.AddBuff] = SkillEffectCalc_AddBuff
+  self._skillEffectCalculatorDic[SkillEffectType.AddGridEffect] = SkillEffectCalc_AddGridEffect
+  self._skillEffectCalculatorDic[SkillEffectType.LeaveEnterBattleField] = SkillEffectCalc_LeaveEnterBattleField
+  self._skillEffectCalculatorDic[SkillEffectType.Teleport] = SkillEffectCalc_Teleport
+  self._skillEffectCalculatorDic[SkillEffectType.Escape] = SkillEffectCalc_Escape
+  self._skillEffectCalculatorDic[SkillEffectType.AbsorbPiece] = SkillEffectCalc_AbsorbPiece
+  self._skillEffectCalculatorDic[SkillEffectType.SummonTrap] = SkillEffectCalc_SummonTrap
+  self._skillEffectCalculatorDic[SkillEffectType.Rotate] = SkillEffectCalc_Rotate
+  self._skillEffectCalculatorDic[SkillEffectType.PullAround] = SkillEffectCalc_PullAround
+  self._skillEffectCalculatorDic[SkillEffectType.CalEdgePos] = SkillEffectCalc_CalEdgePos
+  self._skillEffectCalculatorDic[SkillEffectType.StampDamage] = SkillEffectCalc_StampDamage
+  self._skillEffectCalculatorDic[SkillEffectType.EachGridAddBuff] = SkillEffectCalc_EachGridAddBuff
+  self._skillEffectCalculatorDic[SkillEffectType.AddCollectDropNum] = SkillEffectCalc_AddCollectDropNum
+  self._skillEffectCalculatorDic[SkillEffectType.DimensionTransport] = SkillEffectCalc_DimensionTransport
+  self._skillEffectCalculatorDic[SkillEffectType.AddDimensionFlag] = SkillEffectCalc_AddDimensionFlag
+  self._skillEffectCalculatorDic[SkillEffectType.AddBloodOverFlow] = SkillEffectCalc_AddBloodOverFlow
+  self._skillEffectCalculatorDic[SkillEffectType.CreateDestroyGrid] = SkillEffectCalc_CreateDestroyGrid
+  self._skillEffectCalculatorDic[SkillEffectType.ShowWarningArea] = SkillEffectCalc_ShowWarningArea
+  self._skillEffectCalculatorDic[SkillEffectType.SummonEverything] = SkillEffectCalc_SummonEverything
+  self._skillEffectCalculatorDic[SkillEffectType.AddBlood] = SkillEffectCalc_AddBlood
+  self._skillEffectCalculatorDic[SkillEffectType.EachGridAddBlood] = SkillEffectCalc_EachGridAddBlood
+  self._skillEffectCalculatorDic[SkillEffectType.ResetGridElement] = SkillEffectCalc_ResetGridElement
+  self._skillEffectCalculatorDic[SkillEffectType.ConvertOccupiedGridElement] = SkillEffectCalc_ConvertOccupiedGridElement
+  self._skillEffectCalculatorDic[SkillEffectType.SummonMultipleTrap] = SkillEffectCalc_SummonMultipleTrap
+  self._skillEffectCalculatorDic[SkillEffectType.Transport] = SkillEffectCalc_Transport
+  self._skillEffectCalculatorDic[SkillEffectType.MultiTraction] = SkillEffectCalc_MultiTraction
+  self._skillEffectCalculatorDic[SkillEffectType.SummonOnHitbackPosition] = SkillEffectCalc_SummonOnHitbackPosition
+  self._skillEffectCalculatorDic[SkillEffectType.MakePhantom] = SkillEffectCalc_MakePhantom
+  self._skillEffectCalculatorDic[SkillEffectType.AbsorbPhantom] = SkillEffectCalc_AbsorbPhantom
+  self._skillEffectCalculatorDic[SkillEffectType.Transformation] = SkillEffectCalc_Transformation
+  self._skillEffectCalculatorDic[SkillEffectType.SacrificeTrapsAndDamage] = SkillEffectCalc_SacrificeTrapsAndDamage
+  self._skillEffectCalculatorDic[SkillEffectType.AddRoundCount] = SkillEffectCalc_AddRoundCount
+  self._skillEffectCalculatorDic[SkillEffectType.ResetSelectGridElement] = SkillEffectCalc_ResetSelectGridElement
+  self._skillEffectCalculatorDic[SkillEffectType.ModifyBuffValue] = SkillEffectCalc_ModifyBuffValue
+  self._skillEffectCalculatorDic[SkillEffectType.DamageOnTargetCount] = SkillEffectCalc_DamageOnTargetCount
+  self._skillEffectCalculatorDic[SkillEffectType.DestroyTrap] = SkillEffectCalc_DestroyTrap
+  self._skillEffectCalculatorDic[SkillEffectType.SplashDamage] = SkillEffectCalc_SplashDamage
+  self._skillEffectCalculatorDic[SkillEffectType.AngleFreeLineDamage] = SkillEffectCalc_AngleFreeLine
+  self._skillEffectCalculatorDic[SkillEffectType.IslandConvert] = SkillEffectCalc_IslandConvert
+  self._skillEffectCalculatorDic[SkillEffectType.ResetSingleColorGridElement] = SkillEffectCalcResetSingleColorGridElement
+  self._skillEffectCalculatorDic[SkillEffectType.EnhanceOccupiedGrid] = SkillEffectCalc_EnhanceOccupiedGrid
+  self._skillEffectCalculatorDic[SkillEffectType.Suicide] = SkillEffectCalcSuicide
+  self._skillEffectCalculatorDic[SkillEffectType.CostCasterHP] = SkillEffectCalcCostCasterHP
+  self._skillEffectCalculatorDic[SkillEffectType.ExChangeGridColor] = SkillEffectCalcExchangeGridColor
+  self._skillEffectCalculatorDic[SkillEffectType.ChangeElement] = SkillEffectCalc_ChangeElement
+  self._skillEffectCalculatorDic[SkillEffectType.IsolateConvert] = SkillEffectCalc_IsolateConvert
+  self._skillEffectCalculatorDic[SkillEffectType.RandDamageSameHalf] = SkillEffectCalcRandDamageSameHalf
+  self._skillEffectCalculatorDic[SkillEffectType.DamageBasedOnTargetAttribute] = SkillEffectCalc_DamageBasedOnTargetAttribute
+  self._skillEffectCalculatorDic[SkillEffectType.DamageBasedOnPickUpRect] = SkillEffectCalc_DamageBasedOnPickUpRect
+  self._skillEffectCalculatorDic[SkillEffectType.AddComboNum] = SkillEffectCalc_AddComboNum
+  self._skillEffectCalculatorDic[SkillEffectType.DeathBomb] = SkillEffectCalcDeathBomb
+  self._skillEffectCalculatorDic[SkillEffectType.ConductDamage] = SkillEffectCalc_ConductDamage
+  self._skillEffectCalculatorDic[SkillEffectType.AttachMonster] = SkillEffectCalcAttachMonster
+  self._skillEffectCalculatorDic[SkillEffectType.DetachMonster] = SkillEffectCalcDetachMonster
+  self._skillEffectCalculatorDic[SkillEffectType.MultipleScopesDealMultipleDamage] = SkillEffectCalc_MultipleScopesDealMultipleDamage
+  self._skillEffectCalculatorDic[SkillEffectType.RotateToPickup] = SkillEffectCalc_RotateToPickup
+  self._skillEffectCalculatorDic[SkillEffectType.DamageToBuffTarget] = SkillEffectCalc_DamageToBuffTarget
+  self._skillEffectCalculatorDic[SkillEffectType.ChangeBlockData] = SkillEffectCalc_ChangeBlockData
+  self._skillEffectCalculatorDic[SkillEffectType.ChangeGridPrism] = SkillEffectCalc_ChangeGridPrism
+  self._skillEffectCalculatorDic[SkillEffectType.SchummerHitback] = SkillEffectCalc_SchummerHitback
+  self._skillEffectCalculatorDic[SkillEffectType.StickerLeave] = SkillEffectCalc_StickerLeave
+  self._skillEffectCalculatorDic[SkillEffectType.ConvertWithTrapRecord] = SkillEffectCalc_ConvertWithTrapRecord
+  self._skillEffectCalculatorDic[SkillEffectType.FrontExtendDegressiveDamage] = SkillEffectCalc_FrontExtendDegressiveDamage
+  self._skillEffectCalculatorDic[SkillEffectType.TeleportAndSummonTrap] = SkillEffectCalc_TeleportAndSummonTrap
+  self._skillEffectCalculatorDic[SkillEffectType.ChangeBuffLayer] = SkillEffectCalc_ChangeBuffLayer
+  self._skillEffectCalculatorDic[SkillEffectType.SummonMeantimeLimit] = SkillEffectCalc_SummonMeantimeLimit
+  self._skillEffectCalculatorDic[SkillEffectType.MoveTrap] = SkillEffectCalc_MoveTrap
+  self._skillEffectCalculatorDic[SkillEffectType.MultipleDamageWithBuffLayer] = SkillEffectCalc_MultipleDamageWithBuffLayer
+  self._skillEffectCalculatorDic[SkillEffectType.DestroyMonster] = SkillEffectCalc_DestroyMonster
+  self._skillEffectCalculatorDic[SkillEffectType.SealedCurse] = SkillEffectCalc_SealedCurse
+  self._skillEffectCalculatorDic[SkillEffectType.DamageOnTargetDistance] = SkillEffectCalc_DamageOnTargetDistance
+  self._skillEffectCalculatorDic[SkillEffectType.MonsterMoveGrid] = SkillEffectCalc_MonsterMoveGrid
+  self._skillEffectCalculatorDic[SkillEffectType.KillPlayer] = SkillEffectCalc_KillPlayer
+  self._skillEffectCalculatorDic[SkillEffectType.AddBloodOverFlowForDamage] = SkillEffectCalc_AddBloodOverFlowForDamage
+  self._skillEffectCalculatorDic[SkillEffectType.DamageBasedOnSectorAngle] = SkillEffectCalc_DamageBasedOnSectorAngle
+  self._skillEffectCalculatorDic[SkillEffectType.SplashPreDamage] = SkillEffectCalc_SplashPreDamage
+  self._skillEffectCalculatorDic[SkillEffectType.RotateByPickSector] = SkillEffectCalc_RotateByPickSector
+  self._skillEffectCalculatorDic[SkillEffectType.SummonOnFixPosLimit] = SkillEffectCalc_SummonOnFixPosLimit
+  self._skillEffectCalculatorDic[SkillEffectType.SwitchBodyPart] = SkillEffectCalc_SwitchBodyPart
+  self._skillEffectCalculatorDic[SkillEffectType.VictoriaSuckBlood] = SkillEffectCalc_VictoriaSuckBlood
+  self._skillEffectCalculatorDic[SkillEffectType.GatherThrowDamage] = SkillEffectCalc_GatherThrowDamage
+  self._skillEffectCalculatorDic[SkillEffectType.TriggerTrap] = SkillEffectCalc_TriggerTrap
+  self._skillEffectCalculatorDic[SkillEffectType.AbsorbTrapsAndDamageByPickupTarget] = SkillEffectCalc_AbsorbTrapsAndDamageByPickupTarget
+  self._skillEffectCalculatorDic[SkillEffectType.MoveBoard] = SkillEffectCalc_MoveBoard
+  self._skillEffectCalculatorDic[SkillEffectType.MonsterMoveGridByMonsterElement] = SkillEffectCalc_MonsterMoveGridByElement
+  self._skillEffectCalculatorDic[SkillEffectType.EachTrapAddBlood] = SkillEffectCalc_EachTrapAddBlood
+  self._skillEffectCalculatorDic[SkillEffectType.AddBuffByPickupTarget] = SkillEffectCalc_AddBuffByPickupTarget
+  self._skillEffectCalculatorDic[SkillEffectType.RecoverFromGreyHP] = SkillEffectCalc_RecoverFromGreyHP
+  self._skillEffectCalculatorDic[SkillEffectType.IncreaseSan] = SkillEffectCalc_IncreaseSan
+  self._skillEffectCalculatorDic[SkillEffectType.SwitchBodyAreaByTargetPos] = SkillEffectCalc_SwitchBodyAreaByTargetPos
+  self._skillEffectCalculatorDic[SkillEffectType.TransferTarget] = SkillEffectCalc_TransferTarget
+  self._skillEffectCalculatorDic[SkillEffectType.AlphaThrowTrap] = SkillEffectCalc_AlphaThrowTrap
+  self._skillEffectCalculatorDic[SkillEffectType.AlphaBlinkAttack] = SkillEffectCalc_AlphaBlinkAttack
+  self._skillEffectCalculatorDic[SkillEffectType.MonsterMoveGridToSkillRangeFar] = SkillEffectCalc_MonsterMoveGridToSkillRangeFar
+  self._skillEffectCalculatorDic[SkillEffectType.RideOn] = SkillEffectCalc_RideOn
+  self._skillEffectCalculatorDic[SkillEffectType.MonsterMoveLongestGrid] = SkillEffectCalc_MonsterMoveLongestGrid
+  self._skillEffectCalculatorDic[SkillEffectType.MultiplyBuffLayer] = SkillEffectCalc_MultiplyBuffLayer
+  self._skillEffectCalculatorDic[SkillEffectType.MonsterMoveGridFarthest] = SkillEffectCalc_MonsterMoveGridFarthest
+  self._skillEffectCalculatorDic[SkillEffectType.DamageSamePosReduce] = SkillEffectCalcDamageSamePosReduce
+  self._skillEffectCalculatorDic[SkillEffectType.SacrificeTraps] = SkillEffectCalc_SacrificeTraps
+  self._skillEffectCalculatorDic[SkillEffectType.DamageBySacrificeTraps] = SkillEffectCalc_DamageBySacrificeTraps
+  self._skillEffectCalculatorDic[SkillEffectType.RubikCube] = SkillEffectCalc_RubikCube
+  self._skillEffectCalculatorDic[SkillEffectType.ChangeBodyArea] = SkillEffectCalc_ChangeBodyArea
+  self._skillEffectCalculatorDic[SkillEffectType.TrapSummonMonster] = SkillEffectCalcTrapSummonMonster
+  self._skillEffectCalculatorDic[SkillEffectType.DrawCard] = SkillEffectCalc_DrawCard
+  self._skillEffectCalculatorDic[SkillEffectType.MonsterMoveFrontAttack] = SkillEffectCalc_MonsterMoveFrontAttack
+  self._skillEffectCalculatorDic[SkillEffectType.PickUpTrapAndBuffDamage] = SkillEffectCalc_PickUpTrapAndBuffDamage
+  self._skillEffectCalculatorDic[SkillEffectType.AddBuffByPickupBuffLayer] = SkillEffectCalc_AddBuffByPickupBuffLayer
+  self._skillEffectCalculatorDic[SkillEffectType.DamageTargetCanRepeat] = SkillEffectCalc_DamageCanRepeat
+  self._skillEffectCalculatorDic[SkillEffectType.LevelTrapAbsortSummon] = SkillEffectCalc_LevelTrapAbsortSummon
+  self._skillEffectCalculatorDic[SkillEffectType.LevelTrapUpLevel] = SkillEffectCalc_LevelTrapUpLevel
+  self._skillEffectCalculatorDic[SkillEffectType.LevelTrapSummonOrUpLevel] = SkillEffectCalc_LevelTrapSummonOrUpLevel
+  self._skillEffectCalculatorDic[SkillEffectType.ModifyAntiAttackParam] = SkillEffectCalc_ModifyAntiAttackParam
+  self._skillEffectCalculatorDic[SkillEffectType.TransportByRange] = SkillEffectCalc_TransportByRange
+  self._skillEffectCalculatorDic[SkillEffectType.PetSacrificeSuperGridTraps] = SkillEffectCalc_PetSacrificeSuperGridTraps
+  self._skillEffectCalculatorDic[SkillEffectType.PetMinosGhostDamage] = SkillEffectCalc_PetMinosGhostDamage
+  self._skillEffectCalculatorDic[SkillEffectType.CoffinMusumeCandle] = SkillEffectCalc_CoffinMusumeCandle
+  self._skillEffectCalculatorDic[SkillEffectType.DamageAndAddBuffByHitBack] = SkillEffectCalc_DamageAndAddBuffByHitBack
+  self._skillEffectCalculatorDic[SkillEffectType.CoffinMusumeSetCandleLight] = SkillEffectCalc_CoffinMusumeSetCandleLight
+  self._skillEffectCalculatorDic[SkillEffectType.Transposition] = SkillEffectCalc_Transposition
+  self._skillEffectCalculatorDic[SkillEffectType.SummonScanTrap] = SkillEffectCalc_SummonScanTrap
+  self._skillEffectCalculatorDic[SkillEffectType.SnakeHeadMove] = SkillEffectCalc_SnakeHeadMove
+  self._skillEffectCalculatorDic[SkillEffectType.SnakeTailMove] = SkillEffectCalc_SnakeTailMove
+  self._skillEffectCalculatorDic[SkillEffectType.SnakeBodyMoveAndGrowth] = SkillEffectCalc_SnakeBodyMoveAndGrowth
+  self._skillEffectCalculatorDic[SkillEffectType.SummonTrapByCasterPos] = SkillEffectCalc_SummonTrapByCasterPos
+  self._skillEffectCalculatorDic[SkillEffectType.SummonTrapOrHealByTrapBuffLayer] = SkillEffectCalc_SummonTrapOrHealByTrapBuffLayer
+  self._skillEffectCalculatorDic[SkillEffectType.KillTargets] = SkillEffectCalc_KillTargets
+  self._skillEffectCalculatorDic[SkillEffectType.WeikeNotify] = SkillEffectCalc_WeikeNotify
+  self._skillEffectCalculatorDic[SkillEffectType.SetMonsterOffBoard] = SkillEffectCalc_SetMonsterOffBoard
+  self._skillEffectCalculatorDic[SkillEffectType.MonsterMoveGridByParam] = SkillEffectCalc_MonsterMoveGridByParam
+  self._skillEffectCalculatorDic[SkillEffectType.SplashDamageAndAddBuff] = SkillEffectCalc_SplashDamageAndAddBuff
+  self._skillEffectCalculatorDic[SkillEffectType.DynamicCenterDamage] = SkillEffectCalc_DynamicCenterDamage
+  self._skillEffectCalculatorDic[SkillEffectType.EnterMirage] = SkillEffectCalc_EnterMirage
+  self._skillEffectCalculatorDic[SkillEffectType.TrapMoveAndDamage] = SkillEffectCalc_TrapMoveAndDamage
+  self._skillEffectCalculatorDic[SkillEffectType.AddMoveScopeRecordCmpt] = SkillEffectCalc_AddMoveScopeRecordCmpt
+  self._skillEffectCalculatorDic[SkillEffectType.ThrowMonsterAndDamage] = SkillEffectCalc_ThrowMonsterAndDamage
+  self._skillEffectCalculatorDic[SkillEffectType.DamageByBuffLayer] = SkillEffectCalc_DamageByBuffLayer
+  self._skillEffectCalculatorDic[SkillEffectType.TeleportTeamAroundAndSummonTrapLine] = SkillEffectCalc_TeleportTeamAroundAndSummonTrapLine
+  self._skillEffectCalculatorDic[SkillEffectType.TurnToTargetChangeBodyAreaAndDir] = SkillEffectCalc_TurnToTargetChangeBodyAreaAndDir
+  self._skillEffectCalculatorDic[SkillEffectType.ControlMonsterMove] = SkillEffectCalc_ControlMonsterMove
+  self._skillEffectCalculatorDic[SkillEffectType.ConvertAndDamageByLinkLine] = SkillEffectCalc_ConvertAndDamageByLinkLine
+  self._skillEffectCalculatorDic[SkillEffectType.PetTrapMove] = SkillEffectCalc_PetTrapMove
+  self._skillEffectCalculatorDic[SkillEffectType.SacrificeTargetNearestTrapsAndDamage] = SkillEffectCalc_SacrificeTargetNearestTrapsAndDamage
+  self._skillEffectCalculatorDic[SkillEffectType.DynamicScopeChainDamage] = SkillEffectCalc_DynamicScopeChainDamage
+  self._skillEffectCalculatorDic[SkillEffectType.RefreshGridByBoardID] = SkillEffectCalc_RefreshGridByBoardID
+  self._skillEffectCalculatorDic[SkillEffectType.SpliceBoard] = SkillEffectCalc_SpliceBoard
+  self._skillEffectCalculatorDic[SkillEffectType.DamageBySelectPieceCount] = SkillEffectCalc_DamageBySelectPieceCount
+  self._skillEffectCalculatorDic[SkillEffectType.PopStar] = SkillEffectCalc_PopStar
+  self._skillEffectCalculatorDic[SkillEffectType.SummonFourAreaMonsterOnBoardEdge] = SkillEffectCalc_SummonFourAreaMonsterOnBoardEdge
+  self._skillEffectCalculatorDic[SkillEffectType.PickUpGridTogether] = SkillEffectCalc_PickUpGridTogether
+  self._skillEffectCalculatorDic[SkillEffectType.ButterflySummon] = SkillEffectCalc_ButterflySummon
+  self._skillEffectCalculatorDic[SkillEffectType.TankRushPerGrid] = SkillEffectCalc_TankRushPerGrid
+  self._skillEffectCalculatorDic[SkillEffectType.DamageByConvertGridCount] = SkillEffectCalc_DamageByConvertGridCount
+  self._skillEffectCalculatorDic[SkillEffectType.DamageCountByBuffLayer] = SkillEffectCalc_DamageCountByBuffLayer
+  self._skillEffectCalculatorDic[SkillEffectType.DamageCountByBuffLayer2] = SkillEffectCalc_DamageCountByBuffLayer2
+  self._skillEffectCalculatorDic[SkillEffectType.ControlMonsterCastHitBackTeam] = SkillEffectCalc_ControlMonsterCastHitBackTeam
+  self._skillEffectCalculatorDic[SkillEffectType.SummonMonster] = SkillEffectCalc_SummonMonster
+  self._skillEffectCalculatorDic[SkillEffectType.PushBoard] = SkillEffectCalc_PushBoard
+  self._skillEffectCalculatorDic[SkillEffectType.MarchForward] = SkillEffectCalc_MarchForward
+  self._skillEffectCalculatorDic[SkillEffectType.Puzzle] = SkillEffectCalc_Puzzle
+  self._skillEffectCalculatorDic[SkillEffectType.HitBackAndDamage] = SkillEffectCalc_HitBackAndDamage
+  self._skillEffectCalculatorDic[SkillEffectType.TeleportAndTurnBodyArea] = SkillEffectCalc_TeleportAndTurnBodyArea
+  self._skillEffectCalculatorDic[SkillEffectType.FixTrapWall] = SkillEffectCalc_FixTrapWall
+  self._skillEffectCalculatorDic[SkillEffectType.SetGridMaintainColorForSupply] = SkillEffectCalc_SetGridMaintainColorForSupply
+  self._skillEffectCalculatorDic[SkillEffectType.CreateAurasTrapByPickUp] = SkillEffectCalc_CreateAurasTrapByPickUp
+  self._skillEffectCalculatorDic[SkillEffectType.CrabMoveAndAttack] = SkillEffectCalc_CrabMoveAndAttack
+  self._skillEffectCalculatorDic[SkillEffectType.AppointCastChain] = SkillEffectCalc_AppointChain
+  self._skillEffectCalculatorDic[SkillEffectType.Switch2GridTrap] = SkillEffectCalc_Switch2GridTrap
+  self._skillEffectCalculatorDic[SkillEffectType.SkillCostFeatureStepPoint] = SkillEffectCalc_SkillCostFeatureStepPoint
+  self._skillEffectCalculatorDic[SkillEffectType.AddMonsterWeak] = SkillEffectCalc_AddMonsterWeak
+  self._skillEffectCalculatorDic[SkillEffectType.DetonateMonsterWeak] = SkillEffectCalc_DetonateMonsterWeak
+  self._skillEffectCalculatorDic[SkillEffectType.TransferMonsterWeak] = SkillEffectCalc_TransferMonsterWeak
+  self._skillEffectCalculatorDic[SkillEffectType.ClingySummon] = SkillEffectCalc_ClingySummon
+  self._skillEffectCalculatorDic[SkillEffectType.TeleportAndReplaceBodyArea] = SkillEffectCalc_TeleportAndReplaceBodyArea
+  self._skillEffectCalculatorDic[SkillEffectType.DamageAfterHitBack] = SkillEffectCalc_DamageAfterHitBack
+  self._skillEffectCalculatorDic[SkillEffectType.PetAbsorbMaintainColorGrid] = SkillEffectCalc_PetAbsorbMaintainColorGrid
+  self._skillEffectCalculatorDic[SkillEffectType.ColorPaletteCharge] = SkillEffectCalc_ColorPaletteCharge
+  self._skillEffectCalculatorDic[SkillEffectType.RobotBomb] = SkillEffectCalc_RobotBomb
+  self._skillEffectCalculatorDic[SkillEffectType.ScorpionSummon] = SkillEffectCalc_ScorpionSummon
+  self._skillEffectCalculatorDic[SkillEffectType.ScorpionHitBack] = SkillEffectCalc_ScorpionHitBack
+  self._skillEffectCalculatorDic[SkillEffectType.ChangeSanMax] = SkillEffectCalc_ChangeSanMax
+  self._skillEffectCalculatorDic[SkillEffectType.SwapSan2TeamHp] = SkillEffectCalc_SwapSan2TeamHp
+  self._skillEffectCalculatorDic[SkillEffectType.SummonWithCasterAttribute] = SkillEffectCalc_SummonWithCasterAttribute
+  self._skillEffectCalculatorDic[SkillEffectType.SummonTrapByTargetPos] = SkillEffectCalc_SummonTrapByTargetPos
+  self._skillEffectCalculatorDic[SkillEffectType.MoyeMove] = SkillEffectCalc_MoyeMove
+  self._skillEffectCalculatorDic[SkillEffectType.ControlMonsterTeleportAndAttack] = SkillEffectCalc_ControlMonsterTeleportAndAttack
 end
-
-

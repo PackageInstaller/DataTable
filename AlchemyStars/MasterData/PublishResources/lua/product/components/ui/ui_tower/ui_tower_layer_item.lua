@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_tower/ui_tower_layer_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITowerLayerItem", UICustomWidget)
 UITowerLayerItem = UITowerLayerItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITowerLayerItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UITowerLayerItem:OnShow(uiParams)
   self:InitWidget()
   self:AttachEvent(GameEventType.TowerLayerOnSelect, self.OnItemSelect)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerLayerItem.InitWidget = function(self)
-  -- function num : 0_1
+function UITowerLayerItem:InitWidget()
   self.layerText = self:GetUIComponent("UILocalizationText", "layerText")
   self.valid = self:GetGameObject("valid")
   self.invalid = self:GetGameObject("invalid")
@@ -32,149 +22,76 @@ UITowerLayerItem.InitWidget = function(self)
   self.reward = self:GetUIComponent("RawImageLoader", "reward")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerLayerItem.SetData = function(self, anchor, cfg, curLayer, passAll, curSelect, onSelect)
-  -- function num : 0_2 , upvalues : _ENV
+function UITowerLayerItem:SetData(anchor, cfg, curLayer, passAll, curSelect, onSelect)
   self._onSelect = onSelect
   self._cfg = cfg
   local cfg_item = Cfg.cfg_item
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R8 in 'UnsetPending'
-
   if anchor == 1 then
-    (self.content).anchoredPosition = Vector2(-136, 0)
-  else
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R8 in 'UnsetPending'
-
-    if anchor == 2 then
-      (self.content).anchoredPosition = Vector2(136, 0)
-    end
+    self.content.anchoredPosition = Vector2(-136, 0)
+  elseif anchor == 2 then
+    self.content.anchoredPosition = Vector2(136, 0)
   end
-  ;
-  (self.layerText):SetText(cfg.stage)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.layerText).color = Color.white
+  self.layerText:SetText(cfg.stage)
+  self.layerText.color = Color.white
   if curLayer < cfg.stage then
-    (self.valid):SetActive(false)
+    self.valid:SetActive(false)
     self:SetTextColor()
-    ;
-    (self.invalid):SetActive(true)
+    self.invalid:SetActive(true)
     if cfg.RewardTip then
-      (self.tips):SetActive(true)
-      ;
-      (self.reward):LoadImage((cfg_item[cfg.RewardTip]).Icon)
+      self.tips:SetActive(true)
+      self.reward:LoadImage(cfg_item[cfg.RewardTip].Icon)
     else
-      ;
-      (self.tips):SetActive(false)
+      self.tips:SetActive(false)
     end
+  elseif curLayer > cfg.stage then
+    local isBoss = cfg.BossLevel
+    self.cur:SetActive(false)
+    self.normal:SetActive(not isBoss)
+    self.boss:SetActive(isBoss)
+    self.valid:SetActive(true)
+    self.invalid:SetActive(false)
+    self.tips:SetActive(false)
+  elseif passAll then
+    local isBoss = cfg.BossLevel
+    self.cur:SetActive(false)
+    self.normal:SetActive(not isBoss)
+    self.boss:SetActive(isBoss)
+    self.valid:SetActive(true)
+    self.invalid:SetActive(false)
+    self.tips:SetActive(false)
   else
-    if cfg.stage < curLayer then
-      local isBoss = cfg.BossLevel
-      ;
-      (self.cur):SetActive(false)
-      ;
-      (self.normal):SetActive(not isBoss)
-      ;
-      (self.boss):SetActive(isBoss)
-      ;
-      (self.valid):SetActive(true)
-      ;
-      (self.invalid):SetActive(false)
-      ;
-      (self.tips):SetActive(false)
+    self.cur:SetActive(true)
+    self.layerText.color = Color.black
+    self.normal:SetActive(false)
+    self.boss:SetActive(false)
+    self.valid:SetActive(true)
+    self.invalid:SetActive(false)
+    if cfg.RewardTip then
+      self.tips:SetActive(true)
+      self.reward:LoadImage(cfg_item[cfg.RewardTip].Icon)
     else
-      do
-        if passAll then
-          local isBoss = cfg.BossLevel
-          ;
-          (self.cur):SetActive(false)
-          ;
-          (self.normal):SetActive(not isBoss)
-          ;
-          (self.boss):SetActive(isBoss)
-          ;
-          (self.valid):SetActive(true)
-          ;
-          (self.invalid):SetActive(false)
-          ;
-          (self.tips):SetActive(false)
-        else
-          do
-            ;
-            (self.cur):SetActive(true)
-            -- DECOMPILER ERROR at PC125: Confused about usage of register: R8 in 'UnsetPending'
-
-            ;
-            (self.layerText).color = Color.black
-            ;
-            (self.normal):SetActive(false)
-            ;
-            (self.boss):SetActive(false)
-            ;
-            (self.valid):SetActive(true)
-            ;
-            (self.invalid):SetActive(false)
-            if cfg.RewardTip then
-              (self.tips):SetActive(true)
-              ;
-              (self.reward):LoadImage((cfg_item[cfg.RewardTip]).Icon)
-            else
-              ;
-              (self.tips):SetActive(false)
-            end
-            ;
-            (self.select):SetActive((self._cfg).stage == curSelect)
-            -- DECOMPILER ERROR: 1 unprocessed JMP targets
-          end
-        end
-      end
+      self.tips:SetActive(false)
     end
   end
+  self.select:SetActive(self._cfg.stage == curSelect)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerLayerItem.OnItemSelect = function(self, idx)
-  -- function num : 0_3
-  (self.select):SetActive((self._cfg).stage == idx)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UITowerLayerItem:OnItemSelect(idx)
+  self.select:SetActive(self._cfg.stage == idx)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerLayerItem.itemOnClick = function(self, go)
-  -- function num : 0_4
-  (self._onSelect)((self._cfg).stage)
+function UITowerLayerItem:itemOnClick(go)
+  self._onSelect(self._cfg.stage)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerLayerItem.SetTextColor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._cfg).BossLevel then
-    (self.bossBG):SetActive(true)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.lockTextUp).color = Color(0.5921568627451, 0.094117647058824, 0.094117647058824, 1)
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.lockTextDown).color = Color(0.53333333333333, 0.082352941176471, 0.082352941176471, 1)
+function UITowerLayerItem:SetTextColor()
+  if self._cfg.BossLevel then
+    self.bossBG:SetActive(true)
+    self.lockTextUp.color = Color(0.592156862745098, 0.09411764705882353, 0.09411764705882353, 1)
+    self.lockTextDown.color = Color(0.5333333333333333, 0.08235294117647059, 0.08235294117647059, 1)
   else
-    ;
-    (self.bossBG):SetActive(false)
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.lockTextUp).color = Color(0.43921568627451, 0.43921568627451, 0.43921568627451, 1)
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.lockTextDown).color = Color(0.43921568627451, 0.43921568627451, 0.43921568627451, 1)
+    self.bossBG:SetActive(false)
+    self.lockTextUp.color = Color(0.4392156862745098, 0.4392156862745098, 0.4392156862745098, 1)
+    self.lockTextDown.color = Color(0.4392156862745098, 0.4392156862745098, 0.4392156862745098, 1)
   end
 end
-
-

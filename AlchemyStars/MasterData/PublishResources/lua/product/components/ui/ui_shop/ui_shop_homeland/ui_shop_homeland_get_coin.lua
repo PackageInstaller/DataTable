@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_homeland/ui_shop_homeland_get_coin.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopHomelandGetCoin", UIController)
 UIShopHomelandGetCoin = UIShopHomelandGetCoin
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopHomelandGetCoin.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopHomelandGetCoin:Constructor()
   self._itemModule = self:GetModule(ItemModule)
   self._shopModule = self:GetModule(ShopModule)
-  self._clientShop = (self._shopModule):GetClientShop()
-  self._rate = (self._clientShop):GetGlowExchangeFurnitureCoinRate()
+  self._clientShop = self._shopModule:GetClientShop()
+  self._rate = self._clientShop:GetGlowExchangeFurnitureCoinRate()
   self._type = RoleAssetID.RoleAssetGlow
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGetCoin.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopHomelandGetCoin:OnShow(uiParams)
   self._txtExchange = self:GetUIComponent("UILocalizationText", "txtExchange")
   self._txtHomelandCoin = self:GetUIComponent("UILocalizationText", "txtHomelandCoin")
   self._txtGlow = self:GetUIComponent("UILocalizationText", "txtGlow")
@@ -28,155 +18,96 @@ UIShopHomelandGetCoin.OnShow = function(self, uiParams)
   self._btnMinus = self:GetUIComponent("Button", "btnMinus")
   self._btnAdd = self:GetUIComponent("Button", "btnAdd")
   self._btnTop = self:GetUIComponent("Button", "btnTop")
-  self._totalGlowCount = (self._itemModule):GetItemCount(self._type)
+  self._totalGlowCount = self._itemModule:GetItemCount(self._type)
   self._defaultClowCount = 0
-  if self._totalGlowCount and self._rate < self._totalGlowCount then
-    local count = (math.ceil)(self._totalGlowCount / self._rate)
+  if self._totalGlowCount and self._totalGlowCount > self._rate then
+    local count = math.ceil(self._totalGlowCount / self._rate)
     local max = self._totalGlowCount
     if max < 1 then
       max = 1
     end
-    self._defaultClowCount = (math.min)(1, max)
+    self._defaultClowCount = math.min(1, max)
   end
-  do
-    self._curGlowCount = self._defaultClowCount
-    self:Flush()
-  end
+  self._curGlowCount = self._defaultClowCount
+  self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGetCoin.OnHide = function(self)
-  -- function num : 0_2
+function UIShopHomelandGetCoin:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGetCoin.Flush = function(self)
-  -- function num : 0_3
+function UIShopHomelandGetCoin:Flush()
   self:FlushBtns()
   self:FlushCurCount()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGetCoin.FlushBtns = function(self)
-  -- function num : 0_4
+function UIShopHomelandGetCoin:FlushBtns()
   local interactable = self._totalGlowCount > 0
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._btnBottom).interactable = interactable
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._btnMinus).interactable = interactable
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._btnAdd).interactable = interactable
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._btnTop).interactable = interactable
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._btnBottom.interactable = interactable
+  self._btnMinus.interactable = interactable
+  self._btnAdd.interactable = interactable
+  self._btnTop.interactable = interactable
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGetCoin.FlushCurCount = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIShopHomelandGetCoin:FlushCurCount()
   local homelandCoinCount = self._curGlowCount * self._rate
-  ;
-  (self._txtHomelandCoin):SetText(homelandCoinCount)
-  ;
-  (self._txtGlow):SetText((string.format)(self._curGlowCount .. "/" .. self._totalGlowCount))
+  self._txtHomelandCoin:SetText(homelandCoinCount)
+  self._txtGlow:SetText(string.format(self._curGlowCount .. "/" .. self._totalGlowCount))
   if self._totalGlowCount <= 0 then
-    (self._txtExchange):SetText((StringTable.Get)("str_shop_homeland_glow_notenough"))
-    ;
-    (self._txtBuyCount):SetText(0)
+    self._txtExchange:SetText(StringTable.Get("str_shop_homeland_glow_notenough"))
+    self._txtBuyCount:SetText(0)
   else
-    ;
-    (self._txtExchange):SetText((StringTable.Get)("str_shop_homeland_get_coin", self._curGlowCount, homelandCoinCount))
-    ;
-    (self._txtBuyCount):SetText(self._curGlowCount)
+    self._txtExchange:SetText(StringTable.Get("str_shop_homeland_get_coin", self._curGlowCount, homelandCoinCount))
+    self._txtBuyCount:SetText(self._curGlowCount)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGetCoin.bgOnClick = function(self, go)
-  -- function num : 0_6
+function UIShopHomelandGetCoin:bgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGetCoin.btnCancelOnClick = function(self, go)
-  -- function num : 0_7
+function UIShopHomelandGetCoin:btnCancelOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGetCoin.btnEnsureOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
+function UIShopHomelandGetCoin:btnEnsureOnClick(go)
   if self._curGlowCount <= 0 then
-    return 
+    return
   end
-  if self._totalGlowCount <= 0 then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_shop_homeland_glow_notenough"), function(param)
-    -- function num : 0_8_0 , upvalues : self
-    (self._clientShop):OpenRechargeShop()
-    self:CloseDialog()
-  end
-, nil, function(param)
-    -- function num : 0_8_1
-  end
-, nil)
+  if 0 >= self._totalGlowCount then
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_shop_homeland_glow_notenough"), function(param)
+      self._clientShop:OpenRechargeShop()
+      self:CloseDialog()
+    end, nil, function(param)
+    end, nil)
   else
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_shop_homeland_get_coin", self._curGlowCount, self._curGlowCount * self._rate), function(param)
-    -- function num : 0_8_2 , upvalues : self, _ENV
-    local mShop = self:GetModule(ShopModule)
-    self:StartTask(function(TT)
-      -- function num : 0_8_2_0 , upvalues : self, mShop, _ENV
-      self:Lock("UIShopHomelandGetCoin")
-      local homelandCoinCount = self._curGlowCount * self._rate
-      local ret = mShop:ApplyGlowExchangeFurnitureCoin(TT, self._curGlowCount, homelandCoinCount)
-      if (ClientShop.CheckShopCode)(ret:GetResult()) then
-        (ToastManager.ShowToast)((StringTable.Get)("str_shop_homeland_success", self._curGlowCount, homelandCoinCount))
-        self:CloseDialog()
-      end
-      self:UnLock("UIShopHomelandGetCoin")
-    end
-, self)
-  end
-, nil, function(param)
-    -- function num : 0_8_3
-  end
-, nil)
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_shop_homeland_get_coin", self._curGlowCount, self._curGlowCount * self._rate), function(param)
+      local mShop = self:GetModule(ShopModule)
+      self:StartTask(function(TT)
+        self:Lock("UIShopHomelandGetCoin")
+        local homelandCoinCount = self._curGlowCount * self._rate
+        local ret = mShop:ApplyGlowExchangeFurnitureCoin(TT, self._curGlowCount, homelandCoinCount)
+        if ClientShop.CheckShopCode(ret:GetResult()) then
+          ToastManager.ShowToast(StringTable.Get("str_shop_homeland_success", self._curGlowCount, homelandCoinCount))
+          self:CloseDialog()
+        end
+        self:UnLock("UIShopHomelandGetCoin")
+      end, self)
+    end, nil, function(param)
+    end, nil)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGetCoin.btnRechargeOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  if not (UIShopController.CheckIsOpen)(ShopMainTabType.Recharge) then
-    return 
+function UIShopHomelandGetCoin:btnRechargeOnClick(go)
+  if not UIShopController.CheckIsOpen(ShopMainTabType.Recharge) then
+    return
   end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIShopCurrency1To2", 0)
+  GameGlobal.UIStateManager():ShowDialog("UIShopCurrency1To2", 0)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGetCoin.btnBottomOnClick = function(self, go)
-  -- function num : 0_10
+function UIShopHomelandGetCoin:btnBottomOnClick(go)
   if self._curGlowCount <= 0 then
-    return 
+    return
   end
   self._curGlowCount = self._curGlowCount - 100
   if self._curGlowCount <= 0 then
@@ -185,50 +116,39 @@ UIShopHomelandGetCoin.btnBottomOnClick = function(self, go)
   self:FlushCurCount()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGetCoin.btnTopOnClick = function(self, go)
-  -- function num : 0_11
+function UIShopHomelandGetCoin:btnTopOnClick(go)
   if self._totalGlowCount <= 0 then
-    return 
+    return
   end
   self._curGlowCount = self._curGlowCount + 100
-  if self._totalGlowCount <= self._curGlowCount then
+  if self._curGlowCount >= self._totalGlowCount then
     self._curGlowCount = self._totalGlowCount
   end
   self:FlushCurCount()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGetCoin.btnMinusOnClick = function(self, go)
-  -- function num : 0_12
+function UIShopHomelandGetCoin:btnMinusOnClick(go)
   if self._totalGlowCount <= 0 then
-    return 
+    return
   end
   if self._curGlowCount <= 1 then
     self._curGlowCount = 1
     self:FlushCurCount()
-    return 
+    return
   end
   self._curGlowCount = self._curGlowCount - 1
   self:FlushCurCount()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGetCoin.btnAddOnClick = function(self, go)
-  -- function num : 0_13
+function UIShopHomelandGetCoin:btnAddOnClick(go)
   if self._totalGlowCount <= 0 then
-    return 
+    return
   end
-  if self._totalGlowCount <= self._curGlowCount then
+  if self._curGlowCount >= self._totalGlowCount then
     self._curGlowCount = self._totalGlowCount
     self:FlushCurCount()
-    return 
+    return
   end
   self._curGlowCount = self._curGlowCount + 1
   self:FlushCurCount()
 end
-
-

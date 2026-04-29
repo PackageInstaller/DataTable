@@ -1,76 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/test_robot_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TestRobotMissionRunData", TestRobotRunData)
 TestRobotMissionRunData = TestRobotMissionRunData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotMissionRunData.SetMissionChapterID = function(self, id)
-  -- function num : 0_0
+function TestRobotMissionRunData:SetMissionChapterID(id)
   self._chapterID = id
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotMissionRunData.SetMissionNodeIndex = function(self, index)
-  -- function num : 0_1
+function TestRobotMissionRunData:SetMissionNodeIndex(index)
   self._nodeIndex = index
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotMissionRunData.SetStageIndex = function(self, index)
-  -- function num : 0_2
+function TestRobotMissionRunData:SetStageIndex(index)
   self._stageIndex = index
 end
 
 _class("TestRobotExtraMissionRunData", TestRobotRunData)
 TestRobotExtraMissionRunData = TestRobotExtraMissionRunData
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotExtraMissionRunData.SetChapterIndex = function(self, index)
-  -- function num : 0_3
+function TestRobotExtraMissionRunData:SetChapterIndex(index)
   self._chapterIndex = index
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotExtraMissionRunData.SetMissionIndex = function(self, index)
-  -- function num : 0_4
+function TestRobotExtraMissionRunData:SetMissionIndex(index)
   self._missionIndex = index
 end
 
 _class("TestRobotMazeRunData", TestRobotRunData)
 TestRobotMazeRunData = TestRobotMazeRunData
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotMazeRunData.SetCurrentTeamPstIDList = function(self, petPstIds)
-  -- function num : 0_5
+function TestRobotMazeRunData:SetCurrentTeamPstIDList(petPstIds)
   self._currentTeamPstIDList = petPstIds
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotMazeRunData.GetCurrentTeamPstIDList = function(self)
-  -- function num : 0_6
+function TestRobotMazeRunData:GetCurrentTeamPstIDList()
   return self._currentTeamPstIDList
 end
 
 _class("TestRobotTowerRunData", TestRobotRunData)
 TestRobotTowerRunData = TestRobotTowerRunData
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotTowerRunData.SetTowerElementType = function(self, val)
-  -- function num : 0_7
+function TestRobotTowerRunData:SetTowerElementType(val)
   self._elementType = val
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotTowerRunData.GetTowerElementType = function(self)
-  -- function num : 0_8
+function TestRobotTowerRunData:GetTowerElementType()
   return self._elementType
 end
 
@@ -78,92 +50,65 @@ _class("TestRobotResDungeonRunData", TestRobotRunData)
 TestRobotResDungeonRunData = TestRobotResDungeonRunData
 _class("TestRobotSummerIIEventRunData", TestRobotRunData)
 TestRobotSummerIIEventRunData = TestRobotSummerIIEventRunData
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotSummerIIEventRunData.ParseLevelData = function(self, args)
-  -- function num : 0_9 , upvalues : _ENV
+function TestRobotSummerIIEventRunData:ParseLevelData(args)
   self._missionID = tonumber(args[1])
   self._componentConfigID = tonumber(args[2])
   self:ParseConfigID()
-  if (table.count)(args) > 2 then
+  if 2 < table.count(args) then
     self._hardID = tonumber(args[3])
   end
   self._affixList = {}
-  if (table.count)(args) > 3 then
+  if table.count(args) > 3 then
     for i = 4, #args do
-      (table.insert)(self._affixList, tonumber(args[i]))
+      table.insert(self._affixList, tonumber(args[i]))
     end
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotSummerIIEventRunData.GetEnterMatchParam = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local param = {self:GetMissionID(), ECampaignMissionComponentId.ECampaignMissionComponentId_SummerII, 
-{[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = self:GetComponentConfigID()}
-}
+function TestRobotSummerIIEventRunData:GetEnterMatchParam()
+  local param = {
+    self:GetMissionID(),
+    ECampaignMissionComponentId.ECampaignMissionComponentId_SummerII,
+    {
+      [ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = self:GetComponentConfigID()
+    }
+  }
   return param
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotSummerIIEventRunData.ParseConfigID = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  self._campaignID = campaignModule:ParseCfgComponentID(self._componentConfigID)
+function TestRobotSummerIIEventRunData:ParseConfigID()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  self._campaignID, self._componentID, self.componentType = campaignModule:ParseCfgComponentID(self._componentConfigID)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotSummerIIEventRunData.GetCampaignID = function(self)
-  -- function num : 0_12
+function TestRobotSummerIIEventRunData:GetCampaignID()
   return self._campaignID
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotSummerIIEventRunData.GetMissionID = function(self)
-  -- function num : 0_13
+function TestRobotSummerIIEventRunData:GetMissionID()
   return self._missionID
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotSummerIIEventRunData.GetComponentID = function(self)
-  -- function num : 0_14
+function TestRobotSummerIIEventRunData:GetComponentID()
   return self._componentID
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotSummerIIEventRunData.GetComponentConfigID = function(self)
-  -- function num : 0_15
+function TestRobotSummerIIEventRunData:GetComponentConfigID()
   return self._componentConfigID
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotSummerIIEventRunData.HaseAffix = function(self)
-  -- function num : 0_16
+function TestRobotSummerIIEventRunData:HaseAffix()
   if not self._hardID then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotSummerIIEventRunData.GetHardID = function(self)
-  -- function num : 0_17
+function TestRobotSummerIIEventRunData:GetHardID()
   return self._hardID
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotSummerIIEventRunData.GetAffixList = function(self)
-  -- function num : 0_18
+function TestRobotSummerIIEventRunData:GetAffixList()
   return self._affixList
 end
-
-

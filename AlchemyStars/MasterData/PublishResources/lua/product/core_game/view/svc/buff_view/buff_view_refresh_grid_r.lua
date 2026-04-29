@@ -1,20 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_refresh_grid_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewRefreshGrid", BuffViewBase)
 BuffViewRefreshGrid = BuffViewRefreshGrid
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRefreshGrid.PlayView = function(self, TT, notify)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewRefreshGrid:PlayView(TT, notify)
   local result = self._buffResult
-  local boardServiceR = (self._world):GetService("BoardRender")
-  local pieceServiceR = (self._world):GetService("Piece")
-  for _,pos in pairs(result:GetRefreshList()) do
+  local boardServiceR = self._world:GetService("BoardRender")
+  local pieceServiceR = self._world:GetService("Piece")
+  for _, pos in pairs(result:GetRefreshList()) do
     boardServiceR:ReCreateGridEntity(result:GetTarget(), pos, false)
   end
 end
-
-

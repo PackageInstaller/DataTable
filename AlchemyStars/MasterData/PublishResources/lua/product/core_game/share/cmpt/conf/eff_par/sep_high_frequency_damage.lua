@@ -1,93 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_high_frequency_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParam_HighFrequencyDamage", SkillDamageEffectParam)
 SkillEffectParam_HighFrequencyDamage = SkillEffectParam_HighFrequencyDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_HighFrequencyDamage.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_HighFrequencyDamage:Constructor(paramList)
   self._maxAttackTimes = tonumber(paramList.maxAttackTimes)
   if not self._maxAttackTimes then
-    (Log.exception)(self._className, "需要maxAttackTimes参数")
+    Log.exception(self._className, "需要maxAttackTimes参数")
   end
   self._paramList = paramList
   self._tractionOnLastTarget = tonumber(paramList.tractionOnLastTarget) == 1
   self._lastTargetBuffID = tonumber(paramList.lastTargetBuffID)
-  if self._lastTargetBuffID and not (Cfg.cfg_buff)[self._lastTargetBuffID] then
-    (Log.exception)(self._className, "lastTargetBuffID 在buff表中没找到：", tostring(self._lastTargetBuffID))
+  if self._lastTargetBuffID and not Cfg.cfg_buff[self._lastTargetBuffID] then
+    Log.exception(self._className, "lastTargetBuffID 在buff表中没找到：", tostring(self._lastTargetBuffID))
   end
   self._serialScopeType = paramList.serialScopeType
   self._radius = paramList.radius
   self._pieceType = paramList.pieceType
   self._onePieceAddAttackCount = paramList.onePieceAddAttackCount
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_HighFrequencyDamage.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_HighFrequencyDamage:GetEffectType()
   return SkillEffectType.HighFrequencyDamage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_HighFrequencyDamage.GetMaxAttackTimes = function(self)
-  -- function num : 0_2
+function SkillEffectParam_HighFrequencyDamage:GetMaxAttackTimes()
   return self._maxAttackTimes
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_HighFrequencyDamage.GetParamList = function(self)
-  -- function num : 0_3
+function SkillEffectParam_HighFrequencyDamage:GetParamList()
   return self._paramList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_HighFrequencyDamage.IsTractionOnLastTarget = function(self)
-  -- function num : 0_4
+function SkillEffectParam_HighFrequencyDamage:IsTractionOnLastTarget()
   return self._tractionOnLastTarget
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_HighFrequencyDamage.GetLastTargetBuffID = function(self)
-  -- function num : 0_5
+function SkillEffectParam_HighFrequencyDamage:GetLastTargetBuffID()
   return self._lastTargetBuffID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_HighFrequencyDamage.GetSerialScopeType = function(self)
-  -- function num : 0_6
+function SkillEffectParam_HighFrequencyDamage:GetSerialScopeType()
   return self._serialScopeType
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_HighFrequencyDamage.GetRadius = function(self)
-  -- function num : 0_7
+function SkillEffectParam_HighFrequencyDamage:GetRadius()
   return self._radius
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_HighFrequencyDamage.GetPieceType = function(self)
-  -- function num : 0_8
+function SkillEffectParam_HighFrequencyDamage:GetPieceType()
   return self._pieceType
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_HighFrequencyDamage.GetOnePieceAddAttackCount = function(self)
-  -- function num : 0_9
+function SkillEffectParam_HighFrequencyDamage:GetOnePieceAddAttackCount()
   return self._onePieceAddAttackCount
 end
-
-

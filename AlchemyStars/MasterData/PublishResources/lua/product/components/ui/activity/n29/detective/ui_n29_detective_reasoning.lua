@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/ui_n29_detective_reasoning.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN29DetectiveReasoning", UIController)
 UIN29DetectiveReasoning = UIN29DetectiveReasoning
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29DetectiveReasoning.Constructor = function(self)
-  -- function num : 0_0
+function UIN29DetectiveReasoning:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN29DetectiveReasoning:LoadDataOnEnter(TT, res, uiParams)
   self._localDb = UIN29DetectiveLocalDb:New()
   self._idStage = uiParams[1]
-  local allStage = (self._localDb):GetAllStage()
+  local allStage = self._localDb:GetAllStage()
   self._cfgStage = allStage[self._idStage]
   self._idEndStage = 0
   self._idNextStage = 0
-  for k,v in pairs(allStage) do
+  for k, v in pairs(allStage) do
     if self._idEndStage == self._idStage then
       self._idNextStage = k
     end
@@ -31,10 +21,7 @@ UIN29DetectiveReasoning.LoadDataOnEnter = function(self, TT, res, uiParams)
   self._options = {checkCount = 0, needCount = 0}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN29DetectiveReasoning:OnShow(uiParams)
   self._uiWidget = self:GetUIComponent("RectTransform", "uiWidget")
   self._btnAnywhere = self:GetUIComponent("RectTransform", "btnAnywhere")
   self._plotMask = self:GetUIComponent("RectTransform", "plotMask")
@@ -49,12 +36,9 @@ UIN29DetectiveReasoning.OnShow = function(self, uiParams)
   self._uiFailed = self:GetUIComponent("RectTransform", "uiFailed")
   self._uiSpine = self:GetUIComponent("SpineLoader", "uiSpine")
   self._animation = self:GetUIComponent("Animation", "animation")
-  ;
-  ((self._uiSuccess).gameObject):SetActive(false)
-  ;
-  ((self._uiFailed).gameObject):SetActive(false)
-  ;
-  ((self._plotMask).gameObject):SetActive(false)
+  self._uiSuccess.gameObject:SetActive(false)
+  self._uiFailed.gameObject:SetActive(false)
+  self._plotMask.gameObject:SetActive(false)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
   self:EnterFullScreenBg(false)
   self:InitCommonTopButton()
@@ -68,85 +52,61 @@ UIN29DetectiveReasoning.OnShow = function(self, uiParams)
   self:InAnimation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.OnHide = function(self)
-  -- function num : 0_3
+function UIN29DetectiveReasoning:OnHide()
   self:KillTask(self._idTaskInAnimation)
   self:KillTask(self._idTaskFragmentMerge)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.BtnAnywhereOnClick = function(self, go)
-  -- function num : 0_4
+function UIN29DetectiveReasoning:BtnAnywhereOnClick(go)
   self:EnterFullScreenBg(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.BtnClueOnClick = function(self, go)
-  -- function num : 0_5
-  local detectiveComponent = (self._localDb):DetectiveComponent()
+function UIN29DetectiveReasoning:BtnClueOnClick(go)
+  local detectiveComponent = self._localDb:DetectiveComponent()
   local componentInfo = detectiveComponent:GetComponentInfo()
   self:ShowDialog("UIActivityN29DetectiveBagController", true, componentInfo.cur_info, true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.BtnMergeOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._options).checkCount ~= (self._options).needCount then
-    return 
+function UIN29DetectiveReasoning:BtnMergeOnClick(go)
+  if self._options.checkCount ~= self._options.needCount then
+    return
   end
-  local allReasoning = (Cfg.cfg_n29_detective_reasoning)({})
-  local data = (self._progressPool)[self._idProgress]
+  local allReasoning = Cfg.cfg_n29_detective_reasoning({})
+  local data = self._progressPool[self._idProgress]
   local cfgReasoning = allReasoning[data.id]
   local lookup = {}
-  for k,v in pairs(cfgReasoning.ClueTrueOptions) do
+  for k, v in pairs(cfgReasoning.ClueTrueOptions) do
     lookup[v] = v
   end
   local trueCount = 0
-  for k,v in pairs(self._uiOptionsPool) do
-    local id = (cfgReasoning.ClueOptions)[k]
+  for k, v in pairs(self._uiOptionsPool) do
+    local id = cfgReasoning.ClueOptions[k]
     if v:IsCheck() and lookup[id] ~= nil then
       trueCount = trueCount + 1
     end
   end
   self:KillTask(self._idTaskFragmentMerge)
-  self._idTaskFragmentMerge = self:StartTask(self.FragmentMergeTask, self, trueCount == (self._options).checkCount)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._idTaskFragmentMerge = self:StartTask(self.FragmentMergeTask, self, trueCount == self._options.checkCount)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.TglClueOnClick = function(self, id, go)
-  -- function num : 0_7
+function UIN29DetectiveReasoning:TglClueOnClick(id, go)
   self:UpdateCheckCount()
-  do
-    if (self._options).needCount < (self._options).checkCount then
-      local option = (self._uiOptionsPool)[id]
-      option:SetCheck(false)
-    end
-    self:UpdateQuestion()
+  if self._options.checkCount > self._options.needCount then
+    local option = self._uiOptionsPool[id]
+    option:SetCheck(false)
   end
+  self:UpdateQuestion()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.BtnClueDetailsOnClick = function(self, uiOption, go)
-  -- function num : 0_8 , upvalues : _ENV
-  local allReasoning = (Cfg.cfg_n29_detective_reasoning)({})
-  local data = (self._progressPool)[self._idProgress]
+function UIN29DetectiveReasoning:BtnClueDetailsOnClick(uiOption, go)
+  local allReasoning = Cfg.cfg_n29_detective_reasoning({})
+  local data = self._progressPool[self._idProgress]
   local cfgReasoning = allReasoning[data.id]
-  local idClue = (cfgReasoning.ClueOptions)[uiOption:ID()]
+  local idClue = cfgReasoning.ClueOptions[uiOption:ID()]
   self:ShowDialog("UIN29DetectiveReasoningClueDetails", idClue, uiOption:IsCheck())
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.OnActivityCloseEvent = function(self, id)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN29DetectiveReasoning:OnActivityCloseEvent(id)
   local campaignModule = self:GetModule(CampaignModule)
   local idCampaign = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_N29)
   if idCampaign == id then
@@ -154,83 +114,60 @@ UIN29DetectiveReasoning.OnActivityCloseEvent = function(self, id)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.GetChildComponent = function(self, parent, componentTypeName, name)
-  -- function num : 0_10
-  local child = (parent.transform):Find(name)
+function UIN29DetectiveReasoning:GetChildComponent(parent, componentTypeName, name)
+  local child = parent.transform:Find(name)
   if child == nil then
     return nil
   end
   return child:GetComponent(componentTypeName)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.PlaySpine = function(self, curSpine, trackIndex, animName, loop)
-  -- function num : 0_11
-  local skeleton = nil
-  if curSpine ~= nil and not curSpine.CurrentSkeleton then
-    skeleton = curSpine.CurrentMultiSkeleton
+function UIN29DetectiveReasoning:PlaySpine(curSpine, trackIndex, animName, loop)
+  local skeleton
+  if curSpine ~= nil then
+    skeleton = curSpine.CurrentSkeleton or curSpine.CurrentMultiSkeleton
   end
   if skeleton ~= nil then
-    (skeleton.AnimationState):SetAnimation(trackIndex, animName, loop)
+    skeleton.AnimationState:SetAnimation(trackIndex, animName, loop)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.EnterFullScreenBg = function(self, isEnter)
-  -- function num : 0_12
-  ((self._uiWidget).gameObject):SetActive(not isEnter)
-  ;
-  ((self._btnAnywhere).gameObject):SetActive(isEnter)
+function UIN29DetectiveReasoning:EnterFullScreenBg(isEnter)
+  self._uiWidget.gameObject:SetActive(not isEnter)
+  self._btnAnywhere.gameObject:SetActive(isEnter)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.InitCommonTopButton = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  self._backBtns = (self._ltBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_13_0 , upvalues : self, _ENV
+function UIN29DetectiveReasoning:InitCommonTopButton()
+  self._backBtns = self._ltBtn:SpawnObject("UICommonTopButton")
+  self._backBtns:SetData(function()
     self:SwitchState(UIStateType.UIN29DetectiveLogin)
-  end
-, nil, function()
-    -- function num : 0_13_1 , upvalues : self, _ENV
+  end, nil, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, true, nil, function()
-    -- function num : 0_13_2 , upvalues : self
+  end, true, nil, function()
     self:EnterFullScreenBg(true)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.CreateProgress = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN29DetectiveReasoning:CreateProgress()
   self._progressPool = {}
   self._uiProgressPool = {}
-  if (self._cfgStage).ReasoningRule == nil then
-    return 
+  if self._cfgStage.ReasoningRule == nil then
+    return
   end
-  for k,v in pairs((self._cfgStage).ReasoningRule) do
-    local element = {structName = "UIN29DetectiveReasoning::RuleElement", id = v, finish = false}
-    ;
-    (table.insert)(self._progressPool, element)
+  for k, v in pairs(self._cfgStage.ReasoningRule) do
+    local element = {
+      structName = "UIN29DetectiveReasoning::RuleElement",
+      id = v,
+      finish = false
+    }
+    table.insert(self._progressPool, element)
   end
   local count = #self._progressPool
-  self._uiProgressPool = (self._uiProgress):SpawnObjects("UIN29DetectiveReasoningProgress", count)
+  self._uiProgressPool = self._uiProgress:SpawnObjects("UIN29DetectiveReasoningProgress", count)
   self._idProgress = 1
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.CreateOptions = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN29DetectiveReasoning:CreateOptions()
   local countOptions = 4
   self._uiOptionsPool = {}
   for i = 1, countOptions do
@@ -239,145 +176,96 @@ UIN29DetectiveReasoning.CreateOptions = function(self)
     local option = parent:SpawnObject("UIN29DetectiveReasoningOption")
     option:SetID(i)
     option:SetCheck(false)
-    ;
-    (table.insert)(self._uiOptionsPool, option)
+    table.insert(self._uiOptionsPool, option)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.UpdateProgress = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  for k,v in pairs(self._progressPool) do
-    local ui = (self._uiProgressPool)[k]
+function UIN29DetectiveReasoning:UpdateProgress()
+  for k, v in pairs(self._progressPool) do
+    local ui = self._uiProgressPool[k]
     ui:Flush(v.finish)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.UpdateQuestion = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN29DetectiveReasoning:UpdateQuestion()
   if self._idProgress == 0 then
-    return 
+    return
   end
-  local allReasoning = (Cfg.cfg_n29_detective_reasoning)({})
-  local allItem = (Cfg.cfg_component_detective_item)({})
-  local data = (self._progressPool)[self._idProgress]
+  local allReasoning = Cfg.cfg_n29_detective_reasoning({})
+  local allItem = Cfg.cfg_component_detective_item({})
+  local data = self._progressPool[self._idProgress]
   local cfgReasoning = allReasoning[data.id]
   if cfgReasoning == nil or cfgReasoning.ClueOptions == nil or cfgReasoning.ClueTrueOptions == nil then
-    (Log.error)("cfg_n29_detective_reasoning 缺少配置! id --> ", data.id)
-    return 
+    Log.error("cfg_n29_detective_reasoning 缺少配置! id --> ", data.id)
+    return
   end
   local checkCount = 0
   local needCount = #cfgReasoning.ClueTrueOptions
   local uiCount = #self._uiOptionsPool
   local dataCount = #cfgReasoning.ClueOptions
   for i = 1, dataCount do
-    local id = (cfgReasoning.ClueOptions)[i]
+    local id = cfgReasoning.ClueOptions[i]
     local cfg = allItem[id]
-    local ui = (self._uiOptionsPool)[i]
-    ui:SetTitle((StringTable.Get)(cfg.QuizName))
-    ;
-    ((ui:View()).gameObject):SetActive(true)
+    local ui = self._uiOptionsPool[i]
+    ui:SetTitle(StringTable.Get(cfg.QuizName))
+    ui:View().gameObject:SetActive(true)
     if ui:IsCheck() then
       checkCount = checkCount + 1
     end
   end
   for i = dataCount + 1, uiCount do
-    local ui = (self._uiOptionsPool)[i]
+    local ui = self._uiOptionsPool[i]
     ui:SetCheck(false)
-    ;
-    ((ui:View()).gameObject):SetActive(false)
+    ui:View().gameObject:SetActive(false)
   end
-  local stringCount = (string.format)("%d/%d", checkCount, needCount)
-  ;
-  (self._txtQuestion):SetText((StringTable.Get)(cfgReasoning.Question))
-  ;
-  (self._txtCount):SetText((StringTable.Get)("str_n29_detective_reasoning_count", stringCount))
-  ;
-  ((self._btnMerge).gameObject):SetActive(needCount <= checkCount)
-  -- DECOMPILER ERROR at PC111: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._options).checkCount = checkCount
-  -- DECOMPILER ERROR at PC113: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._options).needCount = needCount
-  for k,v in pairs(self._uiOptionsPool) do
-    if (self._options).checkCount >= (self._options).needCount then
-      do
-        v:SetInteractable(v:IsCheck())
-        -- DECOMPILER ERROR at PC132: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC132: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  local stringCount = string.format("%d/%d", checkCount, needCount)
+  self._txtQuestion:SetText(StringTable.Get(cfgReasoning.Question))
+  self._txtCount:SetText(StringTable.Get("str_n29_detective_reasoning_count", stringCount))
+  self._btnMerge.gameObject:SetActive(needCount <= checkCount)
+  self._options.checkCount = checkCount
+  self._options.needCount = needCount
+  for k, v in pairs(self._uiOptionsPool) do
+    if not v:IsCheck() then
+      v:SetInteractable(self._options.checkCount < self._options.needCount)
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.UpdateCheckCount = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local allReasoning = (Cfg.cfg_n29_detective_reasoning)({})
-  local data = (self._progressPool)[self._idProgress]
+function UIN29DetectiveReasoning:UpdateCheckCount()
+  local allReasoning = Cfg.cfg_n29_detective_reasoning({})
+  local data = self._progressPool[self._idProgress]
   local cfgReasoning = allReasoning[data.id]
   local checkCount = 0
   local needCount = #cfgReasoning.ClueTrueOptions
-  for k,v in pairs(self._uiOptionsPool) do
+  for k, v in pairs(self._uiOptionsPool) do
     if v:IsCheck() then
       checkCount = checkCount + 1
     end
   end
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._options).checkCount = checkCount
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._options).needCount = needCount
-  for k,v in pairs(self._uiOptionsPool) do
-    if (self._options).checkCount >= (self._options).needCount then
-      do
-        v:SetInteractable(v:IsCheck())
-        -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  self._options.checkCount = checkCount
+  self._options.needCount = needCount
+  for k, v in pairs(self._uiOptionsPool) do
+    if not v:IsCheck() then
+      v:SetInteractable(self._options.checkCount < self._options.needCount)
     end
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.CheckAutoSaved = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIN29DetectiveReasoning:CheckAutoSaved()
   if self._idStage == self._idEndStage then
     self:StartTask(function(TT)
-    -- function num : 0_19_0 , upvalues : _ENV, self
-    local res = AsyncRequestRes:New()
-    res:SetSucc(true)
-    local detectiveComponent = (self._localDb):DetectiveComponent()
-    detectiveComponent:HandleAutoSave(TT, res)
-  end
-)
+      local res = AsyncRequestRes:New()
+      res:SetSucc(true)
+      local detectiveComponent = self._localDb:DetectiveComponent()
+      detectiveComponent:HandleAutoSave(TT, res)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.FragmentMergeTask = function(self, TT, result)
-  -- function num : 0_20 , upvalues : _ENV
+function UIN29DetectiveReasoning:FragmentMergeTask(TT, result)
   local lockName = "UIN29DetectiveReasoning:FragmentMergeTask"
   self:Lock(lockName)
-  local spineAnim, popupResult, animName = nil, nil, nil
+  local spineAnim, popupResult, animName
   if result then
     spineAnim = "Story_serious"
     popupResult = self._uiSuccess
@@ -388,316 +276,216 @@ UIN29DetectiveReasoning.FragmentMergeTask = function(self, TT, result)
     animName = "uieff_UIN29DetectiveReasoning_failed"
   end
   self:PlaySpine(self._uiSpine, 0, spineAnim, true)
-  ;
-  (popupResult.gameObject):SetActive(true)
-  ;
-  (self._animation):Play(animName)
+  popupResult.gameObject:SetActive(true)
+  self._animation:Play(animName)
   YIELD(TT, 4000)
   if result then
-    local ui = (self._uiProgressPool)[self._idProgress]
+    local ui = self._uiProgressPool[self._idProgress]
     ui:PlaySwitch(TT)
     YIELD(TT, 333)
   else
-    do
+    YIELD(TT, 500)
+  end
+  local startAfterPlot = false
+  if result then
+    local element = self._progressPool[self._idProgress]
+    element.finish = true
+    self._idProgress = self._idProgress + 1
+    if self._idProgress > #self._progressPool then
+      startAfterPlot = true
+      self._idProgress = self._idProgress - 1
+    end
+    for k, v in pairs(self._uiOptionsPool) do
+      v:SetCheck(false)
+    end
+  end
+  self:UpdateProgress()
+  self:UpdateQuestion()
+  self:UnLock(lockName)
+  if startAfterPlot then
+    self:Lock(lockName)
+    local lstFragment = self._cfgStage.FragmentList
+    local res = AsyncRequestRes:New()
+    res:SetSucc(true)
+    local detectiveComponent = self._localDb:DetectiveComponent()
+    detectiveComponent:HandleSubmitItem(TT, res, self._idStage, {}, lstFragment, {})
+    if not res:GetSucc() then
+      Log.error("Editor --> 【N29侦探】提交推论碎片失败 ret = ", res:GetResult())
+    end
+    popupResult.gameObject:SetActive(false)
+    local uiStateManager = GameGlobal.UIStateManager()
+    local uiName = "UIN29DetectiveFragmentPopup"
+    for k, v in pairs(lstFragment) do
+      self:ShowDialog(uiName, v, lockName)
+      while not uiStateManager:IsShow(uiName) do
+        YIELD(TT)
+      end
+      while uiStateManager:IsShow(uiName) do
+        YIELD(TT)
+      end
       YIELD(TT, 500)
-      local startAfterPlot = false
-      if result then
-        local element = (self._progressPool)[self._idProgress]
-        element.finish = true
-        self._idProgress = self._idProgress + 1
-        if #self._progressPool < self._idProgress then
-          startAfterPlot = true
-          self._idProgress = self._idProgress - 1
-        end
-        for k,v in pairs(self._uiOptionsPool) do
-          v:SetCheck(false)
-        end
-      end
-      do
-        self:UpdateProgress()
-        self:UpdateQuestion()
-        self:UnLock(lockName)
-        if startAfterPlot then
-          self:Lock(lockName)
-          local lstFragment = (self._cfgStage).FragmentList
-          local res = AsyncRequestRes:New()
-          res:SetSucc(true)
-          local detectiveComponent = (self._localDb):DetectiveComponent()
-          detectiveComponent:HandleSubmitItem(TT, res, self._idStage, {}, lstFragment, {})
-          if not res:GetSucc() then
-            (Log.error)("Editor --> 【N29侦探】提交推论碎片失败 ret = ", res:GetResult())
-          end
-          ;
-          (popupResult.gameObject):SetActive(false)
-          local uiStateManager = (GameGlobal.UIStateManager)()
-          local uiName = "UIN29DetectiveFragmentPopup"
-          for k,v in pairs(lstFragment) do
-            self:ShowDialog(uiName, v, lockName)
-            while not uiStateManager:IsShow(uiName) do
-              YIELD(TT)
-            end
-            while uiStateManager:IsShow(uiName) do
-              YIELD(TT)
-            end
-            YIELD(TT, 500)
-          end
-          ;
-          ((self._plotMask).gameObject):SetActive(true)
-          local idPlot = (self._cfgStage).AfterReasoningPlot
-          local isEndPlot = self._idStage == self._idEndStage
-          ;
-          (self._localDb):AfterReasoningPlot(idPlot, isEndPlot, function()
-    -- function num : 0_20_0 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIActivityN29DetectiveMapController, self._idNextStage)
-  end
-, function()
-    -- function num : 0_20_1 , upvalues : self
-    (self._localDb):PlayEndingPlot(true)
-  end
-)
-          self:UnLock(lockName)
-        else
-          self:Lock(lockName)
-          ;
-          ((self._uiSuccess).gameObject):SetActive(false)
-          ;
-          ((self._uiFailed).gameObject):SetActive(false)
-          self:PlaySpine(self._uiSpine, 0, "Story_norm", true)
-          ;
-          (self._animation):Play("uieff_UIN29DetectiveReasoning_Question_in")
-          YIELD(TT, 367)
-          self:UnLock(lockName)
-          for k,v in pairs(self._uiOptionsPool) do
-            v:PlaySwing()
-            YIELD(TT, 350)
-          end
-        end
-        -- DECOMPILER ERROR: 4 unprocessed JMP targets
-      end
+    end
+    self._plotMask.gameObject:SetActive(true)
+    local idPlot = self._cfgStage.AfterReasoningPlot
+    local isEndPlot = self._idStage == self._idEndStage
+    self._localDb:AfterReasoningPlot(idPlot, isEndPlot, function()
+      self:SwitchState(UIStateType.UIActivityN29DetectiveMapController, self._idNextStage)
+    end, function()
+      self._localDb:PlayEndingPlot(true)
+    end)
+    self:UnLock(lockName)
+  else
+    self:Lock(lockName)
+    self._uiSuccess.gameObject:SetActive(false)
+    self._uiFailed.gameObject:SetActive(false)
+    self:PlaySpine(self._uiSpine, 0, "Story_norm", true)
+    self._animation:Play("uieff_UIN29DetectiveReasoning_Question_in")
+    YIELD(TT, 367)
+    self:UnLock(lockName)
+    for k, v in pairs(self._uiOptionsPool) do
+      v:PlaySwing()
+      YIELD(TT, 350)
     end
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.CheckGuide = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN29DetectiveReasoning)
+function UIN29DetectiveReasoning:CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN29DetectiveReasoning)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.GetOptionGo = function(self, index)
-  -- function num : 0_22
+function UIN29DetectiveReasoning:GetOptionGo(index)
   if not self._uiOptionsPool then
-    return 
+    return
   end
-  local option = (self._uiOptionsPool)[index]
+  local option = self._uiOptionsPool[index]
   if option then
     return option:GetCheckBtnGo()
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.InAnimation = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIN29DetectiveReasoning:InAnimation()
   self:KillTask(self._idTaskInAnimation)
   local lockName = "UIN29DetectiveReasoning:InAnimation"
   self._idTaskInAnimation = self:StartTask(function(TT)
-    -- function num : 0_23_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
     YIELD(TT, 333)
-    ;
-    (self._animation):Play("uieff_UIN29DetectiveReasoning_Question_in")
+    self._animation:Play("uieff_UIN29DetectiveReasoning_Question_in")
     YIELD(TT, 367)
     self:UnLock(lockName)
-    for k,v in pairs(self._uiOptionsPool) do
+    for k, v in pairs(self._uiOptionsPool) do
       v:PlaySwing()
       YIELD(TT, 350)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoning.KillTask = function(self, taskId)
-  -- function num : 0_24 , upvalues : _ENV
-  local task = ((GameGlobal.TaskManager)()):FindTask(taskId)
+function UIN29DetectiveReasoning:KillTask(taskId)
+  local task = GameGlobal.TaskManager():FindTask(taskId)
   if task and task.state ~= TaskState.Stop then
-    ((GameGlobal.TaskManager)()):KillTask(taskId)
+    GameGlobal.TaskManager():KillTask(taskId)
   end
 end
 
 _class("UIN29DetectiveReasoningProgress", UICustomWidget)
 UIN29DetectiveReasoningProgress = UIN29DetectiveReasoningProgress
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29DetectiveReasoningProgress.OnShow = function(self, uiParams)
-  -- function num : 0_25
+function UIN29DetectiveReasoningProgress:OnShow(uiParams)
   self._uiConnect = self:GetUIComponent("RectTransform", "uiConnect")
   self._uiQuestion = self:GetUIComponent("RectTransform", "uiQuestion")
   self._uiResolved = self:GetUIComponent("RectTransform", "uiResolved")
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningProgress.Flush = function(self, isResolved)
-  -- function num : 0_26
-  ((self._uiQuestion).gameObject):SetActive(not isResolved)
-  ;
-  ((self._uiResolved).gameObject):SetActive(isResolved)
+function UIN29DetectiveReasoningProgress:Flush(isResolved)
+  self._uiQuestion.gameObject:SetActive(not isResolved)
+  self._uiResolved.gameObject:SetActive(isResolved)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningProgress.PlaySwitch = function(self, TT)
-  -- function num : 0_27 , upvalues : _ENV
-  ((self._uiQuestion).gameObject):SetActive(true)
-  ;
-  ((self._uiResolved).gameObject):SetActive(true)
-  ;
-  (self._animation):Play("uieff_UIN29DetectiveReasoningProgress_switch")
+function UIN29DetectiveReasoningProgress:PlaySwitch(TT)
+  self._uiQuestion.gameObject:SetActive(true)
+  self._uiResolved.gameObject:SetActive(true)
+  self._animation:Play("uieff_UIN29DetectiveReasoningProgress_switch")
   YIELD(TT, 167)
-  ;
-  ((self._uiQuestion).gameObject):SetActive(false)
+  self._uiQuestion.gameObject:SetActive(false)
 end
 
 _class("UIN29DetectiveReasoningOption", UICustomWidget)
 UIN29DetectiveReasoningOption = UIN29DetectiveReasoningOption
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29DetectiveReasoningOption.OnShow = function(self, uiParams)
-  -- function num : 0_28
+function UIN29DetectiveReasoningOption:OnShow(uiParams)
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._tglClue = self:GetUIComponent("Toggle", "tglClue")
   self._unselect = self:GetUIComponent("RectTransform", "unselect")
   self._select = self:GetUIComponent("RectTransform", "select")
   self._animation = self:GetUIComponent("Animation", "animation")
   self._gtlClueGo = self:GetGameObject("tglClue")
-  self._tglClueEvent = (self._tglClue):GetComponent("UIEventTriggerListener")
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._tglClueEvent).onDoubleClick = function()
-    -- function num : 0_28_0 , upvalues : self
-    self:TglClueOnDoubleClick((self._tglClue).gameObject)
+  self._tglClueEvent = self._tglClue:GetComponent("UIEventTriggerListener")
+  
+  function self._tglClueEvent.onDoubleClick()
+    self:TglClueOnDoubleClick(self._tglClue.gameObject)
   end
-
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningOption.OnHide = function(self)
-  -- function num : 0_29
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._tglClueEvent).onDoubleClick = nil
+function UIN29DetectiveReasoningOption:OnHide()
+  self._tglClueEvent.onDoubleClick = nil
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningOption.SetID = function(self, id)
-  -- function num : 0_30
+function UIN29DetectiveReasoningOption:SetID(id)
   self._id = id
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningOption.SetTitle = function(self, name)
-  -- function num : 0_31
-  (self._txtName):SetText(name)
+function UIN29DetectiveReasoningOption:SetTitle(name)
+  self._txtName:SetText(name)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningOption.SetCheck = function(self, isCheck)
-  -- function num : 0_32
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._tglClue).isOn = isCheck
-  ;
-  ((self._unselect).gameObject):SetActive(not isCheck)
-  ;
-  ((self._select).gameObject):SetActive(isCheck)
-  local state = (self._animation):get_Item("uieff_UIN29DetectiveReasoningOption_swing")
+function UIN29DetectiveReasoningOption:SetCheck(isCheck)
+  self._tglClue.isOn = isCheck
+  self._unselect.gameObject:SetActive(not isCheck)
+  self._select.gameObject:SetActive(isCheck)
+  local state = self._animation:get_Item("uieff_UIN29DetectiveReasoningOption_swing")
   state.speed = self:IsCheck() and 0 or 1
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningOption.ID = function(self)
-  -- function num : 0_33
+function UIN29DetectiveReasoningOption:ID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningOption.IsCheck = function(self)
-  -- function num : 0_34
-  return (self._tglClue).isOn
+function UIN29DetectiveReasoningOption:IsCheck()
+  return self._tglClue.isOn
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningOption.SetInteractable = function(self, enable)
-  -- function num : 0_35
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._tglClue).interactable = enable
+function UIN29DetectiveReasoningOption:SetInteractable(enable)
+  self._tglClue.interactable = enable
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningOption.TglClueOnClick = function(self, go)
-  -- function num : 0_36
-  if (self._tglClue).interactable then
-    ((self._unselect).gameObject):SetActive(not self:IsCheck())
-    ;
-    ((self._select).gameObject):SetActive(self:IsCheck())
-    ;
-    (self:RootUIOwner()):TglClueOnClick(self._id, go)
-    local state = (self._animation):get_Item("uieff_UIN29DetectiveReasoningOption_swing")
+function UIN29DetectiveReasoningOption:TglClueOnClick(go)
+  if self._tglClue.interactable then
+    self._unselect.gameObject:SetActive(not self:IsCheck())
+    self._select.gameObject:SetActive(self:IsCheck())
+    self:RootUIOwner():TglClueOnClick(self._id, go)
+    local state = self._animation:get_Item("uieff_UIN29DetectiveReasoningOption_swing")
     state.speed = self:IsCheck() and 0 or 1
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningOption.TglClueOnDoubleClick = function(self, go)
-  -- function num : 0_37
-  if (self._tglClue).interactable then
-    ((self._unselect).gameObject):SetActive(not self:IsCheck())
-    ;
-    ((self._select).gameObject):SetActive(self:IsCheck())
-    ;
-    (self:RootUIOwner()):TglClueOnClick(self._id, go)
-    local state = (self._animation):get_Item("uieff_UIN29DetectiveReasoningOption_swing")
+function UIN29DetectiveReasoningOption:TglClueOnDoubleClick(go)
+  if self._tglClue.interactable then
+    self._unselect.gameObject:SetActive(not self:IsCheck())
+    self._select.gameObject:SetActive(self:IsCheck())
+    self:RootUIOwner():TglClueOnClick(self._id, go)
+    local state = self._animation:get_Item("uieff_UIN29DetectiveReasoningOption_swing")
     state.speed = self:IsCheck() and 0 or 1
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningOption.BtnClueDetailsOnClick = function(self, go)
-  -- function num : 0_38
-  (self:RootUIOwner()):BtnClueDetailsOnClick(self, go)
+function UIN29DetectiveReasoningOption:BtnClueDetailsOnClick(go)
+  self:RootUIOwner():BtnClueDetailsOnClick(self, go)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningOption.GetCheckBtnGo = function(self)
-  -- function num : 0_39
+function UIN29DetectiveReasoningOption:GetCheckBtnGo()
   return self._gtlClueGo
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningOption.PlaySwing = function(self)
-  -- function num : 0_40
-  (self._animation):Play("uieff_UIN29DetectiveReasoningOption_swing")
+function UIN29DetectiveReasoningOption:PlaySwing()
+  self._animation:Play("uieff_UIN29DetectiveReasoningOption_swing")
 end
-
-

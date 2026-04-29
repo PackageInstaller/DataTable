@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/monster_creation_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MonsterCreationServiceLogic", BaseService)
 MonsterCreationServiceLogic = MonsterCreationServiceLogic
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterCreationServiceLogic.GenerateMonsterCreationResult = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+function MonsterCreationServiceLogic:GenerateMonsterCreationResult()
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local eMonsters = group:GetEntities()
   local creationResultList = {}
-  for _,v in ipairs(eMonsters) do
+  for _, v in ipairs(eMonsters) do
     local res = self:GenerateOneMonsterResult(v)
     creationResultList[#creationResultList + 1] = res
   end
   return creationResultList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterCreationServiceLogic.GenerateOneMonsterResult = function(self, monsterEntity)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfgSvc = (self._world):GetService("Config")
+function MonsterCreationServiceLogic:GenerateOneMonsterResult(monsterEntity)
+  local cfgSvc = self._world:GetService("Config")
   local monsterConfigData = cfgSvc:GetMonsterConfigData()
   local res = DataMonsterCreationResult:New()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local appearSkillId = utilDataSvc:GetAppearSkillId(monsterEntity)
   res:SetMonsterAppearSkillID(appearSkillId)
   local elementCmpt = monsterEntity:Element()
@@ -48,10 +38,7 @@ MonsterCreationServiceLogic.GenerateOneMonsterResult = function(self, monsterEnt
   return res
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterCreationServiceLogic.GetMonsterCreationGridLocResult = function(self, monsterEntity)
-  -- function num : 0_2 , upvalues : _ENV
+function MonsterCreationServiceLogic:GetMonsterCreationGridLocResult(monsterEntity)
   local gridLocCmpt = monsterEntity:GridLocation()
   local gridLocRes = DataGridLocationResult:New()
   gridLocRes:SetGridLocResultBornPos(gridLocCmpt:GetGridPos())
@@ -62,10 +49,7 @@ MonsterCreationServiceLogic.GetMonsterCreationGridLocResult = function(self, mon
   return gridLocRes
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterCreationServiceLogic.GetCreateADH = function(self, monsterID)
-  -- function num : 0_3
+function MonsterCreationServiceLogic:GetCreateADH(monsterID)
   local cfgService = self._configService
   local monsterConfigData = cfgService:GetMonsterConfigData()
   local attack = monsterConfigData:GetMonsterAttack(monsterID)
@@ -78,29 +62,20 @@ MonsterCreationServiceLogic.GetCreateADH = function(self, monsterID)
   return attack, defense, hp
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterCreationServiceLogic.CreateMonster = function(self, monsterTransform)
-  -- function num : 0_4
+function MonsterCreationServiceLogic:CreateMonster(monsterTransform)
   return self:_CreateMonster(monsterTransform, nil)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterCreationServiceLogic.CreateMonsterWithInitADH = function(self, monsterTransform, initAttributes)
-  -- function num : 0_5 , upvalues : _ENV
-  initAttributes.attack = initAttributes.attack ~= nil and (math.floor)(initAttributes.attack) or nil
-  initAttributes.defense = initAttributes.defense ~= nil and (math.floor)(initAttributes.defense) or nil
-  initAttributes.maxhp = initAttributes.maxhp ~= nil and (math.floor)(initAttributes.maxhp) or nil
-  initAttributes.curhp = initAttributes.curhp ~= nil and (math.floor)(initAttributes.curhp) or nil
+function MonsterCreationServiceLogic:CreateMonsterWithInitADH(monsterTransform, initAttributes)
+  initAttributes.attack = initAttributes.attack ~= nil and math.floor(initAttributes.attack) or nil
+  initAttributes.defense = initAttributes.defense ~= nil and math.floor(initAttributes.defense) or nil
+  initAttributes.maxhp = initAttributes.maxhp ~= nil and math.floor(initAttributes.maxhp) or nil
+  initAttributes.curhp = initAttributes.curhp ~= nil and math.floor(initAttributes.curhp) or nil
   return self:_CreateMonster(monsterTransform, initAttributes)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterCreationServiceLogic._CreateMonster = function(self, monsterTransform, _InitMonsterAttributes)
-  -- function num : 0_6 , upvalues : _ENV
-  local monsterConfigData = (self._configService):GetMonsterConfigData()
+function MonsterCreationServiceLogic:_CreateMonster(monsterTransform, _InitMonsterAttributes)
+  local monsterConfigData = self._configService:GetMonsterConfigData()
   local monsterID = monsterTransform:GetMonsterID()
   local monsterPosition = monsterTransform:GetPosition()
   local dir = monsterTransform:GetForward()
@@ -109,17 +84,13 @@ MonsterCreationServiceLogic._CreateMonster = function(self, monsterTransform, _I
   local boardIndex = monsterTransform:GetBoardIndex()
   local configMonsterObject = monsterConfigData:GetMonsterObject(monsterID)
   local configMonsterClass = monsterConfigData:GetMonsterClassByMonsterConfig(configMonsterObject)
-  local cBattleStat = (self._world):BattleStat()
+  local cBattleStat = self._world:BattleStat()
   cBattleStat:AddMonsterIDCreate(monsterID)
   cBattleStat:AddMonsterClassIDCreate(configMonsterObject.ClassID)
-  if not areaArray then
-    areaArray = monsterConfigData:GetMonsterArea(monsterID)
-  end
+  areaArray = areaArray or monsterConfigData:GetMonsterArea(monsterID)
   local moveSpeed = monsterConfigData:GetMonsterSpeed(monsterID)
   local monsterType = monsterConfigData:GetMonsterType(monsterID)
-  if not positionOffset then
-    positionOffset = monsterConfigData:GetMonsterOffset(monsterID)
-  end
+  positionOffset = positionOffset or monsterConfigData:GetMonsterOffset(monsterID)
   local damageOffset = monsterConfigData:GetMonsterDamageOffset(monsterID)
   local isBoss = monsterConfigData:IsBoss(monsterID)
   local isWorldBoss = monsterConfigData:IsWorldBoss(monsterID)
@@ -127,7 +98,7 @@ MonsterCreationServiceLogic._CreateMonster = function(self, monsterTransform, _I
   local canMove = monsterConfigData:CanMove(monsterID)
   local canTurn = monsterConfigData:CanTurn(monsterID)
   local block = monsterConfigData:Block(monsterID)
-  local affixService = (self._world):GetService("Affix")
+  local affixService = self._world:GetService("Affix")
   local attack = monsterConfigData:GetMonsterAttack(monsterID)
   local defense = monsterConfigData:GetMonsterDefense(monsterID)
   local nEvade = monsterConfigData:GetMonsterEvade(monsterID)
@@ -145,7 +116,7 @@ MonsterCreationServiceLogic._CreateMonster = function(self, monsterTransform, _I
     maxhp = multiHPData[1]
   end
   local curhp = maxhp
-  local airt, bindeff, buffrt = nil, nil, nil
+  local airt, bindeff, buffrt
   if _InitMonsterAttributes ~= nil and type(_InitMonsterAttributes) == "table" then
     if _InitMonsterAttributes.attack ~= nil then
       attack = _InitMonsterAttributes.attack
@@ -176,7 +147,7 @@ MonsterCreationServiceLogic._CreateMonster = function(self, monsterTransform, _I
       buffrt = _InitMonsterAttributes.buffrt
     end
   end
-  local sEntity = (self._world):GetService("LogicEntity")
+  local sEntity = self._world:GetService("LogicEntity")
   local monster_entity = sEntity:CreateLogicEntity(EntityConfigIDConst.Monster)
   local raceType = monsterConfigData:GetMonsterRaceType(monsterID)
   local monsterGroupID = monsterConfigData:GetMonsterGroupID(monsterID)
@@ -184,300 +155,265 @@ MonsterCreationServiceLogic._CreateMonster = function(self, monsterTransform, _I
   local monsterCampType = monsterConfigData:GetMonsterCampType(monsterID)
   monster_entity:ReplaceMonsterID(monsterID, raceType, monsterType, monsterGroupID, monsterClassID, monsterCampType)
   local bossUIHPBarType = monsterConfigData:GetBossUIHPType(monsterID)
-  ;
-  (monster_entity:MonsterID()):SetUIBossHPBarType(bossUIHPBarType)
+  monster_entity:MonsterID():SetUIBossHPBarType(bossUIHPBarType)
   if multiHPData then
-    (monster_entity:MonsterID()):InitMultiHPData(multiHPData)
+    monster_entity:MonsterID():InitMultiHPData(multiHPData)
   end
   if damageSyncMonsterID then
-    (monster_entity:MonsterID()):SetDamageSyncMonsterID(damageSyncMonsterID)
-    ;
-    (monster_entity:MonsterID()):SetDamageSyncFindType(syncType)
+    monster_entity:MonsterID():SetDamageSyncMonsterID(damageSyncMonsterID)
+    monster_entity:MonsterID():SetDamageSyncFindType(syncType)
     if damageSyncEffect then
-      (monster_entity:MonsterID()):SetDamageSyncEffect(damageSyncEffect.effectID)
+      monster_entity:MonsterID():SetDamageSyncEffect(damageSyncEffect.effectID)
     end
   end
-  ;
-  (monster_entity:MonsterID()):SetSnakeBodyEffect(snakeBodyEffectID)
+  monster_entity:MonsterID():SetSnakeBodyEffect(snakeBodyEffectID)
   local auraData = monsterConfigData:GetMonsterAuraRangeData(monsterID)
   if auraData then
     local groupID = auraData.groupID
     local rangeSkillID = auraData.rangeSkillID
-    ;
-    (monster_entity:MonsterID()):SetAuraRangeData(rangeSkillID, groupID)
+    monster_entity:MonsterID():SetAuraRangeData(rangeSkillID, groupID)
   end
-  do
-    local monsterStep = monsterConfigData:GetMonsterStep(monsterID)
-    local aiTargetType = monsterConfigData:GetMonsterAITargetType(monsterID)
-    monster_entity:InitAI(self._world, monsterID, monsterStep, aiTargetType)
-    monster_entity:SetAICanMoveTurn(monsterID, canMove, canTurn)
-    local monsterAIIDList = monsterConfigData:GetMonsterAIID(monsterID)
-    monsterAIIDList = affixService:ChangeMonsterAI(monsterID, AILogicPeriodType.Main, monsterAIIDList)
-    monster_entity:AddNewAI(monsterID, AILogicPeriodType.Main, monsterAIIDList)
-    local monsterPreMoveAIIDList = monsterConfigData:GetMonsterPreMoveAIID(monsterID)
-    monsterPreMoveAIIDList = affixService:ChangeMonsterAI(monsterID, AILogicPeriodType.Prev, monsterPreMoveAIIDList)
-    monster_entity:AddNewAI(monsterID, AILogicPeriodType.Prev, monsterPreMoveAIIDList)
-    local monsterAntiAttackAIIDList = monsterConfigData:GetMonsterAntiAttackAIID(monsterID)
-    monsterAntiAttackAIIDList = affixService:ChangeMonsterAI(monsterID, AILogicPeriodType.Anti, monsterAntiAttackAIIDList)
-    monster_entity:AddNewAI(monsterID, AILogicPeriodType.Anti, monsterAntiAttackAIIDList)
-    monster_entity:InitPreviewLogic(AILogicPeriodType.Main)
-    if airt then
-      (monster_entity:AI()):SetRuntimeDataAll(airt)
+  local monsterStep = monsterConfigData:GetMonsterStep(monsterID)
+  local aiTargetType = monsterConfigData:GetMonsterAITargetType(monsterID)
+  monster_entity:InitAI(self._world, monsterID, monsterStep, aiTargetType)
+  monster_entity:SetAICanMoveTurn(monsterID, canMove, canTurn)
+  local monsterAIIDList = monsterConfigData:GetMonsterAIID(monsterID)
+  monsterAIIDList = affixService:ChangeMonsterAI(monsterID, AILogicPeriodType.Main, monsterAIIDList)
+  monster_entity:AddNewAI(monsterID, AILogicPeriodType.Main, monsterAIIDList)
+  local monsterPreMoveAIIDList = monsterConfigData:GetMonsterPreMoveAIID(monsterID)
+  monsterPreMoveAIIDList = affixService:ChangeMonsterAI(monsterID, AILogicPeriodType.Prev, monsterPreMoveAIIDList)
+  monster_entity:AddNewAI(monsterID, AILogicPeriodType.Prev, monsterPreMoveAIIDList)
+  local monsterAntiAttackAIIDList = monsterConfigData:GetMonsterAntiAttackAIID(monsterID)
+  monsterAntiAttackAIIDList = affixService:ChangeMonsterAI(monsterID, AILogicPeriodType.Anti, monsterAntiAttackAIIDList)
+  monster_entity:AddNewAI(monsterID, AILogicPeriodType.Anti, monsterAntiAttackAIIDList)
+  monster_entity:InitPreviewLogic(AILogicPeriodType.Main)
+  if airt then
+    monster_entity:AI():SetRuntimeDataAll(airt)
+  end
+  if bindeff then
+    monster_entity:AddArchivedEffect(bindeff)
+  end
+  monster_entity:ReplaceBodyArea(areaArray)
+  monster_entity:SetGridLocationAndOffset(monsterPosition, dir, positionOffset, damageOffset, true)
+  self._world:GetService("Battle"):AddMonsterAuraRange(monster_entity)
+  local boardService = self._world:GetService("BoardLogic")
+  local blockFlag = boardService:GetBlockFlagByBlockId(block)
+  monster_entity:ReplaceBlockFlag(blockFlag)
+  if not boardIndex then
+    boardService:UpdateEntityBlockFlag(monster_entity, monsterPosition, monsterPosition)
+  else
+    local boardMultiServiceLogic = self._world:GetService("BoardMultiLogic")
+    boardMultiServiceLogic:UpdateEntityBlockFlagMultiBoard(boardIndex, monster_entity, monsterPosition, monsterPosition)
+  end
+  attack = affixService:ChangeMonsterAttr(monsterID, attack, AffixAttrType.Attack)
+  defense = affixService:ChangeMonsterAttr(monsterID, defense, AffixAttrType.Defence)
+  maxhp = affixService:ChangeMonsterAttr(monsterID, maxhp, AffixAttrType.HP)
+  if curhp > maxhp then
+    curhp = maxhp
+  end
+  if isWorldBoss then
+    curhp = BattleConst.WorldBossHP
+    maxhp = BattleConst.WorldBossHP
+    local battleStatCmpt = self:_GetBattleStatComponent()
+    if not battleStatCmpt:GetMainWorldBossID() then
+      battleStatCmpt:SetMainWorldBossID(monster_entity:GetID())
     end
-    if bindeff then
-      monster_entity:AddArchivedEffect(bindeff)
+  end
+  local attributeCmpt = monster_entity:Attributes()
+  attributeCmpt:Modify("Attack", attack)
+  attributeCmpt:Modify("Defense", defense)
+  attributeCmpt:Modify("Evade", nEvade)
+  attributeCmpt:Modify("HP", curhp)
+  attributeCmpt:Modify("MaxHP", maxhp)
+  attributeCmpt:Modify("Mobility", monsterStep, 1, MultModifyOperator.PLUS)
+  attributeCmpt:Modify("MaxMobility", 99)
+  local battleDamageStatisticsServiceLogic = self._world:GetService("BattleDamageStatisticsLogic")
+  battleDamageStatisticsServiceLogic:AddMonsterHPMaxStatistics(maxhp)
+  monster_entity:ReplaceElement(elementType, nil)
+  attributeCmpt:SetSimpleAttribute("Element", elementType)
+  attributeCmpt:Modify("AbsorbNormal", absorbNormal)
+  attributeCmpt:Modify("AbsorbChain", absorbChain)
+  attributeCmpt:Modify("AbsorbActive", absorbActive)
+  local antiAttackParam = monsterConfigData:GetMonsterAntiAttackParam(monsterID)
+  if antiAttackParam then
+    attributeCmpt:Modify("OriginalWaitActiveSkillCount", antiAttackParam.WaitActiveSkillCount)
+    attributeCmpt:Modify("OriginalMaxAntiSkillCountPerRound", antiAttackParam.MaxAntiSkillCountPerRound)
+    attributeCmpt:Modify("WaitActiveSkillCount", antiAttackParam.WaitActiveSkillCount)
+    attributeCmpt:Modify("MaxAntiSkillCountPerRound", antiAttackParam.MaxAntiSkillCountPerRound)
+    attributeCmpt:Modify("AntiActiveSkillType", antiAttackParam.AntiActiveSkillType or {})
+    if antiAttackParam.AntiSkillEnabled then
+      attributeCmpt:Modify("AntiSkillEnabled", antiAttackParam.AntiSkillEnabled)
     end
-    monster_entity:ReplaceBodyArea(areaArray)
-    monster_entity:SetGridLocationAndOffset(monsterPosition, dir, positionOffset, damageOffset, true)
-    ;
-    ((self._world):GetService("Battle")):AddMonsterAuraRange(monster_entity)
-    local boardService = (self._world):GetService("BoardLogic")
-    local blockFlag = boardService:GetBlockFlagByBlockId(block)
-    monster_entity:ReplaceBlockFlag(blockFlag)
-    if not boardIndex then
-      boardService:UpdateEntityBlockFlag(monster_entity, monsterPosition, monsterPosition)
-    else
-      local boardMultiServiceLogic = (self._world):GetService("BoardMultiLogic")
-      boardMultiServiceLogic:UpdateEntityBlockFlagMultiBoard(boardIndex, monster_entity, monsterPosition, monsterPosition)
+  end
+  if isBoss then
+    monster_entity:ReplaceBoss()
+  end
+  if isWorldBoss then
+    self:InitWorldBossHPData(monster_entity, monsterID)
+  end
+  self._world:GetService("Trigger"):Notify(NTMonsterShow:New(monster_entity))
+  local monsterBornBuffContext = {isMonsterBornBuff = true}
+  local buffLogic = self._world:GetService("BuffLogic")
+  local buffList = monsterConfigData:GetBornBuffList(monsterID)
+  if 0 < #buffList then
+    if not monster_entity:HasBuff() then
+      monster_entity:AddBuffComponent()
     end
-    do
-      attack = affixService:ChangeMonsterAttr(monsterID, attack, AffixAttrType.Attack)
-      defense = affixService:ChangeMonsterAttr(monsterID, defense, AffixAttrType.Defence)
-      maxhp = affixService:ChangeMonsterAttr(monsterID, maxhp, AffixAttrType.HP)
-      if maxhp < curhp then
-        curhp = maxhp
-      end
-      if isWorldBoss then
-        curhp = BattleConst.WorldBossHP
-        maxhp = BattleConst.WorldBossHP
-        local battleStatCmpt = self:_GetBattleStatComponent()
-        if not battleStatCmpt:GetMainWorldBossID() then
-          battleStatCmpt:SetMainWorldBossID(monster_entity:GetID())
-        end
-      end
-      do
-        local attributeCmpt = monster_entity:Attributes()
-        attributeCmpt:Modify("Attack", attack)
-        attributeCmpt:Modify("Defense", defense)
-        attributeCmpt:Modify("Evade", nEvade)
-        attributeCmpt:Modify("HP", curhp)
-        attributeCmpt:Modify("MaxHP", maxhp)
-        attributeCmpt:Modify("Mobility", monsterStep, 1, MultModifyOperator.PLUS)
-        attributeCmpt:Modify("MaxMobility", 99)
-        local battleDamageStatisticsServiceLogic = (self._world):GetService("BattleDamageStatisticsLogic")
-        battleDamageStatisticsServiceLogic:AddMonsterHPMaxStatistics(maxhp)
-        monster_entity:ReplaceElement(elementType, nil)
-        attributeCmpt:SetSimpleAttribute("Element", elementType)
-        attributeCmpt:Modify("AbsorbNormal", absorbNormal)
-        attributeCmpt:Modify("AbsorbChain", absorbChain)
-        attributeCmpt:Modify("AbsorbActive", absorbActive)
-        local antiAttackParam = monsterConfigData:GetMonsterAntiAttackParam(monsterID)
-        if antiAttackParam then
-          attributeCmpt:Modify("OriginalWaitActiveSkillCount", antiAttackParam.WaitActiveSkillCount)
-          attributeCmpt:Modify("OriginalMaxAntiSkillCountPerRound", antiAttackParam.MaxAntiSkillCountPerRound)
-          attributeCmpt:Modify("WaitActiveSkillCount", antiAttackParam.WaitActiveSkillCount)
-          attributeCmpt:Modify("MaxAntiSkillCountPerRound", antiAttackParam.MaxAntiSkillCountPerRound)
-          if not antiAttackParam.AntiActiveSkillType then
-            attributeCmpt:Modify("AntiActiveSkillType", {})
-            if antiAttackParam.AntiSkillEnabled then
-              attributeCmpt:Modify("AntiSkillEnabled", antiAttackParam.AntiSkillEnabled)
-            end
-            if isBoss then
-              monster_entity:ReplaceBoss()
-            end
-            if isWorldBoss then
-              self:InitWorldBossHPData(monster_entity, monsterID)
-            end
-            ;
-            ((self._world):GetService("Trigger")):Notify(NTMonsterShow:New(monster_entity))
-            local monsterBornBuffContext = {isMonsterBornBuff = true}
-            local buffLogic = (self._world):GetService("BuffLogic")
-            local buffList = monsterConfigData:GetBornBuffList(monsterID)
-            if #buffList > 0 then
-              if not monster_entity:HasBuff() then
-                monster_entity:AddBuffComponent()
-              end
-              for _,buffId in ipairs(buffList) do
-                buffLogic:AddBuff(buffId, monster_entity, monsterBornBuffContext)
-              end
-            end
-            do
-              local battleSvc = (self._world):GetService("Battle")
-              local eliteIDArray, eliteBuffArray = battleSvc:CalcEliteIDArray(monsterID)
-              for _,eliteID in ipairs(eliteIDArray) do
-                local c = (Cfg.cfg_monster_elite)[eliteID]
-                if not c then
-                  (Log.error)("[ELITE_MSTR]", "invalid eliteID: ", eliteID)
-                else
-                  if c.Buff and #c.Buff ~= 0 then
-                    for _,buffID in ipairs(c.Buff) do
-                      (Log.info)("[ELITE_MSTR]", "entityID: ", monster_entity:GetID(), "elite ID: ", eliteID, ", buffID: ", buffID)
-                      buffLogic:AddBuff(buffID, monster_entity, monsterBornBuffContext)
-                    end
-                  end
-                end
-              end
-              for _,buffID in ipairs(eliteBuffArray) do
-                (Log.info)("[ELITE_MSTR]", "entityID: ", monster_entity:GetID(), ", buffID: ", buffID)
-                buffLogic:AddBuff(buffID, monster_entity, monsterBornBuffContext)
-              end
-              if #eliteIDArray > 0 then
-                (monster_entity:MonsterID()):SetEliteIDArray(eliteIDArray)
-              end
-              if buffrt then
-                (monster_entity:BuffComponent()):LoadArchivedData(buffrt)
-                local utilDataSvc = (self._world):GetService("UtilData")
-                utilDataSvc:UpdateRenderHPLockInfoByLogic(monster_entity)
-              end
-              do
-                local trapsvc = (self._world):GetService("TrapLogic")
-                if ((self._world):GameFSM()):CurStateID() ~= GameStateID.Loading and not ((self._world):GetService("Maze")):IsArchivedBattle() then
-                  self:CalcAppearSkill(monster_entity)
-                  local tEntities, tResults = trapsvc:TriggerTrapByEntity(monster_entity, TrapTriggerOrigin.Move)
-                  if #tEntities > 0 and #tResults > 0 then
-                    monster_entity:AddAppearTriggerTrap(tEntities, tResults)
-                  end
-                end
-                do
-                  ;
-                  ((self._world):GetSyncLogger()):Trace({key = "CreateMonster", monsterID = monsterID, entityID = monster_entity:GetID(), elementType = elementType, pos = tostring((Vector2.Pos2Index)(monsterPosition))})
-                  return monster_entity, monsterID
-                end
-              end
-            end
-          end
-        end
+    for _, buffId in ipairs(buffList) do
+      buffLogic:AddBuff(buffId, monster_entity, monsterBornBuffContext)
+    end
+  end
+  local battleSvc = self._world:GetService("Battle")
+  local eliteIDArray, eliteBuffArray = battleSvc:CalcEliteIDArray(monsterID)
+  for _, eliteID in ipairs(eliteIDArray) do
+    local c = Cfg.cfg_monster_elite[eliteID]
+    if not c then
+      Log.error("[ELITE_MSTR]", "invalid eliteID: ", eliteID)
+    elseif c.Buff and #c.Buff ~= 0 then
+      for _, buffID in ipairs(c.Buff) do
+        Log.info("[ELITE_MSTR]", "entityID: ", monster_entity:GetID(), "elite ID: ", eliteID, ", buffID: ", buffID)
+        buffLogic:AddBuff(buffID, monster_entity, monsterBornBuffContext)
       end
     end
   end
+  for _, buffID in ipairs(eliteBuffArray) do
+    Log.info("[ELITE_MSTR]", "entityID: ", monster_entity:GetID(), ", buffID: ", buffID)
+    buffLogic:AddBuff(buffID, monster_entity, monsterBornBuffContext)
+  end
+  if 0 < #eliteIDArray then
+    monster_entity:MonsterID():SetEliteIDArray(eliteIDArray)
+  end
+  if buffrt then
+    monster_entity:BuffComponent():LoadArchivedData(buffrt)
+    local utilDataSvc = self._world:GetService("UtilData")
+    utilDataSvc:UpdateRenderHPLockInfoByLogic(monster_entity)
+  end
+  local trapsvc = self._world:GetService("TrapLogic")
+  if self._world:GameFSM():CurStateID() ~= GameStateID.Loading and not self._world:GetService("Maze"):IsArchivedBattle() then
+    self:CalcAppearSkill(monster_entity)
+    local tEntities, tResults = trapsvc:TriggerTrapByEntity(monster_entity, TrapTriggerOrigin.Move)
+    if 0 < #tEntities and 0 < #tResults then
+      monster_entity:AddAppearTriggerTrap(tEntities, tResults)
+    end
+  end
+  self._world:GetSyncLogger():Trace({
+    key = "CreateMonster",
+    monsterID = monsterID,
+    entityID = monster_entity:GetID(),
+    elementType = elementType,
+    pos = tostring(Vector2.Pos2Index(monsterPosition))
+  })
+  return monster_entity, monsterID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterCreationServiceLogic.CreateInternalRefreshMonsterLogic = function(self, monsterWaveInternalTime)
-  -- function num : 0_7 , upvalues : _ENV
+function MonsterCreationServiceLogic:CreateInternalRefreshMonsterLogic(monsterWaveInternalTime)
   local monsterConfigDataArray = self:_GetInternalRefreshConfigData()
   if monsterConfigDataArray == nil then
-    return 
+    return
   end
-  local monsterRefreshService = (self._world):GetService("MonsterRefresh")
-  local entityService = (self._world):GetService("LogicEntity")
+  local monsterRefreshService = self._world:GetService("MonsterRefresh")
+  local entityService = self._world:GetService("LogicEntity")
   local eTrapList = {}
   local eMonsterList = {}
-  for _,refreshConfigData in ipairs(monsterConfigDataArray) do
+  for _, refreshConfigData in ipairs(monsterConfigDataArray) do
     local refreshType = refreshConfigData:GetInternalRefreshType()
     local refreshParam = refreshConfigData:GetInternalRefreshParam()
     local hadRefreshRound = refreshConfigData:GetHadRefreshRound(refreshType)
     local isRefreshMonster = monsterRefreshService:IsRefreshMonster(refreshType, refreshParam, monsterWaveInternalTime, hadRefreshRound)
     if isRefreshMonster and refreshType ~= MonsterWaveInternalRefreshType.None then
-      local roundCount = (self:_GetBattleStatComponent()):GetCurWaveTotalRoundCount()
+      local roundCount = self:_GetBattleStatComponent():GetCurWaveTotalRoundCount()
       refreshConfigData:AddRefreshRound(refreshType, roundCount)
       local newGapTiles = refreshConfigData:GetGapTiles()
       if newGapTiles then
         self:_DoRefreshBoardGapTiles(newGapTiles)
       end
       local _, eTraps = entityService:CreateWaveRefreshTraps(refreshConfigData:GetInternalTrapIDDic())
-      ;
-      (table.appendArray)(eTrapList, eTraps)
+      table.appendArray(eTrapList, eTraps)
       local monsterPosList = self:_CalcInternalRefreshMonsterPos(refreshConfigData)
       local eMonsters, monsterIds = self:CreateMonsters(monsterPosList)
-      ;
-      (table.appendArray)(eMonsterList, eMonsters)
+      table.appendArray(eMonsterList, eMonsters)
     end
   end
   return eTrapList, eMonsterList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterCreationServiceLogic._GetInternalRefreshConfigData = function(self)
-  -- function num : 0_8
-  local levelConfigData = (self._configService):GetLevelConfigData()
-  local waveNum = (self:_GetBattleStatComponent()):GetCurWaveIndex()
+function MonsterCreationServiceLogic:_GetInternalRefreshConfigData()
+  local levelConfigData = self._configService:GetLevelConfigData()
+  local waveNum = self:_GetBattleStatComponent():GetCurWaveIndex()
   local monsterConfigDataArray = levelConfigData:GetLevelWaveInternalRefreshData(waveNum)
   return monsterConfigDataArray
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterCreationServiceLogic._CalcInternalRefreshMonsterPos = function(self, refreshConfigData)
-  -- function num : 0_9
+function MonsterCreationServiceLogic:_CalcInternalRefreshMonsterPos(refreshConfigData)
   local monsterRefreshParam = refreshConfigData:GetMonsterRefreshParam()
-  local createMonsterPosService = (self._world):GetService("CreateMonsterPos")
+  local createMonsterPosService = self._world:GetService("CreateMonsterPos")
   local monsterRefreshPosType = monsterRefreshParam:GetMonsterRefreshPosType()
   local monsterArray = createMonsterPosService:GetMonsterRefreshPos(monsterRefreshPosType, monsterRefreshParam)
   return monsterArray
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterCreationServiceLogic.CreateMonsters = function(self, monsterArray)
-  -- function num : 0_10 , upvalues : _ENV
+function MonsterCreationServiceLogic:CreateMonsters(monsterArray)
   local eMonsters = {}
   local monsterIds = {}
-  for _,v in ipairs(monsterArray) do
+  for _, v in ipairs(monsterArray) do
     local eMonster, monsterId = self:CreateMonster(v)
-    ;
-    (table.insert)(eMonsters, eMonster)
-    ;
-    (table.insert)(monsterIds, monsterId)
-    ;
-    ((self._world):GetSyncLogger()):Trace({key = "CreateInternalMonsters", monsterID = monsterId, entityID = eMonster:GetID(), pos = tostring(v:GetPosition())})
+    table.insert(eMonsters, eMonster)
+    table.insert(monsterIds, monsterId)
+    self._world:GetSyncLogger():Trace({
+      key = "CreateInternalMonsters",
+      monsterID = monsterId,
+      entityID = eMonster:GetID(),
+      pos = tostring(v:GetPosition())
+    })
   end
   return eMonsters, monsterIds
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterCreationServiceLogic.CalcAppearSkill = function(self, e)
-  -- function num : 0_11
-  local sSkillLogic = (self._world):GetService("SkillLogic")
-  local utilDataSvc = (self._world):GetService("UtilData")
+function MonsterCreationServiceLogic:CalcAppearSkill(e)
+  local sSkillLogic = self._world:GetService("SkillLogic")
+  local utilDataSvc = self._world:GetService("UtilData")
   local appearSkillId = utilDataSvc:GetAppearSkillId(e)
-  if appearSkillId and appearSkillId > 0 then
+  if appearSkillId and 0 < appearSkillId then
     sSkillLogic:CalcSkillEffect(e, appearSkillId)
     sSkillLogic:UpdateRenderSkillRoutine(e)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterCreationServiceLogic._DoRefreshBoardGapTiles = function(self, fillPieceList)
-  -- function num : 0_12 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  local boardServiceRender = (self._world):GetService("BoardRender")
+function MonsterCreationServiceLogic:_DoRefreshBoardGapTiles(fillPieceList)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local oldGapTiles = boardServiceLogic:GetGapTiles()
   local newGapTiles = {}
   for i = 1, #oldGapTiles do
     local bFind = false
     for j = 1, #fillPieceList do
-      if (fillPieceList[j])[1] == (oldGapTiles[i])[1] and (fillPieceList[j])[2] == (oldGapTiles[i])[2] then
+      if fillPieceList[j][1] == oldGapTiles[i][1] and fillPieceList[j][2] == oldGapTiles[i][2] then
         bFind = true
       end
     end
     if bFind ~= true then
-      (table.insert)(newGapTiles, {(oldGapTiles[i])[1], (oldGapTiles[i])[2]})
+      table.insert(newGapTiles, {
+        oldGapTiles[i][1],
+        oldGapTiles[i][2]
+      })
     end
   end
   boardServiceLogic:ChangeGapTiles(newGapTiles)
   local addPiecePos = {}
   for i = 1, #fillPieceList do
-    (table.insert)(addPiecePos, Vector2((fillPieceList[i])[1], (fillPieceList[i])[2]))
+    table.insert(addPiecePos, Vector2(fillPieceList[i][1], fillPieceList[i][2]))
   end
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local pieceFillTable = boardServiceLogic:SupplyPieceList(addPiecePos)
   local boardCmpt = boardEntity:Board()
   boardCmpt:FillPieces(pieceFillTable)
-  for i,grid in ipairs(pieceFillTable) do
+  for i, grid in ipairs(pieceFillTable) do
     local gridPos = Vector2(grid.x, grid.y)
     boardServiceRender:CreateGridEntity(grid.color, gridPos, false)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterCreationServiceLogic.MakePhantomLogic = function(self, result)
-  -- function num : 0_13 , upvalues : _ENV
+function MonsterCreationServiceLogic:MakePhantomLogic(result)
   local monsterTransformParam = MonsterTransformParam:New(result:GetTargetID())
   monsterTransformParam:SetPosition(result:GetBornPos())
   monsterTransformParam:SetRotation(result:GetBornRot())
@@ -485,24 +421,21 @@ MonsterCreationServiceLogic.MakePhantomLogic = function(self, result)
   phantomEntity:AddPhantomComponent(result:GetOwnerID())
   local attributeCmpt = phantomEntity:Attributes()
   local maxHp = attributeCmpt:CalcMaxHp()
-  local hp = (math.floor)(maxHp * result:GetHPPercent())
+  local hp = math.floor(maxHp * result:GetHPPercent())
   attributeCmpt:SetSimpleAttribute("MaxHP", hp)
   attributeCmpt:SetSimpleAttribute("HP", hp)
   return phantomEntity
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterCreationServiceLogic.InitWorldBossHPData = function(self, entity, monsterID)
-  -- function num : 0_14 , upvalues : _ENV
-  local monsterConfigData = (self._configService):GetMonsterConfigData()
+function MonsterCreationServiceLogic:InitWorldBossHPData(entity, monsterID)
+  local monsterConfigData = self._configService:GetMonsterConfigData()
   local stage = monsterConfigData:GetWorldBossConfig(monsterID)
   local monsterIDCmpt = entity:MonsterID()
   monsterIDCmpt:InitWorldBossStageData(stage)
   monsterIDCmpt:SetWorldBossState(true)
   local newAttrData = monsterIDCmpt:GetWorldBossStageAttrData(monsterIDCmpt:GetCurStage())
   if newAttrData then
-    local affixService = (self._world):GetService("Affix")
+    local affixService = self._world:GetService("Affix")
     local attributeCmpt = entity:Attributes()
     local newAtk = newAttrData.atk
     local newDef = newAttrData.def
@@ -517,63 +450,36 @@ MonsterCreationServiceLogic.InitWorldBossHPData = function(self, entity, monster
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterCreationServiceLogic._RotateBodyArea = function(self, oriBodyArea, toDir)
-  -- function num : 0_15 , upvalues : _ENV
+function MonsterCreationServiceLogic:_RotateBodyArea(oriBodyArea, toDir)
   local rotatedOriBodyArea = {}
   if toDir == Vector2.up then
-    for index,pos in ipairs(oriBodyArea) do
+    for index, pos in ipairs(oriBodyArea) do
       local newPos = Vector2(-pos.x, -pos.y)
-      ;
-      (table.insert)(rotatedOriBodyArea, newPos)
+      table.insert(rotatedOriBodyArea, newPos)
     end
-  else
-    do
-      if toDir == Vector2.right then
-        for index,pos in ipairs(oriBodyArea) do
-          local newPos = Vector2(-pos.y, pos.x)
-          ;
-          (table.insert)(rotatedOriBodyArea, newPos)
-        end
-      else
-        do
-          if toDir == Vector2.left then
-            for index,pos in ipairs(oriBodyArea) do
-              local newPos = Vector2(pos.y, -pos.x)
-              ;
-              (table.insert)(rotatedOriBodyArea, newPos)
-            end
-          else
-            do
-              if toDir == Vector2.down then
-                rotatedOriBodyArea = oriBodyArea
-              end
-              return rotatedOriBodyArea
-            end
-          end
-        end
-      end
+  elseif toDir == Vector2.right then
+    for index, pos in ipairs(oriBodyArea) do
+      local newPos = Vector2(-pos.y, pos.x)
+      table.insert(rotatedOriBodyArea, newPos)
     end
+  elseif toDir == Vector2.left then
+    for index, pos in ipairs(oriBodyArea) do
+      local newPos = Vector2(pos.y, -pos.x)
+      table.insert(rotatedOriBodyArea, newPos)
+    end
+  elseif toDir == Vector2.down then
+    rotatedOriBodyArea = oriBodyArea
   end
+  return rotatedOriBodyArea
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterCreationServiceLogic.BuildMoveGroup = function(self, monsterList, periodType, aiOrder, paralleID)
-  -- function num : 0_16 , upvalues : _ENV
-  local cBattleStat = (self._world):BattleStat()
+function MonsterCreationServiceLogic:BuildMoveGroup(monsterList, periodType, aiOrder, paralleID)
+  local cBattleStat = self._world:BattleStat()
   local monsterMoveGroupID = cBattleStat:GeneMonsterMoveGroupID()
-  if not aiOrder then
-    aiOrder = AILogicOrderType.BaseOrder
-  end
-  if not paralleID then
-    paralleID = 1000
-  end
-  if not periodType then
-    periodType = AILogicPeriodType.Main
-  end
-  for i,entity in ipairs(monsterList) do
+  aiOrder = aiOrder or AILogicOrderType.BaseOrder
+  paralleID = paralleID or 1000
+  periodType = periodType or AILogicPeriodType.Main
+  for i, entity in ipairs(monsterList) do
     local monsterIDCmpt = entity:MonsterID()
     local aiCmpt = entity:AI()
     local logic = aiCmpt:_FindLogic(periodType, aiOrder)
@@ -581,5 +487,3 @@ MonsterCreationServiceLogic.BuildMoveGroup = function(self, monsterList, periodT
   end
   return monsterMoveGroupID
 end
-
-

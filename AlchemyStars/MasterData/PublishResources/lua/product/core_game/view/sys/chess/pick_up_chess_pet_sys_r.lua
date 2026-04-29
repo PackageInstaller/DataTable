@@ -1,29 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/chess/pick_up_chess_pet_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PickUpChessPetSystem_Render", ReactiveSystem)
 PickUpChessPetSystem_Render = PickUpChessPetSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpChessPetSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function PickUpChessPetSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessPetSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).PickUpChessResult)}, {"Added"})
+function PickUpChessPetSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.PickUpChessResult)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessPetSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
+function PickUpChessPetSystem_Render:Filter(entity)
   local resCmpt = entity:PickUpChessResult()
   local resType = resCmpt:GetChessPickUpResultType()
   if resType == ChessPickUpTargetType.ChessPet then
@@ -32,34 +21,30 @@ PickUpChessPetSystem_Render.Filter = function(self, entity)
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessPetSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3 , upvalues : _ENV
-  local chessSvcRender = (self._world):GetService("ChessRender")
+function PickUpChessPetSystem_Render:ExecuteEntities(entities)
+  local chessSvcRender = self._world:GetService("ChessRender")
   chessSvcRender:ClearChessMonsterPreview()
   chessSvcRender:ClearChessPetPreview()
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local resCmpt = renderBoardEntity:PickUpChessResult()
   local changed = resCmpt:IsChessPickUpTargetChanged()
   if not changed then
     self:_FinishChessPetPreview()
-    return 
+    return
   end
   local entityID = resCmpt:GetPickUpChessPetEntityID()
   if not entityID then
-    (Log.fatal)("not find pick chess pet id")
-    return 
+    Log.fatal("not find pick chess pet id")
+    return
   end
-  local chessPetEntity = (self._world):GetEntityByID(entityID)
+  local chessPetEntity = self._world:GetEntityByID(entityID)
   self:_ShowChessPetUIHP(chessPetEntity)
   local chessPetCmpt = chessPetEntity:ChessPet()
   local finishTurn = chessPetCmpt:IsChessPetFinishTurn()
   if finishTurn then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputFinish, 6)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.FinishTurnOnly)
-    return 
+    self._world:EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 6)
+    self._world:EventDispatcher():Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.FinishTurnOnly)
+    return
   end
   local walkRange, attackRange, isRecover = self:_CalcChessPetWalkRange(entityID)
   resCmpt:SetChessPetWalkRange(walkRange)
@@ -67,59 +52,52 @@ PickUpChessPetSystem_Render.ExecuteEntities = function(self, entities)
   resCmpt:SetSkillIsRecover(isRecover)
   chessSvcRender:ShowChessPetPreviewRange(walkRange, attackRange, {}, {}, isRecover)
   chessSvcRender:RefreshChessPetSelectStateRender(chessPetEntity, true)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputFinish, 6)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.Skip)
+  self._world:EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 6)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.Skip)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessPetSystem_Render._FinishChessPetPreview = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local chessSvcRender = (self._world):GetService("ChessRender")
+function PickUpChessPetSystem_Render:_FinishChessPetPreview()
+  local chessSvcRender = self._world:GetService("ChessRender")
   chessSvcRender:ClearAllChessUnitPreview()
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local resCmpt = renderBoardEntity:PickUpChessResult()
   resCmpt:ResetChessPickUp()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local stateId = utilDataSvc:GetCurMainStateID()
   if stateId == GameStateID.PreviewChessPet then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.PreviewChessPetFinish, 3)
-  else
-    if stateId == GameStateID.PickUpChessPet then
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.PickUpChessPetFinish, 5)
-    end
+    self._world:EventDispatcher():Dispatch(GameEventType.PreviewChessPetFinish, 3)
+  elseif stateId == GameStateID.PickUpChessPet then
+    self._world:EventDispatcher():Dispatch(GameEventType.PickUpChessPetFinish, 5)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessPetSystem_Render._CalcChessPetWalkRange = function(self, entityID)
-  -- function num : 0_5 , upvalues : _ENV
-  local entity = (self._world):GetEntityByID(entityID)
+function PickUpChessPetSystem_Render:_CalcChessPetWalkRange(entityID)
+  local entity = self._world:GetEntityByID(entityID)
   local gridLocCmpt = entity:GridLocation()
   local curPos = gridLocCmpt:GetGridPos()
   local chessPetCmpt = entity:ChessPet()
   local chessPetID = chessPetCmpt:GetChessPetID()
   local blockData = chessPetCmpt:GetChessPetBlockData()
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local chessPetList, chessPetPosList = utilScopeSvc:SelectAllChessPet()
-  local cfgSvc = (self._world):GetService("Config")
+  local cfgSvc = self._world:GetService("Config")
   local chessPetConfigData = cfgSvc:GetChessPetConfigData()
   local bodyArea = chessPetConfigData:GetChessPetArea(chessPetID)
   local walkStep = chessPetConfigData:GetChessPetWalkStep(chessPetID)
-  local dirs = {Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vector2(-1, 0)}
+  local dirs = {
+    Vector2(0, 1),
+    Vector2(1, 0),
+    Vector2(0, -1),
+    Vector2(-1, 0)
+  }
   local eachMovePosList = {}
   local walkRange = {}
   local walkRangeCalc = {}
-  for i,area in ipairs(bodyArea) do
+  for i, area in ipairs(bodyArea) do
     local posWork = curPos + area
-    ;
-    (table.insert)(walkRange, posWork)
+    table.insert(walkRange, posWork)
   end
-  ;
-  (table.insert)(walkRangeCalc, curPos)
+  table.insert(walkRangeCalc, curPos)
   for i = 1, walkStep do
     eachMovePosList[i] = {}
     local curMovePosList = {}
@@ -129,179 +107,165 @@ PickUpChessPetSystem_Render._CalcChessPetWalkRange = function(self, entityID)
     else
       lastMovePosList = eachMovePosList[i - 1]
     end
-    for _,pos in ipairs(lastMovePosList) do
-      for _,dir in ipairs(dirs) do
+    for _, pos in ipairs(lastMovePosList) do
+      for _, dir in ipairs(dirs) do
         local moveTargetPos = pos + dir
         self:_OnCalcWalkRangeBodyArea(bodyArea, moveTargetPos, blockData, curMovePosList, walkRange, walkRangeCalc, chessPetPosList, entity)
       end
     end
-    for _,pos in ipairs(curMovePosList) do
-      if not (table.intable)(walkRange, pos) then
-        (table.insert)(eachMovePosList[i], pos)
-        if not (table.intable)(chessPetPosList, pos) then
-          (table.insert)(walkRange, pos)
+    for _, pos in ipairs(curMovePosList) do
+      if not table.intable(walkRange, pos) then
+        table.insert(eachMovePosList[i], pos)
+        if not table.intable(chessPetPosList, pos) then
+          table.insert(walkRange, pos)
         end
       end
     end
   end
   local canMoveCenterPosList = {}
-  if (table.count)(bodyArea) == 1 then
-    (table.appendArray)(canMoveCenterPosList, walkRange)
+  if table.count(bodyArea) == 1 then
+    table.appendArray(canMoveCenterPosList, walkRange)
   else
-    ;
-    (table.appendArray)(canMoveCenterPosList, walkRangeCalc)
+    table.appendArray(canMoveCenterPosList, walkRangeCalc)
   end
   local hasTargetAttackRange, isRecover = self:_OnCalcAttackRange(entity, canMoveCenterPosList)
   return walkRange, hasTargetAttackRange, isRecover
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessPetSystem_Render._OnCalcWalkRangeBodyArea = function(self, bodyArea, moveTargetPos, blockData, curMovePosList, walkRange, walkRangeCalc, chessPetPosList, entity)
-  -- function num : 0_6 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PickUpChessPetSystem_Render:_OnCalcWalkRangeBodyArea(bodyArea, moveTargetPos, blockData, curMovePosList, walkRange, walkRangeCalc, chessPetPosList, entity)
+  local utilDataSvc = self._world:GetService("UtilData")
   local isBlocked = false
-  if (table.count)(bodyArea) == 1 then
+  if table.count(bodyArea) == 1 then
     isBlocked = utilDataSvc:IsPosBlock(moveTargetPos, blockData)
-    if (isBlocked or isPosBlockWithEntityRace) and (table.intable)(chessPetPosList, moveTargetPos) then
+    if (isBlocked or isPosBlockWithEntityRace) and table.intable(chessPetPosList, moveTargetPos) then
       isBlocked = false
     end
     if isBlocked == false then
-      (table.insert)(curMovePosList, moveTargetPos)
-      if not (table.intable)(walkRangeCalc, moveTargetPos) then
-        (table.insert)(walkRangeCalc, moveTargetPos)
+      table.insert(curMovePosList, moveTargetPos)
+      if not table.intable(walkRangeCalc, moveTargetPos) then
+        table.insert(walkRangeCalc, moveTargetPos)
       end
     end
-  else
-    if (table.count)(bodyArea) > 1 then
-      local moveAreaPosList = {}
-      for _,area in ipairs(bodyArea) do
-        local posWork = area + moveTargetPos
-        isBlocked = utilDataSvc:IsPosBlock(posWork, blockData)
-        local isPosBlockWithEntityRace = utilDataSvc:IsPosBlockWithEntityRace(moveTargetPos, blockData, entity)
-        if (table.intable)(walkRange, posWork) or not isBlocked and not isPosBlockWithEntityRace then
-          do
-            isBlocked = false
-            ;
-            (table.insert)(moveAreaPosList, posWork)
-            -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+  elseif table.count(bodyArea) > 1 then
+    local moveAreaPosList = {}
+    for _, area in ipairs(bodyArea) do
+      local posWork = area + moveTargetPos
+      isBlocked = utilDataSvc:IsPosBlock(posWork, blockData)
+      local isPosBlockWithEntityRace = utilDataSvc:IsPosBlockWithEntityRace(moveTargetPos, blockData, entity)
+      if not table.intable(walkRange, posWork) and (isBlocked or isPosBlockWithEntityRace) then
+        break
       end
-      if isBlocked == false then
-        (table.appendArray)(curMovePosList, moveAreaPosList)
-        if not (table.intable)(walkRangeCalc, moveTargetPos) then
-          (table.insert)(walkRangeCalc, moveTargetPos)
-        end
+      isBlocked = false
+      table.insert(moveAreaPosList, posWork)
+    end
+    if isBlocked == false then
+      table.appendArray(curMovePosList, moveAreaPosList)
+      if not table.intable(walkRangeCalc, moveTargetPos) then
+        table.insert(walkRangeCalc, moveTargetPos)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessPetSystem_Render._OnCalcAttackRange = function(self, entity, walkRange)
-  -- function num : 0_7 , upvalues : _ENV
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+function PickUpChessPetSystem_Render:_OnCalcAttackRange(entity, walkRange)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local chessPetCmpt = entity:ChessPet()
   local attackSkill = chessPetCmpt:GetPreviewSkillID()
-  local cfgSvc = (self._world):GetService("Config")
+  local cfgSvc = self._world:GetService("Config")
   local skillConfigData = cfgSvc:GetSkillConfigData(attackSkill, entity)
   local isRecover = false
   local skillEffectArray = skillConfigData:GetSkillEffect()
-  for _,skillEffect in ipairs(skillEffectArray) do
+  for _, skillEffect in ipairs(skillEffectArray) do
     if skillEffect:GetEffectType() == SkillEffectType.AddBlood then
       isRecover = true
       break
     end
   end
-  do
-    local skillTargetType = skillConfigData:GetSkillTargetType()
-    local skillTargetTypeParam = skillConfigData:GetSkillTargetTypeParam()
-    local selector = SkillScopeTargetSelector:New(self._world)
-    local attackRange = {}
-    local skillTargetIDs = {}
-    for _,walkPos in ipairs(walkRange) do
-      local scopeResult = utilScopeSvc:CalcSkillScope(skillConfigData, walkPos, entity)
-      local scopeList = scopeResult:GetAttackRange()
-      local targetIDs = selector:DoSelectSkillTarget(entity, skillTargetType, scopeResult, attackSkill, skillTargetTypeParam)
-      for _,pos in ipairs(scopeList) do
-        if not (table.intable)(attackRange, pos) then
-          (table.insert)(attackRange, pos)
-        end
-      end
-      for _,targetID in ipairs(targetIDs) do
-        if not (table.intable)(skillTargetIDs, targetID) and targetID ~= entity:GetID() then
-          (table.insert)(skillTargetIDs, targetID)
-        end
+  local skillTargetType = skillConfigData:GetSkillTargetType()
+  local skillTargetTypeParam = skillConfigData:GetSkillTargetTypeParam()
+  local selector = SkillScopeTargetSelector:New(self._world)
+  local attackRange = {}
+  local skillTargetIDs = {}
+  for _, walkPos in ipairs(walkRange) do
+    local scopeResult = utilScopeSvc:CalcSkillScope(skillConfigData, walkPos, entity)
+    local scopeList = scopeResult:GetAttackRange()
+    local targetIDs = selector:DoSelectSkillTarget(entity, skillTargetType, scopeResult, attackSkill, skillTargetTypeParam)
+    for _, pos in ipairs(scopeList) do
+      if not table.intable(attackRange, pos) then
+        table.insert(attackRange, pos)
       end
     end
-    local hasTargetAttackRange = {}
-    for _,targetID in ipairs(skillTargetIDs) do
-      local targetEntity = (self._world):GetEntityByID(targetID)
-      local bodyAreaList = (targetEntity:BodyArea()):GetArea()
-      local gridPos = (targetEntity:GridLocation()):GetGridPos()
-      for _,bodyArea in ipairs(bodyAreaList) do
-        local workPos = gridPos + bodyArea
-        if (table.intable)(attackRange, workPos) then
-          (table.insert)(hasTargetAttackRange, workPos)
-        end
+    for _, targetID in ipairs(targetIDs) do
+      if not table.intable(skillTargetIDs, targetID) and targetID ~= entity:GetID() then
+        table.insert(skillTargetIDs, targetID)
       end
     end
-    return hasTargetAttackRange, isRecover
   end
+  local hasTargetAttackRange = {}
+  for _, targetID in ipairs(skillTargetIDs) do
+    local targetEntity = self._world:GetEntityByID(targetID)
+    local bodyAreaList = targetEntity:BodyArea():GetArea()
+    local gridPos = targetEntity:GridLocation():GetGridPos()
+    for _, bodyArea in ipairs(bodyAreaList) do
+      local workPos = gridPos + bodyArea
+      if table.intable(attackRange, workPos) then
+        table.insert(hasTargetAttackRange, workPos)
+      end
+    end
+  end
+  return hasTargetAttackRange, isRecover
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessPetSystem_Render._ShowChessPetUIHP = function(self, entity)
-  -- function num : 0_8 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PickUpChessPetSystem_Render:_ShowChessPetUIHP(entity)
+  local utilDataSvc = self._world:GetService("UtilData")
   local HPCmpt = entity:HP()
   local maxHP = HPCmpt:GetMaxHP()
   local HP = HPCmpt:GetRedHP()
   local hpPercent = HP / maxHP
-  local shieldValue = (HPCmpt:GetShieldValue())
-  local templateID, hpBarType, elementType = nil, nil, nil
-  local sepHPList = (entity:HP()):GetHPLockSepList()
+  local shieldValue = HPCmpt:GetShieldValue()
+  local templateID, hpBarType, elementType
+  local sepHPList = entity:HP():GetHPLockSepList()
   if entity:MonsterID() then
-    templateID = (entity:MonsterID()):GetMonsterID()
+    templateID = entity:MonsterID():GetMonsterID()
     if entity:HasBoss() then
-      if (entity:MonsterID()):IsEliteMonster() then
+      if entity:MonsterID():IsEliteMonster() then
         hpBarType = HPBarType.EliteBoss
       else
         hpBarType = HPBarType.Boss
       end
+    elseif entity:MonsterID():IsEliteMonster() then
+      hpBarType = HPBarType.EliteMonster
     else
-      if (entity:MonsterID()):IsEliteMonster() then
-        hpBarType = HPBarType.EliteMonster
-      else
-        hpBarType = HPBarType.NormalMonster
-      end
+      hpBarType = HPBarType.NormalMonster
     end
     elementType = utilDataSvc:GetEntityAttributeByName(entity, "Element")
-  else
-    if entity:HasChessPet() then
-      templateID = (entity:ChessPet()):GetChessPetID()
-      local cfgChessPet = (Cfg.cfg_chesspet)[templateID]
-      elementType = cfgChessPet.ElementType
-      hpBarType = HPBarType.ChessPet
-    end
+  elseif entity:HasChessPet() then
+    templateID = entity:ChessPet():GetChessPetID()
+    local cfgChessPet = Cfg.cfg_chesspet[templateID]
+    elementType = cfgChessPet.ElementType
+    hpBarType = HPBarType.ChessPet
   end
-  do
-    local greyVal = utilDataSvc:GetEntityBuffValue(entity, "GreyHPValue") or 0
-    local hpEnergyBuffEffectType = utilDataSvc:GetEntityBuffValue(entity, "HPEnergyBuffEffectType")
-    local hpEnergyVal = 0
-    if hpEnergyBuffEffectType then
-      hpEnergyVal = utilDataSvc:GetBuffLayer(entity, hpEnergyBuffEffectType)
-    end
-    local info = {pstId = entity:GetID(), tplId = templateID, HPBarType = hpBarType, sepHPList = sepHPList, entity = entity, percent = hpPercent, hP = HP, HP = HP, maxHP = maxHP, shieldValue = shieldValue, curElement = elementType, attack = utilDataSvc:GetEntityAttack(entity) or 0, greyVal = greyVal, hpEnergyVal = hpEnergyVal}
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreviewMonsterReplaceHPBar, info)
+  local greyVal = utilDataSvc:GetEntityBuffValue(entity, "GreyHPValue") or 0
+  local hpEnergyBuffEffectType = utilDataSvc:GetEntityBuffValue(entity, "HPEnergyBuffEffectType")
+  local hpEnergyVal = 0
+  if hpEnergyBuffEffectType then
+    hpEnergyVal = utilDataSvc:GetBuffLayer(entity, hpEnergyBuffEffectType)
   end
+  local info = {
+    pstId = entity:GetID(),
+    tplId = templateID,
+    HPBarType = hpBarType,
+    sepHPList = sepHPList,
+    entity = entity,
+    percent = hpPercent,
+    hP = HP,
+    HP = HP,
+    maxHP = maxHP,
+    shieldValue = shieldValue,
+    curElement = elementType,
+    attack = utilDataSvc:GetEntityAttack(entity) or 0,
+    greyVal = greyVal,
+    hpEnergyVal = hpEnergyVal
+  }
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PreviewMonsterReplaceHPBar, info)
 end
-
-

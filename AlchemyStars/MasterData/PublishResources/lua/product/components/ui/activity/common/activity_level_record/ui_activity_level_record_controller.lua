@@ -1,145 +1,91 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common/activity_level_record/ui_activity_level_record_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityLevelRecordController", UIController)
 UIActivityLevelRecordController = UIActivityLevelRecordController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityLevelRecordController._SetCommonTopButton = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UICommonTopButton")
+function UIActivityLevelRecordController:_SetCommonTopButton()
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UICommonTopButton")
   obj:SetData(function()
-    -- function num : 0_0_0 , upvalues : self
     self:_Back()
-  end
-, nil, function()
-    -- function num : 0_0_1 , upvalues : _ENV
-    ((GameGlobal.GetUIModule)(SeasonModule)):ExitSeasonTo(UIStateType.UIMain)
-  end
-)
+  end, nil, function()
+    GameGlobal.GetUIModule(SeasonModule):ExitSeasonTo(UIStateType.UIMain)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLevelRecordController._Back = function(self)
-  -- function num : 0_1
+function UIActivityLevelRecordController:_Back()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLevelRecordController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_2
-  if uiParams then
-    self._component = uiParams[1]
-    if uiParams then
-      self._mission = uiParams[2]
-      self._num = 1
-      self:_LoadData(TT, res)
-      self:_CheckErrorCode(TT, res)
-    end
-  end
+function UIActivityLevelRecordController:LoadDataOnEnter(TT, res, uiParams)
+  self._component = uiParams and uiParams[1]
+  self._mission = uiParams and uiParams[2]
+  self._num = 1
+  self:_LoadData(TT, res)
+  self:_CheckErrorCode(TT, res)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLevelRecordController.OnShow = function(self, uiParams)
-  -- function num : 0_3
+function UIActivityLevelRecordController:OnShow(uiParams)
   self:_SetCommonTopButton()
   self:_InitWidget()
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLevelRecordController._LoadData = function(self, TT, res)
-  -- function num : 0_4 , upvalues : _ENV
-  local response = nil
-  if (self._component)._className == "LineMissionComponent" then
-    response = (self._component):HandleLineMissionTeamRecord(TT, res, self._num, self._mission)
-  else
-    if (self._component)._className == "TreeMissionComponent" then
-      response = (self._component):HandleTreeMissionTeamRecord(TT, res, self._num, self._mission)
-    else
-      if (self._component)._className == "SeasonMissionComponent" then
-        response = (self._component):HandleMissionTeamRecord(TT, res, self._num, self._mission)
-      end
-    end
+function UIActivityLevelRecordController:_LoadData(TT, res)
+  local response
+  if self._component._className == "LineMissionComponent" then
+    response = self._component:HandleLineMissionTeamRecord(TT, res, self._num, self._mission)
+  elseif self._component._className == "TreeMissionComponent" then
+    response = self._component:HandleTreeMissionTeamRecord(TT, res, self._num, self._mission)
+  elseif self._component._className == "SeasonMissionComponent" then
+    response = self._component:HandleMissionTeamRecord(TT, res, self._num, self._mission)
   end
-  if not response or not response.info then
-    self._records = {}
-    if not response or not response.next_num then
-      self._num = self._num
-      self._recordPets = {}
-      for idx,record in ipairs(self._records) do
-        local pets = {}
-        for i,data in ipairs(record.team) do
-          local pet = SimplePet:New()
-          pet:SetData(data)
-          pets[i] = pet
-        end
-        -- DECOMPILER ERROR at PC74: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._recordPets)[idx] = pets
-      end
+  self._records = response and response.info or {}
+  self._num = response and response.next_num or self._num
+  self._recordPets = {}
+  for idx, record in ipairs(self._records) do
+    local pets = {}
+    for i, data in ipairs(record.team) do
+      local pet = SimplePet:New()
+      pet:SetData(data)
+      pets[i] = pet
     end
+    self._recordPets[idx] = pets
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLevelRecordController._CheckErrorCode = function(self, TT, res)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityLevelRecordController:_CheckErrorCode(TT, res)
   if res:GetSucc() then
-    (Log.error)("UIActivityLevelRecordController:_CheckErrorCode() res = ", res.m_result)
+  else
+    Log.error("UIActivityLevelRecordController:_CheckErrorCode() res = ", res.m_result)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLevelRecordController._LoadData_NextPage = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityLevelRecordController:_LoadData_NextPage()
   if self._refreshId then
-    return 
+    return
   end
   local lockName = "UIActivityLevelRecordController:_LoadData_NextPage"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  self._refreshId = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self, lockName
+  GameGlobal.UIStateManager():Lock(lockName)
+  self._refreshId = GameGlobal.TaskManager():StartTask(function(TT)
     local res = AsyncRequestRes:New()
     self:_LoadData(TT, res)
     self:_CheckErrorCode(TT, res)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
+    GameGlobal.UIStateManager():UnLock(lockName)
     self:_Refresh()
     YIELD(TT, 1000)
     self._refreshId = nil
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLevelRecordController._Refresh = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local empty = (table.count)(self._records) == 0
+function UIActivityLevelRecordController:_Refresh()
+  local empty = table.count(self._records) == 0
   self:_SetState(not empty)
   self._index = nil
   self:_SetTabBtns()
   if not empty then
     self:_SetTabSelect(1)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLevelRecordController._InitWidget = function(self)
-  -- function num : 0_8
+function UIActivityLevelRecordController:_InitWidget()
   self.player_icon = self:GetUIComponent("RawImageLoader", "player_icon")
   self.headFrameRect = self:GetUIComponent("RectTransform", "headFrame")
   self.headFrame = self:GetUIComponent("RawImageLoader", "headFrame")
@@ -151,85 +97,67 @@ UIActivityLevelRecordController._InitWidget = function(self)
   self.head_root = self:GetUIComponent("RectTransform", "headRoot")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLevelRecordController._SetState = function(self, flag)
-  -- function num : 0_9
-  (self:GetGameObject("_page")):SetActive(flag)
-  ;
-  (self:GetGameObject("_empty")):SetActive(not flag)
+function UIActivityLevelRecordController:_SetState(flag)
+  self:GetGameObject("_page"):SetActive(flag)
+  self:GetGameObject("_empty"):SetActive(not flag)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLevelRecordController._SetTabBtns = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local title = {"str_tower_record1", "str_tower_record2", "str_tower_record3", "str_tower_record4", "str_tower_record5"}
-  self._tabBtns = (UIWidgetHelper.SpawnObjects)(self, "_tabBtns", "UIActivityCommonTextTabBtn", #title)
-  for i,v in ipairs(self._tabBtns) do
+function UIActivityLevelRecordController:_SetTabBtns()
+  local title = {
+    "str_tower_record1",
+    "str_tower_record2",
+    "str_tower_record3",
+    "str_tower_record4",
+    "str_tower_record5"
+  }
+  self._tabBtns = UIWidgetHelper.SpawnObjects(self, "_tabBtns", "UIActivityCommonTextTabBtn", #title)
+  for i, v in ipairs(self._tabBtns) do
     v:SetData(i, {
-indexWidgets = {
-{}
-, 
-{}
-, 
-{}
-, 
-{}
-, 
-{}
-}
-, 
-onoffWidgets = {
-{"OnBtn"}
-, 
-{"OffBtn"}
-}
-, 
-lockWidgets = {
-{}
-, 
-{}
-}
-, 
-titleWidgets = {"txtTitle"}
-, titleText = (StringTable.Get)(title[i]), callback = function(index, isOffBtnClick)
-    -- function num : 0_10_0 , upvalues : self
-    if isOffBtnClick then
-      self:_SetTabSelect(index)
-    end
-  end
-})
+      indexWidgets = {
+        {},
+        {},
+        {},
+        {},
+        {}
+      },
+      onoffWidgets = {
+        {"OnBtn"},
+        {"OffBtn"}
+      },
+      lockWidgets = {
+        {},
+        {}
+      },
+      titleWidgets = {"txtTitle"},
+      titleText = StringTable.Get(title[i]),
+      callback = function(index, isOffBtnClick)
+        if isOffBtnClick then
+          self:_SetTabSelect(index)
+        end
+      end
+    })
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLevelRecordController._SetTabSelect = function(self, index)
-  -- function num : 0_11 , upvalues : _ENV
-  if #self._records < index then
-    (ToastManager.ShowToast)((StringTable.Get)("str_tower_no_record_now"))
-    return 
+function UIActivityLevelRecordController:_SetTabSelect(index)
+  if index > #self._records then
+    ToastManager.ShowToast(StringTable.Get("str_tower_no_record_now"))
+    return
   end
   if index == self._index then
-    return 
+    return
   end
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", "uieff_ActivityLevelRecord_Switch", 417)
+  UIWidgetHelper.PlayAnimation(self, "_anim", "uieff_ActivityLevelRecord_Switch", 417)
   self._index = index
   for i = 1, #self._tabBtns do
-    ((self._tabBtns)[i]):SetSelected(i == index)
+    self._tabBtns[i]:SetSelected(i == index)
   end
-  self:_SetHeartItem((self._recordPets)[index])
-  self:_SetPlayerInfo((self._records)[index])
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:_SetHeartItem(self._recordPets[index])
+  self:_SetPlayerInfo(self._records[index])
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLevelRecordController._SetHeartItem = function(self, pets)
-  -- function num : 0_12 , upvalues : _ENV
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_heartItem", "UIHeartItem", #pets)
+function UIActivityLevelRecordController:_SetHeartItem(pets)
+  local objs = UIWidgetHelper.SpawnObjects(self, "_heartItem", "UIHeartItem", #pets)
   for i = 1, #pets do
     local pet = pets[i]
     local item = objs[i]
@@ -237,61 +165,44 @@ UIActivityLevelRecordController._SetHeartItem = function(self, pets)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLevelRecordController._SetPlayerInfo = function(self, record)
-  -- function num : 0_13 , upvalues : _ENV
-  (self.player_name):SetText(record.nick)
+function UIActivityLevelRecordController:_SetPlayerInfo(record)
+  self.player_name:SetText(record.nick)
   self._loginModule = self:GetModule(LoginModule)
-  ;
-  (self.player_id):SetText((string.format)((StringTable.Get)("str_tower_id_title"), (self._loginModule):GetShowIdByPstId(record.pstid)))
-  local colorCfg = (Cfg.cfg_player_head_bg)[record.head_head_color]
-  local headCfg = (Cfg.cfg_role_head_image)[record.head_image_id]
-  local head, color = nil, nil
+  self.player_id:SetText(string.format(StringTable.Get("str_tower_id_title"), self._loginModule:GetShowIdByPstId(record.pstid)))
+  local colorCfg = Cfg.cfg_player_head_bg[record.head_head_color]
+  local headCfg = Cfg.cfg_role_head_image[record.head_image_id]
+  local head, color
   if headCfg == nil then
-    (Log.exception)("UIActivityLevelRecordController:_SetPlayerInfo() 找不到头像配置：", record.head_image_id)
-    return 
+    Log.exception("UIActivityLevelRecordController:_SetPlayerInfo() 找不到头像配置：", record.head_image_id)
+    return
   end
   head = headCfg.Icon
   if colorCfg == nil then
-    (Log.warn)("UIActivityLevelRecordController:_SetPlayerInfo() 找不到头像背景，使用默认1。id：", record.head_head_color)
-    color = ((Cfg.cfg_player_head_bg)[1]).Icon
+    Log.warn("UIActivityLevelRecordController:_SetPlayerInfo() 找不到头像背景，使用默认1。id：", record.head_head_color)
+    color = Cfg.cfg_player_head_bg[1].Icon
   else
     color = colorCfg.Icon
   end
-  ;
-  (self.player_icon):LoadImage(head)
-  ;
-  (self.head_color):LoadImage(color)
+  self.player_icon:LoadImage(head)
+  self.head_color:LoadImage(color)
   local headFrame = record.head_frame_id
   if not headFrame or headFrame == 0 then
-    (Log.warn)("UIActivityLevelRecordController:_SetPlayerInfo() 找不到头像框，使用默认1001。id：", record.head_frame_id)
-    headFrame = (HelperProxy:GetInstance()):GetHeadFrameDefaultID()
+    Log.warn("UIActivityLevelRecordController:_SetPlayerInfo() 找不到头像框，使用默认1001。id：", record.head_frame_id)
+    headFrame = HelperProxy:GetInstance():GetHeadFrameDefaultID()
   end
-  local cfg_head_frame = (Cfg.cfg_role_head_frame)[headFrame]
-  ;
-  (self.headFrame):LoadImage(cfg_head_frame.Icon)
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgSizeWithTag(self.head_bg_rect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgMaskSizeWithTag(self.head_bg_mask_rect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadFrameSizeWithTag(self.headFrameRect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadRootSizeWithTag(self.head_root, RoleHeadFrameSizeType.Size5)
+  local cfg_head_frame = Cfg.cfg_role_head_frame[headFrame]
+  self.headFrame:LoadImage(cfg_head_frame.Icon)
+  HelperProxy:GetInstance():GetHeadBgSizeWithTag(self.head_bg_rect)
+  HelperProxy:GetInstance():GetHeadBgMaskSizeWithTag(self.head_bg_mask_rect)
+  HelperProxy:GetInstance():GetHeadFrameSizeWithTag(self.headFrameRect)
+  HelperProxy:GetInstance():GetHeadRootSizeWithTag(self.head_root, RoleHeadFrameSizeType.Size5)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLevelRecordController.ChangeBtnOnClick = function(self)
-  -- function num : 0_14
+function UIActivityLevelRecordController:ChangeBtnOnClick()
   self:_LoadData_NextPage()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLevelRecordController._DebugData = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityLevelRecordController:_DebugData()
   local tb = {}
   tb.pstid = 3180667236897739008
   tb.nick = "asszc020314"
@@ -299,30 +210,52 @@ UIActivityLevelRecordController._DebugData = function(self)
   tb.head_head_color = 0
   tb.head_frame_id = 3762000
   tb.team = {}
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (tb.team)[1] = {template_id = 1600191, level = 80, awakening = 6, grade = 3, equip_lv = 10, skin_id = 0, equip_refine_lv = 0}
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (tb.team)[2] = {template_id = 1600251, level = 80, awakening = 6, grade = 3, equip_lv = 10, skin_id = 0, equip_refine_lv = 0}
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (tb.team)[3] = {template_id = 1600261, level = 80, awakening = 6, grade = 3, equip_lv = 10, skin_id = 0, equip_refine_lv = 0}
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (tb.team)[4] = {template_id = 1600301, level = 80, awakening = 6, grade = 3, equip_lv = 10, skin_id = 0, equip_refine_lv = 0}
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (tb.team)[5] = {template_id = 1600601, level = 80, awakening = 6, grade = 3, equip_lv = 10, skin_id = 0, equip_refine_lv = 0}
+  tb.team[1] = {
+    template_id = 1600191,
+    level = 80,
+    awakening = 6,
+    grade = 3,
+    equip_lv = 10,
+    skin_id = 0,
+    equip_refine_lv = 0
+  }
+  tb.team[2] = {
+    template_id = 1600251,
+    level = 80,
+    awakening = 6,
+    grade = 3,
+    equip_lv = 10,
+    skin_id = 0,
+    equip_refine_lv = 0
+  }
+  tb.team[3] = {
+    template_id = 1600261,
+    level = 80,
+    awakening = 6,
+    grade = 3,
+    equip_lv = 10,
+    skin_id = 0,
+    equip_refine_lv = 0
+  }
+  tb.team[4] = {
+    template_id = 1600301,
+    level = 80,
+    awakening = 6,
+    grade = 3,
+    equip_lv = 10,
+    skin_id = 0,
+    equip_refine_lv = 0
+  }
+  tb.team[5] = {
+    template_id = 1600601,
+    level = 80,
+    awakening = 6,
+    grade = 3,
+    equip_lv = 10,
+    skin_id = 0,
+    equip_refine_lv = 0
+  }
   local record = {}
-  ;
-  (table.insert)(record, tb)
+  table.insert(record, tb)
   return record
 end
-
-

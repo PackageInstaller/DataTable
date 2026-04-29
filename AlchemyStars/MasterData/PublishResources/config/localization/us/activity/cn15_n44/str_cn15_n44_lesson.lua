@@ -1,8 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/us/activity/cn15_n44/str_cn15_n44_lesson.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_cn15_n44_lesson_1 = "Daily Supply", str_cn15_n44_lesson_2 = "During the Daily Supply event, Navigators will receive additional Daily Supply Kits when claiming Daily Supply Chests."}
+local config = {
+  str_cn15_n44_lesson_1 = "Daily Supply",
+  str_cn15_n44_lesson_2 = "During the Daily Supply event, Navigators will receive additional Daily Supply Kits when claiming Daily Supply Chests."
+}
 return config
-

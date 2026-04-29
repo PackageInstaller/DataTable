@@ -1,41 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/furniture_search_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FurnitureSearchResult", Object)
 FurnitureSearchResult = FurnitureSearchResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FurnitureSearchResult.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._module = (GameGlobal.GetModule)(AircraftModule)
+function FurnitureSearchResult:Constructor()
+  self._module = GameGlobal.GetModule(AircraftModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureSearchResult.Search = function(self, id)
-  -- function num : 0_1 , upvalues : _ENV
+function FurnitureSearchResult:Search(id)
   if self._curFur == id then
     return self:MoveNext()
   else
     self._curFur = id
     self._result = {}
     for i = 1, AircraftConst.DecorateAreaCount do
-      local furs = (self._module):GetFurnitureByArea(i)
+      local furs = self._module:GetFurnitureByArea(i)
       if furs then
-        for _,fur in pairs(furs) do
-          -- DECOMPILER ERROR at PC32: Confused about usage of register: R12 in 'UnsetPending'
-
+        for _, fur in pairs(furs) do
           if fur.asset_id == id then
-            (self._result)[#self._result + 1] = fur
+            self._result[#self._result + 1] = fur
           end
         end
       end
     end
     if #self._result > 0 then
       self._index = 1
-      return (self._result)[1]
+      return self._result[1]
     else
       self._curFur = nil
     end
@@ -43,15 +31,10 @@ FurnitureSearchResult.Search = function(self, id)
   return nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FurnitureSearchResult.MoveNext = function(self)
-  -- function num : 0_2
+function FurnitureSearchResult:MoveNext()
   self._index = self._index + 1
-  if #self._result < self._index then
+  if self._index > #self._result then
     self._index = 1
   end
-  return (self._result)[self._index]
+  return self._result[self._index]
 end
-
-

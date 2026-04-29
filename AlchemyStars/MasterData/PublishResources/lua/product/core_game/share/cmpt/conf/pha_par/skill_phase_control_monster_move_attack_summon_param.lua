@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_control_monster_move_attack_summon_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseControlMonsterMoveAttackSummonParam", SkillPhaseParamBase)
 SkillPhaseControlMonsterMoveAttackSummonParam = SkillPhaseControlMonsterMoveAttackSummonParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseControlMonsterMoveAttackSummonParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseControlMonsterMoveAttackSummonParam:Constructor(t)
   self._stageIndex = t.stageIndex
   self._teleportStartWaitTime = t.teleportStartWaitTime
   self._teleportAnim = t.teleportAnim
@@ -27,123 +20,79 @@ SkillPhaseControlMonsterMoveAttackSummonParam.Constructor = function(self, t)
   self._cacheEffectCount = t.cacheEffectCount or 5
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseControlMonsterMoveAttackSummonParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseControlMonsterMoveAttackSummonParam:GetCacheTable()
   local t = {}
   if self._moveEffectID and self._moveEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._moveEffectID]).ResPath, self._cacheEffectCount})
+    table.insert(t, {
+      Cfg.cfg_effect[self._moveEffectID].ResPath,
+      self._cacheEffectCount
+    })
   end
-  if self._jumpEffectID and self._jumpEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._jumpEffectID]).ResPath, self._cacheEffectCount})
+  if self._jumpEffectID and 0 < self._jumpEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._jumpEffectID].ResPath,
+      self._cacheEffectCount
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseControlMonsterMoveAttackSummonParam.GetStageIndex = function(self)
-  -- function num : 0_2
+function SkillPhaseControlMonsterMoveAttackSummonParam:GetStageIndex()
   return self._stageIndex
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseControlMonsterMoveAttackSummonParam.GetTeleportStartWaitTime = function(self)
-  -- function num : 0_3
+function SkillPhaseControlMonsterMoveAttackSummonParam:GetTeleportStartWaitTime()
   return self._teleportStartWaitTime
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseControlMonsterMoveAttackSummonParam.GetTeleportAnim = function(self)
-  -- function num : 0_4
+function SkillPhaseControlMonsterMoveAttackSummonParam:GetTeleportAnim()
   return self._teleportAnim
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseControlMonsterMoveAttackSummonParam.GetTeleportTime = function(self)
-  -- function num : 0_5
+function SkillPhaseControlMonsterMoveAttackSummonParam:GetTeleportTime()
   return self._teleportTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseControlMonsterMoveAttackSummonParam.GetTeleportFinishAnim = function(self)
-  -- function num : 0_6
+function SkillPhaseControlMonsterMoveAttackSummonParam:GetTeleportFinishAnim()
   return self._teleportFinishAnim
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseControlMonsterMoveAttackSummonParam.GetTeleportFinishWaitTime = function(self)
-  -- function num : 0_7
+function SkillPhaseControlMonsterMoveAttackSummonParam:GetTeleportFinishWaitTime()
   return self._teleportFinishWaitTime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseControlMonsterMoveAttackSummonParam.GetJumpEffectID = function(self)
-  -- function num : 0_8
+function SkillPhaseControlMonsterMoveAttackSummonParam:GetJumpEffectID()
   return self._jumpEffectID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseControlMonsterMoveAttackSummonParam.GetMoveSpeed = function(self)
-  -- function num : 0_9
+function SkillPhaseControlMonsterMoveAttackSummonParam:GetMoveSpeed()
   return self._moveSpeed
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseControlMonsterMoveAttackSummonParam.GetFlyOneTime = function(self)
-  -- function num : 0_10
+function SkillPhaseControlMonsterMoveAttackSummonParam:GetFlyOneTime()
   return self._flyOneTime
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseControlMonsterMoveAttackSummonParam.GetMoveEffectID = function(self)
-  -- function num : 0_11
+function SkillPhaseControlMonsterMoveAttackSummonParam:GetMoveEffectID()
   return self._moveEffectID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseControlMonsterMoveAttackSummonParam.GetMoveAnim = function(self)
-  -- function num : 0_12
+function SkillPhaseControlMonsterMoveAttackSummonParam:GetMoveAnim()
   return self._moveAnim
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseControlMonsterMoveAttackSummonParam.GetPhaseType = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function SkillPhaseControlMonsterMoveAttackSummonParam:GetPhaseType()
   return SkillViewPhaseType.ControlMonsterMoveAttackSummon
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseControlMonsterMoveAttackSummonParam.GetTurnToTarget = function(self)
-  -- function num : 0_14
+function SkillPhaseControlMonsterMoveAttackSummonParam:GetTurnToTarget()
   return self._turnToTarget
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseControlMonsterMoveAttackSummonParam.GetHitAnimName = function(self)
-  -- function num : 0_15
+function SkillPhaseControlMonsterMoveAttackSummonParam:GetHitAnimName()
   return self._hitAnimName
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseControlMonsterMoveAttackSummonParam.GetHitEffectID = function(self)
-  -- function num : 0_16
+function SkillPhaseControlMonsterMoveAttackSummonParam:GetHitEffectID()
   return self._hitEffectID
 end
-
-

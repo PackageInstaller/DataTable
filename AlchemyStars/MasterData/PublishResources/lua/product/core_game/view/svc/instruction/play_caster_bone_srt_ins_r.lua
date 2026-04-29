@@ -1,151 +1,106 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_bone_srt_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterBoneSRTInstruction", BaseInstruction)
 PlayCasterBoneSRTInstruction = PlayCasterBoneSRTInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterBoneSRTInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterBoneSRTInstruction:Constructor(paramList)
   self._bone = paramList.bone
   self._SRT = paramList.SRT
   self._changeValueFlag = 0
-  local SetSRT = function(arr)
-    -- function num : 0_0_0 , upvalues : self, _ENV
+  
+  local function SetSRT(arr)
     if self._SRT == "S" then
       self._scale = Vector3(tonumber(arr[1]), tonumber(arr[2]), tonumber(arr[3]))
-    else
-      if self._SRT == "R" then
-        local count = (table.count)(arr)
-        if count == 3 then
-          self._rotation = (Quaternion.Euler)(tonumber(arr[1]), tonumber(arr[2]), tonumber(arr[3]))
-        else
-          if count == 4 then
-            self._rotation = Quaternion(tonumber(arr[1]), tonumber(arr[2]), tonumber(arr[3]), tonumber(arr[4]))
-          else
-            ;
-            (Log.fatal)("### SetSRT")
-          end
-        end
+    elseif self._SRT == "R" then
+      local count = table.count(arr)
+      if count == 3 then
+        self._rotation = Quaternion.Euler(tonumber(arr[1]), tonumber(arr[2]), tonumber(arr[3]))
+      elseif count == 4 then
+        self._rotation = Quaternion(tonumber(arr[1]), tonumber(arr[2]), tonumber(arr[3]), tonumber(arr[4]))
       else
-        do
-          if self._SRT == "T" then
-            self._translation = Vector3(tonumber(arr[1]), tonumber(arr[2]), tonumber(arr[3]))
-          end
-        end
+        Log.fatal("### SetSRT")
       end
+    elseif self._SRT == "T" then
+      self._translation = Vector3(tonumber(arr[1]), tonumber(arr[2]), tonumber(arr[3]))
     end
   end
-
+  
   local strParamDelta = paramList.delta
-  do
-    if strParamDelta then
-      local arrDelta = (string.split)(strParamDelta, "|")
-      SetSRT(arrDelta)
-      self._changeValueFlag = 0
-    end
-    local strParamTo = paramList.to
-    do
-      if strParamTo then
-        local arrTo = (string.split)(strParamTo, "|")
-        SetSRT(arrTo)
-        self._changeValueFlag = 1
-      end
-      local strDuration = paramList.duration
-      self._duration = strDuration and tonumber(strDuration) or 0
-    end
+  if strParamDelta then
+    local arrDelta = string.split(strParamDelta, "|")
+    SetSRT(arrDelta)
+    self._changeValueFlag = 0
   end
+  local strParamTo = paramList.to
+  if strParamTo then
+    local arrTo = string.split(strParamTo, "|")
+    SetSRT(arrTo)
+    self._changeValueFlag = 1
+  end
+  local strDuration = paramList.duration
+  self._duration = strDuration and tonumber(strDuration) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterBoneSRTInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterBoneSRTInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
   local tfBone = self:GetTransform(casterEntity)
   if not tfBone then
-    (Log.fatal)("### PlayCasterBoneSRTInstruction cant find bone", self._bone)
+    Log.fatal("### PlayCasterBoneSRTInstruction cant find bone", self._bone)
   end
-  local tweener = nil
+  local tweener
   if self._SRT == "T" then
-    local to = nil
+    local to
     if self._changeValueFlag == 0 then
       to = tfBone.localPosition + self._translation
     else
       to = self._translation
     end
     tweener = tfBone:DOLocalMove(to, self._duration * 0.001)
-    tweener:SetEase(((DG.Tweening).Ease).OutBack)
+    tweener:SetEase(DG.Tweening.Ease.OutBack)
+  elseif self._SRT == "R" then
+    self:DORotate(TT, casterEntity, world)
   else
-    do
-      if self._SRT == "R" then
-        self:DORotate(TT, casterEntity, world)
-      else
-        ;
-        (Log.fatal)("### PlayCasterBoneSRTInstruction expand by yourself.")
-      end
-    end
+    Log.fatal("### PlayCasterBoneSRTInstruction expand by yourself.")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterBoneSRTInstruction.GetTransform = function(self, e)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayCasterBoneSRTInstruction:GetTransform(e)
   local cView = e:View()
-  local tran = (cView.ViewWrapper).Transform
-  local tfBone = (GameObjectHelper.FindChild)(tran, self._bone)
+  local tran = cView.ViewWrapper.Transform
+  local tfBone = GameObjectHelper.FindChild(tran, self._bone)
   return tfBone
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterBoneSRTInstruction.DORotate = function(self, TT, e, world)
-  -- function num : 0_3 , upvalues : _ENV
-  local skillEffectResultContainer = (e:SkillRoutine()):GetResultContainer()
+function PlayCasterBoneSRTInstruction:DORotate(TT, e, world)
+  local skillEffectResultContainer = e:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Rotate)
   local endRotation = Quaternion.identity
   if resultArray then
-    for i,result in ipairs(resultArray) do
+    for i, result in ipairs(resultArray) do
       local eId = result:GetTargetID()
-      do
-        local targetEntity = world:GetEntityByID(eId)
-        local dirOld = result:GetDirOld()
-        local dirNew = result:GetDirNew()
-        if dirNew.x == dirOld.y and dirNew.y == -dirOld.x then
-          endRotation = (Quaternion.Euler)(0, 0, 90)
-        else
-          if dirNew.x == -dirOld.y and dirNew.y == dirOld.x then
-            endRotation = (Quaternion.Euler)(0, 0, -90)
-          else
-            ;
-            (Log.fatal)("### not rotate", (targetEntity:GridLocation()).Position, dirOld, dirNew)
-          end
-        end
-        local tfBone = self:GetTransform(targetEntity)
-        local tweener = tfBone:DOLocalRotateQuaternion(endRotation, self._duration * 0.001)
-        tweener:OnComplete(function()
-    -- function num : 0_3_0 , upvalues : tfBone, _ENV, targetEntity, dirNew
-    tfBone.localRotation = Quaternion.identity
-    targetEntity:SetDirection(dirNew)
-  end
-)
+      local targetEntity = world:GetEntityByID(eId)
+      local dirOld = result:GetDirOld()
+      local dirNew = result:GetDirNew()
+      if dirNew.x == dirOld.y and dirNew.y == -dirOld.x then
+        endRotation = Quaternion.Euler(0, 0, 90)
+      elseif dirNew.x == -dirOld.y and dirNew.y == dirOld.x then
+        endRotation = Quaternion.Euler(0, 0, -90)
+      else
+        Log.fatal("### not rotate", targetEntity:GridLocation().Position, dirOld, dirNew)
       end
+      local tfBone = self:GetTransform(targetEntity)
+      local tweener = tfBone:DOLocalRotateQuaternion(endRotation, self._duration * 0.001)
+      tweener:OnComplete(function()
+        tfBone.localRotation = Quaternion.identity
+        targetEntity:SetDirection(dirNew)
+      end)
     end
   else
-    do
-      local tfBone = self:GetTransform(e)
-      endRotation = self._rotation * tfBone.localRotation
-      tfBone:DOLocalRotateQuaternion(endRotation, self._duration * 0.001)
-      if self._duration > 0 then
-        YIELD(TT, self._duration)
-      end
+    local tfBone = self:GetTransform(e)
+    endRotation = self._rotation * tfBone.localRotation
+    tfBone:DOLocalRotateQuaternion(endRotation, self._duration * 0.001)
+    if 0 < self._duration then
+      YIELD(TT, self._duration)
     end
   end
 end
-
-

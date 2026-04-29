@@ -1,21 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2900641/cfg_skill_view_490064305.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName = skill02; PlayCasterBindEffect,effectID=PARAM.effectID1; PlayAudio,audioID =6100,audioType=1; "}
-}
-, 
-{2, 2, 0, 1, 1, 1700, 
-{" PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=3,gridPosY=2,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=3,gridPosY=3,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=2,gridPosY=3,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=3,gridPosY=3,gridDirX=0,gridDirY=-1; Wait,waitTime=100; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=6,gridPosY=2,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=6,gridPosY=3,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=2,gridPosY=6,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=3,gridPosY=6,gridDirX=0,gridDirY=-1; Wait,waitTime=100; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=8,gridPosY=2,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=8,gridPosY=3,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=2,gridPosY=8,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=3,gridPosY=8,gridDirX=0,gridDirY=-1; Wait,waitTime=100; "}
-}
-, 
-{3, 3, 0, 1, 1, 1700, 
-{" DataSelectScopeGridRange,effectType=1,damageInfoIndex=1; DataSortScopeGridRange,sortType=3; DataSelectScopeGridRangeIndex,index=1; Jump,condition=CheckCurrentScopeGridRangeIndexValid,result=0,goto=phaseEnd; PlayGridRangeBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0,label=playRangeEffect; DataSelectNextScopeGridRange; Jump,condition=CheckCurrentScopeGridRangeIndexValid,goto=playRangeEffect; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName = skill02; PlayCasterBindEffect,effectID=PARAM.effectID1; PlayAudio,audioID =6100,audioType=1; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    1,
+    1700,
+    {
+      " PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=3,gridPosY=2,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=3,gridPosY=3,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=2,gridPosY=3,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=3,gridPosY=3,gridDirX=0,gridDirY=-1; Wait,waitTime=100; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=6,gridPosY=2,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=6,gridPosY=3,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=2,gridPosY=6,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=3,gridPosY=6,gridDirX=0,gridDirY=-1; Wait,waitTime=100; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=8,gridPosY=2,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=8,gridPosY=3,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=2,gridPosY=8,gridDirX=0,gridDirY=-1; PlayEffectAGridPos,effectID=PARAM.effectID2,gridPosX=3,gridPosY=8,gridDirX=0,gridDirY=-1; Wait,waitTime=100; "
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    1,
+    1700,
+    {
+      " DataSelectScopeGridRange,effectType=1,damageInfoIndex=1; DataSortScopeGridRange,sortType=3; DataSelectScopeGridRangeIndex,index=1; Jump,condition=CheckCurrentScopeGridRangeIndexValid,result=0,goto=phaseEnd; PlayGridRangeBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0,label=playRangeEffect; DataSelectNextScopeGridRange; Jump,condition=CheckCurrentScopeGridRangeIndexValid,goto=playRangeEffect; "
+    }
+  }
 }
 return config, "ID", key
-

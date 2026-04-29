@@ -1,41 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_precondition_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftPreconditionItem", UICustomWidget)
 UIAircraftPreconditionItem = UIAircraftPreconditionItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftPreconditionItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIAircraftPreconditionItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftPreconditionItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIAircraftPreconditionItem:InitWidget()
   self.textLevelCount = self:GetUIComponent("UILocalizationText", "TextLevelCount")
   self.textRoomName = self:GetUIComponent("UILocalizationText", "TextRoomName")
   self.textRoomCount = self:GetUIComponent("UILocalizationText", "TextRoomCount")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftPreconditionItem.SetData = function(self, _levelCount, _name, _count)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R4 in 'UnsetPending'
-
-  (self.textLevelCount).text = _levelCount
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.textRoomName).text = _name
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.textRoomCount).text = "(" .. _count .. ")"
+function UIAircraftPreconditionItem:SetData(_levelCount, _name, _count)
+  self.textLevelCount.text = _levelCount
+  self.textRoomName.text = _name
+  self.textRoomCount.text = "(" .. _count .. ")"
 end
-
-

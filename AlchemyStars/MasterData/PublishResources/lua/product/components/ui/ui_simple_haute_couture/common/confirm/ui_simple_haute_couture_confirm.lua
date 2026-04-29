@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_simple_haute_couture/common/confirm/ui_simple_haute_couture_confirm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISimpleHauteCoutureConfirm", UIController)
 UISimpleHauteCoutureConfirm = UISimpleHauteCoutureConfirm
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimpleHauteCoutureConfirm.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UISimpleHauteCoutureConfirm:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureConfirm.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISimpleHauteCoutureConfirm:OnShow(uiParams)
   self._costItemID = uiParams[1]
   self._titleTxt = uiParams[2]
   self._costNum = uiParams[3]
@@ -23,55 +13,37 @@ UISimpleHauteCoutureConfirm.OnShow = function(self, uiParams)
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureConfirm._GetComponents = function(self)
-  -- function num : 0_2
+function UISimpleHauteCoutureConfirm:_GetComponents()
   self.title = self:GetUIComponent("UILocalizationText", "title")
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.have = self:GetUIComponent("UILocalizationText", "have")
   self.rest = self:GetUIComponent("UILocalizationText", "rest")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureConfirm._InitComponents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISimpleHauteCoutureConfirm:_InitComponents()
   local itemModule = self:GetModule(ItemModule)
-  local itemCfg = (Cfg.cfg_item)[self._costItemID]
-  ;
-  (self.icon):LoadImage(itemCfg.Icon)
-  ;
-  (self.title):SetText(self._titleTxt)
+  local itemCfg = Cfg.cfg_item[self._costItemID]
+  self.icon:LoadImage(itemCfg.Icon)
+  self.title:SetText(self._titleTxt)
   local haveNum = itemModule:GetItemCount(self._costItemID)
   local rest = haveNum - self._costNum
-  if haveNum > 99999 then
+  if 99999 < haveNum then
     haveNum = "99999+"
   end
-  if rest > 99999 then
+  if 99999 < rest then
     rest = "99999+"
   end
-  ;
-  (self.have):SetText(haveNum)
-  ;
-  (self.rest):SetText(rest)
+  self.have:SetText(haveNum)
+  self.rest:SetText(rest)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureConfirm.ConfirmButtonOnClick = function(self, go)
-  -- function num : 0_4
+function UISimpleHauteCoutureConfirm:ConfirmButtonOnClick(go)
   if self._confirmCallback then
-    (self._confirmCallback)()
+    self._confirmCallback()
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureConfirm.CancelButtonOnClick = function(self, go)
-  -- function num : 0_5
+function UISimpleHauteCoutureConfirm:CancelButtonOnClick(go)
   self:CloseDialog()
 end
-
-

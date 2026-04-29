@@ -1,36 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/world_assemble.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_filter")
 _staticClass("WorldAssembler")
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-WorldAssembler.AssembleWorldComponentsBase = function(world)
-  -- function num : 0_0 , upvalues : _ENV
+function WorldAssembler.AssembleWorldComponentsBase(world)
   local game_mode = GameModeType.CommonBaseMode
   local running_position = world:GetRunningPosition()
   local gamemode_config = GameModeConfig[game_mode]
   if not gamemode_config then
-    (Log.debug)("WorldAssembler.AssembleWorldComponents wrong game mode :", game_mode)
-    return 
+    Log.debug("WorldAssembler.AssembleWorldComponents wrong game mode :", game_mode)
+    return
   end
-  for k,v in pairs(gamemode_config.UniqueComponents) do
+  for k, v in pairs(gamemode_config.UniqueComponents) do
     if not WorldAssembler["Init" .. k] then
-      (Log.fatal)("AssembleWorldComponents " .. k .. " missing Init" .. k .. " func")
-    else
-      if ComponentFilter:CheckComponent(k, running_position) then
-        (WorldAssembler["Init" .. k])(world)
-      end
+      Log.fatal("AssembleWorldComponents " .. k .. " missing Init" .. k .. " func")
+    elseif ComponentFilter:CheckComponent(k, running_position) then
+      WorldAssembler["Init" .. k](world)
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.AssembleWorldComponents = function(world, exConfig)
-  -- function num : 0_1 , upvalues : _ENV
+function WorldAssembler.AssembleWorldComponents(world, exConfig)
   local game_mode = world:GetGameMode()
   local running_position = world:GetRunningPosition()
   local gamemode_config = GameModeConfig[game_mode]
@@ -38,144 +26,86 @@ WorldAssembler.AssembleWorldComponents = function(world, exConfig)
     gamemode_config = exConfig
   end
   if not gamemode_config then
-    (Log.debug)("WorldAssembler.AssembleWorldComponents wrong game mode :", game_mode)
-    return 
+    Log.debug("WorldAssembler.AssembleWorldComponents wrong game mode :", game_mode)
+    return
   end
-  for k,v in pairs(gamemode_config.UniqueComponents) do
+  for k, v in pairs(gamemode_config.UniqueComponents) do
     if not WorldAssembler["Init" .. k] then
-      (Log.fatal)("AssembleWorldComponents " .. k .. " missing Init" .. k .. " func")
-    else
-      if ComponentFilter:CheckComponent(k, running_position) then
-        (WorldAssembler["Init" .. k])(world)
-      end
+      Log.fatal("AssembleWorldComponents " .. k .. " missing Init" .. k .. " func")
+    elseif ComponentFilter:CheckComponent(k, running_position) then
+      WorldAssembler["Init" .. k](world)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitInputMngComponent = function(world)
-  -- function num : 0_2
+function WorldAssembler.InitInputMngComponent(world)
   world:AddInputMng()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitGameFSMComponent = function(world)
-  -- function num : 0_3
+function WorldAssembler.InitGameFSMComponent(world)
   world:AddGameFSM(world)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitMainCameraComponent = function(world)
-  -- function num : 0_4
+function WorldAssembler.InitMainCameraComponent(world)
   world:AddMainCamera(world)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitPlayerComponent = function(world)
-  -- function num : 0_5
+function WorldAssembler.InitPlayerComponent(world)
   world:AddPlayer()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitInputComponent = function(world)
-  -- function num : 0_6
+function WorldAssembler.InitInputComponent(world)
   world:AddInput(world)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitGridTouchComponent = function(world)
-  -- function num : 0_7
+function WorldAssembler.InitGridTouchComponent(world)
   world:AddGridTouch(world)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitSpawnMngComponent = function(world)
-  -- function num : 0_8
+function WorldAssembler.InitSpawnMngComponent(world)
   world:AddSpawnMng(world)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitPickUpComponent = function(world)
-  -- function num : 0_9
+function WorldAssembler.InitPickUpComponent(world)
   world:AddPickUp(world)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitBattleStatComponent = function(world)
-  -- function num : 0_10
+function WorldAssembler.InitBattleStatComponent(world)
   world:AddBattleStat(world)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitBattleRenderConfigComponent = function(world)
-  -- function num : 0_11
+function WorldAssembler.InitBattleRenderConfigComponent(world)
   world:AddBattleRenderConfig(world)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitBattleFlagsComponent = function(world)
-  -- function num : 0_12
+function WorldAssembler.InitBattleFlagsComponent(world)
   world:AddBattleFlags(world)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitRenderBattleStatComponent = function(world)
-  -- function num : 0_13
+function WorldAssembler.InitRenderBattleStatComponent(world)
   world:AddRenderBattleStat(world)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitChessPickUpComponent = function(world)
-  -- function num : 0_14
+function WorldAssembler.InitChessPickUpComponent(world)
   world:AddChessPickUp(world)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitMiragePickUpComponent = function(world)
-  -- function num : 0_15
+function WorldAssembler.InitMiragePickUpComponent(world)
   world:AddMiragePickUp(world)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitPopStarPickUpComponent = function(world)
-  -- function num : 0_16
+function WorldAssembler.InitPopStarPickUpComponent(world)
   world:AddPopStarPickUp(world)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitBattleDamageStatisticsComponent = function(world)
-  -- function num : 0_17
+function WorldAssembler.InitBattleDamageStatisticsComponent(world)
   world:AddBattleDamageStatistics(world)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitBattleWorldEnterDataComponent = function(world)
-  -- function num : 0_18
+function WorldAssembler.InitBattleWorldEnterDataComponent(world)
   world:AddBattleWorldEnterData(world)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldAssembler.InitSeasonMazeLogicComponent = function(world)
-  -- function num : 0_19
+function WorldAssembler.InitSeasonMazeLogicComponent(world)
   world:AddSeasonMazeLogic(world)
 end
-
-

@@ -1,37 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_monster_move_grid_to_skill_range_far.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_MonsterMoveGridToSkillRangeFar", Object)
 SkillEffectCalc_MonsterMoveGridToSkillRangeFar = SkillEffectCalc_MonsterMoveGridToSkillRangeFar
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_MonsterMoveGridToSkillRangeFar.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_MonsterMoveGridToSkillRangeFar:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveGridToSkillRangeFar.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_MonsterMoveGridToSkillRangeFar:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillParam = skillEffectCalcParam:GetSkillEffectParam()
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   local targetIDList = skillEffectCalcParam:GetTargetEntityIDs()
   local targetID = false
-  if (table.count)(targetIDList) >= 1 then
+  if table.count(targetIDList) >= 1 then
     targetID = targetIDList[1]
   end
   if not targetID or targetID == -1 then
-    (Log.fatal)("Need Target SkillID", skillEffectCalcParam:GetSkillID())
+    Log.fatal("Need Target SkillID", skillEffectCalcParam:GetSkillID())
   end
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
-  local sBoard = (self._world):GetService("BoardLogic")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  local sBoard = self._world:GetService("BoardLogic")
   local preferElement = skillParam:GetPreferElement()
   local checkSkillID = skillParam:GetCheckSkillID()
-  local targetEntity = (self._world):GetEntityByID(targetID)
+  local targetEntity = self._world:GetEntityByID(targetID)
   local movePath = {}
   if not targetEntity:HasDeadMark() then
     movePath = self:CalMovPath(casterEntity, targetEntity, preferElement, checkSkillID)
@@ -40,40 +30,33 @@ SkillEffectCalc_MonsterMoveGridToSkillRangeFar.DoSkillEffectCalculator = functio
   local posWalkResultList = {}
   if #movePath ~= 0 then
     local oldPosList = {}
-    for i,pos in ipairs(movePath) do
+    for i, pos in ipairs(movePath) do
       local posSelf = casterEntity:GetGridPosition()
       local walkRes = MonsterMoveSkillRangeFarResult:New()
       sBoard:UpdateEntityBlockFlag(casterEntity, posSelf, pos)
       casterEntity:SetGridPosition(pos)
       casterEntity:SetGridDirection(pos - posSelf)
       local entityID = casterEntity:GetID()
-      ;
-      (table.insert)(posWalkResultList, walkRes)
+      table.insert(posWalkResultList, walkRes)
       walkRes:SetWalkPos(pos)
       self:_OnArrivePos(casterEntity, walkRes, skillParam)
-      ;
-      (table.insert)(oldPosList, pos)
+      table.insert(oldPosList, pos)
       if casterEntity:HasDeadMark() then
         isCasterDead = true
         break
       end
     end
   end
-  do
-    local result = SkillEffectMonsterMoveGridToSkillRangeFarResult:New(posWalkResultList, isCasterDead)
-    return {result}
-  end
+  local result = SkillEffectMonsterMoveGridToSkillRangeFarResult:New(posWalkResultList, isCasterDead)
+  return {result}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveGridToSkillRangeFar._OnArrivePos = function(self, casterEntity, walkRes, skillParam)
-  -- function num : 0_2 , upvalues : _ENV
-  local skillLogicSvc = (self._world):GetService("SkillLogic")
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function SkillEffectCalc_MonsterMoveGridToSkillRangeFar:_OnArrivePos(casterEntity, walkRes, skillParam)
+  local skillLogicSvc = self._world:GetService("SkillLogic")
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   local pos = casterEntity:GetGridPosition()
   local listTrapWork, listTrapResult = trapServiceLogic:TriggerTrapByEntity(casterEntity, TrapTriggerOrigin.Move)
-  for i,e in ipairs(listTrapWork) do
+  for i, e in ipairs(listTrapWork) do
     local trapEntity = e
     local skillEffectResultContainer = listTrapResult[i]
     local aiResult = AISkillResult:New()
@@ -81,13 +64,13 @@ SkillEffectCalc_MonsterMoveGridToSkillRangeFar._OnArrivePos = function(self, cas
     walkRes:AddWalkTrap(trapEntity:GetID(), aiResult)
   end
   local flushTrapIDs = skillParam:GetFlushTrapIDs()
-  local utilSvc = (self._world):GetService("UtilData")
+  local utilSvc = self._world:GetService("UtilData")
   local array = utilSvc:GetTrapsAtPos(pos)
-  for _,eTrap in ipairs(array) do
+  for _, eTrap in ipairs(array) do
     if eTrap then
       local trapIDCmpt = eTrap:TrapID()
       if flushTrapIDs[trapIDCmpt:GetTrapID()] then
-        (eTrap:Attributes()):Modify("HP", 0)
+        eTrap:Attributes():Modify("HP", 0)
         trapServiceLogic:AddTrapDeadMark(eTrap, skillParam:GetDisableDieSkill())
         walkRes:SetFlushTrapID(eTrap:GetID())
       end
@@ -95,54 +78,47 @@ SkillEffectCalc_MonsterMoveGridToSkillRangeFar._OnArrivePos = function(self, cas
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveGridToSkillRangeFar.CalMovPath = function(self, casterEntity, targetEntity, preferElement, checkSkillID)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalc_MonsterMoveGridToSkillRangeFar:CalMovPath(casterEntity, targetEntity, preferElement, checkSkillID)
   local targetCenterPos = targetEntity:GetGridPosition()
   local casterPos = casterEntity:GetGridPosition()
   local bodyAreaCmpt = targetEntity:BodyArea()
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   local posCanLink = utilCalcSvc:MonsterFindAllPosCanLink(casterPos)
   local skillRange = self:ComputeSkillRange(checkSkillID, targetCenterPos, bodyAreaCmpt:GetArea())
-  local validSkillRange = (self:FilterSkillRangePos(skillRange, posCanLink))
-  local tarMovePos = nil
-  if #validSkillRange > 0 then
+  local validSkillRange = self:FilterSkillRangePos(skillRange, posCanLink)
+  local tarMovePos
+  if 0 < #validSkillRange then
     tarMovePos = self:FindFarestPosToTarget(targetCenterPos, validSkillRange, preferElement)
   else
     tarMovePos = self:FindNearestPosToTarget(targetCenterPos, posCanLink, preferElement)
   end
   local movPath = {}
   if tarMovePos then
-    local utilCalcSvc = (self._world):GetService("UtilCalc")
-    local board = ((self._world):GetBoardEntity()):Board()
+    local utilCalcSvc = self._world:GetService("UtilCalc")
+    local board = self._world:GetBoardEntity():Board()
     local pieceType = board:GetPieceType(tarMovePos)
     if pieceType == PieceType.Any then
       movPath = utilCalcSvc:GetMonster2PosByLink(casterPos, tarMovePos, preferElement)
-      if movPath and #movPath > 0 then
+      if movPath and 0 < #movPath then
+      else
         for checkPieceType = PieceType.Blue, PieceType.Yellow do
           if checkPieceType ~= preferElement then
             movPath = utilCalcSvc:GetMonster2PosByLink(casterPos, tarMovePos, preferElement)
-          end
-        end
-        do
-          do
-            if not movPath or #movPath <= 0 then
-              movPath = utilCalcSvc:GetMonster2PosByLink(casterPos, tarMovePos, pieceType)
+            if movPath and 0 < #movPath then
+              break
             end
-            return movPath
           end
         end
       end
+    else
+      movPath = utilCalcSvc:GetMonster2PosByLink(casterPos, tarMovePos, pieceType)
     end
   end
+  return movPath
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveGridToSkillRangeFar.ComputeSkillRange = function(self, skillID, centerPos, bodyArea, dir)
-  -- function num : 0_4 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function SkillEffectCalc_MonsterMoveGridToSkillRangeFar:ComputeSkillRange(skillID, centerPos, bodyArea, dir)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
   local scopeType = skillConfigData:GetSkillScopeType()
   if scopeType == SkillScopeType.DirectLineExpand then
@@ -151,44 +127,30 @@ SkillEffectCalc_MonsterMoveGridToSkillRangeFar.ComputeSkillRange = function(self
     local ret3 = self:_ComputeSkillRange(skillID, centerPos, bodyArea, Vector2(1, 0))
     local ret4 = self:_ComputeSkillRange(skillID, centerPos, bodyArea, Vector2(-1, 0))
     local ret = {}
-    ;
-    (table.appendArray)(ret, ret1)
-    ;
-    (table.appendArray)(ret, ret2)
-    ;
-    (table.appendArray)(ret, ret3)
-    ;
-    (table.appendArray)(ret, ret4)
+    table.appendArray(ret, ret1)
+    table.appendArray(ret, ret2)
+    table.appendArray(ret, ret3)
+    table.appendArray(ret, ret4)
     return ret
   else
-    do
-      do return self:_ComputeSkillRange(skillID, centerPos, bodyArea, dir) end
-    end
+    return self:_ComputeSkillRange(skillID, centerPos, bodyArea, dir)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveGridToSkillRangeFar._ComputeSkillRange = function(self, nSkillID, posCenter, bodyArea, dir)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillEffectCalc_MonsterMoveGridToSkillRangeFar:_ComputeSkillRange(nSkillID, posCenter, bodyArea, dir)
   if nSkillID == 0 then
     return {}
   end
   local workCenter = posCenter
-  if #bodyArea == 4 then
+  if 4 == #bodyArea then
     workCenter = workCenter + Vector2(-1, -1)
-  else
-    if #bodyArea == 9 then
-      workCenter = workCenter + Vector2(-2, -2)
-    end
+  elseif 9 == #bodyArea then
+    workCenter = workCenter + Vector2(-2, -2)
   end
   return self:CalculateSkillRange(nSkillID, workCenter, dir, bodyArea)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveGridToSkillRangeFar.CalculateSkillRange = function(self, skillID, centerPos, dir, bodyAreaList)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillEffectCalc_MonsterMoveGridToSkillRangeFar:CalculateSkillRange(skillID, centerPos, dir, bodyAreaList)
   local skillResult = self:_CalculateSkillScope(skillID, centerPos, dir, bodyAreaList)
   if not skillResult then
     return {}
@@ -197,52 +159,41 @@ SkillEffectCalc_MonsterMoveGridToSkillRangeFar.CalculateSkillRange = function(se
   local listReturn = {}
   for i = 1, #skillRange do
     local posWork = skillRange[i]
-    if (table.icontains)(listReturn, posWork) == false then
-      (table.insert)(listReturn, posWork)
+    if false == table.icontains(listReturn, posWork) then
+      table.insert(listReturn, posWork)
     end
   end
   return listReturn
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveGridToSkillRangeFar._CalculateSkillScope = function(self, skillID, centerPos, dir, bodyAreaList, entityCaster)
-  -- function num : 0_7 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function SkillEffectCalc_MonsterMoveGridToSkillRangeFar:_CalculateSkillScope(skillID, centerPos, dir, bodyAreaList, entityCaster)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local skillCalculater = utilScopeSvc:GetSkillScopeCalc()
-  if not dir then
-    dir = Vector2(0, 1)
-  end
+  dir = dir or Vector2(0, 1)
   local skillResult = skillCalculater:CalcSkillScope(skillConfigData, centerPos, dir, bodyAreaList, entityCaster)
   return skillResult
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveGridToSkillRangeFar.FilterSkillRangePos = function(self, skillRange, posCanLink)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillEffectCalc_MonsterMoveGridToSkillRangeFar:FilterSkillRangePos(skillRange, posCanLink)
   local retRange = {}
-  for _,pos in ipairs(skillRange) do
-    local posIndex = (Vector2.Pos2Index)(pos)
+  for _, pos in ipairs(skillRange) do
+    local posIndex = Vector2.Pos2Index(pos)
     if posCanLink[posIndex] then
-      (table.insert)(retRange, pos)
+      table.insert(retRange, pos)
     end
   end
   return retRange
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveGridToSkillRangeFar.FindFarestPosToTarget = function(self, targetCenterPos, validRange, preferElement)
-  -- function num : 0_9 , upvalues : _ENV
-  local posReturn = nil
-  local board = ((self._world):GetBoardEntity()):Board()
+function SkillEffectCalc_MonsterMoveGridToSkillRangeFar:FindFarestPosToTarget(targetCenterPos, validRange, preferElement)
+  local posReturn
+  local board = self._world:GetBoardEntity():Board()
   local posListFarTarget = SortedArray:New(Algorithm.COMPARE_CUSTOM, SortByDistanceAndPreferElement._ComparerByFarWithElement)
   posListFarTarget:AllowDuplicate()
   posListFarTarget:Clear()
-  for index,validPos in ipairs(validRange) do
+  for index, validPos in ipairs(validRange) do
     local pieceType = board:GetPieceType(validPos)
     local elementVal = 0
     if pieceType and pieceType == preferElement then
@@ -250,25 +201,20 @@ SkillEffectCalc_MonsterMoveGridToSkillRangeFar.FindFarestPosToTarget = function(
     end
     self:InsertSortedArray(posListFarTarget, targetCenterPos, validPos, index, elementVal)
   end
-  do
-    if posListFarTarget and posListFarTarget:Size() > 0 then
-      local sortData = posListFarTarget:GetAt(1)
-      posReturn = sortData.data
-    end
-    return posReturn
+  if posListFarTarget and 0 < posListFarTarget:Size() then
+    local sortData = posListFarTarget:GetAt(1)
+    posReturn = sortData.data
   end
+  return posReturn
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveGridToSkillRangeFar.FindNearestPosToTarget = function(self, targetCenterPos, validRange, preferElement)
-  -- function num : 0_10 , upvalues : _ENV
-  local posReturn = nil
-  local board = ((self._world):GetBoardEntity()):Board()
+function SkillEffectCalc_MonsterMoveGridToSkillRangeFar:FindNearestPosToTarget(targetCenterPos, validRange, preferElement)
+  local posReturn
+  local board = self._world:GetBoardEntity():Board()
   local posListFarTarget = SortedArray:New(Algorithm.COMPARE_CUSTOM, SortByDistanceAndPreferElement._ComparerByNearWithElement)
   posListFarTarget:AllowDuplicate()
   posListFarTarget:Clear()
-  for index,validPos in ipairs(validRange) do
+  for index, validPos in ipairs(validRange) do
     local pieceType = board:GetPieceType(validPos)
     local elementVal = 0
     if pieceType and pieceType == preferElement then
@@ -276,29 +222,22 @@ SkillEffectCalc_MonsterMoveGridToSkillRangeFar.FindNearestPosToTarget = function
     end
     self:InsertSortedArray(posListFarTarget, targetCenterPos, validPos, index, elementVal)
   end
-  do
-    if posListFarTarget and posListFarTarget:Size() > 0 then
-      local sortData = posListFarTarget:GetAt(1)
-      posReturn = sortData.data
-    end
-    return posReturn
+  if posListFarTarget and 0 < posListFarTarget:Size() then
+    local sortData = posListFarTarget:GetAt(1)
+    posReturn = sortData.data
   end
+  return posReturn
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveGridToSkillRangeFar.InsertSortedArray = function(self, sortedArray, centerPos, workPos, nIndex, elementVal)
-  -- function num : 0_11 , upvalues : _ENV
+function SkillEffectCalc_MonsterMoveGridToSkillRangeFar:InsertSortedArray(sortedArray, centerPos, workPos, nIndex, elementVal)
   local posData = SortByDistanceAndPreferElement:New(centerPos, workPos, nIndex, elementVal)
   sortedArray:Insert(posData)
 end
 
 _class("SortByDistanceAndPreferElement", Object)
 SortByDistanceAndPreferElement = SortByDistanceAndPreferElement
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
 
-SortByDistanceAndPreferElement.Constructor = function(self, centrePos, dataPos, nIndex, elementVal)
-  -- function num : 0_12
+function SortByDistanceAndPreferElement:Constructor(centrePos, dataPos, nIndex, elementVal)
   self.centre = centrePos
   self.data = dataPos
   self.m_nIndex = nIndex or 0
@@ -306,86 +245,58 @@ SortByDistanceAndPreferElement.Constructor = function(self, centrePos, dataPos, 
   self.m_nDistance = self:Distance()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SortByDistanceAndPreferElement.GetDistance = function(self)
-  -- function num : 0_13
+function SortByDistanceAndPreferElement:GetDistance()
   return self.m_nDistance
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SortByDistanceAndPreferElement.GetElementVal = function(self)
-  -- function num : 0_14
+function SortByDistanceAndPreferElement:GetElementVal()
   return self.m_elementVal
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SortByDistanceAndPreferElement.GetPosData = function(self)
-  -- function num : 0_15
+function SortByDistanceAndPreferElement:GetPosData()
   return self.data
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SortByDistanceAndPreferElement.Distance = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  return (GameHelper.ComputeLogicDistance)(self.centre, self.data)
+function SortByDistanceAndPreferElement:Distance()
+  return GameHelper.ComputeLogicDistance(self.centre, self.data)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SortByDistanceAndPreferElement._ComparerByFarWithElement = function(dataA, dataB)
-  -- function num : 0_17
+function SortByDistanceAndPreferElement._ComparerByFarWithElement(dataA, dataB)
   local nDistanceA = dataA:GetDistance()
   local nDistanceB = dataB:GetDistance()
-  if nDistanceB < nDistanceA then
+  if nDistanceA > nDistanceB then
     return 1
-  else
-    if nDistanceA < nDistanceB then
-      return -1
-    else
-      local nEleValA = dataA:GetElementVal()
-      local nEleValB = dataB:GetElementVal()
-      if nEleValB < nEleValA then
-        return 1
-      else
-        if nEleValA < nEleValB then
-          return -1
-        else
-          return dataB.m_nIndex - dataA.m_nIndex
-        end
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SortByDistanceAndPreferElement._ComparerByNearWithElement = function(dataA, dataB)
-  -- function num : 0_18
-  local nDistanceA = dataA:GetDistance()
-  local nDistanceB = dataB:GetDistance()
-  if nDistanceB < nDistanceA then
+  elseif nDistanceA < nDistanceB then
     return -1
   else
-    if nDistanceA < nDistanceB then
+    local nEleValA = dataA:GetElementVal()
+    local nEleValB = dataB:GetElementVal()
+    if nEleValA > nEleValB then
       return 1
+    elseif nEleValA < nEleValB then
+      return -1
     else
-      local nEleValA = dataA:GetElementVal()
-      local nEleValB = dataB:GetElementVal()
-      if nEleValB < nEleValA then
-        return 1
-      else
-        if nEleValA < nEleValB then
-          return -1
-        else
-          return dataB.m_nIndex - dataA.m_nIndex
-        end
-      end
+      return dataB.m_nIndex - dataA.m_nIndex
     end
   end
 end
 
-
+function SortByDistanceAndPreferElement._ComparerByNearWithElement(dataA, dataB)
+  local nDistanceA = dataA:GetDistance()
+  local nDistanceB = dataB:GetDistance()
+  if nDistanceA > nDistanceB then
+    return -1
+  elseif nDistanceA < nDistanceB then
+    return 1
+  else
+    local nEleValA = dataA:GetElementVal()
+    local nEleValB = dataB:GetElementVal()
+    if nEleValA > nEleValB then
+      return 1
+    elseif nEleValA < nEleValB then
+      return -1
+    else
+      return dataB.m_nIndex - dataA.m_nIndex
+    end
+  end
+end

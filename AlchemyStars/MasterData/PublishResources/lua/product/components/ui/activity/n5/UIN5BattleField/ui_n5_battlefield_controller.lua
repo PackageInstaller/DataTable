@@ -1,78 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/UIN5BattleField/ui_n5_battlefield_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5BattleFieldController", UIController)
 UIN5BattleFieldController = UIN5BattleFieldController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5BattleFieldController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN5BattleFieldController:LoadDataOnEnter(TT, res, uiParams)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._loginModule = self:GetModule(LoginModule)
   self._campaignModule = self:GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N5, ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  self._localProgress = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N5)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N5, ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  self._localProgress = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N5)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  self._component = (self._campaign):GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD)
-  self._componentInfo = (self._campaign):GetComponentInfo(ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD)
-  local openTime = (self._componentInfo).m_unlock_time
-  local closeTime = (self._componentInfo).m_close_time
-  local nowtime = (self._svrTimeModule):GetServerTime() * 0.001
-  if nowtime < openTime then
+  self._component = self._campaign:GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD)
+  self._componentInfo = self._campaign:GetComponentInfo(ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD)
+  local openTime = self._componentInfo.m_unlock_time
+  local closeTime = self._componentInfo.m_close_time
+  local nowtime = self._svrTimeModule:GetServerTime() * 0.001
+  if openTime > nowtime then
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
-    ;
-    (self._campaignModule):ShowErrorToast(res.m_result, true)
-    return 
+    self._campaignModule:ShowErrorToast(res.m_result, true)
+    return
   end
   if closeTime < nowtime then
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
-    ;
-    (self._campaignModule):ShowErrorToast(res.m_result, true)
-    return 
+    self._campaignModule:ShowErrorToast(res.m_result, true)
+    return
   end
-  self._day = ((self._componentInfo).m_battlefield_info).m_cur_index
+  self._day = self._componentInfo.m_battlefield_info.m_cur_index
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldController.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._cfg_battlefields = (Cfg.cfg_component_battlefield)()
+function UIN5BattleFieldController:Constructor()
+  self._cfg_battlefields = Cfg.cfg_component_battlefield()
   self._stageItems = nil
   self._stageItemsCount = 4
-  self._stageItemPositions = {Vector2(-686.25, 0), Vector2(-228.75, 0), Vector2(228.75, 0), Vector2(686.25, 0)}
+  self._stageItemPositions = {
+    Vector2(-686.25, 0),
+    Vector2(-228.75, 0),
+    Vector2(228.75, 0),
+    Vector2(686.25, 0)
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldController.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN5BattleFieldController:OnShow(uiParams)
   self:_GetComponents()
   self:_OnValue()
   self:_StartResetBattleFieldTimer()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldController._GetComponents = function(self)
-  -- function num : 0_3
+function UIN5BattleFieldController:_GetComponents()
   self._backBtn = self:GetUIComponent("UISelectObjectPath", "BackBtn")
-  self._commonTopBtn = (self._backBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_3_0 , upvalues : self
+  self._commonTopBtn = self._backBtn:SpawnObject("UICommonTopButton")
+  self._commonTopBtn:SetData(function()
     self:_Close()
-  end
-)
+  end)
   self._uianim = self:GetGameObject("uianim")
   self._reSetTime = self:GetUIComponent("UILocalizationText", "ReSetTime")
   self._totalMilitaryExploit = self:GetUIComponent("UILocalizationText", "TotalMilitaryExploit")
@@ -80,181 +62,113 @@ UIN5BattleFieldController._GetComponents = function(self)
   self._description = self:GetUIComponent("RollingText", "Description")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldController._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN5BattleFieldController:_OnValue()
   self:_CreateStage()
   self:_RefreshUIInfo()
-  ;
-  (self._description):RefreshText((StringTable.Get)("str_n5_today_max_militaryexploit"))
-  ;
-  (CutsceneManager.ExcuteCutsceneOut)()
+  self._description:RefreshText(StringTable.Get("str_n5_today_max_militaryexploit"))
+  CutsceneManager.ExcuteCutsceneOut()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldController._StartResetBattleFieldTimer = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local time = (math.ceil)(((self._componentInfo).m_battlefield_info).m_next_reset_time - (self._svrTimeModule):GetServerTime() * 0.001) * 1000
+function UIN5BattleFieldController:_StartResetBattleFieldTimer()
+  local time = math.ceil(self._componentInfo.m_battlefield_info.m_next_reset_time - self._svrTimeModule:GetServerTime() * 0.001) * 1000
   if time < 0 then
-    return 
+    return
   end
-  self._resetTimer = ((GameGlobal.Timer)()):AddEvent(time, self._OnTimer, self)
+  self._resetTimer = GameGlobal.Timer():AddEvent(time, self._OnTimer, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldController._OnTimer = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN5BattleFieldController:_OnTimer()
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
-    ;
-    (self._component):HandleBattlefieldDailyReset(TT, res)
+    self._component:HandleBattlefieldDailyReset(TT, res)
     if res and res:GetSucc() then
       self:_ResetBattleFieldUIInfo()
-      ;
-      (self._localProgress):RefreshRecordMilitaryExploit()
+      self._localProgress:RefreshRecordMilitaryExploit()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldController._RefreshUIInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local remainTime = ((self._componentInfo).m_battlefield_info).m_next_reset_time - (self._svrTimeModule):GetServerTime() * 0.001
-  ;
-  (self._reSetTime):SetText((StringTable.Get)("str_n5_battlefield_resettime", self:_GetRemainTime(remainTime)))
-  ;
-  (self._totalMilitaryExploit):SetText((UIActivityHelper.AddZeroFrontNum)(6, ((self._componentInfo).m_battlefield_info).m_accumulated_military_exploit))
+function UIN5BattleFieldController:_RefreshUIInfo()
+  local remainTime = self._componentInfo.m_battlefield_info.m_next_reset_time - self._svrTimeModule:GetServerTime() * 0.001
+  self._reSetTime:SetText(StringTable.Get("str_n5_battlefield_resettime", self:_GetRemainTime(remainTime)))
+  self._totalMilitaryExploit:SetText(UIActivityHelper.AddZeroFrontNum(6, self._componentInfo.m_battlefield_info.m_accumulated_military_exploit))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldController._ResetBattleFieldUIInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN5BattleFieldController:_ResetBattleFieldUIInfo()
   self:_RefreshUIInfo()
-  for key,value in pairs(self._stageItems) do
-    value:RefreshMilitaryExploit(((self._componentInfo).m_battlefield_info).m_cur_max_military_exploit, ((((self._componentInfo).m_battlefield_info).m_challenge_mission_info)[((self._cfg_battlefields)[key]).CampaignMissionID]).military_exploit)
+  for key, value in pairs(self._stageItems) do
+    value:RefreshMilitaryExploit(self._componentInfo.m_battlefield_info.m_cur_max_military_exploit, self._componentInfo.m_battlefield_info.m_challenge_mission_info[self._cfg_battlefields[key].CampaignMissionID].military_exploit)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldController._CreateStage = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN5BattleFieldController:_CreateStage()
   local v2 = Vector2(0.5, 0.5)
-  ;
-  (self._stage):SpawnObjects("UIN5BattleFieldItem", self._stageItemsCount)
-  self._stageItems = (self._stage):GetAllSpawnList()
+  self._stage:SpawnObjects("UIN5BattleFieldItem", self._stageItemsCount)
+  self._stageItems = self._stage:GetAllSpawnList()
   for i = 1, self._stageItemsCount do
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R6 in 'UnsetPending'
-
-    ((((self._stageItems)[i]).view).transform).anchorMin = v2
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((((self._stageItems)[i]).view).transform).anchorMax = v2
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((((self._stageItems)[i]).view).transform).pivot = v2
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((((self._stageItems)[i]).view).transform).anchoredPosition = (self._stageItemPositions)[i]
-    ;
-    ((self._stageItems)[i]):SetData(i, (self._cfg_battlefields)[i], ((self._componentInfo).m_battlefield_info).m_cur_max_military_exploit, (((self._componentInfo).m_battlefield_info).m_challenge_mission_info)[((self._cfg_battlefields)[i]).CampaignMissionID], function(index)
-    -- function num : 0_9_0 , upvalues : self
-    self:_OnClickItem(index)
-  end
-)
+    self._stageItems[i].view.transform.anchorMin = v2
+    self._stageItems[i].view.transform.anchorMax = v2
+    self._stageItems[i].view.transform.pivot = v2
+    self._stageItems[i].view.transform.anchoredPosition = self._stageItemPositions[i]
+    self._stageItems[i]:SetData(i, self._cfg_battlefields[i], self._componentInfo.m_battlefield_info.m_cur_max_military_exploit, self._componentInfo.m_battlefield_info.m_challenge_mission_info[self._cfg_battlefields[i].CampaignMissionID], function(index)
+      self:_OnClickItem(index)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldController._OnClickItem = function(self, index)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN5BattleFieldController:_OnClickItem(index)
   self:Lock("UIN5BattleFieldController:_OnClickItem")
-  ;
-  ((GameGlobal.Timer)()):AddEvent(333, function()
-    -- function num : 0_10_0 , upvalues : self, index
+  GameGlobal.Timer():AddEvent(333, function()
     self:_ShowBattleFieldStageInfo(index)
     self:UnLock("UIN5BattleFieldController:_OnClickItem")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldController._ShowBattleFieldStageInfo = function(self, index)
-  -- function num : 0_11 , upvalues : _ENV
-  local missionId = ((self._cfg_battlefields)[index]).CampaignMissionID
-  local cfg_conquest_mission = (Cfg.cfg_conquest_mission)({MissionID = missionId, RandomID = self._day})
+function UIN5BattleFieldController:_ShowBattleFieldStageInfo(index)
+  local missionId = self._cfg_battlefields[index].CampaignMissionID
+  local cfg_conquest_mission = Cfg.cfg_conquest_mission({
+    MissionID = missionId,
+    RandomID = self._day
+  })
   if not cfg_conquest_mission then
-    (Log.error)((string.format)("cfg_conquest_mission error: missionid:%d, day:%d", missionId, self._day))
-    return 
+    Log.error(string.format("cfg_conquest_mission error: missionid:%d, day:%d", missionId, self._day))
+    return
   end
-  self:ShowDialog("UIN5BattleFieldStageInfo", (self._cfg_battlefields)[index], cfg_conquest_mission, self._componentInfo)
+  self:ShowDialog("UIN5BattleFieldStageInfo", self._cfg_battlefields[index], cfg_conquest_mission, self._componentInfo)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldController._Close = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N5CloseDoor)
-  ;
-  (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIActivityN5, function()
-    -- function num : 0_12_0 , upvalues : self, _ENV
-    (self._campaignModule):CampaignSwitchState(true, UIStateType.UIActivityN5, UIStateType.UIMain, nil, (self._campaign)._id)
-  end
-)
+function UIN5BattleFieldController:_Close()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N5CloseDoor)
+  CutsceneManager.ExcuteCutsceneIn(UIStateType.UIActivityN5, function()
+    self._campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN5, UIStateType.UIMain, nil, self._campaign._id)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldController.OnHide = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN5BattleFieldController:OnHide()
   if self._resetTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._resetTimer)
+    GameGlobal.Timer():CancelEvent(self._resetTimer)
     self._resetTimer = nil
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldController.MilitaryExploitOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN5BattleFieldController:MilitaryExploitOnClick(go)
   self:ShowDialog("UIN5ProgressController", ECampaignType.CAMPAIGN_TYPE_N5)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldController._GetRemainTime = function(self, time)
-  -- function num : 0_15 , upvalues : _ENV
-  local day, hour, minute = nil, nil, nil
-  day = (math.floor)(time / 86400)
-  hour = (math.floor)(time / 3600) % 24
-  minute = (math.floor)(time / 60) % 60
+function UIN5BattleFieldController:_GetRemainTime(time)
+  local day, hour, minute
+  day = math.floor(time / 86400)
+  hour = math.floor(time / 3600) % 24
+  minute = math.floor(time / 60) % 60
   local timestring = ""
-  if day > 0 then
-    timestring = "<color=#E03D22>" .. day .. "</color>" .. (StringTable.Get)("str_activity_common_day") .. "<color=#E03D22>" .. hour .. "</color>" .. (StringTable.Get)("str_activity_common_hour")
+  if 0 < day then
+    timestring = "<color=#E03D22>" .. day .. "</color>" .. StringTable.Get("str_activity_common_day") .. "<color=#E03D22>" .. hour .. "</color>" .. StringTable.Get("str_activity_common_hour")
+  elseif 0 < hour then
+    timestring = "<color=#E03D22>" .. hour .. "</color>" .. StringTable.Get("str_activity_common_hour") .. "<color=#E03D22>" .. minute .. "</color>" .. StringTable.Get("str_activity_common_minute")
+  elseif 0 < minute then
+    timestring = "<color=#E03D22>" .. minute .. "</color>" .. StringTable.Get("str_activity_common_minute")
   else
-    if hour > 0 then
-      timestring = "<color=#E03D22>" .. hour .. "</color>" .. (StringTable.Get)("str_activity_common_hour") .. "<color=#E03D22>" .. minute .. "</color>" .. (StringTable.Get)("str_activity_common_minute")
-    else
-      if minute > 0 then
-        timestring = "<color=#E03D22>" .. minute .. "</color>" .. (StringTable.Get)("str_activity_common_minute")
-      else
-        timestring = (StringTable.Get)("str_activity_common_less_minute")
-      end
-    end
+    timestring = StringTable.Get("str_activity_common_less_minute")
   end
-  return (string.format)((StringTable.Get)("str_activity_common_over"), timestring)
+  return string.format(StringTable.Get("str_activity_common_over"), timestring)
 end
-
-

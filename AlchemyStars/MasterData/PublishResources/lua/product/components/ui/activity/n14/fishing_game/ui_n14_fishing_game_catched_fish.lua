@@ -1,59 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n14/fishing_game/ui_n14_fishing_game_catched_fish.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN14FishingGameCatchedFish", UICustomWidget)
 UIN14FishingGameCatchedFish = UIN14FishingGameCatchedFish
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN14FishingGameCatchedFish.OnShow = function(self)
-  -- function num : 0_0
+function UIN14FishingGameCatchedFish:OnShow()
   self._spine = self:GetUIComponent("SpineLoader", "Spine")
-  ;
-  ((self.view).gameObject):SetActive(false)
+  self.view.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameCatchedFish.SetData = function(self, animName)
-  -- function num : 0_1
-  (self._spine):SetAnimation(0, animName, true)
-  ;
-  ((self.view).gameObject):SetActive(true)
+function UIN14FishingGameCatchedFish:SetData(animName)
+  self._spine:SetAnimation(0, animName, true)
+  self.view.gameObject:SetActive(true)
   self._currentShowAnim = animName
   self._currentFishId = animName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameCatchedFish.CheckShowName = function(self, animName)
-  -- function num : 0_2
-  do return animName == self._currentShowAnim end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIN14FishingGameCatchedFish:CheckShowName(animName)
+  return animName == self._currentShowAnim
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameCatchedFish.CheckIsRight = function(self, rightId)
-  -- function num : 0_3
+function UIN14FishingGameCatchedFish:CheckIsRight(rightId)
   if rightId == self._currentFishId then
-    ((self.view).transform):SetAsLastSibling()
+    self.view.transform:SetAsLastSibling()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameCatchedFish.ShowFish = function(self)
-  -- function num : 0_4
-  ((self.view).gameObject):SetActive(true)
+function UIN14FishingGameCatchedFish:ShowFish()
+  self.view.gameObject:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameCatchedFish.Hide = function(self)
-  -- function num : 0_5
-  ((self.view).gameObject):SetActive(false)
+function UIN14FishingGameCatchedFish:Hide()
+  self.view.gameObject:SetActive(false)
 end
-
-

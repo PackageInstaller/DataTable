@@ -1,37 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/homelandpet_behavior_story_playing.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_behavior_base")
 _class("HomelandPetBehaviorStoryPlaying", HomelandPetBehaviorBase)
 HomelandPetBehaviorStoryPlaying = HomelandPetBehaviorStoryPlaying
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetBehaviorStoryPlaying.Constructor = function(self, behaviorType, pet)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomelandPetBehaviorStoryPlaying.super).Constructor)(self, behaviorType, pet)
+function HomelandPetBehaviorStoryPlaying:Constructor(behaviorType, pet)
+  HomelandPetBehaviorStoryPlaying.super.Constructor(self, behaviorType, pet)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryPlaying.Enter = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((HomelandPetBehaviorStoryPlaying.super).Enter)(self)
+function HomelandPetBehaviorStoryPlaying:Enter()
+  HomelandPetBehaviorStoryPlaying.super.Enter(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryPlaying.Exit = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((HomelandPetBehaviorStoryPlaying.super).Exit)(self)
+function HomelandPetBehaviorStoryPlaying:Exit()
+  HomelandPetBehaviorStoryPlaying.super.Exit(self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryPlaying.CanInterrupt = function(self)
-  -- function num : 0_3
+function HomelandPetBehaviorStoryPlaying:CanInterrupt()
   return true
 end
-
-

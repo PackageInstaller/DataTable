@@ -1,29 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_move_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("llb_logic_base")
 _class("LLBuffLogicMoveTarget", LLBuffLogicBase)
 LLBuffLogicMoveTarget = LLBuffLogicMoveTarget
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicMoveTarget.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicMoveTarget:Constructor(buffObj, logicParam)
   self._moveType = logicParam.moveType
   self._incType = logicParam.incType
   self._fixVal = logicParam.fixVal
   self._perVal = logicParam.perVal
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicMoveTarget.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function LLBuffLogicMoveTarget:DoLogic(notify)
   local notifyEntity = notify:GetNotifyEntity()
-  local targets = (self._buffObj):GetTargets()
-  if #targets > 1 then
-    (Log.error)("[LuckLand] LLBuffLogicMoveTarget DoLogic target count over 1!")
+  local targets = self._buffObj:GetTargets()
+  if 1 < #targets then
+    Log.error("[LuckLand] LLBuffLogicMoveTarget DoLogic target count over 1!")
   end
   local target = targets[1]
   local moveLength = self:DoLogicSingle(target) or 0
@@ -35,42 +25,29 @@ LLBuffLogicMoveTarget.DoLogic = function(self, notify)
       if self._perVal then
         target:AddAccPerValue(self._perVal * moveLength)
       end
-    else
-      if self._incType == LuckLandIncType.Temp then
-        if self._fixVal then
-          target:AddTempFixValue(self._fixVal * moveLength)
-        end
-        if self._perVal then
-          target:AddTempPerValue(self._perVal * moveLength)
-        end
+    elseif self._incType == LuckLandIncType.Temp then
+      if self._fixVal then
+        target:AddTempFixValue(self._fixVal * moveLength)
+      end
+      if self._perVal then
+        target:AddTempPerValue(self._perVal * moveLength)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicMoveTarget.DoLogicSingle = function(self, target)
-  -- function num : 0_2 , upvalues : _ENV
+function LLBuffLogicMoveTarget:DoLogicSingle(target)
   if target:GetEntityType() == LuckLandEntityType.Pet then
     if self._moveType == LuckLandConst.BVK_MoveToFirst then
-      return ((target:GetLuckLandModule()):GetEntityMng()):MovePetToFirst(target)
-    else
-      if self._moveType == LuckLandConst.BVK_MoveToLast then
-        return ((target:GetLuckLandModule()):GetEntityMng()):MovePetToLast(target)
-      end
+      return target:GetLuckLandModule():GetEntityMng():MovePetToFirst(target)
+    elseif self._moveType == LuckLandConst.BVK_MoveToLast then
+      return target:GetLuckLandModule():GetEntityMng():MovePetToLast(target)
     end
-  else
-    if target:GetEntityType() == LuckLandEntityType.Monster then
-      if self._moveType == LuckLandConst.BVK_MoveToFirst then
-        return ((target:GetLuckLandModule()):GetEntityMng()):MoveMonsterToFirst(target)
-      else
-        if self._moveType == LuckLandConst.BVK_MoveToLast then
-          return ((target:GetLuckLandModule()):GetEntityMng()):MoveMonsterToLast(target)
-        end
-      end
+  elseif target:GetEntityType() == LuckLandEntityType.Monster then
+    if self._moveType == LuckLandConst.BVK_MoveToFirst then
+      return target:GetLuckLandModule():GetEntityMng():MoveMonsterToFirst(target)
+    elseif self._moveType == LuckLandConst.BVK_MoveToLast then
+      return target:GetLuckLandModule():GetEntityMng():MoveMonsterToLast(target)
     end
   end
 end
-
-

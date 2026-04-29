@@ -1,63 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_monster_attr_by_teamleader.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetMonsterAttrByTeamLeader", BuffLogicBase)
 BuffLogicSetMonsterAttrByTeamLeader = BuffLogicSetMonsterAttrByTeamLeader
-local BLSetMonsterAttrByTeamLeaderType = {TeamLeaderAttack = 1, Def = 2, MaxHP = 3}
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
+local BLSetMonsterAttrByTeamLeaderType = {
+  TeamLeaderAttack = 1,
+  Def = 2,
+  MaxHP = 3
+}
 
-BuffLogicSetMonsterAttrByTeamLeader.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetMonsterAttrByTeamLeader:Constructor(buffInstance, logicParam)
   self._addValue = logicParam.addValue or 0
   self._type = logicParam.type
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicSetMonsterAttrByTeamLeader.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV, BLSetMonsterAttrByTeamLeaderType
-  if not (self._entity):HasMonsterID() then
-    return 
+function BuffLogicSetMonsterAttrByTeamLeader:DoLogic()
+  if not self._entity:HasMonsterID() then
+    return
   end
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local teamLeadPstID = (teamEntity:Team()):GetTeamLeaderPetPstID()
-  local petData = (self._world):GetPetData(teamLeadPstID)
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local teamLeadPstID = teamEntity:Team():GetTeamLeaderPetPstID()
+  local petData = self._world:GetPetData(teamLeadPstID)
   local atk = petData:GetPetAttack()
-  local allPetList = (self._world):GetLocalMatchPetList()
+  local allPetList = self._world:GetLocalMatchPetList()
   local def, maxHP = 0, 0
-  for _,pet in ipairs(allPetList) do
+  for _, pet in ipairs(allPetList) do
     def = def + pet:GetPetDefence()
     maxHP = maxHP + pet:GetPetHealth()
   end
-  do
-    if self._type == BLSetMonsterAttrByTeamLeaderType.TeamLeaderAttack then
-      local value = atk * (1 + self._addValue)
-      ;
-      (Log.info)("BuffLogicSetMonsterAttrByTeamLeader SetMonsterAttack ", value, "MonsterID:", ((self._entity):MonsterID()):GetMonsterID())
-      ;
-      ((self._entity):Attributes()):Modify("Attack", value)
-    end
-    do
-      if self._type == BLSetMonsterAttrByTeamLeaderType.Def then
-        local value = (def) * (1 + self._addValue)
-        ;
-        (Log.info)("BuffLogicSetMonsterAttrByTeamLeader SetMonsterDef ", value, "MonsterID:", ((self._entity):MonsterID()):GetMonsterID())
-        ;
-        ((self._entity):Attributes()):Modify("Defense", value)
-      end
-      if self._type == BLSetMonsterAttrByTeamLeaderType.MaxHP then
-        local value = (maxHP) * (1 + self._addValue)
-        ;
-        (Log.info)("BuffLogicSetMonsterAttrByTeamLeader SetMonsterMaxHP ", value, "MonsterID:", ((self._entity):MonsterID()):GetMonsterID())
-        ;
-        ((self._entity):Attributes()):Modify("HP", value)
-        ;
-        ((self._entity):Attributes()):Modify("MaxHP", value)
-      end
-    end
+  if self._type == BLSetMonsterAttrByTeamLeaderType.TeamLeaderAttack then
+    local value = atk * (1 + self._addValue)
+    Log.info("BuffLogicSetMonsterAttrByTeamLeader SetMonsterAttack ", value, "MonsterID:", self._entity:MonsterID():GetMonsterID())
+    self._entity:Attributes():Modify("Attack", value)
+  end
+  if self._type == BLSetMonsterAttrByTeamLeaderType.Def then
+    local value = def * (1 + self._addValue)
+    Log.info("BuffLogicSetMonsterAttrByTeamLeader SetMonsterDef ", value, "MonsterID:", self._entity:MonsterID():GetMonsterID())
+    self._entity:Attributes():Modify("Defense", value)
+  end
+  if self._type == BLSetMonsterAttrByTeamLeaderType.MaxHP then
+    local value = maxHP * (1 + self._addValue)
+    Log.info("BuffLogicSetMonsterAttrByTeamLeader SetMonsterMaxHP ", value, "MonsterID:", self._entity:MonsterID():GetMonsterID())
+    self._entity:Attributes():Modify("HP", value)
+    self._entity:Attributes():Modify("MaxHP", value)
   end
 end
-
-

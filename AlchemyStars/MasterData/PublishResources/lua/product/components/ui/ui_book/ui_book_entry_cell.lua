@@ -1,165 +1,132 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_book/ui_book_entry_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookEntryCell", Object)
 UIBookEntryCell = UIBookEntryCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookEntryCell.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBookEntryCell:Constructor()
   self.localCfg = {
-[BookMainType.RenShiQingBao] = {(StringTable.Get)("str_book_main_renshi"), "tujian_main_tu1", "tujian_main_icon1", "tujian_main_guang1", "tujian_main_lock4", true}
-, 
-[BookMainType.CG] = {(StringTable.Get)("str_book_main_cg"), "tujian_main_tu2", "tujian_main_icon2", "tujian_main_guang2", "tujian_main_lock3", true}
-, 
-[BookMainType.Music] = {(StringTable.Get)("str_book_main_music"), "tujian_main_tu3", "tujian_main_icon3", "tujian_main_guang3", "tujian_main_lock3", true}
-, 
-[BookMainType.Plot] = {(StringTable.Get)("str_book_main_plot"), "tujian_main_tu4", "tujian_main_icon6", "tujian_main_guang6", "tujian_main_lock4", false}
-, 
-[BookMainType.Medal] = {(StringTable.Get)("str_book_main_medal"), "tujian_main_tu5", "tujian_main_icon7", "tujian_main_guang7", "tujian_main_lock4", false}
-}
+    [BookMainType.RenShiQingBao] = {
+      StringTable.Get("str_book_main_renshi"),
+      "tujian_main_tu1",
+      "tujian_main_icon1",
+      "tujian_main_guang1",
+      "tujian_main_lock4",
+      true
+    },
+    [BookMainType.CG] = {
+      StringTable.Get("str_book_main_cg"),
+      "tujian_main_tu2",
+      "tujian_main_icon2",
+      "tujian_main_guang2",
+      "tujian_main_lock3",
+      true
+    },
+    [BookMainType.Music] = {
+      StringTable.Get("str_book_main_music"),
+      "tujian_main_tu3",
+      "tujian_main_icon3",
+      "tujian_main_guang3",
+      "tujian_main_lock3",
+      true
+    },
+    [BookMainType.Plot] = {
+      StringTable.Get("str_book_main_plot"),
+      "tujian_main_tu4",
+      "tujian_main_icon6",
+      "tujian_main_guang6",
+      "tujian_main_lock4",
+      false
+    },
+    [BookMainType.Medal] = {
+      StringTable.Get("str_book_main_medal"),
+      "tujian_main_tu5",
+      "tujian_main_icon7",
+      "tujian_main_guang7",
+      "tujian_main_lock4",
+      false
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookEntryCell.OnShow = function(self, uiView)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBookEntryCell:OnShow(uiView)
   self.uiView = uiView
-  self.nameTxt = (self.uiView):GetUIComponent("UILocalizationText", "name")
-  self.pic = (self.uiView):GetUIComponent("RawImageLoader", "pic")
-  self.picGO = (self.uiView):GetGameObject("pic")
-  self.selectImg = (self.uiView):GetUIComponent("Image", "press")
-  self.logo = (self.uiView):GetUIComponent("Image", "logo")
-  self.logoSelectGO = (self.uiView):GetGameObject("press")
-  ;
-  (self.logoSelectGO):SetActive(false)
-  self.chooseGO = (self.uiView):GetGameObject("choose")
-  ;
-  (self.chooseGO):SetActive(false)
-  self.lockGO = (self.uiView):GetGameObject("lock")
-  self.unLockGO = (self.uiView):GetGameObject("unlock")
+  self.nameTxt = self.uiView:GetUIComponent("UILocalizationText", "name")
+  self.pic = self.uiView:GetUIComponent("RawImageLoader", "pic")
+  self.picGO = self.uiView:GetGameObject("pic")
+  self.selectImg = self.uiView:GetUIComponent("Image", "press")
+  self.logo = self.uiView:GetUIComponent("Image", "logo")
+  self.logoSelectGO = self.uiView:GetGameObject("press")
+  self.logoSelectGO:SetActive(false)
+  self.chooseGO = self.uiView:GetGameObject("choose")
+  self.chooseGO:SetActive(false)
+  self.lockGO = self.uiView:GetGameObject("lock")
+  self.unLockGO = self.uiView:GetGameObject("unlock")
   self._uiCustomEventListener = UICustomUIEventListener:New()
-  ;
-  (self._uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self.picGO), UIEvent.Press, function(go)
-    -- function num : 0_1_0 , upvalues : self
-    (self.logoSelectGO):SetActive(true)
-    ;
-    (self.chooseGO):SetActive(true)
-  end
-)
-  ;
-  (self._uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self.picGO), UIEvent.Release, function(go)
-    -- function num : 0_1_1 , upvalues : self
-    (self.logoSelectGO):SetActive(false)
-    ;
-    (self.chooseGO):SetActive(false)
-  end
-)
-  ;
-  (self._uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self.picGO), UIEvent.Click, function(go)
-    -- function num : 0_1_2 , upvalues : self, _ENV
+  self._uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self.picGO), UIEvent.Press, function(go)
+    self.logoSelectGO:SetActive(true)
+    self.chooseGO:SetActive(true)
+  end)
+  self._uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self.picGO), UIEvent.Release, function(go)
+    self.logoSelectGO:SetActive(false)
+    self.chooseGO:SetActive(false)
+  end)
+  self._uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self.picGO), UIEvent.Click, function(go)
     if self.bookMainType == BookMainType.RenShiQingBao then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIBookRoleMapController")
-    else
-      if self.bookMainType == BookMainType.CG then
-        ((GameGlobal.UIStateManager)()):ShowDialog("UIBookCGPreviewController")
+      GameGlobal.UIStateManager():ShowDialog("UIBookRoleMapController")
+    elseif self.bookMainType == BookMainType.CG then
+      GameGlobal.UIStateManager():ShowDialog("UIBookCGPreviewController")
+    elseif self.bookMainType == BookMainType.Music then
+      GameGlobal.UIStateManager():ShowDialog("UIAlbumController")
+    elseif self.bookMainType == BookMainType.Plot then
+      local mMission = GameGlobal.GetModule(MissionModule)
+      local data = mMission:GetDiscoveryData()
+      local canReviewStages = data:GetCanReviewStorys()
+      if not canReviewStages or table.count(canReviewStages) <= 0 then
+        ToastManager.ShowToast(StringTable.Get("str_discovery_no_can_review_plot"))
+        return
+      end
+      local stage = canReviewStages[table.count(canReviewStages)]
+      GameGlobal.UIStateManager():ShowDialog("UIPlot", stage, canReviewStages)
+    elseif self.bookMainType == BookMainType.Medal then
+      local unLock = GameGlobal.GetModule(RoleModule):CheckModuleUnlock(GameModuleID.MD_MEDAL)
+      if not unLock then
+        ToastManager.ShowToast(StringTable.Get("str_function_lock_unlock"))
       else
-        if self.bookMainType == BookMainType.Music then
-          ((GameGlobal.UIStateManager)()):ShowDialog("UIAlbumController")
-        else
-          if self.bookMainType == BookMainType.Plot then
-            local mMission = (GameGlobal.GetModule)(MissionModule)
-            local data = mMission:GetDiscoveryData()
-            local canReviewStages = data:GetCanReviewStorys()
-            if not canReviewStages or (table.count)(canReviewStages) <= 0 then
-              (ToastManager.ShowToast)((StringTable.Get)("str_discovery_no_can_review_plot"))
-              return 
-            end
-            local stage = canReviewStages[(table.count)(canReviewStages)]
-            ;
-            ((GameGlobal.UIStateManager)()):ShowDialog("UIPlot", stage, canReviewStages)
-          else
-            do
-              if self.bookMainType == BookMainType.Medal then
-                local unLock = ((GameGlobal.GetModule)(RoleModule)):CheckModuleUnlock(GameModuleID.MD_MEDAL)
-                if not unLock then
-                  (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_unlock"))
-                else
-                  ;
-                  ((GameGlobal.UIStateManager)()):ShowDialog("UIMedalMainController")
-                end
-              end
-            end
-          end
-        end
+        GameGlobal.UIStateManager():ShowDialog("UIMedalMainController")
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookEntryCell.GetLocalCfg = function(self)
-  -- function num : 0_2
-  return (self.localCfg)[self.bookMainType]
+function UIBookEntryCell:GetLocalCfg()
+  return self.localCfg[self.bookMainType]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookEntryCell.Refresh = function(self, uiView, bookMainType, atlas)
-  -- function num : 0_3
+function UIBookEntryCell:Refresh(uiView, bookMainType, atlas)
   self:OnShow(uiView)
   self.bookMainType = bookMainType
-  local name = (self:GetLocalCfg())[1]
-  ;
-  (self.nameTxt):SetText(name)
-  ;
-  (self.pic):LoadImage((self:GetLocalCfg())[2])
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.logo).sprite = atlas:GetSprite((self:GetLocalCfg())[3])
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.selectImg).sprite = atlas:GetSprite((self:GetLocalCfg())[4])
+  local name = self:GetLocalCfg()[1]
+  self.nameTxt:SetText(name)
+  self.pic:LoadImage(self:GetLocalCfg()[2])
+  self.logo.sprite = atlas:GetSprite(self:GetLocalCfg()[3])
+  self.selectImg.sprite = atlas:GetSprite(self:GetLocalCfg()[4])
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookEntryCell.OnHide = function(self)
-  -- function num : 0_4
-  (self._uiCustomEventListener):Dispose()
+function UIBookEntryCell:OnHide()
+  self._uiCustomEventListener:Dispose()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookEntryCell.picOnClick = function(self)
-  -- function num : 0_5
+function UIBookEntryCell:picOnClick()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookEntryCell.SetUnlock = function(self, bUnlock)
-  -- function num : 0_6
-  (self.unLockGO):SetActive(bUnlock)
-  ;
-  (self.lockGO):SetActive(not bUnlock)
+function UIBookEntryCell:SetUnlock(bUnlock)
+  self.unLockGO:SetActive(bUnlock)
+  self.lockGO:SetActive(not bUnlock)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookEntryCell.SetRed = function(self, bRed)
-  -- function num : 0_7
+function UIBookEntryCell:SetRed(bRed)
   if not self._red then
-    self._red = (self.uiView):GetGameObject("red")
+    self._red = self.uiView:GetGameObject("red")
   end
   if self._red then
-    (self._red):SetActive(bRed)
+    self._red:SetActive(bRed)
   end
 end
-
-

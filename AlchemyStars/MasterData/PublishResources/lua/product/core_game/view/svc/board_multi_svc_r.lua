@@ -1,65 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/board_multi_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("BoardMultiServiceRender", BaseService)
 BoardMultiServiceRender = BoardMultiServiceRender
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BoardMultiServiceRender.Constructor = function(self, world)
-  -- function num : 0_0
+function BoardMultiServiceRender:Constructor(world)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardMultiServiceRender.CreateGridEntity = function(self, boardIndex, pieceType, piecePos, isHide, boardRoot)
-  -- function num : 0_1 , upvalues : _ENV
-  local sEntity = (self._world):GetService("RenderEntity")
+function BoardMultiServiceRender:CreateGridEntity(boardIndex, pieceType, piecePos, isHide, boardRoot)
+  local sEntity = self._world:GetService("RenderEntity")
   local gridEntity = sEntity:CreateRenderEntity(EntityConfigIDRender.Grid)
   gridEntity:ReplaceOutsideRegion(boardIndex)
   self:_InitGridEntity(boardIndex, gridEntity, pieceType, piecePos, boardRoot)
   return gridEntity
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardMultiServiceRender.ReCreateGridEntity = function(self, boardIndex, pieceType, gridPos, isHide, needBirthEffect)
-  -- function num : 0_2 , upvalues : _ENV
-  local pieceServiceRender = (self._world):GetService("Piece")
-  local pieceMultiServiceRender = (self._world):GetService("PieceMulti")
+function BoardMultiServiceRender:ReCreateGridEntity(boardIndex, pieceType, gridPos, isHide, needBirthEffect)
+  local pieceServiceRender = self._world:GetService("Piece")
+  local pieceMultiServiceRender = self._world:GetService("PieceMulti")
   local newGridEntity = pieceMultiServiceRender:FindPieceEntity(boardIndex, gridPos)
   if newGridEntity == nil then
-    return 
+    return
   end
   self:_InitGridEntity(boardIndex, newGridEntity, pieceType, gridPos)
   if needBirthEffect then
     pieceServiceRender:SetPieceEntityBirth(newGridEntity)
   end
-  ;
-  (Log.debug)("ReCreateGridEntity boardIndex=" .. boardIndex .. " gridPos=", (Vector2.Pos2Index)(gridPos), " pieceType=", pieceType)
+  Log.debug("ReCreateGridEntity boardIndex=" .. boardIndex .. " gridPos=", Vector2.Pos2Index(gridPos), " pieceType=", pieceType)
   return newGridEntity
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardMultiServiceRender._InitGridEntity = function(self, boardIndex, gridEntity, pieceType, piecePos, boardRoot)
-  -- function num : 0_3
+function BoardMultiServiceRender:_InitGridEntity(boardIndex, gridEntity, pieceType, piecePos, boardRoot)
   gridEntity:RemoveOutsideRegion()
   gridEntity:AddOutsideRegion(boardIndex)
-  local pieceServiceRender = (self._world):GetService("Piece")
+  local pieceServiceRender = self._world:GetService("Piece")
   pieceServiceRender:SetPieceEntityPieceType(gridEntity, pieceType)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
   if boardRoot and gridEntity:View() then
-    (((gridEntity:View()):GetGameObject()).transform).parent = boardRoot.transform
+    gridEntity:View():GetGameObject().transform.parent = boardRoot.transform
   end
   gridEntity:SetGridPosition(piecePos)
   gridEntity:SetPosition(piecePos)
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderMultiBoardCmpt = renderBoardEntity:RenderMultiBoard()
   renderMultiBoardCmpt:SetGridRenderEntityData(boardIndex, piecePos, gridEntity)
 end
-
-

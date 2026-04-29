@@ -1,10 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/pop_star_pro_type_define.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-BuffPopStarProModifyType = {None = 0, CampPetCount = 1, FettersPetCount = 2, FettersPetGroupCount = 3, PopGridCount = 4, RelicCount = 5}
+BuffPopStarProModifyType = {
+  None = 0,
+  CampPetCount = 1,
+  FettersPetCount = 2,
+  FettersPetGroupCount = 3,
+  PopGridCount = 4,
+  RelicCount = 5
+}
 _enum("BuffPopStarProModifyType", BuffPopStarProModifyType)
 RelicInnerGameEffType = {None = 0, ReplaceRelicID = 1}
 _enum("RelicInnerGameEffType", RelicInnerGameEffType)
-

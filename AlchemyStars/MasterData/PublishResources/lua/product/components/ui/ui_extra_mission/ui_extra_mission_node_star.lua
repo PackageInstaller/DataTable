@@ -1,14 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_extra_mission/ui_extra_mission_node_star.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIExtraMissionNodeStar", UICustomWidget)
 UIExtraMissionNodeStar = UIExtraMissionNodeStar
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIExtraMissionNodeStar.OnShow = function(self)
-  -- function num : 0_0
+function UIExtraMissionNodeStar:OnShow()
 end
-
-

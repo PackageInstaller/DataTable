@@ -1,265 +1,186 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/manager/aircraft_visiting_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftVisitingManager", Object)
 AircraftVisitingManager = AircraftVisitingManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftVisitingManager.Constructor = function(self, aircraftMain)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftVisitingManager:Constructor(aircraftMain)
   self._main = aircraftMain
-  self._aircraftModule = (GameGlobal.GetModule)(AircraftModule)
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._aircraftModule = GameGlobal.GetModule(AircraftModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
   self._visitingPets = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftVisitingManager.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local visitpets = (self._aircraftModule):GetVisitPets()
-  for k,airVisitPet in pairs(visitpets) do
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._visitingPets)[(airVisitPet.pet_info).pet_template_id] = airVisitPet
+function AircraftVisitingManager:Init()
+  local visitpets = self._aircraftModule:GetVisitPets()
+  for k, airVisitPet in pairs(visitpets) do
+    self._visitingPets[airVisitPet.pet_info.pet_template_id] = airVisitPet
   end
-  if (table.count)(self._visitingPets) > 0 then
-    for petTemplateID,airVisitPet in pairs(self._visitingPets) do
+  if table.count(self._visitingPets) > 0 then
+    for petTemplateID, airVisitPet in pairs(self._visitingPets) do
       self:VisitingPetWander(airVisitPet)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftVisitingManager.Dispose = function(self)
-  -- function num : 0_2
+function AircraftVisitingManager:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftVisitingManager.AcceptAllPresent = function(self, pets, visitPets, callback)
-  -- function num : 0_3 , upvalues : _ENV
+function AircraftVisitingManager:AcceptAllPresent(pets, visitPets, callback)
   local requestCount = #pets + #visitPets
   local finishIdx = 0
   local allGiftList = {}
   if requestCount == 0 then
     callback(allGiftList)
-    return 
+    return
   end
-  local finishCheck = function()
-    -- function num : 0_3_0 , upvalues : finishIdx, requestCount, callback, allGiftList
+  
+  local function finishCheck()
     finishIdx = finishIdx + 1
-    if requestCount <= finishIdx then
+    if finishIdx >= requestCount then
       callback(allGiftList)
     end
   end
-
-  for _,pet in pairs(visitPets) do
-    do
-      do
-        local id = pet:TemplateID()
-        do
-          if not (self._visitingPets)[id] then
-            (Log.exception)("找不到拜访星灵：", id)
-          end
-          if ((self._visitingPets)[id]).is_accpet_gift then
-            (Log.exception)("拜访星灵已没有礼物，不能送礼：", id)
-          end
-          ;
-          ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_3_1 , upvalues : _ENV, self, id, allGiftList, finishCheck
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, true, "AcceptVisitingPresent")
-    local visitPetPstID = (((self._visitingPets)[id]).pet_info).pet_pst_id
-    local res, assetList = (self._aircraftModule):AcceptVisitingPresent(TT, visitPetPstID)
-    if not res:GetSucc() then
-      AirLog("收取礼物消息返回错误:", res:GetResult(), "，星灵:", tmpID)
-      ;
-      (ToastManager.ShowToast)((self._aircraftModule):GetErrorMsg(res:GetResult()))
+  
+  for _, pet in pairs(visitPets) do
+    local id = pet:TemplateID()
+    if not self._visitingPets[id] then
+      Log.exception("找不到拜访星灵：", id)
     end
-    self._visitingPets = {}
-    local visitpets = (self._aircraftModule):GetVisitPets()
-    for k,airVisitPet in pairs(visitpets) do
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R10 in 'UnsetPending'
-
-      (self._visitingPets)[(airVisitPet.pet_info).pet_template_id] = airVisitPet
+    if self._visitingPets[id].is_accpet_gift then
+      Log.exception("拜访星灵已没有礼物，不能送礼：", id)
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, false, "AcceptVisitingPresent")
-    if assetList and (table.count)(assetList) > 0 then
-      for _,v in pairs(assetList) do
-        (table.insert)(allGiftList, v)
+    GameGlobal.TaskManager():StartTask(function(TT)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, true, "AcceptVisitingPresent")
+      local visitPetPstID = self._visitingPets[id].pet_info.pet_pst_id
+      local res, assetList = self._aircraftModule:AcceptVisitingPresent(TT, visitPetPstID)
+      if not res:GetSucc() then
+        AirLog("收取礼物消息返回错误:", res:GetResult(), "，星灵:", tmpID)
+        ToastManager.ShowToast(self._aircraftModule:GetErrorMsg(res:GetResult()))
       end
-    end
-    do
-      finishCheck()
-    end
-  end
-)
+      self._visitingPets = {}
+      local visitpets = self._aircraftModule:GetVisitPets()
+      for k, airVisitPet in pairs(visitpets) do
+        self._visitingPets[airVisitPet.pet_info.pet_template_id] = airVisitPet
+      end
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, false, "AcceptVisitingPresent")
+      if assetList and table.count(assetList) > 0 then
+        for _, v in pairs(assetList) do
+          table.insert(allGiftList, v)
         end
-        -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out DO_STMT
-
       end
-    end
-  end
-  for _,pet in pairs(pets) do
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_3_2 , upvalues : _ENV, pet, self, allGiftList, finishCheck
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, true, "reqAcceptGift")
-    local tmpID = pet:TemplateID()
-    local res, assetList = (self._aircraftModule):AcceptPresentByTemplateID(TT, tmpID)
-    if not res:GetSucc() then
-      AirLog("收取礼物失败，错误码:", res:GetResult())
-      ;
-      (ToastManager.ShowToast)((self._aircraftModule):GetErrorMsg(res:GetResult()))
-    end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, false, "reqAcceptGift")
-    if assetList and (table.count)(assetList) > 0 then
-      for _,v in pairs(assetList) do
-        (table.insert)(allGiftList, v)
-      end
-    end
-    do
       finishCheck()
-    end
+    end)
   end
-)
+  for _, pet in pairs(pets) do
+    GameGlobal.TaskManager():StartTask(function(TT)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, true, "reqAcceptGift")
+      local tmpID = pet:TemplateID()
+      local res, assetList = self._aircraftModule:AcceptPresentByTemplateID(TT, tmpID)
+      if not res:GetSucc() then
+        AirLog("收取礼物失败，错误码:", res:GetResult())
+        ToastManager.ShowToast(self._aircraftModule:GetErrorMsg(res:GetResult()))
+      end
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, false, "reqAcceptGift")
+      if assetList and table.count(assetList) > 0 then
+        for _, v in pairs(assetList) do
+          table.insert(allGiftList, v)
+        end
+      end
+      finishCheck()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftVisitingManager.AcceptVisitingPresent = function(self, pet)
-  -- function num : 0_4 , upvalues : _ENV
+function AircraftVisitingManager:AcceptVisitingPresent(pet)
   local id = pet:TemplateID()
-  if not (self._visitingPets)[id] then
-    (Log.exception)("找不到拜访星灵：", id)
+  if not self._visitingPets[id] then
+    Log.exception("找不到拜访星灵：", id)
   end
-  if ((self._visitingPets)[id]).is_accpet_gift then
-    (Log.exception)("拜访星灵已没有礼物，不能送礼：", id)
+  if self._visitingPets[id].is_accpet_gift then
+    Log.exception("拜访星灵已没有礼物，不能送礼：", id)
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.recieveVisitGift, self, pet)
+  GameGlobal.TaskManager():StartTask(self.recieveVisitGift, self, pet)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftVisitingManager.recieveVisitGift = function(self, TT, pet)
-  -- function num : 0_5 , upvalues : _ENV
+function AircraftVisitingManager:recieveVisitGift(TT, pet)
   local tmpID = pet:TemplateID()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, true, "AcceptVisitingPresent")
-  local visitPetPstID = (((self._visitingPets)[tmpID]).pet_info).pet_pst_id
-  local res, assetList = (self._aircraftModule):AcceptVisitingPresent(TT, visitPetPstID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, true, "AcceptVisitingPresent")
+  local visitPetPstID = self._visitingPets[tmpID].pet_info.pet_pst_id
+  local res, assetList = self._aircraftModule:AcceptVisitingPresent(TT, visitPetPstID)
   if not res:GetSucc() then
     AirLog("收取礼物消息返回错误:", res:GetResult(), "，星灵:", tmpID)
-    ;
-    (ToastManager.ShowToast)((self._aircraftModule):GetErrorMsg(res:GetResult()))
+    ToastManager.ShowToast(self._aircraftModule:GetErrorMsg(res:GetResult()))
   end
   self._visitingPets = {}
-  local visitpets = (self._aircraftModule):GetVisitPets()
-  for k,airVisitPet in pairs(visitpets) do
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R13 in 'UnsetPending'
-
-    (self._visitingPets)[(airVisitPet.pet_info).pet_template_id] = airVisitPet
+  local visitpets = self._aircraftModule:GetVisitPets()
+  for k, airVisitPet in pairs(visitpets) do
+    self._visitingPets[airVisitPet.pet_info.pet_template_id] = airVisitPet
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, false, "AcceptVisitingPresent")
-  if assetList and (table.count)(assetList) > 0 then
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, false, "AcceptVisitingPresent")
+  if assetList and table.count(assetList) > 0 then
     local delieverPresentAction = AirActionDelieverPresent:New(pet, assetList, self._main)
     pet:StartMainAction(delieverPresentAction)
-    local _x, _z = (self._main):GetMainCameraXZ()
-    local _y = (pet:WorldPosition()).y
+    local _x, _z = self._main:GetMainCameraXZ()
+    local _y = pet:WorldPosition().y
     local lookAtPoint = Vector3(_x, _y, _z)
     local rotateAction = AirActionRotate:New(pet, lookAtPoint)
     pet:StartViceAction(rotateAction)
   end
-  do
-    pet:StopMatAnim()
+  pet:StopMatAnim()
+end
+
+function AircraftVisitingManager:BeVisitingPet(visitPetTemplateID)
+  return self._visitingPets[visitPetTemplateID] ~= nil
+end
+
+function AircraftVisitingManager:HaveVisitingPresent(visitPetTemplateID)
+  if self._visitingPets[visitPetTemplateID] then
+    return self._visitingPets[visitPetTemplateID].is_accpet_gift == false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftVisitingManager.BeVisitingPet = function(self, visitPetTemplateID)
-  -- function num : 0_6
-  do return (self._visitingPets)[visitPetTemplateID] ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
-end
-
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftVisitingManager.HaveVisitingPresent = function(self, visitPetTemplateID)
-  -- function num : 0_7
-  if ((self._visitingPets)[visitPetTemplateID]).is_accpet_gift ~= false then
-    do return not (self._visitingPets)[visitPetTemplateID] end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-end
-
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftVisitingManager.VisitingPetWander = function(self, airVisitPet)
-  -- function num : 0_8 , upvalues : _ENV
-  local pet = (self._main):AddVisitPet(airVisitPet)
+function AircraftVisitingManager:VisitingPetWander(airVisitPet)
+  local pet = self._main:AddVisitPet(airVisitPet)
   pet:SetVisitGift(airVisitPet.is_accpet_gift == false)
   AirLog("星灵触发送礼：", pet:TemplateID(), "，是否有礼物:", pet:HasVisitGift())
   if pet == nil then
-    (Log.exception)("AddVisitPet fail!!!")
-    return 
+    Log.exception("AddVisitPet fail!!!")
+    return
   end
-  ;
-  (self._main):RandomInitActionForPet(pet)
+  self._main:RandomInitActionForPet(pet)
   if pet:HasVisitGift() then
     self:ShowPresentBag(pet)
   end
   self:ShowLight(pet)
   self:ShowName(pet)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftVisitingManager.ShowPresentBag = function(self, pet)
-  -- function num : 0_9 , upvalues : _ENV
+function AircraftVisitingManager:ShowPresentBag(pet)
   local presentBubbleID = AircraftPetGiftBubble.Gift
-  local faceAction = AirActionEffect:New(pet, presentBubbleID, AircraftPetSlotType.Head, (Vector3(0.4, 0.8, 0)), nil)
+  local faceAction = AirActionEffect:New(pet, presentBubbleID, AircraftPetSlotType.Head, Vector3(0.4, 0.8, 0), nil)
   pet:StartSpecialAction(AircraftSpecialActionType.PresentBag, faceAction)
   local obj = faceAction:GetGameObject()
   pet:SetPresentObject(obj)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftVisitingManager.ShowLight = function(self, pet)
-  -- function num : 0_10 , upvalues : _ENV
+function AircraftVisitingManager:ShowLight(pet)
   local lightBubbleID = AircraftPetGiftBubble.Light
-  local faceAction = AirActionEffect:New(pet, lightBubbleID, AircraftPetSlotType.Root, (Vector3(0, 0.01, 0)), nil)
+  local faceAction = AirActionEffect:New(pet, lightBubbleID, AircraftPetSlotType.Root, Vector3(0, 0.01, 0), nil)
   pet:StartSpecialAction(AircraftSpecialActionType.Light, faceAction)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftVisitingManager.ShowName = function(self, pet)
-  -- function num : 0_11 , upvalues : _ENV
+function AircraftVisitingManager:ShowName(pet)
   local nameBubbleID = AircraftPetGiftBubble.VisitName
-  local faceAction = AirActionEffect:New(pet, nameBubbleID, AircraftPetSlotType.Head, (Vector3(0, 0.5, 0)), nil)
+  local faceAction = AirActionEffect:New(pet, nameBubbleID, AircraftPetSlotType.Head, Vector3(0, 0.5, 0), nil)
   pet:StartSpecialAction(AircraftSpecialActionType.Name, faceAction)
   local nameObj = faceAction:GetGameObject()
   if not nameObj then
-    return 
+    return
   end
   local view = nameObj:GetComponent("UIView")
   local petText = view:GetUIComponent("UILocalizationText", "PetText")
   local ownerText = view:GetUIComponent("UILocalizationText", "ownerText")
   petText:SetText(pet:PetName())
-  local ownerNameText = ((self._visitingPets)[pet:TemplateID()]).owner_nick
+  local ownerNameText = self._visitingPets[pet:TemplateID()].owner_nick
   ownerText:SetText(ownerNameText)
   pet:SetOwnerName(ownerNameText)
 end
-
-

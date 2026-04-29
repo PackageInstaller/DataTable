@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/login/dns_process.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _enum("DncRes", {Success = 0, RepeatFailed = 1})
 _class("DnsProcess", Object)
 DnsProcess = DnsProcess
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-DnsProcess.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function DnsProcess:Constructor()
   self.cacheMap = {}
   self.ipString = ""
   self.paring = false
@@ -18,79 +11,63 @@ DnsProcess.Constructor = function(self)
   self.timeMax = 25
   self.timeOut = 100
   if self.timeMax * self.timeOut <= self.sdkTime then
-    (Log.error)("DnsProcess timeout error")
+    Log.error("DnsProcess timeout error")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DnsProcess.AnalysisIP = function(self, TT, ipStr)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.debug)("[dns] ", "Analysis ip:{", ipStr, "}")
-  if (self.cacheMap)[ipStr] ~= nil then
-    return (self.cacheMap)[ipStr]
+function DnsProcess:AnalysisIP(TT, ipStr)
+  Log.debug("[dns] ", "Analysis ip:{", ipStr, "}")
+  if self.cacheMap[ipStr] ~= nil then
+    return self.cacheMap[ipStr]
   end
   if self:IsIP(ipStr) == true then
     return ipStr
   end
   self.paring = true
   self.ipString = ""
-  ;
-  (Log.debug)("[dns] ", "Analysis start ip:{", ipStr, "}")
-  ;
-  (CustomHttpDnsService.GetAddrByName)(ipStr, function(str, eCode)
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    (Log.debug)("[dns] ", "Analysis result ip:{", str, "}")
+  Log.debug("[dns] ", "Analysis start ip:{", ipStr, "}")
+  CustomHttpDnsService.GetAddrByName(ipStr, function(str, eCode)
+    Log.debug("[dns] ", "Analysis result ip:{", str, "}")
     if eCode == DncRes.RepeatFailed then
-      (Log.debug)("[dns] ", "Analysis repeat ip")
-      return 
+      Log.debug("[dns] ", "Analysis repeat ip")
+      return
     end
     self.ipString = str
     self.paring = false
-  end
-)
+  end)
   while self.paring do
     self.timeNum = self.timeNum + 1
-    if self.timeMax <= self.timeNum then
+    if self.timeNum >= self.timeMax then
       self.paring = false
     end
     YIELD(TT, self.timeOut)
   end
   if self.ipString == "" then
-    self.ipString = (CustomHttpDnsService.AgainAnalysis)(ipStr)
+    self.ipString = CustomHttpDnsService.AgainAnalysis(ipStr)
   end
-  ;
-  (Log.debug)("[dns] ", "Analysis end ip:{", self.ipString, "}")
+  Log.debug("[dns] ", "Analysis end ip:{", self.ipString, "}")
   return self.ipString
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DnsProcess.IsIP = function(self, ipStr)
-  -- function num : 0_2 , upvalues : _ENV
-  return (CustomHttpDnsService.Ip4or6IsValid)(ipStr)
+function DnsProcess:IsIP(ipStr)
+  return CustomHttpDnsService.Ip4or6IsValid(ipStr)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DnsProcess.ParseResult = function(self, ipStr)
-  -- function num : 0_3 , upvalues : _ENV
+function DnsProcess:ParseResult(ipStr)
   if self:IsIP(ipStr) == true then
     return ipStr
   end
-  local point = (string.find)(ipStr, ";", 1)
+  local point = string.find(ipStr, ";", 1)
   if point == nil then
     return ""
   end
-  local len = (string.len)(ipStr)
-  local gapstr = (string.sub)(ipStr, 1, point - 1)
+  local len = string.len(ipStr)
+  local gapstr = string.sub(ipStr, 1, point - 1)
   if gapstr == "0" then
-    gapstr = (string.sub)(ipStr, point + 1, len)
+    gapstr = string.sub(ipStr, point + 1, len)
     if gapstr == "0" then
       return ""
     end
   end
   return gapstr
 end
-
-

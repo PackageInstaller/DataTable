@@ -1,23 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/plot/ui_summer_activity_two_plot_detail_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoPlotDetailItem", UICustomWidget)
 UISummerActivityTwoPlotDetailItem = UISummerActivityTwoPlotDetailItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoPlotDetailItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._state2img = {[1] = "summer_zhangjie_btn2", [2] = "summer_zhangjie_btn3"}
+function UISummerActivityTwoPlotDetailItem:OnShow(uiParams)
+  self._state2img = {
+    [1] = "summer_zhangjie_btn2",
+    [2] = "summer_zhangjie_btn3"
+  }
   self:_GetComponents()
   self:AttachEvent(GameEventType.OnSummerActivityPlotSelect, self.Select)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailItem._GetComponents = function(self)
-  -- function num : 0_1
+function UISummerActivityTwoPlotDetailItem:_GetComponents()
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._conditionTex = self:GetUIComponent("UILocalizationText", "conditionTex")
   self._btn_normal = self:GetUIComponent("RawImageLoader", "btn_normal")
@@ -25,10 +18,7 @@ UISummerActivityTwoPlotDetailItem._GetComponents = function(self)
   self._red = self:GetGameObject("red")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailItem.SetData = function(self, index, currIdx, data, callback)
-  -- function num : 0_2
+function UISummerActivityTwoPlotDetailItem:SetData(index, currIdx, data, callback)
   self._idx = index
   self._data = data
   self._callback = callback
@@ -36,45 +26,27 @@ UISummerActivityTwoPlotDetailItem.SetData = function(self, index, currIdx, data,
   self:Select(currIdx)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailItem._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local nameStr = (self._data).name
-  ;
-  (self._name):SetText((StringTable.Get)(nameStr))
-  local unlock = (self._data).unlock
-  ;
-  ((self._conditionTex).gameObject):SetActive(not unlock)
+function UISummerActivityTwoPlotDetailItem:_OnValue()
+  local nameStr = self._data.name
+  self._name:SetText(StringTable.Get(nameStr))
+  local unlock = self._data.unlock
+  self._conditionTex.gameObject:SetActive(not unlock)
   if not unlock then
-    (self._conditionTex):SetText((self._data).condition)
-    ;
-    (self._btn_normal):LoadImage((self._state2img)[2])
+    self._conditionTex:SetText(self._data.condition)
+    self._btn_normal:LoadImage(self._state2img[2])
   else
-    ;
-    (self._btn_normal):LoadImage((self._state2img)[1])
+    self._btn_normal:LoadImage(self._state2img[1])
   end
-  ;
-  (self._red):SetActive((self._data).red)
+  self._red:SetActive(self._data.red)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailItem.bgOnClick = function(self, go)
-  -- function num : 0_4
+function UISummerActivityTwoPlotDetailItem:bgOnClick(go)
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailItem.Select = function(self, idx)
-  -- function num : 0_5
+function UISummerActivityTwoPlotDetailItem:Select(idx)
   local select = idx == self._idx
-  ;
-  (self._btn_click):SetActive(select)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._btn_click:SetActive(select)
 end
-
-

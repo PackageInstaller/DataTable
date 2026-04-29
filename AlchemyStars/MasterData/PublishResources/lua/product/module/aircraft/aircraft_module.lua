@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/aircraft/aircraft_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftModule", GameModule)
 AircraftModule = AircraftModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftModule.Constructor = function(self)
-  -- function num : 0_0
+function AircraftModule:Constructor()
   self._spaces = {}
   self._rooms = {}
   self._aircraftInfo = nil
@@ -18,48 +11,32 @@ AircraftModule.Constructor = function(self)
   self._theme_list = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetAircraftInfo = function(self)
-  -- function num : 0_1
+function AircraftModule:GetAircraftInfo()
   return self._aircraftInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.IsAmusementRoom = function(self, eAirRoomType)
-  -- function num : 0_2 , upvalues : _ENV
-  do return AirRoomType.AmusementBegin <= eAirRoomType and eAirRoomType < AirRoomType.AmusementEnd end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftModule:IsAmusementRoom(eAirRoomType)
+  return eAirRoomType >= AirRoomType.AmusementBegin and eAirRoomType < AirRoomType.AmusementEnd
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetStoryEventDicByTriggerType = function(self, TriggerType)
-  -- function num : 0_3
+function AircraftModule:GetStoryEventDicByTriggerType(TriggerType)
   if not self._aircraftInfo then
     return nil
   end
-  local l_PetPstIdStoryEventIdMap = ((self._aircraftInfo).trigger_stroy_pet)[TriggerType]
+  local l_PetPstIdStoryEventIdMap = self._aircraftInfo.trigger_stroy_pet[TriggerType]
   return l_PetPstIdStoryEventIdMap
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetHavePresentPets = function(self)
-  -- function num : 0_4
+function AircraftModule:GetHavePresentPets()
   if not self._aircraftInfo then
     return {}
   end
-  return ((self._aircraftInfo).present_pets).pet_array
+  return self._aircraftInfo.present_pets.pet_array
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.AcceptPresent = function(self, TT, pet_pstid)
-  -- function num : 0_5 , upvalues : _ENV
+function AircraftModule:AcceptPresent(TT, pet_pstid)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventAcceptPresent)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventAcceptPresent)
   request.pet_pstid = pet_pstid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -73,11 +50,8 @@ AircraftModule.AcceptPresent = function(self, TT, pet_pstid)
   return res, replyEvent.drop_item_list
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.AcceptPresentByTemplateID = function(self, TT, petTemplateID)
-  -- function num : 0_6 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
+function AircraftModule:AcceptPresentByTemplateID(TT, petTemplateID)
+  local petModule = GameGlobal.GetModule(PetModule)
   local pet = petModule:GetPetByTemplateId(petTemplateID)
   if pet then
     return self:AcceptPresent(TT, pet:GetPstID())
@@ -88,30 +62,21 @@ AircraftModule.AcceptPresentByTemplateID = function(self, TT, petTemplateID)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.AcceptVisitingPresent = function(self, TT, visitPetPstID)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.debug)("visitPetPstID : ", visitPetPstID, "AcceptVisitingPresent")
+function AircraftModule:AcceptVisitingPresent(TT, visitPetPstID)
+  Log.debug("visitPetPstID : ", visitPetPstID, "AcceptVisitingPresent")
   return self:AcceptVisit(TT, visitPetPstID)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetVisitPets = function(self)
-  -- function num : 0_8
+function AircraftModule:GetVisitPets()
   if not self._aircraftInfo then
     return nil
   end
-  return ((self._aircraftInfo).visit_pets).pet_array
+  return self._aircraftInfo.visit_pets.pet_array
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.AcceptVisit = function(self, TT, visit_pet_pstid)
-  -- function num : 0_9 , upvalues : _ENV
+function AircraftModule:AcceptVisit(TT, visit_pet_pstid)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventAcceptVisitPet)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventAcceptVisitPet)
   request.pet_pstid = visit_pet_pstid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -125,11 +90,8 @@ AircraftModule.AcceptVisit = function(self, TT, visit_pet_pstid)
   return res, replyEvent.drop_item_list
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.AcceptVisitByTemplateID = function(self, TT, petTemplateID)
-  -- function num : 0_10 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
+function AircraftModule:AcceptVisitByTemplateID(TT, petTemplateID)
+  local petModule = GameGlobal.GetModule(PetModule)
   local petPstID = petModule:GetPetByTemplateId(petTemplateID)
   if petPstID then
     return self:AcceptVisit(TT, petPstID:GetPstID())
@@ -140,16 +102,13 @@ AircraftModule.AcceptVisitByTemplateID = function(self, TT, petTemplateID)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetPetStroyEventId = function(self, pet_pstid)
-  -- function num : 0_11 , upvalues : _ENV
+function AircraftModule:GetPetStroyEventId(pet_pstid)
   local ret_arr = {}
   for l_type = EStoryTriggerType.TouchPet, EStoryTriggerType.UnlockRoom do
     local l_PetPstIdStoryEventIdMap = self:GetStoryEventDicByTriggerType(l_type)
-    if l_PetPstIdStoryEventIdMap ~= nil and (table.count)(l_PetPstIdStoryEventIdMap) > 0 and l_PetPstIdStoryEventIdMap[pet_pstid] ~= nil and (table.count)((l_PetPstIdStoryEventIdMap[pet_pstid]).story_event_id_list) > 0 then
-      for index,value in ipairs((l_PetPstIdStoryEventIdMap[pet_pstid]).story_event_id_list) do
-        if value > 0 then
+    if l_PetPstIdStoryEventIdMap ~= nil and table.count(l_PetPstIdStoryEventIdMap) > 0 and l_PetPstIdStoryEventIdMap[pet_pstid] ~= nil and 0 < table.count(l_PetPstIdStoryEventIdMap[pet_pstid].story_event_id_list) then
+      for index, value in ipairs(l_PetPstIdStoryEventIdMap[pet_pstid].story_event_id_list) do
+        if 0 < value then
           ret_arr[#ret_arr + 1] = value
         end
       end
@@ -158,124 +117,85 @@ AircraftModule.GetPetStroyEventId = function(self, pet_pstid)
   return ret_arr
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.SetPetStoryEvent = function(self, TriggerType, pet_pstid, story_event_id)
-  -- function num : 0_12 , upvalues : _ENV
+function AircraftModule:SetPetStoryEvent(TriggerType, pet_pstid, story_event_id)
   if TriggerType == nil or pet_pstid == nil or pet_pstid <= 0 or story_event_id == nil or story_event_id <= 0 then
-    return 
+    return
   end
-  local l_PetPstIdStoryEventIdMap = ((self._aircraftInfo).trigger_stroy_pet)[TriggerType]
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R5 in 'UnsetPending'
-
+  local l_PetPstIdStoryEventIdMap = self._aircraftInfo.trigger_stroy_pet[TriggerType]
   if l_PetPstIdStoryEventIdMap == nil then
-    ((self._aircraftInfo).trigger_stroy_pet)[TriggerType] = {}
-    l_PetPstIdStoryEventIdMap = ((self._aircraftInfo).trigger_stroy_pet)[TriggerType]
+    self._aircraftInfo.trigger_stroy_pet[TriggerType] = {}
+    l_PetPstIdStoryEventIdMap = self._aircraftInfo.trigger_stroy_pet[TriggerType]
   end
   if l_PetPstIdStoryEventIdMap[pet_pstid] == nil then
     l_PetPstIdStoryEventIdMap[pet_pstid] = pet_story_struct:New()
   end
-  ;
-  (table.insert)((l_PetPstIdStoryEventIdMap[pet_pstid]).story_event_id_list, story_event_id)
+  table.insert(l_PetPstIdStoryEventIdMap[pet_pstid].story_event_id_list, story_event_id)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.ClickNotHaveStoryPet = function(self, pstid)
-  -- function num : 0_13 , upvalues : _ENV
+function AircraftModule:ClickNotHaveStoryPet(pstid)
   if pstid <= 0 then
-    return 
+    return
   end
-  local msg = (NetMessageFactory:GetInstance()):CreateMessage(CEventPushClickPet)
+  local msg = NetMessageFactory:GetInstance():CreateMessage(CEventPushClickPet)
   msg.pet_pstid = pstid
   self:Push(msg)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.CheckTriggerCilckStoryEvent = function(self, TT, pstid)
-  -- function num : 0_14 , upvalues : _ENV
+function AircraftModule:CheckTriggerCilckStoryEvent(TT, pstid)
   if pstid <= 0 then
     return false
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventAircraftCheckClickPetTriggerStory)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventAircraftCheckClickPetTriggerStory)
   request.pet_pstid = pstid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return false
   end
-  local nRet = (reply.msg).ret
+  local nRet = reply.msg.ret
   if nRet ~= AircraftEventResult.AircraftEventResult_Succ then
     return false
   end
   local reply_msg = reply.msg
-  if reply_msg.trigger_click_story_id > 0 then
+  if 0 < reply_msg.trigger_click_story_id then
     self:SetPetStoryEvent(EStoryTriggerType.TouchPet, pstid, reply_msg.trigger_click_story_id)
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.CreateRoom = function(self, Info)
-  -- function num : 0_15 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_room)[Info.room_id]
+function AircraftModule:CreateRoom(Info)
+  local cfg = Cfg.cfg_aircraft_room[Info.room_id]
   if not cfg then
-    (Log.error)("CreateRoom Failed, roomid=" .. tostring(Info.room_id))
-    return 
+    Log.error("CreateRoom Failed, roomid=" .. tostring(Info.room_id))
+    return
   end
-  local room = nil
+  local room
   if cfg.RoomType == AirRoomType.AisleRoom then
     room = AircraftAisleRoom:New()
-  else
-    if cfg.RoomType == AirRoomType.CentralRoom then
-      room = AircraftCentralRoom:New()
-    else
-      if cfg.RoomType == AirRoomType.PowerRoom then
-        room = AircraftPowerRoom:New()
-      else
-        if cfg.RoomType == AirRoomType.MazeRoom then
-          room = AircraftMazeRoom:New()
-        else
-          if cfg.RoomType == AirRoomType.PrismRoom then
-            room = AircraftPrismRoom:New()
-          else
-            if cfg.RoomType == AirRoomType.TowerRoom then
-              room = AircraftTowerRoom:New()
-            else
-              if cfg.RoomType == AirRoomType.ResourceRoom then
-                room = AircraftResourceRoom:New()
-              else
-                if cfg.RoomType == AirRoomType.EvilRoom then
-                  room = AircraftEvilRoom:New()
-                else
-                  if cfg.RoomType == AirRoomType.PurifyRoom then
-                    room = AircraftPurifyRoom:New()
-                  else
-                    if cfg.RoomType == AirRoomType.SmeltRoom then
-                      room = AircraftSmeltRoom:New()
-                    else
-                      if cfg.RoomType == AirRoomType.DispatchRoom then
-                        room = AircraftDispatchRoom:New()
-                      else
-                        if cfg.RoomType == AirRoomType.TacticRoom then
-                          room = AircraftTacticRoom:New()
-                        else
-                          if self:IsAmusementRoom(cfg.RoomType) then
-                            room = AircraftAmusementRoom:New()
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif cfg.RoomType == AirRoomType.CentralRoom then
+    room = AircraftCentralRoom:New()
+  elseif cfg.RoomType == AirRoomType.PowerRoom then
+    room = AircraftPowerRoom:New()
+  elseif cfg.RoomType == AirRoomType.MazeRoom then
+    room = AircraftMazeRoom:New()
+  elseif cfg.RoomType == AirRoomType.PrismRoom then
+    room = AircraftPrismRoom:New()
+  elseif cfg.RoomType == AirRoomType.TowerRoom then
+    room = AircraftTowerRoom:New()
+  elseif cfg.RoomType == AirRoomType.ResourceRoom then
+    room = AircraftResourceRoom:New()
+  elseif cfg.RoomType == AirRoomType.EvilRoom then
+    room = AircraftEvilRoom:New()
+  elseif cfg.RoomType == AirRoomType.PurifyRoom then
+    room = AircraftPurifyRoom:New()
+  elseif cfg.RoomType == AirRoomType.SmeltRoom then
+    room = AircraftSmeltRoom:New()
+  elseif cfg.RoomType == AirRoomType.DispatchRoom then
+    room = AircraftDispatchRoom:New()
+  elseif cfg.RoomType == AirRoomType.TacticRoom then
+    room = AircraftTacticRoom:New()
+  elseif self:IsAmusementRoom(cfg.RoomType) then
+    room = AircraftAmusementRoom:New()
   end
   if room ~= nil then
     room:SetData(Info)
@@ -283,117 +203,88 @@ AircraftModule.CreateRoom = function(self, Info)
   return room
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetSpaceStatus = function(self, space_id)
-  -- function num : 0_16
-  local s = (self._spaces)[space_id]
+function AircraftModule:GetSpaceStatus(space_id)
+  local s = self._spaces[space_id]
   if s then
     return s.space_status
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetBuildType = function(self, space_id)
-  -- function num : 0_17 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_space)({ID = space_id})
+function AircraftModule:GetBuildType(space_id)
+  local cfg = Cfg.cfg_aircraft_space({ID = space_id})
   if cfg then
-    return (cfg[1]).BuildType
+    return cfg[1].BuildType
   else
-    ;
-    (Log.error)("[aircraft] get cfg_aircraft_space error , space_id =", space_id)
+    Log.error("[aircraft] get cfg_aircraft_space error , space_id =", space_id)
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetCleanCost = function(self, space_id)
-  -- function num : 0_18 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_space)({ID = space_id})
+function AircraftModule:GetCleanCost(space_id)
+  local cfg = Cfg.cfg_aircraft_space({ID = space_id})
   if cfg then
-    return (cfg[1]).CleanCost
+    return cfg[1].CleanCost
   else
-    ;
-    (Log.error)("[aircraft] get cfg_aircraft_space error , space_id =", space_id)
+    Log.error("[aircraft] get cfg_aircraft_space error , space_id =", space_id)
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetAddFirefly = function(self, space_id)
-  -- function num : 0_19 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_space)({ID = space_id})
+function AircraftModule:GetAddFirefly(space_id)
+  local cfg = Cfg.cfg_aircraft_space({ID = space_id})
   if cfg then
-    return (cfg[1]).AddFirefly
+    return cfg[1].AddFirefly
   else
-    ;
-    (Log.error)("[aircraft] get cfg_aircraft_space error , space_id =", space_id)
+    Log.error("[aircraft] get cfg_aircraft_space error , space_id =", space_id)
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetBuildTypeSorted = function(self, space_id)
-  -- function num : 0_20 , upvalues : _ENV
+function AircraftModule:GetBuildTypeSorted(space_id)
   local res = {}
-  local cfg = (Cfg.cfg_aircraft_space)({ID = space_id})
+  local cfg = Cfg.cfg_aircraft_space({ID = space_id})
   if cfg then
-    local build_types = (cfg[1]).BuildType
-    for i,type in pairs(build_types) do
+    local build_types = cfg[1].BuildType
+    for i, type in pairs(build_types) do
       local count = self:GetRoomCount(type)
       local max_num = self:GetRoomLimitCount(type)
       local is_full = count == max_num
-      res[i] = {BuildType = type, Count = count, MaxNum = max_num, IsFull = is_full}
+      res[i] = {
+        BuildType = type,
+        Count = count,
+        MaxNum = max_num,
+        IsFull = is_full
+      }
     end
-    ;
-    (table.sort)(res, function(a, b)
-    -- function num : 0_20_0
-    if a.BuildType >= b.BuildType then
-      do return a.IsFull ~= b.IsFull end
-      do return b.IsFull end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
-  end
-)
+    table.sort(res, function(a, b)
+      if a.IsFull == b.IsFull then
+        return a.BuildType < b.BuildType
+      else
+        return b.IsFull
+      end
+    end)
   else
-    (Log.error)("[aircraft] get cfg_aircraft_space error , space_id =", space_id)
+    Log.error("[aircraft] get cfg_aircraft_space error , space_id =", space_id)
     return nil
   end
-  do return res end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return res
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetSpaceInfo = function(self, spaceid)
-  -- function num : 0_21
-  return (self._spaces)[spaceid]
+function AircraftModule:GetSpaceInfo(spaceid)
+  return self._spaces[spaceid]
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetSpaceInfos = function(self)
-  -- function num : 0_22
+function AircraftModule:GetSpaceInfos()
   return self._spaces
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetRoom = function(self, spaceid)
-  -- function num : 0_23
-  local r = (self._rooms)[spaceid]
+function AircraftModule:GetRoom(spaceid)
+  local r = self._rooms[spaceid]
   return r
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetRoomById = function(self, roomId)
-  -- function num : 0_24 , upvalues : _ENV
-  for id,room in pairs(self._rooms) do
+function AircraftModule:GetRoomById(roomId)
+  for id, room in pairs(self._rooms) do
     if room:RoomId() == roomId then
       return room
     end
@@ -401,11 +292,8 @@ AircraftModule.GetRoomById = function(self, roomId)
   return nil
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetPetAirRoom = function(self, pet)
-  -- function num : 0_25 , upvalues : _ENV
-  for id,room in pairs(self._rooms) do
+function AircraftModule:GetPetAirRoom(pet)
+  for id, room in pairs(self._rooms) do
     if room:GetPet(pet:GetPstID()) then
       return room
     end
@@ -413,12 +301,9 @@ AircraftModule.GetPetAirRoom = function(self, pet)
   return nil
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetRoomCount = function(self, type, level)
-  -- function num : 0_26 , upvalues : _ENV
+function AircraftModule:GetRoomCount(type, level)
   local cnt = 0
-  for i,room in pairs(self._rooms) do
+  for i, room in pairs(self._rooms) do
     if AirRoomType.AisleRoom ~= room:GetRoomType() and (type == 0 or type == room:GetRoomType()) and (level == nil or level == 0 or level <= room:Level()) then
       cnt = cnt + 1
     end
@@ -426,12 +311,9 @@ AircraftModule.GetRoomCount = function(self, type, level)
   return cnt
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetRoomCountWithOutAmusement = function(self, type, level)
-  -- function num : 0_27 , upvalues : _ENV
+function AircraftModule:GetRoomCountWithOutAmusement(type, level)
   local cnt = 0
-  for i,room in pairs(self._rooms) do
+  for i, room in pairs(self._rooms) do
     if AirRoomType.AisleRoom ~= room:GetRoomType() and self:IsAmusementRoom(room:GetRoomType()) == false and (type == 0 or type == room:GetRoomType()) and (level == nil or level == 0 or level <= room:Level()) then
       cnt = cnt + 1
     end
@@ -439,12 +321,9 @@ AircraftModule.GetRoomCountWithOutAmusement = function(self, type, level)
   return cnt
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftModule.GetRoomNameByType = function(self, room_type)
-  -- function num : 0_28 , upvalues : _ENV
-  local room_cfg = (Cfg.cfg_aircraft_room)({})
-  for id,cur_room_cfg in pairs(room_cfg) do
+function AircraftModule:GetRoomNameByType(room_type)
+  local room_cfg = Cfg.cfg_aircraft_room({})
+  for id, cur_room_cfg in pairs(room_cfg) do
     if cur_room_cfg.RoomType == room_type then
       return cur_room_cfg.Name
     end
@@ -453,42 +332,36 @@ AircraftModule.GetRoomNameByType = function(self, room_type)
 end
 
 local PetStatus = {Selected = 0, NotSelected = 1}
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
 
-AircraftModule.GetPets = function(self, space_id)
-  -- function num : 0_29 , upvalues : _ENV, PetStatus
+function AircraftModule:GetPets(space_id)
   local room_pets = {}
   local other_room_pets = {}
   local cnt = 0
   local other_cnt = 0
-  for i,room in pairs(self._rooms) do
+  for i, room in pairs(self._rooms) do
     if room then
       local room_type = room:GetRoomType()
       local pets = room:GetPets()
       local _space_id = room:SpaceId()
       if _space_id == space_id then
-        for i,pet in pairs(pets) do
+        for i, pet in pairs(pets) do
           cnt = cnt + 1
-          room_pets[cnt] = {Status = PetStatus.NotSelected, SpaceID = _space_id, RoomType = room_type, Pet = pet}
+          room_pets[cnt] = {
+            Status = PetStatus.NotSelected,
+            SpaceID = _space_id,
+            RoomType = room_type,
+            Pet = pet
+          }
         end
       else
-        do
-          for i,pet in pairs(pets) do
-            other_cnt = other_cnt + 1
-            other_room_pets[other_cnt] = {Status = PetStatus.NotSelected, SpaceID = _space_id, RoomType = room_type, Pet = pet}
-          end
-          do
-            -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        for i, pet in pairs(pets) do
+          other_cnt = other_cnt + 1
+          other_room_pets[other_cnt] = {
+            Status = PetStatus.NotSelected,
+            SpaceID = _space_id,
+            RoomType = room_type,
+            Pet = pet
+          }
         end
       end
     end
@@ -496,26 +369,20 @@ AircraftModule.GetPets = function(self, space_id)
   return room_pets, other_room_pets
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetPower = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function AircraftModule:GetPower()
   local power = self:GetMaxPower() - self:CalcAllRoomUsePower()
   if power < 0 then
-    (Log.error)("[aircraft] power calc error, max_power =", self:GetMaxPower(), " usedpower =", self:CalcAllRoomUsePower())
+    Log.error("[aircraft] power calc error, max_power =", self:GetMaxPower(), " usedpower =", self:CalcAllRoomUsePower())
     return 0
   end
   return power
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetMaxPower = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  local max_power = ((Cfg.cfg_aircraft_values)[AirValueID.InitStarPower]).IntValue
+function AircraftModule:GetMaxPower()
+  local max_power = Cfg.cfg_aircraft_values[AirValueID.InitStarPower].IntValue
   local power_rooms = self:GetPowerRooms()
-  for i,p in pairs(power_rooms) do
-    if SpaceState.SpaceStateBuilding < p:GetSpaceStatus() then
+  for i, p in pairs(power_rooms) do
+    if p:GetSpaceStatus() > SpaceState.SpaceStateBuilding then
       local cfg = p:GetPowerLimit()
       max_power = max_power + cfg
     end
@@ -523,12 +390,9 @@ AircraftModule.GetMaxPower = function(self)
   return max_power
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetAllRoomPetCount = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function AircraftModule:GetAllRoomPetCount()
   local cnt = 0
-  for i,room in pairs(self._rooms) do
+  for i, room in pairs(self._rooms) do
     if room then
       cnt = cnt + room:GetPetCount()
     end
@@ -536,33 +400,24 @@ AircraftModule.GetAllRoomPetCount = function(self)
   return cnt
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetRoomWithType = function(self, roomType)
-  -- function num : 0_33 , upvalues : _ENV
-  for i,room in pairs(self._rooms) do
+function AircraftModule:GetRoomWithType(roomType)
+  for i, room in pairs(self._rooms) do
     if room:GetRoomType() == roomType then
       return room
     end
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetCentralRoom = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  for i,room in pairs(self._rooms) do
+function AircraftModule:GetCentralRoom()
+  for i, room in pairs(self._rooms) do
     if room:GetRoomType() == AirRoomType.CentralRoom then
       return room
     end
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetResRoom = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  for i,room in pairs(self._rooms) do
+function AircraftModule:GetResRoom()
+  for i, room in pairs(self._rooms) do
     if room:GetRoomType() == AirRoomType.ResourceRoom then
       return room
     end
@@ -570,11 +425,8 @@ AircraftModule.GetResRoom = function(self)
   return nil
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetRoomByRoomType = function(self, roomType)
-  -- function num : 0_36 , upvalues : _ENV
-  for i,room in pairs(self._rooms) do
+function AircraftModule:GetRoomByRoomType(roomType)
+  for i, room in pairs(self._rooms) do
     if room:GetRoomType() == roomType then
       return room
     end
@@ -582,199 +434,139 @@ AircraftModule.GetRoomByRoomType = function(self, roomType)
   return nil
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetAllRoomPetCountLimit = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function AircraftModule:GetAllRoomPetCountLimit()
   local cnt = 0
-  for i,room in pairs(self._rooms) do
+  for i, room in pairs(self._rooms) do
     cnt = cnt + room:GetPetCountLimit()
   end
   return cnt
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetRoomLimitCount = function(self, room_type)
-  -- function num : 0_38 , upvalues : _ENV
+function AircraftModule:GetRoomLimitCount(room_type)
   local limit = 0
   local central_room = self:GetCentralRoom()
   if room_type == AirRoomType.AisleRoom then
-    limit = ((central_room:GetCentralRoomConfig()).AisleLimit)[1]
+    limit = central_room:GetCentralRoomConfig().AisleLimit[1]
+  elseif room_type == AirRoomType.PowerRoom then
+    limit = central_room:GetCentralRoomConfig().PowerRoomLimit[1]
+  elseif room_type == AirRoomType.MazeRoom then
+    limit = central_room:GetCentralRoomConfig().MazeRoomLimit[1]
+  elseif room_type == AirRoomType.PrismRoom then
+    limit = central_room:GetCentralRoomConfig().PrismRoomLimit[1]
+  elseif room_type == AirRoomType.ResourceRoom then
+    limit = central_room:GetCentralRoomConfig().ResourceRoomLimit[1]
+  elseif room_type == AirRoomType.TowerRoom then
+    limit = central_room:GetCentralRoomConfig().TowerRoomLimit[1]
+  elseif room_type == AirRoomType.EvilRoom then
+    limit = central_room:GetCentralRoomConfig().EvilRoomLimit[1]
+  elseif room_type == AirRoomType.PurifyRoom then
+    limit = central_room:GetCentralRoomConfig().PurifyRoomLimit[1]
+  elseif room_type == AirRoomType.SmeltRoom then
+    limit = central_room:GetCentralRoomConfig().SmeltRoomLimit[1]
+  elseif room_type == AirRoomType.DispatchRoom then
+    limit = central_room:GetCentralRoomConfig().DispatchRoomLimit[1]
+  elseif room_type == AirRoomType.TacticRoom then
+    limit = central_room:GetCentralRoomConfig().TacticRoomLimit[1]
   else
-    if room_type == AirRoomType.PowerRoom then
-      limit = ((central_room:GetCentralRoomConfig()).PowerRoomLimit)[1]
-    else
-      if room_type == AirRoomType.MazeRoom then
-        limit = ((central_room:GetCentralRoomConfig()).MazeRoomLimit)[1]
-      else
-        if room_type == AirRoomType.PrismRoom then
-          limit = ((central_room:GetCentralRoomConfig()).PrismRoomLimit)[1]
-        else
-          if room_type == AirRoomType.ResourceRoom then
-            limit = ((central_room:GetCentralRoomConfig()).ResourceRoomLimit)[1]
-          else
-            if room_type == AirRoomType.TowerRoom then
-              limit = ((central_room:GetCentralRoomConfig()).TowerRoomLimit)[1]
-            else
-              if room_type == AirRoomType.EvilRoom then
-                limit = ((central_room:GetCentralRoomConfig()).EvilRoomLimit)[1]
-              else
-                if room_type == AirRoomType.PurifyRoom then
-                  limit = ((central_room:GetCentralRoomConfig()).PurifyRoomLimit)[1]
-                else
-                  if room_type == AirRoomType.SmeltRoom then
-                    limit = ((central_room:GetCentralRoomConfig()).SmeltRoomLimit)[1]
-                  else
-                    if room_type == AirRoomType.DispatchRoom then
-                      limit = ((central_room:GetCentralRoomConfig()).DispatchRoomLimit)[1]
-                    else
-                      if room_type == AirRoomType.TacticRoom then
-                        limit = ((central_room:GetCentralRoomConfig()).TacticRoomLimit)[1]
-                      else
-                        ;
-                        (Log.error)("[aircraft] type error , room_type=", room_type)
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    Log.error("[aircraft] type error , room_type=", room_type)
   end
   return limit
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetPowerRooms = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function AircraftModule:GetPowerRooms()
   local power_rooms = {}
   if self._rooms == nil then
     return power_rooms
   end
-  for i,room in pairs(self._rooms) do
+  for i, room in pairs(self._rooms) do
     if room:GetRoomType() == AirRoomType.PowerRoom then
-      (table.insert)(power_rooms, room)
+      table.insert(power_rooms, room)
     end
   end
   return power_rooms
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetAllRooms = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function AircraftModule:GetAllRooms()
   local rooms = {}
-  for i,room in pairs(self._rooms) do
+  for i, room in pairs(self._rooms) do
     if room:GetRoomType() ~= AirRoomType.AisleRoom then
-      (table.insert)(rooms, room)
+      table.insert(rooms, room)
     end
   end
-  ;
-  (table.sort)(rooms, function(a, b)
-    -- function num : 0_40_0
-    do return a:GetRoomType() < b:GetRoomType() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(rooms, function(a, b)
+    return a:GetRoomType() < b:GetRoomType()
+  end)
   return rooms
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.CalcAllRoomUsePower = function(self)
-  -- function num : 0_41 , upvalues : _ENV
+function AircraftModule:CalcAllRoomUsePower()
   local total = 0
-  for i,room in pairs(self._rooms) do
+  for i, room in pairs(self._rooms) do
     local cfg = room:GetConfig()
-    if room:GetSpaceStatus() == SpaceState.SpaceStateUpgrading and cfg.LevelUpTime and cfg.LevelUpTime > 0 and cfg.NextLevelID > 0 then
-      cfg = (Cfg.cfg_aircraft_room)[cfg.NextLevelID]
+    if room:GetSpaceStatus() == SpaceState.SpaceStateUpgrading and cfg.LevelUpTime and 0 < cfg.LevelUpTime and 0 < cfg.NextLevelID then
+      cfg = Cfg.cfg_aircraft_room[cfg.NextLevelID]
     end
     total = total + cfg.NeedPower
   end
   return total
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetFirefly = function(self)
-  -- function num : 0_42 , upvalues : _ENV
+function AircraftModule:GetFirefly()
   local recover_rate = self:GetFireflyRecoverSpeed()
-  local cur_firefly = (self._aircraftInfo).firefly_value
-  if recover_rate > 0 then
+  local cur_firefly = self._aircraftInfo.firefly_value
+  if 0 < recover_rate then
     local now = self:GetServerTime()
-    local last = (self._aircraftInfo).update_time
-    local diff = (math.max)(0, now - last)
+    local last = self._aircraftInfo.update_time
+    local diff = math.max(0, now - last)
     local delta = diff * recover_rate
-    cur_firefly = (math.min)((self._aircraftInfo).firefly_value + delta, self:GetMaxFirefly())
+    cur_firefly = math.min(self._aircraftInfo.firefly_value + delta, self:GetMaxFirefly())
   end
-  do
-    return (math.floor)(cur_firefly)
-  end
+  return math.floor(cur_firefly)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetMaxFirefly = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function AircraftModule:GetMaxFirefly()
   local sum = 0
-  for i,s in pairs(self._spaces) do
-    if SpaceState.SpaceStateNeedClean < s.space_status then
-      local cfg = (Cfg.cfg_aircraft_space)[i]
+  for i, s in pairs(self._spaces) do
+    if s.space_status > SpaceState.SpaceStateNeedClean then
+      local cfg = Cfg.cfg_aircraft_space[i]
       sum = sum + cfg.AddFirefly
     end
   end
-  local room_id = (self:GetCentralRoom()):RoomId()
-  local cfg = (Cfg.cfg_aircraft_central_room)[room_id]
+  local room_id = self:GetCentralRoom():RoomId()
+  local cfg = Cfg.cfg_aircraft_central_room[room_id]
   sum = sum + cfg.AddMaxFirefly
   return sum
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetUpdateTime = function(self)
-  -- function num : 0_44
-  return (self._aircraftInfo).update_time
+function AircraftModule:GetUpdateTime()
+  return self._aircraftInfo.update_time
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetFireflyRecoverSpeed = function(self)
-  -- function num : 0_45 , upvalues : _ENV
+function AircraftModule:GetFireflyRecoverSpeed()
   local sum = 0
-  for i,room in pairs(self._rooms) do
-    if room:GetRoomType() == AirRoomType.PowerRoom and SpaceState.SpaceStateFull <= room:GetSpaceStatus() then
+  for i, room in pairs(self._rooms) do
+    if room:GetRoomType() == AirRoomType.PowerRoom and room:GetSpaceStatus() >= SpaceState.SpaceStateFull then
       local s = room:GetFireflyTotalSpeed()
       sum = sum + s
     end
   end
-  local base = ((Cfg.cfg_aircraft_values)[AirValueID.FireflyBaseRate]).FloatValue
-  local max = ((Cfg.cfg_aircraft_values)[AirValueID.FireflyMaxRate]).FloatValue
-  local final = base + (sum)
+  local base = Cfg.cfg_aircraft_values[AirValueID.FireflyBaseRate].FloatValue
+  local max = Cfg.cfg_aircraft_values[AirValueID.FireflyMaxRate].FloatValue
+  local final = base + sum
   if max < final then
     final = max
   end
   return final
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetServerTime = function(self)
-  -- function num : 0_46 , upvalues : _ENV
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local tmSecond, nMilliSecond = (math.modf)(time_mod:GetServerTime() / 1000)
+function AircraftModule:GetServerTime()
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local tmSecond, nMilliSecond = math.modf(time_mod:GetServerTime() / 1000)
   return tmSecond
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetCleanSpaceRemainingTime = function(self, space_id)
-  -- function num : 0_47 , upvalues : _ENV
-  local spaceinfo = (self._spaces)[space_id]
+function AircraftModule:GetCleanSpaceRemainingTime(space_id)
+  local spaceinfo = self._spaces[space_id]
   if not spaceinfo or spaceinfo.space_status ~= SpaceState.SpaceStateCleaning then
     return 0
   end
@@ -787,20 +579,17 @@ AircraftModule.GetCleanSpaceRemainingTime = function(self, space_id)
   return remain
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetFireFlyRemainderTime = function(self)
-  -- function num : 0_48
+function AircraftModule:GetFireFlyRemainderTime()
   local recover_rate = self:GetFireflyRecoverSpeed()
   if recover_rate <= 0 then
     return -1
   end
   local now = self:GetServerTime()
-  local last = (self._aircraftInfo).update_time
+  local last = self._aircraftInfo.update_time
   if now < last then
     now = last
   end
-  local need_recover_firefly = self:GetMaxFirefly() - (self._aircraftInfo).firefly_value
+  local need_recover_firefly = self:GetMaxFirefly() - self._aircraftInfo.firefly_value
   local diff_time = need_recover_firefly / recover_rate
   local remain = diff_time - (now - last)
   if remain < 0 then
@@ -809,73 +598,55 @@ AircraftModule.GetFireFlyRemainderTime = function(self)
   return remain
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetMaxHealthPoint = function(self)
-  -- function num : 0_49 , upvalues : _ENV
+function AircraftModule:GetMaxHealthPoint()
   local need_recover_firefly = self:GetMaxFirefly() - self:GetFirefly()
   if need_recover_firefly <= 0 then
-    (Log.warn)("[aircraft] firefly donot need recover error")
+    Log.warn("[aircraft] firefly donot need recover error")
     return 0
   end
-  local role_module = (GameGlobal.GetModule)(RoleModule)
+  local role_module = GameGlobal.GetModule(RoleModule)
   local cur_health_point = role_module:GetHealthPoint()
-  local ph_change_firefly = ((Cfg.cfg_aircraft_values)[AirValueID.PhysicToFireflyRate]).IntValue
+  local ph_change_firefly = Cfg.cfg_aircraft_values[AirValueID.PhysicToFireflyRate].IntValue
   if ph_change_firefly <= 0 then
-    (Log.error)("[aircraft] ph_change_firefly error")
+    Log.error("[aircraft] ph_change_firefly error")
     return 0
   end
-  local max_need_health_point = (math.floor)(need_recover_firefly / ph_change_firefly)
-  return (math.min)(cur_health_point, max_need_health_point)
+  local max_need_health_point = math.floor(need_recover_firefly / ph_change_firefly)
+  return math.min(cur_health_point, max_need_health_point)
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetAmbientValue = function(self)
-  -- function num : 0_50
-  return (self._aircraftInfo).ambient_value
+function AircraftModule:GetAmbientValue()
+  return self._aircraftInfo.ambient_value
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetAmusementAmbient = function(self, _AmusementType)
-  -- function num : 0_51
-  if self:IsAmusementRoom(_AmusementType) == false or ((self._aircraftInfo).amusement_ambient)[_AmusementType] == nil then
+function AircraftModule:GetAmusementAmbient(_AmusementType)
+  if self:IsAmusementRoom(_AmusementType) == false or self._aircraftInfo.amusement_ambient[_AmusementType] == nil then
     return 0
   end
-  return ((self._aircraftInfo).amusement_ambient)[_AmusementType]
+  return self._aircraftInfo.amusement_ambient[_AmusementType]
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetValidAmbient = function(self)
-  -- function num : 0_52
+function AircraftModule:GetValidAmbient()
   local l_nTotal = self:GetTotalAmbientValue()
   local l_CentralRoom = self:GetCentralRoom()
   local l_nCurLimit = l_CentralRoom:GetAmbientLimit()
-  return l_nCurLimit <= l_nTotal and l_nCurLimit or l_nTotal
+  return l_nTotal >= l_nCurLimit and l_nCurLimit or l_nTotal
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetTotalAmbientValue = function(self)
-  -- function num : 0_53
+function AircraftModule:GetTotalAmbientValue()
   local l_totalValue = 0
   l_totalValue = l_totalValue + self:CalFurnitureAmbient(true)
   local l_nTotalLimit = self:GetCentralTotalAmbientLimit()
-  if l_nTotalLimit < l_totalValue then
+  if l_totalValue > l_nTotalLimit then
     l_totalValue = l_nTotalLimit
   end
   return l_totalValue
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetCentralTotalAmbientLimit = function(self)
-  -- function num : 0_54 , upvalues : _ENV
+function AircraftModule:GetCentralTotalAmbientLimit()
   local nMaxValue = 0
-  local cfg = (Cfg.cfg_aircraft_central_room)({})
-  for key,value in pairs(cfg) do
+  local cfg = Cfg.cfg_aircraft_central_room({})
+  for key, value in pairs(cfg) do
     if nMaxValue < value.AmbientLimit then
       nMaxValue = value.AmbientLimit
     end
@@ -883,56 +654,47 @@ AircraftModule.GetCentralTotalAmbientLimit = function(self)
   return nMaxValue
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetCurCentralAmbientLimit = function(self)
-  -- function num : 0_55
+function AircraftModule:GetCurCentralAmbientLimit()
   local l_CentralRoom = self:GetCentralRoom()
   return l_CentralRoom:GetAmbientLimit()
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.CalFurnitureAmbient = function(self, bCalWorkSkill)
-  -- function num : 0_56 , upvalues : _ENV
+function AircraftModule:CalFurnitureAmbient(bCalWorkSkill)
   local nTotalAmbient = 0
   local FurnitureId2NumMap = self:GetUseFurnitureItemNum()
   local lfAv = 0
   local lfMv = 0
   if bCalWorkSkill then
-    lfAv = self:CalCentralPetWorkSkill()
+    lfAv, lfMv = self:CalCentralPetWorkSkill()
   end
-  for key,value in pairs(FurnitureId2NumMap) do
+  for key, value in pairs(FurnitureId2NumMap) do
     local nAssetId = key
     local nCount = value
-    local l_cfg = (Cfg.cfg_item_furniture)[nAssetId]
+    local l_cfg = Cfg.cfg_item_furniture[nAssetId]
     if l_cfg then
       local nCalAmbient = l_cfg.Atmosphere
       if bCalWorkSkill then
-        nCalAmbient = nCalAmbient + (math.floor)(l_cfg.Atmosphere * lfMv) + (math.floor)(lfAv)
+        nCalAmbient = nCalAmbient + math.floor(l_cfg.Atmosphere * lfMv) + math.floor(lfAv)
       end
-      nTotalAmbient = nTotalAmbient + (nCalAmbient) * nCount
+      nTotalAmbient = nTotalAmbient + nCalAmbient * nCount
     end
   end
   return nTotalAmbient
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.CalAllFurnitureAmbientInfo = function(self)
-  -- function num : 0_57 , upvalues : _ENV
+function AircraftModule:CalAllFurnitureAmbientInfo()
   local ret_table = {}
   local FurnitureId2NumMap = self:GetUseFurnitureItemNum()
   local lfAv, lfMv = self:CalCentralPetWorkSkill()
-  for key,value in pairs(FurnitureId2NumMap) do
+  for key, value in pairs(FurnitureId2NumMap) do
     local nAssetId = key
     local nCount = value
-    local l_cfg = (Cfg.cfg_item_furniture)[nAssetId]
+    local l_cfg = Cfg.cfg_item_furniture[nAssetId]
     if l_cfg then
       local tmp = {}
       tmp.nAssetId = nAssetId
       tmp.baseAmbient = l_cfg.Atmosphere
-      tmp.exAmbient = (math.floor)(l_cfg.Atmosphere * lfMv) + (math.floor)(lfAv)
+      tmp.exAmbient = math.floor(l_cfg.Atmosphere * lfMv) + math.floor(lfAv)
       tmp.count = nCount
       ret_table[#ret_table + 1] = tmp
     end
@@ -940,10 +702,7 @@ AircraftModule.CalAllFurnitureAmbientInfo = function(self)
   return ret_table
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.CalCentralPetWorkSkill = function(self)
-  -- function num : 0_58 , upvalues : _ENV
+function AircraftModule:CalCentralPetWorkSkill()
   local lfAv = 0
   local lfMv = 0
   local l_CentralRoom = self:GetCentralRoom()
@@ -951,7 +710,7 @@ AircraftModule.CalCentralPetWorkSkill = function(self)
     return lfAv, lfMv
   end
   local pets = l_CentralRoom:GetPets()
-  for i,pet in pairs(pets) do
+  for i, pet in pairs(pets) do
     local l_lfAv, l_lfMv = pet:GetWorkSkillEffectVV(WorkSkillType.WS_Furniture_Add_Ambient, AirRoomType.CentralRoom)
     lfAv = lfAv + l_lfAv
     lfMv = lfMv + l_lfMv
@@ -959,16 +718,13 @@ AircraftModule.CalCentralPetWorkSkill = function(self)
   return lfAv, lfMv
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetUseFurnitureItemNum = function(self)
-  -- function num : 0_59 , upvalues : _ENV
+function AircraftModule:GetUseFurnitureItemNum()
   if self._areaFurniture == nil then
     return {}
   end
   local l_OutId2NumMap = {}
-  for area,value in pairs(self._areaFurniture) do
-    for _,var in ipairs(value) do
+  for area, value in pairs(self._areaFurniture) do
+    for _, var in ipairs(value) do
       local id = var.asset_id
       if l_OutId2NumMap[id] == nil then
         l_OutId2NumMap[id] = 1
@@ -980,29 +736,20 @@ AircraftModule.GetUseFurnitureItemNum = function(self)
   return l_OutId2NumMap
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetUseFurnitureItemNumByItemID = function(self, itemID)
-  -- function num : 0_60
+function AircraftModule:GetUseFurnitureItemNumByItemID(itemID)
   local l_OutId2NumMap = self:GetUseFurnitureItemNum()
   local useItemNum = l_OutId2NumMap[itemID] or 0
   local tempItemNum = self:GetTempFurnitureCount(itemID)
   return useItemNum + tempItemNum
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetFurnitureItemNumInBagByItemID = function(self, itemID)
-  -- function num : 0_61
+function AircraftModule:GetFurnitureItemNumInBagByItemID(itemID)
   local l_OutId2NumMap = self:GetUseFurnitureItemNum()
   local useItemNum = l_OutId2NumMap[itemID] or 0
   return useItemNum
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetRemainsFurnitureItemNumByItemID = function(self, itemID)
-  -- function num : 0_62 , upvalues : _ENV
+function AircraftModule:GetRemainsFurnitureItemNumByItemID(itemID)
   local itemModule = self:GetModule(ItemModule)
   local hasItemNum = itemModule:GetItemCount(itemID)
   local useItemNum = self:GetUseFurnitureItemNumByItemID(itemID)
@@ -1010,98 +757,67 @@ AircraftModule.GetRemainsFurnitureItemNumByItemID = function(self, itemID)
   return remainsNum
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetFurnitureByArea = function(self, area)
-  -- function num : 0_63
-  return (self._areaFurniture)[area]
+function AircraftModule:GetFurnitureByArea(area)
+  return self._areaFurniture[area]
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.ClearTempFurniture = function(self)
-  -- function num : 0_64
+function AircraftModule:ClearTempFurniture()
   self._tempFur = nil
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.ChangeTempFurniture = function(self, furID, count)
-  -- function num : 0_65
+function AircraftModule:ChangeTempFurniture(furID, count)
   if self._tempFur == nil then
     self._tempFur = {}
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self._tempFur)[furID] == nil then
-    (self._tempFur)[furID] = 0
+  if self._tempFur[furID] == nil then
+    self._tempFur[furID] = 0
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._tempFur)[furID] = (self._tempFur)[furID] + count
+  self._tempFur[furID] = self._tempFur[furID] + count
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetTempFurnitureCount = function(self, furID)
-  -- function num : 0_66
+function AircraftModule:GetTempFurnitureCount(furID)
   if self._tempFur == nil then
     return 0
   end
-  return (self._tempFur)[furID] or 0
+  return self._tempFur[furID] or 0
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetPrismRoom = function(self)
-  -- function num : 0_67 , upvalues : _ENV
-  for i,room in pairs(self._rooms) do
+function AircraftModule:GetPrismRoom()
+  for i, room in pairs(self._rooms) do
     if room:GetRoomType() == AirRoomType.PrismRoom then
       return room
     end
   end
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetPhysicLocalRate = function(self)
-  -- function num : 0_68 , upvalues : _ENV
+function AircraftModule:GetPhysicLocalRate()
   local room = self:GetPrismRoom()
   if not room then
-    return 0
+    return 0.0
   end
-  local cfg = (Cfg.cfg_aircraft_prism_room)[room:RoomId()]
+  local cfg = Cfg.cfg_aircraft_prism_room[room:RoomId()]
   return cfg.LocalRecover
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetPhysicStorage = function(self)
-  -- function num : 0_69 , upvalues : _ENV
+function AircraftModule:GetPhysicStorage()
   local recover_rate = self:GetPhysicLocalRate()
-  local cur_value = (self._aircraftInfo).physic_storage
-  if recover_rate > 0 then
+  local cur_value = self._aircraftInfo.physic_storage
+  if 0 < recover_rate then
     local room = self:GetPrismRoom()
     local now = self:GetServerTime()
-    local last = (self._aircraftInfo).update_time
+    local last = self._aircraftInfo.update_time
     if now < last then
       now = last
     end
     local diff = now - last
     local delta = diff / recover_rate
     local max = room:GetTotalPhysicStorageLimit()
-    cur_value = (math.min)((self._aircraftInfo).physic_storage + delta, max)
+    cur_value = math.min(self._aircraftInfo.physic_storage + delta, max)
   end
-  do
-    return cur_value
-  end
+  return cur_value
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetPhysicStorageLimit = function(self)
-  -- function num : 0_70
+function AircraftModule:GetPhysicStorageLimit()
   local room = self:GetPrismRoom()
   if room == nil then
     return 0
@@ -1110,101 +826,69 @@ AircraftModule.GetPhysicStorageLimit = function(self)
   return max
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetMazeRoom = function(self)
-  -- function num : 0_71 , upvalues : _ENV
-  for i,room in pairs(self._rooms) do
+function AircraftModule:GetMazeRoom()
+  for i, room in pairs(self._rooms) do
     if room:GetRoomType() == AirRoomType.MazeRoom then
       return room
     end
   end
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetLightRate = function(self)
-  -- function num : 0_72 , upvalues : _ENV
+function AircraftModule:GetLightRate()
   local room = self:GetMazeRoom()
   if not room then
-    return 0
+    return 0.0
   end
   local r1, r2 = room:GetLightRate()
-  local rate = (math.max)(r1 + r2, 1)
+  local rate = math.max(r1 + r2, 1)
   return rate
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetLightStorage = function(self)
-  -- function num : 0_73 , upvalues : _ENV
+function AircraftModule:GetLightStorage()
   local recover_rate = self:GetLightRate()
-  local cur_value = (self._aircraftInfo).light_storage
-  if recover_rate > 0 then
+  local cur_value = self._aircraftInfo.light_storage
+  if 0 < recover_rate then
     local room = self:GetMazeRoom()
     local now = self:GetServerTime()
-    local last = (self._aircraftInfo).update_time
+    local last = self._aircraftInfo.update_time
     if now < last then
       now = last
     end
     local diff = now - last
-    local delta = (math.floor)(diff / recover_rate)
+    local delta = math.floor(diff / recover_rate)
     local max = self._maxValue
-    cur_value = (math.min)((self._aircraftInfo).light_storage + delta, max)
+    cur_value = math.min(self._aircraftInfo.light_storage + delta, max)
   end
-  do
-    return cur_value
-  end
+  return cur_value
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetResCardCount = function(self)
-  -- function num : 0_74
-  return (self._aircraftInfo).res_card_count
+function AircraftModule:GetResCardCount()
+  return self._aircraftInfo.res_card_count
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetDrawCardCount = function(self)
-  -- function num : 0_75
-  return (self._aircraftInfo).draw_card_count
+function AircraftModule:GetDrawCardCount()
+  return self._aircraftInfo.draw_card_count
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetHeartAmberCount = function(self)
-  -- function num : 0_76
-  return (self._aircraftInfo).heart_amber_count
+function AircraftModule:GetHeartAmberCount()
+  return self._aircraftInfo.heart_amber_count
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetResCardCDTime = function(self)
-  -- function num : 0_77
-  return (self._aircraftInfo).res_card_cd_time
+function AircraftModule:GetResCardCDTime()
+  return self._aircraftInfo.res_card_cd_time
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetDrawCardCDTime = function(self)
-  -- function num : 0_78
-  return (self._aircraftInfo).draw_card_cd_time
+function AircraftModule:GetDrawCardCDTime()
+  return self._aircraftInfo.draw_card_cd_time
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetSmeltCDTime = function(self)
-  -- function num : 0_79
-  return (self._aircraftInfo).smelt_cd_time
+function AircraftModule:GetSmeltCDTime()
+  return self._aircraftInfo.smelt_cd_time
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetCollectTypeCount = function(self)
-  -- function num : 0_80 , upvalues : _ENV
+function AircraftModule:GetCollectTypeCount()
   local l_totalCount = 0
-  for id,room in pairs(self._rooms) do
+  for id, room in pairs(self._rooms) do
     if room:CanCollect() then
       l_totalCount = l_totalCount + 1
     end
@@ -1212,15 +896,12 @@ AircraftModule.GetCollectTypeCount = function(self)
   return l_totalCount
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetRoomLevelUpPreCondition = function(self, spaceID)
-  -- function num : 0_81 , upvalues : _ENV
+function AircraftModule:GetRoomLevelUpPreCondition(spaceID)
   local roomData = self:GetRoom(spaceID)
   if roomData == nil then
     return {}
   end
-  if roomData:MaxLevel() <= roomData:Level() then
+  if roomData:Level() >= roomData:MaxLevel() then
     return {}
   end
   local condData = roomData:GetNeedRooms()
@@ -1232,93 +913,81 @@ AircraftModule.GetRoomLevelUpPreCondition = function(self, spaceID)
     local need = cond[3]
     local had = self:GetRoomCountWithOutAmusement(type, level)
     if need <= had then
-      do
-        conds[#conds + 1] = AircraftLevelUpPreCondition:New(type, level, need, had)
-        -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    else
+      conds[#conds + 1] = AircraftLevelUpPreCondition:New(type, level, need, had)
     end
   end
   return conds
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.CanRoomLevelUp = function(self, spaceID, checkMatEnough)
-  -- function num : 0_82 , upvalues : _ENV
+function AircraftModule:CanRoomLevelUp(spaceID, checkMatEnough)
   local roomData = self:GetRoom(spaceID)
   if roomData == nil then
     return false
+  else
   end
-  if roomData:MaxLevel() <= roomData:Level() then
+  if roomData:Level() >= roomData:MaxLevel() then
     return false
   end
   if not roomData:EnoughPowerToUpgrade() then
     return false
   end
   local roomType = roomData:GetRoomType()
-  if AirRoomType.AmusementBegin <= roomType and roomType <= AirRoomType.AmusementEnd then
+  if roomType >= AirRoomType.AmusementBegin and roomType <= AirRoomType.AmusementEnd then
     return false
   end
   local mats = roomData:GetUpgradeNeed()
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local matEnough = false
   if checkMatEnough then
     matEnough = true
-    for _,mat in ipairs(mats) do
+    for _, mat in ipairs(mats) do
       local id = mat[1]
       local need = mat[2]
       if roleModule:GetAssetCount(id) == nil then
-        (Log.exception)("无法获取物品数量：", id, "，空间：", spaceID)
+        Log.exception("无法获取物品数量：", id, "，空间：", spaceID)
       end
-      local had = (math.floor)(roleModule:GetAssetCount(id))
-      if had < need then
+      local had = math.floor(roleModule:GetAssetCount(id))
+      if need > had then
         matEnough = false
         break
       end
     end
   else
-    do
-      for _,mat in ipairs(mats) do
-        local id = mat[1]
-        local need = mat[2]
-        if roleModule:GetAssetCount(id) == nil then
-          (Log.exception)("无法获取物品数量：", id, "，空间：", spaceID)
-        end
-        local had = (math.floor)(roleModule:GetAssetCount(id))
-        if had < need then
-          return false
-        end
+    for _, mat in ipairs(mats) do
+      local id = mat[1]
+      local need = mat[2]
+      if roleModule:GetAssetCount(id) == nil then
+        Log.exception("无法获取物品数量：", id, "，空间：", spaceID)
       end
-      do
-        local cond = self:GetRoomLevelUpPreCondition(spaceID)
-        if #cond > 0 then
-          return false
-        end
-        if checkMatEnough then
-          return true, matEnough
-        else
-          return true
-        end
+      local had = math.floor(roleModule:GetAssetCount(id))
+      if need > had then
+        return false
       end
     end
   end
+  local cond = self:GetRoomLevelUpPreCondition(spaceID)
+  if 0 < #cond then
+    return false
+  end
+  if checkMatEnough then
+    return true, matEnough
+  else
+    return true
+  end
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetSpaceUnlockLevel = function(self, spaceID)
-  -- function num : 0_83 , upvalues : _ENV
-  local centerRooms = (Cfg.cfg_aircraft_room)({RoomType = AirRoomType.CentralRoom})
-  for _,room in ipairs(centerRooms) do
-    local cfg = (Cfg.cfg_aircraft_central_room)[room.ID]
+function AircraftModule:GetSpaceUnlockLevel(spaceID)
+  local centerRooms = Cfg.cfg_aircraft_room({
+    RoomType = AirRoomType.CentralRoom
+  })
+  for _, room in ipairs(centerRooms) do
+    local cfg = Cfg.cfg_aircraft_central_room[room.ID]
     if cfg == nil then
-      (Log.fatal)("找不到主控室id：", room.ID)
-      return 
+      Log.fatal("找不到主控室id：", room.ID)
+      return
     end
-    for _,space in ipairs(cfg.OpenSpaces) do
+    for _, space in ipairs(cfg.OpenSpaces) do
       if space == spaceID then
         return room.Level
       end
@@ -1326,14 +995,11 @@ AircraftModule.GetSpaceUnlockLevel = function(self, spaceID)
   end
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.CanRoomSettlePet = function(self, spaceID)
-  -- function num : 0_84 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  local petsCount = (table.count)(petModule:GetPets())
+function AircraftModule:CanRoomSettlePet(spaceID)
+  local petModule = GameGlobal.GetModule(PetModule)
+  local petsCount = table.count(petModule:GetPets())
   local count = 0
-  for _,room in pairs(self._rooms) do
+  for _, room in pairs(self._rooms) do
     count = count + #room:GetPets()
   end
   if petsCount <= count then
@@ -1343,237 +1009,156 @@ AircraftModule.CanRoomSettlePet = function(self, spaceID)
   if room then
     local ceiling = room:GetPetCountLimit()
     local pets = #room:GetPets()
-    return pets < ceiling
+    return ceiling > pets
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetSmeltRoom = function(self)
-  -- function num : 0_85 , upvalues : _ENV
-  for i,room in pairs(self._rooms) do
+function AircraftModule:GetSmeltRoom()
+  for i, room in pairs(self._rooms) do
     if room:GetRoomType() == AirRoomType.SmeltRoom then
       return room
     end
   end
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.IsSmeltItemLock = function(self, id)
-  -- function num : 0_86 , upvalues : _ENV
+function AircraftModule:IsSmeltItemLock(id)
   local room = self:GetSmeltRoom()
   if not room then
     return true
   end
-  local items = ((Cfg.cfg_item_smelt)({}))
-  local cfg = nil
-  for _,item in pairs(items) do
-    if (item.Output)[1] == id then
+  local items = Cfg.cfg_item_smelt({})
+  local cfg
+  for _, item in pairs(items) do
+    if item.Output[1] == id then
       cfg = item
       break
     end
   end
-  do
-    return self:IsSmeltItemLockEx(room, cfg)
-  end
+  return self:IsSmeltItemLockEx(room, cfg)
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.IsSmeltItemLockEx = function(self, room, cfg)
-  -- function num : 0_87 , upvalues : _ENV
+function AircraftModule:IsSmeltItemLockEx(room, cfg)
   if not room then
     return true
   end
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   if cfg and cfg.Condition then
-    for _,data in ipairs(cfg.Condition) do
+    for _, data in ipairs(cfg.Condition) do
       local type = data[1]
       local param = data[2]
-      if type == SmeltItemType.SIT_Mission and not missionModule:IsPassMissionID(param) then
-        return true
-      end
-      if type == SmeltItemType.SIT_Lv and room:Level() < param then
+      if type == SmeltItemType.SIT_Mission then
+        if not missionModule:IsPassMissionID(param) then
+          return true
+        end
+      elseif type == SmeltItemType.SIT_Lv and param > room:Level() then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetMaterialInfoByOutPutId = function(self, id)
-  -- function num : 0_88 , upvalues : _ENV
-  local items = ((Cfg.cfg_item_smelt)({}))
-  -- DECOMPILER ERROR at PC4: Overwrote pending register: R3 in 'AssignReg'
-
-  local cfg = .end
-  for _,item in pairs(items) do
-    if (item.Output)[1] == id then
+function AircraftModule:GetMaterialInfoByOutPutId(id)
+  local items = Cfg.cfg_item_smelt({})
+  local cfg
+  for _, item in pairs(items) do
+    if item.Output[1] == id then
       cfg = item
       break
     end
   end
-  do
-    return self:GetSmeltLockInfo(cfg)
-  end
+  return self:GetSmeltLockInfo(cfg)
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.Init = function(self)
-  -- function num : 0_89 , upvalues : _ENV
-  (self.caller):RegisterPushHandler(CEventPushAircraftInfo, self.HandleAircraftInfo, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushAircraftSpaceInfos, self.HandleSpaceInfos, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushAircraftAreaFurniture, self.HandUpdateAreaFurniture, self)
+function AircraftModule:Init()
+  self.caller:RegisterPushHandler(CEventPushAircraftInfo, self.HandleAircraftInfo, self)
+  self.caller:RegisterPushHandler(CEventPushAircraftSpaceInfos, self.HandleSpaceInfos, self)
+  self.caller:RegisterPushHandler(CEventPushAircraftAreaFurniture, self.HandUpdateAreaFurniture, self)
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.SetSpaceInfos = function(self, spaces)
-  -- function num : 0_90 , upvalues : _ENV
-  for i,s in pairs(spaces) do
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._spaces)[s.space_id] = s
+function AircraftModule:SetSpaceInfos(spaces)
+  for i, s in pairs(spaces) do
+    self._spaces[s.space_id] = s
   end
-  for i,s in pairs(self._spaces) do
-    local r = (self._rooms)[i]
+  for i, s in pairs(self._spaces) do
+    local r = self._rooms[i]
     if s.room_id > 0 then
       if not r then
         r = self:CreateRoom(s)
-        -- DECOMPILER ERROR at PC25: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._rooms)[i] = r
+        self._rooms[i] = r
+      elseif s.space_status == SpaceState.SpaceStateEmpty then
+        self._rooms[i] = nil
       else
-        -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
-        if s.space_status == SpaceState.SpaceStateEmpty then
-          (self._rooms)[i] = nil
-        else
-          r:SetData(s)
-        end
+        r:SetData(s)
       end
-    else
-      -- DECOMPILER ERROR at PC45: Confused about usage of register: R8 in 'UnsetPending'
-
-      if s.space_status == SpaceState.SpaceStateEmpty then
-        (self._rooms)[i] = nil
-      end
+    elseif s.space_status == SpaceState.SpaceStateEmpty then
+      self._rooms[i] = nil
     end
   end
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetRoomStatus = function(self, roomType)
-  -- function num : 0_91
+function AircraftModule:GetRoomStatus(roomType)
   local room = self:GetRoomWithType(roomType)
   if room then
     return room:GetSpaceStatus()
   end
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.__GetSpaceStatus = function(self, nSpaceId)
-  -- function num : 0_92
-  if nSpaceId == nil or (self._spaces)[nSpaceId] == nil or (self._rooms)[nSpaceId] == nil then
+function AircraftModule:__GetSpaceStatus(nSpaceId)
+  if nSpaceId == nil or self._spaces[nSpaceId] == nil or self._rooms[nSpaceId] == nil then
     return nil
   end
-  return ((self._spaces)[nSpaceId]).space_status
+  return self._spaces[nSpaceId].space_status
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.__SetSpaceStatus = function(self, nSpaceId, eSpaceState)
-  -- function num : 0_93
-  if nSpaceId == nil or (self._spaces)[nSpaceId] == nil or (self._rooms)[nSpaceId] == nil then
-    return 
+function AircraftModule:__SetSpaceStatus(nSpaceId, eSpaceState)
+  if nSpaceId == nil or self._spaces[nSpaceId] == nil or self._rooms[nSpaceId] == nil then
+    return
   end
-  local l_space = (self._spaces)[nSpaceId]
+  local l_space = self._spaces[nSpaceId]
   l_space.space_status = eSpaceState
-  local l_room = (self._rooms)[nSpaceId]
+  local l_room = self._rooms[nSpaceId]
   l_room:SetSpaceStatus(eSpaceState)
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.__SetSpaceStatusAndRefresUI = function(self, nSpaceId, eSpaceState)
-  -- function num : 0_94 , upvalues : _ENV
+function AircraftModule:__SetSpaceStatusAndRefresUI(nSpaceId, eSpaceState)
   self:__SetSpaceStatus(nSpaceId, eSpaceState)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshMainUI)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshTopbar)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshMainUI)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshTopbar)
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.SetAircraftInfo = function(self, aircraftInfo)
-  -- function num : 0_95 , upvalues : _ENV
+function AircraftModule:SetAircraftInfo(aircraftInfo)
   self._aircraftInfo = aircraftInfo
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshTopbar)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRedPoint)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshTopbar)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRedPoint)
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.HandleAircraftInfo = function(self, msg)
-  -- function num : 0_96
+function AircraftModule:HandleAircraftInfo(msg)
   self:SetAircraftInfo(msg.info)
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.HandUpdateAreaFurniture = function(self, msg)
-  -- function num : 0_97 , upvalues : _ENV
+function AircraftModule:HandUpdateAreaFurniture(msg)
   self:_UpdateFurnitureId(msg.update_furniture_info, msg.area_id)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftAreaFurnitureUpdate, msg.area_id, msg.update_furniture_info)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftAreaFurnitureUpdate, msg.area_id, msg.update_furniture_info)
 end
 
--- DECOMPILER ERROR at PC305: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.HandleSpaceInfos = function(self, msg)
-  -- function num : 0_98 , upvalues : _ENV
+function AircraftModule:HandleSpaceInfos(msg)
   self:SetSpaceInfos(msg.infos)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshMainUI)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshTopbar)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshMainUI)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshTopbar)
 end
 
--- DECOMPILER ERROR at PC308: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestCleanSpace = function(self, TT, spaceid)
-  -- function num : 0_99 , upvalues : _ENV
+function AircraftModule:RequestCleanSpace(TT, spaceid)
   return self:SpaceOperate(TT, spaceid, AircraftRoomOperation.CleanSpace)
 end
 
--- DECOMPILER ERROR at PC311: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestBuildRoom = function(self, TT, spaceid, roomid)
-  -- function num : 0_100 , upvalues : _ENV
+function AircraftModule:RequestBuildRoom(TT, spaceid, roomid)
   return self:SpaceOperate(TT, spaceid, AircraftRoomOperation.BuildRoom, {roomid})
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestCleanAndBuild = function(self, TT, spaceid, roomid)
-  -- function num : 0_101 , upvalues : _ENV
+function AircraftModule:RequestCleanAndBuild(TT, spaceid, roomid)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventAircraftCleanAndBuild)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventAircraftCleanAndBuild)
   request.space_id = spaceid
   request.room_id = roomid
   local reply = self:Call(TT, request)
@@ -1585,107 +1170,74 @@ AircraftModule.RequestCleanAndBuild = function(self, TT, spaceid, roomid)
   res:SetSucc(true)
   local replyEvent = reply.msg
   res:SetResult(replyEvent.ret)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshTopbar)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshTopbar)
   return res, reply.msg
 end
 
--- DECOMPILER ERROR at PC317: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestRoomUpgrade = function(self, TT, spaceid)
-  -- function num : 0_102 , upvalues : _ENV
+function AircraftModule:RequestRoomUpgrade(TT, spaceid)
   local result = self:SpaceOperate(TT, spaceid, AircraftRoomOperation.Upgrade)
   return result
 end
 
--- DECOMPILER ERROR at PC320: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestRoomDegrade = function(self, TT, spaceid)
-  -- function num : 0_103 , upvalues : _ENV
+function AircraftModule:RequestRoomDegrade(TT, spaceid)
   local result = self:SpaceOperate(TT, spaceid, AircraftRoomOperation.Degrade)
   return result
 end
 
--- DECOMPILER ERROR at PC323: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestEnterPet = function(self, TT, spaceid, petlist)
-  -- function num : 0_104 , upvalues : _ENV
+function AircraftModule:RequestEnterPet(TT, spaceid, petlist)
   return self:SpaceOperate(TT, spaceid, AircraftRoomOperation.ReplacePets, petlist)
 end
 
--- DECOMPILER ERROR at PC326: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestUseFireflyBuildRoom = function(self, TT, spaceid, count)
-  -- function num : 0_105 , upvalues : _ENV
+function AircraftModule:RequestUseFireflyBuildRoom(TT, spaceid, count)
   return self:SpaceOperate(TT, spaceid, AircraftRoomOperation.BuildSpeedUp, {count})
 end
 
--- DECOMPILER ERROR at PC329: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestUseFireflyUpgradeRoom = function(self, TT, spaceid, count)
-  -- function num : 0_106 , upvalues : _ENV
+function AircraftModule:RequestUseFireflyUpgradeRoom(TT, spaceid, count)
   return self:SpaceOperate(TT, spaceid, AircraftRoomOperation.UpgradeSpeedUp, {count})
 end
 
--- DECOMPILER ERROR at PC332: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestUseFireflyPurify = function(self, TT, spaceid, count)
-  -- function num : 0_107 , upvalues : _ENV
+function AircraftModule:RequestUseFireflyPurify(TT, spaceid, count)
   return self:SpaceOperate(TT, spaceid, AircraftRoomOperation.PurifySpeedUp, {count})
 end
 
--- DECOMPILER ERROR at PC335: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestCollectAsset = function(self, TT, spaceid)
-  -- function num : 0_108 , upvalues : _ENV
+function AircraftModule:RequestCollectAsset(TT, spaceid)
   return self:SpaceOperate(TT, spaceid, AircraftRoomOperation.CollectAsset)
 end
 
--- DECOMPILER ERROR at PC338: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestUseFireflyCleanSpace = function(self, TT, spaceid, count)
-  -- function num : 0_109 , upvalues : _ENV
+function AircraftModule:RequestUseFireflyCleanSpace(TT, spaceid, count)
   return self:SpaceOperate(TT, spaceid, AircraftRoomOperation.CleanSpeedUp, {count})
 end
 
--- DECOMPILER ERROR at PC341: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestUseFireflyDegradeRoom = function(self, TT, spaceid, count)
-  -- function num : 0_110 , upvalues : _ENV
+function AircraftModule:RequestUseFireflyDegradeRoom(TT, spaceid, count)
   return self:SpaceOperate(TT, spaceid, AircraftRoomOperation.DegradeSpeedUp, {count})
 end
 
--- DECOMPILER ERROR at PC344: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestCheckInOnePet = function(self, TT, spaceid, index, petid, spSpaceID, spPetIdx)
-  -- function num : 0_111 , upvalues : _ENV
+function AircraftModule:RequestCheckInOnePet(TT, spaceid, index, petid, spSpaceID, spPetIdx)
   local res = AsyncRequestRes:New()
-  local res1 = self:SpaceOperate(TT, spaceid, AircraftRoomOperation.CheckInOnePet, {index, petid, spSpaceID, spPetIdx})
+  local res1 = self:SpaceOperate(TT, spaceid, AircraftRoomOperation.CheckInOnePet, {
+    index,
+    petid,
+    spSpaceID,
+    spPetIdx
+  })
   if res1:GetSucc() then
     local res2 = self:AircraftUpdate(TT, false)
     if res2:GetSucc() then
       res:SetSucc(true)
       return res
     else
-      ;
-      (Log.error)("入住后更新风船数据失败")
+      Log.error("入住后更新风船数据失败")
     end
   else
-    do
-      ;
-      (Log.error)("入住星灵消息失败")
-      res:SetSucc(false)
-      return res
-    end
+    Log.error("入住星灵消息失败")
   end
+  res:SetSucc(false)
+  return res
 end
 
--- DECOMPILER ERROR at PC347: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.OneKeyCollectAsset = function(self, TT)
-  -- function num : 0_112 , upvalues : _ENV
+function AircraftModule:OneKeyCollectAsset(TT)
   local l_canCollectSpace = {}
-  for i,room in pairs(self._rooms) do
+  for i, room in pairs(self._rooms) do
     if room and room:CanCollect() then
       local l_space_id = room:SpaceId()
       l_canCollectSpace[#l_canCollectSpace + 1] = l_space_id
@@ -1694,37 +1246,28 @@ AircraftModule.OneKeyCollectAsset = function(self, TT)
   return self:SpaceOperate(TT, 0, AircraftRoomOperation.OneKeyCollectAsset, l_canCollectSpace)
 end
 
--- DECOMPILER ERROR at PC350: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.SpaceOperate = function(self, TT, spaceid, operation, params)
-  -- function num : 0_113 , upvalues : _ENV
+function AircraftModule:SpaceOperate(TT, spaceid, operation, params)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventAircraftRoomOperate)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventAircraftRoomOperate)
   request.space_id = spaceid
   request.option = operation
-  if not params then
-    request.operate_params = {}
-    local reply = self:Call(TT, request)
-    if reply.res ~= CallResultType.Normal then
-      res:SetSucc(false)
-      res:SetResult(-1)
-      return res
-    end
-    res:SetSucc(true)
-    local replyEvent = reply.msg
-    res:SetResult(replyEvent.ret)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshTopbar)
-    return res, reply.msg
+  request.operate_params = params or {}
+  local reply = self:Call(TT, request)
+  if reply.res ~= CallResultType.Normal then
+    res:SetSucc(false)
+    res:SetResult(-1)
+    return res
   end
+  res:SetSucc(true)
+  local replyEvent = reply.msg
+  res:SetResult(replyEvent.ret)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshTopbar)
+  return res, reply.msg
 end
 
--- DECOMPILER ERROR at PC353: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RedeemFirefly = function(self, TT, count)
-  -- function num : 0_114 , upvalues : _ENV
+function AircraftModule:RedeemFirefly(TT, count)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventAircraftRedeemFirfly)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventAircraftRedeemFirfly)
   request.physic_point = count
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -1738,23 +1281,17 @@ AircraftModule.RedeemFirefly = function(self, TT, count)
   return res
 end
 
--- DECOMPILER ERROR at PC356: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.PushViewNewFurniture = function(self, furniture_id)
-  -- function num : 0_115 , upvalues : _ENV
+function AircraftModule:PushViewNewFurniture(furniture_id)
   if furniture_id <= 0 then
-    return 
+    return
   end
-  local msg = (NetMessageFactory:GetInstance()):CreateMessage(CEventPushViewNewFurniture)
+  local msg = NetMessageFactory:GetInstance():CreateMessage(CEventPushViewNewFurniture)
   msg.furniture_item_id = furniture_id
   self:Push(msg)
 end
 
--- DECOMPILER ERROR at PC359: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.ReqFurnitureInfo = function(self, TT)
-  -- function num : 0_116 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventAircraftFurnitureInfoReq)
+function AircraftModule:ReqFurnitureInfo(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventAircraftFurnitureInfoReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return {}
@@ -1765,38 +1302,27 @@ AircraftModule.ReqFurnitureInfo = function(self, TT)
   return furnitures
 end
 
--- DECOMPILER ERROR at PC362: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule._UpdateFurnitureId = function(self, mobile_furniture_info, area_id)
-  -- function num : 0_117 , upvalues : _ENV
+function AircraftModule:_UpdateFurnitureId(mobile_furniture_info, area_id)
   if mobile_furniture_info == nil then
-    return 
+    return
   end
   if self._areaFurniture == nil or area_id == nil then
     self._areaFurniture = {}
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  if area_id ~= nil and area_id > 0 then
-    (self._areaFurniture)[area_id] = nil
+  if area_id ~= nil and 0 < area_id then
+    self._areaFurniture[area_id] = nil
   end
-  for _,value in ipairs(mobile_furniture_info) do
+  for _, value in ipairs(mobile_furniture_info) do
     local areaId = value.area_id
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R9 in 'UnsetPending'
-
-    if (self._areaFurniture)[areaId] == nil then
-      (self._areaFurniture)[areaId] = {}
+    if self._areaFurniture[areaId] == nil then
+      self._areaFurniture[areaId] = {}
     end
-    ;
-    (table.insert)((self._areaFurniture)[areaId], value)
+    table.insert(self._areaFurniture[areaId], value)
   end
 end
 
--- DECOMPILER ERROR at PC365: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.ReqUpdateAreaFurniture = function(self, TT, area_id, update_furniture_info)
-  -- function num : 0_118 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventAircraftFurnitureInfoUpReq)
+function AircraftModule:ReqUpdateAreaFurniture(TT, area_id, update_furniture_info)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventAircraftFurnitureInfoUpReq)
   request.area_id = area_id
   request.update_furniture_info = update_furniture_info
   local reply = self:Call(TT, request)
@@ -1810,29 +1336,20 @@ AircraftModule.ReqUpdateAreaFurniture = function(self, TT, area_id, update_furni
   return l_RepMsg.ret
 end
 
--- DECOMPILER ERROR at PC368: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetFurnitureList = function(self)
-  -- function num : 0_119 , upvalues : _ENV
+function AircraftModule:GetFurnitureList()
   local itemMd = self:GetModule(ItemModule)
   local furniture_list = itemMd:GetItemListBySubType(ItemSubType.ItemSubType_Furniture)
   return furniture_list
 end
 
--- DECOMPILER ERROR at PC371: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.PushLeaveAircraft = function(self, furniture_id)
-  -- function num : 0_120 , upvalues : _ENV
-  local msg = (NetMessageFactory:GetInstance()):CreateMessage(CEventAircraftLeave)
+function AircraftModule:PushLeaveAircraft(furniture_id)
+  local msg = NetMessageFactory:GetInstance():CreateMessage(CEventAircraftLeave)
   self:Push(msg)
 end
 
--- DECOMPILER ERROR at PC374: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.AircraftUpdate = function(self, TT, enter)
-  -- function num : 0_121 , upvalues : _ENV
+function AircraftModule:AircraftUpdate(TT, enter)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventAircraftUpdate)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventAircraftUpdate)
   if enter then
     request.enter = 1
   else
@@ -1850,234 +1367,122 @@ AircraftModule.AircraftUpdate = function(self, TT, enter)
   return res
 end
 
--- DECOMPILER ERROR at PC377: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetErrorMsg = function(self, errno)
-  -- function num : 0_122 , upvalues : _ENV
+function AircraftModule:GetErrorMsg(errno)
   if errno == AircraftEventResult.INVALID_SPACE_OPERATION then
-    return (StringTable.Get)("str_aircraft_invalid_space_operation")
-  else
-    if errno == AircraftEventResult.INVALID_ROOM_OPERATION then
-      return (StringTable.Get)("str_aircraft_invalid_room_operation")
-    else
-      if errno == AircraftEventResult.SPACE_NOT_FOUND then
-        return (StringTable.Get)("str_aircraft_space_not_found")
-      else
-        if errno == AircraftEventResult.AIRCRAFT_ROOM_NOT_FOUND then
-          return (StringTable.Get)("str_aircraft_aircraft_room_not_found")
-        else
-          if errno == AircraftEventResult.PET_NOT_FOUND then
-            return (StringTable.Get)("str_aircraft_pet_not_found")
-          else
-            if errno == AircraftEventResult.AIRCRAFT_ROOM_LEVEL_MAX then
-              return (StringTable.Get)("str_aircraft_aircraft_room_level_max")
-            else
-              if errno == AircraftEventResult.ASSET_NOT_ENOUGH then
-                return (StringTable.Get)("str_aircraft_asset_not_enough")
-              else
-                if errno == AircraftEventResult.STAR_POWER_NOT_ENOUGH then
-                  return (StringTable.Get)("str_aircraft_star_power_not_enough")
-                else
-                  if errno == AircraftEventResult.SPACE_NOT_CONNECTED then
-                    return (StringTable.Get)("space_not_connected")
-                  else
-                    if errno == AircraftEventResult.AIRCRAFT_ROOM_BUILDING then
-                      return (StringTable.Get)("aircraft_room_building")
-                    else
-                      if errno == AircraftEventResult.INVALID_OPERATION then
-                        return (StringTable.Get)("invalid_operation")
-                      else
-                        if errno == AircraftEventResult.BUILD_TYPE_ERROR then
-                          return (StringTable.Get)("build_type_error")
-                        else
-                          if errno == AircraftEventResult.ROOM_LEVEL_NOT_ZERO then
-                            return (StringTable.Get)("room_level_not_zero")
-                          else
-                            if errno == AircraftEventResult.SPACE_NOT_AVAILABLE then
-                              return (StringTable.Get)("str_aircraft_space_not_available")
-                            else
-                              if errno == AircraftEventResult.DESTROY_WILL_CREATE_ISLAND then
-                                return (StringTable.Get)("str_aircraft_destroy_will_create_island")
-                              else
-                                if errno == AircraftEventResult.PREVLEVEL_CANNOT_CONTAIN_EVIL then
-                                  return (StringTable.Get)("prevlevel_cannot_contain_evil")
-                                else
-                                  if errno == AircraftEventResult.CANNOT_DESTROY_EVILROOM then
-                                    return (StringTable.Get)("cannot_destroy_evilroom")
-                                  else
-                                    if errno == AircraftEventResult.PREVLEVEL_POWER_NOT_ENOUGH then
-                                      return (StringTable.Get)("prevlevel_power_not_enough")
-                                    else
-                                      if errno == AircraftEventResult.CENTRALROOM_CANNOT_DEGRADE then
-                                        return (StringTable.Get)("str_aircraft_centralroom_cannot_degrade")
-                                      else
-                                        if errno == AircraftEventResult.PET_NOT_IN_ROOM then
-                                          return (StringTable.Get)("pet_not_in_room")
-                                        else
-                                          if errno == AircraftEventResult.PET_COUNT_EXCEED_LIMIT then
-                                            return (StringTable.Get)("pet_count_exceed_limit")
-                                          else
-                                            if errno == AircraftEventResult.PURIFY_ROOM_FULL then
-                                              return (StringTable.Get)("purify_room_full")
-                                            else
-                                              if errno == AircraftEventResult.PURIFY_ROOM_EMPTY then
-                                                return (StringTable.Get)("purify_room_empty")
-                                              else
-                                                if errno == AircraftEventResult.EVIL_IS_PURIFIED then
-                                                  return (StringTable.Get)("evil_is_purified")
-                                                else
-                                                  if errno == AircraftEventResult.PURIFY_ROOM_NO_AWARD then
-                                                    return (StringTable.Get)("purify_room_no_award")
-                                                  else
-                                                    if errno == AircraftEventResult.CELL_INDEX_ERROR then
-                                                      return (StringTable.Get)("cell_index_error")
-                                                    else
-                                                      if errno == AircraftEventResult.REFRESH_INDEX_ERROR then
-                                                        return (StringTable.Get)("refresh_index_error")
-                                                      else
-                                                        if errno == AircraftEventResult.ROOM_NOT_PURIFYROOM then
-                                                          return (StringTable.Get)("room_not_purifyroom")
-                                                        else
-                                                          if errno == AircraftEventResult.ROOM_NOT_EVILROOM then
-                                                            return (StringTable.Get)("room_not_evilroom")
-                                                          else
-                                                            if errno == AircraftEventResult.CANNOT_TRACE_MORE_EVIL then
-                                                              return (StringTable.Get)("cannot_trace_more_evil")
-                                                            else
-                                                              if errno == AircraftEventResult.EVIL_IS_TRACING then
-                                                                return (StringTable.Get)("evil_is_tracing")
-                                                              else
-                                                                if errno == AircraftEventResult.NO_EVIL_TRACING then
-                                                                  return (StringTable.Get)("no_evil_tracing")
-                                                                else
-                                                                  if errno == AircraftEventResult.FIREFLY_NOT_ENOUGH then
-                                                                    return (StringTable.Get)("str_aircraft_firefly_not_enough")
-                                                                  else
-                                                                    if errno == AircraftEventResult.MOOD_NOT_ENOUGH then
-                                                                      return (StringTable.Get)("str_aircraft_mood_not_enough")
-                                                                    else
-                                                                      if errno == AircraftEventResult.BUILD_NO_NEED_SPEEDUP then
-                                                                        return (StringTable.Get)("str_aircraft_build_no_need_speedup")
-                                                                      else
-                                                                        if errno == AircraftEventResult.SPACE_STATE_CANNOT_CLEAN then
-                                                                          return (StringTable.Get)("str_aircraft_space_state_cannot_clean")
-                                                                        else
-                                                                          if errno == AircraftEventResult.ADJACENT_SPACE_NOT_STATEFULL then
-                                                                            return (StringTable.Get)("str_aircraft_adjacent_space_not_statefull")
-                                                                          else
-                                                                            if errno == AircraftEventResult.LEVEL_LIMIT then
-                                                                              return (StringTable.Get)("str_aircraft_build_room_level_limit")
-                                                                            else
-                                                                              if errno == AircraftEventResult.COUNT_LIMIT then
-                                                                                return (StringTable.Get)("str_aircraft_build_room_count_limit")
-                                                                              else
-                                                                                if errno == AircraftEventResult.ROOM_LEVEL_NOT_ZERO then
-                                                                                  return (StringTable.Get)("str_aircraft_build_room_must_1_level")
-                                                                                else
-                                                                                  if errno == AircraftEventResult.SPACE_NOT_AVAILABLE then
-                                                                                    return (StringTable.Get)("str_aircraft_space_not_available")
-                                                                                  else
-                                                                                    if errno == AircraftEventResult.NETWORK_ERROR then
-                                                                                      return (StringTable.Get)("str_common_tip_network_error")
-                                                                                    else
-                                                                                      if errno == AircraftEventResult.SAME_PET_ID_REPEAT then
-                                                                                        return (StringTable.Get)("str_aircraft_the_same_pet_enter_room")
-                                                                                      else
-                                                                                        if errno == AircraftEventResult.COLLECT_ASSET_EMPTY then
-                                                                                          return (StringTable.Get)("str_aircraft_no_object_collect")
-                                                                                        else
-                                                                                          if errno == AircraftEventResult.COLLECT_ASSET_ERROR_PHY then
-                                                                                            return (StringTable.Get)("str_physicalpower_error_phy_add_full")
-                                                                                          else
-                                                                                            if errno == AircraftEventResult.ROOM_UNKOWN_ERROR then
-                                                                                              return (StringTable.Get)("str_aircraft_error_120")
-                                                                                            else
-                                                                                              if errno == AircraftEventResult.ROOM_STATE_ERROR then
-                                                                                                return (StringTable.Get)("str_aircraft_error_121")
-                                                                                              else
-                                                                                                if errno == AircraftEventResult.SMELTROOM_OPERATE_NUM then
-                                                                                                  return (StringTable.Get)("str_aircraft_error_122")
-                                                                                                else
-                                                                                                  if errno == AircraftEventResult.SMELTROOM_CFG_NOT then
-                                                                                                    return (StringTable.Get)("str_aircraft_error_123")
-                                                                                                  else
-                                                                                                    if errno == AircraftEventResult.SMELTROOM_ITEM_NOT_ENOUGH then
-                                                                                                      return (StringTable.Get)("str_aircraft_error_124")
-                                                                                                    else
-                                                                                                      if errno == AircraftEventResult.SMELTROOM_ITEM_NOT_CONDITION then
-                                                                                                        return (StringTable.Get)("str_aircraft_error_125")
-                                                                                                      else
-                                                                                                        if errno == AircraftEventResult.FIREFLYTOATOM_OPERATE_NUM then
-                                                                                                          return (StringTable.Get)("str_aircraft_error_130")
-                                                                                                        else
-                                                                                                          if errno == AircraftEventResult.FIREFLYTOATOM_ITEM_NOT_ENOUGH then
-                                                                                                            return (StringTable.Get)("str_aircraft_error_131")
-                                                                                                          else
-                                                                                                            if errno == AircraftEventResult.AIRCRAFT_DISPATCH_TASK_STATE then
-                                                                                                              return (StringTable.Get)("str_dispatch_room_erro_code_207")
-                                                                                                            end
-                                                                                                          end
-                                                                                                        end
-                                                                                                      end
-                                                                                                    end
-                                                                                                  end
-                                                                                                end
-                                                                                              end
-                                                                                            end
-                                                                                          end
-                                                                                        end
-                                                                                      end
-                                                                                    end
-                                                                                  end
-                                                                                end
-                                                                              end
-                                                                            end
-                                                                          end
-                                                                        end
-                                                                      end
-                                                                    end
-                                                                  end
-                                                                end
-                                                              end
-                                                            end
-                                                          end
-                                                        end
-                                                      end
-                                                    end
-                                                  end
-                                                end
-                                              end
-                                            end
-                                          end
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    return StringTable.Get("str_aircraft_invalid_space_operation")
+  elseif errno == AircraftEventResult.INVALID_ROOM_OPERATION then
+    return StringTable.Get("str_aircraft_invalid_room_operation")
+  elseif errno == AircraftEventResult.SPACE_NOT_FOUND then
+    return StringTable.Get("str_aircraft_space_not_found")
+  elseif errno == AircraftEventResult.AIRCRAFT_ROOM_NOT_FOUND then
+    return StringTable.Get("str_aircraft_aircraft_room_not_found")
+  elseif errno == AircraftEventResult.PET_NOT_FOUND then
+    return StringTable.Get("str_aircraft_pet_not_found")
+  elseif errno == AircraftEventResult.AIRCRAFT_ROOM_LEVEL_MAX then
+    return StringTable.Get("str_aircraft_aircraft_room_level_max")
+  elseif errno == AircraftEventResult.ASSET_NOT_ENOUGH then
+    return StringTable.Get("str_aircraft_asset_not_enough")
+  elseif errno == AircraftEventResult.STAR_POWER_NOT_ENOUGH then
+    return StringTable.Get("str_aircraft_star_power_not_enough")
+  elseif errno == AircraftEventResult.SPACE_NOT_CONNECTED then
+    return StringTable.Get("space_not_connected")
+  elseif errno == AircraftEventResult.AIRCRAFT_ROOM_BUILDING then
+    return StringTable.Get("aircraft_room_building")
+  elseif errno == AircraftEventResult.INVALID_OPERATION then
+    return StringTable.Get("invalid_operation")
+  elseif errno == AircraftEventResult.BUILD_TYPE_ERROR then
+    return StringTable.Get("build_type_error")
+  elseif errno == AircraftEventResult.ROOM_LEVEL_NOT_ZERO then
+    return StringTable.Get("room_level_not_zero")
+  elseif errno == AircraftEventResult.SPACE_NOT_AVAILABLE then
+    return StringTable.Get("str_aircraft_space_not_available")
+  elseif errno == AircraftEventResult.DESTROY_WILL_CREATE_ISLAND then
+    return StringTable.Get("str_aircraft_destroy_will_create_island")
+  elseif errno == AircraftEventResult.PREVLEVEL_CANNOT_CONTAIN_EVIL then
+    return StringTable.Get("prevlevel_cannot_contain_evil")
+  elseif errno == AircraftEventResult.CANNOT_DESTROY_EVILROOM then
+    return StringTable.Get("cannot_destroy_evilroom")
+  elseif errno == AircraftEventResult.PREVLEVEL_POWER_NOT_ENOUGH then
+    return StringTable.Get("prevlevel_power_not_enough")
+  elseif errno == AircraftEventResult.CENTRALROOM_CANNOT_DEGRADE then
+    return StringTable.Get("str_aircraft_centralroom_cannot_degrade")
+  elseif errno == AircraftEventResult.PET_NOT_IN_ROOM then
+    return StringTable.Get("pet_not_in_room")
+  elseif errno == AircraftEventResult.PET_COUNT_EXCEED_LIMIT then
+    return StringTable.Get("pet_count_exceed_limit")
+  elseif errno == AircraftEventResult.PURIFY_ROOM_FULL then
+    return StringTable.Get("purify_room_full")
+  elseif errno == AircraftEventResult.PURIFY_ROOM_EMPTY then
+    return StringTable.Get("purify_room_empty")
+  elseif errno == AircraftEventResult.EVIL_IS_PURIFIED then
+    return StringTable.Get("evil_is_purified")
+  elseif errno == AircraftEventResult.PURIFY_ROOM_NO_AWARD then
+    return StringTable.Get("purify_room_no_award")
+  elseif errno == AircraftEventResult.CELL_INDEX_ERROR then
+    return StringTable.Get("cell_index_error")
+  elseif errno == AircraftEventResult.REFRESH_INDEX_ERROR then
+    return StringTable.Get("refresh_index_error")
+  elseif errno == AircraftEventResult.ROOM_NOT_PURIFYROOM then
+    return StringTable.Get("room_not_purifyroom")
+  elseif errno == AircraftEventResult.ROOM_NOT_EVILROOM then
+    return StringTable.Get("room_not_evilroom")
+  elseif errno == AircraftEventResult.CANNOT_TRACE_MORE_EVIL then
+    return StringTable.Get("cannot_trace_more_evil")
+  elseif errno == AircraftEventResult.EVIL_IS_TRACING then
+    return StringTable.Get("evil_is_tracing")
+  elseif errno == AircraftEventResult.NO_EVIL_TRACING then
+    return StringTable.Get("no_evil_tracing")
+  elseif errno == AircraftEventResult.FIREFLY_NOT_ENOUGH then
+    return StringTable.Get("str_aircraft_firefly_not_enough")
+  elseif errno == AircraftEventResult.MOOD_NOT_ENOUGH then
+    return StringTable.Get("str_aircraft_mood_not_enough")
+  elseif errno == AircraftEventResult.BUILD_NO_NEED_SPEEDUP then
+    return StringTable.Get("str_aircraft_build_no_need_speedup")
+  elseif errno == AircraftEventResult.SPACE_STATE_CANNOT_CLEAN then
+    return StringTable.Get("str_aircraft_space_state_cannot_clean")
+  elseif errno == AircraftEventResult.ADJACENT_SPACE_NOT_STATEFULL then
+    return StringTable.Get("str_aircraft_adjacent_space_not_statefull")
+  elseif errno == AircraftEventResult.LEVEL_LIMIT then
+    return StringTable.Get("str_aircraft_build_room_level_limit")
+  elseif errno == AircraftEventResult.COUNT_LIMIT then
+    return StringTable.Get("str_aircraft_build_room_count_limit")
+  elseif errno == AircraftEventResult.ROOM_LEVEL_NOT_ZERO then
+    return StringTable.Get("str_aircraft_build_room_must_1_level")
+  elseif errno == AircraftEventResult.SPACE_NOT_AVAILABLE then
+    return StringTable.Get("str_aircraft_space_not_available")
+  elseif errno == AircraftEventResult.NETWORK_ERROR then
+    return StringTable.Get("str_common_tip_network_error")
+  elseif errno == AircraftEventResult.SAME_PET_ID_REPEAT then
+    return StringTable.Get("str_aircraft_the_same_pet_enter_room")
+  elseif errno == AircraftEventResult.COLLECT_ASSET_EMPTY then
+    return StringTable.Get("str_aircraft_no_object_collect")
+  elseif errno == AircraftEventResult.COLLECT_ASSET_ERROR_PHY then
+    return StringTable.Get("str_physicalpower_error_phy_add_full")
+  elseif errno == AircraftEventResult.ROOM_UNKOWN_ERROR then
+    return StringTable.Get("str_aircraft_error_120")
+  elseif errno == AircraftEventResult.ROOM_STATE_ERROR then
+    return StringTable.Get("str_aircraft_error_121")
+  elseif errno == AircraftEventResult.SMELTROOM_OPERATE_NUM then
+    return StringTable.Get("str_aircraft_error_122")
+  elseif errno == AircraftEventResult.SMELTROOM_CFG_NOT then
+    return StringTable.Get("str_aircraft_error_123")
+  elseif errno == AircraftEventResult.SMELTROOM_ITEM_NOT_ENOUGH then
+    return StringTable.Get("str_aircraft_error_124")
+  elseif errno == AircraftEventResult.SMELTROOM_ITEM_NOT_CONDITION then
+    return StringTable.Get("str_aircraft_error_125")
+  elseif errno == AircraftEventResult.FIREFLYTOATOM_OPERATE_NUM then
+    return StringTable.Get("str_aircraft_error_130")
+  elseif errno == AircraftEventResult.FIREFLYTOATOM_ITEM_NOT_ENOUGH then
+    return StringTable.Get("str_aircraft_error_131")
+  elseif errno == AircraftEventResult.AIRCRAFT_DISPATCH_TASK_STATE then
+    return StringTable.Get("str_dispatch_room_erro_code_207")
   end
-  return (StringTable.Get)("str_aircraft_unkown_error") .. ":" .. errno
+  return StringTable.Get("str_aircraft_unkown_error") .. ":" .. errno
 end
 
--- DECOMPILER ERROR at PC380: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.HandleItemSmelt = function(self, TT, cfgId, num, inputIds)
-  -- function num : 0_123 , upvalues : _ENV
+function AircraftModule:HandleItemSmelt(TT, cfgId, num, inputIds)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventItemSmelt)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventItemSmelt)
   request.id = cfgId
   request.num = num
   if inputIds ~= nil then
@@ -2095,12 +1500,9 @@ AircraftModule.HandleItemSmelt = function(self, TT, cfgId, num, inputIds)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC383: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.HandleMultItemSmelt = function(self, TT, itemlist)
-  -- function num : 0_124 , upvalues : _ENV
+function AircraftModule:HandleMultItemSmelt(TT, itemlist)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventMultItemSmelt)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventMultItemSmelt)
   request.id_num_list = itemlist
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2114,12 +1516,9 @@ AircraftModule.HandleMultItemSmelt = function(self, TT, itemlist)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC386: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.HandleAIMultItemSmelt = function(self, TT, itemlist)
-  -- function num : 0_125 , upvalues : _ENV
+function AircraftModule:HandleAIMultItemSmelt(TT, itemlist)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventAIMultItemSmelt)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventAIMultItemSmelt)
   request.id_num_list = itemlist
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2133,12 +1532,9 @@ AircraftModule.HandleAIMultItemSmelt = function(self, TT, itemlist)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC389: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.HandleFireflyToAtom = function(self, TT, num)
-  -- function num : 0_126 , upvalues : _ENV
+function AircraftModule:HandleFireflyToAtom(TT, num)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventFireflyToAtom)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventFireflyToAtom)
   request.num = num
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2152,12 +1548,9 @@ AircraftModule.HandleFireflyToAtom = function(self, TT, num)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC392: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.HandleCEventDispatchSite = function(self, TT)
-  -- function num : 0_127 , upvalues : _ENV
+function AircraftModule:HandleCEventDispatchSite(TT)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventDispatchSite)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventDispatchSite)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     res:SetSucc(false)
@@ -2170,12 +1563,9 @@ AircraftModule.HandleCEventDispatchSite = function(self, TT)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC395: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.HandleCEventDispatchLook = function(self, TT)
-  -- function num : 0_128 , upvalues : _ENV
+function AircraftModule:HandleCEventDispatchLook(TT)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventDispatchLook)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventDispatchLook)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     res:SetSucc(false)
@@ -2188,12 +1578,9 @@ AircraftModule.HandleCEventDispatchLook = function(self, TT)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC398: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.HandleCEventDispatchAcceptTask = function(self, TT, siteId, pstIds)
-  -- function num : 0_129 , upvalues : _ENV
+function AircraftModule:HandleCEventDispatchAcceptTask(TT, siteId, pstIds)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventDispatchAcceptTask)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventDispatchAcceptTask)
   request.site_id = siteId
   request.team_member = pstIds
   local reply = self:Call(TT, request)
@@ -2208,12 +1595,9 @@ AircraftModule.HandleCEventDispatchAcceptTask = function(self, TT, siteId, pstId
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC401: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.HandleCEventDispatchCancelTask = function(self, TT, siteId)
-  -- function num : 0_130 , upvalues : _ENV
+function AircraftModule:HandleCEventDispatchCancelTask(TT, siteId)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventDispatchCancelTask)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventDispatchCancelTask)
   request.site_id = siteId
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2227,12 +1611,9 @@ AircraftModule.HandleCEventDispatchCancelTask = function(self, TT, siteId)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC404: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.HandleCEventDispatchTaskAward = function(self, TT, siteId)
-  -- function num : 0_131 , upvalues : _ENV
+function AircraftModule:HandleCEventDispatchTaskAward(TT, siteId)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventDispatchTaskAward)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventDispatchTaskAward)
   request.site_id = siteId
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2246,24 +1627,15 @@ AircraftModule.HandleCEventDispatchTaskAward = function(self, TT, siteId)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC407: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.SetClientMain = function(self, m)
-  -- function num : 0_132
+function AircraftModule:SetClientMain(m)
   self._aircraftMain = m
 end
 
--- DECOMPILER ERROR at PC410: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetClientMain = function(self)
-  -- function num : 0_133
+function AircraftModule:GetClientMain()
   return self._aircraftMain
 end
 
--- DECOMPILER ERROR at PC413: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.IsPetDispatch = function(self, templateId)
-  -- function num : 0_134 , upvalues : _ENV
+function AircraftModule:IsPetDispatch(templateId)
   local roomData = self:GetRoomByRoomType(AirRoomType.DispatchRoom)
   if roomData then
     return roomData:IsPetDispatch(templateId)
@@ -2271,19 +1643,18 @@ AircraftModule.IsPetDispatch = function(self, templateId)
   return false
 end
 
--- DECOMPILER ERROR at PC416: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.IsDecorateUnLocked = function(self)
-  -- function num : 0_135 , upvalues : _ENV
-  return ((GameGlobal.GetModule)(RoleModule)):CheckModuleUnlock(GameModuleID.MD_Funiture)
+function AircraftModule:IsDecorateUnLocked()
+  return GameGlobal.GetModule(RoleModule):CheckModuleUnlock(GameModuleID.MD_Funiture)
 end
 
--- DECOMPILER ERROR at PC419: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.IsAllAmusementRoomUnlock = function(self)
-  -- function num : 0_136 , upvalues : _ENV
-  local rooms = {AirRoomType.RestRoom, AirRoomType.CoffeeRoom, AirRoomType.WaterBarRoom, AirRoomType.GameRoom}
-  for i,type in pairs(rooms) do
+function AircraftModule:IsAllAmusementRoomUnlock()
+  local rooms = {
+    AirRoomType.RestRoom,
+    AirRoomType.CoffeeRoom,
+    AirRoomType.WaterBarRoom,
+    AirRoomType.GameRoom
+  }
+  for i, type in pairs(rooms) do
     local room = self:GetRoomByRoomType(type)
     if room == nil then
       return false
@@ -2295,12 +1666,9 @@ AircraftModule.IsAllAmusementRoomUnlock = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC422: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetSmeltLockInfo = function(self, cfg)
-  -- function num : 0_137 , upvalues : _ENV
+function AircraftModule:GetSmeltLockInfo(cfg)
   if cfg.Condition then
-    for _,data in ipairs(cfg.Condition) do
+    for _, data in ipairs(cfg.Condition) do
       local type = data[1]
       local param = data[2]
       if type == SmeltItemType.SIT_Mission then
@@ -2308,38 +1676,21 @@ AircraftModule.GetSmeltLockInfo = function(self, cfg)
         if not missionModule:IsPassMissionID(param) then
           return SmeltItemType.SIT_Mission, param
         end
-      else
-        do
-          do
-            if type == SmeltItemType.SIT_Lv then
-              local smeltRoom = self:GetSmeltRoom()
-              if smeltRoom == nil then
-                return SmeltItemType.SIT_Lv, param
-              else
-                if smeltRoom:Level() < param then
-                  return SmeltItemType.SIT_Lv, param
-                end
-              end
-            end
-            -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+      elseif type == SmeltItemType.SIT_Lv then
+        local smeltRoom = self:GetSmeltRoom()
+        if smeltRoom == nil then
+          return SmeltItemType.SIT_Lv, param
+        elseif param > smeltRoom:Level() then
+          return SmeltItemType.SIT_Lv, param
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC425: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestRefreshTacticRoom = function(self, TT)
-  -- function num : 0_138 , upvalues : _ENV
+function AircraftModule:RequestRefreshTacticRoom(TT)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestTacticRoomData)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestTacticRoomData)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     res:SetSucc(false)
@@ -2352,21 +1703,15 @@ AircraftModule.RequestRefreshTacticRoom = function(self, TT)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC428: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestOpenCartridgeGift = function(self, TT)
-  -- function num : 0_139 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local item_template_id = ((Cfg.cfg_aircraft_values)[AirValueID.CartridgeGiftID]).IntValue
+function AircraftModule:RequestOpenCartridgeGift(TT)
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local item_template_id = Cfg.cfg_aircraft_values[AirValueID.CartridgeGiftID].IntValue
   return itemModule:RequestUseItemByTemplateID(TT, item_template_id, 1)
 end
 
--- DECOMPILER ERROR at PC431: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestMakeCartridgeFree = function(self, TT)
-  -- function num : 0_140 , upvalues : _ENV
+function AircraftModule:RequestMakeCartridgeFree(TT)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventCartridgeFreeProduce)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventCartridgeFreeProduce)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     res:SetSucc(false)
@@ -2379,12 +1724,9 @@ AircraftModule.RequestMakeCartridgeFree = function(self, TT)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC434: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestDeleteCartridge = function(self, TT, pstid)
-  -- function num : 0_141 , upvalues : _ENV
+function AircraftModule:RequestDeleteCartridge(TT, pstid)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventDelCartridge)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventDelCartridge)
   request.pstid = pstid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2398,12 +1740,9 @@ AircraftModule.RequestDeleteCartridge = function(self, TT, pstid)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC437: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestExchangeFirefly = function(self, TT, count)
-  -- function num : 0_142 , upvalues : _ENV
+function AircraftModule:RequestExchangeFirefly(TT, count)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventCartridgeProSpeedUp)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventCartridgeProSpeedUp)
   request.firefly_count = count
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2417,12 +1756,9 @@ AircraftModule.RequestExchangeFirefly = function(self, TT, count)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC440: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestTakeWeeklyAward = function(self, TT, num)
-  -- function num : 0_143 , upvalues : _ENV
+function AircraftModule:RequestTakeWeeklyAward(TT, num)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventTakeWeeklyAward)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventTakeWeeklyAward)
   request.pass_num = num
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2436,12 +1772,9 @@ AircraftModule.RequestTakeWeeklyAward = function(self, TT, num)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC443: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestWeeklyReset = function(self, TT)
-  -- function num : 0_144 , upvalues : _ENV
+function AircraftModule:RequestWeeklyReset(TT)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventTacticWeekReset)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventTacticWeekReset)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     res:SetSucc(false)
@@ -2454,29 +1787,20 @@ AircraftModule.RequestWeeklyReset = function(self, TT)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC446: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.TacticPeakRewardedList = function(self)
-  -- function num : 0_145 , upvalues : _ENV
+function AircraftModule:TacticPeakRewardedList()
   local room = self:GetRoomByRoomType(AirRoomType.TacticRoom)
   return room:TacticPeakRewardedList()
 end
 
--- DECOMPILER ERROR at PC449: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.TacticPeakScore = function(self)
-  -- function num : 0_146 , upvalues : _ENV
+function AircraftModule:TacticPeakScore()
   local item_mod = self:GetModule(ItemModule)
-  local itemid = (Cfg.cfg_aircraft_values)[AirValueID.PeakScoreItemID]
-  return (item_mod.GetItemCount)(itemid)
+  local itemid = Cfg.cfg_aircraft_values[AirValueID.PeakScoreItemID]
+  return item_mod.GetItemCount(itemid)
 end
 
--- DECOMPILER ERROR at PC452: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.TacticPeakReward = function(self, TT, level_list)
-  -- function num : 0_147 , upvalues : _ENV
+function AircraftModule:TacticPeakReward(TT, level_list)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventTacticPeakReward)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventTacticPeakReward)
   request.level = level_list
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2487,29 +1811,21 @@ AircraftModule.TacticPeakReward = function(self, TT, level_list)
   res:SetSucc(true)
   local replyEvent = reply.msg
   res:SetResult(replyEvent.ret)
-  do
-    if replyEvent.ret == AircraftEventResult.AircraftEventResult_Succ then
-      local room = self:GetRoomByRoomType(AirRoomType.TacticRoom)
-      room:SetPeakRewardedList(replyEvent.received_peak_lv_list)
-    end
-    return res, replyEvent.received_peak_lv_list, replyEvent.award_list
+  if replyEvent.ret == AircraftEventResult.AircraftEventResult_Succ then
+    local room = self:GetRoomByRoomType(AirRoomType.TacticRoom)
+    room:SetPeakRewardedList(replyEvent.received_peak_lv_list)
   end
+  return res, replyEvent.received_peak_lv_list, replyEvent.award_list
 end
 
--- DECOMPILER ERROR at PC455: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetThemeList = function(self)
-  -- function num : 0_148 , upvalues : _ENV
+function AircraftModule:GetThemeList()
   local room = self:GetRoomByRoomType(AirRoomType.TacticRoom)
   return room:GetThemeList()
 end
 
--- DECOMPILER ERROR at PC458: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.TacticUnlockTheme = function(self, TT, themeid)
-  -- function num : 0_149 , upvalues : _ENV
+function AircraftModule:TacticUnlockTheme(TT, themeid)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventTacticUnlockTheme)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventTacticUnlockTheme)
   request.themeid = themeid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -2520,21 +1836,16 @@ AircraftModule.TacticUnlockTheme = function(self, TT, themeid)
   res:SetSucc(true)
   local replyEvent = reply.msg
   res:SetResult(replyEvent.ret)
-  do
-    if replyEvent.ret == AircraftEventResult.AircraftEventResult_Succ then
-      local room = self:GetRoomByRoomType(AirRoomType.TacticRoom)
-      room:SetThemeList(replyEvent.theme_list)
-    end
-    return res, replyEvent.theme_list
+  if replyEvent.ret == AircraftEventResult.AircraftEventResult_Succ then
+    local room = self:GetRoomByRoomType(AirRoomType.TacticRoom)
+    room:SetThemeList(replyEvent.theme_list)
   end
+  return res, replyEvent.theme_list
 end
 
--- DECOMPILER ERROR at PC461: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.TacticGetInformation = function(self, TT, themeid, infoid)
-  -- function num : 0_150 , upvalues : _ENV
+function AircraftModule:TacticGetInformation(TT, themeid, infoid)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventTacticGetInformation)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventTacticGetInformation)
   request.themeid = themeid
   request.infoid = infoid
   local reply = self:Call(TT, request)
@@ -2546,27 +1857,22 @@ AircraftModule.TacticGetInformation = function(self, TT, themeid, infoid)
   res:SetSucc(true)
   local replyEvent = reply.msg
   res:SetResult(replyEvent.ret)
-  do
-    if replyEvent.ret == AircraftEventResult.AircraftEventResult_Succ then
-      local room = self:GetRoomByRoomType(AirRoomType.TacticRoom)
-      room:SetThemeList(replyEvent.theme_list)
-    end
-    return res, replyEvent.theme_list
+  if replyEvent.ret == AircraftEventResult.AircraftEventResult_Succ then
+    local room = self:GetRoomByRoomType(AirRoomType.TacticRoom)
+    room:SetThemeList(replyEvent.theme_list)
   end
+  return res, replyEvent.theme_list
 end
 
--- DECOMPILER ERROR at PC464: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.UI_TopRankRed = function(self)
-  -- function num : 0_151 , upvalues : _ENV
+function AircraftModule:UI_TopRankRed()
   local passList = self:TacticPeakRewardedList()
   local currentLv = self:UI_TopRankCurrentLv()
-  local cfg_top_rank = (Cfg.cfg_peak)({})
+  local cfg_top_rank = Cfg.cfg_peak({})
   local red = false
   for i = 1, #cfg_top_rank do
     local cfg = cfg_top_rank[i]
     if i <= currentLv then
-      if cfg.Award and not (table.icontains)(passList, i) then
+      if cfg.Award and not table.icontains(passList, i) then
         red = true
         break
       end
@@ -2574,49 +1880,36 @@ AircraftModule.UI_TopRankRed = function(self)
       break
     end
   end
-  do
-    return red
-  end
+  return red
 end
 
--- DECOMPILER ERROR at PC467: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.UI_TopRankCurrentLv = function(self)
-  -- function num : 0_152 , upvalues : _ENV
-  local expID = ((Cfg.cfg_aircraft_values)[36]).IntValue
+function AircraftModule:UI_TopRankCurrentLv()
+  local expID = Cfg.cfg_aircraft_values[36].IntValue
   if not expID then
-    (Log.error)("###[AircraftModule] Cfg.cfg_aircraft_values[36].IntValue is nil !")
+    Log.error("###[AircraftModule] Cfg.cfg_aircraft_values[36].IntValue is nil !")
   end
-  local exp = ((GameGlobal.GetModule)(RoleModule)):GetAssetCount(expID)
+  local exp = GameGlobal.GetModule(RoleModule):GetAssetCount(expID)
   return self:GetLvByExp(exp)
 end
 
--- DECOMPILER ERROR at PC470: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetLvByExp = function(self, exp)
-  -- function num : 0_153 , upvalues : _ENV
-  local cfg_top_rank = (Cfg.cfg_peak)({})
+function AircraftModule:GetLvByExp(exp)
+  local cfg_top_rank = Cfg.cfg_peak({})
   local _lv = 0
   for i = 1, #cfg_top_rank do
     local cfg_unit = cfg_top_rank[i]
-    if cfg_unit.Exp <= exp then
+    if exp >= cfg_unit.Exp then
       _lv = i
     else
       break
     end
   end
-  do
-    return _lv
-  end
+  return _lv
 end
 
--- DECOMPILER ERROR at PC473: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.UI_DB_one_node_red = function(self, nodeid)
-  -- function num : 0_154 , upvalues : _ENV
+function AircraftModule:UI_DB_one_node_red(nodeid)
   local red = false
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
-  local cfg = (Cfg.cfg_tactical_db_theme)[nodeid]
+  local roleModule = GameGlobal.GetModule(RoleModule)
+  local cfg = Cfg.cfg_tactical_db_theme[nodeid]
   local nodePassList = self:GetThemeList()
   if nodePassList[nodeid] then
     local nodeData = nodePassList[nodeid]
@@ -2625,11 +1918,11 @@ AircraftModule.UI_DB_one_node_red = function(self, nodeid)
     local lessInfoList = {}
     for i = 1, #infoList do
       local infoid = infoList[i]
-      if not (table.icontains)(nodePassInfos, infoid) then
-        (table.insert)(lessInfoList, infoid)
+      if not table.icontains(nodePassInfos, infoid) then
+        table.insert(lessInfoList, infoid)
       end
     end
-    if #lessInfoList > 0 then
+    if 0 < #lessInfoList then
       for i = 1, #lessInfoList do
         local infoid = lessInfoList[i]
         local enough = self:GetInfoMatEnough(infoid)
@@ -2638,108 +1931,81 @@ AircraftModule.UI_DB_one_node_red = function(self, nodeid)
           break
         end
       end
-    else
-      do
-        do
-          if not nodeData.rewarded then
+    elseif not nodeData.rewarded then
+      red = true
+    end
+  else
+    local preIDs = cfg.PreThemeID
+    if preIDs then
+      local allIn = true
+      local oneNodeUnLock = false
+      for i = 1, #preIDs do
+        local preid = preIDs[i]
+        local cfg_pre = Cfg.cfg_tactical_db_theme[preid]
+        local pre_infos = cfg_pre.InfoIDList
+        local preNodeData = nodePassList[preid]
+        if preNodeData then
+          local pre_unlock_infos = preNodeData.unlock_info_list
+          local allInfoUnLock = true
+          for j = 1, #pre_infos do
+            local infoid = pre_infos[j]
+            if not table.icontains(pre_unlock_infos, infoid) then
+              allInfoUnLock = false
+              break
+            end
+          end
+          if allInfoUnLock then
+            oneNodeUnLock = true
+            break
+          end
+        end
+      end
+      if oneNodeUnLock then
+        local infoList = cfg.InfoIDList
+        for i = 1, #infoList do
+          local infoid = infoList[i]
+          local enough = self:GetInfoMatEnough(infoid)
+          if enough then
             red = true
           end
-          local preIDs = cfg.PreThemeID
-          if preIDs then
-            local allIn = true
-            local oneNodeUnLock = false
-            for i = 1, #preIDs do
-              local preid = preIDs[i]
-              local cfg_pre = (Cfg.cfg_tactical_db_theme)[preid]
-              local pre_infos = cfg_pre.InfoIDList
-              local preNodeData = nodePassList[preid]
-              if preNodeData then
-                local pre_unlock_infos = preNodeData.unlock_info_list
-                local allInfoUnLock = true
-                for j = 1, #pre_infos do
-                  local infoid = pre_infos[j]
-                  if not (table.icontains)(pre_unlock_infos, infoid) then
-                    allInfoUnLock = false
-                    break
-                  end
-                end
-                do
-                  do
-                    if allInfoUnLock then
-                      oneNodeUnLock = true
-                      break
-                    end
-                    -- DECOMPILER ERROR at PC95: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC95: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC95: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
-              end
-            end
-            if oneNodeUnLock then
-              local infoList = cfg.InfoIDList
-              for i = 1, #infoList do
-                local infoid = infoList[i]
-                local enough = self:GetInfoMatEnough(infoid)
-                if enough then
-                  red = true
-                end
-              end
-            end
-          else
-            do
-              local infoList = cfg.InfoIDList
-              for i = 1, #infoList do
-                local infoid = infoList[i]
-                local enough = self:GetInfoMatEnough(infoid)
-                if enough then
-                  red = true
-                end
-              end
-              do
-                return red
-              end
-            end
-          end
+        end
+      end
+    else
+      local infoList = cfg.InfoIDList
+      for i = 1, #infoList do
+        local infoid = infoList[i]
+        local enough = self:GetInfoMatEnough(infoid)
+        if enough then
+          red = true
         end
       end
     end
   end
+  return red
 end
 
--- DECOMPILER ERROR at PC476: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetInfoMatEnough = function(self, infoid)
-  -- function num : 0_155 , upvalues : _ENV
-  local cfg_info = (Cfg.cfg_tactical_db_info)[infoid]
+function AircraftModule:GetInfoMatEnough(infoid)
+  local cfg_info = Cfg.cfg_tactical_db_info[infoid]
   local unlocklist = cfg_info.UnlockItemList
   local enough = true
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   for j = 1, #unlocklist do
     local asset = unlocklist[j]
     local assetid = asset[1]
     local count = asset[2]
     local haveCount = roleModule:GetAssetCount(assetid)
-    if haveCount < count then
+    if count > haveCount then
       enough = false
       break
     end
   end
-  do
-    return enough
-  end
+  return enough
 end
 
--- DECOMPILER ERROR at PC479: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.CheckOneNodeOpen = function(self, nodeid)
-  -- function num : 0_156 , upvalues : _ENV
-  local cfg = (Cfg.cfg_tactical_db_theme)[nodeid]
+function AircraftModule:CheckOneNodeOpen(nodeid)
+  local cfg = Cfg.cfg_tactical_db_theme[nodeid]
   if not cfg then
-    (Log.error)("###[AircraftModule] cfg_tactical_db_theme is nil ! id --> ", nodeid)
+    Log.error("###[AircraftModule] cfg_tactical_db_theme is nil ! id --> ", nodeid)
   end
   local open = false
   local nodePassList = self:GetThemeList()
@@ -2753,7 +2019,7 @@ AircraftModule.CheckOneNodeOpen = function(self, nodeid)
         local onePreIdPass = false
         for i = 1, #preids do
           local preid = preids[i]
-          local cfg_pre = (Cfg.cfg_tactical_db_theme)[preid]
+          local cfg_pre = Cfg.cfg_tactical_db_theme[preid]
           local pre_infos = cfg_pre.InfoIDList
           local preNodeData = nodePassList[preid]
           if preNodeData then
@@ -2761,23 +2027,13 @@ AircraftModule.CheckOneNodeOpen = function(self, nodeid)
             local allInfoUnLock = true
             for j = 1, #pre_infos do
               local infoid = pre_infos[j]
-              if not (table.icontains)(pre_unlock_infos, infoid) then
+              if not table.icontains(pre_unlock_infos, infoid) then
                 allInfoUnLock = false
                 break
               end
             end
-            do
-              do
-                if allInfoUnLock then
-                  onePreIdPass = true
-                end
-                -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
+            if allInfoUnLock then
+              onePreIdPass = true
             end
           end
         end
@@ -2785,72 +2041,48 @@ AircraftModule.CheckOneNodeOpen = function(self, nodeid)
           open = true
         end
       else
-        do
-          do
-            do
-              local allPreIdPass = true
-              for i = 1, #preids do
-                local preid = preids[i]
-                local cfg_pre = (Cfg.cfg_tactical_db_theme)[preid]
-                local pre_infos = cfg_pre.InfoIDList
-                local preNodeData = nodePassList[preid]
-                if preNodeData then
-                  local pre_unlock_infos = preNodeData.unlock_info_list
-                  local allInfoUnLock = true
-                  for j = 1, #pre_infos do
-                    local infoid = pre_infos[j]
-                    if not (table.icontains)(pre_unlock_infos, infoid) then
-                      allInfoUnLock = false
-                      break
-                    end
-                  end
-                  do
-                    if allInfoUnLock then
-                      do
-                        do
-                          allPreIdPass = false
-                          do break end
-                          allPreIdPass = false
-                          do break end
-                          -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_STMT
-
-                        end
-                      end
-                    end
-                  end
-                end
+        local allPreIdPass = true
+        for i = 1, #preids do
+          local preid = preids[i]
+          local cfg_pre = Cfg.cfg_tactical_db_theme[preid]
+          local pre_infos = cfg_pre.InfoIDList
+          local preNodeData = nodePassList[preid]
+          if preNodeData then
+            local pre_unlock_infos = preNodeData.unlock_info_list
+            local allInfoUnLock = true
+            for j = 1, #pre_infos do
+              local infoid = pre_infos[j]
+              if not table.icontains(pre_unlock_infos, infoid) then
+                allInfoUnLock = false
+                break
               end
-              if allPreIdPass then
-                open = true
-              else
-                open = false
-              end
-              open = true
-              return open
             end
+            if allInfoUnLock then
+            else
+              allPreIdPass = false
+              break
+            end
+          else
+            allPreIdPass = false
+            break
           end
         end
+        if allPreIdPass then
+          open = true
+        else
+          open = false
+        end
       end
+    else
+      open = true
     end
   end
+  return open
 end
 
--- DECOMPILER ERROR at PC482: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.UI_DB_all_node_red = function(self)
-  -- function num : 0_157 , upvalues : _ENV
+function AircraftModule:UI_DB_all_node_red()
   local red = false
-  local cfgs = (Cfg.cfg_tactical_db_theme)({})
+  local cfgs = Cfg.cfg_tactical_db_theme({})
   local nodePassList = self:GetThemeList()
   for i = 1, #cfgs do
     local cfg = cfgs[i]
@@ -2864,47 +2096,35 @@ AircraftModule.UI_DB_all_node_red = function(self)
           break
         end
       end
-    end
-    do
-      if preIn then
-        local nodeid = cfg.ID
-        do
-          local oneRed = self:UI_DB_one_node_red(nodeid)
-          if oneRed then
-            red = true
-            break
-          end
-          -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+      if not preIn then
+        break
       end
+    end
+    local nodeid = cfg.ID
+    local oneRed = self:UI_DB_one_node_red(nodeid)
+    if oneRed then
+      red = true
+      break
     end
   end
   return red
 end
 
--- DECOMPILER ERROR at PC485: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetCartridgeMatchParam = function(self, select_hard_id, select_cartridge_pstid)
-  -- function num : 0_158 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function AircraftModule:GetCartridgeMatchParam(select_hard_id, select_cartridge_pstid)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local item = itemModule:FindItem(select_cartridge_pstid)
   local cartridge_tpl_id = item:GetTemplateID()
-  local n_matchComID = ((Cfg.cfg_item_cartridge)[cartridge_tpl_id]).MatchComId
-  local l_paramKeyMap = {[ECampaignMissionParamKey.ECampaignMissionParamKey_CSHardId] = select_hard_id, [ECampaignMissionParamKey.ECampaignMissionParamKey_CartridgePstId] = select_cartridge_pstid}
+  local n_matchComID = Cfg.cfg_item_cartridge[cartridge_tpl_id].MatchComId
+  local l_paramKeyMap = {
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_CSHardId] = select_hard_id,
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_CartridgePstId] = select_cartridge_pstid
+  }
   return n_matchComID, l_paramKeyMap
 end
 
--- DECOMPILER ERROR at PC488: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestTacticFormationInfo = function(self, TT)
-  -- function num : 0_159 , upvalues : _ENV
+function AircraftModule:RequestTacticFormationInfo(TT)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventGetTacticFormationInfo)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventGetTacticFormationInfo)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     res:SetSucc(false)
@@ -2916,12 +2136,9 @@ AircraftModule.RequestTacticFormationInfo = function(self, TT)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC491: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.RequestChangeTacticFormationInfo = function(self, TT, formation_id, name, pet_list)
-  -- function num : 0_160 , upvalues : _ENV
+function AircraftModule:RequestChangeTacticFormationInfo(TT, formation_id, name, pet_list)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventChangeTacticFormationInfo)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventChangeTacticFormationInfo)
   request.id = formation_id
   request.name = name
   request.pet_list = pet_list
@@ -2937,31 +2154,22 @@ AircraftModule.RequestChangeTacticFormationInfo = function(self, TT, formation_i
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC494: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.IsAircraftCartridgeMission = function(self, nComID)
-  -- function num : 0_161 , upvalues : _ENV
+function AircraftModule:IsAircraftCartridgeMission(nComID)
   if nComID == ECampaignMissionComponentId.ECampaignMissionComponentId_AircraftNormal or nComID == ECampaignMissionComponentId.ECampaignMissionComponentId_AircraftBlackfist then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC497: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftModule.GetSwitchOpenState = function(self, spaceid)
-  -- function num : 0_162 , upvalues : _ENV
-  local openTimeStr = ((Cfg.cfg_aircraft_space)[spaceid]).UnlockTime
+function AircraftModule:GetSwitchOpenState(spaceid)
+  local openTimeStr = Cfg.cfg_aircraft_space[spaceid].UnlockTime
   if not openTimeStr then
-    (Log.fatal)("该空间没有开启条件:", spaceid)
+    Log.fatal("该空间没有开启条件:", spaceid)
     return false
   end
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local openTime = loginModule:GetTimeStampByTimeStr(openTimeStr, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local svrTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  do return openTime <= svrTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local svrTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  return openTime <= svrTime
 end
-
-

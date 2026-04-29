@@ -1,33 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/gronru_game/mission/ui_n28_gronru_game_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28GronruGameRewardItem", UICustomWidget)
 UIN28GronruGameRewardItem = UIN28GronruGameRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28GronruGameRewardItem.Constructor = function(self)
-  -- function num : 0_0
+function UIN28GronruGameRewardItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN28GronruGameRewardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameRewardItem.OnHide = function(self)
-  -- function num : 0_2
+function UIN28GronruGameRewardItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameRewardItem.SetData = function(self, entieId, data, stage, cfg, atlas, manager)
-  -- function num : 0_3
+function UIN28GronruGameRewardItem:SetData(entieId, data, stage, cfg, atlas, manager)
   self._entieId = entieId
   self._data = data
   self._stage = stage
@@ -37,10 +21,7 @@ UIN28GronruGameRewardItem.SetData = function(self, entieId, data, stage, cfg, at
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameRewardItem.InitWidget = function(self)
-  -- function num : 0_4
+function UIN28GronruGameRewardItem:InitWidget()
   self._headImg = self:GetUIComponent("Image", "Head")
   self._countText = self:GetUIComponent("Image", "Count")
   self._countText1 = self:GetUIComponent("Image", "Count1")
@@ -50,54 +31,32 @@ UIN28GronruGameRewardItem.InitWidget = function(self)
   self._cantgetBtn = self:GetGameObject("ContGet")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameRewardItem.Flush = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if not (self._cfg).KillNum or (self._cfg).KillBossNum <= 0 or not (self._cfg).KillBossNum then
-    local num = (self._cfg).KillNum
-  end
-  local a, b = (math.floor)(num * 0.1), num % 10
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._countText).sprite = (self._atlas):GetSprite("N28_yrj_junei_nub" .. a)
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._countText1).sprite = (self._atlas):GetSprite("N28_yrj_junei_nub" .. b)
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._headImg).sprite = (self._atlas):GetSprite((self._cfg).Icon)
-  ;
-  (self._getBtn):SetActive(self:_CheckState() == 1)
-  ;
-  (self._gotBtn):SetActive(self:_CheckState() == 2)
-  ;
-  (self._cantgetBtn):SetActive(self._data == nil or self:_CheckState() == 0)
-  if (self._cfg).Rewards then
-    local widgets = (self._rewards):SpawnObjects("UIN28GronruItem", #(self._cfg).Rewards)
-    for i,v in ipairs((self._cfg).Rewards) do
+function UIN28GronruGameRewardItem:Flush()
+  local num = self._cfg.KillNum and self._cfg.KillBossNum > 0 and self._cfg.KillBossNum or self._cfg.KillNum
+  local a, b = math.floor(num * 0.1), num % 10
+  self._countText.sprite = self._atlas:GetSprite("N28_yrj_junei_nub" .. a)
+  self._countText1.sprite = self._atlas:GetSprite("N28_yrj_junei_nub" .. b)
+  self._headImg.sprite = self._atlas:GetSprite(self._cfg.Icon)
+  self._getBtn:SetActive(self:_CheckState() == 1)
+  self._gotBtn:SetActive(self:_CheckState() == 2)
+  self._cantgetBtn:SetActive(self._data == nil or self:_CheckState() == 0)
+  if self._cfg.Rewards then
+    local widgets = self._rewards:SpawnObjects("UIN28GronruItem", #self._cfg.Rewards)
+    for i, v in ipairs(self._cfg.Rewards) do
       local rew = {}
       rew.assetid = v[1]
       rew.count = v[2]
-      ;
-      (widgets[i]):Flush(rew, self._atlas)
+      widgets[i]:Flush(rew, self._atlas)
     end
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameRewardItem._CheckState = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN28GronruGameRewardItem:_CheckState()
   local state = 0
   if not self._data then
     return state
   end
-  for key,value in pairs((self._data).enties_list) do
+  for key, value in pairs(self._data.enties_list) do
     if key == self._entieId then
       return value
     end
@@ -105,29 +64,17 @@ UIN28GronruGameRewardItem._CheckState = function(self)
   return state
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameRewardItem.GetOnClick = function(self, go)
-  -- function num : 0_7
+function UIN28GronruGameRewardItem:GetOnClick(go)
   if not self._data then
-    return 
+    return
   end
-  ;
-  (self._manager):RecieveRewards((self._stage).CampaignMissionId, self._entieId)
+  self._manager:RecieveRewards(self._stage.CampaignMissionId, self._entieId)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameRewardItem.ContGetOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  (ToastManager.ShowToast)((StringTable.Get)("str_n28_gronru_minigame_cantgetreward_tip"))
+function UIN28GronruGameRewardItem:ContGetOnClick(go)
+  ToastManager.ShowToast(StringTable.Get("str_n28_gronru_minigame_cantgetreward_tip"))
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameRewardItem.GotOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  (ToastManager.ShowToast)((StringTable.Get)("str_n28_gronru_minigame_gotreward_tip"))
+function UIN28GronruGameRewardItem:GotOnClick(go)
+  ToastManager.ShowToast(StringTable.Get("str_n28_gronru_minigame_gotreward_tip"))
 end
-
-

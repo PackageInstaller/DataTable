@@ -1,72 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/ui_medal_group_list/ui_medal_group_list_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalGroupListController", UIController)
 UIMedalGroupListController = UIMedalGroupListController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalGroupListController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local medalModule = (GameGlobal.GetModule)(MedalModule)
+function UIMedalGroupListController:Constructor()
+  local medalModule = GameGlobal.GetModule(MedalModule)
   local medalBgList = medalModule:GetMedalBoardVec()
   self.medalBgdata = UIMedalBgListData:New()
-  ;
-  (self.medalBgdata):Init(medalBgList)
-  self.medalData = (UIMedalListData.New)()
-  ;
-  (self.medalData):Init(medalModule:GetMedalVec())
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
-  self.medalModule = (GameGlobal.GetModule)(MedalModule)
-  self.editData = (self.medalModule):GetN22MedalEditData()
+  self.medalBgdata:Init(medalBgList)
+  self.medalData = UIMedalListData.New()
+  self.medalData:Init(medalModule:GetMedalVec())
+  self._itemModule = GameGlobal.GetModule(ItemModule)
+  self.medalModule = GameGlobal.GetModule(MedalModule)
+  self.editData = self.medalModule:GetN22MedalEditData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIMedalGroupListController:OnShow(uiParams)
   self._openID = uiParams[1]
   self:InitWidget()
   self:GetMedalBoardVal()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMedalGroupListController:OnValue()
   self:InitScrollView()
   self._curIdx = 1
   if self._openID then
-    (Log.debug)("###[UIMedalGroupListController] have open id :", self._openID)
+    Log.debug("###[UIMedalGroupListController] have open id :", self._openID)
     if self._data and next(self._data) then
-      for index,value in ipairs(self._data) do
+      for index, value in ipairs(self._data) do
         if value.ID == self._openID then
           self._curIdx = index
-          ;
-          (Log.debug)("###[UIMedalGroupListController] set open idx :", self._curIdx)
+          Log.debug("###[UIMedalGroupListController] set open idx :", self._curIdx)
           break
         end
       end
     end
   end
-  do
-    self._curData = (self._data)[self._curIdx]
-    self:_ReflashRight()
-    self:_ReflashMedalList()
-  end
+  self._curData = self._data[self._curIdx]
+  self:_ReflashRight()
+  self:_ReflashMedalList()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.GetMedalBoardVal = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_item_medal_group)({})
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local svrTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
+function UIMedalGroupListController:GetMedalBoardVal()
+  local cfgs = Cfg.cfg_item_medal_group({})
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local svrTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
   self._data = {}
-  for key,value in pairs(cfgs) do
+  for key, value in pairs(cfgs) do
     local insert = true
     if not GameSingle and value.UnLockTime then
       local type = value.TimeTransform
@@ -79,29 +58,16 @@ UIMedalGroupListController.GetMedalBoardVal = function(self)
         insert = false
       end
     end
-    do
-      do
-        if insert then
-          (table.insert)(self._data, value)
-        end
-        -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if insert then
+      table.insert(self._data, value)
     end
   end
-  ;
-  (table.sort)(self._data, function(a, b)
-    -- function num : 0_3_0
-    do return a.Sort < b.Sort end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._data, function(a, b)
+    return a.Sort < b.Sort
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.InitWidget = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMedalGroupListController:InitWidget()
   self.topTitle = self:GetUIComponent("UILocalizationText", "topTitle")
   self.topInfo1 = self:GetUIComponent("UILocalizationText", "topInfo1")
   self.topInfo2 = self:GetUIComponent("UILocalizationText", "topInfo2")
@@ -118,64 +84,46 @@ UIMedalGroupListController.InitWidget = function(self)
   self._anim = self:GetUIComponent("Animation", "safeArea")
   local topButton = self:GetUIComponent("UISelectObjectPath", "topbtn")
   self.topButtonWidget = topButton:SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_4_0 , upvalues : self
+  self.topButtonWidget:SetData(function()
     self:CloseDialog()
-  end
-)
+  end)
   self._bg_collect = self:GetUIComponent("UILocalizationText", "bg_collect")
   self._medal_collect = self:GetUIComponent("UILocalizationText", "medal_collect")
   self._collectView = self:GetGameObject("collectView")
   self._medalPool = self:GetUIComponent("UISelectObjectPath", "medalPool")
-  self._bgWidth = ((self.preImgRect).rect).width
+  self._bgWidth = self.preImgRect.rect.width
   self.atlas = self:GetAsset("UIMedal.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.InitScrollView = function(self)
-  -- function num : 0_5
-  (self.scrollViewContent):SpawnObjects("UIMedalGroupListItem", #self._data)
-  local pools = (self.scrollViewContent):GetAllSpawnList()
+function UIMedalGroupListController:InitScrollView()
+  self.scrollViewContent:SpawnObjects("UIMedalGroupListItem", #self._data)
+  local pools = self.scrollViewContent:GetAllSpawnList()
   for i = 1, #pools do
     local item = pools[i]
-    local data = (self._data)[i]
+    local data = self._data[i]
     item:SetData(i, data, function(idx)
-    -- function num : 0_5_0 , upvalues : self
-    self:OnItemClicked(idx)
-  end
-)
+      self:OnItemClicked(idx)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.OnItemClicked = function(self, idx)
-  -- function num : 0_6
+function UIMedalGroupListController:OnItemClicked(idx)
   self._curIdx = idx
-  self._curData = (self._data)[self._curIdx]
+  self._curData = self._data[self._curIdx]
   self:_ReflashRight()
   self:_ReflashMedalList()
-  ;
-  (self._anim):Play("uieff_UIMedalBgListController_switch")
+  self._anim:Play("uieff_UIMedalBgListController_switch")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController._ReflashMedalList = function(self)
-  -- function num : 0_7
-  local pools = (self.scrollViewContent):GetAllSpawnList()
+function UIMedalGroupListController:_ReflashMedalList()
+  local pools = self.scrollViewContent:GetAllSpawnList()
   for i = 1, #pools do
     local item = pools[i]
     item:Select(self._curIdx)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController._ReflashRight = function(self)
-  -- function num : 0_8
+function UIMedalGroupListController:_ReflashRight()
   self:CollectStatus()
   self:TextInfo()
   self:MedalGroupNum()
@@ -183,178 +131,119 @@ UIMedalGroupListController._ReflashRight = function(self)
   self:ShowMedal()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.TextInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self.contentTitle):SetText((StringTable.Get)((self._curData).Title))
-  ;
-  (self.contentInfo):SetText((StringTable.Get)((self._curData).Des))
-  ;
-  (self.contentGet):RefreshText((StringTable.Get)((self._curData).GetWay))
+function UIMedalGroupListController:TextInfo()
+  self.contentTitle:SetText(StringTable.Get(self._curData.Title))
+  self.contentInfo:SetText(StringTable.Get(self._curData.Des))
+  self.contentGet:RefreshText(StringTable.Get(self._curData.GetWay))
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.MedalGroupNum = function(self)
-  -- function num : 0_10
+function UIMedalGroupListController:MedalGroupNum()
   local collectNum = 0
   for i = 1, #self._data do
-    local collect = self:CheckGroupCollect((self._data)[i])
+    local collect = self:CheckGroupCollect(self._data[i])
     if collect then
       collectNum = collectNum + 1
     end
   end
-  ;
-  (self.topInfo1):SetText(collectNum)
-  ;
-  (self.topInfo2):SetText("/" .. #self._data)
+  self.topInfo1:SetText(collectNum)
+  self.topInfo2:SetText("/" .. #self._data)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.MedalBgIcon = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local boardid = (self._curData).BoardID
-  local boardIconHD = (UIN22MedalEdit.GetMedalBoardBgHd)(boardid)
-  ;
-  (self.preImg):LoadImage(boardIconHD)
+function UIMedalGroupListController:MedalBgIcon()
+  local boardid = self._curData.BoardID
+  local boardIconHD = UIN22MedalEdit.GetMedalBoardBgHd(boardid)
+  self.preImg:LoadImage(boardIconHD)
   local collect = self:CheckBgCollect(self._curData)
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not collect or not Color(1, 1, 1, 1) then
-    (self.preRawImage).color = Color(1, 1, 1, 0.5)
-  end
+  self.preRawImage.color = collect and Color(1, 1, 1, 1) or Color(1, 1, 1, 0.5)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.BgCollectNum = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local boardid = (self._curData).BoardID
-  local items = (self._itemModule):GetItemByTempId(boardid)
-  if items then
-    local have = next(items)
-  end
+function UIMedalGroupListController:BgCollectNum()
+  local boardid = self._curData.BoardID
+  local items = self._itemModule:GetItemByTempId(boardid)
+  local have = items and next(items)
   local haveCount = have and 1 or 0
   local allCount = 1
   if GameSingle then
     haveCount = allCount
   end
-  ;
-  (self._bg_collect):SetText(haveCount .. "/" .. allCount)
+  self._bg_collect:SetText(haveCount .. "/" .. allCount)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.MedalCollectNum = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local medals = (self._curData).MedalIDList
+function UIMedalGroupListController:MedalCollectNum()
+  local medals = self._curData.MedalIDList
   local allCount = #medals
   local haveCount = 0
-  for key,value in pairs(medals) do
+  for key, value in pairs(medals) do
     local medalid = value[1]
-    local items = (self._itemModule):GetItemByTempId(medalid)
-    if items then
-      local have = next(items)
-    end
+    local items = self._itemModule:GetItemByTempId(medalid)
+    local have = items and next(items)
     if have then
       haveCount = haveCount + 1
     end
   end
-  ;
-  (self._medal_collect):SetText(haveCount .. "/" .. allCount)
+  self._medal_collect:SetText(haveCount .. "/" .. allCount)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.CollectStatus = function(self)
-  -- function num : 0_14
+function UIMedalGroupListController:CollectStatus()
   self:BgCollectNum()
   self:MedalCollectNum()
   local finish = self:CheckGroupCollect(self._curData)
-  ;
-  (self._collectView):SetActive(finish)
+  self._collectView:SetActive(finish)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.CheckGroupCollect = function(self, data)
-  -- function num : 0_15
+function UIMedalGroupListController:CheckGroupCollect(data)
   local bg_collect = self:CheckBgCollect(data)
   local medalList_collect = self:CheckMedalListCollect(data)
-  return not bg_collect or medalList_collect
+  return bg_collect and medalList_collect
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.CheckBgCollect = function(self, data)
-  -- function num : 0_16 , upvalues : _ENV
+function UIMedalGroupListController:CheckBgCollect(data)
   local boardid = data.BoardID
-  local bg_items = (self._itemModule):GetItemByTempId(boardid)
-  if bg_items then
-    local bg_have = next(bg_items)
-  end
+  local bg_items = self._itemModule:GetItemByTempId(boardid)
+  local bg_have = bg_items and next(bg_items)
   local bg_haveCount = bg_have and 1 or 0
   local bg_allCount = 1
-  do return bg_allCount <= bg_haveCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return bg_haveCount >= bg_allCount
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.CheckMedalCollect = function(self, id)
-  -- function num : 0_17 , upvalues : _ENV
-  local items = (self._itemModule):GetItemByTempId(id)
+function UIMedalGroupListController:CheckMedalCollect(id)
+  local items = self._itemModule:GetItemByTempId(id)
   if items and next(items) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.CheckMedalListCollect = function(self, data)
-  -- function num : 0_18 , upvalues : _ENV
+function UIMedalGroupListController:CheckMedalListCollect(data)
   local medals = data.MedalIDList
   local allCount = #medals
   local haveCount = 0
-  for key,value in pairs(medals) do
+  for key, value in pairs(medals) do
     local medalid = value[1]
     local have = self:CheckMedalCollect(medalid)
     if have then
       haveCount = haveCount + 1
     end
   end
-  do return allCount <= haveCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return allCount <= haveCount
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.ShowMedal = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local medalList = (self._curData).MedalIDList
-  ;
-  (self._medalPool):SpawnObjects("UIMedalGroupMedalItem", #medalList)
-  local pools = (self._medalPool):GetAllSpawnList()
+function UIMedalGroupListController:ShowMedal()
+  local medalList = self._curData.MedalIDList
+  self._medalPool:SpawnObjects("UIMedalGroupMedalItem", #medalList)
+  local pools = self._medalPool:GetAllSpawnList()
   for i = 1, #pools do
     local item = pools[i]
     local data = medalList[i]
     local id = data[1]
-    local sprite = (UIN22MedalEditItem.GetSprite)(self.atlas, (BoardMedal.IconMedalById)(id))
+    local sprite = UIN22MedalEditItem.GetSprite(self.atlas, BoardMedal.IconMedalById(id))
     local collect = self:CheckMedalCollect(id)
     item:SetData(data, sprite, collect, self._bgWidth, self.editData)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupListController.MedalBgOnClick = function(self, go)
-  -- function num : 0_20
-  local boardid = (self._curData).BoardID
+function UIMedalGroupListController:MedalBgOnClick(go)
+  local boardid = self._curData.BoardID
   local collect = self:CheckBgCollect(self._curData)
   self:ShowDialog("UIMedalGroupTipsController", boardid, true, collect)
 end
-
-

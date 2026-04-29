@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_confirm_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardConfirmController", UIController)
 UIDrawCardConfirmController = UIDrawCardConfirmController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardConfirmController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDrawCardConfirmController:OnShow(uiParams)
   self:InitWidget()
   self.itemId = uiParams[1]
   self.itemCount = uiParams[2]
@@ -16,13 +9,13 @@ UIDrawCardConfirmController.OnShow = function(self, uiParams)
   self.drawType = uiParams[4]
   self.free = uiParams[5] or false
   self.isSingleFree = uiParams[6] or false
-  local cfg = (Cfg.cfg_item)[self.itemId]
-  local ss = nil
+  local cfg = Cfg.cfg_item[self.itemId]
+  local ss
   if self.free then
     if self.isSingleFree then
-      ss = (StringTable.Get)("str_draw_card_cost_free")
+      ss = StringTable.Get("str_draw_card_cost_free")
     else
-      ss = (StringTable.Get)("str_draw_card_cost_freeten")
+      ss = StringTable.Get("str_draw_card_cost_freeten")
     end
   else
     local heartstoneCount = 1
@@ -31,54 +24,35 @@ UIDrawCardConfirmController.OnShow = function(self, uiParams)
       heartstoneCount = 10
       drawCount = 10
     end
-    ss = (StringTable.Get)("str_draw_card_cost_to_draw", self.itemCount, (StringTable.Get)(cfg.Name), heartstoneCount, drawCount)
+    ss = StringTable.Get("str_draw_card_cost_to_draw", self.itemCount, StringTable.Get(cfg.Name), heartstoneCount, drawCount)
   end
-  do
-    ;
-    (self.title):SetText(ss)
-    ;
-    (self.iconRoot):SetActive(not self.free)
-    local otherRootPosX = 0
-    if self.free then
-      otherRootPosX = -75
-      local freeCount = self.itemCount
-      self.itemCount = 0
-      local lessCount = freeCount - 1
-      ;
-      (self.have):SetText(freeCount)
-      ;
-      (self.rest):SetText(lessCount)
-    else
-      do
-        local had = (self:GetModule(RoleModule)):GetAssetCount(self.itemId)
-        do
-          local rest = had - self.itemCount
-          if had > 99999 then
-            had = "99999+"
-          end
-          if rest > 99999 then
-            rest = "99999+"
-          end
-          ;
-          (self.have):SetText(had)
-          ;
-          (self.rest):SetText(rest)
-          ;
-          (self.icon):LoadImage(cfg.Icon)
-          -- DECOMPILER ERROR at PC121: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self.otherRoot).anchoredPosition = Vector2(otherRootPosX, 0)
-        end
-      end
+  self.title:SetText(ss)
+  self.iconRoot:SetActive(not self.free)
+  local otherRootPosX = 0
+  if self.free then
+    otherRootPosX = -75
+    local freeCount = self.itemCount
+    self.itemCount = 0
+    local lessCount = freeCount - 1
+    self.have:SetText(freeCount)
+    self.rest:SetText(lessCount)
+  else
+    local had = self:GetModule(RoleModule):GetAssetCount(self.itemId)
+    local rest = had - self.itemCount
+    if 99999 < had then
+      had = "99999+"
     end
+    if 99999 < rest then
+      rest = "99999+"
+    end
+    self.have:SetText(had)
+    self.rest:SetText(rest)
+    self.icon:LoadImage(cfg.Icon)
   end
+  self.otherRoot.anchoredPosition = Vector2(otherRootPosX, 0)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardConfirmController.InitWidget = function(self)
-  -- function num : 0_1
+function UIDrawCardConfirmController:InitWidget()
   self.title = self:GetUIComponent("UILocalizationText", "title")
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.have = self:GetUIComponent("UILocalizationText", "have")
@@ -87,64 +61,42 @@ UIDrawCardConfirmController.InitWidget = function(self)
   self.otherRoot = self:GetUIComponent("RectTransform", "otherRoot")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardConfirmController.ConfirmButtonOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  (UIRecruitAction.Drawcard)(self.drawType, self.poolId, self.itemId, self.itemCount)
+function UIDrawCardConfirmController:ConfirmButtonOnClick(go)
+  UIRecruitAction.Drawcard(self.drawType, self.poolId, self.itemId, self.itemCount)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardConfirmController.DrawCard = function(self, TT)
-  -- function num : 0_3
+function UIDrawCardConfirmController:DrawCard(TT)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardConfirmController.CancelButtonOnClick = function(self, go)
-  -- function num : 0_4
+function UIDrawCardConfirmController:CancelButtonOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardConfirmController._PoolCountTestLog = function(self, viewData)
-  -- function num : 0_5 , upvalues : _ENV
+function UIDrawCardConfirmController:_PoolCountTestLog(viewData)
   if EDITOR then
-    (Log.debug)("###[PoolCountTestLog] EDITOR模式,开始写入log!")
-    local path = (UnityEngine.Application).dataPath .. "/card_pool_count_calc_log.lua"
+    Log.debug("###[PoolCountTestLog] EDITOR模式,开始写入log!")
+    local path = UnityEngine.Application.dataPath .. "/card_pool_count_calc_log.lua"
     local data = viewData
-    local file = (io.open)(path, "a")
-    ;
-    (io.output)(file)
+    local file = io.open(path, "a")
+    io.output(file)
     local poolid = data._poolID
-    local module = (GameGlobal.GetModule)(GambleModule)
-    local timeStr = (os.date)("%Y-%m-%d %H:%M %S", (os.time)())
-    if data._cards and (table.count)(data._cards) > 0 then
+    local module = GameGlobal.GetModule(GambleModule)
+    local timeStr = os.date("%Y-%m-%d %H:%M %S", os.time())
+    if data._cards and table.count(data._cards) > 0 then
       for i = 1, #data._cards do
         local itemStr = ""
-        local item = (data._cards)[i]
+        local item = data._cards[i]
         local itemid = item.assetid
         local itemcount = item.count
         itemStr = itemStr .. tostring(itemid) .. "*" .. tostring(itemcount)
         local writeStr = "日志:卡池ID[" .. poolid .. "],时间[" .. timeStr .. "],获得星灵[" .. itemStr .. "].\n"
-        ;
-        (io.write)("###[PoolCountTestLog] " .. writeStr)
+        io.write("###[PoolCountTestLog] " .. writeStr)
       end
     end
-    do
-      do
-        ;
-        (io.close)(file)
-        ;
-        (Log.debug)("###[PoolCountTestLog] EDITOR模式,结束写入log!")
-        ;
-        (Log.debug)("###[PoolCountTestLog] 不是EDITOR模式,写入log失败!")
-      end
-    end
+    io.close(file)
+    Log.debug("###[PoolCountTestLog] EDITOR模式,结束写入log!")
+  else
+    Log.debug("###[PoolCountTestLog] 不是EDITOR模式,写入log失败!")
   end
 end
-
-

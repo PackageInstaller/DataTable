@@ -1,146 +1,90 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_diff/ui_diff_node_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiffNodeBase", UICustomWidget)
 UIDiffNodeBase = UIDiffNodeBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiffNodeBase.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._uiModule = (GameGlobal.GetUIModule)(DifficultyMissionModule)
+function UIDiffNodeBase:Constructor()
+  self._uiModule = GameGlobal.GetUIModule(DifficultyMissionModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeBase.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDiffNodeBase:OnShow()
   self:GetComponents()
   self:GetUIComponentEff()
   self:AttachEvent(GameEventType.DiscoveryShowHideUIStage, self.Highlight)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeBase.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDiffNodeBase:OnHide()
   self:DetachEvent(GameEventType.DiscoveryShowHideUIStage, self.Highlight)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeBase.GetComponents = function(self)
-  -- function num : 0_3
+function UIDiffNodeBase:GetComponents()
   self._go = self:GetGameObject()
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self._monster = self:GetUIComponent("RawImageLoader", "monster")
   self._cupNum = self:GetUIComponent("UILocalizationText", "cupNum")
   self._texTip = self:GetUIComponent("UILocalizationText", "txtTip")
   self._texName = self:GetUIComponent("UILocalizationText", "txtName")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeBase.GetUIComponentEff = function(self)
-  -- function num : 0_4
+function UIDiffNodeBase:GetUIComponentEff()
   self.eff = self:GetGameObject("eff")
   self.animEff = self:GetUIComponent("Animation", "eff")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeBase.SetData = function(self, node, callback)
-  -- function num : 0_5
+function UIDiffNodeBase:SetData(node, callback)
   if not node then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   self._node = node
   self:SetInfo()
   self:SetPos()
   self._callback = callback
-  ;
-  (self.eff):SetActive(false)
+  self.eff:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeBase.SetInfo = function(self)
-  -- function num : 0_6
+function UIDiffNodeBase:SetInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeBase.SetPos = function(self)
-  -- function num : 0_7
-  local pos = (self._node):Pos()
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = pos
+function UIDiffNodeBase:SetPos()
+  local pos = self._node:Pos()
+  self._rectTransform.anchoredPosition = pos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeBase.btnBgOnClick = function(self)
-  -- function num : 0_8
+function UIDiffNodeBase:btnBgOnClick()
   self:ClickItem()
   self:PlayAnimMapTrainIn()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeBase.PlayAnimMapTrainIn = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIDiffNodeBase:PlayAnimMapTrainIn()
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
     local key = "UIMapNodeItemBasePlayAnimMapTrainIn"
     self:Lock(key)
-    ;
-    (self.animEff):Play("uieff_MapTrainHard_in")
+    self.animEff:Play("uieff_MapTrainHard_in")
     YIELD(TT, 500)
-    ;
-    (self.animEff):Play("uieff_MapTrainHard_loop")
+    self.animEff:Play("uieff_MapTrainHard_loop")
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeBase.ClickItem = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryShowHideUIStage, true, (self._node):ID())
+function UIDiffNodeBase:ClickItem()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryShowHideUIStage, true, self._node:ID())
   if self._callback then
-    (self._callback)(self._node)
+    self._callback(self._node)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeBase.Highlight = function(self, isHighlight, nodeId)
-  -- function num : 0_11
+function UIDiffNodeBase:Highlight(isHighlight, nodeId)
   if isHighlight then
-    if nodeId == (self._node):ID() then
-      (self.eff):SetActive(true)
+    if nodeId == self._node:ID() then
+      self.eff:SetActive(true)
     else
-      ;
-      (self.eff):SetActive(false)
+      self.eff:SetActive(false)
     end
   else
-    ;
-    (self.eff):SetActive(false)
+    self.eff:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeBase.GetRectTransform = function(self)
-  -- function num : 0_12
+function UIDiffNodeBase:GetRectTransform()
   return self._rectTransform
 end
-
-

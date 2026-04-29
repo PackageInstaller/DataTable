@@ -1,63 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n14/fishing_game/ui_n14_fishing_game_fish_shadow.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN14FishingGameFishShadow", UICustomWidget)
 UIN14FishingGameFishShadow = UIN14FishingGameFishShadow
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN14FishingGameFishShadow.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN14FishingGameFishShadow:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFishShadow.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN14FishingGameFishShadow:InitWidget()
   self._Image = self:GetUIComponent("Image", "Image")
-  self._shadowTrans = (self:GetGameObject("Image")).transform
+  self._shadowTrans = self:GetGameObject("Image").transform
   self._atlas = self:GetAsset("UIN14FishingGame.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFishShadow.SetShadow = function(self, fishShadow, scale)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._Image).sprite = (self._atlas):GetSprite(fishShadow)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (((self._Image).gameObject).transform).localScale = Vector3.one * scale
-  ;
-  ((self._shadowTrans).gameObject):SetActive(true)
+function UIN14FishingGameFishShadow:SetShadow(fishShadow, scale)
+  self._Image.sprite = self._atlas:GetSprite(fishShadow)
+  self._Image.gameObject.transform.localScale = Vector3.one * scale
+  self._shadowTrans.gameObject:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFishShadow.UpdatePosAndAngle = function(self, pos, angle, offset)
-  -- function num : 0_3
+function UIN14FishingGameFishShadow:UpdatePosAndAngle(pos, angle, offset)
   local tmp = pos
   tmp.x = tmp.x + offset
   tmp.y = tmp.y + offset
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._shadowTrans).localPosition = tmp
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._shadowTrans).localEulerAngles = angle
+  self._shadowTrans.localPosition = tmp
+  self._shadowTrans.localEulerAngles = angle
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameFishShadow.SetVisible = function(self, status)
-  -- function num : 0_4
-  ((self._shadowTrans).gameObject):SetActive(status)
+function UIN14FishingGameFishShadow:SetVisible(status)
+  self._shadowTrans.gameObject:SetActive(status)
 end
-
-

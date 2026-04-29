@@ -1,241 +1,203 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/maze/maze_3d_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Maze3DManager", Object)
 Maze3DManager = Maze3DManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Maze3DManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function Maze3DManager:Constructor()
   self._inputManager = MazeInputManager:New()
   self._cameraManager = MazeCameraManager:New()
   self._actorManager = MazeActorManager:New()
-  self._mainCamera = (((UnityEngine.GameObject).Find)("Main Camera")):GetComponent("Camera")
+  self._mainCamera = UnityEngine.GameObject.Find("Main Camera"):GetComponent("Camera")
   self._currentRoomIdx = 0
   self._currentPos = nil
   self._currentRoom = nil
   self._previewRoom = nil
   self._resReqs = {}
   self._assets = {
-prefabName = {point = "eff_ingame_ludian.prefab", path = "eff_ingame_line.prefab"}
-, 
-animName = {
-point = {unReach = "eff_ludian_normal", reached = "eff_ludian_white", passed = "eff_ludian_dark", active = "eff_ludian_active", onLeave = "eff_ludian_a2n", reachable = "eff_ludian_next"}
-, 
-path = {normal = "eff_ludian_line_normal", passed = "eff_ludian_line_dark", next = "eff_ludian_line_active"}
-}
-, 
-iconName = {[0] = "ludian_start.mat", [1] = "ludian_normal.mat", [2] = "ludian_danger.mat", [3] = "ludian_special.mat", [4] = "ludian_boss.mat", [5] = "ludian_storehouse.mat", [6] = "ludian_cure.mat", [7] = "ludian_shief.mat"}
-, 
-colors = {[0] = Color(1.0947, 0.7977, 1.2311, 1), [1] = Color(1.8305, 0.5307, 0.4921, 1), [2] = Color(1.8305, 0.5307, 0.4921, 1), [3] = Color(1.8305, 0.5307, 0.4921, 1), [4] = Color(1.8305, 0.5307, 0.4921, 1), [5] = Color(0.4078, 0.8004, 1.498, 1), [6] = Color(0.8156, 1.498, 0.4078, 1), [7] = Color(1.411, 0.6114, 0.0094, 1), [99] = Color(0.271, 0.6, 0.671, 1)}
-}
+    prefabName = {
+      point = "eff_ingame_ludian.prefab",
+      path = "eff_ingame_line.prefab"
+    },
+    animName = {
+      point = {
+        unReach = "eff_ludian_normal",
+        reached = "eff_ludian_white",
+        passed = "eff_ludian_dark",
+        active = "eff_ludian_active",
+        onLeave = "eff_ludian_a2n",
+        reachable = "eff_ludian_next"
+      },
+      path = {
+        normal = "eff_ludian_line_normal",
+        passed = "eff_ludian_line_dark",
+        next = "eff_ludian_line_active"
+      }
+    },
+    iconName = {
+      [0] = "ludian_start.mat",
+      [1] = "ludian_normal.mat",
+      [2] = "ludian_danger.mat",
+      [3] = "ludian_special.mat",
+      [4] = "ludian_boss.mat",
+      [5] = "ludian_storehouse.mat",
+      [6] = "ludian_cure.mat",
+      [7] = "ludian_shief.mat"
+    },
+    colors = {
+      [0] = Color(1.0947, 0.7977, 1.2311, 1),
+      [1] = Color(1.8305, 0.5307, 0.4921, 1),
+      [2] = Color(1.8305, 0.5307, 0.4921, 1),
+      [3] = Color(1.8305, 0.5307, 0.4921, 1),
+      [4] = Color(1.8305, 0.5307, 0.4921, 1),
+      [5] = Color(0.4078, 0.8004, 1.498, 1),
+      [6] = Color(0.8156, 1.498, 0.4078, 1),
+      [7] = Color(1.411, 0.6114, 0.0094, 1),
+      [99] = Color(0.271, 0.6, 0.671, 1)
+    }
+  }
   self._roomMap = {}
   self._mazePathMap = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._inputManager):Dispose()
-  ;
-  (self._cameraManager):Dispose()
-  ;
-  (self._actorManager):Dispose()
-  for _,req in ipairs(self._resReqs) do
+function Maze3DManager:Dispose()
+  self._inputManager:Dispose()
+  self._cameraManager:Dispose()
+  self._actorManager:Dispose()
+  for _, req in ipairs(self._resReqs) do
     req:Dispose()
   end
   self._previewRoom = nil
   self._currentRoom = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.Init = function(self, uiController, mazeInfo, archievGetter)
-  -- function num : 0_2 , upvalues : _ENV
+function Maze3DManager:Init(uiController, mazeInfo, archievGetter)
   self._uiController = uiController
   self._mazeInfo = mazeInfo
   self._archieveGetter = archievGetter
-  self._roomInfo = (self._mazeInfo).room_info
-  self._currentRoomIdx = (self._mazeInfo).room_index + 1
-  local cfg = (Cfg.cfg_maze_layer_positions)[mazeInfo.layer]
-  self._startPos = Vector3((cfg.BornPos)[1], 0, (cfg.BornPos)[2])
-  self._bossPos = Vector3((cfg.BossPos)[1], 0, (cfg.BossPos)[2])
+  self._roomInfo = self._mazeInfo.room_info
+  self._currentRoomIdx = self._mazeInfo.room_index + 1
+  local cfg = Cfg.cfg_maze_layer_positions[mazeInfo.layer]
+  self._startPos = Vector3(cfg.BornPos[1], 0, cfg.BornPos[2])
+  self._bossPos = Vector3(cfg.BossPos[1], 0, cfg.BossPos[2])
   self._pointOffset = Vector3(-40, 0, -8)
   self._availablePoints = self:GetAvaliablePoints()
   self:InitMazePath()
-  ;
-  (self._inputManager):Init()
-  ;
-  (self._actorManager):Init(self:GetPetActor(), self:GetStartPosition())
-  ;
-  (self._cameraManager):Init(self, self._mainCamera, self._startPos, self._bossPos)
-  self._currentPos = (self._actorManager):ActorPosition()
+  self._inputManager:Init()
+  self._actorManager:Init(self:GetPetActor(), self:GetStartPosition())
+  self._cameraManager:Init(self, self._mainCamera, self._startPos, self._bossPos)
+  self._currentPos = self._actorManager:ActorPosition()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.RefreshMaze = function(self, mazeInfo)
-  -- function num : 0_3
+function Maze3DManager:RefreshMaze(mazeInfo)
   self._mazeInfo = mazeInfo
-  self._currentRoomIdx = (self._mazeInfo).room_index + 1
-  ;
-  (self._actorManager):FefreshActor(self:GetPetActor(), self:GetStartPosition())
-  self._currentPos = (self._actorManager):ActorPosition()
+  self._currentRoomIdx = self._mazeInfo.room_index + 1
+  self._actorManager:FefreshActor(self:GetPetActor(), self:GetStartPosition())
+  self._currentPos = self._actorManager:ActorPosition()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.RefreshActor = function(self)
-  -- function num : 0_4
-  (self._actorManager):FefreshActor(self:GetPetActor(), (self._actorManager):ActorPosition())
+function Maze3DManager:RefreshActor()
+  self._actorManager:FefreshActor(self:GetPetActor(), self._actorManager:ActorPosition())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.GetPetActor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local lastTeam = ((GameGlobal.GetModule)(MazeModule)):GetLastTeamID()
+function Maze3DManager:GetPetActor()
+  local lastTeam = GameGlobal.GetModule(MazeModule):GetLastTeamID()
   if lastTeam < 1 then
     lastTeam = 1
   end
   local captainID = 0
-  local moduleMission = (GameGlobal.GetModule)(MissionModule)
+  local moduleMission = GameGlobal.GetModule(MissionModule)
   local teamCtx = moduleMission:TeamCtx()
   local teams = teamCtx:GetMazeTeam()
   local team = teams:Get(lastTeam)
   if team then
     captainID = team:GetLeaderPetId()
   end
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   if captainID == FormationPetPlaceType.FormationPetPlaceType_None then
-    for _,pet in pairs(petModule:GetPets()) do
+    for _, pet in pairs(petModule:GetPets()) do
       if pet:GetTemplateID() == 1500331 then
-        (Log.warn)("[Maze] captain not found, use 1500331-薇丝")
+        Log.warn("[Maze] captain not found, use 1500331-薇丝")
         return pet
       end
     end
   end
-  do
-    return petModule:GetPet(captainID)
-  end
+  return petModule:GetPet(captainID)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.GetAvaliablePoints = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  do
-    if self._currentRoomIdx == 0 then
-      local available = {}
-      for _,room in ipairs(self._roomInfo) do
-        available[room.room_index] = true
-      end
-      return available
-    end
+function Maze3DManager:GetAvaliablePoints()
+  if self._currentRoomIdx == 0 then
     local available = {}
-    local curPoint = (self._roomInfo)[self._currentRoomIdx]
-    local search = function(room, available)
-    -- function num : 0_6_0 , upvalues : _ENV, self, search
-    if room.next_rooms == nil or #room.next_rooms == 0 then
-      return 
+    for _, room in ipairs(self._roomInfo) do
+      available[room.room_index] = true
     end
-    for _,nextID in ipairs(room.next_rooms) do
-      local next = (self._roomInfo)[nextID + 1]
+    return available
+  end
+  local available = {}
+  local curPoint = self._roomInfo[self._currentRoomIdx]
+  
+  local function search(room, available)
+    if room.next_rooms == nil or #room.next_rooms == 0 then
+      return
+    end
+    for _, nextID in ipairs(room.next_rooms) do
+      local next = self._roomInfo[nextID + 1]
       if not available[next.room_index] then
         available[next.room_index] = true
         search(next, available)
       end
     end
   end
-
-    search(curPoint, available)
-    return available
-  end
+  
+  search(curPoint, available)
+  return available
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.InitMazePath = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function Maze3DManager:InitMazePath()
   local temp = {}
-  local _start = self:LoadGO(((self._assets).prefabName).point)
+  local _start = self:LoadGO(self._assets.prefabName.point)
   local startAnim = self:SetPointState(_start, 0)
   temp[1] = startAnim
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (_start.transform).position = self._startPos
-  for _,room in ipairs(self._roomInfo) do
+  _start.transform.position = self._startPos
+  for _, room in ipairs(self._roomInfo) do
     if room.layer_step == 1 then
       local nextPos = Vector3(room.x, 0, room.z) + self._pointOffset
-      local path = self:LoadGO(((self._assets).prefabName).path)
+      local path = self:LoadGO(self._assets.prefabName.path)
       local _pathAnim = self:SetPathState(path, nil, room, self._startPos, nextPos)
       temp[#temp + 1] = _pathAnim
     end
   end
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._mazePathMap)[0] = temp
-  for idx,room in ipairs(self._roomInfo) do
+  self._mazePathMap[0] = temp
+  for idx, room in ipairs(self._roomInfo) do
     temp = {}
-    local go = self:LoadGO(((self._assets).prefabName).point)
+    local go = self:LoadGO(self._assets.prefabName.point)
     local pointAnim = self:SetPointState(go, idx)
     temp[0] = pointAnim
-    -- DECOMPILER ERROR at PC69: Confused about usage of register: R11 in 'UnsetPending'
-
     if idx == #self._roomInfo then
-      (go.transform).position = self._bossPos
-      -- DECOMPILER ERROR at PC76: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (go.transform).localScale = Vector3(1.5, 1, 1.5)
+      go.transform.position = self._bossPos
+      go.transform.localScale = Vector3(1.5, 1, 1.5)
     else
       local roomPos = Vector3(room.x, 0, room.z) + self._pointOffset
-      -- DECOMPILER ERROR at PC86: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (go.transform).position = roomPos
+      go.transform.position = roomPos
       go.name = go.name .. room.layer_step .. "-" .. room.step_index
-      for _,nextRoomIdx in ipairs(room.next_rooms) do
+      for _, nextRoomIdx in ipairs(room.next_rooms) do
         local nextIdx = nextRoomIdx + 1
-        local nextRoom = (self._roomInfo)[nextIdx]
-        local nextPos = nil
+        local nextRoom = self._roomInfo[nextIdx]
+        local nextPos
         if nextIdx == #self._roomInfo then
           nextPos = self._bossPos
         else
           nextPos = Vector3(nextRoom.x, 0, nextRoom.z) + self._pointOffset
         end
-        local path = self:LoadGO(((self._assets).prefabName).path)
+        local path = self:LoadGO(self._assets.prefabName.path)
         local pathAnim = self:SetPathState(path, room, nextRoom, roomPos, nextPos)
         temp[#temp + 1] = pathAnim
       end
     end
-    do
-      do
-        -- DECOMPILER ERROR at PC132: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (self._roomMap)[go] = room
-        -- DECOMPILER ERROR at PC135: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (self._mazePathMap)[room.room_index] = temp
-        -- DECOMPILER ERROR at PC136: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    self._roomMap[go] = room
+    self._mazePathMap[room.room_index] = temp
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.GoToRoomByIndex = function(self, idx)
-  -- function num : 0_8 , upvalues : _ENV
-  for K,v in pairs(self._roomMap) do
+function Maze3DManager:GoToRoomByIndex(idx)
+  for K, v in pairs(self._roomMap) do
     if v.room_index == idx then
       self:OnClickRoom(K, true)
       break
@@ -243,169 +205,134 @@ Maze3DManager.GoToRoomByIndex = function(self, idx)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.SetPointState = function(self, go, idx)
-  -- function num : 0_9 , upvalues : _ENV
+function Maze3DManager:SetPointState(go, idx)
   local animation = go:GetComponentInChildren(typeof(UnityEngine.Animation))
-  local mat1 = (((go.transform):Find("root")):GetComponent(typeof(UnityEngine.MeshRenderer))).material
-  local mat2 = (((go.transform):Find("icon")):GetComponent(typeof(UnityEngine.MeshRenderer))).material
-  local tex, anim, color = nil, nil, nil
-  local room = (self._roomInfo)[idx]
-  local curRoom = (self._roomInfo)[self._currentRoomIdx]
+  local mat1 = go.transform:Find("root"):GetComponent(typeof(UnityEngine.MeshRenderer)).material
+  local mat2 = go.transform:Find("icon"):GetComponent(typeof(UnityEngine.MeshRenderer)).material
+  local tex, anim, color
+  local room = self._roomInfo[idx]
+  local curRoom = self._roomInfo[self._currentRoomIdx]
   if self._currentRoomIdx == 0 then
     if idx == 0 then
-      anim = (((self._assets).animName).point).active
-      tex = self:LoadTexture(((self._assets).iconName)[0])
-      color = ((self._assets).colors)[0]
+      anim = self._assets.animName.point.active
+      tex = self:LoadTexture(self._assets.iconName[0])
+      color = self._assets.colors[0]
       self._currentRoom = go
     else
       if room.layer_step == 1 then
-        anim = (((self._assets).animName).point).reachable
+        anim = self._assets.animName.point.reachable
       else
-        anim = (((self._assets).animName).point).unReach
+        anim = self._assets.animName.point.unReach
       end
-      local cfg = (Cfg.cfg_maze_room)[room.room_id]
+      local cfg = Cfg.cfg_maze_room[room.room_id]
       if cfg == nil then
-        (Log.error)("cfg_maze_room cant find room_id ", room.room_id)
+        Log.error("cfg_maze_room cant find room_id ", room.room_id)
       end
-      tex = self:LoadTexture(((self._assets).iconName)[cfg.MazeRoomType])
-      color = ((self._assets).colors)[cfg.MazeRoomType]
+      tex = self:LoadTexture(self._assets.iconName[cfg.MazeRoomType])
+      color = self._assets.colors[cfg.MazeRoomType]
     end
+  elseif idx == 0 then
+    anim = self._assets.animName.point.reached
+    tex = self:LoadTexture(self._assets.iconName[0])
+    color = self._assets.colors[0]
   else
-    do
-      if idx == 0 then
-        anim = (((self._assets).animName).point).reached
-        tex = self:LoadTexture(((self._assets).iconName)[0])
-        color = ((self._assets).colors)[0]
+    local cfg = Cfg.cfg_maze_room[room.room_id]
+    tex = self:LoadTexture(self._assets.iconName[cfg.MazeRoomType])
+    color = self._assets.colors[cfg.MazeRoomType]
+    if room.layer_step < curRoom.layer_step then
+      if table.icontains(self._mazeInfo.layer_path, room.room_id) then
+        anim = self._assets.animName.point.reached
       else
-        local cfg = (Cfg.cfg_maze_room)[room.room_id]
-        tex = self:LoadTexture(((self._assets).iconName)[cfg.MazeRoomType])
-        color = ((self._assets).colors)[cfg.MazeRoomType]
-        if room.layer_step < curRoom.layer_step then
-          if (table.icontains)((self._mazeInfo).layer_path, room.room_id) then
-            anim = (((self._assets).animName).point).reached
-          else
-            anim = (((self._assets).animName).point).passed
-          end
-        else
-          if curRoom.layer_step < room.layer_step then
-            local _reachable = false
-            for _,_nextID in ipairs(curRoom.next_rooms) do
-              local nextRoom = (self._roomInfo)[_nextID + 1]
-              if nextRoom.room_index == room.room_index then
-                _reachable = true
-                break
-              end
-            end
-            do
-              do
-                do
-                  if _reachable then
-                    anim = (((self._assets).animName).point).reachable
-                  else
-                    anim = (((self._assets).animName).point).unReach
-                  end
-                  if room.room_index == curRoom.room_index then
-                    anim = (((self._assets).animName).point).active
-                    self._currentRoom = go
-                  else
-                    anim = (((self._assets).animName).point).passed
-                  end
-                  mat1:SetTexture("_IconTex", tex)
-                  mat2:SetTexture("_IconTex", tex)
-                  if self:RoomHasArchieve(room) then
-                    color = ((self._assets).colors)[99]
-                  end
-                  mat1:SetColor("_CircleColor", color)
-                  animation:Play(anim)
-                  return animation
-                end
-              end
-            end
-          end
+        anim = self._assets.animName.point.passed
+      end
+    elseif room.layer_step > curRoom.layer_step then
+      local _reachable = false
+      for _, _nextID in ipairs(curRoom.next_rooms) do
+        local nextRoom = self._roomInfo[_nextID + 1]
+        if nextRoom.room_index == room.room_index then
+          _reachable = true
+          break
         end
       end
+      if _reachable then
+        anim = self._assets.animName.point.reachable
+      else
+        anim = self._assets.animName.point.unReach
+      end
+    elseif room.room_index == curRoom.room_index then
+      anim = self._assets.animName.point.active
+      self._currentRoom = go
+    else
+      anim = self._assets.animName.point.passed
     end
   end
+  mat1:SetTexture("_IconTex", tex)
+  mat2:SetTexture("_IconTex", tex)
+  if self:RoomHasArchieve(room) then
+    color = self._assets.colors[99]
+  end
+  mat1:SetColor("_CircleColor", color)
+  animation:Play(anim)
+  return animation
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.OnLeavePoint = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
+function Maze3DManager:OnLeavePoint(go)
   local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
   local leaveRoom = self:GetRoomData(go)
   if leaveRoom == nil then
-    anim:Play((((self._assets).animName).point).onLeave)
+    anim:Play(self._assets.animName.point.onLeave)
   else
-    local curRoom = (self._roomInfo)[self._currentRoomIdx]
+    local curRoom = self._roomInfo[self._currentRoomIdx]
     if curRoom == nil then
-      anim:Play((((self._assets).animName).point).onLeave)
-      anim:PlayQueued((((self._assets).animName).point).reachable)
+      anim:Play(self._assets.animName.point.onLeave)
+      anim:PlayQueued(self._assets.animName.point.reachable)
+    elseif leaveRoom.room_index == curRoom.room_index then
+      anim:Play(self._assets.animName.point.onLeave)
     else
-      if leaveRoom.room_index == curRoom.room_index then
-        anim:Play((((self._assets).animName).point).onLeave)
-      else
-        anim:Play((((self._assets).animName).point).onLeave)
-        anim:PlayQueued((((self._assets).animName).point).reachable)
-      end
+      anim:Play(self._assets.animName.point.onLeave)
+      anim:PlayQueued(self._assets.animName.point.reachable)
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.OnArrivePoint = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  (go:GetComponentInChildren(typeof(UnityEngine.Animation))):Play((((self._assets).animName).point).active)
+function Maze3DManager:OnArrivePoint(go)
+  go:GetComponentInChildren(typeof(UnityEngine.Animation)):Play(self._assets.animName.point.active)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.SetPathState = function(self, go, start, target, startPos, endPos)
-  -- function num : 0_12 , upvalues : _ENV
+function Maze3DManager:SetPathState(go, start, target, startPos, endPos)
   local curLayer = 0
-  local curRoomIdx = nil
-  if self._currentRoomIdx > 0 then
-    curLayer = ((self._roomInfo)[self._currentRoomIdx]).layer_step
-    curRoomIdx = ((self._roomInfo)[self._currentRoomIdx]).room_index
+  local curRoomIdx
+  if 0 < self._currentRoomIdx then
+    curLayer = self._roomInfo[self._currentRoomIdx].layer_step
+    curRoomIdx = self._roomInfo[self._currentRoomIdx].room_index
   end
   local anim = go:GetComponent(typeof(UnityEngine.Animation))
-  local line = (go:GetComponent(typeof(UnityEngine.LineRenderer)))
-  local name = nil
+  local line = go:GetComponent(typeof(UnityEngine.LineRenderer))
+  local name
   if start == nil then
     if curLayer == 0 then
-      name = (((self._assets).animName).path).next
+      name = self._assets.animName.path.next
+    elseif table.icontains(self._mazeInfo.layer_path, target.room_index) then
+      name = self._assets.animName.path.normal
     else
-      if (table.icontains)((self._mazeInfo).layer_path, target.room_index) then
-        name = (((self._assets).animName).path).normal
-      else
-        name = (((self._assets).animName).path).passed
-      end
+      name = self._assets.animName.path.passed
     end
+  elseif curLayer >= target.layer_step then
+    if table.icontains(self._mazeInfo.layer_path, target.room_index) and table.icontains(self._mazeInfo.layer_path, start.room_index) then
+      name = self._assets.animName.path.normal
+    else
+      name = self._assets.animName.path.passed
+    end
+  elseif start.layer_step == curLayer then
+    if start.room_index == curRoomIdx then
+      name = self._assets.animName.path.next
+    else
+      name = self._assets.animName.path.passed
+    end
+  elseif self._availablePoints[start.room_index] then
+    name = self._assets.animName.path.normal
   else
-    if target.layer_step <= curLayer then
-      if (table.icontains)((self._mazeInfo).layer_path, target.room_index) and (table.icontains)((self._mazeInfo).layer_path, start.room_index) then
-        name = (((self._assets).animName).path).normal
-      else
-        name = (((self._assets).animName).path).passed
-      end
-    else
-      if start.layer_step == curLayer then
-        if start.room_index == curRoomIdx then
-          name = (((self._assets).animName).path).next
-        else
-          name = (((self._assets).animName).path).passed
-        end
-      else
-        if (self._availablePoints)[start.room_index] then
-          name = (((self._assets).animName).path).normal
-        else
-          name = (((self._assets).animName).path).passed
-        end
-      end
-    end
+    name = self._assets.animName.path.passed
   end
   if startPos and endPos then
     line:SetPosition(0, startPos)
@@ -415,137 +342,89 @@ Maze3DManager.SetPathState = function(self, go, start, target, startPos, endPos)
   return anim
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.LoadGO = function(self, name)
-  -- function num : 0_13 , upvalues : _ENV
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset(name, LoadType.GameObject)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._resReqs)[#self._resReqs + 1] = req
+function Maze3DManager:LoadGO(name)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(name, LoadType.GameObject)
+  self._resReqs[#self._resReqs + 1] = req
   local go = req.Obj
   go:SetActive(true)
   return go
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.LoadTexture = function(self, name)
-  -- function num : 0_14 , upvalues : _ENV
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset(name, LoadType.Mat)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._resReqs)[#self._resReqs + 1] = req
-  return (req.Obj):GetTexture("_MainTex")
+function Maze3DManager:LoadTexture(name)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(name, LoadType.Mat)
+  self._resReqs[#self._resReqs + 1] = req
+  return req.Obj:GetTexture("_MainTex")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.GetStartPosition = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  if (self._mazeInfo).room_index == -1 then
+function Maze3DManager:GetStartPosition()
+  if self._mazeInfo.room_index == -1 then
     return self._startPos
-  else
-    if (self._mazeInfo).room_index + 1 == #self._roomInfo then
-      return self._bossPos
-    end
+  elseif self._mazeInfo.room_index + 1 == #self._roomInfo then
+    return self._bossPos
   end
-  local room = (self._roomInfo)[(self._mazeInfo).room_index + 1]
+  local room = self._roomInfo[self._mazeInfo.room_index + 1]
   return Vector3(room.x, 0, room.z) + self._pointOffset
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.Update = function(self, deltaTime)
-  -- function num : 0_16
-  (self._inputManager):Update(deltaTime)
-  ;
-  (self._cameraManager):Update(deltaTime)
-  ;
-  (self._actorManager):Update(deltaTime)
-  local clicked, clickPos = (self._inputManager):GetClick()
-  local dragging, dragStart, dragEnd = (self._inputManager):GetDrag()
+function Maze3DManager:Update(deltaTime)
+  self._inputManager:Update(deltaTime)
+  self._cameraManager:Update(deltaTime)
+  self._actorManager:Update(deltaTime)
+  local clicked, clickPos = self._inputManager:GetClick()
+  local dragging, dragStart, dragEnd = self._inputManager:GetDrag()
   if clicked then
     if self._previewRoom then
       self:ExitPreviewRoom()
     else
-      local clickRoom = (self._cameraManager):TryClickRoom(clickPos)
+      local clickRoom = self._cameraManager:TryClickRoom(clickPos)
       if clickRoom then
         self:OnClickRoom(clickRoom)
       end
     end
-  else
-    do
-      if dragging then
-        if self._previewRoom then
-          self:ExitPreviewRoom()
-        else
-          ;
-          (self._cameraManager):OnDrag(dragStart, dragEnd)
-        end
-      end
+  elseif dragging then
+    if self._previewRoom then
+      self:ExitPreviewRoom()
+    else
+      self._cameraManager:OnDrag(dragStart, dragEnd)
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.GetInputManager = function(self)
-  -- function num : 0_17
+function Maze3DManager:GetInputManager()
   return self._inputManager
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.GetActorManager = function(self)
-  -- function num : 0_18
+function Maze3DManager:GetActorManager()
   return self._actorManager
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.OnClickRoom = function(self, roomGO, again)
-  -- function num : 0_19 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function Maze3DManager:OnClickRoom(roomGO, again)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   if self._previewRoom == roomGO then
-    return 
+    return
   end
   local roomData = self:GetRoomData(roomGO)
   if roomData == nil then
-    (Log.notice)("[Maze] click gameObject is not room: ", roomGO.name)
-    return 
+    Log.notice("[Maze] click gameObject is not room: ", roomGO.name)
+    return
   end
   local reachState = self:GetReachState(roomData)
   if reachState == 0 then
     self._previewRoom = roomGO
     self:PreviewRoom(roomData, roomGO, again)
-  else
-    if reachState == 1 then
-      (self._uiController):ShowRoomMsg(roomData, false)
-    else
-      if reachState == -1 then
-        (ToastManager.ShowToast)((StringTable.Get)("str_maze_passed"))
-      else
-      end
-    end
-  end
-  if reachState == 2 then
+  elseif reachState == 1 then
+    self._uiController:ShowRoomMsg(roomData, false)
+  elseif reachState == -1 then
+    ToastManager.ShowToast(StringTable.Get("str_maze_passed"))
+  elseif reachState == 2 then
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.GetRoomData = function(self, roomGO)
-  -- function num : 0_20
-  return (self._roomMap)[roomGO]
+function Maze3DManager:GetRoomData(roomGO)
+  return self._roomMap[roomGO]
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.GetReachState = function(self, targetRoom)
-  -- function num : 0_21 , upvalues : _ENV
+function Maze3DManager:GetReachState(targetRoom)
   if self._currentRoomIdx == 0 then
     if targetRoom.layer_step == 1 then
       return 0
@@ -553,15 +432,15 @@ Maze3DManager.GetReachState = function(self, targetRoom)
       return 1
     end
   else
-    local room = (self._roomInfo)[self._currentRoomIdx]
+    local room = self._roomInfo[self._currentRoomIdx]
     if room.room_index == targetRoom.room_index then
       return 2
     end
     if targetRoom.layer_step <= room.layer_step then
       return -1
     end
-    for _,next in ipairs(room.next_rooms) do
-      local nextRoom = (self._roomInfo)[next + 1]
+    for _, next in ipairs(room.next_rooms) do
+      local nextRoom = self._roomInfo[next + 1]
       if nextRoom.room_index == targetRoom.room_index then
         return 0
       end
@@ -570,87 +449,50 @@ Maze3DManager.GetReachState = function(self, targetRoom)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.PreviewRoom = function(self, roomData, roomGo, again)
-  -- function num : 0_22 , upvalues : _ENV
-  (self._inputManager):SetEnable(false)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.EnterRoom, self, roomData, roomGo, again)
+function Maze3DManager:PreviewRoom(roomData, roomGo, again)
+  self._inputManager:SetEnable(false)
+  GameGlobal.TaskManager():StartTask(self.EnterRoom, self, roomData, roomGo, again)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.EnterRoom = function(self, TT, roomData, gameObject, again)
-  -- function num : 0_23 , upvalues : _ENV
-  local movetime = nil
+function Maze3DManager:EnterRoom(TT, roomData, gameObject, again)
+  local movetime
   if again then
     movetime = 0
   end
   local cameraArrive = false
   local actorArrive = false
-  ;
-  (self._cameraManager):FocusWayPoint((gameObject.transform).position, function(_cameraDragged)
-    -- function num : 0_23_0 , upvalues : self, cameraArrive
-    (self._cameraManager):SetActorMove(not _cameraDragged)
+  self._cameraManager:FocusWayPoint(gameObject.transform.position, function(_cameraDragged)
+    self._cameraManager:SetActorMove(not _cameraDragged)
     cameraArrive = true
-  end
-, movetime)
+  end, movetime)
   self:OnLeavePoint(self._currentRoom)
-  ;
-  (self._actorManager):MoveToTarget(((self._previewRoom).transform).position, function()
-    -- function num : 0_23_1 , upvalues : actorArrive, self
+  self._actorManager:MoveToTarget(self._previewRoom.transform.position, function()
     actorArrive = true
     self:OnArrivePoint(self._previewRoom)
+  end, movetime)
+  while not cameraArrive or not actorArrive do
+    YIELD(TT)
   end
-, movetime)
-  while 1 do
-    if not cameraArrive or not actorArrive then
-      YIELD(TT)
-      -- DECOMPILER ERROR at PC31: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-      -- DECOMPILER ERROR at PC31: LeaveBlock: unexpected jumping out IF_STMT
-
-    end
-  end
-  ;
-  (self._cameraManager):SetActorMove(false)
-  ;
-  (self._uiController):ShowRoomMsg(roomData, true)
-  ;
-  (self._inputManager):SetEnable(true)
+  self._cameraManager:SetActorMove(false)
+  self._uiController:ShowRoomMsg(roomData, true)
+  self._inputManager:SetEnable(true)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.ExitPreviewRoom = function(self)
-  -- function num : 0_24
-  (self._inputManager):SetEnable(false)
-  ;
-  (self._uiController):HideRoomMsg()
-  ;
-  (self._cameraManager):SetActorMove(true)
+function Maze3DManager:ExitPreviewRoom()
+  self._inputManager:SetEnable(false)
+  self._uiController:HideRoomMsg()
+  self._cameraManager:SetActorMove(true)
   if self._previewRoom then
     self:OnLeavePoint(self._previewRoom)
   end
-  ;
-  (self._actorManager):MoveToTarget(self._currentPos, function()
-    -- function num : 0_24_0 , upvalues : self
+  self._actorManager:MoveToTarget(self._currentPos, function()
     self._previewRoom = nil
-    ;
-    (self._cameraManager):SetActorMove(false)
-    ;
-    (self._inputManager):SetEnable(true)
+    self._cameraManager:SetActorMove(false)
+    self._inputManager:SetEnable(true)
     self:OnArrivePoint(self._currentRoom)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze3DManager.RoomHasArchieve = function(self, room)
-  -- function num : 0_25
-  return (self._archieveGetter)(room)
+function Maze3DManager:RoomHasArchieve(room)
+  return self._archieveGetter(room)
 end
-
-

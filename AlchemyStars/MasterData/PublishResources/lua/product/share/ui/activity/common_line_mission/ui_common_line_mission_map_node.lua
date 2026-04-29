@@ -1,150 +1,113 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/common_line_mission/ui_common_line_mission_map_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICommonLineMissionMapNode", UICustomWidget)
 UICommonLineMissionMapNode = UICommonLineMissionMapNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICommonLineMissionMapNode.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+function UICommonLineMissionMapNode:OnShow(uiParams)
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self.atlas = self:GetAsset("UIN22.spriteatlas", LoadType.SpriteAtlas)
   self._topInAnim = "uieff_UIN23LineController_MapNode_up"
   self._belowInAnim = "uieff_UIN23LineController_MapNode_down"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMapNode.Destroy = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._matReq = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._matReq)
+function UICommonLineMissionMapNode:Destroy()
+  self._matReq = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._matReq)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMapNode.SetData = function(self, lineCfg, passInfo, cb)
-  -- function num : 0_2 , upvalues : _ENV
+function UICommonLineMissionMapNode:SetData(lineCfg, passInfo, cb)
   self._missionID = lineCfg.CampaignMissionId
   self._callback = cb
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if not missionCfg then
-    (Log.exception)("cfg_campaign_mission中找不到配置:", self._missionID)
+    Log.exception("cfg_campaign_mission中找不到配置:", self._missionID)
   end
   self:_SetRectTransform(lineCfg)
   local missionType = missionCfg.Type
-  local cfg_c_line_mission = ((Cfg.cfg_component_line_mission)({CampaignMissionId = self._missionID}))[1]
-  if cfg_c_line_mission.CustomParams then
-    local param = (cfg_c_line_mission.CustomParams)[1]
+  local cfg_c_line_mission = Cfg.cfg_component_line_mission({
+    CampaignMissionId = self._missionID
+  })[1]
+  local param = cfg_c_line_mission.CustomParams and cfg_c_line_mission.CustomParams[1]
+  if not (param and next(param)) or param[1] ~= 2 or missionType == DiscoveryStageType.FightNormal then
   end
-  if not param or not next(param) or param[1] ~= 2 or missionType == DiscoveryStageType.FightNormal then
-    self:_SetState(missionType)
-    self:_SetName_TMP(missionCfg.Type, (StringTable.Get)(missionCfg.Name))
-    self._isStoryNode = missionCfg.Type == DiscoveryStageType.Plot
-    self.missionType = missionCfg.Type
-    self:_SetStar(passInfo)
-    if self._isStoryNode and passInfo then
-      (self:GetUIComponent("Image", "bg_plot")).sprite = (self.atlas):GetSprite("n22_xxg_spot3")
-    end
-    if lineCfg.MapPosY < 0 or not self._topInAnim then
-      local id = self._belowInAnim
-    end
-    ;
-    (UIWidgetHelper.SetAnimationPlay)(self, "anim", id)
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  self:_SetState(missionType)
+  self:_SetName_TMP(missionCfg.Type, StringTable.Get(missionCfg.Name))
+  self._isStoryNode = missionCfg.Type == DiscoveryStageType.Plot
+  self.missionType = missionCfg.Type
+  self:_SetStar(passInfo)
+  if self._isStoryNode and passInfo then
+    self:GetUIComponent("Image", "bg_plot").sprite = self.atlas:GetSprite("n22_xxg_spot3")
   end
+  local id = lineCfg.MapPosY >= 0 and self._topInAnim or self._belowInAnim
+  UIWidgetHelper.SetAnimationPlay(self, "anim", id)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMapNode._SetRectTransform = function(self, lineCfg)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._rectTransform).anchorMax = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2.zero
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
+function UICommonLineMissionMapNode:_SetRectTransform(lineCfg)
+  self._rectTransform.anchorMax = Vector2(0, 0.5)
+  self._rectTransform.anchorMin = Vector2(0, 0.5)
+  self._rectTransform.sizeDelta = Vector2.zero
+  self._rectTransform.anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMapNode._SetName = function(self, state, text)
-  -- function num : 0_4 , upvalues : _ENV
-  local tb = {"name_normal", "name_boss", "name_plot"}
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, tb[state], text)
+function UICommonLineMissionMapNode:_SetName(state, text)
+  local tb = {
+    "name_normal",
+    "name_boss",
+    "name_plot"
+  }
+  UIWidgetHelper.SetLocalizationText(self, tb[state], text)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMapNode._SetName_TMP = function(self, state, text)
-  -- function num : 0_5 , upvalues : _ENV
+function UICommonLineMissionMapNode:_SetName_TMP(state, text)
   local nameTex_boss = self:GetUIComponent("UILocalizationText", "name_boss")
   local nameTex_norm = self:GetUIComponent("UILocalizationText", "name_normal")
   local nameTex_plot = self:GetUIComponent("UILocalizationText", "name_plot")
   if state == DiscoveryStageType.Plot then
     nameTex_plot:SetText(text)
+  elseif state == DiscoveryStageType.FightNormal then
+    nameTex_norm:SetText(text)
   else
-    if state == DiscoveryStageType.FightNormal then
-      nameTex_norm:SetText(text)
-    else
-      nameTex_boss:SetText(text)
-    end
+    nameTex_boss:SetText(text)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMapNode._SetState = function(self, state)
-  -- function num : 0_6 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"bg_normal", "name_normal", "star"}
-, 
-{"bg_boss", "name_boss", "star"}
-, 
-{"bg_plot", "name_plot"}
-, 
-{"bg_normal2", "name_normal", "star"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UICommonLineMissionMapNode:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {
+      "bg_normal",
+      "name_normal",
+      "star"
+    },
+    {
+      "bg_boss",
+      "name_boss",
+      "star"
+    },
+    {"bg_plot", "name_plot"},
+    {
+      "bg_normal2",
+      "name_normal",
+      "star"
+    }
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMapNode._SetStar = function(self, passInfo)
-  -- function num : 0_7 , upvalues : _ENV
+function UICommonLineMissionMapNode:_SetStar(passInfo)
   local missionModule = self:GetModule(MissionModule)
   local stars = passInfo and missionModule:ParseStarInfo(passInfo.star) or 0
-  local tb = {self:GetGameObject("Star1"), self:GetGameObject("Star2"), self:GetGameObject("Star3")}
+  local tb = {
+    self:GetGameObject("Star1"),
+    self:GetGameObject("Star2"),
+    self:GetGameObject("Star3")
+  }
   for i = 1, 3 do
-    local pass = i <= stars
-    ;
-    (tb[i]):SetActive(pass)
+    local pass = stars >= i
+    tb[i]:SetActive(pass)
   end
   local passMask = self:GetGameObject("Pass")
-  if passInfo == nil or self.missionType ~= DiscoveryStageType.Plot then
-    passMask:SetActive(not passMask)
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  if passMask then
+    passMask:SetActive(passInfo ~= nil and self.missionType == DiscoveryStageType.Plot)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMapNode.BtnOnClick = function(self, go)
-  -- function num : 0_8
-  (self._callback)(self._missionID, self._isStoryNode, (self._rectTransform).position)
+function UICommonLineMissionMapNode:BtnOnClick(go)
+  self._callback(self._missionID, self._isStoryNode, self._rectTransform.position)
 end
-
-

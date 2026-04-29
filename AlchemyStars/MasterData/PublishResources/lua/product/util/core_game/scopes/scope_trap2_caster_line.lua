@@ -1,34 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_trap2_caster_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_Trap2CasterLine", SkillScopeCalculator_Base)
 SkillScopeCalculator_Trap2CasterLine = SkillScopeCalculator_Trap2CasterLine
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_Trap2CasterLine.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_Trap2CasterLine:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local params = scopeParam
   local trapID = params[1]
   local bNoExtend = params[2]
   local widthThreshold = params[3]
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local trapSvcLogic = world:GetService("TrapLogic")
   local trapPosList = trapSvcLogic:FindTrapPosByTrapID(trapID)
   local scopeAngleFreeLine = SkillScopeCalculator_AngleFreeLine:New(self._hub)
   local attackRange = {}
   local wholeRange = {}
-  for i,trapPos in ipairs(trapPosList) do
+  for i, trapPos in ipairs(trapPosList) do
     local scopeResult = scopeAngleFreeLine:CalcRange(nil, {noExtend = bNoExtend, widthThreshold = widthThreshold}, trapPos, bodyArea, casterDir, nTargetType, casterPos)
-    ;
-    (table.Vector2Append)(attackRange, scopeResult:GetAttackRange())
-    ;
-    (table.Vector2Append)(wholeRange, scopeResult:GetWholeGridRange())
+    table.Vector2Append(attackRange, scopeResult:GetAttackRange())
+    table.Vector2Append(wholeRange, scopeResult:GetWholeGridRange())
   end
   local result = SkillScopeResult:New(SkillScopeType.Trap2CasterCenterLine, centerPos, attackRange, wholeRange)
   return result
 end
-
-

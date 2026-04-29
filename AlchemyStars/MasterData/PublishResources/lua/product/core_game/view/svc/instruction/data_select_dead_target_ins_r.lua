@@ -1,54 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_select_dead_target_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DataSelectDeadTargetInstruction", BaseInstruction)
 DataSelectDeadTargetInstruction = DataSelectDeadTargetInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSelectDeadTargetInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function DataSelectDeadTargetInstruction:Constructor(paramList)
   self._damageIndex = tonumber(paramList.damageIndex)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectDeadTargetInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function DataSelectDeadTargetInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageStageIndex = phaseContext:GetCurDamageResultStageIndex()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, damageStageIndex)
   if not damageResultArray or #damageResultArray == 0 then
     return false
   end
   local targetEntityList = {}
-  for _,v in ipairs(damageResultArray) do
+  for _, v in ipairs(damageResultArray) do
     local damageResult = v
     local targetEntityID = damageResult:GetTargetID()
     local targetEntity = world:GetEntityByID(targetEntityID)
-    if targetEntity and not (table.intable)(targetEntityList, targetEntity) then
-      (table.insert)(targetEntityList, targetEntity)
+    if targetEntity and not table.intable(targetEntityList, targetEntity) then
+      table.insert(targetEntityList, targetEntity)
     end
   end
   local deadMonsterIDList = {}
-  for _,entity in ipairs(targetEntityList) do
+  for _, entity in ipairs(targetEntityList) do
     local view = entity:View()
-    local renderCurHP = (entity:HP()):GetRedHP()
+    local renderCurHP = entity:HP():GetRedHP()
     if view and renderCurHP == 0 then
-      (table.insert)(deadMonsterIDList, entity:GetID())
+      table.insert(deadMonsterIDList, entity:GetID())
     end
   end
   if #deadMonsterIDList == 0 then
     phaseContext:SetCurDamageResultIndex(-1)
     phaseContext:SetCurTargetEntityID(-1)
-    return 
+    return
   end
   local targetEntityID = deadMonsterIDList[self._damageIndex]
   phaseContext:SetCurDamageResultIndex(self._damageIndex)
   phaseContext:SetCurTargetEntityID(targetEntityID)
 end
-
-

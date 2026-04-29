@@ -1,71 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_story.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpressStory", SeasonMapExpressBase)
 SeasonMapExpressStory = SeasonMapExpressStory
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressStory.Constructor = function(self, cfg, eventPoint)
-  -- function num : 0_0
-  self._content = (self._cfg).StoryID
+function SeasonMapExpressStory:Constructor(cfg, eventPoint)
+  self._content = self._cfg.StoryID
   self._missionID = eventPoint:GetID()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressStory.Update = function(self, deltaTime)
-  -- function num : 0_1
+function SeasonMapExpressStory:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressStory.OnPlay = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BeforSeasonStoryLevelPlay)
+function SeasonMapExpressStory:OnPlay()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.BeforSeasonStoryLevelPlay)
   self._state = SeasonExpressState.Playing
-  ;
-  (UISeasonHelper.PlayStoryInSeasonScence)(self._content, function()
-    -- function num : 0_2_0 , upvalues : self
+  UISeasonHelper.PlayStoryInSeasonScence(self._content, function()
     self:_Record()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressStory._Record = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
-    local module = (GameGlobal.GetModule)(MissionModule)
+function SeasonMapExpressStory:_Record()
+  GameGlobal.TaskManager():StartTask(function(TT)
+    local module = GameGlobal.GetModule(MissionModule)
     local res = module:SetMissionStoryActive(TT, self._missionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
     if not res:GetSucc() then
-      (Log.error)("赛季剧情关失败:", self._missionID, self._content)
+      Log.error("赛季剧情关失败:", self._missionID, self._content)
     end
     self:_PlayAudio()
     self:Next()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressStory._PlayAudio = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_season_mission)[self._missionID]
+function SeasonMapExpressStory:_PlayAudio()
+  local cfg = Cfg.cfg_season_mission[self._missionID]
   if cfg and cfg.AudioID and cfg.AudioID > 0 then
-    local module = (GameGlobal.GetModule)(SeasonModule)
+    local module = GameGlobal.GetModule(SeasonModule)
     local component = module:GetSeasonMissionComponent()
     if component then
       local componentInfo = component:GetComponentInfo()
       local map = componentInfo.m_stage_info
       if not map[cfg.ID] then
-        (AudioHelperController.PlayUISoundAutoRelease)(tonumber(cfg.AudioID))
+        AudioHelperController.PlayUISoundAutoRelease(tonumber(cfg.AudioID))
       end
     end
   end
 end
-
-

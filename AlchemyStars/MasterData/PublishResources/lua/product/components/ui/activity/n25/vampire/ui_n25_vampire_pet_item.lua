@@ -1,49 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/ui_n25_vampire_pet_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampirePetItem", UICustomWidget)
 UIN25VampirePetItem = UIN25VampirePetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampirePetItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25VampirePetItem:Constructor()
   self.mCampaign = self:GetModule(CampaignModule)
-  self.data = (self.mCampaign):GetN25Data()
+  self.data = self.mCampaign:GetN25Data()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampirePetItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25VampirePetItem:OnShow(uiParams)
   self.Icon = self:GetUIComponent("RawImageLoader", "Icon")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampirePetItem.OnHide = function(self)
-  -- function num : 0_2
-  (self.Icon):DestoryLastImage()
+function UIN25VampirePetItem:OnHide()
+  self.Icon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampirePetItem.Flush = function(self, tplId, callback)
-  -- function num : 0_3
+function UIN25VampirePetItem:Flush(tplId, callback)
   self.callback = callback
-  local pet = (self.data):GetPetByTplId(tplId)
-  ;
-  (self.Icon):LoadImage(pet:Icon())
+  local pet = self.data:GetPetByTplId(tplId)
+  self.Icon:LoadImage(pet:Icon())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampirePetItem.IconOnClick = function(self, go)
-  -- function num : 0_4
+function UIN25VampirePetItem:IconOnClick(go)
   if self.callback then
-    (self.callback)()
+    self.callback()
   end
 end
-
-

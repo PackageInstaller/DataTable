@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_transport_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTransportInstruction", BaseInstruction)
 PlayTransportInstruction = PlayTransportInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTransportInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayTransportInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTransportInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTransportInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Transport)
   if resultArray == nil then
-    (Log.fatal)("PlayTransportInstruction, result is nil.")
-    return 
+    Log.fatal("PlayTransportInstruction, result is nil.")
+    return
   end
   local playSkillInstructionService = world:GetService("PlaySkillInstruction")
   local pieceService = world:GetService("Piece")
@@ -30,7 +20,7 @@ PlayTransportInstruction.DoInstruction = function(self, TT, casterEntity, phaseC
   local playBuffService = world:GetService("PlayBuff")
   local renderBoardEntity = world:GetRenderBoardEntity()
   local renderBoardComponent = renderBoardEntity:RenderBoard()
-  for _,v in ipairs(resultArray) do
+  for _, v in ipairs(resultArray) do
     local arrPiece = {}
     local allEntity = {}
     local arrMovers = {}
@@ -40,186 +30,154 @@ PlayTransportInstruction.DoInstruction = function(self, TT, casterEntity, phaseC
     local convertResult = v:GetConvertColors()
     local trapResult = v:GetTrapSkillResults()
     local isLoop = v:IsLoop()
-    for i,r in ipairs(pieceResult) do
+    for i, r in ipairs(pieceResult) do
       local oldPos, newPos = r[1], r[2]
       local pieceEntity = pieceService:FindPieceEntity(oldPos)
       if pieceEntity then
-        local t = {pieceEntity, oldPos, newPos}
+        local t = {
+          pieceEntity,
+          oldPos,
+          newPos
+        }
         allEntity[#allEntity + 1] = t
         arrPiece[#arrPiece + 1] = t
       end
     end
-    for i,r in ipairs(entityResult) do
-      local eid, oldPos, newPos = (table.unpack)(r)
+    for i, r in ipairs(entityResult) do
+      local eid, oldPos, newPos = table.unpack(r)
       local e = world:GetEntityByID(eid)
       if e then
-        local t = {e, oldPos, newPos}
+        local t = {
+          e,
+          oldPos,
+          newPos
+        }
         allEntity[#allEntity + 1] = t
         arrMovers[#arrMovers + 1] = t
       end
     end
-    local tempEntity, lastPieceEntity = nil, nil
+    local tempEntity, lastPieceEntity
     if isLoop == 0 then
       local firstPieceRes = pieceResult[1]
       local firstPiecePos = firstPieceRes[1]
       local oriFirstPieceEntity = pieceService:FindPieceEntity(firstPiecePos)
-      local pieceType = (oriFirstPieceEntity:Piece()):GetPieceType()
-      for _,v in ipairs(convertResult) do
+      local pieceType = oriFirstPieceEntity:Piece():GetPieceType()
+      for _, v in ipairs(convertResult) do
         if firstPiecePos == v[1] then
           pieceType = v[3]
           break
         end
       end
-      do
-        tempEntity = self:_CreatePieceEntity(world, pieceType, firstPiecePos)
-        pieceService:SetPieceEntityAnimNormal(tempEntity)
-        local lastPieceRes = pieceResult[#pieceResult]
-        do
-          local lastPiecePos = lastPieceRes[2]
-          lastPieceEntity = pieceService:FindPieceEntity(lastPiecePos)
-          if lastPieceEntity then
-            lastPieceEntity:SetLocationHeight(-0.001)
-          end
-          for i,v in ipairs(allEntity) do
-            local e = v[1]
-            local posTarget = v[3]
-            local gridPos = boardServiceRender:GetRealEntityGridPos(e)
-            local canMoving = self:OnCheckCanMoving(world, e)
-            if canMoving then
-              if not e:HasTeam() then
-                e:AddGridMove(BattleConst.ConveySpeed, posTarget, gridPos)
-                if e:HasTrapRoundInfoRender() then
-                  local eid = (e:TrapRoundInfoRender()):GetRoundInfoEntityID()
-                  if eid then
-                    local eff = world:GetEntityByID(eid)
-                    eff:AddGridMove(BattleConst.ConveySpeed, posTarget, gridPos)
-                  end
-                end
-              end
-              do
-                if e:HasTeam() then
-                  e:AddGridMove(BattleConst.ConveySpeed, posTarget, gridPos)
-                  local entityList = (e:Team()):GetTeamPetEntities()
-                  for k,entity in pairs(entityList) do
-                    entity:AddGridMove(BattleConst.ConveySpeed, posTarget, gridPos)
-                  end
-                end
-                do
-                  -- DECOMPILER ERROR at PC219: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC219: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC219: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
+      tempEntity = self:_CreatePieceEntity(world, pieceType, firstPiecePos)
+      pieceService:SetPieceEntityAnimNormal(tempEntity)
+      local lastPieceRes = pieceResult[#pieceResult]
+      local lastPiecePos = lastPieceRes[2]
+      lastPieceEntity = pieceService:FindPieceEntity(lastPiecePos)
+      if lastPieceEntity then
+        lastPieceEntity:SetLocationHeight(-0.001)
+      end
+    end
+    for i, v in ipairs(allEntity) do
+      local e = v[1]
+      local posTarget = v[3]
+      local gridPos = boardServiceRender:GetRealEntityGridPos(e)
+      local canMoving = self:OnCheckCanMoving(world, e)
+      if canMoving then
+        if not e:HasTeam() then
+          e:AddGridMove(BattleConst.ConveySpeed, posTarget, gridPos)
+          if e:HasTrapRoundInfoRender() then
+            local eid = e:TrapRoundInfoRender():GetRoundInfoEntityID()
+            if eid then
+              local eff = world:GetEntityByID(eid)
+              eff:AddGridMove(BattleConst.ConveySpeed, posTarget, gridPos)
             end
           end
-          while self:IsMoving(allEntity) do
-            YIELD(TT)
-          end
-          local notRefreshPrism = true
-          if isLoop == 0 then
-            if tempEntity then
-              world:DestroyEntity(tempEntity)
-            end
-            if lastPieceEntity then
-              lastPieceEntity:SetLocationHeight(0)
-            end
-            for _,t in ipairs(arrPiece) do
-              local e = t[1]
-              local oldPos = t[2]
-              local gridLocationCmp = e:GridLocation()
-              if gridLocationCmp then
-                e:SetGridPosition(oldPos)
-                e:SetLocation(oldPos, e:GetGridDirection())
-              end
-            end
-            for _,v in ipairs(convertResult) do
-              local pos = v[1]
-              local elementType = v[3]
-              playSkillInstructionService:GridConvert(TT, casterEntity, pos, 0, elementType, notRefreshPrism)
-            end
-          else
-            do
-              for _,t in ipairs(arrPiece) do
-                local e = t[1]
-                local newPos = t[3]
-                renderBoardComponent:SetGridRenderEntityData(newPos, e)
-                pieceService:SetPieceAnimation(newPos, "Normal")
-                e:SetGridPosition(newPos)
-              end
-              for _,v in ipairs(convertResult) do
-                local pos = v[1]
-                local elementType = v[3]
-                local gridEntity = pieceService:FindPieceEntity(pos)
-                if (gridEntity:Piece()):GetPieceType() ~= elementType then
-                  playSkillInstructionService:GridConvert(TT, casterEntity, pos, 0, elementType, notRefreshPrism)
-                end
-              end
-              do
-                do
-                  for i,v in ipairs(allEntity) do
-                    local e = v[1]
-                    local posTarget = v[3]
-                    trapSvc:OnCheckTrapViewSetPieceExtraLayer(e, posTarget)
-                  end
-                  for _,v in ipairs(trapResult) do
-                    local eId = v[1]
-                    local e = world:GetEntityByID(eId)
-                    local skillEffectResultContainer = v[2]
-                    local triggerEid = v[3]
-                    local triggerEntity = world:GetEntityByID(triggerEid)
-                    ;
-                    (e:SkillRoutine()):SetResultContainer(skillEffectResultContainer)
-                    trapSvc:PlayTrapTriggerSkill(TT, e, false, triggerEntity)
-                  end
-                  for _,v in pairs(prismResult) do
-                    local oldPos = v[1]
-                    pieceService:SetPieceRenderEffect(oldPos, PieceEffectType.Normal)
-                  end
-                  for _,v in pairs(prismResult) do
-                    local newPos = v[2]
-                    local pieceEffectType = v[4]
-                    if newPos then
-                      pieceService:SetPieceRenderEffect(newPos, pieceEffectType)
-                    end
-                  end
-                  pieceService:RefreshPieceAnim()
-                  for _,v in ipairs(arrMovers) do
-                    playBuffService:PlayBuffView(TT, NTTransportEachMoveEnd:New(v[1], v[2], v[3]))
-                  end
-                  YIELD(TT)
-                  -- DECOMPILER ERROR at PC408: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC408: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC408: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC408: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC408: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC408: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC408: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC408: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
-            end
+        end
+        if e:HasTeam() then
+          e:AddGridMove(BattleConst.ConveySpeed, posTarget, gridPos)
+          local entityList = e:Team():GetTeamPetEntities()
+          for k, entity in pairs(entityList) do
+            entity:AddGridMove(BattleConst.ConveySpeed, posTarget, gridPos)
           end
         end
       end
     end
+    while self:IsMoving(allEntity) do
+      YIELD(TT)
+    end
+    local notRefreshPrism = true
+    if isLoop == 0 then
+      if tempEntity then
+        world:DestroyEntity(tempEntity)
+      end
+      if lastPieceEntity then
+        lastPieceEntity:SetLocationHeight(0)
+      end
+      for _, t in ipairs(arrPiece) do
+        local e = t[1]
+        local oldPos = t[2]
+        local gridLocationCmp = e:GridLocation()
+        if gridLocationCmp then
+          e:SetGridPosition(oldPos)
+          e:SetLocation(oldPos, e:GetGridDirection())
+        end
+      end
+      for _, v in ipairs(convertResult) do
+        local pos = v[1]
+        local elementType = v[3]
+        playSkillInstructionService:GridConvert(TT, casterEntity, pos, 0, elementType, notRefreshPrism)
+      end
+    else
+      for _, t in ipairs(arrPiece) do
+        local e = t[1]
+        local newPos = t[3]
+        renderBoardComponent:SetGridRenderEntityData(newPos, e)
+        pieceService:SetPieceAnimation(newPos, "Normal")
+        e:SetGridPosition(newPos)
+      end
+      for _, v in ipairs(convertResult) do
+        local pos = v[1]
+        local elementType = v[3]
+        local gridEntity = pieceService:FindPieceEntity(pos)
+        if gridEntity:Piece():GetPieceType() ~= elementType then
+          playSkillInstructionService:GridConvert(TT, casterEntity, pos, 0, elementType, notRefreshPrism)
+        end
+      end
+    end
+    for i, v in ipairs(allEntity) do
+      local e = v[1]
+      local posTarget = v[3]
+      trapSvc:OnCheckTrapViewSetPieceExtraLayer(e, posTarget)
+    end
+    for _, v in ipairs(trapResult) do
+      local eId = v[1]
+      local e = world:GetEntityByID(eId)
+      local skillEffectResultContainer = v[2]
+      local triggerEid = v[3]
+      local triggerEntity = world:GetEntityByID(triggerEid)
+      e:SkillRoutine():SetResultContainer(skillEffectResultContainer)
+      trapSvc:PlayTrapTriggerSkill(TT, e, false, triggerEntity)
+    end
+    for _, v in pairs(prismResult) do
+      local oldPos = v[1]
+      pieceService:SetPieceRenderEffect(oldPos, PieceEffectType.Normal)
+    end
+    for _, v in pairs(prismResult) do
+      local newPos = v[2]
+      local pieceEffectType = v[4]
+      if newPos then
+        pieceService:SetPieceRenderEffect(newPos, pieceEffectType)
+      end
+    end
+    pieceService:RefreshPieceAnim()
+    for _, v in ipairs(arrMovers) do
+      playBuffService:PlayBuffView(TT, NTTransportEachMoveEnd:New(v[1], v[2], v[3]))
+    end
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTransportInstruction.OnCheckCanMoving = function(self, world, e)
-  -- function num : 0_2
+function PlayTransportInstruction:OnCheckCanMoving(world, e)
   if e:HasTrapID() then
     local trapSvc = world:GetService("TrapRender")
     local isPieceExtraLayerTrap = trapSvc:IsPieceExtraLayerTrap(e)
@@ -227,16 +185,11 @@ PlayTransportInstruction.OnCheckCanMoving = function(self, world, e)
       return false
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTransportInstruction.IsMoving = function(self, es)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,t in ipairs(es) do
+function PlayTransportInstruction:IsMoving(es)
+  for _, t in ipairs(es) do
     local e = t[1]
     if e:HasGridMove() then
       return true
@@ -244,10 +197,7 @@ PlayTransportInstruction.IsMoving = function(self, es)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTransportInstruction._CreatePieceEntity = function(self, world, pieceType, pos)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayTransportInstruction:_CreatePieceEntity(world, pieceType, pos)
   local sEntity = world:GetService("RenderEntity")
   local pieceEntity = sEntity:CreateRenderEntity(EntityConfigIDRender.Grid)
   local pieceService = world:GetService("Piece")
@@ -258,5 +208,3 @@ PlayTransportInstruction._CreatePieceEntity = function(self, world, pieceType, p
   pieceEntity:RemoveOutsideRegion()
   return pieceEntity
 end
-
-

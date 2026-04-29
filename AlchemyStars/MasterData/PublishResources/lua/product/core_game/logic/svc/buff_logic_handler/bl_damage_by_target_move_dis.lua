@@ -1,58 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_damage_by_target_move_dis.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDamageByTargetMoveDis", BuffLogicBase)
 BuffLogicDamageByTargetMoveDis = BuffLogicDamageByTargetMoveDis
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDamageByTargetMoveDis.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicDamageByTargetMoveDis:Constructor(buffInstance, logicParam)
   self._fixedDamage = logicParam.fixedDamage
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDamageByTargetMoveDis.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicDamageByTargetMoveDis:DoLogic(notify)
   local dis, targetEntity = self:GetTargetMoveDisAndTarget(notify)
   if dis == 0 or not targetEntity then
-    return 
+    return
   end
-  local blsvc = (self._world):GetService("BuffLogic")
-  local damageParam = {fixedDamage = self._fixedDamage, layer = dis, formulaID = 169}
-  local damageInfo = blsvc:DoBuffDamage((self._buffInstance):BuffID(), self._entity, targetEntity, damageParam)
+  local blsvc = self._world:GetService("BuffLogic")
+  local damageParam = {
+    fixedDamage = self._fixedDamage,
+    layer = dis,
+    formulaID = 169
+  }
+  local damageInfo = blsvc:DoBuffDamage(self._buffInstance:BuffID(), self._entity, targetEntity, damageParam)
   local buffResult = BuffResultAddPoison:New(damageInfo, recoverDamageInfos)
   return buffResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDamageByTargetMoveDis.GetTargetMoveDisAndTarget = function(self, notify)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffLogicDamageByTargetMoveDis:GetTargetMoveDisAndTarget(notify)
   local dis = 0
-  local targetEntity = nil
+  local targetEntity
   if notify:GetNotifyType() == NotifyType.HitBackEnd or notify:GetNotifyType() == NotifyType.TractionEnd then
-    local boardSvr = (self._world):GetService("BoardLogic")
-    local maxTeleportRing = (math.max)(boardSvr:GetCurBoardMaxX(), boardSvr:GetCurBoardMaxY())
+    local boardSvr = self._world:GetService("BoardLogic")
+    local maxTeleportRing = math.max(boardSvr:GetCurBoardMaxX(), boardSvr:GetCurBoardMaxY())
     local casterEntity = notify:GetNotifyEntity()
     local posStart = notify:GetPosStart()
     local posEnd = notify:GetPosEnd()
     for i = 1, maxTeleportRing do
-      local ringRange = (ComputeScopeRange.ComputeRange_SquareRing)(posStart, 1, i)
-      if (table.Vector2Include)(ringRange, posEnd) then
+      local ringRange = ComputeScopeRange.ComputeRange_SquareRing(posStart, 1, i)
+      if table.Vector2Include(ringRange, posEnd) then
         dis = i
         break
       end
     end
-    do
-      do
-        targetEntity = notify:GetDefender()
-        return dis, targetEntity
-      end
-    end
+    targetEntity = notify:GetDefender()
   end
+  return dis, targetEntity
 end
-
-

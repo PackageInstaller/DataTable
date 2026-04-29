@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_mirage_monster_turn_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("mirage_monster_turn_system")
 _class("ClientMirageMonsterTurnSystem_Render", MirageMonsterTurnSystem)
 ClientMirageMonsterTurnSystem_Render = ClientMirageMonsterTurnSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientMirageMonsterTurnSystem_Render._DoRenderHidePetInfo = function(self, TT)
-  -- function num : 0_0
+function ClientMirageMonsterTurnSystem_Render:_DoRenderHidePetInfo(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMirageMonsterTurnSystem_Render._DoRenderMirageClearWarningArea = function(self, TT)
-  -- function num : 0_1
-  local mirageRenderSvc = (self._world):GetService("MirageRender")
+function ClientMirageMonsterTurnSystem_Render:_DoRenderMirageClearWarningArea(TT)
+  local mirageRenderSvc = self._world:GetService("MirageRender")
   mirageRenderSvc:DoMirageClearWarningArea()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMirageMonsterTurnSystem_Render._DoRenderMiragePlayTrapSkill = function(self, TT, traps)
-  -- function num : 0_2
-  local mirageSvcRender = (self._world):GetService("MirageRender")
+function ClientMirageMonsterTurnSystem_Render:_DoRenderMiragePlayTrapSkill(TT, traps)
+  local mirageSvcRender = self._world:GetService("MirageRender")
   mirageSvcRender:DoMiragePlayTrapSkill(TT, traps)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMirageMonsterTurnSystem_Render._DoRenderMiragePlayTrapWarningSkill = function(self, TT, traps)
-  -- function num : 0_3
-  local mirageSvcRender = (self._world):GetService("MirageRender")
+function ClientMirageMonsterTurnSystem_Render:_DoRenderMiragePlayTrapWarningSkill(TT, traps)
+  local mirageSvcRender = self._world:GetService("MirageRender")
   mirageSvcRender:DoMiragePlayTrapWarningSkill(TT, traps)
 end
-
-

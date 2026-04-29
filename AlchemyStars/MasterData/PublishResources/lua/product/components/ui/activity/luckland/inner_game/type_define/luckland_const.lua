@@ -1,14 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/type_define/luckland_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-LuckLandConst = {BVK_DoubleAtk = "DoubleAttack", BVK_ExtraDrawCard = "ExtraDrawCard", BVK_MoveToFirst = "MoveToFirst", BVK_MoveToLast = "MoveToLast", 
-MorningPosList = {1, 2, 3}
-, 
-MiddayPosList = {4, 5, 6, 7, 8}
-, 
-NightPosList = {9, 10, 11, 12}
-, CFGMaxCount = 9999, MaxMonsterCount = 2, Epsilon = 1e-05}
+LuckLandConst = {
+  BVK_DoubleAtk = "DoubleAttack",
+  BVK_ExtraDrawCard = "ExtraDrawCard",
+  BVK_MoveToFirst = "MoveToFirst",
+  BVK_MoveToLast = "MoveToLast",
+  MorningPosList = {
+    1,
+    2,
+    3
+  },
+  MiddayPosList = {
+    4,
+    5,
+    6,
+    7,
+    8
+  },
+  NightPosList = {
+    9,
+    10,
+    11,
+    12
+  },
+  CFGMaxCount = 9999,
+  MaxMonsterCount = 2,
+  Epsilon = 1.0E-5
+}
 _enum("LuckLandConst", LuckLandConst)
-

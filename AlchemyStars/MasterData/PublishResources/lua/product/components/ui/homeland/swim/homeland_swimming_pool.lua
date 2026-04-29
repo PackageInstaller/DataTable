@@ -1,169 +1,129 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/swim/homeland_swimming_pool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandSwimmingPool", HomeBuildingFather)
 HomelandSwimmingPool = HomelandSwimmingPool
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandSwimmingPool.Constructor = function(self, insID, architecture, cfg)
-  -- function num : 0_0
+function HomelandSwimmingPool:Constructor(insID, architecture, cfg)
   self._isInited = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.InitSwimmingPool = function(self, architecture)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandSwimmingPool:InitSwimmingPool(architecture)
   if self._isInited then
-    return 
+    return
   end
-  self._uiModule = (GameGlobal.GetUIModule)(HomelandModule)
-  self._isVisit = ((self._uiModule):GetClient()):IsVisit()
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
+  self._uiModule = GameGlobal.GetUIModule(HomelandModule)
+  self._isVisit = self._uiModule:GetClient():IsVisit()
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
   self._pstid = architecture.pstid
   self._buildID = self:GetBuildId()
   self._transform = self:Transform()
-  local cfgSwimmingPool = (Cfg.cfg_homeland_swimming_pool)[self._buildID]
-  self._waterHeight = ((self._transform).position).y + cfgSwimmingPool.WaterHeight
-  local pathRoot = (GameObjectHelper.FindChild)(self._transform, "Path")
-  local swimAreaRoot = (GameObjectHelper.FindChild)(self._transform, "PetSwimArea")
+  local cfgSwimmingPool = Cfg.cfg_homeland_swimming_pool[self._buildID]
+  self._waterHeight = self._transform.position.y + cfgSwimmingPool.WaterHeight
+  local pathRoot = GameObjectHelper.FindChild(self._transform, "Path")
+  local swimAreaRoot = GameObjectHelper.FindChild(self._transform, "PetSwimArea")
   if not swimAreaRoot then
-    return 
+    return
   end
   self._swimAreaCollider = swimAreaRoot:GetComponent(typeof(UnityEngine.BoxCollider))
-  local roleSwimAreaRoot = (GameObjectHelper.FindChild)(self._transform, "RoleSwimArea")
+  local roleSwimAreaRoot = GameObjectHelper.FindChild(self._transform, "RoleSwimArea")
   if not roleSwimAreaRoot then
-    return 
+    return
   end
   self._roleSwimAreaCollider = roleSwimAreaRoot:GetComponent(typeof(UnityEngine.BoxCollider))
-  local poolAreaRoot = (GameObjectHelper.FindChild)(self._transform, "RolePoolArea")
+  local poolAreaRoot = GameObjectHelper.FindChild(self._transform, "RolePoolArea")
   if not poolAreaRoot then
-    return 
+    return
   end
   self._poolAreaCollider = poolAreaRoot:GetComponent(typeof(UnityEngine.CapsuleCollider))
   self._pathList = {}
   for i = 0, pathRoot.childCount - 1 do
-    local childTransform = pathRoot:GetChild(R13_PC102)
-    -- DECOMPILER ERROR at PC105: Overwrote pending register: R13 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC106: Overwrote pending register: R13 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC107: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._pathList)[R13_PC102] = childTransform
+    local childTransform = pathRoot:GetChild(i)
+    self._pathList[#self._pathList + 1] = childTransform
   end
   self._commingPetList = {}
   self._swimmingPetList = {}
   self._swimmingPetCountMax = cfgSwimmingPool.PetCountMax
   self:OnReCheckPetSwimState()
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1, TimerTriggerCount.Infinite, function()
-    -- function num : 0_1_0 , upvalues : self
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(1, TimerTriggerCount.Infinite, function()
     self:CheckRoleSwimsuit()
-  end
-)
+  end)
   self._roleInSwimArea = false
   if self._saveBuildingCallback == nil then
-    self._saveBuildingCallback = (GameHelper:GetInstance()):CreateCallback(self.OnSaveBuilding, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.HomelandBuildOnSaveBuilding, self._saveBuildingCallback)
+    self._saveBuildingCallback = GameHelper:GetInstance():CreateCallback(self.OnSaveBuilding, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.HomelandBuildOnSaveBuilding, self._saveBuildingCallback)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.GetInteractingPetCountMax = function(self)
-  -- function num : 0_2
+function HomelandSwimmingPool:GetInteractingPetCountMax()
   return self._swimmingPetCountMax
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((HomelandSwimmingPool.super).Dispose)(self)
+function HomelandSwimmingPool:Dispose()
+  HomelandSwimmingPool.super.Dispose(self)
   if self._saveBuildingCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.HomelandBuildOnSaveBuilding, self._saveBuildingCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.HomelandBuildOnSaveBuilding, self._saveBuildingCallback)
     self._saveBuildingCallback = nil
   end
   self:OnRemoveAllSwimmingPet()
-  if self._characterController and (self._characterController):IsWearingSwimsuit() and (self._characterController)._charGO then
-    (self._characterController):OnChangeSwimsuit()
+  if self._characterController and self._characterController:IsWearingSwimsuit() and self._characterController._charGO then
+    self._characterController:OnChangeSwimsuit()
   end
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.OnSaveBuilding = function(self, updateBuildings, deleteBuildings)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,building in ipairs(updateBuildings) do
+function HomelandSwimmingPool:OnSaveBuilding(updateBuildings, deleteBuildings)
+  for _, building in ipairs(updateBuildings) do
     if self._pstid == building._pstid then
       self:OnReCheckPetSwimState()
       self:ResetInteractPoint()
       self:RefreshInteractPoint()
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.OnReCheckPetSwimState = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandSwimmingPool:OnReCheckPetSwimState()
   self:OnDissolveHomeInteractFollow()
   local tmpList = {}
-  for _,pet in pairs(self._swimmingPetList) do
+  for _, pet in pairs(self._swimmingPetList) do
     if pet:IsAlive() then
-      (table.insert)(tmpList, pet)
+      table.insert(tmpList, pet)
     end
   end
-  self._petManager = (self._homelandClient):PetManager()
-  local allPet = (self._petManager):GetAllPets()
-  for key,pet in pairs(allPet) do
-    local closestPoint = (self._roleSwimAreaCollider):ClosestPoint(pet:GetPosition())
-    local dir = (Vector3.Distance)(closestPoint, pet:GetPosition())
+  self._petManager = self._homelandClient:PetManager()
+  local allPet = self._petManager:GetAllPets()
+  for key, pet in pairs(allPet) do
+    local closestPoint = self._roleSwimAreaCollider:ClosestPoint(pet:GetPosition())
+    local dir = Vector3.Distance(closestPoint, pet:GetPosition())
     local inRange = false
     if dir <= 0 then
       inRange = true
     end
-    if (table.icontains)(tmpList, pet) and not inRange then
-      local behavior = pet:GetPetBehavior()
-      local behaviorSwimmingPool = behavior:GetHomelandPetBehavior(HomelandPetBehaviorType.SwimmingPool)
-      if behaviorSwimmingPool then
-        behaviorSwimmingPool:OnChangeSwimStage(HomelandPetSwimStage.Finish)
-      end
-    end
-    do
-      do
-        if inRange then
-          pet:_RandomBornPosition()
+    if table.icontains(tmpList, pet) then
+      if not inRange then
+        local behavior = pet:GetPetBehavior()
+        local behaviorSwimmingPool = behavior:GetHomelandPetBehavior(HomelandPetBehaviorType.SwimmingPool)
+        if behaviorSwimmingPool then
+          behaviorSwimmingPool:OnChangeSwimStage(HomelandPetSwimStage.Finish)
         end
-        -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out DO_STMT
-
       end
+    elseif inRange then
+      pet:_RandomBornPosition()
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.OnRemoveAllSwimmingPet = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function HomelandSwimmingPool:OnRemoveAllSwimmingPet()
   self:OnDissolveHomeInteractFollow()
   local tmpList = {}
-  for _,pet in pairs(self._swimmingPetList) do
+  for _, pet in pairs(self._swimmingPetList) do
     if pet:IsAlive() then
-      (table.insert)(tmpList, pet)
+      table.insert(tmpList, pet)
     end
   end
-  for _,pet in pairs(tmpList) do
+  for _, pet in pairs(tmpList) do
     local behavior = pet:GetPetBehavior()
     local behaviorSwimmingPool = behavior:GetHomelandPetBehavior(HomelandPetBehaviorType.SwimmingPool)
     if behaviorSwimmingPool then
@@ -173,186 +133,134 @@ HomelandSwimmingPool.OnRemoveAllSwimmingPet = function(self)
   self._swimmingPetList = {}
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.OnDissolveHomeInteractFollow = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local homeModule = (GameGlobal.GetModule)(HomelandModule)
+function HomelandSwimmingPool:OnDissolveHomeInteractFollow()
+  local homeModule = GameGlobal.GetModule(HomelandModule)
   local uiHomeModule = homeModule:GetUIModule()
   local homeClient = uiHomeModule:GetClient()
-  local followList = (homeClient:PetManager()):GetFollowPets()
-  if followList and (table.count)(followList) > 0 then
+  local followList = homeClient:PetManager():GetFollowPets()
+  if followList and table.count(followList) > 0 then
     local tmpList = {}
-    for _,pet in pairs(followList) do
-      (table.insert)(tmpList, pet)
+    for _, pet in pairs(followList) do
+      table.insert(tmpList, pet)
     end
-    for _,pet in pairs(tmpList) do
-      if (table.icontains)(self._swimmingPetList, pet) then
-        (table.removev)(((self._homelandClient):PetManager())._followPets, pet)
+    for _, pet in pairs(tmpList) do
+      if table.icontains(self._swimmingPetList, pet) then
+        table.removev(self._homelandClient:PetManager()._followPets, pet)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.IsSwimmable = function(self)
-  -- function num : 0_8
+function HomelandSwimmingPool:IsSwimmable()
   if self:GetBuildId() == 5271001 then
     return self:IsAreaCleaned(52710011)
   end
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.OnHangPointCleaned = function(self, hangPointID)
-  -- function num : 0_9 , upvalues : _ENV
+function HomelandSwimmingPool:OnHangPointCleaned(hangPointID)
   if self:GetBuildId() == 5271001 and self:IsAreaCleaned(52710011) then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeBuildingSwimmingUnlock, self:GetBuildId())
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeBuildingSwimmingUnlock, self:GetBuildId())
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.GetSwimmingPoolIsFull = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  do return self._swimmingPetCountMax <= (table.count)(self._swimmingPetList) end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandSwimmingPool:GetSwimmingPoolIsFull()
+  return table.count(self._swimmingPetList) >= self._swimmingPetCountMax
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.AddSwimmingPet = function(self, pet)
-  -- function num : 0_11 , upvalues : _ENV
-  (table.insert)(self._swimmingPetList, pet)
+function HomelandSwimmingPool:AddSwimmingPet(pet)
+  table.insert(self._swimmingPetList, pet)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.RemovSwimmingPet = function(self, pet)
-  -- function num : 0_12 , upvalues : _ENV
-  (table.removev)(self._swimmingPetList, pet)
+function HomelandSwimmingPool:RemovSwimmingPet(pet)
+  table.removev(self._swimmingPetList, pet)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.PetIsInSwimmingPool = function(self, pet)
-  -- function num : 0_13 , upvalues : _ENV
-  return (table.icontains)(self._swimmingPetList, pet)
+function HomelandSwimmingPool:PetIsInSwimmingPool(pet)
+  return table.icontains(self._swimmingPetList, pet)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.GetSwimmingPoolWaterHeight = function(self)
-  -- function num : 0_14
+function HomelandSwimmingPool:GetSwimmingPoolWaterHeight()
   return self._waterHeight
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.GetPathPos = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function HomelandSwimmingPool:GetPathPos()
   local freePath = self:GetFreePath()
   if not freePath then
     return nil, nil, nil
   end
-  local insidePos = ((GameObjectHelper.FindChild)(freePath, "inside")).position
-  local outsidePos = ((GameObjectHelper.FindChild)(freePath, "outside")).position
+  local insidePos = GameObjectHelper.FindChild(freePath, "inside").position
+  local outsidePos = GameObjectHelper.FindChild(freePath, "outside").position
   return freePath, insidePos, outsidePos
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.GetFreePath = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  if not self._pathList or (table.count)(self._pathList) == 0 then
-    return 
+function HomelandSwimmingPool:GetFreePath()
+  if not self._pathList or table.count(self._pathList) == 0 then
+    return
   end
-  local index = (math.random)(1, #self._pathList)
-  local freePath = (self._pathList)[index]
-  ;
-  (table.removev)(self._pathList, freePath)
+  local index = math.random(1, #self._pathList)
+  local freePath = self._pathList[index]
+  table.removev(self._pathList, freePath)
   return freePath
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.GiveBackPath = function(self, pathTransform)
-  -- function num : 0_17
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._pathList)[#self._pathList + 1] = pathTransform
+function HomelandSwimmingPool:GiveBackPath(pathTransform)
+  self._pathList[#self._pathList + 1] = pathTransform
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.GetSwimRandomPos = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function HomelandSwimmingPool:GetSwimRandomPos()
   if not self._swimAreaCollider then
-    return 
+    return
   end
   local boxcollider = self._swimAreaCollider
-  local posX = (boxcollider.center).x + ((UnityEngine.Random).Range)(-(boxcollider.size).x, (boxcollider.size).x) * 0.5
-  local posZ = (boxcollider.center).z + ((UnityEngine.Random).Range)(-(boxcollider.size).z, (boxcollider.size).z) * 0.5
+  local posX = boxcollider.center.x + UnityEngine.Random.Range(-boxcollider.size.x, boxcollider.size.x) * 0.5
+  local posZ = boxcollider.center.z + UnityEngine.Random.Range(-boxcollider.size.z, boxcollider.size.z) * 0.5
   local pos = Vector3(posX, 0, posZ)
-  pos = (boxcollider.transform):TransformPoint(pos)
+  pos = boxcollider.transform:TransformPoint(pos)
   return pos
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.GetRoleSwimAreaCollider = function(self)
-  -- function num : 0_19
+function HomelandSwimmingPool:GetRoleSwimAreaCollider()
   return self._roleSwimAreaCollider
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.GetPoolAreaCollider = function(self)
-  -- function num : 0_20
+function HomelandSwimmingPool:GetPoolAreaCollider()
   return self._poolAreaCollider
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.Interactable = function(self)
-  -- function num : 0_21
+function HomelandSwimmingPool:Interactable()
   return self:IsSwimmable()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.CheckRoleSwimsuit = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  if (self._homelandClient):CurrentMode() == HomelandMode.Build then
-    return 
+function HomelandSwimmingPool:CheckRoleSwimsuit()
+  if self._homelandClient:CurrentMode() == HomelandMode.Build then
+    return
   end
   if not self._roleSwimAreaCollider then
-    return 
+    return
   end
   local curRoleInSwimArea = self:OnCheckRoleInSwimmingArea()
-  if self._roleInSwimArea == false and curRoleInSwimArea and (self._characterController):IsNotWearingSwimsuit() then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_invite_role_cannot_swim"))
+  if self._roleInSwimArea == false and curRoleInSwimArea and self._characterController:IsNotWearingSwimsuit() then
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_invite_role_cannot_swim"))
   end
-  if self._roleInSwimArea == false and curRoleInSwimArea == true and (self._characterController):IsWearingSwimsuit() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnChangeUIHomelandButtonSprintShow, false)
+  if self._roleInSwimArea == false and curRoleInSwimArea == true and self._characterController:IsWearingSwimsuit() then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnChangeUIHomelandButtonSprintShow, false)
   end
-  if self._roleInSwimArea == true and curRoleInSwimArea == false and (self._characterController):IsWearingSwimsuit() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnChangeUIHomelandButtonSprintShow, true)
+  if self._roleInSwimArea == true and curRoleInSwimArea == false and self._characterController:IsWearingSwimsuit() then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnChangeUIHomelandButtonSprintShow, true)
   end
-  if self._roleInSwimArea ~= curRoleInSwimArea and (self._characterController):IsWearingSwimsuit() then
-    local homeModule = (GameGlobal.GetModule)(HomelandModule)
+  if self._roleInSwimArea ~= curRoleInSwimArea and self._characterController:IsWearingSwimsuit() then
+    local homeModule = GameGlobal.GetModule(HomelandModule)
     local uiHomeModule = homeModule:GetUIModule()
     local homeClient = uiHomeModule:GetClient()
-    local followList = (homeClient:PetManager()):GetFollowPets()
-    if followList and (table.count)(followList) > 0 then
+    local followList = homeClient:PetManager():GetFollowPets()
+    if followList and table.count(followList) > 0 then
       local tmpList = {}
-      for _,pet in pairs(followList) do
-        (table.insert)(tmpList, pet)
+      for _, pet in pairs(followList) do
+        table.insert(tmpList, pet)
       end
-      for _,pet in pairs(tmpList) do
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomeInteractFollow, false, pet)
+      for _, pet in pairs(tmpList) do
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomeInteractFollow, false, pet)
         if curRoleInSwimArea == false then
           local behavior = pet:GetPetBehavior()
           behavior:ChangeBehavior(HomelandPetBehaviorType.SwimmingPool)
@@ -364,43 +272,32 @@ HomelandSwimmingPool.CheckRoleSwimsuit = function(self)
       end
     end
   end
-  do
-    self._roleInSwimArea = curRoleInSwimArea
-  end
+  self._roleInSwimArea = curRoleInSwimArea
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSwimmingPool.OnCheckRoleInSwimmingArea = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  do
-    if not self._characterController then
-      local characterManager = (self._homelandClient):CharacterManager()
-      self._characterController = characterManager:MainCharacterController()
-    end
-    if not (self._characterController)._charTrans then
-      return false
-    end
-    do
-      if not self._swimmingPoolArea then
-        local homeBuildingFatherArea = (self._areaList)[#self._areaList]
-        self._swimmingPoolArea = homeBuildingFatherArea:GetHomeArea()
-      end
-      local posOffset = ((self._characterController)._charTrans).position
-      local posWork = Vector2(posOffset.x, posOffset.z)
-      if (self._swimmingPoolArea):OnOutSide(posWork) then
-        return false
-      end
-      local rolePos = (self._characterController):Position()
-      local inRange = false
-      local closestPoint = (self._roleSwimAreaCollider):ClosestPoint(rolePos)
-      local dir = (Vector3.Distance)(closestPoint, rolePos)
-      if dir <= 0 then
-        inRange = true
-      end
-      return inRange
-    end
+function HomelandSwimmingPool:OnCheckRoleInSwimmingArea()
+  if not self._characterController then
+    local characterManager = self._homelandClient:CharacterManager()
+    self._characterController = characterManager:MainCharacterController()
   end
+  if not self._characterController._charTrans then
+    return false
+  end
+  if not self._swimmingPoolArea then
+    local homeBuildingFatherArea = self._areaList[#self._areaList]
+    self._swimmingPoolArea = homeBuildingFatherArea:GetHomeArea()
+  end
+  local posOffset = self._characterController._charTrans.position
+  local posWork = Vector2(posOffset.x, posOffset.z)
+  if self._swimmingPoolArea:OnOutSide(posWork) then
+    return false
+  end
+  local rolePos = self._characterController:Position()
+  local inRange = false
+  local closestPoint = self._roleSwimAreaCollider:ClosestPoint(rolePos)
+  local dir = Vector3.Distance(closestPoint, rolePos)
+  if dir <= 0 then
+    inRange = true
+  end
+  return inRange
 end
-
-

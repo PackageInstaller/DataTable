@@ -1,179 +1,125 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_ruguelike/ui_rugue_like_battle_result_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIRugueLikeBattleResultController", UIController)
 UIRugueLikeBattleResultController = UIRugueLikeBattleResultController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIRugueLikeBattleResultController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIRugueLikeBattleResultController:OnShow(uiParams)
   self._dialogLeftGO = self:GetGameObject("DialogLeft")
   self._dialogRightGO = self:GetGameObject("DialogRight")
   self._dialogLeftTxt = self:GetUIComponent("UILocalizationText", "DialogTextLeft")
   self._dialogRightTxt = self:GetUIComponent("UILocalizationText", "DialogTextRight")
   self._completeen = self:GetGameObject("completeen")
-  local eng = (HelperProxy:GetInstance()):IsInEnglish()
-  ;
-  (self._completeen):SetActive(not eng)
+  local eng = HelperProxy:GetInstance():IsInEnglish()
+  self._completeen:SetActive(not eng)
   self._isWin = uiParams[1] or false
-  local matchEnterData = (self:GetModule(MatchModule)):GetMatchEnterData()
+  local matchEnterData = self:GetModule(MatchModule):GetMatchEnterData()
   local localPlayerInfo = matchEnterData:GetLocalPlayerInfo()
-  local petID = ((localPlayerInfo.pet_list)[1]).pet_pstid
+  local petID = localPlayerInfo.pet_list[1].pet_pstid
   local petModule = self:GetModule(PetModule)
   self._petData = petModule:GetPet(petID)
   self._petListData = localPlayerInfo.pet_list
   self._matchPetData = {}
   for i = 1, #self._petListData do
-    -- DECOMPILER ERROR at PC68: Confused about usage of register: R11 in 'UnsetPending'
-
-    (self._matchPetData)[i] = MatchPet:New((self._petListData)[i])
+    self._matchPetData[i] = MatchPet:New(self._petListData[i])
   end
   local gameMatchModule = self:GetModule(GameMatchModule)
   local matchResult = UI_MatchResult:New()
   matchResult = gameMatchModule:GetMachResult()
   self._itemTab = matchResult.rewards
   self._selectItemInfoPool = self:GetUIComponent("UISelectObjectPath", "ItemInfoPool")
-  self._selectItemInfo = (self._selectItemInfoPool):SpawnObject("UISelectInfo")
+  self._selectItemInfo = self._selectItemInfoPool:SpawnObject("UISelectInfo")
   self:AttachEvent(GameEventType.ShowItemTips, self.ShowItemTips)
   self:InitAwards()
   self:PlayAudio()
   self:TalkMsg()
   self:StaticBody()
   self:_SetStatisticsBtn()
-  local funcModule = (self:GetModule(RoleModule)).uiModule
+  local funcModule = self:GetModule(RoleModule).uiModule
   funcModule:LockAchievementFinishPanel(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBattleResultController.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIRugueLikeBattleResultController:OnHide()
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowItemTips)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBattleResultController.InitAwards = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIRugueLikeBattleResultController:InitAwards()
   self._itemPool = self:GetUIComponent("UISelectObjectPath", "Items")
-  local itemTabCount = (table.count)(self._itemTab)
-  ;
-  (Log.debug)("[error] mazeResult --> itemTabCount is " .. itemTabCount .. " !")
-  ;
-  (self._itemPool):SpawnObjects("UIWidgetResultReward", itemTabCount)
-  local items = (self._itemPool):GetAllSpawnList()
+  local itemTabCount = table.count(self._itemTab)
+  Log.debug("[error] mazeResult --> itemTabCount is " .. itemTabCount .. " !")
+  self._itemPool:SpawnObjects("UIWidgetResultReward", itemTabCount)
+  local items = self._itemPool:GetAllSpawnList()
   local itemCfg = Cfg.cfg_item
   for i = 1, itemTabCount do
-    local roleAsset = (self._itemTab)[i]
-    ;
-    (Log.debug)("[error] mazeResult --> index is " .. i .. " roleAsset.assetid is " .. roleAsset.assetid .. " !")
-    ;
-    (items[i]):Init(roleAsset.count, roleAsset.assetid, false)
+    local roleAsset = self._itemTab[i]
+    Log.debug("[error] mazeResult --> index is " .. i .. " roleAsset.assetid is " .. roleAsset.assetid .. " !")
+    items[i]:Init(roleAsset.count, roleAsset.assetid, false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBattleResultController.TalkMsg = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = nil
-  local phraseId = (self._petData):GetSkinId()
-  cfg = (Cfg.pet_phrase)[phraseId]
+function UIRugueLikeBattleResultController:TalkMsg()
+  local cfg
+  local phraseId = self._petData:GetSkinId()
+  cfg = Cfg.pet_phrase[phraseId]
   if not cfg then
-    phraseId = (self._petData):GetTemplateID()
-    cfg = (Cfg.pet_phrase)[phraseId]
+    phraseId = self._petData:GetTemplateID()
+    cfg = Cfg.pet_phrase[phraseId]
   end
   if cfg == nil then
-    (Log.fatal)("### cfg_pet_phrase is nil ! id --> ", phraseId)
+    Log.fatal("### cfg_pet_phrase is nil ! id --> ", phraseId)
   end
   if cfg.Dir == nil then
-    (Log.fatal)("### cfg_pet_phrase Dir is nil ! id --> ", phraseId)
+    Log.fatal("### cfg_pet_phrase Dir is nil ! id --> ", phraseId)
   end
   local left = cfg.Dir == 0
-  if not left or not self._dialogLeftTxt then
-    local useDialogTxt = self._dialogRightTxt
-  end
+  local useDialogTxt = left and self._dialogLeftTxt or self._dialogRightTxt
   if cfg.Pos == nil then
-    (Log.fatal)("### cfg_pet_phrase Pos is nil ! id --> ", phraseId)
+    Log.fatal("### cfg_pet_phrase Pos is nil ! id --> ", phraseId)
   end
   local pos = cfg.Pos
-  local posTbl = (table.tonumber)((string.split)(pos, "|"))
-  -- DECOMPILER ERROR at PC67: Confused about usage of register: R7 in 'UnsetPending'
-
+  local posTbl = table.tonumber(string.split(pos, "|"))
   if left then
-    ((self._dialogLeftGO).transform).localPosition = Vector2(posTbl[1], posTbl[2])
+    self._dialogLeftGO.transform.localPosition = Vector2(posTbl[1], posTbl[2])
   else
-    -- DECOMPILER ERROR at PC75: Confused about usage of register: R7 in 'UnsetPending'
-
-    ((self._dialogRightGO).transform).localPosition = Vector2(posTbl[1], posTbl[2])
+    self._dialogRightGO.transform.localPosition = Vector2(posTbl[1], posTbl[2])
   end
-  ;
-  (self._dialogLeftGO):SetActive(left)
-  ;
-  (self._dialogRightGO):SetActive(not left)
-  if not self._isWin or not cfg.CompletePhrase then
-    local str = cfg.FailPhrase
-  end
-  useDialogTxt:SetText((HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)(str)))
-  local csf = ((useDialogTxt.transform).parent):GetComponent("ContentSizeFitter")
-  local rect = ((useDialogTxt.rectTransform).parent):GetComponent("RectTransform")
+  self._dialogLeftGO:SetActive(left)
+  self._dialogRightGO:SetActive(not left)
+  local str = self._isWin and cfg.CompletePhrase or cfg.FailPhrase
+  useDialogTxt:SetText(HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get(str)))
+  local csf = useDialogTxt.transform.parent:GetComponent("ContentSizeFitter")
+  local rect = useDialogTxt.rectTransform.parent:GetComponent("RectTransform")
   local textWidth = 570
   if textWidth <= useDialogTxt.preferredWidth then
-    csf.horizontalFit = (((UnityEngine.UI).ContentSizeFitter).FitMode).Unconstrained
-    rect.sizeDelta = Vector2(textWidth, (rect.sizeDelta).y)
+    csf.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.Unconstrained
+    rect.sizeDelta = Vector2(textWidth, rect.sizeDelta.y)
   else
-    csf.horizontalFit = (((UnityEngine.UI).ContentSizeFitter).FitMode).PreferredSize
+    csf.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize
   end
-  -- DECOMPILER ERROR: 10 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBattleResultController.StaticBody = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._goCG = (self:GetGameObject("imgRole")).transform
+function UIRugueLikeBattleResultController:StaticBody()
+  self._goCG = self:GetGameObject("imgRole").transform
   self._imgRole = self:GetUIComponent("MultiplyImageLoader", "imgRole")
-  local cg = (self._petData):GetPetBattleResultCG(PetSkinEffectPath.BODY_BATTLE_RESULT)
-  if not cg then
-    cg = (self._petData):GetPetStaticBody(PetSkinEffectPath.BODY_BATTLE_RESULT)
-  end
-  ;
-  (self._imgRole):Load(cg, "white")
-  ;
-  (UICG.SetTransform)(self._goCG, "UIBattleResultComplete", cg)
+  local cg = self._petData:GetPetBattleResultCG(PetSkinEffectPath.BODY_BATTLE_RESULT)
+  cg = cg or self._petData:GetPetStaticBody(PetSkinEffectPath.BODY_BATTLE_RESULT)
+  self._imgRole:Load(cg, "white")
+  UICG.SetTransform(self._goCG, "UIBattleResultComplete", cg)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBattleResultController.PlayAudio = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local tplID = (self._petData):GetTemplateID()
-  local pm = (GameGlobal.GetModule)(PetAudioModule)
+function UIRugueLikeBattleResultController:PlayAudio()
+  local tplID = self._petData:GetTemplateID()
+  local pm = GameGlobal.GetModule(PetAudioModule)
   pm:PlayPetAudio("BattleSucceed", tplID)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBattleResultController.bgOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (GameGlobal:GetInstance()):ExitCoreGame()
-  ;
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Maze_Enter, "mj_01")
+function UIRugueLikeBattleResultController:bgOnClick()
+  GameGlobal:GetInstance():ExitCoreGame()
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Maze_Enter, "mj_01")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBattleResultController.ShowItemTips = function(self, itemID, pos)
-  -- function num : 0_7
-  (self._selectItemInfo):SetData(itemID, pos)
+function UIRugueLikeBattleResultController:ShowItemTips(itemID, pos)
+  self._selectItemInfo:SetData(itemID, pos)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBattleResultController._SetStatisticsBtn = function(self)
-  -- function num : 0_8
+function UIRugueLikeBattleResultController:_SetStatisticsBtn()
   local isShow = true
   local btnGo = self:GetGameObject("StatisticsBtnRoot")
   if btnGo then
@@ -181,11 +127,6 @@ UIRugueLikeBattleResultController._SetStatisticsBtn = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBattleResultController.StatisticsBtnOnClick = function(self, go)
-  -- function num : 0_9
+function UIRugueLikeBattleResultController:StatisticsBtnOnClick(go)
   self:ShowDialog("UIBattleStatistics", self._matchPetData)
 end
-
-

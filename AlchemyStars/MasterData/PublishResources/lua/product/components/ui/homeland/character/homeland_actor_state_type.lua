@@ -1,19 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/character/homeland_actor_state_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _enum("HomelandActorStateType", HomelandActorStateType)
-HomelandActorStateType = {Idle = 1, Run = 2, Swim = 3, Dash = 4, Interact = 5, Axe = 6, Pick = 7, Fish = 8, Navigate = 9, Stationary = 10, Dispose = 11, NotDefined = 99}
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
+HomelandActorStateType = {
+  Idle = 1,
+  Run = 2,
+  Swim = 3,
+  Dash = 4,
+  Interact = 5,
+  Axe = 6,
+  Pick = 7,
+  Fish = 8,
+  Navigate = 9,
+  Stationary = 10,
+  Dispose = 11,
+  NotDefined = 99
+}
 
-HomelandActorStateType.TypeToName = function(type)
-  -- function num : 0_0 , upvalues : _ENV
-  for name,value in pairs(HomelandActorStateType) do
+function HomelandActorStateType.TypeToName(type)
+  for name, value in pairs(HomelandActorStateType) do
     if type == value then
       return name
     end
   end
 end
-
-

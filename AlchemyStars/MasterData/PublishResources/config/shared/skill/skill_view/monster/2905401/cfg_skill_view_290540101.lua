@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2905401/cfg_skill_view_290540101.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName=Skill01; PlayCasterBindEffect,effectID =290540101; PlayCasterBindEffect,effectID =290540102; PlayCasterSubMaterialAnim,nodeName=2905401_weapon,animName=eff_2905401_skill01_weapon; Wait,waitTime=550; PlayAudio,audioID=6296,audioType=1; Wait,waitTime=300; DataSelectDamage,damageIndex=1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=290540103,turnToTarget=1,deathClear=0; Wait,waitTime=1000; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName=Skill01; PlayCasterBindEffect,effectID =290540101; PlayCasterBindEffect,effectID =290540102; PlayCasterSubMaterialAnim,nodeName=2905401_weapon,animName=eff_2905401_skill01_weapon; Wait,waitTime=550; PlayAudio,audioID=6296,audioType=1; Wait,waitTime=300; DataSelectDamage,damageIndex=1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=290540103,turnToTarget=1,deathClear=0; Wait,waitTime=1000; "
+    }
+  }
 }
 return config, "ID", key
-

@@ -1,47 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/components/logic_extensions/entity_abilities/simple_motion_ability.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("entity_ability")
-_autoEnum("EntityAbilitysLookup_Test", {"GroundMotion"})
-for key,value in pairs(EntityAbilitysLookup_Test) do
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
+_autoEnum("EntityAbilitysLookup_Test", {
+  "GroundMotion"
+})
+for key, value in pairs(EntityAbilitysLookup_Test) do
   EntityAbilitysLookup[key] = value
 end
 _class("SimpleMotionAbility", EntityAbility)
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-SimpleMotionAbility.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SimpleMotionAbility:Constructor()
   self.m_abilityType = EntityAbilitysLookup.GroundMotion
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SimpleMotionAbility.OnDisable = function(self)
-  -- function num : 0_1
-  (self.m_owner):RemoveMovement()
+function SimpleMotionAbility:OnDisable()
+  self.m_owner:RemoveMovement()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SimpleMotionAbility.HandleCommand = function(self, cmd)
-  -- function num : 0_2 , upvalues : _ENV
-  (Log.debug)("SimpleMotionAbility:HandleCommand.." .. cmd.CommandType)
+function SimpleMotionAbility:HandleCommand(cmd)
+  Log.debug("SimpleMotionAbility:HandleCommand.." .. cmd.CommandType)
   if cmd.CommandType == "AxisOperation" then
-    (Log.debug)("Operation x = " .. cmd.AxleX .. " ,  y = " .. cmd.AxleY)
+    Log.debug("Operation x = " .. cmd.AxleX .. " ,  y = " .. cmd.AxleY)
     local e = self.m_owner
     if cmd.AxleX == 0 and cmd.AxleY == 0 then
       e:RemoveMovement()
     else
-      local velocityXZ = (e:Attributes()):GetAttribute("Speed")
-      ;
-      (Log.debug)("velocityXZ  = " .. velocityXZ)
+      local velocityXZ = e:Attributes():GetAttribute("Speed")
+      Log.debug("velocityXZ  = " .. velocityXZ)
       e:ReplaceMovement(MovementByDirection:New(Vector3(cmd.AxleX, 0, cmd.AxleY), velocityXZ))
     end
   end
 end
-
-

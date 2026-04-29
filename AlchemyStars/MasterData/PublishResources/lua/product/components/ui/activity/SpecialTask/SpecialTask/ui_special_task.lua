@@ -1,63 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/SpecialTask/SpecialTask/ui_special_task.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISpecialTask", UISideEnterCenterContentBase)
 UISpecialTask = UISpecialTask
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISpecialTask.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISpecialTask:Constructor()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
   self._preSelectedItem = nil
-  self._sortConst = {[QuestStatus.QUEST_NotStart] = 2, [QuestStatus.QUEST_Accepted] = 3, [QuestStatus.QUEST_Completed] = 4, [QuestStatus.QUEST_Taken] = 1}
+  self._sortConst = {
+    [QuestStatus.QUEST_NotStart] = 2,
+    [QuestStatus.QUEST_Accepted] = 3,
+    [QuestStatus.QUEST_Completed] = 4,
+    [QuestStatus.QUEST_Taken] = 1
+  }
   self:AttachEvent(GameEventType.QuestUpdate, self.Refresh)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTask.DoInit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISpecialTask:DoInit()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_SPECIAL)
-  self._localProcess = (self._campaign):GetLocalProcess()
-  self._questComponent = (self._localProcess):GetComponent(ECampaignSpecialComponentID.ECAMPAIGN_SPECIAL_QUEST)
-  self._questComponentInfo = (self._questComponent):GetComponentInfo()
-  self.id = (self._data)._id
+  self._campaign:LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_SPECIAL)
+  self._localProcess = self._campaign:GetLocalProcess()
+  self._questComponent = self._localProcess:GetComponent(ECampaignSpecialComponentID.ECAMPAIGN_SPECIAL_QUEST)
+  self._questComponentInfo = self._questComponent:GetComponentInfo()
+  self.id = self._data._id
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTask.DoShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UISpecialTask:DoShow(uiParams)
   self._callback = uiParams[1]
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
-  self._timeEvent = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_2_1 , upvalues : self
+    self._campaign:ClearCampaignNew(TT)
+  end)
+  self._timeEvent = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:_RefreshRemainTime()
-  end
-)
+  end)
   self:_DynamicListPlayAnimation(true)
   self:_CheckQuestDailyReset()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTask._GetComponents = function(self)
-  -- function num : 0_3
+function UISpecialTask:_GetComponents()
   self._remainTimeText = self:GetUIComponent("UILocalizationText", "RemainTimeText")
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._itemTips = self:GetUIComponent("UISelectObjectPath", "ItemTips")
-  self._tips = (self._itemTips):SpawnObject("UISelectInfo")
+  self._tips = self._itemTips:SpawnObject("UISelectInfo")
   self._Bg = self:GetUIComponent("RawImageLoader", "BG")
   self._IntroBG = self:GetUIComponent("RawImageLoader", "IntroBG")
   self._Title = self:GetUIComponent("RawImageLoader", "Title")
@@ -67,91 +51,58 @@ UISpecialTask._GetComponents = function(self)
   self._IntrTxt = self:GetUIComponent("UILocalizationText", "IntrTxt")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTask._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_special_task)[self.id]
-  ;
-  (self._Bg):LoadImage(cfg.MainBG)
-  ;
-  (self._RightBg):LoadImage(cfg.RightBG)
-  ;
-  (self._IntroBG):LoadImage(cfg.PlayIntroBG)
-  ;
-  (self._IntrTxt):SetText((StringTable.Get)(cfg.PlayIntro))
-  ;
-  (self._Title):LoadImage(cfg.MainTitle)
-  ;
-  (self._Pet):LoadImage(cfg.Pet)
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
+function UISpecialTask:_OnValue()
+  local cfg = Cfg.cfg_special_task[self.id]
+  self._Bg:LoadImage(cfg.MainBG)
+  self._RightBg:LoadImage(cfg.RightBG)
+  self._IntroBG:LoadImage(cfg.PlayIntroBG)
+  self._IntrTxt:SetText(StringTable.Get(cfg.PlayIntro))
+  self._Title:LoadImage(cfg.MainTitle)
+  self._Pet:LoadImage(cfg.Pet)
   if cfg.PetTransform then
-    (self._PetTrans).localPosition = Vector3((cfg.PetTransform)[1], (cfg.PetTransform)[2], 0)
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._PetTrans).localScale = Vector3((cfg.PetTransform)[3], (cfg.PetTransform)[3], (cfg.PetTransform)[3])
+    self._PetTrans.localPosition = Vector3(cfg.PetTransform[1], cfg.PetTransform[2], 0)
+    self._PetTrans.localScale = Vector3(cfg.PetTransform[3], cfg.PetTransform[3], cfg.PetTransform[3])
   end
   self:_RefreshRemainTime()
-  self._questList = (self._questComponent):GetQuestInfo()
+  self._questList = self._questComponent:GetQuestInfo()
   self:_QuestSort()
   self:_InitDynamicScrollView()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTask._RefreshRemainTime = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local curtime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  local remainTime = (self._questComponentInfo).m_close_time - curtime
-  if remainTime > 0 then
-    (self._remainTimeText):SetText((StringTable.Get)("str_sakura_specialtask_remaintime", (UISpecialTaskToolFunctions.GetRemainTime)(remainTime)))
+function UISpecialTask:_RefreshRemainTime()
+  local curtime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  local remainTime = self._questComponentInfo.m_close_time - curtime
+  if 0 < remainTime then
+    self._remainTimeText:SetText(StringTable.Get("str_sakura_specialtask_remaintime", UISpecialTaskToolFunctions.GetRemainTime(remainTime)))
   else
-    ;
-    (self._campaign):CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED, (self._campaign)._id)
+    self._campaign:CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED, self._campaign._id)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTask._QuestSort = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISpecialTask:_QuestSort()
   local val = {}
   val[QuestStatus.QUEST_Completed] = 0
   val[QuestStatus.QUEST_Accepted] = 1
   val[QuestStatus.QUEST_Taken] = 2
   val[QuestStatus.QUEST_NotStart] = 3
-  ;
-  (table.sort)(self._questList, function(a, b)
-    -- function num : 0_6_0 , upvalues : val
+  table.sort(self._questList, function(a, b)
     local a_status = a:Status()
     local b_status = b:Status()
-    if a:ID() >= b:ID() then
-      do return val[a_status] ~= val[b_status] end
-      do return val[a_status] < val[b_status] end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if val[a_status] == val[b_status] then
+      return a:ID() < b:ID()
     end
-  end
-)
+    return val[a_status] < val[b_status]
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTask._InitDynamicScrollView = function(self)
-  -- function num : 0_7
-  (self._scrollView):InitListView(#self._questList, function(scrollview, index)
-    -- function num : 0_7_0 , upvalues : self
+function UISpecialTask:_InitDynamicScrollView()
+  self._scrollView:InitListView(#self._questList, function(scrollview, index)
     return self:_OnGetItemByIndex(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTask._OnGetItemByIndex = function(self, scrollview, index)
-  -- function num : 0_8
-  local quest = (self._questList)[index + 1]
+function UISpecialTask:_OnGetItemByIndex(scrollview, index)
+  local quest = self._questList[index + 1]
   local item = scrollview:NewListViewItem("UISpecialTaskItem")
   local itemPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if not item.IsInitHandlerCalled then
@@ -162,126 +113,86 @@ UISpecialTask._OnGetItemByIndex = function(self, scrollview, index)
   local itemWidget = itemWidgets[1]
   if itemWidget then
     itemWidget:SetData(self._questComponent, quest, function(widget)
-    -- function num : 0_8_0 , upvalues : self
-    self:OnSelectItem(widget)
-  end
-, function(id, position)
-    -- function num : 0_8_1 , upvalues : self
-    self:_ShowTips(id, position)
-  end
-, function()
-    -- function num : 0_8_2 , upvalues : self
-    self:Refresh()
-  end
-, function()
-    -- function num : 0_8_3 , upvalues : self
-    self:CloseDialog()
-  end
-, function(result)
-    -- function num : 0_8_4 , upvalues : self
-    self:ErrorCheck(result)
-  end
-, self.id)
+      self:OnSelectItem(widget)
+    end, function(id, position)
+      self:_ShowTips(id, position)
+    end, function()
+      self:Refresh()
+    end, function()
+      self:CloseDialog()
+    end, function(result)
+      self:ErrorCheck(result)
+    end, self.id)
   end
   return item
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTask._CheckQuestDailyReset = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local nextTime = (self._questComponent):GetEarliestEndTimeInDailyQuest()
+function UISpecialTask:_CheckQuestDailyReset()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local nextTime = self._questComponent:GetEarliestEndTimeInDailyQuest()
   local stamp = nextTime - curTime
-  if stamp > 0 then
-    return 
+  if 0 < stamp then
+    return
   end
   self:Lock("UISpecialTask:_CheckQuestDailyReset")
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
-    ;
-    (self._questComponent):HandleCamQuestDailyReset(TT, res)
+    self._questComponent:HandleCamQuestDailyReset(TT, res)
     self:UnLock("UISpecialTask:_CheckQuestDailyReset")
     if res:GetSucc() then
       self:Refresh(TT, res)
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTask.Refresh = function(self)
-  -- function num : 0_10
-  self._questList = (self._questComponent):GetQuestInfo()
+function UISpecialTask:Refresh()
+  self._questList = self._questComponent:GetQuestInfo()
   self:_QuestSort()
-  ;
-  (self._scrollView):SetListItemCount(#self._questList)
-  ;
-  (self._scrollView):RefreshAllShownItem()
+  self._scrollView:SetListItemCount(#self._questList)
+  self._scrollView:RefreshAllShownItem()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTask.ErrorCheck = function(self, result)
-  -- function num : 0_11
-  (self._campaign):CheckErrorCode(result, nil, nil)
+function UISpecialTask:ErrorCheck(result)
+  self._campaign:CheckErrorCode(result, nil, nil)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTask.DoHide = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UISpecialTask:DoHide()
   if self._timeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timeEvent)
+    GameGlobal.Timer():CancelEvent(self._timeEvent)
     self._timeEvent = nil
   end
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
-  ;
-  (self._tips):closeOnClick()
+  self._tips:closeOnClick()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTask.OnSelectItem = function(self, widget)
-  -- function num : 0_13
+function UISpecialTask:OnSelectItem(widget)
   if self._preSelectedItem and self._preSelectedItem ~= widget then
-    (self._preSelectedItem):OnSelect(false)
+    self._preSelectedItem:OnSelect(false)
   end
   self._preSelectedItem = widget
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTask._ShowTips = function(self, id, pos)
-  -- function num : 0_14
-  (self._tips):SetData(id, pos)
+function UISpecialTask:_ShowTips(id, pos)
+  self._tips:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTask.DoDestroy = function(self)
-  -- function num : 0_15
+function UISpecialTask:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTask._DynamicListPlayAnimation = function(self, isPlay)
-  -- function num : 0_16 , upvalues : _ENV
+function UISpecialTask:_DynamicListPlayAnimation(isPlay)
   if not isPlay then
-    return 
+    return
   end
-  local showTabIds = (self._scrollView):GetVisibleItemIDsInScrollView()
+  local showTabIds = self._scrollView:GetVisibleItemIDsInScrollView()
   for index = 0, showTabIds.Count - 1 do
-    local id = (math.floor)(showTabIds[index])
-    local item = (self._scrollView):GetShownItemByItemIndex(id)
+    local id = math.floor(showTabIds[index])
+    local item = self._scrollView:GetShownItemByItemIndex(id)
     local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
     local rowList = rowPool:GetAllSpawnList()
     local itemCountPerRow = 1
@@ -292,5 +203,3 @@ UISpecialTask._DynamicListPlayAnimation = function(self, isPlay)
     end
   end
 end
-
-

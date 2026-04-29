@@ -1,38 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_step_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeatureStepPoint", UICustomWidget)
 UIWidgetFeatureStepPoint = UIWidgetFeatureStepPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeatureStepPoint.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetFeatureStepPoint:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureStepPoint.InitWidget = function(self)
-  -- function num : 0_1
+function UIWidgetFeatureStepPoint:InitWidget()
   self._offSetGo = self:GetGameObject("OffSet")
   self._titleText = self:GetUIComponent("UILocalizationText", "Title")
   self._stepInfoText = self:GetUIComponent("UILocalizationText", "StepInfo")
   self._stepInfoMaxText = self:GetUIComponent("UILocalizationText", "StepInfoMax")
   self._recoverInfoText = self:GetUIComponent("UILocalizationText", "RecoverInfo")
   self._bgImage = self:GetUIComponent("Image", "Bg")
-  self._anim = (self:GetGameObject()):GetComponent("Animation")
+  self._anim = self:GetGameObject():GetComponent("Animation")
   self:RegisterEvent()
-  ;
-  (self._offSetGo):SetActive(false)
+  self._offSetGo:SetActive(false)
   self._inited = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureStepPoint.RegisterEvent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetFeatureStepPoint:RegisterEvent()
   self:AttachEvent(GameEventType.FeatureListInit, self._OnFeatureListInit)
   self:AttachEvent(GameEventType.FeatureStepPointRefresh, self._OnFeatureStepPointRefresh)
   self:AttachEvent(GameEventType.FeatureStepPointRefreshByLink, self._OnFeatureStepPointRefreshByLink)
@@ -40,23 +26,17 @@ UIWidgetFeatureStepPoint.RegisterEvent = function(self)
   self:AttachEvent(GameEventType.FeatureRecoverStepPointRefresh, self._OnFeatureRecoverStepPointRefresh)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureStepPoint.SetData = function(self, initData)
-  -- function num : 0_3
-  (self._offSetGo):SetActive(true)
+function UIWidgetFeatureStepPoint:SetData(initData)
+  self._offSetGo:SetActive(true)
   self._initData = initData
-  self._maxStepPoint = (self._initData):GetMaxStepPoint()
-  self._initStepPoint = (self._initData):GetInitStepPoint()
-  self._recoverStepPoint = (self._initData):GetRecoverStepPoint()
+  self._maxStepPoint = self._initData:GetMaxStepPoint()
+  self._initStepPoint = self._initData:GetInitStepPoint()
+  self._recoverStepPoint = self._initData:GetRecoverStepPoint()
   self._curStepPoint = self._initStepPoint
   self:_RefreshInfo(self._curStepPoint, self._maxStepPoint, self._recoverStepPoint)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureStepPoint._RefreshInfo = function(self, curStepPoint, maxStepPoint, recoverStepPoint, animName)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWidgetFeatureStepPoint:_RefreshInfo(curStepPoint, maxStepPoint, recoverStepPoint, animName)
   local uiCount = curStepPoint
   if maxStepPoint < uiCount then
     uiCount = maxStepPoint
@@ -64,35 +44,29 @@ UIWidgetFeatureStepPoint._RefreshInfo = function(self, curStepPoint, maxStepPoin
   if uiCount < 0 then
     uiCount = 0
   end
-  local countStr = nil
+  local countStr
   local strCurCount = "<color=#e68812>" .. tostring(uiCount) .. "</color>"
   countStr = strCurCount
-  ;
-  (self._stepInfoText):SetText(countStr)
+  self._stepInfoText:SetText(countStr)
   local maxStr = tostring(maxStepPoint)
   if self._stepInfoMaxText then
-    (self._stepInfoMaxText):SetText(maxStr)
+    self._stepInfoMaxText:SetText(maxStr)
   end
-  local recoverStr = nil
+  local recoverStr
   recoverStr = "<color=#26e0fc>" .. tostring(recoverStepPoint) .. "</color>"
-  ;
-  (self._recoverInfoText):SetText(recoverStr)
+  self._recoverInfoText:SetText(recoverStr)
   if animName and self._anim then
-    (self._anim):Stop()
-    ;
-    (self._anim):Play(animName)
+    self._anim:Stop()
+    self._anim:Play(animName)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureStepPoint._OnFeatureListInit = function(self, featureListInfo)
-  -- function num : 0_5 , upvalues : _ENV
+function UIWidgetFeatureStepPoint:_OnFeatureListInit(featureListInfo)
   if self._initData then
-    return 
+    return
   end
   if featureListInfo then
-    for i,v in ipairs(featureListInfo) do
+    for i, v in ipairs(featureListInfo) do
       local featureType = v:GetFeatureType()
       if featureType == FeatureType.StepPoint then
         self:SetData(v)
@@ -103,35 +77,29 @@ UIWidgetFeatureStepPoint._OnFeatureListInit = function(self, featureListInfo)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureStepPoint._OnFeatureStepPointRefresh = function(self, curVal, oldVal, isRoundRecover)
-  -- function num : 0_6
+function UIWidgetFeatureStepPoint:_OnFeatureStepPointRefresh(curVal, oldVal, isRoundRecover)
   if not self._inited then
-    return 
+    return
   end
   self._curStepPoint = curVal
-  local animName = nil
+  local animName
   if isRoundRecover then
     animName = "uieff_UIWidgetFeatureStepPoint_cancel"
   end
   self:_RefreshInfo(self._curStepPoint, self._maxStepPoint, self._recoverStepPoint, animName)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureStepPoint._OnFeatureStepPointRefreshByLink = function(self, chainPath, extraRecover, playLongAnim)
-  -- function num : 0_7 , upvalues : _ENV
+function UIWidgetFeatureStepPoint:_OnFeatureStepPointRefreshByLink(chainPath, extraRecover, playLongAnim)
   if not self._inited then
-    return 
+    return
   end
   local tempCurPoint = self._curStepPoint
-  if chainPath and #chainPath > 0 then
+  if chainPath and 0 < #chainPath then
     tempCurPoint = tempCurPoint - (#chainPath - 1)
   end
-  tempCurPoint = (math.max)(0, tempCurPoint)
+  tempCurPoint = math.max(0, tempCurPoint)
   local tempRecover = self._recoverStepPoint
-  if extraRecover and extraRecover > 0 then
+  if extraRecover and 0 < extraRecover then
     tempRecover = tempRecover + extraRecover
   end
   local animName = "uieff_UIWidgetFeatureStepPoint_click"
@@ -141,26 +109,18 @@ UIWidgetFeatureStepPoint._OnFeatureStepPointRefreshByLink = function(self, chain
   self:_RefreshInfo(tempCurPoint, self._maxStepPoint, tempRecover, animName)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureStepPoint._OnFeatureMaxStepPointRefresh = function(self, curVal, oldVal)
-  -- function num : 0_8
+function UIWidgetFeatureStepPoint:_OnFeatureMaxStepPointRefresh(curVal, oldVal)
   if not self._inited then
-    return 
+    return
   end
   self._maxStepPoint = curVal
   self:_RefreshInfo(self._curStepPoint, self._maxStepPoint, self._recoverStepPoint)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureStepPoint._OnFeatureRecoverStepPointRefresh = function(self, curVal, oldVal)
-  -- function num : 0_9
+function UIWidgetFeatureStepPoint:_OnFeatureRecoverStepPointRefresh(curVal, oldVal)
   if not self._inited then
-    return 
+    return
   end
   self._recoverStepPoint = curVal
   self:_RefreshInfo(self._curStepPoint, self._maxStepPoint, self._recoverStepPoint)
 end
-
-

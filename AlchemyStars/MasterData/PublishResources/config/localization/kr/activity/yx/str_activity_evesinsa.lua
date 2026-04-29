@@ -1,8 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/activity/yx/str_activity_evesinsa.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_activity_evesinsa_remainingtime_d = "{1}일", str_activity_evesinsa_remainingtime_h = "{1}시간", str_activity_evesinsa_remainingtime_m = "{1}분", str_activity_evesinsa_remainingtime_z = "1분 미만", str_activity_evesinsa_main_title_desc_1 = "작전 남은 시간", str_activity_evesinsa_main_title_desc_2 = "교환 남은 시간", str_activity_evesinsa_main_loginbtn = "차량 행렬 출석", str_activity_evesinsa_main_taskbtn = "사막 현상금", str_activity_evesinsa_main_levelabtn = "바람이 불어오는 곳", str_activity_evesinsa_main_levelbbtn = "돌아온 사람", str_activity_evesinsa_main_levelabtn_en = "Where the Wind Rises", str_activity_evesinsa_main_levelbbtn_en = "Home Awaits", str_activity_evesinsa_main_actionsecond = "진행 중", str_activity_evesinsa_main_lockbtn_remainingtime_title = " 후 개방", str_activity_evesinsa_main_lockbtn_level = "ST5 클리어 후 개방", str_activity_evesinsa_shop_end_time = "교환 종료 시간까지", str_activity_evesinsa_shop_group_unlock_time = "개방까지", str_activity_evesinsa_shop_remain = "{1} 남음", str_activity_evesinsa_shop_npc_name_1 = "바바라", str_activity_evesinsa_shop_npc_word_1 = "바바라가 아름다운 사막에 축복을! 마음대로 골라서 사!|돈이 있다고 살 수 있는 게 아니라고~ 바바라에게 애정이 있어야 해!|도움이 필요하다면 바바라를 불러! 응원할게!|이상하다. 상점에 왜 바바라 미팅 악수권이 없지?", str_activity_evesinsa_shop_goods_group_lock = "해당 상품 세트 미개방", str_activity_evesinsa_shop_name = "도로 상점", str_activity_evesinsa_shop_sold_out = "교환함", str_activity_evesinsa_task_can_get = "수령 가능", str_activity_evesinsa_task_received = "획득함", str_activity_evesinsa_total_login_title_1 = "이벤트 기간에 8일 누적 로그인 시\n루맘버와 한정 아바타 획득", str_activity_evesinsa_total_login_can_get = "수령 가능", str_activity_evesinsa_total_login_got = "수령 완료", str_activity_evesinsa_total_login_lock = "미개방", str_activity_evesinsa_view_memory = "이브 각성!", str_activity_evesinsa_level_open = "-도전 가능-", str_activity_evesinsa_level_clear = "-클리어-", str_activity_evesinsa_intro_title = "이브&사메야마 이벤트 설명", str_activity_evesinsa_point_des1 = "1. [바람이 불어오는 곳]에서 행동력을 소모하는 스테이지에 도전하려면 [행동력]이 필요합니다. [행동력]은 4시간마다 1포인트 회복되며, 한도는 20포인트입니다.", str_activity_evesinsa_point_des2 = "2. 유저가 전투에서 패배하거나 중도 퇴장 시 [행동력]을 소모하지 않으며, 이벤트가 종료되면 [행동력]은 삭제됩니다.", str_activity_evesinsa_point_des3 = "3. [바람이 불어오는 곳]이 종료된 후 사용하지 않은 [행동력]은 1:100의 비율에 따라 [렌치 너트 휘장]으로 전환됩니다. 이벤트 종료 1시간 후 다시 로그인하면 우편을 통해 획득할 수 있습니다.", str_activity_evesinsa_next_point = "다음 행동력", str_activity_evesinsa_slevel_lock = "[돌아온 사람]의 모든 스테이지 클리어 시 개방", str_activity_evesinsa_intro_head_1 = "[행동력] 사용:", str_activity_evesinsa_intro_head_2 = "[렌치 너트 휘장] 아이템 획득:", str_activity_evesinsa_intro_head_3 = "[폭풍이 멈추는 때] 아이템 사용:", str_activity_evesinsa_intro_body_1 = "1. [바람이 불어오는 곳]에서 행동력을 소모하는 스테이지에 도전하려면 [행동력]이 필요합니다. [행동력]은 4시간마다 1포인트 회복되며, 한도는 20포인트입니다.\n2. 전투에서 패배하거나 중도 퇴장해도 [행동력]을 소모하지 않으며, 이벤트가 종료되면 [행동력]은 삭제됩니다.\n3. [바람이 불어오는 곳]이 종료된 후 사용하지 않은 [행동력]은 1:100의 비율에 따라 [렌치 너트 휘장]으로 전환됩니다. 이벤트 종료 1시간 후 다시 로그인하면 우편을 통해 획득할 수 있습니다.", str_activity_evesinsa_intro_body_2 = "1. 이벤트 개방 기간에 [바람이 불어오는 곳]에서 행동력을 소모하는 이벤트 스테이지를 클리어하면 일정 수량의 [렌치 너트 휘장]을 획득할 수 있습니다.\n2. 이벤트 개방 기간에 프리즘을 소모하는 메인 스테이지 또는 자원 정비 스테이지를 클리어하면 일정 수량의 [렌치 너트 휘장]을 획득할 수 있습니다.\n3. 이벤트 종료 후 이상의 스테이지에서 더는 [렌치 너트 휘장]을 드롭하지 않습니다.", str_activity_evesinsa_intro_body_3 = "1. 이벤트 상점 [도로 상점]에서 [렌치 너트 휘장]을 소모해 상품을 구매할 수 있습니다.\n2. [도로 상점]이 닫히면 사용하지 않은 [렌치 너트 휘장]은 1:15의 비율에 따라 나이티움으로 전환됩니다."}
+local config = {
+  str_activity_evesinsa_remainingtime_d = "{1}일",
+  str_activity_evesinsa_remainingtime_h = "{1}시간",
+  str_activity_evesinsa_remainingtime_m = "{1}분",
+  str_activity_evesinsa_remainingtime_z = "1분 미만",
+  str_activity_evesinsa_main_title_desc_1 = "작전 남은 시간",
+  str_activity_evesinsa_main_title_desc_2 = "교환 남은 시간",
+  str_activity_evesinsa_main_loginbtn = "차량 행렬 출석",
+  str_activity_evesinsa_main_taskbtn = "사막 현상금",
+  str_activity_evesinsa_main_levelabtn = "바람이 불어오는 곳",
+  str_activity_evesinsa_main_levelbbtn = "돌아온 사람",
+  str_activity_evesinsa_main_levelabtn_en = "Where the Wind Rises",
+  str_activity_evesinsa_main_levelbbtn_en = "Home Awaits",
+  str_activity_evesinsa_main_actionsecond = "진행 중",
+  str_activity_evesinsa_main_lockbtn_remainingtime_title = " 후 개방",
+  str_activity_evesinsa_main_lockbtn_level = "ST5 클리어 후 개방",
+  str_activity_evesinsa_shop_end_time = "교환 종료 시간까지",
+  str_activity_evesinsa_shop_group_unlock_time = "개방까지",
+  str_activity_evesinsa_shop_remain = "{1} 남음",
+  str_activity_evesinsa_shop_npc_name_1 = "바바라",
+  str_activity_evesinsa_shop_npc_word_1 = "바바라가 아름다운 사막에 축복을! 마음대로 골라서 사!|돈이 있다고 살 수 있는 게 아니라고~ 바바라에게 애정이 있어야 해!|도움이 필요하다면 바바라를 불러! 응원할게!|이상하다. 상점에 왜 바바라 미팅 악수권이 없지?",
+  str_activity_evesinsa_shop_goods_group_lock = "해당 상품 세트 미개방",
+  str_activity_evesinsa_shop_name = "도로 상점",
+  str_activity_evesinsa_shop_sold_out = "교환함",
+  str_activity_evesinsa_task_can_get = "수령 가능",
+  str_activity_evesinsa_task_received = "획득함",
+  str_activity_evesinsa_total_login_title_1 = "이벤트 기간에 8일 누적 로그인 시\n루맘버와 한정 아바타 획득",
+  str_activity_evesinsa_total_login_can_get = "수령 가능",
+  str_activity_evesinsa_total_login_got = "수령 완료",
+  str_activity_evesinsa_total_login_lock = "미개방",
+  str_activity_evesinsa_view_memory = "이브 각성!",
+  str_activity_evesinsa_level_open = "-도전 가능-",
+  str_activity_evesinsa_level_clear = "-클리어-",
+  str_activity_evesinsa_intro_title = "이브&사메야마 이벤트 설명",
+  str_activity_evesinsa_point_des1 = "1. [바람이 불어오는 곳]에서 행동력을 소모하는 스테이지에 도전하려면 [행동력]이 필요합니다. [행동력]은 4시간마다 1포인트 회복되며, 한도는 20포인트입니다.",
+  str_activity_evesinsa_point_des2 = "2. 유저가 전투에서 패배하거나 중도 퇴장 시 [행동력]을 소모하지 않으며, 이벤트가 종료되면 [행동력]은 삭제됩니다.",
+  str_activity_evesinsa_point_des3 = "3. [바람이 불어오는 곳]이 종료된 후 사용하지 않은 [행동력]은 1:100의 비율에 따라 [렌치 너트 휘장]으로 전환됩니다. 이벤트 종료 1시간 후 다시 로그인하면 우편을 통해 획득할 수 있습니다.",
+  str_activity_evesinsa_next_point = "다음 행동력",
+  str_activity_evesinsa_slevel_lock = "[돌아온 사람]의 모든 스테이지 클리어 시 개방",
+  str_activity_evesinsa_intro_head_1 = "[행동력] 사용:",
+  str_activity_evesinsa_intro_head_2 = "[렌치 너트 휘장] 아이템 획득:",
+  str_activity_evesinsa_intro_head_3 = "[폭풍이 멈추는 때] 아이템 사용:",
+  str_activity_evesinsa_intro_body_1 = "1. [바람이 불어오는 곳]에서 행동력을 소모하는 스테이지에 도전하려면 [행동력]이 필요합니다. [행동력]은 4시간마다 1포인트 회복되며, 한도는 20포인트입니다.\n2. 전투에서 패배하거나 중도 퇴장해도 [행동력]을 소모하지 않으며, 이벤트가 종료되면 [행동력]은 삭제됩니다.\n3. [바람이 불어오는 곳]이 종료된 후 사용하지 않은 [행동력]은 1:100의 비율에 따라 [렌치 너트 휘장]으로 전환됩니다. 이벤트 종료 1시간 후 다시 로그인하면 우편을 통해 획득할 수 있습니다.",
+  str_activity_evesinsa_intro_body_2 = "1. 이벤트 개방 기간에 [바람이 불어오는 곳]에서 행동력을 소모하는 이벤트 스테이지를 클리어하면 일정 수량의 [렌치 너트 휘장]을 획득할 수 있습니다.\n2. 이벤트 개방 기간에 프리즘을 소모하는 메인 스테이지 또는 자원 정비 스테이지를 클리어하면 일정 수량의 [렌치 너트 휘장]을 획득할 수 있습니다.\n3. 이벤트 종료 후 이상의 스테이지에서 더는 [렌치 너트 휘장]을 드롭하지 않습니다.",
+  str_activity_evesinsa_intro_body_3 = "1. 이벤트 상점 [도로 상점]에서 [렌치 너트 휘장]을 소모해 상품을 구매할 수 있습니다.\n2. [도로 상점]이 닫히면 사용하지 않은 [렌치 너트 휘장]은 1:15의 비율에 따라 나이티움으로 전환됩니다."
+}
 return config
-

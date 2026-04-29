@@ -1,30 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_music/ui_album_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAlbumItem", UICustomWidget)
 UIAlbumItem = UIAlbumItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAlbumItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAlbumItem:OnShow(uiParams)
   self:InitWidget()
   self._color = {}
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._color).valid = Color(1, 1, 1)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._color).inValid = Color(0.25098039215686, 0.25098039215686, 0.25098039215686)
+  self._color.valid = Color(1, 1, 1)
+  self._color.inValid = Color(0.25098039215686274, 0.25098039215686274, 0.25098039215686274)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAlbumItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIAlbumItem:InitWidget()
   self.select = self:GetGameObject("select")
   self.play = self:GetGameObject("play")
   self.nameText = self:GetUIComponent("RollingText", "nameText")
@@ -32,100 +16,58 @@ UIAlbumItem.InitWidget = function(self)
   self.lock = self:GetGameObject("lock")
   self.duration = self:GetUIComponent("UILocalizationText", "duration")
   self.playing = self:GetUIComponent("Animation", "playing")
-  self._playingState = (self.playing):get_Item("uieff_Album_Playing")
+  self._playingState = self.playing:get_Item("uieff_Album_Playing")
   self._nameText = self:GetUIComponent("Text", "nameText")
   self._authorText = self:GetUIComponent("Text", "authorText")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAlbumItem.SetData = function(self, cfg, index, isLock, onClick, select, playing, isPause)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAlbumItem:SetData(cfg, index, isLock, onClick, select, playing, isPause)
   self._cfg = cfg
   self._index = index
   self._isLock = isLock
   self._onClick = onClick
   self._cfgId = cfg.ID
-  ;
-  (self.nameText):RefreshText((StringTable.Get)(cfg.Name))
-  ;
-  (self.authorText):RefreshText((StringTable.Get)(cfg.Author))
-  ;
-  (self.duration):SetText((UIBgmHelper.FormatTime)(cfg.Duration))
-  ;
-  (self.select):SetActive(select)
+  self.nameText:RefreshText(StringTable.Get(cfg.Name))
+  self.authorText:RefreshText(StringTable.Get(cfg.Author))
+  self.duration:SetText(UIBgmHelper.FormatTime(cfg.Duration))
+  self.select:SetActive(select)
   if playing then
-    ((self.duration).gameObject):SetActive(false)
-    ;
-    ((self.playing).gameObject):SetActive(true)
-    ;
-    (self.play):SetActive(false)
+    self.duration.gameObject:SetActive(false)
+    self.playing.gameObject:SetActive(true)
+    self.play:SetActive(false)
     if isPause then
-      (self.playing):Stop()
-      -- DECOMPILER ERROR at PC53: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._playingState).enabled = true
-      -- DECOMPILER ERROR at PC55: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._playingState).normalizedTime = 0
-      ;
-      (self.playing):Sample()
-      -- DECOMPILER ERROR at PC60: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._playingState).enabled = false
+      self.playing:Stop()
+      self._playingState.enabled = true
+      self._playingState.normalizedTime = 0
+      self.playing:Sample()
+      self._playingState.enabled = false
     else
-      ;
-      (self.playing):Play()
+      self.playing:Play()
     end
   else
-    ;
-    ((self.playing).gameObject):SetActive(false)
+    self.playing.gameObject:SetActive(false)
     if select then
-      (self.play):SetActive(true)
-      ;
-      ((self.duration).gameObject):SetActive(false)
+      self.play:SetActive(true)
+      self.duration.gameObject:SetActive(false)
     else
-      ;
-      (self.play):SetActive(false)
-      ;
-      ((self.duration).gameObject):SetActive(true)
+      self.play:SetActive(false)
+      self.duration.gameObject:SetActive(true)
     end
   end
-  ;
-  (self.lock):SetActive(isLock)
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R8 in 'UnsetPending'
-
+  self.lock:SetActive(isLock)
   if isLock then
-    (self._nameText).color = (self._color).valid
-    -- DECOMPILER ERROR at PC105: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._authorText).color = (self._color).inValid
+    self._nameText.color = self._color.valid
+    self._authorText.color = self._color.inValid
   else
-    -- DECOMPILER ERROR at PC110: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._nameText).color = (self._color).valid
-    -- DECOMPILER ERROR at PC114: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._authorText).color = (self._color).valid
+    self._nameText.color = self._color.valid
+    self._authorText.color = self._color.valid
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAlbumItem.itemOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIAlbumItem:itemOnClick(go)
   if self._isLock then
-    (ToastManager.ShowToast)((StringTable.Get)((self._cfg).UnLockDes))
+    ToastManager.ShowToast(StringTable.Get(self._cfg.UnLockDes))
   else
-    ;
-    (self._onClick)(self._index)
+    self._onClick(self._index)
   end
 end
-
-

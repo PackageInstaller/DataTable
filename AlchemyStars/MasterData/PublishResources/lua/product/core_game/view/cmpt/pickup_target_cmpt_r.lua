@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/pickup_target_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PickUpTargetComponent", Object)
 PickUpTargetComponent = PickUpTargetComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpTargetComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpTargetComponent:Constructor()
   self._pickUpTargetType = SkillPickUpType.None
   self._activeSkillID = -1
   self._petPstID = -1
@@ -19,96 +12,57 @@ PickUpTargetComponent.Constructor = function(self)
   self._linkLineType = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpTargetComponent.SetLinkLineType = function(self, typ)
-  -- function num : 0_1
+function PickUpTargetComponent:SetLinkLineType(typ)
   self._linkLineType = typ
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpTargetComponent.SetPickUpTargetType = function(self, type)
-  -- function num : 0_2
+function PickUpTargetComponent:SetPickUpTargetType(type)
   self._pickUpTargetType = type
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpTargetComponent.GetPickUpTargetType = function(self)
-  -- function num : 0_3
+function PickUpTargetComponent:GetPickUpTargetType()
   return self._pickUpTargetType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpTargetComponent.GetCurPickUpGridPos = function(self)
-  -- function num : 0_4
+function PickUpTargetComponent:GetCurPickUpGridPos()
   return self._curPickUpGridPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpTargetComponent.GetCurPickUpGridSafePos = function(self)
-  -- function num : 0_5
+function PickUpTargetComponent:GetCurPickUpGridSafePos()
   return self._curPickUpGridPosSafe
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpTargetComponent.GetPetPstid = function(self)
-  -- function num : 0_6
+function PickUpTargetComponent:GetPetPstid()
   return self._petPstID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpTargetComponent.GetEntityID = function(self)
-  -- function num : 0_7
+function PickUpTargetComponent:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpTargetComponent.SetEntityID = function(self, entityID)
-  -- function num : 0_8
+function PickUpTargetComponent:SetEntityID(entityID)
   self._entityID = entityID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpTargetComponent.SetPickUpGridPos = function(self, pickUpGridPos)
-  -- function num : 0_9
+function PickUpTargetComponent:SetPickUpGridPos(pickUpGridPos)
   self._lastPickUpGridPos = self._curPickUpGridPos
   self._curPickUpGridPos = pickUpGridPos
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpTargetComponent.SetPickUpGridSafePos = function(self, pickUpGridPos)
-  -- function num : 0_10
+function PickUpTargetComponent:SetPickUpGridSafePos(pickUpGridPos)
   self._curPickUpGridPosSafe = pickUpGridPos
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpTargetComponent.GetCurActiveSkillID = function(self)
-  -- function num : 0_11
+function PickUpTargetComponent:GetCurActiveSkillID()
   return self._activeSkillID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpTargetComponent.SetCurActiveSkillInfo = function(self, activeSkillID, petPstID)
-  -- function num : 0_12
+function PickUpTargetComponent:SetCurActiveSkillInfo(activeSkillID, petPstID)
   self._activeSkillID = activeSkillID
   self._petPstID = petPstID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpTargetComponent.Reset = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function PickUpTargetComponent:Reset()
   self._pickUpTargetType = SkillPickUpType.None
   self._activeSkillID = -1
   self._petPstID = -1
@@ -118,45 +72,28 @@ PickUpTargetComponent.Reset = function(self)
   self._entityID = -1
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PickUpTarget = function(self)
-  -- function num : 0_14
-  return self:GetComponent((self.WEComponentsEnum).PickUpTarget)
+function Entity:PickUpTarget()
+  return self:GetComponent(self.WEComponentsEnum.PickUpTarget)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPickUpTarget = function(self)
-  -- function num : 0_15
-  return self:HasComponent((self.WEComponentsEnum).PickUpTarget)
+function Entity:HasPickUpTarget()
+  return self:HasComponent(self.WEComponentsEnum.PickUpTarget)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPickUpTarget = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PickUpTarget
+function Entity:AddPickUpTarget()
+  local index = self.WEComponentsEnum.PickUpTarget
   local component = PickUpTargetComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePickUpTarget = function(self)
-  -- function num : 0_17
-  local component = self:GetComponent((self.WEComponentsEnum).PickUpTarget)
-  local index = (self.WEComponentsEnum).PickUpTarget
+function Entity:ReplacePickUpTarget()
+  local component = self:GetComponent(self.WEComponentsEnum.PickUpTarget)
+  local index = self.WEComponentsEnum.PickUpTarget
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePickUpTarget = function(self)
-  -- function num : 0_18
+function Entity:RemovePickUpTarget()
   if self:HasPickUpTarget() then
-    self:RemoveComponent((self.WEComponentsEnum).PickUpTarget)
+    self:RemoveComponent(self.WEComponentsEnum.PickUpTarget)
   end
 end
-
-

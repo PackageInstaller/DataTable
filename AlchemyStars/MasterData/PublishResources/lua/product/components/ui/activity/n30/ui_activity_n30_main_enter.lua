@@ -1,35 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n30/ui_activity_n30_main_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN30MainEnter", UICustomWidget)
 UIN30MainEnter = UIN30MainEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN30MainEnter.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN30MainEnter:OnShow(uiParams)
   EntrustComponent:HookClientData(109301805, UIN30Entrust.RefreshClientData)
   self._new = self:GetGameObject("new")
   self._red = self:GetGameObject("red")
-  ;
-  (self._new):SetActive(false)
-  ;
-  (self._red):SetActive(false)
+  self._new:SetActive(false)
+  self._red:SetActive(false)
   self._activityConst = UIActivityCustomConst:New(self:GetCampaignType(), self:GetComponentIds())
   self:RequestCampaign()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30MainEnter.OnHide = function(self)
-  -- function num : 0_1
+function UIN30MainEnter:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30MainEnter.GetEntryNewIgnore = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN30MainEnter:GetEntryNewIgnore()
   local componentIds = {}
   componentIds[#componentIds + 1] = ECampaignN30ComponentID.ECAMPAIGN_N30_CUMULATIVE_LOGIN
   componentIds[#componentIds + 1] = ECampaignN30ComponentID.ECAMPAIGN_N30_POWER2ITEM
@@ -37,27 +22,18 @@ UIN30MainEnter.GetEntryNewIgnore = function(self)
   return componentIds
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30MainEnter.GetEntryRedIgnore = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN30MainEnter:GetEntryRedIgnore()
   local componentIds = {}
   componentIds[#componentIds + 1] = ECampaignN30ComponentID.ECAMPAIGN_N30_POWER2ITEM
   componentIds[#componentIds + 1] = ECampaignN30ComponentID.ECAMPAIGN_N30_FIRST_MEET
   return componentIds
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30MainEnter.GetCampaignType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN30MainEnter:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N30
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30MainEnter.GetComponentIds = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN30MainEnter:GetComponentIds()
   local componentIds = {}
   componentIds[#componentIds + 1] = ECampaignN30ComponentID.ECAMPAIGN_N30_CUMULATIVE_LOGIN
   componentIds[#componentIds + 1] = ECampaignN30ComponentID.ECAMPAIGN_N30_FIRST_MEET
@@ -67,86 +43,56 @@ UIN30MainEnter.GetComponentIds = function(self)
   return componentIds
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30MainEnter.SetData_uiMainLobbyController = function(self, controller)
-  -- function num : 0_6
+function UIN30MainEnter:SetData_uiMainLobbyController(controller)
   self._uiMainLobbyController = controller
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30MainEnter.RequestCampaign = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN30MainEnter:RequestCampaign()
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV
     local lockName = "UIN29MainEnterRequestCampaign"
     self:Lock(lockName)
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    ;
-    (self._activityConst):LoadData(TT, res)
+    self._activityConst:LoadData(TT, res)
     self:Flush()
     self:FlushNewRed()
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30MainEnter.Flush = function(self)
-  -- function num : 0_8
+function UIN30MainEnter:Flush()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30MainEnter.FlushNewRed = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._new):SetActive(false)
-  ;
-  (self._red):SetActive(false)
-  local new = (self._activityConst):IsShowComponentRed(ECampaignN30ComponentID.ECAMPAIGN_N30_ENTRUST)
-  if (self._activityConst):IsShowEntryNew(self:GetEntryNewIgnore()) or new then
-    (self._new):SetActive(true)
-    return 
+function UIN30MainEnter:FlushNewRed()
+  self._new:SetActive(false)
+  self._red:SetActive(false)
+  local new = self._activityConst:IsShowComponentRed(ECampaignN30ComponentID.ECAMPAIGN_N30_ENTRUST)
+  if self._activityConst:IsShowEntryNew(self:GetEntryNewIgnore()) or new then
+    self._new:SetActive(true)
+    return
   end
-  if (self._activityConst):IsShowEntryRed(self:GetEntryRedIgnore()) then
-    (self._red):SetActive(true)
+  if self._activityConst:IsShowEntryRed(self:GetEntryRedIgnore()) then
+    self._red:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30MainEnter.BtnOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.Enter, self)
+function UIN30MainEnter:BtnOnClick(go)
+  GameGlobal.TaskManager():StartTask(self.Enter, self)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30MainEnter.Enter = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN30MainEnter:Enter(TT)
   self:Lock("UIN29MainEnter_Enter")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._activityConst):LoadData(TT, res)
-  do
-    if res and not res:GetSucc() then
-      local campModule = (GameGlobal.GetModule)(CampaignModule)
-      campModule:CheckErrorCode(res.m_result, ((self._activityConst):GetCampaignId()), nil, nil)
-      self:UnLock("UIN29MainEnter_Enter")
-      return 
-    end
-    ;
-    (CutsceneManager.ExcuteCutsceneIn)("CommonBlack", function()
-    -- function num : 0_11_0 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIActivityN30MainController)
-  end
-)
+  self._activityConst:LoadData(TT, res)
+  if res and not res:GetSucc() then
+    local campModule = GameGlobal.GetModule(CampaignModule)
+    campModule:CheckErrorCode(res.m_result, self._activityConst:GetCampaignId(), nil, nil)
     self:UnLock("UIN29MainEnter_Enter")
+    return
   end
+  CutsceneManager.ExcuteCutsceneIn("CommonBlack", function()
+    self:SwitchState(UIStateType.UIActivityN30MainController)
+  end)
+  self:UnLock("UIN29MainEnter_Enter")
 end
-
-

@@ -1,29 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_config/auto_test_220120_072330.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 AutoTest_220120_072330 = {
-cases = {
-[1] = {
-[1] = {action = "WaitGameFsm", 
-args = {id = 5}
+  cases = {
+    [1] = {
+      [1] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      name = "新测试用例"
+    }
+  },
+  name = "拥抱者",
+  petList = {
+    [1] = {
+      awakening = 0,
+      equiplv = 1,
+      grade = 0,
+      id = 1400071,
+      level = 1,
+      name = "p1"
+    }
+  },
+  remotePet = {
+    [1] = {
+      awakening = 0,
+      equiplv = 1,
+      grade = 0,
+      id = 1400071,
+      level = 1,
+      name = "r1"
+    }
+  },
+  setup = {
+    [1] = {
+      args = {levelID = 1, matchType = 1},
+      setup = "LevelBasic"
+    }
+  }
 }
-, name = "新测试用例"}
-}
-, name = "拥抱者", 
-petList = {
-[1] = {awakening = 0, equiplv = 1, grade = 0, id = 1400071, level = 1, name = "p1"}
-}
-, 
-remotePet = {
-[1] = {awakening = 0, equiplv = 1, grade = 0, id = 1400071, level = 1, name = "r1"}
-}
-, 
-setup = {
-[1] = {
-args = {levelID = 1, matchType = 1}
-, setup = "LevelBasic"}
-}
-}
-

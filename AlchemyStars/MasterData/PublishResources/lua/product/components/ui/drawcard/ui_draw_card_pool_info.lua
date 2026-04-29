@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_pool_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardPoolInfo", Object)
 UIDrawCardPoolInfo = UIDrawCardPoolInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardPoolInfo.Constructor = function(self, data, idx)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDrawCardPoolInfo:Constructor(data, idx)
   self.poolData = data
   self.index = idx
   self.singleMat = nil
@@ -19,219 +12,189 @@ UIDrawCardPoolInfo.Constructor = function(self, data, idx)
   self.multiplePrice = nil
   self.multipleOriPrice = nil
   self.multipleDiscount = 0
-  self.freeCount = (self.poolData).remain_free_count
-  self.nextTimer = (self.poolData).next_refresh_free_time
-  self.closeTimer = (self.poolData).free_campaign_end_time
-  self.freeCount_Mul = (self.poolData).mul_remain_free_count
-  self.nextTimer_Mul = (self.poolData).mul_next_refresh_free_time
-  self.closeTimer_Mul = (self.poolData).mul_free_campaign_end_time
-  self._mRole = (GameGlobal.GetModule)(RoleModule)
-  self.singleMat = self:GetOneDrawInfo()
+  self.freeCount = self.poolData.remain_free_count
+  self.nextTimer = self.poolData.next_refresh_free_time
+  self.closeTimer = self.poolData.free_campaign_end_time
+  self.freeCount_Mul = self.poolData.mul_remain_free_count
+  self.nextTimer_Mul = self.poolData.mul_next_refresh_free_time
+  self.closeTimer_Mul = self.poolData.mul_free_campaign_end_time
+  self._mRole = GameGlobal.GetModule(RoleModule)
+  self.singleMat, self.singlePrice, self.singleOriPrice, self.singleDiscount = self:GetOneDrawInfo()
   self._canSingleDraw = self.singleMat ~= nil
   self._canMultipleDraw = true
-  if (self.poolData).multiple_shake_times > (self.poolData).extend_data then
-    self._canMultipleDraw = not self:IsNovicePool()
-    self.multipleMat = self:GetTenDrawInfo()
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  if self:IsNovicePool() then
+    self._canMultipleDraw = self.poolData.extend_data >= self.poolData.multiple_shake_times
   end
+  self.multipleMat, self.multiplePrice, self.multipleOriPrice, self.multipleDiscount = self:GetTenDrawInfo()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.GetOneDrawInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local itemM = (GameGlobal.GetModule)(ItemModule)
+function UIDrawCardPoolInfo:GetOneDrawInfo()
+  local itemM = GameGlobal.GetModule(ItemModule)
   local canUseCoupon = false
-  if itemM:GetItemCount((self.poolData).pre_use_ticket) <= 0 then
-    canUseCoupon = not (self.poolData).pre_use_ticket or (self.poolData).pre_use_ticket <= 0
-    if canUseCoupon then
-      return (self.poolData).pre_use_ticket, 1, 1, nil
-    end
-    if (self.poolData).cost1_id == 0 and (self.poolData).cost2_id == 0 then
-      (Log.exception)("严重错误，卡池无材料消耗:", (self.poolData).prize_pool_id)
-    end
-    local mats = {}
-    if self:ItemCanOneDraw((self.poolData).cost1_id) then
-      mats[#mats + 1] = {(self.poolData).cost1_id, (self.poolData).one_shake_price1, (self.poolData).one_shake_discount1_price}
-    end
-    if self:ItemCanOneDraw((self.poolData).cost2_id) then
-      mats[#mats + 1] = {(self.poolData).cost2_id, (self.poolData).one_shake_price2, (self.poolData).one_shake_discount2_price}
-    end
-    if #mats == 0 then
-      (Log.error)("没有可用的单抽材料:", (self.poolData).prize_pool_id)
-      return 
-    end
-    for idx,data in ipairs(mats) do
-      local id = data[1]
-      local oriPrice = data[2]
-      local discountPrice = data[3]
-      local itemID = nil
-      local cfg = (Cfg.cfg_item)[id]
-      if id == RoleAssetID.RoleAssetDrawCard100 then
-        local item = itemM:GetAvailableLimitDrawcardCoupon(ItemSubType.ItemSubType_TempDrawTicket)
-        if item then
-          itemID = item:GetTemplateID()
-        else
-          itemID = RoleAssetID.RoleAssetDrawCard100
-        end
-      elseif id == RoleAssetID.RoleAssetDrawCard101 then
-        local item = itemM:GetAvailableLimitDrawcardCoupon(ItemSubType.ItemSubType_TempSpecialTicket)
-        if item then
-          itemID = item:GetTemplateID()
-        else
-          itemID = RoleAssetID.RoleAssetDrawCard101
-        end
-      else
-        itemID = id
-      end
-      local have = itemM:GetItemCount(itemID)
-      local price = oriPrice
-      local discount = nil
-      if discountPrice and discountPrice > 0 then
-        price = discountPrice
-        discount = (math.ceil)((oriPrice - discountPrice) / oriPrice * 100)
-      end
-      if price <= have then
-        return itemID, price, oriPrice, discount
-      elseif idx == #mats then
-        return itemID, price, oriPrice, discount
-      end
-    end
-    -- DECOMPILER ERROR: 15 unprocessed JMP targets
+  if self.poolData.pre_use_ticket and self.poolData.pre_use_ticket > 0 then
+    canUseCoupon = 0 < itemM:GetItemCount(self.poolData.pre_use_ticket)
   end
-end
-
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.GetTenDrawInfo = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local itemM = (GameGlobal.GetModule)(ItemModule)
-  if (self.poolData).cost1_id == 0 and (self.poolData).cost2_id == 0 then
-    (Log.exception)("严重错误，卡池无材料消耗:", (self.poolData).prize_pool_id)
+  if canUseCoupon then
+    return self.poolData.pre_use_ticket, 1, 1, nil
+  end
+  if self.poolData.cost1_id == 0 and self.poolData.cost2_id == 0 then
+    Log.exception("严重错误，卡池无材料消耗:", self.poolData.prize_pool_id)
   end
   local mats = {}
-  if self:ItemCanTenDraw((self.poolData).cost1_id) then
-    mats[#mats + 1] = {(self.poolData).cost1_id, (self.poolData).multiple_shake_price1, (self.poolData).multiple_shake_discount1_price}
+  if self:ItemCanOneDraw(self.poolData.cost1_id) then
+    mats[#mats + 1] = {
+      self.poolData.cost1_id,
+      self.poolData.one_shake_price1,
+      self.poolData.one_shake_discount1_price
+    }
   end
-  if self:ItemCanTenDraw((self.poolData).cost2_id) then
-    mats[#mats + 1] = {(self.poolData).cost2_id, (self.poolData).multiple_shake_price2, (self.poolData).multiple_shake_discount2_price}
+  if self:ItemCanOneDraw(self.poolData.cost2_id) then
+    mats[#mats + 1] = {
+      self.poolData.cost2_id,
+      self.poolData.one_shake_price2,
+      self.poolData.one_shake_discount2_price
+    }
   end
   if #mats == 0 then
-    (Log.exception)("严重错误，没有可用的十连材料:", (self.poolData).prize_pool_id)
+    Log.error("没有可用的单抽材料:", self.poolData.prize_pool_id)
+    return
   end
-  for idx,data in ipairs(mats) do
+  for idx, data in ipairs(mats) do
+    local id = data[1]
+    local oriPrice = data[2]
+    local discountPrice = data[3]
+    local itemID
+    local cfg = Cfg.cfg_item[id]
+    if id == RoleAssetID.RoleAssetDrawCard100 then
+      local item = itemM:GetAvailableLimitDrawcardCoupon(ItemSubType.ItemSubType_TempDrawTicket)
+      if item then
+        itemID = item:GetTemplateID()
+      else
+        itemID = RoleAssetID.RoleAssetDrawCard100
+      end
+    elseif id == RoleAssetID.RoleAssetDrawCard101 then
+      local item = itemM:GetAvailableLimitDrawcardCoupon(ItemSubType.ItemSubType_TempSpecialTicket)
+      if item then
+        itemID = item:GetTemplateID()
+      else
+        itemID = RoleAssetID.RoleAssetDrawCard101
+      end
+    else
+      itemID = id
+    end
+    local have = itemM:GetItemCount(itemID)
+    local price = oriPrice
+    local discount
+    if discountPrice and 0 < discountPrice then
+      price = discountPrice
+      discount = math.ceil((oriPrice - discountPrice) / oriPrice * 100)
+    end
+    if have >= price then
+      return itemID, price, oriPrice, discount
+    elseif idx == #mats then
+      return itemID, price, oriPrice, discount
+    end
+  end
+end
+
+function UIDrawCardPoolInfo:GetTenDrawInfo()
+  local itemM = GameGlobal.GetModule(ItemModule)
+  if self.poolData.cost1_id == 0 and self.poolData.cost2_id == 0 then
+    Log.exception("严重错误，卡池无材料消耗:", self.poolData.prize_pool_id)
+  end
+  local mats = {}
+  if self:ItemCanTenDraw(self.poolData.cost1_id) then
+    mats[#mats + 1] = {
+      self.poolData.cost1_id,
+      self.poolData.multiple_shake_price1,
+      self.poolData.multiple_shake_discount1_price
+    }
+  end
+  if self:ItemCanTenDraw(self.poolData.cost2_id) then
+    mats[#mats + 1] = {
+      self.poolData.cost2_id,
+      self.poolData.multiple_shake_price2,
+      self.poolData.multiple_shake_discount2_price
+    }
+  end
+  if #mats == 0 then
+    Log.exception("严重错误，没有可用的十连材料:", self.poolData.prize_pool_id)
+  end
+  for idx, data in ipairs(mats) do
     local id = data[1]
     local oriPrice = data[2]
     local discountPrice = data[3]
     local have = itemM:GetItemCount(id)
     local price = oriPrice
-    local discount = nil
-    if discountPrice and discountPrice > 0 then
+    local discount
+    if discountPrice and 0 < discountPrice then
       price = discountPrice
-      discount = (math.ceil)((oriPrice - discountPrice) / oriPrice * 100)
+      discount = math.ceil((oriPrice - discountPrice) / oriPrice * 100)
     end
-    if price <= have then
+    if have >= price then
       return id, price, oriPrice, discount
-    else
-      if idx == #mats then
-        return id, price, oriPrice, discount
-      end
+    elseif idx == #mats then
+      return id, price, oriPrice, discount
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.ItemCanOneDraw = function(self, id)
-  -- function num : 0_3 , upvalues : _ENV
-  do
-    if id and id > 0 then
-      local cfg = (Cfg.cfg_item)[id]
-      return cfg.ItemSubType ~= ItemSubType.ItemSubType_10DrawCardTicket
-    end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIDrawCardPoolInfo:ItemCanOneDraw(id)
+  if id and 0 < id then
+    local cfg = Cfg.cfg_item[id]
+    return cfg.ItemSubType ~= ItemSubType.ItemSubType_10DrawCardTicket
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.ItemCanTenDraw = function(self, id)
-  -- function num : 0_4
-  if id and id > 0 then
+function UIDrawCardPoolInfo:ItemCanTenDraw(id)
+  if id and 0 < id then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.CloseTimer_Single = function(self)
-  -- function num : 0_5
+function UIDrawCardPoolInfo:CloseTimer_Single()
   return self.closeTimer
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.NextTimer_Single = function(self)
-  -- function num : 0_6
+function UIDrawCardPoolInfo:NextTimer_Single()
   return self.nextTimer
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.GetFreeCount_Single = function(self)
-  -- function num : 0_7
+function UIDrawCardPoolInfo:GetFreeCount_Single()
   return self.freeCount
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.CloseTimer_Multi = function(self)
-  -- function num : 0_8
+function UIDrawCardPoolInfo:CloseTimer_Multi()
   return self.closeTimer_Mul
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.NextTimer_Multi = function(self)
-  -- function num : 0_9
+function UIDrawCardPoolInfo:NextTimer_Multi()
   return self.nextTimer_Mul
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.GetFreeCount_Multi = function(self)
-  -- function num : 0_10
+function UIDrawCardPoolInfo:GetFreeCount_Multi()
   return self.freeCount_Mul
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.Get2AssetId = function(self)
-  -- function num : 0_11
-  return (self.poolData).cost1_id, (self.poolData).cost2_id
+function UIDrawCardPoolInfo:Get2AssetId()
+  return self.poolData.cost1_id, self.poolData.cost2_id
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.GetXBName = function(self, isSingle)
-  -- function num : 0_12 , upvalues : _ENV
-  local costMat = nil
+function UIDrawCardPoolInfo:GetXBName(isSingle)
+  local costMat
   if isSingle then
     costMat = self.singleMat
   else
     costMat = self.multipleMat
   end
-  local name = (StringTable.Get)("str_item_" .. costMat)
+  local name = StringTable.Get("str_item_" .. costMat)
   return name
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.IsCostXB = function(self, isSingle)
-  -- function num : 0_13 , upvalues : _ENV
-  local costid = nil
+function UIDrawCardPoolInfo:IsCostXB(isSingle)
+  local costid
   if isSingle then
     costid = self.singleMat
   else
@@ -239,35 +202,24 @@ UIDrawCardPoolInfo.IsCostXB = function(self, isSingle)
   end
   local isCostXB = costid == RoleAssetID.RoleAssetDrawCard100
   local isCostTZXB = costid == RoleAssetID.RoleAssetDrawCard101
-  do return isCostXB or isCostTZXB, costid end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return isCostXB or isCostTZXB, costid
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.GetPoolViewID = function(self)
-  -- function num : 0_14
-  return (self.poolData).performance_id
+function UIDrawCardPoolInfo:GetPoolViewID()
+  return self.poolData.performance_id
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.IsCostGp = function(self, isSingle)
-  -- function num : 0_15 , upvalues : _ENV
-  local costid = nil
+function UIDrawCardPoolInfo:IsCostGp(isSingle)
+  local costid
   if isSingle then
     costid = self.singleMat
   else
     costid = self.multipleMat
   end
-  do return costid == RoleAssetID.RoleAssetGlow, costid end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return costid == RoleAssetID.RoleAssetGlow, costid
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.GetAssetsPrice = function(self, isSingle)
-  -- function num : 0_16
+function UIDrawCardPoolInfo:GetAssetsPrice(isSingle)
   if isSingle then
     return self.singleOriPrice, self.singlePrice, self.singleDiscount, self.singleMat
   else
@@ -275,166 +227,120 @@ UIDrawCardPoolInfo.GetAssetsPrice = function(self, isSingle)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.IsXBEnough = function(self, cost, isSingle)
-  -- function num : 0_17 , upvalues : _ENV
+function UIDrawCardPoolInfo:IsXBEnough(cost, isSingle)
   local isCostXB, xbId = self:IsCostXB(isSingle)
   if not isCostXB then
-    (Log.fatal)("### not cost xb.")
-    return 
+    Log.fatal("### not cost xb.")
+    return
   end
-  local count = (self._mRole):GetAssetCount(xbId)
+  local count = self._mRole:GetAssetCount(xbId)
   local isEnough = cost <= count
   local diff = cost - count
-  do return isEnough, diff end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return isEnough, diff
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.IsGPEnough = function(self, cost)
-  -- function num : 0_18
-  local count = (self._mRole):GetGlow()
+function UIDrawCardPoolInfo:IsGPEnough(cost)
+  local count = self._mRole:GetGlow()
   local isEnough = cost <= count
   local diff = cost - count
-  do return isEnough, diff end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return isEnough, diff
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.IsYJEnough = function(self, cost)
-  -- function num : 0_19 , upvalues : _ENV
-  local mShop = (GameGlobal.GetModule)(ShopModule)
+function UIDrawCardPoolInfo:IsYJEnough(cost)
+  local mShop = GameGlobal.GetModule(ShopModule)
   local count, countFree = mShop:GetDiamondCount()
   local total = count
   local isEnough = cost <= total
   local diff = cost - total
-  do return isEnough, diff end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return isEnough, diff
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.HasFreeDraw = function(self)
-  -- function num : 0_20
-  do return self.freeCount > 0 or self.freeCount_Mul > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIDrawCardPoolInfo:HasFreeDraw()
+  return self.freeCount > 0 or 0 < self.freeCount_Mul
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.GetTopTips = function(self, itemIDs)
-  -- function num : 0_21 , upvalues : _ENV
+function UIDrawCardPoolInfo:GetTopTips(itemIDs)
   local limitItem = {}
-  if (self.poolData).cost1_id == RoleAssetID.RoleAssetDrawCard100 or (self.poolData).cost2_id == RoleAssetID.RoleAssetDrawCard100 then
-    local item = ((GameGlobal.GetModule)(ItemModule)):GetAvailableLimitDrawcardCoupon(ItemSubType.ItemSubType_TempDrawTicket)
+  if self.poolData.cost1_id == RoleAssetID.RoleAssetDrawCard100 or self.poolData.cost2_id == RoleAssetID.RoleAssetDrawCard100 then
+    local item = GameGlobal.GetModule(ItemModule):GetAvailableLimitDrawcardCoupon(ItemSubType.ItemSubType_TempDrawTicket)
     if item then
       limitItem[#limitItem + 1] = item:GetTemplateID()
     end
-  else
-    do
-      do
-        if (self.poolData).cost1_id == RoleAssetID.RoleAssetDrawCard101 or (self.poolData).cost2_id == RoleAssetID.RoleAssetDrawCard101 then
-          local item = ((GameGlobal.GetModule)(ItemModule)):GetAvailableLimitDrawcardCoupon(ItemSubType.ItemSubType_TempSpecialTicket)
-          if item then
-            limitItem[#limitItem + 1] = item:GetTemplateID()
-          end
-        end
-        if #limitItem > 0 then
-          for _,id in ipairs(itemIDs) do
-            limitItem[#limitItem + 1] = id
-          end
-          return limitItem
-        end
-        return itemIDs
-      end
+  elseif self.poolData.cost1_id == RoleAssetID.RoleAssetDrawCard101 or self.poolData.cost2_id == RoleAssetID.RoleAssetDrawCard101 then
+    local item = GameGlobal.GetModule(ItemModule):GetAvailableLimitDrawcardCoupon(ItemSubType.ItemSubType_TempSpecialTicket)
+    if item then
+      limitItem[#limitItem + 1] = item:GetTemplateID()
     end
   end
+  if 0 < #limitItem then
+    for _, id in ipairs(itemIDs) do
+      limitItem[#limitItem + 1] = id
+    end
+    return limitItem
+  end
+  return itemIDs
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.CanSingleDraw = function(self)
-  -- function num : 0_22
+function UIDrawCardPoolInfo:CanSingleDraw()
   return self._canSingleDraw
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.GetRefreshTime = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local poolCloseTime, sinFreeRefreshTime, mulFreeRefreshTime, xingBiaoCloseTime = nil, nil, nil, nil
+function UIDrawCardPoolInfo:GetRefreshTime()
+  local poolCloseTime, sinFreeRefreshTime, mulFreeRefreshTime, xingBiaoCloseTime
   poolCloseTime = self:GetPoolCloseTime()
   local now = GetSvrTimeNow()
   local sinCloseTime = self:CloseTimer_Single()
-  do
-    if now <= sinCloseTime then
-      local time = self:NextTimer_Single()
-      if time > 0 then
-        sinFreeRefreshTime = time
-      end
+  if now <= sinCloseTime then
+    local time = self:NextTimer_Single()
+    if 0 < time then
+      sinFreeRefreshTime = time
     end
-    local mulCloseTime = self:CloseTimer_Multi()
-    do
-      if now <= mulCloseTime then
-        local time = self:NextTimer_Multi()
-        if time > 0 then
-          mulFreeRefreshTime = time
-        end
-      end
-      local itemM = (GameGlobal.GetModule)(ItemModule)
-      local item = itemM:GetAvailableLimitDrawcardCoupon(ItemSubType.ItemSubType_TempDrawTicket)
-      if not item then
-        item = itemM:GetAvailableLimitDrawcardCoupon(ItemSubType.ItemSubType_TempSpecialTicket)
-      end
-      if item then
-        xingBiaoCloseTime = ((GameGlobal.GetModule)(LoginModule)):GetTimeStampByTimeStr((item:GetTemplate()).CompulsiveDeadTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-      end
-      local timeTb = {poolCloseTime, sinFreeRefreshTime, mulFreeRefreshTime, xingBiaoCloseTime}
-      if not next(timeTb) then
-        return 
-      end
-      local time = math.maxinteger
-      for _,value in pairs(timeTb) do
-        if value < time then
-          time = value
-        end
-      end
-      return time
+  end
+  local mulCloseTime = self:CloseTimer_Multi()
+  if now <= mulCloseTime then
+    local time = self:NextTimer_Multi()
+    if 0 < time then
+      mulFreeRefreshTime = time
     end
+  end
+  local itemM = GameGlobal.GetModule(ItemModule)
+  local item = itemM:GetAvailableLimitDrawcardCoupon(ItemSubType.ItemSubType_TempDrawTicket)
+  item = item or itemM:GetAvailableLimitDrawcardCoupon(ItemSubType.ItemSubType_TempSpecialTicket)
+  if item then
+    xingBiaoCloseTime = GameGlobal.GetModule(LoginModule):GetTimeStampByTimeStr(item:GetTemplate().CompulsiveDeadTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+  end
+  local timeTb = {
+    poolCloseTime,
+    sinFreeRefreshTime,
+    mulFreeRefreshTime,
+    xingBiaoCloseTime
+  }
+  if not next(timeTb) then
+    return
+  end
+  local time = math.maxinteger
+  for _, value in pairs(timeTb) do
+    if value < time then
+      time = value
+    end
+  end
+  return time
+end
+
+function UIDrawCardPoolInfo:GetPoolCloseTime()
+  if self.poolData.close_type == PrizePoolOpenCloseType.TIME_CONDITON then
+    return self.poolData.extend_data
+  elseif self.poolData.close_type == PrizePoolOpenCloseType.PLAY_TIMES_CONDITON and self.poolData.close_condition2 > 0 then
+    return self.poolData.close_condition2
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.GetPoolCloseTime = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  if (self.poolData).close_type == PrizePoolOpenCloseType.TIME_CONDITON then
-    return (self.poolData).extend_data
-  else
-    if (self.poolData).close_type == PrizePoolOpenCloseType.PLAY_TIMES_CONDITON and (self.poolData).close_condition2 > 0 then
-      return (self.poolData).close_condition2
-    end
-  end
+function UIDrawCardPoolInfo:IsNovicePool()
+  local closeType = self.poolData.close_type
+  local closeType2 = self.poolData.close_condition2
+  return closeType == PrizePoolOpenCloseType.PLAY_TIMES_CONDITON and (closeType2 == nil or closeType2 <= 0)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.IsNovicePool = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  local closeType = (self.poolData).close_type
-  local closeType2 = (self.poolData).close_condition2
-  do return closeType == PrizePoolOpenCloseType.PLAY_TIMES_CONDITON and closeType2 == nil or closeType2 <= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
-end
-
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolInfo.CanMultipleDraw = function(self)
-  -- function num : 0_26
+function UIDrawCardPoolInfo:CanMultipleDraw()
   return self._canMultipleDraw
 end
-
-

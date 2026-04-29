@@ -1,86 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/ui_n5_mainlobby_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5MainLobbyEntry", UICustomWidget)
 UIN5MainLobbyEntry = UIN5MainLobbyEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5MainLobbyEntry.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN5MainLobbyEntry:Constructor()
   self._campaignModule = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainLobbyEntry.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN5MainLobbyEntry:OnShow(uiParams)
   self:_GetComponents()
   self:_InitNewFlagAndRedPoint()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainLobbyEntry.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN5MainLobbyEntry:OnHide()
   if self._checkRedTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._checkRedTask)
+    GameGlobal.TaskManager():KillTask(self._checkRedTask)
     self._checkRedTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainLobbyEntry._GetComponents = function(self)
-  -- function num : 0_3
+function UIN5MainLobbyEntry:_GetComponents()
   self._redPoint = self:GetGameObject("RedPoint")
   self._newFlag = self:GetGameObject("NewFlag")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainLobbyEntry._InitNewFlagAndRedPoint = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN5MainLobbyEntry:_InitNewFlagAndRedPoint()
   if self._checkRedTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._checkRedTask)
+    GameGlobal.TaskManager():KillTask(self._checkRedTask)
     self._checkRedTask = nil
   end
-  self._checkRedTask = ((GameGlobal.TaskManager)()):StartTask(function()
-    -- function num : 0_4_0 , upvalues : self, _ENV
-    local campaignData = (self._campaignModule):GetN5Data()
+  self._checkRedTask = GameGlobal.TaskManager():StartTask(function()
+    local campaignData = self._campaignModule:GetN5Data()
     campaignData:RequestCampaign()
     YIELD(TT)
     self:_RefreshNewFlagAndRedPoint()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainLobbyEntry.SetData = function(self)
-  -- function num : 0_5
+function UIN5MainLobbyEntry:SetData()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainLobbyEntry.EntryBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN5MainLobbyEntry:EntryBtnOnClick(go)
   self:SwitchState(UIStateType.UIActivityN5)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainLobbyEntry._RefreshNewFlagAndRedPoint = function(self)
-  -- function num : 0_7
-  local data = (self._campaignModule):GetN5Data()
+function UIN5MainLobbyEntry:_RefreshNewFlagAndRedPoint()
+  local data = self._campaignModule:GetN5Data()
   local showNewFlag = data:HaveNewFlag()
   local showRedPoint = data:HaveRedPoint()
-  ;
-  (self._newFlag):SetActive(showNewFlag)
-  if showRedPoint then
-    (self._redPoint):SetActive(not showNewFlag)
-  end
+  self._newFlag:SetActive(showNewFlag)
+  self._redPoint:SetActive(showRedPoint and not showNewFlag)
 end
-
-

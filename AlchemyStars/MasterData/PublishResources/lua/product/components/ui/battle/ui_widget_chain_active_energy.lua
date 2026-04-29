@@ -1,84 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_chain_active_energy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetChainActiveEnergy", UICustomWidget)
 UIWidgetChainActiveEnergy = UIWidgetChainActiveEnergy
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetChainActiveEnergy.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWidgetChainActiveEnergy:OnShow()
   self._on = self:GetGameObject("on")
-  self._canvasGroupOn = (self._on):GetComponent(typeof(UnityEngine.CanvasGroup))
+  self._canvasGroupOn = self._on:GetComponent(typeof(UnityEngine.CanvasGroup))
   self._fx = self:GetGameObject("fx")
-  self._animation = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
-  ;
-  (self._on):SetActive(false)
-  ;
-  (self._fx):SetActive(false)
+  self._animation = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
+  self._on:SetActive(false)
+  self._fx:SetActive(false)
   self._isLoopEnabled = false
   self._state = false
   self:AttachEvent(GameEventType.UpdateBuffLayerActiveSkillEnergyChange, self.OnEnergyChange)
   self:AttachEvent(GameEventType.UpdateBuffLayerActiveSkillEnergyPreview, self.OnPreviewingSkill)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChainActiveEnergy.InitData = function(self, pstID, index)
-  -- function num : 0_1
+function UIWidgetChainActiveEnergy:InitData(pstID, index)
   self._pstID = pstID
   self._index = index
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChainActiveEnergy.OnHide = function(self)
-  -- function num : 0_2
+function UIWidgetChainActiveEnergy:OnHide()
   self:DetachAllEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChainActiveEnergy.SetLight = function(self, b)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._animation):Stop()
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._animation).enabled = false
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._animation).enabled = true
+function UIWidgetChainActiveEnergy:SetLight(b)
+  self._animation:Stop()
+  self._animation.enabled = false
+  self._animation.enabled = true
   if b then
-    (self._animation):Play("uieff_N26_WidgetChainActiveEnergy_in", (UnityEngine.PlayMode).StopAll)
+    self._animation:Play("uieff_N26_WidgetChainActiveEnergy_in", UnityEngine.PlayMode.StopAll)
   else
-    ;
-    (self._animation):Play("uieff_N26_WidgetChainActiveEnergy_out", (UnityEngine.PlayMode).StopAll)
+    self._animation:Play("uieff_N26_WidgetChainActiveEnergy_out", UnityEngine.PlayMode.StopAll)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChainActiveEnergy.OnEnergyChange = function(self, params)
-  -- function num : 0_4
+function UIWidgetChainActiveEnergy:OnEnergyChange(params)
   if params.petPstID ~= self._pstID then
-    return 
+    return
   end
   if params.index ~= self._index and not params.all then
-    return 
+    return
   end
   self._newState = params.on
-  if (self:GetGameObject()).activeInHierarchy then
+  if self:GetGameObject().activeInHierarchy then
     self:DelayedAnimation()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChainActiveEnergy.DelayedAnimation = function(self)
-  -- function num : 0_5
+function UIWidgetChainActiveEnergy:DelayedAnimation()
   if self._state == nil then
     self._state = false
   end
@@ -88,56 +57,35 @@ UIWidgetChainActiveEnergy.DelayedAnimation = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetChainActiveEnergy.OnPreviewingSkill = function(self, params)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWidgetChainActiveEnergy:OnPreviewingSkill(params)
   local pstID = params.pstID
   local index = params.index
   local shutdown = params.shutdown
   if shutdown then
-    (self._animation):Stop()
-    ;
-    (self._on):SetActive(self._state)
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._canvasGroupOn).alpha = 1
+    self._animation:Stop()
+    self._on:SetActive(self._state)
+    self._canvasGroupOn.alpha = 1
     self._isLoopEnabled = false
-    return 
+    return
   end
   if self._pstID ~= pstID then
-    return 
+    return
   end
   index = index - 1
   local isLoopEnabled = index == self._index
   if isLoopEnabled and self._isLoopEnabled then
-    return 
+    return
   end
   if isLoopEnabled then
-    (self._animation):Stop()
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._animation).enabled = false
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._animation).enabled = true
-    ;
-    (self._animation):Play("uieff_N26_WidgetChainActiveEnergy_loop", (UnityEngine.PlayMode).StopAll)
+    self._animation:Stop()
+    self._animation.enabled = false
+    self._animation.enabled = true
+    self._animation:Play("uieff_N26_WidgetChainActiveEnergy_loop", UnityEngine.PlayMode.StopAll)
     self._isLoopEnabled = true
   else
-    (self._animation):Stop()
-    ;
-    (self._on):SetActive(self._state)
-    -- DECOMPILER ERROR at PC58: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._canvasGroupOn).alpha = 1
+    self._animation:Stop()
+    self._on:SetActive(self._state)
+    self._canvasGroupOn.alpha = 1
     self._isLoopEnabled = false
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
-
-

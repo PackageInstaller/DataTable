@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/goldberg_event/stn_ge_gm_pass_sum_ii_camp_mission.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("GoldbergEvent_GM_PassSumIICampMission", Common_AsyncBase)
 GoldbergEvent_GM_PassSumIICampMission = GoldbergEvent_GM_PassSumIICampMission
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GoldbergEvent_GM_PassSumIICampMission.Constructor = function(self, _, cmptID, lastMissionID)
-  -- function num : 0_0
+function GoldbergEvent_GM_PassSumIICampMission:Constructor(_, cmptID, lastMissionID)
   self._cmptID = cmptID
   self._lastMissionID = lastMissionID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GoldbergEvent_GM_PassSumIICampMission.TaskFunc = function(self, TT, outResult)
-  -- function num : 0_1
-  (self._manager):AsyncGM_PassSumIICampMission(TT, outResult, self._cmptID, self._lastMissionID)
+function GoldbergEvent_GM_PassSumIICampMission:TaskFunc(TT, outResult)
+  self._manager:AsyncGM_PassSumIICampMission(TT, outResult, self._cmptID, self._lastMissionID)
 end
-
-

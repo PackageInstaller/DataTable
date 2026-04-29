@@ -1,68 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_grid_effect_one_direction_wave_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayGridEffectOneDirectionWaveInstruction", BaseInstruction)
 PlayGridEffectOneDirectionWaveInstruction = PlayGridEffectOneDirectionWaveInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayGridEffectOneDirectionWaveInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayGridEffectOneDirectionWaveInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._intervalTime = tonumber(paramList.intervalTime)
   self._waveDirection = tonumber(paramList.waveDirection)
   self._waveWidth = tonumber(paramList.waveWidth)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridEffectOneDirectionWaveInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayGridEffectOneDirectionWaveInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridEffectOneDirectionWaveInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2
+function PlayGridEffectOneDirectionWaveInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
-  local casterPos = (casterEntity:GridLocation()).Position
+  local casterPos = casterEntity:GridLocation().Position
   if self._waveWidth == 1 then
     self:_PlayOneLineGridEffect(casterEntity)
+  else
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridEffectOneDirectionWaveInstruction._PlayOneLineGridEffect = function(self, casterEntity)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayGridEffectOneDirectionWaveInstruction:_PlayOneLineGridEffect(casterEntity)
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
-  local casterPos = (casterEntity:GridLocation()).Position
+  local casterPos = casterEntity:GridLocation().Position
   if self._waveDirection == InstructionConst.WidthWise then
     local row = casterPos.y
-  else
-    do
-      if self._waveWidth == InstructionConst.HeightWise then
-        local effectX = casterPos.x
-        local effectDir = Vector2(1, 0)
-        local utilDataSvc = world:GetService("UtilData")
-        local boardMaxY = utilDataSvc:GetCurBoardMaxY()
-        for row = 1, boardMaxY do
-          local effectPos = Vector2(effectX, row)
-          effectService:CreateWorldPositionDirectionEffect(self._effectID, effectPos, effectDir)
-          YIELD(TT, self._intervalTime)
-        end
-      end
+  elseif self._waveWidth == InstructionConst.HeightWise then
+    local effectX = casterPos.x
+    local effectDir = Vector2(1, 0)
+    local utilDataSvc = world:GetService("UtilData")
+    local boardMaxY = utilDataSvc:GetCurBoardMaxY()
+    for row = 1, boardMaxY do
+      local effectPos = Vector2(effectX, row)
+      effectService:CreateWorldPositionDirectionEffect(self._effectID, effectPos, effectDir)
+      YIELD(TT, self._intervalTime)
     end
   end
 end
-
-

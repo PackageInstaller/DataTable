@@ -1,19 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/homeland/cfg_homeland_tree_pedigree.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, ValueC = 2}
 local config = {
-{1, 10}
-, 
-{2, 10}
-, 
-{3, 9}
-, 
-{4, 9}
-, 
-{5, 5}
+  {1, 10},
+  {2, 10},
+  {3, 9},
+  {4, 9},
+  {5, 5}
 }
 return config, "ID", key
-

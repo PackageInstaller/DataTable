@@ -1,54 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/tale/stn_tale_build_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("Tale_BuildTeam", Common_AsyncBase)
 Tale_BuildTeam = Tale_BuildTeam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Tale_BuildTeam.TaskFunc = function(self, TT, status)
-  -- function num : 0_0 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function Tale_BuildTeam:TaskFunc(TT, status)
+  local runData = self.m_pManager:GetMissionRunData()
   local petPoolOptions = SmokeTestTeamBuildPoolOptions:New()
-  do
-    if runData:IsRandomTeam() then
-      local isTeamBuilt = (self._manager):BuildRandomTeam(runData, petPoolOptions)
-      if not isTeamBuilt then
-        self.m_nLogicResult = 2
-        return 
-      end
+  if runData:IsRandomTeam() then
+    local isTeamBuilt = self._manager:BuildRandomTeam(runData, petPoolOptions)
+    if not isTeamBuilt then
+      self.m_nLogicResult = 2
+      return
     end
-    local gmproxy = (GameGlobal.GetModule)(GMProxyModule)
-    for _,petData in ipairs(runData:GetCurrentTeamBuild()) do
-      local cmdAddPet = (string.format)("add_asset %s %d 1", (LocalDB.GetString)("OpenIdTest"), petData:GetTemplateID())
-      self:Log(self, "GMCommand: ", cmdAddPet)
-      local addPetResult = gmproxy:SendCmdTask(TT, cmdAddPet)
-      if addPetResult.m_call_err ~= CallResultType.Normal then
-        (Log.exception)(self._className, "GM command failed: ", cmdAddPet)
-        self.m_nLogicResult = 3
-        return 
-      end
-      local cmdChangePet = petData:GenerateGMCommand()
-      self:Log(self, "GMCommand: ", cmdChangePet)
-      local changePetResult = gmproxy:SendCmdTask(TT, cmdChangePet)
-      if changePetResult.m_call_err ~= CallResultType.Normal then
-        (Log.exception)(self._className, "GM command failed: ", cmdAddPet)
-        self.m_nLogicResult = 3
-        return 
-      end
-    end
-    local petPstIDs = runData:GeneratePetPstID()
-    local talePetModule = (GameGlobal.GetModule)(TalePetModule)
-    local res = talePetModule:UpdateMainFormationInfo(TT, TestConst.MissionTeamIndex, TestConst.MissionTeamName, petPstIDs)
-    if not res:GetSucc() then
-      (Log.exception)(self._className, "update team formation failed. ")
-      self.m_nLogicResult = 3
-      return 
-    end
-    self.m_nLogicResult = 1
   end
+  local gmproxy = GameGlobal.GetModule(GMProxyModule)
+  for _, petData in ipairs(runData:GetCurrentTeamBuild()) do
+    local cmdAddPet = string.format("add_asset %s %d 1", LocalDB.GetString("OpenIdTest"), petData:GetTemplateID())
+    self:Log(self, "GMCommand: ", cmdAddPet)
+    local addPetResult = gmproxy:SendCmdTask(TT, cmdAddPet)
+    if addPetResult.m_call_err ~= CallResultType.Normal then
+      Log.exception(self._className, "GM command failed: ", cmdAddPet)
+      self.m_nLogicResult = 3
+      return
+    end
+    local cmdChangePet = petData:GenerateGMCommand()
+    self:Log(self, "GMCommand: ", cmdChangePet)
+    local changePetResult = gmproxy:SendCmdTask(TT, cmdChangePet)
+    if changePetResult.m_call_err ~= CallResultType.Normal then
+      Log.exception(self._className, "GM command failed: ", cmdAddPet)
+      self.m_nLogicResult = 3
+      return
+    end
+  end
+  local petPstIDs = runData:GeneratePetPstID()
+  local talePetModule = GameGlobal.GetModule(TalePetModule)
+  local res = talePetModule:UpdateMainFormationInfo(TT, TestConst.MissionTeamIndex, TestConst.MissionTeamName, petPstIDs)
+  if not res:GetSucc() then
+    Log.exception(self._className, "update team formation failed. ")
+    self.m_nLogicResult = 3
+    return
+  end
+  self.m_nLogicResult = 1
 end
-
-

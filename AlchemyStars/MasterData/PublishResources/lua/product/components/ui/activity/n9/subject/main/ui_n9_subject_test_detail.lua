@@ -1,69 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n9/subject/main/ui_n9_subject_test_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN9SubjectTestDetailController", UIController)
 UIN9SubjectTestDetailController = UIN9SubjectTestDetailController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN9SubjectTestDetailController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN9SubjectTestDetailController:OnShow(uiParams)
   self._levelData = uiParams[1]
   self._tittleLabel = self:GetUIComponent("UILocalizationText", "Tittle")
   self._tittleBgLabel = self:GetUIComponent("UILocalizationText", "TitleBg")
   self._desLabel = self:GetUIComponent("UILocalizationText", "Des")
   self._historyCountLabel = self:GetUIComponent("UILocalizationText", "HistoryCount")
   self._gradeLabel = self:GetUIComponent("UILocalizedTMP", "Grade")
-  ;
-  (self._tittleLabel):SetText((self._levelData):GetLevelName())
-  ;
-  (self._tittleBgLabel):SetText((self._levelData):GetLevelName())
-  ;
-  (self._desLabel):SetText((self._levelData):GetDes())
-  local historyCount = (self._levelData):GetHistoryRecord()
+  self._tittleLabel:SetText(self._levelData:GetLevelName())
+  self._tittleBgLabel:SetText(self._levelData:GetLevelName())
+  self._desLabel:SetText(self._levelData:GetDes())
+  local historyCount = self._levelData:GetHistoryRecord()
   if historyCount <= 0 then
-    (self._historyCountLabel):SetText("--")
+    self._historyCountLabel:SetText("--")
   else
-    ;
-    (self._historyCountLabel):SetText((StringTable.Get)("str_activity_n9_test_level_subject_count", historyCount))
+    self._historyCountLabel:SetText(StringTable.Get("str_activity_n9_test_level_subject_count", historyCount))
   end
-  local gradeStr = (self._levelData):GetGradeLevelStr()
-  ;
-  (self._gradeLabel):SetText(gradeStr)
-  self._EMIMatResRequest = (ResourceManager:GetInstance()):SyncLoadAsset("uieff_n9_subject_grade_name.mat", LoadType.Mat)
-  self._EMIMat = (self._EMIMatResRequest).Obj
-  local mat = (self._gradeLabel).fontMaterial
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._gradeLabel).fontMaterial = self._EMIMat
-  ;
-  ((self._gradeLabel).fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  local gradeStr = self._levelData:GetGradeLevelStr()
+  self._gradeLabel:SetText(gradeStr)
+  self._EMIMatResRequest = ResourceManager:GetInstance():SyncLoadAsset("uieff_n9_subject_grade_name.mat", LoadType.Mat)
+  self._EMIMat = self._EMIMatResRequest.Obj
+  local mat = self._gradeLabel.fontMaterial
+  self._gradeLabel.fontMaterial = self._EMIMat
+  self._gradeLabel.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectTestDetailController.OnHide = function(self)
-  -- function num : 0_1
+function UIN9SubjectTestDetailController:OnHide()
   self._EMIMatResRequest = nil
   self._EMIMat = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectTestDetailController.BtnStartTestOnClick = function(self)
-  -- function num : 0_2
-  local grade = (self._levelData):GetLeveGrade()
+function UIN9SubjectTestDetailController:BtnStartTestOnClick()
+  local grade = self._levelData:GetLeveGrade()
   self:ShowDialog("UIN9AnswerController", grade)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectTestDetailController.MaskOnClick = function(self)
-  -- function num : 0_3
+function UIN9SubjectTestDetailController:MaskOnClick()
   self:CloseDialog()
 end
-
-

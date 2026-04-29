@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_award_pet_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardAwardPetItem", UICustomWidget)
 UIDrawCardAwardPetItem = UIDrawCardAwardPetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardAwardPetItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDrawCardAwardPetItem:OnShow()
   self.petIcon = self:GetUIComponent("RawImageLoader", "peticon")
   self.diLayer = self:GetUIComponent("RectTransform", "diLayer")
   self._atlas = self:GetAsset("UIDrawCard.spriteatlas", LoadType.SpriteAtlas)
@@ -33,198 +26,145 @@ UIDrawCardAwardPetItem.OnShow = function(self)
   self._uiRoot = self:GetUIComponent("RectTransform", "root")
   self._animRoot = self:GetUIComponent("RectTransform", "animRoot")
   self._uiHeartItemAtlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
-  local lstStars2 = {self:GetChildComponent(self._stars2, "RectTransform", "star1"), self:GetChildComponent(self._stars2, "RectTransform", "star2"), self:GetChildComponent(self._stars2, "RectTransform", "star3"), self:GetChildComponent(self._stars2, "RectTransform", "star4"), self:GetChildComponent(self._stars2, "RectTransform", "star5"), self:GetChildComponent(self._stars2, "RectTransform", "star6")}
+  local lstStars2 = {
+    self:GetChildComponent(self._stars2, "RectTransform", "star1"),
+    self:GetChildComponent(self._stars2, "RectTransform", "star2"),
+    self:GetChildComponent(self._stars2, "RectTransform", "star3"),
+    self:GetChildComponent(self._stars2, "RectTransform", "star4"),
+    self:GetChildComponent(self._stars2, "RectTransform", "star5"),
+    self:GetChildComponent(self._stars2, "RectTransform", "star6")
+  }
   self._stars2 = lstStars2
-  local lstStars3 = {self:GetChildComponent(self._stars3, "RectTransform", "star1"), self:GetChildComponent(self._stars3, "RectTransform", "star2"), self:GetChildComponent(self._stars3, "RectTransform", "star3"), self:GetChildComponent(self._stars3, "RectTransform", "star4"), self:GetChildComponent(self._stars3, "RectTransform", "star5"), self:GetChildComponent(self._stars3, "RectTransform", "star6")}
+  local lstStars3 = {
+    self:GetChildComponent(self._stars3, "RectTransform", "star1"),
+    self:GetChildComponent(self._stars3, "RectTransform", "star2"),
+    self:GetChildComponent(self._stars3, "RectTransform", "star3"),
+    self:GetChildComponent(self._stars3, "RectTransform", "star4"),
+    self:GetChildComponent(self._stars3, "RectTransform", "star5"),
+    self:GetChildComponent(self._stars3, "RectTransform", "star6")
+  }
   self._stars3 = lstStars3
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPetItem.OnHide = function(self)
-  -- function num : 0_1
+function UIDrawCardAwardPetItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPetItem.SetData = function(self, stars, content, rate)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDrawCardAwardPetItem:SetData(stars, content, rate)
   if stars == 5 then
-    (self._star6):SetActive(false)
-  else
-    if stars == 4 then
-      (self._star6):SetActive(false)
-      ;
-      (self._star5):SetActive(false)
-    else
-      if stars == 3 then
-        (self._star6):SetActive(false)
-        ;
-        (self._star5):SetActive(false)
-        ;
-        (self._star4):SetActive(false)
-      end
-    end
+    self._star6:SetActive(false)
+  elseif stars == 4 then
+    self._star6:SetActive(false)
+    self._star5:SetActive(false)
+  elseif stars == 3 then
+    self._star6:SetActive(false)
+    self._star5:SetActive(false)
+    self._star4:SetActive(false)
   end
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._qualityIcon).sprite = (self._uiHeartItemAtlas):GetSprite("map_biandui_pin" .. stars)
+  self._qualityIcon.sprite = self._uiHeartItemAtlas:GetSprite("map_biandui_pin" .. stars)
   if content then
     if rate then
-      (self.rate):SetActive(true)
-      ;
-      (self.rateText):SetText((StringTable.Get)("str_draw_card_award_pet_rate", rate))
+      self.rate:SetActive(true)
+      self.rateText:SetText(StringTable.Get("str_draw_card_award_pet_rate", rate))
     else
-      ;
-      (self.rate):SetActive(false)
-      ;
-      (self._bg2):SetActive(false)
+      self.rate:SetActive(false)
+      self._bg2:SetActive(false)
     end
     local petid = content
-    self.petCfg = (Cfg.cfg_pet)[petid]
+    self.petCfg = Cfg.cfg_pet[petid]
     if not self.petCfg then
-      (Log.exception)("找不到cfg_pet中光灵" .. petid .. "的数据")
+      Log.exception("找不到cfg_pet中光灵" .. petid .. "的数据")
     end
-    local skinid = (self.petCfg).SkinId
-    self.petskinCfg = (Cfg.cfg_pet_skin)[skinid]
+    local skinid = self.petCfg.SkinId
+    self.petskinCfg = Cfg.cfg_pet_skin[skinid]
     if not self.petskinCfg then
-      (Log.exception)("cfg_pet_skin 中缺少配置:", skinid)
+      Log.exception("cfg_pet_skin 中缺少配置:", skinid)
     end
-    local skin = (self.petskinCfg).Body
-    ;
-    (self.petIcon):LoadImage(skin)
-    ;
-    (self._logo):LoadImage((self.petCfg).Logo)
-    local cfg_element = (Cfg.cfg_pet_element)[(self.petCfg).FirstElement]
-    local cfg_second = (Cfg.cfg_pet_element)[(self.petCfg).SecondElement]
-    -- DECOMPILER ERROR at PC125: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.firstAttribute).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(cfg_element.Icon))
+    local skin = self.petskinCfg.Body
+    self.petIcon:LoadImage(skin)
+    self._logo:LoadImage(self.petCfg.Logo)
+    local cfg_element = Cfg.cfg_pet_element[self.petCfg.FirstElement]
+    local cfg_second = Cfg.cfg_pet_element[self.petCfg.SecondElement]
+    self.firstAttribute.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_element.Icon))
     if cfg_second then
-      (self.second):SetActive(true)
-      -- DECOMPILER ERROR at PC142: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self.secondAttribute).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(cfg_second.Icon))
+      self.second:SetActive(true)
+      self.secondAttribute.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_second.Icon))
     else
-      ;
-      (self.second):SetActive(false)
+      self.second:SetActive(false)
     end
-    local name = (StringTable.Get)((self.petCfg).Name)
-    ;
-    (self.name):SetText(name)
+    local name = StringTable.Get(self.petCfg.Name)
+    self.name:SetText(name)
   end
-  do
-    self:ShowPetAwakening(false)
-  end
+  self:ShowPetAwakening(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPetItem.EventCallBack = function(self, getScrollView, clickCB, longPressCB)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDrawCardAwardPetItem:EventCallBack(getScrollView, clickCB, longPressCB)
   self._fnClickCB = clickCB
   self._fnLongPressCB = longPressCB
   if self._fnLongPressCB ~= nil then
     local scrollRect = getScrollView()
-    do
-      local eventCustom = (UICustomUIEventListener.Get)((self.diLayer).gameObject)
-      local eventLongPress = (UILongPressTriggerListener.Get)((self.diLayer).gameObject)
-      self:AddUICustomEventListener(eventCustom, UIEvent.ApplicationFocus, function(b)
-    -- function num : 0_3_0 , upvalues : eventCustom
-    if not b then
-      eventCustom.IsDragging = false
-    end
-  end
-)
-      self:AddUICustomEventListener(eventLongPress, UIEvent.LongPress, function(go)
-    -- function num : 0_3_1 , upvalues : self
-    if not self._draging then
-      (self._fnLongPressCB)(go)
-    end
-  end
-)
-      self:AddUICustomEventListener(eventCustom, UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_3_2 , upvalues : self, scrollRect
-    self._draging = true
-    scrollRect:OnBeginDrag(eventData)
-  end
-)
-      self:AddUICustomEventListener(eventCustom, UIEvent.Drag, function(eventData)
-    -- function num : 0_3_3 , upvalues : scrollRect
-    scrollRect:OnDrag(eventData)
-  end
-)
-      self:AddUICustomEventListener(eventCustom, UIEvent.EndDrag, function(eventData)
-    -- function num : 0_3_4 , upvalues : self, scrollRect
-    self._draging = false
-    scrollRect:OnEndDrag(eventData)
-  end
-)
-    end
+    local eventCustom = UICustomUIEventListener.Get(self.diLayer.gameObject)
+    local eventLongPress = UILongPressTriggerListener.Get(self.diLayer.gameObject)
+    self:AddUICustomEventListener(eventCustom, UIEvent.ApplicationFocus, function(b)
+      if not b then
+        eventCustom.IsDragging = false
+      end
+    end)
+    self:AddUICustomEventListener(eventLongPress, UIEvent.LongPress, function(go)
+      if not self._draging then
+        self._fnLongPressCB(go)
+      end
+    end)
+    self:AddUICustomEventListener(eventCustom, UIEvent.BeginDrag, function(eventData)
+      self._draging = true
+      scrollRect:OnBeginDrag(eventData)
+    end)
+    self:AddUICustomEventListener(eventCustom, UIEvent.Drag, function(eventData)
+      scrollRect:OnDrag(eventData)
+    end)
+    self:AddUICustomEventListener(eventCustom, UIEvent.EndDrag, function(eventData)
+      self._draging = false
+      scrollRect:OnEndDrag(eventData)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPetItem.ShowPetAwakening = function(self, inShow)
-  -- function num : 0_4 , upvalues : _ENV
+function UIDrawCardAwardPetItem:ShowPetAwakening(inShow)
   local awakenStep = 0
   local awakenLock = 0
   if inShow then
     local petModule = self:GetModule(PetModule)
-    local petData = petModule:GetPetByTemplateId((self.petCfg).ID)
+    local petData = petModule:GetPetByTemplateId(self.petCfg.ID)
     if petData ~= nil then
       awakenStep = petData:GetPetAwakening()
       awakenLock = petData:GetAwakeMatch()
     end
   else
-    do
-      awakenStep = 0
-      for k,v in pairs(self._stars2) do
-        (v.gameObject):SetActive(k <= awakenLock)
-        if awakenLock < k then
-          if k <= awakenStep then
-            (((self._stars3)[k]).gameObject):SetActive(true)
-          else
-            (((self._stars3)[k]).gameObject):SetActive(false)
-          end
-        else
-          (((self._stars3)[k]).gameObject):SetActive(false)
-        end
+    awakenStep = 0
+  end
+  for k, v in pairs(self._stars2) do
+    v.gameObject:SetActive(k <= awakenLock)
+    if k > awakenLock then
+      if k <= awakenStep then
+        self._stars3[k].gameObject:SetActive(true)
+      else
+        self._stars3[k].gameObject:SetActive(false)
       end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+    else
+      self._stars3[k].gameObject:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPetItem.RootLocalScale = function(self, localScale)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._uiRoot).localScale = localScale
+function UIDrawCardAwardPetItem:RootLocalScale(localScale)
+  self._uiRoot.localScale = localScale
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPetItem.AnimRootPosition = function(self, anchoredPosition)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._animRoot).anchoredPosition = anchoredPosition
+function UIDrawCardAwardPetItem:AnimRootPosition(anchoredPosition)
+  self._animRoot.anchoredPosition = anchoredPosition
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardPetItem.DiLayerOnClick = function(self, go)
-  -- function num : 0_7
+function UIDrawCardAwardPetItem:DiLayerOnClick(go)
   if self._fnClickCB ~= nil then
-    (self._fnClickCB)(go)
+    self._fnClickCB(go)
   end
 end
-
-

@@ -1,25 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2002801/cfg_skill_view_200280102.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 2, 1, 0, 0, 
-{effectparam = "200280101", castAnimationName = "Atk", finishDelayTime = 1800, buffDelayTime = 0}
-}
-, 
-{2, 2, 43, 1, 1, 0, 
-{audioID = 7060, audioType = 1}
-}
-, 
-{3, 3, 0, 1, 1, 0, 
-{"PlayCasterBindEffect,effectID=200280104; PlayCasterMaterialAnim,animName=effanim_2002801_skill01_main; "}
-}
-, 
-{4, 4, 0, 1, 1, 1000, 
-{"DataSelectSummonThing,index=1; PlayEffectAtSummonPos,effectID=200280103,label=foreach; Wait,waitTime=150; ShowSummonThing; DataSelectNextSummonThing; Jump,condition=CheckSummonThingValid,goto=foreach;"}
-}
+  {
+    1,
+    1,
+    2,
+    1,
+    0,
+    0,
+    {
+      effectparam = "200280101",
+      castAnimationName = "Atk",
+      finishDelayTime = 1800,
+      buffDelayTime = 0
+    }
+  },
+  {
+    2,
+    2,
+    43,
+    1,
+    1,
+    0,
+    {audioID = 7060, audioType = 1}
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    1,
+    0,
+    {
+      "PlayCasterBindEffect,effectID=200280104; PlayCasterMaterialAnim,animName=effanim_2002801_skill01_main; "
+    }
+  },
+  {
+    4,
+    4,
+    0,
+    1,
+    1,
+    1000,
+    {
+      "DataSelectSummonThing,index=1; PlayEffectAtSummonPos,effectID=200280103,label=foreach; Wait,waitTime=150; ShowSummonThing; DataSelectNextSummonThing; Jump,condition=CheckSummonThingValid,goto=foreach;"
+    }
+  }
 }
 return config, "ID", key
-

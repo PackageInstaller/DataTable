@@ -1,18 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_refresh_feature_trap_defence_hp_percent.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewRefreshFeatureTrapDefenceHPPercent", BuffViewBase)
 BuffViewRefreshFeatureTrapDefenceHPPercent = BuffViewRefreshFeatureTrapDefenceHPPercent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRefreshFeatureTrapDefenceHPPercent.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewRefreshFeatureTrapDefenceHPPercent:PlayView(TT)
   local result = self._buffResult
   local curHPPercent = result:GetHPPercent()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshFeatureTrapDefenceHPPercent, curHPPercent)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshFeatureTrapDefenceHPPercent, curHPPercent)
 end
-
-

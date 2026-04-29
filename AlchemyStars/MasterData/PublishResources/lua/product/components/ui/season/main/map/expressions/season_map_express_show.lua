@@ -1,47 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_show.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpressShow", SeasonMapExpressBase)
 SeasonMapExpressShow = SeasonMapExpressShow
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressShow.Constructor = function(self, cfg, eventPoint)
-  -- function num : 0_0 , upvalues : _ENV
-  self._content = (self._cfg).Show
-  self._seasonManager = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
-  self._seasonMapManger = (self._seasonManager):SeasonMapManager()
+function SeasonMapExpressShow:Constructor(cfg, eventPoint)
+  self._content = self._cfg.Show
+  self._seasonManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
+  self._seasonMapManger = self._seasonManager:SeasonMapManager()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressShow.Update = function(self, deltaTime)
-  -- function num : 0_1
+function SeasonMapExpressShow:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressShow.OnPlay = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonMapExpressShow:OnPlay()
   if self._content ~= nil then
-    local eventPoint = nil
-    local id = (self._content).id
-    local show = (self._content).show
-    local timingType = (self._content).type
+    local eventPoint
+    local id = self._content.id
+    local show = self._content.show
+    local timingType = self._content.type
     if id then
-      eventPoint = (self._seasonMapManger):GetEventPoint(id)
+      eventPoint = self._seasonMapManger:GetEventPoint(id)
     else
       eventPoint = self._eventPoint
     end
     if eventPoint and (not timingType or timingType == SeasonExpressTiming.Play) then
       eventPoint:ExpressShow(show)
       if eventPoint:IsLevel() and eventPoint:GroupID() > 0 then
-        local cfgs = (Cfg.cfg_season_mission)({GroupID = eventPoint:GroupID()})
+        local cfgs = Cfg.cfg_season_mission({
+          GroupID = eventPoint:GroupID()
+        })
         if cfgs then
-          for _,cfg in pairs(cfgs) do
+          for _, cfg in pairs(cfgs) do
             if cfg.ID ~= eventPoint:GetID() then
-              local otherEventPoint = (self._seasonMapManger):GetEventPoint(cfg.ID)
+              local otherEventPoint = self._seasonMapManger:GetEventPoint(cfg.ID)
               if otherEventPoint then
                 otherEventPoint:ExpressShow(show)
               end
@@ -50,10 +39,6 @@ SeasonMapExpressShow.OnPlay = function(self)
         end
       end
     end
-    do
-      self:Next()
-    end
+    self:Next()
   end
 end
-
-

@@ -1,8 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/str_education.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_education_stage_name = "階段{1}", str_education_coin_cost = "消耗", str_education_main_blue_name = "水之模組", str_education_main_red_name = "火之模組", str_education_main_green_name = "森之模組", str_education_main_yellow_name = "雷之模組", str_education_main_singlebound_btn = "一鍵提升", str_education_up_level_btn = "確認升級", str_education_up_stage_btn = "確認升階", str_education_up_full_level_btn = "已達等級上限", str_education_up_pet_upgrade_title = "{1}屬性光靈獲得提升", str_education_up_attack = "攻擊力", str_education_up_defence = "防禦力", str_education_up_health = "生命力", str_education_up_restrain = "{1}屬性剋制傷害{2}", str_education_up_positive_skill = "{1}屬性光靈主動技能傷害提高{2}", str_education_up_cell_rate = "若上陣均為{1}屬性光靈，略微提高{1}屬性格子生成機率", str_education_up_level_not_meet = "材料不足", str_education_upstage_preview_btn = "階段預覽", str_education_upstage_title = "升階預覽", str_education_upstage_upgrade = "升階提升", str_education_upstage_condition = "升階前置條件", str_education_upstage_condition_tower = "四屬性塔{1}級（{2}）", str_education_upstage_condition_tower2 = "{1}屬性塔{2}層（{3}）", str_education_upstage_condition_anytower = "任意", str_education_upstage_condition_awaken = "{1}個{2}覺醒光靈（{3}）", str_education_upstage_condition_grade = "{1}個覺醒{2}的{3}屬性的光靈（{4}）", str_education_upstage_not_meet = "未滿足升階條件", str_education_preview_restrain = "{1}屬性剋制傷害", str_education_preview_positive_skill = "{1}屬性光靈主動技能傷害提高", str_education_preview_cell_rate = "若上陣均為{1}屬性光靈，提高{1}屬性格子生成機率", str_education_one_title = "一鍵提升詳情", str_education_one_detail = "選擇一鍵提升，會優先將水火森雷四個模組提升至相同等級，之後再依照水火森雷的順序逐級提升。此提升消耗的材料為每個模組提升時的必需品。", str_education_one_confirm_btn = "一鍵提升", str_education_one_notenough = "一鍵提升材料不足", str_education_one_fulllevel = "一鍵提升已滿級", str_education_one_nolevel_toast = "一鍵提升->無等級可升", str_education_property_add_tips = "啟迪系統提升的效果不會在介面中展示，進入對局後直接生效"}
+local config = {
+  str_education_stage_name = "階段{1}",
+  str_education_coin_cost = "消耗",
+  str_education_main_blue_name = "水之模組",
+  str_education_main_red_name = "火之模組",
+  str_education_main_green_name = "森之模組",
+  str_education_main_yellow_name = "雷之模組",
+  str_education_main_singlebound_btn = "一鍵提升",
+  str_education_up_level_btn = "確認升級",
+  str_education_up_stage_btn = "確認升階",
+  str_education_up_full_level_btn = "已達等級上限",
+  str_education_up_pet_upgrade_title = "{1}屬性光靈獲得提升",
+  str_education_up_attack = "攻擊力",
+  str_education_up_defence = "防禦力",
+  str_education_up_health = "生命力",
+  str_education_up_restrain = "{1}屬性剋制傷害{2}",
+  str_education_up_positive_skill = "{1}屬性光靈主動技能傷害提高{2}",
+  str_education_up_cell_rate = "若上陣均為{1}屬性光靈，略微提高{1}屬性格子生成機率",
+  str_education_up_level_not_meet = "材料不足",
+  str_education_upstage_preview_btn = "階段預覽",
+  str_education_upstage_title = "升階預覽",
+  str_education_upstage_upgrade = "升階提升",
+  str_education_upstage_condition = "升階前置條件",
+  str_education_upstage_condition_tower = "四屬性塔{1}級（{2}）",
+  str_education_upstage_condition_tower2 = "{1}屬性塔{2}層（{3}）",
+  str_education_upstage_condition_anytower = "任意",
+  str_education_upstage_condition_awaken = "{1}個{2}覺醒光靈（{3}）",
+  str_education_upstage_condition_grade = "{1}個覺醒{2}的{3}屬性的光靈（{4}）",
+  str_education_upstage_not_meet = "未滿足升階條件",
+  str_education_preview_restrain = "{1}屬性剋制傷害",
+  str_education_preview_positive_skill = "{1}屬性光靈主動技能傷害提高",
+  str_education_preview_cell_rate = "若上陣均為{1}屬性光靈，提高{1}屬性格子生成機率",
+  str_education_one_title = "一鍵提升詳情",
+  str_education_one_detail = "選擇一鍵提升，會優先將水火森雷四個模組提升至相同等級，之後再依照水火森雷的順序逐級提升。此提升消耗的材料為每個模組提升時的必需品。",
+  str_education_one_confirm_btn = "一鍵提升",
+  str_education_one_notenough = "一鍵提升材料不足",
+  str_education_one_fulllevel = "一鍵提升已滿級",
+  str_education_one_nolevel_toast = "一鍵提升->無等級可升",
+  str_education_property_add_tips = "啟迪系統提升的效果不會在介面中展示，進入對局後直接生效"
+}
 return config
-

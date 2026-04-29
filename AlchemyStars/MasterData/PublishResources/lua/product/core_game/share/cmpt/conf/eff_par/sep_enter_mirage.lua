@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_enter_mirage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectEnterMirageParam", SkillEffectParamBase)
 SkillEffectEnterMirageParam = SkillEffectEnterMirageParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectEnterMirageParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectEnterMirageParam:Constructor(t)
   self._trapRefreshID = t.trapRefreshID
   self._inheritAttribute = {}
   if t.inheritAttribute ~= nil and type(t.inheritAttribute) == "table" then
@@ -19,39 +12,22 @@ SkillEffectEnterMirageParam.Constructor = function(self, t)
   self._inheritElement = t.inheritElement or false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectEnterMirageParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectEnterMirageParam:GetEffectType()
   return SkillEffectType.EnterMirage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectEnterMirageParam.GetTrapRefreshID = function(self)
-  -- function num : 0_2
+function SkillEffectEnterMirageParam:GetTrapRefreshID()
   return self._trapRefreshID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectEnterMirageParam.GetInheritAttribute = function(self)
-  -- function num : 0_3
+function SkillEffectEnterMirageParam:GetInheritAttribute()
   return self._inheritAttribute
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectEnterMirageParam.GetUseAttribute = function(self)
-  -- function num : 0_4
+function SkillEffectEnterMirageParam:GetUseAttribute()
   return self._useAttribute
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectEnterMirageParam.GetInheritElement = function(self)
-  -- function num : 0_5
+function SkillEffectEnterMirageParam:GetInheritElement()
   return self._inheritElement
 end
-
-

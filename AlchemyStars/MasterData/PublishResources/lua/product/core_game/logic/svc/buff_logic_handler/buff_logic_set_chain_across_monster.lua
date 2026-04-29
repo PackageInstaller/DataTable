@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_chain_across_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetChainAcrossMonster", BuffLogicBase)
 BuffLogicSetChainAcrossMonster = BuffLogicSetChainAcrossMonster
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetChainAcrossMonster.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetChainAcrossMonster:Constructor(buffInstance, logicParam)
   self._remove = logicParam.remove or 0
   self._moveEffect = logicParam.moveEffect
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetChainAcrossMonster.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetChainAcrossMonster:DoLogic()
+  local e = self._buffInstance:Entity()
   local logicChainPathCmpt = e:LogicChainPath()
   logicChainPathCmpt:SetChainAcrossMonster(self._remove == 0)
   local buffResult = BuffResultSetChainAcrossMonster:New(self._remove, self._moveEffect)
-  do return buffResult end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return buffResult
 end
-
-

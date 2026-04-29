@@ -1,52 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/multi_line/map/ui_n32_multi_line_over_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN32MultiLineOverTips", UIController)
 UIN32MultiLineOverTips = UIN32MultiLineOverTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN32MultiLineOverTips.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIN32MultiLineOverTips:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineOverTips.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN32MultiLineOverTips:OnShow(uiParams)
   self:InitWidget()
   local unPassNum = uiParams[1]
   local roleModule = self:GetModule(RoleModule)
   local name = roleModule:GetName()
-  ;
-  (self.desc):SetText((StringTable.Get)("str_n32_multiline_branch_tips", name, unPassNum))
+  self.desc:SetText(StringTable.Get("str_n32_multiline_branch_tips", name, unPassNum))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineOverTips.InitWidget = function(self)
-  -- function num : 0_2
+function UIN32MultiLineOverTips:InitWidget()
   self.desc = self:GetUIComponent("UILocalizationText", "desc")
   self.animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineOverTips.BtnConformOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN32MultiLineOverTips:BtnConformOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
     local lockName = "UIN32MultiLineOverTips:ExitAni"
     self:Lock(lockName)
-    ;
-    (self.animation):Play("uieff_UIN32MultiLineOverTips_out")
+    self.animation:Play("uieff_UIN32MultiLineOverTips_out")
     YIELD(TT, 200)
     self:CloseDialog()
     self:UnLock(lockName)
-  end
-)
+  end)
 end
-
-

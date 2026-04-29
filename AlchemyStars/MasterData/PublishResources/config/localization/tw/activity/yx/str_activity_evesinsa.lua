@@ -1,8 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/activity/yx/str_activity_evesinsa.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_activity_evesinsa_remainingtime_d = "{1}天", str_activity_evesinsa_remainingtime_h = "{1}小時", str_activity_evesinsa_remainingtime_m = "{1}分鐘", str_activity_evesinsa_remainingtime_z = "不到一分鐘", str_activity_evesinsa_main_title_desc_1 = "作戰剩餘時間", str_activity_evesinsa_main_title_desc_2 = "兌換剩餘時間", str_activity_evesinsa_main_loginbtn = "車隊簽到", str_activity_evesinsa_main_taskbtn = "沙漠懸賞", str_activity_evesinsa_main_levelabtn = "風起之處", str_activity_evesinsa_main_levelbbtn = "歸家之人", str_activity_evesinsa_main_levelabtn_en = "Where the Wind Rises", str_activity_evesinsa_main_levelbbtn_en = "Home Awaits", str_activity_evesinsa_main_actionsecond = "進行中", str_activity_evesinsa_main_lockbtn_remainingtime_title = "後開放", str_activity_evesinsa_main_lockbtn_level = "完成ST5後開放", str_activity_evesinsa_shop_end_time = "距離兌換關閉還有", str_activity_evesinsa_shop_group_unlock_time = "距開放還有", str_activity_evesinsa_shop_remain = "剩餘 {1}", str_activity_evesinsa_shop_npc_name_1 = "芭芭拉", str_activity_evesinsa_shop_npc_word_1 = "讓芭芭拉給美好的沙漠獻上祝福！請隨意選購！這些可不是有錢就能買到的～要懷著對芭芭拉一樣的愛意才行！需要幫忙的話，就叫芭芭拉！我會為你加油的！真是奇怪，商品裡沒有芭芭拉見面會的握手券呢！", str_activity_evesinsa_shop_goods_group_lock = "未開放此組商品", str_activity_evesinsa_shop_name = "公路商店", str_activity_evesinsa_shop_sold_out = "已兌換", str_activity_evesinsa_task_can_get = "可領取", str_activity_evesinsa_task_received = "已獲得", str_activity_evesinsa_total_login_title_1 = "活動期間累計登入8天，領取光珀與限定頭像", str_activity_evesinsa_total_login_can_get = "可領取", str_activity_evesinsa_total_login_got = "已領取", str_activity_evesinsa_total_login_lock = "未解鎖", str_activity_evesinsa_view_memory = "喚醒伊芙！", str_activity_evesinsa_level_open = "-可挑戰-", str_activity_evesinsa_level_clear = "-已過關-", str_activity_evesinsa_intro_title = "伊芙醒山活動說明", str_activity_evesinsa_point_des1 = "1、在【風起之處】中消耗行動點的關卡，必須消耗【行動點】，【行動點】每4小時回復1點，上限為20點。", str_activity_evesinsa_point_des2 = "2、戰鬥失敗或中途退出不會消耗【行動點】。活動結束後，【行動點】將歸零。", str_activity_evesinsa_point_des3 = "3、【風起之處】關閉後，未使用的【行動點】將按照1:100的比例轉換成【扳手螺帽徽章】。在【風起之處】結束1小時後，重新登入遊戲時透過郵件發放。", str_activity_evesinsa_next_point = "下一行動點", str_activity_evesinsa_slevel_lock = "完成【歸家之人】全部關卡後解鎖", str_activity_evesinsa_intro_head_1 = "【行動點】使用方式：", str_activity_evesinsa_intro_head_2 = "【扳手螺帽徽章】道具取得方式：", str_activity_evesinsa_intro_head_3 = "【風暴停轉之時】道具使用方式：", str_activity_evesinsa_intro_body_1 = "1、在【風起之處】中消耗行動點的關卡，必須消耗【行動點】。【行動點】每4小時回復1點，上限為20點。\n2、戰鬥失敗或中途退出不會消耗【行動點】。活動結束後，【行動點】將歸零。\n3、【風起之處】關閉後，未使用的【行動點】將按照1:100的比例轉換成【扳手螺帽徽章】。在【風起之處】結束1小時後，重新登入遊戲時透過郵件發放。", str_activity_evesinsa_intro_body_2 = "1、活動期間，完成【風起之處】消耗行動點的活動關卡，可獲得一定數量的【扳手螺帽徽章】。\n2、完成消耗稜鏡的主線關卡或資源整備關卡，也能獲得一定數量的【扳手螺帽徽章】。\n3、活動結束後，上述關卡不再掉落【扳手螺帽徽章】。", str_activity_evesinsa_intro_body_3 = "1、消耗【扳手螺帽徽章】可於活動商店【公路商店】購買商品。\n2、【公路商店】關閉後，未使用的【扳手螺帽徽章】將依照1:15的比例轉換成白夜幣。"}
+local config = {
+  str_activity_evesinsa_remainingtime_d = "{1}天",
+  str_activity_evesinsa_remainingtime_h = "{1}小時",
+  str_activity_evesinsa_remainingtime_m = "{1}分鐘",
+  str_activity_evesinsa_remainingtime_z = "不到一分鐘",
+  str_activity_evesinsa_main_title_desc_1 = "作戰剩餘時間",
+  str_activity_evesinsa_main_title_desc_2 = "兌換剩餘時間",
+  str_activity_evesinsa_main_loginbtn = "車隊簽到",
+  str_activity_evesinsa_main_taskbtn = "沙漠懸賞",
+  str_activity_evesinsa_main_levelabtn = "風起之處",
+  str_activity_evesinsa_main_levelbbtn = "歸家之人",
+  str_activity_evesinsa_main_levelabtn_en = "Where the Wind Rises",
+  str_activity_evesinsa_main_levelbbtn_en = "Home Awaits",
+  str_activity_evesinsa_main_actionsecond = "進行中",
+  str_activity_evesinsa_main_lockbtn_remainingtime_title = "後開放",
+  str_activity_evesinsa_main_lockbtn_level = "完成ST5後開放",
+  str_activity_evesinsa_shop_end_time = "距離兌換關閉還有",
+  str_activity_evesinsa_shop_group_unlock_time = "距開放還有",
+  str_activity_evesinsa_shop_remain = "剩餘 {1}",
+  str_activity_evesinsa_shop_npc_name_1 = "芭芭拉",
+  str_activity_evesinsa_shop_npc_word_1 = "讓芭芭拉給美好的沙漠獻上祝福！請隨意選購！這些可不是有錢就能買到的～要懷著對芭芭拉一樣的愛意才行！需要幫忙的話，就叫芭芭拉！我會為你加油的！真是奇怪，商品裡沒有芭芭拉見面會的握手券呢！",
+  str_activity_evesinsa_shop_goods_group_lock = "未開放此組商品",
+  str_activity_evesinsa_shop_name = "公路商店",
+  str_activity_evesinsa_shop_sold_out = "已兌換",
+  str_activity_evesinsa_task_can_get = "可領取",
+  str_activity_evesinsa_task_received = "已獲得",
+  str_activity_evesinsa_total_login_title_1 = "活動期間累計登入8天，領取光珀與限定頭像",
+  str_activity_evesinsa_total_login_can_get = "可領取",
+  str_activity_evesinsa_total_login_got = "已領取",
+  str_activity_evesinsa_total_login_lock = "未解鎖",
+  str_activity_evesinsa_view_memory = "喚醒伊芙！",
+  str_activity_evesinsa_level_open = "-可挑戰-",
+  str_activity_evesinsa_level_clear = "-已過關-",
+  str_activity_evesinsa_intro_title = "伊芙醒山活動說明",
+  str_activity_evesinsa_point_des1 = "1、在【風起之處】中消耗行動點的關卡，必須消耗【行動點】，【行動點】每4小時回復1點，上限為20點。",
+  str_activity_evesinsa_point_des2 = "2、戰鬥失敗或中途退出不會消耗【行動點】。活動結束後，【行動點】將歸零。",
+  str_activity_evesinsa_point_des3 = "3、【風起之處】關閉後，未使用的【行動點】將按照1:100的比例轉換成【扳手螺帽徽章】。在【風起之處】結束1小時後，重新登入遊戲時透過郵件發放。",
+  str_activity_evesinsa_next_point = "下一行動點",
+  str_activity_evesinsa_slevel_lock = "完成【歸家之人】全部關卡後解鎖",
+  str_activity_evesinsa_intro_head_1 = "【行動點】使用方式：",
+  str_activity_evesinsa_intro_head_2 = "【扳手螺帽徽章】道具取得方式：",
+  str_activity_evesinsa_intro_head_3 = "【風暴停轉之時】道具使用方式：",
+  str_activity_evesinsa_intro_body_1 = "1、在【風起之處】中消耗行動點的關卡，必須消耗【行動點】。【行動點】每4小時回復1點，上限為20點。\n2、戰鬥失敗或中途退出不會消耗【行動點】。活動結束後，【行動點】將歸零。\n3、【風起之處】關閉後，未使用的【行動點】將按照1:100的比例轉換成【扳手螺帽徽章】。在【風起之處】結束1小時後，重新登入遊戲時透過郵件發放。",
+  str_activity_evesinsa_intro_body_2 = "1、活動期間，完成【風起之處】消耗行動點的活動關卡，可獲得一定數量的【扳手螺帽徽章】。\n2、完成消耗稜鏡的主線關卡或資源整備關卡，也能獲得一定數量的【扳手螺帽徽章】。\n3、活動結束後，上述關卡不再掉落【扳手螺帽徽章】。",
+  str_activity_evesinsa_intro_body_3 = "1、消耗【扳手螺帽徽章】可於活動商店【公路商店】購買商品。\n2、【公路商店】關閉後，未使用的【扳手螺帽徽章】將依照1:15的比例轉換成白夜幣。"
+}
 return config
-

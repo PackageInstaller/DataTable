@@ -1,57 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/ui_n25_idol_break_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolBreakTips", UIController)
 UIN25IdolBreakTips = UIN25IdolBreakTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolBreakTips.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolBreakTips:Constructor()
   self._breakInfo = nil
   self._fnConfirm = nil
   self._fnCancel = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolBreakTips.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25IdolBreakTips:OnShow(uiParams)
   self._archivePreviewPath = self:GetUIComponent("UISelectObjectPath", "archivePreview")
-  self._archivePreview = (self._archivePreviewPath):SpawnObject("UIN25IdolArchiveBreak")
+  self._archivePreview = self._archivePreviewPath:SpawnObject("UIN25IdolArchiveBreak")
   self._breakInfo = uiParams[1]
   self._fnConfirm = uiParams[2]
   self._fnCancel = uiParams[3]
-  ;
-  (self._archivePreview):Flush(self._breakInfo)
+  self._archivePreview:Flush(self._breakInfo)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolBreakTips.OnHide = function(self)
-  -- function num : 0_2
+function UIN25IdolBreakTips:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolBreakTips.BtnCloseOnClick = function(self, go)
-  -- function num : 0_3
+function UIN25IdolBreakTips:BtnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolBreakTips.BtnCancelGameOnClick = function(self, go)
-  -- function num : 0_4
+function UIN25IdolBreakTips:BtnCancelGameOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolBreakTips.BtnLoadGameOnClick = function(self, go)
-  -- function num : 0_5
-  (self._fnConfirm)()
+function UIN25IdolBreakTips:BtnLoadGameOnClick(go)
+  self._fnConfirm()
 end
-
-

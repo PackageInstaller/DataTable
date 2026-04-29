@@ -1,74 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/luckland_enemy_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LuckLandEnemyData", Object)
 LuckLandEnemyData = LuckLandEnemyData
 local toint = math.tointeger
--- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
 
-LuckLandEnemyData.Init = function(self, data)
-  -- function num : 0_0 , upvalues : _ENV
+function LuckLandEnemyData:Init(data)
   self.lldEntity = data
-  self.enemyCfgId = (self.lldEntity):GetTemplateID()
-  self.EnemyCfg = (Cfg.cfg_luckland_client_enemy)[self.enemyCfgId]
-  self.enemyName = (self.EnemyCfg).EnemyName
-  self.enemyIcon = (self.EnemyCfg).EnemyIcon
-  self.enemyHp = (self.lldEntity):GetCurHP()
-  self.enemyAtk = (self.lldEntity):GetEnemyAtk()
-  self.enemyLifeCount = (self.EnemyCfg).EnemyLifeCount
-  self.EnemySkill = (self.EnemyCfg).EnemySkill
-  self.enemyBigIcon = (self.EnemyCfg).EnemyBigIcon
+  self.enemyCfgId = self.lldEntity:GetTemplateID()
+  self.EnemyCfg = Cfg.cfg_luckland_client_enemy[self.enemyCfgId]
+  self.enemyName = self.EnemyCfg.EnemyName
+  self.enemyIcon = self.EnemyCfg.EnemyIcon
+  self.enemyHp = self.lldEntity:GetCurHP()
+  self.enemyAtk = self.lldEntity:GetEnemyAtk()
+  self.enemyLifeCount = self.EnemyCfg.EnemyLifeCount
+  self.EnemySkill = self.EnemyCfg.EnemySkill
+  self.enemyBigIcon = self.EnemyCfg.EnemyBigIcon
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-LuckLandEnemyData.GetEnemyEntity = function(self)
-  -- function num : 0_1
+function LuckLandEnemyData:GetEnemyEntity()
   return self.lldEntity
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-LuckLandEnemyData.GetEnemyIcon = function(self)
-  -- function num : 0_2
+function LuckLandEnemyData:GetEnemyIcon()
   return self.enemyIcon
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-LuckLandEnemyData.GetEnemyBigIcon = function(self)
-  -- function num : 0_3
+function LuckLandEnemyData:GetEnemyBigIcon()
   return self.enemyBigIcon
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-LuckLandEnemyData.GetEnemyName = function(self)
-  -- function num : 0_4
+function LuckLandEnemyData:GetEnemyName()
   return self.enemyName
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-LuckLandEnemyData.GetEnemyHp = function(self)
-  -- function num : 0_5
-  return (self.lldEntity):GetCurHP()
+function LuckLandEnemyData:GetEnemyHp()
+  return self.lldEntity:GetCurHP()
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-LuckLandEnemyData.GetEnemyAtk = function(self)
-  -- function num : 0_6
-  return (self.lldEntity):GetEnemyAtk()
+function LuckLandEnemyData:GetEnemyAtk()
+  return self.lldEntity:GetEnemyAtk()
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-LuckLandEnemyData.GetEnemyLifeCount = function(self)
-  -- function num : 0_7
+function LuckLandEnemyData:GetEnemyLifeCount()
   return self.enemyLifeCount
 end
-
-

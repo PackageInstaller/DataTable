@@ -1,48 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/ui_eliminate_support_camp_level_group.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateSupportCampLevelGroup", UICustomWidget)
 UIEliminateSupportCampLevelGroup = UIEliminateSupportCampLevelGroup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateSupportCampLevelGroup.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIEliminateSupportCampLevelGroup:OnShow(uiParams)
   self._campIconTxt = "qdhl_new_logo0"
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateSupportCampLevelGroup._GetComponents = function(self)
-  -- function num : 0_1
+function UIEliminateSupportCampLevelGroup:_GetComponents()
   self._title = self:GetUIComponent("UILocalizationText", "Title")
   self._icon = self:GetUIComponent("Image", "Icon")
   self._content = self:GetUIComponent("UISelectObjectPath", "content")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateSupportCampLevelGroup.SetData = function(self, tagTb)
-  -- function num : 0_2 , upvalues : _ENV
+function UIEliminateSupportCampLevelGroup:SetData(tagTb)
   self._tagTb = tagTb
-  local tagCfg = (Cfg.cfg_pet_tags)[((self._tagTb)[1]).Tag]
+  local tagCfg = Cfg.cfg_pet_tags[self._tagTb[1].Tag]
   local tagText = tagCfg.Name
   if tagCfg.ID == 1007 then
-    ((self._icon).gameObject):SetActive(false)
+    self._icon.gameObject:SetActive(false)
   else
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._icon).sprite = ((self.uiOwner).atlas):GetSprite((EliminateHelper.GetCampIcon)(tagCfg.ID))
+    self._icon.sprite = self.uiOwner.atlas:GetSprite(EliminateHelper.GetCampIcon(tagCfg.ID))
   end
-  ;
-  (self._title):SetText((StringTable.Get)(tagText))
-  local campItems = (self._content):SpawnObjects("UIEliminateSupportCampLevelInfo", (table.count)(self._tagTb))
-  for i,item in pairs(campItems) do
-    item:SetData((self._tagTb)[i])
+  self._title:SetText(StringTable.Get(tagText))
+  local campItems = self._content:SpawnObjects("UIEliminateSupportCampLevelInfo", table.count(self._tagTb))
+  for i, item in pairs(campItems) do
+    item:SetData(self._tagTb[i])
   end
 end
-
-

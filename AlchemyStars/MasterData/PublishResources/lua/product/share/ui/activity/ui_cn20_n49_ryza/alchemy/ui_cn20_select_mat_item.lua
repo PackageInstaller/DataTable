@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/alchemy/ui_cn20_select_mat_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20SelectMatItem", UICustomWidget)
 UICN20SelectMatItem = UICN20SelectMatItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20SelectMatItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN20SelectMatItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20SelectMatItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN20SelectMatItem:InitWidget()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.quiatly = self:GetUIComponent("Image", "quiatly")
   self.value = self:GetUIComponent("UILocalizationText", "value")
@@ -23,83 +13,46 @@ UICN20SelectMatItem.InitWidget = function(self)
   self._atlas = self:GetAsset("UICN20N49.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20SelectMatItem.SetData = function(self, itemId, selectCB)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN20SelectMatItem:SetData(itemId, selectCB)
   self.itemId = itemId
   self.selectCB = selectCB
-  local itemCfg = (Cfg.cfg_item)[itemId]
+  local itemCfg = Cfg.cfg_item[itemId]
   if not itemCfg then
-    (Log.error)("itemCfg IS NIL", itemId)
-    return 
+    Log.error("itemCfg IS NIL", itemId)
+    return
   end
   self._cfg_item = itemCfg
-  local matCfg = (Cfg.cfg_component_alchemy_material)[itemId]
+  local matCfg = Cfg.cfg_component_alchemy_material[itemId]
   if matCfg == nil then
-    (Log.error)("alchemyCfg matCfg IS nil", itemId)
-    return 
+    Log.error("alchemyCfg matCfg IS nil", itemId)
+    return
   end
   self.matCfg = matCfg
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R5 in 'UnsetPending'
-
-  if (self.matCfg).Property == 1 then
-    (self.matIcon).sprite = (self._atlas):GetSprite("cn20_ljjm_ljsx02")
-  else
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R5 in 'UnsetPending'
-
-    if (self.matCfg).Property == 2 then
-      (self.matIcon).sprite = (self._atlas):GetSprite("cn20_ljjm_ljsx01")
-    else
-      -- DECOMPILER ERROR at PC57: Confused about usage of register: R5 in 'UnsetPending'
-
-      if (self.matCfg).Property == 3 then
-        (self.matIcon).sprite = (self._atlas):GetSprite("cn20_ljjm_ljsx03")
-      else
-        -- DECOMPILER ERROR at PC68: Confused about usage of register: R5 in 'UnsetPending'
-
-        if (self.matCfg).Property == 4 then
-          (self.matIcon).sprite = (self._atlas):GetSprite("cn20_ljjm_ljsx04")
-        end
-      end
-    end
+  if self.matCfg.Property == 1 then
+    self.matIcon.sprite = self._atlas:GetSprite("cn20_ljjm_ljsx02")
+  elseif self.matCfg.Property == 2 then
+    self.matIcon.sprite = self._atlas:GetSprite("cn20_ljjm_ljsx01")
+  elseif self.matCfg.Property == 3 then
+    self.matIcon.sprite = self._atlas:GetSprite("cn20_ljjm_ljsx03")
+  elseif self.matCfg.Property == 4 then
+    self.matIcon.sprite = self._atlas:GetSprite("cn20_ljjm_ljsx04")
   end
-  local icon = (self._cfg_item).Icon
-  ;
-  (self.icon):LoadImage(icon)
-  local color = (self.matCfg).Quality
-  -- DECOMPILER ERROR at PC84: Confused about usage of register: R7 in 'UnsetPending'
-
+  local icon = self._cfg_item.Icon
+  self.icon:LoadImage(icon)
+  local color = self.matCfg.Quality
   if color == 1 then
-    (self.quiatly).sprite = (self._atlas):GetSprite("cn20_ljdp_gezi05_01")
-  else
-    -- DECOMPILER ERROR at PC93: Confused about usage of register: R7 in 'UnsetPending'
-
-    if color == 2 then
-      (self.quiatly).sprite = (self._atlas):GetSprite("cn20_ljdp_gezi04_01")
-    else
-      -- DECOMPILER ERROR at PC102: Confused about usage of register: R7 in 'UnsetPending'
-
-      if color == 3 then
-        (self.quiatly).sprite = (self._atlas):GetSprite("cn20_ljdp_gezi03_01")
-      else
-        -- DECOMPILER ERROR at PC111: Confused about usage of register: R7 in 'UnsetPending'
-
-        if color > 3 then
-          (self.quiatly).sprite = (self._atlas):GetSprite("cn20_ljdp_gezi01_01")
-        end
-      end
-    end
+    self.quiatly.sprite = self._atlas:GetSprite("cn20_ljdp_gezi05_01")
+  elseif color == 2 then
+    self.quiatly.sprite = self._atlas:GetSprite("cn20_ljdp_gezi04_01")
+  elseif color == 3 then
+    self.quiatly.sprite = self._atlas:GetSprite("cn20_ljdp_gezi03_01")
+  elseif 3 < color then
+    self.quiatly.sprite = self._atlas:GetSprite("cn20_ljdp_gezi01_01")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20SelectMatItem.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UICN20SelectMatItem:BgOnClick(go)
   if self.selectCB then
-    (self.selectCB)()
+    self.selectCB()
   end
 end
-
-

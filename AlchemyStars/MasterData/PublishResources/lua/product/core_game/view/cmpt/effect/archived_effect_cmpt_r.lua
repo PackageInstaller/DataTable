@@ -1,47 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/effect/archived_effect_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ArchivedEffectComponent", Object)
 ArchivedEffectComponent = ArchivedEffectComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ArchivedEffectComponent.Constructor = function(self, effectIDs)
-  -- function num : 0_0
+function ArchivedEffectComponent:Constructor(effectIDs)
   self.EffectIDs = effectIDs
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ArchivedEffect = function(self)
-  -- function num : 0_1
-  return self:GetComponent((self.WEComponentsEnum).ArchivedEffect)
+function Entity:ArchivedEffect()
+  return self:GetComponent(self.WEComponentsEnum.ArchivedEffect)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasArchivedEffect = function(self)
-  -- function num : 0_2
-  return self:HasComponent((self.WEComponentsEnum).ArchivedEffect)
+function Entity:HasArchivedEffect()
+  return self:HasComponent(self.WEComponentsEnum.ArchivedEffect)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddArchivedEffect = function(self, effectIDs)
-  -- function num : 0_3 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ArchivedEffect
+function Entity:AddArchivedEffect(effectIDs)
+  local index = self.WEComponentsEnum.ArchivedEffect
   local component = ArchivedEffectComponent:New(effectIDs)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveArchivedEffect = function(self)
-  -- function num : 0_4
+function Entity:RemoveArchivedEffect()
   if self:HasArchivedEffect() then
-    self:RemoveComponent((self.WEComponentsEnum).ArchivedEffect)
+    self:RemoveComponent(self.WEComponentsEnum.ArchivedEffect)
   end
 end
-
-

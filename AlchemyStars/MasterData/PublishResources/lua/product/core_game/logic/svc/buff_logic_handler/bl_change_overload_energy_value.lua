@@ -1,27 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_overload_energy_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local BuffChangeAUOEValueType = {Value = 1, TeamHPPercent = 2, TargetCount = 3}
+local BuffChangeAUOEValueType = {
+  Value = 1,
+  TeamHPPercent = 2,
+  TargetCount = 3
+}
 _enum("BuffChangeAUOEValueType", BuffChangeAUOEValueType)
 _class("BuffLogicChangeAUOEValue", BuffLogicBase)
 BuffLogicChangeAUOEValue = BuffLogicChangeAUOEValue
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeAUOEValue.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : BuffChangeAUOEValueType
+function BuffLogicChangeAUOEValue:Constructor(buffInstance, logicParam)
   self._modifyValue = logicParam.modifyValue or 0
   self._modifyType = logicParam.modifyType or BuffChangeAUOEValueType.Value
   self._modifyParam = logicParam.modifyParam
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeAUOEValue.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeAUOEValue:DoLogic(notify)
   local modifyValue = self:_GetModifyValue(notify)
-  local featureSvc = (self._world):GetService("FeatureLogic")
+  local featureSvc = self._world:GetService("FeatureLogic")
   local curAUOE, oldAUOE, realModifyValue = featureSvc:ModifyAUOEValue(modifyValue)
   local result = BuffResultChangeAUOEValue:New(curAUOE, oldAUOE, realModifyValue)
   local notifyType = notify:GetNotifyType()
@@ -37,41 +31,30 @@ BuffLogicChangeAUOEValue.DoLogic = function(self, notify)
   return result
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeAUOEValue._GetModifyValue = function(self, notify)
-  -- function num : 0_2 , upvalues : BuffChangeAUOEValueType, _ENV
+function BuffLogicChangeAUOEValue:_GetModifyValue(notify)
   local value = self._modifyValue
   if self._modifyType == BuffChangeAUOEValueType.TeamHPPercent then
-    local hpPercentArray = (self._modifyParam).hpPercent
-    local valueArray = (self._modifyParam).energy
-    if (table.count)(hpPercentArray) ~= (table.count)(valueArray) then
-      (Log.error)("BuffLogicChangeAUOEValue cfg error, list count is not match")
+    local hpPercentArray = self._modifyParam.hpPercent
+    local valueArray = self._modifyParam.energy
+    if table.count(hpPercentArray) ~= table.count(valueArray) then
+      Log.error("BuffLogicChangeAUOEValue cfg error, list count is not match")
       return value
     end
-    local battleSvc = (self._world):GetService("Battle")
+    local battleSvc = self._world:GetService("Battle")
     local hp, maxHP = battleSvc:GetTeamHP()
     local curPercent = hp / maxHP
-    for i = (table.count)(hpPercentArray), 1, -1 do
-      if hpPercentArray[i] <= curPercent then
+    for i = table.count(hpPercentArray), 1, -1 do
+      if curPercent >= hpPercentArray[i] then
         value = valueArray[i]
         return value
       end
     end
-  else
-    do
-      if self._modifyType == BuffChangeAUOEValueType.TargetCount then
-        if notify.GetTargetCount then
-          value = self._modifyValue * notify:GetTargetCount()
-        else
-          if notify.GetSkillDamageTargetCount then
-            value = self._modifyValue * notify:GetSkillDamageTargetCount()
-          end
-        end
-      end
-      return value
+  elseif self._modifyType == BuffChangeAUOEValueType.TargetCount then
+    if notify.GetTargetCount then
+      value = self._modifyValue * notify:GetTargetCount()
+    elseif notify.GetSkillDamageTargetCount then
+      value = self._modifyValue * notify:GetSkillDamageTargetCount()
     end
   end
+  return value
 end
-
-

@@ -1,37 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("game_module")
-AutoTestStartType = {Debug = 1, Restart = 2, Continue = 3, StartHere = 4}
-AutoTestEnterCoreGame = function(startType, suite)
-  -- function num : 0_0 , upvalues : _ENV
-  local md = (GameGlobal.GetModule)(AutoTestModule)
+AutoTestStartType = {
+  Debug = 1,
+  Restart = 2,
+  Continue = 3,
+  StartHere = 4
+}
+
+function AutoTestEnterCoreGame(startType, suite)
+  local md = GameGlobal.GetModule(AutoTestModule)
   if md:IsAutoTest() then
-    (Log.error)("自动测试中...")
-    return 
+    Log.error("自动测试中...")
+    return
   end
-  ;
-  (WorkWXPoster.ChangeBotGUID)("a6aa788d-8fd1-43e6-8558-6027117244c6")
-  if not startType then
-    startType = AutoTestStartType.Restart
-  end
+  WorkWXPoster.ChangeBotGUID("a6aa788d-8fd1-43e6-8558-6027117244c6")
+  startType = startType or AutoTestStartType.Restart
   md:StartAutoTest(startType, suite)
 end
 
-AutoTestSetDebugMode = function(isDebug)
-  -- function num : 0_1 , upvalues : _ENV
-  local md = (GameGlobal.GetModule)(AutoTestModule)
+function AutoTestSetDebugMode(isDebug)
+  local md = GameGlobal.GetModule(AutoTestModule)
   md:SetDebugMode(isDebug)
 end
 
 _class("AutoTestModule", GameModule)
 AutoTestModule = AutoTestModule
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
 
-AutoTestModule.Constructor = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function AutoTestModule:Constructor()
   self._logs = {}
   self._running = false
   self._debugMode = false
@@ -42,253 +36,165 @@ AutoTestModule.Constructor = function(self)
   self:AttachEvent(GameEventType.UIShowEnd, self.OnUIShowEnd)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.IsAutoTest = function(self)
-  -- function num : 0_3
+function AutoTestModule:IsAutoTest()
   return self._running
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.SetAutoTest = function(self, v)
-  -- function num : 0_4 , upvalues : _ENV
+function AutoTestModule:SetAutoTest(v)
   self._running = v
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
   if not self._debugMode then
     WorkWXPoster.IsActive = v
   end
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
   if v then
-    BattleConst.TimeSpeedList = {2, 2, 3.5}
+    BattleConst.TimeSpeedList = {
+      2,
+      2,
+      3.5
+    }
   else
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-    BattleConst.TimeSpeedList = {1.2, 1.8, 3.5}
+    BattleConst.TimeSpeedList = {
+      1.2,
+      1.8,
+      3.5
+    }
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.SetDebugMode = function(self, isDebug)
-  -- function num : 0_5
+function AutoTestModule:SetDebugMode(isDebug)
   self._debugMode = isDebug
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.GetTestConfig = function(self)
-  -- function num : 0_6
+function AutoTestModule:GetTestConfig()
   return self._config
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.GetTestSetup = function(self)
-  -- function num : 0_7
+function AutoTestModule:GetTestSetup()
   return self._setup
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.AddResultLogs = function(self, logs)
-  -- function num : 0_8 , upvalues : _ENV
-  (table.appendArray)(self._logs, logs)
+function AutoTestModule:AddResultLogs(logs)
+  table.appendArray(self._logs, logs)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.GetResultLogs = function(self)
-  -- function num : 0_9
+function AutoTestModule:GetResultLogs()
   return self._logs
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.AddFailedSuite = function(self, suiteName)
-  -- function num : 0_10
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._failedSuites)[#self._failedSuites + 1] = suiteName
+function AutoTestModule:AddFailedSuite(suiteName)
+  self._failedSuites[#self._failedSuites + 1] = suiteName
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.GetFailedCount = function(self)
-  -- function num : 0_11
+function AutoTestModule:GetFailedCount()
   return #self._failedSuites
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.GetStartType = function(self)
-  -- function num : 0_12
+function AutoTestModule:GetStartType()
   return self._startType
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.StartAutoTest = function(self, startType, suite)
-  -- function num : 0_13 , upvalues : _ENV
+function AutoTestModule:StartAutoTest(startType, suite)
   self._logs = {}
   self._waitingUI = {}
   self._startType = startType
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
   _G.NOGUIDE = true
   local suites = {}
   if startType == AutoTestStartType.Debug then
     self._debugMode = true
     suites = {suite}
   else
-    local collector = function(node, f)
-    -- function num : 0_13_0 , upvalues : _ENV, suites
-    for i,v in ipairs(node.suites) do
-      if not (table.icontains)(InvalidAutoTestConfig.invalidSuite, v.suite) then
-        suites[#suites + 1] = _G[v.suite]
+    local function collector(node, f)
+      for i, v in ipairs(node.suites) do
+        if not table.icontains(InvalidAutoTestConfig.invalidSuite, v.suite) then
+          suites[#suites + 1] = _G[v.suite]
+        end
       end
-    end
-    for _,n in ipairs(node.nodes) do
-      if not (table.icontains)(InvalidAutoTestConfig.invalidNode, n.name) then
-        f(n, f)
-      end
-    end
-  end
-
-    collector(AutoTestConfig, collector)
-  end
-  do
-    local endIndex = #suites
-    local beginIndex = 1
-    if startType == AutoTestStartType.Continue then
-      beginIndex = ((UnityEngine.PlayerPrefs).GetInt)("AutoTestSuiteIndex", 1)
-    else
-      if startType == AutoTestStartType.StartHere then
-        for i,s in ipairs(suites) do
-          if s == suite then
-            beginIndex = i
-            break
-          end
+      for _, n in ipairs(node.nodes) do
+        if not table.icontains(InvalidAutoTestConfig.invalidNode, n.name) then
+          f(n, f)
         end
       end
     end
-    do
-      if endIndex <= beginIndex then
-        beginIndex = 1
+    
+    collector(AutoTestConfig, collector)
+  end
+  local endIndex = #suites
+  local beginIndex = 1
+  if startType == AutoTestStartType.Continue then
+    beginIndex = UnityEngine.PlayerPrefs.GetInt("AutoTestSuiteIndex", 1)
+  elseif startType == AutoTestStartType.StartHere then
+    for i, s in ipairs(suites) do
+      if s == suite then
+        beginIndex = i
+        break
       end
-      local startTime = (os.clock)()
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_13_1 , upvalues : self, beginIndex, endIndex, suites, _ENV, startTime
+    end
+  end
+  if endIndex <= beginIndex then
+    beginIndex = 1
+  end
+  local startTime = os.clock()
+  GameGlobal.TaskManager():StartTask(function(TT)
     self:SetAutoTest(true)
     local outUI = "UIDiscovery"
     for i = beginIndex, endIndex do
-      do
-        local v = suites[i]
-        if not self._debugMode then
-          ((UnityEngine.PlayerPrefs).SetInt)("AutoTestSuiteIndex", i)
-        end
-        ;
-        (ToastManager.ShowToast)("Start " .. v.name .. " (" .. i .. "/" .. endIndex .. ")")
-        self:EnterCoreGame(v)
-        self:WaitForUIShow(TT, outUI, function()
-      -- function num : 0_13_1_0 , upvalues : _ENV, v, i, endIndex
-      (ToastManager.ShowToast)("Finish " .. v.name .. " (" .. i .. "/" .. endIndex .. ")")
-    end
-, 120, function(TT)
-      -- function num : 0_13_1_1 , upvalues : self, _ENV, v, i, endIndex
+      local v = suites[i]
       if not self._debugMode then
-        (WorkWXPoster.SendError)("白盒测试用例卡死：" .. v.name .. " (" .. i .. "/" .. endIndex .. ")")
+        UnityEngine.PlayerPrefs.SetInt("AutoTestSuiteIndex", i)
       end
-      self:AutoTestClose()
-      self:AddFailedSuite(v.name)
-      YIELD(TT, 10000)
+      ToastManager.ShowToast("Start " .. v.name .. " (" .. i .. "/" .. endIndex .. ")")
+      self:EnterCoreGame(v)
+      self:WaitForUIShow(TT, outUI, function()
+        ToastManager.ShowToast("Finish " .. v.name .. " (" .. i .. "/" .. endIndex .. ")")
+      end, 120, function(TT)
+        if not self._debugMode then
+          WorkWXPoster.SendError("白盒测试用例卡死：" .. v.name .. " (" .. i .. "/" .. endIndex .. ")")
+        end
+        self:AutoTestClose()
+        self:AddFailedSuite(v.name)
+        YIELD(TT, 10000)
+      end)
     end
-)
-      end
-    end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, {ui = outUI, input = "ShowAutoTestLogs", 
-args = {}
-})
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, {
+      ui = outUI,
+      input = "ShowAutoTestLogs",
+      args = {}
+    })
     if not self._debugMode then
-      local seconds = nil
-      -- DECOMPILER ERROR at PC69: Overwrote pending register: R3 in 'AssignReg'
-
-      seconds = seconds((math.floor)((os.clock)() - startTime) / 3600)
-      local hour = nil
-      hour = math
-      hour = hour.floor
-      hour = hour((math.floor)((os.clock)() - startTime) / 60 - seconds * 60)
-      local min = nil
-      min = MarkdownBuilder
-      min = min(min)
-      local mdb = nil
-      mdb(min, "局内白盒结束")
-      -- DECOMPILER ERROR at PC84: Overwrote pending register: R6 in 'AssignReg'
-
-      mdb(min, "耗时：" .. seconds .. "小时" .. hour .. "分钟")
-      -- DECOMPILER ERROR at PC92: Overwrote pending register: R6 in 'AssignReg'
-
-      mdb(min, " 总用例数：" .. endIndex)
-      -- DECOMPILER ERROR at PC97: Overwrote pending register: R6 in 'AssignReg'
-
-      mdb(min, "失败用例：" .. #self._failedSuites .. "\n")
-      -- DECOMPILER ERROR at PC104: Overwrote pending register: R6 in 'AssignReg'
-
-      mdb = mdb(self._failedSuites)
-      for i,suiteName in mdb do
-        local suiteName = nil
-        suiteName(min, (string.format)("%d - %s\n", l_0_13_1_13, i))
+      local seconds = math.floor(os.clock() - startTime)
+      local hour = math.floor(seconds / 3600)
+      local min = math.floor(seconds / 60 - hour * 60)
+      local mdb = MarkdownBuilder:New()
+      mdb:AppendH1("局内白盒结束")
+      mdb:AppendColorGreen("耗时：" .. hour .. "小时" .. min .. "分钟")
+      mdb:AppendColorOrange(" 总用例数：" .. endIndex)
+      mdb:AppendColorRed("失败用例：" .. #self._failedSuites .. "\n")
+      for i, suiteName in ipairs(self._failedSuites) do
+        mdb:AppendColorRed(string.format("%d - %s\n", i, suiteName))
       end
-      do
-        local log = nil
-        -- DECOMPILER ERROR at PC121: Overwrote pending register: R7 in 'AssignReg'
-
-        log(min:ToString())
-        -- DECOMPILER ERROR at PC124: Confused about usage of register R6 for local variables in 'ReleaseLocals'
-
-        self:SetAutoTest(hour)
-      end
+      local log = mdb:ToString()
+      WorkWXPoster.SendWorkWXMarkDown(log)
     end
-  end
-)
-    end
-  end
+    self:SetAutoTest(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.OnUIShowEnd = function(self, uiName, uiParams)
-  -- function num : 0_14
-  local cb = (self._waitingUI)[uiName]
+function AutoTestModule:OnUIShowEnd(uiName, uiParams)
+  local cb = self._waitingUI[uiName]
   if cb then
     cb(uiParams)
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._waitingUI)[uiName] = nil
+    self._waitingUI[uiName] = nil
   end
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.WaitForUIShow = function(self, TT, uiName, callback, timeout, timeoutCallback)
-  -- function num : 0_15 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R6 in 'UnsetPending'
-
-  (self._waitingUI)[uiName] = callback
-  local start = (os.clock)()
-  while (self._waitingUI)[uiName] do
+function AutoTestModule:WaitForUIShow(TT, uiName, callback, timeout, timeoutCallback)
+  self._waitingUI[uiName] = callback
+  local start = os.clock()
+  while self._waitingUI[uiName] do
     YIELD(TT, 1000)
-    if timeout > 0 then
-      local delta = (os.clock)() - start
-      -- DECOMPILER ERROR at PC22: Confused about usage of register: R8 in 'UnsetPending'
-
+    if 0 < timeout then
+      local delta = os.clock() - start
       if timeout < delta then
-        (self._waitingUI)[uiName] = nil
+        self._waitingUI[uiName] = nil
         if timeoutCallback then
           timeoutCallback()
         end
@@ -298,72 +204,49 @@ AutoTestModule.WaitForUIShow = function(self, TT, uiName, callback, timeout, tim
   end
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.EnterCoreGame = function(self, config)
-  -- function num : 0_16 , upvalues : _ENV
-  (GameGlobal:GetInstance()):SetOfflineMatch(true)
+function AutoTestModule:EnterCoreGame(config)
+  GameGlobal:GetInstance():SetOfflineMatch(true)
   self._config = config
   self._setup = AutoTestSetup:New(config.setup)
-  ;
-  (self._setup):BeforeLoading()
-  local pstid = (self:GetModule(RoleModule)):GetPstId()
+  self._setup:BeforeLoading()
+  local pstid = self:GetModule(RoleModule):GetPstId()
   local createInfo = self:CreateMatchCreateInfo(self._setup, config)
   local playerList = self:CreateMatchPlayerList(config.petList)
   local enterData = MatchEnterData:New(pstid, createInfo, playerList)
   local enterPreferenceData = MatchEnterPreFerenceData:New(playerList)
-  ;
-  (self:GetModule(MatchModule)):SetMatchEnterData(enterData, enterPreferenceData)
-  ;
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Battle_Loading)
+  self:GetModule(MatchModule):SetMatchEnterData(enterData, enterPreferenceData)
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Battle_Loading)
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.ExitCoreGame = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  (GameGlobal:GetInstance()):SetOfflineMatch(false)
+function AutoTestModule:ExitCoreGame()
+  GameGlobal:GetInstance():SetOfflineMatch(false)
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.CreateMatchCreateInfo = function(self, setupInfo, config)
-  -- function num : 0_18 , upvalues : _ENV
+function AutoTestModule:CreateMatchCreateInfo(setupInfo, config)
   local createInfo = MatchCreateInfo:New()
   createInfo.match_type = setupInfo.matchType
   createInfo.creator_id = 0
   createInfo.level_id = setupInfo.levelID
   createInfo.formation_id = 0
   createInfo.seed = 1234567
-  createInfo.m_time = (os.time)()
+  createInfo.m_time = os.time()
   createInfo.match_logic_flags = 0
   createInfo.sync_mode = 0
   createInfo.server_auto_fight = false
   createInfo.guide_info = GuideInfo:New()
-  if not setupInfo.wordIds then
-    createInfo.word_ids = {}
-    createInfo.client_create_info = self:CreateClientMatchCreateInfo(setupInfo, config)
-    createInfo.level_is_pass = false
-    createInfo.assign_wave_refresh_probability = 0
-    createInfo.m_nHelpPetKey = 0
-    if not setupInfo.talePetBuffs then
-      createInfo.tale_pet_buffs = {}
-      if not setupInfo.normalPetBuffs then
-        createInfo.normal_pet_buffs = {}
-        createInfo.trail_buff_level_id = 0
-        if not setupInfo.affixs then
-          createInfo.affixList = {}
-          return createInfo
-        end
-      end
-    end
-  end
+  createInfo.word_ids = setupInfo.wordIds or {}
+  createInfo.client_create_info = self:CreateClientMatchCreateInfo(setupInfo, config)
+  createInfo.level_is_pass = false
+  createInfo.assign_wave_refresh_probability = 0
+  createInfo.m_nHelpPetKey = 0
+  createInfo.tale_pet_buffs = setupInfo.talePetBuffs or {}
+  createInfo.normal_pet_buffs = setupInfo.normalPetBuffs or {}
+  createInfo.trail_buff_level_id = 0
+  createInfo.affixList = setupInfo.affixs or {}
+  return createInfo
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.CreateClientMatchCreateInfo = function(self, setupInfo, config)
-  -- function num : 0_19 , upvalues : _ENV
+function AutoTestModule:CreateClientMatchCreateInfo(setupInfo, config)
   local clientInfo = ClientMatchCreateInfo:New()
   clientInfo.mission_info = {}
   clientInfo.m_extMissionInfo = {}
@@ -377,81 +260,64 @@ AutoTestModule.CreateClientMatchCreateInfo = function(self, setupInfo, config)
   if setupInfo.matchType == MatchType.MT_Mission then
     local info = MissionCreateInfo:New()
     info.mission_id = 4008020
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (clientInfo.mission_info)[1] = info
-  else
-    do
-      if setupInfo.matchType == MatchType.MT_Maze then
-        local info = MazeCreateInfo:New()
-        info.maze_version = 0
-        info.maze_layer = 1
-        info.maze_room_index = 0
-        info.maze_light = 99
-        info.maze_room_id = 1011000
-        info.maze_step = 1
-        info.relics = {}
-        info.relic_counters = {}
-        info.wave_randoms = {1, 1, 1, 1, 1}
-        info.avg_pet_level = 50
-        info.maze_rand_seed = 1234567
-        info.battle_archive = ""
-        info.has_archive = false
-        -- DECOMPILER ERROR at PC64: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (clientInfo.maze_info)[1] = info
-      else
-        do
-          do
-            if setupInfo.matchType == MatchType.MT_BlackFist then
-              local info = BlackFistCreateInfo:New()
-              for i,v in ipairs(config.remotePet) do
-                local petInfo = MatchPetInfo:New()
-                petInfo.pet_pstid = v.id
-                petInfo.pet_power = -1
-                petInfo.template_id = v.id
-                petInfo.level = v.level
-                petInfo.grade = v.grade
-                petInfo.awakening = v.awakening
-                petInfo.affinity_level = 1
-                petInfo.team_slot = i
-                petInfo.attack = 0
-                petInfo.defense = 0
-                petInfo.max_hp = 0
-                petInfo.cur_hp = 0
-                petInfo.after_damage = 0
-                petInfo.equip_lv = v.equiplv
-                petInfo.equip_refine_lv = v.equipRefineLv or 0
-                petInfo.m_nHelpPetKey = 0
-                ;
-                (table.insert)(info.black_team_info, petInfo)
-              end
-              -- DECOMPILER ERROR at PC115: Confused about usage of register: R5 in 'UnsetPending'
-
-              ;
-              (clientInfo.black_fist_info)[1] = info
-            end
-            return clientInfo
-          end
-        end
-      end
+    clientInfo.mission_info[1] = info
+  elseif setupInfo.matchType == MatchType.MT_Maze then
+    local info = MazeCreateInfo:New()
+    info.maze_version = 0
+    info.maze_layer = 1
+    info.maze_room_index = 0
+    info.maze_light = 99
+    info.maze_room_id = 1011000
+    info.maze_step = 1
+    info.relics = {}
+    info.relic_counters = {}
+    info.wave_randoms = {
+      1,
+      1,
+      1,
+      1,
+      1
+    }
+    info.avg_pet_level = 50
+    info.maze_rand_seed = 1234567
+    info.battle_archive = ""
+    info.has_archive = false
+    clientInfo.maze_info[1] = info
+  elseif setupInfo.matchType == MatchType.MT_BlackFist then
+    local info = BlackFistCreateInfo:New()
+    for i, v in ipairs(config.remotePet) do
+      local petInfo = MatchPetInfo:New()
+      petInfo.pet_pstid = v.id
+      petInfo.pet_power = -1
+      petInfo.template_id = v.id
+      petInfo.level = v.level
+      petInfo.grade = v.grade
+      petInfo.awakening = v.awakening
+      petInfo.affinity_level = 1
+      petInfo.team_slot = i
+      petInfo.attack = 0
+      petInfo.defense = 0
+      petInfo.max_hp = 0
+      petInfo.cur_hp = 0
+      petInfo.after_damage = 0
+      petInfo.equip_lv = v.equiplv
+      petInfo.equip_refine_lv = v.equipRefineLv or 0
+      petInfo.m_nHelpPetKey = 0
+      table.insert(info.black_team_info, petInfo)
     end
+    clientInfo.black_fist_info[1] = info
   end
+  return clientInfo
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.CreateMatchPlayerList = function(self, petList)
-  -- function num : 0_20 , upvalues : _ENV
+function AutoTestModule:CreateMatchPlayerList(petList)
   local luainfo = LuaMatchPlayerInfo:New()
   luainfo.blood = 1
   luainfo.nick = ""
-  luainfo.pstid = (self:GetModule(RoleModule)):GetPstId()
+  luainfo.pstid = self:GetModule(RoleModule):GetPstId()
   luainfo.nLevel = 1
   luainfo.pet_list = {}
-  for i,v in ipairs(petList) do
+  for i, v in ipairs(petList) do
     local petInfo = MatchPetInfo:New()
     petInfo.pet_pstid = v.id
     petInfo.pet_power = -1
@@ -469,23 +335,16 @@ AutoTestModule.CreateMatchPlayerList = function(self, petList)
     petInfo.equip_lv = v.equiplv
     petInfo.equip_refine_lv = v.equipRefineLv or 0
     petInfo.m_nHelpPetKey = 0
-    ;
-    (table.insert)(luainfo.pet_list, petInfo)
+    table.insert(luainfo.pet_list, petInfo)
   end
-  return {[luainfo.pstid] = luainfo}
+  return {
+    [luainfo.pstid] = luainfo
+  }
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestModule.AutoTestClose = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  (GameGlobal:GetInstance()):StopCoreGame()
-  ;
-  ((GameGlobal.TaskManager)()):KillCoreGameTasks()
-  ;
-  (GameGlobal:GetInstance()):ExitCoreGame()
-  ;
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIDiscovery)
+function AutoTestModule:AutoTestClose()
+  GameGlobal:GetInstance():StopCoreGame()
+  GameGlobal.TaskManager():KillCoreGameTasks()
+  GameGlobal:GetInstance():ExitCoreGame()
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIDiscovery)
 end
-
-

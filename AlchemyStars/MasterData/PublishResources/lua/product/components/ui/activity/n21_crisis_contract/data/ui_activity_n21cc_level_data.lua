@@ -1,24 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/data/ui_activity_n21cc_level_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIActivityN21CCLevelStatus = {None = 0, Lock = 1, Open = 2}
+local UIActivityN21CCLevelStatus = {
+  None = 0,
+  Lock = 1,
+  Open = 2
+}
 _enum("UIActivityN21CCLevelStatus", UIActivityN21CCLevelStatus)
 _class("UIActivityN21CCLevelData", Object)
 UIActivityN21CCLevelData = UIActivityN21CCLevelData
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityN21CCLevelData.Constructor = function(self, cfg, missionComponentInfo)
-  -- function num : 0_0 , upvalues : _ENV, UIActivityN21CCLevelStatus
+function UIActivityN21CCLevelData:Constructor(cfg, missionComponentInfo)
   self._missionComponentInfo = missionComponentInfo
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._monsterIcon = cfg.MonsterIcon
   self._monsterIcon1 = cfg.MonsterIcon1
   if not self._monsterIcon1 then
     self._monsterIcon1 = ""
   end
-  self._monsterName = (StringTable.Get)(cfg.MonsterName)
+  self._monsterName = StringTable.Get(cfg.MonsterName)
   self._recommendAwaken = cfg.RecommendAwaken
   self._recommendLV = cfg.RecommendLV
   self._missionId = cfg.CampaignMissionId
@@ -26,144 +23,99 @@ UIActivityN21CCLevelData.Constructor = function(self, cfg, missionComponentInfo)
   self._hardId = cfg.HardID
   self._elementIcon1 = cfg.ElementIcon1
   self._elementIcon2 = cfg.ElementIcon2
-  local cfgs = (Cfg.cfg_campaign_mission)({CampaignMissionId = self._missionId})
-  do
-    if cfgs and #cfgs > 0 then
-      local misionCfg = cfgs[1]
-      self._fightId = misionCfg.FightLevel
-      self._name = (StringTable.Get)(misionCfg.Name)
-      self._des = (StringTable.Get)(misionCfg.Desc)
-    end
-    self._affixGroups = {}
-    local affixs = cfg.Affix
-    for i = 1, #affixs do
-      local selectIds = nil
-      if (self._missionComponentInfo).m_select_affix and ((self._missionComponentInfo).m_select_affix)[self._missionId] then
-        selectIds = ((self._missionComponentInfo).m_select_affix)[self._missionId]
-      end
-      -- DECOMPILER ERROR at PC88: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._affixGroups)[#self._affixGroups + 1] = UIActivityN21CCAffixGroupsData:New(affixs[i], selectIds)
-    end
-    self._unlockScore = cfg.UnlockScore
-    self._baseScore = cfg.BaseScore
-    self._status = UIActivityN21CCLevelStatus.None
-    self:Refresh()
+  local cfgs = Cfg.cfg_campaign_mission({
+    CampaignMissionId = self._missionId
+  })
+  if cfgs and 0 < #cfgs then
+    local misionCfg = cfgs[1]
+    self._fightId = misionCfg.FightLevel
+    self._name = StringTable.Get(misionCfg.Name)
+    self._des = StringTable.Get(misionCfg.Desc)
   end
+  self._affixGroups = {}
+  local affixs = cfg.Affix
+  for i = 1, #affixs do
+    local selectIds
+    if self._missionComponentInfo.m_select_affix and self._missionComponentInfo.m_select_affix[self._missionId] then
+      selectIds = self._missionComponentInfo.m_select_affix[self._missionId]
+    end
+    self._affixGroups[#self._affixGroups + 1] = UIActivityN21CCAffixGroupsData:New(affixs[i], selectIds)
+  end
+  self._unlockScore = cfg.UnlockScore
+  self._baseScore = cfg.BaseScore
+  self._status = UIActivityN21CCLevelStatus.None
+  self:Refresh()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.Refresh = function(self)
-  -- function num : 0_1 , upvalues : UIActivityN21CCLevelStatus
+function UIActivityN21CCLevelData:Refresh()
   self._maxScore = 0
-  if (self._missionComponentInfo).m_max_score and ((self._missionComponentInfo).m_max_score)[self._levelIndex] then
-    self._maxScore = ((self._missionComponentInfo).m_max_score)[self._levelIndex]
+  if self._missionComponentInfo.m_max_score and self._missionComponentInfo.m_max_score[self._levelIndex] then
+    self._maxScore = self._missionComponentInfo.m_max_score[self._levelIndex]
   end
   local unlockTime = 0
-  if (self._missionComponentInfo).m_challenge_unlock_time and ((self._missionComponentInfo).m_challenge_unlock_time)[self._missionId] then
-    unlockTime = ((self._missionComponentInfo).m_challenge_unlock_time)[self._missionId]
+  if self._missionComponentInfo.m_challenge_unlock_time and self._missionComponentInfo.m_challenge_unlock_time[self._missionId] then
+    unlockTime = self._missionComponentInfo.m_challenge_unlock_time[self._missionId]
   end
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  if unlockTime <= nowTime and self._unlockScore <= self._maxScore then
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  if unlockTime <= nowTime and self._maxScore >= self._unlockScore then
     self._status = UIActivityN21CCLevelStatus.Open
   else
     self._status = UIActivityN21CCLevelStatus.Lock
   end
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetMonsterIcon = function(self)
-  -- function num : 0_2
+function UIActivityN21CCLevelData:GetMonsterIcon()
   return self._monsterIcon1
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetMonsterBigIcon = function(self)
-  -- function num : 0_3
+function UIActivityN21CCLevelData:GetMonsterBigIcon()
   return self._monsterIcon
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetMonsterName = function(self)
-  -- function num : 0_4
+function UIActivityN21CCLevelData:GetMonsterName()
   return self._monsterName
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetRecommendAwaken = function(self)
-  -- function num : 0_5
+function UIActivityN21CCLevelData:GetRecommendAwaken()
   return self._recommendAwaken
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetRecommendLV = function(self)
-  -- function num : 0_6
+function UIActivityN21CCLevelData:GetRecommendLV()
   return self._recommendLV
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetMissionId = function(self)
-  -- function num : 0_7
+function UIActivityN21CCLevelData:GetMissionId()
   return self._missionId
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetIndex = function(self)
-  -- function num : 0_8
+function UIActivityN21CCLevelData:GetIndex()
   return self._levelIndex
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetHardId = function(self)
-  -- function num : 0_9
+function UIActivityN21CCLevelData:GetHardId()
   return self._hardId
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetFightId = function(self)
-  -- function num : 0_10
+function UIActivityN21CCLevelData:GetFightId()
   return self._fightId
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetName = function(self)
-  -- function num : 0_11
+function UIActivityN21CCLevelData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetDes = function(self)
-  -- function num : 0_12
+function UIActivityN21CCLevelData:GetDes()
   return self._des
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetAffixGroups = function(self)
-  -- function num : 0_13
+function UIActivityN21CCLevelData:GetAffixGroups()
   return self._affixGroups
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetCommonAffixGroups = function(self)
-  -- function num : 0_14
+function UIActivityN21CCLevelData:GetCommonAffixGroups()
   local groups = {}
   for i = 1, #self._affixGroups do
-    local group = (self._affixGroups)[i]
+    local group = self._affixGroups[i]
     if group:GetUnLockScore() <= 0 then
       groups[#groups + 1] = group
     end
@@ -171,16 +123,13 @@ UIActivityN21CCLevelData.GetCommonAffixGroups = function(self)
   return groups
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetScoreUnLockAffixGroups = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityN21CCLevelData:GetScoreUnLockAffixGroups()
   local groups = {}
   local tmp = {}
   for i = 1, #self._affixGroups do
-    local group = (self._affixGroups)[i]
+    local group = self._affixGroups[i]
     local unlockScore = group:GetUnLockScore()
-    if unlockScore > 0 then
+    if 0 < unlockScore then
       local t = tmp[unlockScore]
       if t == nil then
         t = {}
@@ -189,78 +138,47 @@ UIActivityN21CCLevelData.GetScoreUnLockAffixGroups = function(self)
       t[#t + 1] = group
     end
   end
-  for k,v in pairs(tmp) do
+  for k, v in pairs(tmp) do
     groups[#groups + 1] = v
   end
-  ;
-  (table.sort)(groups, function(a, b)
-    -- function num : 0_15_0
-    do return (a[1]):GetUnLockScore() < (b[1]):GetUnLockScore() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(groups, function(a, b)
+    return a[1]:GetUnLockScore() < b[1]:GetUnLockScore()
+  end)
   return groups
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetUnLockScore = function(self)
-  -- function num : 0_16
+function UIActivityN21CCLevelData:GetUnLockScore()
   return self._unlockScore
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetBaseScore = function(self)
-  -- function num : 0_17
+function UIActivityN21CCLevelData:GetBaseScore()
   return self._baseScore
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetStatus = function(self)
-  -- function num : 0_18
+function UIActivityN21CCLevelData:GetStatus()
   return self._status
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.IsLevelOpen = function(self)
-  -- function num : 0_19 , upvalues : UIActivityN21CCLevelStatus
-  do return self._status == UIActivityN21CCLevelStatus.Open end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIActivityN21CCLevelData:IsLevelOpen()
+  return self._status == UIActivityN21CCLevelStatus.Open
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetMaxScore = function(self)
-  -- function num : 0_20
+function UIActivityN21CCLevelData:GetMaxScore()
   return self._maxScore
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetUnlockTime = function(self)
-  -- function num : 0_21
+function UIActivityN21CCLevelData:GetUnlockTime()
   local unlockTime = 0
-  if (self._missionComponentInfo).m_challenge_unlock_time and ((self._missionComponentInfo).m_challenge_unlock_time)[self._missionId] then
-    unlockTime = ((self._missionComponentInfo).m_challenge_unlock_time)[self._missionId]
+  if self._missionComponentInfo.m_challenge_unlock_time and self._missionComponentInfo.m_challenge_unlock_time[self._missionId] then
+    unlockTime = self._missionComponentInfo.m_challenge_unlock_time[self._missionId]
   end
   return unlockTime
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetElementIcon1 = function(self)
-  -- function num : 0_22
+function UIActivityN21CCLevelData:GetElementIcon1()
   return self._elementIcon1
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCLevelData.GetElementIcon2 = function(self)
-  -- function num : 0_23
+function UIActivityN21CCLevelData:GetElementIcon2()
   return self._elementIcon2
 end
-
-

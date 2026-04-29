@@ -1,11 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/component/cfg_activity_drop_item_get_tips_client.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {GetItemTips = 1}
 local config = {
-[3000202] = {"str_sakura_activity_drop_item_tips"}
+  [3000202] = {
+    "str_sakura_activity_drop_item_tips"
+  }
 }
 return config, "ItemId", key
-

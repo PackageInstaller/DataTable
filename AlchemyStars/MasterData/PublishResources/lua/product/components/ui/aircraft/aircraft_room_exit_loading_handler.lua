@@ -1,80 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/aircraft_room_exit_loading_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftRoomExitLoadingHandler", LoadingHandler)
 AircraftRoomExitLoadingHandler = AircraftRoomExitLoadingHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftRoomExitLoadingHandler.PreLoadBeforeLoadLevel = function(self, TT)
-  -- function num : 0_0
+function AircraftRoomExitLoadingHandler:PreLoadBeforeLoadLevel(TT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomExitLoadingHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
+function AircraftRoomExitLoadingHandler:PreLoadAfterLoadLevel(TT, ...)
+  LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomExitLoadingHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  local loadingParams = {...}
+function AircraftRoomExitLoadingHandler:OnLoadingFinish(...)
+  local loadingParams = {
+    ...
+  }
   local missionType = loadingParams[1]
   local missionId = loadingParams[2]
   if missionType == nil or missionId == nil then
-    return 
+    return
   end
   if missionType == 1 then
-    (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, missionId
-    YIELD(TT, 1000)
-    local module = (GameGlobal.GetModule)(MissionModule)
-    local data = module:GetDiscoveryData()
-    data:UpdatePosByEnter(3, missionId)
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIDiscovery)
-  end
-, self)
-  else
-  end
-  if missionType ~= 2 or missionType == 3 then
-    local module = (GameGlobal.GetModule)(ResDungeonModule)
+    TaskManager:GetInstance():StartTask(function(TT)
+      YIELD(TT, 1000)
+      local module = GameGlobal.GetModule(MissionModule)
+      local data = module:GetDiscoveryData()
+      data:UpdatePosByEnter(3, missionId)
+      GameGlobal.UIStateManager():SwitchState(UIStateType.UIDiscovery)
+    end, self)
+  elseif missionType == 2 then
+  elseif missionType == 3 then
+    local module = GameGlobal.GetModule(ResDungeonModule)
     local clientResInstance = module:GetClientResInstance()
     local instanceId = missionId
     local mainType = clientResInstance:GetMainTypeByInstanceId(instanceId)
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIResDetailController, mainType)
-  else
-    do
-      if missionType == 4 then
-        (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_2_1 , upvalues : _ENV
-    YIELD(TT, 1000)
-    local module = (GameGlobal.GetModule)(MissionModule)
-    local data = module:GetDiscoveryData()
-    data:UpdatePosByEnter(1)
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIDiscovery)
-  end
-, self)
-      else
-        if missionType == 5 then
-          ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIResEntryController)
-        end
-      end
-    end
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIResDetailController, mainType)
+  elseif missionType == 4 then
+    TaskManager:GetInstance():StartTask(function(TT)
+      YIELD(TT, 1000)
+      local module = GameGlobal.GetModule(MissionModule)
+      local data = module:GetDiscoveryData()
+      data:UpdatePosByEnter(1)
+      GameGlobal.UIStateManager():SwitchState(UIStateType.UIDiscovery)
+    end, self)
+  elseif missionType == 5 then
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIResEntryController)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoomExitLoadingHandler.LoadingType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function AircraftRoomExitLoadingHandler:LoadingType()
   return LoadingType.BOTTOM
 end
-
-

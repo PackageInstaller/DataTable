@@ -1,66 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_wake_up_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWakeUpMain", UICustomWidget)
 UIWakeUpMain = UIWakeUpMain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWakeUpMain.OnShow = function(self)
-  -- function num : 0_0
+function UIWakeUpMain:OnShow()
   self._go = self:GetGameObject("go")
   local show = false
-  ;
-  (self._go):SetActive(show)
+  self._go:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWakeUpMain.WakeUpOnClick = function(self, go)
-  -- function num : 0_1
+function UIWakeUpMain:WakeUpOnClick(go)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWakeUpMain.MoreOnClick = function(self, go)
-  -- function num : 0_2
+function UIWakeUpMain:MoreOnClick(go)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWakeUpMain.SourceOnClick = function(self, go)
-  -- function num : 0_3
+function UIWakeUpMain:SourceOnClick(go)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWakeUpMain.GameOnClick = function(self, go)
-  -- function num : 0_4
+function UIWakeUpMain:GameOnClick(go)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWakeUpMain.CloseOnClick = function(self, go)
-  -- function num : 0_5
+function UIWakeUpMain:CloseOnClick(go)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWakeUpMain.ServiceOnClick = function(self)
-  -- function num : 0_6
+function UIWakeUpMain:ServiceOnClick()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWakeUpMain.XinyueOnClick = function(self)
-  -- function num : 0_7
+function UIWakeUpMain:XinyueOnClick()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWakeUpMain.JuvenileOnClick = function(self)
-  -- function num : 0_8
+function UIWakeUpMain:JuvenileOnClick()
 end
-
-

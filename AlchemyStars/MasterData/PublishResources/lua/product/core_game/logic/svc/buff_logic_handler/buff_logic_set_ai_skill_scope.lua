@@ -1,44 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_ai_skill_scope.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetAISkillScope", BuffLogicBase)
 BuffLogicSetAISkillScope = BuffLogicSetAISkillScope
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetAISkillScope.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetAISkillScope:Constructor(buffInstance, logicParam)
   self._addRoundCount = logicParam.addRoundCount or 1
   self._skillIndexX = logicParam.skillIndexX or 1
   self._skillIndexY = logicParam.skillIndexY or 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetAISkillScope.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetAISkillScope:DoLogic()
+  local e = self._buffInstance:Entity()
   local aiCmpt = e:AI()
   if not aiCmpt then
-    return 
+    return
   end
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local monsterConfig = configService:GetMonsterConfigData()
   local cMonsterID = e:MonsterID()
   if not cMonsterID then
-    return 
+    return
   end
   local monsterID = cMonsterID:GetMonsterID()
   local listSkill = monsterConfig:GetMonsterSkillIDs(monsterID)
   if not listSkill then
-    return 
+    return
   end
-  local skillID = (listSkill[self._skillIndexX])[self._skillIndexY]
+  local skillID = listSkill[self._skillIndexX][self._skillIndexY]
   if not skillID then
-    return 
+    return
   end
   aiCmpt:SetCurSkillScopeResult(self._addRoundCount, skillID)
 end
-
-

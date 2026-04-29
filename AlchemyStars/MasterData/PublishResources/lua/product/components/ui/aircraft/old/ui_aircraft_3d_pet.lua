@@ -1,488 +1,331 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/old/ui_aircraft_3d_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraft3DPet", Object)
 UIAircraft3DPet = UIAircraft3DPet
-local AircraftPetActionState = {Idle = 0, Moving = 1, Pressing = 2, Dragging = 3, Dropping = 4, Responding = 5, Interacting = 6, ReadyToMove = 7, Stop = 8}
+local AircraftPetActionState = {
+  Idle = 0,
+  Moving = 1,
+  Pressing = 2,
+  Dragging = 3,
+  Dropping = 4,
+  Responding = 5,
+  Interacting = 6,
+  ReadyToMove = 7,
+  Stop = 8
+}
 _enum("AircraftPetActionState", AircraftPetActionState)
-local AircraftPetState = {Normal = 0, Selected = 1, Interactive = 2}
+local AircraftPetState = {
+  Normal = 0,
+  Selected = 1,
+  Interactive = 2
+}
 _enum("AircraftPetState", AircraftPetState)
 local AircraftPetFaceID = {Blink = 1, Click = 1}
 _enum("AircraftPetFaceID", AircraftPetFaceID)
--- DECOMPILER ERROR at PC37: Confused about usage of register: R3 in 'UnsetPending'
 
-UIAircraft3DPet.Constructor = function(self, resRequest, petGameObject, petData, room)
-  -- function num : 0_0 , upvalues : AircraftPetState, _ENV, AircraftPetActionState, AircraftPetFaceID
+function UIAircraft3DPet:Constructor(resRequest, petGameObject, petData, room)
   self._aircraftPetState = AircraftPetState.Normal
   self._resRequests = resRequest
   self._petGO = petGameObject
   self._petData = petData
-  self._standIdle = (self._petData):GetPetAircraftIdle()
+  self._standIdle = self._petData:GetPetAircraftIdle()
   self._room = room
-  self._animator = ((petGameObject.transform):Find("Root")):GetComponent(typeof(UnityEngine.Animator))
+  self._animator = petGameObject.transform:Find("Root"):GetComponent(typeof(UnityEngine.Animator))
   self._bubbleOffset = Vector3(0, 3, 0)
   self._bubbleCfgOffset = Vector3.zero
-  local skinnedMeshRender = (GameObjectHelper.FindFirstSkinedMeshRender)(self._petGO)
-  do
-    if skinnedMeshRender ~= nil then
-      local meshExtents = (GameObjectHelper.FindFirstSkinedMeshRenderBoundsExtent)(self._petGO)
-      self._bubbleOffset = Vector3(0, meshExtents.x * 2 * (((self._petGO).transform).localScale).y, 0)
-    end
-    self._nextActionCountdown = 0
-    self._currentActionState = AircraftPetActionState.Stop
-    self._interactFaceCountdown = 0
-    self._interactIdleCountdown = 0
-    self._nextActionCountdownMin = 1
-    self._nextActionCountdownMax = 6
-    self._interactCountdownMin = 10
-    self._interactCountdownMax = 20
-    self._interactIdleTime = 1
-    self.animName = {}
-    -- DECOMPILER ERROR at PC65: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.animName).walk = "Walk"
-    -- DECOMPILER ERROR at PC67: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.animName).click = "Click01"
-    local collider = (self._petGO):AddComponent(typeof(UnityEngine.BoxCollider))
-    collider.size = Vector3(0.5, 1.2, 0.5)
-    collider.center = Vector3(0, 0.6, 0)
-    self.respondTime = -1
-    self.lastState = nil
-    self.pickUpHeight = ((Cfg.cfg_aircraft_camera).petPickupHeight).Value
-    self.clickWaitTime = ((Cfg.cfg_aircraft_camera).clickWaitTime).Value * 1000
-    self._MaterialAnimation = (self._petGO):GetComponent(typeof(MaterialAnimation))
-    if not self._MaterialAnimation then
-      self._MaterialAnimation = (self._petGO):AddComponent(typeof(MaterialAnimation))
-    end
-    self._MaterialAnimationContainer = (ResourceManager:GetInstance()):SyncLoadAsset("globalShaderEffects.asset", LoadType.Asset)
-    ;
-    (self._MaterialAnimation):AddClips((self._MaterialAnimationContainer).Obj)
-    self._navMeshAgent = (self._petGO):AddComponent(typeof((UnityEngine.AI).NavMeshAgent))
-    -- DECOMPILER ERROR at PC141: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._navMeshAgent).angularSpeed = 1000
-    -- DECOMPILER ERROR at PC143: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._navMeshAgent).stoppingDistance = 0.1
-    -- DECOMPILER ERROR at PC145: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._navMeshAgent).speed = 1.1
-    -- DECOMPILER ERROR at PC147: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._navMeshAgent).radius = 0.5
-    -- DECOMPILER ERROR at PC149: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._navMeshAgent).autoBraking = false
-    -- DECOMPILER ERROR at PC158: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._navMeshAgent).areaMask = 1 << (self._room):GetNavLayerBySpaceID((self._room):SpaceID())
-    self._navMeshObstacle = (self._petGO):AddComponent(typeof((UnityEngine.AI).NavMeshObstacle))
-    -- DECOMPILER ERROR at PC173: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._navMeshObstacle).shape = ((UnityEngine.AI).NavMeshObstacleShape).Capsule
-    -- DECOMPILER ERROR at PC175: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._navMeshObstacle).radius = 0.5
-    -- DECOMPILER ERROR at PC177: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._navMeshObstacle).carving = true
-    -- DECOMPILER ERROR at PC179: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._navMeshObstacle).enabled = false
-    self._velocityCheckTimer = 0
-    self._lowVelocity = false
-    self._movePauseTimer = 0
-    self._pauseDone = false
-    self._velocityCheckInterval = 500
-    self._velocitySqrThreshold = (self._navMeshAgent).speed * (self._navMeshAgent).speed * 0.5
-    self._movePauseTimeMin = 1000
-    self._movePauseTimeMax = 2000
-    self._hasOccupiedPoint = false
-    self._occupiedArea = nil
-    self._occupiedPoint = nil
-    self._arrivedAreaAndPoint = {}
-    self.clickEffCfg = (Cfg.cfg_aircraft_click_eff)[(self._petData):GetTemplateID()]
-    if self.clickEffCfg and (self.clickEffCfg).EffName then
-      self.clickEffReq = (ResourceManager:GetInstance()):SyncLoadAsset((self.clickEffCfg).EffName .. ".prefab", LoadType.GameObject)
-      self.clickEff = (self.clickEffReq).Obj
-      ;
-      ((self.clickEff).transform):SetParent((self._petGO).transform)
-      -- DECOMPILER ERROR at PC238: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      ((self.clickEff).transform).localRotation = Quaternion.identity
-      -- DECOMPILER ERROR at PC243: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      ((self.clickEff).transform).localScale = Vector3.one
-      local cfgPos = (self.clickEffCfg).PosOffset
-      -- DECOMPILER ERROR at PC253: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      ((self.clickEff).transform).localPosition = Vector3(cfgPos[1], cfgPos[2], cfgPos[3])
-      self.clickEffEvent = nil
-    end
-    do
-      self._addAffinityEffectName = "ui_click.prefab"
-      self._addAffinityEffectReq = (ResourceManager:GetInstance()):SyncLoadAsset(self._addAffinityEffectName, LoadType.GameObject)
-      self._addAffinityEffect = (self._addAffinityEffectReq).Obj
-      ;
-      (self._addAffinityEffect):SetActive(false)
-      local face_name = tostring((self._petData):GetTemplateID()) .. "_face"
-      local face = (GameObjectHelper.FindChild)((self._petGO).transform, face_name)
-      do
-        if face then
-          local render = (face.gameObject):GetComponent(typeof(UnityEngine.SkinnedMeshRenderer))
-          if not render then
-            (Log.fatal)("星灵" .. (self._petData):GetTemplateID() .. "面部mesh缺失，无法正确显示表情")
-          else
-            self._faceMat = self:GetMaterial(render)
-          end
-        end
-        self._mainCamera = (((UnityEngine.GameObject).Find)("Main Camera")):GetComponent("Camera")
-        self:SetPetFace(AircraftPetFaceID.Blink)
-        self._interactFaceID = AircraftPetFaceID.Blink
-        self._petDataChangeHandler = (GameHelper:GetInstance()):CreateCallback(self._petDataChange, self)
-        ;
-        ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.PetDataChangeEvent, self._petDataChangeHandler)
-      end
+  local skinnedMeshRender = GameObjectHelper.FindFirstSkinedMeshRender(self._petGO)
+  if skinnedMeshRender ~= nil then
+    local meshExtents = GameObjectHelper.FindFirstSkinedMeshRenderBoundsExtent(self._petGO)
+    self._bubbleOffset = Vector3(0, meshExtents.x * 2 * self._petGO.transform.localScale.y, 0)
+  end
+  self._nextActionCountdown = 0
+  self._currentActionState = AircraftPetActionState.Stop
+  self._interactFaceCountdown = 0
+  self._interactIdleCountdown = 0
+  self._nextActionCountdownMin = 1
+  self._nextActionCountdownMax = 6
+  self._interactCountdownMin = 10
+  self._interactCountdownMax = 20
+  self._interactIdleTime = 1
+  self.animName = {}
+  self.animName.walk = "Walk"
+  self.animName.click = "Click01"
+  local collider = self._petGO:AddComponent(typeof(UnityEngine.BoxCollider))
+  collider.size = Vector3(0.5, 1.2, 0.5)
+  collider.center = Vector3(0, 0.6, 0)
+  self.respondTime = -1
+  self.lastState = nil
+  self.pickUpHeight = Cfg.cfg_aircraft_camera.petPickupHeight.Value
+  self.clickWaitTime = Cfg.cfg_aircraft_camera.clickWaitTime.Value * 1000
+  self._MaterialAnimation = self._petGO:GetComponent(typeof(MaterialAnimation))
+  if not self._MaterialAnimation then
+    self._MaterialAnimation = self._petGO:AddComponent(typeof(MaterialAnimation))
+  end
+  self._MaterialAnimationContainer = ResourceManager:GetInstance():SyncLoadAsset("globalShaderEffects.asset", LoadType.Asset)
+  self._MaterialAnimation:AddClips(self._MaterialAnimationContainer.Obj)
+  self._navMeshAgent = self._petGO:AddComponent(typeof(UnityEngine.AI.NavMeshAgent))
+  self._navMeshAgent.angularSpeed = 1000
+  self._navMeshAgent.stoppingDistance = 0.1
+  self._navMeshAgent.speed = 1.1
+  self._navMeshAgent.radius = 0.5
+  self._navMeshAgent.autoBraking = false
+  self._navMeshAgent.areaMask = 1 << self._room:GetNavLayerBySpaceID(self._room:SpaceID())
+  self._navMeshObstacle = self._petGO:AddComponent(typeof(UnityEngine.AI.NavMeshObstacle))
+  self._navMeshObstacle.shape = UnityEngine.AI.NavMeshObstacleShape.Capsule
+  self._navMeshObstacle.radius = 0.5
+  self._navMeshObstacle.carving = true
+  self._navMeshObstacle.enabled = false
+  self._velocityCheckTimer = 0
+  self._lowVelocity = false
+  self._movePauseTimer = 0
+  self._pauseDone = false
+  self._velocityCheckInterval = 500
+  self._velocitySqrThreshold = self._navMeshAgent.speed * self._navMeshAgent.speed * 0.5
+  self._movePauseTimeMin = 1000
+  self._movePauseTimeMax = 2000
+  self._hasOccupiedPoint = false
+  self._occupiedArea = nil
+  self._occupiedPoint = nil
+  self._arrivedAreaAndPoint = {}
+  self.clickEffCfg = Cfg.cfg_aircraft_click_eff[self._petData:GetTemplateID()]
+  if self.clickEffCfg and self.clickEffCfg.EffName then
+    self.clickEffReq = ResourceManager:GetInstance():SyncLoadAsset(self.clickEffCfg.EffName .. ".prefab", LoadType.GameObject)
+    self.clickEff = self.clickEffReq.Obj
+    self.clickEff.transform:SetParent(self._petGO.transform)
+    self.clickEff.transform.localRotation = Quaternion.identity
+    self.clickEff.transform.localScale = Vector3.one
+    local cfgPos = self.clickEffCfg.PosOffset
+    self.clickEff.transform.localPosition = Vector3(cfgPos[1], cfgPos[2], cfgPos[3])
+    self.clickEffEvent = nil
+  end
+  self._addAffinityEffectName = "ui_click.prefab"
+  self._addAffinityEffectReq = ResourceManager:GetInstance():SyncLoadAsset(self._addAffinityEffectName, LoadType.GameObject)
+  self._addAffinityEffect = self._addAffinityEffectReq.Obj
+  self._addAffinityEffect:SetActive(false)
+  local face_name = tostring(self._petData:GetTemplateID()) .. "_face"
+  local face = GameObjectHelper.FindChild(self._petGO.transform, face_name)
+  if face then
+    local render = face.gameObject:GetComponent(typeof(UnityEngine.SkinnedMeshRenderer))
+    if not render then
+      Log.fatal("星灵" .. self._petData:GetTemplateID() .. "面部mesh缺失，无法正确显示表情")
+    else
+      self._faceMat = self:GetMaterial(render)
     end
   end
+  self._mainCamera = UnityEngine.GameObject.Find("Main Camera"):GetComponent("Camera")
+  self:SetPetFace(AircraftPetFaceID.Blink)
+  self._interactFaceID = AircraftPetFaceID.Blink
+  self._petDataChangeHandler = GameHelper:GetInstance():CreateCallback(self._petDataChange, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.PetDataChangeEvent, self._petDataChangeHandler)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.GetMaterial = function(self, render)
-  -- function num : 0_1
+function UIAircraft3DPet:GetMaterial(render)
   return render.material
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet._Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV, AircraftPetActionState
+function UIAircraft3DPet:_Init()
   self:_ReleaseCurrentPoint()
-  local areaList, pointList = (self._room):GetAvailableAreaAndPoints()
+  local areaList, pointList = self._room:GetAvailableAreaAndPoints()
   local sum = #areaList + #pointList
-  if sum > 0 then
+  if 0 < sum then
     self._hasOccupiedPoint = true
-    local ran = (math.random)(1, sum)
+    local ran = math.random(1, sum)
     if ran <= #areaList then
       self._occupiedArea = areaList[ran]
-      self._occupiedPoint = (self._occupiedArea):GetAndOccupyAvailablePoint()
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((self._petGO).transform).position = (self._occupiedPoint):GetPos()
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((self._petGO).transform).forward = (self._occupiedPoint):GetForward()
-      -- DECOMPILER ERROR at PC42: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._arrivedAreaAndPoint)[#self._arrivedAreaAndPoint + 1] = self._occupiedArea
+      self._occupiedPoint = self._occupiedArea:GetAndOccupyAvailablePoint()
+      self._petGO.transform.position = self._occupiedPoint:GetPos()
+      self._petGO.transform.forward = self._occupiedPoint:GetForward()
+      self._arrivedAreaAndPoint[#self._arrivedAreaAndPoint + 1] = self._occupiedArea
     else
       self._occupiedPoint = pointList[ran - #areaList]
-      -- DECOMPILER ERROR at PC53: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((self._petGO).transform).position = (self._occupiedPoint):GetPos()
-      ;
-      (self._room):OccupyRestPoint((self._occupiedPoint):GetIndex())
-      local randomRot = (math.random)(-180, 180)
-      -- DECOMPILER ERROR at PC73: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      ((self._petGO).transform).rotation = (Quaternion.Euler)(0, randomRot, 0)
-      -- DECOMPILER ERROR at PC79: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._arrivedAreaAndPoint)[#self._arrivedAreaAndPoint + 1] = self._occupiedPoint
+      self._petGO.transform.position = self._occupiedPoint:GetPos()
+      self._room:OccupyRestPoint(self._occupiedPoint:GetIndex())
+      local randomRot = math.random(-180, 180)
+      self._petGO.transform.rotation = Quaternion.Euler(0, randomRot, 0)
+      self._arrivedAreaAndPoint[#self._arrivedAreaAndPoint + 1] = self._occupiedPoint
     end
   else
-    do
-      ;
-      (Log.fatal)("风船房间(space id：" .. ((self._room):GetRoomLogicData()):SpaceId() .. ")没有足够的点位初始化宝宝")
-      self._nextActionCountdown = (math.random)(self._nextActionCountdownMin, self._nextActionCountdownMax)
-      self._currentActionState = AircraftPetActionState.Idle
-    end
+    Log.fatal("风船房间(space id：" .. self._room:GetRoomLogicData():SpaceId() .. ")没有足够的点位初始化宝宝")
   end
+  self._nextActionCountdown = math.random(self._nextActionCountdownMin, self._nextActionCountdownMax)
+  self._currentActionState = AircraftPetActionState.Idle
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._MaterialAnimationContainer):Dispose()
-  for _,req in ipairs(self._resRequests) do
+function UIAircraft3DPet:Dispose()
+  self._MaterialAnimationContainer:Dispose()
+  for _, req in ipairs(self._resRequests) do
     req:Dispose()
   end
   if self.clickEffEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.clickEffEvent)
+    GameGlobal.Timer():CancelEvent(self.clickEffEvent)
     self.clickEffEvent = nil
   end
   if self.clickEffReq then
-    (self.clickEffReq):Dispose()
+    self.clickEffReq:Dispose()
   end
   if self._addAffinityEffectReq then
-    (self._addAffinityEffectReq):Dispose()
+    self._addAffinityEffectReq:Dispose()
   end
   self:UnloadBubbleEffect()
   if self._petDataChangeHandler then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.PetDataChangeEvent, self._petDataChangeHandler)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.PetDataChangeEvent, self._petDataChangeHandler)
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.StartNavi = function(self)
-  -- function num : 0_4
+function UIAircraft3DPet:StartNavi()
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.ForceInitAnimator = function(self)
-  -- function num : 0_5 , upvalues : AircraftPetActionState
+function UIAircraft3DPet:ForceInitAnimator()
   self:SetPetAnim(AircraftPetActionState.Idle)
   if self._standIdle and self._standIdle ~= "" then
-    (self._animator):CrossFade("stand", 0)
+    self._animator:CrossFade("stand", 0)
   end
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.StopNavi = function(self)
-  -- function num : 0_6 , upvalues : AircraftPetActionState
+function UIAircraft3DPet:StopNavi()
   self._currentActionState = AircraftPetActionState.Stop
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.Update = function(self, deltaTimeMS)
-  -- function num : 0_7 , upvalues : AircraftPetState, AircraftPetActionState, _ENV, AircraftPetFaceID
+function UIAircraft3DPet:Update(deltaTimeMS)
   self:_UpdateFace(deltaTimeMS)
   if self._aircraftPetState == AircraftPetState.Selected then
-    return 
+    return
   end
   if self._aircraftPetState == AircraftPetState.Interactive then
     if self._currentActionState == AircraftPetActionState.Responding then
       if self.respondTime < 0 then
-        local animStateInfo = (self._animator):GetNextAnimatorStateInfo(0)
+        local animStateInfo = self._animator:GetNextAnimatorStateInfo(0)
         if animStateInfo:IsName("click01") then
           self.respondTime = animStateInfo.length + 0.1
         end
       else
-        do
-          self.respondTime = self.respondTime - deltaTimeMS / 1000
-          if self.respondTime < 0 then
-            self._currentActionState = AircraftPetActionState.Idle
-            self.respondTime = -1
-          end
-          do return  end
-          if self._currentActionState == AircraftPetActionState.Stop then
-            return 
-          end
-          if self._currentActionState == AircraftPetActionState.Moving then
-            if self._movePauseTimer > 0 then
-              self._movePauseTimer = self._movePauseTimer - deltaTimeMS
-              if self._movePauseTimer <= 0 then
-                self._pauseDone = true
-                -- DECOMPILER ERROR at PC63: Confused about usage of register: R2 in 'UnsetPending'
-
-                ;
-                (self._navMeshObstacle).enabled = false
-              end
-            else
-              -- DECOMPILER ERROR at PC69: Confused about usage of register: R2 in 'UnsetPending'
-
-              if self._pauseDone then
-                (self._navMeshAgent).enabled = true
-                -- DECOMPILER ERROR at PC71: Confused about usage of register: R2 in 'UnsetPending'
-
-                ;
-                (self._navMeshAgent).isStopped = false
-                -- DECOMPILER ERROR at PC76: Confused about usage of register: R2 in 'UnsetPending'
-
-                ;
-                (self._navMeshAgent).destination = (self._occupiedPoint):GetPos()
-                if not (self._navMeshAgent).destination then
-                  (Log.error)("1111")
-                end
-                self._pauseDone = false
-                self:SetPetAnim(AircraftPetActionState.Moving)
-              else
-                if (self._petGO).activeInHierarchy and (self._navMeshAgent).enabled and (self._navMeshAgent).remainingDistance < (self._navMeshAgent).stoppingDistance then
-                  local forward = (self._occupiedPoint):GetForward()
-                  -- DECOMPILER ERROR at PC111: Confused about usage of register: R3 in 'UnsetPending'
-
-                  if forward then
-                    ((self._petGO).transform).forward = forward
-                  end
-                  -- DECOMPILER ERROR at PC113: Confused about usage of register: R3 in 'UnsetPending'
-
-                  ;
-                  (self._navMeshAgent).isStopped = true
-                  -- DECOMPILER ERROR at PC115: Confused about usage of register: R3 in 'UnsetPending'
-
-                  ;
-                  (self._navMeshAgent).enabled = false
-                  -- DECOMPILER ERROR at PC117: Confused about usage of register: R3 in 'UnsetPending'
-
-                  ;
-                  (self._navMeshObstacle).enabled = true
-                  self:_SwitchToInteractState()
-                else
-                  do
-                    self._velocityCheckTimer = self._velocityCheckTimer + deltaTimeMS
-                    if self._velocityCheckInterval < self._velocityCheckTimer then
-                      self._velocityCheckTimer = 0
-                      local velocitySqr = ((self._navMeshAgent).velocity):SqrMagnitude()
-                      if velocitySqr < self._velocitySqrThreshold then
-                        if self._lowVelocity then
-                          self._movePauseTimer = (Mathf.Lerp)(self._movePauseTimeMin, self._movePauseTimeMax, (math.random)())
-                          -- DECOMPILER ERROR at PC149: Confused about usage of register: R3 in 'UnsetPending'
-
-                          ;
-                          (self._navMeshAgent).isStopped = true
-                          -- DECOMPILER ERROR at PC151: Confused about usage of register: R3 in 'UnsetPending'
-
-                          ;
-                          (self._navMeshAgent).enabled = false
-                          -- DECOMPILER ERROR at PC153: Confused about usage of register: R3 in 'UnsetPending'
-
-                          ;
-                          (self._navMeshObstacle).enabled = true
-                          self._lowVelocity = false
-                          self._velocityCheckTimer = 0
-                          self._pauseDone = false
-                          self:SetPetAnim(AircraftPetActionState.Idle)
-                        else
-                          self._lowVelocity = true
-                        end
-                      end
-                    end
-                    do
-                      if self._currentActionState == AircraftPetActionState.Idle then
-                        self._nextActionCountdown = self._nextActionCountdown - deltaTimeMS / 1000
-                        -- DECOMPILER ERROR at PC179: Confused about usage of register: R2 in 'UnsetPending'
-
-                        if self._nextActionCountdown <= 0 and (self._petGO).activeInHierarchy then
-                          (self._navMeshObstacle).enabled = false
-                          self._currentActionState = AircraftPetActionState.ReadyToMove
-                        end
-                      else
-                        if self._currentActionState == AircraftPetActionState.Responding then
-                          if self.respondTime < 0 then
-                            local animStateInfo = (self._animator):GetNextAnimatorStateInfo(0)
-                            if animStateInfo:IsName("click01") then
-                              self.respondTime = animStateInfo.length - 0.25
-                            end
-                          else
-                            do
-                              self.respondTime = self.respondTime - deltaTimeMS / 1000
-                              if self.respondTime < 0 then
-                                self._currentActionState = self.lastState
-                                if self.lastState == AircraftPetActionState.Moving then
-                                  self._movePauseTimer = self.clickWaitTime
-                                end
-                                self:SetPetFace(AircraftPetFaceID.Blink)
-                                self.lastState = nil
-                                self.respondTime = -1
-                                if self.clickEff then
-                                  (self.clickEff):SetActive(false)
-                                end
-                              end
-                              if self._currentActionState == AircraftPetActionState.Interacting then
-                                local deltaTime = deltaTimeMS / 1000
-                                self._nextActionCountdown = self._nextActionCountdown - deltaTime
-                                if self._nextActionCountdown <= 0 and (self._petGO).activeInHierarchy then
-                                  self:SetPetFace(AircraftPetFaceID.Blink)
-                                  -- DECOMPILER ERROR at PC250: Confused about usage of register: R3 in 'UnsetPending'
-
-                                  ;
-                                  (self._navMeshObstacle).enabled = false
-                                  self._currentActionState = AircraftPetActionState.ReadyToMove
-                                else
-                                  if self._interactFaceCountdown > 0 then
-                                    self._interactFaceCountdown = self._interactFaceCountdown - deltaTime
-                                    if self._interactFaceCountdown < 0 then
-                                      self:SetPetFace(1)
-                                      self._interactIdleCountdown = self._interactIdleTime
-                                    end
-                                  else
-                                    if self._interactIdleCountdown > 0 then
-                                      self._interactIdleCountdown = self._interactIdleCountdown - deltaTime
-                                      if not self:SetPetFace(self._interactFaceID) then
-                                        do
-                                          self._interactFaceCountdown = self._interactIdleCountdown >= 0 or 0
-                                          if self._currentActionState == AircraftPetActionState.ReadyToMove then
-                                            self:_MoveToNextPoint()
-                                          end
-                                          self:_UpdateBubble()
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
+        self.respondTime = self.respondTime - deltaTimeMS / 1000
+        if self.respondTime < 0 then
+          self._currentActionState = AircraftPetActionState.Idle
+          self.respondTime = -1
+        end
+      end
+    end
+    return
+  end
+  if self._currentActionState == AircraftPetActionState.Stop then
+    return
+  end
+  if self._currentActionState == AircraftPetActionState.Moving then
+    if 0 < self._movePauseTimer then
+      self._movePauseTimer = self._movePauseTimer - deltaTimeMS
+      if 0 >= self._movePauseTimer then
+        self._pauseDone = true
+        self._navMeshObstacle.enabled = false
+      end
+    elseif self._pauseDone then
+      self._navMeshAgent.enabled = true
+      self._navMeshAgent.isStopped = false
+      self._navMeshAgent.destination = self._occupiedPoint:GetPos()
+      if not self._navMeshAgent.destination then
+        Log.error("1111")
+      end
+      self._pauseDone = false
+      self:SetPetAnim(AircraftPetActionState.Moving)
+    elseif self._petGO.activeInHierarchy and self._navMeshAgent.enabled and self._navMeshAgent.remainingDistance < self._navMeshAgent.stoppingDistance then
+      local forward = self._occupiedPoint:GetForward()
+      if forward then
+        self._petGO.transform.forward = forward
+      end
+      self._navMeshAgent.isStopped = true
+      self._navMeshAgent.enabled = false
+      self._navMeshObstacle.enabled = true
+      self:_SwitchToInteractState()
+    else
+      self._velocityCheckTimer = self._velocityCheckTimer + deltaTimeMS
+      if self._velocityCheckTimer > self._velocityCheckInterval then
+        self._velocityCheckTimer = 0
+        local velocitySqr = self._navMeshAgent.velocity:SqrMagnitude()
+        if velocitySqr < self._velocitySqrThreshold then
+          if self._lowVelocity then
+            self._movePauseTimer = Mathf.Lerp(self._movePauseTimeMin, self._movePauseTimeMax, math.random())
+            self._navMeshAgent.isStopped = true
+            self._navMeshAgent.enabled = false
+            self._navMeshObstacle.enabled = true
+            self._lowVelocity = false
+            self._velocityCheckTimer = 0
+            self._pauseDone = false
+            self:SetPetAnim(AircraftPetActionState.Idle)
+          else
+            self._lowVelocity = true
           end
         end
       end
     end
+  elseif self._currentActionState == AircraftPetActionState.Idle then
+    self._nextActionCountdown = self._nextActionCountdown - deltaTimeMS / 1000
+    if 0 >= self._nextActionCountdown and self._petGO.activeInHierarchy then
+      self._navMeshObstacle.enabled = false
+      self._currentActionState = AircraftPetActionState.ReadyToMove
+    end
+  elseif self._currentActionState == AircraftPetActionState.Responding then
+    if self.respondTime < 0 then
+      local animStateInfo = self._animator:GetNextAnimatorStateInfo(0)
+      if animStateInfo:IsName("click01") then
+        self.respondTime = animStateInfo.length - 0.25
+      end
+    else
+      self.respondTime = self.respondTime - deltaTimeMS / 1000
+      if self.respondTime < 0 then
+        self._currentActionState = self.lastState
+        if self.lastState == AircraftPetActionState.Moving then
+          self._movePauseTimer = self.clickWaitTime
+        end
+        self:SetPetFace(AircraftPetFaceID.Blink)
+        self.lastState = nil
+        self.respondTime = -1
+        if self.clickEff then
+          self.clickEff:SetActive(false)
+        end
+      end
+    end
+  elseif self._currentActionState == AircraftPetActionState.Interacting then
+    local deltaTime = deltaTimeMS / 1000
+    self._nextActionCountdown = self._nextActionCountdown - deltaTime
+    if 0 >= self._nextActionCountdown and self._petGO.activeInHierarchy then
+      self:SetPetFace(AircraftPetFaceID.Blink)
+      self._navMeshObstacle.enabled = false
+      self._currentActionState = AircraftPetActionState.ReadyToMove
+    elseif 0 < self._interactFaceCountdown then
+      self._interactFaceCountdown = self._interactFaceCountdown - deltaTime
+      if 0 > self._interactFaceCountdown then
+        self:SetPetFace(1)
+        self._interactIdleCountdown = self._interactIdleTime
+      end
+    elseif 0 < self._interactIdleCountdown then
+      self._interactIdleCountdown = self._interactIdleCountdown - deltaTime
+      if 0 > self._interactIdleCountdown then
+        self._interactFaceCountdown = self:SetPetFace(self._interactFaceID) or 0
+      end
+    end
+  elseif self._currentActionState == AircraftPetActionState.ReadyToMove then
+    self:_MoveToNextPoint()
   end
+  self:_UpdateBubble()
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet._ReleaseCurrentPoint = function(self)
-  -- function num : 0_8
+function UIAircraft3DPet:_ReleaseCurrentPoint()
   if self._hasOccupiedPoint then
     if self._occupiedArea then
-      (self._occupiedArea):ReleasePoint((self._occupiedPoint):GetIndex())
+      self._occupiedArea:ReleasePoint(self._occupiedPoint:GetIndex())
       self._occupiedArea = nil
     else
-      ;
-      (self._room):ReleaseRestPoint((self._occupiedPoint):GetIndex())
+      self._room:ReleaseRestPoint(self._occupiedPoint:GetIndex())
     end
     self._occupiedPoint = nil
   end
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet._MoveToNextPoint = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIAircraft3DPet:_MoveToNextPoint()
   self:_ReleaseCurrentPoint()
-  if (self._room):GetAreaAndRestPointCount() <= #self._arrivedAreaAndPoint then
+  if #self._arrivedAreaAndPoint >= self._room:GetAreaAndRestPointCount() then
     self._arrivedAreaAndPoint = {}
   end
-  local areaList, pointList = (self._room):GetAvailableAreaAndPoints()
+  local areaList, pointList = self._room:GetAvailableAreaAndPoints()
   local filteredAreaList, filteredPointList = self:_FilterAreaPointList(areaList, pointList)
   local sum = #filteredAreaList + #filteredPointList
   if sum ~= 0 then
@@ -491,89 +334,59 @@ UIAircraft3DPet._MoveToNextPoint = function(self)
   else
     sum = #areaList + #pointList
   end
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R6 in 'UnsetPending'
-
-  if sum > 0 then
-    (self._navMeshAgent).enabled = true
-    local ran = (math.random)(1, sum)
+  if 0 < sum then
+    self._navMeshAgent.enabled = true
+    local ran = math.random(1, sum)
     if ran <= #areaList then
       self._occupiedArea = areaList[ran]
-      self._occupiedPoint = (self._occupiedArea):GetAndOccupyAvailablePoint()
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._navMeshAgent).destination = (self._occupiedPoint):GetPos()
-      if not (self._navMeshAgent).destination then
-        (Log.error)("1111")
+      self._occupiedPoint = self._occupiedArea:GetAndOccupyAvailablePoint()
+      self._navMeshAgent.destination = self._occupiedPoint:GetPos()
+      if not self._navMeshAgent.destination then
+        Log.error("1111")
       end
-      -- DECOMPILER ERROR at PC65: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._arrivedAreaAndPoint)[#self._arrivedAreaAndPoint + 1] = self._occupiedArea
+      self._arrivedAreaAndPoint[#self._arrivedAreaAndPoint + 1] = self._occupiedArea
     else
       self._occupiedPoint = pointList[ran - #areaList]
-      -- DECOMPILER ERROR at PC75: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._navMeshAgent).destination = (self._occupiedPoint):GetPos()
-      if not (self._navMeshAgent).destination then
-        (Log.error)("1111")
+      self._navMeshAgent.destination = self._occupiedPoint:GetPos()
+      if not self._navMeshAgent.destination then
+        Log.error("1111")
       end
-      ;
-      (self._room):OccupyRestPoint((self._occupiedPoint):GetIndex())
-      -- DECOMPILER ERROR at PC95: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._arrivedAreaAndPoint)[#self._arrivedAreaAndPoint + 1] = self._occupiedPoint
+      self._room:OccupyRestPoint(self._occupiedPoint:GetIndex())
+      self._arrivedAreaAndPoint[#self._arrivedAreaAndPoint + 1] = self._occupiedPoint
     end
-    -- DECOMPILER ERROR at PC97: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._navMeshAgent).isStopped = false
+    self._navMeshAgent.isStopped = false
     self:_SwitchToMovingState()
   else
-    do
-      ;
-      (Log.fatal)("风船房间(space id：" .. ((self._room):GetRoomLogicData()):SpaceId() .. ")没有足够的点位给宝宝移动 待机30秒")
-      self._nextActionCountdown = 30
-    end
+    Log.fatal("风船房间(space id：" .. self._room:GetRoomLogicData():SpaceId() .. ")没有足够的点位给宝宝移动 待机30秒")
+    self._nextActionCountdown = 30
   end
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet._FilterAreaPointList = function(self, areaList, pointList)
-  -- function num : 0_10 , upvalues : _ENV
+function UIAircraft3DPet:_FilterAreaPointList(areaList, pointList)
   local filteredAreaList = {}
   local filteredPointList = {}
   for i = 1, #areaList do
     local area = areaList[i]
-    if not (table.icontains)(self._arrivedAreaAndPoint, area) then
+    if not table.icontains(self._arrivedAreaAndPoint, area) then
       filteredAreaList[#filteredAreaList + 1] = area
     end
   end
   for i = 1, #pointList do
     local point = pointList[i]
-    if not (table.icontains)(self._arrivedAreaAndPoint, point) then
+    if not table.icontains(self._arrivedAreaAndPoint, point) then
       filteredPointList[#filteredPointList + 1] = point
     end
   end
   return filteredAreaList, filteredPointList
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet._SwitchToIdleState = function(self)
-  -- function num : 0_11 , upvalues : AircraftPetActionState, _ENV
+function UIAircraft3DPet:_SwitchToIdleState()
   self._currentActionState = AircraftPetActionState.Idle
   self:SetPetAnim(AircraftPetActionState.Idle)
-  self._nextActionCountdown = (math.random)(self._nextActionCountdownMin, self._nextActionCountdownMax)
+  self._nextActionCountdown = math.random(self._nextActionCountdownMin, self._nextActionCountdownMax)
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet._SwitchToMovingState = function(self)
-  -- function num : 0_12 , upvalues : AircraftPetActionState, AircraftPetFaceID
+function UIAircraft3DPet:_SwitchToMovingState()
   self._currentActionState = AircraftPetActionState.Moving
   self:SetPetAnim(AircraftPetActionState.Moving)
   self:SetPetFace(AircraftPetFaceID.Blink)
@@ -581,427 +394,261 @@ UIAircraft3DPet._SwitchToMovingState = function(self)
   self._movePauseTimer = 0
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet._SwitchToInteractState = function(self)
-  -- function num : 0_13 , upvalues : AircraftPetActionState, _ENV
+function UIAircraft3DPet:_SwitchToInteractState()
   self._currentActionState = AircraftPetActionState.Interacting
   self:SetPetAnim(AircraftPetActionState.Idle)
-  self._nextActionCountdown = (math.random)(self._interactCountdownMin, self._interactCountdownMax)
+  self._nextActionCountdown = math.random(self._interactCountdownMin, self._interactCountdownMax)
   self._interactIdleCountdown = self._interactIdleTime
   if self._occupiedPoint then
-    local faceIDList = (self._occupiedPoint):GetFaceIDList()
-    local randomRes = (math.random)(1, #faceIDList)
+    local faceIDList = self._occupiedPoint:GetFaceIDList()
+    local randomRes = math.random(1, #faceIDList)
     self._interactFaceID = faceIDList[randomRes]
     self._interactFaceCountdown = self:SetPetFace(self._interactFaceID) or 0
   end
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.PetGameObject = function(self)
-  -- function num : 0_14
+function UIAircraft3DPet:PetGameObject()
   return self._petGO
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.GetPetData = function(self)
-  -- function num : 0_15
+function UIAircraft3DPet:GetPetData()
   return self._petData
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.PstID = function(self)
-  -- function num : 0_16
-  return (self._petData):GetPstID()
+function UIAircraft3DPet:PstID()
+  return self._petData:GetPstID()
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.CurrentState = function(self)
-  -- function num : 0_17
+function UIAircraft3DPet:CurrentState()
   return self._currentActionState
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.InteractiveClick = function(self)
-  -- function num : 0_18 , upvalues : AircraftPetActionState, _ENV
+function UIAircraft3DPet:InteractiveClick()
   if self._currentActionState == AircraftPetActionState.Responding then
-    return 
+    return
   end
-  self:_CreateClickInteractiveEffect(((self._petGO).transform).position)
+  self:_CreateClickInteractiveEffect(self._petGO.transform.position)
   self._currentActionState = AircraftPetActionState.Responding
   self:SetPetAnim(AircraftPetActionState.Idle)
   self:SetPetAnim(AircraftPetActionState.Responding)
   self.respondTime = -1
-  local tplID = (self._petData):GetTemplateID()
-  local pm = (GameGlobal.GetModule)(PetAudioModule)
+  local tplID = self._petData:GetTemplateID()
+  local pm = GameGlobal.GetModule(PetAudioModule)
   pm:PlayPetAudio("AircraftInteract", tplID)
   if self.clickEff then
-    ((GameGlobal.Timer)()):AddEvent((self.clickEffCfg).DelayTime, function()
-    -- function num : 0_18_0 , upvalues : self
-    (self.clickEff):SetActive(false)
-    ;
-    (self.clickEff):SetActive(true)
+    GameGlobal.Timer():AddEvent(self.clickEffCfg.DelayTime, function()
+      self.clickEff:SetActive(false)
+      self.clickEff:SetActive(true)
+    end)
   end
-)
-  end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.SendPetAddAffinity, self)
+  GameGlobal.TaskManager():StartTask(self.SendPetAddAffinity, self)
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet._CreateAddAffinityEffect = function(self)
-  -- function num : 0_19
-  (self._addAffinityEffect):SetActive(false)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._addAffinityEffect).transform).position = ((self._petGO).transform).position
-  ;
-  (self._addAffinityEffect):SetActive(true)
+function UIAircraft3DPet:_CreateAddAffinityEffect()
+  self._addAffinityEffect:SetActive(false)
+  self._addAffinityEffect.transform.position = self._petGO.transform.position
+  self._addAffinityEffect:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet._CreateClickInteractiveEffect = function(self, pos)
-  -- function num : 0_20 , upvalues : _ENV
+function UIAircraft3DPet:_CreateClickInteractiveEffect(pos)
   local effectName = "ui_click_01.prefab"
   local delayTime = 1000
-  local effectReq = (ResourceManager:GetInstance()):SyncLoadAsset(effectName, LoadType.GameObject)
+  local effectReq = ResourceManager:GetInstance():SyncLoadAsset(effectName, LoadType.GameObject)
   local effect = effectReq.Obj
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (effect.transform).position = pos
+  effect.transform.position = pos
   effect:SetActive(true)
-  ;
-  ((GameGlobal.Timer)()):AddEvent(delayTime, function()
-    -- function num : 0_20_0 , upvalues : effectReq
+  GameGlobal.Timer():AddEvent(delayTime, function()
     effectReq:Dispose()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.SendPetAddAffinity = function(self, TT)
-  -- function num : 0_21 , upvalues : _ENV
+function UIAircraft3DPet:SendPetAddAffinity(TT)
   if not self._petModule then
-    self._petModule = (GameGlobal.GetModule)(PetModule)
+    self._petModule = GameGlobal.GetModule(PetModule)
   end
-  local res, addValue = (self._petModule):RequestPetAddAffinity(TT, (self._petData):GetPstID())
+  local res, addValue = self._petModule:RequestPetAddAffinity(TT, self._petData:GetPstID())
   if res:GetSucc() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftAddPetFavorable, addValue)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftAddPetFavorable, addValue)
     self:_CreateAddAffinityEffect()
   end
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.EnterInteractiveState = function(self)
-  -- function num : 0_22 , upvalues : AircraftPetState, AircraftPetActionState, _ENV
+function UIAircraft3DPet:EnterInteractiveState()
   self._aircraftPetState = AircraftPetState.Interactive
   self.lastState = self._currentActionState
   self._currentActionState = AircraftPetActionState.Idle
   self:SetPetAnim(AircraftPetActionState.Idle)
-  local delta = ((self._mainCamera).transform).position - ((self._petGO).transform).position
+  local delta = self._mainCamera.transform.position - self._petGO.transform.position
   delta.y = 0
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._petGO).transform).rotation = (Quaternion.LookRotation)(delta)
+  self._petGO.transform.rotation = Quaternion.LookRotation(delta)
   self:HidFaceBubble()
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._navMeshAgent).enabled then
-    if not (self._navMeshAgent).isStopped then
-      (self._navMeshAgent).isStopped = true
+  if self._navMeshAgent.enabled then
+    if not self._navMeshAgent.isStopped then
+      self._navMeshAgent.isStopped = true
     end
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._navMeshAgent).enabled = false
+    self._navMeshAgent.enabled = false
   end
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._navMeshObstacle).enabled then
-    (self._navMeshObstacle).enabled = true
+  if not self._navMeshObstacle.enabled then
+    self._navMeshObstacle.enabled = true
   end
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.ExitInteractiveState = function(self)
-  -- function num : 0_23 , upvalues : AircraftPetState
+function UIAircraft3DPet:ExitInteractiveState()
   self._aircraftPetState = AircraftPetState.Normal
-  ;
-  (self._addAffinityEffect):SetActive(false)
+  self._addAffinityEffect:SetActive(false)
   self:RefreshFaceBubble()
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet._petDataChange = function(self)
-  -- function num : 0_24
+function UIAircraft3DPet:_petDataChange()
   if self._faceId == 1001 or self._faceId == 2001 or self._faceId == 2002 or self._faceId == 2003 then
     self:RefreshFaceBubble()
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.RefreshFaceBubble = function(self)
-  -- function num : 0_25 , upvalues : AircraftPetFaceID
+function UIAircraft3DPet:RefreshFaceBubble()
   self:SetPetFace(AircraftPetFaceID.Blink)
   if self._bubbleGo then
-    (self._bubbleGo):SetActive(true)
+    self._bubbleGo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.HidFaceBubble = function(self)
-  -- function num : 0_26
+function UIAircraft3DPet:HidFaceBubble()
   if self._bubbleGo then
-    (self._bubbleGo):SetActive(false)
+    self._bubbleGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.OnClick = function(self)
-  -- function num : 0_27
+function UIAircraft3DPet:OnClick()
   self:EnterSelectedState()
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.EnterSelectedState = function(self)
-  -- function num : 0_28 , upvalues : AircraftPetState, AircraftPetActionState, _ENV
+function UIAircraft3DPet:EnterSelectedState()
   self._aircraftPetState = AircraftPetState.Selected
   self._currentActionState = AircraftPetActionState.Idle
   self:SetPetAnim(AircraftPetActionState.Idle)
-  local delta = ((self._mainCamera).transform).position - ((self._petGO).transform).position
+  local delta = self._mainCamera.transform.position - self._petGO.transform.position
   delta.y = 0
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._petGO).transform).rotation = (Quaternion.LookRotation)(delta)
+  self._petGO.transform.rotation = Quaternion.LookRotation(delta)
   self:HidFaceBubble()
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._navMeshAgent).enabled then
-    if not (self._navMeshAgent).isStopped then
-      (self._navMeshAgent).isStopped = true
+  if self._navMeshAgent.enabled then
+    if not self._navMeshAgent.isStopped then
+      self._navMeshAgent.isStopped = true
     end
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._navMeshAgent).enabled = false
+    self._navMeshAgent.enabled = false
   end
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._navMeshObstacle).enabled then
-    (self._navMeshObstacle).enabled = true
+  if not self._navMeshObstacle.enabled then
+    self._navMeshObstacle.enabled = true
   end
-  local tplID = (self._petData):GetTemplateID()
-  local pm = (GameGlobal.GetModule)(PetAudioModule)
+  local tplID = self._petData:GetTemplateID()
+  local pm = GameGlobal.GetModule(PetAudioModule)
   pm:PlayPetAudio("AircraftClick", tplID)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftSelectPetEvent, self._room, self)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftSelectPetEvent, self._room, self)
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.ExitSelectedState = function(self)
-  -- function num : 0_29 , upvalues : AircraftPetState
+function UIAircraft3DPet:ExitSelectedState()
   self._aircraftPetState = AircraftPetState.Normal
   self:RefreshFaceBubble()
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.OnPressBegin = function(self)
-  -- function num : 0_30 , upvalues : AircraftPetActionState, AircraftPetFaceID
+function UIAircraft3DPet:OnPressBegin()
   self.lastState = self._currentActionState
   self._currentActionState = AircraftPetActionState.Pressing
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (self._navMeshAgent).enabled and not (self._navMeshAgent).isStopped then
-    (self._navMeshAgent).isStopped = true
+  if self._navMeshAgent.enabled and not self._navMeshAgent.isStopped then
+    self._navMeshAgent.isStopped = true
   end
   self:SetPetAnim(AircraftPetActionState.Pressing)
   self:SetPetFace(AircraftPetFaceID.Blink)
 end
 
--- DECOMPILER ERROR at PC130: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.CalSliderWorldPos = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  local skinnedMeshRender = (GameObjectHelper.FindFirstSkinedMeshRender)(self._petGO)
-  local offset = Vector3(0, (self._petData):GetHPOffset(), 0)
+function UIAircraft3DPet:CalSliderWorldPos()
+  local skinnedMeshRender = GameObjectHelper.FindFirstSkinedMeshRender(self._petGO)
+  local offset = Vector3(0, self._petData:GetHPOffset(), 0)
   if skinnedMeshRender ~= nil then
-    local skinnedMeshPosition = (skinnedMeshRender.transform).position + offset
-    local meshExtents = (GameObjectHelper.FindFirstSkinedMeshRenderBoundsExtent)(self._petGO)
-    local convertExtents = Vector3(0, meshExtents.x * 2 * (((self._petGO).transform).localScale).y, 0)
+    local skinnedMeshPosition = skinnedMeshRender.transform.position + offset
+    local meshExtents = GameObjectHelper.FindFirstSkinedMeshRenderBoundsExtent(self._petGO)
+    local convertExtents = Vector3(0, meshExtents.x * 2 * self._petGO.transform.localScale.y, 0)
     local targetPos = skinnedMeshPosition + convertExtents
     return targetPos
   else
-    do
-      ;
-      (Log.fatal)("Pet", (self._petGO).name, "has no skinned mesh")
-      do return ((self._petGO).transform).position + offset end
-    end
+    Log.fatal("Pet", self._petGO.name, "has no skinned mesh")
+    return self._petGO.transform.position + offset
   end
 end
 
--- DECOMPILER ERROR at PC133: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.PickUp = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._navMeshAgent).enabled = false
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshObstacle).enabled = false
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._petGO).transform).localPosition = ((self._petGO).transform).localPosition + Vector3(0, self.pickUpHeight, 0)
-  ;
-  (self._MaterialAnimation):Play("common_select")
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._animator).speed = 0
+function UIAircraft3DPet:PickUp()
+  self._navMeshAgent.enabled = false
+  self._navMeshObstacle.enabled = false
+  self._petGO.transform.localPosition = self._petGO.transform.localPosition + Vector3(0, self.pickUpHeight, 0)
+  self._MaterialAnimation:Play("common_select")
+  self._animator.speed = 0
 end
 
--- DECOMPILER ERROR at PC136: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.OnDrag = function(self, _worldPos)
-  -- function num : 0_33 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._petGO).transform).position = _worldPos + Vector3(0, self.pickUpHeight, 0)
+function UIAircraft3DPet:OnDrag(_worldPos)
+  self._petGO.transform.position = _worldPos + Vector3(0, self.pickUpHeight, 0)
 end
 
--- DECOMPILER ERROR at PC139: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.OnCountEnd = function(self)
-  -- function num : 0_34 , upvalues : AircraftPetActionState
+function UIAircraft3DPet:OnCountEnd()
   self._currentActionState = self.lastState
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
   if self.lastState == AircraftPetActionState.Moving then
-    (self._navMeshAgent).isStopped = false
+    self._navMeshAgent.isStopped = false
     self:SetPetAnim(AircraftPetActionState.Moving)
   end
   self.lastState = nil
 end
 
--- DECOMPILER ERROR at PC142: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.OnPressEnd = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  (self._MaterialAnimation):Stop()
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).enabled = true
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._petGO).transform).localPosition = ((self._petGO).transform).localPosition + Vector3(0, -self.pickUpHeight, 0)
+function UIAircraft3DPet:OnPressEnd()
+  self._MaterialAnimation:Stop()
+  self._navMeshAgent.enabled = true
+  self._petGO.transform.localPosition = self._petGO.transform.localPosition + Vector3(0, -self.pickUpHeight, 0)
   self:_SwitchToIdleState()
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._animator).speed = 1
+  self._animator.speed = 1
 end
 
--- DECOMPILER ERROR at PC145: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.OnDrop = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  (self._MaterialAnimation):Stop()
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._animator).speed = 1
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).enabled = true
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._petGO).transform).localPosition = ((self._petGO).transform).localPosition + Vector3(0, -self.pickUpHeight, 0)
-  ;
-  (self._navMeshAgent):Move(Vector3.zero)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).enabled = false
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshObstacle).enabled = true
+function UIAircraft3DPet:OnDrop()
+  self._MaterialAnimation:Stop()
+  self._animator.speed = 1
+  self._navMeshAgent.enabled = true
+  self._petGO.transform.localPosition = self._petGO.transform.localPosition + Vector3(0, -self.pickUpHeight, 0)
+  self._navMeshAgent:Move(Vector3.zero)
+  self._navMeshAgent.enabled = false
+  self._navMeshObstacle.enabled = true
   self:_SwitchToIdleState()
 end
 
--- DECOMPILER ERROR at PC148: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.SetPetAnim = function(self, state)
-  -- function num : 0_37 , upvalues : AircraftPetActionState
+function UIAircraft3DPet:SetPetAnim(state)
   if state == AircraftPetActionState.Idle then
     if self._standIdle and self._standIdle ~= "" then
-      (self._animator):SetBool(self._standIdle, true)
+      self._animator:SetBool(self._standIdle, true)
     end
-    ;
-    (self._animator):SetBool((self.animName).walk, false)
+    self._animator:SetBool(self.animName.walk, false)
+  elseif state == AircraftPetActionState.Moving then
+    if self._standIdle and self._standIdle ~= "" then
+      self._animator:SetBool(self._standIdle, false)
+    end
+    self._animator:SetBool(self.animName.walk, true)
+  elseif state == AircraftPetActionState.Responding then
+    self._animator:SetTrigger(self.animName.click)
   else
-    if state == AircraftPetActionState.Moving then
+    if state == AircraftPetActionState.Pressing then
       if self._standIdle and self._standIdle ~= "" then
-        (self._animator):SetBool(self._standIdle, false)
+        self._animator:SetBool(self._standIdle, true)
       end
-      ;
-      (self._animator):SetBool((self.animName).walk, true)
+      self._animator:SetBool(self.animName.walk, false)
     else
-      if state == AircraftPetActionState.Responding then
-        (self._animator):SetTrigger((self.animName).click)
-      else
-        if state == AircraftPetActionState.Pressing then
-          if self._standIdle and self._standIdle ~= "" then
-            (self._animator):SetBool(self._standIdle, true)
-          end
-          ;
-          (self._animator):SetBool((self.animName).walk, false)
-        end
-      end
     end
   end
 end
 
--- DECOMPILER ERROR at PC151: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.SetPetFace = function(self, id)
-  -- function num : 0_38 , upvalues : _ENV
-  local taskId = (self._petData):GetTriggeredTaskId()
-  local storyId = (self._petData):GetTriggeredStoryId()
-  local hasPlot = not storyId or storyId ~= 0
-  local hasEvent = not taskId or taskId ~= 0
+function UIAircraft3DPet:SetPetFace(id)
+  local taskId = self._petData:GetTriggeredTaskId()
+  local storyId = self._petData:GetTriggeredStoryId()
+  local hasPlot = storyId and storyId ~= 0
+  local hasEvent = taskId and taskId ~= 0
   if hasPlot then
     id = 1001
   elseif hasEvent then
-    local taskInfo = (self._petData):GetFirstTaskInfo()
+    local taskInfo = self._petData:GetFirstTaskInfo()
     if taskInfo then
       local state = taskInfo.state
       if state == PetTaskState.PetTS_Active then
@@ -1015,156 +662,115 @@ UIAircraft3DPet.SetPetFace = function(self, id)
       id = 2001
     end
   end
-  local cfg = (Cfg.cfg_aircraft_pet_face)[id]
+  local cfg = Cfg.cfg_aircraft_pet_face[id]
   if not cfg then
-    (Log.fatal)("[Aircraft] SetPetFace config id not find ", id)
-    return 
+    Log.fatal("[Aircraft] SetPetFace config id not find ", id)
+    return
   end
   if self._faceId == id then
-    return 
+    return
   end
   self:UnloadBubbleEffect()
-  do
-    if cfg.BubbleEffect then
-      local bubbleRequest = self:LoadBubbleEffect(cfg.BubbleEffect)
-      if bubbleRequest then
-        local bubble = bubbleRequest.Obj
-        local effectParentName = cfg.BubbleNode
-        local effectParent = nil
-        if effectParentName then
-          effectParent = (GameObjectHelper.FindChild)((self._petGO).transform, effectParentName)
-        end
-        if effectParent then
-          (bubble.transform):SetParent(effectParent)
-          local pos = Vector3((table.unpack)(cfg.BubbleOffset))
-          -- DECOMPILER ERROR at PC101: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (bubble.transform).position = effectParent.position + pos
-        else
-          (bubble.transform):SetParent((self._petGO).transform)
-          -- DECOMPILER ERROR at PC111: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          (bubble.transform).position = self:CalcBubblePos()
-        end
-        -- DECOMPILER ERROR at PC115: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (bubble.transform).rotation = self:CalcBubbleRotation()
-        self._bubbleGo = bubble
-        self._bubbleReq = bubbleRequest
+  if cfg.BubbleEffect then
+    local bubbleRequest = self:LoadBubbleEffect(cfg.BubbleEffect)
+    if bubbleRequest then
+      local bubble = bubbleRequest.Obj
+      local effectParentName = cfg.BubbleNode
+      local effectParent
+      if effectParentName then
+        effectParent = GameObjectHelper.FindChild(self._petGO.transform, effectParentName)
       end
-      self._bubbleCfgOffset = Vector3((table.unpack)(cfg.BubbleOffset))
+      if effectParent then
+        bubble.transform:SetParent(effectParent)
+        local pos = Vector3(table.unpack(cfg.BubbleOffset))
+        bubble.transform.position = effectParent.position + pos
+      else
+        bubble.transform:SetParent(self._petGO.transform)
+        bubble.transform.position = self:CalcBubblePos()
+      end
+      bubble.transform.rotation = self:CalcBubbleRotation()
+      self._bubbleGo = bubble
+      self._bubbleReq = bubbleRequest
     end
-    self._faceId = id
-    self._faceSeqIdx = 1
-    self._faceSeqIdxTime = 0
-    self._faceLastTime = 100
-    do return cfg.Length / 1000 end
-    -- DECOMPILER ERROR: 16 unprocessed JMP targets
+    self._bubbleCfgOffset = Vector3(table.unpack(cfg.BubbleOffset))
   end
+  self._faceId = id
+  self._faceSeqIdx = 1
+  self._faceSeqIdxTime = 0
+  self._faceLastTime = 100
+  return cfg.Length / 1000
 end
 
--- DECOMPILER ERROR at PC154: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet._UpdateFace = function(self, deltaTimeMS)
-  -- function num : 0_39 , upvalues : _ENV
-  if not self._faceId or not self._faceMat or self._faceLastTime <= 0 then
-    return 
+function UIAircraft3DPet:_UpdateFace(deltaTimeMS)
+  if not (self._faceId and self._faceMat) or self._faceLastTime <= 0 then
+    return
   end
   self._faceSeqIdxTime = self._faceSeqIdxTime + deltaTimeMS
-  if self._faceLastTime < self._faceSeqIdxTime then
+  if self._faceSeqIdxTime > self._faceLastTime then
     self._faceSeqIdxTime = 0
-    local cfg = (Cfg.cfg_aircraft_pet_face)[self._faceId]
+    local cfg = Cfg.cfg_aircraft_pet_face[self._faceId]
     self._faceSeqIdx = self._faceSeqIdx + 1
-    if #cfg.FaceSeq < self._faceSeqIdx then
+    if self._faceSeqIdx > #cfg.FaceSeq then
       self._faceSeqIdx = 1
     end
-    local seq = (cfg.FaceSeq)[self._faceSeqIdx]
+    local seq = cfg.FaceSeq[self._faceSeqIdx]
     local face_frame = seq[1]
     self._faceLastTime = seq[2]
-    ;
-    (self._faceMat):SetInt("_Frame", face_frame)
+    self._faceMat:SetInt("_Frame", face_frame)
   end
 end
 
--- DECOMPILER ERROR at PC157: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet._UpdateBubble = function(self)
-  -- function num : 0_40
+function UIAircraft3DPet:_UpdateBubble()
   local bubble = self._bubbleGo
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
   if bubble then
-    (bubble.transform).rotation = self:CalcBubbleRotation()
+    bubble.transform.rotation = self:CalcBubbleRotation()
   end
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.LoadBubbleEffect = function(self, resPath)
-  -- function num : 0_41 , upvalues : _ENV
-  local request = (ResourceManager:GetInstance()):SyncLoadAsset(resPath, LoadType.GameObject)
+function UIAircraft3DPet:LoadBubbleEffect(resPath)
+  local request = ResourceManager:GetInstance():SyncLoadAsset(resPath, LoadType.GameObject)
   if request == nil then
-    (Log.fatal)("Load Effect failed", resPath)
-    return 
+    Log.fatal("Load Effect failed", resPath)
+    return
   end
   local u3dGo = request.Obj
   u3dGo:SetActive(true)
   return request
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.UnloadBubbleEffect = function(self)
-  -- function num : 0_42
+function UIAircraft3DPet:UnloadBubbleEffect()
   if self._bubbleReq then
-    (self._bubbleReq):Dispose()
+    self._bubbleReq:Dispose()
     self._bubbleReq = nil
   end
   self._bubbleGo = nil
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.CalcBubbleRotation = function(self)
-  -- function num : 0_43 , upvalues : _ENV
-  local qbase = ((self._mainCamera).transform).rotation
-  local vforward = ((self._mainCamera).transform).forward
+function UIAircraft3DPet:CalcBubbleRotation()
+  local qbase = self._mainCamera.transform.rotation
+  local vforward = self._mainCamera.transform.forward
   local vplane_normal = Vector3(0, 1, 0)
-  local vproject = (Vector3.ProjectOnPlane)(vforward, vplane_normal)
-  local target = qbase * (Quaternion.FromToRotation)(vforward, vproject)
+  local vproject = Vector3.ProjectOnPlane(vforward, vplane_normal)
+  local target = qbase * Quaternion.FromToRotation(vforward, vproject)
   return target
 end
 
--- DECOMPILER ERROR at PC169: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.CalcBubblePos = function(self)
-  -- function num : 0_44 , upvalues : _ENV
-  local slot = (GameObjectHelper.FindChild)((self._petGO).transform, "EffectSlot")
+function UIAircraft3DPet:CalcBubblePos()
+  local slot = GameObjectHelper.FindChild(self._petGO.transform, "EffectSlot")
   local pos = slot.position + self._bubbleOffset + self._bubbleCfgOffset
   return pos
 end
 
--- DECOMPILER ERROR at PC172: Confused about usage of register: R3 in 'UnsetPending'
-
-UIAircraft3DPet.CalcBubblePos2 = function(self, bubble_offset)
-  -- function num : 0_45 , upvalues : _ENV
-  local pos = ((self._petGO).transform).position
-  local skinnedMeshRender = (GameObjectHelper.FindFirstSkinedMeshRender)(self._petGO)
+function UIAircraft3DPet:CalcBubblePos2(bubble_offset)
+  local pos = self._petGO.transform.position
+  local skinnedMeshRender = GameObjectHelper.FindFirstSkinedMeshRender(self._petGO)
   if skinnedMeshRender ~= nil then
-    local skinnedMeshPosition = (skinnedMeshRender.transform).position + Vector3(bubble_offset.x, bubble_offset.y, 0)
-    local meshExtents = (GameObjectHelper.FindFirstSkinedMeshRenderBoundsExtent)(self._petGO)
+    local skinnedMeshPosition = skinnedMeshRender.transform.position + Vector3(bubble_offset.x, bubble_offset.y, 0)
+    local meshExtents = GameObjectHelper.FindFirstSkinedMeshRenderBoundsExtent(self._petGO)
     local convertExtents = Vector3(0, meshExtents.x * 2, 0)
     pos = skinnedMeshPosition + convertExtents
   else
-    do
-      ;
-      (Log.fatal)("pet ", (self._petGO).name, " has no skinned mesh")
-      return pos
-    end
+    Log.fatal("pet ", self._petGO.name, " has no skinned mesh")
   end
+  return pos
 end
-
-

@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_buttom_btns/ui_main_lobby_buttom_btns.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyButtomBtns", UICustomWidget)
 UIMainLobbyButtomBtns = UIMainLobbyButtomBtns
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyButtomBtns.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._shopModule = (GameGlobal.GetModule)(ShopModule)
+function UIMainLobbyButtomBtns:OnShow()
+  self._shopModule = GameGlobal.GetModule(ShopModule)
   local shopPool = self:GetUIComponent("UISelectObjectPath", "shop")
   self.shop = shopPool:SpawnObject("UIMainLobbyFinalShopBtn")
   self._backPackRedGO = self:GetGameObject("backpack_red")
-  self._talePetModule = (GameGlobal.GetModule)(TalePetModule)
+  self._talePetModule = GameGlobal.GetModule(TalePetModule)
   self._questRed = self:GetGameObject("questRed")
   self:AttachEvent(GameEventType.QuestUpdate, self.QuestInfo)
   self:AttachEvent(GameEventType.OnAchievePointFinish, self.QuestInfo)
@@ -30,33 +23,26 @@ UIMainLobbyButtomBtns.OnShow = function(self)
   self.canConceneAnim = self:GetUIComponent("Animation", "canConvene")
   self._educationRedPoint = self:GetUIComponent("RectTransform", "educationRedPoint")
   self._btnEducation = self:GetUIComponent("UISelectObjectPath", "btnEducation")
-  local module = (GameGlobal.GetModule)(RoleModule)
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_TalePet)
-  do
-    if isLock == false then
-      local IsCanDo = (self._talePetModule):IsCanDo()
-      if IsCanDo then
-        if self._showTaleUI then
-          ((GameGlobal.Timer)()):CancelEvent(self._showTaleUI)
-        end
-        self._showTaleUI = ((GameGlobal.Timer)()):AddEvent(800, function()
-    -- function num : 0_0_0 , upvalues : self
-    self:RefreshCanConvene()
-  end
-)
+  if isLock == false then
+    local IsCanDo = self._talePetModule:IsCanDo()
+    if IsCanDo then
+      if self._showTaleUI then
+        GameGlobal.Timer():CancelEvent(self._showTaleUI)
       end
+      self._showTaleUI = GameGlobal.Timer():AddEvent(800, function()
+        self:RefreshCanConvene()
+      end)
     end
-    local s = self:GetUIComponent("UISelectObjectPath", "BtnTalePet")
-    local talePetButtonFunction = s:SpawnObject("UIMainLobbyLockBtn")
-    talePetButtonFunction:SetFunctionType(GameModuleID.MD_TalePet)
-    self:SetDragEvent()
   end
+  local s = self:GetUIComponent("UISelectObjectPath", "BtnTalePet")
+  local talePetButtonFunction = s:SpawnObject("UIMainLobbyLockBtn")
+  talePetButtonFunction:SetFunctionType(GameModuleID.MD_TalePet)
+  self:SetDragEvent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.SetDragEvent = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMainLobbyButtomBtns:SetDragEvent()
   local TeamBtn = self:GetGameObject("TeamBtn")
   local QuestBtn = self:GetGameObject("QuestBtn")
   local BackpackBtn = self:GetGameObject("BackpackBtn")
@@ -76,587 +62,393 @@ UIMainLobbyButtomBtns.SetDragEvent = function(self)
   self._dragDeltaHeight = 100
   self._isDrag = false
   self._isDragOpen = false
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(QuestBtn), UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_1_0 , upvalues : self
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(QuestBtn), UIEvent.BeginDrag, function(eventData)
     self:BeginDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(QuestBtn), UIEvent.EndDrag, function(eventData)
-    -- function num : 0_1_1 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(QuestBtn), UIEvent.EndDrag, function(eventData)
     self:EndDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(BackpackBtn), UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_1_2 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(BackpackBtn), UIEvent.BeginDrag, function(eventData)
     self:BeginDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(BackpackBtn), UIEvent.EndDrag, function(eventData)
-    -- function num : 0_1_3 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(BackpackBtn), UIEvent.EndDrag, function(eventData)
     self:EndDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(BaseBtn), UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_1_4 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(BaseBtn), UIEvent.BeginDrag, function(eventData)
     self:BeginDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(BaseBtn), UIEvent.EndDrag, function(eventData)
-    -- function num : 0_1_5 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(BaseBtn), UIEvent.EndDrag, function(eventData)
     self:EndDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(BtnTalePet), UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_1_6 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(BtnTalePet), UIEvent.BeginDrag, function(eventData)
     self:BeginDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(BtnTalePet), UIEvent.EndDrag, function(eventData)
-    -- function num : 0_1_7 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(BtnTalePet), UIEvent.EndDrag, function(eventData)
     self:EndDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(BtnEducation), UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_1_8 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(BtnEducation), UIEvent.BeginDrag, function(eventData)
     self:BeginDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(BtnEducation), UIEvent.EndDrag, function(eventData)
-    -- function num : 0_1_9 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(BtnEducation), UIEvent.EndDrag, function(eventData)
     self:EndDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(CloseBtn), UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_1_10 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(CloseBtn), UIEvent.BeginDrag, function(eventData)
     self:BeginDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(CloseBtn), UIEvent.EndDrag, function(eventData)
-    -- function num : 0_1_11 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(CloseBtn), UIEvent.EndDrag, function(eventData)
     self:EndDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(TeamBtn), UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_1_12 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(TeamBtn), UIEvent.BeginDrag, function(eventData)
     self:BeginDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(TeamBtn), UIEvent.EndDrag, function(eventData)
-    -- function num : 0_1_13 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(TeamBtn), UIEvent.EndDrag, function(eventData)
     self:EndDrag(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(OpenBtn), UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_1_14 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(OpenBtn), UIEvent.BeginDrag, function(eventData)
     self:BeginDragOpen(eventData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(OpenBtn), UIEvent.EndDrag, function(eventData)
-    -- function num : 0_1_15 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(OpenBtn), UIEvent.EndDrag, function(eventData)
     self:EndDragOpen(eventData)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.BeginDragOpen = function(self, eventData)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMainLobbyButtomBtns:BeginDragOpen(eventData)
   if eventData then
     self._beginDragOpenPos = eventData.position
-    ;
-    (Log.debug)("###[UIMainLobbyButtomBtns] self._beginDragOpenPos:", (self._beginDragOpenPos).x)
+    Log.debug("###[UIMainLobbyButtomBtns] self._beginDragOpenPos:", self._beginDragOpenPos.x)
     self._isDragOpen = true
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.EndDragOpen = function(self, eventData)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMainLobbyButtomBtns:EndDragOpen(eventData)
   if self._isDragOpen then
     local endDragOpenPos = eventData.position
-    ;
-    (Log.debug)("###[UIMainLobbyButtomBtns] endDragOpenPos:", endDragOpenPos.x)
+    Log.debug("###[UIMainLobbyButtomBtns] endDragOpenPos:", endDragOpenPos.x)
     local deltaX = endDragOpenPos - self._beginDragOpenPos
-    ;
-    (Log.debug)("###[UIMainLobbyButtomBtns] deltaX:", deltaX)
-    if deltaX.x < -self._dragDeltaWidth and (math.abs)(deltaX.y) < self._dragDeltaHeight then
-      (Log.debug)("###[UIMainLobbyButtomBtns] endDragOpen deltaX enough !")
+    Log.debug("###[UIMainLobbyButtomBtns] deltaX:", deltaX)
+    if deltaX.x < -self._dragDeltaWidth and math.abs(deltaX.y) < self._dragDeltaHeight then
+      Log.debug("###[UIMainLobbyButtomBtns] endDragOpen deltaX enough !")
       self:OpenBtns()
     else
-      ;
-      (Log.debug)("###[UIMainLobbyButtomBtns] endDragOpen deltaX not enough .")
+      Log.debug("###[UIMainLobbyButtomBtns] endDragOpen deltaX not enough .")
     end
     self._isDragOpen = false
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.OpenBtns = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.debug)("###[UIMainLobbyButtomBtns] open btns anim!")
-  ;
-  ((GameGlobal.GetUIModule)(SignInModule)):SetMainLobbyButtomCloseState(false)
+function UIMainLobbyButtomBtns:OpenBtns()
+  Log.debug("###[UIMainLobbyButtomBtns] open btns anim!")
+  GameGlobal.GetUIModule(SignInModule):SetMainLobbyButtomCloseState(false)
   self:Lock("UIMainLobbyButtomBtns:OpenBtns")
-  ;
-  (self._anim):Play(self._openAnimName)
-  ;
-  ((GameGlobal.Timer)()):AddEvent(583, function()
-    -- function num : 0_4_0 , upvalues : self
+  self._anim:Play(self._openAnimName)
+  GameGlobal.Timer():AddEvent(583, function()
     self:UnLock("UIMainLobbyButtomBtns:OpenBtns")
-  end
-)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._closeImgCanG).blocksRaycasts = true
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._openImgCanG).blocksRaycasts = false
+  end)
+  self._closeImgCanG.blocksRaycasts = true
+  self._openImgCanG.blocksRaycasts = false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.CloseBtns = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.debug)("###[UIMainLobbyButtomBtns] close btns anim !")
-  ;
-  ((GameGlobal.GetUIModule)(SignInModule)):SetMainLobbyButtomCloseState(true)
+function UIMainLobbyButtomBtns:CloseBtns()
+  Log.debug("###[UIMainLobbyButtomBtns] close btns anim !")
+  GameGlobal.GetUIModule(SignInModule):SetMainLobbyButtomCloseState(true)
   self:Lock("UIMainLobbyButtomBtns:CloseBtns")
-  ;
-  (self._anim):Play(self._closeAnimName)
-  ;
-  ((GameGlobal.Timer)()):AddEvent(583, function()
-    -- function num : 0_5_0 , upvalues : self
+  self._anim:Play(self._closeAnimName)
+  GameGlobal.Timer():AddEvent(583, function()
     self:UnLock("UIMainLobbyButtomBtns:CloseBtns")
-  end
-)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._closeImgCanG).blocksRaycasts = false
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._openImgCanG).blocksRaycasts = true
-  ;
-  (self.canConvene):SetActive(false)
+  end)
+  self._closeImgCanG.blocksRaycasts = false
+  self._openImgCanG.blocksRaycasts = true
+  self.canConvene:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.BeginDrag = function(self, eventData)
-  -- function num : 0_6 , upvalues : _ENV
+function UIMainLobbyButtomBtns:BeginDrag(eventData)
   if eventData then
     self._beginDragPos = eventData.position
-    ;
-    (Log.debug)("###[UIMainLobbyButtomBtns] self._beginDragPos:", (self._beginDragPos).x)
+    Log.debug("###[UIMainLobbyButtomBtns] self._beginDragPos:", self._beginDragPos.x)
     self._isDrag = true
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.EndDrag = function(self, eventData)
-  -- function num : 0_7 , upvalues : _ENV
+function UIMainLobbyButtomBtns:EndDrag(eventData)
   if self._isDrag then
     local endDragPos = eventData.position
-    ;
-    (Log.debug)("###[UIMainLobbyButtomBtns] endDragPos:", endDragPos.x)
+    Log.debug("###[UIMainLobbyButtomBtns] endDragPos:", endDragPos.x)
     local deltaX = endDragPos - self._beginDragPos
-    ;
-    (Log.debug)("###[UIMainLobbyButtomBtns] deltaX:", deltaX)
-    if self._dragDeltaWidth < deltaX.x and (math.abs)(deltaX.y) < self._dragDeltaHeight then
-      (Log.debug)("###[UIMainLobbyButtomBtns] endDrag deltaX enough !")
+    Log.debug("###[UIMainLobbyButtomBtns] deltaX:", deltaX)
+    if deltaX.x > self._dragDeltaWidth and math.abs(deltaX.y) < self._dragDeltaHeight then
+      Log.debug("###[UIMainLobbyButtomBtns] endDrag deltaX enough !")
       self:CloseBtns()
     else
-      ;
-      (Log.debug)("###[UIMainLobbyButtomBtns] endDrag deltaX not enough .")
+      Log.debug("###[UIMainLobbyButtomBtns] endDrag deltaX not enough .")
     end
     self._isDrag = false
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.ArrowBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UIMainLobbyButtomBtns:ArrowBtnOnClick(go)
   self:OpenBtns()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.SetData = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIMainLobbyButtomBtns:SetData()
   self:_CheckQuestLock()
   self:QuestInfo()
   self:SetBase()
   self:CheckAircraftRed()
   self:_CheckEducation()
-  ;
-  (AudioHelperController.RequestUISound)(CriAudioIDConst.AircraftBtnClick)
+  AudioHelperController.RequestUISound(CriAudioIDConst.AircraftBtnClick)
   self:CheckBackPackNew()
   self:TalePetRedPointController()
-  ;
-  (self.shop):FlushLockStatus()
+  self.shop:FlushLockStatus()
   self:PlayEnterAnim()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.PlayEnterAnim = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local closeState = ((GameGlobal.GetUIModule)(SignInModule)):GetMainLobbyButtomCloseState()
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIMainLobbyButtomBtns:PlayEnterAnim()
+  local closeState = GameGlobal.GetUIModule(SignInModule):GetMainLobbyButtomCloseState()
   if closeState then
-    (self._closeImgCanG).blocksRaycasts = false
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._openImgCanG).blocksRaycasts = true
-    ;
-    (self._anim):Play(self._enterAnimNameClose)
+    self._closeImgCanG.blocksRaycasts = false
+    self._openImgCanG.blocksRaycasts = true
+    self._anim:Play(self._enterAnimNameClose)
   else
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._closeImgCanG).blocksRaycasts = true
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._openImgCanG).blocksRaycasts = false
-    ;
-    (self._anim):Play(self._enterAnimNameOpen)
+    self._closeImgCanG.blocksRaycasts = true
+    self._openImgCanG.blocksRaycasts = false
+    self._anim:Play(self._enterAnimNameOpen)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.OnHide = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (AudioHelperController.ReleaseUISoundById)(CriAudioIDConst.AircraftBtnClick)
+function UIMainLobbyButtomBtns:OnHide()
+  AudioHelperController.ReleaseUISoundById(CriAudioIDConst.AircraftBtnClick)
   if self.conveneDelay then
-    ((GameGlobal.RealTimer)()):CancelEvent(self.conveneDelay)
+    GameGlobal.RealTimer():CancelEvent(self.conveneDelay)
     self.conveneDelay = nil
   end
   if self._showTaleUI then
-    ((GameGlobal.Timer)()):CancelEvent(self._showTaleUI)
+    GameGlobal.Timer():CancelEvent(self._showTaleUI)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.BtnTalePetOnClick = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIMainLobbyButtomBtns:BtnTalePetOnClick()
   self:Lock("UIMainLobbyButtomBtns:OnClickTale")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnClickTale, self)
+  GameGlobal.TaskManager():StartTask(self.OnClickTale, self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.OnClickTale = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_OLD_SEAL)
-  local res = (self._talePetModule):ReqTalePet(TT)
+function UIMainLobbyButtomBtns:OnClickTale(TT)
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_OLD_SEAL)
+  local res = self._talePetModule:ReqTalePet(TT)
   if res:GetSucc() then
-    local isFirstEnter = (self._talePetModule):IsFirstEnter()
+    local isFirstEnter = self._talePetModule:IsFirstEnter()
     if isFirstEnter == false then
-      local res = (self._talePetModule):ReqTaleFirst(TT, TaleFirstType.TFT_Enter)
+      local res = self._talePetModule:ReqTaleFirst(TT, TaleFirstType.TFT_Enter)
       if res:GetSucc() then
-        local storyId = (self._talePetModule):GetEnterTalePetStoryIds()
+        local storyId = self._talePetModule:GetEnterTalePetStoryIds()
         self:ShowDialog("UIStoryController", storyId, function()
-    -- function num : 0_13_0 , upvalues : self, _ENV
-    self:ShowDialog("UITalePetList")
-    if ((GameGlobal.UIStateManager)()):IsShow("UIStoryController") then
-      ((GameGlobal.UIStateManager)()):CloseDialog("UIStoryController")
-    end
-  end
-, false)
-      else
-        do
-          do
-            ;
-            (ToastManager.ShowToast)(res:GetResult())
-            do
-              local callState = (self._talePetModule):SelectPetCfgId()
-              if callState ~= 0 then
-                self:ShowDialog("UITalePetMissionController", callState)
-              else
-                self:ShowDialog("UITalePetList")
-              end
-              ;
-              (ToastManager.ShowToast)(res.m_result)
-              self:UnLock("UIMainLobbyButtomBtns:OnClickTale")
-            end
+          self:ShowDialog("UITalePetList")
+          if GameGlobal.UIStateManager():IsShow("UIStoryController") then
+            GameGlobal.UIStateManager():CloseDialog("UIStoryController")
           end
-        end
+        end, false)
+      else
+        ToastManager.ShowToast(res:GetResult())
+      end
+    else
+      local callState = self._talePetModule:SelectPetCfgId()
+      if callState ~= 0 then
+        self:ShowDialog("UITalePetMissionController", callState)
+      else
+        self:ShowDialog("UITalePetList")
       end
     end
+  else
+    ToastManager.ShowToast(res.m_result)
   end
+  self:UnLock("UIMainLobbyButtomBtns:OnClickTale")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.RefreshCanConvene = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIMainLobbyButtomBtns:RefreshCanConvene()
   local list = {}
-  ;
-  (self.canConvene):SetActive(false)
-  local cfg = (Cfg.cfg_tale_pet)({})
+  self.canConvene:SetActive(false)
+  local cfg = Cfg.cfg_tale_pet({})
   if cfg == nil then
-    return 
+    return
   end
-  for key,value in pairs(cfg) do
-    local info = (self._talePetModule):GetPetInfo(value.ID)
+  for key, value in pairs(cfg) do
+    local info = self._talePetModule:GetPetInfo(value.ID)
     if info == nil then
-      (table.insert)(list, value)
+      table.insert(list, value)
     end
   end
   if #list <= 0 then
-    return 
+    return
   end
-  ;
-  (self.canConceneAnim):Stop()
-  ;
-  (self.canConvene):SetActive(true)
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.canConceneRaw).color = Color(1, 1, 1, 0)
-  ;
-  (self.canConceneAnim):Play("uieff_UIMainLobbyButtomBtns_canConvene_in")
-  local rand = (math.random)(1, #list)
-  ;
-  (self.canConceneImg):LoadImage((list[rand]).TurnIcon)
+  self.canConceneAnim:Stop()
+  self.canConvene:SetActive(true)
+  self.canConceneRaw.color = Color(1, 1, 1, 0)
+  self.canConceneAnim:Play("uieff_UIMainLobbyButtomBtns_canConvene_in")
+  local rand = math.random(1, #list)
+  self.canConceneImg:LoadImage(list[rand].TurnIcon)
   if self.conveneDelay then
-    ((GameGlobal.Timer)()):CancelEvent(self.conveneDelay)
+    GameGlobal.Timer():CancelEvent(self.conveneDelay)
   end
-  self.conveneDelay = ((GameGlobal.Timer)()):AddEvent(5000, function()
-    -- function num : 0_14_0 , upvalues : self
-    (self.canConceneAnim):Stop()
-    ;
-    (self.canConceneAnim):Play("uieff_UIMainLobbyButtomBtns_canConvene_out")
+  self.conveneDelay = GameGlobal.Timer():AddEvent(5000, function()
+    self.canConceneAnim:Stop()
+    self.canConceneAnim:Play("uieff_UIMainLobbyButtomBtns_canConvene_out")
     self.conveneDelay = nil
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.ChangeTaleInfo = function(self)
-  -- function num : 0_15
-  (self.canConvene):SetActive(false)
-  local IsCanDo = (self._talePetModule):IsCanDo()
+function UIMainLobbyButtomBtns:ChangeTaleInfo()
+  self.canConvene:SetActive(false)
+  local IsCanDo = self._talePetModule:IsCanDo()
   if IsCanDo then
     self:RefreshCanConvene()
   end
   self:TalePetRedPointController()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.TalePetRedPointController = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local state1 = (self._talePetModule):IsCanCall()
-  local state2 = (self._talePetModule):IsAllGetReward()
-  local state3 = (self._talePetModule):IsShowRewardRed()
-  local state4 = (self._talePetModule):IsShowTrailFinalLevelRed()
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local recordValue = (LocalDB.GetInt)("NewTalePet2" .. loginModule:GetRoleShowID(), 0)
+function UIMainLobbyButtomBtns:TalePetRedPointController()
+  local state1 = self._talePetModule:IsCanCall()
+  local state2 = self._talePetModule:IsAllGetReward()
+  local state3 = self._talePetModule:IsShowRewardRed()
+  local state4 = self._talePetModule:IsShowTrailFinalLevelRed()
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local recordValue = LocalDB.GetInt("NewTalePet2" .. loginModule:GetRoleShowID(), 0)
   local state5 = recordValue <= 0
   if state1 or state2 or state3 or state4 or state5 then
-    local unlock = ((GameGlobal.GetModule)(RoleModule)):CheckModuleUnlock(GameModuleID.MD_TalePet)
-    ;
-    (self.talePetRedPoint):SetActive(unlock)
+    local unlock = GameGlobal.GetModule(RoleModule):CheckModuleUnlock(GameModuleID.MD_TalePet)
+    self.talePetRedPoint:SetActive(unlock)
   else
-    (self.talePetRedPoint):SetActive(false)
+    self.talePetRedPoint:SetActive(false)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.CheckBackPackNew = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIMainLobbyButtomBtns:CheckBackPackNew()
   local itemModule = self:GetModule(ItemModule)
   local hasNew = itemModule:HasNew()
-  ;
-  (self._backPackRedGO):SetActive(hasNew)
+  self._backPackRedGO:SetActive(hasNew)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.BackpackBtnOnClick = function(self, go)
-  -- function num : 0_18 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_BackPackController"}, true)
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIMainLobbyButtomBtns:BackpackBtnOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+    "Click_BackPackController"
+  }, true)
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_Item)
   if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_unlock"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_unlock"))
+    return
   end
-  ;
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_STORE)
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_STORE)
   self:ShowDialog("UIBackPackController")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.TeamBtnOnClick = function(self, go)
-  -- function num : 0_19 , upvalues : _ENV
-  (Log.fatal)("UIMainLobbyFinal:TeamBtnOnClick Start:" .. (UnityEngine.Time).realtimeSinceStartup)
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_Teams"}, true)
-  ;
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_TEAM)
-  ;
-  (((GameGlobal.GetModule)(MissionModule)):TeamCtx()):Init(TeamOpenerType.Main, 0)
+function UIMainLobbyButtomBtns:TeamBtnOnClick(go)
+  Log.fatal("UIMainLobbyFinal:TeamBtnOnClick Start:" .. UnityEngine.Time.realtimeSinceStartup)
+  GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+    "Click_Teams"
+  }, true)
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_TEAM)
+  GameGlobal.GetModule(MissionModule):TeamCtx():Init(TeamOpenerType.Main, 0)
   self:ShowDialog("UITeams")
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.CheckAircraftRed = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIMainLobbyButtomBtns:CheckAircraftRed()
   local aircraftModule = self:GetModule(AircraftModule)
   local count = aircraftModule:GetCollectTypeCount()
-  ;
-  (self._aircraftAwardCountGo):SetActive(count > 0)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._aircraftAwardCountGo:SetActive(0 < count)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.BaseBtnOnClick = function(self, go)
-  -- function num : 0_21 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_AircraftBtn"}, true)
-  ;
-  (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.AircraftBtnClick)
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIMainLobbyButtomBtns:BaseBtnOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+    "Click_AircraftBtn"
+  }, true)
+  AudioHelperController.PlayRequestedUISound(CriAudioIDConst.AircraftBtnClick)
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_Aircraft)
   if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_unlock"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_unlock"))
+    return
   end
-  ;
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_AIRCRAFT)
-  ;
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Aircraft_Enter, "fc_ui")
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_AIRCRAFT)
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Aircraft_Enter, "fc_ui")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.SetBase = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIMainLobbyButtomBtns:SetBase()
   local s = self:GetUIComponent("UISelectObjectPath", "BaseBtn")
   local baseButtonFunction = s:SpawnObject("UIMainLobbyLockBtn")
   baseButtonFunction:SetFunctionType(GameModuleID.MD_Aircraft)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns._CheckQuestLock = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIMainLobbyButtomBtns:_CheckQuestLock()
+  local module = GameGlobal.GetModule(RoleModule)
   self._questUnLock = module:CheckModuleUnlock(GameModuleID.MD_QuestEntry)
   local s = self:GetUIComponent("UISelectObjectPath", "QuestBtn")
   local mailButtonFunction = s:SpawnObject("UIMainLobbyLockBtn")
   mailButtonFunction:SetFunctionType(GameModuleID.MD_QuestEntry)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.QuestBtnOnClick = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_QuestController"}, true)
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIMainLobbyButtomBtns:QuestBtnOnClick()
+  GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+    "Click_QuestController"
+  }, true)
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_QuestEntry)
   if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_unlock"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_unlock"))
+    return
   end
-  ;
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_TASK)
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_TASK)
   if self._questUnLock == false then
-    (UIWidgetHelper.BlurHelperShot)(self.uiOwner, "screenShot", (self.uiOwner):GetName(), function(cache_rt)
-    -- function num : 0_24_0 , upvalues : self
-    self._cache_rt = cache_rt
-  end
-)
+  else
+    UIWidgetHelper.BlurHelperShot(self.uiOwner, "screenShot", self.uiOwner:GetName(), function(cache_rt)
+      self._cache_rt = cache_rt
+    end)
     self:ShowDialog("UIQuestController", nil, nil, function()
-    -- function num : 0_24_1 , upvalues : self
-    return self._cache_rt
-  end
-)
+      return self._cache_rt
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.CheckQuestRed = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIMainLobbyButtomBtns:CheckQuestRed()
   if self._questUnLock == false then
-    (self._questRed):SetActive(false)
+    self._questRed:SetActive(false)
   else
-    local questModule = (GameGlobal.GetModule)(QuestModule)
+    local questModule = GameGlobal.GetModule(QuestModule)
     local questNumber = questModule:GetRedPointNum()
-    if questNumber and questNumber > 0 then
-      (self._questRed):SetActive(true)
+    if questNumber and 0 < questNumber then
+      self._questRed:SetActive(true)
     else
-      ;
-      (self._questRed):SetActive(false)
+      self._questRed:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.QuestInfo = function(self)
-  -- function num : 0_26
+function UIMainLobbyButtomBtns:QuestInfo()
   self:CheckQuestRed()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns._CheckEducation = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIMainLobbyButtomBtns:_CheckEducation()
+  local module = GameGlobal.GetModule(RoleModule)
   local isUnlock = module:CheckModuleUnlock(GameModuleID.MD_PROCUL)
-  local module = (GameGlobal.GetModule)(PetModule)
-  local hasRed = (module:GetUIEducationData()):HasRed()
-  ;
-  ((self._educationRedPoint).gameObject):SetActive(not isUnlock or hasRed)
-  local educationFunction = (self._btnEducation):SpawnObject("UIMainLobbyLockBtn")
+  local module = GameGlobal.GetModule(PetModule)
+  local hasRed = module:GetUIEducationData():HasRed()
+  self._educationRedPoint.gameObject:SetActive(isUnlock and hasRed)
+  local educationFunction = self._btnEducation:SpawnObject("UIMainLobbyLockBtn")
   educationFunction:SetFunctionType(GameModuleID.MD_PROCUL)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.ChkEducationRed = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(PetModule)
+function UIMainLobbyButtomBtns:ChkEducationRed()
+  local module = GameGlobal.GetModule(PetModule)
   local educationData = module:GetUIEducationData()
   educationData:SetRedDirty(true)
   educationData:TestCondition()
   self:_CheckEducation()
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyButtomBtns.BtnEducationOnClick = function(self, go)
-  -- function num : 0_29 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIMainLobbyButtomBtns:BtnEducationOnClick(go)
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_PROCUL)
   if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_unlock"))
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_unlock"))
   else
     self:ShowDialog("UIEducationMain")
   end
 end
-
-

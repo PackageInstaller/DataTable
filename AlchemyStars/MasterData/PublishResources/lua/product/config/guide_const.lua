@@ -1,72 +1,492 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/config/guide_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local GuideType = {Button = 1, Model = 2, Line = 3, StoryBanner = 4, Warn = 5, Pop = 6, Piece = 7, OpenUI = 8, InnerAttrIcon = 9, BattleComplete = 10, Circle = 11, UnLock = 12, Story = 13, Buff = 14, Entity = 15, AirCameraFocusPet = 16, GameCommand = 17, OperationFinish = 18, PreviewLinkLine = 19, PuzzleCountdown = 20}
+local GuideType = {
+  Button = 1,
+  Model = 2,
+  Line = 3,
+  StoryBanner = 4,
+  Warn = 5,
+  Pop = 6,
+  Piece = 7,
+  OpenUI = 8,
+  InnerAttrIcon = 9,
+  BattleComplete = 10,
+  Circle = 11,
+  UnLock = 12,
+  Story = 13,
+  Buff = 14,
+  Entity = 15,
+  AirCameraFocusPet = 16,
+  GameCommand = 17,
+  OperationFinish = 18,
+  PreviewLinkLine = 19,
+  PuzzleCountdown = 20
+}
 _enum("GuideType", GuideType)
-local GuideRoundTurn = {PlayerTurn = 0, MonsterTurn = 1, AuroraTime = 2, BuffEnd = 3}
+local GuideRoundTurn = {
+  PlayerTurn = 0,
+  MonsterTurn = 1,
+  AuroraTime = 2,
+  BuffEnd = 3
+}
 _enum("GuideRoundTurn", GuideRoundTurn)
-local GuideOpenUI = {"UIShop", "UIAircraft", "MazeRoomType_Normal", "MazeRoomType_Battery", "MazeRoomType_XRoot", "UIMazeBag", "MazeRoomType_Elite", "UIDispatchMap", "UIAircraftDecorate", "UIDiscovery", "UIHelpPetSelect", "UITalePetList", "UITalePetMissionController", "UISakuraEntryController", "UISummer1", "UIActivityBattlePassMainController", "UIMiniGameController", "UISummerActivityTwoMainController", "UISummerActivityTwoSelectEntryController", "UIN5MainController", "UIActivityNPlusSixMainController", "UIActivityNPlusSixMainControllerBuilding", "UIWorldBossController_Obsolete", "UIActivityN7MainController", "UIActivityN8MainController", "UIAircraftTactic", "UITacticTapeInfo", "UIActivityN9MainController", "UIN10MainController", "UIN11Main", "UIN12MainController", "UIN13MainController", "UIN14MainController", "UIN14FishingGameController", "UIN15MainController", "UIActivityN16MainController", "UIHomelandBreed", "UIHomelandShopController", "UIHomelandLevel", "UIHomelandFishing", "UIHomelandFelling", "UIHomelandMining", "UIHomelandMain", "UIForgeCreateDomitory", "HomelandUnlock", "UIN17MainController", "UIDiscoveryHardLevel", "UIForge", "UIN18MainController", "UIN19MainController", "UIN19P5Controller", "UIActivityN20MainController", "UIN20MiniGameController", "UIN21Controller", "UIActivityN22MainController", "UIN23Main", "UIActivityN24MainController", "UIActivityN25MainController", "UIN25IdolLogin", "UIN25IdolGame", "UIN25VampireMain", "UIN25VampireTalentTree", "UIMiniMazeChooseRelicController", "UIMiniMazeChoosePartnerController", "UIActivityN26MainController", "UIN27Controller", "UIN27PostInnerGameController", "UIActivityN28MainController", "UIN28AVGMain", "UIN28AVGStoryGainEvidence", "UIN28AVGStoryShowEvidence", "UIN28AVGStoryEvidenceBook", "UIN28GronruGameSelectPlayer", "UIN28GronruGameLevel", "UIBounceMainController", "UIBounceMainController2", "UIBounceMainControllerBoss1", "UIBounceMainControllerBoss2", "UIBounceMainControllerBoss3", "UIActivityN29MainController", "UIN29DetectiveLogin", "UIActivityN29DetectiveMapController", "UIN29DetectivePersonController", "UIN29DetectiveSuspectController", "UIN29DetectiveReasoning", "UIPetEquipControllerLock", "UIPetEquipControllerUnLock", "UIActivityN30MainController", "UIActivityN31MainController", "UIWorldBossController_B", "UIWorldBossController_C", "UIActivityN32MainController", "UIN32MultiLineMain", "UIN32MultiLineMapController", "UIN32MultiLineMapController_Doc", "UIUpLevelInterfaceController", "UIActivityN33DateMainController1", "UIActivityN33DateMainController2", "UIActivityN33DateMainController3", "UIActivityN33LevelController", "UIActivityN33BuildingInfo1", "UIActivityN33BuildingInfo2", "UIActivityN33ArchUpgradeReward", "UIActivityN33DatePetController", "UIActivityN33MainController", "UIS1MainController", "UISeasonMain", "UISeasonBuffLevelUp", "UISeasonBuffLevelUp2", "UISeasonBubble", "SeasonRewardShowEnd", "SeasonDaily", "UIActivityN34MainController", "S2BalanceGame", "UIActivityCN6N35MainController", "UIDrawCardController_PetWish", "UISeasonMainS2", "UICN7N36MainController", "S3TelescopeGame", "UIN37MainController", "UIEliminateController1", "UIEliminateController2", "UIEliminateLevelController", "S3BackpackGame", "S3BackpackGameGrid", "UIN38MainController", "UIActivitySouthSeaCN9MainController", "UICN9MainGameController", "UICN9MainGameControllerInfinite", "UIN39MainController", "UINExploreMainController", "UILuckLandMainGameController", "UISeasonMainS4", "UIS4TradeMainController", "UILuckLandMainGameController2", "UISeasonTalentTreeController", "UICN12N41MainController", "UIActivityN42MainController", "UIN42AVGMain", "UIN42AVGStoryGainEvidence", "UIN42AVGStoryShowEvidence", "UIN42AVGStoryEvidenceBook", "UIN43MainController", "UISeasonMazeBead", "UISeasonMazeBeadInner", "UISeasonMazeBeadInner2", "UICN17N46FishingGameController", "UISideEnterCenterController_N4CC", "UILuckLandCardBag"}
+local GuideOpenUI = {
+  "UIShop",
+  "UIAircraft",
+  "MazeRoomType_Normal",
+  "MazeRoomType_Battery",
+  "MazeRoomType_XRoot",
+  "UIMazeBag",
+  "MazeRoomType_Elite",
+  "UIDispatchMap",
+  "UIAircraftDecorate",
+  "UIDiscovery",
+  "UIHelpPetSelect",
+  "UITalePetList",
+  "UITalePetMissionController",
+  "UISakuraEntryController",
+  "UISummer1",
+  "UIActivityBattlePassMainController",
+  "UIMiniGameController",
+  "UISummerActivityTwoMainController",
+  "UISummerActivityTwoSelectEntryController",
+  "UIN5MainController",
+  "UIActivityNPlusSixMainController",
+  "UIActivityNPlusSixMainControllerBuilding",
+  "UIWorldBossController_Obsolete",
+  "UIActivityN7MainController",
+  "UIActivityN8MainController",
+  "UIAircraftTactic",
+  "UITacticTapeInfo",
+  "UIActivityN9MainController",
+  "UIN10MainController",
+  "UIN11Main",
+  "UIN12MainController",
+  "UIN13MainController",
+  "UIN14MainController",
+  "UIN14FishingGameController",
+  "UIN15MainController",
+  "UIActivityN16MainController",
+  "UIHomelandBreed",
+  "UIHomelandShopController",
+  "UIHomelandLevel",
+  "UIHomelandFishing",
+  "UIHomelandFelling",
+  "UIHomelandMining",
+  "UIHomelandMain",
+  "UIForgeCreateDomitory",
+  "HomelandUnlock",
+  "UIN17MainController",
+  "UIDiscoveryHardLevel",
+  "UIForge",
+  "UIN18MainController",
+  "UIN19MainController",
+  "UIN19P5Controller",
+  "UIActivityN20MainController",
+  "UIN20MiniGameController",
+  "UIN21Controller",
+  "UIActivityN22MainController",
+  "UIN23Main",
+  "UIActivityN24MainController",
+  "UIActivityN25MainController",
+  "UIN25IdolLogin",
+  "UIN25IdolGame",
+  "UIN25VampireMain",
+  "UIN25VampireTalentTree",
+  "UIMiniMazeChooseRelicController",
+  "UIMiniMazeChoosePartnerController",
+  "UIActivityN26MainController",
+  "UIN27Controller",
+  "UIN27PostInnerGameController",
+  "UIActivityN28MainController",
+  "UIN28AVGMain",
+  "UIN28AVGStoryGainEvidence",
+  "UIN28AVGStoryShowEvidence",
+  "UIN28AVGStoryEvidenceBook",
+  "UIN28GronruGameSelectPlayer",
+  "UIN28GronruGameLevel",
+  "UIBounceMainController",
+  "UIBounceMainController2",
+  "UIBounceMainControllerBoss1",
+  "UIBounceMainControllerBoss2",
+  "UIBounceMainControllerBoss3",
+  "UIActivityN29MainController",
+  "UIN29DetectiveLogin",
+  "UIActivityN29DetectiveMapController",
+  "UIN29DetectivePersonController",
+  "UIN29DetectiveSuspectController",
+  "UIN29DetectiveReasoning",
+  "UIPetEquipControllerLock",
+  "UIPetEquipControllerUnLock",
+  "UIActivityN30MainController",
+  "UIActivityN31MainController",
+  "UIWorldBossController_B",
+  "UIWorldBossController_C",
+  "UIActivityN32MainController",
+  "UIN32MultiLineMain",
+  "UIN32MultiLineMapController",
+  "UIN32MultiLineMapController_Doc",
+  "UIUpLevelInterfaceController",
+  "UIActivityN33DateMainController1",
+  "UIActivityN33DateMainController2",
+  "UIActivityN33DateMainController3",
+  "UIActivityN33LevelController",
+  "UIActivityN33BuildingInfo1",
+  "UIActivityN33BuildingInfo2",
+  "UIActivityN33ArchUpgradeReward",
+  "UIActivityN33DatePetController",
+  "UIActivityN33MainController",
+  "UIS1MainController",
+  "UISeasonMain",
+  "UISeasonBuffLevelUp",
+  "UISeasonBuffLevelUp2",
+  "UISeasonBubble",
+  "SeasonRewardShowEnd",
+  "SeasonDaily",
+  "UIActivityN34MainController",
+  "S2BalanceGame",
+  "UIActivityCN6N35MainController",
+  "UIDrawCardController_PetWish",
+  "UISeasonMainS2",
+  "UICN7N36MainController",
+  "S3TelescopeGame",
+  "UIN37MainController",
+  "UIEliminateController1",
+  "UIEliminateController2",
+  "UIEliminateLevelController",
+  "S3BackpackGame",
+  "S3BackpackGameGrid",
+  "UIN38MainController",
+  "UIActivitySouthSeaCN9MainController",
+  "UICN9MainGameController",
+  "UICN9MainGameControllerInfinite",
+  "UIN39MainController",
+  "UINExploreMainController",
+  "UILuckLandMainGameController",
+  "UISeasonMainS4",
+  "UIS4TradeMainController",
+  "UILuckLandMainGameController2",
+  "UISeasonTalentTreeController",
+  "UICN12N41MainController",
+  "UIActivityN42MainController",
+  "UIN42AVGMain",
+  "UIN42AVGStoryGainEvidence",
+  "UIN42AVGStoryShowEvidence",
+  "UIN42AVGStoryEvidenceBook",
+  "UIN43MainController",
+  "UISeasonMazeBead",
+  "UISeasonMazeBeadInner",
+  "UISeasonMazeBeadInner2",
+  "UICN17N46FishingGameController",
+  "UISideEnterCenterController_N4CC",
+  "UILuckLandCardBag"
+}
 _autoEnum("GuideOpenUI", GuideOpenUI)
-GuideOpenUIShare = {UISeasonMazeEnterController = 2010, UISeasonMazeScoreTask = 2011, UISeasonMazeSelectDifficultyPopup = 2012, UISeasonMazeScene = 2013, UISeasonMazeRoomStage = 2014, UISeasonMazeScene_2rd = 2015, UISeasonMazeEnterController2 = 2016, UISeasonMazeRoom_Campsites = 2006, UISeasonMazeRoomMining = 2007, UISeasonMazeRoomFlea = 2008, UISeasonMazeRoom_Altar = 2009, UICN20AlchemyMainController = 3001, UICN20N49Ryza_Shop = 3002, UICN20N49LineTalentController = 3003, UICN20N49TreeController = 3004}
+GuideOpenUIShare = {
+  UISeasonMazeEnterController = 2010,
+  UISeasonMazeScoreTask = 2011,
+  UISeasonMazeSelectDifficultyPopup = 2012,
+  UISeasonMazeScene = 2013,
+  UISeasonMazeRoomStage = 2014,
+  UISeasonMazeScene_2rd = 2015,
+  UISeasonMazeEnterController2 = 2016,
+  UISeasonMazeRoom_Campsites = 2006,
+  UISeasonMazeRoomMining = 2007,
+  UISeasonMazeRoomFlea = 2008,
+  UISeasonMazeRoom_Altar = 2009,
+  UICN20AlchemyMainController = 3001,
+  UICN20N49Ryza_Shop = 3002,
+  UICN20N49LineTalentController = 3003,
+  UICN20N49TreeController = 3004
+}
 local GuidePlayerHandle = {LinkEnd = 1, MainSkillFinish = 2}
 _enum("GuidePlayerHandle", GuidePlayerHandle)
-local GuidePlaySkillFinish = {LinkEnd = 1, MainSkillFinish = 2, ChainSkillFinish = 3}
+local GuidePlaySkillFinish = {
+  LinkEnd = 1,
+  MainSkillFinish = 2,
+  ChainSkillFinish = 3
+}
 _enum("GuidePlaySkillFinish", GuidePlaySkillFinish)
-GuideInvokeType = {None = 0, GuidePath = 1, CastActiveSkill = 2, GuideWeakPath = 3, GuidePiece = 4, GuidePieceInfinity = 5, GuidePieceInfinityDontYield = 6, GuidePreviewLinkLine = 7}
+GuideInvokeType = {
+  None = 0,
+  GuidePath = 1,
+  CastActiveSkill = 2,
+  GuideWeakPath = 3,
+  GuidePiece = 4,
+  GuidePieceInfinity = 5,
+  GuidePieceInfinityDontYield = 6,
+  GuidePreviewLinkLine = 7
+}
 _enum("GuideInvokeType", GuideInvokeType)
-GuideRefreshType = {None = 0, StartGuidePath = 1, PauseGuidePath = 2, StopGuidePath = 3, ShowGuideLine = 4, RestartGuidePath = 5}
+GuideRefreshType = {
+  None = 0,
+  StartGuidePath = 1,
+  PauseGuidePath = 2,
+  StopGuidePath = 3,
+  ShowGuideLine = 4,
+  RestartGuidePath = 5
+}
 _enum("GuideRefreshType", GuideRefreshType)
-local GuideCompleteType = {"Click", "DoubeClick", "AnyClickOnlyTrigger", "HideCancelLineBtn", "ReleaseActiveSkill", "PressOrAction", "SelfClick", "CompleteImmediately", "OperationComplete", "TaskState"}
+local GuideCompleteType = {
+  "Click",
+  "DoubeClick",
+  "AnyClickOnlyTrigger",
+  "HideCancelLineBtn",
+  "ReleaseActiveSkill",
+  "PressOrAction",
+  "SelfClick",
+  "CompleteImmediately",
+  "OperationComplete",
+  "TaskState"
+}
 _autoEnum("GuideCompleteType", GuideCompleteType)
-local GuideBtnType = {"UIMapNodeItem", "UIWidgetBattlePet", "UIWidgetPetSkill", "UIBattleTeamStateEnter", "UIWidgetBattlePetWeak", "UIWidgetBattlePetPress", "UIHeartItem", "UIConsumableMaterialItem", "UITeamItem", "UIPetItem", "UIQuestStoryListItem", "UIQuestStoryDetailItemGet", "UIQuestStoryDetailItemGoto", "UIQuestTypeBtnItem", "UIQuestGrowthLook", "UIDrawCardAwardItem", "UIResEntry", "UIDrawCardBack", "UITurnInfo", "UIShopMainTab", "UIShopSecretGood", "UIBattleCollect", "UIBattleRound", "UITrapSkillIcon", "UITrapSkillBtn", "UIResDetailGOBtn", "UIExtRoot", "UIAircraft3DUI", "UIAircraftFireIcon", "UIAircraftLightIcon", "UIAircraftRoomLB", "UIAircraftRoomBtnFacility", "UIAircraftRoomBtnSettle", "UIAircraftRoomAddCell", "UIAircraftEnterBuildIcon", "UIQuestGrowthAward", "UIResEntryBtn", "UIMazsEntryBtn", "UIExtEntryBtn", "UIMazeHp", "UIMazeLight", "UIAircraftLevelUp", "UIResDouble", "UIBattleChangeLeader", "UIChangeLeader", "UITowerHome", "UIShengWuPackItem", "UIGoChainPreview", "UITowerEntry", "UIQuestSideGotoBtn", "UITeamChangeItemHP", "UIBattleItemHP", "UIBattleSpeed", "UIAirBackBtn", "UIWeChatRole", "UITeamHelpPetIcon", "UITeamItemHelpPet", "UIDispatchMapTaskBG", "UIDispatchDetailItem", "UIDispatchDetailItemExtraReward", "UIAircraftDecorateListItem", "UIAircraftDecorateFurnitureItem", "UIAircraftRoomDecorateBtn", "UIDiscoveryGuideToNode", "UIDispatchRoomInfo", "UIAirHomeBtn", "UIMiniGameGuest", "UIMiniGameOrderformItem", "UITacticDiffBtn", "UIHomeLandShopOrderTag", "UIHomeLandShopOrderSubmitBtn", "UIHomeLandShopShopTag", "UIHomeLandShopShopBuyBtn", "UIHomeLandDomitoryMember", "UIHomeDomitorySettle", "UIInteractPointController", "UIForgeItem", "UIForgeSequenceItem", "UIForgeSequenceItemSpeedBtn", "UIHomelandBuild", "DiffStage1", "DiffStage2", "UIForgeSequenceItemGet", "UIForgeSpecialTag", "UIForgeSpecialLandTag", "UIEditSpecialTag", "UIEditSpecialLand", "UIN20MiniGameGuest", "UIN20MiniGameOrderformItem", "UISailingChapter", "UIFeatureScanControllerStep1", "UIFeatureScanControllerStep2", "UIN25VampireTalentTreeFirstItem", "UIN25VampireTalentTreeFirstItemTalent", "UIBattleMultiSkillIndex1", "UIBattleMultiSkillIndex2", "UIN27PostInnerGameControllerFirstOrder", "UIN27PostInnerGameControllerFirstItem", "UIN29DetectivePersonController", "UIActivityN29DetectiveMapController", "UIN29DetectiveReasoningOption1", "UIN29DetectiveReasoningOption2", "UIN29DetectiveReasoningOption4", "UIBattleMultiSkillIndex3", "UIN32MultiLineMainFirstFolder", "UIN32MultiLineMapControllerFirstDialog", "UIGradeInterfaceController_item_3rd", "UIActivityN33DateMainControllerBtn1", "UIActivityN33DateMainControllerBtn2", "UIActivityN33DateMainControllerBtn3", "UIActivityN33DateMainControllerBtn4", "UIActivityN33DateMainControllerBtn5", "UIActivityN33DateMainControllerBtn6", "UIActivityN33DateMainControllerBtn7", "UISeasonS1CollectionTab", "UICN7N36PostSelectItem", "UICN7N36PostSelectItemBtn", "UITalent_Get_1P_2N_Icon"}
+local GuideBtnType = {
+  "UIMapNodeItem",
+  "UIWidgetBattlePet",
+  "UIWidgetPetSkill",
+  "UIBattleTeamStateEnter",
+  "UIWidgetBattlePetWeak",
+  "UIWidgetBattlePetPress",
+  "UIHeartItem",
+  "UIConsumableMaterialItem",
+  "UITeamItem",
+  "UIPetItem",
+  "UIQuestStoryListItem",
+  "UIQuestStoryDetailItemGet",
+  "UIQuestStoryDetailItemGoto",
+  "UIQuestTypeBtnItem",
+  "UIQuestGrowthLook",
+  "UIDrawCardAwardItem",
+  "UIResEntry",
+  "UIDrawCardBack",
+  "UITurnInfo",
+  "UIShopMainTab",
+  "UIShopSecretGood",
+  "UIBattleCollect",
+  "UIBattleRound",
+  "UITrapSkillIcon",
+  "UITrapSkillBtn",
+  "UIResDetailGOBtn",
+  "UIExtRoot",
+  "UIAircraft3DUI",
+  "UIAircraftFireIcon",
+  "UIAircraftLightIcon",
+  "UIAircraftRoomLB",
+  "UIAircraftRoomBtnFacility",
+  "UIAircraftRoomBtnSettle",
+  "UIAircraftRoomAddCell",
+  "UIAircraftEnterBuildIcon",
+  "UIQuestGrowthAward",
+  "UIResEntryBtn",
+  "UIMazsEntryBtn",
+  "UIExtEntryBtn",
+  "UIMazeHp",
+  "UIMazeLight",
+  "UIAircraftLevelUp",
+  "UIResDouble",
+  "UIBattleChangeLeader",
+  "UIChangeLeader",
+  "UITowerHome",
+  "UIShengWuPackItem",
+  "UIGoChainPreview",
+  "UITowerEntry",
+  "UIQuestSideGotoBtn",
+  "UITeamChangeItemHP",
+  "UIBattleItemHP",
+  "UIBattleSpeed",
+  "UIAirBackBtn",
+  "UIWeChatRole",
+  "UITeamHelpPetIcon",
+  "UITeamItemHelpPet",
+  "UIDispatchMapTaskBG",
+  "UIDispatchDetailItem",
+  "UIDispatchDetailItemExtraReward",
+  "UIAircraftDecorateListItem",
+  "UIAircraftDecorateFurnitureItem",
+  "UIAircraftRoomDecorateBtn",
+  "UIDiscoveryGuideToNode",
+  "UIDispatchRoomInfo",
+  "UIAirHomeBtn",
+  "UIMiniGameGuest",
+  "UIMiniGameOrderformItem",
+  "UITacticDiffBtn",
+  "UIHomeLandShopOrderTag",
+  "UIHomeLandShopOrderSubmitBtn",
+  "UIHomeLandShopShopTag",
+  "UIHomeLandShopShopBuyBtn",
+  "UIHomeLandDomitoryMember",
+  "UIHomeDomitorySettle",
+  "UIInteractPointController",
+  "UIForgeItem",
+  "UIForgeSequenceItem",
+  "UIForgeSequenceItemSpeedBtn",
+  "UIHomelandBuild",
+  "DiffStage1",
+  "DiffStage2",
+  "UIForgeSequenceItemGet",
+  "UIForgeSpecialTag",
+  "UIForgeSpecialLandTag",
+  "UIEditSpecialTag",
+  "UIEditSpecialLand",
+  "UIN20MiniGameGuest",
+  "UIN20MiniGameOrderformItem",
+  "UISailingChapter",
+  "UIFeatureScanControllerStep1",
+  "UIFeatureScanControllerStep2",
+  "UIN25VampireTalentTreeFirstItem",
+  "UIN25VampireTalentTreeFirstItemTalent",
+  "UIBattleMultiSkillIndex1",
+  "UIBattleMultiSkillIndex2",
+  "UIN27PostInnerGameControllerFirstOrder",
+  "UIN27PostInnerGameControllerFirstItem",
+  "UIN29DetectivePersonController",
+  "UIActivityN29DetectiveMapController",
+  "UIN29DetectiveReasoningOption1",
+  "UIN29DetectiveReasoningOption2",
+  "UIN29DetectiveReasoningOption4",
+  "UIBattleMultiSkillIndex3",
+  "UIN32MultiLineMainFirstFolder",
+  "UIN32MultiLineMapControllerFirstDialog",
+  "UIGradeInterfaceController_item_3rd",
+  "UIActivityN33DateMainControllerBtn1",
+  "UIActivityN33DateMainControllerBtn2",
+  "UIActivityN33DateMainControllerBtn3",
+  "UIActivityN33DateMainControllerBtn4",
+  "UIActivityN33DateMainControllerBtn5",
+  "UIActivityN33DateMainControllerBtn6",
+  "UIActivityN33DateMainControllerBtn7",
+  "UISeasonS1CollectionTab",
+  "UICN7N36PostSelectItem",
+  "UICN7N36PostSelectItemBtn",
+  "UITalent_Get_1P_2N_Icon"
+}
 _autoEnum("GuideBtnType", GuideBtnType)
-_ENV.GuideBtnTypeShare = {UISeasonMazeScene_M_Card = 2000, UISeasonMazeBead_First_Bead = 2001}
-local GuideTriggerClassName = {"BattleStartTrigger", "RoundTrigger", "OpenUITrigger", "PlayerHandleFinishTrigger", "PlaySkillFinishTrigger", "LevelFinishTrigger", "GuideDoneTrigger", "ShowGuideCancelAreaTrigger", "PowerReadyTrigger", "LoginTrigger", "BattleCompleteTrigger", "PetGradeTrigger", "PetAwakeTrigger", "RoomEnterTrigger", "ShowResSwitchTrigger", "MissionAutoBattleTrigger", "ResAutoBattleTrigger", "PlotEnterFinishTrigger", "LevelFinishAircraftTrigger", "LeaveAircraftTrigger", "PetGradeDoneTrigger", "OpenTeamUITrigger", "EntertainmentRoomUnlockTrigger", "OpenAirRoomFacilityTrigger", "OpenAirRoomSettleTrigger", "BuildAirRoomTrigger", "TaskStateTrigger", "BattleFinishTrigger", "PlaySkillRealFinishTrigger", "PlaySkillRealFinishTriggerWithoutRoundLimit", "PlaySkillRealFinishTriggerWithoutRoundLimitWithTimes", "N28BounceGameArriveTarget"}
+GuideBtnTypeShare = {UISeasonMazeScene_M_Card = 2000, UISeasonMazeBead_First_Bead = 2001}
+local GuideTriggerClassName = {
+  "BattleStartTrigger",
+  "RoundTrigger",
+  "OpenUITrigger",
+  "PlayerHandleFinishTrigger",
+  "PlaySkillFinishTrigger",
+  "LevelFinishTrigger",
+  "GuideDoneTrigger",
+  "ShowGuideCancelAreaTrigger",
+  "PowerReadyTrigger",
+  "LoginTrigger",
+  "BattleCompleteTrigger",
+  "PetGradeTrigger",
+  "PetAwakeTrigger",
+  "RoomEnterTrigger",
+  "ShowResSwitchTrigger",
+  "MissionAutoBattleTrigger",
+  "ResAutoBattleTrigger",
+  "PlotEnterFinishTrigger",
+  "LevelFinishAircraftTrigger",
+  "LeaveAircraftTrigger",
+  "PetGradeDoneTrigger",
+  "OpenTeamUITrigger",
+  "EntertainmentRoomUnlockTrigger",
+  "OpenAirRoomFacilityTrigger",
+  "OpenAirRoomSettleTrigger",
+  "BuildAirRoomTrigger",
+  "TaskStateTrigger",
+  "BattleFinishTrigger",
+  "PlaySkillRealFinishTrigger",
+  "PlaySkillRealFinishTriggerWithoutRoundLimit",
+  "PlaySkillRealFinishTriggerWithoutRoundLimitWithTimes",
+  "N28BounceGameArriveTarget"
+}
 _enum("GuideTriggerClassName", GuideTriggerClassName)
-local GuideTriggerType = {BattleStartTrigger = 1, RoundTrigger = 2, OpenUITrigger = 3, PlayerHandleFinishTrigger = 4, PlaySkillFinishTrigger = 5, LevelFinishTrigger = 6, GuideDoneTrigger = 7, ShowGuideCancelAreaTrigger = 8, PowerReadyTrigger = 9, LoginTrigger = 10, BattleCompleteTrigger = 11, PetGradeTrigger = 12, PetAwakeTrigger = 13, RoomEnterTrigger = 14, ShowResSwitchTrigger = 15, MissionAutoBattleTrigger = 16, ResAutoBattleTrigger = 17, PlotEnterFinishTrigger = 18, LevelFinishAircraftTrigger = 19, LeaveAircraftTrigger = 20, PetGradeDoneTrigger = 21, OpenTeamUITrigger = 22, EntertainmentRoomUnlockTrigger = 23, OpenAirRoomFacilityTrigger = 24, OpenAirRoomSettleTrigger = 25, BuildAirRoomTrigger = 26, TaskStateTrigger = 27, BattleFinishTrigger = 28, PlaySkillRealFinishTrigger = 29, PlaySkillRealFinishTriggerWithoutRoundLimit = 30, PlaySkillRealFinishTriggerWithoutRoundLimitWithTimes = 31, N28BounceGameArriveTarget = 32}
+local GuideTriggerType = {
+  BattleStartTrigger = 1,
+  RoundTrigger = 2,
+  OpenUITrigger = 3,
+  PlayerHandleFinishTrigger = 4,
+  PlaySkillFinishTrigger = 5,
+  LevelFinishTrigger = 6,
+  GuideDoneTrigger = 7,
+  ShowGuideCancelAreaTrigger = 8,
+  PowerReadyTrigger = 9,
+  LoginTrigger = 10,
+  BattleCompleteTrigger = 11,
+  PetGradeTrigger = 12,
+  PetAwakeTrigger = 13,
+  RoomEnterTrigger = 14,
+  ShowResSwitchTrigger = 15,
+  MissionAutoBattleTrigger = 16,
+  ResAutoBattleTrigger = 17,
+  PlotEnterFinishTrigger = 18,
+  LevelFinishAircraftTrigger = 19,
+  LeaveAircraftTrigger = 20,
+  PetGradeDoneTrigger = 21,
+  OpenTeamUITrigger = 22,
+  EntertainmentRoomUnlockTrigger = 23,
+  OpenAirRoomFacilityTrigger = 24,
+  OpenAirRoomSettleTrigger = 25,
+  BuildAirRoomTrigger = 26,
+  TaskStateTrigger = 27,
+  BattleFinishTrigger = 28,
+  PlaySkillRealFinishTrigger = 29,
+  PlaySkillRealFinishTriggerWithoutRoundLimit = 30,
+  PlaySkillRealFinishTriggerWithoutRoundLimitWithTimes = 31,
+  N28BounceGameArriveTarget = 32
+}
 _enum("GuideTriggerType", GuideTriggerType)
-local GuideWeakLineConst = {WaitTime = 1000, OpenChapter = 2, Duration = 0.5, PauseTime = 3}
+local GuideWeakLineConst = {
+  WaitTime = 1000,
+  OpenChapter = 2,
+  Duration = 0.5,
+  PauseTime = 3
+}
 _enum("GuideWeakLineConst", GuideWeakLineConst)
-local GuideGotoType = {UIDiscovery = 1, UIPlayer = 2, UICard = 3, UIQuest = 4, UIMain = 5, UITeam = 6, UIHelp = 7, UIAircraft = 8, FromAircraftTo = 9, CloseCurUI = 10, UIVideo = 11}
+local GuideGotoType = {
+  UIDiscovery = 1,
+  UIPlayer = 2,
+  UICard = 3,
+  UIQuest = 4,
+  UIMain = 5,
+  UITeam = 6,
+  UIHelp = 7,
+  UIAircraft = 8,
+  FromAircraftTo = 9,
+  CloseCurUI = 10,
+  UIVideo = 11
+}
 _enum("GuideGotoType", GuideGotoType)
-local GuideModelType = {Monster = 1, Trap = 2, ChessPet = 3, ChessMonster = 4}
+local GuideModelType = {
+  Monster = 1,
+  Trap = 2,
+  ChessPet = 3,
+  ChessMonster = 4
+}
 _enum("GuideModelType", GuideModelType)
-local GuideCircleType = {Grid = 1, Monster = 2, Trap = 3, Finger = 4, AirPet = 5, AirSmelt = 6, AirSandBox = 7, AirTactic = 8, ClickGrid = 9, SeasonEventPoint = 10, SeasonMazePoint = 11}
+local GuideCircleType = {
+  Grid = 1,
+  Monster = 2,
+  Trap = 3,
+  Finger = 4,
+  AirPet = 5,
+  AirSmelt = 6,
+  AirSandBox = 7,
+  AirTactic = 8,
+  ClickGrid = 9,
+  SeasonEventPoint = 10,
+  SeasonMazePoint = 11
+}
 _enum("GuideCircleType", GuideCircleType)
 local GuideGameCommandType = {SkillReady = 1}
 _enum("GuideGameCommandType", GuideGameCommandType)
-_ENV.GuideConst = {}
--- DECOMPILER ERROR at PC613: Confused about usage of register: R14 in 'UnsetPending'
+GuideConst = {}
 
-;
-(_ENV.GuideConst).StartPos = function(startPos)
-  -- function num : 0_0 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
+function GuideConst.StartPos(startPos)
   if not startPos then
     if not GuideConst._startPos then
-      GuideConst._startPos = Vector3((ResolutionManager.RealWidth)() * 0.5, 20, 0)
+      GuideConst._startPos = Vector3(ResolutionManager.RealWidth() * 0.5, 20, 0)
     end
     return GuideConst._startPos
   else
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
     GuideConst._startPos = startPos
   end
 end
 
--- DECOMPILER ERROR at PC625: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.GuideConst).guide_team_clear_guideid = (((_ENV.Cfg).cfg_guide_const).guide_team_clear_guideid).ArrayValue
--- DECOMPILER ERROR at PC629: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.GuideConst).EffectLayer = 18
--- DECOMPILER ERROR at PC634: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.GuideConst).AircraftGGuideId = 2003
-
+GuideConst.guide_team_clear_guideid = Cfg.cfg_guide_const.guide_team_clear_guideid.ArrayValue
+GuideConst.EffectLayer = 18
+GuideConst.AircraftGGuideId = 2003

@@ -1,63 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/result/ui_eliminate_result_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateResultItem", UICustomWidget)
 UIEliminateResultItem = UIEliminateResultItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateResultItem.Constructor = function(self)
-  -- function num : 0_0
+function UIEliminateResultItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateResultItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIEliminateResultItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateResultItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIEliminateResultItem:_GetComponents()
   self._assetContent = self:GetUIComponent("UISelectObjectPath", "Asset")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateResultItem.SetData = function(self, itemInfo, clickCallback)
-  -- function num : 0_3
+function UIEliminateResultItem:SetData(itemInfo, clickCallback)
   self._itemInfo = itemInfo
   self._clickCallback = clickCallback
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateResultItem._InitComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._asset = (self._assetContent):SpawnObject("UIAsset")
-  local cfg = (Cfg.cfg_item)[(self._itemInfo).ID]
+function UIEliminateResultItem:_InitComponents()
+  self._asset = self._assetContent:SpawnObject("UIAsset")
+  local cfg = Cfg.cfg_item[self._itemInfo.ID]
   local param = {}
-  param.text = (self._itemInfo).Count
+  param.text = self._itemInfo.Count
   param.quality = cfg.Color
   param.icon = cfg.Icon
   param.showBG = true
-  ;
-  (self._asset):SetData((self._itemInfo).ID)
-  ;
-  (self._asset):SetItemData(param)
+  self._asset:SetData(self._itemInfo.ID)
+  self._asset:SetItemData(param)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateResultItem.FullBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIEliminateResultItem:FullBtnOnClick(go)
   if self._clickCallback then
-    (self._clickCallback)((self._itemInfo).ID, (go.transform).position)
+    self._clickCallback(self._itemInfo.ID, go.transform.position)
   end
 end
-
-

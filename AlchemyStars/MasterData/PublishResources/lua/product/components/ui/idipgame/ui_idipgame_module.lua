@@ -1,184 +1,121 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/idipgame/ui_idipgame_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIIdipgameModule", UIModule)
 UIIdipgameModule = UIIdipgameModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIIdipgameModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIIdipgameModule:Constructor()
   self._Module = self:GetModule(IdipgameModule)
   self:AttachEvent(GameEventType.IdipBanDataEvent, self.HandleData)
   self:AttachEvent(GameEventType.LoginIdipActive, self.ActiveHandle)
   self:AttachEvent(GameEventType.SwitchUIStateFinish, self.UIHandle)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIdipgameModule.Dispose = function(self)
-  -- function num : 0_1
+function UIIdipgameModule:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIdipgameModule.HandleData = function(self, idipType)
-  -- function num : 0_2 , upvalues : _ENV
+function UIIdipgameModule:HandleData(idipType)
   if idipType == IDIPBanType.IDIPBan_Shutup then
     self:ShutupUI()
+  elseif idipType == IDIPBanType.IDIPBan_Account then
+    self:ShowUI()
+  elseif idipType == IDIPBanType.IDIPBan_Nick then
+    self:TextUI(idipType)
+  elseif idipType == IDIPBanType.IDIPBan_Signs then
+    self:TextUI(idipType)
+  elseif idipType == IDIPBanType.IDIPBan_Teamdes then
+    self:TextUI(idipType)
   else
-    if idipType == IDIPBanType.IDIPBan_Account then
-      self:ShowUI()
-    else
-      if idipType == IDIPBanType.IDIPBan_Nick then
-        self:TextUI(idipType)
-      else
-        if idipType == IDIPBanType.IDIPBan_Signs then
-          self:TextUI(idipType)
-        else
-          if idipType == IDIPBanType.IDIPBan_Teamdes then
-            self:TextUI(idipType)
-          else
-            self:HandleRelogin()
-          end
-        end
-      end
-    end
+    self:HandleRelogin()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIdipgameModule.UIHandle = function(self, uiStateType)
-  -- function num : 0_3
+function UIIdipgameModule:UIHandle(uiStateType)
   self:ShowUI()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIdipgameModule.ShowUI = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local curUIState = ((GameGlobal.UIStateManager)()):CurUIStateType()
+function UIIdipgameModule:ShowUI()
+  local curUIState = GameGlobal.UIStateManager():CurUIStateType()
   if curUIState == UIStateType.BattleLoading or curUIState == UIStateType.UIBattle then
-    return 
+    return
   end
   self:HandleLogout()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIdipgameModule.ShutupUI = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local ct, desc = (self._Module):GetData(IDIPBanType.IDIPBan_Shutup)
+function UIIdipgameModule:ShutupUI()
+  local ct, desc = self._Module:GetData(IDIPBanType.IDIPBan_Shutup)
   if ct <= 0 then
-    return 
+    return
   end
-  local cburl = nil
-  do
-    if desc == "" then
-      local t = TimeToDate(ct)
-      desc = (StringTable.Get)("str_common_idip_shutup", t)
-      cburl = function(url)
-    -- function num : 0_5_0 , upvalues : _ENV
-    (SDKProxy:GetInstance()):OpenUrl(url)
-  end
-
+  local cburl
+  if desc == "" then
+    local t = TimeToDate(ct)
+    desc = StringTable.Get("str_common_idip_shutup", t)
+    
+    function cburl(url)
+      SDKProxy:GetInstance():OpenUrl(url)
     end
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", desc, nil, "", cburl)
   end
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", desc, nil, "", cburl)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIdipgameModule.ShutupUI = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local ct, desc = (self._Module):GetData(IDIPBanType.IDIPBan_Shutup)
+function UIIdipgameModule:ShutupUI()
+  local ct, desc = self._Module:GetData(IDIPBanType.IDIPBan_Shutup)
   if ct <= 0 then
-    return 
+    return
   end
-  local cburl = nil
-  do
-    if desc == "" then
-      local t = TimeToDate(ct)
-      desc = (StringTable.Get)("str_common_idip_shutup", t)
-      cburl = function(url)
-    -- function num : 0_6_0 , upvalues : _ENV
-    (SDKProxy:GetInstance()):OpenUrl(url)
-  end
-
+  local cburl
+  if desc == "" then
+    local t = TimeToDate(ct)
+    desc = StringTable.Get("str_common_idip_shutup", t)
+    
+    function cburl(url)
+      SDKProxy:GetInstance():OpenUrl(url)
     end
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", desc, nil, "", cburl)
   end
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", desc, nil, "", cburl)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIdipgameModule.TextUI = function(self, idipType)
-  -- function num : 0_7 , upvalues : _ENV
-  local ct, desc = (self._Module):GetData(idipType)
+function UIIdipgameModule:TextUI(idipType)
+  local ct, desc = self._Module:GetData(idipType)
   if ct <= 0 then
-    return 
+    return
   end
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", desc)
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", desc)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIdipgameModule.HandleLogout = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local ct, desc = (self._Module):GetData(IDIPBanType.IDIPBan_Account)
+function UIIdipgameModule:HandleLogout()
+  local ct, desc = self._Module:GetData(IDIPBanType.IDIPBan_Account)
   if ct <= 0 then
-    return 
+    return
   end
-  local cburl = nil
-  do
-    if desc == "" then
-      local t = TimeToDate(ct)
-      desc = (StringTable.Get)("str_common_idip_banacc", t)
-      cburl = function(url)
-    -- function num : 0_8_0 , upvalues : _ENV
-    (SDKProxy:GetInstance()):OpenUrl(url)
-  end
-
-    end
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", desc, function()
-    -- function num : 0_8_1 , upvalues : _ENV
-    if ((GameGlobal.UIStateManager)()):CurUIStateType() == UIStateType.LoginEmpty then
-      ((GameGlobal.GameLogic)()):BackToLogin(false, LoginModule, "player logout", false)
+  local cburl
+  if desc == "" then
+    local t = TimeToDate(ct)
+    desc = StringTable.Get("str_common_idip_banacc", t)
+    
+    function cburl(url)
+      SDKProxy:GetInstance():OpenUrl(url)
     end
   end
-, "", cburl)
-  end
-end
-
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIdipgameModule.HandleRelogin = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if (self._Module):IsRelogin() == false then
-    return 
-  end
-  local desc = (StringTable.Get)("str_common_idip_relogin")
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", desc, function()
-    -- function num : 0_9_0 , upvalues : _ENV
-    if ((GameGlobal.UIStateManager)()):CurUIStateType() == UIStateType.LoginEmpty then
-      ((GameGlobal.GameLogic)()):BackToLogin(false, LoginModule, "player logout", false)
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", desc, function()
+    if GameGlobal.UIStateManager():CurUIStateType() == UIStateType.LoginEmpty then
+    else
+      GameGlobal.GameLogic():BackToLogin(false, LoginModule, "player logout", false)
     end
+  end, "", cburl)
+end
+
+function UIIdipgameModule:HandleRelogin()
+  if self._Module:IsRelogin() == false then
+    return
   end
-)
+  local desc = StringTable.Get("str_common_idip_relogin")
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", desc, function()
+    if GameGlobal.UIStateManager():CurUIStateType() == UIStateType.LoginEmpty then
+    else
+      GameGlobal.GameLogic():BackToLogin(false, LoginModule, "player logout", false)
+    end
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIdipgameModule.ActiveHandle = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_login_idip_kick"))
+function UIIdipgameModule:ActiveHandle()
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_login_idip_kick"))
 end
-
-

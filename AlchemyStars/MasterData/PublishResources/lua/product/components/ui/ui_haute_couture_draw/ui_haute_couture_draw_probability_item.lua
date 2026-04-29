@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw/ui_haute_couture_draw_probability_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawProbabilityItem", UICustomWidget)
 UIHauteCoutureDrawProbabilityItem = UIHauteCoutureDrawProbabilityItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawProbabilityItem.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawProbabilityItem:Constructor()
   self._drawTimes = 0
   self._rareLevel = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawProbabilityItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCoutureDrawProbabilityItem:OnShow(uiParams)
   self._atlas = self:GetAsset("UIHauteCoutureKL.spriteatlas", LoadType.SpriteAtlas)
   self._prizeName = self:GetUIComponent("UILocalizationText", "prizeName")
   self._guangBoObj = self:GetGameObject("guangboIcon")
@@ -31,11 +21,8 @@ UIHauteCoutureDrawProbabilityItem.OnShow = function(self, uiParams)
   self._detailTxt = self:GetUIComponent("UILocalizationText", "detailTxt")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawProbabilityItem.SetData = function(self, prizeData, drawTimes, hasGot, probablity, replace)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._prizeName):SetText((StringTable.Get)(prizeData.Name))
+function UIHauteCoutureDrawProbabilityItem:SetData(prizeData, drawTimes, hasGot, probablity, replace)
+  self._prizeName:SetText(StringTable.Get(prizeData.Name))
   if drawTimes then
     self._drawTimes = drawTimes
   end
@@ -43,92 +30,52 @@ UIHauteCoutureDrawProbabilityItem.SetData = function(self, prizeData, drawTimes,
     self._rareLevel = prizeData.RareLevel
   end
   if hasGot then
-    (self._detail):SetText((StringTable.Get)("str_senior_skin_draw_got"))
+    self._detail:SetText(StringTable.Get("str_senior_skin_draw_got"))
+  elseif self._rareLevel - 1 > self._drawTimes then
+    self._detailTxt:SetText(StringTable.Get("str_senior_skin_draw_rule_show_get_probability"))
+    self._detailNum:SetText(StringTable.Get("str_senior_skin_draw_rule_probability_5_times", self._rareLevel - 1))
+    self._detailBg.sprite = self._atlas:GetSprite("kalian_senior_zjm_di24")
   else
-    if self._drawTimes < self._rareLevel - 1 then
-      (self._detailTxt):SetText((StringTable.Get)("str_senior_skin_draw_rule_show_get_probability"))
-      ;
-      (self._detailNum):SetText((StringTable.Get)("str_senior_skin_draw_rule_probability_5_times", self._rareLevel - 1))
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._detailBg).sprite = (self._atlas):GetSprite("kalian_senior_zjm_di24")
-    else
-      ;
-      (self._detailNum):SetText((string.format)("%.2f", probablity) .. "%")
-      ;
-      (self._detailTxt):SetText((StringTable.Get)("str_senior_skin_draw_rule_get_probability"))
-      -- DECOMPILER ERROR at PC75: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._detailBg).sprite = (self._atlas):GetSprite("kalian_senior_zjm_di25")
-    end
+    self._detailNum:SetText(string.format("%.2f", probablity) .. "%")
+    self._detailTxt:SetText(StringTable.Get("str_senior_skin_draw_rule_get_probability"))
+    self._detailBg.sprite = self._atlas:GetSprite("kalian_senior_zjm_di25")
   end
-  local cfg = (Cfg.cfg_item)[prizeData.RewardID]
+  local cfg = Cfg.cfg_item[prizeData.RewardID]
   if replace then
-    cfg = (Cfg.cfg_item)[prizeData.ReplaceRewardID]
+    cfg = Cfg.cfg_item[prizeData.ReplaceRewardID]
   end
   if cfg == nil then
-    (Log.fatal)("cfg_item is nil.")
+    Log.fatal("cfg_item is nil.")
   else
-    ;
-    (self._prizeImg):LoadImage(cfg.Icon)
+    self._prizeImg:LoadImage(cfg.Icon)
   end
   if replace then
-    (self._count1):SetText(self:formatCount(prizeData.ReplaceRewardCount))
+    self._count1:SetText(self:formatCount(prizeData.ReplaceRewardCount))
   else
-    ;
-    (self._count1):SetText(self:formatCount(prizeData.RewardCount))
+    self._count1:SetText(self:formatCount(prizeData.RewardCount))
   end
-  ;
-  (self._count2):SetText(self:formatCount(prizeData.AppendGlow))
+  self._count2:SetText(self:formatCount(prizeData.AppendGlow))
   if prizeData.AppendGlow > 0 then
-    (self._guangBoObj):SetActive(true)
+    self._guangBoObj:SetActive(true)
   else
-    ;
-    (self._guangBoObj):SetActive(false)
+    self._guangBoObj:SetActive(false)
   end
-  -- DECOMPILER ERROR at PC137: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._nameBg).color = Color(1, 1, 1, 1)
-  -- DECOMPILER ERROR at PC146: Confused about usage of register: R7 in 'UnsetPending'
-
+  self._nameBg.color = Color(1, 1, 1, 1)
   if prizeData.UIType == 1 then
-    (self._bg).sprite = (self._atlas):GetSprite("kalian_senior_zjm_di15")
-  else
-    -- DECOMPILER ERROR at PC156: Confused about usage of register: R7 in 'UnsetPending'
-
-    if prizeData.UIType == 2 then
-      (self._bg).sprite = (self._atlas):GetSprite("kalian_senior_zjm_di16")
-    else
-      -- DECOMPILER ERROR at PC166: Confused about usage of register: R7 in 'UnsetPending'
-
-      if prizeData.UIType == 3 then
-        (self._bg).sprite = (self._atlas):GetSprite("kalian_senior_zjm_di17")
-      else
-        -- DECOMPILER ERROR at PC178: Confused about usage of register: R7 in 'UnsetPending'
-
-        if prizeData.UIType == 4 then
-          (self._nameBg).color = Color(1, 1, 1, 0)
-          -- DECOMPILER ERROR at PC184: Confused about usage of register: R7 in 'UnsetPending'
-
-          ;
-          (self._bg).sprite = (self._atlas):GetSprite("kalian_senior_zjm_di17")
-        end
-      end
-    end
+    self._bg.sprite = self._atlas:GetSprite("kalian_senior_zjm_di15")
+  elseif prizeData.UIType == 2 then
+    self._bg.sprite = self._atlas:GetSprite("kalian_senior_zjm_di16")
+  elseif prizeData.UIType == 3 then
+    self._bg.sprite = self._atlas:GetSprite("kalian_senior_zjm_di17")
+  elseif prizeData.UIType == 4 then
+    self._nameBg.color = Color(1, 1, 1, 0)
+    self._bg.sprite = self._atlas:GetSprite("kalian_senior_zjm_di17")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawProbabilityItem.formatCount = function(self, count)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHauteCoutureDrawProbabilityItem:formatCount(count)
   if count < 1000 then
     return count
   end
-  return (math.floor)(count / 1000) .. "k"
+  return math.floor(count / 1000) .. "k"
 end
-
-

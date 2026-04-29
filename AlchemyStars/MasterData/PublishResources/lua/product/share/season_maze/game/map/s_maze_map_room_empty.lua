@@ -1,31 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/map/s_maze_map_room_empty.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("s_maze_map_room_base")
 _class("SMazeMapRoom_Empty", SMazeMapRoomBase)
 SMazeMapRoom_Empty = SMazeMapRoom_Empty
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeMapRoom_Empty.Constructor = function(self)
-  -- function num : 0_0
+function SMazeMapRoom_Empty:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoom_Empty.OnTrigger = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SMazeMapRoom_Empty:OnTrigger()
   self:BindEvent(GameEventType.OnSeasonMazeRoomOperationFinish, self.OnTriggerComplete)
   self:ShowDialog("UISeasonMazeRoomEmpty", self:NodeID())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoom_Empty.OnTriggerComplete = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SMazeMapRoom_Empty:OnTriggerComplete()
   self:UnBindEvent(GameEventType.OnSeasonMazeRoomOperationFinish)
   self:Finish()
 end
-
-

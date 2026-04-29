@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_terget_underfoot.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_TargetUnderFoot", SkillScopeCalculator_Base)
 SkillScopeCalculator_TargetUnderFoot = SkillScopeCalculator_TargetUnderFoot
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_TargetUnderFoot.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_TargetUnderFoot:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local bodyAreaArray = bodyArea
   local param = scopeParam
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local bodyAreaPosList = {}
   local utilScopeSvc = world:GetService("UtilScopeCalc")
   local isHasMonster, monsterID = utilScopeSvc:IsPosHasMonster(centerPos)
@@ -20,19 +13,14 @@ SkillScopeCalculator_TargetUnderFoot.CalcRange = function(self, scopeType, scope
     local monsterEntity = world:GetEntityByID(monsterID)
     local buffComponent = monsterEntity:BuffComponent()
     if not buffComponent:HasBuffEffect(BuffEffectType.NotBeSelectedAsSkillTarget) then
-      local bodyAreaList = (monsterEntity:BodyArea()):GetArea()
-      local gridPos = (monsterEntity:GridLocation()):GetGridPos()
-      for _,bodyArea in ipairs(bodyAreaList) do
+      local bodyAreaList = monsterEntity:BodyArea():GetArea()
+      local gridPos = monsterEntity:GridLocation():GetGridPos()
+      for _, bodyArea in ipairs(bodyAreaList) do
         local workPos = gridPos + bodyArea
-        ;
-        (table.insert)(bodyAreaPosList, workPos)
+        table.insert(bodyAreaPosList, workPos)
       end
     end
   end
-  do
-    local result = SkillScopeResult:New(SkillScopeType.TargetUnderFoot, centerPos, bodyAreaPosList, bodyAreaPosList)
-    return result
-  end
+  local result = SkillScopeResult:New(SkillScopeType.TargetUnderFoot, centerPos, bodyAreaPosList, bodyAreaPosList)
+  return result
 end
-
-

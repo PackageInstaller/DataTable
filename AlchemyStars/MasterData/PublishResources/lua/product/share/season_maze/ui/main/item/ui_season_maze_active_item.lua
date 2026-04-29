@@ -1,244 +1,178 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/item/ui_season_maze_active_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeActiveItem", UICustomWidget)
 UISeasonMazeActiveItem = UISeasonMazeActiveItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeActiveItem.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMazeActiveItem:InitWidget()
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   self._poolGo = self:GetGameObject("pool")
   self._ItemInfoGo = self:GetGameObject("ItemInfo")
   self._useBtnGo = self:GetGameObject("UseBtn")
-  ;
-  (self._ItemInfoGo):SetActive(false)
+  self._ItemInfoGo:SetActive(false)
   self._itemInfoPos = self:GetUIComponent("Transform", "ItemInfo")
   self._itemNameTex = self:GetUIComponent("UILocalizationText", "itemNameTex")
   self._itemDescTex = self:GetUIComponent("UILocalizationText", "itemDescTex")
   self._itemCountTex = self:GetUIComponent("UILocalizationText", "itemCount")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._module = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._seasonMazeObj = (self._module):CurSeasonObj()
-  self._com = (self._seasonMazeObj):GetMazeComponent()
-  self._comInfo = (self._com):GetComponentInfo()
-  self._comCfgID = (self._com):GetComponentCfgId()
+function UISeasonMazeActiveItem:OnShow()
+  self._module = GameGlobal.GetModule(SeasonMazeModule)
+  self._seasonMazeObj = self._module:CurSeasonObj()
+  self._com = self._seasonMazeObj:GetMazeComponent()
+  self._comInfo = self._com:GetComponentInfo()
+  self._comCfgID = self._com:GetComponentCfgId()
   self:InitWidget()
   self:AttachEvent(GameEventType.OnSeasonMazeItemUseEnd, self.OnItemUseEnd)
   self:AttachEvent(GameEventType.OnUISeasonMazeAttChanged, self.OnUISeasonMazeAttChanged)
   self:AttachEvent(GameEventType.OnUISeasonMazeSelectBombTarget, self.OnSelectBombTarget)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItem.OnUISeasonMazeAttChanged = function(self, attType)
-  -- function num : 0_2
+function UISeasonMazeActiveItem:OnUISeasonMazeAttChanged(attType)
   if attType then
     self:SetData()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItem.GetItemInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local bagInfo = (self._comInfo).m_bag_info
+function UISeasonMazeActiveItem:GetItemInfo()
+  local bagInfo = self._comInfo.m_bag_info
   local itemMap = bagInfo.once_item_list
   self._itemList = {}
-  if itemMap and (table.count)(itemMap) > 0 then
-    for key,value in pairs(itemMap) do
-      if value > 0 then
+  if itemMap and table.count(itemMap) > 0 then
+    for key, value in pairs(itemMap) do
+      if 0 < value then
         local item = {}
         item.id = key
         item.count = value
-        ;
-        (table.insert)(self._itemList, item)
+        table.insert(self._itemList, item)
       end
     end
-    ;
-    (table.sort)(self._itemList, function(a, b)
-    -- function num : 0_3_0
-    do return a.id < b.id end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    table.sort(self._itemList, function(a, b)
+      return a.id < b.id
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItem.SetShowUiCb = function(self, showUiCb)
-  -- function num : 0_4
+function UISeasonMazeActiveItem:SetShowUiCb(showUiCb)
   self._showUiCb = showUiCb
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItem.SetData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMazeActiveItem:SetData()
   self:GetItemInfo()
-  ;
-  (self._poolGo):SetActive((table.count)(self._itemList) > 0)
-  if (table.count)(self._itemList) > 0 then
-    (self._pool):SpawnObjects("UISeasonMazeActiveItemUnit", #self._itemList)
-    local pools = (self._pool):GetAllSpawnList()
+  self._poolGo:SetActive(table.count(self._itemList) > 0)
+  if table.count(self._itemList) > 0 then
+    self._pool:SpawnObjects("UISeasonMazeActiveItemUnit", #self._itemList)
+    local pools = self._pool:GetAllSpawnList()
     for i = 1, #self._itemList do
       local widget = pools[i]
-      local item = (self._itemList)[i]
+      local item = self._itemList[i]
       local id = item.id
       local count = item.count
       local cfg = self:GetItemCfg(id)
       local icon = cfg.Icon
       widget:SetData(i, id, count, icon, function(id, count, pos)
-    -- function num : 0_5_0 , upvalues : self
-    self:OnItemClick(id, count, pos)
-  end
-)
+        self:OnItemClick(id, count, pos)
+      end)
     end
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItem.OnItemClick = function(self, id, count, pos)
-  -- function num : 0_6
+function UISeasonMazeActiveItem:OnItemClick(id, count, pos)
   if self._currentSelectID == id then
-    return 
+    return
   end
   if self._usingBomb then
     self._usingBomb = nil
     self._bombTarget = nil
     if self._showUiCb then
-      (self._showUiCb)(true)
+      self._showUiCb(true)
     end
   end
   self:OpenItemInfo(id, count, pos)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItem.OnHide = function(self)
-  -- function num : 0_7
+function UISeasonMazeActiveItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItem.Select = function(self, id)
-  -- function num : 0_8
-  local pools = (self._pool):GetAllSpawnList()
+function UISeasonMazeActiveItem:Select(id)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #self._itemList do
     local widget = pools[i]
     widget:Select(id)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItem.OpenItemInfo = function(self, id, count, w_pos)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._ItemInfoGo):SetActive(true)
+function UISeasonMazeActiveItem:OpenItemInfo(id, count, w_pos)
+  self._ItemInfoGo:SetActive(true)
   self:Select(id)
   self._currentSelectID = id
   self._cfg = self:GetItemCfg(id)
-  local name = (self._cfg).Name
-  local desc = (self._cfg).Desc
-  ;
-  (self._itemNameTex):SetText((StringTable.Get)(name))
-  ;
-  (self._itemDescTex):SetText((StringTable.Get)(desc))
-  ;
-  (self._itemCountTex):SetText((StringTable.Get)("str_common_backpack_own_count") .. count)
-  ;
-  (self._useBtnGo):SetActive((SMazeAdaptor.CanUseActiveProp)())
+  local name = self._cfg.Name
+  local desc = self._cfg.Desc
+  self._itemNameTex:SetText(StringTable.Get(name))
+  self._itemDescTex:SetText(StringTable.Get(desc))
+  self._itemCountTex:SetText(StringTable.Get("str_common_backpack_own_count") .. count)
+  self._useBtnGo:SetActive(SMazeAdaptor.CanUseActiveProp())
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItem.GetItemCfg = function(self, id)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_season_maze_once)({ComponentID = self._comCfgID, OnceID = id})
+function UISeasonMazeActiveItem:GetItemCfg(id)
+  local cfgs = Cfg.cfg_component_season_maze_once({
+    ComponentID = self._comCfgID,
+    OnceID = id
+  })
   if cfgs and next(cfgs) then
     return cfgs[1]
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItem.UseBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonMazeActiveItem:UseBtnOnClick(go)
   if self._usingBomb then
     if self._bombTarget then
-      (SMazeAdaptor.OnUseBombConfirm)()
+      SMazeAdaptor.OnUseBombConfirm()
       self._usingBomb = nil
     else
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_season_maze_once_no_select"))
+      ToastManager.ShowToast(StringTable.Get("str_season_maze_once_no_select"))
     end
-    return 
+    return
   end
-  ;
-  (SMazeAdaptor.UseActiveProp)(self._currentSelectID)
-  if (self:GetItemCfg(self._currentSelectID)).Type == SeasonMazeEffectType.SMET_Once_Bomb then
+  SMazeAdaptor.UseActiveProp(self._currentSelectID)
+  if self:GetItemCfg(self._currentSelectID).Type == SeasonMazeEffectType.SMET_Once_Bomb then
     self._usingBomb = true
     self._bombTarget = nil
     if self._showUiCb then
-      (self._showUiCb)(false)
+      self._showUiCb(false)
     end
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSelectSMazeActiveItem, (self._cfg).Type)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSelectSMazeActiveItem, self._cfg.Type)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItem.CloseItemInfoOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  (self._ItemInfoGo):SetActive(false)
+function UISeasonMazeActiveItem:CloseItemInfoOnClick(go)
+  self._ItemInfoGo:SetActive(false)
   self:Select()
   self._currentSelectID = nil
   if self._usingBomb then
-    (SMazeAdaptor.OnUseBombCancel)()
+    SMazeAdaptor.OnUseBombCancel()
     self._usingBomb = nil
   end
   self._bombTarget = nil
   if self._showUiCb then
-    (self._showUiCb)(true)
+    self._showUiCb(true)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItem.OnItemUseEnd = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonMazeActiveItem:OnItemUseEnd()
   self:CloseItemInfoOnClick()
-  if (self:GetItemCfg(self._currentSelectID)).Type == SeasonMazeEffectType.SMET_Once_Bomb and self._showUiCb then
-    (self._showUiCb)(true)
+  if self:GetItemCfg(self._currentSelectID).Type == SeasonMazeEffectType.SMET_Once_Bomb and self._showUiCb then
+    self._showUiCb(true)
   end
   self._currentSelectID = nil
   self:SetData()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActiveItem.OnSelectBombTarget = function(self, target)
-  -- function num : 0_14 , upvalues : _ENV
-  if (self:GetItemCfg(self._currentSelectID)).Type == SeasonMazeEffectType.SMET_Once_Bomb then
+function UISeasonMazeActiveItem:OnSelectBombTarget(target)
+  if self:GetItemCfg(self._currentSelectID).Type == SeasonMazeEffectType.SMET_Once_Bomb then
     if target and target:GetState() == SMazeNodeState.UnReachable then
-      return 
+      return
     end
     self._bombTarget = target
   else
-    ;
-    (Log.error)("当前使用的不是炸弹 怎么会收到炸弹消息", target)
+    Log.error("当前使用的不是炸弹 怎么会收到炸弹消息", target)
   end
 end
-
-

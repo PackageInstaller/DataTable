@@ -1,45 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_pool_pet_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardPoolPetListItem", UICustomWidget)
 UIDrawCardPoolPetListItem = UIDrawCardPoolPetListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardPoolPetListItem.Constructor = function(self)
-  -- function num : 0_0
+function UIDrawCardPoolPetListItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolPetListItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIDrawCardPoolPetListItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolPetListItem.InitWidget = function(self)
-  -- function num : 0_2
+function UIDrawCardPoolPetListItem:InitWidget()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolPetListItem.SetData = function(self, tmpID, icon)
-  -- function num : 0_3
+function UIDrawCardPoolPetListItem:SetData(tmpID, icon)
   self.ID = tmpID
   if icon then
-    (self.icon):LoadImage(icon)
+    self.icon:LoadImage(icon)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPoolPetListItem.iconOnClick = function(self, go)
-  -- function num : 0_4
+function UIDrawCardPoolPetListItem:iconOnClick(go)
   self:ShowDialog("UIShopPetDetailController", self.ID)
 end
-
-

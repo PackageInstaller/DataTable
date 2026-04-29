@@ -1,110 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/collage/ui_season_maze_collage_relic_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeCollageRelicTips", UICustomWidget)
 UISeasonMazeCollageRelicTips = UISeasonMazeCollageRelicTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeCollageRelicTips.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeCollageRelicTips:OnShow()
   self:InitWidgets()
   self.my_relics = {}
-  self.uiSeasonMazeModule = (GameGlobal.GetUIModule)(SeasonMazeModule)
+  self.uiSeasonMazeModule = GameGlobal.GetUIModule(SeasonMazeModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageRelicTips.InitWidgets = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeCollageRelicTips:InitWidgets()
   self._DescTitleText = self:GetUIComponent("UILocalizationText", "DescTitleText")
   self._DescText = self:GetUIComponent("UILocalizedTMP", "DescText")
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._DescText).onHrefClick = function(hrefName)
-    -- function num : 0_1_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):ShowDialog("UISeasonMaze_RelicHrefInfo", hrefName)
+  
+  function self._DescText.onHrefClick(hrefName)
+    GameGlobal.UIStateManager():ShowDialog("UISeasonMaze_RelicHrefInfo", hrefName)
   end
-
+  
   self._CustomSuitTips = self:GetUIComponent("UILocalizationText", "CustomSuitTips")
   self._SuitAreaGo = self:GetGameObject("SuitArea")
-  ;
-  (self._SuitAreaGo):SetActive(false)
+  self._SuitAreaGo:SetActive(false)
   self._CustomSuitTitle = self:GetUIComponent("UILocalizationText", "CustomSuitTitle")
   self._contentScrollRect = self:GetUIComponent("ScrollRect", "ContentScroll")
   self._suitScrollRect = self:GetUIComponent("ScrollRect", "SuitScroll")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageRelicTips.SetData = function(self, itemId)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[itemId]
+function UISeasonMazeCollageRelicTips:SetData(itemId)
+  local cfg = Cfg.cfg_item[itemId]
   if cfg then
-    (self._DescText):SetText((StringTable.Get)(cfg.RpIntro))
+    self._DescText:SetText(StringTable.Get(cfg.RpIntro))
   else
-    ;
-    (Log.fatal)("###error -->UISeasonMazeCollageRelicTips - the cfg_item is nil ! id --> ", itemId)
+    Log.fatal("###error -->UISeasonMazeCollageRelicTips - the cfg_item is nil ! id --> ", itemId)
   end
   self.my_relics = {}
-  local mazList = (self.uiSeasonMazeModule):GetSeasonMazeRelics()
-  for k,v in pairs(mazList) do
-    (table.insert)(self.my_relics, k)
+  local mazList = self.uiSeasonMazeModule:GetSeasonMazeRelics()
+  for k, v in pairs(mazList) do
+    table.insert(self.my_relics, k)
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._contentScrollRect).verticalNormalizedPosition = 1
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._suitScrollRect).verticalNormalizedPosition = 1
+  self._contentScrollRect.verticalNormalizedPosition = 1
+  self._suitScrollRect.verticalNormalizedPosition = 1
   return self:CheckSuitArea(itemId)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageRelicTips.CheckSuitArea = function(self, itemId)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg_prof = (Cfg.cfg_item_relic)[itemId]
+function UISeasonMazeCollageRelicTips:CheckSuitArea(itemId)
+  local cfg_prof = Cfg.cfg_item_relic[itemId]
   if cfg_prof.SuiteID == nil or cfg_prof.SuiteID == 0 then
-    (self._SuitAreaGo):SetActive(false)
+    self._SuitAreaGo:SetActive(false)
   else
     self:RefreshSuit(cfg_prof.SuiteID)
     return true
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageRelicTips.RefreshSuit = function(self, suiteID)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._SuitAreaGo):SetActive(true)
+function UISeasonMazeCollageRelicTips:RefreshSuit(suiteID)
+  self._SuitAreaGo:SetActive(true)
   local curSuitCount = 0
-  local suite_cfg = (Cfg.cfg_component_season_maze_suit)[suiteID]
+  local suite_cfg = Cfg.cfg_component_season_maze_suit[suiteID]
   if suite_cfg == nil then
-    (self._SuitAreaGo):SetActive(false)
-    return 
+    self._SuitAreaGo:SetActive(false)
+    return
   end
   local suits = suite_cfg.RelicList
   for i = 1, #suits do
     local id = suits[i]
-    if (table.icontains)(self.my_relics, id) then
+    if table.icontains(self.my_relics, id) then
       curSuitCount = curSuitCount + 1
     end
   end
   local suitPercent = "" .. curSuitCount .. "/" .. #suits
-  ;
-  (self._CustomSuitTitle):SetText((StringTable.Get)(suite_cfg.Name) .. "  (" .. suitPercent .. ")")
+  self._CustomSuitTitle:SetText(StringTable.Get(suite_cfg.Name) .. "  (" .. suitPercent .. ")")
   local tips = ""
   for j = 1, #suite_cfg.Words do
-    local tip = (suite_cfg.Words)[j]
-    tips = tips .. (StringTable.Get)(tip) .. "\n"
+    local tip = suite_cfg.Words[j]
+    tips = tips .. StringTable.Get(tip) .. "\n"
   end
-  ;
-  (self._CustomSuitTips):SetText(tips)
+  self._CustomSuitTips:SetText(tips)
 end
-
-

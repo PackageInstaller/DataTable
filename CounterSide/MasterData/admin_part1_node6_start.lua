@@ -16,16 +16,16 @@ L2_1.m_bWaitClick = true
 L2_1.m_fWaitTime = 0
 L2_1.m_StartFXSoundControl = "NCSC_LOOP_PLAY"
 L2_1.m_StartFXSoundName = "FX_CUTSCEN_BEEP3"
-L2_1.m_Talk_KOREA = "<color=#ffd34c>\236\185\168\236\139\157\237\140\140 \235\176\152\236\157\145 \234\176\144\236\167\128. \236\132\177\234\179\181.</color>"
+L2_1.m_Talk_KOREA = "<color=#ffd34c>침식파 반응 감지. 성공.</color>"
 L2_1.m_fTalkTime = 0.03
-L2_1.m_Talk_JPN = "<color=#ffd34c>\228\190\181\233\163\159\230\179\162\229\143\141\229\191\156\230\132\159\231\159\165\227\128\130\230\136\144\229\138\159\227\128\130</color>"
+L2_1.m_Talk_JPN = "<color=#ffd34c>侵食波反応感知。成功。</color>"
 L2_1.m_Talk_ENG = "<color=#ffd34c>Detecting Corruption ray response... Success.</color>"
-L2_1.m_Talk_TWN = "<color=#ffd34c>\229\129\181\230\184\172\229\136\176\228\190\181\232\157\149\230\179\162\229\143\141\230\135\137\239\188\140\230\136\144\229\138\159\227\128\130</color>"
-L2_1.m_Talk_THA = "<color=#ffd34c>\224\184\129\224\184\179\224\184\165\224\184\177\224\184\135\224\184\149\224\184\163\224\184\167\224\184\136\224\184\136\224\184\177\224\184\154\224\184\129\224\184\178\224\184\163\224\184\149\224\184\173\224\184\154\224\184\170\224\184\153\224\184\173\224\184\135\224\184\130\224\184\173\224\184\135\224\184\163\224\184\177\224\184\135\224\184\170\224\184\181\224\184\132\224\184\173\224\184\163\224\185\140\224\184\163\224\184\177\224\184\155\224\184\138\224\184\177\224\185\136\224\184\153... \224\184\170\224\184\179\224\185\128\224\184\163\224\185\135\224\184\136</color>"
-L2_1.m_Talk_VTN = "<color=#ffd34c>Ph\195\161t hi\225\187\135n ph\225\186\163n \225\187\169ng v\225\187\155i tia \196\130n M\195\178n... Th\195\160nh c\195\180ng.</color>"
-L2_1.m_Talk_SCN = "<color=#ffd34c>\230\163\128\230\181\139\229\136\176\228\190\181\232\154\128\230\179\162\229\143\141\229\186\148\239\188\140\230\136\144\229\138\159\227\128\130</color>"
-L2_1.m_Talk_DEU = "<color=#ffd34c>Erkennung von Verderbniswellenreaktion\194\160\226\128\166 erfolgreich.</color>"
-L2_1.m_Talk_FRA = "<color=#ffd34c>D\195\169tection de signal de rayon de corruption... R\195\169ussie.</color>"
+L2_1.m_Talk_TWN = "<color=#ffd34c>偵測到侵蝕波反應，成功。</color>"
+L2_1.m_Talk_THA = "<color=#ffd34c>กำลังตรวจจับการตอบสนองของรังสีคอร์รัปชั่น... สำเร็จ</color>"
+L2_1.m_Talk_VTN = "<color=#ffd34c>Phát hiện phản ứng với tia Ăn Mòn... Thành công.</color>"
+L2_1.m_Talk_SCN = "<color=#ffd34c>检测到侵蚀波反应，成功。</color>"
+L2_1.m_Talk_DEU = "<color=#ffd34c>Erkennung von Verderbniswellenreaktion … erfolgreich.</color>"
+L2_1.m_Talk_FRA = "<color=#ffd34c>Détection de signal de rayon de corruption... Réussie.</color>"
 L3_1 = {}
 L3_1.m_CutScenKey_Talk = "ADMIN_PART1_NODE6_START@3#Talk"
 L3_1.m_CutScenProcessKey = 3
@@ -33,16 +33,16 @@ L3_1.m_CutScenID = 1900109
 L3_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L3_1.m_bWaitClick = true
 L3_1.m_fWaitTime = 0
-L3_1.m_Talk_KOREA = "<color=#ffd34c>\237\149\152\236\157\180\235\184\140 \236\187\168\237\138\184\235\161\164 \236\160\145\236\134\141. \236\139\164\237\140\168.</color>"
+L3_1.m_Talk_KOREA = "<color=#ffd34c>하이브 컨트롤 접속. 실패.</color>"
 L3_1.m_fTalkTime = 0.03
-L3_1.m_Talk_JPN = "<color=#ffd34c>\227\131\143\227\130\164\227\131\150\227\130\179\227\131\179\227\131\136\227\131\173\227\131\188\227\131\171\230\142\165\231\182\154\227\128\130\229\164\177\230\149\151\227\128\130</color>"
+L3_1.m_Talk_JPN = "<color=#ffd34c>ハイブコントロール接続。失敗。</color>"
 L3_1.m_Talk_ENG = "<color=#ffd34c>Accessing Hive Control... Failed.</color>"
-L3_1.m_Talk_TWN = "<color=#ffd34c>\233\128\163\230\142\165\229\183\162\231\169\180\230\142\167\229\136\182\231\179\187\231\181\177\239\188\140\229\164\177\230\149\151\227\128\130</color>"
-L3_1.m_Talk_THA = "<color=#ffd34c>\224\184\129\224\184\179\224\184\165\224\184\177\224\184\135\224\185\128\224\184\130\224\185\137\224\184\178\224\185\132\224\184\174\224\184\159\224\185\140\224\184\132\224\184\173\224\184\153\224\185\130\224\184\151\224\184\163\224\184\165... \224\184\165\224\185\137\224\184\161\224\185\128\224\184\171\224\184\165\224\184\167</color>"
-L3_1.m_Talk_VTN = "<color=#ffd34c>Truy c\225\186\173p \196\144i\225\187\129u Khi\225\187\131n T\225\187\149 Ong... Th\225\186\165t b\225\186\161i.</color>"
-L3_1.m_Talk_SCN = "<color=#ffd34c>\232\174\191\233\151\174\229\183\162\231\169\180\230\142\167\229\136\182\231\179\187\231\187\159\239\188\140\229\164\177\232\180\165\227\128\130</color>"
-L3_1.m_Talk_DEU = "<color=#ffd34c>Zugriff auf Hive Control\194\160\226\128\166 fehlgeschlagen</color>"
-L3_1.m_Talk_FRA = "<color=#ffd34c>Acc\195\168s \195\160 la Ruche... \195\137chec.</color>"
+L3_1.m_Talk_TWN = "<color=#ffd34c>連接巢穴控制系統，失敗。</color>"
+L3_1.m_Talk_THA = "<color=#ffd34c>กำลังเข้าไฮฟ์คอนโทรล... ล้มเหลว</color>"
+L3_1.m_Talk_VTN = "<color=#ffd34c>Truy cập Điều Khiển Tổ Ong... Thất bại.</color>"
+L3_1.m_Talk_SCN = "<color=#ffd34c>访问巢穴控制系统，失败。</color>"
+L3_1.m_Talk_DEU = "<color=#ffd34c>Zugriff auf Hive Control … fehlgeschlagen</color>"
+L3_1.m_Talk_FRA = "<color=#ffd34c>Accès à la Ruche... Échec.</color>"
 L4_1 = {}
 L4_1.m_CutScenKey_Talk = "ADMIN_PART1_NODE6_START@4#Talk"
 L4_1.m_CutScenProcessKey = 4
@@ -50,16 +50,16 @@ L4_1.m_CutScenID = 1900109
 L4_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L4_1.m_bWaitClick = true
 L4_1.m_fWaitTime = 0
-L4_1.m_Talk_KOREA = "<color=#ffd34c>\236\139\156\234\179\181\234\176\132 \236\162\140\237\145\156 \237\153\149\236\157\184 \236\139\164\237\140\168. \236\158\172\236\161\176\236\156\168\236\157\180 \237\149\132\236\154\148\237\149\169\235\139\136\235\139\164.</color>"
+L4_1.m_Talk_KOREA = "<color=#ffd34c>시공간 좌표 확인 실패. 재조율이 필요합니다.</color>"
 L4_1.m_fTalkTime = 0.03
-L4_1.m_Talk_JPN = "<color=#ffd34c>\230\153\130\231\169\186\233\150\147\229\186\167\230\168\153\231\162\186\232\170\141\229\164\177\230\149\151\227\128\130\229\134\141\232\170\191\230\149\180\227\129\140\229\191\133\232\166\129\227\129\167\227\129\153\227\128\130</color>"
+L4_1.m_Talk_JPN = "<color=#ffd34c>時空間座標確認失敗。再調整が必要です。</color>"
 L4_1.m_Talk_ENG = "<color=#ffd34c>Failed to verify spacetime coordinates. Recalibration is required.</color>"
-L4_1.m_Talk_TWN = "<color=#ffd34c>\230\153\130\231\169\186\229\186\167\230\168\153\231\162\186\232\170\141\229\164\177\230\149\151\239\188\140\233\156\128\232\166\129\229\134\141\232\170\191\230\149\180\227\128\130</color>"
-L4_1.m_Talk_THA = "<color=#ffd34c>\224\184\162\224\184\183\224\184\153\224\184\162\224\184\177\224\184\153\224\184\158\224\184\180\224\184\129\224\184\177\224\184\148\224\184\161\224\184\180\224\184\149\224\184\180\224\185\128\224\184\167\224\184\165\224\184\178\224\184\165\224\185\137\224\184\161\224\185\128\224\184\171\224\184\165\224\184\167 \224\184\149\224\185\137\224\184\173\224\184\135\224\184\151\224\184\179\224\184\129\224\184\178\224\184\163\224\184\155\224\184\163\224\184\177\224\184\154\224\185\128\224\184\151\224\184\181\224\184\162\224\184\154\224\185\131\224\184\171\224\184\161\224\185\136</color>"
-L4_1.m_Talk_VTN = "<color=#ffd34c>X\195\161c minh t\225\187\141a \196\145\225\187\153 kh\195\180ng gian th\225\186\165t b\225\186\161i. Y\195\170u c\225\186\167u hi\225\187\135u ch\225\187\137nh.</color>"
-L4_1.m_Talk_SCN = "<color=#ffd34c>\230\151\182\231\169\186\229\157\144\230\160\135\231\161\174\232\174\164\229\164\177\232\180\165\239\188\140\233\156\128\232\166\129\233\135\141\232\176\131\227\128\130</color>"
+L4_1.m_Talk_TWN = "<color=#ffd34c>時空座標確認失敗，需要再調整。</color>"
+L4_1.m_Talk_THA = "<color=#ffd34c>ยืนยันพิกัดมิติเวลาล้มเหลว ต้องทำการปรับเทียบใหม่</color>"
+L4_1.m_Talk_VTN = "<color=#ffd34c>Xác minh tọa độ không gian thất bại. Yêu cầu hiệu chỉnh.</color>"
+L4_1.m_Talk_SCN = "<color=#ffd34c>时空坐标确认失败，需要重调。</color>"
 L4_1.m_Talk_DEU = "<color=#ffd34c>Raumzeitkoordinaten konnten nicht verifiziert werden. Rekalibrierung erforderlich.</color>"
-L4_1.m_Talk_FRA = "<color=#ffd34c>\195\137chec de la v\195\169rification des coordonn\195\169es spatio-temporelles. Un recalibrage est requis.</color>"
+L4_1.m_Talk_FRA = "<color=#ffd34c>Échec de la vérification des coordonnées spatio-temporelles. Un recalibrage est requis.</color>"
 L5_1 = {}
 L5_1.m_CutScenKey_Talk = "ADMIN_PART1_NODE6_START@5#Talk"
 L5_1.m_CutScenProcessKey = 5
@@ -67,16 +67,16 @@ L5_1.m_CutScenID = 1900109
 L5_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L5_1.m_bWaitClick = true
 L5_1.m_fWaitTime = 0
-L5_1.m_Talk_KOREA = "<color=#ffd34c>\236\139\156\234\179\181\234\176\132 \236\162\140\237\145\156 \237\153\149\236\157\184 \236\139\164\237\140\168. \236\158\172\236\161\176\236\156\168\236\157\180 \237\149\132\236\154\148\237\149\169\235\139\136\235\139\164.</color>"
+L5_1.m_Talk_KOREA = "<color=#ffd34c>시공간 좌표 확인 실패. 재조율이 필요합니다.</color>"
 L5_1.m_fTalkTime = 0.03
-L5_1.m_Talk_JPN = "<color=#ffd34c>\230\153\130\231\169\186\233\150\147\229\186\167\230\168\153\231\162\186\232\170\141\229\164\177\230\149\151\227\128\130\229\134\141\232\170\191\230\149\180\227\129\140\229\191\133\232\166\129\227\129\167\227\129\153\227\128\130</color>"
+L5_1.m_Talk_JPN = "<color=#ffd34c>時空間座標確認失敗。再調整が必要です。</color>"
 L5_1.m_Talk_ENG = "<color=#ffd34c>Failed to verify spacetime coordinates. Recalibration is required.</color>"
-L5_1.m_Talk_TWN = "<color=#ffd34c>\230\153\130\231\169\186\229\186\167\230\168\153\231\162\186\232\170\141\229\164\177\230\149\151\239\188\140\233\156\128\232\166\129\229\134\141\232\170\191\230\149\180\227\128\130</color>"
-L5_1.m_Talk_THA = "<color=#ffd34c>\224\184\162\224\184\183\224\184\153\224\184\162\224\184\177\224\184\153\224\184\158\224\184\180\224\184\129\224\184\177\224\184\148\224\184\161\224\184\180\224\184\149\224\184\180\224\185\128\224\184\167\224\184\165\224\184\178\224\184\165\224\185\137\224\184\161\224\185\128\224\184\171\224\184\165\224\184\167 \224\184\149\224\185\137\224\184\173\224\184\135\224\184\151\224\184\179\224\184\129\224\184\178\224\184\163\224\184\155\224\184\163\224\184\177\224\184\154\224\185\128\224\184\151\224\184\181\224\184\162\224\184\154\224\185\131\224\184\171\224\184\161\224\185\136</color>"
-L5_1.m_Talk_VTN = "<color=#ffd34c>X\195\161c minh t\225\187\141a \196\145\225\187\153 kh\195\180ng gian th\225\186\165t b\225\186\161i. Y\195\170u c\225\186\167u hi\225\187\135u ch\225\187\137nh.</color>"
-L5_1.m_Talk_SCN = "<color=#ffd34c>\230\151\182\231\169\186\229\157\144\230\160\135\231\161\174\232\174\164\229\164\177\232\180\165\239\188\140\233\156\128\232\166\129\233\135\141\232\176\131\227\128\130</color>"
+L5_1.m_Talk_TWN = "<color=#ffd34c>時空座標確認失敗，需要再調整。</color>"
+L5_1.m_Talk_THA = "<color=#ffd34c>ยืนยันพิกัดมิติเวลาล้มเหลว ต้องทำการปรับเทียบใหม่</color>"
+L5_1.m_Talk_VTN = "<color=#ffd34c>Xác minh tọa độ không gian thất bại. Yêu cầu hiệu chỉnh.</color>"
+L5_1.m_Talk_SCN = "<color=#ffd34c>时空坐标确认失败，需要重调。</color>"
 L5_1.m_Talk_DEU = "<color=#ffd34c>Raumzeitkoordinaten konnten nicht verifiziert werden. Rekalibrierung erforderlich.</color>"
-L5_1.m_Talk_FRA = "<color=#ffd34c>\195\137chec de la v\195\169rification des coordonn\195\169es spatio-temporelles. Un recalibrage est requis.</color>"
+L5_1.m_Talk_FRA = "<color=#ffd34c>Échec de la vérification des coordonnées spatio-temporelles. Un recalibrage est requis.</color>"
 L6_1 = {}
 L6_1.m_CutScenKey_Talk = "ADMIN_PART1_NODE6_START@6#Talk"
 L6_1.m_CutScenProcessKey = 6
@@ -84,14 +84,14 @@ L6_1.m_CutScenID = 1900109
 L6_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L6_1.m_bWaitClick = true
 L6_1.m_fWaitTime = 0
-L6_1.m_Talk_KOREA = "<color=#ffd34c>\236\158\172\236\161\176\236\156\168\236\157\180 \237\149\132\236\154\148\237\149\169\235\139\136\235\139\164.</color>"
+L6_1.m_Talk_KOREA = "<color=#ffd34c>재조율이 필요합니다.</color>"
 L6_1.m_fTalkTime = 0.03
-L6_1.m_Talk_JPN = "<color=#ffd34c>\229\134\141\232\170\191\230\149\180\227\129\140\229\191\133\232\166\129\227\129\167\227\129\153\227\128\130</color>"
+L6_1.m_Talk_JPN = "<color=#ffd34c>再調整が必要です。</color>"
 L6_1.m_Talk_ENG = "<color=#ffd34c>Recalibration is required.</color>"
-L6_1.m_Talk_TWN = "<color=#ffd34c>\233\156\128\232\166\129\229\134\141\232\170\191\230\149\180\227\128\130</color>"
-L6_1.m_Talk_THA = "<color=#ffd34c>\224\184\149\224\185\137\224\184\173\224\184\135\224\184\151\224\184\179\224\184\129\224\184\178\224\184\163\224\184\155\224\184\163\224\184\177\224\184\154\224\185\128\224\184\151\224\184\181\224\184\162\224\184\154\224\185\131\224\184\171\224\184\161\224\185\136</color>"
-L6_1.m_Talk_VTN = "<color=#ffd34c>Y\195\170u c\225\186\167u hi\225\187\135u ch\225\187\137nh.</color>"
-L6_1.m_Talk_SCN = "<color=#ffd34c>\233\156\128\232\166\129\233\135\141\232\176\131\227\128\130</color>"
+L6_1.m_Talk_TWN = "<color=#ffd34c>需要再調整。</color>"
+L6_1.m_Talk_THA = "<color=#ffd34c>ต้องทำการปรับเทียบใหม่</color>"
+L6_1.m_Talk_VTN = "<color=#ffd34c>Yêu cầu hiệu chỉnh.</color>"
+L6_1.m_Talk_SCN = "<color=#ffd34c>需要重调。</color>"
 L6_1.m_Talk_DEU = "<color=#ffd34c>Rekalibrierung erforderlich.</color>"
 L6_1.m_Talk_FRA = "<color=#ffd34c>Recalibrage requis.</color>"
 L7_1 = {}
@@ -101,14 +101,14 @@ L7_1.m_CutScenID = 1900109
 L7_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L7_1.m_bWaitClick = true
 L7_1.m_fWaitTime = 0.15
-L7_1.m_Talk_KOREA = "<color=#ebc244>\236\152\164\235\165\152.</color>"
+L7_1.m_Talk_KOREA = "<color=#ebc244>오류.</color>"
 L7_1.m_fTalkTime = 0.03
-L7_1.m_Talk_JPN = "<color=#ebc244>\227\130\168\227\131\169\227\131\188\227\128\130</color>"
+L7_1.m_Talk_JPN = "<color=#ebc244>エラー。</color>"
 L7_1.m_Talk_ENG = "<color=#ebc244>Error.</color>"
-L7_1.m_Talk_TWN = "<color=#ebc244>\233\140\175\232\170\164\227\128\130</color>"
-L7_1.m_Talk_THA = "<color=#ebc244>\224\185\128\224\184\129\224\184\180\224\184\148\224\184\130\224\185\137\224\184\173\224\184\156\224\184\180\224\184\148\224\184\158\224\184\165\224\184\178\224\184\148</color>"
-L7_1.m_Talk_VTN = "<color=#ebc244>L\225\187\151i.</color>"
-L7_1.m_Talk_SCN = "<color=#ebc244>\229\135\186\233\148\153\227\128\130</color>"
+L7_1.m_Talk_TWN = "<color=#ebc244>錯誤。</color>"
+L7_1.m_Talk_THA = "<color=#ebc244>เกิดข้อผิดพลาด</color>"
+L7_1.m_Talk_VTN = "<color=#ebc244>Lỗi.</color>"
+L7_1.m_Talk_SCN = "<color=#ebc244>出错。</color>"
 L7_1.m_Talk_DEU = "<color=#ebc244>Fehler.</color>"
 L7_1.m_Talk_FRA = "<color=#ebc244>Erreur.</color>"
 L8_1 = {}
@@ -118,14 +118,14 @@ L8_1.m_CutScenID = 1900109
 L8_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L8_1.m_bWaitClick = true
 L8_1.m_fWaitTime = 0.15
-L8_1.m_Talk_KOREA = "<color=#ebc244>\236\158\172\236\161\176\236\156\168\236\157\180 \237\149\132\236\154\148\237\149\169\235\139\136\235\139\164.</color>"
+L8_1.m_Talk_KOREA = "<color=#ebc244>재조율이 필요합니다.</color>"
 L8_1.m_fTalkTime = 0.03
-L8_1.m_Talk_JPN = "<color=#ebc244>\229\134\141\232\170\191\230\149\180\227\129\140\229\191\133\232\166\129\227\129\167\227\129\153\227\128\130</color>"
+L8_1.m_Talk_JPN = "<color=#ebc244>再調整が必要です。</color>"
 L8_1.m_Talk_ENG = "<color=#ebc244>Recalibration is required.</color>"
-L8_1.m_Talk_TWN = "<color=#ebc244>\233\156\128\232\166\129\229\134\141\232\170\191\230\149\180\227\128\130</color>"
-L8_1.m_Talk_THA = "<color=#ebc244>\224\184\149\224\185\137\224\184\173\224\184\135\224\184\151\224\184\179\224\184\129\224\184\178\224\184\163\224\184\155\224\184\163\224\184\177\224\184\154\224\185\128\224\184\151\224\184\181\224\184\162\224\184\154\224\185\131\224\184\171\224\184\161\224\185\136</color>"
-L8_1.m_Talk_VTN = "<color=#ebc244>Y\195\170u c\225\186\167u hi\225\187\135u ch\225\187\137nh.</color>"
-L8_1.m_Talk_SCN = "<color=#ebc244>\233\156\128\232\166\129\233\135\141\232\176\131\227\128\130</color>"
+L8_1.m_Talk_TWN = "<color=#ebc244>需要再調整。</color>"
+L8_1.m_Talk_THA = "<color=#ebc244>ต้องทำการปรับเทียบใหม่</color>"
+L8_1.m_Talk_VTN = "<color=#ebc244>Yêu cầu hiệu chỉnh.</color>"
+L8_1.m_Talk_SCN = "<color=#ebc244>需要重调。</color>"
 L8_1.m_Talk_DEU = "<color=#ebc244>Rekalibrierung erforderlich.</color>"
 L8_1.m_Talk_FRA = "<color=#ebc244>Recalibrage requis.</color>"
 L9_1 = {}
@@ -135,16 +135,16 @@ L9_1.m_CutScenID = 1900109
 L9_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L9_1.m_bWaitClick = true
 L9_1.m_fWaitTime = 0.15
-L9_1.m_Talk_KOREA = "<color=#ebc244>\236\160\145\236\134\141 \236\139\164\237\140\168.</color>"
+L9_1.m_Talk_KOREA = "<color=#ebc244>접속 실패.</color>"
 L9_1.m_fTalkTime = 0.03
-L9_1.m_Talk_JPN = "<color=#ebc244>\230\142\165\231\182\154\229\164\177\230\149\151\227\128\130</color>"
+L9_1.m_Talk_JPN = "<color=#ebc244>接続失敗。</color>"
 L9_1.m_Talk_ENG = "<color=#ebc244>Access failed.</color>"
-L9_1.m_Talk_TWN = "<color=#ebc244>\233\128\163\230\142\165\229\164\177\230\149\151\227\128\130</color>"
-L9_1.m_Talk_THA = "<color=#ebc244>\224\184\129\224\184\178\224\184\163\224\185\128\224\184\130\224\185\137\224\184\178\224\184\150\224\184\182\224\184\135\224\184\165\224\185\137\224\184\161\224\185\128\224\184\171\224\184\165\224\184\167</color>"
-L9_1.m_Talk_VTN = "<color=#ebc244>Truy c\225\186\173p th\225\186\165t b\225\186\161i.</color>"
-L9_1.m_Talk_SCN = "<color=#ebc244>\232\174\191\233\151\174\229\164\177\232\180\165\227\128\130</color>"
+L9_1.m_Talk_TWN = "<color=#ebc244>連接失敗。</color>"
+L9_1.m_Talk_THA = "<color=#ebc244>การเข้าถึงล้มเหลว</color>"
+L9_1.m_Talk_VTN = "<color=#ebc244>Truy cập thất bại.</color>"
+L9_1.m_Talk_SCN = "<color=#ebc244>访问失败。</color>"
 L9_1.m_Talk_DEU = "<color=#ebc244>Zugriff fehlgeschlagen.</color>"
-L9_1.m_Talk_FRA = "<color=#ebc244>Acc\195\168s impossible.</color>"
+L9_1.m_Talk_FRA = "<color=#ebc244>Accès impossible.</color>"
 L10_1 = {}
 L10_1.m_CutScenKey_Talk = "ADMIN_PART1_NODE6_START@10#Talk"
 L10_1.m_CutScenProcessKey = 10
@@ -152,16 +152,16 @@ L10_1.m_CutScenID = 1900109
 L10_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L10_1.m_bWaitClick = true
 L10_1.m_fWaitTime = 0.15
-L10_1.m_Talk_KOREA = "<color=#c2a03a>\236\185\168\236\139\157\237\140\140 \235\176\152\236\157\145 \234\176\144\236\167\128.</color>"
+L10_1.m_Talk_KOREA = "<color=#c2a03a>침식파 반응 감지.</color>"
 L10_1.m_fTalkTime = 0.04
-L10_1.m_Talk_JPN = "<color=#c2a03a>\228\190\181\233\163\159\230\179\162\229\143\141\229\191\156\230\132\159\231\159\165\227\128\130</color>"
+L10_1.m_Talk_JPN = "<color=#c2a03a>侵食波反応感知。</color>"
 L10_1.m_Talk_ENG = "<color=#c2a03a>Detecting Corruption ray response.</color>"
-L10_1.m_Talk_TWN = "<color=#c2a03a>\229\129\181\230\184\172\229\136\176\228\190\181\232\157\149\230\179\162\229\143\141\230\135\137\227\128\130</color>"
-L10_1.m_Talk_THA = "<color=#c2a03a>\224\184\129\224\184\179\224\184\165\224\184\177\224\184\135\224\184\149\224\184\163\224\184\167\224\184\136\224\184\136\224\184\177\224\184\154\224\184\129\224\184\178\224\184\163\224\184\149\224\184\173\224\184\154\224\184\170\224\184\153\224\184\173\224\184\135\224\184\130\224\184\173\224\184\135\224\184\163\224\184\177\224\184\135\224\184\170\224\184\181\224\184\132\224\184\173\224\184\163\224\185\140\224\184\163\224\184\177\224\184\155\224\184\138\224\184\177\224\185\136\224\184\153</color>"
-L10_1.m_Talk_VTN = "<color=#c2a03a>Ph\195\161t hi\225\187\135n ph\225\186\163n \225\187\169ng v\225\187\155i tia \196\130n M\195\178n.</color>"
-L10_1.m_Talk_SCN = "<color=#c2a03a>\230\163\128\230\181\139\229\136\176\228\190\181\232\154\128\230\179\162\229\143\141\229\186\148\227\128\130</color>"
-L10_1.m_Talk_DEU = "<color=#c2a03a>Erkennung von Verderbniswellenreaktion\194\160\226\128\166</color>"
-L10_1.m_Talk_FRA = "<color=#c2a03a>D\195\169tection de signal de rayon de corruption.</color>"
+L10_1.m_Talk_TWN = "<color=#c2a03a>偵測到侵蝕波反應。</color>"
+L10_1.m_Talk_THA = "<color=#c2a03a>กำลังตรวจจับการตอบสนองของรังสีคอร์รัปชั่น</color>"
+L10_1.m_Talk_VTN = "<color=#c2a03a>Phát hiện phản ứng với tia Ăn Mòn.</color>"
+L10_1.m_Talk_SCN = "<color=#c2a03a>检测到侵蚀波反应。</color>"
+L10_1.m_Talk_DEU = "<color=#c2a03a>Erkennung von Verderbniswellenreaktion …</color>"
+L10_1.m_Talk_FRA = "<color=#c2a03a>Détection de signal de rayon de corruption.</color>"
 L11_1 = {}
 L11_1.m_CutScenKey_Talk = "ADMIN_PART1_NODE6_START@11#Talk"
 L11_1.m_CutScenProcessKey = 11
@@ -169,14 +169,14 @@ L11_1.m_CutScenID = 1900109
 L11_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L11_1.m_bWaitClick = true
 L11_1.m_fWaitTime = 0.15
-L11_1.m_Talk_KOREA = "<color=#c2a03a>\236\158\172\236\161\176\236\156\168\236\157\180 \237\149\132\236\154\148\237\149\169\235\139\136\235\139\164.</color>"
+L11_1.m_Talk_KOREA = "<color=#c2a03a>재조율이 필요합니다.</color>"
 L11_1.m_fTalkTime = 0.04
-L11_1.m_Talk_JPN = "<color=#c2a03a>\229\134\141\232\170\191\230\149\180\227\129\140\229\191\133\232\166\129\227\129\167\227\129\153\227\128\130</color>"
+L11_1.m_Talk_JPN = "<color=#c2a03a>再調整が必要です。</color>"
 L11_1.m_Talk_ENG = "<color=#c2a03a>Recalibration is required.</color>"
-L11_1.m_Talk_TWN = "<color=#c2a03a>\233\156\128\232\166\129\229\134\141\232\170\191\230\149\180\227\128\130</color>"
-L11_1.m_Talk_THA = "<color=#c2a03a>\224\184\149\224\185\137\224\184\173\224\184\135\224\184\151\224\184\179\224\184\129\224\184\178\224\184\163\224\184\155\224\184\163\224\184\177\224\184\154\224\185\128\224\184\151\224\184\181\224\184\162\224\184\154\224\185\131\224\184\171\224\184\161\224\185\136</color>"
-L11_1.m_Talk_VTN = "<color=#c2a03a>Y\195\170u c\225\186\167u hi\225\187\135u ch\225\187\137nh.</color>"
-L11_1.m_Talk_SCN = "<color=#c2a03a>\233\156\128\232\166\129\233\135\141\232\176\131\227\128\130</color>"
+L11_1.m_Talk_TWN = "<color=#c2a03a>需要再調整。</color>"
+L11_1.m_Talk_THA = "<color=#c2a03a>ต้องทำการปรับเทียบใหม่</color>"
+L11_1.m_Talk_VTN = "<color=#c2a03a>Yêu cầu hiệu chỉnh.</color>"
+L11_1.m_Talk_SCN = "<color=#c2a03a>需要重调。</color>"
 L11_1.m_Talk_DEU = "<color=#c2a03a>Rekalibrierung erforderlich.</color>"
 L11_1.m_Talk_FRA = "<color=#c2a03a>Recalibrage requis.</color>"
 L12_1 = {}
@@ -186,15 +186,15 @@ L12_1.m_CutScenID = 1900109
 L12_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L12_1.m_bWaitClick = true
 L12_1.m_fWaitTime = 0.15
-L12_1.m_Talk_KOREA = "<color=#a88b34>\236\158\172\236\161\176\236\156\168.</color>"
+L12_1.m_Talk_KOREA = "<color=#a88b34>재조율.</color>"
 L12_1.m_fTalkTime = 0.04
-L12_1.m_Talk_JPN = "<color=#a88b34>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
+L12_1.m_Talk_JPN = "<color=#a88b34>再調整。</color>"
 L12_1.m_Talk_ENG = "<color=#a88b34>Recalibrating.</color>"
-L12_1.m_Talk_TWN = "<color=#a88b34>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
-L12_1.m_Talk_THA = "<color=#a88b34>\224\184\129\224\184\179\224\184\165\224\184\177\224\184\135\224\184\155\224\184\163\224\184\177\224\184\154\224\185\128\224\184\151\224\184\181\224\184\162\224\184\154\224\185\131\224\184\171\224\184\161\224\185\136</color>"
-L12_1.m_Talk_VTN = "<color=#a88b34>\196\144ang hi\225\187\135u ch\225\187\137nh.</color>"
-L12_1.m_Talk_SCN = "<color=#a88b34>\233\135\141\232\176\131\227\128\130</color>"
-L12_1.m_Talk_DEU = "<color=#a88b34>Rekalibrierung l\195\164uft.</color>"
+L12_1.m_Talk_TWN = "<color=#a88b34>再調整。</color>"
+L12_1.m_Talk_THA = "<color=#a88b34>กำลังปรับเทียบใหม่</color>"
+L12_1.m_Talk_VTN = "<color=#a88b34>Đang hiệu chỉnh.</color>"
+L12_1.m_Talk_SCN = "<color=#a88b34>重调。</color>"
+L12_1.m_Talk_DEU = "<color=#a88b34>Rekalibrierung läuft.</color>"
 L12_1.m_Talk_FRA = "<color=#a88b34>Recalibrage en cours.</color>"
 L13_1 = {}
 L13_1.m_CutScenKey_Talk = "ADMIN_PART1_NODE6_START@13#Talk"
@@ -203,16 +203,16 @@ L13_1.m_CutScenID = 1900109
 L13_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L13_1.m_bWaitClick = true
 L13_1.m_fWaitTime = 0.15
-L13_1.m_Talk_KOREA = "<color=#a88b34>\236\139\156\234\179\181\234\176\132 \236\162\140\237\145\156 \237\153\149\236\157\184 \236\139\164\237\140\168.</color>"
+L13_1.m_Talk_KOREA = "<color=#a88b34>시공간 좌표 확인 실패.</color>"
 L13_1.m_fTalkTime = 0.04
-L13_1.m_Talk_JPN = "<color=#a88b34>\230\153\130\231\169\186\233\150\147\229\186\167\230\168\153\231\162\186\232\170\141\229\164\177\230\149\151\227\128\130</color>"
+L13_1.m_Talk_JPN = "<color=#a88b34>時空間座標確認失敗。</color>"
 L13_1.m_Talk_ENG = "<color=#a88b34>Failed to verify spacetime coordinates.</color>"
-L13_1.m_Talk_TWN = "<color=#a88b34>\230\153\130\231\169\186\229\186\167\230\168\153\231\162\186\232\170\141\229\164\177\230\149\151\227\128\130</color>"
-L13_1.m_Talk_THA = "<color=#a88b34>\224\184\129\224\184\178\224\184\163\224\184\162\224\184\183\224\184\153\224\184\162\224\184\177\224\184\153\224\184\158\224\184\180\224\184\129\224\184\177\224\184\148\224\184\161\224\184\180\224\184\149\224\184\180\224\185\128\224\184\167\224\184\165\224\184\178\224\184\165\224\185\137\224\184\161\224\185\128\224\184\171\224\184\165\224\184\167</color>"
-L13_1.m_Talk_VTN = "<color=#a88b34>X\195\161c minh t\225\187\141a \196\145\225\187\153 kh\195\180ng gian th\225\186\165t b\225\186\161i.</color>"
-L13_1.m_Talk_SCN = "<color=#a88b34>\230\151\182\231\169\186\229\157\144\230\160\135\231\161\174\232\174\164\229\164\177\232\180\165\227\128\130</color>"
+L13_1.m_Talk_TWN = "<color=#a88b34>時空座標確認失敗。</color>"
+L13_1.m_Talk_THA = "<color=#a88b34>การยืนยันพิกัดมิติเวลาล้มเหลว</color>"
+L13_1.m_Talk_VTN = "<color=#a88b34>Xác minh tọa độ không gian thất bại.</color>"
+L13_1.m_Talk_SCN = "<color=#a88b34>时空坐标确认失败。</color>"
 L13_1.m_Talk_DEU = "<color=#a88b34>Raumzeitkoordinaten konnten nicht verifiziert werden.</color>"
-L13_1.m_Talk_FRA = "<color=#a88b34>\195\137chec de la v\195\169rification des coordonn\195\169es spatio-temporelles.</color>"
+L13_1.m_Talk_FRA = "<color=#a88b34>Échec de la vérification des coordonnées spatio-temporelles.</color>"
 L14_1 = {}
 L14_1.m_CutScenKey_Talk = "ADMIN_PART1_NODE6_START@14#Talk"
 L14_1.m_CutScenProcessKey = 14
@@ -220,14 +220,14 @@ L14_1.m_CutScenID = 1900109
 L14_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L14_1.m_bWaitClick = true
 L14_1.m_fWaitTime = 0.15
-L14_1.m_Talk_KOREA = "<color=#a88b34>\236\158\172\236\161\176\236\156\168\236\157\180 \237\149\132\236\154\148\237\149\169\235\139\136\235\139\164.</color>"
+L14_1.m_Talk_KOREA = "<color=#a88b34>재조율이 필요합니다.</color>"
 L14_1.m_fTalkTime = 0.04
-L14_1.m_Talk_JPN = "<color=#a88b34>\229\134\141\232\170\191\230\149\180\227\129\140\229\191\133\232\166\129\227\129\167\227\129\153\227\128\130</color>"
+L14_1.m_Talk_JPN = "<color=#a88b34>再調整が必要です。</color>"
 L14_1.m_Talk_ENG = "<color=#a88b34>Recalibration is required.</color>"
-L14_1.m_Talk_TWN = "<color=#a88b34>\233\156\128\232\166\129\229\134\141\232\170\191\230\149\180\227\128\130</color>"
-L14_1.m_Talk_THA = "<color=#a88b34>\224\184\149\224\185\137\224\184\173\224\184\135\224\184\151\224\184\179\224\184\129\224\184\178\224\184\163\224\184\155\224\184\163\224\184\177\224\184\154\224\185\128\224\184\151\224\184\181\224\184\162\224\184\154\224\185\131\224\184\171\224\184\161\224\185\136</color>"
-L14_1.m_Talk_VTN = "<color=#a88b34>Y\195\170u c\225\186\167u hi\225\187\135u ch\225\187\137nh.</color>"
-L14_1.m_Talk_SCN = "<color=#a88b34>\233\156\128\232\166\129\233\135\141\232\176\131\227\128\130</color>"
+L14_1.m_Talk_TWN = "<color=#a88b34>需要再調整。</color>"
+L14_1.m_Talk_THA = "<color=#a88b34>ต้องทำการปรับเทียบใหม่</color>"
+L14_1.m_Talk_VTN = "<color=#a88b34>Yêu cầu hiệu chỉnh.</color>"
+L14_1.m_Talk_SCN = "<color=#a88b34>需要重调。</color>"
 L14_1.m_Talk_DEU = "<color=#a88b34>Rekalibrierung erforderlich.</color>"
 L14_1.m_Talk_FRA = "<color=#a88b34>Recalibrage requis.</color>"
 L15_1 = {}
@@ -237,15 +237,15 @@ L15_1.m_CutScenID = 1900109
 L15_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L15_1.m_bWaitClick = true
 L15_1.m_fWaitTime = 0.15
-L15_1.m_Talk_KOREA = "<color=#9c8130>\236\158\172\236\161\176\236\156\168.</color>"
+L15_1.m_Talk_KOREA = "<color=#9c8130>재조율.</color>"
 L15_1.m_fTalkTime = 0.04
-L15_1.m_Talk_JPN = "<color=#9c8130>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
+L15_1.m_Talk_JPN = "<color=#9c8130>再調整。</color>"
 L15_1.m_Talk_ENG = "<color=#9c8130>Recalibrating.</color>"
-L15_1.m_Talk_TWN = "<color=#9c8130>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
-L15_1.m_Talk_THA = "<color=#9c8130>\224\184\129\224\184\179\224\184\165\224\184\177\224\184\135\224\184\155\224\184\163\224\184\177\224\184\154\224\185\128\224\184\151\224\184\181\224\184\162\224\184\154\224\185\131\224\184\171\224\184\161\224\185\136</color>"
-L15_1.m_Talk_VTN = "<color=#9c8130>\196\144ang hi\225\187\135u ch\225\187\137nh.</color>"
-L15_1.m_Talk_SCN = "<color=#9c8130>\233\135\141\232\176\131\227\128\130</color>"
-L15_1.m_Talk_DEU = "<color=#9c8130>Rekalibrierung l\195\164uft.</color>"
+L15_1.m_Talk_TWN = "<color=#9c8130>再調整。</color>"
+L15_1.m_Talk_THA = "<color=#9c8130>กำลังปรับเทียบใหม่</color>"
+L15_1.m_Talk_VTN = "<color=#9c8130>Đang hiệu chỉnh.</color>"
+L15_1.m_Talk_SCN = "<color=#9c8130>重调。</color>"
+L15_1.m_Talk_DEU = "<color=#9c8130>Rekalibrierung läuft.</color>"
 L15_1.m_Talk_FRA = "<color=#9c8130>Recalibrage en cours.</color>"
 L16_1 = {}
 L16_1.m_CutScenKey_Talk = "ADMIN_PART1_NODE6_START@16#Talk"
@@ -254,15 +254,15 @@ L16_1.m_CutScenID = 1900109
 L16_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L16_1.m_bWaitClick = true
 L16_1.m_fWaitTime = 0.15
-L16_1.m_Talk_KOREA = "<color=#9c8130>\236\158\172\236\161\176\236\156\168.</color>"
+L16_1.m_Talk_KOREA = "<color=#9c8130>재조율.</color>"
 L16_1.m_fTalkTime = 0.04
-L16_1.m_Talk_JPN = "<color=#9c8130>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
+L16_1.m_Talk_JPN = "<color=#9c8130>再調整。</color>"
 L16_1.m_Talk_ENG = "<color=#9c8130>Recalibrating.</color>"
-L16_1.m_Talk_TWN = "<color=#9c8130>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
-L16_1.m_Talk_THA = "<color=#9c8130>\224\184\129\224\184\179\224\184\165\224\184\177\224\184\135\224\184\155\224\184\163\224\184\177\224\184\154\224\185\128\224\184\151\224\184\181\224\184\162\224\184\154\224\185\131\224\184\171\224\184\161\224\185\136</color>"
-L16_1.m_Talk_VTN = "<color=#9c8130>\196\144ang hi\225\187\135u ch\225\187\137nh.</color>"
-L16_1.m_Talk_SCN = "<color=#9c8130>\233\135\141\232\176\131\227\128\130</color>"
-L16_1.m_Talk_DEU = "<color=#9c8130>Rekalibrierung l\195\164uft.</color>"
+L16_1.m_Talk_TWN = "<color=#9c8130>再調整。</color>"
+L16_1.m_Talk_THA = "<color=#9c8130>กำลังปรับเทียบใหม่</color>"
+L16_1.m_Talk_VTN = "<color=#9c8130>Đang hiệu chỉnh.</color>"
+L16_1.m_Talk_SCN = "<color=#9c8130>重调。</color>"
+L16_1.m_Talk_DEU = "<color=#9c8130>Rekalibrierung läuft.</color>"
 L16_1.m_Talk_FRA = "<color=#9c8130>Recalibrage en cours.</color>"
 L17_1 = {}
 L17_1.m_CutScenKey_Talk = "ADMIN_PART1_NODE6_START@17#Talk"
@@ -271,16 +271,16 @@ L17_1.m_CutScenID = 1900109
 L17_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L17_1.m_bWaitClick = true
 L17_1.m_fWaitTime = 0.15
-L17_1.m_Talk_KOREA = "<color=#9c8130>\236\160\145\236\134\141 \236\139\164\237\140\168. \236\185\168\236\139\157\237\140\140 \235\176\152\236\157\145 \234\176\144\236\167\128.</color>"
+L17_1.m_Talk_KOREA = "<color=#9c8130>접속 실패. 침식파 반응 감지.</color>"
 L17_1.m_fTalkTime = 0.05
-L17_1.m_Talk_JPN = "<color=#9c8130>\230\142\165\231\182\154\229\164\177\230\149\151\227\128\130\228\190\181\233\163\159\230\179\162\229\143\141\229\191\156\230\132\159\231\159\165\227\128\130</color>"
+L17_1.m_Talk_JPN = "<color=#9c8130>接続失敗。侵食波反応感知。</color>"
 L17_1.m_Talk_ENG = "<color=#9c8130>Access failed. Detecting Corruption ray response.</color>"
-L17_1.m_Talk_TWN = "<color=#9c8130>\233\128\163\230\142\165\229\164\177\230\149\151\239\188\140\229\129\181\230\184\172\229\136\176\228\190\181\232\157\149\230\179\162\229\143\141\230\135\137\227\128\130</color>"
-L17_1.m_Talk_THA = "<color=#9c8130>\224\184\129\224\184\178\224\184\163\224\185\128\224\184\130\224\185\137\224\184\178\224\184\150\224\184\182\224\184\135\224\184\165\224\185\137\224\184\161\224\185\128\224\184\171\224\184\165\224\184\167 \224\184\129\224\184\179\224\184\165\224\184\177\224\184\135\224\184\149\224\184\163\224\184\167\224\184\136\224\184\136\224\184\177\224\184\154\224\184\129\224\184\178\224\184\163\224\184\149\224\184\173\224\184\154\224\184\170\224\184\153\224\184\173\224\184\135\224\184\130\224\184\173\224\184\135\224\184\163\224\184\177\224\184\135\224\184\170\224\184\181\224\184\132\224\184\173\224\184\163\224\185\140\224\184\163\224\184\177\224\184\155\224\184\138\224\184\177\224\185\136\224\184\153</color>"
-L17_1.m_Talk_VTN = "<color=#9c8130>Truy c\225\186\173p th\225\186\165t b\225\186\161i. Ph\195\161t hi\225\187\135n ph\225\186\163n \225\187\169ng v\225\187\155i tia \196\130n M\195\178n.</color>"
-L17_1.m_Talk_SCN = "<color=#9c8130>\232\174\191\233\151\174\229\164\177\232\180\165\239\188\140\230\163\128\230\181\139\229\136\176\228\190\181\232\154\128\230\179\162\229\143\141\229\186\148\227\128\130</color>"
-L17_1.m_Talk_DEU = "<color=#9c8130>Zugriff fehlgeschlagen. Erkennung von Verderbniswellenreaktion\194\160\226\128\166</color>"
-L17_1.m_Talk_FRA = "<color=#9c8130>Acc\195\168s impossible. D\195\169tection de signal de rayon de corruption.</color>"
+L17_1.m_Talk_TWN = "<color=#9c8130>連接失敗，偵測到侵蝕波反應。</color>"
+L17_1.m_Talk_THA = "<color=#9c8130>การเข้าถึงล้มเหลว กำลังตรวจจับการตอบสนองของรังสีคอร์รัปชั่น</color>"
+L17_1.m_Talk_VTN = "<color=#9c8130>Truy cập thất bại. Phát hiện phản ứng với tia Ăn Mòn.</color>"
+L17_1.m_Talk_SCN = "<color=#9c8130>访问失败，检测到侵蚀波反应。</color>"
+L17_1.m_Talk_DEU = "<color=#9c8130>Zugriff fehlgeschlagen. Erkennung von Verderbniswellenreaktion …</color>"
+L17_1.m_Talk_FRA = "<color=#9c8130>Accès impossible. Détection de signal de rayon de corruption.</color>"
 L18_1 = {}
 L18_1.m_CutScenKey_Talk = "ADMIN_PART1_NODE6_START@18#Talk"
 L18_1.m_CutScenProcessKey = 18
@@ -288,15 +288,15 @@ L18_1.m_CutScenID = 1900109
 L18_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L18_1.m_bWaitClick = false
 L18_1.m_fWaitTime = 0.5
-L18_1.m_Talk_KOREA = "<color=#8c7120>\236\158\172\236\161\176\236\156\168.</color>"
+L18_1.m_Talk_KOREA = "<color=#8c7120>재조율.</color>"
 L18_1.m_fTalkTime = 0.05
-L18_1.m_Talk_JPN = "<color=#8c7120>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
+L18_1.m_Talk_JPN = "<color=#8c7120>再調整。</color>"
 L18_1.m_Talk_ENG = "<color=#8c7120>Recalibrating.</color>"
-L18_1.m_Talk_TWN = "<color=#8c7120>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
-L18_1.m_Talk_THA = "<color=#8c7120>\224\184\129\224\184\179\224\184\165\224\184\177\224\184\135\224\184\155\224\184\163\224\184\177\224\184\154\224\185\128\224\184\151\224\184\181\224\184\162\224\184\154\224\185\131\224\184\171\224\184\161\224\185\136</color>"
-L18_1.m_Talk_VTN = "<color=#8c7120>\196\144ang hi\225\187\135u ch\225\187\137nh.</color>"
-L18_1.m_Talk_SCN = "<color=#8c7120>\233\135\141\232\176\131\227\128\130</color>"
-L18_1.m_Talk_DEU = "<color=#8c7120>Rekalibrierung l\195\164uft.</color>"
+L18_1.m_Talk_TWN = "<color=#8c7120>再調整。</color>"
+L18_1.m_Talk_THA = "<color=#8c7120>กำลังปรับเทียบใหม่</color>"
+L18_1.m_Talk_VTN = "<color=#8c7120>Đang hiệu chỉnh.</color>"
+L18_1.m_Talk_SCN = "<color=#8c7120>重调。</color>"
+L18_1.m_Talk_DEU = "<color=#8c7120>Rekalibrierung läuft.</color>"
 L18_1.m_Talk_FRA = "<color=#8c7120>Recalibrage en cours.</color>"
 L19_1 = {}
 L19_1.m_CutScenKey_Talk = "ADMIN_PART1_NODE6_START@19#Talk"
@@ -305,14 +305,14 @@ L19_1.m_CutScenID = 1900109
 L19_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L19_1.m_bWaitClick = false
 L19_1.m_fWaitTime = 0.5
-L19_1.m_Talk_KOREA = "<color=#8c6120>\236\152\164\235\165\152.</color>"
+L19_1.m_Talk_KOREA = "<color=#8c6120>오류.</color>"
 L19_1.m_fTalkTime = 0.05
-L19_1.m_Talk_JPN = "<color=#8c6120>\227\130\168\227\131\169\227\131\188\227\128\130</color>"
+L19_1.m_Talk_JPN = "<color=#8c6120>エラー。</color>"
 L19_1.m_Talk_ENG = "<color=#8c6120>Error.</color>"
-L19_1.m_Talk_TWN = "<color=#8c6120>\233\140\175\232\170\164\227\128\130</color>"
-L19_1.m_Talk_THA = "<color=#8c6120>\224\185\128\224\184\129\224\184\180\224\184\148\224\184\130\224\185\137\224\184\173\224\184\156\224\184\180\224\184\148\224\184\158\224\184\165\224\184\178\224\184\148</color>"
-L19_1.m_Talk_VTN = "<color=#8c6120>L\225\187\151i.</color>"
-L19_1.m_Talk_SCN = "<color=#8c6120>\229\135\186\233\148\153\227\128\130</color>"
+L19_1.m_Talk_TWN = "<color=#8c6120>錯誤。</color>"
+L19_1.m_Talk_THA = "<color=#8c6120>เกิดข้อผิดพลาด</color>"
+L19_1.m_Talk_VTN = "<color=#8c6120>Lỗi.</color>"
+L19_1.m_Talk_SCN = "<color=#8c6120>出错。</color>"
 L19_1.m_Talk_DEU = "<color=#8c6120>Fehler.</color>"
 L19_1.m_Talk_FRA = "<color=#8c6120>Erreur.</color>"
 L20_1 = {}
@@ -322,16 +322,16 @@ L20_1.m_CutScenID = 1900109
 L20_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L20_1.m_bWaitClick = false
 L20_1.m_fWaitTime = 0.5
-L20_1.m_Talk_KOREA = "<color=#8c6110>\236\185\168\236\139\157\237\140\140 \235\176\152\236\157\145 \234\176\144\236\167\128.</color>"
+L20_1.m_Talk_KOREA = "<color=#8c6110>침식파 반응 감지.</color>"
 L20_1.m_fTalkTime = 0.05
-L20_1.m_Talk_JPN = "<color=#8c6110>\228\190\181\233\163\159\230\179\162\229\143\141\229\191\156\230\132\159\231\159\165\227\128\130</color>"
+L20_1.m_Talk_JPN = "<color=#8c6110>侵食波反応感知。</color>"
 L20_1.m_Talk_ENG = "<color=#8c6110>Detecting Corruption ray response.</color>"
-L20_1.m_Talk_TWN = "<color=#8c6110>\229\129\181\230\184\172\229\136\176\228\190\181\232\157\149\230\179\162\229\143\141\230\135\137\227\128\130</color>"
-L20_1.m_Talk_THA = "<color=#8c6110>\224\184\129\224\184\179\224\184\165\224\184\177\224\184\135\224\184\149\224\184\163\224\184\167\224\184\136\224\184\136\224\184\177\224\184\154\224\184\129\224\184\178\224\184\163\224\184\149\224\184\173\224\184\154\224\184\170\224\184\153\224\184\173\224\184\135\224\184\130\224\184\173\224\184\135\224\184\163\224\184\177\224\184\135\224\184\170\224\184\181\224\184\132\224\184\173\224\184\163\224\185\140\224\184\163\224\184\177\224\184\155\224\184\138\224\184\177\224\185\136\224\184\153</color>"
-L20_1.m_Talk_VTN = "<color=#8c6110>Ph\195\161t hi\225\187\135n ph\225\186\163n \225\187\169ng v\225\187\155i tia \196\130n M\195\178n.</color>"
-L20_1.m_Talk_SCN = "<color=#8c6110>\230\163\128\230\181\139\229\136\176\228\190\181\232\154\128\230\179\162\229\143\141\229\186\148\227\128\130</color>"
-L20_1.m_Talk_DEU = "<color=#8c6110>Erkennung von Verderbniswellenreaktion\194\160\226\128\166</color>"
-L20_1.m_Talk_FRA = "<color=#8c6110>D\195\169tection de signal de rayon de corruption.</color>"
+L20_1.m_Talk_TWN = "<color=#8c6110>偵測到侵蝕波反應。</color>"
+L20_1.m_Talk_THA = "<color=#8c6110>กำลังตรวจจับการตอบสนองของรังสีคอร์รัปชั่น</color>"
+L20_1.m_Talk_VTN = "<color=#8c6110>Phát hiện phản ứng với tia Ăn Mòn.</color>"
+L20_1.m_Talk_SCN = "<color=#8c6110>检测到侵蚀波反应。</color>"
+L20_1.m_Talk_DEU = "<color=#8c6110>Erkennung von Verderbniswellenreaktion …</color>"
+L20_1.m_Talk_FRA = "<color=#8c6110>Détection de signal de rayon de corruption.</color>"
 L21_1 = {}
 L21_1.m_CutScenKey_Talk = "ADMIN_PART1_NODE6_START@21#Talk"
 L21_1.m_CutScenProcessKey = 21
@@ -339,16 +339,16 @@ L21_1.m_CutScenID = 1900109
 L21_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L21_1.m_bWaitClick = false
 L21_1.m_fWaitTime = 0.4
-L21_1.m_Talk_KOREA = "<color=#7c5110>\236\160\145\236\134\141 \236\139\164\237\140\168.</color>"
+L21_1.m_Talk_KOREA = "<color=#7c5110>접속 실패.</color>"
 L21_1.m_fTalkTime = 0.05
-L21_1.m_Talk_JPN = "<color=#7c5110>\230\142\165\231\182\154\229\164\177\230\149\151\227\128\130</color>"
+L21_1.m_Talk_JPN = "<color=#7c5110>接続失敗。</color>"
 L21_1.m_Talk_ENG = "<color=#7c5110>Access failed.</color>"
-L21_1.m_Talk_TWN = "<color=#7c5110>\233\128\163\230\142\165\229\164\177\230\149\151\227\128\130</color>"
-L21_1.m_Talk_THA = "<color=#7c5110>\224\184\129\224\184\178\224\184\163\224\185\128\224\184\130\224\185\137\224\184\178\224\184\150\224\184\182\224\184\135\224\184\165\224\185\137\224\184\161\224\185\128\224\184\171\224\184\165\224\184\167</color>"
-L21_1.m_Talk_VTN = "<color=#7c5110>Truy c\225\186\173p th\225\186\165t b\225\186\161i.</color>"
-L21_1.m_Talk_SCN = "<color=#7c5110>\232\174\191\233\151\174\229\164\177\232\180\165\227\128\130</color>"
+L21_1.m_Talk_TWN = "<color=#7c5110>連接失敗。</color>"
+L21_1.m_Talk_THA = "<color=#7c5110>การเข้าถึงล้มเหลว</color>"
+L21_1.m_Talk_VTN = "<color=#7c5110>Truy cập thất bại.</color>"
+L21_1.m_Talk_SCN = "<color=#7c5110>访问失败。</color>"
 L21_1.m_Talk_DEU = "<color=#7c5110>Zugriff fehlgeschlagen.</color>"
-L21_1.m_Talk_FRA = "<color=#7c5110>Acc\195\168s impossible.</color>"
+L21_1.m_Talk_FRA = "<color=#7c5110>Accès impossible.</color>"
 L22_1 = {}
 L22_1.m_CutScenKey_Talk = "ADMIN_PART1_NODE6_START@22#Talk"
 L22_1.m_CutScenProcessKey = 22
@@ -356,15 +356,15 @@ L22_1.m_CutScenID = 1900109
 L22_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L22_1.m_bWaitClick = false
 L22_1.m_fWaitTime = 0.4
-L22_1.m_Talk_KOREA = "<color=#6c5110>\236\158\172\236\161\176\236\156\168.</color>"
+L22_1.m_Talk_KOREA = "<color=#6c5110>재조율.</color>"
 L22_1.m_fTalkTime = 0.06
-L22_1.m_Talk_JPN = "<color=#6c5110>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
+L22_1.m_Talk_JPN = "<color=#6c5110>再調整。</color>"
 L22_1.m_Talk_ENG = "<color=#6c5110>Recalibrating.</color>"
-L22_1.m_Talk_TWN = "<color=#6c5110>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
-L22_1.m_Talk_THA = "<color=#6c5110>\224\184\129\224\184\179\224\184\165\224\184\177\224\184\135\224\184\155\224\184\163\224\184\177\224\184\154\224\185\128\224\184\151\224\184\181\224\184\162\224\184\154\224\185\131\224\184\171\224\184\161\224\185\136</color>"
-L22_1.m_Talk_VTN = "<color=#6c5110>\196\144ang hi\225\187\135u ch\225\187\137nh.</color>"
-L22_1.m_Talk_SCN = "<color=#6c5110>\233\135\141\232\176\131\227\128\130</color>"
-L22_1.m_Talk_DEU = "<color=#6c5110>Rekalibrierung l\195\164uft.</color>"
+L22_1.m_Talk_TWN = "<color=#6c5110>再調整。</color>"
+L22_1.m_Talk_THA = "<color=#6c5110>กำลังปรับเทียบใหม่</color>"
+L22_1.m_Talk_VTN = "<color=#6c5110>Đang hiệu chỉnh.</color>"
+L22_1.m_Talk_SCN = "<color=#6c5110>重调。</color>"
+L22_1.m_Talk_DEU = "<color=#6c5110>Rekalibrierung läuft.</color>"
 L22_1.m_Talk_FRA = "<color=#6c5110>Recalibrage en cours.</color>"
 L23_1 = {}
 L23_1.m_CutScenKey_Talk = "ADMIN_PART1_NODE6_START@23#Talk"
@@ -373,14 +373,14 @@ L23_1.m_CutScenID = 1900109
 L23_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L23_1.m_bWaitClick = false
 L23_1.m_fWaitTime = 0.3
-L23_1.m_Talk_KOREA = "<color=#6c5110>\236\152\164\235\165\152.</color>"
+L23_1.m_Talk_KOREA = "<color=#6c5110>오류.</color>"
 L23_1.m_fTalkTime = 0.06
-L23_1.m_Talk_JPN = "<color=#6c5110>\227\130\168\227\131\169\227\131\188\227\128\130</color>"
+L23_1.m_Talk_JPN = "<color=#6c5110>エラー。</color>"
 L23_1.m_Talk_ENG = "<color=#6c5110>Error.</color>"
-L23_1.m_Talk_TWN = "<color=#6c5110>\233\140\175\232\170\164\227\128\130</color>"
-L23_1.m_Talk_THA = "<color=#6c5110>\224\185\128\224\184\129\224\184\180\224\184\148\224\184\130\224\185\137\224\184\173\224\184\156\224\184\180\224\184\148\224\184\158\224\184\165\224\184\178\224\184\148</color>"
-L23_1.m_Talk_VTN = "<color=#6c5110>L\225\187\151i.</color>"
-L23_1.m_Talk_SCN = "<color=#6c5110>\229\135\186\233\148\153\227\128\130</color>"
+L23_1.m_Talk_TWN = "<color=#6c5110>錯誤。</color>"
+L23_1.m_Talk_THA = "<color=#6c5110>เกิดข้อผิดพลาด</color>"
+L23_1.m_Talk_VTN = "<color=#6c5110>Lỗi.</color>"
+L23_1.m_Talk_SCN = "<color=#6c5110>出错。</color>"
 L23_1.m_Talk_DEU = "<color=#6c5110>Fehler.</color>"
 L24_1 = "<color=#6c5110>Erreur.</color>"
 L23_1.m_Talk_FRA = L24_1
@@ -394,22 +394,22 @@ L24_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L24_1.m_bWaitClick = false
 L25_1 = 0.2
 L24_1.m_fWaitTime = L25_1
-L25_1 = "<color=#5c4110>\236\158\172\236\161\176\236\156\168.</color>"
+L25_1 = "<color=#5c4110>재조율.</color>"
 L24_1.m_Talk_KOREA = L25_1
 L24_1.m_fTalkTime = 0.06
-L25_1 = "<color=#5c4110>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
+L25_1 = "<color=#5c4110>再調整。</color>"
 L24_1.m_Talk_JPN = L25_1
 L25_1 = "<color=#5c4110>Recalibrating.</color>"
 L24_1.m_Talk_ENG = L25_1
-L25_1 = "<color=#5c4110>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
+L25_1 = "<color=#5c4110>再調整。</color>"
 L24_1.m_Talk_TWN = L25_1
-L25_1 = "<color=#5c4110>\224\184\129\224\184\179\224\184\165\224\184\177\224\184\135\224\184\155\224\184\163\224\184\177\224\184\154\224\185\128\224\184\151\224\184\181\224\184\162\224\184\154\224\185\131\224\184\171\224\184\161\224\185\136</color>"
+L25_1 = "<color=#5c4110>กำลังปรับเทียบใหม่</color>"
 L24_1.m_Talk_THA = L25_1
-L25_1 = "<color=#5c4110>\196\144ang hi\225\187\135u ch\225\187\137nh.</color>"
+L25_1 = "<color=#5c4110>Đang hiệu chỉnh.</color>"
 L24_1.m_Talk_VTN = L25_1
-L25_1 = "<color=#5c4110>\233\135\141\232\176\131\227\128\130</color>"
+L25_1 = "<color=#5c4110>重调。</color>"
 L24_1.m_Talk_SCN = L25_1
-L25_1 = "<color=#5c4110>Rekalibrierung l\195\164uft.</color>"
+L25_1 = "<color=#5c4110>Rekalibrierung läuft.</color>"
 L24_1.m_Talk_DEU = L25_1
 L25_1 = "<color=#5c4110>Recalibrage en cours.</color>"
 L24_1.m_Talk_FRA = L25_1
@@ -423,21 +423,21 @@ L25_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L25_1.m_bWaitClick = false
 L26_1 = 0.1
 L25_1.m_fWaitTime = L26_1
-L26_1 = "<color=#5c4110>\236\152\164\235\165\152.</color>"
+L26_1 = "<color=#5c4110>오류.</color>"
 L25_1.m_Talk_KOREA = L26_1
 L26_1 = 0.09
 L25_1.m_fTalkTime = L26_1
-L26_1 = "<color=#5c4110>\227\130\168\227\131\169\227\131\188\227\128\130</color>"
+L26_1 = "<color=#5c4110>エラー。</color>"
 L25_1.m_Talk_JPN = L26_1
 L26_1 = "<color=#5c4110>Error.</color>"
 L25_1.m_Talk_ENG = L26_1
-L26_1 = "<color=#5c4110>\233\140\175\232\170\164\227\128\130</color>"
+L26_1 = "<color=#5c4110>錯誤。</color>"
 L25_1.m_Talk_TWN = L26_1
-L26_1 = "<color=#5c4110>\224\185\128\224\184\129\224\184\180\224\184\148\224\184\130\224\185\137\224\184\173\224\184\156\224\184\180\224\184\148\224\184\158\224\184\165\224\184\178\224\184\148</color>"
+L26_1 = "<color=#5c4110>เกิดข้อผิดพลาด</color>"
 L25_1.m_Talk_THA = L26_1
-L26_1 = "<color=#5c4110>L\225\187\151i.</color>"
+L26_1 = "<color=#5c4110>Lỗi.</color>"
 L25_1.m_Talk_VTN = L26_1
-L26_1 = "<color=#5c4110>\229\135\186\233\148\153\227\128\130</color>"
+L26_1 = "<color=#5c4110>出错。</color>"
 L25_1.m_Talk_SCN = L26_1
 L26_1 = "<color=#5c4110>Fehler.</color>"
 L25_1.m_Talk_DEU = L26_1
@@ -455,22 +455,22 @@ L26_1.m_fWaitTime = 3
 L27_1 = "NCSC_STOP"
 L26_1.m_StartFXSoundControl = L27_1
 L26_1.m_StartFXSoundName = "FX_CUTSCEN_BEEP3"
-L27_1 = "<color=#5c4110>\236\158\172\236\161\176\236\156\168.</color>"
+L27_1 = "<color=#5c4110>재조율.</color>"
 L26_1.m_Talk_KOREA = L27_1
 L26_1.m_fTalkTime = 0.06
-L27_1 = "<color=#5c4110>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
+L27_1 = "<color=#5c4110>再調整。</color>"
 L26_1.m_Talk_JPN = L27_1
 L27_1 = "<color=#5c4110>Recalibrating.</color>"
 L26_1.m_Talk_ENG = L27_1
-L27_1 = "<color=#5c4110>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
+L27_1 = "<color=#5c4110>再調整。</color>"
 L26_1.m_Talk_TWN = L27_1
-L27_1 = "<color=#5c4110>\224\184\129\224\184\179\224\184\165\224\184\177\224\184\135\224\184\155\224\184\163\224\184\177\224\184\154\224\185\128\224\184\151\224\184\181\224\184\162\224\184\154\224\185\131\224\184\171\224\184\161\224\185\136</color>"
+L27_1 = "<color=#5c4110>กำลังปรับเทียบใหม่</color>"
 L26_1.m_Talk_THA = L27_1
-L27_1 = "<color=#5c4110>\196\144ang hi\225\187\135u ch\225\187\137nh.</color>"
+L27_1 = "<color=#5c4110>Đang hiệu chỉnh.</color>"
 L26_1.m_Talk_VTN = L27_1
-L27_1 = "<color=#5c4110>\233\135\141\232\176\131\227\128\130</color>"
+L27_1 = "<color=#5c4110>重调。</color>"
 L26_1.m_Talk_SCN = L27_1
-L27_1 = "<color=#5c4110>Rekalibrierung l\195\164uft.</color>"
+L27_1 = "<color=#5c4110>Rekalibrierung läuft.</color>"
 L26_1.m_Talk_DEU = L27_1
 L27_1 = "<color=#5c4110>Recalibrage en cours.</color>"
 L26_1.m_Talk_FRA = L27_1
@@ -485,22 +485,22 @@ L27_1.m_bWaitClick = false
 L27_1.m_fWaitTime = 4
 L28_1 = "FX_CUTSCEN_NOISE"
 L27_1.m_StartFXSoundName = L28_1
-L28_1 = "<color=#5c4110>\236\158\172\236\161\176\236\156\168.</color>"
+L28_1 = "<color=#5c4110>재조율.</color>"
 L27_1.m_Talk_KOREA = L28_1
 L27_1.m_fTalkTime = 0.06
-L28_1 = "<color=#5c4110>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
+L28_1 = "<color=#5c4110>再調整。</color>"
 L27_1.m_Talk_JPN = L28_1
 L28_1 = "<color=#5c4110>Recalibrating.</color>"
 L27_1.m_Talk_ENG = L28_1
-L28_1 = "<color=#5c4110>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
+L28_1 = "<color=#5c4110>再調整。</color>"
 L27_1.m_Talk_TWN = L28_1
-L28_1 = "<color=#5c4110>\224\184\129\224\184\179\224\184\165\224\184\177\224\184\135\224\184\155\224\184\163\224\184\177\224\184\154\224\185\128\224\184\151\224\184\181\224\184\162\224\184\154\224\185\131\224\184\171\224\184\161\224\185\136</color>"
+L28_1 = "<color=#5c4110>กำลังปรับเทียบใหม่</color>"
 L27_1.m_Talk_THA = L28_1
-L28_1 = "<color=#5c4110>\196\144ang hi\225\187\135u ch\225\187\137nh.</color>"
+L28_1 = "<color=#5c4110>Đang hiệu chỉnh.</color>"
 L27_1.m_Talk_VTN = L28_1
-L28_1 = "<color=#5c4110>\233\135\141\232\176\131\227\128\130</color>"
+L28_1 = "<color=#5c4110>重调。</color>"
 L27_1.m_Talk_SCN = L28_1
-L28_1 = "<color=#5c4110>Rekalibrierung l\195\164uft.</color>"
+L28_1 = "<color=#5c4110>Rekalibrierung läuft.</color>"
 L27_1.m_Talk_DEU = L28_1
 L28_1 = "<color=#5c4110>Recalibrage en cours.</color>"
 L27_1.m_Talk_FRA = L28_1
@@ -515,22 +515,22 @@ L28_1.m_bWaitClick = false
 L28_1.m_fWaitTime = 4
 L29_1 = "FX_CUTSCEN_NOISE"
 L28_1.m_StartFXSoundName = L29_1
-L29_1 = "<color=#5c4110>\236\158\172\236\161\176\236\156\168.</color>"
+L29_1 = "<color=#5c4110>재조율.</color>"
 L28_1.m_Talk_KOREA = L29_1
 L28_1.m_fTalkTime = 0.06
-L29_1 = "<color=#5c4110>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
+L29_1 = "<color=#5c4110>再調整。</color>"
 L28_1.m_Talk_JPN = L29_1
 L29_1 = "<color=#5c4110>Recalibrating.</color>"
 L28_1.m_Talk_ENG = L29_1
-L29_1 = "<color=#5c4110>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
+L29_1 = "<color=#5c4110>再調整。</color>"
 L28_1.m_Talk_TWN = L29_1
-L29_1 = "<color=#5c4110>\224\184\129\224\184\179\224\184\165\224\184\177\224\184\135\224\184\155\224\184\163\224\184\177\224\184\154\224\185\128\224\184\151\224\184\181\224\184\162\224\184\154\224\185\131\224\184\171\224\184\161\224\185\136</color>"
+L29_1 = "<color=#5c4110>กำลังปรับเทียบใหม่</color>"
 L28_1.m_Talk_THA = L29_1
-L29_1 = "<color=#5c4110>\196\144ang hi\225\187\135u ch\225\187\137nh.</color>"
+L29_1 = "<color=#5c4110>Đang hiệu chỉnh.</color>"
 L28_1.m_Talk_VTN = L29_1
-L29_1 = "<color=#5c4110>\233\135\141\232\176\131\227\128\130</color>"
+L29_1 = "<color=#5c4110>重调。</color>"
 L28_1.m_Talk_SCN = L29_1
-L29_1 = "<color=#5c4110>Rekalibrierung l\195\164uft.</color>"
+L29_1 = "<color=#5c4110>Rekalibrierung läuft.</color>"
 L28_1.m_Talk_DEU = L29_1
 L29_1 = "<color=#5c4110>Recalibrage en cours.</color>"
 L28_1.m_Talk_FRA = L29_1
@@ -545,22 +545,22 @@ L29_1.m_bWaitClick = false
 L29_1.m_fWaitTime = 4
 L30_1 = "FX_CUTSCEN_NOISE"
 L29_1.m_StartFXSoundName = L30_1
-L30_1 = "<color=#5c4110>\236\158\172\236\161\176\236\156\168.</color>"
+L30_1 = "<color=#5c4110>재조율.</color>"
 L29_1.m_Talk_KOREA = L30_1
 L29_1.m_fTalkTime = 0.06
-L30_1 = "<color=#5c4110>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
+L30_1 = "<color=#5c4110>再調整。</color>"
 L29_1.m_Talk_JPN = L30_1
 L30_1 = "<color=#5c4110>Recalibrating.</color>"
 L29_1.m_Talk_ENG = L30_1
-L30_1 = "<color=#5c4110>\229\134\141\232\170\191\230\149\180\227\128\130</color>"
+L30_1 = "<color=#5c4110>再調整。</color>"
 L29_1.m_Talk_TWN = L30_1
-L30_1 = "<color=#5c4110>\224\184\129\224\184\179\224\184\165\224\184\177\224\184\135\224\184\155\224\184\163\224\184\177\224\184\154\224\185\128\224\184\151\224\184\181\224\184\162\224\184\154\224\185\131\224\184\171\224\184\161\224\185\136</color>"
+L30_1 = "<color=#5c4110>กำลังปรับเทียบใหม่</color>"
 L29_1.m_Talk_THA = L30_1
-L30_1 = "<color=#5c4110>\196\144ang hi\225\187\135u ch\225\187\137nh.</color>"
+L30_1 = "<color=#5c4110>Đang hiệu chỉnh.</color>"
 L29_1.m_Talk_VTN = L30_1
-L30_1 = "<color=#5c4110>\233\135\141\232\176\131\227\128\130</color>"
+L30_1 = "<color=#5c4110>重调。</color>"
 L29_1.m_Talk_SCN = L30_1
-L30_1 = "<color=#5c4110>Rekalibrierung l\195\164uft.</color>"
+L30_1 = "<color=#5c4110>Rekalibrierung läuft.</color>"
 L29_1.m_Talk_DEU = L30_1
 L30_1 = "<color=#5c4110>Recalibrage en cours.</color>"
 L29_1.m_Talk_FRA = L30_1
@@ -596,24 +596,24 @@ L31_1[L32_1] = 0.5
 L32_1 = "m_CharStrID"
 L33_1 = "ARTIL_ADMIN_NULL_NULL"
 L31_1[L32_1] = L33_1
-L32_1 = "\236\191\168\235\159\173! \236\191\168\235\159\173......!"
+L32_1 = "쿨럭! 쿨럭......!"
 L31_1.m_Talk_KOREA = L32_1
 L31_1.m_fTalkTime = 0.03
-L32_1 = "\227\130\177\227\131\155\227\131\131\239\188\129\227\128\128\227\130\177\227\131\155\227\131\131\226\128\166\226\128\166\239\188\129"
+L32_1 = "ケホッ！　ケホッ……！"
 L31_1.m_Talk_JPN = L32_1
 L32_1 = "*Cough!* *Cough!*"
 L31_1.m_Talk_ENG = L32_1
-L32_1 = "\229\146\179\229\146\179\239\188\129\229\146\179\229\146\179\226\128\166\226\128\166\239\188\129"
+L32_1 = "咳咳！咳咳……！"
 L31_1.m_Talk_TWN = L32_1
-L32_1 = "*\224\185\129\224\184\132\224\185\136\224\184\129!* *\224\185\129\224\184\132\224\185\136\224\184\129!*"
+L32_1 = "*แค่ก!* *แค่ก!*"
 L31_1.m_Talk_THA = L32_1
-L32_1 = "*Kh\225\187\165!* *Kh\225\187\165!*"
+L32_1 = "*Khụ!* *Khụ!*"
 L31_1.m_Talk_VTN = L32_1
-L32_1 = "\229\146\179\229\146\179\239\188\129\229\146\179\229\146\179\226\128\166\226\128\166\239\188\129"
+L32_1 = "咳咳！咳咳……！"
 L31_1.m_Talk_SCN = L32_1
 L32_1 = "*Hust!* *Hust!*"
 L31_1.m_Talk_DEU = L32_1
-L32_1 = "Kof\194\160! Kof\194\160!"
+L32_1 = "Kof ! Kof !"
 L31_1.m_Talk_FRA = L32_1
 L32_1 = {}
 L33_1 = "ADMIN_PART1_NODE6_START@32#Talk"
@@ -637,24 +637,24 @@ L34_1 = "C"
 L32_1[L33_1] = L34_1
 L33_1 = "m_Crash"
 L32_1[L33_1] = 15
-L33_1 = "\235\130\180\234\176\128...... \236\160\149\236\139\160\236\157\132 \236\158\131\236\151\136\236\151\136\235\130\152?"
+L33_1 = "내가...... 정신을 잃었었나?"
 L32_1.m_Talk_KOREA = L33_1
 L32_1.m_fTalkTime = 0.03
-L33_1 = "\231\167\129\227\129\175\226\128\166\226\128\166\230\176\151\227\130\146\229\164\177\227\129\163\227\129\166\227\129\132\227\129\159\227\129\174\227\129\139\239\188\159"
+L33_1 = "私は……気を失っていたのか？"
 L32_1.m_Talk_JPN = L33_1
 L33_1 = "Did I... pass out?"
 L32_1.m_Talk_ENG = L33_1
-L33_1 = "\230\136\145\226\128\166\226\128\166\229\164\177\229\142\187\230\132\143\232\173\152\228\186\134\229\151\142\239\188\159"
+L33_1 = "我……失去意識了嗎？"
 L32_1.m_Talk_TWN = L33_1
-L33_1 = "\224\184\153\224\184\181\224\185\136\224\184\137\224\184\177\224\184\153... \224\184\170\224\184\165\224\184\154\224\185\132\224\184\155\224\185\128\224\184\171\224\184\163\224\184\173"
+L33_1 = "นี่ฉัน... สลบไปเหรอ"
 L32_1.m_Talk_THA = L33_1
-L33_1 = "M\195\172nh \196\145\195\163... ng\225\186\165t \196\145i \198\176?"
+L33_1 = "Mình đã... ngất đi ư?"
 L32_1.m_Talk_VTN = L33_1
-L33_1 = "\230\136\145\226\128\166\226\128\166\230\153\149\232\191\135\229\142\187\228\186\134\239\188\159"
+L33_1 = "我……晕过去了？"
 L32_1.m_Talk_SCN = L33_1
-L33_1 = "Bin ich\194\160\226\128\166 ohnm\195\164chtig geworden?"
+L33_1 = "Bin ich … ohnmächtig geworden?"
 L32_1.m_Talk_DEU = L33_1
-L33_1 = "Est-ce que je me suis... \195\169vanouie\194\160?"
+L33_1 = "Est-ce que je me suis... évanouie ?"
 L32_1.m_Talk_FRA = L33_1
 L33_1 = {}
 L34_1 = "ADMIN_PART1_NODE6_START@33#Talk"
@@ -671,24 +671,24 @@ L33_1[L34_1] = L35_1
 L34_1 = "m_Pos"
 L35_1 = "C"
 L33_1[L34_1] = L35_1
-L34_1 = "\237\149\168\236\132\160 \234\183\188\236\178\152\236\151\144\236\132\156 \235\139\164\236\157\180\235\184\140\236\151\144 \237\156\152\235\167\144\235\160\184\235\141\152 \234\178\131 \234\176\153\236\149\152\235\138\148\235\141\176...... \236\151\172\234\184\180 \236\150\180\235\148\148\236\167\128?"
+L34_1 = "함선 근처에서 다이브에 휘말렸던 것 같았는데...... 여긴 어디지?"
 L33_1.m_Talk_KOREA = L34_1
 L33_1.m_fTalkTime = 0.03
-L34_1 = "\232\137\166\232\136\185\227\129\174\232\191\145\227\129\143\227\129\167\227\131\128\227\130\164\227\131\150\227\129\171\229\183\187\227\129\141\232\190\188\227\129\190\227\130\140\227\129\159\227\129\168\230\128\157\227\129\163\227\129\159\227\129\140\226\128\166\226\128\166\227\129\147\227\129\147\227\129\175\227\129\169\227\129\147\227\129\160\239\188\159"
+L34_1 = "艦船の近くでダイブに巻き込まれたと思ったが……ここはどこだ？"
 L33_1.m_Talk_JPN = L34_1
 L34_1 = "I thought I was swept up in the dive near the ship... Where am I?"
 L33_1.m_Talk_ENG = L34_1
-L34_1 = "\229\165\189\229\131\143\229\156\168\232\137\166\232\136\185\233\153\132\232\191\145\232\162\171\230\141\178\233\128\178\228\186\134\232\186\141\229\133\165\226\128\166\226\128\166\233\128\153\230\152\175\229\147\170\232\163\161\239\188\159"
+L34_1 = "好像在艦船附近被捲進了躍入……這是哪裡？"
 L33_1.m_Talk_TWN = L34_1
-L34_1 = "\224\184\137\224\184\177\224\184\153\224\184\167\224\185\136\224\184\178\224\184\137\224\184\177\224\184\153\224\184\150\224\184\185\224\184\129\224\184\129\224\184\167\224\184\178\224\184\148\224\185\132\224\184\155\224\185\131\224\184\153\224\185\132\224\184\148\224\184\159\224\185\140\224\185\131\224\184\129\224\184\165\224\185\137\224\185\134 \224\184\162\224\184\178\224\184\153\224\184\153\224\184\176... \224\184\153\224\184\181\224\185\136\224\184\137\224\184\177\224\184\153\224\184\173\224\184\162\224\184\185\224\185\136\224\185\132\224\184\171\224\184\153\224\184\153\224\184\181\224\185\136?"
+L34_1 = "ฉันว่าฉันถูกกวาดไปในไดฟ์ใกล้ๆ ยานนะ... นี่ฉันอยู่ไหนนี่?"
 L33_1.m_Talk_THA = L34_1
-L34_1 = "M\195\172nh ngh\196\169 l\195\160 m\195\172nh \196\145\195\163 b\225\187\139 cu\225\187\145n v\195\160o v\225\187\165 l\225\186\183n g\225\186\167n con t\195\160u... M\195\172nh \225\187\159 \196\145\195\162u \196\145\195\162y?"
+L34_1 = "Mình nghĩ là mình đã bị cuốn vào vụ lặn gần con tàu... Mình ở đâu đây?"
 L33_1.m_Talk_VTN = L34_1
-L34_1 = "\229\165\189\229\131\143\229\156\168\232\136\176\232\136\185\233\153\132\232\191\145\232\162\171\229\141\183\232\191\155\232\183\131\229\133\165\228\186\134\226\128\166\226\128\166\232\191\153\230\152\175\229\147\170\233\135\140\239\188\159"
+L34_1 = "好像在舰船附近被卷进跃入了……这是哪里？"
 L33_1.m_Talk_SCN = L34_1
-L34_1 = "Ich dachte, ich w\195\164re beim Tauchgang in der N\195\164he des Schiffes mitgerissen worden\194\160\226\128\166 Wo bin ich?"
+L34_1 = "Ich dachte, ich wäre beim Tauchgang in der Nähe des Schiffes mitgerissen worden … Wo bin ich?"
 L33_1.m_Talk_DEU = L34_1
-L34_1 = "J'ai cru que j'avais \195\169t\195\169 emport\195\169e par la plong\195\169e du vaisseau... O\195\185 suis-je\194\160?"
+L34_1 = "J'ai cru que j'avais été emportée par la plongée du vaisseau... Où suis-je ?"
 L33_1.m_Talk_FRA = L34_1
 L34_1 = {}
 L35_1 = "ADMIN_PART1_NODE6_START@34#Talk"
@@ -711,24 +711,24 @@ L34_1[L35_1] = L36_1
 L35_1 = "m_Crash"
 L36_1 = 30
 L34_1[L35_1] = L36_1
-L35_1 = "\236\157\180\236\136\152\236\151\176! \235\130\152\236\156\160\235\185\136!"
+L35_1 = "이수연! 나유빈!"
 L34_1.m_Talk_KOREA = L35_1
 L34_1.m_fTalkTime = 0.03
-L35_1 = "\227\130\171\227\131\138\227\131\159\239\188\129\227\128\128\227\130\164\227\131\129\227\131\142\227\130\187\239\188\129"
+L35_1 = "カナミ！　イチノセ！"
 L34_1.m_Talk_JPN = L35_1
 L35_1 = "Sooyeon! Yubin!"
 L34_1.m_Talk_ENG = L35_1
-L35_1 = "\230\157\142\231\167\128\229\166\141\239\188\129\231\190\133\231\145\156\230\150\140\239\188\129"
+L35_1 = "李秀妍！羅瑜斌！"
 L34_1.m_Talk_TWN = L35_1
-L35_1 = "\224\184\139\224\184\185\224\184\162\224\184\173\224\184\153! \224\184\162\224\184\185\224\184\154\224\184\180\224\184\153!"
+L35_1 = "ซูยอน! ยูบิน!"
 L34_1.m_Talk_THA = L35_1
 L35_1 = "Sooyeon! Yubin!"
 L34_1.m_Talk_VTN = L35_1
-L35_1 = "\230\157\142\231\167\128\229\166\141\239\188\129\231\171\175\230\156\168\231\134\153\239\188\129"
+L35_1 = "李秀妍！端木熙！"
 L34_1.m_Talk_SCN = L35_1
 L35_1 = "Sooyeon! Yubin!"
 L34_1.m_Talk_DEU = L35_1
-L35_1 = "Sooyeon\194\160! Yubin\194\160!"
+L35_1 = "Sooyeon ! Yubin !"
 L34_1.m_Talk_FRA = L35_1
 L35_1 = {}
 L36_1 = 35
@@ -760,24 +760,24 @@ L38_1 = "C"
 L36_1[L37_1] = L38_1
 L37_1 = "m_Crash"
 L36_1[L37_1] = 20
-L37_1 = "\235\169\148\236\157\180\236\166\136 \236\160\132\235\140\128! \236\157\145\235\139\181\237\149\152\235\157\188!"
+L37_1 = "메이즈 전대! 응답하라!"
 L36_1.m_Talk_KOREA = L37_1
 L36_1.m_fTalkTime = 0.03
-L37_1 = "\227\131\161\227\130\164\227\130\186\230\136\166\233\154\138\239\188\129\227\128\128\229\191\156\231\173\148\227\129\155\227\130\136\239\188\129"
+L37_1 = "メイズ戦隊！　応答せよ！"
 L36_1.m_Talk_JPN = L37_1
 L37_1 = "Maze Division! Come in!"
 L36_1.m_Talk_ENG = L37_1
-L37_1 = "\230\162\133\232\140\178\230\136\176\233\154\138\239\188\129\232\171\139\229\155\158\231\173\148\239\188\129"
+L37_1 = "梅茲戰隊！請回答！"
 L36_1.m_Talk_TWN = L37_1
-L37_1 = "\224\184\129\224\184\173\224\184\135\224\184\158\224\184\165\224\185\128\224\184\130\224\184\178\224\184\167\224\184\135\224\184\129\224\184\149! \224\184\149\224\184\173\224\184\154\224\184\148\224\185\137\224\184\167\224\184\162!"
+L37_1 = "กองพลเขาวงกต! ตอบด้วย!"
 L36_1.m_Talk_THA = L37_1
-L37_1 = "S\198\176 \196\144o\195\160n M\195\170 Cung! Tr\225\186\163 l\225\187\157i \196\145i!"
+L37_1 = "Sư Đoàn Mê Cung! Trả lời đi!"
 L36_1.m_Talk_VTN = L37_1
-L37_1 = "\230\162\133\229\133\185\230\136\152\233\152\159\239\188\129\232\175\183\229\155\158\231\173\148\239\188\129"
+L37_1 = "梅兹战队！请回答！"
 L36_1.m_Talk_SCN = L37_1
 L37_1 = "Maze-Division, bitte melden!"
 L36_1.m_Talk_DEU = L37_1
-L37_1 = "Division Maze\194\160! R\195\169pondez\194\160!"
+L37_1 = "Division Maze ! Répondez !"
 L36_1.m_Talk_FRA = L37_1
 L37_1 = {}
 L38_1 = 37
@@ -844,24 +844,24 @@ L40_1[L41_1] = L42_1
 L41_1 = "m_Pos"
 L42_1 = "C"
 L40_1[L41_1] = L42_1
-L41_1 = "\236\158\145\236\160\132\234\184\176\235\161\157 \235\133\185\236\157\140."
+L41_1 = "작전기록 녹음."
 L40_1.m_Talk_KOREA = L41_1
 L40_1.m_fTalkTime = 0.03
-L41_1 = "\228\189\156\230\136\166\232\168\152\233\140\178\227\128\129\233\140\178\233\159\179\227\128\130"
+L41_1 = "作戦記録、録音。"
 L40_1.m_Talk_JPN = L41_1
 L41_1 = "Operation log."
 L40_1.m_Talk_ENG = L41_1
-L41_1 = "\228\189\156\230\136\176\232\168\152\233\140\132\233\140\132\233\159\179\227\128\130"
+L41_1 = "作戰記錄錄音。"
 L40_1.m_Talk_TWN = L41_1
-L41_1 = "\224\184\129\224\184\179\224\184\165\224\184\177\224\184\135\224\184\154\224\184\177\224\184\153\224\184\151\224\184\182\224\184\129\224\184\155\224\184\185\224\184\161\224\184\155\224\184\143\224\184\180\224\184\154\224\184\177\224\184\149\224\184\180\224\184\129\224\184\178\224\184\163"
+L41_1 = "กำลังบันทึกปูมปฏิบัติการ"
 L40_1.m_Talk_THA = L41_1
-L41_1 = "\196\144ang l\198\176u nh\225\186\173t k\195\189 v\225\186\173n h\195\160nh."
+L41_1 = "Đang lưu nhật ký vận hành."
 L40_1.m_Talk_VTN = L41_1
-L41_1 = "\228\189\156\230\136\152\232\174\176\229\189\149\229\189\149\233\159\179\239\188\154"
+L41_1 = "作战记录录音："
 L40_1.m_Talk_SCN = L41_1
 L41_1 = "Operationslogbuch."
 L40_1.m_Talk_DEU = L41_1
-L41_1 = "Journal des op\195\169rations."
+L41_1 = "Journal des opérations."
 L40_1.m_Talk_FRA = L41_1
 L41_1 = {}
 L42_1 = "ADMIN_PART1_NODE6_START@41#Talk"
@@ -878,22 +878,22 @@ L41_1[L42_1] = L43_1
 L42_1 = "m_Pos"
 L43_1 = "C"
 L41_1[L42_1] = L43_1
-L42_1 = "\235\176\169\236\163\188\235\143\132...... \236\149\132\235\172\180\235\143\132 \235\179\180\236\157\180\236\167\128 \236\149\138\235\138\148\235\139\164."
+L42_1 = "방주도...... 아무도 보이지 않는다."
 L41_1.m_Talk_KOREA = L42_1
 L41_1.m_fTalkTime = 0.03
-L42_1 = "\231\174\177\232\136\159\227\130\130\226\128\166\226\128\166\228\189\149\227\130\130\232\166\139\229\189\147\227\129\159\227\130\137\227\130\147\227\128\130"
+L42_1 = "箱舟も……何も見当たらん。"
 L41_1.m_Talk_JPN = L42_1
 L42_1 = "I don't see the Ark... or anyone else."
 L41_1.m_Talk_ENG = L42_1
-L42_1 = "\230\150\185\232\136\159\228\185\159\230\152\175\226\128\166\226\128\166\228\184\128\229\128\139\228\186\186\228\185\159\231\156\139\228\184\141\229\136\176\227\128\130"
+L42_1 = "方舟也是……一個人也看不到。"
 L41_1.m_Talk_TWN = L42_1
-L42_1 = "\224\184\137\224\184\177\224\184\153\224\185\132\224\184\161\224\185\136\224\185\128\224\184\171\224\185\135\224\184\153\224\185\128\224\184\163\224\184\183\224\184\173\224\185\130\224\184\153\224\184\173\224\184\178\224\184\171\224\185\140... \224\185\132\224\184\161\224\185\136\224\185\128\224\184\171\224\185\135\224\184\153\224\185\131\224\184\132\224\184\163\224\185\134 \224\185\128\224\184\165\224\184\162"
+L42_1 = "ฉันไม่เห็นเรือโนอาห์... ไม่เห็นใครๆ เลย"
 L41_1.m_Talk_THA = L42_1
-L42_1 = "M\195\172nh kh\195\180ng nh\195\172n th\225\186\165y Ark... hay b\225\186\165t k\225\187\179 ai kh\195\161c."
+L42_1 = "Mình không nhìn thấy Ark... hay bất kỳ ai khác."
 L41_1.m_Talk_VTN = L42_1
-L42_1 = "\231\156\139\228\184\141\232\167\129\226\128\166\226\128\166\230\150\185\232\136\159\227\128\130"
+L42_1 = "看不见……方舟。"
 L41_1.m_Talk_SCN = L42_1
-L42_1 = "Ich sehe die Arche nicht\194\160\226\128\166 und auch sonst niemanden."
+L42_1 = "Ich sehe die Arche nicht … und auch sonst niemanden."
 L41_1.m_Talk_DEU = L42_1
 L42_1 = "Je ne vois pas l'Arche... ni personne."
 L41_1.m_Talk_FRA = L42_1
@@ -912,24 +912,24 @@ L42_1[L43_1] = L44_1
 L43_1 = "m_Pos"
 L44_1 = "C"
 L42_1[L43_1] = L44_1
-L43_1 = "\236\150\180\235\150\187\234\178\140\235\147\160 \236\167\128\237\130\164\235\160\164\234\179\160 \237\150\136\234\177\180\235\167\140......"
+L43_1 = "어떻게든 지키려고 했건만......"
 L42_1.m_Talk_KOREA = L43_1
 L42_1.m_fTalkTime = 0.03
-L43_1 = "\228\189\149\227\129\168\227\129\151\227\129\166\227\130\130\229\174\136\227\130\138\230\138\156\227\129\143\232\166\154\230\130\159\227\129\167\227\129\132\227\129\159\227\129\140\226\128\166\226\128\166"
+L43_1 = "何としても守り抜く覚悟でいたが……"
 L42_1.m_Talk_JPN = L43_1
 L43_1 = "I tried so hard to protect them all..."
 L42_1.m_Talk_ENG = L43_1
-L43_1 = "\230\136\145\233\130\163\233\186\188\230\139\188\229\145\189\229\156\176\229\174\136\232\173\183\226\128\166\226\128\166"
+L43_1 = "我那麼拼命地守護……"
 L42_1.m_Talk_TWN = L43_1
-L43_1 = "\224\184\137\224\184\177\224\184\153\224\184\158\224\184\162\224\184\178\224\184\162\224\184\178\224\184\161\224\184\155\224\184\129\224\184\155\224\185\137\224\184\173\224\184\135\224\184\151\224\184\184\224\184\129\224\184\132\224\184\153\224\185\128\224\184\149\224\185\135\224\184\161\224\184\151\224\184\181\224\185\136..."
+L43_1 = "ฉันพยายามปกป้องทุกคนเต็มที่..."
 L42_1.m_Talk_THA = L43_1
-L43_1 = "M\195\172nh \196\145\195\163 c\225\187\145 g\225\186\175ng r\225\186\165t nhi\225\187\129u \196\145\225\187\131 b\225\186\163o v\225\187\135 t\225\186\165t c\225\186\163 b\225\187\141n h\225\187\141..."
+L43_1 = "Mình đã cố gắng rất nhiều để bảo vệ tất cả bọn họ..."
 L42_1.m_Talk_VTN = L43_1
-L43_1 = "\230\136\145\233\130\163\228\185\136\230\139\188\229\145\189\229\174\136\230\138\164\226\128\166\226\128\166"
+L43_1 = "我那么拼命守护……"
 L42_1.m_Talk_SCN = L43_1
-L43_1 = "Ich habe so sehr versucht, alle zu besch\195\188tzen\194\160\226\128\166"
+L43_1 = "Ich habe so sehr versucht, alle zu beschützen …"
 L42_1.m_Talk_DEU = L43_1
-L43_1 = "J'ai vraiment essay\195\169 de les prot\195\169ger tous..."
+L43_1 = "J'ai vraiment essayé de les protéger tous..."
 L42_1.m_Talk_FRA = L43_1
 L43_1 = {}
 L44_1 = "ADMIN_PART1_NODE6_START@43#Talk"
@@ -948,24 +948,24 @@ L45_1 = "C"
 L43_1[L44_1] = L45_1
 L44_1 = "m_Crash"
 L43_1[L44_1] = 15
-L44_1 = "\236\157\180\235\158\152\236\132\156\236\149\188...... \235\140\128\236\178\180 \235\173\163 \235\149\140\235\172\184\236\151\144......"
+L44_1 = "이래서야...... 대체 뭣 때문에......"
 L43_1.m_Talk_KOREA = L44_1
 L43_1.m_fTalkTime = 0.03
-L44_1 = "\227\129\147\227\129\134\227\129\170\227\129\163\227\129\166\227\129\151\227\129\190\227\129\163\227\129\166\227\129\175\226\128\166\226\128\166\227\129\132\227\129\163\227\129\159\227\129\132\228\189\149\227\129\174\227\129\159\227\130\129\227\129\171\226\128\166\226\128\166"
+L44_1 = "こうなってしまっては……いったい何のために……"
 L43_1.m_Talk_JPN = L44_1
 L44_1 = "But now... Was it all in vain?"
 L43_1.m_Talk_ENG = L44_1
-L44_1 = "\233\128\153\230\168\163\226\128\166\226\128\166\230\136\145\229\136\176\229\186\149\230\152\175\231\130\186\228\186\134\228\187\128\233\186\188\226\128\166\226\128\166"
+L44_1 = "這樣……我到底是為了什麼……"
 L43_1.m_Talk_TWN = L44_1
-L44_1 = "\224\185\129\224\184\149\224\185\136\224\184\149\224\184\173\224\184\153\224\184\153\224\184\181\224\185\137... \224\184\151\224\184\184\224\184\129\224\184\173\224\184\162\224\185\136\224\184\178\224\184\135\224\185\128\224\184\170\224\184\181\224\184\162\224\185\128\224\184\155\224\184\165\224\185\136\224\184\178\224\185\128\224\184\171\224\184\163\224\184\173?"
+L44_1 = "แต่ตอนนี้... ทุกอย่างเสียเปล่าเหรอ?"
 L43_1.m_Talk_THA = L44_1
-L44_1 = "Nh\198\176ng gi\225\187\157... V\195\180 \195\173ch c\225\186\163 r\225\187\147i sao?"
+L44_1 = "Nhưng giờ... Vô ích cả rồi sao?"
 L43_1.m_Talk_VTN = L44_1
-L44_1 = "\228\184\186\228\187\128\228\185\136\226\128\166\226\128\166\229\143\152\230\136\144\232\191\153\230\160\183\228\186\134\226\128\166\226\128\166"
+L44_1 = "为什么……变成这样了……"
 L43_1.m_Talk_SCN = L44_1
-L44_1 = "Aber jetzt\194\160\226\128\166 War alles umsonst?"
+L44_1 = "Aber jetzt … War alles umsonst?"
 L43_1.m_Talk_DEU = L44_1
-L44_1 = "Mais... est-ce que c'\195\169tait en vain\194\160?"
+L44_1 = "Mais... est-ce que c'était en vain ?"
 L43_1.m_Talk_FRA = L44_1
 L44_1 = {}
 L45_1 = 44
@@ -1000,24 +1000,24 @@ L45_1[L46_1] = L47_1
 L46_1 = "m_Crash"
 L47_1 = 30
 L45_1[L46_1] = L47_1
-L46_1 = "\236\150\180\235\157\188, \236\151\172\234\184\176 \236\158\136\236\151\136\234\181\172\235\130\152?"
+L46_1 = "어라, 여기 있었구나?"
 L45_1.m_Talk_KOREA = L46_1
 L45_1.m_fTalkTime = 0.03
-L46_1 = "\227\129\130\227\130\137\227\128\129\227\129\147\227\129\147\227\129\171\227\129\132\227\129\159\227\129\174\227\129\173\239\188\159"
+L46_1 = "あら、ここにいたのね？"
 L45_1.m_Talk_JPN = L46_1
 L46_1 = "Oh, there you are!"
 L45_1.m_Talk_ENG = L46_1
-L46_1 = "\229\146\166\239\188\140\229\142\159\228\190\134\228\189\160\229\156\168\233\128\153\232\163\161\239\188\159"
+L46_1 = "咦，原來你在這裡？"
 L45_1.m_Talk_TWN = L46_1
-L46_1 = "\224\184\173\224\185\138\224\184\176 \224\184\173\224\184\162\224\184\185\224\185\136\224\184\153\224\184\181\224\185\136\224\185\128\224\184\173\224\184\135!"
+L46_1 = "อ๊ะ อยู่นี่เอง!"
 L45_1.m_Talk_THA = L46_1
-L46_1 = "\225\187\146, c\195\180 \196\145\195\162y r\225\187\147i!"
+L46_1 = "Ồ, cô đây rồi!"
 L45_1.m_Talk_VTN = L46_1
-L46_1 = "\229\146\166\239\188\140\229\142\159\230\157\165\228\189\160\229\156\168\232\191\153\233\135\140\239\188\159"
+L46_1 = "咦，原来你在这里？"
 L45_1.m_Talk_SCN = L46_1
 L46_1 = "Ach, da bist du ja!"
 L45_1.m_Talk_DEU = L46_1
-L46_1 = "Ah, te voil\195\160\194\160!"
+L46_1 = "Ah, te voilà !"
 L45_1.m_Talk_FRA = L46_1
 L46_1 = {}
 L47_1 = "ADMIN_PART1_NODE6_START@46#Talk"
@@ -1037,24 +1037,24 @@ L46_1[L47_1] = L48_1
 L47_1 = "m_Pos"
 L48_1 = "C"
 L46_1[L47_1] = L48_1
-L47_1 = "\237\149\156\236\176\184 \236\176\190\236\149\152\236\158\150\236\149\132, \236\160\132\235\140\128\236\158\165."
+L47_1 = "한참 찾았잖아, 전대장."
 L46_1.m_Talk_KOREA = L47_1
 L46_1.m_fTalkTime = 0.03
-L47_1 = "\230\141\156\227\129\151\227\129\159\227\129\152\227\130\131\227\129\170\227\129\132\227\128\129\230\136\166\233\154\138\233\149\183\227\128\130"
+L47_1 = "捜したじゃない、戦隊長。"
 L46_1.m_Talk_JPN = L47_1
 L47_1 = "I've been looking everywhere for you, Commander."
 L46_1.m_Talk_ENG = L47_1
-L47_1 = "\230\136\145\230\137\190\229\166\179\230\137\190\228\186\134\229\165\189\228\185\133\239\188\140\233\154\138\233\149\183\227\128\130"
+L47_1 = "我找妳找了好久，隊長。"
 L46_1.m_Talk_TWN = L47_1
-L47_1 = "\224\184\137\224\184\177\224\184\153\224\184\149\224\184\178\224\184\161\224\184\171\224\184\178\224\185\128\224\184\152\224\184\173\224\184\151\224\184\177\224\185\136\224\184\167\224\185\128\224\184\165\224\184\162\224\184\156\224\184\185\224\185\137\224\184\154\224\184\177\224\184\141\224\184\138\224\184\178\224\184\129\224\184\178\224\184\163"
+L47_1 = "ฉันตามหาเธอทั่วเลยผู้บัญชาการ"
 L46_1.m_Talk_THA = L47_1
-L47_1 = "T\195\180i v\225\186\171n \196\145i t\195\172m c\195\180 kh\225\186\175p n\198\161i, T\225\187\149ng T\198\176 L\225\187\135nh."
+L47_1 = "Tôi vẫn đi tìm cô khắp nơi, Tổng Tư Lệnh."
 L46_1.m_Talk_VTN = L47_1
-L47_1 = "\230\137\190\228\189\160\229\165\189\228\185\133\228\186\134\239\188\140\233\152\159\233\149\191\227\128\130"
+L47_1 = "找你好久了，队长。"
 L46_1.m_Talk_SCN = L47_1
-L47_1 = "Ich habe dich \195\188berall gesucht, Kommandantin."
+L47_1 = "Ich habe dich überall gesucht, Kommandantin."
 L46_1.m_Talk_DEU = L47_1
-L47_1 = "Je t'ai cherch\195\169e partout, commandante\194\160!"
+L47_1 = "Je t'ai cherchée partout, commandante !"
 L46_1.m_Talk_FRA = L47_1
 L47_1 = {}
 L48_1 = 47
@@ -1099,24 +1099,24 @@ L49_1[L50_1] = L51_1
 L50_1 = "m_Pos"
 L51_1 = "R_M_I"
 L49_1[L50_1] = L51_1
-L50_1 = "\236\149\140\235\160\137\236\138\164?! \236\130\180\236\149\132 \236\158\136\236\151\136\235\130\152!"
+L50_1 = "알렉스?! 살아 있었나!"
 L49_1.m_Talk_KOREA = L50_1
 L49_1.m_fTalkTime = 0.03
-L50_1 = "\227\130\162\227\131\172\227\131\131\227\130\175\227\130\185\239\188\129\239\188\159\227\128\128\231\132\161\228\186\139\227\129\160\227\129\163\227\129\159\227\129\174\227\129\160\227\129\170\239\188\129"
+L50_1 = "アレックス！？　無事だったのだな！"
 L49_1.m_Talk_JPN = L50_1
 L50_1 = "Alex?! You survived!"
 L49_1.m_Talk_ENG = L50_1
-L50_1 = "\233\155\133\232\149\190\229\133\139\231\181\178\239\188\159\239\188\129\229\166\179\233\130\132\230\180\187\232\145\151\239\188\129"
+L50_1 = "雅蕾克絲？！妳還活著！"
 L49_1.m_Talk_TWN = L50_1
-L50_1 = "\224\184\173\224\185\128\224\184\165\224\185\135\224\184\129\224\184\139\224\185\140!? \224\185\128\224\184\152\224\184\173\224\184\162\224\184\177\224\184\135\224\184\161\224\184\181\224\184\138\224\184\181\224\184\167\224\184\180\224\184\149\224\184\173\224\184\162\224\184\185\224\185\136!"
+L50_1 = "อเล็กซ์!? เธอยังมีชีวิตอยู่!"
 L49_1.m_Talk_THA = L50_1
-L50_1 = "Alex?! C\195\180 c\195\178n s\225\187\145ng!"
+L50_1 = "Alex?! Cô còn sống!"
 L49_1.m_Talk_VTN = L50_1
-L50_1 = "\228\186\154\229\142\134\229\133\139\230\150\175\239\188\159\239\188\129\228\189\160\232\191\152\230\180\187\231\157\128\239\188\129"
+L50_1 = "亚历克斯？！你还活着！"
 L49_1.m_Talk_SCN = L50_1
-L50_1 = "Alex, du hast \195\188berlebt!"
+L50_1 = "Alex, du hast überlebt!"
 L49_1.m_Talk_DEU = L50_1
-L50_1 = "Alex\194\160?! Tu as surv\195\169cu\194\160?"
+L50_1 = "Alex ?! Tu as survécu ?"
 L49_1.m_Talk_FRA = L50_1
 L50_1 = {}
 L51_1 = "ADMIN_PART1_NODE6_START@50#Talk"
@@ -1133,24 +1133,24 @@ L50_1[L51_1] = L52_1
 L51_1 = "m_Pos"
 L52_1 = "L"
 L50_1[L51_1] = L52_1
-L51_1 = "\236\157\188\235\139\168 \235\150\168\236\150\180\236\160\184\236\132\156 \236\150\152\234\184\176\237\149\152\236\158\144. \236\149\136 \234\183\184\235\159\172\235\141\152 \236\130\172\235\158\140\236\157\180 \236\153\156 \234\183\184\235\158\152."
+L51_1 = "일단 떨어져서 얘기하자. 안 그러던 사람이 왜 그래."
 L50_1.m_Talk_KOREA = L51_1
 L50_1.m_fTalkTime = 0.03
-L51_1 = "\227\129\161\227\130\135\227\129\163\227\129\168\227\128\129\227\129\143\227\129\163\227\129\164\227\129\139\227\129\170\227\129\132\227\129\174\227\128\130\227\129\169\227\129\134\227\129\151\227\129\159\227\129\174\239\188\159\227\128\128\228\186\186\227\129\140\229\164\137\227\130\143\227\129\163\227\129\159\227\129\191\227\129\159\227\129\132\227\129\171\227\128\130"
+L51_1 = "ちょっと、くっつかないの。どうしたの？　人が変わったみたいに。"
 L50_1.m_Talk_JPN = L51_1
 L51_1 = "Woah, give me some personal space here. What's gotten you all touchy-feely all of a sudden?"
 L50_1.m_Talk_ENG = L51_1
-L51_1 = "\229\166\179\229\133\136\230\148\190\233\150\139\230\136\145\229\144\167\239\188\140\228\184\128\233\187\158\233\131\189\228\184\141\229\131\143\229\185\179\230\153\130\231\154\132\229\166\179\227\128\130"
+L51_1 = "妳先放開我吧，一點都不像平時的妳。"
 L50_1.m_Talk_TWN = L51_1
-L51_1 = "\224\185\128\224\184\171\224\184\167\224\184\173 \224\184\171\224\185\136\224\184\178\224\184\135\224\184\129\224\184\177\224\184\153\224\184\170\224\184\177\224\184\129\224\184\153\224\184\180\224\184\148\224\185\134 \224\184\151\224\184\179\224\185\132\224\184\161\224\184\173\224\184\162\224\184\185\224\185\136\224\185\134 \224\185\128\224\184\129\224\184\180\224\184\148\224\184\129\224\184\165\224\184\178\224\184\162\224\185\128\224\184\155\224\185\135\224\184\153\224\184\132\224\184\153\224\184\138\224\184\173\224\184\154\224\184\129\224\184\173\224\184\148\224\184\132\224\184\153\224\184\173\224\184\183\224\185\136\224\184\153\224\184\130\224\184\182\224\185\137\224\184\153\224\184\161\224\184\178\224\185\128\224\184\153\224\184\181\224\185\136\224\184\162?"
+L51_1 = "เหวอ ห่างกันสักนิดๆ ทำไมอยู่ๆ เกิดกลายเป็นคนชอบกอดคนอื่นขึ้นมาเนี่ย?"
 L50_1.m_Talk_THA = L51_1
-L51_1 = "Woah, th\195\180i n\195\160o, \196\145\225\187\171ng \195\180m t\195\180i ch\225\186\183t th\225\186\191. \196\144i\225\187\129u g\195\172 khi\225\186\191n c\195\180 l\225\186\161i tr\225\187\159 n\195\170n d\225\187\133 x\195\186c \196\145\225\187\153ng nh\198\176 v\225\186\173y?"
+L51_1 = "Woah, thôi nào, đừng ôm tôi chặt thế. Điều gì khiến cô lại trở nên dễ xúc động như vậy?"
 L50_1.m_Talk_VTN = L51_1
-L51_1 = "\228\189\160\229\133\136\230\148\190\229\188\128\230\136\145\229\144\167\239\188\140\233\131\189\228\184\141\229\131\143\229\185\179\230\151\182\231\154\132\228\189\160\228\186\134\227\128\130"
+L51_1 = "你先放开我吧，都不像平时的你了。"
 L50_1.m_Talk_SCN = L51_1
 L51_1 = "Wow, lass mir etwas Freiraum. Was bist du auf einmal so emotional?"
 L50_1.m_Talk_DEU = L51_1
-L51_1 = "Ouah, et mon espace personnel alors\194\160? Qu'est-ce qui te rend si tactile tout \195\160 coup\194\160?"
+L51_1 = "Ouah, et mon espace personnel alors ? Qu'est-ce qui te rend si tactile tout à coup ?"
 L50_1.m_Talk_FRA = L51_1
 L0_1[1] = L1_1
 L0_1[2] = L2_1
@@ -1222,20 +1222,20 @@ L3_1 = "R"
 L1_1[L2_1] = L3_1
 L2_1 = "m_Crash"
 L1_1[L2_1] = 20
-L2_1 = "\234\183\184, \234\183\184\235\160\135\234\181\176."
+L2_1 = "그, 그렇군."
 L1_1.m_Talk_KOREA = L2_1
 L1_1.m_fTalkTime = 0.03
-L2_1 = "\227\129\157\227\128\129\227\129\157\227\129\134\227\129\160\227\129\170\227\128\130"
+L2_1 = "そ、そうだな。"
 L1_1.m_Talk_JPN = L2_1
 L2_1 = "R-right."
 L1_1.m_Talk_ENG = L2_1
-L2_1 = "\228\185\159\227\128\129\228\185\159\230\152\175\227\128\130"
+L2_1 = "也、也是。"
 L1_1.m_Talk_TWN = L2_1
-L2_1 = "\224\184\136\224\184\176-\224\184\136\224\184\163\224\184\180\224\184\135\224\184\148\224\185\137\224\184\167\224\184\162"
+L2_1 = "จะ-จริงด้วย"
 L1_1.m_Talk_THA = L2_1
-L2_1 = "\198\175-\225\187\171."
+L2_1 = "Ư-ừ."
 L1_1.m_Talk_VTN = L2_1
-L2_1 = "\230\152\175\239\188\140\228\185\159\230\152\175\227\128\130"
+L2_1 = "是，也是。"
 L1_1.m_Talk_SCN = L2_1
 L2_1 = "O-okay."
 L1_1.m_Talk_DEU = L2_1
@@ -1268,24 +1268,24 @@ L3_1[L4_1] = L5_1
 L4_1 = "m_Pos"
 L5_1 = "C"
 L3_1[L4_1] = L5_1
-L4_1 = "\235\175\184\236\149\136\237\149\152\235\139\164. \236\130\180\236\149\132 \236\158\136\235\138\148 \236\160\132\236\154\176\235\165\188 \235\179\180\235\139\136 \235\167\136\236\157\140\236\157\180 \235\134\147\236\151\172\236\132\156 \234\183\184\235\167\140......"
+L4_1 = "미안하다. 살아 있는 전우를 보니 마음이 놓여서 그만......"
 L3_1.m_Talk_KOREA = L4_1
 L3_1.m_fTalkTime = 0.03
-L4_1 = "\227\129\153\227\129\190\227\129\170\227\129\132\227\128\130\230\136\166\229\143\139\227\129\174\231\132\161\228\186\139\227\129\170\229\167\191\227\130\146\231\155\174\227\129\171\227\129\151\227\129\159\227\130\137\230\176\151\227\129\140\230\138\156\227\129\145\227\129\166\227\129\151\227\129\190\227\129\163\227\129\166\227\129\170\226\128\166\226\128\166"
+L4_1 = "すまない。戦友の無事な姿を目にしたら気が抜けてしまってな……"
 L3_1.m_Talk_JPN = L4_1
-L4_1 = "Apologies. I was just so relieved to see my comrade alive\226\128\166"
+L4_1 = "Apologies. I was just so relieved to see my comrade alive…"
 L3_1.m_Talk_ENG = L4_1
-L4_1 = "\230\138\177\230\173\137\239\188\140\231\156\139\229\136\176\230\136\176\229\143\139\233\130\132\230\180\187\232\145\151\239\188\140\230\136\145\229\175\166\229\156\168\229\164\170\233\171\152\232\136\136\228\186\134\226\128\166\226\128\166"
+L4_1 = "抱歉，看到戰友還活著，我實在太高興了……"
 L3_1.m_Talk_TWN = L4_1
-L4_1 = "\224\184\130\224\184\173\224\185\130\224\184\151\224\184\169\224\184\151\224\184\181 \224\184\137\224\184\177\224\184\153\224\185\129\224\184\132\224\185\136\224\185\130\224\184\165\224\185\136\224\184\135\224\184\173\224\184\129\224\184\151\224\184\181\224\185\136\224\185\128\224\184\171\224\185\135\224\184\153\224\184\170\224\184\171\224\184\178\224\184\162\224\184\162\224\184\177\224\184\135\224\184\161\224\184\181\224\184\138\224\184\181\224\184\167\224\184\180\224\184\149\224\184\173\224\184\162\224\184\185\224\185\136\224\184\153\224\185\136\224\184\176..."
+L4_1 = "ขอโทษที ฉันแค่โล่งอกที่เห็นสหายยังมีชีวิตอยู่น่ะ..."
 L3_1.m_Talk_THA = L4_1
-L4_1 = "Xin t\195\180i. T\195\180i c\225\186\163m th\225\186\165y th\225\186\173t nh\225\186\185 nh\195\181m khi \196\145\225\187\147ng \196\145\225\187\153i c\225\187\167a m\195\172nh c\195\178n s\225\187\145ng..."
+L4_1 = "Xin tôi. Tôi cảm thấy thật nhẹ nhõm khi đồng đội của mình còn sống..."
 L3_1.m_Talk_VTN = L4_1
-L4_1 = "\229\175\185\228\184\141\232\181\183\239\188\140\231\156\139\229\136\176\230\136\152\229\143\139\232\191\152\230\180\187\231\157\128\239\188\140\230\136\145\229\164\170\233\171\152\229\133\180\228\186\134\226\128\166\226\128\166"
+L4_1 = "对不起，看到战友还活着，我太高兴了……"
 L3_1.m_Talk_SCN = L4_1
 L4_1 = "Verzeihung. Ich war nur so erleichtert, meine Kameradin lebend zu sehen."
 L3_1.m_Talk_DEU = L4_1
-L4_1 = "Pardon. J'\195\169tais tellement heureuse de voir ma camarade en vie..."
+L4_1 = "Pardon. J'étais tellement heureuse de voir ma camarade en vie..."
 L3_1.m_Talk_FRA = L4_1
 L4_1 = {}
 L5_1 = "ADMIN_PART1_NODE6_START@54#Talk"
@@ -1305,24 +1305,24 @@ L4_1[L5_1] = L6_1
 L5_1 = "m_Pos"
 L6_1 = "C"
 L4_1[L5_1] = L6_1
-L5_1 = "\234\183\184\235\159\176\235\141\176 \236\151\172\234\184\176\235\138\148 \236\150\180\235\148\148\236\167\128? \235\173\148\234\176\128 \236\149\140\236\149\132\235\130\184 \234\177\176\235\157\188\235\143\132 \236\158\136\235\130\152?"
+L5_1 = "그런데 여기는 어디지? 뭔가 알아낸 거라도 있나?"
 L4_1.m_Talk_KOREA = L5_1
 L4_1.m_fTalkTime = 0.03
-L5_1 = "\227\129\168\227\129\147\227\130\141\227\129\167\227\128\129\227\129\147\227\129\147\227\129\175\227\129\169\227\129\147\227\129\160\239\188\159\227\128\128\228\189\149\227\129\139\227\130\143\227\129\139\227\129\163\227\129\159\227\129\147\227\129\168\227\129\175\227\129\130\227\130\139\227\129\139\239\188\159"
+L5_1 = "ところで、ここはどこだ？　何かわかったことはあるか？"
 L4_1.m_Talk_JPN = L5_1
 L5_1 = "Anyway, where are we? Have you found out anything?"
 L4_1.m_Talk_ENG = L5_1
-L5_1 = "\228\184\141\233\129\142\233\128\153\232\163\161\230\152\175\229\147\170\232\163\161\239\188\159\229\166\179\230\156\137\230\178\146\230\156\137\231\153\188\231\143\190\228\187\128\233\186\188\239\188\159"
+L5_1 = "不過這裡是哪裡？妳有沒有發現什麼？"
 L4_1.m_Talk_TWN = L5_1
-L5_1 = "\224\184\167\224\185\136\224\184\178\224\185\129\224\184\149\224\185\136 \224\184\153\224\184\181\224\185\136\224\185\128\224\184\163\224\184\178\224\184\173\224\184\162\224\184\185\224\185\136\224\185\132\224\184\171\224\184\153 \224\185\128\224\184\152\224\184\173\224\185\128\224\184\136\224\184\173\224\184\173\224\184\176\224\185\132\224\184\163\224\184\154\224\185\137\224\184\178\224\184\135\224\184\161\224\184\177\224\185\137\224\184\162?"
+L5_1 = "ว่าแต่ นี่เราอยู่ไหน เธอเจออะไรบ้างมั้ย?"
 L4_1.m_Talk_THA = L5_1
-L5_1 = "D\195\185 sao th\195\172 ch\195\186ng ta \196\145ang \225\187\159 \196\145\195\162u \196\145\195\162y? C\195\180 c\195\179 t\195\172m th\225\186\165y b\225\186\165t c\225\187\169 th\225\187\169 g\195\172 kh\195\180ng?"
+L5_1 = "Dù sao thì chúng ta đang ở đâu đây? Cô có tìm thấy bất cứ thứ gì không?"
 L4_1.m_Talk_VTN = L5_1
-L5_1 = "\228\184\141\232\191\135\232\191\153\230\152\175\229\147\170\229\132\191\239\188\159\230\156\137\230\178\161\230\156\137\229\143\145\231\142\176\228\187\128\228\185\136\239\188\159"
+L5_1 = "不过这是哪儿？有没有发现什么？"
 L4_1.m_Talk_SCN = L5_1
 L5_1 = "Wie auch immer, wie ist der Stand? Hast du etwas herausgefunden?"
 L4_1.m_Talk_DEU = L5_1
-L5_1 = "Enfin bref. O\195\185 sommes-nous\194\160? Tu as trouv\195\169 quelque chose\194\160?"
+L5_1 = "Enfin bref. Où sommes-nous ? Tu as trouvé quelque chose ?"
 L4_1.m_Talk_FRA = L5_1
 L5_1 = {}
 L6_1 = 55
@@ -1367,24 +1367,24 @@ L7_1[L8_1] = L9_1
 L8_1 = "m_Pos"
 L9_1 = "L"
 L7_1[L8_1] = L9_1
-L8_1 = "\235\130\152\235\143\132 \236\158\152 \235\170\168\235\165\180\234\178\160\236\150\180. \236\160\149\236\139\160 \236\176\168\235\166\172\235\139\136\234\185\140 \236\151\172\234\184\176\235\141\148\235\157\188\234\179\160."
+L8_1 = "나도 잘 모르겠어. 정신 차리니까 여기더라고."
 L7_1.m_Talk_KOREA = L8_1
 L7_1.m_fTalkTime = 0.03
-L8_1 = "\231\167\129\227\129\171\227\130\130\227\130\136\227\129\143\227\130\143\227\129\139\227\130\137\227\129\170\227\129\132\227\129\174\227\128\130\230\176\151\227\129\140\227\129\164\227\129\143\227\129\168\227\129\147\227\129\147\227\129\171\227\129\132\227\129\159\227\130\143\227\128\130"
+L8_1 = "私にもよくわからないの。気がつくとここにいたわ。"
 L7_1.m_Talk_JPN = L8_1
 L8_1 = "I have no idea either. I just woke up and found myself here."
 L7_1.m_Talk_ENG = L8_1
-L8_1 = "\230\136\145\228\185\159\228\184\141\231\159\165\233\129\147\239\188\140\230\136\145\233\134\146\228\190\134\231\154\132\230\153\130\229\128\153\229\176\177\229\156\168\233\128\153\229\128\139\229\156\176\230\150\185\228\186\134\227\128\130"
+L8_1 = "我也不知道，我醒來的時候就在這個地方了。"
 L7_1.m_Talk_TWN = L8_1
-L8_1 = "\224\184\137\224\184\177\224\184\153\224\184\129\224\185\135\224\185\132\224\184\161\224\185\136\224\184\163\224\184\185\224\185\137\224\185\128\224\184\171\224\184\161\224\184\183\224\184\173\224\184\153\224\184\129\224\184\177\224\184\153 \224\184\137\224\184\177\224\184\153\224\184\149\224\184\183\224\185\136\224\184\153\224\184\161\224\184\178\224\184\129\224\185\135\224\184\173\224\184\162\224\184\185\224\185\136\224\184\151\224\184\181\224\185\136\224\184\153\224\184\181\224\185\136\224\185\129\224\184\165\224\185\137\224\184\167"
+L8_1 = "ฉันก็ไม่รู้เหมือนกัน ฉันตื่นมาก็อยู่ที่นี่แล้ว"
 L7_1.m_Talk_THA = L8_1
-L8_1 = "T\195\180i ch\225\186\179ng bi\225\186\191t n\225\187\175a. T\195\180i v\225\187\171a t\225\187\137nh l\225\186\161i v\195\160 th\225\186\165y m\195\172nh \225\187\159 \196\145\195\162y."
+L8_1 = "Tôi chẳng biết nữa. Tôi vừa tỉnh lại và thấy mình ở đây."
 L7_1.m_Talk_VTN = L8_1
-L8_1 = "\230\136\145\228\185\159\228\184\141\231\159\165\233\129\147\239\188\140\230\136\145\233\134\146\230\157\165\231\154\132\230\151\182\229\128\153\229\176\177\229\156\168\232\191\153\228\184\170\229\156\176\230\150\185\228\186\134\227\128\130"
+L8_1 = "我也不知道，我醒来的时候就在这个地方了。"
 L7_1.m_Talk_SCN = L8_1
-L8_1 = "Ich habe auch keine Ahnung\194\160\226\128\166 Ich bin gerade aufgewacht und habe mich hier wiedergefunden."
+L8_1 = "Ich habe auch keine Ahnung … Ich bin gerade aufgewacht und habe mich hier wiedergefunden."
 L7_1.m_Talk_DEU = L8_1
-L8_1 = "Je n'en ai aucune id\195\169e. Je viens de me r\195\169veiller et me suis retrouv\195\169e ici."
+L8_1 = "Je n'en ai aucune idée. Je viens de me réveiller et me suis retrouvée ici."
 L7_1.m_Talk_FRA = L8_1
 L8_1 = {}
 L9_1 = "ADMIN_PART1_NODE6_START@58#Talk"
@@ -1401,24 +1401,24 @@ L8_1[L9_1] = L10_1
 L9_1 = "m_Pos"
 L10_1 = "R"
 L8_1[L9_1] = L10_1
-L9_1 = "\235\130\156\236\178\152\237\149\152\234\178\140 \235\144\144\234\181\176. \236\158\148\237\149\180\235\147\164\236\157\132 \235\180\144\236\132\160 \234\183\184\235\166\172 \236\149\136\236\160\132\237\149\156 \234\179\179\236\157\128 \236\149\132\235\139\140 \234\178\131 \234\176\153\236\157\128\235\141\176."
+L9_1 = "난처하게 됐군. 잔해들을 봐선 그리 안전한 곳은 아닌 것 같은데."
 L8_1.m_Talk_KOREA = L9_1
 L8_1.m_fTalkTime = 0.03
-L9_1 = "\229\155\176\227\129\163\227\129\159\227\129\147\227\129\168\227\129\171\227\129\170\227\129\163\227\129\159\227\129\170\227\128\130\230\174\139\233\170\184\227\129\174\230\167\152\229\173\144\227\129\139\227\130\137\227\129\151\227\129\166\227\128\129\227\129\157\227\129\134\229\174\137\229\133\168\227\129\170\229\160\180\230\137\128\227\129\168\227\129\175\230\128\157\227\129\136\227\130\147\227\129\140\227\128\130"
+L9_1 = "困ったことになったな。残骸の様子からして、そう安全な場所とは思えんが。"
 L8_1.m_Talk_JPN = L9_1
 L9_1 = "That's troubling. All this wreckage suggests that it's not very safe here."
 L8_1.m_Talk_ENG = L9_1
-L9_1 = "\230\131\133\230\179\129\228\184\141\229\164\170\229\166\153\227\128\130\231\156\139\231\156\139\233\128\153\228\186\155\230\174\152\233\170\184\239\188\140\233\128\153\232\163\161\229\165\189\229\131\143\228\184\141\230\152\175\228\184\128\229\128\139\229\174\137\229\133\168\231\154\132\229\156\176\230\150\185\227\128\130"
+L9_1 = "情況不太妙。看看這些殘骸，這裡好像不是一個安全的地方。"
 L8_1.m_Talk_TWN = L9_1
-L9_1 = "\224\184\161\224\184\181\224\184\155\224\184\177\224\184\141\224\184\171\224\184\178\224\185\129\224\184\165\224\185\137\224\184\167\224\184\150\224\185\137\224\184\178\224\184\135\224\184\177\224\185\137\224\184\153 \224\185\128\224\184\171\224\185\135\224\184\153\224\184\139\224\184\178\224\184\129\224\184\151\224\184\177\224\185\137\224\184\135\224\184\171\224\184\161\224\184\148\224\184\153\224\184\181\224\185\136\224\184\129\224\185\135\224\184\163\224\184\185\224\185\137\224\185\128\224\184\165\224\184\162\224\184\167\224\185\136\224\184\178\224\184\151\224\184\181\224\185\136\224\184\153\224\184\181\224\185\136\224\185\132\224\184\161\224\185\136\224\184\155\224\184\165\224\184\173\224\184\148\224\184\160\224\184\177\224\184\162"
+L9_1 = "มีปัญหาแล้วถ้างั้น เห็นซากทั้งหมดนี่ก็รู้เลยว่าที่นี่ไม่ปลอดภัย"
 L8_1.m_Talk_THA = L9_1
-L9_1 = "T\225\187\135 th\225\186\173t. T\225\186\165t c\225\186\163 \196\145\225\187\145ng \196\145\225\187\149 n\195\161t n\195\160y cho th\225\186\165y r\225\186\177ng \225\187\159 \196\145\195\162y kh\195\180ng an to\195\160n l\225\186\175m. "
+L9_1 = "Tệ thật. Tất cả đống đổ nát này cho thấy rằng ở đây không an toàn lắm. "
 L8_1.m_Talk_VTN = L9_1
-L9_1 = "\228\184\141\229\164\170\229\166\153\239\188\140\231\156\139\231\156\139\232\191\153\228\186\155\230\174\139\233\170\184\239\188\140\232\191\153\233\135\140\229\165\189\229\131\143\228\184\141\230\152\175\228\184\128\228\184\170\229\174\137\229\133\168\231\154\132\229\156\176\230\150\185\227\128\130"
+L9_1 = "不太妙，看看这些残骸，这里好像不是一个安全的地方。"
 L8_1.m_Talk_SCN = L9_1
-L9_1 = "Das ist besorgniserregend. All diese Tr\195\188mmer lassen vermuten, dass es hier nicht sicher ist."
+L9_1 = "Das ist besorgniserregend. All diese Trümmer lassen vermuten, dass es hier nicht sicher ist."
 L8_1.m_Talk_DEU = L9_1
-L9_1 = "C'est inqui\195\169tant. Toutes ces \195\169paves sugg\195\168rent que les lieux ne sont pas tr\195\168s s\195\187rs."
+L9_1 = "C'est inquiétant. Toutes ces épaves suggèrent que les lieux ne sont pas très sûrs."
 L8_1.m_Talk_FRA = L9_1
 L9_1 = {}
 L10_1 = "ADMIN_PART1_NODE6_START@59#Talk"
@@ -1435,24 +1435,24 @@ L9_1[L10_1] = L11_1
 L10_1 = "m_Pos"
 L11_1 = "R"
 L9_1[L10_1] = L11_1
-L10_1 = "\234\183\184\235\179\180\235\139\164 \236\160\132\236\154\176\235\147\164\236\157\128 \235\170\168\235\145\144 \236\150\180\235\150\187\234\178\140 \235\144\144\236\167\128? \235\172\180\236\130\172\237\149\156\234\176\128?"
+L10_1 = "그보다 전우들은 모두 어떻게 됐지? 무사한가?"
 L9_1.m_Talk_KOREA = L10_1
 L9_1.m_fTalkTime = 0.03
-L10_1 = "\227\129\157\227\130\140\227\130\136\227\130\138\227\128\129\228\187\150\227\129\174\230\136\166\229\143\139\227\129\159\227\129\161\227\129\175\227\129\169\227\129\134\227\129\170\227\129\163\227\129\159\239\188\159\227\128\128\231\132\161\228\186\139\227\129\170\227\129\174\227\129\139\239\188\159"
+L10_1 = "それより、他の戦友たちはどうなった？　無事なのか？"
 L9_1.m_Talk_JPN = L10_1
 L10_1 = "More importantly, what happened to other comrades? Are they safe?"
 L9_1.m_Talk_ENG = L10_1
-L10_1 = "\232\169\177\232\170\170\229\133\182\228\187\150\230\136\176\229\143\139\233\131\189\230\128\142\233\186\188\230\168\163\228\186\134\239\188\159\228\187\150\229\128\145\230\178\146\228\186\139\229\151\142\239\188\159"
+L10_1 = "話說其他戰友都怎麼樣了？他們沒事嗎？"
 L9_1.m_Talk_TWN = L10_1
-L10_1 = "\224\184\151\224\184\181\224\185\136\224\184\170\224\184\179\224\184\132\224\184\177\224\184\141\224\184\129\224\184\167\224\185\136\224\184\178\224\184\153\224\184\177\224\185\137\224\184\153\224\184\132\224\184\183\224\184\173 \224\185\129\224\184\165\224\185\137\224\184\167\224\184\170\224\184\171\224\184\178\224\184\162\224\185\128\224\184\163\224\184\178\224\184\132\224\184\153\224\184\173\224\184\183\224\185\136\224\184\153\224\185\134 \224\184\165\224\185\136\224\184\176? \224\184\158\224\184\167\224\184\129\224\185\128\224\184\130\224\184\178\224\184\155\224\184\165\224\184\173\224\184\148\224\184\160\224\184\177\224\184\162\224\184\163\224\184\182\224\185\128\224\184\155\224\184\165\224\185\136\224\184\178?"
+L10_1 = "ที่สำคัญกว่านั้นคือ แล้วสหายเราคนอื่นๆ ล่ะ? พวกเขาปลอดภัยรึเปล่า?"
 L9_1.m_Talk_THA = L10_1
-L10_1 = "Quan tr\225\187\141ng h\198\161n, nh\225\187\175ng \196\145\225\187\147ng \196\145\225\187\153i kh\195\161c sao r\225\187\147i? H\225\187\141 c\195\179 an to\195\160n kh\195\180ng? "
+L10_1 = "Quan trọng hơn, những đồng đội khác sao rồi? Họ có an toàn không? "
 L9_1.m_Talk_VTN = L10_1
-L10_1 = "\229\133\182\228\187\150\230\136\152\229\143\139\233\131\189\230\128\142\228\185\136\230\160\183\228\186\134\239\188\159\228\187\150\228\187\172\230\178\161\228\186\139\229\144\151\239\188\159"
+L10_1 = "其他战友都怎么样了？他们没事吗？"
 L9_1.m_Talk_SCN = L10_1
 L10_1 = "Aber vor allem: Was ist mit den anderen Kameraden passiert? Sind sie in Sicherheit?"
 L9_1.m_Talk_DEU = L10_1
-L10_1 = "Et surtout, qu'est-il arriv\195\169 aux autres camarades\194\160? Sont-ils en s\195\169curit\195\169\194\160?"
+L10_1 = "Et surtout, qu'est-il arrivé aux autres camarades ? Sont-ils en sécurité ?"
 L9_1.m_Talk_FRA = L10_1
 L10_1 = {}
 L11_1 = "ADMIN_PART1_NODE6_START@60#Talk"
@@ -1469,24 +1469,24 @@ L10_1[L11_1] = L12_1
 L11_1 = "m_Pos"
 L12_1 = "L"
 L10_1[L11_1] = L12_1
-L11_1 = "\236\160\128\236\170\189\236\151\144 \236\154\176\235\166\172\234\176\128 \237\131\128\234\179\160 \236\152\168 \237\149\168\236\132\160\236\157\180 \236\162\140\236\180\136\235\144\152\236\150\180 \236\158\136\236\150\180. \235\139\164\235\147\164 \236\149\132\236\167\129 \234\183\184 \236\149\136\236\151\144 \235\143\153\234\178\176\235\144\152\236\150\180 \236\158\136\236\157\132 \234\177\176\236\149\188."
+L11_1 = "저쪽에 우리가 타고 온 함선이 좌초되어 있어. 다들 아직 그 안에 동결되어 있을 거야."
 L10_1.m_Talk_KOREA = L11_1
 L10_1.m_fTalkTime = 0.03
-L11_1 = "\229\144\145\227\129\147\227\129\134\227\129\171\231\167\129\227\129\159\227\129\161\227\129\140\228\185\151\227\129\163\227\129\166\227\129\141\227\129\159\232\137\166\232\136\185\227\129\140\229\186\167\231\164\129\227\129\151\227\129\166\227\129\132\227\130\139\227\129\174\227\128\130\n\227\129\191\227\130\147\227\129\170\227\128\129\227\129\190\227\129\160\227\129\157\227\129\174\228\184\173\227\129\167\229\135\141\231\181\144\227\129\149\227\130\140\227\129\166\227\130\139\227\129\175\227\129\154\227\130\136\227\128\130"
+L11_1 = "向こうに私たちが乗ってきた艦船が座礁しているの。\nみんな、まだその中で凍結されてるはずよ。"
 L10_1.m_Talk_JPN = L11_1
 L11_1 = "I found our ship crashed over there. I bet everyone's still in stasis inside."
 L10_1.m_Talk_ENG = L11_1
-L11_1 = "\230\136\145\229\128\145\231\154\132\232\137\166\232\136\185\229\156\168\233\130\163\233\130\138\230\147\177\230\183\186\228\186\134\227\128\130\229\164\167\229\174\182\233\130\132\229\135\141\231\181\144\229\156\168\232\163\161\233\157\162\227\128\130"
+L11_1 = "我們的艦船在那邊擱淺了。大家還凍結在裡面。"
 L10_1.m_Talk_TWN = L11_1
-L11_1 = "\224\184\137\224\184\177\224\184\153\224\185\128\224\184\136\224\184\173\224\184\162\224\184\178\224\184\153\224\185\128\224\184\163\224\184\178\224\184\173\224\184\162\224\184\185\224\185\136\224\184\149\224\184\163\224\184\135\224\184\153\224\184\177\224\185\137\224\184\153 \224\184\151\224\184\184\224\184\129\224\184\132\224\184\153\224\184\149\224\185\137\224\184\173\224\184\135\224\184\162\224\184\177\224\184\135\224\184\150\224\184\185\224\184\129\224\185\129\224\184\138\224\185\136\224\185\129\224\184\130\224\185\135\224\184\135\224\184\173\224\184\162\224\184\185\224\185\136\224\185\131\224\184\153\224\184\153\224\184\177\224\185\137\224\184\153\224\185\129\224\184\153\224\185\136\224\185\134"
+L11_1 = "ฉันเจอยานเราอยู่ตรงนั้น ทุกคนต้องยังถูกแช่แข็งอยู่ในนั้นแน่ๆ"
 L10_1.m_Talk_THA = L11_1
-L11_1 = "T\195\180i th\225\186\165y t\195\160u c\225\187\167a ch\195\186ng ta b\225\187\139 r\198\161i \225\187\159 \196\145\195\179. T\195\180i c\195\161 r\225\186\177ng m\225\187\141i ng\198\176\225\187\157i v\225\186\171n \196\145ang trong t\195\172nh tr\225\186\161ng \196\145\195\179ng b\196\131ng. "
+L11_1 = "Tôi thấy tàu của chúng ta bị rơi ở đó. Tôi cá rằng mọi người vẫn đang trong tình trạng đóng băng. "
 L10_1.m_Talk_VTN = L11_1
-L11_1 = "\230\136\145\228\187\172\231\154\132\232\136\176\232\136\185\229\156\168\233\130\163\232\190\185\230\144\129\230\181\133\228\186\134\227\128\130\229\164\167\229\174\182\229\143\175\232\131\189\232\191\152\229\134\187\231\187\147\229\156\168\233\130\163\233\135\140\233\157\162\227\128\130"
+L11_1 = "我们的舰船在那边搁浅了。大家可能还冻结在那里面。"
 L10_1.m_Talk_SCN = L11_1
-L11_1 = "Ich habe dort dr\195\188ben unser abgest\195\188rztes Schiff gefunden. Ich wette, alle darin sind noch im K\195\164lteschlaf."
+L11_1 = "Ich habe dort drüben unser abgestürztes Schiff gefunden. Ich wette, alle darin sind noch im Kälteschlaf."
 L10_1.m_Talk_DEU = L11_1
-L11_1 = "J'ai retrouv\195\169 notre vaisseau \195\169cras\195\169 plus loin l\195\160-bas. Je parie que tout le monde est encore en stase \195\160 l'int\195\169rieur."
+L11_1 = "J'ai retrouvé notre vaisseau écrasé plus loin là-bas. Je parie que tout le monde est encore en stase à l'intérieur."
 L10_1.m_Talk_FRA = L11_1
 L11_1 = {}
 L12_1 = "ADMIN_PART1_NODE6_START@61#Talk"
@@ -1503,24 +1503,24 @@ L11_1[L12_1] = L13_1
 L12_1 = "m_Pos"
 L13_1 = "L"
 L11_1[L12_1] = L13_1
-L12_1 = "\236\156\132\237\151\152\237\149\156 \236\136\156\234\176\132\236\157\128 \236\167\128\235\130\172\236\156\188\235\139\136\234\185\140 \235\143\153\234\178\176 \236\178\152\235\166\172\234\176\128 \237\149\180\236\160\156\235\144\144\236\157\132\236\167\128\235\143\132 \235\170\176\235\157\188. \236\150\180\236\132\156 \234\176\128\236\158\144."
+L12_1 = "위험한 순간은 지났으니까 동결 처리가 해제됐을지도 몰라. 어서 가자."
 L11_1.m_Talk_KOREA = L12_1
 L11_1.m_fTalkTime = 0.03
-L12_1 = "\229\141\177\230\169\159\231\154\132\231\138\182\230\179\129\227\129\175\233\129\142\227\129\142\227\129\159\227\130\147\227\129\160\227\129\151\227\128\129\229\135\141\231\181\144\229\135\166\231\144\134\227\129\140\n\232\167\163\233\153\164\227\129\149\227\130\140\227\129\159\227\129\139\227\130\130\227\129\151\227\130\140\227\129\170\227\129\132\227\130\143\227\128\130\230\128\165\227\129\132\227\129\167\232\161\140\227\129\141\227\129\190\227\129\151\227\130\135\227\129\134\227\128\130"
+L12_1 = "危機的状況は過ぎたんだし、凍結処理が\n解除されたかもしれないわ。急いで行きましょう。"
 L11_1.m_Talk_JPN = L12_1
 L12_1 = "But the cryostasis might be over since they're no longer in danger. Let's go check it out."
 L11_1.m_Talk_ENG = L12_1
-L12_1 = "\230\151\162\231\132\182\229\141\177\233\154\170\229\183\178\231\182\147\233\129\142\229\142\187\228\186\134\239\188\140\229\135\141\231\181\144\231\168\139\229\186\143\228\185\159\230\135\137\232\169\178\232\162\171\232\167\163\233\153\164\228\186\134\229\144\167\239\188\140\233\129\142\229\142\187\231\156\139\231\156\139\229\144\167\227\128\130"
+L12_1 = "既然危險已經過去了，凍結程序也應該被解除了吧，過去看看吧。"
 L11_1.m_Talk_TWN = L12_1
-L12_1 = "\224\185\129\224\184\149\224\185\136\224\185\132\224\184\132\224\184\163\224\185\130\224\184\173\224\184\170\224\185\128\224\184\149\224\184\139\224\184\180\224\184\170\224\184\129\224\185\135\224\184\173\224\184\178\224\184\136\224\185\128\224\184\165\224\184\180\224\184\129\224\184\151\224\184\179\224\184\135\224\184\178\224\184\153\224\185\132\224\184\155\224\185\129\224\184\165\224\185\137\224\184\167\224\185\128\224\184\158\224\184\163\224\184\178\224\184\176\224\184\149\224\184\173\224\184\153\224\184\153\224\184\181\224\185\137\224\184\158\224\184\167\224\184\129\224\185\128\224\184\130\224\184\178\224\185\132\224\184\161\224\185\136\224\185\132\224\184\148\224\185\137\224\184\149\224\184\129\224\184\173\224\184\162\224\184\185\224\185\136\224\185\131\224\184\153\224\184\173\224\184\177\224\184\153\224\184\149\224\184\163\224\184\178\224\184\162 \224\185\128\224\184\163\224\184\178\224\185\132\224\184\155\224\184\148\224\184\185\224\184\129\224\184\177\224\184\153\224\185\128\224\184\150\224\184\173\224\184\176"
+L12_1 = "แต่ไครโอสเตซิสก็อาจเลิกทำงานไปแล้วเพราะตอนนี้พวกเขาไม่ได้ตกอยู่ในอันตราย เราไปดูกันเถอะ"
 L11_1.m_Talk_THA = L12_1
-L12_1 = "Nh\198\176ng \196\145\195\179ng b\196\131ng c\195\179 l\225\186\189 \196\145\195\163 k\225\186\191t th\195\186c r\225\187\147i v\195\172 h\225\187\141 kh\195\180ng c\195\178n g\225\186\183p nguy hi\225\187\131m n\225\187\175a. H\195\163y v\195\160o xem sao."
+L12_1 = "Nhưng đóng băng có lẽ đã kết thúc rồi vì họ không còn gặp nguy hiểm nữa. Hãy vào xem sao."
 L11_1.m_Talk_VTN = L12_1
-L12_1 = "\230\151\162\231\132\182\229\141\177\233\153\169\229\183\178\231\187\143\232\191\135\229\142\187\228\186\134\239\188\140\229\134\187\231\187\147\228\185\159\229\186\148\232\175\165\232\162\171\232\167\163\233\153\164\228\186\134\229\144\167\239\188\140\229\191\171\232\191\135\229\142\187\231\156\139\231\156\139\227\128\130"
+L12_1 = "既然危险已经过去了，冻结也应该被解除了吧，快过去看看。"
 L11_1.m_Talk_SCN = L12_1
-L12_1 = "Aber vielleicht wurde der K\195\164lteschlaf deaktiviert, da sie nicht mehr in Gefahr sind. Lass uns nachsehen."
+L12_1 = "Aber vielleicht wurde der Kälteschlaf deaktiviert, da sie nicht mehr in Gefahr sind. Lass uns nachsehen."
 L11_1.m_Talk_DEU = L12_1
-L12_1 = "Mais peut-\195\170tre que la cryostase est termin\195\169e, maintenant qu'ils sont hors de danger. Allons voir."
+L12_1 = "Mais peut-être que la cryostase est terminée, maintenant qu'ils sont hors de danger. Allons voir."
 L11_1.m_Talk_FRA = L12_1
 L12_1 = {}
 L13_1 = 62
@@ -1583,24 +1583,24 @@ L15_1[L16_1] = L17_1
 L16_1 = "m_Pos"
 L17_1 = "C"
 L15_1[L16_1] = L17_1
-L16_1 = "......\235\143\153\234\178\176?"
+L16_1 = "......동결?"
 L15_1.m_Talk_KOREA = L16_1
 L15_1.m_fTalkTime = 0.03
-L16_1 = "\226\128\166\226\128\166\229\135\141\231\181\144\239\188\159"
+L16_1 = "……凍結？"
 L15_1.m_Talk_JPN = L16_1
 L16_1 = "Cryostasis?"
 L15_1.m_Talk_ENG = L16_1
-L16_1 = "\226\128\166\226\128\166\229\135\141\231\181\144\239\188\159"
+L16_1 = "……凍結？"
 L15_1.m_Talk_TWN = L16_1
-L16_1 = "\224\185\132\224\184\132\224\184\163\224\185\130\224\184\173\224\184\170\224\185\128\224\184\149\224\184\139\224\184\180\224\184\170\224\185\128\224\184\171\224\184\163\224\184\173?"
+L16_1 = "ไครโอสเตซิสเหรอ?"
 L15_1.m_Talk_THA = L16_1
-L16_1 = "\196\144\195\179ng b\196\131ng?"
+L16_1 = "Đóng băng?"
 L15_1.m_Talk_VTN = L16_1
-L16_1 = "\226\128\166\226\128\166\229\134\187\231\187\147\239\188\159"
+L16_1 = "……冻结？"
 L15_1.m_Talk_SCN = L16_1
-L16_1 = "K\195\164lteschlaf?"
+L16_1 = "Kälteschlaf?"
 L15_1.m_Talk_DEU = L16_1
-L16_1 = "Cryostase\194\160?"
+L16_1 = "Cryostase ?"
 L15_1.m_Talk_FRA = L16_1
 L16_1 = {}
 L17_1 = 66
@@ -1643,24 +1643,24 @@ L18_1.m_bWaitClick = true
 L18_1.m_fWaitTime = 0
 L19_1 = "FX_UI_BUTTON_SELECT"
 L18_1.m_StartFXSoundName = L19_1
-L19_1 = "<color=#ffd34c>\237\152\132\236\158\172 \237\149\168\236\132\160\236\157\128 \235\143\153\234\178\176 \236\178\152\235\166\172 \236\164\145\236\158\133\235\139\136\235\139\164. \235\130\180\235\182\128\235\161\156 \236\167\132\236\158\133\237\149\152\236\139\164 \236\136\152 \236\151\134\236\138\181\235\139\136\235\139\164.</color>"
+L19_1 = "<color=#ffd34c>현재 함선은 동결 처리 중입니다. 내부로 진입하실 수 없습니다.</color>"
 L18_1.m_Talk_KOREA = L19_1
 L18_1.m_fTalkTime = 0.03
-L19_1 = "<color=#ffd34c>\231\143\190\229\156\168\227\128\129\232\137\166\232\136\185\227\129\175\229\135\141\231\181\144\229\135\166\231\144\134\228\184\173\227\129\167\227\129\153\227\128\130\229\134\133\233\131\168\227\129\184\227\129\174\233\128\178\229\133\165\227\129\175\227\129\167\227\129\141\227\129\190\227\129\155\227\130\147\227\128\130</color>"
+L19_1 = "<color=#ffd34c>現在、艦船は凍結処理中です。内部への進入はできません。</color>"
 L18_1.m_Talk_JPN = L19_1
 L19_1 = "<color=#ffd34c>The ship is currently under cryostasis. Entry is forbidden.</color>"
 L18_1.m_Talk_ENG = L19_1
-L19_1 = "<color=#ffd34c>\231\143\190\229\156\168\232\137\166\232\136\185\232\153\149\230\150\188\229\135\141\231\181\144\231\139\128\230\133\139\239\188\140\231\132\161\230\179\149\233\128\178\229\133\165\229\136\176\229\133\167\233\131\168\227\128\130</color>"
+L19_1 = "<color=#ffd34c>現在艦船處於凍結狀態，無法進入到內部。</color>"
 L18_1.m_Talk_TWN = L19_1
-L19_1 = "<color=#ffd34c>\224\184\162\224\184\178\224\184\153\224\184\173\224\184\162\224\184\185\224\185\136\224\184\163\224\184\176\224\184\171\224\184\167\224\185\136\224\184\178\224\184\135\224\184\129\224\184\178\224\184\163\224\185\132\224\184\132\224\184\163\224\185\130\224\184\173\224\184\170\224\185\128\224\184\149\224\184\139\224\184\180\224\184\170 \224\184\171\224\185\137\224\184\178\224\184\161\224\185\128\224\184\130\224\185\137\224\184\178</color>"
+L19_1 = "<color=#ffd34c>ยานอยู่ระหว่างการไครโอสเตซิส ห้ามเข้า</color>"
 L18_1.m_Talk_THA = L19_1
-L19_1 = "<color=#ffd34c>Con t\195\160u \196\145ang \225\187\159 tr\225\186\161ng th\195\161i \196\145\195\179ng b\196\131ng. C\225\186\165m ra v\195\160o.</color>"
+L19_1 = "<color=#ffd34c>Con tàu đang ở trạng thái đóng băng. Cấm ra vào.</color>"
 L18_1.m_Talk_VTN = L19_1
-L19_1 = "<color=#ffd34c>\232\136\176\232\136\185\229\164\132\228\186\142\229\134\187\231\187\147\231\138\182\230\128\129\239\188\140\230\151\160\230\179\149\232\191\155\229\133\165\227\128\130</color>"
+L19_1 = "<color=#ffd34c>舰船处于冻结状态，无法进入。</color>"
 L18_1.m_Talk_SCN = L19_1
-L19_1 = "<color=#ffd34c>Das Schiff befindet sich derzeit im K\195\164lteschlaf. Der Zutritt ist verboten.</color>"
+L19_1 = "<color=#ffd34c>Das Schiff befindet sich derzeit im Kälteschlaf. Der Zutritt ist verboten.</color>"
 L18_1.m_Talk_DEU = L19_1
-L19_1 = "<color=#ffd34c>Le vaisseau est actuellement en cryostase. Entr\195\169e interdite.</color>"
+L19_1 = "<color=#ffd34c>Le vaisseau est actuellement en cryostase. Entrée interdite.</color>"
 L18_1.m_Talk_FRA = L19_1
 L19_1 = {}
 L20_1 = "ADMIN_PART1_NODE6_START@69#Talk"
@@ -1671,24 +1671,24 @@ L19_1.m_CutScenID = 1900109
 L19_1.m_CutScenStrID = "ADMIN_PART1_NODE6_START"
 L19_1.m_bWaitClick = true
 L19_1.m_fWaitTime = 0
-L20_1 = "<color=#ffd34c>\236\136\152\235\143\153 \237\149\180\236\160\156\235\165\188 \236\156\132\237\149\180\236\132\156\235\138\148 \235\141\148 \235\134\146\236\157\128 \235\147\177\234\184\137\236\157\152 \234\182\140\237\149\156\236\157\180 \237\149\132\236\154\148\237\149\169\235\139\136\235\139\164.</color>"
+L20_1 = "<color=#ffd34c>수동 해제를 위해서는 더 높은 등급의 권한이 필요합니다.</color>"
 L19_1.m_Talk_KOREA = L20_1
 L19_1.m_fTalkTime = 0.03
-L20_1 = "<color=#ffd34c>\230\137\139\229\139\149\227\129\167\232\167\163\233\153\164\227\129\153\227\130\139\227\129\159\227\130\129\227\129\171\227\129\175\227\130\136\227\130\138\233\171\152\227\129\132\227\131\169\227\131\179\227\130\175\227\129\174\230\168\169\233\153\144\227\129\140\229\191\133\232\166\129\227\129\167\227\129\153\227\128\130</color>"
+L20_1 = "<color=#ffd34c>手動で解除するためにはより高いランクの権限が必要です。</color>"
 L19_1.m_Talk_JPN = L20_1
 L20_1 = "<color=#ffd34c>You do not meet the clearance level to manually override the stasis.</color>"
 L19_1.m_Talk_ENG = L20_1
-L20_1 = "<color=#ffd34c>\230\137\139\229\139\149\232\167\163\233\153\164\233\156\128\232\166\129\230\155\180\233\171\152\231\154\132\230\172\138\233\153\144\227\128\130</color>"
+L20_1 = "<color=#ffd34c>手動解除需要更高的權限。</color>"
 L19_1.m_Talk_TWN = L20_1
-L20_1 = "<color=#ffd34c>\224\184\163\224\184\176\224\184\148\224\184\177\224\184\154\224\184\170\224\184\180\224\184\151\224\184\152\224\184\180\224\185\140\224\185\128\224\184\130\224\185\137\224\184\178\224\184\150\224\184\182\224\184\135\224\184\130\224\184\173\224\184\135\224\184\132\224\184\184\224\184\147\224\185\132\224\184\161\224\185\136\224\184\149\224\184\163\224\184\135\224\184\132\224\184\184\224\184\147\224\184\170\224\184\161\224\184\154\224\184\177\224\184\149\224\184\180\224\184\151\224\184\181\224\185\136\224\184\136\224\184\176\224\185\130\224\184\173\224\185\128\224\184\167\224\184\173\224\184\163\224\185\140\224\185\132\224\184\163\224\184\148\224\185\140\224\184\129\224\184\178\224\184\163\224\185\132\224\184\132\224\184\163\224\185\130\224\184\173\224\184\170\224\185\128\224\184\149\224\184\139\224\184\180\224\184\170</color>"
+L20_1 = "<color=#ffd34c>ระดับสิทธิ์เข้าถึงของคุณไม่ตรงคุณสมบัติที่จะโอเวอร์ไรด์การไครโอสเตซิส</color>"
 L19_1.m_Talk_THA = L20_1
-L20_1 = "<color=#ffd34c>Y\195\170u c\225\186\167u c\225\186\165p cao h\198\161n \196\145\225\187\131 h\225\187\167y b\225\187\143 tr\225\186\161ng th\195\161i \196\145\195\179ng b\196\131ng b\225\186\177ng tay.</color>"
+L20_1 = "<color=#ffd34c>Yêu cầu cấp cao hơn để hủy bỏ trạng thái đóng băng bằng tay.</color>"
 L19_1.m_Talk_VTN = L20_1
-L20_1 = "<color=#ffd34c>\230\137\139\229\138\168\232\167\163\233\153\164\233\156\128\232\166\129\230\155\180\233\171\152\230\157\131\233\153\144\227\128\130</color>"
+L20_1 = "<color=#ffd34c>手动解除需要更高权限。</color>"
 L19_1.m_Talk_SCN = L20_1
-L20_1 = "<color=#ffd34c>Du verf\195\188gst nicht \195\188ber die erforderliche Freigabestufe, um den K\195\164lteschlaf manuell zu deaktivieren.</color>"
+L20_1 = "<color=#ffd34c>Du verfügst nicht über die erforderliche Freigabestufe, um den Kälteschlaf manuell zu deaktivieren.</color>"
 L19_1.m_Talk_DEU = L20_1
-L20_1 = "<color=#ffd34c>Vous n'avez pas le niveau d'autorisation n\195\169cessaire pour annuler la stase manuellement.</color>"
+L20_1 = "<color=#ffd34c>Vous n'avez pas le niveau d'autorisation nécessaire pour annuler la stase manuellement.</color>"
 L19_1.m_Talk_FRA = L20_1
 L20_1 = {}
 L21_1 = "ADMIN_PART1_NODE6_START@70#Talk"
@@ -1708,24 +1708,24 @@ L20_1[L21_1] = L22_1
 L21_1 = "m_Pos"
 L22_1 = "C"
 L20_1[L21_1] = L22_1
-L21_1 = "\237\139\128\235\160\184\234\181\176. \235\130\180 \234\182\140\237\149\156\236\156\188\235\161\156\235\138\148 \237\149\180\236\160\156\237\149\160 \236\136\152 \236\151\134\236\150\180."
+L21_1 = "틀렸군. 내 권한으로는 해제할 수 없어."
 L20_1.m_Talk_KOREA = L21_1
 L20_1.m_fTalkTime = 0.03
-L21_1 = "\233\167\132\231\155\174\227\129\160\227\129\170\227\128\130\231\167\129\227\129\174\230\168\169\233\153\144\227\129\167\227\129\175\232\167\163\233\153\164\227\129\167\227\129\141\227\130\147\227\128\130"
+L21_1 = "駄目だな。私の権限では解除できん。"
 L20_1.m_Talk_JPN = L21_1
 L21_1 = "That won't do at all. It seems unlocking this is well above my authority."
 L20_1.m_Talk_ENG = L21_1
-L21_1 = "\228\184\141\232\161\140\239\188\140\230\136\145\231\154\132\230\172\138\233\153\144\230\178\146\232\190\166\230\179\149\232\167\163\233\153\164\227\128\130"
+L21_1 = "不行，我的權限沒辦法解除。"
 L20_1.m_Talk_TWN = L21_1
-L21_1 = "\224\185\132\224\184\161\224\185\136\224\185\132\224\184\148\224\185\137\224\185\128\224\184\163\224\184\183\224\185\136\224\184\173\224\184\135\224\185\128\224\184\165\224\184\162 \224\184\148\224\184\185\224\184\151\224\185\136\224\184\178\224\184\129\224\184\178\224\184\163\224\184\155\224\184\165\224\184\148\224\184\165\224\185\135\224\184\173\224\184\129\224\185\128\224\184\136\224\185\137\224\184\178\224\184\153\224\184\181\224\185\136\224\184\136\224\184\176\224\184\173\224\184\162\224\184\185\224\185\136\224\185\128\224\184\171\224\184\153\224\184\183\224\184\173\224\184\173\224\184\179\224\184\153\224\184\178\224\184\136\224\184\137\224\184\177\224\184\153"
+L21_1 = "ไม่ได้เรื่องเลย ดูท่าการปลดล็อกเจ้านี่จะอยู่เหนืออำนาจฉัน"
 L20_1.m_Talk_THA = L21_1
-L21_1 = "Kh\195\180ng \196\145\198\176\225\187\163c. D\198\176\225\187\157ng nh\198\176 m\225\187\159 kh\195\179a th\225\187\169 n\195\160y v\198\176\225\187\163t qua kh\225\187\143i quy\225\187\129n h\225\186\161n c\225\187\167a t\195\180i."
+L21_1 = "Không được. Dường như mở khóa thứ này vượt qua khỏi quyền hạn của tôi."
 L20_1.m_Talk_VTN = L21_1
-L21_1 = "\228\184\141\232\161\140\239\188\140\230\136\145\231\154\132\230\157\131\233\153\144\228\184\141\229\164\159\233\171\152\227\128\130"
+L21_1 = "不行，我的权限不够高。"
 L20_1.m_Talk_SCN = L21_1
-L21_1 = "Das geht ja gar nicht! Die Deaktivierung liegt offenbar weit \195\188ber meiner Autorit\195\164t."
+L21_1 = "Das geht ja gar nicht! Die Deaktivierung liegt offenbar weit über meiner Autorität."
 L20_1.m_Talk_DEU = L21_1
-L21_1 = "\195\135a ne va pas le faire. Apparemment, d\195\169verrouiller ce m\195\169canisme est bien au-dessus de mes comp\195\169tences."
+L21_1 = "Ça ne va pas le faire. Apparemment, déverrouiller ce mécanisme est bien au-dessus de mes compétences."
 L20_1.m_Talk_FRA = L21_1
 L21_1 = {}
 L22_1 = "ADMIN_PART1_NODE6_START@71#Talk"
@@ -1745,24 +1745,24 @@ L21_1[L22_1] = L23_1
 L22_1 = "m_Pos"
 L23_1 = "C"
 L21_1[L22_1] = L23_1
-L22_1 = "\236\139\164\235\167\157\236\157\180\235\132\164. \236\160\132\235\140\128\236\158\165 \234\182\140\237\149\156\236\157\180\235\169\180 \236\138\185\236\157\184\235\144\160 \236\164\132 \236\149\140\236\149\152\235\138\148\235\141\176."
+L22_1 = "실망이네. 전대장 권한이면 승인될 줄 알았는데."
 L21_1.m_Talk_KOREA = L22_1
 L21_1.m_fTalkTime = 0.03
-L22_1 = "\227\130\172\227\131\131\227\130\171\227\131\170\227\128\130\230\136\166\233\154\138\233\149\183\227\129\174\230\168\169\233\153\144\227\129\170\227\130\137\230\137\191\232\170\141\227\129\149\227\130\140\227\130\139\227\129\168\230\128\157\227\129\163\227\129\159\227\129\174\227\129\171\227\128\130"
+L22_1 = "ガッカリ。戦隊長の権限なら承認されると思ったのに。"
 L21_1.m_Talk_JPN = L22_1
 L22_1 = "Well, that's a bummer. I thought being a division commander would be enough."
 L21_1.m_Talk_ENG = L22_1
-L22_1 = "\231\156\159\230\152\175\229\164\177\230\156\155\239\188\140\230\136\145\233\130\132\228\187\165\231\130\186\233\154\138\233\149\183\230\172\138\233\153\144\229\143\175\228\187\165\232\167\163\233\153\164\229\145\162\227\128\130"
+L22_1 = "真是失望，我還以為隊長權限可以解除呢。"
 L21_1.m_Talk_TWN = L22_1
-L22_1 = "\224\185\129\224\184\171\224\184\161 \224\184\153\224\185\136\224\184\178\224\184\156\224\184\180\224\184\148\224\184\171\224\184\167\224\184\177\224\184\135\224\184\153\224\184\176\224\184\153\224\184\177\224\185\136\224\184\153 \224\184\137\224\184\177\224\184\153\224\184\153\224\184\182\224\184\129\224\184\167\224\185\136\224\184\178\224\185\129\224\184\132\224\185\136\224\185\128\224\184\155\224\185\135\224\184\153\224\184\156\224\184\185\224\185\137\224\184\154\224\184\177\224\184\141\224\184\138\224\184\178\224\184\129\224\184\178\224\184\163\224\184\129\224\184\173\224\184\135\224\184\158\224\184\165\224\184\129\224\185\135\224\184\158\224\184\173\224\184\139\224\184\176\224\184\173\224\184\181\224\184\129"
+L22_1 = "แหม น่าผิดหวังนะนั่น ฉันนึกว่าแค่เป็นผู้บัญชาการกองพลก็พอซะอีก"
 L21_1.m_Talk_THA = L22_1
-L22_1 = "Ch\195\160, th\225\186\173t l\195\160 ng\225\187\155 ng\225\186\169n. T\195\180i ngh\196\169 t\225\187\149ng t\198\176 l\225\187\135nh s\198\176 \196\145o\195\160n l\195\160 \196\145\225\187\167 r\225\187\147i ch\225\187\169.  "
+L22_1 = "Chà, thật là ngớ ngẩn. Tôi nghĩ tổng tư lệnh sư đoàn là đủ rồi chứ.  "
 L21_1.m_Talk_VTN = L22_1
-L22_1 = "\231\156\159\228\187\164\228\186\186\229\164\177\230\156\155\239\188\140\230\136\145\228\187\165\228\184\186\233\152\159\233\149\191\230\157\131\233\153\144\229\143\175\228\187\165\232\167\163\233\153\164\227\128\130"
+L22_1 = "真令人失望，我以为队长权限可以解除。"
 L21_1.m_Talk_SCN = L22_1
-L22_1 = "So ein Mist\194\160\226\128\166 Ich dachte, es w\195\188rde reichen, Divisionskommandant zu sein."
+L22_1 = "So ein Mist … Ich dachte, es würde reichen, Divisionskommandant zu sein."
 L21_1.m_Talk_DEU = L22_1
-L22_1 = "Eh bien, quelle d\195\169ception\194\160! Je pensais qu'une commandante de division serait suffisante."
+L22_1 = "Eh bien, quelle déception ! Je pensais qu'une commandante de division serait suffisante."
 L21_1.m_Talk_FRA = L22_1
 L22_1 = {}
 L23_1 = 72
@@ -1807,24 +1807,24 @@ L24_1[L25_1] = L26_1
 L25_1 = "m_Pos"
 L26_1 = "R"
 L24_1[L25_1] = L26_1
-L25_1 = "\234\176\149\236\160\156\235\161\156 \236\167\132\236\158\133\237\149\152\235\138\148 \234\177\180 \236\139\156\235\143\132\237\149\180 \235\180\164\235\130\152?"
+L25_1 = "강제로 진입하는 건 시도해 봤나?"
 L24_1.m_Talk_KOREA = L25_1
 L24_1.m_fTalkTime = 0.03
-L25_1 = "\229\188\183\229\136\182\233\128\178\229\133\165\227\129\175\232\169\166\227\129\151\227\129\159\227\129\174\227\129\139\239\188\159"
+L25_1 = "強制進入は試したのか？"
 L24_1.m_Talk_JPN = L25_1
 L25_1 = "Have you tried forcible entry?"
 L24_1.m_Talk_ENG = L25_1
-L25_1 = "\229\166\179\230\156\137\232\169\166\233\129\142\229\188\183\229\136\182\233\128\178\229\133\165\229\151\142\239\188\159"
+L25_1 = "妳有試過強制進入嗎？"
 L24_1.m_Talk_TWN = L25_1
-L25_1 = "\224\185\132\224\184\148\224\185\137\224\184\165\224\184\173\224\184\135\224\184\158\224\184\177\224\184\135\224\185\128\224\184\130\224\185\137\224\184\178\224\185\132\224\184\155\224\184\163\224\184\182\224\184\162\224\184\177\224\184\135?"
+L25_1 = "ได้ลองพังเข้าไปรึยัง?"
 L24_1.m_Talk_THA = L25_1
-L25_1 = "C\195\180 \196\145\195\163 th\225\187\173 c\198\176\225\187\161ng \195\169p \196\145i v\195\160o ch\198\176a?"
+L25_1 = "Cô đã thử cưỡng ép đi vào chưa?"
 L24_1.m_Talk_VTN = L25_1
-L25_1 = "\230\156\137\229\176\157\232\175\149\229\188\186\229\136\182\232\191\155\229\133\165\229\144\151\239\188\159"
+L25_1 = "有尝试强制进入吗？"
 L24_1.m_Talk_SCN = L25_1
 L25_1 = "Hast du schon versucht, dir gewaltsam Zutritt zu verschaffen?"
 L24_1.m_Talk_DEU = L25_1
-L25_1 = "Tu as essay\195\169 d'entrer de force\194\160?"
+L25_1 = "Tu as essayé d'entrer de force ?"
 L24_1.m_Talk_FRA = L25_1
 L25_1 = {}
 L26_1 = "ADMIN_PART1_NODE6_START@75#Talk"
@@ -1841,22 +1841,22 @@ L25_1[L26_1] = L27_1
 L26_1 = "m_Pos"
 L27_1 = "L"
 L25_1[L26_1] = L27_1
-L26_1 = "\236\134\140\236\154\169\236\151\134\236\150\180. \235\143\153\234\178\176\236\154\169 \236\151\173\236\158\165\236\157\180 \235\132\136\235\172\180 \234\176\149\237\149\180\236\132\156 \235\130\180 \237\158\152\236\156\188\235\161\156\235\138\148 \237\157\160\236\167\145\235\143\132 \236\149\136 \235\130\152."
+L26_1 = "소용없어. 동결용 역장이 너무 강해서 내 힘으로는 흠집도 안 나."
 L25_1.m_Talk_KOREA = L26_1
 L25_1.m_fTalkTime = 0.03
-L26_1 = "\231\132\161\233\167\132\227\130\136\227\128\130\231\167\129\227\129\174\229\138\155\227\129\152\227\130\131\229\130\183\228\184\128\227\129\164\228\187\152\227\129\145\227\130\137\227\130\140\227\129\170\227\129\132\227\130\143\227\128\130"
+L26_1 = "無駄よ。私の力じゃ傷一つ付けられないわ。"
 L25_1.m_Talk_JPN = L26_1
-L26_1 = "It\226\128\153s no use. The stasis field is too strong for me to even make a dent."
+L26_1 = "It’s no use. The stasis field is too strong for me to even make a dent."
 L25_1.m_Talk_ENG = L26_1
-L26_1 = "\233\130\163\230\178\146\231\148\168\239\188\140\229\135\141\231\181\144\229\138\155\229\160\180\229\164\170\229\188\183\228\186\134\239\188\140\230\136\145\231\154\132\229\138\155\233\135\143\229\174\140\229\133\168\229\139\149\228\184\141\228\186\134\227\128\130"
+L26_1 = "那沒用，凍結力場太強了，我的力量完全動不了。"
 L25_1.m_Talk_TWN = L26_1
-L26_1 = "\224\185\132\224\184\161\224\185\136\224\184\161\224\184\181\224\184\155\224\184\163\224\184\176\224\185\130\224\184\162\224\184\138\224\184\153\224\185\140\224\184\171\224\184\163\224\184\173\224\184\129 \224\184\170\224\184\153\224\184\178\224\184\161\224\184\170\224\185\128\224\184\149\224\184\139\224\184\180\224\184\170\224\185\129\224\184\130\224\185\135\224\184\135\224\185\129\224\184\129\224\184\163\224\185\136\224\184\135\224\184\136\224\184\153\224\184\137\224\184\177\224\184\153\224\184\151\224\184\179\224\185\128\224\184\155\224\185\135\224\184\153\224\184\163\224\184\173\224\184\162\224\184\162\224\184\177\224\184\135\224\185\132\224\184\161\224\185\136\224\185\132\224\184\148\224\185\137\224\185\128\224\184\165\224\184\162"
+L26_1 = "ไม่มีประโยชน์หรอก สนามสเตซิสแข็งแกร่งจนฉันทำเป็นรอยยังไม่ได้เลย"
 L25_1.m_Talk_THA = L26_1
-L26_1 = "Kh\195\180ng c\195\179 t\195\161c d\225\187\165ng \196\145\195\162u. Tr\198\176\225\187\157ng \196\145\195\179ng b\196\131ng qu\195\161 m\225\186\161nh n\195\170n t\195\180i th\225\186\173m ch\195\173 c\195\178n ch\225\186\179ng t\225\186\161o ra n\225\187\149i m\225\187\153t v\225\186\191t l\195\181m."
+L26_1 = "Không có tác dụng đâu. Trường đóng băng quá mạnh nên tôi thậm chí còn chẳng tạo ra nổi một vết lõm."
 L25_1.m_Talk_VTN = L26_1
-L26_1 = "\230\178\161\231\148\168\239\188\140\229\134\187\231\187\147\229\138\155\229\156\186\229\164\170\229\188\186\228\186\134\239\188\140\230\136\145\231\154\132\229\138\155\233\135\143\228\184\157\230\175\171\228\184\141\232\181\183\228\189\156\231\148\168\227\128\130"
+L26_1 = "没用，冻结力场太强了，我的力量丝毫不起作用。"
 L25_1.m_Talk_SCN = L26_1
-L26_1 = "Es hat keinen Sinn, das K\195\164lteschlaffeld ist zu stark. Ich kann es nicht mal ansatzweise deaktivieren."
+L26_1 = "Es hat keinen Sinn, das Kälteschlaffeld ist zu stark. Ich kann es nicht mal ansatzweise deaktivieren."
 L25_1.m_Talk_DEU = L26_1
 L26_1 = "C'est inutile. Le champ de stase est trop fort, je ne lui fais pas la moindre bosse."
 L25_1.m_Talk_FRA = L26_1
@@ -1875,24 +1875,24 @@ L26_1[L27_1] = L28_1
 L27_1 = "m_Pos"
 L28_1 = "R"
 L26_1[L27_1] = L28_1
-L27_1 = "\235\182\136\237\150\137 \236\164\145 \235\139\164\237\150\137\236\157\180\234\181\176. \236\157\180 \236\131\129\237\131\156\235\157\188\235\169\180 \237\149\168\236\132\160\236\151\144 \237\131\128\234\179\160 \236\158\136\235\141\152 \236\160\132\236\154\176\235\147\164\236\157\128 \236\149\136\236\160\132\237\149\160 \237\133\140\235\139\136\234\185\140."
+L27_1 = "불행 중 다행이군. 이 상태라면 함선에 타고 있던 전우들은 안전할 테니까."
 L26_1.m_Talk_KOREA = L27_1
 L26_1.m_fTalkTime = 0.03
-L27_1 = "\228\184\141\229\185\184\228\184\173\227\129\174\229\185\184\227\129\132\227\129\168\232\168\128\227\129\163\227\129\159\227\129\168\227\129\147\227\130\141\227\129\160\227\129\170\227\128\130\227\129\157\227\129\174\230\167\152\229\173\144\227\129\170\227\130\137\n\232\137\166\232\136\185\229\134\133\227\129\171\227\129\132\227\129\159\230\136\166\229\143\139\227\129\159\227\129\161\227\129\174\229\174\137\229\133\168\227\130\130\228\191\157\227\129\159\227\130\140\227\129\166\227\129\132\227\130\139\227\129\175\227\129\154\227\129\160\227\128\130"
+L27_1 = "不幸中の幸いと言ったところだな。その様子なら\n艦船内にいた戦友たちの安全も保たれているはずだ。"
 L26_1.m_Talk_JPN = L27_1
 L27_1 = "I suppose that's all for the better. That means everyone aboard is safe at least."
 L26_1.m_Talk_ENG = L27_1
-L27_1 = "\233\128\153\228\185\159\231\174\151\230\152\175\228\184\141\229\185\184\228\184\173\231\154\132\232\144\172\229\185\184\229\144\167\227\128\130\232\135\179\229\176\145\229\156\168\233\128\153\229\128\139\230\131\133\230\179\129\239\188\140\232\137\166\232\136\185\232\163\161\231\154\132\230\136\176\229\143\139\230\152\175\229\174\137\229\133\168\231\154\132\227\128\130"
+L27_1 = "這也算是不幸中的萬幸吧。至少在這個情況，艦船裡的戰友是安全的。"
 L26_1.m_Talk_TWN = L27_1
-L27_1 = "\224\185\129\224\184\149\224\185\136\224\184\137\224\184\177\224\184\153\224\184\167\224\185\136\224\184\178\224\185\129\224\184\154\224\184\154\224\184\153\224\184\181\224\185\137\224\184\129\224\185\135\224\184\162\224\184\177\224\184\135\224\184\148\224\184\181\224\184\153\224\184\176 \224\185\128\224\184\158\224\184\163\224\184\178\224\184\176\224\184\173\224\184\162\224\185\136\224\184\178\224\184\135\224\184\153\224\185\137\224\184\173\224\184\162\224\184\129\224\185\135\224\185\129\224\184\155\224\184\165\224\184\167\224\185\136\224\184\178\224\184\151\224\184\184\224\184\129\224\184\132\224\184\153\224\184\154\224\184\153\224\184\162\224\184\178\224\184\153\224\184\155\224\184\165\224\184\173\224\184\148\224\184\160\224\184\177\224\184\162\224\184\148\224\184\181"
+L27_1 = "แต่ฉันว่าแบบนี้ก็ยังดีนะ เพราะอย่างน้อยก็แปลว่าทุกคนบนยานปลอดภัยดี"
 L26_1.m_Talk_THA = L27_1
-L27_1 = "T\195\180i cho r\225\186\177ng nh\198\176 th\225\186\191 n\195\160y l\225\186\161i t\225\187\145t h\198\161n. Ngh\196\169a l\195\160 t\225\186\165t c\225\186\163 m\225\187\141i ng\198\176\225\187\157i tr\195\170n t\195\160u \195\173t ra \196\145\225\187\129u an to\195\160n."
+L27_1 = "Tôi cho rằng như thế này lại tốt hơn. Nghĩa là tất cả mọi người trên tàu ít ra đều an toàn."
 L26_1.m_Talk_VTN = L27_1
-L27_1 = "\228\185\159\231\174\151\230\152\175\228\184\141\229\185\184\228\184\173\231\154\132\228\184\135\229\185\184\239\188\140\232\135\179\229\176\145\232\136\176\232\136\185\233\135\140\231\154\132\230\136\152\229\143\139\229\186\148\232\175\165\233\131\189\229\190\136\229\174\137\229\133\168\227\128\130"
+L27_1 = "也算是不幸中的万幸，至少舰船里的战友应该都很安全。"
 L26_1.m_Talk_SCN = L27_1
 L27_1 = "Und das ist gut so, denn so sind wenigstens alle an Bord in Sicherheit."
 L26_1.m_Talk_DEU = L27_1
-L27_1 = "Je suppose que c'est pour le mieux. Au moins, tout le monde \195\160 bord est en s\195\169curit\195\169."
+L27_1 = "Je suppose que c'est pour le mieux. Au moins, tout le monde à bord est en sécurité."
 L26_1.m_Talk_FRA = L27_1
 L27_1 = {}
 L28_1 = 77
@@ -1923,20 +1923,20 @@ L28_1[L29_1] = L30_1
 L29_1 = "m_Pos"
 L30_1 = "C"
 L28_1[L29_1] = L30_1
-L29_1 = "\234\183\184\235\159\176\235\141\176 \237\149\156 \234\176\128\236\167\128 \235\172\188\236\150\180 \235\179\188 \234\178\131\236\157\180 \236\158\136\235\139\164."
+L29_1 = "그런데 한 가지 물어 볼 것이 있다."
 L28_1.m_Talk_KOREA = L29_1
 L28_1.m_fTalkTime = 0.03
-L29_1 = "\227\129\168\227\129\147\227\130\141\227\129\167\227\128\129\228\184\128\227\129\164\227\129\160\227\129\145\232\129\158\227\129\139\227\129\155\227\129\166\227\129\187\227\129\151\227\129\132\227\128\130"
+L29_1 = "ところで、一つだけ聞かせてほしい。"
 L28_1.m_Talk_JPN = L29_1
 L29_1 = "But I have a question."
 L28_1.m_Talk_ENG = L29_1
-L29_1 = "\228\184\141\233\129\142\230\136\145\230\156\137\229\128\139\229\149\143\233\161\140\227\128\130"
+L29_1 = "不過我有個問題。"
 L28_1.m_Talk_TWN = L29_1
-L29_1 = "\224\185\129\224\184\149\224\185\136\224\184\137\224\184\177\224\184\153\224\184\161\224\184\181\224\185\128\224\184\163\224\184\183\224\185\136\224\184\173\224\184\135\224\184\170\224\184\135\224\184\170\224\184\177\224\184\162\224\184\173\224\184\162\224\184\185\224\185\136"
+L29_1 = "แต่ฉันมีเรื่องสงสัยอยู่"
 L28_1.m_Talk_THA = L29_1
-L29_1 = "Nh\198\176ng t\195\180i c\195\179 m\225\187\153t c\195\162u h\225\187\143i."
+L29_1 = "Nhưng tôi có một câu hỏi."
 L28_1.m_Talk_VTN = L29_1
-L29_1 = "\228\189\134\230\136\145\230\156\137\228\184\128\228\184\170\233\151\174\233\162\152\227\128\130"
+L29_1 = "但我有一个问题。"
 L28_1.m_Talk_SCN = L29_1
 L29_1 = "Ich habe eine Frage."
 L28_1.m_Talk_DEU = L29_1
@@ -1957,24 +1957,24 @@ L29_1[L30_1] = L31_1
 L30_1 = "m_Pos"
 L31_1 = "C"
 L29_1[L30_1] = L31_1
-L30_1 = "\237\149\168\236\132\160\236\157\180 \235\143\153\234\178\176\235\144\152\236\150\180 \236\182\156\236\158\133\237\149\160 \236\136\152 \236\151\134\235\138\148 \236\131\129\237\131\156\236\157\184\235\141\176, \235\132\140 \236\150\180\235\150\187\234\178\140 \235\176\150\236\151\144 \235\130\152\236\153\128 \236\158\136\235\138\148 \234\177\176\236\167\128?"
+L30_1 = "함선이 동결되어 출입할 수 없는 상태인데, 넌 어떻게 밖에 나와 있는 거지?"
 L29_1.m_Talk_KOREA = L30_1
 L29_1.m_fTalkTime = 0.03
-L30_1 = "\232\137\166\232\136\185\227\129\175\229\135\141\231\181\144\231\138\182\230\133\139\227\129\167\229\135\186\229\133\165\227\130\138\227\129\167\227\129\141\227\129\170\227\129\132\231\138\182\230\133\139\227\129\160\227\128\130\n\227\129\170\227\130\137\227\128\129\227\129\138\229\137\141\227\129\175\227\129\169\227\129\134\227\130\132\227\129\163\227\129\166\229\164\150\227\129\171\229\135\186\227\130\137\227\130\140\227\129\159\227\129\174\227\129\160\239\188\159"
+L30_1 = "艦船は凍結状態で出入りできない状態だ。\nなら、お前はどうやって外に出られたのだ？"
 L29_1.m_Talk_JPN = L30_1
 L30_1 = "How did you manage to get out of the ship when it's under stasis?"
 L29_1.m_Talk_ENG = L30_1
-L30_1 = "\232\137\166\232\136\185\230\152\142\230\152\142\232\153\149\230\150\188\229\135\141\231\181\144\231\139\128\230\133\139\239\188\140\230\178\146\232\190\166\230\179\149\233\128\178\229\135\186\231\154\132\239\188\140\233\130\163\229\166\179\230\152\175\230\128\142\233\186\188\229\135\186\228\190\134\231\154\132\239\188\159"
+L30_1 = "艦船明明處於凍結狀態，沒辦法進出的，那妳是怎麼出來的？"
 L29_1.m_Talk_TWN = L30_1
-L30_1 = "\224\184\150\224\185\137\224\184\178\224\184\162\224\184\178\224\184\153\224\184\173\224\184\162\224\184\185\224\185\136\224\185\131\224\184\149\224\185\137\224\184\160\224\184\178\224\184\167\224\184\176\224\184\170\224\185\128\224\184\149\224\184\139\224\184\180\224\184\170 \224\185\129\224\184\165\224\185\137\224\184\167\224\185\128\224\184\152\224\184\173\224\184\173\224\184\173\224\184\129\224\184\161\224\184\178\224\185\132\224\184\148\224\185\137\224\184\162\224\184\177\224\184\135\224\185\132\224\184\135?"
+L30_1 = "ถ้ายานอยู่ใต้ภาวะสเตซิส แล้วเธอออกมาได้ยังไง?"
 L29_1.m_Talk_THA = L30_1
-L30_1 = "Sao c\195\180 l\225\186\161i tho\195\161t ra kh\225\187\143i t\195\160u \196\145\198\176\225\187\163c trong khi n\195\179 \196\145ang \225\187\159 t\195\172nh tr\225\186\161ng \196\145\195\179ng b\196\131ng ch\225\187\169?"
+L30_1 = "Sao cô lại thoát ra khỏi tàu được trong khi nó đang ở tình trạng đóng băng chứ?"
 L29_1.m_Talk_VTN = L30_1
-L30_1 = "\232\136\176\232\136\185\230\152\142\230\152\142\229\164\132\228\186\142\229\134\187\231\187\147\231\138\182\230\128\129\239\188\140\228\189\160\230\152\175\230\128\142\228\185\136\229\135\186\230\157\165\231\154\132\239\188\159"
+L30_1 = "舰船明明处于冻结状态，你是怎么出来的？"
 L29_1.m_Talk_SCN = L30_1
-L30_1 = "Wie ist es dir eigentlich gelungen, bei aktiviertem K\195\164lteschlaf das Schiff zu verlassen?"
+L30_1 = "Wie ist es dir eigentlich gelungen, bei aktiviertem Kälteschlaf das Schiff zu verlassen?"
 L29_1.m_Talk_DEU = L30_1
-L30_1 = "Comment as-tu fait pour sortir du vaisseau alors qu'il \195\169tait en stase\194\160?"
+L30_1 = "Comment as-tu fait pour sortir du vaisseau alors qu'il était en stase ?"
 L29_1.m_Talk_FRA = L30_1
 L30_1 = {}
 L31_1 = 80
@@ -2007,24 +2007,24 @@ L31_1[L32_1] = L33_1
 L32_1 = "m_Crash"
 L33_1 = 40
 L31_1[L32_1] = L33_1
-L32_1 = "\236\149\132, \234\183\184\234\177\176?"
+L32_1 = "아, 그거?"
 L31_1.m_Talk_KOREA = L32_1
 L31_1.m_fTalkTime = 0.03
-L32_1 = "\227\129\130\227\128\129\227\130\132\227\129\163\227\129\177\227\130\138\230\176\151\227\129\171\227\129\170\227\130\139\239\188\159"
+L32_1 = "あ、やっぱり気になる？"
 L31_1.m_Talk_JPN = L32_1
 L32_1 = "Oh, that?"
 L31_1.m_Talk_ENG = L32_1
-L32_1 = "\229\149\138\239\188\140\233\128\153\229\128\139\229\150\148\239\188\159"
+L32_1 = "啊，這個喔？"
 L31_1.m_Talk_TWN = L32_1
-L32_1 = "\224\184\173\224\185\139\224\184\173 \224\185\128\224\184\163\224\184\183\224\185\136\224\184\173\224\184\135\224\184\153\224\184\177\224\185\137\224\184\153\224\185\128\224\184\171\224\184\163\224\184\173?"
+L32_1 = "อ๋อ เรื่องนั้นเหรอ?"
 L31_1.m_Talk_THA = L32_1
-L32_1 = "\225\187\146, v\225\187\165 \196\145\195\179 h\225\186\163?"
+L32_1 = "Ồ, vụ đó hả?"
 L31_1.m_Talk_VTN = L32_1
-L32_1 = "\232\191\153\228\184\170\229\144\151\239\188\159"
+L32_1 = "这个吗？"
 L31_1.m_Talk_SCN = L32_1
-L32_1 = "Ach, das\194\160\226\128\166"
+L32_1 = "Ach, das …"
 L31_1.m_Talk_DEU = L32_1
-L32_1 = "Oh, \195\167a\194\160?"
+L32_1 = "Oh, ça ?"
 L31_1.m_Talk_FRA = L32_1
 L32_1 = {}
 L33_1 = "ADMIN_PART1_NODE6_START@82#Talk"
@@ -2044,24 +2044,24 @@ L32_1[L33_1] = L34_1
 L33_1 = "m_Pos"
 L34_1 = "C"
 L32_1[L33_1] = L34_1
-L33_1 = "\234\176\132\235\139\168\237\149\180."
+L33_1 = "간단해."
 L32_1.m_Talk_KOREA = L33_1
 L32_1.m_fTalkTime = 0.03
-L33_1 = "\231\173\148\227\129\136\227\129\175\227\130\171\227\131\179\227\130\191\227\131\179\227\130\136\227\128\130"
+L33_1 = "答えはカンタンよ。"
 L32_1.m_Talk_JPN = L33_1
 L33_1 = "It's simple, really."
 L32_1.m_Talk_ENG = L33_1
-L33_1 = "\229\190\136\231\176\161\229\150\174\227\128\130"
+L33_1 = "很簡單。"
 L32_1.m_Talk_TWN = L33_1
-L33_1 = "\224\184\136\224\184\163\224\184\180\224\184\135\224\185\134 \224\184\129\224\185\135\224\184\135\224\185\136\224\184\178\224\184\162\224\185\134"
+L33_1 = "จริงๆ ก็ง่ายๆ"
 L32_1.m_Talk_THA = L33_1
-L33_1 = "Th\225\186\173t ra \196\145\198\161n gi\225\186\163n th\195\180i m\195\160."
+L33_1 = "Thật ra đơn giản thôi mà."
 L32_1.m_Talk_VTN = L33_1
-L33_1 = "\229\133\182\229\174\158\229\190\136\231\174\128\229\141\149\227\128\130"
+L33_1 = "其实很简单。"
 L32_1.m_Talk_SCN = L33_1
 L33_1 = "Na ja, es ist eigentlich ganz einfach."
 L32_1.m_Talk_DEU = L33_1
-L33_1 = "C'est tr\195\168s simple."
+L33_1 = "C'est très simple."
 L32_1.m_Talk_FRA = L33_1
 L33_1 = {}
 L34_1 = 83
@@ -2122,24 +2122,24 @@ L37_1 = "C"
 L35_1[L36_1] = L37_1
 L36_1 = "m_Crash"
 L35_1[L36_1] = 20
-L36_1 = "\237\129\173......?!"
+L36_1 = "큭......?!"
 L35_1.m_Talk_KOREA = L36_1
 L35_1.m_fTalkTime = 0.03
-L36_1 = "\227\129\143\227\129\163\226\128\166\226\128\166\239\188\129\239\188\159"
+L36_1 = "くっ……！？"
 L35_1.m_Talk_JPN = L36_1
 L36_1 = "Ugh!"
 L35_1.m_Talk_ENG = L36_1
-L36_1 = "\229\148\148\226\128\166\226\128\166\239\188\159\239\188\129"
+L36_1 = "唔……？！"
 L35_1.m_Talk_TWN = L36_1
-L36_1 = "\224\184\173\224\184\182\224\184\129!"
+L36_1 = "อึก!"
 L35_1.m_Talk_THA = L36_1
-L36_1 = "H\225\187\177!"
+L36_1 = "Hự!"
 L35_1.m_Talk_VTN = L36_1
-L36_1 = "\229\146\179\226\128\166\226\128\166\239\188\159\239\188\129"
+L36_1 = "咳……？！"
 L35_1.m_Talk_SCN = L36_1
 L36_1 = "Uff!"
 L35_1.m_Talk_DEU = L36_1
-L36_1 = "Argh\194\160!"
+L36_1 = "Argh !"
 L35_1.m_Talk_FRA = L36_1
 L36_1 = {}
 L37_1 = "ADMIN_PART1_NODE6_START@86#Talk"
@@ -2162,24 +2162,24 @@ L36_1[L37_1] = L38_1
 L37_1 = "m_Crash"
 L38_1 = 40
 L36_1[L37_1] = L38_1
-L37_1 = "\236\157\180\234\178\140 \235\172\180\236\138\168 \236\167\147\236\157\184\234\176\128, \236\149\140\235\160\137\236\138\164!"
+L37_1 = "이게 무슨 짓인가, 알렉스!"
 L36_1.m_Talk_KOREA = L37_1
 L36_1.m_fTalkTime = 0.03
-L37_1 = "\227\129\147\227\130\140\227\129\175\228\189\149\227\129\174\227\131\158\227\131\141\227\129\160\227\128\129\227\130\162\227\131\172\227\131\131\227\130\175\227\130\185\239\188\129"
+L37_1 = "これは何のマネだ、アレックス！"
 L36_1.m_Talk_JPN = L37_1
 L37_1 = "What's the meaning of this, Alex!"
 L36_1.m_Talk_ENG = L37_1
-L37_1 = "\229\166\179\233\128\153\230\152\175\229\156\168\229\185\185\228\187\128\233\186\188\239\188\140\233\155\133\232\149\190\229\133\139\231\181\178\239\188\129"
+L37_1 = "妳這是在幹什麼，雅蕾克絲！"
 L36_1.m_Talk_TWN = L37_1
-L37_1 = "\224\184\153\224\184\181\224\185\136\224\184\161\224\184\177\224\184\153\224\184\171\224\184\161\224\184\178\224\184\162\224\184\132\224\184\167\224\184\178\224\184\161\224\184\167\224\185\136\224\184\178\224\184\162\224\184\177\224\184\135\224\185\132\224\184\135\224\184\173\224\185\128\224\184\165\224\185\135\224\184\129\224\184\139\224\185\140!"
+L37_1 = "นี่มันหมายความว่ายังไงอเล็กซ์!"
 L36_1.m_Talk_THA = L37_1
-L37_1 = "C\195\161i n\195\160y ngh\196\169a l\195\160 g\195\172, Alex!"
+L37_1 = "Cái này nghĩa là gì, Alex!"
 L36_1.m_Talk_VTN = L37_1
-L37_1 = "\228\189\160\229\185\178\228\187\128\228\185\136\239\188\140\228\186\154\229\142\134\229\133\139\230\150\175\239\188\129"
+L37_1 = "你干什么，亚历克斯！"
 L36_1.m_Talk_SCN = L37_1
 L37_1 = "Was hat das zu bedeuten, Alex?!"
 L36_1.m_Talk_DEU = L37_1
-L37_1 = "Qu'est-ce que \195\167a veut dire, Alex\194\160?"
+L37_1 = "Qu'est-ce que ça veut dire, Alex ?"
 L36_1.m_Talk_FRA = L37_1
 L37_1 = {}
 L38_1 = 87
@@ -2212,24 +2212,24 @@ L38_1[L39_1] = L40_1
 L39_1 = "m_Pos"
 L40_1 = "C"
 L38_1[L39_1] = L40_1
-L39_1 = "\236\150\180\235\157\188? \236\163\189\236\157\188 \236\158\145\236\160\149\236\157\180\236\151\136\235\138\148\235\141\176 \236\157\152\236\153\184\235\161\156 \236\158\152 \237\148\188\237\149\152\235\132\164?"
+L39_1 = "어라? 죽일 작정이었는데 의외로 잘 피하네?"
 L38_1.m_Talk_KOREA = L39_1
 L38_1.m_fTalkTime = 0.03
-L39_1 = "\227\129\130\227\130\137\239\188\159\227\128\128\230\174\186\227\129\153\227\129\164\227\130\130\227\130\138\227\129\160\227\129\163\227\129\159\227\129\174\227\129\171\227\128\129\230\132\143\229\164\150\227\129\168\227\129\139\227\130\143\227\129\153\227\129\174\227\129\140\228\184\138\230\137\139\227\129\132\227\129\174\227\129\173\239\188\159"
+L39_1 = "あら？　殺すつもりだったのに、意外とかわすのが上手いのね？"
 L38_1.m_Talk_JPN = L39_1
 L39_1 = "Hmm? That was supposed to be a lethal blow. You can dodge a lot better than I thought."
 L38_1.m_Talk_ENG = L39_1
-L39_1 = "\229\147\142\229\145\128\239\188\159\230\136\145\230\152\175\230\131\179\230\174\186\230\142\137\229\166\179\231\154\132\239\188\140\232\186\178\229\190\151\229\128\146\230\152\175\229\190\136\229\191\171\229\152\155\239\188\159"
+L39_1 = "哎呀？我是想殺掉妳的，躲得倒是很快嘛？"
 L38_1.m_Talk_TWN = L39_1
-L39_1 = "\224\184\171\224\184\183\224\184\161\224\184\161? \224\184\153\224\184\177\224\185\136\224\184\153\224\184\132\224\184\167\224\184\163\224\184\136\224\184\176\224\184\149\224\184\178\224\184\162\224\184\170\224\184\180 \224\185\128\224\184\152\224\184\173\224\184\171\224\184\165\224\184\154\224\185\128\224\184\129\224\185\136\224\184\135\224\184\129\224\184\167\224\185\136\224\184\178\224\184\151\224\184\181\224\185\136\224\184\137\224\184\177\224\184\153\224\184\132\224\184\180\224\184\148\224\184\153\224\184\176\224\185\128\224\184\153\224\184\181\224\185\136\224\184\162"
+L39_1 = "หืมม? นั่นควรจะตายสิ เธอหลบเก่งกว่าที่ฉันคิดนะเนี่ย"
 L38_1.m_Talk_THA = L39_1
-L39_1 = "Hmm? N\195\179 \196\145\195\161ng ra l\195\160 m\225\187\153t \196\145\195\178n ch\195\173 m\225\186\161ng c\198\161 \196\145\225\186\165y. Mi c\195\179 th\225\187\131 n\195\169 tr\195\161nh t\225\187\145t h\198\161n ta ngh\196\169 r\225\186\165t nhi\225\187\129u.  "
+L39_1 = "Hmm? Nó đáng ra là một đòn chí mạng cơ đấy. Mi có thể né tránh tốt hơn ta nghĩ rất nhiều.  "
 L38_1.m_Talk_VTN = L39_1
-L39_1 = "\229\146\166\239\188\159\229\138\168\228\189\156\232\155\174\229\191\171\229\147\166\239\188\159"
+L39_1 = "咦？动作蛮快哦？"
 L38_1.m_Talk_SCN = L39_1
-L39_1 = "Das sollte ein t\195\182dlicher Schlag sein. Du kannst viel besser ausweichen, als ich dachte."
+L39_1 = "Das sollte ein tödlicher Schlag sein. Du kannst viel besser ausweichen, als ich dachte."
 L38_1.m_Talk_DEU = L39_1
-L39_1 = "Hmm\194\160? C'\195\169tait cens\195\169 te tuer. Tes capacit\195\169s d'esquive sont bien meilleures que ce que je pensais."
+L39_1 = "Hmm ? C'était censé te tuer. Tes capacités d'esquive sont bien meilleures que ce que je pensais."
 L38_1.m_Talk_FRA = L39_1
 L39_1 = {}
 L40_1 = "ADMIN_PART1_NODE6_START@89#Talk"
@@ -2246,24 +2246,24 @@ L39_1[L40_1] = L41_1
 L40_1 = "m_Pos"
 L41_1 = "C"
 L39_1[L40_1] = L41_1
-L40_1 = "\236\151\173\236\139\156 \236\160\132\235\140\128\236\158\165 \236\158\144\235\166\172\235\165\188 \236\149\132\235\172\180\235\130\152 \237\149\152\235\138\148 \234\177\180 \236\149\132\235\139\140\234\176\128 \235\180\144."
+L40_1 = "역시 전대장 자리를 아무나 하는 건 아닌가 봐."
 L39_1.m_Talk_KOREA = L40_1
 L39_1.m_fTalkTime = 0.03
-L40_1 = "\227\130\132\227\129\163\227\129\177\227\130\138\230\136\166\233\154\138\233\149\183\227\130\146\229\139\153\227\130\129\227\130\139\227\129\160\227\129\145\227\129\130\227\130\139\227\130\143\227\129\173\227\128\130"
+L40_1 = "やっぱり戦隊長を務めるだけあるわね。"
 L39_1.m_Talk_JPN = L40_1
 L40_1 = "I guess they didn't make you a commander for nothing."
 L39_1.m_Talk_ENG = L40_1
-L40_1 = "\228\184\141\230\132\167\230\152\175\230\136\176\233\154\138\233\154\138\233\149\183\227\128\130"
+L40_1 = "不愧是戰隊隊長。"
 L39_1.m_Talk_TWN = L40_1
-L40_1 = "\224\184\151\224\185\136\224\184\178\224\184\167\224\185\136\224\184\178\224\185\128\224\184\130\224\184\178\224\185\132\224\184\161\224\185\136\224\185\132\224\184\148\224\185\137\224\184\149\224\184\177\224\185\137\224\184\135\224\185\128\224\184\152\224\184\173\224\185\128\224\184\155\224\185\135\224\184\153\224\184\156\224\184\185\224\185\137\224\184\154\224\184\177\224\184\141\224\184\138\224\184\178\224\184\129\224\184\178\224\184\163\224\184\129\224\184\177\224\184\153\224\184\170\224\185\136\224\184\135\224\185\134 \224\184\153\224\184\176"
+L40_1 = "ท่าว่าเขาไม่ได้ตั้งเธอเป็นผู้บัญชาการกันส่งๆ นะ"
 L39_1.m_Talk_THA = L40_1
-L40_1 = "Ta \196\145o\195\161n b\225\187\141n ch\195\186ng cho mi l\195\160m t\225\187\149ng t\198\176 l\225\187\135nh l\195\160 c\195\179 l\195\189 do c\225\186\163."
+L40_1 = "Ta đoán bọn chúng cho mi làm tổng tư lệnh là có lý do cả."
 L39_1.m_Talk_VTN = L40_1
-L40_1 = "\228\184\141\230\132\167\230\152\175\230\136\152\233\152\159\233\152\159\233\149\191\227\128\130"
+L40_1 = "不愧是战队队长。"
 L39_1.m_Talk_SCN = L40_1
 L40_1 = "Tja, man hat dich offenbar nicht umsonst zur Kommandantin ernannt."
 L39_1.m_Talk_DEU = L40_1
-L40_1 = "J'imagine que ce n'est pas pour rien qu'ils t'ont nomm\195\169e commandante."
+L40_1 = "J'imagine que ce n'est pas pour rien qu'ils t'ont nommée commandante."
 L39_1.m_Talk_FRA = L40_1
 L40_1 = {}
 L41_1 = "ADMIN_PART1_NODE6_START@90#Talk"
@@ -2280,24 +2280,24 @@ L40_1[L41_1] = L42_1
 L41_1 = "m_Pos"
 L42_1 = "C"
 L40_1[L41_1] = L42_1
-L41_1 = "\236\150\180\236\168\140\235\147\160...... \236\157\180\234\177\184\235\161\156 \235\140\128\235\139\181\236\157\180 \235\144\144\234\178\160\236\167\128?"
+L41_1 = "어쨌든...... 이걸로 대답이 됐겠지?"
 L40_1.m_Talk_KOREA = L41_1
 L40_1.m_fTalkTime = 0.03
-L41_1 = "\227\129\168\227\129\171\227\129\139\227\129\143\226\128\166\226\128\166\227\129\147\227\130\140\227\129\167\231\173\148\227\129\136\227\129\171\227\129\170\227\129\163\227\129\159\227\129\139\227\129\151\227\130\137\239\188\159"
+L41_1 = "とにかく……これで答えになったかしら？"
 L40_1.m_Talk_JPN = L41_1
 L41_1 = "Anyway... I guess that answers your question, huh?"
 L40_1.m_Talk_ENG = L41_1
-L41_1 = "\228\184\141\233\129\142\226\128\166\226\128\166\233\128\153\228\184\139\229\166\179\230\135\137\232\169\178\231\159\165\233\129\147\231\173\148\230\161\136\228\186\134\229\144\167\227\128\130"
+L41_1 = "不過……這下妳應該知道答案了吧。"
 L40_1.m_Talk_TWN = L41_1
-L41_1 = "\224\184\167\224\185\136\224\184\178\224\185\129\224\184\149\224\185\136... \224\184\153\224\184\177\224\185\136\224\184\153\224\184\132\224\184\135\224\184\149\224\184\173\224\184\154\224\184\132\224\184\179\224\184\150\224\184\178\224\184\161\224\185\128\224\184\152\224\184\173\224\185\129\224\184\165\224\185\137\224\184\167\224\185\131\224\184\138\224\185\136\224\184\161\224\184\177\224\185\137\224\184\162\224\184\153\224\184\176?"
+L41_1 = "ว่าแต่... นั่นคงตอบคำถามเธอแล้วใช่มั้ยนะ?"
 L40_1.m_Talk_THA = L41_1
-L41_1 = "D\195\185 sao th\195\172... ta \196\145o\195\161n l\195\160 mi c\195\179 c\195\162u tr\225\186\163 l\225\187\157i r\225\187\147i \196\145\225\186\165y nh\225\187\137?"
+L41_1 = "Dù sao thì... ta đoán là mi có câu trả lời rồi đấy nhỉ?"
 L40_1.m_Talk_VTN = L41_1
-L41_1 = "\228\184\141\231\174\161\230\128\142\230\160\183\226\128\166\226\128\166\232\191\153\228\184\139\229\186\148\232\175\165\230\152\142\231\153\189\228\186\134\229\144\167\227\128\130"
+L41_1 = "不管怎样……这下应该明白了吧。"
 L40_1.m_Talk_SCN = L41_1
 L41_1 = "Wie auch immer, ich denke, das beantwortet deine Frage, oder?"
 L40_1.m_Talk_DEU = L41_1
-L41_1 = "Enfin bref... j'imagine que \195\167a r\195\169pond \195\160 ta question, hein\194\160?"
+L41_1 = "Enfin bref... j'imagine que ça répond à ta question, hein ?"
 L40_1.m_Talk_FRA = L41_1
 L41_1 = {}
 L42_1 = 91
@@ -2327,22 +2327,22 @@ L42_1[L43_1] = L44_1
 L43_1 = "m_Pos"
 L44_1 = "C"
 L42_1[L43_1] = L44_1
-L43_1 = "\235\132\136...... \234\183\184\235\166\188\236\158\144\235\161\156\234\181\176."
+L43_1 = "너...... 그림자로군."
 L42_1.m_Talk_KOREA = L43_1
 L42_1.m_fTalkTime = 0.03
-L43_1 = "\232\178\180\230\167\152\226\128\166\226\128\166\227\130\183\227\131\163\227\131\137\227\130\166\227\129\139\227\128\130"
+L43_1 = "貴様……シャドウか。"
 L42_1.m_Talk_JPN = L43_1
 L43_1 = "You... You're a Shadow."
 L42_1.m_Talk_ENG = L43_1
-L43_1 = "\229\166\179\230\152\175\226\128\166\226\128\166\230\154\151\229\189\177\227\128\130"
+L43_1 = "妳是……暗影。"
 L42_1.m_Talk_TWN = L43_1
-L43_1 = "\224\185\129\224\184\129... \224\185\129\224\184\129\224\184\132\224\184\183\224\184\173\224\185\129\224\184\138\224\185\130\224\184\148\224\184\167\224\185\140"
+L43_1 = "แก... แกคือแชโดว์"
 L42_1.m_Talk_THA = L43_1
-L43_1 = "Mi... Mi l\195\160 m\225\187\153t C\195\161i B\195\179ng."
+L43_1 = "Mi... Mi là một Cái Bóng."
 L42_1.m_Talk_VTN = L43_1
-L43_1 = "\228\189\160\230\152\175\226\128\166\226\128\166\230\154\151\229\189\177\227\128\130"
+L43_1 = "你是……暗影。"
 L42_1.m_Talk_SCN = L43_1
-L43_1 = "Du\194\160\226\128\166 du bist ein Schatten."
+L43_1 = "Du … du bist ein Schatten."
 L42_1.m_Talk_DEU = L43_1
 L43_1 = "Tu... Tu es une ombre."
 L42_1.m_Talk_FRA = L43_1
@@ -2364,24 +2364,24 @@ L43_1[L44_1] = L45_1
 L44_1 = "m_Crash"
 L45_1 = 30
 L43_1[L44_1] = L45_1
-L44_1 = "\234\179\160\236\164\128\236\156\132 \236\185\168\236\139\157\237\140\140\234\176\128 \235\167\140\235\147\164\236\150\180\235\130\184 \235\141\148\235\159\172\236\154\180 \235\170\168\236\161\176\237\146\136!"
+L44_1 = "고준위 침식파가 만들어낸 더러운 모조품!"
 L43_1.m_Talk_KOREA = L44_1
 L43_1.m_fTalkTime = 0.03
-L44_1 = "\233\171\152\227\131\172\227\131\153\227\131\171\228\190\181\233\163\159\230\179\162\227\129\140\233\128\160\227\130\138\229\135\186\227\129\151\227\129\159\227\128\129\230\177\154\227\130\137\227\130\143\227\129\151\227\129\132\230\168\161\233\128\160\229\147\129\239\188\129"
+L44_1 = "高レベル侵食波が造り出した、汚らわしい模造品！"
 L43_1.m_Talk_JPN = L44_1
 L44_1 = "You're nothing but a filthy knock-off created by the Corruption ray!"
 L43_1.m_Talk_ENG = L44_1
-L44_1 = "\233\171\152\231\173\137\228\190\181\232\157\149\230\179\162\233\128\160\230\136\144\231\154\132\233\170\175\233\171\146\228\187\191\233\128\160\229\147\129\239\188\129"
+L44_1 = "高等侵蝕波造成的骯髒仿造品！"
 L43_1.m_Talk_TWN = L44_1
-L44_1 = "\224\185\129\224\184\129\224\184\161\224\184\177\224\184\153\224\184\129\224\185\135\224\185\129\224\184\132\224\185\136\224\184\130\224\184\173\224\184\135\224\184\151\224\184\181\224\185\136\224\184\154\224\184\177\224\184\135\224\185\128\224\184\173\224\184\180\224\184\141\224\185\128\224\184\129\224\184\180\224\184\148\224\184\161\224\184\178\224\184\165\224\184\167\224\184\129\224\185\134 \224\185\128\224\184\158\224\184\163\224\184\178\224\184\176\224\184\163\224\184\177\224\184\135\224\184\170\224\184\181\224\184\132\224\184\173\224\184\163\224\185\140\224\184\163\224\184\177\224\184\155\224\184\138\224\184\177\224\185\136\224\184\153!"
+L44_1 = "แกมันก็แค่ของที่บังเอิญเกิดมาลวกๆ เพราะรังสีคอร์รัปชั่น!"
 L43_1.m_Talk_THA = L44_1
-L44_1 = "Mi ch\225\186\179ng l\195\160 c\195\161i th\195\161 g\195\172 ngo\195\160i m\225\187\153t th\225\187\169 \196\145\225\187\147 nh\195\161i b\225\186\169n th\225\187\137u \196\145\198\176\225\187\163c t\225\186\161o ra b\225\187\159i tia \196\130n M\195\178n!"
+L44_1 = "Mi chẳng là cái thá gì ngoài một thứ đồ nhái bẩn thỉu được tạo ra bởi tia Ăn Mòn!"
 L43_1.m_Talk_VTN = L44_1
-L44_1 = "\233\171\152\229\188\186\228\190\181\232\154\128\230\179\162\229\136\182\228\189\156\229\135\186\230\157\165\231\154\132\228\187\191\233\128\160\229\147\129\239\188\129"
+L44_1 = "高强侵蚀波制作出来的仿造品！"
 L43_1.m_Talk_SCN = L44_1
 L44_1 = "Du bist nichts als dreckiger Abschaum der Verderbniswelle!"
 L43_1.m_Talk_DEU = L44_1
-L44_1 = "Tu n'es rien d'autre qu'une vulgaire contrefa\195\167on cr\195\169\195\169e par les rayons de corruption\194\160!"
+L44_1 = "Tu n'es rien d'autre qu'une vulgaire contrefaçon créée par les rayons de corruption !"
 L43_1.m_Talk_FRA = L44_1
 L44_1 = {}
 L45_1 = 94
@@ -2454,24 +2454,24 @@ L48_1[L49_1] = L50_1
 L49_1 = "m_Pos"
 L50_1 = "C"
 L48_1[L49_1] = L50_1
-L49_1 = "\236\189\149 \236\167\154\236\150\180 \235\170\168\236\161\176\237\146\136\236\157\180\235\157\188\234\179\160 \235\182\128\235\165\180\235\139\164\235\139\136 \235\167\144\236\157\180 \236\139\172\237\149\152\235\132\164."
+L49_1 = "콕 짚어 모조품이라고 부르다니 말이 심하네."
 L48_1.m_Talk_KOREA = L49_1
 L48_1.m_fTalkTime = 0.03
-L49_1 = "\227\129\157\227\129\134\227\129\175\227\129\163\227\129\141\227\130\138\230\168\161\233\128\160\229\147\129\227\129\168\232\168\128\227\130\143\227\130\140\227\130\139\227\129\168\227\128\129\227\129\149\227\129\153\227\129\140\227\129\171\229\130\183\227\129\164\227\129\132\227\129\161\227\130\131\227\129\134\227\129\170\227\129\129\227\128\130"
+L49_1 = "そうはっきり模造品と言われると、さすがに傷ついちゃうなぁ。"
 L48_1.m_Talk_JPN = L49_1
 L49_1 = "Ouch, that was pretty mean."
 L48_1.m_Talk_ENG = L49_1
-L49_1 = "\229\185\185\229\152\155\232\170\170\229\190\151\233\128\153\233\186\188\231\155\180\230\142\165\239\188\140\229\164\170\233\129\142\229\136\134\228\186\134\229\144\167\227\128\130"
+L49_1 = "幹嘛說得這麼直接，太過分了吧。"
 L48_1.m_Talk_TWN = L49_1
-L49_1 = "\224\184\173\224\184\184\224\185\138\224\184\162 \224\185\128\224\184\136\224\185\135\224\184\154\224\184\153\224\184\176\224\184\153\224\184\177\224\185\136\224\184\153"
+L49_1 = "อุ๊ย เจ็บนะนั่น"
 L48_1.m_Talk_THA = L49_1
-L49_1 = "\225\186\182c, v\196\131n v\225\186\187 qu\195\161 nh\225\187\137."
+L49_1 = "Ặc, văn vẻ quá nhỉ."
 L48_1.m_Talk_VTN = L49_1
-L49_1 = "\229\185\178\229\152\155\232\175\180\231\154\132\233\130\163\228\185\136\231\155\180\230\142\165\239\188\140\231\156\159\230\152\175\232\191\135\229\136\134\227\128\130"
+L49_1 = "干嘛说的那么直接，真是过分。"
 L48_1.m_Talk_SCN = L49_1
 L49_1 = "Aua, das war ziemlich gemein."
 L48_1.m_Talk_DEU = L49_1
-L49_1 = "H\195\169, c'est m\195\169chant \195\167a."
+L49_1 = "Hé, c'est méchant ça."
 L48_1.m_Talk_FRA = L49_1
 L49_1 = {}
 L50_1 = "ADMIN_PART1_NODE6_START@99#Talk"
@@ -2488,24 +2488,24 @@ L49_1[L50_1] = L51_1
 L50_1 = "m_Pos"
 L51_1 = "C"
 L49_1[L50_1] = L51_1
-L50_1 = "\236\154\176\235\166\172\235\157\188\234\179\160 \235\170\168\236\161\176\237\146\136\236\156\188\235\161\156 \237\131\156\236\150\180\235\130\152\234\179\160 \236\139\182\236\151\136\235\141\152 \234\178\131\235\143\132 \236\149\132\235\139\140\235\141\176 \235\167\144\236\157\180\236\167\128."
+L50_1 = "우리라고 모조품으로 태어나고 싶었던 것도 아닌데 말이지."
 L49_1.m_Talk_KOREA = L50_1
 L49_1.m_fTalkTime = 0.03
-L50_1 = "\231\167\129\227\129\159\227\129\161\227\129\160\227\129\163\227\129\166\227\128\129\230\168\161\233\128\160\229\147\129\227\129\171\231\148\159\227\129\190\227\130\140\227\129\159\227\129\143\227\129\166\231\148\159\227\129\190\227\130\140\227\129\159\227\130\143\227\129\145\227\129\152\227\130\131\227\129\170\227\129\132\227\129\174\227\129\171\227\128\130"
+L50_1 = "私たちだって、模造品に生まれたくて生まれたわけじゃないのに。"
 L49_1.m_Talk_JPN = L50_1
 L50_1 = "It's not like we chose to be born as knock-offs."
 L49_1.m_Talk_ENG = L50_1
-L50_1 = "\230\136\145\229\128\145\229\143\136\228\184\141\230\152\175\229\164\169\231\148\159\230\131\179\230\136\144\231\130\186\228\187\191\233\128\160\229\147\129\231\154\132\227\128\130"
+L50_1 = "我們又不是天生想成為仿造品的。"
 L49_1.m_Talk_TWN = L50_1
-L50_1 = "\224\184\158\224\184\185\224\184\148\224\184\173\224\184\162\224\185\136\224\184\178\224\184\135\224\184\129\224\184\177\224\184\154\224\185\128\224\184\163\224\184\178\224\184\173\224\184\162\224\184\178\224\184\129\224\185\128\224\184\129\224\184\180\224\184\148\224\184\161\224\184\178\224\185\128\224\184\155\224\185\135\224\184\153\224\184\130\224\184\173\224\184\135\224\184\165\224\184\167\224\184\129\224\185\134"
+L50_1 = "พูดอย่างกับเราอยากเกิดมาเป็นของลวกๆ"
 L49_1.m_Talk_THA = L50_1
-L50_1 = "Tr\225\187\159 th\195\160nh \196\145\225\187\147 nh\195\161i kh\195\180ng ph\225\186\163i l\225\187\177a ch\225\187\141n c\225\187\167a b\225\187\141n ta."
+L50_1 = "Trở thành đồ nhái không phải lựa chọn của bọn ta."
 L49_1.m_Talk_VTN = L50_1
-L50_1 = "\230\136\144\228\184\186\228\187\191\233\128\160\229\147\129\229\143\136\228\184\141\230\152\175\230\136\145\228\187\172\230\132\191\230\132\143\231\154\132\227\128\130"
+L50_1 = "成为仿造品又不是我们愿意的。"
 L49_1.m_Talk_SCN = L50_1
-L50_1 = "Wir haben es uns schlie\195\159lich nicht ausgesucht, als Kopien geboren zu werden."
+L50_1 = "Wir haben es uns schließlich nicht ausgesucht, als Kopien geboren zu werden."
 L49_1.m_Talk_DEU = L50_1
-L50_1 = "C'est pas comme si on avait fait le choix de na\195\174tre en tant que contrefa\195\167ons."
+L50_1 = "C'est pas comme si on avait fait le choix de naître en tant que contrefaçons."
 L49_1.m_Talk_FRA = L50_1
 L50_1 = {}
 L51_1 = 100
@@ -2587,24 +2587,24 @@ L3_1 = "C"
 L1_1[L2_1] = L3_1
 L2_1 = "m_Crash"
 L1_1[L2_1] = 20
-L2_1 = "\235\167\144\235\143\132 \236\149\136 \235\143\188. \236\157\180\235\160\135\234\178\140 \235\167\142\236\157\180 \236\139\164\236\178\180\237\153\148\235\144\144\235\139\164\234\179\160......?"
+L2_1 = "말도 안 돼. 이렇게 많이 실체화됐다고......?"
 L1_1.m_Talk_KOREA = L2_1
 L1_1.m_fTalkTime = 0.03
-L2_1 = "\233\166\172\233\185\191\227\129\170\227\128\130\227\129\147\227\130\140\227\129\160\227\129\145\227\129\174\230\149\176\227\129\140\229\174\159\228\189\147\229\140\150\227\129\151\227\129\159\227\129\168\227\129\132\227\129\134\227\129\174\227\129\139\226\128\166\226\128\166\239\188\159"
+L2_1 = "馬鹿な。これだけの数が実体化したというのか……？"
 L1_1.m_Talk_JPN = L2_1
 L2_1 = "I don't believe it. So many have manifested already?"
 L1_1.m_Talk_ENG = L2_1
-L2_1 = "\228\184\141\229\143\175\232\131\189\239\188\140\229\175\166\233\171\148\229\140\150\231\154\132\231\168\139\229\186\166\231\171\159\231\132\182\230\156\131\233\128\153\233\186\188\233\171\152\226\128\166\226\128\166\239\188\159"
+L2_1 = "不可能，實體化的程度竟然會這麼高……？"
 L1_1.m_Talk_TWN = L2_1
-L2_1 = "\224\184\137\224\184\177\224\184\153\224\185\132\224\184\161\224\185\136\224\185\128\224\184\138\224\184\183\224\185\136\224\184\173\224\184\171\224\184\163\224\184\173\224\184\129 \224\184\155\224\184\163\224\184\178\224\184\129\224\184\143\224\184\129\224\184\177\224\184\153\224\184\173\224\184\173\224\184\129\224\184\161\224\184\178\224\184\171\224\184\165\224\184\178\224\184\162\224\184\149\224\184\177\224\184\167\224\185\129\224\184\165\224\185\137\224\184\167\224\184\170\224\184\180\224\184\153\224\184\176?"
+L2_1 = "ฉันไม่เชื่อหรอก ปรากฏกันออกมาหลายตัวแล้วสินะ?"
 L1_1.m_Talk_THA = L2_1
-L2_1 = "T\195\180i kh\195\180ng tin. C\195\179 qu\195\161 nhi\225\187\129u ng\198\176\225\187\157i \196\145\195\163 b\225\187\139 thao t\195\186ng r\225\187\147i \198\176?"
+L2_1 = "Tôi không tin. Có quá nhiều người đã bị thao túng rồi ư?"
 L1_1.m_Talk_VTN = L2_1
-L2_1 = "\228\184\141\229\143\175\232\131\189\239\188\140\229\174\158\228\189\147\229\140\150\231\168\139\229\186\166\231\171\159\232\191\153\228\185\136\233\171\152\226\128\166\226\128\166\239\188\159"
+L2_1 = "不可能，实体化程度竟这么高……？"
 L1_1.m_Talk_SCN = L2_1
-L2_1 = "Ich fasse es nicht\194\160\226\128\166 Wie viele haben sich bereits manifestiert?"
+L2_1 = "Ich fasse es nicht … Wie viele haben sich bereits manifestiert?"
 L1_1.m_Talk_DEU = L2_1
-L2_1 = "Je n'arrive pas \195\160 y croire. Tant d'entre vous se sont d\195\169j\195\160 manifest\195\169es\194\160?"
+L2_1 = "Je n'arrive pas à y croire. Tant d'entre vous se sont déjà manifestées ?"
 L1_1.m_Talk_FRA = L2_1
 L2_1 = {}
 L3_1 = "ADMIN_PART1_NODE6_START@102#Talk"
@@ -2621,24 +2621,24 @@ L2_1[L3_1] = L4_1
 L3_1 = "m_Pos"
 L4_1 = "C"
 L2_1[L3_1] = L4_1
-L3_1 = "\235\140\128\236\178\180 \235\130\180\234\176\128...... \236\150\188\235\167\136\235\130\152 \236\160\149\236\139\160\236\157\132 \236\158\131\234\179\160 \236\158\136\236\151\136\235\141\152 \234\177\176\236\167\128?"
+L3_1 = "대체 내가...... 얼마나 정신을 잃고 있었던 거지?"
 L2_1.m_Talk_KOREA = L3_1
 L2_1.m_fTalkTime = 0.03
-L3_1 = "\227\129\132\227\129\163\227\129\159\227\129\132\231\167\129\227\129\175\226\128\166\226\128\166\227\129\169\227\130\140\227\129\160\227\129\145\227\129\174\233\150\147\227\128\129\230\176\151\227\130\146\229\164\177\227\129\163\227\129\166\227\129\132\227\129\159\227\130\147\227\129\160\239\188\159"
+L3_1 = "いったい私は……どれだけの間、気を失っていたんだ？"
 L2_1.m_Talk_JPN = L3_1
 L3_1 = "How long... How long was I out, exactly?"
 L2_1.m_Talk_ENG = L3_1
-L3_1 = "\230\136\145\229\136\176\229\186\149\226\128\166\226\128\166\231\157\161\228\186\134\229\164\154\228\185\133\239\188\159"
+L3_1 = "我到底……睡了多久？"
 L2_1.m_Talk_TWN = L3_1
-L3_1 = "\224\184\153\224\184\181\224\185\136\224\184\137\224\184\177\224\184\153... \224\184\153\224\184\181\224\185\136\224\184\137\224\184\177\224\184\153\224\184\170\224\184\165\224\184\154\224\185\132\224\184\155\224\184\153\224\184\178\224\184\153\224\185\129\224\184\132\224\185\136\224\185\132\224\184\171\224\184\153\224\184\129\224\184\177\224\184\153?"
+L3_1 = "นี่ฉัน... นี่ฉันสลบไปนานแค่ไหนกัน?"
 L2_1.m_Talk_THA = L3_1
-L3_1 = "T\195\180i... t\195\180i \196\145\195\163 \225\187\159 ngo\195\160i n\195\160y ch\195\173nh x\195\161c \196\145\198\176\225\187\163c bao l\195\162u r\225\187\147i?"
+L3_1 = "Tôi... tôi đã ở ngoài này chính xác được bao lâu rồi?"
 L2_1.m_Talk_VTN = L3_1
-L3_1 = "\230\136\145\229\136\176\229\186\149\226\128\166\226\128\166\231\157\161\228\186\134\229\164\154\233\149\191\230\151\182\233\151\180\239\188\159"
+L3_1 = "我到底……睡了多长时间？"
 L2_1.m_Talk_SCN = L3_1
-L3_1 = "Wie lange\194\160\226\128\166 Wie lange war ich ohnm\195\164chtig?"
+L3_1 = "Wie lange … Wie lange war ich ohnmächtig?"
 L2_1.m_Talk_DEU = L3_1
-L3_1 = "Combien... Combien de temps suis-je rest\195\169e inconsciente, exactement\194\160?"
+L3_1 = "Combien... Combien de temps suis-je restée inconsciente, exactement ?"
 L2_1.m_Talk_FRA = L3_1
 L3_1 = {}
 L4_1 = 103
@@ -2694,24 +2694,24 @@ L6_1[L7_1] = L8_1
 L7_1 = "m_Pos"
 L8_1 = "C"
 L6_1[L7_1] = L8_1
-L7_1 = "\236\158\144, \236\158\144, \236\167\136\235\172\184 \236\139\156\234\176\132\236\157\128 \235\129\157\236\157\180\236\149\188."
+L7_1 = "자, 자, 질문 시간은 끝이야."
 L6_1.m_Talk_KOREA = L7_1
 L6_1.m_fTalkTime = 0.03
-L7_1 = "\227\129\149\227\129\166\227\129\168\227\128\129\232\179\170\229\149\143\227\130\191\227\130\164\227\131\160\227\129\175\231\181\130\227\130\143\227\130\138\227\130\136\227\128\130"
+L7_1 = "さてと、質問タイムは終わりよ。"
 L6_1.m_Talk_JPN = L7_1
 L7_1 = "Alright, enough questions."
 L6_1.m_Talk_ENG = L7_1
-L7_1 = "\229\165\189\228\186\134\229\165\189\228\186\134\239\188\140\229\149\143\229\149\143\233\161\140\231\154\132\230\153\130\233\150\147\231\181\144\230\157\159\228\186\134\227\128\130"
+L7_1 = "好了好了，問問題的時間結束了。"
 L6_1.m_Talk_TWN = L7_1
-L7_1 = "\224\185\128\224\184\173\224\184\178\224\184\165\224\184\176 \224\185\128\224\184\165\224\184\180\224\184\129\224\184\150\224\184\178\224\184\161\224\185\132\224\184\148\224\185\137\224\185\129\224\184\165\224\185\137\224\184\167"
+L7_1 = "เอาละ เลิกถามได้แล้ว"
 L6_1.m_Talk_THA = L7_1
-L7_1 = "Th\195\180i, h\225\187\143i th\225\186\191 l\195\160 \196\145\225\187\167 r\225\187\147i \196\145\225\186\165y."
+L7_1 = "Thôi, hỏi thế là đủ rồi đấy."
 L6_1.m_Talk_VTN = L7_1
-L7_1 = "\229\165\189\228\186\134\229\165\189\228\186\134\239\188\140\230\143\144\233\151\174\230\151\182\233\151\180\231\187\147\230\157\159\228\186\134\227\128\130"
+L7_1 = "好了好了，提问时间结束了。"
 L6_1.m_Talk_SCN = L7_1
 L7_1 = "In Ordnung, genug der Fragerei."
 L6_1.m_Talk_DEU = L7_1
-L7_1 = "Bon, assez parl\195\169."
+L7_1 = "Bon, assez parlé."
 L6_1.m_Talk_FRA = L7_1
 L7_1 = {}
 L8_1 = "ADMIN_PART1_NODE6_START@107#Talk"
@@ -2728,24 +2728,24 @@ L7_1[L8_1] = L9_1
 L8_1 = "m_Pos"
 L9_1 = "C"
 L7_1[L8_1] = L9_1
-L8_1 = "\236\150\180\236\176\168\237\148\188 \235\143\153\234\178\176\236\157\132 \237\146\128 \236\136\152 \236\151\134\236\156\188\235\169\180 \235\132\140 \236\130\180\235\160\164 \235\145\152 \234\176\128\236\185\152\234\176\128 \236\151\134\234\177\176\235\147\160."
+L8_1 = "어차피 동결을 풀 수 없으면 넌 살려 둘 가치가 없거든."
 L7_1.m_Talk_KOREA = L8_1
 L7_1.m_fTalkTime = 0.03
-L8_1 = "\227\129\169\227\129\134\227\129\155\229\135\141\231\181\144\227\129\140\232\167\163\227\129\145\227\129\170\227\129\132\227\130\136\227\129\134\227\129\170\227\130\137\227\128\129\227\129\130\227\129\170\227\129\159\227\130\146\231\148\159\227\129\139\227\129\151\227\129\166\227\129\138\227\129\143\228\190\161\229\128\164\227\129\175\227\129\170\227\129\132\227\129\174\227\128\130"
+L8_1 = "どうせ凍結が解けないようなら、あなたを生かしておく価値はないの。"
 L7_1.m_Talk_JPN = L8_1
 L8_1 = "It's not worth keeping you alive if you can't remove the stasis."
 L7_1.m_Talk_ENG = L8_1
-L8_1 = "\229\143\141\230\173\163\229\166\179\228\185\159\230\178\146\230\156\137\232\167\163\233\153\164\229\135\141\231\181\144\231\154\132\230\172\138\233\153\144\239\188\140\233\130\163\229\176\177\230\178\146\230\156\137\230\148\190\229\166\179\230\180\187\232\145\151\231\154\132\229\131\185\229\128\188\228\186\134\227\128\130"
+L8_1 = "反正妳也沒有解除凍結的權限，那就沒有放妳活著的價值了。"
 L7_1.m_Talk_TWN = L8_1
-L8_1 = "\224\184\150\224\185\137\224\184\178\224\185\128\224\184\152\224\184\173\224\185\128\224\184\173\224\184\178\224\184\170\224\185\128\224\184\149\224\184\139\224\184\180\224\184\170\224\184\173\224\184\173\224\184\129\224\185\132\224\184\161\224\185\136\224\185\132\224\184\148\224\185\137\224\184\129\224\185\135\224\185\132\224\184\161\224\185\136\224\184\163\224\184\185\224\185\137\224\184\136\224\184\176\224\185\128\224\184\173\224\184\178\224\185\132\224\184\167\224\185\137\224\184\151\224\184\179\224\185\132\224\184\161\224\184\153\224\184\176"
+L8_1 = "ถ้าเธอเอาสเตซิสออกไม่ได้ก็ไม่รู้จะเอาไว้ทำไมนะ"
 L7_1.m_Talk_THA = L8_1
-L8_1 = "Gi\225\187\175 mi s\225\187\145ng ch\225\186\163 \195\173ch g\195\172 n\225\186\191u mi kh\195\180ng h\225\187\167y b\225\187\143 \196\145\198\176\225\187\163c tr\198\176\225\187\157ng \196\145\195\179ng b\196\131ng."
+L8_1 = "Giữ mi sống chả ích gì nếu mi không hủy bỏ được trường đóng băng."
 L7_1.m_Talk_VTN = L8_1
-L8_1 = "\230\151\162\231\132\182\228\189\160\230\178\161\230\156\137\230\157\131\233\153\144\232\167\163\233\153\164\229\134\187\231\187\147\239\188\140\233\130\163\229\176\177\230\178\161\231\144\134\231\148\177\230\148\190\232\191\135\228\189\160\228\186\134\227\128\130"
+L8_1 = "既然你没有权限解除冻结，那就没理由放过你了。"
 L7_1.m_Talk_SCN = L8_1
-L8_1 = "Es lohnt sich nicht, dich am Leben zu erhalten, wenn du den K\195\164lteschlaf nicht deaktivieren kannst."
+L8_1 = "Es lohnt sich nicht, dich am Leben zu erhalten, wenn du den Kälteschlaf nicht deaktivieren kannst."
 L7_1.m_Talk_DEU = L8_1
-L8_1 = "\195\135a ne sert \195\160 rien de te garder en vie si tu n'es pas capable de lever la stase."
+L8_1 = "Ça ne sert à rien de te garder en vie si tu n'es pas capable de lever la stase."
 L7_1.m_Talk_FRA = L8_1
 L8_1 = {}
 L9_1 = "ADMIN_PART1_NODE6_START@108#Talk"
@@ -2762,24 +2762,24 @@ L8_1[L9_1] = L10_1
 L9_1 = "m_Pos"
 L10_1 = "C"
 L8_1[L9_1] = L10_1
-L9_1 = "\234\182\129\234\184\136\237\149\156 \234\177\180 \236\160\128\236\138\185 \234\176\128\236\132\156 \235\132\164 \236\167\132\236\167\156 \236\160\132\236\154\176\235\147\164\236\151\144\234\178\140 \235\172\188\236\150\180 \235\180\144. \236\160\132\235\140\128\236\158\165\235\139\152."
+L9_1 = "궁금한 건 저승 가서 네 진짜 전우들에게 물어 봐. 전대장님."
 L8_1.m_Talk_KOREA = L9_1
 L8_1.m_fTalkTime = 0.03
-L9_1 = "\231\159\165\227\130\138\227\129\159\227\129\132\227\129\147\227\129\168\227\129\175\227\128\129\227\129\130\227\129\174\228\184\150\227\129\167\230\156\172\231\137\169\227\129\174\230\136\166\229\143\139\227\129\149\227\130\147\227\129\159\227\129\161\227\129\171\232\129\158\227\129\132\227\129\166\227\129\173\227\128\130\230\136\166\233\154\138\233\149\183\227\130\181\227\131\158\227\128\130"
+L9_1 = "知りたいことは、あの世で本物の戦友さんたちに聞いてね。戦隊長サマ。"
 L8_1.m_Talk_JPN = L9_1
 L9_1 = "You can ask your real comrades the rest of your questions in the afterlife. Commander."
 L8_1.m_Talk_ENG = L9_1
-L9_1 = "\230\156\137\228\187\128\233\186\188\229\165\189\229\165\135\231\154\132\228\186\139\230\131\133\239\188\140\229\176\177\229\142\187\233\153\176\233\150\147\229\149\143\229\166\179\231\156\159\230\173\163\231\154\132\230\136\176\229\143\139\229\144\167\239\188\140\233\154\138\233\149\183\229\164\167\228\186\186\227\128\130"
+L9_1 = "有什麼好奇的事情，就去陰間問妳真正的戰友吧，隊長大人。"
 L8_1.m_Talk_TWN = L9_1
-L9_1 = "\224\185\128\224\184\152\224\184\173\224\185\132\224\184\155\224\184\150\224\184\178\224\184\161\224\184\132\224\184\179\224\184\150\224\184\178\224\184\161\224\184\151\224\184\181\224\185\136\224\185\128\224\184\171\224\184\165\224\184\183\224\184\173\224\184\129\224\184\177\224\184\154\224\184\170\224\184\171\224\184\178\224\184\162\224\184\149\224\184\177\224\184\167\224\184\136\224\184\163\224\184\180\224\184\135\224\185\131\224\184\153\224\185\130\224\184\165\224\184\129\224\184\171\224\184\153\224\185\137\224\184\178\224\185\129\224\184\165\224\185\137\224\184\167\224\184\129\224\184\177\224\184\153\224\184\153\224\184\176\224\184\156\224\184\185\224\185\137\224\184\154\224\184\177\224\184\141\224\184\138\224\184\178\224\184\129\224\184\178\224\184\163"
+L9_1 = "เธอไปถามคำถามที่เหลือกับสหายตัวจริงในโลกหน้าแล้วกันนะผู้บัญชาการ"
 L8_1.m_Talk_THA = L9_1
-L9_1 = "Mi c\195\179 th\225\187\131 h\225\187\143i nh\225\187\175ng ng\198\176\225\187\157i \196\145\225\187\147ng \196\145\225\187\153i th\225\187\177c s\225\187\177 c\225\187\167a m\195\172nh khi sang th\225\186\191 gi\225\187\155i b\195\170n kia \196\145\225\186\165y. T\225\187\149ng t\198\176 l\225\187\135nh."
+L9_1 = "Mi có thể hỏi những người đồng đội thực sự của mình khi sang thế giới bên kia đấy. Tổng tư lệnh."
 L8_1.m_Talk_VTN = L9_1
-L9_1 = "\230\131\179\228\184\141\230\152\142\231\153\189\231\154\132\228\186\139\230\131\133\231\173\137\228\184\139\232\190\136\229\173\144\229\134\141\229\142\187\233\151\174\233\151\174\228\189\160\231\154\132\230\136\152\229\143\139\229\144\167\239\188\140\230\136\152\233\152\159\233\152\159\233\149\191\227\128\130"
+L9_1 = "想不明白的事情等下辈子再去问问你的战友吧，战队队长。"
 L8_1.m_Talk_SCN = L9_1
 L9_1 = "Den Rest deiner Fragen kannst du deinen echten Kameraden im Jenseits stellen, Kommandantin."
 L8_1.m_Talk_DEU = L9_1
-L9_1 = "Tu pourras poser le reste de tes questions \195\160 tes vrais camarades dans l'au-del\195\160. Commandante."
+L9_1 = "Tu pourras poser le reste de tes questions à tes vrais camarades dans l'au-delà. Commandante."
 L8_1.m_Talk_FRA = L9_1
 L9_1 = {}
 L10_1 = 109

@@ -1,106 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_resurgence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicResurgence", BuffLogicBase)
 BuffLogicResurgence = BuffLogicResurgence
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResurgence.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicResurgence:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue or 0
   self._addValue = logicParam.addValue or 0
   self._hadResurgence = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResurgence.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicResurgence:DoLogic()
   if self._hadResurgence then
-    return 
+    return
   end
   self._hadResurgence = true
-  local e = ((self._world):BattleStat()):GetFirstDeadPetEntity()
-  local teamEntity = (e:Pet()):GetOwnerTeamEntity()
+  local e = self._world:BattleStat():GetFirstDeadPetEntity()
+  local teamEntity = e:Pet():GetOwnerTeamEntity()
   local attrCmpt = e:Attributes()
   local max_hp = attrCmpt:CalcMaxHp()
   local add_value = max_hp * self._mulValue + self._addValue
   if max_hp < add_value then
     add_value = max_hp
   end
-  add_value = (math.floor)(add_value)
+  add_value = math.floor(add_value)
   e:RemovePetDeadMark()
-  ;
-  ((self._world):BattleStat()):SetFirstDeadPetEntity(nil)
+  self._world:BattleStat():SetFirstDeadPetEntity(nil)
   local damageInfo = DamageInfo:New(add_value, DamageType.Recover)
-  local calcDamageSvc = (self._world):GetService("CalcDamage")
+  local calcDamageSvc = self._world:GetService("CalcDamage")
   calcDamageSvc:AddTargetHP(e:GetID(), damageInfo)
-  local tOldTeamOrder = ((teamEntity:Team()):CloneTeamOrder())
-  local tNewTeamOrderTmp = nil
-  local formerOrder = (e:PetPstID()):GetTeamOrderBeforeDead()
-  local pstID = (e:PetPstID()):GetPstID()
+  local tOldTeamOrder = teamEntity:Team():CloneTeamOrder()
+  local tNewTeamOrderTmp
+  local formerOrder = e:PetPstID():GetTeamOrderBeforeDead()
+  local pstID = e:PetPstID():GetPstID()
   if formerOrder == 1 then
-    local originalLeader = (teamEntity:Team()):GetPetEntityByPetPstID(tOldTeamOrder[1])
-    ;
-    ((self._world):GetService("Battle")):TeamLeaderResurgence(originalLeader, teamEntity)
-    tNewTeamOrderTmp = (teamEntity:Team()):CloneTeamOrder()
+    local originalLeader = teamEntity:Team():GetPetEntityByPetPstID(tOldTeamOrder[1])
+    self._world:GetService("Battle"):TeamLeaderResurgence(originalLeader, teamEntity)
+    tNewTeamOrderTmp = teamEntity:Team():CloneTeamOrder()
   else
-    do
-      tNewTeamOrderTmp = (teamEntity:Team()):CloneTeamOrder()
-      ;
-      (table.removev)(tNewTeamOrderTmp, (e:PetPstID()):GetPstID())
-      if #tNewTeamOrderTmp < formerOrder then
-        (table.insert)(tNewTeamOrderTmp, formerOrder, pstID)
-        ;
-        (teamEntity:Team()):SetTeamOrder(tNewTeamOrderTmp)
-        local tNewTeamOrder = {}
-        local deadPets = {}
-        local helpPet = nil
-        for _,pstID in ipairs(tNewTeamOrderTmp) do
-          local e = (teamEntity:Team()):GetPetEntityByPetPstID(pstID)
-          if (e:PetPstID()):IsHelpPet() then
-            helpPet = pstID
-          else
-            if not e:HasPetDeadMark() then
-              (table.insert)(tNewTeamOrder, pstID)
-            else
-              ;
-              (table.insert)(deadPets, pstID)
-            end
-          end
-        end
-        if helpPet then
-          local e = (teamEntity:Team()):GetPetEntityByPetPstID(helpPet)
-          if e:HasPetDeadMark() then
-            (table.appendArray)(tNewTeamOrder, deadPets)
-            ;
-            (table.insert)(tNewTeamOrder, helpPet)
-          else
-            ;
-            (table.insert)(tNewTeamOrder, helpPet)
-            ;
-            (table.appendArray)(tNewTeamOrder, deadPets)
-          end
-        else
-          do
-            ;
-            (table.appendArray)(tNewTeamOrder, deadPets)
-            local ntTeamOrderChange = NTTeamOrderChange:New(teamEntity, tOldTeamOrder, tNewTeamOrderTmp)
-            ;
-            ((self._world):GetService("Trigger")):Notify(ntTeamOrderChange)
-            ;
-            (e:PetPstID()):SetTeamOrderBeforeDead(0)
-            local curTeamLeaderEntityID = (teamEntity:Team()):GetTeamLeaderEntityID()
-            local curTeamLeaderEntity = (self._world):GetEntityByID(curTeamLeaderEntityID)
-            local res = BuffResultResurgence:New(e, curTeamLeaderEntity, add_value, damageInfo, tOldTeamOrder, tNewTeamOrderTmp)
-            return res
-          end
-        end
-      end
+    tNewTeamOrderTmp = teamEntity:Team():CloneTeamOrder()
+    table.removev(tNewTeamOrderTmp, e:PetPstID():GetPstID())
+    if formerOrder > #tNewTeamOrderTmp then
+    end
+    table.insert(tNewTeamOrderTmp, formerOrder, pstID)
+    teamEntity:Team():SetTeamOrder(tNewTeamOrderTmp)
+  end
+  local tNewTeamOrder = {}
+  local deadPets = {}
+  local helpPet
+  for _, pstID in ipairs(tNewTeamOrderTmp) do
+    local e = teamEntity:Team():GetPetEntityByPetPstID(pstID)
+    if e:PetPstID():IsHelpPet() then
+      helpPet = pstID
+    elseif not e:HasPetDeadMark() then
+      table.insert(tNewTeamOrder, pstID)
+    else
+      table.insert(deadPets, pstID)
     end
   end
+  if helpPet then
+    local e = teamEntity:Team():GetPetEntityByPetPstID(helpPet)
+    if e:HasPetDeadMark() then
+      table.appendArray(tNewTeamOrder, deadPets)
+      table.insert(tNewTeamOrder, helpPet)
+    else
+      table.insert(tNewTeamOrder, helpPet)
+      table.appendArray(tNewTeamOrder, deadPets)
+    end
+  else
+    table.appendArray(tNewTeamOrder, deadPets)
+  end
+  local ntTeamOrderChange = NTTeamOrderChange:New(teamEntity, tOldTeamOrder, tNewTeamOrderTmp)
+  self._world:GetService("Trigger"):Notify(ntTeamOrderChange)
+  e:PetPstID():SetTeamOrderBeforeDead(0)
+  local curTeamLeaderEntityID = teamEntity:Team():GetTeamLeaderEntityID()
+  local curTeamLeaderEntity = self._world:GetEntityByID(curTeamLeaderEntityID)
+  local res = BuffResultResurgence:New(e, curTeamLeaderEntity, add_value, damageInfo, tOldTeamOrder, tNewTeamOrderTmp)
+  return res
 end
-
-

@@ -1,33 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn17n46/fishing_game/ui_cn17_n46_fishing_game_way_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN17N46FishingGameWayLine", UICustomWidget)
 UICN17N46FishingGameWayLine = UICN17N46FishingGameWayLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN17N46FishingGameWayLine.OnShow = function(self, uiParams)
-  -- function num : 0_0
-  self._lineImg = {[true] = "n14_fish_line1", [false] = "n14_fish_line2"}
+function UICN17N46FishingGameWayLine:OnShow(uiParams)
+  self._lineImg = {
+    [true] = "n14_fish_line1",
+    [false] = "n14_fish_line2"
+  }
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameWayLine._GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN17N46FishingGameWayLine:_GetComponents()
   self._line = self:GetUIComponent("Image", "Line")
   self._atlas = self:GetAsset("UIN14FishingGame.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameWayLine.SetData = function(self, state)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._line).sprite = (self._atlas):GetSprite((self._lineImg)[state])
+function UICN17N46FishingGameWayLine:SetData(state)
+  self._line.sprite = self._atlas:GetSprite(self._lineImg[state])
 end
-
-

@@ -1,64 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_cast_anti_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local AntiAttackSkillType = {Normal = 1, AfterLoadSomeRound = 2, NightKing = 3}
+local AntiAttackSkillType = {
+  Normal = 1,
+  AfterLoadSomeRound = 2,
+  NightKing = 3
+}
 _enum("AntiAttackSkillType", AntiAttackSkillType)
 _class("BuffLogicCastAntiSkill", BuffLogicBase)
 BuffLogicCastAntiSkill = BuffLogicCastAntiSkill
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicCastAntiSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : AntiAttackSkillType
+function BuffLogicCastAntiSkill:Constructor(buffInstance, logicParam)
   self._type = logicParam.type or AntiAttackSkillType.Normal
   self._lockRound = logicParam.lockRound
-  local battleStat = (self._world):BattleStat()
+  local battleStat = self._world:BattleStat()
   self._loadRoundCount = battleStat:GetLevelTotalRoundCount()
   self._skillID = logicParam.skillID
   self._startTask = logicParam.startTask or 0
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicCastAntiSkill.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : AntiAttackSkillType, _ENV
+function BuffLogicCastAntiSkill:DoLogic()
   if self._type == AntiAttackSkillType.AfterLoadSomeRound then
-    local battleStat = (self._world):BattleStat()
+    local battleStat = self._world:BattleStat()
     local curRound = battleStat:GetLevelTotalRoundCount()
     if curRound - self._loadRoundCount < self._lockRound then
-      return 
+      return
     end
   end
-  do
-    if self._type == AntiAttackSkillType.NightKing and not self:IsNightKingCanCounterAttack() then
-      return 
-    end
-    local e = (self._buffInstance):Entity()
-    local curHp = (e:Attributes()):GetCurrentHP()
-    if curHp <= 0 then
-      return 
-    end
-    local skillHolder = e
-    local skillLogicSvc = (self._world):GetService("SkillLogic")
-    skillLogicSvc:CalcSkillEffect(skillHolder, self._skillID)
-    local result = (skillHolder:SkillContext()):GetResultContainer()
-    skillHolder:ReplaceSkillContext()
-    local buffResult = BuffResultCastAntiSkill:New(self._skillID, skillHolder:GetID(), result, self._startTask)
-    return buffResult
+  if self._type == AntiAttackSkillType.NightKing and not self:IsNightKingCanCounterAttack() then
+    return
   end
+  local e = self._buffInstance:Entity()
+  local curHp = e:Attributes():GetCurrentHP()
+  if curHp <= 0 then
+    return
+  end
+  local skillHolder = e
+  local skillLogicSvc = self._world:GetService("SkillLogic")
+  skillLogicSvc:CalcSkillEffect(skillHolder, self._skillID)
+  local result = skillHolder:SkillContext():GetResultContainer()
+  skillHolder:ReplaceSkillContext()
+  local buffResult = BuffResultCastAntiSkill:New(self._skillID, skillHolder:GetID(), result, self._startTask)
+  return buffResult
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicCastAntiSkill.IsNightKingCanCounterAttack = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local ownEntity = (self._buffInstance):Entity()
+function BuffLogicCastAntiSkill:IsNightKingCanCounterAttack()
+  local ownEntity = self._buffInstance:Entity()
   local myPos = ownEntity:GetGridPosition()
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   if not utilScopeSvc:IsNightKingCanCounterAttack(ownEntity, teamEntity) then
-    (Log.fatal)("NightKingCanCounterAttack Failure")
+    Log.fatal("NightKingCanCounterAttack Failure")
     return false
   end
   local newDir, newBodyArea = utilScopeSvc:GetCounterAttackSwitchBodyArea(ownEntity, teamEntity)
@@ -66,11 +55,9 @@ BuffLogicCastAntiSkill.IsNightKingCanCounterAttack = function(self)
     local area = newBodyArea[i]
     local newPos = area + myPos
     if utilScopeSvc:IsPosBlock(newPos, BlockFlag.MonsterLand) then
-      (Log.fatal)("NightKingCanCounterAttack Failure")
+      Log.fatal("NightKingCanCounterAttack Failure")
       return false
     end
   end
   return true
 end
-
-

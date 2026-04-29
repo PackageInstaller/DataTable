@@ -1,29 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s7/buff/ui_season_buff_progress_cells_s7.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuffProgressCellsS7", UICustomWidget)
 UISeasonBuffProgressCellsS7 = UISeasonBuffProgressCellsS7
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuffProgressCellsS7.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonBuffProgressCellsS7:OnShow(uiParams)
   self.progressCellGen = self:GetUIComponent("UISelectObjectPath", "CellGen")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffProgressCellsS7.SetData = function(self, progress, curMaxProgress)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonBuffProgressCellsS7:SetData(progress, curMaxProgress)
   local count = curMaxProgress or 3
-  ;
-  (self.progressCellGen):SpawnObjects("UISeasonBuffProgressCellS7", count)
-  self._cells = (self.progressCellGen):GetAllSpawnList()
-  for i,v in ipairs(self._cells) do
-    v:SetData(i, i <= progress)
+  self.progressCellGen:SpawnObjects("UISeasonBuffProgressCellS7", count)
+  self._cells = self.progressCellGen:GetAllSpawnList()
+  for i, v in ipairs(self._cells) do
+    v:SetData(i, progress >= i)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
-
-

@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_grid_damage_final_be_hit_reduction.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetGridDamageFinalBeHitReduction", BuffLogicBase)
 BuffLogicSetGridDamageFinalBeHitReduction = BuffLogicSetGridDamageFinalBeHitReduction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetGridDamageFinalBeHitReduction.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetGridDamageFinalBeHitReduction:Constructor(buffInstance, logicParam)
   self._rate = logicParam.rate
   self._pos = logicParam.pos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetGridDamageFinalBeHitReduction.DoLogic = function(self)
-  -- function num : 0_1
+function BuffLogicSetGridDamageFinalBeHitReduction:DoLogic()
   local cBuff = self:GetBuffComponent()
   cBuff:SetBuffValue("DEFENDER_FINAL_BE_HIT_POS_RATE", self._rate)
   cBuff:SetBuffValue("DEFENDER_FINAL_BE_HIT_POS_ARRAY", self._pos)
@@ -25,13 +15,9 @@ end
 
 _class("BuffLogicResetGridDamageFinalBeHitReduction", BuffLogicBase)
 BuffLogicResetGridDamageFinalBeHitReduction = BuffLogicResetGridDamageFinalBeHitReduction
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetGridDamageFinalBeHitReduction.DoLogic = function(self)
-  -- function num : 0_2
+function BuffLogicResetGridDamageFinalBeHitReduction:DoLogic()
   local cBuff = self:GetBuffComponent()
   cBuff:SetBuffValue("DEFENDER_FINAL_BE_HIT_POS_RATE", nil)
   cBuff:SetBuffValue("DEFENDER_FINAL_BE_HIT_POS_ARRAY", nil)
 end
-
-

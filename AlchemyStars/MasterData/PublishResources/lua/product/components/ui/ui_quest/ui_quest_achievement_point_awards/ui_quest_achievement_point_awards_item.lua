@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_achievement_point_awards/ui_quest_achievement_point_awards_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestAchievementPointAwardsItem", UICustomWidget)
 UIQuestAchievementPointAwardsItem = UIQuestAchievementPointAwardsItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestAchievementPointAwardsItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
-  self._atlas = (self:RootUIOwner()):GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
+function UIQuestAchievementPointAwardsItem:OnShow(uiParams)
+  self._questModule = GameGlobal.GetModule(QuestModule)
+  self._atlas = self:RootUIOwner():GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
   self:AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsItem.OnHide = function(self)
-  -- function num : 0_1
+function UIQuestAchievementPointAwardsItem:OnHide()
   self:RemoveEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIQuestAchievementPointAwardsItem:_GetComponents()
   self._pointValueTex = self:GetUIComponent("UILocalizationText", "getState")
   self._itemCountTex = self:GetUIComponent("UILocalizationText", "cTex")
   self._itemPool = self:GetUIComponent("UISelectObjectPath", "item")
@@ -37,207 +24,130 @@ UIQuestAchievementPointAwardsItem._GetComponents = function(self)
   self._BtnRaycast = self:GetUIComponent("Graphic", "Btn")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsItem._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local got = (self._questModule):IsGotAchPointReward(self._rewardid)
+function UIQuestAchievementPointAwardsItem:_OnValue()
+  local got = self._questModule:IsGotAchPointReward(self._rewardid)
   if got then
     self._getState = QuestStatus.QUEST_Taken
+  elseif self._currentPoint < self._value then
+    self._getState = QuestStatus.QUEST_Accepted
   else
-    if self._currentPoint < self._value then
-      self._getState = QuestStatus.QUEST_Accepted
-    else
-      self._getState = QuestStatus.QUEST_Completed
-    end
+    self._getState = QuestStatus.QUEST_Completed
   end
-  ;
-  (self._btnGo):SetActive(false)
-  ;
-  (self._countGo):SetActive(false)
-  ;
-  (self._light):SetActive(false)
-  ;
-  (self._light2):SetActive(false)
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._BtnRaycast).raycastTarget = false
+  self._btnGo:SetActive(false)
+  self._countGo:SetActive(false)
+  self._light:SetActive(false)
+  self._light2:SetActive(false)
+  self._BtnRaycast.raycastTarget = false
   if self._getState <= QuestStatus.QUEST_Accepted then
-    (self._countGo):SetActive(true)
-    ;
-    (self._itemCountTex):SetText(self._value)
-  else
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R2 in 'UnsetPending'
-
-    if self._getState == QuestStatus.QUEST_Completed then
-      (self._BtnRaycast).raycastTarget = true
-      ;
-      (self._btnGo):SetActive(true)
-      ;
-      (self._light):SetActive(true)
-      -- DECOMPILER ERROR at PC73: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._btnImg).sprite = (self._atlas):GetSprite("task_achieve_kelingqu2")
-      ;
-      (self._pointValueTex):SetText("<color=#2e2e2e>" .. (StringTable.Get)("str_quest_base_can_get") .. "</color>")
-    else
-      if self._getState == QuestStatus.QUEST_Taken then
-        (self._btnGo):SetActive(true)
-        ;
-        (self._light2):SetActive(true)
-        -- DECOMPILER ERROR at PC103: Confused about usage of register: R2 in 'UnsetPending'
-
-        ;
-        (self._btnImg).sprite = (self._atlas):GetSprite("task_achieve_yilingqu2")
-        ;
-        (self._pointValueTex):SetText("<color=#818181>" .. (StringTable.Get)("str_quest_base_got") .. "</color>")
-      end
-    end
+    self._countGo:SetActive(true)
+    self._itemCountTex:SetText(self._value)
+  elseif self._getState == QuestStatus.QUEST_Completed then
+    self._BtnRaycast.raycastTarget = true
+    self._btnGo:SetActive(true)
+    self._light:SetActive(true)
+    self._btnImg.sprite = self._atlas:GetSprite("task_achieve_kelingqu2")
+    self._pointValueTex:SetText("<color=#2e2e2e>" .. StringTable.Get("str_quest_base_can_get") .. "</color>")
+  elseif self._getState == QuestStatus.QUEST_Taken then
+    self._btnGo:SetActive(true)
+    self._light2:SetActive(true)
+    self._btnImg.sprite = self._atlas:GetSprite("task_achieve_yilingqu2")
+    self._pointValueTex:SetText("<color=#818181>" .. StringTable.Get("str_quest_base_got") .. "</color>")
   end
-  self._item = (self._itemPool):SpawnObject("UIQuestSideAwardItem")
+  self._item = self._itemPool:SpawnObject("UIQuestSideAwardItem")
   local params = {}
-  local cfg_item = (Cfg.cfg_item)[(self._reward)[1]]
+  local cfg_item = Cfg.cfg_item[self._reward[1]]
   params.quality = cfg_item.Color
   params.icon = cfg_item.Icon
-  params.text = (self._reward)[2]
+  params.text = self._reward[2]
   local hideRaycast = self._getState == QuestStatus.QUEST_Completed
-  ;
-  (self._item):SetData((self._reward)[1], params, self._lookCallback, hideRaycast)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._item:SetData(self._reward[1], params, self._lookCallback, hideRaycast)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsItem.SetData = function(self, index, cfg, currentPoint, lookCallback)
-  -- function num : 0_4
+function UIQuestAchievementPointAwardsItem:SetData(index, cfg, currentPoint, lookCallback)
   self:_GetComponents()
   self._rewardid = index
   self._value = cfg.AchPoint
   self._currentPoint = currentPoint
-  self._reward = (cfg.Reward)[1]
+  self._reward = cfg.Reward[1]
   self._lookCallback = lookCallback
-  ;
-  (self._line):SetActive(index ~= 1)
+  self._line:SetActive(index ~= 1)
   self._getState = 0
   self:_OnValue()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsItem.BtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if self._getState > QuestStatus.QUEST_Accepted or self._getState == QuestStatus.QUEST_Completed then
-    ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
+function UIQuestAchievementPointAwardsItem:BtnOnClick()
+  if self._getState <= QuestStatus.QUEST_Accepted then
+  elseif self._getState == QuestStatus.QUEST_Completed then
+    GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
     self:Lock("UIQuestGet")
     self:StartTask(self._OnGet, self)
-  else
-  end
-  if self._getState == QuestStatus.QUEST_Taken then
+  elseif self._getState == QuestStatus.QUEST_Taken then
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsItem.OnUIGetItemCloseInQuest = function(self, type, index)
-  -- function num : 0_6 , upvalues : _ENV
+function UIQuestAchievementPointAwardsItem:OnUIGetItemCloseInQuest(type, index)
   if type == QuestType.QT_Achieve + 100 and index == self._rewardid then
-    (self._btnGo):SetActive(true)
-    ;
-    (self._countGo):SetActive(false)
+    self._btnGo:SetActive(true)
+    self._countGo:SetActive(false)
     self._getState = QuestStatus.QUEST_Taken
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._btnImg).sprite = (self._atlas):GetSprite("task_achieve_yilingqu2")
-    ;
-    (self._pointValueTex):SetText("<color=#818181>" .. (StringTable.Get)("str_quest_base_got") .. "</color>")
-    ;
-    (self._light2):SetActive(true)
-    ;
-    (self._light):SetActive(false)
+    self._btnImg.sprite = self._atlas:GetSprite("task_achieve_yilingqu2")
+    self._pointValueTex:SetText("<color=#818181>" .. StringTable.Get("str_quest_base_got") .. "</color>")
+    self._light2:SetActive(true)
+    self._light:SetActive(false)
     if self._item then
-      (self._item):HideRaycast(false)
+      self._item:HideRaycast(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsItem.AttachEvents = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIQuestAchievementPointAwardsItem:AttachEvents()
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:AttachEvent(GameEventType.OnUIPetObtainCloseInQuest, self.OnUIPetObtainCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsItem.RemoveEvents = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIQuestAchievementPointAwardsItem:RemoveEvents()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:DetachEvent(GameEventType.OnUIPetObtainCloseInQuest, self.OnUIPetObtainCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsItem.OnUIPetObtainCloseInQuest = function(self, type, idx)
-  -- function num : 0_9 , upvalues : _ENV
+function UIQuestAchievementPointAwardsItem:OnUIPetObtainCloseInQuest(type, idx)
   if type == QuestType.QT_Achieve + 100 and idx == self._rewardid then
     self:ShowDialog("UIGetItemController", self._tempMsgRewards, function()
-    -- function num : 0_9_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Achieve + 100, self._rewardid)
-  end
-)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Achieve + 100, self._rewardid)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementPointAwardsItem._OnGet = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
-  local res, msg = (self._questModule):TakeAchReward(TT, self._rewardid)
+function UIQuestAchievementPointAwardsItem:_OnGet(TT)
+  local res, msg = self._questModule:TakeAchReward(TT, self._rewardid)
   self:UnLock("UIQuestGet")
   if self.uiOwner == nil then
-    return 
+    return
   end
   if res:GetSucc() then
     local tempPets = {}
     local pets = msg.rewards
     self._tempMsgRewards = msg.rewards
-    if #pets > 0 then
+    if 0 < #pets then
       for i = 1, #pets do
-        local ispet = ((GameGlobal.GetModule)(PetModule)):IsPetID((pets[i]).assetid)
+        local ispet = GameGlobal.GetModule(PetModule):IsPetID(pets[i].assetid)
         if ispet then
-          (table.insert)(tempPets, pets[i])
+          table.insert(tempPets, pets[i])
         end
       end
     end
-    do
-      do
-        if #tempPets > 0 then
-          self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_10_0 , upvalues : _ENV, self
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIPetObtainCloseInQuest, QuestType.QT_Achieve + 100, self._rewardid)
-  end
-)
-        else
-          self:ShowDialog("UIGetItemController", msg.rewards, function()
-    -- function num : 0_10_1 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Achieve + 100, self._rewardid)
-  end
-)
-        end
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnAchievePointFinish)
-        ;
-        (Log.fatal)("###questModule:TakeAchReward - res:", res:GetResult(), " -id --> ", self._rewardid)
-      end
+    if 0 < #tempPets then
+      self:ShowDialog("UIPetObtain", tempPets, function()
+        GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIPetObtainCloseInQuest, QuestType.QT_Achieve + 100, self._rewardid)
+      end)
+    else
+      self:ShowDialog("UIGetItemController", msg.rewards, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Achieve + 100, self._rewardid)
+      end)
     end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnAchievePointFinish)
+  else
+    Log.fatal("###questModule:TakeAchReward - res:", res:GetResult(), " -id --> ", self._rewardid)
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/dispatchtask/ui_book_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookItem", UICustomWidget)
 UIBookItem = UIBookItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookItem.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBookItem:OnShow(uiParam)
   self._iconImg = self:GetUIComponent("RawImageLoader", "Icon")
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._chapterLabel = self:GetUIComponent("UILocalizationText", "Chapter")
@@ -17,52 +10,28 @@ UIBookItem.OnShow = function(self, uiParam)
   self:AttachEvent(GameEventType.UpdateBookRedPointStatus, self.UpdateRedPointStatus)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBookItem:OnHide()
   self:DetachEvent(GameEventType.UpdateBookRedPointStatus, self.UpdateRedPointStatus)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookItem.Refresh = function(self, bookController, bookData)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBookItem:Refresh(bookController, bookData)
   self._bookController = bookController
   self._bookData = bookData
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._nameLabel).text = (self._bookData):GetName()
-  ;
-  (self._selectedGo):SetActive((self._bookData):IsSelected())
-  ;
-  (self._iconImg):LoadImage((self._bookData):GetIcon())
-  local str = "<color=#FFB34C>" .. (self._bookData):GetOpenChapterCount() .. "</color>/" .. (self._bookData):GetChapterCount()
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._chapterLabel).text = (StringTable.Get)("str_dispatch_book_ce", str)
-  ;
-  (self._newGo):SetActive((self._bookData):IsNew())
+  self._nameLabel.text = self._bookData:GetName()
+  self._selectedGo:SetActive(self._bookData:IsSelected())
+  self._iconImg:LoadImage(self._bookData:GetIcon())
+  local str = "<color=#FFB34C>" .. self._bookData:GetOpenChapterCount() .. "</color>/" .. self._bookData:GetChapterCount()
+  self._chapterLabel.text = StringTable.Get("str_dispatch_book_ce", str)
+  self._newGo:SetActive(self._bookData:IsNew())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookItem.MaskOnClick = function(self, go)
-  -- function num : 0_3
-  if (self._bookData):IsSelected() then
-    return 
+function UIBookItem:MaskOnClick(go)
+  if self._bookData:IsSelected() then
+    return
   end
-  ;
-  (self._bookController):SelectBook(self._bookData)
+  self._bookController:SelectBook(self._bookData)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookItem.UpdateRedPointStatus = function(self)
-  -- function num : 0_4
-  (self._newGo):SetActive((self._bookData):IsNew())
+function UIBookItem:UpdateRedPointStatus()
+  self._newGo:SetActive(self._bookData:IsNew())
 end
-
-

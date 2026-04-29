@@ -1,44 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_monster_skill_immunity.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicMonsterSkillImmunity", BuffLogicBase)
 BuffLogicMonsterSkillImmunity = BuffLogicMonsterSkillImmunity
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicMonsterSkillImmunity.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicMonsterSkillImmunity:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicMonsterSkillImmunity.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  if not ((self._buffInstance):Entity()):HasMonsterID() then
-    (Log.fatal)("只能给怪挂技能免疫buff!")
+function BuffLogicMonsterSkillImmunity:DoLogic(notify)
+  if not self._buffInstance:Entity():HasMonsterID() then
+    Log.fatal("只能给怪挂技能免疫buff!")
     return true
   end
-  local cpt = ((self._buffInstance):Entity()):Attributes()
+  local cpt = self._buffInstance:Entity():Attributes()
   cpt:SetSimpleAttribute("BuffMonsterSkillImmunity", 1)
   return true
 end
 
 _class("BuffLogicRemoveMonsterSkillImmunity", BuffLogicBase)
 BuffLogicRemoveMonsterSkillImmunity = BuffLogicRemoveMonsterSkillImmunity
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveMonsterSkillImmunity.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveMonsterSkillImmunity:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveMonsterSkillImmunity.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local cpt = ((self._buffInstance):Entity()):Attributes()
+function BuffLogicRemoveMonsterSkillImmunity:DoLogic(notify)
+  local cpt = self._buffInstance:Entity():Attributes()
   cpt:RemoveSimpleAttribute("BuffMonsterSkillImmunity")
   return true
 end
-
-

@@ -1,95 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n13/build/ui_n13_build_goto_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN13BuildGotoBtn", UICustomWidget)
 UIN13BuildGotoBtn = UIN13BuildGotoBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN13BuildGotoBtn._SpawnObject = function(self, widgetName, className)
-  -- function num : 0_0
+function UIN13BuildGotoBtn:_SpawnObject(widgetName, className)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = pool:SpawnObject(className)
   return obj
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildGotoBtn._SetRawImage = function(self, widgetName, url)
-  -- function num : 0_1
+function UIN13BuildGotoBtn:_SetRawImage(widgetName, url)
   local obj = self:GetUIComponent("RawImageLoader", widgetName)
   obj:LoadImage(url)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildGotoBtn._SetText = function(self, widgetName, txt)
-  -- function num : 0_2
+function UIN13BuildGotoBtn:_SetText(widgetName, txt)
   local obj = self:GetUIComponent("UILocalizationText", widgetName)
   obj:SetText(txt)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildGotoBtn.OnShow = function(self)
-  -- function num : 0_3
+function UIN13BuildGotoBtn:OnShow()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildGotoBtn.SetData = function(self, type, manager, id, btnCallback, reviewType)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN13BuildGotoBtn:SetData(type, manager, id, btnCallback, reviewType)
   self.reviewType = reviewType
   self._btnCallback = btnCallback
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"Name"}
-, 
-{"Pet"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, type)
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {"Name"},
+    {"Pet"}
+  })
+  UIWidgetHelper.SetObjGroupShow(objs, type)
   if type == 1 then
     self:_SetScore(manager, id)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildGotoBtn._SetScore = function(self, buildManager, buildItemId)
-  -- function num : 0_5 , upvalues : _ENV
-  local url = (UIActivityN13Helper.GetCoinItemIconName)(self.reviewType)
+function UIN13BuildGotoBtn:_SetScore(buildManager, buildItemId)
+  local url = UIActivityN13Helper.GetCoinItemIconName(self.reviewType)
   local count = buildManager:GetCostCount(buildItemId) or 0
   self:_SetRawImage("_icon", url)
   self:_SetText("_cost", count)
   self:_SetText("_cost2", count)
-  local itemCount = (UIActivityN13Helper.GetCoinItemCount)(self.reviewType)
+  local itemCount = UIActivityN13Helper.GetCoinItemCount(self.reviewType)
   local idx = count <= itemCount and 1 or 2
-  local tb = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"_cost"}
-, 
-{"_cost2"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(tb, idx)
+  local tb = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {"_cost"},
+    {"_cost2"}
+  })
+  UIWidgetHelper.SetObjGroupShow(tb, idx)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildGotoBtn.NameBtnOnClick = function(self)
-  -- function num : 0_6
+function UIN13BuildGotoBtn:NameBtnOnClick()
   if self._btnCallback then
-    (self._btnCallback)()
+    self._btnCallback()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildGotoBtn.PetBtnOnClick = function(self)
-  -- function num : 0_7
+function UIN13BuildGotoBtn:PetBtnOnClick()
   if self._btnCallback then
-    (self._btnCallback)()
+    self._btnCallback()
   end
 end
-
-

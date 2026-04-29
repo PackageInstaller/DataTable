@@ -1,41 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_dynamic_center_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParam_DynamicCenterDamage", SkillDamageEffectParam)
 SkillEffectParam_DynamicCenterDamage = SkillEffectParam_DynamicCenterDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_DynamicCenterDamage.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_DynamicCenterDamage:Constructor(t)
   self._centerScopeType = t.centerScopeType
   local scopeParser = SkillScopeParamParser:New()
   self._centerScopeParam = scopeParser:ParseScopeParam(self._centerScopeType, t.centerScopeParam)
-  ;
-  ((SkillEffectParam_DynamicCenterDamage.super).Constructor)(self, t)
+  SkillEffectParam_DynamicCenterDamage.super.Constructor(self, t)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DynamicCenterDamage.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_DynamicCenterDamage:GetEffectType()
   return SkillEffectType.DynamicCenterDamage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DynamicCenterDamage.GetCenterScopeType = function(self)
-  -- function num : 0_2
+function SkillEffectParam_DynamicCenterDamage:GetCenterScopeType()
   return self._centerScopeType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DynamicCenterDamage.GetCenterScopeParam = function(self)
-  -- function num : 0_3
+function SkillEffectParam_DynamicCenterDamage:GetCenterScopeParam()
   return self._centerScopeParam
 end
-
-

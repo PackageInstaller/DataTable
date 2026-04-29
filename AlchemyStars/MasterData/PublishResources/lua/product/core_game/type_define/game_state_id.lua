@@ -1,8 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/game_state_id.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-GameStateID = {Invalid = 0, Loading = 1, BattleEnter = 2, PlayerShow = 3, WaveEnter = 4, WaitInput = 5, RoleTurn = 6, RoleTurnResult = 7, MonsterTurn = 8, MonsterTurnResult = 9, PieceRefresh = 10, RoundResult = 11, BattleResult = 12, BattleExit = 13, ActiveSkill = 14, ChainAttack = 15, MonsterBuffCalc = 16, PlayerBuffCalc = 17, PreviewActiveSkill = 18, WaveResult = 19, WaveSwitch = 20, BoardShow = 21, PickUpActiveSkillTarget = 22, WaitInputChain = 25, PickUpChainSkillTarget = 26, PreChain = 27, RoundEnter = 28, FirstWaveEnter = 29, PreviewChessPet = 30, PickUpChessPet = 31, ChessPetMove = 32, ChessPetAttack = 33, ChessPetMoveAndAttack = 34, ChessPetResult = 35, RoleChangeTeamLeader = 36, PersonaSkill = 37, WaveResultAward = 38, WaveResultAwardApply = 39, MirageEnter = 40, MirageWaitInput = 41, MirageRoleTurn = 42, MirageMonsterTurn = 43, MirageEnd = 44, UnscaledCountDownFinishNotify = 45, PopStarLoading = 1001, PopStarBattleEnter = 1002, PopStarWaveEnter = 1003, PopStarRoundEnter = 1004, PopStarPieceRefresh = 1005, PopStarTrapTurn = 1006, PopStarRoundResult = 1007, PopStarWaveResult = 1008, PopStarBattleResult = 1009}
+GameStateID = {
+  Invalid = 0,
+  Loading = 1,
+  BattleEnter = 2,
+  PlayerShow = 3,
+  WaveEnter = 4,
+  WaitInput = 5,
+  RoleTurn = 6,
+  RoleTurnResult = 7,
+  MonsterTurn = 8,
+  MonsterTurnResult = 9,
+  PieceRefresh = 10,
+  RoundResult = 11,
+  BattleResult = 12,
+  BattleExit = 13,
+  ActiveSkill = 14,
+  ChainAttack = 15,
+  MonsterBuffCalc = 16,
+  PlayerBuffCalc = 17,
+  PreviewActiveSkill = 18,
+  WaveResult = 19,
+  WaveSwitch = 20,
+  BoardShow = 21,
+  PickUpActiveSkillTarget = 22,
+  WaitInputChain = 25,
+  PickUpChainSkillTarget = 26,
+  PreChain = 27,
+  RoundEnter = 28,
+  FirstWaveEnter = 29,
+  PreviewChessPet = 30,
+  PickUpChessPet = 31,
+  ChessPetMove = 32,
+  ChessPetAttack = 33,
+  ChessPetMoveAndAttack = 34,
+  ChessPetResult = 35,
+  RoleChangeTeamLeader = 36,
+  PersonaSkill = 37,
+  WaveResultAward = 38,
+  WaveResultAwardApply = 39,
+  MirageEnter = 40,
+  MirageWaitInput = 41,
+  MirageRoleTurn = 42,
+  MirageMonsterTurn = 43,
+  MirageEnd = 44,
+  UnscaledCountDownFinishNotify = 45,
+  PopStarLoading = 1001,
+  PopStarBattleEnter = 1002,
+  PopStarWaveEnter = 1003,
+  PopStarRoundEnter = 1004,
+  PopStarPieceRefresh = 1005,
+  PopStarTrapTurn = 1006,
+  PopStarRoundResult = 1007,
+  PopStarWaveResult = 1008,
+  PopStarBattleResult = 1009
+}
 _enum("GameStateID", GameStateID)
-

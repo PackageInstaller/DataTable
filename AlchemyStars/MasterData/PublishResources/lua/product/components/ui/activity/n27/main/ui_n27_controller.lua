@@ -1,60 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/main/ui_n27_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27Controller", UIController)
 UIN27Controller = UIN27Controller
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27Controller.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN27Controller:LoadDataOnEnter(TT, res, uiParams)
   self._loginModule = self:GetModule(LoginModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._missionModule = self:GetModule(MissionModule)
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N27, ECampaignN27ComponentID.ECAMPAIGN_N27_CUMULATIVE_LOGIN, ECampaignN27ComponentID.ECAMPAIGN_N27_FIRST_MEET, ECampaignN27ComponentID.ECAMPAIGN_N27_POWER2ITEM, ECampaignN27ComponentID.ECAMPAIGN_N27_LINE_MISSION, ECampaignN27ComponentID.ECAMPAIGN_N27_DIFFICULT_MISSION, ECampaignN27ComponentID.ECAMPAIGN_N27_BLACK_DIFFICULT_MISSION, ECampaignN27ComponentID.ECAMPAIGN_N27_LOTTERY, ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N27, ECampaignN27ComponentID.ECAMPAIGN_N27_CUMULATIVE_LOGIN, ECampaignN27ComponentID.ECAMPAIGN_N27_FIRST_MEET, ECampaignN27ComponentID.ECAMPAIGN_N27_POWER2ITEM, ECampaignN27ComponentID.ECAMPAIGN_N27_LINE_MISSION, ECampaignN27ComponentID.ECAMPAIGN_N27_DIFFICULT_MISSION, ECampaignN27ComponentID.ECAMPAIGN_N27_BLACK_DIFFICULT_MISSION, ECampaignN27ComponentID.ECAMPAIGN_N27_LOTTERY, ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   self.N27MinigameHelper = N27MinigameHelper:New()
-  ;
-  (self.N27MinigameHelper):LoadData(TT, res)
-  self._lotteryComponentInfo = (self._campaign):GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_LOTTERY)
-  self._costItemID = (self._lotteryComponentInfo).m_cost_item_id
-  self._localProcess = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N27)
+  self.N27MinigameHelper:LoadData(TT, res)
+  self._lotteryComponentInfo = self._campaign:GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_LOTTERY)
+  self._costItemID = self._lotteryComponentInfo.m_cost_item_id
+  self._localProcess = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N27)
   if res and not res:GetSucc() then
-    (CutsceneManager.ExcuteCutsceneOut_Shot)()
-    ;
-    (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_0_0
-  end
-, function()
-    -- function num : 0_0_1 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIMain)
-  end
-)
+    CutsceneManager.ExcuteCutsceneOut_Shot()
+    self._campaign:CheckErrorCode(res.m_result, function()
+    end, function()
+      self:SwitchState(UIStateType.UIMain)
+    end)
   end
   self:LoadDataOnEnter_BattlePass(TT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.LoadDataOnEnter_BattlePass = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN27Controller:LoadDataOnEnter_BattlePass(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   self._battlepassCampaign = UIActivityCampaign:New()
-  ;
-  (self._battlepassCampaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+  self._battlepassCampaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  (CutsceneManager.ExcuteCutsceneOut_Shot)()
+function UIN27Controller:OnShow(uiParams)
+  CutsceneManager.ExcuteCutsceneOut_Shot()
   self._endType = 0
   self.componentNotStartTimerMap = {}
   self._rt = uiParams[1]
@@ -64,10 +42,7 @@ UIN27Controller.OnShow = function(self, uiParams)
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.AddListener = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN27Controller:AddListener()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.SummerTwoLoginRed, self.N27SignInRed)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self.OnComponentStepChange)
@@ -75,28 +50,18 @@ UIN27Controller.AddListener = function(self)
   self:AttachEvent(GameEventType.ItemCountChanged, self.ItemCount)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.OnComponentStepChange = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local redEvent = (UIActivityHelper.CheckCampaignSampleRedPoint)(self._battlepassCampaign)
-  ;
-  (self.EventRed):SetActive(redEvent)
+function UIN27Controller:OnComponentStepChange()
+  local redEvent = UIActivityHelper.CheckCampaignSampleRedPoint(self._battlepassCampaign)
+  self.EventRed:SetActive(redEvent)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller._CheckActivityClose = function(self, id)
-  -- function num : 0_5 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIN27Controller:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.GetComponents = function(self)
-  -- function num : 0_6
+function UIN27Controller:GetComponents()
   self.timeStr = self:GetUIComponent("UILocalizationText", "timeStr")
   self.timeStr2 = self:GetUIComponent("UILocalizationText", "timeStr2")
   self.itemIcon = self:GetUIComponent("RawImageLoader", "itemIcon")
@@ -138,125 +103,94 @@ UIN27Controller.GetComponents = function(self)
   self.uiAnim2 = self:GetUIComponent("Animation", "uiAnim2")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.GetItemCountStr = function(count, preColor, countColor)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN27Controller.GetItemCountStr(count, preColor, countColor)
   local dight = 0
   local tmpCount = count
   if tmpCount < 0 then
     tmpCount = -tmpCount
   end
-  while tmpCount > 0 do
-    tmpCount = (math.floor)(tmpCount / 10)
+  while 0 < tmpCount do
+    tmpCount = math.floor(tmpCount / 10)
     dight = dight + 1
   end
   local pre = ""
-  if count >= 0 then
-    for i = 1, 7 - (dight) do
+  if 0 <= count then
+    for i = 1, 7 - dight do
       pre = pre .. "0"
     end
   else
-    do
-      for i = 1, 7 - (dight) - 1 do
-        pre = pre .. "0"
-      end
-      do
-        if count > 0 then
-          return (string.format)("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
-        else
-          if count == 0 then
-            return (string.format)("<color=" .. preColor .. ">%s</color>", pre)
-          else
-            return (string.format)("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
-          end
-        end
-      end
+    for i = 1, 7 - dight - 1 do
+      pre = pre .. "0"
     end
   end
-end
-
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.ItemCount = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local count = itemModule:GetItemCount(self._costItemID)
-  ;
-  (self.itemCount):SetText((UIN27Controller.GetItemCountStr)(count, "#bcd4f3", "#ffffff"))
-  ;
-  (self.itemCount2):SetText((UIN27Controller.GetItemCountStr)(count, "#193352", "#193352"))
-  local cfg = (Cfg.cfg_item)[self._costItemID]
-  if not cfg then
-    (Log.error)("###[UIN27Controller] cfg is nil ! id --> ", self._costItemID)
+  if 0 < count then
+    return string.format("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
+  elseif count == 0 then
+    return string.format("<color=" .. preColor .. ">%s</color>", pre)
+  else
+    return string.format("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
   end
-  ;
-  (self.itemIcon):LoadImage(cfg.Icon)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
+function UIN27Controller:ItemCount()
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local count = itemModule:GetItemCount(self._costItemID)
+  self.itemCount:SetText(UIN27Controller.GetItemCountStr(count, "#bcd4f3", "#ffffff"))
+  self.itemCount2:SetText(UIN27Controller.GetItemCountStr(count, "#193352", "#193352"))
+  local cfg = Cfg.cfg_item[self._costItemID]
+  if not cfg then
+    Log.error("###[UIN27Controller] cfg is nil ! id --> ", self._costItemID)
+  end
+  self.itemIcon:LoadImage(cfg.Icon)
+end
 
-UIN27Controller.OnHide = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN27Controller:OnHide()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
   if self.animEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.animEvent)
+    GameGlobal.Timer():CancelEvent(self.animEvent)
     self.animEvent = nil
   end
   if self._gameTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._gameTimer)
+    GameGlobal.Timer():CancelEvent(self._gameTimer)
     self._gameTimer = nil
   end
   if self._lineMissionTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._lineMissionTimer)
+    GameGlobal.Timer():CancelEvent(self._lineMissionTimer)
     self._lineMissionTimer = nil
   end
   if self._diffTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._diffTimer)
+    GameGlobal.Timer():CancelEvent(self._diffTimer)
     self._diffTimer = nil
   end
   if self.componentNotStartTimerMap then
-    for id,timer in pairs(self.componentNotStartTimerMap) do
-      ((GameGlobal.Timer)()):CancelEvent(timer)
+    for id, timer in pairs(self.componentNotStartTimerMap) do
+      GameGlobal.Timer():CancelEvent(timer)
     end
     self.componentNotStartTimerMap = nil
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.OnValue = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN27Controller:OnValue()
   local btns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_10_0 , upvalues : self, _ENV
+  self._backBtn:SetData(function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, nil, function()
-    -- function num : 0_10_1 , upvalues : self, _ENV
+  end, nil, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, false, function()
-    -- function num : 0_10_2 , upvalues : self
+  end, false, function()
     self:HideBtnOnClick()
-  end
-)
+  end)
   self:ItemCount()
   self:CheckBtnLock()
   self:RT()
   self:Red()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.CheckBtnLock = function(self)
-  -- function num : 0_11
+function UIN27Controller:CheckBtnLock()
   self:LineLock()
   self:PoolLock()
   self:DiffLock()
@@ -264,663 +198,464 @@ UIN27Controller.CheckBtnLock = function(self)
   self:CampaignLock()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.CampaignLock = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN27Controller:CampaignLock()
   local lineLock, lineEndTime = self:CheckComponentLock(ECampaignN27ComponentID.ECAMPAIGN_N27_LINE_MISSION)
   if lineLock == N27ComponetStatus.Open then
-    (Log.debug)("###[UIN27Controller] 线性关 开启中")
+    Log.debug("###[UIN27Controller] 线性关 开启中")
     self._endTime = lineEndTime
     self._endType = 1
   else
-    ;
-    (Log.debug)("###[UIN27Controller] 线性关 关闭了")
-    local sample = (self._campaign):GetSample()
+    Log.debug("###[UIN27Controller] 线性关 关闭了")
+    local sample = self._campaign:GetSample()
     self._endTime = sample.end_time
     self._endType = 3
   end
-  do
-    self:InitTimer()
-  end
+  self:InitTimer()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.LineLock = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN27Controller:LineLock()
   local status, endTime = self:CheckComponentLock(ECampaignN27ComponentID.ECAMPAIGN_N27_LINE_MISSION)
   self.lineLock = status
-  ;
-  (self.MissionLockGo):SetActive(self.lineLock == N27ComponetStatus.NotStart or self.lineLock == N27ComponetStatus.Lock)
-  ;
-  (self.MissionGrayGo):SetActive(self.lineLock ~= N27ComponetStatus.Open)
+  self.MissionLockGo:SetActive(self.lineLock == N27ComponetStatus.NotStart or self.lineLock == N27ComponetStatus.Lock)
+  self.MissionGrayGo:SetActive(self.lineLock ~= N27ComponetStatus.Open)
   if self.lineLock == N27ComponetStatus.Open then
     self.lineMissionEndTime = endTime
     self:InitLineMissionTimer()
   elseif self.lineLock == N27ComponetStatus.OverTime then
     local tex = "str_n27_activity_end"
-    ;
-    (self.LineMissionTimerTex):SetText((StringTable.Get)(tex))
-    ;
-    (self.LineMissionTimerTex2):SetText((StringTable.Get)(tex))
+    self.LineMissionTimerTex:SetText(StringTable.Get(tex))
+    self.LineMissionTimerTex2:SetText(StringTable.Get(tex))
   else
-    (Log.fatal)("###[UIN27Controller] line lock other ! self.lineLock:", self.lineLock)
+    Log.fatal("###[UIN27Controller] line lock other ! self.lineLock:", self.lineLock)
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.InitLineMissionTimer = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (Log.debug)("###[UIN27Controller] InitLineMissionTimer")
+function UIN27Controller:InitLineMissionTimer()
+  Log.debug("###[UIN27Controller] InitLineMissionTimer")
   if self._lineMissionTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._lineMissionTimer)
+    GameGlobal.Timer():CancelEvent(self._lineMissionTimer)
   end
-  self._lineMissionTimer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_14_0 , upvalues : self
+  self._lineMissionTimer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:SetLineMissionTimerTex()
-  end
-)
+  end)
   self:SetLineMissionTimerTex()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.SetLineMissionTimerTex = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local svrTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+function UIN27Controller:SetLineMissionTimerTex()
+  local svrTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   local sec = self.lineMissionEndTime - svrTime
   if sec < 0 then
     if self._gameTimer then
-      ((GameGlobal.Timer)()):CancelEvent(self._gameTimer)
+      GameGlobal.Timer():CancelEvent(self._gameTimer)
       self._gameTimer = nil
     end
-    ;
-    (Log.debug)("###[UIN27Controller] SetLineMissionTimerTex time over,refresh dialog !")
+    Log.debug("###[UIN27Controller] SetLineMissionTimerTex time over,refresh dialog !")
     self:SwitchState(UIStateType.UIN27Controller)
   else
-    local timeStr = (HelperProxy:GetInstance()):Time2Tex(sec)
+    local timeStr = HelperProxy:GetInstance():Time2Tex(sec)
     local tex = "str_n27_main_component_less_time"
-    ;
-    (self.LineMissionTimerTex):SetText((StringTable.Get)(tex, timeStr))
-    ;
-    (self.LineMissionTimerTex2):SetText((StringTable.Get)(tex, timeStr))
+    self.LineMissionTimerTex:SetText(StringTable.Get(tex, timeStr))
+    self.LineMissionTimerTex2:SetText(StringTable.Get(tex, timeStr))
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.PoolLock = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN27Controller:PoolLock()
   self.poolLock = self:CheckComponentLock(ECampaignN27ComponentID.ECAMPAIGN_N27_LOTTERY)
-  ;
-  (self.PoolLockGo):SetActive(self.poolLock == N27ComponetStatus.NotStart or self.poolLock == N27ComponetStatus.Lock)
-  ;
-  (self.PoolGrayGo):SetActive(self.poolLock ~= N27ComponetStatus.Open)
-  ;
-  (self.PoolItemGo):SetActive(self.poolLock == N27ComponetStatus.Open)
-  ;
-  (self.PoolLockTexGo):SetActive(self.poolLock ~= N27ComponetStatus.Open)
-  do
-    if self.poolLock == N27ComponetStatus.OverTime then
-      local tex = "str_n27_activity_end"
-      ;
-      (self.PoolTimerTex):SetText((StringTable.Get)(tex))
-      ;
-      (self.PoolTimerTex2):SetText((StringTable.Get)(tex))
-    end
-    -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  self.PoolLockGo:SetActive(self.poolLock == N27ComponetStatus.NotStart or self.poolLock == N27ComponetStatus.Lock)
+  self.PoolGrayGo:SetActive(self.poolLock ~= N27ComponetStatus.Open)
+  self.PoolItemGo:SetActive(self.poolLock == N27ComponetStatus.Open)
+  self.PoolLockTexGo:SetActive(self.poolLock ~= N27ComponetStatus.Open)
+  if self.poolLock == N27ComponetStatus.OverTime then
+    local tex = "str_n27_activity_end"
+    self.PoolTimerTex:SetText(StringTable.Get(tex))
+    self.PoolTimerTex2:SetText(StringTable.Get(tex))
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.GameLock = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN27Controller:GameLock()
   local status, param = self:CheckComponentLock(ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
-  ;
-  (self.GameLockGo):SetActive(status == N27ComponetStatus.NotStart or status == N27ComponetStatus.Lock)
-  ;
-  (self.GameGrayGo):SetActive(status ~= N27ComponetStatus.Open)
+  self.GameLockGo:SetActive(status == N27ComponetStatus.NotStart or status == N27ComponetStatus.Lock)
+  self.GameGrayGo:SetActive(status ~= N27ComponetStatus.Open)
   self.gameLock = status
-  if not param then
-    self._gameEndTime = status ~= N27ComponetStatus.Open or 0
+  if status == N27ComponetStatus.Open then
+    self._gameEndTime = param or 0
     self:InitGameTimer()
-    do
-      local tex = ""
-      if status == N27ComponetStatus.NotStart then
-        local unlockTime = param
-        local svrTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-        local sec = unlockTime - svrTime
-        local timeStr = (HelperProxy:GetInstance()):Time2Tex(sec)
-        tex = (StringTable.Get)("str_n27_main_component_lock_time", timeStr)
-        self:InitComponentNotStartTimer(ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON, sec)
-      elseif status == N27ComponetStatus.Lock then
-        local missionid = param
-        local missionCfg = (Cfg.cfg_campaign_mission)[missionid]
-        local missionName = (StringTable.Get)(missionCfg.Name)
-        tex = (StringTable.Get)("str_n27_main_component_lock_stage", missionName)
-      elseif status == N27ComponetStatus.OverTime then
-        tex = "str_n27_activity_end"
-      else
-        (Log.fatal)("###[UIN27Controller] game lock other ! self.lineLock:", self.lineLock)
-      end
-      ;
-      (self.GameTimerTex):SetText(tex)
-      ;
-      (self.GameTimerTex2):SetText(tex)
-      -- DECOMPILER ERROR: 9 unprocessed JMP targets
+  else
+    local tex = ""
+    if status == N27ComponetStatus.NotStart then
+      local unlockTime = param
+      local svrTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+      local sec = unlockTime - svrTime
+      local timeStr = HelperProxy:GetInstance():Time2Tex(sec)
+      tex = StringTable.Get("str_n27_main_component_lock_time", timeStr)
+      self:InitComponentNotStartTimer(ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON, sec)
+    elseif status == N27ComponetStatus.Lock then
+      local missionid = param
+      local missionCfg = Cfg.cfg_campaign_mission[missionid]
+      local missionName = StringTable.Get(missionCfg.Name)
+      tex = StringTable.Get("str_n27_main_component_lock_stage", missionName)
+    elseif status == N27ComponetStatus.OverTime then
+      tex = "str_n27_activity_end"
+    else
+      Log.fatal("###[UIN27Controller] game lock other ! self.lineLock:", self.lineLock)
     end
+    self.GameTimerTex:SetText(tex)
+    self.GameTimerTex2:SetText(tex)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.InitComponentNotStartTimer = function(self, comid, sec)
-  -- function num : 0_18 , upvalues : _ENV
-  (Log.debug)("###[UIN27Controller] InitComponentNotStartTimer comid:", comid, "|sec:", sec)
-  do
-    if (self.componentNotStartTimerMap)[comid] then
-      local tmpTimer = (self.componentNotStartTimerMap)[comid]
-      ;
-      ((GameGlobal.Timer)()):CancelEvent(tmpTimer)
-    end
-    local timer = ((GameGlobal.Timer)()):AddEvent((sec + 1) * 1000, function()
-    -- function num : 0_18_0 , upvalues : _ENV, self
-    (Log.debug)("###[UIN27Controller] InitComponentNotStartTimer refresh dialog !")
+function UIN27Controller:InitComponentNotStartTimer(comid, sec)
+  Log.debug("###[UIN27Controller] InitComponentNotStartTimer comid:", comid, "|sec:", sec)
+  if self.componentNotStartTimerMap[comid] then
+    local tmpTimer = self.componentNotStartTimerMap[comid]
+    GameGlobal.Timer():CancelEvent(tmpTimer)
+  end
+  local timer = GameGlobal.Timer():AddEvent((sec + 1) * 1000, function()
+    Log.debug("###[UIN27Controller] InitComponentNotStartTimer refresh dialog !")
     self:SwitchState(UIStateType.UIN27Controller)
-  end
-)
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.componentNotStartTimerMap)[comid] = timer
-  end
+  end)
+  self.componentNotStartTimerMap[comid] = timer
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.InitGameTimer = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  (Log.debug)("###[UIN27Controller] InitGameTimer")
+function UIN27Controller:InitGameTimer()
+  Log.debug("###[UIN27Controller] InitGameTimer")
   if self._gameTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._gameTimer)
+    GameGlobal.Timer():CancelEvent(self._gameTimer)
   end
-  self._gameTimer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_19_0 , upvalues : self
+  self._gameTimer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:SetGameTimerTex()
-  end
-)
+  end)
   self:SetGameTimerTex()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.SetGameTimerTex = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local svrTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+function UIN27Controller:SetGameTimerTex()
+  local svrTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   local sec = self._gameEndTime - svrTime
   if sec < 0 then
     if self._gameTimer then
-      ((GameGlobal.Timer)()):CancelEvent(self._gameTimer)
+      GameGlobal.Timer():CancelEvent(self._gameTimer)
       self._gameTimer = nil
     end
-    ;
-    (Log.debug)("###[UIN27Controller] SetGameTimerTex time over,refresh dialog !")
+    Log.debug("###[UIN27Controller] SetGameTimerTex time over,refresh dialog !")
     self:SwitchState(UIStateType.UIN27Controller)
   else
-    local timeStr = (HelperProxy:GetInstance()):Time2Tex(sec)
+    local timeStr = HelperProxy:GetInstance():Time2Tex(sec)
     local tex = "str_n27_main_component_less_time"
-    ;
-    (self.GameTimerTex):SetText((StringTable.Get)(tex, timeStr))
-    ;
-    (self.GameTimerTex2):SetText((StringTable.Get)(tex, timeStr))
+    self.GameTimerTex:SetText(StringTable.Get(tex, timeStr))
+    self.GameTimerTex2:SetText(StringTable.Get(tex, timeStr))
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.DiffLock = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIN27Controller:DiffLock()
   local status, param = self:CheckComponentLock(ECampaignN27ComponentID.ECAMPAIGN_N27_DIFFICULT_MISSION)
   self.diffLock = status
-  ;
-  (self.DiffLockGo):SetActive(status == N27ComponetStatus.NotStart or status == N27ComponetStatus.Lock)
-  ;
-  (self.DiffGrayGo):SetActive(status ~= N27ComponetStatus.Open)
-  if not param then
-    self._diffEndTime = status ~= N27ComponetStatus.Open or 0
+  self.DiffLockGo:SetActive(status == N27ComponetStatus.NotStart or status == N27ComponetStatus.Lock)
+  self.DiffGrayGo:SetActive(status ~= N27ComponetStatus.Open)
+  if status == N27ComponetStatus.Open then
+    self._diffEndTime = param or 0
     self:InitDiffTimer()
-    do
-      local tex = nil
-      if status == N27ComponetStatus.NotStart then
-        local unlockTime = param
-        local svrTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-        local sec = unlockTime - svrTime
-        local timeStr = (HelperProxy:GetInstance()):Time2Tex(sec)
-        tex = (StringTable.Get)("str_n27_main_component_lock_time", timeStr)
-        self:InitComponentNotStartTimer(ECampaignN27ComponentID.ECAMPAIGN_N27_DIFFICULT_MISSION, sec)
-      elseif status == N27ComponetStatus.Lock then
-        local missionid = param
-        local missionCfg = (Cfg.cfg_campaign_mission)[missionid]
-        local missionName = (StringTable.Get)(missionCfg.Name)
-        tex = (StringTable.Get)("str_n27_main_component_lock_stage", missionName)
-      elseif status == N27ComponetStatus.OverTime then
-        tex = (StringTable.Get)("str_n27_activity_end")
-      else
-        (Log.fatal)("###[UIN27Controller] diff lock other ! status:", status)
-      end
-      ;
-      (self.DiffTimerTex):SetText(tex)
-      ;
-      (self.DiffTimerTex2):SetText(tex)
-      -- DECOMPILER ERROR: 9 unprocessed JMP targets
+  else
+    local tex
+    if status == N27ComponetStatus.NotStart then
+      local unlockTime = param
+      local svrTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+      local sec = unlockTime - svrTime
+      local timeStr = HelperProxy:GetInstance():Time2Tex(sec)
+      tex = StringTable.Get("str_n27_main_component_lock_time", timeStr)
+      self:InitComponentNotStartTimer(ECampaignN27ComponentID.ECAMPAIGN_N27_DIFFICULT_MISSION, sec)
+    elseif status == N27ComponetStatus.Lock then
+      local missionid = param
+      local missionCfg = Cfg.cfg_campaign_mission[missionid]
+      local missionName = StringTable.Get(missionCfg.Name)
+      tex = StringTable.Get("str_n27_main_component_lock_stage", missionName)
+    elseif status == N27ComponetStatus.OverTime then
+      tex = StringTable.Get("str_n27_activity_end")
+    else
+      Log.fatal("###[UIN27Controller] diff lock other ! status:", status)
     end
+    self.DiffTimerTex:SetText(tex)
+    self.DiffTimerTex2:SetText(tex)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.InitDiffTimer = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  (Log.debug)("###[UIN27Controller] InitDiffTimer")
+function UIN27Controller:InitDiffTimer()
+  Log.debug("###[UIN27Controller] InitDiffTimer")
   if self._diffTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._diffTimer)
+    GameGlobal.Timer():CancelEvent(self._diffTimer)
   end
-  self._diffTimer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_22_0 , upvalues : self
+  self._diffTimer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:SetDiffTimerTex()
-  end
-)
+  end)
   self:SetDiffTimerTex()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.SetDiffTimerTex = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local svrTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+function UIN27Controller:SetDiffTimerTex()
+  local svrTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   local sec = self._diffEndTime - svrTime
   if sec < 0 then
     if self._diffTimer then
-      ((GameGlobal.Timer)()):CancelEvent(self._diffTimer)
+      GameGlobal.Timer():CancelEvent(self._diffTimer)
       self._diffTimer = nil
     end
-    ;
-    (Log.debug)("###[UIN27Controller] SetDiffTimerTex time over,refresh dialog !")
+    Log.debug("###[UIN27Controller] SetDiffTimerTex time over,refresh dialog !")
     self:SwitchState(UIStateType.UIN27Controller)
   else
-    local timeStr = (HelperProxy:GetInstance()):Time2Tex(sec)
+    local timeStr = HelperProxy:GetInstance():Time2Tex(sec)
     local tex = "str_n27_main_component_less_time"
-    ;
-    (self.DiffTimerTex):SetText((StringTable.Get)(tex, timeStr))
-    ;
-    (self.DiffTimerTex2):SetText((StringTable.Get)(tex, timeStr))
+    self.DiffTimerTex:SetText(StringTable.Get(tex, timeStr))
+    self.DiffTimerTex2:SetText(StringTable.Get(tex, timeStr))
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.RT = function(self)
-  -- function num : 0_24
+function UIN27Controller:RT()
   if self._rt then
     local rt = self:GetUIComponent("RawImage", "rt")
     rt.texture = self._rt
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.InitTimer = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIN27Controller:InitTimer()
   if self._endType == 0 then
-    return 
+    return
   end
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
-  self._timerEvent = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_25_0 , upvalues : self
+  self._timerEvent = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:SetTimerTex()
-  end
-)
+  end)
   self:SetTimerTex()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.SetTimerTex = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local svrTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+function UIN27Controller:SetTimerTex()
+  local svrTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   local sec = self._endTime - svrTime
   if sec < 0 then
     if self._timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._timerEvent = nil
     end
     if self._endType == 1 then
-      (Log.debug)("###[UIN27Controller] 线性关时间到了，重新计算，显示活动结束时间")
+      Log.debug("###[UIN27Controller] 线性关时间到了，重新计算，显示活动结束时间")
     end
   else
-    local timeStr = (HelperProxy:GetInstance()):Time2Tex(sec)
+    local timeStr = HelperProxy:GetInstance():Time2Tex(sec)
     local titleStr = ""
     if self._endType == 1 then
       titleStr = "str_n27_level_remain_time_tips"
+    elseif self._endType == 3 then
+      titleStr = "str_n27_main_exchange_time"
     else
-      if self._endType == 3 then
-        titleStr = "str_n27_main_exchange_time"
-      else
-        return 
-      end
+      return
     end
-    ;
-    (self.timeStr):SetText((StringTable.Get)(titleStr, timeStr))
-    ;
-    (self.timeStr2):SetText((StringTable.Get)(titleStr, timeStr))
+    self.timeStr:SetText(StringTable.Get(titleStr, timeStr))
+    self.timeStr2:SetText(StringTable.Get(titleStr, timeStr))
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.HideBtnOnClick = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  (self.ShowBtn):SetActive(true)
+function UIN27Controller:HideBtnOnClick()
+  self.ShowBtn:SetActive(true)
   self:Lock("UIN27ControllerAnim")
   if self.uiAnim2 then
-    (self.uiAnim2):Play("uieff_UIN27Controller_uiout")
+    self.uiAnim2:Play("uieff_UIN27Controller_uiout")
   end
   if self.animEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.animEvent)
+    GameGlobal.Timer():CancelEvent(self.animEvent)
   end
-  self.animEvent = ((GameGlobal.Timer)()):AddEvent(333, function()
-    -- function num : 0_27_0 , upvalues : self
+  self.animEvent = GameGlobal.Timer():AddEvent(333, function()
     self:UnLock("UIN27ControllerAnim")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.N27SignInRed = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIN27Controller:N27SignInRed()
   local redSignIn = self:_CheckRedPoint(self.SignInRed, ECampaignN27ComponentID.ECAMPAIGN_N27_CUMULATIVE_LOGIN)
-  ;
-  (self.SignInRed):SetActive(redSignIn)
+  self.SignInRed:SetActive(redSignIn)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.Red = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local redEvent = (UIActivityHelper.CheckCampaignSampleRedPoint)(self._battlepassCampaign)
-  ;
-  (self.EventRed):SetActive(redEvent)
+function UIN27Controller:Red()
+  local redEvent = UIActivityHelper.CheckCampaignSampleRedPoint(self._battlepassCampaign)
+  self.EventRed:SetActive(redEvent)
   local redSignIn = self:_CheckRedPoint(self.SignInRed, ECampaignN27ComponentID.ECAMPAIGN_N27_CUMULATIVE_LOGIN)
-  ;
-  (self.SignInRed):SetActive(redSignIn)
+  self.SignInRed:SetActive(redSignIn)
   local redPool = self:_CheckRedPoint(self.PoolRed, ECampaignN27ComponentID.ECAMPAIGN_N27_LOTTERY)
-  ;
-  (self.PoolRed):SetActive(redPool)
+  self.PoolRed:SetActive(redPool)
   local newLineMission = self:GetLineMissionNew()
   local redLine = self:_CheckRedPoint(self.LineMissionRed, ECampaignN27ComponentID.ECAMPAIGN_N27_LINE_MISSION)
   local redTry = self:_CheckRedPoint(self.LineMissionRed, ECampaignN27ComponentID.ECAMPAIGN_N27_FIRST_MEET)
   local redLineMission = redLine or redTry
-  ;
-  (self.LineMissionNew):SetActive(not newLineMission or self.lineLock == N27ComponetStatus.Open)
-  ;
-  (self.LineMissionRed):SetActive(not redLineMission or (not newLineMission and self.lineLock == N27ComponetStatus.Open))
+  self.LineMissionNew:SetActive(newLineMission and self.lineLock == N27ComponetStatus.Open)
+  self.LineMissionRed:SetActive(redLineMission and not newLineMission and self.lineLock == N27ComponetStatus.Open)
   local newDiff = self:GetDiffNew()
   local redDiff = false
-  ;
-  (self.DiffNew):SetActive(not newDiff or self.diffLock == N27ComponetStatus.Open)
-  ;
-  (self.DiffRed):SetActive(not redDiff or (not newDiff and self.diffLock == N27ComponetStatus.Open))
+  self.DiffNew:SetActive(newDiff and self.diffLock == N27ComponetStatus.Open)
+  self.DiffRed:SetActive(redDiff and not newDiff and self.diffLock == N27ComponetStatus.Open)
   local newGame, redGame = self:GetGameNew()
-  ;
-  (self.GameNew):SetActive(not newGame or self.gameLock == N27ComponetStatus.Open)
-  ;
-  (self.GameRed):SetActive(not redGame or (not newGame and self.gameLock == N27ComponetStatus.Open))
-  -- DECOMPILER ERROR: 15 unprocessed JMP targets
+  self.GameNew:SetActive(newGame and self.gameLock == N27ComponetStatus.Open)
+  self.GameRed:SetActive(redGame and not newGame and self.gameLock == N27ComponetStatus.Open)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.GetLineMissionNew = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIN27Controller:GetLineMissionNew()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   local key = "UIN27MAIN_LINEMISSIOIN_" .. openID
-  local val = (LocalDB.GetInt)(key, 0)
-  do return val == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local val = LocalDB.GetInt(key, 0)
+  return val == 0
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.SetLineMissionNew = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIN27Controller:SetLineMissionNew()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   local key = "UIN27MAIN_LINEMISSIOIN_" .. openID
-  local val = (LocalDB.SetInt)(key, 1)
+  local val = LocalDB.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.GetDiffNew = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIN27Controller:GetDiffNew()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   local key = "UIN27MAIN_DIFF_" .. openID
-  local val = (LocalDB.GetInt)(key, 0)
-  do return val == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local val = LocalDB.GetInt(key, 0)
+  return val == 0
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.SetDiffNew = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIN27Controller:SetDiffNew()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   local key = "UIN27MAIN_DIFF_" .. openID
-  local val = (LocalDB.SetInt)(key, 1)
+  local val = LocalDB.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.GetGameNew = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIN27Controller:GetGameNew()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   local key = "UIN27MAIN_GAME_" .. openID
-  local val = (LocalDB.GetInt)(key, 0)
+  local val = LocalDB.GetInt(key, 0)
   local mainNew = val == 0
-  local new, red = (self.N27MinigameHelper):IsShowEntryNewOrRed()
-  do return mainNew or new, red end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local new, red = self.N27MinigameHelper:IsShowEntryNewOrRed()
+  return mainNew or new, red
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.SetGameNew = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIN27Controller:SetGameNew()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   local key = "UIN27MAIN_GAME_" .. openID
-  local val = (LocalDB.SetInt)(key, 1)
+  local val = LocalDB.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller._CheckRedPoint = function(self, obj, ...)
-  -- function num : 0_36
-  local bShow = (self._campaign):CheckComponentRed(...)
+function UIN27Controller:_CheckRedPoint(obj, ...)
+  local bShow = self._campaign:CheckComponentRed(...)
   return bShow
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.IntrBtnOnClick = function(self, go)
-  -- function num : 0_37
+function UIN27Controller:IntrBtnOnClick(go)
   self:ShowDialog("UIN27IntrController", "UIN27Controller")
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.SignInBtnOnClick = function(self, go)
-  -- function num : 0_38 , upvalues : _ENV
+function UIN27Controller:SignInBtnOnClick(go)
   self:ShowDialog("UIActivityTotalLoginAwardController", false, ECampaignType.CAMPAIGN_TYPE_N27, ECampaignN27ComponentID.ECAMPAIGN_N27_CUMULATIVE_LOGIN)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.EventBtnOnClick = function(self, go)
-  -- function num : 0_39 , upvalues : _ENV
-  ((UIActivityBattlePassHelper.OpenMainController)())(self._battlepassCampaign)
+function UIN27Controller:EventBtnOnClick(go)
+  UIActivityBattlePassHelper.OpenMainController()(self._battlepassCampaign)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.PoolBtnOnClick = function(self, go)
-  -- function num : 0_40 , upvalues : _ENV
+function UIN27Controller:PoolBtnOnClick(go)
   if self.poolLock == N27ComponetStatus.NotStart then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_110"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_110"))
+  elseif self.poolLock == N27ComponetStatus.OverTime then
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_109"))
+  elseif self.poolLock == N27ComponetStatus.Lock then
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_110"))
+  elseif self.poolLock == N27ComponetStatus.Other then
+    Log.fatal("###[UIN27Controller] PoolBtnOnClick lock --> other !")
   else
-    if self.poolLock == N27ComponetStatus.OverTime then
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_109"))
-    else
-      if self.poolLock == N27ComponetStatus.Lock then
-        (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_110"))
-      else
-        if self.poolLock == N27ComponetStatus.Other then
-          (Log.fatal)("###[UIN27Controller] PoolBtnOnClick lock --> other !")
-        else
-          self:ShowDialog("UIN27LotteryMain")
-        end
-      end
-    end
+    self:ShowDialog("UIN27LotteryMain")
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.ShowBtnOnClick = function(self, go)
-  -- function num : 0_41 , upvalues : _ENV
-  (self.ShowBtn):SetActive(false)
+function UIN27Controller:ShowBtnOnClick(go)
+  self.ShowBtn:SetActive(false)
   self:Lock("UIN27ControllerAnim")
   if self.uiAnim2 then
-    (self.uiAnim2):Play("uieff_UIN27Controller_uiback")
+    self.uiAnim2:Play("uieff_UIN27Controller_uiback")
   end
   if self.animEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.animEvent)
+    GameGlobal.Timer():CancelEvent(self.animEvent)
   end
-  self.animEvent = ((GameGlobal.Timer)()):AddEvent(633, function()
-    -- function num : 0_41_0 , upvalues : self
+  self.animEvent = GameGlobal.Timer():AddEvent(633, function()
     self:UnLock("UIN27ControllerAnim")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.LineMissionBtnOnClick = function(self, go)
-  -- function num : 0_42 , upvalues : _ENV
-  if self.lineLock ~= N27ComponetStatus.NotStart or self.lineLock == N27ComponetStatus.OverTime then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_109"))
+function UIN27Controller:LineMissionBtnOnClick(go)
+  if self.lineLock == N27ComponetStatus.NotStart then
+  elseif self.lineLock == N27ComponetStatus.OverTime then
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_109"))
+  elseif self.lineLock == N27ComponetStatus.Lock then
+  elseif self.lineLock == N27ComponetStatus.Other then
+    Log.fatal("###[UIN27Controller] LineMissionBtnOnClick lock --> other !")
   else
-  end
-  if self.lineLock ~= N27ComponetStatus.Lock or self.lineLock == N27ComponetStatus.Other then
-    (Log.fatal)("###[UIN27Controller] LineMissionBtnOnClick lock --> other !")
-  else
-    ;
-    (CutsceneManager.ExcuteCutsceneIn_Shot)()
+    CutsceneManager.ExcuteCutsceneIn_Shot()
     self:SwitchState(UIStateType.UIN27LineMissionController)
     self:SetLineMissionNew()
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.DiffBtnOnClick = function(self, go)
-  -- function num : 0_43 , upvalues : _ENV
-  if self.diffLock ~= N27ComponetStatus.NotStart or self.diffLock == N27ComponetStatus.OverTime then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_109"))
-  else
-  end
-  if self.diffLock ~= N27ComponetStatus.Lock or self.diffLock == N27ComponetStatus.Other then
-    (Log.fatal)("###[UIN27Controller] DiffBtnOnClick lock --> other !")
+function UIN27Controller:DiffBtnOnClick(go)
+  if self.diffLock == N27ComponetStatus.NotStart then
+  elseif self.diffLock == N27ComponetStatus.OverTime then
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_109"))
+  elseif self.diffLock == N27ComponetStatus.Lock then
+  elseif self.diffLock == N27ComponetStatus.Other then
+    Log.fatal("###[UIN27Controller] DiffBtnOnClick lock --> other !")
   else
     self:ShowDialog("UIActivityN27HardLevelMain")
     self:SetDiffNew()
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.GameBtnOnClick = function(self, go)
-  -- function num : 0_44 , upvalues : _ENV
-  if not (self._campaign):CheckCampaignOpen() then
-    (self._campaign):CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
+function UIN27Controller:GameBtnOnClick(go)
+  if not self._campaign:CheckCampaignOpen() then
+    self._campaign:CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
   end
-  if self.gameLock ~= N27ComponetStatus.NotStart or self.gameLock == N27ComponetStatus.OverTime then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_109"))
+  if self.gameLock == N27ComponetStatus.NotStart then
+  elseif self.gameLock == N27ComponetStatus.OverTime then
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_109"))
+  elseif self.gameLock == N27ComponetStatus.Lock then
+  elseif self.gameLock == N27ComponetStatus.Other then
+    Log.fatal("###[UIN27Controller] GameBtnOnClick game lock --> other !")
   else
-  end
-  if self.gameLock ~= N27ComponetStatus.Lock or self.gameLock == N27ComponetStatus.Other then
-    (Log.fatal)("###[UIN27Controller] GameBtnOnClick game lock --> other !")
-  else
-    ;
-    (UIActivityHelper.PlayFirstPlot_Component)(self._campaign, ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON, function()
-    -- function num : 0_44_0 , upvalues : _ENV, self
-    (CutsceneManager.ExcuteCutsceneIn_Shot)()
-    self:SwitchState(UIStateType.UIN27MiniGameController)
-    self:SetGameNew()
-  end
-)
+    UIActivityHelper.PlayFirstPlot_Component(self._campaign, ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON, function()
+      CutsceneManager.ExcuteCutsceneIn_Shot()
+      self:SwitchState(UIStateType.UIN27MiniGameController)
+      self:SetGameNew()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller.CheckComponentLock = function(self, componentid)
-  -- function num : 0_45 , upvalues : _ENV
-  local component = (self._campaign):GetComponent(componentid)
+function UIN27Controller:CheckComponentLock(componentid)
+  local component = self._campaign:GetComponent(componentid)
   if not component then
-    (Log.error)("###[UIN27Controller] UIN27Controller:CheckComponentLock component == nil,componentid=", componentid)
+    Log.error("###[UIN27Controller] UIN27Controller:CheckComponentLock component == nil,componentid=", componentid)
     return N27ComponetStatus.Other
   end
-  local curTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+  local curTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   local unlockTime = component:ComponentUnLockTime()
   local stamp = unlockTime - curTime
   if component:ComponentIsClose() then
     return N27ComponetStatus.OverTime
+  elseif 0 < stamp then
+    return N27ComponetStatus.NotStart, unlockTime
+  elseif not component:ComponentIsUnLock() then
+    local missionid = component:GetComponentInfo().m_need_mission_id
+    return N27ComponetStatus.Lock, missionid
   else
-    if stamp > 0 then
-      return N27ComponetStatus.NotStart, unlockTime
-    else
-      if not component:ComponentIsUnLock() then
-        local missionid = (component:GetComponentInfo()).m_need_mission_id
-        return N27ComponetStatus.Lock, missionid
-      else
-        do
-          local cInfo = (self._campaign):GetComponentInfo(componentid)
-          local closeTime = cInfo.m_close_time
-          do return N27ComponetStatus.Open, closeTime end
-        end
-      end
-    end
+    local cInfo = self._campaign:GetComponentInfo(componentid)
+    local closeTime = cInfo.m_close_time
+    return N27ComponetStatus.Open, closeTime
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27Controller._CheckGuide = function(self)
-  -- function num : 0_46 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN27Controller)
+function UIN27Controller:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN27Controller)
 end
-
-

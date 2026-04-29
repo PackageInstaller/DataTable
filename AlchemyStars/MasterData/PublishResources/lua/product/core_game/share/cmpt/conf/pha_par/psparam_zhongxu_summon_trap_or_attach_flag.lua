@@ -1,156 +1,109 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/psparam_zhongxu_summon_trap_or_attach_flag.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseZhongxuSummonTrapOrAttachFlagParam", SkillPhaseParamBase)
 SkillPhaseZhongxuSummonTrapOrAttachFlagParam = SkillPhaseZhongxuSummonTrapOrAttachFlagParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseZhongxuSummonTrapOrAttachFlagParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
-  local trapParamArray = (string.split)(t.checkTrapIDList, ",")
+function SkillPhaseZhongxuSummonTrapOrAttachFlagParam:Constructor(t)
+  local trapParamArray = string.split(t.checkTrapIDList, ",")
   self._checkTrapIDList = {}
   if trapParamArray then
-    for k,idStr in ipairs(trapParamArray) do
+    for k, idStr in ipairs(trapParamArray) do
       local trapID = tonumber(idStr)
-      ;
-      (table.insert)(self._checkTrapIDList, trapID)
+      table.insert(self._checkTrapIDList, trapID)
     end
   end
-  do
-    self._singleGridMonsterEffectDelay = t.singleGridMonsterEffectDelay
-    self._singleGridMonsterEffectID = t.singleGridMonsterEffectID
-    self._singleGridMonsterEffectLoopAnim = t.singleGridMonsterEffectLoopAnim
-    self._singleGridMonsterEffectLoopAnimDelay = t.singleGridMonsterEffectLoopAnimDelay
-    self._multiGridMonsterEffectDelay = t.multiGridMonsterEffectDelay
-    self._multiGridMonsterEffectID = t.multiGridMonsterEffectID
-    self._multiGridMonsterEffectLoopAnim = t.multiGridMonsterEffectLoopAnim
-    self._multiGridMonsterEffectLoopAnimDelay = t.multiGridMonsterEffectLoopAnimDelay
-    self._multiGridMonsterFlagEffectID = t.multiGridMonsterFlagEffectID
-  end
+  self._singleGridMonsterEffectDelay = t.singleGridMonsterEffectDelay
+  self._singleGridMonsterEffectID = t.singleGridMonsterEffectID
+  self._singleGridMonsterEffectLoopAnim = t.singleGridMonsterEffectLoopAnim
+  self._singleGridMonsterEffectLoopAnimDelay = t.singleGridMonsterEffectLoopAnimDelay
+  self._multiGridMonsterEffectDelay = t.multiGridMonsterEffectDelay
+  self._multiGridMonsterEffectID = t.multiGridMonsterEffectID
+  self._multiGridMonsterEffectLoopAnim = t.multiGridMonsterEffectLoopAnim
+  self._multiGridMonsterEffectLoopAnimDelay = t.multiGridMonsterEffectLoopAnimDelay
+  self._multiGridMonsterFlagEffectID = t.multiGridMonsterFlagEffectID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseZhongxuSummonTrapOrAttachFlagParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseZhongxuSummonTrapOrAttachFlagParam:GetCacheTable()
   local t = {}
   if self._checkTrapIDList then
-    for index,trapID in ipairs(self._checkTrapIDList) do
-      local cfgTrap = (Cfg.cfg_trap)[trapID]
+    for index, trapID in ipairs(self._checkTrapIDList) do
+      local cfgTrap = Cfg.cfg_trap[trapID]
       if cfgTrap then
-        for i,resPath in ipairs(cfgTrap.ResPath) do
-          (table.insert)(t, {resPath, 1})
+        for i, resPath in ipairs(cfgTrap.ResPath) do
+          table.insert(t, {resPath, 1})
         end
       end
     end
   end
-  do
-    do
-      if self._singleGridMonsterEffectID then
-        local cfgfx = (Cfg.cfg_effect)[self._singleGridMonsterEffectID]
-        if cfgfx then
-          (table.insert)(t, {cfgfx.ResPath, 1})
-        end
-      end
-      do
-        if self._multiGridMonsterEffectID then
-          local cfgfx = (Cfg.cfg_effect)[self._multiGridMonsterEffectID]
-          if cfgfx then
-            (table.insert)(t, {cfgfx.ResPath, 1})
-          end
-        end
-        do
-          if self._multiGridMonsterFlagEffectID then
-            local cfgfx = (Cfg.cfg_effect)[self._multiGridMonsterFlagEffectID]
-            if cfgfx then
-              (table.insert)(t, {cfgfx.ResPath, 1})
-            end
-          end
-          return t
-        end
-      end
+  if self._singleGridMonsterEffectID then
+    local cfgfx = Cfg.cfg_effect[self._singleGridMonsterEffectID]
+    if cfgfx then
+      table.insert(t, {
+        cfgfx.ResPath,
+        1
+      })
     end
   end
+  if self._multiGridMonsterEffectID then
+    local cfgfx = Cfg.cfg_effect[self._multiGridMonsterEffectID]
+    if cfgfx then
+      table.insert(t, {
+        cfgfx.ResPath,
+        1
+      })
+    end
+  end
+  if self._multiGridMonsterFlagEffectID then
+    local cfgfx = Cfg.cfg_effect[self._multiGridMonsterFlagEffectID]
+    if cfgfx then
+      table.insert(t, {
+        cfgfx.ResPath,
+        1
+      })
+    end
+  end
+  return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseZhongxuSummonTrapOrAttachFlagParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseZhongxuSummonTrapOrAttachFlagParam:GetPhaseType()
   return SkillViewPhaseType.ZhongxuSummonTrapOrAttachFlag
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseZhongxuSummonTrapOrAttachFlagParam.GetCheckTrapIDList = function(self)
-  -- function num : 0_3
+function SkillPhaseZhongxuSummonTrapOrAttachFlagParam:GetCheckTrapIDList()
   return self._checkTrapIDList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseZhongxuSummonTrapOrAttachFlagParam.GetSingeGridMonsterEffectDelay = function(self)
-  -- function num : 0_4
+function SkillPhaseZhongxuSummonTrapOrAttachFlagParam:GetSingeGridMonsterEffectDelay()
   return self._singleGridMonsterEffectDelay
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseZhongxuSummonTrapOrAttachFlagParam.GetSingeGridMonsterEffectID = function(self)
-  -- function num : 0_5
+function SkillPhaseZhongxuSummonTrapOrAttachFlagParam:GetSingeGridMonsterEffectID()
   return self._singleGridMonsterEffectID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseZhongxuSummonTrapOrAttachFlagParam.GetSingeGridMonsterEffectLoopAnim = function(self)
-  -- function num : 0_6
+function SkillPhaseZhongxuSummonTrapOrAttachFlagParam:GetSingeGridMonsterEffectLoopAnim()
   return self._singleGridMonsterEffectLoopAnim
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseZhongxuSummonTrapOrAttachFlagParam.GetSingeGridMonsterEffectLoopAnimDelay = function(self)
-  -- function num : 0_7
+function SkillPhaseZhongxuSummonTrapOrAttachFlagParam:GetSingeGridMonsterEffectLoopAnimDelay()
   return self._singleGridMonsterEffectLoopAnimDelay
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseZhongxuSummonTrapOrAttachFlagParam.GetMultiGridMonsterEffectDelay = function(self)
-  -- function num : 0_8
+function SkillPhaseZhongxuSummonTrapOrAttachFlagParam:GetMultiGridMonsterEffectDelay()
   return self._multiGridMonsterEffectDelay
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseZhongxuSummonTrapOrAttachFlagParam.GetMultiGridMonsterEffectID = function(self)
-  -- function num : 0_9
+function SkillPhaseZhongxuSummonTrapOrAttachFlagParam:GetMultiGridMonsterEffectID()
   return self._multiGridMonsterEffectID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseZhongxuSummonTrapOrAttachFlagParam.GetMultiGridMonsterEffectLoopAnim = function(self)
-  -- function num : 0_10
+function SkillPhaseZhongxuSummonTrapOrAttachFlagParam:GetMultiGridMonsterEffectLoopAnim()
   return self._multiGridMonsterEffectLoopAnim
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseZhongxuSummonTrapOrAttachFlagParam.GetMultiGridMonsterEffectLoopAnimDelay = function(self)
-  -- function num : 0_11
+function SkillPhaseZhongxuSummonTrapOrAttachFlagParam:GetMultiGridMonsterEffectLoopAnimDelay()
   return self._multiGridMonsterEffectLoopAnimDelay
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseZhongxuSummonTrapOrAttachFlagParam.GetMultiGridMonsterFlagEffectID = function(self)
-  -- function num : 0_12
+function SkillPhaseZhongxuSummonTrapOrAttachFlagParam:GetMultiGridMonsterFlagEffectID()
   return self._multiGridMonsterFlagEffectID
 end
-
-

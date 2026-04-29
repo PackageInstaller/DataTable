@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_multiple_show_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardMultipleShowItem", Object)
 UIDrawCardMultipleShowItem = UIDrawCardMultipleShowItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardMultipleShowItem.InitWidget = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDrawCardMultipleShowItem:InitWidget()
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self.drawIcon = self:GetUIComponent("RawImageLoader", "drawIcon")
   self.diLayer = self:GetUIComponent("Image", "diLayer")
@@ -18,80 +11,50 @@ UIDrawCardMultipleShowItem.InitWidget = function(self)
   self.logo = self:GetUIComponent("RawImageLoader", "logo")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardMultipleShowItem.GetUIComponent = function(self, component, name)
-  -- function num : 0_1
-  return (self._view):GetUIComponent(component, name)
+function UIDrawCardMultipleShowItem:GetUIComponent(component, name)
+  return self._view:GetUIComponent(component, name)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardMultipleShowItem.GetGameObject = function(self, name)
-  -- function num : 0_2
-  return (self._view):GetGameObject(name)
+function UIDrawCardMultipleShowItem:GetGameObject(name)
+  return self._view:GetGameObject(name)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardMultipleShowItem.GetAsset = function(self, name, loadType)
-  -- function num : 0_3 , upvalues : _ENV
-  return (UIResourceManager.GetAsset)(name, loadType, self.name2Assets)
+function UIDrawCardMultipleShowItem:GetAsset(name, loadType)
+  return UIResourceManager.GetAsset(name, loadType, self.name2Assets)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardMultipleShowItem.SetData = function(self, idx, tmpID, view, checkNew, hideEff)
-  -- function num : 0_4 , upvalues : _ENV
+function UIDrawCardMultipleShowItem:SetData(idx, tmpID, view, checkNew, hideEff)
   self.name2Assets = {}
   self._view = view
   self:InitWidget()
-  local cfg = (Cfg.cfg_pet)[tmpID]
+  local cfg = Cfg.cfg_pet[tmpID]
   local star = cfg.Star
-  local teamBody = (HelperProxy:GetInstance()):GetPetTeamBody(tmpID, 0, 0, PetSkinEffectPath.CARD_DRAW_MULTI)
-  ;
-  (self.drawIcon):LoadImage(teamBody)
+  local teamBody = HelperProxy:GetInstance():GetPetTeamBody(tmpID, 0, 0, PetSkinEffectPath.CARD_DRAW_MULTI)
+  self.drawIcon:LoadImage(teamBody)
   self._checkNew = checkNew
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R9 in 'UnsetPending'
-
-  if star > 4 then
-    (self.diLayer).sprite = (self:GetAsset("UIDrawCard.spriteatlas", LoadType.SpriteAtlas)):GetSprite("obtain_donghua_ka" .. star - 3)
+  if 4 < star then
+    self.diLayer.sprite = self:GetAsset("UIDrawCard.spriteatlas", LoadType.SpriteAtlas):GetSprite("obtain_donghua_ka" .. star - 3)
   else
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.diLayer).sprite = (self:GetAsset("UIDrawCard.spriteatlas", LoadType.SpriteAtlas)):GetSprite("obtain_donghua_ka1")
+    self.diLayer.sprite = self:GetAsset("UIDrawCard.spriteatlas", LoadType.SpriteAtlas):GetSprite("obtain_donghua_ka1")
   end
-  -- DECOMPILER ERROR at PC63: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self.elementIcon).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((Cfg.cfg_pet_element)[cfg.FirstElement]).Icon))
-  local parent = (self.stars).transform
+  self.elementIcon.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(Cfg.cfg_pet_element[cfg.FirstElement].Icon))
+  local parent = self.stars.transform
   for i = 1, 6 do
-    ((parent:GetChild(i - 1)).gameObject):SetActive(i <= star)
+    parent:GetChild(i - 1).gameObject:SetActive(star >= i)
   end
-  ;
-  (self.logo):LoadImage(cfg.Logo)
-  if (self._checkNew)(idx) then
-    (self._new):SetActive(true)
+  self.logo:LoadImage(cfg.Logo)
+  if self._checkNew(idx) then
+    self._new:SetActive(true)
   else
-    (self._new):SetActive(false)
+    self._new:SetActive(false)
   end
-  do
-    if star > 3 and not hideEff then
-      local eftLoader = self:GetUIComponent("EffectLoader", "Eft")
-      eftLoader:LoadEffect("uieff_Card_Mask_" .. star)
-    end
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  if 3 < star and not hideEff then
+    local eftLoader = self:GetUIComponent("EffectLoader", "Eft")
+    eftLoader:LoadEffect("uieff_Card_Mask_" .. star)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardMultipleShowItem.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (UIResourceManager.DisposeAllAssets)(self.name2Assets)
+function UIDrawCardMultipleShowItem:OnHide()
+  UIResourceManager.DisposeAllAssets(self.name2Assets)
   self.name2Assets = nil
 end
-
-

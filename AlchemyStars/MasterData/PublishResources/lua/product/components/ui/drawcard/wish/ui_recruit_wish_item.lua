@@ -1,53 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/wish/ui_recruit_wish_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIRecruitWishItem", UICustomWidget)
 UIRecruitWishItem = UIRecruitWishItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIRecruitWishItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIRecruitWishItem:Constructor()
   self._atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishItem.OnShow = function(self)
-  -- function num : 0_1
+function UIRecruitWishItem:OnShow()
   self:UIWidget()
   self:CreatePetItem()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishItem.OnHide = function(self)
-  -- function num : 0_2
+function UIRecruitWishItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishItem.AddBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIRecruitWishItem:AddBtnOnClick(go)
   if self._selectionCB ~= nil then
-    (self._selectionCB)(self._elementType, self._petTid)
+    self._selectionCB(self._elementType, self._petTid)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishItem.BtnChangeOnClick = function(self, go)
-  -- function num : 0_4
+function UIRecruitWishItem:BtnChangeOnClick(go)
   if self._selectionCB ~= nil then
-    (self._selectionCB)(self._elementType, self._petTid)
+    self._selectionCB(self._elementType, self._petTid)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishItem.UIWidget = function(self)
-  -- function num : 0_5
+function UIRecruitWishItem:UIWidget()
   self._uiAdd = self:GetUIComponent("RectTransform", "uiAdd")
   self._uiPetWish = self:GetUIComponent("RectTransform", "uiPetWish")
   self._addAttribute = self:GetUIComponent("Image", "addAttribute")
@@ -55,54 +33,32 @@ UIRecruitWishItem.UIWidget = function(self)
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishItem.CreatePetItem = function(self)
-  -- function num : 0_6
-  self._uiPetItem = (self._petItem):SpawnObjects("UIDrawCardAwardPetItem", 1)
-  self._uiPetItem = (self._uiPetItem)[1]
+function UIRecruitWishItem:CreatePetItem()
+  self._uiPetItem = self._petItem:SpawnObjects("UIDrawCardAwardPetItem", 1)
+  self._uiPetItem = self._uiPetItem[1]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishItem.SetData = function(self, elementType, petTid, selectionCB)
-  -- function num : 0_7
+function UIRecruitWishItem:SetData(elementType, petTid, selectionCB)
   self._elementType = elementType
   self._petTid = petTid
   self._selectionCB = selectionCB
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishItem.SetPetTid = function(self, petTid)
-  -- function num : 0_8
+function UIRecruitWishItem:SetPetTid(petTid)
   self._petTid = petTid
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishItem.Flush = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  ((self._uiAdd).gameObject):SetActive(self._petTid == 0 or self._petTid ~= 0)
-  ;
-  ((self._uiPetWish).gameObject):SetActive(self._petTid ~= 0)
-  local cfgAttribute = (Cfg.cfg_pet_element)[self._elementType]
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._addAttribute).sprite = (self._atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(cfgAttribute.Icon))
+function UIRecruitWishItem:Flush()
+  self._uiAdd.gameObject:SetActive(self._petTid == 0 or self._petTid ~= 0)
+  self._uiPetWish.gameObject:SetActive(self._petTid ~= 0)
+  local cfgAttribute = Cfg.cfg_pet_element[self._elementType]
+  self._addAttribute.sprite = self._atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfgAttribute.Icon))
   if self._petTid ~= 0 then
-    (self._uiPetItem):SetData(6, self._petTid, nil)
-    ;
-    (self._uiPetItem):ShowPetAwakening(true)
-    ;
-    (self._uiPetItem):RootLocalScale(Vector3(0.9, 0.9, 0.9))
-    ;
-    (self._uiPetItem):AnimRootPosition(Vector2(0, -126))
+    self._uiPetItem:SetData(6, self._petTid, nil)
+    self._uiPetItem:ShowPetAwakening(true)
+    self._uiPetItem:RootLocalScale(Vector3(0.9, 0.9, 0.9))
+    self._uiPetItem:AnimRootPosition(Vector2(0, -126))
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
-
-

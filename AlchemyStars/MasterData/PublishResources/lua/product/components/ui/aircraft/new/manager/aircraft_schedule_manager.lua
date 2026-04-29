@@ -1,140 +1,110 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/manager/aircraft_schedule_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftScheduleManager", Object)
 AircraftScheduleManager = AircraftScheduleManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftScheduleManager.Constructor = function(self, aircraftMain)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftScheduleManager:Constructor(aircraftMain)
   self._main = aircraftMain
   self._scheduleTimeMIN = 600000
   self._scheduleTimeMAX = 1200000
-  self._scheduleTime = (math.random)(self._scheduleTimeMIN, self._scheduleTimeMAX)
+  self._scheduleTime = math.random(self._scheduleTimeMIN, self._scheduleTimeMAX)
   self._scheduleTimer = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftScheduleManager.Init = function(self)
-  -- function num : 0_1
+function AircraftScheduleManager:Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftScheduleManager.ReSchedule = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local allPet = (Cfg.cfg_aircraft_pet)({})
+function AircraftScheduleManager:ReSchedule()
+  local allPet = Cfg.cfg_aircraft_pet({})
   local workingPets = {}
-  local _module = (GameGlobal.GetModule)(AircraftModule)
-  local spaces = (Cfg.cfg_aircraft_space)({})
+  local _module = GameGlobal.GetModule(AircraftModule)
+  local spaces = Cfg.cfg_aircraft_space({})
   for i = 1, #spaces do
     local roomData = _module:GetRoom(i)
     if roomData then
       local pets = roomData:GetPets()
-      if pets and #pets > 0 then
-        for _,pet in ipairs(pets) do
+      if pets and 0 < #pets then
+        for _, pet in ipairs(pets) do
           workingPets[pet:GetTemplateID()] = true
         end
       end
     end
   end
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   local pets = {}
-  for _,cfg in pairs(allPet) do
+  for _, cfg in pairs(allPet) do
     local tmpID = cfg.ID
     local petInBag = petModule:GetPetByTemplateId(tmpID)
     local bindPet = petModule:GetBindPet(tmpID)
-    if petInBag and (self._main):IsRestPet(tmpID) then
+    if petInBag and self._main:IsRestPet(tmpID) then
       pets[#pets + 1] = tmpID
     end
   end
   if next(pets) == nil then
-    (Log.fatal)("[AircraftSchedule] 没有可进入娱乐区的星灵")
+    Log.fatal("[AircraftSchedule] 没有可进入娱乐区的星灵")
   end
-  pets = (table.shuffle)(pets)
+  pets = table.shuffle(pets)
   local queue = AircraftQueue:New()
-  for _,id in ipairs(pets) do
+  for _, id in ipairs(pets) do
     queue:Enqueue(id)
   end
   self:SetQueueAndInitPets(queue)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftScheduleManager.SetQueueAndInitPets = function(self, queue)
-  -- function num : 0_3 , upvalues : _ENV
+function AircraftScheduleManager:SetQueueAndInitPets(queue)
   self._queue = queue
-  local count = (self._queue):Count()
-  local rooms = (self._main):GetAllRestRoom()
+  local count = self._queue:Count()
+  local rooms = self._main:GetAllRestRoom()
   for i = 1, count do
     local allFull = true
-    for _,room in ipairs(rooms) do
+    for _, room in ipairs(rooms) do
       if not room:IsBelongPetFull() then
         allFull = false
         break
       end
     end
-    do
-      if not allFull then
-        local petId = (self._queue):Dequeue()
-        local exist = (self._main):GetPetByTmpID(petId) ~= nil
-        do
-          if not exist then
-            local found = false
-            for _,room in ipairs(rooms) do
-              local cfg = (Cfg.cfg_aircraft_pet)[petId]
-              local tag = room:GetRoomTag()
-              if (table.icontains)(cfg.RoomTag, tag) and not room:IsBelongPetFull() then
-                local pet, sp = (self._main):AddPet(petId)
-                if pet == nil then
-                  pet = (self._main):GetPetByTmpID(petId)
-                  if pet then
-                    if sp then
-                      (Log.debug)("###[AircraftScheduleManager] sp 的星灵已在，petid:", petId, ",sp星灵:", sp)
-                    else
-                      (Log.exception)("[AircraftSchedule] 该星灵已存在：", petId, "，state:", pet:GetState())
-                    end
-                  end
-                else
-                  AirLog("星灵进入娱乐房间：", petId, "，房间：", tag)
-                  ;
-                  (self._main):RandomInitActionForPet(pet)
-                  room:PetIn(petId)
-                  pet:SetBelongArea(room:Area())
-                  found = true
-                  break
-                end
+    if allFull then
+      break
+    end
+    local petId = self._queue:Dequeue()
+    local exist = self._main:GetPetByTmpID(petId) ~= nil
+    if not exist then
+      local found = false
+      for _, room in ipairs(rooms) do
+        local cfg = Cfg.cfg_aircraft_pet[petId]
+        local tag = room:GetRoomTag()
+        if table.icontains(cfg.RoomTag, tag) and not room:IsBelongPetFull() then
+          local pet, sp = self._main:AddPet(petId)
+          if pet == nil then
+            pet = self._main:GetPetByTmpID(petId)
+            if pet then
+              if sp then
+                Log.debug("###[AircraftScheduleManager] sp 的星灵已在，petid:", petId, ",sp星灵:", sp)
+              else
+                Log.exception("[AircraftSchedule] 该星灵已存在：", petId, "，state:", pet:GetState())
               end
+            else
             end
-            if not found then
-              (self._queue):Enqueue(petId)
-            end
+          else
+            AirLog("星灵进入娱乐房间：", petId, "，房间：", tag)
+            self._main:RandomInitActionForPet(pet)
+            room:PetIn(petId)
+            pet:SetBelongArea(room:Area())
+            found = true
+            break
           end
-          -- DECOMPILER ERROR at PC120: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC120: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC120: LeaveBlock: unexpected jumping out DO_STMT
-
         end
+      end
+      if not found then
+        self._queue:Enqueue(petId)
       end
     end
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftScheduleManager._scheduleOnce = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local now = (self._main):Time()
-  local canLeave = (self._main):GetPets(function(_pet)
-    -- function num : 0_4_0 , upvalues : self, now, _ENV
+function AircraftScheduleManager:_scheduleOnce()
+  local now = self._main:Time()
+  local canLeave = self._main:GetPets(function(_pet)
     local pet = _pet
-    if not (self._main):IsRestPet(pet:TemplateID()) then
+    if not self._main:IsRestPet(pet:TemplateID()) then
       return false
     end
     local state = pet:GetState()
@@ -146,155 +116,101 @@ AircraftScheduleManager._scheduleOnce = function(self)
       return false
     end
     return true
-  end
-)
+  end)
   if #canLeave < 1 then
     AirLog("没有可离开的星灵")
-    return 
+    return
   end
-  local count = (math.random)(1, 2)
+  local count = math.random(1, 2)
   AirLog(count, "个星灵离开娱乐区")
   local leave = {}
   if count < #canLeave then
     for i = 1, count do
-      local idx = (math.random)(i, #canLeave)
+      local idx = math.random(i, #canLeave)
       local temp = canLeave[idx]
       canLeave[idx] = canLeave[i]
       canLeave[i] = temp
       leave[i] = temp
     end
   else
-    do
-      leave = canLeave
-      local enterIDs = {}
-      for i = 1, count do
-        local id = (self._queue):Dequeue()
-        if id == nil then
-          AirLog("当前队列中已没有星灵，不可进入")
-          break
-        end
-        enterIDs[#enterIDs + 1] = id
-      end
-      do
-        if #enterIDs > 0 then
-          local delay = 0
-          local pos = (self._main):ExitPosition()
-          for _,id in ipairs(enterIDs) do
-            AirLog("1个星灵开始进入风船休闲区:", id)
-            local pet, sp = (self._main):AddPet(id)
-            if pet then
-              pet:SetFloor(1)
-              local action = AirActionPetEnter:New(pet, pos, delay)
-              pet:SetEnterTime((self._main):Time())
-              pet:StartMainAction(action)
-              delay = delay + 1000
-            else
-              do
-                do
-                  if sp then
-                    (Log.debug)("###[AircraftScheduleManager] sp 的星灵已在，petid:", id, ",sp星灵:", sp)
-                  end
-                  -- DECOMPILER ERROR at PC111: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC111: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC111: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
-            end
-          end
-        end
-        do
-          for _,pet in ipairs(leave) do
-            local action = AirActionMoveToLeave:New(R13_PC121, self._main)
-            pet:StartMainAction(action)
-            -- DECOMPILER ERROR at PC126: Overwrote pending register: R13 in 'AssignReg'
-
-            AirLog(R13_PC121, pet:TemplateID())
-          end
-        end
+    leave = canLeave
+  end
+  local enterIDs = {}
+  for i = 1, count do
+    local id = self._queue:Dequeue()
+    if id == nil then
+      AirLog("当前队列中已没有星灵，不可进入")
+      break
+    end
+    enterIDs[#enterIDs + 1] = id
+  end
+  if 0 < #enterIDs then
+    local delay = 0
+    local pos = self._main:ExitPosition()
+    for _, id in ipairs(enterIDs) do
+      AirLog("1个星灵开始进入风船休闲区:", id)
+      local pet, sp = self._main:AddPet(id)
+      if pet then
+        pet:SetFloor(1)
+        local action = AirActionPetEnter:New(pet, pos, delay)
+        pet:SetEnterTime(self._main:Time())
+        pet:StartMainAction(action)
+        delay = delay + 1000
+      elseif sp then
+        Log.debug("###[AircraftScheduleManager] sp 的星灵已在，petid:", id, ",sp星灵:", sp)
       end
     end
   end
-end
-
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftScheduleManager.Enqueue = function(self, temID)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._queue):Contains(temID) then
-    (Log.exception)("[AircraftSchedule] 严重错误，队列中已包含该星灵：", temID)
-    return 
+  for _, pet in ipairs(leave) do
+    local action = AirActionMoveToLeave:New(pet, self._main)
+    pet:StartMainAction(action)
+    AirLog("星灵开始离开风船：", pet:TemplateID())
   end
-  ;
-  (self._queue):Enqueue(temID)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
+function AircraftScheduleManager:Enqueue(temID)
+  if self._queue:Contains(temID) then
+    Log.exception("[AircraftSchedule] 严重错误，队列中已包含该星灵：", temID)
+    return
+  end
+  self._queue:Enqueue(temID)
+end
 
-AircraftScheduleManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_6 , upvalues : _ENV
+function AircraftScheduleManager:Update(deltaTimeMS)
   self._scheduleTimer = self._scheduleTimer + deltaTimeMS
-  if self._scheduleTime < self._scheduleTimer then
-    self._scheduleTime = (math.random)(self._scheduleTimeMIN, self._scheduleTimeMAX)
+  if self._scheduleTimer > self._scheduleTime then
+    self._scheduleTime = math.random(self._scheduleTimeMIN, self._scheduleTimeMAX)
     self._scheduleTimer = 0
     self:_scheduleOnce()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftScheduleManager.Dispose = function(self)
-  -- function num : 0_7
+function AircraftScheduleManager:Dispose()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftScheduleManager.TryRemoveInQueue = function(self, petID)
-  -- function num : 0_8
-  (self._queue):RemoveFirst(function(item)
-    -- function num : 0_8_0 , upvalues : petID
-    do return item == petID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function AircraftScheduleManager:TryRemoveInQueue(petID)
+  self._queue:RemoveFirst(function(item)
+    return item == petID
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftScheduleManager.GetQueue = function(self)
-  -- function num : 0_9
+function AircraftScheduleManager:GetQueue()
   local ids = {}
-  ;
-  (self._queue):ForEach(function(id)
-    -- function num : 0_9_0 , upvalues : ids
+  self._queue:ForEach(function(id)
     ids[#ids + 1] = id
-  end
-)
+  end)
   return ids
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftScheduleManager.SetQueue = function(self, queue)
-  -- function num : 0_10
+function AircraftScheduleManager:SetQueue(queue)
   self._queue = queue
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftScheduleManager.PushInQueue = function(self, id)
-  -- function num : 0_11
-  (self._queue):Enqueue(id)
+function AircraftScheduleManager:PushInQueue(id)
+  self._queue:Enqueue(id)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftScheduleManager.Reset = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  self._scheduleTime = (math.random)(self._scheduleTimeMIN, self._scheduleTimeMAX)
+function AircraftScheduleManager:Reset()
+  self._scheduleTime = math.random(self._scheduleTimeMIN, self._scheduleTimeMAX)
   self._scheduleTimer = 0
 end
-
-

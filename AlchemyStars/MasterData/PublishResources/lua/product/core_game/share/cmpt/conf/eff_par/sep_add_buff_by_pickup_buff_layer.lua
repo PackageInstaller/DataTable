@@ -1,56 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_add_buff_by_pickup_buff_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamAddBuffByPickupBuffLayer", SkillEffectParamBase)
 SkillEffectParamAddBuffByPickupBuffLayer = SkillEffectParamAddBuffByPickupBuffLayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamAddBuffByPickupBuffLayer.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamAddBuffByPickupBuffLayer:Constructor(t)
   self._trapIDList = t.trapIDList
-  if not t.addBuffList then
-    self._addBuffList = {}
-    self._checkBuffEffectType = t.checkBuffEffectType
-  end
+  self._addBuffList = t.addBuffList or {}
+  self._checkBuffEffectType = t.checkBuffEffectType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamAddBuffByPickupBuffLayer.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamAddBuffByPickupBuffLayer:GetEffectType()
   return SkillEffectType.AddBuffByPickupBuffLayer
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamAddBuffByPickupBuffLayer.GetTrapIDList = function(self)
-  -- function num : 0_2
+function SkillEffectParamAddBuffByPickupBuffLayer:GetTrapIDList()
   return self._trapIDList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamAddBuffByPickupBuffLayer.GetCheckBuffEffectType = function(self)
-  -- function num : 0_3
+function SkillEffectParamAddBuffByPickupBuffLayer:GetCheckBuffEffectType()
   return self._checkBuffEffectType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamAddBuffByPickupBuffLayer.GetAddBuffIDByLayer = function(self, layer)
-  -- function num : 0_4
-  local addBuffID = (self._addBuffList)[layer]
+function SkillEffectParamAddBuffByPickupBuffLayer:GetAddBuffIDByLayer(layer)
+  local addBuffID = self._addBuffList[layer]
   if not addBuffID then
     if #self._addBuffList > 0 then
-      return (self._addBuffList)[#self._addBuffList]
+      return self._addBuffList[#self._addBuffList]
     else
       return 0
     end
   end
   return addBuffID
 end
-
-

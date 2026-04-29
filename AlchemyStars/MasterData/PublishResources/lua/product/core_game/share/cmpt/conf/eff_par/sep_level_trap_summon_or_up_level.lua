@@ -1,99 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_level_trap_summon_or_up_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamLevelTrapSummonOrUpLevel", SkillEffectParamBase)
 SkillEffectParamLevelTrapSummonOrUpLevel = SkillEffectParamLevelTrapSummonOrUpLevel
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamLevelTrapSummonOrUpLevel.Constructor = function(self, t)
-  -- function num : 0_0
-  if not t.checkTrapIDs then
-    self._checkTrapIDs = {}
-    self._summonTrapID = t.summonTrapID or 0
-    self._upLevel = t.upLevel or 1
-    if not t.modelLevels then
-      self._modelLevels = {}
-      self._block = t.block or 1
-      self._transferDisabled = t.transferDisabled == 1
-      self._disableDieSkill = t.disableDieSkill
-      -- DECOMPILER ERROR: 1 unprocessed JMP targets
-    end
-  end
+function SkillEffectParamLevelTrapSummonOrUpLevel:Constructor(t)
+  self._checkTrapIDs = t.checkTrapIDs or {}
+  self._summonTrapID = t.summonTrapID or 0
+  self._upLevel = t.upLevel or 1
+  self._modelLevels = t.modelLevels or {}
+  self._block = t.block or 1
+  self._transferDisabled = t.transferDisabled == 1
+  self._disableDieSkill = t.disableDieSkill
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapSummonOrUpLevel.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamLevelTrapSummonOrUpLevel:GetEffectType()
   return SkillEffectType.LevelTrapSummonOrUpLevel
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapSummonOrUpLevel.GetCheckTrapIDs = function(self)
-  -- function num : 0_2
+function SkillEffectParamLevelTrapSummonOrUpLevel:GetCheckTrapIDs()
   return self._checkTrapIDs
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapSummonOrUpLevel.GetSummonTrapID = function(self)
-  -- function num : 0_3
+function SkillEffectParamLevelTrapSummonOrUpLevel:GetSummonTrapID()
   return self._summonTrapID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapSummonOrUpLevel.GetUpLevel = function(self)
-  -- function num : 0_4
+function SkillEffectParamLevelTrapSummonOrUpLevel:GetUpLevel()
   return self._upLevel
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapSummonOrUpLevel.GetModelLevels = function(self)
-  -- function num : 0_5
+function SkillEffectParamLevelTrapSummonOrUpLevel:GetModelLevels()
   return self._modelLevels
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapSummonOrUpLevel.GetBlock = function(self)
-  -- function num : 0_6
+function SkillEffectParamLevelTrapSummonOrUpLevel:GetBlock()
   return self._block
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapSummonOrUpLevel.IsTransferDisabled = function(self)
-  -- function num : 0_7
+function SkillEffectParamLevelTrapSummonOrUpLevel:IsTransferDisabled()
   return self._transferDisabled
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapSummonOrUpLevel.GetDisableDieSkill = function(self)
-  -- function num : 0_8
+function SkillEffectParamLevelTrapSummonOrUpLevel:GetDisableDieSkill()
   return self._disableDieSkill
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapSummonOrUpLevel.GetTrapModelLevel = function(self, trapID)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillEffectParamLevelTrapSummonOrUpLevel:GetTrapModelLevel(trapID)
   if self._modelLevels then
-    for level,id in ipairs(self._modelLevels) do
+    for level, id in ipairs(self._modelLevels) do
       if trapID == id then
         return level
       end
     end
   end
-  do
-    return 0
-  end
+  return 0
 end
-
-

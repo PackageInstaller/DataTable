@@ -1,81 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet_intimacy/ui_pet_intimacy_files.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetIntimacyFiles", Object)
 UIPetIntimacyFiles = UIPetIntimacyFiles
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetIntimacyFiles.Constructor = function(self, intimacyMainController, petData)
-  -- function num : 0_0
+function UIPetIntimacyFiles:Constructor(intimacyMainController, petData)
   self._intimacyMainController = intimacyMainController
   self._petData = petData
   self._isInited = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyFiles.Init = function(self)
-  -- function num : 0_1
-  self._scrollView = (self._intimacyMainController):GetUIComponent("UIDynamicScrollView", "FileListScrollView")
+function UIPetIntimacyFiles:Init()
+  self._scrollView = self._intimacyMainController:GetUIComponent("UIDynamicScrollView", "FileListScrollView")
   self._voiceList = {}
   self:_InitFilesData()
   self:_InitScrollView()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyFiles.Refresh = function(self)
-  -- function num : 0_2
+function UIPetIntimacyFiles:Refresh()
   if self._isInited then
     self._currentPlayingID = nil
     self._currentPlayFileData = nil
     self._currentPlayFileItem = nil
-    ;
-    (self._scrollView):ResetListView()
-    ;
-    (self._scrollView):RefreshAllShownItem()
+    self._scrollView:ResetListView()
+    self._scrollView:RefreshAllShownItem()
   else
     self:Init()
     self._isInited = true
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyFiles.CloseWindow = function(self)
-  -- function num : 0_3
+function UIPetIntimacyFiles:CloseWindow()
   self:StopPlayVoice()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyFiles.Destroy = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIPetIntimacyFiles:Destroy()
   self:StopPlayVoice()
   if self._voiceList then
     local l_res_map = {}
-    for _,v in pairs(self._voiceList) do
-      local l_res = (AudioHelperController.GetResNameByAudioId)(v)
+    for _, v in pairs(self._voiceList) do
+      local l_res = AudioHelperController.GetResNameByAudioId(v)
       if l_res ~= nil and not l_res_map[l_res] then
         l_res_map[l_res] = true
-        ;
-        (AudioHelperController.ReleaseUIVoiceByResName)(l_res)
+        AudioHelperController.ReleaseUIVoiceByResName(l_res)
       end
     end
   end
-  do
-    self._voiceList = {}
-  end
+  self._voiceList = {}
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyFiles.Update = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIPetIntimacyFiles:Update()
   if self._currentPlayFileData and self._currentPlayingID then
-    local isPlaying = (AudioHelperController.CheckUIVoicePlaying)(self._currentPlayingID)
+    local isPlaying = AudioHelperController.CheckUIVoicePlaying(self._currentPlayingID)
     if not isPlaying then
       self:StopPlayVoice()
       self._currentPlayingID = nil
@@ -83,35 +56,26 @@ UIPetIntimacyFiles.Update = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyFiles.PetDataChanged = function(self, petData)
-  -- function num : 0_6
+function UIPetIntimacyFiles:PetDataChanged(petData)
   self._petData = petData
   if self._isInited then
     self:_InitFilesData()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyFiles._InitFilesData = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIPetIntimacyFiles:_InitFilesData()
   self._fileDatas = {}
   local index = 1
-  local fileConfig = (Cfg.pet_intimacy_files)[(self._petData):GetTemplateID()]
+  local fileConfig = Cfg.pet_intimacy_files[self._petData:GetTemplateID()]
   if fileConfig then
-    local fileTitleConfig = (Cfg.pet_intimacy_files_titile_name)[fileConfig.TitleId]
+    local fileTitleConfig = Cfg.pet_intimacy_files_titile_name[fileConfig.TitleId]
     local audioAuthor = {}
     audioAuthor.title = fileTitleConfig.AudioAuthor
-    audioAuthor.des1 = (StringTable.Get)(fileConfig.AudioAuthor)
+    audioAuthor.des1 = StringTable.Get(fileConfig.AudioAuthor)
     audioAuthor.isAudioAuthor = true
     audioAuthor.isPlaying = false
     audioAuthor.condition = nil
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._fileDatas)[index] = audioAuthor
+    self._fileDatas[index] = audioAuthor
     index = index + 1
     local baseData = {}
     baseData.title = fileTitleConfig.BasicData
@@ -119,10 +83,7 @@ UIPetIntimacyFiles._InitFilesData = function(self)
     baseData.isPlaying = false
     self:_RefreshFileDes(baseData)
     baseData.condition = nil
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._fileDatas)[index] = baseData
+    self._fileDatas[index] = baseData
     index = index + 1
     local intialReport = {}
     intialReport.title = fileTitleConfig.IntialReport
@@ -130,10 +91,7 @@ UIPetIntimacyFiles._InitFilesData = function(self)
     intialReport.isPlaying = false
     self:_RefreshFileDes(intialReport)
     intialReport.condition = nil
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._fileDatas)[index] = intialReport
+    self._fileDatas[index] = intialReport
     index = index + 1
     for i = 1, 6 do
       if fileConfig["PetFiles" .. i] then
@@ -143,134 +101,95 @@ UIPetIntimacyFiles._InitFilesData = function(self)
         fileData.isPlaying = false
         self:_RefreshFileDes(fileData)
         fileData.condition = fileConfig["Condition" .. i]
-        -- DECOMPILER ERROR at PC86: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._fileDatas)[index] = fileData
+        self._fileDatas[index] = fileData
         index = index + 1
       end
     end
   end
-  do
-    self._filesCount = #self._fileDatas
-    local l_res_map = {}
-    for _,v in pairs(self._voiceList) do
-      local l_res = (AudioHelperController.GetResNameByAudioId)(v)
-      if l_res ~= nil and not l_res_map[l_res] then
-        l_res_map[l_res] = true
-        ;
-        (AudioHelperController.RequestUIVoiceByResName)(l_res)
-      end
+  self._filesCount = #self._fileDatas
+  local l_res_map = {}
+  for _, v in pairs(self._voiceList) do
+    local l_res = AudioHelperController.GetResNameByAudioId(v)
+    if l_res ~= nil and not l_res_map[l_res] then
+      l_res_map[l_res] = true
+      AudioHelperController.RequestUIVoiceByResName(l_res)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyFiles._RefreshFileDes = function(self, fileData)
-  -- function num : 0_8 , upvalues : _ENV
-  local desContent = (HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)(fileData.des))
+function UIPetIntimacyFiles:_RefreshFileDes(fileData)
+  local desContent = HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get(fileData.des))
   if desContent then
-    local startIndex, endIndex = (string.find)(desContent, "<voice>")
+    local startIndex, endIndex = string.find(desContent, "<voice>")
     if startIndex then
-      local des1Content = (string.sub)(desContent, 1, startIndex - 1)
+      local des1Content = string.sub(desContent, 1, startIndex - 1)
       fileData.des1 = des1Content
-      local voiceIdStartIndex, voiceIdEndIndex = nil, nil
-      startIndex = (string.find)(desContent, "<voiceid=")
-      voiceIdEndIndex = (string.find)(desContent, "voiceid/>")
-      fileData.voiceId = tonumber((string.sub)(desContent, voiceIdStartIndex + 1, voiceIdEndIndex - 1))
-      ;
-      (table.insert)(self._voiceList, fileData.voiceId)
-      startIndex = (string.find)(desContent, "</voice>")
-      fileData.desVoiceContent = (string.sub)(desContent, endIndex + 1, startIndex - 1)
-      -- DECOMPILER ERROR at PC73: Overwrote pending register: R4 in 'AssignReg'
-
-      startIndex = (string.find)(desContent, "</voice>")
-      local des2Content = (string.sub)(desContent, endIndex + 1)
+      local voiceIdStartIndex, voiceIdEndIndex
+      startIndex, voiceIdStartIndex = string.find(desContent, "<voiceid=")
+      voiceIdEndIndex, endIndex = string.find(desContent, "voiceid/>")
+      fileData.voiceId = tonumber(string.sub(desContent, voiceIdStartIndex + 1, voiceIdEndIndex - 1))
+      table.insert(self._voiceList, fileData.voiceId)
+      startIndex, _ = string.find(desContent, "</voice>")
+      fileData.desVoiceContent = string.sub(desContent, endIndex + 1, startIndex - 1)
+      startIndex, endIndex = string.find(desContent, "</voice>")
+      local des2Content = string.sub(desContent, endIndex + 1)
       fileData.des2 = des2Content
     else
-      do
-        fileData.des1 = desContent
-      end
+      fileData.des1 = desContent
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyFiles._InitScrollView = function(self)
-  -- function num : 0_9
-  (self._scrollView):InitListView(self._filesCount, function(scrollview, index)
-    -- function num : 0_9_0 , upvalues : self
+function UIPetIntimacyFiles:_InitScrollView()
+  self._scrollView:InitListView(self._filesCount, function(scrollview, index)
     return self:_OnGetFilesItem(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyFiles._OnGetFilesItem = function(self, scrollView, index)
-  -- function num : 0_10 , upvalues : _ENV
+function UIPetIntimacyFiles:_OnGetFilesItem(scrollView, index)
   local item = scrollView:NewListViewItem("UIPetIntimacyFiles")
-  local rowPool = (self._intimacyMainController):GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
+  local rowPool = self._intimacyMainController:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
     item.IsInitHandlerCalled = true
     rowPool:SpawnObjects("UIPetIntimacyFilesItem", 1)
   end
   local rowList = rowPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      if self._filesCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      else
-        itemWidget:Refresh((self._fileDatas)[index + 1], self, self._petData, item)
-      end
+  if itemWidget then
+    local itemIndex = index + 1
+    if itemIndex > self._filesCount then
+      itemWidget:GetGameObject():SetActive(false)
+    else
+      itemWidget:Refresh(self._fileDatas[index + 1], self, self._petData, item)
     end
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
-    return item
   end
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
+  return item
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyFiles.PlayVoice = function(self, fileData, fileItem)
-  -- function num : 0_11 , upvalues : _ENV
+function UIPetIntimacyFiles:PlayVoice(fileData, fileItem)
   if not fileData or not fileItem then
-    return 
+    return
   end
   self:StopPlayVoice()
   self._currentPlayFileData = fileData
   self._currentPlayFileItem = fileItem
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._currentPlayFileData).isPlaying = true
-  ;
-  (self._currentPlayFileItem):RefreshButtonStatus()
-  self._currentPlayingID = (AudioHelperController.PlayUIVoiceByAudioId)(fileData.voiceId, false)
+  self._currentPlayFileData.isPlaying = true
+  self._currentPlayFileItem:RefreshButtonStatus()
+  self._currentPlayingID = AudioHelperController.PlayUIVoiceByAudioId(fileData.voiceId, false)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyFiles.StopPlayVoice = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIPetIntimacyFiles:StopPlayVoice()
   if self._currentPlayFileData then
-    (self._currentPlayFileData).isPlaying = false
+    self._currentPlayFileData.isPlaying = false
   end
   self._currentPlayFileData = nil
   if self._currentPlayFileItem then
-    (self._currentPlayFileItem):RefreshButtonStatus()
+    self._currentPlayFileItem:RefreshButtonStatus()
   end
   self._currentPlayFileItem = nil
   if self._currentPlayingID then
-    (AudioHelperController.StopUIVoice)(self._currentPlayingID)
+    AudioHelperController.StopUIVoice(self._currentPlayingID)
   end
   self._currentPlayingID = nil
 end
-
-

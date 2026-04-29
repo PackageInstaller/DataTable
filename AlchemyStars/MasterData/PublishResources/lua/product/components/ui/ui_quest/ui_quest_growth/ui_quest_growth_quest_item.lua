@@ -1,128 +1,82 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_growth/ui_quest_growth_quest_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestGrowthQuestItem", UICustomWidget)
 UIQuestGrowthQuestItem = UIQuestGrowthQuestItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestGrowthQuestItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIQuestGrowthQuestItem:OnShow(uiParams)
   self._BGNormal = self:GetGameObject("BGNormal")
   self._BGFinish = self:GetGameObject("BGFinish")
   self._questDesc = self:GetUIComponent("UILocalizationText", "questDesc")
   self._questProgress = self:GetUIComponent("UILocalizationText", "questProgress")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthQuestItem.OnHide = function(self)
-  -- function num : 0_1
+function UIQuestGrowthQuestItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthQuestItem.SetData = function(self, index, quest, callback, anim)
-  -- function num : 0_2 , upvalues : _ENV
+function UIQuestGrowthQuestItem:SetData(index, quest, callback, anim)
   if not quest then
-    (Log.fatal)("### quest is nil. index=", index)
-    return 
+    Log.fatal("### quest is nil. index=", index)
+    return
   end
   self._index = index
   self._quest = quest:QuestInfo()
   self._callback = callback
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   if self._questModule == nil then
-    (Log.fatal)("[quest] error --> questModule is nil !")
-    return 
+    Log.fatal("[quest] error --> questModule is nil !")
+    return
   end
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthQuestItem._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIQuestGrowthQuestItem:_OnValue()
   if self._quest == nil then
-    (Log.fatal)("[quest] error --> quest is nil ! id --> " .. (self._quest).quest_id)
-    return 
+    Log.fatal("[quest] error --> quest is nil ! id --> " .. self._quest.quest_id)
+    return
   end
-  if (self._quest).status <= QuestStatus.QUEST_Accepted then
-    (self._BGFinish):SetActive(false)
-    ;
-    (self._BGNormal):SetActive(true)
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._questDesc).color = Color(0.29803921568627, 0.29411764705882, 0.29411764705882, 1)
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._questProgress).color = Color(0.90196078431373, 0.90196078431373, 0.90196078431373, 1)
+  if self._quest.status <= QuestStatus.QUEST_Accepted then
+    self._BGFinish:SetActive(false)
+    self._BGNormal:SetActive(true)
+    self._questDesc.color = Color(0.2980392156862745, 0.29411764705882354, 0.29411764705882354, 1)
+    self._questProgress.color = Color(0.9019607843137255, 0.9019607843137255, 0.9019607843137255, 1)
   else
-    ;
-    (self._BGFinish):SetActive(true)
-    ;
-    (self._BGNormal):SetActive(false)
-    -- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._questDesc).color = Color(0.90196078431373, 0.90196078431373, 0.90196078431373, 0.57)
-    -- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._questProgress).color = Color(0.90196078431373, 0.90196078431373, 0.90196078431373, 0.57)
+    self._BGFinish:SetActive(true)
+    self._BGNormal:SetActive(false)
+    self._questDesc.color = Color(0.9019607843137255, 0.9019607843137255, 0.9019607843137255, 0.57)
+    self._questProgress.color = Color(0.9019607843137255, 0.9019607843137255, 0.9019607843137255, 0.57)
   end
   local progress = ""
-  if (self._quest).ShowType == 1 then
-    local c, d = (math.modf)((self._quest).cur_progress * 100 / (self._quest).total_progress)
-    if c < 1 and d > 0 then
+  if self._quest.ShowType == 1 then
+    local c, d = math.modf(self._quest.cur_progress * 100 / self._quest.total_progress)
+    if c < 1 and 0 < d then
       c = 1
     end
     progress = c .. "%"
+  elseif self._quest.cur_progress >= self._quest.total_progress then
+    progress = self._quest.cur_progress .. "/" .. self._quest.total_progress
   else
-    do
-      if (self._quest).total_progress <= (self._quest).cur_progress then
-        progress = (self._quest).cur_progress .. "/" .. (self._quest).total_progress
-      else
-        progress = (self._quest).cur_progress .. "/" .. (self._quest).total_progress
-      end
-      ;
-      (self._questDesc):SetText((StringTable.Get)((self._quest).CondDesc))
-      ;
-      (self._questProgress):SetText(progress)
-    end
+    progress = self._quest.cur_progress .. "/" .. self._quest.total_progress
   end
+  self._questDesc:SetText(StringTable.Get(self._quest.CondDesc))
+  self._questProgress:SetText(progress)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthQuestItem.BtnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIQuestGrowthQuestItem:BtnOnClick()
   if self._callback then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
-  if (self._quest).status <= QuestStatus.QUEST_Accepted then
-    local jumpModule = (self._questModule).uiModule
+  if self._quest.status <= QuestStatus.QUEST_Accepted then
+    local jumpModule = self._questModule.uiModule
     if jumpModule == nil then
-      (Log.fatal)("[quest] error --> uiModule is nil ! --> jumpModule")
-      return 
+      Log.fatal("[quest] error --> uiModule is nil ! --> jumpModule")
+      return
     end
     local fromParam = {}
-    ;
-    (table.insert)(fromParam, QuestType.QT_Growth)
+    table.insert(fromParam, QuestType.QT_Growth)
     jumpModule:SetFromUIData(FromUIType.NormalUI, "UIQuestController", UIStateType.UIMain, fromParam)
-    local jumpType = (self._quest).JumpID
-    local jumpParams = (self._quest).JumpParam
+    local jumpType = self._quest.JumpID
+    local jumpParams = self._quest.JumpParam
     jumpModule:SetJumpUIData(jumpType, jumpParams)
     jumpModule:Jump()
   else
-    do
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_quest_base_growth_item_finish"))
-    end
+    ToastManager.ShowToast(StringTable.Get("str_quest_base_growth_item_finish"))
   end
 end
-
-

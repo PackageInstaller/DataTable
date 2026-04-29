@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/campsites/ui_season_maze_campsites_recruit_pet_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMaze_Campsites_RecruitPetItem", UICustomWidget)
 UISeasonMaze_Campsites_RecruitPetItem = UISeasonMaze_Campsites_RecruitPetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMaze_Campsites_RecruitPetItem.Constructor = function(self)
-  -- function num : 0_0
+function UISeasonMaze_Campsites_RecruitPetItem:Constructor()
   self._heartItemInfo = nil
   self._maxStarLevel = 6
   self._slotId = 0
@@ -16,10 +9,7 @@ UISeasonMaze_Campsites_RecruitPetItem.Constructor = function(self)
   self._callBack = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_RecruitPetItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMaze_Campsites_RecruitPetItem:OnShow()
   self._rawimage = self:GetUIComponent("RawImageLoader", "drawIcon")
   self._lvValueText = self:GetUIComponent("UILocalizationText", "lvValue")
   self._nameText = self:GetUIComponent("UILocalizationText", "name")
@@ -27,19 +17,16 @@ UISeasonMaze_Campsites_RecruitPetItem.OnShow = function(self)
   self._attrMain = self:GetUIComponent("Image", "attrMain")
   self._attrVice = self:GetUIComponent("Image", "attrVice")
   self._imgGrade = self:GetUIComponent("Image", "imgGrade")
-  self._uiAtlas = (self:RootUIOwner()):GetAsset("UIAwake.spriteatlas", LoadType.SpriteAtlas)
-  self._petModule = ((GameGlobal.GameLogic)()):GetModule(PetModule)
-  self.selfRect = ((self:GetGameObject()).transform):GetComponent("RectTransform")
+  self._uiAtlas = self:RootUIOwner():GetAsset("UIAwake.spriteatlas", LoadType.SpriteAtlas)
+  self._petModule = GameGlobal.GameLogic():GetModule(PetModule)
+  self.selfRect = self:GetGameObject().transform:GetComponent("RectTransform")
   self._elementBg = self:GetUIComponent("RectTransform", "element")
   self._elementPos = self:GetUIComponent("RectTransform", "elementPos")
   self._detailBtnRect = self:GetGameObject("detailBtnRect")
-  self.atlasProperty = (self:RootUIOwner()):GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
+  self.atlasProperty = self:RootUIOwner():GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_RecruitPetItem.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonMaze_Campsites_RecruitPetItem:OnHide()
   self._hide = true
   self._heartItemInfo = nil
   self._callBack = nil
@@ -52,18 +39,14 @@ UISeasonMaze_Campsites_RecruitPetItem.OnHide = function(self)
   self._uiAtlas = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_RecruitPetItem.SetData = function(self, pet, petInfoList)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMaze_Campsites_RecruitPetItem:SetData(pet, petInfoList)
   local petInfo = pet
   if petInfo == nil then
-    return 
+    return
   end
   self._heartItemInfo = petInfo
   self._petInfoList = petInfoList
-  ;
-  (self._rawimage):LoadImage(petInfo:GetPetTeamBody(PetSkinEffectPath.CARD_TEAM))
+  self._rawimage:LoadImage(petInfo:GetPetTeamBody(PetSkinEffectPath.CARD_TEAM))
   self:ShowName()
   self:ShowLevel()
   self:ShowLogo()
@@ -75,123 +58,76 @@ UISeasonMaze_Campsites_RecruitPetItem.SetData = function(self, pet, petInfoList)
   self:ShowPetDetailBtn()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_RecruitPetItem.ShowPetDetailBtn = function(self)
-  -- function num : 0_4
-  (self._detailBtnRect):SetActive(true)
+function UISeasonMaze_Campsites_RecruitPetItem:ShowPetDetailBtn()
+  self._detailBtnRect:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_RecruitPetItem.ShowName = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMaze_Campsites_RecruitPetItem:ShowName()
   if self._heartItemInfo == nil then
-    return 
+    return
   end
-  ;
-  (self._nameText):SetText((StringTable.Get)((self._heartItemInfo):GetPetName()))
+  self._nameText:SetText(StringTable.Get(self._heartItemInfo:GetPetName()))
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_RecruitPetItem.ShowLevel = function(self)
-  -- function num : 0_6
-  local petLevel = (self._heartItemInfo):GetPetLevel()
-  ;
-  (self._lvValueText):SetText(petLevel)
+function UISeasonMaze_Campsites_RecruitPetItem:ShowLevel()
+  local petLevel = self._heartItemInfo:GetPetLevel()
+  self._lvValueText:SetText(petLevel)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_RecruitPetItem.ShowLogo = function(self)
-  -- function num : 0_7
+function UISeasonMaze_Campsites_RecruitPetItem:ShowLogo()
   if self._heartItemInfo == nil then
-    return 
+    return
   end
-  ;
-  (self._imgLogo):LoadImage((self._heartItemInfo):GetPetLogo())
+  self._imgLogo:LoadImage(self._heartItemInfo:GetPetLogo())
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_RecruitPetItem.ShowElement = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonMaze_Campsites_RecruitPetItem:ShowElement()
   if self._heartItemInfo == nil then
-    return 
+    return
   end
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
+  local cfg_pet_element = Cfg.cfg_pet_element({})
   if cfg_pet_element then
-    local firstElement = (self._heartItemInfo):GetPetFirstElement()
+    local firstElement = self._heartItemInfo:GetPetFirstElement()
     if firstElement then
-      ((self._attrMain).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._attrMain).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[firstElement]).Icon))
+      self._attrMain.gameObject:SetActive(true)
+      self._attrMain.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[firstElement].Icon))
     else
-      ;
-      ((self._attrMain).gameObject):SetActive(false)
+      self._attrMain.gameObject:SetActive(false)
     end
-    local secondElement = (self._heartItemInfo):GetPetSecondElement()
+    local secondElement = self._heartItemInfo:GetPetSecondElement()
     if secondElement then
-      ((self._attrVice).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC59: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._attrVice).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[secondElement]).Icon))
+      self._attrVice.gameObject:SetActive(true)
+      self._attrVice.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[secondElement].Icon))
     else
-      ;
-      ((self._attrVice).gameObject):SetActive(false)
+      self._attrVice.gameObject:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_RecruitPetItem._SetStars = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_stars", "UIPetIntimacyStarGroup")
+function UISeasonMaze_Campsites_RecruitPetItem:_SetStars()
+  local obj = UIWidgetHelper.SpawnObject(self, "_stars", "UIPetIntimacyStarGroup")
   obj:SetData(self._heartItemInfo, 0.8, -5)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_RecruitPetItem._SetEquipLv = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_equipLv", "UIPetEquipLvIcon")
+function UISeasonMaze_Campsites_RecruitPetItem:_SetEquipLv()
+  local obj = UIWidgetHelper.SpawnObject(self, "_equipLv", "UIPetEquipLvIcon")
   obj:SetData(self._heartItemInfo, true)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_RecruitPetItem._SetJobIcon = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_jobIcon", "UIPetJobIcon")
+function UISeasonMaze_Campsites_RecruitPetItem:_SetJobIcon()
+  local obj = UIWidgetHelper.SpawnObject(self, "_jobIcon", "UIPetJobIcon")
   obj:SetData(self._heartItemInfo, 1)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_RecruitPetItem.ShowGrade = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local petId = (self._heartItemInfo):GetTemplateID()
-  local petGradeLevel = (self._heartItemInfo):GetPetGrade()
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._imgGrade).sprite = (self._uiAtlas):GetSprite((UIPetModule.GetAwakeSpriteName)(petId, petGradeLevel))
+function UISeasonMaze_Campsites_RecruitPetItem:ShowGrade()
+  local petId = self._heartItemInfo:GetTemplateID()
+  local petGradeLevel = self._heartItemInfo:GetPetGrade()
+  self._imgGrade.sprite = self._uiAtlas:GetSprite(UIPetModule.GetAwakeSpriteName(petId, petGradeLevel))
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_RecruitPetItem.BtnDetailOnClick = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonMaze_Campsites_RecruitPetItem:BtnDetailOnClick()
   local petModule = self:GetModule(PetModule)
-  ;
-  (petModule.uiModule):SetTeamCustomPets(self._petInfoList)
-  local petId = (self._heartItemInfo):GetTemplateID()
+  petModule.uiModule:SetTeamCustomPets(self._petInfoList)
+  local petId = self._heartItemInfo:GetTemplateID()
   self:ShowDialog("UISpiritDetailGroupController", petId, false, nil, nil, true)
 end
-
-

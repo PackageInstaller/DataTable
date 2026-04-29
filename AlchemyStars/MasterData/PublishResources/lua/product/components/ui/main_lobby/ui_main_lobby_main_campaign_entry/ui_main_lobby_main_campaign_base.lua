@@ -1,38 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_main_campaign_entry/ui_main_lobby_main_campaign_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyMainCampaignBase", UICustomWidget)
 UIMainLobbyMainCampaignBase = UIMainLobbyMainCampaignBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyMainCampaignBase.Constructor = function(self)
-  -- function num : 0_0
+function UIMainLobbyMainCampaignBase:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyMainCampaignBase.SetData = function(self, sampleInfo, ctl)
-  -- function num : 0_1
+function UIMainLobbyMainCampaignBase:SetData(sampleInfo, ctl)
   self:GetComponent()
   self.sampleInfo = sampleInfo
   self:RefreshView()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyMainCampaignBase.RefreshView = function(self)
-  -- function num : 0_2
+function UIMainLobbyMainCampaignBase:RefreshView()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyMainCampaignBase.BtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local campid = (self.sampleInfo).id
-  ;
-  (Log.debug)("###[UIMainLobbyMainCampaignBase] TowerPointReq campid:", campid)
+function UIMainLobbyMainCampaignBase:BtnOnClick()
+  local campid = self.sampleInfo.id
+  Log.debug("###[UIMainLobbyMainCampaignBase] TowerPointReq campid:", campid)
 end
-
-

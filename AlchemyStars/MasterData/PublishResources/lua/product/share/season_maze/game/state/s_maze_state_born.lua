@@ -1,40 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/state/s_maze_state_born.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("s_maze_state_base")
 _class("SMazeState_Born", SMazeStateBase)
 SMazeState_Born = SMazeState_Born
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeState_Born.OnEnter = function(self, fromCamp)
-  -- function num : 0_0 , upvalues : _ENV
+function SMazeState_Born:OnEnter(fromCamp)
   local bornNode = self:_GetBornNode()
   if not bornNode then
     self:_LogError("找不到出生点")
   end
   self:_Log("当前出生点:", bornNode:ID())
-  ;
-  (self._machine):SetCurNode(bornNode)
-  local player = (self._manager):Player()
+  self._machine:SetCurNode(bornNode)
+  local player = self._manager:Player()
   player:SetPos(bornNode:Position())
   player:MoveFollowerImmidiately()
   self._bornNode = bornNode
-  ;
-  (((self._manager):SeasonMazeCameraManager()):SeasonCamera()):Focus((self._bornNode):Position())
-  ;
-  (((self._manager):SeasonMazeCameraManager()):SeasonCamera()):ChangePos((self._bornNode):Position())
+  self._manager:SeasonMazeCameraManager():SeasonCamera():Focus(self._bornNode:Position())
+  self._manager:SeasonMazeCameraManager():SeasonCamera():ChangePos(self._bornNode:Position())
   local bornNodeState = SMazeNodeState.StayTemp
   if self:GetNodeState(self._bornNode) == SeasonMazePointStateType.SMPST_End then
     bornNodeState = SMazeNodeState.UnReachable
   end
-  ;
-  ((self._manager):MapManager()):RefreshLinkState((self._bornNode):ID(), bornNodeState, true)
+  self._manager:MapManager():RefreshLinkState(self._bornNode:ID(), bornNodeState, true)
   if fromCamp then
-    local relicValues = (self._manager):GetAttrsDeltaByReason(SeasonMazeRewardReason.SMRR_RoomCamp)
+    local relicValues = self._manager:GetAttrsDeltaByReason(SeasonMazeRewardReason.SMRR_RoomCamp)
     if relicValues then
-      for key,value in pairs(relicValues) do
+      for key, value in pairs(relicValues) do
         local eft = SeasonMazeEffect:New()
         eft.type = SeasonMazeEffectType.SMET_Pro
         eft.id = key
@@ -48,16 +37,13 @@ SMazeState_Born.OnEnter = function(self, fromCamp)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeState_Born.Start = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local cpt = (self._manager):GetMazeComponent()
-  self._battleState = (((GameGlobal.GetModule)(SeasonMazeModule)):UIModule()):GetAndClearBattleExitState()
+function SMazeState_Born:Start()
+  local cpt = self._manager:GetMazeComponent()
+  self._battleState = GameGlobal.GetModule(SeasonMazeModule):UIModule():GetAndClearBattleExitState()
   if self._battleState == SMazeBattleExitState.BossBattleSuccess and cpt:GetAttrValue(SeasonMazeAttrType.SMAT_Boss_Gold_Interest) then
-    local oldGold = (((GameGlobal.GetModule)(SeasonMazeModule)):UIModule()):_GetAndClearGoldBeforeBossBattle()
-    if oldGold and oldGold > 0 then
-      local gold = (math.floor)(oldGold * cpt:GetAttrValue(SeasonMazeAttrType.SMAT_Boss_Gold_Interest) / 1000)
+    local oldGold = GameGlobal.GetModule(SeasonMazeModule):UIModule():_GetAndClearGoldBeforeBossBattle()
+    if oldGold and 0 < oldGold then
+      local gold = math.floor(oldGold * cpt:GetAttrValue(SeasonMazeAttrType.SMAT_Boss_Gold_Interest) / 1000)
       local eft = SeasonMazeEffect:New()
       eft.type = SeasonMazeEffectType.SMET_Pro
       eft.id = SeasonMazeAttrType.SMAT_Gold
@@ -67,192 +53,152 @@ SMazeState_Born.Start = function(self)
       self:PlayAssetToast(TT, {})
     end
   end
-  do
-    local state = cpt:CurOperate()
-    self:_Log("开始游戏:", state)
-    if state == SeasonMazeActionState.SMAS_Invalid then
-      self:_LogError("状态错误 当前秘境未初始化")
-      return 
+  local state = cpt:CurOperate()
+  self:_Log("开始游戏:", state)
+  if state == SeasonMazeActionState.SMAS_Invalid then
+    self:_LogError("状态错误 当前秘境未初始化")
+    return
+  end
+  if state == SeasonMazeActionState.SMAS_Init then
+    self._machine:ChangeStateTo(SMazeState_RoundBegin)
+    return
+  end
+  if state == SeasonMazeActionState.SMAS_NewHand then
+    self._machine:ChangeStateTo(SMazeState_Levelup)
+    return
+  end
+  if state == SeasonMazeActionState.SMAS_BreakPet then
+    self._machine:ChangeStateTo(SMazeState_ChooseFullPet)
+    return
+  end
+  if state == SeasonMazeActionState.SMAS_RandomHand then
+    self._machine:ChangeStateTo(SMazeState_PlayCard, self._bornNode, true)
+    return
+  end
+  if state == SeasonMazeActionState.SMAS_ChooseHand then
+    self._machine:ChangeStateTo(SMazeState_PlayCard, self._bornNode, false)
+    return
+  end
+  if state == SeasonMazeActionState.SMAS_GoPoint then
+    local count = self._remainSteps
+    self:_Log("恢复行走状态 剩余步数:", count)
+    if count <= 0 then
+      local startID = cpt:GetComponentInfo().cur_point
+      local sourceNode = self._manager:MapManager():GetNode(startID)
+      self._machine:ChangeStateTo(SMazeState_ArriveRoom, sourceNode, self._bornNode)
+    else
+      self._machine:ChangeStateTo(SMazeState_PlayerMove, count)
     end
-    if state == SeasonMazeActionState.SMAS_Init then
-      (self._machine):ChangeStateTo(SMazeState_RoundBegin)
-      return 
+    return
+  end
+  if state == SeasonMazeActionState.SMAS_RoomOperate then
+    self:_Log("恢复房间结算状态", self._bornNode:ID(), self._bornNode:Room():ID())
+    if self:GetNodeState(self._bornNode) == SeasonMazePointStateType.SMPST_Choose then
+      self._machine:ChangeStateTo(SMazeState_RoomSettle, self._bornNode, true)
+      return
+    else
+      self._machine:ChangeStateTo(SMazeState_RoomSettle, self._bornNode, false)
+      return
     end
-    if state == SeasonMazeActionState.SMAS_NewHand then
-      (self._machine):ChangeStateTo(SMazeState_Levelup)
-      return 
+  end
+  if state == SeasonMazeActionState.SMAS_Relic then
+    self._machine:ChangeStateTo(SMazeState_ChooseRelic)
+    return
+  end
+  if state == SeasonMazeActionState.SMAS_BossBattle then
+    local count = cpt:GetAttrValue(SeasonMazeAttrType.SMAT_Round)
+    if count ~= 0 then
+      Log.exception("当前回合数不是0 无法恢复boss突袭状态:", count)
     end
-    if state == SeasonMazeActionState.SMAS_BreakPet then
-      (self._machine):ChangeStateTo(SMazeState_ChooseFullPet)
-      return 
-    end
-    if state == SeasonMazeActionState.SMAS_RandomHand then
-      (self._machine):ChangeStateTo(SMazeState_PlayCard, self._bornNode, true)
-      return 
-    end
-    if state == SeasonMazeActionState.SMAS_ChooseHand then
-      (self._machine):ChangeStateTo(SMazeState_PlayCard, self._bornNode, false)
-      return 
-    end
-    if state == SeasonMazeActionState.SMAS_GoPoint then
-      local count = self._remainSteps
-      self:_Log("恢复行走状态 剩余步数:", count)
-      if count <= 0 then
-        local startID = (cpt:GetComponentInfo()).cur_point
-        local sourceNode = ((self._manager):MapManager()):GetNode(startID)
-        ;
-        (self._machine):ChangeStateTo(SMazeState_ArriveRoom, sourceNode, self._bornNode)
+    self._machine:ChangeStateTo(SMazeState_BossAttack)
+    return
+  end
+  if state == SeasonMazeActionState.SMAS_HardClearing then
+    self._machine:ChangeStateTo(SMazeState_MazeComplete)
+    return
+  end
+  if state == SeasonMazeActionState.SMAS_NewHand then
+    self._machine:ChangeStateTo(SMazeState_Levelup)
+    return
+  end
+  if state == SeasonMazeActionState.SMAS_RoundEnd then
+    self._machine:ChangeStateTo(SMazeState_RoundEnd, self._bornNode)
+    return
+  end
+  if state == SeasonMazeActionState.SMAS_HardVictory then
+    local ticket = cpt:GetAttrValue(SeasonMazeAttrType.SMAT_WorldBossTicket)
+    if ticket and 0 < ticket then
+      if self._battleState == SMazeBattleExitState.RoomBattleSuccess or self._battleState == SMazeBattleExitState.RoomBattleFailed then
+        self._machine:ChangeStateTo(SMazeState_WorldBoss, true)
       else
-        do
-          do
-            ;
-            (self._machine):ChangeStateTo(SMazeState_PlayerMove, count)
-            do return  end
-            if state == SeasonMazeActionState.SMAS_RoomOperate then
-              self:_Log("恢复房间结算状态", (self._bornNode):ID(), ((self._bornNode):Room()):ID())
-              if self:GetNodeState(self._bornNode) == SeasonMazePointStateType.SMPST_Choose then
-                (self._machine):ChangeStateTo(SMazeState_RoomSettle, self._bornNode, true)
-                return 
-              else
-                ;
-                (self._machine):ChangeStateTo(SMazeState_RoomSettle, self._bornNode, false)
-                return 
-              end
-            end
-            if state == SeasonMazeActionState.SMAS_Relic then
-              (self._machine):ChangeStateTo(SMazeState_ChooseRelic)
-              return 
-            end
-            do
-              if state == SeasonMazeActionState.SMAS_BossBattle then
-                local count = cpt:GetAttrValue(SeasonMazeAttrType.SMAT_Round)
-                if count ~= 0 then
-                  (Log.exception)("当前回合数不是0 无法恢复boss突袭状态:", count)
-                end
-                ;
-                (self._machine):ChangeStateTo(SMazeState_BossAttack)
-                return 
-              end
-              if state == SeasonMazeActionState.SMAS_HardClearing then
-                (self._machine):ChangeStateTo(SMazeState_MazeComplete)
-                return 
-              end
-              if state == SeasonMazeActionState.SMAS_NewHand then
-                (self._machine):ChangeStateTo(SMazeState_Levelup)
-                return 
-              end
-              if state == SeasonMazeActionState.SMAS_RoundEnd then
-                (self._machine):ChangeStateTo(SMazeState_RoundEnd, self._bornNode)
-                return 
-              end
-              if state == SeasonMazeActionState.SMAS_HardVictory then
-                local ticket = cpt:GetAttrValue(SeasonMazeAttrType.SMAT_WorldBossTicket)
-                if ticket and ticket > 0 then
-                  if self._battleState == SMazeBattleExitState.RoomBattleSuccess or self._battleState == SMazeBattleExitState.RoomBattleFailed then
-                    (self._machine):ChangeStateTo(SMazeState_WorldBoss, true)
-                  else
-                    ;
-                    (self._machine):ChangeStateTo(SMazeState_WorldBoss)
-                  end
-                  return 
-                else
-                  self:_Log("没有秘境荒典门票正常结算")
-                  ;
-                  (self._machine):ChangeStateTo(SMazeState_MazeComplete)
-                  return 
-                end
-              end
-            end
-          end
-        end
+        self._machine:ChangeStateTo(SMazeState_WorldBoss)
       end
+      return
+    else
+      self:_Log("没有秘境荒典门票正常结算")
+      self._machine:ChangeStateTo(SMazeState_MazeComplete)
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeState_Born._GetBornNode = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cpt = (self._manager):GetMazeComponent()
+function SMazeState_Born:_GetBornNode()
+  local cpt = self._manager:GetMazeComponent()
   local state = cpt:CurOperate()
   if state == SeasonMazeActionState.SMAS_GoPoint then
     local steps, id = self:_GetRemainStep()
     self._remainSteps = steps
-    return ((self._manager):MapManager()):GetNode(id)
+    return self._manager:MapManager():GetNode(id)
   else
-    do
-      local nodeid = (cpt:GetComponentInfo()).cur_point
-      do return ((self._manager):MapManager()):GetNode(nodeid) end
-    end
+    local nodeid = cpt:GetComponentInfo().cur_point
+    return self._manager:MapManager():GetNode(nodeid)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeState_Born._GetRemainStep = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cpt = (self._manager):GetMazeComponent()
+function SMazeState_Born:_GetRemainStep()
+  local cpt = self._manager:GetMazeComponent()
   local total = cpt:GetAttrValue(SeasonMazeAttrType.SMAT_Round_Step_All)
-  local forkIDs = (cpt:GetComponentInfo()).tmp_point
-  local startID = (cpt:GetComponentInfo()).cur_point
-  if not forkIDs or (table.count)(forkIDs) == 0 then
+  local forkIDs = cpt:GetComponentInfo().tmp_point
+  local startID = cpt:GetComponentInfo().cur_point
+  if not forkIDs or table.count(forkIDs) == 0 then
     return total, startID
   end
   local tmpForks = {}
-  for key,value in pairs(forkIDs) do
+  for key, value in pairs(forkIDs) do
     tmpForks[key] = value
   end
   forkIDs = tmpForks
   local tmpID = startID
   local stopped = false
-  while 1 do
-    local node = ((self._manager):MapManager()):GetNode(tmpID)
+  while true do
+    local node = self._manager:MapManager():GetNode(tmpID)
     local nextNodes = node:NextPoints()
-    if nextNodes and #nextNodes > 1 then
+    if nextNodes and 1 < #nextNodes then
       local found = false
-      for _,next in ipairs(nextNodes) do
-        for __,forkID in pairs(forkIDs) do
+      for _, next in ipairs(nextNodes) do
+        for __, forkID in pairs(forkIDs) do
           if next:ID() == forkID then
             tmpID = forkID
             found = true
-            ;
-            (table.removev)(forkIDs, forkID)
+            table.removev(forkIDs, forkID)
             break
           end
         end
-        do
-          do
-            if found then
-              total = total - 1
-              break
-            end
-            -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
+        if found then
+          total = total - 1
+          break
         end
       end
       if not found then
         stopped = true
       end
     else
-      do
-        do
-          tmpID = (nextNodes[1]):ID()
-          total = total - 1
-          -- DECOMPILER ERROR at PC95: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC95: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC95: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      tmpID = nextNodes[1]:ID()
+      total = total - 1
+    end
+    if not (total ~= 0 and not stopped and next(forkIDs)) then
+      break
     end
   end
-  if total ~= 0 and not stopped and next(forkIDs) then
-    return total, tmpID
-  end
+  return total, tmpID
 end
-
-

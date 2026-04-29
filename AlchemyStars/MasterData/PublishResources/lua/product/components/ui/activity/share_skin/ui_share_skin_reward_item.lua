@@ -1,51 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/share_skin/ui_share_skin_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShareSkinRewardItem", UICustomWidget)
 UIShareSkinRewardItem = UIShareSkinRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShareSkinRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIShareSkinRewardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShareSkinRewardItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIShareSkinRewardItem:InitWidget()
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.tipsPosGo = self:GetGameObject("tipsPos")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShareSkinRewardItem.SetData = function(self, itemid, count, clickCb)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShareSkinRewardItem:SetData(itemid, count, clickCb)
   self._clickCb = clickCb
   self._itemId = itemid
   self._roleAsset = RoleAsset:New(itemid, count)
-  ;
-  (self.txtCount):SetText(count)
-  local cfg = (Cfg.cfg_item)[itemid]
+  self.txtCount:SetText(count)
+  local cfg = Cfg.cfg_item[itemid]
   if cfg then
-    (self.txtName):SetText((StringTable.Get)(cfg.Name))
-    ;
-    (self.imgIcon):LoadImage(cfg.Icon)
+    self.txtName:SetText(StringTable.Get(cfg.Name))
+    self.imgIcon:LoadImage(cfg.Icon)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShareSkinRewardItem.ItemBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIShareSkinRewardItem:ItemBtnOnClick(go)
   if self._clickCb then
-    (self._clickCb)(self._itemId, ((self.tipsPosGo).transform).position)
+    self._clickCb(self._itemId, self.tipsPosGo.transform.position)
   end
 end
-
-

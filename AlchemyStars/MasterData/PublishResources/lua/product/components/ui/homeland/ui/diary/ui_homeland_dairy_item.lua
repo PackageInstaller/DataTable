@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/diary/ui_homeland_dairy_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeLandDiaryItem", UICustomWidget)
 UIHomeLandDiaryItem = UIHomeLandDiaryItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeLandDiaryItem.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIHomeLandDiaryItem:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItem._InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeLandDiaryItem:_InitWidget()
   self._pageText = self:GetUIComponent("UILocalizationText", "pageText")
   self._petText = self:GetUIComponent("UILocalizationText", "petText")
   self._contentText = self:GetUIComponent("UILocalizationText", "contentText")
@@ -24,118 +14,74 @@ UIHomeLandDiaryItem._InitWidget = function(self)
   self._maskImg = self:GetGameObject("maskImg")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItem.InitData = function(self, data, callback, index, isnew, islock, eventcfg, len)
-  -- function num : 0_2
+function UIHomeLandDiaryItem:InitData(data, callback, index, isnew, islock, eventcfg, len)
   self._data = data
   self._callback = callback
   self._index = index
   self._isNew = isnew
   self._isLock = islock
-  self._eventData = eventcfg[(self._data).EventId]
-  if (self._eventData).PetID ~= nil or not "head1_1300821" then
-    self._petimgId = "head1_" .. (self._eventData).PetID
-    self._totleLen = len
-    self:Refresh()
-  end
+  self._eventData = eventcfg[self._data.EventId]
+  self._petimgId = self._eventData.PetID == nil and "head1_1300821" or "head1_" .. self._eventData.PetID
+  self._totleLen = len
+  self:Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItem.OnShow = function(self, uiParams)
-  -- function num : 0_3
+function UIHomeLandDiaryItem:OnShow(uiParams)
   self:_InitWidget()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItem.Refresh = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._headImageLoader):LoadImage(self._petimgId)
-  if self._isNew then
-    (self._newGo):SetActive(not self._isLock)
-    ;
-    (self._maskImg):SetActive(self._isLock)
-    local pet = (Cfg.cfg_pet)[(self._eventData).PetID]
-    if not pet then
-      pet = self:GetNpcInfo((self._eventData).PetID)
-    end
-    if not pet then
-      return 
-    end
-    local name = pet.Name
-    if self._isLock then
-      (self._pageText):SetText("")
-      ;
-      (self._petText):SetText("")
-      ;
-      (self._contentText):SetText("")
-      ;
-      (self._tipText):SetText((StringTable.Get)((self._data).Condition))
-    else
-      ;
-      (self._pageText):SetText("- " .. self._index .. " -")
-      ;
-      (self._petText):SetText((StringTable.Get)(name))
-      ;
-      (self._contentText):SetText((StringTable.Get)((self._data).DairyTitle))
-      ;
-      (self._tipText):SetText("")
-    end
+function UIHomeLandDiaryItem:Refresh()
+  self._headImageLoader:LoadImage(self._petimgId)
+  self._newGo:SetActive(self._isNew and not self._isLock)
+  self._maskImg:SetActive(self._isLock)
+  local pet = Cfg.cfg_pet[self._eventData.PetID]
+  pet = pet or self:GetNpcInfo(self._eventData.PetID)
+  if not pet then
+    return
+  end
+  local name = pet.Name
+  if self._isLock then
+    self._pageText:SetText("")
+    self._petText:SetText("")
+    self._contentText:SetText("")
+    self._tipText:SetText(StringTable.Get(self._data.Condition))
+  else
+    self._pageText:SetText("- " .. self._index .. " -")
+    self._petText:SetText(StringTable.Get(name))
+    self._contentText:SetText(StringTable.Get(self._data.DairyTitle))
+    self._tipText:SetText("")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItem.GetNpcInfo = function(self, petId)
-  -- function num : 0_5 , upvalues : _ENV
-  local data = (Cfg.cfg_homeland_task_npc)({})
-  for key,value in pairs(data) do
+function UIHomeLandDiaryItem:GetNpcInfo(petId)
+  local data = Cfg.cfg_homeland_task_npc({})
+  for key, value in pairs(data) do
     if value.NpcId == petId then
       return value
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItem.OnHide = function(self)
-  -- function num : 0_6
+function UIHomeLandDiaryItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItem._AttachEvents = function(self)
-  -- function num : 0_7
+function UIHomeLandDiaryItem:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItem._DetachEvents = function(self)
-  -- function num : 0_8
+function UIHomeLandDiaryItem:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItem.BtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("UIHomeLandDiaryItem:BtnOnClick")
+function UIHomeLandDiaryItem:BtnOnClick()
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
+  GameGlobal.UIStateManager():Lock("UIHomeLandDiaryItem:BtnOnClick")
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, homelandModule, _ENV
-    (self._newGo):SetActive(false)
-    local res = homelandModule:HandleHomelandReadedDairyReq(TT, (self._data).ID)
+    self._newGo:SetActive(false)
+    local res = homelandModule:HandleHomelandReadedDairyReq(TT, self._data.ID)
     if res:GetSucc() then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomeLandDiaryGotoPage, (self._data).ID)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomeStoryFinish, "")
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomeLandDiaryGotoPage, self._data.ID)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomeStoryFinish, "")
+    else
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("UIHomeLandDiaryItem:BtnOnClick")
-  end
-, self)
+    GameGlobal.UIStateManager():UnLock("UIHomeLandDiaryItem:BtnOnClick")
+  end, self)
 end
-
-

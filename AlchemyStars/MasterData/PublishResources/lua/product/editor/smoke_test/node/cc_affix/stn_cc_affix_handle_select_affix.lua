@@ -1,33 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/cc_affix/stn_cc_affix_handle_select_affix.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("CCAffix_HandleSelectAffix", Common_AsyncBase)
 CCAffix_HandleSelectAffix = CCAffix_HandleSelectAffix
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CCAffix_HandleSelectAffix.TaskFunc = function(self, TT, result)
-  -- function num : 0_0 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function CCAffix_HandleSelectAffix:TaskFunc(TT, result)
+  local runData = self.m_pManager:GetMissionRunData()
   if not runData:GetAffixList() then
-    return 
+    return
   end
   local missionId = runData:GetMissionID()
   local res1 = AsyncRequestRes:New()
   res1:SetSucc(true)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res1, ECampaignType.CAMPAIGN_TYPE_INLAND_N4_CHALLENGE, ECCampaignInlandN4ChallengeComponentID.CHALLENGE)
-  self._localProcess = (self._campaign):GetLocalProcess()
-  local component = (self._localProcess):GetComponent(ECCampaignInlandN4ChallengeComponentID.CHALLENGE)
+  self._campaign:LoadCampaignInfo(TT, res1, ECampaignType.CAMPAIGN_TYPE_INLAND_N4_CHALLENGE, ECCampaignInlandN4ChallengeComponentID.CHALLENGE)
+  self._localProcess = self._campaign:GetLocalProcess()
+  local component = self._localProcess:GetComponent(ECCampaignInlandN4ChallengeComponentID.CHALLENGE)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   res = component:HandleSelectAffix(TT, res, missionId, runData:GetAffixList())
   if res:GetSucc() then
-    self.m_nNodeState = 1
+  else
   end
+  self.m_nNodeState = 1
 end
-
-

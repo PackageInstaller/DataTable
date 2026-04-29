@@ -1,32 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/ui_world_boss_dan_last_record_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossDanLastRecordController", UIController)
 UIWorldBossDanLastRecordController = UIWorldBossDanLastRecordController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossDanLastRecordController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWorldBossDanLastRecordController:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanLastRecordController.InitWidget = function(self)
-  -- function num : 0_1
+function UIWorldBossDanLastRecordController:InitWidget()
   self._uianim = self:GetGameObject("uianim")
   self._danBadgeGen = self:GetUIComponent("UISelectObjectPath", "DanBadgeGen")
   self._bg = self:GetUIComponent("RawImageLoader", "Bg")
   self._danText = self:GetUIComponent("UILocalizationText", "DanText")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanLastRecordController.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_2
+function UIWorldBossDanLastRecordController:ConfirmBtnOnClick(go)
   self:CloseDialog()
 end
-
-

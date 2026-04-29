@@ -1,143 +1,153 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/ui_summer_1/ui_xh1_simple_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXH1SimpleLevel", UIController)
 UIXH1SimpleLevel = UIXH1SimpleLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXH1SimpleLevel.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIXH1SimpleLevel:Constructor()
   self._missionModule = self:GetModule(MissionModule)
   self._lineMissionManager = UIXH1LineMissionManager:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._campModule = (GameGlobal.GetModule)(CampaignModule)
+function UIXH1SimpleLevel:LoadDataOnEnter(TT, res, uiParams)
+  self._campModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SUMMER_I)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  self._campaignID = (self._campaign)._id
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SUMMER_I)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  self._campaignID = self._campaign._id
   if res and res:GetSucc() then
-    self._line_component = (self._campaign):GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_LEVEL_COMMON)
-    self._line_info = (self._line_component):GetComponentInfo()
-    local simpleOpenTime = (self._line_info).m_unlock_time
-    local simpleCloseTime = (self._line_info).m_close_time
-    local now = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
-    if now < simpleOpenTime then
+    self._line_component = self._campaign:GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_LEVEL_COMMON)
+    self._line_info = self._line_component:GetComponentInfo()
+    local simpleOpenTime = self._line_info.m_unlock_time
+    local simpleCloseTime = self._line_info.m_close_time
+    local now = self:GetModule(SvrTimeModule):GetServerTime() / 1000
+    if simpleOpenTime > now then
       res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
-      ;
-      (self._campModule):ShowErrorToast(res.m_result, true)
-      return 
-    else
-      if simpleCloseTime < now then
-        res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
-        ;
-        (self._campModule):ShowErrorToast(res.m_result, true)
-        return 
-      end
+      self._campModule:ShowErrorToast(res.m_result, true)
+      return
+    elseif simpleCloseTime < now then
+      res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
+      self._campModule:ShowErrorToast(res.m_result, true)
+      return
     end
   end
-  do
-    if res and not res:GetSucc() then
-      (self._campModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    end
+  if res and not res:GetSucc() then
+    self._campModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIXH1SimpleLevel:OnShow(uiParams)
   self._isOpen = true
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
   UIXH1SimpleLevel.SLeval = 999
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
   UIXH1SimpleLevel.Passed = 888
-  -- DECOMPILER ERROR at PC171: Confused about usage of register: R2 in 'UnsetPending'
-
   UIXH1SimpleLevel.NodeCfg = {
-[DiscoveryStageType.FightNormal] = {
-[1] = {normal = "summer_ludian_btn1", press = "summer_ludian_btn3", lock = "summer_ludian_btn4", textColor = Color(0.97647058823529, 1, 0.38039215686275), textShadow = Color(0.74901960784314, 0.20392156862745, 0.098039215686275), normalStar = "summer_ludian_icon1", passStar = "summer_ludian_icon2"}
-, 
-[2] = {normal = "summer_ludian_btn17", press = "summer_ludian_btn18-1", lock = "summer_ludian_btn18-2", textColor = Color(0.97647058823529, 1, 0.38039215686275), textShadow = Color(0.74901960784314, 0.20392156862745, 0.098039215686275), normalStar = "summer_ludian_icon1-2", passStar = "summer_ludian_icon2"}
-}
-, 
-[DiscoveryStageType.FightBoss] = {
-[1] = {normal = "summer_ludian_btn13", press = "summer_ludian_btn15", lock = "summer_ludian_btn16", textColor = Color(1, 1, 1), textShadow = Color(0.93333333333333, 0 / 255, 0.13333333333333), normalStar = "summer_ludian_icon1", passStar = "summer_ludian_icon2"}
-, 
-[2] = {normal = "summer_ludian_btn23", press = "summer_ludian_btn25", lock = "summer_ludian_btn26", textColor = Color(1, 1, 1), textShadow = Color(0.93333333333333, 0 / 255, 0.13333333333333), normalStar = "summer_ludian_icon1-3", passStar = "summer_ludian_icon2"}
-}
-, 
-[DiscoveryStageType.Plot] = {
-[1] = {normal = "summer_ludian_btn5", press = "summer_ludian_btn7", lock = "summer_ludian_btn8", textColor = Color(0.97647058823529, 1, 0.38039215686275), textShadow = Color(0.74901960784314, 0.20392156862745, 0.098039215686275)}
-, 
-[2] = {normal = "summer_ludian_btn19", press = "summer_ludian_btn20-1", lock = "summer_ludian_btn20-2", textColor = Color(0.97647058823529, 1, 0.38039215686275), textShadow = Color(0.74901960784314, 0.20392156862745, 0.098039215686275)}
-}
-, 
-[UIXH1SimpleLevel.SLeval] = {
-[1] = {normal = "summer_ludian_btn9", press = "summer_ludian_btn11", lock = "summer_ludian_btn12", textColor = Color(1, 1, 1), textShadow = Color(0.086274509803922, 0.16470588235294, 0.23921568627451), normalStar = "summer_ludian_icon1-2", passStar = "summer_ludian_icon2"}
-, 
-[2] = {normal = "summer_ludian_btn21", press = "summer_ludian_btn22-1", lock = "summer_ludian_btn22-2", textColor = Color(1, 1, 1), textShadow = Color(0.086274509803922, 0.16470588235294, 0.23921568627451), normalStar = "summer_ludian_icon1", passStar = "summer_ludian_icon2"}
-}
-}
+    [DiscoveryStageType.FightNormal] = {
+      [1] = {
+        normal = "summer_ludian_btn1",
+        press = "summer_ludian_btn3",
+        lock = "summer_ludian_btn4",
+        textColor = Color(0.9764705882352941, 1.0, 0.3803921568627451),
+        textShadow = Color(0.7490196078431373, 0.20392156862745098, 0.09803921568627451),
+        normalStar = "summer_ludian_icon1",
+        passStar = "summer_ludian_icon2"
+      },
+      [2] = {
+        normal = "summer_ludian_btn17",
+        press = "summer_ludian_btn18-1",
+        lock = "summer_ludian_btn18-2",
+        textColor = Color(0.9764705882352941, 1.0, 0.3803921568627451),
+        textShadow = Color(0.7490196078431373, 0.20392156862745098, 0.09803921568627451),
+        normalStar = "summer_ludian_icon1-2",
+        passStar = "summer_ludian_icon2"
+      }
+    },
+    [DiscoveryStageType.FightBoss] = {
+      [1] = {
+        normal = "summer_ludian_btn13",
+        press = "summer_ludian_btn15",
+        lock = "summer_ludian_btn16",
+        textColor = Color(1.0, 1.0, 1.0),
+        textShadow = Color(0.9333333333333333, 0 / 255, 0.13333333333333333),
+        normalStar = "summer_ludian_icon1",
+        passStar = "summer_ludian_icon2"
+      },
+      [2] = {
+        normal = "summer_ludian_btn23",
+        press = "summer_ludian_btn25",
+        lock = "summer_ludian_btn26",
+        textColor = Color(1.0, 1.0, 1.0),
+        textShadow = Color(0.9333333333333333, 0 / 255, 0.13333333333333333),
+        normalStar = "summer_ludian_icon1-3",
+        passStar = "summer_ludian_icon2"
+      }
+    },
+    [DiscoveryStageType.Plot] = {
+      [1] = {
+        normal = "summer_ludian_btn5",
+        press = "summer_ludian_btn7",
+        lock = "summer_ludian_btn8",
+        textColor = Color(0.9764705882352941, 1.0, 0.3803921568627451),
+        textShadow = Color(0.7490196078431373, 0.20392156862745098, 0.09803921568627451)
+      },
+      [2] = {
+        normal = "summer_ludian_btn19",
+        press = "summer_ludian_btn20-1",
+        lock = "summer_ludian_btn20-2",
+        textColor = Color(0.9764705882352941, 1.0, 0.3803921568627451),
+        textShadow = Color(0.7490196078431373, 0.20392156862745098, 0.09803921568627451)
+      }
+    },
+    [UIXH1SimpleLevel.SLeval] = {
+      [1] = {
+        normal = "summer_ludian_btn9",
+        press = "summer_ludian_btn11",
+        lock = "summer_ludian_btn12",
+        textColor = Color(1.0, 1.0, 1.0),
+        textShadow = Color(0.08627450980392157, 0.16470588235294117, 0.23921568627450981),
+        normalStar = "summer_ludian_icon1-2",
+        passStar = "summer_ludian_icon2"
+      },
+      [2] = {
+        normal = "summer_ludian_btn21",
+        press = "summer_ludian_btn22-1",
+        lock = "summer_ludian_btn22-2",
+        textColor = Color(1.0, 1.0, 1.0),
+        textShadow = Color(0.08627450980392157, 0.16470588235294117, 0.23921568627450981),
+        normalStar = "summer_ludian_icon1",
+        passStar = "summer_ludian_icon2"
+      }
+    }
+  }
   self:AttachEvents()
   self:_GetComponents()
-  local componentCfgId = (self._line_component):GetComponetCfgId((self._line_info).m_campaign_id, (self._line_info).m_component_id)
-  ;
-  (self._lineMissionManager):Init(self._line_info, componentCfgId)
-  ;
-  (self._lineMissionManager):Update()
+  local componentCfgId = self._line_component:GetComponetCfgId(self._line_info.m_campaign_id, self._line_info.m_component_id)
+  self._lineMissionManager:Init(self._line_info, componentCfgId)
+  self._lineMissionManager:Update()
   self:Flush()
   self._enterLockName = "UIXH1SimpleLevel_OnShow"
-  self._enterLockTimeEvent = (UIActivityHelper.StartLockEvent)(self._enterLockName, self._enterLockTimeEvent, nil)
+  self._enterLockTimeEvent = UIActivityHelper.StartLockEvent(self._enterLockName, self._enterLockTimeEvent, nil)
   local bgLoader1 = self:GetUIComponent("RawImageLoader", "bg1")
   local bgLoader2 = self:GetUIComponent("RawImageLoader", "bg2")
-  self._scroller = UIXH1Scroller:New(self._contentRect, bgLoader1, bgLoader2, (self._lineMissionManager):GetScrollSpliter())
-  ;
-  ((self._scrollRect).onValueChanged):AddListener(function()
-    -- function num : 0_2_0 , upvalues : self
-    (self._scroller):OnChange()
-  end
-)
+  self._scroller = UIXH1Scroller:New(self._contentRect, bgLoader1, bgLoader2, self._lineMissionManager:GetScrollSpliter())
+  self._scrollRect.onValueChanged:AddListener(function()
+    self._scroller:OnChange()
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (UIActivityHelper.CancelLockEvent)(self._enterLockName, self._enterLockTimeEvent)
-  ;
-  (UIActivityHelper.CancelLockEvent)(self._moveLockName, self._moveLockTimeEvent)
+function UIXH1SimpleLevel:OnHide()
+  UIActivityHelper.CancelLockEvent(self._enterLockName, self._enterLockTimeEvent)
+  UIActivityHelper.CancelLockEvent(self._moveLockName, self._moveLockTimeEvent)
   if self._countdownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._countdownTimer)
+    GameGlobal.Timer():CancelEvent(self._countdownTimer)
     self._countdownTimer = nil
   end
   if self._pointCountdownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._pointCountdownTimer)
+    GameGlobal.Timer():CancelEvent(self._pointCountdownTimer)
     self._pointCountdownTimer = nil
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
   UIXH1SimpleLevel.SLeval = nil
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
   UIXH1SimpleLevel.NodeCfg = nil
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.Flush = function(self)
-  -- function num : 0_4
+function UIXH1SimpleLevel:Flush()
   self:FlushPanel()
   self:FlushNodes()
   self:FlushLines()
@@ -146,30 +156,20 @@ UIXH1SimpleLevel.Flush = function(self)
   self:RefreshPower()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.Dispose = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIXH1SimpleLevel:Dispose()
   if self._shot then
-    (self._shot):CleanRenderTexture()
+    self._shot:CleanRenderTexture()
     self._shot = nil
   end
-  ;
-  (UIXH1SimpleLevel.super):Dispose()
+  UIXH1SimpleLevel.super:Dispose()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel._GetComponents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIXH1SimpleLevel:_GetComponents()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    (self._campModule):CampaignSwitchState(true, UIStateType.UISummer1, UIStateType.UIMain, nil, (self._campaign)._id)
-  end
-)
+  self._backBtns:SetData(function()
+    self._campModule:CampaignSwitchState(true, UIStateType.UISummer1, UIStateType.UIMain, nil, self._campaign._id)
+  end)
   self._scrollRect = self:GetUIComponent("ScrollRect", "MapContent")
   self._mapContentRect = self:GetUIComponent("RectTransform", "MapContent")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
@@ -181,136 +181,105 @@ UIXH1SimpleLevel._GetComponents = function(self)
   self._powerText = self:GetUIComponent("UILocalizationText", "powerText")
   self._powerCountdown = self:GetUIComponent("UILocalizationText", "powerCountdown")
   self._tryOutTip = self:GetGameObject("UICommonRedPoint")
-  self._safeWidth = (((self:GetUIComponent("RectTransform", "SafeArea")).rect).size).x
+  self._safeWidth = self:GetUIComponent("RectTransform", "SafeArea").rect.size.x
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.RefreshShopCount = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local count = (self:GetModule(ItemModule)):GetItemCount(3000211)
-  if not count then
-    count = 0
-  end
-  ;
-  (self._coin):SetText(count)
+function UIXH1SimpleLevel:RefreshShopCount()
+  local count = self:GetModule(ItemModule):GetItemCount(3000211)
+  count = count or 0
+  self._coin:SetText(count)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.RefreshCountdown = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIXH1SimpleLevel:RefreshCountdown()
   self._time = self:GetUIComponent("UILocalizationText", "time")
-  local closeTime = (self._line_info).m_close_time
+  local closeTime = self._line_info.m_close_time
   self._isValid = true
-  local countDown = function()
-    -- function num : 0_8_0 , upvalues : self, _ENV, closeTime
-    local now = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
-    local time = (math.ceil)(closeTime - now)
-    local timeStr = (UIActivityHelper.GetFormatTimerStr)(time)
+  
+  local function countDown()
+    local now = self:GetModule(SvrTimeModule):GetServerTime() / 1000
+    local time = math.ceil(closeTime - now)
+    local timeStr = UIActivityHelper.GetFormatTimerStr(time)
     if self._timeString ~= timeStr then
-      (self._time):SetText(timeStr)
+      self._time:SetText(timeStr)
       self._timeString = timeStr
     end
     if time < 0 and self._countdownTimer then
-      ((GameGlobal.Timer)()):CancelEvent(self._countdownTimer)
+      GameGlobal.Timer():CancelEvent(self._countdownTimer)
       self._countdownTimer = nil
       self._isValid = false
     end
   end
-
+  
   countDown()
   if self._countdownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._countdownTimer)
+    GameGlobal.Timer():CancelEvent(self._countdownTimer)
     self._countdownTimer = nil
   end
-  self._countdownTimer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, countDown)
+  self._countdownTimer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, countDown)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.RefreshTryout = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cmp = (self._campaign):GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_LEVEL_FIXTEAM)
+function UIXH1SimpleLevel:RefreshTryout()
+  local cmp = self._campaign:GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_LEVEL_FIXTEAM)
   local cmpInfo = cmp:GetComponentInfo()
   local cmpID = cmp:GetComponentCfgId()
   local newConfig = {}
-  local missionCfgs = (Cfg.cfg_component_line_mission)({ComponentID = cmpID})
-  for _,v in ipairs(missionCfgs) do
+  local missionCfgs = Cfg.cfg_component_line_mission({ComponentID = cmpID})
+  for _, v in ipairs(missionCfgs) do
     newConfig[v.CampaignMissionId] = v
   end
-  if not cmpInfo.m_pass_mission_info then
-    local passInfo = {}
+  local passInfo = cmpInfo.m_pass_mission_info or {}
+  
+  function self._isTryoutLevelPass(mid)
+    return passInfo[mid] ~= nil
   end
-  self._isTryoutLevelPass = function(mid)
-    -- function num : 0_9_0 , upvalues : passInfo
-    do return passInfo[mid] ~= nil end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
+  
   local allPass = true
-  for id,value in pairs(newConfig) do
-    if not (self._isTryoutLevelPass)(id) then
+  for id, value in pairs(newConfig) do
+    if not self._isTryoutLevelPass(id) then
       allPass = false
       break
     end
   end
-  do
-    ;
-    (self._tryOutTip):SetActive(not allPass)
-  end
+  self._tryOutTip:SetActive(not allPass)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.RefreshPower = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cmp = (self._campaign):GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_ACTION_POINT)
+function UIXH1SimpleLevel:RefreshPower()
+  local cmp = self._campaign:GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_ACTION_POINT)
   if cmp == nil or not cmp:ComponentIsOpen() then
-    (Log.exception)("严重错误,行动点组件已关闭!")
+    Log.exception("严重错误,行动点组件已关闭!")
   end
   local cmpID = cmp:GetComponentCfgId()
   local pointCfg = cmp:GetActionPointConfig()
-  local itemCfg = (Cfg.cfg_item)[pointCfg.ItemID]
-  local count = (self:GetModule(ItemModule)):GetItemCount(pointCfg.ItemID)
-  ;
-  (self._powerText):SetText(count .. "/" .. pointCfg.RegainMax)
+  local itemCfg = Cfg.cfg_item[pointCfg.ItemID]
+  local count = self:GetModule(ItemModule):GetItemCount(pointCfg.ItemID)
+  self._powerText:SetText(count .. "/" .. pointCfg.RegainMax)
   if count < pointCfg.RegainMax then
     local closeTime = cmp:GetRegainEndTime()
-    do
-      local countDown = function()
-    -- function num : 0_10_0 , upvalues : self, _ENV, closeTime
-    local now = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
-    local time = (math.ceil)(closeTime - now)
-    local timeStr = (HelperProxy:GetInstance()):FormatTime(time)
-    ;
-    (self._powerCountdown):SetText((StringTable.Get)("str_activity_summer_i_nextpoint", timeStr))
-    if time <= 0 then
-      self:StartTask(self.PowerTimeUp, self)
-    end
-  end
-
-      countDown()
-      if self._pointCountdownTimer then
-        ((GameGlobal.Timer)()):CancelEvent(self._pointCountdownTimer)
-        self._pointCountdownTimer = nil
+    
+    local function countDown()
+      local now = self:GetModule(SvrTimeModule):GetServerTime() / 1000
+      local time = math.ceil(closeTime - now)
+      local timeStr = HelperProxy:GetInstance():FormatTime(time)
+      self._powerCountdown:SetText(StringTable.Get("str_activity_summer_i_nextpoint", timeStr))
+      if time <= 0 then
+        self:StartTask(self.PowerTimeUp, self)
       end
-      self._pointCountdownTimer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, countDown)
     end
+    
+    countDown()
+    if self._pointCountdownTimer then
+      GameGlobal.Timer():CancelEvent(self._pointCountdownTimer)
+      self._pointCountdownTimer = nil
+    end
+    self._pointCountdownTimer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, countDown)
   else
-    do
-      ;
-      (self._powerCountdown):SetText("MAX")
-    end
+    self._powerCountdown:SetText("MAX")
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.PowerTimeUp = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function UIXH1SimpleLevel:PowerTimeUp(TT)
   if self._pointCountdownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._pointCountdownTimer)
+    GameGlobal.Timer():CancelEvent(self._pointCountdownTimer)
     self._pointCountdownTimer = nil
   end
   local res = AsyncRequestRes:New()
@@ -321,79 +290,51 @@ UIXH1SimpleLevel.PowerTimeUp = function(self, TT)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.FlushPanel = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local totalWidth = (self._lineMissionManager):GetTotalWidth()
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._contentRect).sizeDelta = Vector2(totalWidth, ((self._contentRect).sizeDelta).y)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._contentRect).anchoredPosition = Vector2(self._safeWidth / 2 - totalWidth, 0)
+function UIXH1SimpleLevel:FlushPanel()
+  local totalWidth = self._lineMissionManager:GetTotalWidth()
+  self._contentRect.sizeDelta = Vector2(totalWidth, self._contentRect.sizeDelta.y)
+  self._contentRect.anchoredPosition = Vector2(self._safeWidth / 2 - totalWidth, 0)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.FlushNodes = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local missionNodes = (self._lineMissionManager):GetNodes()
-  local count = (table.count)(missionNodes)
-  ;
-  (self._nodesPool):SpawnObjects("UIXH1MissionNode", count)
-  local nodes = (self._nodesPool):GetAllSpawnList()
+function UIXH1SimpleLevel:FlushNodes()
+  local missionNodes = self._lineMissionManager:GetNodes()
+  local count = table.count(missionNodes)
+  self._nodesPool:SpawnObjects("UIXH1MissionNode", count)
+  local nodes = self._nodesPool:GetAllSpawnList()
   self._uiMapNodes = {}
   local idx = 1
-  for i,node in pairs(missionNodes) do
+  for i, node in pairs(missionNodes) do
     local uiNode = nodes[idx]
     uiNode:SetData(node, function(stageId, needScroll, trans)
-    -- function num : 0_13_0 , upvalues : self
-    self:_MoveToStage(stageId, needScroll, trans)
-  end
-)
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._uiMapNodes)[idx] = uiNode
+      self:_MoveToStage(stageId, needScroll, trans)
+    end)
+    self._uiMapNodes[idx] = uiNode
     idx = idx + 1
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.FlushLines = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local lines = (self._lineMissionManager):GetLines()
-  local len = (table.count)(lines)
+function UIXH1SimpleLevel:FlushLines()
+  local lines = self._lineMissionManager:GetLines()
+  local len = table.count(lines)
   if not lines or len <= 0 then
-    return 
+    return
   end
-  ;
-  (self._linesPool):SpawnObjects("UIXH1MissionLine", len)
-  local spawnLines = (self._linesPool):GetAllSpawnList()
+  self._linesPool:SpawnObjects("UIXH1MissionLine", len)
+  local spawnLines = self._linesPool:GetAllSpawnList()
   local i = 1
-  for k,v in ipairs(lines) do
+  for k, v in ipairs(lines) do
     local sNode = v[1]
     local eNode = v[2]
-    ;
-    (spawnLines[i]):Flush(sNode, eNode, false)
+    spawnLines[i]:Flush(sNode, eNode, false)
     i = i + 1
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.ShotTest = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._shot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
+function UIXH1SimpleLevel:ShotTest()
+  self._shot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
   local shotRect = self:GetUIComponent("RectTransform", "screenShot")
-  self._width = (shotRect.rect).width
-  self._height = (shotRect.rect).height
+  self._width = shotRect.rect.width
+  self._height = shotRect.rect.height
   local LeftTop = self:GetGameObject("LeftTop")
   local LeftBottom = self:GetGameObject("LeftBottom")
   local RightTop = self:GetGameObject("RightTop")
@@ -402,248 +343,174 @@ UIXH1SimpleLevel.ShotTest = function(self)
   LeftBottom:SetActive(false)
   RightTop:SetActive(false)
   RightBottom:SetActive(false)
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._shot).width = self._width
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._shot).height = self._height
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._shot).blurTimes = 0
-  ;
-  (self._shot):CleanRenderTexture()
-  self._rt = (self._shot):RefreshBlurTexture()
+  self._shot.width = self._width
+  self._shot.height = self._height
+  self._shot.blurTimes = 0
+  self._shot:CleanRenderTexture()
+  self._rt = self._shot:RefreshBlurTexture()
   LeftTop:SetActive(true)
   LeftBottom:SetActive(true)
   RightTop:SetActive(true)
   RightBottom:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel._CalcShotOffset = function(self, trans)
-  -- function num : 0_16 , upvalues : _ENV
-  local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
+function UIXH1SimpleLevel:_CalcShotOffset(trans)
+  local camera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
   local screenPos = camera:WorldToScreenPoint(trans.position)
-  return -(Vector2(screenPos.x, screenPos.y) - Vector2((UnityEngine.Screen).width, (UnityEngine.Screen).height) / 2)
+  return -(Vector2(screenPos.x, screenPos.y) - Vector2(UnityEngine.Screen.width, UnityEngine.Screen.height) / 2)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel._MoveToStage = function(self, stageId, needScroll, trans)
-  -- function num : 0_17 , upvalues : _ENV
-  local pos = ((self._lineMissionManager):GetScrollPos(stageId)).x
-  local curPos = ((self._contentRect).anchoredPosition).x
+function UIXH1SimpleLevel:_MoveToStage(stageId, needScroll, trans)
+  local pos = self._lineMissionManager:GetScrollPos(stageId).x
+  local curPos = self._contentRect.anchoredPosition.x
   local areaWidth = 408
   local halfScreen = self._safeWidth / 2
-  local targetPos = nil
+  local targetPos
   if needScroll then
     if curPos < pos - (halfScreen - areaWidth) then
       targetPos = pos - (halfScreen - areaWidth)
-    else
-      if pos + (halfScreen - areaWidth) < curPos then
-        targetPos = pos + (halfScreen - areaWidth)
-      end
+    elseif curPos > pos + (halfScreen - areaWidth) then
+      targetPos = pos + (halfScreen - areaWidth)
     end
   end
   if targetPos then
-    (self._scrollRect):StopMovement()
+    self._scrollRect:StopMovement()
     if self._tweener then
-      (self._tweener):Kill()
+      self._tweener:Kill()
     end
     local _moveTime = 0.5
-    self._tweener = (self._contentRect):DOAnchorPosX(targetPos, _moveTime)
+    self._tweener = self._contentRect:DOAnchorPosX(targetPos, _moveTime)
     self._moveLockName = "UIXH1SimpleLevel_MoveToStage"
-    self._moveLockTimeEvent = (UIActivityHelper.StartLockEvent)(self._moveLockName, self._moveLockTimeEvent, function()
-    -- function num : 0_17_0 , upvalues : self, stageId, trans
-    self:_EnterStage(stageId, trans)
-  end
-, _moveTime * 1000)
-  else
-    do
+    self._moveLockTimeEvent = UIActivityHelper.StartLockEvent(self._moveLockName, self._moveLockTimeEvent, function()
       self:_EnterStage(stageId, trans)
-    end
+    end, _moveTime * 1000)
+  else
+    self:_EnterStage(stageId, trans)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel._EnterStage = function(self, stageId, trans)
-  -- function num : 0_18 , upvalues : _ENV
-  local nodes = (self._lineMissionManager):GetNodes()
+function UIXH1SimpleLevel:_EnterStage(stageId, trans)
+  local nodes = self._lineMissionManager:GetNodes()
   local node = nodes[stageId]
   local stageType = node.type
   if stageType == DiscoveryStageType.Plot then
     self:CloseUIStage()
-    local titleId = (StringTable.Get)(node.title)
-    local titleName = (StringTable.Get)(node.name)
-    local storyId = (self._missionModule):GetStoryByStageIdStoryType(stageId, StoryTriggerType.Node)
+    local titleId = StringTable.Get(node.title)
+    local titleName = StringTable.Get(node.name)
+    local storyId = self._missionModule:GetStoryByStageIdStoryType(stageId, StoryTriggerType.Node)
     self:ShowDialog("UIActivityPlotEnter", titleId, titleName, storyId, function()
-    -- function num : 0_18_0 , upvalues : self, stageId
-    self:PlotEndCallback(stageId)
-  end
-)
+      self:PlotEndCallback(stageId)
+    end)
   else
-    do
-      self:ShotTest()
-      local passInfo = ((self._line_info).m_pass_mission_info)[stageId]
-      local extraCfg = (self._lineMissionManager):GetLineExtraConfig()
-      local scale = extraCfg._Scale
-      local offset = self:_CalcShotOffset(trans)
-      local autoFightShow = self:_CheckSerialAutoFightShow(stageType, stageId)
-      self:ShowDialog("UIXH1Stage", stageId, passInfo, self._line_component, self._rt, offset, self._width, self._height, scale, autoFightShow, (self._campaign):GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_ACTION_POINT))
-    end
+    self:ShotTest()
+    local passInfo = self._line_info.m_pass_mission_info[stageId]
+    local extraCfg = self._lineMissionManager:GetLineExtraConfig()
+    local scale = extraCfg._Scale
+    local offset = self:_CalcShotOffset(trans)
+    local autoFightShow = self:_CheckSerialAutoFightShow(stageType, stageId)
+    self:ShowDialog("UIXH1Stage", stageId, passInfo, self._line_component, self._rt, offset, self._width, self._height, scale, autoFightShow, self._campaign:GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_ACTION_POINT))
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel._CheckSerialAutoFightShow = function(self, stageType, stageId)
-  -- function num : 0_19 , upvalues : _ENV
+function UIXH1SimpleLevel:_CheckSerialAutoFightShow(stageType, stageId)
   local autoFightShow = false
   if stageType == DiscoveryStageType.Plot then
     autoFightShow = false
   else
-    local missionCfg = (Cfg.cfg_campaign_mission)[stageId]
+    local missionCfg = Cfg.cfg_campaign_mission[stageId]
     if missionCfg then
       local enableParam = missionCfg.EnableSerialAutoFight
       if enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_DISABLE then
         autoFightShow = false
-      else
-        if enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_ENABLE or enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_NEED_UNLOCK then
-          autoFightShow = true
-        end
+      elseif enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_ENABLE or enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_NEED_UNLOCK then
+        autoFightShow = true
       end
     end
   end
-  do
-    return autoFightShow
-  end
+  return autoFightShow
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.ShowSerialRewards = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIXH1SimpleLevel:ShowSerialRewards()
   self:ShowDialog("UISerialAutoFightInfo", OpenUISerialFightInfoState.Finished)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.PlotEndCallback = function(self, stageId)
-  -- function num : 0_21 , upvalues : _ENV
-  local isActive = (self._line_component):IsPassCamMissionID(stageId)
+function UIXH1SimpleLevel:PlotEndCallback(stageId)
+  local isActive = self._line_component:IsPassCamMissionID(stageId)
   if isActive then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : self, stageId, _ENV
-    (self._line_component):SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
+    self._line_component:SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
     local res = AsyncRequestRes:New()
-    local award = (self._line_component):HandleCompleteStoryMission(TT, res, stageId)
+    local award = self._line_component:HandleCompleteStoryMission(TT, res, stageId)
     if not res:GetSucc() then
-      (self._campModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+      self._campModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    elseif table.count(award) ~= 0 then
+      self:ShowDialog("UIGetItemController", award, function()
+        self:SwitchState(UIStateType.UIXH1SimpleLevel)
+      end)
     else
-      if (table.count)(award) ~= 0 then
-        self:ShowDialog("UIGetItemController", award, function()
-      -- function num : 0_21_0_0 , upvalues : self, _ENV
       self:SwitchState(UIStateType.UIXH1SimpleLevel)
     end
-)
-      else
-        self:SwitchState(UIStateType.UIXH1SimpleLevel)
-      end
-    end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.CloseUIStage = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  if ((GameGlobal.UIStateManager)()):IsShow("UIXH1Stage") then
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIXH1Stage")
+function UIXH1SimpleLevel:CloseUIStage()
+  if GameGlobal.UIStateManager():IsShow("UIXH1Stage") then
+    GameGlobal.UIStateManager():CloseDialog("UIXH1Stage")
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.AttachEvents = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIXH1SimpleLevel:AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:AttachEvent(GameEventType.ActivityShopBuySuccess, self.RefreshShopCount)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel._CheckActivityClose = function(self, id)
-  -- function num : 0_24 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIXH1SimpleLevel:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_25
+function UIXH1SimpleLevel:OnUIGetItemCloseInQuest(type)
   if self._isOpen then
     self:_Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel._ShowUIGetItemController = function(self, rewards)
-  -- function num : 0_26 , upvalues : _ENV
+function UIXH1SimpleLevel:_ShowUIGetItemController(rewards)
   self:ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_26_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
+  end)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.TryoutButtonOnClick = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1ClickNormal)
+function UIXH1SimpleLevel:TryoutButtonOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1ClickNormal)
   if not self._isValid then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_110"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_110"))
+    return
   end
   self:ShowDialog("UIActivityPetTryController", ECampaignType.CAMPAIGN_TYPE_SUMMER_I, ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_LEVEL_FIXTEAM, self._isTryoutLevelPass, function(missionid)
-    -- function num : 0_27_0 , upvalues : _ENV, self
-    local missiontModule = (GameGlobal.GetModule)(MissionModule)
+    local missiontModule = GameGlobal.GetModule(MissionModule)
     local ctx = missiontModule:TeamCtx()
-    local localProcess = (self._campaign):GetLocalProcess()
+    local localProcess = self._campaign:GetLocalProcess()
     local missionComponent = localProcess:GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_LEVEL_FIXTEAM)
-    local param = {missionid, missionComponent:GetCampaignMissionComponentId(), missionComponent:GetCampaignMissionParamKeyMap()}
+    local param = {
+      missionid,
+      missionComponent:GetCampaignMissionComponentId(),
+      missionComponent:GetCampaignMissionParamKeyMap()
+    }
     ctx:Init(TeamOpenerType.Campaign, param)
     ctx:ShowDialogUITeams(false)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.ShopButtonOnClick = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1ClickNormal)
+function UIXH1SimpleLevel:ShopButtonOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1ClickNormal)
   self:ShowDialog("UIXH1Shop")
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1SimpleLevel.powerBtnOnClick = function(self)
-  -- function num : 0_29
+function UIXH1SimpleLevel:powerBtnOnClick()
   self:ShowDialog("UIXH1PointDetail")
 end
-
-

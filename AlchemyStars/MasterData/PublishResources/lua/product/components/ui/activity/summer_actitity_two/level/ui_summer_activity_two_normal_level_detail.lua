@@ -1,35 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/level/ui_summer_activity_two_normal_level_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoNormalLevelDetail", UIController)
 UISummerActivityTwoNormalLevelDetail = UISummerActivityTwoNormalLevelDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoNormalLevelDetail.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UISummerActivityTwoNormalLevelDetail:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SUMMER_II, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_STORY, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_CUMULATIVE_LOGIN, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_2, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_3, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_4, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_5, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_6)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SUMMER_II, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_STORY, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_CUMULATIVE_LOGIN, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_2, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_3, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_4, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_5, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_6)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  self._missionComponent = (self._localProcess):GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
+  self._missionComponent = self._localProcess:GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoNormalLevelDetail.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISummerActivityTwoNormalLevelDetail:OnShow(uiParams)
   self._levelData = uiParams[1]
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._desLabel = self:GetUIComponent("UILocalizationText", "Des")
@@ -37,138 +26,101 @@ UISummerActivityTwoNormalLevelDetail.OnShow = function(self, uiParams)
   self._recommendLV = self:GetUIComponent("UILocalizationText", "recommendLV")
   self._recommendLV2 = self:GetUIComponent("UILocalizationText", "recommendLV2")
   self._enemyMsg = self:GetUIComponent("UISelectObjectPath", "enemyMsg")
-  local enemy = (self._enemyMsg):SpawnObject("UIEnemyMsg")
-  enemy:SetData((self._levelData):GetFightId())
+  local enemy = self._enemyMsg:SpawnObject("UIEnemyMsg")
+  enemy:SetData(self._levelData:GetFightId())
   local s = self:GetUIComponent("UISelectObjectPath", "itemTips")
   self._tips = s:SpawnObject("UISelectInfo")
-  self:InitAwards((self._levelData):GetFirstDropId())
+  self:InitAwards(self._levelData:GetFirstDropId())
   self._ids = {}
-  local monsterIDs = (UICommonHelper:GetInstance()):GetOptimalEnemys((self._levelData):GetFightId())
+  local monsterIDs = UICommonHelper:GetInstance():GetOptimalEnemys(self._levelData:GetFightId())
   if monsterIDs == nil or #monsterIDs == 0 then
-    (Log.fatal)("[Enemy] 怪物id列表为空")
+    Log.fatal("[Enemy] 怪物id列表为空")
   else
-    local count = (table.count)(monsterIDs)
+    local count = table.count(monsterIDs)
     for i = 1, count do
-      (table.insert)(self._ids, monsterIDs[i])
+      table.insert(self._ids, monsterIDs[i])
     end
   end
-  do
-    local type = (self._levelData):GetLevelType()
-    -- DECOMPILER ERROR at PC95: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._nameLabel).text = (self._levelData):GetName()
-    -- DECOMPILER ERROR at PC100: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._desLabel).text = (self._levelData):GetDes()
-    self:AttachEvent(GameEventType.ShowItemTips, self.ShowTips)
-    self:RefreshRecommend()
-  end
+  local type = self._levelData:GetLevelType()
+  self._nameLabel.text = self._levelData:GetName()
+  self._desLabel.text = self._levelData:GetDes()
+  self:AttachEvent(GameEventType.ShowItemTips, self.ShowTips)
+  self:RefreshRecommend()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoNormalLevelDetail.RefreshRecommend = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local recommendAwaken = (self._levelData):GetRecommendAwaken()
-  local recommendLV = (self._levelData):GetRecommendLV()
+function UISummerActivityTwoNormalLevelDetail:RefreshRecommend()
+  local recommendAwaken = self._levelData:GetRecommendAwaken()
+  local recommendLV = self._levelData:GetRecommendLV()
   if recommendAwaken == nil or recommendAwaken == 0 then
-    ((self._recommendLV).gameObject):SetActive(false)
+    self._recommendLV.gameObject:SetActive(false)
   else
-    ;
-    ((self._recommendLV).gameObject):SetActive(true)
-    ;
-    (self._recommendLV):SetText((StringTable.Get)("str_pet_config_common_advance") .. "<size=29>" .. recommendAwaken .. "</size>")
+    self._recommendLV.gameObject:SetActive(true)
+    self._recommendLV:SetText(StringTable.Get("str_pet_config_common_advance") .. "<size=29>" .. recommendAwaken .. "</size>")
   end
   if recommendLV then
-    (self._recommendLV2):SetText("LV." .. recommendLV)
+    self._recommendLV2:SetText("LV." .. recommendLV)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoNormalLevelDetail.InitAwards = function(self, dropId)
-  -- function num : 0_3 , upvalues : _ENV
+function UISummerActivityTwoNormalLevelDetail:InitAwards(dropId)
   local awards = {}
   local normalArr = self:GetSortedArr(dropId)
   if normalArr then
-    for i,v in ipairs(normalArr) do
+    for i, v in ipairs(normalArr) do
       awards[#awards + 1] = v
     end
   end
-  do
-    local count = (table.count)(awards)
-    local sop = self:GetUIComponent("UISelectObjectPath", "Content")
-    sop:SpawnObjects("UIAwardItem", count)
-    local list = sop:GetAllSpawnList()
-    for i,v in ipairs(list) do
-      v:Flush(awards[i])
-    end
+  local count = table.count(awards)
+  local sop = self:GetUIComponent("UISelectObjectPath", "Content")
+  sop:SpawnObjects("UIAwardItem", count)
+  local list = sop:GetAllSpawnList()
+  for i, v in ipairs(list) do
+    v:Flush(awards[i])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoNormalLevelDetail.GetSortedArr = function(self, dropId)
-  -- function num : 0_4 , upvalues : _ENV
-  local list = (UICommonHelper:GetInstance()):ParseDrop(dropId)
+function UISummerActivityTwoNormalLevelDetail:GetSortedArr(dropId)
+  local list = UICommonHelper:GetInstance():ParseDrop(dropId)
   local vecSort = SortedArray:New(Algorithm.COMPARE_CUSTOM, UIExtraMissionStageController._LessComparer)
   if list then
-    for i,v in ipairs(list) do
+    for i, v in ipairs(list) do
       local award = Award:New()
       award:InitWithCount(v.ItemID, v.Count, v.Type)
       award:FlushType(StageAwardType.First)
       vecSort:Insert(award)
     end
   end
-  do
-    return vecSort.elements
-  end
+  return vecSort.elements
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoNormalLevelDetail.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISummerActivityTwoNormalLevelDetail:OnHide()
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowTips)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoNormalLevelDetail.MaskOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.CloseCoro, self)
+function UISummerActivityTwoNormalLevelDetail:MaskOnClick()
+  GameGlobal.TaskManager():StartTask(self.CloseCoro, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoNormalLevelDetail.StartBattleBtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local missiontModule = (GameGlobal.GetModule)(MissionModule)
+function UISummerActivityTwoNormalLevelDetail:StartBattleBtnOnClick()
+  local missiontModule = GameGlobal.GetModule(MissionModule)
   local ctx = missiontModule:TeamCtx()
-  local param = {(self._levelData):GetMissionId(), (self._missionComponent):GetCampaignMissionComponentId(), (self._missionComponent):GetCampaignMissionParamKeyMap()}
+  local param = {
+    self._levelData:GetMissionId(),
+    self._missionComponent:GetCampaignMissionComponentId(),
+    self._missionComponent:GetCampaignMissionParamKeyMap()
+  }
   ctx:Init(TeamOpenerType.Campaign, param)
   ctx:ShowDialogUITeams(false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoNormalLevelDetail.ShowTips = function(self, itemId, pos)
-  -- function num : 0_8
-  (self._tips):SetData(itemId, pos)
+function UISummerActivityTwoNormalLevelDetail:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoNormalLevelDetail.CloseCoro = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
+function UISummerActivityTwoNormalLevelDetail:CloseCoro(TT)
   self:Lock("UISummerActivityTwoLevelDetail_CloseCoro")
-  ;
-  (self._anim):Play("uieff_Summer2_Level_Detail_Out")
+  self._anim:Play("uieff_Summer2_Level_Detail_Out")
   YIELD(TT, 270)
   self:CloseDialog()
   self:UnLock("UISummerActivityTwoLevelDetail_CloseCoro")
 end
-
-

@@ -1,26 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_select_by_player_pos1.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_SelectPosByPlayerPos1", SkillScopeCalculator_Base)
 SkillScopeCalculator_SelectPosByPlayerPos1 = SkillScopeCalculator_SelectPosByPlayerPos1
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_SelectPosByPlayerPos1.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = (self._gridFilter)._world
-  local teamEntity = (world:Player()):GetLocalTeamEntity()
+function SkillScopeCalculator_SelectPosByPlayerPos1:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local world = self._gridFilter._world
+  local teamEntity = world:Player():GetLocalTeamEntity()
   local playerPos = teamEntity:GetGridPosition()
   local ret = {}
-  for i,v in ipairs(scopeParam) do
-    if (v.x)[1] <= playerPos.x and playerPos.x <= (v.x)[2] and (v.y)[1] <= playerPos.y and playerPos.y <= (v.y)[2] then
-      (table.insert)(ret, Vector2((v.point)[1], (v.point)[2]))
+  for i, v in ipairs(scopeParam) do
+    if playerPos.x >= v.x[1] and playerPos.x <= v.x[2] and playerPos.y >= v.y[1] and playerPos.y <= v.y[2] then
+      table.insert(ret, Vector2(v.point[1], v.point[2]))
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.SelectPosByPlayerPos1, centerPos, ret, ret)
   return result
 end
-
-

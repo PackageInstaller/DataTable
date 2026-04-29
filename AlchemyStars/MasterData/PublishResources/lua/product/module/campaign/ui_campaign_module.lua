@@ -1,106 +1,78 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/ui_campaign_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICampaignModule", UIModule)
 UICampaignModule = UICampaignModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICampaignModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICampaignModule:Constructor()
   self._reviewData = nil
   self._hauteCountureData = nil
   self:AttachEvent(GameEventType.UIShowEnd, self.OnUIShowEnd)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignModule.GetReviewData = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICampaignModule:GetReviewData()
   if self._reviewData == nil then
-    (Log.debug)("初始化活动回顾数据:", (debug.traceback)())
+    Log.debug("初始化活动回顾数据:", debug.traceback())
     self._reviewData = UIActivityReviewData:New()
-    if (self._reviewData):IsLocked() then
-      (Log.debug)("[Review] 活动回顾模块未解锁，监听解锁消息")
+    if self._reviewData:IsLocked() then
+      Log.debug("[Review] 活动回顾模块未解锁，监听解锁消息")
       self:AttachEvent(GameEventType.ModuleUnlocked, self.OnModuleUnlock)
     end
   end
   return self._reviewData
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignModule.OnModuleUnlock = function(self, id)
-  -- function num : 0_2 , upvalues : _ENV
+function UICampaignModule:OnModuleUnlock(id)
   if id == GameModuleID.MD_CAMPAIGNREVIEW then
-    (Log.debug)("[Review] 活动回顾模块解锁，重新初始化")
+    Log.debug("[Review] 活动回顾模块解锁，重新初始化")
     self._reviewData = UIActivityReviewData:New()
     self:DetachEvent(GameEventType.ModuleUnlocked)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignModule.GetHauteCoutureData = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICampaignModule:GetHauteCoutureData()
   if not self._hauteCountureData then
-    (Log.debug)("[HauteCouture] 初始化高级时装数据")
+    Log.debug("[HauteCouture] 初始化高级时装数据")
     self._hauteCountureData = UIHauteCoutureData:New()
   end
   return self._hauteCountureData
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignModule.EnterDiffTeam = function(self, parentID, childID, component)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.info)("进入活动困难关编队:", parentID, ",", childID)
+function UICampaignModule:EnterDiffTeam(parentID, childID, component)
+  Log.info("进入活动困难关编队:", parentID, ",", childID)
   self:StartTask(self._EnterTeam, self, parentID, childID, component)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignModule._EnterTeam = function(self, TT, parentID, childID, component)
-  -- function num : 0_5 , upvalues : _ENV
+function UICampaignModule:_EnterTeam(TT, parentID, childID, component)
   self:_HandleBeforeEnterDiffTeam(TT, parentID, childID, component)
-  local info = ((component:GetComponentInfo()).infos)[parentID]
+  local info = component:GetComponentInfo().infos[parentID]
   local stageList = {}
-  local cfg = (Cfg.cfg_difficulty_parent_mission)[parentID]
+  local cfg = Cfg.cfg_difficulty_parent_mission[parentID]
   if not cfg then
-    (Log.exception)("cfg_difficulty_parent_mission中找不到配置:", parentID)
+    Log.exception("cfg_difficulty_parent_mission中找不到配置:", parentID)
   end
   for i = 1, #cfg.SubMissionList do
-    local stageid = (cfg.SubMissionList)[i]
-    local data = nil
+    local stageid = cfg.SubMissionList[i]
+    local data
     if info and info.sub_mission_infos then
       for j = 1, #info.sub_mission_infos do
-        if ((info.sub_mission_infos)[j]).mission_id == stageid then
-          data = (info.sub_mission_infos)[j]
+        if info.sub_mission_infos[j].mission_id == stageid then
+          data = info.sub_mission_infos[j]
           break
         end
       end
     end
-    do
-      local pets = {}
-      if data and data.pet_list and next(data.pet_list) then
-        pets = data.pet_list
-      end
-      do
-        local team = Team:New()
-        team:Init(1, "", pets)
-        stageList[stageid] = team
-        -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    local pets = {}
+    if data and data.pet_list and next(data.pet_list) then
+      pets = data.pet_list
     end
+    local team = Team:New()
+    team:Init(1, "", pets)
+    stageList[stageid] = team
   end
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   local ctx = missionModule:TeamCtx()
-  local data = (component:GetComponentInfo()).pet_list
+  local data = component:GetComponentInfo().pet_list
   ctx:InitCampDiffTeam({
-{id = 1, pet_list = data}
-})
+    {id = 1, pet_list = data}
+  })
   local param = {}
   param[1] = parentID
   param[2] = childID
@@ -111,203 +83,159 @@ UICampaignModule._EnterTeam = function(self, TT, parentID, childID, component)
   local teamid = ctx:GetCurrTeamId()
   local teams = ctx:Teams()
   local team = teams:Get(teamid)
-  local diffModule = (GameGlobal.GetUIModule)(DifficultyMissionModule)
+  local diffModule = GameGlobal.GetUIModule(DifficultyMissionModule)
   diffModule:SetTeamInfo(team, childID, stageList)
   ctx:ShowDialogUITeams(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignModule.ClearDiffTeam = function(self, parentID, childID, component)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.info)("清理活动困难关编队:", parentID, ",", childID)
-  local info = ((component:GetComponentInfo()).infos)[parentID]
+function UICampaignModule:ClearDiffTeam(parentID, childID, component)
+  Log.info("清理活动困难关编队:", parentID, ",", childID)
+  local info = component:GetComponentInfo().infos[parentID]
   local currentStageTeam = {}
   if info then
-    for _,sub in ipairs(info.sub_mission_infos) do
+    for _, sub in ipairs(info.sub_mission_infos) do
       if sub.mission_id == childID then
         currentStageTeam = sub.pet_list
         break
       end
     end
   end
-  do
-    local finish = false
-    if currentStageTeam and next(currentStageTeam) then
-      for _,pstid in pairs(currentStageTeam) do
-        if pstid > 0 then
-          finish = true
-          break
-        end
+  local finish = false
+  if currentStageTeam and next(currentStageTeam) then
+    for _, pstid in pairs(currentStageTeam) do
+      if 0 < pstid then
+        finish = true
+        break
       end
     end
-    do
-      if finish then
-        PopMsgBox((StringTable.Get)("str_diff_mission_reset_team_box"), function()
-    -- function num : 0_6_0 , upvalues : self, parentID, childID, component
-    self:StartTask(self._ReqResetDiffTeam, self, parentID, childID, component)
   end
-)
-      end
-    end
+  if finish then
+    PopMsgBox(StringTable.Get("str_diff_mission_reset_team_box"), function()
+      self:StartTask(self._ReqResetDiffTeam, self, parentID, childID, component)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignModule._ReqResetDiffTeam = function(self, TT, parentID, childID, component)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("UICampaignModule:_ReqResetDiffTeam")
+function UICampaignModule:_ReqResetDiffTeam(TT, parentID, childID, component)
+  GameGlobal.UIStateManager():Lock("UICampaignModule:_ReqResetDiffTeam")
   local res = component:HandleDifficultyResetSubMissionRecord(TT, AsyncRequestRes:New(), parentID, childID)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("UICampaignModule:_ReqResetDiffTeam")
+  GameGlobal.UIStateManager():UnLock("UICampaignModule:_ReqResetDiffTeam")
   if res:GetSucc() then
-    local tips = (StringTable.Get)("str_diff_mission_reset_team_succ")
-    ;
-    (ToastManager.ShowToast)(tips)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCampDiffTeamReset)
+    local tips = StringTable.Get("str_diff_mission_reset_team_succ")
+    ToastManager.ShowToast(tips)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCampDiffTeamReset)
   else
-    do
-      local result = res:GetResult()
-      local tips = (StringTable.Get)("str_diff_mission_reset_team_fail", result)
-      ;
-      (ToastManager.ShowToast)(tips)
-    end
+    local result = res:GetResult()
+    local tips = StringTable.Get("str_diff_mission_reset_team_fail", result)
+    ToastManager.ShowToast(tips)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignModule._HandleBeforeEnterDiffTeam = function(self, TT, parentID, childID, component)
-  -- function num : 0_8 , upvalues : _ENV
-  local info = ((component:GetComponentInfo()).infos)[parentID]
+function UICampaignModule:_HandleBeforeEnterDiffTeam(TT, parentID, childID, component)
+  local info = component:GetComponentInfo().infos[parentID]
   local useTeam = false
-  local team = nil
+  local team
   local currentStageTeam = {}
   if info then
-    for _,sub in ipairs(info.sub_mission_infos) do
+    for _, sub in ipairs(info.sub_mission_infos) do
       if sub.mission_id == childID then
         currentStageTeam = sub.pet_list
         break
       end
     end
   end
-  do
-    if next(currentStageTeam) then
-      for _,pstid in pairs(currentStageTeam) do
-        if pstid and pstid > 0 then
-          useTeam = true
-          break
-        end
+  if next(currentStageTeam) then
+    for _, pstid in pairs(currentStageTeam) do
+      if pstid and 0 < pstid then
+        useTeam = true
+        break
       end
     end
-    do
-      if useTeam then
-        (Log.info)("活动高难关，编队有效")
-        team = (table.clone)(currentStageTeam)
-      else
-        local pcfg = (Cfg.cfg_difficulty_parent_mission)[parentID]
-        if not pcfg then
-          (Log.exception)("cfg_difficulty_parent_mission中找不到配置:", parentID)
-        end
-        local removeList = {}
-        local cacheTeam = (component:GetComponentInfo()).pet_list
-        if info then
-          for i = 1, #cacheTeam do
-            local targetID = cacheTeam[i]
-            if targetID and targetID > 0 then
-              for _,sub_info in ipairs(info.sub_mission_infos) do
-                local found = false
-                if sub_info.mission_id ~= childID and sub_info.pet_list and next(sub_info.pet_list) then
-                  for _,sub_petid in pairs(sub_info.pet_list) do
-                    if targetID == sub_petid then
-                      removeList[#removeList + 1] = i
-                      found = true
-                      break
-                    end
-                  end
+  end
+  if useTeam then
+    Log.info("活动高难关，编队有效")
+    team = table.clone(currentStageTeam)
+  else
+    local pcfg = Cfg.cfg_difficulty_parent_mission[parentID]
+    if not pcfg then
+      Log.exception("cfg_difficulty_parent_mission中找不到配置:", parentID)
+    end
+    local removeList = {}
+    local cacheTeam = component:GetComponentInfo().pet_list
+    if info then
+      for i = 1, #cacheTeam do
+        local targetID = cacheTeam[i]
+        if targetID and 0 < targetID then
+          for _, sub_info in ipairs(info.sub_mission_infos) do
+            local found = false
+            if sub_info.mission_id ~= childID and sub_info.pet_list and next(sub_info.pet_list) then
+              for _, sub_petid in pairs(sub_info.pet_list) do
+                if targetID == sub_petid then
+                  removeList[#removeList + 1] = i
+                  found = true
+                  break
                 end
               end
             end
-          end
-        end
-        do
-          do
-            if (found or removeList) and next(removeList) then
-              local updateTeam = (table.clone)(cacheTeam)
-              for i = 1, #removeList do
-                local idx = removeList[i]
-                updateTeam[idx] = 0
-              end
-              ;
-              (Log.info)("处理活动高难关编队，剔除重复星灵")
-              team = updateTeam
-            end
-            if team then
-              ((GameGlobal.UIStateManager)()):Lock("UICampaignModule:HandleDifficultyChangeFormation")
-              local res = component:HandleDifficultyChangeFormation(TT, AsyncRequestRes:New(), parentID, childID, team)
-              ;
-              ((GameGlobal.UIStateManager)()):UnLock("UICampaignModule:HandleDifficultyChangeFormation")
-            end
-            if res:GetSucc() then
-              (Log.error)("请求更新活动高难关编队失败:", res:GetResult())
+            if found then
+              break
             end
           end
         end
       end
     end
+    if removeList and next(removeList) then
+      local updateTeam = table.clone(cacheTeam)
+      for i = 1, #removeList do
+        local idx = removeList[i]
+        updateTeam[idx] = 0
+      end
+      Log.info("处理活动高难关编队，剔除重复星灵")
+      team = updateTeam
+    end
+  end
+  if team then
+    GameGlobal.UIStateManager():Lock("UICampaignModule:HandleDifficultyChangeFormation")
+    local res = component:HandleDifficultyChangeFormation(TT, AsyncRequestRes:New(), parentID, childID, team)
+    GameGlobal.UIStateManager():UnLock("UICampaignModule:HandleDifficultyChangeFormation")
+    if res:GetSucc() then
+    else
+      Log.error("请求更新活动高难关编队失败:", res:GetResult())
+    end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignModule.ShowCollectFrogGuide = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local playerID = ((GameGlobal.GameLogic)()):GetOpenId()
+function UICampaignModule:ShowCollectFrogGuide()
+  local playerID = GameGlobal.GameLogic():GetOpenId()
   local storyKey = FrogConst.ShowStory .. ECampaignType.CAMPAIGN_TYPE_COLLECT_FROG .. playerID
   local guideUIKey = FrogConst.ShowGuideUI .. ECampaignType.CAMPAIGN_TYPE_COLLECT_FROG .. playerID
-  if (LocalDB.GetInt)(storyKey) == 2 then
-    return 
+  if LocalDB.GetInt(storyKey) == 2 then
+    return
   end
-  if (LocalDB.GetInt)(storyKey) ~= 1 then
-    (LocalDB.SetInt)(storyKey, 2)
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryController", 50780101, function()
-    -- function num : 0_9_0 , upvalues : _ENV, storyKey, guideUIKey
-    (LocalDB.SetInt)(storyKey, 1)
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog(UIStateType.UICN14N43FrogGameGuide)
-    ;
-    (LocalDB.SetInt)(guideUIKey, 1)
+  if LocalDB.GetInt(storyKey) ~= 1 then
+    LocalDB.SetInt(storyKey, 2)
+    GameGlobal.UIStateManager():ShowDialog("UIStoryController", 50780101, function()
+      LocalDB.SetInt(storyKey, 1)
+      GameGlobal.UIStateManager():ShowDialog(UIStateType.UICN14N43FrogGameGuide)
+      LocalDB.SetInt(guideUIKey, 1)
+    end)
+    return
   end
-)
-    return 
-  end
-  if (LocalDB.GetInt)(guideUIKey) ~= 1 then
-    ((GameGlobal.UIStateManager)()):ShowDialog(UIStateType.UICN14N43FrogGameGuide)
-    ;
-    (LocalDB.SetInt)(guideUIKey, 1)
+  if LocalDB.GetInt(guideUIKey) ~= 1 then
+    GameGlobal.UIStateManager():ShowDialog(UIStateType.UICN14N43FrogGameGuide)
+    LocalDB.SetInt(guideUIKey, 1)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignModule.OnUIShowEnd = function(self, uiName, uiParams)
-  -- function num : 0_10 , upvalues : _ENV
+function UICampaignModule:OnUIShowEnd(uiName, uiParams)
   if self:CheckCollectFrogOpen() then
     local createF = UICN14N43CreateFrog:New()
     createF:CreateFrog(uiName)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignModule.CheckCollectFrogOpen = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UICampaignModule:CheckCollectFrogOpen()
   local campaign = UIActivityCampaign:New()
   campaign:LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_COLLECT_FROG)
   return campaign:CheckCampaignOpen()
 end
-
-

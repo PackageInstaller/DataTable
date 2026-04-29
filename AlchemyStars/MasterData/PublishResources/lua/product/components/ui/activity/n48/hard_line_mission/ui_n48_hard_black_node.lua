@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n48/hard_line_mission/ui_n48_hard_black_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN48HardBlackNode", UICustomWidget)
 UIN48HardBlackNode = UIN48HardBlackNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN48HardBlackNode.PlayAnim = function(self, index)
-  -- function num : 0_0
+function UIN48HardBlackNode:PlayAnim(index)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlackNode.SetData = function(self, data, callback)
-  -- function num : 0_1
+function UIN48HardBlackNode:SetData(data, callback)
   self._data = data
   self._callback = callback
   self:SetVisible(true)
-  self:_SetRectTransform((self._data):GetPosition())
+  self:_SetRectTransform(self._data:GetPosition())
   self:_SetName()
   self:_SetIcon()
   self:_SetCup()
@@ -27,118 +17,74 @@ UIN48HardBlackNode.SetData = function(self, data, callback)
   self:PlayAnim()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlackNode.SetVisible = function(self, status)
-  -- function num : 0_2
-  (self:GetGameObject()):SetActive(status)
+function UIN48HardBlackNode:SetVisible(status)
+  self:GetGameObject():SetActive(status)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlackNode._SetRectTransform = function(self, pos)
-  -- function num : 0_3 , upvalues : _ENV
-  local rect = (self:GetGameObject()):GetComponent("RectTransform")
+function UIN48HardBlackNode:_SetRectTransform(pos)
+  local rect = self:GetGameObject():GetComponent("RectTransform")
   rect.anchorMax = Vector2(0, 0.5)
   rect.anchorMin = Vector2(0, 0.5)
   rect.sizeDelta = Vector2.zero
   rect.anchoredPosition = pos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlackNode._SetName = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "_name", (self._data):GetNodeName())
+function UIN48HardBlackNode:_SetName()
+  UIWidgetHelper.SetLocalizationText(self, "_name", self._data:GetNodeName())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlackNode._SetIcon = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local url = (self._data):GetOpenIcon()
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_icon", url)
+function UIN48HardBlackNode:_SetIcon()
+  local url = self._data:GetOpenIcon()
+  UIWidgetHelper.SetRawImage(self, "_icon", url)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlackNode._SetCup = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local isShow = (self._data):IsOpen()
-  ;
-  (self:GetGameObject("_cup")):SetActive(isShow)
-  local cupDatas = (self._data):GetCupDatas()
-  local completCount = (self._data):GetCompleteCupCount()
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_cupText", completCount .. "/" .. #cupDatas)
+function UIN48HardBlackNode:_SetCup()
+  local isShow = self._data:IsOpen()
+  self:GetGameObject("_cup"):SetActive(isShow)
+  local cupDatas = self._data:GetCupDatas()
+  local completCount = self._data:GetCompleteCupCount()
+  UIWidgetHelper.SetLocalizationText(self, "_cupText", completCount .. "/" .. #cupDatas)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlackNode._SetLock = function(self)
-  -- function num : 0_7
-  local isShow = not (self._data):IsOpen()
-  ;
-  (self:GetGameObject("_lock")):SetActive(isShow)
+function UIN48HardBlackNode:_SetLock()
+  local isShow = not self._data:IsOpen()
+  self:GetGameObject("_lock"):SetActive(isShow)
   if isShow then
     self:SetBlack()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlackNode.SetBlack = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN48HardBlackNode:SetBlack()
   local rawImage = self:GetUIComponent("RawImage", "_icon")
-  rawImage.color = Color(0.50196078431373, 0.50196078431373, 0.50196078431373, 255)
+  rawImage.color = Color(0.5019607843137255, 0.5019607843137255, 0.5019607843137255, 255)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlackNode._SetComplete = function(self)
-  -- function num : 0_9
-  local isComplete = (self._data):IsComplete()
-  ;
-  (self:GetGameObject("_pass")):SetActive(isComplete)
+function UIN48HardBlackNode:_SetComplete()
+  local isComplete = self._data:IsComplete()
+  self:GetGameObject("_pass"):SetActive(isComplete)
   if isComplete then
     self:SetBlack()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlackNode.BtnOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
-  if not (self._data):IsOpen() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_cn12_n41_hard_lock_tips", (self._data):GetLastNodeName()))
-    return 
+function UIN48HardBlackNode:BtnOnClick(go)
+  if not self._data:IsOpen() then
+    ToastManager.ShowToast(StringTable.Get("str_cn12_n41_hard_lock_tips", self._data:GetLastNodeName()))
+    return
   end
-  ;
-  (self._callback)(self._data)
+  self._callback(self._data)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlackNode.PlayAnime_In = function(self)
-  -- function num : 0_11
+function UIN48HardBlackNode:PlayAnime_In()
   local animation = self:GetUIComponent("Animation", "_anim")
   animation:Play("uieff_UIN48Hard_LineNode_in")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlackNode.PlayAnime_Out = function(self)
-  -- function num : 0_12
+function UIN48HardBlackNode:PlayAnime_Out()
   local animation = self:GetUIComponent("Animation", "_anim")
   animation:Play("uieff_UIN48Hard_LineNode_out")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardBlackNode.OnHide = function(self)
-  -- function num : 0_13
+function UIN48HardBlackNode:OnHide()
   self:PlayAnime_Out()
 end
-
-

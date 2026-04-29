@@ -1,169 +1,116 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/alchemy/ShopLevelUP/ui_cn20_n49_alchemy_shop_levelup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49AlchemyShopLevelUP", UIController)
 UICN20N49AlchemyShopLevelUP = UICN20N49AlchemyShopLevelUP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49AlchemyShopLevelUP.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN20N49AlchemyShopLevelUP:LoadDataOnEnter(TT, res)
   local campaignType = ECampaignType.CAMPAIGN_TYPE_INLAND_N20
-  local componentIds = {ECampaignCN20ComponentID.ECN20_ALCHEMY}
-  self._campaign = (UIActivityHelper.LoadDataOnEnter)(TT, res, campaignType, componentIds)
+  local componentIds = {
+    ECampaignCN20ComponentID.ECN20_ALCHEMY
+  }
+  self._campaign = UIActivityHelper.LoadDataOnEnter(TT, res, campaignType, componentIds)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUP.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN20N49AlchemyShopLevelUP:OnShow(uiParams)
   self._campaign = uiParams[1]
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
-  self.alchemyComponent = (UICN20N49Helper.GetComponent)(self._campaign, "alchemy")
-  self.alchemyComponentInfo = (self.alchemyComponent):GetComponentInfo()
-  self.alchemyShopComponentInfo = (UICN20N49Helper.GetComponentInfo)(self._campaign, "alchemyShop")
-  self.alchemyProgressComponent = (UICN20N49Helper.GetComponent)(self._campaign, "alchemyShop")
-  self._cfg = (Cfg.cfg_component_alchemy_shop_fitup)({ComponentID = (self.alchemyComponent):GetComponentCfgId()})
+  self.itemModule = GameGlobal.GetModule(ItemModule)
+  self.alchemyComponent = UICN20N49Helper.GetComponent(self._campaign, "alchemy")
+  self.alchemyComponentInfo = self.alchemyComponent:GetComponentInfo()
+  self.alchemyShopComponentInfo = UICN20N49Helper.GetComponentInfo(self._campaign, "alchemyShop")
+  self.alchemyProgressComponent = UICN20N49Helper.GetComponent(self._campaign, "alchemyShop")
+  self._cfg = Cfg.cfg_component_alchemy_shop_fitup({
+    ComponentID = self.alchemyComponent:GetComponentCfgId()
+  })
   self._formulaCfg = {}
-  for i,v in pairs(self._cfg) do
+  for i, v in pairs(self._cfg) do
     if v.Type == EAlchemyShopItemType.EAlchemyShopItemType_BuyFormula then
-      (table.insert)(self._formulaCfg, {cfg = v, sortWeight = -1})
+      table.insert(self._formulaCfg, {cfg = v, sortWeight = -1})
     end
   end
   self:InitWidget()
-  self._goldItemID = ((Cfg.cfg_global).AlchemyMoneyItemID).IntValue
+  self._goldItemID = Cfg.cfg_global.AlchemyMoneyItemID.IntValue
   self:InitUI()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUP.IsHasFormula = function(self, formulaID)
-  -- function num : 0_2
-  do return (self.itemModule):GetItemCount(formulaID) > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UICN20N49AlchemyShopLevelUP:IsHasFormula(formulaID)
+  return self.itemModule:GetItemCount(formulaID) > 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUP.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN20N49AlchemyShopLevelUP:InitWidget()
   self._anim = self:GetGameObject("_anim")
   self.formulaListPool = self:GetUIComponent("UISelectObjectPath", "FormulaList")
   self.gratuityListPool = self:GetUIComponent("UISelectObjectPath", "GratuityList")
   self.alchemyUpListPool = self:GetUIComponent("UISelectObjectPath", "AlchemyUpList")
-  self.backBtns = (UIWidgetHelper.SpawnObject)(self, "backBtns", "UINewCommonTopButton")
+  self.backBtns = UIWidgetHelper.SpawnObject(self, "backBtns", "UINewCommonTopButton")
   self.goldText = self:GetUIComponent("UILocalizationText", "GoldText")
-  ;
-  (self.formulaListPool):SpawnObjects("UICN20N49AlchemyShopLevelUPItem", #self._formulaCfg)
-  ;
-  (self.alchemyUpListPool):SpawnObjects("UICN20N49AlchemyShopLevelUPItem", 1)
-  ;
-  (self.gratuityListPool):SpawnObjects("UICN20N49AlchemyShopLevelUPItem", 1)
-  self.alchemyUp = ((self.alchemyUpListPool):GetAllSpawnList())[1]
-  self.gratuity = ((self.gratuityListPool):GetAllSpawnList())[1]
-  self.formulaList = (self.formulaListPool):GetAllSpawnList()
+  self.formulaListPool:SpawnObjects("UICN20N49AlchemyShopLevelUPItem", #self._formulaCfg)
+  self.alchemyUpListPool:SpawnObjects("UICN20N49AlchemyShopLevelUPItem", 1)
+  self.gratuityListPool:SpawnObjects("UICN20N49AlchemyShopLevelUPItem", 1)
+  self.alchemyUp = self.alchemyUpListPool:GetAllSpawnList()[1]
+  self.gratuity = self.gratuityListPool:GetAllSpawnList()[1]
+  self.formulaList = self.formulaListPool:GetAllSpawnList()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUP._RefreshBuff = function(self, curBuffID, buffType, widget, isFinish)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN20N49AlchemyShopLevelUP:_RefreshBuff(curBuffID, buffType, widget, isFinish)
   if curBuffID == 0 then
-    local cfgList = (Cfg.cfg_component_alchemy_shop_fitup)({Type = buffType})
-    for _,v in pairs(cfgList) do
+    local cfgList = Cfg.cfg_component_alchemy_shop_fitup({Type = buffType})
+    for _, v in pairs(cfgList) do
       if v.Money == 0 then
         curBuffID = v.ID
       end
     end
   end
-  do
-    local cfg = ((Cfg.cfg_component_alchemy_shop_fitup)({ID = curBuffID}))[1]
-    widget:SetData(cfg, isFinish, self)
-  end
+  local cfg = Cfg.cfg_component_alchemy_shop_fitup({ID = curBuffID})[1]
+  widget:SetData(cfg, isFinish, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUP.ShowBonus = function(self, cfg)
-  -- function num : 0_5
+function UICN20N49AlchemyShopLevelUP:ShowBonus(cfg)
   self:ShowDialog("UICN20N49AlchemyShopLevelUPComplete", cfg)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUP.SortFormulaCfgList = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._curProgress = (self.alchemyProgressComponent):GetCurProgress()
-  self._gold = (self.itemModule):GetItemCount(self._goldItemID)
-  for index,v in ipairs(self._formulaCfg) do
-    if self._curProgress <= (v.cfg).UnlockLevel and self._gold <= (v.cfg).Money then
+function UICN20N49AlchemyShopLevelUP:SortFormulaCfgList()
+  self._curProgress = self.alchemyProgressComponent:GetCurProgress()
+  self._gold = self.itemModule:GetItemCount(self._goldItemID)
+  for index, v in ipairs(self._formulaCfg) do
+    if v.cfg.UnlockLevel >= self._curProgress and v.cfg.Money >= self._gold then
       v.sortWeight = 10
+    elseif self:IsHasFormula(v.cfg.FormulaID) then
+      v.sortWeight = 1
     else
-      if self:IsHasFormula((v.cfg).FormulaID) then
-        v.sortWeight = 1
-      else
-        v.sortWeight = 5
-      end
+      v.sortWeight = 5
     end
   end
-  ;
-  (table.sort)(self._formulaCfg, function(a, b)
-    -- function num : 0_6_0
-    do return b.sortWeight < a.sortWeight end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._formulaCfg, function(a, b)
+    return a.sortWeight > b.sortWeight
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUP.RefreshWidgetData = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UICN20N49AlchemyShopLevelUP:RefreshWidgetData()
   self:SortFormulaCfgList()
-  self._curProgress = (self.alchemyProgressComponent):GetCurProgress()
-  self._gold = (self.itemModule):GetItemCount(self._goldItemID)
-  ;
-  (self.goldText):SetText(tostring(self._gold))
-  for index,v in ipairs(self._formulaCfg) do
-    local isFinish = self:IsHasFormula((v.cfg).FormulaID)
-    ;
-    ((self.formulaList)[index]):SetData(v.cfg, isFinish, self)
+  self._curProgress = self.alchemyProgressComponent:GetCurProgress()
+  self._gold = self.itemModule:GetItemCount(self._goldItemID)
+  self.goldText:SetText(tostring(self._gold))
+  for index, v in ipairs(self._formulaCfg) do
+    local isFinish = self:IsHasFormula(v.cfg.FormulaID)
+    self.formulaList[index]:SetData(v.cfg, isFinish, self)
   end
-  local curTipBuffID = (self.alchemyComponentInfo).show_tip_buff_id
-  self:_RefreshBuff(curTipBuffID, EAlchemyShopItemType.EAlchemyShopItemType_TipBuff, self.gratuity, (self.alchemyComponentInfo).tip_buff_finish)
-  local curExtraBuffID = (self.alchemyComponentInfo).show_extra_buff_id
-  self:_RefreshBuff(curExtraBuffID, EAlchemyShopItemType.EAlchemyShopItemType_ExtraItem, self.alchemyUp, (self.alchemyComponentInfo).extra_buff_finsih)
+  local curTipBuffID = self.alchemyComponentInfo.show_tip_buff_id
+  self:_RefreshBuff(curTipBuffID, EAlchemyShopItemType.EAlchemyShopItemType_TipBuff, self.gratuity, self.alchemyComponentInfo.tip_buff_finish)
+  local curExtraBuffID = self.alchemyComponentInfo.show_extra_buff_id
+  self:_RefreshBuff(curExtraBuffID, EAlchemyShopItemType.EAlchemyShopItemType_ExtraItem, self.alchemyUp, self.alchemyComponentInfo.extra_buff_finsih)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUP.InitUI = function(self)
-  -- function num : 0_8
+function UICN20N49AlchemyShopLevelUP:InitUI()
   self:_InitBackBtn()
   self:RefreshWidgetData()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUP.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_9
+function UICN20N49AlchemyShopLevelUP:OnUpdate(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUP._InitBackBtn = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (self.backBtns):SetData(function()
-    -- function num : 0_10_0 , upvalues : self, _ENV
-    self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(200, TimerTriggerCount.Once, function()
-      -- function num : 0_10_0_0 , upvalues : self
+function UICN20N49AlchemyShopLevelUP:_InitBackBtn()
+  self.backBtns:SetData(function()
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(200, TimerTriggerCount.Once, function()
       self:CloseDialog()
-    end
-)
-  end
-, nil, nil, true, nil, false, nil)
+    end)
+  end, nil, nil, true, nil, false, nil)
 end
-
-

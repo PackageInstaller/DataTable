@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/move_path_done_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MovePathDoneCommand", IEntityCommand)
 MovePathDoneCommand = MovePathDoneCommand
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MovePathDoneCommand.Constructor = function(self)
-  -- function num : 0_0
+function MovePathDoneCommand:Constructor()
   self._commandType = "MovePathDone"
   self._chainPath = {}
   self._elementType = 0
@@ -16,98 +9,62 @@ MovePathDoneCommand.Constructor = function(self)
   self._casterPstID = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MovePathDoneCommand.GetCommandType = function(self)
-  -- function num : 0_1
+function MovePathDoneCommand:GetCommandType()
   return self._commandType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MovePathDoneCommand.GetExecStateID = function(self, runAtClient)
-  -- function num : 0_2 , upvalues : _ENV
+function MovePathDoneCommand:GetExecStateID(runAtClient)
   if runAtClient then
-    return {GameStateID.PickUpActiveSkillTarget, GameStateID.WaitInput}
+    return {
+      GameStateID.PickUpActiveSkillTarget,
+      GameStateID.WaitInput
+    }
   else
     return GameStateID.WaitInput
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MovePathDoneCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function MovePathDoneCommand:IsExecExcluded()
   return 1
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MovePathDoneCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function MovePathDoneCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MovePathDoneCommand.GetChainPath = function(self)
-  -- function num : 0_5
+function MovePathDoneCommand:GetChainPath()
   return self._chainPath
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MovePathDoneCommand.GetElementType = function(self)
-  -- function num : 0_6
+function MovePathDoneCommand:GetElementType()
   return self._elementType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MovePathDoneCommand.SetChainPath = function(self, path)
-  -- function num : 0_7
+function MovePathDoneCommand:SetChainPath(path)
   self._chainPath = path
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MovePathDoneCommand.SetElementType = function(self, type)
-  -- function num : 0_8
+function MovePathDoneCommand:SetElementType(type)
   self._elementType = type
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MovePathDoneCommand.SetActiveSkillID = function(self, activeSkillID)
-  -- function num : 0_9
+function MovePathDoneCommand:SetActiveSkillID(activeSkillID)
   self._activeSkillID = activeSkillID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MovePathDoneCommand.GetActiveSkillID = function(self)
-  -- function num : 0_10
+function MovePathDoneCommand:GetActiveSkillID()
   return self._activeSkillID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MovePathDoneCommand.SetCasterPstID = function(self, pstID)
-  -- function num : 0_11
+function MovePathDoneCommand:SetCasterPstID(pstID)
   self._casterPstID = pstID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MovePathDoneCommand.GetCasterPstID = function(self)
-  -- function num : 0_12
+function MovePathDoneCommand:GetCasterPstID()
   return self._casterPstID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MovePathDoneCommand.ToNetMessage = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function MovePathDoneCommand:ToNetMessage()
   local msg = CEventMovePathDoneCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -117,18 +74,13 @@ MovePathDoneCommand.ToNetMessage = function(self)
   msg.ActiveSkillID = self._activeSkillID
   msg.CasterPstID = self._casterPstID
   msg.ElementType = self._elementType
-  for i,pos in ipairs(self._chainPath) do
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R7 in 'UnsetPending'
-
-    (msg.ChainPath)[#msg.ChainPath + 1] = (Vector2.Pos2Index)(pos)
+  for i, pos in ipairs(self._chainPath) do
+    msg.ChainPath[#msg.ChainPath + 1] = Vector2.Pos2Index(pos)
   end
   return msg
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MovePathDoneCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_14 , upvalues : _ENV
+function MovePathDoneCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
@@ -137,13 +89,8 @@ MovePathDoneCommand.FromNetMessage = function(self, msg)
   self._elementType = msg.ElementType
   self._activeSkillID = msg.ActiveSkillID
   self._casterPstID = msg.CasterPstID
-  ;
-  (Log.info)("MovePathDoneCommand CasterPstID: ", msg.CasterPstID, " ActiveSkillID: ", msg.ActiveSkillID)
-  for i,v in ipairs(msg.ChainPath) do
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._chainPath)[#self._chainPath + 1] = (Vector2.Index2Pos)(v)
+  Log.info("MovePathDoneCommand CasterPstID: ", msg.CasterPstID, " ActiveSkillID: ", msg.ActiveSkillID)
+  for i, v in ipairs(msg.ChainPath) do
+    self._chainPath[#self._chainPath + 1] = Vector2.Index2Pos(v)
   end
 end
-
-

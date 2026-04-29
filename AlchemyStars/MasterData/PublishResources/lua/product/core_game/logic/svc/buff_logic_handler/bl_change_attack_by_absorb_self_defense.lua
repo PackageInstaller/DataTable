@@ -1,55 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_attack_by_absorb_self_defense.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicChangeAttackByAbsorbTargetDefense", BuffLogicBase)
 BuffLogicChangeAttackByAbsorbTargetDefense = BuffLogicChangeAttackByAbsorbTargetDefense
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAttackByAbsorbTargetDefense.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeAttackByAbsorbTargetDefense:Constructor(buffInstance, logicParam)
   self._absorbDefensePercent = logicParam.absorbDefensePercent
   self._changeAttackPercent = logicParam.changeAttackPercent
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttackByAbsorbTargetDefense.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeAttackByAbsorbTargetDefense:DoLogic(notify)
   local notifyType = notify:GetNotifyType()
-  local attacker = (self._buffInstance):Entity()
+  local attacker = self._buffInstance:Entity()
   if not attacker then
     return false
   end
   if not attacker:Attributes() then
-    (Log.fatal)("ChangeAttackByAbsorbTargetDefense no attribute cmpt:", notifyType)
+    Log.fatal("ChangeAttackByAbsorbTargetDefense no attribute cmpt:", notifyType)
     return false
   end
-  local defenseValue = (attacker:Attributes()):GetAttribute("Defense")
+  local defenseValue = attacker:Attributes():GetAttribute("Defense")
   local absorbValue = defenseValue * self._absorbDefensePercent
-  ;
-  (self._buffLogicService):ChangeBaseDefence(attacker, self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix, absorbValue * -1)
+  self._buffLogicService:ChangeBaseDefence(attacker, self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix, absorbValue * -1)
   if attacker:HasTeam() then
     self:UpdateTeamDefenceLogic(attacker)
-  else
-    if attacker:HasPet() then
-      local cPet = attacker:Pet()
-      local eTeam = cPet:GetOwnerTeamEntity()
-      self:UpdateTeamDefenceLogic(eTeam)
-    end
+  elseif attacker:HasPet() then
+    local cPet = attacker:Pet()
+    local eTeam = cPet:GetOwnerTeamEntity()
+    self:UpdateTeamDefenceLogic(eTeam)
   end
-  do
-    ;
-    (Log.fatal)("ChangeAttackByAbsorbTargetDefense,absorbValue:", absorbValue)
-    local attackChangeValue = absorbValue * self._changeAttackPercent
-    ;
-    (self._buffLogicService):ChangeBaseAttack(attacker, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, attackChangeValue)
-    ;
-    (Log.fatal)("ChangeAttackByAbsorbTargetDefense,changeAttackValue:", attackChangeValue)
-    return true
-  end
+  Log.fatal("ChangeAttackByAbsorbTargetDefense,absorbValue:", absorbValue)
+  local attackChangeValue = absorbValue * self._changeAttackPercent
+  self._buffLogicService:ChangeBaseAttack(attacker, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, attackChangeValue)
+  Log.fatal("ChangeAttackByAbsorbTargetDefense,changeAttackValue:", attackChangeValue)
+  return true
 end
-
-

@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_set_grid_maintain_color_for_supply.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SetGridMaintainColorForSupply", Object)
 SkillEffectCalc_SetGridMaintainColorForSupply = SkillEffectCalc_SetGridMaintainColorForSupply
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SetGridMaintainColorForSupply.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SetGridMaintainColorForSupply:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SetGridMaintainColorForSupply.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function SkillEffectCalc_SetGridMaintainColorForSupply:DoSkillEffectCalculator(skillEffectCalcParam)
+  local boardEntity = self._world:GetBoardEntity()
   local boardComponent = boardEntity:Board()
   local skillEffectParam = skillEffectCalcParam.skillEffectParam
   local attackPos = skillEffectCalcParam.attackPos
   local targetElementType = boardComponent:GetPieceType(attackPos)
   local casterEntityId = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterEntityId)
+  local casterEntity = self._world:GetEntityByID(casterEntityId)
   if casterEntity then
     local buffCmpt = casterEntity:BuffComponent()
     if buffCmpt then
@@ -32,23 +22,18 @@ SkillEffectCalc_SetGridMaintainColorForSupply.DoSkillEffectCalculator = function
       end
     end
   end
-  do
-    ;
-    (Log.debug)("SkillEffectCalc_SetGridMaintainColorForSupply targetElementType: ", targetElementType, " attackPos: ", attackPos)
-    if targetElementType == PieceType.None then
-      return 
-    end
-    local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
-    local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-    local battleCmpt = (self._world):BattleStat()
-    local skillRangePosList = {}
-    local skillRangePos = skillEffectCalcParam.skillRange
-    for k,v in pairs(skillRangePos) do
-      (table.insert)(skillRangePosList, v)
-    end
-    local skillConvertEffectResult = SkillEffectResultSetGridMaintainColorForSupply:New(skillRangePosList, targetElementType)
-    return skillConvertEffectResult
+  Log.debug("SkillEffectCalc_SetGridMaintainColorForSupply targetElementType: ", targetElementType, " attackPos: ", attackPos)
+  if targetElementType == PieceType.None then
+    return
   end
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local battleCmpt = self._world:BattleStat()
+  local skillRangePosList = {}
+  local skillRangePos = skillEffectCalcParam.skillRange
+  for k, v in pairs(skillRangePos) do
+    table.insert(skillRangePosList, v)
+  end
+  local skillConvertEffectResult = SkillEffectResultSetGridMaintainColorForSupply:New(skillRangePosList, targetElementType)
+  return skillConvertEffectResult
 end
-
-

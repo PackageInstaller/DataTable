@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_trap_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetTrapSkill", UICustomWidget)
 UIWidgetTrapSkill = UIWidgetTrapSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetTrapSkill.Constructor = function(self)
-  -- function num : 0_0
+function UIWidgetTrapSkill:Constructor()
   self._selectIndex = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetTrapSkill.OnShow = function(self)
-  -- function num : 0_1
+function UIWidgetTrapSkill:OnShow()
   self.enableFakeInput = true
   self._root = self:GetGameObject("root")
   self._selectRect = self:GetUIComponent("RectTransform", "root")
@@ -31,246 +21,164 @@ UIWidgetTrapSkill.OnShow = function(self)
   self._isSummonLimit = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetTrapSkill.OnHide = function(self)
-  -- function num : 0_2
+function UIWidgetTrapSkill:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetTrapSkill.Init = function(self, trapEntityID)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWidgetTrapSkill:Init(trapEntityID)
   self._entityID = trapEntityID
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._selectIndex)[self._entityID] then
-    (self._selectIndex)[self._entityID] = 1
+  if not self._selectIndex[self._entityID] then
+    self._selectIndex[self._entityID] = 1
   end
-  ;
-  (self:GetGameObject()):SetActive(true)
-  self._isAutoFighting = (BattleStatHelper.GetAutoFightStat)()
-  local pos = (InnerGameHelperRender.CalcUIPos)(trapEntityID)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
+  self:GetGameObject():SetActive(true)
+  self._isAutoFighting = BattleStatHelper.GetAutoFightStat()
+  local pos = InnerGameHelperRender.CalcUIPos(trapEntityID)
   if pos then
-    (self._selectRect).anchoredPosition = pos
+    self._selectRect.anchoredPosition = pos
   end
-  local skillList = (InnerGameHelperRender.GetTrapActiveSkillList)(trapEntityID)
+  local skillList = InnerGameHelperRender.GetTrapActiveSkillList(trapEntityID)
   self:_OnRefreshTrapSkillInfo(skillList)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetTrapSkill._OnRefreshTrapSkillInfo = function(self, skillList)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._uiSkillListRoot):SpawnObjects("UIWidgetTrapSkillItem", #skillList)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (table.count)(skillList) <= 3 then
-    (self._uiSkillListRootRect).sizeDelta = Vector2(360, 120)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._uiSkillListRootRect).anchoredPosition = Vector2(-15, 56)
+function UIWidgetTrapSkill:_OnRefreshTrapSkillInfo(skillList)
+  self._uiSkillListRoot:SpawnObjects("UIWidgetTrapSkillItem", #skillList)
+  if table.count(skillList) <= 3 then
+    self._uiSkillListRootRect.sizeDelta = Vector2(360, 120)
+    self._uiSkillListRootRect.anchoredPosition = Vector2(-15, 56)
   else
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._uiSkillListRootRect).sizeDelta = Vector2(480, 120)
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._uiSkillListRootRect).anchoredPosition = Vector2(-70, 56)
+    self._uiSkillListRootRect.sizeDelta = Vector2(480, 120)
+    self._uiSkillListRootRect.anchoredPosition = Vector2(-70, 56)
   end
-  local uiSkillList = (self._uiSkillListRoot):GetAllSpawnList()
+  local uiSkillList = self._uiSkillListRoot:GetAllSpawnList()
   self.items = uiSkillList
   for i = 1, #skillList do
     local uiSkillItem = uiSkillList[i]
-    ;
-    (uiSkillItem:GetGameObject()):SetActive(i <= #skillList)
+    uiSkillItem:GetGameObject():SetActive(i <= #skillList)
     if i <= #skillList then
       uiSkillItem:Init(i, skillList[i], function(index)
-    -- function num : 0_4_0 , upvalues : self, uiSkillList, skillList
-    -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-    (self._selectIndex)[self._entityID] = index
-    for i = 1, #uiSkillList do
-      local uiSkillIem = uiSkillList[i]
-      local canCast = self:_OnGetCanCastSkill(skillList[i])
-      uiSkillIem:OnSelect(i == index, canCast)
-    end
-    self:_OnShowSelectSkill(skillList[index])
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+        self._selectIndex[self._entityID] = index
+        for i = 1, #uiSkillList do
+          local uiSkillIem = uiSkillList[i]
+          local canCast = self:_OnGetCanCastSkill(skillList[i])
+          uiSkillIem:OnSelect(i == index, canCast)
+        end
+        self:_OnShowSelectSkill(skillList[index])
+      end)
     end
   end
-  ;
-  (uiSkillList[(self._selectIndex)[self._entityID]]):buttonBgOnClick(nil)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  uiSkillList[self._selectIndex[self._entityID]]:buttonBgOnClick(nil)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetTrapSkill._OnShowSelectSkill = function(self, skillId)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIWidgetTrapSkill", input = "_OnShowSelectSkill", 
-args = {skillId}
-})
+function UIWidgetTrapSkill:_OnShowSelectSkill(skillId)
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIWidgetTrapSkill",
+    input = "_OnShowSelectSkill",
+    args = {skillId}
+  })
   self._skillId = skillId
   local cfgSkillInfo = BattleSkillCfg(self._skillId)
-  local strName = (StringTable.Get)(cfgSkillInfo.Name)
-  local showSkillCostPower = (InnerGameHelperRender.GetTrapAttribute)(self._entityID, "ShowSkillCostPower")
-  do
-    if showSkillCostPower == 1 then
-      local strSkillCostPower = (StringTable.Get)("str_trap_cost_trap_power", cfgSkillInfo.TriggerParam)
-      strName = strName .. strSkillCostPower
-    end
-    ;
-    (self._skillName):SetText(strName)
-    ;
-    (self._revolvingTextName):OnRefreshRevolving()
-    local canCastSkillCount = (InnerGameHelperRender.GetTrapCurRoundCanCastSkillCount)(self._entityID)
-    local oneRoundLimit = (InnerGameHelperRender.GetTrapAttribute)(self._entityID, "OneRoundLimit")
-    if oneRoundLimit == 1 then
-      (self._skillCD):SetText((string.format)((StringTable.Get)("str_common_cooldown_round"), cfgSkillInfo.TriggerParam))
-    else
-      if oneRoundLimit == 99 then
-        (self._skillCD):SetText((string.format)((StringTable.Get)("str_common_cooldown_round"), 0))
-      else
-        ;
-        (self._skillCD):SetText((StringTable.Get)("str_trap_can_cast_count", canCastSkillCount))
-      end
-    end
-    ;
-    (self._revolvingTextCD):OnRefreshRevolving()
-    ;
-    (self._skillDesc):SetText((StringTable.Get)(cfgSkillInfo.Desc))
-    self._canCast = self:_OnGetCanCastSkill(self._skillId)
-    -- DECOMPILER ERROR at PC105: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._btnGo).interactable = self._canCast
-    self._isSummonLimit = self:_IsSummonCountLimit(self._skillId)
-    local coreGameStateID = (GameGlobal:GetInstance()):CoreGameStateID()
-    local enableInput = (GameGlobal:GetInstance()):IsInputEnable()
-    if coreGameStateID == GameStateID.WaitInput and enableInput == true then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HideCanMoveArrow)
-    else
-      if coreGameStateID == GameStateID.PreviewActiveSkill or coreGameStateID == GameStateID.PickUpActiveSkillTarget then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.StopPreviewActiveSkill, true, false)
-      end
-    end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, self._skillId, true)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClickTrapHead, self._skillId, self._entityID, true)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TrapPowerVisible, false)
+  local strName = StringTable.Get(cfgSkillInfo.Name)
+  local showSkillCostPower = InnerGameHelperRender.GetTrapAttribute(self._entityID, "ShowSkillCostPower")
+  if showSkillCostPower == 1 then
+    local strSkillCostPower = StringTable.Get("str_trap_cost_trap_power", cfgSkillInfo.TriggerParam)
+    strName = strName .. strSkillCostPower
   end
+  self._skillName:SetText(strName)
+  self._revolvingTextName:OnRefreshRevolving()
+  local canCastSkillCount = InnerGameHelperRender.GetTrapCurRoundCanCastSkillCount(self._entityID)
+  local oneRoundLimit = InnerGameHelperRender.GetTrapAttribute(self._entityID, "OneRoundLimit")
+  if oneRoundLimit == 1 then
+    self._skillCD:SetText(string.format(StringTable.Get("str_common_cooldown_round"), cfgSkillInfo.TriggerParam))
+  elseif oneRoundLimit == 99 then
+    self._skillCD:SetText(string.format(StringTable.Get("str_common_cooldown_round"), 0))
+  else
+    self._skillCD:SetText(StringTable.Get("str_trap_can_cast_count", canCastSkillCount))
+  end
+  self._revolvingTextCD:OnRefreshRevolving()
+  self._skillDesc:SetText(StringTable.Get(cfgSkillInfo.Desc))
+  self._canCast = self:_OnGetCanCastSkill(self._skillId)
+  self._btnGo.interactable = self._canCast
+  self._isSummonLimit = self:_IsSummonCountLimit(self._skillId)
+  local coreGameStateID = GameGlobal:GetInstance():CoreGameStateID()
+  local enableInput = GameGlobal:GetInstance():IsInputEnable()
+  if coreGameStateID == GameStateID.WaitInput and enableInput == true then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HideCanMoveArrow)
+  elseif coreGameStateID == GameStateID.PreviewActiveSkill or coreGameStateID == GameStateID.PickUpActiveSkillTarget then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.StopPreviewActiveSkill, true, false)
+  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, self._skillId, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ClickTrapHead, self._skillId, self._entityID, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TrapPowerVisible, false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetTrapSkill._OnGetCanCastSkill = function(self, skillID)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWidgetTrapSkill:_OnGetCanCastSkill(skillID)
   if not skillID then
     return false
   end
   local cfgSkillInfo = BattleSkillCfg(skillID)
-  local canCastSkillCount = (InnerGameHelperRender.GetTrapCurRoundCanCastSkillCount)(self._entityID)
-  local trapPower = (InnerGameHelperRender.GetTrapAttribute)(self._entityID, "TrapPower")
+  local canCastSkillCount = InnerGameHelperRender.GetTrapCurRoundCanCastSkillCount(self._entityID)
+  local trapPower = InnerGameHelperRender.GetTrapAttribute(self._entityID, "TrapPower")
   local canCastByLimitCount = not self:_IsSummonCountLimit(skillID)
-  local canCast = (canCastSkillCount > 0 and cfgSkillInfo.TriggerParam <= trapPower and canCastByLimitCount)
-  do
-    if canCast then
-      local skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(skillID)
-      canCast = (InnerGameHelperRender.CanCastByExtraPower)(skillConfigData)
-    end
-    do return canCast end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  local canCast = 0 < canCastSkillCount and trapPower >= cfgSkillInfo.TriggerParam and canCastByLimitCount
+  if canCast then
+    local skillConfigData = ConfigServiceHelper.GetSkillConfigData(skillID)
+    canCast = InnerGameHelperRender.CanCastByExtraPower(skillConfigData)
   end
+  return canCast
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetTrapSkill._IsSummonCountLimit = function(self, skillID)
-  -- function num : 0_7 , upvalues : _ENV
+function UIWidgetTrapSkill:_IsSummonCountLimit(skillID)
   local cfgSkillInfo = BattleSkillCfg(skillID)
   local isLimit = false
-  if cfgSkillInfo.Tag and (table.icontains)(cfgSkillInfo.Tag, PetSkillTag.SummonTrap) then
-    isLimit = (InnerGameHelperRender.IsTrapSummonCountLimit)(self._entityID)
+  if cfgSkillInfo.Tag and table.icontains(cfgSkillInfo.Tag, PetSkillTag.SummonTrap) then
+    isLimit = InnerGameHelperRender.IsTrapSummonCountLimit(self._entityID)
   end
   return isLimit
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetTrapSkill.btnGoOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  if not self._canCast and self._isSummonLimit then
-    (ToastManager.ShowToast)((StringTable.Get)("str_battle_trap_summon_limit"))
+function UIWidgetTrapSkill:btnGoOnClick(go)
+  if not self._canCast then
+    if self._isSummonLimit then
+      ToastManager.ShowToast(StringTable.Get("str_battle_trap_summon_limit"))
+    end
+    return
   end
-  do return  end
-  ;
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIWidgetTrapSkill", input = "btnGoOnClick", 
-args = {}
-})
-  local skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(self._skillId)
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIWidgetTrapSkill",
+    input = "btnGoOnClick",
+    args = {}
+  })
+  local skillConfigData = ConfigServiceHelper.GetSkillConfigData(self._skillId)
   local pickUpType = skillConfigData:GetSkillPickType()
   if pickUpType == SkillPickUpType.None then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CastActiveSkillNoPet, self._skillId, self._entityID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CastActiveSkillNoPet, self._skillId, self._entityID)
+  elseif pickUpType == SkillPickUpType.Instruction or pickUpType == SkillPickUpType.PickAndDirectionInstruction then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActiveSkillPickUp, self._skillId, self._entityID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowActiveSkillChooseUI, self._skillId, pickUpType, self._entityID, self._canCast)
   else
-    if pickUpType == SkillPickUpType.Instruction or pickUpType == SkillPickUpType.PickAndDirectionInstruction then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.EnablePickUpSkillCast, false)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActiveSkillPickUp, self._skillId, self._entityID)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowActiveSkillChooseUI, self._skillId, pickUpType, self._entityID, self._canCast)
-    else
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.EnablePickUpSkillCast, false)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActiveSkillPickUp, self._skillId, self._entityID)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowActiveSkillChooseUI, self._skillId, pickUpType, self._entityID, self._canCast)
-    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActiveSkillPickUp, self._skillId, self._entityID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowActiveSkillChooseUI, self._skillId, pickUpType, self._entityID, self._canCast)
   end
-  ;
-  (self:GetGameObject()):SetActive(false)
+  self:GetGameObject():SetActive(false)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetTrapSkill.btnCloseOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UIWidgetTrapSkill:btnCloseOnClick(go)
   if self._isAutoFighting then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIWidgetTrapSkill", input = "btnCloseOnClick", 
-args = {}
-})
-  ;
-  (self:GetGameObject()):SetActive(false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowCanMoveArrow)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.StopPreviewActiveSkill, false, true)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, -1)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TrapPowerVisible, true)
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIWidgetTrapSkill",
+    input = "btnCloseOnClick",
+    args = {}
+  })
+  self:GetGameObject():SetActive(false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowCanMoveArrow)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.StopPreviewActiveSkill, false, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, -1)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TrapPowerVisible, true)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetTrapSkill.GetTrapSkillIcon = function(self, index)
-  -- function num : 0_10
-  if self.items and (self.items)[index] then
-    return ((self.items)[index]):GetGameObject("canCast")
-  end
+function UIWidgetTrapSkill:GetTrapSkillIcon(index)
+  return self.items and self.items[index] and self.items[index]:GetGameObject("canCast")
 end
-
-

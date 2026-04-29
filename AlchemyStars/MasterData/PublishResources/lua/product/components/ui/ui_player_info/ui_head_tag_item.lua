@@ -1,86 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_player_info/ui_head_tag_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHeadTagItem", UICustomWidget)
 UIHeadTagItem = UIHeadTagItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHeadTagItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHeadTagItem:OnShow(uiParams)
   self._atlas = self:GetAsset("UIPlayerInfo.spriteatlas", LoadType.SpriteAtlas)
   self:AttachEvent(GameEventType.OnChangeHeadTagBtnClick, self.OnChangeHeadTagBtnClick)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadTagItem.SetData = function(self, cfg, currTag, callback)
-  -- function num : 0_1
+function UIHeadTagItem:SetData(cfg, currTag, callback)
   self:_GetComponents()
   self._tag = cfg.Tag
   self._name = cfg.Name
   self.select = currTag == self._tag
   self._callback = callback
   self:_OnValue()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadTagItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHeadTagItem:OnHide()
   self:DetachEvent(GameEventType.OnChangeHeadTagBtnClick, self.OnChangeHeadTagBtnClick)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadTagItem._GetComponents = function(self)
-  -- function num : 0_3
+function UIHeadTagItem:_GetComponents()
   self._select = self:GetGameObject("select")
   self._nameTex = self:GetUIComponent("UILocalizationText", "name")
   self._tagRed = self:GetGameObject("tagRed")
-  ;
-  (self._tagRed):SetActive(false)
+  self._tagRed:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadTagItem._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._nameTex):SetText((StringTable.Get)(self._name))
+function UIHeadTagItem:_OnValue()
+  self._nameTex:SetText(StringTable.Get(self._name))
   self:Select(self.select)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadTagItem.bgOnClick = function(self)
-  -- function num : 0_5
+function UIHeadTagItem:bgOnClick()
   if self._callback then
-    (self._callback)(self._tag)
+    self._callback(self._tag)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadTagItem.OnChangeHeadTagBtnClick = function(self, tag)
-  -- function num : 0_6
+function UIHeadTagItem:OnChangeHeadTagBtnClick(tag)
   self:Select(tag == self._tag)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadTagItem.Select = function(self, select)
-  -- function num : 0_7
-  (self._select):SetActive(select)
+function UIHeadTagItem:Select(select)
+  self._select:SetActive(select)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadTagItem.ShowRed = function(self, red)
-  -- function num : 0_8
-  (self._tagRed):SetActive(red)
+function UIHeadTagItem:ShowRed(red)
+  self._tagRed:SetActive(red)
 end
-
-

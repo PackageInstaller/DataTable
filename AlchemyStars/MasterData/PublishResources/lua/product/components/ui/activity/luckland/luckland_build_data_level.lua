@@ -1,72 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/luckland_build_data_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LuckLandBuildDataLevel", Object)
 LuckLandBuildDataLevel = LuckLandBuildDataLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandBuildDataLevel.Constructor = function(self, missionID)
-  -- function num : 0_0
+function LuckLandBuildDataLevel:Constructor(missionID)
   self._drawCount = 4
   self._buildDatas = {}
   self._missionID = missionID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildDataLevel._InitBuilds = function(self, missionID)
-  -- function num : 0_1 , upvalues : _ENV
-  self._missionCfg = (Cfg.cfg_luckland_client_mission)[missionID]
-  if self._missionCfg and (self._missionCfg).BuildList then
-    for i = 1, #(self._missionCfg).BuildList do
-      self:AddBuildData(((self._missionCfg).BuildList)[i])
+function LuckLandBuildDataLevel:_InitBuilds(missionID)
+  self._missionCfg = Cfg.cfg_luckland_client_mission[missionID]
+  if self._missionCfg and self._missionCfg.BuildList then
+    for i = 1, #self._missionCfg.BuildList do
+      self:AddBuildData(self._missionCfg.BuildList[i])
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildDataLevel.Cfg = function(self)
-  -- function num : 0_2
+function LuckLandBuildDataLevel:Cfg()
   return self._missionCfg
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildDataLevel.Reset = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (table.clear)(self._buildDatas)
+function LuckLandBuildDataLevel:Reset()
+  table.clear(self._buildDatas)
   self:_InitBuilds(self._missionID)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildDataLevel.AddBuildData = function(self, id)
-  -- function num : 0_4 , upvalues : _ENV
-  (table.insert)(self._buildDatas, LuckLandBuildData:New(id))
+function LuckLandBuildDataLevel:AddBuildData(id)
+  table.insert(self._buildDatas, LuckLandBuildData:New(id))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildDataLevel.TotalCount = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  return (table.count)(self._buildDatas)
+function LuckLandBuildDataLevel:TotalCount()
+  return table.count(self._buildDatas)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildDataLevel.GetBuildDataByIndex = function(self, index)
-  -- function num : 0_6
-  return (self._buildDatas)[index]
+function LuckLandBuildDataLevel:GetBuildDataByIndex(index)
+  return self._buildDatas[index]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildDataLevel.GetBuildDataByID = function(self, id)
-  -- function num : 0_7 , upvalues : _ENV
-  for _,buildData in pairs(self._buildDatas) do
+function LuckLandBuildDataLevel:GetBuildDataByID(id)
+  for _, buildData in pairs(self._buildDatas) do
     if buildData:ID() == id then
       return buildData
     end
@@ -74,11 +46,8 @@ LuckLandBuildDataLevel.GetBuildDataByID = function(self, id)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildDataLevel.MainBuildLevel = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  for _,buildData in pairs(self._buildDatas) do
+function LuckLandBuildDataLevel:MainBuildLevel()
+  for _, buildData in pairs(self._buildDatas) do
     if buildData:Type() == LuckLandBuildingType.Main then
       return buildData:GetCurLevel(), buildData
     end
@@ -86,11 +55,8 @@ LuckLandBuildDataLevel.MainBuildLevel = function(self)
   return 0, nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildDataLevel.CampFireBuildLevel = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  for _,buildData in pairs(self._buildDatas) do
+function LuckLandBuildDataLevel:CampFireBuildLevel()
+  for _, buildData in pairs(self._buildDatas) do
     if buildData:Type() == LuckLandBuildingType.CampFire then
       return buildData:GetCurLevel(), buildData
     end
@@ -98,102 +64,91 @@ LuckLandBuildDataLevel.CampFireBuildLevel = function(self)
   return 0, nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildDataLevel.DrawCards = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function LuckLandBuildDataLevel:DrawCards()
   local level, mainBuildData = self:MainBuildLevel()
   if level <= 0 or not mainBuildData then
-    return 
+    return
   end
   local cfg = mainBuildData:Cfg()
   local cardPool = cfg.CardPool
   if not cardPool then
-    (Log.exception)("There is no corresponding card pool for buildings of this level", mainBuildData:ID(), level)
-    return 
+    Log.exception("There is no corresponding card pool for buildings of this level", mainBuildData:ID(), level)
+    return
   end
   local resultIDs = {}
   local totalWight = 0
   local wightArray = {}
-  for _,cardPoolID in pairs(cardPool) do
-    local cardPoolCfg = (Cfg.cfg_luckland_client_card_pool)[cardPoolID]
+  for _, cardPoolID in pairs(cardPool) do
+    local cardPoolCfg = Cfg.cfg_luckland_client_card_pool[cardPoolID]
     if cardPoolCfg then
       local t = {}
-      t.wight = {totalWight, totalWight + cardPoolCfg.Wight}
+      t.wight = {
+        totalWight,
+        totalWight + cardPoolCfg.Wight
+      }
       t.cards = cardPoolCfg.Cards
-      ;
-      (table.insert)(wightArray, t)
+      table.insert(wightArray, t)
       totalWight = totalWight + cardPoolCfg.Wight
     end
   end
   for i = 1, self._drawCount do
-    local cards = nil
-    local randomWight = (math.random)(1, totalWight)
+    local cards
+    local randomWight = math.random(1, totalWight)
     for j = 1, #wightArray do
-      if ((wightArray[j]).wight)[1] < randomWight and randomWight <= ((wightArray[j]).wight)[2] then
-        cards = (wightArray[j]).cards
+      if randomWight > wightArray[j].wight[1] and randomWight <= wightArray[j].wight[2] then
+        cards = wightArray[j].cards
         break
       end
     end
-    do
-      if cards then
-        local tempCards = {}
-        local curCardDatas = (LuckLandData:GetInstance()):CurCardDatas()
-        for _,id in pairs(cards) do
-          local cfg = (Cfg.cfg_luckland_client_card)[id]
-          if cfg and cfg.IsUnique and cfg.IsUnique == 1 and curCardDatas and not curCardDatas:ContainPet(id) then
-            (table.insert)(tempCards, id)
+    if cards then
+      local tempCards = {}
+      local curCardDatas = LuckLandData:GetInstance():CurCardDatas()
+      for _, id in pairs(cards) do
+        local cfg = Cfg.cfg_luckland_client_card[id]
+        if cfg then
+          if cfg.IsUnique and cfg.IsUnique == 1 then
+            if curCardDatas and not curCardDatas:ContainPet(id) then
+              table.insert(tempCards, id)
+            end
+          else
+            table.insert(tempCards, id)
           end
-          ;
-          (table.insert)(tempCards, id)
         end
-        ;
-        (table.insert)(resultIDs, self:_DrawCardInPool(tempCards, resultIDs))
       end
-      do
-        -- DECOMPILER ERROR at PC129: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+      table.insert(resultIDs, self:_DrawCardInPool(tempCards, resultIDs))
     end
   end
   local tempTable = {}
-  for _,cardID in pairs(resultIDs) do
-    (table.insert)(tempTable, UILuckLandCardData:New(nil, cardID))
+  for _, cardID in pairs(resultIDs) do
+    table.insert(tempTable, UILuckLandCardData:New(nil, cardID))
   end
   return tempTable
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildDataLevel._DrawCardInPool = function(self, IDs, filterIDs)
-  -- function num : 0_11 , upvalues : _ENV
+function LuckLandBuildDataLevel:_DrawCardInPool(IDs, filterIDs)
   if #IDs < self._drawCount then
-    (Log.fatal)("Insufficient card pool")
+    Log.fatal("Insufficient card pool")
   end
-  local contain = function(id)
-    -- function num : 0_11_0 , upvalues : filterIDs, _ENV
+  
+  local function contain(id)
     if filterIDs then
-      for _,filterID in pairs(filterIDs) do
+      for _, filterID in pairs(filterIDs) do
         if filterID == id then
           return true
         end
       end
     end
-    do
-      return false
-    end
+    return false
   end
-
+  
   local t = {}
-  for _,ID in pairs(IDs) do
+  for _, ID in pairs(IDs) do
     if not contain(ID) then
-      (table.insert)(t, ID)
+      table.insert(t, ID)
     end
   end
-  if #t >= 1 then
-    return t[(math.random)(1, #t)]
+  if 1 <= #t then
+    return t[math.random(1, #t)]
   end
   return nil
 end
-
-

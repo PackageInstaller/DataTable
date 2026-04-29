@@ -1,33 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/player/player_behaviors/bounce_player_behavior_animation.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("bounce_player_behavior_base")
 _class("BouncePlayerBeHaviorAnimation", BouncePlayerBeHaviorBase)
 BouncePlayerBeHaviorAnimation = BouncePlayerBeHaviorAnimation
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BouncePlayerBeHaviorAnimation.Constructor = function(self)
-  -- function num : 0_0
+function BouncePlayerBeHaviorAnimation:Constructor()
   self._animator = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorAnimation.Name = function(self)
-  -- function num : 0_1
+function BouncePlayerBeHaviorAnimation:Name()
   return "BouncePlayerBeHaviorAnimation"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorAnimation.GetAnimation = function(self)
-  -- function num : 0_2
+function BouncePlayerBeHaviorAnimation:GetAnimation()
   if self._animator then
     return self._animator
   end
-  local view = (self.player):GetBehavior("BouncePlayerBeHaviorView")
+  local view = self.player:GetBehavior("BouncePlayerBeHaviorView")
   if view == nil then
     return nil
   end
@@ -39,38 +26,27 @@ BouncePlayerBeHaviorAnimation.GetAnimation = function(self)
   return self._animator
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorAnimation.PlayAnimation = function(self, animName)
-  -- function num : 0_3
+function BouncePlayerBeHaviorAnimation:PlayAnimation(animName)
   self._animName = animName
   local animator = self:GetAnimation()
   animator:Play(animName)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorAnimation.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_4 , upvalues : _ENV
+function BouncePlayerBeHaviorAnimation:OnUpdate(deltaTimeMS)
   if not self._animName or not self._animator then
-    return 
+    return
   end
-  if (self._animator):IsInTransition(0) then
-    (Log.error)("[bounce] IsInTransition")
-    return 
+  if self._animator:IsInTransition(0) then
+    Log.error("[bounce] IsInTransition")
+    return
   end
-  local curAniState = (self._animator):GetCurrentAnimatorStateInfo(0)
+  local curAniState = self._animator:GetCurrentAnimatorStateInfo(0)
   if curAniState and not curAniState:IsName(self._animName) then
     self:PlayAnimation(self._animName)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorAnimation.OnRelease = function(self)
-  -- function num : 0_5
+function BouncePlayerBeHaviorAnimation:OnRelease()
   self._animator = nil
   self._animName = nil
 end
-
-

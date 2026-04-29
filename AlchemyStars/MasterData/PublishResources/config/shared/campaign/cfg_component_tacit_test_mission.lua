@@ -1,34 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_tacit_test_mission.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, CampaignMissionId = 2, NeedMission = 3, UnlockTime = 4, StoryMissionId = 5, ComponentID = 6, TaskList = 7, ThreeStarItemId = 8}
-local common = {"2023-10-24 05:00:00"}
+local key = {
+  ID = 1,
+  CampaignMissionId = 2,
+  NeedMission = 3,
+  UnlockTime = 4,
+  StoryMissionId = 5,
+  ComponentID = 6,
+  TaskList = 7,
+  ThreeStarItemId = 8
+}
+local common = {
+  "2023-10-24 05:00:00"
+}
 local config = {
-{1, 1, 0, "2023-10-20 09:00:00", 0, 502711706, 
-{5006005, 5006006}
-, 7000500}
-, 
-{2, 2, 0, "2023-10-21 05:00:00", 0, 502711706, 
-{5006007, 5006008}
-, 7000501}
-, 
-{3, 3, 0, "2023-10-22 05:00:00", 0, 502711706, 
-{5006009, 5006010}
-, 7000502}
-, 
-{4, 4, 0, "2023-10-23 05:00:00", 0, 502711706, 
-{5006011, 5006012}
-, 7000503}
-, 
-{5, 5, 0, common[1], 0, 502711706, 
-{5006013, 5006014}
-, 7000504}
-, 
-{6, 6, 1, common[1], 50590107, 502711706, 
-{5006015, 5006016}
-, 7000505}
+  {
+    1,
+    1,
+    0,
+    "2023-10-20 09:00:00",
+    0,
+    502711706,
+    {5006005, 5006006},
+    7000500
+  },
+  {
+    2,
+    2,
+    0,
+    "2023-10-21 05:00:00",
+    0,
+    502711706,
+    {5006007, 5006008},
+    7000501
+  },
+  {
+    3,
+    3,
+    0,
+    "2023-10-22 05:00:00",
+    0,
+    502711706,
+    {5006009, 5006010},
+    7000502
+  },
+  {
+    4,
+    4,
+    0,
+    "2023-10-23 05:00:00",
+    0,
+    502711706,
+    {5006011, 5006012},
+    7000503
+  },
+  {
+    5,
+    5,
+    0,
+    common[1],
+    0,
+    502711706,
+    {5006013, 5006014},
+    7000504
+  },
+  {
+    6,
+    6,
+    1,
+    common[1],
+    50590107,
+    502711706,
+    {5006015, 5006016},
+    7000505
+  }
 }
 return config, "ID", key
-

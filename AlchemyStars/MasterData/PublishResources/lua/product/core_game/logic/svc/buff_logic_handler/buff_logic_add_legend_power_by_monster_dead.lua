@@ -1,83 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_legend_power_by_monster_dead.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddLegendPowerByMonsterDead", BuffLogicBase)
 BuffLogicAddLegendPowerByMonsterDead = BuffLogicAddLegendPowerByMonsterDead
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddLegendPowerByMonsterDead.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddLegendPowerByMonsterDead:Constructor(buffInstance, logicParam)
   self._addValue = logicParam.addValue or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddLegendPowerByMonsterDead.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local svc = (self._world):GetService("BuffLogic")
+function BuffLogicAddLegendPowerByMonsterDead:DoLogic(notify)
+  local svc = self._world:GetService("BuffLogic")
   local addLayer = 0
   local casterEntity = notify:GetAttackerEntity()
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   if not damageResultArray or #damageResultArray == 0 then
-    return 
+    return
   end
   local targetEntityList = {}
-  for _,v in ipairs(damageResultArray) do
+  for _, v in ipairs(damageResultArray) do
     local damageResult = v
     local targetEntityID = damageResult:GetTargetID()
-    local targetEntity = (self._world):GetEntityByID(targetEntityID)
-    if targetEntity and targetEntity:HasMonsterID() and not (table.intable)(targetEntityList, targetEntity) then
-      (table.insert)(targetEntityList, targetEntity)
+    local targetEntity = self._world:GetEntityByID(targetEntityID)
+    if targetEntity and targetEntity:HasMonsterID() and not table.intable(targetEntityList, targetEntity) then
+      table.insert(targetEntityList, targetEntity)
     end
   end
-  for _,entity in ipairs(targetEntityList) do
-    if (entity:Attributes()):GetCurrentHP() == 0 then
+  for _, entity in ipairs(targetEntityList) do
+    if entity:Attributes():GetCurrentHP() == 0 then
       addLayer = addLayer + 1
     end
   end
   if addLayer == 0 then
-    return 
+    return
   end
   local petPstIDComponent = casterEntity:PetPstID()
   local petPstID = petPstIDComponent:GetPstID()
   local curAttributeCmpt = casterEntity:Attributes()
   local curLegendPower = curAttributeCmpt:GetAttribute("LegendPower")
-  local newPower = curLegendPower + self._addValue * (addLayer)
+  local newPower = curLegendPower + self._addValue * addLayer
   if newPower < 0 then
     newPower = 0
   end
   local ready = false
-  local activeSkillID = (casterEntity:SkillInfo()):GetActiveSkillID()
-  local configService = (self._world):GetService("Config")
+  local activeSkillID = casterEntity:SkillInfo():GetActiveSkillID()
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(activeSkillID)
-  local blsvc = (self._world):GetService("BuffLogic")
+  local blsvc = self._world:GetService("BuffLogic")
   local requireNTPowerReady = false
-  if skillConfigData:GetSkillTriggerParam() <= newPower then
+  if newPower >= skillConfigData:GetSkillTriggerParam() then
     blsvc:ChangePetActiveSkillReady(casterEntity, 1)
     ready = true
     local notify = NTPowerReady:New(casterEntity)
-    ;
-    ((self._world):GetService("Trigger")):Notify(notify)
+    self._world:GetService("Trigger"):Notify(notify)
     requireNTPowerReady = true
   else
-    do
-      blsvc:ChangePetActiveSkillReady(casterEntity, 0)
-      ready = false
-      if BattleConst.LegendPowerMax < newPower then
-        newPower = BattleConst.LegendPowerMax
-      end
-      curAttributeCmpt:Modify("LegendPower", newPower)
-      local buffResult = BuffResultAddLegendPowerByMonsterDead:New(petPstID, newPower, ready)
-      if requireNTPowerReady then
-        buffResult:RequireNTPowerReady(casterEntity:GetID())
-      end
-      return buffResult
-    end
+    blsvc:ChangePetActiveSkillReady(casterEntity, 0)
+    ready = false
   end
+  if newPower > BattleConst.LegendPowerMax then
+    newPower = BattleConst.LegendPowerMax
+  end
+  curAttributeCmpt:Modify("LegendPower", newPower)
+  local buffResult = BuffResultAddLegendPowerByMonsterDead:New(petPstID, newPower, ready)
+  if requireNTPowerReady then
+    buffResult:RequireNTPowerReady(casterEntity:GetID())
+  end
+  return buffResult
 end
-
-

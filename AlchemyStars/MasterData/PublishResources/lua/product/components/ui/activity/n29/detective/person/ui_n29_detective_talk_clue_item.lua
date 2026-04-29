@@ -1,59 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/person/ui_n29_detective_talk_clue_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN29DetectiveTalkClueItem", UICustomWidget)
 UIN29DetectiveTalkClueItem = UIN29DetectiveTalkClueItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29DetectiveTalkClueItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN29DetectiveTalkClueItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveTalkClueItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIN29DetectiveTalkClueItem:InitWidget()
   self._select = self:GetGameObject("select")
   self._clue = self:GetUIComponent("RawImageLoader", "Clue")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveTalkClueItem.SetData = function(self, clueId, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN29DetectiveTalkClueItem:SetData(clueId, callback)
   self.clueId = clueId
   self.callback = callback
-  local cfg = (Cfg.cfg_component_detective_item)[self.clueId]
-  ;
-  (self._clue):LoadImage(cfg.Icon)
+  local cfg = Cfg.cfg_component_detective_item[self.clueId]
+  self._clue:LoadImage(cfg.Icon)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveTalkClueItem.SetSelected = function(self, isSelected)
-  -- function num : 0_3
-  (self._select):SetActive(isSelected)
+function UIN29DetectiveTalkClueItem:SetSelected(isSelected)
+  self._select:SetActive(isSelected)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveTalkClueItem.ClueOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN29DetectiveTalkClueItem:ClueOnClick()
   if self.callback then
-    (self.callback)(self)
-    ;
-    (Log.fatal)("点击线索" .. self.clueId)
+    self.callback(self)
+    Log.fatal("点击线索" .. self.clueId)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveTalkClueItem.GetClue = function(self)
-  -- function num : 0_5
+function UIN29DetectiveTalkClueItem:GetClue()
   return self.clueId
 end
-
-

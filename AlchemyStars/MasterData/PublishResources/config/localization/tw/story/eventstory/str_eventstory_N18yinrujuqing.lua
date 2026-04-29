@@ -1,8 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/story/eventstory/str_eventstory_N18yinrujuqing.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {ui_story_5026_50263301_1_dialog_content = "不錯，不錯。", ui_story_5026_50263301_2_dialog_content = "無論風景還是氣候都無可挑剔。這裡真是絕佳的寶地。", ui_story_5026_50263301_3_dialog_content = "PlayerName，又在欣賞你的家園嗎？", ui_story_5026_50263301_4_dialog_content = "算是吧。本來要去釣魚的，結果因為路上的風景實在太美，我就走神了。", ui_story_5026_50263301_5_dialog_content = "反應過來的時候，已經在這裡站了二十分鐘哩。", ui_story_5026_50263301_6_dialog_content = "既然你難得這麼閒，不如......", ui_story_5026_50263301_7_dialog_content = "嗯？妳又有什麼提案嗎，薇絲？", ui_story_5026_50263301_8_dialog_content = "你看這個！", ui_story_5026_50263301_9_dialog_content = "這是「<color=#FFB400>攜行探測器</color>」？", ui_story_5026_50263301_10_dialog_content = "我記得之前我們用它來探索空庭裡的寶物來著。", ui_story_5026_50263301_11_dialog_content = "雖然大部分收穫都是一些奇奇怪怪的雜物......比如丘布們留下的昆蟲標本......", ui_story_5026_50263301_12_dialog_content = "是的，你還被嚇得蹦出好遠呢。", ui_story_5026_50263301_13_dialog_content = "所以我們要再次開啟奇妙的空庭探寶之旅嗎？", ui_story_5026_50263301_14_dialog_content = "哈哈！你果然很懂我！", ui_story_5026_50263301_15_dialog_content = "我也是臨時起意啦。剛才在整理巨像倉庫的時候，發現了這個探測器。", ui_story_5026_50263301_16_dialog_content = "「空庭這麼大，我們肯定還有好多地方沒有探查過！說不定會有祕密寶藏！」", ui_story_5026_50263301_17_dialog_content = "我這麼想著，不知不覺就已經拿著它走到這裡來了！", ui_story_5026_50263301_18_dialog_content = "薇絲也和我一樣容易走神呢。", ui_story_5026_50263301_19_dialog_content = "這叫對未知的探索欲啦！難道PlayerName不想多深入了解一下這裡嗎？", ui_story_5026_50263301_20_dialog_content = "我當然想。實際上，我也在一直在回味上次的冒險。", ui_story_5026_50263301_21_dialog_content = "對我來說，探寶時找到的所有物品都是我的「寶物」。", ui_story_5026_50263301_22_dialog_content = "它們屬於這片土地，或者屬於曾居住在此的空裔們。", ui_story_5026_50263301_23_dialog_content = "而現在，它們成為了我和過去的紐帶，讓我跨越時間與空間......", ui_story_5026_50263301_24_dialog_content = "雖說這些物品都不會說話，但它們卻比任何故事傳說都引人入勝。", ui_story_5026_50263301_25_dialog_content = "PlayerName......", ui_story_5026_50263301_26_dialog_content = "……", ui_story_5026_50263301_27_dialog_content = "開始吧！讓我們好好探索一下這片地方！", ui_story_5026_50263301_28_dialog_content = "好！", ui_story_5026_50263301_29_dialog_content = "還記得這個「攜行探測器」要如何使用嗎？", ui_story_5026_50263301_30_dialog_content = "當然記得。走吧。", ui_story_5026_50263301_31_dialog_content = "這次要從哪裡開始呢？"}
+local config = {
+  ui_story_5026_50263301_1_dialog_content = "不錯，不錯。",
+  ui_story_5026_50263301_2_dialog_content = "無論風景還是氣候都無可挑剔。這裡真是絕佳的寶地。",
+  ui_story_5026_50263301_3_dialog_content = "PlayerName，又在欣賞你的家園嗎？",
+  ui_story_5026_50263301_4_dialog_content = "算是吧。本來要去釣魚的，結果因為路上的風景實在太美，我就走神了。",
+  ui_story_5026_50263301_5_dialog_content = "反應過來的時候，已經在這裡站了二十分鐘哩。",
+  ui_story_5026_50263301_6_dialog_content = "既然你難得這麼閒，不如......",
+  ui_story_5026_50263301_7_dialog_content = "嗯？妳又有什麼提案嗎，薇絲？",
+  ui_story_5026_50263301_8_dialog_content = "你看這個！",
+  ui_story_5026_50263301_9_dialog_content = "這是「<color=#FFB400>攜行探測器</color>」？",
+  ui_story_5026_50263301_10_dialog_content = "我記得之前我們用它來探索空庭裡的寶物來著。",
+  ui_story_5026_50263301_11_dialog_content = "雖然大部分收穫都是一些奇奇怪怪的雜物......比如丘布們留下的昆蟲標本......",
+  ui_story_5026_50263301_12_dialog_content = "是的，你還被嚇得蹦出好遠呢。",
+  ui_story_5026_50263301_13_dialog_content = "所以我們要再次開啟奇妙的空庭探寶之旅嗎？",
+  ui_story_5026_50263301_14_dialog_content = "哈哈！你果然很懂我！",
+  ui_story_5026_50263301_15_dialog_content = "我也是臨時起意啦。剛才在整理巨像倉庫的時候，發現了這個探測器。",
+  ui_story_5026_50263301_16_dialog_content = "「空庭這麼大，我們肯定還有好多地方沒有探查過！說不定會有祕密寶藏！」",
+  ui_story_5026_50263301_17_dialog_content = "我這麼想著，不知不覺就已經拿著它走到這裡來了！",
+  ui_story_5026_50263301_18_dialog_content = "薇絲也和我一樣容易走神呢。",
+  ui_story_5026_50263301_19_dialog_content = "這叫對未知的探索欲啦！難道PlayerName不想多深入了解一下這裡嗎？",
+  ui_story_5026_50263301_20_dialog_content = "我當然想。實際上，我也在一直在回味上次的冒險。",
+  ui_story_5026_50263301_21_dialog_content = "對我來說，探寶時找到的所有物品都是我的「寶物」。",
+  ui_story_5026_50263301_22_dialog_content = "它們屬於這片土地，或者屬於曾居住在此的空裔們。",
+  ui_story_5026_50263301_23_dialog_content = "而現在，它們成為了我和過去的紐帶，讓我跨越時間與空間......",
+  ui_story_5026_50263301_24_dialog_content = "雖說這些物品都不會說話，但它們卻比任何故事傳說都引人入勝。",
+  ui_story_5026_50263301_25_dialog_content = "PlayerName......",
+  ui_story_5026_50263301_26_dialog_content = "……",
+  ui_story_5026_50263301_27_dialog_content = "開始吧！讓我們好好探索一下這片地方！",
+  ui_story_5026_50263301_28_dialog_content = "好！",
+  ui_story_5026_50263301_29_dialog_content = "還記得這個「攜行探測器」要如何使用嗎？",
+  ui_story_5026_50263301_30_dialog_content = "當然記得。走吧。",
+  ui_story_5026_50263301_31_dialog_content = "這次要從哪裡開始呢？"
+}
 return config
-

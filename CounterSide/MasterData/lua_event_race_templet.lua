@@ -6,7 +6,7 @@ L1_1.m_EventRaceID = "DATE_KOR_EVENT_RACE_SPORTS_V1"
 L1_1.m_OpenTag = "TAG_COMMON_EVENT_TAB_NO_USE"
 L1_1.m_DateStrID = "DATE_EVENT_BANNER_OLD"
 L1_1.m_EventRaceName = "SI_EVENT_RACE_SPORTS_V1"
-L1_1.m_EventRaceName_KOR = "\237\140\128 \235\140\128\237\149\173 \236\157\180\236\150\180\235\139\172\235\166\172\234\184\176"
+L1_1.m_EventRaceName_KOR = "팀 대항 이어달리기"
 L1_1.m_RaceTryItemID = 627
 L1_1.m_RaceTryItemValue = 1
 L1_1.m_TameAUnitImageType = "SKIN"
@@ -41,20 +41,20 @@ L1_1.m_TeamLoseRewardItemType = "RT_MISC"
 L1_1.m_TeamLoseRewardItemID = 101
 L1_1.m_TeamLoseRewardItemValue = 80
 L1_1.m_TeamWinMailTitle = "SI_EVENT_RACE_TEAM_WIN_MAIL_TITLE"
-L1_1.m_TeamWinMailTitle_KOR = "\237\140\128 \236\138\185\235\166\172 \235\179\180\236\131\129 \236\167\128\234\184\137"
+L1_1.m_TeamWinMailTitle_KOR = "팀 승리 보상 지급"
 L1_1.m_TeamWinMailDesc = "SI_EVENT_RACE_TEAM_WIN_MAIL_DESC"
-L1_1.m_TeamWinMailDesc_KOR = "<color=#ffcf3b>{0}</color>\236\157\188\236\176\168 \234\178\189\236\163\188 \234\178\176\234\179\188! \237\153\141\237\140\128 {1} VS \236\178\173\237\140\128 {2}"
+L1_1.m_TeamWinMailDesc_KOR = "<color=#ffcf3b>{0}</color>일차 경주 결과! 홍팀 {1} VS 청팀 {2}"
 L1_1.m_TeamLoseMailTitle = "SI_EVENT_RACE_TEAM_LOSE_MAIL_TITLE"
-L1_1.m_TeamLoseMailTitle_KOR = "\237\140\128 \237\140\168\235\176\176 \235\179\180\236\131\129 \236\167\128\234\184\137"
+L1_1.m_TeamLoseMailTitle_KOR = "팀 패배 보상 지급"
 L1_1.m_TeamLoseMailDesc = "SI_EVENT_RACE_TEAM_LOSE_MAIL_TITLE_DESC"
-L1_1.m_TeamLoseMailDesc_KOR = "<color=#ffcf3b>{0}</color>\236\157\188\236\176\168 \234\178\189\236\163\188 \234\178\176\234\179\188! \237\153\141\237\140\128 {1} VS \236\178\173\237\140\128 {2}"
+L1_1.m_TeamLoseMailDesc_KOR = "<color=#ffcf3b>{0}</color>일차 경주 결과! 홍팀 {1} VS 청팀 {2}"
 L2_1 = {}
 L2_1.m_EventID = 4002
 L2_1.m_EventRaceID = "DATE_GLOBAL_EVENT_RACE_SPORTS_V1"
 L2_1.m_OpenTag = "TAG_COMMON_EVENT_TAB_NO_USE"
 L2_1.m_DateStrID = "DATE_EVENT_BANNER_OLD"
 L2_1.m_EventRaceName = "SI_EVENT_RACE_SPORTS_V1"
-L2_1.m_EventRaceName_KOR = "\237\140\128 \235\140\128\237\149\173 \236\157\180\236\150\180\235\139\172\235\166\172\234\184\176"
+L2_1.m_EventRaceName_KOR = "팀 대항 이어달리기"
 L2_1.m_RaceTryItemID = 627
 L2_1.m_RaceTryItemValue = 1
 L2_1.m_TameAUnitImageType = "SKIN"
@@ -89,20 +89,20 @@ L2_1.m_TeamLoseRewardItemType = "RT_MISC"
 L2_1.m_TeamLoseRewardItemID = 101
 L2_1.m_TeamLoseRewardItemValue = 80
 L2_1.m_TeamWinMailTitle = "SI_EVENT_RACE_TEAM_WIN_MAIL_TITLE"
-L2_1.m_TeamWinMailTitle_KOR = "\237\140\128 \236\138\185\235\166\172 \235\179\180\236\131\129 \236\167\128\234\184\137"
+L2_1.m_TeamWinMailTitle_KOR = "팀 승리 보상 지급"
 L2_1.m_TeamWinMailDesc = "SI_EVENT_RACE_TEAM_WIN_MAIL_DESC"
-L2_1.m_TeamWinMailDesc_KOR = "<color=#ffcf3b>{0}</color>\236\157\188\236\176\168 \234\178\189\236\163\188 \234\178\176\234\179\188! \237\153\141\237\140\128 {1} VS \236\178\173\237\140\128 {2}"
+L2_1.m_TeamWinMailDesc_KOR = "<color=#ffcf3b>{0}</color>일차 경주 결과! 홍팀 {1} VS 청팀 {2}"
 L2_1.m_TeamLoseMailTitle = "SI_EVENT_RACE_TEAM_LOSE_MAIL_TITLE"
-L2_1.m_TeamLoseMailTitle_KOR = "\237\140\128 \237\140\168\235\176\176 \235\179\180\236\131\129 \236\167\128\234\184\137"
+L2_1.m_TeamLoseMailTitle_KOR = "팀 패배 보상 지급"
 L2_1.m_TeamLoseMailDesc = "SI_EVENT_RACE_TEAM_LOSE_MAIL_TITLE_DESC"
-L2_1.m_TeamLoseMailDesc_KOR = "<color=#ffcf3b>{0}</color>\236\157\188\236\176\168 \234\178\189\236\163\188 \234\178\176\234\179\188! \237\153\141\237\140\128 {1} VS \236\178\173\237\140\128 {2}"
+L2_1.m_TeamLoseMailDesc_KOR = "<color=#ffcf3b>{0}</color>일차 경주 결과! 홍팀 {1} VS 청팀 {2}"
 L3_1 = {}
 L3_1.m_EventID = 4003
 L3_1.m_EventRaceID = "KOR_EVENT_RACE_SPORTS_V1"
 L3_1.m_OpenTag = "TAG_KOR_EVENT_RACE_SPORTS_V2"
 L3_1.m_DateStrID = "DATE_KOR_EVENT_RACE_SPORTS_V2"
 L3_1.m_EventRaceName = "SI_EVENT_RACE_SPORTS_V1"
-L3_1.m_EventRaceName_KOR = "\237\140\128 \235\140\128\237\149\173 \236\157\180\236\150\180\235\139\172\235\166\172\234\184\176"
+L3_1.m_EventRaceName_KOR = "팀 대항 이어달리기"
 L3_1.m_RaceTryItemID = 627
 L3_1.m_RaceTryItemValue = 500
 L3_1.m_TameAUnitImageType = "SKIN"

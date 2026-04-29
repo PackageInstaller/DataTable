@@ -1,33 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/dispatch/ui_n34_dispatch_terminal_log_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN34DispatchTerminalLogItem", UICustomWidget)
 UIN34DispatchTerminalLogItem = UIN34DispatchTerminalLogItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN34DispatchTerminalLogItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN34DispatchTerminalLogItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchTerminalLogItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIN34DispatchTerminalLogItem:InitWidget()
   self.logTxt = self:GetUIComponent("UILocalizationText", "LogTxt")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchTerminalLogItem.SetData = function(self, data)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN34DispatchTerminalLogItem:SetData(data)
   if not data then
-    return 
+    return
   end
-  ;
-  (self.logTxt):SetText((StringTable.Get)(data.ChatId))
+  self.logTxt:SetText(StringTable.Get(data.ChatId))
 end
-
-

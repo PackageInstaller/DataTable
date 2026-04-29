@@ -1,55 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_skill_final_by_hp_diff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillFinalByHPDiff", BuffLogicBase)
 BuffLogicChangeSkillFinalByHPDiff = BuffLogicChangeSkillFinalByHPDiff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillFinalByHPDiff.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeSkillFinalByHPDiff:Constructor(buffInstance, logicParam)
   self._maxValue = logicParam.maxValue
   self._a = logicParam.a
   self._b = logicParam.b
   self._effectList = logicParam.effectList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalByHPDiff.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._buffInstance)._effectList = self._effectList
+function BuffLogicChangeSkillFinalByHPDiff:DoLogic(notify)
+  self._buffInstance._effectList = self._effectList
   local attackEntity = notify:GetAttackerEntity()
   local targetEntity = notify:GetDefenderEntity()
-  local battleSvc = (self._world):GetService("Battle")
+  local battleSvc = self._world:GetService("Battle")
   local atkHP, atkMaxHP = battleSvc:GetCasterHP(attackEntity)
   local defHP, defMaxHP = battleSvc:GetCasterHP(targetEntity)
   local atkHPPer = atkHP / atkMaxHP
   local defHPPer = defHP / defMaxHP
-  local hpPerDiff = (math.abs)(atkHPPer - defHPPer)
-  local value = (math.min)(self._maxValue, self._a * hpPerDiff + self._b)
-  if targetEntity:MonsterID() and (targetEntity:MonsterID()):IsWorldBoss() then
+  local hpPerDiff = math.abs(atkHPPer - defHPPer)
+  local value = math.min(self._maxValue, self._a * hpPerDiff + self._b)
+  if targetEntity:MonsterID() and targetEntity:MonsterID():IsWorldBoss() then
     value = self._maxValue
   end
-  ;
-  (Log.info)("BuffLogicChangeSkillFinalByHPDiff:DoLogic value = ", value, " HpDiff=", hpPerDiff, " atkHPPer=", atkHPPer, " defHPPer=", defHPPer, "a =", self._a, " b=", self._b, " max=", self._maxValue)
-  for _,paramType in ipairs(self._effectList) do
-    (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, value)
+  Log.info("BuffLogicChangeSkillFinalByHPDiff:DoLogic value = ", value, " HpDiff=", hpPerDiff, " atkHPPer=", atkHPPer, " defHPPer=", defHPPer, "a =", self._a, " b=", self._b, " max=", self._maxValue)
+  for _, paramType in ipairs(self._effectList) do
+    self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, value)
   end
 end
 
 _class("BuffLogicRevertSkillFinalByHPDiff", BuffLogicBase)
 BuffLogicRevertSkillFinalByHPDiff = BuffLogicRevertSkillFinalByHPDiff
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRevertSkillFinalByHPDiff.DoLogic = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicRevertSkillFinalByHPDiff:DoLogic()
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

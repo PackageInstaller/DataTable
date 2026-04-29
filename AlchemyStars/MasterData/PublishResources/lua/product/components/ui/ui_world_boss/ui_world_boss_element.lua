@@ -1,38 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/ui_world_boss_element.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossElement", UICustomWidget)
 UIWorldBossElement = UIWorldBossElement
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossElement.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWorldBossElement:OnShow(uiParams)
   self:InitWidget()
   self._atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossElement.InitWidget = function(self)
-  -- function num : 0_1
+function UIWorldBossElement:InitWidget()
   self._element1 = self:GetUIComponent("Image", "e1")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossElement.SetData = function(self, cfg_monster)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWorldBossElement:SetData(cfg_monster)
   if cfg_monster then
     local element = cfg_monster.ElementType
-    local spr = (UIPropertyHelper:GetInstance()):GetColorBlindSprite(ElementIcon[element])
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R4 in 'UnsetPending'
-
+    local spr = UIPropertyHelper:GetInstance():GetColorBlindSprite(ElementIcon[element])
     if self._element1 and spr and self._atlasProperty and self.view then
-      (self._element1).sprite = (self._atlasProperty):GetSprite(spr)
+      self._element1.sprite = self._atlasProperty:GetSprite(spr)
     end
   end
 end
-
-

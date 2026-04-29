@@ -1,200 +1,170 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_education/ui_education_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEducationData", Object)
 UIEducationData = UIEducationData
-local UIEducationDataEnum = {Reason_CanUp = 0, Reason_Asset = 1, Reason_Condition = 2, Reason_Full = 3}
+local UIEducationDataEnum = {
+  Reason_CanUp = 0,
+  Reason_Asset = 1,
+  Reason_Condition = 2,
+  Reason_Full = 3
+}
 _enum("UIEducationDataEnum", UIEducationDataEnum)
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-UIEducationData.Constructor = function(self)
-  -- function num : 0_0
+function UIEducationData:Constructor()
   self._list = nil
   self._smelt = nil
   self._one = nil
   self:Init()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationData.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.ItemCountChanged, self._callbackItemChanged)
+function UIEducationData:Dispose()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.ItemCountChanged, self._callbackItemChanged)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationData.Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local lstName = {[ElementType.ElementType_Blue] = "str_education_main_blue_name", [ElementType.ElementType_Red] = "str_education_main_red_name", [ElementType.ElementType_Green] = "str_education_main_green_name", [ElementType.ElementType_Yellow] = "str_education_main_yellow_name"}
+function UIEducationData:Init()
+  local lstName = {
+    [ElementType.ElementType_Blue] = "str_education_main_blue_name",
+    [ElementType.ElementType_Red] = "str_education_main_red_name",
+    [ElementType.ElementType_Green] = "str_education_main_green_name",
+    [ElementType.ElementType_Yellow] = "str_education_main_yellow_name"
+  }
   local petElementName = self:GetPetElementName()
   self._list = {
-[ElementType.ElementType_Blue] = {}
-, 
-[ElementType.ElementType_Red] = {}
-, 
-[ElementType.ElementType_Green] = {}
-, 
-[ElementType.ElementType_Yellow] = {}
-}
-  local allCfg = (Cfg.cfg_pet_property_cultivate)({})
-  for k,v in pairs(allCfg) do
-    (table.insert)((self._list)[v.ElementType], v)
+    [ElementType.ElementType_Blue] = {},
+    [ElementType.ElementType_Red] = {},
+    [ElementType.ElementType_Green] = {},
+    [ElementType.ElementType_Yellow] = {}
+  }
+  local allCfg = Cfg.cfg_pet_property_cultivate({})
+  for k, v in pairs(allCfg) do
+    table.insert(self._list[v.ElementType], v)
   end
-  for k,v in pairs(self._list) do
-    (table.sort)(v, function(a, b)
-    -- function num : 0_2_0 , upvalues : self
-    local aKey = self:LevelKey(a.Phase, a.Level)
-    local bKey = self:LevelKey(b.Phase, b.Level)
-    do return aKey < bKey end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  for k, v in pairs(self._list) do
+    table.sort(v, function(a, b)
+      local aKey = self:LevelKey(a.Phase, a.Level)
+      local bKey = self:LevelKey(b.Phase, b.Level)
+      return aKey < bKey
+    end)
   end
-)
-  end
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   local dataProperty = petModule:GetPropertyCultivateData()
   local elements = {}
-  for k,v in pairs(lstName) do
+  for k, v in pairs(lstName) do
     local stage = 0
     local level = 0
     if dataProperty[k] ~= nil then
-      stage = (dataProperty[k]).phase
-      level = (dataProperty[k]).lv
+      stage = dataProperty[k].phase
+      level = dataProperty[k].lv
     end
     elements[k] = UIEducationDataElement:New(self, k, v, petElementName[k])
-    ;
-    (elements[k]):SetCurrentLevel(stage, level)
-    ;
-    (Log.info)("[UIEducationData] elementType, stage, level ->: ", k, stage, level)
+    elements[k]:SetCurrentLevel(stage, level)
+    Log.info("[UIEducationData] elementType, stage, level ->: ", k, stage, level)
   end
   self._list = elements
-  self._callbackItemChanged = (GameHelper:GetInstance()):CreateCallback(self.OnItemCountChanged, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.ItemCountChanged, self._callbackItemChanged)
+  self._callbackItemChanged = GameHelper:GetInstance():CreateCallback(self.OnItemCountChanged, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.ItemCountChanged, self._callbackItemChanged)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationData.OnItemCountChanged = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIEducationData:OnItemCountChanged()
   self:SetRedDirty(true)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.EducationChanged, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.EducationChanged, true)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationData.SetRedDirty = function(self, redDirty)
-  -- function num : 0_4 , upvalues : _ENV
-  for k,v in pairs(self._list) do
+function UIEducationData:SetRedDirty(redDirty)
+  for k, v in pairs(self._list) do
     v:SetRedDirty(redDirty)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationData.TestCondition = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  for k,v in pairs(self._list) do
+function UIEducationData:TestCondition()
+  for k, v in pairs(self._list) do
     v:TestCondition()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationData.GetPetElementName = function(self, elementType)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIEducationData:GetPetElementName(elementType)
   if self._petElementName == nil then
-    UIEducationData._petElementName = {[ElementType.ElementType_Blue] = "str_pet_element_name_blue", [ElementType.ElementType_Red] = "str_pet_element_name_red", [ElementType.ElementType_Green] = "str_pet_element_name_green", [ElementType.ElementType_Yellow] = "str_pet_element_name_yellow", [ElementType.ElementType_None] = "str_education_upstage_condition_anytower", [ElementType.ElementType_Any] = "str_education_upstage_condition_anytower"}
+    UIEducationData._petElementName = {
+      [ElementType.ElementType_Blue] = "str_pet_element_name_blue",
+      [ElementType.ElementType_Red] = "str_pet_element_name_red",
+      [ElementType.ElementType_Green] = "str_pet_element_name_green",
+      [ElementType.ElementType_Yellow] = "str_pet_element_name_yellow",
+      [ElementType.ElementType_None] = "str_education_upstage_condition_anytower",
+      [ElementType.ElementType_Any] = "str_education_upstage_condition_anytower"
+    }
   end
   if elementType ~= nil then
-    return (StringTable.Get)((self._petElementName)[elementType])
+    return StringTable.Get(self._petElementName[elementType])
   else
     return self._petElementName
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationData.Get = function(self, elementType)
-  -- function num : 0_7
+function UIEducationData:Get(elementType)
   if elementType == nil then
     return self._list
   else
-    return (self._list)[elementType]
+    return self._list[elementType]
   end
-  return (self._list)[elementType]
+  return self._list[elementType]
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationData.LevelKey = function(self, idStage, idLevel)
-  -- function num : 0_8
+function UIEducationData:LevelKey(idStage, idLevel)
   return idStage * 100000 + idLevel
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationData.EmptyCfg = function(self, elementType)
-  -- function num : 0_9
-  return {ID = 0, ElementType = elementType, Phase = 1, Level = 0, NeedItem = nil, Attack = 0, Defence = 0, Health = 0, Hit = 0, Doge = 0, Crit = 0, CritHurt = 0, PropertyRestraint = 0, MainSkillDamage = 0, OpenCondition = nil, SupplyPieceWeight = nil}
+function UIEducationData:EmptyCfg(elementType)
+  return {
+    ID = 0,
+    ElementType = elementType,
+    Phase = 1,
+    Level = 0,
+    NeedItem = nil,
+    Attack = 0,
+    Defence = 0,
+    Health = 0,
+    Hit = 0,
+    Doge = 0,
+    Crit = 0,
+    CritHurt = 0,
+    PropertyRestraint = 0,
+    MainSkillDamage = 0,
+    OpenCondition = nil,
+    SupplyPieceWeight = nil
+  }
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationData.HasRed = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIEducationData:HasRed()
   local hasRed = false
   local list = self:Get()
-  for k,v in pairs(list) do
-    if not hasRed then
-      hasRed = v:HasRed()
-    end
+  for k, v in pairs(list) do
+    hasRed = hasRed or v:HasRed()
   end
   return hasRed
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationData.SmeltCost = function(self, idAsset, count)
-  -- function num : 0_11 , upvalues : _ENV
+function UIEducationData:SmeltCost(idAsset, count)
   if self._smelt == nil then
     self._smelt = UIEducationDataSmelt:New(true)
   end
-  ;
-  (self._smelt):ClearCost()
-  return (self._smelt):SmeltCost(idAsset, count)
+  self._smelt:ClearCost()
+  return self._smelt:SmeltCost(idAsset, count)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationData.GetSmeltCost = function(self)
-  -- function num : 0_12
-  return (self._smelt):GetCost()
+function UIEducationData:GetSmeltCost()
+  return self._smelt:GetCost()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationData.GetSmeltResult = function(self)
-  -- function num : 0_13
-  return (self._smelt):GetResult()
+function UIEducationData:GetSmeltResult()
+  return self._smelt:GetResult()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationData.TryLevelUp = function(self, theElement)
-  -- function num : 0_14 , upvalues : UIEducationDataEnum, _ENV
-  local ret = (self._one):OneRet(theElement:ElementType())
+function UIEducationData:TryLevelUp(theElement)
+  local ret = self._one:OneRet(theElement:ElementType())
   if ret:GetReason() ~= UIEducationDataEnum.Reason_CanUp then
     return false, ret
   end
   local curIndex = ret:GetIndex()
   local maxIndex = theElement:GetDataLevelCount()
-  local nxtIndex = (math.min)(curIndex + 1, maxIndex)
+  local nxtIndex = math.min(curIndex + 1, maxIndex)
   if nxtIndex == curIndex then
     return false, ret:SetReason(UIEducationDataEnum.Reason_Full)
   end
@@ -214,10 +184,8 @@ UIEducationData.TryLevelUp = function(self, theElement)
   end
   if haveCount < needCount then
     return false, ret:SetReason(UIEducationDataEnum.Reason_Asset)
-  else
-    if needCount > 0 then
-      trace:AddCost(needGold.assetid, needCount)
-    end
+  elseif 0 < needCount then
+    trace:AddCost(needGold.assetid, needCount)
   end
   local needAssetCount = 0
   if needAssets ~= nil then
@@ -227,16 +195,14 @@ UIEducationData.TryLevelUp = function(self, theElement)
     local needAsset = needAssets[i]
     local haveCount = trace:AfterSmeltCount(needAsset.assetid)
     local needCount = needAsset.count
-    if needCount <= haveCount then
+    if haveCount >= needCount then
       trace:AddCost(needAsset.assetid, needCount)
     else
       trace:AddCost(needAsset.assetid, haveCount)
       needCount = needCount - haveCount
-      ;
-      (self._smelt):ClearCost()
-      ;
-      (self._smelt):ReplaceItem(trace)
-      local smeltResult = (self._smelt):SmeltCost(needAsset.assetid, needCount)
+      self._smelt:ClearCost()
+      self._smelt:ReplaceItem(trace)
+      local smeltResult = self._smelt:SmeltCost(needAsset.assetid, needCount)
       if smeltResult then
         trace:AppendSmelt(self._smelt, true)
       else
@@ -245,96 +211,64 @@ UIEducationData.TryLevelUp = function(self, theElement)
     end
   end
   ret:SetIndex(curIndex + 1)
-  ;
-  (self._one):AppendSmelt(trace, true)
+  self._one:AppendSmelt(trace, true)
   return true, ret
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationData.One = function(self)
-  -- function num : 0_15 , upvalues : _ENV, UIEducationDataEnum
+function UIEducationData:One()
   if self._smelt == nil then
     self._smelt = UIEducationDataSmelt:New(true)
   end
   if self._one == nil then
     self._one = UIEducationDataOne:New()
   end
-  ;
-  (self._smelt):ClearCost()
-  ;
-  (self._one):ClearCost()
-  ;
-  (self._one):InitRet(self._list)
+  self._smelt:ClearCost()
+  self._one:ClearCost()
+  self._one:InitRet(self._list)
   local sortLevel = {}
-  for k,v in pairs(self._list) do
-    (table.insert)(sortLevel, v)
+  for k, v in pairs(self._list) do
+    table.insert(sortLevel, v)
   end
-  ;
-  (table.sort)(sortLevel, function(a, b)
-    -- function num : 0_15_0
-    do return b:GetCurrentLuaIndex() < a:GetCurrentLuaIndex() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(sortLevel, function(a, b)
+    return a:GetCurrentLuaIndex() > b:GetCurrentLuaIndex()
+  end)
   local refType = ElementType.ElementType_Green
-  while 1 do
-    if refType > 0 then
-      local elementRef = sortLevel[refType]
-      local oneRetRef = (self._one):OneRet(elementRef:ElementType())
-      local elementNxt = sortLevel[refType + 1]
-      local oneRetNxt = (self._one):OneRet(elementNxt:ElementType())
-      local endCount = 0
-      local nxtCount = ElementType.ElementType_Yellow - refType
-      local sortElement = {}
-      for i = refType + 1, ElementType.ElementType_Yellow do
-        (table.insert)(sortElement, sortLevel[i])
-      end
-      ;
-      (table.sort)(sortElement, function(a, b)
-    -- function num : 0_15_1
-    do return a:ElementType() < b:ElementType() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-      while oneRetNxt:GetIndex() < oneRetRef:GetIndex() do
-        endCount = 0
-        for i = 1, ElementType.ElementType_Yellow - refType do
-          local elementValue = sortElement[i]
-          local result, oneRetValue = self:TryLevelUp(elementValue)
-          if oneRetValue:GetReason() ~= UIEducationDataEnum.Reason_CanUp then
-            endCount = endCount + 1
-          else
-            if oneRetRef:GetIndex() <= oneRetValue:GetIndex() then
-              endCount = endCount + 1
-            end
-          end
+  while 0 < refType do
+    local elementRef = sortLevel[refType]
+    local oneRetRef = self._one:OneRet(elementRef:ElementType())
+    local elementNxt = sortLevel[refType + 1]
+    local oneRetNxt = self._one:OneRet(elementNxt:ElementType())
+    local endCount = 0
+    local nxtCount = ElementType.ElementType_Yellow - refType
+    local sortElement = {}
+    for i = refType + 1, ElementType.ElementType_Yellow do
+      table.insert(sortElement, sortLevel[i])
+    end
+    table.sort(sortElement, function(a, b)
+      return a:ElementType() < b:ElementType()
+    end)
+    while oneRetRef:GetIndex() > oneRetNxt:GetIndex() do
+      endCount = 0
+      for i = 1, ElementType.ElementType_Yellow - refType do
+        local elementValue = sortElement[i]
+        local result, oneRetValue = self:TryLevelUp(elementValue)
+        if oneRetValue:GetReason() ~= UIEducationDataEnum.Reason_CanUp then
+          endCount = endCount + 1
+        elseif oneRetRef:GetIndex() <= oneRetValue:GetIndex() then
+          endCount = endCount + 1
         end
       end
-      do
-        if nxtCount > endCount then
-          do
-            refType = refType - 1
-            -- DECOMPILER ERROR at PC116: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC116: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC116: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC116: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC116: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+      if nxtCount <= endCount then
+        break
       end
     end
+    refType = refType - 1
   end
   local endCount = 0
   local nxtCount = ElementType.ElementType_Yellow
   while endCount < nxtCount do
     endCount = 0
-    for k,v in pairs(self._list) do
+    for k, v in pairs(self._list) do
       local elementValue = v
       local result, oneRetValue = self:TryLevelUp(elementValue)
       if oneRetValue:GetReason() ~= UIEducationDataEnum.Reason_CanUp then
@@ -342,25 +276,21 @@ UIEducationData.One = function(self)
       end
     end
   end
-  do
-    for k,v in pairs(self._list) do
-      local elementValue = v
-      local oneRetValue = (self._one):OneRet(elementValue:ElementType())
-      local dataLevel = elementValue:GetDataLevel(oneRetValue:GetIndex())
-      oneRetValue:SetStage(dataLevel:GetStage())
-      oneRetValue:SetLevel(dataLevel:GetLevel())
-    end
-    return self._one
+  for k, v in pairs(self._list) do
+    local elementValue = v
+    local oneRetValue = self._one:OneRet(elementValue:ElementType())
+    local dataLevel = elementValue:GetDataLevel(oneRetValue:GetIndex())
+    oneRetValue:SetStage(dataLevel:GetStage())
+    oneRetValue:SetLevel(dataLevel:GetLevel())
   end
+  return self._one
 end
 
 _class("UIEducationDataSmelt", Object)
 UIEducationDataSmelt = UIEducationDataSmelt
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
 
-UIEducationDataSmelt.Constructor = function(self, initSmelt)
-  -- function num : 0_16 , upvalues : _ENV
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIEducationDataSmelt:Constructor(initSmelt)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
   self._aircraftModule = nil
   self._room = nil
   self._map = {}
@@ -373,133 +303,91 @@ UIEducationDataSmelt.Constructor = function(self, initSmelt)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataSmelt.InitSmelt = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  self._aircraftModule = (GameGlobal.GetModule)(AircraftModule)
-  self._room = (self._aircraftModule):GetRoomByRoomType(AirRoomType.SmeltRoom)
-  local allSmelt = (Cfg.cfg_item_smelt)({})
-  for k,v in pairs(allSmelt) do
+function UIEducationDataSmelt:InitSmelt()
+  self._aircraftModule = GameGlobal.GetModule(AircraftModule)
+  self._room = self._aircraftModule:GetRoomByRoomType(AirRoomType.SmeltRoom)
+  local allSmelt = Cfg.cfg_item_smelt({})
+  for k, v in pairs(allSmelt) do
     if v.Output ~= nil and #v.Output >= 2 then
-      local idAsset = (v.Output)[1]
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._map)[idAsset] = v
+      local idAsset = v.Output[1]
+      self._map[idAsset] = v
     end
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataSmelt.ClearCost = function(self)
-  -- function num : 0_18
+function UIEducationDataSmelt:ClearCost()
   self._lstRet = {}
   self._dicRet = {}
   self._cost = {}
   self._surplus = {}
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataSmelt.GetCost = function(self)
-  -- function num : 0_19
+function UIEducationDataSmelt:GetCost()
   return self._cost
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataSmelt.GetSurplus = function(self)
-  -- function num : 0_20
+function UIEducationDataSmelt:GetSurplus()
   return self._surplus
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataSmelt.GetResult = function(self)
-  -- function num : 0_21
+function UIEducationDataSmelt:GetResult()
   return self._lstRet
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataSmelt.AddResult = function(self, idSmelt, count)
-  -- function num : 0_22 , upvalues : _ENV
+function UIEducationDataSmelt:AddResult(idSmelt, count)
   if count <= 0 then
-    return 
+    return
   end
-  local asset = (self._dicRet)[idSmelt]
+  local asset = self._dicRet[idSmelt]
   if asset == nil then
     asset = RoleAsset:New()
     asset.assetid = idSmelt
     asset.count = 0
-    ;
-    (table.insert)(self._lstRet, asset)
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._dicRet)[idSmelt] = asset
+    table.insert(self._lstRet, asset)
+    self._dicRet[idSmelt] = asset
   end
   asset.count = asset.count + count
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataSmelt.AddCost = function(self, idAsset, count)
-  -- function num : 0_23 , upvalues : _ENV
+function UIEducationDataSmelt:AddCost(idAsset, count)
   if count <= 0 then
-    return 
+    return
   end
-  local asset = (self._surplus)[idAsset]
-  do
-    if asset ~= nil then
-      local min = (math.min)(asset.count, count)
-      count = count - min
-      asset.count = asset.count - min
-    end
-    if count <= 0 then
-      return 
-    end
-    local asset = (self._cost)[idAsset]
-    if asset == nil then
-      asset = RoleAsset:New()
-      asset.assetid = idAsset
-      asset.count = 0
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._cost)[idAsset] = asset
-    end
-    asset.count = asset.count + (count)
+  local asset = self._surplus[idAsset]
+  if asset ~= nil then
+    local min = math.min(asset.count, count)
+    count = count - min
+    asset.count = asset.count - min
   end
-end
-
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataSmelt.AddSurplus = function(self, idAsset, count)
-  -- function num : 0_24 , upvalues : _ENV
   if count <= 0 then
-    return 
+    return
   end
-  local asset = (self._surplus)[idAsset]
+  local asset = self._cost[idAsset]
   if asset == nil then
     asset = RoleAsset:New()
     asset.assetid = idAsset
     asset.count = 0
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._surplus)[idAsset] = asset
+    self._cost[idAsset] = asset
   end
   asset.count = asset.count + count
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
+function UIEducationDataSmelt:AddSurplus(idAsset, count)
+  if count <= 0 then
+    return
+  end
+  local asset = self._surplus[idAsset]
+  if asset == nil then
+    asset = RoleAsset:New()
+    asset.assetid = idAsset
+    asset.count = 0
+    self._surplus[idAsset] = asset
+  end
+  asset.count = asset.count + count
+end
 
-UIEducationDataSmelt.AppendSmelt = function(self, other, swapItem)
-  -- function num : 0_25 , upvalues : _ENV
-  for k,v in pairs(other._lstRet) do
+function UIEducationDataSmelt:AppendSmelt(other, swapItem)
+  for k, v in pairs(other._lstRet) do
     self:AddResult(v.assetid, v.count)
   end
   if swapItem then
@@ -510,60 +398,43 @@ UIEducationDataSmelt.AppendSmelt = function(self, other, swapItem)
     self._surplus = other._surplus
     other._surplus = tmp
   else
-    do
-      self:ReplaceItem(other)
-    end
+    self:ReplaceItem(other)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataSmelt.ReplaceItem = function(self, other)
-  -- function num : 0_26 , upvalues : _ENV
+function UIEducationDataSmelt:ReplaceItem(other)
   self._cost = {}
   self._surplus = {}
-  for k,v in pairs(other._cost) do
+  for k, v in pairs(other._cost) do
     local asset = RoleAsset:New()
     asset.assetid = v.assetid
     asset.count = v.count
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._cost)[k] = asset
+    self._cost[k] = asset
   end
-  for k,v in pairs(other._surplus) do
+  for k, v in pairs(other._surplus) do
     local asset = RoleAsset:New()
     asset.assetid = v.assetid
     asset.count = v.count
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._surplus)[k] = asset
+    self._surplus[k] = asset
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataSmelt.AfterSmeltCount = function(self, idAsset)
-  -- function num : 0_27 , upvalues : _ENV
+function UIEducationDataSmelt:AfterSmeltCount(idAsset)
   local costCount = 0
   local surplusCount = 0
-  local haveCount = (self._itemModule):GetItemCount(idAsset)
-  local asset = (self._cost)[idAsset]
+  local haveCount = self._itemModule:GetItemCount(idAsset)
+  local asset = self._cost[idAsset]
   if asset ~= nil then
     costCount = asset.count
   end
-  local asset = (self._surplus)[idAsset]
+  local asset = self._surplus[idAsset]
   if asset ~= nil then
     surplusCount = asset.count
   end
-  return (math.max)(haveCount + surplusCount - costCount, 0)
+  return math.max(haveCount + surplusCount - costCount, 0)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataSmelt.SmeltCost = function(self, idAsset, count)
-  -- function num : 0_28 , upvalues : _ENV
+function UIEducationDataSmelt:SmeltCost(idAsset, count)
   local needCount = count
   local haveCount = self:AfterSmeltCount(idAsset)
   if needCount <= haveCount then
@@ -573,19 +444,19 @@ UIEducationDataSmelt.SmeltCost = function(self, idAsset, count)
     self:AddCost(idAsset, haveCount)
     needCount = needCount - haveCount
   end
-  local cfgSmelt = (self._map)[idAsset]
+  local cfgSmelt = self._map[idAsset]
   if cfgSmelt == nil then
     return false
   end
   if self._room == nil then
-    self._room = (self._aircraftModule):GetRoomByRoomType(AirRoomType.SmeltRoom)
+    self._room = self._aircraftModule:GetRoomByRoomType(AirRoomType.SmeltRoom)
   end
-  if (self._aircraftModule):IsSmeltItemLockEx(self._room, cfgSmelt) then
+  if self._aircraftModule:IsSmeltItemLockEx(self._room, cfgSmelt) then
     return false
   end
-  local multiple = (math.ceil)((needCount) / (cfgSmelt.Output)[2])
+  local multiple = math.ceil(needCount / cfgSmelt.Output[2])
   if cfgSmelt.SInput ~= nil then
-    for k,v in pairs(cfgSmelt.SInput) do
+    for k, v in pairs(cfgSmelt.SInput) do
       local costItem = v[1]
       local costCount = v[2] * multiple
       local haveCount = self:AfterSmeltCount(costItem)
@@ -596,142 +467,99 @@ UIEducationDataSmelt.SmeltCost = function(self, idAsset, count)
       end
     end
   end
-  do
-    if cfgSmelt.Input ~= nil then
-      for k,v in pairs(cfgSmelt.Input) do
-        local costItem = v[1]
-        local costCount = v[2] * multiple
-        local result = self:SmeltCost(costItem, costCount)
-        if not result then
-          return false
-        end
-      end
-      local surplusCount = (cfgSmelt.Output)[2] * multiple - (needCount)
-      self:AddResult(cfgSmelt.ID, multiple)
-      self:AddSurplus(idAsset, surplusCount)
-      return true, self._cost, self._lstRet
-    else
-      do
-        do return false end
+  if cfgSmelt.Input ~= nil then
+    for k, v in pairs(cfgSmelt.Input) do
+      local costItem = v[1]
+      local costCount = v[2] * multiple
+      local result = self:SmeltCost(costItem, costCount)
+      if not result then
         return false
       end
     end
+    local surplusCount = cfgSmelt.Output[2] * multiple - needCount
+    self:AddResult(cfgSmelt.ID, multiple)
+    self:AddSurplus(idAsset, surplusCount)
+    return true, self._cost, self._lstRet
+  else
+    return false
   end
+  return false
 end
 
 _class("UIEducationDataCurLevel", Object)
 UIEducationDataCurLevel = UIEducationDataCurLevel
--- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
 
-UIEducationDataCurLevel.Constructor = function(self)
-  -- function num : 0_29 , upvalues : UIEducationDataEnum
+function UIEducationDataCurLevel:Constructor()
   self._stage = 0
   self._level = 0
   self._index = 1
   self._reason = UIEducationDataEnum.Reason_CanUp
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataCurLevel.GetStage = function(self)
-  -- function num : 0_30
+function UIEducationDataCurLevel:GetStage()
   return self._stage
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataCurLevel.SetStage = function(self, stage)
-  -- function num : 0_31
+function UIEducationDataCurLevel:SetStage(stage)
   self._stage = stage
   return self._stage
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataCurLevel.GetLevel = function(self)
-  -- function num : 0_32
+function UIEducationDataCurLevel:GetLevel()
   return self._level
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataCurLevel.SetLevel = function(self, level)
-  -- function num : 0_33
+function UIEducationDataCurLevel:SetLevel(level)
   self._level = level
   return self._level
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataCurLevel.GetIndex = function(self)
-  -- function num : 0_34
+function UIEducationDataCurLevel:GetIndex()
   return self._index
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataCurLevel.SetIndex = function(self, index)
-  -- function num : 0_35
+function UIEducationDataCurLevel:SetIndex(index)
   self._index = index
   return self._index
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataCurLevel.GetReason = function(self)
-  -- function num : 0_36
+function UIEducationDataCurLevel:GetReason()
   return self._reason
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataCurLevel.SetReason = function(self, reason)
-  -- function num : 0_37
+function UIEducationDataCurLevel:SetReason(reason)
   self._reason = reason
   return self
 end
 
 _class("UIEducationDataOne", UIEducationDataSmelt)
 UIEducationDataOne = UIEducationDataOne
--- DECOMPILER ERROR at PC149: Confused about usage of register: R1 in 'UnsetPending'
 
-UIEducationDataOne.Constructor = function(self)
-  -- function num : 0_38
+function UIEducationDataOne:Constructor()
   self._oneRet = {}
   self:InitRet(nil)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataOne.InitRet = function(self, lstElement)
-  -- function num : 0_39 , upvalues : _ENV
+function UIEducationDataOne:InitRet(lstElement)
   for i = 1, ElementType.ElementType_Yellow do
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._oneRet)[i] = UIEducationDataCurLevel:New()
+    self._oneRet[i] = UIEducationDataCurLevel:New()
   end
   if lstElement ~= nil then
     for i = 1, ElementType.ElementType_Yellow do
-      local luaIndex = (lstElement[i]):GetCurrentLuaIndex()
-      ;
-      ((self._oneRet)[i]):SetIndex(luaIndex)
+      local luaIndex = lstElement[i]:GetCurrentLuaIndex()
+      self._oneRet[i]:SetIndex(luaIndex)
     end
   end
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataOne.OneRet = function(self, elementType)
-  -- function num : 0_40
-  return (self._oneRet)[elementType]
+function UIEducationDataOne:OneRet(elementType)
+  return self._oneRet[elementType]
 end
 
 _class("UIEducationDataLevel", Object)
 UIEducationDataLevel = UIEducationDataLevel
--- DECOMPILER ERROR at PC164: Confused about usage of register: R1 in 'UnsetPending'
 
-UIEducationDataLevel.Constructor = function(self, element, luaIndex)
-  -- function num : 0_41
+function UIEducationDataLevel:Constructor(element, luaIndex)
   self._element = element
   self._luaIndex = luaIndex
   self._cfg = nil
@@ -740,82 +568,53 @@ UIEducationDataLevel.Constructor = function(self, element, luaIndex)
   self._needAsset = {}
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataLevel.InitLevelData = function(self, cfg)
-  -- function num : 0_42 , upvalues : _ENV
+function UIEducationDataLevel:InitLevelData(cfg)
   self._cfg = cfg
   self._lstCondition = {}
   self._dicCondition = {}
   self._needAsset = {}
-  if (self._cfg).OpenCondition ~= nil then
-    self._lstCondition = UIEducationCondition:Unmarshal((self._cfg).OpenCondition)
-    for k,v in pairs(self._lstCondition) do
+  if self._cfg.OpenCondition ~= nil then
+    self._lstCondition, self._dicCondition = UIEducationCondition:Unmarshal(self._cfg.OpenCondition)
+    for k, v in pairs(self._lstCondition) do
       v:Test()
     end
   end
-  do
-    if (self._cfg).NeedItem ~= nil then
-      for k,v in pairs((self._cfg).NeedItem) do
-        local asset = RoleAsset:New()
-        asset.assetid = v[1]
-        asset.count = v[2]
-        -- DECOMPILER ERROR at PC44: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._needAsset)[asset.assetid] = asset
-      end
+  if self._cfg.NeedItem ~= nil then
+    for k, v in pairs(self._cfg.NeedItem) do
+      local asset = RoleAsset:New()
+      asset.assetid = v[1]
+      asset.count = v[2]
+      self._needAsset[asset.assetid] = asset
     end
   end
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataLevel.ParentElement = function(self)
-  -- function num : 0_43
+function UIEducationDataLevel:ParentElement()
   return self._element
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataLevel.LuaIndex = function(self)
-  -- function num : 0_44
+function UIEducationDataLevel:LuaIndex()
   return self._luaIndex
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataLevel.GetCfg = function(self)
-  -- function num : 0_45
+function UIEducationDataLevel:GetCfg()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataLevel.GetStage = function(self)
-  -- function num : 0_46
-  return (self._cfg).Phase
+function UIEducationDataLevel:GetStage()
+  return self._cfg.Phase
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataLevel.GetLevel = function(self)
-  -- function num : 0_47
-  return (self._cfg).Level
+function UIEducationDataLevel:GetLevel()
+  return self._cfg.Level
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataLevel.LevelKey = function(self)
-  -- function num : 0_48
-  local data = (self._element):ParentData()
+function UIEducationDataLevel:LevelKey()
+  local data = self._element:ParentData()
   return data:LevelKey(self:GetStage(), self:GetLevel())
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataLevel.GetCondition = function(self, isDictionary)
-  -- function num : 0_49
+function UIEducationDataLevel:GetCondition(isDictionary)
   if isDictionary then
     return self._dicCondition
   else
@@ -823,27 +622,19 @@ UIEducationDataLevel.GetCondition = function(self, isDictionary)
   end
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataLevel.IsMetCondition = function(self)
-  -- function num : 0_50 , upvalues : _ENV
+function UIEducationDataLevel:IsMetCondition()
   local metCondition = true
-  for k,v in pairs(self._dicCondition) do
+  for k, v in pairs(self._dicCondition) do
     if v:GetCompleted() < v:GetQuantity() then
       metCondition = false
       break
     end
   end
-  do
-    return metCondition
-  end
+  return metCondition
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataLevel.NeedGold = function(self)
-  -- function num : 0_51 , upvalues : _ENV
-  local asset = (self._needAsset)[RoleAssetID.RoleAssetGold]
+function UIEducationDataLevel:NeedGold()
+  local asset = self._needAsset[RoleAssetID.RoleAssetGold]
   if asset == nil then
     asset = RoleAsset:New()
     asset.assetid = RoleAssetID.RoleAssetGold
@@ -851,18 +642,14 @@ UIEducationDataLevel.NeedGold = function(self)
   return asset
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataLevel.NeedAsset = function(self, getAll)
-  -- function num : 0_52 , upvalues : _ENV
+function UIEducationDataLevel:NeedAsset(getAll)
   local lst = {}
-  for k,v in pairs(self._needAsset) do
+  for k, v in pairs(self._needAsset) do
     if k ~= RoleAssetID.RoleAssetGold then
       if not getAll then
         return v
       else
-        ;
-        (table.insert)(lst, v)
+        table.insert(lst, v)
       end
     end
   end
@@ -871,10 +658,8 @@ end
 
 _class("UIEducationDataElement", Object)
 UIEducationDataElement = UIEducationDataElement
--- DECOMPILER ERROR at PC206: Confused about usage of register: R1 in 'UnsetPending'
 
-UIEducationDataElement.Constructor = function(self, data, elementType, nameStrID, elementStrID)
-  -- function num : 0_53 , upvalues : _ENV
+function UIEducationDataElement:Constructor(data, elementType, nameStrID, elementStrID)
   self._data = data
   self._elementType = elementType
   self._nameStrID = nameStrID
@@ -885,177 +670,113 @@ UIEducationDataElement.Constructor = function(self, data, elementType, nameStrID
   self:InitLevelData()
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.ParentData = function(self)
-  -- function num : 0_54
+function UIEducationDataElement:ParentData()
   return self._data
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.ElementType = function(self)
-  -- function num : 0_55
+function UIEducationDataElement:ElementType()
   return self._elementType
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.GetName = function(self)
-  -- function num : 0_56 , upvalues : _ENV
-  return (StringTable.Get)(self._nameStrID)
+function UIEducationDataElement:GetName()
+  return StringTable.Get(self._nameStrID)
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.GetElementName = function(self)
-  -- function num : 0_57 , upvalues : _ENV
-  return (StringTable.Get)(self._elementStrID)
+function UIEducationDataElement:GetElementName()
+  return StringTable.Get(self._elementStrID)
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.InitLevelData = function(self)
-  -- function num : 0_58 , upvalues : _ENV
+function UIEducationDataElement:InitLevelData()
   self._lstLevel = {}
   self._dicLevel = {}
-  local allCfg = (self._data):Get(self._elementType)
-  for k,v in pairs(allCfg) do
+  local allCfg = self._data:Get(self._elementType)
+  for k, v in pairs(allCfg) do
     local level = UIEducationDataLevel:New(self, k)
     level:InitLevelData(v)
-    ;
-    (table.insert)(self._lstLevel, level)
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._dicLevel)[level:LevelKey()] = level
+    table.insert(self._lstLevel, level)
+    self._dicLevel[level:LevelKey()] = level
   end
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.TestCondition = function(self)
-  -- function num : 0_59 , upvalues : _ENV
-  for k,v in pairs(self._lstLevel) do
+function UIEducationDataElement:TestCondition()
+  for k, v in pairs(self._lstLevel) do
     local lstCondition = v:GetCondition()
-    for sk,sv in pairs(lstCondition) do
+    for sk, sv in pairs(lstCondition) do
       sv:Test()
     end
   end
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.SetCurrentLevel = function(self, stage, level)
-  -- function num : 0_60 , upvalues : _ENV
-  (self._cur):SetStage(stage)
-  ;
-  (self._cur):SetLevel(level)
-  ;
-  (self._cur):SetIndex(1)
-  local curKey = (self._data):LevelKey(stage, level)
-  if (self._dicLevel)[curKey] == nil then
-    (self._cur):SetIndex(1)
+function UIEducationDataElement:SetCurrentLevel(stage, level)
+  self._cur:SetStage(stage)
+  self._cur:SetLevel(level)
+  self._cur:SetIndex(1)
+  local curKey = self._data:LevelKey(stage, level)
+  if self._dicLevel[curKey] == nil then
+    self._cur:SetIndex(1)
   else
-    for k,v in pairs(self._lstLevel) do
-      if (self._cur):GetStage() == v:GetStage() and (self._cur):GetLevel() == v:GetLevel() then
-        (self._cur):SetIndex(k)
+    for k, v in pairs(self._lstLevel) do
+      if self._cur:GetStage() == v:GetStage() and self._cur:GetLevel() == v:GetLevel() then
+        self._cur:SetIndex(k)
         break
       end
     end
   end
-  do
-    if (self._cur):GetIndex() == 1 then
-      (self._cur):SetStage(0)
-      ;
-      (self._cur):SetLevel(0)
-      ;
-      (self._cur):SetIndex(1)
-    end
-    self._redDirty = true
+  if self._cur:GetIndex() == 1 then
+    self._cur:SetStage(0)
+    self._cur:SetLevel(0)
+    self._cur:SetIndex(1)
   end
+  self._redDirty = true
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.SetRedDirty = function(self, redDirty)
-  -- function num : 0_61
+function UIEducationDataElement:SetRedDirty(redDirty)
   self._redDirty = redDirty
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.GetDataLevelCount = function(self)
-  -- function num : 0_62
+function UIEducationDataElement:GetDataLevelCount()
   return #self._lstLevel
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.GetDataLevel = function(self, index)
-  -- function num : 0_63
-  return (self._lstLevel)[index]
+function UIEducationDataElement:GetDataLevel(index)
+  return self._lstLevel[index]
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.DataLevelByIndex = function(self, index)
-  -- function num : 0_64
-  return (self._lstLevel)[index]
+function UIEducationDataElement:DataLevelByIndex(index)
+  return self._lstLevel[index]
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.DataLevelByLevel = function(self, stage, level)
-  -- function num : 0_65
-  local key = (self._data):LevelKey(stage, level)
-  return (self._dicLevel)[key]
+function UIEducationDataElement:DataLevelByLevel(stage, level)
+  local key = self._data:LevelKey(stage, level)
+  return self._dicLevel[key]
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.GetCurrentDataLevel = function(self)
-  -- function num : 0_66
-  return (self._lstLevel)[(self._cur):GetIndex()]
+function UIEducationDataElement:GetCurrentDataLevel()
+  return self._lstLevel[self._cur:GetIndex()]
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.GetCurrent = function(self)
-  -- function num : 0_67
+function UIEducationDataElement:GetCurrent()
   return self._cur
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.GetCurrentStage = function(self)
-  -- function num : 0_68
-  return (self._cur):GetStage()
+function UIEducationDataElement:GetCurrentStage()
+  return self._cur:GetStage()
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.GetCurrentLevel = function(self)
-  -- function num : 0_69
-  return (self._cur):GetLevel()
+function UIEducationDataElement:GetCurrentLevel()
+  return self._cur:GetLevel()
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.GetCurrentMaxStage = function(self)
-  -- function num : 0_70
+function UIEducationDataElement:GetCurrentMaxStage()
   local count = #self._lstLevel
-  return ((self._lstLevel)[count]):GetStage()
+  return self._lstLevel[count]:GetStage()
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.GetStageMaxLevel = function(self, idStage)
-  -- function num : 0_71
+function UIEducationDataElement:GetStageMaxLevel(idStage)
   local maxLevel = 0
   local count = #self._lstLevel
   for i = 1, count do
-    local dataLevel = (self._lstLevel)[i]
+    local dataLevel = self._lstLevel[i]
     if idStage == dataLevel:GetStage() then
       maxLevel = dataLevel:GetLevel()
     end
@@ -1063,61 +784,49 @@ UIEducationDataElement.GetStageMaxLevel = function(self, idStage)
   return maxLevel
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.GetCurrentMaxLevel = function(self)
-  -- function num : 0_72
-  local maxLevel = (self._cur):GetLevel()
+function UIEducationDataElement:GetCurrentMaxLevel()
+  local maxLevel = self._cur:GetLevel()
   local count = #self._lstLevel
-  for i = (self._cur):GetIndex(), count do
-    local dataLevel = (self._lstLevel)[i]
-    if (self._cur):GetStage() == dataLevel:GetStage() then
+  for i = self._cur:GetIndex(), count do
+    local dataLevel = self._lstLevel[i]
+    if self._cur:GetStage() == dataLevel:GetStage() then
       maxLevel = dataLevel:GetLevel()
     end
   end
   return maxLevel
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.GetCurrentLuaIndex = function(self)
-  -- function num : 0_73
-  return (self._cur):GetIndex()
+function UIEducationDataElement:GetCurrentLuaIndex()
+  return self._cur:GetIndex()
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.IsSupplyPieceWeightChanged = function(self, curWeight, nxtWeight)
-  -- function num : 0_74 , upvalues : _ENV
-  for k,v in pairs(curWeight) do
+function UIEducationDataElement:IsSupplyPieceWeightChanged(curWeight, nxtWeight)
+  for k, v in pairs(curWeight) do
     if nxtWeight[k] ~= v then
       return true
     end
   end
-  for k,v in pairs(nxtWeight) do
+  for k, v in pairs(nxtWeight) do
     if curWeight[k] ~= v then
       return true
     end
-    if v > 0 then
+    if 0 < v then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.UpdateRedDot = function(self)
-  -- function num : 0_75 , upvalues : _ENV
+function UIEducationDataElement:UpdateRedDot()
   if not self._redDirty then
-    return 
+    return
   else
     self._hasRed = false
     self._redDirty = false
   end
   local curIndex = self:GetCurrentLuaIndex()
   local maxIndex = self:GetDataLevelCount()
-  local nxtIndex = (math.min)(curIndex + 1, maxIndex)
+  local nxtIndex = math.min(curIndex + 1, maxIndex)
   if nxtIndex == curIndex then
     return self._hasRed
   end
@@ -1127,7 +836,7 @@ UIEducationDataElement.UpdateRedDot = function(self)
   end
   local needGold = nxtDataLevel:NeedGold()
   local needAssets = nxtDataLevel:NeedAsset(true)
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   if needGold ~= nil then
     local haveCount = itemModule:GetItemCount(needGold.assetid)
     local needCount = needGold.count
@@ -1135,32 +844,25 @@ UIEducationDataElement.UpdateRedDot = function(self)
       return self._hasRed
     end
   end
-  do
-    local needAssetCount = 0
-    if needAssets ~= nil then
-      needAssetCount = #needAssets
-    end
-    for i = 1, needAssetCount do
-      local needAsset = needAssets[i]
-      local haveCount = itemModule:GetItemCount(needAsset.assetid)
-      local needCount = needAsset.count
-      if haveCount < needCount then
-        return self._hasRed
-      end
-    end
-    self._hasRed = true
-    return self._hasRed
+  local needAssetCount = 0
+  if needAssets ~= nil then
+    needAssetCount = #needAssets
   end
+  for i = 1, needAssetCount do
+    local needAsset = needAssets[i]
+    local haveCount = itemModule:GetItemCount(needAsset.assetid)
+    local needCount = needAsset.count
+    if haveCount < needCount then
+      return self._hasRed
+    end
+  end
+  self._hasRed = true
+  return self._hasRed
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R1 in 'UnsetPending'
-
-UIEducationDataElement.HasRed = function(self)
-  -- function num : 0_76
+function UIEducationDataElement:HasRed()
   if self._redDirty then
     self:UpdateRedDot()
   end
   return self._hasRed
 end
-
-

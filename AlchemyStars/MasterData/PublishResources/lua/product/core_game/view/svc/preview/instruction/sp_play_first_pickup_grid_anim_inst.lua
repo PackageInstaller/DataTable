@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_first_pickup_grid_anim_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayFirstPickGridAnimInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayFirstPickGridAnimInstruction = SkillPreviewPlayFirstPickGridAnimInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayFirstPickGridAnimInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayFirstPickGridAnimInstruction:Constructor(params)
   self._anim = params.Anim
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayFirstPickGridAnimInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1
+function SkillPreviewPlayFirstPickGridAnimInstruction:DoInstruction(TT, casterEntity, previewContext)
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
   self._world = previewContext:GetWorld()
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   local pickUpGridPos = previewPickUpComponent:GetFirstValidPickUpGridPos()
   previewActiveSkillService:DoConvert({pickUpGridPos}, self._anim)
 end
-
-

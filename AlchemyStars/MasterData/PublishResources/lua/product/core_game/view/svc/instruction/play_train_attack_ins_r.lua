@@ -1,40 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_train_attack_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTrainAttackInstruction", BaseInstruction)
 PlayTrainAttackInstruction = PlayTrainAttackInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTrainAttackInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTrainAttackInstruction:Constructor(paramList)
   self._attackCount = tonumber(paramList.AttackCount)
   self._oneDamageTime = tonumber(paramList.OneDamageTime)
   self._randomPercent = tonumber(paramList.RandomPercent)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrainAttackInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTrainAttackInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
-  local castPos = (casterEntity:GridLocation()).Position
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local castPos = casterEntity:GridLocation().Position
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   if damageResultArray == nil then
-    return 
+    return
   end
   self._formatList = {}
   local isFinalAttack = skillEffectResultContainer:IsFinalAttack()
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
-  for _,v in ipairs(damageResultArray) do
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  for _, v in ipairs(damageResultArray) do
     local format = {}
     local damageResult = v
     local targetEntityID = damageResult:GetTargetID()
-    local targetEntity = (self._world):GetEntityByID(targetEntityID)
+    local targetEntity = self._world:GetEntityByID(targetEntityID)
     local damageInfo = damageResult:GetDamageInfo(1)
     local damagePos = damageResult:GetGridPos()
     if targetEntity then
@@ -44,57 +34,45 @@ PlayTrainAttackInstruction.DoInstruction = function(self, TT, casterEntity, phas
       local damageInfoList, damageStageValueList = utilCalcSvc:DamageInfoSplitMultiStage(damageInfo, self._attackCount, 1, self._randomPercent)
       format.damageInfoList = damageInfoList
       format.damageStageValueList = damageStageValueList
-      ;
-      (table.insert)(self._formatList, format)
+      table.insert(self._formatList, format)
     end
   end
-  if (table.count)(self._formatList) == 0 then
-    return 
+  if table.count(self._formatList) == 0 then
+    return
   end
   local listTask = {}
-  for i,format in ipairs(self._formatList) do
+  for i, format in ipairs(self._formatList) do
     local nTask, nTaskDamage = self:PlayDamage(casterEntity, format)
-    ;
-    (table.insert)(listTask, nTask)
-    ;
-    (table.insert)(listTask, nTaskDamage)
+    table.insert(listTask, nTask)
+    table.insert(listTask, nTaskDamage)
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(listTask) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(listTask) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrainAttackInstruction.PlayDamage = function(self, casterEntity, curFormat)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayTrainAttackInstruction:PlayDamage(casterEntity, curFormat)
   local damageResult = curFormat.damageResult
   local damageInfo = damageResult:GetDamageInfo(1)
   local damageInfoList = curFormat.damageInfoList
   local damageStageValueList = curFormat.damageStageValueList
   for i = 1, #damageInfoList do
-    (damageInfoList[i]):SetShowType(DamageShowType.Grid)
+    damageInfoList[i]:SetShowType(DamageShowType.Grid)
   end
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local damageGridPos = damageResult:GetGridPos()
   local targetId = damageResult:GetTargetID()
-  local targetEntity = (self._world):GetEntityByID(targetId)
+  local targetEntity = self._world:GetEntityByID(targetId)
   local isFinalAttack = skillEffectResultContainer:IsFinalAttack()
-  local playSkillService = (self._world):GetService("PlaySkill")
-  local playDamageSvc = (self._world):GetService("PlayDamage")
-  local nTask = ((GameGlobal.TaskManager)()):CoreGameStartTask(playSkillService.HandleBeHitMultiStage, playSkillService, casterEntity, targetEntity, "Hit", nil, damageInfoList, damageGridPos, 0, isFinalAttack, skillID, damageStageValueList, self._oneDamageTime)
-  local nTaskDamage = ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, damageStageValueList, self, playDamageSvc, targetEntity, damageInfo
-    local intervalCount = (table.count)(damageStageValueList) - 1
+  local playSkillService = self._world:GetService("PlaySkill")
+  local playDamageSvc = self._world:GetService("PlayDamage")
+  local nTask = GameGlobal.TaskManager():CoreGameStartTask(playSkillService.HandleBeHitMultiStage, playSkillService, casterEntity, targetEntity, "Hit", nil, damageInfoList, damageGridPos, 0, isFinalAttack, skillID, damageStageValueList, self._oneDamageTime)
+  local nTaskDamage = GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+    local intervalCount = table.count(damageStageValueList) - 1
     YIELD(TT, self._oneDamageTime * intervalCount)
     playDamageSvc:UpdateTargetHPBar(TT, targetEntity, damageInfo)
     playDamageSvc:_OnHpChangeNotifyBuff(TT, targetEntity, damageInfo:GetChangeHP(), damageInfo)
-  end
-)
+  end)
   return nTask, nTaskDamage
 end
-
-

@@ -1,53 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/room_test/ui_season_maze_room_test.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoomTest", UICustomWidget)
 UISeasonMazeRoomTest = UISeasonMazeRoomTest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoomTest.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMazeRoomTest:InitWidget()
   self.inp1 = self:GetUIComponent("InputField", "InputField")
   self.inp2 = self:GetUIComponent("InputField", "InputField2")
   self._go = self:GetGameObject("Go")
-  ;
-  (self._go):SetActive(false)
+  self._go:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomTest.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeRoomTest:OnShow()
   self:InitWidget()
-  self._type2ui = {[SeasonMazeRoomType.SMRT_PVE] = "UISeasonMazeRoomStage", [SeasonMazeRoomType.SMRT_Altar] = "UISeasonMazeRoom_Altar", [SeasonMazeRoomType.SMRT_Camp] = "UISeasonMazeRoom_Campsites", [SeasonMazeRoomType.SMRT_Empty] = "UISeasonMazeRoomEmpty", [SeasonMazeRoomType.SMRT_Box] = "UISeasonMazeRoomBox", [SeasonMazeRoomType.SMRT_Market] = "UISeasonMazeRoomFlea", [SeasonMazeRoomType.SMRT_Round] = "UISeasonMazeRoomRound"}
+  self._type2ui = {
+    [SeasonMazeRoomType.SMRT_PVE] = "UISeasonMazeRoomStage",
+    [SeasonMazeRoomType.SMRT_Altar] = "UISeasonMazeRoom_Altar",
+    [SeasonMazeRoomType.SMRT_Camp] = "UISeasonMazeRoom_Campsites",
+    [SeasonMazeRoomType.SMRT_Empty] = "UISeasonMazeRoomEmpty",
+    [SeasonMazeRoomType.SMRT_Box] = "UISeasonMazeRoomBox",
+    [SeasonMazeRoomType.SMRT_Market] = "UISeasonMazeRoomFlea",
+    [SeasonMazeRoomType.SMRT_Round] = "UISeasonMazeRoomRound"
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomTest.BtnOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  local inp1t = (self.inp1).text
-  local uiType = nil
-  if not (string.isnullorempty)(inp1t) then
+function UISeasonMazeRoomTest:BtnOnClick(go)
+  local inp1t = self.inp1.text
+  local uiType
+  if not string.isnullorempty(inp1t) then
     uiType = inp1t
   end
   uiType = tonumber(uiType)
-  local inp2t = (self.inp2).text
-  local uiParams = nil
-  if not (string.isnullorempty)(inp2t) then
+  local inp2t = self.inp2.text
+  local uiParams
+  if not string.isnullorempty(inp2t) then
     uiParams = tonumber(inp2t)
   end
-  if (self._type2ui)[uiType] then
-    self:ShowDialog((self._type2ui)[uiType], uiParams)
+  if self._type2ui[uiType] then
+    self:ShowDialog(self._type2ui[uiType], uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomTest.OnHide = function(self)
-  -- function num : 0_3
+function UISeasonMazeRoomTest:OnHide()
 end
-
-

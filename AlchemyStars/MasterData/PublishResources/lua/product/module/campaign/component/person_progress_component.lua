@@ -1,59 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/person_progress_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PersonProgressComponent", ICampaignComponent)
 PersonProgressComponent = PersonProgressComponent
-local CampaignPersonProgressStatus = {CPPS_Accepted = 1, CPPS_Completed = 2, CPPS_Taken = 3}
+local CampaignPersonProgressStatus = {
+  CPPS_Accepted = 1,
+  CPPS_Completed = 2,
+  CPPS_Taken = 3
+}
 _enum("CampaignPersonProgressStatus", CampaignPersonProgressStatus)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-PersonProgressComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PersonProgressComponent:Constructor()
   self.m_component_info = PersonProgressComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PersonProgressComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = PersonProgressComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function PersonProgressComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PersonProgressComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function PersonProgressComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.GetProgress = function(self, showLV)
-  -- function num : 0_5 , upvalues : _ENV
+function PersonProgressComponent:GetProgress(showLV)
   local lv = 0
-  local curLevelProgress = (self.m_component_info).m_progress
-  for key,value in pairs((self.m_component_info).m_progress_rewards) do
-    if key <= (self.m_component_info).m_progress then
+  local curLevelProgress = self.m_component_info.m_progress
+  for key, value in pairs(self.m_component_info.m_progress_rewards) do
+    if key <= self.m_component_info.m_progress then
       curLevelProgress = curLevelProgress - key
       lv = lv + 1
     end
@@ -64,33 +46,27 @@ PersonProgressComponent.GetProgress = function(self, showLV)
   return lv + showLV, curLevelProgress
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.GetCurProgress = function(self, showLV)
-  -- function num : 0_6 , upvalues : _ENV
+function PersonProgressComponent:GetCurProgress(showLV)
   local lv = 0
   local curLevelNeedProgress = -1
-  for key,value in pairs((self.m_component_info).m_progress_rewards) do
-    if key <= (self.m_component_info).m_current_progress then
-      if curLevelNeedProgress < key then
+  for key, value in pairs(self.m_component_info.m_progress_rewards) do
+    if key <= self.m_component_info.m_current_progress then
+      if key > curLevelNeedProgress then
         curLevelNeedProgress = key
       end
       lv = lv + 1
     end
   end
-  local curLevelProgress = curLevelNeedProgress - (self.m_component_info).m_current_progress
+  local curLevelProgress = curLevelNeedProgress - self.m_component_info.m_current_progress
   if showLV == nil then
     return lv, curLevelProgress
   end
   return lv + showLV, curLevelProgress
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.GetProgressLevel = function(self, progress, showLV)
-  -- function num : 0_7 , upvalues : _ENV
+function PersonProgressComponent:GetProgressLevel(progress, showLV)
   local lv = 0
-  for key,value in pairs((self.m_component_info).m_progress_rewards) do
+  for key, value in pairs(self.m_component_info.m_progress_rewards) do
     if key <= progress then
       lv = lv + 1
     end
@@ -101,16 +77,11 @@ PersonProgressComponent.GetProgressLevel = function(self, progress, showLV)
   return lv + showLV
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.GetNextLevelNeedProgress = function(self)
-  -- function num : 0_8
+function PersonProgressComponent:GetNextLevelNeedProgress()
   local progressList = self:GetProgressList()
-  local curProgressLevel = (self:GetCurProgress(1))
-  -- DECOMPILER ERROR at PC5: Overwrote pending register: R3 in 'AssignReg'
-
-  local curLevelProgress = .end
-  if #progressList <= curProgressLevel then
+  local curProgressLevel = self:GetCurProgress(1)
+  local curLevelProgress
+  if curProgressLevel >= #progressList then
     curLevelProgress = progressList[#progressList]
   else
     curLevelProgress = progressList[curProgressLevel]
@@ -119,325 +90,209 @@ PersonProgressComponent.GetNextLevelNeedProgress = function(self)
   return needProgress
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.GetCurLevelProgressRate = function(self)
-  -- function num : 0_9
+function PersonProgressComponent:GetCurLevelProgressRate()
   local progressList = self:GetProgressList()
-  ;
-  (self:GetCurProgress(1))
-  local curProgressLevel = nil
-  local curLevelProgress, preLevelProgress = nil, nil
-  if #progressList <= curProgressLevel then
+  local curProgressLevel = self:GetCurProgress(1)
+  local curLevelProgress, preLevelProgress
+  if curProgressLevel >= #progressList then
     curLevelProgress = progressList[#progressList]
     preLevelProgress = progressList[#progressList - 1]
+  elseif curProgressLevel == 1 then
+    curLevelProgress = progressList[curProgressLevel]
+    preLevelProgress = 0
   else
-    if curProgressLevel == 1 then
-      curLevelProgress = progressList[curProgressLevel]
-      preLevelProgress = 0
-    else
-      curLevelProgress = progressList[curProgressLevel]
-      preLevelProgress = progressList[curProgressLevel - 1]
-    end
+    curLevelProgress = progressList[curProgressLevel]
+    preLevelProgress = progressList[curProgressLevel - 1]
   end
   if preLevelProgress < self:GetCurrentProgress() then
     local rate = (self:GetCurrentProgress() - preLevelProgress) / (curLevelProgress - preLevelProgress)
     return rate
   else
-    do
-      do return 0 end
-    end
+    return 0
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.HandleReceiveReward = function(self, TT, asyncRes, progress)
-  -- function num : 0_10 , upvalues : _ENV
+function PersonProgressComponent:HandleReceiveReward(TT, asyncRes, progress)
   local request = PersonProgressComponentReceiveRewardReq:New()
   local response = PersonProgressComponentReceiveRewardRep:New()
   request.m_progress = progress
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][PersonProgressComponent] HandleReceiveReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][PersonProgressComponent] HandleReceiveReward ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).m_current_progress = response.m_new_progress
-  ;
-  (table.insert)((self.m_component_info).m_received_progress, progress)
+  self.m_component_info.m_current_progress = response.m_new_progress
+  table.insert(self.m_component_info.m_received_progress, progress)
   return response.m_rewards
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.HandleOneKeyReceiveRewards = function(self, TT, asyncRes)
-  -- function num : 0_11 , upvalues : _ENV
+function PersonProgressComponent:HandleOneKeyReceiveRewards(TT, asyncRes)
   local request = PersonProgressComponentOneKeyReceiveRewardReq:New()
   local response = PersonProgressComponentOneKeyReceiveRewardRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][PersonProgressComponent] HandleReceiveReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][PersonProgressComponent] HandleReceiveReward ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).m_current_progress = response.m_new_progress
-  for progress,reward in pairs((self.m_component_info).m_progress_rewards) do
-    if progress <= (self.m_component_info).m_current_progress then
+  self.m_component_info.m_current_progress = response.m_new_progress
+  for progress, reward in pairs(self.m_component_info.m_progress_rewards) do
+    if progress <= self.m_component_info.m_current_progress then
       local bFind = false
-      for _,record in ipairs((self.m_component_info).m_received_progress) do
+      for _, record in ipairs(self.m_component_info.m_received_progress) do
         if record == progress then
           bFind = true
           break
         end
       end
-      do
-        do
-          if not bFind then
-            (table.insert)((self.m_component_info).m_received_progress, progress)
-          end
-          -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if not bFind then
+        table.insert(self.m_component_info.m_received_progress, progress)
       end
     end
   end
   return response.m_rewards
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.HandlePersonProgressCollect = function(self, TT, asyncRes, item_num, mark, mark2)
-  -- function num : 0_12 , upvalues : _ENV
+function PersonProgressComponent:HandlePersonProgressCollect(TT, asyncRes, item_num, mark, mark2)
   local request = PersonProgressComponentCollectReq:New()
   local response = PersonProgressComponentCollectRep:New()
   request.m_item_num = item_num
   request.m_mark = mark
   request.m_mark_else = mark2
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][PersonProgressComponent] HandlePersonProgressCollect ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][PersonProgressComponent] HandlePersonProgressCollect ret:", asyncRes.m_result)
     return nil
   else
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.m_component_info).m_mark = mark
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.m_component_info).m_mark_else = mark2
+    self.m_component_info.m_mark = mark
+    self.m_component_info.m_mark_else = mark2
   end
   return response
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.HandlePersonProgressProgressReq = function(self, TT, asyncRes, progress)
-  -- function num : 0_13 , upvalues : _ENV
+function PersonProgressComponent:HandlePersonProgressProgressReq(TT, asyncRes, progress)
   local request = PersonProgressProgressReq:New()
   local response = PersonProgressProgressResult:New()
   request.m_progress = progress
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][PersonProgressComponent] HandleReceiveReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][PersonProgressComponent] HandleReceiveReward ret:", asyncRes.m_result)
     return nil
   else
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.m_component_info).m_progress = progress
+    self.m_component_info.m_progress = progress
   end
   return response
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.HandlePersonProgressCollect = function(self, TT, asyncRes, item_num, mark, mark2)
-  -- function num : 0_14 , upvalues : _ENV
+function PersonProgressComponent:HandlePersonProgressCollect(TT, asyncRes, item_num, mark, mark2)
   local request = PersonProgressComponentCollectReq:New()
   local response = PersonProgressComponentCollectRep:New()
   request.m_item_num = item_num
   request.m_mark = mark
   request.m_mark_else = mark2
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][PersonProgressComponent] HandlePersonProgressCollect ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][PersonProgressComponent] HandlePersonProgressCollect ret:", asyncRes.m_result)
     return nil
   else
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.m_component_info).m_mark = mark
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.m_component_info).m_mark_else = mark2
+    self.m_component_info.m_mark = mark
+    self.m_component_info.m_mark_else = mark2
   end
   return response
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_15 , upvalues : _ENV
+function PersonProgressComponent:CampaignComponentPushNotify(notify_data)
   if PersonProgressComponentNotifyType.PersonProgressComponentNotify_StepChanged == notify_data.m_notify_type then
     local ev = NotifyPresonProgressComponentItemCountChanged:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
       self:OnItemCountChanged(ev)
     else
-      ;
-      (Log.error)("[CampaignCom][PersonProgressComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][PersonProgressComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.OnItemCountChanged = function(self, ev)
-  -- function num : 0_16
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_component_info).m_current_progress = ev.m_item_count
+function PersonProgressComponent:OnItemCountChanged(ev)
+  self.m_component_info.m_current_progress = ev.m_item_count
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.Start_HandleReceiveReward = function(self, progress, callback)
-  -- function num : 0_17 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("PersonProgressComponent:Start_HandleReceiveReward")
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_17_0 , upvalues : _ENV, self, progress, callback
+function PersonProgressComponent:Start_HandleReceiveReward(progress, callback)
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
+  GameGlobal.UIStateManager():Lock("PersonProgressComponent:Start_HandleReceiveReward")
+  TaskManager:GetInstance():StartTask(function(TT)
     local res = AsyncRequestRes:New()
     local rewards = self:HandleReceiveReward(TT, res, progress)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("PersonProgressComponent:Start_HandleReceiveReward")
+    GameGlobal.UIStateManager():UnLock("PersonProgressComponent:Start_HandleReceiveReward")
     callback(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.Start_HandleOneKeyReceiveRewards = function(self, callback)
-  -- function num : 0_18 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("PersonProgressComponent:Start_HandleOneKeyReceiveRewards")
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_18_0 , upvalues : _ENV, self, callback
+function PersonProgressComponent:Start_HandleOneKeyReceiveRewards(callback)
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
+  GameGlobal.UIStateManager():Lock("PersonProgressComponent:Start_HandleOneKeyReceiveRewards")
+  TaskManager:GetInstance():StartTask(function(TT)
     local res = AsyncRequestRes:New()
     local rewards = self:HandleOneKeyReceiveRewards(TT, res)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("PersonProgressComponent:Start_HandleOneKeyReceiveRewards")
+    GameGlobal.UIStateManager():UnLock("PersonProgressComponent:Start_HandleOneKeyReceiveRewards")
     callback(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.GetItemId = function(self)
-  -- function num : 0_19
-  return (self.m_component_info).m_item_id
+function PersonProgressComponent:GetItemId()
+  return self.m_component_info.m_item_id
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.GetItemIcon = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local cfgItem = (Cfg.cfg_item)[self:GetItemId()]
+function PersonProgressComponent:GetItemIcon()
+  local cfgItem = Cfg.cfg_item[self:GetItemId()]
   return cfgItem and cfgItem.Icon or nil
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.GetItemPriceIcon = function(self)
-  -- function num : 0_21
+function PersonProgressComponent:GetItemPriceIcon()
   return "toptoon_" .. self:GetItemId()
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.GetCurrentProgress = function(self)
-  -- function num : 0_22
-  return (self.m_component_info).m_current_progress
+function PersonProgressComponent:GetCurrentProgress()
+  return self.m_component_info.m_current_progress
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.GetMaxProgress = function(self)
-  -- function num : 0_23
+function PersonProgressComponent:GetMaxProgress()
   local progress_list = self:GetProgressList()
   return progress_list[#progress_list] or 0
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.CalcProtressRate = function(self)
-  -- function num : 0_24
+function PersonProgressComponent:CalcProtressRate()
   local cur = self:GetCurrentProgress()
   local max = self:GetMaxProgress()
   local rate = cur * 100 / max
   return rate
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.CalcProtressRate_Multi = function(self, uiRate)
-  -- function num : 0_25 , upvalues : _ENV
+function PersonProgressComponent:CalcProtressRate_Multi(uiRate)
   local cur = self:GetCurrentProgress()
   local prgList = self:GetProgressList()
   local pre = 0
-  for i,v in ipairs(prgList) do
-    local left = i <= #uiRate and (uiRate[i])[1] or 1
-    local right = i <= #uiRate and (uiRate[i])[2] or 1
-    do
-      do
-        if pre <= cur and cur <= v then
-          local r = (cur - pre) / (v - pre)
-          return left + r * (right - left)
-        end
-        pre = v
-        -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+  for i, v in ipairs(prgList) do
+    local left = i <= #uiRate and uiRate[i][1] or 1
+    local right = i <= #uiRate and uiRate[i][2] or 1
+    if cur >= pre and v >= cur then
+      local r = (cur - pre) / (v - pre)
+      return left + r * (right - left)
     end
+    pre = v
   end
   return 1
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.IsReceivedProgress = function(self, progress)
-  -- function num : 0_26 , upvalues : _ENV
-  if (self.m_component_info).m_lv_limit ~= 0 and (self.m_component_info).m_progress < progress then
+function PersonProgressComponent:IsReceivedProgress(progress)
+  if self.m_component_info.m_lv_limit ~= 0 and progress > self.m_component_info.m_progress then
     return false
   end
-  for _,v in ipairs((self.m_component_info).m_received_progress) do
+  for _, v in ipairs(self.m_component_info.m_received_progress) do
     if v == progress then
       return true
     end
@@ -445,44 +300,36 @@ PersonProgressComponent.IsReceivedProgress = function(self, progress)
   return false
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.HasCanLevelUp = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  if (self.m_component_info).m_lv_limit == 0 then
+function PersonProgressComponent:HasCanLevelUp()
+  if self.m_component_info.m_lv_limit == 0 then
     return false
   end
   local m_current_progress = self:GetCurrentProgress()
   local OrderList = self:GetProgressList()
-  local m_progress = (self.m_component_info).m_progress
+  local m_progress = self.m_component_info.m_progress
   local max = OrderList[1]
-  for i,v in ipairs(OrderList) do
-    if m_progress < v then
+  for i, v in ipairs(OrderList) do
+    if v > m_progress then
       max = v
       break
     end
   end
-  do
-    if m_progress == OrderList[(table.count)(OrderList)] then
-      return false
-    end
-    if m_current_progress < max then
-      return false
-    else
-      return true
-    end
+  if m_progress == OrderList[table.count(OrderList)] then
+    return false
+  end
+  if m_current_progress < max then
+    return false
+  else
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.HasCanGetReward = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function PersonProgressComponent:HasCanGetReward()
   local cur = self:GetCurrentProgress()
-  if (self.m_component_info).m_lv_limit ~= 0 then
-    cur = (self.m_component_info).m_progress
+  if self.m_component_info.m_lv_limit ~= 0 then
+    cur = self.m_component_info.m_progress
   end
-  for k,v in pairs((self.m_component_info).m_progress_rewards) do
+  for k, v in pairs(self.m_component_info.m_progress_rewards) do
     if k <= cur and not self:IsReceivedProgress(k) then
       return true
     end
@@ -490,38 +337,25 @@ PersonProgressComponent.HasCanGetReward = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.GetProgressList = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function PersonProgressComponent:GetProgressList()
   local tb = {}
-  for k,v in pairs((self.m_component_info).m_progress_rewards) do
-    (table.insert)(tb, k)
+  for k, v in pairs(self.m_component_info.m_progress_rewards) do
+    table.insert(tb, k)
   end
-  ;
-  (table.sort)(tb, function(a, b)
-    -- function num : 0_29_0
-    do return a < b end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(tb, function(a, b)
+    return a < b
+  end)
   return tb
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.GetProgressRewards = function(self, progress)
-  -- function num : 0_30
-  return ((self.m_component_info).m_progress_rewards)[progress]
+function PersonProgressComponent:GetProgressRewards(progress)
+  return self.m_component_info.m_progress_rewards[progress]
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.CheckItemStatus = function(self, progress)
-  -- function num : 0_31 , upvalues : CampaignPersonProgressStatus
+function PersonProgressComponent:CheckItemStatus(progress)
   local curProgress = self:GetCurrentProgress()
   local status = CampaignPersonProgressStatus.CPPS_Accepted
-  if (self.m_component_info).m_lv_limit == 0 then
+  if self.m_component_info.m_lv_limit == 0 then
     if progress <= curProgress then
       status = CampaignPersonProgressStatus.CPPS_Completed
     end
@@ -529,7 +363,7 @@ PersonProgressComponent.CheckItemStatus = function(self, progress)
       status = CampaignPersonProgressStatus.CPPS_Taken
     end
   else
-    if progress <= (self.m_component_info).m_progress then
+    if progress <= self.m_component_info.m_progress then
       status = CampaignPersonProgressStatus.CPPS_Completed
     else
       status = CampaignPersonProgressStatus.CPPS_Accepted
@@ -541,13 +375,10 @@ PersonProgressComponent.CheckItemStatus = function(self, progress)
   return status
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.SortProgressListByCampaignPersonProgressStatus = function(self, progressList)
-  -- function num : 0_32 , upvalues : _ENV, CampaignPersonProgressStatus
+function PersonProgressComponent:SortProgressListByCampaignPersonProgressStatus(progressList)
   local status = {}
   local defaultIndex = {}
-  for k,v in ipairs(progressList) do
+  for k, v in ipairs(progressList) do
     defaultIndex[v] = k
     status[v] = self:CheckItemStatus(v)
   end
@@ -555,32 +386,21 @@ PersonProgressComponent.SortProgressListByCampaignPersonProgressStatus = functio
   val[CampaignPersonProgressStatus.CPPS_Completed] = 0
   val[CampaignPersonProgressStatus.CPPS_Accepted] = 1
   val[CampaignPersonProgressStatus.CPPS_Taken] = 2
-  ;
-  (table.sort)(progressList, function(a, b)
-    -- function num : 0_32_0 , upvalues : val, status, defaultIndex
-    if defaultIndex[a] >= defaultIndex[b] then
-      do return val[status[a]] ~= val[status[b]] end
-      do return val[status[a]] < val[status[b]] end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  table.sort(progressList, function(a, b)
+    if val[status[a]] == val[status[b]] then
+      return defaultIndex[a] < defaultIndex[b]
     end
-  end
-)
+    return val[status[a]] < val[status[b]]
+  end)
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.IsSpecialRewards = function(self, progress_index)
-  -- function num : 0_33
-  do return ((self.m_component_info).m_special_rewards)[progress_index] ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function PersonProgressComponent:IsSpecialRewards(progress_index)
+  return self.m_component_info.m_special_rewards[progress_index] ~= nil
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.GetProgressItemCountInTable = function(self, tb)
-  -- function num : 0_34 , upvalues : _ENV
+function PersonProgressComponent:GetProgressItemCountInTable(tb)
   local itemId = self:GetItemId()
-  for _,v in ipairs(tb) do
+  for _, v in ipairs(tb) do
     if v.assetid == itemId then
       return v.count
     end
@@ -588,18 +408,13 @@ PersonProgressComponent.GetProgressItemCountInTable = function(self, tb)
   return 0
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-PersonProgressComponent.RemoveProgressItemInTable = function(self, tb)
-  -- function num : 0_35 , upvalues : _ENV
+function PersonProgressComponent:RemoveProgressItemInTable(tb)
   local itemId = self:GetItemId()
   local newTb = {}
-  for _,v in ipairs(tb) do
+  for _, v in ipairs(tb) do
     if v.assetid ~= itemId then
-      (table.insert)(newTb, v)
+      table.insert(newTb, v)
     end
   end
   return newTb
 end
-
-

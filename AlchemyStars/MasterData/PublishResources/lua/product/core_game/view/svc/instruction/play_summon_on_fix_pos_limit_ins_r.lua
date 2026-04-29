@@ -1,46 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_summon_on_fix_pos_limit_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySummonOnFixPosLimitInstruction", BaseInstruction)
 PlaySummonOnFixPosLimitInstruction = PlaySummonOnFixPosLimitInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySummonOnFixPosLimitInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySummonOnFixPosLimitInstruction:Constructor(paramList)
   self._isDestroy = tonumber(paramList.isDestroy) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySummonOnFixPosLimitInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySummonOnFixPosLimitInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local trapServiceRender = world:GetService("TrapRender")
   if self._isDestroy ~= 1 then
     local targetEntityID = phaseContext:GetCurTargetEntityID()
     local trapEntity = world:GetEntityByID(targetEntityID)
     trapServiceRender:CreateSingleTrapRender(TT, trapEntity, true)
-    return 
+    return
   end
-  do
-    local routineCmpt = (casterEntity:SkillRoutine()):GetResultContainer()
-    local resultArray = routineCmpt:GetEffectResultsAsArray(SkillEffectType.SummonOnFixPosLimit)
-    if not resultArray then
-      return 
-    end
-    for _,result in ipairs(resultArray) do
-      local destroyEntityIDList = result:GetDestroyEntityIDList()
-      for i,entityID in ipairs(destroyEntityIDList) do
-        local entity = world:GetEntityByID(entityID)
-        if entity then
-          trapServiceRender:PlayTrapDieSkill(TT, {entity})
-        end
+  local routineCmpt = casterEntity:SkillRoutine():GetResultContainer()
+  local resultArray = routineCmpt:GetEffectResultsAsArray(SkillEffectType.SummonOnFixPosLimit)
+  if not resultArray then
+    return
+  end
+  for _, result in ipairs(resultArray) do
+    local destroyEntityIDList = result:GetDestroyEntityIDList()
+    for i, entityID in ipairs(destroyEntityIDList) do
+      local entity = world:GetEntityByID(entityID)
+      if entity then
+        trapServiceRender:PlayTrapDieSkill(TT, {entity})
       end
     end
   end
 end
-
-

@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_damage_by_body_area_piece_count_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewDamageByBodyAreaPieceCount", BuffViewBase)
 BuffViewDamageByBodyAreaPieceCount = BuffViewDamageByBodyAreaPieceCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewDamageByBodyAreaPieceCount.PlayView = function(self, TT)
-  -- function num : 0_0
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function BuffViewDamageByBodyAreaPieceCount:PlayView(TT)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayDamageBuff(TT, self)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewDamageByBodyAreaPieceCount.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewDamageByBodyAreaPieceCount:IsNotifyMatch(notify)
   local result = self._buffResult
   local entity = self._entity
-  if entity:GetID() ~= (notify:GetNotifyEntity()):GetID() then
-    do return notify:GetNotifyType() ~= NotifyType.BuffLoad end
-    do return true end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if notify:GetNotifyType() == NotifyType.BuffLoad then
+    return entity:GetID() == notify:GetNotifyEntity():GetID()
   end
+  return true
 end
-
-

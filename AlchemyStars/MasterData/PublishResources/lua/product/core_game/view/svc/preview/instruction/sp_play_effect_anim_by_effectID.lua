@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_effect_anim_by_effectID.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayEffectAnimByEffectIDInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayEffectAnimByEffectIDInstruction = SkillPreviewPlayEffectAnimByEffectIDInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayEffectAnimByEffectIDInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayEffectAnimByEffectIDInstruction:Constructor(params)
   self._effectID = tonumber(params.effectID)
   self._anim = params.anim
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayEffectAnimByEffectIDInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local previewActiveSkillService = (previewContext:GetWorld()):GetService("PreviewActiveSkill")
+function SkillPreviewPlayEffectAnimByEffectIDInstruction:DoInstruction(TT, casterEntity, previewContext)
+  local previewActiveSkillService = previewContext:GetWorld():GetService("PreviewActiveSkill")
   local world = casterEntity:GetOwnerWorld()
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
   if not previewPickUpComponent then
-    return 
+    return
   end
   local entityIDs = previewPickUpComponent:GetPickUpEffectEntityIDArrayByEffectID(self._effectID)
   local world = casterEntity:GetOwnerWorld()
-  for _,id in ipairs(entityIDs) do
+  for _, id in ipairs(entityIDs) do
     local e = world:GetEntityByID(id)
     if e then
       self:_PlayAnimation(e)
@@ -34,20 +24,15 @@ SkillPreviewPlayEffectAnimByEffectIDInstruction.DoInstruction = function(self, T
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayEffectAnimByEffectIDInstruction._PlayAnimation = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPreviewPlayEffectAnimByEffectIDInstruction:_PlayAnimation(entity)
   if not entity:HasView() then
-    return 
+    return
   end
-  local go = (entity:View()):GetGameObject()
+  local go = entity:View():GetGameObject()
   local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
   if anim == nil then
-    (Log.fatal)("Cant play legacy animation, animation not found in ", go.name)
-    return 
+    Log.fatal("Cant play legacy animation, animation not found in ", go.name)
+    return
   end
   anim:Play(self._anim)
 end
-
-

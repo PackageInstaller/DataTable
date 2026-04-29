@@ -1,41 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/alchemy/ShopLevelUP/ui_cn20_n49_alchemy_shop_levelup_complete.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49AlchemyShopLevelUPComplete", UIController)
 UICN20N49AlchemyShopLevelUPComplete = UICN20N49AlchemyShopLevelUPComplete
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49AlchemyShopLevelUPComplete.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN20N49AlchemyShopLevelUPComplete:OnShow(uiParams)
   self._cfg = uiParams[1]
   self:InitWidgets()
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUPComplete.InitWidgets = function(self)
-  -- function num : 0_1
+function UICN20N49AlchemyShopLevelUPComplete:InitWidgets()
   self._itemText = self:GetUIComponent("UILocalizationText", "itemText")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUPComplete.RefreshUI = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._itemText):SetText((StringTable.Get)((self._cfg).Desc))
+function UICN20N49AlchemyShopLevelUPComplete:RefreshUI()
+  self._itemText:SetText(StringTable.Get(self._cfg.Desc))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopLevelUPComplete.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UICN20N49AlchemyShopLevelUPComplete:BgOnClick(go)
   self:CloseDialog()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
-
-

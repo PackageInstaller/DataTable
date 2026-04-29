@@ -1,78 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_res_instance/ui_res_instance_entry_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIResInstanceEntryData", Object)
 UIResInstanceEntryData = UIResInstanceEntryData
 local StringGet = StringTable.Get
--- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
 
-UIResInstanceEntryData.Constructor = function(self, cfg)
-  -- function num : 0_0 , upvalues : _ENV
+function UIResInstanceEntryData:Constructor(cfg)
   if not cfg then
-    return 
+    return
   end
   self.cfg = cfg
   self.instanceList = {}
   self.expInstanceList = {}
-  for _,subType in pairs(DungeonSubType) do
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self.expInstanceList)[subType] = {}
+  for _, subType in pairs(DungeonSubType) do
+    self.expInstanceList[subType] = {}
   end
   self.stack = Stack:New()
   self:InitInstanceList()
   self:InitWord()
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.InitWord = function(self)
-  -- function num : 0_1 , upvalues : StringGet, _ENV
-  local word = self.cfg and StringGet((self.cfg).word) or ""
-  local words = (string.split)(word, "|")
+function UIResInstanceEntryData:InitWord()
+  local word = self.cfg and StringGet(self.cfg.word) or ""
+  local words = string.split(word, "|")
   self.wordPlayer = words[1]
   self.wordWel = words[2]
   self.wordWait = words[3]
-  local voice = (self.cfg).voice
-  local voices = (string.split)(voice, "|")
+  local voice = self.cfg.voice
+  local voices = string.split(voice, "|")
   self.voiceWel = tonumber(voices[1])
   self.voiceWait = tonumber(voices[2])
-  self.wordWaitLoopTime = (self.cfg).loopTime
-  self.interactWords = (self.cfg).interactWord
+  self.wordWaitLoopTime = self.cfg.loopTime
+  self.interactWords = self.cfg.interactWord
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.InitInstanceList = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIResInstanceEntryData:InitInstanceList()
   local levelids = self:GetLevelIds()
   if not levelids then
-    return 
+    return
   end
-  for _,instanceId in ipairs(levelids) do
+  for _, instanceId in ipairs(levelids) do
     local i = UIResInstanceData:New(instanceId)
-    ;
-    (table.insert)(self.instanceList, i)
+    table.insert(self.instanceList, i)
     if self:GetMainType() == DungeonType.DungeonType_Experience then
-      (table.insert)((self.expInstanceList)[i:GetSubType()], i)
+      table.insert(self.expInstanceList[i:GetSubType()], i)
     end
   end
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetInstanceList = function(self)
-  -- function num : 0_3
+function UIResInstanceEntryData:GetInstanceList()
   return self.instanceList
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetInstanceById = function(self, instanceId)
-  -- function num : 0_4 , upvalues : _ENV
-  for index,data in ipairs(self.instanceList) do
+function UIResInstanceEntryData:GetInstanceById(instanceId)
+  for index, data in ipairs(self.instanceList) do
     if data:GetId() == instanceId then
       return data
     end
@@ -80,196 +58,121 @@ UIResInstanceEntryData.GetInstanceById = function(self, instanceId)
   return nil
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetExpInstanceList = function(self, subType)
-  -- function num : 0_5
-  return (self.expInstanceList)[subType]
+function UIResInstanceEntryData:GetExpInstanceList(subType)
+  return self.expInstanceList[subType]
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetExpInstanceListSort = function(self, subType)
-  -- function num : 0_6 , upvalues : _ENV
-  (table.sort)((self.expInstanceList)[subType], UIResInstanceEntryData.SortExp)
-  return (table.count)((self.expInstanceList)[subType])
+function UIResInstanceEntryData:GetExpInstanceListSort(subType)
+  table.sort(self.expInstanceList[subType], UIResInstanceEntryData.SortExp)
+  return table.count(self.expInstanceList[subType])
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.SortExp = function(a, b)
-  -- function num : 0_7
+function UIResInstanceEntryData.SortExp(a, b)
   local aOpen = a:Open() == true and 1 or 0
   local bOpen = b:Open() == true and 1 or 0
-  if a:GetId() >= b:GetId() then
-    do return aOpen ~= bOpen end
-    do return bOpen < aOpen end
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  if aOpen == bOpen then
+    return a:GetId() < b:GetId()
+  else
+    return aOpen > bOpen
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetMainType = function(self)
-  -- function num : 0_8
-  return self.cfg and (self.cfg).instancetype or 0
+function UIResInstanceEntryData:GetMainType()
+  return self.cfg and self.cfg.instancetype or 0
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetLevelIds = function(self)
-  -- function num : 0_9
-  return self.cfg and (self.cfg).levelids or nil
+function UIResInstanceEntryData:GetLevelIds()
+  return self.cfg and self.cfg.levelids or nil
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetEntryName = function(self)
-  -- function num : 0_10 , upvalues : StringGet
-  return self.cfg and StringGet((self.cfg).entryname) or ""
+function UIResInstanceEntryData:GetEntryName()
+  return self.cfg and StringGet(self.cfg.entryname) or ""
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetEntryResultName = function(self)
-  -- function num : 0_11 , upvalues : StringGet
-  return self.cfg and StringGet((self.cfg).entryresultname) or ""
+function UIResInstanceEntryData:GetEntryResultName()
+  return self.cfg and StringGet(self.cfg.entryresultname) or ""
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetMaterialName = function(self)
-  -- function num : 0_12 , upvalues : StringGet
-  return self.cfg and StringGet((self.cfg).resname) or ""
+function UIResInstanceEntryData:GetMaterialName()
+  return self.cfg and StringGet(self.cfg.resname) or ""
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetDate = function(self)
-  -- function num : 0_13
-  return self.cfg and ((self.cfg).opentime)[1] or ""
+function UIResInstanceEntryData:GetDate()
+  return self.cfg and self.cfg.opentime[1] or ""
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetShowDate = function(self)
-  -- function num : 0_14 , upvalues : StringGet
-  return self.cfg and StringGet((self.cfg).dateshow) or ""
+function UIResInstanceEntryData:GetShowDate()
+  return self.cfg and StringGet(self.cfg.dateshow) or ""
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetEntryPic = function(self)
-  -- function num : 0_15
-  return self.cfg and (self.cfg).entrypic or ""
+function UIResInstanceEntryData:GetEntryPic()
+  return self.cfg and self.cfg.entrypic or ""
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetDetailPic = function(self)
-  -- function num : 0_16
-  return self.cfg and (self.cfg).detailpic or ""
+function UIResInstanceEntryData:GetDetailPic()
+  return self.cfg and self.cfg.detailpic or ""
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetDetailSpine = function(self)
-  -- function num : 0_17
-  if self.cfg and (self.cfg).spinePetID then
-    return (self.cfg).spinePetID
+function UIResInstanceEntryData:GetDetailSpine()
+  if self.cfg and self.cfg.spinePetID then
+    return self.cfg.spinePetID
   end
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetDetailSpineOffsetAndScale = function(self)
-  -- function num : 0_18
-  if self.cfg and (self.cfg).spineOffsetScale then
-    return (self.cfg).spineOffsetScale
+function UIResInstanceEntryData:GetDetailSpineOffsetAndScale()
+  if self.cfg and self.cfg.spineOffsetScale then
+    return self.cfg.spineOffsetScale
   end
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetBgPic = function(self)
-  -- function num : 0_19
-  return self.cfg and (self.cfg).bgpic or ""
+function UIResInstanceEntryData:GetBgPic()
+  return self.cfg and self.cfg.bgpic or ""
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetWordPlayerName = function(self)
-  -- function num : 0_20
+function UIResInstanceEntryData:GetWordPlayerName()
   return self.wordPlayer
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetWelWord = function(self)
-  -- function num : 0_21
+function UIResInstanceEntryData:GetWelWord()
   return self.wordWel
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetWaitWord = function(self)
-  -- function num : 0_22
+function UIResInstanceEntryData:GetWaitWord()
   return self.wordWait
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetWelVoice = function(self)
-  -- function num : 0_23
+function UIResInstanceEntryData:GetWelVoice()
   return self.voiceWel
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetWaitVoice = function(self)
-  -- function num : 0_24
+function UIResInstanceEntryData:GetWaitVoice()
   return self.voiceWait
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetWaitWordLoopTime = function(self)
-  -- function num : 0_25
+function UIResInstanceEntryData:GetWaitWordLoopTime()
   return self.wordWaitLoopTime
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetInteractWord = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  if (self.stack):Size() <= 0 then
+function UIResInstanceEntryData:GetInteractWord()
+  if self.stack:Size() <= 0 then
     local count = 0
     local all = #self.interactWords
     while count < all do
-      local index = (math.random)(1, all)
-      if not (self.stack):Contains(index) then
-        (self.stack):Push(index)
+      local index = math.random(1, all)
+      if not self.stack:Contains(index) then
+        self.stack:Push(index)
         count = count + 1
       end
     end
   end
-  do
-    return (self.interactWords)[(self.stack):Pop()]
-  end
+  return self.interactWords[self.stack:Pop()]
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResInstanceEntryData.GetPos = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UIResInstanceEntryData:GetPos()
   if not self.pos then
-    local x = ((self.cfg).pos)[1]
-    local y = ((self.cfg).pos)[2]
-    self.pos = (Vector2.New)(x, y)
+    local x = self.cfg.pos[1]
+    local y = self.cfg.pos[2]
+    self.pos = Vector2.New(x, y)
   end
-  do
-    return self.pos
-  end
+  return self.pos
 end
-
-

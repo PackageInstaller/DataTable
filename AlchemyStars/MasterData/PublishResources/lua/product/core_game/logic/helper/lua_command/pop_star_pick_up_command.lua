@@ -1,104 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/pop_star_pick_up_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PopStarPickUpCommand", IEntityCommand)
 PopStarPickUpCommand = PopStarPickUpCommand
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 PopStarPickUpCommand.CommandType = "PopStarPickUp"
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarPickUpCommand.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PopStarPickUpCommand:Constructor()
   self._gridPos = Vector2.zero
   self._connectPieces = {}
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpCommand.GetCommandType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PopStarPickUpCommand:GetCommandType()
   return PopStarPickUpCommand.CommandType
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpCommand.GetExecStateID = function(self, runAtClient)
-  -- function num : 0_2 , upvalues : _ENV
+function PopStarPickUpCommand:GetExecStateID(runAtClient)
   return GameStateID.WaitInput
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpCommand.DependRoundCount = function(self)
-  -- function num : 0_3
+function PopStarPickUpCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpCommand.GetCmdPickUpPos = function(self)
-  -- function num : 0_4
+function PopStarPickUpCommand:GetCmdPickUpPos()
   return self._gridPos
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpCommand.SetCmdPickUpPos = function(self, gridPos)
-  -- function num : 0_5
+function PopStarPickUpCommand:SetCmdPickUpPos(gridPos)
   self._gridPos = gridPos
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpCommand.GetCmdConnectPieces = function(self)
-  -- function num : 0_6
+function PopStarPickUpCommand:GetCmdConnectPieces()
   return self._connectPieces
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpCommand.SetCmdConnectPieces = function(self, pieces)
-  -- function num : 0_7
+function PopStarPickUpCommand:SetCmdConnectPieces(pieces)
   self._connectPieces = pieces
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpCommand.ToNetMessage = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function PopStarPickUpCommand:ToNetMessage()
   local msg = CEventPopStarPickUpCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
   msg.ClientWaitInput = self.ClientWaitInput
   msg.IsAutoFight = self.IsAutoFight
   msg.CmdIndex = self.CmdIndex
-  msg.gridPos = (Vector2.Pos2Index)(self._gridPos)
-  for _,pos in ipairs(self._connectPieces) do
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R7 in 'UnsetPending'
-
-    (msg.connectPieces)[#msg.connectPieces + 1] = (Vector2.Pos2Index)(pos)
+  msg.gridPos = Vector2.Pos2Index(self._gridPos)
+  for _, pos in ipairs(self._connectPieces) do
+    msg.connectPieces[#msg.connectPieces + 1] = Vector2.Pos2Index(pos)
   end
   return msg
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_9 , upvalues : _ENV
+function PopStarPickUpCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
   self.IsAutoFight = msg.IsAutoFight
   self.CmdIndex = msg.CmdIndex
-  self._gridPos = (Vector2.Index2Pos)(msg.gridPos)
-  for _,v in ipairs(msg.connectPieces) do
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._connectPieces)[#self._connectPieces + 1] = (Vector2.Index2Pos)(v)
+  self._gridPos = Vector2.Index2Pos(msg.gridPos)
+  for _, v in ipairs(msg.connectPieces) do
+    self._connectPieces[#self._connectPieces + 1] = Vector2.Index2Pos(v)
   end
 end
-
-

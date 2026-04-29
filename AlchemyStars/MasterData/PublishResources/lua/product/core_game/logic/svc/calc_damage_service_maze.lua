@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/calc_damage_service_maze.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_damage_svc_l")
 _class("CalcDamageServiceMaze", CalcDamageService)
 CalcDamageServiceMaze = CalcDamageServiceMaze
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CalcDamageServiceMaze.Constructor = function(self, world)
-  -- function num : 0_0
+function CalcDamageServiceMaze:Constructor(world)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CalcDamageServiceMaze.GetTeamLogicHP = function(self, teamEntity)
-  -- function num : 0_1 , upvalues : _ENV
-  local petList = (teamEntity:Team()):GetTeamPetEntities()
+function CalcDamageServiceMaze:GetTeamLogicHP(teamEntity)
+  local petList = teamEntity:Team():GetTeamPetEntities()
   local teamHP, teamMaxHP = 0, 0
-  for i,entity in ipairs(petList) do
+  for i, entity in ipairs(petList) do
     local attrCmpt = entity:Attributes()
     local maxHp = attrCmpt:CalcMaxHp()
     local curHP = attrCmpt:GetCurrentHP()
@@ -28,62 +18,49 @@ CalcDamageServiceMaze.GetTeamLogicHP = function(self, teamEntity)
   return teamHP, teamMaxHP
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CalcDamageServiceMaze._DoDamageModifyHP = function(self, attacker, defender, damageInfo, ignoreShield)
-  -- function num : 0_2
+function CalcDamageServiceMaze:_DoDamageModifyHP(attacker, defender, damageInfo, ignoreShield)
   if defender:HasTeam() then
     self:_CalcTeamHP(attacker, defender, damageInfo)
+  elseif defender:HasPetPstID() and not defender:HasPetDeadMark() then
+    self:_CalcDamageOnHP(attacker, defender, damageInfo)
+    self:_ModifyDefenderHP(defender, damageInfo)
+    local team = defender:Pet():GetOwnerTeamEntity()
+    self:_ModifyDefenderHP(team, damageInfo)
   else
-    if defender:HasPetPstID() and not defender:HasPetDeadMark() then
-      self:_CalcDamageOnHP(attacker, defender, damageInfo)
-      self:_ModifyDefenderHP(defender, damageInfo)
-      local team = (defender:Pet()):GetOwnerTeamEntity()
-      self:_ModifyDefenderHP(team, damageInfo)
-    else
-      do
-        self:_CalcDamageOnHP(attacker, defender, damageInfo)
-        self:_ModifyDefenderHP(defender, damageInfo)
-      end
-    end
+    self:_CalcDamageOnHP(attacker, defender, damageInfo)
+    self:_ModifyDefenderHP(defender, damageInfo)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CalcDamageServiceMaze._CalcTeamHP = function(self, attacker, team, damageInfo)
-  -- function num : 0_3 , upvalues : _ENV
+function CalcDamageServiceMaze:_CalcTeamHP(attacker, team, damageInfo)
   self:_CalcDamageOnHP(attacker, team, damageInfo)
   local damageOnHP = -damageInfo:GetChangeHP()
   local count = self:GetAlivePetCount(team)
   local returnHP = 0
-  if damageOnHP > 0 then
-    local curDamage = (math.floor)(damageOnHP / count + 0.5)
+  if 0 < damageOnHP then
+    local curDamage = math.floor(damageOnHP / count + 0.5)
     if curDamage <= 0 then
       curDamage = 1
     end
-    local entitiesList = (team:Team()):GetTeamPetEntities()
-    for id,defender in ipairs(entitiesList) do
-      if not (defender:Attributes()):GetAttribute("AfterDamage") then
-        local afterDamagePercent = defender:HasPetDeadMark() or 0
+    local entitiesList = team:Team():GetTeamPetEntities()
+    for id, defender in ipairs(entitiesList) do
+      if not defender:HasPetDeadMark() then
+        local afterDamagePercent = defender:Attributes():GetAttribute("AfterDamage") or 0
+        local afterDamage = curDamage * (1 + afterDamagePercent)
+        damageInfo:SetDamageValue(afterDamage)
+        self:_CalcDamageOnHP(attacker, defender, damageInfo)
+        damageInfo:AddMazeDamage(defender:GetID(), damageInfo:GetChangeHP())
+        self:_ModifyDefenderHP(defender, damageInfo)
+        self:_ModifyDefenderHP(team, damageInfo)
       end
-      local afterDamage = curDamage * (1 + afterDamagePercent)
-      damageInfo:SetDamageValue(afterDamage)
-      self:_CalcDamageOnHP(attacker, defender, damageInfo)
-      damageInfo:AddMazeDamage(defender:GetID(), damageInfo:GetChangeHP())
-      self:_ModifyDefenderHP(defender, damageInfo)
-      self:_ModifyDefenderHP(team, damageInfo)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CalcDamageServiceMaze.GetAlivePetCount = function(self, teamEntity)
-  -- function num : 0_4 , upvalues : _ENV
-  local petEntityList = (teamEntity:Team()):GetTeamPetEntities()
+function CalcDamageServiceMaze:GetAlivePetCount(teamEntity)
+  local petEntityList = teamEntity:Team():GetTeamPetEntities()
   local count = 0
-  for _,entity in ipairs(petEntityList) do
+  for _, entity in ipairs(petEntityList) do
     if not entity:HasPetDeadMark() then
       count = count + 1
     end
@@ -91,75 +68,53 @@ CalcDamageServiceMaze.GetAlivePetCount = function(self, teamEntity)
   return count
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CalcDamageServiceMaze._DoAddTargetMaxHP = function(self, defender, addValue, modifyID)
-  -- function num : 0_5
+function CalcDamageServiceMaze:_DoAddTargetMaxHP(defender, addValue, modifyID)
   local ret = {}
-  ;
-  (defender:Attributes()):Modify("MaxHPConstantFix", addValue, modifyID)
-  ret[defender:GetID()] = (defender:Attributes()):CalcMaxHp()
+  defender:Attributes():Modify("MaxHPConstantFix", addValue, modifyID)
+  ret[defender:GetID()] = defender:Attributes():CalcMaxHp()
   if defender:HasTeam() then
     self:_AddTeamMaxHP(defender, addValue, modifyID, ret)
-  else
-    if defender:HasPetPstID() then
-      local teamEntity = (defender:Pet()):GetOwnerTeamEntity()
-      ;
-      (teamEntity:Attributes()):Modify("MaxHPConstantFix", addValue, modifyID)
-      ret[teamEntity:GetID()] = (teamEntity:Attributes()):CalcMaxHp()
-      local buffLogicService = (self._world):GetService("BuffLogic")
-      buffLogicService:FixGreyHPVal(defender)
-      buffLogicService:FixGreyHPVal(teamEntity)
-    end
+  elseif defender:HasPetPstID() then
+    local teamEntity = defender:Pet():GetOwnerTeamEntity()
+    teamEntity:Attributes():Modify("MaxHPConstantFix", addValue, modifyID)
+    ret[teamEntity:GetID()] = teamEntity:Attributes():CalcMaxHp()
+    local buffLogicService = self._world:GetService("BuffLogic")
+    buffLogicService:FixGreyHPVal(defender)
+    buffLogicService:FixGreyHPVal(teamEntity)
   end
-  do
-    return ret
-  end
+  return ret
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CalcDamageServiceMaze._AddTeamMaxHP = function(self, teamEntity, addValue, modifyID, ret)
-  -- function num : 0_6 , upvalues : _ENV
-  local petEntityList = (teamEntity:Team()):GetTeamPetEntities()
+function CalcDamageServiceMaze:_AddTeamMaxHP(teamEntity, addValue, modifyID, ret)
+  local petEntityList = teamEntity:Team():GetTeamPetEntities()
   local petCount = self:GetAlivePetCount(teamEntity)
-  local addHPMax = (math.floor)(addValue / petCount + 0.5)
-  for _,entity in ipairs(petEntityList) do
+  local addHPMax = math.floor(addValue / petCount + 0.5)
+  for _, entity in ipairs(petEntityList) do
     if not entity:HasPetDeadMark() then
-      (entity:Attributes()):Modify("MaxHPConstantFix", addHPMax, modifyID)
-      ret[entity:GetID()] = (entity:Attributes()):CalcMaxHp()
-      ;
-      ((self._world):GetService("BuffLogic")):FixGreyHPVal(entity)
+      entity:Attributes():Modify("MaxHPConstantFix", addHPMax, modifyID)
+      ret[entity:GetID()] = entity:Attributes():CalcMaxHp()
+      self._world:GetService("BuffLogic"):FixGreyHPVal(entity)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CalcDamageServiceMaze._DoAddTargetHP = function(self, defenderEntity, damageInfo)
-  -- function num : 0_7 , upvalues : _ENV
+function CalcDamageServiceMaze:_DoAddTargetHP(defenderEntity, damageInfo)
   if defenderEntity:HasTeam() then
     self:_CalcTeamAddHPValue(defenderEntity, damageInfo)
+  elseif defenderEntity:HasPetPstID() then
+    self:_CalcPetAddHPValue(defenderEntity, damageInfo)
   else
-    if defenderEntity:HasPetPstID() then
-      self:_CalcPetAddHPValue(defenderEntity, damageInfo)
-    else
-      ;
-      ((CalcDamageServiceMaze.super)._DoAddTargetHP)(self, defenderEntity, damageInfo)
-    end
+    CalcDamageServiceMaze.super._DoAddTargetHP(self, defenderEntity, damageInfo)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CalcDamageServiceMaze._CalcTeamAddHPValue = function(self, teamEntity, damageInfo)
-  -- function num : 0_8 , upvalues : _ENV
-  local petEntityList = (teamEntity:Team()):GetTeamPetEntities()
+function CalcDamageServiceMaze:_CalcTeamAddHPValue(teamEntity, damageInfo)
+  local petEntityList = teamEntity:Team():GetTeamPetEntities()
   local petCount = self:GetAlivePetCount(teamEntity)
   local addHP = damageInfo:GetDamageValue()
   local totalAddHP = 0
-  addHP = (math.floor)(addHP / petCount + 0.5)
-  for _,entity in ipairs(petEntityList) do
+  addHP = math.floor(addHP / petCount + 0.5)
+  for _, entity in ipairs(petEntityList) do
     if not entity:HasPetDeadMark() then
       damageInfo:AddMazeDamage(entity:GetID(), addHP)
       damageInfo:SetChangeHP(addHP)
@@ -171,11 +126,8 @@ CalcDamageServiceMaze._CalcTeamAddHPValue = function(self, teamEntity, damageInf
   self:_ModifyDefenderHP(teamEntity, damageInfo)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CalcDamageServiceMaze._CalcPetAddHPValue = function(self, defenderEntity, damageInfo)
-  -- function num : 0_9
-  local team = (defenderEntity:Pet()):GetOwnerTeamEntity()
+function CalcDamageServiceMaze:_CalcPetAddHPValue(defenderEntity, damageInfo)
+  local team = defenderEntity:Pet():GetOwnerTeamEntity()
   local addHP = damageInfo:GetDamageValue()
   if not defenderEntity:HasPetDeadMark() then
     damageInfo:AddMazeDamage(defenderEntity:GetID(), addHP)
@@ -185,17 +137,14 @@ CalcDamageServiceMaze._CalcPetAddHPValue = function(self, defenderEntity, damage
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CalcDamageServiceMaze.SubTargetHPPercent = function(self, casterEntity, targetEntity, percent, byMaxHP, ignoreShield)
-  -- function num : 0_10 , upvalues : _ENV
+function CalcDamageServiceMaze:SubTargetHPPercent(casterEntity, targetEntity, percent, byMaxHP, ignoreShield)
   if targetEntity:HasPetPstID() then
-    local teamEntity = (targetEntity:Pet()):GetOwnerTeamEntity()
-    local petEntityList = (teamEntity:Team()):GetTeamPetEntities()
+    local teamEntity = targetEntity:Pet():GetOwnerTeamEntity()
+    local petEntityList = teamEntity:Team():GetTeamPetEntities()
     local damageInfo = DamageInfo:New(0, DamageType.Real)
-    for _,entity in ipairs(petEntityList) do
+    for _, entity in ipairs(petEntityList) do
       if not entity:HasPetDeadMark() then
-        local tmpDamageInfo = ((CalcDamageServiceMaze.super)._DoSubTargetHPPercent)(self, casterEntity, entity, percent, byMaxHP)
+        local tmpDamageInfo = CalcDamageServiceMaze.super._DoSubTargetHPPercent(self, casterEntity, entity, percent, byMaxHP)
         damageInfo:AddMazeDamage(entity:GetID(), tmpDamageInfo:GetChangeHP())
         if entity:GetID() == targetEntity:GetID() then
           damageInfo:SetDamageValue(tmpDamageInfo:GetDamageValue())
@@ -205,10 +154,6 @@ CalcDamageServiceMaze.SubTargetHPPercent = function(self, casterEntity, targetEn
     end
     return damageInfo
   else
-    do
-      do return ((CalcDamageServiceMaze.super).SubTargetHPPercent)(self, casterEntity, targetEntity, percent, byMaxHP) end
-    end
+    return CalcDamageServiceMaze.super.SubTargetHPPercent(self, casterEntity, targetEntity, percent, byMaxHP)
   end
 end
-
-

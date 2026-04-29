@@ -1,28 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_skip_complate_condition.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetSkipComplateCondition", BuffLogicBase)
 BuffLogicSetSkipComplateCondition = BuffLogicSetSkipComplateCondition
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetSkipComplateCondition.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetSkipComplateCondition:Constructor(buffInstance, logicParam)
   self._skip = logicParam.skip
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetSkipComplateCondition.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetSkipComplateCondition:DoLogic()
+  local e = self._buffInstance:Entity()
   local monsterID = e:MonsterID()
   if not monsterID then
-    return 
+    return
   end
   monsterID:SetSkipComplateCondition(self._skip)
 end
-
-

@@ -1,53 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/common/ui_asset/ui_asset_component_exp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAssetComponentExp", UIAssetComponentBase)
 UIAssetComponentExp = UIAssetComponentExp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAssetComponentExp.OnInit = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._expObj = (((self._gameObject).transform):Find("g_exp")).gameObject
-  self._rect = (self._expObj):GetComponent("RectTransform")
-  self._expTxt = (((self._gameObject).transform):Find("g_exp/exp")):GetComponent("UILocalizationText")
+function UIAssetComponentExp:OnInit()
+  self._expObj = self._gameObject.transform:Find("g_exp").gameObject
+  self._rect = self._expObj:GetComponent("RectTransform")
+  self._expTxt = self._gameObject.transform:Find("g_exp/exp"):GetComponent("UILocalizationText")
   self._upPos = Vector2(-51, 58)
   self._downPos = Vector2(-51, 4.5)
   self._tweener = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentExp.ChangePos = function(self, changePos, isUp)
-  -- function num : 0_1
+function UIAssetComponentExp:ChangePos(changePos, isUp)
   if not changePos then
-    return 
+    return
   end
-  local targetPos = nil
+  local targetPos
   if isUp then
     targetPos = self._upPos
   else
     targetPos = self._downPos
   end
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
   end
-  self._tweener = (self._rect):DOAnchorPos(targetPos, 0.2)
+  self._tweener = self._rect:DOAnchorPos(targetPos, 0.2)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentExp.SetExpNum = function(self, text)
-  -- function num : 0_2 , upvalues : _ENV
-  if (string.isnullorempty)(text) then
-    (self._expObj):SetActive(false)
+function UIAssetComponentExp:SetExpNum(text)
+  if string.isnullorempty(text) then
+    self._expObj:SetActive(false)
   else
-    ;
-    (self._expObj):SetActive(true)
-    ;
-    (self._expTxt):SetText(text)
+    self._expObj:SetActive(true)
+    self._expTxt:SetText(text)
   end
 end
-
-

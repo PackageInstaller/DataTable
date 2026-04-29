@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s5/stage/ui_season_level_stage_s5.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonLevelStageS5", UIController)
 UISeasonLevelStageS5 = UISeasonLevelStageS5
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonLevelStageS5._GetComponents = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonLevelStageS5:_GetComponents()
   self._chapter_normal = self:GetUIComponent("UISelectObjectPath", "chapter_normal")
   self._chapterPool = self._chapter_normal
   self._enemy_normal = self:GetUIComponent("UISelectObjectPath", "enemy_normal")
@@ -31,12 +24,12 @@ UISeasonLevelStageS5._GetComponents = function(self)
   local room = aircraftModule:GetResRoom()
   local topIDList = {}
   if room then
-    (table.insert)(topIDList, RoleAssetID.RoleAssetDoubleRes)
+    table.insert(topIDList, RoleAssetID.RoleAssetDoubleRes)
   end
-  ;
-  (table.insert)(topIDList, RoleAssetID.RoleAssetPhyPoint)
+  table.insert(topIDList, RoleAssetID.RoleAssetPhyPoint)
   if self._hideTopMenu then
-    (self:GetGameObject("stageTopPool")):SetActive(false)
+    self:GetGameObject("stageTopPool"):SetActive(false)
+  else
   end
   local itemCount = #topIDList
   local doubleDropTips = self:GetGameObject("DoubleDropTips")
@@ -47,180 +40,153 @@ UISeasonLevelStageS5._GetComponents = function(self)
   self._conditionTitleTex = self:GetUIComponent("UILocalizationText", "conditionTitleTex")
   local buffTips = self:GetUIComponent("UISelectObjectPath", "BuffTips")
   self._buffTips = buffTips:SpawnObject("UIResBuffDetail")
-  self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  self._uiSeasonModule = (GameGlobal.GetUIModule)(SeasonModule)
-  self._backBtn = (UIWidgetHelper.SpawnObject)(self, "btns", "UISeasonTopBtn")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_0_0 , upvalues : self
+  self._seasonModule = GameGlobal.GetModule(SeasonModule)
+  self._uiSeasonModule = GameGlobal.GetUIModule(SeasonModule)
+  self._backBtn = UIWidgetHelper.SpawnObject(self, "btns", "UISeasonTopBtn")
+  self._backBtn:SetData(function()
     self:Close()
-  end
-, nil, nil, nil)
+  end, nil, nil, nil)
   local isTeamRecord = false
-  do
-    if isTeamRecord then
-      local params = {
-{"TeamRecordBtn", function()
-    -- function num : 0_0_1 , upvalues : self
-    self:ShowDialog("UIActivityLevelRecordController", self._campComp, self._missionID)
+  if isTeamRecord then
+    local params = {
+      {
+        "TeamRecordBtn",
+        function()
+          self:ShowDialog("UIActivityLevelRecordController", self._campComp, self._missionID)
+        end
+      }
+    }
+    self._backBtn:SetData_Extra(params)
   end
-}
-}
-      ;
-      (self._backBtn):SetData_Extra(params)
-    end
-    self.costGo = self:GetGameObject("cost")
-    self.fightBtnTextTr = self:GetUIComponent("RectTransform", "fightBtnText")
-    self._backgroundObj = self:GetGameObject("Background")
-    self._noDiffAwardGo = self:GetGameObject("NoDiffAward")
-    self._seasonAwardGo = self:GetGameObject("SeasonAward")
-    self._seasonNormalAwardGo = self:GetGameObject("MultiAwardGroup1")
-    self._seasonHardAwardGo = self:GetGameObject("MultiAwardGroup2")
-    self._wordAndElem = self:GetUIComponent("UISelectObjectPath", "wordAndElem")
-    self._btnIcon = self:GetUIComponent("Image", "powerIcon")
-    self.buffLevelGen = self:GetUIComponent("UISelectObjectPath", "BuffLevelArea")
-    self.btnWord = self:GetGameObject("btnUnknown")
-    self.panelBattleInfoGo = self:GetGameObject("PanelBattleInfo")
-    self.panelAwardsInfoGo = self:GetGameObject("PanelAwardsInfo")
-    self.wordsContentNormal = self:GetUIComponent("UISelectObjectPath", "WordsNormalContent")
-    self.wordsContentHard = self:GetUIComponent("UISelectObjectPath", "WordsHardContent")
-    self.wordsNormalGo = self:GetGameObject("WordsNormalScroll")
-    self.wordsHardGo = self:GetGameObject("WordsHardScroll")
-    self._normalBtnText = self:GetUIComponent("UILocalizationText", "normal")
-    self._hardBtnText = self:GetUIComponent("UILocalizationText", "hard")
-    self._switchDiffSliderNormalGo = self:GetGameObject("SliderNormal")
-    self._switchDiffSliderHardGo = self:GetGameObject("SliderHard")
-    self._chapterNormalNameText = self:GetUIComponent("UILocalizationText", "ChapterNameNormal")
-    self._chapterHardNameText = self:GetUIComponent("UILocalizationText", "ChapterNameHard")
-    self._chapterNameNormalGo = self:GetGameObject("ChapterNameNormal")
-    self._chapterNameHardGo = self:GetGameObject("ChapterNameHard")
-    self._awardsPanelBtnText = self:GetUIComponent("UILocalizationText", "AwardsPanelBtnText")
-    self._battleInfoPanelBtnText = self:GetUIComponent("UILocalizationText", "BattleInfoPanelBtnText")
-    self:AttachEvent(GameEventType.AfterUILayerChanged, self.OnAfterUILayerChanged)
-    self._anim = self:GetUIComponent("Animation", "UICanvas")
-    self._battleInfoBtn = self:GetGameObject("BattleInfoPanelBtn")
-    self._recordGo = self:GetGameObject("Record")
-    self._hardMask = self:GetGameObject("hardMask")
-    self._normalMask = self:GetGameObject("normalMask")
-    self._hardShadow = self:GetUIComponent("Shadow", "hard")
-    self._normalShadow = self:GetUIComponent("Shadow", "normal")
-    self._hardBtnTr = self:GetUIComponent("RectTransform", "SliderHard")
-    self._normalBtnTr = self:GetUIComponent("RectTransform", "SliderNormal")
-    self._hardEft = self:GetGameObject("effect")
-    self._panelAwardsTipGo = self:GetGameObject("AwardsPanelTip")
-    self._panelBattleInfoTipGo = self:GetGameObject("BattleInfoPanelTip")
-  end
+  self.costGo = self:GetGameObject("cost")
+  self.fightBtnTextTr = self:GetUIComponent("RectTransform", "fightBtnText")
+  self._backgroundObj = self:GetGameObject("Background")
+  self._noDiffAwardGo = self:GetGameObject("NoDiffAward")
+  self._seasonAwardGo = self:GetGameObject("SeasonAward")
+  self._seasonNormalAwardGo = self:GetGameObject("MultiAwardGroup1")
+  self._seasonHardAwardGo = self:GetGameObject("MultiAwardGroup2")
+  self._wordAndElem = self:GetUIComponent("UISelectObjectPath", "wordAndElem")
+  self._btnIcon = self:GetUIComponent("Image", "powerIcon")
+  self.buffLevelGen = self:GetUIComponent("UISelectObjectPath", "BuffLevelArea")
+  self.btnWord = self:GetGameObject("btnUnknown")
+  self.panelBattleInfoGo = self:GetGameObject("PanelBattleInfo")
+  self.panelAwardsInfoGo = self:GetGameObject("PanelAwardsInfo")
+  self.wordsContentNormal = self:GetUIComponent("UISelectObjectPath", "WordsNormalContent")
+  self.wordsContentHard = self:GetUIComponent("UISelectObjectPath", "WordsHardContent")
+  self.wordsNormalGo = self:GetGameObject("WordsNormalScroll")
+  self.wordsHardGo = self:GetGameObject("WordsHardScroll")
+  self._normalBtnText = self:GetUIComponent("UILocalizationText", "normal")
+  self._hardBtnText = self:GetUIComponent("UILocalizationText", "hard")
+  self._switchDiffSliderNormalGo = self:GetGameObject("SliderNormal")
+  self._switchDiffSliderHardGo = self:GetGameObject("SliderHard")
+  self._chapterNormalNameText = self:GetUIComponent("UILocalizationText", "ChapterNameNormal")
+  self._chapterHardNameText = self:GetUIComponent("UILocalizationText", "ChapterNameHard")
+  self._chapterNameNormalGo = self:GetGameObject("ChapterNameNormal")
+  self._chapterNameHardGo = self:GetGameObject("ChapterNameHard")
+  self._awardsPanelBtnText = self:GetUIComponent("UILocalizationText", "AwardsPanelBtnText")
+  self._battleInfoPanelBtnText = self:GetUIComponent("UILocalizationText", "BattleInfoPanelBtnText")
+  self:AttachEvent(GameEventType.AfterUILayerChanged, self.OnAfterUILayerChanged)
+  self._anim = self:GetUIComponent("Animation", "UICanvas")
+  self._battleInfoBtn = self:GetGameObject("BattleInfoPanelBtn")
+  self._recordGo = self:GetGameObject("Record")
+  self._hardMask = self:GetGameObject("hardMask")
+  self._normalMask = self:GetGameObject("normalMask")
+  self._hardShadow = self:GetUIComponent("Shadow", "hard")
+  self._normalShadow = self:GetUIComponent("Shadow", "normal")
+  self._hardBtnTr = self:GetUIComponent("RectTransform", "SliderHard")
+  self._normalBtnTr = self:GetUIComponent("RectTransform", "SliderNormal")
+  self._hardEft = self:GetGameObject("effect")
+  self._panelAwardsTipGo = self:GetGameObject("AwardsPanelTip")
+  self._panelBattleInfoTipGo = self:GetGameObject("BattleInfoPanelTip")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EngineInput)()).multiTouchEnabled = false
+function UISeasonLevelStageS5:OnShow(uiParams)
+  GameGlobal.EngineInput().multiTouchEnabled = false
   self._atlas = self:GetAsset("UIStage.spriteatlas", LoadType.SpriteAtlas)
   self._gradeAtlas = self:GetAsset("UIAwake.spriteatlas", LoadType.SpriteAtlas)
   self._module = self:GetModule(MissionModule)
   self._missionID = uiParams[1]
   self._rawMissionID = self._missionID
-  local missionCfg = (Cfg.cfg_season_mission)[self._missionID]
+  local missionCfg = Cfg.cfg_season_mission[self._missionID]
   self._isDailyLevel = missionCfg.Type == SeasonEventPointType.DailyLevel
   self._seasonObj = uiParams[2]
-  do
-    if not self._seasonObj then
-      local seasonModule = self:GetModule(SeasonModule)
-      if seasonModule then
-        self._seasonObj = seasonModule:GetCurSeasonObj()
-      end
+  if not self._seasonObj then
+    local seasonModule = self:GetModule(SeasonModule)
+    if seasonModule then
+      self._seasonObj = seasonModule:GetCurSeasonObj()
     end
-    self._component = (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
-    self._componentInfo = (self._seasonObj):GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
-    self._allPassMissionInfo = (self._componentInfo).m_pass_mission_info
-    self._pointComp = (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.ACTION_POINT)
-    self._curLevelProgress = 1
-    if self._isDailyLevel then
-      self._curLevelProgress = ((self._componentInfo).m_daily_info).m_progress
-    end
-    local missionModule = self:GetModule(MissionModule)
-    local ctx = missionModule:TeamCtx()
-    ctx:InitSeasonTeam((self._componentInfo).m_formation_list)
-    self._campType = ECampaignType.CAMPAIGN_TYPE_INLAND_SEASON
-    self._autoFightShow = true
-    self._hideTopMenu = true
-    self._hideCost = false
-    self._curPanel = UISeasonLevelStagePanelMode.AwardsInfo
-    self:_GetComponents()
-    self:Init()
-    self:_SetStoryBtn()
-    self:InitAutoBtnState()
-    if self._hideCost then
-      (self.costGo):SetActive(false)
-    else
-      (self.costGo):SetActive(true)
-    end
-    self:InitBuffLevelArea()
-    self:ShowMainUI(false)
-    ;
-    (self._battleInfoBtn):SetActive(not self._isDailyLevel)
-    if self._hasMultiDiff and self._missionDiff == UISeasonLevelDiff.Hard then
-      self:DispatchEvent(GameEventType.OnSeasonMainBottomEftPlay, true)
-      ;
-      (self._hardEft):SetActive(true)
-    else
-      (self._hardEft):SetActive(false)
-    end
-    ;
-    (self._anim):Play("uieff_UISeasonLevelStageS3_In")
-    -- DECOMPILER ERROR: 7 unprocessed JMP targets
   end
+  self._component = self._seasonObj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
+  self._componentInfo = self._seasonObj:GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
+  self._allPassMissionInfo = self._componentInfo.m_pass_mission_info
+  self._pointComp = self._seasonObj:GetComponent(ECCampaignSeasonComponentID.ACTION_POINT)
+  self._curLevelProgress = 1
+  if self._isDailyLevel then
+    self._curLevelProgress = self._componentInfo.m_daily_info.m_progress
+  end
+  local missionModule = self:GetModule(MissionModule)
+  local ctx = missionModule:TeamCtx()
+  ctx:InitSeasonTeam(self._componentInfo.m_formation_list)
+  self._campType = ECampaignType.CAMPAIGN_TYPE_INLAND_SEASON
+  self._autoFightShow = true
+  self._hideTopMenu = true
+  self._hideCost = false
+  self._curPanel = UISeasonLevelStagePanelMode.AwardsInfo
+  self:_GetComponents()
+  self:Init()
+  self:_SetStoryBtn()
+  self:InitAutoBtnState()
+  if self._hideCost then
+    self.costGo:SetActive(false)
+  else
+    self.costGo:SetActive(true)
+  end
+  self:InitBuffLevelArea()
+  self:ShowMainUI(false)
+  self._battleInfoBtn:SetActive(not self._isDailyLevel)
+  if self._hasMultiDiff and self._missionDiff == UISeasonLevelDiff.Hard then
+    self:DispatchEvent(GameEventType.OnSeasonMainBottomEftPlay, true)
+    self._hardEft:SetActive(true)
+  else
+    self._hardEft:SetActive(false)
+  end
+  self._anim:Play("uieff_UISeasonLevelStageS3_In")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_2
+function UISeasonLevelStageS5:LoadDataOnEnter(TT, res)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.GetAutoOpenState = function(matchType, stageId)
-  -- function num : 0_3 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UISeasonLevelStageS5.GetAutoOpenState(matchType, stageId)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local playerPrefsKey = pstId .. "AutoOpenState" .. matchType
   if stageId then
     playerPrefsKey = playerPrefsKey .. "_" .. stageId
   end
-  return ((UnityEngine.PlayerPrefs).HasKey)(playerPrefsKey)
+  return UnityEngine.PlayerPrefs.HasKey(playerPrefsKey)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.SetAutoOpenState = function(matchType, stageId, isOpen)
-  -- function num : 0_4 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UISeasonLevelStageS5.SetAutoOpenState(matchType, stageId, isOpen)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local playerPrefsKey = pstId .. "AutoOpenState" .. matchType
   if stageId then
     playerPrefsKey = playerPrefsKey .. "_" .. stageId
   end
   if isOpen then
-    ((UnityEngine.PlayerPrefs).SetInt)(playerPrefsKey, 1)
+    UnityEngine.PlayerPrefs.SetInt(playerPrefsKey, 1)
   else
-    ;
-    ((UnityEngine.PlayerPrefs).DeleteKey)(playerPrefsKey)
+    UnityEngine.PlayerPrefs.DeleteKey(playerPrefsKey)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._CanAutoFight = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonLevelStageS5:_CanAutoFight()
   local tipsStr = ""
-  local cfg = (Cfg.cfg_global).auto_fight_need_3_star
+  local cfg = Cfg.cfg_global.auto_fight_need_3_star
   if cfg and cfg.StrValue then
     tipsStr = cfg.StrValue
   end
-  local missionCfg = (Cfg.cfg_season_mission)[self._missionID]
+  local missionCfg = Cfg.cfg_season_mission[self._missionID]
   if not missionCfg then
     return false, tipsStr
   end
@@ -235,7 +201,7 @@ UISeasonLevelStageS5._CanAutoFight = function(self)
     return true
   end
   if enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_NEED_UNLOCK then
-    if (self._allPassMissionInfo)[self._missionID] then
+    if self._allPassMissionInfo[self._missionID] then
       if self:HasPassThreeStar(missionCfg) then
         return true
       else
@@ -248,11 +214,8 @@ UISeasonLevelStageS5._CanAutoFight = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._CanShowAutoFight = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_season_mission)[self._missionID]
+function UISeasonLevelStageS5:_CanShowAutoFight()
+  local missionCfg = Cfg.cfg_season_mission[self._missionID]
   if not missionCfg then
     return false
   end
@@ -271,10 +234,7 @@ UISeasonLevelStageS5._CanShowAutoFight = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.InitAutoBtnState = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonLevelStageS5:InitAutoBtnState()
   local enable, msg = self:_CanAutoFight()
   local canShow = self:_CanShowAutoFight()
   self._autoFightShow = canShow
@@ -283,63 +243,52 @@ UISeasonLevelStageS5.InitAutoBtnState = function(self)
   local autoFight_root = self:GetGameObject("autoFightRoot")
   local autoFight_lock = self:GetGameObject("lock")
   local autoFight_unlock = self:GetGameObject("unlock")
-  if self._autoFightShow then
-    autoFight_root:SetActive(self._autoBtnEnable)
-    local aircraftModule = self:GetModule(AircraftModule)
-    local room = aircraftModule:GetResRoom()
-    local textId = room and "str_season_mission_info_auto_sweep" or "str_season_mission_info_auto"
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "AutoFightText", (StringTable.Get)(textId))
-    autoFight_lock:SetActive(false)
-  end
+  autoFight_root:SetActive(self._autoFightShow and self._autoBtnEnable)
+  local aircraftModule = self:GetModule(AircraftModule)
+  local room = aircraftModule:GetResRoom()
+  local textId = room and "str_season_mission_info_auto_sweep" or "str_season_mission_info_auto"
+  UIWidgetHelper.SetLocalizationText(self, "AutoFightText", StringTable.Get(textId))
+  autoFight_lock:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._CheckShowWordBuff = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_season_mission)[self._missionID]
+function UISeasonLevelStageS5:_CheckShowWordBuff()
+  local missionCfg = Cfg.cfg_season_mission[self._missionID]
   if not missionCfg then
     return false
   end
   if missionCfg.WordBuff and missionCfg.WordBuff > 0 then
-    do return false end
-    local checkMissionCfgs = {}
-    local missionGroupId = missionCfg.GroupID
-    local missionGroupCfgs = (Cfg.cfg_season_mission)({GroupID = missionGroupId})
-    if #missionGroupCfgs > 0 then
-      for index,value in ipairs(missionGroupCfgs) do
-        if missionCfg.OrderID <= value.OrderID then
-          (table.insert)(checkMissionCfgs, value)
-        end
+  else
+    return false
+  end
+  local checkMissionCfgs = {}
+  local missionGroupId = missionCfg.GroupID
+  local missionGroupCfgs = Cfg.cfg_season_mission({GroupID = missionGroupId})
+  if 0 < #missionGroupCfgs then
+    for index, value in ipairs(missionGroupCfgs) do
+      if value.OrderID >= missionCfg.OrderID then
+        table.insert(checkMissionCfgs, value)
       end
-    end
-    do
-      for index,checkMissionCfgs in ipairs(checkMissionCfgs) do
-        if self:HasPassThreeStar(checkMissionCfgs) then
-          return true
-        end
-      end
-      return false
     end
   end
+  for index, checkMissionCfgs in ipairs(checkMissionCfgs) do
+    if self:HasPassThreeStar(checkMissionCfgs) then
+      return true
+    end
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.OnHide = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.EngineInput)()).multiTouchEnabled = true
+function UISeasonLevelStageS5:OnHide()
+  GameGlobal.EngineInput().multiTouchEnabled = true
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowTips)
   self:DetachEvent(GameEventType.DiscoveryInitUIStage, self.Init)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryShowHideChapter, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryShowHideChapter, true)
   if self._refreshPowerTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._refreshPowerTimer)
+    GameGlobal.Timer():CancelEvent(self._refreshPowerTimer)
     self._refreshPowerTimer = nil
   end
   if self._refreshPowerTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._refreshPowerTask)
+    GameGlobal.TaskManager():KillTask(self._refreshPowerTask)
     self._refreshPowerTask = nil
   end
   if self._hasMultiDiff and self._missionDiff == UISeasonLevelDiff.Hard then
@@ -347,15 +296,12 @@ UISeasonLevelStageS5.OnHide = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.HasPassThreeStar = function(self, missionCfg)
-  -- function num : 0_10
+function UISeasonLevelStageS5:HasPassThreeStar(missionCfg)
   local missionId = missionCfg.ID
-  if not (self._allPassMissionInfo)[missionId] then
+  if not self._allPassMissionInfo[missionId] then
     return false
   end
-  local missionFinishInfo = (self._allPassMissionInfo)[missionId]
+  local missionFinishInfo = self._allPassMissionInfo[missionId]
   if missionCfg.ThreeStarCondition1 and missionFinishInfo.star & 1 == 0 then
     return false
   end
@@ -368,341 +314,237 @@ UISeasonLevelStageS5.HasPassThreeStar = function(self, missionCfg)
   return true
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.GetSortedArr = function(self, awardType, cfg, stageAwardType)
-  -- function num : 0_11 , upvalues : _ENV
-  local list = (UICommonHelper:GetInstance()):GetDropByAwardType(awardType, cfg)
+function UISeasonLevelStageS5:GetSortedArr(awardType, cfg, stageAwardType)
+  local list = UICommonHelper:GetInstance():GetDropByAwardType(awardType, cfg)
   local vecSort = SortedArray:New(Algorithm.COMPARE_CUSTOM, DiscoveryStage._LessComparer)
   if list then
-    for i,v in ipairs(list) do
+    for i, v in ipairs(list) do
       local award = Award:New()
       award:InitWithCount(v.ItemID, v.Count, v.Type)
       award:FlushType(stageAwardType)
       vecSort:Insert(award)
     end
   end
-  do
-    return vecSort.elements
-  end
+  return vecSort.elements
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.ProcessAward = function(self, missionCfg, noNormal)
-  -- function num : 0_12 , upvalues : _ENV
+function UISeasonLevelStageS5:ProcessAward(missionCfg, noNormal)
   local missionId = missionCfg.ID
   local awards = {}
   local progress = self._curLevelProgress
-  if (missionCfg.FirstDropId and not missionCfg.PassFixDropId) or missionCfg.ThreeStarDropId then
-    local awardCfg = {FirstDropId = (missionCfg.FirstDropId)[progress], PassFixDropId = (missionCfg.PassFixDropId)[progress], CPassRandomAward = nil, ThreeStarDropId = (missionCfg.ThreeStarDropId)[progress]}
-    if not self:HasPassThreeStar(missionCfg) then
-      local awardsStar = self:GetSortedArr(AwardType.ThreeStar, awardCfg, StageAwardType.Star)
-      if awardsStar then
-        for i,v in ipairs(awardsStar) do
-          awards[#awards + 1] = v
-        end
-      end
-    end
-    do
-      if not (self._allPassMissionInfo)[missionId] then
-        local awardsFirst = self:GetSortedArr(AwardType.First, awardCfg, StageAwardType.First)
-        if awardsFirst then
-          for i,v in ipairs(awardsFirst) do
-            awards[#awards + 1] = v
-          end
-        end
-      end
-      do
-        if not noNormal then
-          local normalArr = self:GetSortedArr(AwardType.Pass, awardCfg, StageAwardType.Normal)
-          if normalArr then
-            for i,v in ipairs(normalArr) do
-              awards[#awards + 1] = v
-            end
-          end
-        end
-        do
-          return awards
-        end
+  local awardCfg = {
+    FirstDropId = missionCfg.FirstDropId and missionCfg.FirstDropId[progress],
+    PassFixDropId = missionCfg.PassFixDropId and missionCfg.PassFixDropId[progress],
+    CPassRandomAward = nil,
+    ThreeStarDropId = missionCfg.ThreeStarDropId and missionCfg.ThreeStarDropId[progress]
+  }
+  if not self:HasPassThreeStar(missionCfg) then
+    local awardsStar = self:GetSortedArr(AwardType.ThreeStar, awardCfg, StageAwardType.Star)
+    if awardsStar then
+      for i, v in ipairs(awardsStar) do
+        awards[#awards + 1] = v
       end
     end
   end
+  if not self._allPassMissionInfo[missionId] then
+    local awardsFirst = self:GetSortedArr(AwardType.First, awardCfg, StageAwardType.First)
+    if awardsFirst then
+      for i, v in ipairs(awardsFirst) do
+        awards[#awards + 1] = v
+      end
+    end
+  end
+  if not noNormal then
+    local normalArr = self:GetSortedArr(AwardType.Pass, awardCfg, StageAwardType.Normal)
+    if normalArr then
+      for i, v in ipairs(normalArr) do
+        awards[#awards + 1] = v
+      end
+    end
+  end
+  return awards
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.RefreshAwardsShowState = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonLevelStageS5:RefreshAwardsShowState()
   self._noDiffAwardGo = self:GetGameObject("NoDiffAward")
   self._seasonAwardGo = self:GetGameObject("SeasonAward")
   self._seasonNormalAwardGo = self:GetGameObject("MultiAwardGroup1")
   self._seasonHardAwardGo = self:GetGameObject("MultiAwardGroup2")
-  ;
-  (self._noDiffAwardGo):SetActive(false)
-  ;
-  (self._seasonAwardGo):SetActive(true)
-  if self._missionDiff ~= UISeasonLevelDiff.Normal then
-    (self._seasonNormalAwardGo):SetActive(not self._hasMultiDiff)
-    ;
-    (self._seasonHardAwardGo):SetActive(self._missionDiff == UISeasonLevelDiff.Hard)
-    ;
-    (self._seasonNormalAwardGo):SetActive(self._missionDiff == UISeasonLevelDiff.Normal)
-    ;
-    (self._seasonHardAwardGo):SetActive(self._missionDiff == UISeasonLevelDiff.Hard)
-    -- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-    if self._sr then
-      (self._sr).horizontalNormalizedPosition = 0
-    end
-    if self._normalMultiAwardList then
-      (self._normalMultiAwardList):ResetScrollPos()
-    end
-    if self._hardMultiAwardList then
-      (self._hardMultiAwardList):ResetScrollPos()
-    end
-    -- DECOMPILER ERROR: 9 unprocessed JMP targets
-  end
-end
-
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.RefreshWordsArea = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  if self._missionDiff ~= UISeasonLevelDiff.Normal then
-    (self.wordsNormalGo):SetActive(not self._hasMultiDiff)
-    ;
-    (self.wordsHardGo):SetActive(self._missionDiff == UISeasonLevelDiff.Hard)
-    ;
-    (self.wordsNormalGo):SetActive(true)
-    ;
-    (self.wordsHardGo):SetActive(false)
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
-  end
-end
-
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.InitWords = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+  self._noDiffAwardGo:SetActive(false)
+  self._seasonAwardGo:SetActive(true)
   if self._hasMultiDiff then
-    local normalMissionId = (self._diffMissonIdMap)[UISeasonLevelDiff.Normal]
-    local hardMissionId = (self._diffMissonIdMap)[UISeasonLevelDiff.Hard]
+    self._seasonNormalAwardGo:SetActive(self._missionDiff == UISeasonLevelDiff.Normal)
+    self._seasonHardAwardGo:SetActive(self._missionDiff == UISeasonLevelDiff.Hard)
+  else
+    self._seasonNormalAwardGo:SetActive(self._missionDiff == UISeasonLevelDiff.Normal)
+    self._seasonHardAwardGo:SetActive(self._missionDiff == UISeasonLevelDiff.Hard)
+  end
+  if self._sr then
+    self._sr.horizontalNormalizedPosition = 0
+  end
+  if self._normalMultiAwardList then
+    self._normalMultiAwardList:ResetScrollPos()
+  end
+  if self._hardMultiAwardList then
+    self._hardMultiAwardList:ResetScrollPos()
+  end
+end
+
+function UISeasonLevelStageS5:RefreshWordsArea()
+  if self._hasMultiDiff then
+    self.wordsNormalGo:SetActive(self._missionDiff == UISeasonLevelDiff.Normal)
+    self.wordsHardGo:SetActive(self._missionDiff == UISeasonLevelDiff.Hard)
+  else
+    self.wordsNormalGo:SetActive(true)
+    self.wordsHardGo:SetActive(false)
+  end
+end
+
+function UISeasonLevelStageS5:InitWords()
+  if self._hasMultiDiff then
+    local normalMissionId = self._diffMissonIdMap[UISeasonLevelDiff.Normal]
+    local hardMissionId = self._diffMissonIdMap[UISeasonLevelDiff.Hard]
     self:_InitWords(self.wordsContentNormal, normalMissionId)
     self:_InitWords(self.wordsContentHard, hardMissionId)
   else
-    do
-      self:_InitWords(self.wordsContentNormal, self._missionID)
-      self:RefreshWordsArea()
-    end
+    self:_InitWords(self.wordsContentNormal, self._missionID)
   end
+  self:RefreshWordsArea()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._InitWords = function(self, sop, missionId)
-  -- function num : 0_16 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_season_mission)[missionId]
+function UISeasonLevelStageS5:_InitWords(sop, missionId)
+  local missionCfg = Cfg.cfg_season_mission[missionId]
   local wordsTb = {}
   local usedWordIDList = {}
   local buff = missionCfg.BaseWordBuff
   if buff then
-    if type(buff) ~= "table" or not buff then
-      local words = {buff}
-    end
-    for _,wordId in ipairs(buff) do
-      if not (table.icontains)(usedWordIDList, wordId) then
-        (table.insert)(wordsTb, self:_GetWordDesc(missionCfg.ID, wordId))
-        ;
-        (table.insert)(usedWordIDList, wordId)
+    local words = type(buff) == "table" and buff or {buff}
+    for _, wordId in ipairs(buff) do
+      if not table.icontains(usedWordIDList, wordId) then
+        table.insert(wordsTb, self:_GetWordDesc(missionCfg.ID, wordId))
+        table.insert(usedWordIDList, wordId)
       end
     end
   end
-  do
-    local data = wordsTb
-    local count = #data
-    sop:SpawnObjects("UIStageWordItem", count)
-    local pools = sop:GetAllSpawnList()
-    for i = 1, #pools do
-      local item = pools[i]
-      local tex = data[i]
-      item:SetData(tex)
-    end
+  local data = wordsTb
+  local count = #data
+  sop:SpawnObjects("UIStageWordItem", count)
+  local pools = sop:GetAllSpawnList()
+  for i = 1, #pools do
+    local item = pools[i]
+    local tex = data[i]
+    item:SetData(tex)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._GetWordDesc = function(self, levelId, wordId)
-  -- function num : 0_17 , upvalues : _ENV
-  local word = (Cfg.cfg_word_buff)[wordId]
+function UISeasonLevelStageS5:_GetWordDesc(levelId, wordId)
+  local word = Cfg.cfg_word_buff[wordId]
   if not word then
-    (Log.exception)("cfg_word_buff 中找不到词缀:", wordId, "levelId:", levelId)
+    Log.exception("cfg_word_buff 中找不到词缀:", wordId, "levelId:", levelId)
   end
-  local name = (StringTable.Get)((word.Word)[1])
-  local desc = (StringTable.Get)(word.Desc)
+  local name = StringTable.Get(word.Word[1])
+  local desc = StringTable.Get(word.Desc)
   local tex = "【" .. name .. "】 " .. desc
   return tex
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.RefreshBtnUnknown = function(self)
-  -- function num : 0_18
+function UISeasonLevelStageS5:RefreshBtnUnknown()
   local show = self:_CheckShowWordBuff()
-  ;
-  (self.btnWord):SetActive(show)
+  self.btnWord:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.InitForMultiDiff = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_season_mission)[self._missionID]
+function UISeasonLevelStageS5:InitForMultiDiff()
+  local missionCfg = Cfg.cfg_season_mission[self._missionID]
   self._hasMultiDiff = false
   self._diffMissonIdMap = {}
   if self._isDailyLevel then
     self._missionDiff = UISeasonLevelDiff.Normal
     self._hasMultiDiff = false
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._diffMissonIdMap)[UISeasonLevelDiff.Normal] = self._missionID
+    self._diffMissonIdMap[UISeasonLevelDiff.Normal] = self._missionID
   else
     self._missionDiff = missionCfg.OrderID
     local missionGroupId = missionCfg.GroupID
-    self._missionGroupCfgs = (Cfg.cfg_season_mission)({GroupID = missionGroupId})
+    self._missionGroupCfgs = Cfg.cfg_season_mission({GroupID = missionGroupId})
     if #self._missionGroupCfgs > 1 then
       self._hasMultiDiff = true
     end
   end
-  do
-    if self._hasMultiDiff then
-      for index,value in ipairs(self._missionGroupCfgs) do
-        -- DECOMPILER ERROR at PC50: Confused about usage of register: R7 in 'UnsetPending'
-
-        if value.OrderID == UISeasonLevelDiff.Normal then
-          (self._diffMissonIdMap)[UISeasonLevelDiff.Normal] = value.ID
-        else
-          -- DECOMPILER ERROR at PC61: Confused about usage of register: R7 in 'UnsetPending'
-
-          if value.OrderID == UISeasonLevelDiff.Hard then
-            (self._diffMissonIdMap)[UISeasonLevelDiff.Hard] = value.ID
-          end
-        end
+  if self._hasMultiDiff then
+    for index, value in ipairs(self._missionGroupCfgs) do
+      if value.OrderID == UISeasonLevelDiff.Normal then
+        self._diffMissonIdMap[UISeasonLevelDiff.Normal] = value.ID
+      elseif value.OrderID == UISeasonLevelDiff.Hard then
+        self._diffMissonIdMap[UISeasonLevelDiff.Hard] = value.ID
       end
     end
-    do
-      ;
-      (self._switchDiffSliderNormalGo):SetActive(self._hasMultiDiff)
-      ;
-      (self._switchDiffSliderHardGo):SetActive(self._hasMultiDiff)
-      self:RefreshDiffArea()
-    end
   end
+  self._switchDiffSliderNormalGo:SetActive(self._hasMultiDiff)
+  self._switchDiffSliderHardGo:SetActive(self._hasMultiDiff)
+  self:RefreshDiffArea()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.RefreshPanelShow = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  (self.panelAwardsInfoGo):SetActive(self._curPanel == UISeasonLevelStagePanelMode.AwardsInfo)
-  ;
-  (self.panelBattleInfoGo):SetActive(self._curPanel == UISeasonLevelStagePanelMode.BattleInfo)
-  ;
-  (self._panelAwardsTipGo):SetActive(self._curPanel == UISeasonLevelStagePanelMode.AwardsInfo)
-  ;
-  (self._panelBattleInfoTipGo):SetActive(self._curPanel == UISeasonLevelStagePanelMode.BattleInfo)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UISeasonLevelStageS5:RefreshPanelShow()
+  self.panelAwardsInfoGo:SetActive(self._curPanel == UISeasonLevelStagePanelMode.AwardsInfo)
+  self.panelBattleInfoGo:SetActive(self._curPanel == UISeasonLevelStagePanelMode.BattleInfo)
+  self._panelAwardsTipGo:SetActive(self._curPanel == UISeasonLevelStagePanelMode.AwardsInfo)
+  self._panelBattleInfoTipGo:SetActive(self._curPanel == UISeasonLevelStagePanelMode.BattleInfo)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.RefreshPanelBg = function(self)
-  -- function num : 0_21
+function UISeasonLevelStageS5:RefreshPanelBg()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.RefreshPanelText = function(self)
-  -- function num : 0_22
+function UISeasonLevelStageS5:RefreshPanelText()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.RefreshDiffArea = function(self)
-  -- function num : 0_23
+function UISeasonLevelStageS5:RefreshDiffArea()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.InitAllAwards = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UISeasonLevelStageS5:InitAllAwards()
   if self._hasMultiDiff then
-    local normalRewards = self:_ProcessLevelDiffAwards((self._diffMissonIdMap)[UISeasonLevelDiff.Normal], UISeasonLevelDiff.Normal)
-    local normalRewardsWithOutPass = self:_ProcessLevelDiffAwards((self._diffMissonIdMap)[UISeasonLevelDiff.Normal], UISeasonLevelDiff.Normal, true)
-    local hardRewards = self:_ProcessLevelDiffAwards((self._diffMissonIdMap)[UISeasonLevelDiff.Hard], UISeasonLevelDiff.Hard)
+    local normalRewards = self:_ProcessLevelDiffAwards(self._diffMissonIdMap[UISeasonLevelDiff.Normal], UISeasonLevelDiff.Normal)
+    local normalRewardsWithOutPass = self:_ProcessLevelDiffAwards(self._diffMissonIdMap[UISeasonLevelDiff.Normal], UISeasonLevelDiff.Normal, true)
+    local hardRewards = self:_ProcessLevelDiffAwards(self._diffMissonIdMap[UISeasonLevelDiff.Hard], UISeasonLevelDiff.Hard)
     local normalMultiAwards = {normalRewards}
     local normalAwardGen = self:GetUIComponent("UISelectObjectPath", "MultiAwardGroup1")
     self._normalMultiAwardList = normalAwardGen:SpawnObject("UISeasonStageMultiAwardListS5")
-    ;
-    (self._normalMultiAwardList):SetData(normalMultiAwards)
+    self._normalMultiAwardList:SetData(normalMultiAwards)
     local hardMultiAwards = {hardRewards}
-    if normalRewardsWithOutPass and #normalRewardsWithOutPass > 0 then
-      (table.insert)(hardMultiAwards, normalRewardsWithOutPass)
+    if normalRewardsWithOutPass and 0 < #normalRewardsWithOutPass then
+      table.insert(hardMultiAwards, normalRewardsWithOutPass)
     end
     local hardAwardGen = self:GetUIComponent("UISelectObjectPath", "MultiAwardGroup2")
     self._hardMultiAwardList = hardAwardGen:SpawnObject("UISeasonStageMultiAwardListS5")
-    ;
-    (self._hardMultiAwardList):SetData(hardMultiAwards)
+    self._hardMultiAwardList:SetData(hardMultiAwards)
   else
-    do
-      local rewards = self:_ProcessLevelDiffAwards(self._missionID, self._missionDiff)
-      local multiAwards = {rewards}
-      if self._missionDiff == UISeasonLevelDiff.Normal then
-        local normalAwardGen = self:GetUIComponent("UISelectObjectPath", "MultiAwardGroup1")
-        self._normalMultiAwardList = normalAwardGen:SpawnObject("UISeasonStageMultiAwardListS5")
-        ;
-        (self._normalMultiAwardList):SetData(multiAwards)
-      else
-        do
-          if self._missionDiff == UISeasonLevelDiff.Hard then
-            local hardAwardGen = self:GetUIComponent("UISelectObjectPath", "MultiAwardGroup2")
-            self._hardMultiAwardList = hardAwardGen:SpawnObject("UISeasonStageMultiAwardListS5")
-            ;
-            (self._hardMultiAwardList):SetData(multiAwards)
-          else
-            do
-              do
-                local normalAwardGen = self:GetUIComponent("UISelectObjectPath", "MultiAwardGroup1")
-                self._normalMultiAwardList = normalAwardGen:SpawnObject("UISeasonStageMultiAwardListS5")
-                ;
-                (self._normalMultiAwardList):SetData(multiAwards)
-                self:RefreshAwardsShowState()
-                local awardAnimDelay = 0
-                self:PlayAnimAwardList(awardAnimDelay)
-              end
-            end
-          end
-        end
-      end
+    local rewards = self:_ProcessLevelDiffAwards(self._missionID, self._missionDiff)
+    local multiAwards = {rewards}
+    if self._missionDiff == UISeasonLevelDiff.Normal then
+      local normalAwardGen = self:GetUIComponent("UISelectObjectPath", "MultiAwardGroup1")
+      self._normalMultiAwardList = normalAwardGen:SpawnObject("UISeasonStageMultiAwardListS5")
+      self._normalMultiAwardList:SetData(multiAwards)
+    elseif self._missionDiff == UISeasonLevelDiff.Hard then
+      local hardAwardGen = self:GetUIComponent("UISelectObjectPath", "MultiAwardGroup2")
+      self._hardMultiAwardList = hardAwardGen:SpawnObject("UISeasonStageMultiAwardListS5")
+      self._hardMultiAwardList:SetData(multiAwards)
+    else
+      local normalAwardGen = self:GetUIComponent("UISelectObjectPath", "MultiAwardGroup1")
+      self._normalMultiAwardList = normalAwardGen:SpawnObject("UISeasonStageMultiAwardListS5")
+      self._normalMultiAwardList:SetData(multiAwards)
     end
   end
+  self:RefreshAwardsShowState()
+  local awardAnimDelay = 0
+  self:PlayAnimAwardList(awardAnimDelay)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.PlayAnimAwardList = function(self, totalAnimDelay)
-  -- function num : 0_25 , upvalues : _ENV
-  local multiAwardList = nil
+function UISeasonLevelStageS5:PlayAnimAwardList(totalAnimDelay)
+  local multiAwardList
   if self._missionDiff == UISeasonLevelDiff.Normal then
     multiAwardList = self._normalMultiAwardList
+  elseif self._missionDiff == UISeasonLevelDiff.Hard then
+    multiAwardList = self._hardMultiAwardList
   else
-    if self._missionDiff == UISeasonLevelDiff.Hard then
-      multiAwardList = self._hardMultiAwardList
-    else
-      multiAwardList = self._normalMultiAwardList
-    end
+    multiAwardList = self._normalMultiAwardList
   end
   if multiAwardList then
     multiAwardList:SetWaitAnim()
@@ -710,12 +552,9 @@ UISeasonLevelStageS5.PlayAnimAwardList = function(self, totalAnimDelay)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._ProcessLevelDiffAwards = function(self, missionId, levelDiff, noNormal)
-  -- function num : 0_26 , upvalues : _ENV
+function UISeasonLevelStageS5:_ProcessLevelDiffAwards(missionId, levelDiff, noNormal)
   if missionId then
-    local useMissionCfg = (Cfg.cfg_season_mission)[missionId]
+    local useMissionCfg = Cfg.cfg_season_mission[missionId]
     if useMissionCfg then
       local useAwards = self:ProcessAward(useMissionCfg, noNormal)
       if useAwards then
@@ -726,87 +565,70 @@ UISeasonLevelStageS5._ProcessLevelDiffAwards = function(self, missionId, levelDi
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.Init = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_season_mission)[self._missionID]
+function UISeasonLevelStageS5:Init()
+  local missionCfg = Cfg.cfg_season_mission[self._missionID]
   self:InitForMultiDiff()
   self._reach = true
   self._powerID = RoleAssetID.RoleAssetPhyPoint
   self._needPower = missionCfg.NeedPower
   if missionCfg.NeedAP then
-    self._powerID = (missionCfg.NeedAP)[1]
-    self._needPower = (missionCfg.NeedAP)[2]
+    self._powerID = missionCfg.NeedAP[1]
+    self._needPower = missionCfg.NeedAP[2]
   end
   local needPowerText = self._needPower
-  if self._powerID ~= RoleAssetID.RoleAssetPhyPoint or not self._pointComp then
-    (Log.exception)("关卡体力为行动点,但没有活动的行动点组件")
-  end
-  local cmpID = (self._pointComp):GetComponentCfgId()
-  local pointCfg = (self._pointComp):GetActionPointConfig()
-  local itemCfg = (Cfg.cfg_top_tips)[pointCfg.ItemID]
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._btnIcon).sprite = (self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)):GetSprite(itemCfg.Icon)
-  -- DECOMPILER ERROR at PC64: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._topTipIcon).sprite = (self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)):GetSprite(itemCfg.Icon)
-  do
-    local cur, ceil = (self._pointComp):GetItemCount()
+  if self._powerID == RoleAssetID.RoleAssetPhyPoint then
+  else
+    if not self._pointComp then
+      Log.exception("关卡体力为行动点,但没有活动的行动点组件")
+    end
+    local cmpID = self._pointComp:GetComponentCfgId()
+    local pointCfg = self._pointComp:GetActionPointConfig()
+    local itemCfg = Cfg.cfg_top_tips[pointCfg.ItemID]
+    self._btnIcon.sprite = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas):GetSprite(itemCfg.Icon)
+    self._topTipIcon.sprite = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas):GetSprite(itemCfg.Icon)
+    local cur, ceil = self._pointComp:GetItemCount()
     if cur < self._needPower then
       needPowerText = "<color=#FF0000>" .. self._needPower .. "</color>"
     end
-    ;
-    (self._txtCost):SetText(needPowerText)
-    self:RefreshPanelShow()
-    self:RefreshPanelText()
-    self:InitChapterName()
-    self:RefreshThreeStarArea(true, 0)
-    self:InitAllAwards()
-    self._reachGo = self:GetGameObject("reachGo")
-    ;
-    (self._reachGo):SetActive(not self._reach)
-    self:InitEnemys()
-    self:InitWords()
-    self:RefreshRecommendLv()
-    self:RefreshAreasTitleStyle()
-    self:RefreshWordsArea()
-    self:RefreshBtnUnknown()
-    self:RefreshPowerTips()
-    self:InitAutoBtnState()
-    self:_SetStoryBtn()
-    self._refreshPowerTargetTime = (self._pointComp):GetRegainEndTime()
-    self._refreshPowerTimer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_27_0 , upvalues : self
-    self:_Countdown()
   end
-)
+  self._txtCost:SetText(needPowerText)
+  self:RefreshPanelShow()
+  self:RefreshPanelText()
+  self:InitChapterName()
+  self:RefreshThreeStarArea(true, 0)
+  self:InitAllAwards()
+  self._reachGo = self:GetGameObject("reachGo")
+  self._reachGo:SetActive(not self._reach)
+  self:InitEnemys()
+  self:InitWords()
+  self:RefreshRecommendLv()
+  self:RefreshAreasTitleStyle()
+  self:RefreshWordsArea()
+  self:RefreshBtnUnknown()
+  self:RefreshPowerTips()
+  self:InitAutoBtnState()
+  self:_SetStoryBtn()
+  self._refreshPowerTargetTime = self._pointComp:GetRegainEndTime()
+  self._refreshPowerTimer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:_Countdown()
-    ;
-    (self._recordGo):SetActive(not missionCfg.TeamRecord or missionCfg.TeamRecord == 1)
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
+  end)
+  self:_Countdown()
+  self._recordGo:SetActive(missionCfg.TeamRecord and missionCfg.TeamRecord == 1)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.UpdateCondition = function(self, three_star_condition, conditions)
-  -- function num : 0_28 , upvalues : _ENV
+function UISeasonLevelStageS5:UpdateCondition(three_star_condition, conditions)
   local l_cur_star_num = 0
-  for index,value in ipairs(three_star_condition) do
+  for index, value in ipairs(three_star_condition) do
     if value.satisfy == true then
       l_cur_star_num = l_cur_star_num + 1
     end
   end
   local l_finish_star_num = #conditions
-  for index,value in ipairs(three_star_condition) do
+  for index, value in ipairs(three_star_condition) do
     if l_finish_star_num == l_cur_star_num then
       value:FlushSatisfy(false)
     end
-    for i,v in ipairs(conditions) do
+    for i, v in ipairs(conditions) do
       if v == index then
         value:FlushSatisfy(true)
       end
@@ -814,424 +636,334 @@ UISeasonLevelStageS5.UpdateCondition = function(self, three_star_condition, cond
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.AutoFightBtnOnClick = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  if not (self._seasonModule):CheckSeasonAndMissionCoseAndJump() then
-    return 
+function UISeasonLevelStageS5:AutoFightBtnOnClick()
+  if not self._seasonModule:CheckSeasonAndMissionCoseAndJump() then
+    return
   end
   if self._autoBtnEnable then
     local id = self._missionID
     local power = self._needPower
     local unlock = true
-    local campParams = UISerialAutoFightOptionCampParams:New(self._pointComp, self._campType, nil, 0, (self._component):GetCampaignMissionComponentId(), (self._component):GetCampaignMissionParamKeyMap())
+    local campParams = UISerialAutoFightOptionCampParams:New(self._pointComp, self._campType, nil, 0, self._component:GetCampaignMissionComponentId(), self._component:GetCampaignMissionParamKeyMap())
     local matchType = MatchType.MT_Season
-    local params = {matchType = matchType, stageId = id, needPower = power, uuid = nil, unlock = unlock, trackData = nil, campParams = campParams, toIndex = nil, checkFunction = function()
-    -- function num : 0_29_0 , upvalues : self
-    return (self._seasonModule):CheckSeasonAndMissionCoseAndJump()
-  end
-, autoFightCallback = function(count)
-    -- function num : 0_29_1 , upvalues : self
-    self:_DoFight(count)
-  end
-}
+    local params = {
+      matchType = matchType,
+      stageId = id,
+      needPower = power,
+      uuid = nil,
+      unlock = unlock,
+      trackData = nil,
+      campParams = campParams,
+      toIndex = nil,
+      checkFunction = function()
+        return self._seasonModule:CheckSeasonAndMissionCoseAndJump()
+      end,
+      autoFightCallback = function(count)
+        self:_DoFight(count)
+      end
+    }
     self:ShowDialog("UISerialAutoFightOptionNew", params)
   else
-    do
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)(self._autoBtnMsg))
-    end
+    ToastManager.ShowToast(StringTable.Get(self._autoBtnMsg))
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.BtnFightOnClick = function(self, go)
-  -- function num : 0_30
+function UISeasonLevelStageS5:BtnFightOnClick(go)
   self:_DoFight()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._DoFight = function(self, autoFightCount)
-  -- function num : 0_31 , upvalues : _ENV
-  if not (self._seasonModule):CheckSeasonAndMissionCoseAndJump() then
-    return 
+function UISeasonLevelStageS5:_DoFight(autoFightCount)
+  if not self._seasonModule:CheckSeasonAndMissionCoseAndJump() then
+    return
   end
   if self._reach == false then
-    return 
+    return
   end
-  local missionCfg = (Cfg.cfg_season_mission)[self._missionID]
+  local missionCfg = Cfg.cfg_season_mission[self._missionID]
   local enough = false
   local roleModule = self:GetModule(RoleModule)
-  local cur, ceil = (self._pointComp):GetItemCount()
+  local cur, ceil = self._pointComp:GetItemCount()
   local leftPower = cur
-  local enough = self._needPower <= leftPower
+  local enough = leftPower >= self._needPower
   if not enough then
     if self._powerID == RoleAssetID.RoleAssetPhyPoint then
       self:ShowDialog("UIGetPhyPointController")
     else
-      local itemName = (StringTable.Get)(((Cfg.cfg_item)[self._powerID]).Name)
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_mission_error_power_not_enough", itemName))
+      local itemName = StringTable.Get(Cfg.cfg_item[self._powerID].Name)
+      ToastManager.ShowToast(StringTable.Get("str_mission_error_power_not_enough", itemName))
     end
-    return 
+    return
   end
-  local ctx = (self._module):TeamCtx()
-  ctx:Init(TeamOpenerType.Season, {self._missionID, (self._component):GetCampaignMissionComponentId(), ((self._component):GetCampaignMissionParamKeyMap()), nil, self._curLevelProgress})
+  local ctx = self._module:TeamCtx()
+  ctx:Init(TeamOpenerType.Season, {
+    self._missionID,
+    self._component:GetCampaignMissionComponentId(),
+    self._component:GetCampaignMissionParamKeyMap(),
+    nil,
+    self._curLevelProgress
+  })
   ctx:ShowDialogUITeams(false, function()
-    -- function num : 0_31_0 , upvalues : _ENV, autoFightCount, self
-    (SerialAutoFightModule.QuickSetData_Campaign)(autoFightCount ~= nil, self._campType, MatchType.MT_Season, autoFightCount)
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+    SerialAutoFightModule.QuickSetData_Campaign(autoFightCount ~= nil, self._campType, MatchType.MT_Season, autoFightCount)
+  end)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.IsPowerEnough = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function UISeasonLevelStageS5:IsPowerEnough()
   if self._curStage then
     local roleModule = self:GetModule(RoleModule)
     local leftPower = roleModule:GetAssetCount(RoleAssetID.RoleAssetPhyPoint)
-    local enough = (self._curStage).need_power <= leftPower
-    if not enough and (self._module):IsFirstPassMission((self._curStage).id) and (self._module):IsMissionFirstPassCanIgnorPower((self._curStage).id) then
+    local enough = leftPower >= self._curStage.need_power
+    if not enough and self._module:IsFirstPassMission(self._curStage.id) and self._module:IsMissionFirstPassCanIgnorPower(self._curStage.id) then
       enough = true
     end
     return enough
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.ShowTips = function(self, itemId, pos)
-  -- function num : 0_33
-  (self._tips):SetData(itemId, pos)
+function UISeasonLevelStageS5:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.BgOnClick = function(self)
-  -- function num : 0_34
+function UISeasonLevelStageS5:BgOnClick()
   self:Close()
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.ThreeStarTipsBtnOnClick = function(self, go)
-  -- function num : 0_35
+function UISeasonLevelStageS5:ThreeStarTipsBtnOnClick(go)
   self:ShowDialog("UIThreeStarTips")
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.BtnUnknownOnClick = function(self, go)
-  -- function num : 0_36 , upvalues : _ENV
+function UISeasonLevelStageS5:BtnUnknownOnClick(go)
   local buffData = {}
   buffData.name = ""
   buffData.des = ""
-  local word = (Cfg.cfg_word_buff)[BattleConst.WordBuffForMission]
-  do
-    if word and word.BuffID and (word.BuffID)[1] then
-      local buff = (Cfg.cfg_buff)[(word.BuffID)[1]]
-      if buff then
-        buffData.name = (StringTable.Get)(buff.Name)
-        buffData.des = (StringTable.Get)(buff.Desc)
-      end
+  local word = Cfg.cfg_word_buff[BattleConst.WordBuffForMission]
+  if word and word.BuffID and word.BuffID[1] then
+    local buff = Cfg.cfg_buff[word.BuffID[1]]
+    if buff then
+      buffData.name = StringTable.Get(buff.Name)
+      buffData.des = StringTable.Get(buff.Desc)
     end
-    local pos = (go.transform).position
-    ;
-    (self._buffTips):SetData(buffData, pos, Vector3(-250, 160, 0))
-    local buffTips = self:GetUIComponent("UISelectObjectPath", "BuffTips")
-    self._buffTips = buffTips:SpawnObject("UIResBuffDetail")
   end
+  local pos = go.transform.position
+  self._buffTips:SetData(buffData, pos, Vector3(-250, 160, 0))
+  local buffTips = self:GetUIComponent("UISelectObjectPath", "BuffTips")
+  self._buffTips = buffTips:SpawnObject("UIResBuffDetail")
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._SetStoryBtn = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function UISeasonLevelStageS5:_SetStoryBtn()
   self._activityGroupObj = self:GetGameObject("ActivityGroup")
   self._imgBlack = self:GetGameObject("imgBlack")
   local checkPassMissionId = self._missionID
   local storyList = DiscoveryStoryList:New()
   if self._hasMultiDiff then
-    checkPassMissionId = (self._diffMissonIdMap)[UISeasonLevelDiff.Normal]
+    checkPassMissionId = self._diffMissonIdMap[UISeasonLevelDiff.Normal]
   end
   storyList:Init(self._missionID)
-  local flag = (self._allPassMissionInfo)[checkPassMissionId] and storyList:Count() ~= 0 and true or false
-  ;
-  (self._activityGroupObj):SetActive(flag)
+  local flag = self._allPassMissionInfo[checkPassMissionId] and storyList:Count() ~= 0 and true or false
+  self._activityGroupObj:SetActive(flag)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.BtnPlotOnClick = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function UISeasonLevelStageS5:BtnPlotOnClick()
   local storyList = DiscoveryStoryList:New()
   storyList:Init(self._missionID)
   self:StartTask(self._TryFixStory, self)
   if storyList then
     if storyList:Count() == 1 then
-      local story = (storyList.list)[1]
-      do
-        (UISeasonHelper.PlayStoryInSeasonScence)(story.id)
-      end
+      local story = storyList.list[1]
+      UISeasonHelper.PlayStoryInSeasonScence(story.id)
     else
-      do
-        local before = storyList:GetStoryByStoryType(StoryTriggerType.BeforeFight)
-        local after = storyList:GetStoryByStoryType(StoryTriggerType.AfterFight)
-        if not before and not after then
-          (Log.warn)("### no story in curStage", storyList.stageId)
-        end
-        if before and after then
-          (self._imgBlack):SetActive(true)
-          ;
-          (UISeasonHelper.PlayStoryInSeasonScence)(before.id, function()
-    -- function num : 0_38_0 , upvalues : self, _ENV, after
-    self:StartTask(function(TT)
-      -- function num : 0_38_0_0 , upvalues : _ENV, after, self
-      YIELD(TT)
-      ;
-      (UISeasonHelper.PlayStoryInSeasonScence)(after.id, function()
-        -- function num : 0_38_0_0_0 , upvalues : self
-        (self._imgBlack):SetActive(false)
+      local before = storyList:GetStoryByStoryType(StoryTriggerType.BeforeFight)
+      local after = storyList:GetStoryByStoryType(StoryTriggerType.AfterFight)
+      if not before and not after then
+        Log.warn("### no story in curStage", storyList.stageId)
       end
-)
-    end
-)
-  end
-)
-        else
-          local story = (storyList.list)[1]
-          ;
-          (UISeasonHelper.PlayStoryInSeasonScence)(story.id)
+      if before and after then
+        self._imgBlack:SetActive(true)
+        UISeasonHelper.PlayStoryInSeasonScence(before.id, function()
+          self:StartTask(function(TT)
+            YIELD(TT)
+            UISeasonHelper.PlayStoryInSeasonScence(after.id, function()
+              self._imgBlack:SetActive(false)
+            end)
+          end)
+        end)
+      else
+        do
+          local story = storyList.list[1]
+          UISeasonHelper.PlayStoryInSeasonScence(story.id)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.SliderHardOnClick = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function UISeasonLevelStageS5:SliderHardOnClick()
   if self._hasMultiDiff then
     if self._missionDiff == UISeasonLevelDiff.Hard then
-      return 
+      return
     end
     self:_SwitchDiff()
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.SliderNormalOnClick = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function UISeasonLevelStageS5:SliderNormalOnClick()
   if self._hasMultiDiff then
     if self._missionDiff == UISeasonLevelDiff.Normal then
-      return 
+      return
     end
     self:_SwitchDiff()
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._SwitchDiff = function(self)
-  -- function num : 0_41 , upvalues : _ENV
+function UISeasonLevelStageS5:_SwitchDiff()
   if self._hasMultiDiff then
     if self._missionDiff == UISeasonLevelDiff.Normal then
       self._missionDiff = UISeasonLevelDiff.Hard
-      self._missionID = (self._diffMissonIdMap)[UISeasonLevelDiff.Hard]
-    else
-      if self._missionDiff == UISeasonLevelDiff.Hard then
-        self._missionDiff = UISeasonLevelDiff.Normal
-        self._missionID = (self._diffMissonIdMap)[UISeasonLevelDiff.Normal]
-      end
+      self._missionID = self._diffMissonIdMap[UISeasonLevelDiff.Hard]
+    elseif self._missionDiff == UISeasonLevelDiff.Hard then
+      self._missionDiff = UISeasonLevelDiff.Normal
+      self._missionID = self._diffMissonIdMap[UISeasonLevelDiff.Normal]
     end
-    ;
-    (self._uiSeasonModule):SetCurrentSeasonLevelDiff(self._missionDiff)
-    do
-      if self._anim then
-        local animName = "uieff_UISeasonLevelStageS3_switch_normal"
-        if self._missionDiff == UISeasonLevelDiff.Normal then
-          animName = "uieff_UISeasonLevelStageS3_switch_normal"
-        else
-          if self._missionDiff == UISeasonLevelDiff.Hard then
-            animName = "uieff_UISeasonLevelStageS3_switch_hard"
-          end
-        end
-        ;
-        (self._anim):Play(animName)
+    self._uiSeasonModule:SetCurrentSeasonLevelDiff(self._missionDiff)
+    if self._anim then
+      local animName = "uieff_UISeasonLevelStageS3_switch_normal"
+      if self._missionDiff == UISeasonLevelDiff.Normal then
+        animName = "uieff_UISeasonLevelStageS3_switch_normal"
+      elseif self._missionDiff == UISeasonLevelDiff.Hard then
+        animName = "uieff_UISeasonLevelStageS3_switch_hard"
       end
-      self:RefreshDiffArea()
-      self:RefreshPanelShow()
-      self:RefreshPanelText()
-      self:RefreshAwardsShowState()
-      local awardAnimDelay = 200
-      self:PlayAnimAwardList(awardAnimDelay)
-      self:RefreshWordsArea()
-      self:RefreshBtnUnknown()
-      self:RefreshChapter()
-      local threeStarAnimTotalDelay = 200
-      self:RefreshThreeStarArea(true, threeStarAnimTotalDelay)
-      self:RefreshEnemyArea()
-      self:RefreshRecommendLv()
-      self:RefreshAreasTitleStyle()
-      self:RefreshPowerTips()
-      self:RefreshPowerCost()
-      self:RefreshBuffArea()
-      self:InitAutoBtnState()
-      self:_SetStoryBtn()
+      self._anim:Play(animName)
     end
+    self:RefreshDiffArea()
+    self:RefreshPanelShow()
+    self:RefreshPanelText()
+    self:RefreshAwardsShowState()
+    local awardAnimDelay = 200
+    self:PlayAnimAwardList(awardAnimDelay)
+    self:RefreshWordsArea()
+    self:RefreshBtnUnknown()
+    self:RefreshChapter()
+    local threeStarAnimTotalDelay = 200
+    self:RefreshThreeStarArea(true, threeStarAnimTotalDelay)
+    self:RefreshEnemyArea()
+    self:RefreshRecommendLv()
+    self:RefreshAreasTitleStyle()
+    self:RefreshPowerTips()
+    self:RefreshPowerCost()
+    self:RefreshBuffArea()
+    self:InitAutoBtnState()
+    self:_SetStoryBtn()
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.DiffInfoBtnOnClick = function(self, go)
-  -- function num : 0_42
+function UISeasonLevelStageS5:DiffInfoBtnOnClick(go)
   self:ShowDialog("UISeasonStageDiffTips")
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.RefreshPowerTips = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function UISeasonLevelStageS5:RefreshPowerTips()
   local contentText = self:GetUIComponent("UILocalizationText", "PowerTipsText")
-  local componentInfo = (self._pointComp):ComponentInfo()
-  local compID = (self._pointComp):GetComponetCfgId(componentInfo.m_campaign_id, componentInfo.m_component_id)
-  local cfg = (self._pointComp):GetActionPointConfig()
+  local componentInfo = self._pointComp:ComponentInfo()
+  local compID = self._pointComp:GetComponetCfgId(componentInfo.m_campaign_id, componentInfo.m_component_id)
+  local cfg = self._pointComp:GetActionPointConfig()
   if cfg == nil then
-    (Log.exception)("cfg_component_action_point中找不到组件ID:", compID)
+    Log.exception("cfg_component_action_point中找不到组件ID:", compID)
   end
-  local cur, ceil = (self._pointComp):GetItemCount()
-  contentText:SetText((string.format)("<color=#ffffff>%s</color>/%s", cur, ceil))
+  local cur, ceil = self._pointComp:GetItemCount()
+  contentText:SetText(string.format("<color=#ffffff>%s</color>/%s", cur, ceil))
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.RefreshPowerCost = function(self)
-  -- function num : 0_44 , upvalues : _ENV
+function UISeasonLevelStageS5:RefreshPowerCost()
   local needPowerText = self._needPower
-  if self._powerID ~= RoleAssetID.RoleAssetPhyPoint or not self._pointComp then
-    (Log.exception)("关卡体力为行动点,但没有活动的行动点组件")
-  end
-  do
-    local cur, ceil = (self._pointComp):GetItemCount()
+  if self._powerID == RoleAssetID.RoleAssetPhyPoint then
+  else
+    if not self._pointComp then
+      Log.exception("关卡体力为行动点,但没有活动的行动点组件")
+    end
+    local cur, ceil = self._pointComp:GetItemCount()
     if cur < self._needPower then
       needPowerText = "<color=#FF0000>" .. self._needPower .. "</color>"
     end
-    ;
-    (self._txtCost):SetText(needPowerText)
   end
+  self._txtCost:SetText(needPowerText)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.InitChapterName = function(self)
-  -- function num : 0_45 , upvalues : _ENV
+function UISeasonLevelStageS5:InitChapterName()
   if self._hasMultiDiff then
-    local normalMissionId = (self._diffMissonIdMap)[UISeasonLevelDiff.Normal]
-    local hardMissionId = (self._diffMissonIdMap)[UISeasonLevelDiff.Hard]
+    local normalMissionId = self._diffMissonIdMap[UISeasonLevelDiff.Normal]
+    local hardMissionId = self._diffMissonIdMap[UISeasonLevelDiff.Hard]
     self:_InitChapterName(self._chapterNormalNameText, normalMissionId)
     self:_InitChapterName(self._chapterHardNameText, hardMissionId)
   else
-    do
-      self:_InitChapterName(self._chapterNormalNameText, self._missionID)
-      self:RefreshChapter()
-    end
+    self:_InitChapterName(self._chapterNormalNameText, self._missionID)
   end
+  self:RefreshChapter()
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._InitChapterName = function(self, text, missionId)
-  -- function num : 0_46 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_season_mission)[missionId]
+function UISeasonLevelStageS5:_InitChapterName(text, missionId)
+  local missionCfg = Cfg.cfg_season_mission[missionId]
   if text and missionCfg then
-    text:SetText((StringTable.Get)(missionCfg.Name))
+    text:SetText(StringTable.Get(missionCfg.Name))
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.RefreshChapter = function(self)
-  -- function num : 0_47 , upvalues : _ENV
-  if self._missionDiff ~= UISeasonLevelDiff.Normal then
-    (self._chapterNameNormalGo):SetActive(not self._hasMultiDiff)
-    ;
-    (self._chapterNameHardGo):SetActive(self._missionDiff == UISeasonLevelDiff.Hard)
-    ;
-    (self._chapterNameNormalGo):SetActive(true)
-    ;
-    (self._chapterNameHardGo):SetActive(false)
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UISeasonLevelStageS5:RefreshChapter()
+  if self._hasMultiDiff then
+    self._chapterNameNormalGo:SetActive(self._missionDiff == UISeasonLevelDiff.Normal)
+    self._chapterNameHardGo:SetActive(self._missionDiff == UISeasonLevelDiff.Hard)
+  else
+    self._chapterNameNormalGo:SetActive(true)
+    self._chapterNameHardGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.RefreshThreeStarArea = function(self, playAnim, animDelay)
-  -- function num : 0_48 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_season_mission)[self._missionID]
+function UISeasonLevelStageS5:RefreshThreeStarArea(playAnim, animDelay)
+  local missionCfg = Cfg.cfg_season_mission[self._missionID]
   local threeStarConditions = {}
   if missionCfg.ShowCondition and missionCfg.ShowCondition == 1 then
-    local ids = {missionCfg.ThreeStarCondition1, missionCfg.ThreeStarCondition2, missionCfg.ThreeStarCondition3}
-    for i,v in ipairs(ids) do
+    local ids = {
+      missionCfg.ThreeStarCondition1,
+      missionCfg.ThreeStarCondition2,
+      missionCfg.ThreeStarCondition3
+    }
+    for i, v in ipairs(ids) do
       local cond = StageCondition:New()
       cond:Init(i, v)
-      ;
-      (table.insert)(threeStarConditions, cond)
+      table.insert(threeStarConditions, cond)
     end
-    if (self._allPassMissionInfo)[self._missionID] then
-      local starCount, completeStarList = (self._module):ParseStarInfo(((self._allPassMissionInfo)[self._missionID]).star)
+    if self._allPassMissionInfo[self._missionID] then
+      local starCount, completeStarList = self._module:ParseStarInfo(self._allPassMissionInfo[self._missionID].star)
       self:UpdateCondition(threeStarConditions, completeStarList)
     end
   end
-  do
-    if #threeStarConditions > 0 then
-      (self._conditionsGo):SetActive(true)
-      ;
-      (self._conditionNo):SetActive(false)
-      ;
-      (self._sop):SpawnObjects("UISeasonConditionItem", #threeStarConditions)
-      self._conditions = (self._sop):GetAllSpawnList()
-      for i,v in ipairs(self._conditions) do
-        if v:IsEnable() then
-          v:Flush(threeStarConditions[i], i)
-          if playAnim then
-            v:SetWaitAnim()
-          end
+  if 0 < #threeStarConditions then
+    self._conditionsGo:SetActive(true)
+    self._conditionNo:SetActive(false)
+    self._sop:SpawnObjects("UISeasonConditionItem", #threeStarConditions)
+    self._conditions = self._sop:GetAllSpawnList()
+    for i, v in ipairs(self._conditions) do
+      if v:IsEnable() then
+        v:Flush(threeStarConditions[i], i)
+        if playAnim then
+          v:SetWaitAnim()
         end
       end
-      if playAnim then
-        self:PlayAnimThreeStarArea(animDelay)
-      end
-    else
-      ;
-      (self._conditionsGo):SetActive(false)
-      ;
-      (self._conditionNo):SetActive(true)
     end
+    if playAnim then
+      self:PlayAnimThreeStarArea(animDelay)
+    end
+  else
+    self._conditionsGo:SetActive(false)
+    self._conditionNo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.PlayAnimThreeStarArea = function(self, totalAnimDelay)
-  -- function num : 0_49 , upvalues : _ENV
+function UISeasonLevelStageS5:PlayAnimThreeStarArea(totalAnimDelay)
   if self._conditions then
     local eachCellAnimDelay = 50
     local cellDelay = 50
     if totalAnimDelay then
       cellDelay = cellDelay + totalAnimDelay
     end
-    for i,v in ipairs(self._conditions) do
+    for i, v in ipairs(self._conditions) do
       if v:IsEnable() then
         v:PlayAnim(cellDelay)
         cellDelay = cellDelay + eachCellAnimDelay
@@ -1240,313 +972,227 @@ UISeasonLevelStageS5.PlayAnimThreeStarArea = function(self, totalAnimDelay)
   end
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.InitEnemys = function(self)
-  -- function num : 0_50 , upvalues : _ENV
+function UISeasonLevelStageS5:InitEnemys()
   if self._hasMultiDiff then
-    local normalMissionId = (self._diffMissonIdMap)[UISeasonLevelDiff.Normal]
-    local hardMissionId = (self._diffMissonIdMap)[UISeasonLevelDiff.Hard]
+    local normalMissionId = self._diffMissonIdMap[UISeasonLevelDiff.Normal]
+    local hardMissionId = self._diffMissonIdMap[UISeasonLevelDiff.Hard]
     self:_InitEnemy(self._enemy_normal, normalMissionId)
     self:_InitEnemy(self._enemy_hard, hardMissionId)
   else
-    do
-      self:_InitEnemy(self._enemy_normal, self._missionID)
-      self:RefreshEnemyArea()
-    end
+    self:_InitEnemy(self._enemy_normal, self._missionID)
   end
+  self:RefreshEnemyArea()
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._InitEnemy = function(self, sop, missionId)
-  -- function num : 0_51 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_season_mission)[missionId]
+function UISeasonLevelStageS5:_InitEnemy(sop, missionId)
+  local missionCfg = Cfg.cfg_season_mission[missionId]
   local progress = self._curLevelProgress
   local enemyObj = sop:SpawnObject("UIStageEnemy")
-  local recommendAwaken = (missionCfg.RecommendAwaken)[progress] and (missionCfg.RecommendAwaken)[progress] or 0
-  local recommendLV = (missionCfg.RecommendLV)[progress] and (missionCfg.RecommendLV)[progress] or 0
-  local color = (Color(1, 1, 1, 1))
-  local enemyTitleBgSprite, enemyTitleBg2Sprite = nil, nil
-  if not (missionCfg.FightLevel)[progress] then
-    enemyObj:Flush(recommendAwaken, recommendLV, missionCfg.LevelID, color, enemyTitleBgSprite, enemyTitleBg2Sprite, true, true, true)
-  end
+  local recommendAwaken = missionCfg.RecommendAwaken[progress] and missionCfg.RecommendAwaken[progress] or 0
+  local recommendLV = missionCfg.RecommendLV[progress] and missionCfg.RecommendLV[progress] or 0
+  local color = Color(1, 1, 1, 1)
+  local enemyTitleBgSprite, enemyTitleBg2Sprite
+  enemyObj:Flush(recommendAwaken, recommendLV, missionCfg.FightLevel[progress] or missionCfg.LevelID, color, enemyTitleBgSprite, enemyTitleBg2Sprite, true, true, true)
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.RefreshEnemyArea = function(self)
-  -- function num : 0_52 , upvalues : _ENV
+function UISeasonLevelStageS5:RefreshEnemyArea()
   self._enemyNormalGo = self:GetGameObject("enemy_normal")
   self._enemyHardGo = self:GetGameObject("enemy_hard")
-  if self._missionDiff ~= UISeasonLevelDiff.Normal then
-    (self._enemyNormalGo):SetActive(not self._hasMultiDiff)
-    ;
-    (self._enemyHardGo):SetActive(self._missionDiff == UISeasonLevelDiff.Hard)
-    ;
-    (self._enemyNormalGo):SetActive(true)
-    ;
-    (self._enemyHardGo):SetActive(false)
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  if self._hasMultiDiff then
+    self._enemyNormalGo:SetActive(self._missionDiff == UISeasonLevelDiff.Normal)
+    self._enemyHardGo:SetActive(self._missionDiff == UISeasonLevelDiff.Hard)
+  else
+    self._enemyNormalGo:SetActive(true)
+    self._enemyHardGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.RefreshRecommendLv = function(self)
-  -- function num : 0_53 , upvalues : _ENV
+function UISeasonLevelStageS5:RefreshRecommendLv()
   local imgGrade = self:GetUIComponent("Image", "imgGrade")
   local lvText = self:GetUIComponent("UILocalizationText", "RecommendLvText")
   local buffLvText = self:GetUIComponent("UILocalizationText", "RecommendBuffLvText")
-  local cfg = (Cfg.cfg_season_mission)[self._missionID]
+  local cfg = Cfg.cfg_season_mission[self._missionID]
   local progress = self._curLevelProgress
-  local recommendAwaken = (cfg.RecommendAwaken)[progress] and (cfg.RecommendAwaken)[progress] or 0
-  local recommendLV = (cfg.RecommendLV)[progress] and (cfg.RecommendLV)[progress] or 0
-  local recommendBuffLV = (cfg.RecommendSeasonBuffLV)[progress] and (cfg.RecommendSeasonBuffLV)[progress] or 0
-  imgGrade.sprite = (self._gradeAtlas):GetSprite((UIPetModule.GetAwakeSpriteNameByParam)(3, recommendAwaken))
+  local recommendAwaken = cfg.RecommendAwaken[progress] and cfg.RecommendAwaken[progress] or 0
+  local recommendLV = cfg.RecommendLV[progress] and cfg.RecommendLV[progress] or 0
+  local recommendBuffLV = cfg.RecommendSeasonBuffLV[progress] and cfg.RecommendSeasonBuffLV[progress] or 0
+  imgGrade.sprite = self._gradeAtlas:GetSprite(UIPetModule.GetAwakeSpriteNameByParam(3, recommendAwaken))
   local lvStr = tostring(recommendLV)
   lvText:SetText(lvStr)
   local buffLvStr = tostring(recommendBuffLV)
   buffLvText:SetText(buffLvStr)
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.RefreshAreasTitleStyle = function(self)
-  -- function num : 0_54
+function UISeasonLevelStageS5:RefreshAreasTitleStyle()
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.InitBuffLevelArea = function(self)
-  -- function num : 0_55
-  self._buffLevelArea = (self.buffLevelGen):SpawnObject("UISeasonBuffStageAreaS5")
+function UISeasonLevelStageS5:InitBuffLevelArea()
+  self._buffLevelArea = self.buffLevelGen:SpawnObject("UISeasonBuffStageAreaS5")
   if self._buffLevelArea then
-    (self._buffLevelArea):SetData(self._seasonObj)
+    self._buffLevelArea:SetData(self._seasonObj)
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.RefreshBuffArea = function(self)
-  -- function num : 0_56
+function UISeasonLevelStageS5:RefreshBuffArea()
   if self._buffLevelArea then
-    (self._buffLevelArea):RefreshInfo()
+    self._buffLevelArea:RefreshInfo()
   end
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.Close = function(self)
-  -- function num : 0_57
+function UISeasonLevelStageS5:Close()
   self:_CloseDialogWithAnim()
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._CloseDialogWithAnim = function(self, callback)
-  -- function num : 0_58 , upvalues : _ENV
-  (UIWidgetHelper.PlayAnimation)(self, "UICanvas", "uieff_UISeasonLevelStageS3_out", 433, function()
-    -- function num : 0_58_0 , upvalues : callback, self
+function UISeasonLevelStageS5:_CloseDialogWithAnim(callback)
+  UIWidgetHelper.PlayAnimation(self, "UICanvas", "uieff_UISeasonLevelStageS3_out", 433, function()
     if callback then
       callback()
     end
     self:_Resume()
     self:ShowMainUI(true)
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._Resume = function(self)
-  -- function num : 0_59 , upvalues : _ENV
-  local eventPoint = (((self._uiSeasonModule):SeasonManager()):SeasonMapManager()):GetEventPoint(self._rawMissionID)
+function UISeasonLevelStageS5:_Resume()
+  local eventPoint = self._uiSeasonModule:SeasonManager():SeasonMapManager():GetEventPoint(self._rawMissionID)
   if eventPoint then
     eventPoint:InterruptExpress()
   end
-  local seasonManager = (self._uiSeasonModule):SeasonManager()
-  local player = (seasonManager:SeasonPlayerManager()):GetPlayer()
+  local seasonManager = self._uiSeasonModule:SeasonManager()
+  local player = seasonManager:SeasonPlayerManager():GetPlayer()
   player:PlayAnimation(SeasonPlayerAnimation.Stand)
-  local seasonAudio = (seasonManager:SeasonAudioManager()):GetSeasonAudio()
+  local seasonAudio = seasonManager:SeasonAudioManager():GetSeasonAudio()
   if seasonAudio then
     seasonAudio:PlayVoice(false)
   end
-  ;
-  ((seasonManager:SeasonCameraManager()):SeasonCamera()):TryResumeSize()
-  ;
-  (self:GetModule(SeasonModule)):ClearLevelExpress()
+  seasonManager:SeasonCameraManager():SeasonCamera():TryResumeSize()
+  self:GetModule(SeasonModule):ClearLevelExpress()
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.BattleInfoPanelBtnOnClick = function(self)
-  -- function num : 0_60 , upvalues : _ENV
+function UISeasonLevelStageS5:BattleInfoPanelBtnOnClick()
   self._curPanel = UISeasonLevelStagePanelMode.BattleInfo
   self:RefreshPanelShow()
   self:RefreshPanelText()
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.AwardsPanelBtnOnClick = function(self)
-  -- function num : 0_61 , upvalues : _ENV
+function UISeasonLevelStageS5:AwardsPanelBtnOnClick()
   self._curPanel = UISeasonLevelStagePanelMode.AwardsInfo
   self:RefreshPanelShow()
   self:RefreshPanelText()
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.PowerTopTipsOnClick = function(self, go)
-  -- function num : 0_62
-  self:ShowDialog("UISeasonActionPointTipS5", self._pointComp, (go.transform).anchoredPosition)
+function UISeasonLevelStageS5:PowerTopTipsOnClick(go)
+  self:ShowDialog("UISeasonActionPointTipS5", self._pointComp, go.transform.anchoredPosition)
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._Countdown = function(self)
-  -- function num : 0_63 , upvalues : _ENV
+function UISeasonLevelStageS5:_Countdown()
   local now = GetSvrTimeNow()
   local time = self._refreshPowerTargetTime - now
   if time <= 0 then
     if self._refreshPowerTask then
-      ((GameGlobal.TaskManager)()):KillTask(self._refreshPowerTask)
+      GameGlobal.TaskManager():KillTask(self._refreshPowerTask)
       self._refreshPowerTask = nil
     end
     self._refreshPowerTask = self:StartTask(self._ReqFlushPower, self)
   end
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._ReqFlushPower = function(self, TT)
-  -- function num : 0_64 , upvalues : _ENV
+function UISeasonLevelStageS5:_ReqFlushPower(TT)
   local res = AsyncRequestRes:New()
-  ;
-  (self._pointComp):HandleActionPointData(TT, res)
+  self._pointComp:HandleActionPointData(TT, res)
   if res:GetSucc() then
     self:RefreshPowerTips()
     self:RefreshPowerCost()
   else
     if self._refreshPowerTimer then
-      ((GameGlobal.Timer)()):CancelEvent(self._refreshPowerTimer)
+      GameGlobal.Timer():CancelEvent(self._refreshPowerTimer)
       self._refreshPowerTimer = nil
     end
-    ;
-    (Log.error)("请求刷新行动点失败:", res:GetResult())
+    Log.error("请求刷新行动点失败:", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.OnAfterUILayerChanged = function(self)
-  -- function num : 0_65 , upvalues : _ENV
-  local topui = ((GameGlobal.UIStateManager)()):IsTopUI(self:GetName())
+function UISeasonLevelStageS5:OnAfterUILayerChanged()
+  local topui = GameGlobal.UIStateManager():IsTopUI(self:GetName())
   if topui then
     if self._refreshPowerTask then
-      ((GameGlobal.TaskManager)()):KillTask(self._refreshPowerTask)
+      GameGlobal.TaskManager():KillTask(self._refreshPowerTask)
       self._refreshPowerTask = nil
     end
     self._refreshPowerTask = self:StartTask(self._ReqFlushPower, self)
   end
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.ShowMainUI = function(self, show)
-  -- function num : 0_66 , upvalues : _ENV
-  local controller = ((GameGlobal.UIStateManager)()):GetController((UISeasonHelper.CurSeasonSceneUI)())
+function UISeasonLevelStageS5:ShowMainUI(show)
+  local controller = GameGlobal.UIStateManager():GetController(UISeasonHelper.CurSeasonSceneUI())
   if controller then
     controller:SetShow(show)
   end
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5.RecordOnClick = function(self, go)
-  -- function num : 0_67
+function UISeasonLevelStageS5:RecordOnClick(go)
   self:ShowDialog("UIActivityLevelRecordController", self._component, self._missionID)
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._TryFixStory = function(self, TT)
-  -- function num : 0_68 , upvalues : _ENV
-  local normalMissionID = (self._diffMissonIdMap)[UISeasonLevelDiff.Normal]
+function UISeasonLevelStageS5:_TryFixStory(TT)
+  local normalMissionID = self._diffMissonIdMap[UISeasonLevelDiff.Normal]
   if normalMissionID then
     local normalStoryList = DiscoveryStoryList:New()
     normalStoryList:Init(normalMissionID)
     local normalBefore = normalStoryList:GetStoryByStoryType(StoryTriggerType.BeforeFight)
     local normalAfter = normalStoryList:GetStoryByStoryType(StoryTriggerType.AfterFight)
-    do
-      if normalBefore then
-        local active = (self._module):IsMissionStoryActive(normalMissionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
-        if not active then
-          (Log.info)("开始修正普通关战前剧情数据:", normalMissionID)
-          self:_ReqFinishStory(TT, normalMissionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
-        else
-          ;
-          (Log.info)("普通关战前剧情已经看过无需修正", normalMissionID)
-        end
+    if normalBefore then
+      local active = self._module:IsMissionStoryActive(normalMissionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
+      if not active then
+        Log.info("开始修正普通关战前剧情数据:", normalMissionID)
+        self:_ReqFinishStory(TT, normalMissionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
+      else
+        Log.info("普通关战前剧情已经看过无需修正", normalMissionID)
       end
-      do
-        if normalAfter then
-          local active = (self._module):IsMissionStoryActive(normalMissionID, ActiveStoryType.ActiveStoryType_AfterBattle)
-          if not active then
-            (Log.info)("开始修正普通关战后剧情数据:", normalMissionID)
-            self:_ReqFinishStory(TT, normalMissionID, ActiveStoryType.ActiveStoryType_AfterBattle)
-          else
-            ;
-            (Log.info)("普通关战后剧情已经看过无需修正", normalMissionID)
-          end
-        end
-        local hardMissionID = (self._diffMissonIdMap)[UISeasonLevelDiff.Hard]
-        if hardMissionID then
-          local hardStoryList = DiscoveryStoryList:New()
-          hardStoryList:Init(hardMissionID)
-          local hardBefore = hardStoryList:GetStoryByStoryType(StoryTriggerType.BeforeFight)
-          local hardAfter = hardStoryList:GetStoryByStoryType(StoryTriggerType.AfterFight)
-          do
-            if hardBefore then
-              local active = (self._module):IsMissionStoryActive(hardMissionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
-              if not active then
-                (Log.info)("开始修正困难关战前剧情数据:", hardMissionID)
-                self:_ReqFinishStory(TT, hardMissionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
-              else
-                ;
-                (Log.info)("困难关战前剧情已经看过无需修正", hardMissionID)
-              end
-            end
-            if hardAfter then
-              local active = (self._module):IsMissionStoryActive(hardMissionID, ActiveStoryType.ActiveStoryType_AfterBattle)
-              if not active then
-                (Log.info)("开始修正困难关战后剧情数据:", hardMissionID)
-                self:_ReqFinishStory(TT, hardMissionID, ActiveStoryType.ActiveStoryType_AfterBattle)
-              else
-                ;
-                (Log.info)("困难关战后剧情已经看过无需修正", hardMissionID)
-              end
-            end
-          end
-        end
+    end
+    if normalAfter then
+      local active = self._module:IsMissionStoryActive(normalMissionID, ActiveStoryType.ActiveStoryType_AfterBattle)
+      if not active then
+        Log.info("开始修正普通关战后剧情数据:", normalMissionID)
+        self:_ReqFinishStory(TT, normalMissionID, ActiveStoryType.ActiveStoryType_AfterBattle)
+      else
+        Log.info("普通关战后剧情已经看过无需修正", normalMissionID)
+      end
+    end
+  end
+  local hardMissionID = self._diffMissonIdMap[UISeasonLevelDiff.Hard]
+  if hardMissionID then
+    local hardStoryList = DiscoveryStoryList:New()
+    hardStoryList:Init(hardMissionID)
+    local hardBefore = hardStoryList:GetStoryByStoryType(StoryTriggerType.BeforeFight)
+    local hardAfter = hardStoryList:GetStoryByStoryType(StoryTriggerType.AfterFight)
+    if hardBefore then
+      local active = self._module:IsMissionStoryActive(hardMissionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
+      if not active then
+        Log.info("开始修正困难关战前剧情数据:", hardMissionID)
+        self:_ReqFinishStory(TT, hardMissionID, ActiveStoryType.ActiveStoryType_BeforeBattle)
+      else
+        Log.info("困难关战前剧情已经看过无需修正", hardMissionID)
+      end
+    end
+    if hardAfter then
+      local active = self._module:IsMissionStoryActive(hardMissionID, ActiveStoryType.ActiveStoryType_AfterBattle)
+      if not active then
+        Log.info("开始修正困难关战后剧情数据:", hardMissionID)
+        self:_ReqFinishStory(TT, hardMissionID, ActiveStoryType.ActiveStoryType_AfterBattle)
+      else
+        Log.info("困难关战后剧情已经看过无需修正", hardMissionID)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLevelStageS5._ReqFinishStory = function(self, TT, id, type)
-  -- function num : 0_69 , upvalues : _ENV
-  local res = (self._module):SetMissionStoryActive(TT, id, type)
+function UISeasonLevelStageS5:_ReqFinishStory(TT, id, type)
+  local res = self._module:SetMissionStoryActive(TT, id, type)
   if res:GetSucc() then
-    (Log.info)("修正剧情数据成功:", id, type)
+    Log.info("修正剧情数据成功:", id, type)
   else
-    ;
-    (Log.info)("修正剧情数据失败:", id, type, res:GetResult())
+    Log.info("修正剧情数据失败:", id, type, res:GetResult())
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_detail/ui_custom_pet_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICustomPetData", Object)
 UICustomPetData = UICustomPetData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICustomPetData.Constructor = function(self, cfg)
-  -- function num : 0_0
+function UICustomPetData:Constructor(cfg)
   if cfg then
     self._petId = cfg.PetId
     self._attack = cfg.Attack
@@ -23,228 +16,130 @@ UICustomPetData.Constructor = function(self, cfg)
   self._btnInfoCallback = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.GetPetId = function(self)
-  -- function num : 0_1
+function UICustomPetData:GetPetId()
   return self._petId
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.SetPetId = function(self, id)
-  -- function num : 0_2
+function UICustomPetData:SetPetId(id)
   self._petId = id
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.GetAttacke = function(self)
-  -- function num : 0_3
+function UICustomPetData:GetAttacke()
   return self._attack
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.SetAttack = function(self, attack)
-  -- function num : 0_4
+function UICustomPetData:SetAttack(attack)
   self._attack = attack
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.GetHP = function(self)
-  -- function num : 0_5
+function UICustomPetData:GetHP()
   return self._hp
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.SetHP = function(self, hp)
-  -- function num : 0_6
+function UICustomPetData:SetHP(hp)
   self._hp = hp
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.GetDef = function(self)
-  -- function num : 0_7
+function UICustomPetData:GetDef()
   return self._def
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.SetDef = function(self, def)
-  -- function num : 0_8
+function UICustomPetData:SetDef(def)
   self._def = def
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.GetAwakening = function(self)
-  -- function num : 0_9
+function UICustomPetData:GetAwakening()
   return self._awakening
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.SetAwakeing = function(self, awake)
-  -- function num : 0_10
+function UICustomPetData:SetAwakeing(awake)
   self._awakening = awake
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.GetGrade = function(self)
-  -- function num : 0_11
+function UICustomPetData:GetGrade()
   return self._grade
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.SetGrade = function(self, grade)
-  -- function num : 0_12
+function UICustomPetData:SetGrade(grade)
   self._grade = grade
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.GetEquip = function(self)
-  -- function num : 0_13
+function UICustomPetData:GetEquip()
   return self._equip
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.SetEquip = function(self, equip)
-  -- function num : 0_14
+function UICustomPetData:SetEquip(equip)
   self._equip = equip
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.IsShowBtnInfo = function(self)
-  -- function num : 0_15
+function UICustomPetData:IsShowBtnInfo()
   return self._isShowBtnInfo
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.SetShowBtnStatus = function(self, status)
-  -- function num : 0_16
+function UICustomPetData:SetShowBtnStatus(status)
   self._isShowBtnInfo = status
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.GetBtnInfoName = function(self)
-  -- function num : 0_17
+function UICustomPetData:GetBtnInfoName()
   return self._btnInfoName
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.SetBtnInfoName = function(self, name)
-  -- function num : 0_18
+function UICustomPetData:SetBtnInfoName(name)
   self._btnInfoName = name
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.GetBtnInfoCallback = function(self)
-  -- function num : 0_19
+function UICustomPetData:GetBtnInfoCallback()
   return self._btnInfoCallback
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.SetBtnInfoCallback = function(self, callback)
-  -- function num : 0_20
+function UICustomPetData:SetBtnInfoCallback(callback)
   self._btnInfoCallback = callback
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.SetHideHomeBtn = function(self, bHide)
-  -- function num : 0_21
+function UICustomPetData:SetHideHomeBtn(bHide)
   self._hideHomeBtn = bHide
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.GetHideHomeBtn = function(self)
-  -- function num : 0_22
+function UICustomPetData:GetHideHomeBtn()
   return self._hideHomeBtn
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.GetDetailTitleText = function(self)
-  -- function num : 0_23
+function UICustomPetData:GetDetailTitleText()
   return self._detailTitleText
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.SetDetailTitleText = function(self, text)
-  -- function num : 0_24
+function UICustomPetData:SetDetailTitleText(text)
   self._detailTitleText = text
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.GetShowLevelArea = function(self)
-  -- function num : 0_25
+function UICustomPetData:GetShowLevelArea()
   return self._showLevelArea
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.SetShowLevelArea = function(self, bShow)
-  -- function num : 0_26
+function UICustomPetData:SetShowLevelArea(bShow)
   self._showLevelArea = bShow
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.GetCustomLevel = function(self)
-  -- function num : 0_27
+function UICustomPetData:GetCustomLevel()
   return self._customLevel
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.SetCustomLevel = function(self, level)
-  -- function num : 0_28
+function UICustomPetData:SetCustomLevel(level)
   self._customLevel = level
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.GetAffinityLevel = function(self)
-  -- function num : 0_29
+function UICustomPetData:GetAffinityLevel()
   return self._affinityLevel
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.SetAffinityLevel = function(self, affinityLevel)
-  -- function num : 0_30
+function UICustomPetData:SetAffinityLevel(affinityLevel)
   self._affinityLevel = affinityLevel
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.GetEquipRefineLevel = function(self)
-  -- function num : 0_31
+function UICustomPetData:GetEquipRefineLevel()
   return self._equipRefineLevel
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UICustomPetData.SetEquipRefineLevel = function(self, equipRefineLevel)
-  -- function num : 0_32
+function UICustomPetData:SetEquipRefineLevel(equipRefineLevel)
   self._equipRefineLevel = equipRefineLevel
 end
-
-

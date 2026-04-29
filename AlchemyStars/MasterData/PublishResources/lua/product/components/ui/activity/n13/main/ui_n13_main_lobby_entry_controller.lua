@@ -1,83 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n13/main/ui_n13_main_lobby_entry_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN13MainLobbyEntry", UICustomWidget)
 UIN13MainLobbyEntry = UIN13MainLobbyEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN13MainLobbyEntry.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN13MainLobbyEntry:Constructor()
   self._campaignModule = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainLobbyEntry.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN13MainLobbyEntry:OnShow(uiParams)
   self:_GetComponent()
   self:_OnShow()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainLobbyEntry._GetComponent = function(self)
-  -- function num : 0_2
+function UIN13MainLobbyEntry:_GetComponent()
   self._redPoint = self:GetGameObject("_redPoint")
   self._newFlag = self:GetGameObject("_newFlag")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainLobbyEntry._OnShow = function(self)
-  -- function num : 0_3
+function UIN13MainLobbyEntry:_OnShow()
   self:StartTask(self._SetState, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainLobbyEntry._SetState = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN13MainLobbyEntry:_SetState(TT)
   self:Lock("UIN13MainLobbyEntry")
   local res = AsyncRequestRes:New()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N13)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N13)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if res:GetSucc() then
-    local process = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N13)
+    local process = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N13)
     local showNew = process:GetStepStatusNew()
     local showredPoint = process:GetEntryRedDot()
-    ;
-    (self._newFlag):SetActive(showNew)
-    if showredPoint then
-      do
-        (self._redPoint):SetActive(not showNew)
-        self:UnLock("UIN13MainLobbyEntry")
-      end
-    end
+    self._newFlag:SetActive(showNew)
+    self._redPoint:SetActive(showredPoint and not showNew)
   end
+  self:UnLock("UIN13MainLobbyEntry")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainLobbyEntry.EntryBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self.uiOwner)._screenShot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera((self.uiOwner):GetName())
-  local rt = ((self.uiOwner)._screenShot):RefreshBlurTexture()
-  local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
+function UIN13MainLobbyEntry:EntryBtnOnClick(go)
+  self.uiOwner._screenShot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self.uiOwner:GetName())
+  local rt = self.uiOwner._screenShot:RefreshBlurTexture()
+  local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, rt, cache_rt, self
     YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
+    UnityEngine.Graphics.Blit(rt, cache_rt)
     self:SwitchState(UIStateType.UIN13MainController, cache_rt)
-  end
-)
+  end)
 end
-
-

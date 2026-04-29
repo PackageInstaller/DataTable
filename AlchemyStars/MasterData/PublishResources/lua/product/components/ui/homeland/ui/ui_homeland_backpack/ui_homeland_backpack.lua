@@ -1,18 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_backpack/ui_homeland_backpack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBackpack", UIController)
 UIHomelandBackpack = UIHomelandBackpack
-local ItemDetailBgTemplate = {Default = 1, Lv = 2, Architecture = 3}
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
+local ItemDetailBgTemplate = {
+  Default = 1,
+  Lv = 2,
+  Architecture = 3
+}
 
-UIHomelandBackpack.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetHomelandBackpackData()
-  self.mItem = (GameGlobal.GetModule)(ItemModule)
+function UIHomelandBackpack:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetHomelandBackpackData()
+  self.mItem = GameGlobal.GetModule(ItemModule)
   self.minShowItemCount = 20
   self.countPerRow = 4
   self.tabMaterial = 1
@@ -20,16 +17,12 @@ UIHomelandBackpack.Constructor = function(self)
   self.tabArchitecture = 3
   self.tabTree = 4
   self.tabFish = 5
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioOpenBackpack)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioOpenBackpack)
   self._atlas = self:GetAsset("UIHomelandBackpack.spriteatlas", LoadType.SpriteAtlas)
   self.keyLockAnim = "UIHomelandBackpackonGetItemByIndex"
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandBackpack:OnShow(uiParams)
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self.tabs = self:GetUIComponent("UISelectObjectPath", "tabs")
@@ -66,76 +59,56 @@ UIHomelandBackpack.OnShow = function(self, uiParams)
   self.callback = uiParams[3]
   self.curId = 0
   self:Init()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandBackpackFoldFilter, self.filterId or 1)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandBackpackFoldFilter, self.filterId or 1)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.imgIcon):DestoryLastImage()
+function UIHomelandBackpack:OnHide()
+  self.imgIcon:DestoryLastImage()
   self:DetachEvent(GameEventType.ItemCountChanged, self.ItemCountChanged)
   self:DetachEvent(GameEventType.HomelandBackpackFoldFilter, self.FoldFilter)
   self:DetachEvent(GameEventType.HomelandBackpackSelectItem, self.HomelandBackpackSelectItem)
   self:DetachEvent(GameEventType.OnItemUpgrade, self.OnItemUpgrade)
-  if ((GameGlobal.UIStateManager)()):IsLocked() then
+  if GameGlobal.UIStateManager():IsLocked() then
     self:CancelExpirationLock(self.keyLockAnim)
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.Init = function(self)
-  -- function num : 0_3
+function UIHomelandBackpack:Init()
   self:InitSrollView()
   self:InitFilter()
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.InitFilter = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local len = (table.count)((self.data).filters)
+function UIHomelandBackpack:InitFilter()
+  local len = table.count(self.data.filters)
   if self.filterId then
     len = 1
   end
-  ;
-  (self.tabs):SpawnObjects("UIHomelandBackpackTab", len)
-  local uis = (self.tabs):GetAllSpawnList()
+  self.tabs:SpawnObjects("UIHomelandBackpackTab", len)
+  local uis = self.tabs:GetAllSpawnList()
   local i = 1
-  for _,filter in pairs((self.data).filters) do
-    -- DECOMPILER ERROR at PC33: Unhandled construct in 'MakeBoolean' P1
-
-    if self.filterId and self.filterId == filter.id then
-      (uis[len]):Init(filter.id)
-      break
+  for _, filter in pairs(self.data.filters) do
+    if self.filterId then
+      if self.filterId == filter.id then
+        uis[len]:Init(filter.id)
+        break
+      end
+    else
+      uis[i]:Init(filter.id)
+      i = i + 1
     end
-    ;
-    (uis[i]):Init(filter.id)
-    i = i + 1
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.InitSrollView = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandBackpack:InitSrollView()
   self:CalcList()
   local param = UIDynamicScrollViewInitParam:New()
   param.mItemDefaultWithPaddingSize = 180
-  ;
-  (self.sv):InitListView(self.countRC, function(scrollView, index)
-    -- function num : 0_5_0 , upvalues : self
+  self.sv:InitListView(self.countRC, function(scrollView, index)
     return self:onGetItemByIndex(scrollView, index)
-  end
-, param)
+  end, param)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.onGetItemByIndex = function(self, scrollView, index)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandBackpack:onGetItemByIndex(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -149,9 +122,9 @@ UIHomelandBackpack.onGetItemByIndex = function(self, scrollView, index)
   local animCount = 0
   local msStep = 75
   local uis = pool:GetAllSpawnList()
-  for i,ui in ipairs(uis) do
+  for i, ui in ipairs(uis) do
     local idxItem = index * countPerRC + i
-    local item = (self.list)[idxItem]
+    local item = self.list[idxItem]
     local go = ui:GetGameObject()
     if item then
       go:SetActive(true)
@@ -165,643 +138,447 @@ UIHomelandBackpack.onGetItemByIndex = function(self, scrollView, index)
       go:SetActive(false)
     end
   end
-  if self._flushingList and animCount > 0 then
-    self:ExpirationLock(self.keyLockAnim, (animCount) * msStep + 333)
+  if self._flushingList and 0 < animCount then
+    self:ExpirationLock(self.keyLockAnim, animCount * msStep + 333)
   end
   return rowItem
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.GetItemID = function(self, item)
-  -- function num : 0_7
+function UIHomelandBackpack:GetItemID(item)
   if item and item.GetID then
     return item:GetID()
   end
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.GetItemTplID = function(self, item)
-  -- function num : 0_8
+function UIHomelandBackpack:GetItemTplID(item)
   if item and item.GetTemplateID then
     return item:GetTemplateID()
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.FlushList = function(self)
-  -- function num : 0_9
+function UIHomelandBackpack:FlushList()
   self._flushingList = true
   self:CalcList()
-  ;
-  (self.sv):SetListItemCount(self.countRC)
-  ;
-  (self.sv):MovePanelToItemIndex(0, 0)
+  self.sv:SetListItemCount(self.countRC)
+  self.sv:MovePanelToItemIndex(0, 0)
   self:FlushTabRed()
   self._flushingList = false
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.FlushCurItem = function(self)
-  -- function num : 0_10 , upvalues : _ENV, ItemDetailBgTemplate
+function UIHomelandBackpack:FlushCurItem()
   local item = self:GetCurSelectItem()
   if item then
-    (self.itemInfo):SetActive(true)
-    ;
-    (self.empty):SetActive(false)
+    self.itemInfo:SetActive(true)
+    self.empty:SetActive(false)
     local tpl = item:GetTemplate()
-    ;
-    (self.txtName):SetText((StringTable.Get)(tpl.Name))
-    ;
-    (self.imgIcon):LoadImage(tpl.Icon)
-    ;
-    (self.txtDesc):SetText((StringTable.Get)(tpl.Intro))
-    local useDesc = (StringTable.Get)(tpl.UseDesc)
+    self.txtName:SetText(StringTable.Get(tpl.Name))
+    self.imgIcon:LoadImage(tpl.Icon)
+    self.txtDesc:SetText(StringTable.Get(tpl.Intro))
+    local useDesc = StringTable.Get(tpl.UseDesc)
     if tpl.UseType == ItemUseType.ItemUseType_ManualUse or tpl.IsDecompose then
       local show = true
-      if self.callback == nil then
-        do
-          show = tpl.ItemSubType ~= ItemSubType.ItemSubType_Seed and tpl.ItemSubType ~= ItemSubType.ItemSubType_CultivationItem
-          ;
-          (self.goUse):SetActive(show)
-          ;
-          (self.goUse):SetActive(false)
-          do
-            local useBtnStr = "str_common_use"
-            if tpl.IsDecompose and not self.callback then
-              useBtnStr = "str_homeland_decompose"
-            end
-            ;
-            (self._btnUseText):SetText((StringTable.Get)(useBtnStr))
-            if self.filterId == self.tabMaterial then
-              self:FlushCurItemDefault()
-              self:FlushUseDesc(ItemDetailBgTemplate.Default, useDesc)
-            elseif self.filterId == self.tabTool then
-              self:FlushCurItemTool()
-              self:FlushUseDesc(ItemDetailBgTemplate.Lv, useDesc)
-            elseif self.filterId == self.tabFish then
-              self:FlushCurItemFish()
-              self:FlushUseDesc(ItemDetailBgTemplate.Architecture, useDesc)
-            else
-              local tplId = item:GetTemplateID()
-              if (Cfg.cfg_item_architecture)[tplId] then
-                self:FlushCurItemArchitecture()
-                self:FlushUseDesc(ItemDetailBgTemplate.Architecture, useDesc)
-              else
-                self:FlushCurItemDefault()
-                self:FlushUseDesc(ItemDetailBgTemplate.Default, useDesc)
-              end
-            end
-            self._showPresentTip = false
-            ;
-            (self.presentTip):SetActive(false)
-            ;
-            (self.presentMask):SetActive(false)
-            -- DECOMPILER ERROR at PC156: Confused about usage of register: R5 in 'UnsetPending'
-
-            if self:_CanPresent(item) then
-              (self.presentBtnImage).sprite = (self._atlas):GetSprite("n17_pack_icon07")
-            else
-              -- DECOMPILER ERROR at PC163: Confused about usage of register: R5 in 'UnsetPending'
-
-              (self.presentBtnImage).sprite = (self._atlas):GetSprite("n17_pack_icon08")
-            end
-            ;
-            (self.itemInfo):SetActive(false)
-            ;
-            (self.empty):SetActive(true)
-            -- DECOMPILER ERROR: 13 unprocessed JMP targets
-          end
-        end
+      if tpl.ItemSubType == ItemSubType.ItemSubType_Seed or tpl.ItemSubType == ItemSubType.ItemSubType_CultivationItem then
+        show = self.callback ~= nil
+      end
+      self.goUse:SetActive(show)
+    else
+      self.goUse:SetActive(false)
+    end
+    local useBtnStr = "str_common_use"
+    if tpl.IsDecompose and not self.callback then
+      useBtnStr = "str_homeland_decompose"
+    end
+    self._btnUseText:SetText(StringTable.Get(useBtnStr))
+    if self.filterId == self.tabMaterial then
+      self:FlushCurItemDefault()
+      self:FlushUseDesc(ItemDetailBgTemplate.Default, useDesc)
+    elseif self.filterId == self.tabTool then
+      self:FlushCurItemTool()
+      self:FlushUseDesc(ItemDetailBgTemplate.Lv, useDesc)
+    elseif self.filterId == self.tabFish then
+      self:FlushCurItemFish()
+      self:FlushUseDesc(ItemDetailBgTemplate.Architecture, useDesc)
+    else
+      local tplId = item:GetTemplateID()
+      if Cfg.cfg_item_architecture[tplId] then
+        self:FlushCurItemArchitecture()
+        self:FlushUseDesc(ItemDetailBgTemplate.Architecture, useDesc)
+      else
+        self:FlushCurItemDefault()
+        self:FlushUseDesc(ItemDetailBgTemplate.Default, useDesc)
       end
     end
-  end
-end
-
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.FormatCount = function(self, count)
-  -- function num : 0_11 , upvalues : _ENV
-  do
-    if count > 999999 then
-      local c = (math.floor)(count * 0.001) * 0.1
-      return (StringTable.Get)("str_homeland_backpack_n_w", c)
-    end
-    return tostring(count)
-  end
-end
-
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.FlushCurItemDefault = function(self)
-  -- function num : 0_12
-  (self.default):SetActive(true)
-  ;
-  (self.lv):SetActive(false)
-  ;
-  (self.architecture):SetActive(false)
-  local item = self:GetCurSelectItem()
-  local tplId = item:GetTemplateID()
-  local curCount = (self.mItem):GetItemCount(tplId)
-  ;
-  (self.txtCount):SetText(self:FormatCount(curCount))
-end
-
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.FlushCurItemTool = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (self.default):SetActive(false)
-  ;
-  (self.lv):SetActive(true)
-  ;
-  (self.architecture):SetActive(false)
-  local item = self:GetCurSelectItem()
-  local tplId = item:GetTemplateID()
-  local toolItem = (self.data):GetHomelandBackpackToolItemByTplId(tplId)
-  if toolItem then
-    local strCurLv = (StringTable.Get)("str_homeland_backpack_tool_cur_lv")
-    if toolItem:IsLevelMax() then
-      (self.btnLvUp):SetActive(false)
-      ;
-      (self.lvUpRed):SetActive(false)
-      strCurLv = strCurLv .. "<color=#E8B429>" .. (StringTable.Get)("str_homeland_backpack_max_lv") .. "</color>"
+    self._showPresentTip = false
+    self.presentTip:SetActive(false)
+    self.presentMask:SetActive(false)
+    if self:_CanPresent(item) then
+      self.presentBtnImage.sprite = self._atlas:GetSprite("n17_pack_icon07")
     else
-      ;
-      (self.btnLvUp):SetActive(true)
-      local pstId = item:GetID()
-      ;
-      (self.lvUpRed):SetActive((self.data):IsItemLvSatisfy(pstId))
+      self.presentBtnImage.sprite = self._atlas:GetSprite("n17_pack_icon08")
     end
-    do
-      ;
-      (self.txtCurLv):SetText(strCurLv)
-      ;
-      (self.txtLv):SetText(toolItem.lv)
-    end
+  else
+    self.itemInfo:SetActive(false)
+    self.empty:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
+function UIHomelandBackpack:FormatCount(count)
+  if 999999 < count then
+    local c = math.floor(count * 0.001) * 0.1
+    return StringTable.Get("str_homeland_backpack_n_w", c)
+  end
+  return tostring(count)
+end
 
-UIHomelandBackpack.FlushCurItemArchitecture = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (self.default):SetActive(false)
-  ;
-  (self.lv):SetActive(false)
-  ;
-  (self.architecture):SetActive(true)
+function UIHomelandBackpack:FlushCurItemDefault()
+  self.default:SetActive(true)
+  self.lv:SetActive(false)
+  self.architecture:SetActive(false)
   local item = self:GetCurSelectItem()
   local tplId = item:GetTemplateID()
-  local cfg_item_architecture = (Cfg.cfg_item_architecture)[tplId]
-  if cfg_item_architecture then
-    local x = (cfg_item_architecture.Size)[1]
-    local y = (cfg_item_architecture.Size)[2]
-    ;
-    (self.txtSize):SetText(x .. "*" .. y)
-  else
-    do
-      ;
-      (self.txtSize):SetText("--")
-      ;
-      (Log.error)("### no data in cfg_item_architecture. id =", tplId)
-      local curCount, placedCount = 0, 0
-      curCount = (UIForgeData.GetOwnPlaceCount)(tplId)
-      ;
-      (self.txtPlace):SetText(self:FormatCount(placedCount) .. "/" .. self:FormatCount(curCount))
+  local curCount = self.mItem:GetItemCount(tplId)
+  self.txtCount:SetText(self:FormatCount(curCount))
+end
+
+function UIHomelandBackpack:FlushCurItemTool()
+  self.default:SetActive(false)
+  self.lv:SetActive(true)
+  self.architecture:SetActive(false)
+  local item = self:GetCurSelectItem()
+  local tplId = item:GetTemplateID()
+  local toolItem = self.data:GetHomelandBackpackToolItemByTplId(tplId)
+  if toolItem then
+    local strCurLv = StringTable.Get("str_homeland_backpack_tool_cur_lv")
+    if toolItem:IsLevelMax() then
+      self.btnLvUp:SetActive(false)
+      self.lvUpRed:SetActive(false)
+      strCurLv = strCurLv .. "<color=#E8B429>" .. StringTable.Get("str_homeland_backpack_max_lv") .. "</color>"
+    else
+      self.btnLvUp:SetActive(true)
+      local pstId = item:GetID()
+      self.lvUpRed:SetActive(self.data:IsItemLvSatisfy(pstId))
     end
+    self.txtCurLv:SetText(strCurLv)
+    self.txtLv:SetText(toolItem.lv)
   end
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
+function UIHomelandBackpack:FlushCurItemArchitecture()
+  self.default:SetActive(false)
+  self.lv:SetActive(false)
+  self.architecture:SetActive(true)
+  local item = self:GetCurSelectItem()
+  local tplId = item:GetTemplateID()
+  local cfg_item_architecture = Cfg.cfg_item_architecture[tplId]
+  if cfg_item_architecture then
+    local x = cfg_item_architecture.Size[1]
+    local y = cfg_item_architecture.Size[2]
+    self.txtSize:SetText(x .. "*" .. y)
+  else
+    self.txtSize:SetText("--")
+    Log.error("### no data in cfg_item_architecture. id =", tplId)
+  end
+  local curCount, placedCount = 0, 0
+  curCount, placedCount = UIForgeData.GetOwnPlaceCount(tplId)
+  self.txtPlace:SetText(self:FormatCount(placedCount) .. "/" .. self:FormatCount(curCount))
+end
 
-UIHomelandBackpack.FlushCurItemFish = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  (self.default):SetActive(false)
-  ;
-  (self.lv):SetActive(false)
-  ;
-  (self.architecture):SetActive(true)
-  ;
-  (self.txtSize):SetText("--")
+function UIHomelandBackpack:FlushCurItemFish()
+  self.default:SetActive(false)
+  self.lv:SetActive(false)
+  self.architecture:SetActive(true)
+  self.txtSize:SetText("--")
   local item = self:GetCurSelectItem()
   local tplId = item:GetTemplateID()
   local curCount, placedCount = 0, 0
-  curCount = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(tplId)
-  placedCount = (self.mHomeland):GetFishsInBuilding(tplId)
-  ;
-  (self.txtPlace):SetText(self:FormatCount(placedCount) .. "/" .. self:FormatCount(curCount))
+  curCount = GameGlobal.GetModule(ItemModule):GetItemCount(tplId)
+  placedCount = self.mHomeland:GetFishsInBuilding(tplId)
+  self.txtPlace:SetText(self:FormatCount(placedCount) .. "/" .. self:FormatCount(curCount))
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.FlushUseDesc = function(self, template, useDesc)
-  -- function num : 0_16 , upvalues : ItemDetailBgTemplate
-  (self.useSv):SetActive(useDesc ~= nil)
+function UIHomelandBackpack:FlushUseDesc(template, useDesc)
+  self.useSv:SetActive(useDesc ~= nil)
   if useDesc then
-    (self.txtUseDesc):SetText(useDesc)
+    self.txtUseDesc:SetText(useDesc)
   end
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-  if useDesc ~= nil or not "n17_shop_di07" then
-    (self.bgImg).sprite = (self._atlas):GetSprite(template ~= ItemDetailBgTemplate.Default or "n17_pack_di08")
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-    if useDesc ~= nil or not "n17_pack_di02" then
-      (self.bgImg).sprite = (self._atlas):GetSprite(template ~= ItemDetailBgTemplate.Lv or "n17_pack_di07")
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R3 in 'UnsetPending'
-
-      if useDesc ~= nil or not "n17_shop_di10" then
-        (self.bgImg).sprite = (self._atlas):GetSprite(template ~= ItemDetailBgTemplate.Architecture or "n17_pack_di09")
-        ;
-        (self.bgImg):SetNativeSize()
-        -- DECOMPILER ERROR: 11 unprocessed JMP targets
-      end
-    end
+  if template == ItemDetailBgTemplate.Default then
+    self.bgImg.sprite = self._atlas:GetSprite(useDesc == nil and "n17_shop_di07" or "n17_pack_di08")
+  elseif template == ItemDetailBgTemplate.Lv then
+    self.bgImg.sprite = self._atlas:GetSprite(useDesc == nil and "n17_pack_di02" or "n17_pack_di07")
+  elseif template == ItemDetailBgTemplate.Architecture then
+    self.bgImg.sprite = self._atlas:GetSprite(useDesc == nil and "n17_shop_di10" or "n17_pack_di09")
   end
+  self.bgImg:SetNativeSize()
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.CalcList = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIHomelandBackpack:CalcList()
   self.list = {}
-  for _,item in ipairs((self.data).list) do
-    if (item:GetTemplate()).TabType == self.filterId and (not self.subFilter or (self.subFilter)(item)) then
-      (table.insert)(self.list, item)
+  for _, item in ipairs(self.data.list) do
+    if item:GetTemplate().TabType == self.filterId and (not self.subFilter or self.subFilter(item)) then
+      table.insert(self.list, item)
     end
   end
-  local len = (table.count)(self.list)
+  local len = table.count(self.list)
   if len < self.minShowItemCount then
     for i = len + 1, self.minShowItemCount do
-      (table.insert)(self.list, {})
+      table.insert(self.list, {})
     end
   end
-  do
-    self.count = (table.count)(self.list)
-    self.countRC = (math.ceil)(self.count / self.countPerRow)
-  end
+  self.count = table.count(self.list)
+  self.countRC = math.ceil(self.count / self.countPerRow)
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.FoldFilter = function(self, id)
-  -- function num : 0_18 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._safaAreaAnim).enabled = true
-  ;
-  (self._safaAreaAnim):Play("UIHomelandBackpack_ui_Switching")
-  ;
-  (self._safaAreaAnim):Rewind("UIHomelandBackpack_ui_Switching")
+function UIHomelandBackpack:FoldFilter(id)
+  self._safaAreaAnim.enabled = true
+  self._safaAreaAnim:Play("UIHomelandBackpack_ui_Switching")
+  self._safaAreaAnim:Rewind("UIHomelandBackpack_ui_Switching")
   self.filterId = id
   self:FlushList()
-  local pstId = self:GetItemID((self.list)[1])
+  local pstId = self:GetItemID(self.list[1])
   if pstId then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandBackpackSelectItem, pstId)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandBackpackSelectItem, pstId)
   else
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandBackpackSelectItem, 0)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandBackpackSelectItem, 0)
   end
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.FlushTabRed = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local uis = (self.tabs):GetAllSpawnList()
+function UIHomelandBackpack:FlushTabRed()
+  local uis = self.tabs:GetAllSpawnList()
   if not uis then
-    return 
+    return
   end
   if #uis <= 1 then
     local ui = uis[1]
-    local isShow = (self.data):IsFilterNew(self.filterId)
+    local isShow = self.data:IsFilterNew(self.filterId)
     ui:FlushRed(isShow)
   else
-    do
-      local i = 1
-      for _,filter in pairs((self.data).filters) do
-        local ui = uis[i]
-        local isShow = (self.data):IsFilterNew(filter.id)
-        ui:FlushRed(isShow)
-        i = i + 1
-      end
+    local i = 1
+    for _, filter in pairs(self.data.filters) do
+      local ui = uis[i]
+      local isShow = self.data:IsFilterNew(filter.id)
+      ui:FlushRed(isShow)
+      i = i + 1
     end
   end
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.HomelandBackpackSelectItem = function(self, id, byClick, item)
-  -- function num : 0_20 , upvalues : _ENV
+function UIHomelandBackpack:HomelandBackpackSelectItem(id, byClick, item)
   self.curId = id
   self:FlushCurItem()
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
   if byClick then
     local dataItem = self:GetCurSelectItem()
     if dataItem then
       local tplId = dataItem:GetTemplateID()
-      do
-        local pstId = dataItem:GetID()
-        if dataItem:IsHomelandNew() then
-          self:StartTask(function(TT)
-    -- function num : 0_20_0 , upvalues : self, pstId, item
-    self:Lock("UIHomelandBackpack:HomelandBackpackSelectItem")
-    self.ignoreItemCountChangeEvent = true
-    ;
-    (self.mItem):SetItemUnnew(TT, pstId)
-    ;
-    (self.data):UnnewItem(self.filterId, pstId)
-    self:FlushTabRed()
-    item:FlushRed()
-    self.ignoreItemCountChangeEvent = false
-    self:UnLock("UIHomelandBackpack:HomelandBackpackSelectItem")
-  end
-)
-        end
+      local pstId = dataItem:GetID()
+      if dataItem:IsHomelandNew() then
+        self:StartTask(function(TT)
+          self:Lock("UIHomelandBackpack:HomelandBackpackSelectItem")
+          self.ignoreItemCountChangeEvent = true
+          self.mItem:SetItemUnnew(TT, pstId)
+          self.data:UnnewItem(self.filterId, pstId)
+          self:FlushTabRed()
+          item:FlushRed()
+          self.ignoreItemCountChangeEvent = false
+          self:UnLock("UIHomelandBackpack:HomelandBackpackSelectItem")
+        end)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.OnItemUpgrade = function(self, tplId)
-  -- function num : 0_21 , upvalues : _ENV
-  if self.list and (table.count)(self.list) > 0 then
-    for _,item in ipairs(self.list) do
+function UIHomelandBackpack:OnItemUpgrade(tplId)
+  if self.list and table.count(self.list) > 0 then
+    for _, item in ipairs(self.list) do
       local pstId = self:GetItemID(item)
       local tplId = self:GetItemTplID(item)
       if tplId == tplId then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandBackpackSelectItem, pstId)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandBackpackSelectItem, pstId)
         break
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.GetCurSelectItem = function(self)
-  -- function num : 0_22
-  local item = (self.data):GetItemById(self.curId)
+function UIHomelandBackpack:GetCurSelectItem()
+  local item = self.data:GetItemById(self.curId)
   return item
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.ItemCountChanged = function(self)
-  -- function num : 0_23
+function UIHomelandBackpack:ItemCountChanged()
   if self.ignoreItemCountChangeEvent then
-    return 
+    return
   end
-  ;
-  (self.data):Init()
-  local dataItem = (self.data):GetItemById(self.curId)
-  if not dataItem and ((self.list)[1]).GetID then
-    self.curId = ((self.list)[1]):GetID()
+  self.data:Init()
+  local dataItem = self.data:GetItemById(self.curId)
+  if not dataItem and self.list[1].GetID then
+    self.curId = self.list[1]:GetID()
   end
   self:FlushList()
   self:FlushCurItem()
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.btnBackOnClick = function(self, go)
-  -- function num : 0_24
+function UIHomelandBackpack:btnBackOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.btnGetFromOnClick = function(self, go)
-  -- function num : 0_25
+function UIHomelandBackpack:btnGetFromOnClick(go)
   local item = self:GetCurSelectItem()
   if item then
     self:ShowDialog("UIHomelandGetPath", item:GetTemplateID())
   end
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.btnUseOnClick = function(self, go)
-  -- function num : 0_26 , upvalues : _ENV
+function UIHomelandBackpack:btnUseOnClick(go)
   local item = self:GetCurSelectItem()
   local tpl = item:GetTemplate()
   if tpl.UseType ~= ItemUseType.ItemUseType_ManualUse and not tpl.IsDecompose then
-    return 
+    return
   end
   if not self:CheckLessTime(tpl.ID) then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_item_public_time_out"))
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_item_public_time_out"))
+    return
   end
-  local UseItem = function(isGift)
-    -- function num : 0_26_0 , upvalues : item, self, _ENV
+  
+  local function UseItem(isGift)
     if item:GetCount() == 1 then
       self:StartTaskUseItem(item, 1, isGift)
     else
       self:ShowDialog("UIHomelandSaleAndUseWithCount", item, EnumItemSaleAndUseState.Use, function(item_data, count)
-      -- function num : 0_26_0_0 , upvalues : self, isGift
-      self:StartTaskUseItem(item_data, count, isGift)
-    end
-)
+        self:StartTaskUseItem(item_data, count, isGift)
+      end)
     end
   end
-
+  
   if tpl.ItemSubType == ItemSubType.ItemSubType_Base then
     if item:IsAwakeDirectlyItem() then
       self:ShowDialog("UIAwakeDirectly", item, function(data, petID)
-    -- function num : 0_26_1 , upvalues : self
-    self:StartTaskUseItem(data, 1, false, petID)
-  end
-)
+        self:StartTaskUseItem(data, 1, false, petID)
+      end)
     else
       UseItem(false)
     end
-  else
-    if tpl.ItemSubType == ItemSubType.ItemSubType_Seed or tpl.ItemSubType == ItemSubType.ItemSubType_CultivationItem or tpl.ItemSubType == ItemSubType.ItemSubType_Architecture then
-      if self.callback then
-        local result = (self.callback)(item)
-        if result then
-          self:CloseDialog()
-        end
-      else
-        do
-          if tpl.IsDecompose then
-            self:ShowDialog("UIHomelandDecompose", item)
-          end
-          local giftType = (self.mItem):GetItemGiftType(item:GetTemplateID())
-          if giftType ~= ItemGiftType.ItemGiftType_Choose then
-            UseItem(true)
-          else
-            if (self.mItem):IsChoosePetGift(item:GetTemplateID()) then
-              self:ShowDialog("UIPetBackPackBox", item)
-            else
-              if item:GetCount() == 1 then
-                self:ShowDialog("UIHomelandBackpackBox", item, 1)
-              else
-                self:ShowDialog("UIHomelandSaleAndUseWithCount", item, EnumItemSaleAndUseState.Use, function(item_data, count)
-    -- function num : 0_26_2 , upvalues : self
-    self:ShowDialog("UIHomelandBackpackBox", item_data, count)
-  end
-)
-              end
-            end
-          end
-        end
+  elseif tpl.ItemSubType == ItemSubType.ItemSubType_Seed or tpl.ItemSubType == ItemSubType.ItemSubType_CultivationItem or tpl.ItemSubType == ItemSubType.ItemSubType_Architecture then
+    if self.callback then
+      local result = self.callback(item)
+      if result then
+        self:CloseDialog()
       end
+    elseif tpl.IsDecompose then
+      self:ShowDialog("UIHomelandDecompose", item)
+    end
+  else
+    local giftType = self.mItem:GetItemGiftType(item:GetTemplateID())
+    if giftType ~= ItemGiftType.ItemGiftType_Choose then
+      UseItem(true)
+    elseif self.mItem:IsChoosePetGift(item:GetTemplateID()) then
+      self:ShowDialog("UIPetBackPackBox", item)
+    elseif item:GetCount() == 1 then
+      self:ShowDialog("UIHomelandBackpackBox", item, 1)
+    else
+      self:ShowDialog("UIHomelandSaleAndUseWithCount", item, EnumItemSaleAndUseState.Use, function(item_data, count)
+        self:ShowDialog("UIHomelandBackpackBox", item_data, count)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.CheckLessTime = function(self, id)
-  -- function num : 0_27 , upvalues : _ENV
-  local cfg_item = (Cfg.cfg_item)[id]
+function UIHomelandBackpack:CheckLessTime(id)
+  local cfg_item = Cfg.cfg_item[id]
   if not cfg_item then
-    (Log.error)("###[UIBackPackItem] cfg is nil ! id --> ", id)
+    Log.error("###[UIBackPackItem] cfg is nil ! id --> ", id)
   end
-  if not (string.isnullorempty)(cfg_item.DeadTime) then
+  if not string.isnullorempty(cfg_item.DeadTime) then
     local timeType = Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
     if cfg_item.TimeTransform and cfg_item.TimeTransform == 0 then
       timeType = Enum_DateTimeZoneType.E_ZoneType_GMT
     end
-    local lessTime = (math.floor)((self._loginModule):GetTimeStampByTimeStr(cfg_item.DeadTime, timeType))
-    local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+    local lessTime = math.floor(self._loginModule:GetTimeStampByTimeStr(cfg_item.DeadTime, timeType))
+    local nowTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
     local gapTime = lessTime - nowTime
     if gapTime <= 0 then
       return false
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.StartTaskUseItem = function(self, item, count, isGift, param1, param2, param3)
-  -- function num : 0_28 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
+function UIHomelandBackpack:StartTaskUseItem(item, count, isGift, param1, param2, param3)
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
   self._lastIndex = self._selectItemIndex
   self:StartTask(self.UseItem, self, item, count, isGift, param1, param2, param3)
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.UseItem = function(self, TT, item, count, isGift, param1, param2, param3)
-  -- function num : 0_29 , upvalues : _ENV
+function UIHomelandBackpack:UseItem(TT, item, count, isGift, param1, param2, param3)
   local key = "UIHomelandBackpack_UseItem"
   self:Lock(key)
   local tpl = item:GetTemplate()
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("UIBackPackControllerUseItem", {tpl.ID or 0}, true)
+  GameGlobal.UAReportForceGuideEvent("UIBackPackControllerUseItem", {
+    tpl.ID or 0
+  }, true)
   local tplId = self:GetItemID(item)
-  local res, msg = (self.mItem):RequestUseItemByPstID(TT, tplId, count, param1, param2, param3)
+  local res, msg = self.mItem:RequestUseItemByPstID(TT, tplId, count, param1, param2, param3)
   self:UnLock(key)
   if res:GetSucc() then
     local tempPets = {}
     local pets = msg.m_reward_list
-    if #pets > 0 then
+    if 0 < #pets then
       for i = 1, #pets do
-        local ispet = ((GameGlobal.GetModule)(PetModule)):IsPetID((pets[i]).assetid)
+        local ispet = GameGlobal.GetModule(PetModule):IsPetID(pets[i].assetid)
         if ispet then
-          (table.insert)(tempPets, pets[i])
+          table.insert(tempPets, pets[i])
         end
       end
     end
-    do
-      do
-        if #tempPets > 0 then
-          self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_29_0 , upvalues : self, msg
-    self:CloseDialog("UIPetObtain")
-    self:ShowDialog("UIHomeShowAwards", msg.m_reward_list, nil, false)
-  end
-)
-        else
-          if msg.m_reward_list and next(msg.m_reward_list) then
-            self:ShowDialog("UIHomeShowAwards", msg.m_reward_list, nil, false)
-          end
-        end
-        if (item.m_template_data).UseEffect == "PhyGift" then
-          local stMsg = (StringTable.Get)("str_physicalpower_error_phy_add_full")
-          ;
-          (ToastManager.ShowHomeToast)(stMsg)
-        else
-          do
-            ;
-            (Log.fatal)("[item] ### UseItem failed :" .. res.m_result)
-          end
-        end
-      end
+    if 0 < #tempPets then
+      self:ShowDialog("UIPetObtain", tempPets, function()
+        self:CloseDialog("UIPetObtain")
+        self:ShowDialog("UIHomeShowAwards", msg.m_reward_list, nil, false)
+      end)
+    elseif msg.m_reward_list and next(msg.m_reward_list) then
+      self:ShowDialog("UIHomeShowAwards", msg.m_reward_list, nil, false)
     end
+  elseif item.m_template_data.UseEffect == "PhyGift" then
+    local stMsg = StringTable.Get("str_physicalpower_error_phy_add_full")
+    ToastManager.ShowHomeToast(stMsg)
+  else
+    Log.fatal("[item] ### UseItem failed :" .. res.m_result)
   end
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.btnLvUpOnClick = function(self, go)
-  -- function num : 0_30
+function UIHomelandBackpack:btnLvUpOnClick(go)
   local item = self:GetCurSelectItem()
   local id = self:GetItemID(item)
   self:ShowDialog("UIHomelandToolLevelUp", id)
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.PresentBtnOnClick = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function UIHomelandBackpack:PresentBtnOnClick()
   self._showPresentTip = true
-  ;
-  (self.presentTip):SetActive(true)
-  ;
-  (self.presentMask):SetActive(true)
+  self.presentTip:SetActive(true)
+  self.presentMask:SetActive(true)
   local item = self:GetCurSelectItem()
   if self:_CanPresent(item) then
-    (self.presentTipText):SetText((StringTable.Get)("str_homeland_backpack_gift_can_present"))
+    self.presentTipText:SetText(StringTable.Get("str_homeland_backpack_gift_can_present"))
   else
-    ;
-    (self.presentTipText):SetText((StringTable.Get)("str_homeland_backpack_gift_cant_present"))
+    self.presentTipText:SetText(StringTable.Get("str_homeland_backpack_gift_cant_present"))
   end
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack._CanPresent = function(self, item)
-  -- function num : 0_32 , upvalues : _ENV
+function UIHomelandBackpack:_CanPresent(item)
   local id = item:GetTemplateID()
-  local cfg = (Cfg.cfg_homeland_gift_item)[id]
-  do return not cfg or cfg.PutMaxNum > 0 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local cfg = Cfg.cfg_homeland_gift_item[id]
+  return cfg and cfg.PutMaxNum > 0
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.PresentTipMaskOnClick = function(self)
-  -- function num : 0_33
+function UIHomelandBackpack:PresentTipMaskOnClick()
   self._showPresentTip = false
-  ;
-  (self.presentTip):SetActive(false)
-  ;
-  (self.presentMask):SetActive(false)
+  self.presentTip:SetActive(false)
+  self.presentMask:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBackpack.imgIconOnClick = function(self, go)
-  -- function num : 0_34 , upvalues : _ENV
+function UIHomelandBackpack:imgIconOnClick(go)
   local item = self:GetCurSelectItem()
   local str = "del_asset h " .. item:GetTemplateID() .. " " .. item:GetCount()
-  ;
-  (HelperProxy:GetInstance()):CopyString(str)
-  ;
-  (Log.fatal)(str)
+  HelperProxy:GetInstance():CopyString(str)
+  Log.fatal(str)
 end
-
-

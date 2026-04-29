@@ -1,22 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_posion_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddPoison", BuffViewBase)
 BuffViewAddPoison = BuffViewAddPoison
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddPoison.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function BuffViewAddPoison:PlayView(TT)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayDamageBuff(TT, self)
-  local recoverDamageInfos = (self._buffResult):GetRecoverDamageInfo()
-  local playDamageService = (self._world):GetService("PlayDamage")
-  for i,recoverDamageInfo in ipairs(recoverDamageInfos) do
-    local playerEntity = (self._world):GetEntityByID(recoverDamageInfo:GetTargetEntityID())
+  local recoverDamageInfos = self._buffResult:GetRecoverDamageInfo()
+  local playDamageService = self._world:GetService("PlayDamage")
+  for i, recoverDamageInfo in ipairs(recoverDamageInfos) do
+    local playerEntity = self._world:GetEntityByID(recoverDamageInfo:GetTargetEntityID())
     playDamageService:AsyncUpdateHPAndDisplayDamage(playerEntity, recoverDamageInfo)
   end
 end
-
-

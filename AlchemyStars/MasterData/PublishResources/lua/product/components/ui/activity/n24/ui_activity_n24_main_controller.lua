@@ -1,28 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n24/ui_activity_n24_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN24MainController", UIController)
 UIActivityN24MainController = UIActivityN24MainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN24MainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIActivityN24MainController:LoadDataOnEnter(TT, res, uiParams)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._activityConst = UIActivityN24Const:New()
-  ;
-  (self._activityConst):LoadData(TT, res)
+  self._activityConst:LoadData(TT, res)
   if res and not res:GetSucc() then
-    local campModule = (GameGlobal.GetModule)(CampaignModule)
-    campModule:CheckErrorCode(res.m_result, ((self._activityConst):GetCampaignId()), nil, nil)
+    local campModule = GameGlobal.GetModule(CampaignModule)
+    campModule:CheckErrorCode(res.m_result, self._activityConst:GetCampaignId(), nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN24MainController:OnShow()
   self._shot = self:GetUIComponent("H3DUIBlurHelper", "screenShot")
   self._eventRed = self:GetGameObject("EventRed")
   self._loginRed = self:GetGameObject("LoginRed")
@@ -38,99 +27,68 @@ UIActivityN24MainController.OnShow = function(self)
   self._timeLabel = self:GetUIComponent("UILocalizationText", "Time")
   self._btnPanel = self:GetGameObject("BtnPanel")
   self._showBtn = self:GetGameObject("ShowBtn")
-  ;
-  (self._showBtn):SetActive(false)
+  self._showBtn:SetActive(false)
   self._topBtn = self:GetGameObject("TopBtn")
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   local backBtn = btns:SpawnObject("UICommonTopButton")
   backBtn:SetData(function()
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.CloseCoro, self)
-  end
-, nil, nil, false, function()
-    -- function num : 0_1_1 , upvalues : self
+    GameGlobal.TaskManager():StartTask(self.CloseCoro, self)
+  end, nil, nil, false, function()
     self:SetButtonShowStatus(false)
-  end
-)
+  end)
   self:AttachEvent(GameEventType.OnActivityTotalAwardGot, self.ForceUpdate)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self.ForceUpdate)
   self:InitUI()
-  ;
-  (UIActivityN24Const.ClearEnterNewStatus)()
+  UIActivityN24Const.ClearEnterNewStatus()
   self:StartTask(function(TT)
-    -- function num : 0_1_2 , upvalues : self, _ENV
     local lockName = "UIActivityN25CheckGuide"
     self:Lock(localName)
     YIELD(TT, 500)
     self:UnLock(lockName)
     self:CheckGuide()
-  end
-)
+  end)
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN24MainController:OnHide()
   if self._shot then
-    (self._shot):CleanRenderTexture()
+    self._shot:CleanRenderTexture()
     self._shot = nil
   end
   self:DetachEvent(GameEventType.OnActivityTotalAwardGot, self.ForceUpdate)
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self.ForceUpdate)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_3
+function UIActivityN24MainController:OnUpdate(deltaTimeMS)
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.CloseCoro = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN24MainController:CloseCoro(TT)
   self:Lock("UIActivityN21CCMainController_CloseCoro")
   self:SwitchState(UIStateType.UIMain)
   self:UnLock("UIActivityN21CCMainController_CloseCoro")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.SetButtonShowStatus = function(self, isShow)
-  -- function num : 0_5
+function UIActivityN24MainController:SetButtonShowStatus(isShow)
   if isShow then
-    (self._anim):Play("uieffanim_UIActivityN24MainController_in2")
+    self._anim:Play("uieffanim_UIActivityN24MainController_in2")
   else
-    ;
-    (self._anim):Play("uieffanim_UIActivityN24MainController_middle")
+    self._anim:Play("uieffanim_UIActivityN24MainController_middle")
   end
-  ;
-  (self._showBtn):SetActive(not isShow)
+  self._showBtn:SetActive(not isShow)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.PlayEnterAnim = function(self)
-  -- function num : 0_6
+function UIActivityN24MainController:PlayEnterAnim()
   self:StartTask(self.PlayEnterAnimCoro, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.PlayEnterAnimCoro = function(self, TT)
-  -- function num : 0_7
+function UIActivityN24MainController:PlayEnterAnimCoro(TT)
   self:Lock("UIActivityN24MainController_PlayEnterAnimCoro")
   self:UnLock("UIActivityN24MainController_PlayEnterAnimCoro")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.InitUI = function(self)
-  -- function num : 0_8
-  (self._fishNew):SetActive((self._activityConst):IsShowHomelandTaskNew())
+function UIActivityN24MainController:InitUI()
+  self._fishNew:SetActive(self._activityConst:IsShowHomelandTaskNew())
   self:RefreshShopBtnStatus()
   self:RefreshUI()
   self:RefreshRedAndNew()
@@ -138,224 +96,154 @@ UIActivityN24MainController.InitUI = function(self)
   self:RefreshButtonStatus()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.RefreshUI = function(self)
-  -- function num : 0_9
+function UIActivityN24MainController:RefreshUI()
   self:RefreshActivityRemainTime()
   self:RefreshButtonStatus()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.RefreshButtonStatus = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self._activityConst):IsHomelandTaskEnable() then
-    (self._fishLock):SetActive(false)
-    ;
-    (self._fishLockTipsPanel):SetActive(false)
+function UIActivityN24MainController:RefreshButtonStatus()
+  if self._activityConst:IsHomelandTaskEnable() then
+    self._fishLock:SetActive(false)
+    self._fishLockTipsPanel:SetActive(false)
   else
-    ;
-    (self._fishLock):SetActive(true)
-    ;
-    (self._fishLockTipsPanel):SetActive(true)
-    if (self._activityConst):IsHomelandTaskEnd() then
-      (self._fishLockTipsLabel):SetText((StringTable.Get)("str_n24_activity_end"))
+    self._fishLock:SetActive(true)
+    self._fishLockTipsPanel:SetActive(true)
+    if self._activityConst:IsHomelandTaskEnd() then
+      self._fishLockTipsLabel:SetText(StringTable.Get("str_n24_activity_end"))
     else
-      ;
-      (self._fishLockTipsLabel):SetText((UIActivityN24Const.GetTimeString)((self._activityConst):GetHomelandRemaindOpenSeconds()))
+      self._fishLockTipsLabel:SetText(UIActivityN24Const.GetTimeString(self._activityConst:GetHomelandRemaindOpenSeconds()))
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.RefreshShopBtnStatus = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local com, comInfo = (self._activityConst):GetShopComponent()
+function UIActivityN24MainController:RefreshShopBtnStatus()
+  local com, comInfo = self._activityConst:GetShopComponent()
   local itemId = comInfo.m_cost_item_id
-  local count = (ClientCampaignDrawShop.GetMoney)(itemId)
-  local cfgItem = (Cfg.cfg_item)[itemId]
-  ;
-  (self._shopIconLoader):LoadImage(cfgItem.Icon)
-  ;
-  (self._shopCountLabel):SetText((UIActivityN24Const.GetItemCountStr)(count, "#DD4D1", "#D9BF68"))
+  local count = ClientCampaignDrawShop.GetMoney(itemId)
+  local cfgItem = Cfg.cfg_item[itemId]
+  self._shopIconLoader:LoadImage(cfgItem.Icon)
+  self._shopCountLabel:SetText(UIActivityN24Const.GetItemCountStr(count, "#DD4D1", "#D9BF68"))
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.RefreshActivityRemainTime = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local endTime = (self._activityConst):GetActiveEndTime()
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)(endTime - nowTime)
+function UIActivityN24MainController:RefreshActivityRemainTime()
+  local endTime = self._activityConst:GetActiveEndTime()
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(endTime - nowTime)
   if seconds <= 0 then
     seconds = 0
   end
-  if (self._activityConst):IsActivityEnd() then
-    (self._timeLabel):SetText((StringTable.Get)("str_n24_activity_end"))
-    return 
+  if self._activityConst:IsActivityEnd() then
+    self._timeLabel:SetText(StringTable.Get("str_n24_activity_end"))
+    return
   end
-  local status = (self._activityConst):GetStatus()
+  local status = self._activityConst:GetStatus()
   if seconds == 0 and status == 1 then
-    (self._activityConst):SetStatus(2)
-    return 
+    self._activityConst:SetStatus(2)
+    return
   end
-  local timeStr = (UIActivityN24Const.GetTimeString)(seconds)
+  local timeStr = UIActivityN24Const.GetTimeString(seconds)
   local timeTips = ""
-  local status = (self._activityConst):GetStatus()
+  local status = self._activityConst:GetStatus()
   if status == 1 then
-    timeTips = (StringTable.Get)("str_n24_activity_remain_time", timeStr)
-  else
-    if status == 2 then
-      timeTips = (StringTable.Get)("str_n24_activity_remain_get_reward_time", timeStr)
-    end
+    timeTips = StringTable.Get("str_n24_activity_remain_time", timeStr)
+  elseif status == 2 then
+    timeTips = StringTable.Get("str_n24_activity_remain_get_reward_time", timeStr)
   end
-  ;
-  (self._timeLabel):SetText(timeTips)
+  self._timeLabel:SetText(timeTips)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.RefreshRedAndNew = function(self)
-  -- function num : 0_13
-  (self._eventRed):SetActive((self._activityConst):IsShowBattlePassRed())
-  ;
-  (self._loginRed):SetActive((self._activityConst):IsShowLoginRed())
-  ;
-  (self._petRed):SetActive((self._activityConst):IsShowTryPetRed())
-  ;
-  (self._fishRed):SetActive((self._activityConst):IsShowHomelandTaskRed())
-  ;
-  (self._shopRed):SetActive((self._activityConst):IsShowShopRed())
+function UIActivityN24MainController:RefreshRedAndNew()
+  self._eventRed:SetActive(self._activityConst:IsShowBattlePassRed())
+  self._loginRed:SetActive(self._activityConst:IsShowLoginRed())
+  self._petRed:SetActive(self._activityConst:IsShowTryPetRed())
+  self._fishRed:SetActive(self._activityConst:IsShowHomelandTaskRed())
+  self._shopRed:SetActive(self._activityConst:IsShowShopRed())
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.ForceUpdate = function(self)
-  -- function num : 0_14
+function UIActivityN24MainController:ForceUpdate()
   self:StartTask(self.ReLoadData, self)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.ReLoadData = function(self, TT)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityN24MainController:ReLoadData(TT)
   self:Lock("UIActivityN24MainController_ReLoadData")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._activityConst):LoadData(TT, res)
+  self._activityConst:LoadData(TT, res)
   self:RefreshRedAndNew()
   self:RefreshShopBtnStatus()
   self:UnLock("UIActivityN24MainController_ReLoadData")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.ShowBtnOnClick = function(self)
-  -- function num : 0_16
+function UIActivityN24MainController:ShowBtnOnClick()
   self:SetButtonShowStatus(true)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.EventOnClick = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  (UIActivityBattlePassHelper.OpenMainController)()
+function UIActivityN24MainController:EventOnClick()
+  UIActivityBattlePassHelper.OpenMainController()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.LoginOnClick = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  if not (self._activityConst):IsLoginEnable() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n24_activity_end"))
-    return 
+function UIActivityN24MainController:LoginOnClick()
+  if not self._activityConst:IsLoginEnable() then
+    ToastManager.ShowToast(StringTable.Get("str_n24_activity_end"))
+    return
   end
   self:ShowDialog("UIActivityTotalLoginAwardController", false, ECampaignType.CAMPAIGN_TYPE_N24, ECampaignN24ComponentID.ECAMPAIGN_N24_CUMULATIVE_LOGIN)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.PetOnClick = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  if not (self._activityConst):IsTryPetEnable() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n24_activity_end"))
-    return 
+function UIActivityN24MainController:PetOnClick()
+  if not self._activityConst:IsTryPetEnable() then
+    ToastManager.ShowToast(StringTable.Get("str_n24_activity_end"))
+    return
   end
-  local com, comInfo = (self._activityConst):GetTryPetComponent()
-  if not comInfo.m_pass_mission_info then
-    local passInfo = {}
+  local com, comInfo = self._activityConst:GetTryPetComponent()
+  local passInfo = comInfo.m_pass_mission_info or {}
+  
+  local function isTryoutLevelPass(mid)
+    return passInfo[mid] ~= nil
   end
-  local isTryoutLevelPass = function(mid)
-    -- function num : 0_19_0 , upvalues : passInfo
-    do return passInfo[mid] ~= nil end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
+  
   local missionModule = self:GetModule(MissionModule)
   self:ShowDialog("UIActivityPetTryController", ECampaignType.CAMPAIGN_TYPE_N24, ECampaignN24ComponentID.ECAMPAIGN_N24_FIRST_MEET, isTryoutLevelPass, function(missionid)
-    -- function num : 0_19_1 , upvalues : missionModule, com, _ENV
     local ctx = missionModule:TeamCtx()
-    local param = {missionid, com:GetCampaignMissionComponentId(), com:GetCampaignMissionParamKeyMap()}
+    local param = {
+      missionid,
+      com:GetCampaignMissionComponentId(),
+      com:GetCampaignMissionParamKeyMap()
+    }
     ctx:Init(TeamOpenerType.Campaign, param)
     ctx:ShowDialogUITeams(false)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.FishOnClick = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  if not (self._activityConst):IsHomelandTaskEnable() then
-    if (self._activityConst):IsHomelandTaskEnd() then
-      (ToastManager.ShowToast)((StringTable.Get)("str_n24_activity_end"))
+function UIActivityN24MainController:FishOnClick()
+  if not self._activityConst:IsHomelandTaskEnable() then
+    if self._activityConst:IsHomelandTaskEnd() then
+      ToastManager.ShowToast(StringTable.Get("str_n24_activity_end"))
     else
-      local str = (StringTable.Get)("str_n24_open_tips", (UIActivityN24Const.GetTimeString)((self._activityConst):GetHomelandRemaindOpenSeconds()))
-      ;
-      (ToastManager.ShowToast)(str)
+      local str = StringTable.Get("str_n24_open_tips", UIActivityN24Const.GetTimeString(self._activityConst:GetHomelandRemaindOpenSeconds()))
+      ToastManager.ShowToast(str)
     end
-    do
-      do return  end
-      self:ShowDialog("UIHomelandStoryTaskSimpleController", 1, ECampaignType.CAMPAIGN_TYPE_N24, ECampaignN24ComponentID.ECAMPAIGN_N24_PANGOLIN)
-      ;
-      (UIActivityN24Const.ClearHomelandTaskNewStatus)()
-      ;
-      (self._fishNew):SetActive(false)
-    end
+    return
   end
+  self:ShowDialog("UIHomelandStoryTaskSimpleController", 1, ECampaignType.CAMPAIGN_TYPE_N24, ECampaignN24ComponentID.ECAMPAIGN_N24_PANGOLIN)
+  UIActivityN24Const.ClearHomelandTaskNewStatus()
+  self._fishNew:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.ShopOnClick = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  if not (self._activityConst):IsShopEnable() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n24_activity_end"))
-    return 
+function UIActivityN24MainController:ShopOnClick()
+  if not self._activityConst:IsShopEnable() then
+    ToastManager.ShowToast(StringTable.Get("str_n24_activity_end"))
+    return
   end
-  ;
-  (UIActivityHelper.Snap)(self._shot, ((self:GetUIComponent("RectTransform", "SafeArea")).rect).size, ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName()), function(cache_rt)
-    -- function num : 0_21_0 , upvalues : self, _ENV
+  UIActivityHelper.Snap(self._shot, self:GetUIComponent("RectTransform", "SafeArea").rect.size, GameGlobal.UIStateManager():GetControllerCamera(self:GetName()), function(cache_rt)
     self:SwitchState(UIStateType.UIN24Shop, cache_rt)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.InfoBtnOnClick = function(self)
-  -- function num : 0_22
+function UIActivityN24MainController:InfoBtnOnClick()
   self:ShowDialog("UIIntroLoader", "UIN24Intro")
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN24MainController.CheckGuide = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN24MainController)
+function UIActivityN24MainController:CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN24MainController)
 end
-
-

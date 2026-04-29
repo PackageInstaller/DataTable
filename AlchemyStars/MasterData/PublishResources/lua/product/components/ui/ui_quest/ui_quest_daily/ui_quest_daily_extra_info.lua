@@ -1,47 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_daily/ui_quest_daily_extra_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestDailyExtraInfoController", UIController)
 UIQuestDailyExtraInfoController = UIQuestDailyExtraInfoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestDailyExtraInfoController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIQuestDailyExtraInfoController:OnShow(uiParams)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   self._size = 68
-  local type = (Localization.GetCurLanguage)()
-  if (LanguageType.zh == type and LanguageType.tw ~= type) or LanguageType.us == type then
+  local type = Localization.GetCurLanguage()
+  if LanguageType.zh == type then
+  elseif LanguageType.tw == type then
+  elseif LanguageType.us == type then
     self._size = 50
-  else
-  end
-  if LanguageType.kr ~= type or LanguageType.jp == type then
+  elseif LanguageType.kr == type then
+  elseif LanguageType.jp == type then
     self._size = 60
-  else
-    if LanguageType.pt == type then
-      self._size = 36
-    else
-      if LanguageType.es == type then
-        self._size = 32
-      else
-        if LanguageType.idn == type then
-          self._size = 50
-        else
-        end
-      end
-    end
+  elseif LanguageType.pt == type then
+    self._size = 36
+  elseif LanguageType.es == type then
+    self._size = 32
+  elseif LanguageType.idn == type then
+    self._size = 50
+  elseif LanguageType.th == type then
   end
-  if LanguageType.th == type then
-    self:GetComponents()
-    self:OnValue()
-  end
+  self:GetComponents()
+  self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyExtraInfoController.GetComponents = function(self)
-  -- function num : 0_1
+function UIQuestDailyExtraInfoController:GetComponents()
   self._cg = self:GetUIComponent("RawImageLoader", "cg")
   self._cgRect = self:GetUIComponent("RectTransform", "cg")
   self._title = self:GetUIComponent("UILocalizedTMP", "title")
@@ -49,78 +32,53 @@ UIQuestDailyExtraInfoController.GetComponents = function(self)
   self._timer = self:GetUIComponent("UILocalizationText", "time")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyExtraInfoController.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_quest_daily_extra_activity)[1]
+function UIQuestDailyExtraInfoController:OnValue()
+  local cfg = Cfg.cfg_quest_daily_extra_activity[1]
   if not cfg then
-    (Log.fatal)("###[UIQuestDailyExtraInfoController] cfg is nil ! id --> ", 1)
+    Log.fatal("###[UIQuestDailyExtraInfoController] cfg is nil ! id --> ", 1)
   else
     local title = cfg.InfoTitle
     local cg = cfg.InfoCg
     local content = cfg.InfoContent
     local offset = cfg.CgOffset
-    ;
-    (self._cg):LoadImage(cg)
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._title).fontSize = self._size
-    ;
-    (self._title):SetText((StringTable.Get)(title))
-    ;
-    (self._content):SetText((StringTable.Get)(content))
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R6 in 'UnsetPending'
-
+    self._cg:LoadImage(cg)
+    self._title.fontSize = self._size
+    self._title:SetText(StringTable.Get(title))
+    self._content:SetText(StringTable.Get(content))
     if offset then
-      (self._cgRect).anchoredPosition = Vector2(offset[1], offset[2])
+      self._cgRect.anchoredPosition = Vector2(offset[1], offset[2])
     end
-    local loginModule = (GameGlobal.GetModule)(LoginModule)
+    local loginModule = GameGlobal.GetModule(LoginModule)
     self._endTime = loginModule:GetTimeStampByTimeStr(cfg.EndTime, Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone)
     self:ShowLessTime()
     if self._event then
-      ((GameGlobal.Timer)()):CancelEvent(self._event)
+      GameGlobal.Timer():CancelEvent(self._event)
       self._event = nil
     end
-    self._event = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_2_0 , upvalues : self
-    self:ShowLessTime()
-  end
-)
+    self._event = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+      self:ShowLessTime()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyExtraInfoController.ShowLessTime = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local nowTime = (math.ceil)((self._svrTimeModule):GetServerTime() * 0.001)
+function UIQuestDailyExtraInfoController:ShowLessTime()
+  local nowTime = math.ceil(self._svrTimeModule:GetServerTime() * 0.001)
   local sec = self._endTime - nowTime
-  local timeStr = nil
+  local timeStr
   if sec < 0 then
     sec = 0
   end
-  timeStr = (HelperProxy:GetInstance()):Time2Tex(sec)
-  ;
-  (self._timer):SetText((StringTable.Get)("str_n11_rose_less_time", timeStr))
+  timeStr = HelperProxy:GetInstance():Time2Tex(sec)
+  self._timer:SetText(StringTable.Get("str_n11_rose_less_time", timeStr))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyExtraInfoController.bgOnClick = function(self, go)
-  -- function num : 0_4
+function UIQuestDailyExtraInfoController:bgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyExtraInfoController.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIQuestDailyExtraInfoController:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
 end
-
-

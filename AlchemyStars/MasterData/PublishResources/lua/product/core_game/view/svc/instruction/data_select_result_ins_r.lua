@@ -1,58 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_select_result_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DataSelectResultInstruction", BaseInstruction)
 DataSelectResultInstruction = DataSelectResultInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSelectResultInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
-  self.EffectResultTypeOverride = {[SkillEffectType.SummonMultipleTrap] = SkillEffectType.SummonTrap}
+function DataSelectResultInstruction:Constructor(paramList)
+  self.EffectResultTypeOverride = {
+    [SkillEffectType.SummonMultipleTrap] = SkillEffectType.SummonTrap
+  }
   self._effectType = tonumber(paramList.effectType)
   self._index = tonumber(paramList.index)
   self._stageIndex = tonumber(paramList.damageStageIndex)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectResultInstruction.GetEffectType = function(self)
-  -- function num : 0_1
+function DataSelectResultInstruction:GetEffectType()
   return self._effectType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectResultInstruction.GetIndex = function(self)
-  -- function num : 0_2
+function DataSelectResultInstruction:GetIndex()
   return self._index
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectResultInstruction._LogWarning = function(self, ...)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.warn)(self._className, ...)
+function DataSelectResultInstruction:_LogWarning(...)
+  Log.warn(self._className, ...)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectResultInstruction._GetEffectTypeForResults = function(self, effectType)
-  -- function num : 0_4 , upvalues : _ENV
+function DataSelectResultInstruction:_GetEffectTypeForResults(effectType)
   local overrideEffectType = SkillEffectResultTypeOverride[effectType]
   if overrideEffectType then
-    (Log.notice)(self._className, "override effectType for results: ", effectType, "=>", overrideEffectType)
+    Log.notice(self._className, "override effectType for results: ", effectType, "=>", overrideEffectType)
     effectType = overrideEffectType
   end
   return effectType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectResultInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_5 , upvalues : _ENV
+function DataSelectResultInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._currentPhaseContext = phaseContext
   local effectType = self:GetEffectType()
   local resultEffectType = self:_GetEffectTypeForResults(effectType)
@@ -61,87 +41,64 @@ DataSelectResultInstruction.DoInstruction = function(self, TT, casterEntity, pha
   assert(index, "数据选择指令需要正确的index")
   phaseContext:SetCurResultIndexByType(effectType, index)
   phaseContext:SetCurDamageResultStageIndex(self._stageIndex)
-  local routineCmpt = (casterEntity:SkillRoutine()):GetResultContainer()
+  local routineCmpt = casterEntity:SkillRoutine():GetResultContainer()
   if not routineCmpt then
-    return 
+    return
   end
   local resultArray = routineCmpt:GetEffectResultsAsArray(resultEffectType, self._stageIndex)
   if not resultArray then
     phaseContext:SetCurResultIndexByType(effectType, -1)
     self:_LogWarning("No result found in SkillRoutineComponent: ", effectType, "=>", resultEffectType)
-    return 
+    return
   end
   local selectedResult = resultArray[index]
   if not selectedResult then
     phaseContext:SetCurResultIndexByType(effectType, -1)
     self:_LogWarning("No result at index: ", index, " for effectType: ", effectType)
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local targetEntity, targetID = self:_GetTargetEntityFromResult(selectedResult, world)
   if not targetEntity then
     phaseContext:SetCurTargetEntityID(-1)
     self:_LogWarning("Invalid target entity id at index: ", index, " for effectType: ", effectType)
-    return 
+    return
   end
   phaseContext:SetCurTargetEntityID(targetID)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectResultInstruction._GetTargetEntityFromResult = function(self, result, world)
-  -- function num : 0_6 , upvalues : _ENV
+function DataSelectResultInstruction:_GetTargetEntityFromResult(result, world)
   local entityID = result:GetTargetID()
   if result:GetEffectType() == SkillEffectType.SummonTrap then
     local trapResult = result
     local utilSvc = world:GetService("UtilData")
     local trapID = trapResult:GetTrapID()
     local array = utilSvc:GetTrapsAtPos(trapResult:GetPos())
-    for _,eTrap in ipairs(array) do
+    for _, eTrap in ipairs(array) do
       local cTrapID = eTrap:TrapID()
       if cTrapID and cTrapID:GetTrapID() == trapID then
         entityID = eTrap:GetID()
         break
       end
     end
-  else
-    do
-      if result:GetEffectType() == SkillEffectType.SummonEverything then
-        local summonType = result:GetSummonType()
-        if summonType == SkillEffectEnum_SummonType.Monster then
-          local monsterData = result:GetMonsterData()
-          local eid = monsterData.m_entityWorkID
-          if world:GetEntityByID(eid) then
-            entityID = eid
-          end
-        end
-      else
-        do
-          if result:GetEffectType() == SkillEffectType.AddBuff then
-            local buffResult = result
-            entityID = buffResult:GetEntityID()
-          else
-            do
-              if result:GetEffectType() == SkillEffectType.TransferTarget then
-                local buffResult = result
-                entityID = buffResult:GetTargetEntityID()
-              else
-                do
-                  do
-                    if result:GetEffectType() == SkillEffectType.DestroyTrap then
-                      local skillResult = result
-                      entityID = skillResult:GetEntityID()
-                    end
-                    return world:GetEntityByID(entityID), entityID
-                  end
-                end
-              end
-            end
-          end
-        end
+  elseif result:GetEffectType() == SkillEffectType.SummonEverything then
+    local summonType = result:GetSummonType()
+    if summonType == SkillEffectEnum_SummonType.Monster then
+      local monsterData = result:GetMonsterData()
+      local eid = monsterData.m_entityWorkID
+      if world:GetEntityByID(eid) then
+        entityID = eid
       end
     end
+  elseif result:GetEffectType() == SkillEffectType.AddBuff then
+    local buffResult = result
+    entityID = buffResult:GetEntityID()
+  elseif result:GetEffectType() == SkillEffectType.TransferTarget then
+    local buffResult = result
+    entityID = buffResult:GetTargetEntityID()
+  elseif result:GetEffectType() == SkillEffectType.DestroyTrap then
+    local skillResult = result
+    entityID = skillResult:GetEntityID()
   end
+  return world:GetEntityByID(entityID), entityID
 end
-
-

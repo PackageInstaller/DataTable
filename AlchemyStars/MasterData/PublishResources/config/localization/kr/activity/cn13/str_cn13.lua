@@ -1,8 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/activity/cn13/str_cn13.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_cn13_PerfectPuzzle_game_title = "영상 복구 대작전", str_cn13_PerfectPuzzle_plan_btn = "복구 보상", str_cn13_PerfectPuzzle_piece_btn = "영상 데이터", str_cn13_PerfectPuzzle_look_btn = "원본 영상", str_cn13_PerfectPuzzle_level_1 = "스테이지1", str_cn13_PerfectPuzzle_level_2 = "스테이지2", str_cn13_PerfectPuzzle_level_3 = "스테이지3", str_cn13_PerfectPuzzle_level_4 = "스테이지4", str_cn13_PerfectPuzzle_level_5 = "스테이지5", str_cn13_PerfectPuzzle_level_6 = "스테이지6", str_cn13_PerfectPuzzle_level_7 = "스테이지7", str_cn13_PerfectPuzzle_tips_btn = "이벤트 설명", str_cn13_PerfectPuzzle_timeout_unlock_day = "{1}일 후 개방", str_cn13_PerfectPuzzle_timeout_unlock_hour = "{1} 후 개방", str_cn13_PerfectPuzzle_lock_level_tips_1 = "이전 영상 완료 시 개방", str_cn13_PerfectPuzzle_unlock_puzzle_btn = "영상 개방", str_cn13_PerfectPuzzle_quest_refresh_countdown = "오늘의 임무 갱신: ", str_cn13_PerfectPuzzle_get_item_btn = "수령", str_cn13_PerfectPuzzle_quest_day_title = "오늘", str_cn13_PerfectPuzzle_quest_plan_title = "이번 기간", str_cn13_PerfectPuzzle_get_item_being = "진행 중", str_cn13_PerfectPuzzle_get_item_get_over = "완료", str_cn13_PerfectPuzzle_cur_process = "진행도: {1}", str_cn13_PerfectPuzzle_intro_title = "『영상 복구 대작전』 이벤트 설명", str_cn13_PerfectPuzzle_intro_head_1 = "[영상 복구]", str_cn13_PerfectPuzzle_intro_body_1 = "영상을 복구하려면 영상의 조각 위치를 수동으로 조정해야 합니다.\n두 조각을 터치하면 서로 위치를 바꿀 수 있습니다.\n모든 조각을 올바른 위치에 놓으면 영상 복구를 완료하게 됩니다.\n복구 과정에서 원본 영상을 터치해 비교할 수 있습니다.", str_cn13_PerfectPuzzle_intro_head_2 = "[영상 데이터]", str_cn13_PerfectPuzzle_intro_body_2 = "영상를 개방하려면 일정량의 [영상 데이터]가 필요합니다.\n개방 과정은 1회성이며, 개방 후 복구를 시작할 수 있습니다.\n매일 임무를 완료하면 [영상 데이터]를 획득할 수 있습니다.", str_cn13_PerfectPuzzle_cost_uncan = "화폐가 부족합니다!", str_cn13_second_stage_open = "조사 노트 개방", str_cn13_diff_stage_open = "위험 지역 어려움 난이도 개방", str_cn13_ex_diff_stage_open = "위험 지역 극한 난이도 개방"}
+local config = {
+  str_cn13_PerfectPuzzle_game_title = "영상 복구 대작전",
+  str_cn13_PerfectPuzzle_plan_btn = "복구 보상",
+  str_cn13_PerfectPuzzle_piece_btn = "영상 데이터",
+  str_cn13_PerfectPuzzle_look_btn = "원본 영상",
+  str_cn13_PerfectPuzzle_level_1 = "스테이지1",
+  str_cn13_PerfectPuzzle_level_2 = "스테이지2",
+  str_cn13_PerfectPuzzle_level_3 = "스테이지3",
+  str_cn13_PerfectPuzzle_level_4 = "스테이지4",
+  str_cn13_PerfectPuzzle_level_5 = "스테이지5",
+  str_cn13_PerfectPuzzle_level_6 = "스테이지6",
+  str_cn13_PerfectPuzzle_level_7 = "스테이지7",
+  str_cn13_PerfectPuzzle_tips_btn = "이벤트 설명",
+  str_cn13_PerfectPuzzle_timeout_unlock_day = "{1}일 후 개방",
+  str_cn13_PerfectPuzzle_timeout_unlock_hour = "{1} 후 개방",
+  str_cn13_PerfectPuzzle_lock_level_tips_1 = "이전 영상 완료 시 개방",
+  str_cn13_PerfectPuzzle_unlock_puzzle_btn = "영상 개방",
+  str_cn13_PerfectPuzzle_quest_refresh_countdown = "오늘의 임무 갱신: ",
+  str_cn13_PerfectPuzzle_get_item_btn = "수령",
+  str_cn13_PerfectPuzzle_quest_day_title = "오늘",
+  str_cn13_PerfectPuzzle_quest_plan_title = "이번 기간",
+  str_cn13_PerfectPuzzle_get_item_being = "진행 중",
+  str_cn13_PerfectPuzzle_get_item_get_over = "완료",
+  str_cn13_PerfectPuzzle_cur_process = "진행도: {1}",
+  str_cn13_PerfectPuzzle_intro_title = "『영상 복구 대작전』 이벤트 설명",
+  str_cn13_PerfectPuzzle_intro_head_1 = "[영상 복구]",
+  str_cn13_PerfectPuzzle_intro_body_1 = "영상을 복구하려면 영상의 조각 위치를 수동으로 조정해야 합니다.\n두 조각을 터치하면 서로 위치를 바꿀 수 있습니다.\n모든 조각을 올바른 위치에 놓으면 영상 복구를 완료하게 됩니다.\n복구 과정에서 원본 영상을 터치해 비교할 수 있습니다.",
+  str_cn13_PerfectPuzzle_intro_head_2 = "[영상 데이터]",
+  str_cn13_PerfectPuzzle_intro_body_2 = "영상를 개방하려면 일정량의 [영상 데이터]가 필요합니다.\n개방 과정은 1회성이며, 개방 후 복구를 시작할 수 있습니다.\n매일 임무를 완료하면 [영상 데이터]를 획득할 수 있습니다.",
+  str_cn13_PerfectPuzzle_cost_uncan = "화폐가 부족합니다!",
+  str_cn13_second_stage_open = "조사 노트 개방",
+  str_cn13_diff_stage_open = "위험 지역 어려움 난이도 개방",
+  str_cn13_ex_diff_stage_open = "위험 지역 극한 난이도 개방"
+}
 return config
-

@@ -1,17 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_vote_expansion_rate.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, RateDown = 3, RateUp = 4}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  RateDown = 3,
+  RateUp = 4
+}
 local config = {
-{1, 120505401, 11, 12}
-, 
-{2, 120705401, 11, 12}
-, 
-{3, 506005401, 11, 12}
-, 
-{4, 888805401, 11, 12}
+  {
+    1,
+    120505401,
+    11,
+    12
+  },
+  {
+    2,
+    120705401,
+    11,
+    12
+  },
+  {
+    3,
+    506005401,
+    11,
+    12
+  },
+  {
+    4,
+    888805401,
+    11,
+    12
+  }
 }
 return config, "ID", key
-

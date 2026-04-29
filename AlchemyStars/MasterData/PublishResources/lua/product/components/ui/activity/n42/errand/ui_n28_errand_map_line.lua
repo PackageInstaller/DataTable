@@ -1,56 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/errand/ui_n28_errand_map_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28ErrandMapLine", UICustomWidget)
 UIN28ErrandMapLine = UIN28ErrandMapLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28ErrandMapLine.OnShow = function(self)
-  -- function num : 0_0
+function UIN28ErrandMapLine:OnShow()
   self._rect = self:GetUIComponent("RectTransform", "shape")
   self._anim = self:GetUIComponent("Animation", "anim")
   self._go = self:GetGameObject()
-  ;
-  (self._go):SetActive(false)
+  self._go:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandMapLine.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28ErrandMapLine:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandMapLine.Flush = function(self, from, to, yieldTime)
-  -- function num : 0_2 , upvalues : _ENV
-  local dis = (Vector2.Distance)(from, to)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = Vector2(dis, ((self._rect).sizeDelta).y)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = from
+function UIN28ErrandMapLine:Flush(from, to, yieldTime)
+  local dis = Vector2.Distance(from, to)
+  self._rect.sizeDelta = Vector2(dis, self._rect.sizeDelta.y)
+  self._rect.anchoredPosition = from
   local v = to - from
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rect).localRotation = (Quaternion.FromToRotation)(Vector3.right, Vector3(v.x, v.y, 0))
+  self._rect.localRotation = Quaternion.FromToRotation(Vector3.right, Vector3(v.x, v.y, 0))
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
   end
-  self._event = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_2_0 , upvalues : self
-    (self._go):SetActive(true)
-  end
-)
+  self._event = GameGlobal.Timer():AddEvent(yieldTime, function()
+    self._go:SetActive(true)
+  end)
 end
-
-

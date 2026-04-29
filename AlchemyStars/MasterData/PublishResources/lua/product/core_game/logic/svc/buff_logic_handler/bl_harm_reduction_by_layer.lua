@@ -1,63 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_harm_reduction_by_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDoHarmReductionByLayer", BuffLogicBase)
 BuffLogicDoHarmReductionByLayer = BuffLogicDoHarmReductionByLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDoHarmReductionByLayer.Constructor = function(self, _buffIns, logicParam)
-  -- function num : 0_0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._mulValPerLayer = logicParam.mulValPerLayer
-    self._overrideModifierIDByLayerType = logicParam.overrideModifierIDByLayerType
-  end
+function BuffLogicDoHarmReductionByLayer:Constructor(_buffIns, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._mulValPerLayer = logicParam.mulValPerLayer
+  self._overrideModifierIDByLayerType = logicParam.overrideModifierIDByLayerType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDoHarmReductionByLayer.DoLogic = function(self)
-  -- function num : 0_1
-  if not self._overrideModifierIDByLayerType or not self._layerType then
-    local modifierID = self:GetBuffSeq()
-  end
-  local curMarkLayer = (self._buffLogicService):GetBuffLayer(self._entity, self._layerType)
+function BuffLogicDoHarmReductionByLayer:DoLogic()
+  local modifierID = self._overrideModifierIDByLayerType and self._layerType or self:GetBuffSeq()
+  local curMarkLayer = self._buffLogicService:GetBuffLayer(self._entity, self._layerType)
   local val = self._mulValPerLayer * curMarkLayer * -1
-  ;
-  (self._buffLogicService):ChangeFinalBeHitDamageParam(self._entity, modifierID, val)
+  self._buffLogicService:ChangeFinalBeHitDamageParam(self._entity, modifierID, val)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDoHarmReductionByLayer.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicDoHarmReductionByLayer:DoOverlap(logicParam)
   self._mulValPerLayer = logicParam.mulValPerLayer
   self:DoLogic()
 end
 
 _class("BuffLogicRemoveHarmReductionByLayer", BuffLogicBase)
 BuffLogicRemoveHarmReductionByLayer = BuffLogicRemoveHarmReductionByLayer
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveHarmReductionByLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._overrideModifierIDByLayerType = logicParam.overrideModifierIDByLayerType
-  end
+function BuffLogicRemoveHarmReductionByLayer:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._overrideModifierIDByLayerType = logicParam.overrideModifierIDByLayerType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveHarmReductionByLayer.DoLogic = function(self)
-  -- function num : 0_4
-  if not self._overrideModifierIDByLayerType or not self._layerType then
-    local modifierID = self:GetBuffSeq()
-  end
-  ;
-  (self._buffLogicService):RemoveFinalBeHitDamageParam(self._entity, modifierID)
+function BuffLogicRemoveHarmReductionByLayer:DoLogic()
+  local modifierID = self._overrideModifierIDByLayerType and self._layerType or self:GetBuffSeq()
+  self._buffLogicService:RemoveFinalBeHitDamageParam(self._entity, modifierID)
 end
-
-

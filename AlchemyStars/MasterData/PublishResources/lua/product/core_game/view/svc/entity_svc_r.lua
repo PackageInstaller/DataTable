@@ -1,52 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/entity_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RenderEntityService", Object)
 RenderEntityService = RenderEntityService
-local OutlineType = {Short = 1, LeftShort = 2, RightShort = 3, Long = 4}
+local OutlineType = {
+  Short = 1,
+  LeftShort = 2,
+  RightShort = 3,
+  Long = 4
+}
 _enum("OutlineType", OutlineType)
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-RenderEntityService.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : OutlineType
+function RenderEntityService:Constructor(world)
   self._world = world
-  self._outLineResPathList = {[OutlineType.Short] = "eff_gezi_bossyj_short.prefab", [OutlineType.LeftShort] = "eff_gezi_bossyj_L.prefab", [OutlineType.RightShort] = "eff_gezi_bossyj_R.prefab", [OutlineType.Long] = "eff_gezi_bossyj_long.prefab"}
-  self._configService = (self._world):GetService("Config")
+  self._outLineResPathList = {
+    [OutlineType.Short] = "eff_gezi_bossyj_short.prefab",
+    [OutlineType.LeftShort] = "eff_gezi_bossyj_L.prefab",
+    [OutlineType.RightShort] = "eff_gezi_bossyj_R.prefab",
+    [OutlineType.Long] = "eff_gezi_bossyj_long.prefab"
+  }
+  self._configService = self._world:GetService("Config")
 end
 
-local OutlineDirType = {Up = 1, Down = 2, Left = 3, Right = 4, LeftUp = 5, RightUp = 6, RightDown = 7, LeftDown = 8}
+local OutlineDirType = {
+  Up = 1,
+  Down = 2,
+  Left = 3,
+  Right = 4,
+  LeftUp = 5,
+  RightUp = 6,
+  RightDown = 7,
+  LeftDown = 8
+}
 _enum("OutlineDirType", OutlineDirType)
--- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
 
-RenderEntityService.CreateRenderBoardEntity = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function RenderEntityService:CreateRenderBoardEntity()
   local reBoard = self:CreateRenderEntity(EntityConfigIDRender.RenderBoard)
-  ;
-  (self._world):SetRenderBoardEntity(reBoard)
+  self._world:SetRenderBoardEntity(reBoard)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateMoveRangeArrowEntity = function(self, pos, dir, entityID)
-  -- function num : 0_2 , upvalues : _ENV
-  local entityPoolService = (self._world):GetService("EntityPool")
+function RenderEntityService:CreateMoveRangeArrowEntity(pos, dir, entityID)
+  local entityPoolService = self._world:GetService("EntityPool")
   local arrowEntity = entityPoolService:GetCacheEntityByConfigID(entityID)
   arrowEntity:SetLocation(pos, dir)
   local monsterAttackRangeCmpt = arrowEntity:MonsterAttackRange()
   monsterAttackRangeCmpt:SetUseState(true)
   if EntityConfigIDRender.MoveRangeArrow == entityID then
-    local pieceService = (self._world):GetService("Piece")
+    local pieceService = self._world:GetService("Piece")
     pieceService:SetEffectEntityParentWithPiecePos(arrowEntity, pos)
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateDeathRangeEntity = function(self, pos, entityID)
-  -- function num : 0_3 , upvalues : _ENV
-  local entityPoolService = (self._world):GetService("EntityPool")
+function RenderEntityService:CreateDeathRangeEntity(pos, entityID)
+  local entityPoolService = self._world:GetService("EntityPool")
   local arrowEntity = entityPoolService:GetCacheEntityByConfigID(entityID)
   arrowEntity:SetLocation(pos, Vector2(0, 0))
   local monsterAttackRangeCmpt = arrowEntity:MonsterAttackRange()
@@ -56,11 +59,8 @@ RenderEntityService.CreateDeathRangeEntity = function(self, pos, entityID)
   return arrowEntity
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateAreaEntityFromEntityPool = function(self, gridPos, entityID)
-  -- function num : 0_4
-  local entityPoolService = (self._world):GetService("EntityPool")
+function RenderEntityService:CreateAreaEntityFromEntityPool(gridPos, entityID)
+  local entityPoolService = self._world:GetService("EntityPool")
   local areaEntity = entityPoolService:GetCacheEntityByConfigID(entityID)
   areaEntity:SetPosition(gridPos)
   local monsterAttackRangeCmpt = areaEntity:MonsterAttackRange()
@@ -68,12 +68,9 @@ RenderEntityService.CreateAreaEntityFromEntityPool = function(self, gridPos, ent
   return areaEntity
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateAreaEntity = function(self, gridPos, entityID, resPath)
-  -- function num : 0_5 , upvalues : _ENV
-  if (string.isnullorempty)(resPath) then
-    return 
+function RenderEntityService:CreateAreaEntity(gridPos, entityID, resPath)
+  if string.isnullorempty(resPath) then
+    return
   end
   local areaEntity = self:CreateRenderEntity(entityID)
   areaEntity:ReplaceAsset(NativeUnityPrefabAsset:New(resPath))
@@ -81,12 +78,9 @@ RenderEntityService.CreateAreaEntity = function(self, gridPos, entityID, resPath
   return areaEntity
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.DestroyMonsterPreviewAreaOutlineEntity = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local entityList = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterAttackRange)
-  for i,entity in ipairs(entityList) do
+function RenderEntityService:DestroyMonsterPreviewAreaOutlineEntity()
+  local entityList = self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterAttackRange)
+  for i, entity in ipairs(entityList) do
     local monsterAttackRangeCmpt = entity:MonsterAttackRange()
     if monsterAttackRangeCmpt:IsUse() then
       self:DestroyAreaOutlineEntity({entity}, monsterAttackRangeCmpt:GetEntityConfigID())
@@ -95,43 +89,32 @@ RenderEntityService.DestroyMonsterPreviewAreaOutlineEntity = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.DestroyAreaOutlineEntity = function(self, entityList, entityID)
-  -- function num : 0_7 , upvalues : _ENV
-  if not entityID then
-    entityID = EntityConfigIDRender.SkillRangeOutline
-  end
-  local entityPoolService = (self._world):GetService("EntityPool")
-  for i,entity in ipairs(entityList) do
+function RenderEntityService:DestroyAreaOutlineEntity(entityList, entityID)
+  entityID = entityID or EntityConfigIDRender.SkillRangeOutline
+  local entityPoolService = self._world:GetService("EntityPool")
+  for i, entity in ipairs(entityList) do
     entityPoolService:DestroyCacheEntity(entity, entityID)
   end
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreatePreviewAreaOutlineEntity = function(self, gridList, entityID)
-  -- function num : 0_8 , upvalues : _ENV
+function RenderEntityService:CreatePreviewAreaOutlineEntity(gridList, entityID)
   local entityList = self:CreateAreaOutlineEntity(gridList, entityID)
-  for i,entity in ipairs(entityList) do
+  for i, entity in ipairs(entityList) do
     local monsterAttackRangeCmpt = entity:MonsterAttackRange()
     monsterAttackRangeCmpt:SetUseState(true)
   end
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateAreaOutlineEntity = function(self, gridList, entityID, resPath, pieceType, height, radius)
-  -- function num : 0_9 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local entityPoolService = (self._world):GetService("EntityPool")
+function RenderEntityService:CreateAreaOutlineEntity(gridList, entityID, resPath, pieceType, height, radius)
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local entityPoolService = self._world:GetService("EntityPool")
   local outlineEntityList = {}
-  for _,pos in ipairs(gridList) do
+  for _, pos in ipairs(gridList) do
     local roundPosList = boardServiceRender:GetRoundPosList(pos)
     for i = 1, #roundPosList do
       local roundPos = roundPosList[i]
-      if not (table.icontains)(gridList, roundPos) then
-        local outlineEntity = nil
+      if not table.icontains(gridList, roundPos) then
+        local outlineEntity
         if entityID then
           outlineEntity = entityPoolService:GetCacheEntityByConfigID(entityID)
           if resPath then
@@ -158,46 +141,31 @@ RenderEntityService.CreateAreaOutlineEntity = function(self, gridList, entityID,
   return outlineEntityList
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService._SetOutlineEntityPosAndDir = function(self, pos, outlineEntity, outlineDirType, radius)
-  -- function num : 0_10
+function RenderEntityService:_SetOutlineEntityPosAndDir(pos, outlineEntity, outlineDirType, radius)
   local outlinePos, outlineDir = self:_GetOutlineEntityPosAndDir(pos, outlineEntity, outlineDirType, radius)
   outlineEntity:SetLocation(outlinePos, outlineDir)
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.GetOutlineSourcePos = function(self, outlineEntity, radius)
-  -- function num : 0_11 , upvalues : _ENV
-  local boardRenderSvc = (self._world):GetService("BoardRender")
+function RenderEntityService:GetOutlineSourcePos(outlineEntity, radius)
+  local boardRenderSvc = self._world:GetService("BoardRender")
   local renderPos = outlineEntity:GetPosition()
   local gridOutlineRadius = radius or 0.5
   local renderGridPos = boardRenderSvc:BoardRenderPos2FloatGridPos_New(renderPos)
-  local renderDir = (outlineEntity:GetRenderGridDirection())
-  local sourcePos = nil
+  local renderDir = outlineEntity:GetRenderGridDirection()
+  local sourcePos
   if renderDir.x == 0 and renderDir.y == -1 then
     sourcePos = Vector2(renderGridPos.x, renderGridPos.y - gridOutlineRadius)
-  else
-    if renderDir.x == 0 and renderDir.y == 1 then
-      sourcePos = Vector2(renderGridPos.x, renderGridPos.y + gridOutlineRadius)
-    else
-      if renderDir.x == 1 and renderDir.y == 0 then
-        sourcePos = Vector2(renderGridPos.x + gridOutlineRadius, renderGridPos.y)
-      else
-        if renderDir.x == -1 and renderDir.y == 0 then
-          sourcePos = Vector2(renderGridPos.x - gridOutlineRadius, renderGridPos.y)
-        end
-      end
-    end
+  elseif renderDir.x == 0 and renderDir.y == 1 then
+    sourcePos = Vector2(renderGridPos.x, renderGridPos.y + gridOutlineRadius)
+  elseif renderDir.x == 1 and renderDir.y == 0 then
+    sourcePos = Vector2(renderGridPos.x + gridOutlineRadius, renderGridPos.y)
+  elseif renderDir.x == -1 and renderDir.y == 0 then
+    sourcePos = Vector2(renderGridPos.x - gridOutlineRadius, renderGridPos.y)
   end
   return sourcePos
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService._GetOutlineEntityPosAndDir = function(self, pos, outlineEntity, outlineDirType, radius)
-  -- function num : 0_12 , upvalues : _ENV, OutlineDirType
+function RenderEntityService:_GetOutlineEntityPosAndDir(pos, outlineEntity, outlineDirType, radius)
   local gridOutlineRadius = 0.5
   if radius then
     gridOutlineRadius = radius
@@ -207,48 +175,42 @@ RenderEntityService._GetOutlineEntityPosAndDir = function(self, pos, outlineEnti
   if outlineDirType == OutlineDirType.Up then
     outlinePos = pos + Vector2(0, gridOutlineRadius)
     outlineDir = Vector2(0, -1)
-  else
-    if outlineDirType == OutlineDirType.Down then
-      outlinePos = pos + Vector2(0, -gridOutlineRadius)
-      outlineDir = Vector2(0, 1)
-    else
-      if outlineDirType == OutlineDirType.Left then
-        outlinePos = pos + Vector2(-gridOutlineRadius, 0)
-        outlineDir = Vector2(1, 0)
-      else
-        if outlineDirType == OutlineDirType.Right then
-          outlinePos = pos + Vector2(gridOutlineRadius, 0)
-          outlineDir = Vector2(-1, 0)
-        end
-      end
-    end
+  elseif outlineDirType == OutlineDirType.Down then
+    outlinePos = pos + Vector2(0, -gridOutlineRadius)
+    outlineDir = Vector2(0, 1)
+  elseif outlineDirType == OutlineDirType.Left then
+    outlinePos = pos + Vector2(-gridOutlineRadius, 0)
+    outlineDir = Vector2(1, 0)
+  elseif outlineDirType == OutlineDirType.Right then
+    outlinePos = pos + Vector2(gridOutlineRadius, 0)
+    outlineDir = Vector2(-1, 0)
   end
   return outlinePos, outlineDir
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateAreaOutlineEntity_New = function(self, gridList, entityID)
-  -- function num : 0_13 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
+function RenderEntityService:CreateAreaOutlineEntity_New(gridList, entityID)
+  local boardServiceRender = self._world:GetService("BoardRender")
   local outlineInfoList = {}
   local outlineEntityList = {}
-  for _,pos in ipairs(gridList) do
+  for _, pos in ipairs(gridList) do
     local roundPosList = boardServiceRender:GetRoundPosList(pos)
     for i = 1, #roundPosList do
       local roundPos = roundPosList[i]
-      if not (table.icontains)(gridList, roundPos) then
+      if not table.icontains(gridList, roundPos) then
         local outlineDir = roundPos - pos
         local outlineDirType = boardServiceRender:GetOutlineDirType(outlineDir)
-        ;
-        (table.insert)(outlineInfoList, {pos = roundPos, sourcePos = pos, dirType = outlineDirType})
+        table.insert(outlineInfoList, {
+          pos = roundPos,
+          sourcePos = pos,
+          dirType = outlineDirType
+        })
       end
     end
   end
-  for k,v in pairs(outlineInfoList) do
+  for k, v in pairs(outlineInfoList) do
     local outlineEntity = self:CreateRenderEntity(entityID)
     local resourcePathType = self:_GetOutlineType(outlineInfoList, v)
-    outlineEntity:ReplaceAsset(NativeUnityPrefabAsset:New((self._outLineResPathList)[resourcePathType]))
+    outlineEntity:ReplaceAsset(NativeUnityPrefabAsset:New(self._outLineResPathList[resourcePathType]))
     local gridOutlineHeight = BattleConst.WaringHeight
     self:_SetOutlineEntityPosAndDir(v.sourcePos, outlineEntity, v.dirType)
     outlineEntity:SetLocationHeight(gridOutlineHeight)
@@ -257,11 +219,8 @@ RenderEntityService.CreateAreaOutlineEntity_New = function(self, gridList, entit
   return outlineEntityList
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService._GetOutlineType = function(self, outlineInfoList, element)
-  -- function num : 0_14 , upvalues : OutlineDirType, OutlineType, _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
+function RenderEntityService:_GetOutlineType(outlineInfoList, element)
+  local boardServiceRender = self._world:GetService("BoardRender")
   local roundPosList = boardServiceRender:GetRoundPosList(element.pos)
   if element.dirType == OutlineDirType.Up then
     if self:_IsHasOutLine(outlineInfoList, roundPosList[OutlineDirType.Left], OutlineDirType.Up) and self:_IsHasOutLine(outlineInfoList, roundPosList[OutlineDirType.Right], OutlineDirType.Up) then
@@ -352,136 +311,110 @@ RenderEntityService._GetOutlineType = function(self, outlineInfoList, element)
   end
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService._IsHasOutLine = function(self, outlineInfoList, pos, dirType)
-  -- function num : 0_15 , upvalues : _ENV
-  for k,v in pairs(outlineInfoList) do
-    if (v.pos).x == pos.x and (v.pos).y == pos.y and v.dirType == dirType then
+function RenderEntityService:_IsHasOutLine(outlineInfoList, pos, dirType)
+  for k, v in pairs(outlineInfoList) do
+    if v.pos.x == pos.x and v.pos.y == pos.y and v.dirType == dirType then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.DestroyRenderEntities = function(self, matcher)
-  -- function num : 0_16 , upvalues : _ENV
-  local rangeGroup = (self._world):GetGroup(matcher)
+function RenderEntityService:DestroyRenderEntities(matcher)
+  local rangeGroup = self._world:GetGroup(matcher)
   local removeEntities = {}
-  for _,e in ipairs(rangeGroup:GetEntities()) do
+  for _, e in ipairs(rangeGroup:GetEntities()) do
     removeEntities[#removeEntities + 1] = e
   end
   for i = 1, #removeEntities do
-    (self._world):DestroyEntity(removeEntities[i])
+    self._world:DestroyEntity(removeEntities[i])
   end
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.SetHudPosition = function(self, ownEntity, hudEntity, offsetVector3)
-  -- function num : 0_17
-  local ownerObj = ((ownEntity:View()).ViewWrapper).GameObject
-  local owner_entity_render_pos = self:_CalcGridHUDWorldPos((ownerObj.transform).position + offsetVector3)
-  local go = ((hudEntity:View()).ViewWrapper).GameObject
+function RenderEntityService:SetHudPosition(ownEntity, hudEntity, offsetVector3)
+  local ownerObj = ownEntity:View().ViewWrapper.GameObject
+  local owner_entity_render_pos = self:_CalcGridHUDWorldPos(ownerObj.transform.position + offsetVector3)
+  local go = hudEntity:View().ViewWrapper.GameObject
   local owner_foot_pos = owner_entity_render_pos
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (go.transform).position = owner_foot_pos
+  go.transform.position = owner_foot_pos
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService._CalcGridHUDWorldPos = function(self, gridRenderPos)
-  -- function num : 0_18
-  local camera = ((self._world):MainCamera()):Camera()
+function RenderEntityService:_CalcGridHUDWorldPos(gridRenderPos)
+  local camera = self._world:MainCamera():Camera()
   local screenPos = camera:WorldToScreenPoint(gridRenderPos)
-  local hudCamera = ((self._world):MainCamera()):HUDCamera()
+  local hudCamera = self._world:MainCamera():HUDCamera()
   local hudWorldPos = hudCamera:ScreenToWorldPoint(screenPos)
   return hudWorldPos
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.GetGridPackageRoundPos = function(self, pos, radius)
-  -- function num : 0_19 , upvalues : _ENV
+function RenderEntityService:GetGridPackageRoundPos(pos, radius)
   local offset = radius
   if not radius then
     offset = 0.5
   end
-  return {Vector2(pos.x - offset, pos.y + offset), Vector2(pos.x - offset, pos.y - offset), Vector2(pos.x + offset, pos.y - offset), Vector2(pos.x + offset, pos.y + offset)}
+  return {
+    Vector2(pos.x - offset, pos.y + offset),
+    Vector2(pos.x - offset, pos.y - offset),
+    Vector2(pos.x + offset, pos.y - offset),
+    Vector2(pos.x + offset, pos.y + offset)
+  }
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.GetGridPackagePosList = function(self, gridList, radius)
-  -- function num : 0_20 , upvalues : _ENV
+function RenderEntityService:GetGridPackagePosList(gridList, radius)
   local lines, source2RealMap = self:_GetGridPackagePosList_MakeLines(gridList, radius)
   local sameLines = {}
-  for index,line1 in ipairs(lines) do
-    for index,line2 in ipairs(lines) do
+  for index, line1 in ipairs(lines) do
+    for index, line2 in ipairs(lines) do
       if line1 ~= line2 and line1.head == line2.trail and line1.trail == line2.head then
-        (table.insert)(sameLines, line1)
-        ;
-        (table.insert)(sameLines, line2)
+        table.insert(sameLines, line1)
+        table.insert(sameLines, line2)
       end
     end
   end
-  for _,line in ipairs(sameLines) do
+  for _, line in ipairs(sameLines) do
     for i = #lines, 1, -1 do
       if lines[i] == line then
-        (table.remove)(lines, i)
+        table.remove(lines, i)
       end
     end
   end
   local sortPos = {}
   local sortPosIndexs = {}
-  local target = (lines[1]).trail
-  ;
-  (table.insert)(sortPos, target)
-  ;
-  (table.insert)(sortPosIndexs, (lines[1]).trailPosIndex)
+  local target = lines[1].trail
+  table.insert(sortPos, target)
+  table.insert(sortPosIndexs, lines[1].trailPosIndex)
   while #sortPos <= #lines do
-    for _,line in ipairs(lines) do
+    for _, line in ipairs(lines) do
       if line.head == target then
         target = line.trail
-        ;
-        (table.insert)(sortPos, target)
-        ;
-        (table.insert)(sortPosIndexs, line.trailPosIndex)
+        table.insert(sortPos, target)
+        table.insert(sortPosIndexs, line.trailPosIndex)
         break
       end
     end
   end
-  do
-    local realSortPos = {}
-    for i,tmp in ipairs(sortPos) do
-      local posIndex = sortPosIndexs[i]
-      local realPos = source2RealMap[posIndex]
-      if realPos then
-        realSortPos[i] = realPos:Clone()
-      end
+  local realSortPos = {}
+  for i, tmp in ipairs(sortPos) do
+    local posIndex = sortPosIndexs[i]
+    local realPos = source2RealMap[posIndex]
+    if realPos then
+      realSortPos[i] = realPos:Clone()
     end
-    return realSortPos
   end
+  return realSortPos
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService._GetGridPackagePosList_MakeLines = function(self, gridList, radius)
-  -- function num : 0_21 , upvalues : _ENV
+function RenderEntityService:_GetGridPackagePosList_MakeLines(gridList, radius)
   local lines = {}
   local source2RealMap = {}
-  for gridIndex,pos in ipairs(gridList) do
+  for gridIndex, pos in ipairs(gridList) do
     local sourcePosList = self:GetGridPackageRoundPos(pos)
     local realPosList = self:GetGridPackageRoundPos(pos, radius)
     for i = 1, #sourcePosList do
       local _roundPos = sourcePosList[i]
       local posIndex = gridIndex * 10 + i
       source2RealMap[posIndex] = realPosList[i]
-      local _trail, _trailPosIndex = nil, nil
+      local _trail, _trailPosIndex
       if i + 1 <= #sourcePosList then
         _trail = sourcePosList[i + 1]
         _trailPosIndex = gridIndex * 10 + i + 1
@@ -489,249 +422,193 @@ RenderEntityService._GetGridPackagePosList_MakeLines = function(self, gridList, 
         _trail = sourcePosList[1]
         _trailPosIndex = gridIndex * 10 + 1
       end
-      ;
-      (table.insert)(lines, {head = _roundPos, headPosIndex = posIndex, trail = _trail, trailPosIndex = _trailPosIndex})
+      table.insert(lines, {
+        head = _roundPos,
+        headPosIndex = posIndex,
+        trail = _trail,
+        trailPosIndex = _trailPosIndex
+      })
     end
   end
   return lines, source2RealMap
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.GetEdgePosList = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function RenderEntityService:GetEdgePosList()
   local lines = {}
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local edgePieces = boardServiceRender:GetEdgePosList()
-  for _,data in ipairs(edgePieces) do
+  for _, data in ipairs(edgePieces) do
     local roundPosList = self:GetGridPackageRoundPos(data.pos)
     for i = 1, #roundPosList do
       local _roundPos = roundPosList[i]
-      if i + 1 > #roundPosList or not roundPosList[i + 1] then
-        local _trail = roundPosList[1]
-      end
-      for index,value in ipairs(data.dirs) do
+      local _trail = i + 1 <= #roundPosList and roundPosList[i + 1] or roundPosList[1]
+      for index, value in ipairs(data.dirs) do
         if i == value then
-          (table.insert)(lines, {head = _roundPos, trail = _trail})
+          table.insert(lines, {head = _roundPos, trail = _trail})
         end
       end
     end
   end
   local sortPos = {}
-  local target = (lines[1]).trail
-  ;
-  (table.insert)(sortPos, target)
+  local target = lines[1].trail
+  table.insert(sortPos, target)
   while #sortPos <= #lines do
-    for _,line in ipairs(lines) do
+    for _, line in ipairs(lines) do
       if line.head == target then
         target = line.trail
-        ;
-        (table.insert)(sortPos, target)
+        table.insert(sortPos, target)
         break
       end
     end
   end
-  do
-    return sortPos
-  end
+  return sortPos
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateBoardOutlineEntity = function(self, TT)
-  -- function num : 0_23 , upvalues : _ENV
+function RenderEntityService:CreateBoardOutlineEntity(TT)
   local effectEntity = self:CreateRenderEntity(EntityConfigIDRender.TurnChangeEffect, false)
   return effectEntity
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.ShowBoardOutline = function(self, isPlayerTurn)
-  -- function num : 0_24 , upvalues : _ENV
+function RenderEntityService:ShowBoardOutline(isPlayerTurn)
   local sortPos = {}
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).BoardOutline)
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.BoardOutline)
   local entities = group:GetEntities()
-  do
-    if not next(entities) then
-      local e = self:CreateBoardOutlineEntity()
-      do
-        (TaskManager:GetInstance()):CoreGameStartTask(function(TT)
-    -- function num : 0_24_0 , upvalues : _ENV, e, isPlayerTurn, sortPos, self
-    YIELD(TT)
-    YIELD(TT)
-    e:ReplaceBoardOutline(isPlayerTurn)
-    sortPos = self:GetEdgePosList()
-    local go = (e:View()):GetGameObject()
-    local child = (GameObjectHelper.FindChild)(go.transform, "biankuang")
-    local lineRender = child:GetComponent("LineRenderer")
-    local count = #sortPos
-    lineRender.positionCount = count
-    local boardServiceRender = (self._world):GetService("BoardRender")
-    for index = 1, count do
-      local realPos = boardServiceRender:GridPos2RenderPos(sortPos[index])
-      lineRender:SetPosition(index - 1, realPos)
-    end
-    e:SetViewVisible(true)
-  end
-)
-        return 
+  if not next(entities) then
+    local e = self:CreateBoardOutlineEntity()
+    TaskManager:GetInstance():CoreGameStartTask(function(TT)
+      YIELD(TT)
+      YIELD(TT)
+      e:ReplaceBoardOutline(isPlayerTurn)
+      sortPos = self:GetEdgePosList()
+      local go = e:View():GetGameObject()
+      local child = GameObjectHelper.FindChild(go.transform, "biankuang")
+      local lineRender = child:GetComponent("LineRenderer")
+      local count = #sortPos
+      lineRender.positionCount = count
+      local boardServiceRender = self._world:GetService("BoardRender")
+      for index = 1, count do
+        local realPos = boardServiceRender:GridPos2RenderPos(sortPos[index])
+        lineRender:SetPosition(index - 1, realPos)
       end
-    end
-    local e = entities[1]
-    e:ReplaceBoardOutline(isPlayerTurn)
+      e:SetViewVisible(true)
+    end)
+    return
   end
+  local e = entities[1]
+  e:ReplaceBoardOutline(isPlayerTurn)
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.ShowUITurnTips = function(self, isPlayerTurn, isAuroraTime)
-  -- function num : 0_25 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowTurnTips, isPlayerTurn, isAuroraTime)
+function RenderEntityService:ShowUITurnTips(isPlayerTurn, isAuroraTime)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowTurnTips, isPlayerTurn, isAuroraTime)
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.GetScreenHeadPos = function(self, entity)
-  -- function num : 0_26
-  local go = (entity:View()):GetGameObject()
+function RenderEntityService:GetScreenHeadPos(entity)
+  local go = entity:View():GetGameObject()
   return self:_CalcSkinnedMeshPos(go)
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService._CalcSkinnedMeshPos = function(self, ownerObj, camera)
-  -- function num : 0_27 , upvalues : _ENV
-  local hudWorldPos = (ownerObj.transform).position
-  local skinnedMeshRender = (GameObjectHelper.FindFirstSkinedMeshRender)(ownerObj)
+function RenderEntityService:_CalcSkinnedMeshPos(ownerObj, camera)
+  local hudWorldPos = ownerObj.transform.position
+  local skinnedMeshRender = GameObjectHelper.FindFirstSkinedMeshRender(ownerObj)
   if skinnedMeshRender ~= nil then
-    local skinnedMeshPosition = (skinnedMeshRender.transform).position
-    local meshExtents = (GameObjectHelper.FindFirstSkinedMeshRenderBoundsExtent)(ownerObj)
+    local skinnedMeshPosition = skinnedMeshRender.transform.position
+    local meshExtents = GameObjectHelper.FindFirstSkinedMeshRenderBoundsExtent(ownerObj)
     local convertExtents = Vector3(0, meshExtents.x * 2, 0)
     local targetPos = skinnedMeshPosition + convertExtents
-    local cameraMain = ((self._world):MainCamera()):Camera()
+    local cameraMain = self._world:MainCamera():Camera()
     local screenPos = cameraMain:WorldToScreenPoint(targetPos)
     hudWorldPos = screenPos
     if camera then
       hudWorldPos = camera:ScreenToWorldPoint(screenPos)
     end
   else
-    do
-      ;
-      (Log.fatal)("ownerObj", ownerObj.name, "has no skinned mesh")
-      return hudWorldPos
-    end
+    Log.fatal("ownerObj", ownerObj.name, "has no skinned mesh")
   end
+  return hudWorldPos
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.SetEntityVisible = function(self, entity, isVisible)
-  -- function num : 0_28 , upvalues : _ENV
+function RenderEntityService:SetEntityVisible(entity, isVisible)
   local view = entity:View()
   if not view then
-    return 
+    return
   end
-  if tostring((view.ViewWrapper).GameObject) == "null" then
-    return 
+  if tostring(view.ViewWrapper.GameObject) == "null" then
+    return
   end
-  ;
-  (view.ViewWrapper):SetVisible(isVisible)
+  view.ViewWrapper:SetVisible(isVisible)
   if isVisible then
     self:RefreshAnimatoreLayerWeight(entity)
   end
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.RefreshAnimatoreLayerWeight = function(self, entity)
-  -- function num : 0_29 , upvalues : _ENV
+function RenderEntityService:RefreshAnimatoreLayerWeight(entity)
   local view = entity:View()
   if not view then
-    return 
+    return
   end
   local cAnimatorController = entity:AnimatorController()
   if cAnimatorController then
-    local gameObject = (view.ViewWrapper).GameObject
-    local rootTF = (gameObject.transform):Find("Root")
+    local gameObject = view.ViewWrapper.GameObject
+    local rootTF = gameObject.transform:Find("Root")
     if rootTF == nil then
-      return 
+      return
     end
     local animator = rootTF:GetComponent("Animator")
+    animator = animator or gameObject:GetComponentInChildren(typeof(UnityEngine.Animator))
     if not animator then
-      animator = gameObject:GetComponentInChildren(typeof(UnityEngine.Animator))
+      return
     end
-    if not animator then
-      return 
-    end
-    for layerIndex,weight in pairs(cAnimatorController.AnimatorLayerWeightTable) do
-      animator:SetLayerWeight(R14_PC40, weight)
+    for layerIndex, weight in pairs(cAnimatorController.AnimatorLayerWeightTable) do
+      animator:SetLayerWeight(layerIndex, weight)
     end
   end
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateBoardGridEntity = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
+function RenderEntityService:CreateBoardGridEntity()
+  local utilData = self._world:GetService("UtilData")
   local gridEntityData = utilData:GetReplicaGridEntityData()
   if gridEntityData then
-    local boardServiceRender = (self._world):GetService("BoardRender")
-    for pos,pieceType in pairs(gridEntityData) do
+    local boardServiceRender = self._world:GetService("BoardRender")
+    for pos, pieceType in pairs(gridEntityData) do
       local gridEntity = boardServiceRender:CreateGridEntity(pieceType, pos, true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateBoardSpliceGridEntity = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
+function RenderEntityService:CreateBoardSpliceGridEntity()
+  local utilData = self._world:GetService("UtilData")
   local gridEntityData = utilData:GetReplicaSpliceGridEntityData()
   if gridEntityData then
-    local boardServiceRender = (self._world):GetService("BoardRender")
-    for pos,pieceType in pairs(gridEntityData) do
+    local boardServiceRender = self._world:GetService("BoardRender")
+    for pos, pieceType in pairs(gridEntityData) do
       local gridEntity = boardServiceRender:CreateGridFakeEntity(pieceType, pos)
     end
   end
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateBoardMultiGridEntity = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  local boardMultiServiceRender = (self._world):GetService("BoardMultiRender")
-  local utilData = (self._world):GetService("UtilData")
+function RenderEntityService:CreateBoardMultiGridEntity()
+  local boardMultiServiceRender = self._world:GetService("BoardMultiRender")
+  local utilData = self._world:GetService("UtilData")
   local gridEntityDataList = utilData:GetReplicaBoardMultiGridEntityData()
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderMultiBoardCmpt = renderBoardEntity:RenderMultiBoard()
   if gridEntityDataList then
-    for boardIndex,gridEntityData in pairs(gridEntityDataList) do
+    for boardIndex, gridEntityData in pairs(gridEntityDataList) do
       local boardInfo = utilData:GetMultiBoardInfo(boardIndex)
-      local boardRoot = (UnityEngine.GameObject):New("board_" .. boardIndex)
-      -- DECOMPILER ERROR at PC40: Confused about usage of register: R13 in 'UnsetPending'
-
-      ;
-      (boardRoot.transform).localPosition = Vector3((boardInfo.pos)[1], (boardInfo.pos)[2], (boardInfo.pos)[3])
-      local targetAngle = Vector3((math.floor)((boardInfo.rotation)[1] + 0.5), (math.floor)((boardInfo.rotation)[2] + 0.5), (math.floor)((boardInfo.rotation)[3] + 0.5))
-      -- DECOMPILER ERROR at PC62: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (boardRoot.transform).localEulerAngles = targetAngle
+      local boardRoot = UnityEngine.GameObject:New("board_" .. boardIndex)
+      boardRoot.transform.localPosition = Vector3(boardInfo.pos[1], boardInfo.pos[2], boardInfo.pos[3])
+      local targetAngle = Vector3(math.floor(boardInfo.rotation[1] + 0.5), math.floor(boardInfo.rotation[2] + 0.5), math.floor(boardInfo.rotation[3] + 0.5))
+      boardRoot.transform.localEulerAngles = targetAngle
       renderMultiBoardCmpt:SetMultiBoardRootGameObject(boardIndex, boardRoot)
-      for pos,pieceType in pairs(gridEntityData._gridEntityTable) do
+      for pos, pieceType in pairs(gridEntityData._gridEntityTable) do
         local gridEntity = boardMultiServiceRender:CreateGridEntity(boardIndex, pieceType, pos, true, boardRoot)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateGhost = function(self, pos, ownerEntity, anim, prefab, disableAlpha)
-  -- function num : 0_33 , upvalues : _ENV
-  local configSvc = (self._world):GetService("Config")
+function RenderEntityService:CreateGhost(pos, ownerEntity, anim, prefab, disableAlpha)
+  local configSvc = self._world:GetService("Config")
   local ghostEntity = self:CreateRenderEntity(EntityConfigIDRender.Ghost)
   if ownerEntity:HasTeam() then
     ownerEntity = ownerEntity:GetTeamLeaderPetEntity()
@@ -740,255 +617,200 @@ RenderEntityService.CreateGhost = function(self, pos, ownerEntity, anim, prefab,
   local casterPos = cGridLocation:GetGridPos()
   ghostEntity:SetGridLocationAndOffset(pos, cGridLocation:GetGridDir(), cGridLocation:GetGridOffset())
   ghostEntity:ReplaceGhost(ownerEntity:GetID())
-  ghostEntity:ReplaceBodyArea((ownerEntity:BodyArea()):GetArea())
+  ghostEntity:ReplaceBodyArea(ownerEntity:BodyArea():GetArea())
   local prefabResPath = ""
   if ownerEntity:HasPetPstID() then
     local petPstIDCmpt = ownerEntity:PetPstID()
     local petPstID = petPstIDCmpt:GetPstID()
-    local petData = (self._world):GetPetData(petPstID)
+    local petData = self._world:GetPetData(petPstID)
     prefabResPath = petData:GetPetPrefab(PetSkinEffectPath.MODEL_INGAME)
+  elseif ownerEntity:HasMonsterID() then
+    local monsterIDCmpt = ownerEntity:MonsterID()
+    local monsterID = monsterIDCmpt:GetMonsterID()
+    local monsterConfigData = configSvc:GetMonsterConfigData()
+    prefabResPath = ownerEntity:Asset():GetResPath()
+    ghostEntity:AddMonsterID()
+    local utilDataSvc = self._world:GetService("UtilData")
+    local elementType = utilDataSvc:GetEntityElementPrimaryType(ownerEntity)
+    ghostEntity:AddElement(elementType)
+    Log.debug("Create Ghost monster, owner:", ownerEntity:GetID(), " monsterID:", monsterID, " res:", prefabResPath)
+  elseif ownerEntity:HasTrapID() then
+    local trapRenderCmpt = ownerEntity:TrapRender()
+    local trapConfigData = configSvc:GetTrapConfigData()
+    prefabResPath = trapConfigData:GetTrapResPath(trapRenderCmpt:GetTrapID())[1]
+  elseif ownerEntity:HasChessPet() then
+    prefabResPath = ownerEntity:Asset():GetResPath()
+    local utilDataSvc = self._world:GetService("UtilData")
+    local elementType = utilDataSvc:GetEntityElementPrimaryType(ownerEntity)
+    ghostEntity:AddElement(elementType)
   else
-    do
-      if ownerEntity:HasMonsterID() then
-        local monsterIDCmpt = ownerEntity:MonsterID()
-        local monsterID = monsterIDCmpt:GetMonsterID()
-        local monsterConfigData = configSvc:GetMonsterConfigData()
-        prefabResPath = (ownerEntity:Asset()):GetResPath()
-        ghostEntity:AddMonsterID()
-        local utilDataSvc = (self._world):GetService("UtilData")
-        local elementType = utilDataSvc:GetEntityElementPrimaryType(ownerEntity)
-        ghostEntity:AddElement(elementType)
-        ;
-        (Log.debug)("Create Ghost monster, owner:", ownerEntity:GetID(), " monsterID:", monsterID, " res:", prefabResPath)
-      else
-        do
-          if ownerEntity:HasTrapID() then
-            local trapRenderCmpt = ownerEntity:TrapRender()
-            local trapConfigData = configSvc:GetTrapConfigData()
-            prefabResPath = (trapConfigData:GetTrapResPath(trapRenderCmpt:GetTrapID()))[1]
-          else
-            do
-              if ownerEntity:HasChessPet() then
-                prefabResPath = (ownerEntity:Asset()):GetResPath()
-                local utilDataSvc = (self._world):GetService("UtilData")
-                local elementType = utilDataSvc:GetEntityElementPrimaryType(ownerEntity)
-                ghostEntity:AddElement(elementType)
-              else
-                do
-                  ;
-                  (Log.fatal)("### PreviewActiveSkillService unknwon entity.")
-                  if prefab then
-                    prefabResPath = prefab
-                  end
-                  ghostEntity:ReplaceAsset(NativeUnityPrefabAsset:New(prefabResPath, true))
-                  if not ownerEntity:HasPetPstID() then
-                    self:ModifyElementMaterial(ghostEntity)
-                  end
-                  local dir = (ownerEntity:Location()):GetDirection()
-                  ghostEntity:SetLocation(pos + cGridLocation:GetGridOffset(), Vector2(dir.x, dir.z))
-                  local gameObject = ((ghostEntity:View()).ViewWrapper).GameObject
-                  local csMaterialAnimation = gameObject:GetComponent(typeof(MaterialAnimation))
-                  if not csMaterialAnimation or tostring("csMaterialAnimation") == "null" then
-                    csMaterialAnimation = gameObject:AddComponent(typeof(MaterialAnimation))
-                  end
-                  local resServ = ((self._world).BW_Services).ResourcesPool
-                  local container = resServ:LoadAsset("globalShaderEffects.asset")
-                  ghostEntity:AddMaterialAnimationComponent(container, csMaterialAnimation)
-                  if not disableAlpha then
-                    ghostEntity:NewEnableGhost()
-                  end
-                  local materialAnimationComponent = ownerEntity:MaterialAnimationComponent()
-                  if materialAnimationComponent and materialAnimationComponent:MaterialAnimation() and (materialAnimationComponent:MaterialAnimation()):IsPlaying("common_shadoweff") then
-                    ghostEntity:PlayMaterialAnim("common_shadoweff")
-                  end
-                  local buffViewCmpt = ownerEntity:BuffView()
-                  local modelPetIndex = buffViewCmpt:GetBuffValue("ChangeModelWithPetIndex")
-                  if modelPetIndex and prefabResPath then
-                    local ancName = HelperProxy:GetPetAnimatorControllerName(prefabResPath, PetAnimatorControllerType.Battle)
-                    if ancName then
-                      local req2 = (ResourceManager:GetInstance()):SyncLoadAsset(ancName, LoadType.GameObject)
-                      local anim = (req2.Obj):GetComponent(typeof(UnityEngine.Animator))
-                      if anim then
-                        local pet = ((ghostEntity:View()).ViewWrapper).GameObject
-                        local petAnim = pet:GetComponentInChildren(typeof(UnityEngine.Animator))
-                        petAnim.runtimeAnimatorController = anim.runtimeAnimatorController
-                      end
-                    end
-                  end
-                  do
-                    local rootTF = (gameObject.transform):Find("Root")
-                    do
-                      if rootTF then
-                        local animator = rootTF:GetComponent("Animator")
-                        if not animator then
-                          animator = gameObject:GetComponentInChildren(typeof(UnityEngine.Animator))
-                        end
-                        if animator then
-                          animator:CrossFade("idle", 0)
-                          if anim then
-                            ghostEntity:SetAnimatorControllerTriggers({anim})
-                          end
-                        end
-                      end
-                      local env = ((self._world):GetPreviewEntity()):PreviewEnv()
-                      if env then
-                        local pos = ownerEntity:GetRenderGridPosition()
-                        for _,area in ipairs((ownerEntity:BodyArea()):GetArea()) do
-                          local blockData = env:GetPosBlockData(pos + area)
-                          blockData:AddBlock(ownerEntity:GetID(), BlockFlag.LinkLine)
-                        end
-                      end
-                      do
-                        if ownerEntity:HasMonsterID() and rootTF then
-                          local trailEffectExCmpt = (rootTF.gameObject):GetComponent(typeof(TrailsFX.TrailEffectEx))
-                          if trailEffectExCmpt then
-                            ((UnityEngine.Object).Destroy)(trailEffectExCmpt)
-                          end
-                          ghostEntity:RemoveTrailEffectEx()
-                          local eliteEffIDList = {}
-                          local monsterIDCmpt = ownerEntity:MonsterID()
-                          if monsterIDCmpt then
-                            local eliteIDs = monsterIDCmpt:GetEliteIDArray()
-                            for _,eliteID in ipairs(eliteIDs) do
-                              local cfgElite = (Cfg.cfg_monster_elite)[eliteID]
-                              if cfgElite and cfgElite.EffectID then
-                                (table.insert)(eliteEffIDList, cfgElite.EffectID)
-                              end
-                            end
-                          end
-                          do
-                            if #eliteEffIDList == 0 then
-                              local cfg_monster = (Cfg.cfg_monster)[(ownerEntity:MonsterID()):GetMonsterID()]
-                              local cfg_monster_class = (Cfg.cfg_monster_class)[cfg_monster.ClassID]
-                              local eliteIDs = cfg_monster.EliteID
-                              local trailEffect = cfg_monster_class.TrailEffect
-                              if eliteIDs and (table.count)(eliteIDs) > 0 and trailEffect then
-                                trailEffectExCmpt = (rootTF.gameObject):AddComponent(typeof(TrailsFX.TrailEffectEx))
-                                local containerTrailEffect = resServ:LoadAsset(trailEffect)
-                                ghostEntity:AddTrailEffectEx(containerTrailEffect, trailEffectExCmpt)
-                              end
-                            end
-                            do
-                              return ghostEntity
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+    Log.fatal("### PreviewActiveSkillService unknwon entity.")
+  end
+  if prefab then
+    prefabResPath = prefab
+  end
+  ghostEntity:ReplaceAsset(NativeUnityPrefabAsset:New(prefabResPath, true))
+  if not ownerEntity:HasPetPstID() then
+    self:ModifyElementMaterial(ghostEntity)
+  end
+  local dir = ownerEntity:Location():GetDirection()
+  ghostEntity:SetLocation(pos + cGridLocation:GetGridOffset(), Vector2(dir.x, dir.z))
+  local gameObject = ghostEntity:View().ViewWrapper.GameObject
+  local csMaterialAnimation = gameObject:GetComponent(typeof(MaterialAnimation))
+  if not csMaterialAnimation or tostring("csMaterialAnimation") == "null" then
+    csMaterialAnimation = gameObject:AddComponent(typeof(MaterialAnimation))
+  end
+  local resServ = self._world.BW_Services.ResourcesPool
+  local container = resServ:LoadAsset("globalShaderEffects.asset")
+  ghostEntity:AddMaterialAnimationComponent(container, csMaterialAnimation)
+  if not disableAlpha then
+    ghostEntity:NewEnableGhost()
+  end
+  local materialAnimationComponent = ownerEntity:MaterialAnimationComponent()
+  if materialAnimationComponent and materialAnimationComponent:MaterialAnimation() and materialAnimationComponent:MaterialAnimation():IsPlaying("common_shadoweff") then
+    ghostEntity:PlayMaterialAnim("common_shadoweff")
+  end
+  local buffViewCmpt = ownerEntity:BuffView()
+  local modelPetIndex = buffViewCmpt:GetBuffValue("ChangeModelWithPetIndex")
+  if modelPetIndex and prefabResPath then
+    local ancName = HelperProxy:GetPetAnimatorControllerName(prefabResPath, PetAnimatorControllerType.Battle)
+    if ancName then
+      local req2 = ResourceManager:GetInstance():SyncLoadAsset(ancName, LoadType.GameObject)
+      local anim = req2.Obj:GetComponent(typeof(UnityEngine.Animator))
+      if anim then
+        local pet = ghostEntity:View().ViewWrapper.GameObject
+        local petAnim = pet:GetComponentInChildren(typeof(UnityEngine.Animator))
+        petAnim.runtimeAnimatorController = anim.runtimeAnimatorController
       end
     end
   end
+  local rootTF = gameObject.transform:Find("Root")
+  if rootTF then
+    local animator = rootTF:GetComponent("Animator")
+    animator = animator or gameObject:GetComponentInChildren(typeof(UnityEngine.Animator))
+    if animator then
+      animator:CrossFade("idle", 0)
+      if anim then
+        ghostEntity:SetAnimatorControllerTriggers({anim})
+      end
+    end
+  end
+  local env = self._world:GetPreviewEntity():PreviewEnv()
+  if env then
+    local pos = ownerEntity:GetRenderGridPosition()
+    for _, area in ipairs(ownerEntity:BodyArea():GetArea()) do
+      local blockData = env:GetPosBlockData(pos + area)
+      blockData:AddBlock(ownerEntity:GetID(), BlockFlag.LinkLine)
+    end
+  end
+  if ownerEntity:HasMonsterID() and rootTF then
+    local trailEffectExCmpt = rootTF.gameObject:GetComponent(typeof(TrailsFX.TrailEffectEx))
+    if trailEffectExCmpt then
+      UnityEngine.Object.Destroy(trailEffectExCmpt)
+    end
+    ghostEntity:RemoveTrailEffectEx()
+    local eliteEffIDList = {}
+    local monsterIDCmpt = ownerEntity:MonsterID()
+    if monsterIDCmpt then
+      local eliteIDs = monsterIDCmpt:GetEliteIDArray()
+      for _, eliteID in ipairs(eliteIDs) do
+        local cfgElite = Cfg.cfg_monster_elite[eliteID]
+        if cfgElite and cfgElite.EffectID then
+          table.insert(eliteEffIDList, cfgElite.EffectID)
+        end
+      end
+    end
+    if #eliteEffIDList == 0 then
+      local cfg_monster = Cfg.cfg_monster[ownerEntity:MonsterID():GetMonsterID()]
+      local cfg_monster_class = Cfg.cfg_monster_class[cfg_monster.ClassID]
+      local eliteIDs = cfg_monster.EliteID
+      local trailEffect = cfg_monster_class.TrailEffect
+      if eliteIDs and 0 < table.count(eliteIDs) and trailEffect then
+        trailEffectExCmpt = rootTF.gameObject:AddComponent(typeof(TrailsFX.TrailEffectEx))
+        local containerTrailEffect = resServ:LoadAsset(trailEffect)
+        ghostEntity:AddTrailEffectEx(containerTrailEffect, trailEffectExCmpt)
+      end
+    end
+  end
+  return ghostEntity
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.DestroyGhost = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
-  local ghostEntities = ((self._world):GetGroup(((self._world).BW_WEMatchers).Ghost)):GetEntities()
+function RenderEntityService:DestroyGhost()
+  local env = self._world:GetPreviewEntity():PreviewEnv()
+  local ghostEntities = self._world:GetGroup(self._world.BW_WEMatchers.Ghost):GetEntities()
   local removeList = {}
-  for _,e in ipairs(ghostEntities) do
+  for _, e in ipairs(ghostEntities) do
     removeList[#removeList + 1] = e:GetID()
   end
-  for _,entityID in ipairs(removeList) do
-    local ghostEntity = (self._world):GetEntityByID(entityID)
+  for _, entityID in ipairs(removeList) do
+    local ghostEntity = self._world:GetEntityByID(entityID)
     if env then
-      local ownerID = (ghostEntity:Ghost()):GetOwnerID()
-      local ownerEntity = (self._world):GetEntityByID(ownerID)
-      env:DelEntityBlockFlag(ownerEntity, (ghostEntity:GridLocation()):GetGridPos())
-      env:AddEntityBlockFlag(ownerEntity, (ownerEntity:GridLocation()):GetGridPos())
+      local ownerID = ghostEntity:Ghost():GetOwnerID()
+      local ownerEntity = self._world:GetEntityByID(ownerID)
+      env:DelEntityBlockFlag(ownerEntity, ghostEntity:GridLocation():GetGridPos())
+      env:AddEntityBlockFlag(ownerEntity, ownerEntity:GridLocation():GetGridPos())
     end
-    do
-      local gridPos = Vector2.zero
-      if ghostEntity:HasGridMove() then
-        gridPos = (ghostEntity:GridMove()):GetTargetPos()
-      else
-        if ghostEntity:HasLocation() then
-          gridPos = ((self._world):GetService("BoardRender")):GetEntityRealTimeGridPos(ghostEntity, false)
-        end
-      end
-      local bodyArea = (ghostEntity:BodyArea()):GetArea()
-      local traprsvc = (self._world):GetService("TrapRender")
-      for _,v2RelativePos in ipairs(bodyArea) do
-        local v2 = gridPos + v2RelativePos
-        traprsvc:ShowHideTrapAtPos(v2, true)
-      end
-      if ghostEntity:HasViewExtension() then
-        ghostEntity:SetViewVisible(false)
-      end
-      local effectLineRenderer = ghostEntity:EffectLineRenderer()
-      if effectLineRenderer then
-        ghostEntity:RemoveEffectLineRenderer()
-      end
-      local sEffect = (self._world):GetService("Effect")
-      sEffect:DestroyStaticEffect(ghostEntity)
-      local headRoundInfoRender = ghostEntity:TrapRoundInfoRender()
-      if headRoundInfoRender then
-        local eId = headRoundInfoRender:GetRoundInfoEntityID()
-        local eRound = (self._world):GetEntityByID(eId)
-        if eRound then
-          (self._world):DestroyEntity(eRound)
-          ghostEntity:RemoveTrapRoundInfoRender()
-        end
-      end
-      do
-        do
-          ;
-          (self._world):DestroyEntity(ghostEntity)
-          -- DECOMPILER ERROR at PC143: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC143: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+    local gridPos = Vector2.zero
+    if ghostEntity:HasGridMove() then
+      gridPos = ghostEntity:GridMove():GetTargetPos()
+    elseif ghostEntity:HasLocation() then
+      gridPos = self._world:GetService("BoardRender"):GetEntityRealTimeGridPos(ghostEntity, false)
+    end
+    local bodyArea = ghostEntity:BodyArea():GetArea()
+    local traprsvc = self._world:GetService("TrapRender")
+    for _, v2RelativePos in ipairs(bodyArea) do
+      local v2 = gridPos + v2RelativePos
+      traprsvc:ShowHideTrapAtPos(v2, true)
+    end
+    if ghostEntity:HasViewExtension() then
+      ghostEntity:SetViewVisible(false)
+    end
+    local effectLineRenderer = ghostEntity:EffectLineRenderer()
+    if effectLineRenderer then
+      ghostEntity:RemoveEffectLineRenderer()
+    end
+    local sEffect = self._world:GetService("Effect")
+    sEffect:DestroyStaticEffect(ghostEntity)
+    local headRoundInfoRender = ghostEntity:TrapRoundInfoRender()
+    if headRoundInfoRender then
+      local eId = headRoundInfoRender:GetRoundInfoEntityID()
+      local eRound = self._world:GetEntityByID(eId)
+      if eRound then
+        self._world:DestroyEntity(eRound)
+        ghostEntity:RemoveTrapRoundInfoRender()
       end
     end
+    self._world:DestroyEntity(ghostEntity)
   end
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateBattleTeamMemberRender = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local loadingResCmpt = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.Loading)
+function RenderEntityService:CreateBattleTeamMemberRender()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local loadingResCmpt = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.Loading)
   local teamCreateResult = loadingResCmpt:GetTeamCreationResult()
-  for i,teamRes in ipairs(teamCreateResult) do
+  for i, teamRes in ipairs(teamCreateResult) do
     local creationList = teamRes:GetPetCreationResultList()
-    for _,v in ipairs(creationList) do
+    for _, v in ipairs(creationList) do
       local creationRes = v
       local resPath = creationRes:GetPetCreationRes()
       local logicEntityID = creationRes:GetPetCreationLogicEntityID()
-      local petEntity = (self._world):GetEntityByID(logicEntityID)
-      ;
-      (Log.info)("load res path: " .. tostring(resPath))
+      local petEntity = self._world:GetEntityByID(logicEntityID)
+      Log.info("load res path: " .. tostring(resPath))
       petEntity:ReplaceAsset(NativeUnityPrefabAsset:New(resPath, false))
-      local id = (string.gsub)(resPath, ".prefab", "")
-      ;
-      (petEntity:PetPstID()):SetResID(tonumber(id))
+      local id = string.gsub(resPath, ".prefab", "")
+      petEntity:PetPstID():SetResID(tonumber(id))
       self:_InitRenderAttributes(petEntity, creationRes)
     end
   end
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService._InitRenderAttributes = function(self, entity, creationRes)
-  -- function num : 0_36
+function RenderEntityService:_InitRenderAttributes(entity, creationRes)
   local hp = creationRes:GetPetCreation_CurHp()
   local maxHP = creationRes:GetPetCreation_MaxHp()
   entity:ReplaceRedAndMaxHP(hp, maxHP)
 end
 
--- DECOMPILER ERROR at PC141: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateRenderEntity = function(self, entityConstId, bShow)
-  -- function num : 0_37 , upvalues : _ENV
+function RenderEntityService:CreateRenderEntity(entityConstId, bShow)
   local ctx = EntityCreationContext:New()
   ctx.entity_config_id = entityConstId
   if bShow == nil then
@@ -996,21 +818,16 @@ RenderEntityService.CreateRenderEntity = function(self, entityConstId, bShow)
   else
     ctx.bShow = bShow
   end
-  local entity = (self._world):CreateEntity()
-  ;
-  (self._world):SetEntityIdByEntityConfigId(entity, entityConstId)
-  ;
-  (EntityAssembler.AssembleEntityComponents)(entity, ctx)
-  if ((GameGlobal.GetModule)(SkillPerfModule)):IsBeginPerf() then
-    ((GameGlobal.GetModule)(SkillPerfModule)):AddEffectEntity(entity)
+  local entity = self._world:CreateEntity()
+  self._world:SetEntityIdByEntityConfigId(entity, entityConstId)
+  EntityAssembler.AssembleEntityComponents(entity, ctx)
+  if GameGlobal.GetModule(SkillPerfModule):IsBeginPerf() then
+    GameGlobal.GetModule(SkillPerfModule):AddEffectEntity(entity)
   end
   return entity
 end
 
--- DECOMPILER ERROR at PC144: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.AssembleRenderEntity = function(self, renderEntity, entityConstId, bShow)
-  -- function num : 0_38 , upvalues : _ENV
+function RenderEntityService:AssembleRenderEntity(renderEntity, entityConstId, bShow)
   local ctx = EntityCreationContext:New()
   ctx.entity_config_id = entityConstId
   if bShow == nil then
@@ -1018,211 +835,175 @@ RenderEntityService.AssembleRenderEntity = function(self, renderEntity, entityCo
   else
     ctx.bShow = bShow
   end
-  ;
-  (self._world):SetEntityIdByEntityConfigId(renderEntity, entityConstId)
-  ;
-  (EntityAssembler.AssembleEntityComponents)(renderEntity, ctx)
+  self._world:SetEntityIdByEntityConfigId(renderEntity, entityConstId)
+  EntityAssembler.AssembleEntityComponents(renderEntity, ctx)
   return renderEntity
 end
 
--- DECOMPILER ERROR at PC147: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateBattleTeamRender = function(self)
-  -- function num : 0_39
+function RenderEntityService:CreateBattleTeamRender()
   self:_CreateTeamRender()
 end
 
--- DECOMPILER ERROR at PC150: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService._CreateTeamRender = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local res = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.Loading)
+function RenderEntityService:_CreateTeamRender()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local res = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.Loading)
   local teamResults = res:GetTeamCreationResult()
-  for i,teamRes in ipairs(teamResults) do
+  for i, teamRes in ipairs(teamResults) do
     local teamEntityID = teamRes:GetCreationResultTeamEntityID()
-    local teamEntity = (self._world):GetEntityByID(teamEntityID)
-    local hpCmpt = (teamEntity:HP())
-    local hpSliderEntity = nil
-    if ((self._world):Player()):IsLocalTeamEntity(teamEntity) then
+    local teamEntity = self._world:GetEntityByID(teamEntityID)
+    local hpCmpt = teamEntity:HP()
+    local hpSliderEntity
+    if self._world:Player():IsLocalTeamEntity(teamEntity) then
       hpSliderEntity = self:CreateRenderEntity(EntityConfigIDRender.PlayerHPSlider)
     else
       hpSliderEntity = self:CreateRenderEntity(EntityConfigIDRender.BossHPSlider)
     end
     hpCmpt:SetHPSliderEntityID(hpSliderEntity:GetID())
-    local previewEntity = (self._world):GetPreviewEntity()
+    local previewEntity = self._world:GetPreviewEntity()
     if not previewEntity:HasConnectPieces() then
       previewEntity:AddConnectPieces({}, PieceType.None)
     end
     local hpOffset = teamRes:GetCreationResultHPOffset()
     hpCmpt:SetHPOffset(hpOffset)
     local teamLeaderEntity = teamEntity:GetTeamLeaderPetEntity()
-    do
-      if teamLeaderEntity then
-        local leaderHpCmpt = teamLeaderEntity:HP()
-        if leaderHpCmpt then
-          leaderHpCmpt:SetHPOffset(hpOffset)
-        end
+    if teamLeaderEntity then
+      local leaderHpCmpt = teamLeaderEntity:HP()
+      if leaderHpCmpt then
+        leaderHpCmpt:SetHPOffset(hpOffset)
       end
-      local element = teamRes:GetCreationResultElement()
-      ;
-      (TaskManager:GetInstance()):CoreGameStartTask((InnerGameHelperRender:GetInstance()).SetHpSliderElementIcon, InnerGameHelperRender:GetInstance(), hpSliderEntity, element)
-      local hp = teamRes:GetCreationResultHP()
-      local maxHP = teamRes:GetCreationResultMaxHP()
-      teamEntity:ReplaceRedAndMaxHP(hp, maxHP)
-      local heroPos = teamRes:GetCreationResultBornPos()
-      local heroRotation = teamRes:GetCreationResultBornRotation()
-      teamEntity:SetLocation(heroPos, heroRotation)
-      local firstPetEnityID = teamRes:GetCreationResultFirstPetEntityID()
-      local firstPetEntity = (self._world):GetEntityByID(firstPetEnityID)
-      firstPetEntity:SetLocation(heroPos, heroRotation)
-      hpSliderEntity:SetViewVisible(false)
-      if (self._world):MatchType() == MatchType.MT_Maze then
-        (teamEntity:HP()):SetShowHPSliderState(false)
-      end
-      do
-        if ((self._world):Player()):IsLocalTeamEntity(teamEntity) then
-          local autoBeadServiceRender = (self._world):GetService("AutoBeadRender")
-          autoBeadServiceRender:InitAutoBeadHolder(teamEntity)
-        end
-        -- DECOMPILER ERROR at PC147: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    end
+    local element = teamRes:GetCreationResultElement()
+    TaskManager:GetInstance():CoreGameStartTask(InnerGameHelperRender:GetInstance().SetHpSliderElementIcon, InnerGameHelperRender:GetInstance(), hpSliderEntity, element)
+    local hp = teamRes:GetCreationResultHP()
+    local maxHP = teamRes:GetCreationResultMaxHP()
+    teamEntity:ReplaceRedAndMaxHP(hp, maxHP)
+    local heroPos = teamRes:GetCreationResultBornPos()
+    local heroRotation = teamRes:GetCreationResultBornRotation()
+    teamEntity:SetLocation(heroPos, heroRotation)
+    local firstPetEnityID = teamRes:GetCreationResultFirstPetEntityID()
+    local firstPetEntity = self._world:GetEntityByID(firstPetEnityID)
+    firstPetEntity:SetLocation(heroPos, heroRotation)
+    hpSliderEntity:SetViewVisible(false)
+    if self._world:MatchType() == MatchType.MT_Maze then
+      teamEntity:HP():SetShowHPSliderState(false)
+    end
+    if self._world:Player():IsLocalTeamEntity(teamEntity) then
+      local autoBeadServiceRender = self._world:GetService("AutoBeadRender")
+      autoBeadServiceRender:InitAutoBeadHolder(teamEntity)
     end
   end
 end
 
--- DECOMPILER ERROR at PC153: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.SetTeamLeaderRender = function(self, petEntity, showEffect)
-  -- function num : 0_41 , upvalues : _ENV
-  local teamEntity = (petEntity:Pet()):GetOwnerTeamEntity()
+function RenderEntityService:SetTeamLeaderRender(petEntity, showEffect)
+  local teamEntity = petEntity:Pet():GetOwnerTeamEntity()
   local petPstIDComponent = petEntity:PetPstID()
   local petPstID = petPstIDComponent:GetPstID()
-  local petData = (self._world):GetPetData(petPstID)
+  local petData = self._world:GetPetData(petPstID)
   local hpComponent = teamEntity:HP()
   local hpOffset = petData:GetHPOffset()
   hpComponent:SetHPOffset(hpOffset)
   hpComponent:SetHPPosDirty(true)
-  local hpSliderEntity = (self._world):GetEntityByID(hpComponent:GetHPSliderEntityID())
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local hpSliderEntity = self._world:GetEntityByID(hpComponent:GetHPSliderEntityID())
+  local utilDataSvc = self._world:GetService("UtilData")
   local firstElement = utilDataSvc:GetEntityElementPrimaryType(teamEntity)
-  ;
-  (TaskManager:GetInstance()):CoreGameStartTask((InnerGameHelperRender:GetInstance()).SetHpSliderElementIcon, InnerGameHelperRender:GetInstance(), hpSliderEntity, firstElement)
+  TaskManager:GetInstance():CoreGameStartTask(InnerGameHelperRender:GetInstance().SetHpSliderElementIcon, InnerGameHelperRender:GetInstance(), hpSliderEntity, firstElement)
   if showEffect then
-    local effectService = (self._world):GetService("Effect")
-    local effectID = (BattleConst.ChangeTeamLeaderEffect)[firstElement]
+    local effectService = self._world:GetService("Effect")
+    local effectID = BattleConst.ChangeTeamLeaderEffect[firstElement]
     local pos = petEntity:GetRenderGridPosition()
     effectService:CreateWorldPositionEffect(effectID, pos)
   end
-  do
-    local cEffectAttached = teamEntity:EffectAttached()
-    local tFxCtrlEntity = cEffectAttached:GetAttachedEntityIDArray()
-    local mapFxEntity, mapFxID = cEffectAttached:GetAttachedFxMap()
-    cEffectAttached:ClearAttachedEntityIDArray()
-    if #tFxCtrlEntity > 0 then
-      for _,id in ipairs(tFxCtrlEntity) do
-        local e = (self._world):GetEntityByID(id)
-        if e then
-          local cEffectController = e:EffectController()
-          local bindPos = cEffectController.BindPos
-          local duration = cEffectController.Duration
-          local type = cEffectController:GetEffectType()
-          local followMove = cEffectController:GetFollowMove()
-          local followRotate = cEffectController:GetFollowRotate()
-          local bindLayer = cEffectController:GetBindLayer()
-          local followRotateCaster = cEffectController:GetFollowRotateCaster()
-          e:RemoveEffectController()
-          e:AddEffectController(petEntity, bindPos, duration, type)
-          local cNewController = e:EffectController()
-          cNewController:SetFollowMove(followMove)
-          cNewController:SetFollowRotate(followRotate)
-          cNewController:SetBindLayer(bindLayer)
-          cNewController:SetFollowRotateCaster(followRotateCaster)
-          if not mapFxID[id] then
-            cEffectAttached:AddAttachedEntityID(id)
-          else
-            local effectID = mapFxID[id]
-            cEffectAttached:AddAttachedEffectEntityID(id, effectID)
-          end
+  local cEffectAttached = teamEntity:EffectAttached()
+  local tFxCtrlEntity = cEffectAttached:GetAttachedEntityIDArray()
+  local mapFxEntity, mapFxID = cEffectAttached:GetAttachedFxMap()
+  cEffectAttached:ClearAttachedEntityIDArray()
+  if 0 < #tFxCtrlEntity then
+    for _, id in ipairs(tFxCtrlEntity) do
+      local e = self._world:GetEntityByID(id)
+      if e then
+        local cEffectController = e:EffectController()
+        local bindPos = cEffectController.BindPos
+        local duration = cEffectController.Duration
+        local type = cEffectController:GetEffectType()
+        local followMove = cEffectController:GetFollowMove()
+        local followRotate = cEffectController:GetFollowRotate()
+        local bindLayer = cEffectController:GetBindLayer()
+        local followRotateCaster = cEffectController:GetFollowRotateCaster()
+        e:RemoveEffectController()
+        e:AddEffectController(petEntity, bindPos, duration, type)
+        local cNewController = e:EffectController()
+        cNewController:SetFollowMove(followMove)
+        cNewController:SetFollowRotate(followRotate)
+        cNewController:SetBindLayer(bindLayer)
+        cNewController:SetFollowRotateCaster(followRotateCaster)
+        if not mapFxID[id] then
+          cEffectAttached:AddAttachedEntityID(id)
+        else
+          local effectID = mapFxID[id]
+          cEffectAttached:AddAttachedEffectEntityID(id, effectID)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC156: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService._GetOutlinePointPos = function(self, pos, outlineDirType, radius, gridList)
-  -- function num : 0_42 , upvalues : OutlineDirType, _ENV
+function RenderEntityService:_GetOutlinePointPos(pos, outlineDirType, radius, gridList)
   local gridOutlineRadius = 0.6
-  local outlinePos1, outlinePos2 = nil, nil
+  local outlinePos1, outlinePos2
   if outlineDirType == OutlineDirType.Up then
-    if (table.icontains)(gridList, Vector2(pos.x + 1, pos.y)) then
+    if table.icontains(gridList, Vector2(pos.x + 1, pos.y)) then
       outlinePos1 = Vector2(pos.x + gridOutlineRadius, pos.y + radius)
     else
       outlinePos1 = Vector2(pos.x + radius, pos.y + radius)
     end
-    if (table.icontains)(gridList, Vector2(pos.x - 1, pos.y)) then
+    if table.icontains(gridList, Vector2(pos.x - 1, pos.y)) then
       outlinePos2 = Vector2(pos.x - gridOutlineRadius, pos.y + radius)
     else
       outlinePos2 = Vector2(pos.x - radius, pos.y + radius)
     end
-  else
-    if outlineDirType == OutlineDirType.Down then
-      if (table.icontains)(gridList, Vector2(pos.x + 1, pos.y)) then
-        outlinePos1 = Vector2(pos.x + gridOutlineRadius, pos.y - radius)
-      else
-        outlinePos1 = Vector2(pos.x + radius, pos.y - radius)
-      end
-      if (table.icontains)(gridList, Vector2(pos.x - 1, pos.y)) then
-        outlinePos2 = Vector2(pos.x - gridOutlineRadius, pos.y - radius)
-      else
-        outlinePos2 = Vector2(pos.x - radius, pos.y - radius)
-      end
+  elseif outlineDirType == OutlineDirType.Down then
+    if table.icontains(gridList, Vector2(pos.x + 1, pos.y)) then
+      outlinePos1 = Vector2(pos.x + gridOutlineRadius, pos.y - radius)
     else
-      if outlineDirType == OutlineDirType.Left then
-        if (table.icontains)(gridList, Vector2(pos.x, pos.y + 1)) then
-          outlinePos1 = Vector2(pos.x - radius, pos.y + gridOutlineRadius)
-        else
-          outlinePos1 = Vector2(pos.x - radius, pos.y + radius)
-        end
-        if (table.icontains)(gridList, Vector2(pos.x, pos.y - 1)) then
-          outlinePos2 = Vector2(pos.x - radius, pos.y - gridOutlineRadius)
-        else
-          outlinePos2 = Vector2(pos.x - radius, pos.y - radius)
-        end
-      else
-        if outlineDirType == OutlineDirType.Right then
-          if (table.icontains)(gridList, Vector2(pos.x, pos.y + 1)) then
-            outlinePos1 = Vector2(pos.x + radius, pos.y + gridOutlineRadius)
-          else
-            outlinePos1 = Vector2(pos.x + radius, pos.y + radius)
-          end
-          if (table.icontains)(gridList, Vector2(pos.x, pos.y - 1)) then
-            outlinePos2 = Vector2(pos.x + radius, pos.y - gridOutlineRadius)
-          else
-            outlinePos2 = Vector2(pos.x + radius, pos.y - radius)
-          end
-        end
-      end
+      outlinePos1 = Vector2(pos.x + radius, pos.y - radius)
+    end
+    if table.icontains(gridList, Vector2(pos.x - 1, pos.y)) then
+      outlinePos2 = Vector2(pos.x - gridOutlineRadius, pos.y - radius)
+    else
+      outlinePos2 = Vector2(pos.x - radius, pos.y - radius)
+    end
+  elseif outlineDirType == OutlineDirType.Left then
+    if table.icontains(gridList, Vector2(pos.x, pos.y + 1)) then
+      outlinePos1 = Vector2(pos.x - radius, pos.y + gridOutlineRadius)
+    else
+      outlinePos1 = Vector2(pos.x - radius, pos.y + radius)
+    end
+    if table.icontains(gridList, Vector2(pos.x, pos.y - 1)) then
+      outlinePos2 = Vector2(pos.x - radius, pos.y - gridOutlineRadius)
+    else
+      outlinePos2 = Vector2(pos.x - radius, pos.y - radius)
+    end
+  elseif outlineDirType == OutlineDirType.Right then
+    if table.icontains(gridList, Vector2(pos.x, pos.y + 1)) then
+      outlinePos1 = Vector2(pos.x + radius, pos.y + gridOutlineRadius)
+    else
+      outlinePos1 = Vector2(pos.x + radius, pos.y + radius)
+    end
+    if table.icontains(gridList, Vector2(pos.x, pos.y - 1)) then
+      outlinePos2 = Vector2(pos.x + radius, pos.y - gridOutlineRadius)
+    else
+      outlinePos2 = Vector2(pos.x + radius, pos.y - radius)
     end
   end
   return outlinePos1, outlinePos2
 end
 
--- DECOMPILER ERROR at PC159: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.SetLineRendererPoint = function(self, outlineEntity, sortPos)
-  -- function num : 0_43 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local go = (outlineEntity:View()):GetGameObject()
+function RenderEntityService:SetLineRendererPoint(outlineEntity, sortPos)
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local go = outlineEntity:View():GetGameObject()
   if go then
     local newPos = Vector3(0, 0, 0)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (go.transform).position = newPos
+    go.transform.position = newPos
     local lineRender = go:GetComponentInChildren(typeof(UnityEngine.LineRenderer))
     local count = #sortPos
     lineRender.positionCount = count
@@ -1234,18 +1015,15 @@ RenderEntityService.SetLineRendererPoint = function(self, outlineEntity, sortPos
   end
 end
 
--- DECOMPILER ERROR at PC162: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService._CreateMonsterAreaOutlineEntity = function(self, centerPos, gridList, entityID)
-  -- function num : 0_44 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local entityPoolService = (self._world):GetService("EntityPool")
-  local pieceService = (self._world):GetService("Piece")
+function RenderEntityService:_CreateMonsterAreaOutlineEntity(centerPos, gridList, entityID)
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local entityPoolService = self._world:GetService("EntityPool")
+  local pieceService = self._world:GetService("Piece")
   local edgeGridList = gridList
-  local sortPos = (self:GetGridPackagePosList(edgeGridList, 0.4))
-  local outlineEntity = nil
+  local sortPos = self:GetGridPackagePosList(edgeGridList, 0.4)
+  local outlineEntity
   outlineEntity = entityPoolService:GetCacheEntityByConfigID(entityID)
-  local go = (outlineEntity:View()):GetGameObject()
+  local go = outlineEntity:View():GetGameObject()
   if go then
     local lineRender = go:GetComponentInChildren(typeof(UnityEngine.LineRenderer))
     local count = #sortPos
@@ -1257,65 +1035,53 @@ RenderEntityService._CreateMonsterAreaOutlineEntity = function(self, centerPos, 
     end
     outlineEntity:SetViewVisible(true)
   end
-  do
-    return {outlineEntity}
-  end
+  return {outlineEntity}
 end
 
--- DECOMPILER ERROR at PC165: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateMonsterAreaOutlineEntity = function(self, monsterEntity)
-  -- function num : 0_45 , upvalues : _ENV
+function RenderEntityService:CreateMonsterAreaOutlineEntity(monsterEntity)
   if not monsterEntity then
-    (Log.fatal)("entity is null Trace", (Log.traceback)())
+    Log.fatal("entity is null Trace", Log.traceback())
   end
   if not monsterEntity:MonsterID() then
-    return 
+    return
   end
   if monsterEntity:HasOutsideRegion() then
-    return 
+    return
   end
   local gridPos = monsterEntity:GetGridPosition()
-  local utilDataService = (self._world):GetService("UtilData")
+  local utilDataService = self._world:GetService("UtilData")
   local extraBoardPosRange = utilDataService:GetExtraBoardPosList()
-  if extraBoardPosRange and (table.count)(extraBoardPosRange) > 0 then
-    local bodyAreaList = (monsterEntity:BodyArea()):GetArea()
-    for _,bodyArea in ipairs(bodyAreaList) do
+  if extraBoardPosRange and table.count(extraBoardPosRange) > 0 then
+    local bodyAreaList = monsterEntity:BodyArea():GetArea()
+    for _, bodyArea in ipairs(bodyAreaList) do
       local workPos = gridPos + bodyArea
-      if (table.intable)(extraBoardPosRange, workPos) then
-        return 
+      if table.intable(extraBoardPosRange, workPos) then
+        return
       end
     end
   end
-  do
-    local areaGridList = utilDataService:GetMonsterGridAreaList(monsterEntity)
-    local areaOutLineEntityList = self:_CreateMonsterAreaOutlineEntity(gridPos, areaGridList, EntityConfigIDRender.MonsterAreaOutLine)
-    if not monsterEntity:HasMonsterAreaOutLineComponent() then
-      monsterEntity:AddMonsterAreaOutLineComponent()
-    end
-    local monsterAreaOutLineCmpt = monsterEntity:MonsterAreaOutLineComponent()
-    for k,e in pairs(areaOutLineEntityList) do
-      monsterAreaOutLineCmpt:AddEntityID(e:GetID())
-    end
+  local areaGridList = utilDataService:GetMonsterGridAreaList(monsterEntity)
+  local areaOutLineEntityList = self:_CreateMonsterAreaOutlineEntity(gridPos, areaGridList, EntityConfigIDRender.MonsterAreaOutLine)
+  if not monsterEntity:HasMonsterAreaOutLineComponent() then
+    monsterEntity:AddMonsterAreaOutLineComponent()
+  end
+  local monsterAreaOutLineCmpt = monsterEntity:MonsterAreaOutLineComponent()
+  for k, e in pairs(areaOutLineEntityList) do
+    monsterAreaOutLineCmpt:AddEntityID(e:GetID())
   end
 end
 
--- DECOMPILER ERROR at PC168: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.DestroyMonsterAreaOutLineEntity = function(self, monsterEntity)
-  -- function num : 0_46 , upvalues : _ENV
+function RenderEntityService:DestroyMonsterAreaOutLineEntity(monsterEntity)
   local monsterAreaOutLineCmpt = monsterEntity:MonsterAreaOutLineComponent()
   if monsterAreaOutLineCmpt then
     local entityIDList = monsterAreaOutLineCmpt:GetEntityIDList()
-    local entityPoolService = (self._world):GetService("EntityPool")
-    for k,id in pairs(entityIDList) do
-      local entity = (self._world):GetEntityByID(id)
+    local entityPoolService = self._world:GetService("EntityPool")
+    for k, id in pairs(entityIDList) do
+      local entity = self._world:GetEntityByID(id)
       if entity and entity:View() then
-        local go = (entity:View()):GetGameObject()
-        -- DECOMPILER ERROR at PC36: Confused about usage of register: R12 in 'UnsetPending'
-
+        local go = entity:View():GetGameObject()
         if go and tostring(go) ~= "null" then
-          (go.transform).parent = nil
+          go.transform.parent = nil
           entityPoolService:DestroyCacheEntity(entity, EntityConfigIDRender.MonsterAreaOutLine)
         end
       end
@@ -1324,325 +1090,282 @@ RenderEntityService.DestroyMonsterAreaOutLineEntity = function(self, monsterEnti
   end
 end
 
--- DECOMPILER ERROR at PC171: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.ModifyElementMaterial = function(self, targetEntity)
-  -- function num : 0_47 , upvalues : _ENV
+function RenderEntityService:ModifyElementMaterial(targetEntity)
   local monsterViewCmpt = targetEntity:View()
   if not monsterViewCmpt then
-    (Log.error)("ModifyElementMaterial entity has no view ,entityID:", targetEntity:GetID())
+    Log.error("ModifyElementMaterial entity has no view ,entityID:", targetEntity:GetID())
     local monsterIDCmpt = targetEntity:MonsterID()
     if monsterIDCmpt then
       local monsterID = monsterIDCmpt:GetMonsterID()
-      ;
-      (Log.error)("ModifyElementMaterial entity has no view ,monsterID:", monsterID)
+      Log.error("ModifyElementMaterial entity has no view ,monsterID:", monsterID)
     end
   end
-  do
-    local monsterObj = ((targetEntity:View()).ViewWrapper).GameObject
-    local resHolderCmpt = monsterObj:GetComponent("UnitResourceHolder")
-    if resHolderCmpt == nil then
-      return 
+  local monsterObj = targetEntity:View().ViewWrapper.GameObject
+  local resHolderCmpt = monsterObj:GetComponent("UnitResourceHolder")
+  if resHolderCmpt == nil then
+    return
+  end
+  local elementBodyMat, elementWeaponMat
+  local utilDataSvc = self._world:GetService("UtilData")
+  local elementType = utilDataSvc:GetEntityElementPrimaryType(targetEntity)
+  if elementType == ElementType.ElementType_Blue then
+    elementBodyMat = resHolderCmpt.elementBodyMaterial_Blue
+    elementWeaponMat = resHolderCmpt.elementWeaponMaterial_Blue
+  elseif elementType == ElementType.ElementType_Red then
+    elementBodyMat = resHolderCmpt.elementBodyMaterial_Red
+    elementWeaponMat = resHolderCmpt.elementWeaponMaterial_Red
+  elseif elementType == ElementType.ElementType_Green then
+    elementBodyMat = resHolderCmpt.elementBodyMaterial_Green
+    elementWeaponMat = resHolderCmpt.elementWeaponMaterial_Green
+  elseif elementType == ElementType.ElementType_Yellow then
+    elementBodyMat = resHolderCmpt.elementBodyMaterial_Yellow
+    elementWeaponMat = resHolderCmpt.elementWeaponMaterial_Yellow
+  end
+  if elementBodyMat == nil then
+    Log.notice("element material is nil ", monsterObj.name)
+    return
+  end
+  local bodyRender = GameObjectHelper.FindFirstSkinedMeshRender(monsterObj)
+  if bodyRender ~= nil then
+    local sharedMaterials = bodyRender.sharedMaterials
+    local curMat = sharedMaterials[0]
+    if string.find(curMat.name, "Instance") then
+      UnityEngine.Object.Destroy(curMat)
     end
-    local elementBodyMat, elementWeaponMat = nil, nil
-    local utilDataSvc = (self._world):GetService("UtilData")
-    local elementType = utilDataSvc:GetEntityElementPrimaryType(targetEntity)
-    if elementType == ElementType.ElementType_Blue then
-      elementBodyMat = resHolderCmpt.elementBodyMaterial_Blue
-      elementWeaponMat = resHolderCmpt.elementWeaponMaterial_Blue
-    else
-      if elementType == ElementType.ElementType_Red then
-        elementBodyMat = resHolderCmpt.elementBodyMaterial_Red
-        elementWeaponMat = resHolderCmpt.elementWeaponMaterial_Red
-      else
-        if elementType == ElementType.ElementType_Green then
-          elementBodyMat = resHolderCmpt.elementBodyMaterial_Green
-          elementWeaponMat = resHolderCmpt.elementWeaponMaterial_Green
-        else
-          if elementType == ElementType.ElementType_Yellow then
-            elementBodyMat = resHolderCmpt.elementBodyMaterial_Yellow
-            elementWeaponMat = resHolderCmpt.elementWeaponMaterial_Yellow
-          end
-        end
-      end
+    local newBodyMat = UnityEngine.Material:New(elementBodyMat)
+    local newMats = {}
+    newMats[#newMats + 1] = newBodyMat
+    bodyRender.sharedMaterials = newMats
+  end
+  if elementWeaponMat == nil then
+    return
+  end
+  local weaponRender = GameObjectHelper.FindSecondSkinedMeshRender(monsterObj)
+  if weaponRender ~= nil then
+    local sharedMaterials = weaponRender.sharedMaterials
+    local curMat = sharedMaterials[0]
+    if string.find(curMat.name, "Instance") then
+      UnityEngine.Object.Destroy(curMat)
     end
-    if elementBodyMat == nil then
-      (Log.notice)("element material is nil ", monsterObj.name)
-      return 
-    end
-    local bodyRender = (GameObjectHelper.FindFirstSkinedMeshRender)(monsterObj)
-    if bodyRender ~= nil then
-      local sharedMaterials = bodyRender.sharedMaterials
-      local curMat = sharedMaterials[0]
-      if (string.find)(curMat.name, "Instance") then
-        ((UnityEngine.Object).Destroy)(curMat)
-      end
-      local newBodyMat = (UnityEngine.Material):New(elementBodyMat)
-      local newMats = {}
-      newMats[#newMats + 1] = newBodyMat
-      bodyRender.sharedMaterials = newMats
-    end
-    do
-      if elementWeaponMat == nil then
-        return 
-      end
-      local weaponRender = (GameObjectHelper.FindSecondSkinedMeshRender)(monsterObj)
-      if weaponRender ~= nil then
-        local sharedMaterials = weaponRender.sharedMaterials
-        local curMat = sharedMaterials[0]
-        if (string.find)(curMat.name, "Instance") then
-          ((UnityEngine.Object).Destroy)(curMat)
-        end
-        local newWeaponMat = (UnityEngine.Material):New(elementWeaponMat)
-        local newMats = {}
-        newMats[#newMats + 1] = newWeaponMat
-        weaponRender.sharedMaterials = newMats
-      end
-    end
+    local newWeaponMat = UnityEngine.Material:New(elementWeaponMat)
+    local newMats = {}
+    newMats[#newMats + 1] = newWeaponMat
+    weaponRender.sharedMaterials = newMats
   end
 end
 
--- DECOMPILER ERROR at PC174: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateStuntMonster = function(self, ownerEntity, stuntTag, monsterClassID)
-  -- function num : 0_48 , upvalues : _ENV
+function RenderEntityService:CreateStuntMonster(ownerEntity, stuntTag, monsterClassID)
   if not ownerEntity:HasMonsterID() and not monsterClassID then
-    (Log.error)("CreateStuntMonster: monster ID is required. ")
-    return 
+    Log.error("CreateStuntMonster: monster ID is required. ")
+    return
   end
   local e = self:CreateRenderEntity(EntityConfigIDRender.StuntMonster)
-  local resPath = (ownerEntity:Asset()):GetResPath()
-  do
-    if monsterClassID then
-      local cfg = (Cfg.cfg_monster_class)[monsterClassID]
-      if cfg then
-        resPath = cfg.ResPath
-      else
-        ;
-        (Log.error)(self._className, "invalid monsterClassID: ", monsterClassID)
-      end
+  local resPath = ownerEntity:Asset():GetResPath()
+  if monsterClassID then
+    local cfg = Cfg.cfg_monster_class[monsterClassID]
+    if cfg then
+      resPath = cfg.ResPath
+    else
+      Log.error(self._className, "invalid monsterClassID: ", monsterClassID)
     end
-    e:ReplaceAsset(NativeUnityPrefabAsset:New(resPath, true))
-    e:SetAnimatorControllerTriggers({"idle"})
-    local gameObject = ((e:View()).ViewWrapper).GameObject
-    local csMaterialAnimation = gameObject:GetComponent(typeof(MaterialAnimation))
-    if not csMaterialAnimation or tostring("csMaterialAnimation") == "null" then
-      csMaterialAnimation = gameObject:AddComponent(typeof(MaterialAnimation))
-    end
-    local resServ = ((self._world).BW_Services).ResourcesPool
-    local container = resServ:LoadAsset("globalShaderEffects.asset")
-    e:AddMaterialAnimationComponent(container, csMaterialAnimation)
-    if not ownerEntity:StuntOwnerComponent() then
-      ownerEntity:AddStuntOwnerComponent()
-    end
-    local cStunt = ownerEntity:StuntOwnerComponent()
-    if cStunt:GetStuntByTag(stuntTag) then
-      cStunt:RemoveStunt(stuntTag)
-    end
-    cStunt:AddStunt(stuntTag, e)
-    return e
   end
+  e:ReplaceAsset(NativeUnityPrefabAsset:New(resPath, true))
+  e:SetAnimatorControllerTriggers({"idle"})
+  local gameObject = e:View().ViewWrapper.GameObject
+  local csMaterialAnimation = gameObject:GetComponent(typeof(MaterialAnimation))
+  if not csMaterialAnimation or tostring("csMaterialAnimation") == "null" then
+    csMaterialAnimation = gameObject:AddComponent(typeof(MaterialAnimation))
+  end
+  local resServ = self._world.BW_Services.ResourcesPool
+  local container = resServ:LoadAsset("globalShaderEffects.asset")
+  e:AddMaterialAnimationComponent(container, csMaterialAnimation)
+  if not ownerEntity:StuntOwnerComponent() then
+    ownerEntity:AddStuntOwnerComponent()
+  end
+  local cStunt = ownerEntity:StuntOwnerComponent()
+  if cStunt:GetStuntByTag(stuntTag) then
+    cStunt:RemoveStunt(stuntTag)
+  end
+  cStunt:AddStunt(stuntTag, e)
+  return e
 end
 
--- DECOMPILER ERROR at PC177: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateSideEffects = function(self, truePosList, sideEffectID, v3SideScale)
-  -- function num : 0_49 , upvalues : _ENV
+function RenderEntityService:CreateSideEffects(truePosList, sideEffectID, v3SideScale)
   local retEntity = {}
-  for _,pos in ipairs(truePosList) do
+  for _, pos in ipairs(truePosList) do
     local entityList = {}
     local sideList = {}
-    do
-      if not (table.icontains)(truePosList, pos + Vector2(0, 1)) then
-        local tmp = {gridPos = pos + Vector2(0, BattleConst.GridSideLength / 2), gridDir = Vector3(0, 0, -1)}
-        ;
-        (table.insert)(sideList, {gridPos = pos + Vector2(0, BattleConst.GridSideLength / 2), gridDir = Vector3(0, 0, -1)})
-      end
-      do
-        if not (table.icontains)(truePosList, pos + Vector2(0, -1)) then
-          local tmp = {gridPos = pos + Vector2(0, -BattleConst.GridSideLength / 2), gridDir = Vector3(0, 0, 1)}
-          ;
-          (table.insert)(sideList, {gridPos = pos + Vector2(0, -BattleConst.GridSideLength / 2), gridDir = Vector3(0, 0, 1)})
-        end
-        do
-          if not (table.icontains)(truePosList, pos + Vector2(1, 0)) then
-            local tmp = {gridPos = pos + Vector2(BattleConst.GridSideLength / 2, 0), gridDir = Vector3(-1, 0, 0)}
-            ;
-            (table.insert)(sideList, {gridPos = pos + Vector2(BattleConst.GridSideLength / 2, 0), gridDir = Vector3(-1, 0, 0)})
-          end
-          do
-            if not (table.icontains)(truePosList, pos + Vector2(-1, 0)) then
-              local tmp = {gridPos = pos + Vector2(-BattleConst.GridSideLength / 2, 0), gridDir = Vector3(1, 0, 0)}
-              ;
-              (table.insert)(sideList, {gridPos = pos + Vector2(-BattleConst.GridSideLength / 2, 0), gridDir = Vector3(1, 0, 0)})
-            end
-            for _,v in pairs(sideList) do
-              local entity = self:CreateSideEffect(v.gridPos, v.gridDir, v3SideScale, sideEffectID)
-              ;
-              (table.insert)(retEntity, entity)
-            end
-            do
-              -- DECOMPILER ERROR at PC208: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC208: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC208: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC208: LeaveBlock: unexpected jumping out DO_STMT
-
-            end
-          end
-        end
-      end
+    if not table.icontains(truePosList, pos + Vector2(0, 1)) then
+      local tmp = {
+        gridPos = pos + Vector2(0, BattleConst.GridSideLength / 2),
+        gridDir = Vector3(0, 0, -1)
+      }
+      table.insert(sideList, {
+        gridPos = pos + Vector2(0, BattleConst.GridSideLength / 2),
+        gridDir = Vector3(0, 0, -1)
+      })
+    end
+    if not table.icontains(truePosList, pos + Vector2(0, -1)) then
+      local tmp = {
+        gridPos = pos + Vector2(0, -BattleConst.GridSideLength / 2),
+        gridDir = Vector3(0, 0, 1)
+      }
+      table.insert(sideList, {
+        gridPos = pos + Vector2(0, -BattleConst.GridSideLength / 2),
+        gridDir = Vector3(0, 0, 1)
+      })
+    end
+    if not table.icontains(truePosList, pos + Vector2(1, 0)) then
+      local tmp = {
+        gridPos = pos + Vector2(BattleConst.GridSideLength / 2, 0),
+        gridDir = Vector3(-1, 0, 0)
+      }
+      table.insert(sideList, {
+        gridPos = pos + Vector2(BattleConst.GridSideLength / 2, 0),
+        gridDir = Vector3(-1, 0, 0)
+      })
+    end
+    if not table.icontains(truePosList, pos + Vector2(-1, 0)) then
+      local tmp = {
+        gridPos = pos + Vector2(-BattleConst.GridSideLength / 2, 0),
+        gridDir = Vector3(1, 0, 0)
+      }
+      table.insert(sideList, {
+        gridPos = pos + Vector2(-BattleConst.GridSideLength / 2, 0),
+        gridDir = Vector3(1, 0, 0)
+      })
+    end
+    for _, v in pairs(sideList) do
+      local entity = self:CreateSideEffect(v.gridPos, v.gridDir, v3SideScale, sideEffectID)
+      table.insert(retEntity, entity)
     end
   end
   return retEntity
 end
 
--- DECOMPILER ERROR at PC180: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateSideEffect = function(self, girdPos, girdDir, scale, sideEffectID)
-  -- function num : 0_50
-  local sEffect = (self._world):GetService("Effect")
+function RenderEntityService:CreateSideEffect(girdPos, girdDir, scale, sideEffectID)
+  local sEffect = self._world:GetService("Effect")
   local effEntitySide = sEffect:CreateWorldPositionDirectionEffect(sideEffectID, girdPos, girdDir)
   effEntitySide:SetViewVisible(true)
   effEntitySide:SetScale(scale)
   return effEntitySide
 end
 
--- DECOMPILER ERROR at PC183: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.AttackTurn = function(self, source_entity, target_entity)
-  -- function num : 0_51 , upvalues : _ENV
+function RenderEntityService:AttackTurn(source_entity, target_entity)
   if target_entity == nil then
-    (Log.notice)("TurnToTarget ,targetEntity is nil")
-    return 
+    Log.notice("TurnToTarget ,targetEntity is nil")
+    return
   end
   local trapRenderCmpt = source_entity:TrapRender()
   if trapRenderCmpt then
-    return 
+    return
   end
   local buff = source_entity:BuffView()
   if buff:HasBuffEffect(BuffEffectType.Stun) then
-    return 
+    return
   end
-  local cfgsvc = (self._world):GetService("Config")
+  local cfgsvc = self._world:GetService("Config")
   if source_entity:HasMonsterID() then
     local mstcfg = cfgsvc:GetMonsterConfigData()
-    local utilData = (self._world):GetService("UtilData")
+    local utilData = self._world:GetService("UtilData")
     local buffVal = utilData:GetEntityBuffValue(source_entity, "MONSTER_VIEW_CAN_TURN")
     if buffVal == nil then
       local cMonsterID = source_entity:MonsterID()
       if not mstcfg:CanTurn(cMonsterID:GetMonsterID()) then
         return false
       end
-    else
-      do
-        do
-          if buffVal == 0 then
-            return false
-          end
-          if not source_entity:HasBodyArea() then
-            return 
-          end
-          local body_area = (source_entity:BodyArea())._area
-          local boardServiceRender = (self._world):GetService("BoardRender")
-          if #body_area == 4 then
-            local targetGridPos = boardServiceRender:GetEntityRealTimeGridPos(target_entity, true)
-            local sourceGridPos = boardServiceRender:GetEntityRealTimeGridPos(source_entity, true)
-            local tmpV = targetGridPos - sourceGridPos
-            local arrDir = {Vector2.left, Vector2.right, Vector2.up, Vector2.down}
-            local minIdx = 1
-            local min = (Vector2.Angle)(arrDir[minIdx], tmpV)
-            for i = 2, #arrDir do
-              local angle = (Vector2.Angle)(arrDir[i], tmpV)
-              if angle < min then
-                min = angle
-                minIdx = i
-              end
-            end
-            local minDir = arrDir[minIdx]
-            source_entity:SetDirection(minDir)
-          else
-            do
-              local castPos = (source_entity:Location()).Position
-              local holderTf = ((target_entity:View()).ViewWrapper).Transform
-              local targetPos = holderTf.position
-              local bindTf = (GameObjectHelper.FindChild)(holderTf, "EffectSlot")
-              if bindTf then
-                targetPos = bindTf.position
-              end
-              local dir = targetPos - castPos
-              local gridDir = Vector2(dir.x, dir.z)
-              source_entity:SetDirection(gridDir)
-            end
-          end
-        end
+    elseif buffVal == 0 then
+      return false
+    end
+  end
+  if not source_entity:HasBodyArea() then
+    return
+  end
+  local body_area = source_entity:BodyArea()._area
+  local boardServiceRender = self._world:GetService("BoardRender")
+  if #body_area == 4 then
+    local targetGridPos = boardServiceRender:GetEntityRealTimeGridPos(target_entity, true)
+    local sourceGridPos = boardServiceRender:GetEntityRealTimeGridPos(source_entity, true)
+    local tmpV = targetGridPos - sourceGridPos
+    local arrDir = {
+      Vector2.left,
+      Vector2.right,
+      Vector2.up,
+      Vector2.down
+    }
+    local minIdx = 1
+    local min = Vector2.Angle(arrDir[minIdx], tmpV)
+    for i = 2, #arrDir do
+      local angle = Vector2.Angle(arrDir[i], tmpV)
+      if min > angle then
+        min = angle
+        minIdx = i
       end
     end
+    local minDir = arrDir[minIdx]
+    source_entity:SetDirection(minDir)
+  else
+    local castPos = source_entity:Location().Position
+    local holderTf = target_entity:View().ViewWrapper.Transform
+    local targetPos = holderTf.position
+    local bindTf = GameObjectHelper.FindChild(holderTf, "EffectSlot")
+    if bindTf then
+      targetPos = bindTf.position
+    end
+    local dir = targetPos - castPos
+    local gridDir = Vector2(dir.x, dir.z)
+    source_entity:SetDirection(gridDir)
   end
 end
 
--- DECOMPILER ERROR at PC186: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.TurnToTarget = function(self, source_entity, target_entity, forceTurn, damagePos, turnToTargetType)
-  -- function num : 0_52 , upvalues : _ENV
+function RenderEntityService:TurnToTarget(source_entity, target_entity, forceTurn, damagePos, turnToTargetType)
   if source_entity == nil or target_entity == nil or target_entity:HasView() == false then
-    (Log.notice)("TurnToTarget ,targetEntity is nil")
-    return 
+    Log.notice("TurnToTarget ,targetEntity is nil")
+    return
   end
-  local playSkillSvc = (self._world):GetService("PlaySkill")
+  local playSkillSvc = self._world:GetService("PlaySkill")
   if not playSkillSvc:CheckSourceCanTurn(source_entity) and not forceTurn then
-    return 
+    return
   end
   if source_entity:HasTeam() then
     source_entity = source_entity:GetTeamLeaderPetEntity()
   end
-  local castPos = (source_entity:Location()).Position
-  local holderTf = ((target_entity:View()).ViewWrapper).Transform
+  local castPos = source_entity:Location().Position
+  local holderTf = target_entity:View().ViewWrapper.Transform
   local targetPos = holderTf.position
   if damagePos then
     targetPos = damagePos
+  elseif turnToTargetType == TurnToTargetType.PickupPos then
+    local renderPickUpComponent = target_entity:RenderPickUpComponent()
+    local firstPickUpPos = renderPickUpComponent:GetFirstValidPickUpGridPos()
+    local boardServiceRender = self._world:GetService("BoardRender")
+    targetPos = boardServiceRender:GridPos2RenderPos(firstPickUpPos)
   else
-    if turnToTargetType == TurnToTargetType.PickupPos then
-      local renderPickUpComponent = target_entity:RenderPickUpComponent()
-      local firstPickUpPos = renderPickUpComponent:GetFirstValidPickUpGridPos()
-      local boardServiceRender = (self._world):GetService("BoardRender")
-      targetPos = boardServiceRender:GridPos2RenderPos(firstPickUpPos)
-    else
-      do
-        do
-          local bindTf = (GameObjectHelper.FindChild)(holderTf, "EffectSlot")
-          if bindTf then
-            targetPos = bindTf.position
-          end
-          local dir = targetPos - castPos
-          local gridDir = Vector2(dir.x, dir.z)
-          source_entity:SetDirection(gridDir)
-        end
-      end
+    local bindTf = GameObjectHelper.FindChild(holderTf, "EffectSlot")
+    if bindTf then
+      targetPos = bindTf.position
     end
   end
+  local dir = targetPos - castPos
+  local gridDir = Vector2(dir.x, dir.z)
+  source_entity:SetDirection(gridDir)
 end
 
--- DECOMPILER ERROR at PC189: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.TurnToTargetGrid = function(self, sourceEntity, targetEntity, dirOffset)
-  -- function num : 0_53 , upvalues : _ENV
+function RenderEntityService:TurnToTargetGrid(sourceEntity, targetEntity, dirOffset)
   if sourceEntity == nil or targetEntity == nil then
-    (Log.notice)("TurnToTarget, entity is nil")
-    return 
+    Log.notice("TurnToTarget, entity is nil")
+    return
   end
-  local playSkillSvc = (self._world):GetService("PlaySkill")
+  local playSkillSvc = self._world:GetService("PlaySkill")
   if not playSkillSvc:CheckSourceCanTurn(sourceEntity) then
-    return 
+    return
   end
   if sourceEntity:HasTeam() then
     sourceEntity = sourceEntity:GetTeamLeaderPetEntity()
   end
-  local casterPos = (sourceEntity:Location()).Position
+  local casterPos = sourceEntity:Location().Position
   local targetPosVec2 = targetEntity:GetGridPosition()
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local targetPos = boardServiceRender:GridPosition2LocationPos(targetPosVec2, targetEntity)
   local dir = targetPos - casterPos
   local gridDir = Vector2(dir.x, dir.z)
@@ -1652,17 +1375,14 @@ RenderEntityService.TurnToTargetGrid = function(self, sourceEntity, targetEntity
   sourceEntity:SetDirection(gridDir)
 end
 
--- DECOMPILER ERROR at PC192: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateChessPet = function(self)
-  -- function num : 0_54 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local res = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.Loading)
+function RenderEntityService:CreateChessPet()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local res = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.Loading)
   local chessPetResults = res:GetChessPetCreationResult()
-  for i,v in ipairs(chessPetResults) do
+  for i, v in ipairs(chessPetResults) do
     local chessPetRes = v
     local chessPetEntityID = chessPetRes:GetChessPetEntityIID()
-    local chessPetEntity = (self._world):GetEntityByID(chessPetEntityID)
+    local chessPetEntity = self._world:GetEntityByID(chessPetEntityID)
     local resPath = chessPetRes:GetChessPetResPath()
     chessPetEntity:ReplaceAsset(NativeUnityPrefabAsset:New(resPath, false))
     local hpCmpt = chessPetEntity:HP()
@@ -1672,8 +1392,7 @@ RenderEntityService.CreateChessPet = function(self)
     local hpOffset = chessPetRes:GetChessPetHPOffset()
     hpCmpt:SetHPOffset(hpOffset)
     local element = chessPetRes:GetChessPetElement()
-    ;
-    (TaskManager:GetInstance()):CoreGameStartTask((InnerGameHelperRender:GetInstance()).SetHpSliderElementIcon, InnerGameHelperRender:GetInstance(), hpSliderEntity, element)
+    TaskManager:GetInstance():CoreGameStartTask(InnerGameHelperRender:GetInstance().SetHpSliderElementIcon, InnerGameHelperRender:GetInstance(), hpSliderEntity, element)
     local hp = chessPetRes:GetChessPetHP()
     local maxHP = chessPetRes:GetChessPetMaxHP()
     chessPetEntity:ReplaceRedAndMaxHP(hp, maxHP)
@@ -1686,17 +1405,14 @@ RenderEntityService.CreateChessPet = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC195: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateTrapAreaOutlineEntity = function(self, gridList, resPath)
-  -- function num : 0_55 , upvalues : _ENV
+function RenderEntityService:CreateTrapAreaOutlineEntity(gridList, resPath)
   local gridIndexBoolDic = {}
-  for _,pos in ipairs(gridList) do
-    gridIndexBoolDic[(Vector2.Pos2Index)(pos)] = true
+  for _, pos in ipairs(gridList) do
+    gridIndexBoolDic[Vector2.Pos2Index(pos)] = true
   end
   local tTaskIDs = {}
-  for _,pos in ipairs(gridList) do
-    local posIndex = (Vector2.Pos2Index)(pos)
+  for _, pos in ipairs(gridList) do
+    local posIndex = Vector2.Pos2Index(pos)
     if not gridIndexBoolDic[posIndex + 100] then
       self:_CreateTrapAreaOutlineEntityAtPos(resPath, pos, Vector2.right)
     end
@@ -1712,36 +1428,25 @@ RenderEntityService.CreateTrapAreaOutlineEntity = function(self, gridList, resPa
   end
 end
 
--- DECOMPILER ERROR at PC198: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService._CreateTrapAreaOutlineEntityAtPos = function(self, resPath, v2Pos, v2Dir)
-  -- function num : 0_56 , upvalues : _ENV
-  local entityPoolService = (self._world):GetService("EntityPool")
+function RenderEntityService:_CreateTrapAreaOutlineEntityAtPos(resPath, v2Pos, v2Dir)
+  local entityPoolService = self._world:GetService("EntityPool")
   local eOutline = self:CreateRenderEntity(EntityConfigIDRender.TrapAreaOutline)
   eOutline:ReplaceAsset(NativeUnityPrefabAsset:New(resPath))
   eOutline:SetLocation(v2Pos, v2Dir)
   return eOutline
 end
 
--- DECOMPILER ERROR at PC201: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.ClearTrapAreaOutlineEntity = function(self)
-  -- function num : 0_57
-  self:DestroyRenderEntities(((self._world).BW_WEMatchers).TrapAreaElement)
+function RenderEntityService:ClearTrapAreaOutlineEntity()
+  self:DestroyRenderEntities(self._world.BW_WEMatchers.TrapAreaElement)
 end
 
--- DECOMPILER ERROR at PC204: Confused about usage of register: R2 in 'UnsetPending'
-
-RenderEntityService.CreateBoardPushGridEntity = function(self)
-  -- function num : 0_58 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
+function RenderEntityService:CreateBoardPushGridEntity()
+  local utilData = self._world:GetService("UtilData")
   local gridEntityData = utilData:GetReplicaPushGridEntityData()
   if gridEntityData then
-    local boardServiceRender = (self._world):GetService("BoardRender")
-    for pos,pieceType in pairs(gridEntityData) do
+    local boardServiceRender = self._world:GetService("BoardRender")
+    for pos, pieceType in pairs(gridEntityData) do
       boardServiceRender:CreatePushBoardGridFakeEntity(pieceType, pos, false)
     end
   end
 end
-
-

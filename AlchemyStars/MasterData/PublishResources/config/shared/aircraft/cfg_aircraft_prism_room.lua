@@ -1,19 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/aircraft/cfg_aircraft_prism_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ExMaxPhysic = 2, AddPhysicRecover = 3, LocalStorage = 4, LocalRecover = 5}
+local key = {
+  ID = 1,
+  ExMaxPhysic = 2,
+  AddPhysicRecover = 3,
+  LocalStorage = 4,
+  LocalRecover = 5
+}
 local config = {
-[7105001] = {7105001, 0, 0, 120, 1028.5714285714}
-, 
-[7105002] = {7105002, 0, 0, 140, 792.66055045872}
-, 
-[7105003] = {7105003, 20, 0, 160, 751.30434782609}
-, 
-[7105004] = {7105004, 20, 0, 180, 640}
-, 
-[7105005] = {7105005, 40, 0, 200, 612.76595744681}
+  [7105001] = {
+    7105001,
+    0,
+    0,
+    120,
+    1028.57142857143
+  },
+  [7105002] = {
+    7105002,
+    0,
+    0,
+    140,
+    792.660550458716
+  },
+  [7105003] = {
+    7105003,
+    20,
+    0,
+    160,
+    751.304347826087
+  },
+  [7105004] = {
+    7105004,
+    20,
+    0,
+    180,
+    640
+  },
+  [7105005] = {
+    7105005,
+    40,
+    0,
+    200,
+    612.765957446809
+  }
 }
 return config, "ID", key
-

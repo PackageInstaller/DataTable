@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_blh/_Review/ui_haute_couture_duplicate_reward_blh.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDuplicateRewardBLH", UIHauteCoutureDrawDuplicateRewardBase)
 UIHauteCoutureDuplicateRewardBLH = UIHauteCoutureDuplicateRewardBLH
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDuplicateRewardBLH.GetItemClassName = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHauteCoutureDuplicateRewardBLH:GetItemClassName()
   return UIHauteCoutureDuplicateItemBLH._className
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDuplicateRewardBLH.GetGetItemUIInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCoutureDuplicateRewardBLH:GetGetItemUIInfo()
   return "UIHauteCoutureDrawGetItemCellDetailBLH.prefab", UIHauteCoutureDrawGetItemCellDetailBLH._className
 end
-
-

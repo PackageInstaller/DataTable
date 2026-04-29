@@ -1,94 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_pop_star.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_PopStar", Object)
 SkillEffectCalc_PopStar = SkillEffectCalc_PopStar
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_PopStar.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_PopStar:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PopStar.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_PopStar:DoSkillEffectCalculator(skillEffectCalcParam)
   local popStarParam = skillEffectCalcParam:GetSkillEffectParam()
   local skillRange = skillEffectCalcParam:GetSkillRange()
   local pieceList = self:_GetPopPieceList(popStarParam, skillRange)
   if not pieceList or #pieceList == 0 then
-    return 
+    return
   end
-  local popStarSvc = nil
-  if (self._world):MatchType() == MatchType.MT_PopStar then
-    popStarSvc = (self._world):GetService("PopStarLogic")
+  local popStarSvc
+  if self._world:MatchType() == MatchType.MT_PopStar then
+    popStarSvc = self._world:GetService("PopStarLogic")
+  elseif self._world:MatchType() == MatchType.MT_PopStarPro then
+    popStarSvc = self._world:GetService("PopStarProLogic")
   else
-    if (self._world):MatchType() == MatchType.MT_PopStarPro then
-      popStarSvc = (self._world):GetService("PopStarProLogic")
-    else
-      return 
-    end
+    return
   end
   local dataPopResult = popStarSvc:CalculatePopPieces(pieceList)
   local result = SkillEffectPopStarResult:New(dataPopResult)
   return {result}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PopStar._GetPopPieceList = function(self, popStarParam, skillRange)
-  -- function num : 0_2 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function SkillEffectCalc_PopStar:_GetPopPieceList(popStarParam, skillRange)
+  local utilDataSvc = self._world:GetService("UtilData")
   local pieceTypeList = popStarParam:GetPieceTypeList()
   local matchTypePosList = {}
-  for _,pos in ipairs(skillRange) do
+  for _, pos in ipairs(skillRange) do
     local pieceType = utilDataSvc:GetPieceType(pos)
-    if (table.icontains)(pieceTypeList, pieceType) and not (table.icontains)(matchTypePosList, pos) then
+    if table.icontains(pieceTypeList, pieceType) and not table.icontains(matchTypePosList, pos) then
       matchTypePosList[#matchTypePosList + 1] = pos
     end
   end
   if #matchTypePosList == 0 then
-    return 
+    return
   end
   local popCount = popStarParam:GetPopCount()
   local countRandomTab = popStarParam:GetCountRandomTab()
   if not popCount and not countRandomTab then
     return matchTypePosList
   end
-  local randomSvc = (self._world):GetService("RandomLogic")
+  local randomSvc = self._world:GetService("RandomLogic")
   if countRandomTab then
     local min = countRandomTab.min
     local max = countRandomTab.max
     popCount = randomSvc:LogicRand(min, max)
   end
-  do
-    if #matchTypePosList <= popCount then
-      return matchTypePosList
-    end
-    local posList = {}
-    local needRandom = popStarParam:NeedRandom()
-    while 1 do
-      -- DECOMPILER ERROR at PC75: Unhandled construct in 'MakeBoolean' P1
-
-      if needRandom and #posList < popCount then
-        do
-          local index = randomSvc:LogicRand(1, #matchTypePosList)
-          posList[#posList + 1] = matchTypePosList[index]
-          ;
-          (table.remove)(matchTypePosList, index)
-          -- DECOMPILER ERROR at PC84: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC84: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
-    end
-    posList = (table.sub)(matchTypePosList, 1, popCount)
-    return posList
+  if popCount >= #matchTypePosList then
+    return matchTypePosList
   end
+  local posList = {}
+  local needRandom = popStarParam:NeedRandom()
+  if needRandom then
+    while popCount > #posList do
+      local index = randomSvc:LogicRand(1, #matchTypePosList)
+      posList[#posList + 1] = matchTypePosList[index]
+      table.remove(matchTypePosList, index)
+    end
+  else
+    posList = table.sub(matchTypePosList, 1, popCount)
+  end
+  return posList
 end
-
-

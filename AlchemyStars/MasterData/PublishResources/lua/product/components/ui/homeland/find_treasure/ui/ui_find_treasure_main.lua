@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/find_treasure/ui/ui_find_treasure_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFindTreasureMain", UIController)
 UIFindTreasureMain = UIFindTreasureMain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFindTreasureMain.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PlayerControllerUIStatus, true)
-  self._maskBGCanvas = (((((self:GetGameObject()).transform).parent).parent):Find("BGMaskCanvas")).gameObject
+function UIFindTreasureMain:OnShow(uiParams)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PlayerControllerUIStatus, true)
+  self._maskBGCanvas = self:GetGameObject().transform.parent.parent:Find("BGMaskCanvas").gameObject
   if self._maskBGCanvas then
-    (self._maskBGCanvas):SetActive(false)
+    self._maskBGCanvas:SetActive(false)
   end
   self._cdPanel = self:GetGameObject("CDPanel")
   self._cdPanelImg = self:GetUIComponent("Image", "CDPanel")
@@ -25,15 +18,15 @@ UIFindTreasureMain.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.FindTreasureFailure, self.OnFindTreasureFailure)
   self:AttachEvent(GameEventType.FindTreasureSuccess, self.OnFindTreasureSuccess)
   self:AttachEvent(GameEventType.MinimapSwitch, self.MinimapSwitch)
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
   local characterManager = homelandClient:CharacterManager()
   if characterManager then
     self._playerTran = characterManager:GetCharacterTransform()
   end
   self._findTreasureManager = homelandClient:FindTreasureManager()
-  self._gameData = (self._findTreasureManager):StartFindTreasure()
-  self._time = (self._gameData):GetGameTotalTime()
+  self._gameData = self._findTreasureManager:StartFindTreasure()
+  self._time = self._gameData:GetGameTotalTime()
   self._halfTime = self._time / 2
   self._lastTime = 30
   self._cdTime = 0
@@ -41,53 +34,41 @@ UIFindTreasureMain.OnShow = function(self, uiParams)
   self._pause = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureMain.MinimapSwitch = function(self, status)
-  -- function num : 0_1 , upvalues : _ENV
+function UIFindTreasureMain:MinimapSwitch(status)
   if status == MinimapStatus.Big then
-    (self.SkillGo):SetActive(false)
-    ;
-    (self.BtnReturnGo):SetActive(false)
+    self.SkillGo:SetActive(false)
+    self.BtnReturnGo:SetActive(false)
   else
-    ;
-    (self.SkillGo):SetActive(true)
-    ;
-    (self.BtnReturnGo):SetActive(true)
+    self.SkillGo:SetActive(true)
+    self.BtnReturnGo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureMain.OnHide = function(self)
-  -- function num : 0_2
+function UIFindTreasureMain:OnHide()
   if self._maskBGCanvas then
-    (self._maskBGCanvas):SetActive(true)
+    self._maskBGCanvas:SetActive(true)
   end
   for i = 1, #self._skills do
-    ((self._skills)[i]):Destroy()
+    self._skills[i]:Destroy()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureMain.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_3
+function UIFindTreasureMain:OnUpdate(deltaTimeMS)
   if self._time == nil then
-    return 
+    return
   end
   if self._time <= 0 then
-    return 
+    return
   end
   if self._pause then
-    return 
+    return
   end
   self._time = self._time - deltaTimeMS / 1000
   if self._time <= 0 then
     self._time = 0
   end
   self:RefreshGameTimeUI()
-  if self._cdTime > 0 then
+  if 0 < self._cdTime then
     self._cdTime = self._cdTime - deltaTimeMS / 1000
   else
     self._cdTime = 0
@@ -95,167 +76,119 @@ UIFindTreasureMain.OnUpdate = function(self, deltaTimeMS)
   self:RefreshCDUI()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureMain.RefreshGameTimeUI = function(self)
-  -- function num : 0_4
-  (self._timeLabel):SetText(self:GetTimeRemainStr())
+function UIFindTreasureMain:RefreshGameTimeUI()
+  self._timeLabel:SetText(self:GetTimeRemainStr())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureMain.GetTimeRemainStr = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIFindTreasureMain:GetTimeRemainStr()
   local timeStr = ""
-  local min = (math.floor)(self._time / 60)
-  if min >= 0 and min < 10 then
+  local min = math.floor(self._time / 60)
+  if 0 <= min and min < 10 then
     timeStr = timeStr .. "0" .. min
-  else
-    if min >= 10 then
-      timeStr = timeStr .. min
-    end
+  elseif 10 <= min then
+    timeStr = timeStr .. min
   end
   timeStr = timeStr .. ":"
-  local seconds = (math.floor)(self._time - min * 60)
+  local seconds = math.floor(self._time - min * 60)
   if seconds < 0 then
     seconds = 0
   end
   if seconds == 0 and min == 0 then
-    return "<color=#ECECEC>" .. (StringTable.Get)("str_homeland_find_treasure_time_reach_tips") .. "</color>"
+    return "<color=#ECECEC>" .. StringTable.Get("str_homeland_find_treasure_time_reach_tips") .. "</color>"
   end
-  if seconds >= 0 and seconds < 10 then
+  if 0 <= seconds and seconds < 10 then
     timeStr = timeStr .. "0" .. seconds
-  else
-    if seconds >= 10 then
-      timeStr = timeStr .. seconds
-    end
+  elseif 10 <= seconds then
+    timeStr = timeStr .. seconds
   end
   if self._time <= 0 then
-    return "<color=#ECECEC>" .. (StringTable.Get)("str_homeland_find_treasure_time_reach_tips") .. "</color>"
+    return "<color=#ECECEC>" .. StringTable.Get("str_homeland_find_treasure_time_reach_tips") .. "</color>"
   end
   if self._time <= self._lastTime then
     timeStr = "<color=#FE5D5D>" .. timeStr .. "</color>"
     if self._isPlayTimeAnim == false then
-      (self._anim):Play("uieffanim_N17_UIFindTreasureMain")
+      self._anim:Play("uieffanim_N17_UIFindTreasureMain")
       self._isPlayTimeAnim = true
     end
+  elseif self._time <= self._halfTime then
+    timeStr = "<color=#F4E035>" .. timeStr .. "</color>"
   else
-    if self._time <= self._halfTime then
-      timeStr = "<color=#F4E035>" .. timeStr .. "</color>"
-    else
-      timeStr = "<color=#ECECEC>" .. timeStr .. "</color>"
-    end
+    timeStr = "<color=#ECECEC>" .. timeStr .. "</color>"
   end
   return timeStr
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureMain.RefreshCDUI = function(self)
-  -- function num : 0_6
+function UIFindTreasureMain:RefreshCDUI()
   if self._cdTime > 0 then
-    (self._cdPanel):SetActive(true)
-    ;
-    (self._cdLabel):SetText(self:GetCDTimeStr())
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._cdPanelImg).fillAmount = self._cdTime / (self._gameData):SkillCD()
+    self._cdPanel:SetActive(true)
+    self._cdLabel:SetText(self:GetCDTimeStr())
+    self._cdPanelImg.fillAmount = self._cdTime / self._gameData:SkillCD()
   else
-    ;
-    (self._cdPanel):SetActive(false)
+    self._cdPanel:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureMain.GetCDTimeStr = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  return (string.format)("%.1f", self._cdTime)
+function UIFindTreasureMain:GetCDTimeStr()
+  return string.format("%.1f", self._cdTime)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureMain.ReleaseSkill = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIFindTreasureMain:ReleaseSkill()
   if self._cdTime > 0 then
-    return 
+    return
   end
-  self._cdTime = (self._gameData):SkillCD()
+  self._cdTime = self._gameData:SkillCD()
   local skill = FindTreasureSkill:New()
-  local findTreasure = (self._findTreasureManager):GetFindTreasure()
+  local findTreasure = self._findTreasureManager:GetFindTreasure()
   if findTreasure then
     local targetPos = findTreasure:GetTreasurePosition()
     skill:ReleaseSkill(self._playerTran, targetPos)
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._skills)[#self._skills + 1] = skill
+    self._skills[#self._skills + 1] = skill
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureMain.SkillBtnOnClick = function(self)
-  -- function num : 0_9
+function UIFindTreasureMain:SkillBtnOnClick()
   self:ReleaseSkill()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureMain.ExitGame = function(self)
-  -- function num : 0_10
-  (self._findTreasureManager):ExitFindTreasure()
+function UIFindTreasureMain:ExitGame()
+  self._findTreasureManager:ExitFindTreasure()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureMain.BtnReturnOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function UIFindTreasureMain:BtnReturnOnClick()
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
-  local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+  local characterController = homelandClient:CharacterManager():MainCharacterController()
   characterController:SetForbiddenMove(true)
-  local btn1Data = {(StringTable.Get)("str_homeland_find_treasure_cancel_btn"), function(param)
-    -- function num : 0_11_0 , upvalues : characterController
-    characterController:SetForbiddenMove(false)
-  end
-}
-  local btn2Data = {(StringTable.Get)("str_homeland_find_treasure_confirm_btn"), function(param)
-    -- function num : 0_11_1 , upvalues : self, _ENV, characterController
-    self:CloseDialog()
-    self:ExitGame()
-    ;
-    (((GameGlobal.GetUIModule)(HomelandModule)):GetClient()):PlayHomelandBgm()
-    characterController:SetForbiddenMove(false)
-  end
-}
-  self:ShowDialog("UIHomelandMessageBox", nil, (StringTable.Get)("str_homeland_find_treasure_giveup_game_tips"), btn1Data, btn2Data, true)
+  local btn1Data = {
+    StringTable.Get("str_homeland_find_treasure_cancel_btn"),
+    function(param)
+      characterController:SetForbiddenMove(false)
+    end
+  }
+  local btn2Data = {
+    StringTable.Get("str_homeland_find_treasure_confirm_btn"),
+    function(param)
+      self:CloseDialog()
+      self:ExitGame()
+      GameGlobal.GetUIModule(HomelandModule):GetClient():PlayHomelandBgm()
+      characterController:SetForbiddenMove(false)
+    end
+  }
+  self:ShowDialog("UIHomelandMessageBox", nil, StringTable.Get("str_homeland_find_treasure_giveup_game_tips"), btn1Data, btn2Data, true)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureMain.OnFindTreasureFailure = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):CloseDialog("UIHomelandMessageBox")
+function UIFindTreasureMain:OnFindTreasureFailure()
+  GameGlobal.UIStateManager():CloseDialog("UIHomelandMessageBox")
   self:StartTask(self.FindTreasureFailureAnim, self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureMain.FindTreasureFailureAnim = function(self, TT)
-  -- function num : 0_13
+function UIFindTreasureMain:FindTreasureFailureAnim(TT)
   self:Lock("UIFindTreasureMain_FindTreasureFailureAnim")
   self:ShowDialog("UIFindTreasureFailure", self._gameData)
   self:UnLock("UIFindTreasureMain_FindTreasureFailureAnim")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureMain.OnFindTreasureSuccess = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):CloseDialog("UIHomelandMessageBox")
+function UIFindTreasureMain:OnFindTreasureSuccess()
+  GameGlobal.UIStateManager():CloseDialog("UIHomelandMessageBox")
   self:ShowDialog("UIFindTreasureSuccess", self._gameData)
 end
-
-

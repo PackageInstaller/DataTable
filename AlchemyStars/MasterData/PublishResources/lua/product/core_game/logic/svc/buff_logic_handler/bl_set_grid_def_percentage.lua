@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_grid_def_percentage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetGridDefPercentage", BuffLogicBase)
 BuffLogicSetGridDefPercentage = BuffLogicSetGridDefPercentage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetGridDefPercentage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetGridDefPercentage:Constructor(buffInstance, logicParam)
   self._rate = logicParam.rate
   self._pos = logicParam.pos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetGridDefPercentage.DoLogic = function(self)
-  -- function num : 0_1
+function BuffLogicSetGridDefPercentage:DoLogic()
   local cBuff = self:GetBuffComponent()
   cBuff:SetBuffValue("DEFENDER_DIRECTIONAL_DEF_POS_RATE", self._rate)
   cBuff:SetBuffValue("DEFENDER_DIRECTIONAL_DEF_POS_ARRAY", self._pos)
@@ -25,13 +15,9 @@ end
 
 _class("BuffLogicRevertGridDefPercentage", BuffLogicBase)
 BuffLogicRevertGridDefPercentage = BuffLogicRevertGridDefPercentage
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRevertGridDefPercentage.DoLogic = function(self)
-  -- function num : 0_2
+function BuffLogicRevertGridDefPercentage:DoLogic()
   local cBuff = self:GetBuffComponent()
   cBuff:SetBuffValue("DEFENDER_DIRECTIONAL_DEF_POS_RATE", nil)
   cBuff:SetBuffValue("DEFENDER_DIRECTIONAL_DEF_POS_ARRAY", nil)
 end
-
-

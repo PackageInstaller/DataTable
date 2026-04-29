@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n17/lottery/ui_n17_lottery_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN17LotteryController", UIController)
 UIN17LotteryController = UIN17LotteryController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN17LotteryController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN17LotteryController:Constructor()
   self.clientHelper = ClientCampaignDrawShop:New()
   self.singleTimes = 1
   self.multiTimes = 10
@@ -18,34 +11,27 @@ UIN17LotteryController.Constructor = function(self)
   self.jackpotCount = 0
   self.unlockBoxs = {}
   self._curPageIndex = 1
-  self._petModule = (GameGlobal.GetModule)(PetModule)
-  self._uiModule = ((GameGlobal.GetModule)(RoleModule)).uiModule
+  self._petModule = GameGlobal.GetModule(PetModule)
+  self._uiModule = GameGlobal.GetModule(RoleModule).uiModule
   self._atlas = self:GetAsset("UIN17.spriteatlas", LoadType.SpriteAtlas)
   self._timeEvents = {}
   self._lotteryState = LotteryState.None
   self._playJackpotAnim = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIN17LotteryController:LoadDataOnEnter(TT, res, uiParams)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N17, ECampaignN17ComponentID.ECAMPAIGN_N17_LOTTERY)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N17, ECampaignN17ComponentID.ECAMPAIGN_N17_LOTTERY)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  self._lotteryComponent = (self._campaign):GetComponent(ECampaignN17ComponentID.ECAMPAIGN_N17_LOTTERY)
-  self._lotteryComponentInfo = (self._campaign):GetComponentInfo(ECampaignN17ComponentID.ECAMPAIGN_N17_LOTTERY)
+  self._lotteryComponent = self._campaign:GetComponent(ECampaignN17ComponentID.ECAMPAIGN_N17_LOTTERY)
+  self._lotteryComponentInfo = self._campaign:GetComponentInfo(ECampaignN17ComponentID.ECAMPAIGN_N17_LOTTERY)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN17LotteryController:OnShow(uiParams)
   self._closeCallBack = uiParams[1]
   self:_GetComponents()
   self:_InitData(true, true)
@@ -53,68 +39,46 @@ UIN17LotteryController.OnShow = function(self, uiParams)
   self:_InitAwardListUi()
   self:_SetAwardListToPageIndex(self._initPageIndex)
   self:_AttachEvents()
-  ;
-  ((self._campaign):GetLocalProcess()):OnOpenGetIntegratedCalculation()
+  self._campaign:GetLocalProcess():OnOpenGetIntegratedCalculation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (UIWidgetHelper.SetSpineLoad)(self, "_spineBg")
-  ;
-  (UIWidgetHelper.SetSpineLoad)(self, "_spineNpc")
+function UIN17LotteryController:OnHide()
+  UIWidgetHelper.SetSpineLoad(self, "_spineBg")
+  UIWidgetHelper.SetSpineLoad(self, "_spineNpc")
   if self._drawTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._drawTask)
+    GameGlobal.TaskManager():KillTask(self._drawTask)
     self._drawTask = nil
   end
-  for key,value in pairs(self._timeEvents) do
-    ((GameGlobal.Timer)()):CancelEvent(value)
+  for key, value in pairs(self._timeEvents) do
+    GameGlobal.Timer():CancelEvent(value)
   end
   if self._closeCallBack then
-    (self._closeCallBack)()
+    self._closeCallBack()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._AttachEvents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN17LotteryController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.ItemCountChanged, self._OnItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._CheckActivityClose = function(self, id)
-  -- function num : 0_5 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIN17LotteryController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._ForceRefresh = function(self, isOpenNew)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN17LotteryController:_ForceRefresh(isOpenNew)
   self:Lock("UIN17LotteryController:_ForceRefresh")
   self._playJackpotAnim = false
   self:_InitData(isOpenNew)
   self:_SetAwardListToPageIndex(self._initPageIndex)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._timeEvents)._delayUnlockTimeEvent = ((GameGlobal.Timer)()):AddEvent(1, function()
-    -- function num : 0_6_0 , upvalues : self
+  self._timeEvents._delayUnlockTimeEvent = GameGlobal.Timer():AddEvent(1, function()
     self:UnLock("UIN17LotteryController:_ForceRefresh")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._GetComponents = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN17LotteryController:_GetComponents()
   self.awardList = self:GetUIComponent("UIDynamicScrollView", "AwardList")
   self.noRestItemTipsCoverGo = self:GetGameObject("NoRestItemTipsCover")
   self.drawSingleBtn = self:GetGameObject("DrawSingleBtn")
@@ -131,132 +95,85 @@ UIN17LotteryController._GetComponents = function(self)
   self.pointNumText = self:GetUIComponent("UILocalizationText", "PointNumText")
   local backBtnGen = self:GetUIComponent("UISelectObjectPath", "TopLeft")
   self.backBtns = backBtnGen:SpawnObject("UICommonTopButton")
-  ;
-  (self.backBtns):SetData(function()
-    -- function num : 0_7_0 , upvalues : self
+  self.backBtns:SetData(function()
     self:CloseDialogWithAnim()
-  end
-, nil, function()
-    -- function num : 0_7_1 , upvalues : self
+  end, nil, function()
     self:ShowMainUI()
-  end
-)
-  self.grayColor = Color(0.3921568627451, 0.3921568627451, 0.3921568627451)
-  self.clientCfg = (Cfg.cfg_activity_draw_shop_client)[(self._campaign)._id]
+  end)
+  self.grayColor = Color(0.39215686274509803, 0.39215686274509803, 0.39215686274509803)
+  self.clientCfg = Cfg.cfg_activity_draw_shop_client[self._campaign._id]
   self.slideAreaGo = self:GetGameObject("SpineArea")
   self.selfRect = self:GetUIComponent("RectTransform", "SpineArea")
-  self.etl = (UICustomUIEventListener.Get)(self.slideAreaGo)
+  self.etl = UICustomUIEventListener.Get(self.slideAreaGo)
   self:RegUIEventTriggerListener(function(ped)
-    -- function num : 0_7_2 , upvalues : self
     self:OnBeginDrag(ped)
-  end
-, function(ped)
-    -- function num : 0_7_3 , upvalues : self
+  end, function(ped)
     self:OnDrag(ped)
-  end
-, function(ped)
-    -- function num : 0_7_4 , upvalues : self
+  end, function(ped)
     self:OnEndDrag(ped)
-  end
-)
+  end)
   self.pointParentGO = self:GetGameObject("BoxImgPosPoint")
   self.points = {}
   for index = 1, 10 do
-    local trans = (GameObjectHelper.FindChild)((self.pointParentGO).transform, "p" .. index)
-    ;
-    (trans.gameObject):SetActive(false)
-    -- DECOMPILER ERROR at PC132: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.points)[index] = {}
-    -- DECOMPILER ERROR at PC135: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self.points)[index]).trans = trans
-    -- DECOMPILER ERROR at PC141: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self.points)[index]).rect = trans:GetComponent("RectTransform")
-    -- DECOMPILER ERROR at PC147: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self.points)[index]).image = trans:GetComponent("Image")
+    local trans = GameObjectHelper.FindChild(self.pointParentGO.transform, "p" .. index)
+    trans.gameObject:SetActive(false)
+    self.points[index] = {}
+    self.points[index].trans = trans
+    self.points[index].rect = trans:GetComponent("RectTransform")
+    self.points[index].image = trans:GetComponent("Image")
   end
   self._pageValue = self:GetUIComponent("UILocalizationText", "PageValue")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._SetStencil = function(self, rawImage)
-  -- function num : 0_8
-  (rawImage.materialForRendering):SetFloat("_Stencil", 17)
-  ;
-  (rawImage.materialForRendering):SetFloat("_StencilComp", 3)
-  ;
-  (rawImage.materialForRendering):SetFloat("_StencilOp", 0)
+function UIN17LotteryController:_SetStencil(rawImage)
+  rawImage.materialForRendering:SetFloat("_Stencil", 17)
+  rawImage.materialForRendering:SetFloat("_StencilComp", 3)
+  rawImage.materialForRendering:SetFloat("_StencilOp", 0)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.RegUIEventTriggerListener = function(self, onBeginDrag, onDrag, onEndDrag)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN17LotteryController:RegUIEventTriggerListener(onBeginDrag, onDrag, onEndDrag)
   self:AddUICustomEventListener(self.etl, UIEvent.BeginDrag, onBeginDrag)
   self:AddUICustomEventListener(self.etl, UIEvent.Drag, onDrag)
   self:AddUICustomEventListener(self.etl, UIEvent.EndDrag, onEndDrag)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.OnBeginDrag = function(self, ped)
-  -- function num : 0_10 , upvalues : _ENV
-  local deltaX = (ped.delta).x
+function UIN17LotteryController:OnBeginDrag(ped)
+  local deltaX = ped.delta.x
   if self:IsEdge(deltaX) then
-    return 
+    return
   end
-  local pos = (UIN17LotteryController.ScreenPointToLocalPointInRectangle)(self.selfRect, ped)
+  local pos = UIN17LotteryController.ScreenPointToLocalPointInRectangle(self.selfRect, ped)
   self._xBegainDrag = pos.x
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.OnDrag = function(self, ped)
-  -- function num : 0_11 , upvalues : _ENV
-  local pos = (UIN17LotteryController.ScreenPointToLocalPointInRectangle)(self.selfRect, ped)
+function UIN17LotteryController:OnDrag(ped)
+  local pos = UIN17LotteryController.ScreenPointToLocalPointInRectangle(self.selfRect, ped)
   self._xCurDrag = pos.x
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.OnEndDrag = function(self, ped)
-  -- function num : 0_12
+function UIN17LotteryController:OnEndDrag(ped)
   self:InitDragField()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.OnPress = function(self)
-  -- function num : 0_13
+function UIN17LotteryController:OnPress()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._UpdateDragSwitch = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  if not (self.etl).IsDragging then
-    return 
+function UIN17LotteryController:_UpdateDragSwitch()
+  if not self.etl.IsDragging then
+    return
   end
   if not self._xBegainDrag or not self._xCurDrag then
-    return 
+    return
   end
   local deltaX = self._xCurDrag - self._xBegainDrag
   if deltaX == 0 then
-    return 
+    return
   end
   if self:IsEdge(deltaX) then
-    return 
+    return
   end
-  local absDeltaX = (math.abs)(deltaX)
-  if absDeltaX > 100 then
+  local absDeltaX = math.abs(deltaX)
+  if 100 < absDeltaX then
     self:OnEndDrag()
     if deltaX < 0 then
       self:BoxRightBtnOnClick()
@@ -266,19 +183,13 @@ UIN17LotteryController._UpdateDragSwitch = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.ScreenPointToLocalPointInRectangle = function(rect, ped)
-  -- function num : 0_15 , upvalues : _ENV
-  local res, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(rect, ped.position, ped.pressEventCamera, nil)
+function UIN17LotteryController.ScreenPointToLocalPointInRectangle(rect, ped)
+  local res, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(rect, ped.position, ped.pressEventCamera, nil)
   return pos
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.IsEdge = function(self, deltaX)
-  -- function num : 0_16
-  if deltaX > 0 and self._curPageIndex == 1 then
+function UIN17LotteryController:IsEdge(deltaX)
+  if 0 < deltaX and self._curPageIndex == 1 then
     return true
   end
   if deltaX < 0 and self._curPageIndex == self.jackpotCount then
@@ -287,95 +198,66 @@ UIN17LotteryController.IsEdge = function(self, deltaX)
   return false
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.InitDragField = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN17LotteryController:InitDragField()
   self._xBegainDrag = nil
   self._xCurDrag = nil
   self._posBGLogo = Vector2(-667, 0)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._InitData = function(self, isOpenNew, isOnShow)
-  -- function num : 0_18 , upvalues : _ENV
+function UIN17LotteryController:_InitData(isOpenNew, isOnShow)
   self.unlockBoxs = {}
   self.uiData = {}
   if self._lotteryComponent and self._lotteryComponentInfo then
-    self.currencyId = (self._lotteryComponentInfo).m_cost_item_id
-    self.singlePrice = (self._lotteryComponentInfo).m_cost_count
-    self.multiTimes = (self._lotteryComponentInfo).m_multi_lottery
-    self.multiPrice = (self._lotteryComponentInfo).m_cost_count * (self._lotteryComponentInfo).m_multi_lottery
-    self.unlockBoxs = (self._lotteryComponentInfo).m_unlock_jackpots
-    for index,value in ipairs((self._lotteryComponentInfo).m_jackpots) do
+    self.currencyId = self._lotteryComponentInfo.m_cost_item_id
+    self.singlePrice = self._lotteryComponentInfo.m_cost_count
+    self.multiTimes = self._lotteryComponentInfo.m_multi_lottery
+    self.multiPrice = self._lotteryComponentInfo.m_cost_count * self._lotteryComponentInfo.m_multi_lottery
+    self.unlockBoxs = self._lotteryComponentInfo.m_unlock_jackpots
+    for index, value in ipairs(self._lotteryComponentInfo.m_jackpots) do
       local itemBox = DCampaignDrawShopItemBox:New()
       itemBox:Refresh(value, self._lotteryComponent)
-      ;
-      (table.insert)(self.uiData, itemBox)
+      table.insert(self.uiData, itemBox)
     end
     self.jackpotCount = #self.uiData
     local unlockBoxNum = #self.unlockBoxs
     if isOnShow then
       self._initPageIndex = self:_GetDefaultPageIndexOnShow()
-    else
-      if isOpenNew then
-        if unlockBoxNum > 0 then
-          self._initPageIndex = (self.unlockBoxs)[unlockBoxNum]
-        else
-          self._initPageIndex = 1
-        end
+    elseif isOpenNew then
+      if 0 < unlockBoxNum then
+        self._initPageIndex = self.unlockBoxs[unlockBoxNum]
       else
-        self._initPageIndex = self._curPageIndex
+        self._initPageIndex = 1
       end
+    else
+      self._initPageIndex = self._curPageIndex
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.CloseDialogWithAnim = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIN17LotteryController:CloseDialogWithAnim()
   if self._lotteryState ~= LotteryState.None then
-    return 
+    return
   end
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", "", 0, function()
-    -- function num : 0_19_0 , upvalues : self, _ENV
-    ((self._campaign)._campaign_module):CampaignSwitchState(true, UIStateType.UIN17MainController, UIStateType.UIMain, nil, (self._campaign)._id)
-  end
-)
+  UIWidgetHelper.PlayAnimation(self, "_anim", "", 0, function()
+    self._campaign._campaign_module:CampaignSwitchState(true, UIStateType.UIN17MainController, UIStateType.UIMain, nil, self._campaign._id)
+  end)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.ShowMainUI = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIN17LotteryController:ShowMainUI()
   if self._lotteryState ~= LotteryState.None then
-    return 
+    return
   end
   self:SwitchState(UIStateType.UIMain)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._InitAwardListUi = function(self)
-  -- function num : 0_21
-  (self.awardList):InitListView(self.jackpotCount, function(scrollview, index)
-    -- function num : 0_21_0 , upvalues : self
+function UIN17LotteryController:_InitAwardListUi()
+  self.awardList:InitListView(self.jackpotCount, function(scrollview, index)
     return self:_OnGetAwardBoxCell(scrollview, index)
-  end
-)
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self.awardList).ScrollRect).enabled = false
+  end)
+  self.awardList.ScrollRect.enabled = false
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._OnGetAwardBoxCell = function(self, scrollview, index)
-  -- function num : 0_22
+function UIN17LotteryController:_OnGetAwardBoxCell(scrollview, index)
   local item = scrollview:NewListViewItem("AwardBoxCell")
   local cellPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -384,235 +266,162 @@ UIN17LotteryController._OnGetAwardBoxCell = function(self, scrollview, index)
   end
   local rowList = cellPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      itemWidget:InitData((self.uiData)[itemIndex], function(data)
-    -- function num : 0_22_0 , upvalues : self
-    self:_ShowItemTips(data)
+  if itemWidget then
+    local itemIndex = index + 1
+    itemWidget:InitData(self.uiData[itemIndex], function(data)
+      self:_ShowItemTips(data)
+    end, self._playJackpotAnim)
   end
-, self._playJackpotAnim)
-    end
-    return item
-  end
+  return item
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.SetLotteryIconText = function(uiView, widget_icon, widget_text, icon, count)
-  -- function num : 0_23 , upvalues : _ENV
-  if icon and not (string.isnullorempty)(widget_icon) then
-    (UIWidgetHelper.SetRawImage)(uiView, widget_icon, icon)
+function UIN17LotteryController.SetLotteryIconText(uiView, widget_icon, widget_text, icon, count)
+  if icon and not string.isnullorempty(widget_icon) then
+    UIWidgetHelper.SetRawImage(uiView, widget_icon, icon)
   end
-  if not (string.isnullorempty)(widget_text) then
+  if not string.isnullorempty(widget_text) then
     local c1 = "#c4c4c4"
     local c2 = "#d8ba5b"
-    local text = (UIActivityHelper.FormatNumber_PreZero)(9, count, c1, c2)
-    ;
-    (UIWidgetHelper.SetLocalizationText)(uiView, widget_text, text)
+    local text = UIActivityHelper.FormatNumber_PreZero(9, count, c1, c2)
+    UIWidgetHelper.SetLocalizationText(uiView, widget_text, text)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._SetPointNumText = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local icon, count = (self._lotteryComponent):GetLotteryCostItemIconText()
-  ;
-  (UIN17LotteryController.SetLotteryIconText)(self, "DrawSingleCostIcon", "", icon, count)
-  ;
-  (UIN17LotteryController.SetLotteryIconText)(self, "DrawMultiCostIcon", "", icon, count)
-  ;
-  (UIN17LotteryController.SetLotteryIconText)(self, "PointIcon", "PointNumText", icon, count)
+function UIN17LotteryController:_SetPointNumText()
+  local icon, count = self._lotteryComponent:GetLotteryCostItemIconText()
+  UIN17LotteryController.SetLotteryIconText(self, "DrawSingleCostIcon", "", icon, count)
+  UIN17LotteryController.SetLotteryIconText(self, "DrawMultiCostIcon", "", icon, count)
+  UIN17LotteryController.SetLotteryIconText(self, "PointIcon", "PointNumText", icon, count)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.SetPointSelect = function(self, index, select)
-  -- function num : 0_25 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  if select and (self.points)[index] then
-    (((self.points)[index]).image).sprite = (self._atlas):GetSprite("N17_event_shop_yeqian02")
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (((self.points)[index]).rect).sizeDelta = Vector2(49, 24)
-  end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self.points)[index] then
-    (((self.points)[index]).image).sprite = (self._atlas):GetSprite("N17_event_shop_yeqian01")
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (((self.points)[index]).rect).sizeDelta = Vector2(25, 24)
+function UIN17LotteryController:SetPointSelect(index, select)
+  if select then
+    if self.points[index] then
+      self.points[index].image.sprite = self._atlas:GetSprite("N17_event_shop_yeqian02")
+      self.points[index].rect.sizeDelta = Vector2(49, 24)
+    end
+  elseif self.points[index] then
+    self.points[index].image.sprite = self._atlas:GetSprite("N17_event_shop_yeqian01")
+    self.points[index].rect.sizeDelta = Vector2(25, 24)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._PlayAnimation_ChangePage = function(self, nextIndex, animName1, duration1, animName2, duration2)
-  -- function num : 0_26 , upvalues : _ENV
-  (UIWidgetHelper.PlayAnimations)(self, "_anim", {
-{animName = animName1, duration = duration1, callback = function()
-    -- function num : 0_26_0 , upvalues : self, nextIndex
-    self:_SetAwardListToPageIndex(nextIndex)
-  end
-}
-, 
-{animName = animName2, duration = duration2, callback = function()
-    -- function num : 0_26_1
-  end
-}
-})
+function UIN17LotteryController:_PlayAnimation_ChangePage(nextIndex, animName1, duration1, animName2, duration2)
+  UIWidgetHelper.PlayAnimations(self, "_anim", {
+    {
+      animName = animName1,
+      duration = duration1,
+      callback = function()
+        self:_SetAwardListToPageIndex(nextIndex)
+      end
+    },
+    {
+      animName = animName2,
+      duration = duration2,
+      callback = function()
+      end
+    }
+  })
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._SetAlpha = function(self, alpha)
-  -- function num : 0_27 , upvalues : _ENV
-  (self:GetUIComponent("SpineLoader", "_spineBg")).color = Color(1, 1, 1, 0)
-  ;
-  (self:GetUIComponent("SpineLoader", "_spineNpc")).color = Color(1, 1, 1, 0)
-  ;
-  (self:GetUIComponent("CanvasGroup", "Center2")).alpha = alpha
+function UIN17LotteryController:_SetAlpha(alpha)
+  self:GetUIComponent("SpineLoader", "_spineBg").color = Color(1, 1, 1, 0)
+  self:GetUIComponent("SpineLoader", "_spineNpc").color = Color(1, 1, 1, 0)
+  self:GetUIComponent("CanvasGroup", "Center2").alpha = alpha
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.BoxLeftBtnOnClick = function(self, go)
-  -- function num : 0_28 , upvalues : _ENV
+function UIN17LotteryController:BoxLeftBtnOnClick(go)
   if self._lotteryState ~= LotteryState.None then
-    return 
+    return
   end
   local nextIndex = self._curPageIndex - 1
   if nextIndex < 1 then
-    return 
+    return
   end
   self._playJackpotAnim = false
   self:_PlayAnimation_ChangePage(nextIndex, "uieffanim_N17_UIN17LotteryController_right_out", 500, "uieffanim_N17_UIN17LotteryController_right_in", 500)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.BoxRightBtnOnClick = function(self, go)
-  -- function num : 0_29 , upvalues : _ENV
+function UIN17LotteryController:BoxRightBtnOnClick(go)
   if self._lotteryState ~= LotteryState.None then
-    return 
+    return
   end
   local nextIndex = self._curPageIndex + 1
-  if self.jackpotCount < nextIndex then
-    return 
+  if nextIndex > self.jackpotCount then
+    return
   end
   self._playJackpotAnim = false
   self:_PlayAnimation_ChangePage(nextIndex, "uieffanim_N17_UIN17LotteryController_left_out", 500, "uieffanim_N17_UIN17LotteryController_left_in", 500)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_30
+function UIN17LotteryController:OnUpdate(deltaTimeMS)
   self:_UpdateDragSwitch()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._ShowItemTips = function(self, data)
-  -- function num : 0_31 , upvalues : _ENV
+function UIN17LotteryController:_ShowItemTips(data)
   if self._lotteryState ~= LotteryState.None then
-    return 
+    return
   end
   self:ShowDialog("UIN17LotteryTipsController", data)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.NoRestItemTipsCoverOnClick = function(self, go)
-  -- function num : 0_32 , upvalues : _ENV
-  (ToastManager.ShowToast)((StringTable.Get)("str_n17_lottery_no_item_tips"))
+function UIN17LotteryController:NoRestItemTipsCoverOnClick(go)
+  ToastManager.ShowToast(StringTable.Get("str_n17_lottery_no_item_tips"))
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._IsBoxUnlock = function(self, boxIndex)
-  -- function num : 0_33
+function UIN17LotteryController:_IsBoxUnlock(boxIndex)
   if self._lotteryComponent then
-    return (self._lotteryComponent):IsLotteryJackpotUnlock(boxIndex)
+    return self._lotteryComponent:IsLotteryJackpotUnlock(boxIndex)
   end
   return false
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._SetAwardListToPageIndex = function(self, index)
-  -- function num : 0_34
+function UIN17LotteryController:_SetAwardListToPageIndex(index)
   self:SetPointSelect(self._curPageIndex, false)
   self._curPageIndex = index
   self:SetPointSelect(self._curPageIndex, true)
-  ;
-  (self.boxLeftBtnGo):SetActive(self._curPageIndex > 1)
-  ;
-  (self.boxRightBtnGo):SetActive(self.jackpotCount > self._curPageIndex)
-  ;
-  (self.awardList):MovePanelToItemIndex(self._curPageIndex - 1, 0)
-  ;
-  (self.awardList):RefreshAllShownItem()
+  self.boxLeftBtnGo:SetActive(not (self._curPageIndex <= 1))
+  self.boxRightBtnGo:SetActive(not (self._curPageIndex >= self.jackpotCount))
+  self.awardList:MovePanelToItemIndex(self._curPageIndex - 1, 0)
+  self.awardList:RefreshAllShownItem()
   self:_RefreshDrawBtnArea()
   self:_RefreshBoxTitle()
   self:_RefreshCurBoxRest()
   self:_RefreshCurBoxCover()
   self:_RefreshLocationText()
-  ;
-  (self._pageValue):SetText(self._curPageIndex .. "/" .. self.jackpotCount)
+  self._pageValue:SetText(self._curPageIndex .. "/" .. self.jackpotCount)
   self:_RefreshDrawBtn()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._RefreshDrawBtn = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  (self.drawSingleCostText):SetText(self.singlePrice)
-  ;
-  (self.drawMultiCostText):SetText(self.multiPrice)
+function UIN17LotteryController:_RefreshDrawBtn()
+  self.drawSingleCostText:SetText(self.singlePrice)
+  self.drawMultiCostText:SetText(self.multiPrice)
   self:_SetPointNumText()
-  local totalNum = (ClientCampaignDrawShop.GetMoney)(self.currencyId)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  if self.singlePrice <= totalNum then
-    (self.drawSingleCostText).color = Color.red
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-    if self.multiPrice <= totalNum then
-      (self.drawMultiCostText).color = Color.red
-    end
+  local totalNum = ClientCampaignDrawShop.GetMoney(self.currencyId)
+  if totalNum >= self.singlePrice then
+  else
+    self.drawSingleCostText.color = Color.red
+  end
+  if totalNum >= self.multiPrice then
+  else
+    self.drawMultiCostText.color = Color.red
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._InitBoxPosPoint = function(self)
-  -- function num : 0_36
+function UIN17LotteryController:_InitBoxPosPoint()
   for index = 1, 10 do
     if index <= self.jackpotCount then
-      ((((self.points)[index]).trans).gameObject):SetActive(true)
+      self.points[index].trans.gameObject:SetActive(true)
     else
-      ;
-      ((((self.points)[index]).trans).gameObject):SetActive(false)
+      self.points[index].trans.gameObject:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._RefreshDrawBtnArea = function(self)
-  -- function num : 0_37
+function UIN17LotteryController:_RefreshDrawBtnArea()
   local unlock = self:_IsBoxUnlock(self._curPageIndex)
-  ;
-  (self:GetGameObject("LockInfoArea")):SetActive(not unlock)
-  ;
-  (self:GetGameObject("DrawBtnArea")):SetActive(unlock)
+  self:GetGameObject("LockInfoArea"):SetActive(not unlock)
+  self:GetGameObject("DrawBtnArea"):SetActive(unlock)
   if not unlock then
     self:_RefreshLockInfoText()
   else
@@ -622,135 +431,90 @@ UIN17LotteryController._RefreshDrawBtnArea = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._RefreshLockInfoText = function(self)
-  -- function num : 0_38 , upvalues : _ENV
-  local name = (self._lotteryComponent):GetLotteryBigRewardName(self._curPageIndex - 1)
-  local str = (StringTable.Get)("str_n17_lottery_lock_2", name)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "LockInfoText", str)
+function UIN17LotteryController:_RefreshLockInfoText()
+  local name = self._lotteryComponent:GetLotteryBigRewardName(self._curPageIndex - 1)
+  local str = StringTable.Get("str_n17_lottery_lock_2", name)
+  UIWidgetHelper.SetLocalizationText(self, "LockInfoText", str)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._RefreshDrawBtnNoItemCover = function(self)
-  -- function num : 0_39
+function UIN17LotteryController:_RefreshDrawBtnNoItemCover()
   local hasRestItem = self:_CheckAwardRestSingle()
-  ;
-  (self.noRestItemTipsCoverGo):SetActive(not hasRestItem)
+  self.noRestItemTipsCoverGo:SetActive(not hasRestItem)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._RefreshSingleDrawBtn = function(self)
-  -- function num : 0_40
+function UIN17LotteryController:_RefreshSingleDrawBtn()
   local bEnableBtn = true
   if not self:_IsBoxUnlock(self._curPageIndex) then
     bEnableBtn = false
   end
-  if bEnableBtn then
-    bEnableBtn = self:_CheckCurrencyEnable(self.singlePrice)
-  end
-  if bEnableBtn then
-    bEnableBtn = self:_CheckAwardRestSingle()
-  end
+  bEnableBtn = bEnableBtn and self:_CheckCurrencyEnable(self.singlePrice)
+  bEnableBtn = bEnableBtn and self:_CheckAwardRestSingle()
   self:_EnableSingleDrawBtn(bEnableBtn)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._RefreshMultiDrawBtn = function(self)
-  -- function num : 0_41
+function UIN17LotteryController:_RefreshMultiDrawBtn()
   local bEnableBtn = true
   if not self:_IsBoxUnlock(self._curPageIndex) then
     bEnableBtn = false
   end
-  if bEnableBtn then
-    bEnableBtn = self:_CheckCurrencyEnable(self.multiPrice)
-  end
-  if bEnableBtn then
-    bEnableBtn = self:_CheckAwardRestMulti()
-  end
+  bEnableBtn = bEnableBtn and self:_CheckCurrencyEnable(self.multiPrice)
+  bEnableBtn = bEnableBtn and self:_CheckAwardRestMulti()
   self:_EnableMultiDrawBtn(bEnableBtn)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._RefreshBoxTitle = function(self)
-  -- function num : 0_42 , upvalues : _ENV
-  local name = (self._lotteryComponent):GetLotteryBigRewardName(self._curPageIndex)
-  local text = (StringTable.Get)("str_n17_lottery_pool_title", name)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "AwardListTitleText", text)
+function UIN17LotteryController:_RefreshBoxTitle()
+  local name = self._lotteryComponent:GetLotteryBigRewardName(self._curPageIndex)
+  local text = StringTable.Get("str_n17_lottery_pool_title", name)
+  UIWidgetHelper.SetLocalizationText(self, "AwardListTitleText", text)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._RefreshCurBoxRest = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function UIN17LotteryController:_RefreshCurBoxRest()
   local curBoxRest = 0
   local curBoxTotal = 0
-  if self.jackpotCount < self._curPageIndex then
-    return 
+  if self._curPageIndex > self.jackpotCount then
+    return
   end
-  local boxData = (self.uiData)[self._curPageIndex]
+  local boxData = self.uiData[self._curPageIndex]
   if boxData then
-    curBoxRest = boxData:GetTotalRestItem()
+    curBoxRest, curBoxTotal = boxData:GetTotalRestItem()
   end
-  local t = (StringTable.Get)("str_n17_lottery_reward_rest_num")
-  local cur = (UIActivityHelper.GetColorText)("#faaa28", curBoxRest)
+  local t = StringTable.Get("str_n17_lottery_reward_rest_num")
+  local cur = UIActivityHelper.GetColorText("#faaa28", curBoxRest)
   local all = curBoxTotal
-  local text = (string.format)("(%s %s/%s)", t, cur, all)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "CurBoxRestText", text)
-  ;
-  (self:GetGameObject("AwardEmpty")):SetActive(curBoxRest == 0)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local text = string.format("(%s %s/%s)", t, cur, all)
+  UIWidgetHelper.SetLocalizationText(self, "CurBoxRestText", text)
+  self:GetGameObject("AwardEmpty"):SetActive(curBoxRest == 0)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._RefreshCurBoxCover = function(self)
-  -- function num : 0_44 , upvalues : _ENV
-  local uiCfg = (Cfg.cfg_n17_lottery_box_ui_client)[self._curPageIndex]
+function UIN17LotteryController:_RefreshCurBoxCover()
+  local uiCfg = Cfg.cfg_n17_lottery_box_ui_client[self._curPageIndex]
   if not uiCfg then
-    return 
+    return
   end
   local skip = true
   local spineName = uiCfg.SpineBg
   local animName = uiCfg.SpineBg_Idle
-  self._spineBg = (UIWidgetHelper.SetSpineLoad)(self, "_spineBg", spineName, self._spineBg)
+  self._spineBg, skip = UIWidgetHelper.SetSpineLoad(self, "_spineBg", spineName, self._spineBg)
   if not skip then
-    (UIWidgetHelper.SetSpineAnimation)(self._spineBg, 0, animName, true)
+    UIWidgetHelper.SetSpineAnimation(self._spineBg, 0, animName, true)
   end
-  ;
-  (UIWidgetHelper.SetSpineAnimationTimeScale)(self._spineBg, 1)
+  UIWidgetHelper.SetSpineAnimationTimeScale(self._spineBg, 1)
   spineName = uiCfg.SpineNpc
   animName = uiCfg.SpineNpc_Idle
-  -- DECOMPILER ERROR at PC42: Overwrote pending register: R2 in 'AssignReg'
-
-  self._spineNpc = (UIWidgetHelper.SetSpineLoad)(self, "_spineNpc", spineName, self._spineNpc)
+  self._spineNpc, skip = UIWidgetHelper.SetSpineLoad(self, "_spineNpc", spineName, self._spineNpc)
   if not skip then
-    (UIWidgetHelper.SetSpineAnimation)(self._spineNpc, 0, animName, true)
+    UIWidgetHelper.SetSpineAnimation(self._spineNpc, 0, animName, true)
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._RefreshLocationText = function(self)
-  -- function num : 0_45 , upvalues : _ENV
+function UIN17LotteryController:_RefreshLocationText()
   local type = self._curPageIndex
-  local text = (StringTable.Get)("str_n17_lottery_location_" .. type)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "LocationText", text)
+  local text = StringTable.Get("str_n17_lottery_location_" .. type)
+  UIWidgetHelper.SetLocalizationText(self, "LocationText", text)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._CheckCurrencyEnable = function(self, price)
-  -- function num : 0_46
-  local haveCurrency = ((self.clientHelper).GetMoney)(self.currencyId)
+function UIN17LotteryController:_CheckCurrencyEnable(price)
+  local haveCurrency = self.clientHelper.GetMoney(self.currencyId)
   if price <= haveCurrency then
     return true
   else
@@ -758,160 +522,102 @@ UIN17LotteryController._CheckCurrencyEnable = function(self, price)
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._OnItemCountChanged = function(self)
-  -- function num : 0_47
+function UIN17LotteryController:_OnItemCountChanged()
   self:_RefreshSingleDrawBtn()
   self:_RefreshMultiDrawBtn()
   self:_RefreshDrawBtnNoItemCover()
   self:_SetPointNumText()
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._GetDefaultPageIndexOnShow = function(self)
-  -- function num : 0_48 , upvalues : _ENV
+function UIN17LotteryController:_GetDefaultPageIndexOnShow()
   local pageIndex = 1
   if self._lotteryComponent then
-    for index,value in ipairs(self.unlockBoxs) do
-      local isNoRestBigReward = (self._lotteryComponent):IsLotteryJeckpotNoRestBigReward(value)
+    for index, value in ipairs(self.unlockBoxs) do
+      local isNoRestBigReward = self._lotteryComponent:IsLotteryJeckpotNoRestBigReward(value)
       if not isNoRestBigReward then
         return value
       end
     end
-    for index,value in ipairs(self.unlockBoxs) do
-      local isEmpty = (self._lotteryComponent):IsLotteryJeckpotEmpty(value)
+    for index, value in ipairs(self.unlockBoxs) do
+      local isEmpty = self._lotteryComponent:IsLotteryJeckpotEmpty(value)
       if not isEmpty then
         return value
       end
     end
   end
-  do
-    return pageIndex
-  end
+  return pageIndex
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._CheckAwardRestSingle = function(self)
-  -- function num : 0_49
-  do
-    if self._lotteryComponent then
-      local isEmpty = (self._lotteryComponent):IsLotteryJeckpotEmpty(self._curPageIndex)
-      if isEmpty then
-        return false
-      else
-        return true
-      end
+function UIN17LotteryController:_CheckAwardRestSingle()
+  if self._lotteryComponent then
+    local isEmpty = self._lotteryComponent:IsLotteryJeckpotEmpty(self._curPageIndex)
+    if isEmpty then
+      return false
+    else
+      return true
     end
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._CheckAwardRestMulti = function(self)
-  -- function num : 0_50
-  do
-    if self._lotteryComponent then
-      local canDraw = (self._lotteryComponent):IsLotteryJeckpotCanMutliLottery(self._curPageIndex)
-      if canDraw then
-        return true
-      else
-        return false
-      end
+function UIN17LotteryController:_CheckAwardRestMulti()
+  if self._lotteryComponent then
+    local canDraw = self._lotteryComponent:IsLotteryJeckpotCanMutliLottery(self._curPageIndex)
+    if canDraw then
+      return true
+    else
+      return false
     end
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.DrawSingleBtnOnClick = function(self, go)
-  -- function num : 0_51 , upvalues : _ENV
+function UIN17LotteryController:DrawSingleBtnOnClick(go)
   self:_DoDraw(ECampaignLotteryType.E_CLT_SINGLE)
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.DrawMultiBtnOnClick = function(self, go)
-  -- function num : 0_52 , upvalues : _ENV
+function UIN17LotteryController:DrawMultiBtnOnClick(go)
   self:_DoDraw(ECampaignLotteryType.E_CLT_MULTI)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._EnableSingleDrawBtn = function(self, enable)
-  -- function num : 0_53
-  (self.drawSingleBtnGreyCoverGo):SetActive(not enable)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.drawSingleBtnCanvas).blocksRaycasts = enable
+function UIN17LotteryController:_EnableSingleDrawBtn(enable)
+  self.drawSingleBtnGreyCoverGo:SetActive(not enable)
+  self.drawSingleBtnCanvas.blocksRaycasts = enable
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._EnableMultiDrawBtn = function(self, enable)
-  -- function num : 0_54
-  (self.drawMultiBtnGreyCoverGo):SetActive(not enable)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.drawMultiBtnCanvas).blocksRaycasts = enable
+function UIN17LotteryController:_EnableMultiDrawBtn(enable)
+  self.drawMultiBtnGreyCoverGo:SetActive(not enable)
+  self.drawMultiBtnCanvas.blocksRaycasts = enable
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._CheckCanDrawOnceMore = function(self, lotteryType)
-  -- function num : 0_55 , upvalues : _ENV
+function UIN17LotteryController:_CheckCanDrawOnceMore(lotteryType)
   if lotteryType == ECampaignLotteryType.E_CLT_SINGLE then
     local bEnable = true
     if not self:_IsBoxUnlock(self._curPageIndex) then
       bEnable = false
     end
-    if bEnable then
-      bEnable = self:_CheckCurrencyEnable(self.singlePrice)
-    end
-    if bEnable then
-      bEnable = self:_CheckAwardRestSingle()
-    end
+    bEnable = bEnable and self:_CheckCurrencyEnable(self.singlePrice)
+    bEnable = bEnable and self:_CheckAwardRestSingle()
     return bEnable
-  else
-    do
-      do
-        if lotteryType == ECampaignLotteryType.E_CLT_MULTI then
-          local bEnable = true
-          if not self:_IsBoxUnlock(self._curPageIndex) then
-            bEnable = false
-          end
-          if bEnable then
-            bEnable = self:_CheckCurrencyEnable(self.multiPrice)
-          end
-          if bEnable then
-            bEnable = self:_CheckAwardRestMulti()
-          end
-          return bEnable
-        end
-        return false
-      end
+  elseif lotteryType == ECampaignLotteryType.E_CLT_MULTI then
+    local bEnable = true
+    if not self:_IsBoxUnlock(self._curPageIndex) then
+      bEnable = false
     end
+    bEnable = bEnable and self:_CheckCurrencyEnable(self.multiPrice)
+    bEnable = bEnable and self:_CheckAwardRestMulti()
+    return bEnable
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._DoDraw = function(self, lotteryType)
-  -- function num : 0_56 , upvalues : _ENV
+function UIN17LotteryController:_DoDraw(lotteryType)
   if self._lotteryState ~= LotteryState.None then
-    return 
+    return
   end
-  ;
-  (self._uiModule):LockAchievementFinishPanel(true)
+  self._uiModule:LockAchievementFinishPanel(true)
   self._lotteryState = LotteryState.WaitRequestResult
   self._drawTask = self:StartTask(function(TT)
-    -- function num : 0_56_0 , upvalues : _ENV, self, lotteryType
     local res = AsyncRequestRes:New()
     local getRewards, isOpenNew = self:_SendDrawReq(TT, res, self._curPageIndex, lotteryType)
     if res:GetSucc() then
@@ -924,46 +630,30 @@ UIN17LotteryController._DoDraw = function(self, lotteryType)
         self._lotteryState = LotteryState.None
       end
     else
-      do
-        self._lotteryState = LotteryState.None
-        ;
-        (self._uiModule):LockAchievementFinishPanel(false)
-        ;
-        (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, function()
-      -- function num : 0_56_0_0 , upvalues : self, isOpenNew
-      self:_ForceRefresh(isOpenNew)
+      self._lotteryState = LotteryState.None
+      self._uiModule:LockAchievementFinishPanel(false)
+      self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, function()
+        self:_ForceRefresh(isOpenNew)
+      end, function()
+        self:SwitchState(UIStateType.UIN17MainController)
+      end)
     end
-, function()
-      -- function num : 0_56_0_1 , upvalues : self, _ENV
-      self:SwitchState(UIStateType.UIN17MainController)
-    end
-)
-      end
-    end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._SendDrawReq = function(self, TT, res, boxIndex, lotteryType)
-  -- function num : 0_57
+function UIN17LotteryController:_SendDrawReq(TT, res, boxIndex, lotteryType)
   if self._lotteryComponent then
-    return (self._lotteryComponent):HandleLottery(TT, res, boxIndex, lotteryType)
+    return self._lotteryComponent:HandleLottery(TT, res, boxIndex, lotteryType)
   end
   res:SetSucc(false)
   return nil
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._ShowGetReward = function(self, record)
-  -- function num : 0_58 , upvalues : _ENV
+function UIN17LotteryController:_ShowGetReward(record)
   self._lotteryState = LotteryState.None
-  ;
-  (self._uiModule):LockAchievementFinishPanel(false)
+  self._uiModule:LockAchievementFinishPanel(false)
   if not record then
-    return 
+    return
   end
   local rewards = record.m_getRewards
   local lotteryType = record.m_lotteryType
@@ -972,203 +662,161 @@ UIN17LotteryController._ShowGetReward = function(self, record)
   local canDrawOnceMore = record.m_canDrawOnceMore
   local assetAwards = {}
   local tempPets = {}
-  if #rewards > 0 then
+  if 0 < #rewards then
     for i = 1, #rewards do
       local roleAsset = RoleAsset:New()
-      roleAsset.assetid = (rewards[i]).m_item_id
-      roleAsset.count = (rewards[i]).m_count
-      local ispet = (self._petModule):IsPetID(roleAsset.assetid)
+      roleAsset.assetid = rewards[i].m_item_id
+      roleAsset.count = rewards[i].m_count
+      local ispet = self._petModule:IsPetID(roleAsset.assetid)
       if ispet then
-        (table.insert)(tempPets, roleAsset)
+        table.insert(tempPets, roleAsset)
       end
-      ;
-      (table.insert)(assetAwards, roleAsset)
+      table.insert(assetAwards, roleAsset)
     end
   end
-  do
-    local cbFunc = nil
-    if isOpenNew then
-      if self:_CheckIsRestRepeatBox() then
-        cbFunc = function()
-    -- function num : 0_58_0 , upvalues : self
-    self:_LoopBoxRestTips()
-  end
-
-      else
-        cbFunc = function()
-    -- function num : 0_58_1 , upvalues : self
-    self:_ConfirmToNextBox()
-  end
-
+  local cbFunc
+  if isOpenNew then
+    if self:_CheckIsRestRepeatBox() then
+      function cbFunc()
+        self:_LoopBoxRestTips()
       end
     else
-      if not curBoxHasRest then
-        cbFunc = function()
-    -- function num : 0_58_2 , upvalues : self
-    self:_ForceRefresh(false)
-  end
-
-      else
-        if canDrawOnceMore then
-          cbFunc = function()
-    -- function num : 0_58_3 , upvalues : self
-    self:_ForceRefresh(false)
-  end
-
-        else
-          cbFunc = function()
-    -- function num : 0_58_4 , upvalues : self
-    self:_ForceRefresh(false)
-  end
-
-        end
+      function cbFunc()
+        self:_ConfirmToNextBox()
       end
     end
-    local getItemCtrl = "UIN17GetItemController"
-    if #tempPets > 0 then
-      self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_58_5 , upvalues : _ENV, self, getItemCtrl, assetAwards, cbFunc
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
+  elseif not curBoxHasRest then
+    function cbFunc()
+      self:_ForceRefresh(false)
+    end
+  elseif canDrawOnceMore then
+    function cbFunc()
+      self:_ForceRefresh(false)
+    end
+  else
+    function cbFunc()
+      self:_ForceRefresh(false)
+    end
+  end
+  local getItemCtrl = "UIN17GetItemController"
+  if 0 < #tempPets then
+    self:ShowDialog("UIPetObtain", tempPets, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      self:ShowDialog(getItemCtrl, assetAwards, cbFunc)
+    end)
+  else
     self:ShowDialog(getItemCtrl, assetAwards, cbFunc)
   end
-)
-    else
-      self:ShowDialog(getItemCtrl, assetAwards, cbFunc)
-    end
-  end
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._ConfirmToNextBox = function(self)
-  -- function num : 0_59 , upvalues : _ENV
-  local strTitle = (StringTable.Get)("str_n17_lottery_new_box_unlock_title")
-  local name1 = (self._lotteryComponent):GetLotteryBigRewardName(self._curPageIndex)
-  local name2 = (StringTable.Get)("str_n17_lottery_location_" .. self._curPageIndex + 1)
-  local strText = (StringTable.Get)("str_n17_lottery_open_next_text", name1, name2)
+function UIN17LotteryController:_ConfirmToNextBox()
+  local strTitle = StringTable.Get("str_n17_lottery_new_box_unlock_title")
+  local name1 = self._lotteryComponent:GetLotteryBigRewardName(self._curPageIndex)
+  local name2 = StringTable.Get("str_n17_lottery_location_" .. self._curPageIndex + 1)
+  local strText = StringTable.Get("str_n17_lottery_open_next_text", name1, name2)
   local curCost = 10
-  local okCb = function()
-    -- function num : 0_59_0 , upvalues : self
+  
+  local function okCb()
     self:_ForceRefresh(true)
   end
-
+  
   self:ShowDialog("UIN17MessageBoxController", strTitle, strText, okCb)
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._LoopBoxRestTips = function(self)
-  -- function num : 0_60 , upvalues : _ENV
+function UIN17LotteryController:_LoopBoxRestTips()
   local strTitle = ""
-  local strText = (StringTable.Get)("str_n17_lottery_loop_box_reset_tips")
+  local strText = StringTable.Get("str_n17_lottery_loop_box_reset_tips")
   local curCost = 10
-  local okCb = function()
-    -- function num : 0_60_0 , upvalues : self
+  
+  local function okCb()
     self:_ForceRefresh(true)
   end
-
+  
   self:ShowDialog("UIN17MessageBoxController", strTitle, strText, okCb)
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._RecordRewardsInfo = function(self, getRewards, lotteryType, curBoxHasRest, isOpenNew, canDrawOnceMore)
-  -- function num : 0_61 , upvalues : _ENV
+function UIN17LotteryController:_RecordRewardsInfo(getRewards, lotteryType, curBoxHasRest, isOpenNew, canDrawOnceMore)
   if not self.rewardRecord then
     self.rewardRecord = DCampaignDrawShopDrawResultRecord:New()
   end
-  ;
-  (self.rewardRecord):Record(getRewards, lotteryType, curBoxHasRest, isOpenNew, canDrawOnceMore)
+  self.rewardRecord:Record(getRewards, lotteryType, curBoxHasRest, isOpenNew, canDrawOnceMore)
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._ShowDrawSpineAnim = function(self, TT, lotteryType)
-  -- function num : 0_62 , upvalues : _ENV
-  local uiCfg = (Cfg.cfg_n17_lottery_box_ui_client)[self._curPageIndex]
+function UIN17LotteryController:_ShowDrawSpineAnim(TT, lotteryType)
+  local uiCfg = Cfg.cfg_n17_lottery_box_ui_client[self._curPageIndex]
   if not uiCfg then
-    return 
+    return
   end
   local drawType = lotteryType == ECampaignLotteryType.E_CLT_SINGLE and 1 or 2
-  local audioId = {CriAudioIDConst.N10SingleLottery, CriAudioIDConst.N10MultiLottery}
+  local audioId = {
+    CriAudioIDConst.N10SingleLottery,
+    CriAudioIDConst.N10MultiLottery
+  }
   local spineName_1 = uiCfg.SpineNpc
   local animName_1 = uiCfg.SpineNpc_Found
   local animTime_1 = uiCfg.SpineNpc_FoundTime
   local spineName_2 = uiCfg.SpineDraw
-  local animName_2 = {uiCfg.SpineDraw_Once, uiCfg.SpineDraw_Multi}
-  local animTime_2 = {uiCfg.SpineDraw_OnceTime, uiCfg.SpineDraw_MultiTime}
+  local animName_2 = {
+    uiCfg.SpineDraw_Once,
+    uiCfg.SpineDraw_Multi
+  }
+  local animTime_2 = {
+    uiCfg.SpineDraw_OnceTime,
+    uiCfg.SpineDraw_MultiTime
+  }
   self._lottery_spineName_2 = spineName_2
   self._lottery_animName_2 = animName_2[drawType]
   self._lottery_animTime_2 = animTime_2[drawType]
   self._lotteryState = LotteryState.LotterySpine
-  ;
-  (UIWidgetHelper.SetSpineAnimationTimeScale)(self._spineBg, 0)
-  self._spineNpc = (UIWidgetHelper.SetSpineLoad)(self, "_spineNpc", spineName_1, self._spineNpc)
-  ;
-  (UIWidgetHelper.SetSpineAnimation)(self._spineNpc, 0, animName_1, false)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(audioId[drawType])
+  UIWidgetHelper.SetSpineAnimationTimeScale(self._spineBg, 0)
+  self._spineNpc = UIWidgetHelper.SetSpineLoad(self, "_spineNpc", spineName_1, self._spineNpc)
+  UIWidgetHelper.SetSpineAnimation(self._spineNpc, 0, animName_1, false)
+  AudioHelperController.PlayUISoundAutoRelease(audioId[drawType])
   YIELD(TT, animTime_1)
   if self._lotteryState ~= LotteryState.LotterySpine then
-    return 
+    return
   end
   self._lotteryState = LotteryState.LotteryResultSpine
-  self._spineNpc = (UIWidgetHelper.SetSpineLoad)(self, "_spineNpc", self._lottery_spineName_2, self._spineNpc)
-  ;
-  (UIWidgetHelper.SetSpineAnimation)(self._spineNpc, 0, self._lottery_animName_2, false)
+  self._spineNpc = UIWidgetHelper.SetSpineLoad(self, "_spineNpc", self._lottery_spineName_2, self._spineNpc)
+  UIWidgetHelper.SetSpineAnimation(self._spineNpc, 0, self._lottery_animName_2, false)
   YIELD(TT, self._lottery_animTime_2)
   self._lotteryState = LotteryState.ShowRewards
   self:_ShowGetReward(self.rewardRecord)
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.SpineAreaOnClick = function(self)
-  -- function num : 0_63 , upvalues : _ENV
-  if (string.isnullorempty)(self._lottery_spineName_2) or (string.isnullorempty)(self._lottery_animName_2) or (string.isnullorempty)(self._lottery_animTime_2) then
-    return 
+function UIN17LotteryController:SpineAreaOnClick()
+  if string.isnullorempty(self._lottery_spineName_2) or string.isnullorempty(self._lottery_animName_2) or string.isnullorempty(self._lottery_animTime_2) then
+    return
   end
   if self._lotteryState ~= LotteryState.LotterySpine then
-    return 
+    return
   end
   self._lotteryState = LotteryState.LotteryResultSpine
   self:StartTask(function(TT)
-    -- function num : 0_63_0 , upvalues : self, _ENV
-    self._spineNpc = (UIWidgetHelper.SetSpineLoad)(self, "_spineNpc", self._lottery_spineName_2, self._spineNpc)
-    ;
-    (UIWidgetHelper.SetSpineAnimation)(self._spineNpc, 0, self._lottery_animName_2, false)
+    self._spineNpc = UIWidgetHelper.SetSpineLoad(self, "_spineNpc", self._lottery_spineName_2, self._spineNpc)
+    UIWidgetHelper.SetSpineAnimation(self._spineNpc, 0, self._lottery_animName_2, false)
     YIELD(TT, self._lottery_animTime_2)
     self._lotteryState = LotteryState.ShowRewards
     self:_ShowGetReward(self.rewardRecord)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController._CheckIsRestRepeatBox = function(self)
-  -- function num : 0_64
+function UIN17LotteryController:_CheckIsRestRepeatBox()
   if self._lotteryComponentInfo then
-    self.unlockBoxs = (self._lotteryComponentInfo).m_unlock_jackpots
+    self.unlockBoxs = self._lotteryComponentInfo.m_unlock_jackpots
     local unlockBoxNum = #self.unlockBoxs
     local newIndex = 1
-    if unlockBoxNum > 0 then
-      newIndex = (self.unlockBoxs)[unlockBoxNum]
+    if 0 < unlockBoxNum then
+      newIndex = self.unlockBoxs[unlockBoxNum]
     end
     return self._curPageIndex == newIndex
   end
-  do return false end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryController.RuleDescriptionBtnOnClick = function(self, go)
-  -- function num : 0_65 , upvalues : _ENV
+function UIN17LotteryController:RuleDescriptionBtnOnClick(go)
   if self._lotteryState ~= LotteryState.None then
-    return 
+    return
   end
   self:ShowDialog("UIN17Intro2Controller", "UIN17Intro2Controller_Lottery", true)
 end
-
-

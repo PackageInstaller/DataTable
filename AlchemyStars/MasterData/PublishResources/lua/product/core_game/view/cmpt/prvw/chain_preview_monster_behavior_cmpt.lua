@@ -1,122 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/chain_preview_monster_behavior_cmpt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChainPreviewMonsterBehaviorComponent", Object)
 ChainPreviewMonsterBehaviorComponent = ChainPreviewMonsterBehaviorComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChainPreviewMonsterBehaviorComponent.Constructor = function(self)
-  -- function num : 0_0
+function ChainPreviewMonsterBehaviorComponent:Constructor()
   self._previewMonsterRange = {}
   self._outlineEntityList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainPreviewMonsterBehaviorComponent.SetPreviewMonsterRange = function(self, entityID, skillID)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._previewMonsterRange)[entityID] = skillID
+function ChainPreviewMonsterBehaviorComponent:SetPreviewMonsterRange(entityID, skillID)
+  self._previewMonsterRange[entityID] = skillID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainPreviewMonsterBehaviorComponent.GetPreviewMonsterRange = function(self)
-  -- function num : 0_2
+function ChainPreviewMonsterBehaviorComponent:GetPreviewMonsterRange()
   return self._previewMonsterRange
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainPreviewMonsterBehaviorComponent.SetChainPath = function(self, chainPath)
-  -- function num : 0_3
+function ChainPreviewMonsterBehaviorComponent:SetChainPath(chainPath)
   self._chainPath = chainPath
   self._needRefresh = true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainPreviewMonsterBehaviorComponent.GetChainPath = function(self)
-  -- function num : 0_4
-  if not self._chainPath then
-    return {}
-  end
+function ChainPreviewMonsterBehaviorComponent:GetChainPath()
+  return self._chainPath or {}
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainPreviewMonsterBehaviorComponent.SetNeedRefresh = function(self, needRefresh)
-  -- function num : 0_5
+function ChainPreviewMonsterBehaviorComponent:SetNeedRefresh(needRefresh)
   self._needRefresh = needRefresh
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainPreviewMonsterBehaviorComponent.GetNeedRefresh = function(self)
-  -- function num : 0_6
+function ChainPreviewMonsterBehaviorComponent:GetNeedRefresh()
   return self._needRefresh
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainPreviewMonsterBehaviorComponent.SetOutlineEntityList = function(self, entityID, outlineEntityList)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._outlineEntityList)[entityID] = outlineEntityList
+function ChainPreviewMonsterBehaviorComponent:SetOutlineEntityList(entityID, outlineEntityList)
+  self._outlineEntityList[entityID] = outlineEntityList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainPreviewMonsterBehaviorComponent.GetOutlineEntityList = function(self, entityID)
-  -- function num : 0_8
-  return (self._outlineEntityList)[entityID]
+function ChainPreviewMonsterBehaviorComponent:GetOutlineEntityList(entityID)
+  return self._outlineEntityList[entityID]
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ChainPreviewMonsterBehavior = function(self)
-  -- function num : 0_9
-  return self:GetComponent((self.WEComponentsEnum).ChainPreviewMonsterBehavior)
+function Entity:ChainPreviewMonsterBehavior()
+  return self:GetComponent(self.WEComponentsEnum.ChainPreviewMonsterBehavior)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasChainPreviewMonsterBehavior = function(self)
-  -- function num : 0_10
-  return self:HasComponent((self.WEComponentsEnum).ChainPreviewMonsterBehavior)
+function Entity:HasChainPreviewMonsterBehavior()
+  return self:HasComponent(self.WEComponentsEnum.ChainPreviewMonsterBehavior)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddChainPreviewMonsterBehavior = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ChainPreviewMonsterBehavior
+function Entity:AddChainPreviewMonsterBehavior()
+  local index = self.WEComponentsEnum.ChainPreviewMonsterBehavior
   local component = ChainPreviewMonsterBehaviorComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceChainPreviewMonsterBehavior = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ChainPreviewMonsterBehavior
+function Entity:ReplaceChainPreviewMonsterBehavior()
+  local index = self.WEComponentsEnum.ChainPreviewMonsterBehavior
   local component = ChainPreviewMonsterBehaviorComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveChainPreviewMonsterBehavior = function(self)
-  -- function num : 0_13
+function Entity:RemoveChainPreviewMonsterBehavior()
   if self:HasChainPreviewMonsterBehavior() then
-    self:RemoveComponent((self.WEComponentsEnum).ChainPreviewMonsterBehavior)
+    self:RemoveComponent(self.WEComponentsEnum.ChainPreviewMonsterBehavior)
   end
 end
 
-local ChainPreviewMonsterBehaviorType = {None = 0, TeamInRange = 1, MAX = 99}
+local ChainPreviewMonsterBehaviorType = {
+  None = 0,
+  TeamInRange = 1,
+  MAX = 99
+}
 _enum("ChainPreviewMonsterBehaviorType", ChainPreviewMonsterBehaviorType)
-

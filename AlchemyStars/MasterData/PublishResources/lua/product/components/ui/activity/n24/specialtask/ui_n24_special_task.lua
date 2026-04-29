@@ -1,84 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n24/specialtask/ui_n24_special_task.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN24SpecialTask", UIController)
 UIN24SpecialTask = UIN24SpecialTask
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN24SpecialTask.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN24SpecialTask:Constructor()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
   self._preSelectedItem = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTask.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN24SpecialTask:LoadDataOnEnter(TT, res)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SPECIAL, ECampaignSpecialComponentID.ECAMPAIGN_SPECIAL_QUEST)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SPECIAL, ECampaignSpecialComponentID.ECAMPAIGN_SPECIAL_QUEST)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
-  self._questComponent = (self._localProcess):GetComponent(ECampaignSpecialComponentID.ECAMPAIGN_SPECIAL_QUEST)
-  self._questComponentInfo = (self._questComponent):GetComponentInfo()
+  self._localProcess = self._campaign:GetLocalProcess()
+  self._questComponent = self._localProcess:GetComponent(ECampaignSpecialComponentID.ECAMPAIGN_SPECIAL_QUEST)
+  self._questComponentInfo = self._questComponent:GetComponentInfo()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTask.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN24SpecialTask:OnShow(uiParams)
   self._callback = uiParams[1]
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTask._GetComponents = function(self)
-  -- function num : 0_3
+function UIN24SpecialTask:_GetComponents()
   self._titleText = self:GetUIComponent("RollingText", "Title")
   self._remainTimeText = self:GetUIComponent("UILocalizationText", "RemainTimeText")
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._itemTips = self:GetUIComponent("UISelectObjectPath", "ItemTips")
-  self._tips = (self._itemTips):SpawnObject("UISelectInfo")
+  self._tips = self._itemTips:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTask._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._titleText):RefreshText((StringTable.Get)("str_n24_specialtask_title"))
-  local curtime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  local remainTime = (self._questComponentInfo).m_close_time - curtime
-  ;
-  (self._remainTimeText):SetText((StringTable.Get)("str_n24_specialtask_remaintime", (UIN24SpecialTaskToolFunctions.GetRemainTime)(remainTime)))
-  self._questList = (self._questComponent):GetQuestInfo()
+function UIN24SpecialTask:_OnValue()
+  self._titleText:RefreshText(StringTable.Get("str_n24_specialtask_title"))
+  local curtime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  local remainTime = self._questComponentInfo.m_close_time - curtime
+  self._remainTimeText:SetText(StringTable.Get("str_n24_specialtask_remaintime", UIN24SpecialTaskToolFunctions.GetRemainTime(remainTime)))
+  self._questList = self._questComponent:GetQuestInfo()
   self:_InitDynamicScrollView()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTask._InitDynamicScrollView = function(self)
-  -- function num : 0_5
-  (self._scrollView):InitListView(#self._questList, function(scrollview, index)
-    -- function num : 0_5_0 , upvalues : self
+function UIN24SpecialTask:_InitDynamicScrollView()
+  self._scrollView:InitListView(#self._questList, function(scrollview, index)
     return self:_OnGetItemByIndex(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTask._OnGetItemByIndex = function(self, scrollview, index)
-  -- function num : 0_6
-  local quest = (self._questList)[index + 1]
+function UIN24SpecialTask:_OnGetItemByIndex(scrollview, index)
+  local quest = self._questList[index + 1]
   local item = scrollview:NewListViewItem("UIN24SpecialTaskItem")
   local itemPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if not item.IsInitHandlerCalled then
@@ -89,58 +60,36 @@ UIN24SpecialTask._OnGetItemByIndex = function(self, scrollview, index)
   local itemWidget = itemWidgets[1]
   if itemWidget then
     itemWidget:SetData(self._questComponent, quest, function(widget)
-    -- function num : 0_6_0 , upvalues : self
-    self:OnSelectItem(widget)
-  end
-, function(id, position)
-    -- function num : 0_6_1 , upvalues : self
-    self:_ShowTips(id, position)
-  end
-)
+      self:OnSelectItem(widget)
+    end, function(id, position)
+      self:_ShowTips(id, position)
+    end)
   end
   return item
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTask._RefreshScrollView = function(self)
-  -- function num : 0_7
-  (self._scrollView):SetListItemCount(#self._questList)
-  ;
-  (self._scrollView):RefreshAllShownItem()
+function UIN24SpecialTask:_RefreshScrollView()
+  self._scrollView:SetListItemCount(#self._questList)
+  self._scrollView:RefreshAllShownItem()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTask.OnHide = function(self)
-  -- function num : 0_8
+function UIN24SpecialTask:OnHide()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTask.CloseBtnOnClick = function(self, go)
-  -- function num : 0_9
+function UIN24SpecialTask:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTask.OnSelectItem = function(self, widget)
-  -- function num : 0_10
+function UIN24SpecialTask:OnSelectItem(widget)
   if self._preSelectedItem and self._preSelectedItem ~= widget then
-    (self._preSelectedItem):OnSelect(false)
+    self._preSelectedItem:OnSelect(false)
   end
   self._preSelectedItem = widget
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTask._ShowTips = function(self, id, pos)
-  -- function num : 0_11
-  (self._tips):SetData(id, pos)
+function UIN24SpecialTask:_ShowTips(id, pos)
+  self._tips:SetData(id, pos)
 end
-
-

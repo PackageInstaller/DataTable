@@ -1,154 +1,105 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s8/main/ui_season_mode_switch_s8.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonModeSwitchS8", UICustomWidget)
 UISeasonModeSwitchS8 = UISeasonModeSwitchS8
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonModeSwitchS8.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonModeSwitchS8:OnShow(uiParams)
   self:InitWidget()
   self:AttachEvent(GameEventType.OnSeasonModeChanged, self._OnModeChanged)
   self:AttachEvent(GameEventType.OnEventPointProgressChange, self._OnEventPointProgressChange)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonModeSwitchS8.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonModeSwitchS8:OnHide()
   self:DetachEvent(GameEventType.OnSeasonModeChanged, self._OnModeChanged)
   self:DetachEvent(GameEventType.OnEventPointProgressChange, self._OnEventPointProgressChange)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonModeSwitchS8.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonModeSwitchS8:InitWidget()
   self._root = self:GetGameObject("Root")
   self._mask1 = self:GetGameObject("Mask1")
   self._mask2 = self:GetGameObject("Mask2")
-  self._title1 = ((self:GetGameObject("Title1")).gameObject):GetComponent("UILocalizationText")
-  self._title2 = ((self:GetGameObject("Title2")).gameObject):GetComponent("UILocalizationText")
-  self._anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
-  ;
-  (self._anim):Play("uieff_UISeasonModeSwitchS8_in")
+  self._title1 = self:GetGameObject("Title1").gameObject:GetComponent("UILocalizationText")
+  self._title2 = self:GetGameObject("Title2").gameObject:GetComponent("UILocalizationText")
+  self._anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
+  self._anim:Play("uieff_UISeasonModeSwitchS8_in")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonModeSwitchS8.SetData = function(self, seasonObj)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonModeSwitchS8:SetData(seasonObj)
   self._seasonObj = seasonObj
-  self._seasonManager = (((GameGlobal.GetModule)(SeasonModule)):UIModule()):SeasonManager()
-  self._mapManager = (self._seasonManager):SeasonMapManager()
-  self._componentInfo = (self._seasonObj):GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
+  self._seasonManager = GameGlobal.GetModule(SeasonModule):UIModule():SeasonManager()
+  self._mapManager = self._seasonManager:SeasonMapManager()
+  self._componentInfo = self._seasonObj:GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
   self._canSwitch = true
-  ;
-  (self._root):SetActive(self._canSwitch)
+  self._root:SetActive(self._canSwitch)
   self:_OnModeChanged()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonModeSwitchS8.BtnMode1OnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonModeSwitchS8:BtnMode1OnClick(go)
   self:_SwitchTo(SeasonMapMode.Mode1)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonModeSwitchS8.BtnMode2OnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonModeSwitchS8:BtnMode2OnClick(go)
   self:_SwitchTo(SeasonMapMode.Mode2)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonModeSwitchS8.BtnSwitchOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  local mode = nil
+function UISeasonModeSwitchS8:BtnSwitchOnClick(go)
+  local mode
   if self._curMode == SeasonMapMode.Mode1 then
     mode = SeasonMapMode.Mode2
-  else
-    if self._curMode == SeasonMapMode.Mode2 then
-      mode = SeasonMapMode.Mode1
-    end
+  elseif self._curMode == SeasonMapMode.Mode2 then
+    mode = SeasonMapMode.Mode1
   end
   self:_SwitchTo(mode)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonModeSwitchS8.Switch2Modle2 = function(self, finishCb)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonModeSwitchS8:Switch2Modle2(finishCb)
   self:_SwitchTo(SeasonMapMode.Mode2, finishCb)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonModeSwitchS8._SwitchTo = function(self, mode, finishCb)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonModeSwitchS8:_SwitchTo(mode, finishCb)
   if not self._canSwitch then
-    (Log.warn)("不能切换赛季模式:", mode)
-    return 
+    Log.warn("不能切换赛季模式:", mode)
+    return
   end
   if self._curMode == mode then
-    (Log.warn)("无需切换赛季模式:", mode)
-    return 
+    Log.warn("无需切换赛季模式:", mode)
+    return
   end
   self:StartTask(self._Switch, self, mode, finishCb)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonModeSwitchS8._CheckModeValid = function(self, mode)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg = (Cfg.cfg_season_map)[(self._seasonObj):GetSeasonID()]
+function UISeasonModeSwitchS8:_CheckModeValid(mode)
+  local cfg = Cfg.cfg_season_map[self._seasonObj:GetSeasonID()]
   if not cfg then
-    (Log.exception)("cfg_season_map 中找不到配置:", (self._seasonObj):GetSeasonID())
+    Log.exception("cfg_season_map 中找不到配置:", self._seasonObj:GetSeasonID())
     return false
   end
   if cfg.ModeUnlock == nil or next(cfg.ModeUnlock) == nil then
     return false
   end
-  local condition = (cfg.ModeUnlock)[mode]
-  if (string.isnullorempty)(condition) then
+  local condition = cfg.ModeUnlock[mode]
+  if string.isnullorempty(condition) then
     return true
   end
-  local valid = ((GameGlobal.GetModule)(SeasonModule)):CheckCondition(condition, (self._componentInfo).m_stage_info)
+  local valid = GameGlobal.GetModule(SeasonModule):CheckCondition(condition, self._componentInfo.m_stage_info)
   return valid
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonModeSwitchS8._Switch = function(self, TT, mode, finishCb)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonModeSwitchS8:_Switch(TT, mode, finishCb)
   self:Lock("UISeasonModeSwitchS8:SwitchMode")
-  ;
-  (self._anim):Stop()
+  self._anim:Stop()
   if mode == SeasonMapMode.Mode1 then
-    (self._anim):Play("uieff_UISeasonModeSwitchS4_02")
-  else
-    if mode == SeasonMapMode.Mode2 then
-      (self._anim):Play("uieff_UISeasonModeSwitchS4_01")
-    end
+    self._anim:Play("uieff_UISeasonModeSwitchS4_02")
+  elseif mode == SeasonMapMode.Mode2 then
+    self._anim:Play("uieff_UISeasonModeSwitchS4_01")
   end
   YIELD(TT, 400)
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UISeasonTransitionAnimations", "UISeasonTransitionAnimation_Style1", 500, 500, function()
-    -- function num : 0_10_0 , upvalues : self, mode
+  GameGlobal.UIStateManager():ShowDialog("UISeasonTransitionAnimations", "UISeasonTransitionAnimation_Style1", 500, 500, function()
     if self.view then
-      (self._mapManager):SwitchMapMode(mode)
+      self._mapManager:SwitchMapMode(mode)
       self._curMode = mode
       self:_RefreshBtn(mode)
     end
-  end
-, function()
-    -- function num : 0_10_1
-  end
-)
+  end, function()
+  end)
   YIELD(TT, 1000)
   self:UnLock("UISeasonModeSwitchS8:SwitchMode")
   if finishCb then
@@ -156,54 +107,26 @@ UISeasonModeSwitchS8._Switch = function(self, TT, mode, finishCb)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonModeSwitchS8._RefreshBtn = function(self, mode)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonModeSwitchS8:_RefreshBtn(mode)
   if mode == SeasonMapMode.Mode1 then
-    (self._mask1):SetActive(false)
-    ;
-    (self._mask2):SetActive(true)
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._title1).color = Color(1, 1, 1, 1)
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._title2).color = Color(0.70980392156863, 0.70980392156863, 0.70980392156863, 1)
-  else
-    if mode == SeasonMapMode.Mode2 then
-      (self._mask1):SetActive(true)
-      ;
-      (self._mask2):SetActive(false)
-      -- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._title2).color = Color(1, 1, 1, 1)
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._title1).color = Color(0.70980392156863, 0.70980392156863, 0.70980392156863, 1)
-    end
+    self._mask1:SetActive(false)
+    self._mask2:SetActive(true)
+    self._title1.color = Color(1, 1, 1, 1)
+    self._title2.color = Color(0.7098039215686275, 0.7098039215686275, 0.7098039215686275, 1)
+  elseif mode == SeasonMapMode.Mode2 then
+    self._mask1:SetActive(true)
+    self._mask2:SetActive(false)
+    self._title2.color = Color(1, 1, 1, 1)
+    self._title1.color = Color(0.7098039215686275, 0.7098039215686275, 0.7098039215686275, 1)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonModeSwitchS8._OnModeChanged = function(self)
-  -- function num : 0_12
-  self._curMode = (self._mapManager):Mode()
+function UISeasonModeSwitchS8:_OnModeChanged()
+  self._curMode = self._mapManager:Mode()
   self:_RefreshBtn(self._curMode)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonModeSwitchS8._OnEventPointProgressChange = function(self)
-  -- function num : 0_13
+function UISeasonModeSwitchS8:_OnEventPointProgressChange()
   self._canSwitch = true
-  ;
-  (self._root):SetActive(self._canSwitch)
+  self._root:SetActive(self._canSwitch)
 end
-
-

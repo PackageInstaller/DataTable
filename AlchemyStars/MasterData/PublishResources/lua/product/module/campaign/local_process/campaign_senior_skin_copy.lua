@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_senior_skin_copy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("campaign_component_local_process_base")
 _class("CCampaignSeniorSkinCopy", ICampaignComponentLocalProcessBase)
 CCampaignSeniorSkinCopy = CCampaignSeniorSkinCopy
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignSeniorSkinCopy.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignSeniorSkinCopy:Constructor()
   self._buyGiftComponent = nil
   self._buyGiftComponentInfo = nil
   self._seniorSkinComponent = nil
@@ -17,55 +10,37 @@ CCampaignSeniorSkinCopy.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeniorSkinCopy.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignSeniorSkinCopy:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_SENIOR_SKIN_COPY
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeniorSkinCopy.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignSeniorSkinCopy:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeniorSkinCopy.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignSeniorSkinCopy:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetBuyGiftComponent()
   self:_GetSeniorSkinComponent()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeniorSkinCopy._GetBuyGiftComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._buyGiftComponent = (self._campaignObj):GetComponent(ECampaignSeniorSkinCopyComponentID.ECAMPAIGN_COPY_BUY_GIFT)
+function CCampaignSeniorSkinCopy:_GetBuyGiftComponent()
+  self._buyGiftComponent = self._campaignObj:GetComponent(ECampaignSeniorSkinCopyComponentID.ECAMPAIGN_COPY_BUY_GIFT)
   if not self._buyGiftComponent then
-    return 
+    return
   end
-  self._buyGiftComponentInfo = (self._buyGiftComponent):ComponentInfo()
+  self._buyGiftComponentInfo = self._buyGiftComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeniorSkinCopy._GetSeniorSkinComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._seniorSkinComponent = (self._campaignObj):GetComponent(ECampaignSeniorSkinCopyComponentID.ECAMPAIGN_COPY_SENIOR_SKIN)
+function CCampaignSeniorSkinCopy:_GetSeniorSkinComponent()
+  self._seniorSkinComponent = self._campaignObj:GetComponent(ECampaignSeniorSkinCopyComponentID.ECAMPAIGN_COPY_SENIOR_SKIN)
   if not self._seniorSkinComponent then
-    return 
+    return
   end
-  self._seniorSkinComponentInfo = (self._seniorSkinComponent):ComponentInfo()
+  self._seniorSkinComponentInfo = self._seniorSkinComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeniorSkinCopy.GetComponent = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignSeniorSkinCopy:GetComponent(componentID)
   if ECampaignSeniorSkinCopyComponentID.ECAMPAIGN_COPY_SENIOR_SKIN == componentID then
     return self._seniorSkinComponent
   end
@@ -75,10 +50,7 @@ CCampaignSeniorSkinCopy.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeniorSkinCopy.GetComponentInfo = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignSeniorSkinCopy:GetComponentInfo(componentID)
   if ECampaignSeniorSkinCopyComponentID.ECAMPAIGN_COPY_SENIOR_SKIN == componentID then
     return self._seniorSkinComponentInfo
   end
@@ -87,5 +59,3 @@ CCampaignSeniorSkinCopy.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

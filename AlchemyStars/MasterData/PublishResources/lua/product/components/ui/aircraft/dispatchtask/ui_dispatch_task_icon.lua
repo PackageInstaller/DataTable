@@ -1,16 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/dispatchtask/ui_dispatch_task_icon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDispatchTaskIcon", UICustomWidget)
 UIDispatchTaskIcon = UIDispatchTaskIcon
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDispatchTaskIcon.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
-  self.ElementSpriteName = {[ElementType.ElementType_Blue] = "bing_color", [ElementType.ElementType_Red] = "huo_color", [ElementType.ElementType_Green] = "sen_color", [ElementType.ElementType_Yellow] = "lei_color"}
-  self._prof2Img = {[2001] = "spirit_prof_5", [2002] = "spirit_prof_1", [2003] = "spirit_prof_3", [2004] = "spirit_prof_7"}
+function UIDispatchTaskIcon:OnShow(uiParam)
+  self.ElementSpriteName = {
+    [ElementType.ElementType_Blue] = "bing_color",
+    [ElementType.ElementType_Red] = "huo_color",
+    [ElementType.ElementType_Green] = "sen_color",
+    [ElementType.ElementType_Yellow] = "lei_color"
+  }
+  self._prof2Img = {
+    [2001] = "spirit_prof_5",
+    [2002] = "spirit_prof_1",
+    [2003] = "spirit_prof_3",
+    [2004] = "spirit_prof_7"
+  }
   self._uiHeartItemAtlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self._suggestIcon1Img = self:GetUIComponent("RawImageLoader", "SuggestIcon1")
@@ -35,179 +38,121 @@ UIDispatchTaskIcon.OnShow = function(self, uiParam)
   self._completeStarPanelLoader = self:GetUIComponent("UISelectObjectPath", "CompleteStarPanel")
   self._siteInfo = nil
   self._timerHandler = nil
-  self._aircraftModule = (GameGlobal.GetModule)(AircraftModule)
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._aircraftModule = GameGlobal.GetModule(AircraftModule)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchTaskIcon.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDispatchTaskIcon:OnHide()
   self._uiHeartItemAtlas = nil
   self.atlasProperty = nil
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchTaskIcon.Refresh = function(self, pointIndex, mapController)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDispatchTaskIcon:Refresh(pointIndex, mapController)
   self._mapController = mapController
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
-  local roomData = (self._aircraftModule):GetRoomByRoomType(AirRoomType.DispatchRoom)
+  local roomData = self._aircraftModule:GetRoomByRoomType(AirRoomType.DispatchRoom)
   local siteInfo = roomData:GetSiteInfo(pointIndex)
   self._siteInfo = siteInfo
   self._pointIndex = pointIndex
   if not siteInfo then
     self:_TaskIsEmpty()
-    return 
+    return
   end
   local state = siteInfo.state
   if state == DispatchTaskStateType.DTST_Invalid or state == DispatchTaskStateType.DTST_End then
     self:_TaskIsEmpty()
-    return 
+    return
   end
-  ;
-  (self:GetGameObject()):SetActive(true)
+  self:GetGameObject():SetActive(true)
   local taskId = siteInfo.taskId
-  local taskCfg = (Cfg.cfg_aircraft_dispatch_task)({ID = taskId})
-  self._taskStar = (taskCfg[1]).Star
-  ;
-  (self._unStartPanel):SetActive(false)
-  ;
-  (self._runningPanel):SetActive(false)
-  ;
-  (self._completePanel):SetActive(false)
-  ;
-  (self._emptyPanel):SetActive(false)
+  local taskCfg = Cfg.cfg_aircraft_dispatch_task({ID = taskId})
+  self._taskStar = taskCfg[1].Star
+  self._unStartPanel:SetActive(false)
+  self._runningPanel:SetActive(false)
+  self._completePanel:SetActive(false)
+  self._emptyPanel:SetActive(false)
   if state == DispatchTaskStateType.DTST_New then
-    (self._unStartPanel):SetActive(true)
-    ;
-    (self._unStartStarPanelLoader):SpawnObjects("UIDispatchTaskStar", self._taskStar)
+    self._unStartPanel:SetActive(true)
+    self._unStartStarPanelLoader:SpawnObjects("UIDispatchTaskStar", self._taskStar)
     local itemId = self:_GetShowItemId(siteInfo.awardId, taskId)
-    local itemCfgs = (Cfg.cfg_item)({ID = itemId})
+    local itemCfgs = Cfg.cfg_item({ID = itemId})
     local itemCfg = itemCfgs[1]
-    ;
-    (self._rewardIconImg):LoadImage(itemCfg.Icon)
+    self._rewardIconImg:LoadImage(itemCfg.Icon)
     self:_RefreshSuggestInfo(taskCfg[1])
-  else
-    do
-      if state == DispatchTaskStateType.DTST_Doing then
-        (self._runningPanel):SetActive(true)
-        ;
-        (self._runningStarPanelLoader):SpawnObjects("UIDispatchTaskStar", self._taskStar)
-        local teamMembers = siteInfo.teamMember
-        local pet = (self._petModule):GetPet(teamMembers[1])
-        ;
-        (self._runningPetIconImg):LoadImage((HelperProxy:GetInstance()):GetPetHead(pet:GetTemplateID(), pet:GetPetGrade(), pet:GetSkinId(), PetSkinEffectPath.HEAD_ICON_DISPATCH))
-        -- DECOMPILER ERROR at PC137: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._minLabel).text = self:_GetRemainTimeStr(siteInfo.endTime)
-        self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._minLabel).text = self:_GetRemainTimeStr((self._siteInfo).endTime)
-    local nowTime = (self._timeModule):GetServerTime() / 1000
-    local seconds = (self._siteInfo).endTime - nowTime
-    if seconds <= 0 then
-      if self._timerHandler then
-        ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
-        self._timerHandler = nil
-      end
-      self:_ReqData()
-    end
-  end
-)
-      else
-        do
-          if state == DispatchTaskStateType.DTST_Complete then
-            (self._completePanel):SetActive(true)
-            ;
-            (self._completeStarPanelLoader):SpawnObjects("UIDispatchTaskStar", self._taskStar)
-            local teamMembers = siteInfo.teamMember
-            local pet = (self._petModule):GetPet(teamMembers[1])
-            ;
-            (self._completePetIconImg):LoadImage((HelperProxy:GetInstance()):GetPetHead(pet:GetTemplateID(), pet:GetPetGrade(), pet:GetSkinId(), PetSkinEffectPath.HEAD_ICON_DISPATCH))
-          end
+  elseif state == DispatchTaskStateType.DTST_Doing then
+    self._runningPanel:SetActive(true)
+    self._runningStarPanelLoader:SpawnObjects("UIDispatchTaskStar", self._taskStar)
+    local teamMembers = siteInfo.teamMember
+    local pet = self._petModule:GetPet(teamMembers[1])
+    self._runningPetIconImg:LoadImage(HelperProxy:GetInstance():GetPetHead(pet:GetTemplateID(), pet:GetPetGrade(), pet:GetSkinId(), PetSkinEffectPath.HEAD_ICON_DISPATCH))
+    self._minLabel.text = self:_GetRemainTimeStr(siteInfo.endTime)
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+      self._minLabel.text = self:_GetRemainTimeStr(self._siteInfo.endTime)
+      local nowTime = self._timeModule:GetServerTime() / 1000
+      local seconds = self._siteInfo.endTime - nowTime
+      if seconds <= 0 then
+        if self._timerHandler then
+          GameGlobal.Timer():CancelEvent(self._timerHandler)
+          self._timerHandler = nil
         end
+        self:_ReqData()
       end
-    end
+    end)
+  elseif state == DispatchTaskStateType.DTST_Complete then
+    self._completePanel:SetActive(true)
+    self._completeStarPanelLoader:SpawnObjects("UIDispatchTaskStar", self._taskStar)
+    local teamMembers = siteInfo.teamMember
+    local pet = self._petModule:GetPet(teamMembers[1])
+    self._completePetIconImg:LoadImage(HelperProxy:GetInstance():GetPetHead(pet:GetTemplateID(), pet:GetPetGrade(), pet:GetSkinId(), PetSkinEffectPath.HEAD_ICON_DISPATCH))
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchTaskIcon._RefreshSuggestInfo = function(self, taskCfg)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDispatchTaskIcon:_RefreshSuggestInfo(taskCfg)
   local extraForce = taskCfg.ExtraForce
   local extraElement = taskCfg.ExtraElement
   local extraJop = taskCfg.ExtraJop
-  if extraForce and extraForce > 0 then
-    (self._suggestIcon1Go):SetActive(true)
-    ;
-    (self._profIcon1Go):SetActive(false)
-    local tagCfg = (Cfg.cfg_pet_tags)[extraForce]
-    ;
-    (self._suggestIcon1Img):LoadImage(tagCfg.Icon)
-  else
-    do
-      if extraJop and extraJop > 0 then
-        (self._suggestIcon1Go):SetActive(false)
-        ;
-        (self._profIcon1Go):SetActive(true)
-        -- DECOMPILER ERROR at PC41: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._profIcon1Img).sprite = (self._uiHeartItemAtlas):GetSprite((self._prof2Img)[extraJop])
-      end
-      if extraElement and extraElement > 0 then
-        (self._elementIconGo):SetActive(true)
-        ;
-        (self._profIcon2Go):SetActive(false)
-        -- DECOMPILER ERROR at PC65: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._elementIconImg).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((self.ElementSpriteName)[extraElement]))
-      else
-        if extraJop and extraJop > 0 then
-          (self._elementIconGo):SetActive(false)
-          ;
-          (self._profIcon2Go):SetActive(true)
-          -- DECOMPILER ERROR at PC85: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._profIcon2Img).sprite = (self._uiHeartItemAtlas):GetSprite((self._prof2Img)[extraJop])
-        end
-      end
-    end
+  if extraForce and 0 < extraForce then
+    self._suggestIcon1Go:SetActive(true)
+    self._profIcon1Go:SetActive(false)
+    local tagCfg = Cfg.cfg_pet_tags[extraForce]
+    self._suggestIcon1Img:LoadImage(tagCfg.Icon)
+  elseif extraJop and 0 < extraJop then
+    self._suggestIcon1Go:SetActive(false)
+    self._profIcon1Go:SetActive(true)
+    self._profIcon1Img.sprite = self._uiHeartItemAtlas:GetSprite(self._prof2Img[extraJop])
+  end
+  if extraElement and 0 < extraElement then
+    self._elementIconGo:SetActive(true)
+    self._profIcon2Go:SetActive(false)
+    self._elementIconImg.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(self.ElementSpriteName[extraElement]))
+  elseif extraJop and 0 < extraJop then
+    self._elementIconGo:SetActive(false)
+    self._profIcon2Go:SetActive(true)
+    self._profIcon2Img.sprite = self._uiHeartItemAtlas:GetSprite(self._prof2Img[extraJop])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchTaskIcon._GetRemainTimeStr = function(self, endTime)
-  -- function num : 0_4 , upvalues : _ENV
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)(endTime - nowTime)
+function UIDispatchTaskIcon:_GetRemainTimeStr(endTime)
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(endTime - nowTime)
   if seconds < 0 then
     seconds = 0
   end
-  local hour = (math.floor)(seconds / 3600)
+  local hour = math.floor(seconds / 3600)
   seconds = seconds - hour * 3600
   local hourStr = hour
   if hour < 10 then
     hourStr = "0" .. hour
   end
-  local min = (math.floor)((seconds) / 60)
+  local min = math.floor(seconds / 60)
   seconds = seconds - min * 60
   local minStr = min
   if min < 10 then
@@ -223,35 +168,24 @@ UIDispatchTaskIcon._GetRemainTimeStr = function(self, endTime)
   return hourStr .. ":" .. minStr .. ":" .. secondStr
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchTaskIcon._ReqData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self._ReqDataCoro, self)
+function UIDispatchTaskIcon:_ReqData()
+  GameGlobal.TaskManager():StartTask(self._ReqDataCoro, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchTaskIcon._ReqDataCoro = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UIDispatchTaskIcon:_ReqDataCoro(TT)
   self:Lock("UIDispatchTaskIcon_ReqData")
-  local ack = (self._aircraftModule):HandleCEventDispatchSite(TT)
+  local ack = self._aircraftModule:HandleCEventDispatchSite(TT)
   if ack:GetSucc() then
-    (self._mapController):RefreshTask()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateDispatchTaskSiteInfo)
+    self._mapController:RefreshTask()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateDispatchTaskSiteInfo)
   else
-    ;
-    (ToastManager.ShowToast)((self._aircraftModule):GetErrorMsg(ack:GetResult()))
+    ToastManager.ShowToast(self._aircraftModule:GetErrorMsg(ack:GetResult()))
   end
   self:UnLock("UIDispatchTaskIcon_ReqData")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchTaskIcon._GetShowItemId = function(self, rewardId, taskId)
-  -- function num : 0_7 , upvalues : _ENV
-  local roomData = (self._aircraftModule):GetRoomByRoomType(AirRoomType.DispatchRoom)
+function UIDispatchTaskIcon:_GetShowItemId(rewardId, taskId)
+  local roomData = self._aircraftModule:GetRoomByRoomType(AirRoomType.DispatchRoom)
   local baseRewards, extraRewards, bookOrFuniture = roomData:GetAward(rewardId, taskId)
   local rewards = {}
   if baseRewards then
@@ -259,275 +193,233 @@ UIDispatchTaskIcon._GetShowItemId = function(self, rewardId, taskId)
       rewards[#rewards + 1] = baseRewards[i]
     end
   end
-  do
-    if extraRewards then
-      for i = 1, #extraRewards do
-        rewards[#rewards + 1] = extraRewards[i]
-      end
+  if extraRewards then
+    for i = 1, #extraRewards do
+      rewards[#rewards + 1] = extraRewards[i]
     end
-    do
-      if bookOrFuniture then
-        for i = 1, #bookOrFuniture do
-          rewards[#rewards + 1] = bookOrFuniture[i]
-        end
+  end
+  if bookOrFuniture then
+    for i = 1, #bookOrFuniture do
+      rewards[#rewards + 1] = bookOrFuniture[i]
+    end
+  end
+  for i = 1, #rewards do
+    local itemId = rewards[i].id
+    if itemId == RoleAssetID.RoleAssetGlow then
+      table.remove(rewards, i)
+      break
+    end
+  end
+  local showItemid
+  local sortTypes = {
+    {
+      type = ItemSubType.ItemSubType_Furniture
+    },
+    {
+      type = ItemSubType.ItemSubType_Book
+    }
+  }
+  for i = 1, #sortTypes do
+    local sortType = sortTypes[i]
+    for i = 1, #rewards do
+      local itemId = rewards[i].id
+      if sortType.id and itemId == sortType.id then
+        showItemid = itemId
+        break
       end
-      do
-        for i = 1, #rewards do
-          local itemId = (rewards[i]).id
-          if itemId == RoleAssetID.RoleAssetGlow then
-            (table.remove)(rewards, i)
+      if sortType.type then
+        local itemCfgs = Cfg.cfg_item({ID = itemId})
+        if itemCfgs then
+          local itemCfg = itemCfgs[1]
+          if itemCfg.ItemSubType == sortType.type then
+            showItemid = itemId
             break
           end
         end
-        do
-          local showItemid = nil
-          local sortTypes = {
-{type = ItemSubType.ItemSubType_Furniture}
-, 
-{type = ItemSubType.ItemSubType_Book}
-}
-          for i = 1, #sortTypes do
-            local sortType = sortTypes[i]
-            for i = 1, #rewards do
-              local itemId = (rewards[i]).id
-              if sortType.id and itemId == sortType.id then
-                showItemid = itemId
-                break
-              end
-              if sortType.type then
-                local itemCfgs = (Cfg.cfg_item)({ID = itemId})
-                if itemCfgs then
-                  local itemCfg = itemCfgs[1]
-                  if itemCfg.ItemSubType == sortType.type then
-                    showItemid = itemId
-                    break
-                  end
-                end
-              end
-            end
-          end
-          do
-            if showItemid or not showItemid then
-              return (rewards[1]).id
-            end
-            return showItemid
-          end
-        end
       end
     end
+    if showItemid then
+      break
+    end
   end
+  if not showItemid then
+    return rewards[1].id
+  end
+  return showItemid
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchTaskIcon._TaskIsEmpty = function(self)
-  -- function num : 0_8
-  (self:GetGameObject()):SetActive(true)
-  ;
-  (self._unStartPanel):SetActive(false)
-  ;
-  (self._runningPanel):SetActive(false)
-  ;
-  (self._completePanel):SetActive(false)
-  ;
-  (self._emptyPanel):SetActive(true)
+function UIDispatchTaskIcon:_TaskIsEmpty()
+  self:GetGameObject():SetActive(true)
+  self._unStartPanel:SetActive(false)
+  self._runningPanel:SetActive(false)
+  self._completePanel:SetActive(false)
+  self._emptyPanel:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchTaskIcon.TaskBtnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  if (self._siteInfo).state == DispatchTaskStateType.DTST_Complete then
-    (self._mapController):GetAllRewards()
+function UIDispatchTaskIcon:TaskBtnOnClick(go)
+  if self._siteInfo.state == DispatchTaskStateType.DTST_Complete then
+    self._mapController:GetAllRewards()
+  elseif self._siteInfo.state == DispatchTaskStateType.DTST_New or self._siteInfo.state == DispatchTaskStateType.DTST_Doing then
+    self:ShowDialog("UIDispatchDetailController", self._pointIndex)
   else
-    if (self._siteInfo).state == DispatchTaskStateType.DTST_New or (self._siteInfo).state == DispatchTaskStateType.DTST_Doing then
-      self:ShowDialog("UIDispatchDetailController", self._pointIndex)
-    else
-      local roomData = (self._aircraftModule):GetRoomByRoomType(AirRoomType.DispatchRoom)
-      local seconds = roomData:GetDispatchTaskRefreshRemainTime(self._pointIndex)
-      local tips = self:GetRefreshTaskTimeStr(seconds)
-      if tips then
-        (ToastManager.ShowToast)(tips)
-      end
+    local roomData = self._aircraftModule:GetRoomByRoomType(AirRoomType.DispatchRoom)
+    local seconds = roomData:GetDispatchTaskRefreshRemainTime(self._pointIndex)
+    local tips = self:GetRefreshTaskTimeStr(seconds)
+    if tips then
+      ToastManager.ShowToast(tips)
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchTaskIcon.GetRefreshTaskTimeStr = function(self, seconds)
-  -- function num : 0_10 , upvalues : _ENV
+function UIDispatchTaskIcon:GetRefreshTaskTimeStr(seconds)
   if seconds <= 0 then
-    ((GameGlobal.TaskManager)()):StartTask(self.ReqTaskData, self)
+    GameGlobal.TaskManager():StartTask(self.ReqTaskData, self)
     return nil
   end
-  local hour = (math.floor)(seconds / 3600)
+  local hour = math.floor(seconds / 3600)
   seconds = seconds - hour * 3600
-  local min = (math.floor)((seconds) / 60)
+  local min = math.floor(seconds / 60)
   seconds = seconds - min * 60
   local timeStr = ""
-  if seconds > 0 then
-    timeStr = (StringTable.Get)("str_dispatch_room_task_refresh_time_second", seconds)
+  if 0 < seconds then
+    timeStr = StringTable.Get("str_dispatch_room_task_refresh_time_second", seconds)
   end
-  if min > 0 then
-    timeStr = (StringTable.Get)("str_dispatch_room_task_refresh_time_min", min) .. timeStr
+  if 0 < min then
+    timeStr = StringTable.Get("str_dispatch_room_task_refresh_time_min", min) .. timeStr
   end
-  if hour > 0 then
-    timeStr = (StringTable.Get)("str_dispatch_room_task_refresh_time_hour", hour) .. timeStr
+  if 0 < hour then
+    timeStr = StringTable.Get("str_dispatch_room_task_refresh_time_hour", hour) .. timeStr
   end
-  return (StringTable.Get)("str_dispatch_room_task_refresh_time_title", timeStr)
+  return StringTable.Get("str_dispatch_room_task_refresh_time_title", timeStr)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchTaskIcon.ReqTaskData = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function UIDispatchTaskIcon:ReqTaskData(TT)
   self:Lock("UIDispatchTaskIcon_ReqTaskData")
-  local ack = (self._aircraftModule):AircraftUpdate(TT)
-  ;
-  (self._aircraftModule):HandleCEventDispatchSite(TT)
+  local ack = self._aircraftModule:AircraftUpdate(TT)
+  self._aircraftModule:HandleCEventDispatchSite(TT)
   if ack:GetSucc() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateDispatchTaskSiteInfo)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateDispatchTaskSiteInfo)
   else
-    ;
-    (ToastManager.ShowToast)((self._aircraftModule):GetErrorMsg(ack:GetResult()))
+    ToastManager.ShowToast(self._aircraftModule:GetErrorMsg(ack:GetResult()))
   end
   self:UnLock("UIDispatchTaskIcon_ReqTaskData")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchTaskIcon._GetReward = function(self, TT, closeCallback)
-  -- function num : 0_12 , upvalues : _ENV
+function UIDispatchTaskIcon:_GetReward(TT, closeCallback)
   self:Lock("UIDispatchTaskIcon_GetReward")
-  local res, reply = (self._aircraftModule):HandleCEventDispatchTaskAward(TT, self._pointIndex)
+  local res, reply = self._aircraftModule:HandleCEventDispatchTaskAward(TT, self._pointIndex)
   if res:GetSucc() then
-    local roomData = (self._aircraftModule):GetRoomByRoomType(AirRoomType.DispatchRoom)
+    local roomData = self._aircraftModule:GetRoomByRoomType(AirRoomType.DispatchRoom)
     local rewards = {}
-    local baseRewards, extraRewards, bookOrFuniture = roomData:GetAward((self._siteInfo).awardId, (self._siteInfo).taskId)
+    local baseRewards, extraRewards, bookOrFuniture = roomData:GetAward(self._siteInfo.awardId, self._siteInfo.taskId)
     if baseRewards then
       for i = 1, #baseRewards do
-        rewards[#rewards + 1] = {assetid = (baseRewards[i]).id, count = (baseRewards[i]).count}
+        rewards[#rewards + 1] = {
+          assetid = baseRewards[i].id,
+          count = baseRewards[i].count
+        }
       end
     end
-    do
-      if extraRewards and #extraRewards > 0 then
-        local extraMaxCount = (extraRewards[1]).count
-        local teamMembers = (self._siteInfo).teamMember
-        local pets = {}
-        if teamMembers then
-          for j = 1, #teamMembers do
-            local pet = (self._petModule):GetPet(teamMembers[j])
-            pets[#pets + 1] = pet
-          end
-        end
-        do
-          local currentSocre = roomData:GetScore(pets, (self._siteInfo).taskId)
-          local taskCfgs = (Cfg.cfg_aircraft_dispatch_task)({ID = (self._siteInfo).taskId})
-          local taskCfg = taskCfgs[1]
-          local score = taskCfg.Score
-          local percent = 1
-          if score ~= 0 then
-            percent = currentSocre / score
-          end
-          if percent > 1 then
-            percent = 1
-          end
-          do
-            local countRes = (math.floor)(extraMaxCount * percent)
-            rewards[#rewards + 1] = {assetid = (extraRewards[1]).id, count = countRes, des = (StringTable.Get)("str_dispatch_room_extra_reward")}
-            local isGetBookOrFuniture = reply.is_assign
-            if isGetBookOrFuniture and bookOrFuniture and #bookOrFuniture > 0 then
-              local des = ""
-              local itemCfgs = (Cfg.cfg_item)({ID = (bookOrFuniture[1]).id})
-              do
-                do
-                  do
-                    if itemCfgs then
-                      local itemCfg = itemCfgs[1]
-                      if itemCfg.ItemSubType == ItemSubType.ItemSubType_Furniture then
-                        des = (StringTable.Get)("str_dispatch_room_funiture")
-                      end
-                      if itemCfg.ItemSubType == ItemSubType.ItemSubType_Book then
-                        des = (StringTable.Get)("str_dispatch_room_book")
-                      end
-                    end
-                    rewards[#rewards + 1] = {assetid = (bookOrFuniture[1]).id, count = 1, des = des}
-                    self:_ShowRewards(rewards, closeCallback)
-                    self:_ReqData()
-                    ;
-                    (ToastManager.ShowToast)((self._aircraftModule):GetErrorMsg(res:GetResult()))
-                    self:PushPets()
-                    self:UnLock("UIDispatchTaskIcon_GetReward")
-                  end
-                end
-              end
-            end
-          end
+    if extraRewards and 0 < #extraRewards then
+      local extraMaxCount = extraRewards[1].count
+      local teamMembers = self._siteInfo.teamMember
+      local pets = {}
+      if teamMembers then
+        for j = 1, #teamMembers do
+          local pet = self._petModule:GetPet(teamMembers[j])
+          pets[#pets + 1] = pet
         end
       end
+      local currentSocre = roomData:GetScore(pets, self._siteInfo.taskId)
+      local taskCfgs = Cfg.cfg_aircraft_dispatch_task({
+        ID = self._siteInfo.taskId
+      })
+      local taskCfg = taskCfgs[1]
+      local score = taskCfg.Score
+      local percent = 1
+      if score ~= 0 then
+        percent = currentSocre / score
+      end
+      if 1 < percent then
+        percent = 1
+      end
+      local countRes = math.floor(extraMaxCount * percent)
+      rewards[#rewards + 1] = {
+        assetid = extraRewards[1].id,
+        count = countRes,
+        des = StringTable.Get("str_dispatch_room_extra_reward")
+      }
     end
+    local isGetBookOrFuniture = reply.is_assign
+    if isGetBookOrFuniture and bookOrFuniture and 0 < #bookOrFuniture then
+      local des = ""
+      local itemCfgs = Cfg.cfg_item({
+        ID = bookOrFuniture[1].id
+      })
+      if itemCfgs then
+        local itemCfg = itemCfgs[1]
+        if itemCfg.ItemSubType == ItemSubType.ItemSubType_Furniture then
+          des = StringTable.Get("str_dispatch_room_funiture")
+        end
+        if itemCfg.ItemSubType == ItemSubType.ItemSubType_Book then
+          des = StringTable.Get("str_dispatch_room_book")
+        end
+      end
+      rewards[#rewards + 1] = {
+        assetid = bookOrFuniture[1].id,
+        count = 1,
+        des = des
+      }
+    end
+    self:_ShowRewards(rewards, closeCallback)
+    self:_ReqData()
+  else
+    ToastManager.ShowToast(self._aircraftModule:GetErrorMsg(res:GetResult()))
   end
+  self:PushPets()
+  self:UnLock("UIDispatchTaskIcon_GetReward")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchTaskIcon.PushPets = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local teamMembers = (self._siteInfo).teamMember
+function UIDispatchTaskIcon:PushPets()
+  local teamMembers = self._siteInfo.teamMember
   local templateIds = {}
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   if teamMembers then
     for i = 1, #teamMembers do
       local pet = petModule:GetPet(teamMembers[i])
       templateIds[#templateIds + 1] = pet:GetTemplateID()
     end
   end
-  do
-    if not templateIds then
-      return 
-    end
-    for i = 1, #templateIds do
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftPushPetQueue, templateIds[i])
-    end
+  if not templateIds then
+    return
+  end
+  for i = 1, #templateIds do
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftPushPetQueue, templateIds[i])
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchTaskIcon._ShowRewards = function(self, rewards, callback)
-  -- function num : 0_14 , upvalues : _ENV
+function UIDispatchTaskIcon:_ShowRewards(rewards, callback)
   local petIdList = {}
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  for _,reward in pairs(rewards) do
+  local petModule = GameGlobal.GetModule(PetModule)
+  for _, reward in pairs(rewards) do
     if petModule:IsPetID(reward.assetid) then
-      (table.insert)(petIdList, reward)
+      table.insert(petIdList, reward)
     end
   end
-  if (table.count)(petIdList) > 0 then
+  if table.count(petIdList) > 0 then
     self:ShowDialog("UIPetObtain", petIdList, function()
-    -- function num : 0_14_0 , upvalues : _ENV, self, rewards, callback
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", rewards, callback, true)
-  end
-)
-    return 
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      self:ShowDialog("UIGetItemController", rewards, callback, true)
+    end)
+    return
   end
   self:ShowDialog("UIGetItemController", rewards, callback, true)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchTaskIcon.GetTaskBtn = function(self)
-  -- function num : 0_15
+function UIDispatchTaskIcon:GetTaskBtn()
   return self:GetGameObject("TaskBtn_Guide")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchTaskIcon.GetStarCount = function(self)
-  -- function num : 0_16
+function UIDispatchTaskIcon:GetStarCount()
   return self._taskStar
 end
-
-

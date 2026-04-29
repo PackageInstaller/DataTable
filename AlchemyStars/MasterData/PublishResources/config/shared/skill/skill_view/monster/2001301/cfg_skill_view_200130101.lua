@@ -1,21 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2001301/cfg_skill_view_200130101.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayAudio,audioID=6136,audioType=1; PlayCasterAnimation,animName=Skill02; Wait,waitTime=500; PlayCasterBindEffect,effectID=3197; Wait,waitTime=500; StopCasterMaterialAnim,animName=eff_2001301_idle_main; "}
-}
-, 
-{2, 2, 0, 2, 1, 1500, 
-{" DataSelectDamage,damageIndex=1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=3196,turnToTarget=1,deathClear=0; "}
-}
-, 
-{3, 3, 0, 2, 2, 0, 
-{" PlayAudio,audioID=6137,audioType=1; PlayCasterBindEffect,effectID=3195; PlayCasterMaterialAnim,animName=eff_2001301_idle_main; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayAudio,audioID=6136,audioType=1; PlayCasterAnimation,animName=Skill02; Wait,waitTime=500; PlayCasterBindEffect,effectID=3197; Wait,waitTime=500; StopCasterMaterialAnim,animName=eff_2001301_idle_main; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    2,
+    1,
+    1500,
+    {
+      " DataSelectDamage,damageIndex=1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=3196,turnToTarget=1,deathClear=0; "
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    2,
+    2,
+    0,
+    {
+      " PlayAudio,audioID=6137,audioType=1; PlayCasterBindEffect,effectID=3195; PlayCasterMaterialAnim,animName=eff_2001301_idle_main; "
+    }
+  }
 }
 return config, "ID", key
-

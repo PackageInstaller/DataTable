@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_alpha_blink_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_AlphaBlinkAttack", Object)
 SkillEffectCalc_AlphaBlinkAttack = SkillEffectCalc_AlphaBlinkAttack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_AlphaBlinkAttack.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_AlphaBlinkAttack:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
-  self._rideSvc = (self._world):GetService("RideLogic")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
+  self._rideSvc = self._world:GetService("RideLogic")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_AlphaBlinkAttack.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+function SkillEffectCalc_AlphaBlinkAttack:DoSkillEffectCalculator(skillEffectCalcParam)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local casterPos = casterEntity:GetGridPosition()
   local effectParam = skillEffectCalcParam.skillEffectParam
   local backOffset = effectParam:GetBackOffset()
@@ -26,47 +16,39 @@ SkillEffectCalc_AlphaBlinkAttack.DoSkillEffectCalculator = function(self, skillE
   local height = effectParam:GetTrapHeight()
   local attackPos, teleportPos = self:CalcPos(casterEntity, backOffset, trapID)
   if not attackPos or not teleportPos then
-    return 
+    return
   end
   local summonPosList = self:CalcSummonTrap(trapID, attackPos, teleportPos)
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local centerPos = teamEntity:GetGridPosition()
   local attackDir = centerPos - attackPos
   local result = SkillEffectAlphaBlinkAttackResult:New(casterPos, attackPos, attackDir, teleportPos, height, trapID, summonPosList)
   return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_AlphaBlinkAttack.CalcPos = function(self, casterEntity, backOffset, trapID)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_AlphaBlinkAttack:CalcPos(casterEntity, backOffset, trapID)
   local casterPos = casterEntity:GetGridPosition()
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local centerPos = teamEntity:GetGridPosition()
-  local bodyArea = (teamEntity:BodyArea()):GetArea()
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local bodyArea = teamEntity:BodyArea():GetArea()
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local skillCalc = utilScopeSvc:GetSkillScopeCalc()
   local scopeRes = skillCalc:ComputeScopeRange(SkillScopeType.CrossABackBNearCaster, {backOffset, trapID}, centerPos, bodyArea, nil, nil, casterPos)
   local posList = scopeRes:GetAttackRange()
   if #posList < 2 then
-    return 
+    return
   end
   return posList[1], posList[2]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_AlphaBlinkAttack.CalcSummonTrap = function(self, trapID, attackPos, teleportPos)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalc_AlphaBlinkAttack:CalcSummonTrap(trapID, attackPos, teleportPos)
   local summonPosList = {}
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   if not utilScopeSvc:IsPosHasTrapByTrapID(attackPos, trapID) then
-    (table.insert)(summonPosList, attackPos)
+    table.insert(summonPosList, attackPos)
   end
   if not utilScopeSvc:IsPosHasTrapByTrapID(teleportPos, trapID) then
-    (table.insert)(summonPosList, teleportPos)
+    table.insert(summonPosList, teleportPos)
   end
   return summonPosList
 end
-
-

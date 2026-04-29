@@ -1,23 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_ruguelike/ui_rugue_like_backpack_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIRugueLikeBackpackItem", UICustomWidget)
 UIRugueLikeBackpackItem = UIRugueLikeBackpackItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIRugueLikeBackpackItem.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
-  self.ItemColorToText = {[ItemColor.ItemColor_White] = "str_item_public_color_white", [ItemColor.ItemColor_Green] = "str_item_public_color_green", [ItemColor.ItemColor_Blue] = "str_item_public_color_blue", [ItemColor.ItemColor_Purple] = "str_item_public_color_purple", [ItemColor.ItemColor_Yellow] = "str_item_public_color_yellow", [ItemColor.ItemColor_Golden] = "str_item_public_color_golden"}
-  self.ItemColorToTextColor = {[ItemColor.ItemColor_White] = Color(0.81176470588235, 0.81176470588235, 0.81176470588235, 1), [ItemColor.ItemColor_Green] = Color(0.12549019607843, 0.84705882352941, 0.64705882352941, 1), [ItemColor.ItemColor_Blue] = Color(0.2156862745098, 0.65882352941176, 1, 1), [ItemColor.ItemColor_Purple] = Color(0.69803921568627, 0.53725490196078, 0.98039215686275, 1), [ItemColor.ItemColor_Yellow] = Color(1, 0.95294117647059, 0.2156862745098, 1), [ItemColor.ItemColor_Golden] = Color(1, 0.55686274509804, 0 / 255, 1)}
-  self._prof2img = {[2001] = "spirit_prof_5", [2002] = "spirit_prof_1", [2003] = "spirit_prof_3", [2004] = "spirit_prof_7"}
+function UIRugueLikeBackpackItem:OnShow(uiParam)
+  self.ItemColorToText = {
+    [ItemColor.ItemColor_White] = "str_item_public_color_white",
+    [ItemColor.ItemColor_Green] = "str_item_public_color_green",
+    [ItemColor.ItemColor_Blue] = "str_item_public_color_blue",
+    [ItemColor.ItemColor_Purple] = "str_item_public_color_purple",
+    [ItemColor.ItemColor_Yellow] = "str_item_public_color_yellow",
+    [ItemColor.ItemColor_Golden] = "str_item_public_color_golden"
+  }
+  self.ItemColorToTextColor = {
+    [ItemColor.ItemColor_White] = Color(0.8117647058823529, 0.8117647058823529, 0.8117647058823529, 1),
+    [ItemColor.ItemColor_Green] = Color(0.12549019607843137, 0.8470588235294118, 0.6470588235294118, 1),
+    [ItemColor.ItemColor_Blue] = Color(0.21568627450980393, 0.6588235294117647, 1.0, 1),
+    [ItemColor.ItemColor_Purple] = Color(0.6980392156862745, 0.5372549019607843, 0.9803921568627451, 1),
+    [ItemColor.ItemColor_Yellow] = Color(1.0, 0.9529411764705882, 0.21568627450980393, 1),
+    [ItemColor.ItemColor_Golden] = Color(1.0, 0.5568627450980392, 0 / 255, 1)
+  }
+  self._prof2img = {
+    [2001] = "spirit_prof_5",
+    [2002] = "spirit_prof_1",
+    [2003] = "spirit_prof_3",
+    [2004] = "spirit_prof_7"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackItem.GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIRugueLikeBackpackItem:GetComponents()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._msg1 = self:GetUIComponent("UILocalizationText", "msg1")
@@ -32,49 +41,30 @@ UIRugueLikeBackpackItem.GetComponents = function(self)
   self._profAtlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
   local passEvent = self:GetUIComponent("PassEventComponent", "Viewport")
   passEvent:SetClickCallback(function()
-    -- function num : 0_1_0 , upvalues : self
     self:bgOnClick()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackItem.Flush = function(self, itemID)
-  -- function num : 0_2 , upvalues : _ENV
-  local item = (Cfg.cfg_item)[itemID]
+function UIRugueLikeBackpackItem:Flush(itemID)
+  local item = Cfg.cfg_item[itemID]
   if item == nil then
-    (Log.fatal)("[error] maze --> _cfg == nil ! id --> " .. itemID)
-    return 
+    Log.fatal("[error] maze --> _cfg == nil ! id --> " .. itemID)
+    return
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._colorBg).sprite = (self._atlas):GetSprite("map_tansuo_pinzhi" .. item.Color)
-  ;
-  (self._colorTex):SetText((StringTable.Get)((self.ItemColorToText)[item.Color]))
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._name).color = (self.ItemColorToTextColor)[item.Color]
-  ;
-  (self._icon):LoadImage(item.Icon)
-  ;
-  (self._name):SetText((StringTable.Get)(item.Name))
-  ;
-  (self._msg1):SetText((StringTable.Get)(item.Intro))
-  local cfg_prof = (Cfg.cfg_item_relic)[itemID]
+  self._colorBg.sprite = self._atlas:GetSprite("map_tansuo_pinzhi" .. item.Color)
+  self._colorTex:SetText(StringTable.Get(self.ItemColorToText[item.Color]))
+  self._name.color = self.ItemColorToTextColor[item.Color]
+  self._icon:LoadImage(item.Icon)
+  self._name:SetText(StringTable.Get(item.Name))
+  self._msg1:SetText(StringTable.Get(item.Intro))
+  local cfg_prof = Cfg.cfg_item_relic[itemID]
   if cfg_prof then
     local prof = cfg_prof.Prof
     if prof then
-      (self._profGo):SetActive(true)
-      -- DECOMPILER ERROR at PC70: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._profImg).sprite = (self._profAtlas):GetSprite((self._prof2img)[prof])
+      self._profGo:SetActive(true)
+      self._profImg.sprite = self._profAtlas:GetSprite(self._prof2img[prof])
     else
-      ;
-      (self._profGo):SetActive(false)
+      self._profGo:SetActive(false)
     end
     if self._isFromPopStarPro then
       local anipopModule = self:GetModule(AnipopModule)
@@ -82,46 +72,34 @@ UIRugueLikeBackpackItem.Flush = function(self, itemID)
       local relicInfo = anipopInfo.relic_info
       local relicCounters = relicInfo.relic_counters
       local tempTime = relicCounters[itemID] or 0
-      tempTime = not self._isInnerGame or (InnerGameHelperRender.GetRelicCounter)(itemID) or 0
-      local leftTime = cfg_prof.OutGameTriggerCount - (tempTime)
+      if self._isInnerGame then
+        tempTime = InnerGameHelperRender.GetRelicCounter(itemID) or 0
+      end
+      local leftTime = cfg_prof.OutGameTriggerCount - tempTime
       if cfg_prof.OutGameTriggerCount ~= 0 then
-        (self._timeObj):SetActive(true)
-        ;
-        (self._timerTxt):SetText(leftTime)
+        self._timeObj:SetActive(true)
+        self._timerTxt:SetText(leftTime)
       else
-        ;
-        (self._timeObj):SetActive(false)
+        self._timeObj:SetActive(false)
       end
     end
   else
-    do
-      ;
-      (Log.fatal)("###cfg_item_relic is nil ! id --> ", itemID)
-    end
+    Log.fatal("###cfg_item_relic is nil ! id --> ", itemID)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackItem.SetData = function(self, index, itemID, _callback, needNew, isFromPopStarPro, innerGame)
-  -- function num : 0_3
+function UIRugueLikeBackpackItem:SetData(index, itemID, _callback, needNew, isFromPopStarPro, innerGame)
   self:GetComponents()
   self._callback = _callback
   self._index = index
-  ;
-  (self._new):SetActive(needNew)
+  self._new:SetActive(needNew)
   self._isFromPopStarPro = isFromPopStarPro
   self._isInnerGame = innerGame
   self:Flush(itemID)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackItem.bgOnClick = function(self)
-  -- function num : 0_4
+function UIRugueLikeBackpackItem:bgOnClick()
   if self._callback then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
-
-

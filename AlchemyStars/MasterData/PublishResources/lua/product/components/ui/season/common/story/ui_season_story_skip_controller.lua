@@ -1,57 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/story/ui_season_story_skip_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonStorySkipController", UIController)
 UISeasonStorySkipController = UISeasonStorySkipController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonStorySkipController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonStorySkipController:OnShow(uiParams)
   self._eventID = uiParams[1]
   self._callback = uiParams[2]
   self:_GetComponents()
   self:_InitComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStorySkipController.OnHide = function(self)
-  -- function num : 0_1
+function UISeasonStorySkipController:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStorySkipController._GetComponents = function(self)
-  -- function num : 0_2
+function UISeasonStorySkipController:_GetComponents()
   self._skipTxt = self:GetUIComponent("UILocalizationText", "skipTxt")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStorySkipController._InitComponent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_season_story_event)[self._eventID]
-  ;
-  (self._skipTxt):SetText((StringTable.Get)(cfg.SkipTxt))
+function UISeasonStorySkipController:_InitComponent()
+  local cfg = Cfg.cfg_season_story_event[self._eventID]
+  self._skipTxt:SetText(StringTable.Get(cfg.SkipTxt))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStorySkipController.CancelBtnOnClick = function(self)
-  -- function num : 0_4
+function UISeasonStorySkipController:CancelBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStorySkipController.ConfirmBtnOnClick = function(self)
-  -- function num : 0_5
+function UISeasonStorySkipController:ConfirmBtnOnClick()
   self:CloseDialog()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
-
-

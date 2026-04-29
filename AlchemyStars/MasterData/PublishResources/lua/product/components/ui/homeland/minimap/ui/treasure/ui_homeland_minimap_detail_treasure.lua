@@ -1,79 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/treasure/ui_homeland_minimap_detail_treasure.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapDetailTreasure", UIHomelandMinimapDetailBase)
 UIHomelandMinimapDetailTreasure = UIHomelandMinimapDetailTreasure
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapDetailTreasure.OnShow = function(self)
-  -- function num : 0_0
+function UIHomelandMinimapDetailTreasure:OnShow()
   self._nameTxt = self:GetUIComponent("UILocalizationText", "NameTxt")
   self._contentTxt = self:GetUIComponent("UILocalizationText", "ContentTxt")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailTreasure.OnInitDone = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.birthId = (self:GetIconData()):GetIndex()
-  self.homeMD = (GameGlobal.GetModule)(HomelandModule)
-  self.info = (self.homeMD):GetTreasureBirthInfo(self.birthId)
+function UIHomelandMinimapDetailTreasure:OnInitDone()
+  self.birthId = self:GetIconData():GetIndex()
+  self.homeMD = GameGlobal.GetModule(HomelandModule)
+  self.info = self.homeMD:GetTreasureBirthInfo(self.birthId)
   if self.info == nil then
-    (self._nameTxt):SetText("")
-    ;
-    (self._contentTxt):SetText("")
-    return 
+    self._nameTxt:SetText("")
+    self._contentTxt:SetText("")
+    return
   end
-  if (self.info).content_view_id == TreasureViewType.TVT_NULL then
-    (self._nameTxt):SetText((StringTable.Get)("str_homeland_minimap_treasure_null_title"))
-    ;
-    (self._contentTxt):SetText((StringTable.Get)("str_homeland_minimap_treasure_null_content"))
-  else
-    if (self.info).content_view_id == TreasureViewType.TVT_SIGN then
-      (self._nameTxt):SetText((StringTable.Get)("str_homeland_minimap_treasure_sign_title"))
-      ;
-      (self._contentTxt):SetText((StringTable.Get)("str_homeland_minimap_treasure_sign_content"))
-    else
-    end
+  if self.info.content_view_id == TreasureViewType.TVT_NULL then
+    self._nameTxt:SetText(StringTable.Get("str_homeland_minimap_treasure_null_title"))
+    self._contentTxt:SetText(StringTable.Get("str_homeland_minimap_treasure_null_content"))
+  elseif self.info.content_view_id == TreasureViewType.TVT_SIGN then
+    self._nameTxt:SetText(StringTable.Get("str_homeland_minimap_treasure_sign_title"))
+    self._contentTxt:SetText(StringTable.Get("str_homeland_minimap_treasure_sign_content"))
+  elseif self.info.content_view_id == TreasureViewType.TVT_ASSO then
   end
-  if (self.info).content_view_id == TreasureViewType.TVT_ASSO then
-    self._titleRect = self:GetUIComponent("RectTransform", "Title")
-    if self._titleRect then
-      local titleWidth = (self._nameTxt).preferredWidth
-      if titleWidth > 350 then
-        titleWidth = 350
-      end
-      -- DECOMPILER ERROR at PC95: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._titleRect).sizeDelta = Vector2(titleWidth, ((self._titleRect).sizeDelta).y)
+  self._titleRect = self:GetUIComponent("RectTransform", "Title")
+  if self._titleRect then
+    local titleWidth = self._nameTxt.preferredWidth
+    if 350 < titleWidth then
+      titleWidth = 350
     end
+    self._titleRect.sizeDelta = Vector2(titleWidth, self._titleRect.sizeDelta.y)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailTreasure.ExitOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailTreasure:ExitOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailTreasure.BtnBGOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailTreasure:BtnBGOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailTreasure.GetCloseAnimtionName = function(self)
-  -- function num : 0_4
+function UIHomelandMinimapDetailTreasure:GetCloseAnimtionName()
   return "UIHomelandMinimapDetailTreasure_out"
 end
-
-

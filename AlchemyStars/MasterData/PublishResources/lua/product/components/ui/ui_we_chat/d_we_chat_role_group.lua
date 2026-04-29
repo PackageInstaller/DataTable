@@ -1,75 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_we_chat/d_we_chat_role_group.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DWeChatRoleGroup", Object)
 DWeChatRoleGroup = DWeChatRoleGroup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DWeChatRoleGroup.Constructor = function(self)
-  -- function num : 0_0
+function DWeChatRoleGroup:Constructor()
   self._roleList = {}
   self._idx = 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DWeChatRoleGroup.CurrentIdx = function(self)
-  -- function num : 0_1
+function DWeChatRoleGroup:CurrentIdx()
   return self._idx
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DWeChatRoleGroup.SetIdx = function(self, idx)
-  -- function num : 0_2
+function DWeChatRoleGroup:SetIdx(idx)
   self._idx = idx
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DWeChatRoleGroup.GroupID = function(self)
-  -- function num : 0_3
-  return ((self._roleList)[1]):GetGroupId()
+function DWeChatRoleGroup:GroupID()
+  return self._roleList[1]:GetGroupId()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DWeChatRoleGroup.AddRole = function(self, role)
-  -- function num : 0_4 , upvalues : _ENV
-  (table.insert)(self._roleList, role)
+function DWeChatRoleGroup:AddRole(role)
+  table.insert(self._roleList, role)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DWeChatRoleGroup.RoleList = function(self)
-  -- function num : 0_5
+function DWeChatRoleGroup:RoleList()
   return self._roleList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DWeChatRoleGroup.RoleCount = function(self)
-  -- function num : 0_6
+function DWeChatRoleGroup:RoleCount()
   return #self._roleList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DWeChatRoleGroup.AddIdx = function(self)
-  -- function num : 0_7
+function DWeChatRoleGroup:AddIdx()
   self._idx = self._idx + 1
-  if #self._roleList < self._idx then
+  if self._idx > #self._roleList then
     self._idx = 1
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DWeChatRoleGroup.CurrentRole = function(self)
-  -- function num : 0_8
-  return (self._roleList)[self._idx]
+function DWeChatRoleGroup:CurrentRole()
+  return self._roleList[self._idx]
 end
-
-

@@ -1,43 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/hard_level/ui_activity_n32_hard_level_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN32HardLevelMain", UIController)
 UIActivityN32HardLevelMain = UIActivityN32HardLevelMain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN32HardLevelMain.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIActivityN32HardLevelMain:LoadDataOnEnter(TT, res, uiParams)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._missionModule = self:GetModule(MissionModule)
-  self._campModule = (GameGlobal.GetModule)(CampaignModule)
+  self._campModule = GameGlobal.GetModule(CampaignModule)
   self:LoadData(TT, res)
-  ;
-  (UIActivityDiffLevelCupData.CreateEntiesDesc)()
+  UIActivityDiffLevelCupData.CreateEntiesDesc()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._isNormalUI = not uiParams[1] or true
+function UIActivityN32HardLevelMain:OnShow(uiParams)
+  self._isNormalUI = uiParams[1] and true
   self._anim = self:GetUIComponent("Animation", "Anim")
   self._tipsAnim = self:GetUIComponent("Animation", "TipsAnim")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     if self._isNormalUI then
       self:CloseDialog()
     else
-      ;
-      (CutsceneManager.ExcuteCutsceneOut_Shot)()
+      CutsceneManager.ExcuteCutsceneOut_Shot()
       self:SwitchState(UIStateType.UIActivityN32MainController)
     end
-  end
-)
+  end)
   self._levelType = uiParams[2] or 1
   if uiParams[2] == nil and self:HardLevelOpen() then
     self._levelType = 2
@@ -46,189 +31,133 @@ UIActivityN32HardLevelMain.OnShow = function(self, uiParams)
     self._levelType = 2
   end
   self._tips = self:GetGameObject("Tips")
-  ;
-  (self._tips):SetActive(false)
+  self._tips:SetActive(false)
   self._normalLevel = UIActivityN32HardLevel:New(self)
-  ;
-  (self._normalLevel):SetData(self._campaign, self._levelHardComponent, self._levelHardCompInfo)
-  ;
-  (self._normalLevel):SetActive(false)
+  self._normalLevel:SetData(self._campaign, self._levelHardComponent, self._levelHardCompInfo)
+  self._normalLevel:SetActive(false)
   self._diffLevel = UIActivityN32DiffLevel:New(self)
-  ;
-  (self._diffLevel):SetData(self._campaign, self._blackHardComponent, self._blackHardCompInfo)
-  ;
-  (self._diffLevel):SetActive(false)
+  self._diffLevel:SetData(self._campaign, self._blackHardComponent, self._blackHardCompInfo)
+  self._diffLevel:SetActive(false)
   self._hardPetEnhanceAreaGo = self:GetGameObject("HardPetEnhanceAreaGen")
-  local hardComponentCfgId = (self._levelHardComponent):GetComponentCfgId()
-  ;
-  (UIActivityHelper.SpawnPetEnhanceArea)(self, "HardPetEnhanceAreaGen", hardComponentCfgId, UIActivityPetEnhanceAreaUIStyle.N32_NORMAL)
+  local hardComponentCfgId = self._levelHardComponent:GetComponentCfgId()
+  UIActivityHelper.SpawnPetEnhanceArea(self, "HardPetEnhanceAreaGen", hardComponentCfgId, UIActivityPetEnhanceAreaUIStyle.N32_NORMAL)
   self._diffPetEnhanceAreaGo = self:GetGameObject("DiffPetEnhanceAreaGen")
-  local diffComponentCfgId = (self._blackHardComponent):GetComponentCfgId()
-  ;
-  (UIActivityHelper.SpawnPetEnhanceArea)(self, "DiffPetEnhanceAreaGen", diffComponentCfgId, UIActivityPetEnhanceAreaUIStyle.N32_HARD)
+  local diffComponentCfgId = self._blackHardComponent:GetComponentCfgId()
+  UIActivityHelper.SpawnPetEnhanceArea(self, "DiffPetEnhanceAreaGen", diffComponentCfgId, UIActivityPetEnhanceAreaUIStyle.N32_HARD)
   self:RefreshPetEnhanceArea()
   self:AttachEvent(GameEventType.OnCampDiffTeamReset, self.OnTeamReset)
   self:SwitchLevelType(self._levelType, true)
   self:PlayEnterAnim()
   if self._levelType == 2 and uiParams[3] then
-    (self._diffLevel):ClickNodeByID(uiParams[3])
+    self._diffLevel:ClickNodeByID(uiParams[3])
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN32HardLevelMain:OnHide()
   self:DetachEvent(GameEventType.OnCampDiffTeamReset, self.OnTeamReset)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityMainStatusRefreshEvent)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityMainStatusRefreshEvent)
   if self._diffLevel then
-    (self._diffLevel):Destroy()
+    self._diffLevel:Destroy()
   end
   if self._normalLevel then
-    (self._normalLevel):Destroy()
+    self._normalLevel:Destroy()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.LoadData = function(self, TT, res)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN32HardLevelMain:LoadData(TT, res)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N32, ECampaignN32ComponentID.ECAMPAIGN_N32_DIFFICULT_MISSION, ECampaignN32ComponentID.ECAMPAIGN_N32_BLACK_DIFFICULT_MISSION)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N32, ECampaignN32ComponentID.ECAMPAIGN_N32_DIFFICULT_MISSION, ECampaignN32ComponentID.ECAMPAIGN_N32_BLACK_DIFFICULT_MISSION)
   if res and not res:GetSucc() then
-    (self._campModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    ;
-    (CutsceneManager.ExcuteCutsceneOut_Shot)()
-    return 
+    self._campModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    CutsceneManager.ExcuteCutsceneOut_Shot()
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  self._campaignID = (self._campaign)._id
-  self._levelHardComponent = (self._localProcess):GetComponent(ECampaignN32ComponentID.ECAMPAIGN_N32_DIFFICULT_MISSION)
-  self._levelHardCompInfo = (self._localProcess):GetComponentInfo(ECampaignN32ComponentID.ECAMPAIGN_N32_DIFFICULT_MISSION)
-  self._blackHardComponent = (self._localProcess):GetComponent(ECampaignN32ComponentID.ECAMPAIGN_N32_BLACK_DIFFICULT_MISSION)
-  self._blackHardCompInfo = (self._localProcess):GetComponentInfo(ECampaignN32ComponentID.ECAMPAIGN_N32_BLACK_DIFFICULT_MISSION)
+  self._localProcess = self._campaign:GetLocalProcess()
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  self._campaignID = self._campaign._id
+  self._levelHardComponent = self._localProcess:GetComponent(ECampaignN32ComponentID.ECAMPAIGN_N32_DIFFICULT_MISSION)
+  self._levelHardCompInfo = self._localProcess:GetComponentInfo(ECampaignN32ComponentID.ECAMPAIGN_N32_DIFFICULT_MISSION)
+  self._blackHardComponent = self._localProcess:GetComponent(ECampaignN32ComponentID.ECAMPAIGN_N32_BLACK_DIFFICULT_MISSION)
+  self._blackHardCompInfo = self._localProcess:GetComponentInfo(ECampaignN32ComponentID.ECAMPAIGN_N32_BLACK_DIFFICULT_MISSION)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.OnTeamReset = function(self)
-  -- function num : 0_4
+function UIActivityN32HardLevelMain:OnTeamReset()
   self:StartTask(self.OnTeamResetCoro, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.OnTeamResetCoro = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN32HardLevelMain:OnTeamResetCoro(TT)
   self:Lock("UIActivityN27HardLevelMain_OnTeamResetCoro")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   self:LoadData(TT, res)
-  ;
-  (self._normalLevel):SetData(self._campaign, self._levelHardComponent, self._levelHardCompInfo)
-  ;
-  (self._diffLevel):Refresh(self._campaign, self._blackHardComponent, self._blackHardCompInfo)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCampDiffTeamResetInternal)
+  self._normalLevel:SetData(self._campaign, self._levelHardComponent, self._levelHardCompInfo)
+  self._diffLevel:Refresh(self._campaign, self._blackHardComponent, self._blackHardCompInfo)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCampDiffTeamResetInternal)
   self:UnLock("UIActivityN27HardLevelMain_OnTeamResetCoro")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.SwitchLevelType = function(self, levelType, playAnim)
-  -- function num : 0_6
+function UIActivityN32HardLevelMain:SwitchLevelType(levelType, playAnim)
   if levelType == 1 then
-    (self._diffLevel):SetActive(false)
-    ;
-    (self._normalLevel):SetActive(true, playAnim)
-  else
-    if levelType == 2 then
-      (self._diffLevel):SetActive(true, playAnim)
-      ;
-      (self._normalLevel):SetActive(false)
-    end
+    self._diffLevel:SetActive(false)
+    self._normalLevel:SetActive(true, playAnim)
+  elseif levelType == 2 then
+    self._diffLevel:SetActive(true, playAnim)
+    self._normalLevel:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.HardLevelOpen = function(self)
-  -- function num : 0_7
+function UIActivityN32HardLevelMain:HardLevelOpen()
   if not self._blackHardComponent then
     return false
   end
-  return (self._blackHardComponent):ComponentIsOpen()
+  return self._blackHardComponent:ComponentIsOpen()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.GetPlayerPrefsKey = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityN32HardLevelMain:GetPlayerPrefsKey()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "ACTIVITY_N32_HARD_LEVEL_SHOW_TIPS_FLAG"
   return key
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.IsShowHardLevelTips = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityN32HardLevelMain:IsShowHardLevelTips()
   if not self:HardLevelOpen() then
     return false
   end
   local key = self:GetPlayerPrefsKey()
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return true
   end
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key)
-  do return value == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key)
+  return value == 0
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.RefreshSwitchBtnStatus = function(self)
-  -- function num : 0_10
+function UIActivityN32HardLevelMain:RefreshSwitchBtnStatus()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.BtnCloseOnClick = function(self)
-  -- function num : 0_11
+function UIActivityN32HardLevelMain:BtnCloseOnClick()
   self:StartTask(self.BtnCloseOnClickCoro, self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.BtnCloseOnClickCoro = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityN32HardLevelMain:BtnCloseOnClickCoro(TT)
   self:Lock("UIActivityN27HardLevelMain_BtnCloseOnClickCoro")
   if self._tipsAnim then
-    (self._tipsAnim):Play("uieff_UIActivityN32HardLevelMain_Tips_out")
+    self._tipsAnim:Play("uieff_UIActivityN32HardLevelMain_Tips_out")
     YIELD(TT, 167)
   end
-  ;
-  (self._tips):SetActive(false)
+  self._tips:SetActive(false)
   self:UnLock("UIActivityN27HardLevelMain_BtnCloseOnClickCoro")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.NormalLevelOnClick = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityN32HardLevelMain:NormalLevelOnClick()
   self:ClosePetEnhanceTips()
   if self._levelType == 1 then
-    return 
+    return
   end
-  if (self._levelHardComponent):ComponentIsOpen() == false then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+  if self._levelHardComponent:ComponentIsOpen() == false then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIActivityN32MainController)
-    return 
+    return
   end
   self._levelType = 1
   self:RefreshSwitchBtnStatus()
@@ -236,23 +165,20 @@ UIActivityN32HardLevelMain.NormalLevelOnClick = function(self)
   self:PlaySwitchAnim(self._levelType)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.HardLevelOnClick = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityN32HardLevelMain:HardLevelOnClick()
   self:ClosePetEnhanceTips()
   if self._levelType == 2 then
-    return 
+    return
   end
-  local curTime = (math.floor)((self._timeModule):GetServerTime() * 0.001)
-  if (self._blackHardCompInfo).m_close_time <= curTime then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+  local curTime = math.floor(self._timeModule:GetServerTime() * 0.001)
+  if curTime >= self._blackHardCompInfo.m_close_time then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIActivityN32MainController)
-    return 
+    return
   end
   if not self:HardLevelOpen() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n32_hard_level_unopen"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n32_hard_level_unopen"))
+    return
   end
   self._levelType = 2
   self:RefreshSwitchBtnStatus()
@@ -260,58 +186,39 @@ UIActivityN32HardLevelMain.HardLevelOnClick = function(self)
   self:PlaySwitchAnim(self._levelType)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.BtnInfoOnClick = function(self)
-  -- function num : 0_15
-  (self._diffLevel):BtnInfoOnClick()
+function UIActivityN32HardLevelMain:BtnInfoOnClick()
+  self._diffLevel:BtnInfoOnClick()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.PlaySwitchAnim = function(self, levelType)
-  -- function num : 0_16
+function UIActivityN32HardLevelMain:PlaySwitchAnim(levelType)
   self:StartTask(self.PlaySwitchAnimCoro, self, levelType)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.PlaySwitchAnimCoro = function(self, TT, levelType)
-  -- function num : 0_17 , upvalues : _ENV
+function UIActivityN32HardLevelMain:PlaySwitchAnimCoro(TT, levelType)
   self:Lock("UIActivityN27HardLevelMain_PlaySwitchAnimCoro")
   local animName = ""
   if levelType == 1 then
-    (self._normalLevel):SetActive(true, true)
-    ;
-    (self._diffLevel):SetActive(true, false)
+    self._normalLevel:SetActive(true, true)
+    self._diffLevel:SetActive(true, false)
     animName = "uieff_UIActivityN32HardLevelMain_switch_hard"
-  else
-    if levelType == 2 then
-      (self._normalLevel):SetActive(true, false)
-      ;
-      (self._diffLevel):SetActive(true, true)
-      animName = "uieff_UIActivityN32HardLevelMain_switch_diff"
-    end
+  elseif levelType == 2 then
+    self._normalLevel:SetActive(true, false)
+    self._diffLevel:SetActive(true, true)
+    animName = "uieff_UIActivityN32HardLevelMain_switch_diff"
   end
   if self._anim then
-    (self._anim):Play(animName)
+    self._anim:Play(animName)
     YIELD(TT, 300)
   end
   self:SwitchLevelType(levelType, false)
   self:UnLock("UIActivityN27HardLevelMain_PlaySwitchAnimCoro")
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.PlayEnterAnim = function(self)
-  -- function num : 0_18
+function UIActivityN32HardLevelMain:PlayEnterAnim()
   self:StartTask(self.PlayEnterAnimCoro, self)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.PlayEnterAnimCoro = function(self, TT)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityN32HardLevelMain:PlayEnterAnimCoro(TT)
   local isOpen = self:HardLevelOpen()
   local hardLevelMask = self:GetGameObject("HardLevelMask")
   if isOpen == false then
@@ -324,38 +231,31 @@ UIActivityN32HardLevelMain.PlayEnterAnimCoro = function(self, TT)
   local animName = ""
   if self._levelType == 1 then
     animName = "uieff_UIActivityN32HardLevelMain_Hard_in"
-  else
-    if self._levelType == 2 then
-      animName = "uieff_UIActivityN32HardLevelMain_Diff_in"
-    end
+  elseif self._levelType == 2 then
+    animName = "uieff_UIActivityN32HardLevelMain_Diff_in"
   end
   if self._anim then
-    (self._anim):Play(animName)
+    self._anim:Play(animName)
     YIELD(TT, 333)
   end
   if self:IsShowHardLevelTips() then
-    (self._tips):SetActive(true)
+    self._tips:SetActive(true)
     if self._tipsAnim then
-      (self._tipsAnim):Play("uieff_UIActivityN32HardLevelMain_Tips_in")
+      self._tipsAnim:Play("uieff_UIActivityN32HardLevelMain_Tips_in")
       YIELD(TT, 333)
       self:RefreshLockUI()
     else
       self:RefreshLockUI()
     end
-    ;
-    ((UnityEngine.PlayerPrefs).SetInt)(self:GetPlayerPrefsKey(), 1)
+    UnityEngine.PlayerPrefs.SetInt(self:GetPlayerPrefsKey(), 1)
   else
-    ;
-    (self._tips):SetActive(false)
+    self._tips:SetActive(false)
     self:RefreshLockUI()
   end
   self:UnLock("UIActivityN27HardLevelMain_PlayEnterAnimCoro")
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.RefreshLockUI = function(self)
-  -- function num : 0_20
+function UIActivityN32HardLevelMain:RefreshLockUI()
   local hardLevelLock = self:GetGameObject("HardLevelLock")
   local isOpen = self:HardLevelOpen()
   hardLevelLock:SetActive(not isOpen)
@@ -365,24 +265,15 @@ UIActivityN32HardLevelMain.RefreshLockUI = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.ClosePetEnhanceTips = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClosePetEnhanceTips)
+function UIActivityN32HardLevelMain:ClosePetEnhanceTips()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ClosePetEnhanceTips)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevelMain.RefreshPetEnhanceArea = function(self)
-  -- function num : 0_22
-  if self._levelType ~= 1 then
-    (self._hardPetEnhanceAreaGo):SetActive(not self._hardPetEnhanceAreaGo)
-    if self._levelType ~= 2 then
-      (self._diffPetEnhanceAreaGo):SetActive(not self._diffPetEnhanceAreaGo)
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
-    end
+function UIActivityN32HardLevelMain:RefreshPetEnhanceArea()
+  if self._hardPetEnhanceAreaGo then
+    self._hardPetEnhanceAreaGo:SetActive(self._levelType == 1)
+  end
+  if self._diffPetEnhanceAreaGo then
+    self._diffPetEnhanceAreaGo:SetActive(self._levelType == 2)
   end
 end
-
-

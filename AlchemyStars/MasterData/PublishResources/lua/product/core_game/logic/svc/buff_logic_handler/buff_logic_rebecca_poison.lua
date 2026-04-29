@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_rebecca_poison.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddRebeccaPoison", BuffLogicBase)
 BuffLogicAddRebeccaPoison = BuffLogicAddRebeccaPoison
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddRebeccaPoison.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddRebeccaPoison:Constructor(buffInstance, logicParam)
   self._damagePercent = logicParam.damagePercent
   self._normalFormulaID = logicParam.normalFormulaID
   self._specialFormulaID = logicParam.specialFormulaID
@@ -17,51 +10,49 @@ BuffLogicAddRebeccaPoison.Constructor = function(self, buffInstance, logicParam)
   self._checkCfgLayer = logicParam.checkCfgLayer
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddRebeccaPoison.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicAddRebeccaPoison:DoLogic()
+  local e = self._buffInstance:Entity()
   local attrCmpt = e:Attributes()
   local maxHp = attrCmpt:CalcMaxHp()
   if maxHp <= 0 then
-    return 
+    return
   end
   local buffCmpt = e:BuffComponent()
   if not buffCmpt then
-    return 
+    return
   end
   local casterID = buffCmpt:GetRebeccaPoisonCasterID()
-  local caster = (self._world):GetEntityByID(casterID)
+  local caster = self._world:GetEntityByID(casterID)
   if not caster then
-    return 
+    return
   end
   if self._ignoreRound then
+  else
     local turn = buffCmpt:GetBuffValue("RebeccaPoisonTurn")
-    do
-      local round = ((self._world):BattleStat()):GetLevelTotalRoundCount()
-      if turn == round then
-        return 
-      end
-      buffCmpt:SetBuffValue("RebeccaPoisonTurn", round)
-      local buffLogicService = (self._world):GetService("BuffLogic")
-      local layer = (self._buffInstance):GetLayerCount()
-      if self._checkCfgLayer then
-        layer = buffLogicService:GetBuffLayer(e, self._checkCfgLayer)
-      end
-      local buffLogicSvc = (self._world):GetService("BuffLogic")
-      local useFormulaID = self._normalFormulaID
-      if self._specialBuffEffect and buffCmpt:HasBuffEffect(self._specialBuffEffect) then
-        useFormulaID = self._specialFormulaID
-      end
-      local damageInfo = buffLogicSvc:DoBuffDamage((self._buffInstance):BuffID(), caster, e, {percent = self._damagePercent * layer, layer = layer, formulaID = useFormulaID})
-      if damageInfo:GetDamageType() == DamageType.Real then
-        damageInfo:SetDamageType(DamageType.Poison)
-      end
-      local buffResult = BuffResultAddPoison:New(damageInfo)
-      return buffResult
+    local round = self._world:BattleStat():GetLevelTotalRoundCount()
+    if turn == round then
+      return
     end
+    buffCmpt:SetBuffValue("RebeccaPoisonTurn", round)
   end
+  local buffLogicService = self._world:GetService("BuffLogic")
+  local layer = self._buffInstance:GetLayerCount()
+  if self._checkCfgLayer then
+    layer = buffLogicService:GetBuffLayer(e, self._checkCfgLayer)
+  end
+  local buffLogicSvc = self._world:GetService("BuffLogic")
+  local useFormulaID = self._normalFormulaID
+  if self._specialBuffEffect and buffCmpt:HasBuffEffect(self._specialBuffEffect) then
+    useFormulaID = self._specialFormulaID
+  end
+  local damageInfo = buffLogicSvc:DoBuffDamage(self._buffInstance:BuffID(), caster, e, {
+    percent = self._damagePercent * layer,
+    layer = layer,
+    formulaID = useFormulaID
+  })
+  if damageInfo:GetDamageType() == DamageType.Real then
+    damageInfo:SetDamageType(DamageType.Poison)
+  end
+  local buffResult = BuffResultAddPoison:New(damageInfo)
+  return buffResult
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/Details/enemy_details/ui_n7_enemy_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN7EnemyItem", UICustomWidget)
 UIN7EnemyItem = UIN7EnemyItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN7EnemyDetailsController.Constructor = function(self)
-  -- function num : 0_0
+function UIN7EnemyDetailsController:Constructor()
   self._uiParams = nil
   self._callback = nil
   self._cfg = nil
@@ -16,50 +9,31 @@ UIN7EnemyDetailsController.Constructor = function(self)
   self._index = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7EnemyItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN7EnemyItem:OnShow(uiParams)
   self._uiParams = uiParams
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7EnemyItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIN7EnemyItem:_GetComponents()
   self._enemyIcon = self:GetUIComponent("RawImageLoader", "enemyIcon")
   self._select = self:GetGameObject("select")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7EnemyItem.SetData = function(self, index, cfg, callback)
-  -- function num : 0_3
+function UIN7EnemyItem:SetData(index, cfg, callback)
   self._index = index
   self._cfg = cfg
   self._callback = callback
-  local a = ((self._cfg)[1]).ItemIcon
-  ;
-  (self._enemyIcon):LoadImage(((self._cfg)[1]).Head)
+  local a = self._cfg[1].ItemIcon
+  self._enemyIcon:LoadImage(self._cfg[1].Head)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7EnemyItem.SetSelectState = function(self, state)
-  -- function num : 0_4
+function UIN7EnemyItem:SetSelectState(state)
   self._isSelect = state
-  ;
-  (self._select):SetActive(self._isSelect)
+  self._select:SetActive(self._isSelect)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7EnemyItem.enemyIconOnClick = function(self, go)
-  -- function num : 0_5
+function UIN7EnemyItem:enemyIconOnClick(go)
   if self._callback then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
-
-

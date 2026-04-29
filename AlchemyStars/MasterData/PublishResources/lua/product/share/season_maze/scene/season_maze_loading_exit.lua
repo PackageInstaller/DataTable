@@ -1,53 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/scene/season_maze_loading_exit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeLoadingExit", LoadingHandler)
 SeasonMazeLoadingExit = SeasonMazeLoadingExit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeLoadingExit.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("SeasonMazeLoadingExit")
+function SeasonMazeLoadingExit:Constructor()
+  GameGlobal.UIStateManager():Lock("SeasonMazeLoadingExit")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLoadingExit.PreLoadBeforeLoadLevel = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  (((GameGlobal.GetModule)(SeasonMazeModule)):UIModule()):DisposeLogic()
+function SeasonMazeLoadingExit:PreLoadBeforeLoadLevel(TT)
+  GameGlobal.GetModule(SeasonMazeModule):UIModule():DisposeLogic()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLoadingExit.OnLoadingFinish = function(self, uistate)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):SwitchState(uistate)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("SeasonMazeLoadingExit")
+function SeasonMazeLoadingExit:OnLoadingFinish(uistate)
+  GameGlobal.UIStateManager():SwitchState(uistate)
+  GameGlobal.UIStateManager():UnLock("SeasonMazeLoadingExit")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLoadingExit.LoadingType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonMazeLoadingExit:LoadingType()
   return LoadingType.STATICPIC
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLoadingExit.LoadingID = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local seasonID = (((GameGlobal.GetModule)(SeasonMazeModule)):UIModule()):GetSeasonID()
-  local cfg = (Cfg.cfg_season_loading)[seasonID]
-  do
-    if cfg then
-      local ids = cfg.loadingids
-      return ((GameGlobal.LoadingManager)()):FilterAndRandomLoadingID(ids)
-    end
-    return nil
+function SeasonMazeLoadingExit:LoadingID()
+  local seasonID = GameGlobal.GetModule(SeasonMazeModule):UIModule():GetSeasonID()
+  local cfg = Cfg.cfg_season_loading[seasonID]
+  if cfg then
+    local ids = cfg.loadingids
+    return GameGlobal.LoadingManager():FilterAndRandomLoadingID(ids)
   end
+  return nil
 end
-
-

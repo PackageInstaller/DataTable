@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/choose_assistant_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChooseAssistantHelper", Object)
 ChooseAssistantHelper = ChooseAssistantHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChooseAssistantHelper.Constructor = function(self)
-  -- function num : 0_0
+function ChooseAssistantHelper:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseAssistantHelper.GetLocalDBStr = function(isPet, type, id)
-  -- function num : 0_1 , upvalues : _ENV
-  local staticSpineSettings = (ChooseAssistantHelper.GetSpineSettings)()
-  local open_id = (((GameGlobal.GameLogic)()):GetOpenId())
-  local title = nil
+function ChooseAssistantHelper.GetLocalDBStr(isPet, type, id)
+  local staticSpineSettings = ChooseAssistantHelper.GetSpineSettings()
+  local open_id = GameGlobal.GameLogic():GetOpenId()
+  local title
   if isPet then
     title = "MAIN_PET_OFFSET_" .. staticSpineSettings
   else
@@ -27,42 +17,35 @@ ChooseAssistantHelper.GetLocalDBStr = function(isPet, type, id)
   return key
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseAssistantHelper.GetAssistantPetSetting = function()
-  -- function num : 0_2 , upvalues : _ENV
-  local dbStr = (ChooseAssistantHelper.GetLocalDBStr)(true)
+function ChooseAssistantHelper.GetAssistantPetSetting()
+  local dbStr = ChooseAssistantHelper.GetLocalDBStr(true)
   local resPos = Vector2(0, 0)
   local resScale = 1
-  local pos_offset_str = (LocalDB.GetString)(dbStr, "null")
+  local pos_offset_str = LocalDB.GetString(dbStr, "null")
   if pos_offset_str == "null" then
-    local strs = (string.split)(pos_offset_str, "|")
+  else
+    local strs = string.split(pos_offset_str, "|")
     local x = tonumber(strs[1])
-    do
-      local y = tonumber(strs[2])
-      resPos = Vector2(x, y)
-      resScale = tonumber(strs[3])
-      return resPos, resScale
-    end
+    local y = tonumber(strs[2])
+    resPos = Vector2(x, y)
+    resScale = tonumber(strs[3])
   end
+  return resPos, resScale
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseAssistantHelper.GetAssistantPetSize = function()
-  -- function num : 0_3 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
-  local assistantSkinID = (roleModule.m_choose_painting).skin_id
-  local resPos, resScale = (ChooseAssistantHelper.GetAssistantPetSetting)()
-  local size = nil
-  if assistantSkinID and assistantSkinID > 0 then
-    local cfg = (Cfg.cfg_pet_skin)[assistantSkinID]
+function ChooseAssistantHelper.GetAssistantPetSize()
+  local roleModule = GameGlobal.GetModule(RoleModule)
+  local assistantSkinID = roleModule.m_choose_painting.skin_id
+  local resPos, resScale = ChooseAssistantHelper.GetAssistantPetSetting()
+  local size
+  if assistantSkinID and 0 < assistantSkinID then
+    local cfg = Cfg.cfg_pet_skin[assistantSkinID]
     if cfg then
       local mainSize = cfg.MainLobbySize
       if mainSize then
         size = Vector2(mainSize[1], mainSize[2])
-        local realWidth = (ResolutionManager.RealWidth)()
-        local realHeight = (ResolutionManager.RealHeight)()
+        local realWidth = ResolutionManager.RealWidth()
+        local realHeight = ResolutionManager.RealHeight()
         local safeArea = Vector2(realWidth, realHeight)
         local rate_x = 1
         local rate_y = 1
@@ -80,303 +63,214 @@ ChooseAssistantHelper.GetAssistantPetSize = function()
             changex = false
           end
           if changex then
-            resScale = resScale / (rate_x)
+            resScale = resScale / rate_x
           else
-            resScale = resScale / (rate_y)
+            resScale = resScale / rate_y
           end
         end
       end
     end
   end
-  do
-    return size
-  end
+  return size
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseAssistantHelper.SaveAssistantPetSetting = function(pos, scale)
-  -- function num : 0_4 , upvalues : _ENV
-  local dbStr = (ChooseAssistantHelper.GetLocalDBStr)(true)
+function ChooseAssistantHelper.SaveAssistantPetSetting(pos, scale)
+  local dbStr = ChooseAssistantHelper.GetLocalDBStr(true)
   local value = pos.x .. "|" .. pos.y .. "|" .. scale
-  ;
-  (LocalDB.SetString)(dbStr, value)
+  LocalDB.SetString(dbStr, value)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseAssistantHelper.GetAssistantBgSetting = function(type, id)
-  -- function num : 0_5 , upvalues : _ENV
-  local dbStr = (ChooseAssistantHelper.GetLocalDBStr)(false, type, id)
+function ChooseAssistantHelper.GetAssistantBgSetting(type, id)
+  local dbStr = ChooseAssistantHelper.GetLocalDBStr(false, type, id)
   local resPos = Vector2(0, 0)
   local resScale = 1
-  local pos_offset_str = (LocalDB.GetString)(dbStr, "null")
+  local pos_offset_str = LocalDB.GetString(dbStr, "null")
   if pos_offset_str == "null" then
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
-    local pos = Vector2((roleModule.m_choose_painting).background_x, (roleModule.m_choose_painting).background_y)
+    local roleModule = GameGlobal.GetModule(RoleModule)
+    local pos = Vector2(roleModule.m_choose_painting.background_x, roleModule.m_choose_painting.background_y)
     resPos = pos
-  else
-    do
-      if (roleModule.m_choose_painting).background_scale ~= 0 and (not (roleModule.m_choose_painting).background_scale) then
-        local strs = (string.split)(pos_offset_str, "|")
-        local x = tonumber(strs[1])
-        local y = tonumber(strs[2])
-        resPos = Vector2(x, y)
-        resScale = tonumber(strs[3])
-      end
-      do
-        return resPos, resScale
-      end
+    if roleModule.m_choose_painting.background_scale ~= 0 then
+      resScale = roleModule.m_choose_painting.background_scale or resScale
     end
+  else
+    local strs = string.split(pos_offset_str, "|")
+    local x = tonumber(strs[1])
+    local y = tonumber(strs[2])
+    resPos = Vector2(x, y)
+    resScale = tonumber(strs[3])
   end
+  return resPos, resScale
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseAssistantHelper.GetAssistantBgSize = function(type, id)
-  -- function num : 0_6 , upvalues : _ENV
+function ChooseAssistantHelper.GetAssistantBgSize(type, id)
   local size = Vector2(2539, 1439)
   if type == UIChooseAssistantBgType.Normal then
-    local cfg = (Cfg.cfg_main_bg)[id]
+    local cfg = Cfg.cfg_main_bg[id]
     if cfg.Size then
-      size = Vector2((cfg.Size)[1], (cfg.Size)[2])
+      size = Vector2(cfg.Size[1], cfg.Size[2])
     end
-  else
-    do
-      do
-        if type == UIChooseAssistantBgType.Story or type == UIChooseAssistantBgType.Skin or type == UIChooseAssistantBgType.Season then
-          local cfg = (Cfg.cfg_cg_book)[id]
-          if cfg.Size then
-            size = Vector2((cfg.Size)[1], (cfg.Size)[2])
-          end
-        end
-        return size
-      end
+  elseif type == UIChooseAssistantBgType.Story or type == UIChooseAssistantBgType.Skin or type == UIChooseAssistantBgType.Season then
+    local cfg = Cfg.cfg_cg_book[id]
+    if cfg.Size then
+      size = Vector2(cfg.Size[1], cfg.Size[2])
     end
   end
+  return size
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseAssistantHelper.SaveAssistantBgSetting = function(pos, scale, type, id, handle, spineId)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("ChooseAssistantHelper.SaveAssistantBgSetting")
-  local dbStr = (ChooseAssistantHelper.GetLocalDBStr)(false, type, id)
+function ChooseAssistantHelper.SaveAssistantBgSetting(pos, scale, type, id, handle, spineId)
+  GameGlobal.UIStateManager():Lock("ChooseAssistantHelper.SaveAssistantBgSetting")
+  local dbStr = ChooseAssistantHelper.GetLocalDBStr(false, type, id)
   if scale == 0 or scale <= 0.1 then
     scale = 1
   end
   local value = pos.x .. "|" .. pos.y .. "|" .. scale
-  ;
-  (LocalDB.SetString)(dbStr, value)
+  LocalDB.SetString(dbStr, value)
   if GameSingle then
-    ((GameGlobal.UIStateManager)()):UnLock("ChooseAssistantHelper.SaveAssistantBgSetting")
-    return 
+    GameGlobal.UIStateManager():UnLock("ChooseAssistantHelper.SaveAssistantBgSetting")
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : _ENV, id, type, pos, scale, handle, spineId
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
-    local params = {nBackImageID = id, background_type = type, background_x = pos.x, background_y = pos.y, background_scale = scale, is_hand_operate = handle, spine_id = spineId}
+  GameGlobal.TaskManager():StartTask(function(TT)
+    local roleModule = GameGlobal.GetModule(RoleModule)
+    local params = {
+      nBackImageID = id,
+      background_type = type,
+      background_x = pos.x,
+      background_y = pos.y,
+      background_scale = scale,
+      is_hand_operate = handle,
+      spine_id = spineId
+    }
     roleModule:RequestRole_BackID(TT, params)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("ChooseAssistantHelper.SaveAssistantBgSetting")
-  end
-)
+    GameGlobal.UIStateManager():UnLock("ChooseAssistantHelper.SaveAssistantBgSetting")
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseAssistantHelper.GetSpineSettings = function()
-  -- function num : 0_8 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function ChooseAssistantHelper.GetSpineSettings()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local petid = roleModule:GetResId()
   local defaultPetID = 0
-  local grade, skin, asid, staticSpineSettings, dynamicSpineSettings = nil, nil, nil, nil, nil
+  local grade, skin, asid, staticSpineSettings, dynamicSpineSettings
   if petid and petid ~= 0 then
     defaultPetID = petid
-    grade = (roleModule.m_choose_painting).pet_grade
-    skin = (roleModule.m_choose_painting).skin_id
-    asid = (roleModule.m_choose_painting).board_pet
+    grade = roleModule.m_choose_painting.pet_grade
+    skin = roleModule.m_choose_painting.skin_id
+    asid = roleModule.m_choose_painting.board_pet
     if asid == 3400050 then
       asid = 10015
     end
   else
-    defaultPetID = ((Cfg.cfg_global).main_default_spine_pet_id).IntValue
+    defaultPetID = Cfg.cfg_global.main_default_spine_pet_id.IntValue
     grade = 0
     skin = 0
     asid = 0
   end
-  local cfg_pet = nil
-  if grade > 0 then
-    cfg_pet = ((Cfg.cfg_pet_grade)({PetID = defaultPetID, Grade = grade}))[1]
+  local cfg_pet
+  if 0 < grade then
+    cfg_pet = Cfg.cfg_pet_grade({PetID = defaultPetID, Grade = grade})[1]
   else
-    cfg_pet = (Cfg.cfg_pet)[defaultPetID]
+    cfg_pet = Cfg.cfg_pet[defaultPetID]
   end
   if cfg_pet then
     if asid and asid ~= 0 then
-      local cfg_as = (Cfg.cfg_only_assistant)[asid]
+      local cfg_as = Cfg.cfg_only_assistant[asid]
       if not cfg_as then
-        (Log.error)("###[UIChooseMainCgController] cfg_as is nil ! id --> ", asid)
+        Log.error("###[UIChooseMainCgController] cfg_as is nil ! id --> ", asid)
       end
       staticSpineSettings = cfg_as.CG
       dynamicSpineSettings = cfg_as.Spine
     else
-      do
-        staticSpineSettings = (HelperProxy:GetInstance()):GetMainLobbyStaticBody(defaultPetID, grade, skin, PetSkinEffectPath.NO_EFFECT)
-        if not staticSpineSettings then
-          staticSpineSettings = (HelperProxy:GetInstance()):GetPetStaticBody(defaultPetID, grade, skin, PetSkinEffectPath.NO_EFFECT)
-        end
-        dynamicSpineSettings = (HelperProxy:GetInstance()):GetMainLobbySpine(defaultPetID, grade, skin, PetSkinEffectPath.NO_EFFECT)
-        if not dynamicSpineSettings then
-          dynamicSpineSettings = (HelperProxy:GetInstance()):GetPetSpine(defaultPetID, grade, skin, PetSkinEffectPath.NO_EFFECT)
-        end
-        staticSpineSettings = defaultPetID .. "_cg"
-        dynamicSpineSettings = defaultPetID .. "_spine_idle"
-        return staticSpineSettings, dynamicSpineSettings
+      staticSpineSettings = HelperProxy:GetInstance():GetMainLobbyStaticBody(defaultPetID, grade, skin, PetSkinEffectPath.NO_EFFECT)
+      staticSpineSettings = staticSpineSettings or HelperProxy:GetInstance():GetPetStaticBody(defaultPetID, grade, skin, PetSkinEffectPath.NO_EFFECT)
+      dynamicSpineSettings = HelperProxy:GetInstance():GetMainLobbySpine(defaultPetID, grade, skin, PetSkinEffectPath.NO_EFFECT)
+      if not dynamicSpineSettings then
+        dynamicSpineSettings = HelperProxy:GetInstance():GetPetSpine(defaultPetID, grade, skin, PetSkinEffectPath.NO_EFFECT)
       end
     end
+  else
+    staticSpineSettings = defaultPetID .. "_cg"
+    dynamicSpineSettings = defaultPetID .. "_spine_idle"
   end
+  return staticSpineSettings, dynamicSpineSettings
 end
-
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
 
 ChooseAssistantHelper.MulSpine_Auto = 0
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
 ChooseAssistantHelper.MulSpine_Manuel = 1
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
 
-ChooseAssistantHelper.GetMulSpineModel = function()
-  -- function num : 0_9 , upvalues : _ENV
-  local key = (ChooseAssistantHelper.GetPrefsKey)("multi_spine_model")
-  return ((UnityEngine.PlayerPrefs).GetInt)(key, ChooseAssistantHelper.MulSpine_Auto)
+function ChooseAssistantHelper.GetMulSpineModel()
+  local key = ChooseAssistantHelper.GetPrefsKey("multi_spine_model")
+  return UnityEngine.PlayerPrefs.GetInt(key, ChooseAssistantHelper.MulSpine_Auto)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseAssistantHelper.SetMulSpineModel = function(model)
-  -- function num : 0_10 , upvalues : _ENV
-  local key = (ChooseAssistantHelper.GetPrefsKey)("multi_spine_model")
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, model)
+function ChooseAssistantHelper.SetMulSpineModel(model)
+  local key = ChooseAssistantHelper.GetPrefsKey("multi_spine_model")
+  UnityEngine.PlayerPrefs.SetInt(key, model)
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseAssistantHelper.GetMulSpineIndex = function()
-  -- function num : 0_11 , upvalues : _ENV
-  local key = (ChooseAssistantHelper.GetPrefsKey)("multi_spine_index")
-  return ((UnityEngine.PlayerPrefs).GetInt)(key, 1)
+function ChooseAssistantHelper.GetMulSpineIndex()
+  local key = ChooseAssistantHelper.GetPrefsKey("multi_spine_index")
+  return UnityEngine.PlayerPrefs.GetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseAssistantHelper.SetMulSpineIndex = function(index)
-  -- function num : 0_12 , upvalues : _ENV
-  local key = (ChooseAssistantHelper.GetPrefsKey)("multi_spine_index")
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, index)
+function ChooseAssistantHelper.SetMulSpineIndex(index)
+  local key = ChooseAssistantHelper.GetPrefsKey("multi_spine_index")
+  UnityEngine.PlayerPrefs.SetInt(key, index)
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseAssistantHelper.GetPrefsKey = function(str)
-  -- function num : 0_13 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function ChooseAssistantHelper.GetPrefsKey(str)
+  local mRole = GameGlobal.GetModule(RoleModule)
   local pstId = mRole:GetPstId()
   local playerPrefsKey = pstId .. str
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseAssistantHelper.SaveTmpChooseCgPaintingData = function(self, isSave, id, grade, skinID, asID)
-  -- function num : 0_14 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
-  if not self._currentCgID then
-    if not (mRole.m_choose_painting).pet_template_id or not (mRole.m_choose_painting).pet_template_id then
-      self._currentCgID = not isSave or -1
-      self._currentGrade = (mRole.m_choose_painting).pet_grade
-      self._currentSkinID = (mRole.m_choose_painting).skin_id
-      self._currentAsID = (mRole.m_choose_painting).board_pet
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (mRole.m_choose_painting).pet_template_id = id
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (mRole.m_choose_painting).pet_grade = grade
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (mRole.m_choose_painting).skin_id = skinID
-      -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (mRole.m_choose_painting).board_pet = asID
-      -- DECOMPILER ERROR at PC42: Confused about usage of register: R7 in 'UnsetPending'
-
-      if self._currentCgID then
-        (mRole.m_choose_painting).pet_template_id = self._currentCgID
-        -- DECOMPILER ERROR at PC45: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (mRole.m_choose_painting).pet_grade = self._currentGrade
-        -- DECOMPILER ERROR at PC48: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (mRole.m_choose_painting).skin_id = self._currentSkinID
-        -- DECOMPILER ERROR at PC51: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (mRole.m_choose_painting).board_pet = self._currentAsID
-      end
-      self._currentCgID = nil
-      self._currentGrade = nil
-      self._currentSkinID = nil
-      self._currentAsID = nil
+function ChooseAssistantHelper:SaveTmpChooseCgPaintingData(isSave, id, grade, skinID, asID)
+  local mRole = GameGlobal.GetModule(RoleModule)
+  if isSave then
+    if not self._currentCgID then
+      self._currentCgID = mRole.m_choose_painting.pet_template_id and mRole.m_choose_painting.pet_template_id or -1
+      self._currentGrade = mRole.m_choose_painting.pet_grade
+      self._currentSkinID = mRole.m_choose_painting.skin_id
+      self._currentAsID = mRole.m_choose_painting.board_pet
     end
+    mRole.m_choose_painting.pet_template_id = id
+    mRole.m_choose_painting.pet_grade = grade
+    mRole.m_choose_painting.skin_id = skinID
+    mRole.m_choose_painting.board_pet = asID
+  else
+    if self._currentCgID then
+      mRole.m_choose_painting.pet_template_id = self._currentCgID
+      mRole.m_choose_painting.pet_grade = self._currentGrade
+      mRole.m_choose_painting.skin_id = self._currentSkinID
+      mRole.m_choose_painting.board_pet = self._currentAsID
+    end
+    self._currentCgID = nil
+    self._currentGrade = nil
+    self._currentSkinID = nil
+    self._currentAsID = nil
   end
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseAssistantHelper.SaveTmpChooseBgPaintingData = function(self, isSave, id, type)
-  -- function num : 0_15 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function ChooseAssistantHelper:SaveTmpChooseBgPaintingData(isSave, id, type)
+  local mRole = GameGlobal.GetModule(RoleModule)
   if isSave then
     if not self._currentBgID then
-      self._currentBgID = (mRole.m_choose_painting).back_id
-      self._currentBgType = (mRole.m_choose_painting).background_type
+      self._currentBgID = mRole.m_choose_painting.back_id
+      self._currentBgType = mRole.m_choose_painting.background_type
     end
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (mRole.m_choose_painting).back_id = id
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (mRole.m_choose_painting).background_type = type
+    mRole.m_choose_painting.back_id = id
+    mRole.m_choose_painting.background_type = type
   else
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R5 in 'UnsetPending'
-
     if self._currentBgID then
-      (mRole.m_choose_painting).back_id = self._currentBgID
-      -- DECOMPILER ERROR at PC28: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (mRole.m_choose_painting).background_type = self._currentBgType
+      mRole.m_choose_painting.back_id = self._currentBgID
+      mRole.m_choose_painting.background_type = self._currentBgType
     end
     self._currentBgID = nil
     self._currentBgType = nil
   end
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R0 in 'UnsetPending'
-
-ChooseAssistantHelper.ClearTmpChoosePaintingData = function(self)
-  -- function num : 0_16
+function ChooseAssistantHelper:ClearTmpChoosePaintingData()
   self._currentCgID = nil
   self._currentGrade = nil
   self._currentSkinID = nil
@@ -384,5 +278,3 @@ ChooseAssistantHelper.ClearTmpChoosePaintingData = function(self)
   self._currentBgID = nil
   self._currentBgType = nil
 end
-
-

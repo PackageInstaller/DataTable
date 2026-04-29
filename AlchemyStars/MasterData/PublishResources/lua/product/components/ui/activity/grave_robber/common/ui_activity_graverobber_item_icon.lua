@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/grave_robber/common/ui_activity_graverobber_item_icon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityGraveRobberItemIcon", UICustomWidget)
 UIActivityGraveRobberItemIcon = UIActivityGraveRobberItemIcon
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityGraveRobberItemIcon._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityGraveRobberItemIcon:_GetComponents()
   self._iconImg = self:GetUIComponent("RawImageLoader", "icon")
   self._iconRect = self:GetUIComponent("RectTransform", "icon")
   self._iconObj = self:GetGameObject("icon")
@@ -17,136 +10,84 @@ UIActivityGraveRobberItemIcon._GetComponents = function(self)
   self._countTextObj = self:GetGameObject("countText")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberItemIcon.SetData = function(self, index, roleAsset, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityGraveRobberItemIcon:SetData(index, roleAsset, callback)
   self:_GetComponents()
   self._index = index
   self._roleAsset = roleAsset
   self._callback = callback
-  self._cfg_item = (Cfg.cfg_item)[(self._roleAsset).assetid]
+  self._cfg_item = Cfg.cfg_item[self._roleAsset.assetid]
   if self._cfg_item == nil then
-    (self:GetGameObject()):SetActive(false)
-    return 
+    self:GetGameObject():SetActive(false)
+    return
   end
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberItemIcon.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIActivityGraveRobberItemIcon:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberItemIcon.OnHide = function(self)
-  -- function num : 0_3
+function UIActivityGraveRobberItemIcon:OnHide()
   self._callback = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberItemIcon._OnValue = function(self)
-  -- function num : 0_4
-  local icon = (self._cfg_item).Icon
-  local count = (self._roleAsset).count
-  local itemId = (self._roleAsset).assetid
+function UIActivityGraveRobberItemIcon:_OnValue()
+  local icon = self._cfg_item.Icon
+  local count = self._roleAsset.count
+  local itemId = self._roleAsset.assetid
   self:SetIcon(icon, itemId)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberItemIcon.iconOnClick = function(self, go)
-  -- function num : 0_5
+function UIActivityGraveRobberItemIcon:iconOnClick(go)
   if self._callback then
-    (self._callback)((self._roleAsset).assetid, (go.transform).position)
+    self._callback(self._roleAsset.assetid, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberItemIcon.SetIcon = function(self, name, itemId)
-  -- function num : 0_6 , upvalues : _ENV
-  if not (string.isnullorempty)(name) then
+function UIActivityGraveRobberItemIcon:SetIcon(name, itemId)
+  if not string.isnullorempty(name) then
     self:ShowIcon(true, itemId)
-    ;
-    (self._iconImg):LoadImage(name)
+    self._iconImg:LoadImage(name)
   else
     self:ShowIcon(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberItemIcon.ShowIcon = function(self, show, itemId)
-  -- function num : 0_7
-  (self._iconObj):SetActive(show)
+function UIActivityGraveRobberItemIcon:ShowIcon(show, itemId)
+  self._iconObj:SetActive(show)
   self:SetIconOffset(itemId)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberItemIcon.SetIconOffset = function(self, itemId)
-  -- function num : 0_8 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIActivityGraveRobberItemIcon:SetIconOffset(itemId)
   if self:_IsPet(itemId) then
-    (self._iconRect).anchoredPosition = Vector2(0, 0)
+    self._iconRect.anchoredPosition = Vector2(0, 0)
   else
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._iconRect).anchoredPosition = Vector2(0, 5)
+    self._iconRect.anchoredPosition = Vector2(0, 5)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberItemIcon._IsPet = function(self, id)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet)({ID = id})
+function UIActivityGraveRobberItemIcon:_IsPet(id)
+  local cfg = Cfg.cfg_pet({ID = id})
   return cfg and true or false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberItemIcon.SetCount = function(self, text, showZeroFlag)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityGraveRobberItemIcon:SetCount(text, showZeroFlag)
   if text ~= nil then
     local show = false
     if type(text) == "number" then
       local num = text
-      if num <= 0 then
-        do
-          do
-            show = showZeroFlag
-            show = show
-            ;
-            (self._countText):SetText((HelperProxy:GetInstance()):FormatItemCount(num))
-            if type(text) == "string" then
-              show = not (string.isnullorempty)(text)
-              ;
-              (self._countText):SetText(text)
-            end
-            self:ShowCountGroup(show)
-            self:ShowCountGroup(false)
-            -- DECOMPILER ERROR: 6 unprocessed JMP targets
-          end
-        end
-      end
+      show = 0 < num or showZeroFlag
+      self._countText:SetText(HelperProxy:GetInstance():FormatItemCount(num))
+    elseif type(text) == "string" then
+      show = not string.isnullorempty(text)
+      self._countText:SetText(text)
     end
+    self:ShowCountGroup(show)
+  else
+    self:ShowCountGroup(false)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGraveRobberItemIcon.ShowCountGroup = function(self, show)
-  -- function num : 0_11
-  (self._countTextObj):SetActive(show)
-  ;
-  (self._countBgObj):SetActive(show)
+function UIActivityGraveRobberItemIcon:ShowCountGroup(show)
+  self._countTextObj:SetActive(show)
+  self._countBgObj:SetActive(show)
 end
-
-

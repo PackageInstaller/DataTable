@@ -1,31 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_dead_mark_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataDeadMarkResult", Object)
 DataDeadMarkResult = DataDeadMarkResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataDeadMarkResult.Constructor = function(self, list)
-  -- function num : 0_0
-  if not list then
-    self._deadEntityIDList = {}
-  end
+function DataDeadMarkResult:Constructor(list)
+  self._deadEntityIDList = list or {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataDeadMarkResult.AddDeadEntityID = function(self, eid)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.insert)(self._deadEntityIDList, eid)
+function DataDeadMarkResult:AddDeadEntityID(eid)
+  table.insert(self._deadEntityIDList, eid)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataDeadMarkResult.GetDeadEntityIDList = function(self)
-  -- function num : 0_2
+function DataDeadMarkResult:GetDeadEntityIDList()
   return self._deadEntityIDList
 end
-
-

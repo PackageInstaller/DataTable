@@ -1,85 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/preview_active_skill_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewActiveSkillComponent", Object)
 PreviewActiveSkillComponent = PreviewActiveSkillComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewActiveSkillComponent.Constructor = function(self, skillID)
-  -- function num : 0_0
+function PreviewActiveSkillComponent:Constructor(skillID)
   self._activeSkillID = skillID
   self._previewStageEffectEntityIDList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewActiveSkillComponent.GetActiveSKillID = function(self)
-  -- function num : 0_1
+function PreviewActiveSkillComponent:GetActiveSKillID()
   return self._activeSkillID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewActiveSkillComponent.AddPreviewStageEffectEntityID = function(self, entityID)
-  -- function num : 0_2 , upvalues : _ENV
-  (table.insert)(self._previewStageEffectEntityIDList, entityID)
+function PreviewActiveSkillComponent:AddPreviewStageEffectEntityID(entityID)
+  table.insert(self._previewStageEffectEntityIDList, entityID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewActiveSkillComponent.GetPreviewStageEffectEntityIDList = function(self)
-  -- function num : 0_3
+function PreviewActiveSkillComponent:GetPreviewStageEffectEntityIDList()
   return self._previewStageEffectEntityIDList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewActiveSkillComponent.ClearPreviewStageEffectEntityIDList = function(self)
-  -- function num : 0_4
+function PreviewActiveSkillComponent:ClearPreviewStageEffectEntityIDList()
   self._previewStageEffectEntityIDList = {}
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PreviewActiveSkill = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).PreviewActiveSkill)
+function Entity:PreviewActiveSkill()
+  return self:GetComponent(self.WEComponentsEnum.PreviewActiveSkill)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPreviewActiveSkill = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).PreviewActiveSkill)
+function Entity:HasPreviewActiveSkill()
+  return self:HasComponent(self.WEComponentsEnum.PreviewActiveSkill)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPreviewActiveSkill = function(self, skillID)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewActiveSkill
+function Entity:AddPreviewActiveSkill(skillID)
+  local index = self.WEComponentsEnum.PreviewActiveSkill
   local component = PreviewActiveSkillComponent:New(skillID)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePreviewActiveSkill = function(self, skillID)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewActiveSkill
+function Entity:ReplacePreviewActiveSkill(skillID)
+  local index = self.WEComponentsEnum.PreviewActiveSkill
   local component = PreviewActiveSkillComponent:New(skillID)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePreviewActiveSkill = function(self)
-  -- function num : 0_9
+function Entity:RemovePreviewActiveSkill()
   if self:HasPreviewActiveSkill() then
-    self:RemoveComponent((self.WEComponentsEnum).PreviewActiveSkill)
+    self:RemoveComponent(self.WEComponentsEnum.PreviewActiveSkill)
   end
 end
-
-

@@ -1,16 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_forward_pyramid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_ForwardPyramid", SkillScopeCalculator_Base)
 SkillScopeCalculator_ForwardPyramid = SkillScopeCalculator_ForwardPyramid
-local ForwardPyramidSubtype = {Pyramid = 1, Rectangle = 2, DoublePyramid = 3}
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
+local ForwardPyramidSubtype = {
+  Pyramid = 1,
+  Rectangle = 2,
+  DoublePyramid = 3
+}
 
-SkillScopeCalculator_ForwardPyramid.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV, ForwardPyramidSubtype
+function SkillScopeCalculator_ForwardPyramid:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local useCasterDir = scopeParam[2] == 1
   local v2Dir = Vector2.zero
   if casterPos == centerPos then
@@ -26,15 +23,15 @@ SkillScopeCalculator_ForwardPyramid.CalcRange = function(self, scopeType, scopeP
   elseif v2Dir.x < 0 then
     v2Dir.x = -1
   end
-  if v2Dir.y > 0 then
+  if 0 < v2Dir.y then
     v2Dir.y = 1
-  elseif v2Dir.y < 0 then
+  elseif 0 > v2Dir.y then
     v2Dir.y = -1
   end
   if v2Dir == Vector2.zero then
     return SkillScopeResult:New(SkillScopeType.ForwardPyramid, centerPos, {centerPos}, {centerPos})
   end
-  local lbsvc = ((self._gridFilter)._world):GetService("BoardLogic")
+  local lbsvc = self._gridFilter._world:GetService("BoardLogic")
   local boardMaxX = lbsvc:GetCurBoardMaxX()
   local boardMaxY = lbsvc:GetCurBoardMaxY()
   local attackRange = {}
@@ -42,146 +39,116 @@ SkillScopeCalculator_ForwardPyramid.CalcRange = function(self, scopeType, scopeP
   if type == ForwardPyramidSubtype.Pyramid then
     local layerCount = 1
     local v2Center = centerPos:Clone()
-    while 1 do
-      v2Center = v2Center + v2Dir
-      if v2Center.x > 0 and boardMaxX >= v2Center.x and v2Center.y > 0 and boardMaxY >= v2Center.y then
-        if self:_IsPosValid(v2Center) and not (table.icontains)(attackRange, v2Center) then
-          (table.insert)(attackRange, v2Center)
-        end
-        self:_AddAllGridInLine(attackRange, v2Center, v2Dir, layerCount)
-        layerCount = layerCount + 1
-        -- DECOMPILER ERROR at PC104: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC104: LeaveBlock: unexpected jumping out IF_STMT
-
+    ::lbl_68::
+    v2Center = v2Center + v2Dir
+    if not (v2Center.x <= 0) and not (boardMaxX < v2Center.x) and not (0 >= v2Center.y) and not (boardMaxY < v2Center.y) then
+      if self:_IsPosValid(v2Center) and not table.icontains(attackRange, v2Center) then
+        table.insert(attackRange, v2Center)
       end
+      self:_AddAllGridInLine(attackRange, v2Center, v2Dir, layerCount)
+      layerCount = layerCount + 1
+      goto lbl_68
     end
   elseif type == ForwardPyramidSubtype.Rectangle then
     local layerCount = 1
     local v2Center = centerPos:Clone()
-    while 1 do
-      v2Center = v2Center + v2Dir
-      if v2Center.x > 0 and boardMaxX >= v2Center.x and v2Center.y > 0 and boardMaxY >= v2Center.y then
-        if self:_IsPosValid(v2Center) and not (table.icontains)(attackRange, v2Center) then
-          (table.insert)(attackRange, v2Center)
-        end
-        self:_AddAllGridInLine(attackRange, v2Center, v2Dir, (math.max)(boardMaxX, boardMaxY))
-        layerCount = layerCount + 1
-        -- DECOMPILER ERROR at PC153: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC153: LeaveBlock: unexpected jumping out IF_STMT
-
+    ::lbl_113::
+    v2Center = v2Center + v2Dir
+    if not (v2Center.x <= 0) and not (boardMaxX < v2Center.x) and not (0 >= v2Center.y) and not (boardMaxY < v2Center.y) then
+      if self:_IsPosValid(v2Center) and not table.icontains(attackRange, v2Center) then
+        table.insert(attackRange, v2Center)
       end
+      self:_AddAllGridInLine(attackRange, v2Center, v2Dir, math.max(boardMaxX, boardMaxY))
+      layerCount = layerCount + 1
+      goto lbl_113
     end
   elseif type == ForwardPyramidSubtype.DoublePyramid then
     local frontCenters = {}
     if bodyArea then
       local bodyPosList = {}
-      for index,offPos in ipairs(bodyArea) do
+      for index, offPos in ipairs(bodyArea) do
         local bodyPos = casterPos + offPos
-        ;
-        (table.insert)(bodyPosList, bodyPos)
+        table.insert(bodyPosList, bodyPos)
       end
-      for index,bodyPos in ipairs(bodyPosList) do
+      for index, bodyPos in ipairs(bodyPosList) do
         local frontPos = bodyPos + v2Dir
-        if not (table.icontains)(bodyPosList, frontPos) then
-          (table.insert)(frontCenters, bodyPos)
+        if not table.icontains(bodyPosList, frontPos) then
+          table.insert(frontCenters, bodyPos)
         end
       end
-      for index,frontCenterPos in ipairs(frontCenters) do
+      for index, frontCenterPos in ipairs(frontCenters) do
         local layerCount = 1
         local v2Center = frontCenterPos:Clone()
-        while 1 do
+        while true do
           v2Center = v2Center + v2Dir
-          if v2Center.x > 0 and boardMaxX >= v2Center.x and v2Center.y > 0 and boardMaxY >= v2Center.y then
-            if self:_IsPosValid(v2Center) and not (table.icontains)(attackRange, v2Center) then
-              (table.insert)(attackRange, v2Center)
-            end
-            self:_AddAllGridInLine(attackRange, v2Center, v2Dir, layerCount)
-            layerCount = layerCount + 1
-            -- DECOMPILER ERROR at PC237: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC237: LeaveBlock: unexpected jumping out IF_STMT
-
+          if v2Center.x <= 0 or boardMaxX < v2Center.x or 0 >= v2Center.y or boardMaxY < v2Center.y then
+            break
           end
+          if self:_IsPosValid(v2Center) and not table.icontains(attackRange, v2Center) then
+            table.insert(attackRange, v2Center)
+          end
+          self:_AddAllGridInLine(attackRange, v2Center, v2Dir, layerCount)
+          layerCount = layerCount + 1
         end
       end
     end
   end
   local sortAttackRange = self:_AbsDistanceSort(attackRange, centerPos)
-  do return SkillScopeResult:New(SkillScopeType.ForwardPyramid, centerPos, sortAttackRange, sortAttackRange) end
-  -- DECOMPILER ERROR: 21 unprocessed JMP targets
+  return SkillScopeResult:New(SkillScopeType.ForwardPyramid, centerPos, sortAttackRange, sortAttackRange)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeCalculator_ForwardPyramid._IsPosValid = function(self, v2)
-  -- function num : 0_1
-  do return self._gridFilter and (self._gridFilter):IsValidPiecePos(v2) end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function SkillScopeCalculator_ForwardPyramid:_IsPosValid(v2)
+  return not self._gridFilter or self._gridFilter:IsValidPiecePos(v2)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeCalculator_ForwardPyramid._AddAllGridInLine = function(self, attackRange, v2Center, v2Dir, layerCount)
-  -- function num : 0_2 , upvalues : _ENV
-  local rotatedV2 = (Vector2.New)(v2Dir.y, v2Dir.x)
+function SkillScopeCalculator_ForwardPyramid:_AddAllGridInLine(attackRange, v2Center, v2Dir, layerCount)
+  local rotatedV2 = Vector2.New(v2Dir.y, v2Dir.x)
   for i = 1, layerCount do
     local v2 = v2Center + rotatedV2 * i
-    if self:_IsPosValid(v2) and not (table.icontains)(attackRange, v2) then
-      (table.insert)(attackRange, v2)
+    if self:_IsPosValid(v2) and not table.icontains(attackRange, v2) then
+      table.insert(attackRange, v2)
     end
   end
   rotatedV2 = rotatedV2 * -1
   for i = 1, layerCount do
     local v2 = v2Center + rotatedV2 * i
-    if self:_IsPosValid(v2) and not (table.icontains)(attackRange, v2) then
-      (table.insert)(attackRange, v2)
+    if self:_IsPosValid(v2) and not table.icontains(attackRange, v2) then
+      table.insert(attackRange, v2)
     end
   end
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeCalculator_ForwardPyramid._AbsDistanceSort = function(self, gridList, castPos)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillScopeCalculator_ForwardPyramid:_AbsDistanceSort(gridList, castPos)
   local posDic = {}
-  for _,pos in pairs(gridList) do
-    local dis = (Vector2.Distance)(castPos, pos)
+  for _, pos in pairs(gridList) do
+    local dis = Vector2.Distance(castPos, pos)
     if not posDic[dis] then
       posDic[dis] = {}
     end
-    ;
-    (table.insert)(posDic[dis], pos)
+    table.insert(posDic[dis], pos)
   end
-  local sortDicFunc = function(dic)
-    -- function num : 0_3_0 , upvalues : _ENV
+  
+  local function sortDicFunc(dic)
     local newDic = {}
     local keyList = {}
-    for k,_ in pairs(dic) do
-      (table.insert)(keyList, k)
+    for k, _ in pairs(dic) do
+      table.insert(keyList, k)
     end
-    ;
-    (table.sort)(keyList, function(a, b)
-      -- function num : 0_3_0_0
-      do return a < b end
-      -- DECOMPILER ERROR: 1 unprocessed JMP targets
-    end
-)
+    table.sort(keyList, function(a, b)
+      return a < b
+    end)
     for i = 1, #keyList do
       newDic[#newDic + 1] = dic[keyList[i]]
     end
     return newDic
   end
-
+  
   posDic = sortDicFunc(posDic)
   local attackRange = {}
-  for dis,posList in pairs(posDic) do
-    for _,pos in pairs(posList) do
-      (table.insert)(attackRange, pos)
+  for dis, posList in pairs(posDic) do
+    for _, pos in pairs(posList) do
+      table.insert(attackRange, pos)
     end
   end
   return attackRange
 end
-
-

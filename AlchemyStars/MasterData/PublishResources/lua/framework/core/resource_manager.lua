@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/resource_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ResourceManager", Singleton)
 ResourceManager = ResourceManager
 local unpack = table.unpack
--- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
 
-ResourceManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ResourceManager:Constructor()
   self.finishes = {}
   self.loader = ResourceLoader:New()
   if PUBLIC then
-    (self.loader):CacheAB(App.ShaderABName)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
+    self.loader:CacheAB(App.ShaderABName)
     App.CacheFont = true
   end
-  ;
-  (self.loader):OnFinish(self.OnFinish, self)
+  self.loader:OnFinish(self.OnFinish, self)
   if App.Profiler then
     self.traces = {}
     self.profiler = true
@@ -29,71 +19,45 @@ ResourceManager.Constructor = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-ResourceManager.SyncLoadAsset = function(self, name, loadType)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.info)("[ResourceManager Lua] Loading Asset: " .. name)
-  local request = (self.loader):SyncLoadAsset(name, loadType)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
+function ResourceManager:SyncLoadAsset(name, loadType)
+  Log.info("[ResourceManager Lua] Loading Asset: " .. name)
+  local request = self.loader:SyncLoadAsset(name, loadType)
   if self.profiler then
-    if not (self.traces)[name] then
-      (self.traces)[name] = {}
+    if not self.traces[name] then
+      self.traces[name] = {}
     end
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    ((self.traces)[name])[request:GetHashCode()] = (debug.traceback)(nil, 2)
+    self.traces[name][request:GetHashCode()] = debug.traceback(nil, 2)
   end
   return request
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-ResourceManager.SyncLoad = function(self, TT, name, loadType)
-  -- function num : 0_2 , upvalues : _ENV
-  local request = (self.loader):SyncLoadAsset(name, loadType)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
+function ResourceManager:SyncLoad(TT, name, loadType)
+  local request = self.loader:SyncLoadAsset(name, loadType)
   if self.profiler then
-    if not (self.traces)[name] then
-      (self.traces)[name] = {}
+    if not self.traces[name] then
+      self.traces[name] = {}
     end
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    ((self.traces)[name])[request:GetHashCode()] = (debug.traceback)(nil, 2)
+    self.traces[name][request:GetHashCode()] = debug.traceback(nil, 2)
   end
   return request
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-ResourceManager.AsyncLoadAsset = function(self, TT, name, loadType)
-  -- function num : 0_3 , upvalues : _ENV
+function ResourceManager:AsyncLoadAsset(TT, name, loadType)
   local id = GetCurTaskId()
   local request = self:AsyncLoad(name, loadType, function(ready)
-    -- function num : 0_3_0 , upvalues : _ENV, TT, id
     if not ready then
       RESUME(TT, id)
     end
-  end
-)
+  end)
   if not request then
-    (Log.error)("AsyncLoadAsset failed:", name)
+    Log.error("AsyncLoadAsset failed:", name)
     return nil
   end
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R6 in 'UnsetPending'
-
   if self.profiler then
-    if not (self.traces)[name] then
-      (self.traces)[name] = {}
+    if not self.traces[name] then
+      self.traces[name] = {}
     end
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self.traces)[name])[request:GetHashCode()] = (debug.traceback)(nil, 2)
+    self.traces[name][request:GetHashCode()] = debug.traceback(nil, 2)
   end
   if not request:Ready() then
     SUSPEND(TT)
@@ -101,136 +65,91 @@ ResourceManager.AsyncLoadAsset = function(self, TT, name, loadType)
   return request
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-ResourceManager.AsyncLoad = function(self, name, loadType, func, ...)
-  -- function num : 0_4
-  local request = (self.loader):AsyncLoadAsset(name, loadType)
+function ResourceManager:AsyncLoad(name, loadType, func, ...)
+  local request = self.loader:AsyncLoadAsset(name, loadType)
   if not request then
     return nil
   end
   if request:Ready() then
     func(true, ...)
   else
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.finishes)[request] = {func = func, 
-args = {...}
-}
+    self.finishes[request] = {
+      func = func,
+      args = {
+        ...
+      }
+    }
   end
   return request
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-ResourceManager.OnFinish = function(self, request)
-  -- function num : 0_5 , upvalues : unpack, _ENV
-  local finish = (self.finishes)[request]
+function ResourceManager:OnFinish(request)
+  local finish = self.finishes[request]
   if finish then
-    (finish.func)(unpack(finish.args, 1, (table.maxn)(finish.args)))
+    finish.func(unpack(finish.args, 1, table.maxn(finish.args)))
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.finishes)[request] = nil
+  self.finishes[request] = nil
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-ResourceManager.GetAssetPath = function(self, name, loadType)
-  -- function num : 0_6
-  return (self.loader):GetAssetPath(name, loadType)
+function ResourceManager:GetAssetPath(name, loadType)
+  return self.loader:GetAssetPath(name, loadType)
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-ResourceManager.GetTextAsset = function(self, name)
-  -- function num : 0_7 , upvalues : _ENV
-  local path = (self.loader):GetAssetPath(name, LoadType.Txt)
+function ResourceManager:GetTextAsset(name)
+  local path = self.loader:GetAssetPath(name, LoadType.Txt)
   if path then
-    local file = (io.open)(path, "r")
+    local file = io.open(path, "r")
     local text = file:read("a")
     file:close()
     return text
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-ResourceManager.SetSyncLoadNum = function(self, num)
-  -- function num : 0_8
-  (self.loader):SetSyncLoadNum(num)
+function ResourceManager:SetSyncLoadNum(num)
+  self.loader:SetSyncLoadNum(num)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-ResourceManager.HasResource = function(self, name)
-  -- function num : 0_9
-  return (self.loader):HasResource(name)
+function ResourceManager:HasResource(name)
+  return self.loader:HasResource(name)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-ResourceManager.HasLua = function(self, name)
-  -- function num : 0_10
-  return (self.loader):HasLua(name)
+function ResourceManager:HasLua(name)
+  return self.loader:HasLua(name)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-ResourceManager.GetTraces = function(self)
-  -- function num : 0_11
+function ResourceManager:GetTraces()
   return self.traces
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-ResourceManager.UnloadAllABs = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function ResourceManager:UnloadAllABs()
   if not PUBLIC then
-    return 
+    return
   end
-  local abs = (App.GetABs)()
+  local abs = App.GetABs()
   local length = abs.Length
   local tb = {}
   for i = 0, length - 1 do
     if abs[i] ~= "h3d_ttf.bundle" then
-      (self.loader):DiposeAB(abs[i])
+      self.loader:DiposeAB(abs[i])
     end
   end
   local name = App.ShaderABName
-  ;
-  (self.loader):CacheAB(name)
+  self.loader:CacheAB(name)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-ResourceManager.CacheAB = function(self, abName)
-  -- function num : 0_13
-  (self.loader):CacheAB(abName)
+function ResourceManager:CacheAB(abName)
+  self.loader:CacheAB(abName)
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-ResourceManager.DisposeAB = function(self, abName)
-  -- function num : 0_14
-  (self.loader):DiposeAB(abName)
+function ResourceManager:DisposeAB(abName)
+  self.loader:DiposeAB(abName)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-ResourceManager.Dispose = function(self)
-  -- function num : 0_15
-  (self.loader):Dispose()
+function ResourceManager:Dispose()
+  self.loader:Dispose()
   self.loader = nil
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-ResourceManager.WarmUpCoreGameShader = function(self)
-  -- function num : 0_16
-  (self.loader):WarmUpShader()
+function ResourceManager:WarmUpCoreGameShader()
+  self.loader:WarmUpShader()
 end
-
-

@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/date/manual/ui_activity_n33_date_manual_build_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33DateManualBuildItem", UICustomWidget)
 UIActivityN33DateManualBuildItem = UIActivityN33DateManualBuildItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN33DateManualBuildItem.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityN33DateManualBuildItem:Constructor()
   self._isRead = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualBuildItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN33DateManualBuildItem:OnShow()
   self._atlas = self:GetAsset("UIN33Date.spriteatlas", LoadType.SpriteAtlas)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualBuildItem._GetComponent = function(self)
-  -- function num : 0_2
+function UIActivityN33DateManualBuildItem:_GetComponent()
   self._buildingImg = self:GetUIComponent("Image", "buildingImg")
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._intro = self:GetUIComponent("UILocalizationText", "intro")
@@ -44,20 +31,11 @@ UIActivityN33DateManualBuildItem._GetComponent = function(self)
   condition2.item = self:GetGameObject("conditionItem2")
   condition2.gou = self:GetGameObject("gou2")
   condition2.txt = self:GetUIComponent("UILocalizationText", "conditionTxt2")
-  -- DECOMPILER ERROR at PC84: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._conditions)[1] = condition1
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._conditions)[2] = condition2
+  self._conditions[1] = condition1
+  self._conditions[2] = condition2
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualBuildItem.SetData = function(self, cfg, data, isShowInvite, storyClickCallback, inviteClickCallback)
-  -- function num : 0_3
+function UIActivityN33DateManualBuildItem:SetData(cfg, data, isShowInvite, storyClickCallback, inviteClickCallback)
   self._cfg = cfg
   self._activityConst = data
   self._isShowInvite = isShowInvite
@@ -66,177 +44,116 @@ UIActivityN33DateManualBuildItem.SetData = function(self, cfg, data, isShowInvit
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualBuildItem._Init = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local conditionIsOver = (self._activityConst):CheckStoryConditionIsOver((self._cfg).ID)
-  self._isRead = (self._activityConst):CheckStoryIsRead((self._cfg).ID)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._buildingImg).sprite = (self._atlas):GetSprite((self._cfg).EventIcon)
-  ;
-  (self._intro):SetText((StringTable.Get)((self._cfg).EventOverTxt))
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bg).sprite = (self._atlas):GetSprite("N33_glyh_di04")
-  ;
-  (self._doneIconObj):SetActive(self._isRead)
-  ;
-  (self._lockIconObj):SetActive(not conditionIsOver)
-  ;
-  (self._buildingImgObj):SetActive(conditionIsOver)
-  ;
-  (self._storyBtnObj):SetActive(self._isRead)
+function UIActivityN33DateManualBuildItem:_Init()
+  local conditionIsOver = self._activityConst:CheckStoryConditionIsOver(self._cfg.ID)
+  self._isRead = self._activityConst:CheckStoryIsRead(self._cfg.ID)
+  self._buildingImg.sprite = self._atlas:GetSprite(self._cfg.EventIcon)
+  self._intro:SetText(StringTable.Get(self._cfg.EventOverTxt))
+  self._bg.sprite = self._atlas:GetSprite("N33_glyh_di04")
+  self._doneIconObj:SetActive(self._isRead)
+  self._lockIconObj:SetActive(not conditionIsOver)
+  self._buildingImgObj:SetActive(conditionIsOver)
+  self._storyBtnObj:SetActive(self._isRead)
   if conditionIsOver and self._isRead then
-    (self._title):SetText((StringTable.Get)((self._cfg).EventTitle))
-    ;
-    (self._inviteBtnObj):SetActive(false)
-  else
-    if conditionIsOver and not self._isRead then
-      (self._title):SetText((StringTable.Get)((self._cfg).EventTitle))
-      ;
-      (self._inviteBtnObj):SetActive(true)
-    else
-      if not conditionIsOver then
-        (self._title):SetText("???")
-        ;
-        (self._inviteBtnObj):SetActive(false)
-        -- DECOMPILER ERROR at PC99: Confused about usage of register: R2 in 'UnsetPending'
-
-        ;
-        (self._bg).sprite = (self._atlas):GetSprite("N33_glyh_di07")
-      end
-    end
+    self._title:SetText(StringTable.Get(self._cfg.EventTitle))
+    self._inviteBtnObj:SetActive(false)
+  elseif conditionIsOver and not self._isRead then
+    self._title:SetText(StringTable.Get(self._cfg.EventTitle))
+    self._inviteBtnObj:SetActive(true)
+  elseif not conditionIsOver then
+    self._title:SetText("???")
+    self._inviteBtnObj:SetActive(false)
+    self._bg.sprite = self._atlas:GetSprite("N33_glyh_di07")
   end
-  local preStoryIds = (self._cfg).PreStory
+  local preStoryIds = self._cfg.PreStory
   if preStoryIds then
     local preStoryId = preStoryIds[1]
-    ;
-    (((self._conditions)[1]).item):SetActive(true)
-    local preIsRead = (self._activityConst):CheckStoryIsRead(preStoryId)
-    ;
-    (((self._conditions)[1]).gou):SetActive(preIsRead)
-    local preStoryCfg = (Cfg.cfg_component_simulation_operation_story)[preStoryId]
-    ;
-    (((self._conditions)[1]).txt):SetText((StringTable.Get)("str_n33_date_manual_lock_tip", (StringTable.Get)(preStoryCfg.EventTitle)))
+    self._conditions[1].item:SetActive(true)
+    local preIsRead = self._activityConst:CheckStoryIsRead(preStoryId)
+    self._conditions[1].gou:SetActive(preIsRead)
+    local preStoryCfg = Cfg.cfg_component_simulation_operation_story[preStoryId]
+    self._conditions[1].txt:SetText(StringTable.Get("str_n33_date_manual_lock_tip", StringTable.Get(preStoryCfg.EventTitle)))
   else
-    do
-      ;
-      (((self._conditions)[1]).item):SetActive(false)
-      local preBuildConditions = (self._cfg).PreCondition
-      if preBuildConditions then
-        (((self._conditions)[2]).item):SetActive(true)
-        local preBuildCondition = preBuildConditions[1]
-        local id = preBuildCondition[1]
-        local needLevel = preBuildCondition[2]
-        local isLevelGet = (self._activityConst):CheckBuildGetLevel(id, needLevel)
-        ;
-        (((self._conditions)[2]).gou):SetActive(isLevelGet)
-        local buildCfg = ((Cfg.cfg_component_simulation_operation)({ArchitectureId = id, Level = needLevel}))[1]
-        local name = (StringTable.Get)(buildCfg.MapName)
-        ;
-        (((self._conditions)[2]).txt):SetText((StringTable.Get)("str_n33_date_arch_info_key15", name, needLevel))
-      else
-        do
-          ;
-          (((self._conditions)[2]).item):SetActive(false)
-          self._awardList = (self._awardListContent):SpawnObjects("UIActivityN33RewardItem", #(self._cfg).Rewards)
-          for i,awardItem in pairs(self._awardList) do
-            local item = ((self._cfg).Rewards)[i]
-            awardItem:SetRewardData_Item(item, self._isRead, self._activityConst)
-          end
-          if not self._isShowInvite then
-            (self._inviteBtnObj):SetActive(false)
-          end
-        end
-      end
-    end
+    self._conditions[1].item:SetActive(false)
+  end
+  local preBuildConditions = self._cfg.PreCondition
+  if preBuildConditions then
+    self._conditions[2].item:SetActive(true)
+    local preBuildCondition = preBuildConditions[1]
+    local id = preBuildCondition[1]
+    local needLevel = preBuildCondition[2]
+    local isLevelGet = self._activityConst:CheckBuildGetLevel(id, needLevel)
+    self._conditions[2].gou:SetActive(isLevelGet)
+    local buildCfg = Cfg.cfg_component_simulation_operation({ArchitectureId = id, Level = needLevel})[1]
+    local name = StringTable.Get(buildCfg.MapName)
+    self._conditions[2].txt:SetText(StringTable.Get("str_n33_date_arch_info_key15", name, needLevel))
+  else
+    self._conditions[2].item:SetActive(false)
+  end
+  self._awardList = self._awardListContent:SpawnObjects("UIActivityN33RewardItem", #self._cfg.Rewards)
+  for i, awardItem in pairs(self._awardList) do
+    local item = self._cfg.Rewards[i]
+    awardItem:SetRewardData_Item(item, self._isRead, self._activityConst)
+  end
+  if not self._isShowInvite then
+    self._inviteBtnObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualBuildItem.GetIsRead = function(self)
-  -- function num : 0_5
+function UIActivityN33DateManualBuildItem:GetIsRead()
   return self._isRead
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualBuildItem.SetActive = function(self, isActive)
-  -- function num : 0_6
-  (self._selfObj):SetActive(isActive)
+function UIActivityN33DateManualBuildItem:SetActive(isActive)
+  self._selfObj:SetActive(isActive)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualBuildItem.StoryBtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  if (self._activityConst):CheckSimulationOperationIsOver() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+function UIActivityN33DateManualBuildItem:StoryBtnOnClick()
+  if self._activityConst:CheckSimulationOperationIsOver() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIActivityN33MainController)
-    return 
+    return
   end
   if self._storyClickCallback then
-    (self._storyClickCallback)()
+    self._storyClickCallback()
   end
-  self:ShowDialog("UIStoryController", (self._cfg).StoryID)
+  self:ShowDialog("UIStoryController", self._cfg.StoryID)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualBuildItem.SubmitSimulationOperationStory = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
-  local comp = (self._activityConst):GetComponent()
+function UIActivityN33DateManualBuildItem:SubmitSimulationOperationStory(TT)
+  local comp = self._activityConst:GetComponent()
   local archId = 1
-  local cfgs = (Cfg.cfg_component_simulation_operation)({})
-  for _,cfg in pairs(cfgs) do
-    if (table.icontains)(cfg.StoryList, (self._cfg).ID) then
+  local cfgs = Cfg.cfg_component_simulation_operation({})
+  for _, cfg in pairs(cfgs) do
+    if table.icontains(cfg.StoryList, self._cfg.ID) then
       archId = cfg.ArchitectureId
       break
     end
   end
-  do
-    local res = AsyncRequestRes:New()
-    local ret, rewards = comp:HandleSubmitSimulationOperationStory(TT, res, archId, (self._cfg).ID, false)
-    if res:GetSucc() then
-      self:ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_8_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnInviteEventEnd)
-  end
-)
-    else
-      ;
-      (Log.fatal)("剧情完成失败")
-    end
+  local res = AsyncRequestRes:New()
+  local ret, rewards = comp:HandleSubmitSimulationOperationStory(TT, res, archId, self._cfg.ID, false)
+  if res:GetSucc() then
+    self:ShowDialog("UIGetItemController", rewards, function()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnInviteEventEnd)
+    end)
+  else
+    Log.fatal("剧情完成失败")
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualBuildItem.InviteBtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if (self._activityConst):CheckSimulationOperationIsOver() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+function UIActivityN33DateManualBuildItem:InviteBtnOnClick()
+  if self._activityConst:CheckSimulationOperationIsOver() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIActivityN33MainController)
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
     if self._inviteClickCallback then
-      (self._inviteClickCallback)()
+      self._inviteClickCallback()
       YIELD(TT, 500)
     end
     self:ShowDialog("UIActivityN33DateInviteController", self._cfg, true, function()
-      -- function num : 0_9_0_0 , upvalues : self
       self:StartTask(self.SubmitSimulationOperationStory, self)
-    end
-)
-  end
-)
+    end)
+  end)
 end
-
-

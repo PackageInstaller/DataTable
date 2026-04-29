@@ -1,32 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_select_obj_animation_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySelectObjAnimationInstruction", BaseInstruction)
 PlaySelectObjAnimationInstruction = PlaySelectObjAnimationInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySelectObjAnimationInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlaySelectObjAnimationInstruction:Constructor(paramList)
   self._objName = paramList.objName
   self._animName = paramList.animName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySelectObjAnimationInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local obj = ((UnityEngine.GameObject).Find)(self._objName)
+function PlaySelectObjAnimationInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local obj = UnityEngine.GameObject.Find(self._objName)
   if not obj then
-    return 
+    return
   end
   local anim = obj:GetComponentInChildren(typeof(UnityEngine.Animation))
   if not anim then
-    return 
+    return
   end
   anim:Play(self._animName)
 end
-
-

@@ -1,22 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_change_attack_by_feature_shop_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeAttackByFeatureShop", BuffViewBase)
 BuffViewChangeAttackByFeatureShop = BuffViewChangeAttackByFeatureShop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeAttackByFeatureShop.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewChangeAttackByFeatureShop:PlayView(TT)
 end
 
 _class("BuffViewUndoChangeAttackByFeatureShop", BuffViewBase)
 BuffViewUndoChangeAttackByFeatureShop = BuffViewUndoChangeAttackByFeatureShop
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewUndoChangeAttackByFeatureShop.PlayView = function(self, TT)
-  -- function num : 0_1
+function BuffViewUndoChangeAttackByFeatureShop:PlayView(TT)
 end
-
-

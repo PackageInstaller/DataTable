@@ -1,49 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn9/SouthSea/ui_activity_cn9_book_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityCN9BookMain", UIController)
 UIActivityCN9BookMain = UIActivityCN9BookMain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCN9BookMain.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIActivityCN9BookMain:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN9BookMain.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityCN9BookMain:OnShow(uiParams)
   self:InitWidget()
   self:LoadData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN9BookMain.InitWidget = function(self)
-  -- function num : 0_2
+function UIActivityCN9BookMain:InitWidget()
   self.itemPool = self:GetUIComponent("UISelectObjectPath", "ItemPool")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN9BookMain.LoadData = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_south_sea_antique)({})
-  local count = (table.count)(cfg)
-  self._item = (self.itemPool):SpawnObjects("UICN9SingleBookItem", count)
-  for i,v in ipairs(self._item) do
+function UIActivityCN9BookMain:LoadData()
+  local cfg = Cfg.cfg_south_sea_antique({})
+  local count = table.count(cfg)
+  self._item = self.itemPool:SpawnObjects("UICN9SingleBookItem", count)
+  for i, v in ipairs(self._item) do
     v:SetData(i)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN9BookMain.CloseBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIActivityCN9BookMain:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

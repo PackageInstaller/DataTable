@@ -1,75 +1,122 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_checker_basic.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("notify_type")
 require("echo")
-AutoTestCheckResult = {NotTriggered = 1, CheckFailed = 2, CheckPassed = 3}
-local transTable = {[0] = "立即检查", [3] = "怪物回合开始", [4] = "怪物回合结束", [6] = "怪物死亡", [9] = "玩家回合开始", [10] = "玩家回合结束", [13] = "普攻每次攻击前", [14] = "普通每次攻击后", [15] = "怪物每次攻击前", [16] = "怪物每次攻击后", [17] = "连锁技每次攻击前", [18] = "连锁技每次攻击后", [19] = "主动技每次攻击前", [20] = "主动技每次攻击后", [25] = "全体普攻开始前", [26] = "全体普攻结束后", [70] = "全体连锁技开始前", [71] = "全体连锁技接受后", [27] = "单人连锁技开始前", [28] = "单人连锁技结束后", [29] = "主动技开始前", [30] = "主动技结束后", [46] = "场上出现水格子", [71] = "所有连锁技结束", [73] = "场上出现转色", [88] = "下次输入", [89] = "二次连锁技结束"}
+AutoTestCheckResult = {
+  NotTriggered = 1,
+  CheckFailed = 2,
+  CheckPassed = 3
+}
+local transTable = {
+  [0] = "立即检查",
+  [3] = "怪物回合开始",
+  [4] = "怪物回合结束",
+  [6] = "怪物死亡",
+  [9] = "玩家回合开始",
+  [10] = "玩家回合结束",
+  [13] = "普攻每次攻击前",
+  [14] = "普通每次攻击后",
+  [15] = "怪物每次攻击前",
+  [16] = "怪物每次攻击后",
+  [17] = "连锁技每次攻击前",
+  [18] = "连锁技每次攻击后",
+  [19] = "主动技每次攻击前",
+  [20] = "主动技每次攻击后",
+  [25] = "全体普攻开始前",
+  [26] = "全体普攻结束后",
+  [70] = "全体连锁技开始前",
+  [71] = "全体连锁技接受后",
+  [27] = "单人连锁技开始前",
+  [28] = "单人连锁技结束后",
+  [29] = "主动技开始前",
+  [30] = "主动技结束后",
+  [46] = "场上出现水格子",
+  [71] = "所有连锁技结束",
+  [73] = "场上出现转色",
+  [88] = "下次输入",
+  [89] = "二次连锁技结束"
+}
 AutoTestCheckNotifier = {}
-for k,v in pairs(NotifyType) do
+for k, v in pairs(NotifyType) do
   local key = " "
   if v < 10 then
     key = key .. "00"
-  else
-    if v < 100 then
-      key = key .. "0"
-    end
+  elseif v < 100 then
+    key = key .. "0"
   end
   if transTable[v] then
     key = key .. v .. " " .. transTable[v]
   else
     key = key .. v .. " " .. k
   end
-  -- DECOMPILER ERROR at PC72: Confused about usage of register: R7 in 'UnsetPending'
-
   AutoTestCheckNotifier[key] = v
 end
-CompareFuncMap = {["<"] = function(a, b)
-  -- function num : 0_0
-  do return a < b end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
-end
-, [">"] = function(a, b)
-  -- function num : 0_1
-  do return b < a end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
-end
-, ["<="] = function(a, b)
-  -- function num : 0_2
-  do return a <= b end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
-end
-, [">="] = function(a, b)
-  -- function num : 0_3
-  do return b <= a end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
-end
-, ["=="] = function(a, b)
-  -- function num : 0_4
-  do return a == b end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
-end
-, ["!="] = function(a, b)
-  -- function num : 0_5
-  do return a ~= b end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
-end
-, ["~="] = function(a, b)
-  -- function num : 0_6
-  do return a ~= b end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
-end
+CompareFuncMap = {
+  ["<"] = function(a, b)
+    return a < b
+  end,
+  [">"] = function(a, b)
+    return b < a
+  end,
+  ["<="] = function(a, b)
+    return a <= b
+  end,
+  [">="] = function(a, b)
+    return b <= a
+  end,
+  ["=="] = function(a, b)
+    return a == b
+  end,
+  ["!="] = function(a, b)
+    return a ~= b
+  end,
+  ["~="] = function(a, b)
+    return a ~= b
+  end
 }
-AutoTestCheckNameTranslate = {CheckEntityChangeHP_Test = "检查目标血量变化", CheckEntityHP_Test = "检查目标血量值", CheckCombo_Test = "检查普攻Combo变化", CheckDoubleChain_Test = "检查二次连锁", CheckEntityPos_Test = "检查目标位置", CheckPieceType_Test = "检查格子逻辑颜色", CheckGridTrap_Test = "检查格子上有机关", CheckTrapExist_Test = "检查场上存在机关", CheckEntityBuff_Test = "检查buffID", CheckBuffLogic_Test = "检查buff效果", CheckEntityBuffValue_Test = "检查buff值", CheckEntityBuffLayer_Test = "检查Buff层数", CheckEntityAttribute_Test = "检查目标属性值", CheckAttributeChange_Test = "检查目标属性变化", CheckDump_Test = "检查不卡死", CheckLocalValue_Test = "检查捕获值", CheckBattleResult_Test = "检查战斗结果", CheckRenderPieceType_Test = "检查格子表现颜色", CheckUIPetLayerCount_Test = "检查光灵头像Buff层数", CheckUIPetPassiveSkillBuffLayerCount_Test = "检查光灵头像Buff层数（双显时）", CheckUILayerShieldCount_Test = "检查层数盾层数", CheckUIHPShieldExist_Test = "检查血条盾存在", CheckUIBuffIcon_Test = "检查UI血条Buff层数", Check3StarComplete_Test = "检查三星条件", CheckMonsterCount_Test = "检查场上怪物数量", CheckFormulaAttr_Test = "检查公式参数", CheckSkillRange_Test = "检查技能范围", CheckTeamOrder_Test = "检查队伍位置", CheckSanValue_Test = "检查San值", CheckDayNightState_Test = "检查昼夜状态", CheckTrapCount_Test = "检查机关数量", CheckCardCount_Test = "检查卡牌数量", CheckCurWaveLeftRound_Test = "检查剩余回合数", CheckIsAuroraTime_Test = "检查目标血量值", CheckEntityHP_Test = "检查极光时刻", CheckLocalValueWithPrecision_Test = "检查捕获值带精度", CheckEntityBodyAreaCount_Test = "检查占格数", CheckPetActiveSkillCanCast_Test = "检查光灵主动技状态"}
+AutoTestCheckNameTranslate = {
+  CheckEntityChangeHP_Test = "检查目标血量变化",
+  CheckEntityHP_Test = "检查目标血量值",
+  CheckCombo_Test = "检查普攻Combo变化",
+  CheckDoubleChain_Test = "检查二次连锁",
+  CheckEntityPos_Test = "检查目标位置",
+  CheckPieceType_Test = "检查格子逻辑颜色",
+  CheckGridTrap_Test = "检查格子上有机关",
+  CheckTrapExist_Test = "检查场上存在机关",
+  CheckEntityBuff_Test = "检查buffID",
+  CheckBuffLogic_Test = "检查buff效果",
+  CheckEntityBuffValue_Test = "检查buff值",
+  CheckEntityBuffLayer_Test = "检查Buff层数",
+  CheckEntityAttribute_Test = "检查目标属性值",
+  CheckAttributeChange_Test = "检查目标属性变化",
+  CheckDump_Test = "检查不卡死",
+  CheckLocalValue_Test = "检查捕获值",
+  CheckBattleResult_Test = "检查战斗结果",
+  CheckRenderPieceType_Test = "检查格子表现颜色",
+  CheckUIPetLayerCount_Test = "检查光灵头像Buff层数",
+  CheckUIPetPassiveSkillBuffLayerCount_Test = "检查光灵头像Buff层数（双显时）",
+  CheckUILayerShieldCount_Test = "检查层数盾层数",
+  CheckUIHPShieldExist_Test = "检查血条盾存在",
+  CheckUIBuffIcon_Test = "检查UI血条Buff层数",
+  Check3StarComplete_Test = "检查三星条件",
+  CheckMonsterCount_Test = "检查场上怪物数量",
+  CheckFormulaAttr_Test = "检查公式参数",
+  CheckSkillRange_Test = "检查技能范围",
+  CheckTeamOrder_Test = "检查队伍位置",
+  CheckSanValue_Test = "检查San值",
+  CheckDayNightState_Test = "检查昼夜状态",
+  CheckTrapCount_Test = "检查机关数量",
+  CheckCardCount_Test = "检查卡牌数量",
+  CheckCurWaveLeftRound_Test = "检查剩余回合数",
+  CheckIsAuroraTime_Test = "检查目标血量值",
+  CheckEntityHP_Test = "检查极光时刻",
+  CheckLocalValueWithPrecision_Test = "检查捕获值带精度",
+  CheckEntityBodyAreaCount_Test = "检查占格数",
+  CheckPetActiveSkillCanCast_Test = "检查光灵主动技状态"
+}
 require("trigger_owner")
 _class("AutoTestCheckPointBase", ITriggerOwner)
 AutoTestCheckPointBase = AutoTestCheckPointBase
--- DECOMPILER ERROR at PC142: Confused about usage of register: R1 in 'UnsetPending'
 
-AutoTestCheckPointBase.Constructor = function(self, e, args, world)
-  -- function num : 0_7 , upvalues : _ENV
+function AutoTestCheckPointBase:Constructor(e, args, world)
   self._entity = e
   self._args = args
   self._world = world
@@ -79,61 +126,47 @@ AutoTestCheckPointBase.Constructor = function(self, e, args, world)
   self:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC145: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoTestCheckPointBase.OnTrigger = function(self, notify)
-  -- function num : 0_8 , upvalues : _ENV
+function AutoTestCheckPointBase:OnTrigger(notify)
   local ret = self:Check(notify)
   if ret then
     self._result = AutoTestCheckResult.CheckPassed
-    ;
-    ((self._world):GetService("AutoTest")):DetachCheckPassedPoints_Test()
+    self._world:GetService("AutoTest"):DetachCheckPassedPoints_Test()
   else
     self._result = AutoTestCheckResult.CheckFailed
   end
 end
 
--- DECOMPILER ERROR at PC148: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoTestCheckPointBase.CollectResult = function(self)
-  -- function num : 0_9
-  return {actionName = self._className, result = self._result, message = self._msghead .. self._message}
+function AutoTestCheckPointBase:CollectResult()
+  return {
+    actionName = self._className,
+    result = self._result,
+    message = self._msghead .. self._message
+  }
 end
 
--- DECOMPILER ERROR at PC151: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoTestCheckPointBase.BeforeCheck = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.error)("BeforeCheck() not implemented!!")
+function AutoTestCheckPointBase:BeforeCheck()
+  Log.error("BeforeCheck() not implemented!!")
 end
 
--- DECOMPILER ERROR at PC154: Confused about usage of register: R1 in 'UnsetPending'
-
-AutoTestCheckPointBase.Check = function(self, notify)
-  -- function num : 0_11 , upvalues : _ENV
-  (Log.error)("Check() not implemented!!")
+function AutoTestCheckPointBase:Check(notify)
+  Log.error("Check() not implemented!!")
 end
 
 _class("CheckEntityChangeHP_Test", AutoTestCheckPointBase)
 CheckEntityChangeHP_Test = CheckEntityChangeHP_Test
--- DECOMPILER ERROR at PC163: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckEntityChangeHP_Test.BeforeCheck = function(self)
-  -- function num : 0_12
-  if (self._entity):Attributes() then
-    self.oldHP = ((self._entity):Attributes()):GetCurrentHP()
+function CheckEntityChangeHP_Test:BeforeCheck()
+  if self._entity:Attributes() then
+    self.oldHP = self._entity:Attributes():GetCurrentHP()
   end
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckEntityChangeHP_Test.Check = function(self, notify)
-  -- function num : 0_13 , upvalues : _ENV
+function CheckEntityChangeHP_Test:Check(notify)
   local newHP = 0
-  if (self._entity):Attributes() then
-    newHP = ((self._entity):Attributes()):GetCurrentHP()
+  if self._entity:Attributes() then
+    newHP = self._entity:Attributes():GetCurrentHP()
   end
-  local cmp = (self._args).compare
+  local cmp = self._args.compare
   local f = CompareFuncMap[cmp]
   self._message = " oldHP=" .. self.oldHP .. " newHP=" .. newHP .. " compare:" .. cmp
   if f and f(self.oldHP, newHP) then
@@ -144,18 +177,13 @@ end
 
 _class("CheckEntityHasBuff_Test", AutoTestCheckPointBase)
 CheckEntityHasBuff_Test = CheckEntityHasBuff_Test
--- DECOMPILER ERROR at PC175: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckEntityHasBuff_Test.BeforeCheck = function(self)
-  -- function num : 0_14
+function CheckEntityHasBuff_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC178: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckEntityHasBuff_Test.Check = function(self, notify)
-  -- function num : 0_15
-  local inst = ((self._entity):BuffComponent()):GetBuffById((self._args).buffID)
-  self._message = " has no buff:" .. (self._args).buffID
+function CheckEntityHasBuff_Test:Check(notify)
+  local inst = self._entity:BuffComponent():GetBuffById(self._args.buffID)
+  self._message = " has no buff:" .. self._args.buffID
   if inst then
     return true
   end
@@ -164,20 +192,15 @@ end
 
 _class("CheckEntityBuffLayer_Test", AutoTestCheckPointBase)
 CheckEntityBuffLayer_Test = CheckEntityBuffLayer_Test
--- DECOMPILER ERROR at PC187: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckEntityBuffLayer_Test.BeforeCheck = function(self)
-  -- function num : 0_16
+function CheckEntityBuffLayer_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC190: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckEntityBuffLayer_Test.Check = function(self, notify)
-  -- function num : 0_17
-  local svc = (self._world):GetService("BuffLogic")
-  local layer = svc:GetBuffLayer(self._entity, (self._args).layerType)
-  self._message = " layerType=" .. (self._args).layerType .. " layer=" .. layer .. " expect=" .. (self._args).layer
-  if layer == (self._args).layer then
+function CheckEntityBuffLayer_Test:Check(notify)
+  local svc = self._world:GetService("BuffLogic")
+  local layer = svc:GetBuffLayer(self._entity, self._args.layerType)
+  self._message = " layerType=" .. self._args.layerType .. " layer=" .. layer .. " expect=" .. self._args.layer
+  if layer == self._args.layer then
     return true
   end
   return false
@@ -185,35 +208,25 @@ end
 
 _class("CheckMatchLog_Test", AutoTestCheckPointBase)
 CheckMatchLog_Test = CheckMatchLog_Test
--- DECOMPILER ERROR at PC199: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckMatchLog_Test.BeforeCheck = function(self)
-  -- function num : 0_18
+function CheckMatchLog_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC202: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckMatchLog_Test.Check = function(self, notify)
-  -- function num : 0_19
+function CheckMatchLog_Test:Check(notify)
 end
 
 _class("CheckCombo_Test", AutoTestCheckPointBase)
 CheckCombo_Test = CheckCombo_Test
--- DECOMPILER ERROR at PC211: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckCombo_Test.BeforeCheck = function(self)
-  -- function num : 0_20
-  self.old_combo = ((self._world):GetService("Battle")):GetLogicComboNum()
+function CheckCombo_Test:BeforeCheck()
+  self.old_combo = self._world:GetService("Battle"):GetLogicComboNum()
 end
 
--- DECOMPILER ERROR at PC214: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckCombo_Test.Check = function(self, notify)
-  -- function num : 0_21
-  local combo = ((self._world):GetService("Battle")):GetLogicComboNum()
+function CheckCombo_Test:Check(notify)
+  local combo = self._world:GetService("Battle"):GetLogicComboNum()
   local val = combo - self.old_combo
   self._message = " oldCombo=" .. self.old_combo .. " newCombo=" .. combo
-  if val == (self._args).change then
+  if val == self._args.change then
     return true
   end
   return false
@@ -221,17 +234,12 @@ end
 
 _class("CheckDoubleChain_Test", AutoTestCheckPointBase)
 CheckDoubleChain_Test = CheckDoubleChain_Test
--- DECOMPILER ERROR at PC223: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckDoubleChain_Test.BeforeCheck = function(self)
-  -- function num : 0_22
+function CheckDoubleChain_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC226: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckDoubleChain_Test.Check = function(self, notify)
-  -- function num : 0_23
-  self._message = " double chain notify entity=" .. (notify:GetNotifyEntity()):GetID()
+function CheckDoubleChain_Test:Check(notify)
+  self._message = " double chain notify entity=" .. notify:GetNotifyEntity():GetID()
   if notify:GetNotifyEntity() == self._entity then
     return true
   end
@@ -240,18 +248,13 @@ end
 
 _class("CheckEntityPos_Test", AutoTestCheckPointBase)
 CheckEntityPos_Test = CheckEntityPos_Test
--- DECOMPILER ERROR at PC235: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckEntityPos_Test.BeforeCheck = function(self)
-  -- function num : 0_24
+function CheckEntityPos_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC238: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckEntityPos_Test.Check = function(self, notify)
-  -- function num : 0_25 , upvalues : _ENV
-  local pos1 = (self._args).pos
-  local pos2 = (Vector2.Pos2Index)((self._entity):GetGridPosition())
+function CheckEntityPos_Test:Check(notify)
+  local pos1 = self._args.pos
+  local pos2 = Vector2.Pos2Index(self._entity:GetGridPosition())
   self._message = "entity pos=" .. pos2
   if pos1 == pos2 then
     return true
@@ -261,21 +264,16 @@ end
 
 _class("CheckPieceType_Test", AutoTestCheckPointBase)
 CheckPieceType_Test = CheckPieceType_Test
--- DECOMPILER ERROR at PC247: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckPieceType_Test.BeforeCheck = function(self)
-  -- function num : 0_26
+function CheckPieceType_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC250: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckPieceType_Test.Check = function(self, notify)
-  -- function num : 0_27 , upvalues : _ENV
-  local pos = (Vector2.Index2Pos)((self._args).pos)
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+function CheckPieceType_Test:Check(notify)
+  local pos = Vector2.Index2Pos(self._args.pos)
+  local boardCmpt = self._world:GetBoardEntity():Board()
   local pieceType = boardCmpt:GetPieceType(pos)
-  self._message = "pos=" .. (self._args).pos .. " pieceType=" .. pieceType
-  if pieceType == (self._args).pieceType then
+  self._message = "pos=" .. self._args.pos .. " pieceType=" .. pieceType
+  if pieceType == self._args.pieceType then
     return true
   end
   return false
@@ -283,48 +281,35 @@ end
 
 _class("CheckGridTrap_Test", AutoTestCheckPointBase)
 CheckGridTrap_Test = CheckGridTrap_Test
--- DECOMPILER ERROR at PC259: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckGridTrap_Test.BeforeCheck = function(self)
-  -- function num : 0_28
+function CheckGridTrap_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC262: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckGridTrap_Test.Check = function(self, notify)
-  -- function num : 0_29 , upvalues : _ENV
-  local pos = (Vector2.Index2Pos)((self._args).pos)
-  local exist = (self._args).exist
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+function CheckGridTrap_Test:Check(notify)
+  local pos = Vector2.Index2Pos(self._args.pos)
+  local exist = self._args.exist
+  local boardCmpt = self._world:GetBoardEntity():Board()
   local es = boardCmpt:GetPieceEntities(pos, function(e)
-    -- function num : 0_29_0 , upvalues : _ENV, self
-    do return (e:HasDeadMark() or e:HasTrapID()) and (table.icontains)((self._args).trapIds, (e:TrapID()):GetTrapID()) end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-)
-  self._message = "pos=" .. (self._args).pos .. " expect trapid=" .. (table.concat)((self._args).trapIds, " ") .. " exist=" .. tostring(exist) .. " trapCount=" .. #es
-  if #es <= 0 then
-    do return not exist end
-    do return #es == 0 end
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+    return not e:HasDeadMark() and e:HasTrapID() and table.icontains(self._args.trapIds, e:TrapID():GetTrapID())
+  end)
+  self._message = "pos=" .. self._args.pos .. " expect trapid=" .. table.concat(self._args.trapIds, " ") .. " exist=" .. tostring(exist) .. " trapCount=" .. #es
+  if exist then
+    return 0 < #es
+  else
+    return #es == 0
   end
 end
 
 _class("CheckEntityHP_Test", AutoTestCheckPointBase)
 CheckEntityHP_Test = CheckEntityHP_Test
--- DECOMPILER ERROR at PC271: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckEntityHP_Test.BeforeCheck = function(self)
-  -- function num : 0_30
+function CheckEntityHP_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC274: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckEntityHP_Test.Check = function(self, notify)
-  -- function num : 0_31 , upvalues : _ENV
-  local curHP = ((self._entity):Attributes()):GetCurrentHP()
-  local tarHP = (self._args).hp
-  local cmp = (self._args).compare
+function CheckEntityHP_Test:Check(notify)
+  local curHP = self._entity:Attributes():GetCurrentHP()
+  local tarHP = self._args.hp
+  local cmp = self._args.compare
   local f = CompareFuncMap[cmp]
   self._message = " tarHP=" .. tarHP .. " curHP=" .. curHP .. " compare:" .. cmp
   if f and f(tarHP, curHP) then
@@ -335,19 +320,14 @@ end
 
 _class("CheckEntityBuff_Test", AutoTestCheckPointBase)
 CheckEntityBuff_Test = CheckEntityBuff_Test
--- DECOMPILER ERROR at PC283: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckEntityBuff_Test.BeforeCheck = function(self)
-  -- function num : 0_32
+function CheckEntityBuff_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC286: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckEntityBuff_Test.Check = function(self, notify)
-  -- function num : 0_33
-  local exist = (self._args).exist
-  local buffCmpt = (self._entity):BuffComponent()
-  if buffCmpt:CheckHaveBuffById((self._args).buffId) then
+function CheckEntityBuff_Test:Check(notify)
+  local exist = self._args.exist
+  local buffCmpt = self._entity:BuffComponent()
+  if buffCmpt:CheckHaveBuffById(self._args.buffId) then
     return exist
   end
   return not exist
@@ -355,44 +335,33 @@ end
 
 _class("CheckEntityBuffValue_Test", AutoTestCheckPointBase)
 CheckEntityBuffValue_Test = CheckEntityBuffValue_Test
--- DECOMPILER ERROR at PC295: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckEntityBuffValue_Test.BeforeCheck = function(self)
-  -- function num : 0_34
+function CheckEntityBuffValue_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC298: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckEntityBuffValue_Test.Check = function(self, notify)
-  -- function num : 0_35 , upvalues : _ENV
-  local buffCmpt = (self._entity):BuffComponent()
-  local val = buffCmpt:GetBuffValue((self._args).key) or 0
-  local ret = (math.abs)(val - (self._args).value) < 0.001
-  self._message = "buff key:" .. (self._args).key .. " value:" .. val .. " expect:" .. (self._args).value
+function CheckEntityBuffValue_Test:Check(notify)
+  local buffCmpt = self._entity:BuffComponent()
+  local val = buffCmpt:GetBuffValue(self._args.key) or 0
+  local ret = math.abs(val - self._args.value) < 0.001
+  self._message = "buff key:" .. self._args.key .. " value:" .. val .. " expect:" .. self._args.value
   if ret then
     return true
   end
-  do return false end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return false
 end
 
 _class("CheckTrapExist_Test", AutoTestCheckPointBase)
 CheckTrapExist_Test = CheckTrapExist_Test
--- DECOMPILER ERROR at PC307: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckTrapExist_Test.BeforeCheck = function(self)
-  -- function num : 0_36
+function CheckTrapExist_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC310: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckTrapExist_Test.Check = function(self, notify)
-  -- function num : 0_37 , upvalues : _ENV
-  local exist = (self._args).exist
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).TrapID)
-  for i,e in ipairs(group:GetEntities()) do
-    local trapid = (e:TrapID()):GetTrapID()
-    if (table.icontains)((self._args).trapIds, trapid) then
+function CheckTrapExist_Test:Check(notify)
+  local exist = self._args.exist
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.TrapID)
+  for i, e in ipairs(group:GetEntities()) do
+    local trapid = e:TrapID():GetTrapID()
+    if table.icontains(self._args.trapIds, trapid) then
       return exist
     end
   end
@@ -401,135 +370,105 @@ end
 
 _class("CheckDump_Test", AutoTestCheckPointBase)
 CheckDump_Test = CheckDump_Test
--- DECOMPILER ERROR at PC319: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckDump_Test.BeforeCheck = function(self)
-  -- function num : 0_38
+function CheckDump_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC322: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckDump_Test.Check = function(self, notify)
-  -- function num : 0_39
+function CheckDump_Test:Check(notify)
   return true
 end
 
 _class("CheckBattleResult_Test", AutoTestCheckPointBase)
 CheckBattleResult_Test = CheckBattleResult_Test
--- DECOMPILER ERROR at PC331: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckBattleResult_Test.BeforeCheck = function(self)
-  -- function num : 0_40
+function CheckBattleResult_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC334: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckBattleResult_Test.Check = function(self, notify)
-  -- function num : 0_41
-  local victory = (self._args).victory
+function CheckBattleResult_Test:Check(notify)
+  local victory = self._args.victory
   local v = notify:GetVictory()
   self._message = " battleResult:" .. v .. " expect:" .. victory
-  do return v == victory end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return v == victory
 end
 
 _class("Check3StarComplete_Test", AutoTestCheckPointBase)
 Check3StarComplete_Test = Check3StarComplete_Test
--- DECOMPILER ERROR at PC343: Confused about usage of register: R1 in 'UnsetPending'
 
-Check3StarComplete_Test.BeforeCheck = function(self)
-  -- function num : 0_42
+function Check3StarComplete_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC346: Confused about usage of register: R1 in 'UnsetPending'
-
-Check3StarComplete_Test.Check = function(self, notify)
-  -- function num : 0_43 , upvalues : _ENV
-  local bonusCalcService = (self._world):GetService("BonusCalc")
-  local star3CalcService = (self._world):GetService("Star3Calc")
+function Check3StarComplete_Test:Check(notify)
+  local bonusCalcService = self._world:GetService("BonusCalc")
+  local star3CalcService = self._world:GetService("Star3Calc")
   local conditionParser = ObjectiveConditionParamParser:New()
-  local conditionType = (self._args).conditionType
-  local conditionNumber = (self._args).conditionParam
-  conditionNumber = (string.split)(conditionNumber, "|")
-  local conditionParam = nil
+  local conditionType = self._args.conditionType
+  local conditionNumber = self._args.conditionParam
+  conditionNumber = string.split(conditionNumber, "|")
+  local conditionParam
   if star3CalcService:IsSpecialCondition(conditionType) then
     conditionParam = star3CalcService:GetSpecialConditionData(conditionNumber)
+  elseif star3CalcService:IsSpecialTotalCountCondition(conditionType) then
+    conditionParam = star3CalcService:GetSpecialConditionTotalData(conditionNumber)
   else
-    if star3CalcService:IsSpecialTotalCountCondition(conditionType) then
-      conditionParam = star3CalcService:GetSpecialConditionTotalData(conditionNumber)
-    else
-      conditionParam = conditionParser:ParseObjectiveConditionParam(conditionType, conditionNumber)
-    end
+    conditionParam = conditionParser:ParseObjectiveConditionParam(conditionType, conditionNumber)
   end
-  local expect = (self._args).expect
+  local expect = self._args.expect
   local finish = bonusCalcService:CalcCondition(conditionType, conditionParam)
   self._message = " condition " .. conditionType .. " finish=" .. tostring(finish) .. " expect=" .. tostring(expect)
-  do return finish == expect end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return finish == expect
 end
 
 _class("CheckMonsterCount_Test", AutoTestCheckPointBase)
 CheckMonsterCount_Test = CheckMonsterCount_Test
--- DECOMPILER ERROR at PC355: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckMonsterCount_Test.Check = function(self, notify)
-  -- function num : 0_44 , upvalues : _ENV
-  local monsterID = (self._args).monsterid
-  local expect = (self._args).count
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+function CheckMonsterCount_Test:Check(notify)
+  local monsterID = self._args.monsterid
+  local expect = self._args.count
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local n = 0
-  for i,e in ipairs(group:GetEntities()) do
-    if (e:MonsterID()):GetMonsterID() == monsterID then
+  for i, e in ipairs(group:GetEntities()) do
+    if e:MonsterID():GetMonsterID() == monsterID then
       n = n + 1
     end
   end
   self._message = " monsterID=" .. monsterID .. " count=" .. n .. " expect=" .. expect
-  do return n == expect end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return n == expect
 end
 
 _class("CheckTeamOrder_Test", AutoTestCheckPointBase)
 CheckTeamOrder_Test = CheckTeamOrder_Test
--- DECOMPILER ERROR at PC364: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckTeamOrder_Test.Check = function(self, notify)
-  -- function num : 0_45 , upvalues : _ENV
-  local svc = (self._world):GetService("AutoTest")
-  local e = svc:GetEntityByName_Test((self._args).name)
-  local petPstID = (e:PetPstID()):GetPstID()
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local teamOrder = (teamEntity:Team()):GetTeamOrder()
+function CheckTeamOrder_Test:Check(notify)
+  local svc = self._world:GetService("AutoTest")
+  local e = svc:GetEntityByName_Test(self._args.name)
+  local petPstID = e:PetPstID():GetPstID()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local teamOrder = teamEntity:Team():GetTeamOrder()
   local orderIndex = 0
-  for index,value in ipairs(teamOrder) do
+  for index, value in ipairs(teamOrder) do
     if petPstID == value then
       orderIndex = index
     end
   end
-  self._message = " teamOrder=" .. orderIndex .. " expect=" .. (self._args).index
-  do return orderIndex == (self._args).index end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._message = " teamOrder=" .. orderIndex .. " expect=" .. self._args.index
+  return orderIndex == self._args.index
 end
 
 _class("CheckSanValue_Test", AutoTestCheckPointBase)
 CheckSanValue_Test = CheckSanValue_Test
--- DECOMPILER ERROR at PC373: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckSanValue_Test.BeforeCheck = function(self)
-  -- function num : 0_46
+function CheckSanValue_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC376: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckSanValue_Test.Check = function(self, notify)
-  -- function num : 0_47 , upvalues : _ENV
-  local featureSvc = (self._world):GetService("FeatureLogic")
+function CheckSanValue_Test:Check(notify)
+  local featureSvc = self._world:GetService("FeatureLogic")
   if not featureSvc then
     self._message = " Feature Service Logic is nil!"
     return false
   end
   local curSanValue = featureSvc:GetSanValue()
-  local expectSanValue = (self._args).expect
-  local cmp = (self._args).compare
+  local expectSanValue = self._args.expect
+  local cmp = self._args.compare
   local f = CompareFuncMap[cmp]
   self._message = " San=" .. curSanValue .. " expect=" .. expectSanValue .. " compare:" .. cmp
   if f and f(curSanValue, expectSanValue) then
@@ -540,17 +479,12 @@ end
 
 _class("CheckDayNightState_Test", AutoTestCheckPointBase)
 CheckDayNightState_Test = CheckDayNightState_Test
--- DECOMPILER ERROR at PC385: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckDayNightState_Test.BeforeCheck = function(self)
-  -- function num : 0_48
+function CheckDayNightState_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC388: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckDayNightState_Test.Check = function(self, notify)
-  -- function num : 0_49
-  local featureSvc = (self._world):GetService("FeatureLogic")
+function CheckDayNightState_Test:Check(notify)
+  local featureSvc = self._world:GetService("FeatureLogic")
   if not featureSvc then
     self._message = " Feature Service Logic is nil!"
     return false
@@ -560,57 +494,45 @@ CheckDayNightState_Test.Check = function(self, notify)
     self._message = " Day Night Feature is nil!"
     return false
   end
-  local expectState = (self._args).expect
+  local expectState = self._args.expect
   self._message = " cur state=" .. curState .. " expect=" .. expectState
-  do return curState == expectState end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return curState == expectState
 end
 
 _class("CheckTrapCount_Test", AutoTestCheckPointBase)
 CheckTrapCount_Test = CheckTrapCount_Test
--- DECOMPILER ERROR at PC397: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckTrapCount_Test.BeforeCheck = function(self)
-  -- function num : 0_50
+function CheckTrapCount_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC400: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckTrapCount_Test.Check = function(self, notify)
-  -- function num : 0_51 , upvalues : _ENV
-  local expectCount = (self._args).expect
+function CheckTrapCount_Test:Check(notify)
+  local expectCount = self._args.expect
   local trapCount = 0
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).TrapID)
-  for _,e in ipairs(group:GetEntities()) do
-    local trapID = (e:TrapID()):GetTrapID()
-    if (table.icontains)((self._args).trapIDs, trapID) and not e:HasDeadMark() then
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.TrapID)
+  for _, e in ipairs(group:GetEntities()) do
+    local trapID = e:TrapID():GetTrapID()
+    if table.icontains(self._args.trapIDs, trapID) and not e:HasDeadMark() then
       trapCount = trapCount + 1
     end
   end
-  do return trapCount == expectCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return trapCount == expectCount
 end
 
 _class("CheckCardCount_Test", AutoTestCheckPointBase)
 CheckCardCount_Test = CheckCardCount_Test
--- DECOMPILER ERROR at PC409: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckCardCount_Test.BeforeCheck = function(self)
-  -- function num : 0_52
+function CheckCardCount_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC412: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckCardCount_Test.Check = function(self, notify)
-  -- function num : 0_53 , upvalues : _ENV
-  local featureSvc = (self._world):GetService("FeatureLogic")
+function CheckCardCount_Test:Check(notify)
+  local featureSvc = self._world:GetService("FeatureLogic")
   if not featureSvc then
     self._message = " Feature Service Logic is nil!"
     return false
   end
   local curCardCount = featureSvc:GetCurCardCount()
-  local expectCardCount = (self._args).expect
-  local cmp = (self._args).compare
+  local expectCardCount = self._args.expect
+  local cmp = self._args.compare
   local f = CompareFuncMap[cmp]
   self._message = " 当前卡牌数量=" .. curCardCount .. " expect=" .. expectCardCount .. " compare:" .. cmp
   if f and f(curCardCount, expectCardCount) then
@@ -621,20 +543,15 @@ end
 
 _class("CheckCurWaveLeftRound_Test", AutoTestCheckPointBase)
 CheckCurWaveLeftRound_Test = CheckCurWaveLeftRound_Test
--- DECOMPILER ERROR at PC421: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckCurWaveLeftRound_Test.BeforeCheck = function(self)
-  -- function num : 0_54
+function CheckCurWaveLeftRound_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC424: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckCurWaveLeftRound_Test.Check = function(self, notify)
-  -- function num : 0_55 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function CheckCurWaveLeftRound_Test:Check(notify)
+  local battleStatCmpt = self._world:BattleStat()
   local restRound = battleStatCmpt:GetCurWaveRound()
-  local exceptRound = (self._args).expect
-  local cmp = (self._args).compare
+  local exceptRound = self._args.expect
+  local cmp = self._args.compare
   local f = CompareFuncMap[cmp]
   self._message = " 当前剩余回合数=" .. restRound .. " expect=" .. exceptRound .. " compare:" .. cmp
   if f and f(restRound, exceptRound) then
@@ -645,47 +562,36 @@ end
 
 _class("CheckIsAuroraTime_Test", AutoTestCheckPointBase)
 CheckIsAuroraTime_Test = CheckIsAuroraTime_Test
--- DECOMPILER ERROR at PC433: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckIsAuroraTime_Test.BeforeCheck = function(self)
-  -- function num : 0_56
+function CheckIsAuroraTime_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC436: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckIsAuroraTime_Test.Check = function(self, notify)
-  -- function num : 0_57 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function CheckIsAuroraTime_Test:Check(notify)
+  local battleStatCmpt = self._world:BattleStat()
   local bAuroraTime = battleStatCmpt:IsRoundAuroraTime()
-  local bExcept = (self._args).expect
+  local bExcept = self._args.expect
   self._message = "当前是否是极光时刻=" .. toString(bAuroraTime) .. " expect=" .. toString(bExcept)
   if bAuroraTime then
     return true
   end
-  do return bAuroraTime == bExcept end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return bAuroraTime == bExcept
 end
 
 _class("CheckEntityBodyAreaCount_Test", AutoTestCheckPointBase)
 CheckEntityBodyAreaCount_Test = CheckEntityBodyAreaCount_Test
--- DECOMPILER ERROR at PC445: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckEntityBodyAreaCount_Test.BeforeCheck = function(self)
-  -- function num : 0_58
+function CheckEntityBodyAreaCount_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC448: Confused about usage of register: R1 in 'UnsetPending'
-
-CheckEntityBodyAreaCount_Test.Check = function(self, notify)
-  -- function num : 0_59
-  local exceptCount = (self._args).expect
-  local svc = (self._world):GetService("BuffLogic")
-  local bodyAreaCmpt = (self._entity):BodyArea()
+function CheckEntityBodyAreaCount_Test:Check(notify)
+  local exceptCount = self._args.expect
+  local svc = self._world:GetService("BuffLogic")
+  local bodyAreaCmpt = self._entity:BodyArea()
   local bodyAreaCount = 0
   if bodyAreaCmpt then
     bodyAreaCount = bodyAreaCmpt:GetAreaCount()
   end
-  self._message = " 占格子数=" .. bodyAreaCount .. " expect=" .. (self._args).expect
+  self._message = " 占格子数=" .. bodyAreaCount .. " expect=" .. self._args.expect
   if bodyAreaCount == exceptCount then
     return true
   end
@@ -694,30 +600,25 @@ end
 
 _class("CheckPetActiveSkillCanCast_Test", AutoTestCheckPointBase)
 CheckPetActiveSkillCanCast_Test = CheckPetActiveSkillCanCast_Test
--- DECOMPILER ERROR at PC457: Confused about usage of register: R1 in 'UnsetPending'
 
-CheckPetActiveSkillCanCast_Test.Check = function(self, notify)
-  -- function num : 0_60 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function CheckPetActiveSkillCanCast_Test:Check(notify)
+  local utilDataSvc = self._world:GetService("UtilData")
   if not utilDataSvc then
     self._message = " Util Data Share Service is nil!"
     return false
   end
-  local petPstIDComponent = (self._entity):PetPstID()
+  local petPstIDComponent = self._entity:PetPstID()
   if not petPstIDComponent then
     self._message = " 检查的对象不是光灵!"
     return false
   end
   local pstID = petPstIDComponent:GetPstID()
-  local skillID = (self._args).skillID
+  local skillID = self._args.skillID
   local res, _, reason = utilDataSvc:CheckActiveSkillCastCondition(pstID, skillID)
-  local expectRes = (self._args).expect
+  local expectRes = self._args.expect
   self._message = " 是否可释放=" .. tostring(res) .. " 期望值=" .. tostring(expectRes)
   if reason then
     self._message = " 是否可释放=" .. tostring(res) .. " 不可释放原因=" .. reason .. " 期望值=" .. tostring(expectRes)
   end
-  do return res == expectRes end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return res == expectRes
 end
-
-

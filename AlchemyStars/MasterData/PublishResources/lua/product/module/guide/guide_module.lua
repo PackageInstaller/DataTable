@@ -1,40 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/guide/guide_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuideModule", GameModule)
-SetGuideServerClose = function(isGuide)
-  -- function num : 0_0 , upvalues : _ENV
+
+function SetGuideServerClose(isGuide)
   if NOGUIDE == true then
-    return 
+    return
   end
   NOGUIDE = not isGuide
-  ;
-  (GuideHelper.GuideLoadLock)(false)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("GuideDoneLock")
-  local world = (GameGlobal:GetInstance()):GetMainWorld()
+  GuideHelper.GuideLoadLock(false)
+  GameGlobal.UIStateManager():UnLock("GuideDoneLock")
+  local world = GameGlobal:GetInstance():GetMainWorld()
   if world ~= nil then
-    (world:GetService("Guide")):SetNeedYield(false)
+    world:GetService("Guide"):SetNeedYield(false)
   end
 end
 
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function GuideModule:Constructor()
   self.guides = {}
   self.triggerGuides = {}
   self.triggers = {}
   self._GuideCheck = GuideCheck:New(self)
-  for _,name in pairs(GuideTriggerClassName) do
+  for _, name in pairs(GuideTriggerClassName) do
     local trigger = _createInstance(name, self)
     if not trigger then
-      (Log.error)("_createInstance trigger error " .. name)
+      Log.error("_createInstance trigger error " .. name)
     end
-    ;
-    (table.insert)(self.triggers, trigger)
+    table.insert(self.triggers, trigger)
     trigger:AddListener()
   end
   self:PreHandleCfg()
@@ -48,10 +37,7 @@ GuideModule.Constructor = function(self)
   self:AttachEvent(GameEventType.QuestUpdate, self.OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.Init = function(self)
-  -- function num : 0_2
+function GuideModule:Init()
   self.activatedGuides = {}
   self.activatedGuideTrigger = {}
   self.guide_id2count = {}
@@ -60,224 +46,147 @@ GuideModule.Init = function(self)
   self.reportCompleteGuide = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GuideModule.super).Dispose)(self)
-  for index,value in ipairs(self.triggers) do
+function GuideModule:Dispose()
+  GuideModule.super.Dispose(self)
+  for index, value in ipairs(self.triggers) do
     value:RemoveListener()
   end
-  for k,v in pairs(self.guides) do
+  for k, v in pairs(self.guides) do
     v:Clear(true)
   end
-  ;
-  ((GameGlobal.GuideMessageBoxMng)()):ClosePopup()
+  GameGlobal.GuideMessageBoxMng():ClosePopup()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.SetLastCompleteGuide = function(self, guideid)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.debug)("[guide] Complete ", guideid)
+function GuideModule:SetLastCompleteGuide(guideid)
+  Log.debug("[guide] Complete ", guideid)
   self.lastCompleteGuide = guideid
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.GetLastCompleteGuide = function(self)
-  -- function num : 0_5
+function GuideModule:GetLastCompleteGuide()
   return self.lastCompleteGuide
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.ReportCompleteGuide = function(self, guideid)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.debug)("[guide] Report ", guideid)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.reportCompleteGuide)[guideid] = 1
+function GuideModule:ReportCompleteGuide(guideid)
+  Log.debug("[guide] Report ", guideid)
+  self.reportCompleteGuide[guideid] = 1
   if self.lastCompleteGuide == guideid then
     self.lastCompleteGuide = 0
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.IsReportCompleteGuide = function(self, guideid)
-  -- function num : 0_7
-  if (self.reportCompleteGuide)[guideid] == 1 then
+function GuideModule:IsReportCompleteGuide(guideid)
+  if self.reportCompleteGuide[guideid] == 1 then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.GuideInProgress = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  do return not self.activatedGuides or (table.count)(self.activatedGuides) > 0 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function GuideModule:GuideInProgress()
+  return self.activatedGuides and table.count(self.activatedGuides) > 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.IsGuideProcess = function(self, guideId)
-  -- function num : 0_9
-  if (self.activatedGuides)[guideId] then
-    if (self.activatedGuides)[guideId] <= 0 then
-      do return not self.activatedGuides end
-      do return false end
-      do return false end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function GuideModule:IsGuideProcess(guideId)
+  if self.activatedGuides then
+    if self.activatedGuides[guideId] then
+      return self.activatedGuides[guideId] > 0
+    else
+      return false
     end
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.IsGuideProcessKey = function(self, key)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfg = (Cfg.cfg_guide_const)[key]
-  if cfg then
-    return self:IsGuideProcess(cfg.IntValue)
-  end
+function GuideModule:IsGuideProcessKey(key)
+  local cfg = Cfg.cfg_guide_const[key]
+  return cfg and self:IsGuideProcess(cfg.IntValue)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.IsGuideDone = function(self, guideId)
-  -- function num : 0_11 , upvalues : _ENV
+function GuideModule:IsGuideDone(guideId)
   if GameSingle then
     return true
   end
-  if (self.guide_id2count)[guideId] <= 0 then
-    do return not (self.guide_id2count)[guideId] end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  if self.guide_id2count[guideId] then
+    return self.guide_id2count[guideId] > 0
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.GuideError = function(self, id)
-  -- function num : 0_12 , upvalues : _ENV
-  (Log.error)((string.format)("Guide error! Trigger guide %d not exists in Cfg_guide, please check!", id))
+function GuideModule:GuideError(id)
+  Log.error(string.format("Guide error! Trigger guide %d not exists in Cfg_guide, please check!", id))
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.PreHandleCfg = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local cfg = (Cfg.cfg_guide_trigger)()
+function GuideModule:PreHandleCfg()
+  local cfg = Cfg.cfg_guide_trigger()
   if not cfg then
-    return 
+    return
   end
-  for k,v in pairs(cfg) do
-    for _,trigger in pairs(self.triggers) do
+  for k, v in pairs(cfg) do
+    for _, trigger in pairs(self.triggers) do
       trigger:PreHandleCfg(v)
     end
-    do
-      do
-        if not (self.guides)[v.guide] then
-          local guide = Guide:New(self, v)
-          -- DECOMPILER ERROR at PC31: Confused about usage of register: R8 in 'UnsetPending'
-
-          ;
-          (self.guides)[v.guide] = guide
-        end
-        -- DECOMPILER ERROR at PC37: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self.triggerGuides)[v.id] = (self.guides)[v.guide]
-        -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if not self.guides[v.guide] then
+      local guide = Guide:New(self, v)
+      self.guides[v.guide] = guide
     end
+    self.triggerGuides[v.id] = self.guides[v.guide]
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.SetGuideDatas = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(RoleModule)
-  local dones = ((module.m_char_info).guide_info).guide_id2count
+function GuideModule:SetGuideDatas()
+  local module = GameGlobal.GetModule(RoleModule)
+  local dones = module.m_char_info.guide_info.guide_id2count
   if GuideDebug.TestGudie then
-    for k,testId in pairs(GuideDebug.TestGudie) do
+    for k, testId in pairs(GuideDebug.TestGudie) do
       dones[testId] = nil
     end
   end
-  do
-    for id,count in pairs(dones) do
-      local guide = (self.guides)[id]
-      if not guide then
-        (Log.error)((string.format)("Guide error! guide %d not exists in Cfg_guide, please check server data! no guidetrigger", id))
-      else
-        guide:SetCount(count - 1)
-      end
+  for id, count in pairs(dones) do
+    local guide = self.guides[id]
+    if not guide then
+      Log.error(string.format("Guide error! guide %d not exists in Cfg_guide, please check server data! no guidetrigger", id))
+    else
+      guide:SetCount(count - 1)
     end
-    for id,count in pairs(dones) do
-      self:DoneGuide(id, false)
-    end
-    self.guide_id2count = dones
-    if not self.inited then
-      self:InitGuides()
-      self.inited = true
-    end
+  end
+  for id, count in pairs(dones) do
+    self:DoneGuide(id, false)
+  end
+  self.guide_id2count = dones
+  if not self.inited then
+    self:InitGuides()
+    self.inited = true
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.IsGuideMissionDone = function(self, missionId)
-  -- function num : 0_15
-  do return missionId <= self.curMissionId end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function GuideModule:IsGuideMissionDone(missionId)
+  return missionId <= self.curMissionId
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.ChecMissionPassed = function(self, missionId)
-  -- function num : 0_16 , upvalues : _ENV
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+function GuideModule:ChecMissionPassed(missionId)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   return missionModule:IsPassMissionID(missionId)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.ChecChapterPassed = function(self, chapterID)
-  -- function num : 0_17 , upvalues : _ENV
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+function GuideModule:ChecChapterPassed(chapterID)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   local missionData = missionModule:GetDiscoveryData()
   local chapter = missionData:GetChapterByChapterId(chapterID)
   return chapter:IsThreeComplete()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.InitGuides = function(self)
-  -- function num : 0_18
+function GuideModule:InitGuides()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.RequestDoneGuide = function(self, TT, id, force)
-  -- function num : 0_19 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventMobileRoleSetGuideInfo)
+function GuideModule:RequestDoneGuide(TT, id, force)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventMobileRoleSetGuideInfo)
   local guide = GuideInfo:New()
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R6 in 'UnsetPending'
-
-  if (self.guide_id2count)[id] then
-    (self.guide_id2count)[id] = (self.guide_id2count)[id] + 1
+  if self.guide_id2count[id] then
+    self.guide_id2count[id] = self.guide_id2count[id] + 1
   else
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.guide_id2count)[id] = 1
+    self.guide_id2count[id] = 1
   end
   guide.guide_id2count = self.guide_id2count
   request.guide_info = guide
@@ -288,293 +197,233 @@ GuideModule.RequestDoneGuide = function(self, TT, id, force)
     local reply = self:Call(TT, request)
     if reply:Succ() then
       self:ReportCompleteGuide(id)
-      ;
-      (Log.debug)("CEventMobileRoleSetGuideInfo Succ.", id)
+      Log.debug("CEventMobileRoleSetGuideInfo Succ.", id)
       self:InitGuides()
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.DoneGuide = function(self, id, notice, remain)
-  -- function num : 0_20 , upvalues : _ENV
-  (Log.info)("[Guide] DoneGuide id:" .. id .. " notice:" .. tostring(notice) .. " remain:" .. tostring(remain))
-  local guide = (self.guides)[id]
+function GuideModule:DoneGuide(id, notice, remain)
+  Log.info("[Guide] DoneGuide id:" .. id .. " notice:" .. tostring(notice) .. " remain:" .. tostring(remain))
+  local guide = self.guides[id]
   if not guide then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
   if not remain then
-    (self.activatedGuides)[id] = nil
+    self.activatedGuides[id] = nil
   end
   if not guide:Done(remain) then
-    return 
+    return
   end
   if notice then
-    ((GameGlobal.TaskManager)()):StartTask(self.RequestDoneGuide, self, id, 0)
+    GameGlobal.TaskManager():StartTask(self.RequestDoneGuide, self, id, 0)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.ActivateGuide = function(self, id, callBack)
-  -- function num : 0_21 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("ActivateGuide")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._ActivateGuideTaskWrapper, self, id, callBack)
+function GuideModule:ActivateGuide(id, callBack)
+  GameGlobal.UIStateManager():Lock("ActivateGuide")
+  GameGlobal.TaskManager():StartTask(self._ActivateGuideTaskWrapper, self, id, callBack)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule._ActivateGuideTaskWrapper = function(self, TT, id, callBack)
-  -- function num : 0_22 , upvalues : _ENV
+function GuideModule:_ActivateGuideTaskWrapper(TT, id, callBack)
   self:_ActivateGuideTask(TT, id, callBack)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("ActivateGuide")
+  GameGlobal.UIStateManager():UnLock("ActivateGuide")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule._ActivateGuideTask = function(self, TT, id, callBack)
-  -- function num : 0_23 , upvalues : _ENV
-  (Log.notice)("[guide ActivateGuide1] triggerid ", id)
-  local guide = (self.triggerGuides)[id]
+function GuideModule:_ActivateGuideTask(TT, id, callBack)
+  Log.notice("[guide ActivateGuide1] triggerid ", id)
+  local guide = self.triggerGuides[id]
   if not guide then
     self:GuideError(id)
-    return 
+    return
   end
   if self:_CheckDateNotStart(id) then
-    (Log.error)((string.format)("Guide error! %d date not start!", id))
-    return 
+    Log.error(string.format("Guide error! %d date not start!", id))
+    return
   end
   if self:_CheckOutOfDate(id) then
-    (Log.error)((string.format)("Guide error! %d out of date!", id))
-    return 
+    Log.error(string.format("Guide error! %d out of date!", id))
+    return
   end
   if self:_CheckTaskNoFinish(id) then
-    (Log.error)((string.format)("Guide error! %d task not finish!", id))
-    return 
+    Log.error(string.format("Guide error! %d task not finish!", id))
+    return
   end
   if self:_CheckTaskFinish(id) then
-    (Log.error)((string.format)("Guide error! %d task finish!", id))
-    return 
+    Log.error(string.format("Guide error! %d task finish!", id))
+    return
   end
-  local cfgGuideTrigger = (Cfg.cfg_guide_trigger)[id]
+  local cfgGuideTrigger = Cfg.cfg_guide_trigger[id]
   local missionId = cfgGuideTrigger.missionId
-  do
-    if missionId then
-      local done = self:IsGuideMissionDone(missionId)
-      if done then
-        (Log.notice)("[guide ActivateGuide1] mission done mission id ", missionId)
-        if callBack then
-          callBack(false)
-        end
-        return 
+  if missionId then
+    local done = self:IsGuideMissionDone(missionId)
+    if done then
+      Log.notice("[guide ActivateGuide1] mission done mission id ", missionId)
+      if callBack then
+        callBack(false)
       end
+      return
     end
-    local passMissionId = cfgGuideTrigger.passMissionId
-    do
-      if passMissionId then
-        local passed = self:ChecMissionPassed(passMissionId)
-        if not passed then
-          (Log.notice)("[guide ActivateGuide1] mission not pass mission id ", passMissionId)
-          if callBack then
-            callBack(false)
-          end
-          return 
-        end
+  end
+  local passMissionId = cfgGuideTrigger.passMissionId
+  if passMissionId then
+    local passed = self:ChecMissionPassed(passMissionId)
+    if not passed then
+      Log.notice("[guide ActivateGuide1] mission not pass mission id ", passMissionId)
+      if callBack then
+        callBack(false)
       end
-      local campaignPassInfo = cfgGuideTrigger.campaignPassInfo
-      if campaignPassInfo then
-        local passed = false
-        local campaignType = campaignPassInfo[1]
-        local componentIndex = campaignPassInfo[2]
-        local missionID = campaignPassInfo[3]
-        local campModule = (GameGlobal.GetModule)(CampaignModule)
-        if campModule then
-          local localProcess = campModule:GetCampaignLocalProcess(campaignType)
-          if localProcess then
-            local component = localProcess:GetComponent(componentIndex)
-            if component then
-              passed = component:IsPassCamMissionID(missionID)
-            end
-          end
-        end
-        do
-          do
-            if not passed then
-              (Log.notice)("[guide ActivateGuide1] campaign mission not pass mission id ", campaignType, componentIndex, missionID)
-              if callBack then
-                callBack(false)
-              end
-              return 
-            end
-            local campaignPassInfo = cfgGuideTrigger.campaignPassedInfo
-            if campaignPassInfo then
-              local passed = false
-              local campaignType = campaignPassInfo[1]
-              local componentIndex = campaignPassInfo[2]
-              local missionID = campaignPassInfo[3]
-              local campModule = (GameGlobal.GetModule)(CampaignModule)
-              if campModule then
-                local localProcess = campModule:GetCampaignLocalProcess(campaignType)
-                if localProcess then
-                  local component = localProcess:GetComponent(componentIndex)
-                  if component then
-                    passed = component:IsPassCamMissionID(missionID)
-                  end
-                end
-              end
-              do
-                do
-                  if passed then
-                    (Log.notice)("[guide ActivateGuide1] campaign mission not pass mission id ", campaignType, componentIndex, missionID)
-                    if callBack then
-                      callBack(false)
-                    end
-                    return 
-                  end
-                  local chapterID = cfgGuideTrigger.chapterID
-                  do
-                    if chapterID then
-                      local passed = self:ChecChapterPassed(chapterID)
-                      if not passed then
-                        (Log.notice)("[guide ActivateGuide1] chapter not pass chapterID id ", chapterID)
-                        if callBack then
-                          callBack(false)
-                        end
-                        return 
-                      end
-                    end
-                    local levelExclusiveGuide = cfgGuideTrigger.LevelExclusiveGuide
-                    do
-                      if levelExclusiveGuide then
-                        local done = self:IsGuideDone(levelExclusiveGuide)
-                        if done then
-                          (Log.notice)("[guide ActivateGuide1] levelExclusiveGuide done guide id ", levelExclusiveGuide)
-                          if callBack then
-                            callBack(false)
-                          end
-                          return 
-                        end
-                      end
-                      local preGuideID = cfgGuideTrigger.preGuideID
-                      do
-                        if preGuideID then
-                          local done = self:IsGuideDone(preGuideID)
-                          if not done then
-                            (Log.notice)("[guide ActivateGuide1] preGuideID not done guide id ", preGuideID)
-                            if callBack then
-                              callBack(false)
-                            end
-                            return 
-                          end
-                        end
-                        ;
-                        (Log.notice)("[guide ActivateGuide2] guide ", guide:GetID(), " triggerid: ", id)
-                        if (GameGlobal:GetInstance()):IsCoreGameRunning() then
-                          ((self.triggerGuides)[id]):SetIsCoreGameGuide(true)
-                        end
-                        if callBack then
-                          if guide:IsDone() then
-                            callBack(false)
-                          else
-                            if guide:CheckGuide() then
-                              if not (self.activatedGuideTrigger)[id] then
-                                callBack(true)
-                              else
-                                callBack(false)
-                              end
-                            end
-                          end
-                        end
-                        -- DECOMPILER ERROR at PC297: Confused about usage of register: R13 in 'UnsetPending'
-
-                        ;
-                        (self.activatedGuideTrigger)[id] = 1
-                        if guide:NoAct() then
-                          if (self._GuideCheck):CheckGuideStartCondition(guide:GetID()) == false then
-                            self:_ForceDoneGuide(TT, guide:GetID())
-                            if callBack then
-                              callBack(false)
-                            end
-                          else
-                            if callBack then
-                              callBack(true)
-                            end
-                            ;
-                            (Log.notice)("[guide ActivateGuide3] guide ", guide:GetID(), " triggerid: ", id)
-                            local workModule = (GameGlobal.GetModule)(RoleModule)
-                            workModule:PushClientLog("[guide]", "ActivateGuide:" .. guide:GetID() .. " triggerid: " .. id)
-                            if (GameGlobal:GetInstance()):IsCoreGameRunning() then
-                              ((self.guides)[guide:GetID()]):SetIsCoreGameGuide(true)
-                            end
-                            -- DECOMPILER ERROR at PC363: Confused about usage of register: R14 in 'UnsetPending'
-
-                            ;
-                            (self.activatedGuides)[guide:GetID()] = 1
-                            ;
-                            ((self.guides)[guide:GetID()]):SetData((Cfg.cfg_guide_trigger)[id])
-                            guide:Init()
-                          end
-                          do
-                            self:UpdateGuides()
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+      return
+    end
+  end
+  local campaignPassInfo = cfgGuideTrigger.campaignPassInfo
+  if campaignPassInfo then
+    local passed = false
+    local campaignType = campaignPassInfo[1]
+    local componentIndex = campaignPassInfo[2]
+    local missionID = campaignPassInfo[3]
+    local campModule = GameGlobal.GetModule(CampaignModule)
+    if campModule then
+      local localProcess = campModule:GetCampaignLocalProcess(campaignType)
+      if localProcess then
+        local component = localProcess:GetComponent(componentIndex)
+        if component then
+          passed = component:IsPassCamMissionID(missionID)
         end
       end
     end
+    if not passed then
+      Log.notice("[guide ActivateGuide1] campaign mission not pass mission id ", campaignType, componentIndex, missionID)
+      if callBack then
+        callBack(false)
+      end
+      return
+    end
+  end
+  local campaignPassInfo = cfgGuideTrigger.campaignPassedInfo
+  if campaignPassInfo then
+    local passed = false
+    local campaignType = campaignPassInfo[1]
+    local componentIndex = campaignPassInfo[2]
+    local missionID = campaignPassInfo[3]
+    local campModule = GameGlobal.GetModule(CampaignModule)
+    if campModule then
+      local localProcess = campModule:GetCampaignLocalProcess(campaignType)
+      if localProcess then
+        local component = localProcess:GetComponent(componentIndex)
+        if component then
+          passed = component:IsPassCamMissionID(missionID)
+        end
+      end
+    end
+    if passed then
+      Log.notice("[guide ActivateGuide1] campaign mission not pass mission id ", campaignType, componentIndex, missionID)
+      if callBack then
+        callBack(false)
+      end
+      return
+    end
+  end
+  local chapterID = cfgGuideTrigger.chapterID
+  if chapterID then
+    local passed = self:ChecChapterPassed(chapterID)
+    if not passed then
+      Log.notice("[guide ActivateGuide1] chapter not pass chapterID id ", chapterID)
+      if callBack then
+        callBack(false)
+      end
+      return
+    end
+  end
+  local levelExclusiveGuide = cfgGuideTrigger.LevelExclusiveGuide
+  if levelExclusiveGuide then
+    local done = self:IsGuideDone(levelExclusiveGuide)
+    if done then
+      Log.notice("[guide ActivateGuide1] levelExclusiveGuide done guide id ", levelExclusiveGuide)
+      if callBack then
+        callBack(false)
+      end
+      return
+    end
+  end
+  local preGuideID = cfgGuideTrigger.preGuideID
+  if preGuideID then
+    local done = self:IsGuideDone(preGuideID)
+    if not done then
+      Log.notice("[guide ActivateGuide1] preGuideID not done guide id ", preGuideID)
+      if callBack then
+        callBack(false)
+      end
+      return
+    end
+  end
+  Log.notice("[guide ActivateGuide2] guide ", guide:GetID(), " triggerid: ", id)
+  if GameGlobal:GetInstance():IsCoreGameRunning() then
+    self.triggerGuides[id]:SetIsCoreGameGuide(true)
+  end
+  if callBack then
+    if guide:IsDone() then
+      callBack(false)
+    elseif guide:CheckGuide() then
+      if not self.activatedGuideTrigger[id] then
+        callBack(true)
+      else
+        callBack(false)
+      end
+    end
+  end
+  self.activatedGuideTrigger[id] = 1
+  if guide:NoAct() then
+    if self._GuideCheck:CheckGuideStartCondition(guide:GetID()) == false then
+      self:_ForceDoneGuide(TT, guide:GetID())
+      if callBack then
+        callBack(false)
+      end
+    else
+      if callBack then
+        callBack(true)
+      end
+      Log.notice("[guide ActivateGuide3] guide ", guide:GetID(), " triggerid: ", id)
+      local workModule = GameGlobal.GetModule(RoleModule)
+      workModule:PushClientLog("[guide]", "ActivateGuide:" .. guide:GetID() .. " triggerid: " .. id)
+      if GameGlobal:GetInstance():IsCoreGameRunning() then
+        self.guides[guide:GetID()]:SetIsCoreGameGuide(true)
+      end
+      self.activatedGuides[guide:GetID()] = 1
+      self.guides[guide:GetID()]:SetData(Cfg.cfg_guide_trigger[id])
+      guide:Init()
+    end
+    self:UpdateGuides()
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule._ForceDoneGuide = function(self, TT, id)
-  -- function num : 0_24 , upvalues : _ENV
-  (Log.info)("[Guide] ForceDoneGuide id:", id)
-  local guide = (self.guides)[id]
+function GuideModule:_ForceDoneGuide(TT, id)
+  Log.info("[Guide] ForceDoneGuide id:", id)
+  local guide = self.guides[id]
   if not guide then
-    return 
+    return
   end
   guide:Done(false)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.activatedGuides)[id] = nil
+  self.activatedGuides[id] = nil
   self:RequestDoneGuide(TT, id, 1)
   if guide:IsCoreGameGuide() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideYieldBreak)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideYieldBreak)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.UpdateGuides = function(self)
-  -- function num : 0_25
+function GuideModule:UpdateGuides()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.Update = function(self, curTimeMS)
-  -- function num : 0_26 , upvalues : _ENV
+function GuideModule:Update(curTimeMS)
   if NOGUIDE then
-    return 
+    return
   end
   if not self.inited then
-    return 
+    return
   end
-  local lockId = nil
-  for id,_ in pairs(self.activatedGuides) do
-    local guide = (self.guides)[id]
+  local lockId
+  for id, _ in pairs(self.activatedGuides) do
+    local guide = self.guides[id]
     if guide:CheckShow() then
       if guide:IsLockScreen() then
         lockId = id
@@ -584,117 +433,91 @@ GuideModule.Update = function(self, curTimeMS)
     end
   end
   if lockId then
-    local guide = (self.guides)[lockId]
+    local guide = self.guides[lockId]
     guide:Show()
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.UIClose = function(self, uiName)
-  -- function num : 0_27 , upvalues : _ENV
+function GuideModule:UIClose(uiName)
   if uiName == "UIBattle" and self.activatedGuides then
     local clearIds = {}
-    for guideId,guide in pairs(self.guides) do
+    for guideId, guide in pairs(self.guides) do
       if guide:IsCoreGameGuide() and not guide:IsDone() then
-        ((self.guides)[guideId]):Clear()
-        ;
-        (table.insert)(clearIds, guideId)
+        self.guides[guideId]:Clear()
+        table.insert(clearIds, guideId)
       end
     end
-    for _,guideId in ipairs(clearIds) do
-      (Log.debug)("[guide] UIClose activatedGuides set nil guide ", guideId)
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self.activatedGuides)[guideId] = nil
+    for _, guideId in ipairs(clearIds) do
+      Log.debug("[guide] UIClose activatedGuides set nil guide ", guideId)
+      self.activatedGuides[guideId] = nil
     end
     clearIds = {}
-    for guideTriggerId,guide in pairs(self.triggerGuides) do
+    for guideTriggerId, guide in pairs(self.triggerGuides) do
       if guide:IsCoreGameGuide() and not guide:IsDone() then
-        ((self.triggerGuides)[guideTriggerId]):Clear()
-        ;
-        (table.insert)(clearIds, guideTriggerId)
+        self.triggerGuides[guideTriggerId]:Clear()
+        table.insert(clearIds, guideTriggerId)
       end
     end
-    for _,triggerId in ipairs(clearIds) do
-      (Log.debug)("[guide] UIClose activatedGuideTrigger set nil triggerid ", triggerId)
-      -- DECOMPILER ERROR at PC77: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self.activatedGuideTrigger)[triggerId] = nil
+    for _, triggerId in ipairs(clearIds) do
+      Log.debug("[guide] UIClose activatedGuideTrigger set nil triggerid ", triggerId)
+      self.activatedGuideTrigger[triggerId] = nil
     end
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.MissionInfoChange = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+function GuideModule:MissionInfoChange()
+  local missionModule = GameGlobal.GetModule(MissionModule)
   self.curMissionId = missionModule:GetCurMissionID()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.DirectEnterStage2 = function(self, TT)
-  -- function num : 0_29 , upvalues : _ENV
+function GuideModule:DirectEnterStage2(TT)
   if NOGUIDE then
-    return 
+    return
   end
-  local stage1GuideID = ((Cfg.cfg_global).stage_1_guide_id).IntValue
+  local stage1GuideID = Cfg.cfg_global.stage_1_guide_id.IntValue
   if not self:IsGuideDone(stage1GuideID) then
-    ((GameGlobal.TaskManager)()):StartTask(self._ForceDoneGuide, self, stage1GuideID)
+    GameGlobal.TaskManager():StartTask(self._ForceDoneGuide, self, stage1GuideID)
   end
   local module = self:GetModule(MissionModule)
   local data = module:GetDiscoveryData()
-  local targetMissionId = ((Cfg.cfg_guide_const).guide_direct_mission).IntValue
+  local targetMissionId = Cfg.cfg_guide_const.guide_direct_mission.IntValue
   data:UpdatePosByEnter(5, targetMissionId)
-  local game = (GameGlobal.GetModule)(GameMatchModule)
+  local game = GameGlobal.GetModule(GameMatchModule)
   local createInfo = game:GetMatchCreateInfo(MatchType.MT_Mission, targetMissionId)
   local res = game:StartMatchTask(TT, MatchType.MT_Mission, 1, createInfo)
   if not res:GetSucc() then
-    (ToastManager.ShowToast)(game:GetErrorMsg(res:GetResult()))
+    ToastManager.ShowToast(game:GetErrorMsg(res:GetResult()))
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.CheckMissionGuide = function(self, curMissionID)
-  -- function num : 0_30 , upvalues : _ENV
-  local stage2MissionID = ((Cfg.cfg_global).stage_2_id).IntValue
-  local stage3MissionID = ((Cfg.cfg_global).stage_3_id).IntValue
-  local stage2GuideID = ((Cfg.cfg_global).stage_2_guide_id).IntValue
-  local stage3GuideID = ((Cfg.cfg_global).stage_3_guide_id).IntValue
-  if curMissionID == stage2MissionID and not self:IsGuideDone(stage2GuideID) then
-    ((GameGlobal.TaskManager)()):StartTask(self._ForceDoneGuide, self, stage2GuideID)
-  end
-  if curMissionID == stage3MissionID and not self:IsGuideDone(stage3GuideID) then
-    ((GameGlobal.TaskManager)()):StartTask(self._ForceDoneGuide, self, stage3GuideID)
+function GuideModule:CheckMissionGuide(curMissionID)
+  local stage2MissionID = Cfg.cfg_global.stage_2_id.IntValue
+  local stage3MissionID = Cfg.cfg_global.stage_3_id.IntValue
+  local stage2GuideID = Cfg.cfg_global.stage_2_guide_id.IntValue
+  local stage3GuideID = Cfg.cfg_global.stage_3_guide_id.IntValue
+  if curMissionID == stage2MissionID then
+    if not self:IsGuideDone(stage2GuideID) then
+      GameGlobal.TaskManager():StartTask(self._ForceDoneGuide, self, stage2GuideID)
+    end
+  elseif curMissionID == stage3MissionID and not self:IsGuideDone(stage3GuideID) then
+    GameGlobal.TaskManager():StartTask(self._ForceDoneGuide, self, stage3GuideID)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule._CheckDateNotStart = function(self, id)
-  -- function num : 0_31 , upvalues : _ENV
-  local cfg = (Cfg.cfg_guide_trigger)[id]
+function GuideModule:_CheckDateNotStart(id)
+  local cfg = Cfg.cfg_guide_trigger[id]
   if cfg and cfg.StartTime then
     local loginModule = self:GetModule(LoginModule)
     local svrTimeModule = self:GetModule(SvrTimeModule)
     local startTime = loginModule:GetTimeStampByTimeStr(cfg.StartTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
     local nowTime = svrTimeModule:GetServerTime() * 0.001
-    return nowTime < startTime
+    return startTime > nowTime
   end
-  do return false end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule._CheckOutOfDate = function(self, id)
-  -- function num : 0_32 , upvalues : _ENV
-  local cfg = (Cfg.cfg_guide_trigger)[id]
+function GuideModule:_CheckOutOfDate(id)
+  local cfg = Cfg.cfg_guide_trigger[id]
   if cfg and cfg.EndTime then
     local loginModule = self:GetModule(LoginModule)
     local svrTimeModule = self:GetModule(SvrTimeModule)
@@ -702,77 +525,59 @@ GuideModule._CheckOutOfDate = function(self, id)
     local nowTime = svrTimeModule:GetServerTime() * 0.001
     return endTime < nowTime
   end
-  do return false end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule._CheckTaskNoFinish = function(self, id)
-  -- function num : 0_33 , upvalues : _ENV
-  local cfg = (Cfg.cfg_guide_trigger)[id]
+function GuideModule:_CheckTaskNoFinish(id)
+  local cfg = Cfg.cfg_guide_trigger[id]
   if cfg and cfg.TaskID then
-    local questModule = (GameGlobal.GetModule)(QuestModule)
+    local questModule = GameGlobal.GetModule(QuestModule)
     local quest = questModule:GetQuest(cfg.TaskID)
-    if (quest:QuestInfo()).status == QuestStatus.QUEST_Taken then
-      do
-        do return not quest end
-        do return false end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
+    if quest then
+      return quest:QuestInfo().status ~= QuestStatus.QUEST_Taken
     end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule._CheckTaskFinish = function(self, id)
-  -- function num : 0_34 , upvalues : _ENV
-  local cfg = (Cfg.cfg_guide_trigger)[id]
+function GuideModule:_CheckTaskFinish(id)
+  local cfg = Cfg.cfg_guide_trigger[id]
   if cfg and cfg.TaskIDs then
-    local questModule = (GameGlobal.GetModule)(QuestModule)
-    for _,taskID in pairs(cfg.TaskIDs) do
+    local questModule = GameGlobal.GetModule(QuestModule)
+    for _, taskID in pairs(cfg.TaskIDs) do
       local quest = questModule:GetQuest(taskID)
-      if quest and (quest:QuestInfo()).status == QuestStatus.QUEST_Taken then
+      if quest and quest:QuestInfo().status == QuestStatus.QUEST_Taken then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.GetCurGuides = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function GuideModule:GetCurGuides()
   if self.activatedGuides then
     local guides = {}
-    for id,_ in pairs(self.activatedGuides) do
-      (table.insert)(guides, (self.guides)[id])
+    for id, _ in pairs(self.activatedGuides) do
+      table.insert(guides, self.guides[id])
     end
     return guides
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideModule.OnQuestUpdate = function(self, quests)
-  -- function num : 0_36 , upvalues : _ENV
+function GuideModule:OnQuestUpdate(quests)
   if self.activatedGuides then
-    for id,_ in pairs(self.activatedGuides) do
-      local guide = (self.guides)[id]
+    for id, _ in pairs(self.activatedGuides) do
+      local guide = self.guides[id]
       if guide and not guide.currStep then
-        for _,guideStep in pairs(guide.allSteps) do
-          if guideStep and (guideStep.last or (guideStep.data).coreStep) and guideStep.btnGuideCfg and (guideStep.btnGuideCfg).completeRule == GuideCompleteType.TaskState then
-            local questid = ((guideStep.btnGuideCfg).completeRuleParam)[1]
-            local status = ((guideStep.btnGuideCfg).completeRuleParam)[2]
+        for _, guideStep in pairs(guide.allSteps) do
+          if guideStep and (guideStep.last or guideStep.data.coreStep) and guideStep.btnGuideCfg and guideStep.btnGuideCfg.completeRule == GuideCompleteType.TaskState then
+            local questid = guideStep.btnGuideCfg.completeRuleParam[1]
+            local status = guideStep.btnGuideCfg.completeRuleParam[2]
             if quests then
-              for _,quest in pairs(quests) do
-                if questid == (quest:QuestInfo()).quest_id and status == (quest:QuestInfo()).status then
-                  ((GameGlobal.TaskManager)()):StartTask(self._ForceDoneGuide, self, (guide.data).id)
-                  return 
+              for _, quest in pairs(quests) do
+                if questid == quest:QuestInfo().quest_id and status == quest:QuestInfo().status then
+                  GameGlobal.TaskManager():StartTask(self._ForceDoneGuide, self, guide.data.id)
+                  return
                 end
               end
             end
@@ -782,5 +587,3 @@ GuideModule.OnQuestUpdate = function(self, quests)
     end
   end
 end
-
-

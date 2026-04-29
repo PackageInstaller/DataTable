@@ -1,60 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/side_enter/ui_side_enter_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISideEnterMain", UICustomWidget)
 UISideEnterMain = UISideEnterMain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterMain.Constructor = function(self)
-  -- function num : 0_0
+function UISideEnterMain:Constructor()
   self._const_max = 3
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterMain._Refresh = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISideEnterMain:_Refresh()
   if not self._refreshTaskId then
-    self._refreshTaskId = (TaskManager:GetInstance()):StartTask(self._LoadDataAndRefresh, self)
+    self._refreshTaskId = TaskManager:GetInstance():StartTask(self._LoadDataAndRefresh, self)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterMain._LoadDataAndRefresh = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function UISideEnterMain:_LoadDataAndRefresh(TT)
   local lockName = "UISideEnterMain_LoadDataAndRefresh"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  local cfgList = (UISideEnterConst.GetCfgList_SideEnterEdge)()
-  local showTb = (UISideEnterConst.SpawnSideEnterLoader)(TT, self, "_loaderPool", cfgList)
+  GameGlobal.UIStateManager():Lock(lockName)
+  local cfgList = UISideEnterConst.GetCfgList_SideEnterEdge()
+  local showTb = UISideEnterConst.SpawnSideEnterLoader(TT, self, "_loaderPool", cfgList)
   self:_HideEnterBtns(showTb, self._const_max)
   self:_SetCenterEnter(TT)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock(lockName)
+  GameGlobal.UIStateManager():UnLock(lockName)
   self._refreshTaskId = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterMain._HideEnterBtns = function(self, showTb, maxCount)
-  -- function num : 0_3
+function UISideEnterMain:_HideEnterBtns(showTb, maxCount)
   for i = 1, #showTb do
     local isShow = i <= maxCount
-    ;
-    ((showTb[i]):GetGameObject()):SetActive(isShow)
+    showTb[i]:GetGameObject():SetActive(isShow)
   end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterMain._SetCenterEnter = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_centerEnter", "UISideEnterCenterEntry")
+function UISideEnterMain:_SetCenterEnter(TT)
+  local obj = UIWidgetHelper.SpawnObject(self, "_centerEnter", "UISideEnterCenterEntry")
   obj:SetData(TT)
 end
-
-

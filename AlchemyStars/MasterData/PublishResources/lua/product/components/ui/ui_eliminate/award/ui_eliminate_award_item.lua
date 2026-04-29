@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/award/ui_eliminate_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateAwardItem", UICustomWidget)
 UIEliminateAwardItem = UIEliminateAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateAwardItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIEliminateAwardItem:Constructor()
   self._status = EliminateAwardStatus.Received
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIEliminateAwardItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateAwardItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIEliminateAwardItem:_GetComponents()
   self._assetContent = self:GetUIComponent("UISelectObjectPath", "Asset")
   self._scoreTxt = self:GetUIComponent("UILocalizationText", "scoreTxt")
   self._topBg = self:GetUIComponent("Image", "topBg")
@@ -32,10 +19,7 @@ UIEliminateAwardItem._GetComponents = function(self)
   self._canReceiveMaskObj = self:GetGameObject("CanReceiveMask")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateAwardItem.SetData = function(self, itemInfo, index, receiveCallback, clickCallback)
-  -- function num : 0_3
+function UIEliminateAwardItem:SetData(itemInfo, index, receiveCallback, clickCallback)
   self._itemInfo = itemInfo
   self._index = index
   self._receiveCallback = receiveCallback
@@ -43,108 +27,71 @@ UIEliminateAwardItem.SetData = function(self, itemInfo, index, receiveCallback, 
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateAwardItem._InitComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIEliminateAwardItem:_InitComponents()
   self._ownerController = self:RootUIOwner()
-  self._atlas = (self._ownerController).atlas
-  ;
-  (self._scoreTxt):SetText((self._itemInfo).Score)
-  self._asset = (self._assetContent):SpawnObject("UIAsset")
-  local cfg = (Cfg.cfg_item)[(self._itemInfo).ID]
+  self._atlas = self._ownerController.atlas
+  self._scoreTxt:SetText(self._itemInfo.Score)
+  self._asset = self._assetContent:SpawnObject("UIAsset")
+  local cfg = Cfg.cfg_item[self._itemInfo.ID]
   local param = {}
-  param.text = (self._itemInfo).Num
+  param.text = self._itemInfo.Num
   param.quality = cfg.Color
   param.icon = cfg.Icon
   param.showBG = true
-  ;
-  (self._asset):SetData((self._itemInfo).ID)
-  ;
-  (self._asset):SetItemData(param)
-  local anipopModule = (GameGlobal.GetModule)(AnipopModule)
+  self._asset:SetData(self._itemInfo.ID)
+  self._asset:SetItemData(param)
+  local anipopModule = GameGlobal.GetModule(AnipopModule)
   local anipopInfo = anipopModule:GetAniPopInfo()
   local weekInfo = anipopInfo.week_info
-  if (table.icontains)(weekInfo.score_received, (self._itemInfo).CfgID) then
-    (self._getMaskObj):SetActive(true)
-    ;
-    (self._canReceiveMaskObj):SetActive(false)
+  if table.icontains(weekInfo.score_received, self._itemInfo.CfgID) then
+    self._getMaskObj:SetActive(true)
+    self._canReceiveMaskObj:SetActive(false)
     self._status = EliminateAwardStatus.Received
-    -- DECOMPILER ERROR at PC70: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._topBg).sprite = (self._atlas):GetSprite("N37_qdhl_jf_di03")
-    -- DECOMPILER ERROR at PC77: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._scoreTxt).color = Color(0, 0, 0)
+    self._topBg.sprite = self._atlas:GetSprite("N37_qdhl_jf_di03")
+    self._scoreTxt.color = Color(0, 0, 0)
+  elseif self._itemInfo.Score <= weekInfo.total_score and not table.icontains(weekInfo.score_received, self._itemInfo.CfgID) then
+    self._getMaskObj:SetActive(false)
+    self._canReceiveMaskObj:SetActive(true)
+    self._status = EliminateAwardStatus.CanReceive
+    self._topBg.sprite = self._atlas:GetSprite("N37_qdhl_jf_di04")
+    self._scoreTxt.color = Color(1, 0.8705882352941177, 0.5254901960784314)
   else
-    if (self._itemInfo).Score <= weekInfo.total_score and not (table.icontains)(weekInfo.score_received, (self._itemInfo).CfgID) then
-      (self._getMaskObj):SetActive(false)
-      ;
-      (self._canReceiveMaskObj):SetActive(true)
-      self._status = EliminateAwardStatus.CanReceive
-      -- DECOMPILER ERROR at PC108: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._topBg).sprite = (self._atlas):GetSprite("N37_qdhl_jf_di04")
-      -- DECOMPILER ERROR at PC115: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._scoreTxt).color = Color(1, 0.87058823529412, 0.52549019607843)
-    else
-      ;
-      (self._getMaskObj):SetActive(false)
-      ;
-      (self._canReceiveMaskObj):SetActive(false)
-      self._status = EliminateAwardStatus.CantReceive
-      -- DECOMPILER ERROR at PC133: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._topBg).sprite = (self._atlas):GetSprite("N37_qdhl_jf_di03")
-      -- DECOMPILER ERROR at PC140: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._scoreTxt).color = Color(0, 0, 0)
-    end
+    self._getMaskObj:SetActive(false)
+    self._canReceiveMaskObj:SetActive(false)
+    self._status = EliminateAwardStatus.CantReceive
+    self._topBg.sprite = self._atlas:GetSprite("N37_qdhl_jf_di03")
+    self._scoreTxt.color = Color(0, 0, 0)
   end
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
     local yieldTime = (self._index - 1) * 30
     YIELD(TT, yieldTime)
-    if not (tolua.isnull)(self._animObj) then
-      (self._anim):Play("uieff_UIEliminateAwardItem_in")
+    if not tolua.isnull(self._animObj) then
+      self._anim:Play("uieff_UIEliminateAwardItem_in")
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateAwardItem.FullBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  if self._status == EliminateAwardStatus.CanReceive and self._receiveCallback then
-    (self._receiveCallback)((self._itemInfo).CfgID)
-  end
-  if self._clickCallback then
-    (self._clickCallback)((self._itemInfo).ID, (go.transform).position)
+function UIEliminateAwardItem:FullBtnOnClick(go)
+  if self._status == EliminateAwardStatus.CanReceive then
+    if self._receiveCallback then
+      self._receiveCallback(self._itemInfo.CfgID)
+    end
+  elseif self._clickCallback then
+    self._clickCallback(self._itemInfo.ID, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateAwardItem.GetScore = function(self)
-  -- function num : 0_6
-  return (self._itemInfo).Score
+function UIEliminateAwardItem:GetScore()
+  return self._itemInfo.Score
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateAwardItem.GetCfgID = function(self)
-  -- function num : 0_7
-  return (self._itemInfo).CfgID
+function UIEliminateAwardItem:GetCfgID()
+  return self._itemInfo.CfgID
 end
 
-local EliminateAwardStatus = {CantReceive = 1, CanReceive = 2, Received = 3}
+local EliminateAwardStatus = {
+  CantReceive = 1,
+  CanReceive = 2,
+  Received = 3
+}
 _enum("EliminateAwardStatus", EliminateAwardStatus)
-

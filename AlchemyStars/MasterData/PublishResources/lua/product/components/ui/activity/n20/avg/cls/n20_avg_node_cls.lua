@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/cls/n20_avg_node_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AVGStoryNode", Object)
 AVGStoryNode = AVGStoryNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AVGStoryNode.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function AVGStoryNode:Constructor()
   self.id = 0
   self.defaultNextId = -1
   self.endId = 0
@@ -25,30 +18,25 @@ AVGStoryNode.Constructor = function(self)
   self.hideVisibleCondition = nil
   self.hideStartArchive = {}
   self.state = nil
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN20AVGData()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN20AVGData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AVGStoryNode.Init = function(self, cfgSectionExcel, cfgOptionExcel)
-  -- function num : 0_1 , upvalues : _ENV
-  local storyManager = (self.data):StoryManager()
+function AVGStoryNode:Init(cfgSectionExcel, cfgOptionExcel)
+  local storyManager = self.data:StoryManager()
   self.paragraphs = {}
   local cfgStory = storyManager._storyConfig
   local cfgParagraphs = cfgStory.Paragraphs
-  for paragraphId,cfgParagraph in ipairs(cfgParagraphs) do
+  for paragraphId, cfgParagraph in ipairs(cfgParagraphs) do
     local paragraph = AVGStoryParagraph:New()
-    ;
-    (table.insert)(self.paragraphs, paragraph)
+    table.insert(self.paragraphs, paragraph)
     paragraph.id = paragraphId
     local cfgSections = cfgParagraph.Sections
-    for sectionIdx,cfgSection in ipairs(cfgSections) do
-      for elementIdx,cfgSectionElement in ipairs(cfgSection) do
+    for sectionIdx, cfgSection in ipairs(cfgSections) do
+      for elementIdx, cfgSectionElement in ipairs(cfgSection) do
         if cfgSectionElement.DialogContentStr then
           local dialog = AVGStoryDialog:New()
-          ;
-          (table.insert)(paragraph.dialogs, dialog)
+          table.insert(paragraph.dialogs, dialog)
           dialog.sectionIdx = sectionIdx
           dialog.refEntityId = cfgSectionElement.RefEntityID
           local cfgvSectionExcel = self:GetCfgvSectionExcel(cfgSectionExcel, self.storyId, paragraphId, sectionIdx)
@@ -60,55 +48,41 @@ AVGStoryNode.Init = function(self, cfgSectionExcel, cfgOptionExcel)
           end
           local cfgOptions = cfgSectionElement.Options
           if cfgOptions then
-            for optionIdx,cfgOption in ipairs(cfgOptions) do
+            for optionIdx, cfgOption in ipairs(cfgOptions) do
               local option = AVGStoryOption:New()
-              ;
-              (table.insert)(dialog.options, option)
+              table.insert(dialog.options, option)
               option.storyId = self.storyId
               option.paragraphId = paragraphId
               option.sectionIdx = sectionIdx
               option.index = optionIdx
-              option.content = (StringTable.Get)(cfgOption.Content)
+              option.content = StringTable.Get(cfgOption.Content)
               option.nextParagraphId = cfgOption.NextParagraphID
               local cfgvOptionExcel = self:GetCfgvOptionExcel(cfgOptionExcel, self.storyId, paragraphId, sectionIdx, optionIdx)
               if cfgvOptionExcel then
                 option.id = cfgvOptionExcel.ID
                 local influenceValue = cfgvOptionExcel.InfluenceValue
                 if influenceValue then
-                  for i,influence in ipairs(influenceValue) do
+                  for i, influence in ipairs(influenceValue) do
                     if i == 1 then
                       option.influenceLeader = influence
                     else
-                      -- DECOMPILER ERROR at PC113: Confused about usage of register: R39 in 'UnsetPending'
-
-                      ;
-                      (option.influencePartners)[i - 1] = influence
+                      option.influencePartners[i - 1] = influence
                     end
                   end
                 end
-                do
-                  local influence = cfgvOptionExcel.Influence
-                  if influence then
-                    option.influence = (StringTable.Get)(influence)
-                  end
-                  do
-                    local keyUnlockConditionDesc = cfgvOptionExcel.UnlockConditionDesc
-                    if (string.isnullorempty)(keyUnlockConditionDesc) then
-                      option.unlockConditionDesc = ""
-                    else
-                      option.unlockConditionDesc = (StringTable.Get)(keyUnlockConditionDesc)
-                    end
-                    option.unlockCondition = AVGCondition:New(cfgvOptionExcel.UnlockCondition, true)
-                    option.visibleCondition = AVGCondition:New(cfgvOptionExcel.ShowCondition, true)
-                    option.nextNodeId = cfgvOptionExcel.NextNodeId or 0
-                    -- DECOMPILER ERROR at PC155: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC155: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC155: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
+                local influence = cfgvOptionExcel.Influence
+                if influence then
+                  option.influence = StringTable.Get(influence)
                 end
+                local keyUnlockConditionDesc = cfgvOptionExcel.UnlockConditionDesc
+                if string.isnullorempty(keyUnlockConditionDesc) then
+                  option.unlockConditionDesc = ""
+                else
+                  option.unlockConditionDesc = StringTable.Get(keyUnlockConditionDesc)
+                end
+                option.unlockCondition = AVGCondition:New(cfgvOptionExcel.UnlockCondition, true)
+                option.visibleCondition = AVGCondition:New(cfgvOptionExcel.ShowCondition, true)
+                option.nextNodeId = cfgvOptionExcel.NextNodeId or 0
               end
             end
           end
@@ -120,12 +94,9 @@ AVGStoryNode.Init = function(self, cfgSectionExcel, cfgOptionExcel)
   self.cacheUserEvidences = evidence
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AVGStoryNode.GetCfgvSectionExcel = function(self, cfgSectionExcel, storyId, paragraphId, sectionIdx)
-  -- function num : 0_2 , upvalues : _ENV
+function AVGStoryNode:GetCfgvSectionExcel(cfgSectionExcel, storyId, paragraphId, sectionIdx)
   if cfgSectionExcel then
-    for key,cfgv in pairs(cfgSectionExcel) do
+    for key, cfgv in pairs(cfgSectionExcel) do
       local sign = cfgv.SectionSign
       if sign[1] == storyId and sign[2] == paragraphId and sign[3] == sectionIdx then
         return cfgv
@@ -134,12 +105,9 @@ AVGStoryNode.GetCfgvSectionExcel = function(self, cfgSectionExcel, storyId, para
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AVGStoryNode.GetCfgvOptionExcel = function(self, cfgOptionExcel, storyId, paragraphId, sectionIdx, optionIdx)
-  -- function num : 0_3 , upvalues : _ENV
+function AVGStoryNode:GetCfgvOptionExcel(cfgOptionExcel, storyId, paragraphId, sectionIdx, optionIdx)
   if cfgOptionExcel then
-    for key,cfgv in pairs(cfgOptionExcel) do
+    for key, cfgv in pairs(cfgOptionExcel) do
       local sign = cfgv.OptionSign
       if sign[1] == storyId and sign[2] == paragraphId and sign[3] == sectionIdx and sign[4] == optionIdx then
         return cfgv
@@ -148,144 +116,103 @@ AVGStoryNode.GetCfgvOptionExcel = function(self, cfgOptionExcel, storyId, paragr
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AVGStoryNode.IsEnd = function(self)
-  -- function num : 0_4
-  do return self.endId > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AVGStoryNode:IsEnd()
+  return self.endId > 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AVGStoryNode.IsHide = function(self)
-  -- function num : 0_5
+function AVGStoryNode:IsHide()
   if self.hideVisibleCondition then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AVGStoryNode.IsHideNew = function(self)
-  -- function num : 0_6
-  do
-    if self:IsHide() and self:IsSatisfyVisible() then
-      local serverNodeInfo = (self.data):GetServerNodeDataByNodeId(self.id)
-      if serverNodeInfo then
-        return serverNodeInfo.new_mark
-      else
-        return true
-      end
+function AVGStoryNode:IsHideNew()
+  if self:IsHide() and self:IsSatisfyVisible() then
+    local serverNodeInfo = self.data:GetServerNodeDataByNodeId(self.id)
+    if serverNodeInfo then
+      return serverNodeInfo.new_mark
+    else
+      return true
     end
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AVGStoryNode.IsSatisfyVisible = function(self)
-  -- function num : 0_7
+function AVGStoryNode:IsSatisfyVisible()
   if self:IsHide() then
-    return (self.hideVisibleCondition):IsSatisfy()
+    return self.hideVisibleCondition:IsSatisfy()
   end
   return true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AVGStoryNode.GetHideStartArchive = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function AVGStoryNode:GetHideStartArchive()
   local hp = 0
   local strategies = {}
   if self.hideStartArchive then
-    for index,value in ipairs(self.hideStartArchive) do
+    for index, value in ipairs(self.hideStartArchive) do
       if index == 1 then
         hp = value
       else
-        ;
-        (table.insert)(strategies, value)
+        table.insert(strategies, value)
       end
     end
   end
-  do
-    return hp, strategies
-  end
+  return hp, strategies
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AVGStoryNode.ChangeEvidence = function(self, eid, isAdd)
-  -- function num : 0_9 , upvalues : _ENV
+function AVGStoryNode:ChangeEvidence(eid, isAdd)
   if isAdd then
-    (table.insert)(self.cacheUserEvidences, eid)
+    table.insert(self.cacheUserEvidences, eid)
   else
-    ;
-    (table.removev)(self.cacheUserEvidences, eid)
+    table.removev(self.cacheUserEvidences, eid)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AVGStoryNode.GetEvidenceData = function(self)
-  -- function num : 0_10
+function AVGStoryNode:GetEvidenceData()
   return self.cacheUserEvidences
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AVGStoryNode.StartData = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function AVGStoryNode:StartData()
   local hp, strategies = 0, {}
   if self:IsHide() then
-    for i,value in ipairs(self.hideStartArchive) do
+    for i, value in ipairs(self.hideStartArchive) do
       if i == 1 then
         hp = value
       else
-        ;
-        (table.insert)(strategies, value)
+        table.insert(strategies, value)
       end
     end
   else
-    do
-      local fstNodeId = (self.data):FirstNodeId()
-      if fstNodeId == self.id then
-        hp = ((self.data).actorLeader).default
-        for index,partner in ipairs((self.data).actorPartners) do
-          (table.insert)(strategies, partner.default)
-        end
-      else
-        do
-          do
-            local serNodeData = (self.data):GetServerNodeDataByNodeId(self.id)
-            if serNodeData then
-              hp = (serNodeData.end_formation_info).leader_hp
-              strategies = (serNodeData.end_formation_info).teammate_affinity
-            end
-            local strategiesCopy = {}
-            for index,value in ipairs(strategies) do
-              strategiesCopy[index] = value
-            end
-            return hp, strategiesCopy
-          end
-        end
+    local fstNodeId = self.data:FirstNodeId()
+    if fstNodeId == self.id then
+      hp = self.data.actorLeader.default
+      for index, partner in ipairs(self.data.actorPartners) do
+        table.insert(strategies, partner.default)
+      end
+    else
+      local serNodeData = self.data:GetServerNodeDataByNodeId(self.id)
+      if serNodeData then
+        hp = serNodeData.end_formation_info.leader_hp
+        strategies = serNodeData.end_formation_info.teammate_affinity
       end
     end
   end
+  local strategiesCopy = {}
+  for index, value in ipairs(strategies) do
+    strategiesCopy[index] = value
+  end
+  return hp, strategiesCopy
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AVGStoryNode.GetSaveTimestamp = function(self)
-  -- function num : 0_12
-  if (self.data):FirstNodeId() == self.id then
+function AVGStoryNode:GetSaveTimestamp()
+  if self.data:FirstNodeId() == self.id then
     return 0
   end
   if self:IsHide() then
     return 0
   end
-  local serverNodeInfo = (self.data):GetServerNodeDataByNodeId(self.id)
+  local serverNodeInfo = self.data:GetServerNodeDataByNodeId(self.id)
   if serverNodeInfo then
     return serverNodeInfo.update_time
   else
@@ -293,51 +220,41 @@ AVGStoryNode.GetSaveTimestamp = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AVGStoryNode.IsComplete = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local info = (self.data):GetComponentInfoAVG()
-  if (table.icontains)(info.conplated_node_ids, self.id) then
+function AVGStoryNode:IsComplete()
+  local info = self.data:GetComponentInfoAVG()
+  if table.icontains(info.conplated_node_ids, self.id) then
     return true
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AVGStoryNode.State = function(self)
-  -- function num : 0_14
+function AVGStoryNode:State()
   return self.state
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AVGStoryNode.GetParagraphByParagraphId = function(self, paragraphId)
-  -- function num : 0_15 , upvalues : _ENV
-  for index,paragraph in ipairs(self.paragraphs) do
+function AVGStoryNode:GetParagraphByParagraphId(paragraphId)
+  for index, paragraph in ipairs(self.paragraphs) do
     if paragraph.id == paragraphId then
       return paragraph
     end
   end
 end
 
-local AVGStoryNodeState = {CantPlay = 0, CanPlay = 1, Complete = 2}
+local AVGStoryNodeState = {
+  CantPlay = 0,
+  CanPlay = 1,
+  Complete = 2
+}
 _enum("AVGStoryNodeState", AVGStoryNodeState)
 _class("AVGStoryParagraph", Object)
 AVGStoryParagraph = AVGStoryParagraph
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
 
-AVGStoryParagraph.Constructor = function(self)
-  -- function num : 0_16
+function AVGStoryParagraph:Constructor()
   self.id = 0
   self.dialogs = {}
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-AVGStoryParagraph.GetDialogBySectionIdx = function(self, sectionIdx)
-  -- function num : 0_17 , upvalues : _ENV
-  for index,dialog in ipairs(self.dialogs) do
+function AVGStoryParagraph:GetDialogBySectionIdx(sectionIdx)
+  for index, dialog in ipairs(self.dialogs) do
     if dialog.sectionIdx == sectionIdx then
       return dialog
     end
@@ -346,10 +263,8 @@ end
 
 _class("AVGStoryDialog", Object)
 AVGStoryDialog = AVGStoryDialog
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
 
-AVGStoryDialog.Constructor = function(self)
-  -- function num : 0_18
+function AVGStoryDialog:Constructor()
   self.id = 0
   self.sectionIdx = 0
   self.refEntityId = 0
@@ -359,48 +274,34 @@ AVGStoryDialog.Constructor = function(self)
   self.valueChange = {}
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-AVGStoryDialog.ValueChange = function(self)
-  -- function num : 0_19
+function AVGStoryDialog:ValueChange()
   return self.valueChange
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-AVGStoryDialog.HasValueChange = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function AVGStoryDialog:HasValueChange()
   local vc = self:ValueChange()
   if vc then
-    for _,value in ipairs(vc) do
+    for _, value in ipairs(vc) do
       if value ~= 0 then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-AVGStoryDialog.IsSatisfyBE = function(self)
-  -- function num : 0_21
+function AVGStoryDialog:IsSatisfyBE()
   if self.beCondition then
-    return (self.beCondition):IsSatisfy()
+    return self.beCondition:IsSatisfy()
   end
   return false
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
-
-AVGStoryDialog.GetVisibleOptions = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function AVGStoryDialog:GetVisibleOptions()
   local options = {}
-  for index,option in ipairs(self.options) do
+  for index, option in ipairs(self.options) do
     if option:IsSatisfyVisible() then
-      (table.insert)(options, option)
+      table.insert(options, option)
     end
   end
   return options
@@ -408,10 +309,8 @@ end
 
 _class("AVGStoryOption", Object)
 AVGStoryOption = AVGStoryOption
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
 
-AVGStoryOption.Constructor = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function AVGStoryOption:Constructor()
   self.id = 0
   self.storyId = 0
   self.paragraphId = 0
@@ -426,106 +325,69 @@ AVGStoryOption.Constructor = function(self)
   self.unlockCondition = nil
   self.visibleCondition = nil
   self.nextNodeId = 0
-  local mCampaign = (GameGlobal.GetModule)(CampaignModule)
+  local mCampaign = GameGlobal.GetModule(CampaignModule)
   self.data = mCampaign:GetN20AVGData()
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-AVGStoryOption.Content = function(self)
-  -- function num : 0_24
+function AVGStoryOption:Content()
   return self.content
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R1 in 'UnsetPending'
-
-AVGStoryOption.NextParagraphId = function(self)
-  -- function num : 0_25
+function AVGStoryOption:NextParagraphId()
   return self.nextParagraphId
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R1 in 'UnsetPending'
-
-AVGStoryOption.IsSelected = function(self)
-  -- function num : 0_26
-  if (self.data):IsSelectedOption(self.id) then
+function AVGStoryOption:IsSelected()
+  if self.data:IsSelectedOption(self.id) then
     return true
   end
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R1 in 'UnsetPending'
-
-AVGStoryOption.IsInfluential = function(self)
-  -- function num : 0_27
-  if not self:IsInfluentialLeader() then
-    local inf = self:IsInfluentialPartners()
-  end
+function AVGStoryOption:IsInfluential()
+  local inf = self:IsInfluentialLeader() or self:IsInfluentialPartners()
   return inf
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R1 in 'UnsetPending'
-
-AVGStoryOption.IsInfluentialLeader = function(self)
-  -- function num : 0_28
-  do return self.influenceLeader ~= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AVGStoryOption:IsInfluentialLeader()
+  return self.influenceLeader ~= 0
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-AVGStoryOption.IsInfluentialPartners = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function AVGStoryOption:IsInfluentialPartners()
   if self.influencePartners then
-    for index,influence in ipairs(self.influencePartners) do
+    for index, influence in ipairs(self.influencePartners) do
       if self:IsInfluentialPartner(index) then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R1 in 'UnsetPending'
-
-AVGStoryOption.IsInfluentialPartner = function(self, index)
-  -- function num : 0_30
-  do return (self.influencePartners)[index] ~= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AVGStoryOption:IsInfluentialPartner(index)
+  return self.influencePartners[index] ~= 0
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R1 in 'UnsetPending'
-
-AVGStoryOption.IsSatisfyUnlock = function(self)
-  -- function num : 0_31
+function AVGStoryOption:IsSatisfyUnlock()
   if self.unlockCondition then
-    return (self.unlockCondition):IsSatisfy()
+    return self.unlockCondition:IsSatisfy()
   end
   return true
 end
 
--- DECOMPILER ERROR at PC130: Confused about usage of register: R1 in 'UnsetPending'
-
-AVGStoryOption.IsSatisfyVisible = function(self)
-  -- function num : 0_32
+function AVGStoryOption:IsSatisfyVisible()
   if self.visibleCondition then
-    return (self.visibleCondition):IsSatisfy()
+    return self.visibleCondition:IsSatisfy()
   end
   return true
 end
 
 _class("AVGStoryLine", Object)
 AVGStoryLine = AVGStoryLine
--- DECOMPILER ERROR at PC139: Confused about usage of register: R1 in 'UnsetPending'
 
-AVGStoryLine.Constructor = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function AVGStoryLine:Constructor()
   self.sNodeId = 0
   self.eNodeId = 0
   self.posS = Vector2.zero
   self.posE = Vector2.zero
   self.posLs = {}
 end
-
-

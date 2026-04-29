@@ -1,44 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_feature_auto_bead_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFeatureAutoBeadInfo", UIController)
 UIFeatureAutoBeadInfo = UIFeatureAutoBeadInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFeatureAutoBeadInfo.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIFeatureAutoBeadInfo:OnShow(uiParams)
   self:InitWidget()
   self:_RefreshContent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureAutoBeadInfo.InitWidget = function(self)
-  -- function num : 0_1
+function UIFeatureAutoBeadInfo:InitWidget()
   self._TitleText = self:GetUIComponent("UILocalizationText", "TitleText")
   self._PowerFlagText = self:GetUIComponent("UILocalizationText", "PowerFlagText")
   self._PowerDetailText = self:GetUIComponent("UILocalizationText", "PowerDetailText")
   self._BeadList = self:GetUIComponent("UISelectObjectPath", "BeadList")
   self._itemTips = self:GetUIComponent("UISelectObjectPath", "ItemTips")
-  self._tips = (self._itemTips):SpawnObject("UIInnerAutoBeadTips")
+  self._tips = self._itemTips:SpawnObject("UIInnerAutoBeadTips")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureAutoBeadInfo.DotBGOnClick = function(self)
-  -- function num : 0_2
+function UIFeatureAutoBeadInfo:DotBGOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureAutoBeadInfo._RefreshContent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local curPoint, pointToPower = (InnerGameHelperRender.GetCurAutoBeadPowerInfo)()
-  curPoint = (math.floor)(curPoint)
-  pointToPower = (math.floor)(pointToPower)
+function UIFeatureAutoBeadInfo:_RefreshContent()
+  local curPoint, pointToPower = InnerGameHelperRender.GetCurAutoBeadPowerInfo()
+  curPoint = math.floor(curPoint)
+  pointToPower = math.floor(pointToPower)
   local uiRestPoint = 0
   local uiPower = 0
   local uiPercent = 0
@@ -47,41 +31,32 @@ UIFeatureAutoBeadInfo._RefreshContent = function(self)
     uiRestPoint = curPoint
     uiPercent = 0
   else
-    uiPower = (math.floor)(curPoint / pointToPower)
-    uiRestPoint = (math.floor)(curPoint - uiPower * pointToPower)
-    uiPercent = (math.floor)(uiRestPoint / pointToPower * 100)
+    uiPower = math.floor(curPoint / pointToPower)
+    uiRestPoint = math.floor(curPoint - uiPower * pointToPower)
+    uiPercent = math.floor(uiRestPoint / pointToPower * 100)
   end
   local fmt = "<color=#28ffb0>%s</color>/%s (<color=#28ffb0>%s%%</color>)"
-  local str = (string.format)(fmt, tostring(curPoint), tostring(pointToPower), tostring(uiPercent))
-  ;
-  (self._PowerDetailText):SetText(str)
-  local flagStr = (StringTable.Get)("str_season_maze_energy")
+  local str = string.format(fmt, tostring(curPoint), tostring(pointToPower), tostring(uiPercent))
+  self._PowerDetailText:SetText(str)
+  local flagStr = StringTable.Get("str_season_maze_energy")
   flagStr = flagStr .. ":"
-  ;
-  (self._PowerFlagText):SetText(flagStr)
-  local beadList = (InnerGameHelperRender.GetAutoBeadList)()
+  self._PowerFlagText:SetText(flagStr)
+  local beadList = InnerGameHelperRender.GetAutoBeadList()
   if beadList then
     local slotCount = #beadList
-    if slotCount > 0 then
-      (self._BeadList):SpawnObjects("UIWidgetInnerAutoBeadItem", slotCount)
-      self._slotWidgets = (self._BeadList):GetAllSpawnList()
-      for key,value in ipairs(self._slotWidgets) do
+    if 0 < slotCount then
+      self._BeadList:SpawnObjects("UIWidgetInnerAutoBeadItem", slotCount)
+      self._slotWidgets = self._BeadList:GetAllSpawnList()
+      for key, value in ipairs(self._slotWidgets) do
         local data = beadList[key]
         value:SetData(key, data, function(uid, id, data, position)
-    -- function num : 0_3_0 , upvalues : self
-    self:ShowTips(uid, id, data, position)
-  end
-)
+          self:ShowTips(uid, id, data, position)
+        end)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureAutoBeadInfo.ShowTips = function(self, uid, id, data, position)
-  -- function num : 0_4
-  (self._tips):SetData(uid, id, data, position)
+function UIFeatureAutoBeadInfo:ShowTips(uid, id, data, position)
+  self._tips:SetData(uid, id, data, position)
 end
-
-

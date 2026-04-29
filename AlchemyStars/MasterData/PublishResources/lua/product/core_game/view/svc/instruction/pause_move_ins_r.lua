@@ -1,56 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/pause_move_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PauseMoveInstruction", BaseInstruction)
 PauseMoveInstruction = PauseMoveInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PauseMoveInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PauseMoveInstruction:Constructor(paramList)
   self._matchers = nil
   local strParam = paramList.matchers
-  do
-    if strParam then
-      local len = (string.len)(strParam)
-      self._matchers = (string.split)(strParam, "|")
-    end
-    local moveAnim = paramList.moveAnim or 0
-    self._moveAnim = moveAnim == 1
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  if strParam then
+    local len = string.len(strParam)
+    self._matchers = string.split(strParam, "|")
   end
+  local moveAnim = paramList.moveAnim or 0
+  self._moveAnim = moveAnim == 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PauseMoveInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PauseMoveInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   if self._matchers then
-    for i,match in ipairs(self._matchers) do
-      local g = world:GetGroup((world.BW_WEMatchers)[match])
-      for i,e in ipairs(g:GetEntities()) do
+    for i, match in ipairs(self._matchers) do
+      local g = world:GetGroup(world.BW_WEMatchers[match])
+      for i, e in ipairs(g:GetEntities()) do
         self:PauseEntity(e)
       end
     end
   else
-    do
-      local targetEntity = world:GetEntityByID(phaseContext:GetCurTargetEntityID())
-      self:PauseEntity(targetEntity)
-    end
+    local targetEntity = world:GetEntityByID(phaseContext:GetCurTargetEntityID())
+    self:PauseEntity(targetEntity)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PauseMoveInstruction.PauseEntity = function(self, e)
-  -- function num : 0_2
+function PauseMoveInstruction:PauseEntity(e)
   e:AddPauseFlag(0)
   if self._moveAnim then
     e:SetAnimatorControllerBools({Move = false})
   end
 end
-
-

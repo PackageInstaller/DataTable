@@ -1,54 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/scene/season_scene_environment.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("season_config")
 _class("SeasonSceneEnvironment", Object)
 SeasonSceneEnvironment = SeasonSceneEnvironment
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonSceneEnvironment.Constructor = function(self, sceenRoot, seasonID)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonSceneEnvironment:Constructor(sceenRoot, seasonID)
   self._sceenRoot = sceenRoot
   self._seasonID = seasonID
   self._entities = {}
   local config = SeasonEnvironmentConfig[seasonID]
   if config then
-    for key,cfg in pairs(config) do
-      -- DECOMPILER ERROR at PC18: Confused about usage of register: R9 in 'UnsetPending'
-
-      (self._entities)[key] = _createInstance(cfg.value, self._sceenRoot, cfg.param)
+    for key, cfg in pairs(config) do
+      self._entities[key] = _createInstance(cfg.value, self._sceenRoot, cfg.param)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneEnvironment.Update = function(self, deltaTime)
-  -- function num : 0_1 , upvalues : _ENV
-  for _,entity in pairs(self._entities) do
+function SeasonSceneEnvironment:Update(deltaTime)
+  for _, entity in pairs(self._entities) do
     entity:Update(deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneEnvironment.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,entity in pairs(self._entities) do
+function SeasonSceneEnvironment:Dispose()
+  for _, entity in pairs(self._entities) do
     entity:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneEnvironment.UnLockZone = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_3 , upvalues : _ENV
-  local unlockZoneIDs = (SeasonTool:GetInstance()):GetZonesByZoneMask(zoneMask)
-  if self._seasonID == UISeasonID.S1 and (table.icontains)(unlockZoneIDs, SeasonZone.Two) then
-    ((self._entities)[1]):UnLock(true)
+function SeasonSceneEnvironment:UnLockZone(zoneMask, zoneID2Animation)
+  local unlockZoneIDs = SeasonTool:GetInstance():GetZonesByZoneMask(zoneMask)
+  if self._seasonID == UISeasonID.S1 and table.icontains(unlockZoneIDs, SeasonZone.Two) then
+    self._entities[1]:UnLock(true)
   end
 end
-
-

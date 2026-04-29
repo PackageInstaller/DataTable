@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/story/story_entity_spine.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StoryEntitySpine", StoryEntityMovable)
 StoryEntitySpine = StoryEntitySpine
 local StorySpineEntityAnimationType = {Dissolve = 1}
 _enum("StorySpineEntityAnimationType", StorySpineEntityAnimationType)
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
 
-StoryEntitySpine.Constructor = function(self, ID, gameObject, resRequest, storyManager, entityConfig)
-  -- function num : 0_0 , upvalues : _ENV
-  ((StoryEntitySpine.super).Constructor)(self, ID, gameObject, resRequest, storyManager)
+function StoryEntitySpine:Constructor(ID, gameObject, resRequest, storyManager, entityConfig)
+  StoryEntitySpine.super.Constructor(self, ID, gameObject, resRequest, storyManager)
   self._type = StoryEntityType.Spine
-  self._spineSke = gameObject:GetComponentInChildren(typeof((Spine.Unity).SkeletonGraphic))
-  self._spineSkeMultipleTex = gameObject:GetComponentInChildren(typeof(((Spine.Unity).Modules).SkeletonGraphicMultiObject))
+  self._spineSke = gameObject:GetComponentInChildren(typeof(Spine.Unity.SkeletonGraphic))
+  self._spineSkeMultipleTex = gameObject:GetComponentInChildren(typeof(Spine.Unity.Modules.SkeletonGraphicMultiObject))
   self._entityConfig = entityConfig
   self._isSpeaking = false
   self._spineColor = nil
@@ -26,443 +19,302 @@ StoryEntitySpine.Constructor = function(self, ID, gameObject, resRequest, storyM
   self._spineAnimationData = {}
   self._outLine = nil
   self._outLineIntensity = 2.5
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R6 in 'UnsetPending'
-
   if self._spineSke then
     if entityConfig.Effect == "EMI" then
-      (self._spineSke).material = (UnityEngine.Material):New((self._spineSke).material)
-      self._EMIMatResRequest = (ResourceManager:GetInstance()):SyncLoadAsset("spine_graphic_dc.mat", LoadType.Mat)
-      self._EMIMat = (self._EMIMatResRequest).Obj
-      -- DECOMPILER ERROR at PC72: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      ((self._spineSke).material).shader = (self._EMIMat).shader
-      ;
-      ((self._spineSke).material):SetTexture("_NoiseTex", (self._EMIMat):GetTexture("_NoiseTex"))
+      self._spineSke.material = UnityEngine.Material:New(self._spineSke.material)
+      self._EMIMatResRequest = ResourceManager:GetInstance():SyncLoadAsset("spine_graphic_dc.mat", LoadType.Mat)
+      self._EMIMat = self._EMIMatResRequest.Obj
+      self._spineSke.material.shader = self._EMIMat.shader
+      self._spineSke.material:SetTexture("_NoiseTex", self._EMIMat:GetTexture("_NoiseTex"))
+    elseif entityConfig.Effect == "DISSOLVE" then
+      self._spineSke.material = UnityEngine.Material:New(self._spineSke.material)
+      self._DissolveMatResRequest = ResourceManager:GetInstance():SyncLoadAsset("spine_graphic_dissolve.mat", LoadType.Mat)
+      self._DissolveMat = self._DissolveMatResRequest.Obj
+      self._spineSke.material.shader = self._DissolveMat.shader
+      self._spineSke.material:SetTexture("_MaskTex", self._DissolveMat:GetTexture("_MaskTex"))
+    end
+    self._spineColor = self._spineSke.color
+    self._spineSke.AnimationState:SetAnimation(0, "Story_norm", true)
+  elseif self._spineSkeMultipleTex then
+    if entityConfig.Effect == "EMI" then
+      self._EMIMatResRequest = ResourceManager:GetInstance():SyncLoadAsset("spine_dc.mat", LoadType.Mat)
+      self._EMIMat = self._EMIMatResRequest.Obj
+      self._spineSkeMultipleTex.UseInstanceMaterials = true
+      
+      function self._spineSkeMultipleTex.OnInstanceMaterialCreated(material)
+        self:HandleMultipleTexSpineMatCreated(material)
+      end
+      
+      self._spineSkeMultipleTex:UpdateMesh()
+    end
+    if self._spineSkeMultipleTex.Skeleton then
+      self._spineColor = Color(self._spineSkeMultipleTex.Skeleton.R, self._spineSkeMultipleTex.Skeleton.G, self._spineSkeMultipleTex.Skeleton.B, self._spineSkeMultipleTex.Skeleton.A)
     else
-      -- DECOMPILER ERROR at PC93: Confused about usage of register: R6 in 'UnsetPending'
-
-      if entityConfig.Effect == "DISSOLVE" then
-        (self._spineSke).material = (UnityEngine.Material):New((self._spineSke).material)
-        self._DissolveMatResRequest = (ResourceManager:GetInstance()):SyncLoadAsset("spine_graphic_dissolve.mat", LoadType.Mat)
-        self._DissolveMat = (self._DissolveMatResRequest).Obj
-        -- DECOMPILER ERROR at PC110: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        ((self._spineSke).material).shader = (self._DissolveMat).shader
-        ;
-        ((self._spineSke).material):SetTexture("_MaskTex", (self._DissolveMat):GetTexture("_MaskTex"))
-      end
+      self._spineColor = Color.white
     end
-    self._spineColor = (self._spineSke).color
-    ;
-    ((self._spineSke).AnimationState):SetAnimation(0, "Story_norm", true)
-  else
-    if self._spineSkeMultipleTex then
-      if entityConfig.Effect == "EMI" then
-        self._EMIMatResRequest = (ResourceManager:GetInstance()):SyncLoadAsset("spine_dc.mat", LoadType.Mat)
-        self._EMIMat = (self._EMIMatResRequest).Obj
-        -- DECOMPILER ERROR at PC150: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (self._spineSkeMultipleTex).UseInstanceMaterials = true
-        -- DECOMPILER ERROR at PC153: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (self._spineSkeMultipleTex).OnInstanceMaterialCreated = function(material)
-    -- function num : 0_0_0 , upvalues : self
-    self:HandleMultipleTexSpineMatCreated(material)
-  end
-
-        ;
-        (self._spineSkeMultipleTex):UpdateMesh()
-      end
-      if (self._spineSkeMultipleTex).Skeleton then
-        self._spineColor = Color(((self._spineSkeMultipleTex).Skeleton).R, ((self._spineSkeMultipleTex).Skeleton).G, ((self._spineSkeMultipleTex).Skeleton).B, ((self._spineSkeMultipleTex).Skeleton).A)
-      else
-        self._spineColor = Color.white
-      end
-      ;
-      ((self._spineSkeMultipleTex).AnimationState):SetAnimation(0, "Story_norm", true)
-    end
+    self._spineSkeMultipleTex.AnimationState:SetAnimation(0, "Story_norm", true)
   end
   if not self._spineColor then
     self._spineColor = Color.white
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntitySpine.HandleMultipleTexSpineMatCreated = function(self, material)
-  -- function num : 0_1
-  if (self._entityConfig).Effect == "EMI" then
-    material.shader = (self._EMIMat).shader
-    material:SetTexture("_NoiseTex", (self._EMIMat):GetTexture("_NoiseTex"))
+function StoryEntitySpine:HandleMultipleTexSpineMatCreated(material)
+  if self._entityConfig.Effect == "EMI" then
+    material.shader = self._EMIMat.shader
+    material:SetTexture("_NoiseTex", self._EMIMat:GetTexture("_NoiseTex"))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntitySpine.SectionStart = function(self, trackData)
-  -- function num : 0_2 , upvalues : _ENV
-  ((StoryEntitySpine.super).SectionStart)(self, trackData)
-  if (self._currentTrackData).IsSpeaking then
-    (self._storyManager):AddAudioPlayCallback(function(speaking)
-    -- function num : 0_2_0 , upvalues : self
-    local spineSke = nil
-    if self._spineSke then
-      spineSke = self._spineSke
-    else
-      if self._spineSkeMultipleTex then
+function StoryEntitySpine:SectionStart(trackData)
+  StoryEntitySpine.super.SectionStart(self, trackData)
+  if self._currentTrackData.IsSpeaking then
+    self._storyManager:AddAudioPlayCallback(function(speaking)
+      local spineSke
+      if self._spineSke then
+        spineSke = self._spineSke
+      elseif self._spineSkeMultipleTex then
         spineSke = self._spineSkeMultipleTex
       else
-        return 
+        return
       end
-    end
-    if speaking then
-      (spineSke.AnimationState):SetAnimation(1, "talk_start", true)
-    else
-      ;
-      (spineSke.AnimationState):SetEmptyAnimation(1, 0)
-    end
-  end
-)
+      if speaking then
+        spineSke.AnimationState:SetAnimation(1, "talk_start", true)
+      else
+        spineSke.AnimationState:SetEmptyAnimation(1, 0)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntitySpine.Destroy = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((StoryEntitySpine.super).Destroy)(self)
+function StoryEntitySpine:Destroy()
+  StoryEntitySpine.super.Destroy(self)
   for i = 1, #self._matInsList do
-    ((UnityEngine.Object).Destroy)((self._matInsList)[i])
+    UnityEngine.Object.Destroy(self._matInsList[i])
   end
   self._matInsList = {}
   if self._EMIMatResRequest then
     self._EMIMat = nil
-    ;
-    (self._EMIMatResRequest):Dispose()
+    self._EMIMatResRequest:Dispose()
     self._EMIMatResRequest = nil
   end
   if self._DissolveMatResRequest then
     self._DissolveMat = nil
-    ;
-    (self._DissolveMatResRequest):Dispose()
+    self._DissolveMatResRequest:Dispose()
     self._DissolveMatResRequest = nil
   end
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
   if self._spineSkeMultipleTex then
-    (self._spineSkeMultipleTex).OnInstanceMaterialCreated = nil
+    self._spineSkeMultipleTex.OnInstanceMaterialCreated = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntitySpine._TriggerKeyframe = function(self, keyframeData)
-  -- function num : 0_4 , upvalues : _ENV, StorySpineEntityAnimationType
-  ((StoryEntitySpine.super)._TriggerKeyframe)(self, keyframeData)
-  local spineSke = nil
+function StoryEntitySpine:_TriggerKeyframe(keyframeData)
+  StoryEntitySpine.super._TriggerKeyframe(self, keyframeData)
+  local spineSke
   if self._spineSke then
     spineSke = self._spineSke
+  elseif self._spineSkeMultipleTex then
+    spineSke = self._spineSkeMultipleTex
   else
-    if self._spineSkeMultipleTex then
-      spineSke = self._spineSkeMultipleTex
-    else
-      return 
-    end
+    return
   end
   if not spineSke.AnimationState then
-    return 
+    return
   end
   local layer = 0
   if keyframeData.AnimationLayer then
     layer = keyframeData.AnimationLayer
   end
   if keyframeData.ClearAnimationLayer and spineSke then
-    (spineSke.AnimationState):SetEmptyAnimation(keyframeData.ClearAnimationLayer, 0)
+    spineSke.AnimationState:SetEmptyAnimation(keyframeData.ClearAnimationLayer, 0)
   end
   if keyframeData.LoopAnimation ~= nil and spineSke then
-    (spineSke.AnimationState):SetAnimation(layer, keyframeData.LoopAnimation, true)
+    spineSke.AnimationState:SetAnimation(layer, keyframeData.LoopAnimation, true)
   end
   if keyframeData.Animation ~= nil and spineSke then
-    (spineSke.AnimationState):SetAnimation(layer, keyframeData.Animation, false)
+    spineSke.AnimationState:SetAnimation(layer, keyframeData.Animation, false)
   end
-  do
-    if keyframeData.Dissolve ~= nil and (self._entityConfig).Effect == "DISSOLVE" then
-      local aniInfo = {StorySpineEntityAnimationType.Dissolve, keyframeData.Time, (keyframeData.Dissolve).StartValue, (keyframeData.Dissolve).EndValue}
-      -- DECOMPILER ERROR at PC76: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._spineAnimationData)[keyframeData.Dissolve] = aniInfo
+  if keyframeData.Dissolve ~= nil and self._entityConfig.Effect == "DISSOLVE" then
+    local aniInfo = {
+      StorySpineEntityAnimationType.Dissolve,
+      keyframeData.Time,
+      keyframeData.Dissolve.StartValue,
+      keyframeData.Dissolve.EndValue
+    }
+    self._spineAnimationData[keyframeData.Dissolve] = aniInfo
+  end
+  if keyframeData.TilingSize ~= nil then
+    self:_SetTilingSize(keyframeData.TilingSize)
+  end
+  if keyframeData.FullScreen ~= nil then
+    if keyframeData.FullScreen then
+      self:_SetSpineFullScreen()
+    else
+      self._storyManager:SetUIBlackSideSize(0, 0)
     end
-    if keyframeData.TilingSize ~= nil then
-      self:_SetTilingSize(keyframeData.TilingSize)
-    end
-    if keyframeData.FullScreen ~= nil then
-      if keyframeData.FullScreen then
-        self:_SetSpineFullScreen()
-      else
-        ;
-        (self._storyManager):SetUIBlackSideSize(0, 0)
-      end
-    end
-    if keyframeData.OutLine ~= nil then
-      self:_AddOutLineComponent()
-    end
-    if keyframeData.SpineSkin ~= nil then
-      (spineSke.Skeleton):SetSkin(keyframeData.SpineSkin)
-    end
+  end
+  if keyframeData.OutLine ~= nil then
+    self:_AddOutLineComponent()
+  end
+  if keyframeData.SpineSkin ~= nil then
+    spineSke.Skeleton:SetSkin(keyframeData.SpineSkin)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntitySpine._SetSpineFullScreen = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function StoryEntitySpine:_SetSpineFullScreen()
   if not self._gameObject then
-    return 
+    return
   end
-  local transfrom = (self._gameObject).transform
+  local transfrom = self._gameObject.transform
   local fullPicWidth = 2532
   local fullPicHeight = 1170
-  local screenWidth, screenHeight = (self._storyManager):GetUICanvasSize()
+  local screenWidth, screenHeight = self._storyManager:GetUICanvasSize()
   local spineAspect = fullPicWidth / fullPicHeight
   local screenAspect = screenWidth / screenHeight
   local spineScale = 1
   local blackSideHeight = 0
   local blackSideWidth = 0
-  if screenAspect < spineAspect then
+  if spineAspect > screenAspect then
     spineScale = screenWidth / fullPicWidth
     local picHeight = fullPicHeight * screenWidth / fullPicWidth
-    blackSideHeight = (math.abs)(screenHeight - picHeight) / 2
+    blackSideHeight = math.abs(screenHeight - picHeight) / 2
+  elseif spineAspect < screenAspect then
+    spineScale = screenHeight / fullPicHeight
+    local picWidth = fullPicWidth * screenHeight / fullPicHeight
+    blackSideWidth = math.abs(screenWidth - picWidth) / 2
   else
-    do
-      if spineAspect < screenAspect then
-        spineScale = screenHeight / fullPicHeight
-        local picWidth = fullPicWidth * screenHeight / fullPicHeight
-        blackSideWidth = (math.abs)(screenWidth - picWidth) / 2
-      else
-        do
-          spineScale = screenHeight / fullPicHeight
-          transfrom.localScale = Vector3(spineScale, spineScale, 1)
-          ;
-          (self._storyManager):SetUIBlackSideSize(blackSideWidth, blackSideHeight)
-        end
-      end
-    end
+    spineScale = screenHeight / fullPicHeight
   end
+  transfrom.localScale = Vector3(spineScale, spineScale, 1)
+  self._storyManager:SetUIBlackSideSize(blackSideWidth, blackSideHeight)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntitySpine._UpdateAnimation = function(self, time)
-  -- function num : 0_6 , upvalues : _ENV, StorySpineEntityAnimationType
-  local baseEnd = ((StoryEntitySpine.super)._UpdateAnimation)(self, time)
+function StoryEntitySpine:_UpdateAnimation(time)
+  local baseEnd = StoryEntitySpine.super._UpdateAnimation(self, time)
   local allEnd = true
-  for aniData,aniInfo in pairs(self._spineAnimationData) do
+  for aniData, aniInfo in pairs(self._spineAnimationData) do
     allEnd = false
     local t = 1
     if aniData.Duration > 0 then
       t = (time - aniInfo[2]) / aniData.Duration
     end
-    if t > 1 then
+    if 1 < t then
       t = 1
     end
     if aniInfo[1] == StorySpineEntityAnimationType.Dissolve then
-      self:_SetDissolve((lmathext.lerp)(aniInfo[3], aniInfo[4], t))
+      self:_SetDissolve(lmathext.lerp(aniInfo[3], aniInfo[4], t))
     end
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R10 in 'UnsetPending'
-
-    if t >= 1 then
-      (self._spineAnimationData)[aniData] = nil
+    if 1 <= t then
+      self._spineAnimationData[aniData] = nil
     end
   end
-  do
-    return not allEnd or baseEnd
-  end
+  return allEnd and baseEnd
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntitySpine.SetSpeak = function(self, speaking)
-  -- function num : 0_7 , upvalues : _ENV
-  local spineSke = nil
+function StoryEntitySpine:SetSpeak(speaking)
+  local spineSke
   if self._spineSke then
     spineSke = self._spineSke
+  elseif self._spineSkeMultipleTex then
+    spineSke = self._spineSkeMultipleTex
   else
-    if self._spineSkeMultipleTex then
-      spineSke = self._spineSkeMultipleTex
-    else
-      return 
-    end
+    return
   end
   self._isSpeaking = speaking
   local curAnimName = "normal"
   local loop = true
-  local track = (spineSke.AnimationState):GetCurrent(1)
+  local track = spineSke.AnimationState:GetCurrent(1)
   if track then
-    curAnimName = (track.Animation).Name
+    curAnimName = track.Animation.Name
     loop = track.Loop
   end
-  if self._isSpeaking ~= (string.equal_with_ignorecase)(curAnimName, "shoot") then
+  if self._isSpeaking ~= string.equal_with_ignorecase(curAnimName, "shoot") then
     if self._isSpeaking then
-      (spineSke.AnimationState):SetAnimation(1, "shoot", loop)
+      spineSke.AnimationState:SetAnimation(1, "shoot", loop)
     else
-      ;
-      (spineSke.AnimationState):SetAnimation(1, "aim", loop)
+      spineSke.AnimationState:SetAnimation(1, "aim", loop)
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntitySpine._SetDissolve = function(self, value)
-  -- function num : 0_8
-  ((self._spineSke).material):SetFloat("_Dissovle", value)
+function StoryEntitySpine:_SetDissolve(value)
+  self._spineSke.material:SetFloat("_Dissovle", value)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntitySpine._SetTilingSize = function(self, value)
-  -- function num : 0_9
-  ((self._spineSke).material):SetFloat("_TilingSize", value)
+function StoryEntitySpine:_SetTilingSize(value)
+  self._spineSke.material:SetFloat("_TilingSize", value)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntitySpine._SetAlpha = function(self, alpha)
-  -- function num : 0_10
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._spineColor).a = alpha
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
+function StoryEntitySpine:_SetAlpha(alpha)
+  self._spineColor.a = alpha
   if self._spineSke then
-    (self._spineSke).color = self._spineColor
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
+    self._spineSke.color = self._spineColor
     if self._outLine then
-      (self._outLine).intensity = self._outLineIntensity
+      self._outLine.intensity = self._outLineIntensity
     end
-  else
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    if self._spineSkeMultipleTex and (self._spineSkeMultipleTex).Skeleton then
-      ((self._spineSkeMultipleTex).Skeleton).A = alpha
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-      if self._outLine then
-        (self._outLine).intensity = self._outLineIntensity * alpha
-      end
+  elseif self._spineSkeMultipleTex and self._spineSkeMultipleTex.Skeleton then
+    self._spineSkeMultipleTex.Skeleton.A = alpha
+    if self._outLine then
+      self._outLine.intensity = self._outLineIntensity * alpha
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntitySpine._SetBrightness = function(self, brightness)
-  -- function num : 0_11
-  (self._spineColor):Set(brightness, brightness, brightness, (self._spineColor).a)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
+function StoryEntitySpine:_SetBrightness(brightness)
+  self._spineColor:Set(brightness, brightness, brightness, self._spineColor.a)
   if self._spineSke then
-    (self._spineSke).color = self._spineColor
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
+    self._spineSke.color = self._spineColor
     if self._outLine then
-      (self._outLine).intensity = self._outLineIntensity
+      self._outLine.intensity = self._outLineIntensity
     end
-  else
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-    if self._spineSkeMultipleTex and (self._spineSkeMultipleTex).Skeleton then
-      ((self._spineSkeMultipleTex).Skeleton).R = brightness
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      ((self._spineSkeMultipleTex).Skeleton).G = brightness
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      ((self._spineSkeMultipleTex).Skeleton).B = brightness
-      -- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-      if self._outLine then
-        (self._outLine).intensity = self._outLineIntensity * brightness
-      end
+  elseif self._spineSkeMultipleTex and self._spineSkeMultipleTex.Skeleton then
+    self._spineSkeMultipleTex.Skeleton.R = brightness
+    self._spineSkeMultipleTex.Skeleton.G = brightness
+    self._spineSkeMultipleTex.Skeleton.B = brightness
+    if self._outLine then
+      self._outLine.intensity = self._outLineIntensity * brightness
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntitySpine._AddOutLineComponent = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function StoryEntitySpine:_AddOutLineComponent()
   if APPVER125 then
-    self._outLine = (self._gameObject):GetComponent(typeof(OutlineComponent))
+    self._outLine = self._gameObject:GetComponent(typeof(OutlineComponent))
     if not self._outLine then
-      self._outLine = (self._gameObject):AddComponent(typeof(OutlineComponent))
+      self._outLine = self._gameObject:AddComponent(typeof(OutlineComponent))
     end
-    local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIStoryController")
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
+    local camera = GameGlobal.UIStateManager():GetControllerCamera("UIStoryController")
     if camera then
-      (self._outLine).blurNum = 3
-      -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._outLine).intensity = self._outLineIntensity
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._outLine).outlineSize = 1
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._outLine).blendType = (OutlineComponent.BlendType).Blend
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._outLine).m_CustomCamera = camera
+      self._outLine.blurNum = 3
+      self._outLine.intensity = self._outLineIntensity
+      self._outLine.outlineSize = 1
+      self._outLine.blendType = OutlineComponent.BlendType.Blend
+      self._outLine.m_CustomCamera = camera
     else
-      -- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._outLine).enabled = false
+      self._outLine.enabled = false
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntitySpine.GetMaterial = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function StoryEntitySpine:GetMaterial()
   if self._spineSke then
-    return (self._spineSke).material
+    return self._spineSke.material
   end
   if self._spineSkeMultipleTex then
-    if (self._spineSkeMultipleTex).material then
-      return (self._spineSkeMultipleTex).material
-    else
-      if ((self._spineSkeMultipleTex).canvasRenderers).Count > 0 then
-        local materials = {}
-        for i = 0, ((self._spineSkeMultipleTex).canvasRenderers).Count - 1 do
-          local material = (((self._spineSkeMultipleTex).canvasRenderers)[i]):GetMaterial()
-          if material then
-            (table.insert)(materials, material)
-          end
+    if self._spineSkeMultipleTex.material then
+      return self._spineSkeMultipleTex.material
+    elseif self._spineSkeMultipleTex.canvasRenderers.Count > 0 then
+      local materials = {}
+      for i = 0, self._spineSkeMultipleTex.canvasRenderers.Count - 1 do
+        local material = self._spineSkeMultipleTex.canvasRenderers[i]:GetMaterial()
+        if material then
+          table.insert(materials, material)
         end
-        if #materials > 0 then
-          return materials
-        end
+      end
+      if 0 < #materials then
+        return materials
       end
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
-
-

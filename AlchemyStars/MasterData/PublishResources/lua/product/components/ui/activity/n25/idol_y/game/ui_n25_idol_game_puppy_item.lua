@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/game/ui_n25_idol_game_puppy_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolGamePuppyItem", UICustomWidget)
 UIN25IdolGamePuppyItem = UIN25IdolGamePuppyItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolGamePuppyItem.SetData = function(self, idx, icon, txtMain, txtSub, callback)
-  -- function num : 0_0
+function UIN25IdolGamePuppyItem:SetData(idx, icon, txtMain, txtSub, callback)
   self._idx = idx
   self._callback = callback
   self:_SetName()
@@ -17,62 +10,36 @@ UIN25IdolGamePuppyItem.SetData = function(self, idx, icon, txtMain, txtSub, call
   self:_SetSubText(txtSub)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGamePuppyItem.PlayAnim = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (UIWidgetHelper.SetAnimationPlay)(self, "_anim", "uieff_UIN25IdolGamePuppy_Item_name_in")
+function UIN25IdolGamePuppyItem:PlayAnim()
+  UIWidgetHelper.SetAnimationPlay(self, "_anim", "uieff_UIN25IdolGamePuppy_Item_name_in")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGamePuppyItem._SetName = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local txtName = (HelperProxy:GetInstance()):ReplacePlayerName("PlayerName")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtName", txtName)
+function UIN25IdolGamePuppyItem:_SetName()
+  local txtName = HelperProxy:GetInstance():ReplacePlayerName("PlayerName")
+  UIWidgetHelper.SetLocalizationText(self, "_txtName", txtName)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGamePuppyItem._SetIcon = function(self, icon)
-  -- function num : 0_3 , upvalues : _ENV
-  (UIWidgetHelper.SetRawImage)(self, "_icon", icon)
+function UIN25IdolGamePuppyItem:_SetIcon(icon)
+  UIWidgetHelper.SetRawImage(self, "_icon", icon)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGamePuppyItem._SetText = function(self, txtMain)
-  -- function num : 0_4 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtMain", (StringTable.Get)(txtMain))
+function UIN25IdolGamePuppyItem:_SetText(txtMain)
+  UIWidgetHelper.SetLocalizationText(self, "_txtMain", StringTable.Get(txtMain))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGamePuppyItem._SetSubText = function(self, txtSub)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN25IdolGamePuppyItem:_SetSubText(txtSub)
   local enable = txtSub == nil
   if not enable then
-    (UIWidgetHelper.SetLocalizationText)(self, "_txtSub", (StringTable.Get)(txtSub))
+    UIWidgetHelper.SetLocalizationText(self, "_txtSub", StringTable.Get(txtSub))
   end
-  ;
-  (self:GetGameObject("_txtSub")):SetActive(not enable)
-  ;
-  (self:GetGameObject("_mask")):SetActive(not enable)
-  ;
-  (self:GetGameObject("Btn")):SetActive(enable)
-  ;
-  (self:GetGameObject("DisableBtn")):SetActive(not enable)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self:GetGameObject("_txtSub"):SetActive(not enable)
+  self:GetGameObject("_mask"):SetActive(not enable)
+  self:GetGameObject("Btn"):SetActive(enable)
+  self:GetGameObject("DisableBtn"):SetActive(not enable)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGamePuppyItem.BtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIN25IdolGamePuppyItem:BtnOnClick(go)
   if self._callback then
-    (self._callback)(self._idx, self)
+    self._callback(self._idx, self)
   end
 end
-
-

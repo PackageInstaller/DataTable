@@ -1,22 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_up_level_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipUpLevelController", UIController)
 UIPetEquipUpLevelController = UIPetEquipUpLevelController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipUpLevelController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetEquipUpLevelController:Constructor()
   self._petModule = self:GetModule(PetModule)
   self._roleModule = self:GetModule(RoleModule)
   self._atlas = self:GetAsset("UIPetEquip.spriteatlas", LoadType.SpriteAtlas)
-  self._type2icon = {[1] = "spirit_xiangqing_icon3", [2] = "spirit_xiangqing_icon4", [3] = "spirit_xiangqing_icon5"}
+  self._type2icon = {
+    [1] = "spirit_xiangqing_icon3",
+    [2] = "spirit_xiangqing_icon4",
+    [3] = "spirit_xiangqing_icon5"
+  }
   self._waitTimeAnim = 4800
-  self._waitTime = ((Cfg.cfg_global).shakeWaitTime).IntValue or 2000
-  self._shakeX = ((Cfg.cfg_global).shakeOffsetX).IntValue or 10
-  self._shakeY = ((Cfg.cfg_global).shakeOffsetY).IntValue or 10
+  self._waitTime = Cfg.cfg_global.shakeWaitTime.IntValue or 2000
+  self._shakeX = Cfg.cfg_global.shakeOffsetX.IntValue or 10
+  self._shakeY = Cfg.cfg_global.shakeOffsetY.IntValue or 10
   self._needGold = false
   self._needGoldCount = 0
   self._upEffState = 0
@@ -27,45 +24,38 @@ UIPetEquipUpLevelController.Constructor = function(self)
   self._upEffCanJumpTime = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetEquipUpLevelController:OnShow(uiParams)
   self:_GetComponents()
   self._petData = uiParams[1]
-  self._petId = (self._petData):GetTemplateID()
-  self._pstId = (self._petData):GetPstID()
-  self._currentEquipLv = (self._petData):GetEquipLv()
+  self._petId = self._petData:GetTemplateID()
+  self._pstId = self._petData:GetPstID()
+  self._currentEquipLv = self._petData:GetEquipLv()
   self._showEquipLv = self._currentEquipLv
-  self._elem = (self._petData):GetPetFirstElement()
+  self._elem = self._petData:GetPetFirstElement()
   self._equipMaxLv = 0
-  local cfg_equip = (Cfg.cfg_pet_equip)({PetID = self._petId})
-  if cfg_equip and #cfg_equip > 0 then
-    for k,subCfg in pairs(cfg_equip) do
-      if self._equipMaxLv < subCfg.Level then
+  local cfg_equip = Cfg.cfg_pet_equip({
+    PetID = self._petId
+  })
+  if cfg_equip and 0 < #cfg_equip then
+    for k, subCfg in pairs(cfg_equip) do
+      if subCfg.Level > self._equipMaxLv then
         self._equipMaxLv = subCfg.Level
       end
     end
   else
-    do
-      ;
-      (Log.fatal)("###[UIPetEquipUpLevelController] cfg_pet_equip is nil ! id --> ", self._petId)
-      self:_OnValue()
-      self:SetArrowBtnVisible()
-      self:AttachEvent(GameEventType.ItemCountChanged, self._FlushItemsCount)
-      self:AttachEvent(GameEventType.OnOpenGiftsSucc, self._ShowHideUpLvPanel)
-      self:AttachEvent(GameEventType.CloseUIBackPackBox, self._ShowHideUpLvPanel)
-      local jumpData = ((GameGlobal.GetModule)(SerialAutoFightModule)):GetJumpData()
-      jumpData:Track_Pet(self._pstId)
-      jumpData:Track_From(self:GetName())
-    end
+    Log.fatal("###[UIPetEquipUpLevelController] cfg_pet_equip is nil ! id --> ", self._petId)
   end
+  self:_OnValue()
+  self:SetArrowBtnVisible()
+  self:AttachEvent(GameEventType.ItemCountChanged, self._FlushItemsCount)
+  self:AttachEvent(GameEventType.OnOpenGiftsSucc, self._ShowHideUpLvPanel)
+  self:AttachEvent(GameEventType.CloseUIBackPackBox, self._ShowHideUpLvPanel)
+  local jumpData = GameGlobal.GetModule(SerialAutoFightModule):GetJumpData()
+  jumpData:Track_Pet(self._pstId)
+  jumpData:Track_From(self:GetName())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetEquipUpLevelController:_GetComponents()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._iconRaw = self:GetUIComponent("RawImage", "icon")
   self._tipLv = self:GetUIComponent("UILocalizationText", "tipLv")
@@ -80,12 +70,12 @@ UIPetEquipUpLevelController._GetComponents = function(self)
   self._attGrowthPool = self:GetUIComponent("UISelectObjectPath", "attGrowthPool")
   self._elemGrowthPool = self:GetUIComponent("UISelectObjectPath", "elemGrowthPool")
   self._upLevelTips = self:GetGameObject("upLevelTips")
-  ;
-  (self._upLevelTips):SetActive(false)
+  self._upLevelTips:SetActive(false)
   local sop = self:GetUIComponent("UISelectObjectPath", "mainmenu")
   self.currencyMenu = sop:SpawnObject("UICurrencyMenu")
-  ;
-  (self.currencyMenu):SetData({RoleAssetID.RoleAssetGold})
+  self.currencyMenu:SetData({
+    RoleAssetID.RoleAssetGold
+  })
   self._consumeRect = self:GetUIComponent("RectTransform", "xiaohaobi")
   self._leftLine = self:GetUIComponent("Graphic", "leftLine")
   self._consumeName = self:GetUIComponent("Graphic", "consumeName")
@@ -105,185 +95,114 @@ UIPetEquipUpLevelController._GetComponents = function(self)
   self._skipUpEffectGo = self:GetGameObject("skipUpEffect")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIPetEquipUpLevelController:_OnValue()
   self:_ShowHideUpLvPanel()
-  local cfg = (Cfg.cfg_pet_equip_view)[self._petId]
+  local cfg = Cfg.cfg_pet_equip_view[self._petId]
   if cfg then
     local icon = cfg.Icon
-    ;
-    (self._icon):LoadImage(icon)
+    self._icon:LoadImage(icon)
   else
-    do
-      ;
-      (Log.error)("###[UIPetEquipUpLevelController]cfg is nil ! id --> ", self._petId)
-    end
+    Log.error("###[UIPetEquipUpLevelController]cfg is nil ! id --> ", self._petId)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController._ShowHideUpLvPanel = function(self)
-  -- function num : 0_4
+function UIPetEquipUpLevelController:_ShowHideUpLvPanel()
   self:_ShowUpLv(self._currentEquipLv)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController._ShowUpLv = function(self, level)
-  -- function num : 0_5 , upvalues : _ENV
+function UIPetEquipUpLevelController:_ShowUpLv(level)
   local isCurrentLevel = level == self._currentEquipLv
-  ;
-  (self._canLevelupGo):SetActive(isCurrentLevel)
-  ;
-  (self._cannotLevelupGo):SetActive(not isCurrentLevel)
+  self._canLevelupGo:SetActive(isCurrentLevel)
+  self._cannotLevelupGo:SetActive(not isCurrentLevel)
   self._growthSkill = self:_GrowthSkill(level)
-  ;
-  (self._attGrowth):SetActive(not self._growthSkill)
-  ;
-  (self._skillGrowth):SetActive(self._growthSkill)
+  self._attGrowth:SetActive(not self._growthSkill)
+  self._skillGrowth:SetActive(self._growthSkill)
   if self._growthSkill then
     self:_ShowSkillGrowth(level)
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R3 in 'UnsetPending'
-
     if isCurrentLevel then
-      (self._skillGrowthRt).anchoredPosition = Vector2(29, 212)
+      self._skillGrowthRt.anchoredPosition = Vector2(29, 212)
     else
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R3 in 'UnsetPending'
-
-      (self._skillGrowthRt).anchoredPosition = Vector2(29, 95)
+      self._skillGrowthRt.anchoredPosition = Vector2(29, 95)
     end
   else
     self:_ShowAttGrowth(level)
-    -- DECOMPILER ERROR at PC58: Confused about usage of register: R3 in 'UnsetPending'
-
     if isCurrentLevel then
-      (self._attGrowthRt).anchoredPosition = Vector2(4, 178)
+      self._attGrowthRt.anchoredPosition = Vector2(4, 178)
     else
-      -- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
-
-      (self._attGrowthRt).anchoredPosition = Vector2(4, 58)
+      self._attGrowthRt.anchoredPosition = Vector2(4, 58)
     end
   end
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R3 in 'UnsetPending'
-
   if isCurrentLevel then
-    (self._dynamicBgAttr).sizeDelta = Vector2(1169, 431)
-    -- DECOMPILER ERROR at PC79: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._dynamicBgSkill).sizeDelta = Vector2(1169, 431)
+    self._dynamicBgAttr.sizeDelta = Vector2(1169, 431)
+    self._dynamicBgSkill.sizeDelta = Vector2(1169, 431)
   else
-    -- DECOMPILER ERROR at PC86: Confused about usage of register: R3 in 'UnsetPending'
-
-    (self._dynamicBgAttr).sizeDelta = Vector2(1169, 251)
-    -- DECOMPILER ERROR at PC92: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._dynamicBgSkill).sizeDelta = Vector2(1169, 251)
+    self._dynamicBgAttr.sizeDelta = Vector2(1169, 251)
+    self._dynamicBgSkill.sizeDelta = Vector2(1169, 251)
   end
-  ;
-  (self._lvFrom):SetText((StringTable.Get)("str_pet_equip_Lv") .. level)
-  ;
-  (self._lvTo):SetText((StringTable.Get)("str_pet_equip_Lv") .. level + 1)
+  self._lvFrom:SetText(StringTable.Get("str_pet_equip_Lv") .. level)
+  self._lvTo:SetText(StringTable.Get("str_pet_equip_Lv") .. level + 1)
   if isCurrentLevel then
     self:_ShowItems(level)
     self:CheckOpenGift()
   else
-    (self._openGiftTips):SetActive(false)
+    self._openGiftTips:SetActive(false)
   end
-  -- DECOMPILER ERROR: 9 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.GoldDOShakePosition = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if self._goldTweer and (self._goldTweer):IsPlaying() then
-    return 
+function UIPetEquipUpLevelController:GoldDOShakePosition()
+  if self._goldTweer and self._goldTweer:IsPlaying() then
+    return
   end
   if self._goldTweer then
-    (self._goldTweer):Kill()
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._consumeRect).anchoredPosition = Vector2(0, 0)
+    self._goldTweer:Kill()
+    self._consumeRect.anchoredPosition = Vector2(0, 0)
   end
   self:SetColor(false)
-  self._goldTweer = ((self._consumeRect):DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0))):OnComplete(function()
-    -- function num : 0_6_0 , upvalues : self
+  self._goldTweer = self._consumeRect:DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0)):OnComplete(function()
     self:StartTimer()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.StartTimer = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIPetEquipUpLevelController:StartTimer()
   if self.goldEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.goldEvent)
+    GameGlobal.Timer():CancelEvent(self.goldEvent)
     self.goldEvent = nil
   end
-  self.goldEvent = ((GameGlobal.Timer)()):AddEvent(self._waitTime, function()
-    -- function num : 0_7_0 , upvalues : self
+  self.goldEvent = GameGlobal.Timer():AddEvent(self._waitTime, function()
     self:SetColor(true)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.SetColor = function(self, isDefaultColor)
-  -- function num : 0_8 , upvalues : _ENV
-  local color = nil
+function UIPetEquipUpLevelController:SetColor(isDefaultColor)
+  local color
   if isDefaultColor then
     color = Color(0.96, 0.81, 0.14)
   else
     color = Color(1, 0.4, 0.32)
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
   if color ~= nil then
-    (self._leftLine).color = color
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._consumeName).color = color
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._coinBg).color = color
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._needcoin).color = color
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._rightLine).color = color
+    self._leftLine.color = color
+    self._consumeName.color = color
+    self._coinBg.color = color
+    self._needcoin.color = color
+    self._rightLine.color = color
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController._ShowItems = function(self, level)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg_equip = (Cfg.cfg_pet_equip)({PetID = self._petId, Level = level + 1})
+function UIPetEquipUpLevelController:_ShowItems(level)
+  local cfg_equip = Cfg.cfg_pet_equip({
+    PetID = self._petId,
+    Level = level + 1
+  })
   if cfg_equip then
-    local mats_tmp = (cfg_equip[1]).NeedItem
+    local mats_tmp = cfg_equip[1].NeedItem
     local mats = {}
-    local goldItem = nil
+    local goldItem
     for i = 1, #mats_tmp do
       local mat_tmp = mats_tmp[i]
       if mat_tmp[1] ~= RoleAssetID.RoleAssetGold then
@@ -292,219 +211,172 @@ UIPetEquipUpLevelController._ShowItems = function(self, level)
         goldItem = mat_tmp
       end
     end
-    ;
-    (self._itemPool):SpawnObjects("UIPetEquipUpLvItem", #mats)
-    self._items = (self._itemPool):GetAllSpawnList()
+    self._itemPool:SpawnObjects("UIPetEquipUpLvItem", #mats)
+    self._items = self._itemPool:GetAllSpawnList()
     for i = 1, #mats do
-      local widget = (self._items)[i]
+      local widget = self._items[i]
       widget:SetData(mats[i])
     end
     if goldItem then
-      (self._goldGo):SetActive(true)
+      self._goldGo:SetActive(true)
       self._needGold = true
       self._needGoldCount = goldItem[2]
-      ;
-      (self._goldNeedText):SetText(goldItem[2])
+      self._goldNeedText:SetText(goldItem[2])
     else
       self._needGold = false
-      ;
-      (self._goldGo):SetActive(false)
+      self._goldGo:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController._FlushItemsCount = function(self)
-  -- function num : 0_10
+function UIPetEquipUpLevelController:_FlushItemsCount()
   if self._items then
     for i = 1, #self._items do
-      local widget = (self._items)[i]
+      local widget = self._items[i]
       widget:FlushCount()
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.upReqBtnOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIPetEquipUpLevelController:upReqBtnOnClick()
   if self:_CheckMats() then
-    do
-      if self._needGold then
-        local bagNum = (self._roleModule):GetGold()
-        if bagNum < self._needGoldCount then
-          self:GoldDOShakePosition()
-          return 
-        end
-      end
-      self:Lock("UIPetEquipUpLevelController:upReqBtnOnClick")
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(self._OnUpReqBtnOnClick, self)
-      if self._giftEnough then
-        local title = (StringTable.Get)("str_pet_config_equip_open_gift_title")
-        self:ShowDialog("UIOpenGiftGetMatController", self._giftDatas, title)
+    if self._needGold then
+      local bagNum = self._roleModule:GetGold()
+      if bagNum < self._needGoldCount then
+        self:GoldDOShakePosition()
+        return
       end
     end
+    self:Lock("UIPetEquipUpLevelController:upReqBtnOnClick")
+    GameGlobal.TaskManager():StartTask(self._OnUpReqBtnOnClick, self)
+  elseif self._giftEnough then
+    local title = StringTable.Get("str_pet_config_equip_open_gift_title")
+    self:ShowDialog("UIOpenGiftGetMatController", self._giftDatas, title)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.CheckOpenGift = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIPetEquipUpLevelController:CheckOpenGift()
   local show = false
   local goldEnough = false
-  do
-    if self._needGold then
-      local bagNum = (self._roleModule):GetGold()
-      if bagNum < self._needGoldCount then
-        goldEnough = false
-      else
-        goldEnough = true
-      end
-      if not goldEnough then
-        (self._openGiftTips):SetActive(false)
-        return 
-      end
+  if self._needGold then
+    local bagNum = self._roleModule:GetGold()
+    if bagNum < self._needGoldCount then
+      goldEnough = false
+    else
+      goldEnough = true
     end
-    if not self:_CheckMats(true) then
-      local needList = self:GetNeedList()
-      local giftEnough, giftDatas = (HelperProxy:GetInstance()):GetGiftsFromNeedMat(needList)
-      if giftEnough then
-        show = true
-      end
-      self._giftEnough = giftEnough
-      self._giftDatas = giftDatas
-    end
-    do
-      ;
-      (self._openGiftTips):SetActive(show)
+    if not goldEnough then
+      self._openGiftTips:SetActive(false)
+      return
     end
   end
+  if not self:_CheckMats(true) then
+    local needList = self:GetNeedList()
+    local giftEnough, giftDatas = HelperProxy:GetInstance():GetGiftsFromNeedMat(needList)
+    if giftEnough then
+      show = true
+    end
+    self._giftEnough = giftEnough
+    self._giftDatas = giftDatas
+  end
+  self._openGiftTips:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.GetNeedList = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIPetEquipUpLevelController:GetNeedList()
   local needList = {}
   for i = 1, #self._items do
-    local item = (self._items)[i]
+    local item = self._items[i]
     local mat = item:GetGapsCount()
     if mat then
-      (table.insert)(needList, mat)
+      table.insert(needList, mat)
     end
   end
   return needList
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController._CheckMats = function(self, noAnim)
-  -- function num : 0_14
+function UIPetEquipUpLevelController:_CheckMats(noAnim)
   local enough = true
   for i = 1, #self._items do
-    local widget = (self._items)[i]
+    local widget = self._items[i]
     if not widget:CheckEnough() then
       enough = false
-      if noAnim then
-        break
+      if not noAnim then
+        goto lbl_17
       end
+      do break end
+      ::lbl_17::
       widget:Blink()
       break
     end
   end
-  do
-    return enough
-  end
+  return enough
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.OnHide = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIPetEquipUpLevelController:OnHide()
   if self._goldTweer then
-    (self._goldTweer):Kill()
+    self._goldTweer:Kill()
     self._goldTweer = nil
   end
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
   if self.goldEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.goldEvent)
+    GameGlobal.Timer():CancelEvent(self.goldEvent)
     self.goldEvent = nil
   end
-  local jumpData = ((GameGlobal.GetModule)(SerialAutoFightModule)):GetJumpData()
+  local jumpData = GameGlobal.GetModule(SerialAutoFightModule):GetJumpData()
   jumpData:Track_From()
   jumpData:Track_Pet()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.UpLevelSucc = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundEquipUpLevel)
-  local nowMs = (GameGlobal:GetInstance()):GetCurrentTime()
+function UIPetEquipUpLevelController:UpLevelSucc()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundEquipUpLevel)
+  local nowMs = GameGlobal:GetInstance():GetCurrentTime()
   self._upEffState = 1
   self._upEffEndTime = nowMs + self._upEffDurationState1
   self._upEffCanJumpTime = nowMs + self._upEffDurationCanJump
-  ;
-  (self._tipLv):SetText((StringTable.Get)("str_pet_equip_Lv") .. self._currentEquipLv)
-  ;
-  (self._upAnim):Play("uieff_PetEquipLevel_LevelUp")
-  local state = (self._upAnim):get_Item("uieff_PetEquipLevel_LevelUp")
+  self._tipLv:SetText(StringTable.Get("str_pet_equip_Lv") .. self._currentEquipLv)
+  self._upAnim:Play("uieff_PetEquipLevel_LevelUp")
+  local state = self._upAnim:get_Item("uieff_PetEquipLevel_LevelUp")
   state.normalizedTime = 0
   if not self._growthSkill then
     self:ItemsAnim()
   end
-  ;
-  (self._skipUpEffectGo):SetActive(true)
+  self._skipUpEffectGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.OnUpdate = function(self, dms)
-  -- function num : 0_17 , upvalues : _ENV
+function UIPetEquipUpLevelController:OnUpdate(dms)
   if self._growthElems then
     for i = 1, #self._growthElems do
-      local item = (self._growthElems)[i]
+      local item = self._growthElems[i]
       if item then
         item:Update(dms)
       end
     end
   end
-  do
-    if self._growthAtts then
-      for i = 1, #self._growthAtts do
-        local item = (self._growthAtts)[i]
-        if item then
-          item:Update(dms)
-        end
+  if self._growthAtts then
+    for i = 1, #self._growthAtts do
+      local item = self._growthAtts[i]
+      if item then
+        item:Update(dms)
       end
     end
-    do
-      if self._upEffState == 1 or self._upEffState == 2 then
-        local nowMs = (GameGlobal:GetInstance()):GetCurrentTime()
-        -- DECOMPILER ERROR at PC52: Unhandled construct in 'MakeBoolean' P1
-
-        -- DECOMPILER ERROR at PC52: Unhandled construct in 'MakeBoolean' P1
-
-        if self._upEffCanJumpTime < nowMs and self._upEffState == 1 and self._upEffEndTime < nowMs then
+  end
+  if self._upEffState == 1 or self._upEffState == 2 then
+    local nowMs = GameGlobal:GetInstance():GetCurrentTime()
+    if nowMs > self._upEffCanJumpTime then
+      if self._upEffState == 1 then
+        if nowMs > self._upEffEndTime then
           self._upEffState = 2
           self._upEffEndTime = nowMs + self._upEffDurationState2
-          ;
-          (self._upLevelTips):SetActive(true)
+          self._upLevelTips:SetActive(true)
         end
-      end
-      if self._upEffState == 2 and self._upEffEndTime < nowMs then
+      elseif self._upEffState == 2 and nowMs > self._upEffEndTime then
         self._upEffState = 0
-        ;
-        (self._upLevelTips):SetActive(false)
-        ;
-        (self._skipUpEffectGo):SetActive(false)
-        if self._equipMaxLv <= self._currentEquipLv then
+        self._upLevelTips:SetActive(false)
+        self._skipUpEffectGo:SetActive(false)
+        if self._currentEquipLv >= self._equipMaxLv then
           self:CloseDialog()
         else
           self:_ShowHideUpLvPanel()
@@ -514,13 +386,10 @@ UIPetEquipUpLevelController.OnUpdate = function(self, dms)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.PlayShaderAnim = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local mat = (self._iconRaw).material
+function UIPetEquipUpLevelController:PlayShaderAnim()
+  local mat = self._iconRaw.material
   mat:SetFloat("_Intensity", 0)
-  local seq = (((DG.Tweening).DOTween).Sequence)()
+  local seq = DG.Tweening.DOTween.Sequence()
   local tween_1 = mat:DOFloat(0.5, "_Intensity", 0.1)
   seq:Append(tween_1)
   local tween_2 = mat:DOFloat(3.48, "_Intensity", 1.333)
@@ -533,111 +402,92 @@ UIPetEquipUpLevelController.PlayShaderAnim = function(self)
   seq:Append(tween_4)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.ItemsAnim = function(self)
-  -- function num : 0_19
+function UIPetEquipUpLevelController:ItemsAnim()
   for i = 1, #self._growthElems do
-    local item = (self._growthElems)[i]
+    local item = self._growthElems[i]
     item:UpLevelAnim()
   end
   for i = 1, #self._growthAtts do
-    local item = (self._growthAtts)[i]
+    local item = self._growthAtts[i]
     item:UpLevelAnim()
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController._OnUpReqBtnOnClick = function(self, TT)
-  -- function num : 0_20 , upvalues : _ENV
-  local res = (self._petModule):ReqUpEquipLv(TT, self._pstId)
+function UIPetEquipUpLevelController:_OnUpReqBtnOnClick(TT)
+  local res = self._petModule:ReqUpEquipLv(TT, self._pstId)
   self:UnLock("UIPetEquipUpLevelController:upReqBtnOnClick")
   if res:GetSucc() then
-    self._currentEquipLv = (self._petData):GetEquipLv()
+    self._currentEquipLv = self._petData:GetEquipLv()
     self._showEquipLv = self._currentEquipLv
     self:SetArrowBtnVisible()
     self:UpLevelSucc()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnEquipDataChanged)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnEquipDataChanged)
   else
     local result = res:GetResult()
-    ;
-    (Log.error)("###[UIPetEquipUpLevelController] RequestPetEquipUpGrade fail , result --> ", result)
+    Log.error("###[UIPetEquipUpLevelController] RequestPetEquipUpGrade fail , result --> ", result)
     local errorStr = ""
     if result == PET_RESULT_CODE.PET_EQUIP_NOT_OPEN then
-      errorStr = (StringTable.Get)("str_pet_equip_PET_EQUIP_NOT_OPEN")
-    else
-      if result == PET_RESULT_CODE.PET_EQUIP_ITEM_NOT_ENOUGH then
-        errorStr = (StringTable.Get)("str_pet_equip_PET_EQUIP_ITEM_NOT_ENOUGH")
-      else
-        if result == PET_RESULT_CODE.PET_EQUIP_NOT_CFG then
-          errorStr = (StringTable.Get)("str_pet_equip_PET_EQUIP_NOT_CFG")
-        else
-          if result == PET_RESULT_CODE.PET_EQUIP_LV_MAX then
-            errorStr = (StringTable.Get)("str_pet_equip_PET_EQUIP_LV_MAX")
-          end
-        end
-      end
+      errorStr = StringTable.Get("str_pet_equip_PET_EQUIP_NOT_OPEN")
+    elseif result == PET_RESULT_CODE.PET_EQUIP_ITEM_NOT_ENOUGH then
+      errorStr = StringTable.Get("str_pet_equip_PET_EQUIP_ITEM_NOT_ENOUGH")
+    elseif result == PET_RESULT_CODE.PET_EQUIP_NOT_CFG then
+      errorStr = StringTable.Get("str_pet_equip_PET_EQUIP_NOT_CFG")
+    elseif result == PET_RESULT_CODE.PET_EQUIP_LV_MAX then
+      errorStr = StringTable.Get("str_pet_equip_PET_EQUIP_LV_MAX")
     end
-    ;
-    (ToastManager.ShowToast)(errorStr)
+    ToastManager.ShowToast(errorStr)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController._GrowthSkill = function(self, level)
-  -- function num : 0_21 , upvalues : _ENV
+function UIPetEquipUpLevelController:_GrowthSkill(level)
   local nextLv = level + 1
-  if self._equipMaxLv < nextLv then
+  if nextLv > self._equipMaxLv then
     nextLv = self._equipMaxLv
   end
-  local cfg_pet_equip = (Cfg.cfg_pet_equip)({PetID = self._petId, Level = nextLv})
+  local cfg_pet_equip = Cfg.cfg_pet_equip({
+    PetID = self._petId,
+    Level = nextLv
+  })
   if cfg_pet_equip then
-    if (cfg_pet_equip[1]).IsParamImprove == 1 then
+    if cfg_pet_equip[1].IsParamImprove == 1 then
       return true
     end
     return false
   else
-    ;
-    (Log.fatal)("###[UIPetEquipUpLevelController] cfg_pet_equip is nil ! id --> ", self._petId, "| lv --> ", nextLv)
+    Log.fatal("###[UIPetEquipUpLevelController] cfg_pet_equip is nil ! id --> ", self._petId, "| lv --> ", nextLv)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController._ShowSkillGrowth = function(self, level)
-  -- function num : 0_22 , upvalues : _ENV
+function UIPetEquipUpLevelController:_ShowSkillGrowth(level)
   local nextLv = level + 1
-  local skillID = (self._petData):GetPetPassiveSkill()
+  local skillID = self._petData:GetPetPassiveSkill()
   local cfg = BattleSkillCfg(skillID)
   if cfg then
-    local descStr = (HelperProxy:GetInstance()):GetEquipSkillDesc(cfg.Desc, (self._petData):GetTemplateID(), nextLv, skillID)
-    do
-      if not self._skillInfo then
-        local skillInfoPool = self:GetUIComponent("UISelectObjectPath", "skillInfo")
-        self._skillInfo = skillInfoPool:SpawnObject("UIPetEquipLevelupSkill")
-      end
-      ;
-      (self._skillInfo):SetData(cfg.Icon, descStr)
+    local descStr = HelperProxy:GetInstance():GetEquipSkillDesc(cfg.Desc, self._petData:GetTemplateID(), nextLv, skillID)
+    if not self._skillInfo then
+      local skillInfoPool = self:GetUIComponent("UISelectObjectPath", "skillInfo")
+      self._skillInfo = skillInfoPool:SpawnObject("UIPetEquipLevelupSkill")
     end
+    self._skillInfo:SetData(cfg.Icon, descStr)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController._ShowAttGrowth = function(self, level)
-  -- function num : 0_23 , upvalues : _ENV
-  local cfg_pet_equip = (Cfg.cfg_pet_equip)({PetID = self._petId, Level = level})
+function UIPetEquipUpLevelController:_ShowAttGrowth(level)
+  local cfg_pet_equip = Cfg.cfg_pet_equip({
+    PetID = self._petId,
+    Level = level
+  })
   if not cfg_pet_equip then
-    (Log.fatal)("###[UIPetEquipUpLevelController]cfg_pet_equip is nil ! id --> ", self._petId, "|level --> ", level)
-    return 
+    Log.fatal("###[UIPetEquipUpLevelController]cfg_pet_equip is nil ! id --> ", self._petId, "|level --> ", level)
+    return
   end
-  local cfg_pet_equip_next_lv = (Cfg.cfg_pet_equip)({PetID = self._petId, Level = level + 1})
+  local cfg_pet_equip_next_lv = Cfg.cfg_pet_equip({
+    PetID = self._petId,
+    Level = level + 1
+  })
   if not cfg_pet_equip_next_lv then
-    (Log.fatal)("###[UIPetEquipUpLevelController]cfg_pet_equip_next_lv is nil ! id --> ", self._petId, "|level --> ", level + 1)
-    return 
+    Log.fatal("###[UIPetEquipUpLevelController]cfg_pet_equip_next_lv is nil ! id --> ", self._petId, "|level --> ", level + 1)
+    return
   end
   local cfgData = cfg_pet_equip[1]
   local nextData = cfg_pet_equip_next_lv[1]
@@ -646,105 +496,77 @@ UIPetEquipUpLevelController._ShowAttGrowth = function(self, level)
     local attType = 1
     local attFrom = cfgData.Attack
     local attTo = nextData.Attack
-    local sprite = (self._atlas):GetSprite((self._type2icon)[attType])
+    local sprite = self._atlas:GetSprite(self._type2icon[attType])
     local attInfo = UIPetEquipGrowthAttInfo:New(attType, attFrom, attTo, sprite)
     growthAtts[#growthAtts + 1] = attInfo
   else
-    do
-      ;
-      (Log.fatal)("###[UIPetEquipUpLevelController] {if nextData.Attack and cfgData.Attack then} false ! id --> ", self._petId, "| lv --> ", level)
-      if nextData.Defence and cfgData.Defence then
-        local attType = 2
-        local attFrom = cfgData.Defence
-        local attTo = nextData.Defence
-        local sprite = (self._atlas):GetSprite((self._type2icon)[attType])
-        local attInfo = UIPetEquipGrowthAttInfo:New(attType, attFrom, attTo, sprite)
-        growthAtts[#growthAtts + 1] = attInfo
-      else
-        do
-          ;
-          (Log.fatal)("###[UIPetEquipUpLevelController] {if nextData.Defence and cfgData.Defence then} false ! id --> ", self._petId, "| lv --> ", level)
-          if nextData.Health and cfgData.Health then
-            local attType = 3
-            local attFrom = cfgData.Health
-            local attTo = nextData.Health
-            local sprite = (self._atlas):GetSprite((self._type2icon)[attType])
-            local attInfo = UIPetEquipGrowthAttInfo:New(attType, attFrom, attTo, sprite)
-            growthAtts[#growthAtts + 1] = attInfo
-          else
-            do
-              ;
-              (Log.fatal)("###[UIPetEquipUpLevelController] {if nextData.Health and cfgData.Health then} false ! id --> ", self._petId, "| lv --> ", level)
-              ;
-              (self._attGrowthPool):SpawnObjects("UIPetEquipGrowthAttItem", #growthAtts)
-              self._growthAtts = (self._attGrowthPool):GetAllSpawnList()
-              for i = 1, #growthAtts do
-                local att = (self._growthAtts)[i]
-                att:SetData(growthAtts[i])
-              end
-              local growthElems = {}
-              if nextData.PropertyRestraint and cfgData.PropertyRestraint then
-                local attFrom = cfgData.PropertyRestraint
-                local attTo = nextData.PropertyRestraint
-                local elemInfo = UIPetEquipGrowthElemInfo:New(self._elem, attFrom, attTo)
-                growthElems[#growthElems + 1] = elemInfo
-              else
-                do
-                  ;
-                  (Log.fatal)("###[UIPetEquipUpLevelController] {if nextData.PropertyRestraint and cfgData.PropertyRestraint then} false ! id --> ", self._petId, "| lv --> ", level)
-                  ;
-                  (self._elemGrowthPool):SpawnObjects("UIPetEquipGrowthElemItem", #growthElems)
-                  self._growthElems = (self._elemGrowthPool):GetAllSpawnList()
-                  for i = 1, #growthElems do
-                    local elem = (self._growthElems)[i]
-                    elem:SetData(growthElems[i])
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    Log.fatal("###[UIPetEquipUpLevelController] {if nextData.Attack and cfgData.Attack then} false ! id --> ", self._petId, "| lv --> ", level)
+  end
+  if nextData.Defence and cfgData.Defence then
+    local attType = 2
+    local attFrom = cfgData.Defence
+    local attTo = nextData.Defence
+    local sprite = self._atlas:GetSprite(self._type2icon[attType])
+    local attInfo = UIPetEquipGrowthAttInfo:New(attType, attFrom, attTo, sprite)
+    growthAtts[#growthAtts + 1] = attInfo
+  else
+    Log.fatal("###[UIPetEquipUpLevelController] {if nextData.Defence and cfgData.Defence then} false ! id --> ", self._petId, "| lv --> ", level)
+  end
+  if nextData.Health and cfgData.Health then
+    local attType = 3
+    local attFrom = cfgData.Health
+    local attTo = nextData.Health
+    local sprite = self._atlas:GetSprite(self._type2icon[attType])
+    local attInfo = UIPetEquipGrowthAttInfo:New(attType, attFrom, attTo, sprite)
+    growthAtts[#growthAtts + 1] = attInfo
+  else
+    Log.fatal("###[UIPetEquipUpLevelController] {if nextData.Health and cfgData.Health then} false ! id --> ", self._petId, "| lv --> ", level)
+  end
+  self._attGrowthPool:SpawnObjects("UIPetEquipGrowthAttItem", #growthAtts)
+  self._growthAtts = self._attGrowthPool:GetAllSpawnList()
+  for i = 1, #growthAtts do
+    local att = self._growthAtts[i]
+    att:SetData(growthAtts[i])
+  end
+  local growthElems = {}
+  if nextData.PropertyRestraint and cfgData.PropertyRestraint then
+    local attFrom = cfgData.PropertyRestraint
+    local attTo = nextData.PropertyRestraint
+    local elemInfo = UIPetEquipGrowthElemInfo:New(self._elem, attFrom, attTo)
+    growthElems[#growthElems + 1] = elemInfo
+  else
+    Log.fatal("###[UIPetEquipUpLevelController] {if nextData.PropertyRestraint and cfgData.PropertyRestraint then} false ! id --> ", self._petId, "| lv --> ", level)
+  end
+  self._elemGrowthPool:SpawnObjects("UIPetEquipGrowthElemItem", #growthElems)
+  self._growthElems = self._elemGrowthPool:GetAllSpawnList()
+  for i = 1, #growthElems do
+    local elem = self._growthElems[i]
+    elem:SetData(growthElems[i])
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.upInfoBtnOnClick = function(self)
-  -- function num : 0_24
+function UIPetEquipUpLevelController:upInfoBtnOnClick()
   if self._growthSkill then
-    local skillID = (self._petData):GetPetPassiveSkill()
+    local skillID = self._petData:GetPetPassiveSkill()
     self:ShowDialog("UIPetEquipUpLvInfoController", self._petData, self._currentEquipLv, skillID)
   else
-    do
-      self:ShowDialog("UIPetEquipUpLvInfoController", self._petData, self._currentEquipLv)
-    end
+    self:ShowDialog("UIPetEquipUpLvInfoController", self._petData, self._currentEquipLv)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.UpInfoBtn2OnClick = function(self)
-  -- function num : 0_25
+function UIPetEquipUpLevelController:UpInfoBtn2OnClick()
   self:upInfoBtnOnClick()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.LeftArrowBtnOnClick = function(self)
-  -- function num : 0_26
-  if self._currentEquipLv < self._showEquipLv then
+function UIPetEquipUpLevelController:LeftArrowBtnOnClick()
+  if self._showEquipLv > self._currentEquipLv then
     self._showEquipLv = self._showEquipLv - 1
     self:_ShowUpLv(self._showEquipLv)
     self:SetArrowBtnVisible()
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.RightArrowBtnOnClick = function(self)
-  -- function num : 0_27
+function UIPetEquipUpLevelController:RightArrowBtnOnClick()
   if self._showEquipLv < self._equipMaxLv - 1 then
     self._showEquipLv = self._showEquipLv + 1
     self:_ShowUpLv(self._showEquipLv)
@@ -752,26 +574,16 @@ UIPetEquipUpLevelController.RightArrowBtnOnClick = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.SetArrowBtnVisible = function(self)
-  -- function num : 0_28
-  (self._leftArrowBtnGo):SetActive(self._currentEquipLv < self._showEquipLv)
-  ;
-  (self._rightArrowBtnGo):SetActive(self._showEquipLv < self._equipMaxLv - 1)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIPetEquipUpLevelController:SetArrowBtnVisible()
+  self._leftArrowBtnGo:SetActive(self._showEquipLv > self._currentEquipLv)
+  self._rightArrowBtnGo:SetActive(self._showEquipLv < self._equipMaxLv - 1)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLevelController.SkipUpEffectOnClick = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local nowMs = (GameGlobal:GetInstance()):GetCurrentTime()
-  if self._upEffCanJumpTime < nowMs and self._upEffState == 1 then
+function UIPetEquipUpLevelController:SkipUpEffectOnClick()
+  local nowMs = GameGlobal:GetInstance():GetCurrentTime()
+  if nowMs > self._upEffCanJumpTime and self._upEffState == 1 then
     self._upEffEndTime = 0
-    local state = (self._upAnim):get_Item("uieff_PetEquipLevel_LevelUp")
+    local state = self._upAnim:get_Item("uieff_PetEquipLevel_LevelUp")
     state.normalizedTime = 1
   end
 end
-
-

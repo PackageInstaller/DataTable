@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_random_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLBuffLogicRandomCard", LLBuffLogicBase)
 LLBuffLogicRandomCard = LLBuffLogicRandomCard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicRandomCard.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicRandomCard:Constructor(buffObj, logicParam)
   self.cardPoolID = logicParam.cardPoolID
   self.castNum = logicParam.castNum
   if self.castNum == nil then
@@ -16,56 +9,44 @@ LLBuffLogicRandomCard.Constructor = function(self, buffObj, logicParam)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicRandomCard.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function LLBuffLogicRandomCard:DoLogic(notify)
   local notifyEntity = notify:GetNotifyEntity()
-  self.cardDataList = (LuckLandData:GetInstance()):CurCardDatas()
-  local targets = (self._buffObj):GetTargets()
-  for _,target in ipairs(targets) do
-    local randCardCastNum = (LocalDB.GetInt)("LLBuffLogicRandomCard_Count")
+  self.cardDataList = LuckLandData:GetInstance():CurCardDatas()
+  local targets = self._buffObj:GetTargets()
+  for _, target in ipairs(targets) do
+    local randCardCastNum = LocalDB.GetInt("LLBuffLogicRandomCard_Count")
     if randCardCastNum == nil then
       randCardCastNum = 0
     end
     randCardCastNum = randCardCastNum + 1
-    if self.castNum <= randCardCastNum then
+    if randCardCastNum >= self.castNum then
       self:DoLogicSingle(target)
-      ;
-      (LocalDB.SetInt)("LLBuffLogicRandomCard_Count", 0)
+      LocalDB.SetInt("LLBuffLogicRandomCard_Count", 0)
     else
-      ;
-      (LocalDB.SetInt)("LLBuffLogicRandomCard_Count", randCardCastNum)
+      LocalDB.SetInt("LLBuffLogicRandomCard_Count", randCardCastNum)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicRandomCard.DoLogicSingle = function(self, target)
-  -- function num : 0_2 , upvalues : _ENV
+function LLBuffLogicRandomCard:DoLogicSingle(target)
   local module = GameGlobal:GetLuckLandModule()
   local poolList = {}
   poolList[1] = self.cardPoolID
   local cards = module:RandomCards(poolList, 1)
   for i = 1, #cards do
     local cardID = cards[i]
-    local name = (StringTable.Get)((cardID._cfg).CardName)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_luckland_make_fantsy_card", name))
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LuckLandSelectCard, (cardID._cfg).ID, 1)
-    local mgr = (LuckLandInnerGameHelper.GetEntityMgr)()
+    local name = StringTable.Get(cardID._cfg.CardName)
+    ToastManager.ShowToast(StringTable.Get("str_luckland_make_fantsy_card", name))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.LuckLandSelectCard, cardID._cfg.ID, 1)
+    local mgr = LuckLandInnerGameHelper.GetEntityMgr()
     if mgr then
       local pets = mgr:GetBackpackPets()
       if pets then
         local lastPet = pets[#pets]
         if lastPet then
-          (self.cardDataList):AddCardData((cardID._cfg).ID, lastPet:ID(), 1)
+          self.cardDataList:AddCardData(cardID._cfg.ID, lastPet:ID(), 1)
         end
       end
     end
   end
 end
-
-

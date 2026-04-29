@@ -1,68 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/player/season_maze_player_foot_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazePlayerFootEffect", Object)
 SeasonMazePlayerFootEffect = SeasonMazePlayerFootEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazePlayerFootEffect.Constructor = function(self, rootTransform)
-  -- function num : 0_0
+function SeasonMazePlayerFootEffect:Constructor(rootTransform)
   self._rootTransform = rootTransform
   self:_LoadEffect()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayerFootEffect.Dispose = function(self)
-  -- function num : 0_1
+function SeasonMazePlayerFootEffect:Dispose()
   if self._resRequest then
-    (self._resRequest):Dispose()
+    self._resRequest:Dispose()
     self._resRequest = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayerFootEffect._LoadEffect = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._resRequest = (ResourceManager:GetInstance()):SyncLoadAsset("eff_Scene_yd_rootpoint.prefab", LoadType.GameObject)
+function SeasonMazePlayerFootEffect:_LoadEffect()
+  self._resRequest = ResourceManager:GetInstance():SyncLoadAsset("eff_Scene_yd_rootpoint.prefab", LoadType.GameObject)
   if not self._resRequest then
-    (Log.error)("加载不到赛季秘境主角特效")
-    return 
+    Log.error("加载不到赛季秘境主角特效")
+    return
   end
-  self._effectGO = (self._resRequest).Obj
-  ;
-  ((self._effectGO).transform):SetParent(self._rootTransform)
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._effectGO).transform).localPosition = Vector3.zero
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._effectGO).transform).localRotation = (Quaternion.Euler)(0, 0, 0)
-  ;
-  (self._effectGO):SetActive(true)
+  self._effectGO = self._resRequest.Obj
+  self._effectGO.transform:SetParent(self._rootTransform)
+  self._effectGO.transform.localPosition = Vector3.zero
+  self._effectGO.transform.localRotation = Quaternion.Euler(0, 0, 0)
+  self._effectGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayerFootEffect.Stop = function(self)
-  -- function num : 0_3
+function SeasonMazePlayerFootEffect:Stop()
   if self._effectGO then
-    (self._effectGO):SetActive(false)
+    self._effectGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayerFootEffect.Play = function(self)
-  -- function num : 0_4
+function SeasonMazePlayerFootEffect:Play()
   if self._effectGO then
-    (self._effectGO):SetActive(true)
+    self._effectGO:SetActive(true)
   end
 end
-
-

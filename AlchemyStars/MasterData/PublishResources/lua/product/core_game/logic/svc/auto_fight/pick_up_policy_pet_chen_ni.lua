@@ -1,33 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pet_chen_ni.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_PetChenNi", PickUpPolicy_Base)
 PickUpPolicy_PetChenNi = PickUpPolicy_PetChenNi
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_PetChenNi.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0
+function PickUpPolicy_PetChenNi:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
-  local casterPos = (petEntity:GridLocation()).Position
+  local casterPos = petEntity:GridLocation().Position
   local validPosIdxList, validPosList = self:_CalcPickUpValidGridList(petEntity, activeSkillID)
   local pickPosList, atkPosList, targetIds = self:_CalPickPosPolicyPetChenNi(petEntity, casterPos, validPosIdxList)
   return pickPosList, atkPosList, targetIds
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetChenNi._CalPickPosPolicyPetChenNi = function(self, petEntity, casterPos, validPosIdxList)
-  -- function num : 0_1 , upvalues : _ENV
-  local boardService = (self._world):GetService("BoardLogic")
+function PickUpPolicy_PetChenNi:_CalPickPosPolicyPetChenNi(petEntity, casterPos, validPosIdxList)
+  local boardService = self._world:GetService("BoardLogic")
   local pieceType = PieceType.Yellow
-  local firstPickPos = nil
+  local firstPickPos
   local hori, vert = 0, 0
-  for index,_ in pairs(validPosIdxList) do
+  for index, _ in pairs(validPosIdxList) do
     local v = self:_Index2Pos(index)
     if v.y == casterPos.y and boardService:GetPieceType(v) ~= pieceType and not boardService:IsPosBlock(v, BlockFlag.ChangeElement) then
       vert = vert + 1
@@ -36,40 +26,37 @@ PickUpPolicy_PetChenNi._CalPickPosPolicyPetChenNi = function(self, petEntity, ca
       hori = hori + 1
     end
   end
-  local pickPos1, pickPos2 = nil, nil
+  local pickPos1, pickPos2
   local count1, count2 = 0, 0
-  if hori < vert then
+  if vert > hori then
     pickPos1 = Vector2(casterPos.x + 1, casterPos.y)
     pickPos2 = Vector2(casterPos.x - 1, casterPos.y)
   else
     pickPos1 = Vector2(casterPos.x, casterPos.y + 1)
     pickPos2 = Vector2(casterPos.x, casterPos.y - 1)
   end
-  for index,_ in pairs(validPosIdxList) do
+  for index, _ in pairs(validPosIdxList) do
     local v = self:_Index2Pos(index)
-    -- DECOMPILER ERROR at PC99: Unhandled construct in 'MakeBoolean' P1
-
-    if hori < vert and v.y == casterPos.y then
-      if casterPos.x < v.x then
-        count1 = count1 + 1
-      else
-        count2 = count2 + 1
+    if vert > hori then
+      if v.y == casterPos.y then
+        if v.x > casterPos.x then
+          count1 = count1 + 1
+        else
+          count2 = count2 + 1
+        end
       end
-    end
-    if v.x == casterPos.x then
-      if casterPos.y < v.y then
+    elseif v.x == casterPos.x then
+      if v.y > casterPos.y then
         count1 = count1 + 1
       else
         count2 = count2 + 1
       end
     end
   end
-  if count2 < count1 then
+  if count1 > count2 then
     firstPickPos = pickPos1
   else
     firstPickPos = pickPos2
   end
   return {firstPickPos}, {firstPickPos}, {}
 end
-
-

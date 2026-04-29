@@ -1,36 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n17/entry/ui_n17_homeland_entry_daily_plan.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN17HomelandEntryDailyPlan", Object)
 UIN17HomelandEntryDailyPlan = UIN17HomelandEntryDailyPlan
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN17HomelandEntryDailyPlan.Constructor = function(self, campaign)
-  -- function num : 0_0
+function UIN17HomelandEntryDailyPlan:Constructor(campaign)
   self._campaign = campaign
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17HomelandEntryDailyPlan.GetNew = function(self)
-  -- function num : 0_1
+function UIN17HomelandEntryDailyPlan:GetNew()
   return false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17HomelandEntryDailyPlan.GetRedCount = function(self)
-  -- function num : 0_2
+function UIN17HomelandEntryDailyPlan:GetRedCount()
   return 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17HomelandEntryDailyPlan.OpenUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIN17DailyPlanController", true)
+function UIN17HomelandEntryDailyPlan:OpenUI()
+  GameGlobal.UIStateManager():ShowDialog("UIN17DailyPlanController", true)
 end
-
-

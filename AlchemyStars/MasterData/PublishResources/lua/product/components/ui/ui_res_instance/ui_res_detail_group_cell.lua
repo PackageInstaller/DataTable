@@ -1,73 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_res_instance/ui_res_detail_group_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIResDetailGroupCell", UICustomWidget)
 UIResDetailGroupCell = UIResDetailGroupCell
 local StringGet = StringTable.Get
--- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
 
-UIResDetailGroupCell.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV, StringGet
+function UIResDetailGroupCell:OnShow()
   self.nameTxt = self:GetUIComponent("UILocalizationText", "name")
   self.descTxt = self:GetUIComponent("UILocalizationText", "desc")
   self.descTxt2 = self:GetUIComponent("UILocalizationText", "desc2")
   self.picImg = self:GetUIComponent("Image", "pic")
   self.chooseGO = self:GetGameObject("choose")
-  ;
-  (self.chooseGO):SetActive(false)
+  self.chooseGO:SetActive(false)
   self.subTypeCfg = {
-[DungeonSubType.DungeonSubType_Green] = {name = StringGet("str_res_instance_detail_group_sen_name"), desc = StringGet("str_res_instance_detail_group_sen_desc"), pic = "map_ziyuan_hero1"}
-, 
-[DungeonSubType.DungeonSubType_Red] = {name = StringGet("str_res_instance_detail_group_huo_name"), desc = StringGet("str_res_instance_detail_group_huo_desc"), pic = "map_ziyuan_hero2"}
-, 
-[DungeonSubType.DungeonSubType_Blue] = {name = StringGet("str_res_instance_detail_group_bing_name"), desc = StringGet("str_res_instance_detail_group_bing_desc"), pic = "map_ziyuan_hero3"}
-, 
-[DungeonSubType.DungeonSubType_Yellow] = {name = StringGet("str_res_instance_detail_group_lei_name"), desc = StringGet("str_res_instance_detail_group_lei_desc"), pic = "map_ziyuan_hero4"}
-}
+    [DungeonSubType.DungeonSubType_Green] = {
+      name = StringGet("str_res_instance_detail_group_sen_name"),
+      desc = StringGet("str_res_instance_detail_group_sen_desc"),
+      pic = "map_ziyuan_hero1"
+    },
+    [DungeonSubType.DungeonSubType_Red] = {
+      name = StringGet("str_res_instance_detail_group_huo_name"),
+      desc = StringGet("str_res_instance_detail_group_huo_desc"),
+      pic = "map_ziyuan_hero2"
+    },
+    [DungeonSubType.DungeonSubType_Blue] = {
+      name = StringGet("str_res_instance_detail_group_bing_name"),
+      desc = StringGet("str_res_instance_detail_group_bing_desc"),
+      pic = "map_ziyuan_hero3"
+    },
+    [DungeonSubType.DungeonSubType_Yellow] = {
+      name = StringGet("str_res_instance_detail_group_lei_name"),
+      desc = StringGet("str_res_instance_detail_group_lei_desc"),
+      pic = "map_ziyuan_hero4"
+    }
+  }
   self.atlas = self:GetAsset("UIResInstance.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResDetailGroupCell.OnHide = function(self)
-  -- function num : 0_1
+function UIResDetailGroupCell:OnHide()
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResDetailGroupCell.Init = function(self, subType, onClickExpCell, param)
-  -- function num : 0_2 , upvalues : StringGet
+function UIResDetailGroupCell:Init(subType, onClickExpCell, param)
   self.subType = subType
   self.onClickExpCell = onClickExpCell
   self.param = param
-  local cfg = (self.subTypeCfg)[subType]
-  ;
-  (self.nameTxt):SetText(cfg.name)
-  ;
-  (self.descTxt):SetText(cfg.desc)
+  local cfg = self.subTypeCfg[subType]
+  self.nameTxt:SetText(cfg.name)
+  self.descTxt:SetText(cfg.desc)
   local desc2 = StringGet("str_res_instance_detail_levelup_2")
-  ;
-  (self.descTxt2):SetText(desc2)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.picImg).sprite = (self.atlas):GetSprite(cfg.pic)
+  self.descTxt2:SetText(desc2)
+  self.picImg.sprite = self.atlas:GetSprite(cfg.pic)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResDetailGroupCell.Select = function(self, select)
-  -- function num : 0_3
-  (self.chooseGO):SetActive(select)
+function UIResDetailGroupCell:Select(select)
+  self.chooseGO:SetActive(select)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResDetailGroupCell.bgbtnOnClick = function(self, go)
-  -- function num : 0_4
-  (self.onClickExpCell)(self.param, self.subType)
+function UIResDetailGroupCell:bgbtnOnClick(go)
+  self.onClickExpCell(self.param, self.subType)
 end
-
-

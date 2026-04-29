@@ -1,25 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/component/cfg_activity_lottery_event.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {Event = 1}
 local config = {
-[1025] = {
-{
-{30, 50230101}
-, 
-{120, 50230201}
-, 
-{200, 50230301}
-, 
-{280, 50230401}
-, 
-{350, 50230501}
-, 
-{420, 50230601}
-}
-}
+  [1025] = {
+    {
+      {30, 50230101},
+      {120, 50230201},
+      {200, 50230301},
+      {280, 50230401},
+      {350, 50230501},
+      {420, 50230601}
+    }
+  }
 }
 return config, "CampaignID", key
-

@@ -1,36 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/battle_damage_statistics_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("BattleDamageStatisticsServiceLogic", BaseService)
 BattleDamageStatisticsServiceLogic = BattleDamageStatisticsServiceLogic
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleDamageStatisticsServiceLogic.Constructor = function(self, world)
-  -- function num : 0_0
+function BattleDamageStatisticsServiceLogic:Constructor(world)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsServiceLogic._OnGetBattleDamageStatisticsComponent = function(self)
-  -- function num : 0_1
-  local battleDamageStatisticsComponent = (self._world):BattleDamageStatistics()
+function BattleDamageStatisticsServiceLogic:_OnGetBattleDamageStatisticsComponent()
+  local battleDamageStatisticsComponent = self._world:BattleDamageStatistics()
   return battleDamageStatisticsComponent
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsServiceLogic.AddDamageStatisticsInfo = function(self, damageInfo)
-  -- function num : 0_2 , upvalues : _ENV
-  local matchType = (self._world):MatchType()
+function BattleDamageStatisticsServiceLogic:AddDamageStatisticsInfo(damageInfo)
+  local matchType = self._world:MatchType()
   if matchType == MatchType.MT_BlackFist or matchType == MatchType.MT_Chess or matchType == MatchType.MT_EightPets or matchType == MatchType.MT_PopStar then
-    return 
+    return
   end
   local damageType = damageInfo:GetDamageType()
   if damageType == DamageType.Recover or damageType == DamageType.RecoverTransmit or damageType == DamageType.Miss or damageType == DamageType.Guard or damageType == DamageType.Invalid then
-    return 
+    return
   end
   local damageValue = damageInfo:GetHpAndShieldChangeValue()
   local casterID = damageInfo:GetDamageStatisticsAttackerEntityID()
@@ -39,112 +26,92 @@ BattleDamageStatisticsServiceLogic.AddDamageStatisticsInfo = function(self, dama
   end
   local defenderID = damageInfo:GetTargetEntityID()
   if not defenderID then
-    return 
+    return
   end
   if casterID == defenderID then
-    (Log.info)("[AddDamageStatisticsInfo] casterID=" .. casterID .. " defenderID=" .. defenderID .. " damageValue=" .. damageValue)
-    return 
+    Log.info("[AddDamageStatisticsInfo] casterID=" .. casterID .. " defenderID=" .. defenderID .. " damageValue=" .. damageValue)
+    return
   end
-  local defenderEntity = (self._world):GetEntityByID(defenderID)
+  local defenderEntity = self._world:GetEntityByID(defenderID)
   if not defenderEntity then
-    return 
+    return
   end
   if not defenderEntity:HasMonsterID() and not defenderEntity:HasTrapID() then
-    return 
+    return
   end
-  do
-    if defenderEntity:HasTrapID() then
-      local trapCmpt = defenderEntity:Trap()
-      if trapCmpt and trapCmpt:GetTrapType() == TrapType.Protected then
-        return 
-      end
-    end
-    local damageStatisticsType = damageInfo:GetDamageStatisticsType()
-    local skillID = damageInfo:GetSkillID()
-    if damageStatisticsType == nil and skillID then
-      local configSvc = (self._world):GetService("Config")
-      local skillConfigData = configSvc:GetSkillConfigData(skillID)
-      local skillType = skillConfigData:GetSkillType()
-      damageStatisticsType = skillType
-      if SkillType.Passive <= skillType then
-        damageStatisticsType = DamageStatisticsType.PetBuff
-      end
-    end
-    do
-      local casterEntity = (self._world):GetEntityByID(casterID)
-      if casterEntity and casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-        local superEntityComponent = casterEntity:SuperEntityComponent()
-        local buffCasterEntityID = superEntityComponent:GetBuffSkillHolderCasterEntityID()
-        if buffCasterEntityID then
-          local buffCasterEntity = (self._world):GetEntityByID(buffCasterEntityID)
-          if buffCasterEntity then
-            casterEntity = buffCasterEntity
-          end
-        else
-          do
-            do
-              do
-                local superEntity = superEntityComponent:GetSuperEntity()
-                if superEntity then
-                  casterEntity = superEntity
-                end
-                casterID = casterEntity:GetID()
-                local battleDamageStatistics = self:_OnGetBattleDamageStatisticsComponent()
-                battleDamageStatistics:AddDamageStatisticsInfo(casterID, defenderID, (math.floor)(damageValue * -1), damageStatisticsType)
-              end
-            end
-          end
-        end
-      end
+  if defenderEntity:HasTrapID() then
+    local trapCmpt = defenderEntity:Trap()
+    if trapCmpt and trapCmpt:GetTrapType() == TrapType.Protected then
+      return
     end
   end
+  local damageStatisticsType = damageInfo:GetDamageStatisticsType()
+  local skillID = damageInfo:GetSkillID()
+  if damageStatisticsType == nil and skillID then
+    local configSvc = self._world:GetService("Config")
+    local skillConfigData = configSvc:GetSkillConfigData(skillID)
+    local skillType = skillConfigData:GetSkillType()
+    damageStatisticsType = skillType
+    if skillType >= SkillType.Passive then
+      damageStatisticsType = DamageStatisticsType.PetBuff
+    end
+  end
+  local casterEntity = self._world:GetEntityByID(casterID)
+  if casterEntity and casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    local superEntityComponent = casterEntity:SuperEntityComponent()
+    local buffCasterEntityID = superEntityComponent:GetBuffSkillHolderCasterEntityID()
+    if buffCasterEntityID then
+      local buffCasterEntity = self._world:GetEntityByID(buffCasterEntityID)
+      if buffCasterEntity then
+        casterEntity = buffCasterEntity
+      else
+      end
+    else
+      local superEntity = superEntityComponent:GetSuperEntity()
+      if superEntity then
+        casterEntity = superEntity
+      end
+    end
+    casterID = casterEntity:GetID()
+  end
+  local battleDamageStatistics = self:_OnGetBattleDamageStatisticsComponent()
+  battleDamageStatistics:AddDamageStatisticsInfo(casterID, defenderID, math.floor(damageValue * -1), damageStatisticsType)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsServiceLogic.GetDamageStatisticsInfo = function(self)
-  -- function num : 0_3
+function BattleDamageStatisticsServiceLogic:GetDamageStatisticsInfo()
   self:_OnSortDamageStatisticsInfo()
   local battleDamageStatistics = self:_OnGetBattleDamageStatisticsComponent()
   local damageStatisticsDataList = battleDamageStatistics:GetDamageStatisticsDataList()
   return damageStatisticsDataList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsServiceLogic._OnSortDamageStatisticsInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function BattleDamageStatisticsServiceLogic:_OnSortDamageStatisticsInfo()
   local battleDamageStatistics = self:_OnGetBattleDamageStatisticsComponent()
   local damageStatisticsDataList = battleDamageStatistics:GetDamageStatisticsDataList()
   local allPetDamageValue = battleDamageStatistics:GetAllPetDamageValue()
   local sortDamageStatisticsDataList = {}
   local floorCount = 0
-  for _,v in pairs(damageStatisticsDataList) do
+  for _, v in pairs(damageStatisticsDataList) do
     local damageStatisticsData = v
     local petDamage = damageStatisticsData:GetAllDamageValue()
     local percentage = 0
     local percentageFloor = 0
-    if allPetDamageValue > 0 then
+    if 0 < allPetDamageValue then
       percentage = petDamage / allPetDamageValue * 100
-      percentageFloor = (math.floor)(petDamage / allPetDamageValue * 100)
+      percentageFloor = math.floor(petDamage / allPetDamageValue * 100)
     end
     damageStatisticsData:SetPercentage(percentage)
     damageStatisticsData:SetPercentageInt(percentageFloor)
     floorCount = floorCount + percentageFloor
-    ;
-    (table.insert)(sortDamageStatisticsDataList, damageStatisticsData)
+    table.insert(sortDamageStatisticsDataList, damageStatisticsData)
   end
-  ;
-  (table.sort)(sortDamageStatisticsDataList, function(a, b)
-    -- function num : 0_4_0
+  table.sort(sortDamageStatisticsDataList, function(a, b)
     local decimalsA = a:GetPercentage() - a:GetPercentageInt()
     local decimalsB = b:GetPercentage() - b:GetPercentageInt()
-    do return decimalsB < decimalsA end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  if floorCount > 0 then
-    local needSupplementCount = 100 - (floorCount)
+    return decimalsA > decimalsB
+  end)
+  if 0 < floorCount then
+    local needSupplementCount = 100 - floorCount
     for i = 1, needSupplementCount do
       local damageStatisticsData = sortDamageStatisticsDataList[i]
       if damageStatisticsData then
@@ -156,38 +123,28 @@ BattleDamageStatisticsServiceLogic._OnSortDamageStatisticsInfo = function(self)
       end
     end
   end
-  do
-    local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-    local petEntities = (teamEntity:Team()):GetTeamPetEntities()
-    for i,e in ipairs(petEntities) do
-      local entityID = e:GetID()
-      local targetDamageStatisticsData = battleDamageStatistics:GetDamageStatisticsInfoByCasterID(entityID)
-      if not targetDamageStatisticsData then
-        battleDamageStatistics:AddDamageStatisticsInfo(entityID, -1, 0, DamageStatisticsType.PetBuff)
-      end
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local petEntities = teamEntity:Team():GetTeamPetEntities()
+  for i, e in ipairs(petEntities) do
+    local entityID = e:GetID()
+    local targetDamageStatisticsData = battleDamageStatistics:GetDamageStatisticsInfoByCasterID(entityID)
+    if not targetDamageStatisticsData then
+      battleDamageStatistics:AddDamageStatisticsInfo(entityID, -1, 0, DamageStatisticsType.PetBuff)
     end
-    local otherDamageStatisticsData = battleDamageStatistics:GetDamageStatisticsInfoByCasterID(-1)
-    if not otherDamageStatisticsData then
-      battleDamageStatistics:AddDamageStatisticsInfo(-1, -1, 0, DamageStatisticsType.PetBuff)
-    end
+  end
+  local otherDamageStatisticsData = battleDamageStatistics:GetDamageStatisticsInfoByCasterID(-1)
+  if not otherDamageStatisticsData then
+    battleDamageStatistics:AddDamageStatisticsInfo(-1, -1, 0, DamageStatisticsType.PetBuff)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsServiceLogic.GetMonsterHPMaxStatistics = function(self)
-  -- function num : 0_5
+function BattleDamageStatisticsServiceLogic:GetMonsterHPMaxStatistics()
   local battleDamageStatistics = self:_OnGetBattleDamageStatisticsComponent()
   local monsterHPMaxStatistics = battleDamageStatistics:GetMonsterHPMaxStatistics()
   return monsterHPMaxStatistics
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsServiceLogic.AddMonsterHPMaxStatistics = function(self, hpMax)
-  -- function num : 0_6
+function BattleDamageStatisticsServiceLogic:AddMonsterHPMaxStatistics(hpMax)
   local battleDamageStatistics = self:_OnGetBattleDamageStatisticsComponent()
   battleDamageStatistics:AddMonsterHPMaxStatistics(hpMax)
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_grid_range_effect_scorpion_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayGridRangeEffectScorpionInstruction", PlayGridRangeEffectInstruction)
 PlayGridRangeEffectScorpionInstruction = PlayGridRangeEffectScorpionInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayGridRangeEffectScorpionInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayGridRangeEffectScorpionInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridRangeEffectScorpionInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayGridRangeEffectScorpionInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local scopeGridRange = phaseContext:GetScopeGridRange()
   if not scopeGridRange then
     return InstructionConst.PhaseEnd
@@ -26,15 +16,15 @@ PlayGridRangeEffectScorpionInstruction.DoInstruction = function(self, TT, caster
   end
   local curScopeGridRangeIndex = phaseContext:GetCurScopeGridRangeIndex()
   if maxScopeRangeCount < curScopeGridRangeIndex then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
-  for _,range in pairs(scopeGridRange) do
+  for _, range in pairs(scopeGridRange) do
     if range then
       local positions = range[curScopeGridRangeIndex]
       if positions then
-        local length = (table.count)(positions)
+        local length = table.count(positions)
         for i = 1, length, self._step do
           local position = positions[i]
           local inBody = self:_InCasterBody(position, casterEntity)
@@ -54,13 +44,10 @@ PlayGridRangeEffectScorpionInstruction.DoInstruction = function(self, TT, caster
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridRangeEffectScorpionInstruction._InCasterBody = function(self, position, casterEntity)
-  -- function num : 0_2 , upvalues : _ENV
-  local casterBodyArea = (casterEntity:BodyArea()):GetArea()
-  local casterPosition = (casterEntity:GridLocation()).Position
-  for _,offset in ipairs(casterBodyArea) do
+function PlayGridRangeEffectScorpionInstruction:_InCasterBody(position, casterEntity)
+  local casterBodyArea = casterEntity:BodyArea():GetArea()
+  local casterPosition = casterEntity:GridLocation().Position
+  for _, offset in ipairs(casterBodyArea) do
     local bodyPosition = casterPosition + offset
     if bodyPosition == position then
       return true
@@ -69,39 +56,27 @@ PlayGridRangeEffectScorpionInstruction._InCasterBody = function(self, position, 
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridRangeEffectScorpionInstruction._CheckPosition = function(self, position, casterEntity)
-  -- function num : 0_3
-  local casterPosition = (casterEntity:GridLocation()).Position
-  if position.x - casterPosition.x == (self._offset).x or position.y - casterPosition.y == (self._offset).y then
+function PlayGridRangeEffectScorpionInstruction:_CheckPosition(position, casterEntity)
+  local casterPosition = casterEntity:GridLocation().Position
+  if position.x - casterPosition.x == self._offset.x or position.y - casterPosition.y == self._offset.y then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridRangeEffectScorpionInstruction._GetOffsetByPosition = function(self, position, casterEntity)
-  -- function num : 0_4 , upvalues : _ENV
-  local offset = Vector2((self._offset).x, (self._offset).y)
-  local casterBodyArea = (casterEntity:BodyArea()):GetArea()
-  local casterPosition = (casterEntity:GridLocation()).Position
-  for _,_offset in ipairs(casterBodyArea) do
+function PlayGridRangeEffectScorpionInstruction:_GetOffsetByPosition(position, casterEntity)
+  local offset = Vector2(self._offset.x, self._offset.y)
+  local casterBodyArea = casterEntity:BodyArea():GetArea()
+  local casterPosition = casterEntity:GridLocation().Position
+  for _, _offset in ipairs(casterBodyArea) do
     local bodyPosition = casterPosition + _offset
     if position.x == bodyPosition.x then
       offset.y = 0
       break
-    else
-      if position.y == bodyPosition.y then
-        offset.x = 0
-        break
-      end
+    elseif position.y == bodyPosition.y then
+      offset.x = 0
+      break
     end
   end
-  do
-    return offset
-  end
+  return offset
 end
-
-

@@ -1,91 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/ui_haute_couture_draw_rules_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawRulesBase", UICustomWidget)
 UIHauteCoutureDrawRulesBase = UIHauteCoutureDrawRulesBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawRulesBase.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawRulesBase:Constructor()
   self.controller = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesBase.InitWidgetsBase = function(self)
-  -- function num : 0_1
+function UIHauteCoutureDrawRulesBase:InitWidgetsBase()
   self.controller = self.uiOwner
   self.items = self:GetUIComponent("UISelectObjectPath", "items")
   self.pros = self:GetUIComponent("Transform", "Pros")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesBase._OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((self.items).dynamicInfoOfEngine):SetObjectName(self:GetRuleItemPrefab())
-  ;
-  (self.items):SpawnObjects(self:GetRuleItemScript(), 10)
-  local itemWidgets = (self.items):GetAllSpawnList()
-  local data = (self.controller).CtxData
-  local prizes = (data:GetPrizeCfgs())
-  local replacedIdx = nil
+function UIHauteCoutureDrawRulesBase:_OnValue()
+  self.items.dynamicInfoOfEngine:SetObjectName(self:GetRuleItemPrefab())
+  self.items:SpawnObjects(self:GetRuleItemScript(), 10)
+  local itemWidgets = self.items:GetAllSpawnList()
+  local data = self.controller.CtxData
+  local prizes = data:GetPrizeCfgs()
+  local replacedIdx
   if data:IsReview() then
-    replacedIdx = ((GameGlobal.GetModule)(CampaignModule)):GetSeniorSkinDuplicateRewardIndexs(prizes, (data:GetSeniorSkinCmp()):GetComponentInfo())
+    replacedIdx = GameGlobal.GetModule(CampaignModule):GetSeniorSkinDuplicateRewardIndexs(prizes, data:GetSeniorSkinCmp():GetComponentInfo())
     self:SetReviewRewardContenText()
   end
   for i = 1, 10 do
     local prizeCfg = prizes[i]
-    local prize, normalPrize = nil, nil
-    if (table.icontains)(replacedIdx, i) then
-      normalPrize = {prizeCfg.ReplaceRewardID, prizeCfg.ReplaceRewardCount}
+    local prize, normalPrize
+    if table.icontains(replacedIdx, i) then
+      normalPrize = {
+        prizeCfg.ReplaceRewardID,
+        prizeCfg.ReplaceRewardCount
+      }
     else
-      normalPrize = {prizeCfg.RewardID, prizeCfg.RewardCount}
+      normalPrize = {
+        prizeCfg.RewardID,
+        prizeCfg.RewardCount
+      }
     end
     if prizeCfg.AppendGlow and prizeCfg.AppendGlow > 0 then
       prize = {
-{RoleAssetID.RoleAssetGlow, prizeCfg.AppendGlow}
-, normalPrize}
+        {
+          RoleAssetID.RoleAssetGlow,
+          prizeCfg.AppendGlow
+        },
+        normalPrize
+      }
     else
       prize = {normalPrize}
     end
-    ;
-    (itemWidgets[i]):SetData(prize)
-    ;
-    (((self.pros):GetChild(i - 1)):GetComponent(typeof(UILocalizationText))):SetText(prizeCfg.BaseProb)
+    itemWidgets[i]:SetData(prize)
+    self.pros:GetChild(i - 1):GetComponent(typeof(UILocalizationText)):SetText(prizeCfg.BaseProb)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesBase.GetRuleItemPrefab = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.error)("UIHauteCoutureDrawRulesBase:GetRuleItemPrefab should be inherited")
+function UIHauteCoutureDrawRulesBase:GetRuleItemPrefab()
+  Log.error("UIHauteCoutureDrawRulesBase:GetRuleItemPrefab should be inherited")
   return nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesBase.GetRuleItemScript = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.error)("UIHauteCoutureDrawRulesBase:GetRuleItemScript should be inherited")
+function UIHauteCoutureDrawRulesBase:GetRuleItemScript()
+  Log.error("UIHauteCoutureDrawRulesBase:GetRuleItemScript should be inherited")
   return nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesBase.SetReviewRewardContenText = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.error)("UIHauteCoutureDrawRulesBase:SetReviewRewardContenText should be inherited")
+function UIHauteCoutureDrawRulesBase:SetReviewRewardContenText()
+  Log.error("UIHauteCoutureDrawRulesBase:SetReviewRewardContenText should be inherited")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesBase.MaskOnClick = function(self)
-  -- function num : 0_6
-  (self.controller):CloseDialog()
+function UIHauteCoutureDrawRulesBase:MaskOnClick()
+  self.controller:CloseDialog()
 end
-
-

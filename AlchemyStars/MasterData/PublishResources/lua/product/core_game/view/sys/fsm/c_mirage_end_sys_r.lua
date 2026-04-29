@@ -1,52 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_mirage_end_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("mirage_end_system")
 _class("ClientMirageEndSystem_Render", MirageEndSystem)
 ClientMirageEndSystem_Render = ClientMirageEndSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientMirageEndSystem_Render._DoRenderMirageClearWarningArea = function(self, TT)
-  -- function num : 0_0
-  local mirageRenderSvc = (self._world):GetService("MirageRender")
+function ClientMirageEndSystem_Render:_DoRenderMirageClearWarningArea(TT)
+  local mirageRenderSvc = self._world:GetService("MirageRender")
   mirageRenderSvc:DoMirageClearWarningArea()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMirageEndSystem_Render._DoRenderForceCastTrapSkill = function(self, TT, eTraps)
-  -- function num : 0_1
-  local mirageRenderSvc = (self._world):GetService("MirageRender")
+function ClientMirageEndSystem_Render:_DoRenderForceCastTrapSkill(TT, eTraps)
+  local mirageRenderSvc = self._world:GetService("MirageRender")
   mirageRenderSvc:DoMiragePlayTrapSkill(TT, eTraps)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMirageEndSystem_Render._DoRenderMiragePlayTrapDieSkill = function(self, TT, eTraps)
-  -- function num : 0_2
-  local mirageRenderSvc = (self._world):GetService("MirageRender")
+function ClientMirageEndSystem_Render:_DoRenderMiragePlayTrapDieSkill(TT, eTraps)
+  local mirageRenderSvc = self._world:GetService("MirageRender")
   mirageRenderSvc:DoMiragePlayTrapDieSkill(TT, eTraps)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMirageEndSystem_Render._DoRenderMirageBossReturn = function(self, TT, bossEntity)
-  -- function num : 0_3
-  local mirageRenderSvc = (self._world):GetService("MirageRender")
+function ClientMirageEndSystem_Render:_DoRenderMirageBossReturn(TT, bossEntity)
+  local mirageRenderSvc = self._world:GetService("MirageRender")
   mirageRenderSvc:DoMiragePlayBossReturn(TT, bossEntity)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMirageEndSystem_Render._DoRenderMirageEndUI = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowMirageEnterUI, false)
-  local mirageRenderSvc = (self._world):GetService("MirageRender")
+function ClientMirageEndSystem_Render:_DoRenderMirageEndUI(TT)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowMirageEnterUI, false)
+  local mirageRenderSvc = self._world:GetService("MirageRender")
   mirageRenderSvc:SetMirageStepVisible(false)
-  local pickUpCmpt = (self._world):MiragePickUp()
+  local pickUpCmpt = self._world:MiragePickUp()
   pickUpCmpt:GetCurPickUpGridPos(Vector2.zero)
 end
-
-

@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_cast_anti_skill_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewCastAntiSkill", BuffViewBase)
 BuffViewCastAntiSkill = BuffViewCastAntiSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewCastAntiSkill.PlayView = function(self, TT, notify)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewCastAntiSkill:PlayView(TT, notify)
   local result = self._buffResult
   local skillID = result:GetSkillID()
   local startTask = result:GetStartTask()
-  local skillHolder = (self._world):GetEntityByID(result:GetSkillHolderID())
+  local skillHolder = self._world:GetEntityByID(result:GetSkillHolderID())
   local skillResult = result:GetSkillResult()
-  ;
-  (skillHolder:SkillRoutine()):SetResultContainer(skillResult)
-  local playSkillSvc = (self._world):GetService("PlaySkill")
-  local configSvc = (self._world):GetService("Config")
+  skillHolder:SkillRoutine():SetResultContainer(skillResult)
+  local playSkillSvc = self._world:GetService("PlaySkill")
+  local configSvc = self._world:GetService("Config")
   local skillConfigData = configSvc:GetSkillConfigData(skillID, skillHolder)
   local skillPhaseArray = skillConfigData:GetSkillPhaseArray()
   if startTask == 0 then
     playSkillSvc:_SkillRoutineTask(TT, skillHolder, skillPhaseArray, skillID)
   else
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : playSkillSvc, skillHolder, skillPhaseArray, skillID
-    playSkillSvc:_SkillRoutineTask(TT, skillHolder, skillPhaseArray, skillID)
-  end
-)
+    GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      playSkillSvc:_SkillRoutineTask(TT, skillHolder, skillPhaseArray, skillID)
+    end)
   end
 end
-
-

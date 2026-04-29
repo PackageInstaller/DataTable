@@ -1,254 +1,175 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cookgame/cook/main/ui_activity_n0_cook.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UIActivityN0Cook", UISideEnterCenterContentBase)
 UIActivityN0Cook = UIActivityN0Cook
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN0Cook.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityN0Cook:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.DoInit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN0Cook:DoInit()
   self._campaign = self._data
-  self._localProcess = (self._campaign):GetLocalProcess()
-  self._cookComp = (self._localProcess):GetComponent(ECCampaignInlandDinnerComponentID.ECAMPAIGN_INLAND_DINNER)
-  self._cookCompInfo = (self._localProcess):GetComponentInfo(ECCampaignInlandDinnerComponentID.ECAMPAIGN_INLAND_DINNER)
+  self._localProcess = self._campaign:GetLocalProcess()
+  self._cookComp = self._localProcess:GetComponent(ECCampaignInlandDinnerComponentID.ECAMPAIGN_INLAND_DINNER)
+  self._cookCompInfo = self._localProcess:GetComponentInfo(ECCampaignInlandDinnerComponentID.ECAMPAIGN_INLAND_DINNER)
   self._cookData = UIN0CookData:New()
-  ;
-  (self._cookData):InitWith(self._campaign, self._cookComp, self._cookCompInfo)
+  self._cookData:InitWith(self._campaign, self._cookComp, self._cookCompInfo)
   self:_ForceRefresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook._ForceRefresh = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN0Cook:_ForceRefresh()
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    ;
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
     self:Refresh(false)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.DoShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN0Cook:DoShow(uiParams)
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
+    self._campaign:ClearCampaignNew(TT)
+  end)
   self:InitWidget()
   self:Refresh(true)
   self:PlayEnterAni()
-  self._eventMakeSucc = (GameHelper:GetInstance()):CreateCallback(self.OnMakeSucc, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnN0CookMakeSucc, self._eventMakeSucc)
+  self._eventMakeSucc = GameHelper:GetInstance():CreateCallback(self.OnMakeSucc, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnN0CookMakeSucc, self._eventMakeSucc)
   self:StartRefreshTimer()
   self:RefreshTime()
-  local showFirstStory = (self._cookData):CheckFirstPlayStory()
-  ;
-  (self.requireBtn):SetActive(not showFirstStory)
-  ;
-  (self.cookBtn):SetActive(not showFirstStory)
-  ;
-  (self.reReadStoryBtn):SetActive(not showFirstStory)
-  ;
-  (self.startBtn):SetActive(showFirstStory)
+  local showFirstStory = self._cookData:CheckFirstPlayStory()
+  self.requireBtn:SetActive(not showFirstStory)
+  self.cookBtn:SetActive(not showFirstStory)
+  self.reReadStoryBtn:SetActive(not showFirstStory)
+  self.startBtn:SetActive(showFirstStory)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.DoHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN0Cook:DoHide()
   if self._eventMakeSucc then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnN0CookMakeSucc, self._eventMakeSucc)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnN0CookMakeSucc, self._eventMakeSucc)
     self._eventMakeSucc = nil
   end
   self:CancelTimer()
-  ;
-  (UIWidgetHelper.ClearWidgets)(self, "itemInfo")
+  UIWidgetHelper.ClearWidgets(self, "itemInfo")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.DoDestroy = function(self)
-  -- function num : 0_5
+function UIActivityN0Cook:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.PlayEnterAni = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN0Cook:PlayEnterAni()
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV
     local lockName = "UIActivityN0Cook:PlayEnterAni"
     self:Lock(lockName)
     local delay = 20
-    for i,v in ipairs(self._items) do
+    for i, v in ipairs(self._items) do
       YIELD(TT, delay)
       v:SetVisible(true)
       v:PlayEnterAni()
       delay = delay + 20
     end
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.OnMakeSucc = function(self)
-  -- function num : 0_7
+function UIActivityN0Cook:OnMakeSucc()
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self
     self:Refresh()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.Refresh = function(self, hide)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN0Cook:Refresh(hide)
   self:InitCollectList()
   self:RefreshCollectList(hide)
   self:RefreshRequireRed()
-  local cookNew = (UIN0CookData.CheckNew_CookBook)(self._cookCompInfo)
-  ;
-  (self.cookNew):SetActive(cookNew)
-  ;
-  (self.cookRed):SetActive((not cookNew and (UIN0CookData.CheckRed_CookBook)(self._cookCompInfo)))
-  if (self._cookData):IsCookedAll() then
-    (self.bg):LoadImage("n0_xyx_bg07")
-    ;
-    (self.endStoryObj):SetActive(true)
-    ;
-    (self.endStoryRed):SetActive((UIN0CookData.CheckRed_EndStory)(self._cookCompInfo))
+  local cookNew = UIN0CookData.CheckNew_CookBook(self._cookCompInfo)
+  self.cookNew:SetActive(cookNew)
+  self.cookRed:SetActive(not cookNew and UIN0CookData.CheckRed_CookBook(self._cookCompInfo))
+  if self._cookData:IsCookedAll() then
+    self.bg:LoadImage("n0_xyx_bg07")
+    self.endStoryObj:SetActive(true)
+    self.endStoryRed:SetActive(UIN0CookData.CheckRed_EndStory(self._cookCompInfo))
   else
-    (self.endStoryObj):SetActive(false)
+    self.endStoryObj:SetActive(false)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.RefreshRequireRed = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self.requireRed):SetActive((UIN0CookData.CheckRed_MatRequire)(self._cookCompInfo))
+function UIActivityN0Cook:RefreshRequireRed()
+  self.requireRed:SetActive(UIN0CookData.CheckRed_MatRequire(self._cookCompInfo))
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.InitCollectList = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityN0Cook:InitCollectList()
   self._collectData = {}
-  local componnetId = (self._cookData):GetComponentId()
-  local cfgs = (Cfg.cfg_component_newyear_dinner_collect)({ComponentID = componnetId})
+  local componnetId = self._cookData:GetComponentId()
+  local cfgs = Cfg.cfg_component_newyear_dinner_collect({ComponentID = componnetId})
   if not cfgs then
-    (Log.error)("cfg_component_newyear_dinner_collect no data with ComponnetID = " .. componnetId)
-    return 
+    Log.error("cfg_component_newyear_dinner_collect no data with ComponnetID = " .. componnetId)
+    return
   end
-  for i,v in ipairs(cfgs) do
+  for i, v in ipairs(cfgs) do
     local collectId = v.CollectID
     local collectData = {}
     collectData.cfg = v
-    collectData.status = (self._cookData):GetCollectStatus(collectId)
-    ;
-    (table.insert)(self._collectData, collectData)
+    collectData.status = self._cookData:GetCollectStatus(collectId)
+    table.insert(self._collectData, collectData)
   end
-  ;
-  (table.sort)(self._collectData, function(a, b)
-    -- function num : 0_10_0 , upvalues : _ENV
+  table.sort(self._collectData, function(a, b)
     local sA = a.status
     local sB = b.status
-    if (a.cfg).CollectID >= (b.cfg).CollectID then
-      do return sA ~= sB end
-      if sA == NewYearDinner_Status.E_NewYearDinner_Status_CAN_RECV then
-        return true
-      end
-      if sA == NewYearDinner_Status.E_NewYearDinner_Status_RECVED then
-        return false
-      end
-      if sB == NewYearDinner_Status.E_NewYearDinner_Status_CAN_RECV then
-        return false
-      end
-      do return true end
-      -- DECOMPILER ERROR: 5 unprocessed JMP targets
+    if sA == sB then
+      return a.cfg.CollectID < b.cfg.CollectID
     end
-  end
-)
+    if sA == NewYearDinner_Status.E_NewYearDinner_Status_CAN_RECV then
+      return true
+    end
+    if sA == NewYearDinner_Status.E_NewYearDinner_Status_RECVED then
+      return false
+    end
+    if sB == NewYearDinner_Status.E_NewYearDinner_Status_CAN_RECV then
+      return false
+    end
+    return true
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.RefreshCollectList = function(self, hide)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityN0Cook:RefreshCollectList(hide)
   local count = 0
   local len = #self._collectData
-  local items = (self.list):SpawnObjects("UIN0CookMainCollectItem", len)
+  local items = self.list:SpawnObjects("UIN0CookMainCollectItem", len)
   self._items = items
-  for i,v in ipairs(items) do
-    local subCollectData = (self._collectData)[i]
-    local cCount = (subCollectData.cfg).Count
+  for i, v in ipairs(items) do
+    local subCollectData = self._collectData[i]
+    local cCount = subCollectData.cfg.Count
     if count < cCount then
       count = cCount
     end
     v:SetData(subCollectData, function(collectId)
-    -- function num : 0_11_0 , upvalues : self
-    self:_RequestReceive(collectId)
-  end
-, function(tplId, pos)
-    -- function num : 0_11_1 , upvalues : self
-    self:OnItemClicked(tplId, pos)
-  end
-)
+      self:_RequestReceive(collectId)
+    end, function(tplId, pos)
+      self:OnItemClicked(tplId, pos)
+    end)
     if hide then
       v:SetVisible(false)
     end
   end
-  local collectCount = (self._cookData):GetMakeFoodNum()
-  ;
-  (self.collectNum):SetText("<color=#ffffff><size=35>" .. collectCount .. "</size></color>/" .. count)
+  local collectCount = self._cookData:GetMakeFoodNum()
+  self.collectNum:SetText("<color=#ffffff><size=35>" .. collectCount .. "</size></color>/" .. count)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook._RequestReceive = function(self, collectId)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityN0Cook:_RequestReceive(collectId)
   if not self:CheckTime() then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, _ENV, collectId
     local lockName = "UIActivityN0Cook_RequestReceive"
     self:Lock(lockName)
-    local res, rewards = (self._cookData):RequestReceiveReward(TT, NewYearDinner_Reward_Type.E_NewYearDinner_Reward_Collect, collectId)
+    local res, rewards = self._cookData:RequestReceiveReward(TT, NewYearDinner_Reward_Type.E_NewYearDinner_Reward_Collect, collectId)
     if res and res:GetSucc() then
       self:ShowDialog("UIGetItemController", rewards)
       self:Refresh()
     end
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.InitWidget = function(self)
-  -- function num : 0_13
+function UIActivityN0Cook:InitWidget()
   self.remaindTime = self:GetUIComponent("UILocalizationText", "remaindTime")
   self.collectNum = self:GetUIComponent("UILocalizationText", "collectNum")
   self.list = self:GetUIComponent("UISelectObjectPath", "list")
@@ -262,240 +183,170 @@ UIActivityN0Cook.InitWidget = function(self)
   self.startBtn = self:GetGameObject("startBtn")
   self.reReadStoryBtn = self:GetGameObject("reReadStoryBtn")
   self._itemInfo = self:GetUIComponent("UISelectObjectPath", "itemInfo")
-  self._selectInfo = (self._itemInfo):SpawnObject("UISelectInfo")
+  self._selectInfo = self._itemInfo:SpawnObject("UISelectInfo")
   self.bg = self:GetUIComponent("RawImageLoader", "bg")
   self.animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.CloseCoro = function(self, TT)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityN0Cook:CloseCoro(TT)
   self:Lock("UIActivityN0Cook_CloseCoro")
-  ;
-  (self.animation):Play("uieff_N0_CookMainController_out")
+  self.animation:Play("uieff_N0_CookMainController_out")
   YIELD(TT, 400)
   self:UnLock("UIActivityN0Cook_CloseCoro")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.StartRefreshTimer = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityN0Cook:StartRefreshTimer()
   self:CancelTimer()
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_15_0 , upvalues : self
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:RefreshTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.CancelTimer = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityN0Cook:CancelTimer()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.RefreshTime = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIActivityN0Cook:RefreshTime()
   if not self._cookCompInfo then
-    return 
+    return
   end
-  local endTime = (self._cookCompInfo).m_close_time
+  local endTime = self._cookCompInfo.m_close_time
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local str = self:GetFormatTimerStr(endTime - curTime)
-  local timeStr = (StringTable.Get)("str_n0_activity_remain_time", str)
-  ;
-  (self.remaindTime):SetText(timeStr)
+  local timeStr = StringTable.Get("str_n0_activity_remain_time", str)
+  self.remaindTime:SetText(timeStr)
   if endTime < curTime and not self.lineEnd then
     self.lineEnd = true
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-    local campain = (self._cookData):GetCampaign()
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    local campain = self._cookData:GetCampaign()
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.GetFormatTimerStr = function(self, time)
-  -- function num : 0_18 , upvalues : _ENV
-  local id = {day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_error_107"}
-  local timeStr = (StringTable.Get)(id.over)
+function UIActivityN0Cook:GetFormatTimerStr(time)
+  local id = {
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_error_107"
+  }
+  local timeStr = StringTable.Get(id.over)
   if time < 0 then
     return timeStr
   end
-  local day, hour, min, second = (UIActivityHelper.Time2Str)(time)
-  if day > 0 then
-    if hour > 0 then
-      timeStr = "<color=#fabf4f>" .. day .. "</color>" .. (StringTable.Get)(id.day) .. "<color=#fabf4f>" .. hour .. "</color>" .. (StringTable.Get)(id.hour) .. "<color=#fabf4f>" .. min .. "</color>" .. (StringTable.Get)(id.min)
+  local day, hour, min, second = UIActivityHelper.Time2Str(time)
+  if 0 < day then
+    if 0 < hour then
+      timeStr = "<color=#fabf4f>" .. day .. "</color>" .. StringTable.Get(id.day) .. "<color=#fabf4f>" .. hour .. "</color>" .. StringTable.Get(id.hour) .. "<color=#fabf4f>" .. min .. "</color>" .. StringTable.Get(id.min)
     else
-      timeStr = "<color=#fabf4f>" .. day .. "</color>" .. (StringTable.Get)(id.day) .. "<color=#fabf4f>" .. min .. "</color>" .. (StringTable.Get)(id.min)
+      timeStr = "<color=#fabf4f>" .. day .. "</color>" .. StringTable.Get(id.day) .. "<color=#fabf4f>" .. min .. "</color>" .. StringTable.Get(id.min)
     end
+  elseif 0 < hour then
+    timeStr = "<color=#fabf4f>" .. hour .. "</color>" .. StringTable.Get(id.hour) .. "<color=#fabf4f>" .. min .. "</color>" .. StringTable.Get(id.min)
+  elseif 0 < min then
+    timeStr = "<color=#fabf4f>" .. min .. "</color>" .. StringTable.Get(id.min)
   else
-    if hour > 0 then
-      timeStr = "<color=#fabf4f>" .. hour .. "</color>" .. (StringTable.Get)(id.hour) .. "<color=#fabf4f>" .. min .. "</color>" .. (StringTable.Get)(id.min)
-    else
-      if min > 0 then
-        timeStr = "<color=#fabf4f>" .. min .. "</color>" .. (StringTable.Get)(id.min)
-      else
-        timeStr = "<color=#fabf4f>" .. (StringTable.Get)(id.zero) .. "</color>"
-      end
-    end
+    timeStr = "<color=#fabf4f>" .. StringTable.Get(id.zero) .. "</color>"
   end
   return timeStr
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.InfroBtnOnClick = function(self, go)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityN0Cook:InfroBtnOnClick(go)
   if not self:CheckTime() then
-    return 
+    return
   end
   self:ShowDialog("UIIntroLoader", "UIN0CookIntro", MaskType.MT_BlurMask)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.RequireBtnOnClick = function(self, go)
-  -- function num : 0_20 , upvalues : _ENV
+function UIActivityN0Cook:RequireBtnOnClick(go)
   if not self:CheckTime() then
-    return 
+    return
   end
   self:ShowDialog("UIN0CookMatRequireController", self._cookData, function()
-    -- function num : 0_20_0 , upvalues : _ENV, self
-    local cookNew = (UIN0CookData.CheckNew_CookBook)(self._cookCompInfo)
-    ;
-    (self.cookNew):SetActive(cookNew)
-    ;
-    (self.cookRed):SetActive((not cookNew and (UIN0CookData.CheckRed_CookBook)(self._cookCompInfo)))
+    local cookNew = UIN0CookData.CheckNew_CookBook(self._cookCompInfo)
+    self.cookNew:SetActive(cookNew)
+    self.cookRed:SetActive(not cookNew and UIN0CookData.CheckRed_CookBook(self._cookCompInfo))
     self:RefreshRequireRed()
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.EndStroyBtnOnClick = function(self, go)
-  -- function num : 0_21 , upvalues : _ENV
+function UIActivityN0Cook:EndStroyBtnOnClick(go)
   if not self:CheckTime() then
-    return 
+    return
   end
-  ;
-  (UIN0CookData.ClearRed_EndStory)(self._cookCompInfo)
-  ;
-  (self.endStoryRed):SetActive(false)
-  local storyId = (self._cookData):GetEndPlayStoryID()
+  UIN0CookData.ClearRed_EndStory(self._cookCompInfo)
+  self.endStoryRed:SetActive(false)
+  local storyId = self._cookData:GetEndPlayStoryID()
   if not storyId then
-    (Log.error)("UIActivityN0Cook can\'t find endStory")
-    return 
+    Log.error("UIActivityN0Cook can't find endStory")
+    return
   end
   self:ShowDialog("UIStoryController", storyId)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.CookBtnOnClick = function(self, go)
-  -- function num : 0_22 , upvalues : _ENV
+function UIActivityN0Cook:CookBtnOnClick(go)
   if not self:CheckTime() then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_22_0 , upvalues : self, _ENV
     local lockName = "UIActivityN0Cook_CookBtnOnClick"
     self:Lock(lockName)
-    ;
-    (self.animation):Play("uieff_N0_CookMainController_getinto")
+    self.animation:Play("uieff_N0_CookMainController_getinto")
     YIELD(TT, 300)
     self:ShowDialog("UIN0CookBookController", self._cookData, function()
-      -- function num : 0_22_0_0 , upvalues : self
       self:OnCookBookClose()
-    end
-)
-    ;
-    (UIN0CookData.ClearNew_CookBook)(self._cookCompInfo)
+    end)
+    UIN0CookData.ClearNew_CookBook(self._cookCompInfo)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.StartBtnOnClick = function(self, go)
-  -- function num : 0_23
-  local firstStoryId = (self._cookData):GetFirstPlayStoryID()
+function UIActivityN0Cook:StartBtnOnClick(go)
+  local firstStoryId = self._cookData:GetFirstPlayStoryID()
   if firstStoryId then
-    (self._cookData):SetFirstPlayStoryAsRead()
+    self._cookData:SetFirstPlayStoryAsRead()
     self:ShowDialog("UIStoryController", firstStoryId, function()
-    -- function num : 0_23_0 , upvalues : self
-    (self.requireBtn):SetActive(true)
-    ;
-    (self.cookBtn):SetActive(true)
-    ;
-    (self.reReadStoryBtn):SetActive(true)
-    ;
-    (self.startBtn):SetActive(false)
-  end
-)
+      self.requireBtn:SetActive(true)
+      self.cookBtn:SetActive(true)
+      self.reReadStoryBtn:SetActive(true)
+      self.startBtn:SetActive(false)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.ReReadStoryBtnOnClick = function(self, go)
-  -- function num : 0_24
-  local firstStoryId = (self._cookData):GetFirstPlayStoryID()
+function UIActivityN0Cook:ReReadStoryBtnOnClick(go)
+  local firstStoryId = self._cookData:GetFirstPlayStoryID()
   if firstStoryId then
     self:ShowDialog("UIStoryController", firstStoryId)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.CheckTime = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  do
-    if self.lineEnd then
-      local result = (self._campaign):CheckComponentOpenClientError(ECCampaignInlandDinnerComponentID.ECAMPAIGN_INLAND_DINNER)
-      ;
-      (self._campaign):CheckErrorCode(result)
-      return false
-    end
-    return true
+function UIActivityN0Cook:CheckTime()
+  if self.lineEnd then
+    local result = self._campaign:CheckComponentOpenClientError(ECCampaignInlandDinnerComponentID.ECAMPAIGN_INLAND_DINNER)
+    self._campaign:CheckErrorCode(result)
+    return false
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.OnCookBookClose = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIActivityN0Cook:OnCookBookClose()
   self:StartTask(function(TT)
-    -- function num : 0_26_0 , upvalues : self, _ENV
     local lockName = "UIActivityN0Cook_OnCookBookClose"
     self:Lock(lockName)
     local res = AsyncRequestRes:New()
     self:Refresh()
     YIELD(TT, 400)
-    ;
-    (self.animation):Play("uieff_N0_CookMainController_return")
+    self.animation:Play("uieff_N0_CookMainController_return")
     YIELD(TT, 300)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN0Cook.OnItemClicked = function(self, matid, pos)
-  -- function num : 0_27
-  (self._selectInfo):SetData(matid, pos)
+function UIActivityN0Cook:OnItemClicked(matid, pos)
+  self._selectInfo:SetData(matid, pos)
 end
-
-

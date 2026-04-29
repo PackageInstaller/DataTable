@@ -1,136 +1,92 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn17n46/fishing_game/ui_cn17_n46_fishing_game_order_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN17N46FishingGameOrderItem", UICustomWidget)
 UICN17N46FishingGameOrderItem = UICN17N46FishingGameOrderItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN17N46FishingGameOrderItem.Constructor = function(self)
-  -- function num : 0_0
+function UICN17N46FishingGameOrderItem:Constructor()
   self.hadFinished = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameOrderItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UICN17N46FishingGameOrderItem:OnShow(uiParams)
   self:InitWidget()
   self:CalBgPos()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameOrderItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN17N46FishingGameOrderItem:OnHide()
   if self.taskid ~= nil then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskid)
+    GameGlobal.TaskManager():KillTask(self.taskid)
     self.taskid = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameOrderItem.CalBgPos = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN17N46FishingGameOrderItem:CalBgPos()
   self._offsetY = 20
-  local tmp = (((self._bg).gameObject).transform).localPosition
+  local tmp = self._bg.gameObject.transform.localPosition
   tmp.y = tmp.y + self._offsetY
-  self._tmpPos = {[0] = Vector3(tmp.x, 22, tmp.z), [1] = Vector3(tmp.x, 5, tmp.z)}
+  self._tmpPos = {
+    [0] = Vector3(tmp.x, 22, tmp.z),
+    [1] = Vector3(tmp.x, 5, tmp.z)
+  }
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameOrderItem.InitWidget = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN17N46FishingGameOrderItem:InitWidget()
   self._bg = self:GetUIComponent("Image", "bg")
   self._fishImg = self:GetUIComponent("Image", "fishImg")
   self._finishImg = self:GetGameObject("finishImg")
   self._atlas = self:GetAsset("UIN14FishingGame.spriteatlas", LoadType.SpriteAtlas)
-  self._animation = ((self.view).gameObject):GetComponent("Animation")
+  self._animation = self.view.gameObject:GetComponent("Animation")
   self._effectGo = self:GetGameObject("effect")
   self._bgError = self:GetGameObject("bgError")
-  self._effectOriPos = ((self._effectGo).transform).localPosition
-  ;
-  (self._bgError):SetActive(false)
+  self._effectOriPos = self._effectGo.transform.localPosition
+  self._bgError:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameOrderItem.SetData = function(self, index, fishId, isCurrent, isFinish, islast)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN17N46FishingGameOrderItem:SetData(index, fishId, isCurrent, isFinish, islast)
   self:ResetWeight()
   self._index = index
   self._fishId = fishId
   self._isCurrent = isCurrent
   self._isFinish = isFinish
   self._islastOrder = islast
-  self._fishCfg = ((Cfg.cfg_fishing_fish)({ID = fishId}))[1]
+  self._fishCfg = Cfg.cfg_fishing_fish({ID = fishId})[1]
   self:InitWidget()
   self:_OnValue()
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R6 in 'UnsetPending'
-
-  if not self._isFinish or not (Quaternion.Euler)(0, 180, 0) then
-    ((self._bg).transform).localRotation = Quaternion.identity
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R6 in 'UnsetPending'
-
-    if not self._isFinish or not (Quaternion.Euler)(0, 180, 0) then
-      ((self._finishImg).transform).localRotation = Quaternion.identity
-    end
-  end
+  self._bg.transform.localRotation = self._isFinish and Quaternion.Euler(0, 180, 0) or Quaternion.identity
+  self._finishImg.transform.localRotation = self._isFinish and Quaternion.Euler(0, 180, 0) or Quaternion.identity
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameOrderItem._OnValue = function(self)
-  -- function num : 0_6
+function UICN17N46FishingGameOrderItem:_OnValue()
   local fishId = self._fishId
-  ;
-  ((self._fishImg).gameObject):SetActive(self._isFinish == false)
-  ;
-  (self._finishImg):SetActive(self._isFinish == true)
-  ;
-  (self._bgError):SetActive(true)
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (((self._bg).gameObject).transform).localPosition = (self._tmpPos)[self._index % 2]
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
+  self._fishImg.gameObject:SetActive(self._isFinish == false)
+  self._finishImg:SetActive(self._isFinish == true)
+  self._bgError:SetActive(true)
+  self._bg.gameObject.transform.localPosition = self._tmpPos[self._index % 2]
   if self._isCurrent then
-    (self._bg).sprite = (self._atlas):GetSprite("n14_fish_huima2")
+    self._bg.sprite = self._atlas:GetSprite("n14_fish_huima2")
   else
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-    (self._bg).sprite = (self._atlas):GetSprite("n14_fish_huima1")
+    self._bg.sprite = self._atlas:GetSprite("n14_fish_huima1")
   end
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._fishImg).sprite = (self._atlas):GetSprite((self._fishCfg).Sprite)
+  self._fishImg.sprite = self._atlas:GetSprite(self._fishCfg.Sprite)
   if not self.hadFinished and self._isFinish then
     self.hadFinished = true
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameOrderItem.PlayAnimation = function(self, index, needlast)
-  -- function num : 0_7 , upvalues : _ENV
-  local aniNames = {"uieff_orderFinish", "uieff_orderRefresh", "uieff_errorfish", "uieff_orderRefresh_time"}
+function UICN17N46FishingGameOrderItem:PlayAnimation(index, needlast)
+  local aniNames = {
+    "uieff_orderFinish",
+    "uieff_orderRefresh",
+    "uieff_errorfish",
+    "uieff_orderRefresh_time"
+  }
   local last = 500
   if index == 4 then
     last = 1200
   end
   self.taskid = self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV, aniNames, index, last
     self:Lock("UICN17N46FishingGameOrderItem:PlayAnimation")
     self:ResetWeight()
     YIELD(TT, 100)
     if self.taskid ~= nil then
-      (self._animation):Play(aniNames[index])
+      self._animation:Play(aniNames[index])
     end
     YIELD(TT, last)
     if self.taskid ~= nil and index == 4 then
@@ -138,65 +94,31 @@ UICN17N46FishingGameOrderItem.PlayAnimation = function(self, index, needlast)
     end
     self:UnLock("UICN17N46FishingGameOrderItem:PlayAnimation")
     self.taskid = nil
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameOrderItem.EffectDoTween = function(self, path, duration, ease, callback)
-  -- function num : 0_8 , upvalues : _ENV
+function UICN17N46FishingGameOrderItem:EffectDoTween(path, duration, ease, callback)
   local usePath = {}
-  local next = (math.random)(1, 2)
-  ;
-  (table.insert)(usePath, path[next])
-  ;
-  (table.insert)(usePath, path[3])
-  ;
-  (self._effectGo):SetActive(true)
-  ;
-  ((((self._effectGo).transform):DOPath(usePath, duration)):SetEase(ease)):OnComplete(function()
-    -- function num : 0_8_0 , upvalues : callback, self
+  local next = math.random(1, 2)
+  table.insert(usePath, path[next])
+  table.insert(usePath, path[3])
+  self._effectGo:SetActive(true)
+  self._effectGo.transform:DOPath(usePath, duration):SetEase(ease):OnComplete(function()
     if callback then
-      callback(((self._effectGo).transform).position)
-      ;
-      (self._effectGo):SetActive(false)
-      -- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-      ;
-      ((self._effectGo).transform).localPosition = self._effectOriPos
+      callback(self._effectGo.transform.position)
+      self._effectGo:SetActive(false)
+      self._effectGo.transform.localPosition = self._effectOriPos
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameOrderItem.ResetWeight = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self:GetUIComponent("Image", "bg")).color = Color(1, 1, 1, 1)
-  ;
-  (self:GetUIComponent("Image", "bgError")).color = Color(1, 1, 1, 0)
-  ;
-  (self:GetUIComponent("Image", "finishImg")).color = Color(1, 1, 1, 1)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._finishImg).transform).localRotation = Quaternion.identity
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._finishImg).transform).localScale = Vector3(1, 1, 1)
-  ;
-  (self._finishImg):SetActive(false)
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._fishImg).transform).localRotation = Quaternion.identity
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._fishImg).transform).localScale = Vector3(1, 1, 1)
+function UICN17N46FishingGameOrderItem:ResetWeight()
+  self:GetUIComponent("Image", "bg").color = Color(1.0, 1.0, 1.0, 1)
+  self:GetUIComponent("Image", "bgError").color = Color(1.0, 1.0, 1.0, 0)
+  self:GetUIComponent("Image", "finishImg").color = Color(1.0, 1.0, 1.0, 1)
+  self._finishImg.transform.localRotation = Quaternion.identity
+  self._finishImg.transform.localScale = Vector3(1, 1, 1)
+  self._finishImg:SetActive(false)
+  self._fishImg.transform.localRotation = Quaternion.identity
+  self._fishImg.transform.localScale = Vector3(1, 1, 1)
 end
-
-

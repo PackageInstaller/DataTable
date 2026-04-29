@@ -1,47 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/task/ui_activity_n34_task_infomation_reward_preview_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN34TaskInfomationRewardPreviewItem", UICustomWidget)
 UIActivityN34TaskInfomationRewardPreviewItem = UIActivityN34TaskInfomationRewardPreviewItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN34TaskInfomationRewardPreviewItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityN34TaskInfomationRewardPreviewItem:OnShow()
   self:GetComponents()
   self:Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreviewItem.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityN34TaskInfomationRewardPreviewItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreviewItem.GetComponents = function(self)
-  -- function num : 0_2
+function UIActivityN34TaskInfomationRewardPreviewItem:GetComponents()
   self._titleText = self:GetUIComponent("UILocalizationText", "titleText")
   self._stateText = self:GetUIComponent("UILocalizationText", "stateText")
   self._rewards = self:GetUIComponent("UISelectObjectPath", "Content")
   self._rewardHasGet = self:GetGameObject("rewardHasGet")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreviewItem.SetData = function(self, index, cfg, quest, questState, tipFun)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN34TaskInfomationRewardPreviewItem:SetData(index, cfg, quest, questState, tipFun)
   self._index = index
   self._cfg = cfg
   self._quest = quest
   self._state = questState
-  ;
-  (self._rewardHasGet):SetActive(self._state == 4)
-  local questInfo = (self._quest):QuestInfo()
-  self._name = (StringTable.Get)(questInfo.QuestName) or ""
-  self._des = (StringTable.Get)(questInfo.QuestDesc) or ""
+  self._rewardHasGet:SetActive(self._state == 4)
+  local questInfo = self._quest:QuestInfo()
+  self._name = StringTable.Get(questInfo.QuestName) or ""
+  self._des = StringTable.Get(questInfo.QuestDesc) or ""
   self._questReward = questInfo.rewards
   self._icon = questInfo.Icon
   self._tipFun = tipFun
@@ -49,45 +32,32 @@ UIActivityN34TaskInfomationRewardPreviewItem.SetData = function(self, index, cfg
   local root = self:GetGameObject("Root")
   root:SetActive(false)
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, index, self, root
     YIELD(TT, index * 60)
     if not self.view then
-      return 
+      return
     end
     root:SetActive(true)
-    local anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+    local anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
     anim:Play()
-  end
-)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreviewItem.Init = function(self)
-  -- function num : 0_4
-  (self._titleText):SetText("")
-  ;
-  (self._stateText):SetText("")
+function UIActivityN34TaskInfomationRewardPreviewItem:Init()
+  self._titleText:SetText("")
+  self._stateText:SetText("")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreviewItem.Refresh = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._titleText):SetText(self._name)
+function UIActivityN34TaskInfomationRewardPreviewItem:Refresh()
+  self._titleText:SetText(self._name)
   local stateText = ""
   if self._state == QuestStatus.QUEST_NotStart then
     stateText = ""
   end
-  ;
-  (self._stateText):SetText(stateText)
+  self._stateText:SetText(stateText)
   if #self._questReward > 0 then
-    local items = (self._rewards):SpawnObjects("UIN34TaskDelegatePersonProgressReward", #self._questReward)
-    for index,value in ipairs(items) do
-      value:SetData((self._questReward)[index], self._tipFun)
+    local items = self._rewards:SpawnObjects("UIN34TaskDelegatePersonProgressReward", #self._questReward)
+    for index, value in ipairs(items) do
+      value:SetData(self._questReward[index], self._tipFun)
     end
   end
 end
-
-

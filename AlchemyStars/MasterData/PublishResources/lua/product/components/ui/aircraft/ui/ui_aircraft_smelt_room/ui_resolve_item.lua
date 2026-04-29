@@ -1,99 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_smelt_room/ui_resolve_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIResolveItem", UICustomWidget)
 UIResolveItem = UIResolveItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIResolveItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIResolveItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResolveItem.OnHide = function(self)
-  -- function num : 0_1
+function UIResolveItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResolveItem.InitWidget = function(self)
-  -- function num : 0_2
+function UIResolveItem:InitWidget()
   self.item = self:GetUIComponent("UISelectObjectPath", "item")
   self.selector = self:GetGameObject("selector")
   self._root = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResolveItem.SetData = function(self, cfg, index, onSelect, onLongPress)
-  -- function num : 0_3 , upvalues : _ENV
+function UIResolveItem:SetData(cfg, index, onSelect, onLongPress)
   self._index = index
   self._onSelect = onSelect
   self._onLongPress = onLongPress
-  self._itemID = ((cfg.Input)[1])[1]
+  self._itemID = cfg.Input[1][1]
   local module = self:GetModule(ItemModule)
-  local itemCfg = (Cfg.cfg_item)[self._itemID]
-  self._itemWidget = (self.item):SpawnObject("UIItem")
-  ;
-  (self._itemWidget):SetForm(UIItemForm.Base, 0.9)
-  ;
-  (self._itemWidget):SetData({icon = itemCfg.Icon, quality = itemCfg.Color, text1 = module:GetItemCount(self._itemID), showNumber = true, itemId = self._itemID})
-  ;
-  (self._itemWidget):SetClickCallBack(function()
-    -- function num : 0_3_0 , upvalues : onSelect, index
+  local itemCfg = Cfg.cfg_item[self._itemID]
+  self._itemWidget = self.item:SpawnObject("UIItem")
+  self._itemWidget:SetForm(UIItemForm.Base, 0.9)
+  self._itemWidget:SetData({
+    icon = itemCfg.Icon,
+    quality = itemCfg.Color,
+    text1 = module:GetItemCount(self._itemID),
+    showNumber = true,
+    itemId = self._itemID
+  })
+  self._itemWidget:SetClickCallBack(function()
     onSelect(index)
-  end
-)
-  ;
-  (self._itemWidget):SetLongPressCallBack(function()
-    -- function num : 0_3_1 , upvalues : onLongPress, self
+  end)
+  self._itemWidget:SetLongPressCallBack(function()
     onLongPress(self._index, self:GetGameObject())
-  end
-, nil, 1000, nil)
+  end, nil, 1000, nil)
   self._showSelector = nil
   self._showSelectBox = nil
   self:ShowSelector(false)
   self:ShowSelectBox(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResolveItem.Active = function(self, active)
-  -- function num : 0_4
+function UIResolveItem:Active(active)
   if self._show == active then
-    return 
+    return
   end
   self._show = active
-  ;
-  (self._root):SetActive(active)
+  self._root:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResolveItem.ShowSelector = function(self, show)
-  -- function num : 0_5
+function UIResolveItem:ShowSelector(show)
   if not self._show or self._showSelector == show then
-    return 
+    return
   end
   self._showSelector = show
-  ;
-  (self.selector):SetActive(show)
+  self.selector:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResolveItem.ShowSelectBox = function(self, show)
-  -- function num : 0_6
+function UIResolveItem:ShowSelectBox(show)
   if not self._show or self._showSelectBox == show then
-    return 
+    return
   end
   self._showSelectBox = show
-  ;
-  (self._itemWidget):Select(show, true)
+  self._itemWidget:Select(show, true)
 end
-
-

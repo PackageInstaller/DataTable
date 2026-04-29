@@ -1,60 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/story/ui_n28_avg_story_influence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGStoryInfluence", UICustomWidget)
 UIN28AVGStoryInfluence = UIN28AVGStoryInfluence
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGStoryInfluence.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN28AVGData()
-  self.animNames = {"uieff_UIN28AVGStoryInfluence_influence_in", "uieff_UIN28AVGStoryInfluence_influence_loop", "uieff_UIN28AVGStoryInfluence_ring_in", "uieff_UIN28AVGStoryInfluence_ring_loop"}
-  self.animOutNames = {"uieff_UIN28AVGStoryInfluence_influence_out", "uieff_UIN28AVGStoryInfluence_ring_out"}
+function UIN28AVGStoryInfluence:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN28AVGData()
+  self.animNames = {
+    "uieff_UIN28AVGStoryInfluence_influence_in",
+    "uieff_UIN28AVGStoryInfluence_influence_loop",
+    "uieff_UIN28AVGStoryInfluence_ring_in",
+    "uieff_UIN28AVGStoryInfluence_ring_loop"
+  }
+  self.animOutNames = {
+    "uieff_UIN28AVGStoryInfluence_influence_out",
+    "uieff_UIN28AVGStoryInfluence_ring_out"
+  }
   self.taskIdPress = 0
   self.taskIdRelease = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryInfluence.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28AVGStoryInfluence:OnShow()
   self.anim = self:GetUIComponent("Animation", "root")
   self.animOut = self:GetUIComponent("Animation", "out")
   self.imgInfluence = self:GetGameObject("imgInfluence")
-  ;
-  (self.imgInfluence):SetActive(false)
+  self.imgInfluence:SetActive(false)
   self.imgInfluenceNormal = self:GetGameObject("imgInfluenceNormal")
   self.imgInfluenceNormalRect = self:GetUIComponent("RectTransform", "imgInfluenceNormal")
   self.imgInfluencePress = self:GetGameObject("imgInfluencePress")
-  ;
-  (self.imgInfluencePress):SetActive(false)
+  self.imgInfluencePress:SetActive(false)
   self.btnInfluence = self:GetGameObject("btnInfluence")
   self.btnInfluenceRect = self:GetUIComponent("RectTransform", "btnInfluence")
   self.poolOptions = self:GetUIComponent("UISelectObjectPath", "options")
   self.options = self:GetGameObject("options")
-  ;
-  (self.options):SetActive(false)
+  self.options:SetActive(false)
   self.atlas = self:GetAsset("UIAVG.spriteatlas", LoadType.SpriteAtlas)
   self:RegisterUICustomUIEventListener()
   self._audioCount = 0
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self
     YIELD(TT)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.btnInfluenceRect).sizeDelta = Vector2(((self.imgInfluenceNormalRect).sizeDelta).x, ((self.btnInfluenceRect).sizeDelta).y)
-  end
-, self)
+    self.btnInfluenceRect.sizeDelta = Vector2(self.imgInfluenceNormalRect.sizeDelta.x, self.btnInfluenceRect.sizeDelta.y)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryInfluence.OnHide = function(self)
-  -- function num : 0_2
+function UIN28AVGStoryInfluence:OnHide()
   self.anim = nil
   self.animOut = nil
   self.taskIdPress = 0
@@ -62,77 +49,51 @@ UIN28AVGStoryInfluence.OnHide = function(self)
   self:UnRegisterUICustomUIEventListener()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryInfluence.RegisterUICustomUIEventListener = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local etl = (UICustomUIEventListener.Get)(self.btnInfluence)
+function UIN28AVGStoryInfluence:RegisterUICustomUIEventListener()
+  local etl = UICustomUIEventListener.Get(self.btnInfluence)
   self:AddUICustomEventListener(etl, UIEvent.Press, function(ped)
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    (self.imgInfluence):SetActive(true)
-    ;
-    (self.imgInfluenceNormal):SetActive(false)
-    ;
-    (self.imgInfluencePress):SetActive(true)
-    ;
-    (self.options):SetActive(true)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N6CommonBuilding)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AVGShowHideOptionInfluence, true)
+    self.imgInfluence:SetActive(true)
+    self.imgInfluenceNormal:SetActive(false)
+    self.imgInfluencePress:SetActive(true)
+    self.options:SetActive(true)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N6CommonBuilding)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AVGShowHideOptionInfluence, true)
     self:PlayAnimPress()
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Release, function(ped)
-    -- function num : 0_3_1 , upvalues : self, _ENV
-    (self.imgInfluence):SetActive(false)
-    ;
-    (self.imgInfluenceNormal):SetActive(true)
-    ;
-    (self.imgInfluencePress):SetActive(false)
-    ;
-    (self.options):SetActive(false)
+    self.imgInfluence:SetActive(false)
+    self.imgInfluenceNormal:SetActive(true)
+    self.imgInfluencePress:SetActive(false)
+    self.options:SetActive(false)
     if self._audioCount == 1 then
       if self._soundPlayingID then
-        (AudioHelperController.StopUISound)(self._soundPlayingID)
+        AudioHelperController.StopUISound(self._soundPlayingID)
       end
       self._audioCount = self._audioCount - 1
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AVGShowHideOptionInfluence, false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AVGShowHideOptionInfluence, false)
     self:PlayAnimRelease()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryInfluence.UnRegisterUICustomUIEventListener = function(self)
-  -- function num : 0_4
+function UIN28AVGStoryInfluence:UnRegisterUICustomUIEventListener()
   self:RemoveAllCustomEventListener()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryInfluence.Flush = function(self, options)
-  -- function num : 0_5 , upvalues : _ENV
-  local len = (table.count)(options)
-  ;
-  (self.poolOptions):SpawnObjects("UIN28AVGStoryInfluenceItem", len)
-  local uis = (self.poolOptions):GetAllSpawnList()
-  for i,option in ipairs(options) do
+function UIN28AVGStoryInfluence:Flush(options)
+  local len = table.count(options)
+  self.poolOptions:SpawnObjects("UIN28AVGStoryInfluenceItem", len)
+  local uis = self.poolOptions:GetAllSpawnList()
+  for i, option in ipairs(options) do
     local ui = uis[i]
     ui:Flush(option)
   end
   self:PlayAnimRelease()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryInfluence.PlayAnimPress = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN28AVGStoryInfluence:PlayAnimPress()
   if not self.anim then
-    return 
+    return
   end
   self:StopAnim()
   self:StopAnimOut()
@@ -140,26 +101,21 @@ UIN28AVGStoryInfluence.PlayAnimPress = function(self)
   self:KillTaskPress()
   self:KillTaskRelease()
   self.taskIdPress = self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV
     self:PlayAnimOutRing()
     if self.anim then
-      (self.anim):Play((self.animNames)[1])
+      self.anim:Play(self.animNames[1])
     end
     YIELD(TT, 2800)
     if self.anim then
-      (self.anim):Play((self.animNames)[2])
+      self.anim:Play(self.animNames[2])
     end
     self.taskIdPress = 0
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryInfluence.PlayAnimRelease = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN28AVGStoryInfluence:PlayAnimRelease()
   if not self.anim then
-    return 
+    return
   end
   self:StopAnim()
   self:StopAnimOut()
@@ -167,104 +123,75 @@ UIN28AVGStoryInfluence.PlayAnimRelease = function(self)
   self:KillTaskPress()
   self:KillTaskRelease()
   self.taskIdRelease = self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV
     self:PlayAnimOutInfluence()
     if self.anim then
-      (self.anim):Play((self.animNames)[3])
+      self.anim:Play(self.animNames[3])
     end
     YIELD(TT, 2000)
     if self.anim then
-      (self.anim):Play((self.animNames)[4])
+      self.anim:Play(self.animNames[4])
     end
     self.taskIdRelease = 0
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryInfluence.PlayAnimOutRing = function(self)
-  -- function num : 0_8
+function UIN28AVGStoryInfluence:PlayAnimOutRing()
   if not self.animOut then
-    return 
+    return
   end
-  ;
-  (self.animOut):Play((self.animOutNames)[2])
+  self.animOut:Play(self.animOutNames[2])
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryInfluence.PlayAnimOutInfluence = function(self)
-  -- function num : 0_9
+function UIN28AVGStoryInfluence:PlayAnimOutInfluence()
   if not self.animOut then
-    return 
+    return
   end
-  ;
-  (self.animOut):Play((self.animOutNames)[1])
+  self.animOut:Play(self.animOutNames[1])
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryInfluence.StopAnim = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN28AVGStoryInfluence:StopAnim()
   if not self.anim then
-    return 
+    return
   end
-  for index,animName in ipairs(self.animNames) do
-    local state = (self.anim):get_Item(animName)
+  for index, animName in ipairs(self.animNames) do
+    local state = self.anim:get_Item(animName)
     if state then
       state.normalizedTime = 0
     end
   end
-  ;
-  (self.anim):Stop()
+  self.anim:Stop()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryInfluence.StopAnimOut = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN28AVGStoryInfluence:StopAnimOut()
   if not self.animOut then
-    return 
+    return
   end
-  for index,animName in ipairs(self.animOutNames) do
-    local state = (self.animOut):get_Item(animName)
+  for index, animName in ipairs(self.animOutNames) do
+    local state = self.animOut:get_Item(animName)
     if state then
       state.normalizedTime = 0
     end
   end
-  ;
-  (self.animOut):Stop()
+  self.animOut:Stop()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryInfluence.PlayAnimOfItem = function(self, animName)
-  -- function num : 0_12 , upvalues : _ENV
-  local uis = (self.poolOptions):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
+function UIN28AVGStoryInfluence:PlayAnimOfItem(animName)
+  local uis = self.poolOptions:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
     if ui[animName] then
-      (ui[animName])(ui)
+      ui[animName](ui)
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryInfluence.KillTaskPress = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN28AVGStoryInfluence:KillTaskPress()
   if self.taskIdPress > 0 then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskIdPress)
+    GameGlobal.TaskManager():KillTask(self.taskIdPress)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryInfluence.KillTaskRelease = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN28AVGStoryInfluence:KillTaskRelease()
   if self.taskIdRelease > 0 then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskIdRelease)
+    GameGlobal.TaskManager():KillTask(self.taskIdRelease)
   end
 end
-
-

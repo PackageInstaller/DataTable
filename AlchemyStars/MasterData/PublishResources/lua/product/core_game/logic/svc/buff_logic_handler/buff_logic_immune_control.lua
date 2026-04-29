@@ -1,42 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_immune_control.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetImmuneControl", BuffLogicBase)
 BuffLogicSetImmuneControl = BuffLogicSetImmuneControl
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetImmuneControl.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetImmuneControl:Constructor(buffInstance, logicParam)
   self._layerNum = logicParam.layerNum
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetImmuneControl.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetFlag(BuffFlags.ImmuneControl)
+function BuffLogicSetImmuneControl:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetFlag(BuffFlags.ImmuneControl)
 end
 
 _class("BuffLogicResetImmuneControl", BuffLogicBase)
 BuffLogicResetImmuneControl = BuffLogicResetImmuneControl
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetImmuneControl.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetImmuneControl:Constructor(buffInstance, logicParam)
   self._layerNum = logicParam.layerNum
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetImmuneControl.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):ResetFlag(BuffFlags.ImmuneControl)
+function BuffLogicResetImmuneControl:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():ResetFlag(BuffFlags.ImmuneControl)
 end
-
-

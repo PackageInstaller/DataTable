@@ -1,90 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_sailing_plan/ui_shop_sailing_awards_view.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopSailingAwardsView", UIController)
 UIShopSailingAwardsView = UIShopSailingAwardsView
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopSailingAwardsView.Constructor = function(self)
-  -- function num : 0_0
+function UIShopSailingAwardsView:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingAwardsView.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIShopSailingAwardsView:OnShow(uiParams)
   self._awardsNormal = uiParams[1]
   self._awardsAll = uiParams[2]
   self:GetComponents()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingAwardsView.GetComponents = function(self)
-  -- function num : 0_2
+function UIShopSailingAwardsView:GetComponents()
   self._poolsNormal = self:GetUIComponent("UISelectObjectPath", "poolsNormal")
   self._poolsAll = self:GetUIComponent("UISelectObjectPath", "poolsAll")
   local s = self:GetUIComponent("UISelectObjectPath", "itemTips")
   self._tips = s:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingAwardsView.OnValue = function(self)
-  -- function num : 0_3
+function UIShopSailingAwardsView:OnValue()
   local count = #self._awardsNormal
-  ;
-  (self._poolsNormal):SpawnObjects("UIShopSailingPlanItem", count)
-  local awardsNormal = (self._poolsNormal):GetAllSpawnList()
+  self._poolsNormal:SpawnObjects("UIShopSailingPlanItem", count)
+  local awardsNormal = self._poolsNormal:GetAllSpawnList()
   for i = 1, count do
     local item = awardsNormal[i]
-    local award = (self._awardsNormal)[i]
+    local award = self._awardsNormal[i]
     local yieldTime = (i - 1) // 2 * 50
     item:SetData(i, award, function(id, pos)
-    -- function num : 0_3_0 , upvalues : self
-    self:ItemOnClick(id, pos)
-  end
-, nil, nil, nil, yieldTime, true, false, 0.9)
+      self:ItemOnClick(id, pos)
+    end, nil, nil, nil, yieldTime, true, false, 0.9)
   end
   local count2 = #self._awardsAll
-  ;
-  (self._poolsAll):SpawnObjects("UIShopSailingPlanItem", count2)
-  local awardsAll = (self._poolsAll):GetAllSpawnList()
+  self._poolsAll:SpawnObjects("UIShopSailingPlanItem", count2)
+  local awardsAll = self._poolsAll:GetAllSpawnList()
   for i = 1, count2 do
     local item = awardsAll[i]
     local yieldTime = (i - 1) // 3 * 50
-    local award = (self._awardsAll)[i]
+    local award = self._awardsAll[i]
     item:SetData(i, award, function(id, pos)
-    -- function num : 0_3_1 , upvalues : self
-    self:ItemOnClick(id, pos)
-  end
-, nil, nil, nil, yieldTime, true, false, 0.9)
+      self:ItemOnClick(id, pos)
+    end, nil, nil, nil, yieldTime, true, false, 0.9)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingAwardsView.ItemOnClick = function(self, id, pos)
-  -- function num : 0_4
+function UIShopSailingAwardsView:ItemOnClick(id, pos)
   if self._tips then
-    (self._tips):SetData(id, pos)
+    self._tips:SetData(id, pos)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingAwardsView.OnHide = function(self)
-  -- function num : 0_5
+function UIShopSailingAwardsView:OnHide()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingAwardsView.BgOnClick = function(self, go)
-  -- function num : 0_6
+function UIShopSailingAwardsView:BgOnClick(go)
   self:CloseDialog()
 end
-
-

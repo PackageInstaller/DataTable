@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_break/ui_break_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBreakInfoItem", Object)
 UIBreakInfoItem = UIBreakInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBreakInfoItem.OnShowItem = function(self)
-  -- function num : 0_0
+function UIBreakInfoItem:OnShowItem()
   self._name2Assets = {}
   self.key2CustomWidgetPools = {}
   self.type2ComponentTable = {}
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.GetComponents = function(self)
-  -- function num : 0_1
+function UIBreakInfoItem:GetComponents()
   self.nameText = self:GetUIComponent("UILocalizationText", "TextSpriteName")
   self.breakText = self:GetUIComponent("UILocalizationText", "Break")
   self.starsLoader = self:GetUIComponent("UISelectObjectPath", "Stars")
@@ -45,265 +35,161 @@ UIBreakInfoItem.GetComponents = function(self)
   self.mul_target3 = self:GetUIComponent("UILocalizationText", "mulAtt_3target")
   local sop = self:GetUIComponent("UISelectObjectPath", "preattack")
   self.preAttackCell = sop:SpawnObject("UIPreAttackItem")
-  ;
-  (self.preAttackCell):Enable(false)
+  self.preAttackCell:Enable(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.OnValue = function(self)
-  -- function num : 0_2
+function UIBreakInfoItem:OnValue()
   self:ShowName()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.SetBreakBaseInfo = function(self)
-  -- function num : 0_3
+function UIBreakInfoItem:SetBreakBaseInfo()
   self:ShowBreakCount()
   self:ShowStar()
   self:ShowStarPath()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.RefreshBreakInfo = function(self, isInit, playAnim, ignoreRefreshSelect)
-  -- function num : 0_4 , upvalues : _ENV
+function UIBreakInfoItem:RefreshBreakInfo(isInit, playAnim, ignoreRefreshSelect)
   if self._uiData then
-    (self._uiData):Dispose()
+    self._uiData:Dispose()
   end
   self._uiData = UIBreakUIData:New(self._petInfo)
   self:SetBreakBaseInfo()
   if isInit then
-    (self.starPathWidget):Init((self._uiData):GetCurrent(), (self._uiData):GetAwakeMatch(), (self._uiData):GetBreakCount(), (self._uiData):GetAllPromoteData(), function(num)
-    -- function num : 0_4_0 , upvalues : self
-    self:OnSelectPathPoint(num)
-  end
-)
+    self.starPathWidget:Init(self._uiData:GetCurrent(), self._uiData:GetAwakeMatch(), self._uiData:GetBreakCount(), self._uiData:GetAllPromoteData(), function(num)
+      self:OnSelectPathPoint(num)
+    end)
+  elseif playAnim then
+    self.starPathWidget:RefreshAfterBreak(self._uiData:GetCurrent(), self._uiData:GetAwakeMatch(), self._uiData:GetBreakCount(), self._uiData:GetAllPromoteData())
   else
-    if playAnim then
-      (self.starPathWidget):RefreshAfterBreak((self._uiData):GetCurrent(), (self._uiData):GetAwakeMatch(), (self._uiData):GetBreakCount(), (self._uiData):GetAllPromoteData())
-    else
-      ;
-      (self.starPathWidget):InitAgain((self._uiData):GetCurrent(), (self._uiData):GetAwakeMatch(), (self._uiData):GetBreakCount(), (self._uiData):GetAllPromoteData())
-    end
+    self.starPathWidget:InitAgain(self._uiData:GetCurrent(), self._uiData:GetAwakeMatch(), self._uiData:GetBreakCount(), self._uiData:GetAllPromoteData())
   end
   if not ignoreRefreshSelect then
     self._selectPointIdx = -1
-    if (self._uiData):IsFullBreak() then
-      self:OnSelectPathPoint((self._uiData):GetBreakCount())
+    if self._uiData:IsFullBreak() then
+      self:OnSelectPathPoint(self._uiData:GetBreakCount())
     else
-      self:OnSelectPathPoint((self._uiData):GetCurrent() + 1)
+      self:OnSelectPathPoint(self._uiData:GetCurrent() + 1)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.OnSelectPathPoint = function(self, _num)
-  -- function num : 0_5
+function UIBreakInfoItem:OnSelectPathPoint(_num)
   if _num == self._selectPointIdx then
-    return 
+    return
   end
   self._selectPointIdx = _num
   self:RefreshPromoteInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.RefreshPromoteInfo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIBreakInfoItem:RefreshPromoteInfo()
   self:SetPromotionInfo()
-  ;
-  (self.starPathWidget):OnSelected(self._selectPointIdx)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnAwakenSelectPointChange, self._idx, self._selectPointIdx)
+  self.starPathWidget:OnSelected(self._selectPointIdx)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnAwakenSelectPointChange, self._idx, self._selectPointIdx)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.ShowPreAttack = function(self, type)
-  -- function num : 0_7 , upvalues : _ENV
+function UIBreakInfoItem:ShowPreAttack(type)
   if self.preAttackCell then
     if type == UIBreakPromoteType.ActiveSkill then
-      (self.preAttackCell):Enable(true)
-      local maxGrade = (self._petInfo):GetMaxGrade()
-      local skillCfg = (Cfg.cfg_pet_skill)({PetID = (self._petInfo):GetTemplateID(), Grade = maxGrade, Awakening = self._selectPointIdx})
-      if skillCfg and skillCfg[1] then
-        do
-          (self.preAttackCell):SetData(self._petPstID, (skillCfg[1]).ActiveSkill, true)
-          ;
-          (self.preAttackCell):Enable(false)
-        end
-      end
+      self.preAttackCell:Enable(true)
+      local maxGrade = self._petInfo:GetMaxGrade()
+      local skillCfg = Cfg.cfg_pet_skill({
+        PetID = self._petInfo:GetTemplateID(),
+        Grade = maxGrade,
+        Awakening = self._selectPointIdx
+      })
+      self.preAttackCell:SetData(self._petPstID, skillCfg and skillCfg[1] and skillCfg[1].ActiveSkill, true)
+    else
+      self.preAttackCell:Enable(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.GetUiData = function(self)
-  -- function num : 0_8
+function UIBreakInfoItem:GetUiData()
   return self._uiData
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.GetSelectPointIdx = function(self)
-  -- function num : 0_9
+function UIBreakInfoItem:GetSelectPointIdx()
   return self._selectPointIdx
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.GetDesc = function(self)
-  -- function num : 0_10
+function UIBreakInfoItem:GetDesc()
   return self._desc
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.SetPromotionInfo = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local data = (self._uiData):GetPromoteData(self._selectPointIdx)
-  ;
-  (self.skillGo):SetActive(false)
-  ;
-  (self.oneAttGo):SetActive(false)
-  ;
-  (self.mulAttGo):SetActive(false)
-  self:ShowPreAttack((data[1]).type)
+function UIBreakInfoItem:SetPromotionInfo()
+  local data = self._uiData:GetPromoteData(self._selectPointIdx)
+  self.skillGo:SetActive(false)
+  self.oneAttGo:SetActive(false)
+  self.mulAttGo:SetActive(false)
+  self:ShowPreAttack(data[1].type)
   self._desc = ""
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-  if #data == 1 and UIBreakPromoteType.NormalSkill <= (data[1]).type then
-    (self.skillName).text = (data[1]).name
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.skillType).text = (self._uiData):GetSkillTypeName((data[1]).type)
-    ;
-    (self.skillIcon):LoadImage((data[1]).icon)
-    ;
-    (self.skillGo):SetActive(true)
-    self._desc = (data[1]).des
+  if #data == 1 and data[1].type >= UIBreakPromoteType.NormalSkill then
+    self.skillName.text = data[1].name
+    self.skillType.text = self._uiData:GetSkillTypeName(data[1].type)
+    self.skillIcon:LoadImage(data[1].icon)
+    self.skillGo:SetActive(true)
+    self._desc = data[1].des
   else
-    local name = (StringTable.Get)((self._petInfo):GetPetName())
+    local name = StringTable.Get(self._petInfo:GetPetName())
     if #data == 1 then
       if self._showBreifDes then
-        (self.oneAtt_tip):SetActive(true)
-        ;
-        (self.one_valueObj):SetActive(false)
+        self.oneAtt_tip:SetActive(true)
+        self.one_valueObj:SetActive(false)
       end
-      local attType = (data[1]).type
-      local attValue = (data[1]).delta
-      local from = (data[1]).from
-      local to = (data[1]).to
-      local info = (self._uiData):GetAttributeInfo(attType)
-      -- DECOMPILER ERROR at PC88: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self.one_icon).sprite = info.icon
-      -- DECOMPILER ERROR at PC91: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self.one_name).text = info.name
-      -- DECOMPILER ERROR at PC94: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self.one_nameEn).text = info.nameEN
-      -- DECOMPILER ERROR at PC96: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self.one_value).text = from
-      -- DECOMPILER ERROR at PC98: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self.one_target).text = to
-      ;
-      (self.oneAttGo):SetActive(true)
+      local attType = data[1].type
+      local attValue = data[1].delta
+      local from = data[1].from
+      local to = data[1].to
+      local info = self._uiData:GetAttributeInfo(attType)
+      self.one_icon.sprite = info.icon
+      self.one_name.text = info.name
+      self.one_nameEn.text = info.nameEN
+      self.one_value.text = from
+      self.one_target.text = to
+      self.oneAttGo:SetActive(true)
     else
-      do
-        do
-          ;
-          (self.mulAtt_1Go):SetActive(false)
-          ;
-          (self.mulAtt_2Go):SetActive(false)
-          ;
-          (self.mulAtt_3Go):SetActive(false)
-          for i = 1, #data do
-            local att = data[i]
-            if att.type == UIBreakPromoteType.Attack then
-              (self.mulAtt_1Go):SetActive(true)
-              -- DECOMPILER ERROR at PC132: Confused about usage of register: R8 in 'UnsetPending'
-
-              ;
-              (self.mul_value1).text = att.from
-              -- DECOMPILER ERROR at PC135: Confused about usage of register: R8 in 'UnsetPending'
-
-              ;
-              (self.mul_target1).text = att.to
-              if self._showBreifDes then
-                (self.mulAtt_1tip):SetActive(true)
-                ;
-                (self.mulAtt_1valueObj):SetActive(false)
-              end
-            else
-              if att.type == UIBreakPromoteType.Defence then
-                (self.mulAtt_2Go):SetActive(true)
-                -- DECOMPILER ERROR at PC159: Confused about usage of register: R8 in 'UnsetPending'
-
-                ;
-                (self.mul_value2).text = att.from
-                -- DECOMPILER ERROR at PC162: Confused about usage of register: R8 in 'UnsetPending'
-
-                ;
-                (self.mul_target2).text = att.to
-                if self._showBreifDes then
-                  (self.mulAtt_2tip):SetActive(true)
-                  ;
-                  (self.mulAtt_2valueObj):SetActive(false)
-                end
-              else
-                if att.type == UIBreakPromoteType.HP then
-                  (self.mulAtt_3Go):SetActive(true)
-                  -- DECOMPILER ERROR at PC186: Confused about usage of register: R8 in 'UnsetPending'
-
-                  ;
-                  (self.mul_value3).text = att.from
-                  -- DECOMPILER ERROR at PC189: Confused about usage of register: R8 in 'UnsetPending'
-
-                  ;
-                  (self.mul_target3).text = att.to
-                  if self._showBreifDes then
-                    (self.mulAtt_3tip):SetActive(true)
-                    ;
-                    (self.mulAtt_3valueObj):SetActive(false)
-                  end
-                end
-              end
-            end
+      self.mulAtt_1Go:SetActive(false)
+      self.mulAtt_2Go:SetActive(false)
+      self.mulAtt_3Go:SetActive(false)
+      for i = 1, #data do
+        local att = data[i]
+        if att.type == UIBreakPromoteType.Attack then
+          self.mulAtt_1Go:SetActive(true)
+          self.mul_value1.text = att.from
+          self.mul_target1.text = att.to
+          if self._showBreifDes then
+            self.mulAtt_1tip:SetActive(true)
+            self.mulAtt_1valueObj:SetActive(false)
           end
-          ;
-          (self.mulAttGo):SetActive(true)
-          self._desc = (self._uiData):GetAttributeDes(self._selectPointIdx)
+        elseif att.type == UIBreakPromoteType.Defence then
+          self.mulAtt_2Go:SetActive(true)
+          self.mul_value2.text = att.from
+          self.mul_target2.text = att.to
+          if self._showBreifDes then
+            self.mulAtt_2tip:SetActive(true)
+            self.mulAtt_2valueObj:SetActive(false)
+          end
+        elseif att.type == UIBreakPromoteType.HP then
+          self.mulAtt_3Go:SetActive(true)
+          self.mul_value3.text = att.from
+          self.mul_target3.text = att.to
+          if self._showBreifDes then
+            self.mulAtt_3tip:SetActive(true)
+            self.mulAtt_3valueObj:SetActive(false)
+          end
         end
       end
+      self.mulAttGo:SetActive(true)
     end
   end
+  self._desc = self._uiData:GetAttributeDes(self._selectPointIdx)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.SetView = function(self, view)
-  -- function num : 0_12
+function UIBreakInfoItem:SetView(view)
   self._view = view
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.SetData = function(self, idx, pet)
-  -- function num : 0_13
+function UIBreakInfoItem:SetData(idx, pet)
   self._idx = idx
   self._petInfo = pet
   self:OnValue()
@@ -311,10 +197,7 @@ UIBreakInfoItem.SetData = function(self, idx, pet)
   self._isInit = true
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.SetShowBreifDes = function(self)
-  -- function num : 0_14
+function UIBreakInfoItem:SetShowBreifDes()
   self._showBreifDes = true
   self.oneAtt_tip = self:GetGameObject("oneAtt_tip")
   self.one_valueObj = self:GetGameObject("oneAtt_value")
@@ -326,10 +209,7 @@ UIBreakInfoItem.SetShowBreifDes = function(self)
   self.mulAtt_3valueObj = self:GetGameObject("mulAtt_3value")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.RefreshData = function(self, idx, pet, playAnim)
-  -- function num : 0_15
+function UIBreakInfoItem:RefreshData(idx, pet, playAnim)
   self._idx = idx
   self._petInfo = pet
   self:OnValue()
@@ -340,180 +220,145 @@ UIBreakInfoItem.RefreshData = function(self, idx, pet, playAnim)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.Dispose = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local key2CustomWidgetPools = (table.shallowcopy)(self.key2CustomWidgetPools)
+function UIBreakInfoItem:Dispose()
+  local key2CustomWidgetPools = table.shallowcopy(self.key2CustomWidgetPools)
   if key2CustomWidgetPools then
-    for k,v in pairs(key2CustomWidgetPools) do
+    for k, v in pairs(key2CustomWidgetPools) do
       v:Dispose()
     end
   end
-  do
-    ;
-    (table.clear)(self.key2CustomWidgetPools)
-    self.key2CustomWidgetPools = nil
-    self.type2ComponentTable = nil
-    self.nameText = nil
-    self.breakText = nil
-    self.starsLoader = nil
-    self.startPathLoader = nil
-    self.skillGo = nil
-    self.skillIcon = nil
-    self.skillName = nil
-    self.skillType = nil
-    self.oneAttGo = nil
-    self.one_icon = nil
-    self.one_name = nil
-    self.one_nameEn = nil
-    self.one_value = nil
-    self.one_target = nil
-    self.mulAttGo = nil
-    self.mulAtt_1Go = nil
-    self.mulAtt_2Go = nil
-    self.mulAtt_3Go = nil
-    self.mul_value1 = nil
-    self.mul_value2 = nil
-    self.mul_value3 = nil
-    self.mul_target1 = nil
-    self.mul_target2 = nil
-    self.mul_target3 = nil
-    self.preAttackCell = nil
-    self._view = nil
-    if self._uiData then
-      (self._uiData):Dispose()
-    end
-    self._uiData = nil
-    ;
-    (UIResourceManager.DisposeAllAssets)(self._name2Assets)
-    self._name2Assets = nil
+  table.clear(self.key2CustomWidgetPools)
+  self.key2CustomWidgetPools = nil
+  self.type2ComponentTable = nil
+  self.nameText = nil
+  self.breakText = nil
+  self.starsLoader = nil
+  self.startPathLoader = nil
+  self.skillGo = nil
+  self.skillIcon = nil
+  self.skillName = nil
+  self.skillType = nil
+  self.oneAttGo = nil
+  self.one_icon = nil
+  self.one_name = nil
+  self.one_nameEn = nil
+  self.one_value = nil
+  self.one_target = nil
+  self.mulAttGo = nil
+  self.mulAtt_1Go = nil
+  self.mulAtt_2Go = nil
+  self.mulAtt_3Go = nil
+  self.mul_value1 = nil
+  self.mul_value2 = nil
+  self.mul_value3 = nil
+  self.mul_target1 = nil
+  self.mul_target2 = nil
+  self.mul_target3 = nil
+  self.preAttackCell = nil
+  self._view = nil
+  if self._uiData then
+    self._uiData:Dispose()
   end
+  self._uiData = nil
+  UIResourceManager.DisposeAllAssets(self._name2Assets)
+  self._name2Assets = nil
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.ShowName = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  (self.nameText):SetText((StringTable.Get)((self._petInfo):GetPetName()))
+function UIBreakInfoItem:ShowName()
+  self.nameText:SetText(StringTable.Get(self._petInfo:GetPetName()))
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.ShowBreakCount = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  if (self._uiData):IsFullBreak() then
-    (self.breakText):SetText((StringTable.Get)("str_pet_config_break_full"))
+function UIBreakInfoItem:ShowBreakCount()
+  if self._uiData:IsFullBreak() then
+    self.breakText:SetText(StringTable.Get("str_pet_config_break_full"))
   else
-    local t = {[0] = "str_pet_config_break_0", [1] = "str_pet_config_break_1", [2] = "str_pet_config_break_2", [3] = "str_pet_config_break_3", [4] = "str_pet_config_break_4", [5] = "str_pet_config_break_5", [6] = "str_pet_config_break_6"}
-    ;
-    (self.breakText):SetText((StringTable.Get)(t[(self._uiData):GetCurrent()]))
+    local t = {
+      [0] = "str_pet_config_break_0",
+      [1] = "str_pet_config_break_1",
+      [2] = "str_pet_config_break_2",
+      [3] = "str_pet_config_break_3",
+      [4] = "str_pet_config_break_4",
+      [5] = "str_pet_config_break_5",
+      [6] = "str_pet_config_break_6"
+    }
+    self.breakText:SetText(StringTable.Get(t[self._uiData:GetCurrent()]))
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.ShowStar = function(self)
-  -- function num : 0_19
-  (self.starsLoader):SpawnObjects("UIPetIntimacyStar", (self._uiData):GetBreakCount())
-  local stars = (self.starsLoader):GetAllSpawnList()
+function UIBreakInfoItem:ShowStar()
+  self.starsLoader:SpawnObjects("UIPetIntimacyStar", self._uiData:GetBreakCount())
+  local stars = self.starsLoader:GetAllSpawnList()
   for i = 1, #stars do
-    local isBackBreak = (self._uiData):GetAwakeMatch() < i and i <= (self._uiData):GetCurrent()
-    ;
-    (stars[i]):Refresh(i <= (self._uiData):GetCurrent(), isBackBreak)
+    local isBackBreak = i > self._uiData:GetAwakeMatch() and i <= self._uiData:GetCurrent()
+    stars[i]:Refresh(i <= self._uiData:GetCurrent(), isBackBreak)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.ShowStarPath = function(self)
-  -- function num : 0_20
-  local pathNames = {[1] = "UIBreakPathItem1.prefab", [2] = "UIBreakPathItem2.prefab", [3] = "UIBreakPathItem3.prefab", [4] = "UIBreakPathItem4.prefab", [5] = "UIBreakPathItem5.prefab", [6] = "UIBreakPathItem6.prefab"}
+function UIBreakInfoItem:ShowStarPath()
+  local pathNames = {
+    [1] = "UIBreakPathItem1.prefab",
+    [2] = "UIBreakPathItem2.prefab",
+    [3] = "UIBreakPathItem3.prefab",
+    [4] = "UIBreakPathItem4.prefab",
+    [5] = "UIBreakPathItem5.prefab",
+    [6] = "UIBreakPathItem6.prefab"
+  }
   if self.starPathWidget == nil then
-    ((self.startPathLoader).dynamicInfoOfEngine):SetObjectName(pathNames[6])
-    self.starPathWidget = (self.startPathLoader):SpawnObject("UIBreakStarPath")
+    self.startPathLoader.dynamicInfoOfEngine:SetObjectName(pathNames[6])
+    self.starPathWidget = self.startPathLoader:SpawnObject("UIBreakStarPath")
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.GetName = function(self)
-  -- function num : 0_21
+function UIBreakInfoItem:GetName()
   return "UIBreakInfoItem"
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.GetUIComponent = function(self, componentTypeName, name)
-  -- function num : 0_22 , upvalues : _ENV
+function UIBreakInfoItem:GetUIComponent(componentTypeName, name)
   if componentTypeName == "UISelectObjectPath" then
-    local uiCustomWidgetPool = (self.key2CustomWidgetPools)[name]
+    local uiCustomWidgetPool = self.key2CustomWidgetPools[name]
     if uiCustomWidgetPool then
       return uiCustomWidgetPool
     end
     local view = self._view
-    do
-      do
-        if view then
-          local dynamicInfoOfEngine = view:GetUIComponent(componentTypeName, name)
-          if dynamicInfoOfEngine then
-            uiCustomWidgetPool = UICustomWidgetPool:New(self, dynamicInfoOfEngine)
-            -- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
-
-            ;
-            (self.key2CustomWidgetPools)[name] = uiCustomWidgetPool
-            return uiCustomWidgetPool
-          end
-        end
-        ;
-        (Log.fatal)("UIController", self:GetName(), " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
-        do return nil end
-        local name2Component = (self.type2ComponentTable)[componentTypeName]
-        do
-          if name2Component then
-            local component = name2Component[name]
-            if component then
-              return component
-            end
-          end
-          local view = self._view
-          do
-            if view then
-              local target = view:GetUIComponent(componentTypeName, name)
-              -- DECOMPILER ERROR at PC60: Confused about usage of register: R6 in 'UnsetPending'
-
-              if target then
-                if name2Component == nil then
-                  (self.type2ComponentTable)[componentTypeName] = {}
-                  name2Component = (self.type2ComponentTable)[componentTypeName]
-                end
-                name2Component[name] = target
-                return target
-              end
-            end
-            ;
-            (Log.fatal)("UIController", self:GetName(), " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
-            do return nil end
-          end
-        end
+    if view then
+      local dynamicInfoOfEngine = view:GetUIComponent(componentTypeName, name)
+      if dynamicInfoOfEngine then
+        uiCustomWidgetPool = UICustomWidgetPool:New(self, dynamicInfoOfEngine)
+        self.key2CustomWidgetPools[name] = uiCustomWidgetPool
+        return uiCustomWidgetPool
       end
     end
+    Log.fatal("UIController", self:GetName(), " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
+    return nil
+  else
+    local name2Component = self.type2ComponentTable[componentTypeName]
+    if name2Component then
+      local component = name2Component[name]
+      if component then
+        return component
+      end
+    end
+    local view = self._view
+    if view then
+      local target = view:GetUIComponent(componentTypeName, name)
+      if target then
+        if name2Component == nil then
+          self.type2ComponentTable[componentTypeName] = {}
+          name2Component = self.type2ComponentTable[componentTypeName]
+        end
+        name2Component[name] = target
+        return target
+      end
+    end
+    Log.fatal("UIController", self:GetName(), " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.GetGameObject = function(self, name)
-  -- function num : 0_23
-  return (self._view):GetGameObject(name)
+function UIBreakInfoItem:GetGameObject(name)
+  return self._view:GetGameObject(name)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBreakInfoItem.GetAsset = function(self, name, loadType)
-  -- function num : 0_24 , upvalues : _ENV
-  return (UIResourceManager.GetAsset)(name, loadType, self._name2Assets)
+function UIBreakInfoItem:GetAsset(name, loadType)
+  return UIResourceManager.GetAsset(name, loadType, self._name2Assets)
 end
-
-

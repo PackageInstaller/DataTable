@@ -1,62 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_skill_increase_with_san.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillIncreaseWithSan", BuffLogicBase)
 BuffLogicChangeSkillIncreaseWithSan = BuffLogicChangeSkillIncreaseWithSan
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillIncreaseWithSan.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeSkillIncreaseWithSan:Constructor(buffInstance, logicParam)
   self._maxValue = logicParam.maxValue or 0
   self._changeValue = logicParam.changeValue or 0
   self._baseValue = logicParam.baseValue or 0
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._effectList = logicParam.effectList
+  self._buffInstance._effectList = logicParam.effectList
   self._entity = buffInstance._entity
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillIncreaseWithSan.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+function BuffLogicChangeSkillIncreaseWithSan:DoLogic()
+  local e = self._buffInstance:Entity()
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   local curSan = lsvcFeature:GetSanValue()
   if not curSan or curSan == -1 then
-    return 
+    return
   end
-  local changeValue = self._maxValue - (math.abs)(curSan - self._baseValue) * self._changeValue
+  local changeValue = self._maxValue - math.abs(curSan - self._baseValue) * self._changeValue
   if changeValue < 0 then
     changeValue = 0
   end
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillIncrease(self._entity, (self._buffInstance)._buffSeq, paramType)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillIncrease(self._entity, self._buffInstance._buffSeq, paramType)
     if changeValue ~= 0 then
-      (self._buffLogicService):ChangeSkillIncrease(self._entity, (self._buffInstance)._buffSeq, paramType, changeValue)
+      self._buffLogicService:ChangeSkillIncrease(self._entity, self._buffInstance._buffSeq, paramType, changeValue)
     end
   end
 end
 
 _class("BuffLogicRemoveSkillIncreaseWithSan", BuffLogicBase)
 BuffLogicRemoveSkillIncreaseWithSan = BuffLogicRemoveSkillIncreaseWithSan
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSkillIncreaseWithSan.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveSkillIncreaseWithSan:Constructor(buffInstance, logicParam)
   self._entity = buffInstance._entity
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSkillIncreaseWithSan.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillIncrease(self._entity, (self._buffInstance):BuffSeq(), paramType)
+function BuffLogicRemoveSkillIncreaseWithSan:DoLogic()
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillIncrease(self._entity, self._buffInstance:BuffSeq(), paramType)
   end
 end
-
-

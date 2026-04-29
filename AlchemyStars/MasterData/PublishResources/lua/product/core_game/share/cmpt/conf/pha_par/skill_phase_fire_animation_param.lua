@@ -1,107 +1,72 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_fire_animation_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseFireAnimationParam", SkillPhaseParamBase)
 SkillPhaseFireAnimationParam = SkillPhaseFireAnimationParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseFireAnimationParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseFireAnimationParam:Constructor(t)
   self._effFireId = tonumber(t.effFireId)
   self._bombDelayMS = tonumber(t.bombDelayMS)
   self._effBombId = tonumber(t.effBombId)
-  local effectDatas = (string.split)(t.castEffectData, ",")
+  local effectDatas = string.split(t.castEffectData, ",")
   self._effectId = tonumber(effectDatas[1])
   self._effectCount = tonumber(effectDatas[2])
   self._flyTime = tonumber(t.flyTime)
   self._castAnimation = t.castAnimation
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFireAnimationParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseFireAnimationParam:GetCacheTable()
   local t = {
-{((Cfg.cfg_effect)[self._effFireId]).ResPath, 1}
-, 
-{((Cfg.cfg_effect)[self._effBombId]).ResPath, 1}
-, 
-{((Cfg.cfg_effect)[self._effectId]).ResPath, self._effectCount}
-}
+    {
+      Cfg.cfg_effect[self._effFireId].ResPath,
+      1
+    },
+    {
+      Cfg.cfg_effect[self._effBombId].ResPath,
+      1
+    },
+    {
+      Cfg.cfg_effect[self._effectId].ResPath,
+      self._effectCount
+    }
+  }
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFireAnimationParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseFireAnimationParam:GetPhaseType()
   return SkillViewPhaseType.FireAnimation
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFireAnimationParam.GetEffectFireID = function(self)
-  -- function num : 0_3
+function SkillPhaseFireAnimationParam:GetEffectFireID()
   return self._effFireId
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFireAnimationParam.GetBombDelayMS = function(self)
-  -- function num : 0_4
+function SkillPhaseFireAnimationParam:GetBombDelayMS()
   return self._bombDelayMS
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFireAnimationParam.GetEffectBombID = function(self)
-  -- function num : 0_5
+function SkillPhaseFireAnimationParam:GetEffectBombID()
   return self._effBombId
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFireAnimationParam.GetCastEffectID = function(self)
-  -- function num : 0_6
+function SkillPhaseFireAnimationParam:GetCastEffectID()
   return self._effectId
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFireAnimationParam.GetCastEffectCount = function(self)
-  -- function num : 0_7
+function SkillPhaseFireAnimationParam:GetCastEffectCount()
   return self._effectCount
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFireAnimationParam.GetAnimationName = function(self)
-  -- function num : 0_8
+function SkillPhaseFireAnimationParam:GetAnimationName()
   return self._castAnimation
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFireAnimationParam.GetFlyTime = function(self)
-  -- function num : 0_9
+function SkillPhaseFireAnimationParam:GetFlyTime()
   return self._flyTime
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFireAnimationParam.GetStartDelayType = function(self)
-  -- function num : 0_10
+function SkillPhaseFireAnimationParam:GetStartDelayType()
   return 0
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFireAnimationParam.GetStartDelayTime = function(self)
-  -- function num : 0_11
+function SkillPhaseFireAnimationParam:GetStartDelayTime()
   return 0
 end
-
-

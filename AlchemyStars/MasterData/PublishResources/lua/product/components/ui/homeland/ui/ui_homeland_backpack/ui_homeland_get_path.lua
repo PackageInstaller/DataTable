@@ -1,75 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_backpack/ui_homeland_get_path.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandGetPath", UIController)
 UIHomelandGetPath = UIHomelandGetPath
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandGetPath.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetHomelandBackpackData()
-  self.mItem = (GameGlobal.GetModule)(ItemModule)
+function UIHomelandGetPath:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetHomelandBackpackData()
+  self.mItem = GameGlobal.GetModule(ItemModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandGetPath.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandGetPath:OnShow(uiParams)
   self.tplId = uiParams[1]
   self.content = self:GetGameObject("content")
   self.empty = self:GetGameObject("empty")
   self.Content = self:GetUIComponent("UISelectObjectPath", "Content")
-  local cfg = (Cfg.cfg_item)[self.tplId]
+  local cfg = Cfg.cfg_item[self.tplId]
   if cfg == nil then
-    (Log.fatal)("[item] error --> cfg_item is nil ! id --> " .. self.tplId)
-    return 
+    Log.fatal("[item] error --> cfg_item is nil ! id --> " .. self.tplId)
+    return
   end
   self:AttachEvent(GameEventType.CloseUIBackPackBox, self.Flush)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandGetPath.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandGetPath:OnHide()
   self:DetachEvent(GameEventType.CloseUIBackPackBox, self.Flush)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandGetPath.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self.itemGetWays = (self.data):GetHomelandPathItemDataListByTplId(self.tplId)
-  local len = (table.count)(self.itemGetWays)
-  if len > 0 then
-    (self.empty):SetActive(false)
-    ;
-    (self.content):SetActive(true)
-    ;
-    (self.Content):SpawnObjects("UIHomelandGetPathItem", len)
-    local uis = (self.Content):GetAllSpawnList()
-    for index,ui in ipairs(uis) do
-      local way = (self.itemGetWays)[index]
+function UIHomelandGetPath:Flush()
+  self.itemGetWays = self.data:GetHomelandPathItemDataListByTplId(self.tplId)
+  local len = table.count(self.itemGetWays)
+  if 0 < len then
+    self.empty:SetActive(false)
+    self.content:SetActive(true)
+    self.Content:SpawnObjects("UIHomelandGetPathItem", len)
+    local uis = self.Content:GetAllSpawnList()
+    for index, ui in ipairs(uis) do
+      local way = self.itemGetWays[index]
       ui:Flush(way, self.tplId)
     end
   else
-    do
-      ;
-      (self.empty):SetActive(true)
-      ;
-      (self.content):SetActive(false)
-    end
+    self.empty:SetActive(true)
+    self.content:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandGetPath.bgOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomelandGetPath:bgOnClick(go)
   self:CloseDialog()
 end
-
-

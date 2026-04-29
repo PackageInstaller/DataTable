@@ -1,57 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s8/main/ui_season_main_level_list_asset_s8.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMainLevelListAssetS8", UICustomWidget)
 UISeasonMainLevelListAssetS8 = UISeasonMainLevelListAssetS8
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMainLevelListAssetS8.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMainLevelListAssetS8:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListAssetS8.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMainLevelListAssetS8:InitWidget()
   self.icon = self:GetUIComponent("Image", "icon")
   self.count = self:GetUIComponent("UILocalizationText", "count")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListAssetS8.SetData = function(self, id, count)
-  -- function num : 0_2 , upvalues : _ENV
-  local zeros = nil
-  if count > 9999 then
-    (Log.exception)("奖励数量不可超过4位:", count)
-  else
-    if count < 1000 and count > 99 then
-      zeros = "0"
-    else
-      if count < 100 and count > 9 then
-        zeros = "00"
-      else
-        if count < 10 and count > 0 then
-          zeros = "000"
-        end
-      end
-    end
+function UISeasonMainLevelListAssetS8:SetData(id, count)
+  local zeros
+  if 9999 < count then
+    Log.exception("奖励数量不可超过4位:", count)
+  elseif count < 1000 and 99 < count then
+    zeros = "0"
+  elseif count < 100 and 9 < count then
+    zeros = "00"
+  elseif count < 10 and 0 < count then
+    zeros = "000"
   end
-  if (string.isnullorempty)(zeros) then
-    (self.count):SetText(count)
+  if string.isnullorempty(zeros) then
+    self.count:SetText(count)
   else
-    ;
-    (self.count):SetText(zeros .. count)
+    self.count:SetText(zeros .. count)
   end
-  local cfg = (Cfg.cfg_top_tips)[id]
+  local cfg = Cfg.cfg_top_tips[id]
   local atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.icon).sprite = atlas:GetSprite(cfg.Icon)
+  self.icon.sprite = atlas:GetSprite(cfg.Icon)
 end
-
-

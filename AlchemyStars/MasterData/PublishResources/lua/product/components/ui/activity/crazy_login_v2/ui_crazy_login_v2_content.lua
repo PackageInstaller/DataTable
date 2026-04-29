@@ -1,274 +1,177 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/crazy_login_v2/ui_crazy_login_v2_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UICrazyLoginV2Content", UISideEnterCenterContentBase)
 UICrazyLoginV2Content = UICrazyLoginV2Content
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICrazyLoginV2Content.DoInit = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function UICrazyLoginV2Content:DoInit(params)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_SIGN_IN
   self._componentId = ECampaignSignInComponentID.ECAMPAIGN_SIGN_IN_CUMULATIVE_LOGIN
-  if params then
-    self._campaignId = params.campaign_id
-    self._campaign = self._data
-  end
+  self._campaignId = params and params.campaign_id
+  self._campaign = self._data
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content.DoShow = function(self)
-  -- function num : 0_1
+function UICrazyLoginV2Content:DoShow()
   self:_AttachEvent()
-  self._component = (self._campaign):GetComponent(self._componentId)
+  self._component = self._campaign:GetComponent(self._componentId)
   self._curSelectedDayNum = -1
   self:_SetUI_ByCfg()
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content.DoHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICrazyLoginV2Content:DoHide()
   self:_DetachEvent()
-  ;
-  (UIWidgetHelper.ClearWidgets)(self, "_tipsPool")
+  UIWidgetHelper.ClearWidgets(self, "_tipsPool")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content.DoDestroy = function(self)
-  -- function num : 0_3
+function UICrazyLoginV2Content:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content._SetUI_ByCfg = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._lastFixed = (UICrazyLoginV2Helper.GetValue)(self._campaign, "LastFixed") or false
-  local value = (UICrazyLoginV2Helper.GetValue)(self._campaign, "Bg")
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_bg", value)
-  value = (UICrazyLoginV2Helper.GetValue)(self._campaign, "Spine", "name")
-  ;
-  (UIWidgetHelper.SetSpineLoad)(self, "_spine", value)
+function UICrazyLoginV2Content:_SetUI_ByCfg()
+  self._lastFixed = UICrazyLoginV2Helper.GetValue(self._campaign, "LastFixed") or false
+  local value = UICrazyLoginV2Helper.GetValue(self._campaign, "Bg")
+  UIWidgetHelper.SetRawImage(self, "_bg", value)
+  value = UICrazyLoginV2Helper.GetValue(self._campaign, "Spine", "name")
+  UIWidgetHelper.SetSpineLoad(self, "_spine", value)
   local obj = self:GetUIComponent("RectTransform", "_spine")
-  value = (UICrazyLoginV2Helper.GetValue)(self._campaign, "Spine", "pos")
+  value = UICrazyLoginV2Helper.GetValue(self._campaign, "Spine", "pos")
   obj.anchoredPosition = Vector2(value[1], value[2])
-  value = (UICrazyLoginV2Helper.GetValue)(self._campaign, "Spine", "scale")
+  value = UICrazyLoginV2Helper.GetValue(self._campaign, "Spine", "scale")
   obj.localScale = Vector3(value[1], value[2], value[3])
-  value = (UICrazyLoginV2Helper.GetValue)(self._campaign, "BgBottom")
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_bgBottom", value)
+  value = UICrazyLoginV2Helper.GetValue(self._campaign, "BgBottom")
+  UIWidgetHelper.SetRawImage(self, "_bgBottom", value)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content._SetSpine = function(self, name, pos, scale)
-  -- function num : 0_5
+function UICrazyLoginV2Content:_SetSpine(name, pos, scale)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content._ForceRefresh = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UICrazyLoginV2Content:_ForceRefresh()
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    ;
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
     if res and res:GetSucc() then
       self:_Refresh()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content._Refresh = function(self, notMove)
-  -- function num : 0_7
+function UICrazyLoginV2Content:_Refresh(notMove)
   if not self.view then
-    return 
+    return
   end
-  local componentInfo = (self._component):GetComponentInfo()
-  if componentInfo then
-    self._cmptCloseTime = componentInfo.m_close_time
-    self:_SetCellList()
-    if not notMove then
-      self:_InitScrollPos()
-    end
-    self:_SetTime_Rest()
-    self:_SetTime_Next()
+  local componentInfo = self._component:GetComponentInfo()
+  self._cmptCloseTime = componentInfo and componentInfo.m_close_time
+  self:_SetCellList()
+  if not notMove then
+    self:_InitScrollPos()
   end
+  self:_SetTime_Rest()
+  self:_SetTime_Next()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content._SetCellList = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local datas = (self._component):GetCumulativeRewardInfo()
+function UICrazyLoginV2Content:_SetCellList()
+  local datas = self._component:GetCumulativeRewardInfo()
   self._cellData = datas
-  if not self._lastFixed or not #datas - 1 then
-    local listCount = #datas
+  local listCount = self._lastFixed and #datas - 1 or #datas
+  local objs = UIWidgetHelper.SpawnObjects(self, "Content", "UICrazyLoginV2Cell", listCount)
+  self:GetGameObject("_lastCell"):SetActive(self._lastFixed)
+  if self._lastFixed then
+    local lastCell = UIWidgetHelper.SpawnObject(self, "_lastCell", "UICrazyLoginV2Cell")
+    table.insert(objs, lastCell)
   end
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "Content", "UICrazyLoginV2Cell", listCount)
-  ;
-  (self:GetGameObject("_lastCell")):SetActive(self._lastFixed)
-  do
-    if self._lastFixed then
-      local lastCell = (UIWidgetHelper.SpawnObject)(self, "_lastCell", "UICrazyLoginV2Cell")
-      ;
-      (table.insert)(objs, lastCell)
-    end
-    self._cells = objs
-    for i,v in ipairs(objs) do
-      local lastCell = not self._lastFixed or i == #objs
-      v:SetData(self._campaign, i, datas[i], lastCell, function(idx)
-    -- function num : 0_8_0 , upvalues : _ENV, objs
-    for i,v in ipairs(objs) do
-      v:SetSelected(i == idx)
-    end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-, function(idx)
-    -- function num : 0_8_1 , upvalues : datas, self
-    local dayNum = (datas[idx]).m_login_days
-    ;
-    (self._component):Start_HandleReceiveCumulativeLoginReward(dayNum, function(res, rewards)
-      -- function num : 0_8_1_0 , upvalues : self, idx
-      self:_OnReceiveRewards(idx, res, rewards)
-    end
-)
-  end
-, function(matid, pos)
-    -- function num : 0_8_2 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
-  end
-)
-    end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self._cells = objs
+  for i, v in ipairs(objs) do
+    local lastCell = self._lastFixed and i == #objs
+    v:SetData(self._campaign, i, datas[i], lastCell, function(idx)
+      for i, v in ipairs(objs) do
+        v:SetSelected(i == idx)
+      end
+    end, function(idx)
+      local dayNum = datas[idx].m_login_days
+      self._component:Start_HandleReceiveCumulativeLoginReward(dayNum, function(res, rewards)
+        self:_OnReceiveRewards(idx, res, rewards)
+      end)
+    end, function(matid, pos)
+      UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content._InitScrollPos = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local canGetIdx = (UICrazyLoginV2Helper.CheckCanGetIndex)(self._cellData)
+function UICrazyLoginV2Content:_InitScrollPos()
+  local canGetIdx = UICrazyLoginV2Helper.CheckCanGetIndex(self._cellData)
   if canGetIdx ~= 0 then
     local content = self:GetUIComponent("RectTransform", "Content")
     local height = (canGetIdx - 1) * 139
-    content.anchoredPosition = Vector2((content.anchoredPosition).x, height)
+    content.anchoredPosition = Vector2(content.anchoredPosition.x, height)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content._OnReceiveRewards = function(self, idx, res, rewards)
-  -- function num : 0_10
+function UICrazyLoginV2Content:_OnReceiveRewards(idx, res, rewards)
   if self.view == nil then
-    return 
+    return
   end
   if res:GetSucc() then
-    ((self._cells)[idx]):OnAwardGot(rewards)
+    self._cells[idx]:OnAwardGot(rewards)
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content._SetRemainingTime = function(self, widgetName, endTime, extraId)
-  -- function num : 0_11 , upvalues : _ENV
+function UICrazyLoginV2Content:_SetRemainingTime(widgetName, endTime, extraId)
   local isShow = endTime ~= nil
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
-  ;
-  (obj:GetGameObject()):SetActive(isShow)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
+  obj:GetGameObject():SetActive(isShow)
   if not isShow then
-    return 
+    return
   end
-  local value = (UICrazyLoginV2Helper.GetValue)(self._campaign, "Time", "bg")
-  ;
-  (UIWidgetHelper.SetRawImage)(obj, "bg", value)
-  local color = (UICrazyLoginV2Helper.GetValue)(self._campaign, "Time", "text")
-  ;
-  (UICrazyLoginV2Helper.SetTextColorByCfg)(obj, "txtDesc", color)
-  ;
-  (UICrazyLoginV2Helper.SetTextColorByCfg)(obj, "txtTime", color)
+  local value = UICrazyLoginV2Helper.GetValue(self._campaign, "Time", "bg")
+  UIWidgetHelper.SetRawImage(obj, "bg", value)
+  local color = UICrazyLoginV2Helper.GetValue(self._campaign, "Time", "text")
+  UICrazyLoginV2Helper.SetTextColorByCfg(obj, "txtDesc", color)
+  UICrazyLoginV2Helper.SetTextColorByCfg(obj, "txtTime", color)
   obj:SetExtraText("txtDesc", nil, extraId)
   obj:SetData(endTime, nil, function(isFirst)
-    -- function num : 0_11_0 , upvalues : self
     if not isFirst then
       self:_ForceRefresh()
     end
-  end
-)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content._SetTime_Rest = function(self)
-  -- function num : 0_12
+function UICrazyLoginV2Content:_SetTime_Rest()
   local stopTime = self._cmptCloseTime
   local strId = "str_activity_common_login_reward_remainingtime"
   self:_SetRemainingTime("RestTimeArea", stopTime, strId)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content._SetTime_Next = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local isAllUnlocked = (UICrazyLoginV2Helper.CheckAllUnlocked)(self._cellData)
+function UICrazyLoginV2Content:_SetTime_Next()
+  local isAllUnlocked = UICrazyLoginV2Helper.CheckAllUnlocked(self._cellData)
   local nextTime, complateFlag = self:_GetRefreshTime()
   local stopTime = self._cmptCloseTime
-  local isNotEnoughTime = nextTime == nil or stopTime <= nextTime
+  local isNotEnoughTime = nextTime == nil or nextTime >= stopTime
   if isAllUnlocked or isNotEnoughTime then
     self:_SetRemainingTime("NextTimeArea")
-    return 
+    return
   end
   local strId = "str_activity_common_login_reward_next_remain_time"
   self:_SetRemainingTime("NextTimeArea", nextTime, strId)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content._GetRefreshTime = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local sample = (self._campaign):GetSample()
+function UICrazyLoginV2Content:_GetRefreshTime()
+  local sample = self._campaign:GetSample()
   if sample then
-    local time = (sample.m_extend_info_time)[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_NEXT_REFRESH_TIME]
-    local flag = (sample.m_extend_info)[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_CUMULATIVE_LOGIN_COMPLATE]
+    local time = sample.m_extend_info_time[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_NEXT_REFRESH_TIME]
+    local flag = sample.m_extend_info[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_CUMULATIVE_LOGIN_COMPLATE]
     return time, flag
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content._AttachEvent = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UICrazyLoginV2Content:_AttachEvent()
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content._DetachEvent = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UICrazyLoginV2Content:_DetachEvent()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Content.OnUIGetItemCloseInQuest = function(self)
-  -- function num : 0_17
+function UICrazyLoginV2Content:OnUIGetItemCloseInQuest()
   self:_Refresh(true)
 end
-
-

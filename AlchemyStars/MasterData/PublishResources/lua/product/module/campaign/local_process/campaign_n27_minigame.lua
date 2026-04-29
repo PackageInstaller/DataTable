@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n27_minigame.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignN27MiniGame", ICampaignComponentLocalProcessBase)
 CCampaignN27MiniGame = CCampaignN27MiniGame
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignN27MiniGame.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignN27MiniGame:Constructor()
   self._questComponent = nil
   self._questComponentInfo = nil
   self._mailComponent = nil
@@ -16,55 +9,37 @@ CCampaignN27MiniGame.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN27MiniGame.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignN27MiniGame:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N27_MINI_GAME
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN27MiniGame.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignN27MiniGame:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN27MiniGame.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignN27MiniGame:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetQuestComponent()
   self:_GetMailComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN27MiniGame._GetQuestComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._questComponent = (self._campaignObj):GetComponent(ECampaignN27MiniGameComponentID.QUEST)
+function CCampaignN27MiniGame:_GetQuestComponent()
+  self._questComponent = self._campaignObj:GetComponent(ECampaignN27MiniGameComponentID.QUEST)
   if not self._questComponent then
-    return 
+    return
   end
-  self._questComponentInfo = (self._questComponent):ComponentInfo()
+  self._questComponentInfo = self._questComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN27MiniGame._GetMailComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._mailComponent = (self._campaignObj):GetComponent(ECampaignN27MiniGameComponentID.MINI_MAIL)
+function CCampaignN27MiniGame:_GetMailComponent()
+  self._mailComponent = self._campaignObj:GetComponent(ECampaignN27MiniGameComponentID.MINI_MAIL)
   if not self._mailComponent then
-    return 
+    return
   end
-  self._mailComponentInfo = (self._mailComponent):ComponentInfo()
+  self._mailComponentInfo = self._mailComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN27MiniGame.GetComponent = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignN27MiniGame:GetComponent(componentID)
   if ECampaignN27MiniGameComponentID.QUEST == componentID then
     return self._questComponent
   end
@@ -74,10 +49,7 @@ CCampaignN27MiniGame.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN27MiniGame.GetComponentInfo = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignN27MiniGame:GetComponentInfo(componentID)
   if ECampaignN27MiniGameComponentID.QUEST == componentID then
     return self._questComponentInfo
   end
@@ -87,15 +59,8 @@ CCampaignN27MiniGame.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN27MiniGame.GetEntryNew = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignN27MiniGame:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_N27_MINI_GAME)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
-
-

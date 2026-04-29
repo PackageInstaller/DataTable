@@ -1,68 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_shield_layer_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddLayerShield", BuffViewBase)
 BuffViewAddLayerShield = BuffViewAddLayerShield
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddLayerShield.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local layer = (self._buffResult):GetLayer()
-  ;
-  (self._viewInstance):SetLayerCount(TT, layer)
-  ;
-  (Log.debug)("View_AddLayerShield ", "entityID=", (self._entity):GetID(), " layerCount=", layer)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV, self
+function BuffViewAddLayerShield:PlayView(TT)
+  local layer = self._buffResult:GetLayer()
+  self._viewInstance:SetLayerCount(TT, layer)
+  Log.debug("View_AddLayerShield ", "entityID=", self._entity:GetID(), " layerCount=", layer)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     YIELD(TT)
-    ;
-    (self._entity):PlayMaterialAnim("common_shield")
-  end
-)
+    self._entity:PlayMaterialAnim("common_shield")
+  end)
 end
 
 _class("BuffViewRemoveLayerShield", BuffViewBase)
 BuffViewRemoveLayerShield = BuffViewRemoveLayerShield
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRemoveLayerShield.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local layer = (self._buffResult):GetLayer()
-  ;
-  (self._viewInstance):SetLayerCount(TT, layer)
-  ;
-  (self._entity):PlayMaterialAnim("common_shieldactive")
-  ;
-  (Log.debug)("View_RemoveLayerShield ", "entityID=", (self._entity):GetID(), " layerCount=", layer)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+function BuffViewRemoveLayerShield:PlayView(TT)
+  local layer = self._buffResult:GetLayer()
+  self._viewInstance:SetLayerCount(TT, layer)
+  self._entity:PlayMaterialAnim("common_shieldactive")
+  Log.debug("View_RemoveLayerShield ", "entityID=", self._entity:GetID(), " layerCount=", layer)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
   if layer == 0 then
-    (self._viewInstance):SetUnload()
-    local e = (self._viewInstance):Entity()
-    local effectService = (self._world):GetService("Effect")
+    self._viewInstance:SetUnload()
+    local e = self._viewInstance:Entity()
+    local effectService = self._world:GetService("Effect")
     local effectList = {}
-    ;
-    (table.insert)(effectList, BattleConst.AircraftHoldShieldEffect)
+    table.insert(effectList, BattleConst.AircraftHoldShieldEffect)
     effectService:DestroyEntityEffectByID(e, effectList)
-    local playBuffSvc = (self._world):GetService("PlayBuff")
+    local playBuffSvc = self._world:GetService("PlayBuff")
     playBuffSvc:DetachBuffEffect(self._viewInstance)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewRemoveLayerShield.IsNotifyMatch = function(self, notify)
-  -- function num : 0_2
+function BuffViewRemoveLayerShield:IsNotifyMatch(notify)
   if not notify.GetNotifyLayer then
     return true
   end
-  do return notify:GetNotifyLayer() == (self._buffResult):GetLayer() and notify:GetNotifyEntity() == (self._viewInstance):Entity() end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return notify:GetNotifyLayer() == self._buffResult:GetLayer() and notify:GetNotifyEntity() == self._viewInstance:Entity()
 end
-
-

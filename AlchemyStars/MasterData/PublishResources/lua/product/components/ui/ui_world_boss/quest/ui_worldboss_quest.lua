@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/quest/ui_worldboss_quest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossQuest", UIController)
 UIWorldBossQuest = UIWorldBossQuest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossQuest.Constructor = function(self)
-  -- function num : 0_0
+function UIWorldBossQuest:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuest.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWorldBossQuest:LoadDataOnEnter(TT, res, uiParams)
   self._worldBossModule = self:GetModule(WorldBossModule)
-  self._worldBossData = (self._worldBossModule).m_world_boss_data
+  self._worldBossData = self._worldBossModule.m_world_boss_data
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuest.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWorldBossQuest:OnShow(uiParams)
   self._uiWidget = self:GetUIComponent("RectTransform", "uiWidget")
   self._btnAnywhere = self:GetUIComponent("RectTransform", "btnAnywhere")
   self._ltBtn = self:GetUIComponent("UISelectObjectPath", "ltBtn")
@@ -38,72 +25,45 @@ UIWorldBossQuest.OnShow = function(self, uiParams)
   self:InAnimation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuest.OnHide = function(self)
-  -- function num : 0_3
+function UIWorldBossQuest:OnHide()
   self:CallUIMethod("UIWorldBossController", "FlushRedQuest")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuest.OnActivityCloseEvent = function(self, id)
-  -- function num : 0_4 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-    campaignModule:CampaignSwitchState(false, UIStateType.UIActivityN30MainController, UIStateType.UIMain, nil, (self._campaign)._id)
+function UIWorldBossQuest:OnActivityCloseEvent(id)
+  if self._campaign and self._campaign._id == id then
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    campaignModule:CampaignSwitchState(false, UIStateType.UIActivityN30MainController, UIStateType.UIMain, nil, self._campaign._id)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuest.InitCommonTopButton = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._backBtns = (self._ltBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
+function UIWorldBossQuest:InitCommonTopButton()
+  self._backBtns = self._ltBtn:SpawnObject("UICommonTopButton")
+  self._backBtns:SetData(function()
     local lockName = "UIWorldBossQuest:OutAnimation"
     self:StartTask(function(TT)
-      -- function num : 0_5_0_0 , upvalues : self, lockName, _ENV
       self:Lock(lockName)
-      ;
-      (self._eff_dissive1):SetSiblingIndex(1)
-      ;
-      (self._animation):Play("UIWorldBossQuest_out")
+      self._eff_dissive1:SetSiblingIndex(1)
+      self._animation:Play("UIWorldBossQuest_out")
       YIELD(TT, 733)
       self:UnLock(lockName)
       self:CloseDialog()
-    end
-)
-  end
-, fnHelp, function()
-    -- function num : 0_5_1 , upvalues : self, _ENV
+    end)
+  end, fnHelp, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, false, nil, false, function()
-    -- function num : 0_5_2 , upvalues : self
+  end, false, nil, false, function()
     self:EnterFullScreenBg(true)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuest.EnterFullScreenBg = function(self, isEnter)
-  -- function num : 0_6
-  ((self._uiWidget).gameObject):SetActive(not isEnter)
-  ;
-  ((self._btnAnywhere).gameObject):SetActive(isEnter)
+function UIWorldBossQuest:EnterFullScreenBg(isEnter)
+  self._uiWidget.gameObject:SetActive(not isEnter)
+  self._btnAnywhere.gameObject:SetActive(isEnter)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuest.CreateQuestPool = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local idMission = (self._worldBossData).boss_mission_id
-  local cfg_mission = (Cfg.cfg_world_boss_mission)[idMission]
-  local QuestList = nil
+function UIWorldBossQuest:CreateQuestPool()
+  local idMission = self._worldBossData.boss_mission_id
+  local cfg_mission = Cfg.cfg_world_boss_mission[idMission]
+  local QuestList
   if cfg_mission ~= nil and cfg_mission.QuestList ~= nil then
     QuestList = cfg_mission.QuestList
   else
@@ -112,168 +72,117 @@ UIWorldBossQuest.CreateQuestPool = function(self)
   self._dataQuestPool = {}
   self._uiQuestPool = {}
   local questModule = self:GetModule(QuestModule)
-  for k,v in pairs(QuestList) do
+  for k, v in pairs(QuestList) do
     local quest = questModule:GetQuest(v)
     local qinfo = quest:QuestInfo()
-    ;
-    (table.insert)(self._dataQuestPool, qinfo)
+    table.insert(self._dataQuestPool, qinfo)
   end
   local count = #self._dataQuestPool
-  self._uiQuestPool = (self._questContent):SpawnObjects("UIWorldBossQuestWidget", count)
+  self._uiQuestPool = self._questContent:SpawnObjects("UIWorldBossQuestWidget", count)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuest.FlushQuest = function(self, reorder, recreateId)
-  -- function num : 0_8 , upvalues : _ENV
+function UIWorldBossQuest:FlushQuest(reorder, recreateId)
   if reorder then
     local canRecv = 1
-    do
-      local locked = 2
-      local recved = 3
-      local fnStateId = function(status)
-    -- function num : 0_8_0 , upvalues : _ENV, canRecv, locked, recved
-    if status == QuestStatus.QUEST_Completed then
-      return canRecv
-    else
-      if status == QuestStatus.QUEST_NotStart then
+    local locked = 2
+    local recved = 3
+    
+    local function fnStateId(status)
+      if status == QuestStatus.QUEST_Completed then
+        return canRecv
+      elseif status == QuestStatus.QUEST_NotStart then
         return locked
+      elseif status == QuestStatus.QUEST_Accepted then
+        return locked
+      elseif status == QuestStatus.QUEST_Taken then
+        return recved
+      end
+    end
+    
+    table.sort(self._dataQuestPool, function(a, b)
+      local stateA = fnStateId(a.status)
+      local stateB = fnStateId(b.status)
+      if stateA ~= stateB then
+        return stateA < stateB
       else
-        if status == QuestStatus.QUEST_Accepted then
-          return locked
-        else
-          if status == QuestStatus.QUEST_Taken then
-            return recved
-          end
-        end
+        return a.quest_id < b.quest_id
+      end
+    end)
+  end
+  if recreateId ~= nil then
+    local questModule = self:GetModule(QuestModule)
+    for k, v in pairs(self._dataQuestPool) do
+      if v.quest_id == recreateId then
+        local quest = questModule:GetQuest(recreateId)
+        self._dataQuestPool[k] = quest:QuestInfo()
+        break
       end
     end
   end
-
-      ;
-      (table.sort)(self._dataQuestPool, function(a, b)
-    -- function num : 0_8_1 , upvalues : fnStateId
-    local stateA = fnStateId(a.status)
-    local stateB = fnStateId(b.status)
-    if stateA >= stateB then
-      do return stateA == stateB end
-      do return a.quest_id < b.quest_id end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
-    end
-  end
-)
-    end
-  end
-  do
-    if recreateId ~= nil then
-      local questModule = self:GetModule(QuestModule)
-      for k,v in pairs(self._dataQuestPool) do
-        if v.quest_id == recreateId then
-          local quest = questModule:GetQuest(recreateId)
-          -- DECOMPILER ERROR at PC30: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (self._dataQuestPool)[k] = quest:QuestInfo()
-          break
-        end
-      end
-    end
-    do
-      for k,v in pairs(self._dataQuestPool) do
-        local ui = (self._uiQuestPool)[k]
-        ui:SetData(v)
-      end
-    end
+  for k, v in pairs(self._dataQuestPool) do
+    local ui = self._uiQuestPool[k]
+    ui:SetData(v)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuest.BtnReceiveOnClick = function(self, go, cfg)
-  -- function num : 0_9 , upvalues : _ENV
+function UIWorldBossQuest:BtnReceiveOnClick(go, cfg)
   local questModule = self:GetModule(QuestModule)
   self:StartTask(function(this, TT)
-    -- function num : 0_9_0 , upvalues : questModule, cfg
     local lockName = "UIWorldBossQuest:TakeQuestReward"
     this:Lock(lockName)
     local res = questModule:TakeQuestReward(TT, cfg.quest_id)
     if res:GetSucc() then
       this:FlushQuest(false, cfg.quest_id)
       this:ShowDialog("UIGetItemController", cfg.rewards, function()
-      -- function num : 0_9_0_0
-    end
-)
+      end)
     end
     this:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuest.OnShowItemInfo = function(self, reward, go)
-  -- function num : 0_10
-  local deltaPosition = (go.transform).position - ((self._safeArea).transform).position
+function UIWorldBossQuest:OnShowItemInfo(reward, go)
+  local deltaPosition = go.transform.position - self._safeArea.transform.position
   self:ShowDialog("UICommonItemInfo", reward, deltaPosition)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuest.OnUIQuestWorldBossRest = function(self)
-  -- function num : 0_11
+function UIWorldBossQuest:OnUIQuestWorldBossRest()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuest.InAnimation = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIWorldBossQuest:InAnimation()
   local lockName = "UIWorldBossQuest:InAnimation - chgLayer"
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self._animation):Play("UIWorldBossQuest_in")
+    self._animation:Play("UIWorldBossQuest_in")
     YIELD(TT, 700)
-    ;
-    (self._eff_dissive1):SetSiblingIndex(0)
+    self._eff_dissive1:SetSiblingIndex(0)
     self:UnLock(lockName)
-  end
-)
+  end)
   local lockName = "UIWorldBossQuest:InAnimation - Widget_in"
   self:StartTask(function(TT)
-    -- function num : 0_12_1 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    for k,v in pairs(self._dataQuestPool) do
-      local ui = (self._uiQuestPool)[k]
-      ;
-      (ui:GetGameObject()):SetActive(false)
+    for k, v in pairs(self._dataQuestPool) do
+      local ui = self._uiQuestPool[k]
+      ui:GetGameObject():SetActive(false)
     end
-    for k,v in pairs(self._dataQuestPool) do
-      local ui = (self._uiQuestPool)[k]
-      ;
-      (ui:GetGameObject()):SetActive(true)
+    for k, v in pairs(self._dataQuestPool) do
+      local ui = self._uiQuestPool[k]
+      ui:GetGameObject():SetActive(true)
       ui:PlayAnimation("UIWorldBossQuestWidget_in")
       YIELD(TT, 50)
     end
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
 _class("UIWorldBossQuestWidget", UICustomWidget)
 UIWorldBossQuestWidget = UIWorldBossQuestWidget
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossQuestWidget.Constructor = function(self)
-  -- function num : 0_13
+function UIWorldBossQuestWidget:Constructor()
   self._cfg = nil
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuestWidget.OnShow = function(self, uiParams)
-  -- function num : 0_14
+function UIWorldBossQuestWidget:OnShow(uiParams)
   self._imgBgLoader = self:GetUIComponent("RawImageLoader", "imgBg")
   self._txtCondition = self:GetUIComponent("UILocalizationText", "txtCondition")
   self._pNumerator = self:GetUIComponent("UILocalizationText", "pNumerator")
@@ -286,152 +195,82 @@ UIWorldBossQuestWidget.OnShow = function(self, uiParams)
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuestWidget.OnHide = function(self)
-  -- function num : 0_15
+function UIWorldBossQuestWidget:OnHide()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuestWidget.BtnReceiveOnClick = function(self, go)
-  -- function num : 0_16
-  (self:RootUIOwner()):BtnReceiveOnClick(go, self._cfg)
+function UIWorldBossQuestWidget:BtnReceiveOnClick(go)
+  self:RootUIOwner():BtnReceiveOnClick(go, self._cfg)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuestWidget.ID = function(self)
-  -- function num : 0_17
-  return (self._cfg).quest_id
+function UIWorldBossQuestWidget:ID()
+  return self._cfg.quest_id
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuestWidget.SetData = function(self, cfg)
-  -- function num : 0_18 , upvalues : _ENV
+function UIWorldBossQuestWidget:SetData(cfg)
   self._cfg = cfg
-  ;
-  (self._txtCondition):SetText((StringTable.Get)(cfg.CondDesc))
-  ;
-  (self._pNumerator):SetText((self._cfg).cur_progress)
-  ;
-  (self._pDenominator):SetText((string.format)("/%d", (self._cfg).total_progress))
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._imgProgress).fillAmount = (self._cfg).cur_progress / (self._cfg).total_progress
+  self._txtCondition:SetText(StringTable.Get(cfg.CondDesc))
+  self._pNumerator:SetText(self._cfg.cur_progress)
+  self._pDenominator:SetText(string.format("/%d", self._cfg.total_progress))
+  self._imgProgress.fillAmount = self._cfg.cur_progress / self._cfg.total_progress
   local countReward = 0
   local cfgRewardList = cfg.rewards
   if cfgRewardList ~= nil then
     countReward = #cfgRewardList
   end
-  self._uiRewardPool = (self._rewardContent):SpawnObjects("UIWorldBossQuestReward", countReward)
+  self._uiRewardPool = self._rewardContent:SpawnObjects("UIWorldBossQuestReward", countReward)
   for i = 1, countReward do
-    local ui = (self._uiRewardPool)[i]
+    local ui = self._uiRewardPool[i]
     local data = cfgRewardList[i]
     ui:SetData(data)
   end
-  ;
-  ((self._stateReceive).gameObject):SetActive(false)
-  ;
-  ((self._stateReceived).gameObject):SetActive(false)
-  ;
-  ((self._stateLocked).gameObject):SetActive(false)
+  self._stateReceive.gameObject:SetActive(false)
+  self._stateReceived.gameObject:SetActive(false)
+  self._stateLocked.gameObject:SetActive(false)
   if cfg.status == QuestStatus.QUEST_NotStart or cfg.status == QuestStatus.QUEST_Accepted then
-    ((self._stateLocked).gameObject):SetActive(true)
-    ;
-    (self._imgBgLoader):LoadImage("gfworld_task_bar02")
-    -- DECOMPILER ERROR at PC92: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._txtCondition).color = Color(0.074509803921569, 0.027450980392157, 0.03921568627451, 1)
-    -- DECOMPILER ERROR at PC100: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._pNumerator).color = Color(0.074509803921569, 0.027450980392157, 0.03921568627451, 1)
-    -- DECOMPILER ERROR at PC108: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._pDenominator).color = Color(0.074509803921569, 0.027450980392157, 0.03921568627451, 1)
-  else
-    if cfg.status == QuestStatus.QUEST_Completed then
-      ((self._stateReceive).gameObject):SetActive(true)
-      ;
-      (self._imgBgLoader):LoadImage("gfworld_task_bar01")
-      -- DECOMPILER ERROR at PC131: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._txtCondition).color = Color(0.56078431372549, 0.2156862745098, 0.18039215686275, 1)
-      -- DECOMPILER ERROR at PC139: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._pNumerator).color = Color(0.56078431372549, 0.2156862745098, 0.18039215686275, 1)
-      -- DECOMPILER ERROR at PC147: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._pDenominator).color = Color(0.3843137254902, 0.36862745098039, 0.36470588235294, 1)
-    else
-      if cfg.status == QuestStatus.QUEST_Taken then
-        ((self._stateReceived).gameObject):SetActive(true)
-        ;
-        (self._imgBgLoader):LoadImage("gfworld_task_bar03")
-        -- DECOMPILER ERROR at PC170: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._txtCondition).color = Color(0.6078431372549, 0.50980392156863, 0.41960784313725, 1)
-        -- DECOMPILER ERROR at PC178: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._pNumerator).color = Color(0.50196078431373, 0.49803921568627, 0.49803921568627, 1)
-        -- DECOMPILER ERROR at PC186: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._pDenominator).color = Color(0.50196078431373, 0.49803921568627, 0.49803921568627, 1)
-      end
-    end
+    self._stateLocked.gameObject:SetActive(true)
+    self._imgBgLoader:LoadImage("gfworld_task_bar02")
+    self._txtCondition.color = Color(0.07450980392156863, 0.027450980392156862, 0.0392156862745098, 1)
+    self._pNumerator.color = Color(0.07450980392156863, 0.027450980392156862, 0.0392156862745098, 1)
+    self._pDenominator.color = Color(0.07450980392156863, 0.027450980392156862, 0.0392156862745098, 1)
+  elseif cfg.status == QuestStatus.QUEST_Completed then
+    self._stateReceive.gameObject:SetActive(true)
+    self._imgBgLoader:LoadImage("gfworld_task_bar01")
+    self._txtCondition.color = Color(0.5607843137254902, 0.21568627450980393, 0.1803921568627451, 1)
+    self._pNumerator.color = Color(0.5607843137254902, 0.21568627450980393, 0.1803921568627451, 1)
+    self._pDenominator.color = Color(0.3843137254901961, 0.3686274509803922, 0.36470588235294116, 1)
+  elseif cfg.status == QuestStatus.QUEST_Taken then
+    self._stateReceived.gameObject:SetActive(true)
+    self._imgBgLoader:LoadImage("gfworld_task_bar03")
+    self._txtCondition.color = Color(0.6078431372549019, 0.5098039215686274, 0.4196078431372549, 1)
+    self._pNumerator.color = Color(0.5019607843137255, 0.4980392156862745, 0.4980392156862745, 1)
+    self._pDenominator.color = Color(0.5019607843137255, 0.4980392156862745, 0.4980392156862745, 1)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuestWidget.PlayAnimation = function(self, animName)
-  -- function num : 0_19
-  (self._animation):Play(animName)
+function UIWorldBossQuestWidget:PlayAnimation(animName)
+  self._animation:Play(animName)
 end
 
 _class("UIWorldBossQuestReward", UICustomWidget)
 UIWorldBossQuestReward = UIWorldBossQuestReward
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossQuestReward.OnShow = function(self, uiParams)
-  -- function num : 0_20
+function UIWorldBossQuestReward:OnShow(uiParams)
   self._iconLoader = self:GetUIComponent("RawImageLoader", "imgIcon")
   self._iconImg = self:GetUIComponent("RawImage", "imgIcon")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuestReward.SetData = function(self, data)
-  -- function num : 0_21 , upvalues : _ENV
+function UIWorldBossQuestReward:SetData(data)
   self._data = data
-  local cfgItem = (Cfg.cfg_item)[data.assetid]
+  local cfgItem = Cfg.cfg_item[data.assetid]
   if cfgItem ~= nil then
-    (self._iconLoader):LoadImage(cfgItem.Icon)
+    self._iconLoader:LoadImage(cfgItem.Icon)
   end
-  ;
-  ((self._txtName).gameObject):SetActive(false)
-  ;
-  (self._txtCount):SetText((string.format)("%d", data.count))
+  self._txtName.gameObject:SetActive(false)
+  self._txtCount:SetText(string.format("%d", data.count))
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossQuestReward.ButtonOnClick = function(self, go)
-  -- function num : 0_22
-  (self:RootUIOwner()):OnShowItemInfo(self._data, go)
+function UIWorldBossQuestReward:ButtonOnClick(go)
+  self:RootUIOwner():OnShowItemInfo(self._data, go)
 end
-
-

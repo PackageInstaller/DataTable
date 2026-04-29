@@ -1,52 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_chain_damage_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChainDamage", BuffViewBase)
 BuffViewChainDamage = BuffViewChainDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChainDamage.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewChainDamage:PlayView(TT)
   local result = self._buffResult
   local entity = self._entity
   local playDamageText = result:GetPlayDamageText()
   local targetIDList = result:GetDefenderIDs()
   local damageInfoList = result:GetDamageInfos()
   if not targetIDList or not damageInfoList then
-    return 
+    return
   end
-  if (table.count)(targetIDList) ~= (table.count)(damageInfoList) then
-    return 
+  if table.count(targetIDList) ~= table.count(damageInfoList) then
+    return
   end
-  local viewParams = (((self._viewInstance):BuffConfigData()):GetViewParams())
-  local baseAnim = nil
+  local viewParams = self._viewInstance:BuffConfigData():GetViewParams()
+  local baseAnim
   if viewParams then
     baseAnim = viewParams.baseAnim
   end
   for i = 1, #targetIDList do
-    local targetEntity = (self._world):GetEntityByID(targetIDList[i])
-    do
-      local damageInfo = damageInfoList[i]
-      local damageType = damageInfo:GetDamageType()
-      local targetDamage = damageInfo:GetDamageValue()
-      if baseAnim then
-        local damageAnim = baseAnim .. viewParams.damageAnim
+    local targetEntity = self._world:GetEntityByID(targetIDList[i])
+    local damageInfo = damageInfoList[i]
+    local damageType = damageInfo:GetDamageType()
+    local targetDamage = damageInfo:GetDamageValue()
+    if baseAnim then
+      local damageAnim = baseAnim .. viewParams.damageAnim
+      local damageFinishAnim = baseAnim .. viewParams.damageFinishAnim
+      local recoverAnim = baseAnim .. viewParams.recoverAnim
+      local recoverFinishAnim = baseAnim .. viewParams.recoverFinishAnim
+      local animTime = viewParams.animTime
+      local lineEffectOwner
+      local lineEffect = self:_OnGetLineEffect(viewParams, targetEntity, true)
+      lineEffect = lineEffect or self:_OnGetLineEffect(viewParams, entity, true)
+      if lineEffect then
         do
-          local damageFinishAnim = baseAnim .. viewParams.damageFinishAnim
-          local recoverAnim = baseAnim .. viewParams.recoverAnim
-          local recoverFinishAnim = baseAnim .. viewParams.recoverFinishAnim
-          local animTime = viewParams.animTime
-          local lineEffectOwner = nil
-          local lineEffect = self:_OnGetLineEffect(viewParams, targetEntity, true)
-          if not lineEffect then
-            lineEffect = self:_OnGetLineEffect(viewParams, entity, true)
-          end
-          if lineEffect then
-            local go = (lineEffect:View()):GetGameObject()
-            local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
-            if anim then
+          local go = lineEffect:View():GetGameObject()
+          local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
+          if anim then
+            do
               local animation = ""
               local animationFinish = ""
               if damageType == DamageType.Recover or damageType == DamageType.RecoverTransmit then
@@ -56,62 +47,34 @@ BuffViewChainDamage.PlayView = function(self, TT)
                 animation = damageAnim
                 animationFinish = damageFinishAnim
               end
-              ;
-              ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : anim, animation, _ENV, animTime, go, animationFinish
-    anim:Play(animation)
-    YIELD(TT, animTime)
-    if go and go ~= null and anim and anim ~= null then
-      anim:Play(animationFinish)
-    end
-  end
-, self)
+              GameGlobal.TaskManager():StartTask(function(TT)
+                anim:Play(animation)
+                YIELD(TT, animTime)
+                if go and go ~= null and anim and anim ~= null then
+                  anim:Play(animationFinish)
+                end
+              end, self)
             end
           end
         end
       end
+    end
+    damageInfo:SetShowType(DamageShowType.Single)
+    local playDamageSvc = self._world:GetService("PlayDamage")
+    if playDamageText == 1 then
+      playDamageSvc:AsyncUpdateHPAndDisplayDamage(targetEntity, damageInfo)
+    else
       do
-        damageAnim, damageFinishAnim = damageInfo:SetShowType, damageInfo
-        recoverAnim = DamageShowType
-        recoverAnim = recoverAnim.Single
-        damageAnim(damageFinishAnim, recoverAnim)
-        damageAnim = self._world
-        damageAnim, damageFinishAnim = damageAnim:GetService, damageAnim
-        recoverAnim = "PlayDamage"
-        damageAnim = damageAnim(damageFinishAnim, recoverAnim)
-        local playDamageSvc = nil
-        if playDamageText == 1 then
-          damageFinishAnim, recoverAnim = damageAnim:AsyncUpdateHPAndDisplayDamage, damageAnim
-          recoverFinishAnim = targetEntity
-          playDamageSvc = damageInfo
-          damageFinishAnim(recoverAnim, recoverFinishAnim, playDamageSvc)
-        else
-          damageFinishAnim = GameGlobal
-          damageFinishAnim = damageFinishAnim.TaskManager
-          damageFinishAnim = damageFinishAnim()
-          damageFinishAnim, recoverAnim = damageFinishAnim:CoreGameStartTask, damageFinishAnim
-          recoverFinishAnim = function(TT)
-    -- function num : 0_0_1 , upvalues : playDamageSvc, targetEntity, damageInfo
-    playDamageSvc:UpdateTargetHPBar(TT, targetEntity, damageInfo)
-    playDamageSvc:_OnHpChangeNotifyBuff(TT, targetEntity, damageInfo:GetChangeHP(), damageInfo)
-  end
-
-          damageFinishAnim = damageFinishAnim(recoverAnim, recoverFinishAnim)
-          local nTaskDamage = nil
-        end
-      end
-      do
-        -- DECOMPILER ERROR at PC136: LeaveBlock: unexpected jumping out DO_STMT
-
+        local nTaskDamage = GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+          playDamageSvc:UpdateTargetHPBar(TT, targetEntity, damageInfo)
+          playDamageSvc:_OnHpChangeNotifyBuff(TT, targetEntity, damageInfo:GetChangeHP(), damageInfo)
+        end)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChainDamage.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewChainDamage:IsNotifyMatch(notify)
   local result = self._buffResult
   if result:GetOriginalAttackerID() ~= notify:GetDamageSrcEntityID() then
     return false
@@ -126,33 +89,28 @@ BuffViewChainDamage.IsNotifyMatch = function(self, notify)
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChainDamage._OnGetLineEffect = function(self, viewParams, entity, isCaster)
-  -- function num : 0_2
+function BuffViewChainDamage:_OnGetLineEffect(viewParams, entity, isCaster)
   if entity:HasTeam() then
     entity = entity:GetTeamLeaderPetEntity()
   end
   local effectHolderCmpt = entity:EffectHolder()
   if not effectHolderCmpt then
-    return 
+    return
   end
   local effectLineRenderer = entity:EffectLineRenderer()
   if not effectLineRenderer then
-    return 
+    return
   end
   local defenderID = effectLineRenderer:GetTargetEntityID()
   local casterEntityID = effectLineRenderer:GetCasterEntityID()
   if isCaster == false and casterEntityID == entity:GetID() and defenderID ~= entity:GetID() then
-    return 
+    return
   end
   local lineEffectID = viewParams.lineEffectID
-  local lineEffect = nil
-  local effectEntityIdList = (effectHolderCmpt:GetEffectIDEntityDic())[lineEffectID]
+  local lineEffect
+  local effectEntityIdList = effectHolderCmpt:GetEffectIDEntityDic()[lineEffectID]
   if effectEntityIdList then
-    lineEffect = (self._world):GetEntityByID(effectEntityIdList[1])
+    lineEffect = self._world:GetEntityByID(effectEntityIdList[1])
   end
   return lineEffect
 end
-
-

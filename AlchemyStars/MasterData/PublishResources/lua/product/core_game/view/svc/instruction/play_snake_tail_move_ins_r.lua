@@ -1,56 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_snake_tail_move_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlaySnakeTailMoveInstruction", BaseInstruction)
 PlaySnakeTailMoveInstruction = PlaySnakeTailMoveInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySnakeTailMoveInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlaySnakeTailMoveInstruction:Constructor(paramList)
   self._moveAnim = paramList.MoveAnim
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySnakeTailMoveInstruction.GetCacheResource = function(self)
-  -- function num : 0_1
+function PlaySnakeTailMoveInstruction:GetCacheResource()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySnakeTailMoveInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySnakeTailMoveInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SnakeTailMove)
   if not resultArray then
-    return 
+    return
   end
   local result = resultArray[#resultArray]
-  do
-    if result:IsCasterDead() then
-      local sMonsterShowRender = world:GetService("MonsterShowRender")
-      sMonsterShowRender:_DoOneMonsterDead(TT, casterEntity)
-      return 
-    end
-    if not result:GetNewPos() then
-      return 
-    end
-    local oldPos = casterEntity:GetRenderGridPosition()
-    local newPos = result:GetNewPos()
-    local playSkillInstructionSvc = world:GetService("PlaySkillInstruction")
-    local trapResList = result:GetTriggerTrapResult()
-    local moveSpeed = playSkillInstructionSvc:GetMoveSpeed(casterEntity)
-    playSkillInstructionSvc:PlayEntityMove(TT, casterEntity, oldPos, newPos, moveSpeed)
-    local bodyPos = result:GetLastBodyPos()
-    local dir = bodyPos - newPos
-    casterEntity:SetDirection(dir)
-    playSkillInstructionSvc:PlayArrivePosTriggerTrap(TT, casterEntity, newPos, trapResList)
-    ;
-    (world:GetService("PlayBuff")):PlayBuffView(TT, NTSnakeTailMoved:New(casterEntity, newPos, oldPos))
+  if result:IsCasterDead() then
+    local sMonsterShowRender = world:GetService("MonsterShowRender")
+    sMonsterShowRender:_DoOneMonsterDead(TT, casterEntity)
+    return
   end
+  if not result:GetNewPos() then
+    return
+  end
+  local oldPos = casterEntity:GetRenderGridPosition()
+  local newPos = result:GetNewPos()
+  local playSkillInstructionSvc = world:GetService("PlaySkillInstruction")
+  local trapResList = result:GetTriggerTrapResult()
+  local moveSpeed = playSkillInstructionSvc:GetMoveSpeed(casterEntity)
+  playSkillInstructionSvc:PlayEntityMove(TT, casterEntity, oldPos, newPos, moveSpeed)
+  local bodyPos = result:GetLastBodyPos()
+  local dir = bodyPos - newPos
+  casterEntity:SetDirection(dir)
+  playSkillInstructionSvc:PlayArrivePosTriggerTrap(TT, casterEntity, newPos, trapResList)
+  world:GetService("PlayBuff"):PlayBuffView(TT, NTSnakeTailMoved:New(casterEntity, newPos, oldPos))
 end
-
-

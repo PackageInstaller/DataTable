@@ -1,74 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summon_gift/ui_activity_summon_gift_side_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_fixed_time")
 _class("UIActivitySummonGiftSideEnter", UISideEnterItem_FixedTime)
 UIActivitySummonGiftSideEnter = UIActivitySummonGiftSideEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivitySummonGiftSideEnter.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivitySummonGiftSideEnter:OnShow()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._Refresh)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnCampaignComponentStepChange)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._OnCampaignClose)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySummonGiftSideEnter.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivitySummonGiftSideEnter:OnHide()
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._Refresh)
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnCampaignComponentStepChange)
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._OnCampaignClose)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySummonGiftSideEnter._OnCampaignComponentStepChange = function(self, id)
-  -- function num : 0_2
+function UIActivitySummonGiftSideEnter:_OnCampaignComponentStepChange(id)
   if id == -1 then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySummonGiftSideEnter._OnCampaignClose = function(self, id)
-  -- function num : 0_3
+function UIActivitySummonGiftSideEnter:_OnCampaignClose(id)
   if id == -1 then
     local isOpen = self:_CheckOpen()
     if not isOpen then
-      (self._setShowCallback)(false)
+      self._setShowCallback(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySummonGiftSideEnter._CheckOpen = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  local bg, ed = (self._btnCfg).BeginTime, (self._btnCfg).EndTime
-  local isOpen = (UISideEnterItem_FixedTime.CheckOpen)(bg, ed)
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivitySummonGiftSideEnter:_CheckOpen(TT)
+  local bg, ed = self._btnCfg.BeginTime, self._btnCfg.EndTime
+  local isOpen = UISideEnterItem_FixedTime.CheckOpen(bg, ed)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local isUnlock = roleModule:CheckModuleUnlock(GameModuleID.MD_Gamble)
   if isOpen and isUnlock then
-    local gambleModule = (GameGlobal.GetModule)(GambleModule)
+    local gambleModule = GameGlobal.GetModule(GambleModule)
     local ack = gambleModule:ApplyAllPoolInfo(TT)
   end
-  do
-    return not isOpen or isUnlock
-  end
+  return isOpen and isUnlock
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySummonGiftSideEnter._CalcRed = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local gambleModule = (GameGlobal.GetModule)(GambleModule)
+function UIActivitySummonGiftSideEnter:_CalcRed()
+  local gambleModule = GameGlobal.GetModule(GambleModule)
   local red = gambleModule:HasFreeDraw_Multi()
   return red
 end
-
-

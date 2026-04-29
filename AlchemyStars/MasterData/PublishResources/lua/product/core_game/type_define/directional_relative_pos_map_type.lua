@@ -1,8 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/directional_relative_pos_map_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local DirectionalRelativePosMapType = {Classical4Grid = 1, Classical9Grid = 2, Classical6Grid = 3}
+local DirectionalRelativePosMapType = {
+  Classical4Grid = 1,
+  Classical9Grid = 2,
+  Classical6Grid = 3
+}
 _enum("DirectionalRelativePosMapType", DirectionalRelativePosMapType)
-

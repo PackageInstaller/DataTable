@@ -1,12 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/alignment_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-AlignmentType = {LocalPlayer = 1, Monster = 2, Goodness = 3, Wickedness = 4, Punishment = 5}
+AlignmentType = {
+  LocalPlayer = 1,
+  Monster = 2,
+  Goodness = 3,
+  Wickedness = 4,
+  Punishment = 5
+}
 AlignmentTargetType = {Friend = 1, Enemy = 2}
-MatchAlignmentType = function(casterAlignmentType, targetAlignmentType)
-  -- function num : 0_0 , upvalues : _ENV
+
+function MatchAlignmentType(casterAlignmentType, targetAlignmentType)
   if casterAlignmentType == targetAlignmentType then
     return AlignmentTargetType.Friend
   end
@@ -30,5 +31,3 @@ MatchAlignmentType = function(casterAlignmentType, targetAlignmentType)
   end
   return AlignmentTargetType.Enemy
 end
-
-

@@ -1,39 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/entrust/event/ui_n22_entrust_event_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22EntrustEventBox", UIN22EntrustEventBase)
 UIN22EntrustEventBox = UIN22EntrustEventBox
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22EntrustEventBox.Refresh = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN22EntrustEventBox:Refresh()
   self:_SetRoot(false)
-  local pass = (self._component):IsEventPass(self._levelId, self._eventId)
+  local pass = self._component:IsEventPass(self._levelId, self._eventId)
   if pass then
-    local tips = (StringTable.Get)("str_n22_entrust_event_box_got_tips")
-    ;
-    (ToastManager.ShowToast)(tips)
+    local tips = StringTable.Get("str_n22_entrust_event_box_got_tips")
+    ToastManager.ShowToast(tips)
     self:CloseDialog()
   else
-    do
-      self:RequestEvent()
-    end
+    self:RequestEvent()
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBox.OnEventFinish = function(self, rewards)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.info)("UIN22EntrustEventBox:OnEventFinish()")
-  local title = (StringTable.Get)("str_activity_battlepass_buy_deluxe_claim")
+function UIN22EntrustEventBox:OnEventFinish(rewards)
+  Log.info("UIN22EntrustEventBox:OnEventFinish()")
+  local title = StringTable.Get("str_activity_battlepass_buy_deluxe_claim")
   self:ShowDialog("UIN22EntrustRewardsController", title, rewards, function()
-    -- function num : 0_1_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

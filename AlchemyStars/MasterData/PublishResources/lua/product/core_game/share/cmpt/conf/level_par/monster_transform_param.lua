@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/level_par/monster_transform_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MonsterTransformParam", Object)
 MonsterTransformParam = MonsterTransformParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterTransformParam.Constructor = function(self, monsterID)
-  -- function num : 0_0 , upvalues : _ENV
+function MonsterTransformParam:Constructor(monsterID)
   self._monsterID = monsterID
   self._monsterPosition = Vector2(0, 0)
   self._monsterRotation = Vector2(0, -1)
@@ -16,95 +9,54 @@ MonsterTransformParam.Constructor = function(self, monsterID)
   self._bodyArea = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterTransformParam.GetMonsterID = function(self)
-  -- function num : 0_1
+function MonsterTransformParam:GetMonsterID()
   return self._monsterID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterTransformParam.SetPosition = function(self, position)
-  -- function num : 0_2
+function MonsterTransformParam:SetPosition(position)
   self._monsterPosition = position
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterTransformParam.GetPosition = function(self)
-  -- function num : 0_3
+function MonsterTransformParam:GetPosition()
   return self._monsterPosition
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterTransformParam.SetRotation = function(self, rotation)
-  -- function num : 0_4
+function MonsterTransformParam:SetRotation(rotation)
   self._monsterRotation = rotation
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterTransformParam.GetRotation = function(self)
-  -- function num : 0_5
+function MonsterTransformParam:GetRotation()
   return self._monsterRotation
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterTransformParam.SetForward = function(self, forward)
-  -- function num : 0_6
+function MonsterTransformParam:SetForward(forward)
   self._forward = forward
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterTransformParam.GetForward = function(self)
-  -- function num : 0_7
+function MonsterTransformParam:GetForward()
   return self._forward
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterTransformParam.GetBodyArea = function(self)
-  -- function num : 0_8
+function MonsterTransformParam:GetBodyArea()
   return self._bodyArea
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterTransformParam.SetBodyArea = function(self, bodyArea)
-  -- function num : 0_9
+function MonsterTransformParam:SetBodyArea(bodyArea)
   self._bodyArea = bodyArea
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterTransformParam.GetOffset = function(self)
-  -- function num : 0_10
+function MonsterTransformParam:GetOffset()
   return self._offset
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterTransformParam.SetOffset = function(self, offset)
-  -- function num : 0_11
+function MonsterTransformParam:SetOffset(offset)
   self._offset = offset
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterTransformParam.SetBoardIndex = function(self, boardIndex)
-  -- function num : 0_12
+function MonsterTransformParam:SetBoardIndex(boardIndex)
   self._boardIndex = boardIndex
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterTransformParam.GetBoardIndex = function(self)
-  -- function num : 0_13
+function MonsterTransformParam:GetBoardIndex()
   return self._boardIndex
 end
-
-

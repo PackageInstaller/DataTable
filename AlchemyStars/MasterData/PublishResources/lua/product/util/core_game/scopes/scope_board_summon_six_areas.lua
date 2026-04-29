@@ -1,54 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_board_summon_six_areas.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_BoardSummonSixAreas", SkillScopeCalculator_Base)
 SkillScopeCalculator_BoardSummonSixAreas = SkillScopeCalculator_BoardSummonSixAreas
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_BoardSummonSixAreas.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_BoardSummonSixAreas:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   self._areas = {
-{min_x = 1, max_x = 3, min_y = 1, max_y = 4}
-, 
-{min_x = 1, max_x = 3, min_y = 5, max_y = 8}
-, 
-{min_x = 4, max_x = 6, min_y = 1, max_y = 3}
-, 
-{min_x = 4, max_x = 6, min_y = 4, max_y = 7}
-, 
-{min_x = 7, max_x = 9, min_y = 1, max_y = 4}
-, 
-{min_x = 7, max_x = 9, min_y = 5, max_y = 8}
-}
+    {
+      min_x = 1,
+      max_x = 3,
+      min_y = 1,
+      max_y = 4
+    },
+    {
+      min_x = 1,
+      max_x = 3,
+      min_y = 5,
+      max_y = 8
+    },
+    {
+      min_x = 4,
+      max_x = 6,
+      min_y = 1,
+      max_y = 3
+    },
+    {
+      min_x = 4,
+      max_x = 6,
+      min_y = 4,
+      max_y = 7
+    },
+    {
+      min_x = 7,
+      max_x = 9,
+      min_y = 1,
+      max_y = 4
+    },
+    {
+      min_x = 7,
+      max_x = 9,
+      min_y = 5,
+      max_y = 8
+    }
+  }
   local eachAreaTargetNum = scopeParam[1] or 0
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local randomServiceLogic = world:GetService("RandomLogic")
   local boardServiceLogic = world:GetService("BoardLogic")
   local canPosAreas = {}
-  for areaIndex,areaInfo in ipairs(self._areas) do
+  for areaIndex, areaInfo in ipairs(self._areas) do
     local curAreaPos = {}
     for posX = areaInfo.min_x, areaInfo.max_x do
       for posY = areaInfo.min_y, areaInfo.max_y do
         local workPos = Vector2(posX, posY)
         local isBlocked = boardServiceLogic:IsPosBlock(workPos, BlockFlag.MonsterLand)
         if not isBlocked then
-          (table.insert)(curAreaPos, workPos)
+          table.insert(curAreaPos, workPos)
         end
       end
     end
-    ;
-    (table.insert)(canPosAreas, curAreaPos)
+    table.insert(canPosAreas, curAreaPos)
   end
   local resultPosList = {}
-  for areaIndex,areaPosList in ipairs(canPosAreas) do
+  for areaIndex, areaPosList in ipairs(canPosAreas) do
     randomServiceLogic:Shuffle(areaPosList)
     local curNum = 0
-    for _,workPos in ipairs(areaPosList) do
-      if curNum < eachAreaTargetNum then
-        (table.insert)(resultPosList, workPos)
+    for _, workPos in ipairs(areaPosList) do
+      if eachAreaTargetNum > curNum then
+        table.insert(resultPosList, workPos)
         curNum = curNum + 1
       else
         break
@@ -59,5 +76,3 @@ SkillScopeCalculator_BoardSummonSixAreas.CalcRange = function(self, scopeType, s
   local result = SkillScopeResult:New(SkillScopeType.BoardSummonSixAreas, centerPos, resultPosList, resultPosList)
   return result
 end
-
-

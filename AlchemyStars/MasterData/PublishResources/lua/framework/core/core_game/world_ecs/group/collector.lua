@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_ecs/group/collector.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("delegate_event")
 require("group")
 _class("Collector", Object)
 Collector = Collector
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-Collector.Constructor = function(self, groups, groupEvents)
-  -- function num : 0_0 , upvalues : _ENV
+function Collector:Constructor(groups, groupEvents)
   self._groups = groups
   self._groupEvents = groupEvents
   self.collectedEntities = SortedDictionary:New()
@@ -19,60 +12,40 @@ Collector.Constructor = function(self, groups, groupEvents)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Collector.Activate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function Collector:Activate()
   for i = 1, #self._groups do
-    local group = (self._groups)[i]
-    local groupEvent = (self._groupEvents)[i]
+    local group = self._groups[i]
+    local groupEvent = self._groupEvents[i]
     local addEntityFunc = self.addEntity
     if groupEvent == "Added" then
-      (group.Ev_OnEntityAdded):RemoveEvent(self, addEntityFunc)
-      ;
-      (group.Ev_OnEntityAdded):AddEvent(self, addEntityFunc)
+      group.Ev_OnEntityAdded:RemoveEvent(self, addEntityFunc)
+      group.Ev_OnEntityAdded:AddEvent(self, addEntityFunc)
+    elseif groupEvent == "Removed" then
+      group.Ev_OnEntityRemoved:RemoveEvent(self, addEntityFunc)
+      group.Ev_OnEntityRemoved:AddEvent(self, addEntityFunc)
+    elseif groupEvent == "AddedOrRemoved" then
+      group.Ev_OnEntityAdded:RemoveEvent(self, addEntityFunc)
+      group.Ev_OnEntityAdded:AddEvent(self, addEntityFunc)
+      group.Ev_OnEntityRemoved:RemoveEvent(self, addEntityFunc)
+      group.Ev_OnEntityRemoved:AddEvent(self, addEntityFunc)
     else
-      if groupEvent == "Removed" then
-        (group.Ev_OnEntityRemoved):RemoveEvent(self, addEntityFunc)
-        ;
-        (group.Ev_OnEntityRemoved):AddEvent(self, addEntityFunc)
-      else
-        if groupEvent == "AddedOrRemoved" then
-          (group.Ev_OnEntityAdded):RemoveEvent(self, addEntityFunc)
-          ;
-          (group.Ev_OnEntityAdded):AddEvent(self, addEntityFunc)
-          ;
-          (group.Ev_OnEntityRemoved):RemoveEvent(self, addEntityFunc)
-          ;
-          (group.Ev_OnEntityRemoved):AddEvent(self, addEntityFunc)
-        else
-          error("invalid groupEvent")
-        end
-      end
+      error("invalid groupEvent")
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Collector.Deactivate = function(self)
-  -- function num : 0_2
+function Collector:Deactivate()
   local groups = self._groups
   for i = 1, #groups do
     local group = groups[i]
     local addEntityFunc = self.addEntity
-    ;
-    (group.Ev_OnEntityAdded):RemoveEvent(self, addEntityFunc)
-    ;
-    (group.Ev_OnEntityRemoved):RemoveEvent(self, addEntityFunc)
+    group.Ev_OnEntityAdded:RemoveEvent(self, addEntityFunc)
+    group.Ev_OnEntityRemoved:RemoveEvent(self, addEntityFunc)
   end
   self:ClearCollectedEntities()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Collector.ClearCollectedEntities = function(self)
-  -- function num : 0_3
+function Collector:ClearCollectedEntities()
   local collectedEntities = self.collectedEntities
   for i = 1, collectedEntities:Size() do
     local entity = collectedEntities:GetAt(i)
@@ -80,19 +53,15 @@ Collector.ClearCollectedEntities = function(self)
       entity:Release(self)
     end
   end
-  ;
-  (self.collectedEntities):Clear()
+  self.collectedEntities:Clear()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Collector.addEntity = function(self, group, entity, index, component)
-  -- function num : 0_4
+function Collector:addEntity(group, entity, index, component)
   local collectedEntities = self.collectedEntities
   local e_index = entity:GetID()
   local find_e = collectedEntities:Find(e_index)
   if find_e ~= nil then
-    return 
+    return
   end
   collectedEntities:Insert(e_index, entity)
   if entity.Retain then
@@ -100,10 +69,5 @@ Collector.addEntity = function(self, group, entity, index, component)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Collector.ToString = function(self)
-  -- function num : 0_5
+function Collector:ToString()
 end
-
-

@@ -1,14 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_qt/ui_haute_couture_draw_qt_dynamic_probability_bg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDraw_QT_DynamicProbabilityBg", UICustomWidget)
 UIHauteCoutureDraw_QT_DynamicProbabilityBg = UIHauteCoutureDraw_QT_DynamicProbabilityBg
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDraw_QT_DynamicProbabilityBg.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDraw_QT_DynamicProbabilityBg:Constructor()
 end
-
-

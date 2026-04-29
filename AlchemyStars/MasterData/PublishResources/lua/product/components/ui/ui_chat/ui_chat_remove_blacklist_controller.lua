@@ -1,115 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/ui_chat_remove_blacklist_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChatRemoveBlacklistController", UIController)
 UIChatRemoveBlacklistController = UIChatRemoveBlacklistController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChatRemoveBlacklistController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIChatRemoveBlacklistController:OnShow(uiParams)
   self._friendData = uiParams[1]
   self._chatFriendManager = uiParams[2]
   self:_GetComponents()
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatRemoveBlacklistController._GetComponents = function(self)
-  -- function num : 0_1
+function UIChatRemoveBlacklistController:_GetComponents()
   self._tipsLabel = self:GetUIComponent("UILocalizationText", "Tips")
   self._sendAddFriendBtnOnGo = self:GetGameObject("SendAddFriendBtnOn")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatRemoveBlacklistController._Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._tipsLabel).text = (StringTable.Get)("str_chat_remove_from_black_list_tips", (self._friendData):GetName())
+function UIChatRemoveBlacklistController:_Init()
+  self._tipsLabel.text = StringTable.Get("str_chat_remove_from_black_list_tips", self._friendData:GetName())
   self._sendAddFriendMessage = false
-  ;
-  (self._sendAddFriendBtnOnGo):SetActive(self._sendAddFriendMessage)
+  self._sendAddFriendBtnOnGo:SetActive(self._sendAddFriendMessage)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatRemoveBlacklistController.SendAddFriendBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIChatRemoveBlacklistController:SendAddFriendBtnOnClick(go)
   if self._sendAddFriendMessage then
     self._sendAddFriendMessage = false
   else
     self._sendAddFriendMessage = true
   end
-  ;
-  (self._sendAddFriendBtnOnGo):SetActive(self._sendAddFriendMessage)
+  self._sendAddFriendBtnOnGo:SetActive(self._sendAddFriendMessage)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatRemoveBlacklistController.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIChatRemoveBlacklistController:ConfirmBtnOnClick(go)
   self:Lock("ConfirmBtnOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._RemoveFromBlackList, self)
+  GameGlobal.TaskManager():StartTask(self._RemoveFromBlackList, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatRemoveBlacklistController._RemoveFromBlackList = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UIChatRemoveBlacklistController:_RemoveFromBlackList(TT)
   if not self._friendData then
     self:UnLock("ConfirmBtnOnClick")
     self:CloseDialog()
-    return 
+    return
   end
-  local res = (self._chatFriendManager):HandleBlackOperate(TT, (self._friendData):GetFriendId(), true)
+  local res = self._chatFriendManager:HandleBlackOperate(TT, self._friendData:GetFriendId(), true)
   if not res then
     self:UnLock("ConfirmBtnOnClick")
     self:CloseDialog()
-    return 
+    return
   end
   if not self._sendAddFriendMessage then
     self:UnLock("ConfirmBtnOnClick")
     self:CloseDialog()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateChatBlackList)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeFriendInfoSuccess)
-    return 
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateChatBlackList)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeFriendInfoSuccess)
+    return
   end
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
-  local res = socialModule:InvitationFriend(TT, (self._friendData):GetFriendId())
+  local socialModule = GameGlobal.GetModule(SocialModule)
+  local res = socialModule:InvitationFriend(TT, self._friendData:GetFriendId())
   if not res:GetSucc() then
     local retCode = res:GetResult()
     if retCode == SocialErrorCode.SOCIAL_INVITATION_MUTUAL_SUCCESS then
-      (ToastManager.ShowToast)((StringTable.Get)("str_chat_is_your_friend"))
+      ToastManager.ShowToast(StringTable.Get("str_chat_is_your_friend"))
     else
-      ;
-      (self._chatFriendManager):HandleErrorMsgCode(retCode)
+      self._chatFriendManager:HandleErrorMsgCode(retCode)
     end
   else
-    do
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_chat_send_request_add_friend_success"))
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateChatBlackList)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeFriendInfoSuccess)
-      self:UnLock("ConfirmBtnOnClick")
-      self:CloseDialog()
-    end
+    ToastManager.ShowToast(StringTable.Get("str_chat_send_request_add_friend_success"))
   end
-end
-
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatRemoveBlacklistController.CancelBtnOnClick = function(self, go)
-  -- function num : 0_6
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateChatBlackList)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeFriendInfoSuccess)
+  self:UnLock("ConfirmBtnOnClick")
   self:CloseDialog()
 end
 
-
+function UIChatRemoveBlacklistController:CancelBtnOnClick(go)
+  self:CloseDialog()
+end

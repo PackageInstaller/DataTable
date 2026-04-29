@@ -1,12 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/common/ui_n25_idol_common_enums.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIIdolStatus = {GoTo = 1, Not = 2, Finish = 3}
+local UIIdolStatus = {
+  GoTo = 1,
+  Not = 2,
+  Finish = 3
+}
 _enum("UIIdolStatus", UIIdolStatus)
-local UIIdolApEventStatus = {Ready = 1, Pass = 2, Finish = 3}
+local UIIdolApEventStatus = {
+  Ready = 1,
+  Pass = 2,
+  Finish = 3
+}
 _enum("UIIdolApEventStatus", UIIdolApEventStatus)
-local UIIdolResultType = {Training = 1, Act = 2, ConcertSucc = 3, ConcertFail = 4}
+local UIIdolResultType = {
+  Training = 1,
+  Act = 2,
+  ConcertSucc = 3,
+  ConcertFail = 4
+}
 _enum("UIIdolResultType", UIIdolResultType)
-

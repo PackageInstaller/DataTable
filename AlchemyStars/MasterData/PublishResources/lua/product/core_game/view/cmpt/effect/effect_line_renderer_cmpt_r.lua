@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/effect/effect_line_renderer_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EffectLineRendererComponent", Object)
 EffectLineRendererComponent = EffectLineRendererComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-EffectLineRendererComponent.Constructor = function(self)
-  -- function num : 0_0
+function EffectLineRendererComponent:Constructor()
   self:_OnInit()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent._OnInit = function(self)
-  -- function num : 0_1
+function EffectLineRendererComponent:_OnInit()
   self._current = {}
   self._target = {}
   self._root = {}
@@ -30,264 +20,160 @@ EffectLineRendererComponent._OnInit = function(self)
   self._currentRootOff = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.InitEffectLineRenderer = function(self, entityID, current, target, root, effectObject, effectID)
-  -- function num : 0_2
+function EffectLineRendererComponent:InitEffectLineRenderer(entityID, current, target, root, effectObject, effectID)
   if self._current == nil then
     self:_OnInit()
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._current)[entityID] = current
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._target)[entityID] = target
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._root)[entityID] = root
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._effectObject)[entityID] = effectObject
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._effectID)[entityID] = effectID
+  self._current[entityID] = current
+  self._target[entityID] = target
+  self._root[entityID] = root
+  self._effectObject[entityID] = effectObject
+  self._effectID[entityID] = effectID
   self._casterEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.GetCasterEntityID = function(self)
-  -- function num : 0_3
+function EffectLineRendererComponent:GetCasterEntityID()
   return self._casterEntityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.SetTargetEntityID = function(self, targetEntityID)
-  -- function num : 0_4
+function EffectLineRendererComponent:SetTargetEntityID(targetEntityID)
   self._targetEntityID = targetEntityID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.GetTargetEntityID = function(self)
-  -- function num : 0_5
+function EffectLineRendererComponent:GetTargetEntityID()
   return self._targetEntityID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.SetIgnoreEntityViewRootPos = function(self, bIgnore)
-  -- function num : 0_6
+function EffectLineRendererComponent:SetIgnoreEntityViewRootPos(bIgnore)
   self._ignoreEntityViewRootPos = bIgnore
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.GetIgnoreEntityViewRootPos = function(self)
-  -- function num : 0_7
+function EffectLineRendererComponent:GetIgnoreEntityViewRootPos()
   return self._ignoreEntityViewRootPos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.GetEffectLineRendererEffectID = function(self, entityID)
-  -- function num : 0_8
-  return (self._effectID)[entityID]
+function EffectLineRendererComponent:GetEffectLineRendererEffectID(entityID)
+  return self._effectID[entityID]
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.GetEffectLineRendererCurrent = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function EffectLineRendererComponent:GetEffectLineRendererCurrent()
   local effectShowList = {}
-  for i,v in pairs(self._show) do
+  for i, v in pairs(self._show) do
     if v == true then
-      (table.insert)(effectShowList, (self._current)[i])
+      table.insert(effectShowList, self._current[i])
     end
   end
   return effectShowList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.GetEffectLineRendererTarget = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function EffectLineRendererComponent:GetEffectLineRendererTarget()
   local effectShowList = {}
-  for i,v in pairs(self._show) do
+  for i, v in pairs(self._show) do
     if v == true then
-      (table.insert)(effectShowList, (self._target)[i])
+      table.insert(effectShowList, self._target[i])
     end
   end
   return effectShowList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.GetEffectLineRendererEntityViewRoot = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function EffectLineRendererComponent:GetEffectLineRendererEntityViewRoot()
   local effectShowList = {}
-  for i,v in pairs(self._show) do
+  for i, v in pairs(self._show) do
     if v == true then
-      (table.insert)(effectShowList, (self._root)[i])
+      table.insert(effectShowList, self._root[i])
     end
   end
   return effectShowList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.GetEffectLineRendererEffect = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function EffectLineRendererComponent:GetEffectLineRendererEffect()
   local effectShowList = {}
-  for i,v in pairs(self._show) do
+  for i, v in pairs(self._show) do
     if v == true then
-      (table.insert)(effectShowList, (self._effectObject)[i])
+      table.insert(effectShowList, self._effectObject[i])
     end
   end
   return effectShowList
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.SetEffectLineActive = function(self, entityID, activeState)
-  -- function num : 0_13
-  if (self._effectObject)[entityID] then
-    for i = 0, ((self._effectObject)[entityID]).Length - 1 do
-      local line = ((self._effectObject)[entityID])[i]
+function EffectLineRendererComponent:SetEffectLineActive(entityID, activeState)
+  if self._effectObject[entityID] then
+    for i = 0, self._effectObject[entityID].Length - 1 do
+      local line = self._effectObject[entityID][i]
       if line then
-        (line.gameObject):SetActive(activeState)
+        line.gameObject:SetActive(activeState)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.OnCheckEffectPos = function(self, entityID, currentPos, targetPos, entityViewRootPos)
-  -- function num : 0_14
+function EffectLineRendererComponent:OnCheckEffectPos(entityID, currentPos, targetPos, entityViewRootPos)
   local change = false
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R6 in 'UnsetPending'
-
-  if (self._currentPos)[entityID] ~= currentPos or (self._targetPos)[entityID] ~= targetPos or (self._entityViewRootPos)[entityID] ~= entityViewRootPos then
-    (self._currentPos)[entityID] = currentPos
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._targetPos)[entityID] = targetPos
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._entityViewRootPos)[entityID] = entityViewRootPos
+  if self._currentPos[entityID] ~= currentPos or self._targetPos[entityID] ~= targetPos or self._entityViewRootPos[entityID] ~= entityViewRootPos then
+    self._currentPos[entityID] = currentPos
+    self._targetPos[entityID] = targetPos
+    self._entityViewRootPos[entityID] = entityViewRootPos
     change = true
   end
   return change
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.GetEffectLineRendererIsShow = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function EffectLineRendererComponent:GetEffectLineRendererIsShow()
   if self._show then
-    for i,v in pairs(self._show) do
+    for i, v in pairs(self._show) do
       if v == true then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.SetEffectLineRendererShow = function(self, entityID, show)
-  -- function num : 0_16
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._show)[entityID] then
-    (self._show)[entityID] = {}
+function EffectLineRendererComponent:SetEffectLineRendererShow(entityID, show)
+  if not self._show[entityID] then
+    self._show[entityID] = {}
   end
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._show)[entityID] = show
+  self._show[entityID] = show
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.SetTargetRootOff = function(self, off)
-  -- function num : 0_17
+function EffectLineRendererComponent:SetTargetRootOff(off)
   self._targetRootOff = off
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.GetTargetRootOff = function(self)
-  -- function num : 0_18
+function EffectLineRendererComponent:GetTargetRootOff()
   return self._targetRootOff
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.SetCurrentRootOff = function(self, off)
-  -- function num : 0_19
+function EffectLineRendererComponent:SetCurrentRootOff(off)
   self._currentRootOff = off
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererComponent.GetCurrentRootOff = function(self)
-  -- function num : 0_20
+function EffectLineRendererComponent:GetCurrentRootOff()
   return self._currentRootOff
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.EffectLineRenderer = function(self)
-  -- function num : 0_21
-  return self:GetComponent((self.WEComponentsEnum).EffectLineRenderer)
+function Entity:EffectLineRenderer()
+  return self:GetComponent(self.WEComponentsEnum.EffectLineRenderer)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasEffectLineRenderer = function(self)
-  -- function num : 0_22
-  return self:HasComponent((self.WEComponentsEnum).EffectLineRenderer)
+function Entity:HasEffectLineRenderer()
+  return self:HasComponent(self.WEComponentsEnum.EffectLineRenderer)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddEffectLineRenderer = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).EffectLineRenderer
+function Entity:AddEffectLineRenderer()
+  local index = self.WEComponentsEnum.EffectLineRenderer
   local component = EffectLineRendererComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceEffectLineRenderer = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).EffectLineRenderer
+function Entity:ReplaceEffectLineRenderer()
+  local index = self.WEComponentsEnum.EffectLineRenderer
   local component = EffectLineRendererComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveEffectLineRenderer = function(self)
-  -- function num : 0_25
+function Entity:RemoveEffectLineRenderer()
   if self:HasEffectLineRenderer() then
-    self:RemoveComponent((self.WEComponentsEnum).EffectLineRenderer)
+    self:RemoveComponent(self.WEComponentsEnum.EffectLineRenderer)
   end
 end
-
-

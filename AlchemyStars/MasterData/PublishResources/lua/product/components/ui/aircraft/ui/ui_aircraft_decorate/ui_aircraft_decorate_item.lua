@@ -1,38 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_decorate/ui_aircraft_decorate_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftDecorateItem", UICustomWidget)
 UIAircraftDecorateItem = UIAircraftDecorateItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftDecorateItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._aircraftModule = ((GameGlobal.GameLogic)()):GetModule(AircraftModule)
+function UIAircraftDecorateItem:OnShow(uiParams)
+  self._aircraftModule = GameGlobal.GameLogic():GetModule(AircraftModule)
   self._atlas = self:GetAsset("UIAircraftDecorate.spriteatlas", LoadType.SpriteAtlas)
   self:AttachEvent(GameEventType.UIAircraftDecorateSelectItem, self._OnUIAircraftDecorateSelectItem)
   self:AttachEvent(GameEventType.UIAircraftDecoratePutFurniture, self._OnUIAircraftDecoratePutFurniture)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateItem.SetData = function(self, index, item, getCallback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAircraftDecorateItem:SetData(index, item, getCallback)
   self:_GetComponents()
   self._item = item
-  self._itemID = (self._item):GetTemplateID()
-  self._cfg_item = (Cfg.cfg_item)[self._itemID]
-  self._cfg_item_furniture = (Cfg.cfg_item_furniture)[self._itemID]
+  self._itemID = self._item:GetTemplateID()
+  self._cfg_item = Cfg.cfg_item[self._itemID]
+  self._cfg_item_furniture = Cfg.cfg_item_furniture[self._itemID]
   self._index = index
   self._getCallback = getCallback
   self:_OnRefresh()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIAircraftDecorateItem:_GetComponents()
   self._rectTransform = self:GetUIComponent("RectTransform", "Root")
   self._selectObj = self:GetGameObject("Select")
   self._alreadyObj = self:GetGameObject("Already")
@@ -48,107 +35,59 @@ UIAircraftDecorateItem._GetComponents = function(self)
   self._bgAlready = self:GetUIComponent("Image", "BGAlready")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateItem._OnRefresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._rawImageLoader):LoadImage((self._cfg_item).Icon)
-  ;
-  (self._txtName):RefreshText((StringTable.Get)((self._cfg_item).Name))
-  local atmosphere = (self._cfg_item_furniture).Atmosphere
-  local lfAv, lfMv = (self._aircraftModule):CalCentralPetWorkSkill()
-  local newAtmosphere = atmosphere + (math.floor)(atmosphere * lfMv) + (math.floor)(lfAv)
-  ;
-  (self._textAtmosphere):SetText(newAtmosphere)
-  local useNum = (self._aircraftModule):GetUseFurnitureItemNumByItemID(self._itemID)
-  local remainsNum = (self._aircraftModule):GetRemainsFurnitureItemNumByItemID(self._itemID)
-  ;
-  (self._txtCount):SetText(remainsNum)
-  ;
-  (self._newObj):SetActive((self._item):IsNewFurniture())
-  ;
-  (self._alreadyObj):SetActive(false)
+function UIAircraftDecorateItem:_OnRefresh()
+  self._rawImageLoader:LoadImage(self._cfg_item.Icon)
+  self._txtName:RefreshText(StringTable.Get(self._cfg_item.Name))
+  local atmosphere = self._cfg_item_furniture.Atmosphere
+  local lfAv, lfMv = self._aircraftModule:CalCentralPetWorkSkill()
+  local newAtmosphere = atmosphere + math.floor(atmosphere * lfMv) + math.floor(lfAv)
+  self._textAtmosphere:SetText(newAtmosphere)
+  local useNum = self._aircraftModule:GetUseFurnitureItemNumByItemID(self._itemID)
+  local remainsNum = self._aircraftModule:GetRemainsFurnitureItemNumByItemID(self._itemID)
+  self._txtCount:SetText(remainsNum)
+  self._newObj:SetActive(self._item:IsNewFurniture())
+  self._alreadyObj:SetActive(false)
   local useGray = false
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R8 in 'UnsetPending'
-
   if useNum == 0 then
-    (self._bg).sprite = (self._atlas):GetSprite("home_jiaju_kuang11")
-  else
-    -- DECOMPILER ERROR at PC71: Confused about usage of register: R8 in 'UnsetPending'
-
-    if remainsNum == 0 then
-      (self._bg).sprite = (self._atlas):GetSprite("home_jiaju_kuang13")
-      if not self._EMIMatResRequest then
-        self._EMIMatResRequest = (ResourceManager:GetInstance()):SyncLoadAsset("ui_image_gray.mat", LoadType.Mat)
-        self._EMIMat = (self._EMIMatResRequest).Obj
-      end
-      useGray = true
-    else
-      -- DECOMPILER ERROR at PC94: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._bg).sprite = (self._atlas):GetSprite("home_jiaju_kuang12")
+    self._bg.sprite = self._atlas:GetSprite("home_jiaju_kuang11")
+  elseif remainsNum == 0 then
+    self._bg.sprite = self._atlas:GetSprite("home_jiaju_kuang13")
+    if not self._EMIMatResRequest then
+      self._EMIMatResRequest = ResourceManager:GetInstance():SyncLoadAsset("ui_image_gray.mat", LoadType.Mat)
+      self._EMIMat = self._EMIMatResRequest.Obj
     end
-  end
-  -- DECOMPILER ERROR at PC99: Confused about usage of register: R8 in 'UnsetPending'
-
-  if useGray then
-    (self._bgAlready).material = self._EMIMat
-    -- DECOMPILER ERROR at PC102: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._bgAtmosphere).material = self._EMIMat
-    ;
-    ((self._rawImage).material):SetFloat("_LuminosityAmount", 1)
+    useGray = true
   else
-    -- DECOMPILER ERROR at PC111: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._bgAlready).material = nil
-    -- DECOMPILER ERROR at PC113: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._bgAtmosphere).material = nil
-    ;
-    ((self._rawImage).material):SetFloat("_LuminosityAmount", 0)
+    self._bg.sprite = self._atlas:GetSprite("home_jiaju_kuang12")
   end
-  ;
-  (self._rawImageObj):SetActive(false)
-  ;
-  (self._rawImageObj):SetActive(true)
-  ;
-  (self._selectObj):SetActive(false)
+  if useGray then
+    self._bgAlready.material = self._EMIMat
+    self._bgAtmosphere.material = self._EMIMat
+    self._rawImage.material:SetFloat("_LuminosityAmount", 1)
+  else
+    self._bgAlready.material = nil
+    self._bgAtmosphere.material = nil
+    self._rawImage.material:SetFloat("_LuminosityAmount", 0)
+  end
+  self._rawImageObj:SetActive(false)
+  self._rawImageObj:SetActive(true)
+  self._selectObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateItem._OnUIAircraftDecorateSelectItem = function(self, item)
-  -- function num : 0_4
-  (self._selectObj):SetActive(self._itemID == item:GetTemplateID())
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIAircraftDecorateItem:_OnUIAircraftDecorateSelectItem(item)
+  self._selectObj:SetActive(self._itemID == item:GetTemplateID())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateItem._OnUIAircraftDecoratePutFurniture = function(self, itemID)
-  -- function num : 0_5
+function UIAircraftDecorateItem:_OnUIAircraftDecoratePutFurniture(itemID)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateItem.BGOnClick = function(self)
-  -- function num : 0_6
-  (self._newObj):SetActive(false)
+function UIAircraftDecorateItem:BGOnClick()
+  self._newObj:SetActive(false)
   if self._getCallback then
-    (self._getCallback)(self._item)
+    self._getCallback(self._item)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateItem.GetBG = function(self)
-  -- function num : 0_7
+function UIAircraftDecorateItem:GetBG()
   return self:GetGameObject("BG")
 end
-
-

@@ -1,39 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_norm/ui_map_node_item_boss.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMapNodeItemBoss", UIMapNodeItemBase)
 UIMapNodeItemBoss = UIMapNodeItemBoss
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMapNodeItemBoss.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((UIMapNodeItemBoss.super).OnShow)(self)
+function UIMapNodeItemBoss:OnShow()
+  UIMapNodeItemBoss.super.OnShow(self)
   self._imgCG = self:GetUIComponent("MultiplyImageLoader", "imgCG")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBoss.Flush = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((UIMapNodeItemBoss.super).Flush)(self)
-  local stageType = (self.nodeInfo):GetStageType()
+function UIMapNodeItemBoss:Flush()
+  UIMapNodeItemBoss.super.Flush(self)
+  local stageType = self.nodeInfo:GetStageType()
   if stageType == DiscoveryStageType.FightBoss then
     if state == DiscoveryStageState.CanPlay then
-      (self._imgCG):Load((self.nodeInfo).monstercg, "tip_big_multiply")
+      self._imgCG:Load(self.nodeInfo.monstercg, "tip_big_multiply")
     else
-      ;
-      (self._imgCG):Load((self.nodeInfo).monstercg, "white")
+      self._imgCG:Load(self.nodeInfo.monstercg, "white")
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBoss.GetTipAnimName = function(self)
-  -- function num : 0_2
+function UIMapNodeItemBoss:GetTipAnimName()
   return "uieff_UINormNodeBoss_in"
 end
-
-

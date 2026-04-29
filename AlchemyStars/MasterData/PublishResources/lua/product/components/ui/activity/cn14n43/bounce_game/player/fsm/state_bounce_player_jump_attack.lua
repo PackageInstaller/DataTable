@@ -1,85 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/player/fsm/state_bounce_player_jump_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateBouncePlayerJumpAttack", StateBouncePlayerBase)
 StateBouncePlayerJumpAttack = StateBouncePlayerJumpAttack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateBouncePlayerJumpAttack.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function StateBouncePlayerJumpAttack:OnEnter(TT, ...)
   self:Init()
   self.AniDuration = self:PlayAnim()
   self:LoadJumpEffect()
   if BounceDebug.ShowObjRect then
     self:ShowDebugRect()
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BounceJump)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BounceJump)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerJumpAttack.OnExit = function(self, TT)
-  -- function num : 0_1
+function StateBouncePlayerJumpAttack:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerJumpAttack.GetStateType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function StateBouncePlayerJumpAttack:GetStateType()
   return StateBouncePlayer.JumpAttack
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerJumpAttack.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_3 , upvalues : _ENV
+function StateBouncePlayerJumpAttack:OnUpdate(deltaTimeMS)
   if not self.AniDuration then
-    return 
+    return
   end
   self.AniDuration = self.AniDuration - deltaTimeMS
-  ;
-  (self.player):HandleMove(deltaTimeMS)
+  self.player:HandleMove(deltaTimeMS)
   if self.AniDuration <= 0 then
-    if (self.playerData).curSpeed > 0 then
-      (self.player):ChgPlayerState(StateBouncePlayer.Jump)
+    if 0 < self.playerData.curSpeed then
+      self.player:ChgPlayerState(StateBouncePlayer.Jump)
     else
-      ;
-      (self.player):ChgPlayerState(StateBouncePlayer.Down)
+      self.player:ChgPlayerState(StateBouncePlayer.Down)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerJumpAttack.OnAttack = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (self.playerData).accDownSpeed < (self.playerData).curSpeed then
-    (self.playerData).curSpeed = (self.playerData).accDownSpeed
+function StateBouncePlayerJumpAttack:OnAttack()
+  if self.playerData.curSpeed > self.playerData.accDownSpeed then
+    self.playerData.curSpeed = self.playerData.accDownSpeed
   end
-  ;
-  (self.player):ChgPlayerState(StateBouncePlayer.AccDown)
+  self.player:ChgPlayerState(StateBouncePlayer.AccDown)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerJumpAttack.LoadJumpEffect = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function StateBouncePlayerJumpAttack:LoadJumpEffect()
   local viewBehavior = self:GetBehavior(BouncePlayerBeHaviorView:Name())
   if not viewBehavior then
-    return 
+    return
   end
   local playerGo = viewBehavior:GetGameObject()
   if not playerGo then
-    return 
+    return
   end
   local playerTran = playerGo:GetComponent("RectTransform")
-  local eff = (EffectManager.Acquire)("eff_jump.prefab", playerTran.parent, playerTran.anchoredPosition, 350)
+  local eff = EffectManager.Acquire("eff_jump.prefab", playerTran.parent, playerTran.anchoredPosition, 350)
   return eff
 end
-
-

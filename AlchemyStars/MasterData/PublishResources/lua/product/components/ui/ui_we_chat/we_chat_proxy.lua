@@ -1,101 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_we_chat/we_chat_proxy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("WeChatProxy", Object)
 WeChatProxy = WeChatProxy
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-WeChatProxy.Constructor = function(self, module)
-  -- function num : 0_0 , upvalues : _ENV
+function WeChatProxy:Constructor(module)
   self.module = module
   self.stateMachine = WeChatStateMachine:New()
   self.localStorage = WeChatLocalStorage:New(self)
   self.roles = {}
-  local comparer = function(a, b)
-    -- function num : 0_0_0
-    if b._heap_index < a._heap_index then
+  
+  local function comparer(a, b)
+    if a._heap_index > b._heap_index then
       return 1
     else
       return -1
     end
   end
-
+  
   self.waitQueue = {}
   self.isConstructor = true
   self:AddListener()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.IsConstructor = function(self)
-  -- function num : 0_1
+function WeChatProxy:IsConstructor()
   return self.isConstructor
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.SetIsConstructor = function(self, isConstructor)
-  -- function num : 0_2
+function WeChatProxy:SetIsConstructor(isConstructor)
   self.isConstructor = isConstructor
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.InitLocalSpeaker = function(self, speakerId, pstId, serverSpeakerData)
-  -- function num : 0_3
+function WeChatProxy:InitLocalSpeaker(speakerId, pstId, serverSpeakerData)
   if self.localStorage then
-    return (self.localStorage):InitLocalSpeaker(speakerId, pstId, serverSpeakerData)
+    return self.localStorage:InitLocalSpeaker(speakerId, pstId, serverSpeakerData)
   else
     return 0
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.InitAllLocalSpeaker = function(self, pstId)
-  -- function num : 0_4
+function WeChatProxy:InitAllLocalSpeaker(pstId)
   if self.localStorage then
-    return (self.localStorage):InitAllLocalSpeaker(pstId)
+    return self.localStorage:InitAllLocalSpeaker(pstId)
   else
     return 0
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.SaveLocalSpeaker = function(self, speakerId, chats)
-  -- function num : 0_5
+function WeChatProxy:SaveLocalSpeaker(speakerId, chats)
   if self.localStorage then
-    (self.localStorage):SaveLocalSpeaker(speakerId, chats)
+    self.localStorage:SaveLocalSpeaker(speakerId, chats)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.SaveSpeakerLastTime = function(self, speakerId, time)
-  -- function num : 0_6 , upvalues : _ENV
+function WeChatProxy:SaveSpeakerLastTime(speakerId, time)
   if self.localStorage then
-    (self.localStorage):SaveSpeakerLastTime(speakerId, time)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WeChatUpdateLastTime, speakerId)
+    self.localStorage:SaveSpeakerLastTime(speakerId, time)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.WeChatUpdateLastTime, speakerId)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.GetSpeakerLastTime = function(self, speakerId)
-  -- function num : 0_7
-  return self.localStorage and (self.localStorage):GetSpeakerLastTime(speakerId) or 0
+function WeChatProxy:GetSpeakerLastTime(speakerId)
+  return self.localStorage and self.localStorage:GetSpeakerLastTime(speakerId) or 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.Dispose = function(self)
-  -- function num : 0_8
+function WeChatProxy:Dispose()
   if self.stateMachine then
-    (self.stateMachine):Dispose()
+    self.stateMachine:Dispose()
     self.stateMachine = nil
   end
   self:RemoveListener()
@@ -103,60 +71,38 @@ WeChatProxy.Dispose = function(self)
   self:ResetWaitQueue()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.AddListener = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self._onWeChatWaitEndState = (GameHelper:GetInstance()):CreateCallback(self.OnWeChatWaitEndState, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.WeChatWaitEndState, self._onWeChatWaitEndState)
+function WeChatProxy:AddListener()
+  self._onWeChatWaitEndState = GameHelper:GetInstance():CreateCallback(self.OnWeChatWaitEndState, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.WeChatWaitEndState, self._onWeChatWaitEndState)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.RemoveListener = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.WeChatWaitEndState, self._onWeChatWaitEndState)
+function WeChatProxy:RemoveListener()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.WeChatWaitEndState, self._onWeChatWaitEndState)
   self._onWeChatWaitEndState = nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.OnWeChatWaitEndState = function(self, data)
-  -- function num : 0_11
+function WeChatProxy:OnWeChatWaitEndState(data)
   self:SendTalkReaded(data.speakerId, data.chatId, data.talkId, data.triggerIndex)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.GetCurStateType = function(self)
-  -- function num : 0_12
-  return (self.stateMachine):GetCurStateType()
+function WeChatProxy:GetCurStateType()
+  return self.stateMachine:GetCurStateType()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.ChangeState = function(self, stateType, ...)
-  -- function num : 0_13
-  (self.stateMachine):ChangeState(stateType, ...)
+function WeChatProxy:ChangeState(stateType, ...)
+  self.stateMachine:ChangeState(stateType, ...)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.ForceChangeState = function(self, stateType, ...)
-  -- function num : 0_14
-  (self.stateMachine):ForceChangeState(stateType, ...)
+function WeChatProxy:ForceChangeState(stateType, ...)
+  self.stateMachine:ForceChangeState(stateType, ...)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.GetSortedGroup = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function WeChatProxy:GetSortedGroup()
   local groups = {}
-  for key,value in pairs(self.roles) do
+  for key, value in pairs(self.roles) do
     local petid = value:GetSpeakerId()
-    local cfg_pet = (Cfg.cfg_pet)[petid]
-    local ketid = nil
+    local cfg_pet = Cfg.cfg_pet[petid]
+    local ketid
     if cfg_pet then
       local binderID = cfg_pet.BinderPetID
       if binderID then
@@ -165,59 +111,39 @@ WeChatProxy.GetSortedGroup = function(self)
         ketid = petid
       end
     else
-      do
-        do
-          ketid = petid
-          if not groups[ketid] then
-            groups[ketid] = DWeChatRoleGroup:New()
-          end
-          value:SetGroupID(ketid)
-          ;
-          (groups[ketid]):AddRole(value)
-          -- DECOMPILER ERROR at PC35: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC35: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC35: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      ketid = petid
     end
+    if not groups[ketid] then
+      groups[ketid] = DWeChatRoleGroup:New()
+    end
+    value:SetGroupID(ketid)
+    groups[ketid]:AddRole(value)
   end
-  for key,value in pairs(groups) do
+  for key, value in pairs(groups) do
     if value:RoleCount() > 1 then
       local roleList = value:RoleList()
-      ;
-      (table.sort)(roleList, function(a, b)
-    -- function num : 0_15_0 , upvalues : _ENV
-    local petid_a = a:GetSpeakerId()
-    local petid_b = b:GetSpeakerId()
-    local cfg_a = (Cfg.cfg_pet)[petid_a]
-    local cfg_b = (Cfg.cfg_pet)[petid_b]
-    local binderPetIdx_a = cfg_a.BinderIndex
-    local binderPetIdx_b = cfg_b.BinderIndex
-    do return binderPetIdx_a < binderPetIdx_b end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+      table.sort(roleList, function(a, b)
+        local petid_a = a:GetSpeakerId()
+        local petid_b = b:GetSpeakerId()
+        local cfg_a = Cfg.cfg_pet[petid_a]
+        local cfg_b = Cfg.cfg_pet[petid_b]
+        local binderPetIdx_a = cfg_a.BinderIndex
+        local binderPetIdx_b = cfg_b.BinderIndex
+        return binderPetIdx_a < binderPetIdx_b
+      end)
     end
   end
   return self:SortGroup(groups)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.SortGroup = function(self, groups)
-  -- function num : 0_16 , upvalues : _ENV
-  local array = (table.toArray)(groups)
-  ;
-  (table.sort)(array, function(a, b)
-    -- function num : 0_16_0 , upvalues : _ENV, self
+function WeChatProxy:SortGroup(groups)
+  local array = table.toArray(groups)
+  table.sort(array, function(a, b)
     local list_a = a:RoleList()
     local list_b = b:RoleList()
     local weight_a = 0
     local weight_b = 0
-    for _,value in pairs(list_a) do
+    for _, value in pairs(list_a) do
       local chats = value:GetChats()
       local lastChat = chats[#chats]
       if lastChat then
@@ -237,105 +163,81 @@ WeChatProxy.SortGroup = function(self, groups)
         end
       end
     end
-    do
-      for _,value in pairs(list_b) do
-        local chats = value:GetChats()
-        local lastChat = chats[#chats]
-        if lastChat then
-          local talks = lastChat.talks
-          local lastTalk = talks[#talks]
-          if lastTalk then
-            local isEnd = lastTalk.isEnd
-            if not isEnd then
+    for _, value in pairs(list_b) do
+      local chats = value:GetChats()
+      local lastChat = chats[#chats]
+      if lastChat then
+        local talks = lastChat.talks
+        local lastTalk = talks[#talks]
+        if lastTalk then
+          local isEnd = lastTalk.isEnd
+          if not isEnd then
+            weight_b = weight_b + 1000
+            break
+          else
+            local readed = lastTalk.readed
+            if not readed then
               weight_b = weight_b + 1000
-              break
-            else
-              local readed = lastTalk.readed
-              if not readed then
-                weight_b = weight_b + 1000
-              end
-            end
-          end
-        end
-      end
-      do
-        local time_a = nil
-        if #list_a > 1 then
-          local tmp_time_a = nil
-          for i = 1, #list_a do
-            local tmp_a = self:GetSpeakerLastTime((list_a[i]):GetSpeakerId())
-            if not tmp_time_a then
-              tmp_time_a = tmp_a
-            else
-              if tmp_time_a < tmp_a then
-                tmp_time_a = tmp_a
-              end
-            end
-          end
-          time_a = tmp_time_a
-        else
-          do
-            time_a = self:GetSpeakerLastTime((list_a[1]):GetSpeakerId())
-            local time_b = nil
-            if #list_b > 1 then
-              local tmp_time_b = nil
-              for i = 1, #list_b do
-                local tmp_b = self:GetSpeakerLastTime((list_b[i]):GetSpeakerId())
-                if not tmp_time_b then
-                  tmp_time_b = tmp_b
-                else
-                  if tmp_time_b < tmp_b then
-                    tmp_time_b = tmp_b
-                  end
-                end
-              end
-              time_b = tmp_time_b
-            else
-              do
-                time_b = self:GetSpeakerLastTime((list_b[1]):GetSpeakerId())
-                if time_b < time_a then
-                  weight_a = weight_a + 100
-                else
-                  weight_b = weight_b + 100
-                end
-                do return weight_b < weight_a end
-                -- DECOMPILER ERROR: 1 unprocessed JMP targets
-              end
             end
           end
         end
       end
     end
-  end
-)
+    local time_a
+    if 1 < #list_a then
+      local tmp_time_a
+      for i = 1, #list_a do
+        local tmp_a = self:GetSpeakerLastTime(list_a[i]:GetSpeakerId())
+        if not tmp_time_a then
+          tmp_time_a = tmp_a
+        elseif tmp_a > tmp_time_a then
+          tmp_time_a = tmp_a
+        end
+      end
+      time_a = tmp_time_a
+    else
+      time_a = self:GetSpeakerLastTime(list_a[1]:GetSpeakerId())
+    end
+    local time_b
+    if 1 < #list_b then
+      local tmp_time_b
+      for i = 1, #list_b do
+        local tmp_b = self:GetSpeakerLastTime(list_b[i]:GetSpeakerId())
+        if not tmp_time_b then
+          tmp_time_b = tmp_b
+        elseif tmp_b > tmp_time_b then
+          tmp_time_b = tmp_b
+        end
+      end
+      time_b = tmp_time_b
+    else
+      time_b = self:GetSpeakerLastTime(list_b[1]:GetSpeakerId())
+    end
+    if time_a > time_b then
+      weight_a = weight_a + 100
+    else
+      weight_b = weight_b + 100
+    end
+    return weight_a > weight_b
+  end)
   return array
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.GetRoles = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local array = (table.toArray)(self.roles)
-  ;
-  (table.sort)(array, function(a, b)
-    -- function num : 0_17_0 , upvalues : self
-    do return self:GetSpeakerLastTime(b:GetSpeakerId()) < self:GetSpeakerLastTime(a:GetSpeakerId()) end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function WeChatProxy:GetRoles()
+  local array = table.toArray(self.roles)
+  table.sort(array, function(a, b)
+    return self:GetSpeakerLastTime(a:GetSpeakerId()) > self:GetSpeakerLastTime(b:GetSpeakerId())
+  end)
   return array
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.GetFirstSpeakerId = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function WeChatProxy:GetFirstSpeakerId()
   local roles = self:GetRoles()
-  if roles and (table.count)(roles) > 0 then
+  if roles and table.count(roles) > 0 then
     local role = roles[1]
-    local speakerid = (roles[1]):GetSpeakerId()
-    local cfg_pet = (Cfg.cfg_pet)[speakerid]
-    local gid = nil
+    local speakerid = roles[1]:GetSpeakerId()
+    local cfg_pet = Cfg.cfg_pet[speakerid]
+    local gid
     local sid = speakerid
     if cfg_pet and cfg_pet.BinderPetID then
       gid = cfg_pet.BinderPetID
@@ -346,173 +248,127 @@ WeChatProxy.GetFirstSpeakerId = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.GetRole = function(self, speakerId)
-  -- function num : 0_19
-  return (self.roles)[speakerId]
+function WeChatProxy:GetRole(speakerId)
+  return self.roles[speakerId]
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.GetTalks = function(self, speakerId)
-  -- function num : 0_20
-  if not (self.roles)[speakerId] or not ((self.roles)[speakerId]):GetTalks() then
-    return {}
-  end
+function WeChatProxy:GetTalks(speakerId)
+  return self.roles[speakerId] and self.roles[speakerId]:GetTalks() or {}
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.GetTalk = function(self, speakerId, chatId, talkId, triggerIndex)
-  -- function num : 0_21
-  if not (self.roles)[speakerId] or not ((self.roles)[speakerId]):GetTalk(chatId, talkId, triggerIndex) then
-    return {}
-  end
+function WeChatProxy:GetTalk(speakerId, chatId, talkId, triggerIndex)
+  return self.roles[speakerId] and self.roles[speakerId]:GetTalk(chatId, talkId, triggerIndex) or {}
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.UpdateRole = function(self, speakerId, serverChatData, fromStorage)
-  -- function num : 0_22 , upvalues : _ENV
+function WeChatProxy:UpdateRole(speakerId, serverChatData, fromStorage)
   local role = self:GetRole(speakerId)
-  if not role and (Cfg.cfg_quest_chat_speaker)[speakerId] then
-    self:AddRole(speakerId, serverChatData, fromStorage)
+  if not role then
+    if Cfg.cfg_quest_chat_speaker[speakerId] then
+      self:AddRole(speakerId, serverChatData, fromStorage)
+    end
+  else
+    role:Decode(serverChatData.m_vecChatData, fromStorage)
   end
-  role:Decode(serverChatData.m_vecChatData, fromStorage)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.AddRole = function(self, speakerId, serverChatDatas, fromStorage)
-  -- function num : 0_23 , upvalues : _ENV
-  do
-    if speakerId == 1502101 then
-      local a = 1
-    end
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-    if not (self.roles)[speakerId] then
-      (self.roles)[speakerId] = DWeChatRole:New(serverChatDatas, self, fromStorage)
-      if not fromStorage then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WeChatUpdateRole, speakerId)
-        self:SaveSpeakerLastTime(speakerId, (os.time)())
-      end
+function WeChatProxy:AddRole(speakerId, serverChatDatas, fromStorage)
+  if speakerId == 1502101 then
+    local a = 1
+  end
+  if not self.roles[speakerId] then
+    self.roles[speakerId] = DWeChatRole:New(serverChatDatas, self, fromStorage)
+    if not fromStorage then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.WeChatUpdateRole, speakerId)
+      self:SaveSpeakerLastTime(speakerId, os.time())
     end
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.UpdateChat = function(self, speakerId, serverChatData)
-  -- function num : 0_24
+function WeChatProxy:UpdateChat(speakerId, serverChatData)
   local role = self:GetRole(speakerId)
   if role then
     role:UpdateChat(serverChatData)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.AddChat = function(self, speakerId, serverChatData)
-  -- function num : 0_25 , upvalues : _ENV
+function WeChatProxy:AddChat(speakerId, serverChatData)
   local role = self:GetRole(speakerId)
   if role then
-    self:SaveSpeakerLastTime(speakerId, (os.time)())
+    self:SaveSpeakerLastTime(speakerId, os.time())
     self._saveRole = role
     self._saveSpeakerId = speakerId
     self._serverChatData = serverChatData
     local waitTime = 0
-    if ((GameGlobal.UIStateManager)()):IsShow("UIWeChatController") then
+    if GameGlobal.UIStateManager():IsShow("UIWeChatController") then
       waitTime = 5000
     end
     if self._event then
-      ((GameGlobal.Timer)()):CancelEvent(self._event)
+      GameGlobal.Timer():CancelEvent(self._event)
       self._event = nil
     end
-    self._event = ((GameGlobal.Timer)()):AddEvent(waitTime, function()
-    -- function num : 0_25_0 , upvalues : self
-    self:UpdateSaveData()
-  end
-)
+    self._event = GameGlobal.Timer():AddEvent(waitTime, function()
+      self:UpdateSaveData()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.CancelSaveData = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function WeChatProxy:CancelSaveData()
   self:UpdateSaveData()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.UpdateSaveData = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function WeChatProxy:UpdateSaveData()
   if self._saveRole and self._saveSpeakerId and self._serverChatData then
-    (self._saveRole):UpdateChat(self._serverChatData)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WeChatWaitState, {speakerId = self._saveSpeakerId})
+    self._saveRole:UpdateChat(self._serverChatData)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.WeChatWaitState, {
+      speakerId = self._saveSpeakerId
+    })
     if self.curSpeakerId == self._saveSpeakerId then
-      local chatId = (self._serverChatData).m_nChatID
-      local triggerIndex = (self._serverChatData).m_nCount
-      for _,serverTalkData in ipairs((self._serverChatData).m_vecTalkData) do
+      local chatId = self._serverChatData.m_nChatID
+      local triggerIndex = self._serverChatData.m_nCount
+      for _, serverTalkData in ipairs(self._serverChatData.m_vecTalkData) do
         self:UpdateTalkState(self._saveSpeakerId, chatId, triggerIndex, serverTalkData, true)
       end
     end
-    do
-      self._saveRole = nil
-      self._saveSpeakerId = nil
-      self._serverChatData = nil
-    end
+    self._saveRole = nil
+    self._saveSpeakerId = nil
+    self._serverChatData = nil
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.AddTalk = function(self, speakerId, chatId, status, triggerIndex, serverTalkData, needWait)
-  -- function num : 0_28
-  if (self.roles)[speakerId] then
-    ((self.roles)[speakerId]):AddTalk(chatId, triggerIndex, serverTalkData, true)
+function WeChatProxy:AddTalk(speakerId, chatId, status, triggerIndex, serverTalkData, needWait)
+  if self.roles[speakerId] then
+    self.roles[speakerId]:AddTalk(chatId, triggerIndex, serverTalkData, true)
     local serverChatData = {}
     serverChatData.m_nStatus = status
     serverChatData.m_nCount = triggerIndex
-    ;
-    ((self.roles)[speakerId]):UpdateChatState(chatId, serverChatData)
+    self.roles[speakerId]:UpdateChatState(chatId, serverChatData)
     self:UpdateTalkState(speakerId, chatId, triggerIndex, serverTalkData, needWait)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.StopTimer = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function WeChatProxy:StopTimer()
   if self.timer then
-    ((GameGlobal.Timer)()):CancelEvent(self.timer)
+    GameGlobal.Timer():CancelEvent(self.timer)
     self.timer = nil
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.UpdateTalkState = function(self, speakerId, chatId, triggerIndex, serverTalkData, needWait)
-  -- function num : 0_30 , upvalues : _ENV
+function WeChatProxy:UpdateTalkState(speakerId, chatId, triggerIndex, serverTalkData, needWait)
   local data = {}
   data.speakerId = speakerId
   data.chatId = chatId
   data.talkId = serverTalkData.m_nTalkID
   data.triggerIndex = triggerIndex
   if needWait then
-    local cfg = (Cfg.cfg_quest_talk)[serverTalkData.m_nTalkID]
+    local cfg = Cfg.cfg_quest_talk[serverTalkData.m_nTalkID]
     if cfg.IsMainActorWord == 1 then
       self:SetInitState(speakerId)
     else
-      ;
-      (table.insert)(self.waitQueue, data)
+      table.insert(self.waitQueue, data)
       if self:GetCurStateType() == WeChatState.AddAnswer then
         self:ChangeState(WeChatState.Wait, data)
       else
@@ -520,44 +376,30 @@ WeChatProxy.UpdateTalkState = function(self, speakerId, chatId, triggerIndex, se
       end
     end
   else
-    do
-      self:ChangeState(WeChatState.AddAnswer, data)
-    end
+    self:ChangeState(WeChatState.AddAnswer, data)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.SetTalkReaded = function(self, speakerId, chatId, talkId, triggerIndex)
-  -- function num : 0_31
+function WeChatProxy:SetTalkReaded(speakerId, chatId, talkId, triggerIndex)
   local role = self:GetRole(speakerId)
   if role then
     role:SetTalkReaded(chatId, talkId, triggerIndex)
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.ResetWaitQueue = function(self)
-  -- function num : 0_32
+function WeChatProxy:ResetWaitQueue()
   self:StopTimer()
   self.waitQueue = {}
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.GetLastTalk = function(self, speakerId)
-  -- function num : 0_33
-  if (self.roles)[speakerId] then
-    return ((self.roles)[speakerId]):GetLastTalk()
+function WeChatProxy:GetLastTalk(speakerId)
+  if self.roles[speakerId] then
+    return self.roles[speakerId]:GetLastTalk()
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.SetInitState = function(self, speakerId, force)
-  -- function num : 0_34 , upvalues : _ENV
+function WeChatProxy:SetInitState(speakerId, force)
   self.curSpeakerId = speakerId
   self:ResetWaitQueue()
   local talk = self:GetLastTalk(speakerId)
@@ -569,116 +411,86 @@ WeChatProxy.SetInitState = function(self, speakerId, force)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.Reply = function(self, speakerId, index)
-  -- function num : 0_35 , upvalues : _ENV
+function WeChatProxy:Reply(speakerId, index)
   local talk = self:GetLastTalk(speakerId)
   if not talk.options then
-    return 
+    return
   end
-  local option = (talk.options)[index]
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_35_0 , upvalues : _ENV, self, speakerId, talk, option
-    ((GameGlobal.UIStateManager)()):Lock("WeChatProxy:Reply")
-    local result = (self.module):Request_UpdateChatAnswer(TT, speakerId, talk.chatId, talk.talkId, option.talkId)
+  local option = talk.options[index]
+  TaskManager:GetInstance():StartTask(function(TT)
+    GameGlobal.UIStateManager():Lock("WeChatProxy:Reply")
+    local result = self.module:Request_UpdateChatAnswer(TT, speakerId, talk.chatId, talk.talkId, option.talkId)
     if result:GetSucc() then
-      ((GameGlobal.UIStateManager)()):UnLock("WeChatProxy:Reply")
     end
-  end
-)
+    GameGlobal.UIStateManager():UnLock("WeChatProxy:Reply")
+  end)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.SendTalkReaded = function(self, speakerId, chatId, talkId, triggerIndex, onlySend, noCheck)
-  -- function num : 0_36 , upvalues : _ENV
+function WeChatProxy:SendTalkReaded(speakerId, chatId, talkId, triggerIndex, onlySend, noCheck)
   local send = false
-  do
-    if not noCheck and talkId then
+  if not noCheck then
+    if talkId then
       local talk = self:GetTalk(speakerId, chatId, talkId, triggerIndex)
-    end
-    if (talk.talkType == WeChatTalkType.Start and talk.talkType ~= WeChatTalkType.Voice) or talk.readed == false then
-      send = true
-    end
-    send = true
-    if send then
-      (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_36_0 , upvalues : self, speakerId, chatId, talkId, triggerIndex, onlySend, _ENV
-    local result = (self.module):Request_SetTalkReaded(TT, speakerId, chatId, talkId, triggerIndex)
-    if result:GetSucc() then
-      if not onlySend and self.curSpeakerId == speakerId then
-        (table.remove)(self.waitQueue, 1)
-        local nextData = (self.waitQueue)[1]
-        if nextData then
-          self:ForceChangeState(WeChatState.Wait, nextData)
-        else
-          self:SetInitState(speakerId)
-        end
-      else
-        do
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WeChatReaded, speakerId, chatId, talkId, triggerIndex)
-        end
+      if talk.talkType == WeChatTalkType.Start then
+      elseif talk.talkType == WeChatTalkType.Voice then
+      elseif talk.readed == false then
+        send = true
       end
     end
+  else
+    send = true
   end
-)
-    end
+  if send then
+    TaskManager:GetInstance():StartTask(function(TT)
+      local result = self.module:Request_SetTalkReaded(TT, speakerId, chatId, talkId, triggerIndex)
+      if result:GetSucc() then
+        if not onlySend and self.curSpeakerId == speakerId then
+          table.remove(self.waitQueue, 1)
+          local nextData = self.waitQueue[1]
+          if nextData then
+            self:ForceChangeState(WeChatState.Wait, nextData)
+          else
+            self:SetInitState(speakerId)
+          end
+        else
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.WeChatReaded, speakerId, chatId, talkId, triggerIndex)
+        end
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.SendAllTalkReaded = function(self, speakerId)
-  -- function num : 0_37 , upvalues : _ENV
+function WeChatProxy:SendAllTalkReaded(speakerId)
   local role = self:GetRole(speakerId)
   if role then
     local talks = role:GetTalks()
-    for index,talk in ipairs(talks) do
+    for index, talk in ipairs(talks) do
       self:SendTalkReaded(speakerId, talk.chatId, talk.talkId, talk.triggerIndex, true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.SendAndCheckTalkReaded = function(self, speakerId)
-  -- function num : 0_38
+function WeChatProxy:SendAndCheckTalkReaded(speakerId)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.SendSpeakerHistory = function(self, speakerId)
-  -- function num : 0_39 , upvalues : _ENV
-  return (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_39_0 , upvalues : self, speakerId
-    local result = (self.module):Request_SpeakerHistory(TT, speakerId)
+function WeChatProxy:SendSpeakerHistory(speakerId)
+  return TaskManager:GetInstance():StartTask(function(TT)
+    local result = self.module:Request_SpeakerHistory(TT, speakerId)
     if result:GetSucc() then
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.SendSpeakerAllHistory = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  return (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_40_0 , upvalues : self
-    local result = (self.module):Request_AllHistory(TT)
+function WeChatProxy:SendSpeakerAllHistory()
+  return TaskManager:GetInstance():StartTask(function(TT)
+    local result = self.module:Request_AllHistory(TT)
     if result:GetSucc() then
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.HasRed = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  for index,role in pairs(self.roles) do
+function WeChatProxy:HasRed()
+  for index, role in pairs(self.roles) do
     if role:HasRed() then
       return true
     end
@@ -686,161 +498,114 @@ WeChatProxy.HasRed = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.GetUnReadCount = function(self)
-  -- function num : 0_42 , upvalues : _ENV
+function WeChatProxy:GetUnReadCount()
   local maxCount = 0
-  for index,role in pairs(self.roles) do
+  for index, role in pairs(self.roles) do
     local count = role:GetUnReadCount()
     maxCount = maxCount + count
   end
   return maxCount
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.GetUnReadChats = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function WeChatProxy:GetUnReadChats()
   local tbl = {}
-  for index,role in pairs(self.roles) do
+  for index, role in pairs(self.roles) do
     local chats = role:GetUnReadChats()
-    ;
-    (table.appendArray)(tbl, chats)
+    table.appendArray(tbl, chats)
   end
   return tbl
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy._DoEscape = function(self, strContent)
-  -- function num : 0_44 , upvalues : _ENV
-  if (string.isnullorempty)(self.roleName) then
-    self.roleName = ((GameGlobal.GetModule)(RoleModule)):GetName()
+function WeChatProxy:_DoEscape(strContent)
+  if string.isnullorempty(self.roleName) then
+    self.roleName = GameGlobal.GetModule(RoleModule):GetName()
   end
-  strContent = (string.gsub)(strContent, "PlayerName", self.roleName)
+  strContent = string.gsub(strContent, "PlayerName", self.roleName)
   return strContent
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.GetRandomUnReadChats = function(self)
-  -- function num : 0_45 , upvalues : _ENV
+function WeChatProxy:GetRandomUnReadChats()
   local chats = self:GetUnReadChats()
   local txtChats = {}
-  for index,chatId in ipairs(chats) do
-    local tipWord = ((Cfg.cfg_quest_chat)[chatId]).TipWord
+  for index, chatId in ipairs(chats) do
+    local tipWord = Cfg.cfg_quest_chat[chatId].TipWord
     if tipWord then
-      local chat = (Cfg.cfg_quest_chat)[chatId]
+      local chat = Cfg.cfg_quest_chat[chatId]
       if chat then
         local speakerId = chat.SpeakerID
         if speakerId then
-          local cfg_quest_chat_speaker = (Cfg.cfg_quest_chat_speaker)[speakerId]
+          local cfg_quest_chat_speaker = Cfg.cfg_quest_chat_speaker[speakerId]
           if not cfg_quest_chat_speaker then
-            (Log.fatal)("###[WeChatProxy] cfg_quest_chat_speaker is nil ! id --> ", speakerId)
-            return 
+            Log.fatal("###[WeChatProxy] cfg_quest_chat_speaker is nil ! id --> ", speakerId)
+            return
           end
-          local picName = nil
+          local picName
           if cfg_quest_chat_speaker.SpeakerType == 1 and cfg_quest_chat_speaker.TemplateID and cfg_quest_chat_speaker.TemplateID ~= 0 then
             local petid = cfg_quest_chat_speaker.TemplateID
-            local petModule = (GameGlobal.GetModule)(PetModule)
+            local petModule = GameGlobal.GetModule(PetModule)
             local matchPet = petModule:GetPetByTemplateId(petid)
             if matchPet then
               picName = matchPet:GetPetVideo(PetSkinEffectPath.HEAD_ICON_WE_CHAT)
             end
           end
-          do
-            do
-              if not picName then
-                picName = (HelperProxy:GetInstance()):GetPetVideo(speakerId, 0, 0, PetSkinEffectPath.HEAD_ICON_WE_CHAT)
-              end
-              ;
-              (table.insert)(txtChats, picName)
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+          picName = picName or HelperProxy:GetInstance():GetPetVideo(speakerId, 0, 0, PetSkinEffectPath.HEAD_ICON_WE_CHAT)
+          table.insert(txtChats, picName)
         end
       end
     end
   end
   local randomChats = {}
-  if #txtChats > 3 then
+  if 3 < #txtChats then
     local tb = {}
-    ;
-    (math.randomseed)((os.time)())
+    math.randomseed(os.time())
     local rand = math.random
     for i = 1, 6 do
       local x = rand(1, 10)
       tb[i] = x
     end
-    ;
-    (table.remove)(tb, 1)
-    local ran = nil
-    for index,value in ipairs(tb) do
-      (table.insert)(randomChats, txtChats[value])
+    table.remove(tb, 1)
+    local ran
+    for index, value in ipairs(tb) do
+      table.insert(randomChats, txtChats[value])
     end
   else
-    do
-      randomChats = txtChats
-      return randomChats
-    end
+    randomChats = txtChats
   end
+  return randomChats
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.IsChatInHistory = function(self, nSpeakerID, nChatID)
-  -- function num : 0_46 , upvalues : _ENV
-  local role = (self.roles)[nSpeakerID]
-  if role == nil then
+function WeChatProxy:IsChatInHistory(nSpeakerID, nChatID)
+  local role = self.roles[nSpeakerID]
+  if nil == role then
     return false
   end
   local chats = role:GetChats()
-  for key,value in pairs(chats) do
-    -- DECOMPILER ERROR at PC29: Unhandled construct in 'MakeBoolean' P1
-
-    if value.chatId == nChatID and value.state and QuestChatStatus.E_ChatState_Completed <= value.state and value.state <= QuestChatStatus.E_ChatState_Taken then
-      return true
+  for key, value in pairs(chats) do
+    if value.chatId == nChatID then
+      if value.state then
+        if value.state >= QuestChatStatus.E_ChatState_Completed and value.state <= QuestChatStatus.E_ChatState_Taken then
+          return true
+        end
+      else
+        return false
+      end
     end
-    do return false end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.UpdateRoleName = function(self, speakerId, name)
-  -- function num : 0_47
+function WeChatProxy:UpdateRoleName(speakerId, name)
   local role = self:GetRole(speakerId)
   if role then
     role:UpdateName(name)
   end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatProxy.EndCurWaitStat = function(self)
-  -- function num : 0_48 , upvalues : _ENV
+function WeChatProxy:EndCurWaitStat()
   if WeChatState.Wait ~= self:GetCurStateType() then
-    return 
+    return
   end
-  local waitData = (self.waitQueue)[1]
+  local waitData = self.waitQueue[1]
   self:ChangeState(WeChatState.WaitEnd, waitData)
-  ;
-  (table.remove)(self.waitQueue, 1)
+  table.remove(self.waitQueue, 1)
 end
-
-

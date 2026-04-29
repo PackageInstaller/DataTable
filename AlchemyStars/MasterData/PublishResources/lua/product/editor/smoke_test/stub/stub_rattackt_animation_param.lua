@@ -1,29 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/stub/stub_rattackt_animation_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 if not SMOKE_TEST_ENABLED then
-  return 
+  return
 end
-;
-(Log.warn)("TestRobotModule: SkillPhaseRangeAttackAnimationParam stub!")
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
+Log.warn("TestRobotModule: SkillPhaseRangeAttackAnimationParam stub!")
 
-SkillPhaseRangeAttackAnimationParam.GetTrajectoryEffectID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseRangeAttackAnimationParam:GetTrajectoryEffectID()
   if not self._trajectoryEffectID then
-    return 
+    return
   end
-  if not (Cfg.cfg_effect)[self._trajectoryEffectID] then
-    return 
+  if not Cfg.cfg_effect[self._trajectoryEffectID] then
+    return
   end
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-  if ((Cfg.cfg_effect)[self._trajectoryEffectID]).Duration ~= -1 then
-    ((Cfg.cfg_effect)[self._trajectoryEffectID]).Duration = -1
+  if Cfg.cfg_effect[self._trajectoryEffectID].Duration ~= -1 then
+    Cfg.cfg_effect[self._trajectoryEffectID].Duration = -1
   end
   return self._trajectoryEffectID
 end
-
-

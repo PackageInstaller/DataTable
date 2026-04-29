@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/review/ui_summer1_select_info_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummer1SelectInfoReview", UICustomWidget)
 UISummer1SelectInfoReview = UISummer1SelectInfoReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummer1SelectInfoReview.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISummer1SelectInfoReview:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1SelectInfoReview.InitWidget = function(self)
-  -- function num : 0_1
+function UISummer1SelectInfoReview:InitWidget()
   self.txt_name = self:GetUIComponent("UILocalizationText", "txt_name")
   self.txt_have = self:GetUIComponent("UILocalizationText", "txt_have")
   self.txt_desc = self:GetUIComponent("UILocalizationText", "txt_desc")
@@ -23,29 +13,16 @@ UISummer1SelectInfoReview.InitWidget = function(self)
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1SelectInfoReview.SetData = function(self, roleAsset)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[roleAsset.assetid]
-  ;
-  (self._iconLoader):LoadImage(cfg.Icon)
-  ;
-  (self._countLabel):SetText(roleAsset.count)
-  ;
-  (self.txt_name):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self.txt_desc):SetText((StringTable.Get)(cfg.Intro))
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UISummer1SelectInfoReview:SetData(roleAsset)
+  local cfg = Cfg.cfg_item[roleAsset.assetid]
+  self._iconLoader:LoadImage(cfg.Icon)
+  self._countLabel:SetText(roleAsset.count)
+  self.txt_name:SetText(StringTable.Get(cfg.Name))
+  self.txt_desc:SetText(StringTable.Get(cfg.Intro))
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local c = roleModule:GetAssetCount(roleAsset.assetid) or 0
-  ;
-  (self.txt_have):SetText(c)
+  self.txt_have:SetText(c)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1SelectInfoReview.rootFrameOnClick = function(self)
-  -- function num : 0_3
+function UISummer1SelectInfoReview:rootFrameOnClick()
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/review/ui_n7_award_progress_item_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN7AwardProgressItemReview", UICustomWidget)
 UIN7AwardProgressItemReview = UIN7AwardProgressItemReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN7AwardProgressItemReview.OnShow = function(self)
-  -- function num : 0_0
+function UIN7AwardProgressItemReview:OnShow()
   self.anim = self:GetUIComponent("Animation", "UIN7AwardProgressItemReview")
   self.go = self:GetGameObject("UIN7AwardProgressItemReview")
   self.got = self:GetGameObject("got")
@@ -19,87 +12,53 @@ UIN7AwardProgressItemReview.OnShow = function(self)
   self.txtPercent = self:GetUIComponent("UILocalizationText", "txtPercent")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7AwardProgressItemReview.OnHide = function(self)
-  -- function num : 0_1
-  (self.ImgIcon):DestoryLastImage()
+function UIN7AwardProgressItemReview:OnHide()
+  self.ImgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7AwardProgressItemReview.Flush = function(self, progress, callback, itemCallbacl)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN7AwardProgressItemReview:Flush(progress, callback, itemCallbacl)
   self.progress = progress
   self.callback = callback
   self.itemCallbacl = itemCallbacl
   local icon, name, desc = progress:IconNameDesc()
-  ;
-  (self.ImgIcon):LoadImage(icon)
+  self.ImgIcon:LoadImage(icon)
   local percent = progress:GetProgressPercentString()
-  ;
-  (self.txtPercentLow):SetText(percent)
-  ;
-  (self.txtPercent):SetText(percent)
+  self.txtPercentLow:SetText(percent)
+  self.txtPercent:SetText(percent)
   local state = progress:State()
   if state == CampaignPointProgressStatus.CPPS_Accepted then
-    (self.got):SetActive(false)
-    ;
-    (self.canGet):SetActive(false)
-    ;
-    (self.goNot):SetActive(true)
+    self.got:SetActive(false)
+    self.canGet:SetActive(false)
+    self.goNot:SetActive(true)
+  elseif state == CampaignPointProgressStatus.CPPS_Completed then
+    self.got:SetActive(false)
+    self.canGet:SetActive(true)
+    self.goNot:SetActive(false)
+  elseif state == CampaignPointProgressStatus.CPPS_Taken then
+    self.got:SetActive(true)
+    self.canGet:SetActive(false)
+    self.goNot:SetActive(false)
   else
-    if state == CampaignPointProgressStatus.CPPS_Completed then
-      (self.got):SetActive(false)
-      ;
-      (self.canGet):SetActive(true)
-      ;
-      (self.goNot):SetActive(false)
-    else
-      if state == CampaignPointProgressStatus.CPPS_Taken then
-        (self.got):SetActive(true)
-        ;
-        (self.canGet):SetActive(false)
-        ;
-        (self.goNot):SetActive(false)
-      else
-        ;
-        (Log.fatal)("### invalid CampaignPointProgressStatus")
-      end
-    end
+    Log.fatal("### invalid CampaignPointProgressStatus")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7AwardProgressItemReview.ImgCanGetOnClick = function(self, go)
-  -- function num : 0_3
+function UIN7AwardProgressItemReview:ImgCanGetOnClick(go)
   if self.callback then
-    (self.callback)()
+    self.callback()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7AwardProgressItemReview.ImgIconOnClick = function(self, go)
-  -- function num : 0_4
+function UIN7AwardProgressItemReview:ImgIconOnClick(go)
   if self.itemCallbacl then
-    (self.itemCallbacl)()
+    self.itemCallbacl()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7AwardProgressItemReview.PlayAnim = function(self)
-  -- function num : 0_5
-  (self.anim):Play("uieff_N7_AwardProgressReview1")
+function UIN7AwardProgressItemReview:PlayAnim()
+  self.anim:Play("uieff_N7_AwardProgressReview1")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7AwardProgressItemReview.ShowHideGo = function(self, isShow)
-  -- function num : 0_6
-  (self.go):SetActive(isShow)
+function UIN7AwardProgressItemReview:ShowHideGo(isShow)
+  self.go:SetActive(isShow)
 end
-
-

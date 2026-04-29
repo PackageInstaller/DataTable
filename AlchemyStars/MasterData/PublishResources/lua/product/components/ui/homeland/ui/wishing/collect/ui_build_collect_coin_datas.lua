@@ -1,26 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/wishing/collect/ui_build_collect_coin_datas.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBuildCollectCoinData", Object)
 UIBuildCollectCoinData = UIBuildCollectCoinData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildCollectCoinData.Constructor = function(self, coinId)
-  -- function num : 0_0 , upvalues : _ENV
-  local itemCfg = (Cfg.cfg_item)[coinId]
+function UIBuildCollectCoinData:Constructor(coinId)
+  local itemCfg = Cfg.cfg_item[coinId]
   if not itemCfg then
-    (Log.exception)("cfg_item缺少配置:", coinId)
+    Log.exception("cfg_item缺少配置:", coinId)
   end
-  local coinCfg = (Cfg.cfg_item_wishing_coin)[coinId]
+  local coinCfg = Cfg.cfg_item_wishing_coin[coinId]
   if not coinCfg then
-    (Log.exception)("cfg_item_wishing_coin缺少配置:", coinId)
+    Log.exception("cfg_item_wishing_coin缺少配置:", coinId)
   end
   self._coinId = coinId
-  self._name = (StringTable.Get)(itemCfg.Name)
-  self._des = (StringTable.Get)(itemCfg.Intro)
-  self._getWay = (StringTable.Get)(coinCfg.GetWay)
+  self._name = StringTable.Get(itemCfg.Name)
+  self._des = StringTable.Get(itemCfg.Intro)
+  self._getWay = StringTable.Get(coinCfg.GetWay)
   self._getWayIcon = coinCfg.GetWayIcon
   self._icon = itemCfg.Icon
   self._isSpecial = coinCfg.IsSpecial == 1
@@ -31,189 +24,122 @@ UIBuildCollectCoinData.Constructor = function(self, coinId)
   self._effect2 = coinCfg.ThrowEffect2
   self._effect2AttachPath = coinCfg.ThrowEffect2AttachPath
   self:Refresh()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinData.GetEffect1 = function(self)
-  -- function num : 0_1
+function UIBuildCollectCoinData:GetEffect1()
   return self._effect1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinData.GetEffect1AttachPath = function(self)
-  -- function num : 0_2
+function UIBuildCollectCoinData:GetEffect1AttachPath()
   return self._effect1AttachPath
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinData.GetEffect2 = function(self)
-  -- function num : 0_3
+function UIBuildCollectCoinData:GetEffect2()
   return self._effect2
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinData.GetEffect2AttachPath = function(self)
-  -- function num : 0_4
+function UIBuildCollectCoinData:GetEffect2AttachPath()
   return self._effect2AttachPath
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinData.GetModel = function(self)
-  -- function num : 0_5
+function UIBuildCollectCoinData:GetModel()
   return self._model
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinData.GetName = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIBuildCollectCoinData:GetName()
   if self._hasCollect then
     return self._name
   end
-  return (HomelandWishingConst.GetDefaultCoinfName)()
+  return HomelandWishingConst.GetDefaultCoinfName()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinData.GetDes = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIBuildCollectCoinData:GetDes()
   if self._hasCollect then
     return self._des
   end
-  return (HomelandWishingConst.GetDefaultCoinDes)()
+  return HomelandWishingConst.GetDefaultCoinDes()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinData.GetGetWay = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIBuildCollectCoinData:GetGetWay()
   if not self._hasCollect and self._isSpecial then
-    return (HomelandWishingConst.GetDefaultCoinGetWay)()
+    return HomelandWishingConst.GetDefaultCoinGetWay()
   end
   return self._getWay
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinData.GetGetWayIcon = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIBuildCollectCoinData:GetGetWayIcon()
   if not self._hasCollect and self._isSpecial then
-    return (HomelandWishingConst.GetDefaultCoinGetWayIcon)()
+    return HomelandWishingConst.GetDefaultCoinGetWayIcon()
   end
   return self._getWayIcon
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinData.GetIcon = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIBuildCollectCoinData:GetIcon()
   if self._hasCollect then
     return self._icon
   end
-  return (HomelandWishingConst.GetDefaultCoinIcon)()
+  return HomelandWishingConst.GetDefaultCoinIcon()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinData.GetIsSpecial = function(self)
-  -- function num : 0_11
+function UIBuildCollectCoinData:GetIsSpecial()
   return self._isSpecial
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinData.HasCollect = function(self)
-  -- function num : 0_12
+function UIBuildCollectCoinData:HasCollect()
   return self._hasCollect
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinData.GetSortProprity = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIBuildCollectCoinData:GetSortProprity()
   local priority = self._sortPriority
-  if not self._hasCollect and (HomelandWishingConst.CanCollectCoin)(self._coinId) then
+  if not self._hasCollect and HomelandWishingConst.CanCollectCoin(self._coinId) then
     priority = priority - 100000
   end
   return priority
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinData.GetCoinId = function(self)
-  -- function num : 0_14
+function UIBuildCollectCoinData:GetCoinId()
   return self._coinId
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinData.Refresh = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  self._hasCollect = (HomelandWishingConst.IsCoinCollected)(self._coinId)
+function UIBuildCollectCoinData:Refresh()
+  self._hasCollect = HomelandWishingConst.IsCoinCollected(self._coinId)
 end
 
 _class("UIBuildCollectCoinDatas", Object)
 UIBuildCollectCoinDatas = UIBuildCollectCoinDatas
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildCollectCoinDatas.Constructor = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIBuildCollectCoinDatas:Constructor()
   self._datas = {}
-  local cfgs = (Cfg.cfg_item_wishing_coin)({})
-  for _,v in pairs(cfgs) do
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._datas)[#self._datas + 1] = UIBuildCollectCoinData:New(v.ID)
+  local cfgs = Cfg.cfg_item_wishing_coin({})
+  for _, v in pairs(cfgs) do
+    self._datas[#self._datas + 1] = UIBuildCollectCoinData:New(v.ID)
   end
   self:Sort()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinDatas.GetCollectCoinDatas = function(self)
-  -- function num : 0_17
+function UIBuildCollectCoinDatas:GetCollectCoinDatas()
   return self._datas
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinDatas.Sort = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  (table.sort)(self._datas, function(a, b)
-    -- function num : 0_18_0
-    do return a:GetSortProprity() < b:GetSortProprity() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function UIBuildCollectCoinDatas:Sort()
+  table.sort(self._datas, function(a, b)
+    return a:GetSortProprity() < b:GetSortProprity()
+  end)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinDatas.Refresh = function(self)
-  -- function num : 0_19
+function UIBuildCollectCoinDatas:Refresh()
   for i = 1, #self._datas do
-    ((self._datas)[i]):Refresh()
+    self._datas[i]:Refresh()
   end
   self:Sort()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoinDatas.HasCollectCoin = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIBuildCollectCoinDatas:HasCollectCoin()
   for i = 1, #self._datas do
-    local data = (self._datas)[i]
-    if not data:HasCollect() and (HomelandWishingConst.CanCollectCoin)(data:GetCoinId()) then
+    local data = self._datas[i]
+    if not data:HasCollect() and HomelandWishingConst.CanCollectCoin(data:GetCoinId()) then
       return true
     end
   end
   return false
 end
-
-

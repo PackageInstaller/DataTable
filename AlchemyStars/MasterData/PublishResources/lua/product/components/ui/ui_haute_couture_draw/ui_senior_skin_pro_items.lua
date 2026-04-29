@@ -1,50 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw/ui_senior_skin_pro_items.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeniorSKinProItems", UICustomWidget)
 UISeniorSKinProItems = UISeniorSKinProItems
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeniorSKinProItems.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeniorSKinProItems:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeniorSKinProItems.InitWidget = function(self)
-  -- function num : 0_1
+function UISeniorSKinProItems:InitWidget()
   self.icon1 = self:GetUIComponent("RawImageLoader", "icon1")
   self.count1 = self:GetUIComponent("UILocalizationText", "count1")
   self.icon2 = self:GetUIComponent("RawImageLoader", "icon2")
   self.count2 = self:GetUIComponent("UILocalizationText", "count2")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeniorSKinProItems.SetData = function(self, ids)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg1 = (Cfg.cfg_item)[(ids[1])[1]]
-  ;
-  (self.icon1):LoadImage(cfg1.Icon)
-  ;
-  (self.count1):SetText("x" .. (ids[1])[2])
+function UISeniorSKinProItems:SetData(ids)
+  local cfg1 = Cfg.cfg_item[ids[1][1]]
+  self.icon1:LoadImage(cfg1.Icon)
+  self.count1:SetText("x" .. ids[1][2])
   if ids[2] then
-    local cfg2 = (Cfg.cfg_item)[(ids[2])[1]]
-    ;
-    (self.icon2):LoadImage(cfg2.Icon)
-    ;
-    (self.count2):SetText("x" .. (ids[2])[2])
+    local cfg2 = Cfg.cfg_item[ids[2][1]]
+    self.icon2:LoadImage(cfg2.Icon)
+    self.count2:SetText("x" .. ids[2][2])
   else
-    do
-      ;
-      ((self.icon2).gameObject):SetActive(false)
-      ;
-      ((self.count2).gameObject):SetActive(false)
-    end
+    self.icon2.gameObject:SetActive(false)
+    self.count2.gameObject:SetActive(false)
   end
 end
-
-

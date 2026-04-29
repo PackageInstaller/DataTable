@@ -1,65 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/guide_logic_service.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuideLogicService", BaseService)
 GuideLogicService = GuideLogicService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GuideLogicService.Constructor = function(self, world)
-  -- function num : 0_0
+function GuideLogicService:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideLogicService.Initialize = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function GuideLogicService:Initialize()
   local triggerSvc = self:GetService("Trigger")
   local triggerHandler = TriggerCallbackOwner:New(self, self.AddBuff)
   self.trigger = triggerSvc:CreateTrigger(triggerHandler, {
-{NotifyType.GameStart}
-, 
-{TriggerType.Always}
-}, self._world)
+    {
+      NotifyType.GameStart
+    },
+    {
+      TriggerType.Always
+    }
+  }, self._world)
   triggerSvc:Attach(self.trigger)
-  ;
-  (self.trigger):SetActive(true)
+  self.trigger:SetActive(true)
   self.MissionId2GuideId = {}
-  local s = ((Cfg.cfg_guide_const).guide_buff_mission_to_guideid).StrValue
-  local s1 = (string.split)(s, "|")
-  for index,value in ipairs(s1) do
-    local s2 = (string.split)(value, ",")
+  local s = Cfg.cfg_guide_const.guide_buff_mission_to_guideid.StrValue
+  local s1 = string.split(s, "|")
+  for index, value in ipairs(s1) do
+    local s2 = string.split(value, ",")
     local missionId = tonumber(s2[1])
     local guideId = tonumber(s2[2])
-    -- DECOMPILER ERROR at PC57: Confused about usage of register: R13 in 'UnsetPending'
-
-    ;
-    (self.MissionId2GuideId)[missionId] = guideId
+    self.MissionId2GuideId[missionId] = guideId
   end
-  local buffs = ((Cfg.cfg_guide_const).guide_buff_mission_to_guideid).ArrayValue
+  local buffs = Cfg.cfg_guide_const.guide_buff_mission_to_guideid.ArrayValue
   self.LockBloodBuff = buffs[1]
   self.LockRoundBuff = buffs[2]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideLogicService.AddBuff = function(self)
-  -- function num : 0_2
-  local missionId = ((self._world).BW_WorldInfo).missionID
+function GuideLogicService:AddBuff()
+  local missionId = self._world.BW_WorldInfo.missionID
   if missionId then
-    local guideId = (self.MissionId2GuideId)[missionId]
+    local guideId = self.MissionId2GuideId[missionId]
     if guideId then
-      local guideId2Count = (((self._world).BW_WorldInfo).guideInfo).guide_id2count
+      local guideId2Count = self._world.BW_WorldInfo.guideInfo.guide_id2count
       if guideId2Count and not guideId2Count[guideId] then
-        local ownerEntity = ((self._world):Player()):GetLocalTeamEntity()
-        local buffLogicService = (self._world):GetService("BuffLogic")
+        local ownerEntity = self._world:Player():GetLocalTeamEntity()
+        local buffLogicService = self._world:GetService("BuffLogic")
         buffLogicService:AddBuff(self.LockBloodBuff, ownerEntity)
         buffLogicService:AddBuff(self.LockRoundBuff, ownerEntity)
       end
     end
   end
 end
-
-

@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_turn_to_player_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterTurnToPlayerInstruction", BaseInstruction)
 PlayCasterTurnToPlayerInstruction = PlayCasterTurnToPlayerInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterTurnToPlayerInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterTurnToPlayerInstruction:Constructor(paramList)
   self._force = tonumber(paramList.force) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterTurnToPlayerInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayCasterTurnToPlayerInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local teamEntity = (world:Player()):GetLocalTeamEntity()
+  local teamEntity = world:Player():GetLocalTeamEntity()
   local teamLeaderEntity = teamEntity:GetTeamLeaderPetEntity()
   local resvc = world:GetService("RenderEntity")
   resvc:TurnToTarget(casterEntity, teamLeaderEntity, self._force)
 end
-
-

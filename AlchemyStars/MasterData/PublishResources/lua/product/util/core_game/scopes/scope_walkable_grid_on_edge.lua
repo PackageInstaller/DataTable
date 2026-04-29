@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_walkable_grid_on_edge.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_WalkableGridOnEdge", SkillScopeCalculator_Base)
 SkillScopeCalculator_WalkableGridOnEdge = SkillScopeCalculator_WalkableGridOnEdge
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_WalkableGridOnEdge.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_WalkableGridOnEdge:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   if not self._gridFilter then
     return SkillScopeResult:New(SkillScopeType.WalkableGridOnEdge, centerPos, {}, {})
   end
@@ -17,8 +10,8 @@ SkillScopeCalculator_WalkableGridOnEdge.CalcRange = function(self, scopeType, sc
   local isCheckEightDir = directionOption == 1
   local onlyCheckEdge = tonumber(scopeParam[2])
   local isOnlyCheckEdge = onlyCheckEdge == 1
-  local lbsvc = ((self._gridFilter)._world):GetService("BoardLogic")
-  local boardEntity = ((self._gridFilter)._world):GetBoardEntity()
+  local lbsvc = self._gridFilter._world:GetService("BoardLogic")
+  local boardEntity = self._gridFilter._world:GetBoardEntity()
   local cBoard = boardEntity:Board()
   local tv2AttackPos = {}
   local boardMaxX = lbsvc:GetCurBoardMaxX()
@@ -26,54 +19,39 @@ SkillScopeCalculator_WalkableGridOnEdge.CalcRange = function(self, scopeType, sc
   for x = 1, boardMaxX do
     for y = 1, boardMaxY do
       local posIndex = x * 100 + y
-      local v2 = (Vector2.New)(x, y)
+      local v2 = Vector2.New(x, y)
       local v2Relative = v2 - centerPos
       local distanceX, distanceY = cBoard:GetGridEdgeDistanceByPosIndex(posIndex)
       local canInsert = false
       local isEdgeGrid = distanceX == 0 or distanceY == 0
-      if isOnlyCheckEdge and isEdgeGrid then
-        canInsert = true
-      end
-      if isEdgeGrid then
+      if isOnlyCheckEdge then
+        if isEdgeGrid then
+          canInsert = true
+        end
+      elseif isEdgeGrid then
         local isWalkable = not lbsvc:IsPosBlock(v2, BlockFlag.LinkLine)
-        if lbsvc:GetPieceType(v2) == PieceType.None then
-          do
-            do
-              local isNotPieceNone = not isWalkable
-              if isNotPieceNone and isCheckEightDir and self:_IsInEightDir(v2Relative) then
+        if isWalkable then
+          local isNotPieceNone = lbsvc:GetPieceType(v2) ~= PieceType.None
+          if isNotPieceNone then
+            if isCheckEightDir then
+              if self:_IsInEightDir(v2Relative) then
                 canInsert = true
               end
+            else
               canInsert = true
-              if canInsert then
-                (table.insert)(tv2AttackPos, (Vector2.New)(x, y))
-              end
-              -- DECOMPILER ERROR at PC116: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC116: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC116: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC116: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC116: LeaveBlock: unexpected jumping out IF_STMT
-
             end
           end
         end
       end
+      if canInsert then
+        table.insert(tv2AttackPos, Vector2.New(x, y))
+      end
     end
   end
-  do return SkillScopeResult:New(SkillScopeType.WalkableGridOnEdge, centerPos, tv2AttackPos, tv2AttackPos) end
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
+  return SkillScopeResult:New(SkillScopeType.WalkableGridOnEdge, centerPos, tv2AttackPos, tv2AttackPos)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_WalkableGridOnEdge._IsInEightDir = function(self, v2Relative)
-  -- function num : 0_1 , upvalues : _ENV
-  local isInEightDir = v2Relative ~= Vector2.zero and (math.abs)(v2Relative.x) == (math.abs)(v2Relative.y) or v2Relative.x == 0 or v2Relative.y == 0
-  do return isInEightDir end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillScopeCalculator_WalkableGridOnEdge:_IsInEightDir(v2Relative)
+  local isInEightDir = v2Relative ~= Vector2.zero and (math.abs(v2Relative.x) == math.abs(v2Relative.y) or v2Relative.x == 0 or v2Relative.y == 0)
+  return isInEightDir
 end
-
-

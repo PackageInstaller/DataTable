@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/blueprints/components_blueprint.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 ComponentsBlueprintApplyDic = {}
--- DECOMPILER ERROR at PC4: Confused about usage of register: R0 in 'UnsetPending'
 
-ComponentsBlueprintApplyDic.Asset = function(cmptCfg, entity)
-  -- function num : 0_0 , upvalues : _ENV
+function ComponentsBlueprintApplyDic.Asset(cmptCfg, entity)
   if cmptCfg ~= nil then
     entity:AddAsset(NativeUnityPrefabAsset:New(cmptCfg))
   end
 end
 
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
-ComponentsBlueprintApplyDic.Location = function(cmptCfg, entity)
-  -- function num : 0_1 , upvalues : _ENV
+function ComponentsBlueprintApplyDic.Location(cmptCfg, entity)
   local pos = cmptCfg.Pos
   if pos ~= nil then
     entity:SetPosition(Vector3(pos[1], pos[2], pos[3]))
@@ -26,5 +16,3 @@ ComponentsBlueprintApplyDic.Location = function(cmptCfg, entity)
     entity:SetDirection(Vector3(dir[1], dir[2], dir[3]))
   end
 end
-
-

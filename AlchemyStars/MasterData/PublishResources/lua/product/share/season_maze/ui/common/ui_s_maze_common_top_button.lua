@@ -1,52 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/common/ui_s_maze_common_top_button.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISMazeCommonTopButton", UICustomWidget)
 UISMazeCommonTopButton = UISMazeCommonTopButton
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISMazeCommonTopButton.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISMazeCommonTopButton:Constructor()
   self._shareModule = self:GetModule(ShareModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeCommonTopButton.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISMazeCommonTopButton:OnShow(uiParams)
   self._shareBtn = self:GetGameObject("ShareBtn")
   self._plotBtn = self:GetGameObject("BtnPlot")
-  local extraWidget = {"TeamRecordBtn"}
-  for _,v in ipairs(extraWidget) do
-    (self:GetGameObject(v)):SetActive(false)
+  local extraWidget = {
+    "TeamRecordBtn"
+  }
+  for _, v in ipairs(extraWidget) do
+    self:GetGameObject(v):SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeCommonTopButton.SetData_Extra = function(self, params)
-  -- function num : 0_2 , upvalues : _ENV
+function UISMazeCommonTopButton:SetData_Extra(params)
   self._extra = {}
-  for i,v in ipairs(params) do
+  for i, v in ipairs(params) do
     local widget = v[1]
     local callback = v[2]
     local obj = self:GetGameObject(widget)
     if obj then
       obj:SetActive(true)
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._extra)[widget] = callback
+      self._extra[widget] = callback
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeCommonTopButton.SetData = function(self, _backCB, _helpCB, _thumbCB, _hideHomeBtn, showHideUICB, showShareBtn, shareCB, plotCb)
-  -- function num : 0_3
+function UISMazeCommonTopButton:SetData(_backCB, _helpCB, _thumbCB, _hideHomeBtn, showHideUICB, showShareBtn, shareCB, plotCb)
   self.backCallback = _backCB
   self.helpCallback = _helpCB
   self.thumbCB = _thumbCB
@@ -54,120 +37,78 @@ UISMazeCommonTopButton.SetData = function(self, _backCB, _helpCB, _thumbCB, _hid
   self.showShareBtn = showShareBtn
   self.shareCB = shareCB
   if self.helpCallback == nil then
-    (self:GetGameObject("ButtonHelp")):SetActive(false)
+    self:GetGameObject("ButtonHelp"):SetActive(false)
   else
-    ;
-    (self:GetGameObject("ButtonHelp")):SetActive(true)
+    self:GetGameObject("ButtonHelp"):SetActive(true)
   end
   if _hideHomeBtn then
     self:HideHomeBtn()
   end
   if self.showHideUICB == nil then
-    (self:GetGameObject("btnShowHideUI")):SetActive(false)
+    self:GetGameObject("btnShowHideUI"):SetActive(false)
   end
   if self.showShareBtn then
-    (self._shareBtn):SetActive((self._shareModule):CanShare())
+    self._shareBtn:SetActive(self._shareModule:CanShare())
   else
-    ;
-    (self._shareBtn):SetActive(false)
+    self._shareBtn:SetActive(false)
   end
   self._plotCb = plotCb
-  ;
-  (self._plotBtn):SetActive(self._plotCb ~= nil)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._plotBtn:SetActive(self._plotCb ~= nil)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeCommonTopButton.OnHide = function(self)
-  -- function num : 0_4
+function UISMazeCommonTopButton:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeCommonTopButton.BtnPlotOnClick = function(self, go)
-  -- function num : 0_5
+function UISMazeCommonTopButton:BtnPlotOnClick(go)
   if self._plotCb then
-    (self._plotCb)()
+    self._plotCb()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeCommonTopButton.ButtonBackOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("ButtonBackOnClick", {}, true)
-  ;
-  (self.backCallback)()
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCancel)
+function UISMazeCommonTopButton:ButtonBackOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("ButtonBackOnClick", {}, true)
+  self.backCallback()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCancel)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeCommonTopButton.ButtonThumbOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("ButtonThumbOnClick", {}, true)
+function UISMazeCommonTopButton:ButtonThumbOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("ButtonThumbOnClick", {}, true)
   if self.thumbCB then
-    (self.thumbCB)()
+    self.thumbCB()
   else
-    ;
-    (UICommonHelper:GetInstance()):SwitchToUIMain()
+    UICommonHelper:GetInstance():SwitchToUIMain()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeCommonTopButton.ButtonHelpOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("ButtonHelpOnClick", {}, true)
-  ;
-  (self.helpCallback)()
+function UISMazeCommonTopButton:ButtonHelpOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("ButtonHelpOnClick", {}, true)
+  self.helpCallback()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeCommonTopButton.HideHomeBtn = function(self)
-  -- function num : 0_9
-  (self:GetGameObject("ButtonThumb")):SetActive(false)
+function UISMazeCommonTopButton:HideHomeBtn()
+  self:GetGameObject("ButtonThumb"):SetActive(false)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeCommonTopButton.BtnShowHideUIOnClick = function(self, go)
-  -- function num : 0_10
+function UISMazeCommonTopButton:BtnShowHideUIOnClick(go)
   if self.showHideUICB then
-    (self.showHideUICB)()
+    self.showHideUICB()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeCommonTopButton.ShareBtnOnClick = function(self, go)
-  -- function num : 0_11
+function UISMazeCommonTopButton:ShareBtnOnClick(go)
   if self.shareCB then
-    (self.shareCB)()
+    self.shareCB()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeCommonTopButton.SetShareBtn = function(self, show, shareCB)
-  -- function num : 0_12
-  if show then
-    (self._shareBtn):SetActive((self._shareModule):CanShare())
-    self.shareCB = shareCB
-  end
+function UISMazeCommonTopButton:SetShareBtn(show, shareCB)
+  self._shareBtn:SetActive(show and self._shareModule:CanShare())
+  self.shareCB = shareCB
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeCommonTopButton.TeamRecordBtnOnClick = function(self, go)
-  -- function num : 0_13
+function UISMazeCommonTopButton:TeamRecordBtnOnClick(go)
   local widget = "TeamRecordBtn"
-  if (self._extra)[widget] then
-    ((self._extra)[widget])()
+  if self._extra[widget] then
+    self._extra[widget]()
   end
 end
-
-

@@ -1,54 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_sailing_plan/ui_shop_sailing_plan_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_campaign")
 _class("UIShopSailingPlanEnter", UISideEnterItem_Campaign)
 UIShopSailingPlanEnter = UIShopSailingPlanEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopSailingPlanEnter.Constructor = function(self)
-  -- function num : 0_0
+function UIShopSailingPlanEnter:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanEnter._OnAfterUILayerChanged = function(self)
-  -- function num : 0_1
+function UIShopSailingPlanEnter:_OnAfterUILayerChanged()
   if self._setShowCallback then
     local open = self:_CheckOpen()
-    ;
-    (self._setShowCallback)(open)
+    self._setShowCallback(open)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanEnter._CheckOpen = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopSailingPlanEnter:_CheckOpen(TT)
   self:_LoadCampaign(TT)
-  local isOpen = (self._campaign):CheckCampaignOpen()
-  local isTime = (UISideEnterItem_FixedTime.CheckOpen)((self._btnCfg).BeginTime, (self._btnCfg).EndTime)
+  local isOpen = self._campaign:CheckCampaignOpen()
+  local isTime = UISideEnterItem_FixedTime.CheckOpen(self._btnCfg.BeginTime, self._btnCfg.EndTime)
   local sailingPlanHelper = UIShopSailingPlanHelper:New()
   local isActive = sailingPlanHelper:CheckActive()
-  ;
-  (Log.debug)("###[UIShopSailingPlanEnter] isOpen:", isOpen, "|isTime:", isTime, "|isActive:", isActive)
-  return not isOpen or not isTime or isActive
+  Log.debug("###[UIShopSailingPlanEnter] isOpen:", isOpen, "|isTime:", isTime, "|isActive:", isActive)
+  return isOpen and isTime and isActive
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanEnter.BtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIShopSailingPlanEnter:BtnOnClick(go)
   local sailingPlanHelper = UIShopSailingPlanHelper:New()
   local active = sailingPlanHelper:CheckActive()
   if not active then
-    return 
+    return
   end
-  local jumpModule = ((GameGlobal.GetModule)(QuestModule)).uiModule
+  local jumpModule = GameGlobal.GetModule(QuestModule).uiModule
   jumpModule:SetJumpUIData(UIJumpType.UI_JumpMall, {2, 9})
   jumpModule:Jump()
 end
-
-

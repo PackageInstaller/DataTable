@@ -1,11 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/n19_p5/cfg_n19_p5_end_story.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, StoryID = 2, OpenTime = 3}
+local key = {
+  ID = 1,
+  StoryID = 2,
+  OpenTime = 3
+}
 local config = {
-{1, 50270201, "2022-07-28 09:00:00"}
+  {
+    1,
+    50270201,
+    "2022-07-28 09:00:00"
+  }
 }
 return config, "ID", key
-

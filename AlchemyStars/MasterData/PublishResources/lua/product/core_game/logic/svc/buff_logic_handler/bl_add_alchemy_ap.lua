@@ -1,34 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_add_alchemy_ap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddAlchemyAP", BuffLogicBase)
 BuffLogicAddAlchemyAP = BuffLogicAddAlchemyAP
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddAlchemyAP.Constructor = function(self, buffinstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddAlchemyAP:Constructor(buffinstance, logicParam)
   self._count = logicParam.count
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddAlchemyAP.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+function BuffLogicAddAlchemyAP:DoLogic(notify)
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   local retBuffInsList = lsvcFeature:AddAlchemyAP(self._count)
   local result = BuffResultAddAlchemyAP:New()
   result:AddAlchemyAP(lsvcFeature:GetAlchemyAP(), lsvcFeature:GetAlchemyLevel(), self._count)
   if retBuffInsList and retBuffInsList ~= {} then
-    for i,inst in ipairs(retBuffInsList) do
-      result:AddBuffData((inst:Entity()):GetID(), inst:BuffSeq())
+    for i, inst in ipairs(retBuffInsList) do
+      result:AddBuffData(inst:Entity():GetID(), inst:BuffSeq())
     end
   end
-  do
-    return result
-  end
+  return result
 end
-
-

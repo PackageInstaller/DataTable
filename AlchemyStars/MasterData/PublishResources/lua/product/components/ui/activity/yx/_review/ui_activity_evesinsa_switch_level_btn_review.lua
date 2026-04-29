@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/_review/ui_activity_evesinsa_switch_level_btn_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityEveSinsaSwitchLevelBtn_Review", UICustomWidget)
 UIActivityEveSinsaSwitchLevelBtn_Review = UIActivityEveSinsaSwitchLevelBtn_Review
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityEveSinsaSwitchLevelBtn_Review._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityEveSinsaSwitchLevelBtn_Review:_GetComponents()
   self._lockObj = self:GetGameObject("_lock")
   self._normalObj = self:GetGameObject("_normal")
   self._remainingText = self:GetUIComponent("UILocalizationText", "_remainingText")
@@ -18,35 +11,24 @@ UIActivityEveSinsaSwitchLevelBtn_Review._GetComponents = function(self)
   self._redPoint = self:GetGameObject("redPoint")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn_Review.OnShow = function(self)
-  -- function num : 0_1
+function UIActivityEveSinsaSwitchLevelBtn_Review:OnShow()
   self._isOpen = true
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn_Review.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityEveSinsaSwitchLevelBtn_Review:OnHide()
   self._isOpen = false
-  self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
-  self._timeEventForClose = (UIActivityHelper.CancelTimerEvent)(self._timeEventForClose)
+  self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
+  self._timeEventForClose = UIActivityHelper.CancelTimerEvent(self._timeEventForClose)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn_Review.SetData = function(self, campaign, type, isMain)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityEveSinsaSwitchLevelBtn_Review:SetData(campaign, type, isMain)
   self._campaign = campaign
   self._type = type
   self._isMain = isMain
-  self._phase = (UIActivityEveSinsaHelper_Review.CheckTimePhase)(self._campaign)
-  ;
-  (self._lockObj):SetActive(false)
-  ;
-  (self._normalObj):SetActive(true)
+  self._phase = UIActivityEveSinsaHelper_Review.CheckTimePhase(self._campaign)
+  self._lockObj:SetActive(false)
+  self._normalObj:SetActive(true)
   self:_SetTitle()
   self:_CheckNewFlagRedPoint()
   if self._type == EActivityEveSinsaLevelBtnType.EType_B then
@@ -54,127 +36,99 @@ UIActivityEveSinsaSwitchLevelBtn_Review.SetData = function(self, campaign, type,
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn_Review._CheckNewFlagRedPoint = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local uiModule = (GameGlobal.GetUIModule)(CampaignModule)
-  local reviewData = (uiModule:GetReviewData()):GetActivityByType(ECampaignType.CAMPAIGN_TYPE_REVIEW_N1)
+function UIActivityEveSinsaSwitchLevelBtn_Review:_CheckNewFlagRedPoint()
+  local uiModule = GameGlobal.GetUIModule(CampaignModule)
+  local reviewData = uiModule:GetReviewData():GetActivityByType(ECampaignType.CAMPAIGN_TYPE_REVIEW_N1)
   local data = reviewData:GetRedAndNewData()
   if self._type == EActivityEveSinsaLevelBtnType.EType_A then
     local showNew = data:P1SStageUnLockNew()
-    ;
-    (self._redPoint):SetActive(false)
-  else
-    do
-      if self._type == EActivityEveSinsaLevelBtnType.EType_B then
-        (self._newFlag):SetActive(data:P2StageUnLockNew())
-        ;
-        (self._redPoint):SetActive(false)
-      end
-    end
+    self._redPoint:SetActive(false)
+  elseif self._type == EActivityEveSinsaLevelBtnType.EType_B then
+    self._newFlag:SetActive(data:P2StageUnLockNew())
+    self._redPoint:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn_Review._SetTitle = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local type2id = {"str_activity_evesinsa_main_levelabtn", "str_activity_evesinsa_main_levelbbtn"}
+function UIActivityEveSinsaSwitchLevelBtn_Review:_SetTitle()
+  local type2id = {
+    "str_activity_evesinsa_main_levelabtn",
+    "str_activity_evesinsa_main_levelbbtn"
+  }
   local id = type2id[self._type]
-  ;
-  (self._titleText):SetText((StringTable.Get)(id))
+  self._titleText:SetText(StringTable.Get(id))
   if self._title2Text then
-    local phase2id = {"str_activity_evesinsa_main_actionsecond", "str_activity_evesinsa_main_actionsecond", "str_activity_error_107"}
+    local phase2id = {
+      "str_activity_evesinsa_main_actionsecond",
+      "str_activity_evesinsa_main_actionsecond",
+      "str_activity_error_107"
+    }
     id = phase2id[self._phase]
-    ;
-    (self._title2Text):SetText((StringTable.Get)(id))
+    self._title2Text:SetText(StringTable.Get(id))
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn_Review._CheckUnlockLevel = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local componet = (self._campaign):GetComponent(ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_TREE_MISSION)
+function UIActivityEveSinsaSwitchLevelBtn_Review:_CheckUnlockLevel()
+  local componet = self._campaign:GetComponent(ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_TREE_MISSION)
   if componet:ComponentIsUnLock() then
-    (self._lockObj):SetActive(false)
-    ;
-    (self._normalObj):SetActive(true)
+    self._lockObj:SetActive(false)
+    self._normalObj:SetActive(true)
   else
     local uiText = self._remainingText
     local formatStr = "<color=#%s>%s</color>"
     local colorStr = "DECE00"
     local strId = "str_activity_evesinsa_main_lockbtn_level"
-    local showStr = (string.format)(formatStr, colorStr, (StringTable.Get)(strId))
+    local showStr = string.format(formatStr, colorStr, StringTable.Get(strId))
     uiText:SetText(showStr)
-    ;
-    (self._lockObj):SetActive(true)
-    ;
-    (self._normalObj):SetActive(false)
+    self._lockObj:SetActive(true)
+    self._normalObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn_Review.btnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.info)("UIActivityEveSinsaSwitchLevelBtn_Review:btnOnClick")
-  self._phase = (UIActivityEveSinsaHelper_Review.CheckTimePhase)(self._campaign)
+function UIActivityEveSinsaSwitchLevelBtn_Review:btnOnClick()
+  Log.info("UIActivityEveSinsaSwitchLevelBtn_Review:btnOnClick")
+  self._phase = UIActivityEveSinsaHelper_Review.CheckTimePhase(self._campaign)
   if self._type == EActivityEveSinsaLevelBtnType.EType_B and self._phase == EActivityEveSinsaTimePhase.EPhase_Tree then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.GoHome)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.GoHome)
     self:_SetFirstPlot()
   else
     self:_OpenDialog()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn_Review._SetFirstPlot = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityEveSinsaSwitchLevelBtn_Review:_SetFirstPlot()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
-  local keyStr = (string.format)("UIActivityEveSinsa_LevelBtn_Plot_%s_%s", (self._campaign)._id, pstId)
-  if (LocalDB.HasKey)(keyStr) then
-    (Log.info)("UIActivityEveSinsaSwitchLevelBtn_Review:_SetFirstPlot() keyStr = ", keyStr)
+  local keyStr = string.format("UIActivityEveSinsa_LevelBtn_Plot_%s_%s", self._campaign._id, pstId)
+  if LocalDB.HasKey(keyStr) then
+    Log.info("UIActivityEveSinsaSwitchLevelBtn_Review:_SetFirstPlot() keyStr = ", keyStr)
     self:_OpenDialog()
-    return 
+    return
   end
-  ;
-  (LocalDB.SetInt)(keyStr, 1)
+  LocalDB.SetInt(keyStr, 1)
   local storyID = 0
-  local cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
+  local cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
   if cfg_campaign then
-    storyID = (cfg_campaign.FirstEnterStoryID)[2]
+    storyID = cfg_campaign.FirstEnterStoryID[2]
   end
   if storyID ~= 0 then
     self:ShowDialog("UIStoryController", storyID, function()
-    -- function num : 0_8_0 , upvalues : self
-    self:StartTask(function(TT)
-      -- function num : 0_8_0_0 , upvalues : self
-      self:_OpenDialog()
-    end
-, self)
-  end
-)
+      self:StartTask(function(TT)
+        self:_OpenDialog()
+      end, self)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn_Review._OpenDialog = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityEveSinsaSwitchLevelBtn_Review:_OpenDialog()
   if self._type == EActivityEveSinsaLevelBtnType.EType_A then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.WindPlace)
-  else
-    if self._type == EActivityEveSinsaLevelBtnType.EType_B then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.GoHome)
-    end
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.WindPlace)
+  elseif self._type == EActivityEveSinsaLevelBtnType.EType_B then
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.GoHome)
   end
-  local type2show = {"UIActivityEveSinsaLevelAController_Review", "UIActivityEveSinsaLevelBController_Review"}
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  campaignModule:CampaignSwitchState(true, type2show[self._type], UIStateType.UIMain, nil, (self._campaign)._id)
+  local type2show = {
+    "UIActivityEveSinsaLevelAController_Review",
+    "UIActivityEveSinsaLevelBController_Review"
+  }
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  campaignModule:CampaignSwitchState(true, type2show[self._type], UIStateType.UIMain, nil, self._campaign._id)
 end
-
-

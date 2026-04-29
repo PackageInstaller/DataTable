@@ -1,199 +1,142 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/story/story_camera_track_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StoryCameraTrackController", Object)
 StoryCameraTrackController = StoryCameraTrackController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StoryCameraTrackController.Constructor = function(self, storyManager)
-  -- function num : 0_0
+function StoryCameraTrackController:Constructor(storyManager)
   self._storyManager = storyManager
-  self._storyUIRootTrans = (storyManager:GetStoryUIRoot()).transform
+  self._storyUIRootTrans = storyManager:GetStoryUIRoot().transform
   self._currentTrackData = nil
   self._keyframeDone = {}
   self._animationData = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryCameraTrackController.SectionStart = function(self, trackData)
-  -- function num : 0_1
+function StoryCameraTrackController:SectionStart(trackData)
   self._currentTrackData = trackData
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryCameraTrackController.SectionEnd = function(self)
-  -- function num : 0_2
+function StoryCameraTrackController:SectionEnd()
   self._currentTrackData = nil
   self._keyframeDone = {}
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryCameraTrackController.Update = function(self, time)
-  -- function num : 0_3 , upvalues : _ENV
+function StoryCameraTrackController:Update(time)
   if not self._currentTrackData then
     return true
   end
   local allTrackEnd = true
-  if self._currentTrackData and (self._currentTrackData).KeyFrames then
-    for index,keyframe in ipairs((self._currentTrackData).KeyFrames) do
-      -- DECOMPILER ERROR at PC27: Unhandled construct in 'MakeBoolean' P1
-
-      if not (self._keyframeDone)[keyframe] and keyframe.Time < time then
-        self:_TriggerKeyframe(keyframe)
-        -- DECOMPILER ERROR at PC29: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._keyframeDone)[keyframe] = true
-      else
-        allTrackEnd = false
+  if self._currentTrackData and self._currentTrackData.KeyFrames then
+    for index, keyframe in ipairs(self._currentTrackData.KeyFrames) do
+      if not self._keyframeDone[keyframe] then
+        if time > keyframe.Time then
+          self:_TriggerKeyframe(keyframe)
+          self._keyframeDone[keyframe] = true
+        else
+          allTrackEnd = false
+        end
       end
     end
-    do
-      if self:_UpdateAnimation(time) then
-        do return allTrackEnd end
-        do return true end
-      end
-    end
+    allTrackEnd = self:_UpdateAnimation(time) and allTrackEnd
+    return allTrackEnd
+  else
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryCameraTrackController._TriggerKeyframe = function(self, keyframeData)
-  -- function num : 0_4 , upvalues : _ENV
-  if keyframeData.Shake ~= nil and not (self._storyManager):IsJumping() then
-    if (((DG.Tweening).DOTween).IsTweening)(self._storyUIRootTrans) then
-      (Log.fatal)("[Story] camera is shaking!")
+function StoryCameraTrackController:_TriggerKeyframe(keyframeData)
+  if keyframeData.Shake ~= nil and not self._storyManager:IsJumping() then
+    if DG.Tweening.DOTween.IsTweening(self._storyUIRootTrans) then
+      Log.fatal("[Story] camera is shaking!")
     end
     local shakeData = keyframeData.Shake
-    local tweener = (self._storyUIRootTrans):DOShakePosition(shakeData.Duration, Vector3((shakeData.Strength)[1], (shakeData.Strength)[2], 0), shakeData.Vibrato, 0, false, shakeData.fadeOut)
-    local aniInfo = {StoryEntityAnimationType.Shake, keyframeData.Time, tweener}
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._animationData)[keyframeData.Shake] = aniInfo
-  else
-    do
-      if keyframeData.StartShake then
-        (self._storyManager):StartLoopShake(keyframeData.StartShake)
-      else
-        if keyframeData.StopShake then
-          (self._storyManager):StopLoopShake(keyframeData.StopShake)
-        end
-      end
-      if keyframeData.Position ~= nil then
-        self:_SetPosition(Vector3(-(keyframeData.Position)[1], -(keyframeData.Position)[2], 0))
-      end
-      if keyframeData.Rotation ~= nil then
-        self:_SetRotation((Quaternion.Euler)(0, 0, -keyframeData.Rotation))
-      end
-      if keyframeData.Scaling ~= nil then
-        self:_SetScaling(Vector3(1 / keyframeData.Scaling, 1 / keyframeData.Scaling, 1))
-      end
-      do
-        if keyframeData.Translate then
-          local aniInfo = {StoryEntityAnimationType.Translate, keyframeData.Time, Vector3(-((keyframeData.Translate).StartValue)[1], -((keyframeData.Translate).StartValue)[2], 0), Vector3(-((keyframeData.Translate).EndValue)[1], -((keyframeData.Translate).EndValue)[2], 0)}
-          -- DECOMPILER ERROR at PC131: Confused about usage of register: R3 in 'UnsetPending'
-
-          ;
-          (self._animationData)[keyframeData.Translate] = aniInfo
-        end
-        do
-          if keyframeData.Rotate then
-            local aniInfo = {StoryEntityAnimationType.Rotate, keyframeData.Time, (Quaternion.Euler)(0, 0, -(keyframeData.Rotate).StartValue), (Quaternion.Euler)(0, 0, -(keyframeData.Rotate).EndValue)}
-            -- DECOMPILER ERROR at PC158: Confused about usage of register: R3 in 'UnsetPending'
-
-            ;
-            (self._animationData)[keyframeData.Rotate] = aniInfo
-          end
-          if keyframeData.Scale then
-            local aniInfo = {StoryEntityAnimationType.Scale, keyframeData.Time, Vector3(1 / (keyframeData.Scale).StartValue, 1 / (keyframeData.Scale).StartValue, 1), Vector3(1 / (keyframeData.Scale).EndValue, 1 / (keyframeData.Scale).EndValue, 1)}
-            -- DECOMPILER ERROR at PC187: Confused about usage of register: R3 in 'UnsetPending'
-
-            ;
-            (self._animationData)[keyframeData.Scale] = aniInfo
-          end
-        end
-      end
-    end
+    local tweener = self._storyUIRootTrans:DOShakePosition(shakeData.Duration, Vector3(shakeData.Strength[1], shakeData.Strength[2], 0), shakeData.Vibrato, 0, false, shakeData.fadeOut)
+    local aniInfo = {
+      StoryEntityAnimationType.Shake,
+      keyframeData.Time,
+      tweener
+    }
+    self._animationData[keyframeData.Shake] = aniInfo
+  elseif keyframeData.StartShake then
+    self._storyManager:StartLoopShake(keyframeData.StartShake)
+  elseif keyframeData.StopShake then
+    self._storyManager:StopLoopShake(keyframeData.StopShake)
+  end
+  if keyframeData.Position ~= nil then
+    self:_SetPosition(Vector3(-keyframeData.Position[1], -keyframeData.Position[2], 0))
+  end
+  if keyframeData.Rotation ~= nil then
+    self:_SetRotation(Quaternion.Euler(0, 0, -keyframeData.Rotation))
+  end
+  if keyframeData.Scaling ~= nil then
+    self:_SetScaling(Vector3(1 / keyframeData.Scaling, 1 / keyframeData.Scaling, 1))
+  end
+  if keyframeData.Translate then
+    local aniInfo = {
+      StoryEntityAnimationType.Translate,
+      keyframeData.Time,
+      Vector3(-keyframeData.Translate.StartValue[1], -keyframeData.Translate.StartValue[2], 0),
+      Vector3(-keyframeData.Translate.EndValue[1], -keyframeData.Translate.EndValue[2], 0)
+    }
+    self._animationData[keyframeData.Translate] = aniInfo
+  end
+  if keyframeData.Rotate then
+    local aniInfo = {
+      StoryEntityAnimationType.Rotate,
+      keyframeData.Time,
+      Quaternion.Euler(0, 0, -keyframeData.Rotate.StartValue),
+      Quaternion.Euler(0, 0, -keyframeData.Rotate.EndValue)
+    }
+    self._animationData[keyframeData.Rotate] = aniInfo
+  end
+  if keyframeData.Scale then
+    local aniInfo = {
+      StoryEntityAnimationType.Scale,
+      keyframeData.Time,
+      Vector3(1 / keyframeData.Scale.StartValue, 1 / keyframeData.Scale.StartValue, 1),
+      Vector3(1 / keyframeData.Scale.EndValue, 1 / keyframeData.Scale.EndValue, 1)
+    }
+    self._animationData[keyframeData.Scale] = aniInfo
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryCameraTrackController._UpdateAnimation = function(self, time)
-  -- function num : 0_5 , upvalues : _ENV
+function StoryCameraTrackController:_UpdateAnimation(time)
   local allEnd = true
-  for aniData,aniInfo in pairs(self._animationData) do
+  for aniData, aniInfo in pairs(self._animationData) do
     allEnd = false
     local t = 1
     if aniData.Duration > 0 then
       t = (time - aniInfo[2]) / aniData.Duration
     end
-    if t > 1 then
+    if 1 < t then
       t = 1
     end
-    if aniInfo[1] == StoryEntityAnimationType.Shake and not (aniInfo[3]):IsComplete() then
-      allEnd = false
-    end
-    if aniInfo[1] == StoryEntityAnimationType.Translate then
-      self:_SetPosition((Vector3.Lerp)(aniInfo[3], aniInfo[4], t))
-    else
-      if aniInfo[1] == StoryEntityAnimationType.Rotate then
-        self:_SetRotation((Quaternion.Lerp)(aniInfo[3], aniInfo[4], t))
-      else
-        if aniInfo[1] == StoryEntityAnimationType.Scale then
-          self:_SetScaling((Vector3.Lerp)(aniInfo[3], aniInfo[4], t))
-        else
-          if aniInfo[1] == StoryEntityAnimationType.Shake and (self._storyManager):IsJumping() then
-            (aniInfo[3]):Kill(true)
-            -- DECOMPILER ERROR at PC86: Confused about usage of register: R9 in 'UnsetPending'
-
-            ;
-            (self._animationData)[aniData] = nil
-          end
-        end
+    if aniInfo[1] == StoryEntityAnimationType.Shake then
+      if not aniInfo[3]:IsComplete() then
+        allEnd = false
       end
+    elseif aniInfo[1] == StoryEntityAnimationType.Translate then
+      self:_SetPosition(Vector3.Lerp(aniInfo[3], aniInfo[4], t))
+    elseif aniInfo[1] == StoryEntityAnimationType.Rotate then
+      self:_SetRotation(Quaternion.Lerp(aniInfo[3], aniInfo[4], t))
+    elseif aniInfo[1] == StoryEntityAnimationType.Scale then
+      self:_SetScaling(Vector3.Lerp(aniInfo[3], aniInfo[4], t))
+    elseif aniInfo[1] == StoryEntityAnimationType.Shake and self._storyManager:IsJumping() then
+      aniInfo[3]:Kill(true)
+      self._animationData[aniData] = nil
     end
-    -- DECOMPILER ERROR at PC90: Confused about usage of register: R9 in 'UnsetPending'
-
-    if t >= 1 then
-      (self._animationData)[aniData] = nil
+    if 1 <= t then
+      self._animationData[aniData] = nil
     end
   end
   return allEnd
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryCameraTrackController._SetPosition = function(self, pos)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._storyUIRootTrans).localPosition = pos
+function StoryCameraTrackController:_SetPosition(pos)
+  self._storyUIRootTrans.localPosition = pos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryCameraTrackController._SetRotation = function(self, rot)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._storyUIRootTrans).localRotation = rot
+function StoryCameraTrackController:_SetRotation(rot)
+  self._storyUIRootTrans.localRotation = rot
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryCameraTrackController._SetScaling = function(self, scale)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._storyUIRootTrans).localScale = scale
+function StoryCameraTrackController:_SetScaling(scale)
+  self._storyUIRootTrans.localScale = scale
 end
-
-

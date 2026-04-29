@@ -1,14 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/choose_assistant_ui_enum.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIChooseAssistantType = {Change2Cg = 1, Change2Bg = 2, Cg2MainLobby = 11, Bg2MainLobby = 22}
+local UIChooseAssistantType = {
+  Change2Cg = 1,
+  Change2Bg = 2,
+  Cg2MainLobby = 11,
+  Bg2MainLobby = 22
+}
 _enum("UIChooseAssistantType", UIChooseAssistantType)
-local UIChooseAssistantState = {Save = 1, Cancel = 2, Default = 3}
+local UIChooseAssistantState = {
+  Save = 1,
+  Cancel = 2,
+  Default = 3
+}
 _enum("UIChooseAssistantState", UIChooseAssistantState)
-local UIChooseAssistantBgType = {Normal = 1, Story = 2, Skin = 3, Season = 4, MultiSpineSkin = 5}
+local UIChooseAssistantBgType = {
+  Normal = 1,
+  Story = 2,
+  Skin = 3,
+  Season = 4,
+  MultiSpineSkin = 5
+}
 _enum("UIChooseAssistantBgType", UIChooseAssistantBgType)
-local UIPetAndBgMoveType = {None = 1, Pet = 2, Bg = 3}
+local UIPetAndBgMoveType = {
+  None = 1,
+  Pet = 2,
+  Bg = 3
+}
 _enum("UIPetAndBgMoveType", UIPetAndBgMoveType)
-

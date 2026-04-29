@@ -1,19 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/level/cfg_level_failed_revive.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {MatchType = 1, ReviveDialog = 2}
 local config = {
-{1, 0}
-, 
-{2, 0}
-, 
-{3, 0}
-, 
-{4, 0}
-, 
-{5, 0}
+  {1, 0},
+  {2, 0},
+  {3, 0},
+  {4, 0},
+  {5, 0}
 }
 return config, "MatchType", key
-

@@ -1,12 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/custom_nodes_foundation/bhv_nodes/if_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
--- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomNodeConfigStatic.Check_IF = function(nodeCfg)
-  -- function num : 0_0
+function CustomNodeConfigStatic.Check_IF(nodeCfg)
   if not nodeCfg.Condition then
     return false
   end
@@ -16,176 +8,130 @@ CustomNodeConfigStatic.Check_IF = function(nodeCfg)
   return true
 end
 
-;
-(CustomNodeConfigStatic.AddChecker)("IF", CustomNodeConfigStatic.Check_IF)
+CustomNodeConfigStatic.AddChecker("IF", CustomNodeConfigStatic.Check_IF)
 _class("IF", HasBeginBhv)
 IF = IF
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-IF.Constructor = function(self)
-  -- function num : 0_1
+function IF:Constructor()
   self.TrueBhv = nil
   self.FalseBhv = nil
   self.Condition = nil
   self.IsConditionReached = false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-IF.InitializeNode = function(self, cfg, context)
-  -- function num : 0_2 , upvalues : _ENV
-  ((IF.super).InitializeNode)(self, cfg, context)
+function IF:InitializeNode(cfg, context)
+  IF.super.InitializeNode(self, cfg, context)
   local logic = context.Logic
   self.Condition = logic:CreateNode(cfg.Condition, context)
-  ;
-  (self.Condition):Deactivate()
+  self.Condition:Deactivate()
   if cfg.TrueBhv then
     self.TrueBhv = logic:CreateNode(cfg.TrueBhv, context)
-    ;
-    (self.TrueBhv):Deactivate()
+    self.TrueBhv:Deactivate()
   end
   if cfg.FalseBhv then
     self.FalseBhv = logic:CreateNode(cfg.FalseBhv, context)
-    ;
-    (self.FalseBhv):Deactivate()
+    self.FalseBhv:Deactivate()
   end
-  if not self.TrueBhv then
-    (CLHelper.Assert)(self.FalseBhv)
+  CLHelper.Assert(self.TrueBhv or self.FalseBhv)
+end
+
+function IF:Activate()
+  IF.super.Activate(self)
+  self.Condition:Activate()
+  self.IsConditionReached = self.Condition:IsConditionReached()
+  if self.IsConditionReached then
+    if self.TrueBhv then
+      self.TrueBhv:Activate()
+    end
+  elseif self.FalseBhv then
+    self.FalseBhv:Activate()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-IF.Activate = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((IF.super).Activate)(self)
-  ;
-  (self.Condition):Activate()
-  self.IsConditionReached = (self.Condition):IsConditionReached()
-  if self.IsConditionReached and self.TrueBhv then
-    (self.TrueBhv):Activate()
-  end
-  if self.FalseBhv then
-    (self.FalseBhv):Activate()
-  end
-end
-
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-IF.Deactivate = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((IF.super).Deactivate)(self)
-  ;
-  (self.Condition):Deactivate()
+function IF:Deactivate()
+  IF.super.Deactivate(self)
+  self.Condition:Deactivate()
   if self.TrueBhv then
-    (self.TrueBhv):Deactivate()
+    self.TrueBhv:Deactivate()
   end
   if self.FalseBhv then
-    (self.FalseBhv):Deactivate()
+    self.FalseBhv:Deactivate()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-IF.Destroy = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self.Condition):Destroy()
+function IF:Destroy()
+  self.Condition:Destroy()
   if self.TrueBhv then
-    (self.TrueBhv):Destroy()
+    self.TrueBhv:Destroy()
   end
   if self.FalseBhv then
-    (self.FalseBhv):Destroy()
+    self.FalseBhv:Destroy()
   end
-  ;
-  ((IF.super).Destroy)(self)
+  IF.super.Destroy(self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-IF.Reset = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((IF.super).Reset)(self)
-  ;
-  (self.Condition):Reset()
+function IF:Reset()
+  IF.super.Reset(self)
+  self.Condition:Reset()
   if self.TrueBhv then
-    (self.TrueBhv):Reset()
+    self.TrueBhv:Reset()
   end
   if self.FalseBhv then
-    (self.FalseBhv):Reset()
+    self.FalseBhv:Reset()
   end
   self.IsConditionReached = false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-IF.OnBegin = function(self)
-  -- function num : 0_7
-  self.IsConditionReached = (self.Condition):IsConditionReached()
+function IF:OnBegin()
+  self.IsConditionReached = self.Condition:IsConditionReached()
   self:ChangeActiveState(self.IsConditionReached)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-IF.OnUpdate = function(self, dt)
-  -- function num : 0_8
+function IF:OnUpdate(dt)
   self:UpdateBhv(self.IsConditionReached, dt)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-IF.CanStop = function(self)
-  -- function num : 0_9
-  if self.IsConditionReached and self.TrueBhv and (self.TrueBhv).CanStop and (self.TrueBhv):CanStop() == false then
-    return false
-  end
-  if self.FalseBhv and (self.FalseBhv).CanStop and (self.FalseBhv):CanStop() == false then
+function IF:CanStop()
+  if self.IsConditionReached then
+    if self.TrueBhv and self.TrueBhv.CanStop and self.TrueBhv:CanStop() == false then
+      return false
+    end
+  elseif self.FalseBhv and self.FalseBhv.CanStop and self.FalseBhv:CanStop() == false then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-IF.CollectInterfaceInChildren = function(self, interfaceList, funcName)
-  -- function num : 0_10 , upvalues : _ENV
-  (CustomNodeStatic.TraverseCollectInterface)(interfaceList, funcName, self.Condition)
-  ;
-  (CustomNodeStatic.TraverseCollectInterface)(interfaceList, funcName, self.TrueBhv)
-  ;
-  (CustomNodeStatic.TraverseCollectInterface)(interfaceList, funcName, self.FalseBhv)
+function IF:CollectInterfaceInChildren(interfaceList, funcName)
+  CustomNodeStatic.TraverseCollectInterface(interfaceList, funcName, self.Condition)
+  CustomNodeStatic.TraverseCollectInterface(interfaceList, funcName, self.TrueBhv)
+  CustomNodeStatic.TraverseCollectInterface(interfaceList, funcName, self.FalseBhv)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-IF.ChangeActiveState = function(self, is_true)
-  -- function num : 0_11
+function IF:ChangeActiveState(is_true)
   if is_true then
     if self.TrueBhv then
-      (self.TrueBhv):Activate()
+      self.TrueBhv:Activate()
     end
     if self.FalseBhv then
-      (self.FalseBhv):Deactivate()
+      self.FalseBhv:Deactivate()
     end
   else
     if self.TrueBhv then
-      (self.TrueBhv):Deactivate()
+      self.TrueBhv:Deactivate()
     end
     if self.FalseBhv then
-      (self.FalseBhv):Activate()
+      self.FalseBhv:Activate()
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-IF.UpdateBhv = function(self, is_true, dt)
-  -- function num : 0_12
-  if is_true and self.TrueBhv then
-    (self.TrueBhv):Update(dt)
-  end
-  if self.FalseBhv then
-    (self.FalseBhv):Update(dt)
+function IF:UpdateBhv(is_true, dt)
+  if is_true then
+    if self.TrueBhv then
+      self.TrueBhv:Update(dt)
+    end
+  elseif self.FalseBhv then
+    self.FalseBhv:Update(dt)
   end
 end
-
-

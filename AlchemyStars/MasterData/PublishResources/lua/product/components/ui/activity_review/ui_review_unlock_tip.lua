@@ -1,80 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/ui_review_unlock_tip.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIReviewUnlockTip", UIController)
 UIReviewUnlockTip = UIReviewUnlockTip
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIReviewUnlockTip.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIReviewUnlockTip:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewUnlockTip.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIReviewUnlockTip:OnShow(uiParams)
   self:InitWidget()
   self._data = uiParams[1]
   self._customTips = uiParams[2]
-  local topWidget = (self.topBtn):SpawnObject("UICommonTopButton")
+  local topWidget = self.topBtn:SpawnObject("UICommonTopButton")
   topWidget:SetData(function()
-    -- function num : 0_1_0 , upvalues : self
     self:CloseDialog()
-  end
-)
-  self._topCurrency = (self.toptips):SpawnObject("UICurrencyMenu")
-  ;
-  (self._topCurrency):SetData({RoleAssetID.RoleAssetActiveToken})
-  ;
-  (self.title):SetText((self._data):Title())
-  local cfg = (Cfg.cfg_activity_review)[(self._data):ActivityID()]
+  end)
+  self._topCurrency = self.toptips:SpawnObject("UICurrencyMenu")
+  self._topCurrency:SetData({
+    RoleAssetID.RoleAssetActiveToken
+  })
+  self.title:SetText(self._data:Title())
+  local cfg = Cfg.cfg_activity_review[self._data:ActivityID()]
   if not cfg then
-    ReviewError("cfg_activity_review中找不到配置：", (self._data):ActivityID())
+    ReviewError("cfg_activity_review中找不到配置：", self._data:ActivityID())
   end
-  ;
-  (self.icon):LoadImage(cfg.UnlockIcon)
-  ;
-  (self.des):SetText((StringTable.Get)(cfg.UnlockDes))
-  self._asset = (self._data):UnlockCost()
-  ;
-  (self.itemcount):SetText((self._asset).count)
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R4 in 'UnsetPending'
-
-  if (self._data):CanUnlock() then
-    (self.itemcount).color = Color.green
+  self.icon:LoadImage(cfg.UnlockIcon)
+  self.des:SetText(StringTable.Get(cfg.UnlockDes))
+  self._asset = self._data:UnlockCost()
+  self.itemcount:SetText(self._asset.count)
+  if self._data:CanUnlock() then
+    self.itemcount.color = Color.green
   else
-    -- DECOMPILER ERROR at PC78: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.itemcount).color = Color.red
+    self.itemcount.color = Color.red
   end
   self._unlockBtn = self:GetGameObject("UnlockBtn")
   self._customTipsBtn = self:GetGameObject("CustomTipsBtn")
   if self._customTips then
-    (self._unlockBtn):SetActive(false)
-    ;
-    (self._customTipsBtn):SetActive(true)
+    self._unlockBtn:SetActive(false)
+    self._customTipsBtn:SetActive(true)
     local customTips = self:GetUIComponent("UILocalizationText", "CustomTips")
     local progress = self:GetUIComponent("UILocalizationText", "Progress")
-    customTips:SetText((self._customTips)[1])
-    progress:SetText((self._customTips)[2])
+    customTips:SetText(self._customTips[1])
+    progress:SetText(self._customTips[2])
   else
-    do
-      ;
-      (self._unlockBtn):SetActive(true)
-      ;
-      (self._customTipsBtn):SetActive(false)
-    end
+    self._unlockBtn:SetActive(true)
+    self._customTipsBtn:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewUnlockTip.InitWidget = function(self)
-  -- function num : 0_2
+function UIReviewUnlockTip:InitWidget()
   self.topBtn = self:GetUIComponent("UISelectObjectPath", "topBtn")
   self.toptips = self:GetUIComponent("UISelectObjectPath", "toptips")
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
@@ -83,41 +55,26 @@ UIReviewUnlockTip.InitWidget = function(self)
   self.itemcount = self:GetUIComponent("UILocalizationText", "itemcount")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewUnlockTip.UnlockBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._data):CanUnlock() then
+function UIReviewUnlockTip:UnlockBtnOnClick(go)
+  if self._data:CanUnlock() then
     self:StartTask(self._ReqUnlock, self)
   else
-    local cfg = (Cfg.cfg_item)[(self._asset).assetid]
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_review_cant_unlock", (StringTable.Get)(cfg.Name)))
+    local cfg = Cfg.cfg_item[self._asset.assetid]
+    ToastManager.ShowToast(StringTable.Get("str_review_cant_unlock", StringTable.Get(cfg.Name)))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewUnlockTip._ReqUnlock = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIReviewUnlockTip:_ReqUnlock(TT)
   self:Lock(self:GetName())
-  local res = ((GameGlobal.GetModule)(CampaignModule)):HandUnlockReviewCampaign(TT, (self._data):ActivityID())
+  local res = GameGlobal.GetModule(CampaignModule):HandUnlockReviewCampaign(TT, self._data:ActivityID())
   self:UnLock(self:GetName())
   if res:GetSucc() then
-    local uiModule = (GameGlobal.GetUIModule)(CampaignModule)
-    ;
-    (uiModule:GetReviewData()):OnActivityUnlock(self._data)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIReviewOnUnlock, (self._data):ActivityID())
+    local uiModule = GameGlobal.GetUIModule(CampaignModule)
+    uiModule:GetReviewData():OnActivityUnlock(self._data)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIReviewOnUnlock, self._data:ActivityID())
     self:CloseDialog()
   else
-    do
-      ;
-      (Log.fatal)("请求解锁活动失败:", res:GetResult())
-      ;
-      ((GameGlobal.GetModule)(CampaignModule)):ShowErrorToast(res:GetResult())
-    end
+    Log.fatal("请求解锁活动失败:", res:GetResult())
+    GameGlobal.GetModule(CampaignModule):ShowErrorToast(res:GetResult())
   end
 end
-
-

@@ -1,38 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_light/ui_main_lobby_light_03_common_down.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_main_lobby_light_03_common")
 _class("UIMainLobbyLight03CommonDown", UIMainLobbyLight03Common)
 UIMainLobbyLight03CommonDown = UIMainLobbyLight03CommonDown
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyLight03CommonDown.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMainLobbyLight03CommonDown:OnShow()
   local inTime = 2100
-  self.event = ((GameGlobal.Timer)()):AddEvent(inTime, function()
-    -- function num : 0_0_0 , upvalues : self
+  self.event = GameGlobal.Timer():AddEvent(inTime, function()
     self:PlayLoopAnim()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyLight03CommonDown.PlayLoopAnim = function(self)
-  -- function num : 0_1
+function UIMainLobbyLight03CommonDown:PlayLoopAnim()
   local anim = self:GetUIComponent("Animation", "UIMainLight03_right_4")
   anim:Play("uieff_UIMainLight03right4_loop")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyLight03CommonDown.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMainLobbyLight03CommonDown:OnHide()
   if self.event then
-    ((GameGlobal.Timer)()):CancelEvent(self.event)
+    GameGlobal.Timer():CancelEvent(self.event)
   end
 end
-
-

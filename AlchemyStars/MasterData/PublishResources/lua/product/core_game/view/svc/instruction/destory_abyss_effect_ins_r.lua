@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/destory_abyss_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DestroyAbyssEffectInstruction", BaseInstruction)
 DestroyAbyssEffectInstruction = DestroyAbyssEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DestroyAbyssEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function DestroyAbyssEffectInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DestroyAbyssEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function DestroyAbyssEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
   self._casterEntity = casterEntity
   if not casterEntity:HasTrapID() then
-    return 
+    return
   end
   local cEffectHolder = casterEntity:EffectHolder()
   if not cEffectHolder then
@@ -28,15 +18,13 @@ DestroyAbyssEffectInstruction.DoInstruction = function(self, TT, casterEntity, p
   cEffectHolder = casterEntity:EffectHolder()
   local dictEffectId = cEffectHolder:GetDictEffectId()
   if dictEffectId then
-    for key,list in pairs(dictEffectId) do
-      for index,id in ipairs(list) do
-        local eEffect = (self._world):GetEntityByID(id)
+    for key, list in pairs(dictEffectId) do
+      for index, id in ipairs(list) do
+        local eEffect = self._world:GetEntityByID(id)
         if eEffect then
-          (self._world):DestroyEntity(eEffect)
+          self._world:DestroyEntity(eEffect)
         end
       end
     end
   end
 end
-
-

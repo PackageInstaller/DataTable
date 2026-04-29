@@ -1,132 +1,101 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/c_sync_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sync_svc_l")
 _class("ClientSyncLogicService", SyncLogicService)
 ClientSyncLogicService = ClientSyncLogicService
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientSyncLogicService.Constructor = function(self)
-  -- function num : 0_0
+function ClientSyncLogicService:Constructor()
   self._localLogs = {}
   self._recvLogs = {}
   self._nextSeq = 1
   self._cacheLength = 500
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientSyncLogicService.OnRecvSyncCommand = function(self, cmd)
-  -- function num : 0_1 , upvalues : _ENV
+function ClientSyncLogicService:OnRecvSyncCommand(cmd)
   if not _G.ENABLE_SYNC_LOG then
-    return 
+    return
   end
   local logs = cmd:GetCmdSyncLog()
   if not next(logs) then
-    return 
+    return
   end
-  ;
-  (table.appendArray)(self._recvLogs, logs)
+  table.appendArray(self._recvLogs, logs)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientSyncLogicService.ClientCheckBattleSync = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ClientSyncLogicService:ClientCheckBattleSync()
   if not _G.ENABLE_SYNC_LOG then
-    return 
+    return
   end
   self:_CheckSyncLog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientSyncLogicService._CheckSyncLog = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ClientSyncLogicService:_CheckSyncLog()
   if not next(self._recvLogs) then
     return true
   end
-  local logger = (self._world):GetSyncLogger()
+  local logger = self._world:GetSyncLogger()
   local localLogs = logger:LocalLog()
   if not localLogs then
     return true
   end
-  ;
-  (table.appendArray)(self._localLogs, localLogs)
+  table.appendArray(self._localLogs, localLogs)
   local nextSeq = self._nextSeq
   for i = self._nextSeq, #self._localLogs do
     nextSeq = i
-    local t = (self._localLogs)[i]
-    local r = (self._recvLogs)[i]
-    if r then
-      local eq = table_equal(t, r, {fsm = 1, tim = 1, desc = 1, _f1 = 1, _f2 = 1, _f3 = 1})
-      do
-        if not eq then
-          local prefix = (os.date)("%y%m%d-%H%M")
-          self:_DumpLogToFile(self._localLogs, prefix, "ClientLog")
-          self:_DumpLogToFile(self._recvLogs, prefix, "ServerLog")
-          ;
-          (Log.exception)("同步日志异常：seq=", t.seq)
-          ;
-          (self:GetService("AutoFight")):EnableAutoMove(false)
-          -- DECOMPILER ERROR at PC77: Confused about usage of register: R12 in 'UnsetPending'
-
-          if EDITOR then
-            (UnityEngine.Time).timeScale = 0
-          end
-          return false
-        end
-        -- DECOMPILER ERROR at PC80: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC80: LeaveBlock: unexpected jumping out IF_STMT
-
+    local t = self._localLogs[i]
+    local r = self._recvLogs[i]
+    if not r then
+      break
+    end
+    local eq = table_equal(t, r, {
+      fsm = 1,
+      tim = 1,
+      desc = 1,
+      _f1 = 1,
+      _f2 = 1,
+      _f3 = 1
+    })
+    if not eq then
+      local prefix = os.date("%y%m%d-%H%M")
+      self:_DumpLogToFile(self._localLogs, prefix, "ClientLog")
+      self:_DumpLogToFile(self._recvLogs, prefix, "ServerLog")
+      Log.exception("同步日志异常：seq=", t.seq)
+      self:GetService("AutoFight"):EnableAutoMove(false)
+      if EDITOR then
+        UnityEngine.Time.timeScale = 0
       end
+      return false
     end
   end
   self._nextSeq = nextSeq
-  if self._cacheLength * 2 < self._nextSeq then
-    self._localLogs = (table.sub)(self._localLogs, self._cacheLength + 1)
-    self._recvLogs = (table.sub)(self._recvLogs, self._cacheLength + 1)
+  if self._nextSeq > self._cacheLength * 2 then
+    self._localLogs = table.sub(self._localLogs, self._cacheLength + 1)
+    self._recvLogs = table.sub(self._recvLogs, self._cacheLength + 1)
     self._nextSeq = self._nextSeq - self._cacheLength
   end
-  ;
-  (Log.debug)("本次同步日志比对正常:seq=", ((self._localLogs)[self._nextSeq]).seq)
+  Log.debug("本次同步日志比对正常:seq=", self._localLogs[self._nextSeq].seq)
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientSyncLogicService._DumpLogToFile = function(self, t, prefix, affix)
-  -- function num : 0_4 , upvalues : _ENV
+function ClientSyncLogicService:_DumpLogToFile(t, prefix, affix)
   local dir = EngineGameHelper.StoragePath .. "GameSyncLog/"
-  ;
-  (App.MakeDir)(dir)
+  App.MakeDir(dir)
   local filePath = dir .. prefix .. affix .. ".lua"
-  local file = (io.open)(filePath, "w")
+  local file = io.open(filePath, "w")
   if file then
     file:write(echo(t))
-    ;
-    (io.close)(file)
+    io.close(file)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientSyncLogicService.DumpSyncLog = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function ClientSyncLogicService:DumpSyncLog()
   if not _G.ENABLE_SYNC_LOG then
-    return 
+    return
   end
-  local logger = (self._world):GetSyncLogger()
+  local logger = self._world:GetSyncLogger()
   local localLogs = logger:LocalLog()
   if localLogs then
-    (table.appendArray)(self._localLogs, localLogs)
+    table.appendArray(self._localLogs, localLogs)
   end
-  local prefix = (os.date)("%y%m%d-%H%M")
+  local prefix = os.date("%y%m%d-%H%M")
   self:_DumpLogToFile(self._localLogs, prefix, "ClientLog")
   self:_DumpLogToFile(self._recvLogs, prefix, "ServerLog")
 end
-
-

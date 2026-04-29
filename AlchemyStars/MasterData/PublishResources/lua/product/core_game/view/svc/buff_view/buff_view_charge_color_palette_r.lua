@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_charge_color_palette_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChargeColorPalette", BuffViewBase)
 BuffViewChargeColorPalette = BuffViewChargeColorPalette
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChargeColorPalette.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewChargeColorPalette:PlayView(TT)
   local buffResult = self._buffResult
-  local entity = (self._world):GetEntityByID(buffResult:GetEntityID())
+  local entity = self._world:GetEntityByID(buffResult:GetEntityID())
   if not entity:HasColorPaletteRender() then
     entity:AddColorPaletteRender()
   end
   local renderComponent = entity:ColorPaletteRender()
   renderComponent:AddPieceTypes(buffResult:GetPieceTypes())
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ColorPaletteRefresh, (entity:PetPstID()):GetPstID(), buffResult:GetPieceTypes())
+  self._world:EventDispatcher():Dispatch(GameEventType.ColorPaletteRefresh, entity:PetPstID():GetPstID(), buffResult:GetPieceTypes())
 end
-
-

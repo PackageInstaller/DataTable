@@ -1,45 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/wish/ui_recruit_wish_selection.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIRecruitWishSelection", UIController)
 UIRecruitWishSelection = UIRecruitWishSelection
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIRecruitWishSelection.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIRecruitWishSelection:LoadDataOnEnter(TT, res, uiParams)
   local param = uiParams[1]
-  self._cfgOptional = (Cfg.cfg_optional_pool)[param.idOptional]
+  self._cfgOptional = Cfg.cfg_optional_pool[param.idOptional]
   self._elementType = param.elementType
   self._selPetTid = param.selPetTid
   self._selectionCB = uiParams[2]
   if self._elementType == ElementType.ElementType_Blue then
-    self._optionalList = (self._cfgOptional).OptionalList_1
-  else
-    if self._elementType == ElementType.ElementType_Red then
-      self._optionalList = (self._cfgOptional).OptionalList_2
-    else
-      if self._elementType == ElementType.ElementType_Green then
-        self._optionalList = (self._cfgOptional).OptionalList_3
-      else
-        if self._elementType == ElementType.ElementType_Yellow then
-          self._optionalList = (self._cfgOptional).OptionalList_4
-        end
-      end
-    end
+    self._optionalList = self._cfgOptional.OptionalList_1
+  elseif self._elementType == ElementType.ElementType_Red then
+    self._optionalList = self._cfgOptional.OptionalList_2
+  elseif self._elementType == ElementType.ElementType_Green then
+    self._optionalList = self._cfgOptional.OptionalList_3
+  elseif self._elementType == ElementType.ElementType_Yellow then
+    self._optionalList = self._cfgOptional.OptionalList_4
   end
   if self._optionalList == nil then
-    (Log.fatal)("[UIRecruitWishSelection] cfg_optional_pool.OptionalList is nil, id ->: ", param.idOptional, self._elementType)
+    Log.fatal("[UIRecruitWishSelection] cfg_optional_pool.OptionalList is nil, id ->: ", param.idOptional, self._elementType)
     res:SetSucc(false)
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishSelection.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIRecruitWishSelection:OnShow(uiParams)
   self:UIWidget()
   self:CreateDataPool()
   self:CreateUIWidget()
@@ -48,78 +32,51 @@ UIRecruitWishSelection.OnShow = function(self, uiParams)
   self:FlushDefaultSelection()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishSelection.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_2
+function UIRecruitWishSelection:OnUpdate(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishSelection.OnHide = function(self)
-  -- function num : 0_3
+function UIRecruitWishSelection:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishSelection.BtnCancelOnClick = function(self, go)
-  -- function num : 0_4
+function UIRecruitWishSelection:BtnCancelOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishSelection.BtnOKOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  local data = nil
-  for k,v in pairs(self._dataPool) do
+function UIRecruitWishSelection:BtnOKOnClick(go)
+  local data
+  for k, v in pairs(self._dataPool) do
     if v.sel then
       data = v
       break
     end
   end
-  do
-    if data == nil then
-      (ToastManager.ShowToast)((StringTable.Get)("str_draw_card_wishsel_seltips"))
-    else
-      if data.pet ~= self._selPetTid then
-        (self._selectionCB)(data.pet)
-      end
-      self:CloseDialog()
+  if data == nil then
+    ToastManager.ShowToast(StringTable.Get("str_draw_card_wishsel_seltips"))
+  else
+    if data.pet ~= self._selPetTid then
+      self._selectionCB(data.pet)
     end
+    self:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishSelection.WishOnClick = function(self, index)
-  -- function num : 0_6 , upvalues : _ENV
-  local data = (self._dataPool)[index]
+function UIRecruitWishSelection:WishOnClick(index)
+  local data = self._dataPool[index]
   local sel = not data.sel
-  for k,v in pairs(self._dataPool) do
+  for k, v in pairs(self._dataPool) do
     v.sel = false
   end
   data.sel = sel
-  ;
-  ((self._uiSel).gameObject):SetActive(sel)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._uiSel).position = (((data.uiWidget):GetGameObject()).transform).position
+  self._uiSel.gameObject:SetActive(sel)
+  self._uiSel.position = data.uiWidget:GetGameObject().transform.position
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishSelection.WishOnLongPress = function(self, index)
-  -- function num : 0_7
-  local data = (self._dataPool)[index]
+function UIRecruitWishSelection:WishOnLongPress(index)
+  local data = self._dataPool[index]
   self:ShowDialog("UIShopPetDetailController", data.pet)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishSelection.UIWidget = function(self)
-  -- function num : 0_8
+function UIRecruitWishSelection:UIWidget()
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._scrollView = self:GetUIComponent("ScrollRect", "scrollView")
   self._content = self:GetUIComponent("RectTransform", "content")
@@ -128,38 +85,39 @@ UIRecruitWishSelection.UIWidget = function(self)
   self._uiSel = self:GetUIComponent("RectTransform", "uiSel")
   self._uiPetLayout = self:GetUIComponent("GridLayoutGroup", "uiNotObtained")
   self._animation = self:GetUIComponent("Animation", "animation")
-  ;
-  ((self._uiSel).gameObject):SetActive(false)
+  self._uiSel.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishSelection.CreateDataPool = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIRecruitWishSelection:CreateDataPool()
   self._fixedStars = 6
   self._indexObtained = 0
   self._dataPool = {}
   local lstNotObtained = {}
   local lstObtained = {}
   local petModule = self:GetModule(PetModule)
-  for k,v in pairs(self._optionalList) do
+  for k, v in pairs(self._optionalList) do
     local petData = petModule:GetPetByTemplateId(v)
     if petData == nil then
-      (table.insert)(lstNotObtained, v)
+      table.insert(lstNotObtained, v)
     else
-      ;
-      (table.insert)(lstObtained, v)
+      table.insert(lstObtained, v)
     end
   end
-  for k,v in ipairs(lstNotObtained) do
-    local node = {pet = v, sel = false, uiWidget = nil}
-    ;
-    (table.insert)(self._dataPool, node)
+  for k, v in ipairs(lstNotObtained) do
+    local node = {
+      pet = v,
+      sel = false,
+      uiWidget = nil
+    }
+    table.insert(self._dataPool, node)
   end
-  for k,v in ipairs(lstObtained) do
-    local node = {pet = v, sel = false, uiWidget = nil}
-    ;
-    (table.insert)(self._dataPool, node)
+  for k, v in ipairs(lstObtained) do
+    local node = {
+      pet = v,
+      sel = false,
+      uiWidget = nil
+    }
+    table.insert(self._dataPool, node)
   end
   self._indexObtained = #lstNotObtained + 1
   local countAll = #self._dataPool
@@ -167,76 +125,56 @@ UIRecruitWishSelection.CreateDataPool = function(self)
   self._countObtained = countAll - self._countNotObtained
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishSelection.CreateUIWidget = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIRecruitWishSelection:CreateUIWidget()
   if self._countNotObtained > 0 then
-    local uiList = (self._uiNotObtained):SpawnObjects("UIDrawCardAwardPetItem", self._countNotObtained)
+    local uiList = self._uiNotObtained:SpawnObjects("UIDrawCardAwardPetItem", self._countNotObtained)
     for i = 1, self._countNotObtained do
       local uiWidget = uiList[i]
-      do
-        local data = (self._dataPool)[i]
-        data.uiWidget = uiWidget
-        uiWidget:SetData(self._fixedStars, data.pet, nil)
-        uiWidget:RootLocalScale(Vector3(0.83, 0.83, 0.83))
-        uiWidget:AnimRootPosition(Vector2(0, -126))
-      end
+      local data = self._dataPool[i]
+      data.uiWidget = uiWidget
+      uiWidget:SetData(self._fixedStars, data.pet, nil)
+      uiWidget:RootLocalScale(Vector3(0.83, 0.83, 0.83))
+      uiWidget:AnimRootPosition(Vector2(0, -126))
     end
   end
-  do
-    if self._countObtained > 0 then
-      local uiList = (self._uiObtained):SpawnObjects("UIDrawCardAwardPetItem", self._countObtained)
-      for i = 1, self._countObtained do
-        local uiWidget = uiList[i]
-        local data = (self._dataPool)[self._countNotObtained + i]
-        data.uiWidget = uiWidget
-        uiWidget:SetData(self._fixedStars, data.pet, nil)
-        uiWidget:RootLocalScale(Vector3(0.83, 0.83, 0.83))
-        uiWidget:AnimRootPosition(Vector2(0, -126))
-      end
+  if 0 < self._countObtained then
+    local uiList = self._uiObtained:SpawnObjects("UIDrawCardAwardPetItem", self._countObtained)
+    for i = 1, self._countObtained do
+      local uiWidget = uiList[i]
+      local data = self._dataPool[self._countNotObtained + i]
+      data.uiWidget = uiWidget
+      uiWidget:SetData(self._fixedStars, data.pet, nil)
+      uiWidget:RootLocalScale(Vector3(0.83, 0.83, 0.83))
+      uiWidget:AnimRootPosition(Vector2(0, -126))
     end
-    do
-      for k,v in pairs(self._dataPool) do
-        local index = k
-        local uiWidget = v.uiWidget
-        uiWidget:ShowPetAwakening(true)
-        uiWidget:EventCallBack(function()
-    -- function num : 0_10_0 , upvalues : self
-    return self._scrollView
   end
-, function(go)
-    -- function num : 0_10_1 , upvalues : self, index
-    self:WishOnClick(index)
-  end
-, function(go)
-    -- function num : 0_10_2 , upvalues : self, index
-    self:WishOnLongPress(index)
-  end
-)
-      end
-    end
+  for k, v in pairs(self._dataPool) do
+    local index = k
+    local uiWidget = v.uiWidget
+    uiWidget:ShowPetAwakening(true)
+    uiWidget:EventCallBack(function()
+      return self._scrollView
+    end, function(go)
+      self:WishOnClick(index)
+    end, function(go)
+      self:WishOnLongPress(index)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishSelection.WidgetLayout = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local spacing = (self._uiPetLayout).spacing
-  local cellSize = (self._uiPetLayout).cellSize
-  local contentWidth = ((self._content).rect).width
-  local padding = (self._uiPetLayout).padding
+function UIRecruitWishSelection:WidgetLayout()
+  local spacing = self._uiPetLayout.spacing
+  local cellSize = self._uiPetLayout.cellSize
+  local contentWidth = self._content.rect.width
+  local padding = self._uiPetLayout.padding
   contentWidth = 1536
   self._cxCount = (contentWidth + spacing.x) / (cellSize.x + spacing.x)
-  self._cxCount = (math.floor)(self._cxCount)
+  self._cxCount = math.floor(self._cxCount)
   self._paddingHeight = padding.top + padding.bottom
-  self._rowsNotObtained = (math.ceil)(self._countNotObtained / self._cxCount)
-  self._rowsObtained = (math.ceil)(self._countObtained / self._cxCount)
-  ;
-  (((self._uiNotObtained):Engine()).gameObject):SetActive(self._countNotObtained > 0)
-  ;
-  (((self._uiObtained):Engine()).gameObject):SetActive(self._countObtained > 0)
+  self._rowsNotObtained = math.ceil(self._countNotObtained / self._cxCount)
+  self._rowsObtained = math.ceil(self._countObtained / self._cxCount)
+  self._uiNotObtained:Engine().gameObject:SetActive(self._countNotObtained > 0)
+  self._uiObtained:Engine().gameObject:SetActive(self._countObtained > 0)
   local heightNotObtained = 0
   if self._countNotObtained > 0 then
     heightNotObtained = self._paddingHeight + self._rowsNotObtained * cellSize.y
@@ -247,46 +185,34 @@ UIRecruitWishSelection.WidgetLayout = function(self)
     heightObtained = self._paddingHeight + self._rowsObtained * cellSize.y
     heightObtained = heightObtained + (self._rowsObtained - 1) * spacing.y
   end
-  local trObtained = ((self._uiObtained):Engine()).transform
-  trObtained.anchoredPosition = Vector2(0, -(heightNotObtained))
-  local sizeDelta = (self._content).sizeDelta
-  -- DECOMPILER ERROR at PC106: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._content).sizeDelta = Vector2(sizeDelta.x, heightNotObtained + (heightObtained))
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  local trObtained = self._uiObtained:Engine().transform
+  trObtained.anchoredPosition = Vector2(0, -heightNotObtained)
+  local sizeDelta = self._content.sizeDelta
+  self._content.sizeDelta = Vector2(sizeDelta.x, heightNotObtained + heightObtained)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishSelection.FlushTitle = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local elementTypeNames = {"str_pet_element_name_blue", "str_pet_element_name_red", "str_pet_element_name_green", "str_pet_element_name_yellow"}
-  local elementName = (StringTable.Get)(elementTypeNames[self._elementType])
-  ;
-  (self._title):SetText((StringTable.Get)("str_draw_card_wishsel_title", elementName))
+function UIRecruitWishSelection:FlushTitle()
+  local elementTypeNames = {
+    "str_pet_element_name_blue",
+    "str_pet_element_name_red",
+    "str_pet_element_name_green",
+    "str_pet_element_name_yellow"
+  }
+  local elementName = StringTable.Get(elementTypeNames[self._elementType])
+  self._title:SetText(StringTable.Get("str_draw_card_wishsel_title", elementName))
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWishSelection.FlushDefaultSelection = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  for k,v in pairs(self._dataPool) do
+function UIRecruitWishSelection:FlushDefaultSelection()
+  for k, v in pairs(self._dataPool) do
     if v.pet == self._selPetTid then
       local index = k
-      do
-        self:StartSafeTask("UIRecruitWishSelection::FlushDefaultSelection", function(lockName, TT)
-    -- function num : 0_13_0 , upvalues : self, _ENV, index
-    self:Lock(lockName)
-    YIELD(TT)
-    self:WishOnClick(index)
-    self:UnLock(lockName)
-  end
-)
-        break
-      end
+      self:StartSafeTask("UIRecruitWishSelection::FlushDefaultSelection", function(lockName, TT)
+        self:Lock(lockName)
+        YIELD(TT)
+        self:WishOnClick(index)
+        self:UnLock(lockName)
+      end)
+      break
     end
   end
 end
-
-

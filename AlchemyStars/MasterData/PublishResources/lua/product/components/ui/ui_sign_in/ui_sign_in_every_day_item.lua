@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sign_in/ui_sign_in_every_day_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISignInEveryDayItem", UICustomWidget)
 UISignInEveryDayItem = UISignInEveryDayItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISignInEveryDayItem.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UISignInEveryDayItem:OnShow(uiParam)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInEveryDayItem.GetComponents = function(self)
-  -- function num : 0_1
+function UISignInEveryDayItem:GetComponents()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._iconImg = self:GetUIComponent("RawImage", "icon")
   self._count = self:GetUIComponent("UILocalizationText", "count")
@@ -27,24 +17,17 @@ UISignInEveryDayItem.GetComponents = function(self)
   self._dataRoot = self:GetGameObject("dataRoot")
   self._bgRoot = self:GetGameObject("bgRoot")
   self._getting = self:GetGameObject("getting")
-  ;
-  (self._getting):SetActive(false)
+  self._getting:SetActive(false)
   self._anim = self:GetUIComponent("Animation", "UISignInEveryDayItem")
   self._actBox = self:GetGameObject("actBox")
   self._alpha = self:GetUIComponent("CanvasGroup", "Root")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInEveryDayItem.OnHide = function(self)
-  -- function num : 0_2
+function UISignInEveryDayItem:OnHide()
   self._isActive = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInEveryDayItem.SetData = function(self, data, currentDay, signInCallback, normalCallback, makeUpCallback, checkActBoxCb, yieldTime)
-  -- function num : 0_3
+function UISignInEveryDayItem:SetData(data, currentDay, signInCallback, normalCallback, makeUpCallback, checkActBoxCb, yieldTime)
   self._isActive = true
   self._data = data
   self._currentDay = currentDay
@@ -56,154 +39,97 @@ UISignInEveryDayItem.SetData = function(self, data, currentDay, signInCallback, 
   self:PlayInAnim(yieldTime)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInEveryDayItem.PlayInAnim = function(self, yieldTime)
-  -- function num : 0_4 , upvalues : _ENV
+function UISignInEveryDayItem:PlayInAnim(yieldTime)
   if yieldTime then
-    (self._anim):Stop()
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._alpha).alpha = 0
-    ;
-    ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_4_0 , upvalues : self
-    if self._isActive then
-      (self._anim):Play("uieff_SignIn_EverydayItem_in")
-    end
-  end
-)
+    self._anim:Stop()
+    self._alpha.alpha = 0
+    GameGlobal.Timer():AddEvent(yieldTime, function()
+      if self._isActive then
+        self._anim:Play("uieff_SignIn_EverydayItem_in")
+      end
+    end)
   else
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._alpha).alpha = 1
+    self._alpha.alpha = 1
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInEveryDayItem.Flush = function(self, data)
-  -- function num : 0_5
+function UISignInEveryDayItem:Flush(data)
   self._data = data
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInEveryDayItem.MakeUpAnim = function(self)
-  -- function num : 0_6
+function UISignInEveryDayItem:MakeUpAnim()
   self:PlayAnim()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInEveryDayItem.ShowGetting = function(self, show)
-  -- function num : 0_7
-  (self._getting):SetActive(show)
+function UISignInEveryDayItem:ShowGetting(show)
+  self._getting:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInEveryDayItem.HideMakeUp = function(self)
-  -- function num : 0_8
-  (self._makeUp):SetActive(false)
+function UISignInEveryDayItem:HideMakeUp()
+  self._makeUp:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInEveryDayItem.PlayAnim = function(self)
-  -- function num : 0_9
-  (self._anim):Stop()
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._alpha).alpha = 1
-  ;
-  (self._anim):Play("uieff_SignIn_EverydayItem_Get_new")
+function UISignInEveryDayItem:PlayAnim()
+  self._anim:Stop()
+  self._alpha.alpha = 1
+  self._anim:Play("uieff_SignIn_EverydayItem_Get_new")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInEveryDayItem._OnValue = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UISignInEveryDayItem:_OnValue()
   if self._data == nil then
-    return 
+    return
   end
-  ;
-  (self._good):SetActive((self._data).Good)
-  ;
-  (self._select):SetActive(self._currentDay == (self._data).Day)
-  local award = (self._data).Items
-  local cfg_item = (Cfg.cfg_item)[award.assetid]
+  self._good:SetActive(self._data.Good)
+  self._select:SetActive(self._currentDay == self._data.Day)
+  local award = self._data.Items
+  local cfg_item = Cfg.cfg_item[award.assetid]
   if not cfg_item then
-    (Log.fatal)("###[UISignInEveryDayItem] cfg_item is nil ! id --> ", award.assetid)
-    return 
+    Log.fatal("###[UISignInEveryDayItem] cfg_item is nil ! id --> ", award.assetid)
+    return
   end
   local icon = cfg_item.Icon
-  ;
-  (self._icon):LoadImage(icon)
-  ;
-  (self._count):SetText(award.count)
-  ;
-  (self._makeUp):SetActive((self._data).CanMakeUp)
-  ;
-  (self._got):SetActive((self._data).ItemGot)
-  ;
-  (self._dayText):SetText((self._data).Day)
+  self._icon:LoadImage(icon)
+  self._count:SetText(award.count)
+  self._makeUp:SetActive(self._data.CanMakeUp)
+  self._got:SetActive(self._data.ItemGot)
+  self._dayText:SetText(self._data.Day)
   local alpha = 1
-  if (self._data).ItemGot then
+  if self._data.ItemGot then
     alpha = 0.5
   end
-  -- DECOMPILER ERROR at PC70: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._iconImg).color = Color(1, 1, 1, alpha)
-  -- DECOMPILER ERROR at PC83: Confused about usage of register: R5 in 'UnsetPending'
-
-  if self._currentDay == (self._data).Day then
-    (self._dayText).color = Color(0.96862745098039, 0.96862745098039, 0.96862745098039, 1)
+  self._iconImg.color = Color(1, 1, 1, alpha)
+  if self._currentDay == self._data.Day then
+    self._dayText.color = Color(0.9686274509803922, 0.9686274509803922, 0.9686274509803922, 1)
+  elseif self._data.ItemGot then
+    self._dayText.color = Color(0.1843137254901961, 0.1843137254901961, 0.1843137254901961, 1)
   else
-    -- DECOMPILER ERROR at PC96: Confused about usage of register: R5 in 'UnsetPending'
-
-    if (self._data).ItemGot then
-      (self._dayText).color = Color(0.1843137254902, 0.1843137254902, 0.1843137254902, 1)
-    else
-      -- DECOMPILER ERROR at PC105: Confused about usage of register: R5 in 'UnsetPending'
-
-      (self._dayText).color = Color(0.54901960784314, 0.54901960784314, 0.54901960784314, 1)
-    end
+    self._dayText.color = Color(0.5490196078431373, 0.5490196078431373, 0.5490196078431373, 1)
   end
-  local startTime, endTime = (self._checkActBoxCb)((self._data).Day)
+  local startTime, endTime = self._checkActBoxCb(self._data.Day)
   if startTime then
-    (self._actBox):SetActive(true)
+    self._actBox:SetActive(true)
   else
-    (self._actBox):SetActive(false)
+    self._actBox:SetActive(false)
   end
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInEveryDayItem.BgOnClick = function(self, go)
-  -- function num : 0_11
+function UISignInEveryDayItem:BgOnClick(go)
   local normal = true
-  if self._currentDay == (self._data).Day and not (self._data).ItemGot then
-    (self._signInCallback)((self._data).Day)
-    normal = false
-  end
-  if ((self._data).Day >= self._currentDay or not (self._data).ItemGot) and (self._data).CanMakeUp and self._makeUpCallback then
-    (self._makeUpCallback)((self._data).Day)
+  if self._currentDay == self._data.Day then
+    if not self._data.ItemGot then
+      self._signInCallback(self._data.Day)
+      normal = false
+    end
+  elseif self._currentDay > self._data.Day then
+  elseif not self._data.ItemGot and self._data.CanMakeUp and self._makeUpCallback then
+    self._makeUpCallback(self._data.Day)
     normal = false
   end
   if normal and self._normalCallback then
     local tr = go.transform
     local pos = tr.position
-    local award = (self._data).Items
-    ;
-    (self._normalCallback)(award.assetid, pos)
+    local award = self._data.Items
+    self._normalCallback(award.assetid, pos)
   end
 end
-
-

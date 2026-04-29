@@ -1,50 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n17/lottery/ui_n17_lottery_tips_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN17LotteryTipsController", UIController)
 UIN17LotteryTipsController = UIN17LotteryTipsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN17LotteryTipsController.Constructor = function(self)
-  -- function num : 0_0
+function UIN17LotteryTipsController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryTipsController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN17LotteryTipsController:OnShow(uiParams)
   local data = uiParams[1]
   if not data then
-    return 
+    return
   end
   self:_SetItem(data)
   local itemId = data:GetItemId()
-  ;
-  (UIWidgetHelper.SetItemText)(self, itemId, "Name", "Descripution")
-  ;
-  (UIWidgetHelper.SetItemCount)(self, itemId, "OwnCount", function(count)
-    -- function num : 0_1_0 , upvalues : _ENV
-    local c = (HelperProxy:GetInstance()):FormatItemCount(count)
-    return (StringTable.Get)("str_item_public_owned") .. c
-  end
-)
+  UIWidgetHelper.SetItemText(self, itemId, "Name", "Descripution")
+  UIWidgetHelper.SetItemCount(self, itemId, "OwnCount", function(count)
+    local c = HelperProxy:GetInstance():FormatItemCount(count)
+    return StringTable.Get("str_item_public_owned") .. c
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryTipsController._SetItem = function(self, data)
-  -- function num : 0_2 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "Item", "UIN17LotteryAwardCell")
+function UIN17LotteryTipsController:_SetItem(data)
+  local obj = UIWidgetHelper.SpawnObject(self, "Item", "UIN17LotteryAwardCell")
   obj:InitData(data, nil, false, 0)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryTipsController.CloseBtnOnClick = function(self)
-  -- function num : 0_3
+function UIN17LotteryTipsController:CloseBtnOnClick()
   self:CloseDialog()
 end
-
-

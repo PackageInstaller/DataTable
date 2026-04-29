@@ -1,8 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/str_get_phy_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_get_phy_point_times = "{1}回目：", str_get_phy_point_reply_title = "プリズム回復", str_get_phy_point_tools_reply = "アイテム回復", str_get_phy_point_buy_reply = "プリズム購入", str_get_phy_point_current_have = "所持数：{1}", str_get_phy_point_today_bug_times = "今日はあと{1}回購入できます", str_get_phy_point_bug_tips_title = "プリズム購入の説明", str_get_phy_point_bug_tips_content = "1日に{1}回購入できます。購入の消費に関する詳細は以下の通りです：", str_get_phy_point_bug_toast_tips = "<color=#985D21>{1}{2}</color>を消費して{4}<color=#985D21>{3}</color>と交換しますか？", str_get_phy_point_bug_times_nil = "本日の購入回数を使い切りました。", str_get_phy_point_reply_succ_tips = "<size=48>{1}が{2}回復しました。</size>", str_get_phy_point_reply_fail_more_than = "{1}の回復量が上限を超えているため、回復できません。", str_get_phy_point_reply_fail_error_code = "購入できませんでした", str_get_phy_point_mat_not_enough = "{1}が足りないため、{2}を回復できません。", str_get_phy_point_bug_toast_another_tips = "<color=#985D21>チャージ箱（中）（期間限定）{1}個</color>と<color=#985D21>{3}{2}つ</color>を消費して、{5}<color=#985D21>{4}</color>と交換しますか？", str_get_phy_point_buy = "購入", str_get_phy_point_use = "使用", str_get_phy_point_phyroom_tips = "プリズムの柱貯蔵量", str_get_phy_point_btn_get_name = "プリズムを取り出す", str_get_phy_point_btn_use_name = "使用アイテム", str_get_phy_point_btn_decore_name = "プリズム交換", str_get_phy_point_something_count = "プリズム{1}を受け取りました", str_get_phy_point_quick_btn = "OK", str_get_phy_point_use_limit_day = "{1}日", str_get_phy_point_use_somethine_count = "プリズム+{1}", str_get_phy_point_decore_tips = "×{1} >> {2}プリズム", str_get_phy_point_topmax_tips = "プリズム最大", str_get_phy_point_phy_out = "チャージ箱（中）期限切れ", str_get_phy_point_next_recover = "次回回復：", str_get_phy_point_all_recover = "全部回復：", str_get_phy_point_un_get = "現在プリズムの柱にプリズムは貯蔵されていません。", str_get_phy_point_get_count = "プリズム{1}を受け取りました"}
+local config = {
+  str_get_phy_point_times = "{1}回目：",
+  str_get_phy_point_reply_title = "プリズム回復",
+  str_get_phy_point_tools_reply = "アイテム回復",
+  str_get_phy_point_buy_reply = "プリズム購入",
+  str_get_phy_point_current_have = "所持数：{1}",
+  str_get_phy_point_today_bug_times = "今日はあと{1}回購入できます",
+  str_get_phy_point_bug_tips_title = "プリズム購入の説明",
+  str_get_phy_point_bug_tips_content = "1日に{1}回購入できます。購入の消費に関する詳細は以下の通りです：",
+  str_get_phy_point_bug_toast_tips = "<color=#985D21>{1}{2}</color>を消費して{4}<color=#985D21>{3}</color>と交換しますか？",
+  str_get_phy_point_bug_times_nil = "本日の購入回数を使い切りました。",
+  str_get_phy_point_reply_succ_tips = "<size=48>{1}が{2}回復しました。</size>",
+  str_get_phy_point_reply_fail_more_than = "{1}の回復量が上限を超えているため、回復できません。",
+  str_get_phy_point_reply_fail_error_code = "購入できませんでした",
+  str_get_phy_point_mat_not_enough = "{1}が足りないため、{2}を回復できません。",
+  str_get_phy_point_bug_toast_another_tips = "<color=#985D21>チャージ箱（中）（期間限定）{1}個</color>と<color=#985D21>{3}{2}つ</color>を消費して、{5}<color=#985D21>{4}</color>と交換しますか？",
+  str_get_phy_point_buy = "購入",
+  str_get_phy_point_use = "使用",
+  str_get_phy_point_phyroom_tips = "プリズムの柱貯蔵量",
+  str_get_phy_point_btn_get_name = "プリズムを取り出す",
+  str_get_phy_point_btn_use_name = "使用アイテム",
+  str_get_phy_point_btn_decore_name = "プリズム交換",
+  str_get_phy_point_something_count = "プリズム{1}を受け取りました",
+  str_get_phy_point_quick_btn = "OK",
+  str_get_phy_point_use_limit_day = "{1}日",
+  str_get_phy_point_use_somethine_count = "プリズム+{1}",
+  str_get_phy_point_decore_tips = "×{1} >> {2}プリズム",
+  str_get_phy_point_topmax_tips = "プリズム最大",
+  str_get_phy_point_phy_out = "チャージ箱（中）期限切れ",
+  str_get_phy_point_next_recover = "次回回復：",
+  str_get_phy_point_all_recover = "全部回復：",
+  str_get_phy_point_un_get = "現在プリズムの柱にプリズムは貯蔵されていません。",
+  str_get_phy_point_get_count = "プリズム{1}を受け取りました"
+}
 return config
-

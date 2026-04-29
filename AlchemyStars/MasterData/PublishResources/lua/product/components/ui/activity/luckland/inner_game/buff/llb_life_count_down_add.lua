@@ -1,39 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_life_count_down_add.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLBuffLogicAddLifeCountDown", LLBuffLogicBase)
 LLBuffLogicAddLifeCountDown = LLBuffLogicAddLifeCountDown
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicAddLifeCountDown.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicAddLifeCountDown:Constructor(buffObj, logicParam)
   self._fixVal = logicParam.fixVal
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicAddLifeCountDown.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function LLBuffLogicAddLifeCountDown:DoLogic(notify)
   local notifyEntity = notify:GetNotifyEntity()
-  local targets = (self._buffObj):GetTargets()
-  for _,target in ipairs(targets) do
+  local targets = self._buffObj:GetTargets()
+  for _, target in ipairs(targets) do
     self:DoLogicSingle(target)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicAddLifeCountDown.DoLogicSingle = function(self, target)
-  -- function num : 0_2 , upvalues : _ENV
+function LLBuffLogicAddLifeCountDown:DoLogicSingle(target)
   if target:GetEntityType() == LuckLandEntityType.Pet then
     target:AddCountDownNum(self._fixVal)
-  else
-    if target:GetEntityType() == LuckLandEntityType.Monster then
-      target:AddCountDownNum(self._fixVal)
-    end
+  elseif target:GetEntityType() == LuckLandEntityType.Monster then
+    target:AddCountDownNum(self._fixVal)
   end
 end
-
-

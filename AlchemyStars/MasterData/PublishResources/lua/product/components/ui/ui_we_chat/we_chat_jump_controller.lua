@@ -1,50 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_we_chat/we_chat_jump_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWeChatJumpController", UIController)
 UIWeChatJumpController = UIWeChatJumpController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWeChatJumpController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWeChatJumpController:OnShow(uiParams)
   self.talk = uiParams[1]
-  self.jumpId = (self.talk).jumpId
-  local txt = (StringTable.Get)((self.talk).jumpDesc)
+  self.jumpId = self.talk.jumpId
+  local txt = StringTable.Get(self.talk.jumpDesc)
   self.txt = self:GetUIComponent("UILocalizationText", "desc")
-  ;
-  (self.txt):SetText(txt)
+  self.txt:SetText(txt)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatJumpController.OnHide = function(self)
-  -- function num : 0_1
+function UIWeChatJumpController:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatJumpController.bgOnClick = function(self, go)
-  -- function num : 0_2
+function UIWeChatJumpController:bgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatJumpController.btnEnsureOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIWeChatJumpController:btnEnsureOnClick(go)
+  local module = GameGlobal.GetModule(RoleModule)
   local _enable = module:CheckModuleUnlock(GameModuleID.MD_Aircraft)
   if _enable then
-    local jumpModule = (self:GetModule(QuestModule)).uiModule
+    local jumpModule = self:GetModule(QuestModule).uiModule
     jumpModule:Goto(self.jumpId, FromUIType.NormalUI, "UIWeChatController", UIStateType.UIMain)
   else
-    do
-      ;
-      (ToastManager.ShowLockTip)()
-    end
+    ToastManager.ShowLockTip()
   end
 end
-
-

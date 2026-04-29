@@ -1,34 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_create_auras_trap_by_pick_up.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_CreateAurasTrapByPickUp", Object)
 SkillEffectCalc_CreateAurasTrapByPickUp = SkillEffectCalc_CreateAurasTrapByPickUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_CreateAurasTrapByPickUp.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_CreateAurasTrapByPickUp:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
+  self._configService = self._world:GetService("Config")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_CreateAurasTrapByPickUp.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_CreateAurasTrapByPickUp:DoSkillEffectCalculator(skillEffectCalcParam)
   local casterEntityID = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterEntityID)
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
   if not casterEntity then
-    return 
+    return
   end
-  local startPos = nil
+  local startPos
   local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
   if activeSkillPickUpComponent then
     startPos = activeSkillPickUpComponent:GetLastPickUpGridPos()
   end
   if not startPos then
-    return 
+    return
   end
   local param = skillEffectCalcParam.skillEffectParam
   local squareRingNum = param:GetSquareRingNum()
@@ -40,20 +30,17 @@ SkillEffectCalc_CreateAurasTrapByPickUp.DoSkillEffectCalculator = function(self,
   for curX = minX, maxX do
     for curY = minY, maxY do
       local offset = Vector2(curX, curY) - startPos
-      ;
-      (table.insert)(bodyArea, offset)
+      table.insert(bodyArea, offset)
     end
   end
   local trapID = param:GetTrapID()
   local trapDir = Vector2.up
-  local trapSvc = (self._world):GetService("TrapLogic")
+  local trapSvc = self._world:GetService("TrapLogic")
   local infoData = {BodyArea = bodyArea}
   local trapEntity = trapSvc:CreateTrap(trapID, startPos, trapDir, true, nil, casterEntity, nil, nil, infoData)
   if not trapEntity then
-    return 
+    return
   end
   local result = SkillCreateAurasTrapByPickUpEffectResult:New(trapEntity:GetID(), startPos, squareRingNum)
   return {result}
 end
-
-

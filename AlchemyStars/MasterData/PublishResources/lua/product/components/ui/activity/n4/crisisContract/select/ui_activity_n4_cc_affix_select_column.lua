@@ -1,55 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/select/ui_activity_n4_cc_affix_select_column.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN4CCAffixSelectColumn", UICustomWidget)
 UIActivityN4CCAffixSelectColumn = UIActivityN4CCAffixSelectColumn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN4CCAffixSelectColumn.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN4CCAffixSelectColumn:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixSelectColumn.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN4CCAffixSelectColumn:InitWidget()
   self.affixItems = {}
   for i = 1, 3 do
     local rowPool = self:GetUIComponent("UISelectObjectPath", "row" .. i)
     local item = rowPool:SpawnObject("UIActivityN4CCAffixSelectItem")
-    ;
-    (table.insert)(self.affixItems, item)
+    table.insert(self.affixItems, item)
   end
   self.animation = self:GetUIComponent("Animation", "animation")
   self.rootGo = self:GetGameObject("root")
-  ;
-  (self.rootGo):SetActive(true)
+  self.rootGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixSelectColumn.SetData = function(self, itemCollector, data, clickCb)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN4CCAffixSelectColumn:SetData(itemCollector, data, clickCb)
   if #data ~= #self.affixItems then
-    (Log.error)("UIActivityN4CCAffixSelectColumn data num err ", #data)
-    return 
+    Log.error("UIActivityN4CCAffixSelectColumn data num err ", #data)
+    return
   end
-  for i,item in ipairs(self.affixItems) do
-    (table.insert)(itemCollector, item)
+  for i, item in ipairs(self.affixItems) do
+    table.insert(itemCollector, item)
     item:SetData(data[i], clickCb)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixSelectColumn.PlayEnterAni = function(self)
-  -- function num : 0_3
-  (self.rootGo):SetActive(true)
-  ;
-  (self.animation):Play("uianim_UIActivityN4CCAffixSelectColumn_in")
+function UIActivityN4CCAffixSelectColumn:PlayEnterAni()
+  self.rootGo:SetActive(true)
+  self.animation:Play("uianim_UIActivityN4CCAffixSelectColumn_in")
 end
-
-

@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/manager/aircraft_decorate_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftDecorateManager", Object)
 AircraftDecorateManager = AircraftDecorateManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftDecorateManager.Constructor = function(self, main)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftDecorateManager:Constructor(main)
   self._main = main
-  self._input = (self._main):Input()
-  self._module = (GameGlobal.GetModule)(AircraftModule)
+  self._input = self._main:Input()
+  self._module = GameGlobal.GetModule(AircraftModule)
   self._areas = {}
   self._mode = DecorateMode.FullView
   self._curMdf = nil
@@ -24,7 +17,7 @@ AircraftDecorateManager.Constructor = function(self, main)
   for i = 1, 4 do
     local surs = {}
     local cfgSurs = AircraftGrids[i]
-    for id,cfgSur in pairs(cfgSurs) do
+    for id, cfgSur in pairs(cfgSurs) do
       local w = cfgSur.Width
       local h = cfgSur.Height
       local cfgTiles = cfgSur.Tiles
@@ -32,11 +25,9 @@ AircraftDecorateManager.Constructor = function(self, main)
       for i = 1, w do
         tiles[i] = {}
         for j = 1, h do
-          local cfgTile = (cfgTiles[i])[j]
-          -- DECOMPILER ERROR at PC57: Confused about usage of register: R27 in 'UnsetPending'
-
+          local cfgTile = cfgTiles[i][j]
           if cfgTile then
-            (tiles[i])[j] = AircraftTile:New(cfgTile)
+            tiles[i][j] = AircraftTile:New(cfgTile)
           end
         end
       end
@@ -44,77 +35,50 @@ AircraftDecorateManager.Constructor = function(self, main)
     end
     _grids[i] = surs
   end
-  self._getTile = function(floor, surface, x, y)
-    -- function num : 0_0_0 , upvalues : _grids
-    return (((_grids[floor])[surface])[x])[y]
+  
+  function self._getTile(floor, surface, x, y)
+    return _grids[floor][surface][x][y]
   end
-
+  
   self._firstClickArea = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._camera = AircraftDecorateCamera:New((self._main):GetDecorateViewPoint())
-  ;
-  (self._camera):Init((self._main):GetMainCamera(), self._input)
+function AircraftDecorateManager:Init()
+  self._camera = AircraftDecorateCamera:New(self._main:GetDecorateViewPoint())
+  self._camera:Init(self._main:GetMainCamera(), self._input)
   self:_initAreas()
   self._occupyTip = AircraftOccupyTip:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.msgBox = function(self, title, confirm)
-  -- function num : 0_2 , upvalues : _ENV
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", title, function(param)
-    -- function num : 0_2_0 , upvalues : confirm
+function AircraftDecorateManager:msgBox(title, confirm)
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", title, function(param)
     if confirm then
       confirm()
     end
-  end
-, nil, function(param)
-    -- function num : 0_2_1
-  end
-, nil)
+  end, nil, function(param)
+  end, nil)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.OnDecorateUIShow = function(self, btnParant, camera)
-  -- function num : 0_3 , upvalues : _ENV
+function AircraftDecorateManager:OnDecorateUIShow(btnParant, camera)
   self._furTip = UIAircraftFurnitureTip:New(function()
-    -- function num : 0_3_0 , upvalues : self
     self:OnTipCancelClick()
-  end
-, function(offset)
-    -- function num : 0_3_1 , upvalues : self
+  end, function(offset)
     self:OnTipRoteteClick(offset)
-  end
-, function()
-    -- function num : 0_3_2 , upvalues : self
+  end, function()
     self:OnTipConfirmClick()
-  end
-, btnParant:GetComponent(typeof(UIView)), (self._main):GetMainCamera())
+  end, btnParant:GetComponent(typeof(UIView)), self._main:GetMainCamera())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.OnDecorateUIClose = function(self)
-  -- function num : 0_4
-  (self._furTip):Dispose()
+function AircraftDecorateManager:OnDecorateUIClose()
+  self._furTip:Dispose()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.Open = function(self, spaceID)
-  -- function num : 0_5 , upvalues : _ENV
+function AircraftDecorateManager:Open(spaceID)
   self._firstArea = nil
-  ;
-  (self._camera):Reset()
+  self._camera:Reset()
   if spaceID then
     for i = 1, AircraftConst.DecorateAreaCount do
-      if ((Cfg.cfg_aircraft_area)[i]).SpaceId == spaceID then
+      if Cfg.cfg_aircraft_area[i].SpaceId == spaceID then
         AirLog("进入装扮模式：", spaceID)
         self._firstArea = i
         self._firstSpace = spaceID
@@ -123,77 +87,51 @@ AircraftDecorateManager.Open = function(self, spaceID)
       end
     end
   else
-    do
-      AirLog("进入装扮模式，全景")
-      self._mode = DecorateMode.FullView
-      ;
-      (self._camera):MoveToFar(function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    self._firstClickArea = nil
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIAircraftDecorateTip", nil, function()
-      -- function num : 0_5_0_0 , upvalues : self
-      self:Close(nil)
-    end
-)
+    AirLog("进入装扮模式，全景")
+    self._mode = DecorateMode.FullView
+    self._camera:MoveToFar(function()
+      self._firstClickArea = nil
+      GameGlobal.UIStateManager():ShowDialog("UIAircraftDecorateTip", nil, function()
+        self:Close(nil)
+      end)
+    end)
   end
-)
-      ;
-      (self._main):Set3DUIActive(false)
-    end
-  end
+  self._main:Set3DUIActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.Back = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function AircraftDecorateManager:Back()
   self:dropDownFurniture(true, false)
   self:TryPopTip(function()
-    -- function num : 0_6_0 , upvalues : _ENV, self
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIAircraftDecorateController")
+    GameGlobal.UIStateManager():CloseDialog("UIAircraftDecorateController")
     if self._curArea then
-      ((self._areas)[self._curArea]):OnExit()
+      self._areas[self._curArea]:OnExit()
     end
     if self._firstArea and self._firstArea == self._curArea then
       self:Close(self._firstSpace)
     else
-      ;
-      (self._camera):MoveToFar(function()
-      -- function num : 0_6_0_0 , upvalues : self, _ENV
-      self._mode = DecorateMode.FullView
-      self._firstClickArea = nil
-      ;
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIAircraftDecorateTip", self._curArea, function()
-        -- function num : 0_6_0_0_0 , upvalues : self
-        self:Close(nil)
-      end
-)
-      self._firstClickArea = self._curArea
-      self._curArea = nil
-      self._modifiers = {}
+      self._camera:MoveToFar(function()
+        self._mode = DecorateMode.FullView
+        self._firstClickArea = nil
+        GameGlobal.UIStateManager():ShowDialog("UIAircraftDecorateTip", self._curArea, function()
+          self:Close(nil)
+        end)
+        self._firstClickArea = self._curArea
+        self._curArea = nil
+        self._modifiers = {}
+      end)
     end
-)
-    end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.Close = function(self, space)
-  -- function num : 0_7 , upvalues : _ENV
+function AircraftDecorateManager:Close(space)
   if self._furTip then
-    (self._furTip):Hide()
+    self._furTip:Hide()
   end
-  ;
-  (self._main):ChangeMode(AircraftMode.Normal)
-  ;
-  (self._main):ResetMainCamera()
+  self._main:ChangeMode(AircraftMode.Normal)
+  self._main:ResetMainCamera()
   if space then
-    (self._main):SelectSpace(space, false)
-    ;
-    (self._main):SelectSpace(space, true)
+    self._main:SelectSpace(space, false)
+    self._main:SelectSpace(space, true)
   end
   self._curMdf = nil
   self._dragging = false
@@ -203,183 +141,127 @@ AircraftDecorateManager.Close = function(self, space)
   self._grids = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.OnTipCancelClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if ((self._curMdf):Furniture()):OprateType() ~= FurnitureOpration.Free then
-    (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_cant_remove_this_fur"))
-    return 
+function AircraftDecorateManager:OnTipCancelClick()
+  if self._curMdf:Furniture():OprateType() ~= FurnitureOpration.Free then
+    ToastManager.ShowToast(StringTable.Get("str_aircraft_cant_remove_this_fur"))
+    return
   end
-  ;
-  (self._curMdf):DropDown(false)
-  ;
-  (self._curMdf):Delete()
-  ;
-  (self._module):ChangeTempFurniture(((self._curMdf):Furniture()):CfgID(), -1)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftDecorateRefreshAtmosphere, self:calAmbient())
+  self._curMdf:DropDown(false)
+  self._curMdf:Delete()
+  self._module:ChangeTempFurniture(self._curMdf:Furniture():CfgID(), -1)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftDecorateRefreshAtmosphere, self:calAmbient())
   self:editEnd()
-  ;
-  (self._camera):SwitchCfg(((self._areas)[self._curArea]):CameraID())
+  self._camera:SwitchCfg(self._areas[self._curArea]:CameraID())
   self:handleOverlapFurs()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.OnTipRoteteClick = function(self, offset)
-  -- function num : 0_9 , upvalues : _ENV
+function AircraftDecorateManager:OnTipRoteteClick(offset)
   local pos = offset + Vector2(300, 0)
-  local hwidth = (UnityEngine.Screen).width / 2
-  local hheight = (UnityEngine.Screen).height / 2
+  local hwidth = UnityEngine.Screen.width / 2
+  local hheight = UnityEngine.Screen.height / 2
   local x = hwidth - 100 - 160
   local y = hheight - 160
   if x < pos.x then
     pos.x = offset.x - 300
-  else
-  end
-  if pos.x >= -x or y < pos.y then
+  elseif pos.x < -x then
+  elseif y < pos.y then
     pos.y = offset.y - 300
-  else
-    if pos.y < -y then
-      pos.y = offset.y + 300
-    end
+  elseif pos.y < -y then
+    pos.y = offset.y + 300
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftShowRotater, true, (self._curMdf):RotY(), pos)
-  ;
-  (self._furTip):Hide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftShowRotater, true, self._curMdf:RotY(), pos)
+  self._furTip:Hide()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.OnTipConfirmClick = function(self)
-  -- function num : 0_10
+function AircraftDecorateManager:OnTipConfirmClick()
   self:dropDownFurniture(true, true)
-  ;
-  (self._camera):SwitchCfg(((self._areas)[self._curArea]):CameraID())
+  self._camera:SwitchCfg(self._areas[self._curArea]:CameraID())
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.RemoveAll = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local remove = function()
-    -- function num : 0_11_0 , upvalues : self, _ENV
+function AircraftDecorateManager:RemoveAll()
+  local function remove()
     if self._curArea == nil then
       AirLog("当前区域为空，不能移除所有家具")
-      return 
+      
+      return
     end
     local allFurs = {}
-    for _,mdf in pairs(self._modifiers) do
+    for _, mdf in pairs(self._modifiers) do
       allFurs[mdf:ID()] = true
-      if not mdf:IsDeleted() and (mdf:Furniture()):OprateType() == FurnitureOpration.Free then
+      if not mdf:IsDeleted() and mdf:Furniture():OprateType() == FurnitureOpration.Free then
         mdf:Delete()
-        ;
-        (self._module):ChangeTempFurniture((mdf:Furniture()):CfgID(), -1)
+        self._module:ChangeTempFurniture(mdf:Furniture():CfgID(), -1)
       end
     end
-    for id,fur in pairs(((self._areas)[self._curArea]):Furnitures()) do
+    for id, fur in pairs(self._areas[self._curArea]:Furnitures()) do
       if fur:OprateType() == FurnitureOpration.Free and not allFurs[fur:InstanceID()] then
         allFurs[fur:InstanceID()] = true
-        local mdf = (self._modifiers)[fur:InstanceID()]
-        do
-          do
-            if not mdf then
-              local surface = ((self._areas)[self._curArea]):GetSurface(fur:SurfaceID())
-              mdf = FurnitureModifier:New(self._curArea, surface, fur, false)
-              -- DECOMPILER ERROR at PC85: Confused about usage of register: R8 in 'UnsetPending'
-
-              ;
-              (self._modifiers)[fur:InstanceID()] = mdf
-            end
-            if not mdf:IsDeleted() then
-              mdf:Delete()
-              ;
-              (self._module):ChangeTempFurniture(fur:CfgID(), -1)
-            end
-            -- DECOMPILER ERROR at PC98: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC98: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC98: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        local mdf = self._modifiers[fur:InstanceID()]
+        if not mdf then
+          local surface = self._areas[self._curArea]:GetSurface(fur:SurfaceID())
+          mdf = FurnitureModifier:New(self._curArea, surface, fur, false)
+          self._modifiers[fur:InstanceID()] = mdf
+        end
+        if not mdf:IsDeleted() then
+          mdf:Delete()
+          self._module:ChangeTempFurniture(fur:CfgID(), -1)
         end
       end
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftDecorateRefreshAtmosphere, self:calAmbient())
-    ;
-    (self._furTip):Hide()
-    ;
-    (self._occupyTip):Hide()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftDecorateSwitchModel, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftDecorateRefreshAtmosphere, self:calAmbient())
+    self._furTip:Hide()
+    self._occupyTip:Hide()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftDecorateSwitchModel, true)
   end
-
-  self:msgBox((StringTable.Get)("str_aircraft_remove_all_fur_tip"), remove)
+  
+  self:msgBox(StringTable.Get("str_aircraft_remove_all_fur_tip"), remove)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.Revert = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  self:msgBox((StringTable.Get)("str_aircraft_revert_operation"), function()
-    -- function num : 0_12_0 , upvalues : self
+function AircraftDecorateManager:Revert()
+  self:msgBox(StringTable.Get("str_aircraft_revert_operation"), function()
     self:revertAllModify()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.revertAllModify = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function AircraftDecorateManager:revertAllModify()
   if not next(self._modifiers) then
     AirLog("没有编辑过的家具，不用回滚")
-    return 
+    return
   end
-  for id,mdf in pairs(self._modifiers) do
+  for id, mdf in pairs(self._modifiers) do
     if mdf:IsNewAdd() then
       mdf:Revert()
     end
   end
-  for id,mdf in pairs(self._modifiers) do
+  for id, mdf in pairs(self._modifiers) do
     mdf:Revert()
   end
   self._modifiers = {}
-  ;
-  (self._module):ClearTempFurniture()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftDecorateRefreshAtmosphere, self:calAmbient())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftDecorateSwitchModel, true)
+  self._module:ClearTempFurniture()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftDecorateRefreshAtmosphere, self:calAmbient())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftDecorateSwitchModel, true)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.Save = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function AircraftDecorateManager:Save()
   if not next(self._modifiers) then
     AirLog("没有编辑过的家具，不保存")
-    return 
+    return
   end
   if not self._curArea then
     AirLog("当前没有选中的区域")
-    return 
+    return
   end
   local datas = {}
   local furs = {}
-  for _,mdf in pairs(self._modifiers) do
-    furs[(mdf:Furniture()):InstanceID()] = true
+  for _, mdf in pairs(self._modifiers) do
+    furs[mdf:Furniture():InstanceID()] = true
     local data = mdf:GetSaveData()
     if data then
       datas[#datas + 1] = data
     end
     mdf:Dispose()
   end
-  for id,fur in pairs(((self._areas)[self._curArea]):Furnitures()) do
+  for id, fur in pairs(self._areas[self._curArea]:Furnitures()) do
     if not furs[fur:InstanceID()] then
       furs[fur:InstanceID()] = true
       local data = fur:GetSvrData()
@@ -388,108 +270,80 @@ AircraftDecorateManager.Save = function(self)
       end
     end
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : _ENV, self, datas
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, true, "ChangeFurniture")
-    local errorCode = (self._module):ReqUpdateAreaFurniture(TT, self._curArea, datas)
+  GameGlobal.TaskManager():StartTask(function(TT)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, true, "ChangeFurniture")
+    local errorCode = self._module:ReqUpdateAreaFurniture(TT, self._curArea, datas)
     if errorCode == AircraftEventResult.AircraftEventResult_Succ then
-      ((self._areas)[self._curArea]):RefreshFurniture()
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_save_succ"))
-      ;
-      (self._module):ClearTempFurniture()
+      self._areas[self._curArea]:RefreshFurniture()
+      ToastManager.ShowToast(StringTable.Get("str_aircraft_save_succ"))
+      self._module:ClearTempFurniture()
     else
-      ;
-      (ToastManager.ShowToast)((self._module):GetErrorMsg(errorCode))
+      ToastManager.ShowToast(self._module:GetErrorMsg(errorCode))
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, false, "ChangeFurniture")
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, false, "ChangeFurniture")
     self._modifiers = {}
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftDecorateRefreshAtmosphere, self:calAmbient())
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftDecorateSwitchModel, true)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftDecorateRefreshAtmosphere, self:calAmbient())
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftDecorateSwitchModel, true)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.OnRotate = function(self, angle)
-  -- function num : 0_15 , upvalues : _ENV
-  local surface = (self._curMdf):Surface()
-  local valid, grids = (GridHelper.CanFurniturPlaceAt)(surface, (self._curMdf):Furniture(), (self._curMdf):GridPosition(), angle)
-  local pos, rot = (GridHelper.GetFurniturePosRot)(surface, (self._curMdf):GridPosition(), angle)
-  ;
-  (self._curMdf):ChangeRotY(angle, rot, grids, valid)
-  local gpos, grot = (GridHelper.GetGridsWorldPos)(surface, grids)
-  ;
-  (self._occupyTip):Show(gpos, grot, valid, grids)
+function AircraftDecorateManager:OnRotate(angle)
+  local surface = self._curMdf:Surface()
+  local valid, grids = GridHelper.CanFurniturPlaceAt(surface, self._curMdf:Furniture(), self._curMdf:GridPosition(), angle)
+  local pos, rot = GridHelper.GetFurniturePosRot(surface, self._curMdf:GridPosition(), angle)
+  self._curMdf:ChangeRotY(angle, rot, grids, valid)
+  local gpos, grot = GridHelper.GetGridsWorldPos(surface, grids)
+  self._occupyTip:Show(gpos, grot, valid, grids)
   self:handleOverlapFurs(surface:Tiles(), valid, grids)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.TryAddFurniture = function(self, id)
-  -- function num : 0_16 , upvalues : _ENV
-  for surID,sur in pairs(((self._areas)[self._curArea]):Surfaces()) do
-    local found, pos = (GridHelper.FindLocationOn)(id, sur)
+function AircraftDecorateManager:TryAddFurniture(id)
+  for surID, sur in pairs(self._areas[self._curArea]:Surfaces()) do
+    local found, pos = GridHelper.FindLocationOn(id, sur)
     if found then
-      local fur = self:createFurniture((self._areas)[self._curArea], surID, id, pos)
+      local fur = self:createFurniture(self._areas[self._curArea], surID, id, pos)
       local mdf = FurnitureModifier:New(self._curArea, sur, fur, true)
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self._modifiers)[mdf:ID()] = mdf
+      self._modifiers[mdf:ID()] = mdf
       self:pickUpFurniture(fur)
-      ;
-      (self._module):ChangeTempFurniture(fur:CfgID(), 1)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftDecorateRefreshAtmosphere, self:calAmbient())
+      self._module:ChangeTempFurniture(fur:CfgID(), 1)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftDecorateRefreshAtmosphere, self:calAmbient())
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.CurrentArea = function(self)
-  -- function num : 0_17
+function AircraftDecorateManager:CurrentArea()
   return self._curArea
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.createFurniture = function(self, area, surfaceID, id, gridPos)
-  -- function num : 0_18 , upvalues : _ENV
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset(id .. ".prefab", LoadType.GameObject)
+function AircraftDecorateManager:createFurniture(area, surfaceID, id, gridPos)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(id .. ".prefab", LoadType.GameObject)
   local furniture = AircraftFurniture:New(req, nil, area:Floor(), area:ID())
   gridPos = gridPos - furniture:Offset()
   local data = MobileFurnitureInfo:New()
   data.asset_id = id
   data.area_id = self._id
   data.surface = surfaceID
-  data.pos_x = (GridHelper.ToInt)(gridPos.x)
-  data.pos_z = (GridHelper.ToInt)(gridPos.y)
+  data.pos_x = GridHelper.ToInt(gridPos.x)
+  data.pos_z = GridHelper.ToInt(gridPos.y)
   data.rot = 0
   local surface = area:GetSurface(surfaceID)
   if surface == nil then
-    (Log.exception)("严重错误！新增家具时找不到家具所在的面。区域:", self._id, "，", "家具ID：", id, "面ID:", surfaceID)
+    Log.exception("严重错误！新增家具时找不到家具所在的面。区域:", self._id, "，", "家具ID：", id, "面ID:", surfaceID)
   end
-  local fp, fr = (GridHelper.GetFurniturePosRot)(surface, gridPos, 0)
+  local fp, fr = GridHelper.GetFurniturePosRot(surface, gridPos, 0)
   furniture:SetDecorateData(data, true, fp, fr)
-  local grids = (GridHelper.FurnitureOccupyGrids)(furniture, furniture:GridPosition(), furniture:GridRotY())
+  local grids = GridHelper.FurnitureOccupyGrids(furniture, furniture:GridPosition(), furniture:GridRotY())
   local tiles = surface:Tiles()
   local otiles = {}
-  for _,pos in ipairs(grids) do
+  for _, pos in ipairs(grids) do
     if tiles[pos.x] == nil then
-      (Log.error)("找不到列")
+      Log.error("找不到列")
     end
-    local tile = (tiles[pos.x])[pos.y]
+    local tile = tiles[pos.x][pos.y]
     if tile == nil then
-      (Log.exception)("面上找不到家具占据的格子。", "面:", surface:ID(), "，家具:", data.asset_id, "，区域:", self._curArea, "，格子坐标:", pos.x, ",", pos.y)
+      Log.exception("面上找不到家具占据的格子。", "面:", surface:ID(), "，家具:", data.asset_id, "，区域:", self._curArea, "，格子坐标:", pos.x, ",", pos.y)
     end
     otiles[#otiles + 1] = tile
   end
@@ -498,183 +352,135 @@ AircraftDecorateManager.createFurniture = function(self, area, surfaceID, id, gr
   return furniture
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.FocusFurniture = function(self, fur)
-  -- function num : 0_19 , upvalues : _ENV
-  local targetArea = (self._areas)[fur.area_id]
+function AircraftDecorateManager:FocusFurniture(fur)
+  local targetArea = self._areas[fur.area_id]
   local surface = targetArea:GetSurface(fur.surface)
   if self._curArea ~= fur.area_id then
-    ((self._areas)[self._curArea]):OnExit()
+    self._areas[self._curArea]:OnExit()
   end
-  ;
-  (self._camera):SwitchCfg(targetArea:GetCameraCfg(surface:GridType()), surface:GridType(), function()
-    -- function num : 0_19_0 , upvalues : self, fur, _ENV
+  self._camera:SwitchCfg(targetArea:GetCameraCfg(surface:GridType()), surface:GridType(), function()
     if self._curArea ~= fur.area_id then
       self._curArea = fur.area_id
       self._modifiers = {}
-      ;
-      ((self._areas)[self._curArea]):OnEnter()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftDecorateRefreshRoomTitle)
+      self._areas[self._curArea]:OnEnter()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftDecorateRefreshRoomTitle)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.IsDirty = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function AircraftDecorateManager:IsDirty()
   if next(self._modifiers) then
-    for _,mdf in pairs(self._modifiers) do
+    for _, mdf in pairs(self._modifiers) do
       if mdf:IsDirty() then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.calAmbient = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local ambient = (self._module):CalFurnitureAmbient(true)
-  local a, b = (self._module):CalCentralPetWorkSkill()
-  for _,mdf in pairs(self._modifiers) do
-    local changed = (math.floor)(mdf:ChangedAmbient() * (1 + b)) + (math.floor)(a)
+function AircraftDecorateManager:calAmbient()
+  local ambient = self._module:CalFurnitureAmbient(true)
+  local a, b = self._module:CalCentralPetWorkSkill()
+  for _, mdf in pairs(self._modifiers) do
+    local changed = math.floor(mdf:ChangedAmbient() * (1 + b)) + math.floor(a)
     ambient = ambient + changed
   end
-  return (math.max)(ambient, 0)
+  return math.max(ambient, 0)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.ShowFurTip = function(self)
-  -- function num : 0_22
-  (self._furTip):Show((self._curMdf):Furniture())
+function AircraftDecorateManager:ShowFurTip()
+  self._furTip:Show(self._curMdf:Furniture())
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager._initAreas = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local parent = (((UnityEngine.GameObject).Find)("areas")).transform
+function AircraftDecorateManager:_initAreas()
+  local parent = UnityEngine.GameObject.Find("areas").transform
   for i = 0, parent.childCount - 1 do
     local id = i + 1
-    local space = ((Cfg.cfg_aircraft_area)[id]).SpaceId
-    local room = nil
+    local space = Cfg.cfg_aircraft_area[id].SpaceId
+    local room
     if space then
-      room = (self._main):GetRoomBySpaceID(space)
+      room = self._main:GetRoomBySpaceID(space)
     end
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._areas)[id] = AircraftArea:New(self._main, id, (parent:GetChild(i)).gameObject, room, self._getTile)
+    self._areas[id] = AircraftArea:New(self._main, id, parent:GetChild(i).gameObject, room, self._getTile)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.Dispose = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  (self._camera):Dispose()
-  ;
-  (self._occupyTip):Dispose()
+function AircraftDecorateManager:Dispose()
+  self._camera:Dispose()
+  self._occupyTip:Dispose()
   self:revertAllModify()
-  for _,area in ipairs(self._areas) do
+  for _, area in ipairs(self._areas) do
     area:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_25 , upvalues : _ENV
-  local clicked, clickPos = (self._input):GetClick()
+function AircraftDecorateManager:Update(deltaTimeMS)
+  local clicked, clickPos = self._input:GetClick()
   if clicked then
     local layers = AircraftLayer.Default | 1 << AircraftLayer.Furniture
-    local results = (self._camera):RaycastAll(clickPos, layers)
+    local results = self._camera:RaycastAll(clickPos, layers)
     if results then
       self:OnClick(results)
-      return 
+      return
     end
   end
-  do
-    if self._mode ~= DecorateMode.FullView or self._mode == DecorateMode.Edit then
-      local dragging, dragStartPos, dragEndPos = (self._input):GetDrag()
-      if dragging then
-        if not self._dragging then
-          self._dragging = true
-          if self._curMdf then
-            local result = (self._camera):Raycast(dragEndPos, 1 << AircraftLayer.Furniture)
-            if result and ((self._curMdf):Furniture()):IsThisGO((result.transform).gameObject) then
-              self._draggingFur = true
-              self:_dragStart(result.point)
-              ;
-              (self._furTip):OnDragStart()
-            end
-          end
-        end
-        do
-          do
-            if self._draggingFur then
-              self:_dragFurniture(dragEndPos)
-            else
-              ;
-              (self._camera):OnDrag(dragStartPos - dragEndPos)
-            end
-            if self._dragging then
-              self._dragging = false
-              self._draggingFur = false
-              self._dragGridPos = nil
-              if self._furTip then
-                (self._furTip):OnDragEnd()
-              end
-            end
-            ;
-            (self._camera):OnScale()
-            ;
-            (self._camera):Update(deltaTimeMS)
-            if self._furTip then
-              (self._furTip):Update()
-            end
+  if self._mode == DecorateMode.FullView then
+  elseif self._mode == DecorateMode.Edit then
+    local dragging, dragStartPos, dragEndPos = self._input:GetDrag()
+    if dragging then
+      if not self._dragging then
+        self._dragging = true
+        if self._curMdf then
+          local result = self._camera:Raycast(dragEndPos, 1 << AircraftLayer.Furniture)
+          if result and self._curMdf:Furniture():IsThisGO(result.transform.gameObject) then
+            self._draggingFur = true
+            self:_dragStart(result.point)
+            self._furTip:OnDragStart()
           end
         end
       end
+      if self._draggingFur then
+        self:_dragFurniture(dragEndPos)
+      else
+        self._camera:OnDrag(dragStartPos - dragEndPos)
+      end
+    elseif self._dragging then
+      self._dragging = false
+      self._draggingFur = false
+      self._dragGridPos = nil
+      if self._furTip then
+        self._furTip:OnDragEnd()
+      end
     end
+    self._camera:OnScale()
+  end
+  self._camera:Update(deltaTimeMS)
+  if self._furTip then
+    self._furTip:Update()
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager._dragStart = function(self, point)
-  -- function num : 0_26
-  local area = (self._areas)[self._curArea]
-  local surface = (self._curMdf):Surface()
+function AircraftDecorateManager:_dragStart(point)
+  local area = self._areas[self._curArea]
+  local surface = self._curMdf:Surface()
   surface:CreateDragPlane(point)
   self._dragGridPos = surface:PlaneLocalPos(point)
-  self._dragStartPos = (self._dragGridPos):Clone()
+  self._dragStartPos = self._dragGridPos:Clone()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager._dragFurniture = function(self, screenPos)
-  -- function num : 0_27 , upvalues : _ENV
-  local result = (self._camera):RaycastAll(screenPos, 1 << AircraftLayer.Surface | 1 << AircraftLayer.DragLayer)
+function AircraftDecorateManager:_dragFurniture(screenPos)
+  local result = self._camera:RaycastAll(screenPos, 1 << AircraftLayer.Surface | 1 << AircraftLayer.DragLayer)
   if not result then
-    return 
+    return
   end
-  local surface = (self._curMdf):Surface()
+  local surface = self._curMdf:Surface()
   local dragOnPlane = false
   local dragOnCurSur = false
   local dragToOther = false
-  local point = nil
-  for _,value in ipairs(result) do
-    local go = (value.transform).gameObject
+  local point
+  for _, value in ipairs(result) do
+    local go = value.transform.gameObject
     if surface:CheckDragPlane(go) then
       dragOnPlane = true
       point = value.point
@@ -685,97 +491,81 @@ AircraftDecorateManager._dragFurniture = function(self, screenPos)
     end
     if not dragOnPlane and not dragOnCurSur then
       local found = false
-      for id,sur in pairs(((self._areas)[self._curArea]):Surfaces()) do
-        if sur:GridType() == ((self._curMdf):Furniture()):LocationType() and id ~= surface:ID() and sur:CheckSurface(go) then
+      for id, sur in pairs(self._areas[self._curArea]:Surfaces()) do
+        if sur:GridType() == self._curMdf:Furniture():LocationType() and id ~= surface:ID() and sur:CheckSurface(go) then
           dragToOther = id
           point = value.point
           found = true
           break
         end
       end
+      if found then
+        break
+      end
     end
   end
-  do
-    if found or dragOnPlane then
-      local pos = surface:PlaneLocalPos(point)
-      local offset = pos - self._dragGridPos
-      if offset.x ~= 0 or offset.y ~= 0 then
-        local gridPos = (self._curMdf):GridPosition() + offset
-        local y = (self._curMdf):RotY()
-        local surface = (self._curMdf):Surface()
-        local beyond, valid, grids = (GridHelper.BeyondSurfaceEdge)(surface, (self._curMdf):Furniture(), gridPos, y)
-      end
+  if dragOnPlane then
+    local pos = surface:PlaneLocalPos(point)
+    local offset = pos - self._dragGridPos
+    if offset.x ~= 0 or offset.y ~= 0 then
+      local gridPos = self._curMdf:GridPosition() + offset
+      local y = self._curMdf:RotY()
+      local surface = self._curMdf:Surface()
+      local beyond, valid, grids = GridHelper.BeyondSurfaceEdge(surface, self._curMdf:Furniture(), gridPos, y)
       if beyond then
-        local wpos, wrot = (GridHelper.GetFurniturePosRot)(surface, gridPos, y)
-        ;
-        (self._curMdf):ChangePos(gridPos, wpos, grids, valid)
-        do
-          do
-            local gpos, grot = (GridHelper.GetGridsWorldPos)(surface, grids)
-            ;
-            (self._occupyTip):Show(gpos, grot, valid, grids)
-            self:handleOverlapFurs(surface:Tiles(), valid, grids)
-            self._dragGridPos = pos
-            do return  end
-            if dragOnCurSur then
-              return 
-            end
-            if dragToOther then
-              local other = ((self._areas)[self._curArea]):GetSurface(dragToOther)
-              ;
-              (self._curMdf):ChangeSurface(other)
-              point.y = point.y + 0.3
-              local originOffset = self._dragGridPos - (self._curMdf):GridPosition()
-              self:_dragStart(point)
-              local furniture = (self._curMdf):Furniture()
-              local rotY = (self._curMdf):RotY()
-              local gridPos = self._dragGridPos - originOffset
-              local pos, rot = (GridHelper.GetFurniturePosRot)(other, gridPos, rotY)
-              local valid, grids = (GridHelper.CanFurniturPlaceAt)(other, furniture, gridPos, rotY)
-              ;
-              (self._curMdf):ChangePos(gridPos, pos, grids, valid)
-              local gpos, grot = (GridHelper.GetGridsWorldPos)(other, grids)
-              ;
-              (self._occupyTip):Show(gpos, grot, valid, grids)
-              self:handleOverlapFurs(other:Tiles(), valid, grids)
-              return 
-            end
-          end
-        end
+      else
+        local wpos, wrot = GridHelper.GetFurniturePosRot(surface, gridPos, y)
+        self._curMdf:ChangePos(gridPos, wpos, grids, valid)
+        local gpos, grot = GridHelper.GetGridsWorldPos(surface, grids)
+        self._occupyTip:Show(gpos, grot, valid, grids)
+        self:handleOverlapFurs(surface:Tiles(), valid, grids)
+        self._dragGridPos = pos
       end
     end
+    return
+  end
+  if dragOnCurSur then
+    return
+  end
+  if dragToOther then
+    local other = self._areas[self._curArea]:GetSurface(dragToOther)
+    self._curMdf:ChangeSurface(other)
+    point.y = point.y + 0.3
+    local originOffset = self._dragGridPos - self._curMdf:GridPosition()
+    self:_dragStart(point)
+    local furniture = self._curMdf:Furniture()
+    local rotY = self._curMdf:RotY()
+    local gridPos = self._dragGridPos - originOffset
+    local pos, rot = GridHelper.GetFurniturePosRot(other, gridPos, rotY)
+    local valid, grids = GridHelper.CanFurniturPlaceAt(other, furniture, gridPos, rotY)
+    self._curMdf:ChangePos(gridPos, pos, grids, valid)
+    local gpos, grot = GridHelper.GetGridsWorldPos(other, grids)
+    self._occupyTip:Show(gpos, grot, valid, grids)
+    self:handleOverlapFurs(other:Tiles(), valid, grids)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.editEnd = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function AircraftDecorateManager:editEnd()
   self._curMdf = nil
-  ;
-  (self._furTip):Hide()
-  ;
-  (self._occupyTip):Hide()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftDecorateSwitchModel, true)
+  self._furTip:Hide()
+  self._occupyTip:Hide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftDecorateSwitchModel, true)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.handleOverlapFurs = function(self, tiles, valid, grids)
-  -- function num : 0_29 , upvalues : _ENV
-  local furs = ((self._areas)[self._curArea]):Furnitures()
+function AircraftDecorateManager:handleOverlapFurs(tiles, valid, grids)
+  local furs = self._areas[self._curArea]:Furnitures()
   if self._curMdf then
-    local layer = ((self._curMdf):Furniture()):Layer()
+    local layer = self._curMdf:Furniture():Layer()
     local overlaps = {}
     if not valid then
-      for _,pos in pairs(grids) do
+      for _, pos in pairs(grids) do
         if tiles[pos.x] then
-          local tile = (tiles[pos.x])[pos.y]
+          local tile = tiles[pos.x][pos.y]
           if tile then
             local ids = tile:GetFurnitureIDs(layer)
             if ids then
-              for id,_ in pairs(ids) do
+              for id, _ in pairs(ids) do
                 if not overlaps[id] then
                   overlaps[id] = true
                 end
@@ -785,368 +575,252 @@ AircraftDecorateManager.handleOverlapFurs = function(self, tiles, valid, grids)
         end
       end
     end
-    do
-      for insID,_ in pairs(self._overlapFurs) do
-        do
-          do
-            if not overlaps[insID] then
-              local fur = self:getOverlapFur(insID)
-              if fur then
-                fur:SetAreaGridValid(true)
-                -- DECOMPILER ERROR at PC63: Confused about usage of register: R13 in 'UnsetPending'
-
-                ;
-                (self._overlapFurs)[insID] = nil
-              end
-            end
-            overlaps[insID] = nil
-            -- DECOMPILER ERROR at PC65: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
+    for insID, _ in pairs(self._overlapFurs) do
+      if not overlaps[insID] then
+        local fur = self:getOverlapFur(insID)
+        if fur then
+          fur:SetAreaGridValid(true)
+          self._overlapFurs[insID] = nil
         end
       end
-      do
-        local fur = nil
-        for insID,_ in pairs(overlaps) do
-          local fur = self:getOverlapFur(insID)
-          if fur then
-            fur:SetAreaGridValid(false)
-            -- DECOMPILER ERROR at PC81: Confused about usage of register: R14 in 'UnsetPending'
-
-            ;
-            (self._overlapFurs)[insID] = true
-          end
-        end
-        ;
-        ((self._curMdf):Furniture()):SetAreaGridValid(valid)
-        for insID,_ in pairs(self._overlapFurs) do
-          local fur = self:getOverlapFur(insID)
-          if fur then
-            fur:SetAreaGridValid(true)
-          end
-        end
-        ;
-        (table.clear)(self._overlapFurs)
+      overlaps[insID] = nil
+    end
+    local fur
+    for insID, _ in pairs(overlaps) do
+      local fur = self:getOverlapFur(insID)
+      if fur then
+        fur:SetAreaGridValid(false)
+        self._overlapFurs[insID] = true
       end
     end
+    self._curMdf:Furniture():SetAreaGridValid(valid)
+  else
+    for insID, _ in pairs(self._overlapFurs) do
+      local fur = self:getOverlapFur(insID)
+      if fur then
+        fur:SetAreaGridValid(true)
+      end
+    end
+    table.clear(self._overlapFurs)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.getOverlapFur = function(self, insID)
-  -- function num : 0_30
-  local furs = ((self._areas)[self._curArea]):Furnitures()
+function AircraftDecorateManager:getOverlapFur(insID)
+  local furs = self._areas[self._curArea]:Furnitures()
   if furs[insID] then
     return furs[insID]
   end
-  if (self._modifiers)[insID] then
-    return ((self._modifiers)[insID]):Furniture()
+  if self._modifiers[insID] then
+    return self._modifiers[insID]:Furniture()
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.OnClick = function(self, results)
-  -- function num : 0_31 , upvalues : _ENV
+function AircraftDecorateManager:OnClick(results)
   if results == nil or #results == 0 then
-    return 
+    return
   end
   if self._mode == DecorateMode.FullView then
-    local clickArea = nil
-    for _,result in ipairs(results) do
-      local go = (result.transform).gameObject
-      for i,area in ipairs(self._areas) do
+    local clickArea
+    for _, result in ipairs(results) do
+      local go = result.transform.gameObject
+      for i, area in ipairs(self._areas) do
         if area:IsThis(go) then
           clickArea = i
           break
         end
       end
-      do
-        do
-          if clickArea then
-            if self._firstClickArea then
-              if self._firstClickArea == clickArea then
-                self:EnterArea(clickArea)
-                ;
-                ((GameGlobal.UIStateManager)()):CloseDialog("UIAircraftDecorateTip")
-                break
-              end
-              self._firstClickArea = clickArea
-              ;
-              ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftSelectDecorateArea, clickArea)
-              break
-            end
-            self._firstClickArea = clickArea
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftSelectDecorateArea, clickArea)
+      if clickArea then
+        if self._firstClickArea then
+          if self._firstClickArea == clickArea then
+            self:EnterArea(clickArea)
+            GameGlobal.UIStateManager():CloseDialog("UIAircraftDecorateTip")
             break
           end
-          -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out DO_STMT
-
+          self._firstClickArea = clickArea
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftSelectDecorateArea, clickArea)
+          break
         end
+        self._firstClickArea = clickArea
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftSelectDecorateArea, clickArea)
+        break
       end
     end
-  else
-    do
-      if self._mode == DecorateMode.Edit then
-        local fur = nil
-        for _,result in ipairs(results) do
-          local go = (result.transform).gameObject
-          for id,furniture in pairs(((self._areas)[self._curArea]):Furnitures()) do
-            if furniture:IsThisGO(go) then
-              fur = furniture
-              break
-            end
-          end
-          do
-            for _,mdf in pairs(self._modifiers) do
-              if (mdf:Furniture()):IsThisGO(go) then
-                fur = mdf:Furniture()
-                break
-              end
-            end
-            do
-              do
-                if fur then
-                  self:pickUpFurniture(fur)
-                  break
-                end
-                -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out DO_STMT
-
-              end
-            end
-          end
+  elseif self._mode == DecorateMode.Edit then
+    local fur
+    for _, result in ipairs(results) do
+      local go = result.transform.gameObject
+      for id, furniture in pairs(self._areas[self._curArea]:Furnitures()) do
+        if furniture:IsThisGO(go) then
+          fur = furniture
+          break
         end
+      end
+      for _, mdf in pairs(self._modifiers) do
+        if mdf:Furniture():IsThisGO(go) then
+          fur = mdf:Furniture()
+          break
+        end
+      end
+      if fur then
+        self:pickUpFurniture(fur)
+        break
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.dropDownFurniture = function(self, showUI, shake)
-  -- function num : 0_32 , upvalues : _ENV
+function AircraftDecorateManager:dropDownFurniture(showUI, shake)
   if self._curMdf then
-    (self._curMdf):DropDown(shake)
-    ;
-    (self._furTip):Hide()
-    ;
-    (self._occupyTip):Hide()
+    self._curMdf:DropDown(shake)
+    self._furTip:Hide()
+    self._occupyTip:Hide()
     if showUI then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftDecorateSwitchModel, true)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftDecorateSwitchModel, true)
     end
     self:showAreaFurniturArea(false)
-    ;
-    ((self._curMdf):Furniture()):SetAreaGridValid(true)
+    self._curMdf:Furniture():SetAreaGridValid(true)
     self._curMdf = nil
     self:handleOverlapFurs()
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.pickUpFurniture = function(self, fur)
-  -- function num : 0_33 , upvalues : _ENV
+function AircraftDecorateManager:pickUpFurniture(fur)
   if self._curMdf then
-    if (self._curMdf):ID() == fur:InstanceID() then
-      return 
+    if self._curMdf:ID() == fur:InstanceID() then
+      return
     else
       self:dropDownFurniture(false, true)
     end
   end
-  local surface = ((self._areas)[self._curArea]):GetSurface(fur:SurfaceID())
-  self._curMdf = (self._modifiers)[fur:InstanceID()]
+  local surface = self._areas[self._curArea]:GetSurface(fur:SurfaceID())
+  self._curMdf = self._modifiers[fur:InstanceID()]
   if not self._curMdf then
     self._curMdf = FurnitureModifier:New(self._curArea, surface, fur, false)
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._modifiers)[(self._curMdf):ID()] = self._curMdf
+    self._modifiers[self._curMdf:ID()] = self._curMdf
   end
   self:showAreaFurniturArea(true)
-  ;
-  (self._curMdf):PickUp()
-  ;
-  (self._furTip):Show((self._curMdf):Furniture())
-  local gpos, grot = (GridHelper.GetGridsWorldPos)(surface, (self._curMdf):GetGrids())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftDecorateSwitchModel, false)
-  local locateType = ((self._curMdf):Surface()):GridType()
-  ;
-  (self._camera):SwitchCfg(((self._areas)[self._curArea]):GetCameraCfg(locateType), locateType)
+  self._curMdf:PickUp()
+  self._furTip:Show(self._curMdf:Furniture())
+  local gpos, grot = GridHelper.GetGridsWorldPos(surface, self._curMdf:GetGrids())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftDecorateSwitchModel, false)
+  local locateType = self._curMdf:Surface():GridType()
+  self._camera:SwitchCfg(self._areas[self._curArea]:GetCameraCfg(locateType), locateType)
   self._overlapFurs = {}
-  local valid1, grids = (GridHelper.CanFurniturPlaceAt)((self._curMdf):Surface(), (self._curMdf):Furniture(), (self._curMdf):GridPosition(), (self._curMdf):RotY())
-  local beyond, valid2, _ = (GridHelper.BeyondSurfaceEdge)((self._curMdf):Surface(), (self._curMdf):Furniture(), (self._curMdf):GridPosition(), (self._curMdf):RotY())
-  local valid = not valid1 or valid2
-  ;
-  (self._occupyTip):Show(gpos, grot, valid, (self._curMdf):GetGrids())
+  local valid1, grids = GridHelper.CanFurniturPlaceAt(self._curMdf:Surface(), self._curMdf:Furniture(), self._curMdf:GridPosition(), self._curMdf:RotY())
+  local beyond, valid2, _ = GridHelper.BeyondSurfaceEdge(self._curMdf:Surface(), self._curMdf:Furniture(), self._curMdf:GridPosition(), self._curMdf:RotY())
+  local valid = valid1 and valid2
+  self._occupyTip:Show(gpos, grot, valid, self._curMdf:GetGrids())
   self:handleOverlapFurs(surface:Tiles(), valid, grids)
-  ;
-  (self._curMdf):SetValidWhenPickup(valid)
+  self._curMdf:SetValidWhenPickup(valid)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.showAreaFurniturArea = function(self, show)
-  -- function num : 0_34 , upvalues : _ENV
+function AircraftDecorateManager:showAreaFurniturArea(show)
   local setted = {}
-  local curFur = (self._curMdf):Furniture()
-  for id,fur in pairs(((self._areas)[self._curArea]):Furnitures()) do
-    if fur:InstanceID() ~= curFur:InstanceID() then
-      do
-        fur:ShowAreaAndFootprint(show, setted[fur:InstanceID()] or fur:LocationType() ~= curFur:LocationType())
-        setted[fur:InstanceID()] = true
-        -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  local curFur = self._curMdf:Furniture()
+  for id, fur in pairs(self._areas[self._curArea]:Furnitures()) do
+    if not setted[fur:InstanceID()] and fur:LocationType() == curFur:LocationType() then
+      fur:ShowAreaAndFootprint(show, fur:InstanceID() == curFur:InstanceID())
+      setted[fur:InstanceID()] = true
     end
   end
-  for _,mod in pairs(self._modifiers) do
+  for _, mod in pairs(self._modifiers) do
     local fur = mod:Furniture()
-    if fur:InstanceID() ~= curFur:InstanceID() then
-      do
-        fur:ShowAreaAndFootprint(show, setted[fur:InstanceID()] or fur:LocationType() ~= curFur:LocationType())
-        setted[fur:InstanceID()] = true
-        -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if not setted[fur:InstanceID()] and fur:LocationType() == curFur:LocationType() then
+      fur:ShowAreaAndFootprint(show, fur:InstanceID() == curFur:InstanceID())
+      setted[fur:InstanceID()] = true
     end
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.EnterArea = function(self, id)
-  -- function num : 0_35 , upvalues : _ENV
+function AircraftDecorateManager:EnterArea(id)
   if self._curArea == id then
-    return 
+    return
   end
   if self._curArea then
-    ((self._areas)[self._curArea]):OnExit()
+    self._areas[self._curArea]:OnExit()
   end
   self._curArea = id
   self._modifiers = {}
-  ;
-  (self._camera):SwitchCfg((((self._areas)[id]):CameraID()), nil, function()
-    -- function num : 0_35_0 , upvalues : self, _ENV
+  self._camera:SwitchCfg(self._areas[id]:CameraID(), nil, function()
     self._mode = DecorateMode.Edit
-    ;
-    ((self._areas)[self._curArea]):OnEnter()
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIAircraftDecorateController", self)
-  end
-)
+    self._areas[self._curArea]:OnEnter()
+    GameGlobal.UIStateManager():ShowDialog("UIAircraftDecorateController", self)
+  end)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.SwitchArea = function(self, step)
-  -- function num : 0_36 , upvalues : _ENV
+function AircraftDecorateManager:SwitchArea(step)
   AirLog("切换装扮区域：", step)
   local id = self._curArea + step
   if id < 1 then
     id = id + AircraftConst.DecorateAreaCount
-  else
-    if AircraftConst.DecorateAreaCount < id then
-      id = id - AircraftConst.DecorateAreaCount
-    end
+  elseif id > AircraftConst.DecorateAreaCount then
+    id = id - AircraftConst.DecorateAreaCount
   end
   self:TryPopTip(function()
-    -- function num : 0_36_0 , upvalues : self, id, _ENV
     self:EnterArea(id)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftDecorateRefreshRoomTitle)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftDecorateRefreshRoomTitle)
+  end)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.TryPopTip = function(self, onEnter)
-  -- function num : 0_37 , upvalues : _ENV
+function AircraftDecorateManager:TryPopTip(onEnter)
   if self:IsDirty() then
-    local func = function()
-    -- function num : 0_37_0 , upvalues : self, _ENV, onEnter
-    self:revertAllModify()
-    if self._curArea then
-      for id,fur in pairs(((self._areas)[self._curArea]):Furnitures()) do
-        fur:ShowAreaAndFootprint(false, false)
+    local function func()
+      self:revertAllModify()
+      
+      if self._curArea then
+        for id, fur in pairs(self._areas[self._curArea]:Furnitures()) do
+          fur:ShowAreaAndFootprint(false, false)
+        end
       end
-    end
-    do
       if onEnter then
         onEnter()
       end
     end
-  end
-
-    self:msgBox((StringTable.Get)("str_aircraft_decorate_tip"), func)
+    
+    self:msgBox(StringTable.Get("str_aircraft_decorate_tip"), func)
   else
-    do
-      onEnter()
-    end
+    onEnter()
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.RefreshArea = function(self, spaceID)
-  -- function num : 0_38 , upvalues : _ENV
-  local room = (self._main):GetRoomBySpaceID(spaceID)
-  for _,area in ipairs(self._areas) do
+function AircraftDecorateManager:RefreshArea(spaceID)
+  local room = self._main:GetRoomBySpaceID(spaceID)
+  for _, area in ipairs(self._areas) do
     if area:SpaceID() == spaceID then
       area:Refresh(room)
       AirLog("刷新装修区域：", area:ID())
-      return 
+      return
     end
   end
   AirError("找不到空间：", spaceID)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.RefreshAreaSurfaces = function(self, spaceID)
-  -- function num : 0_39 , upvalues : _ENV
-  local room = (self._main):GetRoomBySpaceID(spaceID)
-  for _,area in ipairs(self._areas) do
+function AircraftDecorateManager:RefreshAreaSurfaces(spaceID)
+  local room = self._main:GetRoomBySpaceID(spaceID)
+  for _, area in ipairs(self._areas) do
     if area:SpaceID() == spaceID then
       area:RefreshSurfaces(room)
       AirLog("刷新装修区域格子：", area:ID())
-      return 
+      return
     end
   end
   AirError("找不到空间：", spaceID)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.GetFurnitureByID = function(self, id)
-  -- function num : 0_40 , upvalues : _ENV
+function AircraftDecorateManager:GetFurnitureByID(id)
   for i = 1, AircraftConst.DecorateAreaCount do
-    local f = ((self._areas)[i]):GetFurniture(id)
+    local f = self._areas[i]:GetFurniture(id)
     if f ~= nil then
       return f
     end
   end
-  ;
-  (Log.exception)("找不到家具:", id, (debug.traceback)())
+  Log.exception("找不到家具:", id, debug.traceback())
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.GetFurnitureByType = function(self, type)
-  -- function num : 0_41 , upvalues : _ENV
+function AircraftDecorateManager:GetFurnitureByType(type)
   for i = 1, AircraftConst.DecorateAreaCount do
-    local fs = ((self._areas)[i]):Furnitures()
-    for ist,fur in pairs(fs) do
+    local fs = self._areas[i]:Furnitures()
+    for ist, fur in pairs(fs) do
       if fur ~= nil and fur:Type() == type and fur:AvailableCount() > 0 then
         return fur
       end
@@ -1155,31 +829,23 @@ AircraftDecorateManager.GetFurnitureByType = function(self, type)
   AirLog("找不到家具，类型:", type)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.GetFurnitureBySpaceID = function(self, spaceID)
-  -- function num : 0_42 , upvalues : _ENV
+function AircraftDecorateManager:GetFurnitureBySpaceID(spaceID)
   local furs = {}
-  for _,area in ipairs(self._areas) do
+  for _, area in ipairs(self._areas) do
     if area:SpaceID() == spaceID then
-      for id,fur in pairs(area:Furnitures()) do
+      for id, fur in pairs(area:Furnitures()) do
         furs[#furs + 1] = fur
       end
       break
     end
   end
-  do
-    return furs
-  end
+  return furs
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.GetFurnitureByKey = function(self, key)
-  -- function num : 0_43 , upvalues : _ENV
+function AircraftDecorateManager:GetFurnitureByKey(key)
   for i = 1, AircraftConst.DecorateAreaCount do
-    local fs = ((self._areas)[i]):Furnitures()
-    for ist,fur in pairs(fs) do
+    local fs = self._areas[i]:Furnitures()
+    for ist, fur in pairs(fs) do
       if fur:MatchKey(key) and fur:AvailableCount() > 0 then
         return fur
       end
@@ -1187,11 +853,6 @@ AircraftDecorateManager.GetFurnitureByKey = function(self, key)
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDecorateManager.GetFurnituresByArea = function(self, area)
-  -- function num : 0_44
-  return ((self._areas)[area]):Furnitures()
+function AircraftDecorateManager:GetFurnituresByArea(area)
+  return self._areas[area]:Furnitures()
 end
-
-

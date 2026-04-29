@@ -1,57 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_damage_percent.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeDamagePercent", BuffLogicBase)
 BuffLogicChangeDamagePercent = BuffLogicChangeDamagePercent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeDamagePercent.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffInstance)._effectList = logicParam.effectList
+function BuffLogicChangeDamagePercent:Constructor(buffInstance, logicParam)
+  self._buffInstance._effectList = logicParam.effectList
   self._value = logicParam.value or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeDamagePercent.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeDamagePercent:DoLogic()
   local casterEntity = self._entity
   if not casterEntity then
-    return 
+    return
   end
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):ChangeSkillParam(casterEntity, self:GetBuffSeq(), paramType, self._value)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:ChangeSkillParam(casterEntity, self:GetBuffSeq(), paramType, self._value)
   end
 end
 
 _class("BuffLogicRemoveDamagePercent", BuffLogicBase)
 BuffLogicRemoveDamagePercent = BuffLogicRemoveDamagePercent
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveDamagePercent.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveDamagePercent:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveDamagePercent.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local context = (self._buffInstance):Context()
+function BuffLogicRemoveDamagePercent:DoLogic()
+  local context = self._buffInstance:Context()
   if not context then
-    return 
+    return
   end
   local casterEntity = self._entity
   if not casterEntity then
-    return 
+    return
   end
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillParam(casterEntity, self:GetBuffSeq(), paramType)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillParam(casterEntity, self:GetBuffSeq(), paramType)
   end
   return true
 end
-
-

@@ -1,49 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/battle_svc_maze_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("battle_svc_r")
 _class("RenderBattleService_Maze", RenderBattleService)
 RenderBattleService_Maze = RenderBattleService_Maze
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderBattleService_Maze.HideUIPetInfo = function(self, TT)
-  -- function num : 0_0
+function RenderBattleService_Maze:HideUIPetInfo(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleService_Maze.ShowUIPetInfo = function(self, TT)
-  -- function num : 0_1
+function RenderBattleService_Maze:ShowUIPetInfo(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleService_Maze.SetAllTeamMemberVisible = function(self, teamEntity)
-  -- function num : 0_2 , upvalues : _ENV
+function RenderBattleService_Maze:SetAllTeamMemberVisible(teamEntity)
   local teamLeaderEntity = teamEntity:GetTeamLeaderPetEntity()
-  local petEntities = (teamEntity:Team()):GetTeamPetEntities()
-  for id,entity in ipairs(petEntities) do
+  local petEntities = teamEntity:Team():GetTeamPetEntities()
+  for id, entity in ipairs(petEntities) do
     if entity:GetID() ~= teamLeaderEntity:GetID() then
       entity:SetViewVisible(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleService_Maze.ChangeTeamLeaderRender = function(self, TT, teamEntity)
-  -- function num : 0_3 , upvalues : _ENV
+function RenderBattleService_Maze:ChangeTeamLeaderRender(TT, teamEntity)
   local teamLeaderEntity = teamEntity:GetTeamLeaderPetEntity()
   if teamEntity:HasPetDeadFlag() then
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTBeforeMazeTeamLeaderSucceed:New(teamLeaderEntity))
-    local renderEntityService = (self._world):GetService("RenderEntity")
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, NTBeforeMazeTeamLeaderSucceed:New(teamLeaderEntity))
+    local renderEntityService = self._world:GetService("RenderEntity")
     renderEntityService:SetTeamLeaderRender(teamLeaderEntity, true)
     teamLeaderEntity:SetViewVisible(true)
     self:SetAllTeamMemberVisible(teamEntity)
     teamEntity:RemovePetDeadFlag()
   end
 end
-
-

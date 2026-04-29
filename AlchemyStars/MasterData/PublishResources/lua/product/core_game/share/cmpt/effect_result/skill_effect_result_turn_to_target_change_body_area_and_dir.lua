@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_turn_to_target_change_body_area_and_dir.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultTurnToTargetChangeBodyAreaAndDir", SkillEffectResultBase)
 SkillEffectResultTurnToTargetChangeBodyAreaAndDir = SkillEffectResultTurnToTargetChangeBodyAreaAndDir
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultTurnToTargetChangeBodyAreaAndDir.Constructor = function(self, casterEntityID, modifyType, newValue)
-  -- function num : 0_0
+function SkillEffectResultTurnToTargetChangeBodyAreaAndDir:Constructor(casterEntityID, modifyType, newValue)
   self._casterEntityID = casterEntityID
   self._modifyType = modifyType
   self._newValue = newValue
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTurnToTargetChangeBodyAreaAndDir.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultTurnToTargetChangeBodyAreaAndDir:GetEffectType()
   return SkillEffectType.TurnToTargetChangeBodyAreaAndDir
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTurnToTargetChangeBodyAreaAndDir.GetCasterEntityID = function(self)
-  -- function num : 0_2
+function SkillEffectResultTurnToTargetChangeBodyAreaAndDir:GetCasterEntityID()
   return self._casterEntityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTurnToTargetChangeBodyAreaAndDir.GetModifyType = function(self)
-  -- function num : 0_3
+function SkillEffectResultTurnToTargetChangeBodyAreaAndDir:GetModifyType()
   return self._modifyType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTurnToTargetChangeBodyAreaAndDir.GetNewValue = function(self)
-  -- function num : 0_4
+function SkillEffectResultTurnToTargetChangeBodyAreaAndDir:GetNewValue()
   return self._newValue
 end
-
-

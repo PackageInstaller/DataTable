@@ -1,62 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/board_collider_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BoardColliderComponent", Object)
 BoardColliderComponent = BoardColliderComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BoardColliderComponent.Constructor = function(self)
-  -- function num : 0_0
+function BoardColliderComponent:Constructor()
   self._boardColliderRequest = nil
   self._boardColliderPlaneRes = "Plane.prefab"
   self:_LoadColliderPlane()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardColliderComponent._LoadColliderPlane = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._boardColliderRequest = (UnityResourceService:GetInstance()):LoadGameObject(self._boardColliderPlaneRes)
-  local go = (self._boardColliderRequest).Obj
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (go.transform).localScale = Vector3(10, 1, 10)
+function BoardColliderComponent:_LoadColliderPlane()
+  self._boardColliderRequest = UnityResourceService:GetInstance():LoadGameObject(self._boardColliderPlaneRes)
+  local go = self._boardColliderRequest.Obj
+  go.transform.localScale = Vector3(10, 1, 10)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardColliderComponent.Dispose = function(self)
-  -- function num : 0_2
+function BoardColliderComponent:Dispose()
   if self._boardColliderRequest ~= nil then
-    (self._boardColliderRequest):Dispose()
+    self._boardColliderRequest:Dispose()
   end
   self._boardColliderRequest = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.BoardCollider = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).BoardCollider)
+function Entity:BoardCollider()
+  return self:GetComponent(self.WEComponentsEnum.BoardCollider)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasBoardCollider = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).BoardCollider)
+function Entity:HasBoardCollider()
+  return self:HasComponent(self.WEComponentsEnum.BoardCollider)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddBoardCollider = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BoardCollider
+function Entity:AddBoardCollider()
+  local index = self.WEComponentsEnum.BoardCollider
   local component = BoardColliderComponent:New()
   self:AddComponent(index, component)
 end
-
-

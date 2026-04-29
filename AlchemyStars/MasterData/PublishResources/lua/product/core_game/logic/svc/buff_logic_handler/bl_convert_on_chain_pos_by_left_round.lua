@@ -1,60 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_convert_on_chain_pos_by_left_round.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicConvertOnChainPosByLeftRound", BuffLogicBase)
 BuffLogicConvertOnChainPosByLeftRound = BuffLogicConvertOnChainPosByLeftRound
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicConvertOnChainPosByLeftRound.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicConvertOnChainPosByLeftRound:Constructor(buffInstance, logicParam)
   self._convertPieceType = tonumber(logicParam.convertPieceType)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicConvertOnChainPosByLeftRound.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  do
-    if (self._entity):Pet() then
-      local ownerTeamEntity = ((self._entity):Pet()):GetOwnerTeamEntity()
-      if teamEntity:GetID() ~= ownerTeamEntity:GetID() then
-        return 
-      end
+function BuffLogicConvertOnChainPosByLeftRound:DoLogic(notify)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  if self._entity:Pet() then
+    local ownerTeamEntity = self._entity:Pet():GetOwnerTeamEntity()
+    if teamEntity:GetID() ~= ownerTeamEntity:GetID() then
+      return
     end
-    if (self._world):MatchType() == MatchType.MT_Maze or (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze or (self._world):MatchType() == MatchType.MT_PopStarPro then
-      return 
-    end
-    local battleStatCmpt = (self._world):BattleStat()
-    local convertIndex = battleStatCmpt:GetLevelLeftRoundCount() + 1
-    local logicChainPathCmpt = teamEntity:LogicChainPath()
-    local posList = {}
-    local chainPath = logicChainPathCmpt:GetLogicChainPath()
-    for i = 1, #chainPath - 1 do
-      posList[#posList + 1] = Vector2((chainPath[i]).x, (chainPath[i]).y)
-    end
-    if #posList < convertIndex then
-      return 
-    end
-    local pos = posList[convertIndex]
-    local boardSvc = (self._world):GetService("BoardLogic")
-    if not boardSvc:GetCanConvertGridElement(pos) then
-      return 
-    end
-    local oldPieceType = boardSvc:GetPieceType(pos)
-    boardSvc:SetPieceTypeLogic(self._convertPieceType, pos)
-    local tConvertInfo = {}
-    local convertInfo = NTGridConvert_ConvertInfo:New(pos, oldPieceType, self._convertPieceType)
-    ;
-    (table.insert)(tConvertInfo, convertInfo)
-    local boardEntity = (self._world):GetBoardEntity()
-    local triggerSvc = (self._world):GetService("Trigger")
-    local ntGridConvert = NTGridConvert:New(boardEntity, tConvertInfo)
-    triggerSvc:Notify(ntGridConvert)
-    return BuffResultConvertOnChainPosByLeftRound:New(pos, oldPieceType, self._convertPieceType)
   end
+  if self._world:MatchType() == MatchType.MT_Maze or self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze or self._world:MatchType() == MatchType.MT_PopStarPro then
+    return
+  end
+  local battleStatCmpt = self._world:BattleStat()
+  local convertIndex = battleStatCmpt:GetLevelLeftRoundCount() + 1
+  local logicChainPathCmpt = teamEntity:LogicChainPath()
+  local posList = {}
+  local chainPath = logicChainPathCmpt:GetLogicChainPath()
+  for i = 1, #chainPath - 1 do
+    posList[#posList + 1] = Vector2(chainPath[i].x, chainPath[i].y)
+  end
+  if convertIndex > #posList then
+    return
+  end
+  local pos = posList[convertIndex]
+  local boardSvc = self._world:GetService("BoardLogic")
+  if not boardSvc:GetCanConvertGridElement(pos) then
+    return
+  end
+  local oldPieceType = boardSvc:GetPieceType(pos)
+  boardSvc:SetPieceTypeLogic(self._convertPieceType, pos)
+  local tConvertInfo = {}
+  local convertInfo = NTGridConvert_ConvertInfo:New(pos, oldPieceType, self._convertPieceType)
+  table.insert(tConvertInfo, convertInfo)
+  local boardEntity = self._world:GetBoardEntity()
+  local triggerSvc = self._world:GetService("Trigger")
+  local ntGridConvert = NTGridConvert:New(boardEntity, tConvertInfo)
+  triggerSvc:Notify(ntGridConvert)
+  return BuffResultConvertOnChainPosByLeftRound:New(pos, oldPieceType, self._convertPieceType)
 end
-
-

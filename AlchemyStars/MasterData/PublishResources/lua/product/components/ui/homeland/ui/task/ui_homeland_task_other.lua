@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/task/ui_homeland_task_other.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandTaskOther", UICustomWidget)
 UIHomelandTaskOther = UIHomelandTaskOther
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandTaskOther.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandTaskOther:Constructor()
   self._questModule = self:GetModule(QuestModule)
   self._scrollViewSize = Vector2(1423.9, 827.9)
   self._anchoredPosition = Vector2(115.4, 405)
   self._canGetTb = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskOther.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandTaskOther:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskOther._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandTaskOther:_GetComponents()
   self._bottom = self:GetGameObject("Bottom")
   self._doneValue = self:GetUIComponent("UILocalizationText", "DoneValue")
   self._progressValueRect = self:GetUIComponent("RectTransform", "ProgressValue")
@@ -36,194 +23,114 @@ UIHomelandTaskOther._GetComponents = function(self)
   self._topArea = self:GetGameObject("TopArea")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskOther.SetData = function(self, taskType, quests)
-  -- function num : 0_3 , upvalues : _ENV
-  (table.clear)(self._canGetTb)
+function UIHomelandTaskOther:SetData(taskType, quests)
+  table.clear(self._canGetTb)
   self._taskType = taskType
   self._quests = quests
-  ;
-  (self._bottom):SetActive(taskType == HomelandTaskType.Phase)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._contentRect).anchoredPosition = Vector2(0, 0)
-  self._contentWidgets = (self._content):SpawnObjects("UIHomelandTaskItem", #self._quests)
-  for key,widget in pairs(self._contentWidgets) do
+  self._bottom:SetActive(taskType == HomelandTaskType.Phase)
+  self._contentRect.anchoredPosition = Vector2(0, 0)
+  self._contentWidgets = self._content:SpawnObjects("UIHomelandTaskItem", #self._quests)
+  for key, widget in pairs(self._contentWidgets) do
     local quest = quests[key]
     local questInfo = quest:QuestInfo()
     if questInfo.status == QuestStatus.QUEST_Completed then
-      (table.insert)(self._canGetTb, questInfo)
+      table.insert(self._canGetTb, questInfo)
     end
     widget:SetData(quest, function(id)
-    -- function num : 0_3_0 , upvalues : self
-    self:_GetTaskReward(id)
-  end
-)
+      self:_GetTaskReward(id)
+    end)
   end
   if taskType == HomelandTaskType.Phase then
     self:_RefreshPhaseTaskRewardInfo()
   end
   if #self._canGetTb <= 0 then
-    (self._topArea):SetActive(false)
-    -- DECOMPILER ERROR at PC66: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._anchoredPosition).y = 405
-    -- DECOMPILER ERROR at PC73: Confused about usage of register: R3 in 'UnsetPending'
-
+    self._topArea:SetActive(false)
+    self._anchoredPosition.y = 405
     if self._taskType == HomelandTaskType.Phase then
-      (self._scrollViewSize).y = 647.3
+      self._scrollViewSize.y = 647.3
     else
-      -- DECOMPILER ERROR at PC76: Confused about usage of register: R3 in 'UnsetPending'
-
-      (self._scrollViewSize).y = 827.9
+      self._scrollViewSize.y = 827.9
     end
   else
-    (self._topArea):SetActive(true)
-    -- DECOMPILER ERROR at PC83: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._anchoredPosition).y = 300
-    -- DECOMPILER ERROR at PC90: Confused about usage of register: R3 in 'UnsetPending'
-
+    self._topArea:SetActive(true)
+    self._anchoredPosition.y = 300
     if self._taskType == HomelandTaskType.Phase then
-      (self._scrollViewSize).y = 540
+      self._scrollViewSize.y = 540
     else
-      -- DECOMPILER ERROR at PC93: Confused about usage of register: R3 in 'UnsetPending'
-
-      (self._scrollViewSize).y = 685
+      self._scrollViewSize.y = 685
     end
   end
-  -- DECOMPILER ERROR at PC96: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._scrollViewRect).sizeDelta = self._scrollViewSize
-  -- DECOMPILER ERROR at PC99: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._scrollViewRect).anchoredPosition = self._anchoredPosition
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
+  self._scrollViewRect.sizeDelta = self._scrollViewSize
+  self._scrollViewRect.anchoredPosition = self._anchoredPosition
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskOther._RefreshPhaseTaskRewardInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandTaskOther:_RefreshPhaseTaskRewardInfo()
   local phaseQuests = self._quests
   local completeCount = 0
-  for _,quest in pairs(phaseQuests) do
+  for _, quest in pairs(phaseQuests) do
     local questInfo = quest:QuestInfo()
-    if QuestStatus.QUEST_Completed <= questInfo.status then
+    if questInfo.status >= QuestStatus.QUEST_Completed then
       completeCount = completeCount + 1
     end
   end
-  ;
-  (self._doneValue):SetText(completeCount)
-  local data = (self._questModule):GetQuestByQuestType(QuestType.QT_Homeland_Stage_Num)
+  self._doneValue:SetText(completeCount)
+  local data = self._questModule:GetQuestByQuestType(QuestType.QT_Homeland_Stage_Num)
   self:_SetRewardItem(data, completeCount, #self._quests)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskOther._SetRewardItem = function(self, data, completeCount, totalCount)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandTaskOther:_SetRewardItem(data, completeCount, totalCount)
   local count = #data
   if count <= 0 then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._progressValueRect).localScale = Vector3(completeCount / totalCount, 1, 1)
-  ;
-  (self._rewards):SpawnObjects("UIHomelandTaskReward", count)
-  local items = (self._rewards):GetAllSpawnList()
+  self._progressValueRect.localScale = Vector3(completeCount / totalCount, 1, 1)
+  self._rewards:SpawnObjects("UIHomelandTaskReward", count)
+  local items = self._rewards:GetAllSpawnList()
   for i = 1, count do
-    (items[i]):SetData(data[i], totalCount, function(id)
-    -- function num : 0_5_0 , upvalues : self
-    self:_GetTaskReward(id)
-  end
-)
+    items[i]:SetData(data[i], totalCount, function(id)
+      self:_GetTaskReward(id)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskOther._GetTaskReward = function(self, id)
-  -- function num : 0_6
+function UIHomelandTaskOther:_GetTaskReward(id)
   self:Lock("UIHomelandTaskGetReward")
   self:StartTask(self._GetQuestAward, self, id)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.uiOwner).gotReward = true
+  self.uiOwner.gotReward = true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskOther._GetQuestAward = function(self, TT, id)
-  -- function num : 0_7
-  local res, msg = (self._questModule):TakeQuestReward(TT, id)
+function UIHomelandTaskOther:_GetQuestAward(TT, id)
+  local res, msg = self._questModule:TakeQuestReward(TT, id)
   if res:GetSucc() then
     self:ShowDialog("UIHomeShowAwards", msg.rewards)
-    ;
-    (self.uiOwner):RefreshAllTaskData()
-    ;
-    (self.uiOwner):RefreshUIInfo(self._taskType)
+    self.uiOwner:RefreshAllTaskData()
+    self.uiOwner:RefreshUIInfo(self._taskType)
   end
   self:UnLock("UIHomelandTaskGetReward")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskOther.AllGetBtnOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIHomelandTaskOther:AllGetBtnOnClick()
   self:Lock("UIHomelandTaskGetReward")
   self:StartTask(self._CheckGetAllReward, self)
-  ;
-  (self._topArea):SetActive(false)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._anchoredPosition).y = 405
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
+  self._topArea:SetActive(false)
+  self._anchoredPosition.y = 405
   if self._taskType == HomelandTaskType.Phase then
-    (self._scrollViewSize).y = 647.3
+    self._scrollViewSize.y = 647.3
   else
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._scrollViewSize).y = 827.9
+    self._scrollViewSize.y = 827.9
   end
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scrollViewRect).sizeDelta = self._scrollViewSize
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scrollViewRect).anchoredPosition = self._anchoredPosition
+  self._scrollViewRect.sizeDelta = self._scrollViewSize
+  self._scrollViewRect.anchoredPosition = self._anchoredPosition
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskOther._CheckGetAllReward = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
-  local res, msg = (self._questModule):TakeOneKeyReward(TT, self._taskType)
+function UIHomelandTaskOther:_CheckGetAllReward(TT)
+  local res, msg = self._questModule:TakeOneKeyReward(TT, self._taskType)
   if res:GetSucc() then
     local rewards = msg.rewards
     self:ShowDialog("UIHomeShowAwards", rewards)
-    ;
-    (self.uiOwner):RefreshAllTaskData()
-    ;
-    (self.uiOwner):RefreshUIInfo(self._taskType)
-    ;
-    (table.clear)(self._canGetTb)
+    self.uiOwner:RefreshAllTaskData()
+    self.uiOwner:RefreshUIInfo(self._taskType)
+    table.clear(self._canGetTb)
     self:UnLock("UIHomelandTaskGetReward")
   end
 end
-
-

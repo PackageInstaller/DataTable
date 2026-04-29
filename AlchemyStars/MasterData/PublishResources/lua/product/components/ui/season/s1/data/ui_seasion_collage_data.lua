@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s1/data/ui_seasion_collage_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonCollageData", Object)
 UISeasonCollageData = UISeasonCollageData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonCollageData.Constructor = function(self, seasonID)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonCollageData:Constructor(seasonID)
   self._seasonID = seasonID
   self._collections = {}
   self._cgs = {}
   self._musics = {}
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
-  self._bookModule = (GameGlobal.GetModule)(BookModule)
-  local prefix = ((GameGlobal.GetModule)(RoleModule)):GetPstId() .. "_" .. self._seasonID .. "_"
+  self._itemModule = GameGlobal.GetModule(ItemModule)
+  self._roleModule = GameGlobal.GetModule(RoleModule)
+  self._bookModule = GameGlobal.GetModule(BookModule)
+  local prefix = GameGlobal.GetModule(RoleModule):GetPstId() .. "_" .. self._seasonID .. "_"
   self._collectionKey = prefix .. "_Collection_"
   self._cgKey = prefix .. "_CG_"
   self._musicKey = prefix .. "_Music_"
@@ -25,148 +18,112 @@ UISeasonCollageData.Constructor = function(self, seasonID)
   self:_InitMusic()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData._InitCollections = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_item_season_collection)({SeasonID = self._seasonID})
+function UISeasonCollageData:_InitCollections()
+  local cfgs = Cfg.cfg_item_season_collection({
+    SeasonID = self._seasonID
+  })
   if not cfgs or #cfgs == 0 then
-    (Log.error)("cfg_item_season_collection中不包含赛季:", self._seasonID)
-    return 
+    Log.error("cfg_item_season_collection中不包含赛季:", self._seasonID)
+    return
   end
-  for i,cfg in ipairs(cfgs) do
+  for i, cfg in ipairs(cfgs) do
     local id = cfg.ID
     local c = UISeasonCollageData_Collection:New()
     c._Index = i
     c._ID = id
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._collections)[i] = c
+    self._collections[i] = c
   end
   self:FlushCollection()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData._InitCGs = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_cg_book)({Type = BookCGType.Season, SeasonID = self._seasonID})
+function UISeasonCollageData:_InitCGs()
+  local cfgs = Cfg.cfg_cg_book({
+    Type = BookCGType.Season,
+    SeasonID = self._seasonID
+  })
   if not cfgs or #cfgs == 0 then
-    (Log.error)("cfg_cg_book中不包含赛季数据:", self._seasonID)
-    return 
+    Log.error("cfg_cg_book中不包含赛季数据:", self._seasonID)
+    return
   end
-  for i,cfg in ipairs(cfgs) do
+  for i, cfg in ipairs(cfgs) do
     local id = cfg.ID
     local cg = UISeasonCollageData_CG:New(id)
     cg._Index = i
     cg._ID = id
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._cgs)[i] = cg
+    self._cgs[i] = cg
   end
   self:FlushCG()
-  ;
-  (table.sort)(self._cgs, function(a, b)
-    -- function num : 0_2_0
-    do return a._ID < b._ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  for i,c in ipairs(self._cgs) do
+  table.sort(self._cgs, function(a, b)
+    return a._ID < b._ID
+  end)
+  for i, c in ipairs(self._cgs) do
     c._Index = i
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData._InitMusic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_role_music)({Tag = 5, SeasonID = self._seasonID})
+function UISeasonCollageData:_InitMusic()
+  local cfgs = Cfg.cfg_role_music({
+    Tag = 5,
+    SeasonID = self._seasonID
+  })
   if not cfgs or #cfgs == 0 then
-    (Log.error)("cfg_role_music中不包含赛季数据:", self._seasonID)
-    return 
+    Log.error("cfg_role_music中不包含赛季数据:", self._seasonID)
+    return
   end
-  for i,cfg in ipairs(cfgs) do
+  for i, cfg in ipairs(cfgs) do
     local id = cfg.ID
     local music = UISeasonCollageData_Music:New(id)
     music._Index = i
     music._ID = id
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._musics)[i] = music
+    self._musics[i] = music
   end
   self:FlushMusic()
-  ;
-  (table.sort)(self._musics, function(a, b)
-    -- function num : 0_3_0
-    do return a._ID < b._ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  for i,c in ipairs(self._musics) do
+  table.sort(self._musics, function(a, b)
+    return a._ID < b._ID
+  end)
+  for i, c in ipairs(self._musics) do
     c._Index = i
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.GetSeasonID = function(self)
-  -- function num : 0_4
+function UISeasonCollageData:GetSeasonID()
   return self._seasonID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.CollageHasNew = function(self)
-  -- function num : 0_5
+function UISeasonCollageData:CollageHasNew()
   if self:CollectionHasNew() or self:CGHasNew() or self:MusicHasNew() then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.GetTotalGotCount = function(self)
-  -- function num : 0_6
+function UISeasonCollageData:GetTotalGotCount()
   local count1, total1 = self:GetCollectionProgress()
   local count2, total2 = self:GetCgProgress()
   local count3, total3 = self:GetMusicProgress()
   return count1 + count2 + count3
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.FlushAllCollages = function(self)
-  -- function num : 0_7
+function UISeasonCollageData:FlushAllCollages()
   self:FlushCollection()
   self:FlushCG()
   self:FlushMusic()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.CollectionCancelNew = function(self, data)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonCollageData:CollectionCancelNew(data)
   local id = data._ID
   if not data._IsNew then
-    (Log.error)("收藏品没有new标记,无法取消:", id)
-    return 
+    Log.error("收藏品没有new标记,无法取消:", id)
+    return
   end
   if data then
-    (LocalDB.SetInt)(self._collectionKey .. id, 1)
+    LocalDB.SetInt(self._collectionKey .. id, 1)
     data._IsNew = nil
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.CollectionHasNew = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  for i,c in ipairs(self._collections) do
+function UISeasonCollageData:CollectionHasNew()
+  for i, c in ipairs(self._collections) do
     if c._IsNew then
       return true
     end
@@ -174,162 +131,119 @@ UISeasonCollageData.CollectionHasNew = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.GetCollectionCount = function(self)
-  -- function num : 0_10
+function UISeasonCollageData:GetCollectionCount()
   return #self._collections
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.GetCollectionByIndex = function(self, index)
-  -- function num : 0_11
-  return (self._collections)[index]
+function UISeasonCollageData:GetCollectionByIndex(index)
+  return self._collections[index]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.FlushCollection = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local finalStoryQuestId = nil
-  local seasonClientCfg = (Cfg.cfg_season_campaign_client)[self._seasonID]
+function UISeasonCollageData:FlushCollection()
+  local finalStoryQuestId
+  local seasonClientCfg = Cfg.cfg_season_campaign_client[self._seasonID]
   if seasonClientCfg then
     finalStoryQuestId = seasonClientCfg.FinalStoryQuestID
   end
   local needSetUsedList = {}
-  for i,c in ipairs(self._collections) do
+  for i, c in ipairs(self._collections) do
     local id = c._ID
     c._IsGot = false
-    local items = (self._itemModule):GetItemByTempId(id)
-    if items and (table.count)(items) > 0 then
+    local items = self._itemModule:GetItemByTempId(id)
+    if items and table.count(items) > 0 then
       c._IsGot = true
     end
     c._IsComposeUsed = false
     c._IsFinalPlotItem = false
     c._IsNew = false
     if c._IsGot then
-      local item = nil
-      for key,value in pairs(items) do
+      local item
+      for key, value in pairs(items) do
         item = value
-        do break end
+        break
       end
-      do
-        c._GetTime = item:GetGainTime()
-        c._IsNew = (LocalDB.GetInt)(self._collectionKey .. id, 0) == 0
-        local cfg = (Cfg.cfg_item_season_collection)[id]
-        local composeBy = cfg.ComposeBy
-        if composeBy and #composeBy > 0 then
-          (table.appendArray)(needSetUsedList, composeBy)
-        end
-        do
-          do
-            local composeQuestID = cfg.ComposeQuestID
-            if composeQuestID and finalStoryQuestId and finalStoryQuestId == composeQuestID then
-              c._IsFinalPlotItem = true
-            end
-            -- DECOMPILER ERROR at PC81: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            (self._collections)[i] = c
-            -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+      c._GetTime = item:GetGainTime()
+      c._IsNew = LocalDB.GetInt(self._collectionKey .. id, 0) == 0
+      local cfg = Cfg.cfg_item_season_collection[id]
+      local composeBy = cfg.ComposeBy
+      if composeBy and 0 < #composeBy then
+        table.appendArray(needSetUsedList, composeBy)
+      end
+      local composeQuestID = cfg.ComposeQuestID
+      if composeQuestID and finalStoryQuestId and finalStoryQuestId == composeQuestID then
+        c._IsFinalPlotItem = true
       end
     end
+    self._collections[i] = c
   end
-  for comIndex,useID in ipairs(needSetUsedList) do
-    for index,data in ipairs(self._collections) do
+  for comIndex, useID in ipairs(needSetUsedList) do
+    for index, data in ipairs(self._collections) do
       if data._ID == useID then
         data._IsComposeUsed = true
         break
       end
     end
   end
-  ;
-  (table.sort)(self._collections, function(a, b)
-    -- function num : 0_12_0
+  table.sort(self._collections, function(a, b)
     local aWeight = 0
     local bWeight = 0
     if a:IsGot() then
       if a:IsFinalPlotItem() then
         aWeight = 4
+      elseif a:IsComposeUsed() then
+        aWeight = 2
       else
-        if a:IsComposeUsed() then
-          aWeight = 2
-        else
-          aWeight = 3
-        end
+        aWeight = 3
       end
     end
     if b:IsGot() then
       if b:IsFinalPlotItem() then
         bWeight = 4
+      elseif b:IsComposeUsed() then
+        bWeight = 2
       else
-        if b:IsComposeUsed() then
-          bWeight = 2
-        else
-          bWeight = 3
-        end
+        bWeight = 3
       end
     end
-    if a:ID() >= b:ID() then
-      do return aWeight ~= bWeight end
-      do return bWeight < aWeight end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+    if aWeight == bWeight then
+      return a:ID() < b:ID()
+    else
+      return aWeight > bWeight
     end
-  end
-)
-  for i,c in ipairs(self._collections) do
+  end)
+  for i, c in ipairs(self._collections) do
     c._Index = i
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.RefreshCgShareState = function(self, cpt)
-  -- function num : 0_13 , upvalues : _ENV
-  for i,cg in ipairs(self._cgs) do
+function UISeasonCollageData:RefreshCgShareState(cpt)
+  for i, cg in ipairs(self._cgs) do
     cg._CanShare = false
     if cg._Valid and cg._IsUnlock and cpt then
-      local cfg = (Cfg.cfg_cg_book)[cg._ID]
+      local cfg = Cfg.cfg_cg_book[cg._ID]
       if cfg.SeasonShareStoryID and not cpt:IsStoryReceived(cfg.SeasonShareStoryID) then
         cg._CanShare = true
-        local storyCfg = (Cfg.cfg_campaign_story)[cfg.SeasonShareStoryID]
-        cg._ShareAwardCount = ((storyCfg.RewardList)[1])[2]
+        local storyCfg = Cfg.cfg_campaign_story[cfg.SeasonShareStoryID]
+        cg._ShareAwardCount = storyCfg.RewardList[1][2]
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.CGCancelNew = function(self, data)
-  -- function num : 0_14 , upvalues : _ENV
+function UISeasonCollageData:CGCancelNew(data)
   local id = data._ID
   if not data._IsNew then
-    (Log.error)("cg没有new标记,无法取消:", id)
-    return 
+    Log.error("cg没有new标记,无法取消:", id)
+    return
   end
   if data then
-    (LocalDB.SetInt)(self._cgKey .. id, 1)
+    LocalDB.SetInt(self._cgKey .. id, 1)
     data._IsNew = nil
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.CGHasNew = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  for i,cg in ipairs(self._cgs) do
+function UISeasonCollageData:CGHasNew()
+  for i, cg in ipairs(self._cgs) do
     if cg._IsNew then
       return true
     end
@@ -337,77 +251,47 @@ UISeasonCollageData.CGHasNew = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.GetCGCount = function(self)
-  -- function num : 0_16
+function UISeasonCollageData:GetCGCount()
   return #self._cgs
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.GetCGByIndex = function(self, index)
-  -- function num : 0_17
-  return (self._cgs)[index]
+function UISeasonCollageData:GetCGByIndex(index)
+  return self._cgs[index]
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.FlushCG = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UISeasonCollageData:FlushCG()
   local now = GetSvrTimeNow()
-  for i,cg in ipairs(self._cgs) do
+  for i, cg in ipairs(self._cgs) do
     local id = cg._ID
-    local cfg = (Cfg.cfg_cg_book)[id]
+    local cfg = Cfg.cfg_cg_book[id]
     cg._Valid = true
-    if cfg.UnlockTime >= now then
-      cg._Valid = not cfg.UnlockTime
-      do
-        if cg._Valid then
-          local k, isUnlock = (self._bookModule):GetSeasonStory(cfg)
-          cg._IsUnlock = isUnlock
-        end
-        if (LocalDB.GetInt)(self._cgKey .. id, 0) ~= 0 then
-          do
-            cg._IsNew = not cg._IsUnlock
-            -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
+    if cfg.UnlockTime then
+      cg._Valid = now > cfg.UnlockTime
+    end
+    if cg._Valid then
+      local k, isUnlock = self._bookModule:GetSeasonStory(cfg)
+      cg._IsUnlock = isUnlock
+    end
+    if cg._IsUnlock then
+      cg._IsNew = LocalDB.GetInt(self._cgKey .. id, 0) == 0
     end
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.MusicCancelNew = function(self, data)
-  -- function num : 0_19 , upvalues : _ENV
+function UISeasonCollageData:MusicCancelNew(data)
   local id = data._ID
   if not data._IsNew then
-    (Log.error)("cg没有new标记,无法取消:", id)
-    return 
+    Log.error("cg没有new标记,无法取消:", id)
+    return
   end
   if data then
-    (LocalDB.SetInt)(self._musicKey .. id, 1)
+    LocalDB.SetInt(self._musicKey .. id, 1)
     data._IsNew = nil
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.MusicHasNew = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  for i,music in ipairs(self._musics) do
+function UISeasonCollageData:MusicHasNew()
+  for i, music in ipairs(self._musics) do
     if music._IsNew then
       return true
     end
@@ -415,24 +299,15 @@ UISeasonCollageData.MusicHasNew = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.GetMusicCount = function(self)
-  -- function num : 0_21
+function UISeasonCollageData:GetMusicCount()
   return #self._musics
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.GetMusicByIndex = function(self, index)
-  -- function num : 0_22
-  return (self._musics)[index]
+function UISeasonCollageData:GetMusicByIndex(index)
+  return self._musics[index]
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.GetCollectionProgress = function(self)
-  -- function num : 0_23
+function UISeasonCollageData:GetCollectionProgress()
   local obtainedCount = 0
   local totalCount = self:GetCollectionCount()
   for i = 1, totalCount do
@@ -444,10 +319,7 @@ UISeasonCollageData.GetCollectionProgress = function(self)
   return obtainedCount, totalCount
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.GetCgProgress = function(self)
-  -- function num : 0_24
+function UISeasonCollageData:GetCgProgress()
   local obtainedCount = 0
   local totalCount = self:GetCGCount()
   for i = 1, totalCount do
@@ -459,10 +331,7 @@ UISeasonCollageData.GetCgProgress = function(self)
   return obtainedCount, totalCount
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.GetMusicProgress = function(self)
-  -- function num : 0_25
+function UISeasonCollageData:GetMusicProgress()
   local obtainedCount = 0
   local totalCount = self:GetMusicCount()
   for i = 1, totalCount do
@@ -474,39 +343,23 @@ UISeasonCollageData.GetMusicProgress = function(self)
   return obtainedCount, totalCount
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData.FlushMusic = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UISeasonCollageData:FlushMusic()
   local now = GetSvrTimeNow()
-  for i,music in ipairs(self._musics) do
+  for i, music in ipairs(self._musics) do
     local id = music._ID
-    local cfg = (Cfg.cfg_role_music)[id]
+    local cfg = Cfg.cfg_role_music[id]
     music._Valid = true
-    if music.UnlockTime >= now then
-      music._Valid = not cfg.UnlockTime
-      if music._Valid then
-        music._IsUnlock = true
-        if cfg.LockCondition then
-          music._IsUnlock = not (self._roleModule):UI_CheckMusicLock(cfg.LockCondition)
-        end
-      end
-      if (LocalDB.GetInt)(self._musicKey .. id, 0) ~= 0 then
-        do
-          music._IsNew = not music._IsUnlock
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+    if cfg.UnlockTime then
+      music._Valid = now > music.UnlockTime
+    end
+    if music._Valid then
+      music._IsUnlock = true
+      if cfg.LockCondition then
+        music._IsUnlock = not self._roleModule:UI_CheckMusicLock(cfg.LockCondition)
       end
     end
+    if music._IsUnlock then
+      music._IsNew = LocalDB.GetInt(self._musicKey .. id, 0) == 0
+    end
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
-
-

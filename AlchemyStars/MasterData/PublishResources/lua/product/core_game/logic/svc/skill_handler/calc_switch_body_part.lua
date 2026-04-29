@@ -1,26 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_switch_body_part.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SwitchBodyPart", Object)
 SkillEffectCalc_SwitchBodyPart = SkillEffectCalc_SwitchBodyPart
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SwitchBodyPart.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SwitchBodyPart:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SwitchBodyPart.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_SwitchBodyPart:DoSkillEffectCalculator(skillEffectCalcParam)
   local effParam = skillEffectCalcParam.skillEffectParam
   local showID = effParam:GetShowID()
   local hideID = effParam:GetHideID()
   local result = SkillEffectResultSwitchBodyPart:New(showID, hideID)
   return result
 end
-
-

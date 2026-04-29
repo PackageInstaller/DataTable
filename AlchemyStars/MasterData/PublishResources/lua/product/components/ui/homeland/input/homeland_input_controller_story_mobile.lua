@@ -1,48 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/input/homeland_input_controller_story_mobile.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homeland_input_controller_char_base")
 require("homeland_input_controller_char_mobile")
 _class("HomelandInputControllerStoryMobile", HomelandInputControllerCharMobile)
 HomelandInputControllerStoryMobile = HomelandInputControllerStoryMobile
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandInputControllerStoryMobile.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomelandInputControllerStoryMobile.super).Constructor)(self)
+function HomelandInputControllerStoryMobile:Constructor()
+  HomelandInputControllerStoryMobile.super.Constructor(self)
   self._moveActive = true
   self._rotActive = true
   self._scaleActive = true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerStoryMobile.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandInputControllerStoryMobile:OnUpdate(deltaTimeMS)
   if self._moveActive then
-    if (self._mainCharacterController):State() == HomelandActorStateType.Dash then
-      return 
+    if self._mainCharacterController:State() == HomelandActorStateType.Dash then
+      return
     end
     if self._moveInput or self._rotateInput then
-      if (self._inputMoveVec).x ~= 0 or (self._inputMoveVec).y ~= 0 then
-        self._movementVec = (self._followCameraController):CalcMovement(Vector3((self._inputMoveVec).x, 0, (self._inputMoveVec).y))
+      if self._inputMoveVec.x ~= 0 or self._inputMoveVec.y ~= 0 then
+        self._movementVec = self._followCameraController:CalcMovement(Vector3(self._inputMoveVec.x, 0, self._inputMoveVec.y))
       else
         self._movementVec = nil
       end
       self._moveInput = false
     end
     if self._movementVec then
-      (self._mainCharacterController):Move((self._movementVec):SetNormalize(), self._moveType, deltaTimeMS)
+      self._mainCharacterController:Move(self._movementVec:SetNormalize(), self._moveType, deltaTimeMS)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerStoryMobile.HandleMove = function(self, moveVec, moveState)
-  -- function num : 0_2
+function HomelandInputControllerStoryMobile:HandleMove(moveVec, moveState)
   if self._moveActive then
     self._inputMoveVec = moveVec
     self._moveType = moveState
@@ -50,53 +37,33 @@ HomelandInputControllerStoryMobile.HandleMove = function(self, moveVec, moveStat
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerStoryMobile.HandleRotate = function(self, rotateVec)
-  -- function num : 0_3
+function HomelandInputControllerStoryMobile:HandleRotate(rotateVec)
   if self._rotActive then
-    (self._followCameraController):HandleRotate(rotateVec.x * self._rotateFactorX, rotateVec.y * self._rotateFactorY)
+    self._followCameraController:HandleRotate(rotateVec.x * self._rotateFactorX, rotateVec.y * self._rotateFactorY)
     self._rotateInput = true
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerStoryMobile.HandleScale = function(self, scale)
-  -- function num : 0_4
+function HomelandInputControllerStoryMobile:HandleScale(scale)
   if self._scaleActive then
-    (self._followCameraController):HandleScale(scale)
+    self._followCameraController:HandleScale(scale)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerStoryMobile.ActiveMove = function(self, active)
-  -- function num : 0_5
+function HomelandInputControllerStoryMobile:ActiveMove(active)
   self._moveActive = active
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerStoryMobile.ActiveRot = function(self, active)
-  -- function num : 0_6
+function HomelandInputControllerStoryMobile:ActiveRot(active)
   self._rotActive = active
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerStoryMobile.ActiveScale = function(self, active)
-  -- function num : 0_7
+function HomelandInputControllerStoryMobile:ActiveScale(active)
   self._scaleActive = active
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerStoryMobile.HandleRotateInInteract = function(self, rotateVec)
-  -- function num : 0_8
+function HomelandInputControllerStoryMobile:HandleRotateInInteract(rotateVec)
   if self._rotActive then
-    (self._followCameraController):HandleRotate(rotateVec.x, rotateVec.y)
+    self._followCameraController:HandleRotate(rotateVec.x, rotateVec.y)
   end
 end
-
-

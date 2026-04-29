@@ -1,34 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/ui_eliminate_support_camp_level_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateSupportCampLevelInfo", UICustomWidget)
 UIEliminateSupportCampLevelInfo = UIEliminateSupportCampLevelInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateSupportCampLevelInfo.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIEliminateSupportCampLevelInfo:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateSupportCampLevelInfo._GetComponents = function(self)
-  -- function num : 0_1
+function UIEliminateSupportCampLevelInfo:_GetComponents()
   self._infoTxt = self:GetUIComponent("UILocalizationText", "infoTxt")
   self._lvTxt = self:GetUIComponent("UILocalizationText", "LvTxt")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateSupportCampLevelInfo.SetData = function(self, cfg)
-  -- function num : 0_2 , upvalues : _ENV
+function UIEliminateSupportCampLevelInfo:SetData(cfg)
   self._cfg = cfg
-  ;
-  (self._infoTxt):SetText((StringTable.Get)((self._cfg).Content))
-  ;
-  (self._lvTxt):SetText("LV." .. (self._cfg).Level)
+  self._infoTxt:SetText(StringTable.Get(self._cfg.Content))
+  self._lvTxt:SetText("LV." .. self._cfg.Level)
 end
-
-

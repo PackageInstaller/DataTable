@@ -1,18 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_tetris_set_index.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewTetrisSetIndex", BuffViewBase)
 BuffViewTetrisSetIndex = BuffViewTetrisSetIndex
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewTetrisSetIndex.PlayView = function(self, TT, notify, trace)
-  -- function num : 0_0 , upvalues : _ENV
-  local featureSvcR = (self._world):GetService("FeatureRender")
-  ;
-  (Log.fatal)("BuffViewTetrisSetIndex index:", (self._buffResult):GetNewTetrisIndex(), "NewTetrisType:", (self._buffResult):GetNewTetrisType())
-  featureSvcR:NotifyTetrisRandom(TT, (self._buffResult):GetNewTetrisIndex(), (self._buffResult):GetNewTetrisType())
+function BuffViewTetrisSetIndex:PlayView(TT, notify, trace)
+  local featureSvcR = self._world:GetService("FeatureRender")
+  Log.fatal("BuffViewTetrisSetIndex index:", self._buffResult:GetNewTetrisIndex(), "NewTetrisType:", self._buffResult:GetNewTetrisType())
+  featureSvcR:NotifyTetrisRandom(TT, self._buffResult:GetNewTetrisIndex(), self._buffResult:GetNewTetrisType())
 end
-
-

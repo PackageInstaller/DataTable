@@ -1,41 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_diff_chapters_weight.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiscoveryDiffChaptersWeight", UICustomWidget)
 UIDiscoveryDiffChaptersWeight = UIDiscoveryDiffChaptersWeight
-local LockType = {NoLock = 1, TimeLock = 2, ForceLock = 3}
+local LockType = {
+  NoLock = 1,
+  TimeLock = 2,
+  ForceLock = 3
+}
 _enum("LockType", LockType)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIDiscoveryDiffChaptersWeight.Constructor = function(self)
-  -- function num : 0_0
+function UIDiscoveryDiffChaptersWeight:Constructor()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.OnShow = function(self)
-  -- function num : 0_1 , upvalues : LockType
+function UIDiscoveryDiffChaptersWeight:OnShow()
   self._isDiff = false
   self._lockType = LockType.NoLock
   self:GetComponent()
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDiscoveryDiffChaptersWeight:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.SetChapterId = function(self, chapterId, isDiff)
-  -- function num : 0_3
+function UIDiscoveryDiffChaptersWeight:SetChapterId(chapterId, isDiff)
   self._isOpen = self:CheckOpenDiff()
   self._chapterId = chapterId
   self._isDiff = isDiff
@@ -43,18 +31,12 @@ UIDiscoveryDiffChaptersWeight.SetChapterId = function(self, chapterId, isDiff)
   self:Init()
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.SetCallBack = function(self, normalClickCallBack, diffClickCallBack)
-  -- function num : 0_4
+function UIDiscoveryDiffChaptersWeight:SetCallBack(normalClickCallBack, diffClickCallBack)
   self._normalClickCallBack = normalClickCallBack
   self._diffClickCallBack = diffClickCallBack
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.GetComponent = function(self)
-  -- function num : 0_5
+function UIDiscoveryDiffChaptersWeight:GetComponent()
   self._selet = self:GetGameObject("selet")
   self._diffBtn = self:GetGameObject("diffEnter")
   self._normBtn = self:GetGameObject("normEnter")
@@ -62,10 +44,7 @@ UIDiscoveryDiffChaptersWeight.GetComponent = function(self)
   self._timeTip = self:GetUIComponent("UILocalizationText", "timeTip")
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.Init = function(self)
-  -- function num : 0_6 , upvalues : LockType, _ENV
+function UIDiscoveryDiffChaptersWeight:Init()
   self._isOpen = self:CheckOpenDiff()
   local unlock = true
   if self._lockTyp == LockType.TimeLock then
@@ -73,93 +52,67 @@ UIDiscoveryDiffChaptersWeight.Init = function(self)
   else
     unlock = true
   end
-  ;
-  (self._lockImage):SetActive(unlock and self:IsForceLock())
-  ;
-  (self._diffBtn):SetActive(self._isDiff)
-  ;
-  (self._normBtn):SetActive(not self._isDiff)
-  ;
-  (self._timeTip):SetText("")
+  self._lockImage:SetActive(not unlock or self:IsForceLock())
+  self._diffBtn:SetActive(self._isDiff)
+  self._normBtn:SetActive(not self._isDiff)
+  self._timeTip:SetText("")
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self:LockTimer()
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.Refresh = function(self)
-  -- function num : 0_7
+function UIDiscoveryDiffChaptersWeight:Refresh()
   self:OnSelect()
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.OnSelect = function(self)
-  -- function num : 0_8 , upvalues : LockType
-  (self._diffBtn):SetActive(self._isDiff)
-  ;
-  (self._normBtn):SetActive(not self._isDiff)
+function UIDiscoveryDiffChaptersWeight:OnSelect()
+  self._diffBtn:SetActive(self._isDiff)
+  self._normBtn:SetActive(not self._isDiff)
   local unlock = true
   if self._lockTyp == LockType.TimeLock then
     unlock = self:CheckDiffTimeUnLock()
   else
     unlock = true
   end
-  ;
-  (self._lockImage):SetActive(unlock and self:IsForceLock())
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._lockImage:SetActive(not unlock or self:IsForceLock())
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.CheckOpenDiff = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local uiDiffMissionModule = (GameGlobal.GetUIModule)(DifficultyMissionModule)
+function UIDiscoveryDiffChaptersWeight:CheckOpenDiff()
+  local uiDiffMissionModule = GameGlobal.GetUIModule(DifficultyMissionModule)
   local chapter = uiDiffMissionModule:GetDiffChapterFromMission(self._chapterId)
   if not chapter then
-    (Log.debug)("###[UIDiscovery] no diff ! id --> ", self._chapterId)
+    Log.debug("###[UIDiscovery] no diff ! id --> ", self._chapterId)
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.NormEnterOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV, LockType
+function UIDiscoveryDiffChaptersWeight:NormEnterOnClick()
   if self:IsForceLock() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_discovery_blackbox_force_locktip"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_discovery_blackbox_force_locktip"))
+    return
   end
   if self._lockTyp == LockType.TimeLock and not self:CheckDiffTimeUnLock() then
     local cfg = self:GetDiffDescCfg(self._chapterId)
-    local unlockTime = (UITimerHelper.GetTimeFormatByString)(cfg.TimeUnLock)
-    local lastTime = unlockTime - (UITimerHelper.GetCurTime)()
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_discovery_blackbox_time_locktip", (UITimerHelper.GetTimeString)(lastTime)))
-    return 
+    local unlockTime = UITimerHelper.GetTimeFormatByString(cfg.TimeUnLock)
+    local lastTime = unlockTime - UITimerHelper.GetCurTime()
+    ToastManager.ShowToast(StringTable.Get("str_discovery_blackbox_time_locktip", UITimerHelper.GetTimeString(lastTime)))
+    return
   end
-  do
-    local complete, lock = nil, nil
-    if self._normalClickCallBack then
-      complete = self:_normalClickCallBack()
-    end
-    if not complete or lock == DiffMissionChapterStatus.Lock then
-      return 
-    end
-    self._isDiff = true
-    self:Refresh()
+  local complete, lock
+  if self._normalClickCallBack then
+    complete, lock = self:_normalClickCallBack()
   end
+  if not complete or lock == DiffMissionChapterStatus.Lock then
+    return
+  end
+  self._isDiff = true
+  self:Refresh()
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.DiffEnterOnClick = function(self)
-  -- function num : 0_11
+function UIDiscoveryDiffChaptersWeight:DiffEnterOnClick()
   self._isDiff = false
   self:Refresh()
   if self._diffClickCallBack then
@@ -167,10 +120,7 @@ UIDiscoveryDiffChaptersWeight.DiffEnterOnClick = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.SelectOnClick = function(self)
-  -- function num : 0_12
+function UIDiscoveryDiffChaptersWeight:SelectOnClick()
   if self._isDiff then
     self:DiffEnterOnClick()
   else
@@ -178,81 +128,62 @@ UIDiscoveryDiffChaptersWeight.SelectOnClick = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.LockTimer = function(self)
-  -- function num : 0_13 , upvalues : LockType, _ENV
+function UIDiscoveryDiffChaptersWeight:LockTimer()
   if self._lockTyp ~= LockType.TimeLock then
-    return 
+    return
   end
   local cfg = self:GetDiffDescCfg(self._chapterId)
-  local unlockTime = (UITimerHelper.GetTimeFormatByString)(cfg.TimeUnLock)
-  local timerCallBack = function()
-    -- function num : 0_13_0 , upvalues : unlockTime, _ENV, self
-    local lastTime = unlockTime - (UITimerHelper.GetCurTime)()
-    ;
-    (self._timeTip):SetText((UITimerHelper.GetTimeString)(lastTime))
+  local unlockTime = UITimerHelper.GetTimeFormatByString(cfg.TimeUnLock)
+  
+  local function timerCallBack()
+    local lastTime = unlockTime - UITimerHelper.GetCurTime()
+    self._timeTip:SetText(UITimerHelper.GetTimeString(lastTime))
     if self:CheckDiffTimeUnLock() then
-      (self._lockImage):SetActive(not self:CheckDiffTimeUnLock())
+      self._lockImage:SetActive(not self:CheckDiffTimeUnLock())
       if self._timerHandler then
-        (self._timeTip):SetText("")
-        ;
-        ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+        self._timeTip:SetText("")
+        GameGlobal.Timer():CancelEvent(self._timerHandler)
         self._timerHandler = nil
       end
     end
   end
-
+  
   if not self:CheckDiffTimeUnLock() then
-    local unlockTime = (UITimerHelper.GetTimeFormatByString)(cfg.TimeUnLock)
-    local lastTime = unlockTime - (UITimerHelper.GetCurTime)()
-    ;
-    (self._timeTip):SetText((UITimerHelper.GetTimeString)(lastTime))
-    self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, timerCallBack)
+    local unlockTime = UITimerHelper.GetTimeFormatByString(cfg.TimeUnLock)
+    local lastTime = unlockTime - UITimerHelper.GetCurTime()
+    self._timeTip:SetText(UITimerHelper.GetTimeString(lastTime))
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, timerCallBack)
   end
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.GetDiffDescCfg = function(self, checkChapterId)
-  -- function num : 0_14 , upvalues : _ENV
-  local cfg = (Cfg.cfg_difficulty_mission_chapter_desc)({PreMainChapterId = checkChapterId})
+function UIDiscoveryDiffChaptersWeight:GetDiffDescCfg(checkChapterId)
+  local cfg = Cfg.cfg_difficulty_mission_chapter_desc({PreMainChapterId = checkChapterId})
   if cfg then
     return cfg[1]
   end
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.CheckDiffTimeUnLock = function(self)
-  -- function num : 0_15 , upvalues : LockType, _ENV
+function UIDiscoveryDiffChaptersWeight:CheckDiffTimeUnLock()
   if self._lockTyp ~= LockType.TimeLock then
-    return 
+    return
   end
   local cfg = self:GetDiffDescCfg(self._chapterId)
   if not cfg then
-    return 
+    return
   end
   if not cfg.TimeUnLock then
-    return 
+    return
   end
-  local unlockTime = (UITimerHelper.GetTimeFormatByString)(cfg.TimeUnLock)
-  local unlock = (UITimerHelper.CheckTimeUnLock)(unlockTime)
+  local unlockTime = UITimerHelper.GetTimeFormatByString(cfg.TimeUnLock)
+  local unlock = UITimerHelper.CheckTimeUnLock(unlockTime)
   return unlock
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.IsForceLock = function(self)
-  -- function num : 0_16 , upvalues : LockType
-  do return self._lockTyp == LockType.ForceLock end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIDiscoveryDiffChaptersWeight:IsForceLock()
+  return self._lockTyp == LockType.ForceLock
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.GetDiffCfgLockType = function(self)
-  -- function num : 0_17 , upvalues : LockType
+function UIDiscoveryDiffChaptersWeight:GetDiffCfgLockType()
   local type = LockType.NoLock
   local cfg = self:GetDiffDescCfg(self._chapterId)
   if cfg and cfg.TimeUnLock then
@@ -264,20 +195,15 @@ UIDiscoveryDiffChaptersWeight.GetDiffCfgLockType = function(self)
   return type
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDiscoveryDiffChaptersWeight.CheckChapterDiffTimeUnlock = function(self, chapter)
-  -- function num : 0_18 , upvalues : _ENV
+function UIDiscoveryDiffChaptersWeight:CheckChapterDiffTimeUnlock(chapter)
   local cfg = self:GetDiffDescCfg(chapter)
   if not cfg then
-    return 
+    return
   end
   if not cfg.TimeUnLock then
-    return 
+    return
   end
-  local unlockTime = (UITimerHelper.GetTimeFormatByString)(cfg.TimeUnLock)
-  local unlock = (UITimerHelper.CheckTimeUnLock)(unlockTime)
+  local unlockTime = UITimerHelper.GetTimeFormatByString(cfg.TimeUnLock)
+  local unlock = UITimerHelper.CheckTimeUnLock(unlockTime)
   return unlock
 end
-
-

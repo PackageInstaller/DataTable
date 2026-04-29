@@ -1,38 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n14/fishing_game/ui_n14_fishing_game_order_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN14FishingGameOrderLine", UICustomWidget)
 UIN14FishingGameOrderLine = UIN14FishingGameOrderLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN14FishingGameOrderLine.OnShow = function(self, uiParams)
-  -- function num : 0_0
-  self._lineImg = {[true] = "n14_fish_pb_dingdan", [false] = "n14_fish_pb_bg_dingdan"}
+function UIN14FishingGameOrderLine:OnShow(uiParams)
+  self._lineImg = {
+    [true] = "n14_fish_pb_dingdan",
+    [false] = "n14_fish_pb_bg_dingdan"
+  }
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameOrderLine._GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN14FishingGameOrderLine:_GetComponents()
   self._line = self:GetUIComponent("Image", "Line")
   self._atlas = self:GetAsset("UIN14FishingGame.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14FishingGameOrderLine.SetData = function(self, itemIndex, isFinish, isEnd)
-  -- function num : 0_2 , upvalues : _ENV
-  (Log.debug)("itemIndex: ", itemIndex, "    isFInish: ", isFinish, "    isEnd: ", isEnd)
-  ;
-  ((self._line).gameObject):SetActive(isEnd == false)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._line).sprite = (self._atlas):GetSprite((self._lineImg)[isFinish])
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIN14FishingGameOrderLine:SetData(itemIndex, isFinish, isEnd)
+  Log.debug("itemIndex: ", itemIndex, "    isFInish: ", isFinish, "    isEnd: ", isEnd)
+  self._line.gameObject:SetActive(isEnd == false)
+  self._line.sprite = self._atlas:GetSprite(self._lineImg[isFinish])
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/input/pop_star_pro_input_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PopStarProInputSystem_Render", UniqueReactiveSystem)
 PopStarProInputSystem_Render = PopStarProInputSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarProInputSystem_Render.IsInterested = function(self, index, previousComponent, component)
-  -- function num : 0_0 , upvalues : _ENV
+function PopStarProInputSystem_Render:IsInterested(index, previousComponent, component)
   if component == nil then
     return false
   end
@@ -18,137 +11,111 @@ PopStarProInputSystem_Render.IsInterested = function(self, index, previousCompon
   return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProInputSystem_Render.Filter = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
+function PopStarProInputSystem_Render:Filter(world)
   if world:MatchType(GetMatchTypeType.NoLinkLine) ~= MatchType.MT_PopStarPro then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProInputSystem_Render.ExecuteWorld = function(self, world)
-  -- function num : 0_2 , upvalues : _ENV
+function PopStarProInputSystem_Render:ExecuteWorld(world)
   self._world = world
   local popStarPickUpCmpt = world:PopStarPickUp()
   local clickRenderPos = popStarPickUpCmpt:GetPopStarClickPos()
   local boardSvc = world:GetService("BoardRender")
   local gridPos = boardSvc:BoardRenderPos2GridPos(clickRenderPos)
   local offset = boardSvc:BoardGridPosOffset(clickRenderPos)
-  local guideService = (self._world):GetService("Guide")
+  local guideService = self._world:GetService("Guide")
   local isGuide, isValid = guideService:IsGuideAndPieceValid(gridPos.x, gridPos.y)
-  if isGuide and isValid then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.FinishGuideStep, GuideType.Piece)
-  else
-    return 
+  if isGuide then
+    if isValid then
+      self._world:EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Piece)
+    else
+      return
+    end
   end
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpResCmpt = renderBoardEntity:PopStarPickUpResult()
   if not pickUpResCmpt then
-    return 
+    return
   end
-  local popStarRSvc = (self._world):GetService("PopStarProRender")
+  local popStarRSvc = self._world:GetService("PopStarProRender")
   if popStarRSvc:IsPosBlockPopStar(gridPos) then
     self:_HandleClickBlockPos(gridPos, offset, pickUpResCmpt)
-    return 
+    return
   else
-    local prvwSvc = (self._world):GetService("PreviewMonsterTrap")
+    local prvwSvc = self._world:GetService("PreviewMonsterTrap")
     prvwSvc:ClearMonsterTrapPreview()
   end
-  do
-    local curPickUpGirdPos = pickUpResCmpt:GetPopStarPickUpPos()
-    if curPickUpGirdPos == Vector2(0, 0) then
-      self:_HandleFirstClick(gridPos, offset, pickUpResCmpt)
+  local curPickUpGirdPos = pickUpResCmpt:GetPopStarPickUpPos()
+  if curPickUpGirdPos == Vector2(0, 0) then
+    self:_HandleFirstClick(gridPos, offset, pickUpResCmpt)
+  else
+    local validPosList = pickUpResCmpt:GetPopStarConnectPieces()
+    if curPickUpGirdPos == gridPos then
+      self:_HandlePop(pickUpResCmpt)
+    elseif table.icontains(validPosList, gridPos) then
+      self:_HandleClickOtherValidPos(gridPos, offset, pickUpResCmpt)
     else
-      local validPosList = pickUpResCmpt:GetPopStarConnectPieces()
-      if curPickUpGirdPos == gridPos then
-        self:_HandlePop(pickUpResCmpt)
-      else
-        if (table.icontains)(validPosList, gridPos) then
-          self:_HandleClickOtherValidPos(gridPos, offset, pickUpResCmpt)
-        else
-          self:_HandleCancel(pickUpResCmpt)
-        end
-      end
+      self:_HandleCancel(pickUpResCmpt)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProInputSystem_Render._HandleClickBlockPos = function(self, gridPos, offset, pickUpResCmpt)
-  -- function num : 0_3 , upvalues : _ENV
+function PopStarProInputSystem_Render:_HandleClickBlockPos(gridPos, offset, pickUpResCmpt)
   local curPickUpGirdPos = pickUpResCmpt:GetPopStarPickUpPos()
   if curPickUpGirdPos ~= Vector2(0, 0) then
     self:_HandleCancel(pickUpResCmpt)
   end
-  local previewSvc = (self._world):GetService("PreviewMonsterTrap")
+  local previewSvc = self._world:GetService("PreviewMonsterTrap")
   previewSvc:CheckPreviewMonsterAction(gridPos, offset)
-  local monsterShowRSvc = (self._world):GetService("MonsterShowRender")
+  local monsterShowRSvc = self._world:GetService("MonsterShowRender")
   monsterShowRSvc:MonsterGridAnimDown()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProInputSystem_Render._HandleFirstClick = function(self, gridPos, offset, pickUpResCmpt)
-  -- function num : 0_4 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PopStarProInputSystem_Render:_HandleFirstClick(gridPos, offset, pickUpResCmpt)
+  local utilDataSvc = self._world:GetService("UtilData")
   if not utilDataSvc:IsValidPiecePos(gridPos) then
-    return 
+    return
   end
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   local pieceType = env:GetPieceType(gridPos)
   if pieceType == PieceType.None then
-    return 
+    return
   end
   pickUpResCmpt:SetPopStarPickUpPos(gridPos)
-  local popStarRSvc = (self._world):GetService("PopStarProRender")
-  local previewSvc = (self._world):GetService("PreviewMonsterTrap")
+  local popStarRSvc = self._world:GetService("PopStarProRender")
+  local previewSvc = self._world:GetService("PreviewMonsterTrap")
   previewSvc:CheckPreviewTrapAction(gridPos, offset)
   local connectPieces = popStarRSvc:CalculatePopStarConnectPieces(gridPos)
   pickUpResCmpt:SetPopStarConnectPieces(connectPieces)
   popStarRSvc:PreviewPopInfo(gridPos, connectPieces)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProInputSystem_Render._HandleClickOtherValidPos = function(self, gridPos, offset, pickUpResCmpt)
-  -- function num : 0_5
-  local entityRSvc = (self._world):GetService("RenderEntity")
+function PopStarProInputSystem_Render:_HandleClickOtherValidPos(gridPos, offset, pickUpResCmpt)
+  local entityRSvc = self._world:GetService("RenderEntity")
   entityRSvc:DestroyGhost()
   pickUpResCmpt:ResetPopStarPickUp()
   self:_HandleFirstClick(gridPos, offset, pickUpResCmpt)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProInputSystem_Render._HandlePop = function(self, pickUpResCmpt)
-  -- function num : 0_6 , upvalues : _ENV
-  local entityRSvc = (self._world):GetService("RenderEntity")
+function PopStarProInputSystem_Render:_HandlePop(pickUpResCmpt)
+  local entityRSvc = self._world:GetService("RenderEntity")
   entityRSvc:DestroyGhost()
   local pickUpPos = pickUpResCmpt:GetPopStarPickUpPos()
   local connectPieces = pickUpResCmpt:GetPopStarConnectPieces()
-  local popStarRSvc = (self._world):GetService("PopStarProRender")
+  local popStarRSvc = self._world:GetService("PopStarProRender")
   popStarRSvc:ClearPreviewPop(connectPieces)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.PopStarPickUp, pickUpPos, connectPieces)
+  self._world:EventDispatcher():Dispatch(GameEventType.PopStarPickUp, pickUpPos, connectPieces)
   pickUpResCmpt:ResetPopStarPickUp()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProInputSystem_Render._HandleCancel = function(self, pickUpResCmpt)
-  -- function num : 0_7
-  local entityRSvc = (self._world):GetService("RenderEntity")
+function PopStarProInputSystem_Render:_HandleCancel(pickUpResCmpt)
+  local entityRSvc = self._world:GetService("RenderEntity")
   entityRSvc:DestroyGhost()
   local connectPieces = pickUpResCmpt:GetPopStarConnectPieces()
-  local popStarRSvc = (self._world):GetService("PopStarProRender")
+  local popStarRSvc = self._world:GetService("PopStarProRender")
   popStarRSvc:ClearPreviewPop(connectPieces)
   popStarRSvc:PetHeadInQueue()
   pickUpResCmpt:ResetPopStarPickUp()
 end
-
-

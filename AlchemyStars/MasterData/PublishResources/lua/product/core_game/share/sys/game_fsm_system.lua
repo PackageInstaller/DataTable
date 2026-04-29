@@ -1,57 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/game_fsm_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("game_event_type")
 _class("GameFSMSystem", Object)
 GameFSMSystem = GameFSMSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GameFSMSystem.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function GameFSMSystem:Constructor(world)
   self._world = world
   self._gameFSMComponent = world:GameFSM()
-  self.autoBinder = AutoEventBinder:New((self._world):EventDispatcher())
-  ;
-  (self.autoBinder):BindEvent(GameEventType.ModeStateEnter, self, self.OnStateEnter)
+  self.autoBinder = AutoEventBinder:New(self._world:EventDispatcher())
+  self.autoBinder:BindEvent(GameEventType.ModeStateEnter, self, self.OnStateEnter)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFSMSystem.Execute = function(self)
-  -- function num : 0_1
+function GameFSMSystem:Execute()
   self:UpdateFSM()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFSMSystem.TearDown = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.autoBinder):UnBindEvent(GameEventType.ModeStateEnter)
+function GameFSMSystem:TearDown()
+  self.autoBinder:UnBindEvent(GameEventType.ModeStateEnter)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFSMSystem.UpdateFSM = function(self)
-  -- function num : 0_3
-  (self._gameFSMComponent):Update()
+function GameFSMSystem:UpdateFSM()
+  self._gameFSMComponent:Update()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFSMSystem.OnStateEnter = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function GameFSMSystem:OnStateEnter()
   local gameFsmCmpt = self._gameFSMComponent
   if gameFsmCmpt == nil then
-    return 
+    return
   end
   local gameFsmStateID = gameFsmCmpt:CurStateID()
   if gameFsmStateID ~= GameStateID.WaitInput and gameFsmStateID ~= GameStateID.WaitInputChain then
     gameFsmCmpt:EnableHandleInput(false)
   end
-  ;
-  (self._world):SetUniqueComponent(((self._world).BW_UniqueComponentsEnum).GameFSM, gameFsmCmpt)
+  self._world:SetUniqueComponent(self._world.BW_UniqueComponentsEnum.GameFSM, gameFsmCmpt)
 end
-
-

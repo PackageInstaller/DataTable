@@ -1,34 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/ui_s4_levelup_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4LevelUpController", UIController)
 UIS4LevelUpController = UIS4LevelUpController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4LevelUpController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIS4LevelUpController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIS4LevelUpController:OnShow(uiParams)
   self._tradeData = uiParams[1]
   self._harborId = uiParams[2]
-  self._businessComponet = (self._tradeData):GetBusinessComp()
-  self.harborLv = (self._tradeData):GetHarborShipLV(self._harborId)
-  self._harborCfg = ((Cfg.cfg_component_business_harbor)({HarborID = self._harborId, Lv = self.harborLv}))[1]
-  self._shipCfg = ((Cfg.cfg_component_business_ship)({ShipID = self._harborId, Lv = self.shipLv}))[1]
-  if self.harborLv < (self._harborCfg).MaxLv then
-    self._harborUPCfg = ((Cfg.cfg_component_business_harbor)({HarborID = self._harborId, Lv = self.harborLv + 1}))[1]
+  self._businessComponet = self._tradeData:GetBusinessComp()
+  self.harborLv, self.shipLv = self._tradeData:GetHarborShipLV(self._harborId)
+  self._harborCfg = Cfg.cfg_component_business_harbor({
+    HarborID = self._harborId,
+    Lv = self.harborLv
+  })[1]
+  self._shipCfg = Cfg.cfg_component_business_ship({
+    ShipID = self._harborId,
+    Lv = self.shipLv
+  })[1]
+  if self.harborLv < self._harborCfg.MaxLv then
+    self._harborUPCfg = Cfg.cfg_component_business_harbor({
+      HarborID = self._harborId,
+      Lv = self.harborLv + 1
+    })[1]
   else
     self.harborLvMax = true
   end
-  if self.shipLv < (self._shipCfg).MaxLv then
-    self._shipUPCfg = ((Cfg.cfg_component_business_ship)({ShipID = self._harborId, Lv = self.shipLv + 1}))[1]
+  if self.shipLv < self._shipCfg.MaxLv then
+    self._shipUPCfg = Cfg.cfg_component_business_ship({
+      ShipID = self._harborId,
+      Lv = self.shipLv + 1
+    })[1]
   else
     self.shipLvMax = true
   end
@@ -38,10 +40,7 @@ UIS4LevelUpController.OnShow = function(self, uiParams)
   self:PlayLevelUpAnimIn()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.InitWidget = function(self)
-  -- function num : 0_2
+function UIS4LevelUpController:InitWidget()
   self.harborCost = self:GetUIComponent("UILocalizationText", "HarborCost")
   self.harborUpEnsure = self:GetUIComponent("Image", "HarborUpEnsure")
   self.shipCost = self:GetUIComponent("UILocalizationText", "ShipCost")
@@ -69,382 +68,260 @@ UIS4LevelUpController.InitWidget = function(self)
   self.ShipRedPointObj = self:GetGameObject("ShiptRedPoint")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.InitData = function(self)
-  -- function num : 0_3
+function UIS4LevelUpController:InitData()
   self:InitHarborData()
   self:InitShipData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.InitHarborData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local titleStr = (StringTable.Get)("str_season_s4_trade_harbor_levelup_title", self.harborLv, (self._harborCfg).MaxLv)
-  ;
-  (self.harborPreviewTitle):SetText(titleStr)
-  if (self._harborCfg).MaxLv <= self.harborLv then
-    ((self.speedTxt).gameObject):SetActive(false)
-    ;
-    (self.SpeedTipsObj):SetActive(false)
-    ;
-    (self.HarborMaxObj):SetActive(true)
-    ;
-    (self.HarborNotMaxObj):SetActive(false)
+function UIS4LevelUpController:InitHarborData()
+  local titleStr = StringTable.Get("str_season_s4_trade_harbor_levelup_title", self.harborLv, self._harborCfg.MaxLv)
+  self.harborPreviewTitle:SetText(titleStr)
+  if self.harborLv >= self._harborCfg.MaxLv then
+    self.speedTxt.gameObject:SetActive(false)
+    self.SpeedTipsObj:SetActive(false)
+    self.HarborMaxObj:SetActive(true)
+    self.HarborNotMaxObj:SetActive(false)
   else
-    ;
-    ((self.speedTxt).gameObject):SetActive(true)
-    ;
-    (self.SpeedTipsObj):SetActive(true)
-    local speed = (self._harborUPCfg).UnloadSpeed - (self._harborCfg).UnloadSpeed
-    ;
-    (self.speedTxt):SetText((StringTable.Get)("str_season_s4_trade_harbor_levelup_speed") .. "+" .. speed)
-    ;
-    (self.HarborMaxObj):SetActive(false)
-    ;
-    (self.HarborNotMaxObj):SetActive(true)
-    local coinNum, talentPointNum = (self._tradeData):GetCoinCount()
-    local needNum = (((self._harborUPCfg).CostItem)[1])[2]
-    -- DECOMPILER ERROR at PC81: Confused about usage of register: R6 in 'UnsetPending'
-
-    if needNum <= coinNum then
-      (self.harborCost).color = Color(0.25098039215686, 0.23921568627451, 0.23529411764706)
+    self.speedTxt.gameObject:SetActive(true)
+    self.SpeedTipsObj:SetActive(true)
+    local speed = self._harborUPCfg.UnloadSpeed - self._harborCfg.UnloadSpeed
+    self.speedTxt:SetText(StringTable.Get("str_season_s4_trade_harbor_levelup_speed") .. "+" .. speed)
+    self.HarborMaxObj:SetActive(false)
+    self.HarborNotMaxObj:SetActive(true)
+    local coinNum, talentPointNum = self._tradeData:GetCoinCount()
+    local needNum = self._harborUPCfg.CostItem[1][2]
+    if coinNum >= needNum then
+      self.harborCost.color = Color(0.25098039215686274, 0.23921568627450981, 0.23529411764705882)
     else
-      -- DECOMPILER ERROR at PC89: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self.harborCost).color = Color(0.59607843137255, 0.33333333333333, 0.25882352941176)
+      self.harborCost.color = Color(0.596078431372549, 0.3333333333333333, 0.25882352941176473)
     end
-    ;
-    (self.harborCost):SetText(needNum)
+    self.harborCost:SetText(needNum)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.InitShipData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local titleStr = (StringTable.Get)("str_season_s4_trade_ship_levelup_title", self.shipLv, (self._shipCfg).MaxLv)
-  ;
-  (self.shipPreviewTitle):SetText(titleStr)
-  if (self._shipCfg).MaxLv <= self.shipLv then
-    (self.ParamsObj):SetActive(false)
-    ;
-    (self.ShipMaxObj):SetActive(true)
-    ;
-    (self.ShipNotMaxObj):SetActive(false)
+function UIS4LevelUpController:InitShipData()
+  local titleStr = StringTable.Get("str_season_s4_trade_ship_levelup_title", self.shipLv, self._shipCfg.MaxLv)
+  self.shipPreviewTitle:SetText(titleStr)
+  if self.shipLv >= self._shipCfg.MaxLv then
+    self.ParamsObj:SetActive(false)
+    self.ShipMaxObj:SetActive(true)
+    self.ShipNotMaxObj:SetActive(false)
   else
-    ;
-    (self.ParamsObj):SetActive(true)
-    local Boatload = (self._shipUPCfg).Boatload - (self._shipCfg).Boatload
-    ;
-    ((self.loadTxt).gameObject):SetActive(Boatload ~= 0)
-    ;
-    (self.loadTxt):SetText((StringTable.Get)("str_season_s4_trade_ship_levelup_load") .. "+" .. Boatload)
-    local SeamanNum = (self._shipUPCfg).SeamanNum - (self._shipCfg).SeamanNum
-    ;
-    ((self.crewTxt).gameObject):SetActive(SeamanNum ~= 0)
-    ;
-    (self.crewTxt):SetText((StringTable.Get)("str_season_s4_trade_crew") .. "+" .. SeamanNum)
-    local LeadValue = ((self._shipUPCfg).BaseValue)[1] - ((self._shipCfg).BaseValue)[1]
-    local SeaValue = ((self._shipUPCfg).BaseValue)[2] - ((self._shipCfg).BaseValue)[2]
-    local RepaireValue = ((self._shipUPCfg).BaseValue)[3] - ((self._shipCfg).BaseValue)[3]
-    ;
-    ((self.leadTxt).gameObject):SetActive(LeadValue ~= 0)
-    ;
-    ((self.seaTxt).gameObject):SetActive(SeaValue ~= 0)
-    ;
-    ((self.repaireTxt).gameObject):SetActive(RepaireValue ~= 0)
-    ;
-    (self.leadTxt):SetText((StringTable.Get)("str_season_s4_trade_command") .. "+" .. LeadValue)
-    ;
-    (self.seaTxt):SetText((StringTable.Get)("str_season_s4_trade_sail") .. "+" .. SeaValue)
-    ;
-    (self.repaireTxt):SetText((StringTable.Get)("str_season_s4_trade_fix") .. "+" .. RepaireValue)
-    ;
-    (self.ShipMaxObj):SetActive(false)
-    ;
-    (self.ShipNotMaxObj):SetActive(true)
-    local coinNum, talentPointNum = (self._tradeData):GetCoinCount()
-    local needNum = (((self._shipUPCfg).CostItem)[1])[2]
-    -- DECOMPILER ERROR at PC177: Confused about usage of register: R10 in 'UnsetPending'
-
-    if needNum <= coinNum then
-      (self.shipCost).color = Color(0.25098039215686, 0.23921568627451, 0.23529411764706)
+    self.ParamsObj:SetActive(true)
+    local Boatload = self._shipUPCfg.Boatload - self._shipCfg.Boatload
+    self.loadTxt.gameObject:SetActive(Boatload ~= 0)
+    self.loadTxt:SetText(StringTable.Get("str_season_s4_trade_ship_levelup_load") .. "+" .. Boatload)
+    local SeamanNum = self._shipUPCfg.SeamanNum - self._shipCfg.SeamanNum
+    self.crewTxt.gameObject:SetActive(SeamanNum ~= 0)
+    self.crewTxt:SetText(StringTable.Get("str_season_s4_trade_crew") .. "+" .. SeamanNum)
+    local LeadValue = self._shipUPCfg.BaseValue[1] - self._shipCfg.BaseValue[1]
+    local SeaValue = self._shipUPCfg.BaseValue[2] - self._shipCfg.BaseValue[2]
+    local RepaireValue = self._shipUPCfg.BaseValue[3] - self._shipCfg.BaseValue[3]
+    self.leadTxt.gameObject:SetActive(LeadValue ~= 0)
+    self.seaTxt.gameObject:SetActive(SeaValue ~= 0)
+    self.repaireTxt.gameObject:SetActive(RepaireValue ~= 0)
+    self.leadTxt:SetText(StringTable.Get("str_season_s4_trade_command") .. "+" .. LeadValue)
+    self.seaTxt:SetText(StringTable.Get("str_season_s4_trade_sail") .. "+" .. SeaValue)
+    self.repaireTxt:SetText(StringTable.Get("str_season_s4_trade_fix") .. "+" .. RepaireValue)
+    self.ShipMaxObj:SetActive(false)
+    self.ShipNotMaxObj:SetActive(true)
+    local coinNum, talentPointNum = self._tradeData:GetCoinCount()
+    local needNum = self._shipUPCfg.CostItem[1][2]
+    if coinNum >= needNum then
+      self.shipCost.color = Color(0.25098039215686274, 0.23921568627450981, 0.23529411764705882)
     else
-      -- DECOMPILER ERROR at PC185: Confused about usage of register: R10 in 'UnsetPending'
-
-      (self.shipCost).color = Color(0.59607843137255, 0.33333333333333, 0.25882352941176)
+      self.shipCost.color = Color(0.596078431372549, 0.3333333333333333, 0.25882352941176473)
     end
-    ;
-    (self.shipCost):SetText(needNum)
+    self.shipCost:SetText(needNum)
   end
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIS4LevelUpController:CloseBtnOnClick(go)
   self:Close()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.BGCloseBtnOnClick = function(self, go)
-  -- function num : 0_7
+function UIS4LevelUpController:BGCloseBtnOnClick(go)
   self:Close()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.Close = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIS4LevelUpController:Close()
   if not self.harborLvMax then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4HarborUPPreview, false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4HarborUPPreview, false)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4ShipUPPreview, false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4TradeCrewChange)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4StateIncomePreview, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4ShipUPPreview, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4TradeCrewChange)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4StateIncomePreview, false)
   local LockName = "UIS4LevelUpController_AnimOut"
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, LockName, _ENV
     self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_UIS4LevelUpController_out")
+    self._anim:Play("uianim_UIS4LevelUpController_out")
     YIELD(TT, 300)
     self:UnLock(LockName)
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.ShowHarborPreviewOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  local OnPreview = (self.HarborPreviewObj).activeSelf
-  if (self._harborCfg).MaxLv <= self.harborLv then
-    return 
+function UIS4LevelUpController:ShowHarborPreviewOnClick(go)
+  local OnPreview = self.HarborPreviewObj.activeSelf
+  if self.harborLv >= self._harborCfg.MaxLv then
+    return
   end
   local LockName = "UIS4LevelUpController_HarborPreview"
   if OnPreview then
     self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, LockName, _ENV
-    self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_Harbor_xuanzhong_out")
-    YIELD(TT, 20)
-    self:UnLock(LockName)
-    ;
-    (self.HarborPreviewObj):SetActive(false)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4HarborUPPreview, false)
-  end
-)
+      self:Lock(LockName)
+      self._anim:Play("uianim_Harbor_xuanzhong_out")
+      YIELD(TT, 20)
+      self:UnLock(LockName)
+      self.HarborPreviewObj:SetActive(false)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4HarborUPPreview, false)
+    end)
   else
-    ;
-    (self.HarborPreviewObj):SetActive(true)
+    self.HarborPreviewObj:SetActive(true)
     self:StartTask(function(TT)
-    -- function num : 0_9_1 , upvalues : self, LockName, _ENV
-    self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_Harbor_xuanzhong_in")
-    YIELD(TT, 500)
-    self:UnLock(LockName)
-  end
-)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4HarborUPPreview, true)
+      self:Lock(LockName)
+      self._anim:Play("uianim_Harbor_xuanzhong_in")
+      YIELD(TT, 500)
+      self:UnLock(LockName)
+    end)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4HarborUPPreview, true)
   end
   self:RefreshStateIncomPreview()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.ShowShipPreviewOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
-  local OnPreview = (self.ShipPreviewObj).activeSelf
-  if (self._shipCfg).MaxLv <= self.shipLv then
-    return 
+function UIS4LevelUpController:ShowShipPreviewOnClick(go)
+  local OnPreview = self.ShipPreviewObj.activeSelf
+  if self.shipLv >= self._shipCfg.MaxLv then
+    return
   end
   local LockName = "UIS4LevelUpController_ShipPreview"
   if OnPreview then
     self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, LockName, _ENV
-    self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_ship_xuanzhong_out")
-    YIELD(TT, 20)
-    self:UnLock(LockName)
-    ;
-    (self.ShipPreviewObj):SetActive(false)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4ShipUPPreview, false)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4TradeCrewChange)
-  end
-)
+      self:Lock(LockName)
+      self._anim:Play("uianim_ship_xuanzhong_out")
+      YIELD(TT, 20)
+      self:UnLock(LockName)
+      self.ShipPreviewObj:SetActive(false)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4ShipUPPreview, false)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4TradeCrewChange)
+    end)
   else
-    ;
-    (self.ShipPreviewObj):SetActive(true)
+    self.ShipPreviewObj:SetActive(true)
     self:StartTask(function(TT)
-    -- function num : 0_10_1 , upvalues : self, LockName, _ENV
-    self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_ship_xuanzhong_in")
-    YIELD(TT, 500)
-    self:UnLock(LockName)
-  end
-)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4ShipUPPreview, true)
+      self:Lock(LockName)
+      self._anim:Play("uianim_ship_xuanzhong_in")
+      YIELD(TT, 500)
+      self:UnLock(LockName)
+    end)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4ShipUPPreview, true)
   end
   self:RefreshStateIncomPreview()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.ShowHarborEnsureOnClick = function(self, go)
-  -- function num : 0_11
+function UIS4LevelUpController:ShowHarborEnsureOnClick(go)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.ShowShipEnsureOnClick = function(self, go)
-  -- function num : 0_12
+function UIS4LevelUpController:ShowShipEnsureOnClick(go)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.HarborLevelUpBtnOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  local id = (self._harborUPCfg).ID
+function UIS4LevelUpController:HarborLevelUpBtnOnClick(go)
+  local id = self._harborUPCfg.ID
   local canUp = self:CheckHarborLevelUp()
   if not canUp then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_s4_trade_levelup_notenough"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_season_s4_trade_levelup_notenough"))
+    return
   end
-  local title = (StringTable.Get)("str_season_s4_trade_levelup_confirm")
-  ;
-  (PopupManager.Alert)("UIS4MessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", title, function()
-    -- function num : 0_13_0 , upvalues : self
+  local title = StringTable.Get("str_season_s4_trade_levelup_confirm")
+  PopupManager.Alert("UIS4MessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", title, function()
     self:HarborLevelUpCallBack()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.HarborLevelUpCallBack = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local id = (self._harborUPCfg).ID
-  ;
-  (self.HarborPreviewObj):SetActive(false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4HarborUPPreview, false)
+function UIS4LevelUpController:HarborLevelUpCallBack()
+  local id = self._harborUPCfg.ID
+  self.HarborPreviewObj:SetActive(false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4HarborUPPreview, false)
   self:StartTask(self.HarborLevelUp, self, id)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4StateIncomePreview, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4StateIncomePreview, false)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.HarborLevelUp = function(self, TT, CfgID)
-  -- function num : 0_15 , upvalues : _ENV
+function UIS4LevelUpController:HarborLevelUp(TT, CfgID)
   local lockName = "UIS4LevelUpController:HarborLevelUp"
   self:Lock(lockName)
   local res = AsyncRequestRes:New()
-  local result = (self._businessComponet):HandleBusinessHarborReq(TT, res, CfgID)
+  local result = self._businessComponet:HandleBusinessHarborReq(TT, res, CfgID)
   self:UnLock(lockName)
   if res:GetSucc() then
     self:Refresh()
     self:ShowHarborEnsureOnClick()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4HarborShipLevelUP, self._harborId)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4StateIncomePreview, false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4HarborShipLevelUP, self._harborId)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4StateIncomePreview, false)
   else
-    ;
-    (Log.error)("###[UIS4LevelUpController] HarborLevelUp fail, result:", res:GetResult(), " CfgID:", CfgID, "harborLV", self.harborLv)
+    Log.error("###[UIS4LevelUpController] HarborLevelUp fail, result:", res:GetResult(), " CfgID:", CfgID, "harborLV", self.harborLv)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.ShipLevelUpBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
-  local id = (self._shipUPCfg).ID
+function UIS4LevelUpController:ShipLevelUpBtnOnClick(go)
+  local id = self._shipUPCfg.ID
   local canUp = self:CheckShipLevelUp()
   if not canUp then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_s4_trade_levelup_notenough"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_season_s4_trade_levelup_notenough"))
+    return
   end
-  local title = (StringTable.Get)("str_season_s4_trade_levelup_confirm")
-  ;
-  (PopupManager.Alert)("UIS4MessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", title, function()
-    -- function num : 0_16_0 , upvalues : self
+  local title = StringTable.Get("str_season_s4_trade_levelup_confirm")
+  PopupManager.Alert("UIS4MessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", title, function()
     self:ShipLevelUpCallBack()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.ShipLevelUpCallBack = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local id = (self._shipUPCfg).ID
-  ;
-  (self.ShipPreviewObj):SetActive(false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4ShipUPPreview, false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4TradeCrewChange)
+function UIS4LevelUpController:ShipLevelUpCallBack()
+  local id = self._shipUPCfg.ID
+  self.ShipPreviewObj:SetActive(false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4ShipUPPreview, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4TradeCrewChange)
   self:StartTask(self.ShipLevelUp, self, id)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4StateIncomePreview, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4StateIncomePreview, false)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.ShipLevelUp = function(self, TT, CfgID)
-  -- function num : 0_18 , upvalues : _ENV
+function UIS4LevelUpController:ShipLevelUp(TT, CfgID)
   local lockName = "UIS4LevelUpController:ShipLevelUp"
   self:Lock(lockName)
   local res = AsyncRequestRes:New()
-  local result = (self._businessComponet):HandleBusinessShipReq(TT, res, CfgID)
+  local result = self._businessComponet:HandleBusinessShipReq(TT, res, CfgID)
   self:UnLock(lockName)
   if res:GetSucc() then
     self:Refresh()
     self:ShowShipEnsureOnClick()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4HarborShipLevelUP, self._harborId)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4StateIncomePreview, false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4HarborShipLevelUP, self._harborId)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4StateIncomePreview, false)
   else
-    ;
-    (Log.error)("###[UIS4LevelUpController] ShipLevelUp fail, result:", res:GetResult(), " CfgID:", CfgID, "shipLV", self.shipLv)
+    Log.error("###[UIS4LevelUpController] ShipLevelUp fail, result:", res:GetResult(), " CfgID:", CfgID, "shipLV", self.shipLv)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.Refresh = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  self.harborLv = (self._tradeData):GetHarborShipLV(self._harborId)
-  self._harborCfg = ((Cfg.cfg_component_business_harbor)({HarborID = self._harborId, Lv = self.harborLv}))[1]
-  self._shipCfg = ((Cfg.cfg_component_business_ship)({ShipID = self._harborId, Lv = self.shipLv}))[1]
-  if self.harborLv < (self._harborCfg).MaxLv then
-    self._harborUPCfg = ((Cfg.cfg_component_business_harbor)({HarborID = self._harborId, Lv = self.harborLv + 1}))[1]
+function UIS4LevelUpController:Refresh()
+  self.harborLv, self.shipLv = self._tradeData:GetHarborShipLV(self._harborId)
+  self._harborCfg = Cfg.cfg_component_business_harbor({
+    HarborID = self._harborId,
+    Lv = self.harborLv
+  })[1]
+  self._shipCfg = Cfg.cfg_component_business_ship({
+    ShipID = self._harborId,
+    Lv = self.shipLv
+  })[1]
+  if self.harborLv < self._harborCfg.MaxLv then
+    self._harborUPCfg = Cfg.cfg_component_business_harbor({
+      HarborID = self._harborId,
+      Lv = self.harborLv + 1
+    })[1]
   else
     self.harborLvMax = true
   end
-  if self.shipLv < (self._shipCfg).MaxLv then
-    self._shipUPCfg = ((Cfg.cfg_component_business_ship)({ShipID = self._harborId, Lv = self.shipLv + 1}))[1]
+  if self.shipLv < self._shipCfg.MaxLv then
+    self._shipUPCfg = Cfg.cfg_component_business_ship({
+      ShipID = self._harborId,
+      Lv = self.shipLv + 1
+    })[1]
   else
     self.shipLvMax = true
   end
@@ -452,104 +329,77 @@ UIS4LevelUpController.Refresh = function(self)
   self:InitData()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.RefreshStateIncomPreview = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  if (self.ShipPreviewObj).activeSelf or (self.HarborPreviewObj).activeSelf then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4StateIncomePreview, true)
+function UIS4LevelUpController:RefreshStateIncomPreview()
+  if self.ShipPreviewObj.activeSelf or self.HarborPreviewObj.activeSelf then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4StateIncomePreview, true)
   else
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4StateIncomePreview, false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4StateIncomePreview, false)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.PlayLevelUpAnimIn = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIS4LevelUpController:PlayLevelUpAnimIn()
   local LockName = "UIS4LevelUpController_AnimIN"
   self:StartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : self, LockName, _ENV
     self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_UIS4LevelUpController_in")
+    self._anim:Play("uianim_UIS4LevelUpController_in")
     YIELD(TT, 500)
     self:UnLock(LockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.CheckHarborLevelUp = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  if (self._harborCfg).MaxLv <= self.harborLv then
+function UIS4LevelUpController:CheckHarborLevelUp()
+  if self.harborLv >= self._harborCfg.MaxLv then
     return false
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local costItem = (self._harborUPCfg).CostItem
-  local LockItem = (self._harborUPCfg).LockItem
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local costItem = self._harborUPCfg.CostItem
+  local LockItem = self._harborUPCfg.LockItem
   local lock = false
   local num = itemModule:GetItemCount(LockItem[1])
   if num < LockItem[2] then
     lock = true
     return false
   end
-  for i,v in ipairs(costItem) do
+  for i, v in ipairs(costItem) do
     local item = v[1]
     local needNum = v[2]
     local num = itemModule:GetItemCount(item)
-    if num < needNum then
+    if needNum > num then
       lock = true
       break
     end
   end
-  do
-    if lock then
-      return false
-    end
-    return true
-  end
-end
-
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.CheckShipLevelUp = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  if (self._shipCfg).MaxLv <= self.shipLv then
+  if lock then
     return false
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local costItem = (self._shipUPCfg).CostItem
+  return true
+end
+
+function UIS4LevelUpController:CheckShipLevelUp()
+  if self.shipLv >= self._shipCfg.MaxLv then
+    return false
+  end
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local costItem = self._shipUPCfg.CostItem
   local lock = false
-  for i,v in ipairs(costItem) do
+  for i, v in ipairs(costItem) do
     local item = v[1]
     local needNum = v[2]
     local num = itemModule:GetItemCount(item)
-    if num < needNum then
+    if needNum > num then
       lock = true
       break
     end
   end
-  do
-    if lock then
-      return false
-    end
-    return true
+  if lock then
+    return false
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4LevelUpController.RefreshLevelUpRed = function(self)
-  -- function num : 0_24
+function UIS4LevelUpController:RefreshLevelUpRed()
   local harborRed = self:CheckHarborLevelUp()
   local shipred = self:CheckShipLevelUp()
-  ;
-  (self.HarbortRedPointObj):SetActive(harborRed)
-  ;
-  (self.ShipRedPointObj):SetActive(shipred)
+  self.HarbortRedPointObj:SetActive(harborRed)
+  self.ShipRedPointObj:SetActive(shipred)
 end
-
-

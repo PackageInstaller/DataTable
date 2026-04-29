@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/mirage_wait_input_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("MirageWaitInputSystem", MainStateSystem)
 MirageWaitInputSystem = MirageWaitInputSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MirageWaitInputSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function MirageWaitInputSystem:_GetMainStateID()
   return GameStateID.MirageWaitInput
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageWaitInputSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
+function MirageWaitInputSystem:_OnMainStateEnter(TT)
   self:_DoLogicRestBattleState()
   self:_DoRenderResetBattleState()
   self:_DoRenderPieceAnimation(TT)
@@ -25,40 +15,20 @@ MirageWaitInputSystem._OnMainStateEnter = function(self, TT)
   self:_DoRenderComparePieceType(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageWaitInputSystem._DoLogicRestBattleState = function(self)
-  -- function num : 0_2
+function MirageWaitInputSystem:_DoLogicRestBattleState()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageWaitInputSystem._DoL2RBoardLogicData = function(self)
-  -- function num : 0_3
+function MirageWaitInputSystem:_DoL2RBoardLogicData()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageWaitInputSystem._DoRenderResetBattleState = function(self, TT)
-  -- function num : 0_4
+function MirageWaitInputSystem:_DoRenderResetBattleState(TT)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageWaitInputSystem._DoRenderPieceAnimation = function(self, TT)
-  -- function num : 0_5
+function MirageWaitInputSystem:_DoRenderPieceAnimation(TT)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageWaitInputSystem._DoRenderCompareHPLog = function(self, TT)
-  -- function num : 0_6
+function MirageWaitInputSystem:_DoRenderCompareHPLog(TT)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageWaitInputSystem._DoRenderComparePieceType = function(self, TT)
-  -- function num : 0_7
+function MirageWaitInputSystem:_DoRenderComparePieceType(TT)
 end
-
-

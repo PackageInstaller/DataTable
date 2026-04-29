@@ -1,38 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_check_active_skill_san.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewCheckActiveSkillSanInstruction", SkillPreviewBaseInstruction)
 SkillPreviewCheckActiveSkillSanInstruction = SkillPreviewCheckActiveSkillSanInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewCheckActiveSkillSanInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewCheckActiveSkillSanInstruction:Constructor(params)
   self._skillID = tonumber(params.skillID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewCheckActiveSkillSanInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewCheckActiveSkillSanInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
   local utilData = world:GetService("UtilData")
   local renderBoardEntity = world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   local checkSkillID = self._skillID
-  if not checkSkillID then
-    checkSkillID = pickUpTargetCmpt:GetCurActiveSkillID()
-  end
-  local resultCommon, _, commonReason = utilData:CheckActiveSkillCastCondition((casterEntity:PetPstID()):GetPstID(), checkSkillID)
+  checkSkillID = checkSkillID or pickUpTargetCmpt:GetCurActiveSkillID()
+  local resultCommon, _, commonReason = utilData:CheckActiveSkillCastCondition(casterEntity:PetPstID():GetPstID(), checkSkillID)
   local rsvcFeature = world:GetService("FeatureRender")
   local result, reason = rsvcFeature:IsActiveSkillCanCastInPreview(casterEntity, checkSkillID, previewContext)
-  local fin = not resultCommon or result
-  local presentReason = nil
-  presentReason = (resultCommon and result) or commonReason or reason
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BattleUIRefreshActiveSkillCastButtonState, fin, presentReason)
+  local fin = resultCommon and result
+  local presentReason
+  if not resultCommon or not result then
+    presentReason = commonReason or reason
+  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.BattleUIRefreshActiveSkillCastButtonState, fin, presentReason)
 end
-
-

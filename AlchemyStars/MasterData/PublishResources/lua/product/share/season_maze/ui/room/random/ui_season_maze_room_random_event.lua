@@ -1,201 +1,132 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/random/ui_season_maze_room_random_event.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoomRandomEvent", UISeasonMazeRoomBase)
 UISeasonMazeRoomRandomEvent = UISeasonMazeRoomRandomEvent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoomRandomEvent.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeRoomRandomEvent:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomRandomEvent.OnShowUI = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeRoomRandomEvent:OnShowUI()
   self:InitWidget()
-  self.cfgId = (self._roomInfo).cfg_id
+  self.cfgId = self._roomInfo.cfg_id
   self.eventCfg = self:GetRandomEventCfg()
-  ;
-  (self.desc):SetText((StringTable.Get)((self.eventCfg).EventDesc))
-  ;
-  (self.cg):LoadImage((self.eventCfg).NpcImage)
+  self.desc:SetText(StringTable.Get(self.eventCfg.EventDesc))
+  self.cg:LoadImage(self.eventCfg.NpcImage)
   self:InitOptions()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomRandomEvent.GetRandomEventCfg = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_season_maze_room_event)({ID = self.cfgId})
-  if cfgs and #cfgs > 0 then
+function UISeasonMazeRoomRandomEvent:GetRandomEventCfg()
+  local cfgs = Cfg.cfg_component_season_maze_room_event({
+    ID = self.cfgId
+  })
+  if cfgs and 0 < #cfgs then
     return cfgs[1]
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomRandomEvent.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazeRoomRandomEvent:InitWidget()
   self.options = self:GetUIComponent("UISelectObjectPath", "options")
   self.desc = self:GetUIComponent("UILocalizationText", "desc")
   self.start = self:GetGameObject("start")
   self.after = self:GetGameObject("after")
   self.cg = self:GetUIComponent("RawImageLoader", "cg")
   self.anim = self:GetUIComponent("Animation", "anim")
-  ;
-  (self.start):SetActive(true)
-  ;
-  (self.after):SetActive(false)
+  self.start:SetActive(true)
+  self.after:SetActive(false)
   local leave = self:GetUIComponent("UISelectObjectPath", "UISMazeRoomLeaveBtn")
   local btn = leave:SpawnObject("UISMazeRoomLeaveBtn")
   btn:SetData(function()
-    -- function num : 0_3_0 , upvalues : self
     self:OnlyHideUI()
-  end
-)
+  end)
   self:AttachEvent(GameEventType.OnSeasonMazeShowRewardsFinish, self.OnSeasonMazeShowRewardsFinish)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomRandomEvent.InitOptions = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self.options):SpawnObjects("UISeasonMazeRoomRandomEventOption", #(self.eventCfg).Options)
-  self.spawnlist = (self.options):GetAllSpawnList()
-  for i = 1, #(self.eventCfg).Options do
-    local optionId = ((self.eventCfg).Options)[i]
-    local cfgs = (Cfg.cfg_component_season_maze_event_option)({ID = optionId})
-    if cfgs and #cfgs > 0 then
+function UISeasonMazeRoomRandomEvent:InitOptions()
+  self.options:SpawnObjects("UISeasonMazeRoomRandomEventOption", #self.eventCfg.Options)
+  self.spawnlist = self.options:GetAllSpawnList()
+  for i = 1, #self.eventCfg.Options do
+    local optionId = self.eventCfg.Options[i]
+    local cfgs = Cfg.cfg_component_season_maze_event_option({ID = optionId})
+    if cfgs and 0 < #cfgs then
       local cfg = cfgs[1]
-      ;
-      ((self.spawnlist)[i]):SetData(cfg, self)
+      self.spawnlist[i]:SetData(cfg, self)
     else
-      do
-        do
-          ;
-          (Log.exception)("UISeasonMazeRoomRandomEvent cfg_component_season_maze_event_option option is nil", optionId)
-          -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      Log.exception("UISeasonMazeRoomRandomEvent cfg_component_season_maze_event_option option is nil", optionId)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomRandomEvent.StartBtnOnClick = function(self)
-  -- function num : 0_5
-  (self.start):SetActive(false)
-  ;
-  (self.after):SetActive(true)
-  ;
-  (self.anim):Play("uieffanim_UISeasonMazeRoomRandomEvent_select")
+function UISeasonMazeRoomRandomEvent:StartBtnOnClick()
+  self.start:SetActive(false)
+  self.after:SetActive(true)
+  self.anim:Play("uieffanim_UISeasonMazeRoomRandomEvent_select")
   for i = 1, #self.spawnlist do
-    ((self.spawnlist)[i]):PlayShowAnim()
+    self.spawnlist[i]:PlayShowAnim()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomRandomEvent.OnOptionSelect = function(self, cfg)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.OnReqEventRoom, self, cfg.ID, cfg.Decide)
+function UISeasonMazeRoomRandomEvent:OnOptionSelect(cfg)
+  GameGlobal.TaskManager():StartTask(self.OnReqEventRoom, self, cfg.ID, cfg.Decide)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomRandomEvent.OnReqEventRoom = function(self, TT, cfg_id, decide)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMazeRoomRandomEvent:OnReqEventRoom(TT, cfg_id, decide)
   local res = AsyncRequestRes:New()
   self:Lock("UISeasonMazeRoomRandomEvent:OnReqEventRoom")
-  self._response = (self._component):HandleSeasonMazeEvent(TT, res, cfg_id)
+  self._response = self._component:HandleSeasonMazeEvent(TT, res, cfg_id)
   if res and res:GetSucc() then
-    local rewards = (self._response).reward
-    do
-      if decide and decide ~= 0 then
-        local hands = (self._response).hands
-        self:ShowDialog("UISeasonMazeCardDecide", hands, decide, function()
-    -- function num : 0_7_0 , upvalues : rewards, self, _ENV, TT
-    if rewards and #rewards > 0 then
+    local rewards = self._response.reward
+    if decide and decide ~= 0 then
+      local hands = self._response.hands
+      self:ShowDialog("UISeasonMazeCardDecide", hands, decide, function()
+        if rewards and 0 < #rewards then
+          self._waitNotifyReward = rewards
+          local showRewards = self:GetShowRewards(rewards)
+          if 0 < #showRewards then
+            self:UnLock("UISeasonMazeRoomRandomEvent:OnReqEventRoom")
+            SeasonMazeTool:GetInstance():ShowUIGetRewards(showRewards)
+          else
+            self:OnHideUIAnim(TT, self._response.reward)
+          end
+        else
+          self:OnHideUIAnim(TT)
+        end
+      end)
+    elseif rewards and 0 < #rewards then
       self._waitNotifyReward = rewards
       local showRewards = self:GetShowRewards(rewards)
-      if #showRewards > 0 then
+      if 0 < #showRewards then
         self:UnLock("UISeasonMazeRoomRandomEvent:OnReqEventRoom")
-        ;
-        (SeasonMazeTool:GetInstance()):ShowUIGetRewards(showRewards)
+        SeasonMazeTool:GetInstance():ShowUIGetRewards(showRewards)
       else
-        self:OnHideUIAnim(TT, (self._response).reward)
+        self:OnHideUIAnim(TT, self._response.reward)
       end
     else
-      do
-        self:OnHideUIAnim(TT)
-      end
+      self:OnHideUIAnim(TT)
     end
-  end
-)
-      else
-        do
-          do
-            if rewards and #rewards > 0 then
-              self._waitNotifyReward = rewards
-              local showRewards = self:GetShowRewards(rewards)
-              if #showRewards > 0 then
-                self:UnLock("UISeasonMazeRoomRandomEvent:OnReqEventRoom")
-                ;
-                (SeasonMazeTool:GetInstance()):ShowUIGetRewards(showRewards)
-              else
-                self:OnHideUIAnim(TT, (self._response).reward)
-              end
-            else
-              do
-                self:OnHideUIAnim(TT)
-              end
-            end
-            local result = res:GetResult()
-            ;
-            (Log.error)("###[UISeasonMazeRoomRandomEvent] HandleSeasonMazeEvent fail ! result : ", result)
-            if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-              return 
-            end
-          end
-        end
-      end
+  else
+    local result = res:GetResult()
+    Log.error("###[UISeasonMazeRoomRandomEvent] HandleSeasonMazeEvent fail ! result : ", result)
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomRandomEvent.GetShowRewards = function(self, rewards)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonMazeRoomRandomEvent:GetShowRewards(rewards)
   local showRewards = {}
-  for _,value in ipairs(rewards) do
+  for _, value in ipairs(rewards) do
     local reward = value
     if reward.type == SeasonMazeEffectType.SMET_Pet or reward.type == SeasonMazeEffectType.SMET_Bead or reward.type == SeasonMazeEffectType.SMET_Relic or reward.type == SeasonMazeEffectType.SMET_GetRandomPet then
-      (table.insert)(showRewards, reward)
+      table.insert(showRewards, reward)
     end
   end
   return showRewards
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomRandomEvent.OnHideUIAnim = function(self, TT, ...)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonMazeRoomRandomEvent:OnHideUIAnim(TT, ...)
   self:Lock("UISeasonMazeRoomRandomEvent:OnHideUIAnim")
-  ;
-  (self.anim):Play("uieffanim_UISeasonMazeRoomRandomEvent_out")
+  self.anim:Play("uieffanim_UISeasonMazeRoomRandomEvent_out")
   for i = 1, #self.spawnlist do
-    ((self.spawnlist)[i]):PlayHideAnim()
+    self.spawnlist[i]:PlayHideAnim()
   end
   YIELD(TT, 400)
   self:UnLock("UISeasonMazeRoomRandomEvent:OnHideUIAnim")
@@ -203,11 +134,6 @@ UISeasonMazeRoomRandomEvent.OnHideUIAnim = function(self, TT, ...)
   self:OnHideUI(...)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomRandomEvent.OnSeasonMazeShowRewardsFinish = function(self, flag)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.OnHideUIAnim, self, self._waitNotifyReward)
+function UISeasonMazeRoomRandomEvent:OnSeasonMazeShowRewardsFinish(flag)
+  GameGlobal.TaskManager():StartTask(self.OnHideUIAnim, self, self._waitNotifyReward)
 end
-
-

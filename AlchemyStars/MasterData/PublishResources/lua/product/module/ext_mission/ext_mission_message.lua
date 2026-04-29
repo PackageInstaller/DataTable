@@ -1,187 +1,215 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/ext_mission/ext_mission_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local ext_missionMessageDef = {CLSID_CEventExtMission_Summary = 5000, CLSID_CEventExtMission_FailCount = 5001, CLSID_CEventExtMission_SummaryReq = 5002, CLSID_CEventExtMission_SummaryAsw = 5003, CLSID_CEventExtMission_DetailReq = 5004, CLSID_CEventExtMission_DetailAsw = 5005, CLSID_CEventExtTask_DetailReq = 5006, CLSID_CEventExtTask_DetailAsw = 5007, CLSID_CEventExtMission_AwardReq = 5008, CLSID_CEventExtMission_AwardAsw = 5009, CLSID_CEventExtMission_StoryReq = 5010, CLSID_CEventExtMission_StoryAsw = 5011, CLSID_CEventExtMission_StoryData = 5012, CLSID_CEventExtMission_CompleteAllExtMission = 5013}
-;
-(table.append)(MessageDef, ext_missionMessageDef)
-local ENUM_ExtMission_ErrorCode = {E_ExtMission_Success = 0, E_ExtMission_Fail = 1, E_ExtMission_Level = 2, E_ExtMission_MissionID = 3, E_ExtMission_TaskID = 4, E_ExtMission_LowPower = 5, E_ExtMission_TaskLock = 6, E_ExtMission_InvalidStar = 7, E_ExtMission_MissionData = 8, E_ExtMission_AwardOver = 9, E_ExtMission_MissionLock = 10, E_ExtMission_StoryType = 11, E_ExtMission_Else = 64}
+local ext_missionMessageDef = {
+  CLSID_CEventExtMission_Summary = 5000,
+  CLSID_CEventExtMission_FailCount = 5001,
+  CLSID_CEventExtMission_SummaryReq = 5002,
+  CLSID_CEventExtMission_SummaryAsw = 5003,
+  CLSID_CEventExtMission_DetailReq = 5004,
+  CLSID_CEventExtMission_DetailAsw = 5005,
+  CLSID_CEventExtTask_DetailReq = 5006,
+  CLSID_CEventExtTask_DetailAsw = 5007,
+  CLSID_CEventExtMission_AwardReq = 5008,
+  CLSID_CEventExtMission_AwardAsw = 5009,
+  CLSID_CEventExtMission_StoryReq = 5010,
+  CLSID_CEventExtMission_StoryAsw = 5011,
+  CLSID_CEventExtMission_StoryData = 5012,
+  CLSID_CEventExtMission_CompleteAllExtMission = 5013
+}
+table.append(MessageDef, ext_missionMessageDef)
+local ENUM_ExtMission_ErrorCode = {
+  E_ExtMission_Success = 0,
+  E_ExtMission_Fail = 1,
+  E_ExtMission_Level = 2,
+  E_ExtMission_MissionID = 3,
+  E_ExtMission_TaskID = 4,
+  E_ExtMission_LowPower = 5,
+  E_ExtMission_TaskLock = 6,
+  E_ExtMission_InvalidStar = 7,
+  E_ExtMission_MissionData = 8,
+  E_ExtMission_AwardOver = 9,
+  E_ExtMission_MissionLock = 10,
+  E_ExtMission_StoryType = 11,
+  E_ExtMission_Else = 64
+}
 _enum("ENUM_ExtMission_ErrorCode", ENUM_ExtMission_ErrorCode)
 _class("CEventExtMission_Summary", CSvrPushEvent)
 CEventExtMission_Summary = CEventExtMission_Summary
--- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventExtMission_Summary.Constructor = function(self)
-  -- function num : 0_0
+function CEventExtMission_Summary:Constructor()
   self.m_pstid = 0
   self.m_bOnlyNew = false
   self.m_nGuideData = 0
   self.m_vecExtMission = {}
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventExtMission_Summary._proto = {
-[1] = {"m_pstid", "int64"}
-, 
-[2] = {"m_bOnlyNew", "bool"}
-, 
-[3] = {"m_nGuideData", "int"}
-, 
-[4] = {"m_vecExtMission", "list<DSummaryExtMission>"}
+  [1] = {"m_pstid", "int64"},
+  [2] = {"m_bOnlyNew", "bool"},
+  [3] = {
+    "m_nGuideData",
+    "int"
+  },
+  [4] = {
+    "m_vecExtMission",
+    "list<DSummaryExtMission>"
+  }
 }
 _class("CEventExtMission_FailCount", CSvrPushEvent)
 CEventExtMission_FailCount = CEventExtMission_FailCount
--- DECOMPILER ERROR at PC81: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventExtMission_FailCount.Constructor = function(self)
-  -- function num : 0_1
+function CEventExtMission_FailCount:Constructor()
   self.m_nExtMissionID = 0
   self.m_nExtTaskID = 0
   self.m_nFailCount = 0
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventExtMission_FailCount._proto = {
-[1] = {"m_nExtMissionID", "int"}
-, 
-[2] = {"m_nExtTaskID", "int"}
-, 
-[3] = {"m_nFailCount", "int"}
+  [1] = {
+    "m_nExtMissionID",
+    "int"
+  },
+  [2] = {
+    "m_nExtTaskID",
+    "int"
+  },
+  [3] = {
+    "m_nFailCount",
+    "int"
+  }
 }
 _class("CEventExtMission_SummaryReq", CCallRequestEvent)
 CEventExtMission_SummaryReq = CEventExtMission_SummaryReq
--- DECOMPILER ERROR at PC108: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventExtMission_SummaryReq.Constructor = function(self)
-  -- function num : 0_2
+function CEventExtMission_SummaryReq:Constructor()
   self.m_nExtMissionID = 0
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventExtMission_SummaryReq._proto = {
-[1] = {"m_nExtMissionID", "int"}
+  [1] = {
+    "m_nExtMissionID",
+    "int"
+  }
 }
 _class("CEventExtMission_SummaryAsw", CCallReplyEvent)
 CEventExtMission_SummaryAsw = CEventExtMission_SummaryAsw
--- DECOMPILER ERROR at PC125: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventExtMission_SummaryAsw.Constructor = function(self)
-  -- function num : 0_3
+function CEventExtMission_SummaryAsw:Constructor()
   self.m_nResult = 0
   self.m_nGuideData = 0
   self.m_vecExtMission = {}
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventExtMission_SummaryAsw._proto = {
-[1] = {"m_nResult", "int"}
-, 
-[2] = {"m_nGuideData", "int"}
-, 
-[3] = {"m_vecExtMission", "list<DSummaryExtMission>"}
+  [1] = {"m_nResult", "int"},
+  [2] = {
+    "m_nGuideData",
+    "int"
+  },
+  [3] = {
+    "m_vecExtMission",
+    "list<DSummaryExtMission>"
+  }
 }
 _class("CEventExtMission_DetailReq", CCallRequestEvent)
 CEventExtMission_DetailReq = CEventExtMission_DetailReq
--- DECOMPILER ERROR at PC152: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventExtMission_DetailReq.Constructor = function(self)
-  -- function num : 0_4
+function CEventExtMission_DetailReq:Constructor()
   self.m_nExtMissionID = 0
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventExtMission_DetailReq._proto = {
-[1] = {"m_nExtMissionID", "int"}
+  [1] = {
+    "m_nExtMissionID",
+    "int"
+  }
 }
 _class("CEventExtMission_DetailAsw", CCallReplyEvent)
 CEventExtMission_DetailAsw = CEventExtMission_DetailAsw
--- DECOMPILER ERROR at PC169: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventExtMission_DetailAsw.Constructor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function CEventExtMission_DetailAsw:Constructor()
   self.m_nResult = 0
   self.m_extMissionData = DDetailExtMission:New()
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventExtMission_DetailAsw._proto = {
-[1] = {"m_nResult", "int"}
-, 
-[2] = {"m_extMissionData", "DDetailExtMission"}
+  [1] = {"m_nResult", "int"},
+  [2] = {
+    "m_extMissionData",
+    "DDetailExtMission"
+  }
 }
 _class("CEventExtTask_DetailReq", CCallRequestEvent)
 CEventExtTask_DetailReq = CEventExtTask_DetailReq
--- DECOMPILER ERROR at PC191: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventExtTask_DetailReq.Constructor = function(self)
-  -- function num : 0_6
+function CEventExtTask_DetailReq:Constructor()
   self.m_nExtMissionID = 0
   self.m_nExtTaskID = 0
 end
 
--- DECOMPILER ERROR at PC204: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventExtTask_DetailReq._proto = {
-[1] = {"m_nExtMissionID", "int"}
-, 
-[2] = {"m_nExtTaskID", "int"}
+  [1] = {
+    "m_nExtMissionID",
+    "int"
+  },
+  [2] = {
+    "m_nExtTaskID",
+    "int"
+  }
 }
 _class("CEventExtTask_DetailAsw", CCallReplyEvent)
 CEventExtTask_DetailAsw = CEventExtTask_DetailAsw
--- DECOMPILER ERROR at PC213: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventExtTask_DetailAsw.Constructor = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function CEventExtTask_DetailAsw:Constructor()
   self.m_nResult = 0
   self.m_nExtMissionID = 0
   self.m_extTaskData = DDetailExtTask:New()
 end
 
--- DECOMPILER ERROR at PC231: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventExtTask_DetailAsw._proto = {
-[1] = {"m_nResult", "int"}
-, 
-[2] = {"m_nExtMissionID", "int"}
-, 
-[3] = {"m_extTaskData", "DDetailExtTask"}
+  [1] = {"m_nResult", "int"},
+  [2] = {
+    "m_nExtMissionID",
+    "int"
+  },
+  [3] = {
+    "m_extTaskData",
+    "DDetailExtTask"
+  }
 }
-local ENUM_ExtMission_AwardType = {E_ExtMission_Award_No = 0, E_ExtMission_Award_TaskNormal = 1, E_ExtMission_Award_TaskPerfect = 2, E_ExtMission_Award_NormalStart = 10}
+local ENUM_ExtMission_AwardType = {
+  E_ExtMission_Award_No = 0,
+  E_ExtMission_Award_TaskNormal = 1,
+  E_ExtMission_Award_TaskPerfect = 2,
+  E_ExtMission_Award_NormalStart = 10
+}
 _enum("ENUM_ExtMission_AwardType", ENUM_ExtMission_AwardType)
 _class("CEventExtMission_AwardReq", CCallRequestEvent)
 CEventExtMission_AwardReq = CEventExtMission_AwardReq
--- DECOMPILER ERROR at PC249: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventExtMission_AwardReq.Constructor = function(self)
-  -- function num : 0_8
+function CEventExtMission_AwardReq:Constructor()
   self.m_nExtMissionID = 0
   self.m_nExtTaskID = 0
   self.m_nStarCount = 0
 end
 
--- DECOMPILER ERROR at PC267: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventExtMission_AwardReq._proto = {
-[1] = {"m_nExtMissionID", "int"}
-, 
-[2] = {"m_nExtTaskID", "int"}
-, 
-[3] = {"m_nStarCount", "int"}
+  [1] = {
+    "m_nExtMissionID",
+    "int"
+  },
+  [2] = {
+    "m_nExtTaskID",
+    "int"
+  },
+  [3] = {
+    "m_nStarCount",
+    "int"
+  }
 }
 _class("CEventExtMission_AwardAsw", CCallReplyEvent)
 CEventExtMission_AwardAsw = CEventExtMission_AwardAsw
--- DECOMPILER ERROR at PC276: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventExtMission_AwardAsw.Constructor = function(self)
-  -- function num : 0_9
+function CEventExtMission_AwardAsw:Constructor()
   self.m_nResult = 0
   self.m_nExtMissionID = 0
   self.m_nExtTaskID = 0
@@ -189,82 +217,83 @@ CEventExtMission_AwardAsw.Constructor = function(self)
   self.m_nAwardRecord = 0
 end
 
--- DECOMPILER ERROR at PC304: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventExtMission_AwardAsw._proto = {
-[1] = {"m_nResult", "int"}
-, 
-[2] = {"m_nExtMissionID", "int"}
-, 
-[3] = {"m_nExtTaskID", "int"}
-, 
-[4] = {"m_nStarCount", "int"}
-, 
-[5] = {"m_nAwardRecord", "int"}
+  [1] = {"m_nResult", "int"},
+  [2] = {
+    "m_nExtMissionID",
+    "int"
+  },
+  [3] = {
+    "m_nExtTaskID",
+    "int"
+  },
+  [4] = {
+    "m_nStarCount",
+    "int"
+  },
+  [5] = {
+    "m_nAwardRecord",
+    "int"
+  }
 }
 _class("CEventExtMission_StoryReq", CCallRequestEvent)
 CEventExtMission_StoryReq = CEventExtMission_StoryReq
--- DECOMPILER ERROR at PC313: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventExtMission_StoryReq.Constructor = function(self)
-  -- function num : 0_10
+function CEventExtMission_StoryReq:Constructor()
   self.m_nExtTaskID = 0
   self.m_nExtStroyData = 0
 end
 
--- DECOMPILER ERROR at PC326: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventExtMission_StoryReq._proto = {
-[1] = {"m_nExtTaskID", "int"}
-, 
-[2] = {"m_nExtStroyData", "int"}
+  [1] = {
+    "m_nExtTaskID",
+    "int"
+  },
+  [2] = {
+    "m_nExtStroyData",
+    "int"
+  }
 }
 _class("CEventExtMission_StoryAsw", CCallReplyEvent)
 CEventExtMission_StoryAsw = CEventExtMission_StoryAsw
--- DECOMPILER ERROR at PC335: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventExtMission_StoryAsw.Constructor = function(self)
-  -- function num : 0_11
+function CEventExtMission_StoryAsw:Constructor()
   self.m_nResult = 0
   self.m_nExtTaskID = 0
   self.m_nExtStroyData = 0
 end
 
--- DECOMPILER ERROR at PC353: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventExtMission_StoryAsw._proto = {
-[1] = {"m_nResult", "int"}
-, 
-[2] = {"m_nExtTaskID", "int"}
-, 
-[3] = {"m_nExtStroyData", "int"}
+  [1] = {"m_nResult", "int"},
+  [2] = {
+    "m_nExtTaskID",
+    "int"
+  },
+  [3] = {
+    "m_nExtStroyData",
+    "int"
+  }
 }
 _class("CEventExtMission_StoryData", CSvrPushEvent)
 CEventExtMission_StoryData = CEventExtMission_StoryData
--- DECOMPILER ERROR at PC362: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventExtMission_StoryData.Constructor = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function CEventExtMission_StoryData:Constructor()
   self.m_extStroy = DExtStoryDataList:New()
 end
 
--- DECOMPILER ERROR at PC370: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventExtMission_StoryData._proto = {
-[1] = {"m_extStroy", "DExtStoryDataList"}
+  [1] = {
+    "m_extStroy",
+    "DExtStoryDataList"
+  }
 }
 _class("CEventExtMission_CompleteAllExtMission", CCliPushEvent)
 CEventExtMission_CompleteAllExtMission = CEventExtMission_CompleteAllExtMission
--- DECOMPILER ERROR at PC379: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventExtMission_CompleteAllExtMission.Constructor = function(self)
-  -- function num : 0_13
+function CEventExtMission_CompleteAllExtMission:Constructor()
   self.m_nExtID = 0
 end
 
--- DECOMPILER ERROR at PC387: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventExtMission_CompleteAllExtMission._proto = {
-[1] = {"m_nExtID", "int"}
+  [1] = {"m_nExtID", "int"}
 }
-

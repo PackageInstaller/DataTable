@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_qier_monster_round_random.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_QierMonsterRoundRandom", SkillScopeCalculator_Base)
 SkillScopeCalculator_QierMonsterRoundRandom = SkillScopeCalculator_QierMonsterRoundRandom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_QierMonsterRoundRandom.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  if not (self._gridFilter)._world then
+function SkillScopeCalculator_QierMonsterRoundRandom:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  if not self._gridFilter._world then
     return SkillScopeResult:New(SkillScopeType.QierMonsterRoundRandom, centerPos, {}, {})
   end
   local ringLength = scopeParam.ringLength
@@ -18,41 +11,40 @@ SkillScopeCalculator_QierMonsterRoundRandom.CalcRange = function(self, scopeType
   local attackRange = {}
   local wholeRange = {}
   local damageResults = {}
-  local world = (self._gridFilter)._world
-  local skillResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local world = self._gridFilter._world
+  local skillResultContainer = casterEntity:SkillContext():GetResultContainer()
   if not skillResultContainer then
     return SkillScopeResult:New(SkillScopeType.QierMonsterRoundRandom, centerPos, {}, {})
   end
   damageResults = skillResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   local monsterIDs = {}
-  for _,result in ipairs(damageResults) do
+  for _, result in ipairs(damageResults) do
     local targetID = result:GetTargetID()
     if targetID ~= -1 then
-      (table.insert)(monsterIDs, targetID)
+      table.insert(monsterIDs, targetID)
     end
   end
   local tSkipPos = {casterPos}
   local aroundCalc = SkillScopeCalculator_AroundBodyArea:New(self._hub)
-  for _,id in ipairs(monsterIDs) do
+  for _, id in ipairs(monsterIDs) do
     local e = world:GetEntityByID(id)
     local monsterCenterPos = e:GetGridPosition()
-    local monsterBodyArea = (e:BodyArea()):GetArea()
+    local monsterBodyArea = e:BodyArea():GetArea()
     local monsterDir = e:GetGridDirection()
     local aroundScopeResult = aroundCalc:CalcRange(SkillScopeType.AroundBodyArea, {0, aroundBodyAreaLength}, monsterCenterPos, monsterBodyArea, monsterDir, SkillTargetType.Board, casterPos, casterEntity)
     local range = aroundScopeResult:GetAttackRange()
-    if range and #range > 0 then
-      local tEmptyPos = (self._gridFilter):GetEmptyPieces(range)
+    if range and 0 < #range then
+      local tEmptyPos = self._gridFilter:GetEmptyPieces(range)
       local pool = {}
-      for _,v2 in ipairs(tEmptyPos) do
-        if not (table.icontains)(tSkipPos, v2) then
-          (table.insert)(pool, v2)
+      for _, v2 in ipairs(tEmptyPos) do
+        if not table.icontains(tSkipPos, v2) then
+          table.insert(pool, v2)
         end
       end
-      if #pool > 0 then
-        local randomIndex = (self._gridFilter):_GetRandomNumber(1, #pool)
-        local pos = (table.remove)(pool, randomIndex)
-        ;
-        (table.insert)(tSkipPos, pos)
+      if 0 < #pool then
+        local randomIndex = self._gridFilter:_GetRandomNumber(1, #pool)
+        local pos = table.remove(pool, randomIndex)
+        table.insert(tSkipPos, pos)
         self:_InsertTargetGrid(attackRange, pos, wholeRange)
       end
     end
@@ -60,5 +52,3 @@ SkillScopeCalculator_QierMonsterRoundRandom.CalcRange = function(self, scopeType
   local result = SkillScopeResult:New(SkillScopeType.QierMonsterRoundRandom, centerPos, attackRange, wholeRange)
   return result
 end
-
-

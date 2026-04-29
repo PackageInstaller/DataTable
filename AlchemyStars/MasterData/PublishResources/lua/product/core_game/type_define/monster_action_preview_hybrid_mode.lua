@@ -1,10 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/monster_action_preview_hybrid_mode.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-MonsterActionHybridPreviewMode = {Carousel = 1, RoundBasedCarousel = 2, AlphaFixedByRound = 3, TotalRoundBasedCarousel = 4, N34BossStateCarousel = 5, StateCarousel = 6}
+MonsterActionHybridPreviewMode = {
+  Carousel = 1,
+  RoundBasedCarousel = 2,
+  AlphaFixedByRound = 3,
+  TotalRoundBasedCarousel = 4,
+  N34BossStateCarousel = 5,
+  StateCarousel = 6
+}
 _enum("MonsterActionHybridPreviewMode", MonsterActionHybridPreviewMode)
-N34BossStateType = {NotArrive = 1, Arrived = 2, Palsy = 3}
+N34BossStateType = {
+  NotArrive = 1,
+  Arrived = 2,
+  Palsy = 3
+}
 _enum("N34BossStateType", N34BossStateType)
-

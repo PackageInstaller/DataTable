@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_ai.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetAI", BuffLogicBase)
 BuffLogicSetAI = BuffLogicSetAI
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetAI.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetAI:Constructor(buffInstance, logicParam)
   self._newAI = logicParam.newAI
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetAI.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetAI:DoLogic()
+  local e = self._buffInstance:Entity()
   if not e:HasAI() then
-    return 
+    return
   end
   local listAiID = {}
   if type(self._newAI) ~= "table" then
@@ -31,21 +21,14 @@ end
 
 _class("BuffLogicResetAI", BuffLogicBase)
 BuffLogicResetAI = BuffLogicResetAI
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetAI.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetAI:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetAI.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicResetAI:DoLogic()
+  local e = self._buffInstance:Entity()
   if not e:HasAI() then
-    return 
+    return
   end
   e:ResumeAI(AILogicPeriodType.Main)
 end
-
-

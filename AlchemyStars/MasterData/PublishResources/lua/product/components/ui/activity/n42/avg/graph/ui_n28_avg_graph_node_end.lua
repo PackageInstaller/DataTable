@@ -1,50 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/graph/ui_n28_avg_graph_node_end.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGGraphNodeEnd", UIN28AVGGraphNodeBase)
 UIN28AVGGraphNodeEnd = UIN28AVGGraphNodeEnd
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGGraphNodeEnd.OnHide = function(self)
-  -- function num : 0_0
-  (self.imgIcon):DestoryLastImage()
+function UIN28AVGGraphNodeEnd:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodeEnd.InitComponent = function(self)
-  -- function num : 0_1
+function UIN28AVGGraphNodeEnd:InitComponent()
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self.txtName1 = self:GetUIComponent("UILocalizationText", "txtName1")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodeEnd.FlushName = function(self)
-  -- function num : 0_2
-  (self.txtName):SetText((self.node).title)
-  ;
-  (self.txtName1):SetText((self.node).title)
+function UIN28AVGGraphNodeEnd:FlushName()
+  self.txtName:SetText(self.node.title)
+  self.txtName1:SetText(self.node.title)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodeEnd.FlushState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local state = (self.node):State()
+function UIN28AVGGraphNodeEnd:FlushState()
+  local state = self.node:State()
   if state == N28AVGStoryNodeState.CanPlay then
-    (self.imgIcon):LoadImage((self.node).cgCanplayCGNode)
+    self.imgIcon:LoadImage(self.node.cgCanplayCGNode)
+  elseif state == N28AVGStoryNodeState.Complete then
+    self.imgIcon:LoadImage(self.node.cgNode)
   else
-    if state == N28AVGStoryNodeState.Complete then
-      (self.imgIcon):LoadImage((self.node).cgNode)
-    else
-      ;
-      (Log.warn)("### invalid N28AVGStoryNodeState:", state)
-    end
+    Log.warn("### invalid N28AVGStoryNodeState:", state)
   end
 end
-
-

@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cookgame/cook/require/ui_n0_cook_mat_require_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN0CookMatRequireItem", UICustomWidget)
 UIN0CookMatRequireItem = UIN0CookMatRequireItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN0CookMatRequireItem.Constructor = function(self)
-  -- function num : 0_0
+function UIN0CookMatRequireItem:Constructor()
   self._task = nil
   self._callback = nil
   self._component = nil
   self._delayTime = 50
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatRequireItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN0CookMatRequireItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatRequireItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIN0CookMatRequireItem:_GetComponents()
   self._rewardContent = self:GetUIComponent("UISelectObjectPath", "rewardContent")
   self._slider = self:GetUIComponent("Slider", "taskInfoSlider")
   self._percentParent = self:GetUIComponent("RectTransform", "percentParent")
@@ -36,16 +23,16 @@ UIN0CookMatRequireItem._GetComponents = function(self)
   self._taskBtnReceivedObj = self:GetGameObject("taskBtn-received")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatRequireItem.SetData = function(self, task, component, campaign, componentId, index, callback, itemClickCall)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN0CookMatRequireItem:SetData(task, component, campaign, componentId, index, callback, itemClickCall)
   self._itemClickCall = itemClickCall
   self._task = task
   self._component = component
   self._campaign = campaign
   self._index = index
-  local cfgs = (Cfg.cfg_component_newyear_dinner_task)({ComponentID = componentId, TaskID = (self._task).task_id})
+  local cfgs = Cfg.cfg_component_newyear_dinner_task({
+    ComponentID = componentId,
+    TaskID = self._task.task_id
+  })
   self._taskCfg = cfgs[1]
   self._callback = callback
   local delayTime = (index - 1) * self._delayTime
@@ -53,92 +40,58 @@ UIN0CookMatRequireItem.SetData = function(self, task, component, campaign, compo
   self:_InitData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatRequireItem._InitData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local reward = (self._rewardContent):SpawnObject("UIN0CookRewardItem")
-  local id = (((self._taskCfg).Reward)[1])[1]
-  local num = (((self._taskCfg).Reward)[1])[2]
+function UIN0CookMatRequireItem:_InitData()
+  local reward = self._rewardContent:SpawnObject("UIN0CookRewardItem")
+  local id = self._taskCfg.Reward[1][1]
+  local num = self._taskCfg.Reward[1][2]
   reward:SetData(id, num, function(tplId, pos)
-    -- function num : 0_4_0 , upvalues : self
     if self._itemClickCall then
-      (self._itemClickCall)(tplId, pos)
+      self._itemClickCall(tplId, pos)
     end
+  end)
+  self._percent1:SetText(self._task.cur_progress .. "/" .. self._task.total_progress)
+  self._slider.value = self._task.cur_progress / self._task.total_progress
+  self._taskTitle:SetText(StringTable.Get(self._taskCfg.Sescribe))
+  self._taskBtnObj:SetActive(false)
+  self._taskBtnUnFishedObj:SetActive(false)
+  self._taskBtnReceivedObj:SetActive(false)
+  if self._task.status == NewYearDinner_Status.E_NewYearDinner_Status_LOCK then
+  elseif self._task.status == NewYearDinner_Status.E_NewYearDinner_Status_UN_FINISH then
+    self._taskBtnUnFishedObj:SetActive(true)
+  elseif self._task.status == NewYearDinner_Status.E_NewYearDinner_Status_CAN_RECV then
+    self._taskBtnObj:SetActive(true)
+  elseif self._task.status == NewYearDinner_Status.E_NewYearDinner_Status_RECVED then
+    self._taskBtnReceivedObj:SetActive(true)
   end
-)
-  ;
-  (self._percent1):SetText((self._task).cur_progress .. "/" .. (self._task).total_progress)
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._slider).value = (self._task).cur_progress / (self._task).total_progress
-  ;
-  (self._taskTitle):SetText((StringTable.Get)((self._taskCfg).Sescribe))
-  ;
-  (self._taskBtnObj):SetActive(false)
-  ;
-  (self._taskBtnUnFishedObj):SetActive(false)
-  ;
-  (self._taskBtnReceivedObj):SetActive(false)
-  if (self._task).status ~= NewYearDinner_Status.E_NewYearDinner_Status_LOCK or (self._task).status == NewYearDinner_Status.E_NewYearDinner_Status_UN_FINISH then
-    (self._taskBtnUnFishedObj):SetActive(true)
-  else
-    if (self._task).status == NewYearDinner_Status.E_NewYearDinner_Status_CAN_RECV then
-      (self._taskBtnObj):SetActive(true)
-    else
-      if (self._task).status == NewYearDinner_Status.E_NewYearDinner_Status_RECVED then
-        (self._taskBtnReceivedObj):SetActive(true)
-      end
-    end
-  end
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._percentParent)
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._percentParent)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._percentParent)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._percentParent)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatRequireItem.TaskBtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._task).status == NewYearDinner_Status.E_NewYearDinner_Status_CAN_RECV then
+function UIN0CookMatRequireItem:TaskBtnOnClick()
+  if self._task.status == NewYearDinner_Status.E_NewYearDinner_Status_CAN_RECV then
     self:StartTask(self._TaskBtnClick, self)
   else
-    ;
-    (Log.fatal)("不可领取：", (self._task).status)
+    Log.fatal("不可领取：", self._task.status)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatRequireItem._TaskBtnClick = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN0CookMatRequireItem:_TaskBtnClick(TT)
   local res = AsyncRequestRes:New()
-  local result, rewards = (self._component):HandleNewYearDinnerReward(TT, res, NewYearDinner_Reward_Type.E_NewYearDinner_Reward_Task, (self._task).task_id)
+  local result, rewards = self._component:HandleNewYearDinnerReward(TT, res, NewYearDinner_Reward_Type.E_NewYearDinner_Reward_Task, self._task.task_id)
   if res and res:GetSucc() then
     self:ShowDialog("UIGetItemController", rewards)
-    ;
-    (self._taskBtnObj):SetActive(false)
-    ;
-    (self._taskBtnReceivedObj):SetActive(true)
+    self._taskBtnObj:SetActive(false)
+    self._taskBtnReceivedObj:SetActive(true)
     if self._callback then
-      (self._callback)()
+      self._callback()
     end
   else
-    local result = (self._campaign):CheckComponentOpenClientError(ECCampaignInlandDinnerComponentID.ECAMPAIGN_INLAND_DINNER)
-    ;
-    (self._campaign):CheckErrorCode(result)
-    ;
-    (Log.fatal)("美食活动任务领取失败：", res:GetResult())
+    local result = self._campaign:CheckComponentOpenClientError(ECCampaignInlandDinnerComponentID.ECAMPAIGN_INLAND_DINNER)
+    self._campaign:CheckErrorCode(result)
+    Log.fatal("美食活动任务领取失败：", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatRequireItem._SetAnimation = function(self, delay)
-  -- function num : 0_7 , upvalues : _ENV
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "anim", "anim", "uieff_N0_CookMatRequireItem", delay, 500, nil)
+function UIN0CookMatRequireItem:_SetAnimation(delay)
+  UIWidgetHelper.PlayAnimationInSequence(self, "anim", "anim", "uieff_N0_CookMatRequireItem", delay, 500, nil)
 end
-
-

@@ -1,216 +1,149 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/ui_summer_1/cls/ui_summer_1_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Summer1Data", Object)
 Summer1Data = Summer1Data
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Summer1Data.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
+function Summer1Data:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
   self._campaign = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.RequestCampaign = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function Summer1Data:RequestCampaign(TT)
   local res = AsyncRequestRes:New()
   if not self._campaign then
     self._campaign = UIActivityCampaign:New()
-    ;
-    (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SUMMER_I)
-    return 
+    self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SUMMER_I)
+    return
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if res and res:GetSucc() then
-    (Log.fatal)("### [RequestCampaign]CampaignComProtoLoadInfo failed.")
+  else
+    Log.fatal("### [RequestCampaign]CampaignComProtoLoadInfo failed.")
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetCampaign = function(self)
-  -- function num : 0_2
+function Summer1Data:GetCampaign()
   return self._campaign
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetCampaignId = function(self)
-  -- function num : 0_3
-  return (self._campaign)._id
+function Summer1Data:GetCampaignId()
+  return self._campaign._id
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetCampaignLocalProgress = function(self)
-  -- function num : 0_4
-  return (self._campaign):GetLocalProcess()
+function Summer1Data:GetCampaignLocalProgress()
+  return self._campaign:GetLocalProcess()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.CheckRedAward = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function Summer1Data:CheckRedAward()
   local lp = self:GetCampaignLocalProgress()
-  local red = (self.mCampaign):CheckComponentRed(lp, ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_CUMULATIVE_LOGIN)
+  local red = self.mCampaign:CheckComponentRed(lp, ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_CUMULATIVE_LOGIN)
   return red
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.CheckRedNormal = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function Summer1Data:CheckRedNormal()
   local state = self:GetStateNormal()
   if state == UISummerOneEnterBtnState.Normal then
     local lp = self:GetCampaignLocalProgress()
-    local redActionPoint = (self.mCampaign):CheckComponentRed(lp, ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_ACTION_POINT)
-    local redFixTeam = (self.mCampaign):CheckComponentRed(lp, ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_LEVEL_FIXTEAM)
+    local redActionPoint = self.mCampaign:CheckComponentRed(lp, ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_ACTION_POINT)
+    local redFixTeam = self.mCampaign:CheckComponentRed(lp, ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_LEVEL_FIXTEAM)
     return redActionPoint or redFixTeam
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.CheckRedGame = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function Summer1Data:CheckRedGame()
   local state = self:GetStateGame()
   if state == UISummerOneEnterBtnState.Normal then
     local lp = self:GetCampaignLocalProgress()
-    local red = (self.mCampaign):CheckComponentRed(lp, ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_SHAVING_ICE)
+    local red = self.mCampaign:CheckComponentRed(lp, ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_SHAVING_ICE)
     return red
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetCampaignSummerI = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local cSummerI = (self.mCampaign):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_SUMMER_I)
+function Summer1Data:GetCampaignSummerI()
+  local cSummerI = self.mCampaign:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_SUMMER_I)
   return cSummerI
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetComponent = function(self, ecampaignSummerIComponentID)
-  -- function num : 0_9 , upvalues : _ENV
+function Summer1Data:GetComponent(ecampaignSummerIComponentID)
   local cSummerI = self:GetCampaignSummerI()
   if not cSummerI then
-    (Log.fatal)("### GetCampaignSummerI failed.")
-    return 
+    Log.fatal("### GetCampaignSummerI failed.")
+    return
   end
   local cInfo = cSummerI:GetComponentInfo(ecampaignSummerIComponentID)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetComponentNormal = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function Summer1Data:GetComponentNormal()
   local cInfo = self:GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_LEVEL_COMMON)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetComponentHard = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function Summer1Data:GetComponentHard()
   local cInfo = self:GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_LEVEL_HARD)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetComponentGame = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function Summer1Data:GetComponentGame()
   local cInfo = self:GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_SHAVING_ICE)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetState = function(self, cInfo)
-  -- function num : 0_13 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+function Summer1Data:GetState(cInfo)
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if nowTimestamp < cInfo.m_unlock_time then
     return UISummerOneEnterBtnState.NotOpen
+  elseif nowTimestamp > cInfo.m_close_time then
+    return UISummerOneEnterBtnState.Closed
+  elseif cInfo.m_b_unlock then
+    return UISummerOneEnterBtnState.Normal
   else
-    if cInfo.m_close_time < nowTimestamp then
-      return UISummerOneEnterBtnState.Closed
+    local cfgv = Cfg.cfg_campaign_mission[cInfo.m_need_mission_id]
+    if cfgv then
+      return UISummerOneEnterBtnState.Locked
     else
-      if cInfo.m_b_unlock then
-        return UISummerOneEnterBtnState.Normal
-      else
-        local cfgv = (Cfg.cfg_campaign_mission)[cInfo.m_need_mission_id]
-        if cfgv then
-          return UISummerOneEnterBtnState.Locked
-        else
-          return UISummerOneEnterBtnState.Normal
-        end
-      end
+      return UISummerOneEnterBtnState.Normal
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetStateNormal = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function Summer1Data:GetStateNormal()
   local cInfo = self:GetComponentNormal()
   if not cInfo then
-    (Log.fatal)("### GetComponentHard failed.")
-    return 
+    Log.fatal("### GetComponentHard failed.")
+    return
   end
   return self:GetState(cInfo)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetStateHard = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function Summer1Data:GetStateHard()
   local cHardInfo = self:GetComponentHard()
   if not cHardInfo then
-    (Log.fatal)("### GetComponentHard failed.")
-    return 
+    Log.fatal("### GetComponentHard failed.")
+    return
   end
   return self:GetState(cHardInfo)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetStateGame = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function Summer1Data:GetStateGame()
   local cCameInfo = self:GetComponentGame()
   if not cCameInfo then
-    (Log.fatal)("### GetComponentGame failed.")
-    return 
+    Log.fatal("### GetComponentGame failed.")
+    return
   end
   return self:GetState(cCameInfo)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.CheckMiniGameNewStage = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local mLogin = (GameGlobal.GetModule)(LoginModule)
-  local str = (LocalDB.GetString)("MiniGameNewStage" .. mLogin:GetRoleShowID())
-  local ids = (string.split)(str, ",")
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+function Summer1Data:CheckMiniGameNewStage()
+  local mLogin = GameGlobal.GetModule(LoginModule)
+  local str = LocalDB.GetString("MiniGameNewStage" .. mLogin:GetRoleShowID())
+  local ids = string.split(str, ",")
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   local componentInfo = self:GetComponentGame()
   local list = componentInfo.mission_info_list
   local newStage = false
   for i = 1, #list do
-    if (list[i]).unlock_time <= nowTimestamp then
+    if nowTimestamp >= list[i].unlock_time then
       local record = false
       for j = 1, #ids do
         if ids[j] == tostring(i) then
@@ -218,104 +151,65 @@ Summer1Data.CheckMiniGameNewStage = function(self)
           break
         end
       end
-      do
-        do
-          if not record then
-            newStage = true
-            break
-          end
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if not record then
+        newStage = true
+        break
       end
     end
   end
   return newStage
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetPstId = function()
-  -- function num : 0_18 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function Summer1Data.GetPstId()
+  local mRole = GameGlobal.GetModule(RoleModule)
   return mRole:GetPstId()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetPrefsKey = function(str)
-  -- function num : 0_19 , upvalues : _ENV
-  local playerPrefsKey = (Summer1Data.GetPstId)() .. str
+function Summer1Data.GetPrefsKey(str)
+  local playerPrefsKey = Summer1Data.GetPstId() .. str
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetPrefsKeyMain = function()
-  -- function num : 0_20 , upvalues : _ENV
-  return (Summer1Data.GetPrefsKey)("UISummer1PrefsKeyMain")
+function Summer1Data.GetPrefsKeyMain()
+  return Summer1Data.GetPrefsKey("UISummer1PrefsKeyMain")
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetPrefsKeyHard = function()
-  -- function num : 0_21 , upvalues : _ENV
-  return (Summer1Data.GetPrefsKey)("UISummer1PrefsKeyHard")
+function Summer1Data.GetPrefsKeyHard()
+  return Summer1Data.GetPrefsKey("UISummer1PrefsKeyHard")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.GetPrefsKeyGame = function()
-  -- function num : 0_22 , upvalues : _ENV
-  return (Summer1Data.GetPrefsKey)("UISummer1PrefsKeyGame")
+function Summer1Data.GetPrefsKeyGame()
+  return Summer1Data.GetPrefsKey("UISummer1PrefsKeyGame")
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.HasPrefsMain = function()
-  -- function num : 0_23 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((Summer1Data.GetPrefsKeyMain)())
+function Summer1Data.HasPrefsMain()
+  return UnityEngine.PlayerPrefs.HasKey(Summer1Data.GetPrefsKeyMain())
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.HasPrefsHard = function()
-  -- function num : 0_24 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((Summer1Data.GetPrefsKeyHard)())
+function Summer1Data.HasPrefsHard()
+  return UnityEngine.PlayerPrefs.HasKey(Summer1Data.GetPrefsKeyHard())
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.HasPrefsGame = function()
-  -- function num : 0_25 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((Summer1Data.GetPrefsKeyGame)())
+function Summer1Data.HasPrefsGame()
+  return UnityEngine.PlayerPrefs.HasKey(Summer1Data.GetPrefsKeyGame())
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.SetPrefsMain = function()
-  -- function num : 0_26 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((Summer1Data.GetPrefsKeyMain)(), 1)
+function Summer1Data.SetPrefsMain()
+  UnityEngine.PlayerPrefs.SetInt(Summer1Data.GetPrefsKeyMain(), 1)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.SetPrefsHard = function()
-  -- function num : 0_27 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((Summer1Data.GetPrefsKeyHard)(), 1)
+function Summer1Data.SetPrefsHard()
+  UnityEngine.PlayerPrefs.SetInt(Summer1Data.GetPrefsKeyHard(), 1)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-Summer1Data.SetPrefsGame = function()
-  -- function num : 0_28 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((Summer1Data.GetPrefsKeyGame)(), 1)
+function Summer1Data.SetPrefsGame()
+  UnityEngine.PlayerPrefs.SetInt(Summer1Data.GetPrefsKeyGame(), 1)
 end
 
-local UISummerOneEnterBtnState = {NotOpen = 1, Locked = 2, Closed = 3, Normal = 4}
+local UISummerOneEnterBtnState = {
+  NotOpen = 1,
+  Locked = 2,
+  Closed = 3,
+  Normal = 4
+}
 _enum("UISummerOneEnterBtnState", UISummerOneEnterBtnState)
-

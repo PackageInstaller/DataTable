@@ -1,124 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_eff_param/fep_alchemy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureEffectParamAlchemyData", Object)
 FeatureEffectParamAlchemyData = FeatureEffectParamAlchemyData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamAlchemyData.Constructor = function(self, level, ap, buffList, desc)
-  -- function num : 0_0
+function FeatureEffectParamAlchemyData:Constructor(level, ap, buffList, desc)
   self._level = level
   self._ap = ap
   self._buffList = buffList
   self._desc = desc
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlchemyData.GetLevel = function(self)
-  -- function num : 0_1
+function FeatureEffectParamAlchemyData:GetLevel()
   return self._level
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlchemyData.GetAP = function(self)
-  -- function num : 0_2
+function FeatureEffectParamAlchemyData:GetAP()
   return self._ap
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlchemyData.GetBuffList = function(self)
-  -- function num : 0_3
+function FeatureEffectParamAlchemyData:GetBuffList()
   return self._buffList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlchemyData.GetDesc = function(self)
-  -- function num : 0_4
+function FeatureEffectParamAlchemyData:GetDesc()
   return self._desc
 end
 
 _class("FeatureEffectParamAlchemy", FeatureEffectParamBase)
 FeatureEffectParamAlchemy = FeatureEffectParamAlchemy
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamAlchemy.Constructor = function(self, t)
-  -- function num : 0_5
+function FeatureEffectParamAlchemy:Constructor(t)
   if not t then
-    return 
+    return
   end
   self._dataList = {}
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlchemy._RefreshData = function(self, t)
-  -- function num : 0_6 , upvalues : _ENV
+function FeatureEffectParamAlchemy:_RefreshData(t)
   if not t then
-    return 
+    return
   end
   self._dataList = {}
-  for i,v in ipairs(t) do
+  for i, v in ipairs(t) do
     local data = FeatureEffectParamAlchemyData:New(v.Level, v.AP, v.BuffList, v.Desc)
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._dataList)[v.Level] = data
+    self._dataList[v.Level] = data
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlchemy.GetFeatureType = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function FeatureEffectParamAlchemy:GetFeatureType()
   return FeatureType.Alchemy
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlchemy.CopyFrom = function(self, param)
-  -- function num : 0_8 , upvalues : _ENV
+function FeatureEffectParamAlchemy:CopyFrom(param)
   if param then
-    for k,v in pairs(param) do
+    for k, v in pairs(param) do
       self[k] = v
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlchemy.CloneSelf = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function FeatureEffectParamAlchemy:CloneSelf()
   local param = FeatureEffectParamAlchemy:New()
   param:CopyFrom(self)
   return param
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlchemy.ReplaceByCustomCfg = function(self, t)
-  -- function num : 0_10
+function FeatureEffectParamAlchemy:ReplaceByCustomCfg(t)
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlchemy.GetLevelData = function(self, level)
-  -- function num : 0_11
-  return (self._dataList)[level]
+function FeatureEffectParamAlchemy:GetLevelData(level)
+  return self._dataList[level]
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAlchemy.GetAllData = function(self)
-  -- function num : 0_12
+function FeatureEffectParamAlchemy:GetAllData()
   return self._dataList
 end
-
-

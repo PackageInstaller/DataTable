@@ -1,35 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cutscene_pack_installer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _staticClass("CutscenePackInstaller")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-CutscenePackInstaller.InstallEntityComponentsLookup = function(self, weComponents)
-  -- function num : 0_0 , upvalues : _ENV
+function CutscenePackInstaller:InstallEntityComponentsLookup(weComponents)
   weComponents:MergeLookup(CutsceneComponentsRegister)
 end
 
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-CutscenePackInstaller.InstallUniqueComponentsLookup = function(self, uniqueComponents)
-  -- function num : 0_1 , upvalues : _ENV
+function CutscenePackInstaller:InstallUniqueComponentsLookup(uniqueComponents)
   uniqueComponents:MergeLookup(CutsceneUniqueComponentsRegister)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CutscenePackInstaller.InstallEntityMatchers = function(self, entityMatchers, weComponents)
-  -- function num : 0_2 , upvalues : _ENV
-  entityMatchers.CutsceneMonster = Matcher:New({weComponents.CutsceneMonster}, {}, {})
-  entityMatchers.CutscenePlayer = Matcher:New({weComponents.CutscenePlayer}, {}, {})
-  entityMatchers.AnimatorController = Matcher:New({weComponents.AnimatorController}, {}, {})
-  entityMatchers.LegacyAnimation = Matcher:New({weComponents.LegacyAnimation}, {}, {})
-  entityMatchers.MaterialAnimation = Matcher:New({weComponents.MaterialAnimation}, {}, {})
-  entityMatchers.Hitback = Matcher:New({weComponents.Hitback}, {}, {})
-  entityMatchers.GridMove = Matcher:New({weComponents.GridMove}, {}, {})
-  entityMatchers.EntityType = Matcher:New({weComponents.EntityType}, {}, {})
+function CutscenePackInstaller:InstallEntityMatchers(entityMatchers, weComponents)
+  entityMatchers.CutsceneMonster = Matcher:New({
+    weComponents.CutsceneMonster
+  }, {}, {})
+  entityMatchers.CutscenePlayer = Matcher:New({
+    weComponents.CutscenePlayer
+  }, {}, {})
+  entityMatchers.AnimatorController = Matcher:New({
+    weComponents.AnimatorController
+  }, {}, {})
+  entityMatchers.LegacyAnimation = Matcher:New({
+    weComponents.LegacyAnimation
+  }, {}, {})
+  entityMatchers.MaterialAnimation = Matcher:New({
+    weComponents.MaterialAnimation
+  }, {}, {})
+  entityMatchers.Hitback = Matcher:New({
+    weComponents.Hitback
+  }, {}, {})
+  entityMatchers.GridMove = Matcher:New({
+    weComponents.GridMove
+  }, {}, {})
+  entityMatchers.EntityType = Matcher:New({
+    weComponents.EntityType
+  }, {}, {})
 end
-
-

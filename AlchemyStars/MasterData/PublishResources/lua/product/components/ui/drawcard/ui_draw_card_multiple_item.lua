@@ -1,32 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_multiple_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardMultipleItem", UICustomWidget)
 UIDrawCardMultipleItem = UIDrawCardMultipleItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardMultipleItem.OnShow = function(self)
-  -- function num : 0_0
+function UIDrawCardMultipleItem:OnShow()
   self.starPool = self:GetUIComponent("UISelectObjectPath", "stars")
   self.starParent = self:GetUIComponent("Transform", "stars")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardMultipleItem.SetData = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.warn)("set multiple item data")
+function UIDrawCardMultipleItem:SetData()
+  Log.warn("set multiple item data")
   local count = 5
-  ;
-  (self.starPool):SpawnObjects(nil, count)
+  self.starPool:SpawnObjects(nil, count)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardMultipleItem.OnHide = function(self)
-  -- function num : 0_2
+function UIDrawCardMultipleItem:OnHide()
 end
-
-

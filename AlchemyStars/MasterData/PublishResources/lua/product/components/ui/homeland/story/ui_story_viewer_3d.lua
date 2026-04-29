@@ -1,61 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/story/ui_story_viewer_3d.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStoryViewer3D", UIController)
 UIStoryViewer3D = UIStoryViewer3D
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIStoryViewer3D.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIStoryViewer3D:OnShow(uiParams)
   self._storyIDTxt = self:GetUIComponent("Text", "Text")
   self._debugModeToggle = self:GetUIComponent("Toggle", "Toggle")
   self._uiroot = self:GetGameObject()
-  ;
-  (AudioHelperController.StopBGM)(1)
+  AudioHelperController.StopBGM(1)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryViewer3D.ShowRoot = function(self, active)
-  -- function num : 0_1
-  (self._uiroot):SetActive(active)
+function UIStoryViewer3D:ShowRoot(active)
+  self._uiroot:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryViewer3D.EnterStoryBtnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local idStr = (self._storyIDTxt).text
+function UIStoryViewer3D:EnterStoryBtnOnClick()
+  local idStr = self._storyIDTxt.text
   local idNumber = tonumber(idStr)
-  local debug = (self._debugModeToggle).isOn
+  local debug = self._debugModeToggle.isOn
   if idNumber then
     self:ShowRoot(false)
-    if (EditorGlobal.IsHomeMovieMode)() then
+    if EditorGlobal.IsHomeMovieMode() then
       self:ShowDialog("UIHomeMovieStoryController", idNumber, function()
-    -- function num : 0_2_0
-  end
-, nil, true, true, false, true)
+      end, nil, true, true, false, true)
     else
-      ;
-      (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIHomeStoryController, function()
-    -- function num : 0_2_1 , upvalues : self, _ENV, idNumber
-    self:SwitchState(UIStateType.UIHomeStoryController, idNumber, function()
-      -- function num : 0_2_1_0
-    end
-, true, true, true)
-  end
-)
+      CutsceneManager.ExcuteCutsceneIn(UIStateType.UIHomeStoryController, function()
+        self:SwitchState(UIStateType.UIHomeStoryController, idNumber, function()
+        end, true, true, true)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryViewer3D.ExitBtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIStoryViewer3D:ExitBtnOnClick()
   self:SwitchState(UIStateType.UIMain)
 end
-
-

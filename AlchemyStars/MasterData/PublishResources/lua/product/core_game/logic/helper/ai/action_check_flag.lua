@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_flag.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckFlag", AINewNode)
 ActionCheckFlag = ActionCheckFlag
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckFlag.Constructor = function(self)
-  -- function num : 0_0
+function ActionCheckFlag:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionCheckFlag.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionCheckFlag:OnUpdate()
   local flag = self:GetLogicData(-1)
-  local aiComponent = (self.m_entityOwn):AI()
+  local aiComponent = self.m_entityOwn:AI()
   local flagState = aiComponent:GetRuntimeData(flag)
   if flagState then
     return AINewNodeStatus.Success
@@ -25,5 +15,3 @@ ActionCheckFlag.OnUpdate = function(self)
     return AINewNodeStatus.Failure
   end
 end
-
-

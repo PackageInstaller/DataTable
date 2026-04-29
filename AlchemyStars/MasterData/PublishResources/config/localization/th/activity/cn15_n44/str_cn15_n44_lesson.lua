@@ -1,8 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/th/activity/cn15_n44/str_cn15_n44_lesson.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_cn15_n44_lesson_1 = "อุปกรณ์ประจำวัน", str_cn15_n44_lesson_2 = "ในช่วงกิจกรรม Daily Supply ผู้นำทางจะได้รับชุดเสริม Daily Supply เพิ่มเติมเมื่อรับหีบ Daily Supply รายวัน"}
+local config = {
+  str_cn15_n44_lesson_1 = "อุปกรณ์ประจำวัน",
+  str_cn15_n44_lesson_2 = "ในช่วงกิจกรรม Daily Supply ผู้นำทางจะได้รับชุดเสริม Daily Supply เพิ่มเติมเมื่อรับหีบ Daily Supply รายวัน"
+}
 return config
-

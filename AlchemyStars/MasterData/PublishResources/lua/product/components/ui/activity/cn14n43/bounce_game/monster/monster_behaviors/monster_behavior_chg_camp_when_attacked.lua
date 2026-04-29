@@ -1,51 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/monster/monster_behaviors/monster_behavior_chg_camp_when_attacked.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("monster_behavior_base")
 _class("MonsterBeHaviorChgCampWhenAttacked", MonsterBeHaviorBase)
 MonsterBeHaviorChgCampWhenAttacked = MonsterBeHaviorChgCampWhenAttacked
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterBeHaviorChgCampWhenAttacked.Name = function(self)
-  -- function num : 0_0
+function MonsterBeHaviorChgCampWhenAttacked:Name()
   return "MonsterBeHaviorChgCampWhenAttacked"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorChgCampWhenAttacked.Exec = function(self)
-  -- function num : 0_1
+function MonsterBeHaviorChgCampWhenAttacked:Exec()
   local monsterData = self:GetMonsterData()
   monsterData:ChgCamp()
   local coreController = self:GetCoreController()
-  ;
-  (coreController:GetObjMgr()):ChgMonsterCampToPlayer(self.monster)
+  coreController:GetObjMgr():ChgMonsterCampToPlayer(self.monster)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorChgCampWhenAttacked.OnInit = function(self, param)
-  -- function num : 0_2
+function MonsterBeHaviorChgCampWhenAttacked:OnInit(param)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorChgCampWhenAttacked.OnShow = function(self)
-  -- function num : 0_3
+function MonsterBeHaviorChgCampWhenAttacked:OnShow()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorChgCampWhenAttacked.OnReset = function(self)
-  -- function num : 0_4
+function MonsterBeHaviorChgCampWhenAttacked:OnReset()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorChgCampWhenAttacked.OnRelease = function(self)
-  -- function num : 0_5
+function MonsterBeHaviorChgCampWhenAttacked:OnRelease()
 end
-
-

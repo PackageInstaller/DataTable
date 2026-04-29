@@ -1,97 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/common/ui_timer_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITimerHelper", Singleton)
 UITimerHelper = UITimerHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITimerHelper.Constructor = function(self)
-  -- function num : 0_0
+function UITimerHelper:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimerHelper.GetTimeFormatByString = function(timeStr)
-  -- function num : 0_1 , upvalues : _ENV
+function UITimerHelper.GetTimeFormatByString(timeStr)
   if timeStr == nil then
-    (Log.exception)("UISideEnterItem_FixedTime.CheckOpen() time = nil", (debug.traceback)())
+    Log.exception("UISideEnterItem_FixedTime.CheckOpen() time = nil", debug.traceback())
     return false
   end
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local formatTime = loginModule:GetTimeStampByTimeStr(timeStr, Enum_DateTimeZoneType.E_ZoneType_GMT)
   return formatTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimerHelper.GetCurTime = function()
-  -- function num : 0_2 , upvalues : _ENV
-  local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+function UITimerHelper.GetCurTime()
+  local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   return curTime
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimerHelper.CheckTimeUnLock = function(cfgTime, compareTime)
-  -- function num : 0_3 , upvalues : _ENV
-  if not compareTime then
-    compareTime = (UITimerHelper.GetCurTime)()
-  end
-  do return cfgTime < compareTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UITimerHelper.CheckTimeUnLock(cfgTime, compareTime)
+  compareTime = compareTime or UITimerHelper.GetCurTime()
+  return cfgTime < compareTime
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimerHelper.GetTimeString = function(seconds, dayStr, hourStr, minusStr, lessOneMinusStr)
-  -- function num : 0_4 , upvalues : _ENV
+function UITimerHelper.GetTimeString(seconds, dayStr, hourStr, minusStr, lessOneMinusStr)
   if seconds < 0 then
     seconds = 0
   end
-  if not dayStr then
-    dayStr = "str_activity_day"
-  end
-  if not hourStr then
-    hourStr = "str_activity_hour"
-  end
-  if not minusStr then
-    minusStr = "str_activity_minus"
-  end
-  if not lessOneMinusStr then
-    lessOneMinusStr = "str_activity_less_one_minus"
-  end
+  dayStr = dayStr or "str_activity_day"
+  hourStr = hourStr or "str_activity_hour"
+  minusStr = minusStr or "str_activity_minus"
+  lessOneMinusStr = lessOneMinusStr or "str_activity_less_one_minus"
   local timeStr = ""
-  local day = (math.floor)(seconds / 3600 / 24)
-  if day > 0 then
+  local day = math.floor(seconds / 3600 / 24)
+  if 0 < day then
     seconds = seconds - day * 3600 * 24
-    local hour = (math.floor)((seconds) / 3600)
-    timeStr = (StringTable.Get)(dayStr, day)
-    if hour > 0 then
-      timeStr = timeStr .. (StringTable.Get)(hourStr, hour)
+    local hour = math.floor(seconds / 3600)
+    timeStr = StringTable.Get(dayStr, day)
+    if 0 < hour then
+      timeStr = timeStr .. StringTable.Get(hourStr, hour)
+    end
+  elseif 60 <= seconds then
+    local hour = math.floor(seconds / 3600)
+    seconds = seconds - hour * 3600
+    if 0 < hour then
+      timeStr = StringTable.Get(hourStr, hour)
+    end
+    local minus = math.floor(seconds / 60)
+    if minus then
+      timeStr = timeStr .. StringTable.Get(minusStr, minus)
     end
   else
-    do
-      if seconds >= 60 then
-        local hour = (math.floor)((seconds) / 3600)
-        seconds = seconds - hour * 3600
-        if hour > 0 then
-          timeStr = (StringTable.Get)(hourStr, hour)
-        end
-        local minus = (math.floor)((seconds) / 60)
-        if minus then
-          timeStr = timeStr .. (StringTable.Get)(minusStr, minus)
-        end
-      else
-        do
-          timeStr = (StringTable.Get)(lessOneMinusStr)
-          return timeStr
-        end
-      end
-    end
+    timeStr = StringTable.Get(lessOneMinusStr)
   end
+  return timeStr
 end
-
-

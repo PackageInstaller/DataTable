@@ -1,131 +1,84 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn17n46/fishing_game/ui_cn17_n46_fishing_game_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN17N46FishingGameEntry", UISideEnterCenterContentBase)
 UICN17N46FishingGameEntry = UICN17N46FishingGameEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN17N46FishingGameEntry.Constructor = function(self)
-  -- function num : 0_0
+function UICN17N46FishingGameEntry:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameEntry.DoInit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN17N46FishingGameEntry:DoInit()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
   self._campaign = self._data
-  local sample = (self._campaign):GetSample()
+  local sample = self._campaign:GetSample()
   self._endTime = sample.end_time
-  local localProcess = (self._campaign):GetLocalProcess()
+  local localProcess = self._campaign:GetLocalProcess()
   self._component = localProcess:GetComponent(ECampaignFishGameComponentID.ECAMPAIGN_FISH_GAME)
   self._compoentInfo = localProcess:GetComponentInfo(ECampaignFishGameComponentID.ECAMPAIGN_FISH_GAME)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameEntry.DoShow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN17N46FishingGameEntry:DoShow()
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
+    self._campaign:ClearCampaignNew(TT)
+  end)
   self:_GetComponents()
   self.taskId = self:StartTask(function(TT)
-    -- function num : 0_2_1 , upvalues : self, _ENV
-    while 1 do
+    while true do
       self:_OnValue()
       YIELD(TT, 1000)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameEntry.DoHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN17N46FishingGameEntry:DoHide()
   if self.taskId then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
     self.taskId = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameEntry.DoDestroy = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (UICN17N46FishingGameEntry.super):Dispose()
+function UICN17N46FishingGameEntry:DoDestroy()
+  UICN17N46FishingGameEntry.super:Dispose()
   if self.taskId then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
     self.taskId = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameEntry._GetComponents = function(self)
-  -- function num : 0_5
+function UICN17N46FishingGameEntry:_GetComponents()
   self._remainTime = self:GetUIComponent("UILocalizationText", "RemainTimeText")
   self.redObj = self:GetGameObject("RedPoint")
-  ;
-  (self.redObj):SetActive(false)
+  self.redObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameEntry._OnValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local sampleInfo = (self._campaign):GetSample()
+function UICN17N46FishingGameEntry:_OnValue()
+  local sampleInfo = self._campaign:GetSample()
   if sampleInfo == nil then
-    return 
+    return
   end
   if self._remainTime then
-    local curTime = (self._svrTimeModule):GetServerTime() * 0.001
+    local curTime = self._svrTimeModule:GetServerTime() * 0.001
     local endTime = self._endTime
     if curTime < endTime then
-      (self._remainTime):SetText((StringTable.Get)("str_activity_common_remainingtime_3", (UIActivityHelper.GetFormatTimerStr)(endTime - curTime)))
+      self._remainTime:SetText(StringTable.Get("str_activity_common_remainingtime_3", UIActivityHelper.GetFormatTimerStr(endTime - curTime)))
     else
-      ;
-      (self._remainTime):SetText((StringTable.Get)("str_activity_common_state_over"))
+      self._remainTime:SetText(StringTable.Get("str_activity_common_state_over"))
     end
   end
-  do
-    local red = sampleInfo:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD)
-    ;
-    (self.redObj):SetActive(red)
-  end
+  local red = sampleInfo:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD)
+  self.redObj:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameEntry.AfterUILayerChanged = function(self)
-  -- function num : 0_7
+function UICN17N46FishingGameEntry:AfterUILayerChanged()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameEntry.PlayBtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  self.originBgm = (AudioHelperController.GetCurrentBgm)()
+function UICN17N46FishingGameEntry:PlayBtnOnClick(go)
+  self.originBgm = AudioHelperController.GetCurrentBgm()
   self:ShowDialog("UICN17N46FishingGameStageController", self._component, self._compoentInfo, function()
-    -- function num : 0_8_0 , upvalues : _ENV, self
-    (AudioHelperController.PlayBGM)(self.originBgm, AudioConstValue.BGMCrossFadeTime)
-  end
-)
+    AudioHelperController.PlayBGM(self.originBgm, AudioConstValue.BGMCrossFadeTime)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameEntry.IntroBtnOnClick = function(self, go)
-  -- function num : 0_9
+function UICN17N46FishingGameEntry:IntroBtnOnClick(go)
   self:ShowDialog("UIIntroLoader", "UICN17N46FishingGameEntry")
 end
-
-

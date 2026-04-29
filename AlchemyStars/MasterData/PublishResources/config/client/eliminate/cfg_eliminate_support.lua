@@ -1,50 +1,154 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/eliminate/cfg_eliminate_support.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, GroupID = 2, Tag = 3, Level = 4, Content = 5}
-local common = {"str_eliminate_support_content1_1", "str_eliminate_support_content1_2"}
+local key = {
+  ID = 1,
+  GroupID = 2,
+  Tag = 3,
+  Level = 4,
+  Content = 5
+}
+local common = {
+  "str_eliminate_support_content1_1",
+  "str_eliminate_support_content1_2"
+}
 local config = {
-{1, 1, 1005, 1, common[1]}
-, 
-{2, 1, 1005, 2, common[2]}
-, 
-{3, 1, 1004, 1, "str_eliminate_support_content2_1"}
-, 
-{4, 1, 1004, 2, "str_eliminate_support_content2_2"}
-, 
-{5, 1, 1003, 1, "str_eliminate_support_content3_1"}
-, 
-{6, 1, 1003, 2, "str_eliminate_support_content3_2"}
-, 
-{7, 1, 1002, 1, "str_eliminate_support_content4_1"}
-, 
-{8, 1, 1002, 2, "str_eliminate_support_content4_2"}
-, 
-{9, 1, 1001, 1, "str_eliminate_support_content5_1"}
-, 
-{10, 1, 1001, 2, "str_eliminate_support_content5_2"}
-, 
-{11, 1, 1006, 1, "str_eliminate_support_content6_1"}
-, 
-{12, 1, 1006, 2, "str_eliminate_support_content6_2"}
-, 
-{13, 1, 1007, 1, "str_eliminate_support_content7_1"}
-, 
-{14, 1, 1007, 2, "str_eliminate_support_content7_2"}
-, 
-{15, 1, 1009, 1, "str_eliminate_support_content8_1"}
-, 
-{16, 1, 1009, 2, "str_eliminate_support_content8_2"}
-, 
-{17, 2, 1002, 1, common[1]}
-, 
-{18, 2, 1002, 2, common[2]}
-, 
-{19, 2, 1005, 1, common[1]}
-, 
-{20, 2, 1005, 2, common[2]}
+  {
+    1,
+    1,
+    1005,
+    1,
+    common[1]
+  },
+  {
+    2,
+    1,
+    1005,
+    2,
+    common[2]
+  },
+  {
+    3,
+    1,
+    1004,
+    1,
+    "str_eliminate_support_content2_1"
+  },
+  {
+    4,
+    1,
+    1004,
+    2,
+    "str_eliminate_support_content2_2"
+  },
+  {
+    5,
+    1,
+    1003,
+    1,
+    "str_eliminate_support_content3_1"
+  },
+  {
+    6,
+    1,
+    1003,
+    2,
+    "str_eliminate_support_content3_2"
+  },
+  {
+    7,
+    1,
+    1002,
+    1,
+    "str_eliminate_support_content4_1"
+  },
+  {
+    8,
+    1,
+    1002,
+    2,
+    "str_eliminate_support_content4_2"
+  },
+  {
+    9,
+    1,
+    1001,
+    1,
+    "str_eliminate_support_content5_1"
+  },
+  {
+    10,
+    1,
+    1001,
+    2,
+    "str_eliminate_support_content5_2"
+  },
+  {
+    11,
+    1,
+    1006,
+    1,
+    "str_eliminate_support_content6_1"
+  },
+  {
+    12,
+    1,
+    1006,
+    2,
+    "str_eliminate_support_content6_2"
+  },
+  {
+    13,
+    1,
+    1007,
+    1,
+    "str_eliminate_support_content7_1"
+  },
+  {
+    14,
+    1,
+    1007,
+    2,
+    "str_eliminate_support_content7_2"
+  },
+  {
+    15,
+    1,
+    1009,
+    1,
+    "str_eliminate_support_content8_1"
+  },
+  {
+    16,
+    1,
+    1009,
+    2,
+    "str_eliminate_support_content8_2"
+  },
+  {
+    17,
+    2,
+    1002,
+    1,
+    common[1]
+  },
+  {
+    18,
+    2,
+    1002,
+    2,
+    common[2]
+  },
+  {
+    19,
+    2,
+    1005,
+    1,
+    common[1]
+  },
+  {
+    20,
+    2,
+    1005,
+    2,
+    common[2]
+  }
 }
 return config, "ID", key
-

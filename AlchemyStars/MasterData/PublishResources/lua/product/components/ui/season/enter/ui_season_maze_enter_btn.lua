@@ -1,104 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/enter/ui_season_maze_enter_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_base")
 _class("UISeasonMazeEnterBtn", UISideEnterItem_Base)
 UISeasonMazeEnterBtn = UISeasonMazeEnterBtn
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeEnterBtn.GetLocalDBKey = function()
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeEnterBtn.GetLocalDBKey()
   local str = "UISeasonMazeEnterBtn"
-  local key = (UIActivityHelper.GetLocalDBKeyWithPstId)(str .. "_")
+  local key = UIActivityHelper.GetLocalDBKeyWithPstId(str .. "_")
   return key
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnterBtn.LoadData = function(self, TT)
-  -- function num : 0_1
+function UISeasonMazeEnterBtn:LoadData(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnterBtn.CheckOpen = function(self, TT)
-  -- function num : 0_2
+function UISeasonMazeEnterBtn:CheckOpen(TT)
   return self:_CheckOpen()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnterBtn._CheckOpen = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._sample = (self._seasonMazeModule):GetCurSample()
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+function UISeasonMazeEnterBtn:_CheckOpen(TT)
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self._sample = self._seasonMazeModule:GetCurSample()
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   if self._sample == nil then
     return false
   end
-  if not (self._sample).is_open then
+  if not self._sample.is_open then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnterBtn.GetSideEnterRawImage = function(self)
-  -- function num : 0_4
-  return (self._btnCfg).SideEnterIcon
+function UISeasonMazeEnterBtn:GetSideEnterRawImage()
+  return self._btnCfg.SideEnterIcon
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnterBtn.DoShow = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "txtTitle", (StringTable.Get)("str_season_maze_s2_title"))
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "bg", self:GetSideEnterRawImage())
-  self.te = (UIActivityHelper.StartTimerEvent)(self.te, function()
-    -- function num : 0_5_0 , upvalues : self
+function UISeasonMazeEnterBtn:DoShow()
+  UIWidgetHelper.SetLocalizationText(self, "txtTitle", StringTable.Get("str_season_maze_s2_title"))
+  UIWidgetHelper.SetRawImage(self, "bg", self:GetSideEnterRawImage())
+  self.te = UIActivityHelper.StartTimerEvent(self.te, function()
     self:_CheckPoint()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnterBtn.CheckRed = function(self)
-  -- function num : 0_6
+function UISeasonMazeEnterBtn:CheckRed()
   return 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnterBtn.CheckNew = function(self)
-  -- function num : 0_7
+function UISeasonMazeEnterBtn:CheckNew()
   return self:_CalcNew() and 1 or 0
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnterBtn._CalcNew = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local key = (UISeasonMazeEnterBtn.GetLocalDBKey)()
-  return not (LocalDB.HasKey)(key)
+function UISeasonMazeEnterBtn:_CalcNew()
+  local key = UISeasonMazeEnterBtn.GetLocalDBKey()
+  return not LocalDB.HasKey(key)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnterBtn._CalcRed = function(self)
-  -- function num : 0_9
+function UISeasonMazeEnterBtn:_CalcRed()
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnterBtn.OnHide = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (UIActivityHelper.CancelTimerEvent)(self.te)
+function UISeasonMazeEnterBtn:OnHide()
+  UIActivityHelper.CancelTimerEvent(self.te)
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/debug/homeland_pet_debug.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandPetDebug", Object)
 HomelandPetDebug = HomelandPetDebug
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetDebug.Constructor = function(self, manager, mode)
-  -- function num : 0_0
+function HomelandPetDebug:Constructor(manager, mode)
   self._homelandPetManager = manager
   self._homelandPetHUDCameraRes = "HomelandPetHUDCamera.prefab"
   self._homelandPetHUDCanvasRes = "HomelandPetHUDCanvas.prefab"
@@ -18,111 +11,75 @@ HomelandPetDebug.Constructor = function(self, manager, mode)
   self._mode = mode
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetDebug.Init = function(self, homelandClient)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandPetDebug:Init(homelandClient)
   if self._mode == HomelandPetMode.Normal then
-    return 
+    return
   end
   self._homelineClient = homelandClient
-  self._mainCamera = ((self._homelineClient):CameraManager()):GetCamera()
-  self._hudCameraRequest = (ResourceManager:GetInstance()):SyncLoadAsset(self._homelandPetHUDCameraRes, LoadType.GameObject)
-  ;
-  ((self._hudCameraRequest).Obj):SetActive(true)
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (((self._hudCameraRequest).Obj).transform).position = Vector3.zero
-  self._hudCamera = ((self._hudCameraRequest).Obj):GetComponent("Camera")
-  self._hudCanvasRequest = (ResourceManager:GetInstance()):SyncLoadAsset(self._homelandPetHUDCanvasRes, LoadType.GameObject)
-  self._hunCanvasGameObject = (self._hudCanvasRequest).Obj
-  ;
-  (self._hunCanvasGameObject):SetActive(true)
-  -- DECOMPILER ERROR at PC59: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._hunCanvasGameObject).transform).position = Vector3.zero
-  self._hudCanvas = (self._hunCanvasGameObject):GetComponent("Canvas")
-  -- DECOMPILER ERROR at PC67: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._hudCanvas).worldCamera = self._hudCamera
+  self._mainCamera = self._homelineClient:CameraManager():GetCamera()
+  self._hudCameraRequest = ResourceManager:GetInstance():SyncLoadAsset(self._homelandPetHUDCameraRes, LoadType.GameObject)
+  self._hudCameraRequest.Obj:SetActive(true)
+  self._hudCameraRequest.Obj.transform.position = Vector3.zero
+  self._hudCamera = self._hudCameraRequest.Obj:GetComponent("Camera")
+  self._hudCanvasRequest = ResourceManager:GetInstance():SyncLoadAsset(self._homelandPetHUDCanvasRes, LoadType.GameObject)
+  self._hunCanvasGameObject = self._hudCanvasRequest.Obj
+  self._hunCanvasGameObject:SetActive(true)
+  self._hunCanvasGameObject.transform.position = Vector3.zero
+  self._hudCanvas = self._hunCanvasGameObject:GetComponent("Canvas")
+  self._hudCanvas.worldCamera = self._hudCamera
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetDebug.AddDebugPet = function(self, pet)
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandPetDebug:AddDebugPet(pet)
   if self._mode == HomelandPetMode.Normal then
-    return 
+    return
   end
-  for _,info in pairs(self._debugInfo) do
+  for _, info in pairs(self._debugInfo) do
     if not info.pet then
       info.pet = pet
-      ;
-      (info.gameObject):SetActive(true)
-      return 
+      info.gameObject:SetActive(true)
+      return
     end
   end
-  local request = (ResourceManager:GetInstance()):SyncLoadAsset(self._homelandPetDebugInfo, LoadType.GameObject)
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._debugInfoRequest)[#self._debugInfoRequest + 1] = request
+  local request = ResourceManager:GetInstance():SyncLoadAsset(self._homelandPetDebugInfo, LoadType.GameObject)
+  self._debugInfoRequest[#self._debugInfoRequest + 1] = request
   local debugInfo = {}
   debugInfo.gameObject = request.Obj
-  ;
-  (debugInfo.gameObject):SetActive(true)
-  ;
-  ((debugInfo.gameObject).transform):SetParent((self._hunCanvasGameObject).transform)
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((debugInfo.gameObject).transform).localScale = Vector3.one
+  debugInfo.gameObject:SetActive(true)
+  debugInfo.gameObject.transform:SetParent(self._hunCanvasGameObject.transform)
+  debugInfo.gameObject.transform.localScale = Vector3.one
   debugInfo.debugText = HomelandPetDebugText:New(debugInfo.gameObject)
   debugInfo.pet = pet
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._debugInfo)[#self._debugInfo + 1] = debugInfo
+  self._debugInfo[#self._debugInfo + 1] = debugInfo
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetDebug.RemoveDebugPet = function(self, pet)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandPetDebug:RemoveDebugPet(pet)
   if self._mode == HomelandPetMode.Normal then
-    return 
+    return
   end
-  for _,info in pairs(self._debugInfo) do
+  for _, info in pairs(self._debugInfo) do
     if info.pet == pet then
       info.pet = nil
-      ;
-      (info.gameObject):SetActive(false)
+      info.gameObject:SetActive(false)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetDebug.Update = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandPetDebug:Update()
   if self._mode == HomelandPetMode.Normal then
-    return 
+    return
   end
-  for _,info in pairs(self._debugInfo) do
+  for _, info in pairs(self._debugInfo) do
     if info.pet then
-      local behavior = (info.pet):GetPetBehavior()
+      local behavior = info.pet:GetPetBehavior()
       if behavior then
-        local position = (info.pet):GetPosition()
-        position = (self._mainCamera):WorldToScreenPoint(position)
-        position = (self._hudCamera):ScreenToWorldPoint(position)
+        local position = info.pet:GetPosition()
+        position = self._mainCamera:WorldToScreenPoint(position)
+        position = self._hudCamera:ScreenToWorldPoint(position)
         local behaviorType = behavior:GetCurBehaviorType()
-        for key,value in pairs(HomelandPetBehaviorType) do
+        for key, value in pairs(HomelandPetBehaviorType) do
           if value == behaviorType then
-            (info.debugText):Refresh(position, key)
+            info.debugText:Refresh(position, key)
             break
           end
         end
@@ -131,23 +88,18 @@ HomelandPetDebug.Update = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetDebug.Dispose = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandPetDebug:Dispose()
   if self._hudCameraRequest then
-    (self._hudCameraRequest):Dispose()
+    self._hudCameraRequest:Dispose()
     self._hudCameraRequest = nil
   end
   if self._hudCanvasRequest then
-    (self._hudCanvasRequest):Dispose()
+    self._hudCanvasRequest:Dispose()
     self._hudCanvasRequest = nil
   end
-  for _,request in pairs(self._debugInfoRequest) do
+  for _, request in pairs(self._debugInfoRequest) do
     request:Dispose()
   end
   self._debugInfoRequest = nil
   self._debugInfo = nil
 end
-
-

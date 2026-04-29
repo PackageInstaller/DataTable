@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_confirm_normal_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopConfirmNormalController", UIController)
 UIShopConfirmNormalController = UIShopConfirmNormalController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopConfirmNormalController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopConfirmNormalController:Constructor()
   self.atlas = self:GetAsset("UIShop.spriteatlas", LoadType.SpriteAtlas)
   self.uiCommonAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopConfirmNormalController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIShopConfirmNormalController:OnShow(uiParams)
   self.goodData = uiParams[1]
   self.subTabType = uiParams[2]
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
@@ -32,193 +22,131 @@ UIShopConfirmNormalController.OnShow = function(self, uiParams)
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopConfirmNormalController.SetTextColor = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local ownMoney = (ClientShop.GetMoney)(self.saleShowType)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  if self.saleShowPrice <= ownMoney then
-    (self.priceTxt).color = Color.white
+function UIShopConfirmNormalController:SetTextColor()
+  local ownMoney = ClientShop.GetMoney(self.saleShowType)
+  if ownMoney >= self.saleShowPrice then
+    self.priceTxt.color = Color.white
   else
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.priceTxt).color = Color.red
+    self.priceTxt.color = Color.red
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopConfirmNormalController.Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIShopConfirmNormalController:Refresh()
   if not self.goodData then
-    return 
+    return
   end
-  local cfgItem = (Cfg.cfg_item)[(self.goodData):GetItemId()]
+  local cfgItem = Cfg.cfg_item[self.goodData:GetItemId()]
   if not cfgItem then
-    return 
+    return
   end
-  self.isPet = (self.goodData):IsPet()
-  self.saleType = (self.goodData):GetSaleType()
-  self.price = (self.goodData):GetSalePrice()
-  self.saleShowType = self:GetSaleTypePrice()
+  self.isPet = self.goodData:IsPet()
+  self.saleType = self.goodData:GetSaleType()
+  self.price = self.goodData:GetSalePrice()
+  self.saleShowType, self.saleShowPrice = self:GetSaleTypePrice()
   local itemId = cfgItem.ID
   local icon = cfgItem.Icon
-  ;
-  (self.icon):LoadImage(icon)
-  ;
-  (self.nameTxt):SetText((StringTable.Get)(cfgItem.Name))
+  self.icon:LoadImage(icon)
+  self.nameTxt:SetText(StringTable.Get(cfgItem.Name))
   local itemCount = 0
-  -- DECOMPILER ERROR at PC54: Unhandled construct in 'MakeBoolean' P1
-
-  if self.isPet and (self:GetModule(PetModule)):GetPetByTemplateId(itemId) ~= nil then
-    itemCount = 1
-  end
-  itemCount = (self:GetModule(ItemModule)):GetItemCount(itemId)
-  ;
-  (self._currentCount):SetText((StringTable.Get)("str_shop_current_item_count", itemCount))
-  ;
-  (self.descTxt):SetText((StringTable.Get)(cfgItem.Intro))
-  ;
-  (self.priceTxt):SetText(self.saleShowPrice)
-  self:SetTextColor()
-  -- DECOMPILER ERROR at PC92: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.moneyIcon).sprite = (self.uiCommonAtlas):GetSprite((ClientShop.GetCurrencyImageName)(self.saleShowType))
   if self.isPet then
-    (self.btnStarGO):SetActive(true)
-    ;
-    (self.btnGo):SetActive(true)
+    if self:GetModule(PetModule):GetPetByTemplateId(itemId) ~= nil then
+      itemCount = 1
+    end
   else
-    ;
-    (self.btnStarGO):SetActive(false)
-    ;
-    (self.btnGo):SetActive(false)
+    itemCount = self:GetModule(ItemModule):GetItemCount(itemId)
+  end
+  self._currentCount:SetText(StringTable.Get("str_shop_current_item_count", itemCount))
+  self.descTxt:SetText(StringTable.Get(cfgItem.Intro))
+  self.priceTxt:SetText(self.saleShowPrice)
+  self:SetTextColor()
+  self.moneyIcon.sprite = self.uiCommonAtlas:GetSprite(ClientShop.GetCurrencyImageName(self.saleShowType))
+  if self.isPet then
+    self.btnStarGO:SetActive(true)
+    self.btnGo:SetActive(true)
+  else
+    self.btnStarGO:SetActive(false)
+    self.btnGo:SetActive(false)
   end
   self:DoAnimation()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopConfirmNormalController.GetSaleTypePrice = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local saleType = (self.goodData):GetSaleType()
-  local salePrice = (self.goodData):GetSalePrice()
-  local itemId = (self.goodData):GetItemId()
-  if (RoleAssetID.RoleAssetPetSkinBegin <= itemId and itemId <= RoleAssetID.RoleAssetPetSkinEnd) or ((Cfg.cfg_item)[itemId]).ItemSubType == ItemSubType.ItemSubType_Furniture then
-    local itemModule = (GameGlobal.GetModule)(ItemModule)
-    local converType = (self.goodData):GetConvertType()
-    if converType and converType > 0 then
-      local convercount = itemModule:GetItemCount((self.goodData):GetConvertType())
-      local convertPrice = (self.goodData):GetConvertPrice()
-      if convertPrice <= convercount then
+function UIShopConfirmNormalController:GetSaleTypePrice()
+  local saleType = self.goodData:GetSaleType()
+  local salePrice = self.goodData:GetSalePrice()
+  local itemId = self.goodData:GetItemId()
+  if itemId >= RoleAssetID.RoleAssetPetSkinBegin and itemId <= RoleAssetID.RoleAssetPetSkinEnd or Cfg.cfg_item[itemId].ItemSubType == ItemSubType.ItemSubType_Furniture then
+    local itemModule = GameGlobal.GetModule(ItemModule)
+    local converType = self.goodData:GetConvertType()
+    if converType and 0 < converType then
+      local convercount = itemModule:GetItemCount(self.goodData:GetConvertType())
+      local convertPrice = self.goodData:GetConvertPrice()
+      if convercount >= convertPrice then
         saleType = converType
         salePrice = convertPrice
       end
     end
   end
-  do
-    return saleType, salePrice
-  end
+  return saleType, salePrice
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopConfirmNormalController.DoAnimation = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIShopConfirmNormalController:DoAnimation()
   self._cg = self:GetUIComponent("CanvasGroup", "UICanvas")
   self._panel = self:GetUIComponent("RectTransform", "panel")
   self._infoTrans = self:GetUIComponent("Transform", "info")
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._cg).alpha = 0
+  self._cg.alpha = 0
   self:Lock("UIShopConfirmNormalController:DoAnimation")
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self
     YIELD(TT)
     YIELD(TT)
-    ;
-    (self._cg):DOFade(1, 0.3)
-    ;
-    ((GameGlobal.Timer)()):AddEvent(400, function()
-      -- function num : 0_5_0_0 , upvalues : self
+    self._cg:DOFade(1, 0.3)
+    GameGlobal.Timer():AddEvent(400, function()
       self:UnLock("UIShopConfirmNormalController:DoAnimation")
-    end
-)
-  end
-, self)
+    end)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopConfirmNormalController.OnHide = function(self)
-  -- function num : 0_6
+function UIShopConfirmNormalController:OnHide()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopConfirmNormalController.btnstarOnClick = function(self, go)
-  -- function num : 0_7
-  self:ShowDialog("UIShopPetDetailController", (self.goodData):GetItemId())
+function UIShopConfirmNormalController:btnstarOnClick(go)
+  self:ShowDialog("UIShopPetDetailController", self.goodData:GetItemId())
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopConfirmNormalController.btnbuyOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Unhandled construct in 'MakeBoolean' P1
-
-  if not (ClientShop.CheckBuy)(self.saleType, self.price) and self.saleType == RoleAssetID.RoleAssetGlow then
-    self:CloseDialog()
-  end
-  do return  end
-  self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
-    local shopModule = self:GetModule(ShopModule)
-    self:Lock("UIShopConfirmNormalController:btnbuyOnClick")
-    local result = shopModule:BuyItem(TT, self.subTabType, (self.goodData):GetGoodId(), 1, self.saleType, (self.goodData):GetSalePrice())
-    self:UnLock("UIShopConfirmNormalController:btnbuyOnClick")
-    if result and (ClientShop.CheckShopCode)(result) then
-      local roleAsset = RoleAsset:New()
-      do
-        roleAsset.assetid = (self.goodData):GetItemId()
-        roleAsset.count = (self.goodData):GetItemCount()
-        local assetList = {roleAsset}
-        if (self:GetModule(PetModule)):IsPetID(roleAsset.assetid) then
-          self:ShowDialog("UIPetObtain", assetList, function()
-      -- function num : 0_8_0_0 , upvalues : _ENV, self, assetList
-      ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-      self:ShowDialog("UIGetItemController", assetList, function()
-        -- function num : 0_8_0_0_0 , upvalues : _ENV, self
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopBuySuccess, (self.goodData):GetGoodId())
-      end
-)
+function UIShopConfirmNormalController:btnbuyOnClick(go)
+  if not ClientShop.CheckBuy(self.saleType, self.price) then
+    if self.saleType == RoleAssetID.RoleAssetGlow then
       self:CloseDialog()
     end
-)
-        else
+    return
+  end
+  self:StartTask(function(TT)
+    local shopModule = self:GetModule(ShopModule)
+    self:Lock("UIShopConfirmNormalController:btnbuyOnClick")
+    local result = shopModule:BuyItem(TT, self.subTabType, self.goodData:GetGoodId(), 1, self.saleType, self.goodData:GetSalePrice())
+    self:UnLock("UIShopConfirmNormalController:btnbuyOnClick")
+    if result and ClientShop.CheckShopCode(result) then
+      local roleAsset = RoleAsset:New()
+      roleAsset.assetid = self.goodData:GetItemId()
+      roleAsset.count = self.goodData:GetItemCount()
+      local assetList = {roleAsset}
+      if self:GetModule(PetModule):IsPetID(roleAsset.assetid) then
+        self:ShowDialog("UIPetObtain", assetList, function()
+          GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
           self:ShowDialog("UIGetItemController", assetList, function()
-      -- function num : 0_8_0_1 , upvalues : _ENV, self
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopBuySuccess, (self.goodData):GetGoodId())
-    end
-)
+            GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopBuySuccess, self.goodData:GetGoodId())
+          end)
           self:CloseDialog()
-        end
+        end)
+      else
+        self:ShowDialog("UIGetItemController", assetList, function()
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopBuySuccess, self.goodData:GetGoodId())
+        end)
+        self:CloseDialog()
       end
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopConfirmNormalController.btnbgOnClick = function(self, go)
-  -- function num : 0_9
+function UIShopConfirmNormalController:btnbgOnClick(go)
   self:CloseDialog()
 end
-
-

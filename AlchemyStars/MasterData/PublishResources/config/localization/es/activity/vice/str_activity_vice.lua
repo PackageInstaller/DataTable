@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/es/activity/vice/str_activity_vice.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_activity_vice_title = "Vice Plan de Entrenamiento", str_activity_vice_description = "Vice te pide que le des un entrenamiento especial para ayudarla con las futuras aventuras y promete recompensarte.", str_activity_vice_title_alice = "Alice Plan de Entrenamiento", str_activity_vice_description_alice = "¡Mejora a Alice para que sea tu poderosa asistencia en la batalla! ¡Permítele alcanzar las etapas de Ascensión requeridas para reclamar recompensas!"}
+local config = {
+  str_activity_vice_title = "Vice Plan de Entrenamiento",
+  str_activity_vice_description = "Vice te pide que le des un entrenamiento especial para ayudarla con las futuras aventuras y promete recompensarte.",
+  str_activity_vice_title_alice = "Alice Plan de Entrenamiento",
+  str_activity_vice_description_alice = "¡Mejora a Alice para que sea tu poderosa asistencia en la batalla! ¡Permítele alcanzar las etapas de Ascensión requeridas para reclamar recompensas!"
+}
 return config
-

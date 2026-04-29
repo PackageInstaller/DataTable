@@ -1,16 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_season_maze_cost_hp_add_coin_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSMCostHPAddCoin", BuffViewBase)
 BuffViewSMCostHPAddCoin = BuffViewSMCostHPAddCoin
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSMCostHPAddCoin.PlayView = function(self, TT)
-  -- function num : 0_0
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function BuffViewSMCostHPAddCoin:PlayView(TT)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayDamageBuff(TT, self)
 end
-
-

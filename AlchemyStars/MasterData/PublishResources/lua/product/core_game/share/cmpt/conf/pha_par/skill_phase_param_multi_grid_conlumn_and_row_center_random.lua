@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_multi_grid_conlumn_and_row_center_random.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseParamMultiGridColumnAndRowCenterRandom", SkillPhaseParamBase)
 SkillPhaseParamMultiGridColumnAndRowCenterRandom = SkillPhaseParamMultiGridColumnAndRowCenterRandom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseParamMultiGridColumnAndRowCenterRandom.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseParamMultiGridColumnAndRowCenterRandom:Constructor(t)
   self._effectID = t.effectID
   self._hitEffectID = t.hitEffectID
   self._hitAnimationName = t.hitAnimName
@@ -17,56 +10,35 @@ SkillPhaseParamMultiGridColumnAndRowCenterRandom.Constructor = function(self, t)
   self._damageWaitTime = t.damageWaitTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamMultiGridColumnAndRowCenterRandom.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseParamMultiGridColumnAndRowCenterRandom:GetPhaseType()
   return SkillViewPhaseType.MultiGridColumnAndRowCenterRandom
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamMultiGridColumnAndRowCenterRandom.GetEffectID = function(self)
-  -- function num : 0_2
+function SkillPhaseParamMultiGridColumnAndRowCenterRandom:GetEffectID()
   return self._effectID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamMultiGridColumnAndRowCenterRandom.GetEffectIntervalTime = function(self)
-  -- function num : 0_3
+function SkillPhaseParamMultiGridColumnAndRowCenterRandom:GetEffectIntervalTime()
   return self._intervalTime
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamMultiGridColumnAndRowCenterRandom.GetHitEffectID = function(self)
-  -- function num : 0_4
+function SkillPhaseParamMultiGridColumnAndRowCenterRandom:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamMultiGridColumnAndRowCenterRandom.GetHitAnimationName = function(self)
-  -- function num : 0_5
+function SkillPhaseParamMultiGridColumnAndRowCenterRandom:GetHitAnimationName()
   return self._hitAnimationName
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamMultiGridColumnAndRowCenterRandom.GetEffectDamageWaitTime = function(self)
-  -- function num : 0_6
+function SkillPhaseParamMultiGridColumnAndRowCenterRandom:GetEffectDamageWaitTime()
   return self._damageWaitTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamMultiGridColumnAndRowCenterRandom.GetCacheTable = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillPhaseParamMultiGridColumnAndRowCenterRandom:GetCacheTable()
   local t = {}
-  ;
-  (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+  table.insert(t, {
+    Cfg.cfg_effect[self._effectID].ResPath,
+    1
+  })
   return t
 end
-
-

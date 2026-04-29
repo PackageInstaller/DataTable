@@ -1,184 +1,102 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/misc/ui_activity_evesinsa_newflag_redpoint.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityEveSinaNewFlagRedPoint", Object)
 UIActivityEveSinaNewFlagRedPoint = UIActivityEveSinaNewFlagRedPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityEveSinaNewFlagRedPoint.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  self._loginModule = (GameGlobal.GetModule)(LoginModule)
+function UIActivityEveSinaNewFlagRedPoint:Constructor()
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
+  self._loginModule = GameGlobal.GetModule(LoginModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinaNewFlagRedPoint.RequestCampaign = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self._RequestCampaign, self)
+function UIActivityEveSinaNewFlagRedPoint:RequestCampaign()
+  GameGlobal.TaskManager():StartTask(self._RequestCampaign, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinaNewFlagRedPoint._RequestCampaign = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityEveSinaNewFlagRedPoint:_RequestCampaign(TT)
   local res = AsyncRequestRes:New()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_EVERESCUEPLAN, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_PERSON_PROGRESS, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_CUMULATIVE_LOGIN, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_QUEST, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_TREE_MISSION, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_MISSION_FIXTEAM, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_ACTION_POINT)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_EVERESCUEPLAN, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_PERSON_PROGRESS, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_CUMULATIVE_LOGIN, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_QUEST, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_TREE_MISSION, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_MISSION_FIXTEAM, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_ACTION_POINT)
   if res:GetSucc() then
-    self._treeMissionComponentInfo = (self._campaign):GetComponentInfo(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_TREE_MISSION)
-    self._fixteamMissionComponent = (self._campaign):GetComponent(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_MISSION_FIXTEAM)
-    self._fixteamMissionComponentInfo = (self._campaign):GetComponentInfo(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_MISSION_FIXTEAM)
-    self._actionPointComponent = (self._campaign):GetComponent(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_ACTION_POINT)
+    self._treeMissionComponentInfo = self._campaign:GetComponentInfo(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_TREE_MISSION)
+    self._fixteamMissionComponent = self._campaign:GetComponent(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_MISSION_FIXTEAM)
+    self._fixteamMissionComponentInfo = self._campaign:GetComponentInfo(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_MISSION_FIXTEAM)
+    self._actionPointComponent = self._campaign:GetComponent(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_ACTION_POINT)
   else
-    ;
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinaNewFlagRedPoint.LoginRewardRedPoint = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if self._campaign and (self._campaign):CheckComponentOpen(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_CUMULATIVE_LOGIN) then
-    return (self._campaign):CheckComponentRed(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_CUMULATIVE_LOGIN)
-  end
+function UIActivityEveSinaNewFlagRedPoint:LoginRewardRedPoint()
+  return self._campaign and self._campaign:CheckComponentOpen(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_CUMULATIVE_LOGIN) and self._campaign:CheckComponentRed(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_CUMULATIVE_LOGIN)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinaNewFlagRedPoint.QuestRewardRedPoint = function(self)
-  -- function num : 0_4
-  if self._campaign and not self:_QuestRedPoint() then
-    return self:_PersonProgressRedPoint()
-  end
+function UIActivityEveSinaNewFlagRedPoint:QuestRewardRedPoint()
+  return not self._campaign or self:_QuestRedPoint() or self:_PersonProgressRedPoint()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinaNewFlagRedPoint._QuestRedPoint = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._campaign):CheckComponentOpen(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_QUEST) then
-    return (self._campaign):CheckComponentRed(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_QUEST)
-  end
+function UIActivityEveSinaNewFlagRedPoint:_QuestRedPoint()
+  return self._campaign:CheckComponentOpen(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_QUEST) and self._campaign:CheckComponentRed(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_QUEST)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinaNewFlagRedPoint._PersonProgressRedPoint = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._campaign):CheckComponentOpen(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_PERSON_PROGRESS) then
-    return (self._campaign):CheckComponentRed(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_PERSON_PROGRESS)
-  end
+function UIActivityEveSinaNewFlagRedPoint:_PersonProgressRedPoint()
+  return self._campaign:CheckComponentOpen(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_PERSON_PROGRESS) and self._campaign:CheckComponentRed(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_PERSON_PROGRESS)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinaNewFlagRedPoint.PetStageRedPoint = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  if not self._campaign or not (self._campaign):CheckComponentOpen(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_MISSION_FIXTEAM) then
+function UIActivityEveSinaNewFlagRedPoint:PetStageRedPoint()
+  if not self._campaign or not self._campaign:CheckComponentOpen(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_MISSION_FIXTEAM) then
     return false
   end
-  local cfgs = (Cfg.cfg_campaign_pet_try)({CampaignId = (self._campaign)._type})
+  local cfgs = Cfg.cfg_campaign_pet_try({
+    CampaignId = self._campaign._type
+  })
   local lock = false
   if cfgs then
-    for key,value in pairs(cfgs) do
-      if not (self._fixteamMissionComponent):IsPassCamMissionID(value.CampaignMissionId) then
+    for key, value in pairs(cfgs) do
+      if not self._fixteamMissionComponent:IsPassCamMissionID(value.CampaignMissionId) then
         lock = true
         break
       end
     end
   end
-  do
-    return not (self._fixteamMissionComponentInfo).m_b_unlock or lock
-  end
+  return self._fixteamMissionComponentInfo.m_b_unlock and lock
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinaNewFlagRedPoint.ActionPointRedPoint = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if not self._actionPointComponent or not (self._campaign):CheckComponentOpen(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_ACTION_POINT) then
+function UIActivityEveSinaNewFlagRedPoint:ActionPointRedPoint()
+  if not self._actionPointComponent or not self._campaign:CheckComponentOpen(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_ACTION_POINT) then
     return false
   end
-  local cmpID = (self._actionPointComponent):GetComponentCfgId()
-  local pointCfg = (self._actionPointComponent):GetActionPointConfig()
-  local count = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(pointCfg.ItemID)
-  do return pointCfg.RegainMax <= count end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local cmpID = self._actionPointComponent:GetComponentCfgId()
+  local pointCfg = self._actionPointComponent:GetActionPointConfig()
+  local count = GameGlobal.GetModule(ItemModule):GetItemCount(pointCfg.ItemID)
+  return count >= pointCfg.RegainMax
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinaNewFlagRedPoint.HaveRedPoint = function(self)
-  -- function num : 0_9
-  if not self:LoginRewardRedPoint() and not self:QuestRewardRedPoint() and not self:PetStageRedPoint() then
-    return self:ActionPointRedPoint()
-  end
+function UIActivityEveSinaNewFlagRedPoint:HaveRedPoint()
+  return self:LoginRewardRedPoint() or self:QuestRewardRedPoint() or self:PetStageRedPoint() or self:ActionPointRedPoint()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinaNewFlagRedPoint.UnLockNew = function(self)
-  -- function num : 0_10
-  if self._campaign then
-    return (self._campaign):CheckCampaignNew()
-  end
+function UIActivityEveSinaNewFlagRedPoint:UnLockNew()
+  return self._campaign and self._campaign:CheckCampaignNew()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinaNewFlagRedPoint.P2StageUnLockNew = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  if self._treeMissionComponentInfo and (self._campaign):CheckComponentOpen(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_TREE_MISSION) and (self._treeMissionComponentInfo).m_b_unlock then
-    return self:P2StageUnLockLocalRecord()
-  end
+function UIActivityEveSinaNewFlagRedPoint:P2StageUnLockNew()
+  return self._treeMissionComponentInfo and self._campaign:CheckComponentOpen(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_TREE_MISSION) and self._treeMissionComponentInfo.m_b_unlock and self:P2StageUnLockLocalRecord()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinaNewFlagRedPoint.P1SStageUnLockNew = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if self:P1SStageUnLock() and (self._campaign):CheckComponentOpen(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_TREE_MISSION) and (self._campaign):CheckComponentOpen(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_LINE_MISSION) then
-    return self:P1StageUnLockLocalRecord()
-  end
+function UIActivityEveSinaNewFlagRedPoint:P1SStageUnLockNew()
+  return self:P1SStageUnLock() and self._campaign:CheckComponentOpen(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_TREE_MISSION) and self._campaign:CheckComponentOpen(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_LINE_MISSION) and self:P1StageUnLockLocalRecord()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinaNewFlagRedPoint.P1SStageUnLock = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  if self._campaign then
-    return (UIActivityEveSinsaHelper.CheckSpecialMissionCanPlay)(self._campaign)
-  end
+function UIActivityEveSinaNewFlagRedPoint:P1SStageUnLock()
+  return self._campaign and UIActivityEveSinsaHelper.CheckSpecialMissionCanPlay(self._campaign)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinaNewFlagRedPoint.HaveNewFlag = function(self)
-  -- function num : 0_14
-  if not self:UnLockNew() and not self:P2StageUnLockNew() then
-    return self:P1SStageUnLockNew()
-  end
+function UIActivityEveSinaNewFlagRedPoint:HaveNewFlag()
+  return self:UnLockNew() or self:P2StageUnLockNew() or self:P1SStageUnLockNew()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinaNewFlagRedPoint.P2StageUnLockLocalRecord = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  do return (LocalDB.GetInt)("ACTIVITY_EVE_SINA_P2_NEWFLAG" .. (self._loginModule):GetRoleShowID(), 0) <= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIActivityEveSinaNewFlagRedPoint:P2StageUnLockLocalRecord()
+  return LocalDB.GetInt("ACTIVITY_EVE_SINA_P2_NEWFLAG" .. self._loginModule:GetRoleShowID(), 0) <= 0
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinaNewFlagRedPoint.P1StageUnLockLocalRecord = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  do return (LocalDB.GetInt)("ACTIVITY_EVE_SINA_P1S_NEWFLAG" .. (self._loginModule):GetRoleShowID(), 0) <= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIActivityEveSinaNewFlagRedPoint:P1StageUnLockLocalRecord()
+  return LocalDB.GetInt("ACTIVITY_EVE_SINA_P1S_NEWFLAG" .. self._loginModule:GetRoleShowID(), 0) <= 0
 end
-
-

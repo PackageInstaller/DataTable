@@ -1,17 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1500561/cfg_skill_view_200561.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" DataSelectDamage,damageIndex = 1; PlayCasterTurnToTarget; PlayCasterAnimation,animName = AtkChain; PlayCasterBindEffect,effectID =2394; PlayAudio,audioID = 2244,audioType=1; Wait,waitTime=4000; "}
-}
-, 
-{2, 2, 0, 1, 1, 1700, 
-{" DataSelectDamage,damageIndex = 1; PlayFlyEffectCasterToTarget,flyEffectID = 2395,flyTime = 100,flyTrace = 1,label=doAgain; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=2396,turnToTarget=1,deathClear=0; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " DataSelectDamage,damageIndex = 1; PlayCasterTurnToTarget; PlayCasterAnimation,animName = AtkChain; PlayCasterBindEffect,effectID =2394; PlayAudio,audioID = 2244,audioType=1; Wait,waitTime=4000; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    1,
+    1700,
+    {
+      " DataSelectDamage,damageIndex = 1; PlayFlyEffectCasterToTarget,flyEffectID = 2395,flyTime = 100,flyTrace = 1,label=doAgain; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=2396,turnToTarget=1,deathClear=0; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; "
+    }
+  }
 }
 return config, "ID", key
-

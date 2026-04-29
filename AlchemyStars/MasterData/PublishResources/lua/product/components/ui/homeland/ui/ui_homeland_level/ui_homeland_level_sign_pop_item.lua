@@ -1,45 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_level/ui_homeland_level_sign_pop_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandLevelSignPopItem", UICustomWidget)
 UIHomelandLevelSignPopItem = UIHomelandLevelSignPopItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandLevelSignPopItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetHomelandLevelData()
+function UIHomelandLevelSignPopItem:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetHomelandLevelData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelSignPopItem.OnShow = function(self)
-  -- function num : 0_1
+function UIHomelandLevelSignPopItem:OnShow()
   self.level = self:GetUIComponent("UILocalizationText", "level")
   self.txtSignAward = self:GetUIComponent("UILocalizationText", "txtSignAward")
   self.txtNewAward = self:GetUIComponent("UILocalizationText", "txtNewAward")
   self.liveable = self:GetUIComponent("UILocalizationText", "liveable")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelSignPopItem.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandLevelSignPopItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelSignPopItem.Flush = function(self, level)
-  -- function num : 0_3
-  (self.level):SetText(level.level)
-  ;
-  (self.txtSignAward):SetText(level.signReward)
-  ;
-  (self.txtNewAward):SetText(level.furnitureReward)
-  ;
-  (self.liveable):SetText(level.livableValueMax)
+function UIHomelandLevelSignPopItem:Flush(level)
+  self.level:SetText(level.level)
+  self.txtSignAward:SetText(level.signReward)
+  self.txtNewAward:SetText(level.furnitureReward)
+  self.liveable:SetText(level.livableValueMax)
 end
-
-

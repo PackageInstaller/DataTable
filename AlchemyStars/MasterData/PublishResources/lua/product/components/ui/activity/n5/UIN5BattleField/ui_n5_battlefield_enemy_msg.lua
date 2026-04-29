@@ -1,50 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/UIN5BattleField/ui_n5_battlefield_enemy_msg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5BattleFieldEnemyMsg", UICustomWidget)
 UIN5BattleFieldEnemyMsg = UIN5BattleFieldEnemyMsg
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5BattleFieldEnemyMsg.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN5BattleFieldEnemyMsg:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyMsg._GetComponents = function(self)
-  -- function num : 0_1
+function UIN5BattleFieldEnemyMsg:_GetComponents()
   self.content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._restrainBtn = self:GetGameObject("restrainBtn")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyMsg.SetData = function(self, monsterIDs, showRestrainBtn)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN5BattleFieldEnemyMsg:SetData(monsterIDs, showRestrainBtn)
   self._ids = monsterIDs
-  ;
-  (self._restrainBtn):SetActive(showRestrainBtn)
-  ;
-  (self.content):SpawnObjects("UIEnemyItem", #self._ids)
-  local items = (self.content):GetAllSpawnList()
-  for idx,value in ipairs(self._ids) do
+  self._restrainBtn:SetActive(showRestrainBtn)
+  self.content:SpawnObjects("UIEnemyItem", #self._ids)
+  local items = self.content:GetAllSpawnList()
+  for idx, value in ipairs(self._ids) do
     local item = items[idx]
-    item:SetData((self._ids)[idx], idx, function(idx)
-    -- function num : 0_2_0 , upvalues : self
-    self:ShowDialog("UIEnemyTip", self._ids, idx)
-  end
-)
+    item:SetData(self._ids[idx], idx, function(idx)
+      self:ShowDialog("UIEnemyTip", self._ids, idx)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldEnemyMsg.restrainBtnOnClick = function(self)
-  -- function num : 0_3
+function UIN5BattleFieldEnemyMsg:restrainBtnOnClick()
   self:ShowDialog("UIRestrainTips")
 end
-
-

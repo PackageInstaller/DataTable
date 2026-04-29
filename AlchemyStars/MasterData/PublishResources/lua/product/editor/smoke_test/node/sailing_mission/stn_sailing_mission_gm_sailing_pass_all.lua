@@ -1,16 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/sailing_mission/stn_sailing_mission_gm_sailing_pass_all.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("SailingMission_GM_SailingPassAll", Common_AsyncBase)
 SailingMission_GM_SailingPassAll = SailingMission_GM_SailingPassAll
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SailingMission_GM_SailingPassAll.TaskFunc = function(self, TT, status)
-  -- function num : 0_0
-  (self._manager):AsyncGM_SailingPassAll(TT, status)
+function SailingMission_GM_SailingPassAll:TaskFunc(TT, status)
+  self._manager:AsyncGM_SailingPassAll(TT, status)
 end
-
-

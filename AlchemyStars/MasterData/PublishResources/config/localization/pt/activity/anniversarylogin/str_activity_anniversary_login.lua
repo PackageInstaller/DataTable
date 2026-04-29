@@ -1,8 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/pt/activity/anniversarylogin/str_activity_anniversary_login.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_activity_anniversary_login_main_title = "As pequenas coisas depois que nos conhecemos", str_activity_anniversary_login_title = "Pedido de fornecimento especial entregue", str_activity_anniversary_login_desc = "Você recebeu todos os suprimentos comprados há alguns dias? Pode haver alguns atrasos, mas mais pacotes estão a caminho.\nPS Como estão as coisas entre você e Vice? Algum progresso?", str_activity_anniversary_login_claim = "Toque para receber", str_activity_anniversary_login_claim_2 = "Obter", str_activity_anniversary_login_claim_3 = "Veja o Baú de Recursos de Inicialização", str_activity_anniversary_login_btn_look = "Carta Inclusa", str_activity_anniversary_login_btn_review = "Recap.", str_activity_anniversary_login_time = "Entrega atrasada..."}
+local config = {
+  str_activity_anniversary_login_main_title = "As pequenas coisas depois que nos conhecemos",
+  str_activity_anniversary_login_title = "Pedido de fornecimento especial entregue",
+  str_activity_anniversary_login_desc = "Você recebeu todos os suprimentos comprados há alguns dias? Pode haver alguns atrasos, mas mais pacotes estão a caminho.\nPS Como estão as coisas entre você e Vice? Algum progresso?",
+  str_activity_anniversary_login_claim = "Toque para receber",
+  str_activity_anniversary_login_claim_2 = "Obter",
+  str_activity_anniversary_login_claim_3 = "Veja o Baú de Recursos de Inicialização",
+  str_activity_anniversary_login_btn_look = "Carta Inclusa",
+  str_activity_anniversary_login_btn_review = "Recap.",
+  str_activity_anniversary_login_time = "Entrega atrasada..."
+}
 return config
-

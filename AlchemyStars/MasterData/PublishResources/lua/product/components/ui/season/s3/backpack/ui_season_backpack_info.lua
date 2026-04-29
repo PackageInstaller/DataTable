@@ -1,122 +1,86 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/backpack/ui_season_backpack_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBackpackInfo", UIController)
 UISeasonBackpackInfo = UISeasonBackpackInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBackpackInfo.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonBackpackInfo:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackInfo.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonBackpackInfo:OnShow(uiParams)
   self._cfg = uiParams[1]
-  self._levelCfg = (Cfg.cfg_season_debris_level)[(self._cfg).ID]
+  self._levelCfg = Cfg.cfg_season_debris_level[self._cfg.ID]
   self:InitWidget()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackInfo.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonBackpackInfo:InitWidget()
   self._name = self:GetUIComponent("UILocalizedTMP", "Name")
   self._desc = self:GetUIComponent("UILocalizationText", "Desc")
   self._condition = self:GetUIComponent("UILocalizationText", "Condition")
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._itemTips = self:GetUIComponent("UISelectObjectPath", "ItemTips")
-  self._tips = (self._itemTips):SpawnObject("UISelectInfo")
+  self._tips = self._itemTips:SpawnObject("UISelectInfo")
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackInfo.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._name):SetText((StringTable.Get)((self._levelCfg).Title))
-  ;
-  (self._desc):SetText((StringTable.Get)((self._levelCfg).Leveldesc))
-  ;
-  (self._condition):SetText((StringTable.Get)("str_season_debris_condition", "<size=30>" .. (self._cfg).Score .. "</size>"))
-  ;
-  (self._icon):LoadImage((self._levelCfg).Icon)
+function UISeasonBackpackInfo:OnValue()
+  self._name:SetText(StringTable.Get(self._levelCfg.Title))
+  self._desc:SetText(StringTable.Get(self._levelCfg.Leveldesc))
+  self._condition:SetText(StringTable.Get("str_season_debris_condition", "<size=30>" .. self._cfg.Score .. "</size>"))
+  self._icon:LoadImage(self._levelCfg.Icon)
   local items = {}
-  local rewards = (self._cfg).Reward
+  local rewards = self._cfg.Reward
   if rewards then
-    for _,value in pairs(rewards) do
-      items[#items + 1] = {id = value[1], count = value[2]}
+    for _, value in pairs(rewards) do
+      items[#items + 1] = {
+        id = value[1],
+        count = value[2]
+      }
     end
-    ;
-    (self._content):SpawnObjects("UISeasonBackpackItem", #items)
-    local itemWidgets = (self._content):GetAllSpawnList()
-    for index,widget in ipairs(itemWidgets) do
-      widget:SetData((self._cfg).ID, items[index], function(id, pos)
-    -- function num : 0_3_0 , upvalues : self
-    self:_ShowItemTips(id, pos)
-  end
-)
+    self._content:SpawnObjects("UISeasonBackpackItem", #items)
+    local itemWidgets = self._content:GetAllSpawnList()
+    for index, widget in ipairs(itemWidgets) do
+      widget:SetData(self._cfg.ID, items[index], function(id, pos)
+        self:_ShowItemTips(id, pos)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackInfo.ChallengeBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UISeasonBackpack")
+function UISeasonBackpackInfo:ChallengeBtnOnClick(go)
+  local controller = GameGlobal.UIStateManager():GetController("UISeasonBackpack")
   if controller and controller:IsClose() then
     self:Lock("UISeasonBackpackInfo:ChallengeBtnOnClick")
     self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, controller, self
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-    YIELD(TT, 500)
-    controller:GoHome()
-    self:UnLock("UISeasonBackpackInfo:ChallengeBtnOnClick")
+      ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+      YIELD(TT, 500)
+      controller:GoHome()
+      self:UnLock("UISeasonBackpackInfo:ChallengeBtnOnClick")
+    end)
+    return
   end
-)
-    return 
-  end
-  self:ShowDialog("UICN7N36PostInnerGameController", (self._cfg).ID, function(firstPass)
-    -- function num : 0_4_1 , upvalues : _ENV, self
+  self:ShowDialog("UICN7N36PostInnerGameController", self._cfg.ID, function(firstPass)
     if firstPass then
       local rewards = {}
-      for _,value in pairs((self._cfg).Reward) do
+      for _, value in pairs(self._cfg.Reward) do
         local roleAsset = RoleAsset:New()
         roleAsset.assetid = value[1]
         roleAsset.count = value[2]
-        ;
-        (table.insert)(rewards, roleAsset)
+        table.insert(rewards, roleAsset)
       end
-      ;
-      (UISeasonHelper.ShowUIGetRewards)(rewards)
+      UISeasonHelper.ShowUIGetRewards(rewards)
       self:OnValue()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackInfo.CloseBtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UISeasonBackpack")
+function UISeasonBackpackInfo:CloseBtnOnClick()
+  local controller = GameGlobal.UIStateManager():GetController("UISeasonBackpack")
   if controller then
     controller:RefreshUI()
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackInfo._ShowItemTips = function(self, id, pos)
-  -- function num : 0_6
-  (self._tips):SetData(id, pos)
+function UISeasonBackpackInfo:_ShowItemTips(id, pos)
+  self._tips:SetData(id, pos)
 end
-
-

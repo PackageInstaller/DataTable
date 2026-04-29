@@ -1,159 +1,129 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_driller_explosion_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillDrillerExplosionPhase", PlaySkillPhaseBase)
 PlaySkillDrillerExplosionPhase = PlaySkillDrillerExplosionPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillDrillerExplosionPhase.PlayFlight = function(self, TT, casterEntity, phaseParam, phaseIndex, phaseAdapter)
-  -- function num : 0_0 , upvalues : _ENV
-  local effectService = (self._world):GetService("Effect")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillDrillerExplosionPhase:PlayFlight(TT, casterEntity, phaseParam, phaseIndex, phaseAdapter)
+  local effectService = self._world:GetService("Effect")
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local destroyResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.DestroyMonster)
   if not destroyResultArray then
-    return 
+    return
   end
   local index = 1
   local destroyResult = destroyResultArray[index]
   if not destroyResult then
-    return 
+    return
   end
   local eID = destroyResult:GetEntityID()
-  local eMonster = (self._world):GetEntityByID(eID)
+  local eMonster = self._world:GetEntityByID(eID)
   if not eMonster then
-    return 
+    return
   end
-  local singleBossEntity = nil
+  local singleBossEntity
   local singleBossClassID = phaseParam:GetMonsterClassID()
-  if singleBossClassID and singleBossClassID > 0 then
-    local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-    for _,e in ipairs(monsterGroup:GetEntities()) do
-      if e:HasView() and not e:HasShowDeath() and singleBossClassID == (e:MonsterID()):GetMonsterClassID() then
+  if singleBossClassID and 0 < singleBossClassID then
+    local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+    for _, e in ipairs(monsterGroup:GetEntities()) do
+      if e:HasView() and not e:HasShowDeath() and singleBossClassID == e:MonsterID():GetMonsterClassID() then
         singleBossEntity = e
         break
       end
     end
   end
-  do
-    if not singleBossEntity then
-      return 
-    end
-    local casterPos = casterEntity:GetRenderGridPosition()
-    local singleBossPos = singleBossEntity:GetRenderGridPosition()
-    local boomEffDir = self:_GetGridDirection(singleBossEntity)
-    self:SetHPVisible(casterEntity, false)
-    self:SetHPVisible(singleBossEntity, false)
-    YIELD(TT)
-    local startAction = phaseParam:GetStartAction()
-    casterEntity:SetAnimatorControllerTriggers({startAction})
-    local startEffectID = phaseParam:GetStartEffectID()
-    if startEffectID and startEffectID ~= 0 then
-      effectService:CreateEffect(startEffectID, casterEntity)
-    end
-    local boomEffectID = phaseParam:GetBoomEffectID()
-    do
-      if boomEffectID and boomEffectID ~= 0 then
-        local boomGridPos = singleBossPos + boomEffDir * 1
-        effectService:CreateWorldPositionDirectionEffect(boomEffectID, boomGridPos, boomEffDir)
-      end
-      local screenEffectDelayMs = phaseParam:GetScreenEffectDelayMs()
-      YIELD(TT, screenEffectDelayMs)
-      local screenEffectID = phaseParam:GetScreenEffectID()
-      if screenEffectID and screenEffectID ~= 0 then
-        effectService:CreateScreenEffPointEffect(screenEffectID)
-      end
-      local summonTrapDelayMs = phaseParam:GetSummonTrapDelayMs()
-      YIELD(TT, summonTrapDelayMs)
-      local centerEffectID = phaseParam:GetCenterEffectID()
-      if centerEffectID and centerEffectID ~= 0 then
-        effectService:CreateWorldPositionDirectionEffect(centerEffectID, Vector2(5, 5), Vector2(0, -1))
-      end
-      local hitPlayerDelayMs = phaseParam:GetHitPlayerDelayMs()
-      YIELD(TT, hitPlayerDelayMs)
-      local damageResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Damage)
-      if damageResult then
-        local damageInfo = damageResult:GetDamageInfo(1)
-        local hitAnim = phaseParam:GetHitAnim()
-        local hitEffectID = phaseParam:GetHitEffectID()
-        local hitPos = damageResult:GetGridPos()
-        local skillID = skillEffectResultContainer:GetSkillID()
-        local hitTurnToTarget = false
-        self:_ShowDamage(damageResult, skillEffectResultContainer, hitAnim, hitEffectID, casterEntity, hitPos, hitTurnToTarget, skillID)
-      end
-      do
-        eMonster:SetViewVisible(false)
-        local svc = (self._world):GetService("MonsterShowRender")
-        ;
-        ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : svc, eMonster
+  if not singleBossEntity then
+    return
+  end
+  local casterPos = casterEntity:GetRenderGridPosition()
+  local singleBossPos = singleBossEntity:GetRenderGridPosition()
+  local boomEffDir = self:_GetGridDirection(singleBossEntity)
+  self:SetHPVisible(casterEntity, false)
+  self:SetHPVisible(singleBossEntity, false)
+  YIELD(TT)
+  local startAction = phaseParam:GetStartAction()
+  casterEntity:SetAnimatorControllerTriggers({startAction})
+  local startEffectID = phaseParam:GetStartEffectID()
+  if startEffectID and startEffectID ~= 0 then
+    effectService:CreateEffect(startEffectID, casterEntity)
+  end
+  local boomEffectID = phaseParam:GetBoomEffectID()
+  if boomEffectID and boomEffectID ~= 0 then
+    local boomGridPos = singleBossPos + boomEffDir * 1
+    effectService:CreateWorldPositionDirectionEffect(boomEffectID, boomGridPos, boomEffDir)
+  end
+  local screenEffectDelayMs = phaseParam:GetScreenEffectDelayMs()
+  YIELD(TT, screenEffectDelayMs)
+  local screenEffectID = phaseParam:GetScreenEffectID()
+  if screenEffectID and screenEffectID ~= 0 then
+    effectService:CreateScreenEffPointEffect(screenEffectID)
+  end
+  local summonTrapDelayMs = phaseParam:GetSummonTrapDelayMs()
+  YIELD(TT, summonTrapDelayMs)
+  local centerEffectID = phaseParam:GetCenterEffectID()
+  if centerEffectID and centerEffectID ~= 0 then
+    effectService:CreateWorldPositionDirectionEffect(centerEffectID, Vector2(5, 5), Vector2(0, -1))
+  end
+  local hitPlayerDelayMs = phaseParam:GetHitPlayerDelayMs()
+  YIELD(TT, hitPlayerDelayMs)
+  local damageResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Damage)
+  if damageResult then
+    local damageInfo = damageResult:GetDamageInfo(1)
+    local hitAnim = phaseParam:GetHitAnim()
+    local hitEffectID = phaseParam:GetHitEffectID()
+    local hitPos = damageResult:GetGridPos()
+    local skillID = skillEffectResultContainer:GetSkillID()
+    local hitTurnToTarget = false
+    self:_ShowDamage(damageResult, skillEffectResultContainer, hitAnim, hitEffectID, casterEntity, hitPos, hitTurnToTarget, skillID)
+  end
+  eMonster:SetViewVisible(false)
+  local svc = self._world:GetService("MonsterShowRender")
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     svc:_DoOneMonsterDead(TT, eMonster)
+  end)
+  local bossShowDelayMs = phaseParam:GetBossShowDelayMs()
+  YIELD(TT, bossShowDelayMs)
+  singleBossEntity:SetViewVisible(true)
+  self:SetHPVisible(singleBossEntity, false)
+  singleBossEntity:RemoveRenderPerformanceByAgent()
+  local bossShowAction = phaseParam:GetBossShowAction()
+  singleBossEntity:SetAnimatorControllerTriggers({bossShowAction})
+  local bossShowEffectID = phaseParam:GetBossShowEffectID()
+  if bossShowEffectID and bossShowEffectID ~= 0 then
+    effectService:CreateEffect(bossShowEffectID, singleBossEntity)
   end
-)
-        local bossShowDelayMs = phaseParam:GetBossShowDelayMs()
-        YIELD(TT, bossShowDelayMs)
-        singleBossEntity:SetViewVisible(true)
-        self:SetHPVisible(singleBossEntity, false)
-        singleBossEntity:RemoveRenderPerformanceByAgent()
-        local bossShowAction = phaseParam:GetBossShowAction()
-        singleBossEntity:SetAnimatorControllerTriggers({bossShowAction})
-        local bossShowEffectID = phaseParam:GetBossShowEffectID()
-        if bossShowEffectID and bossShowEffectID ~= 0 then
-          effectService:CreateEffect(bossShowEffectID, singleBossEntity)
-        end
-        local finalDelayMs = phaseParam:GetFinalDelayMs()
-        YIELD(TT, finalDelayMs)
-        self:SetHPVisible(singleBossEntity, true)
-      end
-    end
-  end
+  local finalDelayMs = phaseParam:GetFinalDelayMs()
+  YIELD(TT, finalDelayMs)
+  self:SetHPVisible(singleBossEntity, true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillDrillerExplosionPhase._ShowTrapFromSummonEverything = function(self, TT, summonRes, phaseParam)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillDrillerExplosionPhase:_ShowTrapFromSummonEverything(TT, summonRes, phaseParam)
   local summonMonsterData = summonRes:GetTrapData()
   local posSummon = summonRes:GetSummonPos()
-  local trapEntity = (self._world):GetEntityByID(summonMonsterData.m_entityWorkID)
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self._ShowTrap, self, trapEntity, posSummon, phaseParam)
+  local trapEntity = self._world:GetEntityByID(summonMonsterData.m_entityWorkID)
+  GameGlobal.TaskManager():CoreGameStartTask(self._ShowTrap, self, trapEntity, posSummon, phaseParam)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillDrillerExplosionPhase._ShowTrap = function(self, TT, trapEntity, posSummon, phaseParam)
-  -- function num : 0_2
+function PlaySkillDrillerExplosionPhase:_ShowTrap(TT, trapEntity, posSummon, phaseParam)
   trapEntity:SetPosition(posSummon)
-  local trapServiceRender = (self._world):GetService("TrapRender")
+  local trapServiceRender = self._world:GetService("TrapRender")
   trapServiceRender:CreateSingleTrapRender(TT, trapEntity, true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillDrillerExplosionPhase._ShowDamage = function(self, damageResult, skillEffectResultContainer, hitAnimName, hitEffectID, casterEntity, gridPos, hitTurnToTarget, skillID)
-  -- function num : 0_3 , upvalues : _ENV
+function PlaySkillDrillerExplosionPhase:_ShowDamage(damageResult, skillEffectResultContainer, hitAnimName, hitEffectID, casterEntity, gridPos, hitTurnToTarget, skillID)
   local targetEntityID = damageResult:GetTargetID()
-  local targetEntity = (self._world):GetEntityByID(targetEntityID)
+  local targetEntity = self._world:GetEntityByID(targetEntityID)
   if targetEntity ~= nil then
     local skillService = self:SkillService()
     local targetDamage = damageResult:GetDamageInfo(1)
-    local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(hitAnimName)):SetHandleBeHitParam_HitEffectID(hitEffectID)):SetHandleBeHitParam_DamageInfo(targetDamage)):SetHandleBeHitParam_DamagePos(gridPos)):SetHandleBeHitParam_HitTurnTarget(hitTurnToTarget)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(skillEffectResultContainer:IsFinalAttack())):SetHandleBeHitParam_SkillID(skillID)
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(skillService.HandleBeHit, skillService, beHitParam)
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(hitAnimName):SetHandleBeHitParam_HitEffectID(hitEffectID):SetHandleBeHitParam_DamageInfo(targetDamage):SetHandleBeHitParam_DamagePos(gridPos):SetHandleBeHitParam_HitTurnTarget(hitTurnToTarget):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(skillEffectResultContainer:IsFinalAttack()):SetHandleBeHitParam_SkillID(skillID)
+    GameGlobal.TaskManager():CoreGameStartTask(skillService.HandleBeHit, skillService, beHitParam)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillDrillerExplosionPhase.SetHPVisible = function(self, entity, bVisible)
-  -- function num : 0_4
+function PlaySkillDrillerExplosionPhase:SetHPVisible(entity, bVisible)
   local hpCmpt = entity:HP()
   if hpCmpt then
-    local sliderEntityID = (entity:HP()):GetHPSliderEntityID()
-    local sliderEntity = (self._world):GetEntityByID(sliderEntityID)
+    local sliderEntityID = entity:HP():GetHPSliderEntityID()
+    local sliderEntity = self._world:GetEntityByID(sliderEntityID)
     if sliderEntity then
       hpCmpt:SetHPBarTempHide(not bVisible)
       hpCmpt:SetHPPosDirty(true)
@@ -161,26 +131,17 @@ PlaySkillDrillerExplosionPhase.SetHPVisible = function(self, entity, bVisible)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillDrillerExplosionPhase._GetGridDirection = function(self, entity)
-  -- function num : 0_5
-  local dir = (entity:GetGridDirection()):Clone()
+function PlaySkillDrillerExplosionPhase:_GetGridDirection(entity)
+  local dir = entity:GetGridDirection():Clone()
   if dir.x > 1 then
     dir.x = 1
-  else
-    if dir.x < -1 then
-      dir.x = -1
-    end
+  elseif dir.x < -1 then
+    dir.x = -1
   end
-  if dir.y > 1 then
+  if 1 < dir.y then
     dir.y = 1
-  else
-    if dir.y < -1 then
-      dir.y = -1
-    end
+  elseif -1 > dir.y then
+    dir.y = -1
   end
   return dir
 end
-
-

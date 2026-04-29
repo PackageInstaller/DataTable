@@ -1,21 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sailing_mission/reward/ui_sailing_progress_rewards_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISailingProgressRewardsCell", UICustomWidget)
 UISailingProgressRewardsCell = UISailingProgressRewardsCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISailingProgressRewardsCell.Constructor = function(self)
-  -- function num : 0_0
-  self._animInfo = {nameSpecial = "uieff_UISailingProgressRewardsCell_lingqu_glow1", nameNormal = "uieff_UISailingProgressRewardsCell_lingqu_glow2", len = 400}
+function UISailingProgressRewardsCell:Constructor()
+  self._animInfo = {
+    nameSpecial = "uieff_UISailingProgressRewardsCell_lingqu_glow1",
+    nameNormal = "uieff_UISailingProgressRewardsCell_lingqu_glow2",
+    len = 400
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISailingProgressRewardsCell:OnShow(uiParams)
   self._isFirst = true
   self._itemCountPerRow = 1
   self:AttachEvent(GameEventType.SailingGetProgressReward, self.OnSailingGetProgressReward)
@@ -23,44 +17,30 @@ UISailingProgressRewardsCell.OnShow = function(self, uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISailingProgressRewardsCell:OnHide()
   if self._timeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._timeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._timeEvent)
     self._timeEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell.OnSailingGetProgressReward = function(self, cfgIDList)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  if cfgIDList and (table.icontains)(cfgIDList, (self._data)._cfgID) then
-    (self._data)._state = ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED
-    self:SetState((self._data)._state)
+function UISailingProgressRewardsCell:OnSailingGetProgressReward(cfgIDList)
+  if cfgIDList and table.icontains(cfgIDList, self._data._cfgID) then
+    self._data._state = ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED
+    self:SetState(self._data._state)
     self:_PlayGetAnim()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell.OnSailingOnProgressRewardCellSelect = function(self, cfgID)
-  -- function num : 0_4
-  if (self._data)._cfgID == cfgID then
+function UISailingProgressRewardsCell:OnSailingOnProgressRewardCellSelect(cfgID)
+  if self._data._cfgID == cfgID then
     self:SetSelected(true)
   else
     self:SetSelected(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell.InitWidget = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISailingProgressRewardsCell:InitWidget()
   self._rootAnim = self:GetUIComponent("Animation", "UISailingProgressRewardsCell")
   self._progressNumText = self:GetUIComponent("UILocalizationText", "ProgressNumText")
   self._specialProgressNumText = self:GetUIComponent("UILocalizationText", "SpecialProgressNumText")
@@ -84,205 +64,140 @@ UISailingProgressRewardsCell.InitWidget = function(self)
   self._stateCanGet = self:GetGameObject("StateCanGet")
   self._stateLocked = self:GetGameObject("StateLocked")
   self._cellState = 1
-  self._stateAreaGroup = {[ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED] = self._stateGot, [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV] = self._stateCanGet, [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK] = self._stateLocked}
+  self._stateAreaGroup = {
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED] = self._stateGot,
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV] = self._stateCanGet,
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK] = self._stateLocked
+  }
   self._eff_front = self:GetGameObject("eff_front")
   self._eff_back = self:GetGameObject("eff_back")
   self._rewardList = self:GetUIComponent("UIDynamicScrollView", "RewardList")
   self._rewardListGo = self:GetGameObject("RewardList")
   self._itemAreaGo = self:GetGameObject("ItemArea")
-  ;
-  (self._rewardListGo):SetActive(true)
-  ;
-  (self._itemAreaGo):SetActive(false)
+  self._rewardListGo:SetActive(true)
+  self._itemAreaGo:SetActive(false)
   self:SetSelected(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell.SetData = function(self)
-  -- function num : 0_6
+function UISailingProgressRewardsCell:SetData()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell._PlayGetAnim = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISailingProgressRewardsCell:_PlayGetAnim()
   if self._rootAnim then
     self:Lock("UISailingProgressRewardsCell:_PlayGetAnim")
-    local animName = (self._animInfo).nameNormal
-    if (self._data)._isSpecial then
-      animName = (self._animInfo).nameSpecial
+    local animName = self._animInfo.nameNormal
+    if self._data._isSpecial then
+      animName = self._animInfo.nameSpecial
     end
     if self._eff then
-      (self._eff):SetActive(true)
+      self._eff:SetActive(true)
       if self._effSub1 and self._effSub2 then
-        (self._effSub1):SetActive((self._data)._isSpecial)
-        ;
-        (self._effSub2):SetActive(not (self._data)._isSpecial)
+        self._effSub1:SetActive(self._data._isSpecial)
+        self._effSub2:SetActive(not self._data._isSpecial)
       end
     end
     if self._rootAnim then
-      (self._rootAnim):Play(animName)
+      self._rootAnim:Play(animName)
     end
     self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : _ENV, self
-    YIELD(TT, (self._animInfo).len)
-    if self._eff then
-      (self._eff):SetActive(false)
-    end
-    self:UnLock("UISailingProgressRewardsCell:_PlayGetAnim")
-  end
-, self)
+      YIELD(TT, self._animInfo.len)
+      if self._eff then
+        self._eff:SetActive(false)
+      end
+      self:UnLock("UISailingProgressRewardsCell:_PlayGetAnim")
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell._SetAlpha = function(self, alpha)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._setAlphaArea).alpha = alpha
+function UISailingProgressRewardsCell:_SetAlpha(alpha)
+  self._setAlphaArea.alpha = alpha
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell.SetSelected = function(self, isSelected)
-  -- function num : 0_9
-  (self._selectStateAreaGo):SetActive(isSelected)
+function UISailingProgressRewardsCell:SetSelected(isSelected)
+  self._selectStateAreaGo:SetActive(isSelected)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell._CellOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SailingOnProgressRewardCellSelect, (self._data)._cfgID)
+function UISailingProgressRewardsCell:_CellOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SailingOnProgressRewardCellSelect, self._data._cfgID)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell.StateCanGetBgOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  do
-    if (self._data):CanReceive() and self._getRewardCallback then
-      local cfgIDList = {(self._data)._cfgID}
-      ;
-      (self._getRewardCallback)(cfgIDList)
-    end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SailingOnProgressRewardCellSelect, (self._data)._cfgID)
+function UISailingProgressRewardsCell:StateCanGetBgOnClick(go)
+  if self._data:CanReceive() and self._getRewardCallback then
+    local cfgIDList = {
+      self._data._cfgID
+    }
+    self._getRewardCallback(cfgIDList)
   end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SailingOnProgressRewardCellSelect, self._data._cfgID)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell.BgAreaOnClick = function(self, go)
-  -- function num : 0_12
+function UISailingProgressRewardsCell:BgAreaOnClick(go)
   self:_CellOnClick()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell.BgNormalOnClick = function(self, go)
-  -- function num : 0_13
+function UISailingProgressRewardsCell:BgNormalOnClick(go)
   self:_CellOnClick()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell.BgSpecialOnClick = function(self, go)
-  -- function num : 0_14
+function UISailingProgressRewardsCell:BgSpecialOnClick(go)
   self:_CellOnClick()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell.SetState = function(self, state)
-  -- function num : 0_15 , upvalues : _ENV
+function UISailingProgressRewardsCell:SetState(state)
   self._cellState = state
   if self._cellState == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_Expired or self._cellState == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_UNKNOW then
     self._cellState = ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK
   end
-  for index,value in ipairs(self._stateAreaGroup) do
+  for index, value in ipairs(self._stateAreaGroup) do
     value:SetActive(index == self._cellState)
   end
-  ;
-  (self._rewardList):RefreshAllShownItem()
+  self._rewardList:RefreshAllShownItem()
   self:_CheckEff()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell._SetBg = function(self, isSpecial)
-  -- function num : 0_16
-  (self._bgNormalGo):SetActive(isSpecial == false)
-  ;
-  (self._bgSpecialGo):SetActive(isSpecial == true)
-  ;
-  (self._progressAreaGo):SetActive(isSpecial == false)
-  ;
-  (self._specialProgressAreaGo):SetActive(isSpecial == true)
-  ;
-  (self._selectCellBorderGo):SetActive(isSpecial == false)
-  ;
-  (self._selectCellBorderSpGo):SetActive(isSpecial == true)
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+function UISailingProgressRewardsCell:_SetBg(isSpecial)
+  self._bgNormalGo:SetActive(isSpecial == false)
+  self._bgSpecialGo:SetActive(isSpecial == true)
+  self._progressAreaGo:SetActive(isSpecial == false)
+  self._specialProgressAreaGo:SetActive(isSpecial == true)
+  self._selectCellBorderGo:SetActive(isSpecial == false)
+  self._selectCellBorderSpGo:SetActive(isSpecial == true)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell._FillUi = function(self)
-  -- function num : 0_17
-  self:_SetBg((self._data)._isSpecial)
-  self:SetState((self._data)._state)
-  ;
-  (self._progressNumText):SetText((self._data)._progressNum)
-  ;
-  (self._specialProgressNumText):SetText((self._data)._progressNum)
+function UISailingProgressRewardsCell:_FillUi()
+  self:_SetBg(self._data._isSpecial)
+  self:SetState(self._data._state)
+  self._progressNumText:SetText(self._data._progressNum)
+  self._specialProgressNumText:SetText(self._data._progressNum)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell.InitData = function(self, data, cfg_data, itemInfoCallback, getRewardCallback)
-  -- function num : 0_18 , upvalues : _ENV
+function UISailingProgressRewardsCell:InitData(data, cfg_data, itemInfoCallback, getRewardCallback)
   self._data = data
   self._cfg_data = cfg_data
   self._itemInfoCallback = itemInfoCallback
   self._getRewardCallback = getRewardCallback
-  self._rewardCount = (table.count)((self._data)._items)
+  self._rewardCount = table.count(self._data._items)
   if self._isFirst then
     self._isFirst = false
-    ;
-    (self._rewardList):InitListView(self._rewardCount, function(scrollView, index)
-    -- function num : 0_18_0 , upvalues : self
-    return self:_InitScrollViewList(scrollView, index)
-  end
-)
+    self._rewardList:InitListView(self._rewardCount, function(scrollView, index)
+      return self:_InitScrollViewList(scrollView, index)
+    end)
   else
-    self:_RefreshRewardList((self._data)._items, self._rewardList)
+    self:_RefreshRewardList(self._data._items, self._rewardList)
   end
   self:_FillUi()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell._CheckEff = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UISailingProgressRewardsCell:_CheckEff()
   local canShowEff = true
   if self._cellState == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED then
     canShowEff = false
   end
-  ;
-  (self._eff_front):SetActive(not (self._data)._isSpecial or canShowEff)
-  ;
-  (self._eff_back):SetActive(not (self._data)._isSpecial or canShowEff)
+  self._eff_front:SetActive(self._data._isSpecial and canShowEff)
+  self._eff_back:SetActive(self._data._isSpecial and canShowEff)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell._InitScrollViewList = function(self, scrollView, index)
-  -- function num : 0_20
+function UISailingProgressRewardsCell:_InitScrollViewList(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -292,31 +207,24 @@ UISailingProgressRewardsCell._InitScrollViewList = function(self, scrollView, in
     item.IsInitHandlerCalled = true
     rowPool:SpawnObjects("UISailingProgressRewardItem", self._itemCountPerRow)
   end
-  local rewardList = (self._data)._items
+  local rewardList = self._data._items
   local rewardCount = #rewardList
   local rowList = rowPool:GetAllSpawnList()
   for i = 1, self._itemCountPerRow do
     local itemIndex = index * self._itemCountPerRow + i
     if rewardCount < itemIndex then
-      ((rowList[i]):GetGameObject()):SetActive(false)
+      rowList[i]:GetGameObject():SetActive(false)
     else
-      ;
-      ((rowList[i]):GetGameObject()):SetActive(true)
-      ;
-      (rowList[i]):SetData(rewardList[itemIndex], self._itemInfoCallback, (self._data)._state)
+      rowList[i]:GetGameObject():SetActive(true)
+      rowList[i]:SetData(rewardList[itemIndex], self._itemInfoCallback, self._data._state)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardsCell._RefreshRewardList = function(self, info, list)
-  -- function num : 0_21 , upvalues : _ENV
-  local count = (table.count)(info)
+function UISailingProgressRewardsCell:_RefreshRewardList(info, list)
+  local count = table.count(info)
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
   list:RefreshAllShownItem()
 end
-
-

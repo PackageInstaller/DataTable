@@ -1,65 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/_review/ui_activity_evesinsa_main_controller_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityEveSinsaMainController_Review", UIController)
 UIActivityEveSinsaMainController_Review = UIActivityEveSinsaMainController_Review
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityEveSinsaMainController_Review._GetComponents = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityEveSinsaMainController_Review:_GetComponents()
   self._mainBg = self:GetUIComponent("RawImageLoader", "_mainBg")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_0_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     self:SwitchState(UIStateType.UIActivityReview)
-  end
-, nil, nil, false, function()
-    -- function num : 0_0_1 , upvalues : self
+  end, nil, nil, false, function()
     self:HideBtnOnClick()
-  end
-)
+  end)
   local LevelABtn = self:GetUIComponent("UISelectObjectPath", "_LevelABtn")
   self._LevelABtn = LevelABtn:SpawnObject("UIActivityEveSinsaSwitchLevelBtn_Review")
-  ;
-  (self._LevelABtn):SetData(self._campaign, EActivityEveSinsaLevelBtnType.EType_A, true)
+  self._LevelABtn:SetData(self._campaign, EActivityEveSinsaLevelBtnType.EType_A, true)
   local LevelBBtn = self:GetUIComponent("UISelectObjectPath", "_LevelBBtn")
   self._LevelBBtn = LevelBBtn:SpawnObject("UIActivityEveSinsaSwitchLevelBtn_Review")
-  ;
-  (self._LevelBBtn):SetData(self._campaign, EActivityEveSinsaLevelBtnType.EType_B, true)
+  self._LevelBBtn:SetData(self._campaign, EActivityEveSinsaLevelBtnType.EType_B, true)
   self._txtRemainingTimeDesc = self:GetUIComponent("UILocalizationText", "_txtRemainingTimeDesc")
   self._txtRemainingTimeTxt = self:GetUIComponent("UILocalizationText", "_txtRemainingTimeTxt")
   self._redLoginRewardBtn = self:GetGameObject("_redLoginRewardBtn")
   self._redTaskRewardBtn = self:GetGameObject("_redTaskRewardBtn")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  local uiModule = (GameGlobal.GetUIModule)(CampaignModule)
-  self._reviewData = (uiModule:GetReviewData()):GetActivityByType(ECampaignType.CAMPAIGN_TYPE_REVIEW_N1)
-  ;
-  (self._reviewData):ReqDetailInfo(TT, res)
-  self._campaign = (self._reviewData):GetDetailInfo()
+function UIActivityEveSinsaMainController_Review:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  local uiModule = GameGlobal.GetUIModule(CampaignModule)
+  self._reviewData = uiModule:GetReviewData():GetActivityByType(ECampaignType.CAMPAIGN_TYPE_REVIEW_N1)
+  self._reviewData:ReqDetailInfo(TT, res)
+  self._campaign = self._reviewData:GetDetailInfo()
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityEveSinsaMainController_Review:OnShow(uiParams)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._isOpen = true
   self._timePhase = nil
   self:_GetComponents()
-  if not ((self._campaign):GetSample()):GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW) then
+  if not self._campaign:GetSample():GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW) then
     self:_SetUI()
   else
     self:_SetFirstPlot()
@@ -67,10 +46,7 @@ UIActivityEveSinsaMainController_Review.OnShow = function(self, uiParams)
   self:_SetProgress()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review.HideBtnOnClick = function(self)
-  -- function num : 0_3
+function UIActivityEveSinsaMainController_Review:HideBtnOnClick()
   local leftUp = self:GetGameObject("_LeftUp")
   leftUp:SetActive(false)
   local leftDown = self:GetGameObject("_LeftDown")
@@ -85,10 +61,7 @@ UIActivityEveSinsaMainController_Review.HideBtnOnClick = function(self)
   showBtn:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review.ShowBtnOnClick = function(self)
-  -- function num : 0_4
+function UIActivityEveSinsaMainController_Review:ShowBtnOnClick()
   local leftUp = self:GetGameObject("_LeftUp")
   leftUp:SetActive(true)
   local leftDown = self:GetGameObject("_LeftDown")
@@ -103,98 +76,72 @@ UIActivityEveSinsaMainController_Review.ShowBtnOnClick = function(self)
   showBtn:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityEveSinsaMainController_Review:OnHide()
   self:_DetachEvents()
   self._isOpen = false
-  self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+  self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review._SetProgress = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local progress = (UIReviewProgressConst.SpawnObject)(self, "Progress", self._reviewData)
+function UIActivityEveSinsaMainController_Review:_SetProgress()
+  local progress = UIReviewProgressConst.SpawnObject(self, "Progress", self._reviewData)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review._SetFirstPlot = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityEveSinsaMainController_Review:_SetFirstPlot()
   local storyID = 0
-  local cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
+  local cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
   if cfg_campaign then
-    storyID = (cfg_campaign.FirstEnterStoryID)[1]
+    storyID = cfg_campaign.FirstEnterStoryID[1]
   end
   if storyID == 0 then
     self:_SetUI()
     self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : _ENV, self
-    local res = AsyncRequestRes:New()
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-    campaignModule:CampaignClearNewFlag(TT, res, (self._campaign)._id)
-    if not res:GetSucc() then
-      (Log.info)("UIActivityEveSinsaMainController:_SetFirstPlot() CampaignClearNewFlag res.m_result = ", res.m_result)
-    end
-  end
-, self)
-    return 
+      local res = AsyncRequestRes:New()
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      campaignModule:CampaignClearNewFlag(TT, res, self._campaign._id)
+      if not res:GetSucc() then
+        Log.info("UIActivityEveSinsaMainController:_SetFirstPlot() CampaignClearNewFlag res.m_result = ", res.m_result)
+      end
+    end, self)
+    return
   end
   self:ShowDialog("UIStoryController", storyID, function()
-    -- function num : 0_7_1 , upvalues : self, _ENV
     self:StartTask(function(TT)
-      -- function num : 0_7_1_0 , upvalues : _ENV, self
       local res = AsyncRequestRes:New()
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      campaignModule:CampaignClearNewFlag(TT, res, (self._campaign)._id)
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      campaignModule:CampaignClearNewFlag(TT, res, self._campaign._id)
       if not res:GetSucc() then
-        (Log.info)("UIActivityEveSinsaMainController:_SetFirstPlot() CampaignClearNewFlag res.m_result = ", res.m_result)
+        Log.info("UIActivityEveSinsaMainController:_SetFirstPlot() CampaignClearNewFlag res.m_result = ", res.m_result)
       end
       self:_SetUI()
-    end
-, self)
-  end
-)
+    end, self)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review._SetUI = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityEveSinsaMainController_Review:_SetUI()
   self:_UpdateTimePhase()
-  self._timeEvent = (UIActivityHelper.StartTimerEvent)(self._timeEvent, function()
-    -- function num : 0_8_0 , upvalues : self
+  self._timeEvent = UIActivityHelper.StartTimerEvent(self._timeEvent, function()
     return self:_SetRemainingTimer()
-  end
-)
+  end)
   self:_AttachEvents()
   self:_CheckRedPointAll()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review._SetBg = function(self, phase)
-  -- function num : 0_9
-  (self._mainBg):LoadImage("event_eve_home1")
+function UIActivityEveSinsaMainController_Review:_SetBg(phase)
+  self._mainBg:LoadImage("event_eve_home1")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review._SetTitleDesc = function(self, phase)
-  -- function num : 0_10 , upvalues : _ENV
-  local phase2id = {"str_activity_evesinsa_main_title_desc_1", "str_activity_evesinsa_main_title_desc_1", "str_activity_evesinsa_main_title_desc_2"}
+function UIActivityEveSinsaMainController_Review:_SetTitleDesc(phase)
+  local phase2id = {
+    "str_activity_evesinsa_main_title_desc_1",
+    "str_activity_evesinsa_main_title_desc_1",
+    "str_activity_evesinsa_main_title_desc_2"
+  }
   local id = phase2id[phase]
-  ;
-  (self._txtRemainingTimeDesc):SetText((StringTable.Get)(id))
+  self._txtRemainingTimeDesc:SetText(StringTable.Get(id))
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review._UpdateTimePhase = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local phase = (UIActivityEveSinsaHelper_Review.CheckTimePhase)(self._campaign)
+function UIActivityEveSinsaMainController_Review:_UpdateTimePhase()
+  local phase = UIActivityEveSinsaHelper_Review.CheckTimePhase(self._campaign)
   if self._timePhase ~= phase then
     self._timePhase = phase
     self:_SetBg(self._timePhase)
@@ -202,13 +149,14 @@ UIActivityEveSinsaMainController_Review._UpdateTimePhase = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review._SetRemainingTimer = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityEveSinsaMainController_Review:_SetRemainingTimer()
   if self._isOpen then
     self:_UpdateTimePhase()
-    local phase2endphase = {EActivityEveSinsaTimePhase.EPhase_Tree, EActivityEveSinsaTimePhase.EPhase_Tree, EActivityEveSinsaTimePhase.EPhase_Shop}
+    local phase2endphase = {
+      EActivityEveSinsaTimePhase.EPhase_Tree,
+      EActivityEveSinsaTimePhase.EPhase_Tree,
+      EActivityEveSinsaTimePhase.EPhase_Shop
+    }
     local uiText = self._txtRemainingTimeTxt
     local formatStr = "<color=#%s>%s</color>"
     local colorStr = "FFFFFF"
@@ -216,87 +164,58 @@ UIActivityEveSinsaMainController_Review._SetRemainingTimer = function(self)
     if self._timePhase == EActivityEveSinsaTimePhase.EPhase_Over then
       phase = EActivityEveSinsaTimePhase.EPhase_Shop
     end
-    local curTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-    local endTime = (UIActivityEveSinsaHelper_Review.GetPhaseEndTime)(self._campaign, phase2endphase[phase])
+    local curTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+    local endTime = UIActivityEveSinsaHelper_Review.GetPhaseEndTime(self._campaign, phase2endphase[phase])
     local stamp = endTime - curTime
-    local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp)
-    local showStr = (string.format)(formatStr, colorStr, timeStr)
+    local timeStr = UIActivityHelper.GetFormatTimerStr(stamp)
+    local showStr = string.format(formatStr, colorStr, timeStr)
     uiText:SetText(showStr)
     if stamp <= 0 then
-      self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+      self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
       return true
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review.LoginRewardBtnOnClick = function(self, go)
-  -- function num : 0_13
+function UIActivityEveSinsaMainController_Review:LoginRewardBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review.TaskRewardBtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
-  (Log.info)("UIActivityEveSinsaMainController:TaskRewardBtnOnClick")
+function UIActivityEveSinsaMainController_Review:TaskRewardBtnOnClick(go)
+  Log.info("UIActivityEveSinsaMainController:TaskRewardBtnOnClick")
   self:ShowDialog("UIActivityEveSinsaTaskController", ECampaignType.CAMPAIGN_TYPE_EVERESCUEPLAN)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review._AttachEvents = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityEveSinsaMainController_Review:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review._DetachEvents = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityEveSinsaMainController_Review:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review._CheckActivityClose = function(self, id)
-  -- function num : 0_17 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityEveSinsaMainController_Review:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_18
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIActivityEveSinsaMainController_Review:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckRedPointAll()
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review._CheckRedPointAll = function(self)
-  -- function num : 0_19
+function UIActivityEveSinsaMainController_Review:_CheckRedPointAll()
   self:_CheckRedPoint(self._redTaskRewardBtn)
   self:_CheckRedPoint(self._redLoginRewardBtn)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review._CheckRedPoint = function(self, obj, ...)
-  -- function num : 0_20
+function UIActivityEveSinsaMainController_Review:_CheckRedPoint(obj, ...)
   obj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaMainController_Review.infoBtnOnClick = function(self, go)
-  -- function num : 0_21
+function UIActivityEveSinsaMainController_Review:infoBtnOnClick(go)
   self:ShowDialog("UIActivityEveSinsaIntrController")
 end
-
-

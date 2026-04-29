@@ -1,27 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_replace_chain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSetReplaceChain", BuffViewBase)
 BuffViewSetReplaceChain = BuffViewSetReplaceChain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSetReplaceChain.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewSetReplaceChain:PlayView(TT)
   local result = self._buffResult
-  local bvcmpt = (self._entity):BuffView()
+  local bvcmpt = self._entity:BuffView()
   bvcmpt:SetBuffValue("ReplaceEntityID", result:GetReplaceEntityID())
 end
 
 _class("BuffViewResetReplaceChain", BuffViewBase)
 BuffViewResetReplaceChain = BuffViewResetReplaceChain
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewResetReplaceChain.PlayView = function(self, TT)
-  -- function num : 0_1
-  local bvcmpt = (self._entity):BuffView()
+function BuffViewResetReplaceChain:PlayView(TT)
+  local bvcmpt = self._entity:BuffView()
   bvcmpt:SetBuffValue("ReplaceEntityID", nil)
 end
-
-

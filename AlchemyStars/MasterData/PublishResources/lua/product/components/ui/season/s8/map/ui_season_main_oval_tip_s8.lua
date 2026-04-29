@@ -1,440 +1,244 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s8/map/ui_season_main_oval_tip_s8.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMainOvalTipS8", Object)
 UISeasonMainOvalTipS8 = UISeasonMainOvalTipS8
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMainOvalTipS8.Constructor = function(self, seasonID, req, onClick)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMainOvalTipS8:Constructor(seasonID, req, onClick)
   self._seasonID = seasonID
   self._req = req
   self._onClick = onClick
   self._gameObject = req.Obj
-  self._rectTransform = (self._gameObject):GetComponent(typeof(UnityEngine.RectTransform))
-  self._uiView = (self._gameObject):GetComponent(typeof(UIView))
-  ;
-  (self._uiView):SetShow(true, self)
-  self._icon = (self._uiView):GetGameObject("Icon")
-  self._iconImg = (self._uiView):GetUIComponent("Image", "Icon")
-  self._arrowObj = (self._uiView):GetGameObject("Arrow")
-  self._arrowRect = (self._uiView):GetUIComponent("RectTransform", "Arrow")
-  self._arrowIcon = (self._uiView):GetUIComponent("Image", "ArrowIcon")
+  self._rectTransform = self._gameObject:GetComponent(typeof(UnityEngine.RectTransform))
+  self._uiView = self._gameObject:GetComponent(typeof(UIView))
+  self._uiView:SetShow(true, self)
+  self._icon = self._uiView:GetGameObject("Icon")
+  self._iconImg = self._uiView:GetUIComponent("Image", "Icon")
+  self._arrowObj = self._uiView:GetGameObject("Arrow")
+  self._arrowRect = self._uiView:GetUIComponent("RectTransform", "Arrow")
+  self._arrowIcon = self._uiView:GetUIComponent("Image", "ArrowIcon")
   self._name2Asset = {}
-  self._uiSeasonModule = (GameGlobal.GetUIModule)(SeasonModule)
-  self._atlas = (UIResourceManager.GetAsset)("UIS8Main.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
+  self._uiSeasonModule = GameGlobal.GetUIModule(SeasonModule)
+  self._atlas = UIResourceManager.GetAsset("UIS8Main.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalTipS8.TargetWorldPos = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMainOvalTipS8:TargetWorldPos()
   if self._type == UISeasonOvalTipType.Player then
     local target = self._target
     return target:Position()
-  else
-    do
-      if self._type == UISeasonOvalTipType.Mission then
-        local target = self._target
-        return target:Position()
-      else
-        do
-          if self._type == UISeasonOvalTipType.Daily then
-            local target = self._target
-            return target:Position()
-          else
-            do
-              if self._type == UISeasonOvalTipType.Box then
-                local target = self._target
-                return target:Position()
-              else
-                do
-                  if self._type == UISeasonOvalTipType.Task then
-                    local target = self._target
-                    return target:Position()
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif self._type == UISeasonOvalTipType.Mission then
+    local target = self._target
+    return target:Position()
+  elseif self._type == UISeasonOvalTipType.Daily then
+    local target = self._target
+    return target:Position()
+  elseif self._type == UISeasonOvalTipType.Box then
+    local target = self._target
+    return target:Position()
+  elseif self._type == UISeasonOvalTipType.Task then
+    local target = self._target
+    return target:Position()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalTipS8.Show = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMainOvalTipS8:Show()
   self._isIn = false
   local show = true
   if self._target and self._type == UISeasonOvalTipType.Task then
-    show = (self._target):IsShow()
+    show = self._target:IsShow()
   end
-  ;
-  (self._gameObject):SetActive(show)
+  self._gameObject:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalTipS8.Hide = function(self)
-  -- function num : 0_3
+function UISeasonMainOvalTipS8:Hide()
   self._isIn = true
-  ;
-  (self._gameObject):SetActive(false)
+  self._gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalTipS8.Delete = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMainOvalTipS8:Delete()
   self._req = nil
   self._gameObject = nil
-  ;
-  (self._uiView):SetShow(false, self)
+  self._uiView:SetShow(false, self)
   self._uiView = nil
-  for _,req in pairs(self._name2Asset) do
+  for _, req in pairs(self._name2Asset) do
     req:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalTipS8.GetReq = function(self)
-  -- function num : 0_5
+function UISeasonMainOvalTipS8:GetReq()
   return self._req
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalTipS8.Dispose = function(self)
-  -- function num : 0_6
-  (self._req):Dispose()
+function UISeasonMainOvalTipS8:Dispose()
+  self._req:Dispose()
   self:Delete()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalTipS8.IsInOval = function(self)
-  -- function num : 0_7
+function UISeasonMainOvalTipS8:IsInOval()
   return self._isIn
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalTipS8.Sync = function(self, pos, rot)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._rectTransform).anchoredPosition = pos
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._arrowRect).localRotation = rot
+function UISeasonMainOvalTipS8:Sync(pos, rot)
+  self._rectTransform.anchoredPosition = pos
+  self._arrowRect.localRotation = rot
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalTipS8.Type = function(self)
-  -- function num : 0_9
+function UISeasonMainOvalTipS8:Type()
   return self._type
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalTipS8.Target = function(self)
-  -- function num : 0_10
+function UISeasonMainOvalTipS8:Target()
   return self._target
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalTipS8.IconOnClick = function(self)
-  -- function num : 0_11
-  (self._onClick)(self)
+function UISeasonMainOvalTipS8:IconOnClick()
+  self._onClick(self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalTipS8.ArrowIconOnClick = function(self)
-  -- function num : 0_12
-  (self._onClick)(self)
+function UISeasonMainOvalTipS8:ArrowIconOnClick()
+  self._onClick(self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalTipS8.ResetTarget = function(self, target, type)
-  -- function num : 0_13 , upvalues : _ENV
-  (self._uiView):SetShow(false, self)
-  ;
-  (self._uiView):SetShow(true, self)
+function UISeasonMainOvalTipS8:ResetTarget(target, type)
+  self._uiView:SetShow(false, self)
+  self._uiView:SetShow(true, self)
   self._type = type
-  local cameraCfg = (Cfg.cfg_season_camera)[self._seasonID]
+  local cameraCfg = Cfg.cfg_season_camera[self._seasonID]
   if self._type == UISeasonOvalTipType.Player then
     self._target = target
-    ;
-    (self._icon):SetActive(true)
-    local min = (cameraCfg.PlayerTipHideRange)[1]
-    local max = (cameraCfg.PlayerTipHideRange)[2]
+    self._icon:SetActive(true)
+    local min = cameraCfg.PlayerTipHideRange[1]
+    local max = cameraCfg.PlayerTipHideRange[2]
     local maxSize = cameraCfg.CameraSizeMin
     local minSize = cameraCfg.CameraSizeMax
     self._tipHideParam = (max - min) / (maxSize - minSize)
     self._tipHideMinDistance = min
     self._cameraMinSize = minSize
-  else
-    do
-      if self._type == UISeasonOvalTipType.Mission then
-        self._target = target
-        ;
-        (self._icon):SetActive(false)
-        local cfg = (Cfg.cfg_season_map_eventpoint)[(self._target):GetID()]
-        if cfg.OvalTipHideRange then
-          local min = (cfg.OvalTipHideRange)[1]
-          local max = (cfg.OvalTipHideRange)[2]
-          local maxSize = cameraCfg.CameraSizeMin
-          local minSize = cameraCfg.CameraSizeMax
-          self._tipHideParam = (max - min) / (maxSize - minSize)
-          self._tipHideMinDistance = min
-          self._cameraMinSize = minSize
-        end
-      else
-        do
-          if self._type == UISeasonOvalTipType.Daily then
-            self._target = target
-            ;
-            (self._icon):SetActive(false)
-            local cfg = (Cfg.cfg_season_map_eventpoint)[(self._target):GetID()]
-            if cfg.OvalTipHideRange then
-              local min = (cfg.OvalTipHideRange)[1]
-              local max = (cfg.OvalTipHideRange)[2]
-              local maxSize = cameraCfg.CameraSizeMin
-              local minSize = cameraCfg.CameraSizeMax
-              self._tipHideParam = (max - min) / (maxSize - minSize)
-              self._tipHideMinDistance = min
-              self._cameraMinSize = minSize
-            end
-          else
-            do
-              if self._type == UISeasonOvalTipType.Box then
-                self._target = target
-                ;
-                (self._icon):SetActive(false)
-                local cfg = (Cfg.cfg_season_map_eventpoint)[(self._target):GetID()]
-                if cfg.OvalTipHideRange then
-                  local min = (cfg.OvalTipHideRange)[1]
-                  local max = (cfg.OvalTipHideRange)[2]
-                  local maxSize = cameraCfg.CameraSizeMin
-                  local minSize = cameraCfg.CameraSizeMax
-                  self._tipHideParam = (max - min) / (maxSize - minSize)
-                  self._tipHideMinDistance = min
-                  self._cameraMinSize = minSize
-                end
-              else
-                do
-                  if self._type == UISeasonOvalTipType.Task then
-                    self._target = target
-                    ;
-                    (self._icon):SetActive(false)
-                    local cfg = (Cfg.cfg_season_map_eventpoint)[(self._target):GetID()]
-                    if cfg.OvalTipHideRange then
-                      local min = (cfg.OvalTipHideRange)[1]
-                      local max = (cfg.OvalTipHideRange)[2]
-                      local maxSize = cameraCfg.CameraSizeMin
-                      local minSize = cameraCfg.CameraSizeMax
-                      self._tipHideParam = (max - min) / (maxSize - minSize)
-                      self._tipHideMinDistance = min
-                      self._cameraMinSize = minSize
-                    end
-                  end
-                  do
-                    if (self._uiSeasonModule):IsBackTrack() then
-                      self:_RefreshIconBackTrack()
-                    else
-                      self:_RefreshIcon()
-                    end
-                    self:Hide()
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+  elseif self._type == UISeasonOvalTipType.Mission then
+    self._target = target
+    self._icon:SetActive(false)
+    local cfg = Cfg.cfg_season_map_eventpoint[self._target:GetID()]
+    if cfg.OvalTipHideRange then
+      local min = cfg.OvalTipHideRange[1]
+      local max = cfg.OvalTipHideRange[2]
+      local maxSize = cameraCfg.CameraSizeMin
+      local minSize = cameraCfg.CameraSizeMax
+      self._tipHideParam = (max - min) / (maxSize - minSize)
+      self._tipHideMinDistance = min
+      self._cameraMinSize = minSize
+    end
+  elseif self._type == UISeasonOvalTipType.Daily then
+    self._target = target
+    self._icon:SetActive(false)
+    local cfg = Cfg.cfg_season_map_eventpoint[self._target:GetID()]
+    if cfg.OvalTipHideRange then
+      local min = cfg.OvalTipHideRange[1]
+      local max = cfg.OvalTipHideRange[2]
+      local maxSize = cameraCfg.CameraSizeMin
+      local minSize = cameraCfg.CameraSizeMax
+      self._tipHideParam = (max - min) / (maxSize - minSize)
+      self._tipHideMinDistance = min
+      self._cameraMinSize = minSize
+    end
+  elseif self._type == UISeasonOvalTipType.Box then
+    self._target = target
+    self._icon:SetActive(false)
+    local cfg = Cfg.cfg_season_map_eventpoint[self._target:GetID()]
+    if cfg.OvalTipHideRange then
+      local min = cfg.OvalTipHideRange[1]
+      local max = cfg.OvalTipHideRange[2]
+      local maxSize = cameraCfg.CameraSizeMin
+      local minSize = cameraCfg.CameraSizeMax
+      self._tipHideParam = (max - min) / (maxSize - minSize)
+      self._tipHideMinDistance = min
+      self._cameraMinSize = minSize
+    end
+  elseif self._type == UISeasonOvalTipType.Task then
+    self._target = target
+    self._icon:SetActive(false)
+    local cfg = Cfg.cfg_season_map_eventpoint[self._target:GetID()]
+    if cfg.OvalTipHideRange then
+      local min = cfg.OvalTipHideRange[1]
+      local max = cfg.OvalTipHideRange[2]
+      local maxSize = cameraCfg.CameraSizeMin
+      local minSize = cameraCfg.CameraSizeMax
+      self._tipHideParam = (max - min) / (maxSize - minSize)
+      self._tipHideMinDistance = min
+      self._cameraMinSize = minSize
     end
   end
+  if self._uiSeasonModule:IsBackTrack() then
+    self:_RefreshIconBackTrack()
+  else
+    self:_RefreshIcon()
+  end
+  self:Hide()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalTipS8.GetCanShowDistance = function(self, cameraSize)
-  -- function num : 0_14
+function UISeasonMainOvalTipS8:GetCanShowDistance(cameraSize)
   if self._tipHideMinDistance then
     return self._tipHideMinDistance + (cameraSize - self._cameraMinSize) * self._tipHideParam
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalTipS8._RefreshIcon = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
+function UISeasonMainOvalTipS8:_RefreshIcon()
   if self._type == UISeasonOvalTipType.Player then
-    (self._arrowIcon).sprite = (self._atlas):GetSprite("exp_S8_map_arrowhead_yellow")
-    local player = (((self._uiSeasonModule):SeasonManager()):SeasonPlayerManager()):GetPlayer()
-    local atlas = (UIResourceManager.GetAsset)("UIS8Scene.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._iconImg).sprite = atlas:GetSprite(((player:CurModule()):Cfg()).PlayIconOval)
-  else
-    do
-      -- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-      if self._type == UISeasonOvalTipType.Mission then
-        (self._arrowIcon).sprite = (self._atlas):GetSprite("exp_S8_map_arrowhead_red")
-      else
-        -- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-        if self._type == UISeasonOvalTipType.Daily then
-          (self._arrowIcon).sprite = (self._atlas):GetSprite("exp_S8_map_arrowhead_green")
-        else
-          -- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-          if self._type == UISeasonOvalTipType.Box then
-            (self._arrowIcon).sprite = (self._atlas):GetSprite("exp_S8_map_arrowhead_blue")
-          else
-            -- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-            if self._type == UISeasonOvalTipType.Task then
-              (self._arrowIcon).sprite = (self._atlas):GetSprite("exp_S8_map_icon33")
-            end
-          end
-        end
-      end
-    end
+    self._arrowIcon.sprite = self._atlas:GetSprite("exp_S8_map_arrowhead_yellow")
+    local player = self._uiSeasonModule:SeasonManager():SeasonPlayerManager():GetPlayer()
+    local atlas = UIResourceManager.GetAsset("UIS8Scene.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
+    self._iconImg.sprite = atlas:GetSprite(player:CurModule():Cfg().PlayIconOval)
+  elseif self._type == UISeasonOvalTipType.Mission then
+    self._arrowIcon.sprite = self._atlas:GetSprite("exp_S8_map_arrowhead_red")
+  elseif self._type == UISeasonOvalTipType.Daily then
+    self._arrowIcon.sprite = self._atlas:GetSprite("exp_S8_map_arrowhead_green")
+  elseif self._type == UISeasonOvalTipType.Box then
+    self._arrowIcon.sprite = self._atlas:GetSprite("exp_S8_map_arrowhead_blue")
+  elseif self._type == UISeasonOvalTipType.Task then
+    self._arrowIcon.sprite = self._atlas:GetSprite("exp_S8_map_icon33")
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainOvalTipS8._RefreshIconBackTrack = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
+function UISeasonMainOvalTipS8:_RefreshIconBackTrack()
   if self._type == UISeasonOvalTipType.Player then
-    (self._arrowIcon).sprite = (self._atlas):GetSprite("exp_S8_map_arrowhead_yellow")
-    local seasonID = (self._uiSeasonModule):GetSeasonID()
+    self._arrowIcon.sprite = self._atlas:GetSprite("exp_S8_map_arrowhead_yellow")
+    local seasonID = self._uiSeasonModule:GetSeasonID()
     if seasonID == UISeasonID.S1 then
-      local atlas = (UIResourceManager.GetAsset)("UISeasonMain.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._iconImg).sprite = atlas:GetSprite("exp_s1_map_head02")
-    else
-      do
-        if seasonID == UISeasonID.S2 then
-          local atlas = (UIResourceManager.GetAsset)("UIS2Main.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
-          local mode = (((((GameGlobal.GetModule)(SeasonModule)):UIModule()):SeasonManager()):SeasonMapManager()):Mode()
-          -- DECOMPILER ERROR at PC62: Confused about usage of register: R4 in 'UnsetPending'
-
-          if mode == SeasonMapMode.Mode1 then
-            (self._iconImg).sprite = atlas:GetSprite("exp_s2_map_head02")
-          else
-            -- DECOMPILER ERROR at PC72: Confused about usage of register: R4 in 'UnsetPending'
-
-            if mode == SeasonMapMode.Mode2 then
-              (self._iconImg).sprite = atlas:GetSprite("exp_s2_map_head04")
-            end
-          end
-        else
-          do
-            if seasonID == UISeasonID.S3 then
-              local player = (((self._uiSeasonModule):SeasonManager()):SeasonPlayerManager()):GetPlayer()
-              local atlas = (UIResourceManager.GetAsset)("UIS3Scene.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
-              -- DECOMPILER ERROR at PC100: Confused about usage of register: R4 in 'UnsetPending'
-
-              ;
-              (self._iconImg).sprite = atlas:GetSprite(((player:CurModule()):Cfg()).PlayIconOval)
-            else
-              do
-                if seasonID == UISeasonID.S4 then
-                  local player = (((self._uiSeasonModule):SeasonManager()):SeasonPlayerManager()):GetPlayer()
-                  local atlas = (UIResourceManager.GetAsset)("UIS4Scene.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
-                  -- DECOMPILER ERROR at PC128: Confused about usage of register: R4 in 'UnsetPending'
-
-                  ;
-                  (self._iconImg).sprite = atlas:GetSprite(((player:CurModule()):Cfg()).PlayIconOval)
-                else
-                  do
-                    if seasonID == UISeasonID.S5 then
-                      local player = (((self._uiSeasonModule):SeasonManager()):SeasonPlayerManager()):GetPlayer()
-                      local atlas = (UIResourceManager.GetAsset)("UIS5Scene.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
-                      -- DECOMPILER ERROR at PC156: Confused about usage of register: R4 in 'UnsetPending'
-
-                      ;
-                      (self._iconImg).sprite = atlas:GetSprite(((player:CurModule()):Cfg()).PlayIconOval)
-                    else
-                      do
-                        if seasonID == UISeasonID.S6 then
-                          local player = (((self._uiSeasonModule):SeasonManager()):SeasonPlayerManager()):GetPlayer()
-                          local atlas = (UIResourceManager.GetAsset)("UIS6Scene.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
-                          -- DECOMPILER ERROR at PC184: Confused about usage of register: R4 in 'UnsetPending'
-
-                          ;
-                          (self._iconImg).sprite = atlas:GetSprite(((player:CurModule()):Cfg()).PlayIconOval)
-                        else
-                          do
-                            if seasonID == UISeasonID.S7 then
-                              local player = (((self._uiSeasonModule):SeasonManager()):SeasonPlayerManager()):GetPlayer()
-                              local atlas = (UIResourceManager.GetAsset)("UIS7Scene.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
-                              -- DECOMPILER ERROR at PC212: Confused about usage of register: R4 in 'UnsetPending'
-
-                              ;
-                              (self._iconImg).sprite = atlas:GetSprite(((player:CurModule()):Cfg()).PlayIconOval)
-                            end
-                            do
-                              -- DECOMPILER ERROR at PC224: Confused about usage of register: R1 in 'UnsetPending'
-
-                              if self._type == UISeasonOvalTipType.Mission then
-                                (self._arrowIcon).sprite = (self._atlas):GetSprite("exp_S8_map_arrowhead_red")
-                              else
-                                -- DECOMPILER ERROR at PC236: Confused about usage of register: R1 in 'UnsetPending'
-
-                                if self._type == UISeasonOvalTipType.Daily then
-                                  (self._arrowIcon).sprite = (self._atlas):GetSprite("exp_S8_map_arrowhead_green")
-                                else
-                                  -- DECOMPILER ERROR at PC248: Confused about usage of register: R1 in 'UnsetPending'
-
-                                  if self._type == UISeasonOvalTipType.Box then
-                                    (self._arrowIcon).sprite = (self._atlas):GetSprite("exp_S8_map_arrowhead_blue")
-                                  else
-                                    -- DECOMPILER ERROR at PC260: Confused about usage of register: R1 in 'UnsetPending'
-
-                                    if self._type == UISeasonOvalTipType.Task then
-                                      (self._arrowIcon).sprite = (self._atlas):GetSprite("exp_S8_map_icon33")
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+      local atlas = UIResourceManager.GetAsset("UISeasonMain.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
+      self._iconImg.sprite = atlas:GetSprite("exp_s1_map_head02")
+    elseif seasonID == UISeasonID.S2 then
+      local atlas = UIResourceManager.GetAsset("UIS2Main.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
+      local mode = GameGlobal.GetModule(SeasonModule):UIModule():SeasonManager():SeasonMapManager():Mode()
+      if mode == SeasonMapMode.Mode1 then
+        self._iconImg.sprite = atlas:GetSprite("exp_s2_map_head02")
+      elseif mode == SeasonMapMode.Mode2 then
+        self._iconImg.sprite = atlas:GetSprite("exp_s2_map_head04")
       end
+    elseif seasonID == UISeasonID.S3 then
+      local player = self._uiSeasonModule:SeasonManager():SeasonPlayerManager():GetPlayer()
+      local atlas = UIResourceManager.GetAsset("UIS3Scene.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
+      self._iconImg.sprite = atlas:GetSprite(player:CurModule():Cfg().PlayIconOval)
+    elseif seasonID == UISeasonID.S4 then
+      local player = self._uiSeasonModule:SeasonManager():SeasonPlayerManager():GetPlayer()
+      local atlas = UIResourceManager.GetAsset("UIS4Scene.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
+      self._iconImg.sprite = atlas:GetSprite(player:CurModule():Cfg().PlayIconOval)
+    elseif seasonID == UISeasonID.S5 then
+      local player = self._uiSeasonModule:SeasonManager():SeasonPlayerManager():GetPlayer()
+      local atlas = UIResourceManager.GetAsset("UIS5Scene.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
+      self._iconImg.sprite = atlas:GetSprite(player:CurModule():Cfg().PlayIconOval)
+    elseif seasonID == UISeasonID.S6 then
+      local player = self._uiSeasonModule:SeasonManager():SeasonPlayerManager():GetPlayer()
+      local atlas = UIResourceManager.GetAsset("UIS6Scene.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
+      self._iconImg.sprite = atlas:GetSprite(player:CurModule():Cfg().PlayIconOval)
+    elseif seasonID == UISeasonID.S7 then
+      local player = self._uiSeasonModule:SeasonManager():SeasonPlayerManager():GetPlayer()
+      local atlas = UIResourceManager.GetAsset("UIS7Scene.spriteatlas", LoadType.SpriteAtlas, self._name2Asset)
+      self._iconImg.sprite = atlas:GetSprite(player:CurModule():Cfg().PlayIconOval)
     end
+  elseif self._type == UISeasonOvalTipType.Mission then
+    self._arrowIcon.sprite = self._atlas:GetSprite("exp_S8_map_arrowhead_red")
+  elseif self._type == UISeasonOvalTipType.Daily then
+    self._arrowIcon.sprite = self._atlas:GetSprite("exp_S8_map_arrowhead_green")
+  elseif self._type == UISeasonOvalTipType.Box then
+    self._arrowIcon.sprite = self._atlas:GetSprite("exp_S8_map_arrowhead_blue")
+  elseif self._type == UISeasonOvalTipType.Task then
+    self._arrowIcon.sprite = self._atlas:GetSprite("exp_S8_map_icon33")
   end
 end
-
-

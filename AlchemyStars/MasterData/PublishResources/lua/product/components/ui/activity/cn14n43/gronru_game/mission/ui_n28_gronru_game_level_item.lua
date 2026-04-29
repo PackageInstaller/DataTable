@@ -1,71 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/gronru_game/mission/ui_n28_gronru_game_level_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIN28GronruGameLevelItemState = {Normal = 1, Lock = 2, Pass = 3}
+local UIN28GronruGameLevelItemState = {
+  Normal = 1,
+  Lock = 2,
+  Pass = 3
+}
 _enum("UIN28GronruGameLevelItemState", UIN28GronruGameLevelItemState)
 _class("UIN28GronruGameLevelItem", Object)
 UIN28GronruGameLevelItem = UIN28GronruGameLevelItem
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN28GronruGameLevelItem.Constructor = function(self, uiview)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN28GronruGameLevelItem:Constructor(uiview)
   self._view = uiview
-  self._normal = (self._view):GetUIComponent("Image", "normal")
-  self._pass = (self._view):GetUIComponent("Image", "pass")
-  self._way = (self._view):GetGameObject("way")
-  self._close = (self._view):GetUIComponent("Image", "close")
-  self._redPoint = (self._view):GetGameObject("redPoint")
-  self._animation = (self._view):GetUIComponent("Animation", "anim")
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._normal = self._view:GetUIComponent("Image", "normal")
+  self._pass = self._view:GetUIComponent("Image", "pass")
+  self._way = self._view:GetGameObject("way")
+  self._close = self._view:GetUIComponent("Image", "close")
+  self._redPoint = self._view:GetGameObject("redPoint")
+  self._animation = self._view:GetUIComponent("Animation", "anim")
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruGameLevelItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28GronruGameLevelItem:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruGameLevelItem.Flush = function(self, index, cfg, passInfo, cur, atlas, manager)
-  -- function num : 0_2 , upvalues : _ENV, UIN28GronruGameLevelItemState
+function UIN28GronruGameLevelItem:Flush(index, cfg, passInfo, cur, atlas, manager)
   self._cfg = cfg
-  local levelCfg = (UIN28GronruGameLevel.LevelCfg)[index]
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._normal).sprite = atlas:GetSprite(levelCfg.normal)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._pass).sprite = atlas:GetSprite(levelCfg.pass)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._close).sprite = atlas:GetSprite(levelCfg.close)
+  local levelCfg = UIN28GronruGameLevel.LevelCfg[index]
+  self._normal.sprite = atlas:GetSprite(levelCfg.normal)
+  self._pass.sprite = atlas:GetSprite(levelCfg.pass)
+  self._close.sprite = atlas:GetSprite(levelCfg.close)
   self._passInfo = passInfo
   self._manager = manager
   self._index = index
   self._curlevel = cur
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
-  self._serverTime = (self._svrTimeModule):GetServerTime() * 0.001
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  self._unlockTime = loginModule:GetTimeStampByTimeStr((self._cfg).UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  if self._serverTime < self._unlockTime then
-    self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_2_0 , upvalues : self
-    self:CheckUnLock()
-  end
-)
+  self._serverTime = self._svrTimeModule:GetServerTime() * 0.001
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  self._unlockTime = loginModule:GetTimeStampByTimeStr(self._cfg.UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+  if self._unlockTime > self._serverTime then
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+      self:CheckUnLock()
+    end)
   end
   local state = 0
   if passInfo then
@@ -73,114 +53,76 @@ UIN28GronruGameLevelItem.Flush = function(self, index, cfg, passInfo, cur, atlas
   end
   if state == 1 then
     if not passInfo then
-      (Log.exception)("没有通关信息：", index)
+      Log.exception("没有通关信息：", index)
     end
-    self:SetUiState(self._serverTime < self._unlockTime and UIN28GronruGameLevelItemState.Lock or UIN28GronruGameLevelItemState.Pass)
-  else
+    self:SetUiState(self._unlockTime > self._serverTime and UIN28GronruGameLevelItemState.Lock or UIN28GronruGameLevelItemState.Pass)
+  elseif state == 0 then
     if index == cur then
-      if self._serverTime >= self._unlockTime or not UIN28GronruGameLevelItemState.Lock then
-        local state = state ~= 0 or UIN28GronruGameLevelItemState.Normal
-      end
+      local state = self._unlockTime > self._serverTime and UIN28GronruGameLevelItemState.Lock or UIN28GronruGameLevelItemState.Normal
       self:SetUiState(state)
     else
-      do
-        self:SetUiState(UIN28GronruGameLevelItemState.Lock)
-      end
+      self:SetUiState(UIN28GronruGameLevelItemState.Lock)
     end
   end
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruGameLevelItem.SetUiState = function(self, uiState)
-  -- function num : 0_3 , upvalues : UIN28GronruGameLevelItemState, _ENV
-  ((self._pass).gameObject):SetActive(false)
-  ;
-  ((self._close).gameObject):SetActive(false)
+function UIN28GronruGameLevelItem:SetUiState(uiState)
+  self._pass.gameObject:SetActive(false)
+  self._close.gameObject:SetActive(false)
   if UIN28GronruGameLevelItemState.Normal == uiState then
-    ((self._normal).gameObject):SetActive(true)
-  else
-    if UIN28GronruGameLevelItemState.Lock == uiState then
-      ((self._close).gameObject):SetActive(true)
-    else
-      if UIN28GronruGameLevelItemState.Pass == uiState then
-        local count = 0
-        if self._passInfo then
-          for index,value in pairs((self._passInfo).enties_list) do
-            count = count + 1
-          end
-        end
-        do
-          do
-            ;
-            ((self._pass).gameObject):SetActive(count == 3)
-            -- DECOMPILER ERROR: 2 unprocessed JMP targets
-          end
-        end
+    self._normal.gameObject:SetActive(true)
+  elseif UIN28GronruGameLevelItemState.Lock == uiState then
+    self._close.gameObject:SetActive(true)
+  elseif UIN28GronruGameLevelItemState.Pass == uiState then
+    local count = 0
+    if self._passInfo then
+      for index, value in pairs(self._passInfo.enties_list) do
+        count = count + 1
       end
     end
+    self._pass.gameObject:SetActive(count == 3)
   end
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruGameLevelItem.CheckUnLock = function(self)
-  -- function num : 0_4 , upvalues : _ENV, UIN28GronruGameLevelItemState
-  self._serverTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+function UIN28GronruGameLevelItem:CheckUnLock()
+  self._serverTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   local time = self._unlockTime - self._serverTime
   if time < 0 then
     if self._timerHandler then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+      GameGlobal.Timer():CancelEvent(self._timerHandler)
       self._timerHandler = nil
     end
     self:SetUiState(self._index == self._curlevel and UIN28GronruGameLevelItemState.Normal or UIN28GronruGameLevelItemState.Lock)
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruGameLevelItem.GetUnLockState = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local serverTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+function UIN28GronruGameLevelItem:GetUnLockState()
+  local serverTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   if serverTime < self._unlockTime then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruGameLevelItem.GetUnLockTime = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local serverTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+function UIN28GronruGameLevelItem:GetUnLockTime()
+  local serverTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   return self._unlockTime - serverTime
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruGameLevelItem.FlushData = function(self, data)
-  -- function num : 0_7
+function UIN28GronruGameLevelItem:FlushData(data)
   self._passInfo = data
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN28GronruGameLevelItem.SetRedPoint = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._redPoint):SetActive(false)
+function UIN28GronruGameLevelItem:SetRedPoint()
+  self._redPoint:SetActive(false)
   if self._passInfo then
-    for index,value in pairs((self._passInfo).enties_list) do
+    for index, value in pairs(self._passInfo.enties_list) do
       if value == 1 then
-        (self._redPoint):SetActive(true)
+        self._redPoint:SetActive(true)
         break
       end
     end
   else
-    do
-      ;
-      (self._redPoint):SetActive(false)
-    end
+    self._redPoint:SetActive(false)
   end
 end
-
-

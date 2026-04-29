@@ -1,156 +1,104 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/ai_logic_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local EnumAIGenInfo = {Base = 0, Monster = 1, AiConfig = 2}
+local EnumAIGenInfo = {
+  Base = 0,
+  Monster = 1,
+  AiConfig = 2
+}
 _enum("EnumAIGenInfo", EnumAIGenInfo)
 _class("AIGenInfoBase", Object)
 AIGenInfoBase = AIGenInfoBase
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-AIGenInfoBase.Constructor = function(self, world, ownerEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function AIGenInfoBase:Constructor(world, ownerEntity)
   self.m_world = world
   self.OwnerEntity = ownerEntity
-  self._configService = (self.m_world):GetService("Config")
+  self._configService = self.m_world:GetService("Config")
   self.CustomLogicConfigTable = AILogicConfig
   self.CustomLogicConfigID = 0
   self.m_listAiSkill = {}
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-AIGenInfoBase.GetSkillList = function(self)
-  -- function num : 0_1
+function AIGenInfoBase:GetSkillList()
   return self.m_listAiSkill
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-AIGenInfoBase.SetSkillList = function(self, skillList)
-  -- function num : 0_2
+function AIGenInfoBase:SetSkillList(skillList)
   self.m_listAiSkill = skillList
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-AIGenInfoBase.GetLogicType = function(self)
-  -- function num : 0_3
+function AIGenInfoBase:GetLogicType()
   return self.m_nAiLogicType
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-AIGenInfoBase.GetGenInfoType = function(self)
-  -- function num : 0_4 , upvalues : EnumAIGenInfo
+function AIGenInfoBase:GetGenInfoType()
   return EnumAIGenInfo.Base
 end
 
 _class("AIGenInfo", AIGenInfoBase)
 AIGenInfo = AIGenInfo
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
 
-AIGenInfo.Constructor = function(self, world, ownerEntity, configID, monsterID, aiLogicType)
-  -- function num : 0_5
+function AIGenInfo:Constructor(world, ownerEntity, configID, monsterID, aiLogicType)
   self.CustomLogicConfigID = configID
   self.m_listAiSkill = self:_InitSkillList(monsterID)
   self.m_nAiLogicType = aiLogicType
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-AIGenInfo.GetGenInfoType = function(self)
-  -- function num : 0_6 , upvalues : EnumAIGenInfo
+function AIGenInfo:GetGenInfoType()
   return EnumAIGenInfo.Monster
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-AIGenInfo._InitSkillList = function(self, nWorkID)
-  -- function num : 0_7
+function AIGenInfo:_InitSkillList(nWorkID)
   local monsterID = nWorkID
-  if not monsterID then
-    monsterID = ((self.OwnerEntity):MonsterID()):GetMonsterID()
-  end
+  monsterID = monsterID or self.OwnerEntity:MonsterID():GetMonsterID()
   local listReturn = {}
-  do
-    if monsterID > 0 then
-      local monsterConfig = (self._configService):GetMonsterConfigData()
-      listReturn = monsterConfig:GetMonsterSkillIDs(monsterID)
-    end
-    return listReturn
+  if 0 < monsterID then
+    local monsterConfig = self._configService:GetMonsterConfigData()
+    listReturn = monsterConfig:GetMonsterSkillIDs(monsterID)
   end
+  return listReturn
 end
 
 _class("AIGenInfoByConfig", AIGenInfoBase)
 AIGenInfoByConfig = AIGenInfoByConfig
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
 
-AIGenInfoByConfig.Constructor = function(self, world, ownerEntity, nConfigAiKey)
-  -- function num : 0_8
-  local aiConfigData = ((self._configService):GetAiConfigData()):GetAiObject(nConfigAiKey)
+function AIGenInfoByConfig:Constructor(world, ownerEntity, nConfigAiKey)
+  local aiConfigData = self._configService:GetAiConfigData():GetAiObject(nConfigAiKey)
   self.CustomLogicConfigID = aiConfigData.m_nLogicID
   self._configAiData = aiConfigData
-  self.m_listAiSkill = (self._configAiData).m_listSkillID
+  self.m_listAiSkill = self._configAiData.m_listSkillID
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-AIGenInfoByConfig.GetGenInfoType = function(self)
-  -- function num : 0_9 , upvalues : EnumAIGenInfo
+function AIGenInfoByConfig:GetGenInfoType()
   return EnumAIGenInfo.AiConfig
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-AIGenInfoByConfig.GetLogicID = function(self)
-  -- function num : 0_10
-  return (self._configAiData).m_nLogicID
+function AIGenInfoByConfig:GetLogicID()
+  return self._configAiData.m_nLogicID
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-AIGenInfoByConfig.GetLogicType = function(self)
-  -- function num : 0_11
-  return (self._configAiData).m_nLogicType
+function AIGenInfoByConfig:GetLogicType()
+  return self._configAiData.m_nLogicType
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-AIGenInfoByConfig.GetLogicOrder = function(self)
-  -- function num : 0_12
-  return (self._configAiData).m_nLogicOrder
+function AIGenInfoByConfig:GetLogicOrder()
+  return self._configAiData.m_nLogicOrder
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-AIGenInfoByConfig.IsPreview = function(self)
-  -- function num : 0_13
-  return (self._configAiData).m_bPreview
+function AIGenInfoByConfig:IsPreview()
+  return self._configAiData.m_bPreview
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-AIGenInfoByConfig.GetSkillList = function(self)
-  -- function num : 0_14
-  return (self._configAiData).m_listSkillID
+function AIGenInfoByConfig:GetSkillList()
+  return self._configAiData.m_listSkillID
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-AIGenInfoByConfig.GetExtParam = function(self)
-  -- function num : 0_15
-  return (self._configAiData).m_extParam
+function AIGenInfoByConfig:GetExtParam()
+  return self._configAiData.m_extParam
 end
 
 require("ai_node_new")
 _class("AILogicNode", AINewNode)
 AILogicNode = AILogicNode
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
 
-AILogicNode.Constructor = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function AILogicNode:Constructor()
   self.InstanceID = -1
   self.GenInfo = nil
   self.m_vecSonNodes = ArrayList:New()
@@ -167,68 +115,41 @@ AILogicNode.Constructor = function(self)
   self._myLogicOrder = nil
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.SetMyOrder = function(self, order)
-  -- function num : 0_17
+function AILogicNode:SetMyOrder(order)
   self._myLogicOrder = order
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.GetLogicOrder = function(self)
-  -- function num : 0_18
+function AILogicNode:GetLogicOrder()
   return self._myLogicOrder
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.SetParallelID = function(self, id)
-  -- function num : 0_19
+function AILogicNode:SetParallelID(id)
   self._parallelID = id
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.RestParallelID = function(self)
-  -- function num : 0_20
+function AILogicNode:RestParallelID()
   self._parallelID = nil
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.GetOrderWeight = function(self)
-  -- function num : 0_21
+function AILogicNode:GetOrderWeight()
   return self._orderWeight
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.SetOrderWeight = function(self, weight)
-  -- function num : 0_22
+function AILogicNode:SetOrderWeight(weight)
   self._orderWeight = weight
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.ResetOrderWeight = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function AILogicNode:ResetOrderWeight()
   self._orderWeight = BattleConst.AIOrderDefaultWeight
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.GetAIConfigID = function(self)
-  -- function num : 0_24
+function AILogicNode:GetAIConfigID()
   return self.CustomLogicID
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode._CreateLogicNode = function(self, nSonNodeID, context)
-  -- function num : 0_25 , upvalues : _ENV
-  local cfgSonNode = (context.ConfigMng)[nSonNodeID]
-  local sonNode = (Classes[cfgSonNode.Type]):New()
+function AILogicNode:_CreateLogicNode(nSonNodeID, context)
+  local cfgSonNode = context.ConfigMng[nSonNodeID]
+  local sonNode = Classes[cfgSonNode.Type]:New()
   if sonNode._className == "AILogicNode" then
     sonNode:InitializeNode(cfgSonNode, context, self)
   else
@@ -237,19 +158,13 @@ AILogicNode._CreateLogicNode = function(self, nSonNodeID, context)
   return sonNode
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode._CreateActionNode = function(self, cfgAction, context)
-  -- function num : 0_26 , upvalues : _ENV
-  local logicWorker = (Classes[cfgAction.Type]):New()
+function AILogicNode:_CreateActionNode(cfgAction, context)
+  local logicWorker = Classes[cfgAction.Type]:New()
   logicWorker:InitializeNode(cfgAction, context, self, cfgAction.Data)
   return logicWorker
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode._FindSonNode = function(self, nSonNodeID)
-  -- function num : 0_27
+function AILogicNode:_FindSonNode(nSonNodeID)
   local vecSonNode = self.m_vecSonNodes
   for i = 1, vecSonNode:Size() do
     local sonNode = vecSonNode:GetAt(i)
@@ -260,12 +175,9 @@ AILogicNode._FindSonNode = function(self, nSonNodeID)
   return nil
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode._FindSonNodeByClassName = function(self, stClassName)
-  -- function num : 0_28 , upvalues : _ENV
+function AILogicNode:_FindSonNodeByClassName(stClassName)
   local mapSonNode = self.m_mapActionList
-  for key,value in pairs(mapSonNode) do
+  for key, value in pairs(mapSonNode) do
     if key == stClassName then
       return value
     end
@@ -273,12 +185,9 @@ AILogicNode._FindSonNodeByClassName = function(self, stClassName)
   return nil
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode._FindSonNodeByID = function(self, nLogicID)
-  -- function num : 0_29 , upvalues : _ENV
+function AILogicNode:_FindSonNodeByID(nLogicID)
   local mapSonNode = self.m_mapActionList
-  for key,value in pairs(mapSonNode) do
+  for key, value in pairs(mapSonNode) do
     if value.CustomLogicID == nLogicID then
       return value
     end
@@ -286,60 +195,46 @@ AILogicNode._FindSonNodeByID = function(self, nLogicID)
   return nil
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode._CreateNode_2 = function(self, configNode, context)
-  -- function num : 0_30 , upvalues : _ENV
-  local newNode = nil
+function AILogicNode:_CreateNode_2(configNode, context)
+  local newNode
   local stClassName = configNode.Type
   if type(stClassName) == "number" then
     local nSonNodeID = stClassName
-    local cfgSonNode = (context.ConfigMng)[nSonNodeID]
+    local cfgSonNode = context.ConfigMng[nSonNodeID]
     if not Classes[stClassName] then
-      (Log.exception)("不存在的节点类型：", tostring(stClassName))
-      return 
+      Log.exception("不存在的节点类型：", tostring(stClassName))
+      return
     end
-    newNode = (Classes[stClassName]):New()
+    newNode = Classes[stClassName]:New()
     newNode:InitializeNode(cfgSonNode, context, self)
   else
-    do
-      if not Classes[stClassName] then
-        (Log.exception)("不存在的节点类型：", tostring(stClassName))
-        return 
-      end
-      newNode = (Classes[stClassName]):New()
-      newNode:InitializeNode(configNode, context, self, configNode.Data)
-      return newNode
+    if not Classes[stClassName] then
+      Log.exception("不存在的节点类型：", tostring(stClassName))
+      return
     end
+    newNode = Classes[stClassName]:New()
+    newNode:InitializeNode(configNode, context, self, configNode.Data)
   end
+  return newNode
 end
 
--- DECOMPILER ERROR at PC130: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode._FindActionNode = function(self, cfgActionNode, context)
-  -- function num : 0_31
+function AILogicNode:_FindActionNode(cfgActionNode, context)
   local stClassName = cfgActionNode.Type
   local actionNode = self:_FindSonNodeByClassName(stClassName)
-  if actionNode == nil then
+  if nil == actionNode then
     actionNode = self:_CreateNode_2(cfgActionNode, context)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.m_mapActionList)[stClassName] = actionNode
+    self.m_mapActionList[stClassName] = actionNode
   end
   return actionNode
 end
 
--- DECOMPILER ERROR at PC133: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode._InitAction = function(self, actionTreeNode, nAddType, cfgAction, nLogicID, context)
-  -- function num : 0_32 , upvalues : _ENV
-  if nLogicID == nil or nLogicID == 0 or cfgAction == nil then
-    return 
+function AILogicNode:_InitAction(actionTreeNode, nAddType, cfgAction, nLogicID, context)
+  if nil == nLogicID or 0 == nLogicID or nil == cfgAction then
+    return
   end
   local cfgActionNode = cfgAction[nLogicID]
-  if cfgActionNode == nil then
-    return 
+  if nil == cfgActionNode then
+    return
   end
   local nParentLogicID = 0
   if actionTreeNode then
@@ -347,236 +242,180 @@ AILogicNode._InitAction = function(self, actionTreeNode, nAddType, cfgAction, nL
   end
   local actionNode = self:_FindActionNode(cfgActionNode, context)
   actionNode:SetTreeID(nLogicID)
-  local newTreeNode = (self.m_actionTree):AddNode(actionTreeNode, nAddType, actionNode, nLogicID, cfgActionNode.Data)
+  local newTreeNode = self.m_actionTree:AddNode(actionTreeNode, nAddType, actionNode, nLogicID, cfgActionNode.Data)
   if newTreeNode:IsHaveInit() then
-    return 
+    return
   end
-  if cfgActionNode.success and cfgActionNode.success > 0 and cfgActionNode.success < 2000000000 then
+  if cfgActionNode.success and 0 < cfgActionNode.success and cfgActionNode.success < 2000000000 then
     self:_InitAction(newTreeNode, AIActiveAddType.Success, cfgAction, cfgActionNode.success, context)
   end
-  if cfgActionNode.failed and cfgActionNode.failed > 0 and cfgActionNode.failed < 2000000000 then
+  if cfgActionNode.failed and 0 < cfgActionNode.failed and 2000000000 > cfgActionNode.failed then
     self:_InitAction(newTreeNode, AIActiveAddType.Failure, cfgAction, cfgActionNode.failed, context)
   end
   if cfgActionNode.Other then
-    local nOtherCount = (table.count)(cfgActionNode.Other)
-    if nOtherCount > 0 then
-      for key,value in pairs(cfgActionNode.Other) do
+    local nOtherCount = table.count(cfgActionNode.Other)
+    if 0 < nOtherCount then
+      for key, value in pairs(cfgActionNode.Other) do
         self:_InitAction(newTreeNode, AIActiveAddType.Other + key, cfgAction, value, context)
       end
     end
   end
-  do
-    newTreeNode:SetHaveInit(true)
-  end
+  newTreeNode:SetHaveInit(true)
 end
 
--- DECOMPILER ERROR at PC136: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.GetNodesLogicData = function(self, nLogicID, nIndex, nDefault)
-  -- function num : 0_33 , upvalues : _ENV
-  local nodeData = nil
+function AILogicNode:GetNodesLogicData(nLogicID, nIndex, nDefault)
+  local nodeData
   for i = 1, #self.m_configData do
-    if ((self.m_configData)[i]).ID == nLogicID then
-      nodeData = (self.m_configData)[i]
+    if self.m_configData[i].ID == nLogicID then
+      nodeData = self.m_configData[i]
       break
     end
   end
-  do
-    if nodeData == nil then
-      (Log.warn)("[AI]，获取从配置文件内读取到的逻辑数据: LogicID = " .. self.CustomLogicID .. ", Type = " .. self.CustomLogicType .. ", FindnLogicID" .. nLogicID .. ", FindIndex = " .. nIndex)
-      return nDefault or 0
-    end
-    if not nDefault then
-      do return nIndex >= 0 and #nodeData.NodesData >= nIndex or 0 end
-      return (nodeData.NodesData)[nIndex]
-    end
+  if nil == nodeData then
+    Log.warn("[AI]，获取从配置文件内读取到的逻辑数据: LogicID = " .. self.CustomLogicID .. ", Type = " .. self.CustomLogicType .. ", FindnLogicID" .. nLogicID .. ", FindIndex = " .. nIndex)
+    return nDefault or 0
   end
+  if nIndex < 0 or nIndex > #nodeData.NodesData then
+    return nDefault or 0
+  end
+  return nodeData.NodesData[nIndex]
 end
 
--- DECOMPILER ERROR at PC139: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.SetLogicData = function(self, logicData)
-  -- function num : 0_34 , upvalues : _ENV
-  ((AILogicNode.super).SetLogicData)(self, logicData)
-  ;
-  (self.m_actionMine):SetLogicData(logicData)
+function AILogicNode:SetLogicData(logicData)
+  AILogicNode.super.SetLogicData(self, logicData)
+  self.m_actionMine:SetLogicData(logicData)
 end
 
--- DECOMPILER ERROR at PC142: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.InitializeNode = function(self, cfg, context, parentNode)
-  -- function num : 0_35 , upvalues : _ENV
-  ((AILogicNode.super).InitializeNode)(self, cfg, context, parentNode, cfg.Nodes)
+function AILogicNode:InitializeNode(cfg, context, parentNode)
+  AILogicNode.super.InitializeNode(self, cfg, context, parentNode, cfg.Nodes)
   self.CustomLogicID = cfg.ID
   self.CustomLogicType = cfg.Type
   self.GenInfo = context.GenInfo
-  if cfg.ActionEnd and cfg.ActionEnd ~= "" then
+  if cfg.ActionEnd and "" ~= cfg.ActionEnd then
     self.m_actionEnd = self:_CreateActionNode(cfg.ActionEnd, context)
   end
-  do
-    if not (cfg.Action).rootID then
-      local nRootLogicID = not cfg.Action or 1
-    end
-    if not (cfg.Action)[nRootLogicID] then
-      (Log.exception)("AI:", cfg.ID, "需要一个正确的Root,当前Root:", nRootLogicID, "不存在")
+  if cfg.Action then
+    local nRootLogicID = cfg.Action.rootID or 1
+    if not cfg.Action[nRootLogicID] then
+      Log.exception("AI:", cfg.ID, "需要一个正确的Root,当前Root:", nRootLogicID, "不存在")
     end
     self:_InitAction(nil, AIActiveAddType.All, cfg.Action, nRootLogicID, context)
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R5 in 'UnsetPending'
-
     if cfg.ActionSkill then
-      (self.m_actionTree).m_actionSkill = self:_CreateActionNode(cfg.ActionSkill, context)
+      self.m_actionTree.m_actionSkill = self:_CreateActionNode(cfg.ActionSkill, context)
     end
-    local vecSonNodes = self.m_vecSonNodes
-    local cfgNodesData = cfg.Nodes
-    if cfg.Nodes and #cfg.Nodes > 0 then
-      for key,value in pairs(cfgNodesData) do
-        local nSonNodeID = value.ID
-        local sonNode = self:_CreateLogicNode(nSonNodeID, context)
-        vecSonNodes:PushBack(sonNode)
-      end
+  end
+  local vecSonNodes = self.m_vecSonNodes
+  local cfgNodesData = cfg.Nodes
+  if cfg.Nodes and #cfg.Nodes > 0 then
+    for key, value in pairs(cfgNodesData) do
+      local nSonNodeID = value.ID
+      local sonNode = self:_CreateLogicNode(nSonNodeID, context)
+      vecSonNodes:PushBack(sonNode)
     end
   end
 end
 
--- DECOMPILER ERROR at PC145: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.Reset = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  ((AILogicNode.super).Reset)(self)
+function AILogicNode:Reset()
+  AILogicNode.super.Reset(self)
   self.m_curAiNode = nil
   self.m_bCancelLogic = false
   self.m_curAiNodeStatus = AINewNodeStatus.Success
   local vecSonNodes = self.m_vecSonNodes
   for i = 1, vecSonNodes:Size() do
-    (vecSonNodes:GetAt(i)):Reset()
+    vecSonNodes:GetAt(i):Reset()
   end
   if self.m_actionEnd then
-    (self.m_actionEnd):Reset()
+    self.m_actionEnd:Reset()
   end
-  ;
-  (self.m_actionTree):ClearScanNode()
+  self.m_actionTree:ClearScanNode()
 end
 
--- DECOMPILER ERROR at PC148: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.OnBegin = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function AILogicNode:OnBegin()
   self.m_curAiNode = nil
   self.m_curAiNodeStatus = AINewNodeStatus.Success
-  ;
-  (self.m_actionTree):ResetWorkNode()
+  self.m_actionTree:ResetWorkNode()
 end
 
--- DECOMPILER ERROR at PC151: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.OnUpdate = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function AILogicNode:OnUpdate()
   repeat
     if self.m_curAiNode then
-      if (self.m_curAiNode):IsEnableStart() then
-        (self.m_curAiNode):Update()
+      if self.m_curAiNode:IsEnableStart() then
+        self.m_curAiNode:Update()
       end
       if self.m_bCancelLogic then
-        (self.m_curAiNode):Reset()
+        self.m_curAiNode:Reset()
         self.m_curAiNode = nil
         return AINewNodeStatus.Failure
       end
-      if (self.m_curAiNode):IsRunning() then
+      if self.m_curAiNode:IsRunning() then
         return AINewNodeStatus.Running
       else
-        self.m_curAiNodeStatus = (self.m_curAiNode):GetStatues()
-        ;
-        (self.m_actionTree):MoveWorkNode(self.m_curAiNodeStatus)
-        ;
-        (self.m_curAiNode):Reset()
+        self.m_curAiNodeStatus = self.m_curAiNode:GetStatues()
+        self.m_actionTree:MoveWorkNode(self.m_curAiNodeStatus)
+        self.m_curAiNode:Reset()
         self.m_curAiNode = nil
       end
     end
-    if self.m_curAiNode == nil then
+    if nil == self.m_curAiNode then
       self.m_curAiNode = self:_FindWorkSonNode()
     end
-  until self.m_curAiNode == nil
+  until nil == self.m_curAiNode
   return self.m_curAiNodeStatus
 end
 
--- DECOMPILER ERROR at PC154: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.OnEnd = function(self)
-  -- function num : 0_39
+function AILogicNode:OnEnd()
   if self.m_curAiNode then
-    (self.m_curAiNode):Reset()
+    self.m_curAiNode:Reset()
     self.m_curAiNode = nil
   end
   if self.m_actionEnd then
-    (self.m_actionEnd):Update()
-    if (self.m_actionEnd):IsSuccess() == false then
+    self.m_actionEnd:Update()
+    if false == self.m_actionEnd:IsSuccess() then
       self:Reset()
     end
   end
 end
 
--- DECOMPILER ERROR at PC157: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.UpdateSkillAction = function(self)
-  -- function num : 0_40
-  if self.m_actionTree and (self.m_actionTree).m_actionSkill then
-    ((self.m_actionTree).m_actionSkill):Reset()
-    ;
-    ((self.m_actionTree).m_actionSkill):Update()
+function AILogicNode:UpdateSkillAction()
+  if self.m_actionTree and self.m_actionTree.m_actionSkill then
+    self.m_actionTree.m_actionSkill:Reset()
+    self.m_actionTree.m_actionSkill:Update()
   end
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.GetActionSkillID = function(self, preview)
-  -- function num : 0_41 , upvalues : _ENV
-  local nSkillID = (self.m_actionTree):GetActionSkillID(preview)
-  if nSkillID and nSkillID > 0 then
+function AILogicNode:GetActionSkillID(preview)
+  local nSkillID = self.m_actionTree:GetActionSkillID(preview)
+  if nSkillID and 0 < nSkillID then
     return nSkillID
   end
   if EDITOR and not preview then
-    (Log.exception)("GetSkillID Failed ", (Log.traceback)())
+    Log.exception("GetSkillID Failed ", Log.traceback())
   end
-  ;
-  (Log.fatal)("GetSkillID Failed ", (Log.traceback)())
+  Log.fatal("GetSkillID Failed ", Log.traceback())
   return 0
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.GetLogicNodeParent = function(self)
-  -- function num : 0_42
+function AILogicNode:GetLogicNodeParent()
   return self.m_logicOwn or self
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.ReSelectWorkSkill = function(self)
-  -- function num : 0_43
-  (self.m_actionTree):ReSelectWorkSkill()
+function AILogicNode:ReSelectWorkSkill()
+  self.m_actionTree:ReSelectWorkSkill()
 end
 
--- DECOMPILER ERROR at PC169: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode._FindWorkSonNode = function(self)
-  -- function num : 0_44
-  do
-    if (self.m_actionTree):IsTreeValid() then
-      local treeNode = (self.m_actionTree):GetWorkNode()
-      if treeNode == nil then
-        return nil
-      end
-      treeNode:StartWork((self.m_actionTree):GetActionSkillID())
-      return treeNode:GetWorkAction()
+function AILogicNode:_FindWorkSonNode()
+  if self.m_actionTree:IsTreeValid() then
+    local treeNode = self.m_actionTree:GetWorkNode()
+    if nil == treeNode then
+      return nil
     end
-    return nil
+    treeNode:StartWork(self.m_actionTree:GetActionSkillID())
+    return treeNode:GetWorkAction()
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC172: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.SetActive = function(self, bActive)
-  -- function num : 0_45
+function AILogicNode:SetActive(bActive)
   if bActive then
     self:Activate()
   else
@@ -584,12 +423,7 @@ AILogicNode.SetActive = function(self, bActive)
   end
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R1 in 'UnsetPending'
-
-AILogicNode.CancelLogic = function(self)
-  -- function num : 0_46
+function AILogicNode:CancelLogic()
   self.m_bCancelLogic = true
   self:SetActive(false)
 end
-
-

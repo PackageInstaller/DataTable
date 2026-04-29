@@ -1,52 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn13/perfect_puzzle/ui_perfect_puzzle_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPerfectPuzzleRewardItem", UICustomWidget)
 UIPerfectPuzzleRewardItem = UIPerfectPuzzleRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPerfectPuzzleRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPerfectPuzzleRewardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPerfectPuzzleRewardItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIPerfectPuzzleRewardItem:InitWidget()
   self.item = self:GetUIComponent("UISelectObjectPath", "Item")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPerfectPuzzleRewardItem.SetData = function(self, cfgData, tipsCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPerfectPuzzleRewardItem:SetData(cfgData, tipsCallback)
   self._roleAsset = cfgData
   self.tipsCallback = tipsCallback
-  local cfg_item = (Cfg.cfg_item)[(self._roleAsset).assetid]
+  local cfg_item = Cfg.cfg_item[self._roleAsset.assetid]
   if cfg_item == nil then
-    (Log.fatal)("[quest] error --> cfg_item is nil ! id --> " .. (self._roleAsset).assetid)
-    return 
+    Log.fatal("[quest] error --> cfg_item is nil ! id --> " .. self._roleAsset.assetid)
+    return
   end
-  self.uiItem = (self.item):SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base, UIItemScale.Level3)
+  self.uiItem = self.item:SpawnObject("UIItem")
+  self.uiItem:SetForm(UIItemForm.Base, UIItemScale.Level3)
   local icon = cfg_item.Icon
   local quality = cfg_item.Color
-  local text1 = (self._roleAsset).count
-  ;
-  (self.uiItem):SetData({icon = icon, quality = quality, text1 = text1, itemId = (self._roleAsset).assetid})
+  local text1 = self._roleAsset.count
+  self.uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    itemId = self._roleAsset.assetid
+  })
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPerfectPuzzleRewardItem.TipsBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIPerfectPuzzleRewardItem:TipsBtnOnClick(go)
   if self.tipsCallback then
-    (self.tipsCallback)((self._roleAsset).assetid, Vector3(0.5, ((go.transform).position).y - 0.3, 0))
+    self.tipsCallback(self._roleAsset.assetid, Vector3(0.5, go.transform.position.y - 0.3, 0))
   end
 end
-
-

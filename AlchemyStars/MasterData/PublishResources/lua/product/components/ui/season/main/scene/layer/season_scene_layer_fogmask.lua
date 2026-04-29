@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/scene/layer/season_scene_layer_fogmask.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonSceneLayerFogMask", SeasonSceneLayerBase)
 SeasonSceneLayerFogMask = SeasonSceneLayerFogMask
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonSceneLayerFogMask.Constructor = function(self, sceneRoot)
-  -- function num : 0_0 , upvalues : _ENV
-  self._fogMaskLayer = (self._sceneRootTransform):Find(SeasonSceneLayer.FogMask)
+function SeasonSceneLayerFogMask:Constructor(sceneRoot)
+  self._fogMaskLayer = self._sceneRootTransform:Find(SeasonSceneLayer.FogMask)
   self._time = 1
   self._fogEffects = {}
   self._fogMatCtrFlog = "_matfog"
@@ -18,118 +11,91 @@ SeasonSceneLayerFogMask.Constructor = function(self, sceneRoot)
   self:_CacheHighBuildingRenderer()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerFogMask.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((SeasonSceneLayerFogMask.super).Dispose)(self)
+function SeasonSceneLayerFogMask:Dispose()
+  SeasonSceneLayerFogMask.super.Dispose(self)
   if self._hideTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._hideTask)
+    GameGlobal.TaskManager():KillTask(self._hideTask)
     self._hideTask = nil
   end
-  ;
-  (table.clear)(self._fogEffects)
-  ;
-  (table.clear)(self._fogMatObjects)
-  ;
-  (table.clear)(self._fogMatRenderers)
+  table.clear(self._fogEffects)
+  table.clear(self._fogMatObjects)
+  table.clear(self._fogMatRenderers)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerFogMask.UnLock = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_2 , upvalues : _ENV
-  local unlockZoneIDs = (SeasonTool:GetInstance()):GetZonesByZoneMask(zoneMask)
-  for zoneid,effects in pairs(self._fogEffects) do
+function SeasonSceneLayerFogMask:UnLock(zoneMask, zoneID2Animation)
+  local unlockZoneIDs = SeasonTool:GetInstance():GetZonesByZoneMask(zoneMask)
+  for zoneid, effects in pairs(self._fogEffects) do
     if zoneid ~= zoneID2Animation then
-      for key,effect in pairs(effects) do
-        effect:SetActive(not (table.icontains)(unlockZoneIDs, zoneid))
+      for key, effect in pairs(effects) do
+        effect:SetActive(not table.icontains(unlockZoneIDs, zoneid))
       end
     end
   end
-  for zoneid,zoneRenderers in pairs(self._renderers) do
+  for zoneid, zoneRenderers in pairs(self._renderers) do
     local alpha = 1
-    if (table.icontains)(unlockZoneIDs, zoneid) then
+    if table.icontains(unlockZoneIDs, zoneid) then
       alpha = 0
     end
-    for key,renderer in pairs(zoneRenderers) do
+    for key, renderer in pairs(zoneRenderers) do
       if zoneid == zoneID2Animation then
         if renderer.material then
-          (renderer.material):DOFloat(alpha, "AlphaValue", self._time)
+          renderer.material:DOFloat(alpha, "AlphaValue", self._time)
         end
         self:HideEffect(zoneid)
-      else
-        if renderer.material then
-          (renderer.material):SetFloat("AlphaValue", alpha)
-        end
+      elseif renderer.material then
+        renderer.material:SetFloat("AlphaValue", alpha)
       end
     end
   end
-  for _,go in pairs(self._fogMatObjects) do
+  for _, go in pairs(self._fogMatObjects) do
     go:SetActive(true)
   end
-  if self._fogMatRenderers and #self._fogMatRenderers > 0 then
+  if self._fogMatRenderers and 0 < #self._fogMatRenderers then
     local vec4 = Vector4(0, 1, 1, 1)
-    for _,zone in pairs(unlockZoneIDs) do
+    for _, zone in pairs(unlockZoneIDs) do
       if zone == 2 then
         vec4.y = 0
-      else
-        if zone == 3 then
-          vec4.z = 0
-        else
-          if zone == 4 then
-            vec4.w = 0
-          end
-        end
+      elseif zone == 3 then
+        vec4.z = 0
+      elseif zone == 4 then
+        vec4.w = 0
       end
     end
-    for _,renderer in pairs(self._fogMatRenderers) do
+    for _, renderer in pairs(self._fogMatRenderers) do
       if renderer.material then
-        (renderer.material):SetVector("_AreaUnlockMask", vec4)
+        renderer.material:SetVector("_AreaUnlockMask", vec4)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerFogMask._CacheHighBuildingRenderer = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonSceneLayerFogMask:_CacheHighBuildingRenderer()
   if self._fogMaskLayer then
-    local zoneCount = (self._fogMaskLayer).childCount
-    if zoneCount > 0 then
+    local zoneCount = self._fogMaskLayer.childCount
+    if 0 < zoneCount then
       for i = 0, zoneCount - 1 do
-        local zone = (self._fogMaskLayer):GetChild(i)
+        local zone = self._fogMaskLayer:GetChild(i)
         if zone then
           local zoneid = i + 1
           local childCount = zone.childCount
           for j = 0, childCount - 1 do
             local fogMask = zone:GetChild(j)
-            -- DECOMPILER ERROR at PC32: Confused about usage of register: R14 in 'UnsetPending'
-
-            if not (self._fogEffects)[zoneid] then
-              (self._fogEffects)[zoneid] = {}
+            if not self._fogEffects[zoneid] then
+              self._fogEffects[zoneid] = {}
             end
-            ;
-            (table.insert)((self._fogEffects)[zoneid], fogMask.gameObject)
-            local renderers = (fogMask.gameObject):GetComponentsInChildren(typeof(UnityEngine.Renderer))
-            if renderers.Length > 0 then
+            table.insert(self._fogEffects[zoneid], fogMask.gameObject)
+            local renderers = fogMask.gameObject:GetComponentsInChildren(typeof(UnityEngine.Renderer))
+            if 0 < renderers.Length then
               for k = 0, renderers.Length - 1 do
                 self:InsertMeshRender(zoneid, renderers[k])
               end
             end
-            do
-              local gcount = fogMask.childCount
-              for k = 0, gcount - 1 do
-                local dump = fogMask:GetChild(k)
-                if (string.find)(dump.name, self._fogMatCtrFlog) then
-                  self:_InsertMagFog(fogMask)
-                  break
-                end
-              end
-              do
-                -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out DO_STMT
-
+            local gcount = fogMask.childCount
+            for k = 0, gcount - 1 do
+              local dump = fogMask:GetChild(k)
+              if string.find(dump.name, self._fogMatCtrFlog) then
+                self:_InsertMagFog(fogMask)
+                break
               end
             end
           end
@@ -139,34 +105,24 @@ SeasonSceneLayerFogMask._CacheHighBuildingRenderer = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerFogMask._InsertMagFog = function(self, trans)
-  -- function num : 0_4 , upvalues : _ENV
-  (table.insert)(self._fogMatObjects, trans.gameObject)
-  local renderers = (trans.gameObject):GetComponentsInChildren(typeof(UnityEngine.Renderer))
+function SeasonSceneLayerFogMask:_InsertMagFog(trans)
+  table.insert(self._fogMatObjects, trans.gameObject)
+  local renderers = trans.gameObject:GetComponentsInChildren(typeof(UnityEngine.Renderer))
   if renderers.Length > 0 then
     for k = 0, renderers.Length - 1 do
-      (table.insert)(self._fogMatRenderers, renderers[k])
+      table.insert(self._fogMatRenderers, renderers[k])
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerFogMask.HideEffect = function(self, zoneid)
-  -- function num : 0_5 , upvalues : _ENV
-  self._hideTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self, zoneid
+function SeasonSceneLayerFogMask:HideEffect(zoneid)
+  self._hideTask = GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT, self._time * 1000)
-    local effects = (self._fogEffects)[zoneid]
+    local effects = self._fogEffects[zoneid]
     if effects then
-      for _,effect in pairs(effects) do
+      for _, effect in pairs(effects) do
         effect:SetActive(false)
       end
     end
-  end
-)
+  end)
 end
-
-

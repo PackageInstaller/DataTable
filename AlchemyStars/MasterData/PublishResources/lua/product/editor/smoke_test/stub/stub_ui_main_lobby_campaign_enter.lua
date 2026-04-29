@@ -1,60 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/stub/stub_ui_main_lobby_campaign_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 if not SMOKE_TEST_ENABLED then
-  return 
+  return
 end
-;
-(Log.warn)("TestRobotModule: UIMainLobbyCampaignEnter stub!")
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
+Log.warn("TestRobotModule: UIMainLobbyCampaignEnter stub!")
 
-UIMainLobbyCampaignEnter.OnShow = function(self)
-  -- function num : 0_0
+function UIMainLobbyCampaignEnter:OnShow()
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampaignEnter.Flush = function(self, controller, latestCampObj)
-  -- function num : 0_1
+function UIMainLobbyCampaignEnter:Flush(controller, latestCampObj)
   return false
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampaignEnter.LoadSummerTwoData = function(self, TT, callback)
-  -- function num : 0_2
+function UIMainLobbyCampaignEnter:LoadSummerTwoData(TT, callback)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampaignEnter.FlushRoll = function(self, sampleInfo, campConfig)
-  -- function num : 0_3
+function UIMainLobbyCampaignEnter:FlushRoll(sampleInfo, campConfig)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampaignEnter.btnCampaignOnClick = function(self, go)
-  -- function num : 0_4
+function UIMainLobbyCampaignEnter:btnCampaignOnClick(go)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampaignEnter._BindCampaignEnterBtnAinm = function(self, camp_type)
-  -- function num : 0_5
+function UIMainLobbyCampaignEnter:_BindCampaignEnterBtnAinm(camp_type)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampaignEnter._BindCampaignSakuraEnterBtnAinm = function(self)
-  -- function num : 0_6
+function UIMainLobbyCampaignEnter:_BindCampaignSakuraEnterBtnAinm()
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampaignEnter._OnCampaignStepChagne = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_7
+function UIMainLobbyCampaignEnter:_OnCampaignStepChagne(campaign_id, component_id, component_step)
 end
-
-

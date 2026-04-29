@@ -1,88 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_recharge/ui_shop_recharge_gain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopRechargeGain", UIController)
 UIShopRechargeGain = UIShopRechargeGain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopRechargeGain.Constructor = function(self)
-  -- function num : 0_0
+function UIShopRechargeGain:Constructor()
   self._showCount = 5
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeGain.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopRechargeGain:OnShow(uiParams)
   self._anim = self:GetUIComponent("Animation", "uiAnim")
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   local mItem = self:GetModule(ItemModule)
   self._tRoleAsset = uiParams[1]
   self.callback = uiParams[2]
   self._tRoleAsset = mItem:SortRoleAsset(self._tRoleAsset)
-  local len = (table.count)(self._tRoleAsset)
+  local len = table.count(self._tRoleAsset)
   local itemlist = {}
-  if self._showCount < len then
-    itemlist = (table.sub)(self._tRoleAsset, 1, self._showCount)
-    self._tRoleAsset = (table.sub)(self._tRoleAsset, self._showCount + 1, len)
+  if len > self._showCount then
+    itemlist = table.sub(self._tRoleAsset, 1, self._showCount)
+    self._tRoleAsset = table.sub(self._tRoleAsset, self._showCount + 1, len)
   else
     itemlist = self._tRoleAsset
     self._tRoleAsset = nil
   end
   self._itemList = {}
-  for i = 1, (table.count)(itemlist) do
-    local ItemTempleate = (Cfg.cfg_item)[(itemlist[i]).assetid]
-    -- DECOMPILER ERROR at PC85: Confused about usage of register: R10 in 'UnsetPending'
-
+  for i = 1, table.count(itemlist) do
+    local ItemTempleate = Cfg.cfg_item[itemlist[i].assetid]
     if ItemTempleate then
-      (self._itemList)[i] = {item_id = (itemlist[i]).assetid, item_count = (itemlist[i]).count, item_des = (itemlist[i]).des, icon = ItemTempleate.Icon, item_name = (StringTable.Get)(ItemTempleate.Name), simple_desc = ItemTempleate.RpIntro, color = ItemTempleate.Color}
+      self._itemList[i] = {
+        item_id = itemlist[i].assetid,
+        item_count = itemlist[i].count,
+        item_des = itemlist[i].des,
+        icon = ItemTempleate.Icon,
+        item_name = StringTable.Get(ItemTempleate.Name),
+        simple_desc = ItemTempleate.RpIntro,
+        color = ItemTempleate.Color
+      }
     end
   end
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeGain.OnHide = function(self)
-  -- function num : 0_2
+function UIShopRechargeGain:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeGain.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._content):SpawnObjects("UIShopRechargeGainItem", (table.count)(self._itemList))
-  local uiItems = (self._content):GetAllSpawnList()
-  for i,uiItem in ipairs(uiItems) do
-    uiItem:ReadyToFlush((self._itemList)[i], i * 200)
+function UIShopRechargeGain:Flush()
+  self._content:SpawnObjects("UIShopRechargeGainItem", table.count(self._itemList))
+  local uiItems = self._content:GetAllSpawnList()
+  for i, uiItem in ipairs(uiItems) do
+    uiItem:ReadyToFlush(self._itemList[i], i * 200)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeGain.bgOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIShopRechargeGain:bgOnClick(go)
   self:Lock("UIShopRechargeGain:OnHide")
-  ;
-  (self._anim):Play("Uieff_UIShopRechargeGain_Out")
+  self._anim:Play("Uieff_UIShopRechargeGain_Out")
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
     YIELD(TT, 667)
     self:UnLock("UIShopRechargeGain:OnHide")
     self:CloseDialog()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ForceFlushMonthCard)
-    if self._tRoleAsset and (table.count)(self._tRoleAsset) > 0 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ForceFlushMonthCard)
+    if self._tRoleAsset and table.count(self._tRoleAsset) > 0 then
       self:ShowDialog("UIShopRechargeGain", self._tRoleAsset, self.callback)
-    else
-      if self.callback then
-        (self.callback)()
-      end
+    elseif self.callback then
+      self.callback()
     end
-  end
-, self)
+  end, self)
 end
-
-

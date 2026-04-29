@@ -1,38 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_hp_shield_lock.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddHPShieldLock", BuffLogicBase)
 BuffLogicAddHPShieldLock = BuffLogicAddHPShieldLock
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddHPShieldLock.Constructor = function(self)
-  -- function num : 0_0
+function BuffLogicAddHPShieldLock:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddHPShieldLock.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local buff = (self._entity):BuffComponent()
+function BuffLogicAddHPShieldLock:DoLogic(notify)
+  local buff = self._entity:BuffComponent()
   buff:SetBuffValue("HPShieldLockHP", true)
 end
 
 _class("BuffLogicRemoveHPShieldLock", BuffLogicBase)
 BuffLogicRemoveHPShieldLock = BuffLogicRemoveHPShieldLock
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveHPShieldLock.Constructor = function(self)
-  -- function num : 0_2
+function BuffLogicRemoveHPShieldLock:Constructor()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveHPShieldLock.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local buff = (self._entity):BuffComponent()
+function BuffLogicRemoveHPShieldLock:DoLogic(notify)
+  local buff = self._entity:BuffComponent()
   buff:SetBuffValue("HPShieldLockHP", nil)
 end
-
-

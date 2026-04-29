@@ -1,45 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/room/ui_aircraft_interactive_event_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftInteractiveEventRewardItem", UICustomWidget)
 UIAircraftInteractiveEventRewardItem = UIAircraftInteractiveEventRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftInteractiveEventRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftInteractiveEventRewardItem:OnShow(uiParams)
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base, UIItemScale.Level3)
-  ;
-  (self.uiItem):SetClickCallBack(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Base, UIItemScale.Level3)
+  self.uiItem:SetClickCallBack(function()
     self:UIItemsWidgetOnClick()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftInteractiveEventRewardItem.SetData = function(self, id, count)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAircraftInteractiveEventRewardItem:SetData(id, count)
   self._matID = id
-  self._cfgData = (Cfg.cfg_item)[id]
+  self._cfgData = Cfg.cfg_item[id]
   local itemId = id
-  local icon = (self._cfgData).Icon
-  local quality = (self._cfgData).Color
+  local icon = self._cfgData.Icon
+  local quality = self._cfgData.Color
   local text1 = count
-  ;
-  (self.uiItem):SetData({icon = icon, quality = quality, text1 = text1, itemId = itemId})
+  self.uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    itemId = itemId
+  })
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftInteractiveEventRewardItem.UIItemsWidgetOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftInteractiveEventRewardShowItemTips, self._matID, ((self:GetGameObject()).transform).position)
+function UIAircraftInteractiveEventRewardItem:UIItemsWidgetOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftInteractiveEventRewardShowItemTips, self._matID, self:GetGameObject().transform.position)
 end
-
-

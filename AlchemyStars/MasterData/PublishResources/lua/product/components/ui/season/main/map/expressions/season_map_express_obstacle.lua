@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_obstacle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpressObstacle", SeasonMapExpressBase)
 SeasonMapExpressObstacle = SeasonMapExpressObstacle
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressObstacle.Constructor = function(self, cfg, eventPoint)
-  -- function num : 0_0
-  self._content = (self._cfg).Obstacle
+function SeasonMapExpressObstacle:Constructor(cfg, eventPoint)
+  self._content = self._cfg.Obstacle
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressObstacle.Update = function(self, deltaTime)
-  -- function num : 0_1
+function SeasonMapExpressObstacle:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressObstacle.OnPlay = function(self)
-  -- function num : 0_2
-  (self._eventPoint):OpenObstacle(self._content)
+function SeasonMapExpressObstacle:OnPlay()
+  self._eventPoint:OpenObstacle(self._content)
   self:Next()
 end
-
-

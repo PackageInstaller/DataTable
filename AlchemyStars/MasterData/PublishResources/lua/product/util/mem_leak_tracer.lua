@@ -1,102 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/mem_leak_tracer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-MemLeakTracer = {IsRecording = false, RecordCallStack = true, 
-MemLeakTable = {}
-, OutputContentTitle = "MemLeakTracer Output\n", OutputContent = "", MemoryGatherCount = 0, 
-MemoryCount = {}
-, 
-MemoryKeys = {}
-, 
-MemoryInfoList = {}
-, 
-MemoryDetail = {}
+MemLeakTracer = {
+  IsRecording = false,
+  RecordCallStack = true,
+  MemLeakTable = {},
+  OutputContentTitle = "MemLeakTracer Output\n",
+  OutputContent = "",
+  MemoryGatherCount = 0,
+  MemoryCount = {},
+  MemoryKeys = {},
+  MemoryInfoList = {},
+  MemoryDetail = {}
 }
 setmetatable(MemLeakTracer.MemLeakTable, {__mode = "kv"})
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
 
-MemLeakTracer.StartRecord = function(self, recordCallStack)
-  -- function num : 0_0 , upvalues : _ENV
+function MemLeakTracer:StartRecord(recordCallStack)
   self.IsRecording = true
-  self.RecordCallStack = recordCallStack ~= nil and recordCallStack
+  self.RecordCallStack = recordCallStack == nil or recordCallStack
   self:ShowToast("MemLeakTracer Start Record  RecordCallStack=" .. tostring(self.RecordCallStack))
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-MemLeakTracer.StopRecord = function(self)
-  -- function num : 0_1
+function MemLeakTracer:StopRecord()
   self.IsRecording = false
   self:ShowToast("MemLeakTracer Stop Record")
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-MemLeakTracer.GCAndGatherLeakMemInfo = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function MemLeakTracer:GCAndGatherLeakMemInfo()
   self.MemoryGatherCount = self.MemoryGatherCount + 1
   self:ShowToast("MemLeakTracer Take Memory Snapshot count:" .. self.MemoryGatherCount)
-  ;
-  (HelperProxy:GetInstance()):GCCollect()
+  HelperProxy:GetInstance():GCCollect()
   collectgarbage("collect")
-  ;
-  (HelperProxy:GetInstance()):GCCollect()
+  HelperProxy:GetInstance():GCCollect()
   collectgarbage("collect")
-  local memoryCount = (math.floor)(collectgarbage("count"))
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.MemoryCount)[self.MemoryGatherCount] = memoryCount
+  local memoryCount = math.floor(collectgarbage("count"))
+  self.MemoryCount[self.MemoryGatherCount] = memoryCount
   self:Output("current memory: " .. memoryCount .. " KB")
   local memoryInfo = {}
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.MemoryInfoList)[self.MemoryGatherCount] = memoryInfo
-  for k,v in pairs(self.MemLeakTable) do
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R8 in 'UnsetPending'
-
+  self.MemoryInfoList[self.MemoryGatherCount] = memoryInfo
+  for k, v in pairs(self.MemLeakTable) do
     if k and k._className then
-      (self.MemoryKeys)[k._className] = true
+      self.MemoryKeys[k._className] = true
       if not memoryInfo[k._className] then
         memoryInfo[k._className] = 1
       else
         memoryInfo[k._className] = memoryInfo[k._className] + 1
       end
-      -- DECOMPILER ERROR at PC75: Confused about usage of register: R8 in 'UnsetPending'
-
-      if not (self.MemoryDetail)[k._className] then
-        (self.MemoryDetail)[k._className] = {}
+      if not self.MemoryDetail[k._className] then
+        self.MemoryDetail[k._className] = {}
       end
-      -- DECOMPILER ERROR at PC79: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      ((self.MemoryDetail)[k._className])[v] = true
+      self.MemoryDetail[k._className][v] = true
     end
   end
   if self.RecordCallStack then
-    for k,v in pairs(memoryInfo) do
+    for k, v in pairs(memoryInfo) do
       self:Output(k .. " :" .. v)
-      for trace,_ in pairs((self.MemoryDetail)[k]) do
+      for trace, _ in pairs(self.MemoryDetail[k]) do
         self:Output("trace: " .. trace)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-MemLeakTracer.FindDependent = function(self, className)
-  -- function num : 0_3 , upvalues : _ENV
+function MemLeakTracer:FindDependent(className)
   self._searched = {}
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._searched)[self] = true
-  local registry = (debug.getregistry)()
+  self._searched[self] = true
+  local registry = debug.getregistry()
   self._searchTarget = className
   self._searchRes = {}
   self:SearchTable(registry, 0)
@@ -104,67 +70,45 @@ MemLeakTracer.FindDependent = function(self, className)
   self:SearchTable(package.loaded, 0)
   if #self._searchRes > 0 then
     for i = 1, #self._searchRes do
-      self:Output((self._searchRes)[i])
+      self:Output(self._searchRes[i])
     end
   else
-    do
-      self:Output("No Ref")
-    end
+    self:Output("No Ref")
   end
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-MemLeakTracer.SearchTable = function(self, table)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._searched)[table] then
-    return 
+function MemLeakTracer:SearchTable(table)
+  if self._searched[table] then
+    return
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._searched)[table] = true
-  local tableType = nil
-  for key,value in pairs(table) do
+  self._searched[table] = true
+  local tableType
+  for key, value in pairs(table) do
     tableType = type(key)
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
     if tableType == "table" then
       if rawget(key, "_className") == self._searchTarget then
         if table._className then
-          (self._searchRes)[#self._searchRes + 1] = table._className
+          self._searchRes[#self._searchRes + 1] = table._className
         else
-          -- DECOMPILER ERROR at PC42: Confused about usage of register: R8 in 'UnsetPending'
-
-          ;
-          (self._searchRes)[#self._searchRes + 1] = tostring(table)
+          self._searchRes[#self._searchRes + 1] = tostring(table)
         end
       end
       self:SearchTable(key)
-    else
-      if tableType == "function" then
-        self:FindRefInFunction(key)
-      end
+    elseif tableType == "function" then
+      self:FindRefInFunction(key)
     end
     tableType = type(value)
-    -- DECOMPILER ERROR at PC73: Confused about usage of register: R8 in 'UnsetPending'
-
     if tableType == "table" then
       if rawget(value, "_className") == self._searchTarget then
         if table._className then
-          (self._searchRes)[#self._searchRes + 1] = table._className
+          self._searchRes[#self._searchRes + 1] = table._className
         else
-          -- DECOMPILER ERROR at PC82: Confused about usage of register: R8 in 'UnsetPending'
-
-          ;
-          (self._searchRes)[#self._searchRes + 1] = tostring(table)
+          self._searchRes[#self._searchRes + 1] = tostring(table)
         end
       end
       self:SearchTable(value)
-    else
-      if tableType == "function" then
-        self:FindRefInFunction(value)
-      end
+    elseif tableType == "function" then
+      self:FindRefInFunction(value)
     end
   end
   local mt = getmetatable(table)
@@ -173,96 +117,71 @@ MemLeakTracer.SearchTable = function(self, table)
   end
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
-
-MemLeakTracer.FindRefInFunction = function(self, func)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._searched)[func] then
-    return 
+function MemLeakTracer:FindRefInFunction(func)
+  if self._searched[func] then
+    return
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._searched)[func] = true
-  local dInfo = (debug.getinfo)(func, "Su")
+  self._searched[func] = true
+  local dInfo = debug.getinfo(func, "Su")
   local upsNum = dInfo.nups
   for i = 1, upsNum do
-    local strUpName, cUpValue = (debug.getupvalue)(func, i)
+    local strUpName, cUpValue = debug.getupvalue(func, i)
     local strUpValueType = type(cUpValue)
-    if strUpValueType == "table" then
+    if "table" == strUpValueType then
       if rawget(cUpValue, "_className") == self._searchTarget then
         self:Output("Found in function @file: " .. dInfo.short_src .. " at line: " .. dInfo.linedefined)
       end
       self:SearchTable(cUpValue)
-    else
-      if strUpValueType == "function" then
-        self:FindRefInFunction(cUpValue)
-      end
+    elseif "function" == strUpValueType then
+      self:FindRefInFunction(cUpValue)
     end
   end
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-MemLeakTracer.Output = function(self, output)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.fatal)(output)
+function MemLeakTracer:Output(output)
+  Log.fatal(output)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
-
-MemLeakTracer.ShowToast = function(self, toast)
-  -- function num : 0_7 , upvalues : _ENV
-  (ToastManager.ShowToast)(toast)
+function MemLeakTracer:ShowToast(toast)
+  ToastManager.ShowToast(toast)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R0 in 'UnsetPending'
-
-MemLeakTracer.Output2File = function(self, filePath)
-  -- function num : 0_8 , upvalues : _ENV
-  local file = assert((io.open)(filePath, "w"))
+function MemLeakTracer:Output2File(filePath)
+  local file = assert(io.open(filePath, "w"))
   self.OutputContent = self.OutputContentTitle
   self.OutputContent = self.OutputContent .. "泄露实例|泄露数量&构造栈\\抓取次数\t"
-  do
-    for i = 1, self.MemoryGatherCount do
-      self.OutputContent = self.OutputContent .. "第" .. i .. "次抓取" .. "\t"
-    end
+  for i = 1, self.MemoryGatherCount do
+    self.OutputContent = self.OutputContent .. "第" .. i .. "次抓取" .. "\t"
   end
   self.OutputContent = self.OutputContent .. "\nLua内存总量(KB)\t"
   for i = 1, self.MemoryGatherCount do
-    self.OutputContent = self.OutputContent .. (self.MemoryCount)[i] .. "\t"
+    self.OutputContent = self.OutputContent .. self.MemoryCount[i] .. "\t"
   end
   self.OutputContent = self.OutputContent .. "\n"
   if self.MemoryGatherCount > 0 then
-    local memoryInfo = (self.MemoryInfoList)[self.MemoryGatherCount]
+    local memoryInfo = self.MemoryInfoList[self.MemoryGatherCount]
     local dic = SortedArray:New(Algorithm.COMPARE_CUSTOM, function(obj1, obj2)
-    -- function num : 0_8_0 , upvalues : memoryInfo
-    local count1 = memoryInfo[obj1]
-    local count2 = memoryInfo[obj2]
-    if count1 and count2 then
-      return count1 - count2
-    else
-      if count1 then
+      local count1 = memoryInfo[obj1]
+      local count2 = memoryInfo[obj2]
+      if count1 and count2 then
+        return count1 - count2
+      elseif count1 then
         return 1
+      elseif count2 then
+        return -1
       else
-        if count2 then
-          return -1
-        else
-          return 0
-        end
+        return 0
       end
-    end
-  end
-)
+    end)
     dic:AllowDuplicate()
-    for k,_ in pairs(self.MemoryKeys) do
+    for k, _ in pairs(self.MemoryKeys) do
       dic:Insert(k)
     end
     for i = 1, dic:Size() do
       local className = dic:GetAt(i)
       self.OutputContent = self.OutputContent .. className .. "\t"
       for i = 1, self.MemoryGatherCount do
-        local memoryInfo = (self.MemoryInfoList)[i]
+        local memoryInfo = self.MemoryInfoList[i]
         if memoryInfo[className] then
           self.OutputContent = self.OutputContent .. memoryInfo[className] .. "\t"
         else
@@ -270,30 +189,18 @@ MemLeakTracer.Output2File = function(self, filePath)
         end
       end
       if self.RecordCallStack then
-        self.OutputContent = self.OutputContent .. "\nTraces:\n"
-        for trace,_ in pairs((self.MemoryDetail)[className]) do
+        self.OutputContent = self.OutputContent .. [[
+
+Traces:
+]]
+        for trace, _ in pairs(self.MemoryDetail[className]) do
           self.OutputContent = self.OutputContent .. trace .. "\n"
         end
       else
-        do
-          do
-            self.OutputContent = self.OutputContent .. "\n"
-            -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        self.OutputContent = self.OutputContent .. "\n"
       end
     end
   end
-  do
-    file:write(self.OutputContent)
-    ;
-    (io.close)(file)
-  end
+  file:write(self.OutputContent)
+  io.close(file)
 end
-
-

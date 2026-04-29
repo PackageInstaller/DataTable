@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_pyramid_by_pick_up_dir_and_buff_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_PyramidByPickUpDirAndBuffLayer", SkillScopeCalculator_Base)
 SkillScopeCalculator_PyramidByPickUpDirAndBuffLayer = SkillScopeCalculator_PyramidByPickUpDirAndBuffLayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_PyramidByPickUpDirAndBuffLayer.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_PyramidByPickUpDirAndBuffLayer:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local baseLength = scopeParam[1]
   local buffEffectType = scopeParam[2]
   local layerCount = scopeParam[3] or 1
   local addStep = scopeParam[4] or 1
-  local dirType = nil
+  local dirType
   local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
   if activeSkillPickUpComponent then
     dirType = activeSkillPickUpComponent:GetLastPickUpDirection()
@@ -24,81 +17,59 @@ SkillScopeCalculator_PyramidByPickUpDirAndBuffLayer.CalcRange = function(self, s
       dirType = previewPickUpComponent:GetLastPickUpDirection()
     end
   end
-  do
-    if not dirType or dirType == HitBackDirectionType.None then
-      if centerPos and centerPos ~= casterPos then
-        dirType = self:GetDirection(centerPos, casterPos)
-        centerPos = casterPos:Clone()
-      else
-        return SkillScopeResult:New(SkillScopeType.PyramidByPickUpDirAndBuffLayer, centerPos, {}, {})
-      end
-    end
-    local dir = (HitBackDirectionTypeHelper.ConvertDirTypeToVector)(dirType)
-    local maxLength = baseLength
-    if buffEffectType then
-      local buffSvc = ((self._gridFilter)._world):GetService("BuffLogic")
-      local curLayerCount = buffSvc:GetBuffLayer(casterEntity, buffEffectType)
-      local mul = (math.modf)(curLayerCount / layerCount)
-      maxLength = maxLength + addStep * mul
-    end
-    do
-      local boardSvc = ((self._gridFilter)._world):GetService("BoardLogic")
-      local boardMaxX = boardSvc:GetCurBoardMaxX()
-      local boardMaxY = boardSvc:GetCurBoardMaxY()
-      local attackRange = {}
-      local tmpLength = 1
-      local basePos = centerPos:Clone()
-      while 1 do
-        if tmpLength <= maxLength then
-          basePos = basePos + dir
-          if basePos.x > 0 and boardMaxX >= basePos.x and basePos.y > 0 and boardMaxY >= basePos.y then
-            self:_AddAllGridInLine(attackRange, basePos, dir, tmpLength)
-            tmpLength = tmpLength + 1
-            -- DECOMPILER ERROR at PC111: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC111: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC111: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC111: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-      return SkillScopeResult:New(SkillScopeType.PyramidByPickUpDirAndBuffLayer, centerPos, attackRange, attackRange)
+  if not dirType or dirType == HitBackDirectionType.None then
+    if centerPos and centerPos ~= casterPos then
+      dirType = self:GetDirection(centerPos, casterPos)
+      centerPos = casterPos:Clone()
+    else
+      return SkillScopeResult:New(SkillScopeType.PyramidByPickUpDirAndBuffLayer, centerPos, {}, {})
     end
   end
+  local dir = HitBackDirectionTypeHelper.ConvertDirTypeToVector(dirType)
+  local maxLength = baseLength
+  if buffEffectType then
+    local buffSvc = self._gridFilter._world:GetService("BuffLogic")
+    local curLayerCount = buffSvc:GetBuffLayer(casterEntity, buffEffectType)
+    local mul = math.modf(curLayerCount / layerCount)
+    maxLength = maxLength + addStep * mul
+  end
+  local boardSvc = self._gridFilter._world:GetService("BoardLogic")
+  local boardMaxX = boardSvc:GetCurBoardMaxX()
+  local boardMaxY = boardSvc:GetCurBoardMaxY()
+  local attackRange = {}
+  local tmpLength = 1
+  local basePos = centerPos:Clone()
+  while maxLength >= tmpLength do
+    basePos = basePos + dir
+    if basePos.x <= 0 or boardMaxX < basePos.x or 0 >= basePos.y or boardMaxY < basePos.y then
+      break
+    end
+    self:_AddAllGridInLine(attackRange, basePos, dir, tmpLength)
+    tmpLength = tmpLength + 1
+  end
+  return SkillScopeResult:New(SkillScopeType.PyramidByPickUpDirAndBuffLayer, centerPos, attackRange, attackRange)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_PyramidByPickUpDirAndBuffLayer._IsPosValid = function(self, pos)
-  -- function num : 0_1
-  do return self._gridFilter and (self._gridFilter):IsValidPiecePos(pos) end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function SkillScopeCalculator_PyramidByPickUpDirAndBuffLayer:_IsPosValid(pos)
+  return not self._gridFilter or self._gridFilter:IsValidPiecePos(pos)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_PyramidByPickUpDirAndBuffLayer._AddAllGridInLine = function(self, attackRange, basePos, dir, step)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillScopeCalculator_PyramidByPickUpDirAndBuffLayer:_AddAllGridInLine(attackRange, basePos, dir, step)
   if self:_IsPosValid(basePos) then
-    (table.insert)(attackRange, basePos)
+    table.insert(attackRange, basePos)
   end
-  local rotatedDir = (Vector2.New)(dir.y, dir.x)
+  local rotatedDir = Vector2.New(dir.y, dir.x)
   for i = 1, step do
     local pos = basePos + rotatedDir * i
     if self:_IsPosValid(pos) then
-      (table.insert)(attackRange, pos)
+      table.insert(attackRange, pos)
     end
   end
-  rotatedDir = (Vector2.New)(-dir.y, -dir.x)
+  rotatedDir = Vector2.New(-dir.y, -dir.x)
   for i = 1, step do
     local pos = basePos + rotatedDir * i
     if self:_IsPosValid(pos) then
-      (table.insert)(attackRange, pos)
+      table.insert(attackRange, pos)
     end
   end
 end
-
-

@@ -1,78 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/card/pick_card/ui_season_maze_pick_card_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazePickCardItem", UICustomWidget)
 UISeasonMazePickCardItem = UISeasonMazePickCardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazePickCardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMazePickCardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePickCardItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazePickCardItem:InitWidget()
   self.root = self:GetUIComponent("UISelectObjectPath", "Root")
   self._select = self:GetGameObject("Select")
-  self._anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+  self._anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePickCardItem.SetData = function(self, idx, cfg_id, onSelect, onShowDetail)
-  -- function num : 0_2
+function UISeasonMazePickCardItem:SetData(idx, cfg_id, onSelect, onShowDetail)
   self._idx = idx
   self._cfg_id = cfg_id
   self._onSelect = onSelect
   self._onShowDetail = onShowDetail
-  self._card = (self.root):SpawnObject("UISeasonMazeCardItem")
-  ;
-  (self._card):SetData(self._idx, self._cfg_id, nil)
+  self._card = self.root:SpawnObject("UISeasonMazeCardItem")
+  self._card:SetData(self._idx, self._cfg_id, nil)
   self:Select(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePickCardItem.DetailBtnOnClick = function(self, go)
-  -- function num : 0_3
-  (self._onShowDetail)(self._idx, (go.transform).position)
+function UISeasonMazePickCardItem:DetailBtnOnClick(go)
+  self._onShowDetail(self._idx, go.transform.position)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePickCardItem.SelectBtnOnClick = function(self, go)
-  -- function num : 0_4
-  (self._onSelect)(self._idx, (go.transform).position)
+function UISeasonMazePickCardItem:SelectBtnOnClick(go)
+  self._onSelect(self._idx, go.transform.position)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePickCardItem.Select = function(self, select)
-  -- function num : 0_5
-  (self._select):SetActive(select)
+function UISeasonMazePickCardItem:Select(select)
+  self._select:SetActive(select)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePickCardItem.CfgID = function(self)
-  -- function num : 0_6
+function UISeasonMazePickCardItem:CfgID()
   return self._cfg_id
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePickCardItem.PlayAnim = function(self, name, queued)
-  -- function num : 0_7
+function UISeasonMazePickCardItem:PlayAnim(name, queued)
   if queued then
-    (self._anim):PlayQueued(name)
+    self._anim:PlayQueued(name)
   else
-    ;
-    (self._anim):Play(name)
+    self._anim:Play(name)
   end
 end
-
-

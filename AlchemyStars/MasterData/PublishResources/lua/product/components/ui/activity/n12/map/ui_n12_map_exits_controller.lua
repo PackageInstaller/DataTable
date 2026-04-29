@@ -1,80 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/map/ui_n12_map_exits_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_n12_map_controller")
 _class("UIN12MapExitsController", UIN12MapController)
 UIN12MapExitsController = UIN12MapExitsController
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12MapExitsController.GetComponents = function(self)
-  -- function num : 0_0
+function UIN12MapExitsController:GetComponents()
   self._titleTex = self:GetUIComponent("UILocalizationText", "title")
   self._goOnBtn = self:GetGameObject("goOnBtn")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapExitsController.OnValue = function(self)
-  -- function num : 0_1
+function UIN12MapExitsController:OnValue()
   self._over = self._rate >= 1
   self:SetTextMat()
   self:ShowExitsPanel()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapExitsController.ShowExitsPanel = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._goOnBtn):SetActive(not self._over)
-  local title = nil
+function UIN12MapExitsController:ShowExitsPanel()
+  self._goOnBtn:SetActive(not self._over)
+  local title
   if self._over then
-    title = (StringTable.Get)("str_n12_map_exits_rate_leave", "100%%")
+    title = StringTable.Get("str_n12_map_exits_rate_leave", "100%%")
   else
-    title = (StringTable.Get)("str_n12_map_exits_rate_leave_or_goon", (math.floor)(self._rate * 100) .. "%%")
+    title = StringTable.Get("str_n12_map_exits_rate_leave_or_goon", math.floor(self._rate * 100) .. "%%")
   end
-  ;
-  (self._titleTex):SetText(title)
+  self._titleTex:SetText(title)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapExitsController.SetFontMat = function(self, lable, resname)
-  -- function num : 0_3 , upvalues : _ENV
-  self._res = (ResourceManager:GetInstance()):SyncLoadAsset(resname, LoadType.Mat)
+function UIN12MapExitsController:SetFontMat(lable, resname)
+  self._res = ResourceManager:GetInstance():SyncLoadAsset(resname, LoadType.Mat)
   if not self._res then
-    return 
+    return
   end
-  local obj = (self._res).Obj
+  local obj = self._res.Obj
   local mat = lable.fontMaterial
   lable.fontMaterial = obj
-  ;
-  (lable.fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  lable.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapExitsController.exitsBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN12MapExitsController:exitsBtnOnClick(go)
   self:CloseDialog()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN12CloseMap)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN12CloseMap)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapExitsController.goOnBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIN12MapExitsController:goOnBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapExitsController.closeBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIN12MapExitsController:closeBtnOnClick(go)
   self:CloseDialog()
 end
-
-

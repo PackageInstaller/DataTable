@@ -1,430 +1,347 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/lib/log_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local args2str = function(args, split)
-  -- function num : 0_0 , upvalues : _ENV
-  local len = (table.maxn)(args)
+local function args2str(args, split)
+  local len = table.maxn(args)
+  
   if len == 0 then
     return ""
+  elseif len == 1 then
+    return tostring(args[1])
   else
-    if len == 1 then
-      return tostring(args[1])
+    local tb = {}
+    if split == nil then
+      for i = 1, len do
+        table.insert(tb, tostring(args[i]))
+      end
     else
-      local tb = {}
-      if split == nil then
-        for i = 1, len do
-          (table.insert)(tb, tostring(args[i]))
-        end
-      else
-        do
-          ;
-          (table.insert)(tb, tostring(args[1]))
-          for i = 2, len do
-            (table.insert)(tb, split)
-            ;
-            (table.insert)(tb, tostring(args[i]))
-          end
-          do
-            do return (table.concat)(tb) end
-          end
-        end
+      table.insert(tb, tostring(args[1]))
+      for i = 2, len do
+        table.insert(tb, split)
+        table.insert(tb, tostring(args[i]))
       end
     end
+    return table.concat(tb)
   end
 end
 
 local traceback = debug.traceback
 local nowtime = {}
-local dumpvisited = nil
+local dumpvisited
 local dumpfrom = ""
-local indented = function(level, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  local s = (table.concat)({("  "):rep(level), ...})
-  ;
-  (table.insert)(tsss, s)
+
+local function indented(level, ...)
+  local s = table.concat({
+    ("  "):rep(level),
+    ...
+  })
+  table.insert(tsss, s)
 end
 
-local dumpval = function(level, name, value, limit)
-  -- function num : 0_2 , upvalues : _ENV, dumpvisited, indented, dumpval
-  local index = nil
+local function dumpval(level, name, value, limit)
+  local index
   if type(name) == "number" then
-    index = (string.format)("[%d] = ", name)
+    index = string.format("[%d] = ", name)
+  elseif type(name) == "string" and (name == "__VARSLEVEL__" or name == "__ENVIRONMENT__" or name == "__GLOBALS__" or name == "__UPVALUES__" or name == "__LOCALS__") then
+    return
+  elseif type(name) == "string" and string.find(name, "^[_%a][_.%w]*$") then
+    index = name .. " = "
   else
-    if type(name) == "string" and (name == "__VARSLEVEL__" or name == "__ENVIRONMENT__" or name == "__GLOBALS__" or name == "__UPVALUES__" or name == "__LOCALS__") then
-      return 
-    else
-      if type(name) == "string" and (string.find)(name, "^[_%a][_.%w]*$") then
-        index = name .. " = "
-      else
-        index = (string.format)("[%q] = ", tostring(name))
-      end
-    end
+    index = string.format("[%q] = ", tostring(name))
   end
   if type(value) == "table" then
     if dumpvisited[value] then
-      indented(level, index, (string.format)("ref%q,", dumpvisited[value]))
+      indented(level, index, string.format("ref%q,", dumpvisited[value]))
     else
       dumpvisited[value] = tostring(value)
-      if limit or 0 > 0 and limit <= level + 1 then
+      if 0 < (limit or 0) and limit <= level + 1 then
         indented(level, index, dumpvisited[value])
       else
         indented(level, index, "{  -- ", dumpvisited[value])
-        for n,v in pairs(value) do
+        for n, v in pairs(value) do
           dumpval(level + 1, n, v, limit)
         end
         dumpval(level + 1, ".meta", getmetatable(value), limit)
         indented(level, "},")
       end
     end
-  else
-    if type(value) == "string" then
-      if (string.len)(value) > 40 then
-        indented(level, index, "[[", value, "]];")
-      else
-        indented(level, index, (string.format)("%q", value), ",")
-      end
+  elseif type(value) == "string" then
+    if string.len(value) > 40 then
+      indented(level, index, "[[", value, "]];")
     else
-      indented(level, index, tostring(value), ",")
+      indented(level, index, string.format("%q", value), ",")
     end
+  else
+    indented(level, index, tostring(value), ",")
   end
 end
 
-local dumpvar = function(value, limit, name)
-  -- function num : 0_3 , upvalues : dumpvisited, dumpval, _ENV
+local function dumpvar(value, limit, name)
   dumpvisited = {}
-  if not name then
-    dumpval(0, tostring(value), value, limit)
-    dumpvisited = nil
-  end
+  dumpval(0, name or tostring(value), value, limit)
+  dumpvisited = nil
 end
 
-ELogLevel = {All = 0, Trace = 1, Debug = 2, Info = 3, Warning = 4, Error = 5, Fatal = 6, Exception = 7, None = 8}
--- DECOMPILER ERROR at PC21: Confused about usage of register: R8 in 'UnsetPending'
-
+ELogLevel = {
+  All = 0,
+  Trace = 1,
+  Debug = 2,
+  Info = 3,
+  Warning = 4,
+  Error = 5,
+  Fatal = 6,
+  Exception = 7,
+  None = 8
+}
 debug.dumpdepth = 5
-dump = function(v, depth)
-  -- function num : 0_4 , upvalues : _ENV, dumpfrom, dumpvar, args2str
-  if ELogLevel.Debug < Log.loglevel then
-    return 
-  end
-  local info = (debug.getinfo)(2)
-  dumpfrom = info.source .. "|" .. info.currentline
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
 
-  _G.tsss = {}
-  if not depth then
-    dumpvar(v, debug.dumpdepth + 1, tostring(v))
-    local file = (string.match)(info.short_src, "([%w_]+%.%w+)$")
-    logdebug(args2str({"[dump] ", file, ":", info.currentline, "\t", (table.concat)(_G.tsss, "\n")}))
+function dump(v, depth)
+  if Log.loglevel > ELogLevel.Debug then
+    return
   end
+  local info = debug.getinfo(2)
+  dumpfrom = info.source .. "|" .. info.currentline
+  _G.tsss = {}
+  dumpvar(v, (depth or debug.dumpdepth) + 1, tostring(v))
+  local file = string.match(info.short_src, "([%w_]+%.%w+)$")
+  logdebug(args2str({
+    "[dump] ",
+    file,
+    ":",
+    info.currentline,
+    "\t",
+    table.concat(_G.tsss, "\n")
+  }))
 end
 
 Log = {}
--- DECOMPILER ERROR at PC29: Confused about usage of register: R8 in 'UnsetPending'
-
 Log.loglevel = ELogLevel.Debug
--- DECOMPILER ERROR at PC32: Confused about usage of register: R8 in 'UnsetPending'
-
 Log.loglevel_table = ELogLevel
--- DECOMPILER ERROR at PC35: Confused about usage of register: R8 in 'UnsetPending'
-
 Log.logkeys = {}
--- DECOMPILER ERROR at PC37: Confused about usage of register: R8 in 'UnsetPending'
-
 Log.enableassert = false
--- DECOMPILER ERROR at PC39: Confused about usage of register: R8 in 'UnsetPending'
-
 Log.enableexception = false
--- DECOMPILER ERROR at PC41: Confused about usage of register: R8 in 'UnsetPending'
-
 Log.enableprofile = false
--- DECOMPILER ERROR at PC44: Confused about usage of register: R8 in 'UnsetPending'
 
-Log.init = function()
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.setkey)("assert", true)
-  ;
-  (Log.setkey)("exception", true)
-  ;
-  (Log.setkey)("profile", true)
+function Log.init()
+  Log.setkey("assert", true)
+  Log.setkey("exception", true)
+  Log.setkey("profile", true)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.setlevel = function(level)
-  -- function num : 0_6 , upvalues : _ENV
-  if level and (LogWrapper.GetLevel)() ~= level then
-    (LogWrapper.SetLevel)(level)
-    level = (LogWrapper.GetLevel)()
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
+function Log.setlevel(level)
+  if level and LogWrapper.GetLevel() ~= level then
+    LogWrapper.SetLevel(level)
+    level = LogWrapper.GetLevel()
     if level == "all" then
       Log.loglevel = ELogLevel.All
-    else
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-      if level == "trace" then
-        Log.loglevel = ELogLevel.Trace
-      else
-        -- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-        if level == "debug" then
-          Log.loglevel = ELogLevel.Debug
-        else
-          -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-          if level == "info" then
-            Log.loglevel = ELogLevel.Info
-          else
-            -- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-            if level == "warning" then
-              Log.loglevel = ELogLevel.Warning
-            else
-              -- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-              if level == "error" then
-                Log.loglevel = ELogLevel.Error
-              else
-                -- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-                if level == "fatal" then
-                  Log.loglevel = ELogLevel.Fatal
-                else
-                  -- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-                  if level == "exception" then
-                    Log.loglevel = ELogLevel.Exception
-                  else
-                    -- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-                    if level == "none" then
-                      Log.loglevel = ELogLevel.None
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+    elseif level == "trace" then
+      Log.loglevel = ELogLevel.Trace
+    elseif level == "debug" then
+      Log.loglevel = ELogLevel.Debug
+    elseif level == "info" then
+      Log.loglevel = ELogLevel.Info
+    elseif level == "warning" then
+      Log.loglevel = ELogLevel.Warning
+    elseif level == "error" then
+      Log.loglevel = ELogLevel.Error
+    elseif level == "fatal" then
+      Log.loglevel = ELogLevel.Fatal
+    elseif level == "exception" then
+      Log.loglevel = ELogLevel.Exception
+    elseif level == "none" then
+      Log.loglevel = ELogLevel.None
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.setpath = function(path)
-  -- function num : 0_7 , upvalues : _ENV
-  if path and (LogWrapper.GetPath)() ~= path then
-    (LogWrapper.SetPath)(path)
+function Log.setpath(path)
+  if path and LogWrapper.GetPath() ~= path then
+    LogWrapper.SetPath(path)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.setconsole = function(enable)
-  -- function num : 0_8 , upvalues : _ENV
-  if enable and (LogWrapper.GetConsole)() ~= enable then
-    (LogWrapper.SetConsole)(enable)
+function Log.setconsole(enable)
+  if enable and LogWrapper.GetConsole() ~= enable then
+    LogWrapper.SetConsole(enable)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.setkey = function(key, enable)
-  -- function num : 0_9 , upvalues : _ENV
+function Log.setkey(key, enable)
   if key then
-    (LogWrapper.SetKey)(key, enable)
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
+    LogWrapper.SetKey(key, enable)
     if enable then
-      (Log.logkeys)[key] = true
-      -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
+      Log.logkeys[key] = true
       if key == "assert" then
         Log.enableassert = true
-      else
-        -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-        if key == "exception" then
-          Log.enableexception = true
-        else
-          -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-          if key == "profile" then
-            Log.enableprofile = true
-          end
-        end
+      elseif key == "exception" then
+        Log.enableexception = true
+      elseif key == "profile" then
+        Log.enableprofile = true
       end
     else
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (Log.logkeys)[key] = nil
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
+      Log.logkeys[key] = nil
       if key == "assert" then
         Log.enableassert = false
-      else
-        -- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-        if key == "exception" then
-          Log.enableexception = false
-        else
-          -- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-          if key == "profile" then
-            Log.enableprofile = false
-          end
-        end
+      elseif key == "exception" then
+        Log.enableexception = false
+      elseif key == "profile" then
+        Log.enableprofile = false
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.getkey = function(key)
-  -- function num : 0_10 , upvalues : _ENV
-  if (Log.logkeys)[key] ~= true then
-    do return not key end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function Log.getkey(key)
+  if key then
+    return Log.logkeys[key] == true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.resetkeys = function()
-  -- function num : 0_11 , upvalues : _ENV
-  (LogWrapper.ResetKeys)()
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
-
+function Log.resetkeys()
+  LogWrapper.ResetKeys()
   Log.logkeys = {}
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.enablelevel = function(level)
-  -- function num : 0_12 , upvalues : _ENV
-  do return Log.loglevel <= level end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Log.enablelevel(level)
+  return level >= Log.loglevel
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.sys = function(...)
-  -- function num : 0_13 , upvalues : _ENV, args2str
-  if not (Log.enablelevel)(ELogLevel.Info) then
-    return 
+function Log.sys(...)
+  if not Log.enablelevel(ELogLevel.Info) then
+    return
   end
-  local info = (debug.getinfo)(2)
-  local file = (string.match)(info.short_src, "([%w_]+%.%w+)$")
-  logtrace(args2str({file, ":", info.currentline, "\t", args2str({...}, " ")}))
+  local info = debug.getinfo(2)
+  local file = string.match(info.short_src, "([%w_]+%.%w+)$")
+  logtrace(args2str({
+    file,
+    ":",
+    info.currentline,
+    "\t",
+    args2str({
+      ...
+    }, " ")
+  }))
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.traceback = function(thread, message, level)
-  -- function num : 0_14 , upvalues : _ENV, traceback
-  if not (Log.enablelevel)(ELogLevel.Debug) then
-    return 
+function Log.traceback(thread, message, level)
+  if not Log.enablelevel(ELogLevel.Debug) then
+    return
   end
   return traceback(thread, message, level)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.debug = function(...)
-  -- function num : 0_15 , upvalues : _ENV, args2str
-  if not (Log.enablelevel)(ELogLevel.Debug) then
-    return 
+function Log.debug(...)
+  if not Log.enablelevel(ELogLevel.Debug) then
+    return
   end
-  local info = (debug.getinfo)(2)
-  local file = (string.match)(info.short_src, "([%w_]+%.%w+)$")
-  logdebug(args2str({file, ":", info.currentline, "\t", args2str({...}, " ")}))
+  local info = debug.getinfo(2)
+  local file = string.match(info.short_src, "([%w_]+%.%w+)$")
+  logdebug(args2str({
+    file,
+    ":",
+    info.currentline,
+    "\t",
+    args2str({
+      ...
+    }, " ")
+  }))
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.notice = function(...)
-  -- function num : 0_16 , upvalues : _ENV, args2str
-  if not (Log.enablelevel)(ELogLevel.Info) then
-    return 
+function Log.notice(...)
+  if not Log.enablelevel(ELogLevel.Info) then
+    return
   end
-  local info = (debug.getinfo)(2)
-  local file = (string.match)(info.short_src, "([%w_]+%.%w+)$")
-  local logContent = "<color=#FFD700><b>" .. args2str({file, ":", info.currentline, "\t", ...}) .. "</b></color>"
+  local info = debug.getinfo(2)
+  local file = string.match(info.short_src, "([%w_]+%.%w+)$")
+  local logContent = "<color=#FFD700><b>" .. args2str({
+    file,
+    ":",
+    info.currentline,
+    "\t",
+    ...
+  }) .. "</b></color>"
   logdebug(logContent)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.warn = function(...)
-  -- function num : 0_17 , upvalues : _ENV, args2str
-  if not (Log.enablelevel)(ELogLevel.Warning) then
-    return 
+function Log.warn(...)
+  if not Log.enablelevel(ELogLevel.Warning) then
+    return
   end
-  local info = (debug.getinfo)(2)
-  local file = (string.match)(info.short_src, "([%w_]+%.%w+)$")
-  logwarn(args2str({file, ":", info.currentline, "\t", args2str({...}, " ")}))
+  local info = debug.getinfo(2)
+  local file = string.match(info.short_src, "([%w_]+%.%w+)$")
+  logwarn(args2str({
+    file,
+    ":",
+    info.currentline,
+    "\t",
+    args2str({
+      ...
+    }, " ")
+  }))
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.error = function(...)
-  -- function num : 0_18 , upvalues : _ENV, args2str
-  if not (Log.enablelevel)(ELogLevel.Error) then
-    return 
+function Log.error(...)
+  if not Log.enablelevel(ELogLevel.Error) then
+    return
   end
-  local info = (debug.getinfo)(2)
-  local file = (string.match)(info.short_src, "([%w_]+%.%w+)$")
-  logerror(args2str({file, ":", info.currentline, "\t", args2str({...}, " ")}))
+  local info = debug.getinfo(2)
+  local file = string.match(info.short_src, "([%w_]+%.%w+)$")
+  logerror(args2str({
+    file,
+    ":",
+    info.currentline,
+    "\t",
+    args2str({
+      ...
+    }, " ")
+  }))
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.info = function(...)
-  -- function num : 0_19 , upvalues : _ENV, args2str
-  if not (Log.enablelevel)(ELogLevel.Info) then
-    return 
+function Log.info(...)
+  if not Log.enablelevel(ELogLevel.Info) then
+    return
   end
-  local info = (debug.getinfo)(2)
-  local file = (string.match)(info.short_src, "([%w_]+%.%w+)$")
-  loginfo(args2str({file, ":", info.currentline, "\t", args2str({...}, " ")}))
+  local info = debug.getinfo(2)
+  local file = string.match(info.short_src, "([%w_]+%.%w+)$")
+  loginfo(args2str({
+    file,
+    ":",
+    info.currentline,
+    "\t",
+    args2str({
+      ...
+    }, " ")
+  }))
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.fatal = function(...)
-  -- function num : 0_20 , upvalues : _ENV, args2str
-  if not (Log.enablelevel)(ELogLevel.Fatal) then
-    return 
+function Log.fatal(...)
+  if not Log.enablelevel(ELogLevel.Fatal) then
+    return
   end
-  local info = (debug.getinfo)(2)
-  local file = (string.match)(info.short_src, "([%w_]+%.%w+)$")
-  logfatal(args2str({file, ":", info.currentline, "\t", args2str({...}, " ")}))
+  local info = debug.getinfo(2)
+  local file = string.match(info.short_src, "([%w_]+%.%w+)$")
+  logfatal(args2str({
+    file,
+    ":",
+    info.currentline,
+    "\t",
+    args2str({
+      ...
+    }, " ")
+  }))
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.assert = function(cond, ...)
-  -- function num : 0_21 , upvalues : _ENV, args2str
+function Log.assert(cond, ...)
   if cond == true then
-    return 
+    return
   end
   if not Log.enableexception then
-    return 
+    return
   end
-  if not (Log.enablelevel)(ELogLevel.Exception) then
-    return 
+  if not Log.enablelevel(ELogLevel.Exception) then
+    return
   end
-  local info = (debug.getinfo)(2)
-  local file = (string.match)(info.short_src, "([%w_]+%.%w+)$")
-  local csui = ((UnityEngine.GameObject).Find)("CSUI")
+  local info = debug.getinfo(2)
+  local file = string.match(info.short_src, "([%w_]+%.%w+)$")
+  local csui = UnityEngine.GameObject.Find("CSUI")
   if csui then
     local csuiTran = csui.transform
     local cameraFrameworkTran = csuiTran:Find("FrameworkUI/CameraFramework")
@@ -435,24 +352,27 @@ Log.assert = function(cond, ...)
       end
     end
   end
-  do
-    logexception(args2str({file, ":", info.currentline, "\t", args2str({...}, " ")}))
-  end
+  logexception(args2str({
+    file,
+    ":",
+    info.currentline,
+    "\t",
+    args2str({
+      ...
+    }, " ")
+  }))
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.exception = function(...)
-  -- function num : 0_22 , upvalues : _ENV, args2str
+function Log.exception(...)
   if not Log.enableexception then
-    return 
+    return
   end
-  if not (Log.enablelevel)(ELogLevel.Exception) then
-    return 
+  if not Log.enablelevel(ELogLevel.Exception) then
+    return
   end
-  local info = (debug.getinfo)(2)
-  local file = (string.match)(info.short_src, "([%w_]+%.%w+)$")
-  local csui = ((UnityEngine.GameObject).Find)("CSUI")
+  local info = debug.getinfo(2)
+  local file = string.match(info.short_src, "([%w_]+%.%w+)$")
+  local csui = UnityEngine.GameObject.Find("CSUI")
   if csui then
     local csuiTran = csui.transform
     local cameraFrameworkTran = csuiTran:Find("FrameworkUI/CameraFramework")
@@ -463,78 +383,93 @@ Log.exception = function(...)
       end
     end
   end
-  do
-    logexception(args2str({file, ":", info.currentline, "\t", args2str({...}, " ")}))
+  logexception(args2str({
+    file,
+    ":",
+    info.currentline,
+    "\t",
+    args2str({
+      ...
+    }, " ")
+  }))
+end
+
+function Log.showexception(msg, path)
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.System, PopupMsgBoxType.Ok, "", msg)
+end
+
+function Log.key(key, ...)
+  if not Log.getkey(key) then
+    return
   end
+  local info = debug.getinfo(2)
+  local file = string.match(info.short_src, "([%w_]+%.%w+)$")
+  logkey(key, args2str({
+    file,
+    ":",
+    info.currentline,
+    "\t",
+    args2str({
+      ...
+    }, " ")
+  }))
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.showexception = function(msg, path)
-  -- function num : 0_23 , upvalues : _ENV
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.System, PopupMsgBoxType.Ok, "", msg)
-end
-
--- DECOMPILER ERROR at PC101: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.key = function(key, ...)
-  -- function num : 0_24 , upvalues : _ENV, args2str
-  if not (Log.getkey)(key) then
-    return 
-  end
-  local info = (debug.getinfo)(2)
-  local file = (string.match)(info.short_src, "([%w_]+%.%w+)$")
-  logkey(key, args2str({file, ":", info.currentline, "\t", args2str({...}, " ")}))
-end
-
--- DECOMPILER ERROR at PC104: Confused about usage of register: R8 in 'UnsetPending'
-
-Log.prof = function(...)
-  -- function num : 0_25 , upvalues : _ENV, args2str
+function Log.prof(...)
   if not _G.EnalbeProfLog then
-    return 
+    return
   end
   if not Log.enableprofile then
-    return 
+    return
   end
-  if not (Log.enablelevel)(ELogLevel.Fatal) then
-    return 
+  if not Log.enablelevel(ELogLevel.Fatal) then
+    return
   end
-  local info = (debug.getinfo)(2)
-  local file = (string.match)(info.short_src, "([%w_]+%.%w+)$")
-  logprof(args2str({file, ":", info.currentline, "\t", args2str({...}, " ")}))
+  local info = debug.getinfo(2)
+  local file = string.match(info.short_src, "([%w_]+%.%w+)$")
+  logprof(args2str({
+    file,
+    ":",
+    info.currentline,
+    "\t",
+    args2str({
+      ...
+    }, " ")
+  }))
 end
 
-local programmers = {"ylw", "yqq", "zn", "cj"}
-for i,v in pairs(programmers) do
-  do
-    -- DECOMPILER ERROR at PC120: Confused about usage of register: R14 in 'UnsetPending'
-
-    _G["_" .. v] = function(...)
-  -- function num : 0_26 , upvalues : _ENV, v, args2str
-  if not (Log.enablelevel)(ELogLevel.Info) then
-    return 
+local programmers = {
+  "ylw",
+  "yqq",
+  "zn",
+  "cj"
+}
+for i, v in pairs(programmers) do
+  _G["_" .. v] = function(...)
+    if not Log.enablelevel(ELogLevel.Info) then
+      return
+    end
+    if not Log.getkey(v) then
+      return
+    end
+    local info = debug.getinfo(2)
+    local file = string.match(info.short_src, "([%w_]+%.%w+)$")
+    logkey(v, args2str({
+      file,
+      ":",
+      info.currentline,
+      "\t",
+      args2str({
+        ...
+      }, " ")
+    }))
   end
-  if not (Log.getkey)(v) then
-    return 
-  end
-  local info = (debug.getinfo)(2)
-  local file = (string.match)(info.short_src, "([%w_]+%.%w+)$")
-  logkey(v, args2str({file, ":", info.currentline, "\t", args2str({...}, " ")}))
 end
 
-  end
-end
-print = function()
-  -- function num : 0_27 , upvalues : _ENV
+function print()
   error("print is forbidden")
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R9 in 'UnsetPending'
-
-debug.traceback = function(...)
-  -- function num : 0_28 , upvalues : _ENV
-  return (Log.traceback)(...)
+function debug.traceback(...)
+  return Log.traceback(...)
 end
-
-

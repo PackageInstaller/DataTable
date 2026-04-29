@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/task/ui_activity_n34_task_infomation_paste_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN34TaskInfomationPasteTips", UIController)
 UIActivityN34TaskInfomationPasteTips = UIActivityN34TaskInfomationPasteTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN34TaskInfomationPasteTips.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN34TaskInfomationPasteTips:OnShow(uiParams)
   self._pastBtn = self:GetGameObject("PastBtn")
   self._closeBtn = self:GetGameObject("CloseBtn")
   self._descText = self:GetUIComponent("UILocalizationText", "Des")
@@ -17,37 +10,22 @@ UIActivityN34TaskInfomationPasteTips.OnShow = function(self, uiParams)
     self._cfg = uiParams[1]
     self._callBack = uiParams[2]
   end
-  ;
-  (self._descText):SetText((StringTable.Get)((self._cfg).FinalReport))
+  self._descText:SetText(StringTable.Get(self._cfg.FinalReport))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationPasteTips.PlayAnimation = function(self, TT)
-  -- function num : 0_1
-  (self._pastBtn):SetActive(false)
-  ;
-  (self._closeBtn):SetActive(false)
-  ;
-  (self._pastBtn):SetActive(false)
-  ;
-  (self._closeBtn):SetActive(true)
+function UIActivityN34TaskInfomationPasteTips:PlayAnimation(TT)
+  self._pastBtn:SetActive(false)
+  self._closeBtn:SetActive(false)
+  self._pastBtn:SetActive(false)
+  self._closeBtn:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationPasteTips.PastBtnOnClick = function(self)
-  -- function num : 0_2
+function UIActivityN34TaskInfomationPasteTips:PastBtnOnClick()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationPasteTips.CloseBtnOnClick = function(self)
-  -- function num : 0_3
+function UIActivityN34TaskInfomationPasteTips:CloseBtnOnClick()
   if self._callBack then
-    (self._callBack)()
+    self._callBack()
   end
   self:CloseDialog()
 end
-
-

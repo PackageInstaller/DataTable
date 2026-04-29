@@ -1,39 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/common/exchange/ui_season_exchange_confirm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonExchangeConfirm", UIController)
 UISeasonExchangeConfirm = UISeasonExchangeConfirm
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonExchangeConfirm.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  if uiParams then
-    self._seasonId = uiParams[1]
-    if uiParams then
-      self._component = uiParams[2]
-      if uiParams then
-        self._info = uiParams[3]
-        if self._info == nil then
-          (Log.error)("UISeasonExchangeConfirm:LoadDataOnEnter() param = nil")
-          res:SetSucc(false)
-          return 
-        end
-      end
-    end
+function UISeasonExchangeConfirm:LoadDataOnEnter(TT, res, uiParams)
+  self._seasonModule = GameGlobal.GetModule(SeasonModule)
+  self._seasonId = uiParams and uiParams[1]
+  self._component = uiParams and uiParams[2]
+  self._info = uiParams and uiParams[3]
+  if self._info == nil then
+    Log.error("UISeasonExchangeConfirm:LoadDataOnEnter() param = nil")
+    res:SetSucc(false)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm.OnShow = function(self, uiParams)
-  -- function num : 0_1
-  local roleAsset = (self._info).m_reward
+function UISeasonExchangeConfirm:OnShow(uiParams)
+  local roleAsset = self._info.m_reward
   local itemId, itemCount = roleAsset.assetid, roleAsset.count
   local canExchangeCount = self:_ConstMax()
-  local state = canExchangeCount > 1 and 2 or 1
+  local state = 1 < canExchangeCount and 2 or 1
   self._buyCount = 1
   self:_SetState(state)
   self:_SetItem(itemId, itemCount)
@@ -45,292 +29,179 @@ UISeasonExchangeConfirm.OnShow = function(self, uiParams)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonExchangeConfirm:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._Refresh = function(self)
-  -- function num : 0_3
+function UISeasonExchangeConfirm:_Refresh()
   self:_SetBuyCount(self._buyCount)
   self:_SetCoinCount(self._buyCount)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._UpdateBuyCount = function(self, newCount)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonExchangeConfirm:_UpdateBuyCount(newCount)
   local min, max = self:_ConstMin(), self:_CalcMaxCount()
-  self._buyCount = (Mathf.Clamp)(newCount, min, max)
+  self._buyCount = Mathf.Clamp(newCount, min, max)
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._SetState = function(self, state)
-  -- function num : 0_5 , upvalues : _ENV
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"_bgOne", "_buyBtnOne"}
-, 
-{"_bgMulti"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, state)
+function UISeasonExchangeConfirm:_SetState(state)
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {"_bgOne", "_buyBtnOne"},
+    {"_bgMulti"}
+  })
+  UIWidgetHelper.SetObjGroupShow(objs, state)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._SetItem = function(self, itemId, itemCount)
-  -- function num : 0_6 , upvalues : _ENV
-  (UIWidgetHelper.SetItemIcon)(self, itemId, "_icon")
-  ;
-  (UIWidgetHelper.SetItemCount)(self, itemId, "_haveCount", function(havecount)
-    -- function num : 0_6_0 , upvalues : _ENV
-    local str = (StringTable.Get)("str_shop_current_item_count", havecount)
+function UISeasonExchangeConfirm:_SetItem(itemId, itemCount)
+  UIWidgetHelper.SetItemIcon(self, itemId, "_icon")
+  UIWidgetHelper.SetItemCount(self, itemId, "_haveCount", function(havecount)
+    local str = StringTable.Get("str_shop_current_item_count", havecount)
     return str
-  end
-)
-  ;
-  (UIWidgetHelper.SetItemText)(self, itemId, "_name", "_desc")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_count", "x" .. itemCount)
+  end)
+  UIWidgetHelper.SetItemText(self, itemId, "_name", "_desc")
+  UIWidgetHelper.SetLocalizationText(self, "_count", "x" .. itemCount)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._SetPetDetail = function(self, itemId)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet)[itemId]
+function UISeasonExchangeConfirm:_SetPetDetail(itemId)
+  local cfg = Cfg.cfg_pet[itemId]
   local isPet = cfg ~= nil
-  ;
-  (self:GetGameObject("_petDetail")):SetActive(isPet)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:GetGameObject("_petDetail"):SetActive(isPet)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._SetBuyCountGroup = function(self, state)
-  -- function num : 0_8
+function UISeasonExchangeConfirm:_SetBuyCountGroup(state)
   local isShow = state == 2
-  ;
-  (self:GetGameObject("_buyCountGroup")):SetActive(isShow)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:GetGameObject("_buyCountGroup"):SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._SetBuyCount = function(self, count)
-  -- function num : 0_9 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "_buyCount", count)
+function UISeasonExchangeConfirm:_SetBuyCount(count)
+  UIWidgetHelper.SetLocalizationText(self, "_buyCount", count)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._SetRemain = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local inf = (self._component):IsExchangeItemInfinity(self._info)
-  ;
-  (self:GetGameObject("_remain")):SetActive(not inf)
+function UISeasonExchangeConfirm:_SetRemain()
+  local inf = self._component:IsExchangeItemInfinity(self._info)
+  self:GetGameObject("_remain"):SetActive(not inf)
   local remain = self:_ConstMax()
-  local str = (StringTable.Get)("str_season_s1_exchange_remain", remain)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_remain", str)
+  local str = StringTable.Get("str_season_s1_exchange_remain", remain)
+  UIWidgetHelper.SetLocalizationText(self, "_remain", str)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._SetCoin = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local itemId = (self._info).m_cost_item_id
+function UISeasonExchangeConfirm:_SetCoin()
+  local itemId = self._info.m_cost_item_id
   local atlasName = "UICommon.spriteatlas"
   local spriteName = "toptoon_" .. itemId
-  ;
-  (UIWidgetHelper.SetImageSprite)(self, "_coin", atlasName, spriteName)
+  UIWidgetHelper.SetImageSprite(self, "_coin", atlasName, spriteName)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._SetCoinCount = function(self, buyCount)
-  -- function num : 0_12 , upvalues : _ENV
+function UISeasonExchangeConfirm:_SetCoinCount(buyCount)
   local total = self:_CalcTotalPrice(buyCount)
   local enough = self:_CheckCoinEnough(buyCount)
   local color = enough and "#FAFDF9" or "#c56442"
-  local str = (UIActivityHelper.GetColorText)(color, total)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_price", str)
+  local str = UIActivityHelper.GetColorText(color, total)
+  UIWidgetHelper.SetLocalizationText(self, "_price", str)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._ConstMin = function(self)
-  -- function num : 0_13
+function UISeasonExchangeConfirm:_ConstMin()
   return 1
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._ConstMax = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UISeasonExchangeConfirm:_ConstMax()
   local constMax = 99
-  local max = (self._component):GetCanExchangeCount(self._info, constMax)
-  return (Mathf.Max)(max, 1)
+  local max = self._component:GetCanExchangeCount(self._info, constMax)
+  return Mathf.Max(max, 1)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._CalcMinCount = function(self)
-  -- function num : 0_15
+function UISeasonExchangeConfirm:_CalcMinCount()
   local min, max = self:_ConstMin(), self:_ConstMax()
   return min
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._CalcMaxCount = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UISeasonExchangeConfirm:_CalcMaxCount()
   local min, max = self:_ConstMin(), self:_ConstMax()
   local haveCount = self:_CalcHaveCount()
   local price = self:_CalcTotalPrice(1)
-  local count = (Mathf.Floor)(haveCount / price)
-  return (Mathf.Clamp)(count, min, max)
+  local count = Mathf.Floor(haveCount / price)
+  return Mathf.Clamp(count, min, max)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._CalcHaveCount = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local itemId = (self._info).m_cost_item_id
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UISeasonExchangeConfirm:_CalcHaveCount()
+  local itemId = self._info.m_cost_item_id
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local haveCount = itemModule:GetItemCount(itemId)
   return haveCount
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._CalcTotalPrice = function(self, buyCount)
-  -- function num : 0_18
-  local price = (self._info).m_cost_count
+function UISeasonExchangeConfirm:_CalcTotalPrice(buyCount)
+  local price = self._info.m_cost_count
   local total = price * buyCount
   return total
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._CheckCoinEnough = function(self, buyCount)
-  -- function num : 0_19
+function UISeasonExchangeConfirm:_CheckCoinEnough(buyCount)
   local haveCount = self:_CalcHaveCount()
   local total = self:_CalcTotalPrice(buyCount)
-  do return total <= haveCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return haveCount >= total
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm.MinBtnOnClick = function(self)
-  -- function num : 0_20
+function UISeasonExchangeConfirm:MinBtnOnClick()
   local newCount = self:_CalcMinCount()
   self:_UpdateBuyCount(newCount)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm.SubBtnOnClick = function(self)
-  -- function num : 0_21
+function UISeasonExchangeConfirm:SubBtnOnClick()
   local newCount = self._buyCount - 1
   self:_UpdateBuyCount(newCount)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm.AddBtnOnClick = function(self)
-  -- function num : 0_22
+function UISeasonExchangeConfirm:AddBtnOnClick()
   local newCount = self._buyCount + 1
   self:_UpdateBuyCount(newCount)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm.MaxBtnOnClick = function(self)
-  -- function num : 0_23
+function UISeasonExchangeConfirm:MaxBtnOnClick()
   local newCount = self:_CalcMaxCount()
   self:_UpdateBuyCount(newCount)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm.BuyBtnOnClick = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UISeasonExchangeConfirm:BuyBtnOnClick()
   if self:_CheckCoinEnough(self._buyCount) then
-    local id = (self._info).m_id
+    local id = self._info.m_id
     local count = self._buyCount
-    ;
-    (self._component):Start_HandleExchangeItem(id, count, function(res, rewards)
-    -- function num : 0_24_0 , upvalues : self
-    self:_OnReceiveRewards(res, rewards)
-  end
-)
+    self._component:Start_HandleExchangeItem(id, count, function(res, rewards)
+      self:_OnReceiveRewards(res, rewards)
+    end)
   else
-    do
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_pay_item_not_enough"))
-    end
+    ToastManager.ShowToast(StringTable.Get("str_pay_item_not_enough"))
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._OnReceiveRewards = function(self, res, rewards)
-  -- function num : 0_25 , upvalues : _ENV
+function UISeasonExchangeConfirm:_OnReceiveRewards(res, rewards)
   if self.view == nil then
-    return 
+    return
   end
   if res:GetSucc() then
     self:_CloseDialogWithAnim()
-    ;
-    (UISeasonHelper.ShowUIGetRewards)(rewards)
+    UISeasonHelper.ShowUIGetRewards(rewards)
   else
-    ;
-    (self._seasonModule):CheckErrorCode(res.m_result, self._seasonId)
+    self._seasonModule:CheckErrorCode(res.m_result, self._seasonId)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm.PetDetailBtnOnClick = function(self, go)
-  -- function num : 0_26
-  self:ShowDialog("UIShopPetDetailController", (self.goodData):GetItemId())
+function UISeasonExchangeConfirm:PetDetailBtnOnClick(go)
+  self:ShowDialog("UIShopPetDetailController", self.goodData:GetItemId())
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm.CloseBtnOnClick = function(self, go)
-  -- function num : 0_27
+function UISeasonExchangeConfirm:CloseBtnOnClick(go)
   self:_CloseDialogWithAnim()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._AttachEvents = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UISeasonExchangeConfirm:_AttachEvents()
   self:AttachEvent(GameEventType.ItemCountChanged, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._DetachEvents = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UISeasonExchangeConfirm:_DetachEvents()
   self:DetachEvent(GameEventType.ItemCountChanged, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeConfirm._CloseDialogWithAnim = function(self, callback)
-  -- function num : 0_30
+function UISeasonExchangeConfirm:_CloseDialogWithAnim(callback)
   self:CloseDialog()
 end
-
-

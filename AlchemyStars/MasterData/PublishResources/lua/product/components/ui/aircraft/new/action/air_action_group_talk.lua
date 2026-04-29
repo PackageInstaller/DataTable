@@ -1,21 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_group_talk.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionGroupTalk", Object)
 AirActionGroupTalk = AirActionGroupTalk
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionGroupTalk.Constructor = function(self, petList, cfg, airMain)
-  -- function num : 0_0 , upvalues : _ENV
+function AirActionGroupTalk:Constructor(petList, cfg, airMain)
   self._airMain = airMain
   self._petList = petList
   self._talkCfg = cfg
   self._talkIndex = 1
   self._running = false
-  self._talkInterval = ((Cfg.cfg_aircraft_const).aircraft_social_talk_txt_interval).IntValue or 5000
-  self._talkOverStayTime = ((Cfg.cfg_aircraft_const).aircraft_social_talk_stay_time).IntValue or 5000
+  self._talkInterval = Cfg.cfg_aircraft_const.aircraft_social_talk_txt_interval.IntValue or 5000
+  self._talkOverStayTime = Cfg.cfg_aircraft_const.aircraft_social_talk_stay_time.IntValue or 5000
   self._talkData = cfg.TalkData
   self._curTalkAction = nil
   self._lastTalkAction = nil
@@ -24,72 +17,48 @@ AirActionGroupTalk.Constructor = function(self, petList, cfg, airMain)
   self._isOver = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionGroupTalk.GetTalkPet = function(self, petTemplateID)
-  -- function num : 0_1
-  return (self._petList)[petTemplateID]
+function AirActionGroupTalk:GetTalkPet(petTemplateID)
+  return self._petList[petTemplateID]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionGroupTalk.IsCanTalk = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  do return self._talkIndex < (table.count)(self._talkData) end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AirActionGroupTalk:IsCanTalk()
+  return self._talkIndex < table.count(self._talkData)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionGroupTalk.Talk = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local talkData = (self._talkData)[self._talkIndex]
+function AirActionGroupTalk:Talk()
+  local talkData = self._talkData[self._talkIndex]
   local talkPet = self:GetTalkPet(talkData.Speaker)
   if talkPet then
     local action = AirActionSentence:New(talkPet, talkData.data, self._airMain)
     action:SetLastTime(self._talkInterval)
     if self._curTalkAction then
-      if self._lastTalkAction and not (self._lastTalkAction):IsOver() then
-        (self._lastTalkAction):Stop()
+      if self._lastTalkAction and not self._lastTalkAction:IsOver() then
+        self._lastTalkAction:Stop()
       end
       self._lastTalkAction = self._curTalkAction
-      ;
-      (self._lastTalkAction):StartClose()
+      self._lastTalkAction:StartClose()
     end
     self._curTalkAction = action
-    ;
-    (self._curTalkAction):Start()
+    self._curTalkAction:Start()
     self._running = true
   else
-    do
-      ;
-      (Log.fatal)("")
-    end
+    Log.fatal("")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionGroupTalk.Start = function(self)
-  -- function num : 0_4
+function AirActionGroupTalk:Start()
   self:Talk()
-  self._curTalkBeginTime = (self._airMain):Time()
+  self._curTalkBeginTime = self._airMain:Time()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionGroupTalk.IsOver = function(self)
-  -- function num : 0_5
+function AirActionGroupTalk:IsOver()
   return self._isOver
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionGroupTalk.Update = function(self, deltaTimeMS)
-  -- function num : 0_6
+function AirActionGroupTalk:Update(deltaTimeMS)
   if self._running and self._curTalkAction then
-    (self._curTalkAction):Update(deltaTimeMS)
-    if (self._curTalkAction):IsOver() then
+    self._curTalkAction:Update(deltaTimeMS)
+    if self._curTalkAction:IsOver() then
       self._talkIndex = self._talkIndex + 1
       if self:IsCanTalk() then
         self:Talk()
@@ -101,35 +70,21 @@ AirActionGroupTalk.Update = function(self, deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionGroupTalk.Stop = function(self)
-  -- function num : 0_7
+function AirActionGroupTalk:Stop()
   self._running = false
   self._isOver = true
   if self._curTalkAction then
-    (self._curTalkAction):Stop()
+    self._curTalkAction:Stop()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionGroupTalk.GetPets = function(self)
-  -- function num : 0_8
+function AirActionGroupTalk:GetPets()
   return self._petList
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionGroupTalk.Dispose = function(self)
-  -- function num : 0_9
+function AirActionGroupTalk:Dispose()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionGroupTalk.Log = function(self, ...)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.debug)("[AircraftAction] ", ...)
+function AirActionGroupTalk:Log(...)
+  Log.debug("[AircraftAction] ", ...)
 end
-
-

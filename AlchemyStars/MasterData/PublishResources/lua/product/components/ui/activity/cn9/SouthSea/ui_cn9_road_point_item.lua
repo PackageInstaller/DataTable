@@ -1,28 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn9/SouthSea/ui_cn9_road_point_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN9RoadPointItem", UICustomWidget)
 UICN9RoadPointItem = UICN9RoadPointItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN9RoadPointItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._pos = {[1] = Vector2(2270, 175), [2] = Vector2(2600, -100), [3] = Vector2(3000, 175), [4] = Vector2(3400, -100), [5] = Vector2(3750, 175), [6] = Vector2(4125, -100)}
+function UICN9RoadPointItem:Constructor()
+  self._pos = {
+    [1] = Vector2(2270, 175),
+    [2] = Vector2(2600, -100),
+    [3] = Vector2(3000, 175),
+    [4] = Vector2(3400, -100),
+    [5] = Vector2(3750, 175),
+    [6] = Vector2(4125, -100)
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN9RoadPointItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UICN9RoadPointItem:OnShow(uiParams)
   self:_InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN9RoadPointItem._InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN9RoadPointItem:_InitWidget()
   self._rect = self:GetUIComponent("RectTransform", "gameObj")
   self._RoadPointNameText = self:GetUIComponent("UILocalizationText", "RoadPointNameText")
   self._bg = self:GetUIComponent("Image", "bg")
@@ -30,49 +24,26 @@ UICN9RoadPointItem._InitWidget = function(self)
   self._atlas = self:GetAsset("UICN9.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN9RoadPointItem.SetData = function(self, id, pass, info, clickCallback)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R5 in 'UnsetPending'
-
-  (self._rect).anchorMax = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMin = Vector2(0.5, 0.5)
-  ;
-  (self._pass):SetActive(pass)
+function UICN9RoadPointItem:SetData(id, pass, info, clickCallback)
+  self._rect.anchorMax = Vector2(0.5, 0.5)
+  self._rect.anchorMin = Vector2(0.5, 0.5)
+  self._pass:SetActive(pass)
   self._clickCallback = clickCallback
   self._id = id
-  local cfg = (Cfg.cfg_component_asheep_mission)[self._id]
+  local cfg = Cfg.cfg_component_asheep_mission[self._id]
   local name = cfg.MissionName
   local bg = cfg.MissionBG
-  ;
-  (self._RoadPointNameText):SetText((StringTable.Get)(name))
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._bg).sprite = (self._atlas):GetSprite(bg)
+  self._RoadPointNameText:SetText(StringTable.Get(name))
+  self._bg.sprite = self._atlas:GetSprite(bg)
   self:SetPos(id)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN9RoadPointItem.SetPos = function(self, id)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._rect).transform).anchoredPosition = (self._pos)[id]
+function UICN9RoadPointItem:SetPos(id)
+  self._rect.transform.anchoredPosition = self._pos[id]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN9RoadPointItem.ClickBtnOnClick = function(self)
-  -- function num : 0_5
+function UICN9RoadPointItem:ClickBtnOnClick()
   if self._clickCallback then
-    (self._clickCallback)(self._id)
+    self._clickCallback(self._id)
   end
 end
-
-

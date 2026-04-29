@@ -1,26 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/command_handler/mpd_command_handler_maze.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("command_base_handler")
 require("move_path_done_command")
 _class("MovePathDownCommandHandler_Maze", MovePathDownCommandHandler)
 MovePathDownCommandHandler_Maze = MovePathDownCommandHandler_Maze
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-MovePathDownCommandHandler_Maze._HandlePetDead = function(self)
-  -- function num : 0_0
-  local battleService = (self._world):GetService("Battle")
+function MovePathDownCommandHandler_Maze:_HandlePetDead()
+  local battleService = self._world:GetService("Battle")
   battleService:AddPetDeadMark()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MovePathDownCommandHandler_Maze._HandleNormalAttackDead = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((MovePathDownCommandHandler_Maze.super)._HandleNormalAttackDead)(self)
+function MovePathDownCommandHandler_Maze:_HandleNormalAttackDead()
+  MovePathDownCommandHandler_Maze.super._HandleNormalAttackDead(self)
   self:_HandlePetDead()
 end
-
-

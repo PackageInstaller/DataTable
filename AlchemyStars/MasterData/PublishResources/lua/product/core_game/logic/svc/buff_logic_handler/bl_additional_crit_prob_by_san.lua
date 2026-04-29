@@ -1,51 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_additional_crit_prob_by_san.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeAdditionalCritProbBySan", BuffLogicBase)
 BuffLogicChangeAdditionalCritProbBySan = BuffLogicChangeAdditionalCritProbBySan
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAdditionalCritProbBySan.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeAdditionalCritProbBySan:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue or 0
   self._baseSan = logicParam.baseSan or 100
   self._minValue = logicParam.minValue
   self._maxValue = logicParam.maxValue
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAdditionalCritProbBySan.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local featureLogicSvc = (self._world):GetService("FeatureLogic")
+function BuffLogicChangeAdditionalCritProbBySan:DoLogic()
+  local featureLogicSvc = self._world:GetService("FeatureLogic")
   if not featureLogicSvc then
-    return 
+    return
   end
   if not featureLogicSvc:HasFeatureType(FeatureType.Sanity) then
-    return 
+    return
   end
   local curSanValue = featureLogicSvc:GetSanValue()
   local changeSan = curSanValue - self._baseSan
   local newChangeValue = changeSan * self._mulValue
   if self._minValue then
-    newChangeValue = (math.max)(newChangeValue, self._minValue)
+    newChangeValue = math.max(newChangeValue, self._minValue)
   end
   if self._maxValue then
-    newChangeValue = (math.min)(newChangeValue, self._maxValue)
+    newChangeValue = math.min(newChangeValue, self._maxValue)
   end
-  ;
-  (self._buffLogicService):ChangeAdditionalCritProb(self._entity, self:GetBuffSeq(), newChangeValue)
+  self._buffLogicService:ChangeAdditionalCritProb(self._entity, self:GetBuffSeq(), newChangeValue)
 end
 
 _class("BuffLogicRevertAdditionalCritProbBySan", BuffLogicBase)
 BuffLogicRevertAdditionalCritProbBySan = BuffLogicRevertAdditionalCritProbBySan
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRevertAdditionalCritProbBySan.DoLogic = function(self)
-  -- function num : 0_2
-  (self._buffLogicService):RemoveAdditionalCritProb(self._entity, self:GetBuffSeq())
+function BuffLogicRevertAdditionalCritProbBySan:DoLogic()
+  self._buffLogicService:RemoveAdditionalCritProb(self._entity, self:GetBuffSeq())
 end
-
-

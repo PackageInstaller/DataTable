@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_fill_monster_anti_attack_state.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicFillMonsterAntiAttackState", BuffLogicBase)
 BuffLogicFillMonsterAntiAttackState = BuffLogicFillMonsterAntiAttackState
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicFillMonsterAntiAttackState.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicFillMonsterAntiAttackState:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicFillMonsterAntiAttackState.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
+function BuffLogicFillMonsterAntiAttackState:DoLogic()
+  local entity = self._buffInstance:Entity()
   if not entity then
-    return 
+    return
   end
   local attributeCmpt = entity:Attributes()
   local roundCount = "MaxAntiSkillCountPerRound"
@@ -28,14 +18,10 @@ BuffLogicFillMonsterAntiAttackState.DoLogic = function(self)
   end
   attributeCmpt:Modify(roundCount, newValue)
   local curAntiCount = attributeCmpt:GetAttribute("WaitActiveSkillCount")
-  do
-    if curAntiCount == 0 then
-      local originalAntiCount = attributeCmpt:GetAttribute("OriginalWaitActiveSkillCount")
-      attributeCmpt:Modify("WaitActiveSkillCount", originalAntiCount)
-    end
-    local buffResult = BuffResultFillMonsterAntiAttackState:New(entity:GetID())
-    return buffResult
+  if curAntiCount == 0 then
+    local originalAntiCount = attributeCmpt:GetAttribute("OriginalWaitActiveSkillCount")
+    attributeCmpt:Modify("WaitActiveSkillCount", originalAntiCount)
   end
+  local buffResult = BuffResultFillMonsterAntiAttackState:New(entity:GetID())
+  return buffResult
 end
-
-

@@ -1,70 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_inland_s0.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignInlandS0", ICampaignComponentLocalProcessBase)
 CCampaignInlandS0 = CCampaignInlandS0
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignInlandS0.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignInlandS0:Constructor()
   self._timeRewardComponent = nil
   self._timeRewardComponentInfo = nil
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandS0.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignInlandS0:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_S0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandS0.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignInlandS0:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandS0.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignInlandS0:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetTimeRewardComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandS0._GetTimeRewardComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._timeRewardComponent = (self._campaignObj):GetComponent(ECCampaignInlandS0ComponentID.TIME_REWARD)
+function CCampaignInlandS0:_GetTimeRewardComponent()
+  self._timeRewardComponent = self._campaignObj:GetComponent(ECCampaignInlandS0ComponentID.TIME_REWARD)
   if not self._timeRewardComponent then
-    return 
+    return
   end
-  self._timeRewardComponentInfo = (self._timeRewardComponent):ComponentInfo()
+  self._timeRewardComponentInfo = self._timeRewardComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandS0.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CCampaignInlandS0:GetComponent(componentID)
   if ECCampaignInlandS0ComponentID.TIME_REWARD == componentID then
     return self._timeRewardComponent
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandS0.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignInlandS0:GetComponentInfo(componentID)
   if ECCampaignInlandS0ComponentID.TIME_REWARD == componentID then
     return self._timeRewardComponentInfo
   end
   return nil
 end
-
-

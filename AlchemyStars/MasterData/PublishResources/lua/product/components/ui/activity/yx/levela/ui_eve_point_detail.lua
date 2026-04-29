@@ -1,28 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/levela/ui_eve_point_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEvePointDetail", UIController)
 UIEvePointDetail = UIEvePointDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEvePointDetail.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIEvePointDetail:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEvePointDetail.InitWidget = function(self)
-  -- function num : 0_1
+function UIEvePointDetail:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEvePointDetail.closeBtnOnClick = function(self, go)
-  -- function num : 0_2
+function UIEvePointDetail:closeBtnOnClick(go)
   self:CloseDialog()
 end
-
-

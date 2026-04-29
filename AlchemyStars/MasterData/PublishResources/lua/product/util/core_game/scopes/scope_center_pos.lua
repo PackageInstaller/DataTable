@@ -1,25 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_center_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_CenterPos", SkillScopeCalculator_Base)
 SkillScopeCalculator_CenterPos = SkillScopeCalculator_CenterPos
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_CenterPos.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_CenterPos:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local scopeList = {}
-  -- DECOMPILER ERROR at PC9: Unhandled construct in 'MakeBoolean' P1
-
-  if centerPos and #centerPos == 0 then
-    scopeList = {centerPos}
-  else
-    scopeList = centerPos
+  if centerPos then
+    if #centerPos == 0 then
+      scopeList = {centerPos}
+    else
+      scopeList = centerPos
+    end
   end
   local result = SkillScopeResult:New(SkillScopeType.CenterPos, centerPos, scopeList, scopeList)
   return result
 end
-
-

@@ -1,38 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn6/hard/ui_activity_cn6_n35_diff_level_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_activity_diff_level_node")
 _class("UIActivityCN6N35DiffLevelNode", UIActivityDiffLevelNode)
 UIActivityCN6N35DiffLevelNode = UIActivityCN6N35DiffLevelNode
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCN6N35DiffLevelNode.OnInit = function(self)
-  -- function num : 0_0
+function UIActivityCN6N35DiffLevelNode:OnInit()
   self._anim = self:GetUIComponent("Animation", "Anim")
   self._nameGo = self:GetGameObject("Name")
   self._iconLockLoader = self:GetUIComponent("RawImageLoader", "IconLock")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN6N35DiffLevelNode.OnRefresh = function(self)
-  -- function num : 0_1
-  if (self._data):IsOpen() then
-    (self._nameGo):SetActive(true)
+function UIActivityCN6N35DiffLevelNode:OnRefresh()
+  if self._data:IsOpen() then
+    self._nameGo:SetActive(true)
   else
-    ;
-    (self._nameGo):SetActive(false)
-    ;
-    (self._iconLockLoader):LoadImage((self._data):GetUnOpenIcon())
+    self._nameGo:SetActive(false)
+    self._iconLockLoader:LoadImage(self._data:GetUnOpenIcon())
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN6N35DiffLevelNode.PlayAnimation = function(self)
-  -- function num : 0_2
+function UIActivityCN6N35DiffLevelNode:PlayAnimation()
 end
-
-

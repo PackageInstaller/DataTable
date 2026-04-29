@@ -1,15 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/data/d_shop_secret_store_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DShopSecretStoreBase", Object)
 DShopSecretStoreBase = DShopSecretStoreBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DShopSecretStoreBase.Constructor = function(self, subTabType)
-  -- function num : 0_0 , upvalues : _ENV
-  self.SubTabType2Class = {[MarketType.Shop_BlackMarket] = DShopBlackGood, [MarketType.Shop_MysteryMarket] = DShopSecretExploreGood, [MarketType.Shop_WorldBoss] = DShopWorldBossGood, [MarketType.Shop_BattlePass] = DShopBattlePassGood, [MarketType.Shop_Season] = DShopSeasonGood}
+function DShopSecretStoreBase:Constructor(subTabType)
+  self.SubTabType2Class = {
+    [MarketType.Shop_BlackMarket] = DShopBlackGood,
+    [MarketType.Shop_MysteryMarket] = DShopSecretExploreGood,
+    [MarketType.Shop_WorldBoss] = DShopWorldBossGood,
+    [MarketType.Shop_BattlePass] = DShopBattlePassGood,
+    [MarketType.Shop_Season] = DShopSeasonGood
+  }
   self.subTabType = subTabType
   self.goods = {}
   self.newGoods = {}
@@ -20,101 +19,63 @@ DShopSecretStoreBase.Constructor = function(self, subTabType)
   self.today_refreshed_count = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretStoreBase.SetRefreshInfo = function(self, shopLevelId)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfg = (Cfg.cfg_shop_level)[shopLevelId]
+function DShopSecretStoreBase:SetRefreshInfo(shopLevelId)
+  local cfg = Cfg.cfg_shop_level[shopLevelId]
   if cfg then
-    local a = (string.split)(cfg.RefreshPrice, "|")
+    local a = string.split(cfg.RefreshPrice, "|")
     self.maxCount = cfg.RefreshMax
     self.costType = cfg.RefreshCostType
     for index = 1, self.maxCount do
       local count = index
-      if not a[index] then
-        do
-          local consume = tonumber(a[#a])
-          -- DECOMPILER ERROR at PC27: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (self.refreshTime)[count] = consume
-          -- DECOMPILER ERROR at PC28: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC28: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      local consume = tonumber(a[index] or a[#a])
+      self.refreshTime[count] = consume
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretStoreBase.SetData = function(self, marketinfo, goodsconfig)
-  -- function num : 0_2 , upvalues : _ENV
+function DShopSecretStoreBase:SetData(marketinfo, goodsconfig)
   self.goods = {}
   if marketinfo.goods ~= nil then
-    for _,goodinfo in ipairs(marketinfo.goods) do
+    for _, goodinfo in ipairs(marketinfo.goods) do
       self:AddGood(goodinfo, goodsconfig[goodinfo.goods_id])
     end
   end
-  do
-    self.today_refreshed_count = marketinfo.today_refreshed_count or 0
-    if marketinfo.new_mark_goods ~= nil then
-      for _,newgood in ipairs(marketinfo.new_mark_goods) do
-        -- DECOMPILER ERROR at PC29: Confused about usage of register: R8 in 'UnsetPending'
-
-        (self.newGoods)[newgood] = 0
-      end
-    end
-    do
-      self:SetRefreshInfo(marketinfo.cur_level_id)
+  self.today_refreshed_count = marketinfo.today_refreshed_count or 0
+  if marketinfo.new_mark_goods ~= nil then
+    for _, newgood in ipairs(marketinfo.new_mark_goods) do
+      self.newGoods[newgood] = 0
     end
   end
+  self:SetRefreshInfo(marketinfo.cur_level_id)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretStoreBase.ReSortSecretGoods = function(self, targetShopIds)
-  -- function num : 0_3 , upvalues : _ENV
+function DShopSecretStoreBase:ReSortSecretGoods(targetShopIds)
   if targetShopIds == nil then
-    return 
+    return
   end
   local appendArr = {}
   for i = #self.goods, 1, -1 do
-    if (table.iskey)(targetShopIds, ((self.goods)[i]):GetGoodId()) then
-      (table.insert)(appendArr, (self.goods)[i])
-      ;
-      (table.remove)(self.goods, i)
+    if table.iskey(targetShopIds, self.goods[i]:GetGoodId()) then
+      table.insert(appendArr, self.goods[i])
+      table.remove(self.goods, i)
     end
   end
-  ;
-  (table.appendArray)(appendArr, self.goods)
+  table.appendArray(appendArr, self.goods)
   self.goods = appendArr
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretStoreBase.GetSecretGoods = function(self)
-  -- function num : 0_4
+function DShopSecretStoreBase:GetSecretGoods()
   return self.goods
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretStoreBase.AddGood = function(self, goodinfo, goodconfig)
-  -- function num : 0_5 , upvalues : _ENV
-  local good = ((self.SubTabType2Class)[self.subTabType]):New()
-  ;
-  (table.insert)(self.goods, good)
+function DShopSecretStoreBase:AddGood(goodinfo, goodconfig)
+  local good = self.SubTabType2Class[self.subTabType]:New()
+  table.insert(self.goods, good)
   good:Refresh(goodinfo, goodconfig)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretStoreBase.GetGood = function(self, goodId)
-  -- function num : 0_6 , upvalues : _ENV
-  for index,value in ipairs(self.goods) do
+function DShopSecretStoreBase:GetGood(goodId)
+  for index, value in ipairs(self.goods) do
     if value:GetGoodId() == goodId then
       return value
     end
@@ -122,110 +83,80 @@ DShopSecretStoreBase.GetGood = function(self, goodId)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretStoreBase.SortSecretGoods = function(self, targetShopIds, nestType, buyState)
-  -- function num : 0_7 , upvalues : _ENV
+function DShopSecretStoreBase:SortSecretGoods(targetShopIds, nestType, buyState)
   if targetShopIds == MarketType.Shop_BattlePass then
     local remainGood = {}
     local notRemainGood = {}
-    for _,good in ipairs(self.goods) do
-      local itemId = (good.cfg)[ConfigKey.ConfigKey_ItemId]
-      local goodCfg = (Cfg.cfg_shop_battlepass_goods)[good.goodId]
-      local payState = {[BattlePassMarketType.Shop_BattlePass_Pay] = 1, [BattlePassMarketType.Shop_BattlePass_Free] = 0}
+    for _, good in ipairs(self.goods) do
+      local itemId = good.cfg[ConfigKey.ConfigKey_ItemId]
+      local goodCfg = Cfg.cfg_shop_battlepass_goods[good.goodId]
+      local payState = {
+        [BattlePassMarketType.Shop_BattlePass_Pay] = 1,
+        [BattlePassMarketType.Shop_BattlePass_Free] = 0
+      }
       if payState[nestType] == goodCfg.PayType then
-        local itemModule = (GameGlobal.GetModule)(ItemModule)
+        local itemModule = GameGlobal.GetModule(ItemModule)
         local itemCount = itemModule:GetItemCount(itemId)
-        local canBuyBackGroud = ((Cfg.cfg_item)[itemId]).ItemSubType == ItemSubType.ItemSubType_BackGroudPicture and itemCount == 0
-        if ((Cfg.cfg_item)[itemId]).ItemSubType ~= ItemSubType.ItemSubType_BackGroudPicture or canBuyBackGroud then
-          if good.remainNum > 0 and (good.cfg)[ConfigKey.ConfigKey_BattleType] <= buyState + 1 then
-            (table.insert)(remainGood, good)
+        local canBuyBackGroud = Cfg.cfg_item[itemId].ItemSubType == ItemSubType.ItemSubType_BackGroudPicture and itemCount == 0
+        if Cfg.cfg_item[itemId].ItemSubType ~= ItemSubType.ItemSubType_BackGroudPicture or canBuyBackGroud then
+          if 0 < good.remainNum and good.cfg[ConfigKey.ConfigKey_BattleType] <= buyState + 1 then
+            table.insert(remainGood, good)
           else
-            (table.insert)(notRemainGood, good)
+            table.insert(notRemainGood, good)
           end
         end
       end
     end
-    ;
-    (table.sort)(remainGood, function(a, b)
-    -- function num : 0_7_0 , upvalues : _ENV
-    if (b.cfg)[ConfigKey.ConfigKey_BattleType] >= (a.cfg)[ConfigKey.ConfigKey_BattleType] then
-      do return (a.cfg)[ConfigKey.ConfigKey_BattleType] == (b.cfg)[ConfigKey.ConfigKey_BattleType] end
-      do return a.goodId < b.goodId end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
-  end
-)
-    ;
-    (table.sort)(notRemainGood, function(a, b)
-    -- function num : 0_7_1 , upvalues : _ENV
-    if (b.cfg)[ConfigKey.ConfigKey_BattleType] >= (a.cfg)[ConfigKey.ConfigKey_BattleType] then
-      do return (a.cfg)[ConfigKey.ConfigKey_BattleType] == (b.cfg)[ConfigKey.ConfigKey_BattleType] end
-      do return a.goodId < b.goodId end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
-  end
-)
-    ;
-    (table.move)(notRemainGood, 1, #notRemainGood, #remainGood + 1, remainGood)
+    table.sort(remainGood, function(a, b)
+      if a.cfg[ConfigKey.ConfigKey_BattleType] ~= b.cfg[ConfigKey.ConfigKey_BattleType] then
+        return a.cfg[ConfigKey.ConfigKey_BattleType] > b.cfg[ConfigKey.ConfigKey_BattleType]
+      end
+      return a.goodId < b.goodId
+    end)
+    table.sort(notRemainGood, function(a, b)
+      if a.cfg[ConfigKey.ConfigKey_BattleType] ~= b.cfg[ConfigKey.ConfigKey_BattleType] then
+        return a.cfg[ConfigKey.ConfigKey_BattleType] > b.cfg[ConfigKey.ConfigKey_BattleType]
+      end
+      return a.goodId < b.goodId
+    end)
+    table.move(notRemainGood, 1, #notRemainGood, #remainGood + 1, remainGood)
     self.goods = remainGood
   end
-  do return self.goods end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  return self.goods
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretStoreBase.SetRemainSecond = function(self, remainSecond)
-  -- function num : 0_8 , upvalues : _ENV
+function DShopSecretStoreBase:SetRemainSecond(remainSecond)
   self.remainSecond = remainSecond
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local now = timeModule:GetServerTime() / 1000
   self._refreshTime = now + remainSecond
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretStoreBase.GetRemainSecond = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function DShopSecretStoreBase:GetRemainSecond()
   if not self._refreshTime then
     return nil
   end
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local now = timeModule:GetServerTime() / 1000
   return self._refreshTime - now
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretStoreBase.GetCurCount = function(self)
-  -- function num : 0_10
+function DShopSecretStoreBase:GetCurCount()
   return self.today_refreshed_count
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretStoreBase.GetMaxCount = function(self)
-  -- function num : 0_11
+function DShopSecretStoreBase:GetMaxCount()
   return self.maxCount
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretStoreBase.GetCostType = function(self)
-  -- function num : 0_12
+function DShopSecretStoreBase:GetCostType()
   return self.costType
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretStoreBase.GetConsume = function(self)
-  -- function num : 0_13
+function DShopSecretStoreBase:GetConsume()
   local count = self.today_refreshed_count + 1
-  if self.maxCount < count then
+  if count > self.maxCount then
     count = self.maxCount
   end
-  return (self.refreshTime)[count]
+  return self.refreshTime[count]
 end
-
-

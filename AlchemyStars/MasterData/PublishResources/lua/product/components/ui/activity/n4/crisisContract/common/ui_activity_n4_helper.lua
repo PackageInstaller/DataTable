@@ -1,79 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/common/ui_activity_n4_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN4CCHelper", Object)
 UIActivityN4CCHelper = UIActivityN4CCHelper
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCHelper.DiffultyState = {Lock = 1, Open = 2, Pass = 3}
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCHelper.DiffultyBgImg = {
-[1] = {[1] = "activity_wjyz_zjm_icon6", [2] = "activity_wjyz_zjm_icon7", [3] = "activity_wjyz_zjm_icon8"}
-, 
-[2] = {[1] = "activity_wjyz_zjm_icon3", [2] = "activity_wjyz_zjm_icon4", [3] = "activity_wjyz_zjm_icon5"}
-, 
-[3] = {[1] = "activity_wjyz_zjm_icon9", [2] = "activity_wjyz_zjm_icon10", [3] = "activity_wjyz_zjm_icon11"}
+UIActivityN4CCHelper.DiffultyState = {
+  Lock = 1,
+  Open = 2,
+  Pass = 3
 }
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
+UIActivityN4CCHelper.DiffultyBgImg = {
+  [1] = {
+    [1] = "activity_wjyz_zjm_icon6",
+    [2] = "activity_wjyz_zjm_icon7",
+    [3] = "activity_wjyz_zjm_icon8"
+  },
+  [2] = {
+    [1] = "activity_wjyz_zjm_icon3",
+    [2] = "activity_wjyz_zjm_icon4",
+    [3] = "activity_wjyz_zjm_icon5"
+  },
+  [3] = {
+    [1] = "activity_wjyz_zjm_icon9",
+    [2] = "activity_wjyz_zjm_icon10",
+    [3] = "activity_wjyz_zjm_icon11"
+  }
+}
 
-UIActivityN4CCHelper.GetAffixDesc = function(cfg, color)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN4CCHelper.GetAffixDesc(cfg, color)
   local paramsCfg = cfg.EntryParam
   local params = {}
   if paramsCfg and paramsCfg[1] then
     local p = paramsCfg[1]
-    for k,v in ipairs(p) do
+    for k, v in ipairs(p) do
       if type(v) == "string" then
-        params[#params + 1] = (StringTable.Get)(v)
-      else
-        if type(v) == "number" then
-          params[#params + 1] = v
-        end
+        params[#params + 1] = StringTable.Get(v)
+      elseif type(v) == "number" then
+        params[#params + 1] = v
       end
     end
   end
-  do
-    local strDesc = (StringTable.Get)(cfg.Desc, (table.unpack)(params))
-    if color then
-      strDesc = (string.gsub)(strDesc, "FFFFFF", color)
-    end
-    return strDesc
+  local strDesc = StringTable.Get(cfg.Desc, table.unpack(params))
+  if color then
+    strDesc = string.gsub(strDesc, "FFFFFF", color)
   end
+  return strDesc
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCHelper.GetKey = function(str)
-  -- function num : 0_1 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function UIActivityN4CCHelper.GetKey(str)
+  local mRole = GameGlobal.GetModule(RoleModule)
   local key = mRole:GetPstId() .. str
   return key
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCHelper.SetPrefsStr = function(key, str)
-  -- function num : 0_2 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetString)(key, str)
+function UIActivityN4CCHelper.SetPrefsStr(key, str)
+  UnityEngine.PlayerPrefs.SetString(key, str)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCHelper.GetPrefsStr = function(key)
-  -- function num : 0_3 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).GetString)(key, nil)
+function UIActivityN4CCHelper.GetPrefsStr(key)
+  return UnityEngine.PlayerPrefs.GetString(key, nil)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCHelper.SaveTeamInfo = function(TT, id, name, pets)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN4CCHelper.SaveTeamInfo(TT, id, name, pets)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local campaign = UIActivityCampaign:New()
   campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_INLAND_N4_CHALLENGE, ECCampaignInlandN4ChallengeComponentID.CHALLENGE)
   if res and not res:GetSucc() then
@@ -98,123 +85,87 @@ end
 
 _class("UIActivityN4ConText", Object)
 UIActivityN4ConText = UIActivityN4ConText
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN4ConText.SetComponent = function(self, campaign)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN4ConText:SetComponent(campaign)
   self._campaign = campaign
-  self._localProcess = (self._campaign):GetLocalProcess()
-  self._component = (self._localProcess):GetComponent(ECCampaignInlandN4ChallengeComponentID.CHALLENGE)
-  self._componentInfo = (self._localProcess):GetComponentInfo(ECCampaignInlandN4ChallengeComponentID.CHALLENGE)
-  self._taskComponent = (self._localProcess):GetComponent(ECCampaignInlandN4ChallengeComponentID.QUEST)
-  self._taskComponentInfo = (self._localProcess):GetComponentInfo(ECCampaignInlandN4ChallengeComponentID.QUEST)
-  self.componentId = (UIActivityHelper.GetComponentID)(self._componentInfo)
+  self._localProcess = self._campaign:GetLocalProcess()
+  self._component = self._localProcess:GetComponent(ECCampaignInlandN4ChallengeComponentID.CHALLENGE)
+  self._componentInfo = self._localProcess:GetComponentInfo(ECCampaignInlandN4ChallengeComponentID.CHALLENGE)
+  self._taskComponent = self._localProcess:GetComponent(ECCampaignInlandN4ChallengeComponentID.QUEST)
+  self._taskComponentInfo = self._localProcess:GetComponentInfo(ECCampaignInlandN4ChallengeComponentID.QUEST)
+  self.componentId = UIActivityHelper.GetComponentID(self._componentInfo)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4ConText.GetComponentId = function(self)
-  -- function num : 0_6
+function UIActivityN4ConText:GetComponentId()
   return self.componentId
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4ConText.GetComponent = function(self)
-  -- function num : 0_7
+function UIActivityN4ConText:GetComponent()
   return self._component
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4ConText.GetComponentInfo = function(self)
-  -- function num : 0_8
+function UIActivityN4ConText:GetComponentInfo()
   return self._componentInfo
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4ConText.GetCampaign = function(self)
-  -- function num : 0_9
+function UIActivityN4ConText:GetCampaign()
   return self._campaign
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4ConText.GetUnlockTime = function(self, cfg)
-  -- function num : 0_10
+function UIActivityN4ConText:GetUnlockTime(cfg)
   local missionId = cfg.CampaignMissionId
-  return ((self._componentInfo).m_challenge_unlock_time)[missionId]
+  return self._componentInfo.m_challenge_unlock_time[missionId]
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4ConText.GetMissionState = function(self, cfg)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityN4ConText:GetMissionState(cfg)
   local missionId = cfg.CampaignMissionId
-  local isPass = ((self._componentInfo).m_pass_mission_info)[missionId] ~= nil
+  local isPass = self._componentInfo.m_pass_mission_info[missionId] ~= nil
   if isPass then
-    return (UIActivityN4CCHelper.DiffultyState).Pass
+    return UIActivityN4CCHelper.DiffultyState.Pass
   end
   local preMissionId = cfg.UnlockMissionId
-  if preMissionId and preMissionId > 0 and ((self._componentInfo).m_pass_mission_info)[preMissionId] == nil then
-    return (UIActivityN4CCHelper.DiffultyState).Lock
+  if preMissionId and 0 < preMissionId and self._componentInfo.m_pass_mission_info[preMissionId] == nil then
+    return UIActivityN4CCHelper.DiffultyState.Lock
   end
-  do return (UIActivityN4CCHelper.DiffultyState).Open end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return UIActivityN4CCHelper.DiffultyState.Open
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4ConText.GetAffix = function(self, missionId)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityN4ConText:GetAffix(missionId)
   local key = self:_GetKey(missionId)
-  local str = (UIActivityN4CCHelper.GetPrefsStr)(key)
-  if str and #str > 0 then
-    local tempIds = (string.split)(str, ",")
+  local str = UIActivityN4CCHelper.GetPrefsStr(key)
+  if str and 0 < #str then
+    local tempIds = string.split(str, ",")
     local ids = {}
-    for i,v in ipairs(tempIds) do
-      (table.insert)(ids, tonumber(v))
+    for i, v in ipairs(tempIds) do
+      table.insert(ids, tonumber(v))
     end
     return ids
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4ConText.SetAffix = function(self, missionId, ids)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityN4ConText:SetAffix(missionId, ids)
   local key = self:_GetKey(missionId)
   local value = ""
-  if ids and #ids > 0 then
-    value = (table.concat)(ids, ",")
+  if ids and 0 < #ids then
+    value = table.concat(ids, ",")
   end
-  ;
-  (UIActivityN4CCHelper.SetPrefsStr)(key, value)
+  UIActivityN4CCHelper.SetPrefsStr(key, value)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4ConText._GetKey = function(self, missionId)
-  -- function num : 0_14 , upvalues : _ENV
-  return (UIActivityN4CCHelper.GetKey)("aff_" .. missionId .. "_" .. self.componentId)
+function UIActivityN4ConText:_GetKey(missionId)
+  return UIActivityN4CCHelper.GetKey("aff_" .. missionId .. "_" .. self.componentId)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4ConText.CheckTaskRed = function(self, cfg)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityN4ConText:CheckTaskRed(cfg)
   local questIds = cfg.Quest
   if not questIds then
     return false
   end
-  for k,questId in pairs(questIds) do
-    local quest = (self._taskComponent):GetQuestInfoById(questId)
+  for k, questId in pairs(questIds) do
+    local quest = self._taskComponent:GetQuestInfoById(questId)
     if quest then
-      local red = (self._taskComponent):HasQuestCanClaim({quest})
+      local red = self._taskComponent:HasQuestCanClaim({quest})
       if red then
         return true
       end
@@ -223,23 +174,18 @@ UIActivityN4ConText.CheckTaskRed = function(self, cfg)
   return false
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4ConText.CheckLevelRed = function(self, cfgs)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityN4ConText:CheckLevelRed(cfgs)
   if not self._component then
     return false
   end
-  local ids = (self._component):HaveNewIds()
+  local ids = self._component:HaveNewIds()
   if not ids then
     return false
   end
-  for k,cfg in pairs(cfgs) do
+  for k, cfg in pairs(cfgs) do
     if ids[cfg.ID] then
       return true
     end
   end
   return false
 end
-
-

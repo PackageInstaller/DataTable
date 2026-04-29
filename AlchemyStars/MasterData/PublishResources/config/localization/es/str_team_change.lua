@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/es/str_team_change.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_team_change_no_choose = "Remover Aurorian", str_team_change_lv = "NVL.", str_team_change_binder_toast_tips = "{1} entró en la formación. ¡{2} ha sido eliminado de la formación!", str_team_change_binder_item_tex = "<color=#ffdc62>{1}</color> ya está en formación."}
+local config = {
+  str_team_change_no_choose = "Remover Aurorian",
+  str_team_change_lv = "NVL.",
+  str_team_change_binder_toast_tips = "{1} entró en la formación. ¡{2} ha sido eliminado de la formación!",
+  str_team_change_binder_item_tex = "<color=#ffdc62>{1}</color> ya está en formación."
+}
 return config
-

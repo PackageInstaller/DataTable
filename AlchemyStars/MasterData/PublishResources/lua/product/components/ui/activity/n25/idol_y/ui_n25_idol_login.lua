@@ -1,41 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/ui_n25_idol_login.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolLogin", UIController)
 UIN25IdolLogin = UIN25IdolLogin
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolLogin.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolLogin:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._campaign = (UIActivityCampaign.New)()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
-  self._localProcess = (self._campaign):GetLocalProcess()
+function UIN25IdolLogin:LoadDataOnEnter(TT, res, uiParams)
+  self._campaign = UIActivityCampaign.New()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  self._idolComponent = (self._localProcess):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  self._idolComponent = self._localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN25IdolLogin:OnShow(uiParams)
   self:AttachEvent(GameEventType.N25IdolStartPlayGame, self.OnStartPlayGame)
   self._uiWidget = self:GetUIComponent("RectTransform", "uiWidget")
   self._uiShow = self:GetUIComponent("RectTransform", "uiShow")
   self._ltBtn = self:GetUIComponent("UISelectObjectPath", "ltBtn")
-  self._redCollection = (self:View()):GetUIComponent("UISelectObjectPath", "redCollection")
+  self._redCollection = self:View():GetUIComponent("UISelectObjectPath", "redCollection")
   self._redCollectionSpawn = nil
   self._txtEndDuration = self:GetUIComponent("UILocalizationText", "txtEndDuration")
   self._animation = self:GetUIComponent("Animation", "animation")
@@ -49,175 +34,124 @@ UIN25IdolLogin.OnShow = function(self, uiParams)
   self:EnterTag()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin._CheckGuide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN25IdolLogin)
+function UIN25IdolLogin:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN25IdolLogin)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.OnHide = function(self)
-  -- function num : 0_4
+function UIN25IdolLogin:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.GetChildComponent = function(self, parent, componentTypeName, name)
-  -- function num : 0_5
-  local child = (parent.transform):Find(name)
+function UIN25IdolLogin:GetChildComponent(parent, componentTypeName, name)
+  local child = parent.transform:Find(name)
   if child == nil then
     return nil
   end
   return child:GetComponent(componentTypeName)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.EnterFullScreenBg = function(self, isEnter)
-  -- function num : 0_6
-  ((self._uiWidget).gameObject):SetActive(not isEnter)
-  ;
-  ((self._uiShow).gameObject):SetActive(isEnter)
+function UIN25IdolLogin:EnterFullScreenBg(isEnter)
+  self._uiWidget.gameObject:SetActive(not isEnter)
+  self._uiShow.gameObject:SetActive(isEnter)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.InitCommonTopButton = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local fnSumupTest = function()
-    -- function num : 0_7_0 , upvalues : self
+function UIN25IdolLogin:InitCommonTopButton()
+  local function fnSumupTest()
     self:ShowDialog("UIN25IdolSumUp")
   end
-
+  
   fnSumupTest = nil
-  self._backBtns = (self._ltBtn):SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_7_1 , upvalues : self, _ENV
+  self._backBtns = self._ltBtn:SpawnObject("UINewCommonTopButton")
+  self._backBtns:SetData(function()
     local lockName = "UIN25IdolLogin:_backAnim"
     self:StartTask(function(TT)
-      -- function num : 0_7_1_0 , upvalues : self, lockName, _ENV
       self:Lock(lockName)
       self:UnLock(lockName)
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN25MainController, UIStateType.UIMain, nil, (self._campaign)._id)
-    end
-)
-  end
-, fnSumupTest, function()
-    -- function num : 0_7_2 , upvalues : self, _ENV
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN25MainController, UIStateType.UIMain, nil, self._campaign._id)
+    end)
+  end, fnSumupTest, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, false, function()
-    -- function num : 0_7_3 , upvalues : self
+  end, false, function()
     self:EnterFullScreenBg(true)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.FlushButtonTextFont = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local btns = {self:GetUIComponent("RectTransform", "btnStartNewGame"), self:GetUIComponent("RectTransform", "btnLoadArchiving"), self:GetUIComponent("RectTransform", "btnCollection")}
+function UIN25IdolLogin:FlushButtonTextFont()
+  local btns = {
+    self:GetUIComponent("RectTransform", "btnStartNewGame"),
+    self:GetUIComponent("RectTransform", "btnLoadArchiving"),
+    self:GetUIComponent("RectTransform", "btnCollection")
+  }
   local isZhTw = false
-  local language = (Localization.GetCurLanguage)()
+  local language = Localization.GetCurLanguage()
   if LanguageType.zh == language then
     isZhTw = true
+  elseif LanguageType.tw == language then
+    isZhTw = true
   else
-    if LanguageType.tw == language then
-      isZhTw = true
-    else
-      isZhTw = false
-    end
+    isZhTw = false
   end
   if isZhTw then
-    for k,v in pairs(btns) do
+    for k, v in pairs(btns) do
       local txt = self:GetChildComponent(v, "UILocalizationText", "Text")
       local txtTMP = self:GetChildComponent(v, "UILocalizedTMP", "TextTMP")
       txt.fontSize = 53
       txtTMP.fontSize = 53
     end
   else
-    do
-      for k,v in pairs(btns) do
-        local txt = self:GetChildComponent(v, "UILocalizationText", "Text")
-        local txtTMP = self:GetChildComponent(v, "UILocalizedTMP", "TextTMP")
+    for k, v in pairs(btns) do
+      local txt = self:GetChildComponent(v, "UILocalizationText", "Text")
+      local txtTMP = self:GetChildComponent(v, "UILocalizedTMP", "TextTMP")
+      txt.fontSize = 40
+      txtTMP.fontSize = 40
+      if txt.preferredWidth > txt.transform.sizeDelta.x then
+        txt.fontSize = 35
+        txtTMP.fontSize = 35
+      else
         txt.fontSize = 40
         txtTMP.fontSize = 40
-        if ((txt.transform).sizeDelta).x < txt.preferredWidth then
-          txt.fontSize = 35
-          txtTMP.fontSize = 35
-        else
-          txt.fontSize = 40
-          txtTMP.fontSize = 40
-        end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.FlushCollectionRedDot = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN25IdolLogin:FlushCollectionRedDot()
   if self._reddot == nil then
     self._reddot = N25IdolCollectionReddot:New()
   end
   local showRedDot = false
-  if not showRedDot then
-    showRedDot = (self._reddot):GetEndCGReddot()
-  end
-  if not showRedDot then
-    showRedDot = (self._reddot):GetMemoryReddot()
-  end
-  if not showRedDot then
-    showRedDot = (self._reddot):GetAchieveReddot()
-  end
-  if ((self._redCollection).gameObject).activeSelf ~= showRedDot then
-    ((self._redCollection).gameObject):SetActive(showRedDot)
+  showRedDot = showRedDot or self._reddot:GetEndCGReddot()
+  showRedDot = showRedDot or self._reddot:GetMemoryReddot()
+  showRedDot = showRedDot or self._reddot:GetAchieveReddot()
+  if self._redCollection.gameObject.activeSelf ~= showRedDot then
+    self._redCollection.gameObject:SetActive(showRedDot)
   end
   if showRedDot and self._redCollectionSpawn == nil then
-    self._redCollectionSpawn = (self._redCollection):SpawnOneObject("ManualLoad0")
+    self._redCollectionSpawn = self._redCollection:SpawnOneObject("ManualLoad0")
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.FlushEndDuration = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local endTime = ((self._idolComponent):GetComponentInfo()).m_close_time
+function UIN25IdolLogin:FlushEndDuration()
+  local endTime = self._idolComponent:GetComponentInfo().m_close_time
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local stamp = endTime - curTime
-  stamp = (math.max)(stamp, 0)
-  local day, hour, min, second = (UIActivityHelper.Time2Str)(stamp)
-  local txtValue = (StringTable.Get)("str_n25_idol_y_end_duration", day, hour)
-  ;
-  (self._txtEndDuration):SetText(txtValue)
+  stamp = math.max(stamp, 0)
+  local day, hour, min, second = UIActivityHelper.Time2Str(stamp)
+  local txtValue = StringTable.Get("str_n25_idol_y_end_duration", day, hour)
+  self._txtEndDuration:SetText(txtValue)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.BtnUiShowOnClick = function(self, go)
-  -- function num : 0_11
+function UIN25IdolLogin:BtnUiShowOnClick(go)
   self:EnterFullScreenBg(false)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.BtnIntroOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN25IdolLogin:BtnIntroOnClick(go)
   self:ShowDialog("UIIntroLoader", "UIN25IdolLoginIntro", MaskType.MT_BlurMask)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.BtnStartNewGameOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  local idolInfo = (self._idolComponent):GetComponentInfo()
+function UIN25IdolLogin:BtnStartNewGameOnClick(go)
+  local idolInfo = self._idolComponent:GetComponentInfo()
   local breakInfo = idolInfo.break_info
   if breakInfo.note_time ~= 0 then
     self:ShowDialog("UIN25IdolBreakLoad")
@@ -226,24 +160,15 @@ UIN25IdolLogin.BtnStartNewGameOnClick = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.BtnLoadArchivingOnClick = function(self, go)
-  -- function num : 0_14
+function UIN25IdolLogin:BtnLoadArchivingOnClick(go)
   self:ShowDialog("UIN25IdolLoading")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.BtnCollectionOnClick = function(self, go)
-  -- function num : 0_15
+function UIN25IdolLogin:BtnCollectionOnClick(go)
   self:ShowDialog("UIN25IdolCollection")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.OnStartPlayGame = function(self, start_type, process_type)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN25IdolLogin:OnStartPlayGame(start_type, process_type)
   if process_type == nil then
     process_type = IdolProcessType.IdolProcessType_None
   end
@@ -251,110 +176,78 @@ UIN25IdolLogin.OnStartPlayGame = function(self, start_type, process_type)
   self:StartTask(self.OnStartPlayGameTask, self, start_type, process_type)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.OnStartPlayGameTask = function(self, TT, start_type, process_type)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN25IdolLogin:OnStartPlayGameTask(TT, start_type, process_type)
   local res = AsyncRequestRes:New()
-  ;
-  (self._idolComponent):HandleIdolStartPlay(TT, res, start_type, process_type)
+  self._idolComponent:HandleIdolStartPlay(TT, res, start_type, process_type)
   if not res:GetSucc() then
     if res:GetResult() == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED then
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+      ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     else
-      local errorContent = (string.format)("成为偶像开始游戏失败，code=%d", res:GetResult())
-      ;
-      (ToastManager.ShowToast)(errorContent)
+      local errorContent = string.format("成为偶像开始游戏失败，code=%d", res:GetResult())
+      ToastManager.ShowToast(errorContent)
     end
   else
-    do
-      if start_type == IdolStartType.IdolStartType_New then
-        (self._idolComponent):UI_ResetActRed()
-      end
-      self:ShowDialog("UIN25IdolGame")
-      self:UnLock("UIN25IdolLogin:OnStartPlayGameTask")
+    if start_type == IdolStartType.IdolStartType_New then
+      self._idolComponent:UI_ResetActRed()
     end
+    self:ShowDialog("UIN25IdolGame")
   end
+  self:UnLock("UIN25IdolLogin:OnStartPlayGameTask")
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.OnCollectionBack = function(self, ...)
-  -- function num : 0_18
+function UIN25IdolLogin:OnCollectionBack(...)
   self:Lock("UIN25IdolLogin:OnCollectionBack")
   self:StartTask(self.OnCollectionBackTask, self, ...)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.OnCollectionBackTask = function(self, TT)
-  -- function num : 0_19 , upvalues : _ENV
+function UIN25IdolLogin:OnCollectionBackTask(TT)
   local res = UIStateSwitchReq:New()
   res:SetSucc(true)
   self:LoadDataOnEnter(TT, res)
   self:OnShow()
-  ;
-  (self._animation):Play("uieff_UIN25IdolLogin_back")
+  self._animation:Play("uieff_UIN25IdolLogin_back")
   self:UnLock("UIN25IdolLogin:OnCollectionBack")
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.EnterTag = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIN25IdolLogin:EnterTag()
   local idol_open_state = 0
   local idol_open_state_key = "UIN25IdolOpenStateKey_fk"
-  local cInfo = (self._idolComponent):GetComponentInfo()
+  local cInfo = self._idolComponent:GetComponentInfo()
   local unlockTime = cInfo.m_unlock_time
   local secondsPerDay = 86400
   local state = self:ComponentState(cInfo)
-  if state ~= UISummerOneEnterBtnState.NotOpen or state == UISummerOneEnterBtnState.Normal then
-    local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
-    local curStage = (math.floor)((nowTimestamp - unlockTime) / secondsPerDay) + 1
-    local timeTips = nil
+  if state == UISummerOneEnterBtnState.NotOpen then
+  elseif state == UISummerOneEnterBtnState.Normal then
+    local nowTimestamp = UICommonHelper.GetNowTimestamp()
+    local curStage = math.floor((nowTimestamp - unlockTime) / secondsPerDay) + 1
+    local timeTips
     if curStage <= 1 then
       idol_open_state = 1
+    elseif curStage <= 2 then
+      idol_open_state = 2
     else
-      if curStage <= 2 then
-        idol_open_state = 2
-      else
-        idol_open_state = 3
-      end
+      idol_open_state = 3
     end
     local key = idol_open_state_key
-    ;
-    (LocalDB.SetInt)(key, idol_open_state)
-  else
-  end
-  do
-    if state == UISummerOneEnterBtnState.Closed then
-    end
+    LocalDB.SetInt(key, idol_open_state)
+  elseif state == UISummerOneEnterBtnState.Closed then
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLogin.ComponentState = function(self, cInfo)
-  -- function num : 0_21 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+function UIN25IdolLogin:ComponentState(cInfo)
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if nowTimestamp < cInfo.m_unlock_time then
     return UISummerOneEnterBtnState.NotOpen
+  elseif nowTimestamp > cInfo.m_close_time then
+    return UISummerOneEnterBtnState.Closed
+  elseif cInfo.m_b_unlock then
+    return UISummerOneEnterBtnState.Normal
   else
-    if cInfo.m_close_time < nowTimestamp then
-      return UISummerOneEnterBtnState.Closed
+    local cfgv = Cfg.cfg_campaign_mission[cInfo.m_need_mission_id]
+    if cfgv then
+      return UISummerOneEnterBtnState.Locked
     else
-      if cInfo.m_b_unlock then
-        return UISummerOneEnterBtnState.Normal
-      else
-        local cfgv = (Cfg.cfg_campaign_mission)[cInfo.m_need_mission_id]
-        if cfgv then
-          return UISummerOneEnterBtnState.Locked
-        else
-          return UISummerOneEnterBtnState.Normal
-        end
-      end
+      return UISummerOneEnterBtnState.Normal
     end
   end
 end
-
-

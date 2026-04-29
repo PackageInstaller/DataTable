@@ -1,84 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/task/ui_homeland_task_reward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandTaskReward", UICustomWidget)
 UIHomelandTaskReward = UIHomelandTaskReward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandTaskReward.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandTaskReward:Constructor()
   self._atlas = self:GetAsset("UIHomelandTask.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskReward.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandTaskReward:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskReward._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandTaskReward:_GetComponents()
   self._done = self:GetGameObject("Done")
   self._item = self:GetUIComponent("UISelectObjectPath", "Item")
   self._valueBg = self:GetUIComponent("Image", "ValueBg")
   self._value = self:GetUIComponent("UILocalizationText", "Value")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskReward.SetData = function(self, quest, totalCount, callBack)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandTaskReward:SetData(quest, totalCount, callBack)
   self._quest = quest
   self._callBack = callBack
   local questInfo = quest:QuestInfo()
   local valueBgSprite = "N17_task_kuang03"
   if questInfo.status == QuestStatus.QUEST_Completed then
     valueBgSprite = "N17_task_kuang02"
-  else
-    if questInfo.status == QuestStatus.QUEST_Taken then
-      valueBgSprite = "N17_task_kuang01"
-    end
+  elseif questInfo.status == QuestStatus.QUEST_Taken then
+    valueBgSprite = "N17_task_kuang01"
   end
-  ;
-  (self._done):SetActive(questInfo.status == QuestStatus.QUEST_Taken)
-  self._itemWidget = (self._item):SpawnObject("UIItemHomeland")
-  ;
-  (self._itemWidget):Flush((questInfo.rewards)[1], function()
-    -- function num : 0_3_0 , upvalues : self
+  self._done:SetActive(questInfo.status == QuestStatus.QUEST_Taken)
+  self._itemWidget = self._item:SpawnObject("UIItemHomeland")
+  self._itemWidget:Flush(questInfo.rewards[1], function()
     self:ItemOnClick()
-  end
-)
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._valueBg).sprite = (self._atlas):GetSprite(valueBgSprite)
-  local count = (quest:ParseParams(questInfo.Cond))[2]
-  ;
-  (self._value):SetText(count)
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (((self.view).gameObject).transform).localPosition = Vector3(count / totalCount * 900, 0, 0)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  end)
+  self._valueBg.sprite = self._atlas:GetSprite(valueBgSprite)
+  local count = quest:ParseParams(questInfo.Cond)[2]
+  self._value:SetText(count)
+  self.view.gameObject.transform.localPosition = Vector3(count / totalCount * 900, 0, 0)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskReward.ItemOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local questInfo = (self._quest):QuestInfo()
+function UIHomelandTaskReward:ItemOnClick()
+  local questInfo = self._quest:QuestInfo()
   if questInfo.status <= QuestStatus.QUEST_Accepted then
-    self:ShowDialog("UIItemTipsHomeland", ((questInfo.rewards)[1]).assetid, (self.view).gameObject)
-  else
-    if questInfo.status == QuestStatus.QUEST_Completed and self._callBack then
-      (self._callBack)(questInfo.quest_id)
-    end
+    self:ShowDialog("UIItemTipsHomeland", questInfo.rewards[1].assetid, self.view.gameObject)
+  elseif questInfo.status == QuestStatus.QUEST_Completed and self._callBack then
+    self._callBack(questInfo.quest_id)
   end
 end
-
-

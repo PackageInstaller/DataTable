@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn13/perfect_puzzle/intro/ui_cn13_perfect_puzzle_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN13PerfectPuzzleIntro", UIController)
 UICN13PerfectPuzzleIntro = UICN13PerfectPuzzleIntro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN13PerfectPuzzleIntro.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UICN13PerfectPuzzleIntro:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleIntro.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UICN13PerfectPuzzleIntro:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleIntro.InitWidget = function(self)
-  -- function num : 0_2
+function UICN13PerfectPuzzleIntro:InitWidget()
   self._root = self:GetGameObject("_root")
   self._title = self:GetUIComponent("UILocalizationText", "_title")
   self._subTitle = self:GetUIComponent("UILocalizationText", "_subTitle")
@@ -30,11 +17,6 @@ UICN13PerfectPuzzleIntro.InitWidget = function(self)
   self.mainBg = self:GetUIComponent("RawImageLoader", "MainBg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleIntro.CloseBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UICN13PerfectPuzzleIntro:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

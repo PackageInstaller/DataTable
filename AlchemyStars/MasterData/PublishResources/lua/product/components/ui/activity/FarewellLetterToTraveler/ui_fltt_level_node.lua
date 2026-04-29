@@ -1,68 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/FarewellLetterToTraveler/ui_fltt_level_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFLTTLevelNode", UICustomWidget)
 UIFLTTLevelNode = UIFLTTLevelNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFLTTLevelNode.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIFLTTLevelNode:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTLevelNode.InitWidget = function(self)
-  -- function num : 0_1
+function UIFLTTLevelNode:InitWidget()
   self.name = self:GetUIComponent("UILocalizationText", "name")
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTLevelNode.SetData = function(self, lineCfg, passInfo, cb)
-  -- function num : 0_2 , upvalues : _ENV
+function UIFLTTLevelNode:SetData(lineCfg, passInfo, cb)
   self._missionID = lineCfg.CampaignMissionId
   self._onClick = cb
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMax = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2.zero
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  self._rectTransform.anchorMax = Vector2(0, 0.5)
+  self._rectTransform.anchorMin = Vector2(0, 0.5)
+  self._rectTransform.sizeDelta = Vector2.zero
+  self._rectTransform.anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if not missionCfg then
-    (Log.exception)("cfg_campaign_mission中找不到配置:", self._missionID)
+    Log.exception("cfg_campaign_mission中找不到配置:", self._missionID)
   end
-  ;
-  (self.name):SetText((StringTable.Get)(missionCfg.Name))
+  self.name:SetText(StringTable.Get(missionCfg.Name))
   self._isStoryNode = missionCfg.Type == DiscoveryStageType.Plot
-  if lineCfg.MapPosY >= 0 then
-    (self._anim):Play("uieff_N26LineController_MapNode_up")
+  if 0 <= lineCfg.MapPosY then
+    self._anim:Play("uieff_N26LineController_MapNode_up")
   else
-    (self._anim):Play("uieff_N26LineController_MapNode_down")
+    self._anim:Play("uieff_N26LineController_MapNode_down")
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTLevelNode.BtnOnClick = function(self, go)
-  -- function num : 0_3
-  (self._onClick)(self._missionID, self._isStoryNode, (self._rectTransform).position)
+function UIFLTTLevelNode:BtnOnClick(go)
+  self._onClick(self._missionID, self._isStoryNode, self._rectTransform.position)
 end
-
-

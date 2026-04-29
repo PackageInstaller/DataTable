@@ -1,25 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_force_pet_normal_attack_after_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicForcePetNormalAttackAfterMove", BuffLogicBase)
 BuffLogicForcePetNormalAttackAfterMove = BuffLogicForcePetNormalAttackAfterMove
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicForcePetNormalAttackAfterMove.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicForcePetNormalAttackAfterMove:Constructor(buffInstance, logicParam)
   self._state = logicParam.state == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicForcePetNormalAttackAfterMove.DoLogic = function(self, notify)
-  -- function num : 0_1
-  ((self:GetEntity()):BuffComponent()):SetBuffValue("ForcePetNormalAttackAfterMove", self._state)
-  return {state = self._state}
+function BuffLogicForcePetNormalAttackAfterMove:DoLogic(notify)
+  self:GetEntity():BuffComponent():SetBuffValue("ForcePetNormalAttackAfterMove", self._state)
+  return {
+    state = self._state
+  }
 end
-
-

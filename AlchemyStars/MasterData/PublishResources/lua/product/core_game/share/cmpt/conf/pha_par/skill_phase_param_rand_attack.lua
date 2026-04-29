@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_rand_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPhaseParam_RandAttack", SkillPhaseParamBase)
 SkillPhaseParam_RandAttack = SkillPhaseParam_RandAttack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseParam_RandAttack.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseParam_RandAttack:Constructor(t)
   self._castAnimation = t.castAnimation
   self._castEffectID = t.castEffectID
   self._castEffectTime = t.castEffectTime
@@ -27,10 +20,7 @@ SkillPhaseParam_RandAttack.Constructor = function(self, t)
   self._audioWaitTime = t.audioWaitTime or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_RandAttack.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhaseParam_RandAttack:GetCacheTable()
   local listID = {}
   self:AddEffectIDToListID(listID, self._castEffectID)
   self:AddEffectIDToListID(listID, self._castEffectID_2)
@@ -41,105 +31,63 @@ SkillPhaseParam_RandAttack.GetCacheTable = function(self)
   return self:GetCacheTableFromListID(listID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_RandAttack.GetSoundCacheTable = function(self)
-  -- function num : 0_2
+function SkillPhaseParam_RandAttack:GetSoundCacheTable()
   if not self._audioID or self._audioID <= 0 then
-    return 
+    return
   end
-  return {self._audioID}
+  return {
+    self._audioID
+  }
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_RandAttack.GetPhaseType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillPhaseParam_RandAttack:GetPhaseType()
   return SkillViewPhaseType.RandAttack
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_RandAttack.GetCastAnimation = function(self)
-  -- function num : 0_4
+function SkillPhaseParam_RandAttack:GetCastAnimation()
   return self._castAnimationName
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_RandAttack.GetCastEffectID = function(self)
-  -- function num : 0_5
+function SkillPhaseParam_RandAttack:GetCastEffectID()
   return self._castEffectID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_RandAttack.GetCastEffectTime = function(self)
-  -- function num : 0_6
+function SkillPhaseParam_RandAttack:GetCastEffectTime()
   return self._castEffectTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_RandAttack.GetTargetWaitTime = function(self)
-  -- function num : 0_7
+function SkillPhaseParam_RandAttack:GetTargetWaitTime()
   return self._targetWaitTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_RandAttack.GetTargetEffectID = function(self)
-  -- function num : 0_8
+function SkillPhaseParam_RandAttack:GetTargetEffectID()
   return self._targetEffectID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_RandAttack.GetTargetEffectTime = function(self)
-  -- function num : 0_9
+function SkillPhaseParam_RandAttack:GetTargetEffectTime()
   return self._targetEffectTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_RandAttack.GetHitAnimation = function(self)
-  -- function num : 0_10
+function SkillPhaseParam_RandAttack:GetHitAnimation()
   return self._hitAnim
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_RandAttack.GetHitEffectID = function(self)
-  -- function num : 0_11
+function SkillPhaseParam_RandAttack:GetHitEffectID()
   return self._hitEffectId
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_RandAttack.GetAttackIntervalTime = function(self)
-  -- function num : 0_12
+function SkillPhaseParam_RandAttack:GetAttackIntervalTime()
   return self._attackIntervalTime
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_RandAttack.GetFinishDelayTime = function(self)
-  -- function num : 0_13
+function SkillPhaseParam_RandAttack:GetFinishDelayTime()
   return self._finishDelayTime
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_RandAttack.GetAudioID = function(self)
-  -- function num : 0_14
+function SkillPhaseParam_RandAttack:GetAudioID()
   return self._audioID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_RandAttack.GetAudioWaitTime = function(self)
-  -- function num : 0_15
+function SkillPhaseParam_RandAttack:GetAudioWaitTime()
   return self._audioWaitTime
 end
-
-

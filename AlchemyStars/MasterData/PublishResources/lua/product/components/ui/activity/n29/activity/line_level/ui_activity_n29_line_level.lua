@@ -1,91 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/activity/line_level/ui_activity_n29_line_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN29LineLevel", UIActivityLineLevelBase)
 UIActivityN29LineLevel = UIActivityN29LineLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN29LineLevel.GetCampaignType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN29LineLevel:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N29
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29LineLevel.GetLineComponentType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN29LineLevel:GetLineComponentType()
   return ECampaignN29ComponentID.ECAMPAIGN_N29_LINE_MISSION
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29LineLevel.GetFirstMeetComponentType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN29LineLevel:GetFirstMeetComponentType()
   return ECampaignN29ComponentID.ECAMPAIGN_N29_FIRST_MEET
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29LineLevel.GetLevelNodeName = function(self)
-  -- function num : 0_3
+function UIActivityN29LineLevel:GetLevelNodeName()
   return "UIActivityN29LineLevelNode"
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29LineLevel.GetLevelLineName = function(self)
-  -- function num : 0_4
+function UIActivityN29LineLevel:GetLevelLineName()
   return "UIActivityLineLevelLineBase"
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29LineLevel.GetBgList = function(self)
-  -- function num : 0_5
-  return {"n29_xxg_bg01", "n29_xxg_bg02", "n29_xxg_bg01"}
+function UIActivityN29LineLevel:GetBgList()
+  return {
+    "n29_xxg_bg01",
+    "n29_xxg_bg02",
+    "n29_xxg_bg01"
+  }
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29LineLevel.GetLineLevelState = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN29LineLevel:GetLineLevelState()
   return UIStateType.UIActivityN29LineLevel
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29LineLevel.GetCustomTimeStr = function(self)
-  -- function num : 0_7
+function UIActivityN29LineLevel:GetCustomTimeStr()
   return "str_n29_line_leve_day", "str_n29_line_leve_hour", "str_n29_line_leve_minus", "str_n29_line_leve_less_one_minus"
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29LineLevel.GetCustomTimeTipsStr = function(self)
-  -- function num : 0_8
+function UIActivityN29LineLevel:GetCustomTimeTipsStr()
   return "str_n29_activity_remain_time"
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29LineLevel.CloseWindow = function(self)
-  -- function num : 0_9
+function UIActivityN29LineLevel:CloseWindow()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29LineLevel.SwitchMainUI = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityN29LineLevel:SwitchMainUI()
   self:SwitchState(UIStateType.UIActivityN29MainController)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29LineLevel.OnInit = function(self)
-  -- function num : 0_11
+function UIActivityN29LineLevel:OnInit()
 end
-
-

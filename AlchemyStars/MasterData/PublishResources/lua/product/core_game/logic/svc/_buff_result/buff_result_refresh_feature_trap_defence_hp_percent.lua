@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_refresh_feature_trap_defence_hp_percent.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultRefreshFeatureTrapDefenceHPPercent", BuffResultBase)
 BuffResultRefreshFeatureTrapDefenceHPPercent = BuffResultRefreshFeatureTrapDefenceHPPercent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultRefreshFeatureTrapDefenceHPPercent.Constructor = function(self, curHPPercent)
-  -- function num : 0_0
+function BuffResultRefreshFeatureTrapDefenceHPPercent:Constructor(curHPPercent)
   self._curHPPercent = curHPPercent
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRefreshFeatureTrapDefenceHPPercent.GetHPPercent = function(self)
-  -- function num : 0_1
+function BuffResultRefreshFeatureTrapDefenceHPPercent:GetHPPercent()
   return self._curHPPercent
 end
-
-

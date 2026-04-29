@@ -1,71 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/helper/feature_service_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureServiceHelper", Object)
 FeatureServiceHelper = FeatureServiceHelper
-local getLogicService = function()
-  -- function num : 0_0 , upvalues : _ENV
+
+local function getLogicService()
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local lsvcFeature = mainWorld:GetService("FeatureLogic")
   return lsvcFeature
 end
 
-local getWorld = function()
-  -- function num : 0_1 , upvalues : _ENV
+local function getWorld()
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   return mainWorld
 end
 
--- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.GetLogicSanValue = function()
-  -- function num : 0_2 , upvalues : getLogicService
+function FeatureServiceHelper.GetLogicSanValue()
   local lsvcFeature = getLogicService()
   return lsvcFeature:GetSanValue()
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.IsActiveSkillCanCast = function(casterEntity, skillID, context)
-  -- function num : 0_3 , upvalues : getLogicService
+function FeatureServiceHelper.IsActiveSkillCanCast(casterEntity, skillID, context)
   local lsvcFeature = getLogicService()
   return lsvcFeature:IsActiveSkillCanCast(casterEntity, skillID, context)
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.IsActiveSkillCanCastByPstID = function(pstID, skillID, context)
-  -- function num : 0_4 , upvalues : getLogicService
+function FeatureServiceHelper.IsActiveSkillCanCastByPstID(pstID, skillID, context)
   local lsvcFeature = getLogicService()
-  local eLocalTeam = ((lsvcFeature._world):Player()):GetLocalTeamEntity()
+  local eLocalTeam = lsvcFeature._world:Player():GetLocalTeamEntity()
   local cTeam = eLocalTeam:Team()
   local casterEntity = cTeam:GetPetEntityByPetPstID(pstID)
   return lsvcFeature:IsActiveSkillCanCast(casterEntity, skillID, context)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.GetFeatureData = function(featureType)
-  -- function num : 0_5 , upvalues : getLogicService
+function FeatureServiceHelper.GetFeatureData(featureType)
   local lsvcFeature = getLogicService()
   return lsvcFeature:GetFeatureData(featureType)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.HasFeatureType = function(featureType)
-  -- function num : 0_6 , upvalues : getLogicService
-  return (getLogicService()):HasFeatureType(featureType)
+function FeatureServiceHelper.HasFeatureType(featureType)
+  return getLogicService():HasFeatureType(featureType)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.GetFeatureSkillHolderEntity = function(featureType)
-  -- function num : 0_7 , upvalues : getLogicService
+function FeatureServiceHelper.GetFeatureSkillHolderEntity(featureType)
   local lsvcFeature = getLogicService()
   if lsvcFeature then
     return lsvcFeature:GetFeatureSkillHolderEntity(featureType)
@@ -73,48 +49,33 @@ FeatureServiceHelper.GetFeatureSkillHolderEntity = function(featureType)
   return nil
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.GetCards = function()
-  -- function num : 0_8 , upvalues : getLogicService
+function FeatureServiceHelper.GetCards()
   local lsvcFeature = getLogicService()
   return lsvcFeature:GetCards()
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.CaclCardCompositionType = function(cardList)
-  -- function num : 0_9 , upvalues : getLogicService
+function FeatureServiceHelper.CaclCardCompositionType(cardList)
   local lsvcFeature = getLogicService()
   return lsvcFeature:CaclCardCompositionType(cardList)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.GetCurCardCount = function()
-  -- function num : 0_10 , upvalues : getLogicService
+function FeatureServiceHelper.GetCurCardCount()
   local lsvcFeature = getLogicService()
   return lsvcFeature:GetCurCardCount()
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.CheckFeatureSkillCastCondition = function(featureType, skillID)
-  -- function num : 0_11 , upvalues : getLogicService
+function FeatureServiceHelper.CheckFeatureSkillCastCondition(featureType, skillID)
   local lsvcFeature = getLogicService()
   return lsvcFeature:CheckFeatureSkillCastCondition(featureType, skillID)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.FeatureScanGetScanTrapIDList = function()
-  -- function num : 0_12 , upvalues : getLogicService, _ENV, getWorld
+function FeatureServiceHelper.FeatureScanGetScanTrapIDList()
   local lsvcFeature = getLogicService()
   local featureData = lsvcFeature:GetFeatureData(FeatureType.Scan)
   if not featureData then
     return {}
   end
-  local utilData = (getWorld()):GetService("UtilData")
+  local utilData = getWorld():GetService("UtilData")
   if featureData:IsDiedTrapIncluded() then
     return utilData:ScanTrapInMatch()
   else
@@ -122,18 +83,12 @@ FeatureServiceHelper.FeatureScanGetScanTrapIDList = function()
   end
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.FeatureScanGetCurrentSelection = function()
-  -- function num : 0_13 , upvalues : getWorld
-  local utilData = (getWorld()):GetService("UtilData")
+function FeatureServiceHelper.FeatureScanGetCurrentSelection()
+  local utilData = getWorld():GetService("UtilData")
   return utilData:GetScanSelection()
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.FeatureScanIsPetHasFeatureScan = function(pstID)
-  -- function num : 0_14 , upvalues : getWorld, _ENV
+function FeatureServiceHelper.FeatureScanIsPetHasFeatureScan(pstID)
   local world = getWorld()
   local utilData = world:GetService("UtilData")
   local eid = utilData:GetEntityIDByPstID(pstID)
@@ -144,94 +99,61 @@ FeatureServiceHelper.FeatureScanIsPetHasFeatureScan = function(pstID)
   if not e or not e:HasMatchPet() then
     return false
   end
-  local matchPet = (e:MatchPet()):GetMatchPet()
-  if not matchPet:GetFeatureList() then
-    local featureList = {
-feature = {}
-}
-  end
-  do return (featureList.feature)[FeatureType.Scan] ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local matchPet = e:MatchPet():GetMatchPet()
+  local featureList = matchPet:GetFeatureList() or {
+    feature = {}
+  }
+  return featureList.feature[FeatureType.Scan] ~= nil
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.GetBanPetSkillCastRoundList = function()
-  -- function num : 0_15 , upvalues : getLogicService
+function FeatureServiceHelper.GetBanPetSkillCastRoundList()
   local lsvcFeature = getLogicService()
   local logicFeatureCmpt = lsvcFeature:GetLogicCmpt()
   local roundList = logicFeatureCmpt:GetBanPetSkillCastRoundList()
   return roundList
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.GetShopSelectedCellList = function()
-  -- function num : 0_16 , upvalues : getLogicService
+function FeatureServiceHelper.GetShopSelectedCellList()
   local lsvcFeature = getLogicService()
   return lsvcFeature:GetShopSelectedCellList()
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.GetShopCoinCount = function()
-  -- function num : 0_17 , upvalues : getLogicService
+function FeatureServiceHelper.GetShopCoinCount()
   local lsvcFeature = getLogicService()
   return lsvcFeature:GetShopCoinCount()
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.GetShopUIHadSeeUnlockCellList = function()
-  -- function num : 0_18 , upvalues : getLogicService
+function FeatureServiceHelper.GetShopUIHadSeeUnlockCellList()
   local lsvcFeature = getLogicService()
   return lsvcFeature:GetShopUIHadSeeUnlockCellList()
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.SetShopUIHadSeeUnlockCellList = function(unlockCellList)
-  -- function num : 0_19 , upvalues : getLogicService
+function FeatureServiceHelper.SetShopUIHadSeeUnlockCellList(unlockCellList)
   local lsvcFeature = getLogicService()
   return lsvcFeature:SetShopUIHadSeeUnlockCellList(unlockCellList)
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.GetCurStepPoint = function()
-  -- function num : 0_20 , upvalues : getLogicService
+function FeatureServiceHelper.GetCurStepPoint()
   local lsvcFeature = getLogicService()
   return lsvcFeature:GetCurStepPoint()
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.GetFeatureSkillCurPower = function(featureType)
-  -- function num : 0_21 , upvalues : getLogicService
+function FeatureServiceHelper.GetFeatureSkillCurPower(featureType)
   local lsvcFeature = getLogicService()
   return lsvcFeature:GetFeatureSkillCurPower(featureType)
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.GetFeatureAUActiveRelics = function()
-  -- function num : 0_22 , upvalues : getLogicService
+function FeatureServiceHelper.GetFeatureAUActiveRelics()
   local lsvcFeature = getLogicService()
   return lsvcFeature:GetFeatureAUActiveRelics()
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.GetFeatureAUOverloadEnergyInfo = function()
-  -- function num : 0_23 , upvalues : getLogicService
+function FeatureServiceHelper.GetFeatureAUOverloadEnergyInfo()
   local lsvcFeature = getLogicService()
   return lsvcFeature:GetFeatureAUOverloadEnergyInfo()
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R2 in 'UnsetPending'
-
-FeatureServiceHelper.GetFeatureTetrisInfo = function()
-  -- function num : 0_24 , upvalues : getLogicService
+function FeatureServiceHelper.GetFeatureTetrisInfo()
   local lsvcFeature = getLogicService()
   local tetrisPower = lsvcFeature:GetTetrisPower()
   local tetrisMainColorCount = lsvcFeature:GetTetrisMainColorCount()
@@ -240,5 +162,3 @@ FeatureServiceHelper.GetFeatureTetrisInfo = function()
   local tetrisCostPower = lsvcFeature:GetTetrisCostPower()
   return tetrisIndex, tetrisLock, tetrisPower, tetrisMainColorCount, tetrisCostPower
 end
-
-

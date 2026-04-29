@@ -1,62 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_random_grids_in_range_by_piece_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_RandomGridsInRangeByPieceType", SkillScopeCalculator_Base)
 SkillScopeCalculator_RandomGridsInRangeByPieceType = SkillScopeCalculator_RandomGridsInRangeByPieceType
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_RandomGridsInRangeByPieceType.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_RandomGridsInRangeByPieceType:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local gridCount = scopeParam.gridCount or 0
-  if not scopeParam.pieceType then
-    local girdTypeList = {}
-  end
+  local girdTypeList = scopeParam.pieceType or {}
   local rangeScopeType = scopeParam.rangeScopeType
   local rangeScopeParam = scopeParam.rangeScopeParam
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   if not world then
-    (Log.exception)(self._className, "这个范围只能在局内展示")
-    return 
+    Log.exception(self._className, "这个范围只能在局内展示")
+    return
   end
   local boardServiceLogic = world:GetService("BoardLogic")
   local randomSvc = world:GetService("RandomLogic")
   local pieceRange = boardServiceLogic:GetGridPosByPieceType(girdTypeList)
-  local scopeRangeResult = (self._hub):ComputeScopeRange(rangeScopeType, rangeScopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  local scopeRangeResult = self._hub:ComputeScopeRange(rangeScopeType, rangeScopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local scopeRange = scopeRangeResult:GetAttackRange()
   local filterdPieceRange = {}
-  for _,pos in pairs(pieceRange) do
-    if (table.icontains)(scopeRange, pos) then
-      (table.insert)(filterdPieceRange, pos)
+  for _, pos in pairs(pieceRange) do
+    if table.icontains(scopeRange, pos) then
+      table.insert(filterdPieceRange, pos)
     end
   end
-  ;
-  (table.sort)(filterdPieceRange, function(a, b)
-    -- function num : 0_0_0
-    if a.y >= b.y then
-      do return a.x ~= b.x end
-      do return a.x < b.x end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  table.sort(filterdPieceRange, function(a, b)
+    if a.x == b.x then
+      return a.y < b.y
     end
-  end
-)
+    return a.x < b.x
+  end)
   local randomRange = {}
-  if #filterdPieceRange <= gridCount then
+  if gridCount >= #filterdPieceRange then
     randomRange = filterdPieceRange
   else
-    while #randomRange < gridCount do
+    while gridCount > #randomRange do
       local index = randomSvc:BoardLogicRand(1, #filterdPieceRange)
       randomRange[#randomRange + 1] = filterdPieceRange[index]
-      ;
-      (table.remove)(filterdPieceRange, index)
+      table.remove(filterdPieceRange, index)
     end
   end
-  do
-    local result = SkillScopeResult:New(SkillScopeType.RandomGridsInRangeByPieceType, centerPos, randomRange, randomRange)
-    return result
-  end
+  local result = SkillScopeResult:New(SkillScopeType.RandomGridsInRangeByPieceType, centerPos, randomRange, randomRange)
+  return result
 end
-
-

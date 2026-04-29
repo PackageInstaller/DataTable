@@ -1,42 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/difficulty_mission/stn_difficulty_mission_enter_battle_with_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("DifficultyMission_EnterBattleWithParam", Common_AsyncBase)
 DifficultyMission_EnterBattleWithParam = DifficultyMission_EnterBattleWithParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DifficultyMission_EnterBattleWithParam.Constructor = function(self, pManger, nodeID, missionID, missionComponentID, campaignComponentCfgID)
-  -- function num : 0_0
+function DifficultyMission_EnterBattleWithParam:Constructor(pManger, nodeID, missionID, missionComponentID, campaignComponentCfgID)
   self._nodeID = nodeID
   self._missionID = missionID
   self._missionComponentID = missionComponentID
   self._campaignComponentCfgID = campaignComponentCfgID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMission_EnterBattleWithParam.TaskFunc = function(self, TT, status)
-  -- function num : 0_1 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
-  local game = ((GameGlobal.GetModule)(GameMatchModule))
-  local createInfo = nil
-  createInfo = game:GetMatchCreateInfo(MatchType.MT_DifficultyMission, {self._nodeID, self._missionID, self._missionComponentID, self._campaignComponentCfgID})
+function DifficultyMission_EnterBattleWithParam:TaskFunc(TT, status)
+  local runData = self.m_pManager:GetMissionRunData()
+  local game = GameGlobal.GetModule(GameMatchModule)
+  local createInfo
+  createInfo = game:GetMatchCreateInfo(MatchType.MT_DifficultyMission, {
+    self._nodeID,
+    self._missionID,
+    self._missionComponentID,
+    self._campaignComponentCfgID
+  })
   for i = 1, 3 do
     local res = game:StartMatchTask(TT, MatchType.MT_DifficultyMission, TestConst.MissionTeamIndex, createInfo)
     if res:GetSucc() then
       status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
       status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
-      return 
+      return
     end
     YIELD(TT, 5000)
   end
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-  ;
-  (self._manager):Exception_DeclareExceptionThrew("对局创建失败")
+  self._manager:Exception_DeclareExceptionThrew("对局创建失败")
 end
-
-

@@ -1,268 +1,191 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/data_listener_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataListenerServiceRender", BaseService)
 DataListenerServiceRender = DataListenerServiceRender
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataListenerServiceRender.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function DataListenerServiceRender:Constructor(world)
   self._world = world
-  self._autoBinder = AutoEventBinder:New((self._world):EventDispatcher())
-  ;
-  (Log.notice)("DataListenerServiceRender start")
-  ;
-  (self._autoBinder):BindEvent(GameEventType.DataLogicResult, self, self._OnDataLogicResult)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.DataBuffRoundCount, self, self._OnDataBuffRoundCount)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.DataBuffMaxRoundCount, self, self._OnDataBuffMaxRoundCount)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.DataBuffValue, self, self._OnDataBuffValue)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.DataTrapAppearSkill, self, self._OnDataTrapAppearSkill)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.DataTrapTriggerSkill, self, self._OnDataTrapTriggerSkill)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.DataRenderNTSelectRoundTeamNormalBefore, self, self._OnDataNTSelectRoundTeamNormalBefore)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.DataTetrisFeatureRandom, self, self._OnDataTetrisFeatureRandom)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.DataTetrisFeatureLock, self, self._OnDataTetrisFeatureLock)
+  self._autoBinder = AutoEventBinder:New(self._world:EventDispatcher())
+  Log.notice("DataListenerServiceRender start")
+  self._autoBinder:BindEvent(GameEventType.DataLogicResult, self, self._OnDataLogicResult)
+  self._autoBinder:BindEvent(GameEventType.DataBuffRoundCount, self, self._OnDataBuffRoundCount)
+  self._autoBinder:BindEvent(GameEventType.DataBuffMaxRoundCount, self, self._OnDataBuffMaxRoundCount)
+  self._autoBinder:BindEvent(GameEventType.DataBuffValue, self, self._OnDataBuffValue)
+  self._autoBinder:BindEvent(GameEventType.DataTrapAppearSkill, self, self._OnDataTrapAppearSkill)
+  self._autoBinder:BindEvent(GameEventType.DataTrapTriggerSkill, self, self._OnDataTrapTriggerSkill)
+  self._autoBinder:BindEvent(GameEventType.DataRenderNTSelectRoundTeamNormalBefore, self, self._OnDataNTSelectRoundTeamNormalBefore)
+  self._autoBinder:BindEvent(GameEventType.DataTetrisFeatureRandom, self, self._OnDataTetrisFeatureRandom)
+  self._autoBinder:BindEvent(GameEventType.DataTetrisFeatureLock, self, self._OnDataTetrisFeatureLock)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender.Dispose = function(self)
-  -- function num : 0_1
-  (self._autoBinder):UnBindAllEvents()
+function DataListenerServiceRender:Dispose()
+  self._autoBinder:UnBindAllEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataLogicResult = function(self, logicStep, result)
-  -- function num : 0_2 , upvalues : _ENV
+function DataListenerServiceRender:_OnDataLogicResult(logicStep, result)
   if logicStep == 0 then
     local funcname = "_On" .. result._className
     local func = self[funcname]
     if not func then
-      (Log.fatal)("OnDataLogicResult not find handler for ", funcname)
-      return 
+      Log.fatal("OnDataLogicResult not find handler for ", funcname)
+      return
     end
     func(self, result)
-    return 
+    return
   end
-  do
-    local renderBoardEntity = (self._world):GetRenderBoardEntity()
-    ;
-    (renderBoardEntity:LogicResult()):SetLogicResult(logicStep, result)
-  end
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  renderBoardEntity:LogicResult():SetLogicResult(logicStep, result)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataChainPathResult = function(self, data)
-  -- function num : 0_3 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local l_role_module = (GameGlobal.GetModule)(RoleModule)
+function DataListenerServiceRender:_OnDataChainPathResult(data)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local l_role_module = GameGlobal.GetModule(RoleModule)
   if not l_role_module:CheckModuleUnlock(GameModuleID.MD_ForceGuideEnd) then
-    local match = (GameGlobal.GetModule)(MatchModule)
+    local match = GameGlobal.GetModule(MatchModule)
     local enterData = match:GetMatchEnterData()
     if enterData._match_type == MatchType.MT_Mission then
       local l_path = data:GetChainPathResult()
       local l_team = data:GetChainTeamResult()
-      local missionID = (enterData:GetMissionCreateInfo()).mission_id
+      local missionID = enterData:GetMissionCreateInfo().mission_id
       local pet_template_id = ""
-      local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-      local ePets = (teamEntity:Team()):GetTeamPetEntities()
-      for i,e in ipairs(ePets) do
-        local bInTable = (table.intable)(l_team, e:GetID())
+      local teamEntity = self._world:Player():GetLocalTeamEntity()
+      local ePets = teamEntity:Team():GetTeamPetEntities()
+      for i, e in ipairs(ePets) do
+        local bInTable = table.intable(l_team, e:GetID())
         if bInTable then
-          local l_templateId = (e:PetPstID()):GetTemplateID()
+          local l_templateId = e:PetPstID():GetTemplateID()
           pet_template_id = pet_template_id .. "," .. l_templateId
         end
       end
-      do
-        do
-          ;
-          (GameGlobal.UAReportForceGuideEvent)("FightChainDone", {missionID, data:GetChainElementResult(), l_path and #l_path or 0, pet_template_id, 1})
-          renderBoardEntity:ReplaceRenderChainPath(data:GetChainPathResult(), data:GetChainElementResult(), data:GetCutChainPathResult(), data:GetPathChainRate())
-          renderBoardEntity:ReplaceRenderRoundTeam(data:GetChainTeamResult())
-        end
-      end
+      GameGlobal.UAReportForceGuideEvent("FightChainDone", {
+        missionID,
+        data:GetChainElementResult(),
+        l_path and #l_path or 0,
+        pet_template_id,
+        1
+      })
     end
   end
+  renderBoardEntity:ReplaceRenderChainPath(data:GetChainPathResult(), data:GetChainElementResult(), data:GetCutChainPathResult(), data:GetPathChainRate())
+  renderBoardEntity:ReplaceRenderRoundTeam(data:GetChainTeamResult())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataWaveEnterResult = function(self, data)
-  -- function num : 0_4
-  local viewDataEntity = (self._world):GetRenderBoardEntity()
+function DataListenerServiceRender:_OnDataWaveEnterResult(data)
+  local viewDataEntity = self._world:GetRenderBoardEntity()
   local waveDataCmpt = viewDataEntity:WaveData()
   waveDataCmpt:SetWaveIndex(data:GetWaveIndex())
   waveDataCmpt:SetExitWave(data:IsExit())
   waveDataCmpt:SetExitWavePos(data:GetExitPos())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataPetDeadResult = function(self, data)
-  -- function num : 0_5 , upvalues : _ENV
+function DataListenerServiceRender:_OnDataPetDeadResult(data)
   local deadList = data:DataGetDeadPetEntityIDList()
-  for _,v in ipairs(deadList) do
-    local petEntity = (self._world):GetEntityByID(v)
+  for _, v in ipairs(deadList) do
+    local petEntity = self._world:GetEntityByID(v)
     if not petEntity:HasPetDeadFlag() then
       petEntity:AddPetDeadFlag()
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataAILogicResult = function(self, data)
-  -- function num : 0_6
+function DataListenerServiceRender:_OnDataAILogicResult(data)
   local aiRecorderCmpt = data:GetAIRecorder()
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   renderBoardEntity:ReplaceAIRecorder(aiRecorderCmpt)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataSkillRoutineResult = function(self, data)
-  -- function num : 0_7
+function DataListenerServiceRender:_OnDataSkillRoutineResult(data)
   local res = data:GetResult()
   local eid = data:GetEntityID()
   local key = data:GetKey()
-  local e = (self._world):GetEntityByID(eid)
-  ;
-  (e:SkillRoutine()):SetResultContainer(res, key)
+  local e = self._world:GetEntityByID(eid)
+  e:SkillRoutine():SetResultContainer(res, key)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataTrapCreationResult = function(self, data)
-  -- function num : 0_8
+function DataListenerServiceRender:_OnDataTrapCreationResult(data)
   local entityID = data:GetTrapEntityID()
-  local trapEntity = (self._world):GetEntityByID(entityID)
+  local trapEntity = self._world:GetEntityByID(entityID)
   local trapRenderCmpt = trapEntity:TrapRender()
   trapRenderCmpt:SetTrapCreationResult(data)
   local trapID = data:GetTrapCreationResult_TrapID()
-  local trapConfigData = (self._configService):GetTrapConfigData()
+  local trapConfigData = self._configService:GetTrapConfigData()
   local trapData = trapConfigData:GetTrapData(trapID)
   trapRenderCmpt:SetTrapType(trapData.TrapType)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataAttributeResult = function(self, data)
-  -- function num : 0_9
+function DataListenerServiceRender:_OnDataAttributeResult(data)
   local entityID = data:GetEntityID()
-  local entity = (self._world):GetEntityByID(entityID)
+  local entity = self._world:GetEntityByID(entityID)
   local renderAttrCmpt = entity:RenderAttributes()
   renderAttrCmpt:SetAttribute(data:GetAttrName(), data:GetAttrValue())
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataBuffLogicResult = function(self, buffResult)
-  -- function num : 0_10
+function DataListenerServiceRender:_OnDataBuffLogicResult(buffResult)
   local logicName = buffResult:GetBuffLogicName()
   local result = buffResult:GetBuffResult()
   local notify = buffResult:GetNotify()
   local seq = buffResult:GetBuffSeq()
   local eid = buffResult:GetEntityID()
   local triggers = buffResult:GetTriggers()
-  local entity = (self._world):GetEntityByID(eid)
-  local viewInstance = (entity:BuffView()):GetBuffViewInstance(seq)
+  local entity = self._world:GetEntityByID(eid)
+  local viewInstance = entity:BuffView():GetBuffViewInstance(seq)
   if viewInstance then
     viewInstance:AddBuffView(notify, logicName, result, triggers)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataBuffAddResult = function(self, data)
-  -- function num : 0_11 , upvalues : _ENV
+function DataListenerServiceRender:_OnDataBuffAddResult(data)
   local eid = data:GetEntityID()
   local buffseq = data:GetBuffSeq()
   local buffid = data:GetBuffID()
   local context = data:GetBuffContext()
-  local entity = (self._world):GetEntityByID(eid)
+  local entity = self._world:GetEntityByID(eid)
   local view = BuffViewInstance:New(entity, buffseq, buffid, context)
-  ;
-  (entity:BuffView()):AddBuffViewInstance(view)
+  entity:BuffView():AddBuffViewInstance(view)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataBuffDelResult = function(self, data)
-  -- function num : 0_12
+function DataListenerServiceRender:_OnDataBuffDelResult(data)
   local eid = data:GetEntityID()
   local buffseq = data:GetBuffSeq()
   local nt = data:GetNotifyType()
   local buffid = data:GetBuffID()
-  local entity = (self._world):GetEntityByID(eid)
-  local viewInstance = (entity:BuffView()):GetBuffViewInstance(buffseq)
+  local entity = self._world:GetEntityByID(eid)
+  local viewInstance = entity:BuffView():GetBuffViewInstance(buffseq)
   if viewInstance then
     viewInstance:SetUnload(nt)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataBuffRoundCount = function(self, eid, buffseq, roundcount)
-  -- function num : 0_13 , upvalues : _ENV
-  local entity = (self._world):GetEntityByID(eid)
-  local viewInstance = (entity:BuffView()):GetBuffViewInstance(buffseq)
+function DataListenerServiceRender:_OnDataBuffRoundCount(eid, buffseq, roundcount)
+  local entity = self._world:GetEntityByID(eid)
+  local viewInstance = entity:BuffView():GetBuffViewInstance(buffseq)
   if not viewInstance then
-    return 
+    return
   end
   viewInstance:SetRoundCount(roundcount)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BuffRoundCountChanged, buffseq, viewInstance:RemainRoundCount(), viewInstance:GetMaxRoundCount() == 0)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.BuffRoundCountChanged, buffseq, viewInstance:RemainRoundCount(), viewInstance:GetMaxRoundCount() == 0)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataBuffMaxRoundCount = function(self, eid, buffseq, roundcount)
-  -- function num : 0_14 , upvalues : _ENV
-  local entity = (self._world):GetEntityByID(eid)
-  local viewInstance = (entity:BuffView()):GetBuffViewInstance(buffseq)
+function DataListenerServiceRender:_OnDataBuffMaxRoundCount(eid, buffseq, roundcount)
+  local entity = self._world:GetEntityByID(eid)
+  local viewInstance = entity:BuffView():GetBuffViewInstance(buffseq)
   viewInstance:SetMaxRoundCount(roundcount)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BuffRoundCountChanged, buffseq, viewInstance:RemainRoundCount(), viewInstance:GetMaxRoundCount() == 0)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.BuffRoundCountChanged, buffseq, viewInstance:RemainRoundCount(), viewInstance:GetMaxRoundCount() == 0)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataBuffValue = function(self, eid, key, value)
-  -- function num : 0_15
-  local entity = (self._world):GetEntityByID(eid)
-  ;
-  (entity:BuffView()):SetBuffValue(key, value)
+function DataListenerServiceRender:_OnDataBuffValue(eid, key, value)
+  local entity = self._world:GetEntityByID(eid)
+  entity:BuffView():SetBuffValue(key, value)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataDeadMarkResult = function(self, data)
-  -- function num : 0_16 , upvalues : _ENV
+function DataListenerServiceRender:_OnDataDeadMarkResult(data)
   local list = data:GetDeadEntityIDList()
-  for i,id in ipairs(list) do
-    local e = (self._world):GetEntityByID(id)
+  for i, id in ipairs(list) do
+    local e = self._world:GetEntityByID(id)
     e:AddDeadFlag()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataBoardLogicResult = function(self, data)
-  -- function num : 0_17
-  local e = (self._world):GetPreviewEntity()
+function DataListenerServiceRender:_OnDataBoardLogicResult(data)
+  local e = self._world:GetPreviewEntity()
   local env = e:PreviewEnv()
   env:ResetPreviewEnv()
   env:ResetPieceTypes(data:GetPieceTypes())
@@ -274,38 +197,32 @@ DataListenerServiceRender._OnDataBoardLogicResult = function(self, data)
   env:ResetPieceEntities(data:GetPieceEntities())
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataPieceTypeResult = function(self, data)
-  -- function num : 0_18 , upvalues : _ENV
-  local e = (self._world):GetPreviewEntity()
+function DataListenerServiceRender:_OnDataPieceTypeResult(data)
+  local e = self._world:GetPreviewEntity()
   local env = e:PreviewEnv()
   env:ResetPieceTypes(data:GetPieceTypes())
   env:ResetPieceTable(data:GetPieceTable())
-  local renderBoard = ((self._world):GetRenderBoardEntity()):RenderBoard()
-  local renderBoardSvc = (self._world):GetService("BoardRender")
-  local utilData = (self._world):GetService("UtilData")
+  local renderBoard = self._world:GetRenderBoardEntity():RenderBoard()
+  local renderBoardSvc = self._world:GetService("BoardRender")
+  local utilData = self._world:GetService("UtilData")
   local extraBoardPosList = utilData:GetExtraBoardPosList()
-  for posIdx,pieceType in pairs(data:GetPieceTypes()) do
-    local pos = (Vector2.Index2Pos)(posIdx)
-    if not (table.intable)(extraBoardPosList, pos) then
+  for posIdx, pieceType in pairs(data:GetPieceTypes()) do
+    local pos = Vector2.Index2Pos(posIdx)
+    if not table.intable(extraBoardPosList, pos) then
       local e = renderBoard:GetGridRenderEntity(pos)
-      -- DECOMPILER ERROR at PC58: Unhandled construct in 'MakeBoolean' P1
-
-      if e and (e:Piece()):GetPieceType() ~= pieceType then
-        renderBoardSvc:ReCreateGridEntity(pieceType, pos)
+      if e then
+        if e:Piece():GetPieceType() ~= pieceType then
+          renderBoardSvc:ReCreateGridEntity(pieceType, pos)
+        end
+      else
+        Log.fatal("_OnDataPieceTypeResult,can not find piece entity,pos:", pos)
       end
     end
-    ;
-    (Log.fatal)("_OnDataPieceTypeResult,can not find piece entity,pos:", pos)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataChessPathResult = function(self, data)
-  -- function num : 0_19
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function DataListenerServiceRender:_OnDataChessPathResult(data)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local chessPathResult = data:GetChessPathResult()
   local chessPetEntityID = data:GetChessPetEntityID()
   local walkResultList = data:GetChessWalkResultList()
@@ -313,34 +230,25 @@ DataListenerServiceRender._OnDataChessPathResult = function(self, data)
   renderBoardEntity:ReplaceRenderChessPath(chessPathResult, chessPetEntityID, walkResultList, pickUpPos)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataSanRoundDecreaseResult = function(self, data)
-  -- function num : 0_20
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function DataListenerServiceRender:_OnDataSanRoundDecreaseResult(data)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderFeature = renderBoardEntity:RenderFeature()
   if renderFeature then
     renderFeature:SetCurRoundDecreaseSanValue(1, data:GetModifyVal(), data:GetCurVal(), data:GetOldVal(), data:GetDebtVal(), data:GetModifyTimes())
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataDayNightRoundChangeResult = function(self, data)
-  -- function num : 0_21
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function DataListenerServiceRender:_OnDataDayNightRoundChangeResult(data)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderFeature = renderBoardEntity:RenderFeature()
   if renderFeature then
     renderFeature:SetCurRoundDayNightRouncChangeValue(1, data:GetCurState(), data:GetOldState(), data:GetRestRound())
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataSyncMovePathResult = function(self, data)
-  -- function num : 0_22
+function DataListenerServiceRender:_OnDataSyncMovePathResult(data)
   local eid = data:GetEntityID()
-  local entity = (self._world):GetEntityByID(eid)
+  local entity = self._world:GetEntityByID(eid)
   if entity then
     local syncMoveCmptRender = entity:RenderSyncMoveWithTeam()
     if syncMoveCmptRender then
@@ -349,51 +257,32 @@ DataListenerServiceRender._OnDataSyncMovePathResult = function(self, data)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataTrapAppearSkill = function(self, data)
-  -- function num : 0_23
+function DataListenerServiceRender:_OnDataTrapAppearSkill(data)
   local eTrap = data:GetTrapEntity()
-  ;
-  (eTrap:TrapRender()):SetAppearSkillResultContainer(data:GetResultContainer())
+  eTrap:TrapRender():SetAppearSkillResultContainer(data:GetResultContainer())
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataTrapTriggerSkill = function(self, data)
-  -- function num : 0_24
+function DataListenerServiceRender:_OnDataTrapTriggerSkill(data)
   local eTrap = data:GetTrapEntity()
   local cTrapRender = eTrap:TrapRender()
   cTrapRender:SetTriggerSkillResultContainer(data:GetResultContainer())
   cTrapRender:SetTriggerSkillTriggeredEntity(data:GetTriggerEntity())
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataNTSelectRoundTeamNormalBefore = function(self, elementType, chainPath)
-  -- function num : 0_25 , upvalues : _ENV
+function DataListenerServiceRender:_OnDataNTSelectRoundTeamNormalBefore(elementType, chainPath)
   local ntSelectRoundTeamNormalBefore = NTSelectRoundTeamNormalBefore:New(elementType, chainPath)
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_25_0 , upvalues : self, ntSelectRoundTeamNormalBefore
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, ntSelectRoundTeamNormalBefore)
-  end
-)
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, ntSelectRoundTeamNormalBefore)
+  end)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataPickUpComponentResult = function(self, data)
-  -- function num : 0_26
+function DataListenerServiceRender:_OnDataPickUpComponentResult(data)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataUnscaledCountDownFinish = function(self, data)
-  -- function num : 0_27 , upvalues : _ENV
+function DataListenerServiceRender:_OnDataUnscaledCountDownFinish(data)
   local flagID = data:GetFlagID()
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).UnscaledCountDownRender)
-  for i,e in ipairs(group:GetEntities()) do
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.UnscaledCountDownRender)
+  for i, e in ipairs(group:GetEntities()) do
     local cmpt = e:UnscaledCountDownRender()
     if flagID == cmpt:GetFlagID() then
       cmpt:SetWaitPlayNotify(true)
@@ -402,33 +291,24 @@ DataListenerServiceRender._OnDataUnscaledCountDownFinish = function(self, data)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataStepPointRoundChangeResult = function(self, data)
-  -- function num : 0_28
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function DataListenerServiceRender:_OnDataStepPointRoundChangeResult(data)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderFeature = renderBoardEntity:RenderFeature()
   if renderFeature then
     renderFeature:SetCurRoundChangeStepPoint(1, data:GetCurVal(), data:GetOldVal())
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataStepPointMoveCostResult = function(self, data)
-  -- function num : 0_29
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function DataListenerServiceRender:_OnDataStepPointMoveCostResult(data)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderFeature = renderBoardEntity:RenderFeature()
   if renderFeature then
     renderFeature:SetMoveCostStepPoint(1, data:GetCurVal(), data:GetOldVal())
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataColorPaletteResult = function(self, data)
-  -- function num : 0_30
-  local entity = (self._world):GetEntityByID(data:EntityID())
+function DataListenerServiceRender:_OnDataColorPaletteResult(data)
+  local entity = self._world:GetEntityByID(data:EntityID())
   if entity then
     if not entity:HasColorPaletteRender() then
       entity:AddColorPaletteRender()
@@ -438,17 +318,9 @@ DataListenerServiceRender._OnDataColorPaletteResult = function(self, data)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataTetrisFeatureRandom = function(self, newTetrisIndex, newTetrisType)
-  -- function num : 0_31
-  local featureSvcR = (self._world):GetService("FeatureRender")
+function DataListenerServiceRender:_OnDataTetrisFeatureRandom(newTetrisIndex, newTetrisType)
+  local featureSvcR = self._world:GetService("FeatureRender")
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-DataListenerServiceRender._OnDataTetrisFeatureLock = function(self, lockState)
-  -- function num : 0_32
+function DataListenerServiceRender:_OnDataTetrisFeatureLock(lockState)
 end
-
-

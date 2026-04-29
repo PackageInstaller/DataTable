@@ -1,89 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/goldberg_event/stn_ge_build_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("stn_mission_build_team")
 _class("GoldbergEvent_BuildTeam", Mission_BuildTeam)
 GoldbergEvent_BuildTeam = GoldbergEvent_BuildTeam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GoldbergEvent_BuildTeam.Constructor = function(self, _, teamIndex)
-  -- function num : 0_0 , upvalues : _ENV
-  if not teamIndex then
-    self._teamIndex = TestConst.MissionTeamIndex
-  end
+function GoldbergEvent_BuildTeam:Constructor(_, teamIndex)
+  self._teamIndex = teamIndex or TestConst.MissionTeamIndex
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GoldbergEvent_BuildTeam.TaskFunc = function(self, TT, result)
-  -- function num : 0_1 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function GoldbergEvent_BuildTeam:TaskFunc(TT, result)
+  local runData = self.m_pManager:GetMissionRunData()
   local configID = runData:GetComponentConfigID()
-  local overrideMode = (TestConst.GoldbergEventBuildTeamModeOverride)[configID]
+  local overrideMode = TestConst.GoldbergEventBuildTeamModeOverride[configID]
   if not overrideMode then
-    ((GoldbergEvent_BuildTeam.super).TaskFunc)(self, TT, result)
-    return 
+    GoldbergEvent_BuildTeam.super.TaskFunc(self, TT, result)
+    return
   end
   if overrideMode == 1 then
     local campaignID = 1066
-    local cfg_campaign = (Cfg.cfg_campaign)[campaignID]
+    local cfg_campaign = Cfg.cfg_campaign[campaignID]
     cfg_campaign.BeginTime = "2022-08-17 04:00:00"
-    while ((GameGlobal.UIStateManager)()):CurUIStateType() ~= UIStateType.UIMain do
+    while GameGlobal.UIStateManager():CurUIStateType() ~= UIStateType.UIMain do
       YIELD(TT, 100)
     end
     self:BuildTeamN21(TT, result)
-  else
-    do
-      if overrideMode == 2 then
-        local campaignID = 5020
-        local cfg_campaign = (Cfg.cfg_campaign)[campaignID]
-        cfg_campaign.BeginTime = "2022-08-17 04:00:00"
-        while ((GameGlobal.UIStateManager)()):CurUIStateType() ~= UIStateType.UIMain do
-          YIELD(TT, 100)
-        end
-        self:BuildTeamCN4CC(TT, result)
-      end
+  elseif overrideMode == 2 then
+    local campaignID = 5020
+    local cfg_campaign = Cfg.cfg_campaign[campaignID]
+    cfg_campaign.BeginTime = "2022-08-17 04:00:00"
+    while GameGlobal.UIStateManager():CurUIStateType() ~= UIStateType.UIMain do
+      YIELD(TT, 100)
     end
+    self:BuildTeamCN4CC(TT, result)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GoldbergEvent_BuildTeam.BuildTeamN21 = function(self, TT, result)
-  -- function num : 0_2 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function GoldbergEvent_BuildTeam:BuildTeamN21(TT, result)
+  local runData = self.m_pManager:GetMissionRunData()
   local petPoolOptions = SmokeTestTeamBuildPoolOptions:New()
-  if runData:IsRandomTeam() and not (self._manager):BuildRandomTeam(runData, petPoolOptions) then
-    self.m_nLogicResult = 2
-    return 
-  end
-  ;
-  (self._manager):AsyncBuildTeamByRunData(TT, self._teamIndex, result)
-  if result:IsErrorOccured() then
-    self.m_nLogicResult = 3
-    return 
+  if runData:IsRandomTeam() then
+    if not self._manager:BuildRandomTeam(runData, petPoolOptions) then
+      self.m_nLogicResult = 2
+      return
+    end
   else
-    self.m_nLogicResult = 1
-    return 
+    self._manager:AsyncBuildTeamByRunData(TT, self._teamIndex, result)
+    if result:IsErrorOccured() then
+      self.m_nLogicResult = 3
+      return
+    else
+      self.m_nLogicResult = 1
+      return
+    end
   end
   local currentTeamPetBuildData = runData:GetCurrentTeamBuild()
-  ;
-  (self._manager):PreparePetsByBuildDataList(TT, currentTeamPetBuildData, result)
+  self._manager:PreparePetsByBuildDataList(TT, currentTeamPetBuildData, result)
   if result:IsErrorOccured() then
     self.m_nLogicResult = 3
-    return 
+    return
   end
   local petPstIds = runData:GeneratePetPstID()
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   for i = 1, 3 do
-    local updateFormationResult = (UIActivityN21CCConst.SaveTeamInfo)(TT, 1, "", petPstIds)
+    local updateFormationResult = UIActivityN21CCConst.SaveTeamInfo(TT, 1, "", petPstIds)
     if updateFormationResult then
       result:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
       result:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
       self.m_nLogicResult = 1
-      return 
+      return
     else
       result:SetCustomData("result", false)
     end
@@ -91,45 +73,42 @@ GoldbergEvent_BuildTeam.BuildTeamN21 = function(self, TT, result)
   result:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   result:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
   self.m_nLogicResult = 3
-  ;
-  (Log.exception)(self._className, "UIActivityN21CCConst.SaveTeamInfo failed, result: ", tostring(result:GetCustomData("result")))
+  Log.exception(self._className, "UIActivityN21CCConst.SaveTeamInfo failed, result: ", tostring(result:GetCustomData("result")))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GoldbergEvent_BuildTeam.BuildTeamCN4CC = function(self, TT, result)
-  -- function num : 0_3 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function GoldbergEvent_BuildTeam:BuildTeamCN4CC(TT, result)
+  local runData = self.m_pManager:GetMissionRunData()
   local petPoolOptions = SmokeTestTeamBuildPoolOptions:New()
-  if runData:IsRandomTeam() and not (self._manager):BuildRandomTeam(runData, petPoolOptions) then
-    self.m_nLogicResult = 2
-    return 
-  end
-  ;
-  (self._manager):AsyncBuildTeamByRunData(TT, self._teamIndex, result)
-  if result:IsErrorOccured() then
-    self.m_nLogicResult = 3
-    return 
+  if runData:IsRandomTeam() then
+    if not self._manager:BuildRandomTeam(runData, petPoolOptions) then
+      self.m_nLogicResult = 2
+      return
+    end
   else
-    self.m_nLogicResult = 1
-    return 
+    self._manager:AsyncBuildTeamByRunData(TT, self._teamIndex, result)
+    if result:IsErrorOccured() then
+      self.m_nLogicResult = 3
+      return
+    else
+      self.m_nLogicResult = 1
+      return
+    end
   end
   local currentTeamPetBuildData = runData:GetCurrentTeamBuild()
-  ;
-  (self._manager):PreparePetsByBuildDataList(TT, currentTeamPetBuildData, result)
+  self._manager:PreparePetsByBuildDataList(TT, currentTeamPetBuildData, result)
   if result:IsErrorOccured() then
     self.m_nLogicResult = 3
-    return 
+    return
   end
   local petPstIds = runData:GeneratePetPstID()
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   for i = 1, 3 do
-    local updateFormationResult = (UIActivityN4CCHelper.SaveTeamInfo)(TT, 1, "", petPstIds)
+    local updateFormationResult = UIActivityN4CCHelper.SaveTeamInfo(TT, 1, "", petPstIds)
     if updateFormationResult then
       result:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
       result:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
       self.m_nLogicResult = 1
-      return 
+      return
     else
       result:SetCustomData("result", false)
     end
@@ -137,8 +116,5 @@ GoldbergEvent_BuildTeam.BuildTeamCN4CC = function(self, TT, result)
   result:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   result:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
   self.m_nLogicResult = 3
-  ;
-  (Log.exception)(self._className, "UIActivityN4CCHelper.SaveTeamInfo failed, result: ", tostring(result:GetCustomData("result")))
+  Log.exception(self._className, "UIActivityN4CCHelper.SaveTeamInfo failed, result: ", tostring(result:GetCustomData("result")))
 end
-
-

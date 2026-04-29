@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/random/ui_season_maze_card_decide.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeCardDecide", UIController)
 UISeasonMazeCardDecide = UISeasonMazeCardDecide
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeCardDecide.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMazeCardDecide:OnShow(uiParams)
   self:InitWidget()
   self.cardList = uiParams[1]
   self.point = uiParams[2]
@@ -16,10 +9,7 @@ UISeasonMazeCardDecide.OnShow = function(self, uiParams)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardDecide.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeCardDecide:InitWidget()
   self.lten = self:GetUIComponent("Image", "lten")
   self.lone = self:GetUIComponent("Image", "lone")
   self.rten = self:GetUIComponent("Image", "rten")
@@ -34,109 +24,62 @@ UISeasonMazeCardDecide.InitWidget = function(self)
   self.rightImageRedStr = "cn14_sjmj_pd_rzi0"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardDecide.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeCardDecide:OnValue()
   if self.cardList then
     local totalPoint = 0
-    ;
-    (self.cardpool):SpawnObjects("UISeasonMazeCardItem", #self.cardList)
-    self.cardPoolList = (self.cardpool):GetAllSpawnList()
+    self.cardpool:SpawnObjects("UISeasonMazeCardItem", #self.cardList)
+    self.cardPoolList = self.cardpool:GetAllSpawnList()
     for i = 1, #self.cardList do
-      local card = (self.cardList)[i]
-      ;
-      ((self.cardPoolList)[i]):SetData(i, card.id)
-      local Cfg = (Cfg.cfg_component_season_maze_hand)[card.id]
+      local card = self.cardList[i]
+      self.cardPoolList[i]:SetData(i, card.id)
+      local Cfg = Cfg.cfg_component_season_maze_hand[card.id]
       if Cfg then
         local max = card.steps
         totalPoint = totalPoint + max
       else
-        do
-          do
-            ;
-            (Log.exception)("存在空的卡牌id", card.id)
-            ;
-            ((self.cardPoolList)[i]):RootAlpha(0)
-            -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        Log.exception("存在空的卡牌id", card.id)
       end
+      self.cardPoolList[i]:RootAlpha(0)
     end
     self.point = self.point + 1
-    local success = self.point <= totalPoint
+    local success = totalPoint >= self.point
     local lt = self.point // 10
     local lo = self.point % 10
-    ;
-    ((self.lten).gameObject):SetActive(lt ~= 0)
-    -- DECOMPILER ERROR at PC74: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.lten).sprite = (self.atlas):GetSprite(self.leftImageStr .. lt)
-    -- DECOMPILER ERROR at PC82: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.lone).sprite = (self.atlas):GetSprite(self.leftImageStr .. lo)
-    local rt = (totalPoint) // 10
-    local ro = (totalPoint) % 10
-    ;
-    ((self.rten).gameObject):SetActive(rt ~= 0)
-    if not success or not self.rightImageBlueStr then
-      local str = self.rightImageRedStr
-    end
-    -- DECOMPILER ERROR at PC106: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.rten).sprite = (self.atlas):GetSprite(str .. rt)
-    -- DECOMPILER ERROR at PC114: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.rone).sprite = (self.atlas):GetSprite(str .. ro)
+    self.lten.gameObject:SetActive(lt ~= 0)
+    self.lten.sprite = self.atlas:GetSprite(self.leftImageStr .. lt)
+    self.lone.sprite = self.atlas:GetSprite(self.leftImageStr .. lo)
+    local rt = totalPoint // 10
+    local ro = totalPoint % 10
+    self.rten.gameObject:SetActive(rt ~= 0)
+    local str = success and self.rightImageBlueStr or self.rightImageRedStr
+    self.rten.sprite = self.atlas:GetSprite(str .. rt)
+    self.rone.sprite = self.atlas:GetSprite(str .. ro)
     local colorSpr = success and "cn14_sjmj_pd_di03" or "cn14_sjmj_pd_di02"
-    -- DECOMPILER ERROR at PC126: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.colorImg).sprite = (self.atlas):GetSprite(colorSpr)
+    self.colorImg.sprite = self.atlas:GetSprite(colorSpr)
     local titleStr = success and "str_season_maze_decide_win" or "str_season_maze_decide_lose"
-    ;
-    (self.text):SetText((StringTable.Get)(titleStr))
+    self.text:SetText(StringTable.Get(titleStr))
     self:StartTask(self.ShowAnim, self, success)
   else
-    (Log.exception)("参数没有卡牌数据")
+    Log.exception("参数没有卡牌数据")
   end
-  -- DECOMPILER ERROR: 11 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCardDecide.ShowAnim = function(self, TT, success)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazeCardDecide:ShowAnim(TT, success)
   for i = 1, #self.cardList do
-    ((self.cardPoolList)[i]):RootAlpha(1)
-    ;
-    ((self.cardPoolList)[i]):PlayAnim("uieff_UISeasonMazeCardItem_in")
+    self.cardPoolList[i]:RootAlpha(1)
+    self.cardPoolList[i]:PlayAnim("uieff_UISeasonMazeCardItem_in")
     YIELD(TT, 20)
   end
   YIELD(TT, 500)
   for i = 1, #self.cardList do
-    ((self.cardPoolList)[i]):PlayAnim("uieff_UISeasonMazeCardItem_sprint")
+    self.cardPoolList[i]:PlayAnim("uieff_UISeasonMazeCardItem_sprint")
     YIELD(TT, 100)
   end
-  do
-    local animStr = success and "uieff_UISeasonMazeCardDecide_win" or "uieff_UISeasonMazeCardDecide_fail"
-    ;
-    (self.anim):Play(animStr)
-    YIELD(TT, 2500)
-    if self.callback then
-      (self.callback)()
-    end
-    self:CloseDialog()
+  local animStr = success and "uieff_UISeasonMazeCardDecide_win" or "uieff_UISeasonMazeCardDecide_fail"
+  self.anim:Play(animStr)
+  YIELD(TT, 2500)
+  if self.callback then
+    self.callback()
   end
+  self:CloseDialog()
 end
-
-

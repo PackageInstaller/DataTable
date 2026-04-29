@@ -1,23 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2900221/cfg_skill_view_500212.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 300, 
-{" DataSelectDamage,damageIndex = 1; PlayCasterBindEffect,effectID=963; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=964,turnToTarget=1,deathClear=0,label=doAgain; PlayTargetAddBuff,buffID=30061; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; Wait,waitTime=2000; "}
-}
-, 
-{2, 2, 38, 1, 0, 1000, 
-{
-effectIDList = {966, 819, 823, 965, 962, 963, 960}
-}
-}
-, 
-{3, 3, 0, 1, 0, 3233, 
-{" PlayTransformation; PlayCasterAddBuff,buffID=30243,remove=1; PlayCasterRefreshBuffView,buffID=30243; PlayCasterAddBuff,buffID=30241; PlayCasterRenderState,renderState=0; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    300,
+    {
+      " DataSelectDamage,damageIndex = 1; PlayCasterBindEffect,effectID=963; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=964,turnToTarget=1,deathClear=0,label=doAgain; PlayTargetAddBuff,buffID=30061; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; Wait,waitTime=2000; "
+    }
+  },
+  {
+    2,
+    2,
+    38,
+    1,
+    0,
+    1000,
+    {
+      effectIDList = {
+        966,
+        819,
+        823,
+        965,
+        962,
+        963,
+        960
+      }
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    0,
+    3233,
+    {
+      " PlayTransformation; PlayCasterAddBuff,buffID=30243,remove=1; PlayCasterRefreshBuffView,buffID=30243; PlayCasterAddBuff,buffID=30241; PlayCasterRenderState,renderState=0; "
+    }
+  }
 }
 return config, "ID", key
-

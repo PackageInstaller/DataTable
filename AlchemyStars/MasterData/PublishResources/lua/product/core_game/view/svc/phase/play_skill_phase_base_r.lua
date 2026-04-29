@@ -1,108 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_phase_base_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlaySkillPhaseBase", Object)
 PlaySkillPhaseBase = PlaySkillPhaseBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillPhaseBase.Constructor = function(self, skillService, world)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillPhaseBase:Constructor(skillService, world)
   self._skillService = skillService
   self._world = world
-  self._startTick = (GameGlobal:GetInstance()):GetCurrentTime()
-  self._configService = (self._world):GetService("Config")
-  self._timeService = (self._world):GetService("Time")
-  self._effectService = (self._world):GetService("Effect")
+  self._startTick = GameGlobal:GetInstance():GetCurrentTime()
+  self._configService = self._world:GetService("Config")
+  self._timeService = self._world:GetService("Time")
+  self._effectService = self._world:GetService("Effect")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBase.PrepareToPlay = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_1
+function PlaySkillPhaseBase:PrepareToPlay(TT, casterEntity, phaseParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBase.BeginPlay = function(self, TT, casterEntity, firstPhaseParam)
-  -- function num : 0_2 , upvalues : _ENV
-  self._startTick = (GameGlobal:GetInstance()):GetCurrentTime()
+function PlaySkillPhaseBase:BeginPlay(TT, casterEntity, firstPhaseParam)
+  self._startTick = GameGlobal:GetInstance():GetCurrentTime()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_3
+function PlaySkillPhaseBase:PlayFlight(TT, casterEntity, phaseParam)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBase.EndPlay = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_4
+function PlaySkillPhaseBase:EndPlay(TT, casterEntity, phaseParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBase._GetElapseTick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  return (math.floor)((GameGlobal:GetInstance()):GetCurrentTime() - self._startTick)
+function PlaySkillPhaseBase:_GetElapseTick()
+  return math.floor(GameGlobal:GetInstance():GetCurrentTime() - self._startTick)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBase.SkillService = function(self)
-  -- function num : 0_6
+function PlaySkillPhaseBase:SkillService()
   return self._skillService
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBase._DelayTime = function(self, TT, nTime)
-  -- function num : 0_7 , upvalues : _ENV
-  if nTime and nTime > 0 then
+function PlaySkillPhaseBase:_DelayTime(TT, nTime)
+  if nTime and 0 < nTime then
     YIELD(TT, nTime)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBase._GetEntityBasePos = function(self, entityWork)
-  -- function num : 0_8
-  local posTarget = nil
-  if entityWork == nil then
+function PlaySkillPhaseBase:_GetEntityBasePos(entityWork)
+  local posTarget
+  if nil == entityWork then
     return posTarget
   end
   return entityWork:GetGridPosition()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBase._GetEntityCenterPos = function(self, entityWork)
-  -- function num : 0_9
-  local posTarget = nil
-  if entityWork == nil then
+function PlaySkillPhaseBase:_GetEntityCenterPos(entityWork)
+  local posTarget
+  if nil == entityWork then
     return posTarget
   end
   return entityWork:GetDamageCenter()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBase._GetEntityBasePosByID = function(self, nEntityID)
-  -- function num : 0_10
-  local entityWork = (self._world):GetEntityByID(nEntityID)
+function PlaySkillPhaseBase:_GetEntityBasePosByID(nEntityID)
+  local entityWork = self._world:GetEntityByID(nEntityID)
   return self:_GetEntityBasePos(entityWork)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBase._PlayEffect = function(self, TT, posCast, posTarget, gridEffectID, nEffectDelayTime, fxNoRotation)
-  -- function num : 0_11 , upvalues : _ENV
-  if gridEffectID == nil or gridEffectID <= 0 then
-    return 
+function PlaySkillPhaseBase:_PlayEffect(TT, posCast, posTarget, gridEffectID, nEffectDelayTime, fxNoRotation)
+  if nil == gridEffectID or gridEffectID <= 0 then
+    return
   end
-  local effectService = (self._world):GetService("Effect")
+  local effectService = self._world:GetService("Effect")
   local posDirectory = posTarget - posCast
   if fxNoRotation then
     posDirectory = Vector2.zero
@@ -111,49 +71,36 @@ PlaySkillPhaseBase._PlayEffect = function(self, TT, posCast, posTarget, gridEffe
   self:_DelayTime(TT, nEffectDelayTime)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBase._PlayAnimationEffect = function(self, TT, casterEntity, stAnimationName, nEffectID, nEffectTime)
-  -- function num : 0_12 , upvalues : _ENV
-  if stAnimationName and stAnimationName ~= "" then
+function PlaySkillPhaseBase:_PlayAnimationEffect(TT, casterEntity, stAnimationName, nEffectID, nEffectTime)
+  if stAnimationName and "" ~= stAnimationName then
     casterEntity:SetAnimatorControllerTriggers({stAnimationName})
-    ;
-    (Log.debug)("[Animation]: 播放动画[" .. stAnimationName .. "]")
+    Log.debug("[Animation]: 播放动画[" .. stAnimationName .. "]")
   end
   if nEffectID then
-    local effectService = (self._world):GetService("Effect")
+    local effectService = self._world:GetService("Effect")
     local listEffectID = {}
-    -- DECOMPILER ERROR at PC32: Unhandled construct in 'MakeBoolean' P1
-
-    if type(nEffectID) == "number" and nEffectID > 0 then
-      listEffectID[#listEffectID + 1] = nEffectID
-    end
-    if type(nEffectID) == "table" then
+    if type(nEffectID) == "number" then
+      if 0 < nEffectID then
+        listEffectID[#listEffectID + 1] = nEffectID
+      end
+    elseif type(nEffectID) == "table" then
       listEffectID = nEffectID
     end
     for i = 1, #listEffectID do
       effectService:CreateEffect(listEffectID[i], casterEntity)
     end
   end
-  do
-    self:_DelayTime(TT, nEffectTime)
+  self:_DelayTime(TT, nEffectTime)
+end
+
+function PlaySkillPhaseBase:_WaitSonTask(listTask)
+  if table.count(listTask) > 0 then
+    while not TaskHelper:GetInstance():IsAllTaskFinished(listTask) do
+      YIELD(TT)
+    end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBase._WaitSonTask = function(self, listTask)
-  -- function num : 0_13 , upvalues : _ENV
-  while (table.count)(listTask) > 0 and not (TaskHelper:GetInstance()):IsAllTaskFinished(listTask) do
-    YIELD(TT)
-  end
+function PlaySkillPhaseBase:_MakePosString(posWork)
+  return GameHelper.MakePosString(posWork)
 end
-
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseBase._MakePosString = function(self, posWork)
-  -- function num : 0_14 , upvalues : _ENV
-  return (GameHelper.MakePosString)(posWork)
-end
-
-

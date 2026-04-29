@@ -1,17 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2900681/cfg_skill_view_29006812.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterTurnToPlayer; PlayCasterAnimation,animName =Skill02; PlayCasterBindEffect,effectID=3120; Wait,waitTime=300; PlayCasterBindEffect,effectID=3122; Wait,waitTime=1000; PlayAudio,audioID = 6125,audioType=1; Wait,waitTime=1000; PlayCasterBindEffect,effectID=3123,isRotate=1,randomRotate=0.3; Wait,waitTime=300; PlayCasterBindEffect,effectID=3123,isRotate=1,randomRotate=0.3; Wait,waitTime=150; PlayCasterBindEffect,effectID=3123,isRotate=1,randomRotate=0.3; Wait,waitTime=150; "}
-}
-, 
-{2, 2, 34, 2, 1, 0, 
-{gridEffectID = 3121, gridEffectDelayTime = 0, gridIntervalTime = 100, showTimeDelay = 1000}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterTurnToPlayer; PlayCasterAnimation,animName =Skill02; PlayCasterBindEffect,effectID=3120; Wait,waitTime=300; PlayCasterBindEffect,effectID=3122; Wait,waitTime=1000; PlayAudio,audioID = 6125,audioType=1; Wait,waitTime=1000; PlayCasterBindEffect,effectID=3123,isRotate=1,randomRotate=0.3; Wait,waitTime=300; PlayCasterBindEffect,effectID=3123,isRotate=1,randomRotate=0.3; Wait,waitTime=150; PlayCasterBindEffect,effectID=3123,isRotate=1,randomRotate=0.3; Wait,waitTime=150; "
+    }
+  },
+  {
+    2,
+    2,
+    34,
+    2,
+    1,
+    0,
+    {
+      gridEffectID = 3121,
+      gridEffectDelayTime = 0,
+      gridIntervalTime = 100,
+      showTimeDelay = 1000
+    }
+  }
 }
 return config, "ID", key
-

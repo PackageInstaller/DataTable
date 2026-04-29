@@ -1,30 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_change_skill_after_hplock.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionChangeSkillAfterHPLock", AINewNode)
 ActionChangeSkillAfterHPLock = ActionChangeSkillAfterHPLock
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionChangeSkillAfterHPLock.Constructor = function(self)
-  -- function num : 0_0
+function ActionChangeSkillAfterHPLock:Constructor()
   self._hasTrigger = false
   self.skillID = self:GetLogicData(-1)
   self._blockRound = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionChangeSkillAfterHPLock.OnUpdate = function(self, dt)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionChangeSkillAfterHPLock:OnUpdate(dt)
   if self._hasTrigger then
     return AINewNodeStatus.Failure
   end
-  local buffCmpt = (self.m_entityOwn):BuffComponent()
+  local buffCmpt = self.m_entityOwn:BuffComponent()
   if buffCmpt:HpHasLocked() or self._blockRound then
-    local battleStat = (self._world):BattleStat()
+    local battleStat = self._world:BattleStat()
     local curRound = battleStat:GetLevelTotalRoundCount()
     if not self._blockRound then
       self._blockRound = curRound
@@ -36,10 +26,6 @@ ActionChangeSkillAfterHPLock.OnUpdate = function(self, dt)
       return AINewNodeStatus.Failure
     end
   else
-    do
-      do return AINewNodeStatus.Failure end
-    end
+    return AINewNodeStatus.Failure
   end
 end
-
-

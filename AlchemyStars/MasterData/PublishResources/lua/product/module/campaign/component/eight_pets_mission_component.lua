@@ -1,188 +1,122 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/eight_pets_mission_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("EightPetsMissionComponent", ICampaignComponent)
 EightPetsMissionComponent = EightPetsMissionComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-EightPetsMissionComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function EightPetsMissionComponent:Constructor()
   self.m_component_info = EightPetsComponentInfo:New()
   self.m_prev_pass_info_valid = false
   self.m_prev_pass_info = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EightPetsMissionComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function EightPetsMissionComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = EightPetsComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EightPetsMissionComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function EightPetsMissionComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EightPetsMissionComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function EightPetsMissionComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_EIGHT_PETS_MISSION
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EightPetsMissionComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local m_cur_team_index = (self.m_component_info).m_cur_team_index
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).m_cur_team_index = m_cur_team_index
+function EightPetsMissionComponent:InitComponentInfo(a_load_info)
+  local m_cur_team_index = self.m_component_info.m_cur_team_index
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
+  self.m_component_info.m_cur_team_index = m_cur_team_index
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EightPetsMissionComponent.GetCampaignMissionComponentId = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function EightPetsMissionComponent:GetCampaignMissionComponentId()
   return ECampaignMissionComponentId.ECampaignMissionComponentId_EightPets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-EightPetsMissionComponent.GetCampaignMissionParamKeyMap = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function EightPetsMissionComponent:GetCampaignMissionParamKeyMap()
   local componentInfo = self:ComponentInfo()
   local nCfgId = self:GetComponetCfgId(componentInfo.m_campaign_id, componentInfo.m_component_id)
-  return {[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId}
+  return {
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId
+  }
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-EightPetsMissionComponent.HandleEightPetsChangeFormationReq = function(self, TT, asyncRes, formation_index, formation_list)
-  -- function num : 0_7 , upvalues : _ENV
+function EightPetsMissionComponent:HandleEightPetsChangeFormationReq(TT, asyncRes, formation_index, formation_list)
   local request = EightPetsChangeFormationReq:New()
   request.formation_index = formation_index
   request.formation_list = formation_list
   local response = EightPetsChangeFormationReply:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS == asyncRes.m_result then
-    local item = (ComponentInfo.m_formation_info)[formation_index]
+    local item = ComponentInfo.m_formation_info[formation_index]
     item.name = formation_list.name
-    for k,v in pairs(formation_list.pet_list) do
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R14 in 'UnsetPending'
-
-      (item.pet_list)[k] = v
+    for k, v in pairs(formation_list.pet_list) do
+      item.pet_list[k] = v
     end
   else
-    do
-      ;
-      (Log.error)("[CampaignCom][EightPetsMissionComponent] HandleEightPetsChangeFormationReq ret:", asyncRes.m_result)
-      return asyncRes, response
-    end
+    Log.error("[CampaignCom][EightPetsMissionComponent] HandleEightPetsChangeFormationReq ret:", asyncRes.m_result)
   end
+  return asyncRes, response
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-EightPetsMissionComponent.IsPassCamMissionID = function(self, camMissionId)
-  -- function num : 0_8
-  if ((self.m_component_info).m_pass_mission_info)[camMissionId] then
+function EightPetsMissionComponent:IsPassCamMissionID(camMissionId)
+  if self.m_component_info.m_pass_mission_info[camMissionId] then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-EightPetsMissionComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_9 , upvalues : _ENV
+function EightPetsMissionComponent:CampaignComponentPushNotify(notify_data)
   if EightPetsMissionComponentNotifyType.EightPetsMissionComponentNotifyType_InfoChanged == notify_data.m_notify_type then
     local ev = NotifyEightPetsMissionComponentInfoChanged:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
       self:OnUpdateBaseInfo(ev)
     else
-      ;
-      (Log.error)("[CampaignCom][EightPetsMissionComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][EightPetsMissionComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-EightPetsMissionComponent.OnUpdateBaseInfo = function(self, ev)
-  -- function num : 0_10 , upvalues : _ENV
-  for key,value in pairs(ev.m_update_mission_info) do
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R7 in 'UnsetPending'
-
-    ((self.m_component_info).m_pass_mission_info)[key] = value
+function EightPetsMissionComponent:OnUpdateBaseInfo(ev)
+  for key, value in pairs(ev.m_update_mission_info) do
+    self.m_component_info.m_pass_mission_info[key] = value
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-EightPetsMissionComponent.GetCurrTeamId = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function EightPetsMissionComponent:GetCurrTeamId()
   local componentInfo = self:GetComponentInfo()
   local teamId = componentInfo.m_cur_team_index
   local theMax = 0
-  for k,v in pairs(componentInfo.m_formation_info) do
-    theMax = (math.max)(theMax, k)
+  for k, v in pairs(componentInfo.m_formation_info) do
+    theMax = math.max(theMax, k)
   end
-  teamId = (math.max)(teamId, 1)
-  teamId = (math.min)(teamId, theMax)
+  teamId = math.max(teamId, 1)
+  teamId = math.min(teamId, theMax)
   return teamId
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-EightPetsMissionComponent.SetCurrTeamId = function(self, teamId)
-  -- function num : 0_12
+function EightPetsMissionComponent:SetCurrTeamId(teamId)
   local componentInfo = self:GetComponentInfo()
   componentInfo.m_cur_team_index = teamId
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-EightPetsMissionComponent.IsPrevPassInfoValid = function(self)
-  -- function num : 0_13
+function EightPetsMissionComponent:IsPrevPassInfoValid()
   return self.m_prev_pass_info_valid
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-EightPetsMissionComponent.GetPrevPassInfo = function(self)
-  -- function num : 0_14
+function EightPetsMissionComponent:GetPrevPassInfo()
   return self.m_prev_pass_info
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-EightPetsMissionComponent.SavePrevPassInfo = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function EightPetsMissionComponent:SavePrevPassInfo()
   self.m_prev_pass_info_valid = true
   self.m_prev_pass_info = {}
-  local mapPass = (self:GetComponentInfo()).m_pass_mission_info
-  for k,v in pairs(mapPass) do
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self.m_prev_pass_info)[k] = v
+  local mapPass = self:GetComponentInfo().m_pass_mission_info
+  for k, v in pairs(mapPass) do
+    self.m_prev_pass_info[k] = v
   end
 end
-
-

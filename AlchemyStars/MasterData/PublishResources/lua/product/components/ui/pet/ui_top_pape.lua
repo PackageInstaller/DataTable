@@ -1,30 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_top_pape.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITopPape", UICustomWidget)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UITopPape.Constructor = function(self)
-  -- function num : 0_0
+function UITopPape:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopPape.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UITopPape:OnShow(uiParams)
   self._brightIcon = self:GetGameObject("gaoliang")
   self._blackIcon = self:GetGameObject("black")
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UITopPape.ChangeBrightAndBlackState = function(self, isBright)
-  -- function num : 0_2
-  (self._brightIcon):SetActive(isBright)
-  ;
-  (self._blackIcon):SetActive(not isBright)
+function UITopPape:ChangeBrightAndBlackState(isBright)
+  self._brightIcon:SetActive(isBright)
+  self._blackIcon:SetActive(not isBright)
 end
-
-

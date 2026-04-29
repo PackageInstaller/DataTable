@@ -1,32 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_multi_center_cross.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_MultiCenterCross", SkillScopeCalculator_Base)
 SkillScopeCalculator_MultiCenterCross = SkillScopeCalculator_MultiCenterCross
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_MultiCenterCross.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_MultiCenterCross:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local fixedAreaType = scopeParam
   if #centerPos == 0 then
     centerPos = {centerPos}
   end
   local cross_area = {}
   local wholeArea = {}
-  for i,p in pairs(centerPos) do
+  for i, p in pairs(centerPos) do
     local cross_area_one, totalArea_one = self:CalcMultiCenterCrossList(p, scopeParam[1])
-    for k,v in pairs(cross_area_one) do
-      (table.insert)(cross_area, v)
+    for k, v in pairs(cross_area_one) do
+      table.insert(cross_area, v)
     end
-    for k,v in pairs(totalArea_one) do
-      (table.insert)(wholeArea, v)
+    for k, v in pairs(totalArea_one) do
+      table.insert(wholeArea, v)
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.MultiCenterCross, centerPos, cross_area, wholeArea)
   return result
 end
-
-

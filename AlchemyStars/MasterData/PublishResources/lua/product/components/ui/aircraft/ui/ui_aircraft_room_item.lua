@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_room_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftRoomItem", UICustomWidget)
 UIAircraftRoomItem = UIAircraftRoomItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftRoomItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftRoomItem:OnShow(uiParams)
   self._roomName = self:GetUIComponent("UILocalizationText", "TextTitle")
   self._roomLevel = self:GetUIComponent("UILocalizationText", "TextLevel")
   self._roomFuncs = self:GetUIComponent("UISelectObjectPath", "functions")
@@ -22,451 +15,259 @@ UIAircraftRoomItem.OnShow = function(self, uiParams)
   self._extraTipText = self:GetUIComponent("UILocalizationText", "ExtraTipText")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  for _,value in ipairs(self.countDownTimer) do
-    ((GameGlobal.Timer)()):CancelEvent(value)
+function UIAircraftRoomItem:OnHide()
+  for _, value in ipairs(self.countDownTimer) do
+    GameGlobal.Timer():CancelEvent(value)
   end
   self.countDownTimer = {}
   self:Close()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomItem.Refresh = function(self, roomData, _closeInfoWindow)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftRoomItem:Refresh(roomData, _closeInfoWindow)
   self._roomData = roomData
-  self._spaceID = (self._roomData):SpaceId()
+  self._spaceID = self._roomData:SpaceId()
   self._show = true
-  ;
-  (self:GetGameObject()):SetActive(true)
-  ;
-  (self._roomName):SetText((StringTable.Get)((self._roomData):GetRoomName()))
-  self._roomType = (self._roomData):GetRoomType()
-  if (self._module):IsAmusementRoom(self._roomType) then
-    (self._roomLevel):SetText((self._roomData):Level() - 1 .. "/<color=#FF8200>" .. (self._roomData):MaxLevel() - 1 .. "</color>")
+  self:GetGameObject():SetActive(true)
+  self._roomName:SetText(StringTable.Get(self._roomData:GetRoomName()))
+  self._roomType = self._roomData:GetRoomType()
+  if self._module:IsAmusementRoom(self._roomType) then
+    self._roomLevel:SetText(self._roomData:Level() - 1 .. "/<color=#FF8200>" .. self._roomData:MaxLevel() - 1 .. "</color>")
   else
-    ;
-    (self._roomLevel):SetText((self._roomData):Level() .. "/<color=#FF8200>" .. (self._roomData):MaxLevel() .. "</color>")
+    self._roomLevel:SetText(self._roomData:Level() .. "/<color=#FF8200>" .. self._roomData:MaxLevel() .. "</color>")
   end
-  local roomCfg = (Cfg.cfg_aircraft_room)[(self._roomData):RoomId()]
+  local roomCfg = Cfg.cfg_aircraft_room[self._roomData:RoomId()]
   if not roomCfg then
-    AirError("cfg_aircraft_room中找不到配置:", (self._roomData):RoomId())
+    AirError("cfg_aircraft_room中找不到配置:", self._roomData:RoomId())
   end
   if roomCfg.ExtraTip then
-    (self._extraTip):SetActive(true)
-    ;
-    (self._extraTipText):SetText((StringTable.Get)(roomCfg.ExtraTip))
+    self._extraTip:SetActive(true)
+    self._extraTipText:SetText(StringTable.Get(roomCfg.ExtraTip))
   else
-    ;
-    (self._extraTip):SetActive(false)
+    self._extraTip:SetActive(false)
   end
   local functionParent = self:GetUIComponent("Transform", "functions")
   if self.centerRoomWidget then
-    ((self.centerRoomWidget):GetGameObject()):SetActive(false)
+    self.centerRoomWidget:GetGameObject():SetActive(false)
   end
-  local roomTip = (functionParent:Find("DoubleFull")).gameObject
+  local roomTip = functionParent:Find("DoubleFull").gameObject
   roomTip:SetActive(false)
-  if self._roomType ~= AirRoomType.CentralRoom or self._roomType == AirRoomType.ResourceRoom then
-    local cur = (self._roomData):GetResCardCount()
-    local ceiling, bonus = (self._roomData):GetResCardLimit()
-    if ceiling <= cur then
+  if self._roomType == AirRoomType.CentralRoom then
+  elseif self._roomType == AirRoomType.ResourceRoom then
+    local cur = self._roomData:GetResCardCount()
+    local ceiling, bonus = self._roomData:GetResCardLimit()
+    if cur >= ceiling then
       roomTip:SetActive(true)
       local text = roomTip:GetComponentInChildren(typeof(UILocalizationText))
-      text:SetText((StringTable.Get)("str_aircraft_double_coupon_full"))
+      text:SetText(StringTable.Get("str_aircraft_double_coupon_full"))
     end
-  else
-    do
-      if self._roomType == AirRoomType.TacticRoom then
-        local room = self._roomData
-        local num = room:GetCartridgeGiftCount() + #room:GetCartridgeList()
-        do
-          local ceiling = room:GetCartridgeLimit()
-          if ceiling <= num then
-            roomTip:SetActive(true)
-            do
-              local text = roomTip:GetComponentInChildren(typeof(UILocalizationText))
-              text:SetText((StringTable.Get)("str_aircraft_tactic_tape_have_reached_limit"))
-              -- DECOMPILER ERROR at PC174: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC174: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
-      end
-      local funcCfg = (UIAircraftRoomFunctions[self._roomType]).roomFunc
-      local funcCount = #funcCfg
-      ;
-      (self._roomFuncs):SpawnObjects("UIAircraftRoomFuncItem", funcCount)
-      self._funcWidgets = (self._roomFuncs):GetAllSpawnList()
-      for _,value in ipairs(self.countDownTimer) do
-        ((GameGlobal.Timer)()):CancelEvent(value)
-      end
-      self.countDownTimer = {}
-      for i = 1, funcCount do
-        local cfg = funcCfg[i]
-        ;
-        (((self._funcWidgets)[i]):GetGameObject()):SetActive(true)
-        if cfg.specialTag == UIAircraftRoomFuncSpecailTag.DoubleCouponStore then
-          local cur = (self._roomData):GetResCardCount()
-          local ceiling, bonus = (self._roomData):GetResCardLimit()
-          ceiling = (math.floor)(ceiling)
-          if bonus then
-            bonus = (math.floor)(bonus)
-          end
-          ;
-          ((self._funcWidgets)[i]):SetDataSpecial(cfg.name, cur .. "/" .. ceiling, bonus)
-        else
-          do
-            if cfg.specialTag == UIAircraftRoomFuncSpecailTag.DrawCouponStore then
-              local cur = (self._roomData):GetHeartAmberCount()
-              local ceiling, bonus = (self._roomData):GetOutputLimit()
-              ceiling = (math.floor)(ceiling)
-              if bonus then
-                bonus = (math.floor)(bonus)
-              end
-              ;
-              ((self._funcWidgets)[i]):SetDataSpecial(cfg.name, cur .. "/" .. ceiling, bonus)
-            else
-              do
-                if cfg.specialTag == UIAircraftRoomFuncSpecailTag.AtomDiscount then
-                  local dis = (self._roomData):AtomDiscount()
-                  if dis < 1 then
-                    dis = (string.format)("<color=#63ff72>(%.2f%%)</color>", (1 - dis) * 100)
-                  else
-                    dis = "0%"
-                  end
-                  ;
-                  ((self._funcWidgets)[i]):SetDataSpecial(cfg.name, dis)
-                else
-                  do
-                    if cfg.specialTag == UIAircraftRoomFuncSpecailTag.AtomStore then
-                      ((self._funcWidgets)[i]):SetAsAtom(cfg.name)
-                    else
-                      if cfg.specialTag == UIAircraftRoomFuncSpecailTag.DispatchCount then
-                        local dispatchCount = (self._roomData):GetDispatchCount()
-                        local roomCfg = (self._roomData):GetRoomConfig()
-                        ;
-                        ((self._funcWidgets)[i]):SetDataSpecial(cfg.name, dispatchCount .. "/" .. roomCfg.DispatchMax, 0)
-                      else
-                        do
-                          if cfg.specialTag == UIAircraftRoomFuncSpecailTag.DispatchTeam then
-                            local dispatchTeamCount = (self._roomData):GetDispatchTeamCount()
-                            local roomCfg = (self._roomData):GetRoomConfig()
-                            ;
-                            ((self._funcWidgets)[i]):SetDataSpecial(cfg.name, dispatchTeamCount .. "/" .. roomCfg.TeamMax, 0)
-                          else
-                            do
-                              if cfg.specialTag == UIAircraftRoomFuncSpecailTag.TapeStorage then
-                                local room = self._roomData
-                                local num = room:GetCartridgeGiftCount() + #room:GetCartridgeList()
-                                local ceiling = room:GetCartridgeLimit()
-                                ;
-                                ((self._funcWidgets)[i]):SetDataSpecial(cfg.name, num .. "/" .. ceiling, 0)
-                              else
-                                do
-                                  if cfg.specialTag == UIAircraftRoomFuncSpecailTag.TapeCountdown then
-                                    local room = self._roomData
-                                    if room:IsCartridgeLimit() then
-                                      ((self._funcWidgets)[i]):SetDataSpecial(cfg.name, "--:--:--", 0)
-                                    else
-                                      self:AddCountdown(function()
-    -- function num : 0_2_0 , upvalues : room, _ENV, self, i, cfg
-    local time = room:GetCartridgeCountDown()
-    local now = (math.floor)(((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() / 1000)
-    local delta = time - now
-    if delta <= 0 then
-      ((self._funcWidgets)[i]):SetDataSpecial(cfg.name, "00:00:00", 0)
-      self:StartTask(self.RefreshTacticRoom, self)
-    else
-      ;
-      ((self._funcWidgets)[i]):SetDataSpecial(cfg.name, (HelperProxy:GetInstance()):FormatTime_2(delta), 0)
+  elseif self._roomType == AirRoomType.TacticRoom then
+    local room = self._roomData
+    local num = room:GetCartridgeGiftCount() + #room:GetCartridgeList()
+    local ceiling = room:GetCartridgeLimit()
+    if num >= ceiling then
+      roomTip:SetActive(true)
+      local text = roomTip:GetComponentInChildren(typeof(UILocalizationText))
+      text:SetText(StringTable.Get("str_aircraft_tactic_tape_have_reached_limit"))
     end
   end
-)
-                                    end
-                                  else
-                                    do
-                                      if cfg.countDown then
-                                        local time = ((self._roomData)[cfg.func])(self._roomData)
-                                        if time == -1 then
-                                          local str = "--:--:--"
-                                          if self._roomType == AirRoomType.DispatchRoom then
-                                            str = (StringTable.Get)("str_dispatch_room_dispatch_stop_recover")
-                                          end
-                                          ;
-                                          ((self._funcWidgets)[i]):SetDataSpecial(cfg.name, str, 0)
-                                        else
-                                          do
-                                            if time > 0 then
-                                              local funcName = cfg.func
-                                              local name = cfg.name
-                                              self:AddCountdown(function()
-    -- function num : 0_2_1 , upvalues : self, funcName, _ENV, i, name
-    local _text = nil
-    if (self._roomData)[funcName] == nil then
-      (Log.fatal)("[Airctaft] room function not found, roomType: ", self._roomType, " function name: ", funcName, "，spaceID:", (self._roomData):SpaceId())
-    end
-    local time = ((self._roomData)[funcName])(self._roomData)
-    if time == -1 then
-      _text = "--:--:--"
-      if self._roomType == AirRoomType.DispatchRoom then
-        _text = (StringTable.Get)("str_dispatch_room_dispatch_stop_recover")
-      end
-    else
-      if time == 0 then
-        _text = "00:00:00"
-        self:ReqDataAndRefreshRoomMsg()
+  local funcCfg = UIAircraftRoomFunctions[self._roomType].roomFunc
+  local funcCount = #funcCfg
+  self._roomFuncs:SpawnObjects("UIAircraftRoomFuncItem", funcCount)
+  self._funcWidgets = self._roomFuncs:GetAllSpawnList()
+  for _, value in ipairs(self.countDownTimer) do
+    GameGlobal.Timer():CancelEvent(value)
+  end
+  self.countDownTimer = {}
+  for i = 1, funcCount do
+    local cfg = funcCfg[i]
+    self._funcWidgets[i]:GetGameObject():SetActive(true)
+    if cfg.specialTag == UIAircraftRoomFuncSpecailTag.DoubleCouponStore then
+      local cur = self._roomData:GetResCardCount()
+      local ceiling, bonus = self._roomData:GetResCardLimit()
+      ceiling = math.floor(ceiling)
+      bonus = bonus and math.floor(bonus)
+      self._funcWidgets[i]:SetDataSpecial(cfg.name, cur .. "/" .. ceiling, bonus)
+    elseif cfg.specialTag == UIAircraftRoomFuncSpecailTag.DrawCouponStore then
+      local cur = self._roomData:GetHeartAmberCount()
+      local ceiling, bonus = self._roomData:GetOutputLimit()
+      ceiling = math.floor(ceiling)
+      bonus = bonus and math.floor(bonus)
+      self._funcWidgets[i]:SetDataSpecial(cfg.name, cur .. "/" .. ceiling, bonus)
+    elseif cfg.specialTag == UIAircraftRoomFuncSpecailTag.AtomDiscount then
+      local dis = self._roomData:AtomDiscount()
+      if dis < 1 then
+        dis = string.format("<color=#63ff72>(%.2f%%)</color>", (1 - dis) * 100)
       else
-        _text = (HelperProxy:GetInstance()):FormatTime_2((math.floor)(time))
+        dis = "0%"
       end
-    end
-    ;
-    ((self._funcWidgets)[i]):SetDataSpecial(name, _text, 0)
-  end
-)
-                                            else
-                                              do
-                                                do
-                                                  ;
-                                                  ((self._funcWidgets)[i]):SetDataSpecial(cfg.name, "00:00:00", 0)
-                                                  do
-                                                    local base, add = ((self._roomData)[cfg.func])(self._roomData)
-                                                    if base == nil then
-                                                      base = 0
-                                                    end
-                                                    if cfg.isSpeed then
-                                                      base = base * 3600
-                                                      if add then
-                                                        add = add * 3600
-                                                      end
-                                                    end
-                                                    ;
-                                                    ((self._funcWidgets)[i]):SetData(cfg.name, base, add, cfg.isInt, cfg.isPercent)
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out DO_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out DO_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out DO_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out DO_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out DO_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out DO_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out DO_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out DO_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out DO_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out DO_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                                    -- DECOMPILER ERROR at PC483: LeaveBlock: unexpected jumping out IF_STMT
-
-                                                  end
-                                                end
-                                              end
-                                            end
-                                          end
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
+      self._funcWidgets[i]:SetDataSpecial(cfg.name, dis)
+    elseif cfg.specialTag == UIAircraftRoomFuncSpecailTag.AtomStore then
+      self._funcWidgets[i]:SetAsAtom(cfg.name)
+    elseif cfg.specialTag == UIAircraftRoomFuncSpecailTag.DispatchCount then
+      local dispatchCount = self._roomData:GetDispatchCount()
+      local roomCfg = self._roomData:GetRoomConfig()
+      self._funcWidgets[i]:SetDataSpecial(cfg.name, dispatchCount .. "/" .. roomCfg.DispatchMax, 0)
+    elseif cfg.specialTag == UIAircraftRoomFuncSpecailTag.DispatchTeam then
+      local dispatchTeamCount = self._roomData:GetDispatchTeamCount()
+      local roomCfg = self._roomData:GetRoomConfig()
+      self._funcWidgets[i]:SetDataSpecial(cfg.name, dispatchTeamCount .. "/" .. roomCfg.TeamMax, 0)
+    elseif cfg.specialTag == UIAircraftRoomFuncSpecailTag.TapeStorage then
+      local room = self._roomData
+      local num = room:GetCartridgeGiftCount() + #room:GetCartridgeList()
+      local ceiling = room:GetCartridgeLimit()
+      self._funcWidgets[i]:SetDataSpecial(cfg.name, num .. "/" .. ceiling, 0)
+    elseif cfg.specialTag == UIAircraftRoomFuncSpecailTag.TapeCountdown then
+      local room = self._roomData
+      if room:IsCartridgeLimit() then
+        self._funcWidgets[i]:SetDataSpecial(cfg.name, "--:--:--", 0)
+      else
+        self:AddCountdown(function()
+          local time = room:GetCartridgeCountDown()
+          local now = math.floor(GameGlobal.GetModule(SvrTimeModule):GetServerTime() / 1000)
+          local delta = time - now
+          if delta <= 0 then
+            self._funcWidgets[i]:SetDataSpecial(cfg.name, "00:00:00", 0)
+            self:StartTask(self.RefreshTacticRoom, self)
+          else
+            self._funcWidgets[i]:SetDataSpecial(cfg.name, HelperProxy:GetInstance():FormatTime_2(delta), 0)
           end
-        end
+        end)
       end
-      ;
-      (self._roomInfo):Refresh(self._roomData, _closeInfoWindow)
+    elseif cfg.countDown then
+      local time = self._roomData[cfg.func](self._roomData)
+      if time == -1 then
+        local str = "--:--:--"
+        if self._roomType == AirRoomType.DispatchRoom then
+          str = StringTable.Get("str_dispatch_room_dispatch_stop_recover")
+        end
+        self._funcWidgets[i]:SetDataSpecial(cfg.name, str, 0)
+      elseif 0 < time then
+        local funcName = cfg.func
+        local name = cfg.name
+        self:AddCountdown(function()
+          local _text
+          if self._roomData[funcName] == nil then
+            Log.fatal("[Airctaft] room function not found, roomType: ", self._roomType, " function name: ", funcName, "，spaceID:", self._roomData:SpaceId())
+          end
+          local time = self._roomData[funcName](self._roomData)
+          if time == -1 then
+            _text = "--:--:--"
+            if self._roomType == AirRoomType.DispatchRoom then
+              _text = StringTable.Get("str_dispatch_room_dispatch_stop_recover")
+            end
+          elseif time == 0 then
+            _text = "00:00:00"
+            self:ReqDataAndRefreshRoomMsg()
+          else
+            _text = HelperProxy:GetInstance():FormatTime_2(math.floor(time))
+          end
+          self._funcWidgets[i]:SetDataSpecial(name, _text, 0)
+        end)
+      else
+        self._funcWidgets[i]:SetDataSpecial(cfg.name, "00:00:00", 0)
+      end
+    else
+      do
+        local base, add = self._roomData[cfg.func](self._roomData)
+        if base == nil then
+          base = 0
+        end
+        if cfg.isSpeed then
+          base = base * 3600
+          add = add and add * 3600
+        end
+        self._funcWidgets[i]:SetData(cfg.name, base, add, cfg.isInt, cfg.isPercent)
+      end
     end
   end
+  self._roomInfo:Refresh(self._roomData, _closeInfoWindow)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomItem.AddCountdown = function(self, func)
-  -- function num : 0_3 , upvalues : _ENV
+function UIAircraftRoomItem:AddCountdown(func)
   func()
-  local timer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, func)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.countDownTimer)[#self.countDownTimer + 1] = timer
+  local timer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, func)
+  self.countDownTimer[#self.countDownTimer + 1] = timer
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomItem.ReqDataAndRefreshRoomMsg = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.ReqData, self)
+function UIAircraftRoomItem:ReqDataAndRefreshRoomMsg()
+  GameGlobal.TaskManager():StartTask(self.ReqData, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomItem.ReqData = function(self, TT, callBack)
-  -- function num : 0_5 , upvalues : _ENV
+function UIAircraftRoomItem:ReqData(TT, callBack)
   self:Lock(self:GetName())
-  local ack = (self._module):AircraftUpdate(TT)
+  local ack = self._module:AircraftUpdate(TT)
   self:UnLock(self:GetName())
   if ack:GetSucc() then
-    self._roomData = (self._module):GetRoom(self._spaceID)
+    self._roomData = self._module:GetRoom(self._spaceID)
     self:Refresh(self._roomData, false)
   else
-    ;
-    (ToastManager.ShowToast)((self._module):GetErrorMsg(ack:GetResult()))
+    ToastManager.ShowToast(self._module:GetErrorMsg(ack:GetResult()))
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomItem.RefreshTacticRoom = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UIAircraftRoomItem:RefreshTacticRoom(TT)
   local key = self:GetName() .. "-RefreshTacticRoom"
   self:Lock(key)
-  local ack = (self._module):RequestRefreshTacticRoom(TT)
+  local ack = self._module:RequestRefreshTacticRoom(TT)
   self:UnLock(key)
   if ack:GetSucc() then
-    self._roomData = (self._module):GetRoom(self._spaceID)
+    self._roomData = self._module:GetRoom(self._spaceID)
     self:Refresh(self._roomData, false)
   else
-    ;
-    (ToastManager.ShowToast)((self._module):GetErrorMsg(ack:GetResult()))
+    ToastManager.ShowToast(self._module:GetErrorMsg(ack:GetResult()))
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomItem.Close = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self:GetGameObject()):SetActive(false)
+function UIAircraftRoomItem:Close()
+  self:GetGameObject():SetActive(false)
   self._show = false
-  for _,value in ipairs(self.countDownTimer) do
-    ((GameGlobal.Timer)()):CancelEvent(value)
+  for _, value in ipairs(self.countDownTimer) do
+    GameGlobal.Timer():CancelEvent(value)
   end
   self.countDownTimer = {}
   if self.centerRoomWidget then
-    (self.centerRoomWidget):OnClose()
+    self.centerRoomWidget:OnClose()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomItem.IsClosed = function(self)
-  -- function num : 0_8
+function UIAircraftRoomItem:IsClosed()
   return not self._show
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomItem.GetRoomData = function(self)
-  -- function num : 0_9
+function UIAircraftRoomItem:GetRoomData()
   return self._roomData
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomItem.SpaceID = function(self)
-  -- function num : 0_10
+function UIAircraftRoomItem:SpaceID()
   return self._spaceID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomItem.OpenEnterBuild = function(self)
-  -- function num : 0_11
-  (self._roomInfo):OpenEnterBuild()
+function UIAircraftRoomItem:OpenEnterBuild()
+  self._roomInfo:OpenEnterBuild()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomItem.OpenLvUp = function(self)
-  -- function num : 0_12
-  (self._roomInfo):OpenLvUp()
+function UIAircraftRoomItem:OpenLvUp()
+  self._roomInfo:OpenLvUp()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomItem.GetDecorateBtn = function(self)
-  -- function num : 0_13
-  return (self._roomInfo):GetGameObject("ButtonDecorate")
+function UIAircraftRoomItem:GetDecorateBtn()
+  return self._roomInfo:GetGameObject("ButtonDecorate")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomItem.GetRoomInfoGameobject = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIAircraftRoomItem:GetRoomInfoGameobject()
   local leftBottomRect = self:GetUIComponent("RectTransform", "LeftBottom")
   local maxWidth = 0
   local height = 0
   for i = 1, #self._funcWidgets do
-    local layout = ((self._funcWidgets)[i]):GetLayoutRect()
-    if maxWidth < (layout.sizeDelta).x then
-      maxWidth = (layout.sizeDelta).x
+    local layout = self._funcWidgets[i]:GetLayoutRect()
+    if maxWidth < layout.sizeDelta.x then
+      maxWidth = layout.sizeDelta.x
     end
-    height = height + (layout.sizeDelta).y
-    if i > 1 then
+    height = height + layout.sizeDelta.y
+    if 1 < i then
       height = height + self._roomInfoSpaceY
     end
   end
   leftBottomRect.sizeDelta = Vector2(maxWidth, height)
   return leftBottomRect.gameObject
 end
-
-

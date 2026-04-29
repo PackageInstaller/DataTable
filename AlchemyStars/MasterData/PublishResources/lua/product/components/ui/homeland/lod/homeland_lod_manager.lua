@@ -1,93 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/lod/homeland_lod_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandLODManager", Object)
 HomelandLODManager = HomelandLODManager
-local LODLevel = {HIGH = 0, MID = 1, LOW = 2}
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
+local LODLevel = {
+  HIGH = 0,
+  MID = 1,
+  LOW = 2
+}
 
-HomelandLODManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._lodlevel = (LODManager.Instance):GetLODLevel()
+function HomelandLODManager:Constructor()
+  self._lodlevel = LODManager.Instance:GetLODLevel()
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandLODManager.Init = function(self, homelandClient)
-  -- function num : 0_1 , upvalues : LODLevel, _ENV
-  self._medalWallCamera = ((homelandClient:CameraManager()):MedalWallCameraController()):CameraCmp()
-  self._followCamera = ((homelandClient:CameraManager()):FollowCameraController()):CameraCmp()
-  self._globalCamera = ((homelandClient:CameraManager()):GlobalCameraController()):CameraCmp()
+function HomelandLODManager:Init(homelandClient)
+  self._medalWallCamera = homelandClient:CameraManager():MedalWallCameraController():CameraCmp()
+  self._followCamera = homelandClient:CameraManager():FollowCameraController():CameraCmp()
+  self._globalCamera = homelandClient:CameraManager():GlobalCameraController():CameraCmp()
   if self._lodlevel == LODLevel.LOW then
     self:OnLowLevel()
+  elseif self._lodlevel == LODLevel.MID then
+    self:OnMidLevel()
+  elseif self._lodlevel == LODLevel.HIGH then
+    self:OnHighLevel()
   else
-    if self._lodlevel == LODLevel.MID then
-      self:OnMidLevel()
-    else
-      if self._lodlevel == LODLevel.HIGH then
-        self:OnHighLevel()
-      else
-        ;
-        (Log.error)("###[HomelandLODManager] No LOD level found :", self._lodlevel)
-      end
-    end
+    Log.error("###[HomelandLODManager] No LOD level found :", self._lodlevel)
   end
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandLODManager.OnLowLevel = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._resRequest = (ResourceManager:GetInstance()):SyncLoadAsset("Homeland_Low_Post.asset", LoadType.Asset)
-  if self._resRequest ~= nil and (self._resRequest).Obj then
+function HomelandLODManager:OnLowLevel()
+  self._resRequest = ResourceManager:GetInstance():SyncLoadAsset("Homeland_Low_Post.asset", LoadType.Asset)
+  if self._resRequest ~= nil and self._resRequest.Obj then
     if self._followCamera then
-      ((self._followCamera):GetComponent(typeof((UnityEngine.H3DPostProcessing).PostProcessing))).profile = (self._resRequest).Obj
+      self._followCamera:GetComponent(typeof(UnityEngine.H3DPostProcessing.PostProcessing)).profile = self._resRequest.Obj
     end
     if self._globalCamera then
-      ((self._globalCamera):GetComponent(typeof((UnityEngine.H3DPostProcessing).PostProcessing))).profile = (self._resRequest).Obj
+      self._globalCamera:GetComponent(typeof(UnityEngine.H3DPostProcessing.PostProcessing)).profile = self._resRequest.Obj
     end
     if self._medalWallCamera then
-      ((self._medalWallCamera):GetComponent(typeof((UnityEngine.H3DPostProcessing).PostProcessing))).profile = (self._resRequest).Obj
+      self._medalWallCamera:GetComponent(typeof(UnityEngine.H3DPostProcessing.PostProcessing)).profile = self._resRequest.Obj
     end
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandLODManager.OnMidLevel = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandLODManager:OnMidLevel()
   if self._followCamera then
-    ((self._followCamera):GetComponent(typeof((UnityEngine.H3DPostProcessing).PostProcessing))).enabled = true
+    self._followCamera:GetComponent(typeof(UnityEngine.H3DPostProcessing.PostProcessing)).enabled = true
   end
   if self._globalCamera then
-    ((self._globalCamera):GetComponent(typeof((UnityEngine.H3DPostProcessing).PostProcessing))).enabled = false
+    self._globalCamera:GetComponent(typeof(UnityEngine.H3DPostProcessing.PostProcessing)).enabled = false
   end
   if self._medalWallCamera then
-    ((self._medalWallCamera):GetComponent(typeof((UnityEngine.H3DPostProcessing).PostProcessing))).enabled = true
+    self._medalWallCamera:GetComponent(typeof(UnityEngine.H3DPostProcessing.PostProcessing)).enabled = true
   end
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandLODManager.OnHighLevel = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandLODManager:OnHighLevel()
   if self._followCamera then
-    ((self._followCamera):GetComponent(typeof((UnityEngine.H3DPostProcessing).PostProcessing))).enabled = true
+    self._followCamera:GetComponent(typeof(UnityEngine.H3DPostProcessing.PostProcessing)).enabled = true
   end
   if self._globalCamera then
-    ((self._globalCamera):GetComponent(typeof((UnityEngine.H3DPostProcessing).PostProcessing))).enabled = true
+    self._globalCamera:GetComponent(typeof(UnityEngine.H3DPostProcessing.PostProcessing)).enabled = true
   end
   if self._medalWallCamera then
-    ((self._medalWallCamera):GetComponent(typeof((UnityEngine.H3DPostProcessing).PostProcessing))).enabled = true
+    self._medalWallCamera:GetComponent(typeof(UnityEngine.H3DPostProcessing.PostProcessing)).enabled = true
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandLODManager.Dispose = function(self)
-  -- function num : 0_5
+function HomelandLODManager:Dispose()
 end
-
-

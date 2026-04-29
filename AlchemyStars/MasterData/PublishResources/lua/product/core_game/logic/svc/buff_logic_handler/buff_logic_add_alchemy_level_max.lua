@@ -1,29 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_alchemy_level_max.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddAlchemyLevelMax", BuffLogicBase)
 BuffLogicAddAlchemyLevelMax = BuffLogicAddAlchemyLevelMax
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddAlchemyLevelMax.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddAlchemyLevelMax:Constructor(buffInstance, logicParam)
   self._addValue = logicParam.addValue or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddAlchemyLevelMax.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local boardEntity = (self._world):GetBoardEntity()
+function BuffLogicAddAlchemyLevelMax:DoLogic(notify)
+  local boardEntity = self._world:GetBoardEntity()
   local logicFeatureCmpt = boardEntity:LogicFeature()
   if not logicFeatureCmpt then
-    return 
+    return
   end
   local curLevelMax = logicFeatureCmpt:GetAlchemyLevelMax()
   curLevelMax = curLevelMax + self._addValue
   logicFeatureCmpt:SetAlchemyLevelMax(curLevelMax)
 end
-
-

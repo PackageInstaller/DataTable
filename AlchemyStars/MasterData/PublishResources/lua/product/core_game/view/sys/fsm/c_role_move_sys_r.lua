@@ -1,93 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_role_move_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("role_movement_system")
 _class("ClientRoleMovementSystem_Render", RoleMovementSystem)
 ClientRoleMovementSystem_Render = ClientRoleMovementSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientRoleMovementSystem_Render._DoRenderPetHeadShow = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local petRoundTeam = (renderBoardEntity:RenderRoundTeam()):GetRoundTeam()
-  for i,eId in ipairs(petRoundTeam) do
-    local pet = (self._world):GetEntityByID(eId)
+function ClientRoleMovementSystem_Render:_DoRenderPetHeadShow(TT)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local petRoundTeam = renderBoardEntity:RenderRoundTeam():GetRoundTeam()
+  for i, eId in ipairs(petRoundTeam) do
+    local pet = self._world:GetEntityByID(eId)
     local cPetPstId = pet:PetPstID()
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.InOutQueue, cPetPstId:GetPstID(), true)
+    self._world:EventDispatcher():Dispatch(GameEventType.InOutQueue, cPetPstId:GetPstID(), true)
   end
   local chainPreviewMonsterBehaviorCmpt = renderBoardEntity:ChainPreviewMonsterBehavior()
   chainPreviewMonsterBehaviorCmpt:SetChainPath({})
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoleMovementSystem_Render._DoRendererMove = function(self, TT, team)
-  -- function num : 0_1 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local chain_path = (renderBoardEntity:RenderChainPath()):GetRenderChainPath()
+function ClientRoleMovementSystem_Render:_DoRendererMove(TT, team)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local chain_path = renderBoardEntity:RenderChainPath():GetRenderChainPath()
   local teamLeaderEntity = team:GetTeamLeaderPetEntity()
   if not teamLeaderEntity:HasChainMove() then
     local petRoundTeam = self:_GetRoleTurnPetRoundTeam()
-    if #petRoundTeam > 0 then
+    if 0 < #petRoundTeam then
       local startPos = teamLeaderEntity:GetRenderGridPosition()
-      local utilDataSvc = (self._world):GetService("UtilData")
+      local utilDataSvc = self._world:GetService("UtilData")
       if utilDataSvc:IsActiveSkillLinkLine() then
         startPos = chain_path[1]
       end
       local startDir = teamLeaderEntity:GetRenderGridDirection()
-      for i,petEntityID in ipairs(petRoundTeam) do
-        local petEntity = (self._world):GetEntityByID(petEntityID)
+      for i, petEntityID in ipairs(petRoundTeam) do
+        local petEntity = self._world:GetEntityByID(petEntityID)
         petEntity:AddChainMove({}, 0, 0, 0)
       end
       team:ReplacePlayerMovingFlag()
-      ;
-      (TaskManager:GetInstance()):CoreGameStartTask(self._PetMoveTask, self, chain_path, startPos, startDir)
+      TaskManager:GetInstance():CoreGameStartTask(self._PetMoveTask, self, chain_path, startPos, startDir)
     end
   end
-  do
-    while team:HasPlayerMovingFlag() do
-      YIELD(TT, 100)
-    end
+  while team:HasPlayerMovingFlag() do
+    YIELD(TT, 100)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoleMovementSystem_Render._PetMoveTask = function(self, TT, chain_path, startPos, startDir)
-  -- function num : 0_2 , upvalues : _ENV
+function ClientRoleMovementSystem_Render:_PetMoveTask(TT, chain_path, startPos, startDir)
   local petRoundTeam = self:_GetRoleTurnPetRoundTeam()
-  for i,petEntityID in ipairs(petRoundTeam) do
-    local petEntity = (self._world):GetEntityByID(petEntityID)
+  for i, petEntityID in ipairs(petRoundTeam) do
+    local petEntity = self._world:GetEntityByID(petEntityID)
     petEntity:SetLocation(startPos, startDir)
-    local renderBoardEntity = (self._world):GetRenderBoardEntity()
-    local normalAtkRes = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.NormalAttack)
+    local renderBoardEntity = self._world:GetRenderBoardEntity()
+    local normalAtkRes = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.NormalAttack)
     local startWaitTime = normalAtkRes:GetPathMoveStartWaitTime() * 1000
-    while i > 1 and self:IsPrevPetsAtStartPos(i, startPos, petRoundTeam) do
-      YIELD(TT)
+    if 1 < i then
+      while self:IsPrevPetsAtStartPos(i, startPos, petRoundTeam) do
+        YIELD(TT)
+      end
     end
-    local timeService = (self._world):GetService("Time")
+    local timeService = self._world:GetService("Time")
     local curtime = timeService:GetCurrentTimeMs()
     petEntity:ReplaceChainMove(chain_path, 1, curtime, BattleConst.MoveSpeed)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.IdleEnd, 1, petEntity:GetID())
+    self._world:EventDispatcher():Dispatch(GameEventType.IdleEnd, 1, petEntity:GetID())
     YIELD(TT, startWaitTime)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoleMovementSystem_Render.IsPrevPetsAtStartPos = function(self, curIdx, startPos, es)
-  -- function num : 0_3 , upvalues : _ENV
+function ClientRoleMovementSystem_Render:IsPrevPetsAtStartPos(curIdx, startPos, es)
   if not es then
-    return 
+    return
   end
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local nCount = (math.min)(#es, curIdx - 1)
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local nCount = math.min(#es, curIdx - 1)
   for i = 1, nCount do
-    local e = (self._world):GetEntityByID(es[i])
+    local e = self._world:GetEntityByID(es[i])
     local posWork = boardServiceRender:GetRealEntityGridPos(e)
     if posWork == startPos then
       local chainMoveCmp = e:ChainMove()
@@ -98,97 +79,73 @@ ClientRoleMovementSystem_Render.IsPrevPetsAtStartPos = function(self, curIdx, st
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoleMovementSystem_Render._GetRoleTurnPetRoundTeam = function(self)
-  -- function num : 0_4
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local petRoundTeam = (renderBoardEntity:RenderRoundTeam()):GetRoundTeam()
+function ClientRoleMovementSystem_Render:_GetRoleTurnPetRoundTeam()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local petRoundTeam = renderBoardEntity:RenderRoundTeam():GetRoundTeam()
   return petRoundTeam
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoleMovementSystem_Render._DoRenderNotifyBuff = function(self, TT, elementType, teamEntity)
-  -- function num : 0_5 , upvalues : _ENV
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function ClientRoleMovementSystem_Render:_DoRenderNotifyBuff(TT, elementType, teamEntity)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayBuffView(TT, NTTeamNormalAttackStart:New())
   local ntPlayerMoveStart = NTPlayerMoveStart:New()
   ntPlayerMoveStart:SetChainPathType(elementType)
   ntPlayerMoveStart:SetTeamEntity(teamEntity)
   playBuffSvc:PlayBuffView(TT, ntPlayerMoveStart)
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local petRoundTeam = (renderBoardEntity:RenderRoundTeam()):GetRoundTeam()
-  local chain_path = (renderBoardEntity:RenderChainPath()):GetRenderChainPath()
-  for i,eId in ipairs(petRoundTeam) do
-    local petEntity = (self._world):GetEntityByID(eId)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local petRoundTeam = renderBoardEntity:RenderRoundTeam():GetRoundTeam()
+  local chain_path = renderBoardEntity:RenderChainPath():GetRenderChainPath()
+  for i, eId in ipairs(petRoundTeam) do
+    local petEntity = self._world:GetEntityByID(eId)
     playBuffSvc:PlayBuffView(TT, NTNormalAttackStart:New(petEntity, elementType, chain_path))
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoleMovementSystem_Render._DoRenderNotifyBuffNormalAttackEnd = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local petRoundTeam = (renderBoardEntity:RenderRoundTeam()):GetRoundTeam()
-  for i,eId in ipairs(petRoundTeam) do
-    local petEntity = (self._world):GetEntityByID(eId)
+function ClientRoleMovementSystem_Render:_DoRenderNotifyBuffNormalAttackEnd(TT)
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local petRoundTeam = renderBoardEntity:RenderRoundTeam():GetRoundTeam()
+  for i, eId in ipairs(petRoundTeam) do
+    local petEntity = self._world:GetEntityByID(eId)
     playBuffSvc:PlayBuffView(TT, NTNormalAttackEnd:New(petEntity))
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoleMovementSystem_Render._DoRenderResetPieceAnim = function(self, TT)
-  -- function num : 0_7
-  local pieceService = (self._world):GetService("Piece")
+function ClientRoleMovementSystem_Render:_DoRenderResetPieceAnim(TT)
+  local pieceService = self._world:GetService("Piece")
   pieceService:RefreshPieceAnim()
   pieceService:RefreshMonsterAreaOutLine(TT)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoleMovementSystem_Render._SendPrismNotify = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTCovCrystalPrism:New())
+function ClientRoleMovementSystem_Render:_SendPrismNotify(TT)
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, NTCovCrystalPrism:New())
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoleMovementSystem_Render._DoRenderFeatureOnRoleMoveEnter = function(self, TT)
-  -- function num : 0_9
-  local featureSvcRender = (self._world):GetService("FeatureRender")
+function ClientRoleMovementSystem_Render:_DoRenderFeatureOnRoleMoveEnter(TT)
+  local featureSvcRender = self._world:GetService("FeatureRender")
   if featureSvcRender then
     featureSvcRender:DoFeatureOnRoleMoveEnter(TT)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoleMovementSystem_Render._DoRenderCreateActiveLinkLineGhost = function(self, TT, teamEntity)
-  -- function num : 0_10
-  local utilDataSvc = (self._world):GetService("UtilData")
+function ClientRoleMovementSystem_Render:_DoRenderCreateActiveLinkLineGhost(TT, teamEntity)
+  local utilDataSvc = self._world:GetService("UtilData")
   if not utilDataSvc:IsPreviewNeedShowLinkageNumForCostStep() then
-    return 
+    return
   end
   local teamCmpt = teamEntity:Team()
   local teamLeaderEntityID = teamCmpt:GetOriginalTeamLeaderID()
   local teamLeaderEntity = teamCmpt:GetTeamLeaderEntity()
   local teamEntities = teamCmpt:GetTeamPetEntities()
   if teamLeaderEntityID then
-    teamLeaderEntity = (self._world):GetEntityByID(teamLeaderEntityID)
+    teamLeaderEntity = self._world:GetEntityByID(teamLeaderEntityID)
   end
-  ;
-  (teamEntity:Location()):SetSyncToHPBarState(false)
+  teamEntity:Location():SetSyncToHPBarState(false)
   local teamPos = utilDataSvc:GetRenderActiveSkillLinkLineTeamPos()
-  local boardEntity = (self._world):GetRenderBoardEntity()
+  local boardEntity = self._world:GetRenderBoardEntity()
   local renderBoardCmpt = boardEntity:RenderBoard()
-  local renderEntitySvc = (self._world):GetService("RenderEntity")
+  local renderEntitySvc = self._world:GetService("RenderEntity")
   local ghostEntity = renderEntitySvc:CreateGhost(teamPos, teamLeaderEntity)
   renderBoardCmpt:SetActiveLinkLineGhostEntityID(ghostEntity:GetID())
   utilDataSvc:SetPet1702361TrapHide()
 end
-
-

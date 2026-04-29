@@ -1,23 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_change_pet_team_order.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayChangePetTeamOrderInstruction", BaseInstruction)
 PlayChangePetTeamOrderInstruction = PlayChangePetTeamOrderInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayChangePetTeamOrderInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayChangePetTeamOrderInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local result = routineComponent:GetEffectResultByArray(SkillEffectType.ChangePetTeamOrder)
   if not result then
-    return 
+    return
   end
   local eTarget = world:GetEntityByID(result:GetTargetEntityID())
-  local eTeam = (eTarget:Pet()):GetOwnerTeamEntity()
+  local eTeam = eTarget:Pet():GetOwnerTeamEntity()
   local tOldTeamOrder = result:GetOldTeamOrder()
   local tNewTeamOrder = result:GetNewTeamOrder()
   local request = BattleTeamOrderViewRequest:New(tOldTeamOrder, tNewTeamOrder, BattleTeamOrderViewType.FillVacancies_Skill)
@@ -26,35 +19,22 @@ PlayChangePetTeamOrderInstruction.DoInstruction = function(self, TT, casterEntit
   local seqNo = request:GetRequestSequenceNo()
   local renderSetTeamLeaderTriggered = false
   local renderBattleService = world:GetService("RenderBattle")
-  while 1 do
-    if not (world:RenderBattleStat()):IsChangeTeamOrderRequestFinished(seqNo) then
-      local currentRequest = renderBattleService:GetCurrentChangeTeamOrderViewRequest()
-      local currentSeqNo = currentRequest and currentRequest:GetRequestSequenceNo() or nil
-      if not renderSetTeamLeaderTriggered and (not currentSeqNo or currentSeqNo == seqNo) and tOldTeamOrder[1] ~= tNewTeamOrder[1] then
-        renderSetTeamLeaderTriggered = true
-        local battleRenderSvc = world:GetService("RenderBattle")
-        battleRenderSvc:RenderChangeTeamLeader(tNewTeamOrder[1], tOldTeamOrder[1])
-      end
-      do
-        do
-          YIELD(TT)
-          -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  while not world:RenderBattleStat():IsChangeTeamOrderRequestFinished(seqNo) do
+    local currentRequest = renderBattleService:GetCurrentChangeTeamOrderViewRequest()
+    local currentSeqNo = currentRequest and currentRequest:GetRequestSequenceNo() or nil
+    if not renderSetTeamLeaderTriggered and (not currentSeqNo or currentSeqNo == seqNo) and tOldTeamOrder[1] ~= tNewTeamOrder[1] then
+      renderSetTeamLeaderTriggered = true
+      local battleRenderSvc = world:GetService("RenderBattle")
+      battleRenderSvc:RenderChangeTeamLeader(tNewTeamOrder[1], tOldTeamOrder[1])
+    end
+    YIELD(TT)
+    if world:RenderBattleStat():IsChangeTeamOrderViewDisabled() then
+      break
     end
   end
-  if not (world:RenderBattleStat()):IsChangeTeamOrderViewDisabled() then
-    local playBuffSvc = world:GetService("PlayBuff")
-    local ntTeamOrderChange = NTTeamOrderChange:New(eTeam, tOldTeamOrder, tNewTeamOrder)
-    playBuffSvc:PlayBuffView(TT, ntTeamOrderChange)
-    local playDamageService = world:GetService("PlayDamage")
-    playDamageService:OnTeamOrderChangeRefresh()
-  end
+  local playBuffSvc = world:GetService("PlayBuff")
+  local ntTeamOrderChange = NTTeamOrderChange:New(eTeam, tOldTeamOrder, tNewTeamOrder)
+  playBuffSvc:PlayBuffView(TT, ntTeamOrderChange)
+  local playDamageService = world:GetService("PlayDamage")
+  playDamageService:OnTeamOrderChangeRefresh()
 end
-
-

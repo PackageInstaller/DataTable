@@ -1,162 +1,734 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/audit/cfg_campaign_audit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {CampaignID = 1, CampaignName = 2, OpenTimeTransform = 3, EndTimeTransform = 4, CampaignType = 5, CampaignSubtitle = 6, FirstEnterStoryID = 7, MainUI = 8, BGImage = 9, EntranceIcon = 10, EntranceIcon2 = 11, EntranceIcon2Size = 12, SideEnterIcon = 13}
-local common = {"2021-08-19 4:00:00", "str_activity_battlepass_main_title", "str_n5_title", "2021-10-21 4:00:00", "2021-11-11 4:00:00", "empty", "str_activity_battlepass_n5_main_title", "str_activity_battlepass_n5_main_title_2", "UIActivityBattlePassN5MainController", "huiliu_zjm_ent", "2021-12-02 4:00:00", "UIWeekTower", "lose_dificultad_icon2", "2021-11-11 04:00:00", "2021-12-23 4:00:00", "2021-12-23 04:00:00", "2022-01-27 04:00:00", "2022-02-17 04:00:00", "str_activity_double_drop_activity_name", "UIActivityDoubleDropIntroduce", "fengshou_zjm_ent", "2022-02-20 05:00:00", "2021-03-31 04:00:00", "2022-04-21 04:00:00", "2022-05-11 04:00:00", "UIActivityTotalLoginMainController", "UIHauteCoutureDrawController", 
-{186, 140, 211, 114}
-, 
-{250, 140, 259, 146}
-, 
-{"event_eve_home1", "event_eve_home2", "event_eve_home3"}
-, 
-{"summer_xiahuo2_di9"}
-, 
-{"pass_bg"}
+local key = {
+  CampaignID = 1,
+  CampaignName = 2,
+  OpenTimeTransform = 3,
+  EndTimeTransform = 4,
+  CampaignType = 5,
+  CampaignSubtitle = 6,
+  FirstEnterStoryID = 7,
+  MainUI = 8,
+  BGImage = 9,
+  EntranceIcon = 10,
+  EntranceIcon2 = 11,
+  EntranceIcon2Size = 12,
+  SideEnterIcon = 13
+}
+local common = {
+  "2021-08-19 4:00:00",
+  "str_activity_battlepass_main_title",
+  "str_n5_title",
+  "2021-10-21 4:00:00",
+  "2021-11-11 4:00:00",
+  "empty",
+  "str_activity_battlepass_n5_main_title",
+  "str_activity_battlepass_n5_main_title_2",
+  "UIActivityBattlePassN5MainController",
+  "huiliu_zjm_ent",
+  "2021-12-02 4:00:00",
+  "UIWeekTower",
+  "lose_dificultad_icon2",
+  "2021-11-11 04:00:00",
+  "2021-12-23 4:00:00",
+  "2021-12-23 04:00:00",
+  "2022-01-27 04:00:00",
+  "2022-02-17 04:00:00",
+  "str_activity_double_drop_activity_name",
+  "UIActivityDoubleDropIntroduce",
+  "fengshou_zjm_ent",
+  "2022-02-20 05:00:00",
+  "2021-03-31 04:00:00",
+  "2022-04-21 04:00:00",
+  "2022-05-11 04:00:00",
+  "UIActivityTotalLoginMainController",
+  "UIHauteCoutureDrawController",
+  {
+    186,
+    140,
+    211,
+    114
+  },
+  {
+    250,
+    140,
+    259,
+    146
+  },
+  {
+    "event_eve_home1",
+    "event_eve_home2",
+    "event_eve_home3"
+  },
+  {
+    "summer_xiahuo2_di9"
+  },
+  {"pass_bg"}
 }
 local config = {
-[1001] = {1001, "str_name_EVA", 0, 0, 10003, nil, 
-{0, 50020100}
-, "UIActivityEveSinsaMainController", common[30], 
-{"event_zjm_ent"}
-, "map_ditu_event01", 
-{186, 140, 238, 166}
-}
-, 
-[1002] = {1002, "str_sakura_name", 0, 0, 10004, nil, nil, "UISakuraEntryController", nil, 
-{"legend_zhangjie_icon6"}
-}
-, 
-[1003] = {1003, "str_activity_summer_i", 0, 0, 10005, nil, nil, "UISummer1", common[30], 
-{"summer_term1_ent_zjm"}
-, "summer_term1_ent_map", 
-{192, 140, 211, 114}
-}
-, 
-[1004] = {1004, "str_summer_activity_two_activity_title1", 0, 0, 10006, "str_summer_activity_two_activity_title2", 
-{50050001}
-, "UISummer2", nil, common[31], "summer_map_ent01", common[28]}
-, 
-[1005] = {1005, common[2], 0, 0, 10007, common[2], nil, "UIActivityBattlePassMainController", 
-{"pass_jiangli_di18"}
-, nil, nil, nil, "trial_m5book_ent_01"}
-, 
-[1006] = {1006, common[3], 0, 0, 10008, "str_n5_subtitle", nil, "UIActivityN5", common[30], 
-{"n5_map_ent"}
-, "n5_map_ent"}
-, 
-[1007] = {1007, common[3], 0, 0, 10009, nil, 
-{50090101}
-, "UIActivityN6", common[30], common[31], "n6_battle_ent"}
-, 
-[1008] = {1008, common[6], 0, 0, 10010, nil, nil, "UIActivityGraveRobberMainController", nil, nil, nil, nil, "daojue_gap_zjment"}
-, 
-[1009] = {1009, common[7], 0, 0, 10007, common[8], nil, common[9], common[32], nil, nil, nil, "trial_m5book_ent_02"}
-, 
-[1050] = {1050, "str_back_name", 0, 0, 10050, nil, 
-{30330701}
-, "UIActivityReturnSystemMainController", nil, nil, nil, nil, common[10]}
-, 
-[1101] = {1101, common[6], 0, 0, 10012, nil, nil, common[12], nil, nil, nil, nil, common[13]}
-, 
-[1102] = {1102, "str_n7_activity_title", 0, 0, 10013, "str_n7_activity_sub_title", nil, "UIActivityN7MainController", common[30], 
-{"[prefab]", "UIN7MainLobbyEntry.prefab", "UIN7MainLobbyEntry"}
-, "n7_map_ent"}
-, 
-[1103] = {1103, "str_activity_n8_main_title", 0, 0, 10014, "str_activity_n8_sub_title", nil, "UIActivityN8MainController", nil, 
-{"[prefab]", "UIActivityN8MainLobbyEntry.prefab", "UIActivityN8MainLobbyEntry"}
-, "n8_rk_zi02", 
-{220, 140, 308, 148}
-}
-, 
-[1010] = {1010, "str_activity_n9_main_title", 0, 0, 10015, "str_activity_n9_main_title_2", nil, "UIActivityN9MainController", nil, 
-{"[prefab]", "UIActivityN9MainLobbyEntry.prefab", "UIActivityN9MainLobbyEntry"}
-, "n9_map_ent", common[28]}
-, 
-[1012] = {1012, common[7], 0, 0, 10007, common[8], nil, common[9], common[32], nil, nil, nil, "n7_special_ent"}
-, 
-[1011] = {1011, "str_n10_name", 0, 0, 10016, "str_n10_sub_name", 
-{50130101}
-, "UIN10MainController", common[30], 
-{"[prefab]", "UIN10MainLobbyEntry.prefab", "UIN10MainLobbyEntry"}
-, "n10_battle_ent", 
-{250, 140, 302, 141}
-}
-, 
-[1013] = {1013, common[7], 0, 0, 10007, common[8], nil, common[9], common[32], nil, nil, nil, "trial_m9book_ent"}
-, 
-[1017] = {1017, common[7], 0, 0, 10017, common[8], 
-{0}
-, "UIN11Main", common[32], 
-{"[prefab]", "UIN11MainEnter.prefab", "UIN11MainEnter"}
-, "n11_map_ent", common[28]}
-, 
-[1018] = {1018, common[19], 0, 0, 10051, common[19], nil, common[20], nil, nil, nil, nil, common[21]}
-, 
-[1019] = {1019, "str_n12_name", 0, 0, 10018, nil, 
-{50150001}
-, "UIN12MainController", nil, 
-{"[prefab]", "UIN12MainLobbyEntry.prefab", "UIN12MainLobbyEntry"}
-, "n12_map_ent", common[29]}
-, 
-[1020] = {1020, common[7], 0, 0, 10007, common[8], nil, common[9], common[32], nil, nil, nil, "trial_m11book_ent"}
-, 
-[1021] = {1021, "str_n13_name", 0, 0, 10019, nil, nil, "UIN13MainController", nil, 
-{"[prefab]", "UIN13MainLobbyEntry.prefab", "UIN13MainLobbyEntry"}
-, "n13_map_ent", common[29]}
-, 
-[1022] = {1022, "str_n14_name", 0, 0, 10020, nil, nil, "UIN14Main", nil, 
-{"[prefab]", "UIN14MainEnter.prefab", "UIN14MainEnter"}
-, "n14_map_ent"}
-, 
-[1023] = {1023, common[7], 0, 0, 10007, common[8], nil, common[9], common[32], nil, nil, nil, "trial_m13book_tw_ent"}
-, 
-[1024] = {1024, common[6], 0, 0, 10012, nil, nil, common[12], nil, nil, nil, nil, common[13]}
-, 
-[1025] = {1025, "str_n15_name", 0, 0, 10021, nil, nil, "UIN15MainController", nil, 
-{"[prefab]", "UIN15MainLobbyEntry.prefab", "UIN15MainLobbyEntry"}
-, "n15_map_ent", 
-{250, 140, 211, 114}
-}
-, 
-[1026] = {1026, "str_activity_n16_main_title", 0, 0, 10022, "str_activity_n16_main_title_2", nil, "UIActivityN16MainController", nil, 
-{"[prefab]", "UIActivityN16MainLobbyEntry.prefab", "UIActivityN16MainLobbyEntry"}
-, "n16_map_ent", common[28]}
-, 
-[1027] = {1027, common[7], 0, 0, 10007, common[8], nil, common[9], common[32], nil, nil, nil, "trial_m15book_ent"}
-, 
-[1028] = {1028, common[6], 0, 0, 10012, nil, nil, common[12], nil, nil, nil, nil, common[13]}
-, 
-[1029] = {1029, common[7], 0, 0, 10007, common[8], nil, common[9], common[32], nil, nil, nil, "btpass_ent_N17"}
-, 
-[1030] = {1030, common[6], 0, 0, 10055, nil, nil, common[26], nil, nil, nil, nil, "n17_signin_ent"}
-, 
-[1031] = {1031, common[19], 0, 0, 10051, common[19], nil, common[20], nil, nil, nil, nil, common[21]}
-, 
-[1052] = {1052, common[6], 0, 0, 10052, nil, nil, common[27], nil, nil, nil, nil, "main_open_di1052"}
-, 
-[1053] = {1053, common[6], 0, 0, 10053, nil, nil, "UIActivityPowerCostController", nil, nil, nil, nil, "khj_zjm_ent"}
-, 
-[1054] = {1054, common[6], 0, 0, 10054, nil, nil, "UIN15ChessController", nil, nil, nil, nil, common[10]}
-, 
-[1055] = {1055, common[6], 0, 0, 10055, nil, nil, common[26], nil, nil, nil, nil, "hjz_zjm_ent"}
-, 
-[1056] = {1056, common[19], 0, 0, 10051, common[19], nil, common[20], nil, nil, nil, nil, common[21]}
-, 
-[1058] = {1058, common[6], 0, 0, 10056, nil, nil, "UIActivityBetweenTheChaptersController", nil, nil, nil, nil, "n16_jzkfqd_zjm_ent"}
-, 
-[1059] = {1059, "str_n17_main_title", 0, 0, 10023, nil, 
-{50250101}
-, "UIN17MainController", nil, 
-{"[prefab]", "UIN17MainLobbyEntry.prefab", "UIN17MainLobbyEntry", "UIN17HomelandEntry.prefab", "UIN17HomelandEntry"}
-, "N17_event_rk_btn02", common[28]}
-, 
-[1060] = {1060, "str_n18_name", 0, 0, 10024, nil, nil, common[27]}
-, 
-[1061] = {1061, common[6], 0, 0, 10057, nil, 
-{50253301}
-, "UIActivityAnniversaryLoginController", nil, nil, nil, nil, "zjm_ent_qg"}
+  [1001] = {
+    1001,
+    "str_name_EVA",
+    0,
+    0,
+    10003,
+    nil,
+    {0, 50020100},
+    "UIActivityEveSinsaMainController",
+    common[30],
+    {
+      "event_zjm_ent"
+    },
+    "map_ditu_event01",
+    {
+      186,
+      140,
+      238,
+      166
+    }
+  },
+  [1002] = {
+    1002,
+    "str_sakura_name",
+    0,
+    0,
+    10004,
+    nil,
+    nil,
+    "UISakuraEntryController",
+    nil,
+    {
+      "legend_zhangjie_icon6"
+    }
+  },
+  [1003] = {
+    1003,
+    "str_activity_summer_i",
+    0,
+    0,
+    10005,
+    nil,
+    nil,
+    "UISummer1",
+    common[30],
+    {
+      "summer_term1_ent_zjm"
+    },
+    "summer_term1_ent_map",
+    {
+      192,
+      140,
+      211,
+      114
+    }
+  },
+  [1004] = {
+    1004,
+    "str_summer_activity_two_activity_title1",
+    0,
+    0,
+    10006,
+    "str_summer_activity_two_activity_title2",
+    {50050001},
+    "UISummer2",
+    nil,
+    common[31],
+    "summer_map_ent01",
+    common[28]
+  },
+  [1005] = {
+    1005,
+    common[2],
+    0,
+    0,
+    10007,
+    common[2],
+    nil,
+    "UIActivityBattlePassMainController",
+    {
+      "pass_jiangli_di18"
+    },
+    nil,
+    nil,
+    nil,
+    "trial_m5book_ent_01"
+  },
+  [1006] = {
+    1006,
+    common[3],
+    0,
+    0,
+    10008,
+    "str_n5_subtitle",
+    nil,
+    "UIActivityN5",
+    common[30],
+    {"n5_map_ent"},
+    "n5_map_ent"
+  },
+  [1007] = {
+    1007,
+    common[3],
+    0,
+    0,
+    10009,
+    nil,
+    {50090101},
+    "UIActivityN6",
+    common[30],
+    common[31],
+    "n6_battle_ent"
+  },
+  [1008] = {
+    1008,
+    common[6],
+    0,
+    0,
+    10010,
+    nil,
+    nil,
+    "UIActivityGraveRobberMainController",
+    nil,
+    nil,
+    nil,
+    nil,
+    "daojue_gap_zjment"
+  },
+  [1009] = {
+    1009,
+    common[7],
+    0,
+    0,
+    10007,
+    common[8],
+    nil,
+    common[9],
+    common[32],
+    nil,
+    nil,
+    nil,
+    "trial_m5book_ent_02"
+  },
+  [1050] = {
+    1050,
+    "str_back_name",
+    0,
+    0,
+    10050,
+    nil,
+    {30330701},
+    "UIActivityReturnSystemMainController",
+    nil,
+    nil,
+    nil,
+    nil,
+    common[10]
+  },
+  [1101] = {
+    1101,
+    common[6],
+    0,
+    0,
+    10012,
+    nil,
+    nil,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    common[13]
+  },
+  [1102] = {
+    1102,
+    "str_n7_activity_title",
+    0,
+    0,
+    10013,
+    "str_n7_activity_sub_title",
+    nil,
+    "UIActivityN7MainController",
+    common[30],
+    {
+      "[prefab]",
+      "UIN7MainLobbyEntry.prefab",
+      "UIN7MainLobbyEntry"
+    },
+    "n7_map_ent"
+  },
+  [1103] = {
+    1103,
+    "str_activity_n8_main_title",
+    0,
+    0,
+    10014,
+    "str_activity_n8_sub_title",
+    nil,
+    "UIActivityN8MainController",
+    nil,
+    {
+      "[prefab]",
+      "UIActivityN8MainLobbyEntry.prefab",
+      "UIActivityN8MainLobbyEntry"
+    },
+    "n8_rk_zi02",
+    {
+      220,
+      140,
+      308,
+      148
+    }
+  },
+  [1010] = {
+    1010,
+    "str_activity_n9_main_title",
+    0,
+    0,
+    10015,
+    "str_activity_n9_main_title_2",
+    nil,
+    "UIActivityN9MainController",
+    nil,
+    {
+      "[prefab]",
+      "UIActivityN9MainLobbyEntry.prefab",
+      "UIActivityN9MainLobbyEntry"
+    },
+    "n9_map_ent",
+    common[28]
+  },
+  [1012] = {
+    1012,
+    common[7],
+    0,
+    0,
+    10007,
+    common[8],
+    nil,
+    common[9],
+    common[32],
+    nil,
+    nil,
+    nil,
+    "n7_special_ent"
+  },
+  [1011] = {
+    1011,
+    "str_n10_name",
+    0,
+    0,
+    10016,
+    "str_n10_sub_name",
+    {50130101},
+    "UIN10MainController",
+    common[30],
+    {
+      "[prefab]",
+      "UIN10MainLobbyEntry.prefab",
+      "UIN10MainLobbyEntry"
+    },
+    "n10_battle_ent",
+    {
+      250,
+      140,
+      302,
+      141
+    }
+  },
+  [1013] = {
+    1013,
+    common[7],
+    0,
+    0,
+    10007,
+    common[8],
+    nil,
+    common[9],
+    common[32],
+    nil,
+    nil,
+    nil,
+    "trial_m9book_ent"
+  },
+  [1017] = {
+    1017,
+    common[7],
+    0,
+    0,
+    10017,
+    common[8],
+    {0},
+    "UIN11Main",
+    common[32],
+    {
+      "[prefab]",
+      "UIN11MainEnter.prefab",
+      "UIN11MainEnter"
+    },
+    "n11_map_ent",
+    common[28]
+  },
+  [1018] = {
+    1018,
+    common[19],
+    0,
+    0,
+    10051,
+    common[19],
+    nil,
+    common[20],
+    nil,
+    nil,
+    nil,
+    nil,
+    common[21]
+  },
+  [1019] = {
+    1019,
+    "str_n12_name",
+    0,
+    0,
+    10018,
+    nil,
+    {50150001},
+    "UIN12MainController",
+    nil,
+    {
+      "[prefab]",
+      "UIN12MainLobbyEntry.prefab",
+      "UIN12MainLobbyEntry"
+    },
+    "n12_map_ent",
+    common[29]
+  },
+  [1020] = {
+    1020,
+    common[7],
+    0,
+    0,
+    10007,
+    common[8],
+    nil,
+    common[9],
+    common[32],
+    nil,
+    nil,
+    nil,
+    "trial_m11book_ent"
+  },
+  [1021] = {
+    1021,
+    "str_n13_name",
+    0,
+    0,
+    10019,
+    nil,
+    nil,
+    "UIN13MainController",
+    nil,
+    {
+      "[prefab]",
+      "UIN13MainLobbyEntry.prefab",
+      "UIN13MainLobbyEntry"
+    },
+    "n13_map_ent",
+    common[29]
+  },
+  [1022] = {
+    1022,
+    "str_n14_name",
+    0,
+    0,
+    10020,
+    nil,
+    nil,
+    "UIN14Main",
+    nil,
+    {
+      "[prefab]",
+      "UIN14MainEnter.prefab",
+      "UIN14MainEnter"
+    },
+    "n14_map_ent"
+  },
+  [1023] = {
+    1023,
+    common[7],
+    0,
+    0,
+    10007,
+    common[8],
+    nil,
+    common[9],
+    common[32],
+    nil,
+    nil,
+    nil,
+    "trial_m13book_tw_ent"
+  },
+  [1024] = {
+    1024,
+    common[6],
+    0,
+    0,
+    10012,
+    nil,
+    nil,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    common[13]
+  },
+  [1025] = {
+    1025,
+    "str_n15_name",
+    0,
+    0,
+    10021,
+    nil,
+    nil,
+    "UIN15MainController",
+    nil,
+    {
+      "[prefab]",
+      "UIN15MainLobbyEntry.prefab",
+      "UIN15MainLobbyEntry"
+    },
+    "n15_map_ent",
+    {
+      250,
+      140,
+      211,
+      114
+    }
+  },
+  [1026] = {
+    1026,
+    "str_activity_n16_main_title",
+    0,
+    0,
+    10022,
+    "str_activity_n16_main_title_2",
+    nil,
+    "UIActivityN16MainController",
+    nil,
+    {
+      "[prefab]",
+      "UIActivityN16MainLobbyEntry.prefab",
+      "UIActivityN16MainLobbyEntry"
+    },
+    "n16_map_ent",
+    common[28]
+  },
+  [1027] = {
+    1027,
+    common[7],
+    0,
+    0,
+    10007,
+    common[8],
+    nil,
+    common[9],
+    common[32],
+    nil,
+    nil,
+    nil,
+    "trial_m15book_ent"
+  },
+  [1028] = {
+    1028,
+    common[6],
+    0,
+    0,
+    10012,
+    nil,
+    nil,
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    common[13]
+  },
+  [1029] = {
+    1029,
+    common[7],
+    0,
+    0,
+    10007,
+    common[8],
+    nil,
+    common[9],
+    common[32],
+    nil,
+    nil,
+    nil,
+    "btpass_ent_N17"
+  },
+  [1030] = {
+    1030,
+    common[6],
+    0,
+    0,
+    10055,
+    nil,
+    nil,
+    common[26],
+    nil,
+    nil,
+    nil,
+    nil,
+    "n17_signin_ent"
+  },
+  [1031] = {
+    1031,
+    common[19],
+    0,
+    0,
+    10051,
+    common[19],
+    nil,
+    common[20],
+    nil,
+    nil,
+    nil,
+    nil,
+    common[21]
+  },
+  [1052] = {
+    1052,
+    common[6],
+    0,
+    0,
+    10052,
+    nil,
+    nil,
+    common[27],
+    nil,
+    nil,
+    nil,
+    nil,
+    "main_open_di1052"
+  },
+  [1053] = {
+    1053,
+    common[6],
+    0,
+    0,
+    10053,
+    nil,
+    nil,
+    "UIActivityPowerCostController",
+    nil,
+    nil,
+    nil,
+    nil,
+    "khj_zjm_ent"
+  },
+  [1054] = {
+    1054,
+    common[6],
+    0,
+    0,
+    10054,
+    nil,
+    nil,
+    "UIN15ChessController",
+    nil,
+    nil,
+    nil,
+    nil,
+    common[10]
+  },
+  [1055] = {
+    1055,
+    common[6],
+    0,
+    0,
+    10055,
+    nil,
+    nil,
+    common[26],
+    nil,
+    nil,
+    nil,
+    nil,
+    "hjz_zjm_ent"
+  },
+  [1056] = {
+    1056,
+    common[19],
+    0,
+    0,
+    10051,
+    common[19],
+    nil,
+    common[20],
+    nil,
+    nil,
+    nil,
+    nil,
+    common[21]
+  },
+  [1058] = {
+    1058,
+    common[6],
+    0,
+    0,
+    10056,
+    nil,
+    nil,
+    "UIActivityBetweenTheChaptersController",
+    nil,
+    nil,
+    nil,
+    nil,
+    "n16_jzkfqd_zjm_ent"
+  },
+  [1059] = {
+    1059,
+    "str_n17_main_title",
+    0,
+    0,
+    10023,
+    nil,
+    {50250101},
+    "UIN17MainController",
+    nil,
+    {
+      "[prefab]",
+      "UIN17MainLobbyEntry.prefab",
+      "UIN17MainLobbyEntry",
+      "UIN17HomelandEntry.prefab",
+      "UIN17HomelandEntry"
+    },
+    "N17_event_rk_btn02",
+    common[28]
+  },
+  [1060] = {
+    1060,
+    "str_n18_name",
+    0,
+    0,
+    10024,
+    nil,
+    nil,
+    common[27]
+  },
+  [1061] = {
+    1061,
+    common[6],
+    0,
+    0,
+    10057,
+    nil,
+    {50253301},
+    "UIActivityAnniversaryLoginController",
+    nil,
+    nil,
+    nil,
+    nil,
+    "zjm_ent_qg"
+  }
 }
 return config, "CampaignID", key
-

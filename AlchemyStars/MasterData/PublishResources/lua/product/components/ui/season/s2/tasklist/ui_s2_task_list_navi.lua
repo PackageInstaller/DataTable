@@ -1,21 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s2/tasklist/ui_s2_task_list_navi.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_season_task_list_navi")
 _class("UIS2TaskListNavi", UISeasonTaskListNavi)
 UIS2TaskListNavi = UIS2TaskListNavi
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS2TaskListNavi._GetAnimInfo = function(self, key)
-  -- function num : 0_0
+function UIS2TaskListNavi:_GetAnimInfo(key)
   local tb = {
-["in"] = {animName = "uieffanim_UIS2TaskListNavi_in", duration = 900}
-, 
-out = {animName = "uieffanim_UIS2TaskListNavi_out", duration = 500}
-}
-  return (tb[key]).animName, (tb[key]).duration
+    ["in"] = {
+      animName = "uieffanim_UIS2TaskListNavi_in",
+      duration = 900
+    },
+    out = {
+      animName = "uieffanim_UIS2TaskListNavi_out",
+      duration = 500
+    }
+  }
+  return tb[key].animName, tb[key].duration
 end
-
-

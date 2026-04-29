@@ -1,65 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_train_reset_element_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseTrainResetElementParam", SkillPhaseParamBase)
 SkillPhaseTrainResetElementParam = SkillPhaseTrainResetElementParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseTrainResetElementParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseTrainResetElementParam:Constructor(t)
   self._gridEffectID = t.gridEffectID
   self._gridIntervalTime = t.gridIntervalTime
   self._bestConvertTime = t.bestConvertTime
   self._finishDelayTime = t.finishDelayTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainResetElementParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseTrainResetElementParam:GetCacheTable()
   local t = {}
   local gridFxCacheElement = self:GenerateCacheTableElementByID(self._gridEffectID)
-  ;
-  (table.insert)(t, gridFxCacheElement)
+  table.insert(t, gridFxCacheElement)
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainResetElementParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseTrainResetElementParam:GetPhaseType()
   return SkillViewPhaseType.TrainResetElement
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainResetElementParam.GetGridEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseTrainResetElementParam:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainResetElementParam.GetGridIntervalTime = function(self)
-  -- function num : 0_4
+function SkillPhaseTrainResetElementParam:GetGridIntervalTime()
   return self._gridIntervalTime
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainResetElementParam.GetBestEffectTime = function(self)
-  -- function num : 0_5
+function SkillPhaseTrainResetElementParam:GetBestEffectTime()
   return self._bestEffectTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainResetElementParam.GetFinishDelayTime = function(self)
-  -- function num : 0_6
+function SkillPhaseTrainResetElementParam:GetFinishDelayTime()
   return self._finishDelayTime
 end
-
-

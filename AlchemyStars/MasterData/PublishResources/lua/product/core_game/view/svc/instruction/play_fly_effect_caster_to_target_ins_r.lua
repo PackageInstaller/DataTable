@@ -1,16 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_fly_effect_caster_to_target_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayFlyEffectCasterToTargetInstruction", BaseInstruction)
 PlayFlyEffectCasterToTargetInstruction = PlayFlyEffectCasterToTargetInstruction
-FlyEffectTraceType = {LineTrace = 1, JumpTrace = 2, ScaleTrace = 3, TimeScaleTrace = 4}
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
+FlyEffectTraceType = {
+  LineTrace = 1,
+  JumpTrace = 2,
+  ScaleTrace = 3,
+  TimeScaleTrace = 4
+}
 
-PlayFlyEffectCasterToTargetInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayFlyEffectCasterToTargetInstruction:Constructor(paramList)
   self._flyEffectID = tonumber(paramList.flyEffectID)
   self._flySpeed = tonumber(paramList.flySpeed)
   if paramList.flyTime then
@@ -54,24 +52,20 @@ PlayFlyEffectCasterToTargetInstruction.Constructor = function(self, paramList)
   self._overtakeDis = tonumber(paramList.overtakeDis) or 0
   self._beginFlyWaitTime = tonumber(paramList.beginFlyWaitTime or 0)
   self._offsetWithRotate = tonumber(paramList.offsetWithRotate) or 0
-  -- DECOMPILER ERROR: 10 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFlyEffectCasterToTargetInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayFlyEffectCasterToTargetInstruction:GetCacheResource()
   local resList = {}
   if self._flyEffectID and self._flyEffectID ~= 0 then
-    (table.insert)(resList, {((Cfg.cfg_effect)[self._flyEffectID]).ResPath, 1})
+    table.insert(resList, {
+      Cfg.cfg_effect[self._flyEffectID].ResPath,
+      1
+    })
   end
   return resList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFlyEffectCasterToTargetInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayFlyEffectCasterToTargetInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   local world = casterEntity:GetOwnerWorld()
   local targetEntity = world:GetEntityByID(targetEntityID)
@@ -83,272 +77,217 @@ PlayFlyEffectCasterToTargetInstruction.DoInstruction = function(self, TT, caster
     targetEntity = casterEntity
   end
   if casterEntityReal and casterEntityReal:View() then
-    do return  end
-    local tran = nil
-    if casterEntityReal:HasSuperEntity() and (casterEntityReal:SuperEntityComponent()):IsUseSuperEntityView() then
-      tran = (((casterEntityReal:GetSuperEntity()):View()):GetGameObject()).transform
-    else
-      tran = ((casterEntityReal:View()):GetGameObject()).transform
-    end
-    local offSetV = Vector3(self._offsetX, self._offsetY, self._offsetZ)
-    local castPos = tran:TransformPoint(offSetV)
-    do
-      if self._originalBoneName and self._originalBoneName ~= "" then
-        local boneTrans = (GameObjectHelper.FindChild)(tran, self._originalBoneName)
-        if boneTrans ~= nil then
-          castPos = boneTrans.position
-        end
-      end
-      local boardServiceRender = (casterEntityReal:GetOwnerWorld()):GetService("BoardRender")
-      local targetPos = Vector3.zero
-      if targetEntity then
-        if targetEntity:TrapRender() then
-          local gridPos = targetEntity:GetGridPosition()
-          local gridDir = targetEntity:GetGridDirection()
-          local gridOffset = targetEntity:GetGridOffset()
-          if gridOffset then
-            gridPos = gridPos + gridOffset
-          end
-          targetEntity:SetLocation(gridPos, gridDir)
-        end
-        do
-          if targetEntity:Location() then
-            targetPos = (targetEntity:Location()).Position
-          else
-            local cGridLocation = targetEntity:GridLocation()
-            local v2 = cGridLocation:Center()
-            targetPos = boardServiceRender:GridPos2RenderPos(v2)
-          end
-          do
-            if self._targetPos and self._targetPos ~= "" and targetEntity:View() then
-              local tran1 = ((targetEntity:View()):GetGameObject()).transform
-              local targetTrans = (GameObjectHelper.FindChild)(tran1, self._targetPos)
-              if targetTrans ~= nil then
-                targetPos = targetTrans.position
-              end
-            end
-            do
-              targetPos = self:GetNoTargetRenderPos(world, casterEntityReal)
-              if self._targetPickUpPos then
-                local renderPickUpComponent = casterEntity:RenderPickUpComponent()
-                local pickUpGridArray = renderPickUpComponent:GetAllValidPickUpGridPos()
-                if pickUpGridArray[self._targetPickUpPos] then
-                  local targetPosV2 = pickUpGridArray[self._targetPickUpPos]
-                  targetPos = boardServiceRender:GridPos2RenderPos(targetPosV2)
-                end
-              end
-              do
-                if self._boardCenterPos == 1 then
-                  local utilDataSvc = world:GetService("UtilData")
-                  local targetPosV2 = utilDataSvc:GetBoardCenterPos()
-                  targetPos = boardServiceRender:GridPos2RenderPos(targetPosV2)
-                end
-                do
-                  do
-                    if self._pickUpPosAsTarget then
-                      local targetPosV2 = phaseContext:GetCurGridPos()
-                      targetPos = boardServiceRender:GridPos2RenderPos(targetPosV2)
-                    end
-                    if self._teleportPosAsTarget then
-                      local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-                      local teleportEffectResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Teleport, 1)
-                      if not teleportEffectResult then
-                        return 
-                      end
-                      local oldPos = teleportEffectResult:GetPosOld()
-                      local newPos = teleportEffectResult:GetPosNew()
-                      targetPos = boardServiceRender:GridPos2RenderPos(newPos)
-                    end
-                    do
-                      targetPos = targetPos + self._targetOffset
-                      local dir = targetPos - castPos
-                      do
-                        if self._offsetWithRotate ~= 0 then
-                          local dirNormalized = dir.normalized
-                          dirNormalized = dirNormalized * self._offsetWithRotate
-                          castPos = castPos + dirNormalized
-                        end
-                        do
-                          if self._overtakeDis and self._overtakeDis ~= 0 then
-                            local dirNormalized = dir.normalized
-                            targetPos = targetPos + dirNormalized * self._overtakeDis
-                          end
-                          local effectEntity = (world:GetService("Effect")):CreatePositionEffect(self._flyEffectID, castPos)
-                          effectEntity:SetDirection(dir)
-                          if self._beginFlyWaitTime ~= 0 then
-                            YIELD(TT, self._beginFlyWaitTime)
-                          end
-                          local distance = (Vector3.Distance)(castPos, targetPos)
-                          local flyTime = 0
-                          if self._flySpeed then
-                            flyTime = distance * self._flySpeed
-                          end
-                          if not self._ignoreYield then
-                            YIELD(TT)
-                          end
-                          if effectEntity == nil or effectEntity:View() == nil then
-                            return 
-                          end
-                          local go = ((effectEntity:View()):GetGameObject())
-                          local dotween = nil
-                          if self._flyTrace == FlyEffectTraceType.LineTrace then
-                            if flyTime == 0 and self._flyTime then
-                              flyTime = self._flyTime
-                            end
-                            dotween = (go.transform):DOMove(targetPos, flyTime / 1000, false)
-                            if self._flyEaseType then
-                              local easyType = ((DG.Tweening).Ease)[self._flyEaseType]
-                              dotween:SetEase(easyType)
-                            end
-                          else
-                            do
-                              if self._flyTrace == FlyEffectTraceType.JumpTrace then
-                                if not self._jumpPower then
-                                  local jumpPower = (math.sqrt)(distance)
-                                end
-                                if not self._flyTime then
-                                  do
-                                    dotween = (go.transform):DOJump(targetPos, jumpPower, 1, flyTime * 0.001, false)
-                                    -- DECOMPILER ERROR at PC337: Confused about usage of register: R19 in 'UnsetPending'
-
-                                    if self._flyTrace == FlyEffectTraceType.ScaleTrace then
-                                      (go.transform).localScale = Vector3(1, 1, distance)
-                                    else
-                                      if self._flyTrace == FlyEffectTraceType.TimeScaleTrace then
-                                        if self._flyTime then
-                                          flyTime = self._flyTime
-                                        end
-                                        local changeScaleRoot = go
-                                        if self._changeScaleRoot then
-                                          changeScaleRoot = (GameObjectHelper.FindChild)(go.transform, self._changeScaleRoot)
-                                        end
-                                        dotween = (changeScaleRoot.transform):DOScaleZ(distance, flyTime / 1000)
-                                      end
-                                    end
-                                    do
-                                      if dotween then
-                                        (dotween:SetEase(((DG.Tweening).Ease).InOutSine)):OnComplete(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV, go, world, effectEntity
-    if self._finalWaitTime and self._finalWaitTime > 0 then
-      ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-      -- function num : 0_2_0_0 , upvalues : _ENV, self, go, world, effectEntity
-      YIELD(TT, self._finalWaitTime)
-      if go then
-        go:SetActive(false)
-      end
-      world:DestroyEntity(effectEntity)
-    end
-)
-    else
-      go:SetActive(false)
-      world:DestroyEntity(effectEntity)
+  else
+    return
+  end
+  local tran
+  if casterEntityReal:HasSuperEntity() and casterEntityReal:SuperEntityComponent():IsUseSuperEntityView() then
+    tran = casterEntityReal:GetSuperEntity():View():GetGameObject().transform
+  else
+    tran = casterEntityReal:View():GetGameObject().transform
+  end
+  local offSetV = Vector3(self._offsetX, self._offsetY, self._offsetZ)
+  local castPos = tran:TransformPoint(offSetV)
+  if self._originalBoneName and self._originalBoneName ~= "" then
+    local boneTrans = GameObjectHelper.FindChild(tran, self._originalBoneName)
+    if boneTrans ~= nil then
+      castPos = boneTrans.position
     end
   end
-)
-                                      end
-                                      local totalWaitTime = flyTime
-                                      if self._finalWaitTime and self._finalWaitTime > 0 then
-                                        totalWaitTime = totalWaitTime + self._finalWaitTime
-                                      end
-                                      if self._isBlock == 1 then
-                                        YIELD(TT, totalWaitTime)
-                                        if not dotween then
-                                          world:DestroyEntity(effectEntity)
-                                        end
-                                      else
-                                        ;
-                                        ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_1 , upvalues : _ENV, totalWaitTime, dotween, world, effectEntity
+  local boardServiceRender = casterEntityReal:GetOwnerWorld():GetService("BoardRender")
+  local targetPos = Vector3.zero
+  if targetEntity then
+    if targetEntity:TrapRender() then
+      local gridPos = targetEntity:GetGridPosition()
+      local gridDir = targetEntity:GetGridDirection()
+      local gridOffset = targetEntity:GetGridOffset()
+      if gridOffset then
+        gridPos = gridPos + gridOffset
+      end
+      targetEntity:SetLocation(gridPos, gridDir)
+    end
+    if targetEntity:Location() then
+      targetPos = targetEntity:Location().Position
+    else
+      local cGridLocation = targetEntity:GridLocation()
+      local v2 = cGridLocation:Center()
+      targetPos = boardServiceRender:GridPos2RenderPos(v2)
+    end
+    if self._targetPos and self._targetPos ~= "" and targetEntity:View() then
+      local tran1 = targetEntity:View():GetGameObject().transform
+      local targetTrans = GameObjectHelper.FindChild(tran1, self._targetPos)
+      if targetTrans ~= nil then
+        targetPos = targetTrans.position
+      end
+    end
+  else
+    targetPos = self:GetNoTargetRenderPos(world, casterEntityReal)
+  end
+  if self._targetPickUpPos then
+    local renderPickUpComponent = casterEntity:RenderPickUpComponent()
+    local pickUpGridArray = renderPickUpComponent:GetAllValidPickUpGridPos()
+    if pickUpGridArray[self._targetPickUpPos] then
+      local targetPosV2 = pickUpGridArray[self._targetPickUpPos]
+      targetPos = boardServiceRender:GridPos2RenderPos(targetPosV2)
+    end
+  end
+  if self._boardCenterPos == 1 then
+    local utilDataSvc = world:GetService("UtilData")
+    local targetPosV2 = utilDataSvc:GetBoardCenterPos()
+    targetPos = boardServiceRender:GridPos2RenderPos(targetPosV2)
+  end
+  if self._pickUpPosAsTarget then
+    local targetPosV2 = phaseContext:GetCurGridPos()
+    targetPos = boardServiceRender:GridPos2RenderPos(targetPosV2)
+  end
+  if self._teleportPosAsTarget then
+    local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+    local teleportEffectResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Teleport, 1)
+    if not teleportEffectResult then
+      return
+    end
+    local oldPos = teleportEffectResult:GetPosOld()
+    local newPos = teleportEffectResult:GetPosNew()
+    targetPos = boardServiceRender:GridPos2RenderPos(newPos)
+  end
+  targetPos = targetPos + self._targetOffset
+  local dir = targetPos - castPos
+  if self._offsetWithRotate ~= 0 then
+    local dirNormalized = dir.normalized
+    dirNormalized = dirNormalized * self._offsetWithRotate
+    castPos = castPos + dirNormalized
+  end
+  if self._overtakeDis and self._overtakeDis ~= 0 then
+    local dirNormalized = dir.normalized
+    targetPos = targetPos + dirNormalized * self._overtakeDis
+  end
+  local effectEntity = world:GetService("Effect"):CreatePositionEffect(self._flyEffectID, castPos)
+  effectEntity:SetDirection(dir)
+  if self._beginFlyWaitTime ~= 0 then
+    YIELD(TT, self._beginFlyWaitTime)
+  end
+  local distance = Vector3.Distance(castPos, targetPos)
+  local flyTime = 0
+  if self._flySpeed then
+    flyTime = distance * self._flySpeed
+  end
+  if not self._ignoreYield then
+    YIELD(TT)
+  end
+  if effectEntity == nil or effectEntity:View() == nil then
+    return
+  end
+  local go = effectEntity:View():GetGameObject()
+  local dotween
+  if self._flyTrace == FlyEffectTraceType.LineTrace then
+    if flyTime == 0 and self._flyTime then
+      flyTime = self._flyTime
+    end
+    dotween = go.transform:DOMove(targetPos, flyTime / 1000.0, false)
+    if self._flyEaseType then
+      local easyType = DG.Tweening.Ease[self._flyEaseType]
+      dotween:SetEase(easyType)
+    end
+  elseif self._flyTrace == FlyEffectTraceType.JumpTrace then
+    local jumpPower = self._jumpPower or math.sqrt(distance)
+    flyTime = self._flyTime or flyTime
+    dotween = go.transform:DOJump(targetPos, jumpPower, 1, flyTime * 0.001, false)
+  elseif self._flyTrace == FlyEffectTraceType.ScaleTrace then
+    go.transform.localScale = Vector3(1, 1, distance)
+  elseif self._flyTrace == FlyEffectTraceType.TimeScaleTrace then
+    if self._flyTime then
+      flyTime = self._flyTime
+    end
+    local changeScaleRoot = go
+    if self._changeScaleRoot then
+      changeScaleRoot = GameObjectHelper.FindChild(go.transform, self._changeScaleRoot)
+    end
+    dotween = changeScaleRoot.transform:DOScaleZ(distance, flyTime / 1000.0)
+  end
+  if dotween then
+    dotween:SetEase(DG.Tweening.Ease.InOutSine):OnComplete(function()
+      if self._finalWaitTime and self._finalWaitTime > 0 then
+        GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+          YIELD(TT, self._finalWaitTime)
+          if go then
+            go:SetActive(false)
+          end
+          world:DestroyEntity(effectEntity)
+        end)
+      else
+        go:SetActive(false)
+        world:DestroyEntity(effectEntity)
+      end
+    end)
+  end
+  local totalWaitTime = flyTime
+  if self._finalWaitTime and self._finalWaitTime > 0 then
+    totalWaitTime = totalWaitTime + self._finalWaitTime
+  end
+  if self._isBlock == 1 then
     YIELD(TT, totalWaitTime)
     if not dotween then
       world:DestroyEntity(effectEntity)
     end
-  end
-)
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+  else
+    GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      YIELD(TT, totalWaitTime)
+      if not dotween then
+        world:DestroyEntity(effectEntity)
       end
-    end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFlyEffectCasterToTargetInstruction.GetCacheResource = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayFlyEffectCasterToTargetInstruction:GetCacheResource()
   local t = {}
   if self._flyEffectID and self._flyEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._flyEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._flyEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFlyEffectCasterToTargetInstruction.GetNoTargetRenderPos = function(self, world, casterEntity)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayFlyEffectCasterToTargetInstruction:GetNoTargetRenderPos(world, casterEntity)
   local renderPos = Vector3.zero
   local utilDataSvc = world:GetService("UtilData")
   local boardServiceRender = world:GetService("BoardRender")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   if self._flyTrace == FlyEffectTraceType.LineTrace then
     local scope = skillEffectResultContainer:GetScopeResult()
     local wholeRange = scope:GetWholeGridRange()
     local isBlock = false
-    for _,pos in pairs(wholeRange) do
+    for _, pos in pairs(wholeRange) do
       if utilDataSvc:IsPosBlock(pos, BlockFlag.Skill) then
         isBlock = true
         break
       end
     end
-    do
-      local attRange = scope:GetAttackRange()
-      local posCaster = (casterEntity:GridLocation()).Position
-      local farestPos, farestMagnitude = Vector2.zero, 0
-      do
-        local range = {}
-        if isBlock then
-          range = attRange
-        else
-          range = wholeRange
-        end
-        for _,pos in pairs(range) do
-          local m = (Vector2.Magnitude)(pos - posCaster)
-          if farestMagnitude < m then
-            farestPos = pos
-            farestMagnitude = m
-          end
-        end
-        renderPos = boardServiceRender:GridPos2RenderPos(farestPos)
-        if self._flyTrace == FlyEffectTraceType.JumpTrace then
-          (Log.fatal)("### expand by yourself")
-        else
-          if self._flyTrace == FlyEffectTraceType.ScaleTrace then
-            (Log.fatal)("### expand by yourself")
-          else
-            if self._flyTrace == FlyEffectTraceType.TimeScaleTrace then
-              (Log.fatal)("### expand by yourself")
-            end
-          end
-        end
-        return renderPos
+    local attRange = scope:GetAttackRange()
+    local posCaster = casterEntity:GridLocation().Position
+    local farestPos, farestMagnitude = Vector2.zero, 0
+    local range = {}
+    if isBlock then
+      range = attRange
+    else
+      range = wholeRange
+    end
+    for _, pos in pairs(range) do
+      local m = Vector2.Magnitude(pos - posCaster)
+      if farestMagnitude < m then
+        farestPos = pos
+        farestMagnitude = m
       end
     end
+    renderPos = boardServiceRender:GridPos2RenderPos(farestPos)
+  elseif self._flyTrace == FlyEffectTraceType.JumpTrace then
+    Log.fatal("### expand by yourself")
+  elseif self._flyTrace == FlyEffectTraceType.ScaleTrace then
+    Log.fatal("### expand by yourself")
+  elseif self._flyTrace == FlyEffectTraceType.TimeScaleTrace then
+    Log.fatal("### expand by yourself")
   end
+  return renderPos
 end
-
-

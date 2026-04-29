@@ -1,136 +1,92 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_cls/component/ui_build_component_picnic_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBuildComponentPicnicData", Object)
 UIBuildComponentPicnicData = UIBuildComponentPicnicData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildComponentPicnicData.Constructor = function(self, componentCfgID)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBuildComponentPicnicData:Constructor(componentCfgID)
   self._componentCfgID = componentCfgID
-  local cfgs = (Cfg.cfg_component_picnic)({ComponentID = componentCfgID})
+  local cfgs = Cfg.cfg_component_picnic({ComponentID = componentCfgID})
   self._picnicDataList = self:_InitPicnicDataList(cfgs)
   self._picnicDataStoryReviewIdMap = self:_InitPicnicDataStoryReviewIdMap(cfgs)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentPicnicData._InitPicnicDataList = function(self, tb_in)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBuildComponentPicnicData:_InitPicnicDataList(tb_in)
   local tb_map = {}
-  for _,v in pairs(tb_in) do
+  for _, v in pairs(tb_in) do
     local id = v.Seq
     if not tb_map[id] then
       tb_map[id] = v
     else
-      ;
-      (Log.exception)("UIBuildComponentPicnicData:_InitPicnicDataList()", " repeat [Seq] in cfg_component_picnic", " componentCfgID = " .. self._componentCfgID)
+      Log.exception("UIBuildComponentPicnicData:_InitPicnicDataList()", " repeat [Seq] in cfg_component_picnic", " componentCfgID = " .. self._componentCfgID)
     end
   end
-  local tb_out = (table.collect)(tb_map)
-  for i,v in ipairs(tb_out) do
+  local tb_out = table.collect(tb_map)
+  for i, v in ipairs(tb_out) do
     if i ~= v.Seq then
-      (Log.exception)("UIBuildComponentPicnicData:_InitPicnicDataList()", " [Seq] = " .. i .. " has not found in cfg_component_picnic", " componentCfgID = " .. self._componentCfgID)
+      Log.exception("UIBuildComponentPicnicData:_InitPicnicDataList()", " [Seq] = " .. i .. " has not found in cfg_component_picnic", " componentCfgID = " .. self._componentCfgID)
     end
   end
   return tb_out
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentPicnicData._InitPicnicDataStoryReviewIdMap = function(self, tb_in)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBuildComponentPicnicData:_InitPicnicDataStoryReviewIdMap(tb_in)
   local tb_out = {}
-  for _,v in pairs(tb_in) do
+  for _, v in pairs(tb_in) do
     local reviewId = v.StoryReviewId
     if reviewId then
       if tb_out[reviewId] then
-        (Log.exception)("UIBuildComponentPicnicData:_InitPicnicDataStoryReviewIdMap()", " repeat [StoryReviewId] in cfg_component_picnic", " componentCfgID = " .. self._componentCfgID, " StoryReviewId = " .. reviewId)
+        Log.exception("UIBuildComponentPicnicData:_InitPicnicDataStoryReviewIdMap()", " repeat [StoryReviewId] in cfg_component_picnic", " componentCfgID = " .. self._componentCfgID, " StoryReviewId = " .. reviewId)
       end
-      tb_out[reviewId] = {seq = v.Seq}
+      tb_out[reviewId] = {
+        seq = v.Seq
+      }
     end
   end
   return tb_out
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentPicnicData.GetPicnicData = function(self, seq)
-  -- function num : 0_3
-  return (self._picnicDataList)[seq]
+function UIBuildComponentPicnicData:GetPicnicData(seq)
+  return self._picnicDataList[seq]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentPicnicData.GetPicnicFixedPetIdList = function(self, seq, count)
-  -- function num : 0_4 , upvalues : _ENV
+function UIBuildComponentPicnicData:GetPicnicFixedPetIdList(seq, count)
   local tb_out = {}
   for i = seq, seq + count - 1 do
     local pet = self:GetPicnicPet(i)
     if pet then
-      (table.insert)(tb_out, pet)
+      table.insert(tb_out, pet)
     end
   end
   return tb_out
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentPicnicData.GetPicnicPet = function(self, seq)
-  -- function num : 0_5
+function UIBuildComponentPicnicData:GetPicnicPet(seq)
   local data = self:GetPicnicData(seq)
-  if data and data.Pets then
-    return (data.Pets)[1]
-  end
+  return data and data.Pets and data.Pets[1]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentPicnicData.GetPicnicRewardList = function(self, seq)
-  -- function num : 0_6 , upvalues : _ENV
+function UIBuildComponentPicnicData:GetPicnicRewardList(seq)
   local tb_out = {}
   local data = self:GetPicnicData(seq)
   if data then
     for i = 1, #data.Reward do
       local roleAsset = RoleAsset:New()
-      roleAsset.assetid = ((data.Reward)[i])[1]
-      roleAsset.count = ((data.Reward)[i])[2]
-      ;
-      (table.insert)(tb_out, roleAsset)
+      roleAsset.assetid = data.Reward[i][1]
+      roleAsset.count = data.Reward[i][2]
+      table.insert(tb_out, roleAsset)
     end
   end
-  do
-    return tb_out
-  end
+  return tb_out
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentPicnicData.GetPicnicStory = function(self, seq)
-  -- function num : 0_7
+function UIBuildComponentPicnicData:GetPicnicStory(seq)
   local data = self:GetPicnicData(seq)
-  if data then
-    return data.StoryId
-  end
+  return data and data.StoryId
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentPicnicData.GetStoryReviewId = function(self, seq)
-  -- function num : 0_8
+function UIBuildComponentPicnicData:GetStoryReviewId(seq)
   local data = self:GetPicnicData(seq)
-  if data then
-    return data.StoryReviewId
-  end
+  return data and data.StoryReviewId
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildComponentPicnicData.GetPicnicDataStoryReviewIdMap = function(self)
-  -- function num : 0_9
+function UIBuildComponentPicnicData:GetPicnicDataStoryReviewIdMap()
   return self._picnicDataStoryReviewIdMap
 end
-
-

@@ -1,39 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_lost_land/ui_lost_land_main_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILostLandMainItem", UICustomWidget)
 UILostLandMainItem = UILostLandMainItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILostLandMainItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UILostLandMainItem:OnShow(uiParams)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainItem.SetData = function(self, idx, data, callback)
-  -- function num : 0_1
+function UILostLandMainItem:SetData(idx, data, callback)
   self._idx = idx
   self._data = data
   self._callback = callback
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainItem.FlushData = function(self, data)
-  -- function num : 0_2
+function UILostLandMainItem:FlushData(data)
   self._data = data
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainItem.GetComponents = function(self)
-  -- function num : 0_3
+function UILostLandMainItem:GetComponents()
   self._cg = self:GetUIComponent("RawImageLoader", "cg")
   self._lvTexLeft = self:GetGameObject("lvTexGo")
   self._lvTex = self:GetUIComponent("UILocalizationText", "lvTex")
@@ -46,75 +30,53 @@ UILostLandMainItem.GetComponents = function(self)
   self._nameBg = self:GetUIComponent("Image", "nameBg")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainItem.awardViewBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UILostLandMainItem:awardViewBtnOnClick(go)
   self:ShowDialog("UILostLandAwardViewController", self._data)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainItem.OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cg = (self._data):GetCg()
-  local recommendGrade = (self._data):GetRecommendGrade()
-  local recommendLv = (self._data):GetRecommendLv()
+function UILostLandMainItem:OnValue()
+  local cg = self._data:GetCg()
+  local recommendGrade = self._data:GetRecommendGrade()
+  local recommendLv = self._data:GetRecommendLv()
   local recommendG = false
   local recommendL = false
-  if recommendGrade and recommendGrade > 0 then
-    ((self._gradeTex).gameObject):SetActive(true)
-    ;
-    (self._gradeTex):SetText(recommendGrade)
+  if recommendGrade and 0 < recommendGrade then
+    self._gradeTex.gameObject:SetActive(true)
+    self._gradeTex:SetText(recommendGrade)
     recommendG = true
   else
-    ;
-    ((self._gradeTex).gameObject):SetActive(false)
+    self._gradeTex.gameObject:SetActive(false)
   end
-  if recommendLv and recommendLv > 0 then
-    ((self._lvTex).gameObject):SetActive(true)
-    ;
-    (self._lvTex):SetText(recommendLv)
+  if recommendLv and 0 < recommendLv then
+    self._lvTex.gameObject:SetActive(true)
+    self._lvTex:SetText(recommendLv)
     recommendL = true
   else
-    ;
-    ((self._lvTex).gameObject):SetActive(false)
+    self._lvTex.gameObject:SetActive(false)
   end
-  local nameTex = (self._data):GetName()
-  local lockState = (self._data):GetLockState()
-  ;
-  (self._cg):LoadImage(cg)
+  local nameTex = self._data:GetName()
+  local lockState = self._data:GetLockState()
+  self._cg:LoadImage(cg)
   if recommendG or recommendL then
-    (self._lvTexLeft):SetActive(true)
+    self._lvTexLeft:SetActive(true)
   else
-    ;
-    (self._lvTexLeft):SetActive(false)
+    self._lvTexLeft:SetActive(false)
   end
-  ;
-  (self._nameTex):SetText((StringTable.Get)(nameTex))
-  ;
-  (self._lockMask):SetActive(lockState == UILostLandEnterLockType.LOCK or lockState == UILostLandEnterLockType.CANUNLOCK)
-  ;
-  (self._lock):SetActive(lockState == UILostLandEnterLockType.LOCK or lockState == UILostLandEnterLockType.CANUNLOCK)
-  local lockTex = nil
+  self._nameTex:SetText(StringTable.Get(nameTex))
+  self._lockMask:SetActive(lockState == UILostLandEnterLockType.LOCK or lockState == UILostLandEnterLockType.CANUNLOCK)
+  self._lock:SetActive(lockState == UILostLandEnterLockType.LOCK or lockState == UILostLandEnterLockType.CANUNLOCK)
+  local lockTex
   if lockState == UILostLandEnterLockType.LOCK then
-    local conditionStr = (self._data):GetCondition()
-    lockTex = (StringTable.Get)("str_lost_land_enter_unlock_condition", (table.unpack)(conditionStr))
+    local conditionStr = self._data:GetCondition()
+    lockTex = StringTable.Get("str_lost_land_enter_unlock_condition", table.unpack(conditionStr))
   elseif lockState == UILostLandEnterLockType.CANUNLOCK then
-    lockTex = (StringTable.Get)("str_lost_land_enter_click_unlock")
+    lockTex = StringTable.Get("str_lost_land_enter_click_unlock")
   end
-  ;
-  (self._lockTex):SetText(lockTex)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  self._lockTex:SetText(lockTex)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainItem.bgOnClick = function(self, go)
-  -- function num : 0_6
+function UILostLandMainItem:bgOnClick(go)
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
-
-

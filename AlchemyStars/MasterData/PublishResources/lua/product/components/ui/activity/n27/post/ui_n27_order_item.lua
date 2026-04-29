@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/post/ui_n27_order_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27OrderItem", UICustomWidget)
 UIN27OrderItem = UIN27OrderItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27OrderItem.InitWidget = function(self)
-  -- function num : 0_0
+function UIN27OrderItem:InitWidget()
   self._nameText = self:GetUIComponent("UILocalizationText", "nameText")
   self._iconRawImage = self:GetUIComponent("RawImageLoader", "iconRaw")
   self._iconImage = self:GetUIComponent("Image", "iconImg")
@@ -19,68 +12,39 @@ UIN27OrderItem.InitWidget = function(self)
   self._iconImageObj = self:GetGameObject("iconImg")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27OrderItem.OnValue = function(self)
-  -- function num : 0_1
+function UIN27OrderItem:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27OrderItem.PlayShowAnimation = function(self)
-  -- function num : 0_2
-  (self._anim):Play("uieff_UIN27OrderItem_in")
+function UIN27OrderItem:PlayShowAnimation()
+  self._anim:Play("uieff_UIN27OrderItem_in")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27OrderItem.PlayCheckAnimation = function(self)
-  -- function num : 0_3
-  if self._check and not (self._maskObj).activeSelf then
-    (self._anim):Play("uieff_UIN27OrderItem_check")
+function UIN27OrderItem:PlayCheckAnimation()
+  if self._check and not self._maskObj.activeSelf then
+    self._anim:Play("uieff_UIN27OrderItem_check")
   end
-  ;
-  (self._checkObj):SetActive(self._check)
-  ;
-  (self._maskObj):SetActive(self._check)
+  self._checkObj:SetActive(self._check)
+  self._maskObj:SetActive(self._check)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27OrderItem.SetData = function(self, typeCfg, itemCfg, count, curCount)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN27OrderItem:SetData(typeCfg, itemCfg, count, curCount)
   if typeCfg then
     self._atlas = self:GetAsset("PostInGame.spriteatlas", LoadType.SpriteAtlas)
     self._name = typeCfg.Name
     self._icon = typeCfg.TabIconSelect
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._iconImage).sprite = (self._atlas):GetSprite(self._icon)
-    ;
-    (self._iconImageObj):SetActive(true)
-    ;
-    (self._iconRawImageObj):SetActive(false)
+    self._iconImage.sprite = self._atlas:GetSprite(self._icon)
+    self._iconImageObj:SetActive(true)
+    self._iconRawImageObj:SetActive(false)
+  elseif itemCfg then
+    self._name = itemCfg.ItemName
+    self._icon = itemCfg.ItemIcon
+    self._iconRawImage:LoadImage(self._icon)
+    self._iconImageObj:SetActive(false)
+    self._iconRawImageObj:SetActive(true)
   else
-    if itemCfg then
-      self._name = itemCfg.ItemName
-      self._icon = itemCfg.ItemIcon
-      ;
-      (self._iconRawImage):LoadImage(self._icon)
-      ;
-      (self._iconImageObj):SetActive(false)
-      ;
-      (self._iconRawImageObj):SetActive(true)
-    else
-      ;
-      (Log.error)("order存在空条件")
-    end
+    Log.error("order存在空条件")
   end
   self._count = count
   self._check = count <= curCount
-  ;
-  (self._nameText):SetText((StringTable.Get)(self._name) .. "*" .. self._count)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._nameText:SetText(StringTable.Get(self._name) .. "*" .. self._count)
 end
-
-

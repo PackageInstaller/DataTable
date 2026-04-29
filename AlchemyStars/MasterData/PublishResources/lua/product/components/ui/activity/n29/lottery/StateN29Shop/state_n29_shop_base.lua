@@ -1,72 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/lottery/StateN29Shop/state_n29_shop_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateN29ShopBase", State)
 StateN29ShopBase = StateN29ShopBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateN29ShopBase.Init = function(self)
-  -- function num : 0_0
+function StateN29ShopBase:Init()
   self.fsm = self:GetFsm()
-  self.ui = (self.fsm):GetData()
-  self.data = (self.ui).data
-  self.mCampaign = (self.ui).mCampaign
-  self._uiModule = (self.ui)._uiModule
-  self.mPet = (self.ui).mPet
+  self.ui = self.fsm:GetData()
+  self.data = self.ui.data
+  self.mCampaign = self.ui.mCampaign
+  self._uiModule = self.ui._uiModule
+  self.mPet = self.ui.mPet
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopBase.Destroy = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((StateN29ShopBase.super).Destroy)(self)
+function StateN29ShopBase:Destroy()
+  StateN29ShopBase.super.Destroy(self)
   self.ui = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopBase.CurPageIndex = function(self)
-  -- function num : 0_2
-  return (self.ui)._curPageIndex
+function StateN29ShopBase:CurPageIndex()
+  return self.ui._curPageIndex
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopBase.ShowHideSpineSkip = function(self, isShow)
-  -- function num : 0_3
-  ((self.ui).spineSkipGo):SetActive(isShow)
+function StateN29ShopBase:ShowHideSpineSkip(isShow)
+  self.ui.spineSkipGo:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopBase.SetSpineSkipClickCallback = function(self, callback)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.ui).spineSkipClickCallback = callback
+function StateN29ShopBase:SetSpineSkipClickCallback(callback)
+  self.ui.spineSkipClickCallback = callback
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopBase.PlaySpineAnimation = function(self, spineAnim, loop)
-  -- function num : 0_5
-  return (self.ui):PlaySpineAnimation(spineAnim, loop)
+function StateN29ShopBase:PlaySpineAnimation(spineAnim, loop)
+  return self.ui:PlaySpineAnimation(spineAnim, loop)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopBase.GetRewardRecord = function(self)
-  -- function num : 0_6
-  return (self.ui).rewardRecord
+function StateN29ShopBase:GetRewardRecord()
+  return self.ui.rewardRecord
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopBase._ForceRefresh = function(self, isOpenNew, dontPlaySpine)
-  -- function num : 0_7
-  (self.ui):_ForceRefresh(isOpenNew, dontPlaySpine)
+function StateN29ShopBase:_ForceRefresh(isOpenNew, dontPlaySpine)
+  self.ui:_ForceRefresh(isOpenNew, dontPlaySpine)
 end
-
-

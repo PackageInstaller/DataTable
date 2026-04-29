@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/attack_grid_data_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_container")
 _class("AttackGridData", SkillEffectResultContainer)
 AttackGridData = AttackGridData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AttackGridData.Constructor = function(self, targetid, damagevalue, pos, skillId, petEntityID)
-  -- function num : 0_0
+function AttackGridData:Constructor(targetid, damagevalue, pos, skillId, petEntityID)
   self._targetIdArray = {}
   self._damageValueArray = {}
   self._gridPosArray = {}
@@ -20,153 +13,88 @@ AttackGridData.Constructor = function(self, targetid, damagevalue, pos, skillId,
   self:AddAttackPos(pos)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.AddTargetId = function(self, targetId)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  if targetId ~= nil and targetId > 0 then
-    (self._targetIdArray)[#self._targetIdArray + 1] = targetId
+function AttackGridData:AddTargetId(targetId)
+  if targetId ~= nil and 0 < targetId then
+    self._targetIdArray[#self._targetIdArray + 1] = targetId
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.AddDamageValue = function(self, targetId, damage)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
+function AttackGridData:AddDamageValue(targetId, damage)
   if damage ~= nil then
-    (self._damageValueArray)[targetId] = damage
+    self._damageValueArray[targetId] = damage
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.AddAttackPos = function(self, pos)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
+function AttackGridData:AddAttackPos(pos)
   if pos ~= nil then
-    (self._gridPosArray)[#self._gridPosArray + 1] = pos
+    self._gridPosArray[#self._gridPosArray + 1] = pos
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.AddBloodValue = function(self, targetId, bloodValue)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
+function AttackGridData:AddBloodValue(targetId, bloodValue)
   if bloodValue ~= nil then
-    (self._bloodValueArray)[targetId] = bloodValue
+    self._bloodValueArray[targetId] = bloodValue
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.GetTargetIdList = function(self)
-  -- function num : 0_5
+function AttackGridData:GetTargetIdList()
   return self._targetIdArray
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.SetTargetIdList = function(self, targetIdArray)
-  -- function num : 0_6
+function AttackGridData:SetTargetIdList(targetIdArray)
   self._targetIdArray = targetIdArray
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.ClearTargetIdList = function(self)
-  -- function num : 0_7
+function AttackGridData:ClearTargetIdList()
   self._targetIdArray = {}
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.GetDamageList = function(self)
-  -- function num : 0_8
+function AttackGridData:GetDamageList()
   return self._damageValueArray
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.GetAttackPosList = function(self)
-  -- function num : 0_9
+function AttackGridData:GetAttackPosList()
   return self._gridPosArray
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.SetAttackPosList = function(self, gridPosArray)
-  -- function num : 0_10
+function AttackGridData:SetAttackPosList(gridPosArray)
   self._gridPosArray = gridPosArray
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.ClearAttackPosList = function(self)
-  -- function num : 0_11
+function AttackGridData:ClearAttackPosList()
   self._gridPosArray = {}
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.GetAttackGridSkillId = function(self)
-  -- function num : 0_12
+function AttackGridData:GetAttackGridSkillId()
   return self._gridSkillId
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.SetAttackGridSkillID = function(self, skillID)
-  -- function num : 0_13
+function AttackGridData:SetAttackGridSkillID(skillID)
   self._gridSkillId = skillID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.GetPetEntityID = function(self)
-  -- function num : 0_14
+function AttackGridData:GetPetEntityID()
   return self._petEntityID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.GetBloodList = function(self)
-  -- function num : 0_15
+function AttackGridData:GetBloodList()
   return self._bloodValueArray
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.GetNormalAttackIndex = function(self)
-  -- function num : 0_16
+function AttackGridData:GetNormalAttackIndex()
   return self._normalAttackIndex
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackGridData.SetNormalAttackIndex = function(self, index)
-  -- function num : 0_17
+function AttackGridData:SetNormalAttackIndex(index)
   self._normalAttackIndex = index
 end
 
 _class("CH_AttackData", Object)
 CH_AttackData = CH_AttackData
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
 
-CH_AttackData.Constructor = function(self, nSkillID, nTargetID, posAttack, nDamageValue)
-  -- function num : 0_18 , upvalues : _ENV
+function CH_AttackData:Constructor(nSkillID, nTargetID, posAttack, nDamageValue)
   self.m_nSkillID = nSkillID
   self.m_nTargetID = nTargetID or 0
-  if not posAttack then
-    self.m_posAttack = (Vector2.New)(0, 0)
-    self.m_nDamageValue = nDamageValue or 0
-  end
+  self.m_posAttack = posAttack or Vector2.New(0, 0)
+  self.m_nDamageValue = nDamageValue or 0
 end
-
-

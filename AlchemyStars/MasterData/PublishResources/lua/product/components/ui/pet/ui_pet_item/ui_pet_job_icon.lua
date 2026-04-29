@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_item/ui_pet_job_icon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetJobIcon", UICustomWidget)
 UIPetJobIcon = UIPetJobIcon
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetJobIcon.SetData = function(self, pet, type, fromMaze)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetJobIcon:SetData(pet, type, fromMaze)
   if not pet then
-    return 
+    return
   end
   local prof = pet:GetProf()
   self:_SetImage(type, prof)
@@ -22,24 +15,27 @@ UIPetJobIcon.SetData = function(self, pet, type, fromMaze)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetJobIcon._SetImage = function(self, type, prof)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetJobIcon:_SetImage(type, prof)
   local job2Img = {
-[1] = {[2001] = "epg_gqxq_icon08", [2002] = "epg_gqxq_icon06", [2003] = "epg_gqxq_icon07", [2004] = "epg_gqxq_icon09"}
-, 
-[2] = {[2001] = "epg_gqxq_icon03", [2002] = "epg_gqxq_icon01", [2003] = "epg_gqxq_icon02", [2004] = "epg_gqxq_icon04"}
-}
-  local info = {atlasName = "UIPetJobIcon.spriteatlas", spriteName = (job2Img[type])[prof]}
-  ;
-  (UIStyleHelper.FitStyle_Widget)(info, self, "_icon")
+    [1] = {
+      [2001] = "epg_gqxq_icon08",
+      [2002] = "epg_gqxq_icon06",
+      [2003] = "epg_gqxq_icon07",
+      [2004] = "epg_gqxq_icon09"
+    },
+    [2] = {
+      [2001] = "epg_gqxq_icon03",
+      [2002] = "epg_gqxq_icon01",
+      [2003] = "epg_gqxq_icon02",
+      [2004] = "epg_gqxq_icon04"
+    }
+  }
+  local info = {
+    atlasName = "UIPetJobIcon.spriteatlas",
+    spriteName = job2Img[type][prof]
+  }
+  UIStyleHelper.FitStyle_Widget(info, self, "_icon")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetJobIcon._SetText = function(self, prof)
-  -- function num : 0_2
+function UIPetJobIcon:_SetText(prof)
 end
-
-

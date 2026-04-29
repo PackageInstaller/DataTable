@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/story/ui_season_story_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonStoryController", UIController)
 UISeasonStoryController = UISeasonStoryController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonStoryController.Constructor = function(self)
-  -- function num : 0_0
+function UISeasonStoryController:Constructor()
   self._breakIndexList = {}
   self.newName = ""
   self._splitChar = "|"
@@ -33,36 +26,26 @@ UISeasonStoryController.Constructor = function(self)
   self._talkEndRan = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonStoryController:OnShow(uiParams)
   self._eventID = uiParams[1]
   self._endCallback = uiParams[2]
   self:_GetComponents()
-  local taskCfg = (Cfg.cfg_season_story_event)[self._eventID]
+  local taskCfg = Cfg.cfg_season_story_event[self._eventID]
   if not taskCfg then
-    (Log.exception)("在cfg_season_story_event中未找到该配置：" .. self._eventID)
+    Log.exception("在cfg_season_story_event中未找到该配置：" .. self._eventID)
     self:CloseDialog()
-    return 
+    return
   end
   local startTalkID = taskCfg.StartTalkID
   self:InitDialog(startTalkID, true)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonStoryChanged, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonStoryChanged, true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonStoryChanged, false)
+function UISeasonStoryController:OnHide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonStoryChanged, false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController._GetComponents = function(self)
-  -- function num : 0_3
+function UISeasonStoryController:_GetComponents()
   self._content1 = self:GetUIComponent("UILocalizationText", "Content1")
   self._speakerName1 = self:GetUIComponent("UILocalizationText", "SpeakerName1")
   self._body1 = self:GetUIComponent("RawImageLoader", "body1")
@@ -83,308 +66,212 @@ UISeasonStoryController._GetComponents = function(self)
   self._buttonRootObj = self:GetGameObject("ButtonRoot")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController.InitDialog = function(self, storyID, isAnim)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonStoryController:InitDialog(storyID, isAnim)
   self._canClick = false
   self._curWaitTime = 0
-  self._curStoryCfg = (Cfg.cfg_season_story_talk)[storyID]
+  self._curStoryCfg = Cfg.cfg_season_story_talk[storyID]
   if not self._curStoryCfg then
-    (Log.exception)("在cfg_season_story_talk中未找到该配置：" .. storyID)
+    Log.exception("在cfg_season_story_talk中未找到该配置：" .. storyID)
     self:CloseDialog()
-    return 
+    return
   end
-  ;
-  (table.insert)(self._talkIDList, storyID)
-  ;
-  (self._content1):SetText("")
-  ;
-  (self._content2):SetText("")
-  ;
-  (self._endFlag1Obj):SetActive(false)
-  ;
-  (self._endFlag2Obj):SetActive(false)
-  if (self._curStoryCfg).IsMainActorWord == 1 then
-    (self._dialogLayout1):SetActive(true)
-    ;
-    (self._dialogLayout2):SetActive(false)
+  table.insert(self._talkIDList, storyID)
+  self._content1:SetText("")
+  self._content2:SetText("")
+  self._endFlag1Obj:SetActive(false)
+  self._endFlag2Obj:SetActive(false)
+  if self._curStoryCfg.IsMainActorWord == 1 then
+    self._dialogLayout1:SetActive(true)
+    self._dialogLayout2:SetActive(false)
     self._speakerBody = self._body1
     self._speakerName = self._speakerName1
     self._speakerContent = self._content1
     if isAnim then
       self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
-    self:Lock("uianim_DialogLayout1_in")
-    ;
-    (self._anim1):Play("uianim_DialogLayout1_in")
-    YIELD(TT, 667)
-    self:UnLock("uianim_DialogLayout1_in")
-  end
-)
+        self:Lock("uianim_DialogLayout1_in")
+        self._anim1:Play("uianim_DialogLayout1_in")
+        YIELD(TT, 667)
+        self:UnLock("uianim_DialogLayout1_in")
+      end)
     end
   else
-    ;
-    (self._dialogLayout1):SetActive(false)
-    ;
-    (self._dialogLayout2):SetActive(true)
+    self._dialogLayout1:SetActive(false)
+    self._dialogLayout2:SetActive(true)
     self._speakerBody = self._body2
     self._speakerName = self._speakerName2
     self._speakerContent = self._content2
     if isAnim then
       self:StartTask(function(TT)
-    -- function num : 0_4_1 , upvalues : self, _ENV
-    self:Lock("uianim_DialogLayout2_in")
-    ;
-    (self._anim2):Play("uianim_DialogLayout2_in")
-    YIELD(TT, 667)
-    self:UnLock("uianim_DialogLayout2_in")
-  end
-)
+        self:Lock("uianim_DialogLayout2_in")
+        self._anim2:Play("uianim_DialogLayout2_in")
+        YIELD(TT, 667)
+        self:UnLock("uianim_DialogLayout2_in")
+      end)
     end
   end
-  self._targetContent = (StringTable.Get)((self._curStoryCfg).ChatWord)
-  self._targetContent = (SeasonStoryHelper.GetContentInfo)(self._targetContent)
-  self._totalWaitTime = (SeasonStoryHelper.SubStringGetTotalIndex)(self._targetContent) * self._showTxtGap
-  self._speakerNameStr = (SeasonStoryHelper.DoEscape)((StringTable.Get)((self._curStoryCfg).SpeakerName))
-  if (self._curStoryCfg).SpeakerHead then
-    ((self._speakerBody).gameObject):SetActive(true)
-    ;
-    (self._speakerBody):LoadImage((self._curStoryCfg).SpeakerHead)
+  self._targetContent = StringTable.Get(self._curStoryCfg.ChatWord)
+  self._targetContent, self._breakIndexList, self._wordTotalCount, self._hideTextAnim = SeasonStoryHelper.GetContentInfo(self._targetContent)
+  self._totalWaitTime = SeasonStoryHelper.SubStringGetTotalIndex(self._targetContent) * self._showTxtGap
+  self._speakerNameStr = SeasonStoryHelper.DoEscape(StringTable.Get(self._curStoryCfg.SpeakerName))
+  if self._curStoryCfg.SpeakerHead then
+    self._speakerBody.gameObject:SetActive(true)
+    self._speakerBody:LoadImage(self._curStoryCfg.SpeakerHead)
   else
-    ;
-    ((self._speakerBody).gameObject):SetActive(false)
+    self._speakerBody.gameObject:SetActive(false)
   end
-  ;
-  (self._speakerName):SetText(self._speakerNameStr)
+  self._speakerName:SetText(self._speakerNameStr)
   self:_CheckAnswerBtn()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController._CheckAnswerBtn = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local answerIDTb = (self._curStoryCfg).AnswerID
+function UISeasonStoryController:_CheckAnswerBtn()
+  local answerIDTb = self._curStoryCfg.AnswerID
   if answerIDTb then
     self:SetAuto(false)
-    ;
-    (self._fullScreenBtn):SetActive(false)
-    ;
-    (self._optionsObj):SetActive(true)
-    local answerBtns = (self._choosePool):SpawnObjects("UISeasonStoryChooseItem", #answerIDTb)
-    for i,btn in pairs(answerBtns) do
-      local answerBtnTxt = (self._curStoryCfg).AnswerBtnTxt
-      btn:SetData(answerIDTb[i], (StringTable.Get)(answerBtnTxt[i]), function(storyID)
-    -- function num : 0_5_0 , upvalues : self
-    self:AnswerBtnCallback(storyID)
-  end
-)
+    self._fullScreenBtn:SetActive(false)
+    self._optionsObj:SetActive(true)
+    local answerBtns = self._choosePool:SpawnObjects("UISeasonStoryChooseItem", #answerIDTb)
+    for i, btn in pairs(answerBtns) do
+      local answerBtnTxt = self._curStoryCfg.AnswerBtnTxt
+      btn:SetData(answerIDTb[i], StringTable.Get(answerBtnTxt[i]), function(storyID)
+        self:AnswerBtnCallback(storyID)
+      end)
     end
   else
-    do
-      ;
-      (self._fullScreenBtn):SetActive(true)
-      ;
-      (self._optionsObj):SetActive(false)
-    end
+    self._fullScreenBtn:SetActive(true)
+    self._optionsObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController.AnswerBtnCallback = function(self, storyID)
-  -- function num : 0_6
+function UISeasonStoryController:AnswerBtnCallback(storyID)
   self._isEndClick = false
   self:InitDialog(storyID)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonStoryController:OnUpdate(deltaTimeMS)
   if self._curBreakTypeTime > 0 then
     self._curBreakTypeTime = self._curBreakTypeTime - deltaTimeMS
   else
     self._curWaitTime = deltaTimeMS + self._curWaitTime
     if self._curWaitTime < self._totalWaitTime + self._contentEndingTime and not self._canClick then
-      local index = (math.floor)(self._curWaitTime / self._totalWaitTime * (SeasonStoryHelper.SubStringGetTotalIndex)(self._targetContent))
-      if (table.icontains)(self._breakIndexList, index) then
+      local index = math.floor(self._curWaitTime / self._totalWaitTime * SeasonStoryHelper.SubStringGetTotalIndex(self._targetContent))
+      if table.icontains(self._breakIndexList, index) then
         self._curBreakTypeTime = self._defaultBreakTypeTime
       end
       self:_UpdateAnimation(index)
     else
-      do
-        ;
-        (self._endFlag1Obj):SetActive(not (self._curStoryCfg).AnswerID)
-        ;
-        (self._endFlag2Obj):SetActive(not (self._curStoryCfg).AnswerID)
-        self:_PlayEndFlagInAnim(function()
-    -- function num : 0_7_0 , upvalues : self
-    self._canClick = true
-  end
-)
-        self:AutoRunning()
-      end
+      self._endFlag1Obj:SetActive(not self._curStoryCfg.AnswerID)
+      self._endFlag2Obj:SetActive(not self._curStoryCfg.AnswerID)
+      self:_PlayEndFlagInAnim(function()
+        self._canClick = true
+      end)
+      self:AutoRunning()
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController._PlayEndFlagInAnim = function(self, callback)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonStoryController:_PlayEndFlagInAnim(callback)
   if not self._isEndClick then
     self._isEndClick = true
     self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV, callback
-    if (self._curStoryCfg).IsMainActorWord == 1 then
-      (self._anim1):Play("uianim_DialogLayout1_TextIn")
-    else
-      ;
-      (self._anim2):Play("uianim_DialogLayout2_TextIn")
-    end
-    YIELD(TT, 834)
-    if callback then
-      callback()
-    end
-  end
-)
+      if self._curStoryCfg.IsMainActorWord == 1 then
+        self._anim1:Play("uianim_DialogLayout1_TextIn")
+      else
+        self._anim2:Play("uianim_DialogLayout2_TextIn")
+      end
+      YIELD(TT, 834)
+      if callback then
+        callback()
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController._PlayEndFlagOutAnim = function(self, callback)
-  -- function num : 0_9
+function UISeasonStoryController:_PlayEndFlagOutAnim(callback)
   if self._isEndClick then
     self._isEndClick = false
     self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : callback
-    if callback then
-      callback()
-    end
-  end
-)
+      if callback then
+        callback()
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController._UpdateAnimation = function(self, index)
-  -- function num : 0_10 , upvalues : _ENV
-  local showText = (SeasonStoryHelper.SubStringUTF8)(self._targetContent, 1, index)
-  ;
-  (self._speakerContent):SetText(showText)
+function UISeasonStoryController:_UpdateAnimation(index)
+  local showText = SeasonStoryHelper.SubStringUTF8(self._targetContent, 1, index)
+  self._speakerContent:SetText(showText)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController.SetAuto = function(self, isAuto)
-  -- function num : 0_11
-  (self._cancelAutoBtn):SetActive(isAuto)
-  ;
-  (self._buttonRootObj):SetActive(not isAuto)
+function UISeasonStoryController:SetAuto(isAuto)
+  self._cancelAutoBtn:SetActive(isAuto)
+  self._buttonRootObj:SetActive(not isAuto)
   self._isAutoState = isAuto
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController.AutoRunning = function(self)
-  -- function num : 0_12
-  if self._isAutoState and self._totalWaitTime + self._autoWaitTime < self._curWaitTime and self._isEndClick then
-    if (self._curStoryCfg).LastTalk then
+function UISeasonStoryController:AutoRunning()
+  if self._isAutoState and self._curWaitTime > self._totalWaitTime + self._autoWaitTime and self._isEndClick then
+    if self._curStoryCfg.LastTalk then
       self:_TalkEnd()
     else
-      if (self._curStoryCfg).NextWord then
+      if self._curStoryCfg.NextWord then
         self:_PlayEndFlagOutAnim(function()
-    -- function num : 0_12_0 , upvalues : self
-    self:InitDialog((self._curStoryCfg).NextWord)
-  end
-)
+          self:InitDialog(self._curStoryCfg.NextWord)
+        end)
+      else
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController._TalkEnd = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonStoryController:_TalkEnd()
   if self._talkEndRan then
-    return 
+    return
   end
   self._talkEndRan = true
   self:StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : self, _ENV
     self:Lock("uianim_DialogLayout2_out")
-    if (self._curStoryCfg).IsMainActorWord == 1 then
-      (self._anim1):Play("uianim_DialogLayout2_out")
+    if self._curStoryCfg.IsMainActorWord == 1 then
+      self._anim1:Play("uianim_DialogLayout2_out")
     else
-      ;
-      (self._anim2):Play("uianim_DialogLayout2_out")
+      self._anim2:Play("uianim_DialogLayout2_out")
     end
     YIELD(TT, 334)
     self:UnLock("uianim_DialogLayout2_out")
     self:CloseDialog()
     if self._endCallback then
-      (self._endCallback)()
+      self._endCallback()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController.FullScreenBtnOnClick = function(self)
-  -- function num : 0_14
+function UISeasonStoryController:FullScreenBtnOnClick()
   if self._canClick then
-    if (self._curStoryCfg).LastTalk then
+    if self._curStoryCfg.LastTalk then
       self:_TalkEnd()
     else
       self:_PlayEndFlagOutAnim(function()
-    -- function num : 0_14_0 , upvalues : self
-    self:InitDialog((self._curStoryCfg).NextWord)
-  end
-)
+        self:InitDialog(self._curStoryCfg.NextWord)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController.CancelAutoButtonOnClick = function(self)
-  -- function num : 0_15
+function UISeasonStoryController:CancelAutoButtonOnClick()
   self:SetAuto(false)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController.ButtonSkipOnClick = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local cfg = (Cfg.cfg_season_story_event)[self._eventID]
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, (StringTable.Get)("str_season_story_skip_title"), (StringTable.Get)(cfg.SkipTxt), function()
-    -- function num : 0_16_0 , upvalues : self
+function UISeasonStoryController:ButtonSkipOnClick()
+  local cfg = Cfg.cfg_season_story_event[self._eventID]
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, StringTable.Get("str_season_story_skip_title"), StringTable.Get(cfg.SkipTxt), function()
     self:_TalkEnd()
-  end
-, nil, function(param)
-    -- function num : 0_16_1
-  end
-, nil)
+  end, nil, function(param)
+  end, nil)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController.ButtonReviewOnClick = function(self)
-  -- function num : 0_17
+function UISeasonStoryController:ButtonReviewOnClick()
   self:ShowDialog("UISeasonStoryReviewController", self._talkIDList)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStoryController.ButtonAutoOnClick = function(self)
-  -- function num : 0_18
+function UISeasonStoryController:ButtonAutoOnClick()
   self:SetAuto(true)
 end
-
-

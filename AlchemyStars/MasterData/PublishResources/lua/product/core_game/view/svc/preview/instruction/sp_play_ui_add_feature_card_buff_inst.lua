@@ -1,42 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_ui_add_feature_card_buff_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayUIAddFeatureCardBuffInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayUIAddFeatureCardBuffInstruction = SkillPreviewPlayUIAddFeatureCardBuffInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayUIAddFeatureCardBuffInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayUIAddFeatureCardBuffInstruction:Constructor(params)
   self._toTeamLeader = params.toTeamLeader
   self._toTeamTail = params.toTeamTail
   self._cardBuffType = tonumber(params.cardBuffType)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayUIAddFeatureCardBuffInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayUIAddFeatureCardBuffInstruction:DoInstruction(TT, casterEntity, previewContext)
   self._world = previewContext:GetWorld()
   local world = self._world
-  local teamEntity = (world:Player()):GetCurrentTeamEntity()
+  local teamEntity = world:Player():GetCurrentTeamEntity()
   local playerPstid = 0
   if self._toTeamLeader then
-    playerPstid = (teamEntity:Team()):GetTeamLeaderPetPstID()
-  else
-    if self._toTeamTail then
-      local cTeam = teamEntity:Team()
-      local teamOrder = cTeam:GetTeamOrder()
-      local finalIndex = #teamOrder
-      playerPstid = teamOrder[finalIndex]
-    end
+    playerPstid = teamEntity:Team():GetTeamLeaderPetPstID()
+  elseif self._toTeamTail then
+    local cTeam = teamEntity:Team()
+    local teamOrder = cTeam:GetTeamOrder()
+    local finalIndex = #teamOrder
+    playerPstid = teamOrder[finalIndex]
   end
-  do
-    ;
-    (world:EventDispatcher()):Dispatch(GameEventType.FeaturePetUIPreviewAddCardBuff, playerPstid, self._cardBuffType)
-  end
+  world:EventDispatcher():Dispatch(GameEventType.FeaturePetUIPreviewAddCardBuff, playerPstid, self._cardBuffType)
 end
-
-

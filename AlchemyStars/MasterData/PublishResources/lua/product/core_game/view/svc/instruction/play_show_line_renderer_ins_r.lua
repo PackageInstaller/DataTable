@@ -1,32 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_show_line_renderer_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayShowLineRendererInstruction", BaseInstruction)
 PlayShowLineRendererInstruction = PlayShowLineRendererInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayShowLineRendererInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayShowLineRendererInstruction:Constructor(paramList)
   self._show = tonumber(paramList.show) == 1
   self._selfAll = tonumber(paramList.selfAll) == 1
   self._isTrap = tonumber(paramList.isTrap) == 1
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayShowLineRendererInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayShowLineRendererInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local monsterGroup = world:GetGroup((world.BW_WEMatchers).MonsterID)
+  local monsterGroup = world:GetGroup(world.BW_WEMatchers.MonsterID)
   if self._isTrap then
-    monsterGroup = world:GetGroup((world.BW_WEMatchers).Trap)
+    monsterGroup = world:GetGroup(world.BW_WEMatchers.Trap)
   end
-  for i,entity in ipairs(monsterGroup:GetEntities()) do
-    local effectID = nil
+  for i, entity in ipairs(monsterGroup:GetEntities()) do
+    local effectID
     local effectLineRenderer = entity:EffectLineRenderer()
     if effectLineRenderer then
       effectLineRenderer:SetEffectLineRendererShow(casterEntity:GetID(), self._show)
@@ -37,16 +26,16 @@ PlayShowLineRendererInstruction.DoInstruction = function(self, TT, casterEntity,
     local effectHolderCmpt = entity:EffectHolder()
     if effectHolderCmpt then
       local effectList = effectHolderCmpt:GetPermanentEffect()
-      for i,eff in ipairs(effectList) do
-        if (effectID and effectID == eff) or self._selfAll then
+      for i, eff in ipairs(effectList) do
+        if effectID and effectID == eff or self._selfAll then
           local e = world:GetEntityByID(eff)
           if e and e:HasView() then
-            local go = (e:View()):GetGameObject()
+            local go = e:View():GetGameObject()
             local renderers = go:GetComponentsInChildren(typeof(UnityEngine.LineRenderer), true)
             for i = 0, renderers.Length - 1 do
               local line = renderers[i]
-              if line and notOpenLineEffectObjName ~= (line.gameObject).name then
-                (line.gameObject):SetActive(self._show)
+              if line and notOpenLineEffectObjName ~= line.gameObject.name then
+                line.gameObject:SetActive(self._show)
               end
             end
           end
@@ -55,5 +44,3 @@ PlayShowLineRendererInstruction.DoInstruction = function(self, TT, casterEntity,
     end
   end
 end
-
-

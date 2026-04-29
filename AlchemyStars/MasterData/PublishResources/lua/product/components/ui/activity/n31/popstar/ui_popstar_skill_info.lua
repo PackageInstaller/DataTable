@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/popstar/ui_popstar_skill_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPopStarSkillInfo", UICustomWidget)
 UIPopStarSkillInfo = UIPopStarSkillInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPopStarSkillInfo.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPopStarSkillInfo:OnShow()
   self._go = self:GetGameObject("go")
   local bg = self:GetGameObject("bg")
   local passEvent = bg:GetComponent("PassEventComponent")
   passEvent:SetClickCallback(function()
-    -- function num : 0_0_0 , upvalues : self
     self:Close()
-  end
-)
+  end)
   self._root = self:GetUIComponent("RectTransform", "root")
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._root).anchoredPosition = Vector2(10000, 0)
-  ;
-  (self._go):SetActive(false)
+  self._root.anchoredPosition = Vector2(10000, 0)
+  self._go:SetActive(false)
   self._btnUse = self:GetGameObject("BtnUse")
   self._btnDown = self:GetGameObject("BtnDown")
   self._btns = self:GetGameObject("Btns")
@@ -36,10 +23,7 @@ UIPopStarSkillInfo.OnShow = function(self)
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarSkillInfo.RefreshOffset = function(self, btnType)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPopStarSkillInfo:RefreshOffset(btnType)
   local offsetX = 0
   local offsetY = 111
   if btnType == 0 then
@@ -48,143 +32,85 @@ UIPopStarSkillInfo.RefreshOffset = function(self, btnType)
     offsetX = 436.94
   end
   self._showAnchorPositions = {}
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._showAnchorPositions)[1] = Vector2(-50 - offsetX, -50 - offsetY)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._showAnchorPositions)[2] = Vector2(50 + offsetX, -50 - offsetY)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._showAnchorPositions)[3] = Vector2(50 + offsetX, 50 + offsetY)
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._showAnchorPositions)[4] = Vector2(-50 - offsetX, 50 + offsetY)
+  self._showAnchorPositions[1] = Vector2(-50 - offsetX, -50 - offsetY)
+  self._showAnchorPositions[2] = Vector2(50 + offsetX, -50 - offsetY)
+  self._showAnchorPositions[3] = Vector2(50 + offsetX, 50 + offsetY)
+  self._showAnchorPositions[4] = Vector2(-50 - offsetX, 50 + offsetY)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarSkillInfo.SetData = function(self, pos, btnType, petId, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPopStarSkillInfo:SetData(pos, btnType, petId, callback)
   self._petId = petId
   self._callback = callback
   self:RefreshOffset(btnType)
   self:RefreshUI()
-  ;
-  (self._btnUse):SetActive(false)
-  ;
-  (self._btnDown):SetActive(false)
-  ;
-  (self._btns):SetActive(false)
+  self._btnUse:SetActive(false)
+  self._btnDown:SetActive(false)
+  self._btns:SetActive(false)
   if btnType == 1 then
-    (self._btnDown):SetActive(true)
-    ;
-    (self._btns):SetActive(true)
-  else
-    if btnType == 2 then
-      (self._btnUse):SetActive(true)
-      ;
-      (self._btns):SetActive(true)
-    end
+    self._btnDown:SetActive(true)
+    self._btns:SetActive(true)
+  elseif btnType == 2 then
+    self._btnUse:SetActive(true)
+    self._btns:SetActive(true)
   end
-  ;
-  (self._go):SetActive(true)
-  ;
-  (self._anim):Play("uieff_UIPopStarSkillInfo_in")
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._root).position = pos
+  self._go:SetActive(true)
+  self._anim:Play("uieff_UIPopStarSkillInfo_in")
+  self._root.position = pos
   local index = 0
-  if ((self._root).anchoredPosition).x > 0 then
-    if ((self._root).anchoredPosition).y > 0 then
+  if 0 < self._root.anchoredPosition.x then
+    if 0 < self._root.anchoredPosition.y then
       index = 1
     else
       index = 4
     end
+  elseif 0 < self._root.anchoredPosition.y then
+    index = 2
   else
-    if ((self._root).anchoredPosition).y > 0 then
-      index = 2
-    else
-      index = 3
-    end
+    index = 3
   end
-  local x = ((self._root).anchoredPosition).x + ((self._showAnchorPositions)[index]).x
-  local y = ((self._root).anchoredPosition).y + ((self._showAnchorPositions)[index]).y
-  -- DECOMPILER ERROR at PC92: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._root).anchoredPosition = Vector2(x, y)
+  local x = self._root.anchoredPosition.x + self._showAnchorPositions[index].x
+  local y = self._root.anchoredPosition.y + self._showAnchorPositions[index].y
+  self._root.anchoredPosition = Vector2(x, y)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarSkillInfo.RefreshUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local petCfg = (Cfg.cfg_popstar_pet_list)[self._petId]
+function UIPopStarSkillInfo:RefreshUI()
+  local petCfg = Cfg.cfg_popstar_pet_list[self._petId]
   local skillId = petCfg.SkillId
-  local cfg = (Cfg.cfg_pet_battle_skill)[skillId]
-  ;
-  (self._nameLabel):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._desLabel):SetText((StringTable.Get)(cfg.Desc))
-  ;
-  (self._iconLoader):LoadImage(cfg.Icon)
-  ;
-  (self._tips2Label):SetText((string.format)((StringTable.Get)("str_common_cooldown_round"), cfg.TriggerParam))
+  local cfg = Cfg.cfg_pet_battle_skill[skillId]
+  self._nameLabel:SetText(StringTable.Get(cfg.Name))
+  self._desLabel:SetText(StringTable.Get(cfg.Desc))
+  self._iconLoader:LoadImage(cfg.Icon)
+  self._tips2Label:SetText(string.format(StringTable.Get("str_common_cooldown_round"), cfg.TriggerParam))
   if petCfg.PreAttack == nil or petCfg.PreAttack == "" then
-    (self._tips1):SetActive(false)
+    self._tips1:SetActive(false)
   else
-    ;
-    (self._tips1):SetActive(true)
-    ;
-    (self._tips1Label):SetText((StringTable.Get)(petCfg.PreAttack))
+    self._tips1:SetActive(true)
+    self._tips1Label:SetText(StringTable.Get(petCfg.PreAttack))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarSkillInfo.BtnUseOnClick = function(self)
-  -- function num : 0_4
+function UIPopStarSkillInfo:BtnUseOnClick()
   if self._callback then
-    (self._callback)(self._petId)
+    self._callback(self._petId)
     self:Close()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarSkillInfo.BGOnClick = function(self)
-  -- function num : 0_5
+function UIPopStarSkillInfo:BGOnClick()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarSkillInfo.BtnDownOnClick = function(self)
-  -- function num : 0_6
+function UIPopStarSkillInfo:BtnDownOnClick()
   if self._callback then
-    (self._callback)(self._petId)
+    self._callback(self._petId)
     self:Close()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarSkillInfo.Close = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIPopStarSkillInfo:Close()
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV
     self:Lock("UIPopStarSkillInfo_Close")
-    ;
-    (self._anim):Play("uieff_UIPopStarSkillInfo_out")
+    self._anim:Play("uieff_UIPopStarSkillInfo_out")
     YIELD(TT, 170)
     self:UnLock("UIPopStarSkillInfo_Close")
-  end
-, self)
+  end, self)
 end
-
-

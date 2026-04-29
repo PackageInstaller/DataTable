@@ -1,74 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn9/SouthSea/ui_activity_south_sea_cn9_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivitySouthSeaCN9MainController", UISideEnterCenterContentBase)
 UIActivitySouthSeaCN9MainController = UIActivitySouthSeaCN9MainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivitySouthSeaCN9MainController.Constructor = function(self)
-  -- function num : 0_0
+function UIActivitySouthSeaCN9MainController:Constructor()
   self._componentState = {}
-  self._move = {[1] = -600, [2] = -900, [3] = -1300, [4] = -1700, [5] = -2000, [6] = -2350}
+  self._move = {
+    [1] = -600,
+    [2] = -900,
+    [3] = -1300,
+    [4] = -1700,
+    [5] = -2000,
+    [6] = -2350
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController.DoInit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivitySouthSeaCN9MainController:DoInit()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
   self._campaign = self._data
-  local sample = (self._campaign):GetSample()
+  local sample = self._campaign:GetSample()
   self._activeEndTime = sample.end_time
-  local localProcess = (self._campaign):GetLocalProcess()
+  local localProcess = self._campaign:GetLocalProcess()
   self._ASheepCom = localProcess:GetComponent(ECampaignN9CenterComponentID.ECAMPAIGN_N9_ASHEEP)
   self._ASheeoComInfo = localProcess:GetComponentInfo(ECampaignN9CenterComponentID.ECAMPAIGN_N9_ASHEEP)
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
-  self.open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+  self.itemModule = GameGlobal.GetModule(ItemModule)
+  self.open_id = GameGlobal.GameLogic():GetOpenId()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController.DoShow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivitySouthSeaCN9MainController:DoShow()
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
+    self._campaign:ClearCampaignNew(TT)
+  end)
   self:_GetComponents()
   self:_OnValue()
   self:RefreshRed()
   self:_SetTimer()
   self:_PlayAnim()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivitySouthSeaCN9MainController)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivitySouthSeaCN9MainController)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController.DoHide = function(self)
-  -- function num : 0_3
+function UIActivitySouthSeaCN9MainController:DoHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController.DoDestroy = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivitySouthSeaCN9MainController:DoDestroy()
   if self._timeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timeEvent)
+    GameGlobal.Timer():CancelEvent(self._timeEvent)
     self._timeEvent = nil
   end
-  ;
-  (UIActivitySouthSeaCN9MainController.super):Dispose()
+  UIActivitySouthSeaCN9MainController.super:Dispose()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController._GetComponents = function(self)
-  -- function num : 0_5
+function UIActivitySouthSeaCN9MainController:_GetComponents()
   self._roadPool = self:GetUIComponent("UISelectObjectPath", "RoadPointPool")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
   self._RestTimeText = self:GetUIComponent("UILocalizationText", "RestTimeText")
@@ -77,15 +58,12 @@ UIActivitySouthSeaCN9MainController._GetComponents = function(self)
   self._RoadPointGuide = self:GetGameObject("RoadPointGuide")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController._OnValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._passmission = ((self._ASheeoComInfo).m_info).m_pass_mission_info
+function UIActivitySouthSeaCN9MainController:_OnValue()
+  self._passmission = self._ASheeoComInfo.m_info.m_pass_mission_info
   local count = 0
   self.first = false
   if self._passmission then
-    local passCount = (table.count)(self._passmission)
+    local passCount = table.count(self._passmission)
     if passCount == 0 then
       self.first = true
     end
@@ -95,238 +73,160 @@ UIActivitySouthSeaCN9MainController._OnValue = function(self)
       count = passCount
     end
   else
-    do
-      self.first = true
-      count = 1
-      ;
-      (self._roadPool):SpawnObjects("UICN9RoadPointItem", count)
-      local nodes = (self._roadPool):GetAllSpawnList()
-      for i,v in ipairs(nodes) do
-        local pass = true
-        if self.first or i == count then
-          pass = false
-        end
-        v:SetData(i, pass, self._passmission, function(id)
-    -- function num : 0_6_0 , upvalues : self
-    self:ShowDetail(id)
+    self.first = true
+    count = 1
   end
-)
-      end
-      -- DECOMPILER ERROR at PC61: Confused about usage of register: R3 in 'UnsetPending'
-
-      if not self.first then
-        (self._contentRect).anchoredPosition = Vector2((self._move)[count], 0)
-      else
-        -- DECOMPILER ERROR at PC68: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._contentRect).anchoredPosition = Vector2(0, 0)
-        -- DECOMPILER ERROR at PC76: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        ((self._RoadPointGuide).transform).position = (((nodes[1]):GetGameObject()).transform).position
-      end
+  self._roadPool:SpawnObjects("UICN9RoadPointItem", count)
+  local nodes = self._roadPool:GetAllSpawnList()
+  for i, v in ipairs(nodes) do
+    local pass = true
+    if self.first or i == count then
+      pass = false
     end
+    v:SetData(i, pass, self._passmission, function(id)
+      self:ShowDetail(id)
+    end)
+  end
+  if not self.first then
+    self._contentRect.anchoredPosition = Vector2(self._move[count], 0)
+  else
+    self._contentRect.anchoredPosition = Vector2(0, 0)
+    self._RoadPointGuide.transform.position = nodes[1]:GetGameObject().transform.position
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController.CheckInGuide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+function UIActivitySouthSeaCN9MainController:CheckInGuide()
+  local guideModule = GameGlobal.GetModule(GuideModule)
   return guideModule:GuideInProgress()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController.ShowDetail = function(self, id)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivitySouthSeaCN9MainController:ShowDetail(id)
   local ActicityEnd = self:CheckActivityEnd()
   if ActicityEnd then
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
   self:Move(id)
   self:ShowDialog("UIActivityCN9LevelDetail", self._ASheepCom, self._ASheeoComInfo, id, self._passmission, function()
-    -- function num : 0_8_0 , upvalues : self
     self:RefreshRoadPoint()
-  end
-, function()
-    -- function num : 0_8_1 , upvalues : self
+  end, function()
     self:RefreshRed()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController.Move = function(self, id)
-  -- function num : 0_9
+function UIActivitySouthSeaCN9MainController:Move(id)
   local moveTime = 1
-  local x = (self._move)[id]
-  ;
-  (self._contentRect):DOAnchorPosX(x, moveTime)
+  local x = self._move[id]
+  self._contentRect:DOAnchorPosX(x, moveTime)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController.AfterUILayerChanged = function(self)
-  -- function num : 0_10
+function UIActivitySouthSeaCN9MainController:AfterUILayerChanged()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController.RefreshRoadPoint = function(self)
-  -- function num : 0_11
+function UIActivitySouthSeaCN9MainController:RefreshRoadPoint()
   self:_ForceRefresh()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController._ForceRefresh = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivitySouthSeaCN9MainController:_ForceRefresh()
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    ;
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
     self:_OnValue()
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController.BookBtnOnClick = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivitySouthSeaCN9MainController:BookBtnOnClick()
   local ActicityEnd = self:CheckActivityEnd()
   if ActicityEnd then
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
   self:ShowDialog("UIActivityCN9BookMain")
   local keyStr = "UIActivitySouthSeaCN9MainController_ItemCount" .. self.open_id
   local HaveCount = self:_GetHaveCount()
-  ;
-  (LocalDB.SetInt)(keyStr, HaveCount)
+  LocalDB.SetInt(keyStr, HaveCount)
   self:RefreshRed()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController.ActivityTipsbtnOnClick = function(self)
-  -- function num : 0_14
+function UIActivitySouthSeaCN9MainController:ActivityTipsbtnOnClick()
   local key = "UICN9SouthSeaIntro"
   self:ShowDialog("UIIntroLoader", key)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController._SetTimer = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  self._timeEvent = (UIActivityHelper.StartTimerEvent)(self._timeEvent, function()
-    -- function num : 0_15_0 , upvalues : self
+function UIActivitySouthSeaCN9MainController:_SetTimer()
+  self._timeEvent = UIActivityHelper.StartTimerEvent(self._timeEvent, function()
     return self:_SetRemainingTimer()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController._SetRemainingTimer = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivitySouthSeaCN9MainController:_SetRemainingTimer()
   local remaintime = 0
-  local curtime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  local sample = (self._campaign):GetSample()
+  local curtime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  local sample = self._campaign:GetSample()
   if sample == nil then
-    self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
-    ;
-    (self._RestTimeText):SetText("")
-    ;
-    (self._Text):SetText((StringTable.Get)("str_activity_finished"))
+    self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
+    self._RestTimeText:SetText("")
+    self._Text:SetText(StringTable.Get("str_activity_finished"))
     return true
   end
   local endtime = sample.end_time
   remaintime = endtime - curtime
   local pre_remaining = ""
   if remaintime < 0 then
-    ((self._RestTimeText).gameObject):SetActive(false)
+    self._RestTimeText.gameObject:SetActive(false)
   else
     self:_SetRemainTime(remaintime)
   end
   if remaintime <= 0 then
-    self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
-    ;
-    (self._RestTimeText):SetText("")
-    ;
-    (self._Text):SetText((StringTable.Get)("str_activity_finished"))
+    self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
+    self._RestTimeText:SetText("")
+    self._Text:SetText(StringTable.Get("str_activity_finished"))
     return true
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController._SetRemainTime = function(self, remaintime)
-  -- function num : 0_17
-  (self._RestTimeText):SetText(self:_GetRemainTime(remaintime))
+function UIActivitySouthSeaCN9MainController:_SetRemainTime(remaintime)
+  self._RestTimeText:SetText(self:_GetRemainTime(remaintime))
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController._GetRemainTime = function(self, time)
-  -- function num : 0_18 , upvalues : _ENV
-  local day, hour, minute = nil, nil, nil
-  day = (math.floor)(time / 86400)
-  hour = (math.floor)(time / 3600) % 24
-  minute = (math.floor)(time / 60) % 60
+function UIActivitySouthSeaCN9MainController:_GetRemainTime(time)
+  local day, hour, minute
+  day = math.floor(time / 86400)
+  hour = math.floor(time / 3600) % 24
+  minute = math.floor(time / 60) % 60
   local timestring = ""
-  if day > 0 then
-    timestring = day .. (StringTable.Get)("str_activity_common_day") .. hour .. (StringTable.Get)("str_activity_common_hour")
+  if 0 < day then
+    timestring = day .. StringTable.Get("str_activity_common_day") .. hour .. StringTable.Get("str_activity_common_hour")
+  elseif 0 < hour then
+    timestring = hour .. StringTable.Get("str_activity_common_hour") .. minute .. StringTable.Get("str_activity_common_minute")
+  elseif 0 < minute then
+    timestring = minute .. StringTable.Get("str_activity_common_minute")
   else
-    if hour > 0 then
-      timestring = hour .. (StringTable.Get)("str_activity_common_hour") .. minute .. (StringTable.Get)("str_activity_common_minute")
-    else
-      if minute > 0 then
-        timestring = minute .. (StringTable.Get)("str_activity_common_minute")
-      else
-        timestring = (StringTable.Get)("str_activity_common_less_minute")
-      end
-    end
+    timestring = StringTable.Get("str_activity_common_less_minute")
   end
-  return (string.format)((StringTable.Get)("str_activity_common_over"), timestring)
+  return string.format(StringTable.Get("str_activity_common_over"), timestring)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController.RefreshRed = function(self)
-  -- function num : 0_19
+function UIActivitySouthSeaCN9MainController:RefreshRed()
   local status = self:CheckRed()
-  ;
-  (self._Red):SetActive(status)
+  self._Red:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController.CheckRed = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIActivitySouthSeaCN9MainController:CheckRed()
   local keyStr = "UIActivitySouthSeaCN9MainController_ItemCount" .. self.open_id
   local HaveCount = self:_GetHaveCount()
-  local LastCount = (LocalDB.GetInt)(keyStr, 0)
+  local LastCount = LocalDB.GetInt(keyStr, 0)
   if LastCount == HaveCount then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController._GetHaveCount = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local cfg = (Cfg.cfg_south_sea_antique)({})
+function UIActivitySouthSeaCN9MainController:_GetHaveCount()
+  local cfg = Cfg.cfg_south_sea_antique({})
   local HaveCount = 0
-  for i,v in ipairs(cfg) do
+  for i, v in ipairs(cfg) do
     local have = self:_CheckHave(v.ItemID)
     if have then
       HaveCount = HaveCount + 1
@@ -335,11 +235,8 @@ UIActivitySouthSeaCN9MainController._GetHaveCount = function(self)
   return HaveCount
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController._CheckHave = function(self, ItemID)
-  -- function num : 0_22
-  local count = (self.itemModule):GetItemCount(ItemID)
+function UIActivitySouthSeaCN9MainController:_CheckHave(ItemID)
+  local count = self.itemModule:GetItemCount(ItemID)
   if not count or count == 0 then
     return false
   else
@@ -347,33 +244,22 @@ UIActivitySouthSeaCN9MainController._CheckHave = function(self, ItemID)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController.CheckActivityEnd = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local sample = (self._campaign):GetSample()
+function UIActivitySouthSeaCN9MainController:CheckActivityEnd()
+  local sample = self._campaign:GetSample()
   if sample == nil then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySouthSeaCN9MainController._PlayAnim = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIActivitySouthSeaCN9MainController:_PlayAnim()
   self._Anim = self:GetUIComponent("Animation", "Anim")
   local LockName = "UIActivitySouthSeaCN9MainController_AnimIN"
   self:StartTask(function(TT)
-    -- function num : 0_24_0 , upvalues : self, LockName, _ENV
     self:Lock(LockName)
-    ;
-    (self._Anim):Play("uianim_UIActivitySouthSeaCN9MainController_in")
+    self._Anim:Play("uianim_UIActivitySouthSeaCN9MainController_in")
     YIELD(TT, 500)
     self:UnLock(LockName)
-  end
-)
+  end)
 end
-
-

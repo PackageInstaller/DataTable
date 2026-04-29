@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/season_map_task.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapTask", Object)
 SeasonMapTask = SeasonMapTask
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapTask.Constructor = function(self, manager, module, loader)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMapTask:Constructor(manager, module, loader)
   self._seasonMapManager = manager
   self._seasonTaskModule = module
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
-  self._uiSeasonModule = (GameGlobal.GetUIModule)(SeasonModule)
-  self._seasonCameraManager = ((self._uiSeasonModule):SeasonManager()):SeasonCameraManager()
-  self._seasonCamera = (self._seasonCameraManager):SeasonCamera()
+  self._questModule = GameGlobal.GetModule(QuestModule)
+  self._uiSeasonModule = GameGlobal.GetUIModule(SeasonModule)
+  self._seasonCameraManager = self._uiSeasonModule:SeasonManager():SeasonCameraManager()
+  self._seasonCamera = self._seasonCameraManager:SeasonCamera()
   self._isUnlock = true
   self._loader = loader
   self._eventPoints = {}
@@ -22,105 +15,73 @@ SeasonMapTask.Constructor = function(self, manager, module, loader)
   self._focus = false
   self._resetPhase = SeasonResetPhase.None
   self._checkTime = 0
-  self._autoBinder = AutoEventBinder:New((GameGlobal.EventDispatcher)())
-  ;
-  (self._autoBinder):BindEvent(GameEventType.OnSeasonTaskReset, self, self._OnSeasonTaskReset)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.OnSeasonSubTaskRefresh, self, self._OnSeasonSubTaskRefresh)
+  self._autoBinder = AutoEventBinder:New(GameGlobal.EventDispatcher())
+  self._autoBinder:BindEvent(GameEventType.OnSeasonTaskReset, self, self._OnSeasonTaskReset)
+  self._autoBinder:BindEvent(GameEventType.OnSeasonSubTaskRefresh, self, self._OnSeasonSubTaskRefresh)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask.Update = function(self, deltaTime)
-  -- function num : 0_1 , upvalues : _ENV
-  for id,eventPoint in pairs(self._eventPoints) do
+function SeasonMapTask:Update(deltaTime)
+  for id, eventPoint in pairs(self._eventPoints) do
     eventPoint:Update(deltaTime)
   end
   if self._focus and self:_CheckCurFoucsDone() then
-    (table.remove)(self._focusEventPoints, 1)
+    table.remove(self._focusEventPoints, 1)
     self:_FocusNext()
   end
   self:_CheckReset(deltaTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,eventPoint in pairs(self._eventPoints) do
+function SeasonMapTask:Dispose()
+  for _, eventPoint in pairs(self._eventPoints) do
     eventPoint:Dispose()
   end
   self._focus = false
-  ;
-  (table.clear)(self._eventPoints)
-  ;
-  (table.clear)(self._focusEventPoints)
+  table.clear(self._eventPoints)
+  table.clear(self._focusEventPoints)
   self._resetPhase = SeasonResetPhase.None
-  ;
-  (self._autoBinder):UnBindAllEvents()
+  self._autoBinder:UnBindAllEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask.AddEventPoint = function(self, cfgMission)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonMapTask:AddEventPoint(cfgMission)
   if not cfgMission then
-    return 
+    return
   end
   local missionID = cfgMission.ID
-  if (self._eventPoints)[missionID] then
-    return 
+  if self._eventPoints[missionID] then
+    return
   end
-  local cfgEventPoint = (Cfg.cfg_season_map_eventpoint)[missionID]
+  local cfgEventPoint = Cfg.cfg_season_map_eventpoint[missionID]
   if cfgEventPoint then
     local eventPoint = SeasonMapEventPointTask:New(self, cfgMission, cfgEventPoint)
     if eventPoint:GetResName() then
-      (self._loader):LoadResource(eventPoint)
+      self._loader:LoadResource(eventPoint)
     else
       eventPoint:CreateVirtualPoint()
     end
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._eventPoints)[missionID] = eventPoint
+    self._eventPoints[missionID] = eventPoint
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask.GetEventPoint = function(self, id)
-  -- function num : 0_4
-  return (self._eventPoints)[id]
+function SeasonMapTask:GetEventPoint(id)
+  return self._eventPoints[id]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask.GetEventPoints = function(self)
-  -- function num : 0_5
+function SeasonMapTask:GetEventPoints()
   return self._eventPoints
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask.IsUnlock = function(self)
-  -- function num : 0_6
+function SeasonMapTask:IsUnlock()
   return self._isUnlock
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask.SetUnlock = function(self, unlock)
-  -- function num : 0_7
+function SeasonMapTask:SetUnlock(unlock)
   self._isUnlock = unlock
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask.CheckEventPointCondition = function(self, map)
-  -- function num : 0_8 , upvalues : _ENV
+function SeasonMapTask:CheckEventPointCondition(map)
   if self._isUnlock then
-    map = (self._seasonTaskModule):GetConditionMap((self._seasonMapManager):GetStageInfo())
-    for id,eventPoint in pairs(self._eventPoints) do
+    map = self._seasonTaskModule:GetConditionMap(self._seasonMapManager:GetStageInfo())
+    for id, eventPoint in pairs(self._eventPoints) do
       local result, progress = eventPoint:CheckCondition(map)
       if result then
         eventPoint:PlayExpress(progress, SeasonExpressTriggerType.Passive)
@@ -129,28 +90,19 @@ SeasonMapTask.CheckEventPointCondition = function(self, map)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask.GetEventPointsByType = function(self, eventPointType, force)
-  -- function num : 0_9 , upvalues : _ENV
-  local result = nil
-  for _,eventPoint in pairs(self._eventPoints) do
-    if (eventPoint:DiffAble() and eventPoint:ModeAble()) or force then
-      if not result then
-        result = {}
-      end
-      ;
-      (table.insert)(result, eventPoint)
+function SeasonMapTask:GetEventPointsByType(eventPointType, force)
+  local result
+  for _, eventPoint in pairs(self._eventPoints) do
+    if eventPoint:EventPointType() == eventPointType and (eventPoint:DiffAble() and eventPoint:ModeAble() or force) then
+      result = result or {}
+      table.insert(result, eventPoint)
     end
   end
   return result
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask.EventPointPlaying = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for _,eventPoint in pairs(self._eventPoints) do
+function SeasonMapTask:EventPointPlaying()
+  for _, eventPoint in pairs(self._eventPoints) do
     local isPlaying, id = eventPoint:IsPlaying()
     if isPlaying then
       return isPlaying, id
@@ -159,176 +111,120 @@ SeasonMapTask.EventPointPlaying = function(self)
   return false, nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask.SwitchMapMode = function(self, mapMode)
-  -- function num : 0_11 , upvalues : _ENV
-  for _,eventPoint in pairs(self._eventPoints) do
+function SeasonMapTask:SwitchMapMode(mapMode)
+  for _, eventPoint in pairs(self._eventPoints) do
     if eventPoint:IsUnlock() then
       eventPoint:SwitchMapMode(mapMode)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask.TrySyncQuestNum = function(self, TT, questID)
-  -- function num : 0_12 , upvalues : _ENV
-  local res, rewards = (self._questModule):HandleClientProcess(TT, questID, 1)
+function SeasonMapTask:TrySyncQuestNum(TT, questID)
+  local res, rewards = self._questModule:HandleClientProcess(TT, questID, 1)
   if res:GetSucc() then
-    local cfg = (Cfg.cfg_quest)[questID]
+    local cfg = Cfg.cfg_quest[questID]
     if rewards and cfg.NoShowRewards ~= true then
-      (UISeasonHelper.ShowUIGetRewards)(rewards)
+      UISeasonHelper.ShowUIGetRewards(rewards)
     end
-    ;
-    (Log.info)("SeasonMapTask TrySyncQuestNum success.")
+    Log.info("SeasonMapTask TrySyncQuestNum success.")
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask._OnSeasonTaskReset = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function SeasonMapTask:_OnSeasonTaskReset()
   self:_Refresh()
-  ;
-  (Log.info)("SeasonMapTask OnSeasonTaskReset.")
+  Log.info("SeasonMapTask OnSeasonTaskReset.")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask._OnSeasonSubTaskRefresh = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function SeasonMapTask:_OnSeasonSubTaskRefresh()
   self:_Refresh()
-  ;
-  (Log.info)("SeasonMapTask OnSeasonSubTaskRefresh.")
+  Log.info("SeasonMapTask OnSeasonSubTaskRefresh.")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask._Refresh = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function SeasonMapTask:_Refresh()
   self._checkTime = 0
-  if (self._seasonMapManager):EventPointPlaying() or self._focus then
+  if self._seasonMapManager:EventPointPlaying() or self._focus then
     self._resetPhase = SeasonResetPhase.Waiting
   else
     self:_OnRefresh()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask._OnRefresh = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function SeasonMapTask:_OnRefresh()
   self._focus = false
-  ;
-  (table.clear)(self._focusEventPoints)
-  for id,eventPoint in pairs(self._eventPoints) do
+  table.clear(self._focusEventPoints)
+  for id, eventPoint in pairs(self._eventPoints) do
     eventPoint:Dispose()
   end
-  ;
-  (table.clear)(self._eventPoints)
-  ;
-  (self._seasonMapManager):CreateSubTaskEventPoints()
+  table.clear(self._eventPoints)
+  self._seasonMapManager:CreateSubTaskEventPoints()
   self._resetPhase = SeasonResetPhase.Success
-  ;
-  (((self._uiSeasonModule):SeasonManager()):SeasonUIManager()):Refresh()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonTaskRefreshed)
+  self._uiSeasonModule:SeasonManager():SeasonUIManager():Refresh()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonTaskRefreshed)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask._CheckReset = function(self, deltaTime)
-  -- function num : 0_17 , upvalues : _ENV
+function SeasonMapTask:_CheckReset(deltaTime)
   if self._resetPhase == SeasonResetPhase.Waiting then
     self._checkTime = self._checkTime + deltaTime
     if self._checkTime >= 5000 then
       self._checkTime = 0
-      if not (self._seasonMapManager):EventPointPlaying() then
+      if not self._seasonMapManager:EventPointPlaying() then
         self:_OnRefresh()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask.FocusTasks = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function SeasonMapTask:FocusTasks()
   self._focus = false
-  ;
-  (table.clear)(self._focusEventPoints)
-  for id,eventPoint in pairs(self._eventPoints) do
+  table.clear(self._focusEventPoints)
+  for id, eventPoint in pairs(self._eventPoints) do
     if not eventPoint:IsFinish() then
-      (table.insert)(self._focusEventPoints, eventPoint)
+      table.insert(self._focusEventPoints, eventPoint)
     end
   end
-  ;
-  (table.sort)(self._focusEventPoints, function(a, b)
-    -- function num : 0_18_0
-    do return b:GetID() < a:GetID() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._focusEventPoints, function(a, b)
+    return a:GetID() > b:GetID()
+  end)
   self:_FocusNext()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask._FocusNext = function(self)
-  -- function num : 0_19
+function SeasonMapTask:_FocusNext()
   if #self._focusEventPoints > 0 then
-    local eventPoint = (self._focusEventPoints)[1]
-    if (eventPoint:GetEventPointCfg()).TaskAutoNavi == 1 then
-      ((self._uiSeasonModule):SeasonManager()):AutoMoveToEventPoint(eventPoint:GetID())
+    local eventPoint = self._focusEventPoints[1]
+    if eventPoint:GetEventPointCfg().TaskAutoNavi == 1 then
+      self._uiSeasonModule:SeasonManager():AutoMoveToEventPoint(eventPoint:GetID())
     else
-      ;
-      (self._seasonCamera):Focus(eventPoint:Position())
+      self._seasonCamera:Focus(eventPoint:Position())
     end
     self._focus = true
   else
-    do
-      self._focus = false
-    end
+    self._focus = false
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask._CheckCurFoucsDone = function(self)
-  -- function num : 0_20
-  return (self._seasonCamera):FocusDone()
+function SeasonMapTask:_CheckCurFoucsDone()
+  return self._seasonCamera:FocusDone()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask.TryResumeExpress = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  for _,eventPoint in pairs(self._eventPoints) do
+function SeasonMapTask:TryResumeExpress()
+  for _, eventPoint in pairs(self._eventPoints) do
     if eventPoint:IsUnlock() then
       eventPoint:TryResumeExpress()
     end
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapTask.BrowseTask = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local backTrackID = nil
-  for _,eventPoint in pairs(self._eventPoints) do
-    if (eventPoint:GetMissionCfg()).BackTrackID ~= (self._uiSeasonModule):GetSeasonID() and (self._uiSeasonModule):GetSeasonID() > 0 then
-      backTrackID = (eventPoint:GetMissionCfg()).BackTrackID
+function SeasonMapTask:BrowseTask()
+  local backTrackID
+  for _, eventPoint in pairs(self._eventPoints) do
+    if eventPoint:GetMissionCfg().BackTrackID ~= self._uiSeasonModule:GetSeasonID() and self._uiSeasonModule:GetSeasonID() > 0 then
+      backTrackID = eventPoint:GetMissionCfg().BackTrackID
       break
     end
   end
-  do
-    if backTrackID then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UISeasonBackTrackPop", backTrackID)
-    else
-      self:FocusTasks()
-    end
+  if backTrackID then
+    GameGlobal.UIStateManager():ShowDialog("UISeasonBackTrackPop", backTrackID)
+  else
+    self:FocusTasks()
   end
 end
-
-

@@ -1,234 +1,148 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/test_robot_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("game_module")
 _class("TestRobotModule", GameModule)
 TestRobotModule = TestRobotModule
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotModule.__tostring = function(self)
-  -- function num : 0_0
+function TestRobotModule:__tostring()
   return self._className
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.IsCNVersion = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  return (SmokingTestHub.IsCNVersion)()
+function TestRobotModule:IsCNVersion()
+  return SmokingTestHub.IsCNVersion()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.Constructor = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function TestRobotModule:Constructor()
   self.m_tGlobalFlags = {}
   self.m_bEnableRobot = false
   self._currentSequence = nil
   self.m_pMissionRunData = nil
   self.m_oStartupParam = nil
   self._progressInfo = nil
-  self.autoBinder = AutoEventBinder:New((GameGlobal.EventDispatcher)())
+  self.autoBinder = AutoEventBinder:New(GameGlobal.EventDispatcher())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.IsDebugMode = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function TestRobotModule:IsDebugMode()
   return EDITOR
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.GetMissionRunData = function(self)
-  -- function num : 0_4
+function TestRobotModule:GetMissionRunData()
   return self.m_pMissionRunData
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.SetMissionRunData = function(self, data)
-  -- function num : 0_5
+function TestRobotModule:SetMissionRunData(data)
   self.m_pMissionRunData = data
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.Init = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function TestRobotModule:Init()
   if not self:IsDebugMode() then
-    return 
+    return
   end
-  ;
-  (((GameGlobal.UIStateManager)()).uiControllerManager):RegisterUI("UISmokingTestDashboard", "UISmokingTestDashboard.prefab")
+  GameGlobal.UIStateManager().uiControllerManager:RegisterUI("UISmokingTestDashboard", "UISmokingTestDashboard.prefab")
   self:SubscribeGameEvent()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.Dispose = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function TestRobotModule:Dispose()
   WorkWXPoster.IsActive = false
   if self.__autoBinder then
-    (self.__autoBinder):Dispose()
+    self.__autoBinder:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.Update = function(self, deltaTimeMS)
-  -- function num : 0_8
+function TestRobotModule:Update(deltaTimeMS)
   if not self:IsDebugMode() then
-    return 
+    return
   end
   self._deltaTime = deltaTimeMS
   self:DashboardUpdate(deltaTimeMS)
-  if self.m_bEnableRobot == false then
-    return 
+  if false == self.m_bEnableRobot then
+    return
   end
-  ;
-  (self._currentSequence):OnUpdate()
+  self._currentSequence:OnUpdate()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.DashboardUpdate = function(self, t)
-  -- function num : 0_9 , upvalues : _ENV
-  if not ((GameGlobal.UIStateManager)()):IsShow("UISmokingTestDashboard") and ((UnityEngine.Input).GetKey)((UnityEngine.KeyCode).Tab) and ((UnityEngine.Input).GetKey)((UnityEngine.KeyCode).D) then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UISmokingTestDashboard")
+function TestRobotModule:DashboardUpdate(t)
+  if not GameGlobal.UIStateManager():IsShow("UISmokingTestDashboard") and UnityEngine.Input.GetKey(UnityEngine.KeyCode.Tab) and UnityEngine.Input.GetKey(UnityEngine.KeyCode.D) then
+    GameGlobal.UIStateManager():ShowDialog("UISmokingTestDashboard")
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.PrintLog = function(self, ...)
-  -- function num : 0_10
+function TestRobotModule:PrintLog(...)
   self:Log(...)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.OnTestRobot_Begin = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.m_tGlobalFlags).NOGUIDE = _G.NOGUIDE
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
+function TestRobotModule:OnTestRobot_Begin()
+  self.m_tGlobalFlags.NOGUIDE = _G.NOGUIDE
   _G.NOGUIDE = true
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  BattleConst.TimeSpeedList = {6, 6, 6}
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
+  BattleConst.TimeSpeedList = {
+    6,
+    6,
+    6
+  }
   WorkWXPoster.IsActive = true
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.OnTestRobot_End = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function TestRobotModule:OnTestRobot_End()
   self.m_bEnableRobot = false
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  _G.NOGUIDE = (self.m_tGlobalFlags).NOGUIDE
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  BattleConst.TimeSpeedList = {1.2, 1.8, 3.5}
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
+  _G.NOGUIDE = self.m_tGlobalFlags.NOGUIDE
+  BattleConst.TimeSpeedList = {
+    1.2,
+    1.8,
+    3.5
+  }
   WorkWXPoster.IsActive = false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.GetConversationTaskID = function(self)
-  -- function num : 0_13
+function TestRobotModule:GetConversationTaskID()
   return self.m_tidConversation
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.SetConversationTaskID = function(self, tid)
-  -- function num : 0_14
+function TestRobotModule:SetConversationTaskID(tid)
   self.m_tidConversation = tid
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.SendCheatCommand = function(self, strcmd)
-  -- function num : 0_15 , upvalues : _ENV
-  local gmproxy = (GameGlobal.GetModule)(GMProxyModule)
+function TestRobotModule:SendCheatCommand(strcmd)
+  local gmproxy = GameGlobal.GetModule(GMProxyModule)
   return gmproxy:SendCmd(strcmd)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.GetIsEnableRobot = function(self)
-  -- function num : 0_16
+function TestRobotModule:GetIsEnableRobot()
   return self.m_bEnableRobot
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.StopAutoTest = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local go = ((UnityEngine.GameObject).Find)("SmokingTestAgent")
+function TestRobotModule:StopAutoTest()
+  local go = UnityEngine.GameObject.Find("SmokingTestAgent")
   if go and go ~= "null" then
-    ((UnityEngine.GameObject).Destroy)(go)
+    UnityEngine.GameObject.Destroy(go)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.LoadCustomSequence = function(self, tSequence)
-  -- function num : 0_18 , upvalues : _ENV
+function TestRobotModule:LoadCustomSequence(tSequence)
   local actionTree = LAction_Tree:New(self)
   actionTree:InitTreeByConfig(tSequence, 0, 1)
   self._currentSequence = actionTree
   return actionTree
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.ResetElementaryTestLogic = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function TestRobotModule:ResetElementaryTestLogic()
   if not self._currentSequence then
-    return 
+    return
   end
-  ;
-  (self._currentSequence):InitLogic()
+  self._currentSequence:InitLogic()
   self.m_eRunningMode = TestRobotRunningMode.Elementary
   self.m_bEnableRobot = true
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.SetStartupParam = function(self, meta)
-  -- function num : 0_20 , upvalues : _ENV
+function TestRobotModule:SetStartupParam(meta)
   self.m_oStartupParam = meta
-  local splitStr = (string.split)(meta, "|")
-  if tonumber(splitStr[1]) == 0 then
-    return (string.split)(splitStr[2], ",")
+  local splitStr = string.split(meta, "|")
+  if 0 == tonumber(splitStr[1]) then
+    return string.split(splitStr[2], ",")
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.GetStartupParam = function(self)
-  -- function num : 0_21
+function TestRobotModule:GetStartupParam()
   return self.m_oStartupParam
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.GetTestAccountOpenID = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  return (LocalDB.GetString)("OpenIdTest")
+function TestRobotModule:GetTestAccountOpenID()
+  return LocalDB.GetString("OpenIdTest")
 end
-
-

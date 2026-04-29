@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_continue_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseParamContinueAttack", SkillPhaseParamBase)
 SkillPhaseParamContinueAttack = SkillPhaseParamContinueAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseParamContinueAttack.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseParamContinueAttack:Constructor(t)
   self._startIndex = tonumber(t.startIndex)
   self._lastStartIndex = tonumber(t.lastStartIndex)
   self._audioId = t.audioID
@@ -34,10 +27,7 @@ SkillPhaseParamContinueAttack.Constructor = function(self, t)
   self._deathClear = t.deathClear
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhaseParamContinueAttack:GetCacheTable()
   local listID = {}
   self:AddEffectIDToListID(listID, self._effectId)
   self:AddEffectIDToListID(listID, self._bulletEffectId)
@@ -45,175 +35,100 @@ SkillPhaseParamContinueAttack.GetCacheTable = function(self)
   return self:GetCacheTableFromListID(listID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetSoundCacheTable = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseParamContinueAttack:GetSoundCacheTable()
   local t = {}
-  ;
-  (table.insert)(t, self._audioId)
+  table.insert(t, self._audioId)
   return t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetPhaseType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillPhaseParamContinueAttack:GetPhaseType()
   return SkillViewPhaseType.ContinueAttack
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetStartIndex = function(self)
-  -- function num : 0_4
+function SkillPhaseParamContinueAttack:GetStartIndex()
   return self._startIndex
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetLastStartIndex = function(self)
-  -- function num : 0_5
+function SkillPhaseParamContinueAttack:GetLastStartIndex()
   return self._lastStartIndex
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetAudioId = function(self)
-  -- function num : 0_6
+function SkillPhaseParamContinueAttack:GetAudioId()
   return self._audioId
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetAnimName = function(self)
-  -- function num : 0_7
+function SkillPhaseParamContinueAttack:GetAnimName()
   return self._animName
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetEffectId = function(self)
-  -- function num : 0_8
+function SkillPhaseParamContinueAttack:GetEffectId()
   return self._effectId
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetEffectOffsetX = function(self)
-  -- function num : 0_9
+function SkillPhaseParamContinueAttack:GetEffectOffsetX()
   return self._effectOffsetX
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetEffectOffsetY = function(self)
-  -- function num : 0_10
+function SkillPhaseParamContinueAttack:GetEffectOffsetY()
   return self._effectOffsetY
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetEffectOffsetZ = function(self)
-  -- function num : 0_11
+function SkillPhaseParamContinueAttack:GetEffectOffsetZ()
   return self._effectOffsetZ
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetWaitEffectTime = function(self)
-  -- function num : 0_12
+function SkillPhaseParamContinueAttack:GetWaitEffectTime()
   return self._waitEffectTime
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetWaitBulletEffectTime = function(self)
-  -- function num : 0_13
+function SkillPhaseParamContinueAttack:GetWaitBulletEffectTime()
   return self._waitBulletEffectTime
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetWaitAnimTime = function(self)
-  -- function num : 0_14
+function SkillPhaseParamContinueAttack:GetWaitAnimTime()
   return self._waitAnimTime
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetBulletEffectId = function(self)
-  -- function num : 0_15
+function SkillPhaseParamContinueAttack:GetBulletEffectId()
   return self._bulletEffectId
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetBulletFlySpeed = function(self)
-  -- function num : 0_16
+function SkillPhaseParamContinueAttack:GetBulletFlySpeed()
   return self._bulletFlySpeed
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetBulletFlyTrace = function(self)
-  -- function num : 0_17
+function SkillPhaseParamContinueAttack:GetBulletFlyTrace()
   return self._bulletFlyTrace
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetBulletEffectOffsetX = function(self)
-  -- function num : 0_18
+function SkillPhaseParamContinueAttack:GetBulletEffectOffsetX()
   return self._bulletEffectOffsetX
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetBulletEffectOffsetY = function(self)
-  -- function num : 0_19
+function SkillPhaseParamContinueAttack:GetBulletEffectOffsetY()
   return self._bulletEffectOffsetY
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetBulletEffectOffsetZ = function(self)
-  -- function num : 0_20
+function SkillPhaseParamContinueAttack:GetBulletEffectOffsetZ()
   return self._bulletEffectOffsetZ
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetWaitHitTime = function(self)
-  -- function num : 0_21
+function SkillPhaseParamContinueAttack:GetWaitHitTime()
   return self._waitHitTime
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetHitAnimName = function(self)
-  -- function num : 0_22
+function SkillPhaseParamContinueAttack:GetHitAnimName()
   return self._hitAnimName
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetHitEffectId = function(self)
-  -- function num : 0_23
+function SkillPhaseParamContinueAttack:GetHitEffectId()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetTurnToTarget = function(self)
-  -- function num : 0_24
+function SkillPhaseParamContinueAttack:GetTurnToTarget()
   return self._turnToTarget
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamContinueAttack.GetDeathClear = function(self)
-  -- function num : 0_25
+function SkillPhaseParamContinueAttack:GetDeathClear()
   return self._deathClear
 end
-
-

@@ -1,40 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_decrease_max_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDecreaseMaxHP", BuffLogicBase)
 BuffLogicDecreaseMaxHP = BuffLogicDecreaseMaxHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDecreaseMaxHP.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicDecreaseMaxHP:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue
   assert(self._mulValue, "DecreaseMaxHP: parameter [mulValue] is required. ")
   assert(self._mulValue < 1 and self._mulValue > 0, "DecreaseMaxHP: mulValue is invalid. Range is (0, 1). ")
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDecreaseMaxHP.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
-  local matchType = (self._world):MatchType()
-  if matchType ~= MatchType.MT_Maze and (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze and entity:HasPetPstID() then
-    entity = (entity:Pet()):GetOwnerTeamEntity()
+function BuffLogicDecreaseMaxHP:DoLogic()
+  local entity = self._buffInstance:Entity()
+  local matchType = self._world:MatchType()
+  if matchType ~= MatchType.MT_Maze and self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze and entity:HasPetPstID() then
+    entity = entity:Pet():GetOwnerTeamEntity()
   end
-  if (entity:Attributes()):GetCurrentHP() == 0 then
-    return 
+  if entity:Attributes():GetCurrentHP() == 0 then
+    return
   end
-  local calcDamage = (self._world):GetService("CalcDamage")
-  local baseMaxHp = (entity:Attributes()):CalcMaxHp()
-  local val = (math.floor)(baseMaxHp * self._mulValue)
+  local calcDamage = self._world:GetService("CalcDamage")
+  local baseMaxHp = entity:Attributes():CalcMaxHp()
+  local val = math.floor(baseMaxHp * self._mulValue)
   local ret = calcDamage:DecreaseTargetMaxHP(entity:GetID(), val, self:GetBuffSeq())
   local damageInfo = DamageInfo:New(baseMaxHp - val, DamageType.Real)
   calcDamage:DecreaseTargetHP(entity, damageInfo)
   local buffResult = BuffResultDecreaseMaxHP:New(entity:GetID(), damageInfo, ret)
   return buffResult
 end
-
-

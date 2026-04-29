@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_reset_grid_element.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_ResetGridData", Object)
 SkillEffectResult_ResetGridData = SkillEffectResult_ResetGridData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_ResetGridData.Constructor = function(self, nX, nY, nNewElementType)
-  -- function num : 0_0
+function SkillEffectResult_ResetGridData:Constructor(nX, nY, nNewElementType)
   self.m_nX = nX
   self.m_nY = nY
   self.m_nNewElementType = nNewElementType
@@ -17,10 +10,8 @@ end
 
 _class("SkillEffectResult_ResetGridElement", SkillEffectResultBase)
 SkillEffectResult_ResetGridElement = SkillEffectResult_ResetGridElement
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_ResetGridElement.Constructor = function(self, gridArray, flushTraps, gridArrayNew)
-  -- function num : 0_1
+function SkillEffectResult_ResetGridElement:Constructor(gridArray, flushTraps, gridArrayNew)
   self.m_vecResetGridData = gridArray
   self._flushTraps = flushTraps
   self._summonTrapList = nil
@@ -28,47 +19,29 @@ SkillEffectResult_ResetGridElement.Constructor = function(self, gridArray, flush
   self.m_vecResetGridDataNew = gridArrayNew
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ResetGridElement.AddSummonTrapData = function(self, pos, trapId)
-  -- function num : 0_2
+function SkillEffectResult_ResetGridElement:AddSummonTrapData(pos, trapId)
   if self._summonTrapList == nil then
     self._summonTrapList = {}
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._summonTrapList)[pos] = trapId
+  self._summonTrapList[pos] = trapId
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ResetGridElement.GetSummonTrapList = function(self)
-  -- function num : 0_3
+function SkillEffectResult_ResetGridElement:GetSummonTrapList()
   return self._summonTrapList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ResetGridElement.AddSummonTrapEntityID = function(self, pos, entityID)
-  -- function num : 0_4
+function SkillEffectResult_ResetGridElement:AddSummonTrapEntityID(pos, entityID)
   if self._summonTrapEntityIDList == nil then
     self._summonTrapEntityIDList = {}
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._summonTrapEntityIDList)[pos] = entityID
+  self._summonTrapEntityIDList[pos] = entityID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ResetGridElement.GetSummontTrapEntityID = function(self, pos)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillEffectResult_ResetGridElement:GetSummontTrapEntityID(pos)
   if not self._summonTrapEntityIDList then
     return nil
   end
-  for p,id in pairs(self._summonTrapEntityIDList) do
+  for p, id in pairs(self._summonTrapEntityIDList) do
     if p == pos then
       return id
     end
@@ -76,39 +49,24 @@ SkillEffectResult_ResetGridElement.GetSummontTrapEntityID = function(self, pos)
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ResetGridElement.GetEffectType = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillEffectResult_ResetGridElement:GetEffectType()
   return SkillEffectType.ResetGridElement
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ResetGridElement.GetArrayCount = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  return (table.count)(self.m_vecResetGridData)
+function SkillEffectResult_ResetGridElement:GetArrayCount()
+  return table.count(self.m_vecResetGridData)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ResetGridElement.GetResetGridData = function(self)
-  -- function num : 0_8
+function SkillEffectResult_ResetGridElement:GetResetGridData()
   return self.m_vecResetGridData
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ResetGridElement.GetAllFlushTraps = function(self)
-  -- function num : 0_9
+function SkillEffectResult_ResetGridElement:GetAllFlushTraps()
   return self._flushTraps
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ResetGridElement.FindGridData = function(self, gridPos)
-  -- function num : 0_10 , upvalues : _ENV
-  for nIndex,gridData in ipairs(self.m_vecResetGridData) do
+function SkillEffectResult_ResetGridElement:FindGridData(gridPos)
+  for nIndex, gridData in ipairs(self.m_vecResetGridData) do
     if gridData.m_nX == gridPos.x and gridData.m_nY == gridPos.y then
       return gridData.m_nNewElementType
     end
@@ -116,22 +74,16 @@ SkillEffectResult_ResetGridElement.FindGridData = function(self, gridPos)
   return nil
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ResetGridElement.FindGridDataNew = function(self, gridPos)
-  -- function num : 0_11
-  if (self.m_vecResetGridDataNew)[gridPos.x] then
-    return ((self.m_vecResetGridDataNew)[gridPos.x])[gridPos.y]
+function SkillEffectResult_ResetGridElement:FindGridDataNew(gridPos)
+  if self.m_vecResetGridDataNew[gridPos.x] then
+    return self.m_vecResetGridDataNew[gridPos.x][gridPos.y]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ResetGridElement.GetFlushTrapsAt = function(self, gridPos)
-  -- function num : 0_12 , upvalues : _ENV
+function SkillEffectResult_ResetGridElement:GetFlushTrapsAt(gridPos)
   local traps = {}
-  for _,trap in ipairs(self._flushTraps) do
+  for _, trap in ipairs(self._flushTraps) do
     local pos = trap:GetGridPosition()
     if pos and pos.x == gridPos.x and pos.y == gridPos.y then
       traps[#traps + 1] = trap
@@ -140,17 +92,12 @@ SkillEffectResult_ResetGridElement.GetFlushTrapsAt = function(self, gridPos)
   return traps
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ResetGridElement.GetNewGridNumByType = function(self, pieceType)
-  -- function num : 0_13
+function SkillEffectResult_ResetGridElement:GetNewGridNumByType(pieceType)
   local retNum = 0
   for i = 1, #self.m_vecResetGridData do
-    if ((self.m_vecResetGridData)[i]).m_nNewElementType == pieceType then
+    if self.m_vecResetGridData[i].m_nNewElementType == pieceType then
       retNum = retNum + 1
     end
   end
   return retNum
 end
-
-

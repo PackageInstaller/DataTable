@@ -1,23 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/pet_enhance/ui_activity_pet_enhance_area_widget.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIActivityPetEnhanceAreaUIStyle = {N32_NORMAL = 1, N32_HARD = 2, N32_MULTI_LINE = 3}
+local UIActivityPetEnhanceAreaUIStyle = {
+  N32_NORMAL = 1,
+  N32_HARD = 2,
+  N32_MULTI_LINE = 3
+}
 _enum("UIActivityPetEnhanceAreaUIStyle", UIActivityPetEnhanceAreaUIStyle)
 _class("UIActivityPetEnhanceAreaWidget", UICustomWidget)
 UIActivityPetEnhanceAreaWidget = UIActivityPetEnhanceAreaWidget
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityPetEnhanceAreaWidget.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityPetEnhanceAreaWidget:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPetEnhanceAreaWidget.InitWidget = function(self)
-  -- function num : 0_1
+function UIActivityPetEnhanceAreaWidget:InitWidget()
   self.petListGen = self:GetUIComponent("UISelectObjectPath", "PetListArea")
   self.detailInfoText = self:GetUIComponent("UILocalizationText", "DetailInfo")
   self.detailValueText = self:GetUIComponent("UILocalizationText", "DetailValue")
@@ -27,87 +21,53 @@ UIActivityPetEnhanceAreaWidget.InitWidget = function(self)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPetEnhanceAreaWidget._AttachEvents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityPetEnhanceAreaWidget:_AttachEvents()
   self:AttachEvent(GameEventType.ClosePetEnhanceTips, self._ClosePetEnhanceTips)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPetEnhanceAreaWidget.SetData = function(self, componentId, uiStyle)
-  -- function num : 0_3 , upvalues : UIActivityPetEnhanceAreaUIStyle, _ENV
-  if not uiStyle then
-    uiStyle = UIActivityPetEnhanceAreaUIStyle.N32_NORMAL
-  end
+function UIActivityPetEnhanceAreaWidget:SetData(componentId, uiStyle)
+  uiStyle = uiStyle or UIActivityPetEnhanceAreaUIStyle.N32_NORMAL
   if uiStyle == UIActivityPetEnhanceAreaUIStyle.N32_NORMAL or uiStyle == UIActivityPetEnhanceAreaUIStyle.N32_MULTI_LINE then
-    (self.areaBgLoader):LoadImage("n32hd_glycxz_di03")
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.detailBtnTitleText).color = Color(0.38039215686275, 0.24313725490196, 0.023529411764706, 1)
-  else
-    if uiStyle == UIActivityPetEnhanceAreaUIStyle.N32_HARD then
-      (self.areaBgLoader):LoadImage("n32hd_glycxz_di04")
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.detailBtnTitleText).color = Color(0.27450980392157, 0.27450980392157, 0.28235294117647, 1)
-    end
+    self.areaBgLoader:LoadImage("n32hd_glycxz_di03")
+    self.detailBtnTitleText.color = Color(0.3803921568627451, 0.24313725490196078, 0.023529411764705882, 1)
+  elseif uiStyle == UIActivityPetEnhanceAreaUIStyle.N32_HARD then
+    self.areaBgLoader:LoadImage("n32hd_glycxz_di04")
+    self.detailBtnTitleText.color = Color(0.27450980392156865, 0.27450980392156865, 0.2823529411764706, 1)
   end
-  local cfgGroup = (Cfg.cfg_campaign_mission_pet_correct)({ComponentID = componentId})
-  if cfgGroup and #cfgGroup > 0 then
+  local cfgGroup = Cfg.cfg_campaign_mission_pet_correct({ComponentID = componentId})
+  if cfgGroup and 0 < #cfgGroup then
     local maxShowCount = 3
     local cfgCount = #cfgGroup
     local showCount = 3
-    ;
-    (self.petListGen):SpawnObjects("UIActivityPetEnhancePetItem", showCount)
-    local petItems = (self.petListGen):GetAllSpawnList()
+    self.petListGen:SpawnObjects("UIActivityPetEnhancePetItem", showCount)
+    local petItems = self.petListGen:GetAllSpawnList()
     for i = 1, showCount do
       local cfg = cfgGroup[i]
-      ;
-      (petItems[i]):InitByCfg(cfg)
+      petItems[i]:InitByCfg(cfg)
     end
     local baseCfg = cfgGroup[1]
-    local descStr = (StringTable.Get)("str_activity_pet_enhance_tips")
-    ;
-    (self.detailInfoText):SetText(descStr)
-    local valueStr = (StringTable.Get)("str_activity_pet_enhance_detail_tips", baseCfg.GradeLv, baseCfg.Level, baseCfg.EquipLv, baseCfg.AwakeningLv, baseCfg.EquipRefineLv)
-    ;
-    (self.detailValueText):SetText(valueStr)
+    local descStr = StringTable.Get("str_activity_pet_enhance_tips")
+    self.detailInfoText:SetText(descStr)
+    local valueStr = StringTable.Get("str_activity_pet_enhance_detail_tips", baseCfg.GradeLv, baseCfg.Level, baseCfg.EquipLv, baseCfg.AwakeningLv, baseCfg.EquipRefineLv)
+    self.detailValueText:SetText(valueStr)
   else
-    do
-      local showCount = 3
-      ;
-      (self.petListGen):SpawnObjects("UIActivityPetEnhancePetItem", showCount)
-      local petItems = (self.petListGen):GetAllSpawnList()
-      for i = 1, showCount do
-        (petItems[i]):InitByCfg(nil)
-      end
+    local showCount = 3
+    self.petListGen:SpawnObjects("UIActivityPetEnhancePetItem", showCount)
+    local petItems = self.petListGen:GetAllSpawnList()
+    for i = 1, showCount do
+      petItems[i]:InitByCfg(nil)
     end
   end
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPetEnhanceAreaWidget.DetailBtnOnClick = function(self, go)
-  -- function num : 0_4
-  (self.detailInfoAreaGo):SetActive(true)
+function UIActivityPetEnhanceAreaWidget:DetailBtnOnClick(go)
+  self.detailInfoAreaGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPetEnhanceAreaWidget.ClostTipsBtnOnClick = function(self, go)
-  -- function num : 0_5
-  (self.detailInfoAreaGo):SetActive(false)
+function UIActivityPetEnhanceAreaWidget:ClostTipsBtnOnClick(go)
+  self.detailInfoAreaGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityPetEnhanceAreaWidget._ClosePetEnhanceTips = function(self)
-  -- function num : 0_6
-  (self.detailInfoAreaGo):SetActive(false)
+function UIActivityPetEnhanceAreaWidget:_ClosePetEnhanceTips()
+  self.detailInfoAreaGo:SetActive(false)
 end
-
-

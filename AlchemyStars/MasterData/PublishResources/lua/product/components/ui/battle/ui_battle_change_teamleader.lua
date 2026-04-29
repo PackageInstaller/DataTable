@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_change_teamleader.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_controller")
 _class("UIBattleChangeTeamLeader", UIController)
 UIBattleChangeTeamLeader = UIBattleChangeTeamLeader
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleChangeTeamLeader.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattleChangeTeamLeader:OnShow(uiParams)
   local excPos = Vector2(-214, -17)
   self._btnList = {}
   self._maskList = {}
@@ -17,19 +10,13 @@ UIBattleChangeTeamLeader.OnShow = function(self, uiParams)
     local objName = "btn" .. tostring(i)
     local btn = self:GetGameObject(objName)
     btn:SetActive(false)
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._btnList)[i] = btn
+    self._btnList[i] = btn
     local masObjName = "Mask" .. tostring(i)
     local mask = self:GetGameObject(masObjName)
     mask:SetActive(false)
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._maskList)[i] = mask
+    self._maskList[i] = mask
   end
-  local language = (Localization.GetCurLanguage)()
+  local language = Localization.GetCurLanguage()
   if language == LanguageType.es then
     for i = 1, 4 do
       local txtObjName = "txt" .. tostring(i)
@@ -40,197 +27,125 @@ UIBattleChangeTeamLeader.OnShow = function(self, uiParams)
       end
     end
   end
-  do
-    local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-    self._petDataList = uiParams[1]
-    self.ChangeTeamLeaderCallBackFunc = uiParams[2]
-    self._useMultiColumn = uiParams[3]
-    self._switchColumnBtnCb = uiParams[4]
-    self._isSealedCurse = {}
-    self._isPetNotInTeam = {}
-    for i,v in ipairs(self._petDataList) do
-      local btn = (self._btnList)[i]
-      if btn then
-        local mask = (self._maskList)[i]
-        local pos = camera:ScreenToWorldPoint(v.screenPos)
-        if not v.isDead then
-          btn:SetActive(true)
-          -- DECOMPILER ERROR at PC103: Confused about usage of register: R13 in 'UnsetPending'
-
-          ;
-          (btn.transform).position = pos
-          local rectTransform = btn:GetComponent("RectTransform")
-          rectTransform.anchoredPosition = Vector2((rectTransform.anchoredPosition).x + excPos.x, (rectTransform.anchoredPosition).y + excPos.y)
-        end
-        do
-          mask:SetActive(v.isHelpPet)
-          local isCursed = (not v.isHelpPet and v.isSealedCurse)
-          -- DECOMPILER ERROR at PC129: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (self._isSealedCurse)[i] = isCursed
-          -- DECOMPILER ERROR at PC132: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (self._isPetNotInTeam)[i] = v.isPetNotInTeam
-          local maskSealedCurse = self:GetGameObject("MaskSealedCurse" .. tostring(i))
-          if not isCursed then
-            do
-              maskSealedCurse:SetActive(v.isPetNotInTeam)
-              -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
-      end
+  local camera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+  self._petDataList = uiParams[1]
+  self.ChangeTeamLeaderCallBackFunc = uiParams[2]
+  self._useMultiColumn = uiParams[3]
+  self._switchColumnBtnCb = uiParams[4]
+  self._isSealedCurse = {}
+  self._isPetNotInTeam = {}
+  for i, v in ipairs(self._petDataList) do
+    local btn = self._btnList[i]
+    if not btn then
+      break
     end
-    self.petModule = self:GetModule(PetModule)
-    local btn = self:GetGameObject("SwitchTeamColumnBtn")
-    if btn then
-      if self._useMultiColumn then
-        btn:SetActive(true)
-      else
-        btn:SetActive(false)
-      end
+    local mask = self._maskList[i]
+    local pos = camera:ScreenToWorldPoint(v.screenPos)
+    if not v.isDead then
+      btn:SetActive(true)
+      btn.transform.position = pos
+      local rectTransform = btn:GetComponent("RectTransform")
+      rectTransform.anchoredPosition = Vector2(rectTransform.anchoredPosition.x + excPos.x, rectTransform.anchoredPosition.y + excPos.y)
     end
-    -- DECOMPILER ERROR: 7 unprocessed JMP targets
+    mask:SetActive(v.isHelpPet)
+    local isCursed = not v.isHelpPet and v.isSealedCurse
+    self._isSealedCurse[i] = isCursed
+    self._isPetNotInTeam[i] = v.isPetNotInTeam
+    local maskSealedCurse = self:GetGameObject("MaskSealedCurse" .. tostring(i))
+    maskSealedCurse:SetActive(isCursed or v.isPetNotInTeam)
+  end
+  self.petModule = self:GetModule(PetModule)
+  local btn = self:GetGameObject("SwitchTeamColumnBtn")
+  if btn then
+    if self._useMultiColumn then
+      btn:SetActive(true)
+    else
+      btn:SetActive(false)
+    end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleChangeTeamLeader.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ToggleTeamLeaderChangeUI, false)
+function UIBattleChangeTeamLeader:OnHide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ToggleTeamLeaderChangeUI, false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleChangeTeamLeader.GetPetPstID = function(self, index)
-  -- function num : 0_2
-  local petData = (self._petDataList)[index]
+function UIBattleChangeTeamLeader:GetPetPstID(index)
+  local petData = self._petDataList[index]
   if petData then
     return petData.petPstID
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleChangeTeamLeader.IsCanCastChangePet = function(self, index)
-  -- function num : 0_3
-  local petData = (self._petDataList)[index]
+function UIBattleChangeTeamLeader:IsCanCastChangePet(index)
+  local petData = self._petDataList[index]
   if petData then
     return not petData.isHelpPet
   end
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleChangeTeamLeader.ChangeTeamLeader = function(self, index)
-  -- function num : 0_4 , upvalues : _ENV
-  do
-    if (self._isSealedCurse)[index] then
-      local text = (StringTable.Get)("str_battle_change_teamleader_sealed_curse")
-      ;
-      (ToastManager.ShowToast)(text)
-      return 
-    end
-    do
-      if (self._isPetNotInTeam)[index] then
-        local text = (StringTable.Get)("str_battle_jjz_1")
-        ;
-        (ToastManager.ShowToast)(text)
-        return 
-      end
-      local petPstID = self:GetPetPstID(index)
-      if petPstID then
-        if self:IsCanCastChangePet(index) then
-          (self.ChangeTeamLeaderCallBackFunc)(petPstID)
-          self:CloseDialog()
-        else
-          local text = (StringTable.Get)("str_battle_helppet_no_set_teamleader")
-          ;
-          (ToastManager.ShowToast)(text)
-        end
-      end
+function UIBattleChangeTeamLeader:ChangeTeamLeader(index)
+  if self._isSealedCurse[index] then
+    local text = StringTable.Get("str_battle_change_teamleader_sealed_curse")
+    ToastManager.ShowToast(text)
+    return
+  end
+  if self._isPetNotInTeam[index] then
+    local text = StringTable.Get("str_battle_jjz_1")
+    ToastManager.ShowToast(text)
+    return
+  end
+  local petPstID = self:GetPetPstID(index)
+  if petPstID then
+    if self:IsCanCastChangePet(index) then
+      self.ChangeTeamLeaderCallBackFunc(petPstID)
+      self:CloseDialog()
+    else
+      local text = StringTable.Get("str_battle_helppet_no_set_teamleader")
+      ToastManager.ShowToast(text)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleChangeTeamLeader.ChangeTeamLeaderBtn1OnClick = function(self)
-  -- function num : 0_5
+function UIBattleChangeTeamLeader:ChangeTeamLeaderBtn1OnClick()
   self:ChangeTeamLeader(1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleChangeTeamLeader.ChangeTeamLeaderBtn2OnClick = function(self)
-  -- function num : 0_6
+function UIBattleChangeTeamLeader:ChangeTeamLeaderBtn2OnClick()
   self:ChangeTeamLeader(2)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleChangeTeamLeader.ChangeTeamLeaderBtn3OnClick = function(self)
-  -- function num : 0_7
+function UIBattleChangeTeamLeader:ChangeTeamLeaderBtn3OnClick()
   self:ChangeTeamLeader(3)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleChangeTeamLeader.ChangeTeamLeaderBtn4OnClick = function(self)
-  -- function num : 0_8
+function UIBattleChangeTeamLeader:ChangeTeamLeaderBtn4OnClick()
   self:ChangeTeamLeader(4)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleChangeTeamLeader.bgOnClick = function(self)
-  -- function num : 0_9
+function UIBattleChangeTeamLeader:bgOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleChangeTeamLeader.GetBtn = function(self, petTempId)
-  -- function num : 0_10 , upvalues : _ENV
+function UIBattleChangeTeamLeader:GetBtn(petTempId)
   local index = 1
-  for i,petData in ipairs(self._petDataList) do
-    local pet = (self.petModule):GetPet(petData.petPstID)
-    -- DECOMPILER ERROR at PC15: Unhandled construct in 'MakeBoolean' P1
-
-    if pet and pet:GetTemplateID() == petTempId then
-      index = i
-      break
-    end
-    if petData.petPstID == petTempId then
+  for i, petData in ipairs(self._petDataList) do
+    local pet = self.petModule:GetPet(petData.petPstID)
+    if pet then
+      if pet:GetTemplateID() == petTempId then
+        index = i
+        break
+      end
+    elseif petData.petPstID == petTempId then
       index = i
       break
     end
   end
-  do
-    return (self._btnList)[index]
-  end
+  return self._btnList[index]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleChangeTeamLeader.SwitchTeamColumnBtnOnClick = function(self)
-  -- function num : 0_11
+function UIBattleChangeTeamLeader:SwitchTeamColumnBtnOnClick()
   if self._switchColumnBtnCb then
-    (self._switchColumnBtnCb)()
+    self._switchColumnBtnCb()
   end
 end
-
-

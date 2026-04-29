@@ -1,31 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_add_combo_num.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_AddComboNum", SkillEffectCalc_Base)
 SkillEffectCalc_AddComboNum = SkillEffectCalc_AddComboNum
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_AddComboNum.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_AddComboNum:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_AddComboNum.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_AddComboNum:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillEffectParam = skillEffectCalcParam.skillEffectParam
-  local battleSvc = (self._world):GetService("Battle")
+  local battleSvc = self._world:GetService("Battle")
   local curComboNum = battleSvc:GetLogicComboNum()
   curComboNum = curComboNum + 1
   battleSvc:SetLogicComboNum(curComboNum)
-  local battleStatComponent = (self._world):BattleStat()
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local battleStatComponent = self._world:BattleStat()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   battleStatComponent:SetOneChainMaxNormalAttack(teamEntity, curComboNum)
   return SkillAddComboNumEffectResult:New()
 end
-
-

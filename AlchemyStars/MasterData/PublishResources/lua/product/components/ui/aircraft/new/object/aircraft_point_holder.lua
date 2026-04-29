@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_point_holder.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftPointHolder", Object)
 AircraftPointHolder = AircraftPointHolder
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPointHolder.Constructor = function(self, parent, floor, name)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftPointHolder:Constructor(parent, floor, name)
   self._parent = parent
   if parent == nil then
-    (Log.fatal)("父节点为空:", name)
-    return 
+    Log.fatal("父节点为空:", name)
+    return
   end
   self._name = name
   self._count = parent.childCount
@@ -20,91 +13,67 @@ AircraftPointHolder.Constructor = function(self, parent, floor, name)
   self._available = self._count
   self._floor = floor
   if self._count == 0 then
-    return 
+    return
   end
   for i = 1, self._count do
     local child = parent:GetChild(i - 1)
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._point)[i] = AircraftPosPoint:New(i, child.position)
+    self._point[i] = AircraftPosPoint:New(i, child.position)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPointHolder.Floor = function(self)
-  -- function num : 0_1
+function AircraftPointHolder:Floor()
   return self._floor
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPointHolder.PopPoint = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function AircraftPointHolder:PopPoint()
   if self._available <= 0 then
-    (Log.fatal)("[AircraftPoint] no point, floor:", self._floor)
-    return 
+    Log.fatal("[AircraftPoint] no point, floor:", self._floor)
+    return
   end
-  local target = (math.random)(1, self._available)
+  local target = math.random(1, self._available)
   local i = 1
-  for idx,point in ipairs(self._point) do
-    -- DECOMPILER ERROR at PC29: Unhandled construct in 'MakeBoolean' P1
-
-    if not ((self._point)[idx]):IsOccupied() and i == target then
-      self._available = self._available - 1
-      ;
-      ((self._point)[idx]):Occupy(true)
-      return (self._point)[idx]
+  for idx, point in ipairs(self._point) do
+    if not self._point[idx]:IsOccupied() then
+      if i == target then
+        self._available = self._available - 1
+        self._point[idx]:Occupy(true)
+        return self._point[idx]
+      end
+      i = i + 1
     end
-    i = i + 1
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPointHolder.OccupyPoint = function(self, index)
-  -- function num : 0_3 , upvalues : _ENV
+function AircraftPointHolder:OccupyPoint(index)
   if self._available <= 0 then
-    (Log.fatal)("[AircraftPoint] no point, floor:", self._floor)
-    return 
+    Log.fatal("[AircraftPoint] no point, floor:", self._floor)
+    return
   end
-  if not ((self._point)[index]):IsOccupied() then
+  if not self._point[index]:IsOccupied() then
     self._available = self._available - 1
-    ;
-    ((self._point)[index]):Occupy(true)
-    return (self._point)[index]
+    self._point[index]:Occupy(true)
+    return self._point[index]
   end
-  return 
+  return
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPointHolder.HasAvailablePoint = function(self)
-  -- function num : 0_4
-  do return self._available > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftPointHolder:HasAvailablePoint()
+  return self._available > 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPointHolder.ReleasePoint = function(self, point)
-  -- function num : 0_5 , upvalues : _ENV
+function AircraftPointHolder:ReleasePoint(point)
   if not point:IsOccupied() then
     AirLog("该点未被占据：", self._name, "，", point:Index())
-    return 
+    return
   end
   point:Occupy(false)
   self._available = self._available + 1
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPointHolder.ReleaseAll = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function AircraftPointHolder:ReleaseAll()
   if self._point then
     self._available = self._count
-    for idx,point in ipairs(self._point) do
+    for idx, point in ipairs(self._point) do
       if point:IsOccupied() then
         point:Occupy(false)
       end
@@ -114,41 +83,25 @@ end
 
 _class("AircraftPosPoint", Object)
 AircraftPosPoint = AircraftPosPoint
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPosPoint.Constructor = function(self, idx, pos)
-  -- function num : 0_7
+function AircraftPosPoint:Constructor(idx, pos)
   self._index = idx
   self._pos = pos:Clone()
   self._occupied = false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPosPoint.Index = function(self)
-  -- function num : 0_8
+function AircraftPosPoint:Index()
   return self._index
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPosPoint.Pos = function(self)
-  -- function num : 0_9
+function AircraftPosPoint:Pos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPosPoint.IsOccupied = function(self)
-  -- function num : 0_10
+function AircraftPosPoint:IsOccupied()
   return self._occupied
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPosPoint.Occupy = function(self, occupy)
-  -- function num : 0_11
+function AircraftPosPoint:Occupy(occupy)
   self._occupied = occupy
 end
-
-

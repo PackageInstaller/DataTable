@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/test_robot_pet_build_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("team_build_seat_info")
 _class("TestRobotPetBuildData", Object)
 TestRobotPetBuildData = TestRobotPetBuildData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotPetBuildData.Constructor = function(self, templateID, level, awakening, grade, intimacy, equip, refine)
-  -- function num : 0_0
+function TestRobotPetBuildData:Constructor(templateID, level, awakening, grade, intimacy, equip, refine)
   self._templateID = templateID
   self._level = level
   self._awakening = awakening
@@ -19,133 +12,112 @@ TestRobotPetBuildData.Constructor = function(self, templateID, level, awakening,
   self._refine = refine
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotPetBuildData.GetTemplateID = function(self)
-  -- function num : 0_1
+function TestRobotPetBuildData:GetTemplateID()
   return self._templateID
 end
 
 local _gradeCfgCache = {}
-local _GetGradeConfigCache = function(templateID)
-  -- function num : 0_2 , upvalues : _gradeCfgCache, _ENV
+
+local function _GetGradeConfigCache(templateID)
   if _gradeCfgCache[templateID] then
     return _gradeCfgCache[templateID]
   end
-  local awakeningConfig = (Cfg.cfg_pet_awakening)({PetID = templateID})
-  ;
-  (table.sort)(awakeningConfig, function(a, b)
-    -- function num : 0_2_0
-    if a.Awakening >= b.Awakening then
-      do return a.Awakening == b.Awakening end
-      do return a.ID < b.ID end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  local awakeningConfig = Cfg.cfg_pet_awakening({PetID = templateID})
+  table.sort(awakeningConfig, function(a, b)
+    if a.Awakening ~= b.Awakening then
+      return a.Awakening < b.Awakening
+    else
+      return a.ID < b.ID
     end
-  end
-)
+  end)
   _gradeCfgCache[templateID] = awakeningConfig
   return awakeningConfig
 end
 
 local _affinityCfgCache = {}
-local _GetAffinityConfigCache = function(templateID)
-  -- function num : 0_3 , upvalues : _affinityCfgCache, _ENV
+
+local function _GetAffinityConfigCache(templateID)
   if _affinityCfgCache[templateID] then
     return _affinityCfgCache[templateID]
   end
-  local affinityConfig = (Cfg.cfg_pet_affinity)({PetID = templateID})
-  ;
-  (table.sort)(affinityConfig, function(a, b)
-    -- function num : 0_3_0
-    if a.AffinityLevel >= b.AffinityLevel then
-      do return a.AffinityLevel == b.AffinityLevel end
-      do return a.ID < b.ID end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  local affinityConfig = Cfg.cfg_pet_affinity({PetID = templateID})
+  table.sort(affinityConfig, function(a, b)
+    if a.AffinityLevel ~= b.AffinityLevel then
+      return a.AffinityLevel < b.AffinityLevel
+    else
+      return a.ID < b.ID
     end
-  end
-)
+  end)
   _affinityCfgCache[templateID] = affinityConfig
   return affinityConfig
 end
 
 local _awakeningCfgCache = {}
-local _GetAwakeningConfigCache = function(templateID)
-  -- function num : 0_4 , upvalues : _awakeningCfgCache, _ENV
+
+local function _GetAwakeningConfigCache(templateID)
   if _awakeningCfgCache[templateID] then
     return _awakeningCfgCache[templateID]
   end
-  local gradeConfig = (Cfg.cfg_pet_grade)({PetID = templateID})
-  ;
-  (table.sort)(gradeConfig, function(a, b)
-    -- function num : 0_4_0
-    if a.Grade >= b.Grade then
-      do return a.Grade == b.Grade end
-      do return a.ID < b.ID end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  local gradeConfig = Cfg.cfg_pet_grade({PetID = templateID})
+  table.sort(gradeConfig, function(a, b)
+    if a.Grade ~= b.Grade then
+      return a.Grade < b.Grade
+    else
+      return a.ID < b.ID
     end
-  end
-)
+  end)
   _awakeningCfgCache[templateID] = gradeConfig
   return gradeConfig
 end
 
 local _levelCfgCache = {}
-local _GetLevelConfigCache = function(templateID, grade)
-  -- function num : 0_5 , upvalues : _levelCfgCache, _ENV
+
+local function _GetLevelConfigCache(templateID, grade)
   if not _levelCfgCache[templateID] then
     _levelCfgCache[templateID] = {}
   end
-  if (_levelCfgCache[templateID])[grade] then
-    return (_levelCfgCache[templateID])[grade]
+  if _levelCfgCache[templateID][grade] then
+    return _levelCfgCache[templateID][grade]
   end
-  local levelConfig = (Cfg["cfg_pet_level_" .. templateID .. "_" .. grade])()
+  local levelConfig = Cfg["cfg_pet_level_" .. templateID .. "_" .. grade]()
   local t = {}
-  for _,row in pairs(levelConfig) do
-    (table.insert)(t, row)
+  for _, row in pairs(levelConfig) do
+    table.insert(t, row)
   end
-  ;
-  (table.sort)(t, function(a, b)
-    -- function num : 0_5_0
-    if a.Level >= b.Level then
-      do return a.Level == b.Level end
-      do return a.ID < b.ID end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  table.sort(t, function(a, b)
+    if a.Level ~= b.Level then
+      return a.Level < b.Level
+    else
+      return a.ID < b.ID
     end
-  end
-)
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (_levelCfgCache[templateID])[grade] = t
+  end)
+  _levelCfgCache[templateID][grade] = t
   return t
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R8 in 'UnsetPending'
-
-TestRobotPetBuildData.SanityFix = function(self)
-  -- function num : 0_6 , upvalues : _GetAwakeningConfigCache, _ENV, _GetAffinityConfigCache, _GetGradeConfigCache, _GetLevelConfigCache
+function TestRobotPetBuildData:SanityFix()
   local templateID = self._templateID
   local awakeningConfig = _GetAwakeningConfigCache(templateID)
   local last = awakeningConfig[#awakeningConfig]
-  if last.Grade < self._awakening then
+  if self._awakening > last.Grade then
     self._awakening = last.Grade
   end
-  if (Cfg.cfg_tale_pet)[templateID] then
+  if Cfg.cfg_tale_pet[templateID] then
     self._awakening = 3
   end
   local affinityConfig = _GetAffinityConfigCache(templateID)
   local lastAffinity = affinityConfig[#affinityConfig]
-  if lastAffinity.AffinityLevel < self._intimacy then
+  if self._intimacy > lastAffinity.AffinityLevel then
     self._intimacy = lastAffinity.AffinityLevel
   end
   local gradeConfig = _GetGradeConfigCache(templateID)
   local lastGrade = gradeConfig[#gradeConfig]
-  if lastGrade.Awakening < self._grade then
+  if self._grade > lastGrade.Awakening then
     self._grade = lastGrade.Awakening
   end
   local levelConfig = _GetLevelConfigCache(templateID, self._awakening)
   local lastLevel = levelConfig[#levelConfig]
-  if lastLevel.Level < self._level then
+  if self._level > lastLevel.Level then
     self._level = lastLevel.Level
   end
   if self._equip < 1 then
@@ -158,56 +130,41 @@ TestRobotPetBuildData.SanityFix = function(self)
     if self._awakening ~= 3 or self._level ~= 80 or self._equip ~= 10 then
       self._refine = 0
     else
-      local cfgEquipRefine = (Cfg.cfg_pet_equip_refine)({PetID = self._templateID})
-      if cfgEquipRefine and #cfgEquipRefine > 0 then
+      local cfgEquipRefine = Cfg.cfg_pet_equip_refine({
+        PetID = self._templateID
+      })
+      if cfgEquipRefine and 0 < #cfgEquipRefine then
         local level = 0
-        for _,c in ipairs(cfgEquipRefine) do
-          level = (math.max)(level, c.Level)
+        for _, c in ipairs(cfgEquipRefine) do
+          level = math.max(level, c.Level)
         end
-        self._refine = (math.min)(self._refine, level)
+        self._refine = math.min(self._refine, level)
       else
-        do
-          self._refine = 0
-        end
+        self._refine = 0
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R8 in 'UnsetPending'
-
-TestRobotPetBuildData.GenerateGMCommand = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function TestRobotPetBuildData:GenerateGMCommand()
   local cmd = ""
-  local testRobotModule = (GameGlobal.GetModule)(TestRobotModule)
+  local testRobotModule = GameGlobal.GetModule(TestRobotModule)
   if testRobotModule:IsCNVersion() then
-    cmd = (string.format)("ChangePet %s %s %s %s %s %s %s", (LocalDB.GetString)("OpenIdTest"), self._templateID, self._level, self._awakening, self._grade, self._intimacy, self._equip)
+    cmd = string.format("ChangePet %s %s %s %s %s %s %s", LocalDB.GetString("OpenIdTest"), self._templateID, self._level, self._awakening, self._grade, self._intimacy, self._equip)
   else
-    cmd = (string.format)("ChangePet %s %s %s %s %s %s %s %s", (LocalDB.GetString)("OpenIdTest"), self._templateID, self._level, self._awakening, self._grade, self._intimacy, self._equip, self._refine)
+    cmd = string.format("ChangePet %s %s %s %s %s %s %s %s", LocalDB.GetString("OpenIdTest"), self._templateID, self._level, self._awakening, self._grade, self._intimacy, self._equip, self._refine)
   end
   return cmd
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R8 in 'UnsetPending'
-
-TestRobotPetBuildData.__tostring = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  return (string.format)("templateID: %s, level: %s, awakening: %s, grade: %s, intimacy: %s, equip: %s, refine: %s", tostring(self._templateID), tostring(self._level), tostring(self._awakening), tostring(self._grade), tostring(self._intimacy), tostring(self._equip), tostring(self._refine))
+function TestRobotPetBuildData:__tostring()
+  return string.format("templateID: %s, level: %s, awakening: %s, grade: %s, intimacy: %s, equip: %s, refine: %s", tostring(self._templateID), tostring(self._level), tostring(self._awakening), tostring(self._grade), tostring(self._intimacy), tostring(self._equip), tostring(self._refine))
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R8 in 'UnsetPending'
-
-TestRobotPetBuildData.__eq = function(a, b)
-  -- function num : 0_9
-  do return a._templateID == b._templateID end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function TestRobotPetBuildData.__eq(a, b)
+  return a._templateID == b._templateID
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R8 in 'UnsetPending'
-
-TestRobotPetBuildData.GenerateForSeat = function(templateID, seatInfo)
-  -- function num : 0_10 , upvalues : _ENV
+function TestRobotPetBuildData.GenerateForSeat(templateID, seatInfo)
   return TestRobotPetBuildData:New(templateID, seatInfo.level, seatInfo.awakening, seatInfo.grade, seatInfo.intimacy, seatInfo.equip, seatInfo.refine)
 end
-
-

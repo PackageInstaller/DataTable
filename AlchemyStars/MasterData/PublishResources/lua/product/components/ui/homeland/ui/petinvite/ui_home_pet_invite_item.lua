@@ -1,42 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/petinvite/ui_home_pet_invite_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePetInviteItem", UICustomWidget)
 UIHomePetInviteItem = UIHomePetInviteItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePetInviteItem.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIHomePetInviteItem:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomePetInviteItem:OnShow(uiParams)
   self:GetComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItem.OnHide = function(self)
-  -- function num : 0_2
+function UIHomePetInviteItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItem.GetComponent = function(self)
-  -- function num : 0_3
+function UIHomePetInviteItem:GetComponent()
   self._state = self:GetGameObject("state")
   self._remove = self:GetGameObject("remove")
   self._headimg = self:GetUIComponent("RawImageLoader", "head")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItem.SetData = function(self, index, pet, invitemanager, atlas)
-  -- function num : 0_4
+function UIHomePetInviteItem:SetData(index, pet, invitemanager, atlas)
   self._index = index
   self._invitemanager = invitemanager
   self._atlas = atlas
@@ -44,44 +25,30 @@ UIHomePetInviteItem.SetData = function(self, index, pet, invitemanager, atlas)
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItem.RefreshUI = function(self)
-  -- function num : 0_5
-  local petId = nil
+function UIHomePetInviteItem:RefreshUI()
+  local petId
   if not self._data then
-    return 
+    return
   end
-  if (self._data)._skinID ~= nil then
-    petId = "head1_" .. (self._data)._skinID
+  if self._data._skinID ~= nil then
+    petId = "head1_" .. self._data._skinID
   else
-    petId = "head1_" .. (self._data)._tmpID
+    petId = "head1_" .. self._data._tmpID
   end
-  ;
-  (self._headimg):LoadImage(petId)
-  local isbusy = (self._invitemanager):CheckIsBusy(self._data)
-  ;
-  (self._state):SetActive(isbusy)
-  ;
-  (self._remove):SetActive(not isbusy)
+  self._headimg:LoadImage(petId)
+  local isbusy = self._invitemanager:CheckIsBusy(self._data)
+  self._state:SetActive(isbusy)
+  self._remove:SetActive(not isbusy)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItem.BtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  local isbusy = (self._invitemanager):CheckIsBusy(self._data)
+function UIHomePetInviteItem:BtnOnClick(go)
+  local isbusy = self._invitemanager:CheckIsBusy(self._data)
   if isbusy then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_invite_item_busy"))
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_invite_item_busy"))
+    return
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItem.RemoveOnClick = function(self, go)
-  -- function num : 0_7
-  (self._invitemanager):InviteEnterListPreview(self._data, false)
+function UIHomePetInviteItem:RemoveOnClick(go)
+  self._invitemanager:InviteEnterListPreview(self._data, false)
 end
-
-

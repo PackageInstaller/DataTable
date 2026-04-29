@@ -1,44 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_line_to_target_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterLineToTargetInstruction", BaseInstruction)
 PlayCasterLineToTargetInstruction = PlayCasterLineToTargetInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterLineToTargetInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterLineToTargetInstruction:Constructor(paramList)
   self._lineOnCaster = paramList.lineOnCaster
   self._lineOnTarget = paramList.lineOnTarget
   self._lineEffectID = tonumber(paramList.lineEffectID)
   self._lineEffectDuration = tonumber(paramList.lineEffectDuration)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterLineToTargetInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterLineToTargetInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
-  if damageResultArray == nil or (table.count)(damageResultArray) == 0 then
-    return 
+  if damageResultArray == nil or table.count(damageResultArray) == 0 then
+    return
   end
   local damageResult = damageResultArray[1]
   local targetEntityID = damageResult:GetTargetID()
   local targetEntity = world:GetEntityByID(targetEntityID)
   if not targetEntity then
-    return 
+    return
   end
-  local casterViewRoot = (((casterEntity:View()).ViewWrapper).GameObject).transform
-  local casterRoot = (GameObjectHelper.FindChild)(casterViewRoot, self._lineOnCaster)
-  local targetViewRoot = (((targetEntity:View()).ViewWrapper).GameObject).transform
-  local targetRoot = (GameObjectHelper.FindChild)(targetViewRoot, self._lineOnTarget)
+  local casterViewRoot = casterEntity:View().ViewWrapper.GameObject.transform
+  local casterRoot = GameObjectHelper.FindChild(casterViewRoot, self._lineOnCaster)
+  local targetViewRoot = targetEntity:View().ViewWrapper.GameObject.transform
+  local targetRoot = GameObjectHelper.FindChild(targetViewRoot, self._lineOnTarget)
   if not casterRoot or not targetRoot then
-    return 
+    return
   end
   local effectService = world:GetService("Effect")
   local effectLineRenderer = casterEntity:EffectLineRenderer()
@@ -51,34 +41,32 @@ PlayCasterLineToTargetInstruction.DoInstruction = function(self, TT, casterEntit
     casterEntity:AddEffectHolder()
     effectHolderCmpt = casterEntity:EffectHolder()
   end
-  local effectEntityIdList = (effectHolderCmpt:GetEffectIDEntityDic())[self._lineEffectID]
-  local effect = nil
+  local effectEntityIdList = effectHolderCmpt:GetEffectIDEntityDic()[self._lineEffectID]
+  local effect
   if effectEntityIdList then
     effect = world:GetEntityByID(effectEntityIdList[1])
-    -- DECOMPILER ERROR at PC93: Confused about usage of register: R20 in 'UnsetPending'
-
     if not effect then
-      ((effectHolderCmpt:GetEffectIDEntityDic())[self._lineEffectID])[1] = nil
+      effectHolderCmpt:GetEffectIDEntityDic()[self._lineEffectID][1] = nil
     end
   end
   if not effect then
     effect = effectService:CreateEffect(self._lineEffectID, casterEntity)
     effectHolderCmpt:AttachPermanentEffect(effect:GetID())
   end
-  local go = ((effect:View()):GetGameObject())
-  local renderers = nil
+  local go = effect:View():GetGameObject()
+  local renderers
   renderers = go:GetComponentsInChildren(typeof(UnityEngine.LineRenderer), true)
   for i = 0, renderers.Length - 1 do
     local line = renderers[i]
     if line then
-      (line.gameObject):SetActive(true)
+      line.gameObject:SetActive(true)
     end
   end
   effectLineRenderer:InitEffectLineRenderer(casterEntity:GetID(), casterRoot, targetRoot, casterViewRoot, renderers, effect:GetID())
   effectLineRenderer:SetEffectLineRendererShow(casterEntity:GetID(), true)
   YIELD(TT, self._lineEffectDuration)
   effectLineRenderer:SetEffectLineRendererShow(casterEntity:GetID(), false)
-  local effectIDEntityDicLine = (effectHolderCmpt:GetEffectIDEntityDic())[self._lineEffectID]
+  local effectIDEntityDicLine = effectHolderCmpt:GetEffectIDEntityDic()[self._lineEffectID]
   if effectIDEntityDicLine then
     effectIDEntityDicLine[1] = nil
   end
@@ -86,5 +74,3 @@ PlayCasterLineToTargetInstruction.DoInstruction = function(self, TT, casterEntit
     world:DestroyEntity(effect)
   end
 end
-
-

@@ -1,111 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_we_chat/fsm_state.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FSMState", Object)
 FSMState = FSMState
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FSMState.Constructor = function(self, stateType, stateMachine)
-  -- function num : 0_0
+function FSMState:Constructor(stateType, stateMachine)
   self.stateType = stateType
   self.stateMachine = stateMachine
   self:OnInit()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMState.GetStateType = function(self)
-  -- function num : 0_1
+function FSMState:GetStateType()
   return self.stateType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMState.ChangeState = function(self, stateType, ...)
-  -- function num : 0_2
+function FSMState:ChangeState(stateType, ...)
   if self.stateMachine then
-    (self.stateMachine):ChangeState(stateType, ...)
+    self.stateMachine:ChangeState(stateType, ...)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMState.SetMachine = function(self, stateMachine)
-  -- function num : 0_3 , upvalues : _ENV
+function FSMState:SetMachine(stateMachine)
   if stateMachine == nil then
     if error then
-      error((string.format)("%s: set state machine is nil.", self.__cname))
+      error(string.format("%s: set state machine is nil.", self.__cname))
     end
-    return 
+    return
   end
   self.stateMachine = stateMachine
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMState.Dispose = function(self)
-  -- function num : 0_4
+function FSMState:Dispose()
   self:Exit()
   self:OnDispose()
   self.stateType = nil
   self.stateMachine = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMState.TryEnter = function(self)
-  -- function num : 0_5
+function FSMState:TryEnter()
   return true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMState.Enter = function(self, data)
-  -- function num : 0_6
+function FSMState:Enter(data)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMState.Exit = function(self)
-  -- function num : 0_7
+function FSMState:Exit()
   self:OnStateFinish()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMState.Excute = function(self, delta)
-  -- function num : 0_8
+function FSMState:Excute(delta)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMState.OnInit = function(self)
-  -- function num : 0_9
+function FSMState:OnInit()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMState.OnDispose = function(self)
-  -- function num : 0_10
+function FSMState:OnDispose()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMState.SetStateFinishCallback = function(self, callback, sender)
-  -- function num : 0_11
+function FSMState:SetStateFinishCallback(callback, sender)
   self.callback = callback
   self.sender = sender
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMState.OnStateFinish = function(self)
-  -- function num : 0_12
+function FSMState:OnStateFinish()
   if self.callback then
-    (self.callback)(self.sender)
+    self.callback(self.sender)
   end
 end
-
-

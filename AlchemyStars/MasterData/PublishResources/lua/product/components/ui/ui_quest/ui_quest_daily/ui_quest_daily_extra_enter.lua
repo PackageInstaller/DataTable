@@ -1,90 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_daily/ui_quest_daily_extra_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_base")
 _class("UIQuestDailyExtraEnter", UISideEnterItem_Base)
 UIQuestDailyExtraEnter = UIQuestDailyExtraEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestDailyExtraEnter.GetOpenCfg = function()
-  -- function num : 0_0 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_quest_daily_extra_activity)()
+function UIQuestDailyExtraEnter.GetOpenCfg()
+  local cfgs = Cfg.cfg_quest_daily_extra_activity()
   for i = 1, #cfgs do
     local cfg = cfgs[i]
     local st, ed = cfg.StartTime, cfg.EndTime
-    local isOpen = (UISideEnterItem_FixedTime.CheckOpen)(st, ed)
+    local isOpen = UISideEnterItem_FixedTime.CheckOpen(st, ed)
     if isOpen then
       return cfg
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyExtraEnter.OnShow = function(self)
-  -- function num : 0_1
+function UIQuestDailyExtraEnter:OnShow()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyExtraEnter.OnHide = function(self)
-  -- function num : 0_2
+function UIQuestDailyExtraEnter:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyExtraEnter._CheckOpen = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  self._cfg = (UIQuestDailyExtraEnter.GetOpenCfg)()
+function UIQuestDailyExtraEnter:_CheckOpen(TT)
+  self._cfg = UIQuestDailyExtraEnter.GetOpenCfg()
   if not self._cfg then
-    (Log.fatal)("###[UIQuestDailyExtraEnter] cfg is nil ! id --> ", 1)
+    Log.fatal("###[UIQuestDailyExtraEnter] cfg is nil ! id --> ", 1)
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyExtraEnter.GetSideEnterRawImage = function(self)
-  -- function num : 0_4
-  return (self._cfg).MainSideIcon
+function UIQuestDailyExtraEnter:GetSideEnterRawImage()
+  return self._cfg.MainSideIcon
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyExtraEnter.DoShow = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "title", (StringTable.Get)((self._cfg).MainSideStr))
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "bg", self:GetSideEnterRawImage())
+function UIQuestDailyExtraEnter:DoShow()
+  UIWidgetHelper.SetLocalizationText(self, "title", StringTable.Get(self._cfg.MainSideStr))
+  UIWidgetHelper.SetRawImage(self, "bg", self:GetSideEnterRawImage())
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyExtraEnter._CalcNew = function(self)
-  -- function num : 0_6
+function UIQuestDailyExtraEnter:_CalcNew()
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyExtraEnter._CalcRed = function(self)
-  -- function num : 0_7
+function UIQuestDailyExtraEnter:_CalcRed()
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyExtraEnter.BtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  if (UIQuestDailyExtraEnter.GetOpenCfg)() then
+function UIQuestDailyExtraEnter:BtnOnClick(go)
+  if UIQuestDailyExtraEnter.GetOpenCfg() then
     self:ShowDialog("UIQuestDailyExtraInfoController")
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
   end
 end
-
-

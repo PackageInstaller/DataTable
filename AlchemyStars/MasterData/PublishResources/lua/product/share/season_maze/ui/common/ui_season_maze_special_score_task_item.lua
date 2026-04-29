@@ -1,45 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/common/ui_season_maze_special_score_task_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeSpecialScoreTaskitem", UICustomWidget)
 UISeasonMazeSpecialScoreTaskitem = UISeasonMazeSpecialScoreTaskitem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeSpecialScoreTaskitem.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMazeSpecialScoreTaskitem:InitWidget()
   self.text = self:GetUIComponent("UILocalizationText", "text")
   self.count = self:GetUIComponent("UILocalizationText", "count")
   self.mark = self:GetGameObject("finishMark")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSpecialScoreTaskitem.OnShow = function(self)
-  -- function num : 0_1
+function UISeasonMazeSpecialScoreTaskitem:OnShow()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSpecialScoreTaskitem.SetData = function(self, data, hard, finish)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeSpecialScoreTaskitem:SetData(data, hard, finish)
   local count = data[1]
   local score = data[2]
-  local cfgs = (Cfg.cfg_component_season_maze_effect)({ID = score})
-  if cfgs and #cfgs > 0 then
+  local cfgs = Cfg.cfg_component_season_maze_effect({ID = score})
+  if cfgs and 0 < #cfgs then
     local cfg = cfgs[1]
-    local score = ((cfg.EffectList)[1])[3]
-    ;
-    (self.count):SetText(score)
-    ;
-    (self.text):SetText((StringTable.Get)("str_season_maze_special_score_task_content", hard, count))
+    local score = cfg.EffectList[1][3]
+    self.count:SetText(score)
+    self.text:SetText(StringTable.Get("str_season_maze_special_score_task_content", hard, count))
   end
-  do
-    ;
-    (self.mark):SetActive(finish)
-  end
+  self.mark:SetActive(finish)
 end
-
-

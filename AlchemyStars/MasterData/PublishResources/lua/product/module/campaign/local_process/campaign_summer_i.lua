@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_summer_i.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CampaignSummerI", ICampaignComponentLocalProcessBase)
 CampaignSummerI = CampaignSummerI
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CampaignSummerI.Constructor = function(self)
-  -- function num : 0_0
+function CampaignSummerI:Constructor()
   self._shopComponent = nil
   self._shopCompInfo = nil
   self._cumulativeLoginComponent = nil
@@ -28,24 +21,15 @@ CampaignSummerI.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSummerI.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CampaignSummerI:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_SUMMER_I
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSummerI.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CampaignSummerI:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSummerI.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CampaignSummerI:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetShopComponent()
   self:_GetCumulativeLoginComponent()
@@ -57,98 +41,71 @@ CampaignSummerI.InitComponent = function(self, campaignObj)
   self:_GetStoryComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSummerI._GetShavingIceComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._campaignShavingIceComponent = (self._campaignObj):GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_SHAVING_ICE)
+function CampaignSummerI:_GetShavingIceComponent()
+  self._campaignShavingIceComponent = self._campaignObj:GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_SHAVING_ICE)
   if not self._campaignShavingIceComponent then
-    return 
+    return
   end
-  self._shavingIceComponentInfo = (self._campaignShavingIceComponent):ComponentInfo()
+  self._shavingIceComponentInfo = self._campaignShavingIceComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSummerI._GetShopComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._shopComponent = (self._campaignObj):GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_SHOP)
+function CampaignSummerI:_GetShopComponent()
+  self._shopComponent = self._campaignObj:GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_SHOP)
   if not self._shopComponent then
-    return 
+    return
   end
-  self._shopCompInfo = (self._shopComponent):ComponentInfo()
+  self._shopCompInfo = self._shopComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSummerI._GetCumulativeLoginComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._cumulativeLoginComponent = (self._campaignObj):GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_CUMULATIVE_LOGIN)
+function CampaignSummerI:_GetCumulativeLoginComponent()
+  self._cumulativeLoginComponent = self._campaignObj:GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_CUMULATIVE_LOGIN)
   if not self._cumulativeLoginComponent then
-    return 
+    return
   end
-  self._cumulativeLoginCompInfo = (self._cumulativeLoginComponent):ComponentInfo()
+  self._cumulativeLoginCompInfo = self._cumulativeLoginComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSummerI._GetLevelCommonComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._levelCommonComponet = (self._campaignObj):GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_LEVEL_COMMON)
+function CampaignSummerI:_GetLevelCommonComponent()
+  self._levelCommonComponet = self._campaignObj:GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_LEVEL_COMMON)
   if not self._levelCommonComponet then
-    return 
+    return
   end
-  self._levelCommonCompInfo = (self._levelCommonComponet):ComponentInfo()
+  self._levelCommonCompInfo = self._levelCommonComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSummerI._GetLevelHardComponent = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._levelHardComponent = (self._campaignObj):GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_LEVEL_HARD)
+function CampaignSummerI:_GetLevelHardComponent()
+  self._levelHardComponent = self._campaignObj:GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_LEVEL_HARD)
   if not self._levelHardComponent then
-    return 
+    return
   end
-  self._levelHardCompInfo = (self._levelHardComponent):ComponentInfo()
+  self._levelHardCompInfo = self._levelHardComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSummerI._GetFixTeamComponent = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self._fixTeamComponent = (self._campaignObj):GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_LEVEL_FIXTEAM)
+function CampaignSummerI:_GetFixTeamComponent()
+  self._fixTeamComponent = self._campaignObj:GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_LEVEL_FIXTEAM)
   if not self._fixTeamComponent then
-    return 
+    return
   end
-  self._fixTeamCompInfo = (self._fixTeamComponent):ComponentInfo()
+  self._fixTeamCompInfo = self._fixTeamComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSummerI._GetActionPointComponent = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  self._actionPointComponent = (self._campaignObj):GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_ACTION_POINT)
+function CampaignSummerI:_GetActionPointComponent()
+  self._actionPointComponent = self._campaignObj:GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_ACTION_POINT)
   if not self._actionPointComponent then
-    return 
+    return
   end
-  self._actionPointCompInfo = (self._actionPointComponent):ComponentInfo()
+  self._actionPointCompInfo = self._actionPointComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSummerI._GetStoryComponent = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  self._storyComponent = (self._campaignObj):GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_STORY)
+function CampaignSummerI:_GetStoryComponent()
+  self._storyComponent = self._campaignObj:GetComponent(ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_STORY)
   if not self._storyComponent then
-    return 
+    return
   end
-  self._storyCompInfo = (self._storyComponent):ComponentInfo()
+  self._storyCompInfo = self._storyComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSummerI.GetComponent = function(self, componentID)
-  -- function num : 0_12 , upvalues : _ENV
+function CampaignSummerI:GetComponent(componentID)
   if ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_SHOP == componentID then
     return self._shopComponent
   end
@@ -176,10 +133,7 @@ CampaignSummerI.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignSummerI.GetComponentInfo = function(self, componentID)
-  -- function num : 0_13 , upvalues : _ENV
+function CampaignSummerI:GetComponentInfo(componentID)
   if ECampaignSummerIComponentID.ECAMPAIGN_SUMMER_I_SHOP == componentID then
     return self._shopCompInfo
   end
@@ -206,5 +160,3 @@ CampaignSummerI.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

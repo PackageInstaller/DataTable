@@ -1,31 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_combat/systems/main_fsm_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MainFSMSystem", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-MainFSMSystem.Constructor = function(self, world)
-  -- function num : 0_0
+function MainFSMSystem:Constructor(world)
   self.world = world
-  self.group = world:GetGroup((world.BW_WEMatchers).MainFSM)
+  self.group = world:GetGroup(world.BW_WEMatchers.MainFSM)
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-MainFSMSystem.Execute = function(self)
-  -- function num : 0_1
-  (self.group):HandleForeach(self, self.UpdateFSM)
+function MainFSMSystem:Execute()
+  self.group:HandleForeach(self, self.UpdateFSM)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-MainFSMSystem.UpdateFSM = function(self, e)
-  -- function num : 0_2
+function MainFSMSystem:UpdateFSM(e)
   local component = e:MainFSM()
   local deltaTime = 0.03
   component:Update(deltaTime)
 end
-
-

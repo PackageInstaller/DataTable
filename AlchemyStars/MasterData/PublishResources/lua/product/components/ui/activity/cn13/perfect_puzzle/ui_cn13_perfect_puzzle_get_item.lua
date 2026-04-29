@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn13/perfect_puzzle/ui_cn13_perfect_puzzle_get_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN13PerfectPuzzleGetItem", UICustomWidget)
 UICN13PerfectPuzzleGetItem = UICN13PerfectPuzzleGetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN13PerfectPuzzleGetItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN13PerfectPuzzleGetItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleGetItem.InitWidget = function(self)
-  -- function num : 0_1
+function UICN13PerfectPuzzleGetItem:InitWidget()
   self.planTypeText = self:GetUIComponent("UILocalizationText", "PlanTypeText")
   self.planTipsText = self:GetUIComponent("UILocalizationText", "PlanTipsText")
   self.planStateText = self:GetUIComponent("UILocalizationText", "PlanStateText")
@@ -26,131 +16,97 @@ UICN13PerfectPuzzleGetItem.InitWidget = function(self)
   self.awardRoot = self:GetUIComponent("UISelectObjectPath", "AwardRoot")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleGetItem.SetData = function(self, campaign, quest, callback, tipsCallback, component)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN13PerfectPuzzleGetItem:SetData(campaign, quest, callback, tipsCallback, component)
   self._dispatchTypeQuest = QuestType.QT_None
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   self._campaign = campaign
   self._quest = quest
-  self._questInfo = (self._quest):QuestInfo()
+  self._questInfo = self._quest:QuestInfo()
   self._callback = callback
   self._tipsCallback = tipsCallback
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   self._component = component
-  self._state = (self._quest):Status()
+  self._state = self._quest:Status()
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleGetItem._Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN13PerfectPuzzleGetItem:_Refresh()
   local val = {}
   val[CampaignPersonProgressStatus.CPPS_Completed] = 0
   val[CampaignPersonProgressStatus.CPPS_Accepted] = 1
   val[CampaignPersonProgressStatus.CPPS_Taken] = 2
-  ;
-  (self.planTipsText):SetText((StringTable.Get)((self._questInfo).CondDesc))
-  local cur, max, str1 = (self._component):GetQuestProgressString(self._questInfo)
-  ;
-  (self.planStateText):SetText((StringTable.Get)("str_cn13_PerfectPuzzle_cur_process", str1))
+  self.planTipsText:SetText(StringTable.Get(self._questInfo.CondDesc))
+  local cur, max, str1 = self._component:GetQuestProgressString(self._questInfo)
+  self.planStateText:SetText(StringTable.Get("str_cn13_PerfectPuzzle_cur_process", str1))
   if self._state == CampaignPersonProgressStatus.CPPS_Completed then
-    ((self.beingText).gameObject):SetActive(false)
-    ;
-    ((self.getBtn).gameObject):SetActive(true)
-    ;
-    ((self.overRoot).gameObject):SetActive(false)
-  else
-    if self._state == CampaignPersonProgressStatus.CPPS_Accepted then
-      ((self.beingText).gameObject):SetActive(true)
-      ;
-      ((self.getBtn).gameObject):SetActive(false)
-      ;
-      ((self.overRoot).gameObject):SetActive(false)
-    else
-      if self._state == CampaignPersonProgressStatus.CPPS_Taken then
-        ((self.beingText).gameObject):SetActive(false)
-        ;
-        ((self.getBtn).gameObject):SetActive(false)
-        ;
-        ((self.overRoot).gameObject):SetActive(true)
-      end
-    end
+    self.beingText.gameObject:SetActive(false)
+    self.getBtn.gameObject:SetActive(true)
+    self.overRoot.gameObject:SetActive(false)
+  elseif self._state == CampaignPersonProgressStatus.CPPS_Accepted then
+    self.beingText.gameObject:SetActive(true)
+    self.getBtn.gameObject:SetActive(false)
+    self.overRoot.gameObject:SetActive(false)
+  elseif self._state == CampaignPersonProgressStatus.CPPS_Taken then
+    self.beingText.gameObject:SetActive(false)
+    self.getBtn.gameObject:SetActive(false)
+    self.overRoot.gameObject:SetActive(true)
   end
-  local cfg = (Cfg.cfg_component_quest)({QuestID = (self._questInfo).quest_id})
-  if (cfg[1]).NeedReset then
-    (self.planTypeText):SetText((StringTable.Get)("str_cn13_PerfectPuzzle_quest_day_title"))
+  local cfg = Cfg.cfg_component_quest({
+    QuestID = self._questInfo.quest_id
+  })
+  if cfg[1].NeedReset then
+    self.planTypeText:SetText(StringTable.Get("str_cn13_PerfectPuzzle_quest_day_title"))
   else
-    ;
-    (self.planTypeText):SetText((StringTable.Get)("str_cn13_PerfectPuzzle_quest_plan_title"))
+    self.planTypeText:SetText(StringTable.Get("str_cn13_PerfectPuzzle_quest_plan_title"))
   end
-  if #(self._questInfo).rewards > 0 then
-    self.awardList = (self.awardRoot):SpawnObjects("UIPerfectPuzzleRewardItem", #(self._questInfo).rewards)
+  if 0 < #self._questInfo.rewards then
+    self.awardList = self.awardRoot:SpawnObjects("UIPerfectPuzzleRewardItem", #self._questInfo.rewards)
     for i = 1, #self.awardList do
-      local award = (self.awardList)[i]
-      local cfgAward = ((self._questInfo).rewards)[i]
+      local award = self.awardList[i]
+      local cfgAward = self._questInfo.rewards[i]
       award:SetData(cfgAward, function(matid, pos)
-    -- function num : 0_3_0 , upvalues : self
-    if self._tipsCallback then
-      (self._tipsCallback)(matid, pos)
-    end
-  end
-)
+        if self._tipsCallback then
+          self._tipsCallback(matid, pos)
+        end
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleGetItem.GetBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UICN13PerfectPuzzleGetItem:GetBtnOnClick(go)
   self:Lock("UICN13PerfectPuzzle:UIQuestGet")
   if self._callback then
-    (self._callback)((self._questInfo).quest_id)
+    self._callback(self._questInfo.quest_id)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzleGetItem._GetQuestItemAwardReq = function(self, TT, id)
-  -- function num : 0_5 , upvalues : _ENV
-  local res, msg = (self._questModule):TakeQuestReward(TT, id)
+function UICN13PerfectPuzzleGetItem:_GetQuestItemAwardReq(TT, id)
+  local res, msg = self._questModule:TakeQuestReward(TT, id)
   self:UnLock("UICN13PerfectPuzzle:UIQuestGet")
   if self.uiOwner == nil then
-    return 
+    return
   end
   if res:GetSucc() then
     local tempPets = {}
     local pets = msg.rewards
     self._tempMsgRewards = msg.rewards
-    if #pets > 0 then
+    if 0 < #pets then
       for i = 1, #pets do
-        local ispet = ((GameGlobal.GetModule)(PetModule)):IsPetID((pets[i]).assetid)
+        local ispet = GameGlobal.GetModule(PetModule):IsPetID(pets[i].assetid)
         if ispet then
-          (table.insert)(tempPets, pets[i])
+          table.insert(tempPets, pets[i])
         end
       end
     end
-    do
-      if #tempPets > 0 then
-        self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_5_0 , upvalues : _ENV, self
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIPetObtainCloseInQuest, self._dispatchTypeQuest)
-  end
-)
-      else
-        self:ShowDialog("UIGetItemController", msg.rewards, function()
-    -- function num : 0_5_1 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, self._dispatchTypeQuest)
-  end
-)
-      end
+    if 0 < #tempPets then
+      self:ShowDialog("UIPetObtain", tempPets, function()
+        GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIPetObtainCloseInQuest, self._dispatchTypeQuest)
+      end)
+    else
+      self:ShowDialog("UIGetItemController", msg.rewards, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, self._dispatchTypeQuest)
+      end)
     end
   end
 end
-
-

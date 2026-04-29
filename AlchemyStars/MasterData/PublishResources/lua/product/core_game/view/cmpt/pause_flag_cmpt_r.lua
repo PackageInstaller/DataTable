@@ -1,62 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/pause_flag_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PauseFlagComponent", Object)
 PauseFlagComponent = PauseFlagComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PauseFlagComponent.Constructor = function(self)
-  -- function num : 0_0
+function PauseFlagComponent:Constructor()
   self._pauseDuration = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PauseFlagComponent.SetPauseDuration = function(self, pauseDuration)
-  -- function num : 0_1
+function PauseFlagComponent:SetPauseDuration(pauseDuration)
   self._pauseDuration = pauseDuration
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PauseFlagComponent.GetPauseDuration = function(self)
-  -- function num : 0_2
+function PauseFlagComponent:GetPauseDuration()
   return self._pauseDuration
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PauseFlag = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).PauseFlag)
+function Entity:PauseFlag()
+  return self:GetComponent(self.WEComponentsEnum.PauseFlag)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPauseFlag = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).PauseFlag)
+function Entity:HasPauseFlag()
+  return self:HasComponent(self.WEComponentsEnum.PauseFlag)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPauseFlag = function(self, pauseDuration)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PauseFlag
+function Entity:AddPauseFlag(pauseDuration)
+  local index = self.WEComponentsEnum.PauseFlag
   local component = PauseFlagComponent:New()
   component:SetPauseDuration(pauseDuration)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePauseFlag = function(self)
-  -- function num : 0_6
+function Entity:RemovePauseFlag()
   if self:HasPauseFlag() then
-    self:RemoveComponent((self.WEComponentsEnum).PauseFlag)
+    self:RemoveComponent(self.WEComponentsEnum.PauseFlag)
   end
 end
-
-

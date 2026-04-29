@@ -1,46 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_secondary_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSecondaryParam", BuffLogicBase)
 BuffLogicChangeSecondaryParam = BuffLogicChangeSecondaryParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSecondaryParam.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeSecondaryParam:Constructor(buffInstance, logicParam)
   self._addValue = logicParam.addValue or 0
   self._sameElementAddValue = logicParam.sameElementAddValue
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSecondaryParam.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  if (e:Element()):GetPrimaryType() == (e:Element()):GetSecondaryType() and self._sameElementAddValue then
-    (self._buffLogicService):ChangeAllAttackParam(e, (self._buffInstance):BuffSeq(), self._sameElementAddValue)
-    return 
+function BuffLogicChangeSecondaryParam:DoLogic()
+  local e = self._buffInstance:Entity()
+  if e:Element():GetPrimaryType() == e:Element():GetSecondaryType() and self._sameElementAddValue then
+    self._buffLogicService:ChangeAllAttackParam(e, self._buffInstance:BuffSeq(), self._sameElementAddValue)
+    return
   end
-  ;
-  (self._buffLogicService):ChangeSecondaryAttackParam(e, (self._buffInstance):BuffSeq(), self._addValue)
+  self._buffLogicService:ChangeSecondaryAttackParam(e, self._buffInstance:BuffSeq(), self._addValue)
 end
 
 _class("BuffLogicRemoveSecondaryParam", BuffLogicBase)
 BuffLogicRemoveSecondaryParam = BuffLogicRemoveSecondaryParam
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSecondaryParam.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveSecondaryParam:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSecondaryParam.DoLogic = function(self)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):RemoveSecondaryAttackParam(e, (self._buffInstance):BuffSeq())
+function BuffLogicRemoveSecondaryParam:DoLogic()
+  local e = self._buffInstance:Entity()
+  self._buffLogicService:RemoveSecondaryAttackParam(e, self._buffInstance:BuffSeq())
 end
-
-

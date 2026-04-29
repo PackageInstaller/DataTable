@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_round_grid_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseRoundGridParam", SkillPhaseParamBase)
 SkillPhaseRoundGridParam = SkillPhaseRoundGridParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseRoundGridParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
-  local gridEffectIdArr = (string.split)(t.gridEffectIdArr, ",")
+function SkillPhaseRoundGridParam:Constructor(t)
+  local gridEffectIdArr = string.split(t.gridEffectIdArr, ",")
   local gridEffectIds = {}
-  for i,id in ipairs(gridEffectIdArr) do
-    (table.insert)(gridEffectIds, tonumber(id))
+  for i, id in ipairs(gridEffectIdArr) do
+    table.insert(gridEffectIds, tonumber(id))
   end
   self._gridEffectIds = gridEffectIds
   self._atk = t.atk
@@ -24,120 +17,97 @@ SkillPhaseRoundGridParam.Constructor = function(self, t)
   self._finishDelayTime = t.finishDelayTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRoundGridParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseRoundGridParam:GetCacheTable()
   local t = {
-{((Cfg.cfg_effect)[self._atkEffectId]).ResPath, 1}
-}
-  for i,id in ipairs(self._gridEffectIds) do
-    (table.insert)(t, {((Cfg.cfg_effect)[id]).ResPath, 1})
+    {
+      Cfg.cfg_effect[self._atkEffectId].ResPath,
+      1
+    }
+  }
+  for i, id in ipairs(self._gridEffectIds) do
+    table.insert(t, {
+      Cfg.cfg_effect[id].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRoundGridParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseRoundGridParam:GetPhaseType()
   return SkillViewPhaseType.RoundGridDifferent
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRoundGridParam.GetAnimationName = function(self)
-  -- function num : 0_3
+function SkillPhaseRoundGridParam:GetAnimationName()
   return self._atk
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRoundGridParam.GetHitAnimationName = function(self)
-  -- function num : 0_4
+function SkillPhaseRoundGridParam:GetHitAnimationName()
   return self._hit
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRoundGridParam.GetHitEffectID = function(self)
-  -- function num : 0_5
+function SkillPhaseRoundGridParam:GetHitEffectID()
   return self._hitEffectId
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRoundGridParam.GetCastEffectID = function(self)
-  -- function num : 0_6
+function SkillPhaseRoundGridParam:GetCastEffectID()
   return self._atkEffectId
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRoundGridParam.GetFinishDelayTime = function(self)
-  -- function num : 0_7
+function SkillPhaseRoundGridParam:GetFinishDelayTime()
   return self._finishDelayTime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRoundGridParam.GetGridEffectDelayTime = function(self)
-  -- function num : 0_8
+function SkillPhaseRoundGridParam:GetGridEffectDelayTime()
   return self._gridEffectDelayTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRoundGridParam.GetGridEffectID = function(self, centerPos, gridPos)
-  -- function num : 0_9
+function SkillPhaseRoundGridParam:GetGridEffectID(centerPos, gridPos)
   if centerPos.x == gridPos.x and centerPos.y + 2 == gridPos.y then
-    return (self._gridEffectIds)[1]
+    return self._gridEffectIds[1]
   end
   if centerPos.x + 1 == gridPos.x and centerPos.y + 2 == gridPos.y then
-    return (self._gridEffectIds)[1]
+    return self._gridEffectIds[1]
   end
   if centerPos.x - 1 == gridPos.x and centerPos.y + 2 == gridPos.y then
-    return (self._gridEffectIds)[1]
+    return self._gridEffectIds[1]
   end
   if centerPos.x == gridPos.x and centerPos.y - 2 == gridPos.y then
-    return (self._gridEffectIds)[5]
+    return self._gridEffectIds[5]
   end
   if centerPos.x + 1 == gridPos.x and centerPos.y - 2 == gridPos.y then
-    return (self._gridEffectIds)[5]
+    return self._gridEffectIds[5]
   end
   if centerPos.x - 1 == gridPos.x and centerPos.y - 2 == gridPos.y then
-    return (self._gridEffectIds)[5]
+    return self._gridEffectIds[5]
   end
   if centerPos.x + 2 == gridPos.x and centerPos.y + 1 == gridPos.y then
-    return (self._gridEffectIds)[3]
+    return self._gridEffectIds[3]
   end
   if centerPos.x + 2 == gridPos.x and centerPos.y == gridPos.y then
-    return (self._gridEffectIds)[3]
+    return self._gridEffectIds[3]
   end
   if centerPos.x + 2 == gridPos.x and centerPos.y - 1 == gridPos.y then
-    return (self._gridEffectIds)[3]
+    return self._gridEffectIds[3]
   end
   if centerPos.x - 2 == gridPos.x and centerPos.y + 1 == gridPos.y then
-    return (self._gridEffectIds)[7]
+    return self._gridEffectIds[7]
   end
   if centerPos.x - 2 == gridPos.x and centerPos.y == gridPos.y then
-    return (self._gridEffectIds)[7]
+    return self._gridEffectIds[7]
   end
   if centerPos.x - 2 == gridPos.x and centerPos.y - 1 == gridPos.y then
-    return (self._gridEffectIds)[7]
+    return self._gridEffectIds[7]
   end
   if centerPos.x + 2 == gridPos.x and centerPos.y + 2 == gridPos.y then
-    return (self._gridEffectIds)[2]
+    return self._gridEffectIds[2]
   end
   if centerPos.x + 2 == gridPos.x and centerPos.y - 2 == gridPos.y then
-    return (self._gridEffectIds)[4]
+    return self._gridEffectIds[4]
   end
   if centerPos.x - 2 == gridPos.x and centerPos.y - 2 == gridPos.y then
-    return (self._gridEffectIds)[6]
+    return self._gridEffectIds[6]
   end
   if centerPos.x - 2 == gridPos.x and centerPos.y + 2 == gridPos.y then
-    return (self._gridEffectIds)[8]
+    return self._gridEffectIds[8]
   end
 end
-
-

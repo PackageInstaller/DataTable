@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chapter_award/ui_chapter_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChapterAwardItem", UICustomWidget)
 UIChapterAwardItem = UIChapterAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChapterAwardItem.OnShow = function(self)
-  -- function num : 0_0
+function UIChapterAwardItem:OnShow()
   self._txtStarAward = self:GetUIComponent("UILocalizationText", "txtStarAward")
   self._pool = self:GetUIComponent("UISelectObjectPath", "awards")
   self._btnCollect = self:GetUIComponent("Button", "btnCollect")
@@ -16,99 +9,52 @@ UIChapterAwardItem.OnShow = function(self)
   self._txtStarCount = self:GetUIComponent("UILocalizationText", "txtStarCount")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChapterAwardItem.OnHide = function(self)
-  -- function num : 0_1
+function UIChapterAwardItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChapterAwardItem.Flush = function(self, idx, chapterData)
-  -- function num : 0_2 , upvalues : _ENV
+function UIChapterAwardItem:Flush(idx, chapterData)
   self._chapterData = chapterData
-  self._grade = (chapterData.grades)[idx]
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._txtStarAward).text = (self._grade).star_count
-  ;
-  (self._pool):SpawnObjects("UIChapterAwardEntry", (table.count)((self._grade).awards))
-  local awardList = (self._pool):GetAllSpawnList()
-  for i,v in ipairs(awardList) do
-    v:Flush(((self._grade).awards)[i])
+  self._grade = chapterData.grades[idx]
+  self._txtStarAward.text = self._grade.star_count
+  self._pool:SpawnObjects("UIChapterAwardEntry", table.count(self._grade.awards))
+  local awardList = self._pool:GetAllSpawnList()
+  for i, v in ipairs(awardList) do
+    v:Flush(self._grade.awards[i])
   end
-  ;
-  ((self._txtStarCount).gameObject):SetActive(false)
-  ;
-  ((self._btnCollect).gameObject):SetActive(false)
-  if (self._grade):CanCollect(chapterData.star_count) then
-    ((self._btnCollect).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._btnCollect).interactable = true
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._txtCollect).text = (StringTable.Get)("str_discovery_chapter_collect")
-    -- DECOMPILER ERROR at PC63: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._txtCollect).color = Color.black
+  self._txtStarCount.gameObject:SetActive(false)
+  self._btnCollect.gameObject:SetActive(false)
+  if self._grade:CanCollect(chapterData.star_count) then
+    self._btnCollect.gameObject:SetActive(true)
+    self._btnCollect.interactable = true
+    self._txtCollect.text = StringTable.Get("str_discovery_chapter_collect")
+    self._txtCollect.color = Color.black
+  elseif self._grade.collected then
+    self._btnCollect.gameObject:SetActive(true)
+    self._btnCollect.interactable = false
+    self._txtCollect.text = StringTable.Get("str_discovery_chapter_collected")
+    local rgb = 0.3843137254901961
+    self._txtCollect.color = Color(rgb, rgb, rgb)
   else
-    if (self._grade).collected then
-      ((self._btnCollect).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC75: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._btnCollect).interactable = false
-      -- DECOMPILER ERROR at PC81: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._txtCollect).text = (StringTable.Get)("str_discovery_chapter_collected")
-      local rgb = 0.3843137254902
-      -- DECOMPILER ERROR at PC89: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._txtCollect).color = Color(rgb, rgb, rgb)
-    else
-      do
-        ;
-        ((self._txtStarCount).gameObject):SetActive(true)
-        ;
-        (self._txtStarCount):SetText("<color=#ED3434>" .. chapterData.star_count .. "</color>/" .. (self._grade).star_count)
-      end
-    end
+    self._txtStarCount.gameObject:SetActive(true)
+    self._txtStarCount:SetText("<color=#ED3434>" .. chapterData.star_count .. "</color>/" .. self._grade.star_count)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChapterAwardItem.btnCollectOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  if not (self._grade):CanCollect((self._chapterData).star_count) then
-    return 
+function UIChapterAwardItem:btnCollectOnClick(go)
+  if not self._grade:CanCollect(self._chapterData.star_count) then
+    return
   end
   local module = self:GetModule(MissionModule)
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, module, _ENV
     self:Lock("UIChapterAwardItem:btnCollectOnClick")
-    local ret, data = module:ReceiveChapterAward(TT, (self._grade).chapter_id, (self._grade).star_count)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
+    local ret, data = module:ReceiveChapterAward(TT, self._grade.chapter_id, self._grade.star_count)
     if ret == MISSION_RESULT_CODE.MISSION_SUCCEED then
-      (self._grade).collected = true
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateChapterAwardData)
+      self._grade.collected = true
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateChapterAwardData)
       self:ShowDialog("UIGetItemController", data)
     else
-      ;
-      (ToastManager.ShowToast)(module:GetErrorMsg(ret))
+      ToastManager.ShowToast(module:GetErrorMsg(ret))
     end
     self:UnLock("UIChapterAwardItem:btnCollectOnClick")
-  end
-, self)
+  end, self)
 end
-
-

@@ -1,192 +1,203 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/quest/quest_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local questMessageDef = {CLSID_CEventQuestTake = 18000, CLSID_CEventQuestTakeResult = 18001, CLSID_CEventOneKeyTake = 18002, CLSID_CEventOneKeyTakeResult = 18003, CLSID_CEventQuestGetAchReward = 18004, CLSID_CEventQuestGetAchRewardResult = 18005, CLSID_CEventQuestGetVigReward = 18006, CLSID_CEventQuestGetVigRewardResult = 18007, CLSID_CEventQuestGrowthFeatherReward = 18008, CLSID_CEventQuestGrowthFeatherRewardResult = 18009, CLSID_CEventPushQuestUpdate = 18010, CLSID_CEventPushQuestStateParamUpdate = 18011, CLSID_CEventPushRecentAchieve = 18012, CLSID_CEventPushResetDailyQuest = 18013, CLSID_CEventQuestDailyRefreshTime = 18014, CLSID_CEventQuestDailyRefreshTimeResult = 18015, CLSID_CEventApplyAcceptQuest = 18016, CLSID_CEventApplyAcceptQuestResult = 18017, CLSID_CEventApplyNotify = 18018, CLSID_CEventApplyNotifyResult = 18019, CLSID_CEventSetAchieve = 18020, CLSID_CEventSetAchieveResult = 18021, CLSID_CEventSetVigorous = 18022, CLSID_CEventSetVigorousResult = 18023, CLSID_CEventPushUnlockChapterQuest = 18024, CLSID_CEventPushResetWeekQuest = 18025, CLSID_CEventPushWorldBossReset = 18026, CLSID_CEventClientProcess = 18027, CLSID_CEventClientProcessResult = 18028}
-;
-(table.append)(MessageDef, questMessageDef)
-local QuestErrorCode = {QuestEC_Unknown = -1, QuestEC_Succ = 0, QuestEC_Locked = 1, QuestEC_NoId = 2, QuestEC_UnComplete = 5, QuestEC_Taken = 6, QuestEC_SendRewardError = 7, QuestEC_NeedVigPoint = 8, QuestEC_NeedAchPoint = 9, QuestEC_NoQuestTaken = 10, QuestEC_NoQuestGrowthIsOutTime = 11, QuestEC_NeedGrowthPoint = 12, QuestEc_NotWhiteTestMode = 13, QuestEc_PhyFullPartialFail = 14, QuestEC_Complete = 15, QuestEC_ProcessNumError = 16, QuestEC_Type = 17}
+local questMessageDef = {
+  CLSID_CEventQuestTake = 18000,
+  CLSID_CEventQuestTakeResult = 18001,
+  CLSID_CEventOneKeyTake = 18002,
+  CLSID_CEventOneKeyTakeResult = 18003,
+  CLSID_CEventQuestGetAchReward = 18004,
+  CLSID_CEventQuestGetAchRewardResult = 18005,
+  CLSID_CEventQuestGetVigReward = 18006,
+  CLSID_CEventQuestGetVigRewardResult = 18007,
+  CLSID_CEventQuestGrowthFeatherReward = 18008,
+  CLSID_CEventQuestGrowthFeatherRewardResult = 18009,
+  CLSID_CEventPushQuestUpdate = 18010,
+  CLSID_CEventPushQuestStateParamUpdate = 18011,
+  CLSID_CEventPushRecentAchieve = 18012,
+  CLSID_CEventPushResetDailyQuest = 18013,
+  CLSID_CEventQuestDailyRefreshTime = 18014,
+  CLSID_CEventQuestDailyRefreshTimeResult = 18015,
+  CLSID_CEventApplyAcceptQuest = 18016,
+  CLSID_CEventApplyAcceptQuestResult = 18017,
+  CLSID_CEventApplyNotify = 18018,
+  CLSID_CEventApplyNotifyResult = 18019,
+  CLSID_CEventSetAchieve = 18020,
+  CLSID_CEventSetAchieveResult = 18021,
+  CLSID_CEventSetVigorous = 18022,
+  CLSID_CEventSetVigorousResult = 18023,
+  CLSID_CEventPushUnlockChapterQuest = 18024,
+  CLSID_CEventPushResetWeekQuest = 18025,
+  CLSID_CEventPushWorldBossReset = 18026,
+  CLSID_CEventClientProcess = 18027,
+  CLSID_CEventClientProcessResult = 18028
+}
+table.append(MessageDef, questMessageDef)
+local QuestErrorCode = {
+  QuestEC_Unknown = -1,
+  QuestEC_Succ = 0,
+  QuestEC_Locked = 1,
+  QuestEC_NoId = 2,
+  QuestEC_UnComplete = 5,
+  QuestEC_Taken = 6,
+  QuestEC_SendRewardError = 7,
+  QuestEC_NeedVigPoint = 8,
+  QuestEC_NeedAchPoint = 9,
+  QuestEC_NoQuestTaken = 10,
+  QuestEC_NoQuestGrowthIsOutTime = 11,
+  QuestEC_NeedGrowthPoint = 12,
+  QuestEc_NotWhiteTestMode = 13,
+  QuestEc_PhyFullPartialFail = 14,
+  QuestEC_Complete = 15,
+  QuestEC_ProcessNumError = 16,
+  QuestEC_Type = 17
+}
 _enum("QuestErrorCode", QuestErrorCode)
 _class("CEventQuestTake", CCallRequestEvent)
 CEventQuestTake = CEventQuestTake
--- DECOMPILER ERROR at PC68: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventQuestTake.Constructor = function(self)
-  -- function num : 0_0
+function CEventQuestTake:Constructor()
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventQuestTake._proto = {
-[1] = {"id", "int"}
+  [1] = {"id", "int"}
 }
 _class("CEventQuestTakeResult", CCallReplyEvent)
 CEventQuestTakeResult = CEventQuestTakeResult
--- DECOMPILER ERROR at PC85: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventQuestTakeResult.Constructor = function(self)
-  -- function num : 0_1
+function CEventQuestTakeResult:Constructor()
   self.ret = 0
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventQuestTakeResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("CEventOneKeyTake", CCallRequestEvent)
 CEventOneKeyTake = CEventOneKeyTake
--- DECOMPILER ERROR at PC107: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventOneKeyTake.Constructor = function(self)
-  -- function num : 0_2
+function CEventOneKeyTake:Constructor()
   self.quest_type = 0
   self.custom_quest = {}
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventOneKeyTake._proto = {
-[1] = {"quest_type", "int"}
-, 
-[2] = {"custom_quest", "list<int>"}
+  [1] = {"quest_type", "int"},
+  [2] = {
+    "custom_quest",
+    "list<int>"
+  }
 }
 _class("CEventOneKeyTakeResult", CCallReplyEvent)
 CEventOneKeyTakeResult = CEventOneKeyTakeResult
--- DECOMPILER ERROR at PC129: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventOneKeyTakeResult.Constructor = function(self)
-  -- function num : 0_3
+function CEventOneKeyTakeResult:Constructor()
   self.ret = 0
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC142: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventOneKeyTakeResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("CEventQuestGetAchReward", CCallRequestEvent)
 CEventQuestGetAchReward = CEventQuestGetAchReward
--- DECOMPILER ERROR at PC151: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventQuestGetAchReward.Constructor = function(self)
-  -- function num : 0_4
+function CEventQuestGetAchReward:Constructor()
   self.reward_id = 0
 end
 
--- DECOMPILER ERROR at PC159: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventQuestGetAchReward._proto = {
-[1] = {"reward_id", "int"}
+  [1] = {"reward_id", "int"}
 }
 _class("CEventQuestGetAchRewardResult", CCallReplyEvent)
 CEventQuestGetAchRewardResult = CEventQuestGetAchRewardResult
--- DECOMPILER ERROR at PC168: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventQuestGetAchRewardResult.Constructor = function(self)
-  -- function num : 0_5
+function CEventQuestGetAchRewardResult:Constructor()
   self.ret = 0
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC181: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventQuestGetAchRewardResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("CEventQuestGetVigReward", CCallRequestEvent)
 CEventQuestGetVigReward = CEventQuestGetVigReward
--- DECOMPILER ERROR at PC190: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventQuestGetVigReward.Constructor = function(self)
-  -- function num : 0_6
+function CEventQuestGetVigReward:Constructor()
   self.reward_id = 0
 end
 
--- DECOMPILER ERROR at PC198: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventQuestGetVigReward._proto = {
-[1] = {"reward_id", "int"}
+  [1] = {"reward_id", "int"}
 }
 _class("CEventQuestGetVigRewardResult", CCallReplyEvent)
 CEventQuestGetVigRewardResult = CEventQuestGetVigRewardResult
--- DECOMPILER ERROR at PC207: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventQuestGetVigRewardResult.Constructor = function(self)
-  -- function num : 0_7
+function CEventQuestGetVigRewardResult:Constructor()
   self.ret = 0
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC220: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventQuestGetVigRewardResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("CEventQuestGrowthFeatherReward", CCallRequestEvent)
 CEventQuestGrowthFeatherReward = CEventQuestGrowthFeatherReward
--- DECOMPILER ERROR at PC229: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventQuestGrowthFeatherReward.Constructor = function(self)
-  -- function num : 0_8
+function CEventQuestGrowthFeatherReward:Constructor()
   self.reward_id = 0
 end
 
--- DECOMPILER ERROR at PC237: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventQuestGrowthFeatherReward._proto = {
-[1] = {"reward_id", "int"}
+  [1] = {"reward_id", "int"}
 }
 _class("CEventQuestGrowthFeatherRewardResult", CCallReplyEvent)
 CEventQuestGrowthFeatherRewardResult = CEventQuestGrowthFeatherRewardResult
--- DECOMPILER ERROR at PC246: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventQuestGrowthFeatherRewardResult.Constructor = function(self)
-  -- function num : 0_9
+function CEventQuestGrowthFeatherRewardResult:Constructor()
   self.ret = 0
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC259: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventQuestGrowthFeatherRewardResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("CEventPushQuestUpdate", CSvrPushEvent)
 CEventPushQuestUpdate = CEventPushQuestUpdate
--- DECOMPILER ERROR at PC268: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPushQuestUpdate.Constructor = function(self)
-  -- function num : 0_10
+function CEventPushQuestUpdate:Constructor()
   self.update_list = {}
 end
 
--- DECOMPILER ERROR at PC276: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPushQuestUpdate._proto = {
-[1] = {"update_list", "list<MobileQuestInfo>"}
+  [1] = {
+    "update_list",
+    "list<MobileQuestInfo>"
+  }
 }
 _class("CEventPushQuestStateParamUpdate", CSvrPushEvent)
 CEventPushQuestStateParamUpdate = CEventPushQuestStateParamUpdate
--- DECOMPILER ERROR at PC285: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPushQuestStateParamUpdate.Constructor = function(self)
-  -- function num : 0_11
+function CEventPushQuestStateParamUpdate:Constructor()
   self.growth_quest_unlock_time = 0
   self.growth_points = 0
   self.growth_reward_state = 0
@@ -194,106 +205,97 @@ CEventPushQuestStateParamUpdate.Constructor = function(self)
   self.growth_stage2_reward_state = 0
 end
 
--- DECOMPILER ERROR at PC313: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPushQuestStateParamUpdate._proto = {
-[1] = {"growth_quest_unlock_time", "time"}
-, 
-[2] = {"growth_points", "int"}
-, 
-[3] = {"growth_reward_state", "int64"}
-, 
-[4] = {"growth_stage2_points", "int"}
-, 
-[5] = {"growth_stage2_reward_state", "int64"}
+  [1] = {
+    "growth_quest_unlock_time",
+    "time"
+  },
+  [2] = {
+    "growth_points",
+    "int"
+  },
+  [3] = {
+    "growth_reward_state",
+    "int64"
+  },
+  [4] = {
+    "growth_stage2_points",
+    "int"
+  },
+  [5] = {
+    "growth_stage2_reward_state",
+    "int64"
+  }
 }
 _class("CEventPushRecentAchieve", CSvrPushEvent)
 CEventPushRecentAchieve = CEventPushRecentAchieve
--- DECOMPILER ERROR at PC322: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPushRecentAchieve.Constructor = function(self)
-  -- function num : 0_12
+function CEventPushRecentAchieve:Constructor()
   self.recent_achieves = {}
 end
 
--- DECOMPILER ERROR at PC330: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPushRecentAchieve._proto = {
-[1] = {"recent_achieves", "list<int>"}
+  [1] = {
+    "recent_achieves",
+    "list<int>"
+  }
 }
 _class("CEventPushResetDailyQuest", CSvrPushEvent)
 CEventPushResetDailyQuest = CEventPushResetDailyQuest
--- DECOMPILER ERROR at PC339: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPushResetDailyQuest.Constructor = function(self)
-  -- function num : 0_13
+function CEventPushResetDailyQuest:Constructor()
 end
-
--- DECOMPILER ERROR at PC342: Confused about usage of register: R2 in 'UnsetPending'
 
 CEventPushResetDailyQuest._proto = {}
 _class("CEventQuestDailyRefreshTime", CCallRequestEvent)
 CEventQuestDailyRefreshTime = CEventQuestDailyRefreshTime
--- DECOMPILER ERROR at PC351: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventQuestDailyRefreshTime.Constructor = function(self)
-  -- function num : 0_14
+function CEventQuestDailyRefreshTime:Constructor()
 end
-
--- DECOMPILER ERROR at PC354: Confused about usage of register: R2 in 'UnsetPending'
 
 CEventQuestDailyRefreshTime._proto = {}
 _class("CEventQuestDailyRefreshTimeResult", CCallReplyEvent)
 CEventQuestDailyRefreshTimeResult = CEventQuestDailyRefreshTimeResult
--- DECOMPILER ERROR at PC363: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventQuestDailyRefreshTimeResult.Constructor = function(self)
-  -- function num : 0_15
+function CEventQuestDailyRefreshTimeResult:Constructor()
   self.next_refresh_time = 0
   self.week_next_refresh_time = 0
 end
 
--- DECOMPILER ERROR at PC376: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventQuestDailyRefreshTimeResult._proto = {
-[1] = {"next_refresh_time", "time"}
-, 
-[2] = {"week_next_refresh_time", "time"}
+  [1] = {
+    "next_refresh_time",
+    "time"
+  },
+  [2] = {
+    "week_next_refresh_time",
+    "time"
+  }
 }
 _class("CEventApplyAcceptQuest", CCallRequestEvent)
 CEventApplyAcceptQuest = CEventApplyAcceptQuest
--- DECOMPILER ERROR at PC385: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventApplyAcceptQuest.Constructor = function(self)
-  -- function num : 0_16
+function CEventApplyAcceptQuest:Constructor()
   self.quest_id = 0
 end
 
--- DECOMPILER ERROR at PC393: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventApplyAcceptQuest._proto = {
-[1] = {"quest_id", "int"}
+  [1] = {"quest_id", "int"}
 }
 _class("CEventApplyAcceptQuestResult", CCallReplyEvent)
 CEventApplyAcceptQuestResult = CEventApplyAcceptQuestResult
--- DECOMPILER ERROR at PC402: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventApplyAcceptQuestResult.Constructor = function(self)
-  -- function num : 0_17
+function CEventApplyAcceptQuestResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC410: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventApplyAcceptQuestResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventApplyNotify", CCallRequestEvent)
 CEventApplyNotify = CEventApplyNotify
--- DECOMPILER ERROR at PC419: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventApplyNotify.Constructor = function(self)
-  -- function num : 0_18
+function CEventApplyNotify:Constructor()
   self.quest_id = 0
   self.notify_type = 0
   self.notify_count = 1
@@ -302,156 +304,121 @@ CEventApplyNotify.Constructor = function(self)
   self.param3 = 0
 end
 
--- DECOMPILER ERROR at PC452: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventApplyNotify._proto = {
-[1] = {"quest_id", "int"}
-, 
-[2] = {"notify_type", "int"}
-, 
-[3] = {"notify_count", "int"}
-, 
-[4] = {"param1", "int"}
-, 
-[5] = {"param2", "int"}
-, 
-[6] = {"param3", "int"}
+  [1] = {"quest_id", "int"},
+  [2] = {
+    "notify_type",
+    "int"
+  },
+  [3] = {
+    "notify_count",
+    "int"
+  },
+  [4] = {"param1", "int"},
+  [5] = {"param2", "int"},
+  [6] = {"param3", "int"}
 }
 _class("CEventApplyNotifyResult", CCallReplyEvent)
 CEventApplyNotifyResult = CEventApplyNotifyResult
--- DECOMPILER ERROR at PC461: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventApplyNotifyResult.Constructor = function(self)
-  -- function num : 0_19
+function CEventApplyNotifyResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC469: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventApplyNotifyResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventSetAchieve", CCallRequestEvent)
 CEventSetAchieve = CEventSetAchieve
--- DECOMPILER ERROR at PC478: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventSetAchieve.Constructor = function(self)
-  -- function num : 0_20
+function CEventSetAchieve:Constructor()
 end
-
--- DECOMPILER ERROR at PC481: Confused about usage of register: R2 in 'UnsetPending'
 
 CEventSetAchieve._proto = {}
 _class("CEventSetAchieveResult", CCallReplyEvent)
 CEventSetAchieveResult = CEventSetAchieveResult
--- DECOMPILER ERROR at PC490: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventSetAchieveResult.Constructor = function(self)
-  -- function num : 0_21
+function CEventSetAchieveResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC498: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventSetAchieveResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventSetVigorous", CCallRequestEvent)
 CEventSetVigorous = CEventSetVigorous
--- DECOMPILER ERROR at PC507: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventSetVigorous.Constructor = function(self)
-  -- function num : 0_22
+function CEventSetVigorous:Constructor()
 end
-
--- DECOMPILER ERROR at PC510: Confused about usage of register: R2 in 'UnsetPending'
 
 CEventSetVigorous._proto = {}
 _class("CEventSetVigorousResult", CCallReplyEvent)
 CEventSetVigorousResult = CEventSetVigorousResult
--- DECOMPILER ERROR at PC519: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventSetVigorousResult.Constructor = function(self)
-  -- function num : 0_23
+function CEventSetVigorousResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC527: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventSetVigorousResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventPushUnlockChapterQuest", CSvrPushEvent)
 CEventPushUnlockChapterQuest = CEventPushUnlockChapterQuest
--- DECOMPILER ERROR at PC536: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPushUnlockChapterQuest.Constructor = function(self)
-  -- function num : 0_24
+function CEventPushUnlockChapterQuest:Constructor()
   self.chapter_index = 0
 end
 
--- DECOMPILER ERROR at PC544: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPushUnlockChapterQuest._proto = {
-[1] = {"chapter_index", "int"}
+  [1] = {
+    "chapter_index",
+    "int"
+  }
 }
 _class("CEventPushResetWeekQuest", CSvrPushEvent)
 CEventPushResetWeekQuest = CEventPushResetWeekQuest
--- DECOMPILER ERROR at PC553: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPushResetWeekQuest.Constructor = function(self)
-  -- function num : 0_25
+function CEventPushResetWeekQuest:Constructor()
 end
-
--- DECOMPILER ERROR at PC556: Confused about usage of register: R2 in 'UnsetPending'
 
 CEventPushResetWeekQuest._proto = {}
 _class("CEventPushWorldBossReset", CSvrPushEvent)
 CEventPushWorldBossReset = CEventPushWorldBossReset
--- DECOMPILER ERROR at PC565: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPushWorldBossReset.Constructor = function(self)
-  -- function num : 0_26
+function CEventPushWorldBossReset:Constructor()
   self.boss_mission_id = 0
 end
 
--- DECOMPILER ERROR at PC573: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPushWorldBossReset._proto = {
-[1] = {"boss_mission_id", "int"}
+  [1] = {
+    "boss_mission_id",
+    "int"
+  }
 }
 _class("CEventClientProcess", CCallRequestEvent)
 CEventClientProcess = CEventClientProcess
--- DECOMPILER ERROR at PC582: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventClientProcess.Constructor = function(self)
-  -- function num : 0_27
+function CEventClientProcess:Constructor()
   self.quest_id = 0
   self.num = 0
 end
 
--- DECOMPILER ERROR at PC595: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventClientProcess._proto = {
-[1] = {"quest_id", "int"}
-, 
-[2] = {"num", "int"}
+  [1] = {"quest_id", "int"},
+  [2] = {"num", "int"}
 }
 _class("CEventClientProcessResult", CCallReplyEvent)
 CEventClientProcessResult = CEventClientProcessResult
--- DECOMPILER ERROR at PC604: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventClientProcessResult.Constructor = function(self)
-  -- function num : 0_28
+function CEventClientProcessResult:Constructor()
   self.ret = 0
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC617: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventClientProcessResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
-

@@ -1,47 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_visible_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterVisibleInstruction", BaseInstruction)
 PlayCasterVisibleInstruction = PlayCasterVisibleInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterVisibleInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterVisibleInstruction:Constructor(paramList)
   self._visible = tonumber(paramList.visible)
   self._forcePlayOnSkillHolder = tonumber(paramList.forcePlayOnSkillHolder) == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterVisibleInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayCasterVisibleInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local realCaster = casterEntity
-  if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() and not self._forcePlayOnSkillHolder then
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() and not self._forcePlayOnSkillHolder then
     realCaster = casterEntity:GetSuperEntity()
   end
   local isShow = self._visible == 1
   realCaster:SetViewVisible(isShow)
   local cHP = realCaster:HP()
   if not cHP then
-    return 
+    return
   end
   local world = realCaster:GetOwnerWorld()
   local eidHPBar = cHP:GetHPSliderEntityID()
   local hpBarEntity = world:GetEntityByID(eidHPBar)
   if not hpBarEntity then
-    return 
+    return
   end
-  do
-    if realCaster:HasMonsterID() then
-      local monsrsvc = world:GetService("MonsterShowRender")
-      monsrsvc:ShowMonsterHPBar(TT, realCaster, hpBarEntity, isShow)
-    end
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  if realCaster:HasMonsterID() then
+    local monsrsvc = world:GetService("MonsterShowRender")
+    monsrsvc:ShowMonsterHPBar(TT, realCaster, hpBarEntity, isShow)
   end
 end
-
-

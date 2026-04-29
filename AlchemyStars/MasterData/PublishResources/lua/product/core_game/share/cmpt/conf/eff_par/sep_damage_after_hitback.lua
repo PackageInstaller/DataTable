@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_damage_after_hitback.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 require("skill_hit_back_effect_param")
 _class("SkillEffectParamDamageAfterHitBack", SkillHitBackEffectParam)
 SkillEffectParamDamageAfterHitBack = SkillEffectParamDamageAfterHitBack
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamDamageAfterHitBack.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamDamageAfterHitBack:Constructor(t)
   self._hitBackPercent = t.hitBackPercent
   self._hitBackFormulaID = t.hitBackFormulaID
   self._stopPercent = t.stopPercent
@@ -18,46 +11,26 @@ SkillEffectParamDamageAfterHitBack.Constructor = function(self, t)
   self._times = t.times
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamDamageAfterHitBack.GetTimes = function(self)
-  -- function num : 0_1
+function SkillEffectParamDamageAfterHitBack:GetTimes()
   return self._times
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamDamageAfterHitBack.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectParamDamageAfterHitBack:GetEffectType()
   return SkillEffectType.DamageAfterHitBack
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamDamageAfterHitBack.GetHitBackPercent = function(self)
-  -- function num : 0_3
+function SkillEffectParamDamageAfterHitBack:GetHitBackPercent()
   return self._hitBackPercent
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamDamageAfterHitBack.GetHitBackFormulaID = function(self)
-  -- function num : 0_4
+function SkillEffectParamDamageAfterHitBack:GetHitBackFormulaID()
   return self._hitBackFormulaID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamDamageAfterHitBack.GetStopPercent = function(self)
-  -- function num : 0_5
+function SkillEffectParamDamageAfterHitBack:GetStopPercent()
   return self._stopPercent
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamDamageAfterHitBack.GetStopFormulaID = function(self)
-  -- function num : 0_6
+function SkillEffectParamDamageAfterHitBack:GetStopFormulaID()
   return self._stopFormulaID
 end
-
-

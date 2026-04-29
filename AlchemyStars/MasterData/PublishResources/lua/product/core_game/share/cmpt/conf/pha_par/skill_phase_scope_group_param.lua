@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_scope_group_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseScopeGroupParam", SkillPhaseParamBase)
 SkillPhaseScopeGroupParam = SkillPhaseScopeGroupParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseScopeGroupParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseScopeGroupParam:Constructor(t)
   self._hitAnim = t.hitAnim
   self._gridEffectID = t.gridEffectID
   self._groupAtkDelay = t.groupAtkDelay
@@ -17,60 +10,43 @@ SkillPhaseScopeGroupParam.Constructor = function(self, t)
   self._finishDelayTime = t.finishDelayTime or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeGroupParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseScopeGroupParam:GetCacheTable()
   local t = {}
   if self._gridEffectID and self._gridEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._gridEffectID]).ResPath, 1}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._gridEffectID].ResPath,
+      1
+    }
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1}
+  if self._hitEffectID and 0 < self._hitEffectID then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    }
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeGroupParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseScopeGroupParam:GetPhaseType()
   return SkillViewPhaseType.ScopeGroup
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeGroupParam.GetHitAnimation = function(self)
-  -- function num : 0_3
+function SkillPhaseScopeGroupParam:GetHitAnimation()
   return self._hitAnim
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeGroupParam.GetGridEffectID = function(self)
-  -- function num : 0_4
+function SkillPhaseScopeGroupParam:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeGroupParam.GetGroupAtkDelay = function(self)
-  -- function num : 0_5
+function SkillPhaseScopeGroupParam:GetGroupAtkDelay()
   return self._groupAtkDelay
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeGroupParam.GetHitEffectID = function(self)
-  -- function num : 0_6
+function SkillPhaseScopeGroupParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseScopeGroupParam.GetFinishDelayTime = function(self)
-  -- function num : 0_7
+function SkillPhaseScopeGroupParam:GetFinishDelayTime()
   return self._finishDelayTime
 end
-
-

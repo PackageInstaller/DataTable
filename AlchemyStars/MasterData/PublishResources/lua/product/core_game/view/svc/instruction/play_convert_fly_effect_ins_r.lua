@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_convert_fly_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_grid_range_convert_ins_r")
 _class("PlayConvertFlyEffectInstruction", PlayGridRangeConvertInstruction)
 PlayConvertFlyEffectInstruction = PlayConvertFlyEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayConvertFlyEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayConvertFlyEffectInstruction:Constructor(paramList)
   self._flyEffectID = tonumber(paramList.flyEffectID)
   self._flySpeed = tonumber(paramList.flySpeed)
   if paramList.flyTime then
@@ -32,59 +25,44 @@ PlayConvertFlyEffectInstruction.Constructor = function(self, paramList)
   self._isBlock = tonumber(paramList.isBlock) or 1
   self._convertEffectID = tonumber(paramList.convertEffectID)
   self._jumpPower = tonumber(paramList.jumpPower)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayConvertFlyEffectInstruction._Convert = function(self, world, gridPos, newGridType, flushTraps, casterEntity, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayConvertFlyEffectInstruction:_Convert(world, gridPos, newGridType, flushTraps, casterEntity, TT)
   local trapServiceRender = world:GetService("TrapRender")
-  do
-    for _,trap in ipairs(flushTraps) do
-      trapServiceRender:DestroyTrap(trap)
-    end
+  for _, trap in ipairs(flushTraps) do
+    trapServiceRender:DestroyTrap(trap)
   end
-  if newGridType and PieceType.None <= newGridType and newGridType <= PieceType.Any then
-    local tran = ((casterEntity:View()):GetGameObject()).transform
+  if newGridType and newGridType >= PieceType.None and newGridType <= PieceType.Any then
+    local tran = casterEntity:View():GetGameObject().transform
     local castPos = tran:TransformPoint(Vector3(self._offsetX, self._offsetY, self._offsetZ))
-    local boardServiceRender = (casterEntity:GetOwnerWorld()):GetService("BoardRender")
+    local boardServiceRender = casterEntity:GetOwnerWorld():GetService("BoardRender")
     local targetPos = boardServiceRender:GridPos2RenderPos(gridPos)
     local dir = targetPos - castPos
-    local effectEntity = (world:GetService("Effect")):CreatePositionEffect(self._flyEffectID, castPos)
+    local effectEntity = world:GetService("Effect"):CreatePositionEffect(self._flyEffectID, castPos)
     effectEntity:SetDirection(dir)
-    local distance = (Vector3.Distance)(castPos, targetPos)
+    local distance = Vector3.Distance(castPos, targetPos)
     local flyTime = 0
     if self._flySpeed then
       flyTime = distance * self._flySpeed
     end
-    local go = (effectEntity:View()):GetGameObject()
-    if not self._jumpPower then
-      local jumpPower = (math.sqrt)(distance)
-    end
-    if not self._flyTime then
-      local dotween = (go.transform):DOJump(targetPos, jumpPower, 1, flyTime * 0.001, false)
-      dotween:OnComplete(function()
-    -- function num : 0_1_0 , upvalues : self, TT, flyTime, world, effectEntity, gridPos, newGridType, _ENV
-    if self._isBlock == 1 then
-      self:_TaskFlying(TT, flyTime, world, effectEntity, gridPos, newGridType)
-    else
-      ;
-      ((GameGlobal.TaskManager)()):CoreGameStartTask(self._TaskFlying, self, flyTime, world, effectEntity, gridPos, newGridType)
-    end
-  end
-)
+    local go = effectEntity:View():GetGameObject()
+    local jumpPower = self._jumpPower or math.sqrt(distance)
+    flyTime = self._flyTime or flyTime
+    local dotween = go.transform:DOJump(targetPos, jumpPower, 1, flyTime * 0.001, false)
+    dotween:OnComplete(function()
       if self._isBlock == 1 then
-        YIELD(TT, flyTime)
+        self:_TaskFlying(TT, flyTime, world, effectEntity, gridPos, newGridType)
+      else
+        GameGlobal.TaskManager():CoreGameStartTask(self._TaskFlying, self, flyTime, world, effectEntity, gridPos, newGridType)
       end
+    end)
+    if self._isBlock == 1 then
+      YIELD(TT, flyTime)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayConvertFlyEffectInstruction._TaskFlying = function(self, TT, flyTime, world, effectEntity, gridPos, newGridType)
-  -- function num : 0_2
+function PlayConvertFlyEffectInstruction:_TaskFlying(TT, flyTime, world, effectEntity, gridPos, newGridType)
   local boardServiceR = world:GetService("BoardRender")
   local newGridEntity = boardServiceR:ReCreateGridEntity(newGridType, gridPos)
   if newGridEntity then
@@ -95,23 +73,22 @@ PlayConvertFlyEffectInstruction._TaskFlying = function(self, TT, flyTime, world,
       fxsvc:CreateWorldPositionEffect(self._convertEffectID, gridPos)
     end
   end
-  do
-    world:DestroyEntity(effectEntity)
-  end
+  world:DestroyEntity(effectEntity)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayConvertFlyEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayConvertFlyEffectInstruction:GetCacheResource()
   local t = {}
-  if self._flyEffectID and self._flyEffectID > 0 and (Cfg.cfg_effect)[self._flyEffectID] then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._flyEffectID]).ResPath, 1})
+  if self._flyEffectID and self._flyEffectID > 0 and Cfg.cfg_effect[self._flyEffectID] then
+    table.insert(t, {
+      Cfg.cfg_effect[self._flyEffectID].ResPath,
+      1
+    })
   end
-  if self._convertEffectID and self._convertEffectID > 0 and (Cfg.cfg_effect)[self._convertEffectID] then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._convertEffectID]).ResPath, 1})
+  if self._convertEffectID and 0 < self._convertEffectID and Cfg.cfg_effect[self._convertEffectID] then
+    table.insert(t, {
+      Cfg.cfg_effect[self._convertEffectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

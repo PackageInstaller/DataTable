@@ -1,125 +1,92 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/ui_medal_card/ui_medal_card_detail_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalCardDetailController", UIController)
 UIMedalCardDetailController = UIMedalCardDetailController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalCardDetailController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIMedalCardDetailController:OnShow(uiParams)
   self:InitWidget()
   local visitData = uiParams[1]
   local cb = uiParams[2]
   self:_SetData(visitData, cb)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCardDetailController.InitWidget = function(self)
-  -- function num : 0_1
+function UIMedalCardDetailController:InitWidget()
   self.btnEdit = self:GetGameObject("btnEdit")
   local cardPool = self:GetUIComponent("UISelectObjectPath", "card")
   self.card = cardPool:SpawnObject("UIMedalCardSimple")
   self.jinianWallRed = self:GetGameObject("jinianWallRed")
-  ;
-  (self.jinianWallRed):SetActive(false)
+  self.jinianWallRed:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCardDetailController._SetData = function(self, visitData, closeCB)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMedalCardDetailController:_SetData(visitData, closeCB)
   self.isVisit = nil
   if visitData then
-    (self.btnEdit):SetActive(false)
+    self.btnEdit:SetActive(false)
     self.isVisit = true
   else
-    ;
-    (self.btnEdit):SetActive(true)
-    local medalMoule = (GameGlobal.GetModule)(MedalModule)
+    self.btnEdit:SetActive(true)
+    local medalMoule = GameGlobal.GetModule(MedalModule)
     visitData = medalMoule:GetPlacementInfo()
   end
-  do
-    ;
-    (self.card):SetData(1800, visitData, self.isVisit)
-    self.closeCB = closeCB
-    if not self.isVisit then
-      self.mMedal = (GameGlobal.GetModule)(MedalModule)
-      self.data = (self.mMedal):GetN22MedalEditData()
-      self.listData = UIMedalListData:New()
-      local client_medal_info = (self.mMedal):GetMedalVec()
-      ;
-      (self.listData):Init(client_medal_info)
-      local listAll = (self.listData):GetItemsByFilter(0)
-      local jinianRed = false
-      for _,item in ipairs(listAll) do
-        if item:IsReceive() then
-          local id = item:GetID()
-          local boardMedal = (self.data):GetBoardMedalById(id)
-        end
-        if not boardMedal or item:IsNew() then
+  self.card:SetData(1800, visitData, self.isVisit)
+  self.closeCB = closeCB
+  if not self.isVisit then
+    self.mMedal = GameGlobal.GetModule(MedalModule)
+    self.data = self.mMedal:GetN22MedalEditData()
+    self.listData = UIMedalListData:New()
+    local client_medal_info = self.mMedal:GetMedalVec()
+    self.listData:Init(client_medal_info)
+    local listAll = self.listData:GetItemsByFilter(0)
+    local jinianRed = false
+    for _, item in ipairs(listAll) do
+      if item:IsReceive() then
+        local id = item:GetID()
+        local boardMedal = self.data:GetBoardMedalById(id)
+        if boardMedal then
+        elseif item:IsNew() then
           jinianRed = true
         end
       end
-      ;
-      (self.jinianWallRed):SetActive(jinianRed)
     end
+    self.jinianWallRed:SetActive(jinianRed)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCardDetailController.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UIMedalCardDetailController:BgOnClick(go)
   self:CloseDialog()
   if self.closeCB then
-    (self.closeCB)()
+    self.closeCB()
     self.closeCB = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCardDetailController.BtnBackOnClick = function(self, go)
-  -- function num : 0_4
+function UIMedalCardDetailController:BtnBackOnClick(go)
   self:CloseDialog()
   if self.closeCB then
-    (self.closeCB)()
+    self.closeCB()
     self.closeCB = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCardDetailController.BtnEditOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMedalCardDetailController:BtnEditOnClick(go)
   self:ShowDialog("UIN22MedalEdit", false, function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
     if not self.isVisit then
-      self.mMedal = (GameGlobal.GetModule)(MedalModule)
-      self.data = (self.mMedal):GetN22MedalEditData()
+      self.mMedal = GameGlobal.GetModule(MedalModule)
+      self.data = self.mMedal:GetN22MedalEditData()
       self.listData = UIMedalListData:New()
-      local client_medal_info = (self.mMedal):GetMedalVec()
-      ;
-      (self.listData):Init(client_medal_info)
-      local listAll = (self.listData):GetItemsByFilter(0)
+      local client_medal_info = self.mMedal:GetMedalVec()
+      self.listData:Init(client_medal_info)
+      local listAll = self.listData:GetItemsByFilter(0)
       local jinianRed = false
-      for _,item in ipairs(listAll) do
+      for _, item in ipairs(listAll) do
         if item:IsReceive() then
           local id = item:GetID()
-          local boardMedal = (self.data):GetBoardMedalById(id)
-        end
-        if not boardMedal or item:IsNew() then
-          jinianRed = true
+          local boardMedal = self.data:GetBoardMedalById(id)
+          if boardMedal then
+          elseif item:IsNew() then
+            jinianRed = true
+          end
         end
       end
-      ;
-      (self.jinianWallRed):SetActive(jinianRed)
+      self.jinianWallRed:SetActive(jinianRed)
     end
-  end
-)
+  end)
 end
-
-

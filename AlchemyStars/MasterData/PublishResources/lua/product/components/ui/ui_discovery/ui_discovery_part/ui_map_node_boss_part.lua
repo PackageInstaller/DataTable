@@ -1,34 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_part/ui_map_node_boss_part.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMapNodeBossPart", UIMapNodeBasePart)
 UIMapNodeBossPart = UIMapNodeBossPart
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMapNodeBossPart.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((UIMapNodeBossPart.super).OnShow)(self)
+function UIMapNodeBossPart:OnShow()
+  UIMapNodeBossPart.super.OnShow(self)
   self.imgCG = self:GetUIComponent("RawImageLoader", "imgCG")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeBossPart.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((UIMapNodeBossPart.super).OnHide)(self)
-  ;
-  (self.imgCG):DestoryLastImage()
+function UIMapNodeBossPart:OnHide()
+  UIMapNodeBossPart.super.OnHide(self)
+  self.imgCG:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeBossPart.Flush = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((UIMapNodeBossPart.super).Flush)(self)
-  ;
-  (self.imgCG):LoadImage((self.nodeInfo).monstercg)
+function UIMapNodeBossPart:Flush()
+  UIMapNodeBossPart.super.Flush(self)
+  self.imgCG:LoadImage(self.nodeInfo.monstercg)
 end
-
-

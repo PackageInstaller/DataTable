@@ -1,46 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s1/common/ui_season_share_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonShareBtn", UICustomWidget)
 UISeasonShareBtn = UISeasonShareBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonShareBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonShareBtn:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonShareBtn.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonShareBtn:InitWidget()
   self.icon = self:GetUIComponent("Image", "Icon")
   self.count = self:GetUIComponent("UILocalizationText", "Count")
   self.award = self:GetGameObject("Award")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonShareBtn.SetData = function(self, count, onClick)
-  -- function num : 0_2
+function UISeasonShareBtn:SetData(count, onClick)
   self._onClick = onClick
-  if count and count > 0 then
-    (self.count):SetText(count)
-    ;
-    (self.award):SetActive(true)
+  if count and 0 < count then
+    self.count:SetText(count)
+    self.award:SetActive(true)
   else
-    ;
-    (self.award):SetActive(false)
+    self.award:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonShareBtn.ShareBtnOnClick = function(self, go)
-  -- function num : 0_3
-  (self._onClick)()
+function UISeasonShareBtn:ShareBtnOnClick(go)
+  self._onClick()
 end
-
-

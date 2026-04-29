@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_joshua_trap_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayJohuaTrapEffectInstruction", BaseInstruction)
 PlayJohuaTrapEffectInstruction = PlayJohuaTrapEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayJohuaTrapEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayJohuaTrapEffectInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._intervalEffect1 = tonumber(paramList.intervalEffect1)
   self._intervalEffect2 = tonumber(paramList.intervalEffect2)
@@ -20,101 +13,94 @@ PlayJohuaTrapEffectInstruction.Constructor = function(self, paramList)
   local trapIDList = paramList.trapIDList
   self._trapIDList = {}
   if trapIDList then
-    local arr = (string.split)(trapIDList, "|")
-    for k,idStr in ipairs(arr) do
+    local arr = string.split(trapIDList, "|")
+    for k, idStr in ipairs(arr) do
       local trapID = tonumber(idStr)
-      ;
-      (table.insert)(self._trapIDList, trapID)
+      table.insert(self._trapIDList, trapID)
     end
   end
-  do
-    self._materialAnim = paramList.materialAnim
-  end
+  self._materialAnim = paramList.materialAnim
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayJohuaTrapEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayJohuaTrapEffectInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
-  if self._intervalEffect1 and self._intervalEffect1 > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._intervalEffect1]).ResPath, 10})
+  if self._intervalEffect1 and 0 < self._intervalEffect1 then
+    table.insert(t, {
+      Cfg.cfg_effect[self._intervalEffect1].ResPath,
+      10
+    })
   end
-  if self._intervalEffect2 and self._intervalEffect2 > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._intervalEffect2]).ResPath, 10})
+  if self._intervalEffect2 and 0 < self._intervalEffect2 then
+    table.insert(t, {
+      Cfg.cfg_effect[self._intervalEffect2].ResPath,
+      10
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayJohuaTrapEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayJohuaTrapEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillResultArray = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.ResetGridElement)
   local pieceService = world:GetService("Piece")
   local svcPlayBuff = world:GetService("PlayBuff")
   local trapServiceRender = world:GetService("TrapRender")
   local effectService = world:GetService("Effect")
   local utilDataSvc = world:GetService("UtilData")
-  local boardGridPosList = (utilDataSvc:GetCloneBoardGridPos())
-  local tarpEntity = nil
-  local trapGroup = world:GetGroup((world.BW_WEMatchers).Trap)
-  for _,e in ipairs(trapGroup:GetEntities()) do
+  local boardGridPosList = utilDataSvc:GetCloneBoardGridPos()
+  local tarpEntity
+  local trapGroup = world:GetGroup(world.BW_WEMatchers.Trap)
+  for _, e in ipairs(trapGroup:GetEntities()) do
     local trapRenderCmpt = e:TrapRender()
     local trapPos = e:GetRenderGridPosition()
-    if trapRenderCmpt and (table.icontains)(self._trapIDList, trapRenderCmpt:GetTrapID()) and (table.icontains)(boardGridPosList, trapPos) then
+    if trapRenderCmpt and table.icontains(self._trapIDList, trapRenderCmpt:GetTrapID()) and table.icontains(boardGridPosList, trapPos) then
       tarpEntity = e
       break
     end
   end
-  do
-    tarpEntity:PlayMaterialAnim(self._materialAnim)
-    local tarpPos = tarpEntity:GetRenderGridPosition()
-    local tarpDir = tarpEntity:GetRenderGridDirection()
-    local effectEntity = effectService:CreateWorldPositionDirectionEffect(self._effectID, tarpPos, tarpDir)
-    effectEntity:SetDirection(tarpDir)
-    local resultPosList = {}
-    local scopeResult = skillResultArray:GetSkillEffectScopeResult()
-    if scopeResult then
-      local array = scopeResult:GetAttackRange()
-      for _,v in pairs(array) do
-        if not (table.icontains)(resultPosList, R28_PC92) then
-          (table.insert)(resultPosList, R28_PC92)
-        end
+  tarpEntity:PlayMaterialAnim(self._materialAnim)
+  local tarpPos = tarpEntity:GetRenderGridPosition()
+  local tarpDir = tarpEntity:GetRenderGridDirection()
+  local effectEntity = effectService:CreateWorldPositionDirectionEffect(self._effectID, tarpPos, tarpDir)
+  effectEntity:SetDirection(tarpDir)
+  local resultPosList = {}
+  local scopeResult = skillResultArray:GetSkillEffectScopeResult()
+  if scopeResult then
+    local array = scopeResult:GetAttackRange()
+    for _, v in pairs(array) do
+      if not table.icontains(resultPosList, v) then
+        table.insert(resultPosList, v)
       end
     end
-    do
-      local FarToNearList = {}
-      local NearToFarList = {}
-      local nearToFarList = self:_CalcScopeForSquareRing(world, tarpPos)
-      local farToNearList = self:_ReverseRingTable(nearToFarList)
-      YIELD(TT, self._startWait)
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, farToNearList, resultPosList, effectService, self
-    for i,posList in pairs(farToNearList) do
-      for _,pos in pairs(posList) do
-        if (table.icontains)(resultPosList, pos) then
+  end
+  local FarToNearList = {}
+  local NearToFarList = {}
+  local nearToFarList = self:_CalcScopeForSquareRing(world, tarpPos)
+  local farToNearList = self:_ReverseRingTable(nearToFarList)
+  YIELD(TT, self._startWait)
+  GameGlobal.TaskManager():StartTask(function(TT)
+    for i, posList in pairs(farToNearList) do
+      for _, pos in pairs(posList) do
+        if table.icontains(resultPosList, pos) then
           effectService:CreateWorldPositionEffect(self._intervalEffect1, pos)
         end
       end
       YIELD(TT, self._intervalTime1)
     end
-  end
-)
-      YIELD(TT, self._intervalWait)
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_2_1 , upvalues : _ENV, nearToFarList, resultPosList, effectService, self, pieceService, skillResultArray, world, casterEntity, svcPlayBuff
-    for i,posList in pairs(nearToFarList) do
+  end)
+  YIELD(TT, self._intervalWait)
+  GameGlobal.TaskManager():StartTask(function(TT)
+    for i, posList in pairs(nearToFarList) do
       local tConvertInfo = {}
-      for _,pos in pairs(posList) do
-        if (table.icontains)(resultPosList, pos) then
+      for _, pos in pairs(posList) do
+        if table.icontains(resultPosList, pos) then
           effectService:CreateWorldPositionEffect(self._intervalEffect2, pos)
           local nOldGridType = PieceType.None
           local gridEntity = pieceService:FindPieceEntity(pos)
@@ -124,36 +110,23 @@ PlayJohuaTrapEffectInstruction.DoInstruction = function(self, TT, casterEntity, 
           local flushTraps = skillResultArray:GetFlushTrapsAt(pos)
           self:_Convert(world, pos, nNewGridType, flushTraps, TT)
           local convertInfo = NTGridConvert_ConvertInfo:New(pos, nOldGridType, nNewGridType)
-          ;
-          (table.insert)(tConvertInfo, convertInfo)
+          table.insert(tConvertInfo, convertInfo)
           pieceService:RemovePrismAt(pos)
         end
       end
-      do
-        do
-          if #tConvertInfo > 0 then
-            local notify = NTGridConvert:New(casterEntity, tConvertInfo)
-            notify:SetConvertEffectType(SkillEffectType.ResetGridElement)
-            notify.__attackPosMatchRequired = true
-            svcPlayBuff:PlayBuffView(TT, notify)
-          end
-          YIELD(TT, self._intervalTime2)
-          -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+      if 0 < #tConvertInfo then
+        local notify = NTGridConvert:New(casterEntity, tConvertInfo)
+        notify:SetConvertEffectType(SkillEffectType.ResetGridElement)
+        notify.__attackPosMatchRequired = true
+        svcPlayBuff:PlayBuffView(TT, notify)
       end
+      YIELD(TT, self._intervalTime2)
     end
-  end
-)
-      YIELD(TT)
-    end
-  end
+  end)
+  YIELD(TT)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayJohuaTrapEffectInstruction._CalcScopeForSquareRing = function(self, world, castPos)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayJohuaTrapEffectInstruction:_CalcScopeForSquareRing(world, castPos)
   local utilDataSvc = world:GetService("UtilData")
   local posDic = {}
   local hasRingPosList = {}
@@ -161,13 +134,12 @@ PlayJohuaTrapEffectInstruction._CalcScopeForSquareRing = function(self, world, c
   posDic[1] = {castPos}
   for i = 1, 7 do
     local curRingPosList = {}
-    local listTotalData = (ComputeScopeRange.ComputeRange_SquareRing)(castPos, 1, i)
-    for key,pos in ipairs(listTotalData) do
+    local listTotalData = ComputeScopeRange.ComputeRange_SquareRing(castPos, 1, i)
+    for key, pos in ipairs(listTotalData) do
       local isValidGrid = utilDataSvc:IsValidPiecePos(pos)
-      if isValidGrid and not (table.icontains)(hasRingPosList, pos) then
-        (table.insert)(curRingPosList, pos)
-        ;
-        (table.insert)(hasRingPosList, pos)
+      if isValidGrid and not table.icontains(hasRingPosList, pos) then
+        table.insert(curRingPosList, pos)
+        table.insert(hasRingPosList, pos)
       end
     end
     posDic[i + 1] = curRingPosList
@@ -175,94 +147,72 @@ PlayJohuaTrapEffectInstruction._CalcScopeForSquareRing = function(self, world, c
   return posDic
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayJohuaTrapEffectInstruction._ReverseRingTable = function(self, gridRange)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayJohuaTrapEffectInstruction:_ReverseRingTable(gridRange)
   local newGridRange = {}
   for i = #gridRange, 1, -1 do
     local value = gridRange[i]
-    ;
-    (table.insert)(newGridRange, value)
+    table.insert(newGridRange, value)
   end
   return newGridRange
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayJohuaTrapEffectInstruction._AbsDistanceSort = function(self, gridList, castPos)
-  -- function num : 0_5 , upvalues : _ENV
+function PlayJohuaTrapEffectInstruction:_AbsDistanceSort(gridList, castPos)
   local posDic = {}
-  for _,pos in pairs(gridList) do
-    local dis = (Vector2.Distance)(castPos, pos)
+  for _, pos in pairs(gridList) do
+    local dis = Vector2.Distance(castPos, pos)
     if not posDic[dis] then
       posDic[dis] = {}
     end
-    ;
-    (table.insert)(posDic[dis], pos)
+    table.insert(posDic[dis], pos)
   end
-  local sortDicFunc = function(dic)
-    -- function num : 0_5_0 , upvalues : _ENV
+  
+  local function sortDicFunc(dic)
     local newDic = {}
     local keyList = {}
-    for k,_ in pairs(dic) do
-      (table.insert)(keyList, k)
+    for k, _ in pairs(dic) do
+      table.insert(keyList, k)
     end
-    ;
-    (table.sort)(keyList, function(a, b)
-      -- function num : 0_5_0_0
-      do return a < b end
-      -- DECOMPILER ERROR: 1 unprocessed JMP targets
-    end
-)
+    table.sort(keyList, function(a, b)
+      return a < b
+    end)
     for i = 1, #keyList do
       newDic[#newDic + 1] = dic[keyList[i]]
     end
     return newDic
   end
-
+  
   posDic = sortDicFunc(posDic)
-  local maxGridCount = (table.count)(posDic)
+  local maxGridCount = table.count(posDic)
   local res = {}
   res[1] = posDic
   return res, maxGridCount
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayJohuaTrapEffectInstruction._ReverseTable = function(self, gridRange)
-  -- function num : 0_6 , upvalues : _ENV
+function PlayJohuaTrapEffectInstruction:_ReverseTable(gridRange)
   local tmp = {}
   local tab = gridRange[1]
   for i = 1, #tab do
     local key = #tab
-    tmp[i] = (table.remove)(tab)
+    tmp[i] = table.remove(tab)
   end
   gridRange[1] = tmp
   return gridRange
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayJohuaTrapEffectInstruction._Convert = function(self, world, gridPos, newGridType, flushTraps, TT)
-  -- function num : 0_7 , upvalues : _ENV
-  if flushTraps and (table.count)(flushTraps) > 0 then
+function PlayJohuaTrapEffectInstruction:_Convert(world, gridPos, newGridType, flushTraps, TT)
+  if flushTraps and table.count(flushTraps) > 0 then
     local trapServiceRender = world:GetService("TrapRender")
     trapServiceRender:PlayTrapDieSkill(TT, flushTraps)
-    for _,trap in ipairs(flushTraps) do
+    for _, trap in ipairs(flushTraps) do
       trapServiceRender:DestroyTrap(TT, trap)
     end
   end
-  do
-    if newGridType and PieceType.None <= newGridType and newGridType <= PieceType.Any then
-      local boardServiceR = world:GetService("BoardRender")
-      local newGridEntity = boardServiceR:ReCreateGridEntity(newGridType, gridPos)
-      if newGridEntity then
-        local pieceSvc = world:GetService("Piece")
-        pieceSvc:SetPieceEntityAnimNormal(newGridEntity)
-      end
+  if newGridType and newGridType >= PieceType.None and newGridType <= PieceType.Any then
+    local boardServiceR = world:GetService("BoardRender")
+    local newGridEntity = boardServiceR:ReCreateGridEntity(newGridType, gridPos)
+    if newGridEntity then
+      local pieceSvc = world:GetService("Piece")
+      pieceSvc:SetPieceEntityAnimNormal(newGridEntity)
     end
   end
 end
-
-

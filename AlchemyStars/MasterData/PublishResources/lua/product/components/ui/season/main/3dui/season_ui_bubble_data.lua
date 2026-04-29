@@ -1,18 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/3dui/season_ui_bubble_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonUIBubbleData", Object)
 SeasonUIBubbleData = SeasonUIBubbleData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonUIBubbleData.Constructor = function(self, bubble)
-  -- function num : 0_0
+function SeasonUIBubbleData:Constructor(bubble)
   self.text = bubble.text
   self.time = bubble.bubbleTime * 1000
   self.delay = bubble.textDelay * 1000
   self.audio = bubble.audio
 end
-
-

@@ -1,23 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/ranking/ui_worldboss_ranking.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossRanking", UICustomWidget)
 UIWorldBossRanking = UIWorldBossRanking
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossRanking.Constructor = function(self)
-  -- function num : 0_0
+function UIWorldBossRanking:Constructor()
   self._dicTeam = {}
   self._dicWidget = {}
-  self._page = {cur = 0, max = 0, count = 0, perPage = 50, totalCount = 0}
+  self._page = {
+    cur = 0,
+    max = 0,
+    count = 0,
+    perPage = 50,
+    totalCount = 0
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRanking.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIWorldBossRanking:OnShow(uiParams)
   self._uiRanking = self:GetUIComponent("RectTransform", "uiRanking")
   self._uiCalculating = self:GetUIComponent("RectTransform", "uiCalculating")
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
@@ -30,237 +26,153 @@ UIWorldBossRanking.OnShow = function(self, uiParams)
   self._listViewInited = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRanking.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for k,v in pairs(self._dicWidget) do
+function UIWorldBossRanking:OnHide()
+  for k, v in pairs(self._dicWidget) do
     v:UnLoad()
     v:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRanking.Flush = function(self, ranking, rankingSelf, isCurRanking)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWorldBossRanking:Flush(ranking, rankingSelf, isCurRanking)
   self._ranking = ranking
   self._rankingSelf = rankingSelf
   self._isCurRanking = isCurRanking
   if false then
     self._ranking = {}
     for i = 1, 270 do
-      (table.insert)(self._ranking, ranking[1])
+      table.insert(self._ranking, ranking[1])
     end
   end
-  do
-    if #self._ranking == 0 then
-      ((self._uiRanking).gameObject):SetActive(false)
-      ;
-      ((self._uiCalculating).gameObject):SetActive(true)
-    else
-      ;
-      ((self._uiRanking).gameObject):SetActive(true)
-      ;
-      ((self._uiCalculating).gameObject):SetActive(false)
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._page).totalCount = #self._ranking
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._page).max = (math.ceil)((self._page).totalCount / (self._page).perPage)
-      -- DECOMPILER ERROR at PC58: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._page).cur = 1
-      self:DynamicSv()
-      self:RankingSelf()
-    end
-    if self._isCurRanking then
-      (self._txtCalculating):SetText((StringTable.Get)("str_world_boss_n31_ranking_calculating"))
-    else
-      ;
-      (self._txtCalculating):SetText((StringTable.Get)("str_world_boss_n31_ranking_pre_calculating"))
-    end
+  if 0 == #self._ranking then
+    self._uiRanking.gameObject:SetActive(false)
+    self._uiCalculating.gameObject:SetActive(true)
+  else
+    self._uiRanking.gameObject:SetActive(true)
+    self._uiCalculating.gameObject:SetActive(false)
+    self._page.totalCount = #self._ranking
+    self._page.max = math.ceil(self._page.totalCount / self._page.perPage)
+    self._page.cur = 1
+    self:DynamicSv()
+    self:RankingSelf()
+  end
+  if self._isCurRanking then
+    self._txtCalculating:SetText(StringTable.Get("str_world_boss_n31_ranking_calculating"))
+  else
+    self._txtCalculating:SetText(StringTable.Get("str_world_boss_n31_ranking_pre_calculating"))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRanking.DynamicSv = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._page).count = (self._page).totalCount - (self._page).perPage * ((self._page).cur - 1)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._page).count = (math.min)((self._page).count, (self._page).perPage)
-  ;
-  (self._txtPage):SetText((string.format)("%d/%d", (self._page).cur, (self._page).max))
+function UIWorldBossRanking:DynamicSv()
+  self._page.count = self._page.totalCount - self._page.perPage * (self._page.cur - 1)
+  self._page.count = math.min(self._page.count, self._page.perPage)
+  self._txtPage:SetText(string.format("%d/%d", self._page.cur, self._page.max))
   if self._listViewInited then
-    (self._scrollView):SetListItemCount((self._page).count)
-    ;
-    (self._scrollView):ResetListView()
-    ;
-    (self._scrollView):RefreshAllShownItem()
-    ;
-    (self._scrollView):MovePanelToItemIndex(0, 0)
+    self._scrollView:SetListItemCount(self._page.count)
+    self._scrollView:ResetListView()
+    self._scrollView:RefreshAllShownItem()
+    self._scrollView:MovePanelToItemIndex(0, 0)
   else
     self._listViewInited = true
-    ;
-    (self._scrollView):InitListView((self._page).count, function(scrollView, index)
-    -- function num : 0_4_0 , upvalues : self
-    return self:InitSpritListInfo(scrollView, index)
-  end
-, nil)
+    self._scrollView:InitListView(self._page.count, function(scrollView, index)
+      return self:InitSpritListInfo(scrollView, index)
+    end, nil)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRanking.InitSpritListInfo = function(self, scrollView, index)
-  -- function num : 0_5 , upvalues : _ENV
+function UIWorldBossRanking:InitSpritListInfo(scrollView, index)
   local item = scrollView:NewListViewItem("UIWorldBossRankingWidget")
-  local widget = (self._dicWidget)[item:GetInstanceID()]
+  local widget = self._dicWidget[item:GetInstanceID()]
   if widget == nil then
     local uiWidgetName = "UIWorldBossRankingWidget"
     widget = _createInstance(uiWidgetName)
     widget:SetName(uiWidgetName)
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._dicWidget)[item:GetInstanceID()] = widget
+    self._dicWidget[item:GetInstanceID()] = widget
     local view = item:GetComponent("UIView")
     widget:Load(view, self:RootUIOwner())
   end
-  do
-    local luaIndex = (self._page).perPage * ((self._page).cur - 1)
-    luaIndex = luaIndex + index + 1
-    widget:Flush((self._ranking)[luaIndex], luaIndex, self._isCurRanking, self)
-    return item
-  end
+  local luaIndex = self._page.perPage * (self._page.cur - 1)
+  luaIndex = luaIndex + index + 1
+  widget:Flush(self._ranking[luaIndex], luaIndex, self._isCurRanking, self)
+  return item
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRanking.RankingSelf = function(self)
-  -- function num : 0_6
+function UIWorldBossRanking:RankingSelf()
   if self._rankingSelf == nil then
-    ((self._uiCurPlayer).gameObject):SetActive(false)
-    ;
-    ((self._txtOfflistTips).gameObject):SetActive(true)
+    self._uiCurPlayer.gameObject:SetActive(false)
+    self._txtOfflistTips.gameObject:SetActive(true)
   else
-    ;
-    ((self._uiCurPlayer).gameObject):SetActive(true)
-    ;
-    ((self._txtOfflistTips).gameObject):SetActive(false)
-    local widgetSelf = (self._uiCurPlayerLoader):SpawnObject("UIWorldBossRankingWidget")
-    widgetSelf:Flush(self._rankingSelf, (self._rankingSelf).luaIndex, self._isCurRanking)
+    self._uiCurPlayer.gameObject:SetActive(true)
+    self._txtOfflistTips.gameObject:SetActive(false)
+    local widgetSelf = self._uiCurPlayerLoader:SpawnObject("UIWorldBossRankingWidget")
+    widgetSelf:Flush(self._rankingSelf, self._rankingSelf.luaIndex, self._isCurRanking)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRanking.BtnLeftOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  local old = (self._page).cur
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._page).cur = (math.max)((self._page).cur - 1, 1)
-  if (self._page).cur ~= old then
+function UIWorldBossRanking:BtnLeftOnClick(go)
+  local old = self._page.cur
+  self._page.cur = math.max(self._page.cur - 1, 1)
+  if self._page.cur ~= old then
     self:DynamicSv()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRanking.BtnRightOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  local old = (self._page).cur
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._page).cur = (math.min)((self._page).cur + 1, (self._page).max)
-  if (self._page).cur ~= old then
+function UIWorldBossRanking:BtnRightOnClick(go)
+  local old = self._page.cur
+  self._page.cur = math.min(self._page.cur + 1, self._page.max)
+  if self._page.cur ~= old then
     self:DynamicSv()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRanking.BtnViewOnClick = function(self, go, data)
-  -- function num : 0_9 , upvalues : _ENV
-  local teamInfo = (self._dicTeam)[data.pstid]
+function UIWorldBossRanking:BtnViewOnClick(go, data)
+  local teamInfo = self._dicTeam[data.pstid]
   if teamInfo == nil then
     local lockName = "UIWorldBossRanking:BtnViewOnClick"
-    do
-      self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, lockName, _ENV, teamInfo, data
-    self:Lock(lockName)
-    local res = nil
-    local worldBossModule = self:GetModule(WorldBossModule)
-    res = worldBossModule:GetRankOneDetail(TT, data.pstid)
-    self:UnLock(lockName)
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-    if res:GetSucc() then
-      (self._dicTeam)[data.pstid] = teamInfo
-      self:ShowDialog("UIWorldBossViewTeam", data, teamInfo)
-    end
-  end
-)
-    end
+    self:StartTask(function(TT)
+      self:Lock(lockName)
+      local res
+      local worldBossModule = self:GetModule(WorldBossModule)
+      res, teamInfo = worldBossModule:GetRankOneDetail(TT, data.pstid)
+      self:UnLock(lockName)
+      if res:GetSucc() then
+        self._dicTeam[data.pstid] = teamInfo
+        self:ShowDialog("UIWorldBossViewTeam", data, teamInfo)
+      end
+    end)
   else
-    do
-      self:ShowDialog("UIWorldBossViewTeam", data, teamInfo)
-    end
+    self:ShowDialog("UIWorldBossViewTeam", data, teamInfo)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRanking.InAnimation = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIWorldBossRanking:InAnimation()
   local sortList = {}
-  for k,v in pairs(self._dicWidget) do
-    if (v:GetGameObject()).activeSelf then
-      (table.insert)(sortList, v)
+  for k, v in pairs(self._dicWidget) do
+    if v:GetGameObject().activeSelf then
+      table.insert(sortList, v)
     end
   end
-  ;
-  (table.sort)(sortList, function(a, b)
-    -- function num : 0_10_0
-    do return a:RankingIndex() < b:RankingIndex() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(sortList, function(a, b)
+    return a:RankingIndex() < b:RankingIndex()
+  end)
   local lockName = "UIWorldBossRanking:InAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_10_1 , upvalues : self, lockName, _ENV, sortList
     self:Lock(lockName)
-    for k,v in pairs(sortList) do
-      (v:GetGameObject()):SetActive(false)
+    for k, v in pairs(sortList) do
+      v:GetGameObject():SetActive(false)
     end
-    for k,v in pairs(sortList) do
-      (v:GetGameObject()):SetActive(true)
+    for k, v in pairs(sortList) do
+      v:GetGameObject():SetActive(true)
       v:PlayAnimation("UIWorldBossRanking_in")
       YIELD(TT, 30)
     end
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
 _class("UIWorldBossRankingWidget", UICustomWidget)
 UIWorldBossRankingWidget = UIWorldBossRankingWidget
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossRankingWidget.OnShow = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIWorldBossRankingWidget:OnShow()
   self._txtPosition = self:GetUIComponent("UILocalizationText", "txtPosition")
   self._uiPosition = self:GetUIComponent("RectTransform", "uiPosition")
   self._playerHeadLoader = self:GetUIComponent("RawImageLoader", "playerHead")
@@ -275,87 +187,69 @@ UIWorldBossRankingWidget.OnShow = function(self)
   self._animation = self:GetUIComponent("Animation", "animation")
   self._btnPlayer = self:GetGameObject("btnPlayer")
   local GetChildComponent = UISerialAutoFightInfo.GetChildComponent
-  local uiPosition = {GetChildComponent(self, self._uiPosition, "RectTransform", "1"), GetChildComponent(self, self._uiPosition, "RectTransform", "2"), GetChildComponent(self, self._uiPosition, "RectTransform", "3"); uiRoot = self._uiPosition}
+  local uiPosition = {
+    uiRoot = self._uiPosition,
+    GetChildComponent(self, self._uiPosition, "RectTransform", "1"),
+    GetChildComponent(self, self._uiPosition, "RectTransform", "2"),
+    GetChildComponent(self, self._uiPosition, "RectTransform", "3")
+  }
   self._uiPosition = uiPosition
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRankingWidget.OnHide = function(self)
-  -- function num : 0_12
+function UIWorldBossRankingWidget:OnHide()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRankingWidget.RankingIndex = function(self)
-  -- function num : 0_13
+function UIWorldBossRankingWidget:RankingIndex()
   return self._index
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRankingWidget.PlayAnimation = function(self, animName)
-  -- function num : 0_14
-  (self._animation):Play(animName)
+function UIWorldBossRankingWidget:PlayAnimation(animName)
+  self._animation:Play(animName)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRankingWidget.Flush = function(self, data, index, isCurRanking, widgetRanking)
-  -- function num : 0_15 , upvalues : _ENV
+function UIWorldBossRankingWidget:Flush(data, index, isCurRanking, widgetRanking)
   self._data = data
   self._index = index
   self._isCurRanking = isCurRanking
   self._widgetRanking = widgetRanking
-  local cfg_header = (Cfg.cfg_role_head_image)[(self._data).head]
+  local cfg_header = Cfg.cfg_role_head_image[self._data.head]
   if cfg_header then
-    ((self._playerHeadLoader).gameObject):SetActive(true)
-    ;
-    (self._playerHeadLoader):LoadImage(cfg_header.Icon)
+    self._playerHeadLoader.gameObject:SetActive(true)
+    self._playerHeadLoader:LoadImage(cfg_header.Icon)
   else
-    ;
-    ((self._playerHeadLoader).gameObject):SetActive(false)
+    self._playerHeadLoader.gameObject:SetActive(false)
   end
-  local headBg = (self._data).head_bg
-  local cfgHeadBg = (Cfg.cfg_player_head_bg)[headBg]
+  local headBg = self._data.head_bg
+  local cfgHeadBg = Cfg.cfg_player_head_bg[headBg]
   if not cfgHeadBg then
-    headBg = (HelperProxy:GetInstance()):GetHeadBgDefaultID()
-    cfgHeadBg = (Cfg.cfg_player_head_bg)[headBg]
+    headBg = HelperProxy:GetInstance():GetHeadBgDefaultID()
+    cfgHeadBg = Cfg.cfg_player_head_bg[headBg]
   end
-  ;
-  (self._playerHeadBgLoader):LoadImage(cfgHeadBg.Icon)
-  local headFrame = (self._data).frame_id
+  self._playerHeadBgLoader:LoadImage(cfgHeadBg.Icon)
+  local headFrame = self._data.frame_id
   if not headFrame or headFrame == 0 then
-    headFrame = (HelperProxy:GetInstance()):GetHeadFrameDefaultID()
+    headFrame = HelperProxy:GetInstance():GetHeadFrameDefaultID()
   end
-  local cfgHeadFrame = (Cfg.cfg_role_head_frame)[headFrame]
-  ;
-  (self._playerHeadFrameLoader):LoadImage(cfgHeadFrame.Icon)
-  local headDanBadge = (self._playerHeadBadge):SpawnObject("UIWorldBossDanBadge")
+  local cfgHeadFrame = Cfg.cfg_role_head_frame[headFrame]
+  self._playerHeadFrameLoader:LoadImage(cfgHeadFrame.Icon)
+  local headDanBadge = self._playerHeadBadge:SpawnObject("UIWorldBossDanBadge")
   local badgeType = UIWroldBossBadgeStype.WBBS_SIMPLE
-  local badgeRect = ((self._playerHeadBadge):Engine()).transform
-  local missionId = (self:RootUIOwner())._missionId
-  local danIndex = ((UIWorldBossHelper.GetUiLegendDanCfg)(missionId)).ID
-  headDanBadge:SetData(badgeType, danIndex, self._index, (badgeRect.sizeDelta).x, (badgeRect.sizeDelta).y)
+  local badgeRect = self._playerHeadBadge:Engine().transform
+  local missionId = self:RootUIOwner()._missionId
+  local danIndex = UIWorldBossHelper.GetUiLegendDanCfg(missionId).ID
+  headDanBadge:SetData(badgeType, danIndex, self._index, badgeRect.sizeDelta.x, badgeRect.sizeDelta.y)
   headDanBadge:EnableRankLevel(false)
   local loginModule = self:GetModule(LoginModule)
-  local showId = loginModule:GetShowIdByPstId((self._data).pstid)
+  local showId = loginModule:GetShowIdByPstId(self._data.pstid)
   local roleModule = self:GetModule(RoleModule)
   local selfPstid = roleModule:GetPstId()
-  ;
-  (self._txtPosition):SetText(self._index)
-  ;
-  (self._playerName):SetText((self._data).nick)
-  ;
-  (self._playerId):SetText((string.format)("ID:%d", showId))
-  ;
-  (self._txtDamageBg):SetText((string.format)("%.7d", (self._data).damage))
-  ;
-  (self._txtDamage):SetText((self._data).damage)
-  ;
-  ((self._btnView).gameObject):SetActive(not self._isCurRanking or selfPstid ~= (self._data).pstid)
-  ;
-  (self._btnPlayer):SetActive(selfPstid ~= (self._data).pstid)
+  self._txtPosition:SetText(self._index)
+  self._playerName:SetText(self._data.nick)
+  self._playerId:SetText(string.format("ID:%d", showId))
+  self._txtDamageBg:SetText(string.format("%.7d", self._data.damage))
+  self._txtDamage:SetText(self._data.damage)
+  self._btnView.gameObject:SetActive(self._isCurRanking and selfPstid ~= self._data.pstid)
+  self._btnPlayer:SetActive(selfPstid ~= self._data.pstid)
   local showBtnView = false
   local showPlayerId = false
   local showUiPosition = false
@@ -367,62 +261,41 @@ UIWorldBossRankingWidget.Flush = function(self, data, index, isCurRanking, widge
   if self._index == 1 then
     showUiPosition = true
     show1Position = true
-    clrPlayerName = Color(0.67058823529412, 0.62352941176471, 0.50588235294118, 1)
+    clrPlayerName = Color(0.6705882352941176, 0.6235294117647059, 0.5058823529411764, 1)
   elseif self._index == 2 then
     showUiPosition = true
     show2Position = true
-    clrPlayerName = Color(0.71372549019608, 0.73725490196078, 0.87843137254902, 1)
+    clrPlayerName = Color(0.7137254901960784, 0.7372549019607844, 0.8784313725490196, 1)
   elseif self._index == 3 then
     showUiPosition = true
     show3Position = true
-    clrPlayerName = Color(0.79607843137255, 0.70980392156863, 0.67058823529412, 1)
+    clrPlayerName = Color(0.796078431372549, 0.7098039215686275, 0.6705882352941176, 1)
   elseif self._index >= 4 then
     showTxtPosition = true
-    clrPlayerName = Color(0.87450980392157, 0.87450980392157, 0.87450980392157, 1)
+    clrPlayerName = Color(0.8745098039215686, 0.8745098039215686, 0.8745098039215686, 1)
   end
-  -- DECOMPILER ERROR at PC220: Confused about usage of register: R27 in 'UnsetPending'
-
-  ;
-  (self._playerName).color = clrPlayerName
-  ;
-  ((self._btnView).gameObject):SetActive(showBtnView)
-  ;
-  ((self._playerId).gameObject):SetActive(showPlayerId)
-  ;
-  ((self._txtPosition).gameObject):SetActive(showTxtPosition)
-  ;
-  (((self._uiPosition).uiRoot).gameObject):SetActive(showUiPosition)
-  ;
-  (((self._uiPosition)[1]).gameObject):SetActive(show1Position)
-  ;
-  (((self._uiPosition)[2]).gameObject):SetActive(show2Position)
-  ;
-  (((self._uiPosition)[3]).gameObject):SetActive(show3Position)
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
+  self._playerName.color = clrPlayerName
+  self._btnView.gameObject:SetActive(showBtnView)
+  self._playerId.gameObject:SetActive(showPlayerId)
+  self._txtPosition.gameObject:SetActive(showTxtPosition)
+  self._uiPosition.uiRoot.gameObject:SetActive(showUiPosition)
+  self._uiPosition[1].gameObject:SetActive(show1Position)
+  self._uiPosition[2].gameObject:SetActive(show2Position)
+  self._uiPosition[3].gameObject:SetActive(show3Position)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRankingWidget.BtnViewOnClick = function(self, go)
-  -- function num : 0_16
+function UIWorldBossRankingWidget:BtnViewOnClick(go)
   if self._widgetRanking ~= nil then
-    (self._widgetRanking):BtnViewOnClick(go, self._data)
+    self._widgetRanking:BtnViewOnClick(go, self._data)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRankingWidget.BtnPlayerOnClick = function(self, go)
-  -- function num : 0_17 , upvalues : _ENV
-  if (string.len)((self._data).nick) == 0 then
-    return 
+function UIWorldBossRankingWidget:BtnPlayerOnClick(go)
+  if string.len(self._data.nick) == 0 then
+    return
   end
   local chatFriendManager = ChatFriendManager:New()
   chatFriendManager:Request(false, true, true, function(mgr)
-    -- function num : 0_17_0 , upvalues : self, _ENV
-    self:ShowDialog("UIPlayerInfoController", PlayerInfoFrom.WorldBoss, (self._data).pstid, mgr)
-  end
-)
+    self:ShowDialog("UIPlayerInfoController", PlayerInfoFrom.WorldBoss, self._data.pstid, mgr)
+  end)
 end
-
-

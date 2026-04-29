@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_sealed_curse.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultSealedCurse", BuffResultBase)
 BuffResultSealedCurse = BuffResultSealedCurse
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultSealedCurse.Constructor = function(self, buffSeq, isCursed)
-  -- function num : 0_0
+function BuffResultSealedCurse:Constructor(buffSeq, isCursed)
   self._buffseq = buffSeq
   self._isCursed = isCursed
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSealedCurse.IsCursed = function(self)
-  -- function num : 0_1
+function BuffResultSealedCurse:IsCursed()
   return self._isCursed
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSealedCurse.GetBuffSeq = function(self)
-  -- function num : 0_2
+function BuffResultSealedCurse:GetBuffSeq()
   return self._buffseq
 end
-
-

@@ -1,47 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_change_effect_for_piece_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultChangeEffectForPieceType", BuffResultBase)
 BuffResultChangeEffectForPieceType = BuffResultChangeEffectForPieceType
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeEffectForPieceType.Constructor = function(self, notifyType, pos, beforePieceType, afterPieceType)
-  -- function num : 0_0
+function BuffResultChangeEffectForPieceType:Constructor(notifyType, pos, beforePieceType, afterPieceType)
   self._notifyType = notifyType
   self._pos = pos
   self._beforePieceType = beforePieceType
   self._afterPieceType = afterPieceType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeEffectForPieceType.GetNotifyType = function(self)
-  -- function num : 0_1
+function BuffResultChangeEffectForPieceType:GetNotifyType()
   return self._notifyType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeEffectForPieceType.GetPos = function(self)
-  -- function num : 0_2
+function BuffResultChangeEffectForPieceType:GetPos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeEffectForPieceType.GetBeforePieceType = function(self)
-  -- function num : 0_3
+function BuffResultChangeEffectForPieceType:GetBeforePieceType()
   return self._beforePieceType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeEffectForPieceType.GetAfterPieceType = function(self)
-  -- function num : 0_4
+function BuffResultChangeEffectForPieceType:GetAfterPieceType()
   return self._afterPieceType
 end
-
-

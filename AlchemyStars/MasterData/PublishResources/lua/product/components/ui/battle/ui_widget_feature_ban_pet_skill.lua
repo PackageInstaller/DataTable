@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_ban_pet_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeatureBanPetSkill", UICustomWidget)
 UIWidgetFeatureBanPetSkill = UIWidgetFeatureBanPetSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeatureBanPetSkill.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetFeatureBanPetSkill:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureBanPetSkill.InitWidget = function(self)
-  -- function num : 0_1
+function UIWidgetFeatureBanPetSkill:InitWidget()
   self.enableFakeInput = true
   self._buttonNormal = self:GetGameObject("ButtonNormal")
   self._maskNormal = self:GetGameObject("MaskNormal")
@@ -29,131 +19,77 @@ UIWidgetFeatureBanPetSkill.InitWidget = function(self)
   self:RegisterEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureBanPetSkill.RegisterEvent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetFeatureBanPetSkill:RegisterEvent()
   self:AttachEvent(GameEventType.FeatureAutoFightCastBanPetSkill, self._OnFeatureAutoFightCastBanPetSkill)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureBanPetSkill.SetData = function(self, featureEffectParam)
-  -- function num : 0_3
+function UIWidgetFeatureBanPetSkill:SetData(featureEffectParam)
   self._featureEffectParam = featureEffectParam
   self._skillID = 0
   self:OnRefreshUI()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureBanPetSkill.GetFeatureType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWidgetFeatureBanPetSkill:GetFeatureType()
   return FeatureType.BanPetSkill
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureBanPetSkill.OnRefreshUI = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local skillCD = (self._featureEffectParam):GetSkillCD()
-  local curRoundCount = (BattleStatHelper.GetLevelTotalRoundCount)()
-  local castRoundList = (FeatureServiceHelper.GetBanPetSkillCastRoundList)()
-  local colorDisabled = Color(0.73333333333333, 0.73333333333333, 0.73333333333333, 1)
-  if not castRoundList[(self._featureEffectParam):GetBanNormalSkillID()] then
-    local normalSkillRoundList = {}
-  end
+function UIWidgetFeatureBanPetSkill:OnRefreshUI()
+  local skillCD = self._featureEffectParam:GetSkillCD()
+  local curRoundCount = BattleStatHelper.GetLevelTotalRoundCount()
+  local castRoundList = FeatureServiceHelper.GetBanPetSkillCastRoundList()
+  local colorDisabled = Color(0.7333333333333333, 0.7333333333333333, 0.7333333333333333, 1)
+  local normalSkillRoundList = castRoundList[self._featureEffectParam:GetBanNormalSkillID()] or {}
   local lastNormalRound = -1
-  if #normalSkillRoundList > 0 then
+  if 0 < #normalSkillRoundList then
     lastNormalRound = normalSkillRoundList[#normalSkillRoundList]
   end
   local normalSkillEnable = skillCD < curRoundCount - lastNormalRound
-  ;
-  (self._buttonNormal):SetActive(normalSkillEnable == true)
-  ;
-  (self._maskNormal):SetActive(normalSkillEnable == false)
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._textNormal).color = normalSkillEnable and Color.white or colorDisabled
-  if not castRoundList[(self._featureEffectParam):GetBanChainSkillID()] then
-    local chainSkillRoundList = {}
-  end
+  self._buttonNormal:SetActive(normalSkillEnable == true)
+  self._maskNormal:SetActive(normalSkillEnable == false)
+  self._textNormal.color = normalSkillEnable and Color.white or colorDisabled
+  local chainSkillRoundList = castRoundList[self._featureEffectParam:GetBanChainSkillID()] or {}
   local lastChainRound = -1
-  if #chainSkillRoundList > 0 then
+  if 0 < #chainSkillRoundList then
     lastChainRound = chainSkillRoundList[#chainSkillRoundList]
   end
   local chainSkillEnable = skillCD < curRoundCount - lastChainRound
-  ;
-  (self._buttonChain):SetActive(chainSkillEnable == true)
-  ;
-  (self._maskChain):SetActive(chainSkillEnable == false)
-  -- DECOMPILER ERROR at PC96: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._textChain).color = chainSkillEnable and Color.white or colorDisabled
-  if not castRoundList[(self._featureEffectParam):GetBanActiveSkillID()] then
-    local activeSkillRoundList = {}
-  end
+  self._buttonChain:SetActive(chainSkillEnable == true)
+  self._maskChain:SetActive(chainSkillEnable == false)
+  self._textChain.color = chainSkillEnable and Color.white or colorDisabled
+  local activeSkillRoundList = castRoundList[self._featureEffectParam:GetBanActiveSkillID()] or {}
   local lastActiveRound = -1
-  if #activeSkillRoundList > 0 then
+  if 0 < #activeSkillRoundList then
     lastActiveRound = activeSkillRoundList[#activeSkillRoundList]
   end
   local acticeSkillEnable = skillCD < curRoundCount - lastActiveRound
-  ;
-  (self._buttonActive):SetActive(acticeSkillEnable == true)
-  ;
-  (self._maskActive):SetActive(acticeSkillEnable == false)
-  -- DECOMPILER ERROR at PC137: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  (self._textActive).color = acticeSkillEnable and Color.white or colorDisabled
-  -- DECOMPILER ERROR: 19 unprocessed JMP targets
+  self._buttonActive:SetActive(acticeSkillEnable == true)
+  self._maskActive:SetActive(acticeSkillEnable == false)
+  self._textActive.color = acticeSkillEnable and Color.white or colorDisabled
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureBanPetSkill.ButtonNormalOnClick = function(self)
-  -- function num : 0_6
-  self._skillID = (self._featureEffectParam):GetBanNormalSkillID()
+function UIWidgetFeatureBanPetSkill:ButtonNormalOnClick()
+  self._skillID = self._featureEffectParam:GetBanNormalSkillID()
   self:OnCastSkill()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureBanPetSkill.ButtonChainOnClick = function(self)
-  -- function num : 0_7
-  self._skillID = (self._featureEffectParam):GetBanChainSkillID()
+function UIWidgetFeatureBanPetSkill:ButtonChainOnClick()
+  self._skillID = self._featureEffectParam:GetBanChainSkillID()
   self:OnCastSkill()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureBanPetSkill.ButtonActiveOnClick = function(self)
-  -- function num : 0_8
-  self._skillID = (self._featureEffectParam):GetBanActiveSkillID()
+function UIWidgetFeatureBanPetSkill:ButtonActiveOnClick()
+  self._skillID = self._featureEffectParam:GetBanActiveSkillID()
   self:OnCastSkill()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureBanPetSkill._OnFeatureAutoFightCastBanPetSkill = function(self, skillID)
-  -- function num : 0_9
+function UIWidgetFeatureBanPetSkill:_OnFeatureAutoFightCastBanPetSkill(skillID)
   self._skillID = skillID
   self:OnCastSkill()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureBanPetSkill.OnCastSkill = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureShowBanPetSkill, false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UISwitchActiveSkillUI)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, self._skillID)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClickPersonaSkill, FeatureType.BanPetSkill, self._skillID)
+function UIWidgetFeatureBanPetSkill:OnCastSkill()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureShowBanPetSkill, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UISwitchActiveSkillUI)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, self._skillID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ClickPersonaSkill, FeatureType.BanPetSkill, self._skillID)
 end
-
-

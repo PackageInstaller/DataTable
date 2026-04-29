@@ -1,20 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_pop_star_pro_piece_refresh_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pop_star_pro_piece_refresh_system")
 _class("PopStarProPieceRefreshSystem_Render", PopStarProPieceRefreshSystem)
 PopStarProPieceRefreshSystem_Render = PopStarProPieceRefreshSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarProPieceRefreshSystem_Render._DoRenderFillPiece = function(self, TT, result)
-  -- function num : 0_0
+function PopStarProPieceRefreshSystem_Render:_DoRenderFillPiece(TT, result)
   if not result then
-    return 
+    return
   end
-  local popStarRSvc = (self._world):GetService("PopStarProRender")
+  local popStarRSvc = self._world:GetService("PopStarProRender")
   popStarRSvc:PlayPopStarResult(TT, result)
 end
-
-

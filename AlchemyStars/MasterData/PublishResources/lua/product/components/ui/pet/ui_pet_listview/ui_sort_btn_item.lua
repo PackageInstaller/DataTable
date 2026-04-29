@@ -1,29 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_listview/ui_sort_btn_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISortBtnItem", UICustomWidget)
 UISortBtnItem = UISortBtnItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISortBtnItem.Constructor = function(self)
-  -- function num : 0_0
-  self.ElementSpriteName = {[1] = "bing_color", [2] = "huo_color", [3] = "sen_color", [4] = "lei_color", [5] = "wu_color"}
+function UISortBtnItem:Constructor()
+  self.ElementSpriteName = {
+    [1] = "bing_color",
+    [2] = "huo_color",
+    [3] = "sen_color",
+    [4] = "lei_color",
+    [5] = "wu_color"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISortBtnItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISortBtnItem:OnShow(uiParams)
   self._uiHeartAtlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISortBtnItem.GetComponents = function(self)
-  -- function num : 0_2
+function UISortBtnItem:GetComponents()
   self._arrow = self:GetUIComponent("Image", "arrow")
   self._arrowGo = self:GetGameObject("arrow")
   self._name = self:GetUIComponent("UILocalizationText", "name")
@@ -35,10 +28,7 @@ UISortBtnItem.GetComponents = function(self)
   self._eleSelectGo = self:GetGameObject("eleSelct")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISortBtnItem.SetData = function(self, index, cfg, currentSortParams, currentSortOrder, callback, eleType)
-  -- function num : 0_3
+function UISortBtnItem:SetData(index, cfg, currentSortParams, currentSortOrder, callback, eleType)
   self:GetComponents()
   self._index = index
   self._cfg = cfg
@@ -49,91 +39,57 @@ UISortBtnItem.SetData = function(self, index, cfg, currentSortParams, currentSor
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISortBtnItem.OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._cfg).Type == PetSortType.Element then
-    (self._eleName):SetText((StringTable.Get)((self._cfg).Name))
-    ;
-    (self._eleRoot):SetActive(true)
-    ;
-    (self._norRoot):SetActive(false)
+function UISortBtnItem:OnValue()
+  if self._cfg.Type == PetSortType.Element then
+    self._eleName:SetText(StringTable.Get(self._cfg.Name))
+    self._eleRoot:SetActive(true)
+    self._norRoot:SetActive(false)
   else
-    ;
-    (self._name):SetText((StringTable.Get)((self._cfg).Name))
-    ;
-    (self._eleRoot):SetActive(false)
-    ;
-    (self._norRoot):SetActive(true)
+    self._name:SetText(StringTable.Get(self._cfg.Name))
+    self._eleRoot:SetActive(false)
+    self._norRoot:SetActive(true)
   end
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
   if self._eleType ~= 0 then
-    (self._elementTypeImg).sprite = (self.atlasProperty):GetSprite((self.ElementSpriteName)[self._eleType])
+    self._elementTypeImg.sprite = self.atlasProperty:GetSprite(self.ElementSpriteName[self._eleType])
   end
   self:Flush(self._currSortParams, self._currentSortOrder, self._eleType)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISortBtnItem.BgOnClick = function(self)
-  -- function num : 0_5
+function UISortBtnItem:BgOnClick()
   if self._callback then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISortBtnItem.EleOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISortBtnItem:EleOnClick()
   local petModule = self:GetModule(PetModule)
   local currentElementSortTypeOrder = petModule.PetSortElementIndex
   petModule:SavePetSortElementIndex(currentElementSortTypeOrder % 5 + 1)
   if self._callback then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISortBtnItem.Flush = function(self, params, order, eleType)
-  -- function num : 0_7 , upvalues : _ENV
-  if params == (self._cfg).Type then
-    if (self._cfg).Type == PetSortType.Element then
-      (self._eleSelectGo):SetActive(true)
-      ;
-      ((self._elementTypeImg).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
+function UISortBtnItem:Flush(params, order, eleType)
+  if params == self._cfg.Type then
+    if self._cfg.Type == PetSortType.Element then
+      self._eleSelectGo:SetActive(true)
+      self._elementTypeImg.gameObject:SetActive(true)
       if eleType ~= 0 then
-        (self._elementTypeImg).sprite = (self.atlasProperty):GetSprite((self.ElementSpriteName)[eleType])
+        self._elementTypeImg.sprite = self.atlasProperty:GetSprite(self.ElementSpriteName[eleType])
       end
     else
-      ;
-      (self._arrowGo):SetActive(true)
-      ;
-      (self._selectImgGo):SetActive(true)
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R4 in 'UnsetPending'
-
+      self._arrowGo:SetActive(true)
+      self._selectImgGo:SetActive(true)
       if order == PetSortOrder.Ascending then
-        (self._arrow).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_w_2_icon")
+        self._arrow.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_w_2_icon")
       else
-        -- DECOMPILER ERROR at PC53: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._arrow).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_w_1_icon")
+        self._arrow.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_w_1_icon")
       end
     end
   else
-    ;
-    (self._arrowGo):SetActive(false)
-    ;
-    (self._selectImgGo):SetActive(false)
-    ;
-    (self._eleSelectGo):SetActive(false)
+    self._arrowGo:SetActive(false)
+    self._selectImgGo:SetActive(false)
+    self._eleSelectGo:SetActive(false)
   end
 end
-
-

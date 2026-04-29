@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/base_state_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("l_action_base")
 _class("CTestRobot_Base", LActionNode_Base)
 CTestRobot_Base = CTestRobot_Base
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CTestRobot_Base.Constructor = function(self, pManager)
-  -- function num : 0_0 , upvalues : _ENV
+function CTestRobot_Base:Constructor(pManager)
   self.m_pManager = pManager
   self.m_pGameCenter = GameGlobal
   self._manager = pManager
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CTestRobot_Base.GetModule = function(self, moduleName)
-  -- function num : 0_1
-  return ((self.m_pGameCenter).GetModule)(moduleName)
+function CTestRobot_Base:GetModule(moduleName)
+  return self.m_pGameCenter.GetModule(moduleName)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CTestRobot_Base.Log = function(self, ...)
-  -- function num : 0_2
-  (self.m_pManager):Log(self, ...)
+function CTestRobot_Base:Log(...)
+  self.m_pManager:Log(self, ...)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CTestRobot_Base.__tostring = function(self)
-  -- function num : 0_3
+function CTestRobot_Base:__tostring()
   return self._className
 end
-
-

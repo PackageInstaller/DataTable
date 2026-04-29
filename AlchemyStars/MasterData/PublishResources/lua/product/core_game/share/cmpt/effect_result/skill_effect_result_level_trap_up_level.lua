@@ -1,50 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_level_trap_up_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultTrapUpLevel", SkillEffectResultBase)
 SkillEffectResultTrapUpLevel = SkillEffectResultTrapUpLevel
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultTrapUpLevel.Constructor = function(self, summonList, destroyList, hasMaxLevel)
-  -- function num : 0_0
-  if not summonList then
-    self._summonList = {}
-    if not destroyList then
-      self._destroyList = {}
-      self._hasMaxLevel = hasMaxLevel or false
-    end
-  end
+function SkillEffectResultTrapUpLevel:Constructor(summonList, destroyList, hasMaxLevel)
+  self._summonList = summonList or {}
+  self._destroyList = destroyList or {}
+  self._hasMaxLevel = hasMaxLevel or false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTrapUpLevel.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultTrapUpLevel:GetEffectType()
   return SkillEffectType.LevelTrapUpLevel
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTrapUpLevel.GetSummonList = function(self)
-  -- function num : 0_2
+function SkillEffectResultTrapUpLevel:GetSummonList()
   return self._summonList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTrapUpLevel.GetDestroyList = function(self)
-  -- function num : 0_3
+function SkillEffectResultTrapUpLevel:GetDestroyList()
   return self._destroyList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTrapUpLevel.HasMaxLevel = function(self)
-  -- function num : 0_4
+function SkillEffectResultTrapUpLevel:HasMaxLevel()
   return self._hasMaxLevel
 end
-
-

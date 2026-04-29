@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_refresh_team_state_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewRefreshTeamState", BuffViewBase)
 BuffViewRefreshTeamState = BuffViewRefreshTeamState
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRefreshTeamState.PlayView = function(self, TT, notify, trace)
-  -- function num : 0_0 , upvalues : _ENV
-  if ((self._world):Player()):IsLocalTeamEntity(self._entity) == false then
-    return 
+function BuffViewRefreshTeamState:PlayView(TT, notify, trace)
+  if self._world:Player():IsLocalTeamEntity(self._entity) == false then
+    return
   end
-  local buffView = (self._entity):BuffView()
+  local buffView = self._entity:BuffView()
   local teamBuffList = buffView:GetBuffTeamStateShowList()
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeTeamBuff, teamBuffList)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeTeamBuff, teamBuffList)
 end
-
-

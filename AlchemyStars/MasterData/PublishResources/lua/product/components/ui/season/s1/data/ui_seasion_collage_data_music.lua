@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s1/data/ui_seasion_collage_data_music.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonCollageData_Music", Object)
 UISeasonCollageData_Music = UISeasonCollageData_Music
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonCollageData_Music.Constructor = function(self)
-  -- function num : 0_0
+function UISeasonCollageData_Music:Constructor()
   self._Index = nil
   self._ID = nil
   self._Valid = nil
@@ -17,59 +10,36 @@ UISeasonCollageData_Music.Constructor = function(self)
   self._audioID = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_Music.Index = function(self)
-  -- function num : 0_1
+function UISeasonCollageData_Music:Index()
   return self._Index
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_Music.ID = function(self)
-  -- function num : 0_2
+function UISeasonCollageData_Music:ID()
   return self._ID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_Music.IsValid = function(self)
-  -- function num : 0_3
+function UISeasonCollageData_Music:IsValid()
   return self._Valid
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_Music.IsUnlock = function(self)
-  -- function num : 0_4
+function UISeasonCollageData_Music:IsUnlock()
   return self._IsUnlock
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_Music.IsNew = function(self)
-  -- function num : 0_5
+function UISeasonCollageData_Music:IsNew()
   return self._IsNew
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_Music.AudioID = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonCollageData_Music:AudioID()
   if not self._audioID then
-    self._audioID = ((Cfg.cfg_role_music)[self._ID]).AudioID
+    self._audioID = Cfg.cfg_role_music[self._ID].AudioID
   end
   return self._audioID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_Music.Duration = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonCollageData_Music:Duration()
   if not self._duration then
-    self._duration = ((Cfg.cfg_role_music)[self._ID]).Duration
+    self._duration = Cfg.cfg_role_music[self._ID].Duration
   end
   return self._duration
 end
-
-

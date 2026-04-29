@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_line_fly_with_direction_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseLineFlyWithDirectionParam", SkillPhaseParamBase)
 SkillPhaseLineFlyWithDirectionParam = SkillPhaseLineFlyWithDirectionParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseLineFlyWithDirectionParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseLineFlyWithDirectionParam:Constructor(t)
   self._effectID = t.effectID
   self._effectDirection = t.effectDirection
   self._finishDelayTime = t.finishDelayTime
@@ -19,78 +12,54 @@ SkillPhaseLineFlyWithDirectionParam.Constructor = function(self, t)
   self._hasDamage = t.hasDamage
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLineFlyWithDirectionParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseLineFlyWithDirectionParam:GetCacheTable()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._effectID]).ResPath, 1}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    }
   end
-  if self._effectHit and self._effectHit > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._effectHit]).ResPath, 1}
+  if self._effectHit and 0 < self._effectHit then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._effectHit].ResPath,
+      1
+    }
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLineFlyWithDirectionParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseLineFlyWithDirectionParam:GetPhaseType()
   return SkillViewPhaseType.EffectLineFlyWithDirection
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLineFlyWithDirectionParam.GetEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseLineFlyWithDirectionParam:GetEffectID()
   return self._effectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLineFlyWithDirectionParam.GetEffectDirection = function(self)
-  -- function num : 0_4
+function SkillPhaseLineFlyWithDirectionParam:GetEffectDirection()
   return self._effectDirection
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLineFlyWithDirectionParam.GetFinishDelayTime = function(self)
-  -- function num : 0_5
+function SkillPhaseLineFlyWithDirectionParam:GetFinishDelayTime()
   return self._finishDelayTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLineFlyWithDirectionParam.GetEffectFlyOneGridMs = function(self)
-  -- function num : 0_6
+function SkillPhaseLineFlyWithDirectionParam:GetEffectFlyOneGridMs()
   return self._effectFlyOneGridMs
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLineFlyWithDirectionParam.GetHitEffect = function(self)
-  -- function num : 0_7
+function SkillPhaseLineFlyWithDirectionParam:GetHitEffect()
   return self._effectHit
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLineFlyWithDirectionParam.GetHitAnimation = function(self)
-  -- function num : 0_8
+function SkillPhaseLineFlyWithDirectionParam:GetHitAnimation()
   return self._hitAnimationName
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLineFlyWithDirectionParam.HasDamage = function(self)
-  -- function num : 0_9
-  if self._hasDamage ~= 1 then
-    do return not self._hasDamage end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function SkillPhaseLineFlyWithDirectionParam:HasDamage()
+  if self._hasDamage then
+    return self._hasDamage == 1
   end
+  return false
 end
-
-

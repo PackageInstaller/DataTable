@@ -1,118 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/dantang/ui_dantang_line_mission_map_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDantangLineMissionMapNode", UICustomWidget)
 UIDantangLineMissionMapNode = UIDantangLineMissionMapNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDantangLineMissionMapNode.OnShow = function(self, uiParams)
-  -- function num : 0_0
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
-  self._animation = (self:GetGameObject()):GetComponent("Animation")
+function UIDantangLineMissionMapNode:OnShow(uiParams)
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
+  self._animation = self:GetGameObject():GetComponent("Animation")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDantangLineMissionMapNode.Destroy = function(self)
-  -- function num : 0_1
+function UIDantangLineMissionMapNode:Destroy()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDantangLineMissionMapNode.SetData = function(self, lineCfg, passInfo, isUnlock, cb)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDantangLineMissionMapNode:SetData(lineCfg, passInfo, isUnlock, cb)
   self._missionID = lineCfg.CampaignMissionId
   self._callback = cb
   self._isLock = not isUnlock
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if not missionCfg then
-    (Log.exception)("cfg_campaign_mission中找不到配置:", self._missionID)
+    Log.exception("cfg_campaign_mission中找不到配置:", self._missionID)
   end
   self:_SetRectTransform(lineCfg)
   self:_SetState(missionCfg.Type)
-  self:_SetName(missionCfg.Type, (StringTable.Get)(missionCfg.Name))
+  self:_SetName(missionCfg.Type, StringTable.Get(missionCfg.Name))
   self:_SetStar(passInfo)
   self._isStoryNode = missionCfg.Type == DiscoveryStageType.Plot
-  ;
-  (self:GetGameObject("lock")):SetActive(self._isLock)
+  self:GetGameObject("lock"):SetActive(self._isLock)
   if lineCfg.MapPosX > 0 then
-    (self._animation):Play("uieff_UIDantangLineMission_MapNode_01")
+    self._animation:Play("uieff_UIDantangLineMission_MapNode_01")
   else
-    (self._animation):Play("uieff_UIDantangLineMission_MapNode_02")
+    self._animation:Play("uieff_UIDantangLineMission_MapNode_02")
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDantangLineMissionMapNode._SetRectTransform = function(self, lineCfg)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._rectTransform).anchorMax = Vector2(0.5, 1)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = Vector2(0.5, 1)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2.zero
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
+function UIDantangLineMissionMapNode:_SetRectTransform(lineCfg)
+  self._rectTransform.anchorMax = Vector2(0.5, 1)
+  self._rectTransform.anchorMin = Vector2(0.5, 1)
+  self._rectTransform.sizeDelta = Vector2.zero
+  self._rectTransform.anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDantangLineMissionMapNode._SetName = function(self, state, text)
-  -- function num : 0_4 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtNameNormal", text)
+function UIDantangLineMissionMapNode:_SetName(state, text)
+  UIWidgetHelper.SetLocalizationText(self, "_txtNameNormal", text)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDantangLineMissionMapNode._SetState = function(self, state)
-  -- function num : 0_5 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"_normal", "star"}
-, 
-{"_boss", "star"}
-, 
-{"_plot"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UIDantangLineMissionMapNode:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {"_normal", "star"},
+    {"_boss", "star"},
+    {"_plot"}
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDantangLineMissionMapNode._SetStar = function(self, passInfo)
-  -- function num : 0_6 , upvalues : _ENV
+function UIDantangLineMissionMapNode:_SetStar(passInfo)
   local missionModule = self:GetModule(MissionModule)
   local stars = passInfo and missionModule:ParseStarInfo(passInfo.star) or 0
-  local tb = {"Star1", "Star2", "Star3"}
+  local tb = {
+    "Star1",
+    "Star2",
+    "Star3"
+  }
   for i = 1, 3 do
     local pass = i <= stars
-    ;
-    (self:GetGameObject(tb[i])):SetActive(pass)
+    self:GetGameObject(tb[i]):SetActive(pass)
   end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDantangLineMissionMapNode.BtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
+function UIDantangLineMissionMapNode:BtnOnClick(go)
   if self._isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_clear_mission_to_unlock"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_clear_mission_to_unlock"))
+    return
   end
-  ;
-  (self._callback)(self._missionID, self._isStoryNode, (self._rectTransform).position)
+  self._callback(self._missionID, self._isStoryNode, self._rectTransform.position)
 end
-
-

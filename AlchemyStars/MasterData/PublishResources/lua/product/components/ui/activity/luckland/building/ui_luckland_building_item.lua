@@ -1,64 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/building/ui_luckland_building_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandBuildingItem", UICustomWidget)
 UILuckLandBuildingItem = UILuckLandBuildingItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandBuildingItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UILuckLandBuildingItem:OnShow(uiParams)
   self:_InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildingItem._InitWidget = function(self)
-  -- function num : 0_1
+function UILuckLandBuildingItem:_InitWidget()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._content = self:GetUIComponent("UILocalizationText", "Content")
   self._animation = self:GetUIComponent("Animation", "Animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildingItem.SetData = function(self, buildData)
-  -- function num : 0_2
+function UILuckLandBuildingItem:SetData(buildData)
   self._buildData = buildData
-  ;
-  ((self.view):GetGameObject()):SetActive(self._buildData ~= nil)
+  self.view:GetGameObject():SetActive(self._buildData ~= nil)
   self:RefreshUIInfo()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildingItem.RefreshUIInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UILuckLandBuildingItem:RefreshUIInfo()
   if self._buildData then
-    (self._icon):LoadImage((self._buildData):Icon())
-    ;
-    (self._name):SetText((StringTable.Get)((self._buildData):Name()))
-    ;
-    (self._content):SetText((StringTable.Get)((self._buildData):Desc()))
+    self._icon:LoadImage(self._buildData:Icon())
+    self._name:SetText(StringTable.Get(self._buildData:Name()))
+    self._content:SetText(StringTable.Get(self._buildData:Desc()))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildingItem.BgOnClick = function(self, go)
-  -- function num : 0_4
+function UILuckLandBuildingItem:BgOnClick(go)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildingItem.PlayAnimation = function(self)
-  -- function num : 0_5
+function UILuckLandBuildingItem:PlayAnimation()
   if self._buildData then
-    (self._animation):Play("uieff_UILuckLandBuildingItem_in")
+    self._animation:Play("uieff_UILuckLandBuildingItem_in")
   end
 end
-
-

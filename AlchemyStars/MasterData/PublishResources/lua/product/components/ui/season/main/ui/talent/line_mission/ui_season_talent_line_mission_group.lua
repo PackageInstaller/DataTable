@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/talent/line_mission/ui_season_talent_line_mission_group.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTalentLineMissionGroup", UICustomWidget)
 UISeasonTalentLineMissionGroup = UISeasonTalentLineMissionGroup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTalentLineMissionGroup.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._loginModule = (GameGlobal.GetModule)(LoginModule)
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UISeasonTalentLineMissionGroup:OnShow()
+  self._loginModule = GameGlobal.GetModule(LoginModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   self._openGo = self:GetGameObject("open")
   self._closeGo = self:GetGameObject("close")
   self._openAlpha = self:GetUIComponent("CanvasGroup", "open")
@@ -19,17 +12,17 @@ UISeasonTalentLineMissionGroup.OnShow = function(self)
   self._singlePool = self:GetUIComponent("UISelectObjectPath", "single")
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   self:AttachEvent(GameEventType.OnTalentTreeRedLineChange, self.OnTalentTreeRedLineChange)
-  self.anim2name = {open = "uianim_UISeasonTalentLineMission_Group_open", close = "uianim_UISeasonTalentLineMission_Group_out"}
+  self.anim2name = {
+    open = "uianim_UISeasonTalentLineMission_Group_open",
+    close = "uianim_UISeasonTalentLineMission_Group_out"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroup.SetData = function(self, missionID, component, showMissionList, loadSeasonCb)
-  -- function num : 0_1
+function UISeasonTalentLineMissionGroup:SetData(missionID, component, showMissionList, loadSeasonCb)
   self.selectMissionID = missionID
   self.lineCom = component
-  self.componentID = (self.lineCom):GetComponentCfgId()
-  self.lineComInfo = (self.lineCom):GetComponentInfo()
+  self.componentID = self.lineCom:GetComponentCfgId()
+  self.lineComInfo = self.lineCom:GetComponentInfo()
   self.showMissionList = showMissionList
   self.loadSeasonCb = loadSeasonCb
   self:GetOpenState()
@@ -38,87 +31,48 @@ UISeasonTalentLineMissionGroup.SetData = function(self, missionID, component, sh
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroup.OnTalentTreeRedLineChange = function(self)
-  -- function num : 0_2
+function UISeasonTalentLineMissionGroup:OnTalentTreeRedLineChange()
   self:CreateItems()
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroup.RefreshUI = function(self)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
+function UISeasonTalentLineMissionGroup:RefreshUI()
   if self._isOpen then
-    (self._openAlpha).alpha = 1
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._openAlpha).blocksRaycasts = true
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._closeAlpha).alpha = 0
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._closeAlpha).blocksRaycasts = false
+    self._openAlpha.alpha = 1
+    self._openAlpha.blocksRaycasts = true
+    self._closeAlpha.alpha = 0
+    self._closeAlpha.blocksRaycasts = false
   else
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._openAlpha).alpha = 0
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._openAlpha).blocksRaycasts = false
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._closeAlpha).alpha = 1
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._closeAlpha).blocksRaycasts = true
+    self._openAlpha.alpha = 0
+    self._openAlpha.blocksRaycasts = false
+    self._closeAlpha.alpha = 1
+    self._closeAlpha.blocksRaycasts = true
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroup.CreateData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_season_talent_line_ware)({ComponentID = self.componentID})
+function UISeasonTalentLineMissionGroup:CreateData()
+  local cfgs = Cfg.cfg_season_talent_line_ware({
+    ComponentID = self.componentID
+  })
   self.wares = {}
-  for key,value in pairs(cfgs) do
+  for key, value in pairs(cfgs) do
     local obj = UISeasonTalentLineMissionWareCls:New(value)
-    ;
-    (table.insert)(self.wares, obj)
+    table.insert(self.wares, obj)
   end
-  ;
-  (table.sort)(self.wares, function(a, b)
-    -- function num : 0_4_0
-    do return a.sortid < b.sortid end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self.wares, function(a, b)
+    return a.sortid < b.sortid
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroup.CreateItems = function(self)
-  -- function num : 0_5
+function UISeasonTalentLineMissionGroup:CreateItems()
   self._singleIdx = self:GetWareIdx()
-  self._singleItem = (self._singlePool):SpawnObject("UISeasonTalentLineMissionGroupItem")
+  self._singleItem = self._singlePool:SpawnObject("UISeasonTalentLineMissionGroupItem")
   self:ShowSingleWare()
-  ;
-  (self._pool):SpawnObjects("UISeasonTalentLineMissionGroupItem", #self.wares)
-  self._items = (self._pool):GetAllSpawnList()
+  self._pool:SpawnObjects("UISeasonTalentLineMissionGroupItem", #self.wares)
+  self._items = self._pool:GetAllSpawnList()
   for i = 1, #self.wares do
-    local item = (self._items)[i]
-    local ware = (self.wares)[i]
+    local item = self._items[i]
+    local ware = self.wares[i]
     local m_s1, m_s2 = self:GetStarWithIdx(i)
     local m_starTex = m_s1 .. "/" .. m_s2
     local m_wareLock, m_lockTime = self:GetWareLock(i)
@@ -127,19 +81,13 @@ UISeasonTalentLineMissionGroup.CreateItems = function(self)
       red = self:GetWareRed(i)
     end
     item:SetData(i, ware, m_starTex, red, m_wareLock, m_lockTime, function(idx)
-    -- function num : 0_5_0 , upvalues : self
-    self:OnGroupItemClick(idx)
-  end
-, self.loadSeasonCb)
+      self:OnGroupItemClick(idx)
+    end, self.loadSeasonCb)
     item:Select(i == self._singleIdx)
   end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroup.ShowSingleWare = function(self)
-  -- function num : 0_6
+function UISeasonTalentLineMissionGroup:ShowSingleWare()
   local s1, s2 = self:GetStarWithIdx(self._singleIdx)
   local starTex = s1 .. "/" .. s2
   local wareLock, lockTime = self:GetWareLock(self._singleIdx)
@@ -147,18 +95,14 @@ UISeasonTalentLineMissionGroup.ShowSingleWare = function(self)
   if not wareLock then
     red = self:GetWareRed(self._singleIdx)
   end
-  ;
-  (self._singleItem):SetData(1, (self.wares)[self._singleIdx], starTex, red, wareLock, lockTime)
+  self._singleItem:SetData(1, self.wares[self._singleIdx], starTex, red, wareLock, lockTime)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroup.GetWareRed = function(self, idx)
-  -- function num : 0_7
-  local ware = (self.wares)[idx]
-  local passInfo = (self.lineComInfo).m_pass_mission_info
+function UISeasonTalentLineMissionGroup:GetWareRed(idx)
+  local ware = self.wares[idx]
+  local passInfo = self.lineComInfo.m_pass_mission_info
   for i = 1, #ware.missionList do
-    local missionid = (ware.missionList)[i]
+    local missionid = ware.missionList[i]
     if not passInfo[missionid] then
       return true
     end
@@ -166,74 +110,60 @@ UISeasonTalentLineMissionGroup.GetWareRed = function(self, idx)
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroup.OnGroupItemClick = function(self, idx)
-  -- function num : 0_8
+function UISeasonTalentLineMissionGroup:OnGroupItemClick(idx)
   if self.showMissionList then
-    (self.showMissionList)(idx)
+    self.showMissionList(idx)
   end
   self._singleIdx = idx
   self:ShowSingleWare()
   for i = 1, #self.wares do
-    local item = (self._items)[i]
+    local item = self._items[i]
     item:Select(i == idx)
   end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroup.GetWareLock = function(self, idx)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonTalentLineMissionGroup:GetWareLock(idx)
   local lock = false
-  local lockTime = nil
-  local curWare = (self.wares)[idx]
-  local firstMissionID = (curWare.missionList)[1]
-  local cfg_com_line_mission = (Cfg.cfg_component_line_mission)({CampaignMissionId = firstMissionID})
+  local lockTime
+  local curWare = self.wares[idx]
+  local firstMissionID = curWare.missionList[1]
+  local cfg_com_line_mission = Cfg.cfg_component_line_mission({CampaignMissionId = firstMissionID})
   if cfg_com_line_mission and next(cfg_com_line_mission) then
     local cfg = cfg_com_line_mission[1]
     local openTime = cfg.OpenTime
     if openTime then
-      local open = (self._loginModule):GetTimeStampByTimeStr(openTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-      local nowTime = (self._svrTimeModule):GetServerTime() * 0.001
-      if nowTime < open then
+      local open = self._loginModule:GetTimeStampByTimeStr(openTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+      local nowTime = self._svrTimeModule:GetServerTime() * 0.001
+      if open > nowTime then
         lockTime = open
         lock = true
       end
     end
   else
-    do
-      ;
-      (Log.error)("###[UISeasonTalentLineMissionGroup] cfg is nil ! id : ", firstMissionID)
-      if not lock and idx ~= 1 then
-        local lastWare = (self.wares)[idx - 1]
-        local lastMissionID = (lastWare.missionList)[#lastWare.missionList]
-        local passInfo = (self.lineComInfo).m_pass_mission_info
-      end
-      if passInfo[lastMissionID] and (passInfo[lastMissionID]).star > 0 then
-        do
-          lock = true
-          return lock, lockTime
-        end
-      end
+    Log.error("###[UISeasonTalentLineMissionGroup] cfg is nil ! id : ", firstMissionID)
+  end
+  if not lock and idx ~= 1 then
+    local lastWare = self.wares[idx - 1]
+    local lastMissionID = lastWare.missionList[#lastWare.missionList]
+    local passInfo = self.lineComInfo.m_pass_mission_info
+    if passInfo[lastMissionID] and passInfo[lastMissionID].star > 0 then
+    else
+      lock = true
     end
   end
+  return lock, lockTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroup.GetStarWithIdx = function(self, idx)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonTalentLineMissionGroup:GetStarWithIdx(idx)
   local curStar = 0
   local allStar = 0
   if idx then
-    local ware = (self.wares)[idx]
+    local ware = self.wares[idx]
     local missionList = ware.missionList
-    local passInfo = (self.lineComInfo).m_pass_mission_info
-    for index,value in ipairs(missionList) do
+    local passInfo = self.lineComInfo.m_pass_mission_info
+    for index, value in ipairs(missionList) do
       if passInfo[value] then
-        curStar = curStar + ((GameGlobal.GetModule)(MissionModule)):ParseStarInfo((passInfo[value]).star)
+        curStar = curStar + GameGlobal.GetModule(MissionModule):ParseStarInfo(passInfo[value].star)
       end
       allStar = allStar + 3
     end
@@ -241,112 +171,69 @@ UISeasonTalentLineMissionGroup.GetStarWithIdx = function(self, idx)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroup.GetWareIdx = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonTalentLineMissionGroup:GetWareIdx()
   if self.selectMissionID then
-    for index,value in ipairs(self.wares) do
-      for key,val in pairs(value.missionList) do
+    for index, value in ipairs(self.wares) do
+      for key, val in pairs(value.missionList) do
         if val == self.selectMissionID then
           return index
         end
       end
     end
-    ;
-    (Log.error)("###[UISeasonTalentLineMissionGroup] have select id : ", self.selectMissionID, "| cant find !")
+    Log.error("###[UISeasonTalentLineMissionGroup] have select id : ", self.selectMissionID, "| cant find !")
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroup.GetOpenState = function(self)
-  -- function num : 0_12
+function UISeasonTalentLineMissionGroup:GetOpenState()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroup.OnHide = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonTalentLineMissionGroup:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
   self:UnLock("UISeasonTalentLineMissionGroup:PlayAnim")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroup.OpenBtnOnClick = function(self, go)
-  -- function num : 0_14
+function UISeasonTalentLineMissionGroup:OpenBtnOnClick(go)
   self._isOpen = true
   self:PlayAnim("open")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroup.CloseBtnOnClick = function(self, go)
-  -- function num : 0_15
+function UISeasonTalentLineMissionGroup:CloseBtnOnClick(go)
   self._isOpen = false
   self:PlayAnim("close")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroup.PlayAnim = function(self, anim)
-  -- function num : 0_16 , upvalues : _ENV
-  (self._anim):Stop()
-  local animName = (self.anim2name)[anim]
-  ;
-  (self._anim):Play(animName)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._openAlpha).blocksRaycasts = false
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._closeAlpha).blocksRaycasts = false
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
+function UISeasonTalentLineMissionGroup:PlayAnim(anim)
+  self._anim:Stop()
+  local animName = self.anim2name[anim]
+  self._anim:Play(animName)
+  self._openAlpha.blocksRaycasts = false
+  self._closeAlpha.blocksRaycasts = false
   if anim == "open" then
-    (self._openAlpha).alpha = 0
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._closeAlpha).alpha = 1
+    self._openAlpha.alpha = 0
+    self._closeAlpha.alpha = 1
     if self._items then
       for i = 1, #self.wares do
-        local item = (self._items)[i]
+        local item = self._items[i]
         local yieldTime = (i - 1) * 70
         item:PlayAnim(yieldTime)
       end
     end
   else
-    do
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._openAlpha).alpha = 1
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._closeAlpha).alpha = 0
-      if self._singleItem then
-        (self._singleItem):PlayAnim(0)
-      end
-      if self._timer then
-        ((GameGlobal.Timer)()):CancelEvent(self._timer)
-      end
-      self:Lock("UISeasonTalentLineMissionGroup:PlayAnim")
-      self._timer = ((GameGlobal.Timer)()):AddEvent(333, function()
-    -- function num : 0_16_0 , upvalues : self
-    self:RefreshUI()
-    self:UnLock("UISeasonTalentLineMissionGroup:PlayAnim")
-  end
-)
+    self._openAlpha.alpha = 1
+    self._closeAlpha.alpha = 0
+    if self._singleItem then
+      self._singleItem:PlayAnim(0)
     end
   end
+  if self._timer then
+    GameGlobal.Timer():CancelEvent(self._timer)
+  end
+  self:Lock("UISeasonTalentLineMissionGroup:PlayAnim")
+  self._timer = GameGlobal.Timer():AddEvent(333, function()
+    self:RefreshUI()
+    self:UnLock("UISeasonTalentLineMissionGroup:PlayAnim")
+  end)
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/tale_pet/tale_pet_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TalePetModule", GameModule)
 TalePetModule = TalePetModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TalePetModule.Constructor = function(self)
-  -- function num : 0_0
+function TalePetModule:Constructor()
   self.formationList_ = {}
   self.mCanDo = false
   self.mCanCall = false
@@ -21,39 +14,23 @@ TalePetModule.Constructor = function(self)
   self.mReq = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((TalePetModule.super).Init)(self)
-  ;
-  (self.caller):RegisterPushHandler(CEventNotifyTalePetChange, self.HandleChangeData, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushNewBuffInfo, self.HandlePushNewBuffInfo, self)
+function TalePetModule:Init()
+  TalePetModule.super.Init(self)
+  self.caller:RegisterPushHandler(CEventNotifyTalePetChange, self.HandleChangeData, self)
+  self.caller:RegisterPushHandler(CEventPushNewBuffInfo, self.HandlePushNewBuffInfo, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.caller):UnRegisterPushHandler(CEventNotifyTalePetChange)
-  ;
-  ((TalePetModule.super).Dispose)(self)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventPushNewBuffInfo)
+function TalePetModule:Dispose()
+  self.caller:UnRegisterPushHandler(CEventNotifyTalePetChange)
+  TalePetModule.super.Dispose(self)
+  self.caller:UnRegisterPushHandler(CEventPushNewBuffInfo)
   self:ClearData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.Update = function(self)
-  -- function num : 0_3
+function TalePetModule:Update()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.ClearData = function(self)
-  -- function num : 0_4
+function TalePetModule:ClearData()
   self.mCanDo = false
   self.mCanCall = false
   self._taskRed = false
@@ -66,74 +43,50 @@ TalePetModule.ClearData = function(self)
   self.mReq = false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.SetCanCall = function(self, isDo, isCall, taskRed)
-  -- function num : 0_5
+function TalePetModule:SetCanCall(isDo, isCall, taskRed)
   self.mCanDo = isDo
   self.mCanCall = isCall
   self._taskRed = taskRed
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.SetInitRewardRed = function(self, red)
-  -- function num : 0_6
+function TalePetModule:SetInitRewardRed(red)
   self._initRewardRed = red
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.HandleChangeData = function(self, info)
-  -- function num : 0_7 , upvalues : _ENV
-  for key,value in pairs(info.datas) do
+function TalePetModule:HandleChangeData(info)
+  for key, value in pairs(info.datas) do
     self:SetPetData(value)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TalePetInfoDataChange)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TalePetInfoDataChange)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.SetData = function(self, info)
-  -- function num : 0_8 , upvalues : _ENV
+function TalePetModule:SetData(info)
   self.mFirstEnter = info.first_enter
   self.mFirstBuff = info.first_buff
   self.mSelectPetCfgId = info.select_cfg_id
   self.mDatas = {}
-  for key,value in pairs(info.datas) do
+  for key, value in pairs(info.datas) do
     self:SetPetData(value)
   end
   self.mStartTime = info.start_time
   self.mEndTime = info.end_time
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.SetPetData = function(self, info)
-  -- function num : 0_9 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.mDatas)[info.pet_cfg_id] = info
+function TalePetModule:SetPetData(info)
+  self.mDatas[info.pet_cfg_id] = info
   local rew = {}
-  for key,value in pairs(info.task_phase_reward) do
+  for key, value in pairs(info.task_phase_reward) do
     rew[value] = value
   end
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self.mDatas)[info.pet_cfg_id]).task_phase_reward = rew
+  self.mDatas[info.pet_cfg_id].task_phase_reward = rew
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsAllGetReward = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function TalePetModule:IsAllGetReward()
   if self.mReq == false then
     return self._taskRed
   end
-  local cfgs = (Cfg.cfg_tale_pet)({})
-  for _,v in pairs(cfgs) do
+  local cfgs = Cfg.cfg_tale_pet({})
+  for _, v in pairs(cfgs) do
     local vv = self:IsGetReward(v.ID)
     if vv == true then
       return true
@@ -142,99 +95,78 @@ TalePetModule.IsAllGetReward = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsGetReward = function(self, petCfgId)
-  -- function num : 0_11 , upvalues : _ENV
-  local cfg = (Cfg.cfg_tale_pet)[petCfgId]
+function TalePetModule:IsGetReward(petCfgId)
+  local cfg = Cfg.cfg_tale_pet[petCfgId]
   if cfg == nil then
     return false
   end
-  local info = (self.mDatas)[petCfgId]
+  local info = self.mDatas[petCfgId]
   if info == nil then
     return false
   end
-  local listCfg = (Cfg.cfg_tale_task_phase_reward)({PetID = petCfgId})
+  local listCfg = Cfg.cfg_tale_task_phase_reward({PetID = petCfgId})
   if listCfg == nil then
     return false
   end
   if info.pet_status == TalePetCallType.TPCT_Can_Do or info.pet_status == TalePetCallType.TPCT_Done then
-    for key,value in pairs(listCfg) do
-      if (info.task_phase_reward)[value.ID] == nil then
+    for key, value in pairs(listCfg) do
+      if info.task_phase_reward[value.ID] == nil then
         return true
       end
     end
   else
-    do
-      for key,value in pairs(listCfg) do
-        if value.Phase <= info.task_phase and (info.task_phase_reward)[value.ID] == nil then
-          return true
-        end
-      end
-      do
-        return false
+    for key, value in pairs(listCfg) do
+      if value.Phase <= info.task_phase and info.task_phase_reward[value.ID] == nil then
+        return true
       end
     end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsCanDo = function(self)
-  -- function num : 0_12
+function TalePetModule:IsCanDo()
   if self.mReq == true then
     return self:IsDoPet()
   end
   return self.mCanDo
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsCanCall = function(self)
-  -- function num : 0_13
+function TalePetModule:IsCanCall()
   if self.mReq == true then
     return self:IsCallPet()
   end
   return self.mCanCall
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsDoPet = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function TalePetModule:IsDoPet()
   local num = 0
-  local cfgs = (Cfg.cfg_tale_pet)({})
-  for _,v in pairs(cfgs) do
+  local cfgs = Cfg.cfg_tale_pet({})
+  for _, v in pairs(cfgs) do
     num = num + 1
   end
-  for _,info in pairs(self.mDatas) do
+  for _, info in pairs(self.mDatas) do
     num = num - 1
     if info.pet_status == TalePetCallType.TPCT_Doing then
       return false
     end
   end
-  do
-    if self.mSelectPetCfgId ~= 0 then
-      local minfo = self:GetPetInfo(self.mSelectPetCfgId)
-      if minfo ~= nil and minfo.pet_status == TalePetCallType.TPCT_Done then
-        return true
-      else
-        return false
-      end
-    end
-    if num > 0 then
+  if self.mSelectPetCfgId ~= 0 then
+    local minfo = self:GetPetInfo(self.mSelectPetCfgId)
+    if minfo ~= nil and minfo.pet_status == TalePetCallType.TPCT_Done then
       return true
+    else
+      return false
     end
-    return false
   end
+  if 0 < num then
+    return true
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsCallPet = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_tale_pet)({})
-  for _,v in pairs(cfgs) do
+function TalePetModule:IsCallPet()
+  local cfgs = Cfg.cfg_tale_pet({})
+  for _, v in pairs(cfgs) do
     local info = self:GetPetInfo(v.ID)
     if info ~= nil and info.pet_status == TalePetCallType.TPCT_Can_Do then
       return true
@@ -243,10 +175,7 @@ TalePetModule.IsCallPet = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsCanCallPet = function(self, petId)
-  -- function num : 0_16 , upvalues : _ENV
+function TalePetModule:IsCanCallPet(petId)
   local info = self:GetPetInfo(petId)
   if info ~= nil and info.pet_status == TalePetCallType.TPCT_Can_Do then
     return true
@@ -254,83 +183,58 @@ TalePetModule.IsCanCallPet = function(self, petId)
   return false
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsFirstEnter = function(self)
-  -- function num : 0_17
+function TalePetModule:IsFirstEnter()
   return self.mFirstEnter
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsFirstBuff = function(self)
-  -- function num : 0_18
+function TalePetModule:IsFirstBuff()
   return self.mFirstBuff
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.SelectPetCfgId = function(self)
-  -- function num : 0_19
+function TalePetModule:SelectPetCfgId()
   return self.mSelectPetCfgId
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.GetActityTime = function(self)
-  -- function num : 0_20
+function TalePetModule:GetActityTime()
   return self.mStartTime, self.mEndTime
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsOpenActity = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function TalePetModule:IsOpenActity()
   if self.mStartTime == 0 or self.mEndTime == 0 then
     return false
   end
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime() / 1000
-  if nowTime < self.mStartTime or self.mEndTime < nowTime then
+  if nowTime < self.mStartTime or nowTime > self.mEndTime then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsCalled = function(self, petCfgId)
-  -- function num : 0_22 , upvalues : _ENV
-  local cfg = (Cfg.cfg_tale_pet)[petCfgId]
+function TalePetModule:IsCalled(petCfgId)
+  local cfg = Cfg.cfg_tale_pet[petCfgId]
   if cfg == nil then
     return false
   end
-  local info = (self.mDatas)[petCfgId]
+  local info = self.mDatas[petCfgId]
   if info == nil then
     return false
   end
-  do return info.pet_status == TalePetCallType.TPCT_Done end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return info.pet_status == TalePetCallType.TPCT_Done
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.GetPetInfo = function(self, petCfgId)
-  -- function num : 0_23 , upvalues : _ENV
-  local cfg = (Cfg.cfg_tale_pet)[petCfgId]
+function TalePetModule:GetPetInfo(petCfgId)
+  local cfg = Cfg.cfg_tale_pet[petCfgId]
   if cfg == nil then
     return nil
   end
-  local info = (self.mDatas)[petCfgId]
+  local info = self.mDatas[petCfgId]
   return info
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.ReqTalePet = function(self, TT)
-  -- function num : 0_24 , upvalues : _ENV
+function TalePetModule:ReqTalePet(TT)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventTalePetReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventTalePetReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     res:SetSucc(false)
@@ -345,12 +249,9 @@ TalePetModule.ReqTalePet = function(self, TT)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.ReqTaleChoose = function(self, TT, petCfgId)
-  -- function num : 0_25 , upvalues : _ENV
+function TalePetModule:ReqTaleChoose(TT, petCfgId)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventTaleChooseReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventTaleChooseReq)
   request.cfg_id = petCfgId
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -367,12 +268,9 @@ TalePetModule.ReqTaleChoose = function(self, TT, petCfgId)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.ReqTaleTaskReward = function(self, TT, rewardCfgId)
-  -- function num : 0_26 , upvalues : _ENV
+function TalePetModule:ReqTaleTaskReward(TT, rewardCfgId)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventTaleTaskRewardReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventTaleTaskRewardReq)
   request.cfg_id = rewardCfgId
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -386,12 +284,9 @@ TalePetModule.ReqTaleTaskReward = function(self, TT, rewardCfgId)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.ReqTaleCall = function(self, TT, petCfgId)
-  -- function num : 0_27 , upvalues : _ENV
+function TalePetModule:ReqTaleCall(TT, petCfgId)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventTalePetCallReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventTalePetCallReq)
   request.cfg_id = petCfgId
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -405,12 +300,9 @@ TalePetModule.ReqTaleCall = function(self, TT, petCfgId)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.ReqTaleFirst = function(self, TT, tfType, cfgId)
-  -- function num : 0_28 , upvalues : _ENV
+function TalePetModule:ReqTaleFirst(TT, tfType, cfgId)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventTaleFirstReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventTaleFirstReq)
   request.types = tfType
   request.cfg_id = cfgId ~= nil and cfgId or 0
   local reply = self:Call(TT, request)
@@ -425,25 +317,20 @@ TalePetModule.ReqTaleFirst = function(self, TT, tfType, cfgId)
   if replyEvent.ret == TALE_PET_RESULT_CODE.TALE_PET_SUCCEED then
     if tfType == TaleFirstType.TFT_Enter then
       self.mFirstEnter = true
-    else
-      if tfType == TaleFirstType.TFT_Buff then
-        self.mFirstBuff = true
-      end
+    elseif tfType == TaleFirstType.TFT_Buff then
+      self.mFirstBuff = true
     end
   end
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.GetCurCallState = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local cfg = (Cfg.cfg_tale_pet)({})
+function TalePetModule:GetCurCallState()
+  local cfg = Cfg.cfg_tale_pet({})
   if cfg == nil then
     return nil
   end
-  for index,value in pairs(cfg) do
-    local info = (self.mDatas)[value.ID]
+  for index, value in pairs(cfg) do
+    local info = self.mDatas[value.ID]
     if info ~= nil and info.pet_status == TalePetCallType.TPCT_Doing then
       return value.ID
     end
@@ -451,60 +338,47 @@ TalePetModule.GetCurCallState = function(self)
   return nil
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.GetTaskPhase = function(self, petId)
-  -- function num : 0_30 , upvalues : _ENV
-  local listCfg = (Cfg.cfg_tale_task)({PetID = petId})
+function TalePetModule:GetTaskPhase(petId)
+  local listCfg = Cfg.cfg_tale_task({PetID = petId})
   if listCfg == nil then
     return 0
   end
   local count = 0
-  for index,value in pairs(listCfg) do
+  for index, value in pairs(listCfg) do
+    count = count < value.Phase and value.Phase or count
   end
-  if count >= value.Phase or not value.Phase then
-    return count
-  end
+  return count
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.GetTaskCounts = function(self, petId, index)
-  -- function num : 0_31 , upvalues : _ENV
-  local listCfg = (Cfg.cfg_tale_task)({PetID = petId, Phase = index})
+function TalePetModule:GetTaskCounts(petId, index)
+  local listCfg = Cfg.cfg_tale_task({PetID = petId, Phase = index})
   if listCfg == nil then
     return 0
   end
   local count = 0
-  for index,value in pairs(listCfg) do
+  for index, value in pairs(listCfg) do
     count = count + 1
   end
   return count
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.CanGetTaskPhaseAward = function(self, petId)
-  -- function num : 0_32 , upvalues : _ENV
+function TalePetModule:CanGetTaskPhaseAward(petId)
   local info = self:GetPetInfo(petId)
   local task_phase_reward = info.task_phase_reward
   local curStage = info.task_phase
-  local count = (table.count)(task_phase_reward)
+  local count = table.count(task_phase_reward)
   if info.pet_status == TalePetCallType.TPCT_Can_Do or info.pet_status == TalePetCallType.TPCT_Done then
     return count + 1
   end
-  if count < curStage then
+  if curStage > count then
     return count + 1
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsGetAll = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_tale_pet)({})
-  for _,v in pairs(cfgs) do
+function TalePetModule:IsGetAll()
+  local cfgs = Cfg.cfg_tale_pet({})
+  for _, v in pairs(cfgs) do
     local info = self:GetPetInfo(v.ID)
     if info == nil then
       return false
@@ -516,15 +390,12 @@ TalePetModule.IsGetAll = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsGetPetAlready = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_tale_pet)({})
+function TalePetModule:IsGetPetAlready()
+  local cfgs = Cfg.cfg_tale_pet({})
   if cfgs == nil then
     return false
   end
-  for index,value in pairs(cfgs) do
+  for index, value in pairs(cfgs) do
     local info = self:GetPetInfo(value.ID)
     if info ~= nil and info.pet_status == TalePetCallType.TPCT_Done then
       return true
@@ -533,10 +404,7 @@ TalePetModule.IsGetPetAlready = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.GetEnterTrailLevelStoryIds = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function TalePetModule:GetEnterTrailLevelStoryIds()
   local templateIdList = self:GetTalePetList()
   local storyIds = {}
   local templateIds = {}
@@ -548,7 +416,7 @@ TalePetModule.GetEnterTrailLevelStoryIds = function(self)
       local status = ret.first_status
       local result = status & 1 << TalePetDBFirstType.TPDBFT_Story
       if result == 0 then
-        local cfg = (Cfg.cfg_tale_pet)[templateId]
+        local cfg = Cfg.cfg_tale_pet[templateId]
         if cfg then
           storyIds[#storyIds + 1] = cfg.StoryId
           templateIds[#templateIds + 1] = templateId
@@ -559,31 +427,19 @@ TalePetModule.GetEnterTrailLevelStoryIds = function(self)
   return storyIds, templateIds
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.PlayTrailLevelStroyComplete = function(self, TT, templateId)
-  -- function num : 0_36 , upvalues : _ENV
+function TalePetModule:PlayTrailLevelStroyComplete(TT, templateId)
   self:ReqTaleFirst(TT, TaleFirstType.TFT_Story, templateId)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsShowBuffTips = function(self)
-  -- function num : 0_37
+function TalePetModule:IsShowBuffTips()
   return not self:IsFirstBuff()
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.ShowBuffTips = function(self, TT)
-  -- function num : 0_38 , upvalues : _ENV
+function TalePetModule:ShowBuffTips(TT)
   self:ReqTaleFirst(TT, TaleFirstType.TFT_Buff)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.RequestTrailLevelData = function(self, TT)
-  -- function num : 0_39 , upvalues : _ENV
+function TalePetModule:RequestTrailLevelData(TT)
   local res = self:ReqTalePet(TT)
   if not res:GetSucc() or res:GetResult() ~= TALE_PET_RESULT_CODE.TALE_PET_SUCCEED then
     return -1
@@ -603,15 +459,12 @@ TalePetModule.RequestTrailLevelData = function(self, TT)
   return 0
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.GetBuffLevel = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function TalePetModule:GetBuffLevel()
   local exp = self:GetBuffExperience()
-  local cfgs = (Cfg.cfg_trail_level_buff_level)({})
+  local cfgs = Cfg.cfg_trail_level_buff_level({})
   local maxLevel = #cfgs
   for i = 1, #cfgs do
-    local needExp = (cfgs[i]).Exp
+    local needExp = cfgs[i].Exp
     if exp < needExp then
       local level = i - 1
       if level < 1 then
@@ -623,87 +476,77 @@ TalePetModule.GetBuffLevel = function(self)
   return maxLevel, maxLevel
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.GetBuffExp = function(self)
-  -- function num : 0_41 , upvalues : _ENV
+function TalePetModule:GetBuffExp()
   local level, maxLevel = self:GetBuffLevel()
   if maxLevel <= level then
     return 1, 1
   end
-  local cfgNext = (Cfg.cfg_trail_level_buff_level)[level + 1]
-  local cfg = (Cfg.cfg_trail_level_buff_level)[level]
+  local cfgNext = Cfg.cfg_trail_level_buff_level[level + 1]
+  local cfg = Cfg.cfg_trail_level_buff_level[level]
   local maxExp = cfgNext.Exp - cfg.Exp
   local exp = self:GetBuffExperience()
   return exp - cfg.Exp, maxExp
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.GetTalePetList = function(self)
-  -- function num : 0_42 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_tale_pet)({})
+function TalePetModule:GetTalePetList()
+  local cfgs = Cfg.cfg_tale_pet({})
   local list = {}
-  for _,v in pairs(cfgs) do
+  for _, v in pairs(cfgs) do
     list[#list + 1] = v.ID
   end
   return list
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsGetTalePet = function(self, templateId)
-  -- function num : 0_43
+function TalePetModule:IsGetTalePet(templateId)
   return self:IsCalled(templateId)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.GetLevelCount = function(self)
-  -- function num : 0_44 , upvalues : _ENV
+function TalePetModule:GetLevelCount()
   local count = 0
   local completeLevel = 0
-  local layerCfgs = (Cfg.cfg_tale_stage_layer)({})
+  local layerCfgs = Cfg.cfg_tale_stage_layer({})
   for i = 1, #layerCfgs do
     local layerCfg = layerCfgs[i]
-    local levelCfgs = (Cfg.cfg_tale_stage)({Type = 2, Tier = layerCfg.ID})
+    local levelCfgs = Cfg.cfg_tale_stage({
+      Type = 2,
+      Tier = layerCfg.ID
+    })
     if levelCfgs then
-      for k,v in pairs(levelCfgs) do
+      for k, v in pairs(levelCfgs) do
         if self:HasCompletLevel(v.ID) then
           completeLevel = completeLevel + 1
         end
       end
-      count = count + (table.count)(levelCfgs)
+      count = count + table.count(levelCfgs)
     end
   end
   return completeLevel, count
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.HasCompletLevel = function(self, levelId)
-  -- function num : 0_45
+function TalePetModule:HasCompletLevel(levelId)
   local passedDatas = self:GetPassedTaleStageData()
   if passedDatas == nil or passedDatas[levelId] == nil then
     return false
   end
-  if passedDatas[levelId] > 0 then
+  if 0 < passedDatas[levelId] then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.HasOpenFinalLevel = function(self)
-  -- function num : 0_46 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_tale_stage_layer)({LayerType = TrailLevelLayerType.Final})
+function TalePetModule:HasOpenFinalLevel()
+  local cfgs = Cfg.cfg_tale_stage_layer({
+    LayerType = TrailLevelLayerType.Final
+  })
   if cfgs and cfgs[1] then
-    local cfgStages = (Cfg.cfg_tale_stage)({Tier = (cfgs[1]).ID, UnlockType = UnlockType.UT_HaveAll})
+    local cfgStages = Cfg.cfg_tale_stage({
+      Tier = cfgs[1].ID,
+      UnlockType = UnlockType.UT_HaveAll
+    })
     if cfgStages and cfgStages[1] then
-      local petIDs = (cfgStages[1]).UnlockPetId
+      local petIDs = cfgStages[1].UnlockPetId
       if petIDs then
-        for _,petID in pairs(petIDs) do
+        for _, petID in pairs(petIDs) do
           if self:IsGetTalePet(petID) == false then
             return false
           end
@@ -712,42 +555,37 @@ TalePetModule.HasOpenFinalLevel = function(self)
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsShowRewardRed = function(self)
-  -- function num : 0_47 , upvalues : _ENV
-  do
-    if self._initRewardRed ~= nil then
-      local ret = self._initRewardRed
-      return ret
-    end
-    local rewardList = self:GetTrailLevelRewardList()
-    for i = 1, #rewardList do
-      if (rewardList[i])[2] == AwardAcceptStatus.AAS_WaitingForAccept then
-        return true
-      end
-    end
-    return false
+function TalePetModule:IsShowRewardRed()
+  if self._initRewardRed ~= nil then
+    local ret = self._initRewardRed
+    return ret
   end
+  local rewardList = self:GetTrailLevelRewardList()
+  for i = 1, #rewardList do
+    if rewardList[i][2] == AwardAcceptStatus.AAS_WaitingForAccept then
+      return true
+    end
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.IsShowTrailFinalLevelRed = function(self)
-  -- function num : 0_48 , upvalues : _ENV
+function TalePetModule:IsShowTrailFinalLevelRed()
   if self:HasOpenFinalLevel() then
-    local layerCfgs = (Cfg.cfg_tale_stage_layer)({LayerType = TrailLevelLayerType.Final})
+    local layerCfgs = Cfg.cfg_tale_stage_layer({
+      LayerType = TrailLevelLayerType.Final
+    })
     for i = 1, #layerCfgs do
       local layerCfg = layerCfgs[i]
-      local levelCfgs = (Cfg.cfg_tale_stage)({Type = 2, Tier = layerCfg.ID})
+      local levelCfgs = Cfg.cfg_tale_stage({
+        Type = 2,
+        Tier = layerCfg.ID
+      })
       if levelCfgs then
         for j = 1, #levelCfgs do
-          local hasCompleteLevel = self:HasCompletLevel((levelCfgs[j]).ID)
+          local hasCompleteLevel = self:HasCompletLevel(levelCfgs[j].ID)
           if not hasCompleteLevel then
             return true
           end
@@ -755,54 +593,41 @@ TalePetModule.IsShowTrailFinalLevelRed = function(self)
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.UltimateMissionUnPassed = function(self)
-  -- function num : 0_49
+function TalePetModule:UltimateMissionUnPassed()
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.GetTrailLevelRewardList = function(self)
-  -- function num : 0_50
+function TalePetModule:GetTrailLevelRewardList()
   return self:DirectGetStatusList()
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.GetEnterTalePetStoryIds = function(self)
-  -- function num : 0_51 , upvalues : _ENV
-  local cfg = (Cfg.cfg_tale_pet_global)({})
-  local storyId = (cfg.TalePetEnterStoryId).IntValue
+function TalePetModule:GetEnterTalePetStoryIds()
+  local cfg = Cfg.cfg_tale_pet_global({})
+  local storyId = cfg.TalePetEnterStoryId.IntValue
   return storyId
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-TalePetModule.GetActivityTalePet = function(self)
-  -- function num : 0_52 , upvalues : _ENV
+function TalePetModule:GetActivityTalePet()
   local talePets = {}
-  local cfgs = (Cfg.cfg_tale_pet)({})
-  for i = 1, (table.count)(cfgs) do
-    local cfg = ((Cfg.cfg_tale_pet)({Sort = i}))[1]
-    ;
-    (table.insert)(talePets, cfg)
+  local cfgs = Cfg.cfg_tale_pet({})
+  for i = 1, table.count(cfgs) do
+    local cfg = Cfg.cfg_tale_pet({Sort = i})[1]
+    table.insert(talePets, cfg)
   end
   return talePets
 end
 
-local AwardAcceptStatus = {AAS_WaitingForAccept = 0, AAS_Accepted = 1, AAS_UnReach = 2}
+local AwardAcceptStatus = {
+  AAS_WaitingForAccept = 0,
+  AAS_Accepted = 1,
+  AAS_UnReach = 2
+}
 _enum("AwardAcceptStatus", AwardAcceptStatus)
--- DECOMPILER ERROR at PC175: Confused about usage of register: R1 in 'UnsetPending'
 
-TalePetModule.RequestServerFormationList = function(self, TT)
-  -- function num : 0_53 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventReqTaleletFormation)
+function TalePetModule:RequestServerFormationList(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventReqTaleletFormation)
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -811,27 +636,20 @@ TalePetModule.RequestServerFormationList = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == TALE_PET_RESULT_CODE.TALE_PET_SUCCEED then
-    self.formationList_ = (reply.msg).formation_info
-    ;
-    (Log.debug)("self.formationList_.size() : ", #self.formationList_)
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == TALE_PET_RESULT_CODE.TALE_PET_SUCCEED then
+    self.formationList_ = reply.msg.formation_info
+    Log.debug("self.formationList_.size() : ", #self.formationList_)
   end
   return res
 end
 
--- DECOMPILER ERROR at PC178: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.GetFormationList = function(self)
-  -- function num : 0_54
-  return (self.formationList_).formation_list
+function TalePetModule:GetFormationList()
+  return self.formationList_.formation_list
 end
 
--- DECOMPILER ERROR at PC181: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.UpdateMainFormationInfo = function(self, TT, formationID, formationName, petList)
-  -- function num : 0_55 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestChangeTalepetFormation)
+function TalePetModule:UpdateMainFormationInfo(TT, formationID, formationName, petList)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestChangeTalepetFormation)
   local res = AsyncRequestRes:New()
   request.m_formation_id = formationID
   request.m_formation_name = formationName
@@ -843,20 +661,16 @@ TalePetModule.UpdateMainFormationInfo = function(self, TT, formationID, formatio
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == TALE_PET_RESULT_CODE.TALE_PET_SUCCEED then
-    self.formationList_ = (reply.msg).formation_info
-    ;
-    (Log.debug)("self.formationList_.size() : ", #self.formationList_)
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == TALE_PET_RESULT_CODE.TALE_PET_SUCCEED then
+    self.formationList_ = reply.msg.formation_info
+    Log.debug("self.formationList_.size() : ", #self.formationList_)
   end
   return res
 end
 
--- DECOMPILER ERROR at PC184: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.ApplyPassedTaleStage = function(self, TT)
-  -- function num : 0_56 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventReqPassedTaleMission)
+function TalePetModule:ApplyPassedTaleStage(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventReqPassedTaleMission)
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -865,32 +679,25 @@ TalePetModule.ApplyPassedTaleStage = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == TALE_PET_RESULT_CODE.TALE_PET_SUCCEED then
-    self.taleStageList_ = (reply.msg).tale_mission_list
-    ;
-    (Log.debug)("self.formationList_.size() : ", (table.count)(self.taleStageList_))
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == TALE_PET_RESULT_CODE.TALE_PET_SUCCEED then
+    self.taleStageList_ = reply.msg.tale_mission_list
+    Log.debug("self.formationList_.size() : ", table.count(self.taleStageList_))
   end
   return res
 end
 
--- DECOMPILER ERROR at PC187: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.GetPassedTaleStageData = function(self)
-  -- function num : 0_57
+function TalePetModule:GetPassedTaleStageData()
   return self.taleStageList_
 end
 
--- DECOMPILER ERROR at PC190: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.GetPassedTaleStageCount = function(self)
-  -- function num : 0_58 , upvalues : _ENV
+function TalePetModule:GetPassedTaleStageCount()
   local count = 0
   if not self.taleStageList_ then
     return 0
   end
-  for k,v in pairs(self.taleStageList_) do
-    local cfg = (Cfg.cfg_tale_stage)[k]
+  for k, v in pairs(self.taleStageList_) do
+    local cfg = Cfg.cfg_tale_stage[k]
     if cfg ~= nil and cfg.Type == TaleType.TT_FightMission then
       count = count + 1
     end
@@ -898,11 +705,8 @@ TalePetModule.GetPassedTaleStageCount = function(self)
   return count
 end
 
--- DECOMPILER ERROR at PC193: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.ApplyRewardStatus = function(self, TT)
-  -- function num : 0_59 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventReqRewardStatus)
+function TalePetModule:ApplyRewardStatus(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventReqRewardStatus)
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -911,55 +715,49 @@ TalePetModule.ApplyRewardStatus = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == TALE_PET_RESULT_CODE.TALE_PET_SUCCEED then
-    self.acceptStageIDs_ = (reply.msg).accepted_stage_ids
-    ;
-    (Log.debug)("AcceptStageIDs.size() : ", (table.count)(self.acceptStageIDs_))
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == TALE_PET_RESULT_CODE.TALE_PET_SUCCEED then
+    self.acceptStageIDs_ = reply.msg.accepted_stage_ids
+    Log.debug("AcceptStageIDs.size() : ", table.count(self.acceptStageIDs_))
   end
   return res
 end
 
--- DECOMPILER ERROR at PC196: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.GetRewardStatusData = function(self)
-  -- function num : 0_60
+function TalePetModule:GetRewardStatusData()
   return self.acceptStageIDs_
 end
 
--- DECOMPILER ERROR at PC199: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.DirectGetStatusList = function(self)
-  -- function num : 0_61 , upvalues : _ENV, AwardAcceptStatus
+function TalePetModule:DirectGetStatusList()
   self._initRewardRed = nil
-  local reward_cfg = (Cfg.cfg_tale_stage_reward)({})
+  local reward_cfg = Cfg.cfg_tale_stage_reward({})
   local ret = {}
   local acceptIDs = self:GetRewardStatusData()
-  for k,v in pairs(reward_cfg) do
+  for k, v in pairs(reward_cfg) do
     if self:GetPassedTaleStageCount() < v.Count then
-      ret[#ret + 1] = {v.ID, AwardAcceptStatus.AAS_UnReach}
-      ;
-      (Log.debug)(v.ID, "AwardAcceptStatus.AAS_UnReach")
+      ret[#ret + 1] = {
+        v.ID,
+        AwardAcceptStatus.AAS_UnReach
+      }
+      Log.debug(v.ID, "AwardAcceptStatus.AAS_UnReach")
+    elseif table.icontains(acceptIDs, v.ID) then
+      ret[#ret + 1] = {
+        v.ID,
+        AwardAcceptStatus.AAS_Accepted
+      }
+      Log.debug(v.ID, "AwardAcceptStatus.AAS_Accepted")
     else
-      if (table.icontains)(acceptIDs, v.ID) then
-        ret[#ret + 1] = {v.ID, AwardAcceptStatus.AAS_Accepted}
-        ;
-        (Log.debug)(v.ID, "AwardAcceptStatus.AAS_Accepted")
-      else
-        ret[#ret + 1] = {v.ID, AwardAcceptStatus.AAS_WaitingForAccept}
-        ;
-        (Log.debug)(v.ID, "AwardAcceptStatus.AAS_WaitingForAccept")
-      end
+      ret[#ret + 1] = {
+        v.ID,
+        AwardAcceptStatus.AAS_WaitingForAccept
+      }
+      Log.debug(v.ID, "AwardAcceptStatus.AAS_WaitingForAccept")
     end
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC202: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.ApplyGetReward = function(self, TT, stage_reward_id)
-  -- function num : 0_62 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventReqAcceptStageReward)
+function TalePetModule:ApplyGetReward(TT, stage_reward_id)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventReqAcceptStageReward)
   local res = AsyncRequestRes:New()
   request.stage_id = stage_reward_id
   local reply = self:Call(TT, request)
@@ -969,20 +767,16 @@ TalePetModule.ApplyGetReward = function(self, TT, stage_reward_id)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == TALE_PET_RESULT_CODE.TALE_PET_SUCCEED then
-    (table.insert)(self.acceptStageIDs_, stage_reward_id)
-    ;
-    (Log.debug)("CEventReqAcceptStageReward success")
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == TALE_PET_RESULT_CODE.TALE_PET_SUCCEED then
+    table.insert(self.acceptStageIDs_, stage_reward_id)
+    Log.debug("CEventReqAcceptStageReward success")
   end
   return res
 end
 
--- DECOMPILER ERROR at PC205: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.ApplyBuffInfo = function(self, TT)
-  -- function num : 0_63 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventReqCurrentBuffInfo)
+function TalePetModule:ApplyBuffInfo(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventReqCurrentBuffInfo)
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -991,60 +785,40 @@ TalePetModule.ApplyBuffInfo = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == TALE_PET_RESULT_CODE.TALE_PET_SUCCEED then
-    self.TalePetBuff_ = (reply.msg).TalePetBuff
-    self.NormalPetBuff_ = (reply.msg).NormalPetBuff
-    self.experience_value_ = (reply.msg).experience_value
-    self.trailBuffLevelID_ = (reply.msg).trail_buff_level_id
-    ;
-    (Log.debug)("self.experience_value_ : ", self.experience_value_)
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == TALE_PET_RESULT_CODE.TALE_PET_SUCCEED then
+    self.TalePetBuff_ = reply.msg.TalePetBuff
+    self.NormalPetBuff_ = reply.msg.NormalPetBuff
+    self.experience_value_ = reply.msg.experience_value
+    self.trailBuffLevelID_ = reply.msg.trail_buff_level_id
+    Log.debug("self.experience_value_ : ", self.experience_value_)
   end
   return res
 end
 
--- DECOMPILER ERROR at PC208: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.GetTrailBuffLevelID = function(self)
-  -- function num : 0_64
+function TalePetModule:GetTrailBuffLevelID()
   return self.trailBuffLevelID_
 end
 
--- DECOMPILER ERROR at PC211: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.GetBuffExperience = function(self)
-  -- function num : 0_65
+function TalePetModule:GetBuffExperience()
   return self.experience_value_
 end
 
--- DECOMPILER ERROR at PC214: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.GetTalePetBuff = function(self)
-  -- function num : 0_66
+function TalePetModule:GetTalePetBuff()
   return self.TalePetBuff_
 end
 
--- DECOMPILER ERROR at PC217: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.GetNormalPetBuff = function(self)
-  -- function num : 0_67
+function TalePetModule:GetNormalPetBuff()
   return self.NormalPetBuff_
 end
 
--- DECOMPILER ERROR at PC220: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.HandlePushNewBuffInfo = function(self, msg)
-  -- function num : 0_68 , upvalues : _ENV
+function TalePetModule:HandlePushNewBuffInfo(msg)
   self.trailBuffLevelID_ = msg.trail_buff_level_id
   self.experience_value_ = msg.experience_value
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TalePetBuffChange)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TalePetBuffChange)
 end
 
--- DECOMPILER ERROR at PC223: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.Module_ConvertMatchResult = function(self, recvResult)
-  -- function num : 0_69 , upvalues : _ENV
+function TalePetModule:Module_ConvertMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_TalePet
   uiMatchResult.m_nID = recvResult.stage_id
@@ -1052,33 +826,24 @@ TalePetModule.Module_ConvertMatchResult = function(self, recvResult)
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC226: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.HaveCallRestriction = function(self, id)
-  -- function num : 0_70
+function TalePetModule:HaveCallRestriction(id)
   return false
 end
 
--- DECOMPILER ERROR at PC229: Confused about usage of register: R1 in 'UnsetPending'
-
-TalePetModule.RestrictionIsUnlock = function(self, id)
-  -- function num : 0_71 , upvalues : _ENV
-  local cfg = (Cfg.cfg_tale_pet)[id]
+function TalePetModule:RestrictionIsUnlock(id)
+  local cfg = Cfg.cfg_tale_pet[id]
   if cfg then
     if cfg.HasPetNum and cfg.HasPetNum > 0 then
       local count = 0
-      for _id,info in pairs(self.mDatas) do
+      for _id, info in pairs(self.mDatas) do
         if _id ~= id and info and info.pet_status == TalePetCallType.TPCT_Done then
           count = count + 1
         end
       end
-      return cfg.HasPetNum <= count, count
+      return count >= cfg.HasPetNum, count
     else
       return true, 0
     end
   end
-  do return false, 0 end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return false, 0
 end
-
-

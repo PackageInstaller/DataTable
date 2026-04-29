@@ -1,57 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n18/shop/ui_n18_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN18Shop", UIActivityShopControllerBase)
 UIN18Shop = UIN18Shop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN18Shop.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((UIN18Shop.super).Constructor)(self)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN18Shop:Constructor()
+  UIN18Shop.super.Constructor(self)
   UIActivityShopControllerBase.ItemGroupHeight = 682
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18Shop.DefaultBackFunc = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN18Shop:DefaultBackFunc()
   self:SwitchState(UIStateType.UIN18Main)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18Shop._RefreshCurrency = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN18Shop:_RefreshCurrency()
   if not self._currencyId then
-    self._currencyId = (self._commonCfg).CurrencyId
+    self._currencyId = self._commonCfg.CurrencyId
   end
-  local count = (self:GetModule(ItemModule)):GetItemCount(self._currencyId) or 0
-  local preZero = (UIActivityHelper.GetZeroStrFrontNum)(7, count)
-  local fmtStr = (string.format)("<color=#6D6862>%s</color><color=#F1D670>%s</color>", preZero, tostring(count))
-  ;
-  (self.itemCount):SetText(fmtStr)
+  local count = self:GetModule(ItemModule):GetItemCount(self._currencyId) or 0
+  local preZero = UIActivityHelper.GetZeroStrFrontNum(7, count)
+  local fmtStr = string.format("<color=#6D6862>%s</color><color=#F1D670>%s</color>", preZero, tostring(count))
+  self.itemCount:SetText(fmtStr)
   if self.pointIcon then
     local currencyIcon = ""
-    local cfgItem = (Cfg.cfg_item)[self._currencyId]
+    local cfgItem = Cfg.cfg_item[self._currencyId]
     if cfgItem then
       currencyIcon = cfgItem.Icon
-      ;
-      (self.pointIcon):LoadImage(currencyIcon)
+      self.pointIcon:LoadImage(currencyIcon)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18Shop._GetFormatString = function(self, stamp)
-  -- function num : 0_3 , upvalues : _ENV
-  local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp)
-  local showStr = (StringTable.Get)("str_activity_n16_shop_close_at", timeStr)
+function UIN18Shop:_GetFormatString(stamp)
+  local timeStr = UIActivityHelper.GetFormatTimerStr(stamp)
+  local showStr = StringTable.Get("str_activity_n16_shop_close_at", timeStr)
   return showStr
 end
-
-

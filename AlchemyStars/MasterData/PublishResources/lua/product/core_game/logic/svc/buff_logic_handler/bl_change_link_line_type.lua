@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_link_line_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicChangeLinkLineType", BuffLogicBase)
 BuffLogicChangeLinkLineType = BuffLogicChangeLinkLineType
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeLinkLineType.Constructor = function(self, buffinstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeLinkLineType:Constructor(buffinstance, logicParam)
   self._linkLineType = logicParam.LinkLineType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeLinkLineType.DoLogic = function(self, notify)
-  -- function num : 0_1
-  (self._world):ChangeLinkLineType(self._linkLineType)
+function BuffLogicChangeLinkLineType:DoLogic(notify)
+  self._world:ChangeLinkLineType(self._linkLineType)
 end
-
-

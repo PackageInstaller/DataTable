@@ -1,85 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/ui_homeland_minimap_icon_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapIconListItem", UICustomWidget)
 UIHomelandMinimapIconListItem = UIHomelandMinimapIconListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapIconListItem.OnShow = function(self)
-  -- function num : 0_0
+function UIHomelandMinimapIconListItem:OnShow()
   self._iconLoader = self:GetUIComponent("UISelectObjectPath", "IconLoader")
   self._iconTran = self:GetUIComponent("RectTransform", "IconLoader")
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._nameRollingText = self:GetUIComponent("RollingText", "Name")
-  self._originalPos = (self._iconTran).anchoredPosition
+  self._originalPos = self._iconTran.anchoredPosition
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconListItem.OnHide = function(self)
-  -- function num : 0_1
+function UIHomelandMinimapIconListItem:OnHide()
   self:Release()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconListItem.Init = function(self, iconBase, miniMap)
-  -- function num : 0_2
+function UIHomelandMinimapIconListItem:Init(iconBase, miniMap)
   self._miniMap = miniMap
   self._iconData = iconBase:GetIconData()
-  ;
-  (self._nameLabel):SetText(iconBase:GetShowName())
-  ;
-  (self._nameRollingText):RefreshText(iconBase:GetShowName())
+  self._nameLabel:SetText(iconBase:GetShowName())
+  self._nameRollingText:RefreshText(iconBase:GetShowName())
   self:Release()
-  ;
-  ((self._iconLoader).dynamicInfoOfEngine):SetObjectName((self._iconData):GetPrefabName())
-  self._iconWidget = (self._iconLoader):SpawnObject((self._iconData):GetScriptName())
-  ;
-  (self._iconWidget):InternalInitialize(self._iconData, miniMap, true)
+  self._iconLoader.dynamicInfoOfEngine:SetObjectName(self._iconData:GetPrefabName())
+  self._iconWidget = self._iconLoader:SpawnObject(self._iconData:GetScriptName())
+  self._iconWidget:InternalInitialize(self._iconData, miniMap, true)
   self:SetStatus(true)
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._iconTran).anchoredPosition = self._originalPos + iconBase:GetShowIconOffset()
+  self._iconTran.anchoredPosition = self._originalPos + iconBase:GetShowIconOffset()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconListItem.SetStatus = function(self, status)
-  -- function num : 0_3
-  (self:GetGameObject()):SetActive(status)
+function UIHomelandMinimapIconListItem:SetStatus(status)
+  self:GetGameObject():SetActive(status)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconListItem.Release = function(self)
-  -- function num : 0_4
+function UIHomelandMinimapIconListItem:Release()
   if self._iconWidget then
-    (self._iconWidget):Release()
+    self._iconWidget:Release()
     self._iconWidget = nil
   end
-  if (self._iconLoader).uiCustomWidgets then
-    local uiCustomWidgets = (self._iconLoader).uiCustomWidgets
+  if self._iconLoader.uiCustomWidgets then
+    local uiCustomWidgets = self._iconLoader.uiCustomWidgets
     for i = 1, #uiCustomWidgets do
       local uiCustomWidget = uiCustomWidgets[i]
       uiCustomWidget:UnLoad()
       uiCustomWidget:Dispose()
     end
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._iconLoader).uiCustomWidgets = {}
+    self._iconLoader.uiCustomWidgets = {}
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconListItem.BtnOnClick = function(self)
-  -- function num : 0_5
-  (self._miniMap):OnSelectIcon(self._iconData)
+function UIHomelandMinimapIconListItem:BtnOnClick()
+  self._miniMap:OnSelectIcon(self._iconData)
 end
-
-

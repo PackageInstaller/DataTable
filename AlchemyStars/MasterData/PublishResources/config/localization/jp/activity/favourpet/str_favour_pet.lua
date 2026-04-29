@@ -1,8 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/activity/favourpet/str_favour_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_favour_pet_main_title = "女王の恩典", str_favour_pet_sub_title = "新コーデ投票イベント", str_favour_pet_remain_time = "投票残り時間 {1}", str_favour_pet_vote = "投票", str_favour_pet_vote_my_count = "投票先：{1}", str_favour_pet_vote_not_enough_msg = "ハート券が足りないため、投票できません", str_favour_pet_vote_succ_msg = "光霊{1}への応援ありがとうございます！", str_favour_pet_vote_finish = "投票しました", str_favour_pet_quest_btn = "投票任務", str_favour_pet_quest_tab_btn_1 = "ハート券獲得", str_favour_pet_quest_accepted = "未クリア", str_favour_pet_quest_time = "※更新時間まで：{1}", str_favour_pet_intro_title = "イベント紹介", str_favour_pet_intro_head_1 = "【新コーデ投票イベント】", str_favour_pet_intro_body_1 = "光霊鎮魂座がコーデコンテストで第1位になりました。北境宮廷御用達のデザイナーがコーデのデザインプランを3つ用意したのですが、鎮魂座は空の末裔に決めてほしいようです。\nルール詳細：\n1．イベント期間中、ゲームにログインすると、鎮魂座のコーデの投票に使えるアイテム【ハートバルーン】を獲得できます。\n2．イベント期間中、投票できるコーデは用意されたデザインプランのうち、お一人につき1つだけです。投票後の変更はできません。\n3．今回の投票イベントは全世界対象のイベントとなっており、最終結果は世界の各地域における投票数の合計にもとづいて決定されます。ゲーム内での表示は個別の地域における投票結果です。最終結果はゲーム内のお知らせ、各地域の公式SNSで公表されますので、ご確認ください。\n4．今回の投票イベント終了後、選出されたコーデは後日登場する予定です（現在表示されている画像は、あくまでもコーデデザインのイメージです。最終的なコーデの構成図やグラフィックはゲーム内のリソースに準じます）。今後のお知らせや関連イベントにご注目ください。", str_favour_pet_sub_title_2 = "鎮魂座コーデ投票イベント", str_favour_pet_2_vote_succ_msg = "コーデ{1}を選択しました", str_favour_pet_skin_no1 = "人気NO.1光霊：鎮魂座", str_favour_pet_vote2_intro_body_1 = "光霊禁衛座がコーデコンテストで第1位になりました。北境宮廷御用達のデザイナーがコーデのデザインプランを3つ用意したのですが、禁衛座は空の末裔に決めてほしいようです。\nルール詳細：\n1．イベント期間中、ゲームにログインすると、禁衛座のコーデの投票に使えるアイテム【ハートバルーン】を獲得できます。\n2．イベント期間中、投票できるコーデは用意されたデザインプランのうち、お一人につき1つだけです。投票後の変更はできません。\n3．今回の投票イベントは全世界対象のイベントとなっており、最終結果は世界の各地域における投票数の合計にもとづいて決定されます。ゲーム内での表示は個別の地域における投票結果です。最終結果はゲーム内のお知らせ、各地域の公式SNSで公表されますので、ご確認ください。\n4．今回の投票イベント終了後、選出されたコーデは2024年上半期に登場する予定です（現在表示されている画像は、あくまでもコーデデザインのイメージです。最終的なコーデの構成図やグラフィックはゲーム内のリソースに準じます）。今後のお知らせや関連イベントにご注目ください。", str_favour_pet_skin_confirm_title = "投票を確定する", str_favour_pet_2_confirm_text_1 = "この投票は1回しか選択できません。選択後は<color=#D43434>結果を変更できません</color>", str_favour_pet_2_confirm_text_2 = "選択内容：", str_favour_pet_2_confirm_text_4 = "この選択でよろしいですか？", str_favour_pet_2_skin_desc_1 = "「名高き我らが英雄を迎えよう。無数の戦いを経て、今凱旋の日を迎えた彼は我々に勝利をもたらした！耳を澄ませ、目を見開くがいい！この街のどこもかしこも彼の名を呼ぶ声で満ちている。アドラス！アドラス！栄光と幸福の高みへと向かう！」", str_favour_pet_2_skin_desc_2 = "誰もが誰かを愛するように、愛する人と共に生涯を過ごす。あの日、あの事が起こらなければ、アドラスという名の英雄も平凡ながら幸せな未来を迎えられたのだろうか？今となっては、それもかなわぬ夢。だが時おり想像をめぐらせてみるのも、悪くはない。", str_favour_pet_2_skin_desc_3 = "感情は封じられ、記憶は損傷し、暗鬼との戦いの中で全身の鎧が壊れようとも気づかず、狂気と殺意に身をゆだねる。彼は本当にかつて誰もが讃え崇めた英雄なのだろうか？それとも、すでにただの兵器となり、道具になり果て、恐怖と戦争の象徴として生涯を終える運命なのだろうか？", str_favour_pet_quest_tab_btn_2 = "投票報酬", str_favour_pet_skin_award_get = "獲得済", str_favour_pet_vote2_intro_title = "イベント紹介", str_favour_pet_2_quest_reward = "投票報酬", str_favour_pet_2_vote_fin_msg = "投票しました！", str_favour_pet_female = "女性光霊", str_favour_pet_male = "男性光霊", str_favour_pet_un_pet = "条件に合う光霊がいません", str_favour_pet_sub_title_3 = "鎮魂座コーデ投票イベント"}
+local config = {
+  str_favour_pet_main_title = "女王の恩典",
+  str_favour_pet_sub_title = "新コーデ投票イベント",
+  str_favour_pet_remain_time = "投票残り時間 {1}",
+  str_favour_pet_vote = "投票",
+  str_favour_pet_vote_my_count = "投票先：{1}",
+  str_favour_pet_vote_not_enough_msg = "ハート券が足りないため、投票できません",
+  str_favour_pet_vote_succ_msg = "光霊{1}への応援ありがとうございます！",
+  str_favour_pet_vote_finish = "投票しました",
+  str_favour_pet_quest_btn = "投票任務",
+  str_favour_pet_quest_tab_btn_1 = "ハート券獲得",
+  str_favour_pet_quest_accepted = "未クリア",
+  str_favour_pet_quest_time = "※更新時間まで：{1}",
+  str_favour_pet_intro_title = "イベント紹介",
+  str_favour_pet_intro_head_1 = "【新コーデ投票イベント】",
+  str_favour_pet_intro_body_1 = "光霊鎮魂座がコーデコンテストで第1位になりました。北境宮廷御用達のデザイナーがコーデのデザインプランを3つ用意したのですが、鎮魂座は空の末裔に決めてほしいようです。\nルール詳細：\n1．イベント期間中、ゲームにログインすると、鎮魂座のコーデの投票に使えるアイテム【ハートバルーン】を獲得できます。\n2．イベント期間中、投票できるコーデは用意されたデザインプランのうち、お一人につき1つだけです。投票後の変更はできません。\n3．今回の投票イベントは全世界対象のイベントとなっており、最終結果は世界の各地域における投票数の合計にもとづいて決定されます。ゲーム内での表示は個別の地域における投票結果です。最終結果はゲーム内のお知らせ、各地域の公式SNSで公表されますので、ご確認ください。\n4．今回の投票イベント終了後、選出されたコーデは後日登場する予定です（現在表示されている画像は、あくまでもコーデデザインのイメージです。最終的なコーデの構成図やグラフィックはゲーム内のリソースに準じます）。今後のお知らせや関連イベントにご注目ください。",
+  str_favour_pet_sub_title_2 = "鎮魂座コーデ投票イベント",
+  str_favour_pet_2_vote_succ_msg = "コーデ{1}を選択しました",
+  str_favour_pet_skin_no1 = "人気NO.1光霊：鎮魂座",
+  str_favour_pet_vote2_intro_body_1 = "光霊禁衛座がコーデコンテストで第1位になりました。北境宮廷御用達のデザイナーがコーデのデザインプランを3つ用意したのですが、禁衛座は空の末裔に決めてほしいようです。\nルール詳細：\n1．イベント期間中、ゲームにログインすると、禁衛座のコーデの投票に使えるアイテム【ハートバルーン】を獲得できます。\n2．イベント期間中、投票できるコーデは用意されたデザインプランのうち、お一人につき1つだけです。投票後の変更はできません。\n3．今回の投票イベントは全世界対象のイベントとなっており、最終結果は世界の各地域における投票数の合計にもとづいて決定されます。ゲーム内での表示は個別の地域における投票結果です。最終結果はゲーム内のお知らせ、各地域の公式SNSで公表されますので、ご確認ください。\n4．今回の投票イベント終了後、選出されたコーデは2024年上半期に登場する予定です（現在表示されている画像は、あくまでもコーデデザインのイメージです。最終的なコーデの構成図やグラフィックはゲーム内のリソースに準じます）。今後のお知らせや関連イベントにご注目ください。",
+  str_favour_pet_skin_confirm_title = "投票を確定する",
+  str_favour_pet_2_confirm_text_1 = "この投票は1回しか選択できません。選択後は<color=#D43434>結果を変更できません</color>",
+  str_favour_pet_2_confirm_text_2 = "選択内容：",
+  str_favour_pet_2_confirm_text_4 = "この選択でよろしいですか？",
+  str_favour_pet_2_skin_desc_1 = "「名高き我らが英雄を迎えよう。無数の戦いを経て、今凱旋の日を迎えた彼は我々に勝利をもたらした！耳を澄ませ、目を見開くがいい！この街のどこもかしこも彼の名を呼ぶ声で満ちている。アドラス！アドラス！栄光と幸福の高みへと向かう！」",
+  str_favour_pet_2_skin_desc_2 = "誰もが誰かを愛するように、愛する人と共に生涯を過ごす。あの日、あの事が起こらなければ、アドラスという名の英雄も平凡ながら幸せな未来を迎えられたのだろうか？今となっては、それもかなわぬ夢。だが時おり想像をめぐらせてみるのも、悪くはない。",
+  str_favour_pet_2_skin_desc_3 = "感情は封じられ、記憶は損傷し、暗鬼との戦いの中で全身の鎧が壊れようとも気づかず、狂気と殺意に身をゆだねる。彼は本当にかつて誰もが讃え崇めた英雄なのだろうか？それとも、すでにただの兵器となり、道具になり果て、恐怖と戦争の象徴として生涯を終える運命なのだろうか？",
+  str_favour_pet_quest_tab_btn_2 = "投票報酬",
+  str_favour_pet_skin_award_get = "獲得済",
+  str_favour_pet_vote2_intro_title = "イベント紹介",
+  str_favour_pet_2_quest_reward = "投票報酬",
+  str_favour_pet_2_vote_fin_msg = "投票しました！",
+  str_favour_pet_female = "女性光霊",
+  str_favour_pet_male = "男性光霊",
+  str_favour_pet_un_pet = "条件に合う光霊がいません",
+  str_favour_pet_sub_title_3 = "鎮魂座コーデ投票イベント"
+}
 return config
-

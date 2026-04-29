@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/visit/homeland_visit_client.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandVisitClient", Object)
 HomelandVisitClient = HomelandVisitClient
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandVisitClient.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (LogWrapper.LogDebug)("拜访家园初始化")
+function HomelandVisitClient:Constructor()
+  LogWrapper.LogDebug("拜访家园初始化")
   self._minimapManager = UIHomelandMinimapManager:New()
   self._sceneManager = HomelandSceneManager:New()
   self._interactPointManager = InteractPointManager:New()
@@ -24,286 +17,165 @@ HomelandVisitClient.Constructor = function(self)
   self._mode = HomelandMode.Normal
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.Init = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  self._lastTick = (GameGlobal:GetInstance()):GetLastTimeMS()
-  ;
-  (self._sceneManager):Init()
-  ;
-  (self._interactPointManager):Init(self)
-  ;
-  (self._buildManager):Init(TT, self)
-  ;
-  (self._characterManager):Init(self)
-  ;
-  (self._cameraManager):Init(self)
-  ;
-  (self._inputManager):Init(self)
-  ;
-  (self._petManager):Init(self)
-  ;
-  (self._3duiManager):Init(self)
-  ;
-  (self._homelandSceneEffectManager):Init(self)
-  ;
-  (self._homelandPetInviteManager):Init(self)
-  ;
-  (AudioHelperController.PlayBGM)(CriAudioIDConst.BGMEnterHomeland, AudioConstValue.BGMCrossFadeTime)
+function HomelandVisitClient:Init(TT)
+  self._lastTick = GameGlobal:GetInstance():GetLastTimeMS()
+  self._sceneManager:Init()
+  self._interactPointManager:Init(self)
+  self._buildManager:Init(TT, self)
+  self._characterManager:Init(self)
+  self._cameraManager:Init(self)
+  self._inputManager:Init(self)
+  self._petManager:Init(self)
+  self._3duiManager:Init(self)
+  self._homelandSceneEffectManager:Init(self)
+  self._homelandPetInviteManager:Init(self)
+  AudioHelperController.PlayBGM(CriAudioIDConst.BGMEnterHomeland, AudioConstValue.BGMCrossFadeTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.OnEnterHomeland = function(self)
-  -- function num : 0_2
+function HomelandVisitClient:OnEnterHomeland()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.AfterHomelandUIShow = function(self)
-  -- function num : 0_3
+function HomelandVisitClient:AfterHomelandUIShow()
   if self._isMainUIShown then
-    return 
+    return
   end
   self._isMainUIShown = true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._minimapManager):Destroy()
+function HomelandVisitClient:Dispose()
+  self._minimapManager:Destroy()
   self._minimapManager = nil
-  ;
-  (self._3duiManager):Dispose()
-  ;
-  (self._petManager):Dispose()
-  ;
-  (self._inputManager):Dispose()
-  ;
-  (self._cameraManager):Dispose()
-  ;
-  (self._characterManager):Dispose()
-  ;
-  (self._buildManager):Dispose()
-  ;
-  (self._interactPointManager):Dispose()
-  ;
-  (self._sceneManager):Dispose()
-  ;
-  (self._homelandSceneEffectManager):Dispose()
-  ;
-  (self._homelandPetInviteManager):Dispose()
-  ;
-  (LogWrapper.LogDebug)("家园销毁")
+  self._3duiManager:Dispose()
+  self._petManager:Dispose()
+  self._inputManager:Dispose()
+  self._cameraManager:Dispose()
+  self._characterManager:Dispose()
+  self._buildManager:Dispose()
+  self._interactPointManager:Dispose()
+  self._sceneManager:Dispose()
+  self._homelandSceneEffectManager:Dispose()
+  self._homelandPetInviteManager:Dispose()
+  LogWrapper.LogDebug("家园销毁")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.Update = function(self, curTick)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandVisitClient:Update(curTick)
   local deltaTimeMS = curTick - self._lastTick
   self._lastTick = curTick
-  ;
-  (self._inputManager):Update(deltaTimeMS)
+  self._inputManager:Update(deltaTimeMS)
   if self._mode == HomelandMode.Normal then
-    (self._characterManager):Update(deltaTimeMS)
-    ;
-    (self._interactPointManager):Update(deltaTimeMS)
-    ;
-    (self._petManager):Update(deltaTimeMS)
-    ;
-    (self._cameraManager):Update(deltaTimeMS)
-  else
+    self._characterManager:Update(deltaTimeMS)
+    self._interactPointManager:Update(deltaTimeMS)
+    self._petManager:Update(deltaTimeMS)
+    self._cameraManager:Update(deltaTimeMS)
+  elseif self._mode == HomelandMode.Build then
   end
-  if self._mode ~= HomelandMode.Build or self._minimapManager then
-    (self._minimapManager):Update(deltaTimeMS)
+  if self._minimapManager then
+    self._minimapManager:Update(deltaTimeMS)
   end
   if self._homelandSceneEffectManager then
-    (self._homelandSceneEffectManager):Update(deltaTimeMS)
+    self._homelandSceneEffectManager:Update(deltaTimeMS)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUpdatePerFrame)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUpdatePerFrame)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.CurrentMode = function(self)
-  -- function num : 0_6
+function HomelandVisitClient:CurrentMode()
   return self._mode
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.StartBuild = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function HomelandVisitClient:StartBuild()
   BuildLog("开始建造")
-  ;
-  (Log.exception)("拜访模式不可建造")
+  Log.exception("拜访模式不可建造")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.FinishBuild = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function HomelandVisitClient:FinishBuild()
   BuildLog("停止建造")
-  ;
-  (Log.exception)("拜访模式不可停止建造")
+  Log.exception("拜访模式不可停止建造")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.BeginStory = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.exception)("拜访不可进入剧情模式")
+function HomelandVisitClient:BeginStory()
+  Log.exception("拜访不可进入剧情模式")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.EndStory = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.exception)("拜访不可退出剧情模式")
+function HomelandVisitClient:EndStory()
+  Log.exception("拜访不可退出剧情模式")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.FishingManager = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (Log.exception)("拜访模式不可访问FishingManager")
+function HomelandVisitClient:FishingManager()
+  Log.exception("拜访模式不可访问FishingManager")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.SceneManager = function(self)
-  -- function num : 0_12
+function HomelandVisitClient:SceneManager()
   return self._sceneManager
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.CharacterManager = function(self)
-  -- function num : 0_13
+function HomelandVisitClient:CharacterManager()
   return self._characterManager
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.CameraManager = function(self)
-  -- function num : 0_14
+function HomelandVisitClient:CameraManager()
   return self._cameraManager
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.InputManager = function(self)
-  -- function num : 0_15
+function HomelandVisitClient:InputManager()
   return self._inputManager
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.InteractPointManager = function(self)
-  -- function num : 0_16
+function HomelandVisitClient:InteractPointManager()
   return self._interactPointManager
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.BuildManager = function(self)
-  -- function num : 0_17
+function HomelandVisitClient:BuildManager()
   return self._buildManager
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.PetManager = function(self)
-  -- function num : 0_18
+function HomelandVisitClient:PetManager()
   return self._petManager
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.Home3DUIManager = function(self)
-  -- function num : 0_19
+function HomelandVisitClient:Home3DUIManager()
   return self._3duiManager
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureManager.TreasureManager = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  (Log.exception)("拜访模式不可访问TreasureManager")
+function HomelandTreasureManager:TreasureManager()
+  Log.exception("拜访模式不可访问TreasureManager")
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.TreeCuttingManager = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  (Log.exception)("拜访模式不可访问TreeCuttingManager")
+function HomelandVisitClient:TreeCuttingManager()
+  Log.exception("拜访模式不可访问TreeCuttingManager")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.OpenPetInteract = function(self, pet)
-  -- function num : 0_22 , upvalues : _ENV
-  (Log.exception)("拜访模式不可与星灵交互")
+function HomelandVisitClient:OpenPetInteract(pet)
+  Log.exception("拜访模式不可与星灵交互")
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.HomeEventManager = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  (Log.exception)("拜访模式不可访问HomeEventManager")
+function HomelandVisitClient:HomeEventManager()
+  Log.exception("拜访模式不可访问HomeEventManager")
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.FindTreasureManager = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  (Log.exception)("拜访模式不可访问FindTreasureManager")
+function HomelandVisitClient:FindTreasureManager()
+  Log.exception("拜访模式不可访问FindTreasureManager")
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.HomelandMiningManager = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  (Log.exception)("拜访模式不可访问HomelandMiningManager")
+function HomelandVisitClient:HomelandMiningManager()
+  Log.exception("拜访模式不可访问HomelandMiningManager")
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.IsVisit = function(self)
-  -- function num : 0_26
+function HomelandVisitClient:IsVisit()
   return true
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.GetMinimapManager = function(self)
-  -- function num : 0_27
+function HomelandVisitClient:GetMinimapManager()
   return self._minimapManager
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.GetHomelandSceneEffectManager = function(self)
-  -- function num : 0_28
+function HomelandVisitClient:GetHomelandSceneEffectManager()
   return self._homelandSceneEffectManager
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.GetHomelandTaskManager = function(self)
-  -- function num : 0_29
+function HomelandVisitClient:GetHomelandTaskManager()
   return nil
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitClient.GetHomelandPetInviteManager = function(self)
-  -- function num : 0_30
+function HomelandVisitClient:GetHomelandPetInviteManager()
   return self._homelandPetInviteManager
 end
-
-

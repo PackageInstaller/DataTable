@@ -1,62 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_skill_increase_by_layer_mark.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillIncreaseByLayerMark", BuffLogicBase)
 BuffLogicChangeSkillIncreaseByLayerMark = BuffLogicChangeSkillIncreaseByLayerMark
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillIncreaseByLayerMark.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffInstance)._effectList = logicParam.effectList
+function BuffLogicChangeSkillIncreaseByLayerMark:Constructor(buffInstance, logicParam)
+  self._buffInstance._effectList = logicParam.effectList
   self._minValue = logicParam.minValue or 0
   self._oneLayerValue = logicParam.oneLayerValue or 0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._useLayerCountRatio = logicParam.useLayerCountRatio or 0
-    self._maxLayerCount = logicParam.maxLayerCount or 100
-    self._multiValue = logicParam.multiValue or 1
-    self._ratioPower = logicParam.ratioPower or 1
-  end
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._useLayerCountRatio = logicParam.useLayerCountRatio or 0
+  self._maxLayerCount = logicParam.maxLayerCount or 100
+  self._multiValue = logicParam.multiValue or 1
+  self._ratioPower = logicParam.ratioPower or 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillIncreaseByLayerMark.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeSkillIncreaseByLayerMark:DoLogic()
   local casterEntity = self._entity
   local changeValue = 0
-  local svc = (self._world):GetService("BuffLogic")
+  local svc = self._world:GetService("BuffLogic")
   local curMarkLayer = svc:GetBuffLayer(self._entity, self._layerType)
   if self._useLayerCountRatio == 1 then
-    changeValue = self._multiValue * curMarkLayer / self._maxLayerCount ^ self._ratioPower
+    changeValue = self._multiValue * (curMarkLayer / self._maxLayerCount) ^ self._ratioPower
   else
     changeValue = self._minValue + self._oneLayerValue * curMarkLayer
   end
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):ChangeSkillIncrease(casterEntity, self:GetBuffSeq(), paramType, changeValue)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:ChangeSkillIncrease(casterEntity, self:GetBuffSeq(), paramType, changeValue)
   end
 end
 
 _class("BuffLogicRemoveSkillIncreaseByLayerMask", BuffLogicBase)
 BuffLogicRemoveSkillIncreaseByLayerMask = BuffLogicRemoveSkillIncreaseByLayerMask
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSkillIncreaseByLayerMask.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveSkillIncreaseByLayerMask:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSkillIncreaseByLayerMask.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffLogicRemoveSkillIncreaseByLayerMask:DoLogic()
   local casterEntity = self._entity
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillIncrease(casterEntity, self:GetBuffSeq(), paramType)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillIncrease(casterEntity, self:GetBuffSeq(), paramType)
   end
 end
-
-

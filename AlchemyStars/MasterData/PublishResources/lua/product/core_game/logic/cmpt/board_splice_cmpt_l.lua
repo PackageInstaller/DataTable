@@ -1,225 +1,131 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/board_splice_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BoardSpliceComponent", Object)
 BoardSpliceComponent = BoardSpliceComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BoardSpliceComponent.Constructor = function(self, pieceTable)
-  -- function num : 0_0 , upvalues : _ENV
+function BoardSpliceComponent:Constructor(pieceTable)
   self.Pieces = {}
   self._posIndex2Pos = {}
   self._blockFlags = {}
   self.ChangePos = {}
   self._gridEntityTable = {}
   if pieceTable then
-    for x,col in pairs(pieceTable) do
-      -- DECOMPILER ERROR at PC18: Confused about usage of register: R7 in 'UnsetPending'
-
-      (self.Pieces)[x] = {}
-      for y,grid in pairs(col) do
-        -- DECOMPILER ERROR at PC26: Confused about usage of register: R12 in 'UnsetPending'
-
-        ((self.Pieces)[x])[y] = grid.color
-        -- DECOMPILER ERROR at PC35: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self.ChangePos)[#self.ChangePos + 1] = Vector2(x, y)
+    for x, col in pairs(pieceTable) do
+      self.Pieces[x] = {}
+      for y, grid in pairs(col) do
+        self.Pieces[x][y] = grid.color
+        self.ChangePos[#self.ChangePos + 1] = Vector2(x, y)
       end
     end
   end
-  do
-    self._piecesEffectTypeList = {}
-    self._prismEntityIDs = {}
-  end
+  self._piecesEffectTypeList = {}
+  self._prismEntityIDs = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardSpliceComponent.InitPieceTableData = function(self, pieceTable)
-  -- function num : 0_1 , upvalues : _ENV
+function BoardSpliceComponent:InitPieceTableData(pieceTable)
   self._blockFlags = {}
-  for x,ys in pairs(pieceTable) do
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._blockFlags)[x] = {}
-    for y,_ in pairs(ys) do
-      -- DECOMPILER ERROR at PC20: Confused about usage of register: R12 in 'UnsetPending'
-
-      ((self._blockFlags)[x])[y] = PieceBlockData:New(x, y)
-      -- DECOMPILER ERROR at PC28: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._posIndex2Pos)[x * 100 + y] = Vector2(x, y)
+  for x, ys in pairs(pieceTable) do
+    self._blockFlags[x] = {}
+    for y, _ in pairs(ys) do
+      self._blockFlags[x][y] = PieceBlockData:New(x, y)
+      self._posIndex2Pos[x * 100 + y] = Vector2(x, y)
     end
   end
   local t = {}
-  for x,col in pairs(pieceTable) do
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self.Pieces)[x] = {}
-    for y,grid in pairs(col) do
-      -- DECOMPILER ERROR at PC48: Confused about usage of register: R13 in 'UnsetPending'
-
-      ((self.Pieces)[x])[y] = grid.color
-      -- DECOMPILER ERROR at PC57: Confused about usage of register: R13 in 'UnsetPending'
-
-      ;
-      (self.ChangePos)[#self.ChangePos + 1] = Vector2(x, y)
+  for x, col in pairs(pieceTable) do
+    self.Pieces[x] = {}
+    for y, grid in pairs(col) do
+      self.Pieces[x][y] = grid.color
+      self.ChangePos[#self.ChangePos + 1] = Vector2(x, y)
       t[x * 100 + y] = grid.color
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardSpliceComponent.CloneBoardPosList = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function BoardSpliceComponent:CloneBoardPosList()
   local pieceList = {}
-  for x,row in pairs(self.Pieces) do
-    for y,color in pairs(row) do
+  for x, row in pairs(self.Pieces) do
+    for y, color in pairs(row) do
       pieceList[#pieceList + 1] = Vector2(x, y)
     end
   end
   return pieceList
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardSpliceComponent.GetPieceType = function(self, pos)
-  -- function num : 0_3 , upvalues : _ENV
+function BoardSpliceComponent:GetPieceType(pos)
   local x, y = pos.x, pos.y
-  if (self.Pieces)[x] and ((self.Pieces)[x])[y] then
-    return ((self.Pieces)[x])[y]
+  if self.Pieces[x] and self.Pieces[x][y] then
+    return self.Pieces[x][y]
   end
   return PieceType.None
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardSpliceComponent.SetPieceElement = function(self, pos, pieceType)
-  -- function num : 0_4 , upvalues : _ENV
-  local old = ((self.Pieces)[pos.x])[pos.y]
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self.Pieces)[pos.x])[pos.y] = pieceType
-  self:PrintBoardCmptLog("SetPieceElement() pos=", (Vector2.Pos2Index)(pos), " from=", old, " to=", pieceType)
+function BoardSpliceComponent:SetPieceElement(pos, pieceType)
+  local old = self.Pieces[pos.x][pos.y]
+  self.Pieces[pos.x][pos.y] = pieceType
+  self:PrintBoardCmptLog("SetPieceElement() pos=", Vector2.Pos2Index(pos), " from=", old, " to=", pieceType)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardSpliceComponent.PrintBoardCmptLog = function(self, ...)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._entity)._world and ((self._entity)._world):IsDevelopEnv() then
-    (Log.debug)(...)
+function BoardSpliceComponent:PrintBoardCmptLog(...)
+  if self._entity._world and self._entity._world:IsDevelopEnv() then
+    Log.debug(...)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardSpliceComponent.GetChangePosAndClear = function(self)
-  -- function num : 0_6
+function BoardSpliceComponent:GetChangePosAndClear()
   local chagePosArray = self.ChangePos
   self.ChangePos = {}
   return chagePosArray
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardSpliceComponent.GetGridEntityData = function(self)
-  -- function num : 0_7
+function BoardSpliceComponent:GetGridEntityData()
   return self._gridEntityTable
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardSpliceComponent.AddGridEntityData = function(self, pos, pieceType)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._gridEntityTable)[pos] = pieceType
+function BoardSpliceComponent:AddGridEntityData(pos, pieceType)
+  self._gridEntityTable[pos] = pieceType
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardSpliceComponent.GetPrismEntityIDAtPos = function(self, pos)
-  -- function num : 0_9 , upvalues : _ENV
-  local posIdx = (Vector2.Pos2Index)(pos)
-  return (self._prismEntityIDs)[posIdx]
+function BoardSpliceComponent:GetPrismEntityIDAtPos(pos)
+  local posIdx = Vector2.Pos2Index(pos)
+  return self._prismEntityIDs[posIdx]
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardSpliceComponent.IsSpecialPieceEffect = function(self, pos)
-  -- function num : 0_10 , upvalues : _ENV
-  local posIdx = (Vector2.Pos2Index)(pos)
-  return (self._piecesEffectTypeList)[posIdx]
+function BoardSpliceComponent:IsSpecialPieceEffect(pos)
+  local posIdx = Vector2.Pos2Index(pos)
+  return self._piecesEffectTypeList[posIdx]
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardSpliceComponent.GetBoardPieceEffectType = function(self, pos)
-  -- function num : 0_11 , upvalues : _ENV
-  local posIdx = (Vector2.Pos2Index)(pos)
-  return (self._piecesEffectTypeList)[posIdx]
+function BoardSpliceComponent:GetBoardPieceEffectType(pos)
+  local posIdx = Vector2.Pos2Index(pos)
+  return self._piecesEffectTypeList[posIdx]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardSpliceComponent.SetBoardPieceEffectType = function(self, pos, pieceEffectType, pieceEffectEntityID)
-  -- function num : 0_12 , upvalues : _ENV
-  local posIdx = (Vector2.Pos2Index)(pos)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._piecesEffectTypeList)[posIdx] = pieceEffectType
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._prismEntityIDs)[posIdx] = pieceEffectEntityID
+function BoardSpliceComponent:SetBoardPieceEffectType(pos, pieceEffectType, pieceEffectEntityID)
+  local posIdx = Vector2.Pos2Index(pos)
+  self._piecesEffectTypeList[posIdx] = pieceEffectType
+  self._prismEntityIDs[posIdx] = pieceEffectEntityID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardSpliceComponent.RemoveBoardPieceEffectType = function(self, pos)
-  -- function num : 0_13 , upvalues : _ENV
-  local posIdx = (Vector2.Pos2Index)(pos)
+function BoardSpliceComponent:RemoveBoardPieceEffectType(pos)
+  local posIdx = Vector2.Pos2Index(pos)
   self:SetBoardPieceEffectType(pos, nil, nil)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.BoardSplice = function(self)
-  -- function num : 0_14
-  return self:GetComponent((self.WEComponentsEnum).BoardSplice)
+function Entity:BoardSplice()
+  return self:GetComponent(self.WEComponentsEnum.BoardSplice)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasBoardSplice = function(self)
-  -- function num : 0_15
-  return self:HasComponent((self.WEComponentsEnum).BoardSplice)
+function Entity:HasBoardSplice()
+  return self:HasComponent(self.WEComponentsEnum.BoardSplice)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceBoardSplice = function(self, pieceTable)
-  -- function num : 0_16 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BoardSplice
+function Entity:ReplaceBoardSplice(pieceTable)
+  local index = self.WEComponentsEnum.BoardSplice
   local component = BoardSpliceComponent:New(pieceTable)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddBoardSplice = function(self, pieceTable)
-  -- function num : 0_17 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BoardSplice
+function Entity:AddBoardSplice(pieceTable)
+  local index = self.WEComponentsEnum.BoardSplice
   local component = BoardSpliceComponent:New(pieceTable)
   self:AddComponent(index, component)
 end
-
-

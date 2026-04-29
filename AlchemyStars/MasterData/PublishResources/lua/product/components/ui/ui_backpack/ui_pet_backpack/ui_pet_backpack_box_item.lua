@@ -1,25 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_backpack/ui_pet_backpack/ui_pet_backpack_box_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetBackPackBoxItem", UICustomWidget)
 UIPetBackPackBoxItem = UIPetBackPackBoxItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetBackPackBoxItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetBackPackBoxItem:OnShow(uiParams)
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._selctedGo = self:GetGameObject("Selected")
-  ;
-  (self._selctedGo):SetActive(false)
+  self._selctedGo:SetActive(false)
   self._btnGo = self:GetGameObject("Btn")
   self._isInit = false
   self._draging = false
   self._starLoader = self:GetUIComponent("UISelectObjectPath", "stars")
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self._uiHeartItemAtlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
-  self._starSprite = (self._uiHeartItemAtlas):GetSprite("items_Prop-interface_xing1")
+  self._starSprite = self._uiHeartItemAtlas:GetSprite("items_Prop-interface_xing1")
   self._logoLoader = self:GetUIComponent("RawImageLoader", "logo")
   self._iconLoader = self:GetUIComponent("RawImageLoader", "diLayer")
   self._qualityIcon = self:GetUIComponent("Image", "qualityIcon")
@@ -30,56 +22,39 @@ UIPetBackPackBoxItem.OnShow = function(self, uiParams)
   self._hasGetGo = self:GetGameObject("HasGet")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetBackPackBoxItem.OnHide = function(self)
-  -- function num : 0_1
+function UIPetBackPackBoxItem:OnHide()
   self._uiHeartItemAtlas = nil
   self.atlasProperty = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetBackPackBoxItem.RegisterEvent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local etlAddDrag = (UICustomUIEventListener.Get)(self._btnGo)
-  local etlAdd = (UILongPressTriggerListener.Get)(self._btnGo)
+function UIPetBackPackBoxItem:RegisterEvent()
+  local etlAddDrag = UICustomUIEventListener.Get(self._btnGo)
+  local etlAdd = UILongPressTriggerListener.Get(self._btnGo)
   self:AddUICustomEventListener(etlAdd, UIEvent.LongPress, function(go)
-    -- function num : 0_2_0 , upvalues : self
     if not self._draging then
       self:ShowDialog("UIShopPetDetailController", self._itemId)
     end
-  end
-)
+  end)
   self:AddUICustomEventListener(etlAddDrag, UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_2_1 , upvalues : self
     self._draging = true
     if self._scrollRect then
-      (self._scrollRect):OnBeginDrag(eventData)
+      self._scrollRect:OnBeginDrag(eventData)
     end
-  end
-)
+  end)
   self:AddUICustomEventListener(etlAddDrag, UIEvent.Drag, function(eventData)
-    -- function num : 0_2_2 , upvalues : self
     if self._scrollRect then
-      (self._scrollRect):OnDrag(eventData)
+      self._scrollRect:OnDrag(eventData)
     end
-  end
-)
+  end)
   self:AddUICustomEventListener(etlAddDrag, UIEvent.EndDrag, function(eventData)
-    -- function num : 0_2_3 , upvalues : self
     self._draging = false
     if self._scrollRect then
-      (self._scrollRect):OnEndDrag(eventData)
+      self._scrollRect:OnEndDrag(eventData)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetBackPackBoxItem.Refresh = function(self, petBackPackBox, itemId, scrollRect, previewMode)
-  -- function num : 0_3
+function UIPetBackPackBoxItem:Refresh(petBackPackBox, itemId, scrollRect, previewMode)
   self._draging = false
   self._scrollRect = scrollRect
   self._previewMode = previewMode
@@ -90,109 +65,76 @@ UIPetBackPackBoxItem.Refresh = function(self, petBackPackBox, itemId, scrollRect
     self:RegisterEvent()
     self._isInit = true
   end
-  ;
-  (self._selctedGo):SetActive(false)
+  self._selctedGo:SetActive(false)
   self:_SetPet()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetBackPackBoxItem._SetPet = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local petCfg = (Cfg.cfg_pet)[self._itemId]
+function UIPetBackPackBoxItem:_SetPet()
+  local petCfg = Cfg.cfg_pet[self._itemId]
   if not petCfg then
-    return 
+    return
   end
   local petStar = petCfg.Star
-  local petBody = (HelperProxy:GetInstance()):GetPetBody(petCfg.ID, 0, 0, PetSkinEffectPath.CARD_PET_LIST)
+  local petBody = HelperProxy:GetInstance():GetPetBody(petCfg.ID, 0, 0, PetSkinEffectPath.CARD_PET_LIST)
   if petBody then
-    (self._iconLoader):LoadImage(petBody)
+    self._iconLoader:LoadImage(petBody)
   end
-  ;
-  (self._logoLoader):LoadImage(petCfg.Logo)
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._qualityIcon).sprite = (self._uiHeartItemAtlas):GetSprite("map_biandui_pin" .. petStar)
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  self._logoLoader:LoadImage(petCfg.Logo)
+  self._qualityIcon.sprite = self._uiHeartItemAtlas:GetSprite("map_biandui_pin" .. petStar)
+  local petModule = GameGlobal.GetModule(PetModule)
   local petData = petModule:GetPetByTemplateId(self._itemId)
   local awakenStep = 0
   if petData then
     awakenStep = petData:GetPetAwakening()
   end
-  self._starSp1 = (self._uiHeartItemAtlas):GetSprite("spirit_xing3_frame")
-  self._starSp2 = (self._uiHeartItemAtlas):GetSprite("spirit_xing2_frame")
+  self._starSp1 = self._uiHeartItemAtlas:GetSprite("spirit_xing3_frame")
+  self._starSp2 = self._uiHeartItemAtlas:GetSprite("spirit_xing2_frame")
   local allStar = 6
-  ;
-  (self._starLoader):SpawnObjects("UIPetBackpackStarItem", petStar)
-  local stars = (self._starLoader):GetAllSpawnList()
+  self._starLoader:SpawnObjects("UIPetBackpackStarItem", petStar)
+  local stars = self._starLoader:GetAllSpawnList()
   local awakenStartIndex = petStar - awakenStep
   for i = 1, petStar do
-    if awakenStartIndex < i then
-      (stars[i]):SetData(true)
+    if i > awakenStartIndex then
+      stars[i]:SetData(true)
     else
-      ;
-      (stars[i]):SetData(false)
+      stars[i]:SetData(false)
     end
   end
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
-  local firstElementIcon = (UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[petCfg.FirstElement]).Icon)
-  -- DECOMPILER ERROR at PC102: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self._firstAttIcon).sprite = (self.atlasProperty):GetSprite(firstElementIcon)
-  local secondElement = nil
-  if petCfg.Element2NeedGrade <= 0 then
+  local cfg_pet_element = Cfg.cfg_pet_element({})
+  local firstElementIcon = UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[petCfg.FirstElement].Icon)
+  self._firstAttIcon.sprite = self.atlasProperty:GetSprite(firstElementIcon)
+  local secondElement
+  if 0 >= petCfg.Element2NeedGrade then
     secondElement = petCfg.SecondElement
   end
-  if secondElement and secondElement > 0 then
-    (self._secondGo):SetActive(true)
-    local secondElementIcon = (UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[petCfg.SecondElement]).Icon)
-    -- DECOMPILER ERROR at PC129: Confused about usage of register: R14 in 'UnsetPending'
-
-    ;
-    (self._secondAttribute).sprite = (self.atlasProperty):GetSprite(secondElementIcon)
+  if secondElement and 0 < secondElement then
+    self._secondGo:SetActive(true)
+    local secondElementIcon = UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[petCfg.SecondElement].Icon)
+    self._secondAttribute.sprite = self.atlasProperty:GetSprite(secondElementIcon)
   else
-    do
-      ;
-      (self._secondGo):SetActive(false)
-      local petName = ""
-      if petCfg then
-        petName = (StringTable.Get)(petCfg.Name)
-      end
-      ;
-      (self._nameLabel):SetText(petName)
-      local petModule = ((GameGlobal.GameLogic)()):GetModule(PetModule)
-      ;
-      (self._hasGetGo):SetActive(petModule:HasPet(petCfg.ID))
-    end
+    self._secondGo:SetActive(false)
   end
+  local petName = ""
+  if petCfg then
+    petName = StringTable.Get(petCfg.Name)
+  end
+  self._nameLabel:SetText(petName)
+  local petModule = GameGlobal.GameLogic():GetModule(PetModule)
+  self._hasGetGo:SetActive(petModule:HasPet(petCfg.ID))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetBackPackBoxItem.RefreshSelectStatus = function(self, status)
-  -- function num : 0_5
-  (self._selctedGo):SetActive(status)
+function UIPetBackPackBoxItem:RefreshSelectStatus(status)
+  self._selctedGo:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetBackPackBoxItem.GetItemId = function(self)
-  -- function num : 0_6
+function UIPetBackPackBoxItem:GetItemId()
   return self._itemId
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetBackPackBoxItem.BtnOnClick = function(self)
-  -- function num : 0_7
+function UIPetBackPackBoxItem:BtnOnClick()
   if self._previewMode then
     self:ShowDialog("UIShopPetDetailController", self._itemId)
   else
-    ;
-    (self._petBackPackBox):SelectPetItem(self)
+    self._petBackPackBox:SelectPetItem(self)
   end
 end
-
-

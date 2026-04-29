@@ -1,35 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_is_skill_reachable.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_is_base")
 _class("ActionIsSkillReachable", ActionIsBase)
 ActionIsSkillReachable = ActionIsSkillReachable
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionIsSkillReachable._GetConfigData = function(self, nIndex)
-  -- function num : 0_0
+function ActionIsSkillReachable:_GetConfigData(nIndex)
   return self:_GetLogicData(self.m_configData, nIndex)
 end
 
-local _InsertV2ArrayNonDumplicate = function(a, b, valueMap)
-  -- function num : 0_1 , upvalues : _ENV
-  for _,v in ipairs(b) do
+local function _InsertV2ArrayNonDumplicate(a, b, valueMap)
+  for _, v in ipairs(b) do
     local integerV2 = Vector2(v.x // 1, v.y // 1)
     local posIndex = v:PosIndex()
     if not valueMap[posIndex] then
       valueMap[posIndex] = true
-      ;
-      (table.insert)(a, v)
+      table.insert(a, v)
     end
   end
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-ActionIsSkillReachable.OnUpdate = function(self)
-  -- function num : 0_2 , upvalues : _ENV, _InsertV2ArrayNonDumplicate
+function ActionIsSkillReachable:OnUpdate()
   local skillGroup, skillIndex = self:_GetConfigData(1), self:_GetConfigData(2)
   local skillID = self:GetConfigSkillID(skillGroup, skillIndex)
   local notMove = self:_GetConfigData(3) == 1
@@ -38,16 +26,16 @@ ActionIsSkillReachable.OnUpdate = function(self)
   end
   local entityCaster = self.m_entityOwn
   local selfPos = entityCaster:GetGridPosition()
-  local dir = (entityCaster:GridLocation()).Direction
-  local selfBodyArea = (entityCaster:BodyArea()):GetArea()
+  local dir = entityCaster:GridLocation().Direction
+  local selfBodyArea = entityCaster:BodyArea():GetArea()
   local world = entityCaster:GetOwnerWorld()
-  local monsterID = (self.m_entityOwn):MonsterID()
+  local monsterID = self.m_entityOwn:MonsterID()
   local raceType = monsterID:GetMonsterRaceType()
   local cfgService = world:GetService("Config")
   local monsterConfigData = cfgService:GetMonsterConfigData()
   local effectCalcSvc = world:GetService("SkillEffectCalc")
   local blockFlag = effectCalcSvc:_TransBlockByRaceType(raceType)
-  local aiComponent = (self.m_entityOwn):AI()
+  local aiComponent = self.m_entityOwn:AI()
   local nMobilityValid = aiComponent:GetMobilityValid()
   local reachableRange = {}
   local reachableRangeValueMap = {}
@@ -56,8 +44,8 @@ ActionIsSkillReachable.OnUpdate = function(self)
     _InsertV2ArrayNonDumplicate(reachableRange, skillRangeData, reachableRangeValueMap)
   else
     local cbFilter = Callback:New(1, self.IsPosAccessible, self)
-    local walkRange = (ComputeScopeRange.ComputeRange_WalkMathPos)(selfPos, #selfBodyArea, nMobilityValid, cbFilter)
-    for _,walkPos in ipairs(walkRange) do
+    local walkRange = ComputeScopeRange.ComputeRange_WalkMathPos(selfPos, #selfBodyArea, nMobilityValid, cbFilter)
+    for _, walkPos in ipairs(walkRange) do
       local skillRangeData = self:CalculateSkillRange(skillID, walkPos:GetPos(), dir, selfBodyArea)
       _InsertV2ArrayNonDumplicate(reachableRange, skillRangeData, reachableRangeValueMap)
     end
@@ -65,10 +53,5 @@ ActionIsSkillReachable.OnUpdate = function(self)
   local entityTarget = aiComponent:GetTargetEntity()
   local bSuccess = self:_IsTargetInSkillRange(entityTarget, reachableRange)
   self:PrintLog("skillID=", skillID)
-  if not bSuccess or not AINewNodeStatus.Success then
-    do return AINewNodeStatus.Failure end
-    -- DECOMPILER ERROR: 7 unprocessed JMP targets
-  end
+  return bSuccess and AINewNodeStatus.Success or AINewNodeStatus.Failure
 end
-
-

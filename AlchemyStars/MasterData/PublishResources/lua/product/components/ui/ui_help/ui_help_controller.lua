@@ -1,48 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_help/ui_help_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHelpController", UIController)
 UIHelpController = UIHelpController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHelpController.Constructor = function(self)
-  -- function num : 0_0
+function UIHelpController:Constructor()
   self._dataCount = 0
   self._currentIndex = 0
   self._items = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_help)[uiParams[1]]
+function UIHelpController:OnShow(uiParams)
+  self._cfg = Cfg.cfg_help[uiParams[1]]
   if self._cfg == nil then
-    (Log.fatal)("[error] self._cfg is nil !")
-    return 
+    Log.fatal("[error] self._cfg is nil !")
+    return
   end
   self.atlas = self:GetAsset("UIHelpIntr.spriteatlas", LoadType.SpriteAtlas)
-  self._TT = (self._cfg).TitleBig
-  local count = (table.count)((self._cfg).TitleSmall)
+  self._TT = self._cfg.TitleBig
+  local count = table.count(self._cfg.TitleSmall)
   self._dataTable = {}
   for i = 1, count do
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._dataTable)[i] = {}
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self._dataTable)[i]).icon = ((self._cfg).Icon)[i]
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self._dataTable)[i]).title = ((self._cfg).TitleSmall)[i]
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self._dataTable)[i]).msg = ((self._cfg).Intr)[i]
+    self._dataTable[i] = {}
+    self._dataTable[i].icon = self._cfg.Icon[i]
+    self._dataTable[i].title = self._cfg.TitleSmall[i]
+    self._dataTable[i].msg = self._cfg.Intr[i]
   end
   if uiParams[2] then
     self._currentIndex = uiParams[2]
@@ -51,90 +30,62 @@ UIHelpController.OnShow = function(self, uiParams)
   end
   self._lBtnGo = self:GetGameObject("lBtn")
   self._rBtnGo = self:GetGameObject("rBtn")
-  self._dataCount = (table.count)(self._dataTable)
+  self._dataCount = table.count(self._dataTable)
   self._safeArea = self:GetUIComponent("RectTransform", "SafeArea")
-  self._canvas = ((self._safeArea).parent):GetComponent("RectTransform")
-  local safesize = ((self._canvas).rect).size
+  self._canvas = self._safeArea.parent:GetComponent("RectTransform")
+  local safesize = self._canvas.rect.size
   safesize.x = safesize.x + 1
   safesize.y = safesize.y + 1
   self.pointParentGO = self:GetGameObject("point")
   self.points = {}
   for index = 1, 10 do
-    local trans = (GameObjectHelper.FindChild)((self.pointParentGO).transform, "p" .. index)
-    ;
-    (trans.gameObject):SetActive(false)
-    -- DECOMPILER ERROR at PC119: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.points)[index] = {}
-    -- DECOMPILER ERROR at PC122: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    ((self.points)[index]).trans = trans
-    -- DECOMPILER ERROR at PC128: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    ((self.points)[index]).rect = trans:GetComponent("RectTransform")
-    -- DECOMPILER ERROR at PC134: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    ((self.points)[index]).image = trans:GetComponent("Image")
+    local trans = GameObjectHelper.FindChild(self.pointParentGO.transform, "p" .. index)
+    trans.gameObject:SetActive(false)
+    self.points[index] = {}
+    self.points[index].trans = trans
+    self.points[index].rect = trans:GetComponent("RectTransform")
+    self.points[index].image = trans:GetComponent("Image")
   end
   self._scrollViewHelper = H3DScrollViewHelper:New(self, "HelpScrollView", "UIHelpItem", function(index, uiwidget, currentIndex)
-    -- function num : 0_1_0 , upvalues : self
     return self:OnShowItem(index, self._TT, uiwidget, currentIndex)
-  end
-)
-  ;
-  (self._scrollViewHelper):SetGroupChangedCallback(function(index, item)
-    -- function num : 0_1_1 , upvalues : self
-    if self._dataCount < index + 1 then
-      return 
+  end)
+  self._scrollViewHelper:SetGroupChangedCallback(function(index, item)
+    if index + 1 > self._dataCount then
+      return
     end
     self:ShowItemData(index + 1)
-  end
-)
+  end)
   for index = 1, 10 do
     if index <= self._dataCount then
-      ((((self.points)[index]).trans).gameObject):SetActive(true)
+      self.points[index].trans.gameObject:SetActive(true)
     else
-      ;
-      ((((self.points)[index]).trans).gameObject):SetActive(false)
+      self.points[index].trans.gameObject:SetActive(false)
     end
   end
-  ;
-  (self._scrollViewHelper):Init(self._dataCount, self._currentIndex, safesize)
+  self._scrollViewHelper:Init(self._dataCount, self._currentIndex, safesize)
   self._isMoving = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpController.ShowItemData = function(self, index)
-  -- function num : 0_2
+function UIHelpController:ShowItemData(index)
   self:SetPointSelect(self._currentIndex, false)
   self._currentIndex = index
   self:SetPointSelect(self._currentIndex, true)
-  if (self._items)[self._currentIndex] then
-    ((self._items)[self._currentIndex]):ResetPos()
+  if self._items[self._currentIndex] then
+    self._items[self._currentIndex]:ResetPos()
   end
   if index - 1 <= 0 then
-    (self._lBtnGo):SetActive(false)
+    self._lBtnGo:SetActive(false)
   else
-    ;
-    (self._lBtnGo):SetActive(true)
+    self._lBtnGo:SetActive(true)
   end
-  if self._dataCount < index + 1 then
-    (self._rBtnGo):SetActive(false)
+  if index + 1 > self._dataCount then
+    self._rBtnGo:SetActive(false)
   else
-    ;
-    (self._rBtnGo):SetActive(true)
+    self._rBtnGo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpController.OnHide = function(self)
-  -- function num : 0_3
+function UIHelpController:OnHide()
   self._currentIndex = 0
   self._petInfos = nil
   self._dataCount = 0
@@ -142,99 +93,62 @@ UIHelpController.OnHide = function(self)
   self._isMoving = false
   self._backBtns = nil
   if self._scrollViewHelper then
-    (self._scrollViewHelper):Dispose()
+    self._scrollViewHelper:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpController.OnShowItem = function(self, index, titleBig, uiwidget, currentIndex)
-  -- function num : 0_4
-  local title = ((self._dataTable)[index]).title
-  local icon = ((self._dataTable)[index]).icon
-  local msg = ((self._dataTable)[index]).msg
+function UIHelpController:OnShowItem(index, titleBig, uiwidget, currentIndex)
+  local title = self._dataTable[index].title
+  local icon = self._dataTable[index].icon
+  local msg = self._dataTable[index].msg
   uiwidget:SetData(index, titleBig, title, icon, msg)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._items)[index] = uiwidget
+  self._items[index] = uiwidget
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpController.cgLeftOnClick = function(self)
-  -- function num : 0_5
+function UIHelpController:cgLeftOnClick()
   if self._isMoving then
-    return 
+    return
   end
   if self._currentIndex > 1 then
     self._isMoving = true
     local tempIndex = self._currentIndex - 1
-    do
-      (self._scrollViewHelper):MovePanelToIndex(tempIndex, function()
-    -- function num : 0_5_0 , upvalues : self, tempIndex
-    self._isMoving = false
-    if self._currentIndex ~= tempIndex then
-      self:ShowItemData(tempIndex)
-    end
-  end
-)
-    end
+    self._scrollViewHelper:MovePanelToIndex(tempIndex, function()
+      self._isMoving = false
+      if self._currentIndex ~= tempIndex then
+        self:ShowItemData(tempIndex)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpController.cgRightOnClick = function(self)
-  -- function num : 0_6
+function UIHelpController:cgRightOnClick()
   if self._isMoving then
-    return 
+    return
   end
   if self._currentIndex < self._dataCount then
     self._isMoving = true
     local tempIndex = self._currentIndex + 1
-    do
-      (self._scrollViewHelper):MovePanelToIndex(tempIndex, function()
-    -- function num : 0_6_0 , upvalues : self, tempIndex
-    self._isMoving = false
-    if self._currentIndex ~= tempIndex then
-      self:ShowItemData(tempIndex)
-    end
-  end
-)
-    end
+    self._scrollViewHelper:MovePanelToIndex(tempIndex, function()
+      self._isMoving = false
+      if self._currentIndex ~= tempIndex then
+        self:ShowItemData(tempIndex)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpController.bgOnClick = function(self)
-  -- function num : 0_7
+function UIHelpController:bgOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpController.SetPointSelect = function(self, index, select)
-  -- function num : 0_8 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  if select and (self.points)[index] then
-    (((self.points)[index]).image).sprite = (self.atlas):GetSprite("shop_tuijian_di7")
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (((self.points)[index]).rect).sizeDelta = Vector2(74, 39)
-  end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self.points)[index] then
-    (((self.points)[index]).image).sprite = (self.atlas):GetSprite("shop_tuijian_di6")
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (((self.points)[index]).rect).sizeDelta = Vector2(30, 39)
+function UIHelpController:SetPointSelect(index, select)
+  if select then
+    if self.points[index] then
+      self.points[index].image.sprite = self.atlas:GetSprite("shop_tuijian_di7")
+      self.points[index].rect.sizeDelta = Vector2(74, 39)
+    end
+  elseif self.points[index] then
+    self.points[index].image.sprite = self.atlas:GetSprite("shop_tuijian_di6")
+    self.points[index].rect.sizeDelta = Vector2(30, 39)
   end
 end
-
-

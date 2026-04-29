@@ -1,8 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/story/eventstory/str_eventstory_N21yinrujuqing.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {ui_story_5032_50323301_1_dialog_content = "으흥~ 흥흥~", ui_story_5032_50323301_2_dialog_content = "라랄라~", ui_story_5032_50323301_3_dialog_content = "흐흥~ 라라~", ui_story_5032_50323301_4_dialog_content = "바이스, 뭐가 그렇게 바빠?", ui_story_5032_50323301_5_dialog_content = "PlayerName! 여기 좀 봐!\n헤븐즈 가든에 이렇게 좋은 게 있었어!", ui_story_5032_50323301_6_dialog_content = "<color=#e8d9bb>덜커덩──!</color>", ui_story_5032_50323301_7_dialog_content = "이게 다 뭐야...?", ui_story_5032_50323301_8_dialog_content = "천천히 설명해 줄게! 잘 봐...", ui_story_5032_50323301_9_dialog_content = "이 동전처럼 보이는 이 금속 원반들은 전부 닳았어.\n녹이면 다른 걸 만들 수 있을 거야.", ui_story_5032_50323301_10_dialog_content = "그리고 여기 이상한 도면이 몇 개 있는데,\n대부분 부식돼서 좀 더 연구가 필요해.", ui_story_5032_50323301_11_dialog_content = "여기 이 검은 것들은 인공물이 아니라 광석 같지?\n가지고 가서 씻기고 다시 확인해 볼게.", ui_story_5032_50323301_12_dialog_content = "아! 그리고 여기! 나 반딧불이도 잔뜩 잡았어!\n콜로서스에 두면 야간 조명이 돼줄 거야!", ui_story_5032_50323301_13_dialog_content = "......", ui_story_5032_50323301_14_dialog_content = "아하하...", ui_story_5032_50323301_15_dialog_content = "왜 웃는데?", ui_story_5032_50323301_16_dialog_content = "아무것도 아냐. 어쩐지 하루종일 여기저기 다니더니, 이것들 때문이었구나.", ui_story_5032_50323301_17_dialog_content = "그럼 혹시 그 보물 찾는 장치, 네가 또 꺼내서 쓴 거야?", ui_story_5032_50323301_18_dialog_content = "「<color=#FFB400>휴대용 탐지기</color>」 말하는 거지? 맞아!", ui_story_5032_50323301_19_dialog_content = "가만히 있으니까 너무 심심했거든!", ui_story_5032_50323301_20_dialog_content = "알겠어. 나도 같이 할까?", ui_story_5032_50323301_21_dialog_content = "응! 안 그래도 같이 하자고 말하려던 참이었거든!", ui_story_5032_50323301_22_dialog_content = "보물찾기는 몇 번을 해도 질리지가 않으니까 말이야.", ui_story_5032_50323301_23_dialog_content = "그럼 「<color=#FFB400>휴대용 탐지기</color>」를 가지고\n다른 보물을 찾으러 가 보자!", ui_story_5032_50323301_24_dialog_content = "응, 조종사!"}
+local config = {
+  ui_story_5032_50323301_1_dialog_content = "으흥~ 흥흥~",
+  ui_story_5032_50323301_2_dialog_content = "라랄라~",
+  ui_story_5032_50323301_3_dialog_content = "흐흥~ 라라~",
+  ui_story_5032_50323301_4_dialog_content = "바이스, 뭐가 그렇게 바빠?",
+  ui_story_5032_50323301_5_dialog_content = "PlayerName! 여기 좀 봐!\n헤븐즈 가든에 이렇게 좋은 게 있었어!",
+  ui_story_5032_50323301_6_dialog_content = "<color=#e8d9bb>덜커덩──!</color>",
+  ui_story_5032_50323301_7_dialog_content = "이게 다 뭐야...?",
+  ui_story_5032_50323301_8_dialog_content = "천천히 설명해 줄게! 잘 봐...",
+  ui_story_5032_50323301_9_dialog_content = "이 동전처럼 보이는 이 금속 원반들은 전부 닳았어.\n녹이면 다른 걸 만들 수 있을 거야.",
+  ui_story_5032_50323301_10_dialog_content = "그리고 여기 이상한 도면이 몇 개 있는데,\n대부분 부식돼서 좀 더 연구가 필요해.",
+  ui_story_5032_50323301_11_dialog_content = "여기 이 검은 것들은 인공물이 아니라 광석 같지?\n가지고 가서 씻기고 다시 확인해 볼게.",
+  ui_story_5032_50323301_12_dialog_content = "아! 그리고 여기! 나 반딧불이도 잔뜩 잡았어!\n콜로서스에 두면 야간 조명이 돼줄 거야!",
+  ui_story_5032_50323301_13_dialog_content = "......",
+  ui_story_5032_50323301_14_dialog_content = "아하하...",
+  ui_story_5032_50323301_15_dialog_content = "왜 웃는데?",
+  ui_story_5032_50323301_16_dialog_content = "아무것도 아냐. 어쩐지 하루종일 여기저기 다니더니, 이것들 때문이었구나.",
+  ui_story_5032_50323301_17_dialog_content = "그럼 혹시 그 보물 찾는 장치, 네가 또 꺼내서 쓴 거야?",
+  ui_story_5032_50323301_18_dialog_content = "「<color=#FFB400>휴대용 탐지기</color>」 말하는 거지? 맞아!",
+  ui_story_5032_50323301_19_dialog_content = "가만히 있으니까 너무 심심했거든!",
+  ui_story_5032_50323301_20_dialog_content = "알겠어. 나도 같이 할까?",
+  ui_story_5032_50323301_21_dialog_content = "응! 안 그래도 같이 하자고 말하려던 참이었거든!",
+  ui_story_5032_50323301_22_dialog_content = "보물찾기는 몇 번을 해도 질리지가 않으니까 말이야.",
+  ui_story_5032_50323301_23_dialog_content = "그럼 「<color=#FFB400>휴대용 탐지기</color>」를 가지고\n다른 보물을 찾으러 가 보자!",
+  ui_story_5032_50323301_24_dialog_content = "응, 조종사!"
+}
 return config
-

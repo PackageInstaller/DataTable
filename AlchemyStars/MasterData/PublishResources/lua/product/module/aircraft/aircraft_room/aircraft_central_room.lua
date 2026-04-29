@@ -1,129 +1,83 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/aircraft/aircraft_room/aircraft_central_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("aircraft_room_base")
 _class("AircraftCentralRoom", AircraftRoomBase)
 AircraftCentralRoom = AircraftCentralRoom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftCentralRoom.Constructor = function(self)
-  -- function num : 0_0
+function AircraftCentralRoom:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCentralRoom.SetClientData = function(self, client_data)
-  -- function num : 0_1 , upvalues : _ENV
+function AircraftCentralRoom:SetClientData(client_data)
   self.client_data = client_data
   local affi = 0
   for i = 1, #self._pets do
-    affi = affi + ((self._pets)[i]):GetWorkSkillAffinity(AirRoomType.CentralRoom, WorkSkillType.WS_Central_AddAffinity)
+    affi = affi + self._pets[i]:GetWorkSkillAffinity(AirRoomType.CentralRoom, WorkSkillType.WS_Central_AddAffinity)
   end
   self._settle_add_ambient = affi
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCentralRoom.SetExtData = function(self, data)
-  -- function num : 0_2 , upvalues : _ENV
+function AircraftCentralRoom:SetExtData(data)
   self.extData = CentralRoomExtData:New()
   if data then
-    local ret, msg = (lua_dc.LoadStream)((self.extData)._className, data, self.extData)
+    local ret, msg = lua_dc.LoadStream(self.extData._className, data, self.extData)
     if ret == nil then
-      (Log.fatal)("AircraftCentralRoom:SetExtData lua_dc.LoadStream fail! ", msg)
+      Log.fatal("AircraftCentralRoom:SetExtData lua_dc.LoadStream fail! ", msg)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCentralRoom.SetExtCentralData = function(self, exData)
-  -- function num : 0_3
+function AircraftCentralRoom:SetExtCentralData(exData)
   self.extData = exData
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCentralRoom.GetCentralRoomConfig = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_central_room)[self._roomid]
+function AircraftCentralRoom:GetCentralRoomConfig()
+  local cfg = Cfg.cfg_aircraft_central_room[self._roomid]
   return cfg
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCentralRoom.GetAmbientValue = function(self)
-  -- function num : 0_5
-  return (self._module):GetAmbientValue(), self._settle_add_ambient
+function AircraftCentralRoom:GetAmbientValue()
+  return self._module:GetAmbientValue(), self._settle_add_ambient
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCentralRoom.GetTotalAmbientValue = function(self)
-  -- function num : 0_6
-  return (self._module):GetTotalAmbientValue()
+function AircraftCentralRoom:GetTotalAmbientValue()
+  return self._module:GetTotalAmbientValue()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCentralRoom.GetFullAmbient = function(self)
-  -- function num : 0_7
-  return (self._module):GetAmbientValue()
+function AircraftCentralRoom:GetFullAmbient()
+  return self._module:GetAmbientValue()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCentralRoom.GetAddAmbient = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_central_room)[self._roomid]
+function AircraftCentralRoom:GetAddAmbient()
+  local cfg = Cfg.cfg_aircraft_central_room[self._roomid]
   return cfg.AddAmbient
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCentralRoom.GetAmbientLimit = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_central_room)[self._roomid]
+function AircraftCentralRoom:GetAmbientLimit()
+  local cfg = Cfg.cfg_aircraft_central_room[self._roomid]
   return cfg.AmbientLimit
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCentralRoom.GetAddFurnitureAmbientValue = function(self)
-  -- function num : 0_10
-  local lfAv, lfMv = (self._module):CalCentralPetWorkSkill()
+function AircraftCentralRoom:GetAddFurnitureAmbientValue()
+  local lfAv, lfMv = self._module:CalCentralPetWorkSkill()
   return 1, lfMv
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCentralRoom.GetPeriodAffinity = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_central_room)[self._roomid]
-  local nPeriodAffinity = (self._module):GetTotalAmbientValue() * cfg.AmbientToAffinity
+function AircraftCentralRoom:GetPeriodAffinity()
+  local cfg = Cfg.cfg_aircraft_central_room[self._roomid]
+  local nPeriodAffinity = self._module:GetTotalAmbientValue() * cfg.AmbientToAffinity
   return nPeriodAffinity
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCentralRoom.GetAffinityUpdateTime = function(self)
-  -- function num : 0_12
-  return (self.extData).end_time, (self.extData).total_time
+function AircraftCentralRoom:GetAffinityUpdateTime()
+  return self.extData.end_time, self.extData.total_time
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftCentralRoom.GetUpgradeInfo = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function AircraftCentralRoom:GetUpgradeInfo()
   local room_cfg = self:GetConfig()
-  local next_cfg = (Cfg.cfg_aircraft_room)[room_cfg.NextLevelID]
+  local next_cfg = Cfg.cfg_aircraft_room[room_cfg.NextLevelID]
   if next_cfg == nil then
     return nil
   end
   local cur_centralroom_cfg = self:GetCentralRoomConfig()
-  local next_centralroom_cfg = (Cfg.cfg_aircraft_central_room)[room_cfg.NextLevelID]
+  local next_centralroom_cfg = Cfg.cfg_aircraft_central_room[room_cfg.NextLevelID]
   if next_centralroom_cfg == nil then
     return nil
   end
@@ -133,12 +87,23 @@ AircraftCentralRoom.GetUpgradeInfo = function(self)
   local cur_ambient_limit = cur_centralroom_cfg.AmbientLimit
   local next_ambient_limit = next_centralroom_cfg.AmbientLimit
   return {
-{AirLevelInfoTitle.RoomLevelLimit, AirRoomChangeLevelDataType.NumberInt, cur_level, cur_level + 1}
-, 
-{AirLevelInfoTitle.FireflyLimit, AirRoomChangeLevelDataType.NumberInt, cur_firefly_limit, next_firefly_limit}
-, 
-{AirLevelInfoTitle.AmbientLimit, AirRoomChangeLevelDataType.NumberInt, cur_ambient_limit, next_ambient_limit}
-}
+    {
+      AirLevelInfoTitle.RoomLevelLimit,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_level,
+      cur_level + 1
+    },
+    {
+      AirLevelInfoTitle.FireflyLimit,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_firefly_limit,
+      next_firefly_limit
+    },
+    {
+      AirLevelInfoTitle.AmbientLimit,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_ambient_limit,
+      next_ambient_limit
+    }
+  }
 end
-
-

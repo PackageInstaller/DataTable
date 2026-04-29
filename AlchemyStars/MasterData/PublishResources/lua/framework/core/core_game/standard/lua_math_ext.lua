@@ -1,96 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/standard/lua_math_ext.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local floor = math.floor
 local pow = math.pow
--- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
 _G.MAX_INT_32 = 2147483647
 lmathext = {}
--- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
 lmathext.deg2rad = math.pi / 180
--- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
 lmathext.rad2deg = 180 / math.pi
--- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
+lmathext.epsilon = 1.401298E-45
 
-lmathext.epsilon = 1.401298e-45
--- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-lmathext.round = function(num)
-  -- function num : 0_0 , upvalues : floor
+function lmathext.round(num)
   return floor(num + 0.5)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-lmathext.round_with_precision = function(what, precision)
-  -- function num : 0_1 , upvalues : floor, pow
+function lmathext.round_with_precision(what, precision)
   return floor(what * pow(10, precision) + 0.5) / pow(10, precision)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-lmathext.sign = function(num)
-  -- function num : 0_2
-  if num > 0 then
+function lmathext.sign(num)
+  if 0 < num then
     return 1
+  elseif num < 0 then
+    return -1
   else
-    if num < 0 then
-      return -1
-    else
-      return 0
-    end
+    return 0
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-lmathext.isnan = function(number)
-  -- function num : 0_3
-  do return number ~= number end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function lmathext.isnan(number)
+  return number ~= number
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-lmathext.clamp = function(num, min, max)
-  -- function num : 0_4
+function lmathext.clamp(num, min, max)
   if num < min then
     num = min
-  else
-    if max < num then
-      num = max
-    end
+  elseif max < num then
+    num = max
   end
   return num
 end
 
 local clamp = lmathext.clamp
--- DECOMPILER ERROR at PC39: Confused about usage of register: R3 in 'UnsetPending'
 
-lmathext.lerp = function(from, to, t)
-  -- function num : 0_5 , upvalues : clamp
+function lmathext.lerp(from, to, t)
   return from + (to - from) * clamp(t, 0, 1)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-lmathext.RandomRange = function(n, m)
-  -- function num : 0_6 , upvalues : _ENV
+function lmathext.RandomRange(n, m)
   local range = m - n
-  return (math.random)() * range + n
+  return math.random() * range + n
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R3 in 'UnsetPending'
-
-lmathext.Approximately = function(a, b)
-  -- function num : 0_7 , upvalues : _ENV
-  do return abs(b - a) < (math.max)(1e-06 * (math.max)(abs(a), abs(b)), 1.121039e-44) end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function lmathext.Approximately(a, b)
+  return abs(b - a) < math.max(1.0E-6 * math.max(abs(a), abs(b)), 1.121039E-44)
 end
-
-

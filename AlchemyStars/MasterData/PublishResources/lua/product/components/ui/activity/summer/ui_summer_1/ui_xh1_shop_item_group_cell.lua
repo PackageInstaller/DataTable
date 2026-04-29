@@ -1,61 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/ui_summer_1/ui_xh1_shop_item_group_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXH1ShopItemGroupCell", UICustomWidget)
 UIXH1ShopItemGroupCell = UIXH1ShopItemGroupCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXH1ShopItemGroupCell.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIXH1ShopItemGroupCell:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1ShopItemGroupCell.InitWidget = function(self)
-  -- function num : 0_1
+function UIXH1ShopItemGroupCell:InitWidget()
   self._smallBoxGen = self:GetUIComponent("UISelectObjectPath", "SmallBoxGen")
   self._bigItemGen = self:GetUIComponent("UISelectObjectPath", "BigItemGen")
   self._rootLayout = self:GetUIComponent("LayoutElement", "Root")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1ShopItemGroupCell.SetData = function(self)
-  -- function num : 0_2
+function UIXH1ShopItemGroupCell:SetData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1ShopItemGroupCell.InitData = function(self, data)
-  -- function num : 0_3
-  local item = nil
+function UIXH1ShopItemGroupCell:InitData(data)
+  local item
   if data.GetIsSpecial and data:GetIsSpecial() then
-    item = (self._bigItemGen):SpawnObject("UIXH1ShopItemBig")
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._rootLayout).minWidth = 366
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._rootLayout).preferredWidth = 366
+    item = self._bigItemGen:SpawnObject("UIXH1ShopItemBig")
+    self._rootLayout.minWidth = 366
+    self._rootLayout.preferredWidth = 366
   else
-    item = (self._smallBoxGen):SpawnObject("UIXH1ShopSmallItemBox")
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._rootLayout).minWidth = 366
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._rootLayout).preferredWidth = 366
+    item = self._smallBoxGen:SpawnObject("UIXH1ShopSmallItemBox")
+    self._rootLayout.minWidth = 366
+    self._rootLayout.preferredWidth = 366
   end
   if item then
     item:InitData(data)
   end
 end
-
-

@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/level_par/ai_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AiConfigData_Single", Object)
 AiConfigData_Single = AiConfigData_Single
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AiConfigData_Single.Constructor = function(self, aiConfig)
-  -- function num : 0_0
-  if aiConfig == nil then
-    return 
+function AiConfigData_Single:Constructor(aiConfig)
+  if nil == aiConfig then
+    return
   end
   self.m_nKey = aiConfig.ID
   self.m_nLogicID = aiConfig.LogicID
@@ -23,57 +16,35 @@ end
 
 _class("AiConfigData", Object)
 AiConfigData = AiConfigData
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-AiConfigData.Constructor = function(self)
-  -- function num : 0_1
+function AiConfigData:Constructor()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AiConfigData.GetAiObject = function(self, nConfigAiKey)
-  -- function num : 0_2 , upvalues : _ENV
-  return AiConfigData_Single:New((Cfg.cfg_ai)[nConfigAiKey])
+function AiConfigData:GetAiObject(nConfigAiKey)
+  return AiConfigData_Single:New(Cfg.cfg_ai[nConfigAiKey])
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AiConfigData.GetLogicID = function(self, nConfigAiKey)
-  -- function num : 0_3
+function AiConfigData:GetLogicID(nConfigAiKey)
   local aiConfig = self:GetAiObject(nConfigAiKey)
   return aiConfig.m_nLogicID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AiConfigData.GetLogicType = function(self, nConfigAiKey)
-  -- function num : 0_4
+function AiConfigData:GetLogicType(nConfigAiKey)
   local aiConfig = self:GetAiObject(nConfigAiKey)
   return aiConfig.m_nLogicType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AiConfigData.GetLogicOrder = function(self, nConfigAiKey)
-  -- function num : 0_5
+function AiConfigData:GetLogicOrder(nConfigAiKey)
   local aiConfig = self:GetAiObject(nConfigAiKey)
   return aiConfig.m_nLogicOrder
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AiConfigData.GetSkillList = function(self, nConfigAiKey)
-  -- function num : 0_6
+function AiConfigData:GetSkillList(nConfigAiKey)
   local aiConfig = self:GetAiObject(nConfigAiKey)
   return aiConfig.m_listSkillID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AiConfigData.GetExtParam = function(self, nConfigAiKey)
-  -- function num : 0_7
+function AiConfigData:GetExtParam(nConfigAiKey)
   local aiConfig = self:GetAiObject(nConfigAiKey)
   return aiConfig.m_extParam
 end
-
-

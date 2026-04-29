@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_backpack/ui_homeland_get_path_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandGetPathItem", UICustomWidget)
 UIHomelandGetPathItem = UIHomelandGetPathItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandGetPathItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandGetPathItem:OnShow(uiParams)
   self.txtGetway = self:GetUIComponent("UILocalizationText", "txtGetway")
   self.txtGetwayRect = self:GetUIComponent("RectTransform", "txtGetway")
   self.btnJump = self:GetGameObject("btnJump")
@@ -16,78 +9,50 @@ UIHomelandGetPathItem.OnShow = function(self, uiParams)
   self.btnUse = self:GetGameObject("btnUse")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandGetPathItem.Flush = function(self, homelandGetPathItemData, tplId)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandGetPathItem:Flush(homelandGetPathItemData, tplId)
   self.tplId = tplId
   self.homelandGetPathItemData = homelandGetPathItemData
-  ;
-  (self.btnJump):SetActive(false)
-  ;
-  (self.btnLock):SetActive(false)
-  ;
-  (self.btnUse):SetActive(false)
+  self.btnJump:SetActive(false)
+  self.btnLock:SetActive(false)
+  self.btnUse:SetActive(false)
   if homelandGetPathItemData.way == GetWayItemType.Jump then
     if homelandGetPathItemData.enabled then
-      (self.btnJump):SetActive(true)
+      self.btnJump:SetActive(true)
     else
-      ;
-      (self.btnLock):SetActive(true)
+      self.btnLock:SetActive(true)
     end
-  else
+  elseif homelandGetPathItemData.way == GetWayItemType.Text then
+  elseif homelandGetPathItemData.way == GetWayItemType.Use then
+    self.btnUse:SetActive(true)
   end
-  if homelandGetPathItemData.way ~= GetWayItemType.Text or homelandGetPathItemData.way == GetWayItemType.Use then
-    (self.btnUse):SetActive(true)
-  end
-  ;
-  (self.txtGetway):SetText(homelandGetPathItemData:GetDesc())
-  -- DECOMPILER ERROR at PC69: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self.btnJump).activeSelf or (self.btnLock).activeSelf or (self.btnUse).activeSelf then
-    (self.txtGetwayRect).sizeDelta = Vector2(645, 120)
+  self.txtGetway:SetText(homelandGetPathItemData:GetDesc())
+  if self.btnJump.activeSelf or self.btnLock.activeSelf or self.btnUse.activeSelf then
+    self.txtGetwayRect.sizeDelta = Vector2(645, 120)
   else
-    -- DECOMPILER ERROR at PC76: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.txtGetwayRect).sizeDelta = Vector2(837, 120)
+    self.txtGetwayRect.sizeDelta = Vector2(837, 120)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandGetPathItem.btnJumpOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  local mQuest = (self:GetModule(QuestModule)).uiModule
-  mQuest:GotoWithItemGetPath((self.homelandGetPathItemData).jumpId, self.tplId, FromUIType.NormalUI, "UIHomelandBackpack", UIStateType.UIMain)
+function UIHomelandGetPathItem:btnJumpOnClick(go)
+  local mQuest = self:GetModule(QuestModule).uiModule
+  mQuest:GotoWithItemGetPath(self.homelandGetPathItemData.jumpId, self.tplId, FromUIType.NormalUI, "UIHomelandBackpack", UIStateType.UIMain)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandGetPathItem.btnUseOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  local mItem = ((GameGlobal.GetModule)(ItemModule))
-  -- DECOMPILER ERROR at PC4: Overwrote pending register: R3 in 'AssignReg'
-
-  local item_data = .end
-  local item_datas = mItem:GetItemByTempId((self.homelandGetPathItemData).useItemId)
-  if item_datas and (table.count)(item_datas) > 0 then
-    for key,value in pairs(item_datas) do
+function UIHomelandGetPathItem:btnUseOnClick(go)
+  local mItem = GameGlobal.GetModule(ItemModule)
+  local item_data
+  local item_datas = mItem:GetItemByTempId(self.homelandGetPathItemData.useItemId)
+  if item_datas and table.count(item_datas) > 0 then
+    for key, value in pairs(item_datas) do
       item_data = value
-      do break end
+      break
     end
   end
-  do
-    if item_data:GetCount() == 1 then
-      self:ShowDialog("UIHomelandBackpackBox", item_data, 1)
-    else
-      self:ShowDialog("UIHomelandSaleAndUseWithCount", item_data, EnumItemSaleAndUseState.Use, function(item_data, count)
-    -- function num : 0_3_0 , upvalues : self
-    self:ShowDialog("UIHomelandBackpackBox", item_data, count)
-  end
-)
-    end
+  if item_data:GetCount() == 1 then
+    self:ShowDialog("UIHomelandBackpackBox", item_data, 1)
+  else
+    self:ShowDialog("UIHomelandSaleAndUseWithCount", item_data, EnumItemSaleAndUseState.Use, function(item_data, count)
+      self:ShowDialog("UIHomelandBackpackBox", item_data, count)
+    end)
   end
 end
-
-

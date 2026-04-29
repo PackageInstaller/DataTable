@@ -1,86 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/once_mission/ui_season_once_mission_stage_enemy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonOnceMissionStageEnemy", UICustomWidget)
 UISeasonOnceMissionStageEnemy = UISeasonOnceMissionStageEnemy
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonOnceMissionStageEnemy.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonOnceMissionStageEnemy:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionStageEnemy.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonOnceMissionStageEnemy:InitWidget()
   self._enemy_normal_Pool = self:GetUIComponent("UISelectObjectPath", "enemy_normal")
   self._enemy_black_Pool = self:GetUIComponent("UISelectObjectPath", "enemy_blackfist")
   self._normalGo = self:GetGameObject("normal")
   self._blackGo = self:GetGameObject("blackfist")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionStageEnemy.SetData = function(self, missionID, onceMissionData, cmpt)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonOnceMissionStageEnemy:SetData(missionID, onceMissionData, cmpt)
   self._missionID = missionID
   self._onceMissionData = onceMissionData
   self._cmpt = cmpt
   local subCfg = cmpt:GetLineSubCfg()
   self._campaignSubMatchTyhpe = subCfg.SubType
-  local cmpInfo = (self._cmpt):GetComponentInfo()
-  self._missionFinishInfo = (cmpInfo.m_pass_mission_info)[missionID]
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
-  ;
-  (self._normalGo):SetActive(self._campaignSubMatchTyhpe ~= CampaignSubMatchType.CSMT_BLACKFIST)
-  ;
-  (self._blackGo):SetActive(self._campaignSubMatchTyhpe == CampaignSubMatchType.CSMT_BLACKFIST)
+  local cmpInfo = self._cmpt:GetComponentInfo()
+  self._missionFinishInfo = cmpInfo.m_pass_mission_info[missionID]
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
+  self._normalGo:SetActive(self._campaignSubMatchTyhpe ~= CampaignSubMatchType.CSMT_BLACKFIST)
+  self._blackGo:SetActive(self._campaignSubMatchTyhpe == CampaignSubMatchType.CSMT_BLACKFIST)
   if self._campaignSubMatchTyhpe == CampaignSubMatchType.CSMT_BLACKFIST then
     self:FlushBalckFist()
   else
     self:FlushNormal(missionCfg)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionStageEnemy.FlushNormal = function(self, missionCfg)
-  -- function num : 0_3 , upvalues : _ENV
-  (Color(1, 1, 1, 1))
-  local color = nil
-  local enemyTitleBgSprite, enemyTitleBg2Sprite = nil, nil
+function UISeasonOnceMissionStageEnemy:FlushNormal(missionCfg)
+  local color = Color(1, 1, 1, 1)
+  local enemyTitleBgSprite, enemyTitleBg2Sprite
   if missionCfg.Type == ActivityMissionType.FightBoss then
-    color = Color(0.21176470588235, 0.21176470588235, 0.21176470588235, 1)
+    color = Color(0.21176470588235294, 0.21176470588235294, 0.21176470588235294, 1)
   else
-    color = Color(0.21176470588235, 0.21176470588235, 0.21176470588235, 1)
+    color = Color(0.21176470588235294, 0.21176470588235294, 0.21176470588235294, 1)
   end
-  self._enemyObj = (self._enemy_normal_Pool):SpawnObject("UIStageEnemy")
+  self._enemyObj = self._enemy_normal_Pool:SpawnObject("UIStageEnemy")
   local recommendAwaken = missionCfg.RecommendAwaken and missionCfg.RecommendAwaken or 0
   local recommendLV = missionCfg.RecommendLV and missionCfg.RecommendLV or 0
-  if not missionCfg.FightLevel then
-    (self._enemyObj):Flush(recommendAwaken, recommendLV, missionCfg.LevelID, color, enemyTitleBgSprite, enemyTitleBg2Sprite, true, true)
-    ;
-    ((self._enemyObj)._enemyTitleBg2go):SetActive(false)
-  end
+  self._enemyObj:Flush(recommendAwaken, recommendLV, missionCfg.FightLevel or missionCfg.LevelID, color, enemyTitleBgSprite, enemyTitleBg2Sprite, true, true)
+  self._enemyObj._enemyTitleBg2go:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionStageEnemy.FlushBalckFist = function(self)
-  -- function num : 0_4
-  local enemyObj = (self._enemy_black_Pool):SpawnObject("UISeasonStageEnemyBalckfist")
+function UISeasonOnceMissionStageEnemy:FlushBalckFist()
+  local enemyObj = self._enemy_black_Pool:SpawnObject("UISeasonStageEnemyBalckfist")
   enemyObj:SetData(self._missionID)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionStageEnemy.RelBtnOnClick = function(self)
-  -- function num : 0_5
+function UISeasonOnceMissionStageEnemy:RelBtnOnClick()
   self:ShowDialog("UIStageElemTips")
 end
-
-

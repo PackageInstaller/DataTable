@@ -1,108 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s7/theme/ui_s7_collage_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS7CollageBtn", UICustomWidget)
 UIS7CollageBtn = UIS7CollageBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS7CollageBtn.OnShow = function(self)
-  -- function num : 0_0
+function UIS7CollageBtn:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS7CollageBtn.OnHide = function(self)
-  -- function num : 0_1
+function UIS7CollageBtn:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS7CollageBtn.SetData = function(self, seasonId, playAnim)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS7CollageBtn:SetData(seasonId, playAnim)
   self._seasonId = seasonId
-  local seasonModule = (GameGlobal.GetUIModule)(SeasonModule)
+  local seasonModule = GameGlobal.GetUIModule(SeasonModule)
   self._collageData = seasonModule:GetCollageData()
   local isOpen = true
   if not isOpen then
-    (self:GetGameObject()):SetActive(false)
-    return 
+    self:GetGameObject():SetActive(false)
+    return
   end
   self:_SetFin()
   self:_CheckPoint()
   if playAnim then
-    (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_anim", "uieffanim_UIS7_CollageBtn_in", 0, 667)
+    UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_anim", "uieffanim_UIS7_CollageBtn_in", 0, 667)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS7CollageBtn._SetFin = function(self)
-  -- function num : 0_3
+function UIS7CollageBtn:_SetFin()
   local show = true
-  local cur, total = nil, nil
-  cur = (self._collageData):GetCollectionProgress()
-  show = not show or cur == total
-  -- DECOMPILER ERROR at PC16: Overwrote pending register: R3 in 'AssignReg'
-
-  cur = (self._collageData):GetCgProgress()
-  show = not show or cur == total
-  -- DECOMPILER ERROR at PC27: Overwrote pending register: R3 in 'AssignReg'
-
-  cur = (self._collageData):GetMusicProgress()
-  show = not show or cur == total
-  ;
-  (self:GetGameObject("_fin")):SetActive(show)
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  local cur, total
+  cur, total = self._collageData:GetCollectionProgress()
+  show = show and cur == total
+  cur, total = self._collageData:GetCgProgress()
+  show = show and cur == total
+  cur, total = self._collageData:GetMusicProgress()
+  show = show and cur == total
+  self:GetGameObject("_fin"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS7CollageBtn._CalcNew = function(self)
-  -- function num : 0_4
+function UIS7CollageBtn:_CalcNew()
   local new = false
-  if not new then
-    new = (self._collageData):CollectionHasNew()
-  end
-  if not new then
-    new = (self._collageData):CGHasNew()
-  end
-  if not new then
-    new = (self._collageData):MusicHasNew()
-  end
+  new = new or self._collageData:CollectionHasNew()
+  new = new or self._collageData:CGHasNew()
+  new = new or self._collageData:MusicHasNew()
   return new
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS7CollageBtn._CalcRed = function(self)
-  -- function num : 0_5
+function UIS7CollageBtn:_CalcRed()
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS7CollageBtn._CheckPoint = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIS7CollageBtn:_CheckPoint()
   local new = self:_CalcNew()
   local red = self:_CalcRed()
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, new, red, "_new", "_red")
+  UIWidgetHelper.SetNewAndReds(self, new, red, "_new", "_red")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS7CollageBtn.BtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.info)("UIS7CollageBtn:BtnOnClick")
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+function UIS7CollageBtn:BtnOnClick()
+  Log.info("UIS7CollageBtn:BtnOnClick")
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   if seasonModule:CheckSeasonClose_ShowClientError(self._seasonId) then
-    return 
+    return
   end
   self:_CheckPoint()
-  ;
-  (UISeasonHelper.ShowCurSeasonCollage)()
+  UISeasonHelper.ShowCurSeasonCollage()
 end
-
-

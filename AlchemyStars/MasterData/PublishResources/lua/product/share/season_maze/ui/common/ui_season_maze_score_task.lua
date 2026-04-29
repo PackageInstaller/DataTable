@@ -1,49 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/common/ui_season_maze_score_task.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeScoreTask", UIController)
 UISeasonMazeScoreTask = UISeasonMazeScoreTask
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeScoreTask.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeScoreTask:OnShow(uiParams)
   self:InitWidget()
   self:OnValue()
   self:Lock("UISeasonMazeScoreTask_EnterAni")
   self:StartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV, self
     YIELD(TT, 500)
     self:UnLock("UISeasonMazeScoreTask_EnterAni")
     self:_CheckGuide()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScoreTask._CheckGuide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UISeasonMazeScoreTask)
+function UISeasonMazeScoreTask:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UISeasonMazeScoreTask)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScoreTask.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeScoreTask:InitWidget()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, function()
-    -- function num : 0_2_1 , upvalues : _ENV
-    (UISeasonMazeModule.OpenHelpUI)(UISeasonMazeHelperTabIndex.Temp2, 2)
-  end
-, nil, false, nil, false, nil)
+  end, function()
+    UISeasonMazeModule.OpenHelpUI(UISeasonMazeHelperTabIndex.Temp2, 2)
+  end, nil, false, nil, false, nil)
   self.scoreRewardPool = self:GetUIComponent("UISelectObjectPath", "ScoreRewardPool")
   self.scoreRewardRect = self:GetUIComponent("RectTransform", "ScoreRewardPool")
   self.viewportRect = self:GetUIComponent("RectTransform", "Viewport")
@@ -62,23 +42,18 @@ UISeasonMazeScoreTask.InitWidget = function(self)
   self._tips = s:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScoreTask.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._seasonMazeObj = (self._seasonMazeModule):CurSeasonObj()
-  self._component = (self._seasonMazeObj):GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-  self._componentInfo = (self._component):GetComponentInfo()
-  self._progressComponent = (self._seasonMazeObj):GetComponent(ECCampaignSeasonMazeComponentID.TOTAL_PROCESS)
-  self._progressComponentInfo = (self._progressComponent):GetComponentInfo()
-  local itemID = (self._progressComponent):GetItemId()
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UISeasonMazeScoreTask:OnValue()
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self._seasonMazeObj = self._seasonMazeModule:CurSeasonObj()
+  self._component = self._seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+  self._componentInfo = self._component:GetComponentInfo()
+  self._progressComponent = self._seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.TOTAL_PROCESS)
+  self._progressComponentInfo = self._progressComponent:GetComponentInfo()
+  local itemID = self._progressComponent:GetItemId()
+  local itemModule = GameGlobal.GetModule(ItemModule)
   self._scoreItemCount = itemModule:GetItemCount(itemID)
-  ;
-  (self.curScore):SetText(self._scoreItemCount)
-  ;
-  (self.curScoreCircleoutline):SetText(self._scoreItemCount)
+  self.curScore:SetText(self._scoreItemCount)
+  self.curScoreCircleoutline:SetText(self._scoreItemCount)
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:CheckUnlockScore()
   self:ShowSpecialTaskProgress()
@@ -86,157 +61,107 @@ UISeasonMazeScoreTask.OnValue = function(self)
   self:RefreshBigReward()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScoreTask.OnUIGetItemCloseInQuest = function(self)
-  -- function num : 0_4
+function UISeasonMazeScoreTask:OnUIGetItemCloseInQuest()
   self:ShowRewardProgress()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScoreTask.RefreshBigReward = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMazeScoreTask:RefreshBigReward()
   local itemHeight = 117
   local maxShowItemCount = 5
   local maxItemCount = #self.scoreTaskSpawnList
-  local freshFunc = nil
-  freshFunc = function()
-    -- function num : 0_5_0 , upvalues : self, _ENV, itemHeight, maxShowItemCount, maxItemCount
-    local curPosY = ((self.scoreRewardRect).anchoredPosition).y
-    if (math.floor)(((self.scoreRewardRect).sizeDelta).y) > ((self.scoreRewardRect).anchoredPosition).y + ((self.viewportRect).rect).height then
-      do
-        local isBottom = self.unlockAll
-        ;
-        (self.lockState):SetActive(isBottom)
-        local curPorgress = (self._progressComponent):GetCurrentProgress()
-        local curItem = self:GetItemWithProgress(curPorgress)
-        local posY = 0
-        if curItem then
-          posY = curItem:GetBottomPosY()
+  local freshFunc
+  
+  function freshFunc()
+    local curPosY = self.scoreRewardRect.anchoredPosition.y
+    if not self.unlockAll then
+      local isBottom = self.scoreRewardRect.anchoredPosition.y + self.viewportRect.rect.height >= math.floor(self.scoreRewardRect.sizeDelta.y)
+      self.lockState:SetActive(isBottom)
+    end
+    local curPorgress = self._progressComponent:GetCurrentProgress()
+    local curItem = self:GetItemWithProgress(curPorgress)
+    local posY = 0
+    if curItem then
+      posY = curItem:GetBottomPosY()
+    end
+    local contentY = math.abs(curPosY)
+    local viewportH = self.viewportRect.rect.height
+    local sliderValue = (posY - contentY) / viewportH
+    sliderValue = 1 < sliderValue and 1 or sliderValue
+    sliderValue = sliderValue < 0 and 0 or sliderValue
+    self.slider.fillAmount = sliderValue
+    local shY = viewportH * (1 - sliderValue) - viewportH / 2
+    self.scoreHandler.anchoredPosition = Vector2(self.scoreHandler.anchoredPosition.x, shY)
+    local curLastIndex = math.floor(curPosY / itemHeight) + maxShowItemCount + 1
+    curLastIndex = curLastIndex > maxItemCount and maxItemCount or curLastIndex
+    for i = curLastIndex, #self.scoreTaskSpawnList do
+      local item = self.scoreTaskSpawnList[i]
+      if not item then
+        break
+      end
+      local progress = item:GetProgress()
+      if self._progressComponent:IsSpecialRewards(progress) then
+        if self.curBigReward == progress then
+          return
         end
-        local contentY = (math.abs)(curPosY)
-        local viewportH = ((self.viewportRect).rect).height
-        local sliderValue = (posY - contentY) / viewportH
-        -- DECOMPILER ERROR at PC60: Confused about usage of register: R7 in 'UnsetPending'
-
-        -- DECOMPILER ERROR at PC60: Unhandled construct in 'MakeBoolean' P3
-
-        if ((sliderValue > 1 and 1) or sliderValue < 0) then
-          (self.slider).fillAmount = sliderValue
-          local shY = viewportH * (1 - sliderValue) - viewportH / 2
-          -- DECOMPILER ERROR at PC72: Confused about usage of register: R8 in 'UnsetPending'
-
-          ;
-          (self.scoreHandler).anchoredPosition = Vector2(((self.scoreHandler).anchoredPosition).x, shY)
-          local curLastIndex = (math.floor)(curPosY / itemHeight) + maxShowItemCount + 1
-          if maxItemCount >= curLastIndex or not maxItemCount then
-            for i = curLastIndex, #self.scoreTaskSpawnList do
-              local item = (self.scoreTaskSpawnList)[i]
-              if item then
-                do
-                  local progress = item:GetProgress()
-                  if (self._progressComponent):IsSpecialRewards(progress) then
-                    if self.curBigReward == progress then
-                      return 
-                    end
-                    self.curBigReward = progress
-                    self:ShowBigReward(progress)
-                    break
-                  end
-                  -- DECOMPILER ERROR at PC114: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC114: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
-            end
-            if self.curBigReward == nil then
-              for i = #self.scoreTaskSpawnList, 1, -1 do
-                local item = (self.scoreTaskSpawnList)[i]
-                if item then
-                  do
-                    local progress = item:GetProgress()
-                    if (self._progressComponent):IsSpecialRewards(progress) then
-                      if self.curBigReward == progress then
-                        return 
-                      end
-                      self.curBigReward = progress
-                      self:ShowBigReward(progress)
-                      break
-                    end
-                    -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
-              end
-            end
-            -- DECOMPILER ERROR: 12 unprocessed JMP targets
+        self.curBigReward = progress
+        self:ShowBigReward(progress)
+        break
+      end
+    end
+    if self.curBigReward == nil then
+      for i = #self.scoreTaskSpawnList, 1, -1 do
+        local item = self.scoreTaskSpawnList[i]
+        if not item then
+          break
+        end
+        local progress = item:GetProgress()
+        if self._progressComponent:IsSpecialRewards(progress) then
+          if self.curBigReward == progress then
+            return
           end
+          self.curBigReward = progress
+          self:ShowBigReward(progress)
+          break
         end
       end
     end
   end
-
+  
   self:Lock("UISeasonMazeScoreTask_fillAmountAnim")
   self:StartTask(function(TT)
-    -- function num : 0_5_1 , upvalues : _ENV, self, freshFunc
     YIELD(TT)
-    local viewportH = ((self.viewportRect).rect).height
-    local maxY = ((self.scoreRewardRect).sizeDelta).y - viewportH
+    local viewportH = self.viewportRect.rect.height
+    local maxY = self.scoreRewardRect.sizeDelta.y - viewportH
     local y, posY = self:GetLocationResetY()
     local hv = 0
     local sv = 0
     if y == 0 then
       hv = viewportH / 2 - posY
       sv = posY / viewportH
+    elseif math.floor(y) == math.floor(maxY) then
+      local v = viewportH - (self.scoreRewardRect.sizeDelta.y - posY)
+      hv = viewportH / 2 - v
+      sv = v / viewportH
     else
-      if (math.floor)(y) == (math.floor)(maxY) then
-        local v = viewportH - (((self.scoreRewardRect).sizeDelta).y - posY)
-        hv = viewportH / 2 - v
-        sv = v / viewportH
-      else
-        do
-          hv = 0
-          sv = 0.5
-          -- DECOMPILER ERROR at PC49: Confused about usage of register: R7 in 'UnsetPending'
-
-          ;
-          (self.scoreRewardRect).anchoredPosition = Vector2(((self.scoreRewardRect).anchoredPosition).x, y)
-          freshFunc()
-          -- DECOMPILER ERROR at PC53: Confused about usage of register: R7 in 'UnsetPending'
-
-          ;
-          (self.slider).fillAmount = 0
-          -- DECOMPILER ERROR at PC61: Confused about usage of register: R7 in 'UnsetPending'
-
-          ;
-          (self.scoreHandler).anchoredPosition = Vector2(((self.scoreHandler).anchoredPosition).x, viewportH / 2)
-          ;
-          ((self.scoreHandler):DOAnchorPosY(hv, 0.4)):SetEase(((DG.Tweening).Ease).OutQuad)
-          ;
-          ((self.slider):DOFillAmount(sv, 0.4)):SetEase(((DG.Tweening).Ease).OutQuad)
-          YIELD(TT, 400)
-          self:UnLock("UISeasonMazeScoreTask_fillAmountAnim")
-          ;
-          ((self.scrollRect).onValueChanged):AddListener(freshFunc)
-        end
-      end
+      hv = 0
+      sv = 0.5
     end
-  end
-)
+    self.scoreRewardRect.anchoredPosition = Vector2(self.scoreRewardRect.anchoredPosition.x, y)
+    freshFunc()
+    self.slider.fillAmount = 0
+    self.scoreHandler.anchoredPosition = Vector2(self.scoreHandler.anchoredPosition.x, viewportH / 2)
+    self.scoreHandler:DOAnchorPosY(hv, 0.4):SetEase(DG.Tweening.Ease.OutQuad)
+    self.slider:DOFillAmount(sv, 0.4):SetEase(DG.Tweening.Ease.OutQuad)
+    YIELD(TT, 400)
+    self:UnLock("UISeasonMazeScoreTask_fillAmountAnim")
+    self.scrollRect.onValueChanged:AddListener(freshFunc)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScoreTask.ShowBigReward = function(self, progress)
-  -- function num : 0_6 , upvalues : _ENV
-  local roleAssets = (self._progressComponent):GetProgressRewards(progress)
-  ;
-  (self.bigRewardPool):SpawnObjects("UISeasonMazeItem", #roleAssets)
-  local spawnList = (self.bigRewardPool):GetAllSpawnList()
+function UISeasonMazeScoreTask:ShowBigReward(progress)
+  local roleAssets = self._progressComponent:GetProgressRewards(progress)
+  self.bigRewardPool:SpawnObjects("UISeasonMazeItem", #roleAssets)
+  local spawnList = self.bigRewardPool:GetAllSpawnList()
   for i = 1, #roleAssets do
     local roleAsset = roleAssets[i]
     local obj = SeasonMazeEffect:New()
@@ -244,152 +169,117 @@ UISeasonMazeScoreTask.ShowBigReward = function(self, progress)
     obj.id = roleAsset.assetid
     obj.value_min = roleAsset.count
     obj.value_max = roleAsset.count
-    ;
-    (spawnList[i]):SetData(obj, self._tips, 1)
+    spawnList[i]:SetData(obj, self._tips, 1)
   end
-  ;
-  (self.bigRewardScore):SetText(progress)
-  local state = (self._progressComponent):CheckItemStatus(progress)
+  self.bigRewardScore:SetText(progress)
+  local state = self._progressComponent:CheckItemStatus(progress)
   if state == CampaignPointProgressStatus.CPPS_Taken then
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScoreTask.GetItemWithProgress = function(self, progress)
-  -- function num : 0_7
+function UISeasonMazeScoreTask:GetItemWithProgress(progress)
   for i = 1, #self.scoreTaskSpawnList do
-    local item = (self.scoreTaskSpawnList)[i]
+    local item = self.scoreTaskSpawnList[i]
     if progress < item:GetProgress() then
-      return (self.scoreTaskSpawnList)[i - 1]
+      return self.scoreTaskSpawnList[i - 1]
     end
   end
-  return (self.scoreTaskSpawnList)[#self.scoreTaskSpawnList]
+  return self.scoreTaskSpawnList[#self.scoreTaskSpawnList]
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScoreTask.ShowRewardProgress = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonMazeScoreTask:ShowRewardProgress()
   local progressList = {}
-  local list = (self._progressComponent):GetProgressList()
+  local list = self._progressComponent:GetProgressList()
   for i = 1, #list do
     if list[i] <= self.scoreMax then
-      (table.insert)(progressList, list[i])
+      table.insert(progressList, list[i])
     end
   end
-  ;
-  (self.scoreRewardPool):SpawnObjects("UISeasonMazeScroreRewarditem", #progressList)
-  self.scoreTaskSpawnList = (self.scoreRewardPool):GetAllSpawnList()
+  self.scoreRewardPool:SpawnObjects("UISeasonMazeScroreRewarditem", #progressList)
+  self.scoreTaskSpawnList = self.scoreRewardPool:GetAllSpawnList()
   for i = 1, #progressList do
-    local roleAssets = (self._progressComponent):GetProgressRewards(progressList[i])
-    if not roleAssets then
-      roleAssets = {}
-    end
-    local state = (self._progressComponent):CheckItemStatus(progressList[i])
-    ;
-    ((self.scoreTaskSpawnList)[i]):SetData(roleAssets, progressList[i], state, self._tips, self)
+    local roleAssets = self._progressComponent:GetProgressRewards(progressList[i])
+    roleAssets = roleAssets or {}
+    local state = self._progressComponent:CheckItemStatus(progressList[i])
+    self.scoreTaskSpawnList[i]:SetData(roleAssets, progressList[i], state, self._tips, self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScoreTask.OnRewardProgressSelect = function(self, progress, state)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonMazeScoreTask:OnRewardProgressSelect(progress, state)
   for i = 1, #self.scoreTaskSpawnList do
-    ((self.scoreTaskSpawnList)[i]):SetSelect(progress)
+    self.scoreTaskSpawnList[i]:SetSelect(progress)
   end
   if state == CampaignPointProgressStatus.CPPS_Completed then
     self:StartTask(self.GetListItemRewardReqProgress, self, progress)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScoreTask.CheckUnlockScore = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonMazeScoreTask:CheckUnlockScore()
   self.unlockAll = true
   local timeMap = {}
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local seasonMazeCfgs = (Cfg.cfg_component_season_maze)({ComponentID = self.cmptId})
-  for _,v in pairs(seasonMazeCfgs) do
-    local time = ((GameGlobal.GetModule)(LoginModule)):GetTimeStampByTimeStr(v.LockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local seasonMazeCfgs = Cfg.cfg_component_season_maze({
+    ComponentID = self.cmptId
+  })
+  for _, v in pairs(seasonMazeCfgs) do
+    local time = GameGlobal.GetModule(LoginModule):GetTimeStampByTimeStr(v.LockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
     timeMap[curTime - time] = v
   end
-  local latestUnlock, nextUnlock = nil, nil
-  for t,v in pairs(timeMap) do
-    if t > 0 and (latestUnlock ~= nil or not t) then
-      latestUnlock = (math.min)(t, latestUnlock)
+  local latestUnlock, nextUnlock
+  for t, v in pairs(timeMap) do
+    if 0 < t then
+      latestUnlock = latestUnlock == nil and t or math.min(t, latestUnlock)
     end
     if t < 0 then
       self.unlockAll = false
-      if nextUnlock ~= nil or not t then
-        nextUnlock = (math.max)(t, nextUnlock)
-      end
+      nextUnlock = nextUnlock == nil and t or math.max(t, nextUnlock)
     end
   end
-  self.scoreMax = (timeMap[latestUnlock]).ScoreMax
+  self.scoreMax = timeMap[latestUnlock].ScoreMax
   if not self.unlockAll then
-    local remainTime = (UIActivityHelper.GetFormatTimerStr)((math.abs)(nextUnlock))
-    ;
-    (self.lockText):SetText((StringTable.Get)("str_season_maze_save_unlock_limit", remainTime))
+    local remainTime = UIActivityHelper.GetFormatTimerStr(math.abs(nextUnlock))
+    self.lockText:SetText(StringTable.Get("str_season_maze_save_unlock_limit", remainTime))
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScoreTask.ShowSpecialTaskProgress = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonMazeScoreTask:ShowSpecialTaskProgress()
   local finishScoreList = {}
   local noFinishScoreList = {}
   local finishHardList = {}
   local noFinishHardList = {}
   local taskList = {}
-  local seasonMazeCfgs = (Cfg.cfg_component_season_maze)({ComponentID = self.cmptId})
-  for _,v in pairs(seasonMazeCfgs) do
+  local seasonMazeCfgs = Cfg.cfg_component_season_maze({
+    ComponentID = self.cmptId
+  })
+  for _, v in pairs(seasonMazeCfgs) do
     taskList[v.Hard] = v.ClearingScore
   end
   for i = 1, #taskList do
     local hard = i
     local t = taskList[i]
-    local hardInfo = ((self._componentInfo).hard_num)[hard]
+    local hardInfo = self._componentInfo.hard_num[hard]
     if hardInfo then
       for j = 1, #t do
-        local count = (t[j])[1]
+        local count = t[j][1]
         if count <= hardInfo.vic_count then
-          (table.insert)(finishScoreList, t[j])
-          ;
-          (table.insert)(finishHardList, hard)
+          table.insert(finishScoreList, t[j])
+          table.insert(finishHardList, hard)
         else
-          ;
-          (table.insert)(noFinishScoreList, t[j])
-          ;
-          (table.insert)(noFinishHardList, hard)
+          table.insert(noFinishScoreList, t[j])
+          table.insert(noFinishHardList, hard)
         end
       end
     else
-      do
-        for j = 1, #t do
-          (table.insert)(noFinishScoreList, t[j])
-          ;
-          (table.insert)(noFinishHardList, hard)
-        end
-        do
-          -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      for j = 1, #t do
+        table.insert(noFinishScoreList, t[j])
+        table.insert(noFinishHardList, hard)
       end
     end
   end
   local count = #finishScoreList + #noFinishScoreList
-  ;
-  (self.ScoreTaskPool):SpawnObjects("UISeasonMazeSpecialScoreTaskitem", count)
-  local spawnList = (self.ScoreTaskPool):GetAllSpawnList()
+  self.ScoreTaskPool:SpawnObjects("UISeasonMazeSpecialScoreTaskitem", count)
+  local spawnList = self.ScoreTaskPool:GetAllSpawnList()
   for i = 1, #spawnList do
     local finish = false
     local hard = noFinishHardList[i]
@@ -399,77 +289,53 @@ UISeasonMazeScoreTask.ShowSpecialTaskProgress = function(self)
       v = finishScoreList[i - #noFinishScoreList]
       finish = true
     end
-    ;
-    (spawnList[i]):SetData(v, hard, finish)
+    spawnList[i]:SetData(v, hard, finish)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScoreTask.GetListItemRewardReqProgress = function(self, TT, param)
-  -- function num : 0_12 , upvalues : _ENV
+function UISeasonMazeScoreTask:GetListItemRewardReqProgress(TT, param)
   self:Lock("UISeasonMazeScoreTask:GetListItemRewardReqProgress")
   local progress = param
   local res = AsyncRequestRes:New()
-  local rewards = (self._progressComponent):HandleOneKeyReceiveRewards(TT, res)
+  local rewards = self._progressComponent:HandleOneKeyReceiveRewards(TT, res)
   self:UnLock("UISeasonMazeScoreTask:GetListItemRewardReqProgress")
   if res:GetSucc() then
     self:ShowUIGetItemController(rewards)
-  else
-    if (self._progressComponent):ComponentIsClose() then
-      res:SetResult(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
-      ;
-      (self._seasonMazeModule):CheckSeasonMazeClose(res)
-    end
+  elseif self._progressComponent:ComponentIsClose() then
+    res:SetResult(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
+    self._seasonMazeModule:CheckSeasonMazeClose(res)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScoreTask.ShowUIGetItemController = function(self, rewards)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonMazeScoreTask:ShowUIGetItemController(rewards)
   if not rewards then
-    return 
+    return
   end
-  local cbFunc = function()
-    -- function num : 0_13_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
+  
+  local function cbFunc()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
   end
-
+  
   self:ShowDialog("UIGetItemController", rewards, cbFunc)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScoreTask.LocationBtnOnClick = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UISeasonMazeScoreTask:LocationBtnOnClick()
   local y = self:GetLocationResetY()
-  ;
-  (self.scrollRect):StopMovement()
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.scoreRewardRect).anchoredPosition = Vector2(((self.scoreRewardRect).anchoredPosition).x, y)
+  self.scrollRect:StopMovement()
+  self.scoreRewardRect.anchoredPosition = Vector2(self.scoreRewardRect.anchoredPosition.x, y)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeScoreTask.GetLocationResetY = function(self)
-  -- function num : 0_15
-  local curPorgress = (self._progressComponent):GetCurrentProgress()
+function UISeasonMazeScoreTask:GetLocationResetY()
+  local curPorgress = self._progressComponent:GetCurrentProgress()
   local curItem = self:GetItemWithProgress(curPorgress)
   local posY = 0
   if curItem then
     posY = curItem:GetBottomPosY()
   end
-  local viewportH = ((self.viewportRect).rect).height
-  local maxY = ((self.scoreRewardRect).sizeDelta).y - viewportH
+  local viewportH = self.viewportRect.rect.height
+  local maxY = self.scoreRewardRect.sizeDelta.y - viewportH
   local y = posY - viewportH / 2
-  -- DECOMPILER ERROR at PC32: Unhandled construct in 'MakeBoolean' P3
-
-  if ((y < 0 and 0) or maxY < y) then
-    return y, posY
-  end
+  y = y < 0 and 0 or y
+  y = maxY < y and maxY or y
+  return y, posY
 end
-
-

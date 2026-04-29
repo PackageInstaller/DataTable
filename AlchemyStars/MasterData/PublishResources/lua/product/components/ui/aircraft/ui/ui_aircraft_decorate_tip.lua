@@ -1,36 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_decorate_tip.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftDecorateTip", UIController)
 UIAircraftDecorateTip = UIAircraftDecorateTip
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftDecorateTip.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):SetDepthRaycast(self:GetDepth(), false)
+function UIAircraftDecorateTip:OnShow(uiParams)
+  GameGlobal.UIStateManager():SetDepthRaycast(self:GetDepth(), false)
   local defaultArea = uiParams[1]
   local onBack = uiParams[2]
   self:InitWidget()
-  self.topButtonWidget = (self.buttons):SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_0_0 , upvalues : onBack, self
+  self.topButtonWidget = self.buttons:SpawnObject("UICommonTopButton")
+  self.topButtonWidget:SetData(function()
     if onBack then
       onBack()
     end
     self:CloseDialog()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   self._boxes = {}
   local roomParent = self:GetUIComponent("Transform", "Room")
   for i = 1, AircraftConst.DecorateAreaCount do
     local ui = roomParent:GetChild(i - 1)
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._boxes)[i] = ui:GetComponent(typeof(UnityEngine.Animation))
+    self._boxes[i] = ui:GetComponent(typeof(UnityEngine.Animation))
   end
   self:AttachEvent(GameEventType.AircraftSelectDecorateArea, self.OnSelect)
   if defaultArea then
@@ -38,40 +25,29 @@ UIAircraftDecorateTip.OnShow = function(self, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTip.InitWidget = function(self)
-  -- function num : 0_1
+function UIAircraftDecorateTip:InitWidget()
   self.buttons = self:GetUIComponent("UISelectObjectPath", "buttons")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTip.OnSelect = function(self, area)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC11: Unhandled construct in 'MakeBoolean' P1
-
-  if self._curArea and self._curArea ~= area then
-    ((self._boxes)[self._curArea]):Play("uieff_AircraftDecorate_Tip_Close")
-    self._curArea = area
-    ;
-    ((self._boxes)[self._curArea]):Play("uieff_AircraftDecorate_Tip_BreathChoose")
-  end
-  for i,anim in ipairs(self._boxes) do
-    if i == area then
-      anim:Play("uieff_AircraftDecorate_Tip_BreathChoose")
-    else
-      anim:Play("uieff_AircraftDecorate_Tip_Close")
+function UIAircraftDecorateTip:OnSelect(area)
+  if self._curArea then
+    if self._curArea ~= area then
+      self._boxes[self._curArea]:Play("uieff_AircraftDecorate_Tip_Close")
+      self._curArea = area
+      self._boxes[self._curArea]:Play("uieff_AircraftDecorate_Tip_BreathChoose")
     end
+  else
+    for i, anim in ipairs(self._boxes) do
+      if i == area then
+        anim:Play("uieff_AircraftDecorate_Tip_BreathChoose")
+      else
+        anim:Play("uieff_AircraftDecorate_Tip_Close")
+      end
+    end
+    self._curArea = area
   end
-  self._curArea = area
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTip.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):SetDepthRaycast(self:GetDepth(), true)
+function UIAircraftDecorateTip:OnHide()
+  GameGlobal.UIStateManager():SetDepthRaycast(self:GetDepth(), true)
 end
-
-

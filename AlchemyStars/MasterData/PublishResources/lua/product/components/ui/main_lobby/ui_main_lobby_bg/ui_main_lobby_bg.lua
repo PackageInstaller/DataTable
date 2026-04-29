@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_bg/ui_main_lobby_bg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyBg", UICustomWidget)
 UIMainLobbyBg = UIMainLobbyBg
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyBg.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMainLobbyBg:OnShow()
   self._petAudioModule = self:GetModule(PetAudioModule)
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
+  self._roleModule = GameGlobal.GetModule(RoleModule)
   self._freeTime = 0
-  self._maxFreeTime = ((Cfg.cfg_global).MainUIFreeTime).IntValue * 1000
+  self._maxFreeTime = Cfg.cfg_global.MainUIFreeTime.IntValue * 1000
   self._playWelcome = false
-  local oldType = ((GameGlobal.UIStateManager)()):GetLastStateType()
+  local oldType = GameGlobal.UIStateManager():GetLastStateType()
   if oldType == UIStateType.Login or oldType == UIStateType.LoginEmpty or oldType == UIStateType.UIAircraft or oldType == UIStateType.UIDiscovery then
     self._playWelcome = true
   end
@@ -60,33 +53,27 @@ UIMainLobbyBg.OnShow = function(self)
   self:InitOnDrag()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMainLobbyBg:OnHide()
   if self._defaultPetID and self._defaultPetID ~= 0 then
-    (self._petAudioModule):ReleaseAdx2VoiceCueSheetByAnyAudioId("MainLobbyInteract", self._defaultPetID)
+    self._petAudioModule:ReleaseAdx2VoiceCueSheetByAnyAudioId("MainLobbyInteract", self._defaultPetID)
   end
   if self._bgSpine1Event then
-    ((GameGlobal.Timer)()):CancelEvent(self._bgSpine1Event)
+    GameGlobal.Timer():CancelEvent(self._bgSpine1Event)
     self._bgSpine1Event = nil
     self._playBgSpine1Anim = false
   end
   if self._spineEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+    GameGlobal.Timer():CancelEvent(self._spineEvent)
     self._spineEvent = nil
     self._playSpineAnim = false
   end
   if self._enterSpineSubGoCloseEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._enterSpineSubGoCloseEvent)
+    GameGlobal.Timer():CancelEvent(self._enterSpineSubGoCloseEvent)
     self._enterSpineSubGoCloseEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.SetData = function(self, disableWelcomeAudio)
-  -- function num : 0_2
+function UIMainLobbyBg:SetData(disableWelcomeAudio)
   if self._playWelcome == true and not disableWelcomeAudio then
     self:WelcomeAudio()
   end
@@ -96,62 +83,42 @@ UIMainLobbyBg.SetData = function(self, disableWelcomeAudio)
   self:SetRootPosAndScale()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.InitOnDrag = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMainLobbyBg:InitOnDrag()
   self.dragBGObj = self:GetGameObject("DragBG")
   self.animImage = self:GetUIComponent("Image", "animImage")
-  ;
-  (self.animImage):DOColor(Color(0, 0, 0, 0), 0)
+  self.animImage:DOColor(Color(0, 0, 0, 0), 0)
   self.originPos = Vector3(0, 0, 0)
   self.endDragPos = Vector3(0, 0, 0)
-  ;
-  ((UIEventTriggerListener.Get)(self.dragBGObj)).onBeginDrag = function(go)
-    -- function num : 0_3_0 , upvalues : self
+  UIEventTriggerListener.Get(self.dragBGObj).onBeginDrag = function(go)
     self.originPos = go.position
   end
-
-  ;
-  ((UIEventTriggerListener.Get)(self.dragBGObj)).onEndDrag = function(go)
-    -- function num : 0_3_1 , upvalues : self
+  UIEventTriggerListener.Get(self.dragBGObj).onEndDrag = function(go)
     self.endDragPos = go.position
-    local deltaX = (self.endDragPos).x - (self.originPos).x
+    local deltaX = self.endDragPos.x - self.originPos.x
     if self:OpenDressCount() <= 1 then
-      return 
+      return
     end
-    do
-      if deltaX < -300 then
-        local nextIndex = self:CalcuNextDressIndex()
-        self:RefreshDressUp(nextIndex)
-      end
-      if deltaX > 300 then
-        local preIndex = self:CalcuPreDressIndex()
-        self:RefreshDressUp(preIndex)
-      end
+    if deltaX < -300 then
+      local nextIndex = self:CalcuNextDressIndex()
+      self:RefreshDressUp(nextIndex)
+    end
+    if 300 < deltaX then
+      local preIndex = self:CalcuPreDressIndex()
+      self:RefreshDressUp(preIndex)
     end
   end
-
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.RefreshDressUp = function(self, dressIndex)
-  -- function num : 0_4
+function UIMainLobbyBg:RefreshDressUp(dressIndex)
   self:StartTask(self.Task_ShowDress, self, dressIndex)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.Task_ShowDress = function(self, TT, dressIndex)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMainLobbyBg:Task_ShowDress(TT, dressIndex)
   self:Lock("UIMainLobbyBg_Task_ShowDress")
-  ;
-  (self._petAudioModule):StopAll()
-  ;
-  (self.animImage):DOColor(Color(0, 0, 0, 1), 0.1)
+  self._petAudioModule:StopAll()
+  self.animImage:DOColor(Color(0, 0, 0, 1), 0.1)
   YIELD(TT, 100)
-  local dressInfos = (self._signInModule):GetDressInfos()
+  local dressInfos = self._signInModule:GetDressInfos()
   self:SetIndexDress(dressIndex, dressInfos)
   local targetInfo = dressInfos[dressIndex]
   self._dragShow = true
@@ -164,78 +131,62 @@ UIMainLobbyBg.Task_ShowDress = function(self, TT, dressIndex)
     if targetInfo.is_static == nil then
       targetInfo.is_static = false
     end
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.Task_SetExtFlag, self, targetInfo.is_static)
+    GameGlobal.TaskManager():StartTask(self.Task_SetExtFlag, self, targetInfo.is_static)
     local staticValue = DynamicAndStaticState.Dynamic
     if targetInfo.is_static then
       staticValue = DynamicAndStaticState.Static
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SwitchSkinStaticOrDynamic, staticValue)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SwitchSkinStaticOrDynamic, staticValue)
   end
-  do
-    local res, replay = (self._signInModule):HandleCurMainDressUpReq(TT, dressIndex)
-    if res:GetSucc() then
-      (self.animImage):DOColor(Color(0, 0, 0, 0), 0.1)
-      YIELD(TT, 100)
-      self._dragShow = false
-      self:WelcomeAudio()
-      self:UnLock("UIMainLobbyBg_Task_ShowDress")
-    end
+  local res, replay = self._signInModule:HandleCurMainDressUpReq(TT, dressIndex)
+  if res:GetSucc() then
   end
+  self.animImage:DOColor(Color(0, 0, 0, 0), 0.1)
+  YIELD(TT, 100)
+  self._dragShow = false
+  self:WelcomeAudio()
+  self:UnLock("UIMainLobbyBg_Task_ShowDress")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.Task_SetExtFlag = function(self, TT, isStatic)
-  -- function num : 0_6 , upvalues : _ENV
+function UIMainLobbyBg:Task_SetExtFlag(TT, isStatic)
   self:Lock("UIMainLobbyBg_Task_SetExtFlag")
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   roleModule:SetExtFlag(TT, CharExtFlag.CEFT_MAIN_UI_SHOW_SPINE, isStatic)
   self:UnLock("UIMainLobbyBg_Task_SetExtFlag")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.OpenDressCount = function(self)
-  -- function num : 0_7
-  local dressInfos = (self._signInModule):GetDressInfos()
+function UIMainLobbyBg:OpenDressCount()
+  local dressInfos = self._signInModule:GetDressInfos()
   local OpenCount = 0
   for i = 1, #dressInfos do
-    if (dressInfos[i]).range_select == 1 then
+    if dressInfos[i].range_select == 1 then
       OpenCount = OpenCount + 1
     end
   end
   return OpenCount
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.CalcuNextDressIndex = function(self)
-  -- function num : 0_8
-  local dressIndex = (self._signInModule):GetMainDressUpCurIndex()
-  local dressInfos = (self._signInModule):GetDressInfos()
+function UIMainLobbyBg:CalcuNextDressIndex()
+  local dressIndex = self._signInModule:GetMainDressUpCurIndex()
+  local dressInfos = self._signInModule:GetDressInfos()
   local calcuCount = 1
   local needCalcuCount = #dressInfos - 1
   while calcuCount <= needCalcuCount do
     calcuCount = calcuCount + 1
     dressIndex = dressIndex + 1
-    if #dressInfos < dressIndex then
+    if dressIndex > #dressInfos then
       dressIndex = 1
     end
-    if (dressInfos[dressIndex]).range_select == 1 then
+    if dressInfos[dressIndex].range_select == 1 then
       calcuCount = #dressInfos
     end
   end
   return dressIndex
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.CalcuPreDressIndex = function(self)
-  -- function num : 0_9
-  local dressIndex = (self._signInModule):GetMainDressUpCurIndex()
-  local dressInfos = (self._signInModule):GetDressInfos()
+function UIMainLobbyBg:CalcuPreDressIndex()
+  local dressIndex = self._signInModule:GetMainDressUpCurIndex()
+  local dressInfos = self._signInModule:GetDressInfos()
   local calcuCount = 1
   local needCalcuCount = #dressInfos - 1
   while calcuCount <= needCalcuCount do
@@ -244,32 +195,26 @@ UIMainLobbyBg.CalcuPreDressIndex = function(self)
     if dressIndex <= 0 then
       dressIndex = #dressInfos
     end
-    if (dressInfos[dressIndex]).range_select == 1 then
+    if dressInfos[dressIndex].range_select == 1 then
       calcuCount = #dressInfos
     end
   end
   return dressIndex
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.InitDressUpInfos = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIMainLobbyBg:InitDressUpInfos()
   self._signInModule = self:GetModule(SignInModule)
-  local dressIndex = (self._signInModule):GetMainDressUpCurIndex()
-  local dressInfos = (self._signInModule):GetDressInfos()
+  local dressIndex = self._signInModule:GetMainDressUpCurIndex()
+  local dressInfos = self._signInModule:GetDressInfos()
   self:SetIndexDress(dressIndex, dressInfos)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.SetIndexDress = function(self, dressIndex, dressInfos)
-  -- function num : 0_11 , upvalues : _ENV
+function UIMainLobbyBg:SetIndexDress(dressIndex, dressInfos)
   if #dressInfos == 0 then
-    return 
+    return
   end
   if dressInfos[dressIndex] == nil then
-    return 
+    return
   end
   local targetInfo = dressInfos[dressIndex]
   self._cgID = targetInfo.pet_cfg_id
@@ -278,10 +223,7 @@ UIMainLobbyBg.SetIndexDress = function(self, dressIndex, dressInfos)
   self._asID = targetInfo.board_pet
   self._bgId = targetInfo.bg_id
   self._bgType = targetInfo.bg_type
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._roleModule).m_choose_painting).spine_id = targetInfo.spine_id
+  self._roleModule.m_choose_painting.spine_id = targetInfo.spine_id
   ChooseAssistantHelper:SaveTmpChooseCgPaintingData(true, self._cgID, self._grade, self._skinID, self._asID)
   ChooseAssistantHelper:SaveTmpChooseBgPaintingData(true, self._bgId, self._bgType)
   local petPos = Vector2(targetInfo.pet_x, targetInfo.pet_y)
@@ -289,428 +231,316 @@ UIMainLobbyBg.SetIndexDress = function(self, dressIndex, dressInfos)
   if petScale == 0 then
     petScale = 1
   end
-  ;
-  (ChooseAssistantHelper.SaveAssistantPetSetting)(petPos, petScale)
+  ChooseAssistantHelper.SaveAssistantPetSetting(petPos, petScale)
   local bgPos = Vector2.zero
   if targetInfo.bg_x ~= nil and targetInfo.bg_y ~= nil then
     bgPos = Vector2(targetInfo.bg_x, targetInfo.bg_y)
   end
   local bgScale = targetInfo.bg_scale
-  ;
-  (Log.debug)("[FX] bgScale ", targetInfo.bg_scale)
+  Log.debug("[FX] bgScale ", targetInfo.bg_scale)
   if bgScale == 0 or bgScale == nil then
-    (Log.debug)("[FX] bgScale2222 ", bgScale)
+    Log.debug("[FX] bgScale2222 ", bgScale)
     bgScale = 1
     targetInfo.bg_scale = 1
   end
   local spineIndex = targetInfo.spine_id
-  ;
-  (ChooseAssistantHelper.SaveAssistantBgSetting)(bgPos, bgScale, self._bgType, self._bgId, false, spineIndex)
+  ChooseAssistantHelper.SaveAssistantBgSetting(bgPos, bgScale, self._bgType, self._bgId, false, spineIndex)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.SetWatchMode = function(self, showUiBtnCallback)
-  -- function num : 0_12
+function UIMainLobbyBg:SetWatchMode(showUiBtnCallback)
   self._showUiBtnCallback = showUiBtnCallback
-  ;
-  (self:GetGameObject("VoiceRoot")):SetActive(self._showUiBtnCallback == false)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:GetGameObject("VoiceRoot"):SetActive(self._showUiBtnCallback == false)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.GetBgIDAndType = function(self)
-  -- function num : 0_13
+function UIMainLobbyBg:GetBgIDAndType()
   return self._currentMainBgID, self._currentMainBgType
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.GetBgSetting = function(self)
-  -- function num : 0_14
-  return self._deltaBgPos, self._deltaBgScale, (self._bgRoot).sizeDelta
+function UIMainLobbyBg:GetBgSetting()
+  return self._deltaBgPos, self._deltaBgScale, self._bgRoot.sizeDelta
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.ChangeCgRootScale = function(self, type, scale)
-  -- function num : 0_15 , upvalues : _ENV
+function UIMainLobbyBg:ChangeCgRootScale(type, scale)
   if type == UIChooseAssistantType.Bg2MainLobby then
     self._deltaBgScale = scale
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._bgRoot).localScale = Vector3(self._deltaBgScale, self._deltaBgScale, self._deltaBgScale)
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._spineBgRoot).localScale = Vector3(self._deltaBgScale, self._deltaBgScale, self._deltaBgScale)
-  else
-    if type == UIChooseAssistantType.Cg2MainLobby then
-      self._deltaScale = scale
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._changePetPosAndScaleRoot).localScale = Vector3(self._deltaScale, self._deltaScale, self._deltaScale)
-    end
+    self._bgRoot.localScale = Vector3(self._deltaBgScale, self._deltaBgScale, self._deltaBgScale)
+    self._spineBgRoot.localScale = Vector3(self._deltaBgScale, self._deltaBgScale, self._deltaBgScale)
+  elseif type == UIChooseAssistantType.Cg2MainLobby then
+    self._deltaScale = scale
+    self._changePetPosAndScaleRoot.localScale = Vector3(self._deltaScale, self._deltaScale, self._deltaScale)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.ChangeCgRootPos = function(self, type, pos)
-  -- function num : 0_16 , upvalues : _ENV
+function UIMainLobbyBg:ChangeCgRootPos(type, pos)
   if type == UIChooseAssistantType.Bg2MainLobby then
     self._deltaBgPos = pos
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._bgRoot).anchoredPosition = self._deltaBgPos
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._spineBgRoot).anchoredPosition = self._deltaBgPos
-  else
-    if type == UIChooseAssistantType.Cg2MainLobby then
-      self._deltaPos = pos
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._changePetPosAndScaleRoot).anchoredPosition = self._deltaPos
-    end
+    self._bgRoot.anchoredPosition = self._deltaBgPos
+    self._spineBgRoot.anchoredPosition = self._deltaBgPos
+  elseif type == UIChooseAssistantType.Cg2MainLobby then
+    self._deltaPos = pos
+    self._changePetPosAndScaleRoot.anchoredPosition = self._deltaPos
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.BgOnClick = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIMainLobbyBg:BgOnClick()
   if self._showUiBtnCallback then
-    (self._showUiBtnCallback)()
+    self._showUiBtnCallback()
   end
   self:SpineBgOnClick(true)
-  ;
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_DIALOG)
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_DIALOG)
   if not self._assistantNull then
-    (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_ChangeGuider"}, true)
-    local voiceSkinID = nil
+    GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+      "Click_ChangeGuider"
+    }, true)
+    local voiceSkinID
     if self._assistantAsID and self._assistantAsID ~= 0 then
       voiceSkinID = nil
-    else
-      if self._assistantSkinID == 0 then
-        if self._assistantGrade == 0 then
-          local gradeCfg = (Cfg.cfg_pet)[self._defaultPetID]
-          if not gradeCfg then
-            (Log.fatal)("###[UIMainLobbyFinal] pet cfg is nil ! id --> ", self._defaultPetID, "| grade --> ", self._assistantGrade)
-            return 
-          end
-          voiceSkinID = gradeCfg.SkinId
-        else
-          do
-            do
-              local gradeCfg = ((Cfg.cfg_pet_grade)({PetID = self._defaultPetID, Grade = self._assistantGrade}))[1]
-              if not gradeCfg then
-                (Log.fatal)("###[UIMainLobbyFinal] grade cfg is nil ! id --> ", self._defaultPetID, "| grade --> ", self._assistantGrade)
-                return 
-              end
-              voiceSkinID = gradeCfg.SkinId
-              voiceSkinID = self._assistantSkinID
-              self:PlayPetAudio("MainLobbyInteract", true)
-              self:PlaySpineAnim(voiceSkinID)
-            end
-          end
+    elseif self._assistantSkinID == 0 then
+      if self._assistantGrade == 0 then
+        local gradeCfg = Cfg.cfg_pet[self._defaultPetID]
+        if not gradeCfg then
+          Log.fatal("###[UIMainLobbyFinal] pet cfg is nil ! id --> ", self._defaultPetID, "| grade --> ", self._assistantGrade)
+          return
         end
+        voiceSkinID = gradeCfg.SkinId
+      else
+        local gradeCfg = Cfg.cfg_pet_grade({
+          PetID = self._defaultPetID,
+          Grade = self._assistantGrade
+        })[1]
+        if not gradeCfg then
+          Log.fatal("###[UIMainLobbyFinal] grade cfg is nil ! id --> ", self._defaultPetID, "| grade --> ", self._assistantGrade)
+          return
+        end
+        voiceSkinID = gradeCfg.SkinId
       end
+    else
+      voiceSkinID = self._assistantSkinID
     end
+    self:PlayPetAudio("MainLobbyInteract", true)
+    self:PlaySpineAnim(voiceSkinID)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.SpineBgOnClick = function(self, callFromBgOnClick)
-  -- function num : 0_18 , upvalues : _ENV
+function UIMainLobbyBg:SpineBgOnClick(callFromBgOnClick)
   if not callFromBgOnClick and self._showUiBtnCallback then
-    (self._showUiBtnCallback)()
+    self._showUiBtnCallback()
   end
   if not self._assistantNull then
-    return 
+    return
   end
   if self._playBgSpine1Anim then
-    return 
+    return
   end
   if self.isMultiSpineSkin and self.multiSpineName then
-    local cfg = (Cfg.cfg_multi_spine_cg_ani)({Spine = self.multiSpineName})
-    if not cfg or not cfg[1] or not (cfg[1]).ClickAni then
-      return 
+    local cfg = Cfg.cfg_multi_spine_cg_ani({
+      Spine = self.multiSpineName
+    })
+    if not (cfg and cfg[1]) or not cfg[1].ClickAni then
+      return
     end
-    local clickAni = (cfg[1]).ClickAni
+    local clickAni = cfg[1].ClickAni
     self:PlayBgSpineAnim(clickAni)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.PlayBgSpineAnim = function(self, clickAni)
-  -- function num : 0_19 , upvalues : _ENV
-  self._bgSpine1Ske = (self._spineLoader1).CurrentSkeleton
+function UIMainLobbyBg:PlayBgSpineAnim(clickAni)
+  self._bgSpine1Ske = self._spineLoader1.CurrentSkeleton
   if not self._bgSpine1Ske then
-    self._bgSpine1Ske = (self._spineLoader1).CurrentMultiSkeleton
+    self._bgSpine1Ske = self._spineLoader1.CurrentMultiSkeleton
   end
   if not self._bgSpine1Ske then
-    return 
+    return
   end
   local animList = {}
   for i = 1, #clickAni do
     local spineAnim = clickAni[i]
-    ;
-    (table.insert)(animList, spineAnim)
+    table.insert(animList, spineAnim)
   end
   if #animList == 0 then
-    return 
+    return
   end
-  local randomVal = (math.random)(#animList)
+  local randomVal = math.random(#animList)
   local anim = animList[randomVal]
   local animationName = anim
-  local entry = ((self._bgSpine1Ske).AnimationState):SetAnimation(0, animationName, false)
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (((self._spineLoader1).AnimationState).Data).DefaultMix = 0
-  ;
-  (self._bgSpine1Ske):Update(0)
+  local entry = self._bgSpine1Ske.AnimationState:SetAnimation(0, animationName, false)
+  self._spineLoader1.AnimationState.Data.DefaultMix = 0
+  self._bgSpine1Ske:Update(0)
   if not entry then
-    return 
+    return
   end
   local anim = entry.Animation
   local duration = anim.Duration
-  local yieldTime = (math.floor)(duration * 1000)
+  local yieldTime = math.floor(duration * 1000)
   if self._bgSpine1Event then
-    ((GameGlobal.Timer)()):CancelEvent(self._bgSpine1Event)
+    GameGlobal.Timer():CancelEvent(self._bgSpine1Event)
     self._bgSpine1Event = nil
     self._playBgSpine1Anim = false
   end
   self._playBgSpine1Anim = true
-  self._bgSpine1Event = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_19_0 , upvalues : self
+  self._bgSpine1Event = GameGlobal.Timer():AddEvent(yieldTime, function()
     self._playBgSpine1Anim = false
     local animationName = "idle"
-    ;
-    ((self._bgSpine1Ske).AnimationState):SetAnimation(0, animationName, true)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (((self._spineLoader1).AnimationState).Data).DefaultMix = 0
-    ;
-    (self._bgSpine1Ske):Update(0)
-  end
-)
+    self._bgSpine1Ske.AnimationState:SetAnimation(0, animationName, true)
+    self._spineLoader1.AnimationState.Data.DefaultMix = 0
+    self._bgSpine1Ske:Update(0)
+  end)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.PlaySpineAnim = function(self, skinid)
-  -- function num : 0_20 , upvalues : _ENV
+function UIMainLobbyBg:PlaySpineAnim(skinid)
   if self._cgState == DynamicAndStaticState.Dynamic then
     if self._playSpineAnim then
-      return 
+      return
     end
-    local cfg_pet_skin = (Cfg.cfg_pet_skin)[skinid]
+    local cfg_pet_skin = Cfg.cfg_pet_skin[skinid]
     if not cfg_pet_skin then
-      (Log.error)("###[UIMainLobbyFinal] cfg_pet_skin is nil ! id --> ", skinid)
-      return 
+      Log.error("###[UIMainLobbyFinal] cfg_pet_skin is nil ! id --> ", skinid)
+      return
     end
     local spineAnims = cfg_pet_skin.MainLobbySpineAnim
     if not spineAnims then
-      return 
+      return
     end
     local animList = {}
     for i = 1, #spineAnims do
       local spineAnim = spineAnims[i]
-      ;
-      (table.insert)(animList, spineAnim)
+      table.insert(animList, spineAnim)
     end
     if #animList == 0 then
-      (Log.error)("###[UIMainLobbyFinal] animList is nil ! skinid --> ", skinid)
-      return 
+      Log.error("###[UIMainLobbyFinal] animList is nil ! skinid --> ", skinid)
+      return
     end
-    local randomVal = (math.random)(#animList)
+    local randomVal = math.random(#animList)
     local anim = animList[randomVal]
     local animationName = anim
     if not self._dcgHandle then
-      (Log.debug)("###[UIMainLobbyFinal] self._dcgHandle is nil --> ", self._dynamicSpineSettings)
-      return 
+      Log.debug("###[UIMainLobbyFinal] self._dcgHandle is nil --> ", self._dynamicSpineSettings)
+      return
     end
-    local entry = (self._dcgHandle):SetAnimationWithTrackEntryReturn(0, animationName, false)
-    ;
-    (self._dcgHandle):SetAnimMixTime(0)
-    ;
-    (self._dcgHandle):Update(0)
-    if (self._dcgHandle):GetCurDynamicCGType() == DynamicCGType.Spine or (self._dcgHandle):GetCurDynamicCGType() == DynamicCGType.None then
+    local entry = self._dcgHandle:SetAnimationWithTrackEntryReturn(0, animationName, false)
+    self._dcgHandle:SetAnimMixTime(0)
+    self._dcgHandle:Update(0)
+    if self._dcgHandle:GetCurDynamicCGType() == DynamicCGType.Spine or self._dcgHandle:GetCurDynamicCGType() == DynamicCGType.None then
       self:PlayClickAnimBackIdleBySpine(entry)
-    else
-      if (self._dcgHandle):GetCurDynamicCGType() == DynamicCGType.Live2D then
-        self:PlayClickAnimBackIdleByLive2d(entry)
-      end
+    elseif self._dcgHandle:GetCurDynamicCGType() == DynamicCGType.Live2D then
+      self:PlayClickAnimBackIdleByLive2d(entry)
     end
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.PlayClickAnimBackIdleBySpine = function(self, entry)
-  -- function num : 0_21 , upvalues : _ENV
+function UIMainLobbyBg:PlayClickAnimBackIdleBySpine(entry)
   if not entry then
-    return 
+    return
   end
   local anim = entry.Animation
   local duration = anim.Duration
-  local yieldTime = (math.floor)(duration * 1000)
+  local yieldTime = math.floor(duration * 1000)
   if self._spineEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+    GameGlobal.Timer():CancelEvent(self._spineEvent)
     self._spineEvent = nil
     self._playSpineAnim = false
   end
   self._playSpineAnim = true
-  self._spineEvent = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_21_0 , upvalues : self
+  self._spineEvent = GameGlobal.Timer():AddEvent(yieldTime, function()
     self._playSpineAnim = false
     local animationName = "idle"
-    ;
-    (self._dcgHandle):SetAnimation(0, animationName, true)
-    ;
-    (self._dcgHandle):SetAnimMixTime(0)
-    ;
-    (self._dcgHandle):Update(0)
-  end
-)
-  ;
-  (Log.debug)("###[UIMainLobbyFinal] spine 动画名字[", animationName, "] 动画时长[", duration, "]")
+    self._dcgHandle:SetAnimation(0, animationName, true)
+    self._dcgHandle:SetAnimMixTime(0)
+    self._dcgHandle:Update(0)
+  end)
+  Log.debug("###[UIMainLobbyFinal] spine 动画名字[", animationName, "] 动画时长[", duration, "]")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.PlayClickAnimBackIdleByLive2d = function(self, anim)
-  -- function num : 0_22 , upvalues : _ENV
+function UIMainLobbyBg:PlayClickAnimBackIdleByLive2d(anim)
   if anim then
     local duration = anim.length
-    local yieldTime = (math.floor)(duration * 1000)
+    local yieldTime = math.floor(duration * 1000)
     if self._spineEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+      GameGlobal.Timer():CancelEvent(self._spineEvent)
       self._spineEvent = nil
       self._playSpineAnim = false
     end
     self._playSpineAnim = true
-    self._spineEvent = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_22_0 , upvalues : self
-    self._playSpineAnim = false
-    local animationName = "idle"
-    ;
-    (self._dcgHandle):SetAnimationWithTrackEntryReturn(0, animationName, true)
-  end
-)
+    self._spineEvent = GameGlobal.Timer():AddEvent(yieldTime, function()
+      self._playSpineAnim = false
+      local animationName = "idle"
+      self._dcgHandle:SetAnimationWithTrackEntryReturn(0, animationName, true)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.SetAsActive = function(self, changeAsHide)
-  -- function num : 0_23
+function UIMainLobbyBg:SetAsActive(changeAsHide)
   if changeAsHide then
-    local petid = (self._roleModule):GetResId()
+    local petid = self._roleModule:GetResId()
     self._assistantNull = false
     if petid and petid ~= 0 and petid == -1 then
       self._assistantNull = true
     end
-    ;
-    (self._cgSpineGo):SetActive(not self._assistantNull)
-    ;
-    (self._voiceGo):SetActive(not self._assistantNull)
+    self._cgSpineGo:SetActive(not self._assistantNull)
+    self._voiceGo:SetActive(not self._assistantNull)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.SetMainBg = function(self, type, id, anim, isSaveBtn, save, changeAsHide, spineIndex)
-  -- function num : 0_24 , upvalues : _ENV
+function UIMainLobbyBg:SetMainBg(type, id, anim, isSaveBtn, save, changeAsHide, spineIndex)
   if self._bgSpine1Event then
-    ((GameGlobal.Timer)()):CancelEvent(self._bgSpine1Event)
+    GameGlobal.Timer():CancelEvent(self._bgSpine1Event)
     self._bgSpine1Event = nil
     self._playBgSpine1Anim = false
   end
   self:SetAsActive(changeAsHide)
-  if not id or not id then
-    id = (self._roleModule):UI_GetMainBgID()
-  end
-  if (id == 0 and 1) or type == UIChooseAssistantBgType.Normal then
-    local cfg = (Cfg.cfg_main_bg)[id]
+  id = id and id or self._roleModule:UI_GetMainBgID()
+  id = id == 0 and 1 or id
+  if type == UIChooseAssistantBgType.Normal then
+    local cfg = Cfg.cfg_main_bg[id]
     if not cfg then
-      return 
+      return
     end
     if cfg.Spine then
       self:ChangeBGSpine(cfg, type, anim, isSaveBtn, save)
-    else
-      if cfg.BG then
-        self:ChangePicBG(cfg, type, anim, isSaveBtn, save)
-      end
+    elseif cfg.BG then
+      self:ChangePicBG(cfg, type, anim, isSaveBtn, save)
     end
-  else
-    do
-      do
-        if type == UIChooseAssistantBgType.Story or type == UIChooseAssistantBgType.Skin or type == UIChooseAssistantBgType.Season then
-          local cfg = (Cfg.cfg_cg_book)[id]
-          if not cfg then
-            return 
-          end
-          if cfg.Type == UIChooseAssistantBgType.MultiSpineSkin then
-            self:ChangeSpineBG(cfg, type, anim, isSaveBtn, save, spineIndex)
-          else
-            if cfg.Spine then
-              self:ChangeSpineBG(cfg, type, anim, isSaveBtn, save)
-            else
-              if cfg.StaticPic then
-                self:ChangeCGPicBG(cfg, type, anim, isSaveBtn, save)
-              end
-            end
-          end
-        end
-        local currentMainBgID = (self._roleModule):UI_GetMainBgID()
-        local currentMainBgType = ((self._roleModule).m_choose_painting).background_type
-        local currentMainBgID = currentMainBgID == 0 and 2 or currentMainBgID
-        local currentMainBgType = currentMainBgType == 0 and 1 or currentMainBgType
-        if id == currentMainBgID and type == currentMainBgType then
-          self:SetBgRootPosAndScale(spineIndex)
-        end
-      end
+  elseif type == UIChooseAssistantBgType.Story or type == UIChooseAssistantBgType.Skin or type == UIChooseAssistantBgType.Season then
+    local cfg = Cfg.cfg_cg_book[id]
+    if not cfg then
+      return
     end
+    if cfg.Type == UIChooseAssistantBgType.MultiSpineSkin then
+      self:ChangeSpineBG(cfg, type, anim, isSaveBtn, save, spineIndex)
+    elseif cfg.Spine then
+      self:ChangeSpineBG(cfg, type, anim, isSaveBtn, save)
+    elseif cfg.StaticPic then
+      self:ChangeCGPicBG(cfg, type, anim, isSaveBtn, save)
+    end
+  end
+  local currentMainBgID = self._roleModule:UI_GetMainBgID()
+  local currentMainBgType = self._roleModule.m_choose_painting.background_type
+  local currentMainBgID = currentMainBgID == 0 and 2 or currentMainBgID
+  local currentMainBgType = currentMainBgType == 0 and 1 or currentMainBgType
+  if id == currentMainBgID and type == currentMainBgType then
+    self:SetBgRootPosAndScale(spineIndex)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.ChangePicBG = function(self, cfg, type, anim, isSaveBtn, save)
-  -- function num : 0_25 , upvalues : _ENV
-  (self._spineLoaderObj1):SetActive(false)
-  ;
-  (self._spineLoaderObj2):SetActive(false)
-  ;
-  (self._bgRootObj):SetActive(true)
-  local realWidth = (ResolutionManager.RealWidth)()
-  local realHeight = (ResolutionManager.RealHeight)()
+function UIMainLobbyBg:ChangePicBG(cfg, type, anim, isSaveBtn, save)
+  self._spineLoaderObj1:SetActive(false)
+  self._spineLoaderObj2:SetActive(false)
+  self._bgRootObj:SetActive(true)
+  local realWidth = ResolutionManager.RealWidth()
+  local realHeight = ResolutionManager.RealHeight()
   local safeArea = Vector2(realWidth, realHeight)
   self._bg_posOffset = Vector2(0, 0)
   self._bg_scaleOffset = 1
   if isSaveBtn and save then
     self._currentMainBgType = type
     self._currentMainBgID = cfg.ID
-    ;
-    (ChooseAssistantHelper.SaveAssistantBgSetting)(self._deltaBgPos, self._deltaBgScale, type, cfg.ID, false, 1)
+    ChooseAssistantHelper.SaveAssistantBgSetting(self._deltaBgPos, self._deltaBgScale, type, cfg.ID, false, 1)
     self._bg_posOffset = self._deltaBgPos
     self._bg_scaleOffset = self._deltaBgScale
   end
   local size = Vector2(2539, 1439)
   if cfg.Size then
-    size = Vector2((cfg.Size)[1], (cfg.Size)[2])
+    size = Vector2(cfg.Size[1], cfg.Size[2])
   end
   local rate_x = 1
   local rate_y = 1
@@ -720,89 +550,49 @@ UIMainLobbyBg.ChangePicBG = function(self, cfg, type, anim, isSaveBtn, save)
   if size.y * self._bg_scaleOffset < safeArea.y then
     rate_y = size.y * self._bg_scaleOffset / safeArea.y
   end
-  do
-    if rate_x < 1 or rate_y < 1 then
-      local changex = true
-      if rate_x < rate_y then
-        changex = true
-      else
-        changex = false
-      end
-      if changex then
-        self._bg_scaleOffset = self._bg_scaleOffset / (rate_x)
-      else
-        self._bg_scaleOffset = self._bg_scaleOffset / (rate_y)
-      end
-    end
-    self._deltaBgPos = self._bg_posOffset
-    self._deltaBgScale = self._bg_scaleOffset
-    -- DECOMPILER ERROR at PC111: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._bgRoot).anchoredPosition = self._bg_posOffset
-    -- DECOMPILER ERROR at PC118: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._bgRoot).localScale = Vector3(self._bg_scaleOffset, self._bg_scaleOffset, self._bg_scaleOffset)
-    -- DECOMPILER ERROR at PC120: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._bgRoot).sizeDelta = size
-    if anim then
-      self:Lock("UIMainLobbyFinal:SetMainBg")
-      ;
-      (self._mainBg2):LoadImage(cfg.BG)
-      -- DECOMPILER ERROR at PC131: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._mainBgAlpha1).alpha = 1
-      -- DECOMPILER ERROR at PC133: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._mainBgAlpha2).alpha = 0
-      ;
-      (self._mainBgAlpha1):DOFade(0, 0.25)
-      ;
-      ((self._mainBgAlpha2):DOFade(1, 0.25)):OnComplete(function()
-    -- function num : 0_25_0 , upvalues : self, cfg
-    (self._mainBg):LoadImage(cfg.BG)
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._mainBgAlpha1).alpha = 1
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._mainBgAlpha2).alpha = 0
-    self:UnLock("UIMainLobbyFinal:SetMainBg")
-  end
-)
+  if rate_x < 1 or rate_y < 1 then
+    local changex = true
+    if rate_x < rate_y then
+      changex = true
     else
-      ;
-      (self._mainBg):LoadImage(cfg.BG)
-      -- DECOMPILER ERROR at PC153: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._mainBgAlpha1).alpha = 1
-      -- DECOMPILER ERROR at PC155: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._mainBgAlpha2).alpha = 0
+      changex = false
     end
+    if changex then
+      self._bg_scaleOffset = self._bg_scaleOffset / rate_x
+    else
+      self._bg_scaleOffset = self._bg_scaleOffset / rate_y
+    end
+  end
+  self._deltaBgPos = self._bg_posOffset
+  self._deltaBgScale = self._bg_scaleOffset
+  self._bgRoot.anchoredPosition = self._bg_posOffset
+  self._bgRoot.localScale = Vector3(self._bg_scaleOffset, self._bg_scaleOffset, self._bg_scaleOffset)
+  self._bgRoot.sizeDelta = size
+  if anim then
+    self:Lock("UIMainLobbyFinal:SetMainBg")
+    self._mainBg2:LoadImage(cfg.BG)
+    self._mainBgAlpha1.alpha = 1
+    self._mainBgAlpha2.alpha = 0
+    self._mainBgAlpha1:DOFade(0, 0.25)
+    self._mainBgAlpha2:DOFade(1, 0.25):OnComplete(function()
+      self._mainBg:LoadImage(cfg.BG)
+      self._mainBgAlpha1.alpha = 1
+      self._mainBgAlpha2.alpha = 0
+      self:UnLock("UIMainLobbyFinal:SetMainBg")
+    end)
+  else
+    self._mainBg:LoadImage(cfg.BG)
+    self._mainBgAlpha1.alpha = 1
+    self._mainBgAlpha2.alpha = 0
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.ChangeBGSpine = function(self, cfg, type, anim, isSaveBtn, save)
-  -- function num : 0_26 , upvalues : _ENV
-  local realWidth = (ResolutionManager.RealWidth)()
-  local realHeight = (ResolutionManager.RealHeight)()
+function UIMainLobbyBg:ChangeBGSpine(cfg, type, anim, isSaveBtn, save)
+  local realWidth = ResolutionManager.RealWidth()
+  local realHeight = ResolutionManager.RealHeight()
   local safeArea = Vector2(realWidth, realHeight)
-  ;
-  (self._spineLoaderObj1):SetActive(true)
-  ;
-  (self._bgRootObj):SetActive(false)
+  self._spineLoaderObj1:SetActive(true)
+  self._bgRootObj:SetActive(false)
   self._bg_posOffset = Vector2(0, 0)
   self._bg_scaleOffset = 1
   self._currentMainBgType = type
@@ -810,12 +600,11 @@ UIMainLobbyBg.ChangeBGSpine = function(self, cfg, type, anim, isSaveBtn, save)
   if isSaveBtn and save then
     self._bg_posOffset = self._deltaBgPos
     self._bg_scaleOffset = self._deltaBgScale
-    ;
-    (ChooseAssistantHelper.SaveAssistantBgSetting)(self._deltaBgPos, self._deltaBgScale, type, cfg.ID, false, 1)
+    ChooseAssistantHelper.SaveAssistantBgSetting(self._deltaBgPos, self._deltaBgScale, type, cfg.ID, false, 1)
   end
   local size = Vector2(2539, 1439)
   if cfg.Size then
-    size = Vector2((cfg.Size)[1], (cfg.Size)[2])
+    size = Vector2(cfg.Size[1], cfg.Size[2])
   end
   local rate_x = 1
   local rate_y = 1
@@ -825,51 +614,36 @@ UIMainLobbyBg.ChangeBGSpine = function(self, cfg, type, anim, isSaveBtn, save)
   if size.y * self._bg_scaleOffset < safeArea.y then
     rate_y = size.y * self._bg_scaleOffset / safeArea.y
   end
-  do
-    if rate_x < 1 or rate_y < 1 then
-      local changex = true
-      if rate_x < rate_y then
-        changex = true
-      else
-        changex = false
-      end
-      if changex then
-        self._bg_scaleOffset = self._bg_scaleOffset / (rate_x)
-      else
-        self._bg_scaleOffset = self._bg_scaleOffset / (rate_y)
-      end
+  if rate_x < 1 or rate_y < 1 then
+    local changex = true
+    if rate_x < rate_y then
+      changex = true
+    else
+      changex = false
     end
-    -- DECOMPILER ERROR at PC103: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._spineBgRoot).anchoredPosition = self._bg_posOffset
-    -- DECOMPILER ERROR at PC110: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._spineBgRoot).localScale = Vector3(self._bg_scaleOffset, self._bg_scaleOffset, self._bg_scaleOffset)
-    self._deltaBgPos = self._bg_posOffset
-    self._deltaBgScale = self._bg_scaleOffset
-    if (table.count)(cfg.Spine) > 1 then
-      (self._spineLoaderObj2):SetActive(true)
-      ;
-      (self._spineLoader2):LoadSpine((cfg.Spine)[2])
+    if changex then
+      self._bg_scaleOffset = self._bg_scaleOffset / rate_x
+    else
+      self._bg_scaleOffset = self._bg_scaleOffset / rate_y
     end
-    ;
-    (self._spineLoader1):LoadSpine((cfg.Spine)[1])
   end
+  self._spineBgRoot.anchoredPosition = self._bg_posOffset
+  self._spineBgRoot.localScale = Vector3(self._bg_scaleOffset, self._bg_scaleOffset, self._bg_scaleOffset)
+  self._deltaBgPos = self._bg_posOffset
+  self._deltaBgScale = self._bg_scaleOffset
+  if 1 < table.count(cfg.Spine) then
+    self._spineLoaderObj2:SetActive(true)
+    self._spineLoader2:LoadSpine(cfg.Spine[2])
+  end
+  self._spineLoader1:LoadSpine(cfg.Spine[1])
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.ChangeCGPicBG = function(self, cfg, type, anim, isSaveBtn, save)
-  -- function num : 0_27 , upvalues : _ENV
-  (self._spineLoaderObj1):SetActive(false)
-  ;
-  (self._spineLoaderObj2):SetActive(false)
-  ;
-  (self._bgRootObj):SetActive(true)
-  local realWidth = (ResolutionManager.RealWidth)()
-  local realHeight = (ResolutionManager.RealHeight)()
+function UIMainLobbyBg:ChangeCGPicBG(cfg, type, anim, isSaveBtn, save)
+  self._spineLoaderObj1:SetActive(false)
+  self._spineLoaderObj2:SetActive(false)
+  self._bgRootObj:SetActive(true)
+  local realWidth = ResolutionManager.RealWidth()
+  local realHeight = ResolutionManager.RealHeight()
   local safeArea = Vector2(realWidth, realHeight)
   self._bg_posOffset = Vector2(0, 0)
   self._bg_scaleOffset = 1
@@ -878,12 +652,11 @@ UIMainLobbyBg.ChangeCGPicBG = function(self, cfg, type, anim, isSaveBtn, save)
     self._currentMainBgID = cfg.ID
     self._bg_posOffset = self._deltaBgPos
     self._bg_scaleOffset = self._deltaBgScale
-    ;
-    (ChooseAssistantHelper.SaveAssistantBgSetting)(self._deltaBgPos, self._deltaBgScale, type, cfg.ID, false, 1)
+    ChooseAssistantHelper.SaveAssistantBgSetting(self._deltaBgPos, self._deltaBgScale, type, cfg.ID, false, 1)
   end
   local size = Vector2(2539, 1439)
   if cfg.Size then
-    size = Vector2((cfg.Size)[1], (cfg.Size)[2])
+    size = Vector2(cfg.Size[1], cfg.Size[2])
   end
   local rate_x = 1
   local rate_y = 1
@@ -893,522 +666,347 @@ UIMainLobbyBg.ChangeCGPicBG = function(self, cfg, type, anim, isSaveBtn, save)
   if size.y * self._bg_scaleOffset < safeArea.y then
     rate_y = size.y * self._bg_scaleOffset / safeArea.y
   end
-  do
-    if rate_x < 1 or rate_y < 1 then
-      local changex = true
-      if rate_x < rate_y then
-        changex = true
-      else
-        changex = false
-      end
-      if changex then
-        self._bg_scaleOffset = self._bg_scaleOffset / (rate_x)
-      else
-        self._bg_scaleOffset = self._bg_scaleOffset / (rate_y)
-      end
-    end
-    self._deltaBgPos = self._bg_posOffset
-    self._deltaBgScale = self._bg_scaleOffset
-    -- DECOMPILER ERROR at PC111: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._bgRoot).anchoredPosition = self._bg_posOffset
-    -- DECOMPILER ERROR at PC118: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._bgRoot).localScale = Vector3(self._bg_scaleOffset, self._bg_scaleOffset, self._bg_scaleOffset)
-    -- DECOMPILER ERROR at PC120: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._bgRoot).sizeDelta = size
-    if anim then
-      self:Lock("UIMainLobbyFinal:SetMainBg")
-      ;
-      (self._mainBg2):LoadImage(cfg.StaticPic)
-      -- DECOMPILER ERROR at PC131: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._mainBgAlpha1).alpha = 1
-      -- DECOMPILER ERROR at PC133: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._mainBgAlpha2).alpha = 0
-      ;
-      (self._mainBgAlpha1):DOFade(0, 0.25)
-      ;
-      ((self._mainBgAlpha2):DOFade(1, 0.25)):OnComplete(function()
-    -- function num : 0_27_0 , upvalues : self, cfg
-    (self._mainBg):LoadImage(cfg.StaticPic)
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._mainBgAlpha1).alpha = 1
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._mainBgAlpha2).alpha = 0
-    self:UnLock("UIMainLobbyFinal:SetMainBg")
-  end
-)
+  if rate_x < 1 or rate_y < 1 then
+    local changex = true
+    if rate_x < rate_y then
+      changex = true
     else
-      ;
-      (self._mainBg):LoadImage(cfg.StaticPic)
-      -- DECOMPILER ERROR at PC153: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._mainBgAlpha1).alpha = 1
-      -- DECOMPILER ERROR at PC155: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._mainBgAlpha2).alpha = 0
+      changex = false
     end
+    if changex then
+      self._bg_scaleOffset = self._bg_scaleOffset / rate_x
+    else
+      self._bg_scaleOffset = self._bg_scaleOffset / rate_y
+    end
+  end
+  self._deltaBgPos = self._bg_posOffset
+  self._deltaBgScale = self._bg_scaleOffset
+  self._bgRoot.anchoredPosition = self._bg_posOffset
+  self._bgRoot.localScale = Vector3(self._bg_scaleOffset, self._bg_scaleOffset, self._bg_scaleOffset)
+  self._bgRoot.sizeDelta = size
+  if anim then
+    self:Lock("UIMainLobbyFinal:SetMainBg")
+    self._mainBg2:LoadImage(cfg.StaticPic)
+    self._mainBgAlpha1.alpha = 1
+    self._mainBgAlpha2.alpha = 0
+    self._mainBgAlpha1:DOFade(0, 0.25)
+    self._mainBgAlpha2:DOFade(1, 0.25):OnComplete(function()
+      self._mainBg:LoadImage(cfg.StaticPic)
+      self._mainBgAlpha1.alpha = 1
+      self._mainBgAlpha2.alpha = 0
+      self:UnLock("UIMainLobbyFinal:SetMainBg")
+    end)
+  else
+    self._mainBg:LoadImage(cfg.StaticPic)
+    self._mainBgAlpha1.alpha = 1
+    self._mainBgAlpha2.alpha = 0
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.ChangeSpineBG = function(self, cfg, type, anim, isSaveBtn, save, spineIndex)
-  -- function num : 0_28 , upvalues : _ENV
-  local realWidth = (ResolutionManager.RealWidth)()
-  local realHeight = (ResolutionManager.RealHeight)()
+function UIMainLobbyBg:ChangeSpineBG(cfg, type, anim, isSaveBtn, save, spineIndex)
+  local realWidth = ResolutionManager.RealWidth()
+  local realHeight = ResolutionManager.RealHeight()
   local safeArea = Vector2(realWidth, realHeight)
-  ;
-  (self._spineLoaderObj1):SetActive(true)
-  ;
-  (self._bgRootObj):SetActive(false)
+  self._spineLoaderObj1:SetActive(true)
+  self._bgRootObj:SetActive(false)
   self._bg_posOffset = Vector2(0, 0)
   self._bg_scaleOffset = 1
   self._currentMainBgType = type
   self._currentMainBgID = cfg.ID
   local handle_operate = false
   local spineId = 1
-  if spineIndex == #cfg.Spine then
-    handle_operate = cfg.Type ~= UIChooseAssistantBgType.MultiSpineSkin or not spineIndex
+  if cfg.Type == UIChooseAssistantBgType.MultiSpineSkin and spineIndex then
+    handle_operate = spineIndex ~= #cfg.Spine
     spineId = spineIndex
-    self.handle_operate = handle_operate
-    self.handle_operate_spine_index = spineId
-    if isSaveBtn and save then
-      self._bg_posOffset = self._deltaBgPos
-      self._bg_scaleOffset = self._deltaBgScale
-      ;
-      (ChooseAssistantHelper.SaveAssistantBgSetting)(self._deltaBgPos, self._deltaBgScale, type, cfg.ID, handle_operate, spineId)
+  end
+  self.handle_operate = handle_operate
+  self.handle_operate_spine_index = spineId
+  if isSaveBtn and save then
+    self._bg_posOffset = self._deltaBgPos
+    self._bg_scaleOffset = self._deltaBgScale
+    ChooseAssistantHelper.SaveAssistantBgSetting(self._deltaBgPos, self._deltaBgScale, type, cfg.ID, handle_operate, spineId)
+  end
+  local size = Vector2(2539, 1439)
+  if cfg.Size then
+    size = Vector2(cfg.Size[1], cfg.Size[2])
+  end
+  local rate_x = 1
+  local rate_y = 1
+  if size.x * self._bg_scaleOffset < safeArea.x then
+    rate_x = size.x * self._bg_scaleOffset / safeArea.x
+  end
+  if size.y * self._bg_scaleOffset < safeArea.y then
+    rate_y = size.y * self._bg_scaleOffset / safeArea.y
+  end
+  if rate_x < 1 or rate_y < 1 then
+    local changex = true
+    if rate_x < rate_y then
+      changex = true
+    else
+      changex = false
     end
-    local size = Vector2(2539, 1439)
-    if cfg.Size then
-      size = Vector2((cfg.Size)[1], (cfg.Size)[2])
+    if changex then
+      self._bg_scaleOffset = self._bg_scaleOffset / rate_x
+    else
+      self._bg_scaleOffset = self._bg_scaleOffset / rate_y
     end
-    local rate_x = 1
-    local rate_y = 1
-    if size.x * self._bg_scaleOffset < safeArea.x then
-      rate_x = size.x * self._bg_scaleOffset / safeArea.x
+  end
+  self._spineBgRoot.anchoredPosition = self._bg_posOffset
+  self._spineBgRoot.localScale = Vector3(self._bg_scaleOffset, self._bg_scaleOffset, self._bg_scaleOffset)
+  self._deltaBgPos = self._bg_posOffset
+  self._deltaBgScale = self._bg_scaleOffset
+  self.isMultiSpineSkin = nil
+  if cfg.Type == UIChooseAssistantBgType.MultiSpineSkin and spineIndex then
+    self._spineLoader1:LoadSpine(cfg.Spine[spineIndex])
+    self.isMultiSpineSkin = true
+    self.multiSpineName = cfg.Spine[spineIndex]
+  else
+    if 1 < table.count(cfg.Spine) then
+      self._spineLoaderObj2:SetActive(true)
+      self._spineLoader2:LoadSpine(cfg.Spine[2])
     end
-    if size.y * self._bg_scaleOffset < safeArea.y then
-      rate_y = size.y * self._bg_scaleOffset / safeArea.y
-    end
-    do
-      if rate_x < 1 or rate_y < 1 then
-        local changex = true
-        if rate_x < rate_y then
-          changex = true
-        else
-          changex = false
-        end
-        if changex then
-          self._bg_scaleOffset = self._bg_scaleOffset / (rate_x)
-        else
-          self._bg_scaleOffset = self._bg_scaleOffset / (rate_y)
-        end
-      end
-      -- DECOMPILER ERROR at PC121: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (self._spineBgRoot).anchoredPosition = self._bg_posOffset
-      -- DECOMPILER ERROR at PC128: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (self._spineBgRoot).localScale = Vector3(self._bg_scaleOffset, self._bg_scaleOffset, self._bg_scaleOffset)
-      self._deltaBgPos = self._bg_posOffset
-      self._deltaBgScale = self._bg_scaleOffset
-      self.isMultiSpineSkin = nil
-      if cfg.Type == UIChooseAssistantBgType.MultiSpineSkin and spineIndex then
-        (self._spineLoader1):LoadSpine((cfg.Spine)[spineIndex])
-        self.isMultiSpineSkin = true
-        self.multiSpineName = (cfg.Spine)[spineIndex]
-      else
-        if (table.count)(cfg.Spine) > 1 then
-          (self._spineLoaderObj2):SetActive(true)
-          ;
-          (self._spineLoader2):LoadSpine((cfg.Spine)[2])
-        end
-        ;
-        (self._spineLoader1):LoadSpine((cfg.Spine)[1])
-      end
-      -- DECOMPILER ERROR: 14 unprocessed JMP targets
-    end
+    self._spineLoader1:LoadSpine(cfg.Spine[1])
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.SaveCancelChangeCgRoot = function(self, type, state, id, bgType, preDressIndex)
-  -- function num : 0_29 , upvalues : _ENV
+function UIMainLobbyBg:SaveCancelChangeCgRoot(type, state, id, bgType, preDressIndex)
   if type == UIChooseAssistantType.Bg2MainLobby or type == UIChooseAssistantType.Cg2MainLobby then
     if state == UIChooseAssistantState.Save then
-      local dressIndex = (self._signInModule):GetMainDressUpCurIndex()
-      local dressInfos = (self._signInModule):GetDressInfos()
+      local dressIndex = self._signInModule:GetMainDressUpCurIndex()
+      local dressInfos = self._signInModule:GetDressInfos()
       if type == UIChooseAssistantType.Bg2MainLobby and preDressIndex ~= nil then
         dressIndex = preDressIndex
       end
       self:SetIndexDress(dressIndex, dressInfos)
-      if not id or not id then
-        self._currentMainBgID = self._currentMainBgID
-        if not bgType or not bgType then
-          do
-            self._currentMainBgType = self._currentMainBgType
-            ;
-            (ChooseAssistantHelper.SaveAssistantPetSetting)(self._deltaPos, self._deltaScale)
-            ;
-            (ChooseAssistantHelper.SaveAssistantBgSetting)(self._deltaBgPos, self._deltaBgScale, self._currentMainBgType, self._currentMainBgID, self.handle_operate or false, self.handle_operate_spine_index or 1)
-            if state == UIChooseAssistantState.Cancel then
-              if type == UIChooseAssistantType.Cg2MainLobby then
-                (Log.debug)("###[UIMainLobbyFinal] cgroot cancel change !")
-                local dressIndex = (self._signInModule):GetMainDressUpCurIndex()
-                local dressInfos = (self._signInModule):GetDressInfos()
-                self:SetIndexDress(dressIndex, dressInfos)
-                self:SetRootPosAndScale()
-                self:SetBgRootPosAndScale()
-                local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
-              else
-                do
-                  if type == UIChooseAssistantType.Bg2MainLobby then
-                    (Log.debug)("###[UIMainLobbyFinal] cgroot cancel change !")
-                    local dressIndex = (self._signInModule):GetMainDressUpCurIndex()
-                    local dressInfos = (self._signInModule):GetDressInfos()
-                    if preDressIndex ~= nil then
-                      dressIndex = preDressIndex
-                    end
-                    self:SetIndexDress(dressIndex, dressInfos)
-                    self:SetRootPosAndScale()
-                    self:SetBgRootPosAndScale()
-                    local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
-                  end
-                  do
-                    if state == UIChooseAssistantState.Default then
-                      self:_ChangeCgRootToDefault(type)
-                    end
-                  end
-                end
-              end
-            end
-          end
+      self._currentMainBgID = id and id or self._currentMainBgID
+      self._currentMainBgType = bgType and bgType or self._currentMainBgType
+      ChooseAssistantHelper.SaveAssistantPetSetting(self._deltaPos, self._deltaScale)
+      ChooseAssistantHelper.SaveAssistantBgSetting(self._deltaBgPos, self._deltaBgScale, self._currentMainBgType, self._currentMainBgID, self.handle_operate or false, self.handle_operate_spine_index or 1)
+    elseif state == UIChooseAssistantState.Cancel then
+      if type == UIChooseAssistantType.Cg2MainLobby then
+        Log.debug("###[UIMainLobbyFinal] cgroot cancel change !")
+        local dressIndex = self._signInModule:GetMainDressUpCurIndex()
+        local dressInfos = self._signInModule:GetDressInfos()
+        self:SetIndexDress(dressIndex, dressInfos)
+        self:SetRootPosAndScale()
+        self:SetBgRootPosAndScale()
+        local open_id = GameGlobal.GameLogic():GetOpenId()
+      elseif type == UIChooseAssistantType.Bg2MainLobby then
+        Log.debug("###[UIMainLobbyFinal] cgroot cancel change !")
+        local dressIndex = self._signInModule:GetMainDressUpCurIndex()
+        local dressInfos = self._signInModule:GetDressInfos()
+        if preDressIndex ~= nil then
+          dressIndex = preDressIndex
         end
+        self:SetIndexDress(dressIndex, dressInfos)
+        self:SetRootPosAndScale()
+        self:SetBgRootPosAndScale()
+        local open_id = GameGlobal.GameLogic():GetOpenId()
       end
+    elseif state == UIChooseAssistantState.Default then
+      self:_ChangeCgRootToDefault(type)
     end
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg._ChangeCgRootToDefault = function(self, type)
-  -- function num : 0_30 , upvalues : _ENV
+function UIMainLobbyBg:_ChangeCgRootToDefault(type)
   if type == UIChooseAssistantType.Cg2MainLobby then
     self._deltaPos = Vector2(0, 0)
     self._deltaScale = 1
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._changePetPosAndScaleRoot).anchoredPosition = self._deltaPos
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._changePetPosAndScaleRoot).localScale = Vector3(self._deltaScale, self._deltaScale, self._deltaScale)
-  else
-    if type == UIChooseAssistantType.Bg2MainLobby then
-      self._deltaBgPos = Vector2(0, 0)
-      self._deltaBgScale = 1
-      local mainController = ((GameGlobal.UIStateManager)()):GetController("UIMainLobbyController")
-      local bgStartPos, bgStartScale = Vector2(0, 0), 1
-      local bgSize = (ChooseAssistantHelper.GetAssistantBgSize)(self._currentMainBgType, self._currentMainBgID)
-      if mainController then
-        bgStartPos = mainController:GetBgSetting()
+    self._changePetPosAndScaleRoot.anchoredPosition = self._deltaPos
+    self._changePetPosAndScaleRoot.localScale = Vector3(self._deltaScale, self._deltaScale, self._deltaScale)
+  elseif type == UIChooseAssistantType.Bg2MainLobby then
+    self._deltaBgPos = Vector2(0, 0)
+    self._deltaBgScale = 1
+    local mainController = GameGlobal.UIStateManager():GetController("UIMainLobbyController")
+    local bgStartPos, bgStartScale = Vector2(0, 0), 1
+    local bgSize = ChooseAssistantHelper.GetAssistantBgSize(self._currentMainBgType, self._currentMainBgID)
+    if mainController then
+      bgStartPos, bgStartScale = mainController:GetBgSetting()
+    end
+    local realWidth = ResolutionManager.RealWidth()
+    local realHeight = ResolutionManager.RealHeight()
+    local rate_x = 1
+    local rate_y = 1
+    if realWidth > bgSize.x * bgStartScale then
+      rate_x = bgSize.x * bgStartScale / realWidth
+    end
+    if realHeight > bgSize.y * bgStartScale then
+      rate_y = bgSize.y * bgStartScale / realHeight
+    end
+    if rate_x < 1 or rate_y < 1 then
+      local changex = true
+      if rate_x < rate_y then
+        changex = true
+      else
+        changex = false
       end
-      local realWidth = (ResolutionManager.RealWidth)()
-      local realHeight = (ResolutionManager.RealHeight)()
-      local rate_x = 1
-      local rate_y = 1
-      if bgSize.x * bgStartScale < realWidth then
-        rate_x = bgSize.x * bgStartScale / realWidth
-      end
-      if bgSize.y * bgStartScale < realHeight then
-        rate_y = bgSize.y * bgStartScale / realHeight
-      end
-      do
-        if rate_x < 1 or rate_y < 1 then
-          local changex = true
-          if rate_x < rate_y then
-            changex = true
-          else
-            changex = false
-          end
-          -- DECOMPILER ERROR at PC87: Overwrote pending register: R4 in 'AssignReg'
-
-        end
-        -- DECOMPILER ERROR at PC89: Overwrote pending register: R4 in 'AssignReg'
-
-        if changex then
-          self._deltaBgPos = bgStartPos
-          self._deltaBgScale = bgStartScale
-          -- DECOMPILER ERROR at PC94: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (self._bgRoot).anchoredPosition = self._deltaBgPos
-          -- DECOMPILER ERROR at PC97: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (self._spineBgRoot).anchoredPosition = self._deltaBgPos
-          -- DECOMPILER ERROR at PC104: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (self._bgRoot).localScale = Vector3(self._deltaBgScale, self._deltaBgScale, self._deltaBgScale)
-          -- DECOMPILER ERROR at PC111: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (self._spineBgRoot).localScale = Vector3(self._deltaBgScale, self._deltaBgScale, self._deltaBgScale)
-        end
+      if changex then
+        bgStartScale = bgStartScale / rate_x
+      else
+        bgStartScale = bgStartScale / rate_y
       end
     end
+    self._deltaBgPos = bgStartPos
+    self._deltaBgScale = bgStartScale
+    self._bgRoot.anchoredPosition = self._deltaBgPos
+    self._spineBgRoot.anchoredPosition = self._deltaBgPos
+    self._bgRoot.localScale = Vector3(self._deltaBgScale, self._deltaBgScale, self._deltaBgScale)
+    self._spineBgRoot.localScale = Vector3(self._deltaBgScale, self._deltaBgScale, self._deltaBgScale)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.OnMainLobbyHideAssistant = function(self, hideAs)
-  -- function num : 0_31
-  (self._cgSpineGo):SetActive(not hideAs)
-  ;
-  (self._voiceGo):SetActive(not hideAs)
+function UIMainLobbyBg:OnMainLobbyHideAssistant(hideAs)
+  self._cgSpineGo:SetActive(not hideAs)
+  self._voiceGo:SetActive(not hideAs)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.SetRootPosAndScale = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  local posOffset, scaleOffset = (ChooseAssistantHelper.GetAssistantPetSetting)()
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._changePetPosAndScaleRoot).anchoredPosition = posOffset
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._changePetPosAndScaleRoot).localScale = Vector3(scaleOffset, scaleOffset, scaleOffset)
+function UIMainLobbyBg:SetRootPosAndScale()
+  local posOffset, scaleOffset = ChooseAssistantHelper.GetAssistantPetSetting()
+  self._changePetPosAndScaleRoot.anchoredPosition = posOffset
+  self._changePetPosAndScaleRoot.localScale = Vector3(scaleOffset, scaleOffset, scaleOffset)
   self._deltaPos = posOffset
   self._deltaScale = scaleOffset
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.SetBgRootPosAndScale = function(self, spineIndex)
-  -- function num : 0_33 , upvalues : _ENV
+function UIMainLobbyBg:SetBgRootPosAndScale(spineIndex)
   self._bg_posOffset = Vector2(0, 0)
   self._bg_scaleOffset = 1
-  self._currentMainBgID = (self._roleModule):UI_GetMainBgID()
-  self._currentMainBgType = ((self._roleModule).m_choose_painting).background_type
-  self._current_is_hand_operate = ((self._roleModule).m_choose_painting).is_hand_operate
-  self._current_hand_spine_index = ((self._roleModule).m_choose_painting).spine_id
-  ;
-  (Log.debug)("[FX] self._current_hand_spine_index ", self._current_hand_spine_index)
-  if self._currentMainBgID ~= 0 or not 2 then
-    self._currentMainBgID = self._currentMainBgID
-    if self._currentMainBgType ~= 0 or not 1 then
-      self._currentMainBgType = self._currentMainBgType
-      if self._current_hand_spine_index ~= 0 or not 1 then
-        self._current_hand_spine_index = self._current_hand_spine_index
-        local size = Vector2(2539, 1439)
-        local realWidth = (ResolutionManager.RealWidth)()
-        local realHeight = (ResolutionManager.RealHeight)()
-        local safeArea = Vector2(realWidth, realHeight)
-        self.isMultiSpineSkin = nil
-        if self._currentMainBgType == UIChooseAssistantBgType.Normal then
-          local cfg = (Cfg.cfg_main_bg)[self._currentMainBgID]
-          if not cfg then
-            self._currentMainBgID = 1
-            cfg = (Cfg.cfg_main_bg)[self._currentMainBgID]
-          end
-          if cfg.Size then
-            size = Vector2((cfg.Size)[1], (cfg.Size)[2])
-          end
-          if cfg.Spine then
-            (self._spineLoaderObj1):SetActive(true)
-            ;
-            (self._bgRootObj):SetActive(false)
-            if (table.count)(cfg.Spine) > 1 then
-              (self._spineLoaderObj2):SetActive(true)
-              ;
-              (self._spineLoader2):LoadSpine((cfg.Spine)[2])
-            end
-            ;
-            (self._spineLoader1):LoadSpine((cfg.Spine)[1])
-          else
-            if cfg.BG then
-              (self._spineLoaderObj1):SetActive(false)
-              ;
-              (self._spineLoaderObj2):SetActive(false)
-              ;
-              (self._bgRootObj):SetActive(true)
-              ;
-              (self._mainBg):LoadImage(cfg.BG)
-            end
-          end
-        else
-          do
-            if self._currentMainBgType == UIChooseAssistantBgType.Skin or self._currentMainBgType == UIChooseAssistantBgType.Story or self._currentMainBgType == UIChooseAssistantBgType.Season then
-              local cfg = (Cfg.cfg_cg_book)[self._currentMainBgID]
-              if not cfg then
-                return 
-              end
-              if cfg.Size then
-                size = Vector2((cfg.Size)[1], (cfg.Size)[2])
-              end
-              if cfg.Type == UIChooseAssistantBgType.MultiSpineSkin then
-                (self._spineLoaderObj1):SetActive(true)
-                ;
-                (self._bgRootObj):SetActive(false)
-                local sIndex = spineIndex
-                if not sIndex then
-                  sIndex = self._current_hand_spine_index
-                end
-                ;
-                (self._spineLoader1):LoadSpine((cfg.Spine)[sIndex])
-                self.isMultiSpineSkin = true
-                self.multiSpineName = (cfg.Spine)[sIndex]
-              else
-                do
-                  do
-                    if cfg.Spine then
-                      (self._spineLoaderObj1):SetActive(true)
-                      ;
-                      (self._bgRootObj):SetActive(false)
-                      if (table.count)(cfg.Spine) > 1 then
-                        (self._spineLoaderObj2):SetActive(true)
-                        ;
-                        (self._spineLoader2):LoadSpine((cfg.Spine)[2])
-                      end
-                      ;
-                      (self._spineLoader1):LoadSpine((cfg.Spine)[1])
-                    else
-                      if cfg.StaticPic then
-                        (self._spineLoaderObj1):SetActive(false)
-                        ;
-                        (self._spineLoaderObj2):SetActive(false)
-                        ;
-                        (self._bgRootObj):SetActive(true)
-                        ;
-                        (self._mainBg):LoadImage(cfg.StaticPic)
-                      end
-                    end
-                    self._bg_posOffset = (ChooseAssistantHelper.GetAssistantBgSetting)(self._currentMainBgType, self._currentMainBgID)
-                    local rate_x = 1
-                    local rate_y = 1
-                    if self._bg_scaleOffset == nil or self._bg_scaleOffset == nil then
-                      (Log.debug)("[FX] _bg_scaleOffset", self._bg_scaleOffset)
-                      self._bg_scaleOffset = 1
-                    end
-                    if size.x * self._bg_scaleOffset < safeArea.x then
-                      rate_x = size.x * self._bg_scaleOffset / safeArea.x
-                    end
-                    if size.y * self._bg_scaleOffset < safeArea.y then
-                      rate_y = size.y * self._bg_scaleOffset / safeArea.y
-                    end
-                    do
-                      if rate_x < 1 or rate_y < 1 then
-                        local changex = true
-                        if rate_x < rate_y then
-                          changex = true
-                        else
-                          changex = false
-                        end
-                        if changex then
-                          self._bg_scaleOffset = self._bg_scaleOffset / (rate_x)
-                        else
-                          self._bg_scaleOffset = self._bg_scaleOffset / (rate_y)
-                        end
-                      end
-                      -- DECOMPILER ERROR at PC318: Confused about usage of register: R8 in 'UnsetPending'
-
-                      ;
-                      (self._bgRoot).anchoredPosition = self._bg_posOffset
-                      -- DECOMPILER ERROR at PC325: Confused about usage of register: R8 in 'UnsetPending'
-
-                      ;
-                      (self._bgRoot).localScale = Vector3(self._bg_scaleOffset, self._bg_scaleOffset, self._bg_scaleOffset)
-                      -- DECOMPILER ERROR at PC328: Confused about usage of register: R8 in 'UnsetPending'
-
-                      ;
-                      (self._spineBgRoot).anchoredPosition = self._bg_posOffset
-                      -- DECOMPILER ERROR at PC335: Confused about usage of register: R8 in 'UnsetPending'
-
-                      ;
-                      (self._spineBgRoot).localScale = Vector3(self._bg_scaleOffset, self._bg_scaleOffset, self._bg_scaleOffset)
-                      self._deltaBgPos = self._bg_posOffset
-                      self._deltaBgScale = self._bg_scaleOffset
-                      -- DECOMPILER ERROR at PC341: Confused about usage of register: R8 in 'UnsetPending'
-
-                      ;
-                      (self._bgRoot).sizeDelta = size
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+  self._currentMainBgID = self._roleModule:UI_GetMainBgID()
+  self._currentMainBgType = self._roleModule.m_choose_painting.background_type
+  self._current_is_hand_operate = self._roleModule.m_choose_painting.is_hand_operate
+  self._current_hand_spine_index = self._roleModule.m_choose_painting.spine_id
+  Log.debug("[FX] self._current_hand_spine_index ", self._current_hand_spine_index)
+  self._currentMainBgID = self._currentMainBgID == 0 and 2 or self._currentMainBgID
+  self._currentMainBgType = self._currentMainBgType == 0 and 1 or self._currentMainBgType
+  self._current_hand_spine_index = self._current_hand_spine_index == 0 and 1 or self._current_hand_spine_index
+  local size = Vector2(2539, 1439)
+  local realWidth = ResolutionManager.RealWidth()
+  local realHeight = ResolutionManager.RealHeight()
+  local safeArea = Vector2(realWidth, realHeight)
+  self.isMultiSpineSkin = nil
+  if self._currentMainBgType == UIChooseAssistantBgType.Normal then
+    local cfg = Cfg.cfg_main_bg[self._currentMainBgID]
+    if not cfg then
+      self._currentMainBgID = 1
+      cfg = Cfg.cfg_main_bg[self._currentMainBgID]
+    end
+    if cfg.Size then
+      size = Vector2(cfg.Size[1], cfg.Size[2])
+    end
+    if cfg.Spine then
+      self._spineLoaderObj1:SetActive(true)
+      self._bgRootObj:SetActive(false)
+      if 1 < table.count(cfg.Spine) then
+        self._spineLoaderObj2:SetActive(true)
+        self._spineLoader2:LoadSpine(cfg.Spine[2])
       end
+      self._spineLoader1:LoadSpine(cfg.Spine[1])
+    elseif cfg.BG then
+      self._spineLoaderObj1:SetActive(false)
+      self._spineLoaderObj2:SetActive(false)
+      self._bgRootObj:SetActive(true)
+      self._mainBg:LoadImage(cfg.BG)
+    end
+  elseif self._currentMainBgType == UIChooseAssistantBgType.Skin or self._currentMainBgType == UIChooseAssistantBgType.Story or self._currentMainBgType == UIChooseAssistantBgType.Season then
+    local cfg = Cfg.cfg_cg_book[self._currentMainBgID]
+    if not cfg then
+      return
+    end
+    if cfg.Size then
+      size = Vector2(cfg.Size[1], cfg.Size[2])
+    end
+    if cfg.Type == UIChooseAssistantBgType.MultiSpineSkin then
+      self._spineLoaderObj1:SetActive(true)
+      self._bgRootObj:SetActive(false)
+      local sIndex = spineIndex
+      sIndex = sIndex or self._current_hand_spine_index
+      self._spineLoader1:LoadSpine(cfg.Spine[sIndex])
+      self.isMultiSpineSkin = true
+      self.multiSpineName = cfg.Spine[sIndex]
+    elseif cfg.Spine then
+      self._spineLoaderObj1:SetActive(true)
+      self._bgRootObj:SetActive(false)
+      if 1 < table.count(cfg.Spine) then
+        self._spineLoaderObj2:SetActive(true)
+        self._spineLoader2:LoadSpine(cfg.Spine[2])
+      end
+      self._spineLoader1:LoadSpine(cfg.Spine[1])
+    elseif cfg.StaticPic then
+      self._spineLoaderObj1:SetActive(false)
+      self._spineLoaderObj2:SetActive(false)
+      self._bgRootObj:SetActive(true)
+      self._mainBg:LoadImage(cfg.StaticPic)
     end
   end
+  self._bg_posOffset, self._bg_scaleOffset = ChooseAssistantHelper.GetAssistantBgSetting(self._currentMainBgType, self._currentMainBgID)
+  local rate_x = 1
+  local rate_y = 1
+  if self._bg_scaleOffset == nil or self._bg_scaleOffset == nil then
+    Log.debug("[FX] _bg_scaleOffset", self._bg_scaleOffset)
+    self._bg_scaleOffset = 1
+  end
+  if size.x * self._bg_scaleOffset < safeArea.x then
+    rate_x = size.x * self._bg_scaleOffset / safeArea.x
+  end
+  if size.y * self._bg_scaleOffset < safeArea.y then
+    rate_y = size.y * self._bg_scaleOffset / safeArea.y
+  end
+  if rate_x < 1 or rate_y < 1 then
+    local changex = true
+    if rate_x < rate_y then
+      changex = true
+    else
+      changex = false
+    end
+    if changex then
+      self._bg_scaleOffset = self._bg_scaleOffset / rate_x
+    else
+      self._bg_scaleOffset = self._bg_scaleOffset / rate_y
+    end
+  end
+  self._bgRoot.anchoredPosition = self._bg_posOffset
+  self._bgRoot.localScale = Vector3(self._bg_scaleOffset, self._bg_scaleOffset, self._bg_scaleOffset)
+  self._spineBgRoot.anchoredPosition = self._bg_posOffset
+  self._spineBgRoot.localScale = Vector3(self._bg_scaleOffset, self._bg_scaleOffset, self._bg_scaleOffset)
+  self._deltaBgPos = self._bg_posOffset
+  self._deltaBgScale = self._bg_scaleOffset
+  self._bgRoot.sizeDelta = size
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.WelcomeAudio = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function UIMainLobbyBg:WelcomeAudio()
   self:StartTask(function(TT)
-    -- function num : 0_34_0 , upvalues : _ENV, self
     YIELD(TT)
     self:PlayPetAudio("MainLobbyWelcome")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.ShowCurrentAssistant = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  local petid = (self._roleModule):GetResId()
+function UIMainLobbyBg:ShowCurrentAssistant()
+  local petid = self._roleModule:GetResId()
   local old_pet_id = self._defaultPetID
   self._assistantNull = false
   self._defaultPetID = 0
-  local grade, skin, asid = nil, nil, nil
+  local grade, skin, asid
   if petid and petid ~= 0 then
     self._defaultPetID = petid
     if petid == -1 then
       self._assistantNull = true
     end
-    grade = ((self._roleModule).m_choose_painting).pet_grade
-    skin = ((self._roleModule).m_choose_painting).skin_id
+    grade = self._roleModule.m_choose_painting.pet_grade
+    skin = self._roleModule.m_choose_painting.skin_id
     if skin == -1 then
       skin = 0
     end
-    if skin ~= 0 and not ((GameGlobal.GetModule)(PetModule)):HaveSkin(skin) then
-      (Log.error)("背包中没有皮肤，恢复默认皮肤")
+    if skin ~= 0 and not GameGlobal.GetModule(PetModule):HaveSkin(skin) then
+      Log.error("背包中没有皮肤，恢复默认皮肤")
       skin = 0
     end
-    asid = ((self._roleModule).m_choose_painting).board_pet
+    asid = self._roleModule.m_choose_painting.board_pet
     if asid == 3400050 then
       asid = 10015
     end
   else
-    self._defaultPetID = ((Cfg.cfg_global).main_default_spine_pet_id).IntValue
+    self._defaultPetID = Cfg.cfg_global.main_default_spine_pet_id.IntValue
     grade = 0
     skin = 0
     asid = 0
@@ -1416,140 +1014,110 @@ UIMainLobbyBg.ShowCurrentAssistant = function(self)
   self._assistantGrade = grade
   self._assistantSkinID = skin
   self._assistantAsID = asid
-  ;
-  (self._cgSpineGo):SetActive(not self._assistantNull)
-  ;
-  (self._voiceGo):SetActive(not self._assistantNull)
+  self._cgSpineGo:SetActive(not self._assistantNull)
+  self._voiceGo:SetActive(not self._assistantNull)
   self:SetPetLocalValueByServer()
   if self._assistantNull then
-    return 
+    return
   end
-  do
-    if old_pet_id ~= self._defaultPetID then
-      local playPetID = nil
-      if old_pet_id and old_pet_id ~= 0 then
-        playPetID = old_pet_id
-      else
-        playPetID = self._defaultPetID
-      end
-      if not self._dragShow then
-        self:PlayPetAudio("MainLobbyInteract")
-      end
-    end
-    local petModule = (self:GetModule(PetModule))
-    local cfg_pet = nil
-    if grade > 0 then
-      cfg_pet = ((Cfg.cfg_pet_grade)({PetID = self._defaultPetID, Grade = grade}))[1]
+  if old_pet_id ~= self._defaultPetID then
+    local playPetID
+    if old_pet_id and old_pet_id ~= 0 then
+      playPetID = old_pet_id
     else
-      cfg_pet = (Cfg.cfg_pet)[self._defaultPetID]
+      playPetID = self._defaultPetID
     end
-    local hideStaticBtn = false
-    self._dynamicSpineAnim = nil
-    if cfg_pet then
-      if asid and asid ~= 0 then
-        local cfg_as = (Cfg.cfg_only_assistant)[asid]
-        if cfg_as then
-          self._dynamicSpineAnim = cfg_as.SpineAnim
-        end
-      else
-        do
-          self._enterSpineName = (HelperProxy:GetInstance()):GetMainLobbyEnterSpine(self._defaultPetID, grade, skin, PetSkinEffectPath.NO_EFFECT)
-          ;
-          (Log.debug)("[lobbyspine] _enterSpineName ", self._enterSpineName)
-          self._enterSpineSubGoName = (HelperProxy:GetInstance()):GetMainLobbyEnterSpineSubGo(self._defaultPetID, grade, skin, PetSkinEffectPath.NO_EFFECT)
-          self._staticSpineSettings = (ChooseAssistantHelper.GetSpineSettings)()
-          if hideStaticBtn then
-            self._cgState = DynamicAndStaticState.Dynamic
-            self:ChangeDynamicAndStatic(self._cgState)
-          else
-            local flagValue = (self._roleModule):GetExtFlag(CharExtFlag.CEFT_MAIN_UI_SHOW_SPINE)
-            if flagValue then
-              self._cgState = DynamicAndStaticState.Static
-            else
-              self._cgState = DynamicAndStaticState.Dynamic
-            end
-            self:ChangeDynamicAndStatic(self._cgState)
-          end
-        end
+    if not self._dragShow then
+      self:PlayPetAudio("MainLobbyInteract")
+    end
+  end
+  local petModule = self:GetModule(PetModule)
+  local cfg_pet
+  if 0 < grade then
+    cfg_pet = Cfg.cfg_pet_grade({
+      PetID = self._defaultPetID,
+      Grade = grade
+    })[1]
+  else
+    cfg_pet = Cfg.cfg_pet[self._defaultPetID]
+  end
+  local hideStaticBtn = false
+  self._dynamicSpineAnim = nil
+  if cfg_pet then
+    if asid and asid ~= 0 then
+      local cfg_as = Cfg.cfg_only_assistant[asid]
+      if cfg_as then
+        self._dynamicSpineAnim = cfg_as.SpineAnim
       end
+    else
+      self._enterSpineName = HelperProxy:GetInstance():GetMainLobbyEnterSpine(self._defaultPetID, grade, skin, PetSkinEffectPath.NO_EFFECT)
+      Log.debug("[lobbyspine] _enterSpineName ", self._enterSpineName)
+      self._enterSpineSubGoName = HelperProxy:GetInstance():GetMainLobbyEnterSpineSubGo(self._defaultPetID, grade, skin, PetSkinEffectPath.NO_EFFECT)
     end
+  end
+  self._staticSpineSettings, self._dynamicSpineSettings = ChooseAssistantHelper.GetSpineSettings()
+  if hideStaticBtn then
+    self._cgState = DynamicAndStaticState.Dynamic
+    self:ChangeDynamicAndStatic(self._cgState)
+  else
+    local flagValue = self._roleModule:GetExtFlag(CharExtFlag.CEFT_MAIN_UI_SHOW_SPINE)
+    if flagValue then
+      self._cgState = DynamicAndStaticState.Static
+    else
+      self._cgState = DynamicAndStaticState.Dynamic
+    end
+    self:ChangeDynamicAndStatic(self._cgState)
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.OnAssistantChanged = function(self, resetPos)
-  -- function num : 0_36 , upvalues : _ENV
+function UIMainLobbyBg:OnAssistantChanged(resetPos)
   if self._spineEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+    GameGlobal.Timer():CancelEvent(self._spineEvent)
     self._spineEvent = nil
     self._playSpineAnim = false
   end
   if resetPos then
-    (ChooseAssistantHelper.SaveAssistantPetSetting)(Vector2(0, 0), 1)
+    ChooseAssistantHelper.SaveAssistantPetSetting(Vector2(0, 0), 1)
   end
   self:SetRootPosAndScale()
   self._spineLoaded = false
   self._cgLoaded = false
   if self._enterDcgHandle then
-    (self._enterDcgHandle):DestroyCurrentCG()
+    self._enterDcgHandle:DestroyCurrentCG()
     self._enterDcgHandle = nil
   end
   self:ShowCurrentAssistant()
   self._audioPlayID = self:PlayPetAudio("Appointment")
   if self._audioPlayID == nil then
-    return 
+    return
   end
-  ;
-  (self._voiceAnim):Play("uieff_mainlobby_voice")
-  local cfg_audio = (AudioHelperController.GetCfgAudio)(self._audioPlayID)
+  self._voiceAnim:Play("uieff_mainlobby_voice")
+  local cfg_audio = AudioHelperController.GetCfgAudio(self._audioPlayID)
   if cfg_audio then
-    (self._voiceTex):SetText((HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)(cfg_audio.Content)))
-    ;
-    (self._voiceTex2):SetText((HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)(cfg_audio.Content)))
+    self._voiceTex:SetText(HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get(cfg_audio.Content)))
+    self._voiceTex2:SetText(HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get(cfg_audio.Content)))
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.ChangeDynamicAndStatic = function(self, state)
-  -- function num : 0_37 , upvalues : _ENV
-  self._staticSpineSettings = (ChooseAssistantHelper.GetSpineSettings)()
+function UIMainLobbyBg:ChangeDynamicAndStatic(state)
+  self._staticSpineSettings, self._dynamicSpineSettings = ChooseAssistantHelper.GetSpineSettings()
   if state == DynamicAndStaticState.Dynamic then
     if not self._spineLoaded then
       if not self._dcgHandle then
-        self._dcgHandle = (DynamicCG.SyncLoad)(R3_PC3, self._spine)
+        self._dcgHandle = DynamicCG.SyncLoad(self._dynamicSpineSettings, self._spine)
       else
-        -- DECOMPILER ERROR at PC23: Overwrote pending register: R3 in 'AssignReg'
-
-        ;
-        (self._dcgHandle):ChangeDynamicCGSync(self._dynamicSpineSettings)
+        self._dcgHandle:ChangeDynamicCGSync(self._dynamicSpineSettings)
       end
-      -- DECOMPILER ERROR at PC34: Overwrote pending register: R3 in 'AssignReg'
-
       if self._enterSpineName ~= nil then
         if not self._enterDcgHandle then
-          self._enterDcgHandle = (DynamicCG.SyncLoad)(R3_PC3, self._enterSpine)
+          self._enterDcgHandle = DynamicCG.SyncLoad(self._enterSpineName, self._enterSpine)
         else
-          -- DECOMPILER ERROR at PC40: Overwrote pending register: R3 in 'AssignReg'
-
-          ;
-          (self._enterDcgHandle):ChangeDynamicCGSync(self._enterSpineName)
+          self._enterDcgHandle:ChangeDynamicCGSync(self._enterSpineName)
         end
       end
       local uicg = true
-      -- DECOMPILER ERROR at PC44: Overwrote pending register: R3 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC47: Overwrote pending register: R3 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC50: Overwrote pending register: R3 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC51: Overwrote pending register: R3 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC53: Overwrote pending register: R3 in 'AssignReg'
-
-      if R3_PC3 and R3_PC3 > 0 then
-        local cfg = R3_PC3
+      if self._assistantSkinID and self._assistantSkinID > 0 then
+        local cfg = Cfg.cfg_pet_skin[self._assistantSkinID]
         if cfg then
           local mainSize = cfg.MainLobbySize
           if mainSize then
@@ -1557,388 +1125,290 @@ UIMainLobbyBg.ChangeDynamicAndStatic = function(self, state)
           end
         end
       end
-      do
-        do
-          -- DECOMPILER ERROR at PC62: Overwrote pending register: R3 in 'AssignReg'
-
-          if uicg then
-            (cfg.SetTransform)((self._spineGo).transform, (self.uiOwner):GetName(), self._dynamicSpineSettings)
-          else
-            -- DECOMPILER ERROR at PC79: Confused about usage of register: R3 in 'UnsetPending'
-
-            ;
-            ((self._spineGo).transform).localPosition = Vector3(0, 0, 0)
-            -- DECOMPILER ERROR at PC87: Confused about usage of register: R3 in 'UnsetPending'
-
-            ;
-            ((self._spineGo).transform).localScale = Vector3(1, 1, 1)
-          end
-          self._spineLoaded = true
-          if self._dynamicSpineAnim then
-            local tryFunc = function()
-    -- function num : 0_37_0 , upvalues : self
-    (self._dcgHandle):InitializeSpine()
-    ;
-    (self._dcgHandle):SetAnimation(0, self._dynamicSpineAnim, true)
-    ;
-    (self._dcgHandle):SetAnimMixTime(0)
-    ;
-    (self._dcgHandle):Update(0)
-  end
-
-            local succ = pcall(tryFunc)
-            if not succ then
-              (Log.error)("###[UIMainLobbyFinal] set _dynamicSpineAnim fail ! spine:", self._dynamicSpineSettings, ",anim:", self._dynamicSpineAnim)
-            end
-          end
-          do
-            ;
-            (self._spineGo):SetActive(true)
-            ;
-            (self._cgGo):SetActive(false)
-            self:ShowLobbyEnterSpine()
-            if not self._cgLoaded then
-              local size = ((Cfg.cfg_global).ui_interface_common_size).ArrayValue
-              ;
-              ((self._cgGo):GetComponent("RectTransform")).sizeDelta = Vector2(size[1], size[2])
-              ;
-              (self._cg):LoadImage(self._staticSpineSettings)
-              local uicg = true
-              local mainSize = nil
-              do
-                if self._assistantSkinID and self._assistantSkinID > 0 then
-                  local cfg = (Cfg.cfg_pet_skin)[self._assistantSkinID]
-                  if cfg then
-                    mainSize = cfg.MainLobbySize
-                    if mainSize then
-                      uicg = false
-                    end
-                  end
-                end
-                local cgRect = (self._cgGo):GetComponent(typeof(UnityEngine.RectTransform))
-                if uicg then
-                  local size = Vector2(2048, 2048)
-                  cgRect.sizeDelta = size
-                  ;
-                  (UICG.SetTransform)((self._cgGo).transform, (self.uiOwner):GetName(), self._staticSpineSettings)
-                else
-                  do
-                    do
-                      do
-                        local setSize = nil
-                        if not mainSize then
-                          setSize = Vector2(2539, 1439)
-                        else
-                          setSize = Vector2(mainSize[1], mainSize[2])
-                        end
-                        cgRect.sizeDelta = setSize
-                        cgRect.anchoredPosition = Vector2(0, 0)
-                        cgRect.localScale = Vector3(1, 1, 1)
-                        self._cgLoaded = true
-                        ;
-                        (self._enterSpineGo):SetActive(false)
-                        ;
-                        (self._enterSpineSubGo):SetActive(false)
-                        ;
-                        (self._cgGo):SetActive(true)
-                        ;
-                        (self._spineGo):SetActive(false)
-                      end
-                    end
-                  end
-                end
-              end
-            end
+      if uicg then
+        UICG.SetTransform(self._spineGo.transform, self.uiOwner:GetName(), self._dynamicSpineSettings)
+      else
+        self._spineGo.transform.localPosition = Vector3(0, 0, 0)
+        self._spineGo.transform.localScale = Vector3(1, 1, 1)
+      end
+      self._spineLoaded = true
+    end
+    if self._dynamicSpineAnim then
+      local function tryFunc()
+        self._dcgHandle:InitializeSpine()
+        
+        self._dcgHandle:SetAnimation(0, self._dynamicSpineAnim, true)
+        self._dcgHandle:SetAnimMixTime(0)
+        self._dcgHandle:Update(0)
+      end
+      
+      local succ = pcall(tryFunc)
+      if not succ then
+        Log.error("###[UIMainLobbyFinal] set _dynamicSpineAnim fail ! spine:", self._dynamicSpineSettings, ",anim:", self._dynamicSpineAnim)
+      end
+    end
+    self._spineGo:SetActive(true)
+    self._cgGo:SetActive(false)
+    self:ShowLobbyEnterSpine()
+  else
+    if not self._cgLoaded then
+      local size = Cfg.cfg_global.ui_interface_common_size.ArrayValue
+      self._cgGo:GetComponent("RectTransform").sizeDelta = Vector2(size[1], size[2])
+      self._cg:LoadImage(self._staticSpineSettings)
+      local uicg = true
+      local mainSize
+      if self._assistantSkinID and self._assistantSkinID > 0 then
+        local cfg = Cfg.cfg_pet_skin[self._assistantSkinID]
+        if cfg then
+          mainSize = cfg.MainLobbySize
+          if mainSize then
+            uicg = false
           end
         end
       end
+      local cgRect = self._cgGo:GetComponent(typeof(UnityEngine.RectTransform))
+      if uicg then
+        local size = Vector2(2048, 2048)
+        cgRect.sizeDelta = size
+        UICG.SetTransform(self._cgGo.transform, self.uiOwner:GetName(), self._staticSpineSettings)
+      else
+        local setSize
+        if not mainSize then
+          setSize = Vector2(2539, 1439)
+        else
+          setSize = Vector2(mainSize[1], mainSize[2])
+        end
+        cgRect.sizeDelta = setSize
+        cgRect.anchoredPosition = Vector2(0, 0)
+        cgRect.localScale = Vector3(1, 1, 1)
+      end
+      self._cgLoaded = true
     end
+    self._enterSpineGo:SetActive(false)
+    self._enterSpineSubGo:SetActive(false)
+    self._cgGo:SetActive(true)
+    self._spineGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.PlayNoLoopSpineWithCallBack = function(self, dcgHandle, spinename, spineAnim, func)
-  -- function num : 0_38 , upvalues : _ENV
-  local entry = nil
-  local playAniSpineFunc = function()
-    -- function num : 0_38_0 , upvalues : dcgHandle, entry, spineAnim
+function UIMainLobbyBg:PlayNoLoopSpineWithCallBack(dcgHandle, spinename, spineAnim, func)
+  local entry
+  
+  local function playAniSpineFunc()
     dcgHandle:InitializeSpine()
     entry = dcgHandle:SetAnimationWithTrackEntryReturn(0, spineAnim, false)
     dcgHandle:SetAnimMixTime(0)
     dcgHandle:Update(0)
   end
-
+  
   local succ = pcall(playAniSpineFunc)
   if not succ then
-    (Log.error)("###[UIMainLobbyControllerOld] set spine anim fail ! spine[", spinename, "] anim[", spineAnim, "]")
-    return 
+    Log.error("###[UIMainLobbyControllerOld] set spine anim fail ! spine[", spinename, "] anim[", spineAnim, "]")
+    return
   end
   if not entry then
-    (Log.error)("###[UIMainLobbyControllerOld] entry is nil ! spine[", spinename, "] anim[", spineAnim, "]")
-    return 
+    Log.error("###[UIMainLobbyControllerOld] entry is nil ! spine[", spinename, "] anim[", spineAnim, "]")
+    return
   end
   local anim = entry.Animation
   local duration = anim.Duration
-  local yieldTime = (math.floor)(duration * 1000)
+  local yieldTime = math.floor(duration * 1000)
   if self._spineEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+    GameGlobal.Timer():CancelEvent(self._spineEvent)
     self._spineEvent = nil
   end
-  self._spineEvent = ((GameGlobal.Timer)()):AddEvent(yieldTime, func)
+  self._spineEvent = GameGlobal.Timer():AddEvent(yieldTime, func)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.ShowLobbyEnterSpine = function(self)
-  -- function num : 0_39 , upvalues : _ENV
-  (self._enterSpineGo):SetActive(false)
-  ;
-  (self._enterSpineSubGo):SetActive(false)
+function UIMainLobbyBg:ShowLobbyEnterSpine()
+  self._enterSpineGo:SetActive(false)
+  self._enterSpineSubGo:SetActive(false)
   if not self._dcgHandle then
-    (Log.debug)("###[UIMainLobbyControllerOld] self._dcgHandle is nill --> ", self._dynamicSpineSettings)
-    return 
+    Log.debug("###[UIMainLobbyControllerOld] self._dcgHandle is nill --> ", self._dynamicSpineSettings)
+    return
   end
   self._enterSpineSke = nil
   if self._enterSpineName ~= nil and not self._enterDcgHandle then
-    (Log.debug)("###[UIMainLobbyControllerOld] self._enterDcgHandle is nil --> ", self._enterSpineName)
-    return 
+    Log.debug("###[UIMainLobbyControllerOld] self._enterDcgHandle is nil --> ", self._enterSpineName)
+    return
   end
   local skinid = self._assistantSkinID
   if skinid == 0 or skinid == nil then
-    return 
+    return
   end
-  local skin_cfg = (Cfg.cfg_pet_skin)[skinid]
+  local skin_cfg = Cfg.cfg_pet_skin[skinid]
   if skin_cfg == nil then
-    return 
+    return
   end
   local spineAnim = skin_cfg.EnterAnim
   if spineAnim == nil then
-    return 
+    return
   end
   self._playSpineAnim = true
-  local loopSpinePlayFunc = function()
-    -- function num : 0_39_0 , upvalues : self
+  
+  local function loopSpinePlayFunc()
     self._playSpineAnim = false
     local animationName = "idle"
-    ;
-    (self._dcgHandle):SetAnimation(0, animationName, true)
+    self._dcgHandle:SetAnimation(0, animationName, true)
   end
-
+  
   local dynamicSpineSettings = self._dynamicSpineSettings
-  local idleSpinePlayFunc = function()
-    -- function num : 0_39_1 , upvalues : self, dynamicSpineSettings, spineAnim, loopSpinePlayFunc
-    (self._enterSpineGo):SetActive(false)
+  
+  local function idleSpinePlayFunc()
+    self._enterSpineGo:SetActive(false)
     self:_DelayHideEnterSpineSubGo()
     if dynamicSpineSettings == self._dynamicSpineSettings then
       self:PlayNoLoopSpineWithCallBack(self._dcgHandle, self._dynamicSpineSettings, spineAnim, loopSpinePlayFunc)
     end
   end
-
+  
   if self._enterDcgHandle ~= nil then
-    (self._enterSpineGo):SetActive(true)
+    self._enterSpineGo:SetActive(true)
     self._enterSpineGoShowFinish = false
     self:PlayNoLoopSpineWithCallBack(self._enterDcgHandle, self._enterSpineName, spineAnim, idleSpinePlayFunc)
-    ;
-    (self._dcgHandle):SetStartAnimation(spineAnim)
+    self._dcgHandle:SetStartAnimation(spineAnim)
     local bShowSubGo = self._enterSpineSubGoName ~= nil
     if bShowSubGo and self._enterSpineSubGoGen then
       if self._enterSpineSubGoName ~= self._oldEnterSpineSubGoName and self._oldEnterSpineSubGoName ~= nil then
-        (self._enterSpineSubGoGen):ClearWidgets()
+        self._enterSpineSubGoGen:ClearWidgets()
       end
-      ;
-      ((self._enterSpineSubGoGen).dynamicInfoOfEngine):SetObjectName(self._enterSpineSubGoName)
-      ;
-      (self._enterSpineSubGoGen):SpawnObject("UIMainLobbyEnterSpineSubGo")
+      self._enterSpineSubGoGen.dynamicInfoOfEngine:SetObjectName(self._enterSpineSubGoName)
+      self._enterSpineSubGoGen:SpawnObject("UIMainLobbyEnterSpineSubGo")
       self._oldEnterSpineSubGoName = self._enterSpineSubGoName
     end
-    ;
-    (self._enterSpineSubGo):SetActive(bShowSubGo)
+    self._enterSpineSubGo:SetActive(bShowSubGo)
   else
     idleSpinePlayFunc()
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg._DelayHideEnterSpineSubGo = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function UIMainLobbyBg:_DelayHideEnterSpineSubGo()
   if self._enterSpineSubGoCloseEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._enterSpineSubGoCloseEvent)
+    GameGlobal.Timer():CancelEvent(self._enterSpineSubGoCloseEvent)
     self._enterSpineSubGoCloseEvent = nil
   end
-  self._enterSpineSubGoCloseEvent = ((GameGlobal.Timer)()):AddEvent(1000, function()
-    -- function num : 0_40_0 , upvalues : self
-    (self._enterSpineSubGo):SetActive(false)
-  end
-)
+  self._enterSpineSubGoCloseEvent = GameGlobal.Timer():AddEvent(1000, function()
+    self._enterSpineSubGo:SetActive(false)
+  end)
   self._enterSpineGoShowFinish = true
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.OnShowChangeMainCg = function(self, type, isShowPet)
-  -- function num : 0_41 , upvalues : _ENV
+function UIMainLobbyBg:OnShowChangeMainCg(type, isShowPet)
   if type == UIPetAndBgMoveType.None then
-    ((((self._cgSpineGo).transform).parent).gameObject):SetActive(true)
-  else
-    if type == UIPetAndBgMoveType.Pet then
-      ((((self._cgSpineGo).transform).parent).gameObject):SetActive(true)
-    else
-      if type == UIPetAndBgMoveType.Bg and not isShowPet then
-        ((((self._cgSpineGo).transform).parent).gameObject):SetActive(false)
-      end
-    end
+    self._cgSpineGo.transform.parent.gameObject:SetActive(true)
+  elseif type == UIPetAndBgMoveType.Pet then
+    self._cgSpineGo.transform.parent.gameObject:SetActive(true)
+  elseif type == UIPetAndBgMoveType.Bg and not isShowPet then
+    self._cgSpineGo.transform.parent.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.ClosePetAudio = function(self, normalClose)
-  -- function num : 0_42
+function UIMainLobbyBg:ClosePetAudio(normalClose)
   if self._audioPlayID == nil then
-    return 
+    return
   end
   if normalClose then
     self:OnAudioEndPlay()
   else
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._voiceCanvasGroup).alpha = 0
+    self._voiceCanvasGroup.alpha = 0
     if self._audioPlayID then
       self._audioPlayID = nil
     end
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.OnAudioEndPlay = function(self)
-  -- function num : 0_43
+function UIMainLobbyBg:OnAudioEndPlay()
   if self._audioPlayID then
-    (self._voiceAnim):Play("uieff_mainlobby_voicefade")
+    self._voiceAnim:Play("uieff_mainlobby_voicefade")
     self._audioPlayID = nil
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.StaticAndDynamicOnClick = function(self, state)
-  -- function num : 0_44 , upvalues : _ENV
+function UIMainLobbyBg:StaticAndDynamicOnClick(state)
   self._cgState = state
   if self._spineEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+    GameGlobal.Timer():CancelEvent(self._spineEvent)
     self._spineEvent = nil
     self._playSpineAnim = false
   end
   self:ChangeDynamicAndStatic(self._cgState)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_45 , upvalues : _ENV
+function UIMainLobbyBg:OnUpdate(deltaTimeMS)
   if not self._assistantNull then
-    if not ((UnityEngine.Input).GetMouseButtonDown)(0) and not ((UnityEngine.Input).GetMouseButton)(0) and not ((UnityEngine.Input).GetMouseButtonUp)(0) then
-      local cc = not ((GameGlobal.UIStateManager)()):IsTopUI((self.uiOwner):GetName())
-    end
+    local cc = UnityEngine.Input.GetMouseButtonDown(0) or UnityEngine.Input.GetMouseButton(0) or UnityEngine.Input.GetMouseButtonUp(0) or not GameGlobal.UIStateManager():IsTopUI(self.uiOwner:GetName())
     if cc == true then
       self._freeTime = 0
+    elseif self._freeTime then
+      self._freeTime = self._freeTime + deltaTimeMS
     else
-      if self._freeTime then
-        self._freeTime = self._freeTime + deltaTimeMS
-      else
-        self._freeTime = 0
-      end
+      self._freeTime = 0
     end
-    if self._freeTime and self._maxFreeTime and self._maxFreeTime < self._freeTime then
+    if self._freeTime and self._maxFreeTime and self._freeTime > self._maxFreeTime then
       self:PlayPetAudio("Leisure")
       self._freeTime = 0
     end
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.PlayPetAudio = function(self, filed, click)
-  -- function num : 0_46 , upvalues : _ENV
-  local voiceSkinID = nil
+function UIMainLobbyBg:PlayPetAudio(filed, click)
+  local voiceSkinID
   if self._assistantAsID and self._assistantAsID ~= 0 then
     voiceSkinID = nil
-  else
-    if self._assistantSkinID == 0 then
-      if self._assistantGrade == 0 then
-        local gradeCfg = (Cfg.cfg_pet)[self._defaultPetID]
-        if not gradeCfg then
-          (Log.fatal)("###[UIMainLobbyFinal] pet cfg is nil ! id --> ", self._defaultPetID, "| grade --> ", self._assistantGrade)
-          return 
-        end
-        voiceSkinID = gradeCfg.SkinId
-      else
-        do
-          do
-            local gradeCfg = ((Cfg.cfg_pet_grade)({PetID = self._defaultPetID, Grade = self._assistantGrade}))[1]
-            if not gradeCfg then
-              (Log.fatal)("###[UIMainLobbyFinal] grade cfg is nil ! id --> ", self._defaultPetID, "| grade --> ", self._assistantGrade)
-              return 
-            end
-            voiceSkinID = gradeCfg.SkinId
-            voiceSkinID = self._assistantSkinID
-            if filed == "MainLobbyWelcome" and (self._roleModule):TodayIsFirstLogin() then
-              self._audioPlayID = (self._petAudioModule):PlayPetAudio("FirstMainLobbyWelcome", self._defaultPetID, false, false, voiceSkinID)
-              if self._audioPlayID == nil then
-                self._audioPlayID = (self._petAudioModule):PlayPetAudio(filed, self._defaultPetID, false, false, voiceSkinID)
-              end
-            else
-              self._audioPlayID = (self._petAudioModule):PlayPetAudio(filed, self._defaultPetID, false, false, voiceSkinID, click)
-            end
-            if self._audioPlayID == nil then
-              return 
-            end
-            ;
-            (self._voiceAnim):Play("uieff_mainlobby_voice")
-            local cfg_audio = (AudioHelperController.GetCfgAudio)(self._audioPlayID)
-            if cfg_audio then
-              (self._voiceTex):SetText((HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)(cfg_audio.Content)))
-              ;
-              (self._voiceTex2):SetText((HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)(cfg_audio.Content)))
-            end
-          end
-        end
+  elseif self._assistantSkinID == 0 then
+    if self._assistantGrade == 0 then
+      local gradeCfg = Cfg.cfg_pet[self._defaultPetID]
+      if not gradeCfg then
+        Log.fatal("###[UIMainLobbyFinal] pet cfg is nil ! id --> ", self._defaultPetID, "| grade --> ", self._assistantGrade)
+        return
       end
+      voiceSkinID = gradeCfg.SkinId
+    else
+      local gradeCfg = Cfg.cfg_pet_grade({
+        PetID = self._defaultPetID,
+        Grade = self._assistantGrade
+      })[1]
+      if not gradeCfg then
+        Log.fatal("###[UIMainLobbyFinal] grade cfg is nil ! id --> ", self._defaultPetID, "| grade --> ", self._assistantGrade)
+        return
+      end
+      voiceSkinID = gradeCfg.SkinId
     end
+  else
+    voiceSkinID = self._assistantSkinID
+  end
+  if filed == "MainLobbyWelcome" and self._roleModule:TodayIsFirstLogin() then
+    self._audioPlayID = self._petAudioModule:PlayPetAudio("FirstMainLobbyWelcome", self._defaultPetID, false, false, voiceSkinID)
+    if self._audioPlayID == nil then
+      self._audioPlayID = self._petAudioModule:PlayPetAudio(filed, self._defaultPetID, false, false, voiceSkinID)
+    end
+  else
+    self._audioPlayID = self._petAudioModule:PlayPetAudio(filed, self._defaultPetID, false, false, voiceSkinID, click)
+  end
+  if self._audioPlayID == nil then
+    return
+  end
+  self._voiceAnim:Play("uieff_mainlobby_voice")
+  local cfg_audio = AudioHelperController.GetCfgAudio(self._audioPlayID)
+  if cfg_audio then
+    self._voiceTex:SetText(HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get(cfg_audio.Content)))
+    self._voiceTex2:SetText(HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get(cfg_audio.Content)))
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.SetPetLocalValueByServer = function(self)
-  -- function num : 0_47 , upvalues : _ENV
-  local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+function UIMainLobbyBg:SetPetLocalValueByServer()
+  local open_id = GameGlobal.GameLogic():GetOpenId()
   local key = "MAIN_BG_AS_ACTIVE" .. open_id
-  local localValue = (LocalDB.GetInt)(key)
+  local localValue = LocalDB.GetInt(key)
   local localPetNull = localValue == 1
-  do
-    if not self._assistantNull or not 1 then
-      local changeValue = self._assistantNull == localPetNull or 0
-    end
-    ;
-    (LocalDB.SetInt)(key, changeValue)
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  if self._assistantNull ~= localPetNull then
+    local changeValue = self._assistantNull and 1 or 0
+    LocalDB.SetInt(key, changeValue)
   end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyBg.SetVoiceCanvasGroup = function(self, value)
-  -- function num : 0_48
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIMainLobbyBg:SetVoiceCanvasGroup(value)
   if self._voiceRootCanvasGroup then
-    (self._voiceRootCanvasGroup).alpha = value
+    self._voiceRootCanvasGroup.alpha = value
   end
 end
-
-

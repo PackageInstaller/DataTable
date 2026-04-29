@@ -1,46 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_attribute_based_on_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local CalcChangeTargetAttributeType = {None = 0, MaxHP = 1, MAX = 9}
+local CalcChangeTargetAttributeType = {
+  None = 0,
+  MaxHP = 1,
+  MAX = 9
+}
 _enum("CalcChangeTargetAttributeType", CalcChangeTargetAttributeType)
 require("buff_logic_base")
 _class("BuffLogicChangeAttributeBasedOnDamage", BuffLogicBase)
 BuffLogicChangeAttributeBasedOnDamage = BuffLogicChangeAttributeBasedOnDamage
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeAttributeBasedOnDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : CalcChangeTargetAttributeType
+function BuffLogicChangeAttributeBasedOnDamage:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue or 0
   self._addValue = logicParam.addValue or 0
   self._attributeType = logicParam.attributeType or CalcChangeTargetAttributeType.MaxHP
   buffInstance.__AddHPMax_AddValue = 0
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeAttributeBasedOnDamage.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV, CalcChangeTargetAttributeType
-  local context = (self._buffInstance):Context()
+function BuffLogicChangeAttributeBasedOnDamage:DoLogic(notify)
+  local context = self._buffInstance:Context()
   if not context then
-    return 
+    return
   end
-  local e = (self._buffInstance):Entity()
+  local e = self._buffInstance:Entity()
   if e:HasDeadMark() then
-    return 
+    return
   end
-  if (e:Attributes()):GetCurrentHP() == 0 then
-    return 
+  if e:Attributes():GetCurrentHP() == 0 then
+    return
   end
   local casterEntity = context.casterEntity
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   if not damageResultArray or #damageResultArray == 0 then
-    return 
+    return
   end
   local damageValue = 0
-  for _,v in ipairs(damageResultArray) do
+  for _, v in ipairs(damageResultArray) do
     local damageResult = v
     local targetEntityID = damageResult:GetTargetID()
     if targetEntityID == e:GetID() then
@@ -51,42 +45,37 @@ BuffLogicChangeAttributeBasedOnDamage.DoLogic = function(self, notify)
     end
   end
   if damageValue == 0 then
-    return 
+    return
   end
-  local addHpMaxValue = (math.floor)((damageValue) * self._mulValue + self._addValue)
+  local addHpMaxValue = math.floor(damageValue * self._mulValue + self._addValue)
   if addHpMaxValue < 0 then
     addHpMaxValue = 0
   end
   if self._attributeType == CalcChangeTargetAttributeType.MaxHP then
-    local curHp = (e:Attributes()):GetCurrentHP()
-    local maxHp = (e:Attributes()):CalcMaxHp()
+    local curHp = e:Attributes():GetCurrentHP()
+    local maxHp = e:Attributes():CalcMaxHp()
     local curPercent = curHp / maxHp
-    local calcDamage = (self._world):GetService("CalcDamage")
-    -- DECOMPILER ERROR at PC104: Confused about usage of register: R13 in 'UnsetPending'
-
-    ;
-    (self._buffInstance).__AddHPMax_AddValue = (self._buffInstance).__AddHPMax_AddValue + addHpMaxValue
-    local ret = calcDamage:AddTargetMaxHP(e:GetID(), (self._buffInstance).__AddHPMax_AddValue, self:GetBuffSeq())
-    local maxHpNew = (e:Attributes()):CalcMaxHp()
-    local curHpNew = (math.floor)(maxHpNew * curPercent + 0.5)
+    local calcDamage = self._world:GetService("CalcDamage")
+    self._buffInstance.__AddHPMax_AddValue = self._buffInstance.__AddHPMax_AddValue + addHpMaxValue
+    local ret = calcDamage:AddTargetMaxHP(e:GetID(), self._buffInstance.__AddHPMax_AddValue, self:GetBuffSeq())
+    local maxHpNew = e:Attributes():CalcMaxHp()
+    local curHpNew = math.floor(maxHpNew * curPercent + 0.5)
     local addHp = curHpNew - curHp
-    local damageInfoRecover = nil
-    if addHp > 0 then
+    local damageInfoRecover
+    if 0 < addHp then
       damageInfoRecover = DamageInfo:New(addHp, DamageType.Recover)
       calcDamage:AddTargetHP(e:GetID(), damageInfoRecover)
     end
-    local teamEntity = nil
+    local teamEntity
     if e:HasPetPstID() then
-      teamEntity = (e:Pet()):GetOwnerTeamEntity()
+      teamEntity = e:Pet():GetOwnerTeamEntity()
     end
     if e:HasTeam() then
       teamEntity = e
     end
-    local battleService = (self._world):GetService("Battle")
+    local battleService = self._world:GetService("Battle")
     battleService:UpdateTeamHPLogic(teamEntity)
     local buffResult = BuffResultChangeAttributeBasedOnDamage:New(e:GetID(), damageInfoRecover, ret)
     return buffResult
   end
 end
-
-

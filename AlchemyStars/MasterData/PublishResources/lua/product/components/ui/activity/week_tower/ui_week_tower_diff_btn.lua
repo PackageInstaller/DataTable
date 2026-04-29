@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/week_tower/ui_week_tower_diff_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWeekTowerDiffBtn", UICustomWidget)
 UIWeekTowerDiffBtn = UIWeekTowerDiffBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWeekTowerDiffBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWeekTowerDiffBtn:OnShow(uiParams)
   self:AttachEvent(GameEventType.OnUIWeekTowerDiffItemClick, self.OnUIWeekTowerDiffItemClick)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerDiffBtn.OnUIWeekTowerDiffItemClick = function(self, idx)
-  -- function num : 0_1
+function UIWeekTowerDiffBtn:OnUIWeekTowerDiffItemClick(idx)
   self:Select(idx)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerDiffBtn.GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWeekTowerDiffBtn:GetComponents()
   self._select = self:GetGameObject("select")
   self._lock = self:GetGameObject("lock")
   self._name = self:GetUIComponent("UILocalizedTMP", "name")
@@ -30,95 +17,66 @@ UIWeekTowerDiffBtn.GetComponents = function(self)
   self._btnImg = self:GetUIComponent("Image", "btn")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerDiffBtn.Select = function(self, idx)
-  -- function num : 0_3
-  local sprite = nil
+function UIWeekTowerDiffBtn:Select(idx)
+  local sprite
   if idx == self._index then
-    sprite = (self._atlas):GetSprite(((self._data):Sprites())[1])
+    sprite = self._atlas:GetSprite(self._data:Sprites()[1])
   else
-    sprite = (self._atlas):GetSprite(((self._data):Sprites())[2])
+    sprite = self._atlas:GetSprite(self._data:Sprites()[2])
   end
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._btnImg).sprite = sprite
+  self._btnImg.sprite = sprite
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerDiffBtn.SetTextMat = function(self)
-  -- function num : 0_4
+function UIWeekTowerDiffBtn:SetTextMat()
   self:SetFontMat(self._name, "uieff_week_tower_diff_btn_tex.mat")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerDiffBtn.OnHide = function(self)
-  -- function num : 0_5
+function UIWeekTowerDiffBtn:OnHide()
   if self._res then
-    (self._res):Dispose()
+    self._res:Dispose()
     self._res = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerDiffBtn.SetFontMat = function(self, lable, resname)
-  -- function num : 0_6 , upvalues : _ENV
-  self._res = (ResourceManager:GetInstance()):SyncLoadAsset(resname, LoadType.Mat)
+function UIWeekTowerDiffBtn:SetFontMat(lable, resname)
+  self._res = ResourceManager:GetInstance():SyncLoadAsset(resname, LoadType.Mat)
   if not self._res then
-    return 
+    return
   end
-  local obj = (self._res).Obj
+  local obj = self._res.Obj
   local mat = lable.fontMaterial
   lable.fontMaterial = obj
-  ;
-  (lable.fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  lable.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerDiffBtn.Lock = function(self)
-  -- function num : 0_7
-  (self._lock):SetActive((self._data):Lock())
-  if (self._data):Lock() then
-    local sprite = ((self._data):Sprites())[3]
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._btnImg).sprite = (self._atlas):GetSprite(sprite)
+function UIWeekTowerDiffBtn:Lock()
+  self._lock:SetActive(self._data:Lock())
+  if self._data:Lock() then
+    local sprite = self._data:Sprites()[3]
+    self._btnImg.sprite = self._atlas:GetSprite(sprite)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerDiffBtn.SetData = function(self, index, data, curridx, callback)
-  -- function num : 0_8
+function UIWeekTowerDiffBtn:SetData(index, data, curridx, callback)
   self:GetComponents()
   self._index = index
   self._data = data
   self._callback = callback
-  local name = (self._data):Name()
-  local upColor = (self._data):UpColor()
-  ;
-  (self._name):SetText(name)
-  local vg = (self._name).enableVertexGradient
+  local name = self._data:Name()
+  local upColor = self._data:UpColor()
+  self._name:SetText(name)
+  local vg = self._name.enableVertexGradient
   self:SetTextMat()
   self:Select(curridx)
   self:Lock()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerDiffBtn.btnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  if not (self._data):Lock() and self._callback then
-    (self._callback)(self._index)
+function UIWeekTowerDiffBtn:btnOnClick(go)
+  if not self._data:Lock() then
+    if self._callback then
+      self._callback(self._index)
+    end
+  else
+    ToastManager.ShowToast(StringTable.Get("str_week_tower_diff_lock_tips"))
   end
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_week_tower_diff_lock_tips"))
 end
-
-

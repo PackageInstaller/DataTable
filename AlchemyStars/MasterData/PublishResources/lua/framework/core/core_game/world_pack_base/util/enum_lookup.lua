@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/util/enum_lookup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EnumLookup", Object)
 EnumLookup = EnumLookup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-EnumLookup.Constructor = function(self, rawStrArray)
-  -- function num : 0_0
+function EnumLookup:Constructor(rawStrArray)
   self.EL_RawStrArray = rawStrArray
   self.EL_Total = #self.EL_RawStrArray
   self:Internal_Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-EnumLookup.MergeLookup = function(self, other_lookup)
-  -- function num : 0_1 , upvalues : _ENV
+function EnumLookup:MergeLookup(other_lookup)
   local rawArray = self.EL_RawStrArray
   local add_rawArray = other_lookup.EL_RawStrArray
   local total = #rawArray
-  for _,v in ipairs(add_rawArray) do
+  for _, v in ipairs(add_rawArray) do
     if self[v] == nil then
       total = total + 1
       rawArray[total] = v
@@ -31,24 +21,17 @@ EnumLookup.MergeLookup = function(self, other_lookup)
   self:Internal_Refresh()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EnumLookup.Internal_Refresh = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function EnumLookup:Internal_Refresh()
   local rawArray = self.EL_RawStrArray
-  for k,v in ipairs(rawArray) do
+  for k, v in ipairs(rawArray) do
     self[v] = k
   end
 end
 
 _class("ComponentsLookup", EnumLookup)
 ComponentsLookup = ComponentsLookup
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-ComponentsLookup.Internal_Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((ComponentsLookup.super).Internal_Refresh)(self)
+function ComponentsLookup:Internal_Refresh()
+  ComponentsLookup.super.Internal_Refresh(self)
   self.TotalComponents = self.EL_Total
 end
-
-

@@ -1,59 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/grid_view_add_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GridAddViewSystem_Render", ReactiveSystem)
 GridAddViewSystem_Render = GridAddViewSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GridAddViewSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function GridAddViewSystem_Render:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
+  self._configService = self._world:GetService("Config")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GridAddViewSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).View)
+function GridAddViewSystem_Render:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.View)
   local c = Collector:New({group}, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GridAddViewSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
-  if not entity:HasPiece() then
-    return entity:HasPieceFake()
-  end
+function GridAddViewSystem_Render:Filter(entity)
+  return entity:HasPiece() or entity:HasPieceFake()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GridAddViewSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function GridAddViewSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     self:OnGridViewAdded(entities[i])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GridAddViewSystem_Render.OnGridViewAdded = function(self, gridEntity)
-  -- function num : 0_4 , upvalues : _ENV
-  local gridPos = (gridEntity:GridLocation()).Position
-  local pieceService = (self._world):GetService("Piece")
-  local utilDataSvc = (self._world):GetService("UtilData")
+function GridAddViewSystem_Render:OnGridViewAdded(gridEntity)
+  local gridPos = gridEntity:GridLocation().Position
+  local pieceService = self._world:GetService("Piece")
+  local utilDataSvc = self._world:GetService("UtilData")
   local gameFsmStateID = utilDataSvc:GetCurMainStateID()
   if gameFsmStateID == GameStateID.PickUpActiveSkillTarget then
-    local renderBoardEntity = (self._world):GetRenderBoardEntity()
+    local renderBoardEntity = self._world:GetRenderBoardEntity()
     local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
     if pickUpTargetCmpt == nil then
-      (Log.fatal)("pick up target is nil")
-      return 
+      Log.fatal("pick up target is nil")
+      return
     end
     local activeSkillID = pickUpTargetCmpt:GetCurActiveSkillID()
     local configService = self._configService
@@ -62,44 +41,31 @@ GridAddViewSystem_Render.OnGridViewAdded = function(self, gridEntity)
     if pickUpType ~= SkillPickUpType.DirectionInstruction and pickUpType ~= SkillPickUpType.Instruction then
       self:_ChangeGridMaterial(gridEntity, gridPos)
     end
+  elseif gameFsmStateID == GameStateID.ActiveSkill or gameFsmStateID == GameStateID.PersonaSkill then
   else
-  end
-  do
-    if gameFsmStateID ~= GameStateID.ActiveSkill then
-      if gameFsmStateID == GameStateID.PersonaSkill then
-        do
-          local isMonsterArea = self:_ChangeGridMaterial(gridEntity, gridPos)
-          if not isMonsterArea then
-          end
-        end
-      end
+    local isMonsterArea = self:_ChangeGridMaterial(gridEntity, gridPos)
+    if not isMonsterArea then
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GridAddViewSystem_Render._InitLJSortingOrder = function(self, gridEntity)
-  -- function num : 0_5 , upvalues : _ENV
-  local gridGameObj = ((gridEntity:View()).ViewWrapper).GameObject
-  local lj_child = (GameObjectHelper.FindChild)(gridGameObj.transform, "lj_gezi_2")
+function GridAddViewSystem_Render:_InitLJSortingOrder(gridEntity)
+  local gridGameObj = gridEntity:View().ViewWrapper.GameObject
+  local lj_child = GameObjectHelper.FindChild(gridGameObj.transform, "lj_gezi_2")
   if not lj_child then
-    return 
+    return
   end
-  local render = (lj_child.gameObject):GetComponent(typeof(UnityEngine.MeshRenderer))
+  local render = lj_child.gameObject:GetComponent(typeof(UnityEngine.MeshRenderer))
   render.sortingOrder = 1
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GridAddViewSystem_Render._ChangeGridMaterial = function(self, gridEntity, gridPos)
-  -- function num : 0_6 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function GridAddViewSystem_Render:_ChangeGridMaterial(gridEntity, gridPos)
+  local utilDataSvc = self._world:GetService("UtilData")
   local curSt = utilDataSvc:GetCurMainStateID()
-  local pieceSvc = (self._world):GetService("Piece")
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(monsterGroup:GetEntities()) do
-    local monsterGridPos = (e:GridLocation()).Position
+  local pieceSvc = self._world:GetService("Piece")
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(monsterGroup:GetEntities()) do
+    local monsterGridPos = e:GridLocation().Position
     if e:HasBodyArea() then
       local bodyAreaCmpt = e:BodyArea()
       local areaArray = bodyAreaCmpt:GetArea()
@@ -114,26 +80,14 @@ GridAddViewSystem_Render._ChangeGridMaterial = function(self, gridEntity, gridPo
         end
       end
     else
-      do
-        do
-          local monsterAreaPos = monsterGridPos
-          if monsterAreaPos == gridPos then
-            if curSt ~= GameStateID.Loading then
-              pieceSvc:SetPieceAnimDown(gridPos)
-            end
-            return true
-          end
-          -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out IF_STMT
-
+      local monsterAreaPos = monsterGridPos
+      if monsterAreaPos == gridPos then
+        if curSt ~= GameStateID.Loading then
+          pieceSvc:SetPieceAnimDown(gridPos)
         end
+        return true
       end
     end
   end
   return false
 end
-
-

@@ -1,69 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_refine_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipRefineSkill", UICustomWidget)
 UIPetEquipRefineSkill = UIPetEquipRefineSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipRefineSkill.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPetEquipRefineSkill:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefineSkill.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetEquipRefineSkill:InitWidget()
   self.skillName = self:GetUIComponent("UILocalizationText", "skillName")
   self._skillDesc = self:GetUIComponent("UILocalizedTMP", "skillDesc")
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillDesc).onHrefClick = function(hrefName)
-    -- function num : 0_1_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):ShowDialog("UISkillHrefInfo", hrefName)
+  
+  function self._skillDesc.onHrefClick(hrefName)
+    GameGlobal.UIStateManager():ShowDialog("UISkillHrefInfo", hrefName)
   end
-
+  
   self.skillIcon = self:GetUIComponent("RawImageLoader", "skillIcon")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefineSkill.SetData = function(self, petTemplateId, petLv)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (UIPetEquipHelper.GetRefineCfg)(petTemplateId, petLv)
+function UIPetEquipRefineSkill:SetData(petTemplateId, petLv)
+  local cfg = UIPetEquipHelper.GetRefineCfg(petTemplateId, petLv)
   if not cfg then
-    return 
+    return
   end
   local skillType = cfg.SkillType
-  local skillTypeStrKey = nil
+  local skillTypeStrKey
   if skillType == PetSkillType.SkillType_ChainSkill then
     skillTypeStrKey = "str_pet_equip_skilltype_refine_2"
-  else
-    if skillType == PetSkillType.SkillType_Active then
-      skillTypeStrKey = "str_pet_equip_skilltype_refine_3"
-    else
-      if skillType == PetSkillType.SkillType_Passive then
-        skillTypeStrKey = "str_pet_equip_skilltype_refine_4"
-      end
-    end
+  elseif skillType == PetSkillType.SkillType_Active then
+    skillTypeStrKey = "str_pet_equip_skilltype_refine_3"
+  elseif skillType == PetSkillType.SkillType_Passive then
+    skillTypeStrKey = "str_pet_equip_skilltype_refine_4"
   end
-  ;
-  (self.skillIcon):LoadImage(cfg.SkillIcon)
-  ;
-  (self._skillDesc):SetText((StringTable.Get)(cfg.Desc))
+  self.skillIcon:LoadImage(cfg.SkillIcon)
+  self._skillDesc:SetText(StringTable.Get(cfg.Desc))
   if skillTypeStrKey then
-    local str = (StringTable.Get)(skillTypeStrKey, (StringTable.Get)(cfg.SkillName))
-    ;
-    (self.skillName):SetText(str)
+    local str = StringTable.Get(skillTypeStrKey, StringTable.Get(cfg.SkillName))
+    self.skillName:SetText(str)
   else
-    do
-      ;
-      (self.skillName):SetText((StringTable.Get)(cfg.SkillName))
-    end
+    self.skillName:SetText(StringTable.Get(cfg.SkillName))
   end
 end
-
-

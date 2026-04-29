@@ -1,21 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2906001/cfg_skill_view_292600104.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterBindEffect,effectID=290600115; PlayCasterAnimation,animName =skill05; PlayAudio,audioID = 290600118,audioType=1; DataSelectBuff,buffIndex=1; PlayFlyEffectCasterToTarget,flyEffectID=290600118,flyTime=500,flyTrace=1,isBlock=0,caster=Target,target=Caster,label=goo; PlayTargetAddBuff,buffID=292600112,remove=1; PlayTargetAddBuff,buffID=292600102; PlayTargetMaterialAnim,animName=eff_2000602_skill05_healing_mat; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=goo; Wait,waitTime=1000; PlayCasterMaterialAnim,animName=eff_2906001_skill05_mat; "}
-}
-, 
-{2, 2, 0, 2, 1, 0, 
-{" PlayCasterAnimation,animName=skill02; PlayAudio,audioID = 290600120,audioType=1; PlayEffectAGridPos,effectID=290600107,gridPosX=5,gridPosY=5; PlayCameraEffect,effectID=290600108; Wait,waitTime=1000; PlayVoice,voiceID=290600108; Wait,waitTime=1000; "}
-}
-, 
-{3, 3, 0, 1, 2, 1300, 
-{" DataSelectDamage,damageIndex = 1,damageStageIndex=1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; DataSelectDamage,damageIndex = 1,damageStageIndex=2; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; DataSelectDamage,damageIndex = 1,damageStageIndex=3; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; DataSelectDamage,damageIndex = 1,damageStageIndex=4; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterBindEffect,effectID=290600115; PlayCasterAnimation,animName =skill05; PlayAudio,audioID = 290600118,audioType=1; DataSelectBuff,buffIndex=1; PlayFlyEffectCasterToTarget,flyEffectID=290600118,flyTime=500,flyTrace=1,isBlock=0,caster=Target,target=Caster,label=goo; PlayTargetAddBuff,buffID=292600112,remove=1; PlayTargetAddBuff,buffID=292600102; PlayTargetMaterialAnim,animName=eff_2000602_skill05_healing_mat; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=goo; Wait,waitTime=1000; PlayCasterMaterialAnim,animName=eff_2906001_skill05_mat; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    2,
+    1,
+    0,
+    {
+      " PlayCasterAnimation,animName=skill02; PlayAudio,audioID = 290600120,audioType=1; PlayEffectAGridPos,effectID=290600107,gridPosX=5,gridPosY=5; PlayCameraEffect,effectID=290600108; Wait,waitTime=1000; PlayVoice,voiceID=290600108; Wait,waitTime=1000; "
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    2,
+    1300,
+    {
+      " DataSelectDamage,damageIndex = 1,damageStageIndex=1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; DataSelectDamage,damageIndex = 1,damageStageIndex=2; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; DataSelectDamage,damageIndex = 1,damageStageIndex=3; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; DataSelectDamage,damageIndex = 1,damageStageIndex=4; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; "
+    }
+  }
 }
 return config, "ID", key
-

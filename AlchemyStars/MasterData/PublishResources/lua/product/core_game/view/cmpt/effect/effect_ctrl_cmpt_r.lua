@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/effect/effect_ctrl_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EffectControllerComponent", Object)
 EffectControllerComponent = EffectControllerComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-EffectControllerComponent.Constructor = function(self, bindEntity, bindPos, duration, type)
-  -- function num : 0_0
+function EffectControllerComponent:Constructor(bindEntity, bindPos, duration, type)
   self.BindEntity = bindEntity
   self.BindPos = bindPos
   self.Duration = duration
@@ -29,273 +22,160 @@ EffectControllerComponent.Constructor = function(self, bindEntity, bindPos, dura
   self._posOffSet = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.SetBindHead = function(self, isBindHead)
-  -- function num : 0_1
+function EffectControllerComponent:SetBindHead(isBindHead)
   self._bindHead = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.IsBindHead = function(self)
-  -- function num : 0_2
+function EffectControllerComponent:IsBindHead()
   return self._bindHead
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.GetHeightOffset = function(self)
-  -- function num : 0_3
+function EffectControllerComponent:GetHeightOffset()
   return self.HeightOffset
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.GetBindEntity = function(self)
-  -- function num : 0_4
+function EffectControllerComponent:GetBindEntity()
   return self.BindEntity
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.SetHeightOffset = function(self, heightOffset)
-  -- function num : 0_5
+function EffectControllerComponent:SetHeightOffset(heightOffset)
   self.HeightOffset = heightOffset
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.GetEffectType = function(self)
-  -- function num : 0_6
+function EffectControllerComponent:GetEffectType()
   return self._effectType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.SetTargetGridPos = function(self, targetGridPos)
-  -- function num : 0_7
+function EffectControllerComponent:SetTargetGridPos(targetGridPos)
   self._targetGridPos = targetGridPos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.GetTargetGridPos = function(self)
-  -- function num : 0_8
+function EffectControllerComponent:GetTargetGridPos()
   return self._targetGridPos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.SetMoveSpeed = function(self, speed)
-  -- function num : 0_9
+function EffectControllerComponent:SetMoveSpeed(speed)
   self._moveSpeed = speed
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.GetMoveSpeed = function(self)
-  -- function num : 0_10
+function EffectControllerComponent:GetMoveSpeed()
   return self._moveSpeed
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.SetEffectType = function(self, effectType)
-  -- function num : 0_11
+function EffectControllerComponent:SetEffectType(effectType)
   self._effectType = effectType
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.SetFollowMove = function(self, followMove)
-  -- function num : 0_12
+function EffectControllerComponent:SetFollowMove(followMove)
   self._followMove = followMove
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.GetFollowMove = function(self)
-  -- function num : 0_13
+function EffectControllerComponent:GetFollowMove()
   return self._followMove
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.SetFollowRotate = function(self, followRotate)
-  -- function num : 0_14
+function EffectControllerComponent:SetFollowRotate(followRotate)
   self._followRotate = followRotate
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.GetFollowRotate = function(self)
-  -- function num : 0_15
+function EffectControllerComponent:GetFollowRotate()
   return self._followRotate
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.GetBindLayer = function(self)
-  -- function num : 0_16
+function EffectControllerComponent:GetBindLayer()
   return self._bindLayer
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.SetBindLayer = function(self, layer)
-  -- function num : 0_17
+function EffectControllerComponent:SetBindLayer(layer)
   self._bindLayer = layer
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.SetDestroyCallback = function(self, fun)
-  -- function num : 0_18
+function EffectControllerComponent:SetDestroyCallback(fun)
   self._onDestroy = fun
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.GetDestroyCallback = function(self)
-  -- function num : 0_19
+function EffectControllerComponent:GetDestroyCallback()
   return self._onDestroy
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.GetEffectCasterID = function(self)
-  -- function num : 0_20
+function EffectControllerComponent:GetEffectCasterID()
   return self._casterEntityID
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.SetEffectCasterID = function(self, casterEntityID)
-  -- function num : 0_21
+function EffectControllerComponent:SetEffectCasterID(casterEntityID)
   self._casterEntityID = casterEntityID
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.GetFollowRotateCaster = function(self)
-  -- function num : 0_22
+function EffectControllerComponent:GetFollowRotateCaster()
   return self._followRotateCaster
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.SetFollowRotateCaster = function(self, isFollow)
-  -- function num : 0_23
+function EffectControllerComponent:SetFollowRotateCaster(isFollow)
   self._followRotateCaster = isFollow
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.SetGirdRenderPos = function(self, renderPos)
-  -- function num : 0_24
+function EffectControllerComponent:SetGirdRenderPos(renderPos)
   self._gridRenderPos = renderPos
   self._onlyUseBindPosHigh = true
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.GetGridRenderPos = function(self)
-  -- function num : 0_25
+function EffectControllerComponent:GetGridRenderPos()
   return self._gridRenderPos
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.IsOnlyUserBindPosHigh = function(self)
-  -- function num : 0_26
+function EffectControllerComponent:IsOnlyUserBindPosHigh()
   return self._onlyUseBindPosHigh
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.SetNoResetRotationOnCreated = function(self, b)
-  -- function num : 0_27
+function EffectControllerComponent:SetNoResetRotationOnCreated(b)
   self._noResetRotationOnCreated = b
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.IsNoResetRotationOnCreated = function(self)
-  -- function num : 0_28
+function EffectControllerComponent:IsNoResetRotationOnCreated()
   return self._noResetRotationOnCreated
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.SetPosOffSet = function(self, offSet)
-  -- function num : 0_29
+function EffectControllerComponent:SetPosOffSet(offSet)
   self._posOffSet = offSet
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectControllerComponent.GetPosOffSet = function(self)
-  -- function num : 0_30
+function EffectControllerComponent:GetPosOffSet()
   return self._posOffSet
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.EffectController = function(self)
-  -- function num : 0_31
-  return self:GetComponent((self.WEComponentsEnum).EffectController)
+function Entity:EffectController()
+  return self:GetComponent(self.WEComponentsEnum.EffectController)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasEffectController = function(self)
-  -- function num : 0_32
-  return self:HasComponent((self.WEComponentsEnum).EffectController)
+function Entity:HasEffectController()
+  return self:HasComponent(self.WEComponentsEnum.EffectController)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddEffectController = function(self, bindEntity, bindPos, duration, type, effectID)
-  -- function num : 0_33 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).EffectController
+function Entity:AddEffectController(bindEntity, bindPos, duration, type, effectID)
+  local index = self.WEComponentsEnum.EffectController
   local component = EffectControllerComponent:New(bindEntity, bindPos, duration, type)
   component._effectID = effectID
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddEffect = function(self, duration)
-  -- function num : 0_34 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).EffectController
+function Entity:AddEffect(duration)
+  local index = self.WEComponentsEnum.EffectController
   local component = EffectControllerComponent:New(nil, nil, duration)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddEffectType = function(self, type, duration)
-  -- function num : 0_35
+function Entity:AddEffectType(type, duration)
   self:AddEffectController(nil, nil, duration, type)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceEffectController = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).EffectController
+function Entity:ReplaceEffectController()
+  local index = self.WEComponentsEnum.EffectController
   local component = EffectControllerComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveEffectController = function(self)
-  -- function num : 0_37
+function Entity:RemoveEffectController()
   if self:HasEffectController() then
-    self:RemoveComponent((self.WEComponentsEnum).EffectController)
+    self:RemoveComponent(self.WEComponentsEnum.EffectController)
   end
 end
-
-

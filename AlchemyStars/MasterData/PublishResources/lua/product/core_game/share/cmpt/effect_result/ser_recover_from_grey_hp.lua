@@ -1,48 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_recover_from_grey_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_RecoverFromGreyHP", SkillEffectResultBase)
 SkillEffectResult_RecoverFromGreyHP = SkillEffectResult_RecoverFromGreyHP
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
 SkillEffectResult_RecoverFromGreyHP.__EFFECT_TYPE = SkillEffectType.RecoverFromGreyHP
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_RecoverFromGreyHP.Constructor = function(self, entityID, damageInfo)
-  -- function num : 0_0
+function SkillEffectResult_RecoverFromGreyHP:Constructor(entityID, damageInfo)
   self._entityID = entityID
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_RecoverFromGreyHP.GetEntityID = function(self)
-  -- function num : 0_1
+function SkillEffectResult_RecoverFromGreyHP:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_RecoverFromGreyHP.GetDamageInfo = function(self)
-  -- function num : 0_2
+function SkillEffectResult_RecoverFromGreyHP:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_RecoverFromGreyHP.GetCurrentGreyVal = function(self)
-  -- function num : 0_3
+function SkillEffectResult_RecoverFromGreyHP:GetCurrentGreyVal()
   return self._currentGreyVal
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_RecoverFromGreyHP.SetCurrentGreyVal = function(self, v)
-  -- function num : 0_4
+function SkillEffectResult_RecoverFromGreyHP:SetCurrentGreyVal(v)
   self._currentGreyVal = v
 end
-
-

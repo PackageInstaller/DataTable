@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_detail/ui_pet_detail_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetDetailItem", UICustomWidget)
 UIPetDetailItem = UIPetDetailItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetDetailItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetDetailItem:Constructor()
   self._index = 0
   self._isCurrent = false
   self._dynamicAndStaticState = DynamicAndStaticState.None
-  self._module = (GameGlobal.GetModule)(PetModule)
+  self._module = GameGlobal.GetModule(PetModule)
   self._open = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIPetDetailItem:OnShow(uiParams)
   self._cg = self:GetUIComponent("RawImageLoader", "cg")
   self._rawImage = self:GetUIComponent("RawImage", "cg")
   self._cgGo = self:GetGameObject("cg")
@@ -29,424 +19,315 @@ UIPetDetailItem.OnShow = function(self, uiParams)
   self:AttachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.AttachEvents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetDetailItem:AttachEvents()
   self:AttachEvent(GameEventType.PetUpGradeEvent, self.ObservationUpGradeRefresh)
   self:AttachEvent(GameEventType.PetDetailChangeCgState, self.ChangeDynamicAndStatic)
   self:AttachEvent(GameEventType.CheckIsCurrent, self.CheckIsCurrent)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.RemoveEvents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIPetDetailItem:RemoveEvents()
   self:DetachEvent(GameEventType.PetUpGradeEvent, self.ObservationUpGradeRefresh)
   self:DetachEvent(GameEventType.PetDetailChangeCgState, self.ChangeDynamicAndStatic)
   self:DetachEvent(GameEventType.CheckIsCurrent, self.CheckIsCurrent)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.ObservationUpGradeRefresh = function(self, pstid)
-  -- function num : 0_4 , upvalues : _ENV
+function UIPetDetailItem:ObservationUpGradeRefresh(pstid)
   if self._pstid == pstid then
-    self._pet = (self._module):GetPet(pstid)
-    local matName = (self._pet):GetPetStaticBody(PetSkinEffectPath.BODY_AWAKE)
-    local spineName = (self._pet):GetPetSpine(PetSkinEffectPath.BODY_AWAKE)
+    self._pet = self._module:GetPet(pstid)
+    local matName = self._pet:GetPetStaticBody(PetSkinEffectPath.BODY_AWAKE)
+    local spineName = self._pet:GetPetSpine(PetSkinEffectPath.BODY_AWAKE)
     self:LoadCgSync(matName, true)
     self:LoadSpineSync(spineName, true)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIPetDetailItem:OnHide()
   self._index = 0
   if self._matAsset then
-    (self._matAsset):Dispose()
+    self._matAsset:Dispose()
   end
   if self._dcgHandle then
-    (self._dcgHandle):Release()
+    self._dcgHandle:Release()
   end
   if self._spineEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+    GameGlobal.Timer():CancelEvent(self._spineEvent)
     self._spineEvent = nil
     self._playSpineAnim = false
   end
   self:RemoveEvents()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.OnHideCallBack = function(self)
-  -- function num : 0_6
+function UIPetDetailItem:OnHideCallBack()
   if self._matAsset then
-    (self._matAsset):Dispose()
+    self._matAsset:Dispose()
   end
   if self._dcgHandle then
-    (self._dcgHandle):Release()
+    self._dcgHandle:Release()
   end
   self._dcgHandle = nil
   self._matAsset = nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.SetData = function(self, index, pet, state, matName, spineName, spineRoot, idx)
-  -- function num : 0_7 , upvalues : _ENV
+function UIPetDetailItem:SetData(index, pet, state, matName, spineName, spineRoot, idx)
   self._index = index
   self._isCurrent = self._index == idx
   self._pet = pet
-  self._pstid = (self._pet):GetPstID()
-  self._petid = (self._pet):GetTemplateID()
+  self._pstid = self._pet:GetPstID()
+  self._petid = self._pet:GetTemplateID()
   self._spineRoot = spineRoot
   self._state = state
-  local size = ((Cfg.cfg_global).ui_interface_common_size).ArrayValue
-  ;
-  ((self._cgGo):GetComponent("RectTransform")).sizeDelta = Vector2(size[1], size[2])
+  local size = Cfg.cfg_global.ui_interface_common_size.ArrayValue
+  self._cgGo:GetComponent("RectTransform").sizeDelta = Vector2(size[1], size[2])
   self:ChangeDynamicAndStatic(self._index, state)
   if self._isCurrent then
     self:LoadCgSync(matName)
     self:LoadSpineSync(spineName)
   else
-    ((GameGlobal.TaskManager)()):StartTask(self.OnSetData, self, matName, true)
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.OnSetDataSpine, self, spineName, true)
+    GameGlobal.TaskManager():StartTask(self.OnSetData, self, matName, true)
+    GameGlobal.TaskManager():StartTask(self.OnSetDataSpine, self, spineName, true)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.RefreshSkinAppearance = function(self, matName, spineName)
-  -- function num : 0_8
+function UIPetDetailItem:RefreshSkinAppearance(matName, spineName)
   self:LoadCgSync(matName, true)
   self:LoadSpineSync(spineName, true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.LoadCgSync = function(self, matName, force)
-  -- function num : 0_9 , upvalues : _ENV
+function UIPetDetailItem:LoadCgSync(matName, force)
   if not self._index or self._index == 0 then
-    return 
+    return
   end
   if self._matAsset == nil or force then
     if self._matAsset ~= nil then
-      (self._matAsset):Dispose()
+      self._matAsset:Dispose()
     end
     local resName = ""
     if matName then
       resName = matName .. ".mat"
-      if (ResourceManager:GetInstance()):HasResource(resName) then
-        self._matAsset = (ResourceManager:GetInstance()):SyncLoadAsset(resName, LoadType.Mat)
+      if ResourceManager:GetInstance():HasResource(resName) then
+        self._matAsset = ResourceManager:GetInstance():SyncLoadAsset(resName, LoadType.Mat)
       end
     end
   end
-  do
-    if self._matAsset == nil or (self._matAsset).Obj == nil then
-      return 
-    end
-    ;
-    (self._cg):SetMat(matName, (self._matAsset).Obj, false)
-    ;
-    (UICG.SetTransform)((self._cgGo).transform, self:GetName(), matName)
-    local alpha = 0
-    if force then
-      alpha = 1
-    end
-    -- DECOMPILER ERROR at PC75: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._rawImage).color = Color(1, 1, 1, alpha)
+  if self._matAsset == nil or self._matAsset.Obj == nil then
+    return
   end
-end
-
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.LoadSpineSync = function(self, dcgName, force)
-  -- function num : 0_10 , upvalues : _ENV
-  if not self._index or self._index == 0 then
-    return 
-  end
-  if self._dcgHandle == nil or force then
-    if self._dcgHandle ~= nil then
-      (self._dcgHandle):ChangeDynamicCGSync(dcgName)
-    else
-      self._dcgHandle = (DynamicCG.SyncLoad)(dcgName, nil, self._spineGo)
-    end
-  end
-  self:SetSpineMat()
-  ;
-  (UICG.SetTransform)((self._spineGo).transform, self:GetName(), dcgName)
+  self._cg:SetMat(matName, self._matAsset.Obj, false)
+  UICG.SetTransform(self._cgGo.transform, self:GetName(), matName)
   local alpha = 0
   if force then
     alpha = 1
   end
-  ;
-  (self._dcgHandle):SetAlpha(alpha)
+  self._rawImage.color = Color(1, 1, 1, alpha)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.FullScreenAnimBtnOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  if self._playSpineAnim then
-    return 
+function UIPetDetailItem:LoadSpineSync(dcgName, force)
+  if not self._index or self._index == 0 then
+    return
   end
-  local cfg_pet_skin = (Cfg.cfg_pet_skin)[(self._pet):GetSkinId()]
+  if self._dcgHandle == nil or force then
+    if self._dcgHandle ~= nil then
+      self._dcgHandle:ChangeDynamicCGSync(dcgName)
+    else
+      self._dcgHandle = DynamicCG.SyncLoad(dcgName, nil, self._spineGo)
+    end
+  end
+  self:SetSpineMat()
+  UICG.SetTransform(self._spineGo.transform, self:GetName(), dcgName)
+  local alpha = 0
+  if force then
+    alpha = 1
+  end
+  self._dcgHandle:SetAlpha(alpha)
+end
+
+function UIPetDetailItem:FullScreenAnimBtnOnClick()
+  if self._playSpineAnim then
+    return
+  end
+  local cfg_pet_skin = Cfg.cfg_pet_skin[self._pet:GetSkinId()]
   if not cfg_pet_skin then
-    (Log.error)("###[UIMainLobbyFinal] cfg_pet_skin is nil ! id --> ", skinid)
-    return 
+    Log.error("###[UIMainLobbyFinal] cfg_pet_skin is nil ! id --> ", skinid)
+    return
   end
   local spineAnims = cfg_pet_skin.MainLobbySpineAnim
   if not spineAnims then
-    return 
+    return
   end
   local animList = {}
   for i = 1, #spineAnims do
     local spineAnim = spineAnims[i]
-    ;
-    (table.insert)(animList, spineAnim)
+    table.insert(animList, spineAnim)
   end
   if #animList == 0 then
-    (Log.error)("###[UIMainLobbyFinal] animList is nil ! skinid --> ", skinid)
-    return 
+    Log.error("###[UIMainLobbyFinal] animList is nil ! skinid --> ", skinid)
+    return
   end
-  local randomVal = (math.random)(#animList)
+  local randomVal = math.random(#animList)
   local anim = animList[randomVal]
   local animationName = anim
   if not self._dcgHandle then
-    (Log.debug)("###[UIMainLobbyFinal] self._dcgHandle is nil --> ", self._dynamicSpineSettings)
-    return 
+    Log.debug("###[UIMainLobbyFinal] self._dcgHandle is nil --> ", self._dynamicSpineSettings)
+    return
   end
-  local entry = (self._dcgHandle):SetAnimationWithTrackEntryReturn(0, animationName, false)
-  ;
-  (self._dcgHandle):SetAnimMixTime(0)
-  ;
-  (self._dcgHandle):Update(0)
-  if (self._dcgHandle):GetCurDynamicCGType() == DynamicCGType.Spine or (self._dcgHandle):GetCurDynamicCGType() == DynamicCGType.None then
+  local entry = self._dcgHandle:SetAnimationWithTrackEntryReturn(0, animationName, false)
+  self._dcgHandle:SetAnimMixTime(0)
+  self._dcgHandle:Update(0)
+  if self._dcgHandle:GetCurDynamicCGType() == DynamicCGType.Spine or self._dcgHandle:GetCurDynamicCGType() == DynamicCGType.None then
     self:PlayClickAnimBackIdleBySpine(entry)
-  else
-    if (self._dcgHandle):GetCurDynamicCGType() == DynamicCGType.Live2D then
-      self:PlayClickAnimBackIdleByLive2d(entry)
-    end
+  elseif self._dcgHandle:GetCurDynamicCGType() == DynamicCGType.Live2D then
+    self:PlayClickAnimBackIdleByLive2d(entry)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.PlayClickAnimBackIdleBySpine = function(self, entry)
-  -- function num : 0_12 , upvalues : _ENV
+function UIPetDetailItem:PlayClickAnimBackIdleBySpine(entry)
   if not entry then
-    return 
+    return
   end
   local anim = entry.Animation
   local duration = anim.Duration
-  local yieldTime = (math.floor)(duration * 1000)
+  local yieldTime = math.floor(duration * 1000)
   if self._spineEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+    GameGlobal.Timer():CancelEvent(self._spineEvent)
     self._spineEvent = nil
     self._playSpineAnim = false
   end
   self._playSpineAnim = true
-  self._spineEvent = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_12_0 , upvalues : self
+  self._spineEvent = GameGlobal.Timer():AddEvent(yieldTime, function()
     self._playSpineAnim = false
     local animationName = "idle"
     if self._dcgHandle then
-      (self._dcgHandle):SetAnimation(0, animationName, true)
-      ;
-      (self._dcgHandle):SetAnimMixTime(0)
-      ;
-      (self._dcgHandle):Update(0)
+      self._dcgHandle:SetAnimation(0, animationName, true)
+      self._dcgHandle:SetAnimMixTime(0)
+      self._dcgHandle:Update(0)
     end
-  end
-)
-  ;
-  (Log.debug)("###[UIMainLobbyFinal] spine 动画名字[", animationName, "] 动画时长[", duration, "]")
+  end)
+  Log.debug("###[UIMainLobbyFinal] spine 动画名字[", animationName, "] 动画时长[", duration, "]")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.PlayClickAnimBackIdleByLive2d = function(self, anim)
-  -- function num : 0_13 , upvalues : _ENV
+function UIPetDetailItem:PlayClickAnimBackIdleByLive2d(anim)
   if anim then
     local duration = anim.length
-    local yieldTime = (math.floor)(duration * 1000)
+    local yieldTime = math.floor(duration * 1000)
     if self._spineEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+      GameGlobal.Timer():CancelEvent(self._spineEvent)
       self._spineEvent = nil
       self._playSpineAnim = false
     end
     self._playSpineAnim = true
-    self._spineEvent = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_13_0 , upvalues : self
-    self._playSpineAnim = false
-    local animationName = "idle"
-    ;
-    (self._dcgHandle):SetAnimationWithTrackEntryReturn(0, animationName, true)
-  end
-)
+    self._spineEvent = GameGlobal.Timer():AddEvent(yieldTime, function()
+      self._playSpineAnim = false
+      local animationName = "idle"
+      self._dcgHandle:SetAnimationWithTrackEntryReturn(0, animationName, true)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.SetAnimAlpha = function(self, alpha)
-  -- function num : 0_14 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._rawImage).color = Color(1, 1, 1, alpha)
-  ;
-  (self._dcgHandle):SetAlpha(alpha)
+function UIPetDetailItem:SetAnimAlpha(alpha)
+  self._rawImage.color = Color(1, 1, 1, alpha)
+  self._dcgHandle:SetAlpha(alpha)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.OpenAndCloseOtherAlpha = function(self, open)
-  -- function num : 0_15
+function UIPetDetailItem:OpenAndCloseOtherAlpha(open)
   self._open = open
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.OnSetData = function(self, TT, matName, hideAlpha)
-  -- function num : 0_16 , upvalues : _ENV
+function UIPetDetailItem:OnSetData(TT, matName, hideAlpha)
   if not self._index or self._index == 0 then
-    return 
+    return
   end
   if self._matAsset == nil then
     local resName = ""
     if matName then
       resName = matName .. ".mat"
-      if (ResourceManager:GetInstance()):HasResource(resName) then
-        self._matAsset = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, resName, LoadType.Mat)
+      if ResourceManager:GetInstance():HasResource(resName) then
+        self._matAsset = ResourceManager:GetInstance():AsyncLoadAsset(TT, resName, LoadType.Mat)
       end
     end
     local logMatName = matName or "nil"
     if self._matAsset == nil then
-      (Log.fatal)("###[UIPetDetailItem] error --> the load asset is nil ! id --> ", self._petid, " , name is ", logMatName)
-      return 
+      Log.fatal("###[UIPetDetailItem] error --> the load asset is nil ! id --> ", self._petid, " , name is ", logMatName)
+      return
     end
-    if (self._matAsset).Obj == nil then
-      (Log.fatal)("###[UIPetDetailItem] error --> the load asset obj is nil ! id --> ", self._petid, " , name is ", logMatName)
-      return 
+    if self._matAsset.Obj == nil then
+      Log.fatal("###[UIPetDetailItem] error --> the load asset obj is nil ! id --> ", self._petid, " , name is ", logMatName)
+      return
     end
-  end
-  do
-    if not self._index or self._index == 0 then
-      (self._matAsset):Dispose()
-      return 
-    end
-    ;
-    (self._cg):SetMat(matName, (self._matAsset).Obj, false)
-    ;
-    (UICG.SetTransform)((self._cgGo).transform, self:GetName(), matName)
-    local alpha = 1
-    if hideAlpha then
-      alpha = 0
-    end
-    -- DECOMPILER ERROR at PC96: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._rawImage).color = Color(1, 1, 1, alpha)
-  end
-end
-
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.OnSetDataSpine = function(self, TT, spineName, hideAlpha)
-  -- function num : 0_17 , upvalues : _ENV
-  if not self._index or self._index == 0 then
-    return 
-  end
-  if self._dcgHandle == nil then
-    self._dcgHandle = (DynamicCG.AsyncLoad)(TT, spineName, nil, self._spineGo)
   end
   if not self._index or self._index == 0 then
-    (self._dcgHandle):Release()
-    self._dcgHandle = nil
-    return 
+    self._matAsset:Dispose()
+    return
   end
-  self:SetSpineMat()
-  ;
-  (UICG.SetTransform)((self._spineGo).transform, self:GetName(), spineName)
+  self._cg:SetMat(matName, self._matAsset.Obj, false)
+  UICG.SetTransform(self._cgGo.transform, self:GetName(), matName)
   local alpha = 1
   if hideAlpha then
     alpha = 0
   end
-  ;
-  (self._dcgHandle):SetAlpha(alpha)
+  self._rawImage.color = Color(1, 1, 1, alpha)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
+function UIPetDetailItem:OnSetDataSpine(TT, spineName, hideAlpha)
+  if not self._index or self._index == 0 then
+    return
+  end
+  if self._dcgHandle == nil then
+    self._dcgHandle = DynamicCG.AsyncLoad(TT, spineName, nil, self._spineGo)
+  end
+  if not self._index or self._index == 0 then
+    self._dcgHandle:Release()
+    self._dcgHandle = nil
+    return
+  end
+  self:SetSpineMat()
+  UICG.SetTransform(self._spineGo.transform, self:GetName(), spineName)
+  local alpha = 1
+  if hideAlpha then
+    alpha = 0
+  end
+  self._dcgHandle:SetAlpha(alpha)
+end
 
-UIPetDetailItem.SetSpineMat = function(self)
-  -- function num : 0_18
+function UIPetDetailItem:SetSpineMat()
   if self._dcgHandle then
-    (self._dcgHandle):SetMatFloat("_StencilComp", 2)
+    self._dcgHandle:SetMatFloat("_StencilComp", 2)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.ChangeDynamicAndStatic = function(self, index, state)
-  -- function num : 0_19 , upvalues : _ENV
+function UIPetDetailItem:ChangeDynamicAndStatic(index, state)
   if index ~= self._index then
-    return 
+    return
   end
   if self._dynamicAndStaticState ~= state then
     self._dynamicAndStaticState = state
     if self._dynamicAndStaticState == DynamicAndStaticState.Dynamic then
-      (self._cgGo):SetActive(false)
-      ;
-      (self._spineGo):SetActive(true)
-    else
-      if self._dynamicAndStaticState == DynamicAndStaticState.Static then
-        (self._cgGo):SetActive(true)
-        ;
-        (self._spineGo):SetActive(false)
-      end
+      self._cgGo:SetActive(false)
+      self._spineGo:SetActive(true)
+    elseif self._dynamicAndStaticState == DynamicAndStaticState.Static then
+      self._cgGo:SetActive(true)
+      self._spineGo:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.ChangeCanvasGroupAlpha = function(self, all, centerX)
-  -- function num : 0_20 , upvalues : _ENV
+function UIPetDetailItem:ChangeCanvasGroupAlpha(all, centerX)
   if not self._open then
-    return 
+    return
   end
-  local dis = (math.abs)(((self._center).position).x - centerX)
+  local dis = math.abs(self._center.position.x - centerX)
   local rate = dis / (all * 0.5)
-  if rate > 1 then
+  if 1 < rate then
     rate = 1
-  else
-    if rate < 0 then
-      rate = 0
-    end
+  elseif rate < 0 then
+    rate = 0
   end
   local alpha = 1 - rate
   if self._dcgHandle ~= nil then
-    (self._dcgHandle):SetAlpha(alpha)
+    self._dcgHandle:SetAlpha(alpha)
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rawImage).color = Color(1, 1, 1, alpha)
+  self._rawImage.color = Color(1, 1, 1, alpha)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetDetailItem.CheckIsCurrent = function(self, curridx)
-  -- function num : 0_21
+function UIPetDetailItem:CheckIsCurrent(curridx)
   self._isCurrent = self._index == curridx
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
-
-

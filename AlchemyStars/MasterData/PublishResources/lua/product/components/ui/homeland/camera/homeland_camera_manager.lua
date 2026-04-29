@@ -1,106 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/camera/homeland_camera_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandCameraManager", Object)
 HomelandCameraManager = HomelandCameraManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandCameraManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandCameraManager:Constructor()
   self._followCameraController = HomelandFollowCameraController:New()
   self._globalCameraController = HomelandGlobalCameraController:New()
   self._medalWallCameraController = HomelandMedalWallCameraController:New()
   self._mode = HomelandMode.Normal
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCameraManager.Init = function(self, homelandClient)
-  -- function num : 0_1
-  (self._followCameraController):Init(homelandClient)
-  ;
-  (self._globalCameraController):Init(homelandClient)
-  ;
-  (self._medalWallCameraController):Init(homelandClient)
+function HomelandCameraManager:Init(homelandClient)
+  self._followCameraController:Init(homelandClient)
+  self._globalCameraController:Init(homelandClient)
+  self._medalWallCameraController:Init(homelandClient)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCameraManager.SetGlobalCameraLock = function(self, lock)
-  -- function num : 0_2
-  (self._globalCameraController):SetLockCamera(lock)
+function HomelandCameraManager:SetGlobalCameraLock(lock)
+  self._globalCameraController:SetLockCamera(lock)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCameraManager.Dispose = function(self)
-  -- function num : 0_3
-  (self._followCameraController):Dispose()
-  ;
-  (self._globalCameraController):Dispose()
-  ;
-  (self._medalWallCameraController):Dispose()
+function HomelandCameraManager:Dispose()
+  self._followCameraController:Dispose()
+  self._globalCameraController:Dispose()
+  self._medalWallCameraController:Dispose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCameraManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_4
-  (self._followCameraController):Update()
+function HomelandCameraManager:Update(deltaTimeMS)
+  self._followCameraController:Update()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCameraManager.FollowCameraController = function(self)
-  -- function num : 0_5
+function HomelandCameraManager:FollowCameraController()
   return self._followCameraController
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCameraManager.GlobalCameraController = function(self)
-  -- function num : 0_6
+function HomelandCameraManager:GlobalCameraController()
   return self._globalCameraController
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCameraManager.MedalWallCameraController = function(self)
-  -- function num : 0_7
+function HomelandCameraManager:MedalWallCameraController()
   return self._medalWallCameraController
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCameraManager.OnModeChanged = function(self, mode)
-  -- function num : 0_8 , upvalues : _ENV
+function HomelandCameraManager:OnModeChanged(mode)
   self._mode = mode
   if mode == HomelandMode.Normal then
-    (self._globalCameraController):SetActive(false)
-    ;
-    (self._followCameraController):SetActive(true)
-  else
-    if mode == HomelandMode.Build then
-      (self._followCameraController):SetActive(false)
-      ;
-      (self._globalCameraController):SetActive(true)
-    else
-      if mode == HomelandMode.Story then
-        (self._followCameraController):SetActive(false)
-        ;
-        (self._globalCameraController):SetActive(false)
-      end
-    end
+    self._globalCameraController:SetActive(false)
+    self._followCameraController:SetActive(true)
+  elseif mode == HomelandMode.Build then
+    self._followCameraController:SetActive(false)
+    self._globalCameraController:SetActive(true)
+  elseif mode == HomelandMode.Story then
+    self._followCameraController:SetActive(false)
+    self._globalCameraController:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCameraManager.Rotation = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cam = nil
+function HomelandCameraManager:Rotation()
+  local cam
   if self._mode == HomelandMode.Normal then
     cam = self._followCameraController
   else
@@ -109,33 +64,20 @@ HomelandCameraManager.Rotation = function(self)
   return cam:Rotation()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCameraManager.GetCamera = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function HomelandCameraManager:GetCamera()
   if self._mode == HomelandMode.Normal then
-    return (self._followCameraController):CameraCmp()
-  else
-    if self._mode == HomelandMode.Build then
-      return (self._globalCameraController):CameraCmp()
-    end
+    return self._followCameraController:CameraCmp()
+  elseif self._mode == HomelandMode.Build then
+    return self._globalCameraController:CameraCmp()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandCameraManager.SetMedalWallCameraActive = function(self, isActive)
-  -- function num : 0_11
+function HomelandCameraManager:SetMedalWallCameraActive(isActive)
   if isActive then
-    (self._followCameraController):SetActive(false)
-    ;
-    (self._medalWallCameraController):SetActive(true)
+    self._followCameraController:SetActive(false)
+    self._medalWallCameraController:SetActive(true)
   else
-    ;
-    (self._medalWallCameraController):SetActive(false)
-    ;
-    (self._followCameraController):SetActive(true)
+    self._medalWallCameraController:SetActive(false)
+    self._followCameraController:SetActive(true)
   end
 end
-
-

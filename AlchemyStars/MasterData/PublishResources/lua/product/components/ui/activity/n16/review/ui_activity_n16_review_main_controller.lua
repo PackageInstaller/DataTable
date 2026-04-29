@@ -1,86 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n16/review/ui_activity_n16_review_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN16ReviewMainController", UIController)
 UIActivityN16ReviewMainController = UIActivityN16ReviewMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN16ReviewMainController._SpawnObject = function(self, widgetName, className)
-  -- function num : 0_0
+function UIActivityN16ReviewMainController:_SpawnObject(widgetName, className)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = pool:SpawnObject(className)
   return obj
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16ReviewMainController._PlayAnim = function(self, widgetName, animName, time, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN16ReviewMainController:_PlayAnim(widgetName, animName, time, callback)
   local anim = self:GetUIComponent("Animation", widgetName)
   self:Lock(animName)
   anim:Play(animName)
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, time, self, animName, callback
     YIELD(TT, time)
     self:UnLock(animName)
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16ReviewMainController._InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN16ReviewMainController:_InitWidget()
   self._mainBg = self:GetUIComponent("RawImageLoader", "_mainBg")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     self:SwitchState(UIStateType.UIActivityReview)
-  end
-, nil, nil, false, function()
-    -- function num : 0_2_1 , upvalues : self
+  end, nil, nil, false, function()
     self:HideBtnOnClick()
-  end
-)
-  local progress = (UIReviewProgressConst.SpawnObject)(self, "_progress", self._reviewData)
+  end)
+  local progress = UIReviewProgressConst.SpawnObject(self, "_progress", self._reviewData)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16ReviewMainController._SetProgressData = function(self, TT, res)
-  -- function num : 0_3 , upvalues : _ENV
-  local uiModule = (GameGlobal.GetUIModule)(CampaignModule)
-  self._reviewData = (uiModule:GetReviewData()):GetActivityByType(ECampaignType.CAMPAIGN_TYPE_REVIEW_N16)
-  ;
-  (self._reviewData):ReqDetailInfo(TT, res)
+function UIActivityN16ReviewMainController:_SetProgressData(TT, res)
+  local uiModule = GameGlobal.GetUIModule(CampaignModule)
+  self._reviewData = uiModule:GetReviewData():GetActivityByType(ECampaignType.CAMPAIGN_TYPE_REVIEW_N16)
+  self._reviewData:ReqDetailInfo(TT, res)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16ReviewMainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN16ReviewMainController:LoadDataOnEnter(TT, res, uiParams)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_REVIEW_N16
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, ECampaignReviewN16ComponentID.ECAMPAIGN_REVIEW_ReviewN16_LINE_MISSION, ECampaignReviewN16ComponentID.ECAMPAIGN_REVIEW_ReviewN16_POINT_PROGRESS)
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignType, ECampaignReviewN16ComponentID.ECAMPAIGN_REVIEW_ReviewN16_LINE_MISSION, ECampaignReviewN16ComponentID.ECAMPAIGN_REVIEW_ReviewN16_POINT_PROGRESS)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
-    return 
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
+    return
   end
   self:_SetProgressData(TT, res)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16ReviewMainController.OnShow = function(self, uiParams)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN16ReviewMainController:OnShow(uiParams)
   self._atlas = self:GetAsset("UIN16.spriteatlas", LoadType.SpriteAtlas)
   self._isOpen = true
   self:_InitWidget()
@@ -93,122 +62,84 @@ UIActivityN16ReviewMainController.OnShow = function(self, uiParams)
     rt.texture = self.imgRT
     entermodel = "uieffanim_N16_main_show"
     self:_PlayAnim("_anim", entermodel, 1667)
-    ;
-    (CutsceneManager.ExcuteCutsceneOut)()
+    CutsceneManager.ExcuteCutsceneOut()
   else
-    do
-      entermodel = "uieffanim_N16_main_in"
-      self:_PlayAnim("_anim", entermodel, 1667)
-    end
+    entermodel = "uieffanim_N16_main_in"
+    self:_PlayAnim("_anim", entermodel, 1667)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16ReviewMainController.OnHide = function(self)
-  -- function num : 0_6
+function UIActivityN16ReviewMainController:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16ReviewMainController._Refresh = function(self)
-  -- function num : 0_7
+function UIActivityN16ReviewMainController:_Refresh()
   self:_SetLineMissionBtn()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16ReviewMainController._SetBg = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local url = (UIActivityHelper.GetCampaignMainBg)(self._campaign, 1)
+function UIActivityN16ReviewMainController:_SetBg()
+  local url = UIActivityHelper.GetCampaignMainBg(self._campaign, 1)
   if url then
-    (self._mainBg):LoadImage(url)
+    self._mainBg:LoadImage(url)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16ReviewMainController._SetSpine = function(self)
-  -- function num : 0_9
+function UIActivityN16ReviewMainController:_SetSpine()
   local obj = self:GetUIComponent("SpineLoader", "_spine")
   obj:LoadSpine("n16_kv_1_spine_idle")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16ReviewMainController._SetLineMissionBtn = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityN16ReviewMainController:_SetLineMissionBtn()
   local componentId = ECampaignReviewN16ComponentID.ECAMPAIGN_REVIEW_ReviewN16_LINE_MISSION
   local obj = self:_SpawnObject("_lineMissionBtn", "UIActivityCommonComponentEnterLock")
   local tb = {
-{"state_lock"}
-, 
-{"state_lock"}
-, 
-{"state_unlock"}
-, 
-{"state_close"}
-}
+    {"state_lock"},
+    {"state_lock"},
+    {
+      "state_unlock"
+    },
+    {
+      "state_close"
+    }
+  }
   obj:SetWidgetNameGroup(tb)
   obj:SetData(self._campaign, componentId, function()
-    -- function num : 0_10_0 , upvalues : self, _ENV
     self:SwitchState(UIStateType.UIActivityN16ReviewLineMissionController)
-  end
-)
-  local img = (obj.view):GetUIComponent("Image", "bgstate")
-  img.sprite = (self._atlas):GetSprite("n16_zjm_di2")
-  local text = (obj.view):GetUIComponent("UILocalizationText", "txt")
-  ;
-  ((text.transform):GetComponent("Outline")).enabled = true
-  text.color = (Color.New)(0.79607843137255, 0.69019607843137, 0.35294117647059)
+  end)
+  local img = obj.view:GetUIComponent("Image", "bgstate")
+  img.sprite = self._atlas:GetSprite("n16_zjm_di2")
+  local text = obj.view:GetUIComponent("UILocalizationText", "txt")
+  text.transform:GetComponent("Outline").enabled = true
+  text.color = Color.New(0.796078431372549, 0.6901960784313725, 0.35294117647058826)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16ReviewMainController.ShowBtnOnClick = function(self)
-  -- function num : 0_11
+function UIActivityN16ReviewMainController:ShowBtnOnClick()
   local showBtn = self:GetGameObject("_showBtn")
   showBtn:SetActive(false)
   self:_PlayAnim("_anim", "uieffanim_UIActivityN16ReviewMainController_show", 500)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16ReviewMainController.HideBtnOnClick = function(self)
-  -- function num : 0_12
+function UIActivityN16ReviewMainController:HideBtnOnClick()
   local showBtn = self:GetGameObject("_showBtn")
   showBtn:SetActive(true)
   self:_PlayAnim("_anim", "uieffanim_UIActivityN16ReviewMainController_hide", 500)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16ReviewMainController._CheckActivityClose = function(self, id)
-  -- function num : 0_13 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityN16ReviewMainController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16ReviewMainController._GetRoleId = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityN16ReviewMainController:_GetRoleId()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   return pstId
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN16ReviewMainController._SetMainTex = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityN16ReviewMainController:_SetMainTex()
   local rawImage = self:GetUIComponent("RawImage", "TitleImg_RawImage")
   local obj = self:GetGameObject("TitleImg")
   local meshRender = obj:GetComponent(typeof(UnityEngine.MeshRenderer))
-  ;
-  (meshRender.material):SetTexture("_MainTex", (rawImage.material):GetTexture("_MainTex"))
+  meshRender.material:SetTexture("_MainTex", rawImage.material:GetTexture("_MainTex"))
 end
-
-

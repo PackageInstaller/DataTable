@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_tetris_random.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicTetrisRandom", BuffLogicBase)
 BuffLogicTetrisRandom = BuffLogicTetrisRandom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicTetrisRandom.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicTetrisRandom:Constructor(buffInstance, logicParam)
   self._needPower = logicParam.needPower
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicTetrisRandom.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local featureSvcL = (self._world):GetService("FeatureLogic")
+function BuffLogicTetrisRandom:DoLogic(notify)
+  local featureSvcL = self._world:GetService("FeatureLogic")
   local canRandom = true
   if self._needPower then
     canRandom = featureSvcL:SubTetrisPower()
@@ -28,5 +18,3 @@ BuffLogicTetrisRandom.DoLogic = function(self, notify)
     return result
   end
 end
-
-

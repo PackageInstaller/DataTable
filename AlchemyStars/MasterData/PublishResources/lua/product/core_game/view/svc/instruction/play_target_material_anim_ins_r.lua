@@ -1,35 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_target_material_anim_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTargetMaterialAnimInstruction", BaseInstruction)
 PlayTargetMaterialAnimInstruction = PlayTargetMaterialAnimInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTargetMaterialAnimInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayTargetMaterialAnimInstruction:Constructor(paramList)
   self._animName = paramList.animName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTargetMaterialAnimInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayTargetMaterialAnimInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   if not targetEntityID then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local targetEntity = world:GetEntityByID(targetEntityID)
   if not targetEntity then
-    return 
+    return
   end
   if targetEntity:HasTeam() then
     targetEntity = targetEntity:GetTeamLeaderPetEntity()
   end
   targetEntity:PlayMaterialAnim(self._animName)
 end
-
-

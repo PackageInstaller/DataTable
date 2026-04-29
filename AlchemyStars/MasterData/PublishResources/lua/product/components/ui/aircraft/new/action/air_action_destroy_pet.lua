@@ -1,43 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_destroy_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionDestroyPet", AirActionBase)
 AirActionDestroyPet = AirActionDestroyPet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionDestroyPet.Constructor = function(self, pet, main)
-  -- function num : 0_0
+function AirActionDestroyPet:Constructor(pet, main)
   self._pet = pet
   self._main = main
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionDestroyPet.Start = function(self)
-  -- function num : 0_1
-  (self._main):RemoveRestPet((self._pet):TemplateID())
+function AirActionDestroyPet:Start()
+  self._main:RemoveRestPet(self._pet:TemplateID())
   self._running = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionDestroyPet.Update = function(self, deltaTimeMS)
-  -- function num : 0_2
+function AirActionDestroyPet:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionDestroyPet.IsOver = function(self)
-  -- function num : 0_3
+function AirActionDestroyPet:IsOver()
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionDestroyPet.Stop = function(self)
-  -- function num : 0_4
+function AirActionDestroyPet:Stop()
 end
-
-

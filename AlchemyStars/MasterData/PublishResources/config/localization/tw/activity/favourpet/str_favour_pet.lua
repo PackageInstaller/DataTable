@@ -1,8 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/activity/favourpet/str_favour_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_favour_pet_main_title = "女王的恩典", str_favour_pet_sub_title = "新時裝投票活動", str_favour_pet_remain_time = "投票剩餘時間 {1}", str_favour_pet_vote = "投票", str_favour_pet_vote_my_count = "我的投票：{1}", str_favour_pet_vote_not_enough_msg = "您的心意券不足，無法進行投票！", str_favour_pet_vote_succ_msg = "感謝您對光靈{1}的支持！", str_favour_pet_vote_finish = "已投票", str_favour_pet_quest_btn = "投票任務", str_favour_pet_quest_tab_btn_1 = "取得心意券", str_favour_pet_quest_accepted = "未完成", str_favour_pet_quest_time = "*距離更新時間：{1}", str_favour_pet_intro_title = "活動說明", str_favour_pet_intro_head_1 = "【新時裝投票活動】", str_favour_pet_intro_body_1 = "光靈鎮魂座在時裝投票大賽中獲得了第一名，北境宮廷設計師為他量身打造了三款時裝搭配方案。鎮魂座希望由空裔來幫她決定要選哪一款。\n詳細規則：\n1.活動期間，導航員登入遊戲可獲得投票道具【心意氣球】，用於投票給鎮魂座的時裝搭配方案。\n2.活動期間，每位導航員可以投票給其中1款時裝搭配，投票後無法變更。\n3.本次票選為全球活動，最終結果以全球區域票數總和為準。遊戲內顯示為單一區域的票選結果。投票最終結果將透過遊戲內公告及各區的官方社群公佈。\n4.本次票選活動結束後，光靈的個人時裝將於未來與各位導航員見面（目前展示圖片僅為服裝設計階斷示意圖稿，最終時裝構圖和美術呈現請以遊戲內最終資源為準）！敬請留意最新公告與相關活動。", str_favour_pet_sub_title_2 = "鎮魂座時裝方案投票", str_favour_pet_2_vote_succ_msg = "您已選擇時裝搭配{1}！", str_favour_pet_skin_no1 = "人氣NO.1光靈：鎮魂座", str_favour_pet_vote2_intro_body_1 = "光靈戒衛座在時裝投票大賽中獲得了第一名，北境宮廷設計師為他量身打造了三款時裝搭配方案。戒衛座希望由空裔來幫他決定要選哪一款。\n詳細規則：\n1.活動期間，導航員登入遊戲可獲得投票道具【心意氣球】，用於投票給戒衛座的時裝搭配方案。\n2.活動期間，每位導航員可以投票給其中1款時裝搭配，投票後無法變更。\n3.本次票選為全球活動，最終結果以全球區域票數總和為準。遊戲內顯示為單一區域的票選結果。投票最終結果將透過遊戲內公告及各區的官方社群公佈。\n4.本次票選活動結束後，光靈的個人時裝將於2024年上半年與各位導航員見面（目前展示圖片僅為服裝設計階斷示意圖稿，最終時裝構圖和美術呈現請以遊戲內最終資源為準）！敬請留意最新公告與相關活動。", str_favour_pet_skin_confirm_title = "投票確認", str_favour_pet_2_confirm_text_1 = "本投票僅可選擇一次，投票後將<color=#D43434>無法變更結果</color>。", str_favour_pet_2_confirm_text_2 = "您的選擇是：", str_favour_pet_2_confirm_text_4 = "是否投給此方案？", str_favour_pet_2_skin_name_1 = "【風暴執掌】", str_favour_pet_2_skin_desc_1 = "「讓我們歡迎那最負盛名的平民英雄——他經歷過無數次戰鬥，而這一次，他也凱旋而歸，為我們帶回了勝利！聽吧，看吧，整座城市上上下下，無人不高呼他的名字：艾德拉斯、艾德拉斯！他即將走上榮耀和幸福的巔峰！」", str_favour_pet_2_skin_name_2 = "【寂靜聖女】", str_favour_pet_2_skin_desc_2 = "像普通人一樣愛上一個人，像普通人一樣與愛人白頭偕老。如果沒有發生那天的事情，名為艾德拉斯的英雄會不會擁有更平凡美好的未來？這是不存在的夢，但偶爾想像一下，似乎也不壞。", str_favour_pet_2_skin_name_3 = "【自雪中來】", str_favour_pet_2_skin_desc_3 = "情感封閉、記憶受損、在與暗鬼的戰鬥中全身盔甲破損也不自知，卻依然散發著狂氣與殺意。這樣的他，還是那個曾經人人稱頌的英雄嗎？還是已經成為武器、成為道具，成為恐怖與戰爭的象徵，注定了隕落的命運？", str_favour_pet_quest_tab_btn_2 = "投票獎勵", str_favour_pet_skin_award_get = "已獲得", str_favour_pet_vote2_intro_title = "活動說明", str_favour_pet_vote2_intro_head_1 = "【鎮魂座時裝方案投票】", str_favour_pet_2_quest_reward = "投票獎勵", str_favour_pet_2_vote_fin_msg = "您已投票！", str_favour_pet_female = "女性光靈", str_favour_pet_male = "男性光靈", str_favour_pet_un_pet = "無符合條件的光靈", str_favour_pet_sub_title_3 = "鎮魂座時裝方案投票"}
+local config = {
+  str_favour_pet_main_title = "女王的恩典",
+  str_favour_pet_sub_title = "新時裝投票活動",
+  str_favour_pet_remain_time = "投票剩餘時間 {1}",
+  str_favour_pet_vote = "投票",
+  str_favour_pet_vote_my_count = "我的投票：{1}",
+  str_favour_pet_vote_not_enough_msg = "您的心意券不足，無法進行投票！",
+  str_favour_pet_vote_succ_msg = "感謝您對光靈{1}的支持！",
+  str_favour_pet_vote_finish = "已投票",
+  str_favour_pet_quest_btn = "投票任務",
+  str_favour_pet_quest_tab_btn_1 = "取得心意券",
+  str_favour_pet_quest_accepted = "未完成",
+  str_favour_pet_quest_time = "*距離更新時間：{1}",
+  str_favour_pet_intro_title = "活動說明",
+  str_favour_pet_intro_head_1 = "【新時裝投票活動】",
+  str_favour_pet_intro_body_1 = "光靈鎮魂座在時裝投票大賽中獲得了第一名，北境宮廷設計師為他量身打造了三款時裝搭配方案。鎮魂座希望由空裔來幫她決定要選哪一款。\n詳細規則：\n1.活動期間，導航員登入遊戲可獲得投票道具【心意氣球】，用於投票給鎮魂座的時裝搭配方案。\n2.活動期間，每位導航員可以投票給其中1款時裝搭配，投票後無法變更。\n3.本次票選為全球活動，最終結果以全球區域票數總和為準。遊戲內顯示為單一區域的票選結果。投票最終結果將透過遊戲內公告及各區的官方社群公佈。\n4.本次票選活動結束後，光靈的個人時裝將於未來與各位導航員見面（目前展示圖片僅為服裝設計階斷示意圖稿，最終時裝構圖和美術呈現請以遊戲內最終資源為準）！敬請留意最新公告與相關活動。",
+  str_favour_pet_sub_title_2 = "鎮魂座時裝方案投票",
+  str_favour_pet_2_vote_succ_msg = "您已選擇時裝搭配{1}！",
+  str_favour_pet_skin_no1 = "人氣NO.1光靈：鎮魂座",
+  str_favour_pet_vote2_intro_body_1 = "光靈戒衛座在時裝投票大賽中獲得了第一名，北境宮廷設計師為他量身打造了三款時裝搭配方案。戒衛座希望由空裔來幫他決定要選哪一款。\n詳細規則：\n1.活動期間，導航員登入遊戲可獲得投票道具【心意氣球】，用於投票給戒衛座的時裝搭配方案。\n2.活動期間，每位導航員可以投票給其中1款時裝搭配，投票後無法變更。\n3.本次票選為全球活動，最終結果以全球區域票數總和為準。遊戲內顯示為單一區域的票選結果。投票最終結果將透過遊戲內公告及各區的官方社群公佈。\n4.本次票選活動結束後，光靈的個人時裝將於2024年上半年與各位導航員見面（目前展示圖片僅為服裝設計階斷示意圖稿，最終時裝構圖和美術呈現請以遊戲內最終資源為準）！敬請留意最新公告與相關活動。",
+  str_favour_pet_skin_confirm_title = "投票確認",
+  str_favour_pet_2_confirm_text_1 = "本投票僅可選擇一次，投票後將<color=#D43434>無法變更結果</color>。",
+  str_favour_pet_2_confirm_text_2 = "您的選擇是：",
+  str_favour_pet_2_confirm_text_4 = "是否投給此方案？",
+  str_favour_pet_2_skin_name_1 = "【風暴執掌】",
+  str_favour_pet_2_skin_desc_1 = "「讓我們歡迎那最負盛名的平民英雄——他經歷過無數次戰鬥，而這一次，他也凱旋而歸，為我們帶回了勝利！聽吧，看吧，整座城市上上下下，無人不高呼他的名字：艾德拉斯、艾德拉斯！他即將走上榮耀和幸福的巔峰！」",
+  str_favour_pet_2_skin_name_2 = "【寂靜聖女】",
+  str_favour_pet_2_skin_desc_2 = "像普通人一樣愛上一個人，像普通人一樣與愛人白頭偕老。如果沒有發生那天的事情，名為艾德拉斯的英雄會不會擁有更平凡美好的未來？這是不存在的夢，但偶爾想像一下，似乎也不壞。",
+  str_favour_pet_2_skin_name_3 = "【自雪中來】",
+  str_favour_pet_2_skin_desc_3 = "情感封閉、記憶受損、在與暗鬼的戰鬥中全身盔甲破損也不自知，卻依然散發著狂氣與殺意。這樣的他，還是那個曾經人人稱頌的英雄嗎？還是已經成為武器、成為道具，成為恐怖與戰爭的象徵，注定了隕落的命運？",
+  str_favour_pet_quest_tab_btn_2 = "投票獎勵",
+  str_favour_pet_skin_award_get = "已獲得",
+  str_favour_pet_vote2_intro_title = "活動說明",
+  str_favour_pet_vote2_intro_head_1 = "【鎮魂座時裝方案投票】",
+  str_favour_pet_2_quest_reward = "投票獎勵",
+  str_favour_pet_2_vote_fin_msg = "您已投票！",
+  str_favour_pet_female = "女性光靈",
+  str_favour_pet_male = "男性光靈",
+  str_favour_pet_un_pet = "無符合條件的光靈",
+  str_favour_pet_sub_title_3 = "鎮魂座時裝方案投票"
+}
 return config
-

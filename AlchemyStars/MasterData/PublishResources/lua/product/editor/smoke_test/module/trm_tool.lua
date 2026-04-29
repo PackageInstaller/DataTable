@@ -1,26 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/module/trm_tool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("test_robot_module")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotModule.GoldbergEventGetFullComponentID = function(self, campaignID, componentType, componentID)
-  -- function num : 0_0 , upvalues : _ENV
+function TestRobotModule:GoldbergEventGetFullComponentID(campaignID, componentType, componentID)
   return campaignID * CampaignConfigDefine.CONFIG_CAMPAIGN_ID_MOD + componentType * CampaignConfigDefine.CONFIG_COMPONENT_TYPE_MOD + componentID
 end
 
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.PreparePetsByBuildDataList = function(self, TT, tBuildData, status)
-  -- function num : 0_1 , upvalues : _ENV
-  for _,petBuildData in ipairs(tBuildData) do
-    local cmdAddPet = (string.format)("add_asset %s %d 1", self:GetTestAccountOpenID(), petBuildData:GetTemplateID())
+function TestRobotModule:PreparePetsByBuildDataList(TT, tBuildData, status)
+  for _, petBuildData in ipairs(tBuildData) do
+    local cmdAddPet = string.format("add_asset %s %d 1", self:GetTestAccountOpenID(), petBuildData:GetTemplateID())
     self:AsyncGM_AddAsset(TT, status, petBuildData:GetTemplateID(), 1)
     local cmdChangePet = petBuildData:GenerateGMCommand()
     self:__AsyncSendGM(TT, status, cmdChangePet)
   end
 end
-
-

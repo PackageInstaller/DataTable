@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_plot/ui_plot_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPlotItem", UICustomWidget)
 UIPlotItem = UIPlotItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPlotItem.OnShow = function(self)
-  -- function num : 0_0
+function UIPlotItem:OnShow()
   self._txtChapter = self:GetUIComponent("UILocalizationText", "txtChapter")
   self._txtChapterRect = self:GetUIComponent("RectTransform", "txtChapter")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
@@ -19,79 +12,36 @@ UIPlotItem.OnShow = function(self)
   self:Select(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPlotItem.Flush = function(self, v, have3d)
-  -- function num : 0_1
+function UIPlotItem:Flush(v, have3d)
   if not v then
-    return 
+    return
   end
   self._v = v
-  ;
-  (self._txtChapter):SetText(v.stageIdx)
-  ;
-  (self._txtName):SetText(v.name)
-  ;
-  (self._have3dGo):SetActive(have3d)
+  self._txtChapter:SetText(v.stageIdx)
+  self._txtName:SetText(v.name)
+  self._have3dGo:SetActive(have3d)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPlotItem.bgOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIPlotClickItem, (self._v).id)
+function UIPlotItem:bgOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIPlotClickItem, self._v.id)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPlotItem.Select = function(self, select)
-  -- function num : 0_3 , upvalues : _ENV
+function UIPlotItem:Select(select)
   if self.select == select then
-    return 
+    return
   end
   self.select = select
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
   if self.select then
-    (self._txtChapter).fontSize = 70
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._txtName).fontSize = 32
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._txtChapterRect).anchoredPosition = Vector2(0, 45)
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._txtNameRect).sizeDelta = Vector2(315, 50)
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._have3dTr).localScale = Vector3(1, 1, 1)
+    self._txtChapter.fontSize = 70
+    self._txtName.fontSize = 32
+    self._txtChapterRect.anchoredPosition = Vector2(0, 45)
+    self._txtNameRect.sizeDelta = Vector2(315, 50)
+    self._have3dTr.localScale = Vector3(1, 1, 1)
   else
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._txtChapter).fontSize = 36
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._txtName).fontSize = 22
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._txtChapterRect).anchoredPosition = Vector2(0, 20)
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._txtNameRect).sizeDelta = Vector2(222, 50)
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._have3dTr).localScale = Vector3(0.5, 0.5, 0.5)
+    self._txtChapter.fontSize = 36
+    self._txtName.fontSize = 22
+    self._txtChapterRect.anchoredPosition = Vector2(0, 20)
+    self._txtNameRect.sizeDelta = Vector2(222, 50)
+    self._have3dTr.localScale = Vector3(0.5, 0.5, 0.5)
   end
 end
-
-

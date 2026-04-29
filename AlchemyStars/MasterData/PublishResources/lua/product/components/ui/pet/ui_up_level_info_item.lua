@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_up_level_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIUpLevelInfoItem", Object)
 UIUpLevelInfoItem = UIUpLevelInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIUpLevelInfoItem.OnShowItem = function(self)
-  -- function num : 0_0
+function UIUpLevelInfoItem:OnShowItem()
   self.expFormat = "%s<color=#00f8ff>/</color>%s"
   self._name2Assets = {}
   self.key2CustomWidgetPools = {}
@@ -30,77 +23,58 @@ UIUpLevelInfoItem.OnShowItem = function(self)
   self._fillEff = self:GetGameObject("fillEff")
   self._max = self:GetGameObject("max")
   local attCount = 3
-  ;
-  (self._attPool):SpawnObjects("UIAttributeCompareItem", attCount)
+  self._attPool:SpawnObjects("UIAttributeCompareItem", attCount)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local key2CustomWidgetPools = (table.shallowcopy)(self.key2CustomWidgetPools)
+function UIUpLevelInfoItem:Dispose()
+  local key2CustomWidgetPools = table.shallowcopy(self.key2CustomWidgetPools)
   if key2CustomWidgetPools then
-    for k,v in pairs(key2CustomWidgetPools) do
+    for k, v in pairs(key2CustomWidgetPools) do
       v:Dispose()
     end
   end
-  do
-    ;
-    (table.clear)(self.key2CustomWidgetPools)
-    self.key2CustomWidgetPools = nil
-    self.type2ComponentTable = nil
-    self._name = nil
-    self._sliderEff = nil
-    self._expAdd = nil
-    self._toLevel = nil
-    self._toLevelGo = nil
-    self._maxLevelGo = nil
-    self._fromLevel = nil
-    self._attPool = nil
-    self._jiantou = nil
-    self._maxLevelTip = nil
-    self._expProcessText = nil
-    self._expBGGo = nil
-    self._expSlider = nil
-    self._view = nil
-    ;
-    (UIResourceManager.DisposeAllAssets)(self._name2Assets)
-    self._name2Assets = nil
-  end
+  table.clear(self.key2CustomWidgetPools)
+  self.key2CustomWidgetPools = nil
+  self.type2ComponentTable = nil
+  self._name = nil
+  self._sliderEff = nil
+  self._expAdd = nil
+  self._toLevel = nil
+  self._toLevelGo = nil
+  self._maxLevelGo = nil
+  self._fromLevel = nil
+  self._attPool = nil
+  self._jiantou = nil
+  self._maxLevelTip = nil
+  self._expProcessText = nil
+  self._expBGGo = nil
+  self._expSlider = nil
+  self._view = nil
+  UIResourceManager.DisposeAllAssets(self._name2Assets)
+  self._name2Assets = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.OnLevelUpAttValueChanged = function(self, rate)
-  -- function num : 0_2
-  local rowList = (self._attPool):GetAllSpawnList()
+function UIUpLevelInfoItem:OnLevelUpAttValueChanged(rate)
+  local rowList = self._attPool:GetAllSpawnList()
   for index = 1, 3 do
     local tAttItem = rowList[index]
     tAttItem:OnLevelUpAttValueChanged(rate)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.AttValueAnimUpdate = function(self, deltaTime)
-  -- function num : 0_3
-  local rowList = (self._attPool):GetAllSpawnList()
+function UIUpLevelInfoItem:AttValueAnimUpdate(deltaTime)
+  local rowList = self._attPool:GetAllSpawnList()
   local ret = true
   for index = 1, 3 do
     local tAttItem = rowList[index]
     local result = tAttItem:UpdateAttributeAnim(deltaTime)
-    if ret then
-      ret = result
-    end
+    ret = ret and result
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.StartPlayAttributeAmin = function(self)
-  -- function num : 0_4
-  local rowList = (self._attPool):GetAllSpawnList()
+function UIUpLevelInfoItem:StartPlayAttributeAmin()
+  local rowList = self._attPool:GetAllSpawnList()
   local ret = true
   for index = 1, 3 do
     local tAttItem = rowList[index]
@@ -108,395 +82,240 @@ UIUpLevelInfoItem.StartPlayAttributeAmin = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.PlayLevelUpEffect = function(self)
-  -- function num : 0_5
+function UIUpLevelInfoItem:PlayLevelUpEffect()
   if self._sliderEff then
-    (self._sliderEff):SetActive(false)
-    ;
-    (self._sliderEff):SetActive(true)
+    self._sliderEff:SetActive(false)
+    self._sliderEff:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.RefreshData = function(self, idx, petInfo)
-  -- function num : 0_6
+function UIUpLevelInfoItem:RefreshData(idx, petInfo)
   self._petInfo = petInfo
   self:UpLevelCheckIsCurrent()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.RefreshPetUpLevelEvent = function(self, idx, petInfo)
-  -- function num : 0_7
+function UIUpLevelInfoItem:RefreshPetUpLevelEvent(idx, petInfo)
   self._petInfo = petInfo
   self._addExp = 0
   self._neeUpLevelTotalMoney = 0
   self._neeTotalEXp = 0
-  ;
-  (self._expBGGo):SetActive(false)
-  ;
-  (self._toLevelGo):SetActive(false)
-  ;
-  (self._maxLevelGo):SetActive(false)
+  self._expBGGo:SetActive(false)
+  self._toLevelGo:SetActive(false)
+  self._maxLevelGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.PlayAttAnim = function(self, idx)
-  -- function num : 0_8
+function UIUpLevelInfoItem:PlayAttAnim(idx)
   if idx == 1 then
-    (self._fillEff):SetActive(true)
-    local rowList = (self._attPool):GetAllSpawnList()
+    self._fillEff:SetActive(true)
+    local rowList = self._attPool:GetAllSpawnList()
     for index = 1, 3 do
       local tAttItem = rowList[index]
       local yieldTime = (index - 1) * 100
       tAttItem:PlayAnimFirst(yieldTime)
     end
-  else
-    do
-      if idx == 2 then
-        (self._fillEff):SetActive(false)
-        local rowList = (self._attPool):GetAllSpawnList()
-        for index = 1, 3 do
-          local tAttItem = rowList[index]
-          local yieldTime = (index - 1) * 100
-          tAttItem:PlayAnimSecond(yieldTime)
-        end
-      end
+  elseif idx == 2 then
+    self._fillEff:SetActive(false)
+    local rowList = self._attPool:GetAllSpawnList()
+    for index = 1, 3 do
+      local tAttItem = rowList[index]
+      local yieldTime = (index - 1) * 100
+      tAttItem:PlayAnimSecond(yieldTime)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.OnAnimFinished = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local curPetLevel = (self._petInfo):GetPetLevel()
-  local curPetExp = (self._petInfo):GetPetExp()
-  local curPetMaxLevel = (self._petInfo):GetMaxLevel()
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  if curPetMaxLevel <= curPetLevel then
-    (self._expSlider).value = 1
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._expProcessText).text = (string.format)(self.expFormat, "-", "-")
-    ;
-    (self._jiantou):SetActive(false)
-    ;
-    (self._maxLevelTip):SetActive(true)
-    ;
-    (self._max):SetActive(true)
+function UIUpLevelInfoItem:OnAnimFinished()
+  local curPetLevel = self._petInfo:GetPetLevel()
+  local curPetExp = self._petInfo:GetPetExp()
+  local curPetMaxLevel = self._petInfo:GetMaxLevel()
+  if curPetLevel >= curPetMaxLevel then
+    self._expSlider.value = 1
+    self._expProcessText.text = string.format(self.expFormat, "-", "-")
+    self._jiantou:SetActive(false)
+    self._maxLevelTip:SetActive(true)
+    self._max:SetActive(true)
     local maxLevelTipTex = self:GetUIComponent("UILocalizationText", "TextMaxTip")
-    local awaken = (self._petInfo):GetPetGrade()
-    local awakenMax = (self._petInfo):GetMaxGrade()
+    local awaken = self._petInfo:GetPetGrade()
+    local awakenMax = self._petInfo:GetMaxGrade()
     if awaken < awakenMax then
-      maxLevelTipTex:SetText((StringTable.Get)("str_pet_config_upgrade_awakenmax"))
+      maxLevelTipTex:SetText(StringTable.Get("str_pet_config_upgrade_awakenmax"))
     else
-      maxLevelTipTex:SetText((StringTable.Get)("str_pet_config_upgrade_max"))
+      maxLevelTipTex:SetText(StringTable.Get("str_pet_config_upgrade_max"))
     end
-    ;
-    (self._revolvingText):OnRefreshRevolving()
+    self._revolvingText:OnRefreshRevolving()
   else
-    do
-      ;
-      (self._max):SetActive(false)
-      do
-        local upLevelAllExp = (self._petInfo):GetLevelUpNeedExp()
-        ;
-        (self._jiantou):SetActive(true)
-        -- DECOMPILER ERROR at PC75: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._expSlider).value = curPetExp / upLevelAllExp
-        self:SetExpProcessText(curPetExp, upLevelAllExp)
-        ;
-        (self._maxLevelTip):SetActive(false)
-        -- DECOMPILER ERROR at PC90: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._fromLevel).text = (string.format)("%02d", curPetLevel)
-      end
-    end
+    self._max:SetActive(false)
+    local upLevelAllExp = self._petInfo:GetLevelUpNeedExp()
+    self._jiantou:SetActive(true)
+    self._expSlider.value = curPetExp / upLevelAllExp
+    self:SetExpProcessText(curPetExp, upLevelAllExp)
+    self._maxLevelTip:SetActive(false)
   end
+  self._fromLevel.text = string.format("%02d", curPetLevel)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.StopTween = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIUpLevelInfoItem:StopTween()
   if self.tweeners ~= nil and #self.tweeners > 0 then
-    for k,v in pairs(self.tweeners) do
+    for k, v in pairs(self.tweeners) do
       v:Kill()
     end
     self.tweeners = {}
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.ShowLevelInfo = function(self, level)
-  -- function num : 0_11 , upvalues : _ENV
+function UIUpLevelInfoItem:ShowLevelInfo(level)
   if self._sliderEff then
-    (self._sliderEff):SetActive(false)
-    ;
-    (self._sliderEff):SetActive(true)
+    self._sliderEff:SetActive(false)
+    self._sliderEff:SetActive(true)
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._fromLevel).text = (string.format)("%02d", level)
+  self._fromLevel.text = string.format("%02d", level)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.SetExpSliderValue = function(self)
-  -- function num : 0_12
-  local curPetLevel = (self._petInfo):GetPetLevel()
-  local curPetExp = (self._petInfo):GetPetExp()
-  local curPetMaxLevel = (self._petInfo):GetMaxLevel()
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  if curPetMaxLevel <= curPetLevel then
-    (self._expSlider).value = 1
+function UIUpLevelInfoItem:SetExpSliderValue()
+  local curPetLevel = self._petInfo:GetPetLevel()
+  local curPetExp = self._petInfo:GetPetExp()
+  local curPetMaxLevel = self._petInfo:GetMaxLevel()
+  if curPetLevel >= curPetMaxLevel then
+    self._expSlider.value = 1
   else
-    local upLevelAllExp = (self._petInfo):GetLevelUpNeedExp()
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._expSlider).value = curPetExp / upLevelAllExp
+    local upLevelAllExp = self._petInfo:GetLevelUpNeedExp()
+    self._expSlider.value = curPetExp / upLevelAllExp
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.SliderTweenEndCallBack = function(self)
-  -- function num : 0_13
+function UIUpLevelInfoItem:SliderTweenEndCallBack()
   self._stepListInfos = {}
   self.tweeners = {}
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.GetSlider = function(self)
-  -- function num : 0_14
+function UIUpLevelInfoItem:GetSlider()
   return self._expSlider
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.UpLevelCheckIsCurrent = function(self)
-  -- function num : 0_15
+function UIUpLevelInfoItem:UpLevelCheckIsCurrent()
   self:Reset()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.SetDataInit = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIUpLevelInfoItem:SetDataInit()
   self._addExp = 0
   self._neeUpLevelTotalMoney = 0
   self._neeTotalEXp = 0
-  local curPetLevel = (self._petInfo):GetPetLevel()
-  local curPetExp = (self._petInfo):GetPetExp()
-  local curPetMaxLevel = (self._petInfo):GetMaxLevel()
-  ;
-  (self._expBGGo):SetActive(false)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-  if curPetMaxLevel <= curPetLevel then
-    (self._expSlider).value = 1
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._expProcessText).text = (string.format)(self.expFormat, "-", "-")
-    ;
-    (self._maxLevelTip):SetActive(true)
+  local curPetLevel = self._petInfo:GetPetLevel()
+  local curPetExp = self._petInfo:GetPetExp()
+  local curPetMaxLevel = self._petInfo:GetMaxLevel()
+  self._expBGGo:SetActive(false)
+  if curPetLevel >= curPetMaxLevel then
+    self._expSlider.value = 1
+    self._expProcessText.text = string.format(self.expFormat, "-", "-")
+    self._maxLevelTip:SetActive(true)
     local maxLevelTipTex = self:GetUIComponent("UILocalizationText", "TextMaxTip")
-    local awaken = (self._petInfo):GetPetGrade()
-    local awakenMax = (self._petInfo):GetMaxGrade()
+    local awaken = self._petInfo:GetPetGrade()
+    local awakenMax = self._petInfo:GetMaxGrade()
     if awaken < awakenMax then
-      maxLevelTipTex:SetText((StringTable.Get)("str_pet_config_upgrade_awakenmax"))
+      maxLevelTipTex:SetText(StringTable.Get("str_pet_config_upgrade_awakenmax"))
     else
-      maxLevelTipTex:SetText((StringTable.Get)("str_pet_config_upgrade_max"))
+      maxLevelTipTex:SetText(StringTable.Get("str_pet_config_upgrade_max"))
     end
-    ;
-    (self._revolvingText):OnRefreshRevolving()
-    ;
-    (self._max):SetActive(true)
-    ;
-    (self._jiantou):SetActive(false)
+    self._revolvingText:OnRefreshRevolving()
+    self._max:SetActive(true)
+    self._jiantou:SetActive(false)
   else
-    do
-      ;
-      (self._max):SetActive(false)
-      do
-        local upLevelAllExp = (self._petInfo):GetLevelUpNeedExp()
-        self:SetExpProcessText(curPetExp, upLevelAllExp)
-        -- DECOMPILER ERROR at PC82: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._expSlider).value = curPetExp / upLevelAllExp
-        ;
-        (self._maxLevelTip):SetActive(false)
-        ;
-        (self._jiantou):SetActive(true)
-        -- DECOMPILER ERROR at PC97: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._fromLevel).text = (string.format)("%02d", curPetLevel)
-        ;
-        (self._toLevelGo):SetActive(false)
-        ;
-        (self._maxLevelGo):SetActive(false)
-        self._arriveLevel = curPetLevel
-        self._arriveExp = curPetExp
-        self:RefreshAttributeChange(curPetLevel)
-        ;
-        (self._name):SetText((StringTable.Get)((self._petInfo):GetPetName()))
-      end
-    end
+    self._max:SetActive(false)
+    local upLevelAllExp = self._petInfo:GetLevelUpNeedExp()
+    self:SetExpProcessText(curPetExp, upLevelAllExp)
+    self._expSlider.value = curPetExp / upLevelAllExp
+    self._maxLevelTip:SetActive(false)
+    self._jiantou:SetActive(true)
   end
+  self._fromLevel.text = string.format("%02d", curPetLevel)
+  self._toLevelGo:SetActive(false)
+  self._maxLevelGo:SetActive(false)
+  self._arriveLevel = curPetLevel
+  self._arriveExp = curPetExp
+  self:RefreshAttributeChange(curPetLevel)
+  self._name:SetText(StringTable.Get(self._petInfo:GetPetName()))
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.OnHide = function(self)
-  -- function num : 0_17
+function UIUpLevelInfoItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.OnHideCallBack = function(self)
-  -- function num : 0_18
+function UIUpLevelInfoItem:OnHideCallBack()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.SetData = function(self, index, pet)
-  -- function num : 0_19
+function UIUpLevelInfoItem:SetData(index, pet)
   self._petInfo = pet
   self:SetDataInit()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.Reset = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIUpLevelInfoItem:Reset()
   self._addExp = 0
   self._neeUpLevelTotalMoney = 0
   self._neeTotalEXp = 0
-  local curPetLevel = (self._petInfo):GetPetLevel()
-  local curPetExp = (self._petInfo):GetPetExp()
-  local curPetMaxLevel = (self._petInfo):GetMaxLevel()
-  ;
-  (self._expBGGo):SetActive(false)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-  if curPetMaxLevel <= curPetLevel then
-    (self._expSlider).value = 1
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._expProcessText).text = (string.format)(self.expFormat, "-", "-")
-    ;
-    (self._maxLevelTip):SetActive(true)
+  local curPetLevel = self._petInfo:GetPetLevel()
+  local curPetExp = self._petInfo:GetPetExp()
+  local curPetMaxLevel = self._petInfo:GetMaxLevel()
+  self._expBGGo:SetActive(false)
+  if curPetLevel >= curPetMaxLevel then
+    self._expSlider.value = 1
+    self._expProcessText.text = string.format(self.expFormat, "-", "-")
+    self._maxLevelTip:SetActive(true)
     local maxLevelTipTex = self:GetUIComponent("UILocalizationText", "TextMaxTip")
-    local awaken = (self._petInfo):GetPetGrade()
-    local awakenMax = (self._petInfo):GetMaxGrade()
+    local awaken = self._petInfo:GetPetGrade()
+    local awakenMax = self._petInfo:GetMaxGrade()
     if awaken < awakenMax then
-      maxLevelTipTex:SetText((StringTable.Get)("str_pet_config_upgrade_awakenmax"))
+      maxLevelTipTex:SetText(StringTable.Get("str_pet_config_upgrade_awakenmax"))
     else
-      maxLevelTipTex:SetText((StringTable.Get)("str_pet_config_upgrade_max"))
+      maxLevelTipTex:SetText(StringTable.Get("str_pet_config_upgrade_max"))
     end
-    ;
-    (self._revolvingText):OnRefreshRevolving()
-    ;
-    (self._jiantou):SetActive(false)
-    ;
-    (self._max):SetActive(true)
+    self._revolvingText:OnRefreshRevolving()
+    self._jiantou:SetActive(false)
+    self._max:SetActive(true)
   else
-    do
-      do
-        local upLevelAllExp = (self._petInfo):GetLevelUpNeedExp()
-        self:SetExpProcessText(curPetExp, upLevelAllExp)
-        -- DECOMPILER ERROR at PC78: Confused about usage of register: R5 in 'UnsetPending'
+    local upLevelAllExp = self._petInfo:GetLevelUpNeedExp()
+    self:SetExpProcessText(curPetExp, upLevelAllExp)
+    self._expSlider.value = curPetExp / upLevelAllExp
+    self._maxLevelTip:SetActive(false)
+    self._jiantou:SetActive(true)
+    self._max:SetActive(false)
+  end
+  self._fromLevel.text = string.format("%02d", curPetLevel)
+  self._toLevelGo:SetActive(false)
+  self._maxLevelGo:SetActive(false)
+  self._arriveLevel = curPetLevel
+  self._arriveExp = curPetExp
+  self:RefreshAttributeChange(curPetLevel)
+  self._name:SetText(StringTable.Get(self._petInfo:GetPetName()))
+end
 
-        ;
-        (self._expSlider).value = curPetExp / upLevelAllExp
-        ;
-        (self._maxLevelTip):SetActive(false)
-        ;
-        (self._jiantou):SetActive(true)
-        ;
-        (self._max):SetActive(false)
-        -- DECOMPILER ERROR at PC97: Confused about usage of register: R4 in 'UnsetPending'
+function UIUpLevelInfoItem:SetExpProcessText(curPetExp, upLevelAllExp)
+  self._expProcessText.text = string.format(self.expFormat, self:FormatExp(curPetExp), self:FormatExp(upLevelAllExp))
+end
 
-        ;
-        (self._fromLevel).text = (string.format)("%02d", curPetLevel)
-        ;
-        (self._toLevelGo):SetActive(false)
-        ;
-        (self._maxLevelGo):SetActive(false)
-        self._arriveLevel = curPetLevel
-        self._arriveExp = curPetExp
-        self:RefreshAttributeChange(curPetLevel)
-        ;
-        (self._name):SetText((StringTable.Get)((self._petInfo):GetPetName()))
-      end
-    end
+function UIUpLevelInfoItem:FormatExp(_exp)
+  if 999999999 < _exp then
+    local num = math.floor(_exp / 10000000)
+    return tostring(num / 10) .. StringTable.Get("str_common_hundred_million")
+  else
+    return _exp
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.SetExpProcessText = function(self, curPetExp, upLevelAllExp)
-  -- function num : 0_21 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._expProcessText).text = (string.format)(self.expFormat, self:FormatExp(curPetExp), self:FormatExp(upLevelAllExp))
-end
-
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.FormatExp = function(self, _exp)
-  -- function num : 0_22 , upvalues : _ENV
-  if _exp > 999999999 then
-    local num = (math.floor)(_exp / 10000000)
-    return tostring(num / 10) .. (StringTable.Get)("str_common_hundred_million")
-  else
-    do
-      do return _exp end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.RefreshAttributeChange = function(self, tReachLevel)
-  -- function num : 0_23
+function UIUpLevelInfoItem:RefreshAttributeChange(tReachLevel)
   local attVaryInfos = self:GetLevelLerpAttChangeData(tReachLevel)
-  local rowList = (self._attPool):GetAllSpawnList()
+  local rowList = self._attPool:GetAllSpawnList()
   for index = 1, 3 do
     local tAttItem = rowList[index]
     self:_ShowAttItem(tAttItem, attVaryInfos[index], index)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.GetLevelLerpAttChangeData = function(self, tReachLevel)
-  -- function num : 0_24 , upvalues : _ENV
-  local curLevel = (self._petInfo):GetPetLevel()
-  local curLevelConfig = (self._petInfo):GetLevelConfig(curLevel)
-  local nextLevelConfig = (self._petInfo):GetLevelConfig(tReachLevel)
-  local attackValue = (self._petInfo):GetPetAttack()
-  local defenceValue = (self._petInfo):GetPetDefence()
-  local healthValue = (self._petInfo):GetPetHealth()
+function UIUpLevelInfoItem:GetLevelLerpAttChangeData(tReachLevel)
+  local curLevel = self._petInfo:GetPetLevel()
+  local curLevelConfig = self._petInfo:GetLevelConfig(curLevel)
+  local nextLevelConfig = self._petInfo:GetLevelConfig(tReachLevel)
+  local attackValue = self._petInfo:GetPetAttack()
+  local defenceValue = self._petInfo:GetPetDefence()
+  local healthValue = self._petInfo:GetPetHealth()
   local attAttack = {}
   attAttack.attValue = attackValue
   local attDefence = {}
@@ -504,195 +323,131 @@ UIUpLevelInfoItem.GetLevelLerpAttChangeData = function(self, tReachLevel)
   local attHealth = {}
   attHealth.attValue = healthValue
   local curInfos = {}
-  ;
-  (table.insert)(curInfos, attAttack)
-  ;
-  (table.insert)(curInfos, attDefence)
-  ;
-  (table.insert)(curInfos, attHealth)
+  table.insert(curInfos, attAttack)
+  table.insert(curInfos, attDefence)
+  table.insert(curInfos, attHealth)
   local nextLevelAttackConfig = 0
   local nextLevelDefenceConfig = 0
   local nextLevelHealthConfig = 0
-  if curLevel < tReachLevel then
+  if tReachLevel > curLevel then
     nextLevelAttackConfig = nextLevelConfig.Attack - curLevelConfig.Attack
     nextLevelDefenceConfig = nextLevelConfig.Defence - curLevelConfig.Defence
     nextLevelHealthConfig = nextLevelConfig.Health - curLevelConfig.Health
+  elseif curLevel == tReachLevel then
   else
+    Log.fatal("[PetLevelUp] target level error: ", tReachLevel)
   end
-  if curLevel == tReachLevel then
-    (Log.fatal)("[PetLevelUp] target level error: ", tReachLevel)
-    local attNextAttack = {}
-    attNextAttack.attValue = attackValue + (nextLevelAttackConfig)
-    local attNextDefence = {}
-    attNextDefence.attValue = defenceValue + (nextLevelDefenceConfig)
-    local attNextHealth = {}
-    attNextHealth.attValue = healthValue + (nextLevelHealthConfig)
-    local nextInfos = {}
-    ;
-    (table.insert)(nextInfos, attNextAttack)
-    ;
-    (table.insert)(nextInfos, attNextDefence)
-    ;
-    (table.insert)(nextInfos, attNextHealth)
-    local attInfos = {}
-    for index = 1, 3 do
-      local info = {}
-      info.attType = index
-      info.CurAttValue = (curInfos[index]).attValue
-      info.NextAttValue = (nextInfos[index]).attValue
-      ;
-      (table.insert)(attInfos, info)
-    end
-    return attInfos
+  local attNextAttack = {}
+  attNextAttack.attValue = attackValue + nextLevelAttackConfig
+  local attNextDefence = {}
+  attNextDefence.attValue = defenceValue + nextLevelDefenceConfig
+  local attNextHealth = {}
+  attNextHealth.attValue = healthValue + nextLevelHealthConfig
+  local nextInfos = {}
+  table.insert(nextInfos, attNextAttack)
+  table.insert(nextInfos, attNextDefence)
+  table.insert(nextInfos, attNextHealth)
+  local attInfos = {}
+  for index = 1, 3 do
+    local info = {}
+    info.attType = index
+    info.CurAttValue = curInfos[index].attValue
+    info.NextAttValue = nextInfos[index].attValue
+    table.insert(attInfos, info)
   end
+  return attInfos
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem._ShowAttItem = function(self, tAttItem, attInfo, index)
-  -- function num : 0_25
-  (tAttItem:GetGameObject()):SetActive(true)
+function UIUpLevelInfoItem:_ShowAttItem(tAttItem, attInfo, index)
+  tAttItem:GetGameObject():SetActive(true)
   tAttItem:SetData(attInfo)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.Refresh = function(self, isUpLevel, isUpMaxLevel, al, ae, addE)
-  -- function num : 0_26 , upvalues : _ENV
+function UIUpLevelInfoItem:Refresh(isUpLevel, isUpMaxLevel, al, ae, addE)
   self._arriveLevel = al
   self._arriveExp = ae
   self._addExp = addE
   if isUpLevel then
-    (self._toLevelGo):SetActive(true)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._toLevel).text = (string.format)("%02d", self._arriveLevel)
+    self._toLevelGo:SetActive(true)
+    self._toLevel.text = string.format("%02d", self._arriveLevel)
   else
-    ;
-    (self._toLevelGo):SetActive(false)
+    self._toLevelGo:SetActive(false)
   end
-  local curPetExp = (self._petInfo):GetPetExp()
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R7 in 'UnsetPending'
-
+  local curPetExp = self._petInfo:GetPetExp()
   if isUpMaxLevel then
-    (self._expSlider).value = 1
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._expProcessText).text = (string.format)(self.expFormat, "-", "-")
+    self._expSlider.value = 1
+    self._expProcessText.text = string.format(self.expFormat, "-", "-")
   else
-    local levelConfig = (self._petInfo):GetLevelConfig(self._arriveLevel + 1)
+    local levelConfig = self._petInfo:GetLevelConfig(self._arriveLevel + 1)
     if levelConfig then
       self:SetExpProcessText(self._arriveExp, levelConfig.NeedExp)
-      -- DECOMPILER ERROR at PC52: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._expSlider).value = self._arriveExp / levelConfig.NeedExp
+      self._expSlider.value = self._arriveExp / levelConfig.NeedExp
     end
   end
-  do
-    self:RefreshAttributeChange(self._arriveLevel)
-    ;
-    (self._maxLevelGo):SetActive(isUpMaxLevel)
-    if self._addExp <= 0 then
-      (self._expBGGo):SetActive(false)
-    else
-      ;
-      (self._expBGGo):SetActive(true)
-      -- DECOMPILER ERROR at PC78: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._expAdd).text = "+" .. self:FormatExp(self._addExp)
-    end
+  self:RefreshAttributeChange(self._arriveLevel)
+  self._maxLevelGo:SetActive(isUpMaxLevel)
+  if self._addExp <= 0 then
+    self._expBGGo:SetActive(false)
+  else
+    self._expBGGo:SetActive(true)
+    self._expAdd.text = "+" .. self:FormatExp(self._addExp)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.SetView = function(self, view)
-  -- function num : 0_27
+function UIUpLevelInfoItem:SetView(view)
   self._view = view
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.GetName = function(self)
-  -- function num : 0_28
+function UIUpLevelInfoItem:GetName()
   return "UIUpLevelInfoItem"
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.GetUIComponent = function(self, componentTypeName, name)
-  -- function num : 0_29 , upvalues : _ENV
+function UIUpLevelInfoItem:GetUIComponent(componentTypeName, name)
   if componentTypeName == "UISelectObjectPath" then
-    local uiCustomWidgetPool = (self.key2CustomWidgetPools)[name]
+    local uiCustomWidgetPool = self.key2CustomWidgetPools[name]
     if uiCustomWidgetPool then
       return uiCustomWidgetPool
     end
     local view = self._view
-    do
-      do
-        if view then
-          local dynamicInfoOfEngine = view:GetUIComponent(componentTypeName, name)
-          if dynamicInfoOfEngine then
-            uiCustomWidgetPool = UICustomWidgetPool:New(self, dynamicInfoOfEngine)
-            -- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
-
-            ;
-            (self.key2CustomWidgetPools)[name] = uiCustomWidgetPool
-            return uiCustomWidgetPool
-          end
-        end
-        ;
-        (Log.fatal)("UIController", self:GetName(), " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
-        do return nil end
-        local name2Component = (self.type2ComponentTable)[componentTypeName]
-        do
-          if name2Component then
-            local component = name2Component[name]
-            if component then
-              return component
-            end
-          end
-          local view = self._view
-          do
-            if view then
-              local target = view:GetUIComponent(componentTypeName, name)
-              -- DECOMPILER ERROR at PC60: Confused about usage of register: R6 in 'UnsetPending'
-
-              if target then
-                if name2Component == nil then
-                  (self.type2ComponentTable)[componentTypeName] = {}
-                  name2Component = (self.type2ComponentTable)[componentTypeName]
-                end
-                name2Component[name] = target
-                return target
-              end
-            end
-            ;
-            (Log.fatal)("UIController", self:GetName(), " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
-            do return nil end
-          end
-        end
+    if view then
+      local dynamicInfoOfEngine = view:GetUIComponent(componentTypeName, name)
+      if dynamicInfoOfEngine then
+        uiCustomWidgetPool = UICustomWidgetPool:New(self, dynamicInfoOfEngine)
+        self.key2CustomWidgetPools[name] = uiCustomWidgetPool
+        return uiCustomWidgetPool
       end
     end
+    Log.fatal("UIController", self:GetName(), " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
+    return nil
+  else
+    local name2Component = self.type2ComponentTable[componentTypeName]
+    if name2Component then
+      local component = name2Component[name]
+      if component then
+        return component
+      end
+    end
+    local view = self._view
+    if view then
+      local target = view:GetUIComponent(componentTypeName, name)
+      if target then
+        if name2Component == nil then
+          self.type2ComponentTable[componentTypeName] = {}
+          name2Component = self.type2ComponentTable[componentTypeName]
+        end
+        name2Component[name] = target
+        return target
+      end
+    end
+    Log.fatal("UIController", self:GetName(), " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.GetGameObject = function(self, name)
-  -- function num : 0_30
-  return (self._view):GetGameObject(name)
+function UIUpLevelInfoItem:GetGameObject(name)
+  return self._view:GetGameObject(name)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUpLevelInfoItem.GetAsset = function(self, name, loadType)
-  -- function num : 0_31 , upvalues : _ENV
-  return (UIResourceManager.GetAsset)(name, loadType, self._name2Assets)
+function UIUpLevelInfoItem:GetAsset(name, loadType)
+  return UIResourceManager.GetAsset(name, loadType, self._name2Assets)
 end
-
-

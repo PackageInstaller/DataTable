@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_throw_monster_and_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectThrowMonsterAndDamageResult", SkillEffectResultBase)
 SkillEffectThrowMonsterAndDamageResult = SkillEffectThrowMonsterAndDamageResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectThrowMonsterAndDamageResult.Constructor = function(self, monsterEntityIDs, damageRes)
-  -- function num : 0_0
+function SkillEffectThrowMonsterAndDamageResult:Constructor(monsterEntityIDs, damageRes)
   self._monsterEntityIDs = monsterEntityIDs
   self._damageResult = damageRes
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectThrowMonsterAndDamageResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectThrowMonsterAndDamageResult:GetEffectType()
   return SkillEffectType.ThrowMonsterAndDamage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectThrowMonsterAndDamageResult.GetMonsterEntityIDs = function(self)
-  -- function num : 0_2
+function SkillEffectThrowMonsterAndDamageResult:GetMonsterEntityIDs()
   return self._monsterEntityIDs
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectThrowMonsterAndDamageResult.GetDamageResult = function(self)
-  -- function num : 0_3
+function SkillEffectThrowMonsterAndDamageResult:GetDamageResult()
   return self._damageResult
 end
-
-

@@ -1,32 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_damage_to_buff_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_damage")
 _class("SkillEffectCalc_DamageToBuffTarget", SkillEffectCalc_Damage)
 SkillEffectCalc_DamageToBuffTarget = SkillEffectCalc_DamageToBuffTarget
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_DamageToBuffTarget.DoSkillEffectCalculator = function(self, calcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_DamageToBuffTarget:DoSkillEffectCalculator(calcParam)
   local results = {}
   local effectParam = calcParam:GetSkillEffectParam()
   local specificBuffEffectType = effectParam:GetSpecificBuffEffectType()
-  local lbuffsvc = (self._world):GetService("BuffLogic")
+  local lbuffsvc = self._world:GetService("BuffLogic")
   local targets = calcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
-    local e = (self._world):GetEntityByID(targetID)
+  for _, targetID in ipairs(targets) do
+    local e = self._world:GetEntityByID(targetID)
     local cBuff = e:BuffComponent()
     local tBuff = cBuff:GetBuffArrayByBuffEffect(specificBuffEffectType)
-    if #tBuff > 0 then
+    if 0 < #tBuff then
       local result = self:_CalculateSingleTarget(calcParam, targetID)
       if result then
-        (table.appendArray)(results, result)
+        table.appendArray(results, result)
       end
     end
   end
   return results
 end
-
-

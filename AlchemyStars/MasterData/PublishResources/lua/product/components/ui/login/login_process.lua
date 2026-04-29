@@ -1,280 +1,202 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/login/login_process.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("dns_process")
-_enum("LoginRes", {Success = 0, GetServerFailed = 1, MobileLoginFailed = 2, ChooseRoleFailed = 3, CreateRoleFailed = 4, ServerMaintaining = 5})
+_enum("LoginRes", {
+  Success = 0,
+  GetServerFailed = 1,
+  MobileLoginFailed = 2,
+  ChooseRoleFailed = 3,
+  CreateRoleFailed = 4,
+  ServerMaintaining = 5
+})
 _class("LoginProcess", Object)
 LoginProcess = LoginProcess
-local dns = nil
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
+local dns
 
-LoginProcess.LoginTask = function(self, TT, openID, address)
-  -- function num : 0_0 , upvalues : dns, _ENV
+function LoginProcess:LoginTask(TT, openID, address)
   if dns == nil then
     dns = DnsProcess:New()
   end
-  local bulletin = (GameGlobal.GetModule)(BulletinModule)
+  local bulletin = GameGlobal.GetModule(BulletinModule)
   local getServerSucceed = false
-  local res = nil
-  for k,vt in ipairs(address) do
+  local res
+  for k, vt in ipairs(address) do
     local ips = dns:AnalysisIP(TT, vt.ip)
     if ips == nil or ips == "" then
-      (Log.debug)("[login] ", "AnalysisIP is empty ,use ", vt.ip)
+      Log.debug("[login] ", "AnalysisIP is empty ,use ", vt.ip)
       ips = vt.ip
     end
-    ;
-    (Log.debug)("[login] ", "bulletin ip ", ips, " port ", vt.port, " openid ", openID)
+    Log.debug("[login] ", "bulletin ip ", ips, " port ", vt.port, " openid ", openID)
     res = self:GetServerInfo(TT, ips, vt.port)
     if res == LoginRes.Success then
       getServerSucceed = true
       break
-    else
+    elseif res == LoginRes.ServerMaintaining then
+      break
     end
   end
-  do
-    if res == LoginRes.ServerMaintaining or not getServerSucceed then
-      return res
-    end
-    self:ConnectGatewayAndGame(TT, bulletin.current_gateway, bulletin.current_server)
-    return self:LoginGame(TT)
+  if not getServerSucceed then
+    return res
   end
+  self:ConnectGatewayAndGame(TT, bulletin.current_gateway, bulletin.current_server)
+  return self:LoginGame(TT)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginProcess._ToastErrorMessage = function(self, stMsgID, nErrorCode)
-  -- function num : 0_1 , upvalues : _ENV
+function LoginProcess:_ToastErrorMessage(stMsgID, nErrorCode)
   local nLoginStep = Enum_Login_Step.E_Login_Step_RequestGetDefaultServerInfo
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)(stMsgID) .. "[" .. tostring(nLoginStep) .. ", " .. tostring(nErrorCode) .. "]")
+  ToastManager.ShowToast(StringTable.Get(stMsgID) .. "[" .. tostring(nLoginStep) .. ", " .. tostring(nErrorCode) .. "]")
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginProcess.GetServerInfo = function(self, TT, ip, port)
-  -- function num : 0_2 , upvalues : _ENV
-  ((((GameGlobal.GameLogic)()).CallCenter):GetCallerLua("bulletin")):SetLinkConn((NetAddrInfo.New2)(ip, port))
-  local bulletin = (GameGlobal.GetModule)(BulletinModule)
-  do
-    if EDITOR then
-      local gmproxy = (GameGlobal.GetModule)(GMProxyModule)
-      gmproxy:Connect(ip, 31000)
-    end
-    local bulletin_res = bulletin:GetDefaultServerInfo(TT)
-    if not bulletin_res:GetSucc() then
-      YIELD(TT)
-      ;
-      (bulletin.caller):Disconnect("normal")
-      local nDefaultServerResult = bulletin_res:GetResult()
-      if nDefaultServerResult ~= GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_SUCCEED or nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_NO_GATEWAY then
-        self:_ToastErrorMessage("str_login_server_no_gateway", nDefaultServerResult)
-      else
-        if nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_NO_LOGIN_STATUS then
-          self:_ToastErrorMessage("str_login_need_retry", nDefaultServerResult)
-        else
-          if nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_ERR_BY_LOGIN_STATUS then
-            self:_ToastErrorMessage("str_login_need_retry", nDefaultServerResult)
-          else
-            if nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_ERR_BY_BALANCE then
-              self:_ToastErrorMessage("str_login_need_retry", nDefaultServerResult)
-            else
-              if nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_ERR_BY_AVAIL then
-                self:_ToastErrorMessage("str_login_need_retry", nDefaultServerResult)
-              else
-                if nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_ERR_BY_RECOMMEND then
-                  self:_ToastErrorMessage("str_login_need_retry", nDefaultServerResult)
-                else
-                  if nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_ERR_MainTain then
-                    (Log.error)("[login] ", "server is maintain")
-                    ;
-                    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, (StringTable.Get)("str_login_maintain_white_title"), (StringTable.Get)("str_login_maintain"))
-                    ;
-                    (Log.error)("[login] ", "Get default server failed str_login_getserverinfo_error", (StringTable.Get)("str_login_getserverinfo_error"))
-                    return LoginRes.ServerMaintaining
-                  else
-                    if nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_ERR_BY_ZONE_FERQ then
-                      self:_ToastErrorMessage("str_login_getbalance_game_error", nDefaultServerResult)
-                    else
-                      if nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_ERR_BY_ZONE_FULL then
-                        self:_ToastErrorMessage("str_login_getbalance_game_error", nDefaultServerResult)
-                      else
-                        self:_ToastErrorMessage("str_login_getserverinfo_error", nDefaultServerResult)
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-      ;
-      (Log.error)("[login] BulletinModule:GetDefaultServerInfo result ", nDefaultServerResult)
-      return LoginRes.GetServerFailed
-    end
-    do
-      ;
-      (Log.debug)("[login] Current gateway server address ", (bulletin.current_gateway).ip, ":", (bulletin.current_gateway).port)
-      ;
-      (bulletin.caller):Disconnect("normal")
-      return LoginRes.Success
-    end
+function LoginProcess:GetServerInfo(TT, ip, port)
+  GameGlobal.GameLogic().CallCenter:GetCallerLua("bulletin"):SetLinkConn(NetAddrInfo.New2(ip, port))
+  local bulletin = GameGlobal.GetModule(BulletinModule)
+  if EDITOR then
+    local gmproxy = GameGlobal.GetModule(GMProxyModule)
+    gmproxy:Connect(ip, 31000)
   end
+  local bulletin_res = bulletin:GetDefaultServerInfo(TT)
+  if not bulletin_res:GetSucc() then
+    YIELD(TT)
+    bulletin.caller:Disconnect("normal")
+    local nDefaultServerResult = bulletin_res:GetResult()
+    if nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_SUCCEED then
+    elseif nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_NO_GATEWAY then
+      self:_ToastErrorMessage("str_login_server_no_gateway", nDefaultServerResult)
+    elseif nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_NO_LOGIN_STATUS then
+      self:_ToastErrorMessage("str_login_need_retry", nDefaultServerResult)
+    elseif nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_ERR_BY_LOGIN_STATUS then
+      self:_ToastErrorMessage("str_login_need_retry", nDefaultServerResult)
+    elseif nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_ERR_BY_BALANCE then
+      self:_ToastErrorMessage("str_login_need_retry", nDefaultServerResult)
+    elseif nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_ERR_BY_AVAIL then
+      self:_ToastErrorMessage("str_login_need_retry", nDefaultServerResult)
+    elseif nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_ERR_BY_RECOMMEND then
+      self:_ToastErrorMessage("str_login_need_retry", nDefaultServerResult)
+    elseif nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_ERR_MainTain then
+      Log.error("[login] ", "server is maintain")
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, StringTable.Get("str_login_maintain_white_title"), StringTable.Get("str_login_maintain"))
+      Log.error("[login] ", "Get default server failed str_login_getserverinfo_error", StringTable.Get("str_login_getserverinfo_error"))
+      return LoginRes.ServerMaintaining
+    elseif nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_ERR_BY_ZONE_FERQ then
+      self:_ToastErrorMessage("str_login_getbalance_game_error", nDefaultServerResult)
+    elseif nDefaultServerResult == GET_DEFAULT_SERVER_CODE.GET_DEFAULT_SERVER_ERR_BY_ZONE_FULL then
+      self:_ToastErrorMessage("str_login_getbalance_game_error", nDefaultServerResult)
+    else
+      self:_ToastErrorMessage("str_login_getserverinfo_error", nDefaultServerResult)
+    end
+    Log.error("[login] BulletinModule:GetDefaultServerInfo result ", nDefaultServerResult)
+    return LoginRes.GetServerFailed
+  end
+  Log.debug("[login] Current gateway server address ", bulletin.current_gateway.ip, ":", bulletin.current_gateway.port)
+  bulletin.caller:Disconnect("normal")
+  return LoginRes.Success
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginProcess.ConnectGatewayAndGame = function(self, TT, gatewayInfo, gameServer)
-  -- function num : 0_3 , upvalues : dns, _ENV
+function LoginProcess:ConnectGatewayAndGame(TT, gatewayInfo, gameServer)
   gatewayInfo.ip = dns:AnalysisIP(TT, gatewayInfo.ip)
-  ;
-  (Log.debug)("[login] ConnectGatewayAndGame ", gatewayInfo.ip, ":", gatewayInfo.port, " game ", gameServer.id)
-  local bulletin = (GameGlobal.GetModule)(BulletinModule)
+  Log.debug("[login] ConnectGatewayAndGame ", gatewayInfo.ip, ":", gatewayInfo.port, " game ", gameServer.id)
+  local bulletin = GameGlobal.GetModule(BulletinModule)
   local token = bulletin.token
-  ;
-  ((((GameGlobal.GameLogic)()).CallCenter):GetCallerLua("gateway")):SetLink2Conn((NetAddrInfo.New2)(gatewayInfo.ip, gatewayInfo.port), token)
-  ;
-  ((((GameGlobal.GameLogic)()).CallCenter):GetCallerLua("game")):SetPipe2Conn(NetToken:New(NetTokenType.TOKEN_GAME, "GM", gameServer.id), "gateway")
+  GameGlobal.GameLogic().CallCenter:GetCallerLua("gateway"):SetLink2Conn(NetAddrInfo.New2(gatewayInfo.ip, gatewayInfo.port), token)
+  GameGlobal.GameLogic().CallCenter:GetCallerLua("game"):SetPipe2Conn(NetToken:New(NetTokenType.TOKEN_GAME, "GM", gameServer.id), "gateway")
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginProcess.LoginGame = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  local bulletin = (GameGlobal.GetModule)(BulletinModule)
-  local login_module = (GameGlobal.GetModule)(LoginModule)
-  local openid = ((GameGlobal.GameLogic)()):GetOpenId()
-  if (login_module.tempList)[openid] then
-    (ToastManager.ShowToast)((StringTable.Get)("str_common_close_createrole"))
-    return 
+function LoginProcess:LoginGame(TT)
+  local bulletin = GameGlobal.GetModule(BulletinModule)
+  local login_module = GameGlobal.GetModule(LoginModule)
+  local openid = GameGlobal.GameLogic():GetOpenId()
+  if login_module.tempList[openid] then
+    ToastManager.ShowToast(StringTable.Get("str_common_close_createrole"))
+    return
   end
-  local login_res = login_module:Login(TT, (bulletin.current_server).id, false)
+  local login_res = login_module:Login(TT, bulletin.current_server.id, false)
   if login_res:GetSucc() then
-    local lm = (GameGlobal.GetModule)(LoginModule)
+    local lm = GameGlobal.GetModule(LoginModule)
     lm:EnterGameSucc()
     login_res = login_module:ChooseRole(TT, 0)
     if login_res.m_result == ROLE_RESULT_CODE.ROLE_ERROR_NOT_ROLE then
       return self:CreateRoleTask(TT)
+    elseif login_res:GetSucc() then
+      Log.debug("[login] ", "角色登录成功")
+      return LoginRes.Success
     else
-      if login_res:GetSucc() then
-        (Log.debug)("[login] ", "角色登录成功")
-        return LoginRes.Success
-      else
-        ;
-        (Log.debug)("[login] ", "ChooseRole error")
-        self:ShowLoginFailedMsg(-1)
-        return LoginRes.MobileLoginFailed
-      end
+      Log.debug("[login] ", "ChooseRole error")
+      self:ShowLoginFailedMsg(-1)
+      return LoginRes.MobileLoginFailed
     end
   else
-    do
-      if login_res.m_result ~= MOBILE_LOGIN_ERROR.MOBILE_LOGIN_BAN then
-        (Log.fatal)("[login] ", "LoginTask err:", login_res.m_result)
-        self:ShowLoginFailedMsg(login_res.m_result)
-      end
-      do return LoginRes.MobileLoginFailed end
+    if login_res.m_result ~= MOBILE_LOGIN_ERROR.MOBILE_LOGIN_BAN then
+      Log.fatal("[login] ", "LoginTask err:", login_res.m_result)
+      self:ShowLoginFailedMsg(login_res.m_result)
     end
+    return LoginRes.MobileLoginFailed
   end
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginProcess.ShowLoginFailedMsg = function(self, res)
-  -- function num : 0_5 , upvalues : _ENV
+function LoginProcess:ShowLoginFailedMsg(res)
   local nLoginStep = Enum_Login_Step.E_Login_Step_RequestChooseRole
   local errorstr = "[" .. tostring(nLoginStep) .. ", " .. tostring(res) .. "]"
   if res == MOBILE_LOGIN_ERROR.MOBILE_LOGIN_RETRY then
-    (ToastManager.ShowToast)((StringTable.Get)("str_login_need_retry") .. errorstr)
-  else
-    if res == MOBILE_LOGIN_ERROR.MOBILE_LOGIN_MSDK_ERROR then
-      if IsPc() then
-        (ToastManager.ShowToast)((StringTable.Get)("str_login_code_exit") .. errorstr)
-      else
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_login_code_accredit") .. errorstr)
-      end
+    ToastManager.ShowToast(StringTable.Get("str_login_need_retry") .. errorstr)
+  elseif res == MOBILE_LOGIN_ERROR.MOBILE_LOGIN_MSDK_ERROR then
+    if IsPc() then
+      ToastManager.ShowToast(StringTable.Get("str_login_code_exit") .. errorstr)
     else
-      if res == -1 then
-        (ToastManager.ShowToast)((StringTable.Get)("str_login_load_data_error") .. errorstr)
-      else
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_login_maintain") .. errorstr)
-      end
+      ToastManager.ShowToast(StringTable.Get("str_login_code_accredit") .. errorstr)
     end
+  elseif res == -1 then
+    ToastManager.ShowToast(StringTable.Get("str_login_load_data_error") .. errorstr)
+  else
+    ToastManager.ShowToast(StringTable.Get("str_login_maintain") .. errorstr)
   end
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginProcess.CreateRoleTask = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  local login_module = (GameGlobal.GetModule)(LoginModule)
-  local openid = ((GameGlobal.GameLogic)()):GetOpenId()
+function LoginProcess:CreateRoleTask(TT)
+  local login_module = GameGlobal.GetModule(LoginModule)
+  local openid = GameGlobal.GameLogic():GetOpenId()
   local sex = 0
   local create_role_res = login_module:RoleCreate(TT, openid, sex)
   if create_role_res:GetSucc() then
-    (Log.debug)("[login] ", "Create Role success:", create_role_res.m_result)
+    Log.debug("[login] ", "Create Role success:", create_role_res.m_result)
     local chooseRole = login_module:ChooseRole(TT, create_role_res.pstid)
     if chooseRole:GetSucc() then
-      (Log.debug)("[login] ", "角色登录成功")
+      Log.debug("[login] ", "角色登录成功")
       return LoginRes.Success
     else
-      ;
-      (Log.fatal)("[login] ", "LoginTask err:", chooseRole.m_result)
+      Log.fatal("[login] ", "LoginTask err:", chooseRole.m_result)
       self:ShowLoginFailedMsg(chooseRole.m_result)
       return LoginRes.ChooseRoleFailed
     end
   else
-    do
-      ;
-      (Log.fatal)("[login] ", "Create Role err:", create_role_res.m_result)
-      if create_role_res.m_result == ROLE_RESULT_CODE.ROLE_ERROR_CLOSE_REGISTER then
-        (ToastManager.ShowToast)((StringTable.Get)("str_common_close_createrole"))
-        -- DECOMPILER ERROR at PC74: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (login_module.tempList)[openid] = true
-      else
-        local nLoginStep = Enum_Login_Step.E_Login_Step_RequestCreateRole
-        local errorstr = "[" .. tostring(nLoginStep) .. ", " .. tostring(res) .. "]"
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_login_load_data_error") .. errorstr)
-      end
-      do
-        do return LoginRes.CreateRoleFailed end
-      end
+    Log.fatal("[login] ", "Create Role err:", create_role_res.m_result)
+    if create_role_res.m_result == ROLE_RESULT_CODE.ROLE_ERROR_CLOSE_REGISTER then
+      ToastManager.ShowToast(StringTable.Get("str_common_close_createrole"))
+      login_module.tempList[openid] = true
+    else
+      local nLoginStep = Enum_Login_Step.E_Login_Step_RequestCreateRole
+      local errorstr = "[" .. tostring(nLoginStep) .. ", " .. tostring(res) .. "]"
+      ToastManager.ShowToast(StringTable.Get("str_login_load_data_error") .. errorstr)
     end
+    return LoginRes.CreateRoleFailed
   end
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginProcess.TempCheckMailTask = function(self, TT, address, mailAddr)
-  -- function num : 0_7 , upvalues : dns, _ENV
+function LoginProcess:TempCheckMailTask(TT, address, mailAddr)
   if dns == nil then
     dns = DnsProcess:New()
   end
-  local bulletin = ((GameGlobal.GetModule)(BulletinModule))
-  local res, ret = nil, nil
-  for k,vt in ipairs(address) do
+  local bulletin = GameGlobal.GetModule(BulletinModule)
+  local res, ret
+  for k, vt in ipairs(address) do
     local ips = dns:AnalysisIP(TT, vt.ip)
     if ips == nil or ips == "" then
-      (Log.debug)("[TempCheckMailTask] ", "AnalysisIP is empty ,use ", vt.ip)
+      Log.debug("[TempCheckMailTask] ", "AnalysisIP is empty ,use ", vt.ip)
       ips = vt.ip
     end
-    ;
-    (Log.debug)("[TempCheckMailTask] ", "bulletin ip ", ips, " port ", vt.port)
-    ;
-    ((((GameGlobal.GameLogic)()).CallCenter):GetCallerLua("bulletin")):SetLinkConn((NetAddrInfo.New2)(ips, vt.port))
-    res = bulletin:RequestTempMailMaintain(TT, mailAddr)
-  end
-  do
-    if not res:GetSucc() then
-      return res, ret
+    Log.debug("[TempCheckMailTask] ", "bulletin ip ", ips, " port ", vt.port)
+    GameGlobal.GameLogic().CallCenter:GetCallerLua("bulletin"):SetLinkConn(NetAddrInfo.New2(ips, vt.port))
+    res, ret = bulletin:RequestTempMailMaintain(TT, mailAddr)
+    if res:GetSucc() then
+      break
     end
   end
+  return res, ret
 end
-
-

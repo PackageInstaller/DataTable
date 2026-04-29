@@ -1,146 +1,100 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/wishing/raise/ui_build_raise_fish.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBuildRaiseFish", UIController)
 UIBuildRaiseFish = UIBuildRaiseFish
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildRaiseFish.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBuildRaiseFish:LoadDataOnEnter(TT, res, uiParams)
   self._raiseFishDatas = UIBuildRaiseFishDatas:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFish.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetInteractPointUIStatus, false)
+function UIBuildRaiseFish:OnShow(uiParams)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetInteractPointUIStatus, false)
   self._fishLoader = self:GetUIComponent("UISelectObjectPath", "FishList")
   self._raiseFishLoader = self:GetUIComponent("UISelectObjectPath", "RaiseFishList")
   self._fishCountLabel = self:GetUIComponent("UILocalizationText", "FishCount")
   self._btnOpenFish = self:GetGameObject("BtnOpenFish")
   self._btnCloseFish = self:GetGameObject("BtnCloseFish")
   self._bottomTran = self:GetUIComponent("RectTransform", "Bottom")
-  ;
-  (self._btnOpenFish):SetActive(true)
-  ;
-  (self._btnCloseFish):SetActive(false)
+  self._btnOpenFish:SetActive(true)
+  self._btnCloseFish:SetActive(false)
   self:RefreshUI()
   self._isChange = false
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.EnterFindTreasure)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideHomelandMainUI, false, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.EnterFindTreasure)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideHomelandMainUI, false, true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFish.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function UIBuildRaiseFish:OnHide()
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
   if not homelandClient then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideHomelandMainUI, true, true)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshInteractUI)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetInteractPointUIStatus, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideHomelandMainUI, true, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshInteractUI)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetInteractPointUIStatus, true)
   if self._isChange then
-    (HomelandWishingConst.ForceUpdateRaiseFishData)()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WishingRefreshFish)
+    HomelandWishingConst.ForceUpdateRaiseFishData()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.WishingRefreshFish)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ExitFindTreasure)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ExitFindTreasure)
   local cameraMgr = homelandClient:CameraManager()
   local followCameraController = cameraMgr:FollowCameraController()
   followCameraController:LeaveFocus()
-  local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+  local characterController = homelandClient:CharacterManager():MainCharacterController()
   characterController:SetForbiddenMove(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFish.RefreshUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local remainFishs = (self._raiseFishDatas):GetRemainFish()
+function UIBuildRaiseFish:RefreshUI()
+  local remainFishs = self._raiseFishDatas:GetRemainFish()
   local count = #remainFishs
-  ;
-  (self._fishLoader):SpawnObjects("UIBuildRaiseFishItem", count)
-  local items = (self._fishLoader):GetAllSpawnList()
+  self._fishLoader:SpawnObjects("UIBuildRaiseFishItem", count)
+  local items = self._fishLoader:GetAllSpawnList()
   for i = 1, count do
-    (items[i]):Refresh(self, remainFishs[i])
+    items[i]:Refresh(self, remainFishs[i])
   end
-  local raiseFishs = (self._raiseFishDatas):GetRaiseFish()
+  local raiseFishs = self._raiseFishDatas:GetRaiseFish()
   count = #raiseFishs
-  local maxCount = (HomelandWishingConst.GetMaxRaiseFishCount)()
-  ;
-  (self._raiseFishLoader):SpawnObjects("UIBuildRaiseFishWishFishItem", maxCount)
-  local items = (self._raiseFishLoader):GetAllSpawnList()
+  local maxCount = HomelandWishingConst.GetMaxRaiseFishCount()
+  self._raiseFishLoader:SpawnObjects("UIBuildRaiseFishWishFishItem", maxCount)
+  local items = self._raiseFishLoader:GetAllSpawnList()
   for i = 1, maxCount do
-    if i <= (table.count)(raiseFishs) then
-      (items[i]):Refresh(self, raiseFishs[i])
+    if i <= table.count(raiseFishs) then
+      items[i]:Refresh(self, raiseFishs[i])
     else
-      ;
-      (items[i]):ShowBackGround(true)
+      items[i]:ShowBackGround(true)
     end
   end
-  ;
-  (self._fishCountLabel):SetText((StringTable.Get)("str_homeland_raise_fish_count_tips", (self._raiseFishDatas):GetRaiseFishCount(), (HomelandWishingConst.GetMaxRaiseFishCount)()))
+  self._fishCountLabel:SetText(StringTable.Get("str_homeland_raise_fish_count_tips", self._raiseFishDatas:GetRaiseFishCount(), HomelandWishingConst.GetMaxRaiseFishCount()))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFish.RaiseFish = function(self, raiseFishData)
-  -- function num : 0_4 , upvalues : _ENV
-  if (HomelandWishingConst.GetMaxRaiseFishCount)() <= (self._raiseFishDatas):GetRaiseFishCount() then
-    return 
+function UIBuildRaiseFish:RaiseFish(raiseFishData)
+  if self._raiseFishDatas:GetRaiseFishCount() >= HomelandWishingConst.GetMaxRaiseFishCount() then
+    return
   end
-  local fishData = (self._raiseFishDatas):RaiseFish(raiseFishData)
+  local fishData = self._raiseFishDatas:RaiseFish(raiseFishData)
   self:RefreshUI()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WishingAddFish, fishData:GetId(), fishData:GetInstanceId())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.WishingAddFish, fishData:GetId(), fishData:GetInstanceId())
   self._isChange = true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFish.UnRaiseFish = function(self, raiseFishData)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._raiseFishDatas):UnRaiseFish(raiseFishData)
+function UIBuildRaiseFish:UnRaiseFish(raiseFishData)
+  self._raiseFishDatas:UnRaiseFish(raiseFishData)
   self:RefreshUI()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WishingRemoveFish, raiseFishData:GetInstanceId())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.WishingRemoveFish, raiseFishData:GetInstanceId())
   self._isChange = true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFish.BtnCloseOnClick = function(self, go)
-  -- function num : 0_6
+function UIBuildRaiseFish:BtnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFish.BtnRaiseOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.UpdateWishingFish, self)
+function UIBuildRaiseFish:BtnRaiseOnClick(go)
+  GameGlobal.TaskManager():StartTask(self.UpdateWishingFish, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFish.UpdateWishingFish = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
+function UIBuildRaiseFish:UpdateWishingFish(TT)
   self:Lock("UIBuildRaiseFish_UpdateWishingFish")
-  local homelandModlue = (GameGlobal.GetModule)(HomelandModule)
+  local homelandModlue = GameGlobal.GetModule(HomelandModule)
   local fishTable = {}
-  local raiseFishs = (self._raiseFishDatas):GetRaiseFish()
+  local raiseFishs = self._raiseFishDatas:GetRaiseFish()
   for i = 1, #raiseFishs do
     local raiseData = raiseFishs[i]
     local id = raiseData:GetId()
@@ -152,56 +106,34 @@ UIBuildRaiseFish.UpdateWishingFish = function(self, TT)
   end
   local ret = homelandModlue:ApplyUpdateWishingPoolAllFish(TT, fishTable)
   if ret:GetSucc() then
-    if (table.count)(fishTable) <= 0 then
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_raise_fish_empty"))
+    if table.count(fishTable) <= 0 then
+      ToastManager.ShowHomeToast(StringTable.Get("str_homeland_raise_fish_empty"))
     else
-      ;
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_raise_success"))
+      ToastManager.ShowHomeToast(StringTable.Get("str_homeland_raise_success"))
     end
     self._isChange = false
   else
-    ;
-    (Log.error)("养鱼错误")
+    Log.error("养鱼错误")
   end
   self:UnLock("UIBuildRaiseFish_UpdateWishingFish")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFish.BtnCloseFishOnClick = function(self)
-  -- function num : 0_9
+function UIBuildRaiseFish:BtnCloseFishOnClick()
   self:SetPanelStatus(true)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFish.BtnOpenFishOnClick = function(self)
-  -- function num : 0_10
+function UIBuildRaiseFish:BtnOpenFishOnClick()
   self:SetPanelStatus(false)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFish.SetPanelStatus = function(self, status)
-  -- function num : 0_11 , upvalues : _ENV
-  (self._btnCloseFish):SetActive(not status)
-  ;
-  (self._btnOpenFish):SetActive(status)
+function UIBuildRaiseFish:SetPanelStatus(status)
+  self._btnCloseFish:SetActive(not status)
+  self._btnOpenFish:SetActive(status)
   if status then
     local pos = Vector2(0, 0)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._bottomTran).anchoredPosition = pos
+    self._bottomTran.anchoredPosition = pos
   else
-    do
-      local pos = Vector2(0, -292)
-      -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._bottomTran).anchoredPosition = pos
-    end
+    local pos = Vector2(0, -292)
+    self._bottomTran.anchoredPosition = pos
   end
 end
-
-

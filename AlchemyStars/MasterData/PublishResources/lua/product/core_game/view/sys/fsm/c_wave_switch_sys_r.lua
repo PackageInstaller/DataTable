@@ -1,115 +1,80 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_wave_switch_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("wave_switch_system")
 _class("ClientWaveSwitchSystem_Render", WaveSwitchSystem)
 ClientWaveSwitchSystem_Render = ClientWaveSwitchSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientWaveSwitchSystem_Render._DoRenderShowSwitch = function(self, TT, waveBoard)
-  -- function num : 0_0 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.WaveSwitch)
-  local viewDataEntity = (self._world):GetRenderBoardEntity()
+function ClientWaveSwitchSystem_Render:_DoRenderShowSwitch(TT, waveBoard)
+  self._world:EventDispatcher():Dispatch(GameEventType.WaveSwitch)
+  local viewDataEntity = self._world:GetRenderBoardEntity()
   local waveDataCmpt = viewDataEntity:WaveData()
   if not waveDataCmpt:IsExitWave() then
-    local taskID = (TaskManager:GetInstance()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : self, _ENV, waveBoard
-    local utilStatSvc = (self._world):GetService("UtilData")
-    if utilStatSvc:GetStatIsAssignWaveResult() then
-      local configService = (self._world):GetService("Config")
-      local levelConfigData = configService:GetLevelConfigData()
-      local l_levelId = levelConfigData:GetLevelID()
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.ShowHideWaveWarning, true, l_levelId)
-      YIELD(TT, 2000)
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.ShowHideWaveWarning, false)
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.ShowDropCoinInfoActive)
-    else
-      do
+    local taskID = TaskManager:GetInstance():CoreGameStartTask(function(TT)
+      local utilStatSvc = self._world:GetService("UtilData")
+      if utilStatSvc:GetStatIsAssignWaveResult() then
+        local configService = self._world:GetService("Config")
+        local levelConfigData = configService:GetLevelConfigData()
+        local l_levelId = levelConfigData:GetLevelID()
+        self._world:EventDispatcher():Dispatch(GameEventType.ShowHideWaveWarning, true, l_levelId)
+        YIELD(TT, 2000)
+        self._world:EventDispatcher():Dispatch(GameEventType.ShowHideWaveWarning, false)
+        self._world:EventDispatcher():Dispatch(GameEventType.ShowDropCoinInfoActive)
+      else
         local waveIndex = utilStatSvc:GetStatCurWaveIndex()
-        do
-          if waveBoard then
-            local spawnPieceServiceRender = (self._world):GetService("SpawnPieceRender")
-            spawnPieceServiceRender:PlayBoardShow(TT, waveBoard)
-          end
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.ShowWaveSwitch, true, waveIndex)
-          YIELD(TT, 2000)
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.ShowWaveSwitch, false)
+        if waveBoard then
+          local spawnPieceServiceRender = self._world:GetService("SpawnPieceRender")
+          spawnPieceServiceRender:PlayBoardShow(TT, waveBoard)
         end
+        self._world:EventDispatcher():Dispatch(GameEventType.ShowWaveSwitch, true, waveIndex)
+        YIELD(TT, 2000)
+        self._world:EventDispatcher():Dispatch(GameEventType.ShowWaveSwitch, false)
       end
-    end
-  end
-, self)
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished({taskID}) do
+    end, self)
+    while not TaskHelper:GetInstance():IsAllTaskFinished({taskID}) do
       YIELD(TT)
     end
   else
-    do
-      local taskID = (TaskManager:GetInstance()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_1 , upvalues : self, waveBoard
-    local utilStatSvc = (self._world):GetService("UtilData")
-    if utilStatSvc:GetStatIsAssignWaveResult() then
-      local waveIndex = utilStatSvc:GetStatCurWaveIndex()
-      if waveBoard then
-        local spawnPieceServiceRender = (self._world):GetService("SpawnPieceRender")
-        spawnPieceServiceRender:PlayBoardShow(TT, waveBoard)
+    local taskID = TaskManager:GetInstance():CoreGameStartTask(function(TT)
+      local utilStatSvc = self._world:GetService("UtilData")
+      if utilStatSvc:GetStatIsAssignWaveResult() then
+      else
+        local waveIndex = utilStatSvc:GetStatCurWaveIndex()
+        if waveBoard then
+          local spawnPieceServiceRender = self._world:GetService("SpawnPieceRender")
+          spawnPieceServiceRender:PlayBoardShow(TT, waveBoard)
+        end
       end
-    end
-  end
-, self)
-      while not (TaskHelper:GetInstance()):IsAllTaskFinished({taskID}) do
-        YIELD(TT)
-      end
+    end, self)
+    while not TaskHelper:GetInstance():IsAllTaskFinished({taskID}) do
+      YIELD(TT)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaveSwitchSystem_Render._DoRenderTrapState = function(self, TT, calcStateTraps)
-  -- function num : 0_1 , upvalues : _ENV
-  local trapServiceRender = (self._world):GetService("TrapRender")
+function ClientWaveSwitchSystem_Render:_DoRenderTrapState(TT, calcStateTraps)
+  local trapServiceRender = self._world:GetService("TrapRender")
   trapServiceRender:RenderTrapState(TT, TrapDestroyType.DestoryByWave, calcStateTraps)
-  if (self._world)._matchType == MatchType.MT_Conquest then
-    local configService = (self._world):GetService("Config")
+  if self._world._matchType == MatchType.MT_Conquest then
+    local configService = self._world:GetService("Config")
     local score = configService:N5GetCurWaveScore()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIN5UpdateScore, score)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIN5UpdateScore, score)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaveSwitchSystem_Render._DoRenderAddWaveSwitchBuff = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  local playBuff = (self._world):GetService("PlayBuff")
+function ClientWaveSwitchSystem_Render:_DoRenderAddWaveSwitchBuff(TT)
+  local playBuff = self._world:GetService("PlayBuff")
   playBuff:PlayBuffView(TT, NTWaveSwitch:New())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaveSwitchSystem_Render._DoRenderRefreshPetPower = function(self, TT, petPowerStateList)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,petPowerState in pairs(petPowerStateList) do
+function ClientWaveSwitchSystem_Render:_DoRenderRefreshPetPower(TT, petPowerStateList)
+  for _, petPowerState in pairs(petPowerStateList) do
     local entityID = petPowerState.petEntityID
     local petPstID = petPowerState.petPstID
     local curPower = petPowerState.power
     local ready = petPowerState.ready
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetPowerChange, petPstID, curPower, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PetPowerChange, petPstID, curPower, true)
     if ready == 1 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, false)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, false)
     else
-      ;
-      (GameGlobal:EventDispatcher()):Dispatch(GameEventType.PetActiveSkillCancelReady, petPstID, 0)
+      GameGlobal:EventDispatcher():Dispatch(GameEventType.PetActiveSkillCancelReady, petPstID, 0)
     end
   end
 end
-
-

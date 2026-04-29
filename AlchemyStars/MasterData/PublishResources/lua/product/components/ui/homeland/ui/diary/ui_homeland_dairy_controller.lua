@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/diary/ui_homeland_dairy_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeLandDiaryController", UIController)
 UIHomeLandDiaryController = UIHomeLandDiaryController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeLandDiaryController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  self._homelandEventInfo = (self._homelandModule):GetHomeLandEventInfo()
-  self._homelandDiaryCfg = (Cfg.cfg_homeland_dairy_item)({})
-  self._homelandEventCfg = (Cfg.cfg_homeland_event)({})
+function UIHomeLandDiaryController:LoadDataOnEnter(TT, res, uiParams)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
+  self._homelandEventInfo = self._homelandModule:GetHomeLandEventInfo()
+  self._homelandDiaryCfg = Cfg.cfg_homeland_dairy_item({})
+  self._homelandEventCfg = Cfg.cfg_homeland_event({})
   self._MAXPageIndex = #self._homelandDiaryCfg
   self._pageIndex = 0
   self._diaryId = 0
@@ -21,11 +14,8 @@ UIHomeLandDiaryController.LoadDataOnEnter = function(self, TT, res, uiParams)
   self._finishDairys = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.RefreshData = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  for index,value in ipairs(self._homelandDiaryCfg) do
+function UIHomeLandDiaryController:RefreshData()
+  for index, value in ipairs(self._homelandDiaryCfg) do
     local state = 1
     if self:CheckInFinish(value.ID) then
       state = 2
@@ -38,10 +28,7 @@ UIHomeLandDiaryController.RefreshData = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController._InitWidget = function(self)
-  -- function num : 0_2
+function UIHomeLandDiaryController:_InitWidget()
   self._dairyText = self:GetUIComponent("UILocalizationText", "Content")
   self._pageText = self:GetUIComponent("UILocalizationText", "pageText")
   self._emoMes = self:GetUIComponent("UILocalizationText", "emoMes")
@@ -50,10 +37,7 @@ UIHomeLandDiaryController._InitWidget = function(self)
   self._viewportRect = self:GetUIComponent("RectTransform", "Viewport")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
   self._AniPage = self:GetUIComponent("Animation", "uianim")
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._AniPage).enabled = true
+  self._AniPage.enabled = true
   self._processSl = self:GetUIComponent("Slider", "processSl")
   self._lkpImgLoader = self:GetUIComponent("RawImageLoader", "lkpImg")
   self._emoImg = self:GetUIComponent("Image", "emoImg")
@@ -67,89 +51,61 @@ UIHomeLandDiaryController._InitWidget = function(self)
   self._colloctdata = self:GetUIComponent("UILocalizationText", "colloctdata")
   self._messgaeSv = self:GetUIComponent("ScrollRect", "messgaeSv")
   self._titlebtn = self:GetGameObject("titlebtn")
-  ;
-  ((self._messgaeSv).onValueChanged):AddListener(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._messgaeSv.onValueChanged:AddListener(function()
     self:_Showbtndown()
-  end
-)
+  end)
   self:GetFirstShowPage()
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioOpenDiary)
+function UIHomeLandDiaryController:OnShow(uiParams)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioOpenDiary)
   self._atlas = self:GetAsset("UIHomelandEmoji.spriteatlas", LoadType.SpriteAtlas)
   self:RefreshData()
   self:_InitWidget()
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.OnHide = function(self)
-  -- function num : 0_4
+function UIHomeLandDiaryController:OnHide()
   self._MAXPageIndex = 0
   self._pageIndex = 0
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController._SpawnObject = function(self, className, widgetName)
-  -- function num : 0_5
+function UIHomeLandDiaryController:_SpawnObject(className, widgetName)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = pool:SpawnObject(className)
   return obj
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController._AttachEvents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomeLandDiaryController:_AttachEvents()
   self:AttachEvent(GameEventType.HomeLandEventChange, self.OnHomeLandDiaryMessage)
   self:AttachEvent(GameEventType.OnHomeLandDiaryGotoPage, self.GotoPage)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController._DetachEvents = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomeLandDiaryController:_DetachEvents()
   self:DetachEvent(GameEventType.HomeLandEventChange, self.OnHomeLandDiaryMessage)
   self:DetachEvent(GameEventType.OnHomeLandDiaryGotoPage, self.GotoPage)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.GetFirstShowPage = function(self)
-  -- function num : 0_8
+function UIHomeLandDiaryController:GetFirstShowPage()
   self:GetFinishDairyEvent()
   self._firstPageIndex = self:_GetPageIndex(true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.GetFinishDairyEvent = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomeLandDiaryController:GetFinishDairyEvent()
   self._finishDairys = {}
-  for i,v in pairs((self._homelandEventInfo).finish_event_list) do
-    (table.insert)(self._finishDairys, i)
+  for i, v in pairs(self._homelandEventInfo.finish_event_list) do
+    table.insert(self._finishDairys, i)
   end
-  ;
-  (table.sort)(self._finishDairys, function(a, b)
-    -- function num : 0_9_0 , upvalues : self
-    do return ((self._homelandEventInfo).finish_event_list)[a] < ((self._homelandEventInfo).finish_event_list)[b] end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._finishDairys, function(a, b)
+    return self._homelandEventInfo.finish_event_list[a] < self._homelandEventInfo.finish_event_list[b]
+  end)
   local rec = {}
   for i = 1, #self._finishDairys do
-    for k,v in ipairs(self._homelandDiaryCfg) do
-      if v.EventId == (self._finishDairys)[i] then
-        (table.insert)(rec, v.ID)
+    for k, v in ipairs(self._homelandDiaryCfg) do
+      if v.EventId == self._finishDairys[i] then
+        table.insert(rec, v.ID)
         break
       end
     end
@@ -157,27 +113,24 @@ UIHomeLandDiaryController.GetFinishDairyEvent = function(self)
   self._finishDairys = rec
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController._GetPageIndex = function(self, isFirst)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHomeLandDiaryController:_GetPageIndex(isFirst)
   local finishList = self._finishDairys
   if not finishList or #finishList == 0 then
     self._pageIndex = 0
     self._diaryId = 0
-    return 
+    return
   end
   for k = 1, #finishList do
-    for i,v in ipairs(self._homelandDiaryCfg) do
+    for i, v in ipairs(self._homelandDiaryCfg) do
       if finishList[k] == v.ID and isFirst and not self:CheckHadRead(v.ID) then
         self._pageIndex = self:_GetPageData(v.ID)
         self._diaryId = v.ID
-        return 
+        return
       end
     end
   end
-  if #finishList > 0 and self._pageIndex == 0 then
-    for i,v in ipairs(self._homelandDiaryCfg) do
+  if 0 < #finishList and self._pageIndex == 0 then
+    for i, v in ipairs(self._homelandDiaryCfg) do
       if finishList[#finishList] == v.ID then
         self._pageIndex = self:_GetPageData(v.ID)
         self._diaryId = v.ID
@@ -186,115 +139,70 @@ UIHomeLandDiaryController._GetPageIndex = function(self, isFirst)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController._GetPageData = function(self, diaryId)
-  -- function num : 0_11 , upvalues : _ENV
-  local pagIndex, pagedata = nil, nil
-  for i,v in ipairs(self._finishDairys) do
+function UIHomeLandDiaryController:_GetPageData(diaryId)
+  local pagIndex, pagedata
+  for i, v in ipairs(self._finishDairys) do
     if v == diaryId then
       pagIndex = i
       break
     end
   end
-  do
-    for i,v in ipairs(self._homelandDiaryCfg) do
-      if v.ID == diaryId then
-        pagedata = v
-        break
-      end
-    end
-    do
-      return pagIndex, pagedata
+  for i, v in ipairs(self._homelandDiaryCfg) do
+    if v.ID == diaryId then
+      pagedata = v
+      break
     end
   end
+  return pagIndex, pagedata
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.Refresh = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomeLandDiaryController:Refresh()
   self:GetFinishDairyEvent()
-  local index = nil
-  index = self:_GetPageData(self._diaryId)
-  ;
-  (self._emptyBg):SetActive(self._pageData == nil)
-  ;
-  (self._view):SetActive(self._pageData ~= nil)
-  ;
-  (self._titlebtn):SetActive(true)
-  ;
-  (self._btnLiftGo):SetActive(self._pageIndex > 1)
-  ;
-  (self._btnRightGo):SetActive(self._pageIndex < #self._finishDairys and #self._finishDairys > 1)
+  local index
+  index, self._pageData = self:_GetPageData(self._diaryId)
+  self._emptyBg:SetActive(self._pageData == nil)
+  self._view:SetActive(self._pageData ~= nil)
+  self._titlebtn:SetActive(true)
+  self._btnLiftGo:SetActive(self._pageIndex > 1)
+  self._btnRightGo:SetActive(self._pageIndex < #self._finishDairys and 1 < #self._finishDairys)
   self:_SetNew()
   if not self._pageData then
     local str = self:GetPassedEventCount() .. "/" .. self._MAXPageIndex
-    ;
-    (self._colloctdata):SetText(str)
+    self._colloctdata:SetText(str)
   else
     self._data = self._pageData
-    ;
-    (self._dairyText):SetText((StringTable.Get)((self._data).DairyContent))
-    ;
-    (self._emoMes):SetText((StringTable.Get)((self._data).DairyReply))
+    self._dairyText:SetText(StringTable.Get(self._data.DairyContent))
+    self._emoMes:SetText(StringTable.Get(self._data.DairyReply))
     local timeStr = self:GetEventTime(self._diaryId) and self:GetEventTime(self._diaryId) or ""
-    ;
-    (self._dataText):SetText(TimeToDate4(timeStr, "day"))
-    ;
-    (self._date):SetText(TimeToDate3(timeStr, "day"))
+    self._dataText:SetText(TimeToDate4(timeStr, "day"))
+    self._date:SetText(TimeToDate3(timeStr, "day"))
     local str = "- " .. self._pageIndex .. "/" .. #self._finishDairys .. " -"
-    ;
-    (self._pageText):SetText(str)
+    self._pageText:SetText(str)
     str = self:GetPassedEventCount() .. "/" .. self._MAXPageIndex
-    ;
-    (self._colloctdata):SetText(str)
-    -- DECOMPILER ERROR at PC134: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._emoImg).sprite = (self._atlas):GetSprite((self._data).DairyEmo)
-    -- DECOMPILER ERROR at PC140: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._processSl).value = self:GetPassedEventCount() / self._MAXPageIndex
-    ;
-    (self._lkpImgLoader):LoadImage((self._data).DairyPhoto)
+    self._colloctdata:SetText(str)
+    self._emoImg.sprite = self._atlas:GetSprite(self._data.DairyEmo)
+    self._processSl.value = self:GetPassedEventCount() / self._MAXPageIndex
+    self._lkpImgLoader:LoadImage(self._data.DairyPhoto)
   end
   self:LookDiaryItem()
-  -- DECOMPILER ERROR: 9 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController._ChangePage = function(self, bNext)
-  -- function num : 0_13 , upvalues : _ENV
-  if not bNext or not self._pageIndex + 1 then
-    local nextIndex = self._pageIndex - 1
-  end
-  local eventId = (self._finishDairys)[nextIndex]
+function UIHomeLandDiaryController:_ChangePage(bNext)
+  local nextIndex = bNext and self._pageIndex + 1 or self._pageIndex - 1
+  local eventId = self._finishDairys[nextIndex]
   self:StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : _ENV, self, eventId, bNext
     local lockName = "UIHomeLandDiaryController:_ChangePage"
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioPageTurnning)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioPageTurnning)
     self:Lock(lockName)
     if eventId then
       if bNext then
         self._pageIndex = self._pageIndex + 1
-        -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-        ;
-        (self._AniPage).enabled = true
-        ;
-        (self._AniPage):Play("UIHomeLandDiaryController_ui_page_01")
+        self._AniPage.enabled = true
+        self._AniPage:Play("UIHomeLandDiaryController_ui_page_01")
       else
         self._pageIndex = self._pageIndex - 1
-        -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-        ;
-        (self._AniPage).enabled = true
-        ;
-        (self._AniPage):Play("UIHomeLandDiaryController_ui_page_02")
+        self._AniPage.enabled = true
+        self._AniPage:Play("UIHomeLandDiaryController_ui_page_02")
       end
       YIELD(TT, 500)
       self._diaryId = eventId
@@ -305,126 +213,77 @@ UIHomeLandDiaryController._ChangePage = function(self, bNext)
       YIELD(TT, 500)
     end
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.CheckPage = function(self)
-  -- function num : 0_14
-  if self._pageIndex >= 0 or not 0 then
-    self._pageIndex = self._pageIndex
-    if self._MAXPageIndex >= self._pageIndex or not self._MAXPageIndex then
-      self._pageIndex = self._pageIndex
-    end
-  end
+function UIHomeLandDiaryController:CheckPage()
+  self._pageIndex = self._pageIndex < 0 and 0 or self._pageIndex
+  self._pageIndex = self._pageIndex > self._MAXPageIndex and self._MAXPageIndex or self._pageIndex
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.GotoPage = function(self, diaryId)
-  -- function num : 0_15
+function UIHomeLandDiaryController:GotoPage(diaryId)
   self._diaryId = diaryId
   self._pageIndex = self:_GetPageData(diaryId)
   self:CheckPage()
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.GetCfgByIndex = function(self, index)
-  -- function num : 0_16
-  return (self._homelandDiaryCfg)[index]
+function UIHomeLandDiaryController:GetCfgByIndex(index)
+  return self._homelandDiaryCfg[index]
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.OnHomeLandDiaryMessage = function(self)
-  -- function num : 0_17
+function UIHomeLandDiaryController:OnHomeLandDiaryMessage()
   self:_SetNew()
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.titlebtnOnClick = function(self)
-  -- function num : 0_18
+function UIHomeLandDiaryController:titlebtnOnClick()
   self:ShowDialog("UIHomeLandDiaryContentsController")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.closebtnOnClick = function(self)
-  -- function num : 0_19
+function UIHomeLandDiaryController:closebtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.btnliftOnClick = function(self)
-  -- function num : 0_20
+function UIHomeLandDiaryController:btnliftOnClick()
   self:_ChangePage(false)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.btnrightOnClick = function(self)
-  -- function num : 0_21
+function UIHomeLandDiaryController:btnrightOnClick()
   self:_ChangePage(true)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController._Showbtndown = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local viewHeight = ((self._viewportRect).rect).height
-  local contentHeight = ((self._contentRect).rect).height
-  local pos = ((self._contentRect).anchoredPosition).y
-  ;
-  (self._btndownGo):SetActive((math.abs)(pos - (viewHeight - contentHeight)) <= 0.2)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIHomeLandDiaryController:_Showbtndown()
+  local viewHeight = self._viewportRect.rect.height
+  local contentHeight = self._contentRect.rect.height
+  local pos = self._contentRect.anchoredPosition.y
+  self._btndownGo:SetActive(math.abs(pos - (viewHeight - contentHeight)) <= 0.2)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController._SetNew = function(self)
-  -- function num : 0_23
+function UIHomeLandDiaryController:_SetNew()
   if not self._pageData then
-    return 
+    return
   end
-  ;
-  (self._datanew):SetActive(not self:CheckHadRead((self._pageData).ID))
-  ;
-  (self._new):SetActive(self:HaveNoRead())
+  self._datanew:SetActive(not self:CheckHadRead(self._pageData.ID))
+  self._new:SetActive(self:HaveNoRead())
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.GetPassedEventCount = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIHomeLandDiaryController:GetPassedEventCount()
   local count = 0
-  for i,v in pairs(self._finishDairys) do
+  for i, v in pairs(self._finishDairys) do
     count = count + 1
   end
   return count
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.HaveNoRead = function(self)
-  -- function num : 0_25
-  local info = (self._homelandModule):GetHomelandDairyInfo()
-  do return #self._finishDairys - #info.is_readed_dairy > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIHomeLandDiaryController:HaveNoRead()
+  local info = self._homelandModule:GetHomelandDairyInfo()
+  return #self._finishDairys - #info.is_readed_dairy > 0
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.CheckInFinish = function(self, diaryId)
-  -- function num : 0_26 , upvalues : _ENV
+function UIHomeLandDiaryController:CheckInFinish(diaryId)
   local list = self._finishDairys
-  for key,value in pairs(list) do
+  for key, value in pairs(list) do
     if diaryId == value then
       return true
     end
@@ -432,12 +291,9 @@ UIHomeLandDiaryController.CheckInFinish = function(self, diaryId)
   return false
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.CheckHadRead = function(self, diaryId)
-  -- function num : 0_27 , upvalues : _ENV
-  local readlist = ((self._homelandModule):GetHomelandDairyInfo()).is_readed_dairy
-  for key,value in pairs(readlist) do
+function UIHomeLandDiaryController:CheckHadRead(diaryId)
+  local readlist = self._homelandModule:GetHomelandDairyInfo().is_readed_dairy
+  for key, value in pairs(readlist) do
     if diaryId == value then
       return true
     end
@@ -445,25 +301,19 @@ UIHomeLandDiaryController.CheckHadRead = function(self, diaryId)
   return false
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.GetEventID = function(self, diaryId)
-  -- function num : 0_28
-  if (self._homelandDiaryCfg)[diaryId] and ((self._homelandDiaryCfg)[diaryId]).EventId then
-    return ((self._homelandDiaryCfg)[diaryId]).EventId
+function UIHomeLandDiaryController:GetEventID(diaryId)
+  if self._homelandDiaryCfg[diaryId] and self._homelandDiaryCfg[diaryId].EventId then
+    return self._homelandDiaryCfg[diaryId].EventId
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.GetEventTime = function(self, diaryId)
-  -- function num : 0_29 , upvalues : _ENV
-  local list = (self._homelandEventInfo).finish_event_list
+function UIHomeLandDiaryController:GetEventTime(diaryId)
+  local list = self._homelandEventInfo.finish_event_list
   if not list then
-    return 
+    return
   end
   local eventId = self:GetEventID(diaryId)
-  for key,value in pairs(list) do
+  for key, value in pairs(list) do
     if eventId == key then
       return value
     end
@@ -471,22 +321,14 @@ UIHomeLandDiaryController.GetEventTime = function(self, diaryId)
   return nil
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryController.LookDiaryItem = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("UIHomeLandDiaryController:LookDiaryItem")
+function UIHomeLandDiaryController:LookDiaryItem()
+  GameGlobal.UIStateManager():Lock("UIHomeLandDiaryController:LookDiaryItem")
   self:StartTask(function(TT)
-    -- function num : 0_30_0 , upvalues : _ENV, self
-    local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+    local homelandModule = GameGlobal.GetModule(HomelandModule)
     local res = homelandModule:HandleHomelandReadedDairyReq(TT, self._diaryId)
     if res:GetSucc() then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomeStoryFinish, "")
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomeStoryFinish, "")
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("UIHomeLandDiaryController:LookDiaryItem")
-  end
-, self)
+    GameGlobal.UIStateManager():UnLock("UIHomeLandDiaryController:LookDiaryItem")
+  end, self)
 end
-
-

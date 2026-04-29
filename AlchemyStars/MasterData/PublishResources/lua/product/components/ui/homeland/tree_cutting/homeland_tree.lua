@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/tree_cutting/homeland_tree.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandTree", Object)
 HomelandTree = HomelandTree
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandTree.Constructor = function(self, treeID, treeGO, treeCfg, treeCuttingManager)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandTree:Constructor(treeID, treeGO, treeCfg, treeCuttingManager)
   self._treeID = treeID
   self._treeGO = treeGO
   self._treeCfg = treeCfg
@@ -22,118 +15,77 @@ HomelandTree.Constructor = function(self, treeID, treeGO, treeCfg, treeCuttingMa
   self._forbiddenIconOffset = Vector3(0, 0, 0)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandTree:Dispose()
   if self._timerEvent then
-    (self._timerEvent):Cancel()
+    self._timerEvent:Cancel()
   end
   if self._forbiddenIcon then
-    (UIHelper.DestroyGameObject)(self._forbiddenIcon)
+    UIHelper.DestroyGameObject(self._forbiddenIcon)
     self._forbiddenIcon = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.ID = function(self)
-  -- function num : 0_2
+function HomelandTree:ID()
   return self._treeID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.GetInteractRedStatus = function(self)
-  -- function num : 0_3
+function HomelandTree:GetInteractRedStatus()
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.EnterInteractScope = function(self)
-  -- function num : 0_4
+function HomelandTree:EnterInteractScope()
   self:RefreshForbiddenIcon()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.LeaveInteractScope = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandTree:LeaveInteractScope()
   if self._forbiddenIcon then
-    (UIHelper.DestroyGameObject)(self._forbiddenIcon)
+    UIHelper.DestroyGameObject(self._forbiddenIcon)
     self._forbiddenIcon = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.RefreshForbiddenIcon = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._treeCfg).DropLimit <= self._dropTimes and not self._forbiddenIcon then
-    self._forbiddenIcon = (UIHelper.GetGameObject)(self._forbidderIconName)
-    ;
-    ((self._forbiddenIcon).transform):SetParent((self._treeGO).transform)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    ((self._forbiddenIcon).transform).localPosition = self._forbiddenIconOffset
-  else
-    if self._dropTimes < (self._treeCfg).DropLimit and self._forbiddenIcon then
-      (UIHelper.DestroyGameObject)(self._forbiddenIcon)
-      self._forbiddenIcon = nil
-    end
+function HomelandTree:RefreshForbiddenIcon()
+  if self._dropTimes >= self._treeCfg.DropLimit and not self._forbiddenIcon then
+    self._forbiddenIcon = UIHelper.GetGameObject(self._forbidderIconName)
+    self._forbiddenIcon.transform:SetParent(self._treeGO.transform)
+    self._forbiddenIcon.transform.localPosition = self._forbiddenIconOffset
+  elseif self._dropTimes < self._treeCfg.DropLimit and self._forbiddenIcon then
+    UIHelper.DestroyGameObject(self._forbiddenIcon)
+    self._forbiddenIcon = nil
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.SetDropTimes = function(self, dropTimes)
-  -- function num : 0_7
+function HomelandTree:SetDropTimes(dropTimes)
   self._dropTimes = dropTimes
   if self._forbiddenIcon then
     self:RefreshForbiddenIcon()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.IncreaseDropTimes = function(self)
-  -- function num : 0_8
+function HomelandTree:IncreaseDropTimes()
   self._dropTimes = self._dropTimes + 1
   self:RefreshForbiddenIcon()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.ResetClearTimer = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function HomelandTree:ResetClearTimer()
   if self._timerEvent then
-    (self._timerEvent):Cancel()
+    self._timerEvent:Cancel()
     self._timerEvent = nil
   end
-  self._timerEvent = ((GameGlobal.Timer)()):AddEvent(self._clearCutTimesTime, function()
-    -- function num : 0_9_0 , upvalues : self
+  self._timerEvent = GameGlobal.Timer():AddEvent(self._clearCutTimesTime, function()
     self._cutTimes = 0
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.ClearCutTimes = function(self)
-  -- function num : 0_10
+function HomelandTree:ClearCutTimes()
   self._cutTimes = 0
   if self._timerEvent then
-    (self._timerEvent):Cancel()
+    self._timerEvent:Cancel()
     self._timerEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.IncreaseCutTimes = function(self)
-  -- function num : 0_11
+function HomelandTree:IncreaseCutTimes()
   if self._forbiddenIcon then
     return 0
   end
@@ -141,50 +93,29 @@ HomelandTree.IncreaseCutTimes = function(self)
   return self._cutTimes
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.GetInteractPosition = function(self, index)
-  -- function num : 0_12
+function HomelandTree:GetInteractPosition(index)
   if self._interactpos == nil then
-    self._interactpos = ((self._treeGO).transform).position
+    self._interactpos = self._treeGO.transform.position
   end
   return self._interactpos
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.GetTreeRootTrans = function(self)
-  -- function num : 0_13
-  return (self._treeGO).transform
+function HomelandTree:GetTreeRootTrans()
+  return self._treeGO.transform
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.GetCutTimes = function(self)
-  -- function num : 0_14
+function HomelandTree:GetCutTimes()
   return self._cutTimes
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.GetCutRadius = function(self)
-  -- function num : 0_15
-  return (self._treeCfg).CutRadius
+function HomelandTree:GetCutRadius()
+  return self._treeCfg.CutRadius
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.ForbiddenCut = function(self)
-  -- function num : 0_16
-  do return self._forbiddenIcon ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandTree:ForbiddenCut()
+  return self._forbiddenIcon ~= nil
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTree.DoShake = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  ((self._treeGO).transform):DOShakePosition(0.3, Vector3(0.04, 0, 0.04), 30, 45, false, true)
+function HomelandTree:DoShake()
+  self._treeGO.transform:DOShakePosition(0.3, Vector3(0.04, 0, 0.04), 30, 45, false, true)
 end
-
-

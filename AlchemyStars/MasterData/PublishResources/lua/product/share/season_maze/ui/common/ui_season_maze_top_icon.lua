@@ -1,91 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/common/ui_season_maze_top_icon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeTopIcon", UICustomWidget)
 UISeasonMazeTopIcon = UISeasonMazeTopIcon
-_enum("SeasonMazeTopIconType", {Money = 1, Lv = 2, Ms = 3, MoneyAdd = 4})
+_enum("SeasonMazeTopIconType", {
+  Money = 1,
+  Lv = 2,
+  Ms = 3,
+  MoneyAdd = 4
+})
 SeasonMazeTopIconType = SeasonMazeTopIconType
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeTopIcon.InitWidget = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeTopIcon:InitWidget()
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   local topTips = self:GetUIComponent("UISelectObjectPath", "topTips")
   self._toptipsInfo = topTips:SpawnObject("UITopTipsContextSMaze")
   self.atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIcon.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._type2topID = {[SeasonMazeTopIconType.Money] = 9001002, [SeasonMazeTopIconType.MoneyAdd] = 9001003, [SeasonMazeTopIconType.Ms] = 9001001}
+function UISeasonMazeTopIcon:OnShow()
+  self._type2topID = {
+    [SeasonMazeTopIconType.Money] = 9001002,
+    [SeasonMazeTopIconType.MoneyAdd] = 9001003,
+    [SeasonMazeTopIconType.Ms] = 9001001
+  }
   self:CreateData()
   self:InitWidget()
   self:AttachEvent(GameEventType.OnUISeasonMazeAttChanged, self.OnSeasonMazeExpChange)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIcon.CreateData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._seasonObj = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()
+function UISeasonMazeTopIcon:CreateData()
+  self._seasonObj = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj()
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIcon.SetData = function(self, typeList)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazeTopIcon:SetData(typeList)
   if typeList then
     self._typeList = typeList
   else
-    self._typeList = {SeasonMazeTopIconType.Lv, SeasonMazeTopIconType.Ms, SeasonMazeTopIconType.MoneyAdd}
+    self._typeList = {
+      SeasonMazeTopIconType.Lv,
+      SeasonMazeTopIconType.Ms,
+      SeasonMazeTopIconType.MoneyAdd
+    }
   end
-  ;
-  (self._pool):SpawnObjects("UISeasonMazeTopIconItem", #self._typeList)
-  local pools = (self._pool):GetAllSpawnList()
+  self._pool:SpawnObjects("UISeasonMazeTopIconItem", #self._typeList)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #self._typeList do
     local item = pools[i]
-    local type = (self._typeList)[i]
-    local sp = nil
+    local type = self._typeList[i]
+    local sp
     item:SetData(type, sp, function(type, go)
-    -- function num : 0_3_0 , upvalues : self
-    self:OnTopIconClick(type, go)
-  end
-, self._seasonObj)
+      self:OnTopIconClick(type, go)
+    end, self._seasonObj)
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIcon.OnTopIconClick = function(self, type, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeTopIcon:OnTopIconClick(type, go)
   if type == SeasonMazeTopIconType.Lv then
     self:ShowDialog("UISeasonMazeLvInfo")
   else
-    local topid = (self._type2topID)[type]
-    ;
-    (self._toptipsInfo):SetData(topid, go)
+    local topid = self._type2topID[type]
+    self._toptipsInfo:SetData(topid, go)
   end
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIcon.OnHide = function(self)
-  -- function num : 0_5
+function UISeasonMazeTopIcon:OnHide()
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTopIcon.OnSeasonMazeExpChange = function(self, attType)
-  -- function num : 0_6
-  local pools = (self._pool):GetAllSpawnList()
+function UISeasonMazeTopIcon:OnSeasonMazeExpChange(attType)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #self._typeList do
     local item = pools[i]
     item:OnSeasonMazeExpChange(attType)
   end
 end
-
-

@@ -1,159 +1,97 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/ui_medal_card/ui_medal_card_simple.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalCardSimple", UICustomWidget)
 UIMedalCardSimple = UIMedalCardSimple
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalCardSimple.Constructor = function(self)
-  -- function num : 0_0
+function UIMedalCardSimple:Constructor()
   self._eventBoardMedalUpdate = nil
   self._Width = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCardSimple.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self.medalModule = (GameGlobal.GetModule)(MedalModule)
-  self.editData = (self.medalModule):GetN22MedalEditData()
+function UIMedalCardSimple:OnShow(uiParams)
+  self.medalModule = GameGlobal.GetModule(MedalModule)
+  self.editData = self.medalModule:GetN22MedalEditData()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCardSimple.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMedalCardSimple:OnHide()
   if self._eventBoardMedalUpdate then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.BoardMedalUpdate, self._eventBoardMedalUpdate)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.BoardMedalUpdate, self._eventBoardMedalUpdate)
     self._eventBoardMedalUpdate = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCardSimple.InitWidget = function(self)
-  -- function num : 0_3
+function UIMedalCardSimple:InitWidget()
   self.bg = self:GetUIComponent("RawImageLoader", "bg")
   self.root = self:GetUIComponent("UISelectObjectPath", "root")
   self.rootRt = self:GetUIComponent("RectTransform", "root")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCardSimple.OnBoardMedalUpdate = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local placeData = ((GameGlobal.GetModule)(MedalModule)):GetPlacementInfo()
+function UIMedalCardSimple:OnBoardMedalUpdate()
+  local placeData = GameGlobal.GetModule(MedalModule):GetPlacementInfo()
   self:SetData(self._Width, placeData, nil, self.callback)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCardSimple.SetData = function(self, width, placeData, isVisit, callback)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMedalCardSimple:SetData(width, placeData, isVisit, callback)
   self._Width = width
   self.callback = callback
   if not isVisit and not self._eventBoardMedalUpdate then
-    self._eventBoardMedalUpdate = (GameHelper:GetInstance()):CreateCallback(self.OnBoardMedalUpdate, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.BoardMedalUpdate, self._eventBoardMedalUpdate)
+    self._eventBoardMedalUpdate = GameHelper:GetInstance():CreateCallback(self.OnBoardMedalUpdate, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.BoardMedalUpdate, self._eventBoardMedalUpdate)
   end
-  local sz = (self.rootRt).sizeDelta
+  local sz = self.rootRt.sizeDelta
   sz.y = sz.y / sz.x * width
   sz.x = width
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.rootRt).sizeDelta = sz
-  local cfg = (Cfg.cfg_item_medal_board)[placeData.board_back_id]
+  self.rootRt.sizeDelta = sz
+  local cfg = Cfg.cfg_item_medal_board[placeData.board_back_id]
   if cfg then
-    (self.bg):LoadImage(cfg.IconHD)
+    self.bg:LoadImage(cfg.IconHD)
   else
-    ;
-    (self.bg):LoadImage("N22_xzxt_di04")
+    self.bg:LoadImage("N22_xzxt_di04")
   end
-  local boardMedals = (self.editData):GetMappingBoardMedalList(width, placeData)
-  ;
-  (table.sort)(boardMedals, function(a, b)
-    -- function num : 0_5_0
-    do return a.index < b.index end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  local count = (table.count)(boardMedals)
-  ;
-  (self.root):SpawnObjects("UIMedalCardIcon", count)
-  local allItems = (self.root):GetAllSpawnList()
-  for k,subItem in pairs(allItems) do
+  local boardMedals = self.editData:GetMappingBoardMedalList(width, placeData)
+  table.sort(boardMedals, function(a, b)
+    return a.index < b.index
+  end)
+  local count = table.count(boardMedals)
+  self.root:SpawnObjects("UIMedalCardIcon", count)
+  local allItems = self.root:GetAllSpawnList()
+  for k, subItem in pairs(allItems) do
     if k <= count then
       subItem:SetData(boardMedals[k])
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCardSimple.BgOnClick = function(self, go)
-  -- function num : 0_6
+function UIMedalCardSimple:BgOnClick(go)
   if self.callback then
-    (self.callback)()
+    self.callback()
   end
 end
 
 _class("UIMedalCardIcon", UICustomWidget)
 UIMedalCardIcon = UIMedalCardIcon
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalCardIcon.Constructor = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIMedalCardIcon:Constructor()
   self._atlas = self:GetAsset("UIMedal.spriteatlas", LoadType.SpriteAtlas)
   self._itemId = nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCardIcon.OnShow = function(self, uiParams)
-  -- function num : 0_8
+function UIMedalCardIcon:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCardIcon.InitWidget = function(self)
-  -- function num : 0_9
+function UIMedalCardIcon:InitWidget()
   self.icon = self:GetUIComponent("Image", "Icon")
   self.iconRt = self:GetUIComponent("RectTransform", "Icon")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCardIcon.SetData = function(self, boardMedal)
-  -- function num : 0_10
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.icon).sprite = (self._atlas):GetSprite(boardMedal:IconMedal())
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.iconRt).anchoredPosition = boardMedal.pos
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.iconRt).sizeDelta = boardMedal.wh
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.iconRt).localRotation = boardMedal.quat
+function UIMedalCardIcon:SetData(boardMedal)
+  self.icon.sprite = self._atlas:GetSprite(boardMedal:IconMedal())
+  self.iconRt.anchoredPosition = boardMedal.pos
+  self.iconRt.sizeDelta = boardMedal.wh
+  self.iconRt.localRotation = boardMedal.quat
   self._itemId = boardMedal.id
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalCardIcon.IconOnClick = function(self, go)
-  -- function num : 0_11
+function UIMedalCardIcon:IconOnClick(go)
   self:ShowDialog("UIMedalTipsController", self._itemId)
 end
-
-

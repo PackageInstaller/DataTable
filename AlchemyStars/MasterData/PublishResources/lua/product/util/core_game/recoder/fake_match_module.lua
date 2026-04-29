@@ -1,89 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/recoder/fake_match_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("game_module")
 _class("FakeMatchModule", GameModule)
 FakeMatchModule = FakeMatchModule
-FakeMatchEnterCoreGame = function(t)
-  -- function num : 0_0 , upvalues : _ENV
-  local md = (GameGlobal.GetModule)(FakeMatchModule)
+
+function FakeMatchEnterCoreGame(t)
+  local md = GameGlobal.GetModule(FakeMatchModule)
   md:EnterCoreGame(t)
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-FakeMatchModule.Constructor = function(self)
-  -- function num : 0_1
+function FakeMatchModule:Constructor()
   self._record = nil
   self._startTime = nil
   self._running = false
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-FakeMatchModule.Dispose = function(self)
-  -- function num : 0_2
+function FakeMatchModule:Dispose()
   self:ClearMatchEnterData()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-FakeMatchModule.ClearMatchEnterData = function(self)
-  -- function num : 0_3
+function FakeMatchModule:ClearMatchEnterData()
   self._record = nil
   self._startTime = nil
   self._running = false
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-FakeMatchModule.GetRecord = function(self)
-  -- function num : 0_4
+function FakeMatchModule:GetRecord()
   return self._record
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-FakeMatchModule.GetMatchStartTime = function(self)
-  -- function num : 0_5
+function FakeMatchModule:GetMatchStartTime()
   return self._startTime
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-FakeMatchModule.IsRunning = function(self)
-  -- function num : 0_6
+function FakeMatchModule:IsRunning()
   return self._running
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-FakeMatchModule.EnterCoreGame = function(self, record)
-  -- function num : 0_7 , upvalues : _ENV
-  (GameGlobal:GetInstance()):SetOfflineMatch(true)
+function FakeMatchModule:EnterCoreGame(record)
+  GameGlobal:GetInstance():SetOfflineMatch(true)
   self._record = record
-  self._startTime = (GameGlobal:GetInstance()):GetCurrentTime()
+  self._startTime = GameGlobal:GetInstance():GetCurrentTime()
   self._running = true
-  for i,v in ipairs(record) do
+  for i, v in ipairs(record) do
     if v.action == GameRecordAction.StartMatch then
       local enterData = table_to_class(v.match_enter_data)
-      ;
-      ((GameGlobal.GetModule)(MatchModule)):SetMatchEnterData(enterData)
+      GameGlobal.GetModule(MatchModule):SetMatchEnterData(enterData)
     end
   end
-  ;
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Battle_Loading)
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Battle_Loading)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-FakeMatchModule.ExitCoreGame = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function FakeMatchModule:ExitCoreGame()
   self:ClearMatchEnterData()
-  ;
-  (GameGlobal:GetInstance()):SetOfflineMatch(false)
+  GameGlobal:GetInstance():SetOfflineMatch(false)
 end
-
-

@@ -1,33 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/test.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TestTask", Object)
 TestTask = TestTask
-local testTaskObj = nil
--- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
+local testTaskObj
 
-TestTask.AsyncLoadGO1 = function(self, TT, name, loadType)
-  -- function num : 0_0 , upvalues : _ENV
+function TestTask:AsyncLoadGO1(TT, name, loadType)
   LoadAsync(TT, name, loadType)
   YIELD(TT)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-TestTask.AsyncLoadGO2 = function(self, TT, name, loadType)
-  -- function num : 0_1 , upvalues : _ENV
-  local request = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, name, loadType)
+function TestTask:AsyncLoadGO2(TT, name, loadType)
+  local request = ResourceManager:GetInstance():AsyncLoadAsset(TT, name, loadType)
   local go = request.Obj
   go:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-TestTask.UpdateCallers = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local callCenter = ((GameGlobal.GameLogic)()).CallCenter
+function TestTask:UpdateCallers()
+  local callCenter = GameGlobal.GameLogic().CallCenter
   callCenter:AddCallerLua(NetCallerBulletin, "bulletin")
   callCenter:AddCallerLua(NetCallerGateway, "gateway")
   callCenter:AddCallerLua(NetCallerGame, "game")
@@ -39,24 +26,18 @@ TestTask.UpdateCallers = function(self)
   callerGW:SetPipe2Conn(NetToken:New(NetTokenType.TOKEN_GAME, "GM", 1), "gateway")
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-TestTask.BtnDemoOnClick = function(self, go)
-  -- function num : 0_3
+function TestTask:BtnDemoOnClick(go)
   self:StartTask(self.CallDemoTask, self)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-TestTask.CallDemoTask = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  local caller = (((GameGlobal.GameLogic)()).CallCenter):GetCallerLua("bulletin")
+function TestTask:CallDemoTask(TT)
+  local caller = GameGlobal.GameLogic().CallCenter:GetCallerLua("bulletin")
   local callInfo = AsyncRequestRes:New()
-  local reqMsg = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestGetLoginInfo)
+  local reqMsg = NetMessageFactory:GetInstance():CreateMessage(CEventRequestGetLoginInfo)
   local repInfo = caller:Call(TT, reqMsg)
   if repInfo.res ~= CallResultType.Normal then
     callInfo:SetSucc(false)
-    return 
+    return
   end
   callInfo:SetSucc(true)
   local repMsg = repInfo.msg
@@ -64,47 +45,42 @@ TestTask.CallDemoTask = function(self, TT)
 end
 
 require("item_message")
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
 
-TestTask.UseItem = function(self, TT, res, param)
-  -- function num : 0_5 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventMobileUseItem, param)
-  local caller = (((GameGlobal.GameLogic)()).CallCenter):GetCallerLua("game")
-  ;
-  (Log.fatal)("1111111111111")
+function TestTask:UseItem(TT, res, param)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventMobileUseItem, param)
+  local caller = GameGlobal.GameLogic().CallCenter:GetCallerLua("game")
+  Log.fatal("1111111111111")
   local reply = caller:Call(TT, request)
-  ;
-  (Log.fatal)((reply.msg)._classname)
-  ;
-  (log.fatal)(reply.res)
+  Log.fatal(reply.msg._classname)
+  log.fatal(reply.res)
   if reply.res ~= CallResultType.Normal then
     res:SetResult(-1)
-    return 
+    return
   end
   res:SetSucc(true)
   local replyEvent = reply.msg
   res:SetResult(replyEvent.nRet)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-TestTask.RequestUseItemByPstID = function(self, TT, res, item_pstid, count, param1, param2, param3)
-  -- function num : 0_6 , upvalues : _ENV
+function TestTask:RequestUseItemByPstID(TT, res, item_pstid, count, param1, param2, param3)
   YIELD(TT)
-  local itemUseParameter = {item_pstid = item_pstid, count = count, param1 = param1, param2 = param2, param3 = param3}
+  local itemUseParameter = {
+    item_pstid = item_pstid,
+    count = count,
+    param1 = param1,
+    param2 = param2,
+    param3 = param3
+  }
   self:UseItem(TT, res, itemUseParameter)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-TestTask.foo = function(self, TT, a, c)
-  -- function num : 0_7 , upvalues : _ENV, testTaskObj
+function TestTask:foo(TT, a, c)
   YIELD(TT)
   c[1] = 2 * a
   YIELD(TT)
-  local id2 = (TaskManager:GetInstance()):StartTask(testTaskObj.f2, testTaskObj, 10)
+  local id2 = TaskManager:GetInstance():StartTask(testTaskObj.f2, testTaskObj, 10)
   self.id2 = id2
-  local id3 = (TaskManager:GetInstance()):StartTask(testTaskObj.f3, testTaskObj, 10)
+  local id3 = TaskManager:GetInstance():StartTask(testTaskObj.f3, testTaskObj, 10)
   _ylw("curTaskId " .. GetCurTaskId())
   _ylw(GetCurTaskId() .. " start join " .. id3)
   JOIN(TT, id3)
@@ -112,10 +88,7 @@ TestTask.foo = function(self, TT, a, c)
   return 20, "111"
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-TestTask.f1 = function(self, TT, a, b)
-  -- function num : 0_8 , upvalues : _ENV
+function TestTask:f1(TT, a, b)
   local c = {}
   local num, s1 = self:foo(TT, a + 1, c)
   _ylw("f1 return from f3")
@@ -123,10 +96,7 @@ TestTask.f1 = function(self, TT, a, b)
   _ylw("f1 end")
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-TestTask.f2 = function(self, TT, n)
-  -- function num : 0_9 , upvalues : _ENV
+function TestTask:f2(TT, n)
   for i = 1, n do
     _ylw("f2 i ", i)
     YIELD(TT)
@@ -134,33 +104,31 @@ TestTask.f2 = function(self, TT, n)
   _ylw("f2 end")
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-TestTask.f3 = function(self, TT, n)
-  -- function num : 0_10 , upvalues : _ENV, testTaskObj
+function TestTask:f3(TT, n)
   for i = 1, n do
     _ylw("f3 i ", i)
-    do
-      do
-        if i == 1 then
-          local task = (TaskManager:GetInstance()):FindTask(testTaskObj.id2)
-          if task then
-            JOIN(TT, testTaskObj.id2)
-            _ylw("f3 return from f2")
-          end
-        end
-        YIELD(TT)
-        -- DECOMPILER ERROR at PC28: LeaveBlock: unexpected jumping out DO_STMT
-
+    if i == 1 then
+      local task = TaskManager:GetInstance():FindTask(testTaskObj.id2)
+      if task then
+        JOIN(TT, testTaskObj.id2)
+        _ylw("f3 return from f2")
       end
     end
+    YIELD(TT)
   end
   _ylw("f3 end")
 end
 
 testTaskObj = TestTask:New()
-local EnumABC = {A = 1, B = 2, C = 3}
+local EnumABC = {
+  A = 1,
+  B = 2,
+  C = 3
+}
 _enum("EnumABC", EnumABC)
-local EnumArray = {"A", "B", "C"}
+local EnumArray = {
+  "A",
+  "B",
+  "C"
+}
 _autoEnum("EnumArray", EnumArray)
-

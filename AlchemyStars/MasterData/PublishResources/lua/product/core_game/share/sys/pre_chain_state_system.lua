@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/pre_chain_state_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("PreChainStateSystem", MainStateSystem)
 PreChainStateSystem = PreChainStateSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PreChainStateSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PreChainStateSystem:_GetMainStateID()
   return GameStateID.PreChain
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreChainStateSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function PreChainStateSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local posCasterOld = teamEntity:GetGridPosition()
   local trapIds = self:_DoLogicPreChainTrapSkill()
   self:_PlayPreChainTrapSkill(TT, trapIds)
@@ -28,74 +18,46 @@ PreChainStateSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicPreChainFinish()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreChainStateSystem._DoLogicPreChainTrapSkill = function(self)
-  -- function num : 0_2
-  local sTrapLogic = (self._world):GetService("TrapLogic")
+function PreChainStateSystem:_DoLogicPreChainTrapSkill()
+  local sTrapLogic = self._world:GetService("TrapLogic")
   local trapIds = sTrapLogic:CalcTrapPreChainSkill()
   return trapIds
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreChainStateSystem._DoLogicPreChainFinish = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local flag = ((self._world):BattleStat()):GetTriggerDimensionFlag()
+function PreChainStateSystem:_DoLogicPreChainFinish()
+  local flag = self._world:BattleStat():GetTriggerDimensionFlag()
   local nextId = 1
   if flag == TriggerDimensionFlag.WaitInput then
     nextId = 2
-  else
-    if flag == TriggerDimensionFlag.RoundResult then
-      nextId = 3
-    end
+  elseif flag == TriggerDimensionFlag.RoundResult then
+    nextId = 3
   end
-  ;
-  ((self._world):BattleStat()):SetTriggerDimensionFlag(TriggerDimensionFlag.None)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.PreChainFinish, nextId)
+  self._world:BattleStat():SetTriggerDimensionFlag(TriggerDimensionFlag.None)
+  self._world:EventDispatcher():Dispatch(GameEventType.PreChainFinish, nextId)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreChainStateSystem._DoLogicResetPickUp = function(self, teamEntity)
-  -- function num : 0_4
+function PreChainStateSystem:_DoLogicResetPickUp(teamEntity)
   local logicPickUpCmpt = teamEntity:LogicPickUp()
   logicPickUpCmpt:ResetLogicPickUp()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreChainStateSystem._DoLogicWaitTeleportFinish = function(self, posCasterOld, teamEntity)
-  -- function num : 0_5
+function PreChainStateSystem:_DoLogicWaitTeleportFinish(posCasterOld, teamEntity)
   local posCasterNew = teamEntity:GetGridPosition()
   local bHaveTeleport = posCasterNew ~= posCasterOld
-  local listTrapTrigger = nil
+  local listTrapTrigger
   if bHaveTeleport then
-    local sTrapLogic = (self._world):GetService("TrapLogic")
-    local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+    local sTrapLogic = self._world:GetService("TrapLogic")
+    local utilScopeSvc = self._world:GetService("UtilScopeCalc")
     listTrapTrigger = sTrapLogic:TriggerTrapByTeleport(teamEntity, true)
   end
-  do return listTrapTrigger end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return listTrapTrigger
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PreChainStateSystem._PlayPreChainTrapSkill = function(self, TT, trapIds)
-  -- function num : 0_6
+function PreChainStateSystem:_PlayPreChainTrapSkill(TT, trapIds)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PreChainStateSystem._DoRenderWaitTeleportFinish = function(self, TT, listTrapTrigger, teamEntity)
-  -- function num : 0_7
+function PreChainStateSystem:_DoRenderWaitTeleportFinish(TT, listTrapTrigger, teamEntity)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PreChainStateSystem._DoRenderResetPickUp = function(self)
-  -- function num : 0_8
+function PreChainStateSystem:_DoRenderResetPickUp()
 end
-
-

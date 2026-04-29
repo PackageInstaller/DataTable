@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_buff_cd.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddBuffCD", BuffLogicBase)
 BuffLogicAddBuffCD = BuffLogicAddBuffCD
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddBuffCD.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddBuffCD:Constructor(buffInstance, logicParam)
   self._addValue = logicParam.addValue or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddBuffCD.DoLogic = function(self, notify)
-  -- function num : 0_1
-  (self._buffInstance):AddExecuteCount(notify, self._addValue)
+function BuffLogicAddBuffCD:DoLogic(notify)
+  self._buffInstance:AddExecuteCount(notify, self._addValue)
 end
-
-

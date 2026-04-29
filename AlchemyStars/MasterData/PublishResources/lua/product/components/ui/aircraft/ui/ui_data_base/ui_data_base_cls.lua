@@ -1,30 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_data_base/ui_data_base_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UITopRankAwardGotState = {DOING = 1, GET = 2, GOT = 3}
+local UITopRankAwardGotState = {
+  DOING = 1,
+  GET = 2,
+  GOT = 3
+}
 _enum("UITopRankAwardGotState", UITopRankAwardGotState)
 _class("DataBaseNodeData", Object)
 DataBaseNodeData = DataBaseNodeData
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-DataBaseNodeData.Constructor = function(self, id, lock, got, passInfoList)
-  -- function num : 0_0 , upvalues : _ENV
+function DataBaseNodeData:Constructor(id, lock, got, passInfoList)
   self._lock = lock
-  local cfg_node = (Cfg.cfg_tactical_db_theme)[id]
+  local cfg_node = Cfg.cfg_tactical_db_theme[id]
   if not cfg_node then
-    (Log.error)("###[DataBaseNodeData] cfg_node is nil ! id --> ", id)
+    Log.error("###[DataBaseNodeData] cfg_node is nil ! id --> ", id)
   end
   self._award = RoleAsset:New()
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._award).assetid = (cfg_node.Award)[1]
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._award).count = (cfg_node.Award)[2]
+  self._award.assetid = cfg_node.Award[1]
+  self._award.count = cfg_node.Award[2]
   self._awardDesc = cfg_node.GetAwardDec
   self._got = got
   self._id = id
@@ -34,203 +25,135 @@ DataBaseNodeData.Constructor = function(self, id, lock, got, passInfoList)
   self._dataInfos = {}
   local infoidlist = cfg_node.InfoIDList
   if not infoidlist then
-    (Log.error)("###[DataBaseNodeData] infoidlist is nil !")
+    Log.error("###[DataBaseNodeData] infoidlist is nil !")
   end
-  local cfg_infos = (Cfg.cfg_tactical_db_info)({})
+  local cfg_infos = Cfg.cfg_tactical_db_info({})
   for i = 1, #infoidlist do
     local infoid = infoidlist[i]
     local cfg_info = cfg_infos[infoid]
     if not cfg_info then
-      (Log.error)("###[DataBaseNodeData] cfg_info is nil ! id --> ", infoid)
+      Log.error("###[DataBaseNodeData] cfg_info is nil ! id --> ", infoid)
     end
     local lock = self:GetInfoLock(infoid)
     local infoData = DataBaseNodeInfo:New(infoid, lock, self._lock)
-    -- DECOMPILER ERROR at PC68: Confused about usage of register: R16 in 'UnsetPending'
-
-    ;
-    (self._dataInfos)[i] = infoData
+    self._dataInfos[i] = infoData
   end
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeData.GetInfoLock = function(self, infoid)
-  -- function num : 0_1 , upvalues : _ENV
-  return not (table.icontains)(self._passInfoList, infoid)
+function DataBaseNodeData:GetInfoLock(infoid)
+  return not table.icontains(self._passInfoList, infoid)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeData.GetLock = function(self)
-  -- function num : 0_2
+function DataBaseNodeData:GetLock()
   return self._lock
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeData.GetAward = function(self)
-  -- function num : 0_3
+function DataBaseNodeData:GetAward()
   return self._award
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeData.GetAwardDec = function(self)
-  -- function num : 0_4
+function DataBaseNodeData:GetAwardDec()
   return self._awardDesc
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeData.AwardGot = function(self)
-  -- function num : 0_5
+function DataBaseNodeData:AwardGot()
   return self._got
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeData.GotAward = function(self)
-  -- function num : 0_6
+function DataBaseNodeData:GotAward()
   self._got = true
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeData.GetID = function(self)
-  -- function num : 0_7
+function DataBaseNodeData:GetID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeData.GetIcon = function(self)
-  -- function num : 0_8
+function DataBaseNodeData:GetIcon()
   return self._icon
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeData.GetName = function(self)
-  -- function num : 0_9
+function DataBaseNodeData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeData.GetDataInfos = function(self)
-  -- function num : 0_10
+function DataBaseNodeData:GetDataInfos()
   return self._dataInfos
 end
 
 _class("DataBaseNodeInfo", Object)
 DataBaseNodeInfo = DataBaseNodeInfo
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
 
-DataBaseNodeInfo.Constructor = function(self, id, lock, nodeLock)
-  -- function num : 0_11 , upvalues : _ENV
+function DataBaseNodeInfo:Constructor(id, lock, nodeLock)
   self._lock = lock
   self._nodeLock = nodeLock
-  local cfg_info = (Cfg.cfg_tactical_db_info)[id]
+  local cfg_info = Cfg.cfg_tactical_db_info[id]
   if not cfg_info then
-    (Log.error)("###[DataBaseNodeInfo] cfg_info is nil ! id --> ", id)
+    Log.error("###[DataBaseNodeInfo] cfg_info is nil ! id --> ", id)
   end
   self._id = id
   self._desc = cfg_info.InfoDec
   self._conditions = {}
   for i = 1, #cfg_info.UnlockItemList do
-    local cfg = (cfg_info.UnlockItemList)[i]
+    local cfg = cfg_info.UnlockItemList[i]
     local info = {}
     info.id = cfg[1]
     info.count = cfg[2]
     local condition = DataBaseNodeInfoCondition:New(info)
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._conditions)[i] = condition
+    self._conditions[i] = condition
   end
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeInfo.GetLock = function(self)
-  -- function num : 0_12
+function DataBaseNodeInfo:GetLock()
   return self._lock
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeInfo.GetRed = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function DataBaseNodeInfo:GetRed()
   local red = false
   if self._lock and not self._nodeLock then
     red = true
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
+    local roleModule = GameGlobal.GetModule(RoleModule)
     for i = 1, #self._conditions do
-      local condition = (self._conditions)[i]
+      local condition = self._conditions[i]
       local id = condition:GetID()
       local count = condition:GetCount()
       local nowCount = roleModule:GetAssetCount(id)
-      if nowCount < count then
+      if count > nowCount then
         red = false
         break
       end
     end
   end
-  do
-    return red
-  end
+  return red
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeInfo.GetID = function(self)
-  -- function num : 0_14
+function DataBaseNodeInfo:GetID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeInfo.GetConditions = function(self)
-  -- function num : 0_15
+function DataBaseNodeInfo:GetConditions()
   return self._conditions
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeInfo.GetDesc = function(self)
-  -- function num : 0_16
+function DataBaseNodeInfo:GetDesc()
   return self._desc
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeInfo.UnLock = function(self)
-  -- function num : 0_17
+function DataBaseNodeInfo:UnLock()
   self._lock = false
 end
 
 _class("DataBaseNodeInfoCondition", Object)
 DataBaseNodeInfoCondition = DataBaseNodeInfoCondition
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
 
-DataBaseNodeInfoCondition.Constructor = function(self, condition)
-  -- function num : 0_18
+function DataBaseNodeInfoCondition:Constructor(condition)
   self._id = condition.id
   self._count = condition.count
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeInfoCondition.GetID = function(self)
-  -- function num : 0_19
+function DataBaseNodeInfoCondition:GetID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-DataBaseNodeInfoCondition.GetCount = function(self)
-  -- function num : 0_20
+function DataBaseNodeInfoCondition:GetCount()
   return self._count
 end
-
-

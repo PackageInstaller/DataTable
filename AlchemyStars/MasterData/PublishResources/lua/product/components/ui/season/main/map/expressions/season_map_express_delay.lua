@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_delay.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpressDelay", SeasonMapExpressBase)
 SeasonMapExpressDelay = SeasonMapExpressDelay
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressDelay.Constructor = function(self, cfg, eventPoint)
-  -- function num : 0_0
-  self._content = (self._cfg).Delay
+function SeasonMapExpressDelay:Constructor(cfg, eventPoint)
+  self._content = self._cfg.Delay
   self._time = 0
   self._executing = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressDelay.Update = function(self, deltaTime)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonMapExpressDelay:Update(deltaTime)
   if self._state == SeasonExpressState.Playing and self._executing then
     self._time = self._time - deltaTime
     if self._time <= 0 then
@@ -27,10 +17,7 @@ SeasonMapExpressDelay.Update = function(self, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressDelay.OnPlay = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonMapExpressDelay:OnPlay()
   if self._content then
     self._executing = true
     self._time = self._content
@@ -41,5 +28,3 @@ SeasonMapExpressDelay.OnPlay = function(self)
     end
   end
 end
-
-

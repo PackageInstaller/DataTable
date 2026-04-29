@@ -1,194 +1,716 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/luckland/cfg_luckland_client_build.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, BuildType = 2, MaxLevel = 3, BuildIcon = 4, BuildName = 5, BuildDesc = 6, UpgradeCost = 7, BuildLevelTips = 8, BuffIDList = 9, CountDown = 10, CardPool = 11, PosList = 12, DefRate = 13, MaxHPIncreaseParam = 14}
-local common = {"n11_minigame_building_1", "str_luckland_building_name_1", "str_luckland_building_desc_1", "str_luckland_build_1_level_1", "str_luckland_build_1_level_2", "str_luckland_build_1_level_4", "n11_minigame_building_2", "str_luckland_building_name_2", "str_luckland_building_desc_2", "n11_minigame_building_4", "str_luckland_building_name_4", "str_luckland_building_desc_4", "n11_minigame_building_5", "str_luckland_building_name_5", "str_luckland_building_desc_5", "n11_minigame_building_6", "str_luckland_building_name_6", "str_luckland_building_desc_6", "n11_minigame_building_7", "str_luckland_building_name_7", "str_luckland_building_desc_7", "n11_minigame_building_8", "str_luckland_building_name_8", "str_luckland_building_desc_8", "n11_minigame_building_9", "str_luckland_building_name_9", "str_luckland_building_desc_9", "n11_minigame_building_10", "str_luckland_building_name_10", "str_luckland_building_desc_10", "n11_minigame_building_11", "str_luckland_building_name_11", "str_luckland_building_desc_11", "n11_minigame_building_3", "str_luckland_building_name_3", "str_luckland_lock_delete_card", "str_luckland_lock_redraw_card", "str_luckland_lock_skip", "str_luckland_word_1", 
-{1101}
+local key = {
+  ID = 1,
+  BuildType = 2,
+  MaxLevel = 3,
+  BuildIcon = 4,
+  BuildName = 5,
+  BuildDesc = 6,
+  UpgradeCost = 7,
+  BuildLevelTips = 8,
+  BuffIDList = 9,
+  CountDown = 10,
+  CardPool = 11,
+  PosList = 12,
+  DefRate = 13,
+  MaxHPIncreaseParam = 14
+}
+local common = {
+  "n11_minigame_building_1",
+  "str_luckland_building_name_1",
+  "str_luckland_building_desc_1",
+  "str_luckland_build_1_level_1",
+  "str_luckland_build_1_level_2",
+  "str_luckland_build_1_level_4",
+  "n11_minigame_building_2",
+  "str_luckland_building_name_2",
+  "str_luckland_building_desc_2",
+  "n11_minigame_building_4",
+  "str_luckland_building_name_4",
+  "str_luckland_building_desc_4",
+  "n11_minigame_building_5",
+  "str_luckland_building_name_5",
+  "str_luckland_building_desc_5",
+  "n11_minigame_building_6",
+  "str_luckland_building_name_6",
+  "str_luckland_building_desc_6",
+  "n11_minigame_building_7",
+  "str_luckland_building_name_7",
+  "str_luckland_building_desc_7",
+  "n11_minigame_building_8",
+  "str_luckland_building_name_8",
+  "str_luckland_building_desc_8",
+  "n11_minigame_building_9",
+  "str_luckland_building_name_9",
+  "str_luckland_building_desc_9",
+  "n11_minigame_building_10",
+  "str_luckland_building_name_10",
+  "str_luckland_building_desc_10",
+  "n11_minigame_building_11",
+  "str_luckland_building_name_11",
+  "str_luckland_building_desc_11",
+  "n11_minigame_building_3",
+  "str_luckland_building_name_3",
+  "str_luckland_lock_delete_card",
+  "str_luckland_lock_redraw_card",
+  "str_luckland_lock_skip",
+  "str_luckland_word_1",
+  {1101}
 }
 local config = {
-[10101] = {10101, 1, 3, common[1], common[2], common[3], 200, common[4], nil, nil, 
-{1001101}
-}
-, 
-[10102] = {10102, 1, 3, common[1], common[2], common[3], 1000, common[5], nil, nil, 
-{1001201, 1001202}
-}
-, 
-[10103] = {10103, 1, 3, common[1], common[2], common[3], 0, common[6], nil, nil, 
-{1001301, 1001302, 1001303}
-}
-, 
-[20101] = {20101, 1, 3, common[1], common[2], common[3], 400, common[4], nil, nil, 
-{2001101}
-}
-, 
-[20102] = {20102, 1, 3, common[1], common[2], common[3], 1000, common[5], nil, nil, 
-{2001201, 2001202}
-}
-, 
-[20103] = {20103, 1, 3, common[1], common[2], common[3], 0, common[6], nil, nil, 
-{2001301, 2001302, 2001303}
-}
-, 
-[30101] = {30101, 1, 3, common[1], common[2], common[3], 400, common[4], nil, nil, 
-{3001101}
-}
-, 
-[30102] = {30102, 1, 3, common[1], common[2], common[3], 1000, common[5], nil, nil, 
-{3001201, 3001202}
-}
-, 
-[30103] = {30103, 1, 3, common[1], common[2], common[3], 0, common[6], nil, nil, 
-{3001301, 3001302, 3001303}
-}
-, 
-[40101] = {40101, 1, 3, common[1], common[2], common[3], 400, common[4], nil, nil, 
-{4001101}
-}
-, 
-[40102] = {40102, 1, 3, common[1], common[2], common[3], 1000, common[5], nil, nil, 
-{4001201, 4001202}
-}
-, 
-[40103] = {40103, 1, 3, common[1], common[2], common[3], 0, common[6], nil, nil, 
-{4001301, 4001302, 4001303}
-}
-, 
-[50101] = {50101, 1, 3, common[1], common[2], common[3], 400, common[4], nil, nil, 
-{5001101}
-}
-, 
-[50102] = {50102, 1, 3, common[1], common[2], common[3], 1000, common[5], nil, nil, 
-{5001201, 5001202}
-}
-, 
-[50103] = {50103, 1, 3, common[1], common[2], common[3], 0, common[6], nil, nil, 
-{5001301, 5001302, 5001303}
-}
-, 
-[60101] = {60101, 1, 3, common[1], common[2], common[3], 400, common[4], nil, nil, 
-{5101101}
-}
-, 
-[60102] = {60102, 1, 3, common[1], common[2], common[3], 1000, common[5], nil, nil, 
-{5101201, 5101202}
-}
-, 
-[60103] = {60103, 1, 3, common[1], common[2], common[3], 0, common[6], nil, nil, 
-{5101301, 5101302, 5101303}
-}
-, 
-[201] = {201, 2, 5, common[7], common[8], common[9], 150, "str_luckland_build_2_level_1"}
-, 
-[202] = {202, 2, 5, common[7], common[8], common[9], 300, "str_luckland_build_2_level_2", nil, nil, nil, 
-{9}
-}
-, 
-[203] = {203, 2, 5, common[7], common[8], common[9], 600, "str_luckland_build_2_level_3", nil, nil, nil, 
-{9, 10}
-}
-, 
-[204] = {204, 2, 5, common[7], common[8], common[9], 800, "str_luckland_build_2_level_4", nil, nil, nil, 
-{9, 10, 11}
-}
-, 
-[205] = {205, 2, 5, common[7], common[8], common[9], 0, "str_luckland_build_2_level_5", nil, nil, nil, 
-{9, 10, 11, 12}
-}
-, 
-[401] = {401, 9, 1, common[10], common[11], common[12], 0, "str_luckland_build_4_level_1", 
-{401}
-}
-, 
-[402] = {402, 10, 2, common[10], common[11], common[12], 0, "str_luckland_build_4_level_2", 
-{402}
-}
-, 
-[403] = {403, 11, 3, common[10], common[11], common[12], 0, "str_luckland_build_4_level_3", 
-{403}
-}
-, 
-[501] = {501, 12, 1, common[13], common[14], common[15], 0, "str_luckland_build_5_level_1", 
-{501}
-}
-, 
-[502] = {502, 13, 2, common[13], common[14], common[15], 0, "str_luckland_build_5_level_2", 
-{502}
-}
-, 
-[503] = {503, 14, 3, common[13], common[14], common[15], 0, "str_luckland_build_5_level_3", 
-{503}
-}
-, 
-[601] = {601, 15, 1, common[16], common[17], common[18], 0, "str_luckland_build_6_level_1", 
-{601}
-}
-, 
-[602] = {602, 16, 2, common[16], common[17], common[18], 0, "str_luckland_build_6_level_2", 
-{602}
-}
-, 
-[603] = {603, 17, 3, common[16], common[17], common[18], 0, "str_luckland_build_6_level_3", 
-{603}
-}
-, 
-[701] = {701, 18, 1, common[19], common[20], common[21], 0, "str_luckland_build_7_level_1", nil, nil, nil, nil, nil, 2}
-, 
-[702] = {702, 19, 2, common[19], common[20], common[21], 0, "str_luckland_build_7_level_2", nil, nil, nil, nil, nil, 3}
-, 
-[703] = {703, 20, 3, common[19], common[20], common[21], 0, "str_luckland_build_7_level_3", nil, nil, nil, nil, nil, 4}
-, 
-[801] = {801, 21, 1, common[22], common[23], common[24], 0, "str_luckland_build_8_level_1", 
-{801}
-}
-, 
-[802] = {802, 22, 2, common[22], common[23], common[24], 0, "str_luckland_build_8_level_2", 
-{802}
-}
-, 
-[803] = {803, 23, 3, common[22], common[23], common[24], 0, "str_luckland_build_8_level_3", 
-{803}
-}
-, 
-[901] = {901, 24, 1, common[25], common[26], common[27], 0, "str_luckland_build_9_level_1", 
-{901}
-}
-, 
-[902] = {902, 25, 2, common[25], common[26], common[27], 0, "str_luckland_build_9_level_2", 
-{902}
-}
-, 
-[903] = {903, 26, 3, common[25], common[26], common[27], 0, "str_luckland_build_9_level_3", 
-{903}
-}
-, 
-[1001] = {1001, 27, 1, common[28], common[29], common[30], 0, "str_luckland_build_10_level_1", 
-{1001}
-}
-, 
-[1002] = {1002, 28, 2, common[28], common[29], common[30], 0, "str_luckland_build_10_level_2", 
-{1002}
-}
-, 
-[1003] = {1003, 29, 3, common[28], common[29], common[30], 0, "str_luckland_build_10_level_3", 
-{1003}
-}
-, 
-[1101] = {1101, 30, 1, common[31], common[32], common[33], 0, "str_luckland_build_11_level_1", common[40], 9}
-, 
-[1102] = {1102, 31, 2, common[31], common[32], common[33], 0, "str_luckland_build_11_level_2", common[40], 7}
-, 
-[1103] = {1103, 32, 3, common[31], common[32], common[33], 0, "str_luckland_build_11_level_3", common[40], 6}
-, 
-[10401] = {10401, 4, 1, common[34], common[35], common[36], 0, common[36]}
-, 
-[20401] = {20401, 4, 1, common[34], common[35], common[37], 0, common[37]}
-, 
-[30401] = {30401, 4, 1, common[34], common[35], common[38], 0, common[38]}
-, 
-[40401] = {40401, 4, 1, common[34], common[35], common[39], 0, common[39]}
+  [10101] = {
+    10101,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    200,
+    common[4],
+    nil,
+    nil,
+    {1001101}
+  },
+  [10102] = {
+    10102,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    1000,
+    common[5],
+    nil,
+    nil,
+    {1001201, 1001202}
+  },
+  [10103] = {
+    10103,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    0,
+    common[6],
+    nil,
+    nil,
+    {
+      1001301,
+      1001302,
+      1001303
+    }
+  },
+  [20101] = {
+    20101,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    400,
+    common[4],
+    nil,
+    nil,
+    {2001101}
+  },
+  [20102] = {
+    20102,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    1000,
+    common[5],
+    nil,
+    nil,
+    {2001201, 2001202}
+  },
+  [20103] = {
+    20103,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    0,
+    common[6],
+    nil,
+    nil,
+    {
+      2001301,
+      2001302,
+      2001303
+    }
+  },
+  [30101] = {
+    30101,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    400,
+    common[4],
+    nil,
+    nil,
+    {3001101}
+  },
+  [30102] = {
+    30102,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    1000,
+    common[5],
+    nil,
+    nil,
+    {3001201, 3001202}
+  },
+  [30103] = {
+    30103,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    0,
+    common[6],
+    nil,
+    nil,
+    {
+      3001301,
+      3001302,
+      3001303
+    }
+  },
+  [40101] = {
+    40101,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    400,
+    common[4],
+    nil,
+    nil,
+    {4001101}
+  },
+  [40102] = {
+    40102,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    1000,
+    common[5],
+    nil,
+    nil,
+    {4001201, 4001202}
+  },
+  [40103] = {
+    40103,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    0,
+    common[6],
+    nil,
+    nil,
+    {
+      4001301,
+      4001302,
+      4001303
+    }
+  },
+  [50101] = {
+    50101,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    400,
+    common[4],
+    nil,
+    nil,
+    {5001101}
+  },
+  [50102] = {
+    50102,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    1000,
+    common[5],
+    nil,
+    nil,
+    {5001201, 5001202}
+  },
+  [50103] = {
+    50103,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    0,
+    common[6],
+    nil,
+    nil,
+    {
+      5001301,
+      5001302,
+      5001303
+    }
+  },
+  [60101] = {
+    60101,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    400,
+    common[4],
+    nil,
+    nil,
+    {5101101}
+  },
+  [60102] = {
+    60102,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    1000,
+    common[5],
+    nil,
+    nil,
+    {5101201, 5101202}
+  },
+  [60103] = {
+    60103,
+    1,
+    3,
+    common[1],
+    common[2],
+    common[3],
+    0,
+    common[6],
+    nil,
+    nil,
+    {
+      5101301,
+      5101302,
+      5101303
+    }
+  },
+  [201] = {
+    201,
+    2,
+    5,
+    common[7],
+    common[8],
+    common[9],
+    150,
+    "str_luckland_build_2_level_1"
+  },
+  [202] = {
+    202,
+    2,
+    5,
+    common[7],
+    common[8],
+    common[9],
+    300,
+    "str_luckland_build_2_level_2",
+    nil,
+    nil,
+    nil,
+    {9}
+  },
+  [203] = {
+    203,
+    2,
+    5,
+    common[7],
+    common[8],
+    common[9],
+    600,
+    "str_luckland_build_2_level_3",
+    nil,
+    nil,
+    nil,
+    {9, 10}
+  },
+  [204] = {
+    204,
+    2,
+    5,
+    common[7],
+    common[8],
+    common[9],
+    800,
+    "str_luckland_build_2_level_4",
+    nil,
+    nil,
+    nil,
+    {
+      9,
+      10,
+      11
+    }
+  },
+  [205] = {
+    205,
+    2,
+    5,
+    common[7],
+    common[8],
+    common[9],
+    0,
+    "str_luckland_build_2_level_5",
+    nil,
+    nil,
+    nil,
+    {
+      9,
+      10,
+      11,
+      12
+    }
+  },
+  [401] = {
+    401,
+    9,
+    1,
+    common[10],
+    common[11],
+    common[12],
+    0,
+    "str_luckland_build_4_level_1",
+    {401}
+  },
+  [402] = {
+    402,
+    10,
+    2,
+    common[10],
+    common[11],
+    common[12],
+    0,
+    "str_luckland_build_4_level_2",
+    {402}
+  },
+  [403] = {
+    403,
+    11,
+    3,
+    common[10],
+    common[11],
+    common[12],
+    0,
+    "str_luckland_build_4_level_3",
+    {403}
+  },
+  [501] = {
+    501,
+    12,
+    1,
+    common[13],
+    common[14],
+    common[15],
+    0,
+    "str_luckland_build_5_level_1",
+    {501}
+  },
+  [502] = {
+    502,
+    13,
+    2,
+    common[13],
+    common[14],
+    common[15],
+    0,
+    "str_luckland_build_5_level_2",
+    {502}
+  },
+  [503] = {
+    503,
+    14,
+    3,
+    common[13],
+    common[14],
+    common[15],
+    0,
+    "str_luckland_build_5_level_3",
+    {503}
+  },
+  [601] = {
+    601,
+    15,
+    1,
+    common[16],
+    common[17],
+    common[18],
+    0,
+    "str_luckland_build_6_level_1",
+    {601}
+  },
+  [602] = {
+    602,
+    16,
+    2,
+    common[16],
+    common[17],
+    common[18],
+    0,
+    "str_luckland_build_6_level_2",
+    {602}
+  },
+  [603] = {
+    603,
+    17,
+    3,
+    common[16],
+    common[17],
+    common[18],
+    0,
+    "str_luckland_build_6_level_3",
+    {603}
+  },
+  [701] = {
+    701,
+    18,
+    1,
+    common[19],
+    common[20],
+    common[21],
+    0,
+    "str_luckland_build_7_level_1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2
+  },
+  [702] = {
+    702,
+    19,
+    2,
+    common[19],
+    common[20],
+    common[21],
+    0,
+    "str_luckland_build_7_level_2",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3
+  },
+  [703] = {
+    703,
+    20,
+    3,
+    common[19],
+    common[20],
+    common[21],
+    0,
+    "str_luckland_build_7_level_3",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4
+  },
+  [801] = {
+    801,
+    21,
+    1,
+    common[22],
+    common[23],
+    common[24],
+    0,
+    "str_luckland_build_8_level_1",
+    {801}
+  },
+  [802] = {
+    802,
+    22,
+    2,
+    common[22],
+    common[23],
+    common[24],
+    0,
+    "str_luckland_build_8_level_2",
+    {802}
+  },
+  [803] = {
+    803,
+    23,
+    3,
+    common[22],
+    common[23],
+    common[24],
+    0,
+    "str_luckland_build_8_level_3",
+    {803}
+  },
+  [901] = {
+    901,
+    24,
+    1,
+    common[25],
+    common[26],
+    common[27],
+    0,
+    "str_luckland_build_9_level_1",
+    {901}
+  },
+  [902] = {
+    902,
+    25,
+    2,
+    common[25],
+    common[26],
+    common[27],
+    0,
+    "str_luckland_build_9_level_2",
+    {902}
+  },
+  [903] = {
+    903,
+    26,
+    3,
+    common[25],
+    common[26],
+    common[27],
+    0,
+    "str_luckland_build_9_level_3",
+    {903}
+  },
+  [1001] = {
+    1001,
+    27,
+    1,
+    common[28],
+    common[29],
+    common[30],
+    0,
+    "str_luckland_build_10_level_1",
+    {1001}
+  },
+  [1002] = {
+    1002,
+    28,
+    2,
+    common[28],
+    common[29],
+    common[30],
+    0,
+    "str_luckland_build_10_level_2",
+    {1002}
+  },
+  [1003] = {
+    1003,
+    29,
+    3,
+    common[28],
+    common[29],
+    common[30],
+    0,
+    "str_luckland_build_10_level_3",
+    {1003}
+  },
+  [1101] = {
+    1101,
+    30,
+    1,
+    common[31],
+    common[32],
+    common[33],
+    0,
+    "str_luckland_build_11_level_1",
+    common[40],
+    9
+  },
+  [1102] = {
+    1102,
+    31,
+    2,
+    common[31],
+    common[32],
+    common[33],
+    0,
+    "str_luckland_build_11_level_2",
+    common[40],
+    7
+  },
+  [1103] = {
+    1103,
+    32,
+    3,
+    common[31],
+    common[32],
+    common[33],
+    0,
+    "str_luckland_build_11_level_3",
+    common[40],
+    6
+  },
+  [10401] = {
+    10401,
+    4,
+    1,
+    common[34],
+    common[35],
+    common[36],
+    0,
+    common[36]
+  },
+  [20401] = {
+    20401,
+    4,
+    1,
+    common[34],
+    common[35],
+    common[37],
+    0,
+    common[37]
+  },
+  [30401] = {
+    30401,
+    4,
+    1,
+    common[34],
+    common[35],
+    common[38],
+    0,
+    common[38]
+  },
+  [40401] = {
+    40401,
+    4,
+    1,
+    common[34],
+    common[35],
+    common[39],
+    0,
+    common[39]
+  }
 }
 return config, "ID", key
-

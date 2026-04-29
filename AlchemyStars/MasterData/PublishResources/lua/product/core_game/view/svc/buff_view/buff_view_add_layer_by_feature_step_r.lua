@@ -1,29 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_add_layer_by_feature_step_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddLayerByFeatureStep", BuffViewBase)
 BuffViewAddLayerByFeatureStep = BuffViewAddLayerByFeatureStep
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddLayerByFeatureStep.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewAddLayerByFeatureStep:PlayView(TT)
   local result = self:GetBuffResult()
   local curMarkLayer = result:GetLayer()
   local buffSeq = result:GetBuffSeq()
-  local buffView = (self._entity):BuffView()
+  local buffView = self._entity:BuffView()
   local viewInstance = buffView:GetBuffViewInstance(buffSeq)
   local dontDisplay = result:GetDonotDisplay()
   viewInstance:SetLayerCount(TT, curMarkLayer)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
   if dontDisplay then
-    return 
+    return
   end
-  if (self._entity):HasPetPstID() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAccumulateNum, ((self._entity):PetPstID()):GetPstID(), curMarkLayer)
+  if self._entity:HasPetPstID() then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAccumulateNum, self._entity:PetPstID():GetPstID(), curMarkLayer)
   end
 end
-
-

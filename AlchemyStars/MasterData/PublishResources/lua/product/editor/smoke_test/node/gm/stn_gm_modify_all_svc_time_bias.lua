@@ -1,27 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/gm/stn_gm_modify_all_svc_time_bias.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("GM_ModifySvcTimeBias", Common_AsyncBase)
 GM_ModifySvcTimeBias = GM_ModifySvcTimeBias
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GM_ModifySvcTimeBias.Constructor = function(self, _manager, timeSec)
-  -- function num : 0_0
+function GM_ModifySvcTimeBias:Constructor(_manager, timeSec)
   self._timeSec = timeSec
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GM_ModifySvcTimeBias.TaskFunc = function(self, TT, status)
-  -- function num : 0_1 , upvalues : _ENV
-  while ((GameGlobal.UIStateManager)()):IsLocked() do
+function GM_ModifySvcTimeBias:TaskFunc(TT, status)
+  while GameGlobal.UIStateManager():IsLocked() do
     YIELD(TT)
   end
-  ;
-  (self._manager):AsyncGM_ModifyAllSvcTimeBias(TT, status, self._timeSec)
+  self._manager:AsyncGM_ModifyAllSvcTimeBias(TT, status, self._timeSec)
 end
-
-

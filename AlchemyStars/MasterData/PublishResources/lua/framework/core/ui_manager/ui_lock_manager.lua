@@ -1,171 +1,109 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_lock_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILockManager", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UILockManager.Constructor = function(self, uiLayerManager)
-  -- function num : 0_0 , upvalues : _ENV
+function UILockManager:Constructor(uiLayerManager)
   self.nameLocks = FastArray:New()
   self.lockName2Event = {}
   self.showBusyCount = 0
   self.lockManagerHelper = UILockManagerHelper:New(uiLayerManager.layerManagerHelper)
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UILockManager.Dispose = function(self)
-  -- function num : 0_1
-  (self.lockManagerHelper):Dispose()
+function UILockManager:Dispose()
+  self.lockManagerHelper:Dispose()
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UILockManager.IsLocked = function(self)
-  -- function num : 0_2
-  do return (self.nameLocks):Size() ~= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UILockManager:IsLocked()
+  return self.nameLocks:Size() ~= 0
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UILockManager.HasLock = function(self, name)
-  -- function num : 0_3
-  do return (self.nameLocks):Find(name) ~= -1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UILockManager:HasLock(name)
+  return self.nameLocks:Find(name) ~= -1
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-UILockManager.LockedSize = function(self)
-  -- function num : 0_4
-  return (self.nameLocks):Size()
+function UILockManager:LockedSize()
+  return self.nameLocks:Size()
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-UILockManager.Lock = function(self, name)
-  -- function num : 0_5 , upvalues : _ENV
-  if (string.isnullorempty)(name) then
-    (Log.fatal)("[UI] [Lock] lock_name is empty")
+function UILockManager:Lock(name)
+  if string.isnullorempty(name) then
+    Log.fatal("[UI] [Lock] lock_name is empty")
     return false
   end
   if self:HasLock(name) then
-    (Log.fatal)("[UI] [Lock] lock name already exist \'", name, "\'")
+    Log.fatal("[UI] [Lock] lock name already exist '", name, "'")
     return false
   end
-  ;
-  (self.nameLocks):Insert(name)
-  ;
-  (Log.debug)("[UI] [Lock] \'", name, "\' lock count: ", (self.nameLocks):Size())
-  ;
-  (self.lockManagerHelper):Lock()
+  self.nameLocks:Insert(name)
+  Log.debug("[UI] [Lock] '", name, "' lock count: ", self.nameLocks:Size())
+  self.lockManagerHelper:Lock()
   return true
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-UILockManager.UnLock = function(self, name)
-  -- function num : 0_6 , upvalues : _ENV
-  if (string.isnullorempty)(name) then
-    (Log.fatal)("[UI] [UnLock] lock_name is empty")
-    return 
+function UILockManager:UnLock(name)
+  if string.isnullorempty(name) then
+    Log.fatal("[UI] [UnLock] lock_name is empty")
+    return
   end
-  local index = (self.nameLocks):Find(name)
+  local index = self.nameLocks:Find(name)
   if index ~= -1 then
-    (self.nameLocks):RemoveByIndex(index)
-    ;
-    (Log.debug)("[UI] [UnLock] \'", name, "\' lock count: ", (self.nameLocks):Size())
+    self.nameLocks:RemoveByIndex(index)
+    Log.debug("[UI] [UnLock] '", name, "' lock count: ", self.nameLocks:Size())
   end
-  if (self.nameLocks):Size() == 0 then
-    (self.lockManagerHelper):UnLock()
+  if self.nameLocks:Size() == 0 then
+    self.lockManagerHelper:UnLock()
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-UILockManager.ExpirationLock = function(self, name, lockMs)
-  -- function num : 0_7 , upvalues : _ENV
+function UILockManager:ExpirationLock(name, lockMs)
   if type(lockMs) ~= "number" or lockMs <= 0 then
-    (Log.fatal)("[UI] [ExpirationLock] lockMs is empty or <=0")
-    return 
+    Log.fatal("[UI] [ExpirationLock] lockMs is empty or <=0")
+    return
   end
   if self:Lock(name) == true then
-    local event = ((GameGlobal.Timer)()):AddEvent(lockMs, UILockManager.UnLockAfterTime, self, name)
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.lockName2Event)[name] = event
+    local event = GameGlobal.Timer():AddEvent(lockMs, UILockManager.UnLockAfterTime, self, name)
+    self.lockName2Event[name] = event
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-UILockManager.CancelExpirationLock = function(self, name)
-  -- function num : 0_8 , upvalues : _ENV
-  if (string.isnullorempty)(name) then
-    (Log.fatal)("[UI] [CancelExpirationLock] lock_name is empty")
-    return 
+function UILockManager:CancelExpirationLock(name)
+  if string.isnullorempty(name) then
+    Log.fatal("[UI] [CancelExpirationLock] lock_name is empty")
+    return
   end
-  local expirationEvent = (self.lockName2Event)[name]
+  local expirationEvent = self.lockName2Event[name]
   if expirationEvent == nil then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.Timer)()):CancelEvent(expirationEvent)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.lockName2Event)[name] = nil
+  GameGlobal.Timer():CancelEvent(expirationEvent)
+  self.lockName2Event[name] = nil
   self:UnLock(name)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-UILockManager.UnLockAll = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.debug)("[UI] [UnLockAll] Done")
-  ;
-  (self.nameLocks):Clear()
-  ;
-  (self.lockManagerHelper):UnLockAll()
-  for _,event in pairs(self.lockName2Event) do
-    ((GameGlobal.Timer)()):CancelEvent(event)
+function UILockManager:UnLockAll()
+  Log.debug("[UI] [UnLockAll] Done")
+  self.nameLocks:Clear()
+  self.lockManagerHelper:UnLockAll()
+  for _, event in pairs(self.lockName2Event) do
+    GameGlobal.Timer():CancelEvent(event)
   end
-  ;
-  (table.clear)(self.lockName2Event)
+  table.clear(self.lockName2Event)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-UILockManager.UnLockAfterTime = function(self, name)
-  -- function num : 0_10 , upvalues : _ENV
+function UILockManager:UnLockAfterTime(name)
   if name then
     self:UnLock(name)
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.lockName2Event)[name] = nil
-    ;
-    (Log.debug)("[UI] [ExpirationLock] event callback \'", name, "\'")
+    self.lockName2Event[name] = nil
+    Log.debug("[UI] [ExpirationLock] event callback '", name, "'")
   else
-    ;
-    (Log.fatal)("UILockManager:UnLockAfterTime params error")
+    Log.fatal("UILockManager:UnLockAfterTime params error")
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-UILockManager.ShowBusy = function(self, flag)
-  -- function num : 0_11
+function UILockManager:ShowBusy(flag)
   if flag then
     self.showBusyCount = self.showBusyCount + 1
     if self.showBusyCount == 1 then
       self:Lock("showbusy")
-      ;
-      (self.lockManagerHelper):SetHighDepthObjectActive(true)
+      self.lockManagerHelper:SetHighDepthObjectActive(true)
     end
   else
     if self.showBusyCount > 0 then
@@ -173,34 +111,21 @@ UILockManager.ShowBusy = function(self, flag)
     end
     if self.showBusyCount == 0 then
       self:UnLock("showbusy")
-      ;
-      (self.lockManagerHelper):SetHighDepthObjectActive(false)
+      self.lockManagerHelper:SetHighDepthObjectActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-UILockManager.ClearBusy = function(self)
-  -- function num : 0_12
+function UILockManager:ClearBusy()
   self:UnLock("showbusy")
-  ;
-  (self.lockManagerHelper):SetHighDepthObjectActive(false)
+  self.lockManagerHelper:SetHighDepthObjectActive(false)
   self.showBusyCount = 0
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-UILockManager.GetLocksNameString = function(self)
-  -- function num : 0_13
+function UILockManager:GetLocksNameString()
   local retString = " : "
-  ;
-  (self.nameLocks):ForEach(function(ele)
-    -- function num : 0_13_0 , upvalues : retString
+  self.nameLocks:ForEach(function(ele)
     retString = retString .. ele .. " ; "
-  end
-)
+  end)
   return retString
 end
-
-

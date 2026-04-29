@@ -1,59 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/common/ui_activity_evesinsa_intr_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityEveSinsaIntrController", UIController)
 UIActivityEveSinsaIntrController = UIActivityEveSinsaIntrController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityEveSinsaIntrController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityEveSinsaIntrController:OnShow(uiParams)
   self.Content = self:GetUIComponent("UISelectObjectPath", "Content")
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaIntrController.Flush = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityEveSinsaIntrController:Flush()
   local n = 0
-  while 1 do
+  while true do
     n = n + 1
-    local keyHead = (StringTable.Has)("str_activity_evesinsa_intro_head_" .. n)
+    local keyHead = StringTable.Has("str_activity_evesinsa_intro_head_" .. n)
     if not keyHead then
       n = n - 1
       break
     end
   end
-  do
-    if n <= 0 then
-      (Log.fatal)("### no [str_activity_evesinsa_intro_head_n] in str_summer")
-      return 
-    end
-    ;
-    (self.Content):SpawnObjects("UIActivityEveSinsaIntrItem", n)
-    local uis = (self.Content):GetAllSpawnList()
-    for i,ui in ipairs(uis) do
-      local head = (StringTable.Get)("str_activity_evesinsa_intro_head_" .. i)
-      local body = (StringTable.Get)("str_activity_evesinsa_intro_body_" .. i)
-      ui:Flush(head, body)
-    end
+  if n <= 0 then
+    Log.fatal("### no [str_activity_evesinsa_intro_head_n] in str_summer")
+    return
+  end
+  self.Content:SpawnObjects("UIActivityEveSinsaIntrItem", n)
+  local uis = self.Content:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
+    local head = StringTable.Get("str_activity_evesinsa_intro_head_" .. i)
+    local body = StringTable.Get("str_activity_evesinsa_intro_body_" .. i)
+    ui:Flush(head, body)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaIntrController.btnCloseOnClick = function(self, go)
-  -- function num : 0_2
+function UIActivityEveSinsaIntrController:btnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaIntrController.bgOnClick = function(self, go)
-  -- function num : 0_3
+function UIActivityEveSinsaIntrController:bgOnClick(go)
   self:CloseDialog()
 end
-
-

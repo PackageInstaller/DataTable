@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/us/str_physicalpower.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_physicalpower_current_time = "Current Time", str_physicalpower_next_time = "Next Prism recovers in", str_physicalpower_all_time = "All Prism recover in", str_physicalpower_error_phy_add_full = "You\'ve reached the Prism limit. It cannot be replenished further."}
+local config = {
+  str_physicalpower_current_time = "Current Time",
+  str_physicalpower_next_time = "Next Prism recovers in",
+  str_physicalpower_all_time = "All Prism recover in",
+  str_physicalpower_error_phy_add_full = "You've reached the Prism limit. It cannot be replenished further."
+}
 return config
-

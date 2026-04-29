@@ -1,220 +1,129 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/markdown_builder.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-MarkdownFlag = {H1 = 1, H2 = 2, H3 = 3, H4 = 4, H5 = 5, H6 = 6, Bold = 7, Link = 8, Code = 9, Quote = 10, ColorGreen = 11, ColorGray = 12, ColorRed = 13, Text = 14}
+MarkdownFlag = {
+  H1 = 1,
+  H2 = 2,
+  H3 = 3,
+  H4 = 4,
+  H5 = 5,
+  H6 = 6,
+  Bold = 7,
+  Link = 8,
+  Code = 9,
+  Quote = 10,
+  ColorGreen = 11,
+  ColorGray = 12,
+  ColorRed = 13,
+  Text = 14
+}
 _enum("MarkdownFlag", MarkdownFlag)
 _class("MarkdownBuilder", Object)
 MarkdownBuilder = MarkdownBuilder
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
 
-MarkdownBuilder.Constructor = function(self)
-  -- function num : 0_0
+function MarkdownBuilder:Constructor()
   self._content = {}
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.ClearBuilder = function(self)
-  -- function num : 0_1
+function MarkdownBuilder:ClearBuilder()
   self._content = {}
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.Append = function(self, flag, str)
-  -- function num : 0_2 , upvalues : _ENV
+function MarkdownBuilder:Append(flag, str)
   local key = GetEnumKey("MarkdownFlag", flag)
-  ;
-  (self["Append" .. key])(self, str)
+  self["Append" .. key](self, str)
   return self
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.AppendH1 = function(self, str)
-  -- function num : 0_3
+function MarkdownBuilder:AppendH1(str)
   local s = "# " .. str .. "\n"
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._content)[#self._content + 1] = s
+  self._content[#self._content + 1] = s
   return self
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
+function MarkdownBuilder:AppendH2(str)
+  local s = [[
 
-MarkdownBuilder.AppendH2 = function(self, str)
-  -- function num : 0_4
-  local s = "\n## " .. str .. "\n"
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._content)[#self._content + 1] = s
+## ]] .. str .. "\n"
+  self._content[#self._content + 1] = s
   return self
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.AppendH3 = function(self, str)
-  -- function num : 0_5
+function MarkdownBuilder:AppendH3(str)
   local s = "### " .. str .. "\n"
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._content)[#self._content + 1] = s
+  self._content[#self._content + 1] = s
   return self
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.AppendH4 = function(self, str)
-  -- function num : 0_6
+function MarkdownBuilder:AppendH4(str)
   local s = "#### " .. str .. "\n"
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._content)[#self._content + 1] = s
+  self._content[#self._content + 1] = s
   return self
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.AppendH5 = function(self, str)
-  -- function num : 0_7
+function MarkdownBuilder:AppendH5(str)
   local s = "##### " .. str .. "\n"
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._content)[#self._content + 1] = s
+  self._content[#self._content + 1] = s
   return self
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.AppendH6 = function(self, str)
-  -- function num : 0_8
+function MarkdownBuilder:AppendH6(str)
   local s = "###### " .. str .. "\n"
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._content)[#self._content + 1] = s
+  self._content[#self._content + 1] = s
   return self
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.AppendBold = function(self, str)
-  -- function num : 0_9
+function MarkdownBuilder:AppendBold(str)
   local s = "**" .. str .. "**"
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._content)[#self._content + 1] = s
+  self._content[#self._content + 1] = s
   return self
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.AppendLink = function(self, str, url)
-  -- function num : 0_10
+function MarkdownBuilder:AppendLink(str, url)
   local s = "[" .. str .. "](" .. url .. ")"
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._content)[#self._content + 1] = s
+  self._content[#self._content + 1] = s
   return self
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.AppendCode = function(self, str)
-  -- function num : 0_11
+function MarkdownBuilder:AppendCode(str)
   local s = "`" .. str .. "`"
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._content)[#self._content + 1] = s
+  self._content[#self._content + 1] = s
   return self
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.AppendQuote = function(self, str)
-  -- function num : 0_12
+function MarkdownBuilder:AppendQuote(str)
   local s = "> " .. str .. "\n"
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._content)[#self._content + 1] = s
+  self._content[#self._content + 1] = s
   return self
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.AppendColorGreen = function(self, str)
-  -- function num : 0_13
+function MarkdownBuilder:AppendColorGreen(str)
   local s = "<font color=\"info\">" .. str .. "</font>"
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._content)[#self._content + 1] = s
+  self._content[#self._content + 1] = s
   return self
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.AppendColorGray = function(self, str)
-  -- function num : 0_14
+function MarkdownBuilder:AppendColorGray(str)
   local s = "<font color=\"comment\">" .. str .. "</font>"
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._content)[#self._content + 1] = s
+  self._content[#self._content + 1] = s
   return self
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.AppendColorOrange = function(self, str)
-  -- function num : 0_15
+function MarkdownBuilder:AppendColorOrange(str)
   local s = "<font color=\"warning\">" .. str .. "</font>"
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._content)[#self._content + 1] = s
+  self._content[#self._content + 1] = s
   return self
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.AppendColorRed = function(self, str)
-  -- function num : 0_16
-  local s = "<font color=\'0xff0000\'>" .. str .. "</font>"
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._content)[#self._content + 1] = s
+function MarkdownBuilder:AppendColorRed(str)
+  local s = "<font color='0xff0000'>" .. str .. "</font>"
+  self._content[#self._content + 1] = s
   return self
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.AppendText = function(self, str)
-  -- function num : 0_17
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._content)[#self._content + 1] = str
+function MarkdownBuilder:AppendText(str)
+  self._content[#self._content + 1] = str
   return self
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkdownBuilder.ToString = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local s = (table.concat)(self._content, " ")
+function MarkdownBuilder:ToString()
+  local s = table.concat(self._content, " ")
   return s
 end
-
-

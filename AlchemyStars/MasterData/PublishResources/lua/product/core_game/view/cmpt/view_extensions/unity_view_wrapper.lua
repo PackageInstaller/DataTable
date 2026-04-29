@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/view_extensions/unity_view_wrapper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UnityViewWrapper", IViewWrapper)
 UnityViewWrapper = UnityViewWrapper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UnityViewWrapper.Constructor = function(self, resource_service, resRequest)
-  -- function num : 0_0
+function UnityViewWrapper:Constructor(resource_service, resRequest)
   self.ViewType = "UnitySimple"
   self.ResRequest = resRequest
   self.GameObject = resRequest.Obj
-  self.Transform = (resRequest.Obj).transform
+  self.Transform = resRequest.Obj.transform
   self._ResService = resource_service
   self._childTrans = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UnityViewWrapper.SyncTransform = function(self, pos, dir, scale, id, onOtherBoard)
-  -- function num : 0_1 , upvalues : _ENV
+function UnityViewWrapper:SyncTransform(pos, dir, scale, id, onOtherBoard)
   local tf = self.Transform
   if dir ~= Vector3(0, 0, 0) and not onOtherBoard then
     tf.forward = dir
@@ -33,39 +23,23 @@ UnityViewWrapper.SyncTransform = function(self, pos, dir, scale, id, onOtherBoar
   tf.localScale = scale
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UnityViewWrapper.SetVisible = function(self, active)
-  -- function num : 0_2
-  (self.GameObject):SetActive(active)
+function UnityViewWrapper:SetVisible(active)
+  self.GameObject:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UnityViewWrapper.ViewDispose = function(self)
-  -- function num : 0_3
-  (self._ResService):DestroyView(self)
+function UnityViewWrapper:ViewDispose()
+  self._ResService:DestroyView(self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UnityViewWrapper.FindChild = function(self, name)
-  -- function num : 0_4 , upvalues : _ENV
+function UnityViewWrapper:FindChild(name)
   local tran = self.Transform
   if not tran then
-    (Log.fatal)("### no Transform in UnityViewWrapper")
+    Log.fatal("### no Transform in UnityViewWrapper")
     return nil
   end
-  do
-    if not (self._childTrans)[name] then
-      local tranChild = (GameObjectHelper.FindChild)(tran, name)
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._childTrans)[name] = tranChild
-    end
-    return (self._childTrans)[name]
+  if not self._childTrans[name] then
+    local tranChild = GameObjectHelper.FindChild(tran, name)
+    self._childTrans[name] = tranChild
   end
+  return self._childTrans[name]
 end
-
-

@@ -1,35 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_damage_by_body_area_piece_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDamageByBodyAreaPieceCount", BuffLogicBase)
 BuffLogicDamageByBodyAreaPieceCount = BuffLogicDamageByBodyAreaPieceCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDamageByBodyAreaPieceCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicDamageByBodyAreaPieceCount:Constructor(buffInstance, logicParam)
   self._damageParam = logicParam
   self._basePercent = logicParam.percent
-  if not logicParam.pieceType then
-    self._pieceType = {}
-    if not logicParam.excludeTrap then
-      self._excludeTrap = {}
-    end
-  end
+  self._pieceType = logicParam.pieceType or {}
+  self._excludeTrap = logicParam.excludeTrap or {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDamageByBodyAreaPieceCount.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local context = (self._buffInstance):Context()
+function BuffLogicDamageByBodyAreaPieceCount:DoLogic(notify)
+  local context = self._buffInstance:Context()
   if not context then
-    return 
+    return
   end
   local petEntity = context.casterEntity
   if not petEntity then
-    return 
+    return
   end
   local defender = self._entity
   local playerElementCmpt = petEntity:Element()
@@ -38,33 +24,25 @@ BuffLogicDamageByBodyAreaPieceCount.DoLogic = function(self, notify)
   end
   local pieceCount = 1
   local bodyAreaPosList = {}
-  local bodyAreaList = (defender:BodyArea()):GetArea()
-  local gridPos = (defender:GridLocation()):GetGridPos()
-  for _,bodyArea in ipairs(bodyAreaList) do
+  local bodyAreaList = defender:BodyArea():GetArea()
+  local gridPos = defender:GridLocation():GetGridPos()
+  for _, bodyArea in ipairs(bodyAreaList) do
     local workPos = gridPos + bodyArea
-    ;
-    (table.insert)(bodyAreaPosList, workPos)
+    table.insert(bodyAreaPosList, workPos)
   end
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local posList = boardServiceLogic:FindPieceElementByTypeCountAndCenterFromParam(gridPos, self._pieceType, #bodyAreaPosList, bodyAreaPosList)
-  local pieceCount = (table.count)(posList)
+  local pieceCount = table.count(posList)
   local newPercent = 0
   newPercent = self._basePercent * pieceCount
   if newPercent == 0 then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  (self._damageParam).percent = newPercent
-  ;
-  ((self._world):GetMatchLogger()):BeginBuff(defender:GetID(), (self._buffInstance):BuffID())
-  local blsvc = (self._world):GetService("BuffLogic")
-  local damageInfo = blsvc:DoBuffDamage((self._buffInstance):BuffID(), petEntity, defender, self._damageParam)
-  ;
-  ((self._world):GetMatchLogger()):EndBuff(defender:GetID())
+  self._damageParam.percent = newPercent
+  self._world:GetMatchLogger():BeginBuff(defender:GetID(), self._buffInstance:BuffID())
+  local blsvc = self._world:GetService("BuffLogic")
+  local damageInfo = blsvc:DoBuffDamage(self._buffInstance:BuffID(), petEntity, defender, self._damageParam)
+  self._world:GetMatchLogger():EndBuff(defender:GetID())
   local buffResult = BuffResultDamage:New(damageInfo)
   return buffResult
 end
-
-

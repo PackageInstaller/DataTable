@@ -1,54 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/pop/ui_n29_detective_reasoning_pop_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN29DetectiveReasoningPopController", UIController)
 UIN29DetectiveReasoningPopController = UIN29DetectiveReasoningPopController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29DetectiveReasoningPopController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIN29DetectiveReasoningPopController:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningPopController.OnShow = function(self, uiParams, TT)
-  -- function num : 0_1
+function UIN29DetectiveReasoningPopController:OnShow(uiParams, TT)
   self._StageId = uiParams[1]
   self:_GetComponent()
   self:PlayEnterAnim(TT)
   self:ShowNext()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningPopController.OnHide = function(self)
-  -- function num : 0_2
+function UIN29DetectiveReasoningPopController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningPopController._GetComponent = function(self)
-  -- function num : 0_3
+function UIN29DetectiveReasoningPopController:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningPopController.PlayEnterAnim = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN29DetectiveReasoningPopController:PlayEnterAnim(TT)
   self:Lock("UIN29DetectiveReasoningPopController")
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28AVGShowEvidence)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28AVGShowEvidence)
   YIELD(TT, 6200)
   self:UnLock("UIN29DetectiveReasoningPopController")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveReasoningPopController.ShowNext = function(self)
-  -- function num : 0_5
+function UIN29DetectiveReasoningPopController:ShowNext()
   self:ShowDialog("UIN29DetectiveReasoning", self._StageId)
 end
-
-

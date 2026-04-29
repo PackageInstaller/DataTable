@@ -1,64 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/shop/ui_cn20_n49_ryza_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49Ryza_Shop", UIController)
 UICN20N49Ryza_Shop = UICN20N49Ryza_Shop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49Ryza_Shop.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._poolCount = ((Cfg.cfg_global).AlchemyShopShelfCount).IntValue or 3
+function UICN20N49Ryza_Shop:Constructor()
+  self._poolCount = Cfg.cfg_global.AlchemyShopShelfCount.IntValue or 3
   self._cellCount = 9
   self._curPoolIdx = 1
-  self._maxCount = ((Cfg.cfg_global).AlchemyShopShelfMax).IntValue or 100
+  self._maxCount = Cfg.cfg_global.AlchemyShopShelfMax.IntValue or 100
   self._shelfInfo = {}
-  self._topid = ((Cfg.cfg_global).AlchemyMoneyItemID).IntValue
+  self._topid = Cfg.cfg_global.AlchemyMoneyItemID.IntValue
   self._isSelling = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN20N49Ryza_Shop:LoadDataOnEnter(TT, res, uiParams)
   local campaignType = ECampaignType.CAMPAIGN_TYPE_INLAND_N20
-  local componentIds = {ECampaignCN20ComponentID.ECN20_ALCHEMY}
-  self._campaign = (UIActivityHelper.LoadDataOnEnter)(TT, res, campaignType, componentIds)
-  self._com = (self._campaign):GetComponent(ECampaignCN20ComponentID.ECN20_ALCHEMY)
-  self._comCfgID = (self._com):GetComponentCfgId()
-  self.personProcess = (UICN20N49Helper.GetComponent)(self._campaign, "alchemyShop")
+  local componentIds = {
+    ECampaignCN20ComponentID.ECN20_ALCHEMY
+  }
+  self._campaign = UIActivityHelper.LoadDataOnEnter(TT, res, campaignType, componentIds)
+  self._com = self._campaign:GetComponent(ECampaignCN20ComponentID.ECN20_ALCHEMY)
+  self._comCfgID = self._com:GetComponentCfgId()
+  self.personProcess = UICN20N49Helper.GetComponent(self._campaign, "alchemyShop")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.OnShow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN20N49Ryza_Shop:OnShow()
   self:InitWidgets()
   self:RefreshPoolInfo()
   self:_CheckGuide()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.InitWidgets = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN20N49Ryza_Shop:InitWidgets()
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   self._poolName = self:GetUIComponent("UILocalizationText", "poolName")
   self._topTex = self:GetUIComponent("UILocalizationText", "topTex")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_3_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, function()
-    -- function num : 0_3_1 , upvalues : self, _ENV
+  end, function()
     self:ShowDialog("UIIntroLoader", "UICN20N49AlchemyShopIntro", MaskType.MT_BlurMask)
-  end
-, nil, true)
+  end, nil, true)
   local toptips = self:GetUIComponent("UISelectObjectPath", "toptips")
   self._toptipsInfo = toptips:SpawnObject("UITopTipsContext")
   self._anim = self:GetUIComponent("Animation", "UICN20N49Ryza_Shop")
@@ -71,264 +52,185 @@ UICN20N49Ryza_Shop.InitWidgets = function(self)
   self:SetBtnState()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.RefreshProgress = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local needLevelUPGold = (self.personProcess):GetNextLevelNeedProgress()
+function UICN20N49Ryza_Shop:RefreshProgress()
+  local needLevelUPGold = self.personProcess:GetNextLevelNeedProgress()
   if needLevelUPGold <= 0 then
-    (self._needGoldText):SetText("")
-    ;
-    (self._needGoldImageGO):SetActive(false)
+    self._needGoldText:SetText("")
+    self._needGoldImageGO:SetActive(false)
   else
-    ;
-    (self._needGoldImageGO):SetActive(true)
-    ;
-    (self._needGoldText):SetText((StringTable.Get)("str_cn20_n49_shop_progress_cur_need_gold", needLevelUPGold))
+    self._needGoldImageGO:SetActive(true)
+    self._needGoldText:SetText(StringTable.Get("str_cn20_n49_shop_progress_cur_need_gold", needLevelUPGold))
   end
-  local red = (UICN20N49Helper.CalcRed_Component)(self._campaign, "alchemyShop")
-  ;
-  (self._progressRedGO):SetActive(red)
+  local red = UICN20N49Helper.CalcRed_Component(self._campaign, "alchemyShop")
+  self._progressRedGO:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.SetBtnState = function(self, anim)
-  -- function num : 0_5
-  do
-    if not self._isSelling or not "uieffanim_UICN20N49Ryza_Shop_1out2in" then
-      local animName = not anim or "uieffanim_UICN20N49Ryza_Shop_1in2out"
-    end
-    ;
-    (self._anim):Play(animName)
+function UICN20N49Ryza_Shop:SetBtnState(anim)
+  if anim then
+    local animName = self._isSelling and "uieffanim_UICN20N49Ryza_Shop_1out2in" or "uieffanim_UICN20N49Ryza_Shop_1in2out"
+    self._anim:Play(animName)
+  else
     local color1 = self._isSelling and 0 or 1
-    do
-      local color2 = self._isSelling and 1 or 0
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._btn1go).alpha = color1
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._btn2go).alpha = color2
-      -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._btn1go).blocksRaycasts = not self._isSelling
-      -- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._btn2go).blocksRaycasts = self._isSelling
-    end
+    local color2 = self._isSelling and 1 or 0
+    self._btn1go.alpha = color1
+    self._btn2go.alpha = color2
   end
+  self._btn1go.blocksRaycasts = not self._isSelling
+  self._btn2go.blocksRaycasts = self._isSelling
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.PoolBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UICN20N49Ryza_Shop:PoolBtnOnClick(go)
   self._curPoolIdx = self._curPoolIdx + 1
-  if self._poolCount < self._curPoolIdx then
+  if self._curPoolIdx > self._poolCount then
     self._curPoolIdx = 1
   end
   self:RefreshPoolInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.RefreshPoolInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._poolName):SetText((StringTable.Get)("str_cn20_n49_shop_pool_name", self._curPoolIdx))
+function UICN20N49Ryza_Shop:RefreshPoolInfo()
+  self._poolName:SetText(StringTable.Get("str_cn20_n49_shop_pool_name", self._curPoolIdx))
   local shelfInfo = self:GetShelfData()
-  ;
-  (self._pool):SpawnObjects("UICN20N49Ryza_ShopCell", self._cellCount)
-  local pools = (self._pool):GetAllSpawnList()
+  self._pool:SpawnObjects("UICN20N49Ryza_ShopCell", self._cellCount)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, self._cellCount do
     local item = pools[i]
     local info = shelfInfo[i]
     item:SetData(i, info, function(idx)
-    -- function num : 0_7_0 , upvalues : self
-    self:OnItemClick(idx)
-  end
-)
+      self:OnItemClick(idx)
+    end)
   end
   self:ShowHideCellAddGo(true)
   self:RefreshTopUI()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.AfterUILayerChanged = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local topui = ((GameGlobal.UIStateManager)()):IsTopUI(self:GetName())
+function UICN20N49Ryza_Shop:AfterUILayerChanged()
+  local topui = GameGlobal.UIStateManager():IsTopUI(self:GetName())
   if topui then
     self:RefreshTopUI()
     self:RefreshProgress()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.RefreshTopUI = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local count = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(self._topid)
-  ;
-  (self._topTex):SetText(count)
+function UICN20N49Ryza_Shop:RefreshTopUI()
+  local count = GameGlobal.GetModule(ItemModule):GetItemCount(self._topid)
+  self._topTex:SetText(count)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.OnItemClick = function(self, idx)
-  -- function num : 0_10 , upvalues : _ENV
+function UICN20N49Ryza_Shop:OnItemClick(idx)
   local tab = {}
-  for k,v in pairs(self._shelfInfo) do
+  for k, v in pairs(self._shelfInfo) do
     tab[v.id] = v.count
   end
   self:ShowDialog("UICN20N49Ryza_ShopList", tab, function(tabID2Count)
-    -- function num : 0_10_0 , upvalues : self
     self:RefreshShelfInfo(tabID2Count)
-  end
-, self._comCfgID)
+  end, self._comCfgID)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.GetItemPriceColor = function(id)
-  -- function num : 0_11 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_alchemy_item)[id]
+function UICN20N49Ryza_Shop.GetItemPriceColor(id)
+  local cfg = Cfg.cfg_component_alchemy_item[id]
   if cfg then
     return cfg.Price, cfg.Quality
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.SortItemDataLsit = function(list)
-  -- function num : 0_12 , upvalues : _ENV
+function UICN20N49Ryza_Shop.SortItemDataLsit(list)
   if list and next(list) then
-    (table.sort)(list, function(a, b)
-    -- function num : 0_12_0
-    local color_a = a.color
-    local color_b = b.color
-    if color_a == color_b then
-      local price_a = a.price
-      local price_b = b.price
-      if a.id >= b.id then
-        do
-          do return price_a ~= price_b end
-          do return price_b < price_a end
-          do return color_b < color_a end
-          -- DECOMPILER ERROR: 6 unprocessed JMP targets
+    table.sort(list, function(a, b)
+      local color_a = a.color
+      local color_b = b.color
+      if color_a == color_b then
+        local price_a = a.price
+        local price_b = b.price
+        if price_a == price_b then
+          return a.id < b.id
+        else
+          return price_a > price_b
         end
+      else
+        return color_a > color_b
       end
-    end
-  end
-)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.RefreshShelfInfo = function(self, tabID2Count)
-  -- function num : 0_13 , upvalues : _ENV
+function UICN20N49Ryza_Shop:RefreshShelfInfo(tabID2Count)
   local list = {}
   if tabID2Count and next(tabID2Count) then
-    for k,v in pairs(tabID2Count) do
-      if v > 0 then
+    for k, v in pairs(tabID2Count) do
+      if 0 < v then
         local UICN20N49RyzaItemData = UICN20N49RyzaItemData:New()
         UICN20N49RyzaItemData.id = k
         UICN20N49RyzaItemData.count = v
-        local price, color = (UICN20N49Ryza_Shop.GetItemPriceColor)(k)
+        local price, color = UICN20N49Ryza_Shop.GetItemPriceColor(k)
         UICN20N49RyzaItemData.price = price
         UICN20N49RyzaItemData.color = color
-        ;
-        (table.insert)(list, UICN20N49RyzaItemData)
+        table.insert(list, UICN20N49RyzaItemData)
       end
     end
-    ;
-    (UICN20N49Ryza_Shop.SortItemDataLsit)(list)
+    UICN20N49Ryza_Shop.SortItemDataLsit(list)
   end
   self._curPoolIdx = 1
   self._shelfInfo = list
   self:RefreshPoolInfo()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.GetShelfData = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UICN20N49Ryza_Shop:GetShelfData()
   local startIdx = (self._curPoolIdx - 1) * self._cellCount + 1
   local endIdx = self._curPoolIdx * self._cellCount
   local ret = {}
   for i = startIdx, endIdx do
-    local info = (self._shelfInfo)[i]
-    ;
-    (table.insert)(ret, info)
+    local info = self._shelfInfo[i]
+    table.insert(ret, info)
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.OneKeyBtnOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  local itemList = (UICN20N49Ryza_ShopList.GetItemList)(self._comCfgID, true)
+function UICN20N49Ryza_Shop:OneKeyBtnOnClick(go)
+  local itemList = UICN20N49Ryza_ShopList.GetItemList(self._comCfgID, true)
   if itemList and next(itemList) then
-    (table.sort)(itemList, function(a, b)
-    -- function num : 0_15_0
-    local price_a = a.price
-    local price_b = b.price
-    if a.id >= b.id then
-      do return price_a ~= price_b end
-      do return price_b < price_a end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
-    end
-  end
-)
+    table.sort(itemList, function(a, b)
+      local price_a = a.price
+      local price_b = b.price
+      if price_a == price_b then
+        return a.id < b.id
+      else
+        return price_a > price_b
+      end
+    end)
     local shelfInfo = {}
     local allCount = 0
     local full = false
-    for i,v in ipairs(itemList) do
-      if self._maxCount <= allCount + v.count then
+    for i, v in ipairs(itemList) do
+      if allCount + v.count >= self._maxCount then
         v.count = self._maxCount - allCount
         full = true
       end
       allCount = allCount + v.count
-      ;
-      (table.insert)(shelfInfo, v)
-    end
-    do
-      if not full then
-        self._shelfInfo = shelfInfo
-        self._curPoolIdx = 1
-        self:RefreshPoolInfo()
+      table.insert(shelfInfo, v)
+      if full then
+        break
       end
     end
+    self._shelfInfo = shelfInfo
+    self._curPoolIdx = 1
+    self:RefreshPoolInfo()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.SellBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
+function UICN20N49Ryza_Shop:SellBtnOnClick(go)
   if self._shelfInfo and next(self._shelfInfo) then
     local needMap = self:CheckTalentMat(self._shelfInfo)
-    do
-      if needMap then
-        self:ShowDialog("UICN20N49Ryza_ShopWarning", needMap, function()
-    -- function num : 0_16_0 , upvalues : self, needMap
-    local list = self:GetSellList(needMap)
-    self:RefreshPoolInfo()
-    self:Sell(list)
-  end
-, function()
-    -- function num : 0_16_1 , upvalues : self
-    local list = self:GetSellList()
-    self:Sell(list)
-  end
-)
-      else
+    if needMap then
+      self:ShowDialog("UICN20N49Ryza_ShopWarning", needMap, function()
+        local list = self:GetSellList(needMap)
+        self:RefreshPoolInfo()
+        self:Sell(list)
+      end, function()
+        local list = self:GetSellList()
+        self:Sell(list)
+      end)
+    else
+      do
         local list = self:GetSellList()
         self:Sell(list)
       end
@@ -336,54 +238,42 @@ UICN20N49Ryza_Shop.SellBtnOnClick = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.GetSellList = function(self, needList)
-  -- function num : 0_17 , upvalues : _ENV
-  do
-    if needList and next(needList) then
-      local tmpList = {}
-      for k,v in pairs(self._shelfInfo) do
-        local less = true
-        do
-          do
-            if needList[v.id] then
-              local newCount = v.count - needList[v.id]
-              if newCount > 0 then
-                v.count = newCount
-              else
-                less = false
-              end
-            end
-            if less then
-              (table.insert)(tmpList, v)
-            end
-            -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
+function UICN20N49Ryza_Shop:GetSellList(needList)
+  if needList and next(needList) then
+    local tmpList = {}
+    for k, v in pairs(self._shelfInfo) do
+      local less = true
+      if needList[v.id] then
+        local newCount = v.count - needList[v.id]
+        if 0 < newCount then
+          v.count = newCount
+        else
+          less = false
         end
       end
-      self._shelfInfo = tmpList
+      if less then
+        table.insert(tmpList, v)
+      end
     end
-    return self._shelfInfo
+    self._shelfInfo = tmpList
   end
+  return self._shelfInfo
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.CheckTalentMat = function(self, itemList)
-  -- function num : 0_18 , upvalues : _ENV
+function UICN20N49Ryza_Shop:CheckTalentMat(itemList)
   if itemList and next(itemList) then
     local list = {}
-    for k,v in pairs(itemList) do
-      local data = {[1] = v.id, [2] = v.count}
-      ;
-      (table.insert)(list, data)
+    for k, v in pairs(itemList) do
+      local data = {
+        [1] = v.id,
+        [2] = v.count
+      }
+      table.insert(list, data)
     end
-    local ret = (UICN20N49Helper.CheckContainTalentTreeCost)(self._campaign, list)
+    local ret = UICN20N49Helper.CheckContainTalentTreeCost(self._campaign, list)
     if ret and next(ret) then
       local needMap = {}
-      for k,v in pairs(ret) do
+      for k, v in pairs(ret) do
         local id = v[1]
         local count = v[2]
         if needMap[id] then
@@ -395,171 +285,124 @@ UICN20N49Ryza_Shop.CheckTalentMat = function(self, itemList)
       return needMap
     end
   end
-  do
-    return false
+  return false
+end
+
+function UICN20N49Ryza_Shop:Sell(list)
+  if self._com:ComponentIsClose() then
+    local tips = StringTable.Get("str_activity_error_107")
+    ToastManager.ShowToast(tips)
+    self:SwitchState(UIStateType.UIMain)
+    return
+  end
+  if list and next(list) then
+    local map = self:List2Map(list)
+    self:Lock("UICN20N49Ryza_Shop:Sell")
+    GameGlobal.TaskManager():StartTask(self.OnSell, self, map)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.Sell = function(self, list)
-  -- function num : 0_19 , upvalues : _ENV
-  do
-    if (self._com):ComponentIsClose() then
-      local tips = (StringTable.Get)("str_activity_error_107")
-      ;
-      (ToastManager.ShowToast)(tips)
-      self:SwitchState(UIStateType.UIMain)
-      return 
-    end
-    if list and next(list) then
-      local map = self:List2Map(list)
-      self:Lock("UICN20N49Ryza_Shop:Sell")
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(self.OnSell, self, map)
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.List2Map = function(self, list)
-  -- function num : 0_20 , upvalues : _ENV
+function UICN20N49Ryza_Shop:List2Map(list)
   local map = {}
-  for k,v in pairs(list) do
+  for k, v in pairs(list) do
     map[v.id] = v.count
   end
   return map
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.OnSell = function(self, TT, map)
-  -- function num : 0_21 , upvalues : _ENV
+function UICN20N49Ryza_Shop:OnSell(TT, map)
   local res = AsyncRequestRes:New()
-  local responese = (self._com):HandleAlchemyShopSell(TT, res, map)
+  local responese = self._com:HandleAlchemyShopSell(TT, res, map)
   self:UnLock("UICN20N49Ryza_Shop:Sell")
   if res:GetSucc() then
     local earn1 = responese.item_earn
     local earn2 = responese.tip_earn
     local star = responese.star_item
-    ;
-    (Log.debug)("###[UICN20N49Ryza_Shop] HandleAlchemyShopSell succ,earn1:", earn1, ",earn2:", earn2, ",star:", star)
+    Log.debug("###[UICN20N49Ryza_Shop] HandleAlchemyShopSell succ,earn1:", earn1, ",earn2:", earn2, ",star:", star)
     self:Lock("UICN20N49Ryza_Shop:OnSell_Anim")
     self._isSelling = true
     self:SetBtnState(true)
     self:ShowHideCellAddGo(false)
     local buyAnimRoot = self:GetBuyAnimRoot()
     buyAnimRoot:SetData(function()
-    -- function num : 0_21_0 , upvalues : self, responese
-    self._isSelling = false
-    self:SetBtnState(true)
-    self._curPoolIdx = 1
-    self._shelfInfo = {}
-    self:RefreshPoolInfo()
-    self:ShowDialog("UICN20N49Ryza_ShopSell", responese)
-    self:UnLock("UICN20N49Ryza_Shop:OnSell_Anim")
-  end
-)
+      self._isSelling = false
+      self:SetBtnState(true)
+      self._curPoolIdx = 1
+      self._shelfInfo = {}
+      self:RefreshPoolInfo()
+      self:ShowDialog("UICN20N49Ryza_ShopSell", responese)
+      self:UnLock("UICN20N49Ryza_Shop:OnSell_Anim")
+    end)
   else
-    do
-      local result = res:GetResult()
-      ;
-      (Log.error)("###[UICN20N49Ryza_Shop] HandleAlchemyShopSell fail,result:", result)
-    end
+    local result = res:GetResult()
+    Log.error("###[UICN20N49Ryza_Shop] HandleAlchemyShopSell fail,result:", result)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.GetBuyAnimRoot = function(self)
-  -- function num : 0_22
-  do
-    if not self._buyAnimRoot then
-      local buyAnimRoot = self:GetUIComponent("UISelectObjectPath", "animRoot")
-      self._buyAnimRoot = buyAnimRoot:SpawnObject("UICN20N49Ryza_ShopSellAnim")
-    end
-    return self._buyAnimRoot
+function UICN20N49Ryza_Shop:GetBuyAnimRoot()
+  if not self._buyAnimRoot then
+    local buyAnimRoot = self:GetUIComponent("UISelectObjectPath", "animRoot")
+    self._buyAnimRoot = buyAnimRoot:SpawnObject("UICN20N49Ryza_ShopSellAnim")
   end
+  return self._buyAnimRoot
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.OnHide = function(self)
-  -- function num : 0_23
+function UICN20N49Ryza_Shop:OnHide()
   self:UnLock("UICN20N49Ryza_Shop:OnSell_Anim")
   self:UnLock("UICN20N49Ryza_Shop:Sell")
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.Color2SpName = function(color)
-  -- function num : 0_24
-  local tmp = {[1] = "cn20_ljdp_gezi05", [2] = "cn20_ljdp_gezi05", [3] = "cn20_ljdp_gezi05", [4] = "cn20_ljdp_gezi04", [5] = "cn20_ljdp_gezi03", [6] = "cn20_ljdp_gezi03"}
+function UICN20N49Ryza_Shop.Color2SpName(color)
+  local tmp = {
+    [1] = "cn20_ljdp_gezi05",
+    [2] = "cn20_ljdp_gezi05",
+    [3] = "cn20_ljdp_gezi05",
+    [4] = "cn20_ljdp_gezi04",
+    [5] = "cn20_ljdp_gezi03",
+    [6] = "cn20_ljdp_gezi03"
+  }
   return tmp[color]
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.MulString = function()
-  -- function num : 0_25
+function UICN20N49Ryza_Shop.MulString()
   return "×"
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.IconBtnOnClick = function(self, go)
-  -- function num : 0_26
-  (self._toptipsInfo):SetData(self._topid, go)
+function UICN20N49Ryza_Shop:IconBtnOnClick(go)
+  self._toptipsInfo:SetData(self._topid, go)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.TmpBtn1OnClick = function(self, go)
-  -- function num : 0_27 , upvalues : _ENV
-  if not (self._com):ComponentIsClose() then
+function UICN20N49Ryza_Shop:TmpBtn1OnClick(go)
+  if not self._com:ComponentIsClose() then
     self:ShowDialog("UICN20N49AlchemyShopLevelUP", self._campaign)
   else
-    local tips = (StringTable.Get)("str_activity_error_107")
-    ;
-    (ToastManager.ShowToast)(tips)
+    local tips = StringTable.Get("str_activity_error_107")
+    ToastManager.ShowToast(tips)
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.TmpBtn2OnClick = function(self, go)
-  -- function num : 0_28 , upvalues : _ENV
-  if not (self.personProcess):ComponentIsClose() then
+function UICN20N49Ryza_Shop:TmpBtn2OnClick(go)
+  if not self.personProcess:ComponentIsClose() then
     self:ShowDialog("UICN20N49AlchemyShopRevenueLevelUpInfo", self._campaign)
   else
-    local tips = (StringTable.Get)("str_activity_error_107")
-    ;
-    (ToastManager.ShowToast)(tips)
+    local tips = StringTable.Get("str_activity_error_107")
+    ToastManager.ShowToast(tips)
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop._CheckGuide = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UICN20N49Ryza_Shop)
+function UICN20N49Ryza_Shop:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UICN20N49Ryza_Shop)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_Shop.ShowHideCellAddGo = function(self, show)
-  -- function num : 0_30 , upvalues : _ENV
+function UICN20N49Ryza_Shop:ShowHideCellAddGo(show)
   if self._pool then
-    local pools = (self._pool):GetAllSpawnList()
-    for k,v in pairs(pools) do
+    local pools = self._pool:GetAllSpawnList()
+    for k, v in pairs(pools) do
       v:ShowHideCellAddGo(show)
     end
   end
 end
-
-

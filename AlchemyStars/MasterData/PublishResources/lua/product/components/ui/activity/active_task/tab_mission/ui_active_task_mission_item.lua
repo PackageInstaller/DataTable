@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/active_task/tab_mission/ui_active_task_mission_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActiveTaskMissionItem", UICustomWidget)
 UIActiveTaskMissionItem = UIActiveTaskMissionItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActiveTaskMissionItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActiveTaskMissionItem:Constructor()
   self._delayTimer = 50
   self._primaryPos = Vector2(0, -10)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActiveTaskMissionItem:OnShow(uiParams)
   self:_GetComponents()
   self._specialTaskID = {}
   self._atlas = self:GetAsset("Valentine.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIActiveTaskMissionItem:_GetComponents()
   self._taskTxt = self:GetUIComponent("UILocalizationText", "taskTxt")
   self._progressTxt = self:GetUIComponent("UILocalizationText", "progress")
   self._iconContent = self:GetUIComponent("UISelectObjectPath", "iconContent")
@@ -37,187 +24,128 @@ UIActiveTaskMissionItem._GetComponents = function(self)
   self._getCantGoBtn = self:GetGameObject("getCantGoBtn")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionItem.SetData = function(self, quest, data, iconClickCb)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActiveTaskMissionItem:SetData(quest, data, iconClickCb)
   self._quest = quest
   self._data = data
   self._iconClickCb = iconClickCb
-  self._cfg = (Cfg.cfg_quest)[quest:ID()]
+  self._cfg = Cfg.cfg_quest[quest:ID()]
   self:InitData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionItem.InitData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local reward = ((self._cfg).Reward)[1]
-  ;
-  (self._taskTxt):SetText((StringTable.Get)((self._cfg).QuestDesc))
-  self._reward = (self._iconContent):SpawnObject("UIActiveTaskMissionReward")
+function UIActiveTaskMissionItem:InitData()
+  local reward = self._cfg.Reward[1]
+  self._taskTxt:SetText(StringTable.Get(self._cfg.QuestDesc))
+  self._reward = self._iconContent:SpawnObject("UIActiveTaskMissionReward")
   local rew = {}
   rew.assetid = reward[1]
   rew.count = reward[2]
-  ;
-  (self._reward):Flush(rew, function(id, pos)
-    -- function num : 0_4_0 , upvalues : self
+  self._reward:Flush(rew, function(id, pos)
     if self._iconClickCb then
-      (self._iconClickCb)(id, pos)
+      self._iconClickCb(id, pos)
     end
-  end
-)
-  self:SetBtnStatus((self._quest):Status())
+  end)
+  self:SetBtnStatus(self._quest:Status())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionItem.Open = function(self, index)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActiveTaskMissionItem:Open(index)
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self, index
     YIELD(TT, self._delayTimer * index)
-    ;
-    (self._anim):Play("uieff_UIActiveTaskMissionItem_doneBtn_in")
-  end
-)
+    self._anim:Play("uieff_UIActiveTaskMissionItem_doneBtn_in")
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionItem.Close = function(self)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._fullRect).anchoredPosition = self._primaryPos
+function UIActiveTaskMissionItem:Close()
+  self._fullRect.anchoredPosition = self._primaryPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionItem.SetBtnStatus = function(self, status)
-  -- function num : 0_7 , upvalues : _ENV
-  local info = (self._quest):QuestInfo()
+function UIActiveTaskMissionItem:SetBtnStatus(status)
+  local info = self._quest:QuestInfo()
   local curProcess = info.cur_progress
   local totalPorcess = info.total_progress
-  local isSpecial = self:_CheckTaskIsSpecial((self._quest):ID())
-  if ((isSpecial and 1) or status == QuestStatus.QUEST_Completed) and (not isSpecial or not 1) then
+  local isSpecial = self:_CheckTaskIsSpecial(self._quest:ID())
+  totalPorcess = isSpecial and 1 or totalPorcess
+  if status == QuestStatus.QUEST_Completed then
+    curProcess = isSpecial and 1 or curProcess
     local tmpStr = "<color=#A77B4A>" .. curProcess .. "</color>/" .. totalPorcess
-    local str = (StringTable.Get)("str_n32_turn_card_process", tmpStr)
-    ;
-    (self._progressTxt):SetText(str)
-    ;
-    (self._doneBtnObj):SetActive(false)
-    ;
-    (self._taskBtnObj):SetActive(false)
-    ;
-    (self._getBtnObj):SetActive(true)
-    ;
-    (self._getCantGoBtn):SetActive(false)
+    local str = StringTable.Get("str_n32_turn_card_process", tmpStr)
+    self._progressTxt:SetText(str)
+    self._doneBtnObj:SetActive(false)
+    self._taskBtnObj:SetActive(false)
+    self._getBtnObj:SetActive(true)
+    self._getCantGoBtn:SetActive(false)
+  elseif status == QuestStatus.QUEST_Taken then
+    curProcess = isSpecial and 1 or curProcess
+    local tmpStr = "<color=#A77B4A>" .. curProcess .. "</color>/" .. totalPorcess
+    local str = StringTable.Get("str_n32_turn_card_process", tmpStr)
+    self._progressTxt:SetText(str)
+    self._doneBtnObj:SetActive(true)
+    self._taskBtnObj:SetActive(false)
+    self._getBtnObj:SetActive(false)
+    self._getCantGoBtn:SetActive(false)
   else
-    do
-      if status == QuestStatus.QUEST_Taken and (not isSpecial or not 1) then
-        local tmpStr = "<color=#A77B4A>" .. curProcess .. "</color>/" .. totalPorcess
-        local str = (StringTable.Get)("str_n32_turn_card_process", tmpStr)
-        ;
-        (self._progressTxt):SetText(str)
-        ;
-        (self._doneBtnObj):SetActive(true)
-        ;
-        (self._taskBtnObj):SetActive(false)
-        ;
-        (self._getBtnObj):SetActive(false)
-        ;
-        (self._getCantGoBtn):SetActive(false)
-      else
-        do
-          if not isSpecial or not 0 then
-            local tmpStr = "<color=#f08c58>" .. curProcess .. "</color>/" .. totalPorcess
-            local str = (StringTable.Get)("str_n32_turn_card_process", tmpStr)
-            ;
-            (self._progressTxt):SetText(str)
-            ;
-            (self._doneBtnObj):SetActive(false)
-            ;
-            (self._getBtnObj):SetActive(false)
-            local jumpType = info.JumpID
-            if jumpType == 0 then
-              (self._taskBtnObj):SetActive(false)
-              ;
-              (self._getCantGoBtn):SetActive(true)
-            else
-              ;
-              (self._taskBtnObj):SetActive(true)
-              ;
-              (self._getCantGoBtn):SetActive(false)
-            end
-          end
-        end
-      end
+    curProcess = isSpecial and 0 or curProcess
+    local tmpStr = "<color=#f08c58>" .. curProcess .. "</color>/" .. totalPorcess
+    local str = StringTable.Get("str_n32_turn_card_process", tmpStr)
+    self._progressTxt:SetText(str)
+    self._doneBtnObj:SetActive(false)
+    self._getBtnObj:SetActive(false)
+    local jumpType = info.JumpID
+    if jumpType == 0 then
+      self._taskBtnObj:SetActive(false)
+      self._getCantGoBtn:SetActive(true)
+    else
+      self._taskBtnObj:SetActive(true)
+      self._getCantGoBtn:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionItem.TaskBtnOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if self._quest and QuestStatus.QUEST_Completed <= (self._quest):Status() then
-    return 
+function UIActiveTaskMissionItem:TaskBtnOnClick()
+  if self._quest and self._quest:Status() >= QuestStatus.QUEST_Completed then
+    return
   end
-  local isOver = (self._data):CheckTaskIsOver()
+  local isOver = self._data:CheckTaskIsOver()
   if isOver then
-    return 
+    return
   end
-  local questInfo = (self._quest):QuestInfo(QuestStatus.QUEST_Taken)
-  local questModule = (GameGlobal.GetModule)(QuestModule)
+  local questInfo = self._quest:QuestInfo(QuestStatus.QUEST_Taken)
+  local questModule = GameGlobal.GetModule(QuestModule)
   local jumpModule = questModule.uiModule
   local jumpType = questInfo.JumpID
   local jumpParam = questInfo.JumpParam
   if jumpType == 0 then
-    return 
+    return
   end
   jumpModule:SetJumpUIData(jumpType, jumpParam)
   jumpModule:Jump()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionItem.GetBtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if self._quest and QuestStatus.QUEST_Completed < (self._quest):Status() then
-    return 
+function UIActiveTaskMissionItem:GetBtnOnClick()
+  if self._quest and self._quest:Status() > QuestStatus.QUEST_Completed then
+    return
   end
-  local isOver = (self._data):CheckTaskIsOver()
+  local isOver = self._data:CheckTaskIsOver()
   if isOver then
-    return 
+    return
   end
-  local questId = (self._quest):ID()
-  local comp = (self._data):GetMissionComp()
+  local questId = self._quest:ID()
+  local comp = self._data:GetMissionComp()
   local res = AsyncRequestRes:New()
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : comp, res, questId, self, _ENV
     local ret, rewards = comp:HandleQuestTake(TT, res, questId)
     if res:GetSucc() then
       self:ShowDialog("UIGetItemController", rewards, function()
-      -- function num : 0_9_0_0 , upvalues : _ENV
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshActiveTaskRed)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshActiveTaskRed)
+      end)
     end
-)
-    end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionItem._CheckTaskIsSpecial = function(self, taskID)
-  -- function num : 0_10 , upvalues : _ENV
-  for _,v in ipairs(self._specialTaskID) do
+function UIActiveTaskMissionItem:_CheckTaskIsSpecial(taskID)
+  for _, v in ipairs(self._specialTaskID) do
     if v == taskID then
       return true
     end
   end
   return false
 end
-
-

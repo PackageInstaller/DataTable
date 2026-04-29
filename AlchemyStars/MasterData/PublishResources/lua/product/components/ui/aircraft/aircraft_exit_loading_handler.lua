@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/aircraft_exit_loading_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftExitLoadingHandler", LoadingHandler)
 AircraftExitLoadingHandler = AircraftExitLoadingHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftExitLoadingHandler.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("AircraftExitLoading")
+function AircraftExitLoadingHandler:Constructor()
+  GameGlobal.UIStateManager():Lock("AircraftExitLoading")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftExitLoadingHandler.PreLoadBeforeLoadLevel = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(AircraftModule)
+function AircraftExitLoadingHandler:PreLoadBeforeLoadLevel(TT)
+  local module = GameGlobal.GetModule(AircraftModule)
   local main = module:GetClientMain()
   if main then
     main:Dispose()
@@ -25,43 +15,29 @@ AircraftExitLoadingHandler.PreLoadBeforeLoadLevel = function(self, TT)
   module:PushLeaveAircraft()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftExitLoadingHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
+function AircraftExitLoadingHandler:PreLoadAfterLoadLevel(TT, ...)
+  LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftExitLoadingHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_3 , upvalues : _ENV
-  local loadingParams = {...}
+function AircraftExitLoadingHandler:OnLoadingFinish(...)
+  local loadingParams = {
+    ...
+  }
   local finishCallBack = loadingParams[1]
   local triggerGuide = false
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideLeaveAircraft, function(trigger)
-    -- function num : 0_3_0 , upvalues : triggerGuide
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideLeaveAircraft, function(trigger)
     triggerGuide = trigger
-  end
-)
+  end)
   if not triggerGuide then
     if finishCallBack then
       finishCallBack()
     else
-      ;
-      ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
+      GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
     end
   end
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("AircraftExitLoading")
+  GameGlobal.UIStateManager():UnLock("AircraftExitLoading")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftExitLoadingHandler.LoadingType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function AircraftExitLoadingHandler:LoadingType()
   return LoadingType.STATICPIC
 end
-
-

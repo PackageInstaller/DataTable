@@ -1,81 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_addhpmax.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 AddHPMaxFromType = {OwnerEntity = 1, NotifyEntity = 2}
 _class("BuffLogicAddHPMax", BuffLogicBase)
 BuffLogicAddHPMax = BuffLogicAddHPMax
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddHPMax.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicAddHPMax:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue or 0
   self._addValue = logicParam.addValue or 0
-  if not logicParam.addHPMaxFromType then
-    self._addHPMaxFromType = AddHPMaxFromType.OwnerEntity
-    self._addLimit = logicParam.addLimit or nil
-    self._totalAddLimit = logicParam.totalAddLimit
-    self._displayDamage = logicParam.displayDamage or 1
-    self._notAddHP = logicParam.notAddHP or 0
-    buffInstance.__AddHPMax_AddValue = 0
-  end
+  self._addHPMaxFromType = logicParam.addHPMaxFromType or AddHPMaxFromType.OwnerEntity
+  self._addLimit = logicParam.addLimit or nil
+  self._totalAddLimit = logicParam.totalAddLimit
+  self._displayDamage = logicParam.displayDamage or 1
+  self._notAddHP = logicParam.notAddHP or 0
+  buffInstance.__AddHPMax_AddValue = 0
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddHPMax.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
-  local matchType = (self._world):MatchType()
-  if matchType ~= MatchType.MT_Maze and (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze and entity:HasPetPstID() then
-    entity = (entity:Pet()):GetOwnerTeamEntity()
+function BuffLogicAddHPMax:DoLogic(notify)
+  local entity = self._buffInstance:Entity()
+  local matchType = self._world:MatchType()
+  if matchType ~= MatchType.MT_Maze and self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze and entity:HasPetPstID() then
+    entity = entity:Pet():GetOwnerTeamEntity()
   end
-  local curHp = (entity:Attributes()):GetCurrentHP()
+  local curHp = entity:Attributes():GetCurrentHP()
   if not curHp then
-    return 
+    return
   end
-  if (entity:Attributes()):GetCurrentHP() == 0 then
-    return 
+  if entity:Attributes():GetCurrentHP() == 0 then
+    return
   end
-  local calcDamage = ((self._world):GetService("CalcDamage"))
-  local attributeEntity = nil
+  local calcDamage = self._world:GetService("CalcDamage")
+  local attributeEntity
   if self._addHPMaxFromType == AddHPMaxFromType.OwnerEntity then
     attributeEntity = entity
-  else
-    if self._addHPMaxFromType == AddHPMaxFromType.NotifyEntity then
-      attributeEntity = notify:GetNotifyEntity()
-    end
+  elseif self._addHPMaxFromType == AddHPMaxFromType.NotifyEntity then
+    attributeEntity = notify:GetNotifyEntity()
   end
-  local baseMaxHp = (attributeEntity:Attributes()):CalcMaxHp()
-  local add_value = (math.floor)(baseMaxHp * self._mulValue + self._addValue + 0.5)
-  do
-    if self._addLimit then
-      local ownerMaxHp = (entity:Attributes()):CalcMaxHp()
-      add_value = (math.min)(add_value, (math.floor)(ownerMaxHp * self._addLimit))
-    end
-    do
-      if not (self._buffComponent):GetBuffValue("AddHPMaxTotalLimit") then
-        local curAddHpMax = not self._totalAddLimit or 0
-      end
-      if (math.floor)(baseMaxHp * self._totalAddLimit + 0.5) < curAddHpMax + add_value then
-        add_value = (math.floor)(baseMaxHp * self._totalAddLimit - curAddHpMax + 0.5)
-      end
-      ;
-      (self._buffComponent):AddBuffValue("AddHPMaxTotalLimit", add_value)
-      -- DECOMPILER ERROR at PC127: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._buffInstance).__AddHPMax_AddValue = (self._buffInstance).__AddHPMax_AddValue + add_value
-      local ret = calcDamage:AddTargetMaxHP(entity:GetID(), (self._buffInstance).__AddHPMax_AddValue, self:GetBuffSeq())
-      local damageInfo = DamageInfo:New(add_value, DamageType.Recover)
-      if self._notAddHP ~= 1 then
-        calcDamage:AddTargetHP(entity:GetID(), damageInfo)
-      end
-      local buffResult = BuffResultAddHPMax:New(entity:GetID(), damageInfo, ret, self._displayDamage, self._notAddHP)
-      return buffResult
-    end
+  local baseMaxHp = attributeEntity:Attributes():CalcMaxHp()
+  local add_value = math.floor(baseMaxHp * self._mulValue + self._addValue + 0.5)
+  if self._addLimit then
+    local ownerMaxHp = entity:Attributes():CalcMaxHp()
+    add_value = math.min(add_value, math.floor(ownerMaxHp * self._addLimit))
   end
+  if self._totalAddLimit then
+    local curAddHpMax = self._buffComponent:GetBuffValue("AddHPMaxTotalLimit") or 0
+    if curAddHpMax + add_value > math.floor(baseMaxHp * self._totalAddLimit + 0.5) then
+      add_value = math.floor(baseMaxHp * self._totalAddLimit - curAddHpMax + 0.5)
+    end
+    self._buffComponent:AddBuffValue("AddHPMaxTotalLimit", add_value)
+  end
+  self._buffInstance.__AddHPMax_AddValue = self._buffInstance.__AddHPMax_AddValue + add_value
+  local ret = calcDamage:AddTargetMaxHP(entity:GetID(), self._buffInstance.__AddHPMax_AddValue, self:GetBuffSeq())
+  local damageInfo = DamageInfo:New(add_value, DamageType.Recover)
+  if self._notAddHP ~= 1 then
+    calcDamage:AddTargetHP(entity:GetID(), damageInfo)
+  end
+  local buffResult = BuffResultAddHPMax:New(entity:GetID(), damageInfo, ret, self._displayDamage, self._notAddHP)
+  return buffResult
 end
-
-

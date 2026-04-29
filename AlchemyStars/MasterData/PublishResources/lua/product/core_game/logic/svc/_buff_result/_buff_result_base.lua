@@ -1,980 +1,610 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/_buff_result_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultBase", Object)
 BuffResultBase = BuffResultBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultBase.Constructor = function(self)
-  -- function num : 0_0
+function BuffResultBase:Constructor()
 end
 
 _class("BuffResultAddHPShield", BuffResultBase)
 BuffResultAddHPShield = BuffResultAddHPShield
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddHPShield.Constructor = function(self, entityID, damageInfo)
-  -- function num : 0_1
+function BuffResultAddHPShield:Constructor(entityID, damageInfo)
   self._entityID = entityID
   self._damageInfo = damageInfo
   self._chainPetEntityID = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPShield.SetChainPetEntityID = function(self, entityID)
-  -- function num : 0_2
+function BuffResultAddHPShield:SetChainPetEntityID(entityID)
   self._chainPetEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPShield.GetChainPetEntityID = function(self)
-  -- function num : 0_3
+function BuffResultAddHPShield:GetChainPetEntityID()
   return self._chainPetEntityID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPShield.GetShield = function(self)
-  -- function num : 0_4
+function BuffResultAddHPShield:GetShield()
   return self._shield
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPShield.GetEntityID = function(self)
-  -- function num : 0_5
+function BuffResultAddHPShield:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPShield.GetDamageInfo = function(self)
-  -- function num : 0_6
+function BuffResultAddHPShield:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPShield.SetNotifyChainSkillTimeIndex = function(self, v)
-  -- function num : 0_7
+function BuffResultAddHPShield:SetNotifyChainSkillTimeIndex(v)
   self._notifyChainSkillTimeIndex = v
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPShield.GetNotifyChainSkillTimeIndex = function(self)
-  -- function num : 0_8
+function BuffResultAddHPShield:GetNotifyChainSkillTimeIndex()
   return self._notifyChainSkillTimeIndex
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPShield.SetNotifyChainSkillStageIndex = function(self, v)
-  -- function num : 0_9
+function BuffResultAddHPShield:SetNotifyChainSkillStageIndex(v)
   self._notifyChainSkillStageIndex = v
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPShield.GetNotifyChainSkillStageIndex = function(self)
-  -- function num : 0_10
+function BuffResultAddHPShield:GetNotifyChainSkillStageIndex()
   return self._notifyChainSkillStageIndex
 end
 
 _class("BuffResultRemoveHPShield", BuffResultBase)
 BuffResultRemoveHPShield = BuffResultRemoveHPShield
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultRemoveHPShield.Constructor = function(self, entityID, damageInfo)
-  -- function num : 0_11
+function BuffResultRemoveHPShield:Constructor(entityID, damageInfo)
   self._entityID = entityID
   self._damageInfo = damageInfo
   self._chainPetEntityID = nil
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveHPShield.SetChainPetEntityID = function(self, entityID)
-  -- function num : 0_12
+function BuffResultRemoveHPShield:SetChainPetEntityID(entityID)
   self._chainPetEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveHPShield.GetChainPetEntityID = function(self)
-  -- function num : 0_13
+function BuffResultRemoveHPShield:GetChainPetEntityID()
   return self._chainPetEntityID
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveHPShield.GetEntityID = function(self)
-  -- function num : 0_14
+function BuffResultRemoveHPShield:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveHPShield.GetDamageInfo = function(self)
-  -- function num : 0_15
+function BuffResultRemoveHPShield:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveHPShield.SetNotifyChainSkillTimeIndex = function(self, v)
-  -- function num : 0_16
+function BuffResultRemoveHPShield:SetNotifyChainSkillTimeIndex(v)
   self._notifyChainSkillTimeIndex = v
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveHPShield.GetNotifyChainSkillTimeIndex = function(self)
-  -- function num : 0_17
+function BuffResultRemoveHPShield:GetNotifyChainSkillTimeIndex()
   return self._notifyChainSkillTimeIndex
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveHPShield.SetNotifyChainSkillStageIndex = function(self, v)
-  -- function num : 0_18
+function BuffResultRemoveHPShield:SetNotifyChainSkillStageIndex(v)
   self._notifyChainSkillStageIndex = v
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveHPShield.GetNotifyChainSkillStageIndex = function(self)
-  -- function num : 0_19
+function BuffResultRemoveHPShield:GetNotifyChainSkillStageIndex()
   return self._notifyChainSkillStageIndex
 end
 
 _class("BuffResultAddHPByTargetBuffEffectType", BuffResultBase)
 BuffResultAddHPByTargetBuffEffectType = BuffResultAddHPByTargetBuffEffectType
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddHPByTargetBuffEffectType.Constructor = function(self, addHP, damageInfo)
-  -- function num : 0_20
+function BuffResultAddHPByTargetBuffEffectType:Constructor(addHP, damageInfo)
   self._addHP = addHP
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPByTargetBuffEffectType.GetAddHP = function(self)
-  -- function num : 0_21
+function BuffResultAddHPByTargetBuffEffectType:GetAddHP()
   return self._addHP
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPByTargetBuffEffectType.GetDamageInfo = function(self)
-  -- function num : 0_22
+function BuffResultAddHPByTargetBuffEffectType:GetDamageInfo()
   return self._damageInfo
 end
 
 _class("BuffResultChangeSkillFinalByTargetEdgeDistance", BuffResultBase)
 BuffResultChangeSkillFinalByTargetEdgeDistance = BuffResultChangeSkillFinalByTargetEdgeDistance
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeSkillFinalByTargetEdgeDistance.Constructor = function(self, rate, effectlist, finalvalue)
-  -- function num : 0_23
+function BuffResultChangeSkillFinalByTargetEdgeDistance:Constructor(rate, effectlist, finalvalue)
   self._rate = rate
   self._effectlist = effectlist
   self._finalvalue = finalvalue
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeSkillFinalByTargetEdgeDistance.GetRate = function(self)
-  -- function num : 0_24
+function BuffResultChangeSkillFinalByTargetEdgeDistance:GetRate()
   return self._rate
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeSkillFinalByTargetEdgeDistance.GetEffectList = function(self)
-  -- function num : 0_25
+function BuffResultChangeSkillFinalByTargetEdgeDistance:GetEffectList()
   return self._effectlist
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeSkillFinalByTargetEdgeDistance.GetFinalValue = function(self)
-  -- function num : 0_26
+function BuffResultChangeSkillFinalByTargetEdgeDistance:GetFinalValue()
   return self._finalvalue
 end
 
 _class("BuffResultHPLock", BuffResultBase)
 BuffResultHPLock = BuffResultHPLock
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultHPLock.Constructor = function(self, index)
-  -- function num : 0_27
+function BuffResultHPLock:Constructor(index)
   self._index = index
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultHPLock.GetLockIndex = function(self)
-  -- function num : 0_28
+function BuffResultHPLock:GetLockIndex()
   return self._index
 end
 
 _class("BuffResultAccumulateChangePower", BuffResultBase)
 BuffResultAccumulateChangePower = BuffResultAccumulateChangePower
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAccumulateChangePower.Constructor = function(self, accChain, power)
-  -- function num : 0_29
+function BuffResultAccumulateChangePower:Constructor(accChain, power)
   self._accChain = accChain
   self._power = power
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAccumulateChangePower.GetAccChain = function(self)
-  -- function num : 0_30
+function BuffResultAccumulateChangePower:GetAccChain()
   return self._accChain
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAccumulateChangePower.GetPower = function(self)
-  -- function num : 0_31
+function BuffResultAccumulateChangePower:GetPower()
   return self._power
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAccumulateChangePower.RequireNTPowerReady = function(self, petEntityID)
-  -- function num : 0_32
+function BuffResultAccumulateChangePower:RequireNTPowerReady(petEntityID)
   self._petEntityID = petEntityID
   self._requireNTPowerReady = true
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAccumulateChangePower.GetPetEntityID = function(self)
-  -- function num : 0_33
+function BuffResultAccumulateChangePower:GetPetEntityID()
   return self._petEntityID
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAccumulateChangePower.IsNTPowerReadyRequired = function(self)
-  -- function num : 0_34
+function BuffResultAccumulateChangePower:IsNTPowerReadyRequired()
   return self._requireNTPowerReady
 end
 
 _class("BuffResultAccumulateMarkLayer", BuffResultBase)
 BuffResultAccumulateMarkLayer = BuffResultAccumulateMarkLayer
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAccumulateMarkLayer.Constructor = function(self, attackerID, defenderID, attackPos, layer)
-  -- function num : 0_35
+function BuffResultAccumulateMarkLayer:Constructor(attackerID, defenderID, attackPos, layer)
   self._attackerID = attackerID
   self._defenderID = defenderID
   self._attackPos = attackPos
   self._layer = layer
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAccumulateMarkLayer.GetAttackerID = function(self)
-  -- function num : 0_36
+function BuffResultAccumulateMarkLayer:GetAttackerID()
   return self._attackerID
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAccumulateMarkLayer.GetDefenderID = function(self)
-  -- function num : 0_37
+function BuffResultAccumulateMarkLayer:GetDefenderID()
   return self._defenderID
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAccumulateMarkLayer.GetAttackPos = function(self)
-  -- function num : 0_38
+function BuffResultAccumulateMarkLayer:GetAttackPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAccumulateMarkLayer.GetLayer = function(self)
-  -- function num : 0_39
+function BuffResultAccumulateMarkLayer:GetLayer()
   return self._layer
 end
 
 _class("BuffResultAccumulateSoulAddDamage", BuffResultBase)
 BuffResultAccumulateSoulAddDamage = BuffResultAccumulateSoulAddDamage
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAccumulateSoulAddDamage.Constructor = function(self, layer)
-  -- function num : 0_40
+function BuffResultAccumulateSoulAddDamage:Constructor(layer)
   self._layer = layer
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAccumulateSoulAddDamage.GetLayer = function(self)
-  -- function num : 0_41
+function BuffResultAccumulateSoulAddDamage:GetLayer()
   return self._layer
 end
 
 _class("BuffResultAddLayer", BuffResultBase)
 BuffResultAddLayer = BuffResultAddLayer
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddLayer.Constructor = function(self, layer, donotDisplay, casterEntity)
-  -- function num : 0_42
+function BuffResultAddLayer:Constructor(layer, donotDisplay, casterEntity)
   self._layer = layer
   self._donotDisplay = donotDisplay
   self._casterEntity = casterEntity
   self._totalLayerCount = 0
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLayer.SetTotalLayer = function(self, layer)
-  -- function num : 0_43
+function BuffResultAddLayer:SetTotalLayer(layer)
   self._totalLayerCount = layer
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLayer.GetTotalLayer = function(self)
-  -- function num : 0_44
+function BuffResultAddLayer:GetTotalLayer()
   return self._totalLayerCount
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLayer.GetLayer = function(self)
-  -- function num : 0_45
+function BuffResultAddLayer:GetLayer()
   return self._layer
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLayer.GetDonotDisplay = function(self)
-  -- function num : 0_46
+function BuffResultAddLayer:GetDonotDisplay()
   return self._donotDisplay
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLayer.SetTriggerPos = function(self, v)
-  -- function num : 0_47
+function BuffResultAddLayer:SetTriggerPos(v)
   self._triggerPos = v
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLayer.GetTriggerPos = function(self)
-  -- function num : 0_48
+function BuffResultAddLayer:GetTriggerPos()
   return self._triggerPos
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLayer.GetCasterEntity = function(self)
-  -- function num : 0_49
+function BuffResultAddLayer:GetCasterEntity()
   return self._casterEntity
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLayer.SetNotifyLayerChange_Entity = function(self, e)
-  -- function num : 0_50
+function BuffResultAddLayer:SetNotifyLayerChange_Entity(e)
   self._setNotifyLayerChange_entity = e
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLayer.SetNotifyLayerChange_TotalLayer = function(self, n)
-  -- function num : 0_51
+function BuffResultAddLayer:SetNotifyLayerChange_TotalLayer(n)
   self._setNotifyLayerChange_totalLayer = n
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLayer.GetNotifyLayerChange_Entity = function(self)
-  -- function num : 0_52
+function BuffResultAddLayer:GetNotifyLayerChange_Entity()
   return self._setNotifyLayerChange_entity
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLayer.GetNotifyLayerChange_TotalLayer = function(self)
-  -- function num : 0_53
+function BuffResultAddLayer:GetNotifyLayerChange_TotalLayer()
   return self._setNotifyLayerChange_totalLayer
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLayer.SetBuffSeq = function(self, buffSeq)
-  -- function num : 0_54
+function BuffResultAddLayer:SetBuffSeq(buffSeq)
   self._buffSeq = buffSeq
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLayer.GetBuffSeq = function(self)
-  -- function num : 0_55
+function BuffResultAddLayer:GetBuffSeq()
   return self._buffSeq
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLayer.SetNotifyEntityID = function(self, id)
-  -- function num : 0_56
+function BuffResultAddLayer:SetNotifyEntityID(id)
   self._notifyEntityID = id
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLayer.GetNotifyEntityID = function(self)
-  -- function num : 0_57
+function BuffResultAddLayer:GetNotifyEntityID()
   return self._notifyEntityID
 end
 
 _class("BuffResultAddPetHpAtkDef", BuffResultBase)
 BuffResultAddPetHpAtkDef = BuffResultAddPetHpAtkDef
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddPetHpAtkDef.Constructor = function(self, hp, atk, def, damageInfo)
-  -- function num : 0_58
+function BuffResultAddPetHpAtkDef:Constructor(hp, atk, def, damageInfo)
   self._hp = hp
   self._damageInfo = damageInfo
   self._atk = atk
   self._def = def
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddPetHpAtkDef.GetAddHP = function(self)
-  -- function num : 0_59
+function BuffResultAddPetHpAtkDef:GetAddHP()
   return self._hp
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddPetHpAtkDef.GetAddAtk = function(self)
-  -- function num : 0_60
+function BuffResultAddPetHpAtkDef:GetAddAtk()
   return self._atk
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddPetHpAtkDef.GetAddDef = function(self)
-  -- function num : 0_61
+function BuffResultAddPetHpAtkDef:GetAddDef()
   return self._def
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddPetHpAtkDef.GetDamageInfo = function(self)
-  -- function num : 0_62
+function BuffResultAddPetHpAtkDef:GetDamageInfo()
   return self._damageInfo
 end
 
 _class("BuffResultChangeDefenceByCaster", BuffResultBase)
 BuffResultChangeDefenceByCaster = BuffResultChangeDefenceByCaster
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeDefenceByCaster.Constructor = function(self, eid, light)
-  -- function num : 0_63
+function BuffResultChangeDefenceByCaster:Constructor(eid, light)
   self._casterID = eid
   self._light = light
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeDefenceByCaster.GetEntityID = function(self)
-  -- function num : 0_64
+function BuffResultChangeDefenceByCaster:GetEntityID()
   return self._casterID
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeDefenceByCaster.ShowLight = function(self)
-  -- function num : 0_65
+function BuffResultChangeDefenceByCaster:ShowLight()
   return self._light
 end
 
 _class("BuffResultUndoChangeDefenceByCaster", BuffResultBase)
 BuffResultUndoChangeDefenceByCaster = BuffResultUndoChangeDefenceByCaster
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultUndoChangeDefenceByCaster.Constructor = function(self, eid, black)
-  -- function num : 0_66
+function BuffResultUndoChangeDefenceByCaster:Constructor(eid, black)
   self._casterID = eid
   self._black = black
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultUndoChangeDefenceByCaster.GetEntityID = function(self)
-  -- function num : 0_67
+function BuffResultUndoChangeDefenceByCaster:GetEntityID()
   return self._casterID
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultUndoChangeDefenceByCaster.ShowBlack = function(self)
-  -- function num : 0_68
+function BuffResultUndoChangeDefenceByCaster:ShowBlack()
   return self._black
 end
 
 _class("BuffResultBuffEffectTrigger", BuffResultBase)
 BuffResultBuffEffectTrigger = BuffResultBuffEffectTrigger
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultBuffEffectTrigger.Constructor = function(self, buffCnt, success)
-  -- function num : 0_69
+function BuffResultBuffEffectTrigger:Constructor(buffCnt, success)
   self._buffCount = buffCnt
   self._success = success
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultBuffEffectTrigger.GetBuffCount = function(self)
-  -- function num : 0_70
+function BuffResultBuffEffectTrigger:GetBuffCount()
   return self._buffCount
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultBuffEffectTrigger.GetSuccess = function(self)
-  -- function num : 0_71
+function BuffResultBuffEffectTrigger:GetSuccess()
   return self._success
 end
 
 _class("BuffResultDamage", BuffResultBase)
 BuffResultDamage = BuffResultDamage
--- DECOMPILER ERROR at PC308: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultDamage.Constructor = function(self, damageInfo)
-  -- function num : 0_72
+function BuffResultDamage:Constructor(damageInfo)
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC311: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDamage.GetDamageInfo = function(self)
-  -- function num : 0_73
+function BuffResultDamage:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDamage.GetWalkPos = function(self)
-  -- function num : 0_74
+function BuffResultDamage:GetWalkPos()
   return self._walkPos
 end
 
--- DECOMPILER ERROR at PC317: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDamage.SetWalkPos = function(self, walkPos)
-  -- function num : 0_75
+function BuffResultDamage:SetWalkPos(walkPos)
   self._walkPos = walkPos
 end
 
--- DECOMPILER ERROR at PC320: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDamage.GetEndPos = function(self)
-  -- function num : 0_76
+function BuffResultDamage:GetEndPos()
   return self._endPos
 end
 
--- DECOMPILER ERROR at PC323: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDamage.SetEndPos = function(self, endPos)
-  -- function num : 0_77
+function BuffResultDamage:SetEndPos(endPos)
   self._endPos = endPos
 end
 
--- DECOMPILER ERROR at PC326: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDamage.SetAttackID = function(self, entityID)
-  -- function num : 0_78
+function BuffResultDamage:SetAttackID(entityID)
   self._attackID = entityID
 end
 
--- DECOMPILER ERROR at PC329: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDamage.GetAttackID = function(self)
-  -- function num : 0_79
+function BuffResultDamage:GetAttackID()
   return self._attackID
 end
 
 _class("BuffResultExplode", BuffResultBase)
 BuffResultExplode = BuffResultExplode
--- DECOMPILER ERROR at PC338: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultExplode.Constructor = function(self, combo, damageInfo)
-  -- function num : 0_80
+function BuffResultExplode:Constructor(combo, damageInfo)
   self._combo = combo
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC341: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultExplode.GetCombo = function(self)
-  -- function num : 0_81
+function BuffResultExplode:GetCombo()
   return self._combo
 end
 
--- DECOMPILER ERROR at PC344: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultExplode.GetDamageInfo = function(self)
-  -- function num : 0_82
+function BuffResultExplode:GetDamageInfo()
   return self._damageInfo
 end
 
 _class("BuffResultAddPoison", BuffResultBase)
 BuffResultAddPoison = BuffResultAddPoison
--- DECOMPILER ERROR at PC353: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddPoison.Constructor = function(self, damageInfo, recoverDamageInfo)
-  -- function num : 0_83
+function BuffResultAddPoison:Constructor(damageInfo, recoverDamageInfo)
   self._damageInfo = damageInfo
   self._recoverDamageInfo = recoverDamageInfo
 end
 
--- DECOMPILER ERROR at PC356: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddPoison.GetDamageInfo = function(self)
-  -- function num : 0_84
+function BuffResultAddPoison:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC359: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddPoison.GetRecoverDamageInfo = function(self)
-  -- function num : 0_85
+function BuffResultAddPoison:GetRecoverDamageInfo()
   return self._recoverDamageInfo
 end
 
 _class("BuffResultPlayEffect", BuffResultBase)
 BuffResultPlayEffect = BuffResultPlayEffect
--- DECOMPILER ERROR at PC368: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultPlayEffect.Constructor = function(self, effid)
-  -- function num : 0_86
+function BuffResultPlayEffect:Constructor(effid)
   self._effectID = effid
 end
 
--- DECOMPILER ERROR at PC371: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultPlayEffect.GetEffectID = function(self)
-  -- function num : 0_87
+function BuffResultPlayEffect:GetEffectID()
   return self._effectID
 end
 
 _class("BuffResultAddHPByLayerMark", BuffResultBase)
 BuffResultAddHPByLayerMark = BuffResultAddHPByLayerMark
--- DECOMPILER ERROR at PC380: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddHPByLayerMark.Constructor = function(self, damageInfo, eid)
-  -- function num : 0_88
+function BuffResultAddHPByLayerMark:Constructor(damageInfo, eid)
   self._damageInfo = damageInfo
   self._entityID = eid
 end
 
--- DECOMPILER ERROR at PC383: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPByLayerMark.GetDamageInfo = function(self)
-  -- function num : 0_89
+function BuffResultAddHPByLayerMark:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC386: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPByLayerMark.GetEntityID = function(self)
-  -- function num : 0_90
+function BuffResultAddHPByLayerMark:GetEntityID()
   return self._entityID
 end
 
 _class("BuffResultAddHPComplex", BuffResultBase)
 BuffResultAddHPComplex = BuffResultAddHPComplex
--- DECOMPILER ERROR at PC395: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddHPComplex.Constructor = function(self, damageInfo, headout, delay)
-  -- function num : 0_91
+function BuffResultAddHPComplex:Constructor(damageInfo, headout, delay)
   self._damageInfo = damageInfo
   self._headout = headout
   self._delay = delay
 end
 
--- DECOMPILER ERROR at PC398: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPComplex.GetDamageInfo = function(self)
-  -- function num : 0_92
+function BuffResultAddHPComplex:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC401: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPComplex.GetHeadout = function(self)
-  -- function num : 0_93
+function BuffResultAddHPComplex:GetHeadout()
   return self._headout
 end
 
--- DECOMPILER ERROR at PC404: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPComplex.GetDelay = function(self)
-  -- function num : 0_94
+function BuffResultAddHPComplex:GetDelay()
   return self._delay
 end
 
--- DECOMPILER ERROR at PC407: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPComplex.SetLayerName = function(self, layerName)
-  -- function num : 0_95
+function BuffResultAddHPComplex:SetLayerName(layerName)
   self._layerName = layerName
 end
 
--- DECOMPILER ERROR at PC410: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPComplex.GetLayerName = function(self)
-  -- function num : 0_96
+function BuffResultAddHPComplex:GetLayerName()
   return self._layerName
 end
 
--- DECOMPILER ERROR at PC413: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPComplex.SetLayerTotalCount = function(self, layer)
-  -- function num : 0_97
+function BuffResultAddHPComplex:SetLayerTotalCount(layer)
   self._layerTotalCount = layer
 end
 
--- DECOMPILER ERROR at PC416: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPComplex.GetLayerTotalCount = function(self)
-  -- function num : 0_98
+function BuffResultAddHPComplex:GetLayerTotalCount()
   return self._layerTotalCount
 end
 
 _class("BuffResultLayer", BuffResultBase)
 BuffResultLayer = BuffResultLayer
--- DECOMPILER ERROR at PC425: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultLayer.Constructor = function(self, layer, buffseq, addLayer, layerType)
-  -- function num : 0_99
+function BuffResultLayer:Constructor(layer, buffseq, addLayer, layerType)
   self._layer = layer
   self._buffseq = buffseq
   self._addLayer = addLayer
   self._layerType = layerType
 end
 
--- DECOMPILER ERROR at PC428: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.GetLayerType = function(self)
-  -- function num : 0_100
+function BuffResultLayer:GetLayerType()
   return self._layerType
 end
 
--- DECOMPILER ERROR at PC431: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.GetLayer = function(self)
-  -- function num : 0_101
+function BuffResultLayer:GetLayer()
   return self._layer
 end
 
--- DECOMPILER ERROR at PC434: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.GetAddLayer = function(self)
-  -- function num : 0_102
+function BuffResultLayer:GetAddLayer()
   return self._addLayer
 end
 
--- DECOMPILER ERROR at PC437: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.GetBuffSeq = function(self)
-  -- function num : 0_103
+function BuffResultLayer:GetBuffSeq()
   return self._buffseq
 end
 
--- DECOMPILER ERROR at PC440: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.SetMovePos = function(self, pos)
-  -- function num : 0_104
+function BuffResultLayer:SetMovePos(pos)
   self._movePos = pos
 end
 
--- DECOMPILER ERROR at PC443: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.GetMovePos = function(self)
-  -- function num : 0_105
+function BuffResultLayer:GetMovePos()
   return self._movePos
 end
 
--- DECOMPILER ERROR at PC446: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.SetHighFrequencyDamageIndex = function(self, idx)
-  -- function num : 0_106
+function BuffResultLayer:SetHighFrequencyDamageIndex(idx)
   self._highFrequencyDamageIndex = idx
 end
 
--- DECOMPILER ERROR at PC449: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.GetHighFrequencyDamageIndex = function(self)
-  -- function num : 0_107
+function BuffResultLayer:GetHighFrequencyDamageIndex()
   return self._highFrequencyDamageIndex
 end
 
--- DECOMPILER ERROR at PC452: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.SetDontDisplay = function(self, b)
-  -- function num : 0_108
+function BuffResultLayer:SetDontDisplay(b)
   self._dontDisplay = b
 end
 
--- DECOMPILER ERROR at PC455: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.IsDontDisplay = function(self)
-  -- function num : 0_109
+function BuffResultLayer:IsDontDisplay()
   return self._dontDisplay
 end
 
--- DECOMPILER ERROR at PC458: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.SetEntityID = function(self, eid)
-  -- function num : 0_110
+function BuffResultLayer:SetEntityID(eid)
   self._entityID = eid
 end
 
--- DECOMPILER ERROR at PC461: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.GetEntityID = function(self)
-  -- function num : 0_111
+function BuffResultLayer:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC464: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.SetTriggerPos = function(self, v)
-  -- function num : 0_112
+function BuffResultLayer:SetTriggerPos(v)
   self._triggerPos = v
 end
 
--- DECOMPILER ERROR at PC467: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.GetTriggerPos = function(self)
-  -- function num : 0_113
+function BuffResultLayer:GetTriggerPos()
   return self._triggerPos
 end
 
--- DECOMPILER ERROR at PC470: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.SetFinalLayer = function(self, v)
-  -- function num : 0_114
+function BuffResultLayer:SetFinalLayer(v)
   self._finalLayer = v
 end
 
--- DECOMPILER ERROR at PC473: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.GetFinalLayer = function(self)
-  -- function num : 0_115
+function BuffResultLayer:GetFinalLayer()
   return self._finalLayer
 end
 
--- DECOMPILER ERROR at PC476: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.SetNotifyLayerChange_Entity = function(self, e)
-  -- function num : 0_116
+function BuffResultLayer:SetNotifyLayerChange_Entity(e)
   self._setNotifyLayerChange_entity = e
 end
 
--- DECOMPILER ERROR at PC479: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.SetNotifyLayerChange_TotalLayer = function(self, n)
-  -- function num : 0_117
+function BuffResultLayer:SetNotifyLayerChange_TotalLayer(n)
   self._setNotifyLayerChange_totalLayer = n
 end
 
--- DECOMPILER ERROR at PC482: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.GetNotifyLayerChange_Entity = function(self)
-  -- function num : 0_118
+function BuffResultLayer:GetNotifyLayerChange_Entity()
   return self._setNotifyLayerChange_entity
 end
 
--- DECOMPILER ERROR at PC485: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.GetNotifyLayerChange_TotalLayer = function(self)
-  -- function num : 0_119
+function BuffResultLayer:GetNotifyLayerChange_TotalLayer()
   return self._setNotifyLayerChange_totalLayer
 end
 
--- DECOMPILER ERROR at PC488: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.SetDamageStageIndex = function(self, index)
-  -- function num : 0_120
+function BuffResultLayer:SetDamageStageIndex(index)
   self._damageStageIndex = index
 end
 
--- DECOMPILER ERROR at PC491: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.GetDamageStageIndex = function(self)
-  -- function num : 0_121
+function BuffResultLayer:GetDamageStageIndex()
   return self._damageStageIndex
 end
 
--- DECOMPILER ERROR at PC494: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.SetCurSkillDamageIndex = function(self, val)
-  -- function num : 0_122
+function BuffResultLayer:SetCurSkillDamageIndex(val)
   self._curSkillDamageIndex = val
 end
 
--- DECOMPILER ERROR at PC497: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.GetCurSkillDamageIndex = function(self)
-  -- function num : 0_123
+function BuffResultLayer:GetCurSkillDamageIndex()
   return self._curSkillDamageIndex
 end
 
--- DECOMPILER ERROR at PC500: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.SetLevelTotalRoundCount = function(self, val)
-  -- function num : 0_124
+function BuffResultLayer:SetLevelTotalRoundCount(val)
   self._levelTotalRoundCount = val
 end
 
--- DECOMPILER ERROR at PC503: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.GetLevelTotalRoundCount = function(self)
-  -- function num : 0_125
+function BuffResultLayer:GetLevelTotalRoundCount()
   return self._levelTotalRoundCount
 end
 
--- DECOMPILER ERROR at PC506: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.SetOverflowLayer = function(self, count)
-  -- function num : 0_126
+function BuffResultLayer:SetOverflowLayer(count)
   self._overflowLayer = count
 end
 
--- DECOMPILER ERROR at PC509: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayer.GetOverflowLayer = function(self)
-  -- function num : 0_127
+function BuffResultLayer:GetOverflowLayer()
   return self._overflowLayer or 0
 end
 
 _class("BuffResultClearLayer", BuffResultBase)
 BuffResultClearLayer = BuffResultClearLayer
--- DECOMPILER ERROR at PC518: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultClearLayer.Constructor = function(self, layer, donotDisplay, ownerEntityID, layerType, isUnload, targetBuffSeq)
-  -- function num : 0_128
+function BuffResultClearLayer:Constructor(layer, donotDisplay, ownerEntityID, layerType, isUnload, targetBuffSeq)
   self._layer = layer
   self._donotDisplay = donotDisplay
   self._ownerEntityID = ownerEntityID
@@ -983,237 +613,149 @@ BuffResultClearLayer.Constructor = function(self, layer, donotDisplay, ownerEnti
   self._targetBuffSeq = targetBuffSeq
 end
 
--- DECOMPILER ERROR at PC521: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.SetChangeLayer = function(self, layer)
-  -- function num : 0_129
+function BuffResultClearLayer:SetChangeLayer(layer)
   self._changeLayer = layer
 end
 
--- DECOMPILER ERROR at PC524: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.GetChangeLayer = function(self)
-  -- function num : 0_130
+function BuffResultClearLayer:GetChangeLayer()
   return self._changeLayer
 end
 
--- DECOMPILER ERROR at PC527: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.GetLayer = function(self)
-  -- function num : 0_131
+function BuffResultClearLayer:GetLayer()
   return self._layer
 end
 
--- DECOMPILER ERROR at PC530: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.GetDonotDisplay = function(self)
-  -- function num : 0_132
+function BuffResultClearLayer:GetDonotDisplay()
   return self._donotDisplay
 end
 
--- DECOMPILER ERROR at PC533: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.GetOwnerEntityID = function(self)
-  -- function num : 0_133
+function BuffResultClearLayer:GetOwnerEntityID()
   return self._ownerEntityID
 end
 
--- DECOMPILER ERROR at PC536: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.GetLayerType = function(self)
-  -- function num : 0_134
+function BuffResultClearLayer:GetLayerType()
   return self._layerType
 end
 
--- DECOMPILER ERROR at PC539: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.GetIsUnload = function(self)
-  -- function num : 0_135
+function BuffResultClearLayer:GetIsUnload()
   return self._isUnload
 end
 
--- DECOMPILER ERROR at PC542: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.GetTargetBuffSeq = function(self)
-  -- function num : 0_136
+function BuffResultClearLayer:GetTargetBuffSeq()
   return self._targetBuffSeq
 end
 
--- DECOMPILER ERROR at PC545: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.SetTotalLayer = function(self, n)
-  -- function num : 0_137 , upvalues : _ENV
-  if n > 100 then
-    (Log.error)()
+function BuffResultClearLayer:SetTotalLayer(n)
+  if 100 < n then
+    Log.error()
   end
   self._totalLayerCount = n
 end
 
--- DECOMPILER ERROR at PC548: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.GetTotalLayer = function(self)
-  -- function num : 0_138
+function BuffResultClearLayer:GetTotalLayer()
   return self._totalLayerCount
 end
 
--- DECOMPILER ERROR at PC551: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.SetTriggerPos = function(self, v)
-  -- function num : 0_139
+function BuffResultClearLayer:SetTriggerPos(v)
   self._triggerPos = v
 end
 
--- DECOMPILER ERROR at PC554: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.GetTriggerPos = function(self)
-  -- function num : 0_140
+function BuffResultClearLayer:GetTriggerPos()
   return self._triggerPos
 end
 
--- DECOMPILER ERROR at PC557: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.SetMovePos = function(self, pos)
-  -- function num : 0_141
+function BuffResultClearLayer:SetMovePos(pos)
   self._movePos = pos
 end
 
--- DECOMPILER ERROR at PC560: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.GetMovePos = function(self)
-  -- function num : 0_142
+function BuffResultClearLayer:GetMovePos()
   return self._movePos
 end
 
--- DECOMPILER ERROR at PC563: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.SetLayer = function(self, layer)
-  -- function num : 0_143
+function BuffResultClearLayer:SetLayer(layer)
   self._layer = layer
 end
 
--- DECOMPILER ERROR at PC566: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.GetLayer = function(self)
-  -- function num : 0_144
+function BuffResultClearLayer:GetLayer()
   return self._layer
 end
 
--- DECOMPILER ERROR at PC569: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.SetEntityID = function(self, eid)
-  -- function num : 0_145
+function BuffResultClearLayer:SetEntityID(eid)
   self._entityID = eid
 end
 
--- DECOMPILER ERROR at PC572: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultClearLayer.GetEntityID = function(self)
-  -- function num : 0_146
+function BuffResultClearLayer:GetEntityID()
   return self._entityID
 end
 
 _class("BuffResultLayerMark", BuffResultBase)
 BuffResultLayerMark = BuffResultLayerMark
--- DECOMPILER ERROR at PC581: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultLayerMark.Constructor = function(self, layer, eid)
-  -- function num : 0_147
+function BuffResultLayerMark:Constructor(layer, eid)
   self._layer = layer
   self._casterID = eid
 end
 
--- DECOMPILER ERROR at PC584: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayerMark.GetLayer = function(self)
-  -- function num : 0_148
+function BuffResultLayerMark:GetLayer()
   return self._layer
 end
 
--- DECOMPILER ERROR at PC587: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultLayerMark.GetEntityID = function(self)
-  -- function num : 0_149
+function BuffResultLayerMark:GetEntityID()
   return self._casterID
 end
 
 _class("BuffResultCastSkillWithChainCount", BuffResultBase)
 BuffResultCastSkillWithChainCount = BuffResultCastSkillWithChainCount
--- DECOMPILER ERROR at PC596: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultCastSkillWithChainCount.Constructor = function(self, eid)
-  -- function num : 0_150
+function BuffResultCastSkillWithChainCount:Constructor(eid)
   self._entityID = eid
 end
 
--- DECOMPILER ERROR at PC599: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkillWithChainCount.GetEntityID = function(self)
-  -- function num : 0_151
+function BuffResultCastSkillWithChainCount:GetEntityID()
   return self._entityID
 end
 
 _class("BuffResultCastSkillWithAttribute", BuffResultBase)
 BuffResultCastSkillWithAttribute = BuffResultCastSkillWithAttribute
--- DECOMPILER ERROR at PC608: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultCastSkillWithAttribute.Constructor = function(self, skillID, skillHolderID, skillResult)
-  -- function num : 0_152
+function BuffResultCastSkillWithAttribute:Constructor(skillID, skillHolderID, skillResult)
   self._skillID = skillID
   self._skillHolderID = skillHolderID
   self._skillResult = skillResult
 end
 
--- DECOMPILER ERROR at PC611: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkillWithAttribute.GetSkillID = function(self)
-  -- function num : 0_153
+function BuffResultCastSkillWithAttribute:GetSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC614: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkillWithAttribute.GetSkillHolderID = function(self)
-  -- function num : 0_154
+function BuffResultCastSkillWithAttribute:GetSkillHolderID()
   return self._skillHolderID
 end
 
--- DECOMPILER ERROR at PC617: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkillWithAttribute.GetSkillResult = function(self)
-  -- function num : 0_155
+function BuffResultCastSkillWithAttribute:GetSkillResult()
   return self._skillResult
 end
 
 _class("BuffResultCastSkill_ByAction", BuffResultBase)
 BuffResultCastSkill_ByAction = BuffResultCastSkill_ByAction
--- DECOMPILER ERROR at PC626: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultCastSkill_ByAction.Constructor = function(self, skillID, skillResult)
-  -- function num : 0_156
+function BuffResultCastSkill_ByAction:Constructor(skillID, skillResult)
   self._skillID = skillID
   self._skillResult = skillResult
 end
 
--- DECOMPILER ERROR at PC629: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill_ByAction.GetSkillID = function(self)
-  -- function num : 0_157
+function BuffResultCastSkill_ByAction:GetSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC632: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill_ByAction.GetSkillResult = function(self)
-  -- function num : 0_158
+function BuffResultCastSkill_ByAction:GetSkillResult()
   return self._skillResult
 end
 
 _class("BuffResultAddHPMax", BuffResultBase)
 BuffResultAddHPMax = BuffResultAddHPMax
--- DECOMPILER ERROR at PC641: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddHPMax.Constructor = function(self, entityID, damageInfo, maxHPResult, displayDamage, notAddHP)
-  -- function num : 0_159
+function BuffResultAddHPMax:Constructor(entityID, damageInfo, maxHPResult, displayDamage, notAddHP)
   self._entityID = entityID
   self._damageInfo = damageInfo
   self._maxHPResult = maxHPResult
@@ -1221,283 +763,174 @@ BuffResultAddHPMax.Constructor = function(self, entityID, damageInfo, maxHPResul
   self._notAddHP = notAddHP
 end
 
--- DECOMPILER ERROR at PC644: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPMax.GetEntityID = function(self)
-  -- function num : 0_160
+function BuffResultAddHPMax:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC647: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPMax.GetDamageInfo = function(self)
-  -- function num : 0_161
+function BuffResultAddHPMax:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC650: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPMax.GetDisplayDamage = function(self)
-  -- function num : 0_162
+function BuffResultAddHPMax:GetDisplayDamage()
   return self._displayDamage
 end
 
--- DECOMPILER ERROR at PC653: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPMax.GetMaxHPResult = function(self)
-  -- function num : 0_163
+function BuffResultAddHPMax:GetMaxHPResult()
   return self._maxHPResult
 end
 
--- DECOMPILER ERROR at PC656: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPMax.GetNotAddHP = function(self)
-  -- function num : 0_164
+function BuffResultAddHPMax:GetNotAddHP()
   return self._notAddHP
 end
 
 _class("BuffResultTransferCasterLayerShieldToTarget", BuffResultBase)
 BuffResultTransferCasterLayerShieldToTarget = BuffResultTransferCasterLayerShieldToTarget
--- DECOMPILER ERROR at PC665: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultTransferCasterLayerShieldToTarget.Constructor = function(self, casterID, targetID, targetNewLayer)
-  -- function num : 0_165
+function BuffResultTransferCasterLayerShieldToTarget:Constructor(casterID, targetID, targetNewLayer)
   self._casterID = casterID
   self._targetID = targetID
   self._targetNewLayer = targetNewLayer
 end
 
--- DECOMPILER ERROR at PC668: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultTransferCasterLayerShieldToTarget.GetCasterID = function(self)
-  -- function num : 0_166
+function BuffResultTransferCasterLayerShieldToTarget:GetCasterID()
   return self._casterID
 end
 
--- DECOMPILER ERROR at PC671: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultTransferCasterLayerShieldToTarget.GetTargetID = function(self)
-  -- function num : 0_167
+function BuffResultTransferCasterLayerShieldToTarget:GetTargetID()
   return self._targetID
 end
 
--- DECOMPILER ERROR at PC674: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultTransferCasterLayerShieldToTarget.GetTargetNewLayer = function(self)
-  -- function num : 0_168
+function BuffResultTransferCasterLayerShieldToTarget:GetTargetNewLayer()
   return self._targetNewLayer
 end
 
 _class("BuffResultAddSkillIncreaseByAttack", BuffResultBase)
 BuffResultAddSkillIncreaseByAttack = BuffResultAddSkillIncreaseByAttack
--- DECOMPILER ERROR at PC683: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddSkillIncreaseByAttack.Constructor = function(self, layer)
-  -- function num : 0_169
+function BuffResultAddSkillIncreaseByAttack:Constructor(layer)
   self._layer = layer
 end
 
--- DECOMPILER ERROR at PC686: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddSkillIncreaseByAttack.GetLayer = function(self)
-  -- function num : 0_170
+function BuffResultAddSkillIncreaseByAttack:GetLayer()
   return self._layer
 end
 
 _class("BuffResultAddHP", BuffResultBase)
 BuffResultAddHP = BuffResultAddHP
--- DECOMPILER ERROR at PC695: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddHP.Constructor = function(self, damageInfo)
-  -- function num : 0_171
+function BuffResultAddHP:Constructor(damageInfo)
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC698: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHP.GetDamageInfo = function(self)
-  -- function num : 0_172
+function BuffResultAddHP:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC701: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHP.SetNotifyAttackerPos = function(self, pos)
-  -- function num : 0_173
+function BuffResultAddHP:SetNotifyAttackerPos(pos)
   self._attackerPos = pos
 end
 
--- DECOMPILER ERROR at PC704: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHP.SetNotifyDefenderPos = function(self, pos)
-  -- function num : 0_174
+function BuffResultAddHP:SetNotifyDefenderPos(pos)
   self._defenderPos = pos
 end
 
--- DECOMPILER ERROR at PC707: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHP.SetNotifyAttackerID = function(self, eid)
-  -- function num : 0_175
+function BuffResultAddHP:SetNotifyAttackerID(eid)
   self._attackerID = eid
 end
 
--- DECOMPILER ERROR at PC710: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHP.SetNotifyDefenderID = function(self, eid)
-  -- function num : 0_176
+function BuffResultAddHP:SetNotifyDefenderID(eid)
   self._defenderID = eid
 end
 
--- DECOMPILER ERROR at PC713: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHP.SetMatchPass = function(self, matchPass)
-  -- function num : 0_177
+function BuffResultAddHP:SetMatchPass(matchPass)
   self._matchPass = matchPass
 end
 
--- DECOMPILER ERROR at PC716: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHP.SetNotifyEntityID = function(self, id)
-  -- function num : 0_178
+function BuffResultAddHP:SetNotifyEntityID(id)
   self._notifyEntityID = id
 end
 
--- DECOMPILER ERROR at PC719: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHP.SetNotifyPos = function(self, pos)
-  -- function num : 0_179
+function BuffResultAddHP:SetNotifyPos(pos)
   self._notifyPos = pos
 end
 
--- DECOMPILER ERROR at PC722: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHP.GetNotifyPos = function(self)
-  -- function num : 0_180
+function BuffResultAddHP:GetNotifyPos()
   return self._notifyPos
 end
 
--- DECOMPILER ERROR at PC725: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHP.GetNotifyEntityID = function(self)
-  -- function num : 0_181
+function BuffResultAddHP:GetNotifyEntityID()
   return self._notifyEntityID
 end
 
--- DECOMPILER ERROR at PC728: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHP.GetNotifyAttackerPos = function(self)
-  -- function num : 0_182
+function BuffResultAddHP:GetNotifyAttackerPos()
   return self._attackerPos
 end
 
--- DECOMPILER ERROR at PC731: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHP.GetNotifyDefenderPos = function(self)
-  -- function num : 0_183
+function BuffResultAddHP:GetNotifyDefenderPos()
   return self._defenderPos
 end
 
--- DECOMPILER ERROR at PC734: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHP.GetNotifyAttackerID = function(self)
-  -- function num : 0_184
+function BuffResultAddHP:GetNotifyAttackerID()
   return self._attackerID
 end
 
--- DECOMPILER ERROR at PC737: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHP.GetNotifyDefenderID = function(self)
-  -- function num : 0_185
+function BuffResultAddHP:GetNotifyDefenderID()
   return self._defenderID
 end
 
--- DECOMPILER ERROR at PC740: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHP.GetMatchPass = function(self)
-  -- function num : 0_186
+function BuffResultAddHP:GetMatchPass()
   return self._matchPass
 end
 
 _class("BuffResultChangeActivatePassive", BuffResultBase)
 BuffResultChangeActivatePassive = BuffResultChangeActivatePassive
--- DECOMPILER ERROR at PC749: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeActivatePassive.Constructor = function(self, light, forceInit, forceInitType)
-  -- function num : 0_187
+function BuffResultChangeActivatePassive:Constructor(light, forceInit, forceInitType)
   self.light = light
   self.forceInit = forceInit
   self.forceInitType = forceInitType
 end
 
--- DECOMPILER ERROR at PC752: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeActivatePassive.GetLight = function(self)
-  -- function num : 0_188
+function BuffResultChangeActivatePassive:GetLight()
   return self.light
 end
 
--- DECOMPILER ERROR at PC755: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeActivatePassive.GetForceInit = function(self)
-  -- function num : 0_189
+function BuffResultChangeActivatePassive:GetForceInit()
   return self.forceInit
 end
 
--- DECOMPILER ERROR at PC758: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeActivatePassive.GetForceInitType = function(self)
-  -- function num : 0_190
+function BuffResultChangeActivatePassive:GetForceInitType()
   return self.forceInitType
 end
 
--- DECOMPILER ERROR at PC761: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeActivatePassive.SetTotalLayer = function(self, n)
-  -- function num : 0_191
+function BuffResultChangeActivatePassive:SetTotalLayer(n)
   self._totalLayerCount = n
 end
 
--- DECOMPILER ERROR at PC764: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeActivatePassive.GetTotalLayer = function(self)
-  -- function num : 0_192
+function BuffResultChangeActivatePassive:GetTotalLayer()
   return self._totalLayerCount
 end
 
--- DECOMPILER ERROR at PC767: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeActivatePassive.SetLayer = function(self, n)
-  -- function num : 0_193
+function BuffResultChangeActivatePassive:SetLayer(n)
   self._layerCount = n
 end
 
--- DECOMPILER ERROR at PC770: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeActivatePassive.GetLayer = function(self)
-  -- function num : 0_194
+function BuffResultChangeActivatePassive:GetLayer()
   return self._layerCount
 end
 
--- DECOMPILER ERROR at PC773: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeActivatePassive.SetLayerName = function(self, layerName)
-  -- function num : 0_195
+function BuffResultChangeActivatePassive:SetLayerName(layerName)
   self._layerName = layerName
 end
 
--- DECOMPILER ERROR at PC776: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeActivatePassive.GetLayerName = function(self)
-  -- function num : 0_196
+function BuffResultChangeActivatePassive:GetLayerName()
   return self._layerName
 end
 
 _class("BuffResultReflexiveDamage", BuffResultBase)
 BuffResultReflexiveDamage = BuffResultReflexiveDamage
--- DECOMPILER ERROR at PC785: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultReflexiveDamage.Constructor = function(self, attackerId, attackPos, damageInfo, layer)
-  -- function num : 0_197
+function BuffResultReflexiveDamage:Constructor(attackerId, attackPos, damageInfo, layer)
   self._originalAttackId = attackerId
   self._defenderID = attackerId
   self._attackPos = attackPos
@@ -1506,313 +939,204 @@ BuffResultReflexiveDamage.Constructor = function(self, attackerId, attackPos, da
   self._skillHolderID = nil
 end
 
--- DECOMPILER ERROR at PC788: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultReflexiveDamage.GetOriginalAttackerID = function(self)
-  -- function num : 0_198
+function BuffResultReflexiveDamage:GetOriginalAttackerID()
   return self._originalAttackId
 end
 
--- DECOMPILER ERROR at PC791: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultReflexiveDamage.GetDefenderID = function(self)
-  -- function num : 0_199
+function BuffResultReflexiveDamage:GetDefenderID()
   return self._defenderID
 end
 
--- DECOMPILER ERROR at PC794: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultReflexiveDamage.GetAttackPos = function(self)
-  -- function num : 0_200
+function BuffResultReflexiveDamage:GetAttackPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC797: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultReflexiveDamage.GetDamageInfo = function(self)
-  -- function num : 0_201
+function BuffResultReflexiveDamage:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC800: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultReflexiveDamage.GetLayer = function(self)
-  -- function num : 0_202
+function BuffResultReflexiveDamage:GetLayer()
   return self._layer
 end
 
--- DECOMPILER ERROR at PC803: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultReflexiveDamage.SetSkillHolderID = function(self, skillHolderID)
-  -- function num : 0_203
+function BuffResultReflexiveDamage:SetSkillHolderID(skillHolderID)
   self._skillHolderID = skillHolderID
 end
 
--- DECOMPILER ERROR at PC806: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultReflexiveDamage.GetSkillHolderID = function(self)
-  -- function num : 0_204
+function BuffResultReflexiveDamage:GetSkillHolderID()
   return self._skillHolderID
 end
 
--- DECOMPILER ERROR at PC809: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultReflexiveDamage.SetSkillID = function(self, skillID)
-  -- function num : 0_205
+function BuffResultReflexiveDamage:SetSkillID(skillID)
   self._skillID = skillID
 end
 
--- DECOMPILER ERROR at PC812: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultReflexiveDamage.GetSkillID = function(self)
-  -- function num : 0_206
+function BuffResultReflexiveDamage:GetSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC815: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultReflexiveDamage.SetCurSkillDamageIndex = function(self, val)
-  -- function num : 0_207
+function BuffResultReflexiveDamage:SetCurSkillDamageIndex(val)
   self._curSkillDamageIndex = val
 end
 
--- DECOMPILER ERROR at PC818: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultReflexiveDamage.GetCurSkillDamageIndex = function(self)
-  -- function num : 0_208
+function BuffResultReflexiveDamage:GetCurSkillDamageIndex()
   return self._curSkillDamageIndex
 end
 
 _class("BuffResultDoIncreaseActiveSkillAtk", BuffResultBase)
 BuffResultDoIncreaseActiveSkillAtk = BuffResultDoIncreaseActiveSkillAtk
--- DECOMPILER ERROR at PC827: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultDoIncreaseActiveSkillAtk.Constructor = function(self, light, layer)
-  -- function num : 0_209
+function BuffResultDoIncreaseActiveSkillAtk:Constructor(light, layer)
   self._light = light
   self._layer = layer
 end
 
--- DECOMPILER ERROR at PC830: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDoIncreaseActiveSkillAtk.GetLight = function(self)
-  -- function num : 0_210
+function BuffResultDoIncreaseActiveSkillAtk:GetLight()
   return self._light
 end
 
--- DECOMPILER ERROR at PC833: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDoIncreaseActiveSkillAtk.GetLayer = function(self)
-  -- function num : 0_211
+function BuffResultDoIncreaseActiveSkillAtk:GetLayer()
   return self._layer
 end
 
 _class("BuffResultUndoIncreaseActiveSkillAtk", BuffResultBase)
 BuffResultUndoIncreaseActiveSkillAtk = BuffResultUndoIncreaseActiveSkillAtk
--- DECOMPILER ERROR at PC842: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultUndoIncreaseActiveSkillAtk.Constructor = function(self, dark)
-  -- function num : 0_212
+function BuffResultUndoIncreaseActiveSkillAtk:Constructor(dark)
   self._dark = dark
 end
 
--- DECOMPILER ERROR at PC845: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultUndoIncreaseActiveSkillAtk.GetDark = function(self)
-  -- function num : 0_213
+function BuffResultUndoIncreaseActiveSkillAtk:GetDark()
   return self._dark
 end
 
 _class("BuffResultRecoveryOnLostHP", BuffResultBase)
 BuffResultRecoveryOnLostHP = BuffResultRecoveryOnLostHP
--- DECOMPILER ERROR at PC854: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultRecoveryOnLostHP.Constructor = function(self, damageInfo)
-  -- function num : 0_214
+function BuffResultRecoveryOnLostHP:Constructor(damageInfo)
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC857: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRecoveryOnLostHP.GetDamageInfo = function(self)
-  -- function num : 0_215
+function BuffResultRecoveryOnLostHP:GetDamageInfo()
   return self._damageInfo
 end
 
 _class("BuffResultShieldToAtk", BuffResultBase)
 BuffResultShieldToAtk = BuffResultShieldToAtk
--- DECOMPILER ERROR at PC866: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultShieldToAtk.Constructor = function(self, addAttack)
-  -- function num : 0_216
+function BuffResultShieldToAtk:Constructor(addAttack)
   self._addAttack = addAttack
 end
 
--- DECOMPILER ERROR at PC869: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShieldToAtk.GetAddAttack = function(self)
-  -- function num : 0_217
+function BuffResultShieldToAtk:GetAddAttack()
   return self._addAttack
 end
 
 _class("BuffResultShieldToHP", BuffResultBase)
 BuffResultShieldToHP = BuffResultShieldToHP
--- DECOMPILER ERROR at PC878: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultShieldToHP.Constructor = function(self, addHP, damageInfo, shield)
-  -- function num : 0_218
+function BuffResultShieldToHP:Constructor(addHP, damageInfo, shield)
   self._addHP = addHP
   self._damageInfo = damageInfo
   self._curShield = shield
 end
 
--- DECOMPILER ERROR at PC881: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShieldToHP.GetAddHP = function(self)
-  -- function num : 0_219
+function BuffResultShieldToHP:GetAddHP()
   return self._addHP
 end
 
--- DECOMPILER ERROR at PC884: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShieldToHP.GetDamageInfo = function(self)
-  -- function num : 0_220
+function BuffResultShieldToHP:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC887: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShieldToHP.GetShieldToHp_CurShield = function(self)
-  -- function num : 0_221
+function BuffResultShieldToHP:GetShieldToHp_CurShield()
   return self._curShield
 end
 
 _class("BuffResultShowBossHp", BuffResultBase)
 BuffResultShowBossHp = BuffResultShowBossHp
--- DECOMPILER ERROR at PC896: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultShowBossHp.Constructor = function(self, entityId)
-  -- function num : 0_222
+function BuffResultShowBossHp:Constructor(entityId)
   self._entityID = entityId
 end
 
--- DECOMPILER ERROR at PC899: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShowBossHp.GetEntityID = function(self)
-  -- function num : 0_223
+function BuffResultShowBossHp:GetEntityID()
   return self._entityID
 end
 
 _class("BuffResultChangeAttack", BuffResultBase)
 BuffResultChangeAttack = BuffResultChangeAttack
--- DECOMPILER ERROR at PC908: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeAttack.Constructor = function(self, casterID, addValue, isLight)
-  -- function num : 0_224
+function BuffResultChangeAttack:Constructor(casterID, addValue, isLight)
   self._casterID = casterID
   self._addValue = addValue
   self._isLight = isLight
 end
 
--- DECOMPILER ERROR at PC911: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttack.GetEntityID = function(self)
-  -- function num : 0_225
+function BuffResultChangeAttack:GetEntityID()
   return self._casterID
 end
 
--- DECOMPILER ERROR at PC914: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttack.GetAddValue = function(self)
-  -- function num : 0_226
+function BuffResultChangeAttack:GetAddValue()
   return self._addValue
 end
 
--- DECOMPILER ERROR at PC917: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttack.GetIsLight = function(self)
-  -- function num : 0_227
+function BuffResultChangeAttack:GetIsLight()
   return self._isLight
 end
 
 _class("BuffResultChangeAttackUndo", BuffResultBase)
 BuffResultChangeAttackUndo = BuffResultChangeAttackUndo
--- DECOMPILER ERROR at PC926: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeAttackUndo.Constructor = function(self, casterID, casterBlack, isBlack)
-  -- function num : 0_228
+function BuffResultChangeAttackUndo:Constructor(casterID, casterBlack, isBlack)
   self._casterID = casterID
   self._casterBlack = casterBlack
   self._isBlack = isBlack
 end
 
--- DECOMPILER ERROR at PC929: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttackUndo.GetCasterID = function(self)
-  -- function num : 0_229
+function BuffResultChangeAttackUndo:GetCasterID()
   return self._casterID
 end
 
--- DECOMPILER ERROR at PC932: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttackUndo.GetCasterBlack = function(self)
-  -- function num : 0_230
+function BuffResultChangeAttackUndo:GetCasterBlack()
   return self._casterBlack
 end
 
--- DECOMPILER ERROR at PC935: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttackUndo.GetIsBlack = function(self)
-  -- function num : 0_231
+function BuffResultChangeAttackUndo:GetIsBlack()
   return self._isBlack
 end
 
 _class("BuffResultChangeAttackByCasterLayer", BuffResultBase)
 BuffResultChangeAttackByCasterLayer = BuffResultChangeAttackByCasterLayer
--- DECOMPILER ERROR at PC944: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeAttackByCasterLayer.Constructor = function(self, casterID, val)
-  -- function num : 0_232
+function BuffResultChangeAttackByCasterLayer:Constructor(casterID, val)
   self._casterID = casterID
   self._val = val
 end
 
--- DECOMPILER ERROR at PC947: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttackByCasterLayer.GetCasterID = function(self)
-  -- function num : 0_233
+function BuffResultChangeAttackByCasterLayer:GetCasterID()
   return self._casterID
 end
 
--- DECOMPILER ERROR at PC950: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttackByCasterLayer.GetValue = function(self)
-  -- function num : 0_234
+function BuffResultChangeAttackByCasterLayer:GetValue()
   return self._val
 end
 
 _class("BuffResultUndoChangeAttackByCasterLayer", BuffResultBase)
 BuffResultUndoChangeAttackByCasterLayer = BuffResultUndoChangeAttackByCasterLayer
--- DECOMPILER ERROR at PC959: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultUndoChangeAttackByCasterLayer.Constructor = function(self, casterID)
-  -- function num : 0_235
+function BuffResultUndoChangeAttackByCasterLayer:Constructor(casterID)
   self._casterID = casterID
 end
 
--- DECOMPILER ERROR at PC962: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultUndoChangeAttackByCasterLayer.GetCasterID = function(self)
-  -- function num : 0_236
+function BuffResultUndoChangeAttackByCasterLayer:GetCasterID()
   return self._casterID
 end
 
 _class("BuffResultChangeAttackByCaster", BuffResultBase)
 BuffResultChangeAttackByCaster = BuffResultChangeAttackByCaster
--- DECOMPILER ERROR at PC971: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeAttackByCaster.Constructor = function(self, casterID, val, light, pstid, casterPstID)
-  -- function num : 0_237
+function BuffResultChangeAttackByCaster:Constructor(casterID, val, light, pstid, casterPstID)
   self._casterID = casterID
   self._val = val
   self._light = light
@@ -1820,295 +1144,196 @@ BuffResultChangeAttackByCaster.Constructor = function(self, casterID, val, light
   self._casterPstID = casterPstID
 end
 
--- DECOMPILER ERROR at PC974: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttackByCaster.GetCasterID = function(self)
-  -- function num : 0_238
+function BuffResultChangeAttackByCaster:GetCasterID()
   return self._casterID
 end
 
--- DECOMPILER ERROR at PC977: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttackByCaster.GetValue = function(self)
-  -- function num : 0_239
+function BuffResultChangeAttackByCaster:GetValue()
   return self._val
 end
 
--- DECOMPILER ERROR at PC980: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttackByCaster.GetLight = function(self)
-  -- function num : 0_240
+function BuffResultChangeAttackByCaster:GetLight()
   return self._light
 end
 
--- DECOMPILER ERROR at PC983: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttackByCaster.GetPstID = function(self)
-  -- function num : 0_241
+function BuffResultChangeAttackByCaster:GetPstID()
   return self._pstid
 end
 
--- DECOMPILER ERROR at PC986: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttackByCaster.GetCasterPstID = function(self)
-  -- function num : 0_242
+function BuffResultChangeAttackByCaster:GetCasterPstID()
   return self._casterPstID
 end
 
 _class("BuffResultUndoChangeAttackByCaster", BuffResultBase)
 BuffResultUndoChangeAttackByCaster = BuffResultUndoChangeAttackByCaster
--- DECOMPILER ERROR at PC995: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultUndoChangeAttackByCaster.Constructor = function(self, black, casterPstID)
-  -- function num : 0_243
+function BuffResultUndoChangeAttackByCaster:Constructor(black, casterPstID)
   self._casterPstID = casterPstID
   self._black = black
 end
 
--- DECOMPILER ERROR at PC998: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultUndoChangeAttackByCaster.GetBlack = function(self)
-  -- function num : 0_244
+function BuffResultUndoChangeAttackByCaster:GetBlack()
   return self._black
 end
 
--- DECOMPILER ERROR at PC1001: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultUndoChangeAttackByCaster.GetCasterPstID = function(self)
-  -- function num : 0_245
+function BuffResultUndoChangeAttackByCaster:GetCasterPstID()
   return self._casterPstID
 end
 
 _class("BuffResultChangeAttackSkill", BuffResultBase)
 BuffResultChangeAttackSkill = BuffResultChangeAttackSkill
--- DECOMPILER ERROR at PC1010: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeAttackSkill.Constructor = function(self, trapCasterID)
-  -- function num : 0_246
+function BuffResultChangeAttackSkill:Constructor(trapCasterID)
   self._trapCasterID = trapCasterID
 end
 
--- DECOMPILER ERROR at PC1013: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttackSkill.GetTrapCasterID = function(self)
-  -- function num : 0_247
+function BuffResultChangeAttackSkill:GetTrapCasterID()
   return self._trapCasterID
 end
 
 _class("BuffResultChangeDefence", BuffResultBase)
 BuffResultChangeDefence = BuffResultChangeDefence
--- DECOMPILER ERROR at PC1022: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeDefence.Constructor = function(self, changeType, val, entityID, light)
-  -- function num : 0_248
+function BuffResultChangeDefence:Constructor(changeType, val, entityID, light)
   self._changeType = changeType
   self._entityID = entityID
   self._light = light
   self._val = val
 end
 
--- DECOMPILER ERROR at PC1025: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeDefence.GetChangeType = function(self)
-  -- function num : 0_249
+function BuffResultChangeDefence:GetChangeType()
   return self._changeType
 end
 
--- DECOMPILER ERROR at PC1028: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeDefence.GetEntityID = function(self)
-  -- function num : 0_250
+function BuffResultChangeDefence:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC1031: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeDefence.GetLight = function(self)
-  -- function num : 0_251
+function BuffResultChangeDefence:GetLight()
   return self._light
 end
 
--- DECOMPILER ERROR at PC1034: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeDefence.GetValue = function(self)
-  -- function num : 0_252
+function BuffResultChangeDefence:GetValue()
   return self._val
 end
 
 _class("BuffResultChangeDefenceUndo", BuffResultBase)
 BuffResultChangeDefenceUndo = BuffResultChangeDefenceUndo
--- DECOMPILER ERROR at PC1043: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeDefenceUndo.Constructor = function(self, black)
-  -- function num : 0_253
+function BuffResultChangeDefenceUndo:Constructor(black)
   self._black = black
 end
 
--- DECOMPILER ERROR at PC1046: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeDefenceUndo.GetBlack = function(self)
-  -- function num : 0_254
+function BuffResultChangeDefenceUndo:GetBlack()
   return self._black
 end
 
 _class("BuffResultChangePetActiveSkill", BuffResultBase)
 BuffResultChangePetActiveSkill = BuffResultChangePetActiveSkill
--- DECOMPILER ERROR at PC1055: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangePetActiveSkill.Constructor = function(self, layer, skillID)
-  -- function num : 0_255
+function BuffResultChangePetActiveSkill:Constructor(layer, skillID)
   self._layer = layer
   self._skillID = skillID
 end
 
--- DECOMPILER ERROR at PC1058: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangePetActiveSkill.GetLayer = function(self)
-  -- function num : 0_256
+function BuffResultChangePetActiveSkill:GetLayer()
   return self._layer
 end
 
--- DECOMPILER ERROR at PC1061: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangePetActiveSkill.GetSkillID = function(self)
-  -- function num : 0_257
+function BuffResultChangePetActiveSkill:GetSkillID()
   return self._skillID
 end
 
 _class("BuffResultChangePetExtraActiveSkill", BuffResultBase)
 BuffResultChangePetExtraActiveSkill = BuffResultChangePetExtraActiveSkill
--- DECOMPILER ERROR at PC1070: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangePetExtraActiveSkill.Constructor = function(self, ordSkillID, newSkillID)
-  -- function num : 0_258
+function BuffResultChangePetExtraActiveSkill:Constructor(ordSkillID, newSkillID)
   self._ordSkillID = ordSkillID
   self._newSkillID = newSkillID
 end
 
--- DECOMPILER ERROR at PC1073: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangePetExtraActiveSkill.GetOriSkillID = function(self)
-  -- function num : 0_259
+function BuffResultChangePetExtraActiveSkill:GetOriSkillID()
   return self._ordSkillID
 end
 
--- DECOMPILER ERROR at PC1076: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangePetExtraActiveSkill.GetNewSkillID = function(self)
-  -- function num : 0_260
+function BuffResultChangePetExtraActiveSkill:GetNewSkillID()
   return self._newSkillID
 end
 
 _class("BuffResultChangePetLegendPower", BuffResultBase)
 BuffResultChangePetLegendPower = BuffResultChangePetLegendPower
--- DECOMPILER ERROR at PC1085: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangePetLegendPower.Constructor = function(self, petPowerList)
-  -- function num : 0_261
+function BuffResultChangePetLegendPower:Constructor(petPowerList)
   self._petPowerList = petPowerList
 end
 
--- DECOMPILER ERROR at PC1088: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangePetLegendPower.GetPetPowerList = function(self)
-  -- function num : 0_262
+function BuffResultChangePetLegendPower:GetPetPowerList()
   return self._petPowerList
 end
 
 _class("BuffResultChangePetLegendPowerWithChainCount", BuffResultBase)
 BuffResultChangePetLegendPowerWithChainCount = BuffResultChangePetLegendPowerWithChainCount
--- DECOMPILER ERROR at PC1097: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangePetLegendPowerWithChainCount.Constructor = function(self, petPowerList)
-  -- function num : 0_263
+function BuffResultChangePetLegendPowerWithChainCount:Constructor(petPowerList)
   self._petPowerList = petPowerList
 end
 
--- DECOMPILER ERROR at PC1100: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangePetLegendPowerWithChainCount.GetPetPowerList = function(self)
-  -- function num : 0_264
+function BuffResultChangePetLegendPowerWithChainCount:GetPetPowerList()
   return self._petPowerList
 end
 
 _class("BuffResultChangePetPower", BuffResultBase)
 BuffResultChangePetPower = BuffResultChangePetPower
--- DECOMPILER ERROR at PC1109: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangePetPower.Constructor = function(self, petPowerList, notifyView)
-  -- function num : 0_265
+function BuffResultChangePetPower:Constructor(petPowerList, notifyView)
   self._petPowerList = petPowerList
   self._notifyView = notifyView
 end
 
--- DECOMPILER ERROR at PC1112: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangePetPower.GetPetPowerList = function(self)
-  -- function num : 0_266
+function BuffResultChangePetPower:GetPetPowerList()
   return self._petPowerList
 end
 
--- DECOMPILER ERROR at PC1115: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangePetPower.GetNotifyView = function(self)
-  -- function num : 0_267
+function BuffResultChangePetPower:GetNotifyView()
   return self._notifyView
 end
 
 _class("BuffResultChangePetPowerForExtraSkill", BuffResultBase)
 BuffResultChangePetPowerForExtraSkill = BuffResultChangePetPowerForExtraSkill
--- DECOMPILER ERROR at PC1124: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangePetPowerForExtraSkill.Constructor = function(self, petPowerList, notifyView)
-  -- function num : 0_268
+function BuffResultChangePetPowerForExtraSkill:Constructor(petPowerList, notifyView)
   self._petPowerList = petPowerList
   self._notifyView = notifyView
 end
 
--- DECOMPILER ERROR at PC1127: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangePetPowerForExtraSkill.GetPetPowerList = function(self)
-  -- function num : 0_269
+function BuffResultChangePetPowerForExtraSkill:GetPetPowerList()
   return self._petPowerList
 end
 
--- DECOMPILER ERROR at PC1130: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangePetPowerForExtraSkill.GetNotifyView = function(self)
-  -- function num : 0_270
+function BuffResultChangePetPowerForExtraSkill:GetNotifyView()
   return self._notifyView
 end
 
 _class("BuffResultChangePetPowerForOverdraw", BuffResultBase)
 BuffResultChangePetPowerForOverdraw = BuffResultChangePetPowerForOverdraw
--- DECOMPILER ERROR at PC1139: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangePetPowerForOverdraw.Constructor = function(self, petPowerList, notifyView)
-  -- function num : 0_271
+function BuffResultChangePetPowerForOverdraw:Constructor(petPowerList, notifyView)
   self._petPowerList = petPowerList
   self._notifyView = notifyView
 end
 
--- DECOMPILER ERROR at PC1142: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangePetPowerForOverdraw.GetPetPowerList = function(self)
-  -- function num : 0_272
+function BuffResultChangePetPowerForOverdraw:GetPetPowerList()
   return self._petPowerList
 end
 
--- DECOMPILER ERROR at PC1145: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangePetPowerForOverdraw.GetNotifyView = function(self)
-  -- function num : 0_273
+function BuffResultChangePetPowerForOverdraw:GetNotifyView()
   return self._notifyView
 end
 
 _class("BuffResultRecordPetPowerAndWatch", BuffResultBase)
 BuffResultRecordPetPowerAndWatch = BuffResultRecordPetPowerAndWatch
--- DECOMPILER ERROR at PC1154: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultRecordPetPowerAndWatch.Constructor = function(self, entityID, petPstID, power, ready, grayWatch, notifyView)
-  -- function num : 0_274
+function BuffResultRecordPetPowerAndWatch:Constructor(entityID, petPstID, power, ready, grayWatch, notifyView)
   self._entityID = entityID
   self._petPstID = petPstID
   self._power = power
@@ -2117,321 +1342,213 @@ BuffResultRecordPetPowerAndWatch.Constructor = function(self, entityID, petPstID
   self._notifyView = notifyView
 end
 
--- DECOMPILER ERROR at PC1157: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRecordPetPowerAndWatch.GetEntityID = function(self)
-  -- function num : 0_275
+function BuffResultRecordPetPowerAndWatch:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC1160: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRecordPetPowerAndWatch.GetPetPstID = function(self)
-  -- function num : 0_276
+function BuffResultRecordPetPowerAndWatch:GetPetPstID()
   return self._petPstID
 end
 
--- DECOMPILER ERROR at PC1163: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRecordPetPowerAndWatch.GetPower = function(self)
-  -- function num : 0_277
+function BuffResultRecordPetPowerAndWatch:GetPower()
   return self._power
 end
 
--- DECOMPILER ERROR at PC1166: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRecordPetPowerAndWatch.GetReady = function(self)
-  -- function num : 0_278
+function BuffResultRecordPetPowerAndWatch:GetReady()
   return self._ready
 end
 
--- DECOMPILER ERROR at PC1169: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRecordPetPowerAndWatch.GetGrayWatch = function(self)
-  -- function num : 0_279
+function BuffResultRecordPetPowerAndWatch:GetGrayWatch()
   return self._grayWatch
 end
 
--- DECOMPILER ERROR at PC1172: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRecordPetPowerAndWatch.GetNotifyView = function(self)
-  -- function num : 0_280
+function BuffResultRecordPetPowerAndWatch:GetNotifyView()
   return self._notifyView
 end
 
 _class("BuffResultChangePetPowerOverdraw", BuffResultBase)
 BuffResultChangePetPowerOverdraw = BuffResultChangePetPowerOverdraw
--- DECOMPILER ERROR at PC1181: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangePetPowerOverdraw.Constructor = function(self, ready, overdraw)
-  -- function num : 0_281
+function BuffResultChangePetPowerOverdraw:Constructor(ready, overdraw)
   self._ready = ready
   self._overdraw = overdraw
 end
 
--- DECOMPILER ERROR at PC1184: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangePetPowerOverdraw.GetReady = function(self)
-  -- function num : 0_282
+function BuffResultChangePetPowerOverdraw:GetReady()
   return self._ready
 end
 
--- DECOMPILER ERROR at PC1187: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangePetPowerOverdraw.GetOverdraw = function(self)
-  -- function num : 0_283
+function BuffResultChangePetPowerOverdraw:GetOverdraw()
   return self._overdraw
 end
 
 _class("BuffResultShowPetPowerOverdraw", BuffResultBase)
 BuffResultShowPetPowerOverdraw = BuffResultShowPetPowerOverdraw
--- DECOMPILER ERROR at PC1196: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultShowPetPowerOverdraw.Constructor = function(self, ready, overdraw)
-  -- function num : 0_284
+function BuffResultShowPetPowerOverdraw:Constructor(ready, overdraw)
   self._ready = ready
   self._overdraw = overdraw
 end
 
--- DECOMPILER ERROR at PC1199: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShowPetPowerOverdraw.GetReady = function(self)
-  -- function num : 0_285
+function BuffResultShowPetPowerOverdraw:GetReady()
   return self._ready
 end
 
--- DECOMPILER ERROR at PC1202: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShowPetPowerOverdraw.GetOverdraw = function(self)
-  -- function num : 0_286
+function BuffResultShowPetPowerOverdraw:GetOverdraw()
   return self._overdraw
 end
 
 _class("BuffResultChangeShaderValue", BuffResultBase)
 BuffResultChangeShaderValue = BuffResultChangeShaderValue
--- DECOMPILER ERROR at PC1211: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeShaderValue.Constructor = function(self, root, param, blood)
-  -- function num : 0_287
+function BuffResultChangeShaderValue:Constructor(root, param, blood)
   self._root = root
   self._blood = blood
   self._param = param
 end
 
--- DECOMPILER ERROR at PC1214: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeShaderValue.GetRoot = function(self)
-  -- function num : 0_288
+function BuffResultChangeShaderValue:GetRoot()
   return self._root
 end
 
--- DECOMPILER ERROR at PC1217: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeShaderValue.GetBlood = function(self)
-  -- function num : 0_289
+function BuffResultChangeShaderValue:GetBlood()
   return self._blood
 end
 
--- DECOMPILER ERROR at PC1220: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeShaderValue.GetParam = function(self)
-  -- function num : 0_290
+function BuffResultChangeShaderValue:GetParam()
   return self._param
 end
 
 _class("BuffResultChangeSkillIncrease", BuffResultBase)
 BuffResultChangeSkillIncrease = BuffResultChangeSkillIncrease
--- DECOMPILER ERROR at PC1229: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeSkillIncrease.Constructor = function(self, light)
-  -- function num : 0_291
+function BuffResultChangeSkillIncrease:Constructor(light)
   self._light = light
 end
 
--- DECOMPILER ERROR at PC1232: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeSkillIncrease.GetLight = function(self)
-  -- function num : 0_292
+function BuffResultChangeSkillIncrease:GetLight()
   return self._light
 end
 
 _class("BuffResultRemoveSkillIncrease", BuffResultBase)
 BuffResultRemoveSkillIncrease = BuffResultRemoveSkillIncrease
--- DECOMPILER ERROR at PC1241: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultRemoveSkillIncrease.Constructor = function(self, black)
-  -- function num : 0_293
+function BuffResultRemoveSkillIncrease:Constructor(black)
   self._black = black
 end
 
--- DECOMPILER ERROR at PC1244: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRemoveSkillIncrease.GetBlack = function(self)
-  -- function num : 0_294
+function BuffResultRemoveSkillIncrease:GetBlack()
   return self._black
 end
 
 _class("BuffResultCreateSkillHolder", BuffResultBase)
 BuffResultCreateSkillHolder = BuffResultCreateSkillHolder
--- DECOMPILER ERROR at PC1253: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultCreateSkillHolder.Constructor = function(self, skillHolderID)
-  -- function num : 0_295
+function BuffResultCreateSkillHolder:Constructor(skillHolderID)
   self._skillHolderID = skillHolderID
 end
 
--- DECOMPILER ERROR at PC1256: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCreateSkillHolder.GetSkillHolderID = function(self)
-  -- function num : 0_296
+function BuffResultCreateSkillHolder:GetSkillHolderID()
   return self._skillHolderID
 end
 
--- DECOMPILER ERROR at PC1259: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCreateSkillHolder.SetAbsolutePositionMode = function(self, v)
-  -- function num : 0_297
+function BuffResultCreateSkillHolder:SetAbsolutePositionMode(v)
   self._absolutePositionMode = v
 end
 
--- DECOMPILER ERROR at PC1262: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCreateSkillHolder.GetAbsolutePositionMode = function(self)
-  -- function num : 0_298
+function BuffResultCreateSkillHolder:GetAbsolutePositionMode()
   return self._absolutePositionMode
 end
 
--- DECOMPILER ERROR at PC1265: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCreateSkillHolder.SetHideOnDefault = function(self, v)
-  -- function num : 0_299
+function BuffResultCreateSkillHolder:SetHideOnDefault(v)
   self._hideOnDefault = v
 end
 
--- DECOMPILER ERROR at PC1268: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCreateSkillHolder.GetHideOnDefault = function(self)
-  -- function num : 0_300
+function BuffResultCreateSkillHolder:GetHideOnDefault()
   return self._hideOnDefault
 end
 
 _class("BuffResultCreateTrap", BuffResultBase)
 BuffResultCreateTrap = BuffResultCreateTrap
--- DECOMPILER ERROR at PC1277: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultCreateTrap.Constructor = function(self, eIds, pos)
-  -- function num : 0_301
+function BuffResultCreateTrap:Constructor(eIds, pos)
   self._eIds = eIds
   self._pos = pos
 end
 
--- DECOMPILER ERROR at PC1280: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCreateTrap.GetEntityIds = function(self)
-  -- function num : 0_302
+function BuffResultCreateTrap:GetEntityIds()
   return self._eIds
 end
 
--- DECOMPILER ERROR at PC1283: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCreateTrap.GetPos = function(self)
-  -- function num : 0_303
+function BuffResultCreateTrap:GetPos()
   return self._pos
 end
 
 _class("BuffResultCreateTrapWithChainScope", BuffResultBase)
 BuffResultCreateTrapWithChainScope = BuffResultCreateTrapWithChainScope
--- DECOMPILER ERROR at PC1292: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultCreateTrapWithChainScope.Constructor = function(self, eIds)
-  -- function num : 0_304
+function BuffResultCreateTrapWithChainScope:Constructor(eIds)
   self._eIds = eIds
   self._trapSkillResults = {}
 end
 
--- DECOMPILER ERROR at PC1295: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCreateTrapWithChainScope.GetEntityIds = function(self)
-  -- function num : 0_305
+function BuffResultCreateTrapWithChainScope:GetEntityIds()
   return self._eIds
 end
 
--- DECOMPILER ERROR at PC1298: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCreateTrapWithChainScope.AddTrapSkillResult = function(self, trapId, skillResult, triggerId)
-  -- function num : 0_306 , upvalues : _ENV
-  (table.insert)(self._trapSkillResults, {trapId, skillResult, triggerId})
+function BuffResultCreateTrapWithChainScope:AddTrapSkillResult(trapId, skillResult, triggerId)
+  table.insert(self._trapSkillResults, {
+    trapId,
+    skillResult,
+    triggerId
+  })
 end
 
--- DECOMPILER ERROR at PC1301: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCreateTrapWithChainScope.GetTrapSkillResults = function(self)
-  -- function num : 0_307
+function BuffResultCreateTrapWithChainScope:GetTrapSkillResults()
   return self._trapSkillResults
 end
 
 _class("BuffResultDeathInstant", BuffResultBase)
 BuffResultDeathInstant = BuffResultDeathInstant
--- DECOMPILER ERROR at PC1310: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultDeathInstant.Constructor = function(self, casterID, isDead)
-  -- function num : 0_308
+function BuffResultDeathInstant:Constructor(casterID, isDead)
   self._casterID = casterID
   self._isDead = isDead
 end
 
--- DECOMPILER ERROR at PC1313: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDeathInstant.GetCasterID = function(self)
-  -- function num : 0_309
+function BuffResultDeathInstant:GetCasterID()
   return self._casterID
 end
 
--- DECOMPILER ERROR at PC1316: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDeathInstant.GetIsDead = function(self)
-  -- function num : 0_310
+function BuffResultDeathInstant:GetIsDead()
   return self._isDead
 end
 
 _class("BuffResultDeathToDeath", BuffResultBase)
 BuffResultDeathToDeath = BuffResultDeathToDeath
--- DECOMPILER ERROR at PC1325: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultDeathToDeath.Constructor = function(self, entityID, skillID, skillResult)
-  -- function num : 0_311
+function BuffResultDeathToDeath:Constructor(entityID, skillID, skillResult)
   self._entityID = entityID
   self._skillID = skillID
   self._skillResult = skillResult
 end
 
--- DECOMPILER ERROR at PC1328: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDeathToDeath.GetEntityID = function(self)
-  -- function num : 0_312
+function BuffResultDeathToDeath:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC1331: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDeathToDeath.GetSkillID = function(self)
-  -- function num : 0_313
+function BuffResultDeathToDeath:GetSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC1334: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDeathToDeath.GetSkillResult = function(self)
-  -- function num : 0_314
+function BuffResultDeathToDeath:GetSkillResult()
   return self._skillResult
 end
 
 _class("BuffResultHarmReduction", BuffResultBase)
 BuffResultHarmReduction = BuffResultHarmReduction
--- DECOMPILER ERROR at PC1343: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultHarmReduction.Constructor = function(self, layer, lines, harmReduction, previewSkillID, previewSkillHolder, uiText)
-  -- function num : 0_315
+function BuffResultHarmReduction:Constructor(layer, lines, harmReduction, previewSkillID, previewSkillHolder, uiText)
   self._layer = layer
   self._lines = lines
   self._harmReduction = harmReduction
@@ -2440,134 +1557,87 @@ BuffResultHarmReduction.Constructor = function(self, layer, lines, harmReduction
   self._uiText = uiText
 end
 
--- DECOMPILER ERROR at PC1346: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultHarmReduction.GetLayer = function(self)
-  -- function num : 0_316
+function BuffResultHarmReduction:GetLayer()
   return self._layer
 end
 
--- DECOMPILER ERROR at PC1349: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultHarmReduction.GetLines = function(self)
-  -- function num : 0_317
+function BuffResultHarmReduction:GetLines()
   return self._lines
 end
 
--- DECOMPILER ERROR at PC1352: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultHarmReduction.GetHarmReduction = function(self)
-  -- function num : 0_318
+function BuffResultHarmReduction:GetHarmReduction()
   return self._harmReduction
 end
 
--- DECOMPILER ERROR at PC1355: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultHarmReduction.GetPreviewSkillID = function(self)
-  -- function num : 0_319
+function BuffResultHarmReduction:GetPreviewSkillID()
   return self._previewSkillID
 end
 
--- DECOMPILER ERROR at PC1358: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultHarmReduction.GetPreviewSkillHolder = function(self)
-  -- function num : 0_320
+function BuffResultHarmReduction:GetPreviewSkillHolder()
   return self._previewSkillHolder
 end
 
--- DECOMPILER ERROR at PC1361: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultHarmReduction.GetUIText = function(self)
-  -- function num : 0_321
+function BuffResultHarmReduction:GetUIText()
   return self._uiText
 end
 
 _class("BuffResultHitBackEndDamage", BuffResultBase)
 BuffResultHitBackEndDamage = BuffResultHitBackEndDamage
--- DECOMPILER ERROR at PC1370: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultHitBackEndDamage.Constructor = function(self, defenderID, damageInfo)
-  -- function num : 0_322
+function BuffResultHitBackEndDamage:Constructor(defenderID, damageInfo)
   self._defenderID = defenderID
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC1373: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultHitBackEndDamage.GetDefenderID = function(self)
-  -- function num : 0_323
+function BuffResultHitBackEndDamage:GetDefenderID()
   return self._defenderID
 end
 
--- DECOMPILER ERROR at PC1376: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultHitBackEndDamage.GetDamageInfo = function(self)
-  -- function num : 0_324
+function BuffResultHitBackEndDamage:GetDamageInfo()
   return self._damageInfo
 end
 
 _class("BuffResultAddRecoveryUpByTeam", BuffResultBase)
 BuffResultAddRecoveryUpByTeam = BuffResultAddRecoveryUpByTeam
--- DECOMPILER ERROR at PC1385: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddRecoveryUpByTeam.Constructor = function(self, rate, maxRate, value)
-  -- function num : 0_325
+function BuffResultAddRecoveryUpByTeam:Constructor(rate, maxRate, value)
   self._rate = rate
   self._maxRate = maxRate
   self._value = value
 end
 
--- DECOMPILER ERROR at PC1388: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddRecoveryUpByTeam.GetRate = function(self)
-  -- function num : 0_326
+function BuffResultAddRecoveryUpByTeam:GetRate()
   return self._rate
 end
 
--- DECOMPILER ERROR at PC1391: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddRecoveryUpByTeam.GetMaxRate = function(self)
-  -- function num : 0_327
+function BuffResultAddRecoveryUpByTeam:GetMaxRate()
   return self._maxRate
 end
 
--- DECOMPILER ERROR at PC1394: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddRecoveryUpByTeam.GetValue = function(self)
-  -- function num : 0_328
+function BuffResultAddRecoveryUpByTeam:GetValue()
   return self._value
 end
 
 _class("BuffResultRefreshGrid", BuffResultBase)
 BuffResultRefreshGrid = BuffResultRefreshGrid
--- DECOMPILER ERROR at PC1403: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultRefreshGrid.Constructor = function(self, refreshList, target)
-  -- function num : 0_329
+function BuffResultRefreshGrid:Constructor(refreshList, target)
   self._refreshList = refreshList
   self._target = target
 end
 
--- DECOMPILER ERROR at PC1406: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRefreshGrid.GetRefreshList = function(self)
-  -- function num : 0_330
+function BuffResultRefreshGrid:GetRefreshList()
   return self._refreshList
 end
 
--- DECOMPILER ERROR at PC1409: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRefreshGrid.GetTarget = function(self)
-  -- function num : 0_331
+function BuffResultRefreshGrid:GetTarget()
   return self._target
 end
 
 _class("BuffResultResurgence", BuffResultBase)
 BuffResultResurgence = BuffResultResurgence
--- DECOMPILER ERROR at PC1418: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultResurgence.Constructor = function(self, e, leader, addval, damageInfo, oldTeamOrder, newTeamOrder)
-  -- function num : 0_332
+function BuffResultResurgence:Constructor(e, leader, addval, damageInfo, oldTeamOrder, newTeamOrder)
   self._entity = e
   self._leader = leader
   self._addval = addval
@@ -2576,54 +1646,34 @@ BuffResultResurgence.Constructor = function(self, e, leader, addval, damageInfo,
   self._newTeamOrder = newTeamOrder
 end
 
--- DECOMPILER ERROR at PC1421: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultResurgence.GetEntity = function(self)
-  -- function num : 0_333
+function BuffResultResurgence:GetEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC1424: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultResurgence.GetLeader = function(self)
-  -- function num : 0_334
+function BuffResultResurgence:GetLeader()
   return self._leader
 end
 
--- DECOMPILER ERROR at PC1427: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultResurgence.GetAddValue = function(self)
-  -- function num : 0_335
+function BuffResultResurgence:GetAddValue()
   return self._addval
 end
 
--- DECOMPILER ERROR at PC1430: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultResurgence.GetDamageInfo = function(self)
-  -- function num : 0_336
+function BuffResultResurgence:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC1433: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultResurgence.GetOldTeamOrder = function(self)
-  -- function num : 0_337
+function BuffResultResurgence:GetOldTeamOrder()
   return self._oldTeamOrder
 end
 
--- DECOMPILER ERROR at PC1436: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultResurgence.GetNewTeamOrder = function(self)
-  -- function num : 0_338
+function BuffResultResurgence:GetNewTeamOrder()
   return self._newTeamOrder
 end
 
 _class("BuffResultShadowChain", BuffResultBase)
 BuffResultShadowChain = BuffResultShadowChain
--- DECOMPILER ERROR at PC1445: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultShadowChain.Constructor = function(self, shadowEntityID, petPstID, shadowPrefab, shadowCreate, ownerEntityID)
-  -- function num : 0_339
+function BuffResultShadowChain:Constructor(shadowEntityID, petPstID, shadowPrefab, shadowCreate, ownerEntityID)
   self._shadowEntityID = shadowEntityID
   self._shadowPrefab = shadowPrefab
   self._shadowCreate = shadowCreate
@@ -2631,737 +1681,455 @@ BuffResultShadowChain.Constructor = function(self, shadowEntityID, petPstID, sha
   self._ownerEntityID = ownerEntityID
 end
 
--- DECOMPILER ERROR at PC1448: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShadowChain.GetShadowEntityID = function(self)
-  -- function num : 0_340
+function BuffResultShadowChain:GetShadowEntityID()
   return self._shadowEntityID
 end
 
--- DECOMPILER ERROR at PC1451: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShadowChain.GetShadowPrefab = function(self)
-  -- function num : 0_341
+function BuffResultShadowChain:GetShadowPrefab()
   return self._shadowPrefab
 end
 
--- DECOMPILER ERROR at PC1454: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShadowChain.GetShadowCreate = function(self)
-  -- function num : 0_342
+function BuffResultShadowChain:GetShadowCreate()
   return self._shadowCreate
 end
 
--- DECOMPILER ERROR at PC1457: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShadowChain.GetPetPstID = function(self)
-  -- function num : 0_343
+function BuffResultShadowChain:GetPetPstID()
   return self._petPstID
 end
 
--- DECOMPILER ERROR at PC1460: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShadowChain.GetOwnerEntityID = function(self)
-  -- function num : 0_344
+function BuffResultShadowChain:GetOwnerEntityID()
   return self._ownerEntityID
 end
 
 _class("BuffResultAddDamageShield", BuffResultBase)
 BuffResultAddDamageShield = BuffResultAddDamageShield
--- DECOMPILER ERROR at PC1469: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddDamageShield.Constructor = function(self, shield)
-  -- function num : 0_345
+function BuffResultAddDamageShield:Constructor(shield)
   self._shield = shield
 end
 
--- DECOMPILER ERROR at PC1472: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddDamageShield.GetShield = function(self)
-  -- function num : 0_346
+function BuffResultAddDamageShield:GetShield()
   return self._shield
 end
 
 _class("BuffResultAddHPShieldHpSpilled", BuffResultBase)
 BuffResultAddHPShieldHpSpilled = BuffResultAddHPShieldHpSpilled
--- DECOMPILER ERROR at PC1481: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddHPShieldHpSpilled.Constructor = function(self, seq)
-  -- function num : 0_347
+function BuffResultAddHPShieldHpSpilled:Constructor(seq)
   self._seq = seq
 end
 
--- DECOMPILER ERROR at PC1484: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddHPShieldHpSpilled.GetBuffSeq = function(self)
-  -- function num : 0_348
+function BuffResultAddHPShieldHpSpilled:GetBuffSeq()
   return self._seq
 end
 
 _class("BuffResultUpdateLineRenderer", BuffResultBase)
 BuffResultUpdateLineRenderer = BuffResultUpdateLineRenderer
--- DECOMPILER ERROR at PC1493: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultUpdateLineRenderer.Constructor = function(self, target, current, buffEffect)
-  -- function num : 0_349
+function BuffResultUpdateLineRenderer:Constructor(target, current, buffEffect)
   self._target = target
   self._current = current
   self._buffEffect = buffEffect
 end
 
--- DECOMPILER ERROR at PC1496: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultUpdateLineRenderer.GetTarget = function(self)
-  -- function num : 0_350
+function BuffResultUpdateLineRenderer:GetTarget()
   return self._target
 end
 
--- DECOMPILER ERROR at PC1499: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultUpdateLineRenderer.GetCurrent = function(self)
-  -- function num : 0_351
+function BuffResultUpdateLineRenderer:GetCurrent()
   return self._current
 end
 
--- DECOMPILER ERROR at PC1502: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultUpdateLineRenderer.GetBuffEffect = function(self)
-  -- function num : 0_352
+function BuffResultUpdateLineRenderer:GetBuffEffect()
   return self._buffEffect
 end
 
 _class("BuffResultShowEffectWhenTeamInSkillScope", BuffResultBase)
 BuffResultShowEffectWhenTeamInSkillScope = BuffResultShowEffectWhenTeamInSkillScope
--- DECOMPILER ERROR at PC1511: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultShowEffectWhenTeamInSkillScope.Constructor = function(self, match, effectId)
-  -- function num : 0_353
+function BuffResultShowEffectWhenTeamInSkillScope:Constructor(match, effectId)
   self._match = match
   self._effectId = effectId
 end
 
--- DECOMPILER ERROR at PC1514: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShowEffectWhenTeamInSkillScope.GetMatch = function(self)
-  -- function num : 0_354
+function BuffResultShowEffectWhenTeamInSkillScope:GetMatch()
   return self._match
 end
 
--- DECOMPILER ERROR at PC1517: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShowEffectWhenTeamInSkillScope.GetEffectId = function(self)
-  -- function num : 0_355
+function BuffResultShowEffectWhenTeamInSkillScope:GetEffectId()
   return self._effectId
 end
 
--- DECOMPILER ERROR at PC1520: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShowEffectWhenTeamInSkillScope.SetMovePos = function(self, pos)
-  -- function num : 0_356
+function BuffResultShowEffectWhenTeamInSkillScope:SetMovePos(pos)
   self._movePos = pos
 end
 
--- DECOMPILER ERROR at PC1523: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShowEffectWhenTeamInSkillScope.GetMovePos = function(self)
-  -- function num : 0_357
+function BuffResultShowEffectWhenTeamInSkillScope:GetMovePos()
   return self._movePos
 end
 
--- DECOMPILER ERROR at PC1526: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShowEffectWhenTeamInSkillScope.SetBuffID = function(self, buffID)
-  -- function num : 0_358
+function BuffResultShowEffectWhenTeamInSkillScope:SetBuffID(buffID)
   self._buffID = buffID
 end
 
--- DECOMPILER ERROR at PC1529: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShowEffectWhenTeamInSkillScope.GetBuffID = function(self)
-  -- function num : 0_359
+function BuffResultShowEffectWhenTeamInSkillScope:GetBuffID()
   return self._buffID
 end
 
--- DECOMPILER ERROR at PC1532: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShowEffectWhenTeamInSkillScope.SetBuffSeq = function(self, buffSeq)
-  -- function num : 0_360
+function BuffResultShowEffectWhenTeamInSkillScope:SetBuffSeq(buffSeq)
   self._buffSeq = buffSeq
 end
 
--- DECOMPILER ERROR at PC1535: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultShowEffectWhenTeamInSkillScope.GetBuffSeq = function(self)
-  -- function num : 0_361
-  if not self._buffSeq then
-    return {}
-  end
+function BuffResultShowEffectWhenTeamInSkillScope:GetBuffSeq()
+  return self._buffSeq or {}
 end
 
 _class("BuffResultChangePetChainSkill", BuffResultBase)
 BuffResultChangePetChainSkill = BuffResultChangePetChainSkill
--- DECOMPILER ERROR at PC1544: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangePetChainSkill.Constructor = function(self, light)
-  -- function num : 0_362
+function BuffResultChangePetChainSkill:Constructor(light)
   self._light = light
 end
 
--- DECOMPILER ERROR at PC1547: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangePetChainSkill.GetLight = function(self)
-  -- function num : 0_363
+function BuffResultChangePetChainSkill:GetLight()
   return self._light
 end
 
 _class("BuffResultChangePetChainSkillUndo", BuffResultBase)
 BuffResultChangePetChainSkillUndo = BuffResultChangePetChainSkillUndo
--- DECOMPILER ERROR at PC1556: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangePetChainSkillUndo.Constructor = function(self, black)
-  -- function num : 0_364
+function BuffResultChangePetChainSkillUndo:Constructor(black)
   self._black = black
 end
 
--- DECOMPILER ERROR at PC1559: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangePetChainSkillUndo.GetBlack = function(self)
-  -- function num : 0_365
+function BuffResultChangePetChainSkillUndo:GetBlack()
   return self._black
 end
 
 _class("BuffResultAddLegendPowerByMonsterDead", BuffResultBase)
 BuffResultAddLegendPowerByMonsterDead = BuffResultAddLegendPowerByMonsterDead
--- DECOMPILER ERROR at PC1568: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddLegendPowerByMonsterDead.Constructor = function(self, petPstID, newPower, ready)
-  -- function num : 0_366
+function BuffResultAddLegendPowerByMonsterDead:Constructor(petPstID, newPower, ready)
   self._petPstID = petPstID
   self._newPower = newPower
   self._ready = ready
 end
 
--- DECOMPILER ERROR at PC1571: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLegendPowerByMonsterDead.GetPetPstID = function(self)
-  -- function num : 0_367
+function BuffResultAddLegendPowerByMonsterDead:GetPetPstID()
   return self._petPstID
 end
 
--- DECOMPILER ERROR at PC1574: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLegendPowerByMonsterDead.GetNewPower = function(self)
-  -- function num : 0_368
+function BuffResultAddLegendPowerByMonsterDead:GetNewPower()
   return self._newPower
 end
 
--- DECOMPILER ERROR at PC1577: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLegendPowerByMonsterDead.GetReady = function(self)
-  -- function num : 0_369
+function BuffResultAddLegendPowerByMonsterDead:GetReady()
   return self._ready
 end
 
--- DECOMPILER ERROR at PC1580: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLegendPowerByMonsterDead.RequireNTPowerReady = function(self, petEntityID)
-  -- function num : 0_370
+function BuffResultAddLegendPowerByMonsterDead:RequireNTPowerReady(petEntityID)
   self._petEntityID = petEntityID
   self._requireNTPowerReady = true
 end
 
--- DECOMPILER ERROR at PC1583: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLegendPowerByMonsterDead.GetPetEntityID = function(self)
-  -- function num : 0_371
+function BuffResultAddLegendPowerByMonsterDead:GetPetEntityID()
   return self._petEntityID
 end
 
--- DECOMPILER ERROR at PC1586: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddLegendPowerByMonsterDead.IsNTPowerReadyRequired = function(self)
-  -- function num : 0_372
+function BuffResultAddLegendPowerByMonsterDead:IsNTPowerReadyRequired()
   return self._requireNTPowerReady
 end
 
 _class("BuffResultDeleteWaringArea", BuffResultBase)
 BuffResultDeleteWaringArea = BuffResultDeleteWaringArea
--- DECOMPILER ERROR at PC1595: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultDeleteWaringArea.Constructor = function(self, skillHolderID)
-  -- function num : 0_373
+function BuffResultDeleteWaringArea:Constructor(skillHolderID)
   self._skillHolderID = skillHolderID
 end
 
--- DECOMPILER ERROR at PC1598: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDeleteWaringArea.GetSkillHolderID = function(self)
-  -- function num : 0_374
+function BuffResultDeleteWaringArea:GetSkillHolderID()
   return self._skillHolderID
 end
 
 _class("BuffResultHPBombLayer", BuffResultBase)
 BuffResultHPBombLayer = BuffResultHPBombLayer
--- DECOMPILER ERROR at PC1607: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultHPBombLayer.Constructor = function(self, entityID, layerCount)
-  -- function num : 0_375
+function BuffResultHPBombLayer:Constructor(entityID, layerCount)
   self._entityID = entityID
   self._layerCount = layerCount
 end
 
--- DECOMPILER ERROR at PC1610: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultHPBombLayer.GetEntityID = function(self)
-  -- function num : 0_376
+function BuffResultHPBombLayer:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC1613: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultHPBombLayer.GetLayerCount = function(self)
-  -- function num : 0_377
+function BuffResultHPBombLayer:GetLayerCount()
   return self._layerCount
 end
 
 _class("BuffResultCastAntiSkill", BuffResultBase)
 BuffResultCastAntiSkill = BuffResultCastAntiSkill
--- DECOMPILER ERROR at PC1622: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultCastAntiSkill.Constructor = function(self, skillID, skillHolderID, skillResult, startTask)
-  -- function num : 0_378
+function BuffResultCastAntiSkill:Constructor(skillID, skillHolderID, skillResult, startTask)
   self._skillID = skillID
   self._skillHolderID = skillHolderID
   self._skillResult = skillResult
   self._startTask = startTask
 end
 
--- DECOMPILER ERROR at PC1625: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastAntiSkill.GetSkillID = function(self)
-  -- function num : 0_379
+function BuffResultCastAntiSkill:GetSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC1628: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastAntiSkill.GetSkillResult = function(self)
-  -- function num : 0_380
+function BuffResultCastAntiSkill:GetSkillResult()
   return self._skillResult
 end
 
--- DECOMPILER ERROR at PC1631: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastAntiSkill.GetStartTask = function(self)
-  -- function num : 0_381
+function BuffResultCastAntiSkill:GetStartTask()
   return self._startTask
 end
 
--- DECOMPILER ERROR at PC1634: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastAntiSkill.GetSkillHolderID = function(self)
-  -- function num : 0_382
+function BuffResultCastAntiSkill:GetSkillHolderID()
   return self._skillHolderID
 end
 
 _class("BuffResultUseSaveDamageAdditionalDamage", BuffResultBase)
 BuffResultUseSaveDamageAdditionalDamage = BuffResultUseSaveDamageAdditionalDamage
--- DECOMPILER ERROR at PC1643: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultUseSaveDamageAdditionalDamage.Constructor = function(self, damageInfo, effectID)
-  -- function num : 0_383
+function BuffResultUseSaveDamageAdditionalDamage:Constructor(damageInfo, effectID)
   self._damageInfo = damageInfo
   self._effectID = effectID
 end
 
--- DECOMPILER ERROR at PC1646: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultUseSaveDamageAdditionalDamage.GetDamageInfo = function(self)
-  -- function num : 0_384
+function BuffResultUseSaveDamageAdditionalDamage:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC1649: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultUseSaveDamageAdditionalDamage.GetEffectID = function(self)
-  -- function num : 0_385
+function BuffResultUseSaveDamageAdditionalDamage:GetEffectID()
   return self._effectID
 end
 
 _class("BuffResultChangeTrapPower", BuffResultBase)
 BuffResultChangeTrapPower = BuffResultChangeTrapPower
--- DECOMPILER ERROR at PC1658: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeTrapPower.Constructor = function(self, entityID, newPower)
-  -- function num : 0_386
+function BuffResultChangeTrapPower:Constructor(entityID, newPower)
   self._entityID = entityID
   self._newPower = newPower
 end
 
--- DECOMPILER ERROR at PC1661: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeTrapPower.GetEntityID = function(self)
-  -- function num : 0_387
+function BuffResultChangeTrapPower:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC1664: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeTrapPower.GetNewPower = function(self)
-  -- function num : 0_388
+function BuffResultChangeTrapPower:GetNewPower()
   return self._newPower
 end
 
 _class("BuffResultTransmitDamage", BuffResultBase)
 BuffResultTransmitDamage = BuffResultTransmitDamage
--- DECOMPILER ERROR at PC1673: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultTransmitDamage.Constructor = function(self, attackerID, transerID, defenderIDs, damageInfos)
-  -- function num : 0_389
+function BuffResultTransmitDamage:Constructor(attackerID, transerID, defenderIDs, damageInfos)
   self._originalAttackID = attackerID
   self._transerID = transerID
   self._defenderIDs = defenderIDs
   self._damageInfos = damageInfos
 end
 
--- DECOMPILER ERROR at PC1676: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultTransmitDamage.GetOriginalAttackerID = function(self)
-  -- function num : 0_390
+function BuffResultTransmitDamage:GetOriginalAttackerID()
   return self._originalAttackID
 end
 
--- DECOMPILER ERROR at PC1679: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultTransmitDamage.GetTranserID = function(self)
-  -- function num : 0_391
+function BuffResultTransmitDamage:GetTranserID()
   return self._transerID
 end
 
--- DECOMPILER ERROR at PC1682: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultTransmitDamage.GetDefenderIDs = function(self)
-  -- function num : 0_392
+function BuffResultTransmitDamage:GetDefenderIDs()
   return self._defenderIDs
 end
 
--- DECOMPILER ERROR at PC1686: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultTransmitDamage.GetDamageInfos = function(self)
-  -- function num : 0_393
+function BuffResultTransmitDamage:GetDamageInfos()
   return self._damageInfos
 end
 
--- DECOMPILER ERROR at PC1690: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultTransmitDamage.SetAttackPos = function(self, attackPos)
-  -- function num : 0_394
+function BuffResultTransmitDamage:SetAttackPos(attackPos)
   self._attackPos = attackPos
 end
 
--- DECOMPILER ERROR at PC1693: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultTransmitDamage.GetAttackPos = function(self)
-  -- function num : 0_395
+function BuffResultTransmitDamage:GetAttackPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC1697: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultTransmitDamage.SetNotifyHp = function(self, notifyHp)
-  -- function num : 0_396
+function BuffResultTransmitDamage:SetNotifyHp(notifyHp)
   self._notifyHp = notifyHp
 end
 
--- DECOMPILER ERROR at PC1701: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultTransmitDamage.GetNotifyHp = function(self)
-  -- function num : 0_397
+function BuffResultTransmitDamage:GetNotifyHp()
   return self._notifyHp
 end
 
 _class("BuffResultAddChangeTeamLeaderCount", BuffResultBase)
-_ENV.BuffResultAddChangeTeamLeaderCount = _ENV.BuffResultAddChangeTeamLeaderCount
--- DECOMPILER ERROR at PC1713: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultAddChangeTeamLeaderCount = BuffResultAddChangeTeamLeaderCount
 
-;
-(_ENV.BuffResultAddChangeTeamLeaderCount).Constructor = function(self, entityID, newCount)
-  -- function num : 0_398
+function BuffResultAddChangeTeamLeaderCount:Constructor(entityID, newCount)
   self._entityID = entityID
   self._newCount = newCount
 end
 
--- DECOMPILER ERROR at PC1717: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddChangeTeamLeaderCount).GetEntityID = function(self)
-  -- function num : 0_399
+function BuffResultAddChangeTeamLeaderCount:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC1722: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddChangeTeamLeaderCount).GetNewCount = function(self)
-  -- function num : 0_400
+function BuffResultAddChangeTeamLeaderCount:GetNewCount()
   return self._newCount
 end
 
 _class("BuffResultChangeChessPetFinishTurn", BuffResultBase)
-_ENV.BuffResultChangeChessPetFinishTurn = _ENV.BuffResultChangeChessPetFinishTurn
--- DECOMPILER ERROR at PC1734: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultChangeChessPetFinishTurn = BuffResultChangeChessPetFinishTurn
 
-;
-(_ENV.BuffResultChangeChessPetFinishTurn).Constructor = function(self, entityID, finish)
-  -- function num : 0_401
+function BuffResultChangeChessPetFinishTurn:Constructor(entityID, finish)
   self._entityID = entityID
   self._finish = finish
 end
 
--- DECOMPILER ERROR at PC1738: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChangeChessPetFinishTurn).GetEntityID = function(self)
-  -- function num : 0_402
+function BuffResultChangeChessPetFinishTurn:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC1743: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChangeChessPetFinishTurn).GetFinish = function(self)
-  -- function num : 0_403
+function BuffResultChangeChessPetFinishTurn:GetFinish()
   return self._finish
 end
 
 _class("BuffResultChangePetAndTeamActiveSkill", BuffResultBase)
-_ENV.BuffResultChangePetAndTeamActiveSkill = _ENV.BuffResultChangePetAndTeamActiveSkill
--- DECOMPILER ERROR at PC1755: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultChangePetAndTeamActiveSkill = BuffResultChangePetAndTeamActiveSkill
 
-;
-(_ENV.BuffResultChangePetAndTeamActiveSkill).Constructor = function(self, petPstID, skillID)
-  -- function num : 0_404
+function BuffResultChangePetAndTeamActiveSkill:Constructor(petPstID, skillID)
   self._skillID = skillID
   self._petPstID = petPstID
 end
 
--- DECOMPILER ERROR at PC1759: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChangePetAndTeamActiveSkill).GetPetPstID = function(self)
-  -- function num : 0_405
+function BuffResultChangePetAndTeamActiveSkill:GetPetPstID()
   return self._petPstID
 end
 
--- DECOMPILER ERROR at PC1763: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChangePetAndTeamActiveSkill).GetSkillID = function(self)
-  -- function num : 0_406
+function BuffResultChangePetAndTeamActiveSkill:GetSkillID()
   return self._skillID
 end
 
 _class("BuffResultFeatureDeath", BuffResultBase)
-_ENV.BuffResultFeatureDeath = _ENV.BuffResultFeatureDeath
--- DECOMPILER ERROR at PC1775: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultFeatureDeath = BuffResultFeatureDeath
 
-;
-(_ENV.BuffResultFeatureDeath).Constructor = function(self, entityID)
-  -- function num : 0_407
+function BuffResultFeatureDeath:Constructor(entityID)
   self._entityID = entityID
 end
 
--- DECOMPILER ERROR at PC1779: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultFeatureDeath).GetEntityID = function(self)
-  -- function num : 0_408
+function BuffResultFeatureDeath:GetEntityID()
   return self._entityID
 end
 
 _class("BuffResultFillMonsterAntiAttackState", BuffResultBase)
-_ENV.BuffResultFillMonsterAntiAttackState = _ENV.BuffResultFillMonsterAntiAttackState
--- DECOMPILER ERROR at PC1791: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultFillMonsterAntiAttackState = BuffResultFillMonsterAntiAttackState
 
-;
-(_ENV.BuffResultFillMonsterAntiAttackState).Constructor = function(self, entityID)
-  -- function num : 0_409
+function BuffResultFillMonsterAntiAttackState:Constructor(entityID)
   self._entityID = entityID
 end
 
--- DECOMPILER ERROR at PC1795: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultFillMonsterAntiAttackState).GetEntityID = function(self)
-  -- function num : 0_410
+function BuffResultFillMonsterAntiAttackState:GetEntityID()
   return self._entityID
 end
 
 _class("BuffResultSetMonsterAntiAttackParam", BuffResultBase)
-_ENV.BuffResultSetMonsterAntiAttackParam = _ENV.BuffResultSetMonsterAntiAttackParam
--- DECOMPILER ERROR at PC1807: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultSetMonsterAntiAttackParam = BuffResultSetMonsterAntiAttackParam
 
-;
-(_ENV.BuffResultSetMonsterAntiAttackParam).Constructor = function(self, entityID)
-  -- function num : 0_411
+function BuffResultSetMonsterAntiAttackParam:Constructor(entityID)
   self._entityID = entityID
 end
 
--- DECOMPILER ERROR at PC1811: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetMonsterAntiAttackParam).GetEntityID = function(self)
-  -- function num : 0_412
+function BuffResultSetMonsterAntiAttackParam:GetEntityID()
   return self._entityID
 end
 
 _class("BuffResultCheckAndCastAntiSkill", BuffResultBase)
-_ENV.BuffResultCheckAndCastAntiSkill = _ENV.BuffResultCheckAndCastAntiSkill
--- DECOMPILER ERROR at PC1823: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultCheckAndCastAntiSkill = BuffResultCheckAndCastAntiSkill
 
-;
-(_ENV.BuffResultCheckAndCastAntiSkill).Constructor = function(self, entityID)
-  -- function num : 0_413
+function BuffResultCheckAndCastAntiSkill:Constructor(entityID)
   self._entityID = entityID
 end
 
--- DECOMPILER ERROR at PC1827: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultCheckAndCastAntiSkill).GetEntityID = function(self)
-  -- function num : 0_414
+function BuffResultCheckAndCastAntiSkill:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC1832: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultCheckAndCastAntiSkill).SetSkillResult = function(self, result)
-  -- function num : 0_415
+function BuffResultCheckAndCastAntiSkill:SetSkillResult(result)
   self._skillResult = result
 end
 
--- DECOMPILER ERROR at PC1836: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultCheckAndCastAntiSkill).GetSkillResult = function(self)
-  -- function num : 0_416
+function BuffResultCheckAndCastAntiSkill:GetSkillResult()
   return self._skillResult
 end
 
--- DECOMPILER ERROR at PC1840: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultCheckAndCastAntiSkill).SetSkillID = function(self, skillID)
-  -- function num : 0_417
+function BuffResultCheckAndCastAntiSkill:SetSkillID(skillID)
   self._skillID = skillID
 end
 
--- DECOMPILER ERROR at PC1844: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultCheckAndCastAntiSkill).GetSkillID = function(self)
-  -- function num : 0_418
+function BuffResultCheckAndCastAntiSkill:GetSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC1848: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultCheckAndCastAntiSkill).SetBuffSeq = function(self, buffSeq)
-  -- function num : 0_419
+function BuffResultCheckAndCastAntiSkill:SetBuffSeq(buffSeq)
   self._buffSeq = buffSeq
 end
 
--- DECOMPILER ERROR at PC1852: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultCheckAndCastAntiSkill).GetBuffSeq = function(self)
-  -- function num : 0_420
-  if not self._buffSeq then
-    return {}
-  end
+function BuffResultCheckAndCastAntiSkill:GetBuffSeq()
+  return self._buffSeq or {}
 end
 
 _class("BuffResultAddLayerByDamageOfTeamHp", BuffResultBase)
-_ENV.BuffResultAddLayerByDamageOfTeamHp = _ENV.BuffResultAddLayerByDamageOfTeamHp
--- DECOMPILER ERROR at PC1864: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultAddLayerByDamageOfTeamHp = BuffResultAddLayerByDamageOfTeamHp
 
-;
-(_ENV.BuffResultAddLayerByDamageOfTeamHp).Constructor = function(self, layer, buffseq, addLayer)
-  -- function num : 0_421
+function BuffResultAddLayerByDamageOfTeamHp:Constructor(layer, buffseq, addLayer)
   self._layer = layer
   self._buffseq = buffseq
   self._addLayer = addLayer
 end
 
--- DECOMPILER ERROR at PC1868: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddLayerByDamageOfTeamHp).GetLayer = function(self)
-  -- function num : 0_422
+function BuffResultAddLayerByDamageOfTeamHp:GetLayer()
   return self._layer
 end
 
--- DECOMPILER ERROR at PC1872: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddLayerByDamageOfTeamHp).GetAddLayer = function(self)
-  -- function num : 0_423
+function BuffResultAddLayerByDamageOfTeamHp:GetAddLayer()
   return self._addLayer
 end
 
--- DECOMPILER ERROR at PC1876: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddLayerByDamageOfTeamHp).GetBuffSeq = function(self)
-  -- function num : 0_424
+function BuffResultAddLayerByDamageOfTeamHp:GetBuffSeq()
   return self._buffseq
 end
 
 _class("BuffResultChangePetPowerAndWatch", BuffResultBase)
-_ENV.BuffResultChangePetPowerAndWatch = _ENV.BuffResultChangePetPowerAndWatch
--- DECOMPILER ERROR at PC1888: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultChangePetPowerAndWatch = BuffResultChangePetPowerAndWatch
 
-;
-(_ENV.BuffResultChangePetPowerAndWatch).Constructor = function(self, petPowerList)
-  -- function num : 0_425
+function BuffResultChangePetPowerAndWatch:Constructor(petPowerList)
   self._petPowerList = petPowerList
 end
 
--- DECOMPILER ERROR at PC1892: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChangePetPowerAndWatch).GetPetPowerList = function(self)
-  -- function num : 0_426
+function BuffResultChangePetPowerAndWatch:GetPetPowerList()
   return self._petPowerList
 end
 
 _class("BuffResultElementTargetAddLayerToHighest", BuffResultBase)
-_ENV.BuffResultElementTargetAddLayerToHighest = _ENV.BuffResultElementTargetAddLayerToHighest
--- DECOMPILER ERROR at PC1904: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultElementTargetAddLayerToHighest = BuffResultElementTargetAddLayerToHighest
 
-;
-(_ENV.BuffResultElementTargetAddLayerToHighest).Constructor = function(self, buffResultAddLayerList)
-  -- function num : 0_427
+function BuffResultElementTargetAddLayerToHighest:Constructor(buffResultAddLayerList)
   self._buffResultAddLayerList = buffResultAddLayerList
 end
 
--- DECOMPILER ERROR at PC1909: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultElementTargetAddLayerToHighest).GetBuffResultAddLayerList = function(self)
-  -- function num : 0_428
+function BuffResultElementTargetAddLayerToHighest:GetBuffResultAddLayerList()
   return self._buffResultAddLayerList
 end
 
 _class("BuffResultPlayEffectWithChainMove", BuffResultBase)
-_ENV.BuffResultPlayEffectWithChainMove = _ENV.BuffResultPlayEffectWithChainMove
--- DECOMPILER ERROR at PC1921: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultPlayEffectWithChainMove = BuffResultPlayEffectWithChainMove
 
-;
-(_ENV.BuffResultPlayEffectWithChainMove).Constructor = function(self, notifyType, notifyPos, isStart, isEnd, permanentEffectID, moveEffectID, useType, typeParam)
-  -- function num : 0_429
+function BuffResultPlayEffectWithChainMove:Constructor(notifyType, notifyPos, isStart, isEnd, permanentEffectID, moveEffectID, useType, typeParam)
   self._notifyType = notifyType
   self._notifyPos = notifyPos
   self._isStart = isStart
@@ -3372,538 +2140,300 @@ _ENV.BuffResultPlayEffectWithChainMove = _ENV.BuffResultPlayEffectWithChainMove
   self._typeParam = typeParam
 end
 
--- DECOMPILER ERROR at PC1926: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultPlayEffectWithChainMove).GetNotifyType = function(self)
-  -- function num : 0_430
+function BuffResultPlayEffectWithChainMove:GetNotifyType()
   return self._notifyType
 end
 
--- DECOMPILER ERROR at PC1930: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultPlayEffectWithChainMove).GetNotifyPos = function(self)
-  -- function num : 0_431
+function BuffResultPlayEffectWithChainMove:GetNotifyPos()
   return self._notifyPos
 end
 
--- DECOMPILER ERROR at PC1935: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultPlayEffectWithChainMove).GetIsStart = function(self)
-  -- function num : 0_432
+function BuffResultPlayEffectWithChainMove:GetIsStart()
   return self._isStart
 end
 
--- DECOMPILER ERROR at PC1940: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultPlayEffectWithChainMove).GetIsEnd = function(self)
-  -- function num : 0_433
+function BuffResultPlayEffectWithChainMove:GetIsEnd()
   return self._isEnd
 end
 
--- DECOMPILER ERROR at PC1945: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultPlayEffectWithChainMove).GetPermanentEffectID = function(self)
-  -- function num : 0_434
+function BuffResultPlayEffectWithChainMove:GetPermanentEffectID()
   return self._permanentEffectID
 end
 
--- DECOMPILER ERROR at PC1950: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultPlayEffectWithChainMove).GetMoveEffectID = function(self)
-  -- function num : 0_435
+function BuffResultPlayEffectWithChainMove:GetMoveEffectID()
   return self._moveEffectID
 end
 
--- DECOMPILER ERROR at PC1955: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultPlayEffectWithChainMove).GetUseType = function(self)
-  -- function num : 0_436
+function BuffResultPlayEffectWithChainMove:GetUseType()
   return self._useType
 end
 
--- DECOMPILER ERROR at PC1960: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultPlayEffectWithChainMove).GetTypeParam = function(self)
-  -- function num : 0_437
+function BuffResultPlayEffectWithChainMove:GetTypeParam()
   return self._typeParam
 end
 
 _class("BuffResultAddTrapExist", BuffResultBase)
-_ENV.BuffResultAddTrapExist = _ENV.BuffResultAddTrapExist
--- DECOMPILER ERROR at PC1972: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultAddTrapExist = BuffResultAddTrapExist
 
-;
-(_ENV.BuffResultAddTrapExist).Constructor = function(self, currentRound, forceFull, ignoreNextEffectUpdate, isDestroy)
-  -- function num : 0_438
+function BuffResultAddTrapExist:Constructor(currentRound, forceFull, ignoreNextEffectUpdate, isDestroy)
   self._currentRound = currentRound
   self._forceFull = forceFull
   self._ignoreNextEffectUpdate = ignoreNextEffectUpdate
   self._isDestroy = isDestroy
 end
 
--- DECOMPILER ERROR at PC1977: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddTrapExist).GetCurrentRound = function(self)
-  -- function num : 0_439
+function BuffResultAddTrapExist:GetCurrentRound()
   return self._currentRound
 end
 
--- DECOMPILER ERROR at PC1982: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddTrapExist).IsForceFull = function(self)
-  -- function num : 0_440
+function BuffResultAddTrapExist:IsForceFull()
   return self._forceFull
 end
 
--- DECOMPILER ERROR at PC1987: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddTrapExist).IgnoreNextEffectUpdate = function(self)
-  -- function num : 0_441
+function BuffResultAddTrapExist:IgnoreNextEffectUpdate()
   return self._ignoreNextEffectUpdate
 end
 
--- DECOMPILER ERROR at PC1992: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddTrapExist).IsDestroy = function(self)
-  -- function num : 0_442
+function BuffResultAddTrapExist:IsDestroy()
   return self._isDestroy
 end
 
 _class("BuffResultShowPowerfullRoundCountUI", BuffResultBase)
-_ENV.BuffResultShowPowerfullRoundCountUI = _ENV.BuffResultShowPowerfullRoundCountUI
--- DECOMPILER ERROR at PC2004: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultShowPowerfullRoundCountUI = BuffResultShowPowerfullRoundCountUI
 
-;
-(_ENV.BuffResultShowPowerfullRoundCountUI).Constructor = function(self, bShow, resDic)
-  -- function num : 0_443
+function BuffResultShowPowerfullRoundCountUI:Constructor(bShow, resDic)
   self._bShow = bShow
   self._resDic = resDic
 end
 
--- DECOMPILER ERROR at PC2009: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultShowPowerfullRoundCountUI).IsShow = function(self)
-  -- function num : 0_444
+function BuffResultShowPowerfullRoundCountUI:IsShow()
   return self._bShow
 end
 
--- DECOMPILER ERROR at PC2014: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultShowPowerfullRoundCountUI).GetResDic = function(self)
-  -- function num : 0_445
+function BuffResultShowPowerfullRoundCountUI:GetResDic()
   return self._resDic
 end
 
 _class("BuffResultSetChainDamage", BuffResultBase)
-_ENV.BuffResultSetChainDamage = _ENV.BuffResultSetChainDamage
--- DECOMPILER ERROR at PC2026: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultSetChainDamage = BuffResultSetChainDamage
 
-;
-(_ENV.BuffResultSetChainDamage).Constructor = function(self, attackerID, defenderID, lineEffectID, isRemove)
-  -- function num : 0_446
+function BuffResultSetChainDamage:Constructor(attackerID, defenderID, lineEffectID, isRemove)
   self._attackerID = attackerID
   self._defenderID = defenderID
   self._lineEffectID = lineEffectID
   self._isRemove = isRemove
 end
 
--- DECOMPILER ERROR at PC2030: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetChainDamage).GetAttackerID = function(self)
-  -- function num : 0_447
+function BuffResultSetChainDamage:GetAttackerID()
   return self._attackerID
 end
 
--- DECOMPILER ERROR at PC2034: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetChainDamage).GetDefenderID = function(self)
-  -- function num : 0_448
+function BuffResultSetChainDamage:GetDefenderID()
   return self._defenderID
 end
 
--- DECOMPILER ERROR at PC2039: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetChainDamage).GetLineEffectID = function(self)
-  -- function num : 0_449
+function BuffResultSetChainDamage:GetLineEffectID()
   return self._lineEffectID
 end
 
--- DECOMPILER ERROR at PC2044: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetChainDamage).GetIsRemove = function(self)
-  -- function num : 0_450
+function BuffResultSetChainDamage:GetIsRemove()
   return self._isRemove
 end
 
--- DECOMPILER ERROR at PC2049: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetChainDamage).SetRemoveAnim = function(self, removeAnim)
-  -- function num : 0_451
+function BuffResultSetChainDamage:SetRemoveAnim(removeAnim)
   self._removeAnim = removeAnim
 end
 
--- DECOMPILER ERROR at PC2054: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetChainDamage).GetRemoveAnim = function(self)
-  -- function num : 0_452
+function BuffResultSetChainDamage:GetRemoveAnim()
   return self._removeAnim
 end
 
--- DECOMPILER ERROR at PC2059: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetChainDamage).SetRemoveEffectID = function(self, removeEffectID)
-  -- function num : 0_453
+function BuffResultSetChainDamage:SetRemoveEffectID(removeEffectID)
   self._removeEffectID = removeEffectID
 end
 
--- DECOMPILER ERROR at PC2064: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetChainDamage).GetRemoveEffectID = function(self)
-  -- function num : 0_454
+function BuffResultSetChainDamage:GetRemoveEffectID()
   return self._removeEffectID
 end
 
--- DECOMPILER ERROR at PC2069: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetChainDamage).SetRemoveLineEntityList = function(self, removeLineEntityList)
-  -- function num : 0_455
+function BuffResultSetChainDamage:SetRemoveLineEntityList(removeLineEntityList)
   self._removeLineEntityList = removeLineEntityList
 end
 
--- DECOMPILER ERROR at PC2074: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetChainDamage).GetRemoveLineEntityList = function(self)
-  -- function num : 0_456
+function BuffResultSetChainDamage:GetRemoveLineEntityList()
   return self._removeLineEntityList
 end
 
--- DECOMPILER ERROR at PC2079: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetChainDamage).SetMonsterMoveOneFinish = function(self, entityID, walkPos)
-  -- function num : 0_457
+function BuffResultSetChainDamage:SetMonsterMoveOneFinish(entityID, walkPos)
   self._monsterMoveEntityID = entityID
   self._monsterMoveWalkPos = walkPos
 end
 
--- DECOMPILER ERROR at PC2084: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetChainDamage).GetMonsterMoveOneFinishEntityID = function(self)
-  -- function num : 0_458
+function BuffResultSetChainDamage:GetMonsterMoveOneFinishEntityID()
   return self._monsterMoveEntityID
 end
 
--- DECOMPILER ERROR at PC2089: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetChainDamage).GetMonsterMoveOneFinishWalkPos = function(self)
-  -- function num : 0_459
+function BuffResultSetChainDamage:GetMonsterMoveOneFinishWalkPos()
   return self._monsterMoveWalkPos
 end
 
--- DECOMPILER ERROR at PC2094: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetChainDamage).SetTeamLeaderEachMoveEnd = function(self, walkPos)
-  -- function num : 0_460
+function BuffResultSetChainDamage:SetTeamLeaderEachMoveEnd(walkPos)
   self._teamLeaderMoveWalkPos = walkPos
 end
 
--- DECOMPILER ERROR at PC2099: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetChainDamage).GetTeamLeaderEachMoveEnd = function(self)
-  -- function num : 0_461
+function BuffResultSetChainDamage:GetTeamLeaderEachMoveEnd()
   return self._teamLeaderMoveWalkPos
 end
 
 _class("BuffResultShowChainDamage", BuffResultBase)
-_ENV.BuffResultShowChainDamage = _ENV.BuffResultShowChainDamage
--- DECOMPILER ERROR at PC2111: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultShowChainDamage = BuffResultShowChainDamage
 
-;
-(_ENV.BuffResultShowChainDamage).Constructor = function(self, attackerID, defenderID, lineEffectID, isShow)
-  -- function num : 0_462
+function BuffResultShowChainDamage:Constructor(attackerID, defenderID, lineEffectID, isShow)
   self._attackerID = attackerID
   self._defenderID = defenderID
   self._lineEffectID = lineEffectID
   self._isShow = isShow
 end
 
--- DECOMPILER ERROR at PC2115: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultShowChainDamage).GetAttackerID = function(self)
-  -- function num : 0_463
+function BuffResultShowChainDamage:GetAttackerID()
   return self._attackerID
 end
 
--- DECOMPILER ERROR at PC2119: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultShowChainDamage).GetDefenderID = function(self)
-  -- function num : 0_464
+function BuffResultShowChainDamage:GetDefenderID()
   return self._defenderID
 end
 
--- DECOMPILER ERROR at PC2124: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultShowChainDamage).GetLineEffectID = function(self)
-  -- function num : 0_465
+function BuffResultShowChainDamage:GetLineEffectID()
   return self._lineEffectID
 end
 
--- DECOMPILER ERROR at PC2129: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultShowChainDamage).GetIsShow = function(self)
-  -- function num : 0_466
+function BuffResultShowChainDamage:GetIsShow()
   return self._isShow
 end
 
 _class("BuffResultChainDamage", BuffResultBase)
-_ENV.BuffResultChainDamage = _ENV.BuffResultChainDamage
--- DECOMPILER ERROR at PC2141: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultChainDamage = BuffResultChainDamage
 
-;
-(_ENV.BuffResultChainDamage).Constructor = function(self, originalAttackID, attackerID, defenderIDs, damageInfos)
-  -- function num : 0_467
+function BuffResultChainDamage:Constructor(originalAttackID, attackerID, defenderIDs, damageInfos)
   self._originalAttackID = originalAttackID
   self._attackerID = attackerID
   self._defenderIDs = defenderIDs
   self._damageInfos = damageInfos
 end
 
--- DECOMPILER ERROR at PC2145: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChainDamage).GetOriginalAttackerID = function(self)
-  -- function num : 0_468
+function BuffResultChainDamage:GetOriginalAttackerID()
   return self._originalAttackID
 end
 
--- DECOMPILER ERROR at PC2149: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChainDamage).GetAttackerID = function(self)
-  -- function num : 0_469
+function BuffResultChainDamage:GetAttackerID()
   return self._attackerID
 end
 
--- DECOMPILER ERROR at PC2153: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChainDamage).GetDefenderIDs = function(self)
-  -- function num : 0_470
+function BuffResultChainDamage:GetDefenderIDs()
   return self._defenderIDs
 end
 
--- DECOMPILER ERROR at PC2158: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChainDamage).GetDamageInfos = function(self)
-  -- function num : 0_471
+function BuffResultChainDamage:GetDamageInfos()
   return self._damageInfos
 end
 
--- DECOMPILER ERROR at PC2163: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChainDamage).SetAttackPos = function(self, attackPos)
-  -- function num : 0_472
+function BuffResultChainDamage:SetAttackPos(attackPos)
   self._attackPos = attackPos
 end
 
--- DECOMPILER ERROR at PC2167: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChainDamage).GetAttackPos = function(self)
-  -- function num : 0_473
+function BuffResultChainDamage:GetAttackPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC2172: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChainDamage).SetNotifyHp = function(self, notifyHp)
-  -- function num : 0_474
+function BuffResultChainDamage:SetNotifyHp(notifyHp)
   self._notifyHp = notifyHp
 end
 
--- DECOMPILER ERROR at PC2177: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChainDamage).GetNotifyHp = function(self)
-  -- function num : 0_475
+function BuffResultChainDamage:GetNotifyHp()
   return self._notifyHp
 end
 
--- DECOMPILER ERROR at PC2182: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChainDamage).SetPlayDamageText = function(self, playDamageText)
-  -- function num : 0_476
+function BuffResultChainDamage:SetPlayDamageText(playDamageText)
   self._playDamageText = playDamageText
 end
 
--- DECOMPILER ERROR at PC2187: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChainDamage).GetPlayDamageText = function(self)
-  -- function num : 0_477
+function BuffResultChainDamage:GetPlayDamageText()
   return self._playDamageText
 end
 
 _class("BuffResultSetPreviewChainDamageScope", BuffResultBase)
-_ENV.BuffResultSetPreviewChainDamageScope = _ENV.BuffResultSetPreviewChainDamageScope
--- DECOMPILER ERROR at PC2199: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultSetPreviewChainDamageScope = BuffResultSetPreviewChainDamageScope
 
-;
-(_ENV.BuffResultSetPreviewChainDamageScope).Constructor = function(self, entityID, skillID)
-  -- function num : 0_478
+function BuffResultSetPreviewChainDamageScope:Constructor(entityID, skillID)
   self._entityID = entityID
   self._skillID = skillID
 end
 
--- DECOMPILER ERROR at PC2203: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetPreviewChainDamageScope).GetEntityID = function(self)
-  -- function num : 0_479
+function BuffResultSetPreviewChainDamageScope:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC2207: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetPreviewChainDamageScope).GetSkillID = function(self)
-  -- function num : 0_480
+function BuffResultSetPreviewChainDamageScope:GetSkillID()
   return self._skillID
 end
 
 _class("BuffResultShowHideUiMultiPowerInfoByIndex", BuffResultBase)
-_ENV.BuffResultShowHideUiMultiPowerInfoByIndex = _ENV.BuffResultShowHideUiMultiPowerInfoByIndex
--- DECOMPILER ERROR at PC2219: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultShowHideUiMultiPowerInfoByIndex = BuffResultShowHideUiMultiPowerInfoByIndex
 
-;
-(_ENV.BuffResultShowHideUiMultiPowerInfoByIndex).Constructor = function(self, petPstID, uiIndex, bShow)
-  -- function num : 0_481
+function BuffResultShowHideUiMultiPowerInfoByIndex:Constructor(petPstID, uiIndex, bShow)
   self._petPstID = petPstID
   self._uiIndex = uiIndex
   self._bShow = bShow
 end
 
--- DECOMPILER ERROR at PC2223: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultShowHideUiMultiPowerInfoByIndex).GetPetPstID = function(self)
-  -- function num : 0_482
+function BuffResultShowHideUiMultiPowerInfoByIndex:GetPetPstID()
   return self._petPstID
 end
 
--- DECOMPILER ERROR at PC2228: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultShowHideUiMultiPowerInfoByIndex).GetUiIndex = function(self)
-  -- function num : 0_483
+function BuffResultShowHideUiMultiPowerInfoByIndex:GetUiIndex()
   return self._uiIndex
 end
 
--- DECOMPILER ERROR at PC2233: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultShowHideUiMultiPowerInfoByIndex).GetIsShow = function(self)
-  -- function num : 0_484
+function BuffResultShowHideUiMultiPowerInfoByIndex:GetIsShow()
   return self._bShow
 end
 
 _class("BuffResultForceShowPassiveAccumulate", BuffResultBase)
-_ENV.BuffResultForceShowPassiveAccumulate = _ENV.BuffResultForceShowPassiveAccumulate
--- DECOMPILER ERROR at PC2245: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultForceShowPassiveAccumulate = BuffResultForceShowPassiveAccumulate
 
-;
-(_ENV.BuffResultForceShowPassiveAccumulate).Constructor = function(self, buffLayerList, forceInitType, maxLayerCount)
-  -- function num : 0_485
+function BuffResultForceShowPassiveAccumulate:Constructor(buffLayerList, forceInitType, maxLayerCount)
   self._buffLayerList = buffLayerList
   self._forceInitType = forceInitType
   self._maxLayerCount = maxLayerCount
 end
 
--- DECOMPILER ERROR at PC2250: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultForceShowPassiveAccumulate).GetBuffLayerList = function(self)
-  -- function num : 0_486
+function BuffResultForceShowPassiveAccumulate:GetBuffLayerList()
   return self._buffLayerList
 end
 
--- DECOMPILER ERROR at PC2254: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultForceShowPassiveAccumulate).GetForceInitType = function(self)
-  -- function num : 0_487
+function BuffResultForceShowPassiveAccumulate:GetForceInitType()
   return self._forceInitType
 end
 
--- DECOMPILER ERROR at PC2259: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultForceShowPassiveAccumulate).GetMaxLayerCount = function(self)
-  -- function num : 0_488
+function BuffResultForceShowPassiveAccumulate:GetMaxLayerCount()
   return self._maxLayerCount
 end
 
 _class("BuffResultShowPassiveAccumulateOverload", BuffResultBase)
-_ENV.BuffResultShowPassiveAccumulateOverload = _ENV.BuffResultShowPassiveAccumulateOverload
--- DECOMPILER ERROR at PC2271: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultShowPassiveAccumulateOverload = BuffResultShowPassiveAccumulateOverload
 
-;
-(_ENV.BuffResultShowPassiveAccumulateOverload).Constructor = function(self, showOverload)
-  -- function num : 0_489
+function BuffResultShowPassiveAccumulateOverload:Constructor(showOverload)
   self._showOverload = showOverload
 end
 
--- DECOMPILER ERROR at PC2276: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultShowPassiveAccumulateOverload).IsOverLoadShow = function(self)
-  -- function num : 0_490
+function BuffResultShowPassiveAccumulateOverload:IsOverLoadShow()
   return self._showOverload
 end
 
 _class("BuffResultAddHPByLayer", BuffResultBase)
-_ENV.BuffResultAddHPByLayer = _ENV.BuffResultAddHPByLayer
--- DECOMPILER ERROR at PC2288: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultAddHPByLayer = BuffResultAddHPByLayer
 
-;
-(_ENV.BuffResultAddHPByLayer).Constructor = function(self, damageInfo, eid, curLayer, totalLayer, buffSeq)
-  -- function num : 0_491
+function BuffResultAddHPByLayer:Constructor(damageInfo, eid, curLayer, totalLayer, buffSeq)
   self._damageInfo = damageInfo
   self._entityID = eid
   self._curLayer = curLayer
@@ -3911,379 +2441,219 @@ _ENV.BuffResultAddHPByLayer = _ENV.BuffResultAddHPByLayer
   self._buffSeq = buffSeq
 end
 
--- DECOMPILER ERROR at PC2292: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddHPByLayer).SetLayerName = function(self, layerName)
-  -- function num : 0_492
+function BuffResultAddHPByLayer:SetLayerName(layerName)
   self._layerName = layerName
 end
 
--- DECOMPILER ERROR at PC2296: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddHPByLayer).GetLayerName = function(self)
-  -- function num : 0_493
+function BuffResultAddHPByLayer:GetLayerName()
   return self._layerName
 end
 
--- DECOMPILER ERROR at PC2300: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddHPByLayer).GetLayerTotalCount = function(self)
-  -- function num : 0_494
+function BuffResultAddHPByLayer:GetLayerTotalCount()
   return self._layerTotalCount
 end
 
--- DECOMPILER ERROR at PC2304: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddHPByLayer).GetDamageInfo = function(self)
-  -- function num : 0_495
+function BuffResultAddHPByLayer:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC2308: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddHPByLayer).GetEntityID = function(self)
-  -- function num : 0_496
+function BuffResultAddHPByLayer:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC2312: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddHPByLayer).GetBuffSeq = function(self)
-  -- function num : 0_497
+function BuffResultAddHPByLayer:GetBuffSeq()
   return self._buffSeq
 end
 
--- DECOMPILER ERROR at PC2316: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddHPByLayer).GetLayer = function(self)
-  -- function num : 0_498
+function BuffResultAddHPByLayer:GetLayer()
   return self._curLayer
 end
 
 _class("BuffResultAddHPByMonsterAttackDamage", BuffResultBase)
-_ENV.BuffResultAddHPByMonsterAttackDamage = _ENV.BuffResultAddHPByMonsterAttackDamage
--- DECOMPILER ERROR at PC2328: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultAddHPByMonsterAttackDamage = BuffResultAddHPByMonsterAttackDamage
 
-;
-(_ENV.BuffResultAddHPByMonsterAttackDamage).Constructor = function(self, damageInfo, eid, sourceEntityID)
-  -- function num : 0_499
+function BuffResultAddHPByMonsterAttackDamage:Constructor(damageInfo, eid, sourceEntityID)
   self._damageInfo = damageInfo
   self._entityID = eid
   self._sourceEntityID = sourceEntityID
 end
 
--- DECOMPILER ERROR at PC2332: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddHPByMonsterAttackDamage).GetDamageInfo = function(self)
-  -- function num : 0_500
+function BuffResultAddHPByMonsterAttackDamage:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC2336: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddHPByMonsterAttackDamage).GetEntityID = function(self)
-  -- function num : 0_501
+function BuffResultAddHPByMonsterAttackDamage:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC2341: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddHPByMonsterAttackDamage).GetSourceEntityID = function(self)
-  -- function num : 0_502
+function BuffResultAddHPByMonsterAttackDamage:GetSourceEntityID()
   return self._sourceEntityID
 end
 
 _class("BuffResultAddHPByMoveNotify", BuffResultBase)
-_ENV.BuffResultAddHPByMoveNotify = _ENV.BuffResultAddHPByMoveNotify
--- DECOMPILER ERROR at PC2353: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultAddHPByMoveNotify = BuffResultAddHPByMoveNotify
 
-;
-(_ENV.BuffResultAddHPByMoveNotify).Constructor = function(self, damageInfo, headout, delay)
-  -- function num : 0_503
+function BuffResultAddHPByMoveNotify:Constructor(damageInfo, headout, delay)
   self._damageInfo = damageInfo
   self._headout = headout
   self._delay = delay
 end
 
--- DECOMPILER ERROR at PC2357: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddHPByMoveNotify).GetDamageInfo = function(self)
-  -- function num : 0_504
+function BuffResultAddHPByMoveNotify:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC2361: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddHPByMoveNotify).GetHeadout = function(self)
-  -- function num : 0_505
+function BuffResultAddHPByMoveNotify:GetHeadout()
   return self._headout
 end
 
--- DECOMPILER ERROR at PC2365: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddHPByMoveNotify).GetDelay = function(self)
-  -- function num : 0_506
+function BuffResultAddHPByMoveNotify:GetDelay()
   return self._delay
 end
 
--- DECOMPILER ERROR at PC2370: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddHPByMoveNotify).SetPosNew = function(self, pos)
-  -- function num : 0_507
+function BuffResultAddHPByMoveNotify:SetPosNew(pos)
   self._posNew = pos
 end
 
--- DECOMPILER ERROR at PC2375: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddHPByMoveNotify).GetPosNew = function(self)
-  -- function num : 0_508
+function BuffResultAddHPByMoveNotify:GetPosNew()
   return self._posNew
 end
 
 _class("BuffResultAddCombo", BuffResultBase)
-_ENV.BuffResultAddCombo = _ENV.BuffResultAddCombo
--- DECOMPILER ERROR at PC2387: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultAddCombo = BuffResultAddCombo
 
-;
-(_ENV.BuffResultAddCombo).Constructor = function(self, changeValue, pos)
-  -- function num : 0_509
+function BuffResultAddCombo:Constructor(changeValue, pos)
   self._changeValue = changeValue
   self._pos = pos
 end
 
--- DECOMPILER ERROR at PC2392: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddCombo).GetChangeValue = function(self)
-  -- function num : 0_510
+function BuffResultAddCombo:GetChangeValue()
   return self._changeValue
 end
 
--- DECOMPILER ERROR at PC2396: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultAddCombo).GetPos = function(self)
-  -- function num : 0_511
+function BuffResultAddCombo:GetPos()
   return self._pos
 end
 
 _class("BuffResultExtraChain", BuffResultBase)
-_ENV.BuffResultExtraChain = _ENV.BuffResultExtraChain
--- DECOMPILER ERROR at PC2408: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultExtraChain = BuffResultExtraChain
 
-;
-(_ENV.BuffResultExtraChain).Constructor = function(self)
-  -- function num : 0_0
+function BuffResultExtraChain:Constructor(entity)
 end
 
 _class("BuffResultSetReplaceChain", BuffResultBase)
-_ENV.BuffResultSetReplaceChain = _ENV.BuffResultSetReplaceChain
--- DECOMPILER ERROR at PC2420: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultSetReplaceChain = BuffResultSetReplaceChain
 
-;
-(_ENV.BuffResultSetReplaceChain).Constructor = function(self, entityID, damageInfo)
-  -- function num : 0_1
-  self._entityID = entityID
-  self._damageInfo = damageInfo
-  self._chainPetEntityID = nil
+function BuffResultSetReplaceChain:Constructor(replaceEntityID)
+  self._replaceEntityID = replaceEntityID
 end
 
--- DECOMPILER ERROR at PC2425: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetReplaceChain).GetReplaceEntityID = function(self, entityID)
-  -- function num : 0_2
-  self._chainPetEntityID = entityID
+function BuffResultSetReplaceChain:GetReplaceEntityID()
+  return self._replaceEntityID
 end
 
 _class("BuffResultChangeAttackByFeatureShop", BuffResultBase)
-_ENV.BuffResultChangeAttackByFeatureShop = _ENV.BuffResultChangeAttackByFeatureShop
--- DECOMPILER ERROR at PC2437: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultChangeAttackByFeatureShop = BuffResultChangeAttackByFeatureShop
 
-;
-(_ENV.BuffResultChangeAttackByFeatureShop).Constructor = function(self)
-  -- function num : 0_3
-  return self._chainPetEntityID
+function BuffResultChangeAttackByFeatureShop:Constructor(casterID, val, light, pstid, casterPstID)
+  self._casterID = casterID
+  self._val = val
+  self._light = light
+  self._pstid = pstid
+  self._casterPstID = casterPstID
 end
 
--- DECOMPILER ERROR at PC2441: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChangeAttackByFeatureShop).GetCasterID = function(self)
-  -- function num : 0_4
-  return self._shield
+function BuffResultChangeAttackByFeatureShop:GetCasterID()
+  return self._casterID
 end
 
--- DECOMPILER ERROR at PC2445: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChangeAttackByFeatureShop).GetValue = function(self)
-  -- function num : 0_5
-  return self._entityID
+function BuffResultChangeAttackByFeatureShop:GetValue()
+  return self._val
 end
 
--- DECOMPILER ERROR at PC2449: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChangeAttackByFeatureShop).GetLight = function(self)
-  -- function num : 0_6
-  return self._damageInfo
+function BuffResultChangeAttackByFeatureShop:GetLight()
+  return self._light
 end
 
--- DECOMPILER ERROR at PC2453: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChangeAttackByFeatureShop).GetPstID = function(self, v)
-  -- function num : 0_7
-  self._notifyChainSkillTimeIndex = v
+function BuffResultChangeAttackByFeatureShop:GetPstID()
+  return self._pstid
 end
 
--- DECOMPILER ERROR at PC2457: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChangeAttackByFeatureShop).GetCasterPstID = function(self)
-  -- function num : 0_8
-  return self._notifyChainSkillTimeIndex
+function BuffResultChangeAttackByFeatureShop:GetCasterPstID()
+  return self._casterPstID
 end
 
 _class("BuffResultUndoChangeAttackByFeatureShop", BuffResultBase)
-_ENV.BuffResultUndoChangeAttackByFeatureShop = _ENV.BuffResultUndoChangeAttackByFeatureShop
--- DECOMPILER ERROR at PC2469: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultUndoChangeAttackByFeatureShop = BuffResultUndoChangeAttackByFeatureShop
 
-;
-(_ENV.BuffResultUndoChangeAttackByFeatureShop).Constructor = function(self, v)
-  -- function num : 0_9
-  self._notifyChainSkillStageIndex = v
+function BuffResultUndoChangeAttackByFeatureShop:Constructor(black, casterPstID)
+  self._casterPstID = casterPstID
+  self._black = black
 end
 
--- DECOMPILER ERROR at PC2473: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultUndoChangeAttackByFeatureShop).GetBlack = function(self)
-  -- function num : 0_10
-  return self._notifyChainSkillStageIndex
+function BuffResultUndoChangeAttackByFeatureShop:GetBlack()
+  return self._black
 end
 
--- DECOMPILER ERROR at PC2477: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultUndoChangeAttackByFeatureShop).GetCasterPstID = function(self, entityID, damageInfo)
-  -- function num : 0_11
-  self._entityID = entityID
-  self._damageInfo = damageInfo
-  self._chainPetEntityID = nil
+function BuffResultUndoChangeAttackByFeatureShop:GetCasterPstID()
+  return self._casterPstID
 end
 
 _class("BuffResultSetOnlyTeamLeaderColorPet", BuffResultBase)
-_ENV.BuffResultSetOnlyTeamLeaderColorPet = _ENV.BuffResultSetOnlyTeamLeaderColorPet
--- DECOMPILER ERROR at PC2489: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultSetOnlyTeamLeaderColorPet = BuffResultSetOnlyTeamLeaderColorPet
 
-;
-(_ENV.BuffResultSetOnlyTeamLeaderColorPet).Constructor = function(self, entityID)
-  -- function num : 0_12
-  self._chainPetEntityID = entityID
+function BuffResultSetOnlyTeamLeaderColorPet:Constructor(val)
+  self._val = val
 end
 
--- DECOMPILER ERROR at PC2494: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultSetOnlyTeamLeaderColorPet).GetVal = function(self)
-  -- function num : 0_13
-  return self._chainPetEntityID
+function BuffResultSetOnlyTeamLeaderColorPet:GetVal()
+  return self._val
 end
 
 _class("BuffResultDamageByTargetMoveDis", BuffResultBase)
-_ENV.BuffResultDamageByTargetMoveDis = _ENV.BuffResultDamageByTargetMoveDis
--- DECOMPILER ERROR at PC2506: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultDamageByTargetMoveDis = BuffResultDamageByTargetMoveDis
 
-;
-(_ENV.BuffResultDamageByTargetMoveDis).Constructor = function(self)
-  -- function num : 0_14
-  return self._entityID
+function BuffResultDamageByTargetMoveDis:Constructor(damageInfo)
+  self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC2510: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultDamageByTargetMoveDis).GetDamageInfo = function(self)
-  -- function num : 0_15
+function BuffResultDamageByTargetMoveDis:GetDamageInfo()
   return self._damageInfo
 end
 
 _class("BuffResultChargeColorPalette", BuffResultBase)
-_ENV.BuffResultChargeColorPalette = _ENV.BuffResultChargeColorPalette
--- DECOMPILER ERROR at PC2522: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultChargeColorPalette = BuffResultChargeColorPalette
 
-;
-(_ENV.BuffResultChargeColorPalette).Constructor = function(self, v)
-  -- function num : 0_16
-  self._notifyChainSkillTimeIndex = v
+function BuffResultChargeColorPalette:Constructor(entityID, pieceTypes)
+  self._entityID = entityID
+  self._pieceTypes = pieceTypes
 end
 
--- DECOMPILER ERROR at PC2526: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChargeColorPalette).GetEntityID = function(self)
-  -- function num : 0_17
-  return self._notifyChainSkillTimeIndex
+function BuffResultChargeColorPalette:GetEntityID()
+  return self._entityID
 end
 
--- DECOMPILER ERROR at PC2531: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultChargeColorPalette).GetPieceTypes = function(self, v)
-  -- function num : 0_18
-  self._notifyChainSkillStageIndex = v
+function BuffResultChargeColorPalette:GetPieceTypes()
+  return self._pieceTypes
 end
 
 _class("BuffResultMonsterMoveGroupLineRenderer", BuffResultBase)
-_ENV.BuffResultMonsterMoveGroupLineRenderer = _ENV.BuffResultMonsterMoveGroupLineRenderer
--- DECOMPILER ERROR at PC2543: Confused about usage of register: R0 in 'UnsetPending'
+BuffResultMonsterMoveGroupLineRenderer = BuffResultMonsterMoveGroupLineRenderer
 
-;
-(_ENV.BuffResultMonsterMoveGroupLineRenderer).Constructor = function(self)
-  -- function num : 0_19
-  return self._notifyChainSkillStageIndex
+function BuffResultMonsterMoveGroupLineRenderer:Constructor(moveEntityID, moveBeginPos, moveFinalPos)
+  self._moveEntityID = moveEntityID
+  self._moveBeginPos = moveBeginPos
+  self._moveFinalPos = moveFinalPos
 end
 
--- DECOMPILER ERROR at PC2548: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultMonsterMoveGroupLineRenderer).GetMoveBeginPos = function(self, addHP, damageInfo)
-  -- function num : 0_20
-  self._addHP = addHP
-  self._damageInfo = damageInfo
+function BuffResultMonsterMoveGroupLineRenderer:GetMoveBeginPos()
+  return self._moveBeginPos
 end
 
--- DECOMPILER ERROR at PC2553: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultMonsterMoveGroupLineRenderer).GetMoveFinalPos = function(self)
-  -- function num : 0_21
-  return self._addHP
+function BuffResultMonsterMoveGroupLineRenderer:GetMoveFinalPos()
+  return self._moveBeginPos
 end
 
--- DECOMPILER ERROR at PC2558: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(_ENV.BuffResultMonsterMoveGroupLineRenderer).GetMoveEntityID = function(self)
-  -- function num : 0_22
-  return self._damageInfo
+function BuffResultMonsterMoveGroupLineRenderer:GetMoveEntityID()
+  return self._moveEntityID
 end
-
-

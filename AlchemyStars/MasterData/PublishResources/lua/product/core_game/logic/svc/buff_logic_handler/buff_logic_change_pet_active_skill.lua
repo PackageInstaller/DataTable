@@ -1,64 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_pet_active_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangePetActiveSkill", BuffLogicBase)
 BuffLogicChangePetActiveSkill = BuffLogicChangePetActiveSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangePetActiveSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangePetActiveSkill:Constructor(buffInstance, logicParam)
   self._skillList = logicParam.skillList
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._replaceOriSkillID = logicParam.replaceOriSkillID
-    self._refreshMaxPower = logicParam.refreshMaxPower
-  end
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._replaceOriSkillID = logicParam.replaceOriSkillID
+  self._refreshMaxPower = logicParam.refreshMaxPower
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangePetActiveSkill.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillID = nil
-  local curMarkLayer = (self._buffLogicService):GetBuffLayer(self._entity, self._layerType) or 1
-  if (table.count)(self._skillList) == 1 then
-    skillID = (self._skillList)[1]
+function BuffLogicChangePetActiveSkill:DoLogic()
+  local skillID
+  local curMarkLayer = self._buffLogicService:GetBuffLayer(self._entity, self._layerType) or 1
+  if table.count(self._skillList) == 1 then
+    skillID = self._skillList[1]
   else
-    if #self._skillList < curMarkLayer then
+    if curMarkLayer > #self._skillList then
       curMarkLayer = #self._skillList
     end
-    skillID = (self._skillList)[curMarkLayer]
+    skillID = self._skillList[curMarkLayer]
   end
   if not skillID then
-    return 
+    return
   end
-  local skillInfoComponent = (self._entity):SkillInfo()
+  local skillInfoComponent = self._entity:SkillInfo()
   local curSkillID = skillInfoComponent:GetActiveSkillID()
   if skillID == curSkillID then
-    return 
+    return
   end
   if self._replaceOriSkillID and curSkillID ~= self._replaceOriSkillID then
-    return 
+    return
   end
   skillInfoComponent:SetActiveSkillID(skillID)
   if self._refreshMaxPower then
-    local configService = (self._world):GetService("Config")
+    local configService = self._world:GetService("Config")
     local activeSkillConfigData = configService:GetSkillConfigData(skillID)
     if activeSkillConfigData then
       local skillTriggerType = activeSkillConfigData:GetSkillTriggerType()
       if skillTriggerType == SkillTriggerType.Energy then
         local skillTriggerParam = activeSkillConfigData:GetSkillTriggerParam()
-        local utilData = (self._world):GetService("UtilData")
+        local utilData = self._world:GetService("UtilData")
         utilData:SetPetMaxPowerAttr(self._entity, skillTriggerParam, skillID)
       end
     end
   end
-  do
-    local buffResult = BuffResultChangePetActiveSkill:New(curMarkLayer, skillID)
-    return buffResult
-  end
+  local buffResult = BuffResultChangePetActiveSkill:New(curMarkLayer, skillID)
+  return buffResult
 end
-
-

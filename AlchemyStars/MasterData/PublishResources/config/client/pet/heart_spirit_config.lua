@@ -1,17 +1,108 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/pet/heart_spirit_config.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Attack = 2, AwakenLevel = 3, Defend = 4, Element = 5, FirstProperty = 6, GradeLvel = 7, IntimacyLevel = 8, Intimacy = 9, LevelExp = 10, Level = 11, Life = 12, Name = 13, SecondProperty = 14, Star = 15, FirstTag = 16, SecondTag = 17, AttList = 18, Skill = 19}
+local key = {
+  ID = 1,
+  Attack = 2,
+  AwakenLevel = 3,
+  Defend = 4,
+  Element = 5,
+  FirstProperty = 6,
+  GradeLvel = 7,
+  IntimacyLevel = 8,
+  Intimacy = 9,
+  LevelExp = 10,
+  Level = 11,
+  Life = 12,
+  Name = 13,
+  SecondProperty = 14,
+  Star = 15,
+  FirstTag = 16,
+  SecondTag = 17,
+  AttList = 18,
+  Skill = 19
+}
 local config = {
-[1001] = {1001, 5, 1, 52, 1, 1, 0, 2, 50, 50, 1, 3, "宝宝1", 1, 0, 1, "1|2", "30|82|61", "1001:1002|1003"}
-, 
-[1002] = {1002, 5, 2, 53, 2, 1, 0, 1, 100, 100, 2, 4, "宝宝2", 1, 1, 2, "1", "30|82|62", "1001:1002|1004"}
-, 
-[1003] = {1003, 5, 3, 54, 4, 1, 1, 2, 200, 12, 3, 5, "宝宝3", 1, 2, 3, "2", "30|82|63", "1001:1002|1005"}
-, 
-[1004] = {1004, 5, 4, 55, 3, 1, 1, 3, 21, 20, 4, 6, "宝宝4", 2, 5, 4, "4|2", "30|82|64", "1001:1002|1006"}
+  [1001] = {
+    1001,
+    5,
+    1,
+    52,
+    1,
+    1,
+    0,
+    2,
+    50,
+    50,
+    1,
+    3,
+    "宝宝1",
+    1,
+    0,
+    1,
+    "1|2",
+    "30|82|61",
+    "1001:1002|1003"
+  },
+  [1002] = {
+    1002,
+    5,
+    2,
+    53,
+    2,
+    1,
+    0,
+    1,
+    100,
+    100,
+    2,
+    4,
+    "宝宝2",
+    1,
+    1,
+    2,
+    "1",
+    "30|82|62",
+    "1001:1002|1004"
+  },
+  [1003] = {
+    1003,
+    5,
+    3,
+    54,
+    4,
+    1,
+    1,
+    2,
+    200,
+    12,
+    3,
+    5,
+    "宝宝3",
+    1,
+    2,
+    3,
+    "2",
+    "30|82|63",
+    "1001:1002|1005"
+  },
+  [1004] = {
+    1004,
+    5,
+    4,
+    55,
+    3,
+    1,
+    1,
+    3,
+    21,
+    20,
+    4,
+    6,
+    "宝宝4",
+    2,
+    5,
+    4,
+    "4|2",
+    "30|82|64",
+    "1001:1002|1006"
+  }
 }
 return config, "ID", key
-

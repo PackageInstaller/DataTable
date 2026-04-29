@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_persona_skill_eff_top.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattlePersonaSkillEffTop", UIController)
 UIBattlePersonaSkillEffTop = UIBattlePersonaSkillEffTop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattlePersonaSkillEffTop.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIBattlePersonaSkillEffTop:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePersonaSkillEffTop.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBattlePersonaSkillEffTop:OnShow(uiParams)
   self:InitWidget()
   self._tarCamera = uiParams[1]
   self._petImgRes = uiParams[2]
@@ -24,26 +14,22 @@ UIBattlePersonaSkillEffTop.OnShow = function(self, uiParams)
   self._animName = uiParams[5]
   self:SetCamera(self._tarCamera)
   if self._petWordStr then
-    (self._petWordText):SetText((StringTable.Get)(self._petWordStr))
+    self._petWordText:SetText(StringTable.Get(self._petWordStr))
   end
   if self._petImgRes then
-    (self._petHeadLoader):LoadImage(self._petImgRes)
+    self._petHeadLoader:LoadImage(self._petImgRes)
   end
   if self._showCloseBtn then
-    (self.closeBtnGo):SetActive(true)
+    self.closeBtnGo:SetActive(true)
   else
-    ;
-    (self.closeBtnGo):SetActive(false)
+    self.closeBtnGo:SetActive(false)
   end
   if self._animName and self._anim then
-    (self._anim):Play(self._animName)
+    self._anim:Play(self._animName)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePersonaSkillEffTop.InitWidget = function(self)
-  -- function num : 0_2
+function UIBattlePersonaSkillEffTop:InitWidget()
   self._petWordText = self:GetUIComponent("UILocalizationText", "PetWord")
   self._uiCanvas = self:GetUIComponent("Canvas", "UICanvas")
   self._petHeadLoader = self:GetUIComponent("RawImageLoader", "PetHead")
@@ -51,25 +37,14 @@ UIBattlePersonaSkillEffTop.InitWidget = function(self)
   self.closeBtnGo = self:GetGameObject("CloseButton")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePersonaSkillEffTop.CloseButtonOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.debug)("###[UIBattlePersonaSkillEffTop] close btn !")
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN19P5SkipBigView)
+function UIBattlePersonaSkillEffTop:CloseButtonOnClick(go)
+  Log.debug("###[UIBattlePersonaSkillEffTop] close btn !")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN19P5SkipBigView)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePersonaSkillEffTop.SetCamera = function(self, camera)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIBattlePersonaSkillEffTop:SetCamera(camera)
   if self._uiCanvas and camera then
-    (self._uiCanvas).worldCamera = camera
+    self._uiCanvas.worldCamera = camera
   end
 end
-
-

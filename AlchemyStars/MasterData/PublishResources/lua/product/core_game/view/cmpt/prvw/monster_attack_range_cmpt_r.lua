@@ -1,69 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/monster_attack_range_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MonsterAttackRangeComponent", Object)
 MonsterAttackRangeComponent = MonsterAttackRangeComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterAttackRangeComponent.Constructor = function(self, entityConfigID)
-  -- function num : 0_0
+function MonsterAttackRangeComponent:Constructor(entityConfigID)
   self._entityConfigID = entityConfigID
   self._bUse = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterAttackRangeComponent.GetEntityConfigID = function(self)
-  -- function num : 0_1
+function MonsterAttackRangeComponent:GetEntityConfigID()
   return self._entityConfigID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterAttackRangeComponent.IsUse = function(self)
-  -- function num : 0_2
+function MonsterAttackRangeComponent:IsUse()
   return self._bUse
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterAttackRangeComponent.SetUseState = function(self, state)
-  -- function num : 0_3
+function MonsterAttackRangeComponent:SetUseState(state)
   self._bUse = state
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.MonsterAttackRange = function(self)
-  -- function num : 0_4
-  return self:GetComponent((self.WEComponentsEnum).MonsterAttackRange)
+function Entity:MonsterAttackRange()
+  return self:GetComponent(self.WEComponentsEnum.MonsterAttackRange)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasMonsterAttackRange = function(self)
-  -- function num : 0_5
-  return self:HasComponent((self.WEComponentsEnum).MonsterAttackRange)
+function Entity:HasMonsterAttackRange()
+  return self:HasComponent(self.WEComponentsEnum.MonsterAttackRange)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddMonsterAttackRange = function(self, entityConfigID)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MonsterAttackRange
+function Entity:AddMonsterAttackRange(entityConfigID)
+  local index = self.WEComponentsEnum.MonsterAttackRange
   local component = MonsterAttackRangeComponent:New(entityConfigID)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveMonsterAttackRange = function(self)
-  -- function num : 0_7
+function Entity:RemoveMonsterAttackRange()
   if self:HasMonsterAttackRange() then
-    self:RemoveComponent((self.WEComponentsEnum).MonsterAttackRange)
+    self:RemoveComponent(self.WEComponentsEnum.MonsterAttackRange)
   end
 end
-
-

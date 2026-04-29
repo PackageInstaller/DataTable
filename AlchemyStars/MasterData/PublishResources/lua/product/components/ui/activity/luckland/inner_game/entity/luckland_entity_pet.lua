@@ -1,124 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/entity/luckland_entity_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLEntityPet", LuckLandEntity)
 LLEntityPet = LLEntityPet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLEntityPet.InitData = function(self, templateID)
-  -- function num : 0_0 , upvalues : _ENV
+function LLEntityPet:InitData(templateID)
   self._entityType = LuckLandEntityType.Pet
-  self._cfg = (self._configMng):GetPetConfigData(templateID)
-  self._resType = (self._cfg):GetPetResType()
-  self._resBase = (self._cfg):GetPetResBase()
-  self._levelType = (self._cfg):GetPetLevel()
-  self._elementType = (self._cfg):GetPetType()
-  self._campType = (self._cfg):GetPetCamp()
-  self._countDown = (self._cfg):GetCountDown()
-  self._isUnique = (self._cfg):IsPetUnique()
+  self._cfg = self._configMng:GetPetConfigData(templateID)
+  self._resType = self._cfg:GetPetResType()
+  self._resBase = self._cfg:GetPetResBase()
+  self._levelType = self._cfg:GetPetLevel()
+  self._elementType = self._cfg:GetPetType()
+  self._campType = self._cfg:GetPetCamp()
+  self._countDown = self._cfg:GetCountDown()
+  self._isUnique = self._cfg:IsPetUnique()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityPet.SetGenIndex = function(self, index)
-  -- function num : 0_1
+function LLEntityPet:SetGenIndex(index)
   self._genIndex = index
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityPet.SetFightState = function(self, isFight)
-  -- function num : 0_2
+function LLEntityPet:SetFightState(isFight)
   self._isFight = isFight
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityPet.IsFight = function(self)
-  -- function num : 0_3
+function LLEntityPet:IsFight()
   return self._isFight
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityPet.GetPos = function(self)
-  -- function num : 0_4
-  return ((self._gameModule):GetEntityMng()):GetFightPetPos(self)
+function LLEntityPet:GetPos()
+  return self._gameModule:GetEntityMng():GetFightPetPos(self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityPet.AddCountDownNum = function(self, addVal)
-  -- function num : 0_5
+function LLEntityPet:AddCountDownNum(addVal)
   if self._countDown == nil or addVal == nil then
-    return 
+    return
   end
   self._countDown = self._countDown + addVal
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityPet.HasDeleteFlag = function(self)
-  -- function num : 0_6
+function LLEntityPet:HasDeleteFlag()
   return self._delFlag
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityPet.SetDeleteFlag = function(self)
-  -- function num : 0_7
+function LLEntityPet:SetDeleteFlag()
   self._delFlag = true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityPet.GetParamByTag = function(self, tagType)
-  -- function num : 0_8 , upvalues : _ENV
+function LLEntityPet:GetParamByTag(tagType)
   if tagType == LLPetTagType.Element then
     return self._elementType
-  else
-    if tagType == LLPetTagType.Camp then
-      return self._campType
-    else
-      if tagType == LLPetTagType.Level then
-        return self._levelType
-      else
-        if tagType == LLPetTagType.Res then
-          return self._resType
-        end
-      end
-    end
+  elseif tagType == LLPetTagType.Camp then
+    return self._campType
+  elseif tagType == LLPetTagType.Level then
+    return self._levelType
+  elseif tagType == LLPetTagType.Res then
+    return self._resType
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityPet.Element = function(self)
-  -- function num : 0_9
+function LLEntityPet:Element()
   return self._elementType
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityPet.Camp = function(self)
-  -- function num : 0_10
+function LLEntityPet:Camp()
   return self._campType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityPet.Level = function(self)
-  -- function num : 0_11
+function LLEntityPet:Level()
   return self._levelType
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LLEntityPet.ResType = function(self)
-  -- function num : 0_12
+function LLEntityPet:ResType()
   return self._resType
 end
-
-

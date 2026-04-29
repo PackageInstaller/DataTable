@@ -1,55 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/storytask/simple/ui_homeland_story_task_simple_container.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandStoryTaskSimpleContainer", UICustomWidget)
 UIHomelandStoryTaskSimpleContainer = UIHomelandStoryTaskSimpleContainer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandStoryTaskSimpleContainer.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandStoryTaskSimpleContainer:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleContainer.OnHide = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandStoryTaskSimpleContainer:OnHide(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleContainer._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandStoryTaskSimpleContainer:_GetComponents()
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleContainer.SetData = function(self, datas, controller)
-  -- function num : 0_3
+function UIHomelandStoryTaskSimpleContainer:SetData(datas, controller)
   self._datas = datas
   self._controller = controller
   self:_SetItems()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleContainer._SetItems = function(self)
-  -- function num : 0_4
+function UIHomelandStoryTaskSimpleContainer:_SetItems()
   local count = #self._datas
   if count <= 0 then
-    return 
+    return
   end
-  ;
-  (self._content):SpawnObjects("UIHomelandStoryTaskSimpleItem", count)
-  local items = (self._content):GetAllSpawnList()
+  self._content:SpawnObjects("UIHomelandStoryTaskSimpleItem", count)
+  local items = self._content:GetAllSpawnList()
   for i = 1, #items do
-    (items[i]):SetData((self._datas)[i], self._controller)
-    ;
-    (items[i]):ShowAnim()
+    items[i]:SetData(self._datas[i], self._controller)
+    items[i]:ShowAnim()
   end
 end
-
-

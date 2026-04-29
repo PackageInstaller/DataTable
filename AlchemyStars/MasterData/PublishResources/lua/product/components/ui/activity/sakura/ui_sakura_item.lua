@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/sakura/ui_sakura_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISakuraItem", UICustomWidget)
 UISakuraItem = UISakuraItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISakuraItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISakuraItem:OnShow(uiParams)
   self:_InitBackGroundStateSprite()
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraItem._InitBackGroundStateSprite = function(self)
-  -- function num : 0_1
+function UISakuraItem:_InitBackGroundStateSprite()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraItem._GetComponents = function(self)
-  -- function num : 0_2
+function UISakuraItem:_GetComponents()
   self._backGround = self:GetUIComponent("RawImageLoader", "BackGround")
   self._title = self:GetUIComponent("UILocalizationText", "Title")
   self._sakuraCost = self:GetGameObject("SakuraCost")
@@ -34,10 +21,7 @@ UISakuraItem._GetComponents = function(self)
   self._lock = self:GetGameObject("Lock")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraItem.SetData = function(self, config, index, state, callBack)
-  -- function num : 0_3
+function UISakuraItem:SetData(config, index, state, callBack)
   self._config = config
   self._index = index
   self._state = state
@@ -45,72 +29,43 @@ UISakuraItem.SetData = function(self, config, index, state, callBack)
   self:_SetUIInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraItem._SetUIInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._title):SetText((StringTable.Get)((self._config).title))
-  ;
-  (self._sakuraCost):SetActive(self._state == SakuraStoryState.Lock)
-  ;
-  (self._lock):SetActive(self._state == SakuraStoryState.Lock)
+function UISakuraItem:_SetUIInfo()
+  self._title:SetText(StringTable.Get(self._config.title))
+  self._sakuraCost:SetActive(self._state == SakuraStoryState.Lock)
+  self._lock:SetActive(self._state == SakuraStoryState.Lock)
   if self._state == SakuraStoryState.Lock then
     if self._richCost then
       local fontSize = 32
-      local costStr = (self._config).unlockcount .. "<sprite=legend_zhangjie_icon4 size=100 />"
-      local str = (StringTable.Get)("str_sakura_to_unlock_story", fontSize, costStr)
-      ;
-      (self._richCost):SetText(str)
+      local costStr = self._config.unlockcount .. "<sprite=legend_zhangjie_icon4 size=100 />"
+      local str = StringTable.Get("str_sakura_to_unlock_story", fontSize, costStr)
+      self._richCost:SetText(str)
     end
-    ;
-    (self._lockBg):LoadImage("legend_zhangjie_btn3")
+    self._lockBg:LoadImage("legend_zhangjie_btn3")
   end
-  ;
-  (self._redPoint):SetActive(self._state == SakuraStoryState.UnLockCanPlay)
+  self._redPoint:SetActive(self._state == SakuraStoryState.UnLockCanPlay)
   if self._state == SakuraStoryState.UnLockCanPlay and self._redPointSpine then
-    (self._redPointSpine):SetAnimation(0, "appear", false)
-    ;
-    ((GameGlobal.Timer)()):AddEvent(433, function()
-    -- function num : 0_4_0 , upvalues : self
-    (self._redPointSpine):SetAnimation(0, "idle", true)
+    self._redPointSpine:SetAnimation(0, "appear", false)
+    GameGlobal.Timer():AddEvent(433, function()
+      self._redPointSpine:SetAnimation(0, "idle", true)
+    end)
   end
-)
-  end
-  ;
-  (self._promptBg):SetActive(self._state == SakuraStoryState.UnLockCantPlay)
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
+  self._promptBg:SetActive(self._state == SakuraStoryState.UnLockCantPlay)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraItem.OnUpdate = function(self, alpha)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
+function UISakuraItem:OnUpdate(alpha)
   if self._state == SakuraStoryState.UnLockCanPlay then
-    ((self._redPointSpine).CurrentSkeleton).color = Color(1, 1, 1, alpha)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (((self._redPointSpine).CurrentSkeleton).Skeleton).A = alpha
+    self._redPointSpine.CurrentSkeleton.color = Color(1, 1, 1, alpha)
+    self._redPointSpine.CurrentSkeleton.Skeleton.A = alpha
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraItem.RefreshItemInfo = function(self, state)
-  -- function num : 0_6
+function UISakuraItem:RefreshItemInfo(state)
   if self._state ~= state then
     self._state = state
     self:_SetUIInfo()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraItem.BtnOnClick = function(self, go)
-  -- function num : 0_7
-  (self._callback)(self._index)
+function UISakuraItem:BtnOnClick(go)
+  self._callback(self._index)
 end
-
-

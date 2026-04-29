@@ -1,52 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_qt/ui_haute_couture_draw_qt_charge_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_haute_couture_draw_charge_base")
 _class("UIHauteCoutureDraw_QT_ChargeMain", UIHauteCoutureDrawChargeBase)
 UIHauteCoutureDraw_QT_ChargeMain = UIHauteCoutureDraw_QT_ChargeMain
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDraw_QT_ChargeMain.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDraw_QT_ChargeMain:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_ChargeMain.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDraw_QT_ChargeMain:OnShow(uiParams)
   self:InitWidgets()
   self:_OnValue()
   self:AddEventBase()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_ChargeMain.OnHide = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDraw_QT_ChargeMain:OnHide()
   self:RemoveEventBase()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_ChargeMain.InitWidgets = function(self)
-  -- function num : 0_3
+function UIHauteCoutureDraw_QT_ChargeMain:InitWidgets()
   self:InitWidgetsBase()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_ChargeMain._OnValue = function(self)
-  -- function num : 0_4
+function UIHauteCoutureDraw_QT_ChargeMain:_OnValue()
   self:_OnValueBase()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_ChargeMain.GetItemImpl = function(self)
-  -- function num : 0_5
+function UIHauteCoutureDraw_QT_ChargeMain:GetItemImpl()
   return "UIHauteCoutureDraw_QT_ChargeItem"
 end
-
-

@@ -1,32 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_square_ring_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillSquareRingPhase", PlaySkillPhaseBase)
 PlaySkillSquareRingPhase = PlaySkillSquareRingPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillSquareRingPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillSquareRingPhase:PlayFlight(TT, casterEntity, phaseParam)
   local squareRingParam = phaseParam
   local gridEffectID = squareRingParam:GetGridEffectID()
   local bestEffectTime = squareRingParam:GetBestEffectTime()
   local ringInternalTime = squareRingParam:GetRingInternalTime()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local result = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.ConvertGridElement)
   local ringGridData = result:GetTargetGridArray()
   local targetGridType = result:GetTargetElementType()
-  local playSkillService = (self._world):GetService("PlaySkill")
-  for circleIndex,gridPosArray in pairs(ringGridData) do
-    for _,gridPos in ipairs(gridPosArray) do
-      ((GameGlobal.TaskManager)()):CoreGameStartTask((self:SkillService())._SingleGridEffect, self:SkillService(), gridEffectID, gridPos, bestEffectTime, targetGridType)
+  local playSkillService = self._world:GetService("PlaySkill")
+  for circleIndex, gridPosArray in pairs(ringGridData) do
+    for _, gridPos in ipairs(gridPosArray) do
+      GameGlobal.TaskManager():CoreGameStartTask(self:SkillService()._SingleGridEffect, self:SkillService(), gridEffectID, gridPos, bestEffectTime, targetGridType)
     end
     YIELD(TT, ringInternalTime)
   end
   local finishDelayTime = squareRingParam:GetFinishDelayTime()
   YIELD(TT, finishDelayTime)
 end
-
-

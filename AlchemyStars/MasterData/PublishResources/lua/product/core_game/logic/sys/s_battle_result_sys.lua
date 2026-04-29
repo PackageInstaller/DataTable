@@ -1,19 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/sys/s_battle_result_sys.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("battle_result_system")
 _class("ServerBattleResultSystem_Logic", BattleResultSystem)
 ServerBattleResultSystem_Logic = ServerBattleResultSystem_Logic
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ServerBattleResultSystem_Logic._DoLogicBattleResult = function(self)
-  -- function num : 0_0
-  ((self._world):BattleStat()):SetBattleMatchResult(self.battleMatchResult)
+function ServerBattleResultSystem_Logic:_DoLogicBattleResult()
+  self._world:BattleStat():SetBattleMatchResult(self.battleMatchResult)
   local serverWorld = self._world
   local pCoreGameLogic = serverWorld:GetCoreGameLogic()
   pCoreGameLogic:OnServerMatchEnd()
 end
-
-

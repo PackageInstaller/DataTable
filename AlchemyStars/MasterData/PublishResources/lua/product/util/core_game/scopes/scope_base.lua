@@ -1,138 +1,84 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillScopeCalculator_Base", Object)
 SkillScopeCalculator_Base = SkillScopeCalculator_Base
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_Base.Constructor = function(self, calcHub)
-  -- function num : 0_0
+function SkillScopeCalculator_Base:Constructor(calcHub)
   self._hub = calcHub
   self._gridFilter = calcHub._gridFilter
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_Base.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.exception)(self._className, "NotImplementedException occurred at: ", (Log.traceback)())
+function SkillScopeCalculator_Base:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  Log.exception(self._className, "NotImplementedException occurred at: ", Log.traceback())
   return {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_Base._InsertTargetGrid = function(self, targetArea, newGridPos, wholeArea)
-  -- function num : 0_2
-  return (self._hub):_InsertTargetGrid(targetArea, newGridPos, wholeArea)
+function SkillScopeCalculator_Base:_InsertTargetGrid(targetArea, newGridPos, wholeArea)
+  return self._hub:_InsertTargetGrid(targetArea, newGridPos, wholeArea)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_Base._InsertTargetGridIntoOneArea = function(self, newGridPos, area)
-  -- function num : 0_3
-  return (self._hub):_InsertTargetGridIntoOneArea(newGridPos, area)
+function SkillScopeCalculator_Base:_InsertTargetGridIntoOneArea(newGridPos, area)
+  return self._hub:_InsertTargetGridIntoOneArea(newGridPos, area)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_Base.GetDirection = function(self, gridpos, casterPos)
-  -- function num : 0_4
-  return (self._hub):GetDirection(gridpos, casterPos)
+function SkillScopeCalculator_Base:GetDirection(gridpos, casterPos)
+  return self._hub:GetDirection(gridpos, casterPos)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_Base.CalcMultiCenterCrossList = function(self, ...)
-  -- function num : 0_5
-  return (self._hub):CalcMultiCenterCrossList(...)
+function SkillScopeCalculator_Base:CalcMultiCenterCrossList(...)
+  return self._hub:CalcMultiCenterCrossList(...)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_Base._CalcLeftDownColumnsAndRowsRange = function(self, ...)
-  -- function num : 0_6
-  return (self._hub):_CalcLeftDownColumnsAndRowsRange(...)
+function SkillScopeCalculator_Base:_CalcLeftDownColumnsAndRowsRange(...)
+  return self._hub:_CalcLeftDownColumnsAndRowsRange(...)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_Base._ComputeHalfStartPos = function(self, ...)
-  -- function num : 0_7
-  return (self._hub):_ComputeHalfStartPos(...)
+function SkillScopeCalculator_Base:_ComputeHalfStartPos(...)
+  return self._hub:_ComputeHalfStartPos(...)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_Base._GetAroundPosOfPos = function(self, ...)
-  -- function num : 0_8
-  return (self._hub):_GetAroundPosOfPos(...)
+function SkillScopeCalculator_Base:_GetAroundPosOfPos(...)
+  return self._hub:_GetAroundPosOfPos(...)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_Base._InsertPosToResultArea = function(self, ...)
-  -- function num : 0_9
-  return (self._hub):_InsertPosToResultArea(...)
+function SkillScopeCalculator_Base:_InsertPosToResultArea(...)
+  return self._hub:_InsertPosToResultArea(...)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_Base._CalcCrossExceptBlock = function(self, ...)
-  -- function num : 0_10
-  return (self._hub):_CalcCrossExceptBlock(...)
+function SkillScopeCalculator_Base:_CalcCrossExceptBlock(...)
+  return self._hub:_CalcCrossExceptBlock(...)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_Base._CalcXShapeExceptBlock = function(self, ...)
-  -- function num : 0_11
-  return (self._hub):_CalcXShapeExceptBlock(...)
+function SkillScopeCalculator_Base:_CalcXShapeExceptBlock(...)
+  return self._hub:_CalcXShapeExceptBlock(...)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_Base._CalcNRowMColSpread = function(self, ...)
-  -- function num : 0_12
-  return (self._hub):_CalcNRowMColSpread(...)
+function SkillScopeCalculator_Base:_CalcNRowMColSpread(...)
+  return self._hub:_CalcNRowMColSpread(...)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_Base._GetIntersectionScope = function(self, list1, list2)
-  -- function num : 0_13 , upvalues : _ENV
+function SkillScopeCalculator_Base:_GetIntersectionScope(list1, list2)
   local out = {}
-  for _,e in ipairs(list1) do
-    if (table.icontains)(list2, e) then
-      (table.insert)(out, e)
+  for _, e in ipairs(list1) do
+    if table.icontains(list2, e) then
+      table.insert(out, e)
     end
   end
   return out
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_Base._GetExceptScope = function(self, list1, list2)
-  -- function num : 0_14 , upvalues : _ENV
+function SkillScopeCalculator_Base:_GetExceptScope(list1, list2)
   local out = {}
-  for _,e in ipairs(list1) do
-    if not (table.icontains)(list2, e) then
-      (table.insert)(out, e)
+  for _, e in ipairs(list1) do
+    if not table.icontains(list2, e) then
+      table.insert(out, e)
     end
   end
   return out
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_Base._CalFixedPos = function(self, posList)
-  -- function num : 0_15 , upvalues : _ENV
+function SkillScopeCalculator_Base:_CalFixedPos(posList)
   local arr = {}
-  for _,v in ipairs(posList) do
-    (table.insert)(arr, Vector2(v[1], v[2]))
+  for _, v in ipairs(posList) do
+    table.insert(arr, Vector2(v[1], v[2]))
   end
   return arr
 end
-
-

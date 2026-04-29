@@ -1,26 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/System/Timer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local setmetatable = setmetatable
-local UpdateBeat = UpdateBeat
-local CoUpdateBeat = CoUpdateBeat
-local Time = Time
+local setmetatable = _ENV.setmetatable
+local UpdateBeat = _ENV.UpdateBeat
+local CoUpdateBeat = _ENV.CoUpdateBeat
+local Time = _ENV.Time
 Timer = {}
-local Timer = Timer
+local Timer = _ENV.Timer
 local mt = {__index = Timer}
-Timer.New = function(func, duration, loop, unscaled)
-  -- function num : 0_0 , upvalues : setmetatable, mt
-  unscaled = unscaled or not false or true
-  if not loop then
-    loop = 1
-  end
-  return setmetatable({func = func, duration = duration, time = duration, loop = loop, unscaled = unscaled, running = false}, mt)
+
+function Timer.New(func, duration, loop, unscaled)
+  unscaled = unscaled or false and true
+  loop = loop or 1
+  return setmetatable({
+    func = func,
+    duration = duration,
+    time = duration,
+    loop = loop,
+    unscaled = unscaled,
+    running = false
+  }, mt)
 end
 
-Timer.Start = function(self)
-  -- function num : 0_1 , upvalues : UpdateBeat
+function Timer:Start()
   self.running = true
   if not self.handle then
     self.handle = UpdateBeat:CreateListener(self.Update, self)
@@ -28,8 +27,7 @@ Timer.Start = function(self)
   UpdateBeat:AddListener(self.handle)
 end
 
-Timer.Reset = function(self, func, duration, loop, unscaled)
-  -- function num : 0_2
+function Timer:Reset(func, duration, loop, unscaled)
   self.duration = duration
   self.loop = loop or 1
   self.unscaled = unscaled
@@ -37,59 +35,57 @@ Timer.Reset = function(self, func, duration, loop, unscaled)
   self.time = duration
 end
 
-Timer.Stop = function(self)
-  -- function num : 0_3 , upvalues : UpdateBeat
+function Timer:Stop()
   self.running = false
   if self.handle then
     UpdateBeat:RemoveListener(self.handle)
   end
 end
 
-Timer.Update = function(self)
-  -- function num : 0_4 , upvalues : Time
+function Timer:Update()
   if not self.running then
-    return 
+    return
   end
   local delta = self.unscaled and Time.unscaledDeltaTime or Time.deltaTime
   self.time = self.time - delta
   if self.time <= 0 then
-    (self.func)()
-    if self.loop > 0 then
+    self.func()
+    if 0 < self.loop then
       self.loop = self.loop - 1
       self.time = self.time + self.duration
     end
     if self.loop == 0 then
       self:Stop()
-    else
-      if self.loop < 0 then
-        self.time = self.time + self.duration
-      end
+    elseif 0 > self.loop then
+      self.time = self.time + self.duration
     end
   end
 end
 
 FrameTimer = {}
-local FrameTimer = FrameTimer
+local FrameTimer = _ENV.FrameTimer
 local mt2 = {__index = FrameTimer}
-FrameTimer.New = function(func, count, loop)
-  -- function num : 0_5 , upvalues : Time, setmetatable, mt2
+
+function FrameTimer.New(func, count, loop)
   local c = Time.frameCount + count
-  if not loop then
-    loop = 1
-  end
-  return setmetatable({func = func, loop = loop, duration = count, count = c, running = false}, mt2)
+  loop = loop or 1
+  return setmetatable({
+    func = func,
+    loop = loop,
+    duration = count,
+    count = c,
+    running = false
+  }, mt2)
 end
 
-FrameTimer.Reset = function(self, func, count, loop)
-  -- function num : 0_6 , upvalues : Time
+function FrameTimer:Reset(func, count, loop)
   self.func = func
   self.duration = count
   self.loop = loop
   self.count = Time.frameCount + count
 end
 
-FrameTimer.Start = function(self)
-  -- function num : 0_7 , upvalues : CoUpdateBeat
+function FrameTimer:Start()
   if not self.handle then
     self.handle = CoUpdateBeat:CreateListener(self.Update, self)
   end
@@ -97,21 +93,19 @@ FrameTimer.Start = function(self)
   self.running = true
 end
 
-FrameTimer.Stop = function(self)
-  -- function num : 0_8 , upvalues : CoUpdateBeat
+function FrameTimer:Stop()
   self.running = false
   if self.handle then
     CoUpdateBeat:RemoveListener(self.handle)
   end
 end
 
-FrameTimer.Update = function(self)
-  -- function num : 0_9 , upvalues : Time
+function FrameTimer:Update()
   if not self.running then
-    return 
+    return
   end
-  if self.count <= Time.frameCount then
-    (self.func)()
+  if Time.frameCount >= self.count then
+    self.func()
     if self.loop > 0 then
       self.loop = self.loop - 1
     end
@@ -124,18 +118,21 @@ FrameTimer.Update = function(self)
 end
 
 CoTimer = {}
-local CoTimer = CoTimer
+local CoTimer = _ENV.CoTimer
 local mt3 = {__index = CoTimer}
-CoTimer.New = function(func, duration, loop)
-  -- function num : 0_10 , upvalues : setmetatable, mt3
-  if not loop then
-    loop = 1
-  end
-  return setmetatable({duration = duration, loop = loop, func = func, time = duration, running = false}, mt3)
+
+function CoTimer.New(func, duration, loop)
+  loop = loop or 1
+  return setmetatable({
+    duration = duration,
+    loop = loop,
+    func = func,
+    time = duration,
+    running = false
+  }, mt3)
 end
 
-CoTimer.Start = function(self)
-  -- function num : 0_11 , upvalues : CoUpdateBeat
+function CoTimer:Start()
   if not self.handle then
     self.handle = CoUpdateBeat:CreateListener(self.Update, self)
   end
@@ -143,42 +140,35 @@ CoTimer.Start = function(self)
   CoUpdateBeat:AddListener(self.handle)
 end
 
-CoTimer.Reset = function(self, func, duration, loop)
-  -- function num : 0_12
+function CoTimer:Reset(func, duration, loop)
   self.duration = duration
   self.loop = loop or 1
   self.func = func
   self.time = duration
 end
 
-CoTimer.Stop = function(self)
-  -- function num : 0_13 , upvalues : CoUpdateBeat
+function CoTimer:Stop()
   self.running = false
   if self.handle then
     CoUpdateBeat:RemoveListener(self.handle)
   end
 end
 
-CoTimer.Update = function(self)
-  -- function num : 0_14 , upvalues : Time
+function CoTimer:Update()
   if not self.running then
-    return 
+    return
   end
   if self.time <= 0 then
-    (self.func)()
-    if self.loop > 0 then
+    self.func()
+    if 0 < self.loop then
       self.loop = self.loop - 1
       self.time = self.time + self.duration
     end
     if self.loop == 0 then
       self:Stop()
-    else
-      if self.loop < 0 then
-        self.time = self.time + self.duration
-      end
+    elseif 0 > self.loop then
+      self.time = self.time + self.duration
     end
   end
   self.time = self.time - Time.deltaTime
 end
-
-

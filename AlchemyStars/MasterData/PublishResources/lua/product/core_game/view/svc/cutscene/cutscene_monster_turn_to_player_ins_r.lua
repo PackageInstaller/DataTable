@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_monster_turn_to_player_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("cutscene_base_ins_r")
 _class("CutsceneMonsterTurnToPlayerInstruction", CutsceneBaseInstruction)
 CutsceneMonsterTurnToPlayerInstruction = CutsceneMonsterTurnToPlayerInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneMonsterTurnToPlayerInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function CutsceneMonsterTurnToPlayerInstruction:Constructor(paramList)
   self._name = paramList.name
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneMonsterTurnToPlayerInstruction.DoInstruction = function(self, TT, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function CutsceneMonsterTurnToPlayerInstruction:DoInstruction(TT, phaseContext)
   local world = phaseContext:GetCutsceneWorld()
   local cutsceneServiceRender = world:GetService("Cutscene")
-  local playerEntity = (world:Player()):GetLocalTeamEntity()
+  local playerEntity = world:Player():GetLocalTeamEntity()
   local playerPos = cutsceneServiceRender:GetCutsceneRenderGridPosition(playerEntity)
-  for i,entity in ipairs(cutsceneServiceRender:GetCutsceneMonsterGroupEntity()) do
+  for i, entity in ipairs(cutsceneServiceRender:GetCutsceneMonsterGroupEntity()) do
     local cutsceneMonsterComponent = entity:CutsceneMonster()
     if cutsceneMonsterComponent:GetCutsceneMonsterName() == self._name then
       local curPos = cutsceneServiceRender:GetCutsceneRenderGridPosition(entity)
@@ -30,5 +20,3 @@ CutsceneMonsterTurnToPlayerInstruction.DoInstruction = function(self, TT, phaseC
     end
   end
 end
-
-

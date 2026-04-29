@@ -1,72 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/breed/ui_homeland_breed_manual_tag.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBreedManualTag", UICustomWidget)
 UIHomelandBreedManualTag = UIHomelandBreedManualTag
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBreedManualTag.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandBreedManualTag:Constructor()
   self._atlas = self:GetAsset("UIHomelandBreed.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualTag.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandBreedManualTag:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualTag._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandBreedManualTag:_GetComponents()
   self._text = self:GetUIComponent("UILocalizationText", "Text")
   self._bg = self:GetUIComponent("Image", "Bg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualTag.SetData = function(self, data, index, callBack)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandBreedManualTag:SetData(data, index, callBack)
   self._data = data
   self._index = index
   self._callBack = callBack
-  local suffix = "_" .. (self._data).species .. "_" .. (self._data).pedigree
-  local s2 = (StringTable.Get)("str_homeland_breed_pedigree" .. suffix)
-  ;
-  (self._text):SetText(s2)
+  local suffix = "_" .. self._data.species .. "_" .. self._data.pedigree
+  local s2 = StringTable.Get("str_homeland_breed_pedigree" .. suffix)
+  self._text:SetText(s2)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualTag.BgOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomelandBreedManualTag:BgOnClick(go)
   if self._callBack then
-    (self._callBack)(self._data, self._index)
+    self._callBack(self._data, self._index)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualTag.RefreshState = function(self, state)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandBreedManualTag:RefreshState(state)
   local sprite = "n17_plant_di25"
-  local color = Color(0.4156862745098, 0.4156862745098, 0.4156862745098)
+  local color = Color(0.41568627450980394, 0.41568627450980394, 0.41568627450980394)
   if state then
     sprite = "n17_plant_di24"
     color = Color.white
   end
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._bg).sprite = (self._atlas):GetSprite(sprite)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._text).color = color
+  self._bg.sprite = self._atlas:GetSprite(sprite)
+  self._text.color = color
 end
-
-

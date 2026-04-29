@@ -1,60 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/dantang/ui_campaign_center_dantang.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UICampaignCenterDanTang", UISideEnterCenterContentBase)
 UICampaignCenterDanTang = UICampaignCenterDanTang
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICampaignCenterDanTang.DoInit = function(self)
-  -- function num : 0_0
+function UICampaignCenterDanTang:DoInit()
   self:InitWidget()
   self._campaign = self._data
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang.DoShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICampaignCenterDanTang:DoShow()
   if self:CheckShareBtnActive() then
     self:AttachEvent(GameEventType.OnFocusAfterShareBack, self.OnShareResult)
   end
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
+    self._campaign:ClearCampaignNew(TT)
+  end)
   self._lineCmptId = ECCampaignInlandS1ComponentID.Line_MISSION
-  self._lineCpt = (self._campaign):GetComponent(self._lineCmptId)
-  self._lineCptInfo = (self._lineCpt):GetComponentInfo()
+  self._lineCpt = self._campaign:GetComponent(self._lineCmptId)
+  self._lineCptInfo = self._lineCpt:GetComponentInfo()
   self._timeHolder = UITimerHolder:New()
-  local closeTime = (self._lineCptInfo).m_close_time
-  local countDown = function()
-    -- function num : 0_1_1 , upvalues : _ENV, closeTime, self
+  local closeTime = self._lineCptInfo.m_close_time
+  
+  local function countDown()
     local now = GetSvrTimeNow()
-    local time = (math.ceil)(closeTime - now)
+    local time = math.ceil(closeTime - now)
     if time <= 0 then
-      (self._timeHolder):StopTimer("CountDown")
+      self._timeHolder:StopTimer("CountDown")
       self._timeString = nil
-      local str = (StringTable.Get)("str_activity_common_less_minute")
-      ;
-      (self.remainTime):SetText((StringTable.Get)("str_activity_dantang_remain_time", str))
+      local str = StringTable.Get("str_activity_common_less_minute")
+      self.remainTime:SetText(StringTable.Get("str_activity_dantang_remain_time", str))
     else
-      do
-        local timeStr = (HelperProxy:GetInstance()):FormatTime_3(time)
-        if self._timeString ~= timeStr then
-          (self.remainTime):SetText((StringTable.Get)("str_activity_dantang_remain_time", timeStr))
-          self._timeString = timeStr
-        end
+      local timeStr = HelperProxy:GetInstance():FormatTime_3(time)
+      if self._timeString ~= timeStr then
+        self.remainTime:SetText(StringTable.Get("str_activity_dantang_remain_time", timeStr))
+        self._timeString = timeStr
       end
     end
   end
-
+  
   countDown()
-  ;
-  (self._timeHolder):StartTimerInfinite("CountDown", 1000, countDown)
+  self._timeHolder:StartTimerInfinite("CountDown", 1000, countDown)
   self:_ResetMap()
   if self:_CheckPreRed() then
     self:AttachEvent(GameEventType.DanTangPreAwardCollected, self._CheckPreRed)
@@ -62,134 +46,96 @@ UICampaignCenterDanTang.DoShow = function(self)
   self:SetShareBtnActive()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang.DoHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICampaignCenterDanTang:DoHide()
   if self._timeHolder then
-    (self._timeHolder):Dispose()
+    self._timeHolder:Dispose()
     self._timeHolder = nil
   end
   self:DetachEvent(GameEventType.OnFocusAfterShareBack, self.OnShareResult)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang.DoDestroy = function(self)
-  -- function num : 0_3
+function UICampaignCenterDanTang:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang.InitWidget = function(self)
-  -- function num : 0_4
+function UICampaignCenterDanTang:InitWidget()
   self.remainTime = self:GetUIComponent("UILocalizedTMP", "remainTime")
   self.title = self:GetUIComponent("RawImageLoader", "title")
   self.content = self:GetUIComponent("UISelectObjectPath", "Content")
-  self._viewpotSize = ((self:GetUIComponent("RectTransform", "Viewport")).rect).size
+  self._viewpotSize = self:GetUIComponent("RectTransform", "Viewport").rect.size
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
   self.preRed = self:GetGameObject("PreRed")
   self.shareRoot = self:GetGameObject("shareRoot")
   self.ShareBtnGo = self:GetGameObject("ShareBtn")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang.CheckShareBtnActive = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._shareActive = ((GameGlobal.GetModule)(ShareModule)):CanShare()
+function UICampaignCenterDanTang:CheckShareBtnActive()
+  self._shareActive = GameGlobal.GetModule(ShareModule):CanShare()
   if not self._shareActive then
-    (self.ShareBtnGo):SetActive(false)
+    self.ShareBtnGo:SetActive(false)
     return self._shareActive
   end
-  local localProcess = (self._campaign):GetLocalProcess()
+  local localProcess = self._campaign:GetLocalProcess()
   local storyInfo = localProcess:GetComponentInfo(ECCampaignInlandS1ComponentID.STORY)
-  local storyid = (self:GetStoryID())
-  local dataActive = nil
-  if storyInfo.m_recieved_reward_story and (table.count)(storyInfo.m_recieved_reward_story) > 0 then
-    dataActive = not (table.icontains)(storyInfo.m_recieved_reward_story, storyid)
+  local storyid = self:GetStoryID()
+  local dataActive
+  if storyInfo.m_recieved_reward_story and table.count(storyInfo.m_recieved_reward_story) > 0 then
+    dataActive = not table.icontains(storyInfo.m_recieved_reward_story, storyid)
   else
     dataActive = true
   end
-  if dataActive then
-    self._shareActive = self._shareActive
-    ;
-    (self.ShareBtnGo):SetActive(self._shareActive)
-    return self._shareActive
-  end
+  self._shareActive = dataActive and self._shareActive
+  self.ShareBtnGo:SetActive(self._shareActive)
+  return self._shareActive
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang.GetStoryID = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local com = (self._campaign):GetComponent(ECCampaignInlandS1ComponentID.STORY)
+function UICampaignCenterDanTang:GetStoryID()
+  local com = self._campaign:GetComponent(ECCampaignInlandS1ComponentID.STORY)
   local comcfgid = com:GetComponentCfgId()
-  local cfg = (Cfg.cfg_component_story)[comcfgid]
+  local cfg = Cfg.cfg_component_story[comcfgid]
   if not cfg then
-    (Log.error)("###[UICampaignCenterDanTang] cfg is nil ! id --> ", comcfgid)
-    return 
+    Log.error("###[UICampaignCenterDanTang] cfg is nil ! id --> ", comcfgid)
+    return
   end
   local storyList = cfg.StoryID
   if not storyList or not next(storyList) then
-    (Log.error)("###[UICampaignCenterDanTang] storyList is nil !")
-    return 
+    Log.error("###[UICampaignCenterDanTang] storyList is nil !")
+    return
   end
   return storyList[1]
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang.SetShareBtnActive = function(self)
-  -- function num : 0_7
-  (self.shareRoot):SetActive(self._shareActive)
+function UICampaignCenterDanTang:SetShareBtnActive()
+  self.shareRoot:SetActive(self._shareActive)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang.DetailBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UICampaignCenterDanTang:DetailBtnOnClick(go)
   self:ShowDialog("UICampaignCenterDanTangIntro")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang._SetContentSize = function(self, showMission, unlockInfo)
-  -- function num : 0_9 , upvalues : _ENV
-  local viewHeight = (self._viewpotSize).y
-  local height = (UIActivityLineMissionHelper.CalcContentHeight)(self._line_component, showMission, viewHeight)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._contentRect).sizeDelta = Vector2(((self._contentRect).sizeDelta).x, height)
+function UICampaignCenterDanTang:_SetContentSize(showMission, unlockInfo)
+  local viewHeight = self._viewpotSize.y
+  local height = UIActivityLineMissionHelper.CalcContentHeight(self._line_component, showMission, viewHeight)
+  self._contentRect.sizeDelta = Vector2(self._contentRect.sizeDelta.x, height)
   local down = math.maxinteger
-  for _,cfg in pairs(showMission) do
+  for _, cfg in pairs(showMission) do
     if unlockInfo[cfg.CampaignMissionId] then
-      down = (math.min)(down, cfg.MapPosY)
+      down = math.min(down, cfg.MapPosY)
     end
   end
-  local y = (math.abs)(down) - viewHeight / 2
-  y = (Mathf.Clamp)(y, 0, height - viewHeight)
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._contentRect).anchoredPosition = Vector2(0, y)
+  local y = math.abs(down) - viewHeight / 2
+  y = Mathf.Clamp(y, 0, height - viewHeight)
+  self._contentRect.anchoredPosition = Vector2(0, y)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang._SetNodeAndLine = function(self, levelCount, lineCount, showMission, unlockInfo)
-  -- function num : 0_10 , upvalues : _ENV
-  local nodes = (UIWidgetHelper.SpawnObjects)(self, "Nodes", "UIDantangLineMissionMapNode", levelCount)
-  local lines = (UIWidgetHelper.SpawnObjects)(self, "Lines", "UIDantangLineMissionMapLine", lineCount)
+function UICampaignCenterDanTang:_SetNodeAndLine(levelCount, lineCount, showMission, unlockInfo)
+  local nodes = UIWidgetHelper.SpawnObjects(self, "Nodes", "UIDantangLineMissionMapNode", levelCount)
+  local lines = UIWidgetHelper.SpawnObjects(self, "Lines", "UIDantangLineMissionMapLine", lineCount)
   local nodeIdx, lineIdx = 1, 1
-  for missionID,cfg in pairs(showMission) do
+  for missionID, cfg in pairs(showMission) do
     local uiNode = nodes[nodeIdx]
-    uiNode:SetData(cfg, (((self._lineCpt):GetComponentInfo()).m_pass_mission_info)[missionID], unlockInfo[missionID], function(stageId, isStory)
-    -- function num : 0_10_0 , upvalues : self
-    self:_OnNodeClick(stageId, isStory)
-  end
-)
+    uiNode:SetData(cfg, self._lineCpt:GetComponentInfo().m_pass_mission_info[missionID], unlockInfo[missionID], function(stageId, isStory)
+      self:_OnNodeClick(stageId, isStory)
+    end)
     nodeIdx = nodeIdx + 1
     if cfg.WayPointType ~= 4 and cfg.NeedMissionId ~= 0 then
       local n1 = showMission[cfg.NeedMissionId]
@@ -201,148 +147,102 @@ UICampaignCenterDanTang._SetNodeAndLine = function(self, levelCount, lineCount, 
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang._OnNodeClick = function(self, stageId, isStory)
-  -- function num : 0_11 , upvalues : _ENV
-  do
-    if not (self._lineCpt):ComponentIsOpen() then
-      local result = (self._campaign):CheckComponentOpenClientError(self._lineCmptId)
-      ;
-      (self._campaign):CheckErrorCode(result)
-      return 
-    end
-    if isStory then
-      (UIActivityLineMissionHelper.EnterStage_Story)(self._campaign, self._lineCpt, stageId, function()
-    -- function num : 0_11_0 , upvalues : self
-    self._lineCpt = (self._campaign):GetComponent(self._lineCmptId)
-    self._lineCptInfo = (self._lineCpt):GetComponentInfo()
-    self:_ResetMap()
+function UICampaignCenterDanTang:_OnNodeClick(stageId, isStory)
+  if not self._lineCpt:ComponentIsOpen() then
+    local result = self._campaign:CheckComponentOpenClientError(self._lineCmptId)
+    self._campaign:CheckErrorCode(result)
+    return
   end
-)
-    else
-      ;
-      (UIActivityLineMissionHelper.EnterStage_Battle)(self._campaign, self._lineCpt, stageId, false)
-    end
+  if isStory then
+    UIActivityLineMissionHelper.EnterStage_Story(self._campaign, self._lineCpt, stageId, function()
+      self._lineCpt = self._campaign:GetComponent(self._lineCmptId)
+      self._lineCptInfo = self._lineCpt:GetComponentInfo()
+      self:_ResetMap()
+    end)
+  else
+    UIActivityLineMissionHelper.EnterStage_Battle(self._campaign, self._lineCpt, stageId, false)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang._ResetMap = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local missionCfgs = (UIActivityLineMissionHelper.GetMissionCfgs)(self._lineCpt)
-  local levelCount, lineCount, showMission = (UIActivityLineMissionHelper.GetNodeLineInfoVertical)(self._lineCpt, missionCfgs)
-  local unlockInfo = (UIActivityLineMissionHelper.GetUnlockInfoVertical)(self._lineCpt, missionCfgs)
+function UICampaignCenterDanTang:_ResetMap()
+  local missionCfgs = UIActivityLineMissionHelper.GetMissionCfgs(self._lineCpt)
+  local levelCount, lineCount, showMission = UIActivityLineMissionHelper.GetNodeLineInfoVertical(self._lineCpt, missionCfgs)
+  local unlockInfo = UIActivityLineMissionHelper.GetUnlockInfoVertical(self._lineCpt, missionCfgs)
   self:_SetContentSize(showMission, unlockInfo)
   self:_SetNodeAndLine(levelCount, lineCount, showMission, unlockInfo)
   self._allMissionCfgs = missionCfgs
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang.PreAwardBtnOnClick = function(self)
-  -- function num : 0_13
-  self:ShowDialog("UICampaignCenterDanTangPreAwards", (self._campaign)._id)
+function UICampaignCenterDanTang:PreAwardBtnOnClick()
+  self:ShowDialog("UICampaignCenterDanTangPreAwards", self._campaign._id)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang.VideoButtonOnClick = function(self)
-  -- function num : 0_14
+function UICampaignCenterDanTang:VideoButtonOnClick()
   self:ShowDialog("UICriVideoControllerNowrap", "dantang_op", "card_pool_pic_210003_bg")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang._CheckPreRed = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UICampaignCenterDanTang:_CheckPreRed()
   local module = self:GetModule(CampaignModule)
   local preSample = module:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_INLAND_S0)
   local preRed = false
   if preSample then
     preRed = preSample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD)
   end
-  ;
-  (self.preRed):SetActive(preRed)
+  self.preRed:SetActive(preRed)
   return preRed
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang.ShareBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
+function UICampaignCenterDanTang:ShareBtnOnClick(go)
   if self._shareActive then
-    (Log.debug)("###[UICampaignCenterDanTang] 开始分享")
+    Log.debug("###[UICampaignCenterDanTang] 开始分享")
   else
-    ;
-    (Log.debug)("###[UICampaignCenterDanTang] 已经领奖")
+    Log.debug("###[UICampaignCenterDanTang] 已经领奖")
   end
   self:ShowDialog("UICampaignCenterDanTangShare", self._shareActive)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang.OnShareResult = function(self, RetCode)
-  -- function num : 0_17 , upvalues : _ENV
-  (Log.debug)("###[UICampaignCenterDanTang] OnShareResult RetCode:", RetCode)
+function UICampaignCenterDanTang:OnShareResult(RetCode)
+  Log.debug("###[UICampaignCenterDanTang] OnShareResult RetCode:", RetCode)
   if not self._shareActive then
-    (Log.debug)("###[UICampaignCenterDanTang] 已经领奖")
-    return 
+    Log.debug("###[UICampaignCenterDanTang] 已经领奖")
+    return
   end
-  ;
-  (Log.debug)("###[UICampaignCenterDanTang] 开始领奖表现")
+  Log.debug("###[UICampaignCenterDanTang] 开始领奖表现")
   local storyid = self:GetStoryID()
   self:FinishStory(storyid)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang.FinishStory = function(self, id)
-  -- function num : 0_18 , upvalues : _ENV
+function UICampaignCenterDanTang:FinishStory(id)
   self:Lock("UICampaignCenterDanTang:OnFinishStory")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnFinishStory, self, id)
+  GameGlobal.TaskManager():StartTask(self.OnFinishStory, self, id)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang.OnFinishStory = function(self, TT, storyid)
-  -- function num : 0_19 , upvalues : _ENV
+function UICampaignCenterDanTang:OnFinishStory(TT, storyid)
   local res = AsyncRequestRes:New()
-  local localProcess = (self._campaign):GetLocalProcess()
+  local localProcess = self._campaign:GetLocalProcess()
   local storyCom = localProcess:GetComponent(ECCampaignInlandS1ComponentID.STORY)
   local rewards = storyCom:HandleStoryTake(TT, res, storyid)
   self:UnLock("UICampaignCenterDanTang:OnFinishStory")
   self._rewards = nil
   if res:GetSucc() then
-    (Log.error)("###[UICampaignCenterDanTang] OnFinishStory succ")
+    Log.error("###[UICampaignCenterDanTang] OnFinishStory succ")
     self:ShowRewards(rewards)
   else
-    ;
-    (Log.error)("###[UICampaignCenterDanTang] OnFinishStory fail, result:", res:GetResult(), " storyid:", storyid)
+    Log.error("###[UICampaignCenterDanTang] OnFinishStory fail, result:", res:GetResult(), " storyid:", storyid)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTang.ShowRewards = function(self, rewards)
-  -- function num : 0_20 , upvalues : _ENV
+function UICampaignCenterDanTang:ShowRewards(rewards)
   if not rewards then
-    (Log.debug)("###[UICampaignCenterDanTang] rewards is nil !")
-    return 
+    Log.debug("###[UICampaignCenterDanTang] rewards is nil !")
+    return
   end
   if self.view == nil then
-    return 
+    return
   end
   self:ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_20_0 , upvalues : self
     self:CheckShareBtnActive()
     self:SetShareBtnActive()
-  end
-)
-  ;
-  ((GameGlobal.UIStateManager)()):CallUIMethod("UIShare", "HideTipsTex")
+  end)
+  GameGlobal.UIStateManager():CallUIMethod("UIShare", "HideTipsTex")
 end
-
-

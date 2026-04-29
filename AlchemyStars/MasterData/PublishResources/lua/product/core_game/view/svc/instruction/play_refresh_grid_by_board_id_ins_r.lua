@@ -1,91 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_refresh_grid_by_board_id_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayRefreshGridByBoardIDInstruction", BaseInstruction)
 PlayRefreshGridByBoardIDInstruction = PlayRefreshGridByBoardIDInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayRefreshGridByBoardIDInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayRefreshGridByBoardIDInstruction:Constructor(paramList)
   local str = paramList.sceneEffectIDs
-  local strIDs = (string.split)(str, "|")
+  local strIDs = string.split(str, "|")
   self._sceneEffectIDs = {}
-  for _,v in ipairs(strIDs) do
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R9 in 'UnsetPending'
-
-    (self._sceneEffectIDs)[#self._sceneEffectIDs + 1] = tonumber(v)
+  for _, v in ipairs(strIDs) do
+    self._sceneEffectIDs[#self._sceneEffectIDs + 1] = tonumber(v)
   end
   self._sceneEffPos = Vector2(tonumber(paramList.gridPosX), tonumber(paramList.gridPosY))
   str = paramList.sceneChangeEffectIDs
-  strIDs = (string.split)(str, "|")
+  strIDs = string.split(str, "|")
   self._sceneChangeEffectIDs = {}
-  for _,v in ipairs(strIDs) do
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R9 in 'UnsetPending'
-
-    (self._sceneChangeEffectIDs)[#self._sceneChangeEffectIDs + 1] = tonumber(v)
+  for _, v in ipairs(strIDs) do
+    self._sceneChangeEffectIDs[#self._sceneChangeEffectIDs + 1] = tonumber(v)
   end
-  do
-    self._changeDelayTime = tonumber(paramList.changeDelayTime) or 0
-    self._backIntensity = tonumber(paramList.backIntensity)
-  end
+  self._changeDelayTime = tonumber(paramList.changeDelayTime) or 0
+  self._backIntensity = tonumber(paramList.backIntensity)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayRefreshGridByBoardIDInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayRefreshGridByBoardIDInstruction:GetCacheResource()
   local t = {}
-  for _,value in ipairs(self._sceneEffectIDs) do
-    if value and value > 0 then
-      (table.insert)(t, {((Cfg.cfg_effect)[value]).ResPath, 1})
+  for _, value in ipairs(self._sceneEffectIDs) do
+    if value and 0 < value then
+      table.insert(t, {
+        Cfg.cfg_effect[value].ResPath,
+        1
+      })
     end
   end
-  for _,value in ipairs(self._sceneChangeEffectIDs) do
-    if value and value > 0 then
-      (table.insert)(t, {((Cfg.cfg_effect)[value]).ResPath, 1})
+  for _, value in ipairs(self._sceneChangeEffectIDs) do
+    if value and 0 < value then
+      table.insert(t, {
+        Cfg.cfg_effect[value].ResPath,
+        1
+      })
     end
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayRefreshGridByBoardIDInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayRefreshGridByBoardIDInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local result = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.RefreshGridByBoardID)
   if result == nil then
-    return 
+    return
   end
   local changeTimes = result:GetSceneChangeTimes()
   local index = 0
-  index = (math.fmod)(changeTimes, #self._sceneEffectIDs)
+  index = math.fmod(changeTimes, #self._sceneEffectIDs)
   if index == 0 then
     index = #self._sceneEffectIDs
   end
-  local curSceneEffectID = (self._sceneEffectIDs)[index]
-  local curSceneChangeEffectID = (self._sceneChangeEffectIDs)[index]
+  local curSceneEffectID = self._sceneEffectIDs[index]
+  local curSceneChangeEffectID = self._sceneChangeEffectIDs[index]
   local effectSvc = world:GetService("Effect")
   effectSvc:CreateEffect(curSceneChangeEffectID, casterEntity)
-  if self._changeDelayTime > 0 then
+  if 0 < self._changeDelayTime then
     YIELD(TT, self._changeDelayTime)
   end
   local trapSvc = world:GetService("TrapRender")
   local destroyTrapEntityIDList = result:GetDestroyTrapEntityIDList()
   local trapEntityList = {}
   local trapEntityPlayDieList = {}
-  for _,entityID in ipairs(destroyTrapEntityIDList) do
+  for _, entityID in ipairs(destroyTrapEntityIDList) do
     local entity = world:GetEntityByID(entityID)
     local trapRenderCmpt = entity:TrapRender()
     if trapRenderCmpt and trapRenderCmpt:GetIsPrismGrid() ~= nil then
-      (table.insert)(trapEntityPlayDieList, entity)
+      table.insert(trapEntityPlayDieList, entity)
     else
-      ;
-      (table.insert)(trapEntityList, entity)
+      table.insert(trapEntityList, entity)
     end
   end
   trapSvc:PlayTrapDieSkill(TT, trapEntityPlayDieList)
@@ -94,36 +80,25 @@ PlayRefreshGridByBoardIDInstruction.DoInstruction = function(self, TT, casterEnt
   local renderBoardEntity = world:GetRenderBoardEntity()
   local renderBoardCmpt = renderBoardEntity:RenderBoard()
   local boardSvc = world:GetService("BoardRender")
-  for pos,pieceType in pairs(result:GetGridPieceData()) do
+  for pos, pieceType in pairs(result:GetGridPieceData()) do
     local currentPiece = renderBoardCmpt:GetGridRenderEntity(pos)
     if currentPiece then
-      do
-        do
-          if currentPiece:Piece() and (currentPiece:Piece()):GetPieceType() ~= pieceType then
-            local gridEntity = boardSvc:ChangeGridEntity(pieceType, pos)
-            pieceSvc:SetPieceEntityAnimNormal(gridEntity)
-          end
-          pieceSvc:SetPieceRenderEffect(pos, PieceEffectType.Normal)
-          boardSvc:CreateGridEntity(pieceType, pos)
-          -- DECOMPILER ERROR at PC136: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC136: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC136: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if currentPiece:Piece() and currentPiece:Piece():GetPieceType() ~= pieceType then
+        local gridEntity = boardSvc:ChangeGridEntity(pieceType, pos)
+        pieceSvc:SetPieceEntityAnimNormal(gridEntity)
       end
+      pieceSvc:SetPieceRenderEffect(pos, PieceEffectType.Normal)
+    else
+      boardSvc:CreateGridEntity(pieceType, pos)
     end
   end
   local effectID = renderBoardCmpt:GetSceneEffectEntityID()
   effectSvc:DestroyEffectByID(effectID)
   local sceneEffEntity = effectSvc:CreateWorldPositionEffect(curSceneEffectID, self._sceneEffPos)
   renderBoardCmpt:SetSceneEffectEntityID(sceneEffEntity:GetID())
-  local goRenderSetting = ((UnityEngine.GameObject).Find)("[H3DRenderSetting]")
+  local goRenderSetting = UnityEngine.GameObject.Find("[H3DRenderSetting]")
   local csRenderSetting = goRenderSetting:GetComponent("H3DRenderSetting")
   if csRenderSetting.BackIntensity then
     csRenderSetting.BackIntensity = self._backIntensity
   end
 end
-
-

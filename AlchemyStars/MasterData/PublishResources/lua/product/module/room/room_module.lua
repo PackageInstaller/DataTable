@@ -1,224 +1,148 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/room/room_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RoomModule", LoginBaseModule)
 RoomModule = RoomModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RoomModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function RoomModule:Constructor()
   self.m_login_lock = false
   self.auth = GroupAuthInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RoomModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((RoomModule.super).Init)(self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushEnterMatch, self.HandleCEventPushEnterMatch, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushChatMessageToChannel, self.HandlePushRoomChatMessage, self)
+function RoomModule:Init()
+  RoomModule.super.Init(self)
+  self.caller:RegisterPushHandler(CEventPushEnterMatch, self.HandleCEventPushEnterMatch, self)
+  self.caller:RegisterPushHandler(CEventPushChatMessageToChannel, self.HandlePushRoomChatMessage, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RoomModule.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.caller):UnRegisterPushHandler(CEventPushEnterMatch)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventPushChatMessageToChannel)
-  ;
-  ((RoomModule.super).Dispose)(self)
+function RoomModule:Dispose()
+  self.caller:UnRegisterPushHandler(CEventPushEnterMatch)
+  self.caller:UnRegisterPushHandler(CEventPushChatMessageToChannel)
+  RoomModule.super.Dispose(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RoomModule.Login = function(self, TT, svrId, silent, timeout)
-  -- function num : 0_3 , upvalues : _ENV
+function RoomModule:Login(TT, svrId, silent, timeout)
   local res = AsyncRequestRes:New()
   if self.m_login_lock then
-    (Log.warn)(self:Key(), " login room lock is locked")
+    Log.warn(self:Key(), " login room lock is locked")
     return res
   end
-  if self.svrId == svrId and self:IsLogin() and (self.caller):HasAuth() then
-    (Log.warn)(self:Key(), " already pass login room verify")
+  if self.svrId == svrId and self:IsLogin() and self.caller:HasAuth() then
+    Log.warn(self:Key(), " already pass login room verify")
     res:SetSucc(true)
     return res
   end
-  if not ((GameGlobal.GameLogic)()).ClientInfo then
-    (Log.fatal)(self:Key(), " login room client info is null")
+  if not GameGlobal.GameLogic().ClientInfo then
+    Log.fatal(self:Key(), " login room client info is null")
     return res
   end
   self.m_login_lock = true
   if self.svrId ~= svrId or not self:IsLogin() then
     self.svrId = svrId
     self.isLogin = false
-    ;
-    (self.caller):SetPipe2Conn(NetToken:New(NetTokenType.TOKEN_ROOM, "RM", self.svrId), "gateway")
+    self.caller:SetPipe2Conn(NetToken:New(NetTokenType.TOKEN_ROOM, "RM", self.svrId), "gateway")
   end
-  ;
-  (self.caller):LostAuth()
+  self.caller:LostAuth()
   self.curTaskId = GetCurTaskId()
-  ;
-  (Log.debug)(self:Key(), " player ", ((GameGlobal.GameLogic)()):GetOpenId(), self:IsLogin() and " reconn to " or " login room to ", self.svrId)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestLoginVerify)
+  Log.debug(self:Key(), " player ", GameGlobal.GameLogic():GetOpenId(), self:IsLogin() and " reconn to " or " login room to ", self.svrId)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestLoginVerify)
   request.m_is_login = self:IsLogin()
-  request.m_client_info = ((GameGlobal.GameLogic)()).ClientInfo
-  request.m_login_info = ((GameGlobal.GameLogic)()).msdkAuthorityInfo
+  request.m_client_info = GameGlobal.GameLogic().ClientInfo
+  request.m_login_info = GameGlobal.GameLogic().msdkAuthorityInfo
   request.m_group_auth = self.auth
   local nLoginStep = Enum_Login_Step.E_Login_Step_RequestLoginVerify
   local retry_times = 0
   local retry_ms = 1000
-  while 1 do
-    while 1 do
-      while 1 do
-        local replyInfo = self:Call(TT, request, not silent, timeout)
-        res:SetCallErr(replyInfo.res)
-        if not replyInfo:Succ() then
-          (Log.fatal)(self:Key(), " login room room reply failed ", replyInfo.res)
-        else
-          local reply = CEventReplyLoginVerify(replyInfo.msg)
-          res:SetResult(reply.m_ret)
-          local ret = res:GetResult()
-          if ret == MOBILE_LOGIN_ERROR.MOBILE_LOGIN_OK then
-            (Log.debug)(self:Key(), " login room ", ret, ", resend request")
-            self.isLogin = true
-            ;
-            (self.caller):GainAuth()
-            res:SetSucc(true)
-            AdjustTimeCS(reply.m_server_time)
-            -- DECOMPILER ERROR at PC172: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC172: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC172: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC172: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-      if ret == MOBILE_LOGIN_ERROR.MOBILE_LOGIN_RETRY then
-        if retry_times >= 3 then
-          (Log.fatal)(self:Key(), " login room ", ret, ", retry ", retry_times, " limit")
-          ;
-          ((GameGlobal.GameLogic)()):BackToLogin(false, RoomModule, "retry limit: LoginRoom[" .. tostring(nLoginStep) .. ", " .. tostring(ret) .. "]")
-        else
-          retry_times = retry_times + 1
-          ;
-          (Log.debug)(self:Key(), " login room ", ret, ", retry ", retry_times, " times after ", retry_ms, " ms")
-          YIELD(TT, retry_ms)
-          -- DECOMPILER ERROR at PC224: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC224: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC224: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC224: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  while true do
+    local replyInfo = self:Call(TT, request, not silent, timeout)
+    res:SetCallErr(replyInfo.res)
+    if not replyInfo:Succ() then
+      Log.fatal(self:Key(), " login room room reply failed ", replyInfo.res)
+      break
     end
-    ;
-    (Log.fatal)(self:Key(), " login room ", ret, ", reset")
-    ;
-    ((GameGlobal.GameLogic)()):BackToLogin(false, RoomModule, "login failed: LoginRoom[" .. tostring(nLoginStep) .. ", " .. tostring(ret) .. "]")
-    break
+    local reply = CEventReplyLoginVerify(replyInfo.msg)
+    res:SetResult(reply.m_ret)
+    local ret = res:GetResult()
+    if ret == MOBILE_LOGIN_ERROR.MOBILE_LOGIN_OK then
+      Log.debug(self:Key(), " login room ", ret, ", resend request")
+      self.isLogin = true
+      self.caller:GainAuth()
+      res:SetSucc(true)
+      AdjustTimeCS(reply.m_server_time)
+      break
+    elseif ret == MOBILE_LOGIN_ERROR.MOBILE_LOGIN_RETRY then
+      if 3 <= retry_times then
+        Log.fatal(self:Key(), " login room ", ret, ", retry ", retry_times, " limit")
+        GameGlobal.GameLogic():BackToLogin(false, RoomModule, "retry limit: LoginRoom[" .. tostring(nLoginStep) .. ", " .. tostring(ret) .. "]")
+        break
+      end
+      retry_times = retry_times + 1
+      Log.debug(self:Key(), " login room ", ret, ", retry ", retry_times, " times after ", retry_ms, " ms")
+      YIELD(TT, retry_ms)
+    else
+      Log.fatal(self:Key(), " login room ", ret, ", reset")
+      GameGlobal.GameLogic():BackToLogin(false, RoomModule, "login failed: LoginRoom[" .. tostring(nLoginStep) .. ", " .. tostring(ret) .. "]")
+      break
+    end
   end
-  do
-    self.curTaskId = 0
-    self.m_login_lock = false
-    ;
-    (Log.debug)(self:Key(), " login room end")
-    return res
-  end
+  self.curTaskId = 0
+  self.m_login_lock = false
+  Log.debug(self:Key(), " login room end")
+  return res
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RoomModule.EnterRoom = function(self, TT, player_id, room_to_enter)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.debug)("sending CEventRequestEnterRoom")
+function RoomModule:EnterRoom(TT, player_id, room_to_enter)
+  Log.debug("sending CEventRequestEnterRoom")
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestEnterRoom)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestEnterRoom)
   request.m_room_to_enter = room_to_enter
   request.m_player_id = player_id
   local reply = self:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("RoomModule:EnterRoom failed with !reply:Succ()")
+    Log.fatal("RoomModule:EnterRoom failed with !reply:Succ()")
     return res
   end
   local replyEvent = CEventReplyEnterRoom(reply.msg)
   if replyEvent == nil then
-    (Log.fatal)("RoomModule:EnterRoom failed with replyEvent == nil")
+    Log.fatal("RoomModule:EnterRoom failed with replyEvent == nil")
     return res
   end
   if replyEvent.m_ret ~= 0 then
-    (Log.fatal)("RoomModule:EnterRoom failed with ret= " .. replyEvent.m_ret)
+    Log.fatal("RoomModule:EnterRoom failed with ret= " .. replyEvent.m_ret)
     return res
   end
   res:SetSucc(true)
   return res
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RoomModule.EnterMatch = function(self, TT, push_msg)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.fatal)("RoomModule:EnterMatch")
+function RoomModule:EnterMatch(TT, push_msg)
+  Log.fatal("RoomModule:EnterMatch")
   local login = self:GetModule(LoginModule)
   local match = self:GetModule(MatchModule)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (match.auth).player_id = login.PstID
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (match.auth).token = push_msg.m_match_to_enter
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (match.auth).vkey = push_msg.m_vkey
-  local res = match:Login(TT, (push_msg.m_match_to_enter).server_id, false)
+  match.auth.player_id = login.PstID
+  match.auth.token = push_msg.m_match_to_enter
+  match.auth.vkey = push_msg.m_vkey
+  local res = match:Login(TT, push_msg.m_match_to_enter.server_id, false)
   if not res:GetSucc() then
-    (Log.fatal)("RoomModule:EnterMatch failed due to match:Login failure", ", call: ", res:GetCallErr(), ", ret: ", res:GetResult())
-    return 
+    Log.fatal("RoomModule:EnterMatch failed due to match:Login failure", ", call: ", res:GetCallErr(), ", ret: ", res:GetResult())
+    return
   end
   res = match:EnterMatch(TT, login.PstID, push_msg.m_match_to_enter)
   if not res:GetSucc() then
-    (Log.fatal)("RoomModule:EnterMatch failed due to match:EnterMatch failure")
-    return 
+    Log.fatal("RoomModule:EnterMatch failed due to match:EnterMatch failure")
+    return
   end
   match:Loading(50)
   match:Loading(100)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RoomModule.HandleCEventPushEnterMatch = function(self, msg)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.fatal)("RoomModule:HandleCEventPushEnterMatch")
+function RoomModule:HandleCEventPushEnterMatch(msg)
+  Log.fatal("RoomModule:HandleCEventPushEnterMatch")
   local push_msg = CEventPushEnterMatch(msg)
-  ;
-  (Log.fatal)("HandleCEventPushEnterMatch self:StartTask")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.EnterMatch, self, push_msg)
-  ;
-  (Log.fatal)("HandleCEventPushEnterMatch self:StartTask")
+  Log.fatal("HandleCEventPushEnterMatch self:StartTask")
+  GameGlobal.TaskManager():StartTask(self.EnterMatch, self, push_msg)
+  Log.fatal("HandleCEventPushEnterMatch self:StartTask")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RoomModule.HandlePushRoomChatMessage = function(self, msg)
-  -- function num : 0_7 , upvalues : _ENV
+function RoomModule:HandlePushRoomChatMessage(msg)
   local chat = self:GetModule(ChatModule)
   chat:ReceiveChatMessage(msg)
 end
-
-

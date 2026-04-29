@@ -1,98 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/talent/talent_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TalentBaseParam", Object)
 TalentBaseParam = TalentBaseParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TalentBaseParam.Constructor = function(self, t, type, level)
-  -- function num : 0_0
+function TalentBaseParam:Constructor(t, type, level)
   self._talentType = type
   self._level = level
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentBaseParam.GetTalentType = function(self)
-  -- function num : 0_1
+function TalentBaseParam:GetTalentType()
   return self._talentType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentBaseParam.GetTalentLevel = function(self)
-  -- function num : 0_2
+function TalentBaseParam:GetTalentLevel()
   return self._level
 end
 
 _class("TalentAddBuffParam", TalentBaseParam)
 TalentAddBuffParam = TalentAddBuffParam
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-TalentAddBuffParam.Constructor = function(self, t)
-  -- function num : 0_3
+function TalentAddBuffParam:Constructor(t)
   self._buffIDList = t.BuffIDList
   self._buffTargetType = t.BuffTargetType
   self._buffTargetParam = t.BuffTargetParam
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentAddBuffParam.GetBuffID = function(self)
-  -- function num : 0_4
+function TalentAddBuffParam:GetBuffID()
   if #self._buffIDList < self._level then
-    return 
+    return
   end
-  return (self._buffIDList)[self._level]
+  return self._buffIDList[self._level]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentAddBuffParam.GetBuffTargetType = function(self)
-  -- function num : 0_5
+function TalentAddBuffParam:GetBuffTargetType()
   return self._buffTargetType
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentAddBuffParam.GetBuffTargetParam = function(self)
-  -- function num : 0_6
+function TalentAddBuffParam:GetBuffTargetParam()
   return self._buffTargetParam
 end
 
 _class("TalentMasterSkillParam", TalentBaseParam)
 TalentMasterSkillParam = TalentMasterSkillParam
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
 
-TalentMasterSkillParam.Constructor = function(self, t)
-  -- function num : 0_7
+function TalentMasterSkillParam:Constructor(t)
   self._featureList = t
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentMasterSkillParam.GetFeatureList = function(self)
-  -- function num : 0_8
+function TalentMasterSkillParam:GetFeatureList()
   return self._featureList
 end
 
 _class("TalentAddRoundCountParam", TalentBaseParam)
 TalentAddRoundCountParam = TalentAddRoundCountParam
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
 
-TalentAddRoundCountParam.Constructor = function(self, t)
-  -- function num : 0_9
+function TalentAddRoundCountParam:Constructor(t)
   self._levelIDList = t.LevelIDList
   self._count = t.AddCount or 0
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentAddRoundCountParam.GetAddCountByLevelID = function(self, levelID)
-  -- function num : 0_10 , upvalues : _ENV
-  if not (table.icontains)(self._levelIDList, levelID) then
+function TalentAddRoundCountParam:GetAddCountByLevelID(levelID)
+  if not table.icontains(self._levelIDList, levelID) then
     return 0
   end
   return self._count * self._level
@@ -100,42 +66,27 @@ end
 
 _class("TalentAddChangeTeamLeaderCountParam", TalentBaseParam)
 TalentAddChangeTeamLeaderCountParam = TalentAddChangeTeamLeaderCountParam
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-TalentAddChangeTeamLeaderCountParam.Constructor = function(self, t)
-  -- function num : 0_11
+function TalentAddChangeTeamLeaderCountParam:Constructor(t)
   self._count = t.AddCount or 0
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentAddChangeTeamLeaderCountParam.GetAddCount = function(self)
-  -- function num : 0_12
+function TalentAddChangeTeamLeaderCountParam:GetAddCount()
   return self._count * self._level
 end
 
 _class("TalentChooseRelicParam", TalentBaseParam)
 TalentChooseRelicParam = TalentChooseRelicParam
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
 
-TalentChooseRelicParam.Constructor = function(self, t)
-  -- function num : 0_13
+function TalentChooseRelicParam:Constructor(t)
   self._groupID = t.relicGroupID or 0
   self._randomCount = t.randomCount or 0
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentChooseRelicParam.GetGroupID = function(self)
-  -- function num : 0_14
+function TalentChooseRelicParam:GetGroupID()
   return self._groupID
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentChooseRelicParam.GetRandomCount = function(self)
-  -- function num : 0_15
+function TalentChooseRelicParam:GetRandomCount()
   return self._randomCount
 end
-
-

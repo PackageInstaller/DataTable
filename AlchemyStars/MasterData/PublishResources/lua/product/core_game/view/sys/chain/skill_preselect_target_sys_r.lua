@@ -1,41 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/chain/skill_preselect_target_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPreselectTargetSystem_Render", ReactiveSystem)
 SkillPreselectTargetSystem_Render = SkillPreselectTargetSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreselectTargetSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillPreselectTargetSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreselectTargetSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).PreviewChainPath)}, {"Added"})
+function SkillPreselectTargetSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.PreviewChainPath)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreselectTargetSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
-  local autoSvc = (self._world):GetService("AutoFight")
-  if entity:HasPreviewChainPath() then
-    return not autoSvc:IsRunning()
-  end
+function SkillPreselectTargetSystem_Render:Filter(entity)
+  local autoSvc = self._world:GetService("AutoFight")
+  return entity:HasPreviewChainPath() and not autoSvc:IsRunning()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreselectTargetSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetPreviewTeamEntity()
-  for _,e in ipairs(entities) do
+function SkillPreselectTargetSystem_Render:ExecuteEntities(entities)
+  local teamEntity = self._world:Player():GetPreviewTeamEntity()
+  for _, e in ipairs(entities) do
     local entity = e
     local chainPathCmpt = entity:PreviewChainPath()
     local path = chainPathCmpt:GetPreviewChainPath()
@@ -47,34 +31,27 @@ SkillPreselectTargetSystem_Render.ExecuteEntities = function(self, entities)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreselectTargetSystem_Render._SelectPreviewChainTarget = function(self, teamEntity, pieceType, firstElementType)
-  -- function num : 0_4 , upvalues : _ENV
-  local prvwEntity = (self._world):GetPreviewEntity()
+function SkillPreselectTargetSystem_Render:_SelectPreviewChainTarget(teamEntity, pieceType, firstElementType)
+  local prvwEntity = self._world:GetPreviewEntity()
   local selectPetCmpt = prvwEntity:PreviewChainSelectPet()
   selectPetCmpt:ClearPreviewChainSelectPet()
   local battlePetList = self:_SelectPetList(teamEntity, pieceType, firstElementType)
-  for _,petEntityID in ipairs(battlePetList) do
+  for _, petEntityID in ipairs(battlePetList) do
     local chainSkillID = self:_GetPetChainSkillIDByChainPathCount(petEntityID)
-    if chainSkillID > 0 then
+    if 0 < chainSkillID then
       selectPetCmpt:AddPreviewChainSelectPet(petEntityID)
       selectPetCmpt:AddPreviewChainSelectPetSkillID(petEntityID, chainSkillID)
       local scopeResult = self:_CalcChainSkillScopeAndTarget(petEntityID, chainSkillID)
       selectPetCmpt:AddPreviewChainSelectPetScopeResult(petEntityID, scopeResult)
-      if (self._world):MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
-        local petEntity = (self._world):GetEntityByID(petEntityID)
-        ;
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.InOutQueue, (petEntity:PetPstID()):GetPstID(), true)
+      if self._world:MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
+        local petEntity = self._world:GetEntityByID(petEntityID)
+        self._world:EventDispatcher():Dispatch(GameEventType.InOutQueue, petEntity:PetPstID():GetPstID(), true)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreselectTargetSystem_Render._CalcChainSkillScopeAndTarget = function(self, petEntityID, chainSkillID)
-  -- function num : 0_5
+function SkillPreselectTargetSystem_Render:_CalcChainSkillScopeAndTarget(petEntityID, chainSkillID)
   local castSkillPos = self:_GetChainSkillCastPos()
   local scopeResult = self:_CalcChainSkillScopeResult(petEntityID, chainSkillID, castSkillPos)
   local targetIDList = self:_CalcScopeResultTargetList(petEntityID, chainSkillID, scopeResult)
@@ -83,19 +60,16 @@ SkillPreselectTargetSystem_Render._CalcChainSkillScopeAndTarget = function(self,
   return scopeResult
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreselectTargetSystem_Render._FillSkillScopeResult = function(self, scopeResult, targetIDList)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillPreselectTargetSystem_Render:_FillSkillScopeResult(scopeResult, targetIDList)
   local attackRange = scopeResult:GetAttackRange()
-  for _,gridPos in ipairs(attackRange) do
-    for _,targetEntityID in ipairs(targetIDList) do
-      local targetEntity = (self._world):GetEntityByID(targetEntityID)
+  for _, gridPos in ipairs(attackRange) do
+    for _, targetEntityID in ipairs(targetIDList) do
+      local targetEntity = self._world:GetEntityByID(targetEntityID)
       local gridLocationCmpt = targetEntity:GridLocation()
       local bodyAreaCmpt = targetEntity:BodyArea()
       local bodyAreaList = bodyAreaCmpt:GetArea()
-      for i,bodyArea in ipairs(bodyAreaList) do
-        local curBodyPos = Vector2((gridLocationCmpt.Position).x + bodyArea.x, (gridLocationCmpt.Position).y + bodyArea.y)
+      for i, bodyArea in ipairs(bodyAreaList) do
+        local curBodyPos = Vector2(gridLocationCmpt.Position.x + bodyArea.x, gridLocationCmpt.Position.y + bodyArea.y)
         if curBodyPos == gridPos then
           scopeResult:AddTargetIDAndPos(targetEntityID, gridPos)
         end
@@ -104,105 +78,87 @@ SkillPreselectTargetSystem_Render._FillSkillScopeResult = function(self, scopeRe
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreselectTargetSystem_Render._CalcScopeResultTargetList = function(self, petEntityID, chainSkillID, scopeResult)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillPreselectTargetSystem_Render:_CalcScopeResultTargetList(petEntityID, chainSkillID, scopeResult)
   local selector = SkillScopeTargetSelector:New(self._world)
-  local castEntity = (self._world):GetEntityByID(petEntityID)
-  local configService = (self._world):GetService("Config")
+  local castEntity = self._world:GetEntityByID(petEntityID)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(chainSkillID, castEntity)
   local skillTargetType = skillConfigData:GetSkillTargetType()
   local entityIDArray = selector:DoSelectSkillTarget(castEntity, skillTargetType, scopeResult, chainSkillID)
   return entityIDArray
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreselectTargetSystem_Render._CalcChainSkillScopeResult = function(self, petEntityID, chainSkillID, castSkillPos)
-  -- function num : 0_8
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local configService = (self._world):GetService("Config")
-  local petEntity = (self._world):GetEntityByID(petEntityID)
+function SkillPreselectTargetSystem_Render:_CalcChainSkillScopeResult(petEntityID, chainSkillID, castSkillPos)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local configService = self._world:GetService("Config")
+  local petEntity = self._world:GetEntityByID(petEntityID)
   local skillConfigData = configService:GetSkillConfigData(chainSkillID, petEntity)
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   skillConfigData = utilData:ProcessChianSkillConfig(skillConfigData, petEntity)
   local castePos = castSkillPos:Clone()
-  local replaceChainEntityID = (petEntity:BuffView()):GetBuffValue("ReplaceEntityID")
-  do
-    if replaceChainEntityID then
-      local replaceChainEntity = (self._world):GetEntityByID(replaceChainEntityID)
-      castePos = ((replaceChainEntity:GridLocation()):GetGridPos()):Clone()
-    end
-    local scopeResult = utilScopeSvc:CalcSkillScopeForChainSkillPreview(skillConfigData, castePos, petEntity)
-    utilScopeSvc:ExpandMaxChainSkillScope(petEntity, chainSkillID, scopeResult, castePos)
-    return scopeResult
+  local replaceChainEntityID = petEntity:BuffView():GetBuffValue("ReplaceEntityID")
+  if replaceChainEntityID then
+    local replaceChainEntity = self._world:GetEntityByID(replaceChainEntityID)
+    castePos = replaceChainEntity:GridLocation():GetGridPos():Clone()
   end
+  local scopeResult = utilScopeSvc:CalcSkillScopeForChainSkillPreview(skillConfigData, castePos, petEntity)
+  utilScopeSvc:ExpandMaxChainSkillScope(petEntity, chainSkillID, scopeResult, castePos)
+  return scopeResult
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreselectTargetSystem_Render._GetChainSkillCastPos = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local previewEntity = (self._world):GetPreviewEntity()
+function SkillPreselectTargetSystem_Render:_GetChainSkillCastPos()
+  local previewEntity = self._world:GetPreviewEntity()
   local previewChainPathCmpt = previewEntity:PreviewChainPath()
   local chainPathList = previewChainPathCmpt:GetPreviewChainPath()
   local chainTotalCount = previewChainPathCmpt:GetPreviewChainTotalCount()
   local casterPos = chainPathList[chainTotalCount]
-  if (self._world):MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
+  if self._world:MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
     casterPos = chainPathList[1]
   end
   return casterPos
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreselectTargetSystem_Render._GetPetChainSkillIDByChainPathCount = function(self, petEntityID)
-  -- function num : 0_10 , upvalues : _ENV
-  local previewEntity = (self._world):GetPreviewEntity()
+function SkillPreselectTargetSystem_Render:_GetPetChainSkillIDByChainPathCount(petEntityID)
+  local previewEntity = self._world:GetPreviewEntity()
   local previewChainPathCmpt = previewEntity:PreviewChainPath()
   local chainPath = previewChainPathCmpt:GetPreviewChainPath()
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   local chainCount, superGridNum = utilCalcSvc:GetChainDamageRateAtIndex(chainPath, #chainPath)
-  if chainCount >= 3 then
-    local petEntity = (self._world):GetEntityByID(petEntityID)
-    local skillInfoCmpt = petEntity:SkillInfo()
-    local rule = (skillInfoCmpt._chainSkillIDSelector):GetRule()
-    local tmpChainSkillID = (rule[1]).Skill
-    local configSvc = (self._world):GetService("Config")
-    local firstChainConfig = configSvc:GetSkillConfigData(tmpChainSkillID)
-    local previewType = firstChainConfig:GetSkillPreviewType()
-    if not (petEntity:RenderAttributes()):GetAttribute("ChainSkillReleaseFix") then
-      local fix = previewType == SkillPreviewType.Pet1502051Chain or 0
-    end
-    local chainCountMul = (petEntity:RenderAttributes()):GetAttribute("ChainSkillReleaseMul") or 0
-    local fixedChainCount = (math.ceil)((chainCount + fix) * (1 + chainCountMul))
-    local utilData = (self._world):GetService("UtilData")
+  if 3 <= chainCount then
+  end
+  local petEntity = self._world:GetEntityByID(petEntityID)
+  local skillInfoCmpt = petEntity:SkillInfo()
+  local rule = skillInfoCmpt._chainSkillIDSelector:GetRule()
+  local tmpChainSkillID = rule[1].Skill
+  local configSvc = self._world:GetService("Config")
+  local firstChainConfig = configSvc:GetSkillConfigData(tmpChainSkillID)
+  local previewType = firstChainConfig:GetSkillPreviewType()
+  if previewType ~= SkillPreviewType.Pet1502051Chain then
+    local fix = petEntity:RenderAttributes():GetAttribute("ChainSkillReleaseFix") or 0
+    local chainCountMul = petEntity:RenderAttributes():GetAttribute("ChainSkillReleaseMul") or 0
+    local fixedChainCount = math.ceil((chainCount + fix) * (1 + chainCountMul))
+    local utilData = self._world:GetService("UtilData")
     local chainExtraFix = utilData:GetEntityBuffValue(petEntity, "ChangeExtraChainSkillReleaseFixForSkill")
-    do
-      local skillID = utilData:GetChainSkillByChainCount(petEntity, fixedChainCount, chainExtraFix)
-      do return skillID end
-      local previewLinkLineSvc = (self._world):GetService("PreviewLinkLine")
-      local skillID, useless = previewLinkLineSvc:CalcReplaceChainPreviewParamsPet1502051(petEntity, chainPath)
-      do return skillID or 0 end
-    end
+    local skillID = utilData:GetChainSkillByChainCount(petEntity, fixedChainCount, chainExtraFix)
+    return skillID
+  else
+    local previewLinkLineSvc = self._world:GetService("PreviewLinkLine")
+    local skillID, useless = previewLinkLineSvc:CalcReplaceChainPreviewParamsPet1502051(petEntity, chainPath)
+    return skillID or 0
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreselectTargetSystem_Render._SelectPetList = function(self, teamEntity, pieceType, firstElementType)
-  -- function num : 0_11 , upvalues : _ENV
+function SkillPreselectTargetSystem_Render:_SelectPetList(teamEntity, pieceType, firstElementType)
   local petResultList = {}
-  local teamLeaderEntityID = (teamEntity:Team()):GetTeamLeaderEntityID()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local teamLeaderEntityID = teamEntity:Team():GetTeamLeaderEntityID()
+  local utilDataSvc = self._world:GetService("UtilData")
   if utilDataSvc:IsTeamLeaderCanAttack(teamEntity, pieceType) and (not utilDataSvc:IsPreviewNeedShowLinkageNumForCostStep() or utilDataSvc:GetPreviewPetEntityID() == teamLeaderEntityID) then
     petResultList[#petResultList + 1] = teamLeaderEntityID
   end
-  local teamOrder = (teamEntity:Team()):GetTeamOrder()
+  local teamOrder = teamEntity:Team():GetTeamOrder()
   for i = 2, #teamOrder do
     local curPetPstID = teamOrder[i]
-    local petEntity = (teamEntity:Team()):GetPetEntityByPetPstID(curPetPstID)
+    local petEntity = teamEntity:Team():GetPetEntityByPetPstID(curPetPstID)
     if not petEntity:HasBuffFlag(BuffFlags.SealedCurse) and (not petEntity:HasBuffFlag(BuffFlags.Pet1702361NotLinkLine) or utilDataSvc:IsPreviewNeedShowLinkageNumForCostStep()) then
       local isMatch = false
       local forceMatch = utilDataSvc:GetEntityBuffValue(petEntity, "PetForceMatch")
@@ -223,19 +179,16 @@ SkillPreselectTargetSystem_Render._SelectPetList = function(self, teamEntity, pi
   return petResultList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreselectTargetSystem_Render._IsPetEntityMatchPieceType = function(self, petEntity, pieceType)
-  -- function num : 0_12 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
-  if (self._world):LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
+function SkillPreselectTargetSystem_Render:_IsPetEntityMatchPieceType(petEntity, pieceType)
+  local utilDataSvc = self._world:GetService("UtilData")
+  if self._world:LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
     local isMatch = true
-    local teamEntity = (petEntity:Pet()):GetOwnerTeamEntity()
+    local teamEntity = petEntity:Pet():GetOwnerTeamEntity()
     if teamEntity then
-      local onlyTeamLeaderColorPet = (teamEntity:BuffView()):GetBuffValue("OnlyTeamLeaderColorPet")
+      local onlyTeamLeaderColorPet = teamEntity:BuffView():GetBuffValue("OnlyTeamLeaderColorPet")
       if onlyTeamLeaderColorPet and onlyTeamLeaderColorPet == 1 then
-        local teamLeaderEntityID = (teamEntity:Team()):GetTeamLeaderEntityID()
-        local teamLeaderEntity = (self._world):GetEntityByID(teamLeaderEntityID)
+        local teamLeaderEntityID = teamEntity:Team():GetTeamLeaderEntityID()
+        local teamLeaderEntity = self._world:GetEntityByID(teamLeaderEntityID)
         if teamLeaderEntity then
           local teamLeaderElementCmpt = teamLeaderEntity:Element()
           if teamLeaderElementCmpt then
@@ -250,122 +203,92 @@ SkillPreselectTargetSystem_Render._IsPetEntityMatchPieceType = function(self, pe
         end
       end
     end
-    do
-      do
-        do return isMatch end
-        if petEntity:GetID() ~= utilDataSvc:GetPreviewPetEntityID() then
-          do return not utilDataSvc:IsPreviewNeedShowLinkageNumForCostStep() end
-          local elementCmpt = petEntity:Element()
-          local sencondardType = elementCmpt:GetSecondaryType()
-          local primaryMatch = utilDataSvc:IsMatchPieceType(petEntity:GetID(), pieceType)
-          local secondaryMatch = CanMatchPieceType(sencondardType, pieceType)
-          if primaryMatch or secondaryMatch then
-            return true
-          end
-          do return false end
-          -- DECOMPILER ERROR: 4 unprocessed JMP targets
-        end
-      end
-    end
+    return isMatch
+  elseif utilDataSvc:IsPreviewNeedShowLinkageNumForCostStep() then
+    return petEntity:GetID() == utilDataSvc:GetPreviewPetEntityID()
   end
+  local elementCmpt = petEntity:Element()
+  local sencondardType = elementCmpt:GetSecondaryType()
+  local primaryMatch = utilDataSvc:IsMatchPieceType(petEntity:GetID(), pieceType)
+  local secondaryMatch = CanMatchPieceType(sencondardType, pieceType)
+  if primaryMatch or secondaryMatch then
+    return true
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreselectTargetSystem_Render.ReplaceScopeResult = function(self, scopeResult, petEntityID, chainSkillID, castSkillPos)
-  -- function num : 0_13 , upvalues : _ENV
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local petEntity = (self._world):GetEntityByID(petEntityID)
-  local configService = (self._world):GetService("Config")
+function SkillPreselectTargetSystem_Render:ReplaceScopeResult(scopeResult, petEntityID, chainSkillID, castSkillPos)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local petEntity = self._world:GetEntityByID(petEntityID)
+  local configService = self._world:GetService("Config")
   local castePos = castSkillPos:Clone()
-  local replaceChainEntityID = (petEntity:BuffView()):GetBuffValue("ReplaceEntityID")
-  do
-    if replaceChainEntityID then
-      local replaceChainEntity = (self._world):GetEntityByID(replaceChainEntityID)
-      castePos = ((replaceChainEntity:GridLocation()):GetGridPos()):Clone()
-    end
-    local skillConfigData = configService:GetSkillConfigData(chainSkillID)
-    local scopeType = skillConfigData:GetSkillScopeType()
-    if scopeType == SkillScopeType.NearestInSquareRing and skillConfigData:GetSkillPreviewType() == SkillPreviewType.ScopeSingleChainSkillInScope54 then
-      local param = skillConfigData:GetSkillScopeParam()
-      local newSkillConfigData = SkillConfigData:New()
-      local utilData = (self._world):GetService("UtilData")
-      local scopeParamAppender = utilData:GetEntityBuffValue(petEntity, "ChainSkillPreviewScopeParamAppender" .. chainSkillID)
-      if scopeParamAppender then
-        if type(param) == "table" then
-          local copyScopeParam = {}
-          for k,v in pairs(param) do
-            copyScopeParam[k] = v
-          end
-          for index,val in ipairs(scopeParamAppender) do
-            copyScopeParam[index] = copyScopeParam[index] + val
-          end
-          param = copyScopeParam
-        else
-          do
-            do
-              do
-                if not scopeParamAppender[1] then
-                  local appendVal = type(param) ~= "number" or 0
-                end
-                param = param + appendVal
-                newSkillConfigData._scopeParamData = {param[1]}
-                utilData:ExpandSingleChainScope(petEntity, scopeType, newSkillConfigData._scopeParamData)
-                -- DECOMPILER ERROR at PC119: Confused about usage of register: R16 in 'UnsetPending'
-
-                if scopeType == SkillScopeType.NearestInSquareRing and param[3] and param[3] > 0 then
-                  (newSkillConfigData._scopeParamData)[5] = param[3]
-                end
-                newSkillConfigData._scopeType = SkillScopeType.SquareRing
-                newSkillConfigData._scopeCenterType = skillConfigData:GetSkillScopeCenterType()
-                newSkillConfigData._targetType = skillConfigData:GetSkillTargetType()
-                newSkillConfigData._scopeFilterParam = skillConfigData:GetScopeFilterParam()
-                scopeResult = utilScopeSvc:CalcSkillScope(newSkillConfigData, castePos, petEntity)
-                if skillConfigData:GetSkillPreviewType() == SkillPreviewType.ScopeSingleChainSkillWithParam then
-                  local newSkillConfigData = SkillConfigData:New()
-                  local skillPreviewParam = skillConfigData:GetSkillPreviewParam()
-                  local scopeType = skillPreviewParam.scopeType
-                  local scopeParam = skillPreviewParam.scopeParam
-                  local utilData = (self._world):GetService("UtilData")
-                  local scopeParamAppender = utilData:GetEntityBuffValue(petEntity, "ChainSkillPreviewScopeParamAppender" .. chainSkillID)
-                  if scopeParamAppender then
-                    if type(scopeParam) == "table" then
-                      local copyScopeParam = {}
-                      for k,v in pairs(scopeParam) do
-                        copyScopeParam[k] = v
-                      end
-                      for index,val in ipairs(scopeParamAppender) do
-                        copyScopeParam[index] = copyScopeParam[index] + val
-                      end
-                      scopeParam = copyScopeParam
-                    else
-                      do
-                        do
-                          do
-                            if not scopeParamAppender[1] then
-                              local appendVal = type(scopeParam) ~= "number" or 0
-                            end
-                            scopeParam = scopeParam + appendVal
-                            newSkillConfigData._scopeType = scopeType
-                            newSkillConfigData._scopeParamData = scopeParam
-                            newSkillConfigData._scopeCenterType = skillConfigData:GetSkillScopeCenterType()
-                            newSkillConfigData._targetType = skillConfigData:GetSkillTargetType()
-                            newSkillConfigData._scopeFilterParam = skillConfigData:GetScopeFilterParam()
-                            scopeResult = utilScopeSvc:CalcSkillScope(newSkillConfigData, castePos, petEntity)
-                            return scopeResult
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+  local replaceChainEntityID = petEntity:BuffView():GetBuffValue("ReplaceEntityID")
+  if replaceChainEntityID then
+    local replaceChainEntity = self._world:GetEntityByID(replaceChainEntityID)
+    castePos = replaceChainEntity:GridLocation():GetGridPos():Clone()
+  end
+  local skillConfigData = configService:GetSkillConfigData(chainSkillID)
+  local scopeType = skillConfigData:GetSkillScopeType()
+  if scopeType == SkillScopeType.NearestInSquareRing and skillConfigData:GetSkillPreviewType() == SkillPreviewType.ScopeSingleChainSkillInScope54 then
+    local param = skillConfigData:GetSkillScopeParam()
+    local newSkillConfigData = SkillConfigData:New()
+    local utilData = self._world:GetService("UtilData")
+    local scopeParamAppender = utilData:GetEntityBuffValue(petEntity, "ChainSkillPreviewScopeParamAppender" .. chainSkillID)
+    if scopeParamAppender then
+      if type(param) == "table" then
+        local copyScopeParam = {}
+        for k, v in pairs(param) do
+          copyScopeParam[k] = v
         end
+        for index, val in ipairs(scopeParamAppender) do
+          copyScopeParam[index] = copyScopeParam[index] + val
+        end
+        param = copyScopeParam
+      elseif type(param) == "number" then
+        local appendVal = scopeParamAppender[1] or 0
+        param = param + appendVal
       end
     end
+    newSkillConfigData._scopeParamData = {
+      param[1]
+    }
+    utilData:ExpandSingleChainScope(petEntity, scopeType, newSkillConfigData._scopeParamData)
+    if scopeType == SkillScopeType.NearestInSquareRing and param[3] and 0 < param[3] then
+      newSkillConfigData._scopeParamData[5] = param[3]
+    end
+    newSkillConfigData._scopeType = SkillScopeType.SquareRing
+    newSkillConfigData._scopeCenterType = skillConfigData:GetSkillScopeCenterType()
+    newSkillConfigData._targetType = skillConfigData:GetSkillTargetType()
+    newSkillConfigData._scopeFilterParam = skillConfigData:GetScopeFilterParam()
+    scopeResult = utilScopeSvc:CalcSkillScope(newSkillConfigData, castePos, petEntity)
+  elseif skillConfigData:GetSkillPreviewType() == SkillPreviewType.ScopeSingleChainSkillWithParam then
+    local newSkillConfigData = SkillConfigData:New()
+    local skillPreviewParam = skillConfigData:GetSkillPreviewParam()
+    local scopeType = skillPreviewParam.scopeType
+    local scopeParam = skillPreviewParam.scopeParam
+    local utilData = self._world:GetService("UtilData")
+    local scopeParamAppender = utilData:GetEntityBuffValue(petEntity, "ChainSkillPreviewScopeParamAppender" .. chainSkillID)
+    if scopeParamAppender then
+      if type(scopeParam) == "table" then
+        local copyScopeParam = {}
+        for k, v in pairs(scopeParam) do
+          copyScopeParam[k] = v
+        end
+        for index, val in ipairs(scopeParamAppender) do
+          copyScopeParam[index] = copyScopeParam[index] + val
+        end
+        scopeParam = copyScopeParam
+      elseif type(scopeParam) == "number" then
+        local appendVal = scopeParamAppender[1] or 0
+        scopeParam = scopeParam + appendVal
+      end
+    end
+    newSkillConfigData._scopeType = scopeType
+    newSkillConfigData._scopeParamData = scopeParam
+    newSkillConfigData._scopeCenterType = skillConfigData:GetSkillScopeCenterType()
+    newSkillConfigData._targetType = skillConfigData:GetSkillTargetType()
+    newSkillConfigData._scopeFilterParam = skillConfigData:GetScopeFilterParam()
+    scopeResult = utilScopeSvc:CalcSkillScope(newSkillConfigData, castePos, petEntity)
   end
+  return scopeResult
 end
-
-

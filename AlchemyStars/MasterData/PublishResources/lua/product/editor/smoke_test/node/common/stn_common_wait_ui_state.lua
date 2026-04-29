@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/common/stn_common_wait_ui_state.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("Common_WaitUIState", Common_AsyncBase)
 Common_WaitUIState = Common_WaitUIState
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Common_WaitUIState.Constructor = function(self, _, state)
-  -- function num : 0_0
+function Common_WaitUIState:Constructor(_, state)
   self._requiredUIState = state
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Common_WaitUIState.TaskFunc = function(self, TT, status)
-  -- function num : 0_1 , upvalues : _ENV
-  while self._requiredUIState ~= ((GameGlobal.UIStateManager)()):CurUIStateType() do
+function Common_WaitUIState:TaskFunc(TT, status)
+  while self._requiredUIState ~= GameGlobal.UIStateManager():CurUIStateType() do
     YIELD(TT)
   end
 end
-
-

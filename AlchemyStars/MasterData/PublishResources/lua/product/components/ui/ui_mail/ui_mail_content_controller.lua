@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_mail/ui_mail_content_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMailContentController", UIController)
 UIMailContentController = UIMailContentController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMailContentController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMailContentController:OnShow(uiParams)
   self._mailData = uiParams[1]
   self._mailController = uiParams[2]
   self._isCollect = uiParams[3]
   if not self._mailData then
-    return 
+    return
   end
   self._titleLabel = self:GetUIComponent("UILocalizationText", "Title")
   self._senderLabel = self:GetUIComponent("UILocalizationText", "Sender")
@@ -33,209 +26,134 @@ UIMailContentController.OnShow = function(self, uiParams)
   self._mailImg = self:GetGameObject("mail")
   self._tips = s:SpawnObject("UISelectInfo")
   self._rewardCount = 0
-  -- DECOMPILER ERROR at PC88: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._titleLabel).text = (self._mailData).title
-  -- DECOMPILER ERROR at PC92: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._senderLabel).text = (self._mailData).senderName
-  -- DECOMPILER ERROR at PC96: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._sendTimeLabel).text = (self._mailData).createTime
-  local content = (string.gsub)((self._mailData).content, "|u00A0", " ")
-  local content2 = (string.gsub)(content, "|u0020", " ")
-  local content3 = (string.gsub)(content2, "|u3000", "　")
-  ;
-  (self._contentNormalLabel):SetText(content3)
-  if (self._mailData).mailIcon and (self._mailData).mailIcon ~= "" then
-    ((self._header).gameObject):SetActive(true)
-    ;
-    (self._header):LoadImage((self._mailData).mailIcon)
-    ;
-    (self._mailImg):SetActive(false)
+  self._titleLabel.text = self._mailData.title
+  self._senderLabel.text = self._mailData.senderName
+  self._sendTimeLabel.text = self._mailData.createTime
+  local content = string.gsub(self._mailData.content, "|u00A0", " ")
+  local content2 = string.gsub(content, "|u0020", " ")
+  local content3 = string.gsub(content2, "|u3000", "　")
+  self._contentNormalLabel:SetText(content3)
+  if self._mailData.mailIcon and self._mailData.mailIcon ~= "" then
+    self._header.gameObject:SetActive(true)
+    self._header:LoadImage(self._mailData.mailIcon)
+    self._mailImg:SetActive(false)
   else
-    ;
-    ((self._header).gameObject):SetActive(false)
-    ;
-    (self._mailImg):SetActive(true)
+    self._header.gameObject:SetActive(false)
+    self._mailImg:SetActive(true)
   end
-  if (self._mailData).hasReward then
-    self._rewardCount = #(self._mailData).rewards
+  if self._mailData.hasReward then
+    self._rewardCount = #self._mailData.rewards
     self._rewardItemList = {}
     self:_InitSrollView()
-    ;
-    (self._rewardListGo):SetActive(true)
+    self._rewardListGo:SetActive(true)
   else
-    ;
-    (self._rewardListGo):SetActive(false)
+    self._rewardListGo:SetActive(false)
   end
   self:_RefreshButtonStatus()
   self:AttachEvent(GameEventType.AircraftInteractiveEventRewardShowItemTips, self._ShowTips)
-  ;
-  (self._linkSelectorComp):SetLinkSelectCallback(function(link)
-    -- function num : 0_0_0 , upvalues : self
+  self._linkSelectorComp:SetLinkSelectCallback(function(link)
     self:OnClickLink(link)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailContentController.OnClickLink = function(self, link)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.fatal)(link)
-  ;
-  (HelperProxy:GetInstance()):OpenUrl(link)
+function UIMailContentController:OnClickLink(link)
+  Log.fatal(link)
+  HelperProxy:GetInstance():OpenUrl(link)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailContentController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMailContentController:OnHide()
   self._scrollView = nil
   self:DetachEvent(GameEventType.AircraftInteractiveEventRewardShowItemTips, self._ShowTips)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailContentController._ShowTips = function(self, itemId, pos)
-  -- function num : 0_3
-  (self._tips):SetData(itemId, pos)
+function UIMailContentController:_ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailContentController._InitSrollView = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local itemParentRect = (self._itemParentGo):GetComponent("RectTransform")
+function UIMailContentController:_InitSrollView()
+  local itemParentRect = self._itemParentGo:GetComponent("RectTransform")
   if self._rewardCount > 3 then
     itemParentRect.pivot = Vector2(0, 0.5)
   else
     itemParentRect.pivot = Vector2(0.5, 0.5)
   end
   for i = 1, self._rewardCount do
-    local item = ((UnityEngine.GameObject).Instantiate)(self._itemTemplate, (self._itemParentGo).transform)
+    local item = UnityEngine.GameObject.Instantiate(self._itemTemplate, self._itemParentGo.transform)
     item:SetActive(true)
     local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
     local itemWidget = rowPool:SpawnObject("UIMailRewardItem")
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._rewardItemList)[i] = itemWidget
-    itemWidget:Refresh(((self._mailData).rewards)[i])
+    self._rewardItemList[i] = itemWidget
+    itemWidget:Refresh(self._mailData.rewards[i])
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailContentController._RefreshButtonStatus = function(self)
-  -- function num : 0_5
+function UIMailContentController:_RefreshButtonStatus()
   if not self._mailData then
-    return 
+    return
   end
-  if (self._mailData).hasReward then
-    (self._hasRewards):SetActive(true)
-    ;
-    (self._noRewards):SetActive(false)
+  if self._mailData.hasReward then
+    self._hasRewards:SetActive(true)
+    self._noRewards:SetActive(false)
     local rewardsCanvasGroup = self:GetUIComponent("CanvasGroup", "RewardList")
-    if (self._mailData).isGain == false then
-      (self._getBtn):SetActive(true)
-      ;
-      (self._delBtn):SetActive(false)
+    if self._mailData.isGain == false then
+      self._getBtn:SetActive(true)
+      self._delBtn:SetActive(false)
       rewardsCanvasGroup.alpha = 1
-      ;
-      (self._gotTips):SetActive(false)
+      self._gotTips:SetActive(false)
     else
-      ;
-      (self._getBtn):SetActive(false)
-      ;
-      (self._delBtn):SetActive(true)
+      self._getBtn:SetActive(false)
+      self._delBtn:SetActive(true)
       rewardsCanvasGroup.alpha = 0.4
-      ;
-      (self._gotTips):SetActive(true)
+      self._gotTips:SetActive(true)
     end
   else
-    do
-      ;
-      (self._hasRewards):SetActive(false)
-      ;
-      (self._noRewards):SetActive(true)
-      ;
-      (self._getBtn):SetActive(false)
-      ;
-      (self._delBtn):SetActive(true)
-      ;
-      (self._gotTips):SetActive(false)
-    end
+    self._hasRewards:SetActive(false)
+    self._noRewards:SetActive(true)
+    self._getBtn:SetActive(false)
+    self._delBtn:SetActive(true)
+    self._gotTips:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailContentController._RefreshRewardStatus = function(self)
-  -- function num : 0_6
+function UIMailContentController:_RefreshRewardStatus()
   if self._rewardItemList then
     for i = 1, #self._rewardItemList do
-      ((self._rewardItemList)[i]):Refresh(((self._mailData).rewards)[i], (self._mailData).isGain)
+      self._rewardItemList[i]:Refresh(self._mailData.rewards[i], self._mailData.isGain)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailContentController.ButtonGetOnClick = function(self, go)
-  -- function num : 0_7
+function UIMailContentController:ButtonGetOnClick(go)
   if not self._mailController then
-    return 
+    return
   end
-  ;
-  (self._mailController):CollectedReward(self._mailData, function(success)
-    -- function num : 0_7_0 , upvalues : self
+  self._mailController:CollectedReward(self._mailData, function(success)
     if not success then
       self:CloseDialog()
-      return 
+      return
     end
     self:_RefreshButtonStatus()
     self:_RefreshRewardStatus()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailContentController.MaskOnClick = function(self, go)
-  -- function num : 0_8
+function UIMailContentController:MaskOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMailContentController.ButtonDeleteOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UIMailContentController:ButtonDeleteOnClick(go)
   if not self._mailController then
-    return 
+    return
   end
   if self._isCollect then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_mail_name1_delete"), function()
-    -- function num : 0_9_0 , upvalues : self
-    (self._mailController):DeleteMail(self._mailData, function(success)
-      -- function num : 0_9_0_0 , upvalues : self
-      self:CloseDialog()
-    end
-)
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_mail_name1_delete"), function()
+      self._mailController:DeleteMail(self._mailData, function(success)
+        self:CloseDialog()
+      end)
+    end)
+    return
   end
-)
-    return 
-  end
-  ;
-  (self._mailController):DeleteMail(self._mailData, function(success)
-    -- function num : 0_9_1 , upvalues : self
+  self._mailController:DeleteMail(self._mailData, function(success)
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

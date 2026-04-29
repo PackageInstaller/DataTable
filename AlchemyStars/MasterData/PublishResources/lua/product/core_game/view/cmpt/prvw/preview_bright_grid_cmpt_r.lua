@@ -1,76 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/preview_bright_grid_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewBrightGridComponent", Object)
 PreviewBrightGridComponent = PreviewBrightGridComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewBrightGridComponent.Constructor = function(self)
-  -- function num : 0_0
+function PreviewBrightGridComponent:Constructor()
   self._originalGridElementTable = {}
   self._brightGridElementTable = {}
   self._maskGridElementTable = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewBrightGridComponent.ClearTempBrightGridList = function(self)
-  -- function num : 0_1
+function PreviewBrightGridComponent:ClearTempBrightGridList()
   self._originalGridElementTable = {}
   self._brightGridElementTable = {}
   self._maskGridElementTable = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewBrightGridComponent.BackupGridElement = function(self, originalTable)
-  -- function num : 0_2 , upvalues : _ENV
-  self._originalGridElementTable = (table.cloneconf)(originalTable)
+function PreviewBrightGridComponent:BackupGridElement(originalTable)
+  self._originalGridElementTable = table.cloneconf(originalTable)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewBrightGridComponent.GetBackupGridElement = function(self)
-  -- function num : 0_3
+function PreviewBrightGridComponent:GetBackupGridElement()
   return self._originalGridElementTable
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewBrightGridComponent.SetBrightGridTable = function(self, brightGridTable)
-  -- function num : 0_4
+function PreviewBrightGridComponent:SetBrightGridTable(brightGridTable)
   self._brightGridElementTable = brightGridTable
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewBrightGridComponent.SetMaskGridTable = function(self, maskGridTable)
-  -- function num : 0_5
+function PreviewBrightGridComponent:SetMaskGridTable(maskGridTable)
   self._maskGridElementTable = maskGridTable
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewBrightGridComponent.GetBrightGridTable = function(self)
-  -- function num : 0_6
+function PreviewBrightGridComponent:GetBrightGridTable()
   return self._brightGridElementTable
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewBrightGridComponent.DoConvertBright = function(self, world, brightElementType)
-  -- function num : 0_7 , upvalues : _ENV
+function PreviewBrightGridComponent:DoConvertBright(world, brightElementType)
   self._world = world
   local brightGridArray = self:GetBrightGridTable()
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   local pieces = env:GetAllPieceType()
-  local pieceService = (self._world):GetService("Piece")
-  for x,columnDic in pairs(pieces) do
-    for y,curGridType in pairs(columnDic) do
+  local pieceService = self._world:GetService("Piece")
+  for x, columnDic in pairs(pieces) do
+    for y, curGridType in pairs(columnDic) do
       local curGridPos = Vector2(x, y)
-      local isBright = (table.icontains)(brightGridArray, curGridPos)
+      local isBright = table.icontains(brightGridArray, curGridPos)
       if isBright then
         pieceService:SetPieceAnimGray(curGridPos)
       else
@@ -80,20 +52,17 @@ PreviewBrightGridComponent.DoConvertBright = function(self, world, brightElement
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewBrightGridComponent.DoConvertSliver = function(self, world)
-  -- function num : 0_8 , upvalues : _ENV
+function PreviewBrightGridComponent:DoConvertSliver(world)
   self._world = world
   local brightGridArray = self:GetBrightGridTable()
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   local pieces = env:GetAllPieceType()
-  local pieceService = (self._world):GetService("Piece")
-  for x,columnDic in pairs(pieces) do
-    for y,curGridType in pairs(columnDic) do
+  local pieceService = self._world:GetService("Piece")
+  for x, columnDic in pairs(pieces) do
+    for y, curGridType in pairs(columnDic) do
       local curGridPos = Vector2(x, y)
-      local isBright = ((table.icontains)(brightGridArray, curGridPos))
-      local targetElementType = nil
+      local isBright = table.icontains(brightGridArray, curGridPos)
+      local targetElementType
       if isBright == true then
         pieceService:SetPieceAnimSliver(curGridPos)
       else
@@ -103,73 +72,50 @@ PreviewBrightGridComponent.DoConvertSliver = function(self, world)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewBrightGridComponent.DoConvertHight = function(self, world, brightElementType)
-  -- function num : 0_9 , upvalues : _ENV
+function PreviewBrightGridComponent:DoConvertHight(world, brightElementType)
   self._world = world
   local brightGridArray = self:GetBrightGridTable()
-  local pieceService = (self._world):GetService("Piece")
-  for _,curGridPos in pairs(brightGridArray) do
+  local pieceService = self._world:GetService("Piece")
+  for _, curGridPos in pairs(brightGridArray) do
     pieceService:SetPieceAnimGray(curGridPos)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewBrightGridComponent.DoConvertMask = function(self, world)
-  -- function num : 0_10 , upvalues : _ENV
+function PreviewBrightGridComponent:DoConvertMask(world)
   self._world = world
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   local pieces = env:GetAllPieceType()
-  local pieceService = (self._world):GetService("Piece")
-  for x,columnDic in pairs(pieces) do
-    for y,curGridType in pairs(columnDic) do
+  local pieceService = self._world:GetService("Piece")
+  for x, columnDic in pairs(pieces) do
+    for y, curGridType in pairs(columnDic) do
       local curGridPos = Vector2(x, y)
       pieceService:SetPieceAnimDark(curGridPos)
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PreviewBrightGrid = function(self)
-  -- function num : 0_11
-  return self:GetComponent((self.WEComponentsEnum).PreviewBrightGrid)
+function Entity:PreviewBrightGrid()
+  return self:GetComponent(self.WEComponentsEnum.PreviewBrightGrid)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPreviewBrightGrid = function(self)
-  -- function num : 0_12
-  return self:HasComponent((self.WEComponentsEnum).PreviewBrightGrid)
+function Entity:HasPreviewBrightGrid()
+  return self:HasComponent(self.WEComponentsEnum.PreviewBrightGrid)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPreviewBrightGrid = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewBrightGrid
+function Entity:AddPreviewBrightGrid()
+  local index = self.WEComponentsEnum.PreviewBrightGrid
   local component = PreviewBrightGridComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePreviewBrightGrid = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewBrightGrid
+function Entity:ReplacePreviewBrightGrid()
+  local index = self.WEComponentsEnum.PreviewBrightGrid
   local component = PreviewBrightGridComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePreviewBrightGrid = function(self)
-  -- function num : 0_15
+function Entity:RemovePreviewBrightGrid()
   if self:HasPreviewBrightGrid() then
-    self:RemoveComponent((self.WEComponentsEnum).PreviewBrightGrid)
+    self:RemoveComponent(self.WEComponentsEnum.PreviewBrightGrid)
   end
 end
-
-

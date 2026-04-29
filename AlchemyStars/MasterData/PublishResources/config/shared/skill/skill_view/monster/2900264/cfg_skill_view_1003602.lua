@@ -1,21 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2900264/cfg_skill_view_1003602.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterVisible,visible=1; PlayCasterAnimation,animName = Birth; "}
-}
-, 
-{2, 2, 0, 1, 1, 3500, 
-{" PlayCasterAnimation,animName = Skill03; PlayCasterBindEffect,effectID=2433; PlayCasterBindEffect,effectID=2434; Wait,waitTime=3200; DataSelectSummonThing,index=1; ShowSummonThing,label=redoShow; DataSelectNextSummonThing; Jump,condition=CheckSummonThingValid,goto=redoShow; Wait,waitTime=2000; "}
-}
-, 
-{3, 3, 43, 1, 2, 0, 
-{audioID = 5091, audioType = 1}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterVisible,visible=1; PlayCasterAnimation,animName = Birth; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    1,
+    3500,
+    {
+      " PlayCasterAnimation,animName = Skill03; PlayCasterBindEffect,effectID=2433; PlayCasterBindEffect,effectID=2434; Wait,waitTime=3200; DataSelectSummonThing,index=1; ShowSummonThing,label=redoShow; DataSelectNextSummonThing; Jump,condition=CheckSummonThingValid,goto=redoShow; Wait,waitTime=2000; "
+    }
+  },
+  {
+    3,
+    3,
+    43,
+    1,
+    2,
+    0,
+    {audioID = 5091, audioType = 1}
+  }
 }
 return config, "ID", key
-

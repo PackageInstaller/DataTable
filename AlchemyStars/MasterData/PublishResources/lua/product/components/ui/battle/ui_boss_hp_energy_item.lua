@@ -1,78 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_boss_hp_energy_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBossHPEnergyItem", UICustomWidget)
 UIBossHPEnergyItem = UIBossHPEnergyItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBossHPEnergyItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._animation = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+function UIBossHPEnergyItem:OnShow()
+  self._animation = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPEnergyItem.DoLight = function(self, skipAnim)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBossHPEnergyItem:DoLight(skipAnim)
   if self._animationLight then
-    return 
+    return
   end
-  ;
-  (self:GetGameObject()):SetActive(true)
-  ;
-  (self._animation):Stop()
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._animation).enabled = false
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._animation).enabled = true
+  self:GetGameObject():SetActive(true)
+  self._animation:Stop()
+  self._animation.enabled = false
+  self._animation.enabled = true
   if skipAnim then
-    (self._animation):Play("uieffanim_UIBossHPEnergyItem_1", (UnityEngine.PlayMode).StopAll)
+    self._animation:Play("uieffanim_UIBossHPEnergyItem_1", UnityEngine.PlayMode.StopAll)
   else
-    ;
-    (self._animation):Play("uieffanim_UIBossHPEnergyItem_in", (UnityEngine.PlayMode).StopAll)
+    self._animation:Play("uieffanim_UIBossHPEnergyItem_in", UnityEngine.PlayMode.StopAll)
   end
   self._animationLight = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPEnergyItem.DoDark = function(self, skipAnim)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBossHPEnergyItem:DoDark(skipAnim)
   if not self._animationLight then
-    return 
+    return
   end
-  ;
-  (self:GetGameObject()):SetActive(true)
-  ;
-  (self._animation):Stop()
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._animation).enabled = false
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._animation).enabled = true
+  self:GetGameObject():SetActive(true)
+  self._animation:Stop()
+  self._animation.enabled = false
+  self._animation.enabled = true
   if skipAnim then
-    (self._animation):Play("uieffanim_UIBossHPEnergyItem_0", (UnityEngine.PlayMode).StopAll)
+    self._animation:Play("uieffanim_UIBossHPEnergyItem_0", UnityEngine.PlayMode.StopAll)
   else
-    ;
-    (self._animation):Play("uieffanim_UIBossHPEnergyItem_out", (UnityEngine.PlayMode).StopAll)
+    self._animation:Play("uieffanim_UIBossHPEnergyItem_out", UnityEngine.PlayMode.StopAll)
   end
   self._animationLight = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPEnergyItem.DoHide = function(self)
-  -- function num : 0_3
-  (self:GetGameObject()):SetActive(false)
+function UIBossHPEnergyItem:DoHide()
+  self:GetGameObject():SetActive(false)
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn13/perfect_puzzle/ui_cn13_perfect_puzzle_plan_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN13PerfectPuzzlePlanItem", UICustomWidget)
 UICN13PerfectPuzzlePlanItem = UICN13PerfectPuzzlePlanItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN13PerfectPuzzlePlanItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN13PerfectPuzzlePlanItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzlePlanItem.InitWidget = function(self)
-  -- function num : 0_1
+function UICN13PerfectPuzzlePlanItem:InitWidget()
   self.planTypeText = self:GetUIComponent("UILocalizationText", "PlanTypeText")
   self.planTipsText = self:GetUIComponent("UILocalizationText", "PlanTipsText")
   self.planStateText = self:GetUIComponent("UILocalizationText", "PlanStateText")
@@ -26,99 +16,68 @@ UICN13PerfectPuzzlePlanItem.InitWidget = function(self)
   self.awardRoot = self:GetUIComponent("UISelectObjectPath", "AwardRoot")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzlePlanItem.SetData = function(self, campaign, index, progress, callback, tipsCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN13PerfectPuzzlePlanItem:SetData(campaign, index, progress, callback, tipsCallback)
   self._index = index
   self._campaign = campaign
   self._progress = progress
   self._callback = callback
   self._tipsCallback = tipsCallback
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  self._component = (self._campaign):GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
-  self._localProcess = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_INLAND_PERFECT_PUZZLE)
-  self.personProcessInfo = (self._localProcess):GetComponentInfo(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
-  self._state = (self._component):CheckItemStatus(self._progress)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
+  self._component = self._campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
+  self._localProcess = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_INLAND_PERFECT_PUZZLE)
+  self.personProcessInfo = self._localProcess:GetComponentInfo(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
+  self._state = self._component:CheckItemStatus(self._progress)
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzlePlanItem._Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN13PerfectPuzzlePlanItem:_Refresh()
   self:_SetState(self._state)
   self:_SetStateCount(self._state)
   local val = {}
   val[CampaignPersonProgressStatus.CPPS_Completed] = 0
   val[CampaignPersonProgressStatus.CPPS_Accepted] = 1
   val[CampaignPersonProgressStatus.CPPS_Taken] = 2
-  local curProg = (self._component):GetCurrentProgress()
-  if self._progress <= curProg then
+  local curProg = self._component:GetCurrentProgress()
+  if curProg >= self._progress then
     curProg = self._progress
   end
-  ;
-  (self.planStateText):SetText((StringTable.Get)("str_cn13_PerfectPuzzle_cur_process", curProg .. "/" .. self._progress))
-  ;
-  (self.planTipsText):SetText((StringTable.Get)("str_eliminate_round_level") .. ":" .. self._progress)
+  self.planStateText:SetText(StringTable.Get("str_cn13_PerfectPuzzle_cur_process", curProg .. "/" .. self._progress))
+  self.planTipsText:SetText(StringTable.Get("str_eliminate_round_level") .. ":" .. self._progress)
   if self._state == CampaignPersonProgressStatus.CPPS_Completed then
-    ((self.beingText).gameObject):SetActive(false)
-    ;
-    ((self.getBtn).gameObject):SetActive(true)
-    ;
-    ((self.overRoot).gameObject):SetActive(false)
-  else
-    if self._state == CampaignPersonProgressStatus.CPPS_Accepted then
-      ((self.beingText).gameObject):SetActive(true)
-      ;
-      ((self.getBtn).gameObject):SetActive(false)
-      ;
-      ((self.overRoot).gameObject):SetActive(false)
-    else
-      if self._state == CampaignPersonProgressStatus.CPPS_Taken then
-        ((self.beingText).gameObject):SetActive(false)
-        ;
-        ((self.getBtn).gameObject):SetActive(false)
-        ;
-        ((self.overRoot).gameObject):SetActive(true)
-      end
-    end
+    self.beingText.gameObject:SetActive(false)
+    self.getBtn.gameObject:SetActive(true)
+    self.overRoot.gameObject:SetActive(false)
+  elseif self._state == CampaignPersonProgressStatus.CPPS_Accepted then
+    self.beingText.gameObject:SetActive(true)
+    self.getBtn.gameObject:SetActive(false)
+    self.overRoot.gameObject:SetActive(false)
+  elseif self._state == CampaignPersonProgressStatus.CPPS_Taken then
+    self.beingText.gameObject:SetActive(false)
+    self.getBtn.gameObject:SetActive(false)
+    self.overRoot.gameObject:SetActive(true)
   end
-  if #((self.personProcessInfo).m_progress_rewards)[self._progress] > 0 then
-    self.awardList = (self.awardRoot):SpawnObjects("UIPerfectPuzzleRewardItem", #((self.personProcessInfo).m_progress_rewards)[self._progress])
+  if 0 < #self.personProcessInfo.m_progress_rewards[self._progress] then
+    self.awardList = self.awardRoot:SpawnObjects("UIPerfectPuzzleRewardItem", #self.personProcessInfo.m_progress_rewards[self._progress])
     for i = 1, #self.awardList do
-      local award = (self.awardList)[i]
-      local cfgAward = (((self.personProcessInfo).m_progress_rewards)[self._progress])[i]
+      local award = self.awardList[i]
+      local cfgAward = self.personProcessInfo.m_progress_rewards[self._progress][i]
       award:SetData(cfgAward, function(matid, pos)
-    -- function num : 0_3_0 , upvalues : self
-    if self._tipsCallback then
-      (self._tipsCallback)(matid, pos)
+        if self._tipsCallback then
+          self._tipsCallback(matid, pos)
+        end
+      end)
     end
   end
-)
-    end
-  end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzlePlanItem._SetState = function(self, state)
-  -- function num : 0_4
+function UICN13PerfectPuzzlePlanItem:_SetState(state)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzlePlanItem._SetStateCount = function(self, state)
-  -- function num : 0_5
+function UICN13PerfectPuzzlePlanItem:_SetStateCount(state)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN13PerfectPuzzlePlanItem.GetBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UICN13PerfectPuzzlePlanItem:GetBtnOnClick(go)
   if self._callback then
-    (self._callback)(self._progress)
+    self._callback(self._progress)
   end
 end
-
-

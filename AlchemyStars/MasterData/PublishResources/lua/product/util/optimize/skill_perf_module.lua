@@ -1,45 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/optimize/skill_perf_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("game_module")
 _class("SkillPerfModule", GameModule)
 SkillPerfModule = SkillPerfModule
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPerfModule.Constructor = function(self)
-  -- function num : 0_0
+function SkillPerfModule:Constructor()
   self._scale = 0.001
   self._effectEntity = {}
   self:TestData()
   self._perfIsRun = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.GetMaxAwakeningLevel = function(self, petID)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_pet_awakening)({PetID = petID})
+function SkillPerfModule:GetMaxAwakeningLevel(petID)
+  local cfgs = Cfg.cfg_pet_awakening({PetID = petID})
   local max = 0
   if cfgs ~= nil then
-    for _,c in ipairs(cfgs) do
+    for _, c in ipairs(cfgs) do
       if max < c.Awakening then
         max = c.Awakening
       end
     end
   end
-  do
-    return max
-  end
+  return max
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.GetMaxEquipLevel = function(self, petID)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPerfModule:GetMaxEquipLevel(petID)
   local ret = 0
-  for k,v in pairs((Cfg.cfg_pet_equip)()) do
+  for k, v in pairs(Cfg.cfg_pet_equip()) do
     if v.PetID == petID and ret < v.Level then
       ret = v.Level
     end
@@ -47,33 +32,24 @@ SkillPerfModule.GetMaxEquipLevel = function(self, petID)
   return ret
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.GetMaxGradeLevel = function(self, petID)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillPerfModule:GetMaxGradeLevel(petID)
   local ret = 0
-  local gradeConfig = (Cfg.cfg_pet_grade)({PetID = petID})
-  ;
-  (table.sort)(gradeConfig, function(a, b)
-    -- function num : 0_3_0
-    if b.Grade >= a.Grade then
-      do return a.Grade == b.Grade end
-      do return b.ID < a.ID end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  local gradeConfig = Cfg.cfg_pet_grade({PetID = petID})
+  table.sort(gradeConfig, function(a, b)
+    if a.Grade ~= b.Grade then
+      return a.Grade > b.Grade
+    else
+      return a.ID > b.ID
     end
-  end
-)
-  ret = (gradeConfig[1]).Grade
+  end)
+  ret = gradeConfig[1].Grade
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.GetMaxLevel = function(self, petID, grade)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillPerfModule:GetMaxLevel(petID, grade)
   local ret = 0
-  local levelConfig = (Cfg["cfg_pet_level_" .. petID .. "_" .. grade])()
-  for k,v in pairs(levelConfig) do
+  local levelConfig = Cfg["cfg_pet_level_" .. petID .. "_" .. grade]()
+  for k, v in pairs(levelConfig) do
     if v.PetID == petID and ret < v.Level then
       ret = v.Level
     end
@@ -81,91 +57,65 @@ SkillPerfModule.GetMaxLevel = function(self, petID, grade)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.StopStat = function(self)
-  -- function num : 0_5
+function SkillPerfModule:StopStat()
   self._stop = true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.TestData = function(self)
-  -- function num : 0_6
+function SkillPerfModule:TestData()
   self._petIDList = {}
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.AddPet = function(self, petID)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._petList)[petID] = {}
+function SkillPerfModule:AddPet(petID)
+  self._petList[petID] = {}
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.AddCalcSkill = function(self, petID, skillID)
-  -- function num : 0_8 , upvalues : _ENV
-  (table.insert)((self._petList)[petID], skillID)
+function SkillPerfModule:AddCalcSkill(petID, skillID)
+  table.insert(self._petList[petID], skillID)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.AddActiveSkillLog = function(self, log)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillPerfModule:AddActiveSkillLog(log)
   if not self._activeSkillLog then
     if EDITOR then
-      self._activeSkillLog = {"PetID,PetName,SkillID,DefaultFPSNumber,FPSNumber,DiffFPS,Index,DrawCalls,Batches,SetPassCalls,Triangles,Vertices,BonesCount"}
+      self._activeSkillLog = {
+        "PetID,PetName,SkillID,DefaultFPSNumber,FPSNumber,DiffFPS,Index,DrawCalls,Batches,SetPassCalls,Triangles,Vertices,BonesCount"
+      }
     else
-      self._activeSkillLog = {"PetID,PetName,SkillID,DefaultFPSNumber,FPSNumber,DiffFPS,Index"}
+      self._activeSkillLog = {
+        "PetID,PetName,SkillID,DefaultFPSNumber,FPSNumber,DiffFPS,Index"
+      }
     end
   end
-  ;
-  (table.insert)(self._activeSkillLog, log)
+  table.insert(self._activeSkillLog, log)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.WriteActiveSkillLog = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function SkillPerfModule:WriteActiveSkillLog()
   local dir = EngineGameHelper.StoragePath .. "PerformanceLog/"
-  ;
-  (App.MakeDir)(dir)
-  local filePath = dir .. "CoreGamePetActiveSkillStatsDataLog" .. (os.date)("%y%m%d%H%M%S") .. ".csv"
-  local file = (io.open)(filePath, "w")
-  for i,log in ipairs(self._activeSkillLog) do
+  App.MakeDir(dir)
+  local filePath = dir .. "CoreGamePetActiveSkillStatsDataLog" .. os.date("%y%m%d%H%M%S") .. ".csv"
+  local file = io.open(filePath, "w")
+  for i, log in ipairs(self._activeSkillLog) do
     file:write(log)
     file:write("\n")
   end
-  ;
-  (io.close)(file)
+  io.close(file)
   self._activeSkillLog = nil
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.GetFPSNumber = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function SkillPerfModule:GetFPSNumber()
   if not self._uiCoreGameSkillPerfController then
-    self._uiCoreGameSkillPerfController = ((GameGlobal.UIStateManager)()):GetController("UICoreGameSkillPerfController")
+    self._uiCoreGameSkillPerfController = GameGlobal.UIStateManager():GetController("UICoreGameSkillPerfController")
   end
-  local fpsNumber = nil
-  for s in (string.gmatch)(((self._uiCoreGameSkillPerfController)._fpsText).text, "%d+") do
+  local fpsNumber
+  for s in string.gmatch(self._uiCoreGameSkillPerfController._fpsText.text, "%d+") do
     fpsNumber = s
   end
   return tonumber(fpsNumber)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.ActiveSkillStat = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, _ENV
+function SkillPerfModule:ActiveSkillStat()
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     local defaultFPSNumber = self:GetFPSNumber()
-    self:WriteLog("Wait ActiveSkill Stat ID:", self._petID, " SkillID:", self._skillID, "TaskID", ((TaskManager:GetInstance()).curTask).id)
+    self:WriteLog("Wait ActiveSkill Stat ID:", self._petID, " SkillID:", self._skillID, "TaskID", TaskManager:GetInstance().curTask.id)
     while not self:IsSkillPlaying() do
       YIELD(TT)
       if defaultFPSNumber < self:GetFPSNumber() then
@@ -173,86 +123,59 @@ SkillPerfModule.ActiveSkillStat = function(self)
       end
     end
     self:WriteLog("BeforeFPSNumber:", defaultFPSNumber)
-    self:WriteLog("Begin ActiveSkill Stat ID:", self._petID, " SkillID:", self._skillID, "TaskID", ((TaskManager:GetInstance()).curTask).id)
-    local fpsNumber = nil
+    self:WriteLog("Begin ActiveSkill Stat ID:", self._petID, " SkillID:", self._skillID, "TaskID", TaskManager:GetInstance().curTask.id)
+    local fpsNumber
     local minFPSNumber = 1000
     local dc = -1
-    local log = nil
-    while 1 do
-      while 1 do
-        if self:IsSkillPlaying() then
-          YIELD(TT)
-          fpsNumber = self:GetFPSNumber()
-          local petName = (StringTable.Get)((self._petData):GetPetName())
-          if EDITOR and fpsNumber < minFPSNumber then
-            minFPSNumber = fpsNumber
-            local curDC = (UnityEditor.UnityStats).drawCalls
-            local curBT = (UnityEditor.UnityStats).batches
-            local curSetPassCalls = (UnityEditor.UnityStats).setPassCalls
-            local curTri = (UnityEditor.UnityStats).triangles
-            local curVer = (UnityEditor.UnityStats).vertices
-            dc = (UnityEditor.UnityStats).drawCalls
-            log = tostring(self._petID) .. "," .. petName .. "," .. tostring(self._skillID) .. "," .. tostring(defaultFPSNumber) .. "," .. tostring(fpsNumber) .. "," .. tostring(defaultFPSNumber - fpsNumber) .. "," .. tostring(self._count) .. "," .. curDC .. "," .. curBT .. "," .. curSetPassCalls .. "," .. curTri .. "," .. curVer
-          end
-          -- DECOMPILER ERROR at PC134: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC134: LeaveBlock: unexpected jumping out IF_STMT
-
+    local log
+    while self:IsSkillPlaying() do
+      YIELD(TT)
+      fpsNumber = self:GetFPSNumber()
+      local petName = StringTable.Get(self._petData:GetPetName())
+      if EDITOR then
+        if minFPSNumber > fpsNumber then
+          minFPSNumber = fpsNumber
+          local curDC = UnityEditor.UnityStats.drawCalls
+          local curBT = UnityEditor.UnityStats.batches
+          local curSetPassCalls = UnityEditor.UnityStats.setPassCalls
+          local curTri = UnityEditor.UnityStats.triangles
+          local curVer = UnityEditor.UnityStats.vertices
+          dc = UnityEditor.UnityStats.drawCalls
+          log = tostring(self._petID) .. "," .. petName .. "," .. tostring(self._skillID) .. "," .. tostring(defaultFPSNumber) .. "," .. tostring(fpsNumber) .. "," .. tostring(defaultFPSNumber - fpsNumber) .. "," .. tostring(self._count) .. "," .. curDC .. "," .. curBT .. "," .. curSetPassCalls .. "," .. curTri .. "," .. curVer
         end
-      end
-      if tonumber(fpsNumber) < minFPSNumber then
+      elseif minFPSNumber > tonumber(fpsNumber) then
         minFPSNumber = tonumber(fpsNumber)
         log = tostring(self._petID) .. "," .. petName .. "," .. tostring(self._skillID) .. "," .. tostring(defaultFPSNumber) .. "," .. tostring(fpsNumber) .. "," .. tostring(defaultFPSNumber - fpsNumber) .. "," .. tostring(self._count)
       end
     end
-    do
-      self:WriteLog("Finish ActiveSkill Stat ID:", self._petID, " SkillID:", self._skillID, "TaskID", ((TaskManager:GetInstance()).curTask).id, "MinFPS:", fpsNumber)
-      self:AddActiveSkillLog(log)
-    end
-  end
-)
+    self:WriteLog("Finish ActiveSkill Stat ID:", self._petID, " SkillID:", self._skillID, "TaskID", TaskManager:GetInstance().curTask.id, "MinFPS:", fpsNumber)
+    self:AddActiveSkillLog(log)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.SaveAlreadyCache = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function SkillPerfModule:SaveAlreadyCache()
   self._skillEffectCacheName = {}
-  local poolSvc = (self._world):GetService("ResourcesPool")
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCacheName)[1] = {}
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCacheName)[2] = {}
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._skillEffectCacheName)[3] = {}
-  for name,v in pairs(poolSvc._cacheTable) do
-    (table.insert)((self._skillEffectCacheName)[1], name)
+  local poolSvc = self._world:GetService("ResourcesPool")
+  self._skillEffectCacheName[1] = {}
+  self._skillEffectCacheName[2] = {}
+  self._skillEffectCacheName[3] = {}
+  for name, v in pairs(poolSvc._cacheTable) do
+    table.insert(self._skillEffectCacheName[1], name)
   end
-  for name,v in pairs(poolSvc._assetTable) do
-    (table.insert)((self._skillEffectCacheName)[2], name)
+  for name, v in pairs(poolSvc._assetTable) do
+    table.insert(self._skillEffectCacheName[2], name)
   end
-  for name,v in pairs(poolSvc._materialTable) do
-    (table.insert)((self._skillEffectCacheName)[3], name)
+  for name, v in pairs(poolSvc._materialTable) do
+    table.insert(self._skillEffectCacheName[3], name)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.CastActiveSkill = function(self, petID, skillID)
-  -- function num : 0_14 , upvalues : _ENV
+function SkillPerfModule:CastActiveSkill(petID, skillID)
   if self._perfIsRun then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : _ENV, petID, self, skillID
-    for k,v in pairs((Cfg.cfg_pet)()) do
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+    for k, v in pairs(Cfg.cfg_pet()) do
       if v.ID == petID then
         self._skillID = skillID
         self:SetAppointSkill(skillID)
@@ -268,40 +191,23 @@ SkillPerfModule.CastActiveSkill = function(self, petID, skillID)
     end
     self:AfterSkill()
     self:SetAppointSkill(nil)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.SetAppointSkill = function(self, skillID)
-  -- function num : 0_15
+function SkillPerfModule:SetAppointSkill(skillID)
   self._appointSkill = skillID
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.HasAppointSkill = function(self)
-  -- function num : 0_16
-  do return self._appointSkill ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillPerfModule:HasAppointSkill()
+  return self._appointSkill ~= nil
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.IsAppointSkill = function(self, skillID)
-  -- function num : 0_17
-  do return not self._appointSkill or self._appointSkill == skillID end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function SkillPerfModule:IsAppointSkill(skillID)
+  return self._appointSkill and self._appointSkill == skillID
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.InitBeforeSkill = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function SkillPerfModule:InitBeforeSkill()
   self._sourceLogLevel = Log.loglevel
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
   Log.loglevel = ELogLevel.None
   self._noDisposeRes = {}
   self:ControlUIBattle(true)
@@ -312,109 +218,80 @@ SkillPerfModule.InitBeforeSkill = function(self)
   self._petList = {}
   self._skillEffectCacheName = {}
   self._effectEntity = {}
-  self._sourceState = (LocalDB.GetInt)("SkillAnimationSettingKey", SkillAnimationPermissionType.Open)
-  ;
-  (LocalDB.SetInt)("SkillAnimationSettingKey", SkillAnimationPermissionType.Close)
+  self._sourceState = LocalDB.GetInt("SkillAnimationSettingKey", SkillAnimationPermissionType.Open)
+  LocalDB.SetInt("SkillAnimationSettingKey", SkillAnimationPermissionType.Close)
   self._perfIsRun = true
   self:SaveAlreadyCache()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.AfterSkill = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function SkillPerfModule:AfterSkill()
   self._perfIsRun = false
-  ;
-  (LocalDB.SetInt)("SkillAnimationSettingKey", self._sourceState)
+  LocalDB.SetInt("SkillAnimationSettingKey", self._sourceState)
   self:ControlUIBattle(false)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
   Log.loglevel = self._sourceLogLevel
-  for k,v in pairs(self._petList) do
+  for k, v in pairs(self._petList) do
     if #v == 0 then
-      (Log.fatal)("Can\'t Cast ActiveSkill Pet:", k)
+      Log.fatal("Can't Cast ActiveSkill Pet:", k)
     end
   end
   self:RevertGridScale()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.WriteLog = function(self, ...)
-  -- function num : 0_20 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
+function SkillPerfModule:WriteLog(...)
   Log.loglevel = self._sourceLogLevel
-  ;
-  (Log.fatal)(...)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
+  Log.fatal(...)
   Log.loglevel = ELogLevel.None
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.BeginActiveSkillStat = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function SkillPerfModule:BeginActiveSkillStat()
   self:InitBeforeSkill()
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : _ENV, self
-    for k,v in pairs((Cfg.cfg_pet)()) do
-      if not self._stop then
-        if v.Formal == 1 and (#self._petIDList == 0 or (table.intable)(self._petIDList, v.ID)) then
-          self:WriteLog("Begin ActiveSkill Perf ID:", v.ID, " count:", self._count)
-          self:AddPet(v.ID)
-          self:ClearAllTrap(TT)
-          self:MonsterRefresh(TT)
-          self:ClearCurPetData(TT)
-          self._petID = v.ID
-          local petEntity = self:CreateTeamMember(TT, v.ID, self._count, SkillType.Active)
-          YIELD(TT, 2000)
-          if petEntity:HasView() and (petEntity:View()).ViewWrapper and ((petEntity:View()).ViewWrapper).GameObject then
-            self:WriteLog(" BeforeActive AfterCache Perf ID:", v.ID, " count:", self._count)
-            self:SetSkillState(false)
-            self:ActiveSkillStat()
-            YIELD(TT, 100)
-            self:AutoFightActiveSkill(TT)
-            YIELD(TT, 100)
-            self:SetSkillState(false)
-            YIELD(TT, 1000)
-            self._count = self._count + 1
-          end
-        end
-        do
-          -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_STMT
-
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+    for k, v in pairs(Cfg.cfg_pet()) do
+      if self._stop then
+        break
+      end
+      if v.Formal == 1 and (#self._petIDList == 0 or table.intable(self._petIDList, v.ID)) then
+        self:WriteLog("Begin ActiveSkill Perf ID:", v.ID, " count:", self._count)
+        self:AddPet(v.ID)
+        self:ClearAllTrap(TT)
+        self:MonsterRefresh(TT)
+        self:ClearCurPetData(TT)
+        self._petID = v.ID
+        local petEntity = self:CreateTeamMember(TT, v.ID, self._count, SkillType.Active)
+        YIELD(TT, 2000)
+        if petEntity:HasView() and petEntity:View().ViewWrapper and petEntity:View().ViewWrapper.GameObject then
+          self:WriteLog(" BeforeActive AfterCache Perf ID:", v.ID, " count:", self._count)
+          self:SetSkillState(false)
+          self:ActiveSkillStat()
+          YIELD(TT, 100)
+          self:AutoFightActiveSkill(TT)
+          YIELD(TT, 100)
+          self:SetSkillState(false)
+          YIELD(TT, 1000)
+          self._count = self._count + 1
         end
       end
     end
     YIELD(TT, 500)
     self:AfterSkill()
-    for k,v in pairs(self._petList) do
+    for k, v in pairs(self._petList) do
       if #v == 0 then
-        (Log.fatal)("Can\'t Cast ActiveSkill Pet:", k)
+        Log.fatal("Can't Cast ActiveSkill Pet:", k)
       end
     end
     self:WriteActiveSkillLog()
-    for k,v in pairs(self._noDisposeRes) do
+    for k, v in pairs(self._noDisposeRes) do
       if #v == 0 then
-        (Log.fatal)("No Dispose ResName:", k)
+        Log.fatal("No Dispose ResName:", k)
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.ClearChainSkillEnv = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local teamMembers = (teamEntity:Team()):GetTeamPetEntities()
-  for i,e in ipairs(teamMembers) do
+function SkillPerfModule:ClearChainSkillEnv()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local teamMembers = teamEntity:Team():GetTeamPetEntities()
+  for i, e in ipairs(teamMembers) do
     local skillPetData = e:SkillPetAttackData()
     skillPetData:ClearPetAttackData()
   end
@@ -422,175 +299,125 @@ SkillPerfModule.ClearChainSkillEnv = function(self)
   logicChainPathCmpt:ClearLogicChainPath()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.BuildChainSkillEnv = function(self, TT)
-  -- function num : 0_23
+function SkillPerfModule:BuildChainSkillEnv(TT)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.PlayChainSkill = function(self, TT)
-  -- function num : 0_24
+function SkillPerfModule:PlayChainSkill(TT)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.BeginChainSkillStat = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function SkillPerfModule:BeginChainSkillStat()
   self:InitBeforeSkill()
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_25_0 , upvalues : _ENV, self
-    for k,v in pairs((Cfg.cfg_pet)()) do
-      -- DECOMPILER ERROR at PC25: Confused about usage of register: R6 in 'UnsetPending'
-
-      if not self._stop then
-        do
-          if v.Formal == 1 and (#self._petIDList == 0 or (table.intable)(self._petIDList, v.ID)) then
-            Log.loglevel = self._sourceLogLevel
-            ;
-            (Log.fatal)("Begin ActiveSkill Perf ID:", v.ID, " count:", self._count)
-            -- DECOMPILER ERROR at PC36: Confused about usage of register: R6 in 'UnsetPending'
-
-            Log.loglevel = ELogLevel.None
-            self:AddPet(v.ID)
-            self:ClearAllTrap(TT)
-            self:MonsterRefresh(TT)
-            self:ClearCurPetData(TT)
-            self._petID = v.ID
-            self:CreateTeamMember(TT, v.ID, self._count, SkillType.Chain)
-            YIELD(TT, 2000)
-            -- DECOMPILER ERROR at PC69: Confused about usage of register: R6 in 'UnsetPending'
-
-            Log.loglevel = self._sourceLogLevel
-            ;
-            (Log.fatal)(" BeforeActive AfterCache Perf ID:", v.ID, " count:", self._count)
-            -- DECOMPILER ERROR at PC80: Confused about usage of register: R6 in 'UnsetPending'
-
-            Log.loglevel = ELogLevel.None
-            self:SetSkillState(false)
-            self:ActiveSkillStat()
-            YIELD(TT, 100)
-            self:AutoFightActiveSkill(TT)
-            YIELD(TT, 100)
-            self:SetSkillState(false)
-            YIELD(TT, 1000)
-            self._count = self._count + 1
-          end
-          -- DECOMPILER ERROR at PC111: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC111: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+    for k, v in pairs(Cfg.cfg_pet()) do
+      if self._stop then
+        break
+      end
+      if v.Formal == 1 and (#self._petIDList == 0 or table.intable(self._petIDList, v.ID)) then
+        Log.loglevel = self._sourceLogLevel
+        Log.fatal("Begin ActiveSkill Perf ID:", v.ID, " count:", self._count)
+        Log.loglevel = ELogLevel.None
+        self:AddPet(v.ID)
+        self:ClearAllTrap(TT)
+        self:MonsterRefresh(TT)
+        self:ClearCurPetData(TT)
+        self._petID = v.ID
+        self:CreateTeamMember(TT, v.ID, self._count, SkillType.Chain)
+        YIELD(TT, 2000)
+        Log.loglevel = self._sourceLogLevel
+        Log.fatal(" BeforeActive AfterCache Perf ID:", v.ID, " count:", self._count)
+        Log.loglevel = ELogLevel.None
+        self:SetSkillState(false)
+        self:ActiveSkillStat()
+        YIELD(TT, 100)
+        self:AutoFightActiveSkill(TT)
+        YIELD(TT, 100)
+        self:SetSkillState(false)
+        YIELD(TT, 1000)
+        self._count = self._count + 1
       end
     end
     YIELD(TT, 500)
     self:AfterSkill()
-    for k,v in pairs(self._petList) do
+    for k, v in pairs(self._petList) do
       if #v == 0 then
-        (Log.fatal)("Can\'t Cast ActiveSkill Pet:", k)
+        Log.fatal("Can't Cast ActiveSkill Pet:", k)
       end
     end
     self:WriteActiveSkillLog()
-    for k,v in pairs(self._noDisposeRes) do
+    for k, v in pairs(self._noDisposeRes) do
       if #v == 0 then
-        (Log.fatal)("No Dispose ResName:", k)
+        Log.fatal("No Dispose ResName:", k)
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.MonsterGetSourcePos = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+function SkillPerfModule:MonsterGetSourcePos()
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local cheatHp = 9999999
   self._monsterPosData = {}
-  for _,e in ipairs(group:GetEntities()) do
-    local gridPos = ((e:GridLocation()):GetGridPos()):Clone()
-    local gridDir = ((e:GridLocation()):GetGridDir()):Clone()
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._monsterPosData)[e:GetID()] = {gridPos, gridDir}
+  for _, e in ipairs(group:GetEntities()) do
+    local gridPos = e:GridLocation():GetGridPos():Clone()
+    local gridDir = e:GridLocation():GetGridDir():Clone()
+    self._monsterPosData[e:GetID()] = {gridPos, gridDir}
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.IsSkillPlaying = function(self)
-  -- function num : 0_27
+function SkillPerfModule:IsSkillPlaying()
   return self._skillState
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.SetSkillState = function(self, isPlay, skillID)
-  -- function num : 0_28 , upvalues : _ENV
+function SkillPerfModule:SetSkillState(isPlay, skillID)
   self._skillState = isPlay
   if isPlay then
     self._skillID = skillID
   end
-  ;
-  (Log.fatal)("SetSkillState:", isPlay, " SkillID:", skillID)
+  Log.fatal("SetSkillState:", isPlay, " SkillID:", skillID)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.ControlUIBattle = function(self, hide)
-  -- function num : 0_29 , upvalues : _ENV
-  local uiBattleGO = (((GameGlobal.UIStateManager)()):GetController("UIBattle")):GetGameObject()
+function SkillPerfModule:ControlUIBattle(hide)
+  local uiBattleGO = GameGlobal.UIStateManager():GetController("UIBattle"):GetGameObject()
   uiBattleGO:SetActive(not hide)
-  local hudCamera = ((self._world):MainCamera()):HUDCamera()
+  local hudCamera = self._world:MainCamera():HUDCamera()
   hudCamera.enabled = not hide
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.MonsterRefresh = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  local sBoard = (self._world):GetService("BoardLogic")
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+function SkillPerfModule:MonsterRefresh()
+  local sBoard = self._world:GetService("BoardLogic")
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local cheatHp = 9999999
-  for _,e in ipairs(group:GetEntities()) do
-    (e:Attributes()):Modify("HP", cheatHp)
-    ;
-    (e:Attributes()):Modify("MaxHP", cheatHp)
-    if (self._world):RunAtClient() then
+  for _, e in ipairs(group:GetEntities()) do
+    e:Attributes():Modify("HP", cheatHp)
+    e:Attributes():Modify("MaxHP", cheatHp)
+    if self._world:RunAtClient() then
       e:ReplaceRedAndMaxHP(cheatHp, cheatHp)
     end
-    local posOld = ((e:GridLocation()):GetGridPos()):Clone()
+    local posOld = e:GridLocation():GetGridPos():Clone()
     local bodyArea, blockFlag = sBoard:RemoveEntityBlockFlag(e, posOld)
-    e:SetGridLocation((((self._monsterPosData)[e:GetID()])[1]):Clone(), (((self._monsterPosData)[e:GetID()])[2]):Clone())
-    sBoard:SetEntityBlockFlag(e, (((self._monsterPosData)[e:GetID()])[1]):Clone(), blockFlag)
+    e:SetGridLocation(self._monsterPosData[e:GetID()][1]:Clone(), self._monsterPosData[e:GetID()][2]:Clone())
+    sBoard:SetEntityBlockFlag(e, self._monsterPosData[e:GetID()][1]:Clone(), blockFlag)
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.ClearAllTrap = function(self, TT, petID)
-  -- function num : 0_31 , upvalues : _ENV
-  (Log.fatal)("BeginClearTrap CurPet:", petID)
-  local boardService = (self._world):GetService("BoardLogic")
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).TrapID)
-  local battleFlags = (self._world):BattleFlags()
-  local trapSvc = (self._world):GetService("TrapLogic")
-  local trapRender = (self._world):GetService("TrapRender")
-  for _,entity in ipairs(group:GetEntities()) do
+function SkillPerfModule:ClearAllTrap(TT, petID)
+  Log.fatal("BeginClearTrap CurPet:", petID)
+  local boardService = self._world:GetService("BoardLogic")
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.TrapID)
+  local battleFlags = self._world:BattleFlags()
+  local trapSvc = self._world:GetService("TrapLogic")
+  local trapRender = self._world:GetService("TrapRender")
+  for _, entity in ipairs(group:GetEntities()) do
     if not entity:HasDeadMark() then
       entity:AddDeadMark()
       local trapCmpt = entity:Trap()
       local entityIDList = battleFlags:GetSummonMeantimeLimitEntityID(trapCmpt:GetTrapID())
-      if (table.intable)(entityIDList, entity:GetID()) then
-        (table.removev)(entityIDList, entity:GetID())
+      if table.intable(entityIDList, entity:GetID()) then
+        table.removev(entityIDList, entity:GetID())
         battleFlags:SetSummonMeantimeLimitEntityID(trapCmpt:GetTrapID(), entityIDList)
       end
       local trapIDList = battleFlags:GetSummonOnFixPosLimitEntityID(trapCmpt:GetTrapID())
-      if (table.intable)(trapIDList, entity:GetID()) then
-        (table.removev)(trapIDList, entity:GetID())
+      if table.intable(trapIDList, entity:GetID()) then
+        table.removev(trapIDList, entity:GetID())
         battleFlags:SetSummonOnFixPosLimitEntityID(trapCmpt:GetTrapID(), trapIDList)
       end
       local pos = entity:GetGridPosition()
@@ -600,44 +427,32 @@ SkillPerfModule.ClearAllTrap = function(self, TT, petID)
         needCalcTrapDieSkill = true
       end
       trapSvc:CalcTrapDieSkill({entity})
-      ;
-      (entity:BuffComponent()):SetActive(false)
+      entity:BuffComponent():SetActive(false)
     end
   end
   local taskIds = trapRender:PlayTrapDieSkill(TT, group:GetEntities())
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIds) do
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIds) do
     YIELD(TT)
   end
-  for _,entity in ipairs(group:GetEntities()) do
-    (self._world):DestroyEntity(entity)
+  for _, entity in ipairs(group:GetEntities()) do
+    self._world:DestroyEntity(entity)
   end
-  ;
-  (Log.fatal)("Finish ClearTrap CurPet:", petID)
+  Log.fatal("Finish ClearTrap CurPet:", petID)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.AddSkillEffectCacheName = function(self, type, name)
-  -- function num : 0_32 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._skillEffectCacheName)[type] then
-    (self._skillEffectCacheName)[type] = {}
+function SkillPerfModule:AddSkillEffectCacheName(type, name)
+  if not self._skillEffectCacheName[type] then
+    self._skillEffectCacheName[type] = {}
   end
-  ;
-  (table.insert)((self._skillEffectCacheName)[type], name)
+  table.insert(self._skillEffectCacheName[type], name)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.ClearCacheTable = function(self, TT, cacheTable, needSaveName)
-  -- function num : 0_33 , upvalues : _ENV
+function SkillPerfModule:ClearCacheTable(TT, cacheTable, needSaveName)
   local destroyName = {}
-  for resName,resCacheInfo in pairs(cacheTable) do
-    if resCacheInfo ~= nil and not (table.intable)(needSaveName, resName) then
-      (Log.fatal)("ResourceNot Dispose:", resName)
-      ;
-      (table.insert)(self._noDisposeRes, resName)
+  for resName, resCacheInfo in pairs(cacheTable) do
+    if resCacheInfo ~= nil and not table.intable(needSaveName, resName) then
+      Log.fatal("ResourceNot Dispose:", resName)
+      table.insert(self._noDisposeRes, resName)
       resCacheInfo:SetEnableCache(false)
       local resList = resCacheInfo.reslist
       if resList:Size() ~= 0 then
@@ -647,50 +462,40 @@ SkillPerfModule.ClearCacheTable = function(self, TT, cacheTable, needSaveName)
         end
         resList:Clear()
       end
-      ;
-      (table.insert)(destroyName, resName)
+      table.insert(destroyName, resName)
     end
   end
-  for k,name in pairs(destroyName) do
-    (table.removev)(cacheTable, name)
+  for k, name in pairs(destroyName) do
+    table.removev(cacheTable, name)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.ClearSkillEffectCache = function(self, TT)
-  -- function num : 0_34 , upvalues : _ENV
-  local poolSvc = (self._world):GetService("ResourcesPool")
-  self:ClearCacheTable(TT, poolSvc._cacheTable, (self._skillEffectCacheName)[1])
+function SkillPerfModule:ClearSkillEffectCache(TT)
+  local poolSvc = self._world:GetService("ResourcesPool")
+  self:ClearCacheTable(TT, poolSvc._cacheTable, self._skillEffectCacheName[1])
   collectgarbage("collect")
-  ;
-  (App.ClearMemory)()
+  App.ClearMemory()
   YIELD(TT)
-  self:ClearCacheTable(TT, poolSvc._assetTable, (self._skillEffectCacheName)[2])
+  self:ClearCacheTable(TT, poolSvc._assetTable, self._skillEffectCacheName[2])
   collectgarbage("collect")
-  ;
-  (App.ClearMemory)()
+  App.ClearMemory()
   YIELD(TT)
-  self:ClearCacheTable(TT, poolSvc._materialTable, (self._skillEffectCacheName)[3])
+  self:ClearCacheTable(TT, poolSvc._materialTable, self._skillEffectCacheName[3])
   collectgarbage("collect")
-  ;
-  (App.ClearMemory)()
+  App.ClearMemory()
   YIELD(TT)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.ClearCurPetData = function(self, TT)
-  -- function num : 0_35 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local petEntityList = (teamEntity:Team()):GetTeamPetEntities()
-  local buffLogicService = (self._world):GetService("BuffLogic")
-  for i,petEntity in ipairs(petEntityList) do
-    local buffSource = BuffSource:New(BuffSourceType.PassiveSkill, (petEntity:PetPstID()):GetPstID())
+function SkillPerfModule:ClearCurPetData(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local petEntityList = teamEntity:Team():GetTeamPetEntities()
+  local buffLogicService = self._world:GetService("BuffLogic")
+  for i, petEntity in ipairs(petEntityList) do
+    local buffSource = BuffSource:New(BuffSourceType.PassiveSkill, petEntity:PetPstID():GetPstID())
     local skillBuffSource = BuffSource:New(BuffSourceType.Skill, petEntity:GetID())
     local buffBuffSource = BuffSource:New(BuffSourceType.Buff, petEntity:GetID())
-    local buffEntityList = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).Buff)
-    for _,buffEntity in ipairs(buffEntityList) do
+    local buffEntityList = self._world:GetGroupEntities(self._world.BW_WEMatchers.Buff)
+    for _, buffEntity in ipairs(buffEntityList) do
       local buffComponent = buffEntity:BuffComponent()
       buffComponent:UnLoadBuff(buffSource)
       buffComponent:UnLoadBuff(skillBuffSource)
@@ -698,91 +503,60 @@ SkillPerfModule.ClearCurPetData = function(self, TT)
     end
     buffLogicService:RemoveAllBuffInstance(petEntity)
   end
-  local sEffect = (self._world):GetService("Effect")
-  for i,petEntity in ipairs(petEntityList) do
+  local sEffect = self._world:GetService("Effect")
+  for i, petEntity in ipairs(petEntityList) do
     sEffect:ClearEntityEffect(petEntity)
     sEffect:DestroyStaticEffect(petEntity)
-    ;
-    (self._world):DestroyEntity(petEntity)
+    self._world:DestroyEntity(petEntity)
   end
-  ;
-  ((self._world):GetService("PlayBuff")):PlayAutoRemoveBuff(TT, NTBuffUnload:New())
+  self._world:GetService("PlayBuff"):PlayAutoRemoveBuff(TT, NTBuffUnload:New())
   local teamPos = teamEntity:GetGridPosition()
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local boardCmpt = boardEntity:Board()
-  local index = (math.random)(1, 4)
+  local index = math.random(1, 4)
   boardCmpt:SetPieceElement(teamPos, index)
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   boardServiceRender:ReCreateGridEntity(index, teamPos, false, false, true)
   buffLogicService:RemoveAllBuffInstance(teamEntity)
-  ;
-  (teamEntity:Team()):ClearTeamPetEntities()
-  -- DECOMPILER ERROR at PC135: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  ((self._world).BW_WorldInfo).localMatchPetDict = {}
-  -- DECOMPILER ERROR at PC139: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  ((self._world).BW_WorldInfo).localMatchPets = {}
-  ;
-  ((self._world):BattleStat())._exChangeBuffMap = {}
+  teamEntity:Team():ClearTeamPetEntities()
+  self._world.BW_WorldInfo.localMatchPetDict = {}
+  self._world.BW_WorldInfo.localMatchPets = {}
+  self._world:BattleStat()._exChangeBuffMap = {}
   self:DestoryEffectEntity()
   self:ClearSkillEffectCache(TT)
   collectgarbage("collect")
-  ;
-  (App.ClearMemory)()
+  App.ClearMemory()
   collectgarbage("collect")
-  ;
-  (App.ClearMemory)()
+  App.ClearMemory()
   collectgarbage("collect")
-  ;
-  (App.ClearMemory)()
+  App.ClearMemory()
   YIELD(TT, 100)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.RevertGridScale = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  local pieceGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Piece)
-  for _,pieceEntity in ipairs(pieceGroup:GetEntities()) do
+function SkillPerfModule:RevertGridScale()
+  local pieceGroup = self._world:GetGroup(self._world.BW_WEMatchers.Piece)
+  for _, pieceEntity in ipairs(pieceGroup:GetEntities()) do
     local viewCmpt = pieceEntity:View()
     local gameObj = viewCmpt:GetGameObject()
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (gameObj.transform).localScale = Vector3(1, 1, 1)
+    gameObj.transform.localScale = Vector3(1, 1, 1)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.SetGridEntityScale = function(self, entity)
-  -- function num : 0_37 , upvalues : _ENV
+function SkillPerfModule:SetGridEntityScale(entity)
   local viewCmpt = entity:View()
   local gameObj = viewCmpt:GetGameObject()
   gameObj:SetActive(false)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (gameObj.transform).localScale = Vector3(self._scale, self._scale, self._scale)
+  gameObj.transform.localScale = Vector3(self._scale, self._scale, self._scale)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.SetGridScale = function(self)
-  -- function num : 0_38 , upvalues : _ENV
-  local pieceGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Piece)
-  for _,pieceEntity in ipairs(pieceGroup:GetEntities()) do
+function SkillPerfModule:SetGridScale()
+  local pieceGroup = self._world:GetGroup(self._world.BW_WEMatchers.Piece)
+  for _, pieceEntity in ipairs(pieceGroup:GetEntities()) do
     self:SetGridEntityScale(pieceEntity)
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.CreatePetInfo = function(self, templateID, count)
-  -- function num : 0_39 , upvalues : _ENV
+function SkillPerfModule:CreatePetInfo(templateID, count)
   local petInfo = MatchPetInfo:New()
   local tmpPstid = 999000000 + count
   petInfo.pet_pstid = tmpPstid
@@ -804,83 +578,60 @@ SkillPerfModule.CreatePetInfo = function(self, templateID, count)
   return petInfo
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.CreateTeamMember = function(self, TT, templateID, count, skillType)
-  -- function num : 0_40 , upvalues : _ENV
+function SkillPerfModule:CreateTeamMember(TT, templateID, count, skillType)
   local petInfo = self:CreatePetInfo(templateID, count)
   self:SetMatchEnterData(petInfo)
   local petPstID = petInfo.pet_pstid
   local matchPet = MatchPet:New(petInfo)
   self._petData = matchPet
   self:CachePet(TT, matchPet, skillType)
-  local listMatchPet = (self._world):GetLocalMatchPetList()
-  ;
-  (table.insert)(listMatchPet, matchPet)
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (((self._world).BW_WorldInfo).localMatchPetDict)[petPstID] = matchPet
+  local listMatchPet = self._world:GetLocalMatchPetList()
+  table.insert(listMatchPet, matchPet)
+  self._world.BW_WorldInfo.localMatchPetDict[petPstID] = matchPet
   self:SetTeamLogic()
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local petEntity = ((teamEntity:Team()):GetTeamPetEntities())[1]
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local petEntity = teamEntity:Team():GetTeamPetEntities()[1]
   self:SetPetRender(petEntity)
   self:SetTeamRender()
   return petEntity, petInfo, matchPet
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.SetTeamLogic = function(self)
-  -- function num : 0_41
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  ;
-  (self._world):DestroyEntity(teamEntity)
-  local entityService = (self._world):GetService("LogicEntity")
+function SkillPerfModule:SetTeamLogic()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  self._world:DestroyEntity(teamEntity)
+  local entityService = self._world:GetService("LogicEntity")
   entityService:CreateBattleTeamLogic()
-  teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  ;
-  ((self._world):Player()):SetPreviewTeamEntity(teamEntity)
+  teamEntity = self._world:Player():GetCurrentTeamEntity()
+  self._world:Player():SetPreviewTeamEntity(teamEntity)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.GetFsmStateID = function(self)
-  -- function num : 0_42 , upvalues : _ENV
-  local gameFsmCmpt = (self._world):GameFSM()
+function SkillPerfModule:GetFsmStateID()
+  local gameFsmCmpt = self._world:GameFSM()
   if gameFsmCmpt then
     return gameFsmCmpt:CurStateID()
   end
   return GameStateID.Invalid
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.AutoFightActiveSkill = function(self, TT)
-  -- function num : 0_43 , upvalues : _ENV
-  (Log.fatal)("Active Begin")
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local uiBattle = ((GameGlobal.UIStateManager)()):GetController("UIBattle")
-  ;
-  (uiBattle._petAreaWidget):SetData(uiBattle)
+function SkillPerfModule:AutoFightActiveSkill(TT)
+  Log.fatal("Active Begin")
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local uiBattle = GameGlobal.UIStateManager():GetController("UIBattle")
+  uiBattle._petAreaWidget:SetData(uiBattle)
   local widget = uiBattle._petAreaWidget
   self:PetPowerFull(teamEntity)
-  local autoFightService = (self._world):GetService("AutoFight")
+  local autoFightService = self._world:GetService("AutoFight")
   autoFightService:_BuildMoveEnv(teamEntity)
   autoFightService:Handle_CastActiveSkill(TT)
   autoFightService:OnAutoFight_End()
   while GameStateID.WaitInput ~= self:GetFsmStateID() do
     YIELD(TT, 100)
   end
-  ;
-  (Log.fatal)("Active Finish")
+  Log.fatal("Active Finish")
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.SetPetRender = function(self, petEntity)
-  -- function num : 0_44 , upvalues : _ENV
-  local matchPet = (petEntity:MatchPet()):GetMatchPet()
+function SkillPerfModule:SetPetRender(petEntity)
+  local matchPet = petEntity:MatchPet():GetMatchPet()
   local firstElement = matchPet:GetPetFirstElement()
   local secondElement = matchPet:GetPetSecondElement()
   local petPrefab = matchPet:GetPetPrefab(PetSkinEffectPath.MODEL_INGAME)
@@ -891,331 +642,222 @@ SkillPerfModule.SetPetRender = function(self, petEntity)
   local hp = attrCmpt:GetCurrentHP()
   local maxHP = attrCmpt:CalcMaxHp()
   petEntity:SetLocation(gridPos, gridDir)
-  local id = (string.gsub)(petPrefab, ".prefab", "")
+  local id = string.gsub(petPrefab, ".prefab", "")
   petEntity:ReplaceAsset(NativeUnityPrefabAsset:New(petPrefab, true))
-  ;
-  (petEntity:PetPstID()):SetResID(tonumber(id))
+  petEntity:PetPstID():SetResID(tonumber(id))
   local attrCmpt = petEntity:Attributes()
   local hp = attrCmpt:GetCurrentHP()
   local maxHP = attrCmpt:CalcMaxHp()
   petEntity:ReplaceRedAndMaxHP(hp, maxHP)
   local hpOffset = matchPet:GetHPOffset()
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local hpCmpt = teamEntity:HP()
   hpCmpt:SetHPOffset(hpOffset)
   local petPstIDComponent = petEntity:PetPstID()
   local petPstID = petPstIDComponent:GetPstID()
-  ;
-  (petEntity:Attributes()):Modify("Power", 0)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.PetPowerChange, petPstID, 0)
-  ;
-  (petEntity:Attributes()):Modify("Ready", 1)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, true, false)
+  petEntity:Attributes():Modify("Power", 0)
+  self._world:EventDispatcher():Dispatch(GameEventType.PetPowerChange, petPstID, 0)
+  petEntity:Attributes():Modify("Ready", 1)
+  self._world:EventDispatcher():Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, true, false)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.SetTeamRender = function(self)
-  -- function num : 0_45
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function SkillPerfModule:SetTeamRender()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local attributesComponent = teamEntity:Attributes()
   local hp = attributesComponent:GetCurrentHP()
   local maxHP = attributesComponent:CalcMaxHp()
   teamEntity:ReplaceRedAndMaxHP(hp, maxHP)
   local teamPos = teamEntity:GetGridPosition()
-  local teamRotation = (teamEntity:GridLocation()):GetGridDir()
+  local teamRotation = teamEntity:GridLocation():GetGridDir()
   teamEntity:SetLocation(teamPos, teamRotation)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule._ReAddTeamBuffOnPartnerJoin = function(self, petEntity)
-  -- function num : 0_46 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function SkillPerfModule:_ReAddTeamBuffOnPartnerJoin(petEntity)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   self:_DoCreateIntensifyBuffMap(petEntity)
   local team = teamEntity:Team()
   local order = team:GetTeamOrder()
-  ;
-  (table.insert)(order, (petEntity:PetPstID()):GetPstID())
+  table.insert(order, petEntity:PetPstID():GetPstID())
   team:SetTeamOrder(order)
   local petEntitys = team:GetTeamPetEntities()
-  ;
-  (table.insert)(petEntitys, petEntity)
+  table.insert(petEntitys, petEntity)
   team:SetTeamPetEntities(petEntitys)
-  local configServer = (self._world):GetService("Config")
-  ;
-  (self._buffLogic):_BuildPetPassiveSkill(petEntity, configServer)
-  ;
-  (self._buffLogic):_BuildPetIntensifyBuff(petEntity)
+  local configServer = self._world:GetService("Config")
+  self._buffLogic:_BuildPetPassiveSkill(petEntity, configServer)
+  self._buffLogic:_BuildPetIntensifyBuff(petEntity)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.UnLoadTmpTeamBuff = function(self, tmpTeamEntity)
-  -- function num : 0_47
-  local buffLogicService = (self._world):GetService("BuffLogic")
+function SkillPerfModule:UnLoadTmpTeamBuff(tmpTeamEntity)
+  local buffLogicService = self._world:GetService("BuffLogic")
   buffLogicService:RemoveAllBuffInstance(tmpTeamEntity)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule._DoCreateIntensifyBuffMap = function(self, petEntity)
-  -- function num : 0_48
-  local battleStatCmpt = (self._world):BattleStat()
-  local equipIntensifyParams = (petEntity:SkillInfo()):GetEquipIntensifyParam()
+function SkillPerfModule:_DoCreateIntensifyBuffMap(petEntity)
+  local battleStatCmpt = self._world:BattleStat()
+  local equipIntensifyParams = petEntity:SkillInfo():GetEquipIntensifyParam()
   if equipIntensifyParams then
     battleStatCmpt:AddBuffIntensifyParam(equipIntensifyParams)
   end
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.PetPowerFull = function(self, teamEntity)
-  -- function num : 0_49 , upvalues : _ENV
-  if not teamEntity then
-    teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  end
-  local teamMembers = (teamEntity:Team()):GetTeamPetEntities()
-  local buffLogicService = (self._world):GetService("BuffLogic")
-  local playBuffService = (self._world):GetService("PlayBuff")
-  local configService = (self._world):GetService("Config")
-  local utilData = (self._world):GetService("UtilData")
-  for _,e in ipairs(teamMembers) do
+function SkillPerfModule:PetPowerFull(teamEntity)
+  teamEntity = teamEntity or self._world:Player():GetLocalTeamEntity()
+  local teamMembers = teamEntity:Team():GetTeamPetEntities()
+  local buffLogicService = self._world:GetService("BuffLogic")
+  local playBuffService = self._world:GetService("PlayBuff")
+  local configService = self._world:GetService("Config")
+  local utilData = self._world:GetService("UtilData")
+  for _, e in ipairs(teamMembers) do
     local petPstIDComponent = e:PetPstID()
     local petPstID = petPstIDComponent:GetPstID()
-    local activeSkillID = (e:SkillInfo()):GetActiveSkillID()
+    local activeSkillID = e:SkillInfo():GetActiveSkillID()
     local skillConfigData = configService:GetSkillConfigData(activeSkillID)
     if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
-      local curLegendPower = (e:Attributes()):GetAttribute("LegendPower")
+      local curLegendPower = e:Attributes():GetAttribute("LegendPower")
       local newLegendPower = curLegendPower + 10
-      if BattleConst.LegendPowerMax < newLegendPower then
+      if newLegendPower > BattleConst.LegendPowerMax then
         newLegendPower = BattleConst.LegendPowerMax
       end
-      ;
-      (e:Attributes()):Modify("LegendPower", newLegendPower)
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.PetLegendPowerChange, petPstID, newLegendPower)
+      e:Attributes():Modify("LegendPower", newLegendPower)
+      self._world:EventDispatcher():Dispatch(GameEventType.PetLegendPowerChange, petPstID, newLegendPower)
+    elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.BuffLayer then
+      local costLayer = skillConfigData:GetSkillTriggerParam()
+      local extraParam = skillConfigData:GetSkillTriggerExtraParam()
+      local buffEffectType = extraParam.buffEffectType
+      local blsvc = self._world:GetService("BuffLogic")
+      local currentVal = blsvc:GetBuffLayer(e, buffEffectType)
+      blsvc:SetBuffLayer(e, buffEffectType, costLayer, true)
+      self._world:EventDispatcher():Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, true)
     else
-      do
-        if skillConfigData:GetSkillTriggerType() == SkillTriggerType.BuffLayer then
-          local costLayer = skillConfigData:GetSkillTriggerParam()
-          local extraParam = skillConfigData:GetSkillTriggerExtraParam()
-          local buffEffectType = extraParam.buffEffectType
-          local blsvc = (self._world):GetService("BuffLogic")
-          local currentVal = blsvc:GetBuffLayer(e, buffEffectType)
-          blsvc:SetBuffLayer(e, buffEffectType, costLayer, true)
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, true)
-        else
-          do
-            ;
-            (e:Attributes()):Modify("Power", 0)
-            ;
-            ((self._world):EventDispatcher()):Dispatch(GameEventType.PetPowerChange, petPstID, 0)
-            ;
-            (e:Attributes()):Modify("Ready", 1)
-            ;
-            ((self._world):EventDispatcher()):Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, true, false)
-            do
-              local extraSkillList = (e:SkillInfo()):GetExtraActiveSkillIDList()
-              if extraSkillList then
-                for _,extraSkillID in ipairs(extraSkillList) do
-                  local extraSkillConfigData = configService:GetSkillConfigData(extraSkillID)
-                  if extraSkillConfigData then
-                    if extraSkillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
-                      local curLegendPower = (e:Attributes()):GetAttribute("LegendPower")
-                      local newLegendPower = curLegendPower + 10
-                      if BattleConst.LegendPowerMax < newLegendPower then
-                        newLegendPower = BattleConst.LegendPowerMax
-                      end
-                      ;
-                      (e:Attributes()):Modify("LegendPower", newLegendPower)
-                      ;
-                      ((self._world):EventDispatcher()):Dispatch(GameEventType.PetLegendPowerChange, petPstID, newLegendPower)
-                    else
-                      do
-                        do
-                          utilData:SetPetPowerAttr(e, 0, extraSkillID)
-                          ;
-                          ((self._world):EventDispatcher()):Dispatch(GameEventType.PetExtraPowerChange, petPstID, extraSkillID, 0, true)
-                          utilData:SetPetSkillReadyAttr(e, 1, extraSkillID)
-                          ;
-                          ((self._world):EventDispatcher()):Dispatch(GameEventType.PetExtraActiveSkillGetReady, petPstID, extraSkillID, true, false)
-                          -- DECOMPILER ERROR at PC224: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC224: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                          -- DECOMPILER ERROR at PC224: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC224: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC224: LeaveBlock: unexpected jumping out IF_STMT
-
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-              -- DECOMPILER ERROR at PC226: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC226: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC226: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC226: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC226: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC226: LeaveBlock: unexpected jumping out IF_STMT
-
+      e:Attributes():Modify("Power", 0)
+      self._world:EventDispatcher():Dispatch(GameEventType.PetPowerChange, petPstID, 0)
+    end
+    e:Attributes():Modify("Ready", 1)
+    self._world:EventDispatcher():Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, true, false)
+    local extraSkillList = e:SkillInfo():GetExtraActiveSkillIDList()
+    if extraSkillList then
+      for _, extraSkillID in ipairs(extraSkillList) do
+        local extraSkillConfigData = configService:GetSkillConfigData(extraSkillID)
+        if extraSkillConfigData then
+          if extraSkillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
+            local curLegendPower = e:Attributes():GetAttribute("LegendPower")
+            local newLegendPower = curLegendPower + 10
+            if newLegendPower > BattleConst.LegendPowerMax then
+              newLegendPower = BattleConst.LegendPowerMax
             end
+            e:Attributes():Modify("LegendPower", newLegendPower)
+            self._world:EventDispatcher():Dispatch(GameEventType.PetLegendPowerChange, petPstID, newLegendPower)
+          else
+            utilData:SetPetPowerAttr(e, 0, extraSkillID)
+            self._world:EventDispatcher():Dispatch(GameEventType.PetExtraPowerChange, petPstID, extraSkillID, 0, true)
           end
+          utilData:SetPetSkillReadyAttr(e, 1, extraSkillID)
+          self._world:EventDispatcher():Dispatch(GameEventType.PetExtraActiveSkillGetReady, petPstID, extraSkillID, true, false)
         end
       end
     end
   end
-  if playBuffService and (self._world):RunAtClient() then
-    (TaskManager:GetInstance()):CoreGameStartTask(playBuffService.PlayAutoAddBuff, playBuffService)
+  if playBuffService and self._world:RunAtClient() then
+    TaskManager:GetInstance():CoreGameStartTask(playBuffService.PlayAutoAddBuff, playBuffService)
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.CachePet = function(self, TT, matchPet, skillType)
-  -- function num : 0_50 , upvalues : _ENV
+function SkillPerfModule:CachePet(TT, matchPet, skillType)
   self._petPrefabList = {}
   self._petMatList = {}
-  local respool = ((self._world).BW_Services).ResourcesPool
-  local loadingSvc = (self._world):GetService("Loading")
+  local respool = self._world.BW_Services.ResourcesPool
+  local loadingSvc = self._world:GetService("Loading")
   local restable = {}
   local heroPrefab = matchPet:GetPetPrefab(PetSkinEffectPath.MODEL_INGAME)
-  local heroAncName = (HelperProxy:GetInstance()):GetPetAnimatorControllerName(heroPrefab, PetAnimatorControllerType.Battle)
-  ;
-  (table.appendArray)(restable, {
-{heroAncName, 1}
-})
-  local skillIds = nil
+  local heroAncName = HelperProxy:GetInstance():GetPetAnimatorControllerName(heroPrefab, PetAnimatorControllerType.Battle)
+  table.appendArray(restable, {
+    {heroAncName, 1}
+  })
+  local skillIds
   local skinId = matchPet:GetSkinId()
   if skillType == SkillType.Active then
     local activeSkill = matchPet:GetPetActiveSkill()
     skillIds = {activeSkill}
-  else
-    do
-      if skillType == SkillType.Chain then
-        self._petChainInfo = matchPet:GetChainSkillInfo()
-        skillIds = {(table.unpack)((table.select)(self._petChainInfo, "Skill"))}
-      end
-      local t = loadingSvc:_GetSkillCacheTable(skillIds, skinId)
-      ;
-      (table.appendArray)(restable, t)
-      local passiveSkillID = matchPet:GetPetPassiveSkill()
-      if passiveSkillID and passiveSkillID > 0 then
-        local cfg = (Cfg.cfg_passive_skill)[passiveSkillID]
-        local t = loadingSvc:_GetBuffCacheTable(cfg.BuffID)
-        ;
-        (table.appendArray)(restable, t)
-      end
-      do
-        local shaderEffect = matchPet:GetPetShaderEffect()
-        if shaderEffect then
-          loadingSvc:_CacheEachShaderEffectsAssetFile(shaderEffect)
-        end
-        for k,v in pairs(restable) do
-          local resname = v[1]
-          local count = v[2]
-          if (string.endwith)(resname, ".mat") then
-            respool:CacheMaterial(resname, count)
-          else
-            respool:Cache(resname, count)
-          end
-        end
-        YIELD(TT, 200)
-      end
+  elseif skillType == SkillType.Chain then
+    self._petChainInfo = matchPet:GetChainSkillInfo()
+    skillIds = {
+      table.unpack(table.select(self._petChainInfo, "Skill"))
+    }
+  end
+  local t = loadingSvc:_GetSkillCacheTable(skillIds, skinId)
+  table.appendArray(restable, t)
+  local passiveSkillID = matchPet:GetPetPassiveSkill()
+  if passiveSkillID and 0 < passiveSkillID then
+    local cfg = Cfg.cfg_passive_skill[passiveSkillID]
+    local t = loadingSvc:_GetBuffCacheTable(cfg.BuffID)
+    table.appendArray(restable, t)
+  end
+  local shaderEffect = matchPet:GetPetShaderEffect()
+  if shaderEffect then
+    loadingSvc:_CacheEachShaderEffectsAssetFile(shaderEffect)
+  end
+  for k, v in pairs(restable) do
+    local resname = v[1]
+    local count = v[2]
+    if string.endwith(resname, ".mat") then
+      respool:CacheMaterial(resname, count)
+    else
+      respool:Cache(resname, count)
     end
   end
+  YIELD(TT, 200)
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.DoPetPassiveSkill = function(self, petEntity)
-  -- function num : 0_51 , upvalues : _ENV
-  local buffLogic = (self._world):GetService("BuffLogic")
-  local configServer = (self._world):GetService("Config")
-  local passiveSkillID = (petEntity:SkillInfo()):GetPassiveSkillID()
-  local equipIntensifyParams = (petEntity:SkillInfo()):GetEquipIntensifyParam()
+function SkillPerfModule:DoPetPassiveSkill(petEntity)
+  local buffLogic = self._world:GetService("BuffLogic")
+  local configServer = self._world:GetService("Config")
+  local passiveSkillID = petEntity:SkillInfo():GetPassiveSkillID()
+  local equipIntensifyParams = petEntity:SkillInfo():GetEquipIntensifyParam()
   if passiveSkillID and passiveSkillID ~= 0 then
     local config = configServer:GetPetPassiveSkill(passiveSkillID)
     if config and config.BuffID then
-      local buffSource = BuffSource:New(BuffSourceType.PassiveSkill, (petEntity:PetPstID()):GetPstID())
-      for _,buffID in ipairs(config.BuffID) do
+      local buffSource = BuffSource:New(BuffSourceType.PassiveSkill, petEntity:PetPstID():GetPstID())
+      for _, buffID in ipairs(config.BuffID) do
         buffLogic:AddBuffByTargetType(buffID, config.BuffTargetType, config.BuffTargetParam, {casterEntity = petEntity}, buffSource, equipIntensifyParams, petEntity)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule._DoLogicSetNewPetPassiveSkill = function(self, teamEntity, tmpTeamEntity)
-  -- function num : 0_52
-  local buffLogicService = (self._world):GetService("BuffLogic")
+function SkillPerfModule:_DoLogicSetNewPetPassiveSkill(teamEntity, tmpTeamEntity)
+  local buffLogicService = self._world:GetService("BuffLogic")
   buffLogicService:BuildNewPartnerPassiveSkill(teamEntity, tmpTeamEntity)
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule._DoLogicSetPetIntensifyBuff = function(self, tmpTeamEntity)
-  -- function num : 0_53
-  local buffLogicService = (self._world):GetService("BuffLogic")
+function SkillPerfModule:_DoLogicSetPetIntensifyBuff(tmpTeamEntity)
+  local buffLogicService = self._world:GetService("BuffLogic")
   buffLogicService:BuildPetIntensifyBuff(tmpTeamEntity)
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.LoadPetSkillEffect = function(self, petEntity)
-  -- function num : 0_54
+function SkillPerfModule:LoadPetSkillEffect(petEntity)
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.StartCoreGame = function(self)
-  -- function num : 0_55
+function SkillPerfModule:StartCoreGame()
   self._coreGameIsRun = true
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.IsPerfCoreGame = function(self)
-  -- function num : 0_56
+function SkillPerfModule:IsPerfCoreGame()
   return self._coreGameIsRun
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.SetWorld = function(self, world)
-  -- function num : 0_57 , upvalues : _ENV
+function SkillPerfModule:SetWorld(world)
   self._world = world
-  self._buffLogic = (self._world):GetService("BuffLogic")
-  self._configService = (self._world):GetService("Config")
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UICoreGameSkillPerfController")
+  self._buffLogic = self._world:GetService("BuffLogic")
+  self._configService = self._world:GetService("Config")
+  GameGlobal.UIStateManager():ShowDialog("UICoreGameSkillPerfController")
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.IsBeginPerf = function(self)
-  -- function num : 0_58
+function SkillPerfModule:IsBeginPerf()
   return self._perfIsRun
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.SetMatchEnterData = function(self, petInfo)
-  -- function num : 0_59 , upvalues : _ENV
-  local pstid = (self:GetModule(RoleModule)):GetPstId()
+function SkillPerfModule:SetMatchEnterData(petInfo)
+  local pstid = self:GetModule(RoleModule):GetPstId()
   local createInfo = self:CreateMatchCreateInfo()
   local playerList = self:CreateMatchPlayerList(petInfo)
   local enterData = MatchEnterData:New(pstid, createInfo, playerList)
@@ -1223,33 +865,24 @@ SkillPerfModule.SetMatchEnterData = function(self, petInfo)
     enterData:CreateWorldInfo(MainWorldCreationContextType.Client)
   end
   local enterPreferenceData = MatchEnterPreFerenceData:New(playerList)
-  ;
-  (self:GetModule(MatchModule)):SetMatchEnterData(enterData, enterPreferenceData)
+  self:GetModule(MatchModule):SetMatchEnterData(enterData, enterPreferenceData)
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.EnterCoreGame = function(self, config)
-  -- function num : 0_60 , upvalues : _ENV
+function SkillPerfModule:EnterCoreGame(config)
   self:StartCoreGame()
-  ;
-  (GameGlobal:GetInstance()):SetOfflineMatch(true)
+  GameGlobal:GetInstance():SetOfflineMatch(true)
   self:SetMatchEnterData()
-  ;
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Battle_Loading)
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Battle_Loading)
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.CreateMatchCreateInfo = function(self, petEntity)
-  -- function num : 0_61 , upvalues : _ENV
+function SkillPerfModule:CreateMatchCreateInfo(petEntity)
   local createInfo = MatchCreateInfo:New()
   createInfo.match_type = MatchType.MT_Mission
   createInfo.creator_id = 0
   createInfo.level_id = 1000205
   createInfo.formation_id = 0
   createInfo.seed = 1234567
-  createInfo.m_time = (os.time)()
+  createInfo.m_time = os.time()
   createInfo.match_logic_flags = 0
   createInfo.sync_mode = 0
   createInfo.server_auto_fight = false
@@ -1266,10 +899,7 @@ SkillPerfModule.CreateMatchCreateInfo = function(self, petEntity)
   return createInfo
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.CreateClientMatchCreateInfo = function(self, petEntity)
-  -- function num : 0_62 , upvalues : _ENV
+function SkillPerfModule:CreateClientMatchCreateInfo(petEntity)
   local clientInfo = ClientMatchCreateInfo:New()
   clientInfo.mission_info = {}
   clientInfo.m_extMissionInfo = {}
@@ -1282,21 +912,15 @@ SkillPerfModule.CreateClientMatchCreateInfo = function(self, petEntity)
   clientInfo.black_fist_info = {}
   local info = MissionCreateInfo:New()
   info.mission_id = 4008020
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (clientInfo.mission_info)[1] = info
+  clientInfo.mission_info[1] = info
   return clientInfo
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.CreateMatchPlayerList = function(self, petInfo)
-  -- function num : 0_63 , upvalues : _ENV
+function SkillPerfModule:CreateMatchPlayerList(petInfo)
   local luainfo = LuaMatchPlayerInfo:New()
   luainfo.blood = 1
   luainfo.nick = ""
-  luainfo.pstid = (self:GetModule(RoleModule)):GetPstId()
+  luainfo.pstid = self:GetModule(RoleModule):GetPstId()
   luainfo.nLevel = 1
   luainfo.pet_list = {}
   if not petInfo then
@@ -1318,60 +942,41 @@ SkillPerfModule.CreateMatchPlayerList = function(self, petInfo)
     petInfo.equip_refine_lv = 0
     petInfo.m_nHelpPetKey = 0
   end
-  ;
-  (table.insert)(luainfo.pet_list, petInfo)
-  return {[luainfo.pstid] = luainfo}
+  table.insert(luainfo.pet_list, petInfo)
+  return {
+    [luainfo.pstid] = luainfo
+  }
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.PerfClose = function(self)
-  -- function num : 0_64 , upvalues : _ENV
+function SkillPerfModule:PerfClose()
   self._perfIsRun = false
   self._coreGameIsRun = false
-  ;
-  (GameGlobal:GetInstance()):StopCoreGame()
-  ;
-  ((GameGlobal.TaskManager)()):KillCoreGameTasks()
-  ;
-  (GameGlobal:GetInstance()):ExitCoreGame()
-  ;
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
+  GameGlobal:GetInstance():StopCoreGame()
+  GameGlobal.TaskManager():KillCoreGameTasks()
+  GameGlobal:GetInstance():ExitCoreGame()
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.AddEffectEntity = function(self, entity)
-  -- function num : 0_65 , upvalues : _ENV
+function SkillPerfModule:AddEffectEntity(entity)
   if not self._effectEntity then
     self._effectEntity = {}
   end
-  ;
-  (table.insert)(self._effectEntity, entity)
+  table.insert(self._effectEntity, entity)
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.DestoryEffectEntity = function(self)
-  -- function num : 0_66 , upvalues : _ENV
-  for k,entity in pairs(self._effectEntity) do
+function SkillPerfModule:DestoryEffectEntity()
+  for k, entity in pairs(self._effectEntity) do
     if not entity:HasPiece() and not entity:HasSkillRangeOutline() then
-      (self._world):DestroyEntity(entity)
+      self._world:DestroyEntity(entity)
     end
   end
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.EnterCoreGameSingleReStart = function(self)
-  -- function num : 0_67
+function SkillPerfModule:EnterCoreGameSingleReStart()
   self:EnterCoreGameSingle(self.restartmatchType, self.restartlevelID, self.restartmission_id, self.restartpetList, self.restartparent_mission_id, true)
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPerfModule.EnterCoreGameSingle = function(self, matchType, levelID, mission_id, petList, parent_mission_id, isrestart)
-  -- function num : 0_68 , upvalues : _ENV
+function SkillPerfModule:EnterCoreGameSingle(matchType, levelID, mission_id, petList, parent_mission_id, isrestart)
   self.restartmatchType = matchType
   self.restartlevelID = levelID
   self.restartmission_id = mission_id
@@ -1384,11 +989,10 @@ SkillPerfModule.EnterCoreGameSingle = function(self, matchType, levelID, mission
     end
   end
   if not havePet then
-    (ToastManager.ShowToast)((StringTable.Get)("str_discovery_no_leader_no_fight"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_discovery_no_leader_no_fight"))
+    return
   end
-  ;
-  (GameGlobal:GetInstance()):SetOfflineMatch(true)
+  GameGlobal:GetInstance():SetOfflineMatch(true)
   local clientInfo = ClientMatchCreateInfo:New()
   clientInfo.mission_info = {}
   clientInfo.m_extMissionInfo = {}
@@ -1401,24 +1005,18 @@ SkillPerfModule.EnterCoreGameSingle = function(self, matchType, levelID, mission
   clientInfo.black_fist_info = {}
   local info = MissionCreateInfo:New()
   info.mission_id = mission_id
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (clientInfo.mission_info)[1] = info
+  clientInfo.mission_info[1] = info
   local diffinfo = DifficultyMissionCreateInfo:New()
   diffinfo.sub_mission_id = mission_id
   diffinfo.parent_mission_id = parent_mission_id
-  -- DECOMPILER ERROR at PC64: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (clientInfo.difficulty_mission_info)[1] = diffinfo
+  clientInfo.difficulty_mission_info[1] = diffinfo
   local createInfo = MatchCreateInfo:New()
   createInfo.match_type = matchType
   createInfo.creator_id = 0
   createInfo.level_id = levelID
   createInfo.formation_id = 0
   createInfo.seed = 1234567
-  createInfo.m_time = (os.time)()
+  createInfo.m_time = os.time()
   createInfo.match_logic_flags = 0
   createInfo.sync_mode = 0
   createInfo.server_auto_fight = false
@@ -1435,13 +1033,13 @@ SkillPerfModule.EnterCoreGameSingle = function(self, matchType, levelID, mission
   local luainfo = LuaMatchPlayerInfo:New()
   luainfo.blood = 1
   luainfo.nick = ""
-  luainfo.pstid = (self:GetModule(RoleModule)):GetPstId()
+  luainfo.pstid = self:GetModule(RoleModule):GetPstId()
   luainfo.nLevel = 1
   luainfo.pet_list = {}
   local petModule = self:GetModule(PetModule)
-  for i,petid in ipairs(petList) do
+  for i, petid in ipairs(petList) do
     if petid ~= 0 then
-      local v = (petModule:GetPet(petid))._data
+      local v = petModule:GetPet(petid)._data
       local petInfo = MatchPetInfo:New()
       petInfo.pet_pstid = v.template_id
       petInfo.pet_power = -1
@@ -1459,26 +1057,24 @@ SkillPerfModule.EnterCoreGameSingle = function(self, matchType, levelID, mission
       petInfo.equip_lv = v.equip_lv
       petInfo.equip_refine_lv = v.equip_Refine_Lv or 0
       petInfo.m_nHelpPetKey = 0
-      ;
-      (table.insert)(luainfo.pet_list, petInfo)
+      table.insert(luainfo.pet_list, petInfo)
     end
   end
-  local playerList = {[luainfo.pstid] = luainfo}
-  local enterData = MatchEnterData:New((self:GetModule(RoleModule)):GetPstId(), createInfo, playerList)
+  local playerList = {
+    [luainfo.pstid] = luainfo
+  }
+  local enterData = MatchEnterData:New(self:GetModule(RoleModule):GetPstId(), createInfo, playerList)
   local enterPreferenceData = MatchEnterPreFerenceData:New(playerList)
   local matchModule = self:GetModule(MatchModule)
   local GameMatchModule = self:GetModule(GameMatchModule)
   matchModule:SetMatchEnterData(enterData)
   GameMatchModule._quickReStartCreateInfo = createInfo
-  local ctx = (self:GetModule(MissionModule)):TeamCtx()
+  local ctx = self:GetModule(MissionModule):TeamCtx()
   local curTeamId = ctx:GetCurrTeamId()
   GameMatchModule._quickReStartTeamId = curTeamId
   GameMatchModule._quickReStartMatchType = matchType
   if isrestart then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Battle_Loading)
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Battle_Loading)
 end
-
-

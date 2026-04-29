@@ -1,37 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/level/ui_eliminate_level_intro_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateLevelIntroItem", UICustomWidget)
 UIEliminateLevelIntroItem = UIEliminateLevelIntroItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateLevelIntroItem.Constructor = function(self)
-  -- function num : 0_0
+function UIEliminateLevelIntroItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateLevelIntroItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIEliminateLevelIntroItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateLevelIntroItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIEliminateLevelIntroItem:_GetComponents()
   self._introTxt = self:GetUIComponent("UILocalizationText", "introTxt")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateLevelIntroItem.SetData = function(self, wordID)
-  -- function num : 0_3 , upvalues : _ENV
-  local wordCfg = (Cfg.cfg_word_buff)[wordID]
-  ;
-  (self._introTxt):SetText((StringTable.Get)(wordCfg.Desc))
+function UIEliminateLevelIntroItem:SetData(wordID)
+  local wordCfg = Cfg.cfg_word_buff[wordID]
+  self._introTxt:SetText(StringTable.Get(wordCfg.Desc))
 end
-
-

@@ -1,79 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/teleport_record_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TeleportRecordComponent", Object)
 TeleportRecordComponent = TeleportRecordComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TeleportRecordComponent.Constructor = function(self)
-  -- function num : 0_0
+function TeleportRecordComponent:Constructor()
   self._recordsByRound = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TeleportRecordComponent.AddSingleTeleportRecord = function(self, round, beginPos, finalPos, casterID)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R5 in 'UnsetPending'
-
-  if not (self._recordsByRound)[round] then
-    (self._recordsByRound)[round] = {}
+function TeleportRecordComponent:AddSingleTeleportRecord(round, beginPos, finalPos, casterID)
+  if not self._recordsByRound[round] then
+    self._recordsByRound[round] = {}
   end
-  ;
-  (table.insert)((self._recordsByRound)[round], {beginPos = beginPos, finalPos = finalPos, casterID = casterID})
+  table.insert(self._recordsByRound[round], {
+    beginPos = beginPos,
+    finalPos = finalPos,
+    casterID = casterID
+  })
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TeleportRecordComponent.GetAllTeleportRecordByRound = function(self, round)
-  -- function num : 0_2
-  if not (self._recordsByRound)[round] then
-    return {}
-  end
+function TeleportRecordComponent:GetAllTeleportRecordByRound(round)
+  return self._recordsByRound[round] or {}
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.TeleportRecord = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).TeleportRecord)
+function Entity:TeleportRecord()
+  return self:GetComponent(self.WEComponentsEnum.TeleportRecord)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasTeleportRecord = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).TeleportRecord)
+function Entity:HasTeleportRecord()
+  return self:HasComponent(self.WEComponentsEnum.TeleportRecord)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddTeleportRecord = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).TeleportRecord
+function Entity:AddTeleportRecord()
+  local index = self.WEComponentsEnum.TeleportRecord
   local component = TeleportRecordComponent:New()
   self:AddComponent(index, component)
   return component
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceTeleportRecord = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).TeleportRecord
+function Entity:ReplaceTeleportRecord()
+  local index = self.WEComponentsEnum.TeleportRecord
   local component = TeleportRecordComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveTeleportRecord = function(self)
-  -- function num : 0_7
+function Entity:RemoveTeleportRecord()
   if self:HasActiveSkill() then
-    self:RemoveComponent((self.WEComponentsEnum).TeleportRecord)
+    self:RemoveComponent(self.WEComponentsEnum.TeleportRecord)
   end
 end
-
-

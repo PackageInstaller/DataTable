@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/main/ui_homeland_movie_actor_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMovieActorController", UIController)
 UIHomelandMovieActorController = UIHomelandMovieActorController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMovieActorController.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandMovieActorController:Constructor()
   self._data = nil
   self._type = nil
   self._actorList = nil
@@ -17,31 +10,22 @@ UIHomelandMovieActorController.Constructor = function(self)
   self._atlas = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandMovieActorController:OnShow(uiParams)
   self._widgets = {}
   self._type = ActorPageType.Actor
   self._data = uiParams[1]
-  self._actorList = (self._data).RolePosList
-  self._itemList = (self._data).ItemPosList
+  self._actorList = self._data.RolePosList
+  self._itemList = self._data.ItemPosList
   self._atlas = self:GetAsset("UIHomelandMovie.spriteatlas", LoadType.SpriteAtlas)
   self:InitWidget()
   self:SetListData()
   self:SetPoster()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorController.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandMovieActorController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorController.InitWidget = function(self)
-  -- function num : 0_3
+function UIHomelandMovieActorController:InitWidget()
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._rect = self:GetUIComponent("RectTransform", "Content")
   self._moviePoster = self:GetUIComponent("RawImageLoader", "moviePoster")
@@ -50,72 +34,41 @@ UIHomelandMovieActorController.InitWidget = function(self)
   self._switchBtn = self:GetUIComponent("Image", "switchBtn")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorController.SetListData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._rect).anchoredPosition = Vector2(10, 0)
+function UIHomelandMovieActorController:SetListData()
+  self._rect.anchoredPosition = Vector2(10, 0)
   local list = {}
   if self._type == ActorPageType.Actor then
     list = self._actorList
-  else
-    if self._type == ActorPageType.Item then
-      list = self._itemList
-    end
+  elseif self._type == ActorPageType.Item then
+    list = self._itemList
   end
-  self._widgets = (self._content):SpawnObjects("UIHomelandMovieActorItem", #list)
+  self._widgets = self._content:SpawnObjects("UIHomelandMovieActorItem", #list)
   local index = 1
-  for i,v in pairs(list) do
-    ((self._widgets)[index]):SetData(v, self._data, self._type == ActorPageType.Actor)
+  for i, v in pairs(list) do
+    self._widgets[index]:SetData(v, self._data, self._type == ActorPageType.Actor)
     index = index + 1
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorController.SetPoster = function(self)
-  -- function num : 0_5
-  (self._moviePoster):LoadImage((self._data).Poster)
+function UIHomelandMovieActorController:SetPoster()
+  self._moviePoster:LoadImage(self._data.Poster)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorController.SwitchBtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandMovieActorController:SwitchBtnOnClick()
   if self._type == ActorPageType.Actor then
     self._type = ActorPageType.Item
-    ;
-    (self._actorObj):SetActive(false)
-    ;
-    (self._itemObj):SetActive(true)
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._switchBtn).sprite = (self._atlas):GetSprite("dy_kxyy_icon03")
-  else
-    if self._type == ActorPageType.Item then
-      self._type = ActorPageType.Actor
-      ;
-      (self._actorObj):SetActive(true)
-      ;
-      (self._itemObj):SetActive(false)
-      -- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._switchBtn).sprite = (self._atlas):GetSprite("dy_kxyy_icon04")
-    end
+    self._actorObj:SetActive(false)
+    self._itemObj:SetActive(true)
+    self._switchBtn.sprite = self._atlas:GetSprite("dy_kxyy_icon03")
+  elseif self._type == ActorPageType.Item then
+    self._type = ActorPageType.Actor
+    self._actorObj:SetActive(true)
+    self._itemObj:SetActive(false)
+    self._switchBtn.sprite = self._atlas:GetSprite("dy_kxyy_icon04")
   end
   self:SetListData()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorController.BtnBackOnClick = function(self, TT)
-  -- function num : 0_7
+function UIHomelandMovieActorController:BtnBackOnClick(TT)
   self:CloseDialog()
 end
-
-

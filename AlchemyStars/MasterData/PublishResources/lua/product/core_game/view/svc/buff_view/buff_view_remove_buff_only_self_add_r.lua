@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_remove_buff_only_self_add_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewRemoveBuffOnlySelfAdd", BuffViewBase)
 BuffViewRemoveBuffOnlySelfAdd = BuffViewRemoveBuffOnlySelfAdd
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRemoveBuffOnlySelfAdd.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0
+function BuffViewRemoveBuffOnlySelfAdd:IsNotifyMatch(notify)
   local result = self._buffResult
   return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewRemoveBuffOnlySelfAdd.PlayView = function(self, TT, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function BuffViewRemoveBuffOnlySelfAdd:PlayView(TT, notify)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   local result = self._buffResult
   local arr = result:GetBuffArray()
-  for i,v in ipairs(arr) do
+  for i, v in ipairs(arr) do
     local eid = v.eid
     local tSeqID = v.tSeqID
-    local entity = (self._world):GetEntityByID(eid)
+    local entity = self._world:GetEntityByID(eid)
     if entity then
-      for _,seq in ipairs(tSeqID) do
-        local inst = (entity:BuffView()):GetBuffViewInstance(seq)
+      for _, seq in ipairs(tSeqID) do
+        local inst = entity:BuffView():GetBuffViewInstance(seq)
         if inst then
           playBuffSvc:PlayRemoveBuff(TT, inst, NTBuffUnload:New())
         end
@@ -34,5 +24,3 @@ BuffViewRemoveBuffOnlySelfAdd.PlayView = function(self, TT, notify)
     end
   end
 end
-
-

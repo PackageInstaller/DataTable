@@ -1,28 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/once_mission/ui_season_once_mission.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonOnceMission", UIController)
 UISeasonOnceMission = UISeasonOnceMission
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonOnceMission.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._onceMissonData = ((GameGlobal.GetModule)(SeasonModule)):GetOnceMissionData()
-  ;
-  (self._onceMissonData):ForceLoadData(TT)
-  self._missionCpts = (self._onceMissonData):GetMissionComponents()
+function UISeasonOnceMission:LoadDataOnEnter(TT, res, uiParams)
+  self._onceMissonData = GameGlobal.GetModule(SeasonModule):GetOnceMissionData()
+  self._onceMissonData:ForceLoadData(TT)
+  self._missionCpts = self._onceMissonData:GetMissionComponents()
   self.openCb = uiParams[2]
   if self.openCb then
-    (self.openCb)(true)
+    self.openCb(true)
   end
-  local ComState = {ComState_Normal = 1, ComState_OpenButLock = 2, ComState_NotOpen = 3, ComState_Closed = 4}
-  local ComState = {[SeasonOnceMissionData.ComState_Normal] = 1, [SeasonOnceMissionData.ComState_Closed] = 2, [SeasonOnceMissionData.ComState_NotOpen] = 3, [SeasonOnceMissionData.ComState_OpenButLock] = 4}
+  local ComState = {
+    ComState_Normal = 1,
+    ComState_OpenButLock = 2,
+    ComState_NotOpen = 3,
+    ComState_Closed = 4
+  }
+  local ComState = {
+    [SeasonOnceMissionData.ComState_Normal] = 1,
+    [SeasonOnceMissionData.ComState_Closed] = 2,
+    [SeasonOnceMissionData.ComState_NotOpen] = 3,
+    [SeasonOnceMissionData.ComState_OpenButLock] = 4
+  }
   local showToastState = ComState[SeasonOnceMissionData.ComState_Normal]
   local normalStateCont = 0
-  for _,cpt in ipairs(self._missionCpts) do
-    local state = (self._onceMissonData):GetCompState(cpt)
+  for _, cpt in ipairs(self._missionCpts) do
+    local state = self._onceMissonData:GetCompState(cpt)
     if state == SeasonOnceMissionData.ComState_Normal then
       normalStateCont = normalStateCont + 1
     end
@@ -32,15 +34,11 @@ UISeasonOnceMission.LoadDataOnEnter = function(self, TT, res, uiParams)
   end
   if normalStateCont == 0 and showToastState ~= ComState[SeasonOnceMissionData.ComState_Normal] then
     if showToastState == ComState[SeasonOnceMissionData.ComState_OpenButLock] then
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_clear_mission_to_unlock"))
-    else
-      if showToastState == ComState[SeasonOnceMissionData.ComState_NotOpen] then
-        (ToastManager.ShowToast)((StringTable.Get)("str_season_s5_branch_tab_lock"))
-      else
-        if showToastState == ComState[SeasonOnceMissionData.ComState_Closed] then
-          (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_109"))
-        end
-      end
+      ToastManager.ShowToast(StringTable.Get("str_activity_common_clear_mission_to_unlock"))
+    elseif showToastState == ComState[SeasonOnceMissionData.ComState_NotOpen] then
+      ToastManager.ShowToast(StringTable.Get("str_season_s5_branch_tab_lock"))
+    elseif showToastState == ComState[SeasonOnceMissionData.ComState_Closed] then
+      ToastManager.ShowToast(StringTable.Get("str_activity_error_109"))
     end
     res:SetSucc(false)
   else
@@ -48,114 +46,87 @@ UISeasonOnceMission.LoadDataOnEnter = function(self, TT, res, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMission.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonOnceMission:OnShow(uiParams)
   self:InitWidget()
-  ;
-  ((self.topBtn):SpawnObject("UICommonTopButton")):SetData(function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
+  self.topBtn:SpawnObject("UICommonTopButton"):SetData(function()
     self:_PlayAnim("out", function()
-      -- function num : 0_1_0_0 , upvalues : self, _ENV
       self:CloseDialog()
-      local uiController = ((GameGlobal.UIStateManager)()):GetController("UISeasonMainS5")
+      local uiController = GameGlobal.UIStateManager():GetController("UISeasonMainS5")
       if uiController then
         uiController:RefreshAfterCloseOnceMission()
       end
-    end
-)
-  end
-, nil, nil, false, nil, false, nil)
-  self._tabBtns = (self.tabBtns):SpawnObjects("UISeasonOnceMissionTab", #self._missionCpts)
-  local onSelect = function(idx)
-    -- function num : 0_1_1 , upvalues : self
+    end)
+  end, nil, nil, false, nil, false, nil)
+  self._tabBtns = self.tabBtns:SpawnObjects("UISeasonOnceMissionTab", #self._missionCpts)
+  
+  local function onSelect(idx)
     self:_OnSelect(idx, false)
   end
-
-  local default = nil
+  
+  local default
   if uiParams and uiParams[3] then
     local cptID = uiParams[3]
-    for i,cpt in ipairs(self._missionCpts) do
-      if cpt:GetComponentCfgId() == cptID and (self._onceMissonData):IsComponentOpening(cpt) then
+    for i, cpt in ipairs(self._missionCpts) do
+      if cpt:GetComponentCfgId() == cptID and self._onceMissonData:IsComponentOpening(cpt) then
         default = i
         break
       end
     end
   end
-  do
-    if not default then
-      default = #self._missionCpts
-      for i = #self._missionCpts, 1, -1 do
-        local cpt = (self._missionCpts)[i]
-        if (self._onceMissonData):IsComponentOpening(cpt) then
-          default = 
-          break
-        end
+  if not default then
+    default = #self._missionCpts
+    for i = #self._missionCpts, 1, -1 do
+      local cpt = self._missionCpts[i]
+      if self._onceMissonData:IsComponentOpening(cpt) then
+        default = i
+        break
       end
-    end
-    do
-      for i,cpt in ipairs(self._missionCpts) do
-        ((self._tabBtns)[i]):SetData(self._onceMissonData, R12_PC78, cpt, onSelect)
-      end
-      self:_OnSelect(default, true)
-      self:_PlayAnim("in")
     end
   end
+  for i, cpt in ipairs(self._missionCpts) do
+    self._tabBtns[i]:SetData(self._onceMissonData, i, cpt, onSelect)
+  end
+  self:_OnSelect(default, true)
+  self:_PlayAnim("in")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMission.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonOnceMission:OnHide()
   self:CancelTimer()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMission.InitWidget = function(self)
-  -- function num : 0_3
+function UISeasonOnceMission:InitWidget()
   self.topBtn = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self.tabBtns = self:GetUIComponent("UISelectObjectPath", "TabBtns")
   self.missions = self:GetUIComponent("UISelectObjectPath", "Missions")
   self.links = self:GetUIComponent("UISelectObjectPath", "Links")
   self.countdown = self:GetUIComponent("UILocalizationText", "Countdown")
-  self._scrollWidth = (((self:GetUIComponent("RectTransform", "MissionScrollview")).rect).size).x
+  self._scrollWidth = self:GetUIComponent("RectTransform", "MissionScrollview").rect.size.x
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
   self._tipsGo = self:GetGameObject("tipsGo")
   self._txtTips = self:GetUIComponent("UILocalizationText", "txtTips")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMission._OnSelect = function(self, idx, isOnShow)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonOnceMission:_OnSelect(idx, isOnShow)
   if self._curIdx == idx then
-    return 
+    return
   end
   if self._curIdx then
-    ((self._tabBtns)[self._curIdx]):Deselect()
+    self._tabBtns[self._curIdx]:Deselect()
   end
   self._curIdx = idx
-  ;
-  ((self._tabBtns)[self._curIdx]):Select()
-  local curCpt = (self._missionCpts)[self._curIdx]
-  local missionCfgs = (UIActivityLineMissionHelper.GetMissionCfgs)(curCpt)
-  local levelCount, lineCount, showMission = (UIActivityLineMissionHelper.GetNodeLineInfo)(curCpt, missionCfgs)
-  local width = (UIActivityLineMissionHelper.CalcContentWidth)(curCpt, showMission, self._scrollWidth)
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._contentRect).sizeDelta = Vector2(width, ((self._contentRect).sizeDelta).y)
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R9 in 'UnsetPending'
-
+  self._tabBtns[self._curIdx]:Select()
+  local curCpt = self._missionCpts[self._curIdx]
+  local missionCfgs = UIActivityLineMissionHelper.GetMissionCfgs(curCpt)
+  local levelCount, lineCount, showMission = UIActivityLineMissionHelper.GetNodeLineInfo(curCpt, missionCfgs)
+  local width = UIActivityLineMissionHelper.CalcContentWidth(curCpt, showMission, self._scrollWidth)
+  self._contentRect.sizeDelta = Vector2(width, self._contentRect.sizeDelta.y)
   if width ~= self._scrollWidth then
-    (self._contentRect).anchoredPosition = Vector2(self._scrollWidth - width, 0)
+    self._contentRect.anchoredPosition = Vector2(self._scrollWidth - width, 0)
   end
-  local nodes = (self.missions):SpawnObjects("UISeasonOnceMissionItem", levelCount)
-  local lines = (self.links):SpawnObjects("UISeasonOnceMissionLink", lineCount)
+  local nodes = self.missions:SpawnObjects("UISeasonOnceMissionItem", levelCount)
+  local lines = self.links:SpawnObjects("UISeasonOnceMissionLink", lineCount)
   local nodeIdx, lineIdx = 1, 1
-  for missionID,cfg in pairs(showMission) do
+  for missionID, cfg in pairs(showMission) do
     local uiNode = nodes[nodeIdx]
     if not isOnShow then
       if nodeIdx % 2 == 0 then
@@ -163,16 +134,12 @@ UISeasonOnceMission._OnSelect = function(self, idx, isOnShow)
       else
         uiNode:_PlayAnim("down")
       end
-    else
-      if nodeIdx % 2 ~= 0 then
-        uiNode:_PlayAnim("in")
-      end
+    elseif nodeIdx % 2 ~= 0 then
+      uiNode:_PlayAnim("in")
     end
-    uiNode:SetData(cfg, ((curCpt:GetComponentInfo()).m_pass_mission_info)[missionID], function(stageId, isStory)
-    -- function num : 0_4_0 , upvalues : self
-    self:_OnNodeClick(stageId, isStory)
-  end
-)
+    uiNode:SetData(cfg, curCpt:GetComponentInfo().m_pass_mission_info[missionID], function(stageId, isStory)
+      self:_OnNodeClick(stageId, isStory)
+    end)
     nodeIdx = nodeIdx + 1
     if cfg.WayPointType ~= 4 and cfg.NeedMissionId ~= 0 then
       local from = showMission[cfg.NeedMissionId]
@@ -187,125 +154,95 @@ UISeasonOnceMission._OnSelect = function(self, idx, isOnShow)
   self:RefreshCountDown()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMission._OnNodeClick = function(self, stageId, isStory)
-  -- function num : 0_5
+function UISeasonOnceMission:_OnNodeClick(stageId, isStory)
   if isStory then
-    self:_ShowUITeam(stageId, (self._missionCpts)[self._curIdx])
+  else
+    self:_ShowUITeam(stageId, self._missionCpts[self._curIdx])
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMission._ShowUITeam = function(self, stageID, cpt)
-  -- function num : 0_6
+function UISeasonOnceMission:_ShowUITeam(stageID, cpt)
   self:ShowDialog("UISeasonOnceMissionStage", stageID, self._onceMissonData, cpt)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMission._PlayAnim = function(self, idx, callback)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonOnceMission:_PlayAnim(idx, callback)
   local tb = {
-["in"] = {animName = "uieff_UISeasonOnceMission_in"}
-, 
-out = {animName = "uieff_UISeasonOnceMission_out", duration = 333}
-}
+    ["in"] = {
+      animName = "uieff_UISeasonOnceMission_in"
+    },
+    out = {
+      animName = "uieff_UISeasonOnceMission_out",
+      duration = 333
+    }
+  }
   if tb[idx] ~= nil then
-    (UIWidgetHelper.PlayAnimation)(self, "_anim", (tb[idx]).animName, (tb[idx]).duration, callback)
-  else
-    if callback ~= nil then
-      callback()
-    end
+    UIWidgetHelper.PlayAnimation(self, "_anim", tb[idx].animName, tb[idx].duration, callback)
+  elseif callback ~= nil then
+    callback()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMission._CheckAndShowTips = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local curTab = (self._tabBtns)[self._curIdx]
-  local curCpt = (self._missionCpts)[self._curIdx]
+function UISeasonOnceMission:_CheckAndShowTips()
+  local curTab = self._tabBtns[self._curIdx]
+  local curCpt = self._missionCpts[self._curIdx]
   if not curTab or not curCpt then
-    return 
+    return
   end
-  local bShowTips = (self._onceMissonData):HasNewByComp(curCpt)
-  local cfg = (Cfg.cfg_season_brance_tab)[curCpt:GetComponentCfgId()]
+  local bShowTips = self._onceMissonData:HasNewByComp(curCpt)
+  local cfg = Cfg.cfg_season_brance_tab[curCpt:GetComponentCfgId()]
   if cfg then
-    (self._txtTips):SetText((StringTable.Get)("str_season_s5_branch_tab_unlock", (StringTable.Get)(cfg.TabName)))
+    self._txtTips:SetText(StringTable.Get("str_season_s5_branch_tab_unlock", StringTable.Get(cfg.TabName)))
   end
-  ;
-  (self._tipsGo):SetActive(bShowTips)
+  self._tipsGo:SetActive(bShowTips)
   if not bShowTips then
-    return 
+    return
   end
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_tipsAnim", "uieff_UISeasonOnceMission_top", nil, nil)
+  UIWidgetHelper.PlayAnimation(self, "_tipsAnim", "uieff_UISeasonOnceMission_top", nil, nil)
   curTab:ReadNew()
   self:Lock("UISeasonOnceMission_Tips")
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : _ENV, self
     YIELD(TT, 600)
     self:UnLock("UISeasonOnceMission_Tips")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMission.TipsBgOnClick = function(self)
-  -- function num : 0_9
-  (self._tipsGo):SetActive(false)
+function UISeasonOnceMission:TipsBgOnClick()
+  self._tipsGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMission.CancelTimer = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonOnceMission:CancelTimer()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMission.RefreshCountDown = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonOnceMission:RefreshCountDown()
   self._curActivityEnd = false
   self:CancelTimer()
   self:RefreshTime()
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_11_0 , upvalues : self
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:RefreshTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMission.RefreshTime = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local curCpt = (self._missionCpts)[self._curIdx]
+function UISeasonOnceMission:RefreshTime()
+  local curCpt = self._missionCpts[self._curIdx]
   if not curCpt then
-    return 
+    return
   end
   local cInfo = curCpt:GetComponentInfo()
   if not cInfo then
-    return 
+    return
   end
   local endTime = cInfo.m_close_time
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local timeStr = (UIActivityCustomHelper.GetTimeString)(endTime - curTime)
-  ;
-  (self.countdown):SetText((StringTable.Get)("str_activity_common_remainingtime") .. timeStr)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local timeStr = UIActivityCustomHelper.GetTimeString(endTime - curTime)
+  self.countdown:SetText(StringTable.Get("str_activity_common_remainingtime") .. timeStr)
   if endTime < curTime then
-    (self.countdown):SetText((StringTable.Get)("str_activity_error_107"))
+    self.countdown:SetText(StringTable.Get("str_activity_error_107"))
     self:CancelTimer()
     self._curActivityEnd = true
   end
 end
-
-

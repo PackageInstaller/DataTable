@@ -1,36 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/tree/ui_cn20_n49_tree_skill_child.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49TreeSkillChild", UICustomWidget)
 UICN20N49TreeSkillChild = UICN20N49TreeSkillChild
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49TreeSkillChild.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN20N49TreeSkillChild:OnShow()
   self.idx2pos = {
-[1] = {[1] = Vector2(-138.5, 157.4), [2] = Vector2(-204.4, 13.4), [3] = Vector2(-127.1, -153.3)}
-, 
-[2] = {[1] = Vector2(-187.2, -20.5), [2] = Vector2(-92.5, -153.6), [3] = Vector2(84.1, -166.9)}
-, 
-[3] = {[1] = Vector2(-90.8, -174.3), [2] = Vector2(93.8, -149.4), [3] = Vector2(189.3, 10.5)}
-, 
-[4] = {[1] = Vector2(126, -161.8), [2] = Vector2(204.7, -5.8), [3] = Vector2(126.6, 157.8)}
-, 
-[5] = {[1] = Vector2(162.2, 110.1), [2] = Vector2(-2.9, 185.4), [3] = Vector2(-166.9, 105.9)}
-}
-  self.idx2Rot = {[1] = -31.98, [2] = 29.4, [3] = -30.16, [4] = 29.4, [5] = 0}
+    [1] = {
+      [1] = Vector2(-138.5, 157.4),
+      [2] = Vector2(-204.4, 13.4),
+      [3] = Vector2(-127.1, -153.3)
+    },
+    [2] = {
+      [1] = Vector2(-187.2, -20.5),
+      [2] = Vector2(-92.5, -153.6),
+      [3] = Vector2(84.1, -166.9)
+    },
+    [3] = {
+      [1] = Vector2(-90.8, -174.3),
+      [2] = Vector2(93.8, -149.4),
+      [3] = Vector2(189.3, 10.5)
+    },
+    [4] = {
+      [1] = Vector2(126, -161.8),
+      [2] = Vector2(204.7, -5.8),
+      [3] = Vector2(126.6, 157.8)
+    },
+    [5] = {
+      [1] = Vector2(162.2, 110.1),
+      [2] = Vector2(-2.9, 185.4),
+      [3] = Vector2(-166.9, 105.9)
+    }
+  }
+  self.idx2Rot = {
+    [1] = -31.98,
+    [2] = 29.4,
+    [3] = -30.16,
+    [4] = 29.4,
+    [5] = 0
+  }
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._mask = self:GetGameObject("Mask")
   self._using = self:GetGameObject("Using")
   self._light = self:GetGameObject("Light")
   self._buyTips = self:GetGameObject("BuyTips")
   self._select = self:GetUIComponent("CanvasGroup", "Select")
-  -- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._select).alpha = 0
+  self._select.alpha = 0
   self._power = self:GetGameObject("Power")
   self._normal = self:GetGameObject("Normal")
   self._P_light = self:GetGameObject("P_light")
@@ -57,104 +69,60 @@ UICN20N49TreeSkillChild.OnShow = function(self)
   self:EventListener()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.Get_1P_2N_Icon = function(self)
-  -- function num : 0_1
-  return (self._icon).gameObject
+function UICN20N49TreeSkillChild:Get_1P_2N_Icon()
+  return self._icon.gameObject
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.OnSelectSkill = function(self, skillCls)
-  -- function num : 0_2
+function UICN20N49TreeSkillChild:OnSelectSkill(skillCls)
   local select = false
-  select = not skillCls or skillCls.rootid == self.rootid
+  if skillCls then
+    select = skillCls.rootid == self.rootid
+  end
   self:Select(select)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.Select = function(self, active)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._N_select):SetActive(not active or (self.cls).type == SeasonTalentSkillType.Normal)
-  ;
-  (self._P_select):SetActive(not active or (self.cls).type == SeasonTalentSkillType.Power)
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
+function UICN20N49TreeSkillChild:Select(active)
+  self._N_select:SetActive(active and self.cls.type == SeasonTalentSkillType.Normal)
+  self._P_select:SetActive(active and self.cls.type == SeasonTalentSkillType.Power)
   if active then
-    (self._select).alpha = 1
-    ;
-    (self._anim):Stop()
-    ;
-    (self._anim):Play("uianim_UISeasonTalentTree_child_in")
-  else
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-    if self.select then
-      (self._select).alpha = 0
-      ;
-      (self._anim):Stop()
-      ;
-      (self._anim):Play("uianim_UISeasonTalentTree_child_out")
-    end
+    self._select.alpha = 1
+    self._anim:Stop()
+    self._anim:Play("uianim_UISeasonTalentTree_child_in")
+  elseif self.select then
+    self._select.alpha = 0
+    self._anim:Stop()
+    self._anim:Play("uianim_UISeasonTalentTree_child_out")
   end
-  -- DECOMPILER ERROR at PC63: Confused about usage of register: R2 in 'UnsetPending'
-
   if self.parentIdx then
-    ((self._N_select).transform).rotation = (Quaternion.Euler)(0, 0, (self.idx2Rot)[self.parentIdx])
-    -- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._P_select).transform).rotation = (Quaternion.Euler)(0, 0, (self.idx2Rot)[self.parentIdx])
+    self._N_select.transform.rotation = Quaternion.Euler(0, 0, self.idx2Rot[self.parentIdx])
+    self._P_select.transform.rotation = Quaternion.Euler(0, 0, self.idx2Rot[self.parentIdx])
   end
   self.select = active
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.OnSelectSlot = function(self, slotid)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self.cls).level > 0 and slotid then
-    local cfgs = (Cfg.cfg_component_talent_tree_slot)({SlotID = slotid})
+function UICN20N49TreeSkillChild:OnSelectSlot(slotid)
+  if self.cls.level > 0 and slotid then
+    local cfgs = Cfg.cfg_component_talent_tree_slot({SlotID = slotid})
     local slotCfg = cfgs[1]
-    if slotCfg.TypeLimit == (self.cls).type then
+    if slotCfg.TypeLimit == self.cls.type then
       self:SetLight(true)
-      return 
+      return
     end
   end
-  do
-    self:SetLight(false)
-  end
+  self:SetLight(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.SetLight = function(self, active)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._light):SetActive(active)
-  ;
-  (self._P_light):SetActive(not active or (self.cls).type == SeasonTalentSkillType.Power)
-  ;
-  (self._N_light):SetActive(not active or (self.cls).type == SeasonTalentSkillType.Normal)
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
+function UICN20N49TreeSkillChild:SetLight(active)
+  self._light:SetActive(active)
+  self._P_light:SetActive(active and self.cls.type == SeasonTalentSkillType.Power)
+  self._N_light:SetActive(active and self.cls.type == SeasonTalentSkillType.Normal)
   if self.parentIdx then
-    ((self._P_light).transform).rotation = (Quaternion.Euler)(0, 0, (self.idx2Rot)[self.parentIdx])
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._N_light).transform).rotation = (Quaternion.Euler)(0, 0, (self.idx2Rot)[self.parentIdx])
+    self._P_light.transform.rotation = Quaternion.Euler(0, 0, self.idx2Rot[self.parentIdx])
+    self._N_light.transform.rotation = Quaternion.Euler(0, 0, self.idx2Rot[self.parentIdx])
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.SetData = function(self, parentIdx, idx, rootid, map, comCfgID, callback)
-  -- function num : 0_6
+function UICN20N49TreeSkillChild:SetData(parentIdx, idx, rootid, map, comCfgID, callback)
   self.parentIdx = parentIdx
   self.idx = idx
   self.rootid = rootid
@@ -164,10 +132,7 @@ UICN20N49TreeSkillChild.SetData = function(self, parentIdx, idx, rootid, map, co
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.OnValue = function(self)
-  -- function num : 0_7
+function UICN20N49TreeSkillChild:OnValue()
   self:SetPos()
   self:SetIcon()
   self:SetMask()
@@ -178,183 +143,122 @@ UICN20N49TreeSkillChild.OnValue = function(self)
   self:SetBuyTips()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.SetMask = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local mask = ((self.cls).level == 0 and not (self.cls).lock)
-  ;
-  (self._mask):SetActive(mask)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._mask).transform).rotation = (Quaternion.Euler)(0, 0, (self.idx2Rot)[self.parentIdx])
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UICN20N49TreeSkillChild:SetMask()
+  local mask = self.cls.level == 0 and not self.cls.lock
+  self._mask:SetActive(mask)
+  self._mask.transform.rotation = Quaternion.Euler(0, 0, self.idx2Rot[self.parentIdx])
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.SetType = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._power):SetActive((self.cls).type == SeasonTalentSkillType.Power)
-  ;
-  (self._normal):SetActive((self.cls).type == SeasonTalentSkillType.Normal)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UICN20N49TreeSkillChild:SetType()
+  self._power:SetActive(self.cls.type == SeasonTalentSkillType.Power)
+  self._normal:SetActive(self.cls.type == SeasonTalentSkillType.Normal)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.SetUsing = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._using):SetActive((self.cls).using)
-  ;
-  (self._P_using):SetActive(not (self.cls).using or (self.cls).type == SeasonTalentSkillType.Power)
-  ;
-  (self._N_using):SetActive(not (self.cls).using or (self.cls).type == SeasonTalentSkillType.Normal)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UICN20N49TreeSkillChild:SetUsing()
+  self._using:SetActive(self.cls.using)
+  self._P_using:SetActive(self.cls.using and self.cls.type == SeasonTalentSkillType.Power)
+  self._N_using:SetActive(self.cls.using and self.cls.type == SeasonTalentSkillType.Normal)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.SetLv = function(self)
-  -- function num : 0_11
-  local lv = (self.cls).level
-  ;
-  (self._lv):SetActive(lv > 0)
-  if lv > 0 then
+function UICN20N49TreeSkillChild:SetLv()
+  local lv = self.cls.level
+  self._lv:SetActive(0 < lv)
+  if 0 < lv then
     local levelMax = self:GetLevelMax()
-    if lv > 0 then
-      local levelMax = (self.cls):GetLevelMax()
+    if 0 < lv then
+      local levelMax = self.cls:GetLevelMax()
       if lv == levelMax then
         local lvStr = "<color=#ff5656>" .. lv .. "</color>"
-        ;
-        (self._lvTex):SetText(lvStr .. "/" .. levelMax)
+        self._lvTex:SetText(lvStr .. "/" .. levelMax)
       else
-        (self._lvTex):SetText(lv .. "/" .. levelMax)
+        self._lvTex:SetText(lv .. "/" .. levelMax)
       end
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.GetLevelMax = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgID, SkillTypeID = self.rootid})
+function UICN20N49TreeSkillChild:GetLevelMax()
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self.comCfgID,
+    SkillTypeID = self.rootid
+  })
   return #cfgs
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.SetLock = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (self._lock):SetActive((self.cls).lock)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._lockImg).transform).rotation = (Quaternion.Euler)(0, 0, (self.idx2Rot)[self.parentIdx])
+function UICN20N49TreeSkillChild:SetLock()
+  self._lock:SetActive(self.cls.lock)
+  self._lockImg.transform.rotation = Quaternion.Euler(0, 0, self.idx2Rot[self.parentIdx])
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.SetBuyTips = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (self._buyTips):SetActive((self.cls).canBuy)
-  ;
-  (self._P_tips):SetActive(not (self.cls).canBuy or (self.cls).type == SeasonTalentSkillType.Power)
-  ;
-  (self._N_tips):SetActive(not (self.cls).canBuy or (self.cls).type == SeasonTalentSkillType.Normal)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UICN20N49TreeSkillChild:SetBuyTips()
+  self._buyTips:SetActive(self.cls.canBuy)
+  self._P_tips:SetActive(self.cls.canBuy and self.cls.type == SeasonTalentSkillType.Power)
+  self._N_tips:SetActive(self.cls.canBuy and self.cls.type == SeasonTalentSkillType.Normal)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.SetIcon = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgID, SkillTypeID = self.rootid, Level = 1})
+function UICN20N49TreeSkillChild:SetIcon()
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self.comCfgID,
+    SkillTypeID = self.rootid,
+    Level = 1
+  })
   local cfg = cfgs[1]
   local icon = cfg.Icon
   if icon then
-    (self._icon):LoadImage(icon)
+    self._icon:LoadImage(icon)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.SetPos = function(self)
-  -- function num : 0_16
-  local pos = ((self.idx2pos)[self.parentIdx])[self.idx]
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._root).anchoredPosition = pos
+function UICN20N49TreeSkillChild:SetPos()
+  local pos = self.idx2pos[self.parentIdx][self.idx]
+  self._root.anchoredPosition = pos
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.RefreshCls = function(self, map)
-  -- function num : 0_17
+function UICN20N49TreeSkillChild:RefreshCls(map)
   self.cls = map[self.rootid]
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSkillChild.EventListener = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local etl = (UICustomUIEventListener.Get)(self._btn)
+function UICN20N49TreeSkillChild:EventListener()
+  local etl = UICustomUIEventListener.Get(self._btn)
   self:AddUICustomEventListener(etl, UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_18_0 , upvalues : self, _ENV
-    if (self.cls).level > 0 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_In_Begin, self.cls)
+    if self.cls.level > 0 then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_In_Begin, self.cls)
     end
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Drag, function(eventData)
-    -- function num : 0_18_1 , upvalues : self, _ENV
-    if (self.cls).level > 0 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_In_Drag, eventData.position)
+    if self.cls.level > 0 then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_In_Drag, eventData.position)
     end
-  end
-)
-  local endDragFunc = function(eventData)
-    -- function num : 0_18_2 , upvalues : self, _ENV
-    if (self.cls).level > 0 then
+  end)
+  
+  local function endDragFunc(eventData)
+    if self.cls.level > 0 then
       if eventData then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_In_End, eventData.position)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_In_End, eventData.position)
       else
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_In_End, nil)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_In_End, nil)
       end
     end
   end
-
+  
   self:AddUICustomEventListener(etl, UIEvent.EndDrag, function(eventData)
-    -- function num : 0_18_3 , upvalues : endDragFunc
     endDragFunc(eventData)
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Click, function(go)
-    -- function num : 0_18_4 , upvalues : self
     if self.callback then
-      (self.callback)(self.cls)
+      self.callback(self.cls)
     end
-  end
-)
+  end)
   if not EDITOR then
     self:AddUICustomEventListener(etl, UIEvent.ApplicationFocus, function(b)
-    -- function num : 0_18_5 , upvalues : etl, endDragFunc
-    if not b then
-      if not etl.IsDragging then
-        return 
+      if not b then
+        if not etl.IsDragging then
+          return
+        end
+        etl.IsDragging = false
+        endDragFunc()
       end
-      etl.IsDragging = false
-      endDragFunc()
-    end
-  end
-)
+    end)
   end
 end
-
-

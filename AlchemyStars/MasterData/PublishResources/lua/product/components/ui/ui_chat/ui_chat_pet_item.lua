@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/ui_chat_pet_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChatPetItem", UICustomWidget)
 UIChatPetItem = UIChatPetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChatPetItem.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChatPetItem:OnShow(uiParam)
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self._atlasAwake = self:GetAsset("UIAwake.spriteatlas", LoadType.SpriteAtlas)
   self._headImg = self:GetUIComponent("RawImageLoader", "Head")
@@ -20,50 +13,29 @@ UIChatPetItem.OnShow = function(self, uiParam)
   self._infoPanel = self:GetGameObject("Info")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatPetItem.Refresh = function(self, friendPetData)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChatPetItem:Refresh(friendPetData)
   if not friendPetData then
-    (self._infoPanel):SetActive(false)
-    return 
+    self._infoPanel:SetActive(false)
+    return
   end
   self._friendPetData = friendPetData
-  ;
-  (self._infoPanel):SetActive(true)
-  ;
-  (self._headImg):LoadImage(friendPetData:GetHeadIcon())
-  ;
-  (self._level):SetText("Lv." .. friendPetData:GetLevel())
-  local spriteName = (UIPetModule.GetAwakeSpriteName)(friendPetData:GetPetTemplateId(), friendPetData:GetGrade())
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._awake).sprite = (self._atlasAwake):GetSprite(spriteName)
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._firstElementImg).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(friendPetData:GetFirstElementName()))
+  self._infoPanel:SetActive(true)
+  self._headImg:LoadImage(friendPetData:GetHeadIcon())
+  self._level:SetText("Lv." .. friendPetData:GetLevel())
+  local spriteName = UIPetModule.GetAwakeSpriteName(friendPetData:GetPetTemplateId(), friendPetData:GetGrade())
+  self._awake.sprite = self._atlasAwake:GetSprite(spriteName)
+  self._firstElementImg.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(friendPetData:GetFirstElementName()))
   if friendPetData:GetSecondElement() <= 0 then
-    (self._secondElementGo):SetActive(false)
+    self._secondElementGo:SetActive(false)
   else
-    ;
-    (self._secondElementGo):SetActive(true)
-    -- DECOMPILER ERROR at PC73: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._secondElementImg).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(friendPetData:GetSecondElementName()))
+    self._secondElementGo:SetActive(true)
+    self._secondElementImg.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(friendPetData:GetSecondElementName()))
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatPetItem.PetBtnOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(MissionModule)
+function UIChatPetItem:PetBtnOnClick(go)
+  local module = GameGlobal.GetModule(MissionModule)
   local ctx = module:TeamCtx()
   ctx:Init(TeamOpenerType.Main, 0)
-  self:ShowDialog("UIHelpPetInfoController", (self._friendPetData):GetHelpPetData())
+  self:ShowDialog("UIHelpPetInfoController", self._friendPetData:GetHelpPetData())
 end
-
-

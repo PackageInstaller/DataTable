@@ -1,66 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/guide/guide_finger_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuideFingerComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-GuideFingerComponent.Constructor = function(self)
-  -- function num : 0_0
+function GuideFingerComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideFingerComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_1
+function GuideFingerComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideFingerComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_2
+function GuideFingerComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GuideFinger = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).GuideFinger)
+function Entity:GuideFinger()
+  return self:GetComponent(self.WEComponentsEnum.GuideFinger)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasGuideFinger = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).GuideFinger)
+function Entity:HasGuideFinger()
+  return self:HasComponent(self.WEComponentsEnum.GuideFinger)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddGuideFinger = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GuideFinger
+function Entity:AddGuideFinger()
+  local index = self.WEComponentsEnum.GuideFinger
   local component = GuideFingerComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceGuideFinger = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GuideFinger
+function Entity:ReplaceGuideFinger()
+  local index = self.WEComponentsEnum.GuideFinger
   local component = GuideFingerComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveGuideFinger = function(self)
-  -- function num : 0_7
+function Entity:RemoveGuideFinger()
   if self:HasGuideFinger() then
-    self:RemoveComponent((self.WEComponentsEnum).GuideFinger)
+    self:RemoveComponent(self.WEComponentsEnum.GuideFinger)
   end
 end
-
-

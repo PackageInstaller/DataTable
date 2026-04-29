@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/config_deco_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ConfigDecorationRecord", Object)
 ConfigDecorationRecord = ConfigDecorationRecord
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ConfigDecorationRecord.Constructor = function(self, buffSeqID, entityID, skillID, effectIndex)
-  -- function num : 0_0
+function ConfigDecorationRecord:Constructor(buffSeqID, entityID, skillID, effectIndex)
   self._buffSeqID = buffSeqID
   self._entityID = entityID
   self._skillID = skillID
@@ -17,38 +10,30 @@ ConfigDecorationRecord.Constructor = function(self, buffSeqID, entityID, skillID
   self._skillDic = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigDecorationRecord.GetBuffSeqID = function(self)
-  -- function num : 0_1
+function ConfigDecorationRecord:GetBuffSeqID()
   return self._buffSeqID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigDecorationRecord.NoteDecoration = function(self, key, old, new)
-  -- function num : 0_2 , upvalues : _ENV
-  (table.insert)(self._decorationSequence, {key = key, old = old, new = new})
+function ConfigDecorationRecord:NoteDecoration(key, old, new)
+  table.insert(self._decorationSequence, {
+    key = key,
+    old = old,
+    new = new
+  })
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigDecorationRecord.Do = function(self, effectTable)
-  -- function num : 0_3
+function ConfigDecorationRecord:Do(effectTable)
   for i = 1, #self._decorationSequence do
-    local t = (self._decorationSequence)[i]
+    local t = self._decorationSequence[i]
     local key = t.key
     local new = t.new
     effectTable[key] = new
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigDecorationRecord.Undo = function(self, effectTable)
-  -- function num : 0_4
+function ConfigDecorationRecord:Undo(effectTable)
   for i = #self._decorationSequence, 1, -1 do
-    local t = (self._decorationSequence)[i]
+    local t = self._decorationSequence[i]
     local key = t.key
     local old = t.old
     effectTable[key] = old
@@ -57,131 +42,100 @@ end
 
 _class("ConfigDecorationService", BaseService)
 ConfigDecorationService = ConfigDecorationService
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-ConfigDecorationService.Constructor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function ConfigDecorationService:Constructor()
   self._effectTableCache = {}
   self._effectParamParser = SkillEffectParamParser:New()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigDecorationService.Error = function(self, ...)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.error)(self._className, ...)
+function ConfigDecorationService:Error(...)
+  Log.error(self._className, ...)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigDecorationService.Exception = function(self, ...)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.exception)(self._className, ...)
+function ConfigDecorationService:Exception(...)
+  Log.exception(self._className, ...)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigDecorationService.DecorateSkillEffect = function(self, buffSeqID, entity, skillID, effectIndex, append, set, remove, appendArray)
-  -- function num : 0_8 , upvalues : _ENV
+function ConfigDecorationService:DecorateSkillEffect(buffSeqID, entity, skillID, effectIndex, append, set, remove, appendArray)
   local casterEntityID = entity:GetID()
   local effectTable = self:FindDecoratedEffectTable(casterEntityID, skillID, effectIndex)
   if not effectTable then
-    local configsvc = (self._world):GetService("Config")
+    local configsvc = self._world:GetService("Config")
     local cfgSkill = configsvc:GetSkillConfigData(skillID)
     local metaArray = cfgSkill:GetMetaEffectTableArray()
-    effectTable = (table.cloneconf)(metaArray[effectIndex])
+    effectTable = table.cloneconf(metaArray[effectIndex])
   end
-  do
-    if not effectTable then
-      self:Error("No base EffectTable found: ", skillID, effectIndex)
-      return 
-    end
-    local record = ConfigDecorationRecord:New(buffSeqID, casterEntityID, skillID, effectIndex)
-    for key,value in pairs(append) do
-      if not effectTable[key] then
-        self:Exception("append only works when there is a base value: ", skillID, effectIndex, key)
-      else
-        record:NoteDecoration(key, effectTable[key], effectTable[key] + value)
-      end
-    end
-    for key,value in pairs(set) do
-      record:NoteDecoration(key, effectTable[key], value)
-    end
-    for _,key in ipairs(remove) do
-      record:NoteDecoration(key, effectTable[key], nil)
-    end
-    for key,appender in pairs(appendArray) do
-      if not effectTable[key] then
-        self:Exception("appendArray only works when there is a base value: ", skillID, effectIndex, key)
-      else
-        local cloned = {}
-        for k,v in pairs(effectTable[key]) do
-          cloned[k] = v
-        end
-        for index,val in ipairs(appender) do
-          cloned[index] = cloned[index] + val
-        end
-        record:NoteDecoration(key, effectTable[key], cloned)
-      end
-    end
-    record:Do(effectTable)
-    self:_SaveDecoratedEffectTable(casterEntityID, skillID, effectIndex, effectTable, record)
+  if not effectTable then
+    self:Error("No base EffectTable found: ", skillID, effectIndex)
+    return
   end
+  local record = ConfigDecorationRecord:New(buffSeqID, casterEntityID, skillID, effectIndex)
+  for key, value in pairs(append) do
+    if not effectTable[key] then
+      self:Exception("append only works when there is a base value: ", skillID, effectIndex, key)
+    else
+      record:NoteDecoration(key, effectTable[key], effectTable[key] + value)
+    end
+  end
+  for key, value in pairs(set) do
+    record:NoteDecoration(key, effectTable[key], value)
+  end
+  for _, key in ipairs(remove) do
+    record:NoteDecoration(key, effectTable[key], nil)
+  end
+  for key, appender in pairs(appendArray) do
+    if not effectTable[key] then
+      self:Exception("appendArray only works when there is a base value: ", skillID, effectIndex, key)
+    else
+      local cloned = {}
+      for k, v in pairs(effectTable[key]) do
+        cloned[k] = v
+      end
+      for index, val in ipairs(appender) do
+        cloned[index] = cloned[index] + val
+      end
+      record:NoteDecoration(key, effectTable[key], cloned)
+    end
+  end
+  record:Do(effectTable)
+  self:_SaveDecoratedEffectTable(casterEntityID, skillID, effectIndex, effectTable, record)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigDecorationService._SaveDecoratedEffectTable = function(self, casterEntityID, skillID, effectIndex, effectTable, record)
-  -- function num : 0_9 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R6 in 'UnsetPending'
-
-  if not (self._effectTableCache)[casterEntityID] then
-    (self._effectTableCache)[casterEntityID] = {}
+function ConfigDecorationService:_SaveDecoratedEffectTable(casterEntityID, skillID, effectIndex, effectTable, record)
+  if not self._effectTableCache[casterEntityID] then
+    self._effectTableCache[casterEntityID] = {}
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R6 in 'UnsetPending'
-
-  if not ((self._effectTableCache)[casterEntityID])[skillID] then
-    ((self._effectTableCache)[casterEntityID])[skillID] = {}
+  if not self._effectTableCache[casterEntityID][skillID] then
+    self._effectTableCache[casterEntityID][skillID] = {}
   end
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R6 in 'UnsetPending'
-
-  if not (((self._effectTableCache)[casterEntityID])[skillID])[effectIndex] then
-    (((self._effectTableCache)[casterEntityID])[skillID])[effectIndex] = {
-record = {}
-}
+  if not self._effectTableCache[casterEntityID][skillID][effectIndex] then
+    self._effectTableCache[casterEntityID][skillID][effectIndex] = {
+      record = {}
+    }
   end
-  local cache = (((self._effectTableCache)[casterEntityID])[skillID])[effectIndex]
+  local cache = self._effectTableCache[casterEntityID][skillID][effectIndex]
   cache.effectTable = effectTable
-  ;
-  (table.insert)(cache.record, record)
+  table.insert(cache.record, record)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigDecorationService.GetSkillDecoration = function(self, casterEntityID, skillID)
-  -- function num : 0_10
-  local eCaster = (self._world):GetEntityByID(casterEntityID)
+function ConfigDecorationService:GetSkillDecoration(casterEntityID, skillID)
+  local eCaster = self._world:GetEntityByID(casterEntityID)
   if not eCaster then
     return nil
   end
-  local entityEffectCache = (self._effectTableCache)[casterEntityID]
-  do
-    if not entityEffectCache and eCaster:HasSuperEntity() and (eCaster:EntityType()):IsSkillHolder() then
-      local superEntityID = (eCaster:GetSuperEntity()):GetID()
-      entityEffectCache = (self._effectTableCache)[superEntityID]
-    end
-    if not entityEffectCache then
-      return nil
-    end
-    local skillCache = entityEffectCache[skillID]
-    return skillCache
+  local entityEffectCache = self._effectTableCache[casterEntityID]
+  if not entityEffectCache and eCaster:HasSuperEntity() and eCaster:EntityType():IsSkillHolder() then
+    local superEntityID = eCaster:GetSuperEntity():GetID()
+    entityEffectCache = self._effectTableCache[superEntityID]
   end
+  if not entityEffectCache then
+    return nil
+  end
+  local skillCache = entityEffectCache[skillID]
+  return skillCache
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigDecorationService.FindDecoratedCacheTable = function(self, casterEntityID, skillID, effectIndex)
-  -- function num : 0_11
+function ConfigDecorationService:FindDecoratedCacheTable(casterEntityID, skillID, effectIndex)
   local skillCache = self:GetSkillDecoration(casterEntityID, skillID)
   if not skillCache then
     return nil
@@ -193,10 +147,7 @@ ConfigDecorationService.FindDecoratedCacheTable = function(self, casterEntityID,
   return effectCache
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigDecorationService.FindDecoratedEffectTable = function(self, casterEntityID, skillID, effectIndex)
-  -- function num : 0_12
+function ConfigDecorationService:FindDecoratedEffectTable(casterEntityID, skillID, effectIndex)
   local cacheTable = self:FindDecoratedCacheTable(casterEntityID, skillID, effectIndex)
   if not cacheTable then
     return nil
@@ -204,94 +155,75 @@ ConfigDecorationService.FindDecoratedEffectTable = function(self, casterEntityID
   return cacheTable.effectTable
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigDecorationService.GetLatestEffectParamArray = function(self, casterEntityID, skillID)
-  -- function num : 0_13 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function ConfigDecorationService:GetLatestEffectParamArray(casterEntityID, skillID)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
   local cfgEffectArray = skillConfigData:GetSkillEffect()
   local skillDecoration = self:GetSkillDecoration(casterEntityID, skillID)
   if not skillDecoration then
     return cfgEffectArray
   end
-  local skillType = (skillConfigData:GetSkillType())
-  local petId, grade, awakening = nil, nil, nil
-  local caster = (self._world):GetEntityByID(casterEntityID)
-  do
-    if caster:HasMatchPet() then
-      local petData = (caster:MatchPet()):GetMatchPet()
-      petId = petData:GetTemplateID()
-      grade = petData:GetPetGrade()
-      awakening = petData:GetPetAwakening()
-    end
-    local effectParamArray = {}
-    for index,cfgEffectParam in ipairs(cfgEffectArray) do
-      local effectDecoration = skillDecoration[index]
-      if not effectDecoration then
-        (table.insert)(effectParamArray, cfgEffectParam)
-      else
-        local latest = effectDecoration.effectTable
-        local effectParam = (self._effectParamParser):ParseSkillEffectParam(latest.effectType, latest, petId, index, skillType, grade, awakening)
-        ;
-        (table.insert)(effectParamArray, effectParam)
-      end
-    end
-    return effectParamArray
+  local skillType = skillConfigData:GetSkillType()
+  local petId, grade, awakening
+  local caster = self._world:GetEntityByID(casterEntityID)
+  if caster:HasMatchPet() then
+    local petData = caster:MatchPet():GetMatchPet()
+    petId = petData:GetTemplateID()
+    grade = petData:GetPetGrade()
+    awakening = petData:GetPetAwakening()
   end
+  local effectParamArray = {}
+  for index, cfgEffectParam in ipairs(cfgEffectArray) do
+    local effectDecoration = skillDecoration[index]
+    if not effectDecoration then
+      table.insert(effectParamArray, cfgEffectParam)
+    else
+      local latest = effectDecoration.effectTable
+      local effectParam = self._effectParamParser:ParseSkillEffectParam(latest.effectType, latest, petId, index, skillType, grade, awakening)
+      table.insert(effectParamArray, effectParam)
+    end
+  end
+  return effectParamArray
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigDecorationService.RevertSkillEffectDecoration = function(self, buffSeqID, casterID, skillID, effectIndex)
-  -- function num : 0_14 , upvalues : _ENV
+function ConfigDecorationService:RevertSkillEffectDecoration(buffSeqID, casterID, skillID, effectIndex)
   local effectDecoration = self:FindDecoratedCacheTable(casterID, skillID, effectIndex)
   if not effectDecoration then
-    return 
+    return
   end
-  local index, newEffectTable = nil, nil
+  local index, newEffectTable
   local count = #effectDecoration.record
   for i = count, 1, -1 do
-    local record = (effectDecoration.record)[i]
+    local record = effectDecoration.record[i]
     if record:GetBuffSeqID() == buffSeqID then
       record:Undo(effectDecoration.effectTable)
       index = i
       break
     end
   end
-  do
-    if index then
-      (table.remove)(effectDecoration.record, index)
-    end
+  if index then
+    table.remove(effectDecoration.record, index)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigDecorationService.RevertAllSkillEffectDecoration = function(self, casterID, skillID, effectIndex)
-  -- function num : 0_15
+function ConfigDecorationService:RevertAllSkillEffectDecoration(casterID, skillID, effectIndex)
   local effectDecoration = self:FindDecoratedCacheTable(casterID, skillID, effectIndex)
   if not effectDecoration then
-    return 
+    return
   end
   for i = #effectDecoration.record, 1, -1 do
-    local record = (effectDecoration.record)[i]
+    local record = effectDecoration.record[i]
     record:Undo(effectDecoration.effectTable)
   end
   effectDecoration.record = {}
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigDecorationService.GenerateSkillConfigData = function(self, skillID, replaceKeyValuePairs)
-  -- function num : 0_16 , upvalues : _ENV
-  local skillConfigHelper = ((self._world):GetService("Config"))._skillConfigHelper
+function ConfigDecorationService:GenerateSkillConfigData(skillID, replaceKeyValuePairs)
+  local skillConfigHelper = self._world:GetService("Config")._skillConfigHelper
   local data = SkillConfigData:New(skillConfigHelper._scopeParamParser, skillConfigHelper._skillEffectParamParser, skillConfigHelper._skillViewParamParser, skillConfigHelper._skillPreviewParamParser)
   data:ParseSkillConfig(skillID)
-  for k,v in pairs(replaceKeyValuePairs) do
+  for k, v in pairs(replaceKeyValuePairs) do
     data[k] = v
   end
   return data
 end
-
-

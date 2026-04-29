@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_benumb_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSetBenumb", BuffViewBase)
 BuffViewSetBenumb = BuffViewSetBenumb
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSetBenumb.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  (self._entity):SetAnimatorControllerBools({Benumb = true})
-  ;
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTBenumbed:New(self._entity))
+function BuffViewSetBenumb:PlayView(TT)
+  self._entity:SetAnimatorControllerBools({Benumb = true})
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, NTBenumbed:New(self._entity))
 end
 
 _class("BuffViewResetBenumb", BuffViewBase)
 BuffViewResetBenumb = BuffViewResetBenumb
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewResetBenumb.PlayView = function(self, TT)
-  -- function num : 0_1
+function BuffViewResetBenumb:PlayView(TT)
   local targetEntity = self._entity
   targetEntity:SetAnimatorControllerBools({Benumb = false})
 end
-
-

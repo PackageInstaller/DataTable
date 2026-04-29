@@ -1,53 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_create_ghost_or_summon_on_pickup_pos_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayCreateGhostOrSummonOnPickupPosInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayCreateGhostOrSummonOnPickupPosInstruction = SkillPreviewPlayCreateGhostOrSummonOnPickupPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayCreateGhostOrSummonOnPickupPosInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayCreateGhostOrSummonOnPickupPosInstruction:Constructor(params)
   self._trapID = tonumber(params.trapID)
   self._effectID = tonumber(params.effectID)
   self._prefab = params.Prefab
   self._anim = params.Anim or "AtkUltPreview"
-  self._scopeParam = {TargetType = tonumber(params.scopeTargetType), ScopeType = tonumber(params.scopeType), 
-ScopeParam = {tonumber(params.scopeParam)}
-, ScopeCenterType = tonumber(params.scopeCenterType)}
+  self._scopeParam = {
+    TargetType = tonumber(params.scopeTargetType),
+    ScopeType = tonumber(params.scopeType),
+    ScopeParam = {
+      tonumber(params.scopeParam)
+    },
+    ScopeCenterType = tonumber(params.scopeCenterType)
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayCreateGhostOrSummonOnPickupPosInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayCreateGhostOrSummonOnPickupPosInstruction:GetCacheResource()
   return {
-{((Cfg.cfg_effect)[self._effectID]).ResPath, 1}
-}
+    {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayCreateGhostOrSummonOnPickupPosInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPreviewPlayCreateGhostOrSummonOnPickupPosInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
   local entitySvc = world:GetService("RenderEntity")
   local pickUpPos = previewContext:GetPickUpPos()
-  local boardCmpt = (world:GetBoardEntity()):Board()
+  local boardCmpt = world:GetBoardEntity():Board()
   local traps = boardCmpt:GetPieceEntities(pickUpPos, function(e)
-    -- function num : 0_2_0 , upvalues : casterEntity, _ENV, self
     local isOwner = false
     if e:HasSummoner() then
-      if (e:Summoner()):GetSummonerEntityID() == casterEntity:GetID() then
+      if e:Summoner():GetSummonerEntityID() == casterEntity:GetID() then
         isOwner = true
       else
-        local summonerID = (e:Summoner()):GetSummonerEntityID()
+        local summonerID = e:Summoner():GetSummonerEntityID()
         if casterEntity:HasPet() then
-          local cTeam = ((casterEntity:Pet()):GetOwnerTeamEntity()):Team()
+          local cTeam = casterEntity:Pet():GetOwnerTeamEntity():Team()
           local entities = cTeam:GetTeamPetEntities()
-          for _,petEntity in ipairs(entities) do
+          for _, petEntity in ipairs(entities) do
             if summonerID == petEntity:GetID() then
               isOwner = true
               break
@@ -56,38 +50,30 @@ SkillPreviewPlayCreateGhostOrSummonOnPickupPosInstruction.DoInstruction = functi
         end
       end
     else
-      do
-        isOwner = true
-        do return isOwner and (((e:TrapRender()):GetTrapID() == self._trapID and not e:HasDeadMark())) end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
+      isOwner = true
     end
-  end
-)
-  if #traps > 0 then
+    return isOwner and e:HasTrapRender() and e:TrapRender():GetTrapID() == self._trapID and not e:HasDeadMark()
+  end)
+  if 0 < #traps then
     entitySvc:CreateGhost(pickUpPos, casterEntity, self._anim, self._prefab)
     local configSvc = world:GetService("Config")
     local helper = configSvc._skillConfigHelper
     local parser = helper._scopeParamParser
     local scopeParam = SkillPreviewScopeParam:New(self._scopeParam)
-    local param = parser:ParseScopeParam((self._scopeParam).ScopeType, (self._scopeParam).ScopeParam)
+    local param = parser:ParseScopeParam(self._scopeParam.ScopeType, self._scopeParam.ScopeParam)
     scopeParam:SetScopeParamData(param)
     local previewActiveSkillService = world:GetService("PreviewActiveSkill")
     local scopeResult = previewActiveSkillService:CalcScopeResult(scopeParam, casterEntity)
     previewContext:SetScopeResult(scopeResult:GetAttackRange())
     local utilScopeSvc = world:GetService("UtilScopeCalc")
-    local targetIDList = utilScopeSvc:SelectSkillTarget(casterEntity, (self._scopeParam).TargetType, scopeResult)
+    local targetIDList = utilScopeSvc:SelectSkillTarget(casterEntity, self._scopeParam.TargetType, scopeResult)
     previewContext:SetTargetEntityIDList(targetIDList)
   else
-    do
-      local effectEntity = (world:GetService("Effect")):CreateWorldPositionEffect(self._effectID, pickUpPos)
-      local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
-      previewPickUpComponent:AddPickUpEffectEntityID(effectEntity:GetID())
-      previewContext:SetScopeResult(nil)
-      local targetList = {}
-      previewContext:SetTargetEntityIDList(targetList)
-    end
+    local effectEntity = world:GetService("Effect"):CreateWorldPositionEffect(self._effectID, pickUpPos)
+    local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
+    previewPickUpComponent:AddPickUpEffectEntityID(effectEntity:GetID())
+    previewContext:SetScopeResult(nil)
+    local targetList = {}
+    previewContext:SetTargetEntityIDList(targetList)
   end
 end
-
-

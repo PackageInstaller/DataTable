@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_pet_equip_refine.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetPetEquipRefine", UICustomWidget)
 UIWidgetPetEquipRefine = UIWidgetPetEquipRefine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetPetEquipRefine.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWidgetPetEquipRefine:OnShow()
   self.enableFakeInput = true
   self:AttachEvent(GameEventType.BattleUIRefreshRefineSwitchBtnState, self._RefreshSwitchBtnState)
   self._uiBattle1Atlas = self:GetAsset("UIBattle.spriteatlas", LoadType.SpriteAtlas)
@@ -24,159 +17,85 @@ UIWidgetPetEquipRefine.OnShow = function(self)
   self._isMoving = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetEquipRefine.HideSelf = function(self)
-  -- function num : 0_1
-  (self:GetGameObject()):SetActive(false)
+function UIWidgetPetEquipRefine:HideSelf()
+  self:GetGameObject():SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetEquipRefine.ShowSelf = function(self)
-  -- function num : 0_2
-  (self:GetGameObject()):SetActive(true)
+function UIWidgetPetEquipRefine:ShowSelf()
+  self:GetGameObject():SetActive(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetEquipRefine.SetUIPos = function(self, position, isUp)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ((self:GetGameObject()).transform).position = position
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
+function UIWidgetPetEquipRefine:SetUIPos(position, isUp)
+  self:GetGameObject().transform.position = position
   if isUp then
-    (self._refineInfoRT).anchorMax = Vector2(0.5, 0)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._refineInfoRT).anchorMin = Vector2(0.5, 0)
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._refineInfoRT).pivot = Vector2(0.5, 0)
+    self._refineInfoRT.anchorMax = Vector2(0.5, 0)
+    self._refineInfoRT.anchorMin = Vector2(0.5, 0)
+    self._refineInfoRT.pivot = Vector2(0.5, 0)
   else
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._refineInfoRT).anchorMax = Vector2(0.5, 1)
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._refineInfoRT).anchorMin = Vector2(0.5, 1)
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._refineInfoRT).pivot = Vector2(0.5, 1)
+    self._refineInfoRT.anchorMax = Vector2(0.5, 1)
+    self._refineInfoRT.anchorMin = Vector2(0.5, 1)
+    self._refineInfoRT.pivot = Vector2(0.5, 1)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetEquipRefine.OnHide = function(self)
-  -- function num : 0_4
+function UIWidgetPetEquipRefine:OnHide()
   self.activeSkillCheckPass = true
   self._cannotCastReason = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetEquipRefine._RefreshUI = function(self, isClick)
-  -- function num : 0_5 , upvalues : _ENV
+function UIWidgetPetEquipRefine:_RefreshUI(isClick)
   local moveTime = 0
   if isClick then
     moveTime = 0.2
     self._isMoving = true
   end
-  local pos = ((self._objOnPos).transform).position
+  local pos = self._objOnPos.transform.position
   if self._uiState == EquipRefineUIStateType.Off then
-    pos = ((self._objOffPos).transform).position
+    pos = self._objOffPos.transform.position
   end
-  ;
-  ((self._imgSwitchRT):DOMove(pos, moveTime)):OnComplete(function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
+  self._imgSwitchRT:DOMove(pos, moveTime):OnComplete(function()
     self._isMoving = false
-    local buffCfgData = (self._buffViewIns):BuffConfigData()
+    local buffCfgData = self._buffViewIns:BuffConfigData()
     local viewParam = buffCfgData:GetViewParams()
     local strDesc = viewParam.RefineOnDesc
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
     if self._uiState == EquipRefineUIStateType.On then
-      (self._txtSwitch).color = Color.white
-      ;
-      (self._txtSwitch):SetText((StringTable.Get)("str_battle_pet_refine_ui_on"))
-      -- DECOMPILER ERROR at PC28: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._btnSwitch).sprite = (self._uiBattle1Atlas):GetSprite("thread_zhudong_btn9")
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._imgSwitch).sprite = (self._uiBattle1Atlas):GetSprite("thread_zhudong_btn11")
-    else
-      -- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
-      if self._uiState == EquipRefineUIStateType.Off then
-        (self._txtSwitch).color = Color(0.9843137254902, 0.9843137254902, 0.9843137254902, 1)
-        ;
-        (self._txtSwitch):SetText((StringTable.Get)("str_battle_pet_refine_ui_off"))
-        -- DECOMPILER ERROR at PC61: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._btnSwitch).sprite = (self._uiBattle1Atlas):GetSprite("thread_zhudong_btn13")
-        -- DECOMPILER ERROR at PC67: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._imgSwitch).sprite = (self._uiBattle1Atlas):GetSprite("thread_zhudong_btn12")
-        strDesc = viewParam.RefineOffDesc
-      end
+      self._txtSwitch.color = Color.white
+      self._txtSwitch:SetText(StringTable.Get("str_battle_pet_refine_ui_on"))
+      self._btnSwitch.sprite = self._uiBattle1Atlas:GetSprite("thread_zhudong_btn9")
+      self._imgSwitch.sprite = self._uiBattle1Atlas:GetSprite("thread_zhudong_btn11")
+    elseif self._uiState == EquipRefineUIStateType.Off then
+      self._txtSwitch.color = Color(0.984313725490196, 0.984313725490196, 0.984313725490196, 1)
+      self._txtSwitch:SetText(StringTable.Get("str_battle_pet_refine_ui_off"))
+      self._btnSwitch.sprite = self._uiBattle1Atlas:GetSprite("thread_zhudong_btn13")
+      self._imgSwitch.sprite = self._uiBattle1Atlas:GetSprite("thread_zhudong_btn12")
+      strDesc = viewParam.RefineOffDesc
     end
-    ;
-    (self._refineDesc):SetText((StringTable.Get)(strDesc))
-  end
-)
+    self._refineDesc:SetText(StringTable.Get(strDesc))
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetEquipRefine.Init = function(self, petPstID, buffViewIns)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWidgetPetEquipRefine:Init(petPstID, buffViewIns)
   self._petPstID = petPstID
   self._buffViewIns = buffViewIns
-  if not (InnerGameHelperRender.GetBuffValue)(petPstID, "EquipRefineUIState") then
-    self._uiState = EquipRefineUIStateType.On
-    self:_RefreshUI()
-  end
+  self._uiState = InnerGameHelperRender.GetBuffValue(petPstID, "EquipRefineUIState") or EquipRefineUIStateType.On
+  self:_RefreshUI()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetEquipRefine.BtnSwitchOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIWidgetPetEquipRefine:BtnSwitchOnClick()
   if self._isMoving then
-    return 
+    return
   end
   if self._uiState == EquipRefineUIStateType.On then
     self._uiState = EquipRefineUIStateType.Off
-  else
-    if self._uiState == EquipRefineUIStateType.Off then
-      self._uiState = EquipRefineUIStateType.On
-    end
+  elseif self._uiState == EquipRefineUIStateType.Off then
+    self._uiState = EquipRefineUIStateType.On
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIBattleSwitchPetEquipRefine, self._uiState, self._petPstID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIBattleSwitchPetEquipRefine, self._uiState, self._petPstID)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetEquipRefine._RefreshSwitchBtnState = function(self, uiState)
-  -- function num : 0_8
+function UIWidgetPetEquipRefine:_RefreshSwitchBtnState(uiState)
   if uiState ~= self._uiState then
     self._uiState = uiState
   end
   self:_RefreshUI(true)
 end
-
-

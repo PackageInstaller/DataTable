@@ -1,32 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_set_map_for_first_chain_path.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultSetMapForFirstChainPath", BuffResultBase)
 BuffResultSetMapForFirstChainPath = BuffResultSetMapForFirstChainPath
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultSetMapForFirstChainPath.Constructor = function(self, pieceType, effectID, effOutAnim)
-  -- function num : 0_0
+function BuffResultSetMapForFirstChainPath:Constructor(pieceType, effectID, effOutAnim)
   self._pieceType = pieceType
   self._effectID = effectID
   self._effOutAnim = effOutAnim
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetMapForFirstChainPath.GetEffectID = function(self)
-  -- function num : 0_1
+function BuffResultSetMapForFirstChainPath:GetEffectID()
   return self._effectID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetMapForFirstChainPath.GetEffectOutAnim = function(self)
-  -- function num : 0_2
+function BuffResultSetMapForFirstChainPath:GetEffectOutAnim()
   return self._effOutAnim
 end
-
-

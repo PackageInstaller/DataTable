@@ -1,38 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/story/ui_n20_avg_ending.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20AVGEnding", UIController)
 UIN20AVGEnding = UIN20AVGEnding
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20AVGEnding.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN20AVGData()
+function UIN20AVGEnding:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN20AVGData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGEnding.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN20AVGEnding:LoadDataOnEnter(TT, res, uiParams)
   self.endId = uiParams[1]
   local key = "UIN20AVGEndingHandleComplateEnding"
   self:Lock(key)
-  local com = (self.data):GetComponentAVG()
+  local com = self.data:GetComponentAVG()
   local res = AsyncRequestRes:New()
   local ret = com:HandleComplateEnding(TT, res, self.endId)
-  if (N20AVGData.CheckCode)(res) then
-    (Log.info)("### reach ending", self.endId)
+  if N20AVGData.CheckCode(res) then
+    Log.info("### reach ending", self.endId)
   end
   self:UnLock(key)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGEnding.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN20AVGEnding:OnShow(uiParams)
   self.ne = self:GetGameObject("ne")
   self.be = self:GetGameObject("be")
   self.imgCG = self:GetUIComponent("RawImageLoader", "imgCG")
@@ -40,131 +27,82 @@ UIN20AVGEnding.OnShow = function(self, uiParams)
   self.txtNE = self:GetUIComponent("UILocalizationText", "txtNE")
   self.imgBigCG = self:GetUIComponent("RawImageLoader", "imgBigCG")
   self.goBigCG = self:GetGameObject("goBigCG")
-  ;
-  (self.goBigCG):SetActive(false)
+  self.goBigCG:SetActive(false)
   self.txtTitleBE = self:GetUIComponent("UILocalizationText", "txtTitleBE")
   self.txtBE = self:GetUIComponent("UILocalizationText", "txtBE")
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGEnding.OnHide = function(self)
-  -- function num : 0_3
-  (self.imgCG):DestoryLastImage()
-  ;
-  (self.imgBigCG):DestoryLastImage()
+function UIN20AVGEnding:OnHide()
+  self.imgCG:DestoryLastImage()
+  self.imgBigCG:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGEnding.Flush = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local ending = (self.data):GetEndingById(self.endId)
+function UIN20AVGEnding:Flush()
+  local ending = self.data:GetEndingById(self.endId)
   if ending.isBE then
-    (self.ne):SetActive(false)
-    ;
-    (self.be):SetActive(true)
-    ;
-    (self.txtTitleBE):SetText(ending.title)
-    ;
-    (self.txtBE):SetText(ending.desc)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N20ShowBadendUI)
-    ;
-    (UIWidgetHelper.PlayAnimation)(self, "anim", "uieff_UIN20AVGEnding_be_in", 1133)
+    self.ne:SetActive(false)
+    self.be:SetActive(true)
+    self.txtTitleBE:SetText(ending.title)
+    self.txtBE:SetText(ending.desc)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N20ShowBadendUI)
+    UIWidgetHelper.PlayAnimation(self, "anim", "uieff_UIN20AVGEnding_be_in", 1133)
   else
-    ;
-    (self.ne):SetActive(true)
-    ;
-    (self.be):SetActive(false)
-    ;
-    (self.imgCG):LoadImage(ending.cgEnding)
-    ;
-    (self.imgBigCG):LoadImage(ending.cg)
-    ;
-    (self.txtName):SetText(ending.title)
-    ;
-    (self.txtNE):SetText(ending.desc)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N20ShowNormalResult)
-    ;
-    (UIWidgetHelper.PlayAnimation)(self, "anim", "uieff_UIN20AVGEnding_ne_in", 1000)
+    self.ne:SetActive(true)
+    self.be:SetActive(false)
+    self.imgCG:LoadImage(ending.cgEnding)
+    self.imgBigCG:LoadImage(ending.cg)
+    self.txtName:SetText(ending.title)
+    self.txtNE:SetText(ending.desc)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N20ShowNormalResult)
+    UIWidgetHelper.PlayAnimation(self, "anim", "uieff_UIN20AVGEnding_ne_in", 1000)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGEnding.btnShowCGOnClick = function(self, go)
-  -- function num : 0_5
-  (self.goBigCG):SetActive(true)
+function UIN20AVGEnding:btnShowCGOnClick(go)
+  self.goBigCG:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGEnding.imgBigCGOnClick = function(self, go)
-  -- function num : 0_6
-  (self.goBigCG):SetActive(false)
+function UIN20AVGEnding:imgBigCGOnClick(go)
+  self.goBigCG:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGEnding.btnExitNEOnClick = function(self, go)
-  -- function num : 0_7
+function UIN20AVGEnding:btnExitNEOnClick(go)
   self:ShowUIN20AVGMain()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGEnding.btnExitBEOnClick = function(self, go)
-  -- function num : 0_8
+function UIN20AVGEnding:btnExitBEOnClick(go)
   self:ShowUIN20AVGMain()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGEnding.ShowUIN20AVGMain = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN20AVGEnding:ShowUIN20AVGMain()
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
     local key = "UIN20AVGEndingShowUIN20AVGMain"
     self:Lock(key)
-    local com = (self.data):GetComponentAVG()
+    local com = self.data:GetComponentAVG()
     local res = AsyncRequestRes:New()
-    local nodeId = (self.data):FirstNodeId()
+    local nodeId = self.data:FirstNodeId()
     local ret = com:HandleSetCurrentLocation(TT, res, nodeId)
-    if (N20AVGData.CheckCode)(res) then
+    if N20AVGData.CheckCode(res) then
       self:SwitchState(UIStateType.UIN20AVGMain)
     end
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGEnding.btnTreeNEOnClick = function(self, go)
-  -- function num : 0_10
+function UIN20AVGEnding:btnTreeNEOnClick(go)
   self:ShowUIN20AVGGraph()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGEnding.btnTreeBEOnClick = function(self, go)
-  -- function num : 0_11
+function UIN20AVGEnding:btnTreeBEOnClick(go)
   self:ShowUIN20AVGGraph()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGEnding.ShowUIN20AVGGraph = function(self)
-  -- function num : 0_12
-  local ending = (self.data):GetEndingById(self.endId)
+function UIN20AVGEnding:ShowUIN20AVGGraph()
+  local ending = self.data:GetEndingById(self.endId)
   if ending.isBE then
     self:ShowDialog("UIN20AVGGraph")
   else
     self:ShowDialog("UIN20AVGGraph", true, self.endId)
   end
 end
-
-

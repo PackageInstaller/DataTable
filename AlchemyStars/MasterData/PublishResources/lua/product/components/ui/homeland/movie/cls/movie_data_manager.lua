@@ -1,67 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/cls/movie_data_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MovieDataManager", Singleton)
 MovieDataManager = MovieDataManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MovieDataManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function MovieDataManager:Constructor()
   self._movieActorList = nil
   self._movieItemList = nil
   self._optionsData = {}
   self._teaseData = {}
   self._replyClosingData = nil
-  self._homelandmodule = (GameGlobal.GetModule)(HomelandModule)
+  self._homelandmodule = GameGlobal.GetModule(HomelandModule)
   self._requestData = MoviceRecord:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetAllMovieData = function(self)
-  -- function num : 0_1
-  local info = ((self._homelandmodule):GetHomelandInfo()).movice_info
+function MovieDataManager:GetAllMovieData()
+  local info = self._homelandmodule:GetHomelandInfo().movice_info
   self._movieInfo = info.movices
   return self._movieInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetMovieDataByID = function(self, id)
-  -- function num : 0_2
+function MovieDataManager:GetMovieDataByID(id)
   local info = self:GetAllMovieData()
   return info[id]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetMovieHistoryDataByID = function(self, id)
-  -- function num : 0_3 , upvalues : _ENV
+function MovieDataManager:GetMovieHistoryDataByID(id)
   local movie = self:GetMovieDataByID(id)
   if movie then
     local t, res = {}, {}
     local records = movie.records
-    for i,v in pairs(records) do
+    for i, v in pairs(records) do
       t[#t + 1] = v.pstid
     end
-    ;
-    (table.sort)(t)
-    for i,v in pairs(t) do
-      (table.insert)(res, records[v])
+    table.sort(t)
+    for i, v in pairs(t) do
+      table.insert(res, records[v])
     end
     return res
   end
-  do
-    return {}
-  end
+  return {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetMovieScoreDataByID = function(self, id)
-  -- function num : 0_4
+function MovieDataManager:GetMovieScoreDataByID(id)
   local movie = self:GetMovieDataByID(id)
   if movie and movie.max_score then
     return movie.max_score
@@ -69,10 +47,7 @@ MovieDataManager.GetMovieScoreDataByID = function(self, id)
   return 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetMovieHistoryOptionDataByID = function(self, id)
-  -- function num : 0_5
+function MovieDataManager:GetMovieHistoryOptionDataByID(id)
   local movie = self:GetMovieDataByID(id)
   if movie then
     return movie.history_chose_option
@@ -80,10 +55,7 @@ MovieDataManager.GetMovieHistoryOptionDataByID = function(self, id)
   return {}
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetMovieHistoryUsedByID = function(self, id, useId)
-  -- function num : 0_6 , upvalues : _ENV
+function MovieDataManager:GetMovieHistoryUsedByID(id, useId)
   local movie = self:GetMovieDataByID(id)
   if not movie then
     return false
@@ -91,22 +63,22 @@ MovieDataManager.GetMovieHistoryUsedByID = function(self, id, useId)
   local actors = movie.history_chose_pets
   local items = movie.history_chose_item
   local options = movie.history_chose_option
-  for i,v in pairs(actors) do
-    for _,petID in pairs(v) do
+  for i, v in pairs(actors) do
+    for _, petID in pairs(v) do
       if petID == useId then
         return true
       end
     end
   end
-  for i,v in pairs(items) do
-    for _,itemID in pairs(v) do
+  for i, v in pairs(items) do
+    for _, itemID in pairs(v) do
       if itemID == useId then
         return true
       end
     end
   end
-  for i,v in pairs(options) do
-    for _,optionsID in pairs(v) do
+  for i, v in pairs(options) do
+    for _, optionsID in pairs(v) do
       if optionsID == useId then
         return true
       end
@@ -115,10 +87,7 @@ MovieDataManager.GetMovieHistoryUsedByID = function(self, id, useId)
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetMovieRewardByID = function(self, id)
-  -- function num : 0_7
+function MovieDataManager:GetMovieRewardByID(id)
   local movie = self:GetMovieDataByID(id)
   if movie then
     return movie.received_reward_id
@@ -126,291 +95,188 @@ MovieDataManager.GetMovieRewardByID = function(self, id)
   return {}
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetMoviePointByID = function(self, movieId, actorId)
-  -- function num : 0_8 , upvalues : _ENV
-  local actorPointList = ((Cfg.cfg_homeland_movice)[movieId]).RolePosList
-  for i,v in pairs(actorPointList) do
-    local d = (Cfg.cfg_homeland_movice_item)[v]
+function MovieDataManager:GetMoviePointByID(movieId, actorId)
+  local actorPointList = Cfg.cfg_homeland_movice[movieId].RolePosList
+  for i, v in pairs(actorPointList) do
+    local d = Cfg.cfg_homeland_movice_item[v]
     local selectItem = d.SelectList
-    for _,itemId in pairs(selectItem) do
+    for _, itemId in pairs(selectItem) do
       if actorId == itemId[1] then
-        return ((Cfg.cfg_homeland_movice_item)[v]).Name
+        return Cfg.cfg_homeland_movice_item[v].Name
       end
     end
   end
   return "Error not found"
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetSortMovieList = function(self, movietag)
-  -- function num : 0_9 , upvalues : _ENV
+function MovieDataManager:GetSortMovieList(movietag)
   local tb = {}
-  local cfg = (Cfg.cfg_homeland_movice)({})
+  local cfg = Cfg.cfg_homeland_movice({})
   local new, lock, normal = {}, {}, {}
   local tag = movietag
-  for k,v in ipairs(tag) do
+  for k, v in ipairs(tag) do
     if self:CheckMovieLock(cfg[v]) then
-      (table.insert)(lock, v)
+      table.insert(lock, v)
+    elseif self:CheckMovieNew(cfg[v]) then
+      table.insert(new, v)
     else
-      if self:CheckMovieNew(cfg[v]) then
-        (table.insert)(new, v)
-      else
-        ;
-        (table.insert)(normal, v)
-      end
+      table.insert(normal, v)
     end
   end
-  ;
-  (table.sort)(lock)
-  ;
-  (table.sort)(new)
-  ;
-  (table.sort)(normal)
-  for i,v in pairs(new) do
-    (table.insert)(tb, cfg[v])
+  table.sort(lock)
+  table.sort(new)
+  table.sort(normal)
+  for i, v in pairs(new) do
+    table.insert(tb, cfg[v])
   end
-  for i,v in pairs(normal) do
-    (table.insert)(tb, cfg[v])
+  for i, v in pairs(normal) do
+    table.insert(tb, cfg[v])
   end
-  for i,v in pairs(lock) do
-    (table.insert)(tb, cfg[v])
+  for i, v in pairs(lock) do
+    table.insert(tb, cfg[v])
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.CheckMovieLock = function(self, movieData)
-  -- function num : 0_10 , upvalues : _ENV
+function MovieDataManager:CheckMovieLock(movieData)
   local lockID = movieData.UnlockItem
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local itemNum = itemModule:GetItemCount(lockID)
-  do return itemNum == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return itemNum == 0
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.CheckMovieNew = function(self, movieData)
-  -- function num : 0_11 , upvalues : _ENV
-  local item_data, psdid = nil, nil
+function MovieDataManager:CheckMovieNew(movieData)
+  local item_data, psdid
   local redState = false
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local items = itemModule:GetItemByTempId(movieData.UnlockItem)
-  if items and (table.count)(items) > 0 then
-    for key,value in pairs(items) do
+  if items and table.count(items) > 0 then
+    for key, value in pairs(items) do
       item_data = value
-      do break end
+      break
     end
   end
-  do
-    if item_data then
-      redState = item_data:IsNewOverlay()
-      psdid = item_data:GetID()
-    end
-    return redState, psdid
+  if item_data then
+    redState = item_data:IsNewOverlay()
+    psdid = item_data:GetID()
   end
+  return redState, psdid
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.InsertOptionsData = function(self, ID, optionIdx)
-  -- function num : 0_12
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._optionsData)[ID] = optionIdx
+function MovieDataManager:InsertOptionsData(ID, optionIdx)
+  self._optionsData[ID] = optionIdx
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.InsertTeaseData = function(self, randomIdx)
-  -- function num : 0_13 , upvalues : _ENV
-  (table.insert)(self._teaseData, randomIdx)
+function MovieDataManager:InsertTeaseData(randomIdx)
+  table.insert(self._teaseData, randomIdx)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetReplyClosingData = function(self)
-  -- function num : 0_14
+function MovieDataManager:GetReplyClosingData()
   return self._replyClosingData
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetRecordData = function(self)
-  -- function num : 0_15
+function MovieDataManager:GetRecordData()
   return self._replyClosingData
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.ClearRequestData = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function MovieDataManager:ClearRequestData()
   self._requestData = MoviceRecord:New()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetRequestData = function(self)
-  -- function num : 0_17
+function MovieDataManager:GetRequestData()
   return self._requestData
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.SetRequestDataPstid = function(self, pstid)
-  -- function num : 0_18
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._requestData).pstid = pstid
+function MovieDataManager:SetRequestDataPstid(pstid)
+  self._requestData.pstid = pstid
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.SetRequestData = function(self, items, actors, options, randomchat)
-  -- function num : 0_19
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R5 in 'UnsetPending'
-
-  (self._requestData).chose_item = items
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._requestData).chose_pets = actors
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._requestData).chose_option = options
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._requestData).random_chat = randomchat
+function MovieDataManager:SetRequestData(items, actors, options, randomchat)
+  self._requestData.chose_item = items
+  self._requestData.chose_pets = actors
+  self._requestData.chose_option = options
+  self._requestData.random_chat = randomchat
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.SetRequestDataName = function(self, moviceid, name, data)
-  -- function num : 0_20
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R4 in 'UnsetPending'
-
-  (self._requestData).name = name
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._requestData).date = data
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._requestData).movice_id = moviceid
+function MovieDataManager:SetRequestDataName(moviceid, name, data)
+  self._requestData.name = name
+  self._requestData.date = data
+  self._requestData.movice_id = moviceid
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.CaculateTotalScore = function(self, data)
-  -- function num : 0_21
+function MovieDataManager:CaculateTotalScore(data)
   return (data.pet_score + data.item_score + data.option_score) / 6
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetClosingCondition = function(self, conditionID)
-  -- function num : 0_22
+function MovieDataManager:GetClosingCondition(conditionID)
   if conditionID == 1 then
     return 0, 2
+  elseif conditionID == 2 then
+    return 2, 3.5
+  elseif conditionID == 3 then
+    return 3.5, 4.5
   else
-    if conditionID == 2 then
-      return 2, 3.5
-    else
-      if conditionID == 3 then
-        return 3.5, 4.5
-      else
-        return 4.5, 5
-      end
-    end
+    return 4.5, 5
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetBulletScreenCondition = function(self, score)
-  -- function num : 0_23
+function MovieDataManager:GetBulletScreenCondition(score)
   local sc = self:TransferToStarScore(score)
   if sc <= 2 then
     return 1
+  elseif sc <= 3.5 then
+    return 2
   else
-    if sc <= 3.5 then
-      return 2
-    else
-      return 3
-    end
+    return 3
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.TransferToStarScore = function(self, score)
-  -- function num : 0_24 , upvalues : _ENV
-  local integerScore = (math.floor)(score)
+function MovieDataManager:TransferToStarScore(score)
+  local integerScore = math.floor(score)
   local floatP = score - integerScore
-  local star = floatP > 0.5 and integerScore + 0.5 or integerScore
+  local star = 0.5 < floatP and integerScore + 0.5 or integerScore
   return star
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.SendTask = function(self, TT)
-  -- function num : 0_25 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetModule)(HomelandModule)
-  local pstid = (MoviePrepareData:GetInstance()):GetPstId()
+function MovieDataManager:SendTask(TT)
+  local homeLandModule = GameGlobal.GetModule(HomelandModule)
+  local pstid = MoviePrepareData:GetInstance():GetPstId()
   local res, replyEvent = homeLandModule:HandleReuestScore(TT, pstid, self._requestData)
   if res:GetSucc() then
     self._replyClosingData = replyEvent
     self._optionsData = {}
     self._teaseData = {}
-    ;
-    (Log.fatal)("MovieDataManager:SendTask")
+    Log.fatal("MovieDataManager:SendTask")
   end
   return res
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.SendDataToServer = function(self, TT)
-  -- function num : 0_26 , upvalues : _ENV
-  self:SetRequestDataPstid((MoviePrepareData:GetInstance()):GetPstId())
-  local movieId = (MoviePrepareData:GetInstance()):GetMovieId()
-  local cfg = (Cfg.cfg_homeland_movice)({})
+function MovieDataManager:SendDataToServer(TT)
+  self:SetRequestDataPstid(MoviePrepareData:GetInstance():GetPstId())
+  local movieId = MoviePrepareData:GetInstance():GetMovieId()
+  local cfg = Cfg.cfg_homeland_movice({})
   local cfgItem = cfg[movieId]
   self:SetRequestDataName(movieId, nil, nil)
-  local items, actors = (HomelandMoviePrepareManager:GetInstance()):GetRequestServerData()
+  local items, actors = HomelandMoviePrepareManager:GetInstance():GetRequestServerData()
   local options = self._optionsData
   local teases = self._teaseData
   self:SetRequestData(items, actors, options, teases)
   self:SendTask(TT)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetMovieServerData = function(self, movieId)
-  -- function num : 0_27
-  return ((((self._homelandmodule).m_homeland_info).movice_info).movices)[movieId]
+function MovieDataManager:GetMovieServerData(movieId)
+  return self._homelandmodule.m_homeland_info.movice_info.movices[movieId]
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetMovieStoryID = function(self, movieID, petList)
-  -- function num : 0_28 , upvalues : _ENV
-  local movieStoryList = (Cfg.cfg_homeland_movice_condition)({MovieID = movieID})
-  ;
-  (table.sort)(petList)
-  for _,story in pairs(movieStoryList) do
+function MovieDataManager:GetMovieStoryID(movieID, petList)
+  local movieStoryList = Cfg.cfg_homeland_movice_condition({MovieID = movieID})
+  table.sort(petList)
+  for _, story in pairs(movieStoryList) do
     if #petList == #story.Condition then
-      (table.sort)(story.Condition)
+      table.sort(story.Condition)
       local equalFlag = true
       for i = 1, #petList do
-        if petList[i] ~= (story.Condition)[i] then
+        if petList[i] ~= story.Condition[i] then
           equalFlag = false
         end
       end
@@ -419,29 +285,21 @@ MovieDataManager.GetMovieStoryID = function(self, movieID, petList)
       end
     end
   end
-  ;
-  (Log.fatal)("[MovieDataManager] Can not Find StoryID with Condition " .. #petList)
+  Log.fatal("[MovieDataManager] Can not Find StoryID with Condition " .. #petList)
   return nil
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.GetMovieOptionFitScoreList = function(self, oid)
-  -- function num : 0_29 , upvalues : _ENV
-  local fitOptionCfg = (Cfg.cfg_homeland_movice_item)({OptionID = oid})
+function MovieDataManager:GetMovieOptionFitScoreList(oid)
+  local fitOptionCfg = Cfg.cfg_homeland_movice_item({OptionID = oid})
   if fitOptionCfg then
     return fitOptionCfg[1]
   else
-    ;
-    (Log.error)("cfg_homeland_movice_item nil id=", oid)
+    Log.error("cfg_homeland_movice_item nil id=", oid)
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.CheckHadUse = function(self, moviceid, titleType, itemId)
-  -- function num : 0_30 , upvalues : _ENV
+function MovieDataManager:CheckHadUse(moviceid, titleType, itemId)
   local data = self:GetMovieServerData(moviceid)
   if not data then
     return false
@@ -450,7 +308,7 @@ MovieDataManager.CheckHadUse = function(self, moviceid, titleType, itemId)
     if not data.history_chose_pets then
       return false
     end
-    for key,value in pairs(data.history_chose_pets) do
+    for key, value in pairs(data.history_chose_pets) do
       for i = 1, #value do
         if value[i] == itemId then
           return true
@@ -458,43 +316,31 @@ MovieDataManager.CheckHadUse = function(self, moviceid, titleType, itemId)
       end
     end
     return false
-  else
-    if titleType == MoviePrepareType.PT_Prop or titleType == MoviePrepareType.PT_Scene then
-      if not data.history_chose_item then
-        return false
-      end
-      for key,value in pairs(data.history_chose_item) do
-        for i = 1, #value do
-          if value[i] == itemId then
-            return true
-          end
-        end
-      end
+  elseif titleType == MoviePrepareType.PT_Prop or titleType == MoviePrepareType.PT_Scene then
+    if not data.history_chose_item then
       return false
     end
+    for key, value in pairs(data.history_chose_item) do
+      for i = 1, #value do
+        if value[i] == itemId then
+          return true
+        end
+      end
+    end
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataManager.SaveRecordData = function(self, replaceMoviePstId, successCallback, fatalCallback)
-  -- function num : 0_31 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetModule)(HomelandModule)
-  local curMoviePstId = (MoviePrepareData:GetInstance()):GetPstId()
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_31_0 , upvalues : _ENV, homeLandModule, curMoviePstId, replaceMoviePstId, successCallback, fatalCallback
-    local archList = (MoviePrepareData:GetInstance()):GetPrepareArchList()
+function MovieDataManager:SaveRecordData(replaceMoviePstId, successCallback, fatalCallback)
+  local homeLandModule = GameGlobal.GetModule(HomelandModule)
+  local curMoviePstId = MoviePrepareData:GetInstance():GetPstId()
+  GameGlobal.TaskManager():StartTask(function(TT)
+    local archList = MoviePrepareData:GetInstance():GetPrepareArchList()
     local res = homeLandModule:HandleSaveRecord(TT, curMoviePstId, replaceMoviePstId, archList)
     if res:GetSucc() then
       successCallback()
-    else
-      if fatalCallback then
-        fatalCallback()
-      end
+    elseif fatalCallback then
+      fatalCallback()
     end
-  end
-, self)
+  end, self)
 end
-
-

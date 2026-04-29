@@ -1,168 +1,112 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_ecs/group/entity_index.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AbstractEntityIndex", Object)
 AbstractEntityIndex = AbstractEntityIndex
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AbstractEntityIndex.Constructor = function(self, name, group, getkey, ismultikey)
-  -- function num : 0_0
+function AbstractEntityIndex:Constructor(name, group, getkey, ismultikey)
   self.name = name
   self.group = group
   self.getkey = getkey
   self.ismultikey = ismultikey
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AbstractEntityIndex.Dispose = function(self)
-  -- function num : 0_1
+function AbstractEntityIndex:Dispose()
   self:deactivate()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AbstractEntityIndex.activate = function(self)
-  -- function num : 0_2
-  ((self.group).Ev_OnEntityAdded):AddEvent(self, self.onEntityAdded)
-  ;
-  ((self.group).Ev_OnEntityRemoved):AddEvent(self, self.onEntityRemoved)
+function AbstractEntityIndex:activate()
+  self.group.Ev_OnEntityAdded:AddEvent(self, self.onEntityAdded)
+  self.group.Ev_OnEntityRemoved:AddEvent(self, self.onEntityRemoved)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AbstractEntityIndex.deactivate = function(self)
-  -- function num : 0_3
-  ((self.group).Ev_OnEntityAdded):RemoveEvent(self, self.onEntityAdded)
-  ;
-  ((self.group).Ev_OnEntityRemoved):RemoveEvent(self, self.onEntityRemoved)
+function AbstractEntityIndex:deactivate()
+  self.group.Ev_OnEntityAdded:RemoveEvent(self, self.onEntityAdded)
+  self.group.Ev_OnEntityRemoved:RemoveEvent(self, self.onEntityRemoved)
   self:clear()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AbstractEntityIndex.indexEntities = function(self, group)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,e in ipairs(group:GetEntities()) do
+function AbstractEntityIndex:indexEntities(group)
+  for _, e in ipairs(group:GetEntities()) do
     if not self.ismultikey then
-      self:addEntity((self.getkey)(e), e)
+      self:addEntity(self.getkey(e), e)
     else
-      local keys = (self.getkey)(e)
-      for _,k in pairs(keys) do
+      local keys = self.getkey(e)
+      for _, k in pairs(keys) do
         self:addEntity(k, e)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AbstractEntityIndex.onEntityAdded = function(self, group, entity, index, component)
-  -- function num : 0_5 , upvalues : _ENV
+function AbstractEntityIndex:onEntityAdded(group, entity, index, component)
   if not self.ismultikey then
-    self:addEntity((self.getkey)(entity, component), entity)
+    self:addEntity(self.getkey(entity, component), entity)
   else
-    local keys = (self.getkey)(entity, component)
-    for _,k in pairs(keys) do
+    local keys = self.getkey(entity, component)
+    for _, k in pairs(keys) do
       self:addEntity(k, entity)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AbstractEntityIndex.onEntityRemoved = function(self, group, entity, index, component)
-  -- function num : 0_6 , upvalues : _ENV
+function AbstractEntityIndex:onEntityRemoved(group, entity, index, component)
   if not self.ismultikey then
-    self:removeEntity((self.getkey)(entity, component), entity)
+    self:removeEntity(self.getkey(entity, component), entity)
   else
-    local keys = (self.getkey)(entity, component)
-    for _,k in pairs(keys) do
+    local keys = self.getkey(entity, component)
+    for _, k in pairs(keys) do
       self:removeEntity(k, entity)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AbstractEntityIndex.addEntity = function(self, key, entity)
-  -- function num : 0_7 , upvalues : _ENV
+function AbstractEntityIndex:addEntity(key, entity)
   error("AbstractEntityIndex:addEntity not implemented")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AbstractEntityIndex.removeEntity = function(self, key, entity)
-  -- function num : 0_8 , upvalues : _ENV
+function AbstractEntityIndex:removeEntity(key, entity)
   error("AbstractEntityIndex:removeEntity not implemented")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AbstractEntityIndex.clear = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function AbstractEntityIndex:clear()
   error("AbstractEntityIndex:clear not implemented")
 end
 
 _class("EntityIndex", AbstractEntityIndex)
 EntityIndex = EntityIndex
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-EntityIndex.Constructor = function(self, name, group, getkey, ismultikey)
-  -- function num : 0_10
+function EntityIndex:Constructor(name, group, getkey, ismultikey)
   self.indexes = {}
   self:Activate()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityIndex.Activate = function(self)
-  -- function num : 0_11
+function EntityIndex:Activate()
   self:activate()
   self:indexEntities(self.group)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityIndex.GetEntities = function(self, key)
-  -- function num : 0_12
-  local entities = (self.indexes)[key]
+function EntityIndex:GetEntities(key)
+  local entities = self.indexes[key]
   if not entities then
     entities = {}
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.indexes)[key] = entities
+    self.indexes[key] = entities
   end
   return entities
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityIndex.addEntity = function(self, key, entity)
-  -- function num : 0_13
+function EntityIndex:addEntity(key, entity)
   local entities = self:GetEntities(key)
   entities[entity] = true
   entity:Retain(self)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityIndex.removeEntity = function(self, key, entity)
-  -- function num : 0_14
+function EntityIndex:removeEntity(key, entity)
   local entities = self:GetEntities(key)
   entities[entity] = nil
   entity:Release(self)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityIndex.clear = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  for _,v in pairs(self.indexes) do
-    for e,_ in pairs(v) do
+function EntityIndex:clear()
+  for _, v in pairs(self.indexes) do
+    for e, _ in pairs(v) do
       e:Release(self)
     end
   end
@@ -171,64 +115,40 @@ end
 
 _class("PrimaryEntityIndex", AbstractEntityIndex)
 PrimaryEntityIndex = PrimaryEntityIndex
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
 
-PrimaryEntityIndex.Constructor = function(self, name, group, getkey, ismultikey)
-  -- function num : 0_16
+function PrimaryEntityIndex:Constructor(name, group, getkey, ismultikey)
   self.index = {}
   self:Activate()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-PrimaryEntityIndex.Activate = function(self)
-  -- function num : 0_17
+function PrimaryEntityIndex:Activate()
   self:activate()
   self:indexEntities(self.group)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-PrimaryEntityIndex.GetEntity = function(self, key)
-  -- function num : 0_18 , upvalues : _ENV
-  if not (self.index)[key] then
-    (Log.debug)("PrimaryEntityIndex:GetEntity = nil")
+function PrimaryEntityIndex:GetEntity(key)
+  if not self.index[key] then
+    Log.debug("PrimaryEntityIndex:GetEntity = nil")
   end
-  return (self.index)[key]
+  return self.index[key]
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-PrimaryEntityIndex.clear = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  for e,_ in pairs(self.index) do
+function PrimaryEntityIndex:clear()
+  for e, _ in pairs(self.index) do
     e:Release(self)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-PrimaryEntityIndex.addEntity = function(self, key, entity)
-  -- function num : 0_20 , upvalues : _ENV
-  if (self.index)[key] then
-    (Log.fatal)("entity for key:" .. key .. ", already exists!")
-    return 
+function PrimaryEntityIndex:addEntity(key, entity)
+  if self.index[key] then
+    Log.fatal("entity for key:" .. key .. ", already exists!")
+    return
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.index)[key] = entity
+  self.index[key] = entity
   entity:Retain(self)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-PrimaryEntityIndex.removeEntity = function(self, key, entity)
-  -- function num : 0_21
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self.index)[key] = nil
+function PrimaryEntityIndex:removeEntity(key, entity)
+  self.index[key] = nil
   entity:Release(self)
 end
-
-

@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/cls/homeland_movie_prepare_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandMoviePrepareManager", Singleton)
 HomelandMoviePrepareManager = HomelandMoviePrepareManager
 _class("HomelandMovieItemData", Object)
 HomelandMovieItemData = HomelandMovieItemData
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandMovieItemData.Constructor = function(self, phase, titleId, itemId, req, Object)
-  -- function num : 0_0
+function HomelandMovieItemData:Constructor(phase, titleId, itemId, req, Object)
   self._phase = phase
   self._titleId = titleId
   self._itemId = itemId
@@ -21,341 +14,242 @@ HomelandMovieItemData.Constructor = function(self, phase, titleId, itemId, req, 
   self._effectPlayed = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.StartTimerFun = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandMovieItemData:StartTimerFun()
   if not self._anim then
-    return 
+    return
   end
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
   self._timeInter = 100
   self._loopTime = 0
-  self._timer = ((GameGlobal.Timer)()):AddEventTimes(self._timeInter, TimerTriggerCount.Infinite, self.CheckAnimation, self)
+  self._timer = GameGlobal.Timer():AddEventTimes(self._timeInter, TimerTriggerCount.Infinite, self.CheckAnimation, self)
   self:PlayAnim(AirPetAnimName.Click)
   self:ShowEffect()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.CheckAnimation = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandMovieItemData:CheckAnimation()
   if not self._anim then
-    return 
+    return
   end
   self._loopTime = self._loopTime + self._timeInter
   if self._loopTime > 10000 then
     self:PlayAnim(AirPetAnimName.Click)
     self:ShowEffect()
   end
-  local stateInfo = (self._anim):get_Item(AirPetAnimName.Click)
+  local stateInfo = self._anim:get_Item(AirPetAnimName.Click)
   if stateInfo.normalizedTime >= 0.92 then
     self:PlayAnim(AirPetAnimName.Stand)
     if self.clickEff then
-      (self.clickEff):SetActive(false)
+      self.clickEff:SetActive(false)
       self._effectPlayed = false
     end
     self._loopTime = 0
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.PlayAnim = function(self, name)
-  -- function num : 0_3
-  (self._anim):CrossFade(name, 0.2)
+function HomelandMovieItemData:PlayAnim(name)
+  self._anim:CrossFade(name, 0.2)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.Init = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandMovieItemData:Init()
   self._rootPoint = "Root"
   if self._phase == MoviePrepareType.PT_Actor then
     self._rootPoint = "Root"
   else
     self._rootPoint = "meshroot"
   end
-  local cfgAll = (Cfg.cfg_homeland_movice_item)({})
+  local cfgAll = Cfg.cfg_homeland_movice_item({})
   local itemCfg = cfgAll[self._titleId]
   if itemCfg then
     self._itemType = itemCfg.Type
     for i = 1, #itemCfg.SelectList do
-      if self._itemId == ((itemCfg.SelectList)[i])[1] then
-        self._itemMatchRate = ((itemCfg.SelectList)[i])[2]
-        if not (itemCfg.Offset)[i] then
-          do
-            self._rotationAngles = not itemCfg.Offset or not self._itemObject or 0
-            do break end
-            -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+      if self._itemId == itemCfg.SelectList[i][1] then
+        self._itemMatchRate = itemCfg.SelectList[i][2]
+        if itemCfg.Offset and self._itemObject then
+          self._rotationAngles = itemCfg.Offset[i] or 0
         end
+        break
       end
     end
   end
   self:AddBoxCollider()
   self._skinID = self._itemId
-  self.clickEffCfg = (Cfg.cfg_aircraft_click_eff)[self._skinID]
-  if self.clickEffCfg and (self.clickEffCfg).EffName then
-    self.clickEffReq = (ResourceManager:GetInstance()):SyncLoadAsset((self.clickEffCfg).EffName .. ".prefab", LoadType.GameObject)
-    self.clickEff = (self.clickEffReq).Obj
-    -- DECOMPILER ERROR at PC83: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self.clickEff).transform).localScale = Vector3.one
-    local cfgPos = (self.clickEffCfg).PosOffset
+  self.clickEffCfg = Cfg.cfg_aircraft_click_eff[self._skinID]
+  if self.clickEffCfg and self.clickEffCfg.EffName then
+    self.clickEffReq = ResourceManager:GetInstance():SyncLoadAsset(self.clickEffCfg.EffName .. ".prefab", LoadType.GameObject)
+    self.clickEff = self.clickEffReq.Obj
+    self.clickEff.transform.localScale = Vector3.one
+    local cfgPos = self.clickEffCfg.PosOffset
     self.clickEffOffset = Vector3(cfgPos[1], cfgPos[2], cfgPos[3])
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.AddBoxCollider = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandMovieItemData:AddBoxCollider()
   if not self._itemObject then
-    return 
+    return
   end
   if self._phase == MoviePrepareType.PT_Actor then
-    local root = (GameObjectHelper.FindChild)((self._itemObject).transform, "Bip001")
+    local root = GameObjectHelper.FindChild(self._itemObject.transform, "Bip001")
     if root == nil then
-      return 
+      return
     end
-    local collider = ((root.transform).gameObject):AddComponent(typeof(UnityEngine.BoxCollider))
-    local cfg = (Cfg.cfg_homeland_pet)[self._itemId]
+    local collider = root.transform.gameObject:AddComponent(typeof(UnityEngine.BoxCollider))
+    local cfg = Cfg.cfg_homeland_pet[self._itemId]
     if not cfg then
-      (Log.error)("cfg_homeland_pet Not Exist:", self._itemId)
+      Log.error("cfg_homeland_pet Not Exist:", self._itemId)
     end
-    local size = Vector3((cfg.BoxSize)[1], (cfg.BoxSize)[3], (cfg.BoxSize)[2])
+    local size = Vector3(cfg.BoxSize[1], cfg.BoxSize[3], cfg.BoxSize[2])
     collider.size = size
     collider.center = Vector3(0, 0, 0)
     self._collider = collider
   else
-    do
-      self._collider = (self._itemObject):GetComponent(typeof(UnityEngine.BoxCollider))
-      if not self._collider then
-        self._collider = (self._itemObject):AddComponent(typeof(UnityEngine.BoxCollider))
-      end
+    self._collider = self._itemObject:GetComponent(typeof(UnityEngine.BoxCollider))
+    if not self._collider then
+      self._collider = self._itemObject:AddComponent(typeof(UnityEngine.BoxCollider))
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.GetCollider = function(self)
-  -- function num : 0_6
+function HomelandMovieItemData:GetCollider()
   return self._collider
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.EnableCollider = function(self, enable)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
+function HomelandMovieItemData:EnableCollider(enable)
   if self._collider then
-    (self._collider).enabled = enable
+    self._collider.enabled = enable
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.OnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if (HomelandMoviePrepareManager:GetInstance()):GetPhaseType() == self._phase then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIHomelandMoviePrepareItemsSelected, self._phase, self._titleId, self._itemId)
-    ;
-    (HomelandMoviePrepareManager:GetInstance()):HideAllOutline(self._phase)
+function HomelandMovieItemData:OnClick()
+  if HomelandMoviePrepareManager:GetInstance():GetPhaseType() == self._phase then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIHomelandMoviePrepareItemsSelected, self._phase, self._titleId, self._itemId)
+    HomelandMoviePrepareManager:GetInstance():HideAllOutline(self._phase)
     self:ShowOutline(true)
     self:StartTimerFun()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.GetTitleId = function(self)
-  -- function num : 0_9
+function HomelandMovieItemData:GetTitleId()
   return self._titleId
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.GetItemId = function(self)
-  -- function num : 0_10
+function HomelandMovieItemData:GetItemId()
   return self._itemId
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.GetPhase = function(self)
-  -- function num : 0_11
+function HomelandMovieItemData:GetPhase()
   return self._phase
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.GetItemObject = function(self)
-  -- function num : 0_12
+function HomelandMovieItemData:GetItemObject()
   return self._itemObject
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.GetItemType = function(self)
-  -- function num : 0_13
+function HomelandMovieItemData:GetItemType()
   return self._itemType
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.GetItemMatchRate = function(self)
-  -- function num : 0_14
+function HomelandMovieItemData:GetItemMatchRate()
   return self._itemMatchRate
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.ShowOutline = function(self, show)
-  -- function num : 0_15 , upvalues : _ENV
+function HomelandMovieItemData:ShowOutline(show)
   if not self._itemObject then
-    return 
+    return
   end
-  local root = (GameObjectHelper.FindChild)((self._itemObject).transform, self._rootPoint)
+  local root = GameObjectHelper.FindChild(self._itemObject.transform, self._rootPoint)
   if root then
-    local outline = (root.gameObject):GetComponent(typeof(OutlineComponent))
+    local outline = root.gameObject:GetComponent(typeof(OutlineComponent))
     if outline then
       outline.enabled = show
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.ShowObject = function(self, show)
-  -- function num : 0_16 , upvalues : _ENV
-  if show and not self._timer then
-    self._timer = ((GameGlobal.Timer)()):AddEventTimes(self._timeInter, TimerTriggerCount.Infinite, self.CheckAnimation, self)
-  end
-  if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+function HomelandMovieItemData:ShowObject(show)
+  if show then
+    if not self._timer then
+      self._timer = GameGlobal.Timer():AddEventTimes(self._timeInter, TimerTriggerCount.Infinite, self.CheckAnimation, self)
+    end
+  elseif self._timer then
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
   if self.clickEff then
-    (self.clickEff):SetActive(show)
+    self.clickEff:SetActive(show)
   end
   if not self._itemObject then
-    return 
+    return
   end
-  ;
-  (self._itemObject):SetActive(show)
+  self._itemObject:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.SetOutlineColor = function(self, color)
-  -- function num : 0_17 , upvalues : _ENV
+function HomelandMovieItemData:SetOutlineColor(color)
   if not self._itemObject then
-    return 
+    return
   end
-  local root = (GameObjectHelper.FindChild)((self._itemObject).transform, self._rootPoint)
+  local root = GameObjectHelper.FindChild(self._itemObject.transform, self._rootPoint)
   if root then
-    local outline = (root.gameObject):GetComponent(typeof(OutlineComponent))
+    local outline = root.gameObject:GetComponent(typeof(OutlineComponent))
     if outline then
       outline.outlinColor = color
     end
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.SetAnimation = function(self, anim)
-  -- function num : 0_18
+function HomelandMovieItemData:SetAnimation(anim)
   self._anim = anim
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.SetAnimRes = function(self, animReq)
-  -- function num : 0_19
+function HomelandMovieItemData:SetAnimRes(animReq)
   self._animReq = animReq
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.SetEulerAngles = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
+function HomelandMovieItemData:SetEulerAngles()
   if self._rotationAngles and self._itemObject then
-    ((self._itemObject).transform).localEulerAngles = Vector3(0, self._rotationAngles, 0)
+    self._itemObject.transform.localEulerAngles = Vector3(0, self._rotationAngles, 0)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.ShowEffect = function(self)
-  -- function num : 0_21
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
+function HomelandMovieItemData:ShowEffect()
   if self.clickEff and not self._effectPlayed then
-    ((self.clickEff).transform).rotation = ((self._itemObject).transform).rotation
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    ((self.clickEff).transform).position = ((self._itemObject).transform).position + self.clickEffOffset
-    ;
-    (self.clickEff):SetActive(false)
-    ;
-    (self.clickEff):SetActive(true)
+    self.clickEff.transform.rotation = self._itemObject.transform.rotation
+    self.clickEff.transform.position = self._itemObject.transform.position + self.clickEffOffset
+    self.clickEff:SetActive(false)
+    self.clickEff:SetActive(true)
     self._effectPlayed = true
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMovieItemData.Dispose = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function HomelandMovieItemData:Dispose()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
   if self._itemObject then
-    (self._itemObject):Destroy()
+    self._itemObject:Destroy()
     self._itemObject = nil
   end
   if self._itemReq then
-    (self._itemReq):Dispose()
+    self._itemReq:Dispose()
     self._itemReq = nil
   end
   if self._animReq then
-    (self._animReq):Dispose()
+    self._animReq:Dispose()
     self._animReq = nil
   end
   if self.clickEffReq then
-    (self.clickEffReq):Dispose()
+    self.clickEffReq:Dispose()
     self.clickEffReq = nil
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.Constructor = function(self)
-  -- function num : 0_23
+function HomelandMoviePrepareManager:Constructor()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.Init = function(self, oprateBuilding, movieCfgData)
-  -- function num : 0_24 , upvalues : _ENV
+function HomelandMoviePrepareManager:Init(oprateBuilding, movieCfgData)
   self._oprateBuilding = oprateBuilding
   self._movieCfgData = movieCfgData
   self._movieFatherSon = MovieFatherSon:New()
@@ -364,352 +258,270 @@ HomelandMoviePrepareManager.Init = function(self, oprateBuilding, movieCfgData)
   self._shadowDataList = {}
   self._selectedIds = {}
   self._selectSceneBuildings = {}
-  self._homelandMoviePrepareItemBtnClick = (GameHelper:GetInstance()):CreateCallback(self._MoviePrepareItemBtnClick, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.UIHomelandMoviePrepareItemBtnClick, self._homelandMoviePrepareItemBtnClick)
-  self._homelandMoviePrepareTitleBtnClick = (GameHelper:GetInstance()):CreateCallback(self._MoviePrepareTitleBtnClick, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.UIHomelandMoviePrepareTitleBtnClick, self._homelandMoviePrepareTitleBtnClick)
-  self._homelandMoviePrepareSelectBtnClick = (GameHelper:GetInstance()):CreateCallback(self._MoviePrepareSelectBtnClick, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.UIHomelandMovieSelectBtnClick, self._homelandMoviePrepareSelectBtnClick)
+  self._homelandMoviePrepareItemBtnClick = GameHelper:GetInstance():CreateCallback(self._MoviePrepareItemBtnClick, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.UIHomelandMoviePrepareItemBtnClick, self._homelandMoviePrepareItemBtnClick)
+  self._homelandMoviePrepareTitleBtnClick = GameHelper:GetInstance():CreateCallback(self._MoviePrepareTitleBtnClick, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.UIHomelandMoviePrepareTitleBtnClick, self._homelandMoviePrepareTitleBtnClick)
+  self._homelandMoviePrepareSelectBtnClick = GameHelper:GetInstance():CreateCallback(self._MoviePrepareSelectBtnClick, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.UIHomelandMovieSelectBtnClick, self._homelandMoviePrepareSelectBtnClick)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.Dispose = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  do
-    if self._oprateBuilding then
-      local co = ((self._oprateBuilding)._go):GetComponent(typeof(UnityEngine.BoxCollider))
-      co.enabled = true
-    end
-    if self._homelandMoviePrepareItemBtnClick then
-      ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.UIHomelandMoviePrepareItemBtnClick, self._homelandMoviePrepareItemBtnClick)
-      self._homelandMoviePrepareItemBtnClick = nil
-    end
-    if self._homelandMoviePrepareTitleBtnClick then
-      ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.UIHomelandMoviePrepareTitleBtnClick, self._homelandMoviePrepareTitleBtnClick)
-      self._homelandMoviePrepareTitleBtnClick = nil
-    end
-    if self._homelandMoviePrepareSelectBtnClick then
-      ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.UIHomelandMovieSelectBtnClick, self._homelandMoviePrepareSelectBtnClick)
-      self._homelandMoviePrepareSelectBtnClick = nil
-    end
-    self:ClearAll()
-    self._selectDataList = {}
+function HomelandMoviePrepareManager:Dispose()
+  if self._oprateBuilding then
+    local co = self._oprateBuilding._go:GetComponent(typeof(UnityEngine.BoxCollider))
+    co.enabled = true
   end
+  if self._homelandMoviePrepareItemBtnClick then
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.UIHomelandMoviePrepareItemBtnClick, self._homelandMoviePrepareItemBtnClick)
+    self._homelandMoviePrepareItemBtnClick = nil
+  end
+  if self._homelandMoviePrepareTitleBtnClick then
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.UIHomelandMoviePrepareTitleBtnClick, self._homelandMoviePrepareTitleBtnClick)
+    self._homelandMoviePrepareTitleBtnClick = nil
+  end
+  if self._homelandMoviePrepareSelectBtnClick then
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.UIHomelandMovieSelectBtnClick, self._homelandMoviePrepareSelectBtnClick)
+    self._homelandMoviePrepareSelectBtnClick = nil
+  end
+  self:ClearAll()
+  self._selectDataList = {}
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.SetPhaseType = function(self, phase)
-  -- function num : 0_26
+function HomelandMoviePrepareManager:SetPhaseType(phase)
   self._phaseType = phase
   self:EnableCollider(phase)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.GetPhaseType = function(self)
-  -- function num : 0_27
+function HomelandMoviePrepareManager:GetPhaseType()
   return self._phaseType
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.EnableCollider = function(self, phase)
-  -- function num : 0_28 , upvalues : _ENV
-  do
-    if self._oprateBuilding then
-      local co = ((self._oprateBuilding)._go):GetComponent(typeof(UnityEngine.BoxCollider))
-      co.enabled = false
-    end
-    for index,value in pairs(self._selectSceneBuildings) do
-      local co = (value._go):GetComponent(typeof(UnityEngine.BoxCollider))
-      co.enabled = phase == MoviePrepareType.PT_Scene
-    end
-    local data = self:GetSelectedData(MoviePrepareType.PT_Actor)
-    for k,v in ipairs(data) do
-      v:EnableCollider(phase == MoviePrepareType.PT_Actor)
-    end
-    data = self:GetSelectedData(MoviePrepareType.PT_Prop)
-    for k,v in ipairs(data) do
-      v:EnableCollider(phase == MoviePrepareType.PT_Prop)
-    end
-    -- DECOMPILER ERROR: 6 unprocessed JMP targets
+function HomelandMoviePrepareManager:EnableCollider(phase)
+  if self._oprateBuilding then
+    local co = self._oprateBuilding._go:GetComponent(typeof(UnityEngine.BoxCollider))
+    co.enabled = false
+  end
+  for index, value in pairs(self._selectSceneBuildings) do
+    local co = value._go:GetComponent(typeof(UnityEngine.BoxCollider))
+    co.enabled = phase == MoviePrepareType.PT_Scene
+  end
+  local data = self:GetSelectedData(MoviePrepareType.PT_Actor)
+  for k, v in ipairs(data) do
+    v:EnableCollider(phase == MoviePrepareType.PT_Actor)
+  end
+  data = self:GetSelectedData(MoviePrepareType.PT_Prop)
+  for k, v in ipairs(data) do
+    v:EnableCollider(phase == MoviePrepareType.PT_Prop)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.WorldToScreenPoint = function(self, camera, pos)
-  -- function num : 0_29 , upvalues : _ENV
+function HomelandMoviePrepareManager:WorldToScreenPoint(camera, pos)
   if camera ~= nil and pos ~= nil then
     return camera:WorldToScreenPoint(pos)
   end
   return Vector2.zero
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.ScreenPointToLocalPointInRectangle = function(self, rect, camera, pos)
-  -- function num : 0_30 , upvalues : _ENV
-  local res, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(rect, pos, camera, nil)
+function HomelandMoviePrepareManager:ScreenPointToLocalPointInRectangle(rect, camera, pos)
+  local res, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(rect, pos, camera, nil)
   return res, pos
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.CheckItemUsing = function(self, phase, itemId)
-  -- function num : 0_31 , upvalues : _ENV
-  if not (self._selectDataList)[phase] then
+function HomelandMoviePrepareManager:CheckItemUsing(phase, itemId)
+  if not self._selectDataList[phase] then
     return false
   end
-  for key,value in pairs((self._selectDataList)[phase]) do
-    if value[1] and (value[1]):GetItemId() == itemId then
+  for key, value in pairs(self._selectDataList[phase]) do
+    if value[1] and value[1]:GetItemId() == itemId then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.GetFirstTitleAndItem = function(self, phase)
-  -- function num : 0_32 , upvalues : _ENV
-  if not (self._selectDataList)[phase] then
+function HomelandMoviePrepareManager:GetFirstTitleAndItem(phase)
+  if not self._selectDataList[phase] then
     return nil, nil
   end
-  local titles = (self._movieCfgData):GetMovieItemTitleById((MoviePrepareData:GetInstance()):GetMovieId(), phase)
+  local titles = self._movieCfgData:GetMovieItemTitleById(MoviePrepareData:GetInstance():GetMovieId(), phase)
   if #titles == 0 then
     return nil, nil
   end
-  for key,value in pairs((self._selectDataList)[phase]) do
-    for k,v in pairs(value) do
+  for key, value in pairs(self._selectDataList[phase]) do
+    for k, v in pairs(value) do
       if v:GetPhase() == MoviePrepareType.PT_Scene and v:GetTitleId() == titles[1] then
-        ((self._selectSceneBuildings)[v:GetItemId()]):ShowOutline()
+        self._selectSceneBuildings[v:GetItemId()]:ShowOutline()
         return v:GetTitleId(), v:GetItemId()
-      else
-        if v:GetTitleId() == titles[1] then
-          v:OnClick()
-          return v:GetTitleId(), v:GetItemId()
-        end
+      elseif v:GetTitleId() == titles[1] then
+        v:OnClick()
+        return v:GetTitleId(), v:GetItemId()
       end
     end
   end
   return nil, nil
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.ClearShadowObject = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  for key,value in pairs(self._shadowDataList) do
-    for k,v in pairs(value) do
+function HomelandMoviePrepareManager:ClearShadowObject()
+  for key, value in pairs(self._shadowDataList) do
+    for k, v in pairs(value) do
       v:Dispose()
     end
   end
   self._shadowDataList = {}
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.CreateShadowObject = function(self, movieId, phase, title)
-  -- function num : 0_34 , upvalues : _ENV
+function HomelandMoviePrepareManager:CreateShadowObject(movieId, phase, title)
   self:ClearShadowObject()
-  local titles = (self._movieCfgData):GetMovieItemTitleById(movieId, phase)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R5 in 'UnsetPending'
-
-  if not (self._shadowDataList)[phase] then
-    (self._shadowDataList)[phase] = {}
+  local titles = self._movieCfgData:GetMovieItemTitleById(movieId, phase)
+  if not self._shadowDataList[phase] then
+    self._shadowDataList[phase] = {}
   end
   if phase == MoviePrepareType.PT_Scene then
+  else
     for i = 1, #titles do
-      local effectReq = (ResourceManager:GetInstance()):SyncLoadAsset(self._shadowItemName, LoadType.GameObject)
+      local effectReq = ResourceManager:GetInstance():SyncLoadAsset(self._shadowItemName, LoadType.GameObject)
       local effectObj = effectReq.Obj
       self:SetPosition(titles[i], effectObj)
       local itemdata = HomelandMovieItemData:New(phase, titles[i], self._shadowItemName, effectReq, effectObj)
-      -- DECOMPILER ERROR at PC47: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      ((self._shadowDataList)[phase])[titles[i]] = itemdata
-      if #((self._selectDataList)[phase])[titles[i]] <= 0 then
-        do
-          local haveItem = not (self._selectDataList)[phase] or not ((self._selectDataList)[phase])[titles[i]]
-          itemdata:ShowObject(not haveItem)
-          -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      self._shadowDataList[phase][titles[i]] = itemdata
+      if self._selectDataList[phase] and self._selectDataList[phase][titles[i]] then
+        local haveItem = #self._selectDataList[phase][titles[i]] > 0
+        itemdata:ShowObject(not haveItem)
       end
     end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
+function HomelandMoviePrepareManager:CheckHadSelect(phase, titleId)
+  if self._selectDataList[phase] and self._selectDataList[phase][titleId] then
+    local haveItem = #self._selectDataList[phase][titleId] > 0
+    return haveItem
+  end
+  return false
+end
 
-HomelandMoviePrepareManager.CheckHadSelect = function(self, phase, titleId)
-  -- function num : 0_35
-  if #((self._selectDataList)[phase])[titleId] <= 0 then
-    do
-      local haveItem = not (self._selectDataList)[phase] or not ((self._selectDataList)[phase])[titleId]
-      do return haveItem end
-      do return false end
-      -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function HomelandMoviePrepareManager:ShowShadowObject(phase, titleId, bShow)
+  if not self._shadowDataList[phase] then
+    return
+  end
+  if phase == MoviePrepareType.PT_Scene then
+  else
+    if not titleId then
+      for index, value in pairs(self._shadowDataList[phase]) do
+        value:ShowObject(bShow)
+      end
+      return
+    end
+    for index, value in pairs(self._shadowDataList[phase]) do
+      if value:GetTitleId() == titleId then
+        value:ShowObject(bShow)
+      end
     end
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.ShowShadowObject = function(self, phase, titleId, bShow)
-  -- function num : 0_36 , upvalues : _ENV
-  if not (self._shadowDataList)[phase] then
-    return 
-  end
-  if phase ~= MoviePrepareType.PT_Scene or not titleId then
-    for index,value in pairs((self._shadowDataList)[phase]) do
-      value:ShowObject(bShow)
-    end
-    return 
-  end
-  for index,value in pairs((self._shadowDataList)[phase]) do
-    if value:GetTitleId() == titleId then
-      value:ShowObject(bShow)
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager._CreateActorObject = function(self, phase, titleId, selectData)
-  -- function num : 0_37 , upvalues : _ENV
+function HomelandMoviePrepareManager:_CreateActorObject(phase, titleId, selectData)
   local obj, dataItem = self:InsertItemObject(phase, titleId, selectData[1])
   self:SetPosition(titleId, obj)
-  local rootTrans = (obj.transform):Find("Root")
+  local rootTrans = obj.transform:Find("Root")
   local root = rootTrans.gameObject
   for i = 0, rootTrans.childCount - 1 do
     local child = rootTrans:GetChild(i)
-    if (string.find)(child.name, "weapon") then
-      (child.gameObject):SetActive(false)
+    if string.find(child.name, "weapon") then
+      child.gameObject:SetActive(false)
     end
   end
-  local petHomePrefab = (HelperProxy:GetInstance()):GetPetAnimatorControllerName(selectData[1] .. ".prefab", PetAnimatorControllerType.Aircraft)
+  local petHomePrefab = HelperProxy:GetInstance():GetPetAnimatorControllerName(selectData[1] .. ".prefab", PetAnimatorControllerType.Aircraft)
   if petHomePrefab then
-    local petHomelandAnimReq = (ResourceManager:GetInstance()):SyncLoadAsset(petHomePrefab, LoadType.GameObject)
+    local petHomelandAnimReq = ResourceManager:GetInstance():SyncLoadAsset(petHomePrefab, LoadType.GameObject)
     dataItem:SetAnimRes(petHomelandAnimReq)
     local animator = root:GetComponent(typeof(UnityEngine.Animator))
     if animator then
-      ((UnityEngine.Object).Destroy)(animator)
+      UnityEngine.Object.Destroy(animator)
     end
     local petAnim = root:AddComponent(typeof(UnityEngine.Animation))
     dataItem:SetAnimation(petAnim)
-    local homelandAnimation = (petHomelandAnimReq.Obj):GetComponent("Animation")
-    local clips = (HelperProxy:GetInstance()):GetAllAnimationClip(homelandAnimation)
+    local homelandAnimation = petHomelandAnimReq.Obj:GetComponent("Animation")
+    local clips = HelperProxy:GetInstance():GetAllAnimationClip(homelandAnimation)
     for i = 0, clips.Length - 1 do
       if clips[i] == nil then
-        (Log.error)("Pet animation is null:", self._petID, ", index:", i)
+        Log.error("Pet animation is null:", self._petID, ", index:", i)
       else
-        petAnim:AddClip(clips[i], (clips[i]).name)
+        petAnim:AddClip(clips[i], clips[i].name)
       end
     end
     dataItem:StartTimerFun()
   end
-  do
-    local outLine = (root.gameObject):GetComponent(typeof(OutlineComponent))
-    if not outLine then
-      outLine = (root.gameObject):AddComponent(typeof(OutlineComponent))
-      outLine.downSample = 1
-      outLine.blurNum = 3
-      outLine.outlinColor = Color(0.23921568627451, 0.58823529411765, 1, 1)
-      outLine.intensity = 3.5
-      outLine.outlineSize = 1.93
-      outLine.blendType = (OutlineComponent.BlendType).Blend
-      outLine.enabled = true
-    end
-    return obj
-  end
-end
-
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager._CreateItemObject = function(self, phase, titleId, selectData)
-  -- function num : 0_38 , upvalues : _ENV
-  local cfg = (self._movieCfgData):GetArchitectureItemCfg(selectData[1])
-  local obj, itemdata = self:InsertItemObject(phase, titleId, cfg.ID)
-  if not obj then
-    return 
-  end
-  self:SetPosition(titleId, obj)
-  itemdata:SetEulerAngles()
-  local rootPath = "meshroot"
-  local rootTrans = (GameObjectHelper.FindChild)(obj.transform, rootPath)
-  local root = rootTrans.gameObject
-  local outLine = (root.gameObject):GetComponent(typeof(OutlineComponent))
+  local outLine = root.gameObject:GetComponent(typeof(OutlineComponent))
   if not outLine then
-    outLine = (root.gameObject):AddComponent(typeof(OutlineComponent))
+    outLine = root.gameObject:AddComponent(typeof(OutlineComponent))
     outLine.downSample = 1
     outLine.blurNum = 3
-    outLine.outlinColor = Color(0.23921568627451, 0.58823529411765, 1, 1)
+    outLine.outlinColor = Color(0.23921568627450981, 0.5882352941176471, 1.0, 1)
     outLine.intensity = 3.5
     outLine.outlineSize = 1.93
-    outLine.blendType = (OutlineComponent.BlendType).Blend
+    outLine.blendType = OutlineComponent.BlendType.Blend
     outLine.enabled = true
   end
   return obj
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.SetPosition = function(self, titleId, obj)
-  -- function num : 0_39 , upvalues : _ENV
-  local hangPointCfg = (self._movieCfgData):GetMovieItemByItemId(titleId)
-  local posinfo = hangPointCfg.HangPoint
-  local pathRoot = ((self._oprateBuilding):Transform()):Find("MoviePath")
-  local parent = pathRoot:Find(posinfo)
-  ;
-  (obj.transform):SetParent(parent)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (obj.transform).localPosition = Vector3(0, 0, 0)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (obj.transform).localRotation = Quaternion.identity
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (obj.transform).localScale = Vector3(1, 1, 1)
-  ;
-  (obj.gameObject):SetActive(true)
+function HomelandMoviePrepareManager:_CreateItemObject(phase, titleId, selectData)
+  local cfg = self._movieCfgData:GetArchitectureItemCfg(selectData[1])
+  local obj, itemdata = self:InsertItemObject(phase, titleId, cfg.ID)
+  if not obj then
+    return
+  end
+  self:SetPosition(titleId, obj)
+  itemdata:SetEulerAngles()
+  local rootPath = "meshroot"
+  local rootTrans = GameObjectHelper.FindChild(obj.transform, rootPath)
+  local root = rootTrans.gameObject
+  local outLine = root.gameObject:GetComponent(typeof(OutlineComponent))
+  if not outLine then
+    outLine = root.gameObject:AddComponent(typeof(OutlineComponent))
+    outLine.downSample = 1
+    outLine.blurNum = 3
+    outLine.outlinColor = Color(0.23921568627450981, 0.5882352941176471, 1.0, 1)
+    outLine.intensity = 3.5
+    outLine.outlineSize = 1.93
+    outLine.blendType = OutlineComponent.BlendType.Blend
+    outLine.enabled = true
+  end
+  return obj
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
+function HomelandMoviePrepareManager:SetPosition(titleId, obj)
+  local hangPointCfg = self._movieCfgData:GetMovieItemByItemId(titleId)
+  local posinfo = hangPointCfg.HangPoint
+  local pathRoot = self._oprateBuilding:Transform():Find("MoviePath")
+  local parent = pathRoot:Find(posinfo)
+  obj.transform:SetParent(parent)
+  obj.transform.localPosition = Vector3(0, 0, 0)
+  obj.transform.localRotation = Quaternion.identity
+  obj.transform.localScale = Vector3(1, 1, 1)
+  obj.gameObject:SetActive(true)
+end
 
-HomelandMoviePrepareManager.ClearAll = function(self, phase)
-  -- function num : 0_40 , upvalues : _ENV
+function HomelandMoviePrepareManager:ClearAll(phase)
   if not phase then
     self:ClearObjectsByPhase(MoviePrepareType.PT_Prop)
     self:ClearObjectsByPhase(MoviePrepareType.PT_Actor)
-    return 
+    return
   end
   self:ClearObjectsByPhase(phase)
   self:ShowShadowObject(phase, nil, true)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.ShowAll = function(self, show)
-  -- function num : 0_41 , upvalues : _ENV
-  local hideTag = {MoviePrepareType.PT_Actor, MoviePrepareType.PT_Prop}
+function HomelandMoviePrepareManager:ShowAll(show)
+  local hideTag = {
+    MoviePrepareType.PT_Actor,
+    MoviePrepareType.PT_Prop
+  }
   for i = 1, #hideTag do
-    if (self._selectDataList)[hideTag[i]] then
-      for key,value in pairs((self._selectDataList)[hideTag[i]]) do
-        for k,v in pairs(value) do
+    if self._selectDataList[hideTag[i]] then
+      for key, value in pairs(self._selectDataList[hideTag[i]]) do
+        for k, v in pairs(value) do
           v:ShowObject(show)
         end
       end
@@ -717,301 +529,214 @@ HomelandMoviePrepareManager.ShowAll = function(self, show)
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.ClearObjectsByPhase = function(self, phase)
-  -- function num : 0_42 , upvalues : _ENV
+function HomelandMoviePrepareManager:ClearObjectsByPhase(phase)
   if not self._selectDataList then
-    return 
+    return
   end
-  if not (self._selectDataList)[phase] then
-    return 
+  if not self._selectDataList[phase] then
+    return
   end
   if phase == MoviePrepareType.PT_Scene then
-    for key,value in pairs(self._selectSceneBuildings) do
-      (self._movieFatherSon):RemoveBuilding(self._oprateBuilding, value)
+    for key, value in pairs(self._selectSceneBuildings) do
+      self._movieFatherSon:RemoveBuilding(self._oprateBuilding, value)
     end
     self._selectSceneBuildings = {}
   end
-  if (self._selectDataList)[phase] then
-    for key,value in pairs((self._selectDataList)[phase]) do
-      for k,v in pairs(value) do
+  if self._selectDataList[phase] then
+    for key, value in pairs(self._selectDataList[phase]) do
+      for k, v in pairs(value) do
         v:Dispose()
       end
     end
   end
-  do
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._selectDataList)[phase] = {}
-  end
+  self._selectDataList[phase] = {}
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager._MoviePrepareItemBtnClick = function(self, isAdd, phase, titleId, selectData)
-  -- function num : 0_43 , upvalues : _ENV
+function HomelandMoviePrepareManager:_MoviePrepareItemBtnClick(isAdd, phase, titleId, selectData)
   if isAdd then
     if phase == MoviePrepareType.PT_Scene then
       self:_CreateItemObject(phase, titleId, selectData)
-    else
-      if phase == MoviePrepareType.PT_Prop then
-        self:_CreateItemObject(phase, titleId, selectData)
-      else
-        if phase == MoviePrepareType.PT_Actor then
-          self:_CreateActorObject(phase, titleId, selectData)
-        end
-      end
+    elseif phase == MoviePrepareType.PT_Prop then
+      self:_CreateItemObject(phase, titleId, selectData)
+    elseif phase == MoviePrepareType.PT_Actor then
+      self:_CreateActorObject(phase, titleId, selectData)
     end
   else
-    if not (self._selectDataList)[phase] then
-      return 
+    if not self._selectDataList[phase] then
+      return
     end
     if phase == MoviePrepareType.PT_Scene then
-      local building = (self._selectSceneBuildings)[selectData[1]]
-      ;
-      (self._movieFatherSon):RemoveBuilding(self._oprateBuilding, building)
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._selectSceneBuildings)[selectData[1]] = nil
-      -- DECOMPILER ERROR at PC55: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      ((self._selectDataList)[phase])[titleId] = {}
-    else
-      do
-        if ((self._selectDataList)[phase])[titleId] then
-          for i = 1, #((self._selectDataList)[phase])[titleId] do
-            ((((self._selectDataList)[phase])[titleId])[i]):Dispose()
-          end
-          -- DECOMPILER ERROR at PC79: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          ((self._selectDataList)[phase])[titleId] = {}
-          self:ShowShadowObject(phase, titleId, #((self._selectDataList)[phase])[titleId] == 0)
-        end
-        local data = self:GetSelectedData(MoviePrepareType.PT_Actor)
-        local cfgData = (self._movieCfgData):GetMovieItemTitleById((MoviePrepareData:GetInstance()):GetMovieId(), MoviePrepareType.PT_Actor)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIHomelandMoviePrepareActorSelected, #cfgData < #data)
-        -- DECOMPILER ERROR: 3 unprocessed JMP targets
+      local building = self._selectSceneBuildings[selectData[1]]
+      self._movieFatherSon:RemoveBuilding(self._oprateBuilding, building)
+      self._selectSceneBuildings[selectData[1]] = nil
+      self._selectDataList[phase][titleId] = {}
+    elseif self._selectDataList[phase][titleId] then
+      for i = 1, #self._selectDataList[phase][titleId] do
+        self._selectDataList[phase][titleId][i]:Dispose()
       end
+      self._selectDataList[phase][titleId] = {}
+      self:ShowShadowObject(phase, titleId, #self._selectDataList[phase][titleId] == 0)
     end
   end
+  local data = self:GetSelectedData(MoviePrepareType.PT_Actor)
+  local cfgData = self._movieCfgData:GetMovieItemTitleById(MoviePrepareData:GetInstance():GetMovieId(), MoviePrepareType.PT_Actor)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIHomelandMoviePrepareActorSelected, #data > #cfgData)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager._MoviePrepareTitleBtnClick = function(self, titleId, phase)
-  -- function num : 0_44 , upvalues : _ENV
+function HomelandMoviePrepareManager:_MoviePrepareTitleBtnClick(titleId, phase)
   self:HideAllOutline(phase)
-  if not (self._selectDataList)[phase] then
-    return 
+  if not self._selectDataList[phase] then
+    return
   end
-  if not ((self._selectDataList)[phase])[titleId] then
-    return 
+  if not self._selectDataList[phase][titleId] then
+    return
   end
-  for key,value in pairs((self._selectDataList)[phase]) do
-    for k,v in pairs(value) do
+  for key, value in pairs(self._selectDataList[phase]) do
+    for k, v in pairs(value) do
       if v:GetPhase() == MoviePrepareType.PT_Scene and v:GetTitleId() == titleId then
-        ((self._selectSceneBuildings)[v:GetItemId()]):ShowOutline()
-      else
-        if v:GetTitleId() == titleId then
-          v:OnClick()
-        end
+        self._selectSceneBuildings[v:GetItemId()]:ShowOutline()
+      elseif v:GetTitleId() == titleId then
+        v:OnClick()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager._MoviePrepareSelectBtnClick = function(self, titleId, phase)
-  -- function num : 0_45
+function HomelandMoviePrepareManager:_MoviePrepareSelectBtnClick(titleId, phase)
   self:HideAllOutline(phase)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.HomelandMoviePrepareItemSelect = function(self, ray)
-  -- function num : 0_46 , upvalues : _ENV
-  local castRes, hitInfo = ((UnityEngine.Physics).Raycast)(ray, nil, 1000)
-  local indexTb = {MoviePrepareType.PT_Scene, MoviePrepareType.PT_Prop, MoviePrepareType.PT_Actor}
+function HomelandMoviePrepareManager:HomelandMoviePrepareItemSelect(ray)
+  local castRes, hitInfo = UnityEngine.Physics.Raycast(ray, nil, 1000)
+  local indexTb = {
+    MoviePrepareType.PT_Scene,
+    MoviePrepareType.PT_Prop,
+    MoviePrepareType.PT_Actor
+  }
   if castRes then
     local data = self:GetSelectedData(self:GetPhaseType())
     if self:GetPhaseType() == MoviePrepareType.PT_Scene then
-      for k,v in ipairs(data) do
-        local building = (self._selectSceneBuildings)[v:GetItemId()]
-        if building and hitInfo.collider == (building:GetColliders())[1] then
-          (Log.fatal)("点击到：" .. ((hitInfo.transform).gameObject).name)
+      for k, v in ipairs(data) do
+        local building = self._selectSceneBuildings[v:GetItemId()]
+        if building and hitInfo.collider == building:GetColliders()[1] then
+          Log.fatal("点击到：" .. hitInfo.transform.gameObject.name)
           v:OnClick()
-          ;
-          ((self._selectSceneBuildings)[v:GetItemId()]):ShowOutline()
+          self._selectSceneBuildings[v:GetItemId()]:ShowOutline()
         end
       end
     else
-      do
-        for k,v in ipairs(data) do
-          if hitInfo.collider == v:GetCollider() then
-            (Log.fatal)("点击到：" .. ((hitInfo.transform).gameObject).name)
-            v:OnClick()
-          end
+      for k, v in ipairs(data) do
+        if hitInfo.collider == v:GetCollider() then
+          Log.fatal("点击到：" .. hitInfo.transform.gameObject.name)
+          v:OnClick()
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.SetSelectIdByType = function(self, phase, titleId, itemId)
-  -- function num : 0_47
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not (self._selectedIds)[phase] then
-    (self._selectedIds)[phase] = {}
+function HomelandMoviePrepareManager:SetSelectIdByType(phase, titleId, itemId)
+  if not self._selectedIds[phase] then
+    self._selectedIds[phase] = {}
   end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._selectedIds)[phase])[titleId] = itemId
+  self._selectedIds[phase][titleId] = itemId
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.HideAllOutline = function(self, phase)
-  -- function num : 0_48 , upvalues : _ENV
-  if not (self._selectDataList)[phase] then
-    return 
+function HomelandMoviePrepareManager:HideAllOutline(phase)
+  if not self._selectDataList[phase] then
+    return
   end
-  for key,value in pairs(self._selectSceneBuildings) do
+  for key, value in pairs(self._selectSceneBuildings) do
     value:HideOutline()
   end
-  for key,value in pairs((self._selectDataList)[phase]) do
+  for key, value in pairs(self._selectDataList[phase]) do
     for i = 1, #value do
-      (value[i]):ShowOutline(false)
+      value[i]:ShowOutline(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.InsertItemObject = function(self, phase, titleId, itemId)
-  -- function num : 0_49 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not (self._selectDataList)[phase] then
-    (self._selectDataList)[phase] = {}
+function HomelandMoviePrepareManager:InsertItemObject(phase, titleId, itemId)
+  if not self._selectDataList[phase] then
+    self._selectDataList[phase] = {}
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not ((self._selectDataList)[phase])[titleId] then
-    ((self._selectDataList)[phase])[titleId] = {}
+  if not self._selectDataList[phase][titleId] then
+    self._selectDataList[phase][titleId] = {}
   end
   self:HideAllOutline(phase)
-  if #((self._selectDataList)[phase])[titleId] > 0 then
-    for i = 1, #((self._selectDataList)[phase])[titleId] do
-      ((((self._selectDataList)[phase])[titleId])[i]):Dispose()
+  if #self._selectDataList[phase][titleId] > 0 then
+    for i = 1, #self._selectDataList[phase][titleId] do
+      self._selectDataList[phase][titleId][i]:Dispose()
     end
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    ((self._selectDataList)[phase])[titleId] = {}
+    self._selectDataList[phase][titleId] = {}
   end
-  local goReq, goObj = nil, nil
+  local goReq, goObj
   if phase == MoviePrepareType.PT_Scene then
-    local building = (self._movieFatherSon):AddFixedBuilding(self._oprateBuilding, itemId)
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._selectSceneBuildings)[itemId] = building
+    local building = self._movieFatherSon:AddFixedBuilding(self._oprateBuilding, itemId)
+    self._selectSceneBuildings[itemId] = building
     building:ShowOutline()
   else
-    do
-      goReq = (ResourceManager:GetInstance()):SyncLoadAsset(itemId .. ".prefab", LoadType.GameObject)
-      if not goReq then
-        (Log.exception)("未加载到模型资源  prefabId:" .. itemId)
-        return 
-      end
-      goObj = goReq.Obj
-      local itemdata = HomelandMovieItemData:New(phase, titleId, itemId, goReq, goObj)
-      ;
-      (table.insert)(((self._selectDataList)[phase])[titleId], itemdata)
-      self:ShowShadowObject(phase, titleId, #((self._selectDataList)[phase])[titleId] == 0)
-      do return goObj, itemdata end
-      -- DECOMPILER ERROR: 1 unprocessed JMP targets
+    goReq = ResourceManager:GetInstance():SyncLoadAsset(itemId .. ".prefab", LoadType.GameObject)
+    if not goReq then
+      Log.exception("未加载到模型资源  prefabId:" .. itemId)
+      return
     end
+    goObj = goReq.Obj
   end
+  local itemdata = HomelandMovieItemData:New(phase, titleId, itemId, goReq, goObj)
+  table.insert(self._selectDataList[phase][titleId], itemdata)
+  self:ShowShadowObject(phase, titleId, #self._selectDataList[phase][titleId] == 0)
+  return goObj, itemdata
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.InsertShadowObject = function(self, phase, titleId, itemId)
-  -- function num : 0_50 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not (self._selectDataList)[phase] then
-    (self._selectDataList)[phase] = {}
+function HomelandMoviePrepareManager:InsertShadowObject(phase, titleId, itemId)
+  if not self._selectDataList[phase] then
+    self._selectDataList[phase] = {}
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not ((self._selectDataList)[phase])[titleId] then
-    ((self._selectDataList)[phase])[titleId] = {}
+  if not self._selectDataList[phase][titleId] then
+    self._selectDataList[phase][titleId] = {}
   end
-  local effectReq, effectObj = nil, nil
+  local effectReq, effectObj
   if phase == MoviePrepareType.PT_Scene then
-    effectReq = (ResourceManager:GetInstance()):SyncLoadAsset(itemId .. ".prefab", LoadType.GameObject)
+  else
+    effectReq = ResourceManager:GetInstance():SyncLoadAsset(itemId .. ".prefab", LoadType.GameObject)
     effectObj = effectReq.Obj
-    local itemdata = HomelandMovieItemData:New(phase, titleId, itemId, effectReq, effectObj)
-    ;
-    (table.insert)(((self._selectDataList)[phase])[titleId], itemdata)
-    return effectObj
   end
+  local itemdata = HomelandMovieItemData:New(phase, titleId, itemId, effectReq, effectObj)
+  table.insert(self._selectDataList[phase][titleId], itemdata)
+  return effectObj
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.GetOperateBuilding = function(self)
-  -- function num : 0_51 , upvalues : _ENV
-  return (MoviePrepareData:GetInstance()):GetFatherBuild()
+function HomelandMoviePrepareManager:GetOperateBuilding()
+  return MoviePrepareData:GetInstance():GetFatherBuild()
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.GetSelectedData = function(self, PrepareType)
-  -- function num : 0_52 , upvalues : _ENV
+function HomelandMoviePrepareManager:GetSelectedData(PrepareType)
   local endList = {}
-  if not (self._selectDataList)[PrepareType] then
+  if not self._selectDataList[PrepareType] then
     return endList
   end
-  for key,value in pairs((self._selectDataList)[PrepareType]) do
+  for key, value in pairs(self._selectDataList[PrepareType]) do
     if value[1] then
-      (table.insert)(endList, value[1])
+      table.insert(endList, value[1])
     end
   end
   return endList
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMoviePrepareManager.GetRequestServerData = function(self)
-  -- function num : 0_53 , upvalues : _ENV
+function HomelandMoviePrepareManager:GetRequestServerData()
   local selectedItmes, selectedActors = {}, {}
   local data = self:GetSelectedData(MoviePrepareType.PT_Scene)
-  for itemId,value in ipairs(data) do
+  for itemId, value in ipairs(data) do
     selectedItmes[value:GetTitleId()] = value:GetItemId()
   end
   data = self:GetSelectedData(MoviePrepareType.PT_Prop)
-  for index,value in ipairs(data) do
+  for index, value in ipairs(data) do
     selectedItmes[value:GetTitleId()] = value:GetItemId()
   end
   data = self:GetSelectedData(MoviePrepareType.PT_Actor)
-  for index,value in ipairs(data) do
+  for index, value in ipairs(data) do
     selectedActors[value:GetTitleId()] = value:GetItemId()
   end
   return selectedItmes, selectedActors
 end
-
-

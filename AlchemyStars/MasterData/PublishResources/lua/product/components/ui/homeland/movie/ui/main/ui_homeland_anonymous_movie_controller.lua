@@ -1,40 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/main/ui_homeland_anonymous_movie_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandAnonymousMovieController", UIController)
 UIHomelandAnonymousMovieController = UIHomelandAnonymousMovieController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandAnonymousMovieController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandAnonymousMovieController:Constructor()
   self._movieCfgData = MovieDataHelper:New()
   self._widgets = {}
   self._anonymousID = nil
   self.received = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandAnonymousMovieController:OnShow(uiParams)
   self._anonymousID = uiParams[1]
   self:InitWidget()
   self:_UIItemSetData(self._anonymousID)
   self:SetData(self._anonymousID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieController.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandAnonymousMovieController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieController.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandAnonymousMovieController:InitWidget()
   self._petHead = self:GetUIComponent("Image", "petHead")
   self._nameText = self:GetUIComponent("UILocalizationText", "nameText")
   self._acceptBtnImage = self:GetUIComponent("Image", "acceptBtn")
@@ -52,138 +36,92 @@ UIHomelandAnonymousMovieController.InitWidget = function(self)
   self._atlas = self:GetAsset("UIMovieSecond.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieController._UIItemSetData = function(self, anonymousID)
-  -- function num : 0_4 , upvalues : _ENV
-  self._letterCfg = (Cfg.cfg_homeland_anonymous_letter)[anonymousID]
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._petHead).sprite = (self._atlas):GetSprite((self._letterCfg).PetIcon)
-  ;
-  (self._nameText):SetText((StringTable.Get)((self._letterCfg).PetName))
-  ;
-  (self._letterText):SetText((StringTable.Get)((self._letterCfg).Text))
-  ;
-  (self._topText):SetText((StringTable.Get)("str_movie_letter_text_4"))
-  ;
-  (self._receivedTxt):SetText((StringTable.Get)("str_movie_letter_text_5"))
-  ;
-  (self._acceptTxt):SetText((StringTable.Get)("str_movie_letter_text_6"))
-  ;
-  (self._nextTxt):SetText((StringTable.Get)("str_movie_letter_text_7"))
+function UIHomelandAnonymousMovieController:_UIItemSetData(anonymousID)
+  self._letterCfg = Cfg.cfg_homeland_anonymous_letter[anonymousID]
+  self._petHead.sprite = self._atlas:GetSprite(self._letterCfg.PetIcon)
+  self._nameText:SetText(StringTable.Get(self._letterCfg.PetName))
+  self._letterText:SetText(StringTable.Get(self._letterCfg.Text))
+  self._topText:SetText(StringTable.Get("str_movie_letter_text_4"))
+  self._receivedTxt:SetText(StringTable.Get("str_movie_letter_text_5"))
+  self._acceptTxt:SetText(StringTable.Get("str_movie_letter_text_6"))
+  self._nextTxt:SetText(StringTable.Get("str_movie_letter_text_7"))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieController.SetAnonymousData = function(self, anonymousID)
-  -- function num : 0_5 , upvalues : _ENV
-  self._letterCfg = (Cfg.cfg_homeland_anonymous_letter)[anonymousID]
-  local assest = (self._letterCfg).Rewards
+function UIHomelandAnonymousMovieController:SetAnonymousData(anonymousID)
+  self._letterCfg = Cfg.cfg_homeland_anonymous_letter[anonymousID]
+  local assest = self._letterCfg.Rewards
   return assest
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieController.SetData = function(self, anonymousID)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandAnonymousMovieController:SetData(anonymousID)
   local itemInfo = self:SetAnonymousData(anonymousID)
-  ;
-  (self._assestContent):SpawnObjects("UIHomelandAnonymousMovieItem", #itemInfo)
-  self._widgets = (self._assestContent):GetAllSpawnList()
+  self._assestContent:SpawnObjects("UIHomelandAnonymousMovieItem", #itemInfo)
+  self._widgets = self._assestContent:GetAllSpawnList()
   local index = 1
-  for i,v in pairs(itemInfo) do
-    ((self._widgets)[index]):SetData(v, self.received)
+  for i, v in pairs(itemInfo) do
+    self._widgets[index]:SetData(v, self.received)
     index = index + 1
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieController.AcceptBtnOnClick = function(self, TT)
-  -- function num : 0_7
+function UIHomelandAnonymousMovieController:AcceptBtnOnClick(TT)
   self:OnAcceptClick()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieController.NextBtnOnClick = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._received):SetActive(false)
-  ;
-  (self._nextBtn):SetActive(false)
-  ;
-  (self._acceptBtn):SetActive(true)
+function UIHomelandAnonymousMovieController:NextBtnOnClick(TT)
+  self._received:SetActive(false)
+  self._nextBtn:SetActive(false)
+  self._acceptBtn:SetActive(true)
   self._movieDataHelper = MovieDataHelper:New()
-  local type, nextID = nil, nil
-  type = (self._movieDataHelper):ShowOrNot()
+  local type, nextID
+  type, nextID = self._movieDataHelper:ShowOrNot()
   self:_UIItemSetData(nextID)
   self:SetData(nextID)
   self._anonymousID = nextID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieController.OnAcceptClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.HandleGetAnonymousLetterRewardTask, self, self._anonymousID)
+function UIHomelandAnonymousMovieController:OnAcceptClick()
+  GameGlobal.TaskManager():StartTask(self.HandleGetAnonymousLetterRewardTask, self, self._anonymousID)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieController.HandleGetAnonymousLetterRewardTask = function(self, TT, anonymous_letter_id)
-  -- function num : 0_10 , upvalues : _ENV
-  local homeModule = (GameGlobal.GetModule)(HomelandModule)
+function UIHomelandAnonymousMovieController:HandleGetAnonymousLetterRewardTask(TT, anonymous_letter_id)
+  local homeModule = GameGlobal.GetModule(HomelandModule)
   local result, asset = homeModule:HandleGetAnonymousLetterReward(TT, anonymous_letter_id)
   if result:GetSucc() then
-    (self._acceptBtn):SetActive(false)
-    ;
-    (self._received):SetActive(true)
-    if #asset > 0 then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIHomeShowAwards", asset, nil, false, nil)
+    self._acceptBtn:SetActive(false)
+    self._received:SetActive(true)
+    if 0 < #asset then
+      GameGlobal.UIStateManager():ShowDialog("UIHomeShowAwards", asset, nil, false, nil)
     end
     self.received = true
     self:SetData(anonymous_letter_id)
     local Anonymouslist = homeModule:GetAnonymousLetterRreward()
     if Anonymouslist ~= nil then
-      for i,v in ipairs(Anonymouslist) do
+      for i, v in ipairs(Anonymouslist) do
         if anonymous_letter_id == v then
-          (Log.fatal)("数据保存成功")
+          Log.fatal("数据保存成功")
         end
       end
     end
-    do
-      self._movieDataHelper = MovieDataHelper:New()
-      do
-        local type, nextID = nil, nil
-        type = (self._movieDataHelper):ShowOrNot()
-        if type then
-          (self._nextBtn):SetActive(true)
-          self.received = false
-        else
-          ;
-          (self._btnBack):SetActive(true)
-        end
-        -- DECOMPILER ERROR at PC79: Overwrote pending register: R8 in 'AssignReg'
-
-        ;
-        (Log.fatal)("获取奖励失败,错误码" .. nextID)
-      end
+    self._movieDataHelper = MovieDataHelper:New()
+    local type, nextID
+    type, nextID = self._movieDataHelper:ShowOrNot()
+    if type then
+      self._nextBtn:SetActive(true)
+      self.received = false
+    else
+      self._btnBack:SetActive(true)
     end
+  else
+    Log.fatal("获取奖励失败,错误码" .. result.m_result)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieController.BtnBackOnClick = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UIHomelandMovieMainController")
-  local cfg = (Cfg.cfg_homeland_movie_tag)({})
-  local tag = (cfg[2]).MovieId
+function UIHomelandAnonymousMovieController:BtnBackOnClick(TT)
+  local controller = GameGlobal.UIStateManager():GetController("UIHomelandMovieMainController")
+  local cfg = Cfg.cfg_homeland_movie_tag({})
+  local tag = cfg[2].MovieId
   controller:InitDramaList(tag)
   controller:InitDramaList()
   self:CloseDialog()
 end
-
-

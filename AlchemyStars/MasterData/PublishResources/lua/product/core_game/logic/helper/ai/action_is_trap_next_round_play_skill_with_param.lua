@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_is_trap_next_round_play_skill_with_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionIsTrapNextRoundPlaySkillWithParam", AINewNode)
 ActionIsTrapNextRoundPlaySkillWithParam = ActionIsTrapNextRoundPlaySkillWithParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionIsTrapNextRoundPlaySkillWithParam.OnUpdate = function(self, dt)
-  -- function num : 0_0 , upvalues : _ENV
-  local attrCmpt = (self.m_entityOwn):Attributes()
+function ActionIsTrapNextRoundPlaySkillWithParam:OnUpdate(dt)
+  local attrCmpt = self.m_entityOwn:Attributes()
   local useGameRound = self:GetLogicData(-2) or 0
   local curRound = attrCmpt:GetAttribute("CurrentRound")
-  if useGameRound > 0 then
+  if 0 < useGameRound then
     curRound = self:GetGameRountNow() % useGameRound
     if curRound == 0 then
       curRound = useGameRound
@@ -21,25 +14,19 @@ ActionIsTrapNextRoundPlaySkillWithParam.OnUpdate = function(self, dt)
   end
   local str = self:GetLogicData(-1)
   if str then
-    local ss = (string.split)(str, ",")
+    local ss = string.split(str, ",")
     local rounds = {}
-    for i,s in ipairs(ss) do
+    for i, s in ipairs(ss) do
       rounds[#rounds + 1] = tonumber(s)
     end
-    if (table.intable)(rounds, curRound) then
+    if table.intable(rounds, curRound) then
       return AINewNodeStatus.Success
     end
   else
-    do
-      do
-        local totalRound = attrCmpt:GetAttribute("TotalRound")
-        if totalRound == curRound then
-          return AINewNodeStatus.Success
-        end
-        return AINewNodeStatus.Failure
-      end
+    local totalRound = attrCmpt:GetAttribute("TotalRound")
+    if totalRound == curRound then
+      return AINewNodeStatus.Success
     end
   end
+  return AINewNodeStatus.Failure
 end
-
-

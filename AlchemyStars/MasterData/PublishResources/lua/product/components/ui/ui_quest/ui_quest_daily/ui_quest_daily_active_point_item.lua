@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_daily/ui_quest_daily_active_point_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestDailyActivePointItem", UICustomWidget)
 UIQuestDailyActivePointItem = UIQuestDailyActivePointItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestDailyActivePointItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._atlas = (self:RootUIOwner()):GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
-  self._module = (GameGlobal.GetModule)(QuestModule)
+function UIQuestDailyActivePointItem:OnShow(uiParams)
+  self._atlas = self:RootUIOwner():GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
+  self._module = GameGlobal.GetModule(QuestModule)
   if self._module == nil then
-    (Log.fatal)("###[quest] error --> QuestModule is nil !")
+    Log.fatal("###[quest] error --> QuestModule is nil !")
   end
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:AttachEvent(GameEventType.RolePropertyChanged, self._OnValue)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyActivePointItem.SetData = function(self, index, points, currentPoint, posX, callback, tipsCb, high)
-  -- function num : 0_1
+function UIQuestDailyActivePointItem:SetData(index, points, currentPoint, posX, callback, tipsCb, high)
   self:_GetComponents()
   self._index = index
   self._points = points
-  self._point = ((self._points)[self._index]).VigPoint
-  self._rewards = ((self._points)[self._index]).Reward
+  self._point = self._points[self._index].VigPoint
+  self._rewards = self._points[self._index].Reward
   self._state = 0
   self._currentPoint = currentPoint
   self._posX = posX
@@ -36,139 +26,85 @@ UIQuestDailyActivePointItem.SetData = function(self, index, points, currentPoint
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyActivePointItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIQuestDailyActivePointItem:OnHide()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:DetachEvent(GameEventType.RolePropertyChanged, self._OnValue)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyActivePointItem._GetComponents = function(self)
-  -- function num : 0_3
+function UIQuestDailyActivePointItem:_GetComponents()
   self._rect = self:GetUIComponent("RectTransform", "rect")
   self._img = self:GetUIComponent("Image", "img")
   self._pointTex = self:GetUIComponent("UILocalizationText", "pointTex")
   self._bglight = self:GetGameObject("bglight")
-  ;
-  (self._bglight):SetActive(false)
+  self._bglight:SetActive(false)
   self._fglight = self:GetGameObject("fglight")
-  ;
-  (self._fglight):SetActive(false)
+  self._fglight:SetActive(false)
   self._yellowPoint = self:GetGameObject("YellowPoint")
-  ;
-  (self._yellowPoint):SetActive(false)
+  self._yellowPoint:SetActive(false)
   self._highObj = self:GetGameObject("high")
   self._graPointObj = self:GetGameObject("graPoint")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyActivePointItem._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIQuestDailyActivePointItem:_OnValue()
   if not self._index then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = Vector2(self._posX + 8.6, 0)
-  local get = (self._module):IsGotVigorousReward(self._index)
+  self._rect.anchoredPosition = Vector2(self._posX + 8.6, 0)
+  local get = self._module:IsGotVigorousReward(self._index)
   if get then
     self._state = 2
+  elseif self._currentPoint < self._point then
+    self._state = 0
   else
-    if self._currentPoint < self._point then
-      self._state = 0
-    else
-      self._state = 1
-    end
+    self._state = 1
   end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-  if self._state <= 0 then
-    (self._img).sprite = (self._atlas):GetSprite("task_daily_liwu2")
-    ;
-    (self._bglight):SetActive(false)
-    ;
-    (self._fglight):SetActive(false)
-    ;
-    (self._yellowPoint):SetActive(false)
-  else
-    if self._state == 1 then
-      (self._bglight):SetActive(true)
-      ;
-      (self._yellowPoint):SetActive(true)
-      ;
-      (self._highObj):SetActive(self._high)
-      -- DECOMPILER ERROR at PC71: Confused about usage of register: R2 in 'UnsetPending'
-
-      if self._high then
-        (self._img).sprite = (self._atlas):GetSprite("task_daily_liwu3")
-        ;
-        (self._fglight):SetActive(true)
-      else
-        -- DECOMPILER ERROR at PC82: Confused about usage of register: R2 in 'UnsetPending'
-
-        ;
-        (self._img).sprite = (self._atlas):GetSprite("task_daily_liwu8")
-        ;
-        (self._fglight):SetActive(false)
-      end
+  if 0 >= self._state then
+    self._img.sprite = self._atlas:GetSprite("task_daily_liwu2")
+    self._bglight:SetActive(false)
+    self._fglight:SetActive(false)
+    self._yellowPoint:SetActive(false)
+  elseif self._state == 1 then
+    self._bglight:SetActive(true)
+    self._yellowPoint:SetActive(true)
+    self._highObj:SetActive(self._high)
+    if self._high then
+      self._img.sprite = self._atlas:GetSprite("task_daily_liwu3")
+      self._fglight:SetActive(true)
     else
-      -- DECOMPILER ERROR at PC96: Confused about usage of register: R2 in 'UnsetPending'
-
-      if self._state == 2 then
-        (self._img).sprite = (self._atlas):GetSprite("task_daily_liwu1")
-        ;
-        (self._bglight):SetActive(false)
-        ;
-        (self._fglight):SetActive(false)
-        ;
-        (self._yellowPoint):SetActive(true)
-      end
+      self._img.sprite = self._atlas:GetSprite("task_daily_liwu8")
+      self._fglight:SetActive(false)
     end
+  elseif self._state == 2 then
+    self._img.sprite = self._atlas:GetSprite("task_daily_liwu1")
+    self._bglight:SetActive(false)
+    self._fglight:SetActive(false)
+    self._yellowPoint:SetActive(true)
   end
-  ;
-  (self._pointTex):SetText(self._point)
+  self._pointTex:SetText(self._point)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyActivePointItem.GetActiveState = function(self)
-  -- function num : 0_5
-  do return self._state == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIQuestDailyActivePointItem:GetActiveState()
+  return self._state == 1
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyActivePointItem.bgOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIQuestDailyActivePointItem:bgOnClick()
   if self._state == 0 or self._state == 2 then
-    local cfg = (Cfg.cfg_vigorous_reward)[self._index]
+    local cfg = Cfg.cfg_vigorous_reward[self._index]
     if cfg == nil then
-      (Log.fatal)("[quest] error --> cfg_vigorous_reward is nil ! index --> " .. self._index)
-      return 
+      Log.fatal("[quest] error --> cfg_vigorous_reward is nil ! index --> " .. self._index)
+      return
     end
     local rewards = {}
-    for i = 1, (table.count)(cfg.Reward) do
+    for i = 1, table.count(cfg.Reward) do
       rewards[i] = {}
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (rewards[i]).assetid = ((cfg.Reward)[i])[1]
-      -- DECOMPILER ERROR at PC38: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (rewards[i]).count = ((cfg.Reward)[i])[2]
+      rewards[i].assetid = cfg.Reward[i][1]
+      rewards[i].count = cfg.Reward[i][2]
     end
-    local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-    local loginModule = (GameGlobal.GetModule)(LoginModule)
+    local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+    local loginModule = GameGlobal.GetModule(LoginModule)
     local extraAward = cfg.ExtraReward
     if extraAward then
-      local cfg_extras = (Cfg.cfg_vigorous_extra_reward)({})
+      local cfg_extras = Cfg.cfg_vigorous_extra_reward({})
       for i = 1, #extraAward do
         local extraAwardID = extraAward[i]
         local cfg_extra = cfg_extras[extraAwardID]
@@ -177,36 +113,23 @@ UIQuestDailyActivePointItem.bgOnClick = function(self)
         local nowTime = svrTimeModule:GetServerTime() * 0.001
         local startTime = loginModule:GetTimeStampByTimeStr(startTimeStr, Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone)
         local endTime = loginModule:GetTimeStampByTimeStr(endTimeStr, Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone)
-        if startTime <= nowTime and nowTime < endTime then
+        if nowTime >= startTime and nowTime < endTime then
           local reward = cfg_extra.Reward
           if reward then
             for j = 1, #reward do
               local key = #rewards + 1
               rewards[key] = {}
-              -- DECOMPILER ERROR at PC94: Confused about usage of register: R24 in 'UnsetPending'
-
-              ;
-              (rewards[key]).assetid = (reward[j])[1]
-              -- DECOMPILER ERROR at PC98: Confused about usage of register: R24 in 'UnsetPending'
-
-              ;
-              (rewards[key]).count = (reward[j])[2]
+              rewards[key].assetid = reward[j][1]
+              rewards[key].count = reward[j][2]
             end
           end
         end
       end
     end
-    do
-      do
-        if self._tipsCb then
-          (self._tipsCb)(rewards, (self._rect).anchoredPosition)
-        end
-        if self._state == 1 and self._callback then
-          (self._callback)(self._index)
-        end
-      end
+    if self._tipsCb then
+      self._tipsCb(rewards, self._rect.anchoredPosition)
     end
+  elseif self._state == 1 and self._callback then
+    self._callback(self._index)
   end
 end
-
-

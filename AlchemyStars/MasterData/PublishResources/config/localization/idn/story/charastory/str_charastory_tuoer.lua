@@ -1,8 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/idn/story/charastory/str_charastory_tuoer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {ui_story_31330401_1_dialog_content = "Mengapa kamu begitu kehabisan napas, PlayerName? Kamu pasti sangat bersemangat untuk mencoba makananku!", ui_story_31330401_2_dialog_content = "Memang seharusnya begitu. Bagaimanapun juga, aku lah yang membuatnya, dan tidak ada orang lain yang bisa menirunya!", ui_story_31330401_3_dialog_content = "Kamu benar, saya rasa tidak ada yang bisa meniru betapa mengejutkannya ini.", ui_story_31330401_4_dialog_content = "Aku sangat senang kamu bisa kembali dan semua, tapi bisakah kamu berhenti meneliti hidangan aneh untuk sementara waktu?", ui_story_31330401_5_dialog_content = "Aku sudah menerima banyak keluhan dari orang lain.", ui_story_31330401_6_dialog_content = "Vice! Ada apa, Vice?! Apa yang terjadi?!", ui_story_31330401_7_dialog_content = "C-Cepat... Beritahu PlayerName untuk... mengevakuasi Colossus... In-Ini adalah permintaan terakhirku...", ui_story_31330401_8_dialog_content = "Apa ini gas aneh? Apakah kita sedang diserang Eclipsite?!", ui_story_31330401_9_dialog_content = "B-Bukan Eclipsite... Ini Tohru, dia... dia sedang memasak sesuatu yang mengerikan... L-Larilah demi hidupmu!", ui_story_31330401_10_dialog_content = "Kenapa kamu lari, Nona Vice? Ayo coba Eclipsite goreng dan laba-laba pasirku, rasanya luar biasa!", ui_story_31330401_11_dialog_content = "Vice mengembangkan ketidaksukaan psikologis terhadap Eclipsite setelah itu.", ui_story_31330401_12_dialog_content = "Itu-itu hanya kecelakaan! Tenang, aku janji kali ini aku tidak menggunakan Eclipsite untuk membuat makanan!", ui_story_31330401_13_dialog_content = "Lalu katakan padaku, apa yang kaupahami kali ini?", ui_story_31330401_14_dialog_content = "Hidangan fusion dengan banyak rasa yang menantang dan berbeda!", ui_story_31330401_15_dialog_content = "Aku sudah selesai... Mendengarnya saja, perasaanku jadi tak enak.", ui_story_31330401_16_dialog_content = "Aku mulai dengan mengumpulkan beberapa rempah dari Illumina.", ui_story_31330401_17_dialog_content = "Hah? Itu sebenarnya terdengar cukup biasa.", ui_story_31330401_18_dialog_content = "Selanjutnya, saya pergi ke Longzhou untuk memetik cabai rawit segar secara langsung.", ui_story_31330401_19_dialog_content = "Begitu, jadi ini hidangan Longzhou? Saya mulai menantikan ini!", ui_story_31330401_20_dialog_content = "Setelah itu, datanglah bagian paling menarik dari hidangan! Saya mencari di seluruh Rediesel Desert untuk waktu yang lama, dan akhirnya menemukan ini: seekor kadal gurun yang sangat beracun!", ui_story_31330401_21_dialog_content = "Sungguh?", ui_story_31330401_22_dialog_content = "Setelah menambahkan beberapa buah dari dunia asal saya, hidangan kadal pedas dan buah akhirnya selesai!", ui_story_31330401_23_dialog_content = "<color=#e8d9bb>Di dalam sup merah yang kental, terapung seekor kadal yang tampaknya belum sepenuhnya mati. Hidangan yang benar-benar mengerikan dan membuat orang menjerit.</color>", ui_story_31330401_24_dialog_content = "Tohru... Bukankah kamu bisa membuat makanan normal saja?", ui_story_31330401_25_dialog_content = "Makanan biasa tidak cukup! Jika aku membuat itu... Aku mungkin tidak bisa mengungkapkan rasa terima kasihku dengan baik...", ui_story_31330401_26_dialog_content = "Saya belum melupakan betapa banyak Anda membantu kami saat itu. Itulah mengapa saya... saya ingin membuatkan Anda hidangan yang tidak mungkin dibuat oleh orang lain.", ui_story_31330401_27_dialog_content = "Jadi... akan kamu makan itu?", ui_story_31330401_28_option_content = "Tentu saja aku akan", ui_story_31330401_29_dialog_content = "Aku bisa bilang kamu benar-benar bekerja keras untuk ini.", ui_story_31330401_30_dialog_content = "Meskipun terlihat sedikit menakutkan, saya tetap berencana untuk memakannya.", ui_story_31330401_31_option_content = "Ini sedikit, eh...", ui_story_31330401_32_dialog_content = "... Aku mengerti. Saya benar-benar minta maaf tentang ini... Aku akan membuangnya segera.", ui_story_31330401_33_dialog_content = "Tapi aku tetap berencana untuk memakannya!", ui_story_31330401_34_dialog_content = "Tentu saja, kamu membuatnya hanya untukku, kan? Ini satu-satunya hidangan sejenis di dunia!", ui_story_31330401_35_dialog_content = "PlayerName!", ui_story_31330401_36_dialog_content = "(Pantaulah aku, kaumku! Berkahilah aku dengan keberanian untuk mengatasi tantangan ini!)", ui_story_31330401_37_dialog_content = "...", ui_story_31330401_38_dialog_content = "<size=50>Umm—!</size> Tunggu, ini sebenarnya cukup bagus!", ui_story_31330401_39_dialog_content = "Kutahu! Jangan lupa, aku adalah pelayan terhebat di dunia. Tak mungkin aku membuat sesuatu yang rasanya buruk!", ui_story_31330401_40_dialog_content = "(Mengambil bahan-bahan biasa dan mengubahnya menjadi sesuatu yang menakutkan seperti ini... Saya rasa itu juga merupakan keahlian khusus tersendiri.)", ui_story_31330401_41_dialog_content = "Baiklah! Saatnya terus menjelajahi bahan-bahan di dunia ini! Apa yang harus saya masak berikutnya?!", ui_story_31330401_42_dialog_content = "M-Mungkin hanya masakan rumahan sederhana?"}
+local config = {
+  ui_story_31330401_1_dialog_content = "Mengapa kamu begitu kehabisan napas, PlayerName? Kamu pasti sangat bersemangat untuk mencoba makananku!",
+  ui_story_31330401_2_dialog_content = "Memang seharusnya begitu. Bagaimanapun juga, aku lah yang membuatnya, dan tidak ada orang lain yang bisa menirunya!",
+  ui_story_31330401_3_dialog_content = "Kamu benar, saya rasa tidak ada yang bisa meniru betapa mengejutkannya ini.",
+  ui_story_31330401_4_dialog_content = "Aku sangat senang kamu bisa kembali dan semua, tapi bisakah kamu berhenti meneliti hidangan aneh untuk sementara waktu?",
+  ui_story_31330401_5_dialog_content = "Aku sudah menerima banyak keluhan dari orang lain.",
+  ui_story_31330401_6_dialog_content = "Vice! Ada apa, Vice?! Apa yang terjadi?!",
+  ui_story_31330401_7_dialog_content = "C-Cepat... Beritahu PlayerName untuk... mengevakuasi Colossus... In-Ini adalah permintaan terakhirku...",
+  ui_story_31330401_8_dialog_content = "Apa ini gas aneh? Apakah kita sedang diserang Eclipsite?!",
+  ui_story_31330401_9_dialog_content = "B-Bukan Eclipsite... Ini Tohru, dia... dia sedang memasak sesuatu yang mengerikan... L-Larilah demi hidupmu!",
+  ui_story_31330401_10_dialog_content = "Kenapa kamu lari, Nona Vice? Ayo coba Eclipsite goreng dan laba-laba pasirku, rasanya luar biasa!",
+  ui_story_31330401_11_dialog_content = "Vice mengembangkan ketidaksukaan psikologis terhadap Eclipsite setelah itu.",
+  ui_story_31330401_12_dialog_content = "Itu-itu hanya kecelakaan! Tenang, aku janji kali ini aku tidak menggunakan Eclipsite untuk membuat makanan!",
+  ui_story_31330401_13_dialog_content = "Lalu katakan padaku, apa yang kaupahami kali ini?",
+  ui_story_31330401_14_dialog_content = "Hidangan fusion dengan banyak rasa yang menantang dan berbeda!",
+  ui_story_31330401_15_dialog_content = "Aku sudah selesai... Mendengarnya saja, perasaanku jadi tak enak.",
+  ui_story_31330401_16_dialog_content = "Aku mulai dengan mengumpulkan beberapa rempah dari Illumina.",
+  ui_story_31330401_17_dialog_content = "Hah? Itu sebenarnya terdengar cukup biasa.",
+  ui_story_31330401_18_dialog_content = "Selanjutnya, saya pergi ke Longzhou untuk memetik cabai rawit segar secara langsung.",
+  ui_story_31330401_19_dialog_content = "Begitu, jadi ini hidangan Longzhou? Saya mulai menantikan ini!",
+  ui_story_31330401_20_dialog_content = "Setelah itu, datanglah bagian paling menarik dari hidangan! Saya mencari di seluruh Rediesel Desert untuk waktu yang lama, dan akhirnya menemukan ini: seekor kadal gurun yang sangat beracun!",
+  ui_story_31330401_21_dialog_content = "Sungguh?",
+  ui_story_31330401_22_dialog_content = "Setelah menambahkan beberapa buah dari dunia asal saya, hidangan kadal pedas dan buah akhirnya selesai!",
+  ui_story_31330401_23_dialog_content = "<color=#e8d9bb>Di dalam sup merah yang kental, terapung seekor kadal yang tampaknya belum sepenuhnya mati. Hidangan yang benar-benar mengerikan dan membuat orang menjerit.</color>",
+  ui_story_31330401_24_dialog_content = "Tohru... Bukankah kamu bisa membuat makanan normal saja?",
+  ui_story_31330401_25_dialog_content = "Makanan biasa tidak cukup! Jika aku membuat itu... Aku mungkin tidak bisa mengungkapkan rasa terima kasihku dengan baik...",
+  ui_story_31330401_26_dialog_content = "Saya belum melupakan betapa banyak Anda membantu kami saat itu. Itulah mengapa saya... saya ingin membuatkan Anda hidangan yang tidak mungkin dibuat oleh orang lain.",
+  ui_story_31330401_27_dialog_content = "Jadi... akan kamu makan itu?",
+  ui_story_31330401_28_option_content = "Tentu saja aku akan",
+  ui_story_31330401_29_dialog_content = "Aku bisa bilang kamu benar-benar bekerja keras untuk ini.",
+  ui_story_31330401_30_dialog_content = "Meskipun terlihat sedikit menakutkan, saya tetap berencana untuk memakannya.",
+  ui_story_31330401_31_option_content = "Ini sedikit, eh...",
+  ui_story_31330401_32_dialog_content = "... Aku mengerti. Saya benar-benar minta maaf tentang ini... Aku akan membuangnya segera.",
+  ui_story_31330401_33_dialog_content = "Tapi aku tetap berencana untuk memakannya!",
+  ui_story_31330401_34_dialog_content = "Tentu saja, kamu membuatnya hanya untukku, kan? Ini satu-satunya hidangan sejenis di dunia!",
+  ui_story_31330401_35_dialog_content = "PlayerName!",
+  ui_story_31330401_36_dialog_content = "(Pantaulah aku, kaumku! Berkahilah aku dengan keberanian untuk mengatasi tantangan ini!)",
+  ui_story_31330401_37_dialog_content = "...",
+  ui_story_31330401_38_dialog_content = "<size=50>Umm—!</size> Tunggu, ini sebenarnya cukup bagus!",
+  ui_story_31330401_39_dialog_content = "Kutahu! Jangan lupa, aku adalah pelayan terhebat di dunia. Tak mungkin aku membuat sesuatu yang rasanya buruk!",
+  ui_story_31330401_40_dialog_content = "(Mengambil bahan-bahan biasa dan mengubahnya menjadi sesuatu yang menakutkan seperti ini... Saya rasa itu juga merupakan keahlian khusus tersendiri.)",
+  ui_story_31330401_41_dialog_content = "Baiklah! Saatnya terus menjelajahi bahan-bahan di dunia ini! Apa yang harus saya masak berikutnya?!",
+  ui_story_31330401_42_dialog_content = "M-Mungkin hanya masakan rumahan sederhana?"
+}
 return config
-

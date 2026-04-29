@@ -1,49 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_skill_scope/ui_skill_scope_chain_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISkillScopeChainItem", UICustomWidget)
 UISkillScopeChainItem = UISkillScopeChainItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISkillScopeChainItem.OnShow = function(self)
-  -- function num : 0_0
+function UISkillScopeChainItem:OnShow()
   self.txtNum = self:GetUIComponent("UILocalizationText", "txtNum")
   self._imgHighlight = self:GetGameObject("imgHighlight")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScopeChainItem.Flush = function(self, chainNum, id)
-  -- function num : 0_1 , upvalues : _ENV
+function UISkillScopeChainItem:Flush(chainNum, id)
   self._id = id
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.txtNum).text = chainNum .. (StringTable.Get)("str_discovery_grid_chain")
+  self.txtNum.text = chainNum .. StringTable.Get("str_discovery_grid_chain")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScopeChainItem.Highlight = function(self, isHighlight)
-  -- function num : 0_2 , upvalues : _ENV
-  if not isHighlight or not Color.white then
-    local color = Color.gray
-  end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.txtNum).color = color
-  ;
-  (self._imgHighlight):SetActive(isHighlight)
+function UISkillScopeChainItem:Highlight(isHighlight)
+  local color = isHighlight and Color.white or Color.gray
+  self.txtNum.color = color
+  self._imgHighlight:SetActive(isHighlight)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScopeChainItem.BtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FlushSkillScope, self._id)
+function UISkillScopeChainItem:BtnOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FlushSkillScope, self._id)
 end
-
-

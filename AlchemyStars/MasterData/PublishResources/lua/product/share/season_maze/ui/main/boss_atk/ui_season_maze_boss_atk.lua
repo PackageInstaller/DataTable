@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/boss_atk/ui_season_maze_boss_atk.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeBossAtk", UICustomWidget)
 UISeasonMazeBossAtk = UISeasonMazeBossAtk
 _enum("SeasonMazeBossType", {Normal = 1, Special = 2})
 SeasonMazeBossType = SeasonMazeBossType
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeBossAtk.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMazeBossAtk:InitWidget()
   self._headIcon = self:GetUIComponent("RawImageLoader", "Head")
   self._turnTex = self:GetUIComponent("UILocalizedTMP", "Turn")
   self._warning = self:GetGameObject("Warning")
@@ -26,248 +19,169 @@ UISeasonMazeBossAtk.InitWidget = function(self)
   self._rateImgPos = self:GetUIComponent("RectTransform", "rateImgPos")
   self._rateImgBg = self:GetUIComponent("RectTransform", "rateImgBg")
   self._rateImgUnit = self:GetGameObject("img")
-  ;
-  (self._rateImgUnit):SetActive(false)
+  self._rateImgUnit:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBossAtk.CreateImgUnit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local comInfo = (self._seasonMazeObj):GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+function UISeasonMazeBossAtk:CreateImgUnit()
+  local comInfo = self._seasonMazeObj:GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
   local missionInfoList = comInfo.boss_info
-  local count = (table.count)(missionInfoList)
-  local width = ((self._rateImgBg).sizeDelta).x
+  local count = table.count(missionInfoList)
+  local width = self._rateImgBg.sizeDelta.x
   self._imgUnitList = {}
   for i = 1, count do
-    local go = ((UnityEngine.GameObject).Instantiate)(self._rateImgUnit, self._rateImgBg)
+    local go = UnityEngine.GameObject.Instantiate(self._rateImgUnit, self._rateImgBg)
     go:SetActive(true)
-    ;
-    (table.insert)(self._imgUnitList, go)
+    table.insert(self._imgUnitList, go)
     local pos = width * (i / count)
-    ;
-    (go:GetComponent("RectTransform")).anchoredPosition = Vector2(pos, 0)
+    go:GetComponent("RectTransform").anchoredPosition = Vector2(pos, 0)
   end
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBossAtk.OnShow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._seasonMazeObj = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()
+function UISeasonMazeBossAtk:OnShow()
+  self._seasonMazeObj = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj()
   self:InitWidget()
   self:CreateImgUnit()
-  ;
-  (self._anim2):Play("uieff_UISeasonMazeBossAtk_in")
+  self._anim2:Play("uieff_UISeasonMazeBossAtk_in")
   self:AttachEvent(GameEventType.OnUISeasonMazeAttChanged, self.ShowAtkBossInfo)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBossAtk.SetData = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazeBossAtk:SetData()
   self:ShowAtkBossInfo(SeasonMazeAttrType.SMAT_Round, true)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBossAtk.PlayAnim = function(self, yieldTime, hideAnim, callback)
-  -- function num : 0_4 , upvalues : _ENV
-  if hideAnim and callback then
-    callback()
+function UISeasonMazeBossAtk:PlayAnim(yieldTime, hideAnim, callback)
+  if hideAnim then
+    if callback then
+      callback()
+    end
+    return
   end
-  do return  end
-  ;
-  (self._anim):Play()
+  self._anim:Play()
   local rate = self:GetImgFillVal()
-  ;
-  (self._rateImg):DOFillAmount(rate, yieldTime * 0.002)
-  local width = ((self._rateImgBg).sizeDelta).x
+  self._rateImg:DOFillAmount(rate, yieldTime * 0.002)
+  local width = self._rateImgBg.sizeDelta.x
   local pos = width * rate
-  ;
-  (self._rateImgPos):DOAnchorPos(Vector2(pos, 0), yieldTime * 0.002)
+  self._rateImgPos:DOAnchorPos(Vector2(pos, 0), yieldTime * 0.002)
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
   self:Lock("UISeasonMazeBossAtk:PlayAnim")
-  self._timer = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_4_0 , upvalues : callback, self
+  self._timer = GameGlobal.Timer():AddEvent(yieldTime, function()
     if callback then
       callback()
     end
     self:UnLock("UISeasonMazeBossAtk:PlayAnim")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBossAtk.ShowAtkBossInfo = function(self, attType, hideAnim)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
+function UISeasonMazeBossAtk:ShowAtkBossInfo(attType, hideAnim)
   if attType == SeasonMazeAttrType.SMAT_Round then
-    (self._goTr).anchoredPosition = Vector2(170, -182)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._goTr).localScale = Vector3(1, 1, 1)
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._goAlpha).alpha = 1
-    local comInfo = (self._seasonMazeObj):GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+    self._goTr.anchoredPosition = Vector2(170, -182)
+    self._goTr.localScale = Vector3(1, 1, 1)
+    self._goAlpha.alpha = 1
+    local comInfo = self._seasonMazeObj:GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
     self._missionInfoList = comInfo.boss_info
     self._isLastBoss = false
     self._missionInfo = nil
-    self._currIdx = (table.count)(self._missionInfoList)
+    self._currIdx = table.count(self._missionInfoList)
     self._finishIdx = 0
-    for i = 0, (table.count)(self._missionInfoList) - 1 do
-      local val = (self._missionInfoList)[i]
+    for i = 0, table.count(self._missionInfoList) - 1 do
+      local val = self._missionInfoList[i]
       if val.do_cnt ~= -1 then
         self._missionInfo = val
         self._currIdx = i + 1
-        if i + 1 == (table.count)(self._missionInfoList) then
+        if i + 1 == table.count(self._missionInfoList) then
           self._isLastBoss = true
         end
         break
       end
       self._finishIdx = i + 1
     end
-    do
-      self:PlayAnim(134, hideAnim, function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._alpha).alpha = 1
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._tr).localScale = Vector3.one
-    self:SetCurrentAtkBoss()
-  end
-)
-    end
+    self:PlayAnim(134, hideAnim, function()
+      self._alpha.alpha = 1
+      self._tr.localScale = Vector3.one
+      self:SetCurrentAtkBoss()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBossAtk.SetCurrentAtkBoss = function(self)
-  -- function num : 0_6
+function UISeasonMazeBossAtk:SetCurrentAtkBoss()
   if not self._missionInfo then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   self:SetMonsterInfo()
   self:SetTurnInfo()
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBossAtk.SetMonsterInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local missionid = (self._missionInfo).cfg_id
+function UISeasonMazeBossAtk:SetMonsterInfo()
+  local missionid = self._missionInfo.cfg_id
   if not missionid then
-    (Log.error)("###[UISeasonMazeBossAtk] not missionid !")
-    return 
+    Log.error("###[UISeasonMazeBossAtk] not missionid !")
+    return
   end
-  local cfg_mission = (Cfg.cfg_season_maze_mission)[missionid]
+  local cfg_mission = Cfg.cfg_season_maze_mission[missionid]
   local levelid = cfg_mission.FightLevel
-  local monsterIDs = (UICommonHelper:GetInstance()):GetOptimalEnemys(levelid)
+  local monsterIDs = UICommonHelper:GetInstance():GetOptimalEnemys(levelid)
   local bossid = monsterIDs[1]
-  local cfg_monster = (Cfg.cfg_monster)[bossid]
+  local cfg_monster = Cfg.cfg_monster[bossid]
   if not cfg_monster then
-    (Log.error)("###[UISeasonMazeBossAtk] cfg_monster is nil ! id :", bossid)
+    Log.error("###[UISeasonMazeBossAtk] cfg_monster is nil ! id :", bossid)
   end
-  local cfg_monster_class = (Cfg.cfg_monster_class)[cfg_monster.ClassID]
+  local cfg_monster_class = Cfg.cfg_monster_class[cfg_monster.ClassID]
   if not cfg_monster_class then
-    (Log.error)("###[UISeasonMazeBossAtk] cfg_monster_class is nil ! id:", cfg_monster.ClassID)
+    Log.error("###[UISeasonMazeBossAtk] cfg_monster_class is nil ! id:", cfg_monster.ClassID)
   end
   local head = cfg_monster_class.HeadIcon
-  ;
-  (self._headIcon):LoadImage(head)
-  ;
-  (self._warning):SetActive(not self._isLastBoss)
-  ;
-  (self._warning2):SetActive(self._isLastBoss)
+  self._headIcon:LoadImage(head)
+  self._warning:SetActive(not self._isLastBoss)
+  self._warning2:SetActive(self._isLastBoss)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBossAtk.GetImgFillVal = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local com = (self._seasonMazeObj):GetMazeComponent()
+function UISeasonMazeBossAtk:GetImgFillVal()
+  local com = self._seasonMazeObj:GetMazeComponent()
   local turn = com:GetAttrValue(SeasonMazeAttrType.SMAT_Round)
-  local rate2 = ((self._missionInfo).cfg_wave - turn) / (self._missionInfo).cfg_wave
-  local rate = (self._currIdx - 1) / (table.count)(self._missionInfoList) + rate2 * (1 / (table.count)(self._missionInfoList))
+  local rate2 = (self._missionInfo.cfg_wave - turn) / self._missionInfo.cfg_wave
+  local rate = (self._currIdx - 1) / table.count(self._missionInfoList) + rate2 * (1 / table.count(self._missionInfoList))
   return rate
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBossAtk.SetTurnInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local com = (self._seasonMazeObj):GetMazeComponent()
+function UISeasonMazeBossAtk:SetTurnInfo()
+  local com = self._seasonMazeObj:GetMazeComponent()
   local turn = com:GetAttrValue(SeasonMazeAttrType.SMAT_Round)
-  ;
-  (self._turnTex):SetText(tostring(turn))
+  self._turnTex:SetText(tostring(turn))
   local rate = self:GetImgFillVal()
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rateImg).fillAmount = rate
-  local width = ((self._rateImgBg).sizeDelta).x
+  self._rateImg.fillAmount = rate
+  local width = self._rateImgBg.sizeDelta.x
   local pos = width * rate
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rateImgPos).anchoredPosition = Vector2(pos, 0)
+  self._rateImgPos.anchoredPosition = Vector2(pos, 0)
   for i = 1, #self._imgUnitList do
-    local go = (self._imgUnitList)[i]
+    local go = self._imgUnitList[i]
     if i == #self._imgUnitList then
-      (((go.transform):GetChild(0)).gameObject):SetActive(false)
-      ;
-      (((go.transform):GetChild(1)).gameObject):SetActive(true)
+      go.transform:GetChild(0).gameObject:SetActive(false)
+      go.transform:GetChild(1).gameObject:SetActive(true)
     else
-      ;
-      (((go.transform):GetChild(1)).gameObject):SetActive(false)
-      ;
-      (((go.transform):GetChild(0)).gameObject):SetActive(true)
+      go.transform:GetChild(1).gameObject:SetActive(false)
+      go.transform:GetChild(0).gameObject:SetActive(true)
     end
     if i <= self._finishIdx then
-      (((go.transform):GetChild(2)).gameObject):SetActive(true)
-      ;
-      ((((go.transform):GetChild(0)).gameObject):GetComponent("Image")).color = Color(0.5, 0.5, 0.5, 1)
-      ;
-      ((((go.transform):GetChild(1)).gameObject):GetComponent("Image")).color = Color(0.5, 0.5, 0.5, 1)
+      go.transform:GetChild(2).gameObject:SetActive(true)
+      go.transform:GetChild(0).gameObject:GetComponent("Image").color = Color(0.5, 0.5, 0.5, 1)
+      go.transform:GetChild(1).gameObject:GetComponent("Image").color = Color(0.5, 0.5, 0.5, 1)
     else
-      ;
-      (((go.transform):GetChild(2)).gameObject):SetActive(false)
-      ;
-      ((((go.transform):GetChild(0)).gameObject):GetComponent("Image")).color = Color(1, 1, 1, 1)
-      ;
-      ((((go.transform):GetChild(1)).gameObject):GetComponent("Image")).color = Color(1, 1, 1, 1)
+      go.transform:GetChild(2).gameObject:SetActive(false)
+      go.transform:GetChild(0).gameObject:GetComponent("Image").color = Color(1, 1, 1, 1)
+      go.transform:GetChild(1).gameObject:GetComponent("Image").color = Color(1, 1, 1, 1)
     end
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBossAtk.OnHide = function(self)
-  -- function num : 0_10
+function UISeasonMazeBossAtk:OnHide()
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBossAtk.BossAtkAnim = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (self._anim2):Stop()
-  ;
-  (self._anim2):Play("uieff_UISeasonMazeBossAtk_out")
+function UISeasonMazeBossAtk:BossAtkAnim()
+  self._anim2:Stop()
+  self._anim2:Play("uieff_UISeasonMazeBossAtk_out")
   self:ShowAtkBossInfo(SeasonMazeAttrType.SMAT_Round)
 end
-
-

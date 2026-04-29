@@ -1,51 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/level/ui_activity_n33_level_list.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33LevelList", UIController)
 UIActivityN33LevelList = UIActivityN33LevelList
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN33LevelList.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN33LevelList:OnShow(uiParams)
   self:AttachEvent(GameEventType.UIActivityN33LevelRefresh, self.RefreshHandle)
   self._levelController = uiParams[1]
   self._normal = self:GetGameObject("NormalBG")
   self._hard = self:GetGameObject("HardBG")
   self._loader = self:GetUIComponent("UISelectObjectPath", "Levels")
-  ;
-  (self._levelController):SetBuildForcusStatus(true)
+  self._levelController:SetBuildForcusStatus(true)
   self._scrollRect = self:GetUIComponent("ScrollRect", "Scroll View")
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelList.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN33LevelList:OnHide()
   self:DetachEvent(GameEventType.UIActivityN33LevelRefresh, self.RefreshHandle)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelList.RefreshHandle = function(self)
-  -- function num : 0_2
+function UIActivityN33LevelList:RefreshHandle()
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelList.Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local levelType = (self._levelController):GetLevelType()
-  ;
-  (self._normal):SetActive(levelType == 1)
-  ;
-  (self._hard):SetActive(levelType == 2)
+function UIActivityN33LevelList:Refresh()
+  local levelType = self._levelController:GetLevelType()
+  self._normal:SetActive(levelType == 1)
+  self._hard:SetActive(levelType == 2)
   local missions = {}
-  local builds = ((self._levelController):GetCurrentBuildDatas())
-  local currentLevel = nil
+  local builds = self._levelController:GetCurrentBuildDatas()
+  local currentLevel
   for i = 1, #builds do
     local build = builds[i]
     local cur = build:GetCurrentLevel()
@@ -60,150 +41,103 @@ UIActivityN33LevelList.Refresh = function(self)
       end
     end
   end
-  ;
-  (self._loader):SpawnObjects("UIActivityN33LevelListItem", #missions)
-  local levels = (self._loader):GetAllSpawnList()
+  self._loader:SpawnObjects("UIActivityN33LevelListItem", #missions)
+  local levels = self._loader:GetAllSpawnList()
   for i = 1, #levels do
-    (levels[i]):SetData(currentLevel, missions[i], function(data)
-    -- function num : 0_3_0 , upvalues : _ENV, self
-    local lineComponent = data:GetComponent()
-    if not lineComponent:ComponentIsOpen() then
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-      self:CloseDialog()
-      return 
-    end
-    self:EnterLevel(data)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-    UIActivityN33LevelController.FromLevelList = true
-  end
-)
+    levels[i]:SetData(currentLevel, missions[i], function(data)
+      local lineComponent = data:GetComponent()
+      if not lineComponent:ComponentIsOpen() then
+        ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+        self:CloseDialog()
+        return
+      end
+      self:EnterLevel(data)
+      UIActivityN33LevelController.FromLevelList = true
+    end)
   end
   self:MoveToLast()
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelList.MoveToLast = function(self)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._scrollRect).verticalNormalizedPosition = 0
+function UIActivityN33LevelList:MoveToLast()
+  self._scrollRect.verticalNormalizedPosition = 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelList.EnterLevel = function(self, data)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN33LevelList:EnterLevel(data)
   if data:GetLevelType() == DiscoveryStageType.Plot then
-    local missionCfg = (Cfg.cfg_campaign_mission)[data:GetMissionId()]
-    local titleId = (StringTable.Get)(missionCfg.Title)
-    local titleName = (StringTable.Get)(missionCfg.Name)
-    local missionModule = (GameGlobal.GetModule)(MissionModule)
+    local missionCfg = Cfg.cfg_campaign_mission[data:GetMissionId()]
+    local titleId = StringTable.Get(missionCfg.Title)
+    local titleName = StringTable.Get(missionCfg.Name)
+    local missionModule = GameGlobal.GetModule(MissionModule)
     local storyId = missionModule:GetStoryByStageIdStoryType(data:GetMissionId(), StoryTriggerType.Node)
     if not storyId then
-      (Log.exception)("配置错误,找不到剧情,关卡id:", data:GetMissionId())
-      return 
+      Log.exception("配置错误,找不到剧情,关卡id:", data:GetMissionId())
+      return
     end
     self:ShowDialog("UIActivityPlotEnter", titleId, titleName, storyId, function()
-    -- function num : 0_5_0 , upvalues : self, data
-    self:PlotEndCallback(data)
+      self:PlotEndCallback(data)
+    end)
+    return
   end
-)
-    return 
-  end
-  do
-    local componentInfo = data:GetComponentInfo()
-    local missionCfg = (Cfg.cfg_campaign_mission)[data:GetMissionId()]
-    local autoFightShow = self:CheckSerialAutoFightShow(missionCfg.Type, data:GetMissionId())
-    self:ShowDialog("UIActivityLevelStageNew", data:GetMissionId(), (componentInfo.m_pass_mission_info)[data:GetMissionId()], data:GetComponent(), autoFightShow, nil, nil, nil, nil, nil, false, true)
-  end
+  local componentInfo = data:GetComponentInfo()
+  local missionCfg = Cfg.cfg_campaign_mission[data:GetMissionId()]
+  local autoFightShow = self:CheckSerialAutoFightShow(missionCfg.Type, data:GetMissionId())
+  self:ShowDialog("UIActivityLevelStageNew", data:GetMissionId(), componentInfo.m_pass_mission_info[data:GetMissionId()], data:GetComponent(), autoFightShow, nil, nil, nil, nil, nil, false, true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelList.CheckSerialAutoFightShow = function(self, stageType, stageId)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN33LevelList:CheckSerialAutoFightShow(stageType, stageId)
   local autoFightShow = false
   if stageType == DiscoveryStageType.Plot then
     autoFightShow = false
   else
-    local missionCfg = (Cfg.cfg_campaign_mission)[stageId]
+    local missionCfg = Cfg.cfg_campaign_mission[stageId]
     if missionCfg then
       local enableParam = missionCfg.EnableSerialAutoFight
       if enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_DISABLE then
         autoFightShow = false
-      else
-        if enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_ENABLE or enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_NEED_UNLOCK then
-          autoFightShow = true
-        end
+      elseif enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_ENABLE or enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_NEED_UNLOCK then
+        autoFightShow = true
       end
     end
   end
-  do
-    return autoFightShow
-  end
+  return autoFightShow
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelList.PlotEndCallback = function(self, data)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityN33LevelList:PlotEndCallback(data)
   local lineComponent = data:GetComponent()
   local stageId = data:GetMissionId()
   local isActive = lineComponent:IsPassCamMissionID(stageId)
   if isActive then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : lineComponent, stageId, _ENV, self
     lineComponent:SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
     local res = AsyncRequestRes:New()
     local award = lineComponent:HandleCompleteStoryMission(TT, res, stageId)
     if not res:GetSucc() then
-      local campModule = (GameGlobal.GetModule)(CampaignModule)
+      local campModule = GameGlobal.GetModule(CampaignModule)
     else
-      do
-        ;
-        (self._levelController):LoadData(TT)
-        if (table.count)(award) ~= 0 then
-          self:ShowDialog("UIGetItemController", award, function()
-      -- function num : 0_7_0_0 , upvalues : self
-      self:PlayPlotComplete()
-    end
-)
-        else
+      self._levelController:LoadData(TT)
+      if table.count(award) ~= 0 then
+        self:ShowDialog("UIGetItemController", award, function()
           self:PlayPlotComplete()
-        end
+        end)
+      else
+        self:PlayPlotComplete()
       end
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelList.PlayPlotComplete = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIActivityN33LevelRefresh)
+function UIActivityN33LevelList:PlayPlotComplete()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIActivityN33LevelRefresh)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelList.ClosBtnOnClick = function(self)
-  -- function num : 0_9
-  (self._levelController):SetBuildForcusStatus(false)
-  ;
-  (self._levelController):SetBtnsStatus(true)
+function UIActivityN33LevelList:ClosBtnOnClick()
+  self._levelController:SetBuildForcusStatus(false)
+  self._levelController:SetBtnsStatus(true)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelList.MaskOnClick = function(self)
-  -- function num : 0_10
+function UIActivityN33LevelList:MaskOnClick()
   self:ClosBtnOnClick()
 end
-
-

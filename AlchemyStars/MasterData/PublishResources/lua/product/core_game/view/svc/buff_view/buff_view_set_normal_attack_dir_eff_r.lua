@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_set_normal_attack_dir_eff_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSetNormalAttackDirEff", BuffViewBase)
 BuffViewSetNormalAttackDirEff = BuffViewSetNormalAttackDirEff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSetNormalAttackDirEff.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewSetNormalAttackDirEff:PlayView(TT)
   local result = self._buffResult
   local effectDirList = result:GetEffectDirList()
   local animName = result:GetAnimName()
@@ -16,151 +9,98 @@ BuffViewSetNormalAttackDirEff.PlayView = function(self, TT)
   local remove = result:GetRemove()
   local effectID = result:GetEffectID()
   local curRoundHadSave = result:GetCurRoundHadSave()
-  local effectHolder = (self._entity):EffectHolder()
+  local effectHolder = self._entity:EffectHolder()
   if not effectHolder then
-    (self._entity):AddEffectHolder()
-    effectHolder = (self._entity):EffectHolder()
+    self._entity:AddEffectHolder()
+    effectHolder = self._entity:EffectHolder()
   end
-  local effectService = (self._world):GetService("Effect")
+  local effectService = self._world:GetService("Effect")
   local startAnim = animName .. "start"
   local loopAnim = animName .. "loop"
   local removeAnim = animName .. "end"
-  for _,dirNum in ipairs(effectDirList) do
-    if not (table.icontains)(curRoundHadSave, dirNum) then
+  for _, dirNum in ipairs(effectDirList) do
+    if not table.icontains(curRoundHadSave, dirNum) then
       local effectKey = "SetNormalAttackDirEff" .. dirNum
       local effectIDList = effectHolder:GetEffectList(effectKey)
-      if effectIDList and (table.count)(effectIDList) > 0 then
-        do
-          for _,effID in ipairs(effectIDList) do
-            local effEntity = (self._world):GetEntityByID(effID)
-            do
-              if effEntity then
-                if remove == 1 then
-                  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : effEntity, _ENV, removeAnim, waitTime
-    local go = (effEntity:View()):GetGameObject()
-    local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
-    if go and anim and anim.clip and removeAnim then
-      anim:Play(removeAnim)
-      if waitTime then
-        YIELD(TT, waitTime)
-      end
-      go:SetActive(false)
-    end
-  end
-)
-                else
-                  local go = (effEntity:View()):GetGameObject()
-                  go:SetActive(true)
-                  ;
-                  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_1 , upvalues : go, _ENV, startAnim, waitTime, loopAnim
-    local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
-    if go and anim and anim.clip then
-      anim:Play(startAnim)
-      if waitTime then
-        YIELD(TT, waitTime)
-      end
-      anim:Play(loopAnim)
-    end
-  end
-)
+      if effectIDList and table.count(effectIDList) > 0 then
+        for _, effID in ipairs(effectIDList) do
+          local effEntity = self._world:GetEntityByID(effID)
+          if effEntity then
+            if remove == 1 then
+              GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+                local go = effEntity:View():GetGameObject()
+                local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
+                if go and anim and anim.clip and removeAnim then
+                  anim:Play(removeAnim)
+                  if waitTime then
+                    YIELD(TT, waitTime)
+                  end
+                  go:SetActive(false)
                 end
+              end)
+            else
+              do
+                local go = effEntity:View():GetGameObject()
+                go:SetActive(true)
+                GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+                  local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
+                  if go and anim and anim.clip then
+                    anim:Play(startAnim)
+                    if waitTime then
+                      YIELD(TT, waitTime)
+                    end
+                    anim:Play(loopAnim)
+                  end
+                end)
               end
             end
           end
         end
-      else
-        do
-          if effectID then
-            local newEffectEntity = nil
-            newEffectEntity(effectHolder, effectKey, (effectService:CreateEffect(effectID, self._entity)):GetID())
-            -- DECOMPILER ERROR at PC111: Overwrote pending register: R22 in 'AssignReg'
-
-            newEffectEntity = newEffectEntity(self, dirNum)
-            local dir = nil
-            dir = GameGlobal
-            dir = dir.TaskManager
-            dir = dir()
-            dir(dir, function(TT)
-    -- function num : 0_0_2 , upvalues : _ENV, newEffectEntity, dir, startAnim, waitTime, loopAnim
-    YIELD(TT)
-    newEffectEntity:SetDirection(dir)
-    local go = (newEffectEntity:View()):GetGameObject()
-    local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
-    if go and anim and anim.clip then
-      anim:Play(startAnim)
-      if waitTime then
-        YIELD(TT, waitTime)
-      end
-      anim:Play(loopAnim)
-    end
-  end
-)
+      elseif effectID then
+        local newEffectEntity = effectService:CreateEffect(effectID, self._entity)
+        effectHolder:AttachEffect(effectKey, newEffectEntity:GetID())
+        local dir = self:_CalcDir(dirNum)
+        GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+          YIELD(TT)
+          newEffectEntity:SetDirection(dir)
+          local go = newEffectEntity:View():GetGameObject()
+          local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
+          if go and anim and anim.clip then
+            anim:Play(startAnim)
+            if waitTime then
+              YIELD(TT, waitTime)
+            end
+            anim:Play(loopAnim)
           end
-          -- DECOMPILER ERROR at PC121: Confused about usage of register R21 for local variables in 'ReleaseLocals'
-
-          -- DECOMPILER ERROR at PC121: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC121: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC121: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC121: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC121: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+        end)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewSetNormalAttackDirEff.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewSetNormalAttackDirEff:IsNotifyMatch(notify)
   local result = self._buffResult
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewSetNormalAttackDirEff._CalcDir = function(self, dirNum)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffViewSetNormalAttackDirEff:_CalcDir(dirNum)
   local dir = Vector2(0, 0)
   if dirNum == BuffLogicSaveNormalAttackDirEnum.Up then
     dir = Vector2(0, 1)
-  else
-    if dirNum == BuffLogicSaveNormalAttackDirEnum.RightTop then
-      dir = Vector2(1, 1)
-    else
-      if dirNum == BuffLogicSaveNormalAttackDirEnum.Right then
-        dir = Vector2(1, 0)
-      else
-        if dirNum == BuffLogicSaveNormalAttackDirEnum.RightBottom then
-          dir = Vector2(1, -1)
-        else
-          if dirNum == BuffLogicSaveNormalAttackDirEnum.Down then
-            dir = Vector2(0, -1)
-          else
-            if dirNum == BuffLogicSaveNormalAttackDirEnum.LeftBottom then
-              dir = Vector2(-1, -1)
-            else
-              if dirNum == BuffLogicSaveNormalAttackDirEnum.Left then
-                dir = Vector2(-1, 0)
-              else
-                if dirNum == BuffLogicSaveNormalAttackDirEnum.LeftTop then
-                  dir = Vector2(-1, 1)
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif dirNum == BuffLogicSaveNormalAttackDirEnum.RightTop then
+    dir = Vector2(1, 1)
+  elseif dirNum == BuffLogicSaveNormalAttackDirEnum.Right then
+    dir = Vector2(1, 0)
+  elseif dirNum == BuffLogicSaveNormalAttackDirEnum.RightBottom then
+    dir = Vector2(1, -1)
+  elseif dirNum == BuffLogicSaveNormalAttackDirEnum.Down then
+    dir = Vector2(0, -1)
+  elseif dirNum == BuffLogicSaveNormalAttackDirEnum.LeftBottom then
+    dir = Vector2(-1, -1)
+  elseif dirNum == BuffLogicSaveNormalAttackDirEnum.Left then
+    dir = Vector2(-1, 0)
+  elseif dirNum == BuffLogicSaveNormalAttackDirEnum.LeftTop then
+    dir = Vector2(-1, 1)
   end
   return dir
 end
-
-

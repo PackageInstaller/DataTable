@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/pet/pet_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PetModule", GameModule)
 PetModule = PetModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PetModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PetModule:Constructor()
   self._pets = {}
   self._petTabs = {}
   self._petskins = {}
@@ -16,213 +9,145 @@ PetModule.Constructor = function(self)
   self._leftAffinityAddCount = 0
   self._maxAffinityAddCount = 0
   self._newPetList = {}
-  self.petSkillRes = (ResourceHelper:GetInstance()):GetPetSKill()
+  self.petSkillRes = ResourceHelper:GetInstance():GetPetSKill()
   self.PetSortChooseSecondAttribute = false
   self.PetSortElementIndex = 0
   self._equipRefineNew = false
   self._property_cultivate_data = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self.caller):RegisterPushHandler(CEventNotifyPetChange, self.HandlePetChange, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventNotifyAffinityAddCount, self.HandleAffinityAddCount, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventUpdateNewPetList, self.HandleUpdateNewPetList, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventNotifyPetSkinChange, self.HandlePetSkinChange, self)
+function PetModule:Init()
+  self.caller:RegisterPushHandler(CEventNotifyPetChange, self.HandlePetChange, self)
+  self.caller:RegisterPushHandler(CEventNotifyAffinityAddCount, self.HandleAffinityAddCount, self)
+  self.caller:RegisterPushHandler(CEventUpdateNewPetList, self.HandleUpdateNewPetList, self)
+  self.caller:RegisterPushHandler(CEventNotifyPetSkinChange, self.HandlePetSkinChange, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.Update = function(self)
-  -- function num : 0_2
+function PetModule:Update()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.GetPets = function(self)
-  -- function num : 0_3
+function PetModule:GetPets()
   return self._pets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.GetPetTabs = function(self)
-  -- function num : 0_4
+function PetModule:GetPetTabs()
   return self._petTabs
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.GetAllPetsSnapshoot = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function PetModule:GetAllPetsSnapshoot()
   self._tmpSnapShoot = {}
-  for k,v in pairs(self._pets) do
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._tmpSnapShoot)[v:GetTemplateID()] = 1
+  for k, v in pairs(self._pets) do
+    self._tmpSnapShoot[v:GetTemplateID()] = 1
   end
-  return 
+  return
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.BeInSnapshoot = function(self, templateId)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._tmpSnapShoot)[templateId] == nil then
-    (self._tmpSnapShoot)[templateId] = 1
+function PetModule:BeInSnapshoot(templateId)
+  if self._tmpSnapShoot[templateId] == nil then
+    self._tmpSnapShoot[templateId] = 1
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.GetMaxStarResult = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function PetModule:GetMaxStarResult()
   self:GetAllPetsSnapshoot()
-  for k,v in pairs(self._pets) do
-    if (v._cfg_pet).Star == 6 then
+  for k, v in pairs(self._pets) do
+    if v._cfg_pet.Star == 6 then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.GetPet = function(self, pstid)
-  -- function num : 0_8
-  return (self._pets)[pstid]
+function PetModule:GetPet(pstid)
+  return self._pets[pstid]
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.GetPetByTemplateId = function(self, template_id)
-  -- function num : 0_9
+function PetModule:GetPetByTemplateId(template_id)
   if template_id == nil then
     return nil
   end
-  return (self._petTabs)[template_id]
+  return self._petTabs[template_id]
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.HasPet = function(self, template_id)
-  -- function num : 0_10
+function PetModule:HasPet(template_id)
   if template_id == nil then
     return nil
   end
-  if (self._petTabs)[template_id] ~= nil then
+  if self._petTabs[template_id] ~= nil then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.IsPetID = function(self, tmpID)
-  -- function num : 0_11 , upvalues : _ENV
-  do return RoleAssetID.RoleAssetPetBegin <= tmpID and tmpID <= RoleAssetID.RoleAssetPetEnd end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function PetModule:IsPetID(tmpID)
+  return tmpID >= RoleAssetID.RoleAssetPetBegin and tmpID <= RoleAssetID.RoleAssetPetEnd
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.GetLeftAffinityAddCount = function(self)
-  -- function num : 0_12
+function PetModule:GetLeftAffinityAddCount()
   return self._leftAffinityAddCount
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.GetMaxAffinityAddCount = function(self)
-  -- function num : 0_13
+function PetModule:GetMaxAffinityAddCount()
   return self._maxAffinityAddCount
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.GetIntersection = function(count1, s1, count2, s2)
-  -- function num : 0_14 , upvalues : _ENV
+function PetModule.GetIntersection(count1, s1, count2, s2)
   if count1 == 0 and count2 ~= 0 then
     return s2
-  else
-    if count2 == 0 and count1 ~= 0 then
-      return s1
-    end
+  elseif count2 == 0 and count1 ~= 0 then
+    return s1
   end
   local out = {}
-  for _,e in pairs(s1) do
-    if (table.icontains)(s2, e) then
-      (table.insert)(out, e)
+  for _, e in pairs(s1) do
+    if table.icontains(s2, e) then
+      table.insert(out, e)
     end
   end
   return out
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.ComparePetMood = function(self, args)
-  -- function num : 0_15
-  if args.a_star == args.b_star then
-    if args.a_tpl_id >= args.b_tpl_id then
-      do return args.a_mood ~= args.b_mood end
-      do return args.b_star < args.a_star end
-      if args.b_mood >= args.a_mood then
-        do return not args.mood_order end
-        do return args.a_mood < args.b_mood end
-        -- DECOMPILER ERROR: 8 unprocessed JMP targets
-      end
+function PetModule:ComparePetMood(args)
+  if args.a_mood == args.b_mood then
+    if args.a_star == args.b_star then
+      return args.a_tpl_id < args.b_tpl_id
+    else
+      return args.a_star > args.b_star
     end
+  elseif args.mood_order then
+    return args.a_mood > args.b_mood
+  else
+    return args.a_mood < args.b_mood
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.ComparePet = function(self, args)
-  -- function num : 0_16
+function PetModule:ComparePet(args)
   if args.a_skill_related and args.b_skill_related then
     return self:ComparePetMood(args)
+  elseif args.a_skill_related == false and args.b_skill_related == false then
+    return self:ComparePetMood(args)
   else
-    if args.a_skill_related == false and args.b_skill_related == false then
-      return self:ComparePetMood(args)
-    else
-      return args.a_skill_related
-    end
+    return args.a_skill_related
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.CompareEntertainPet = function(self, args)
-  -- function num : 0_17
+function PetModule:CompareEntertainPet(args)
   if args.a_mood == 0 then
     if args.a_mood == args.b_mood then
       return self:ComparePet(args)
     end
     return self:ComparePetMood(args)
+  elseif args.b_mood == 0 then
+    return self:ComparePetMood(args)
   else
-    if args.b_mood == 0 then
-      return self:ComparePetMood(args)
-    else
-      return self:ComparePet(args)
-    end
+    return self:ComparePet(args)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-PetModule.IsContainsPet = function(self, room_pets, pet_id)
-  -- function num : 0_18 , upvalues : _ENV
-  for j,BigPet in pairs(room_pets) do
-    if (BigPet.Pet):GetPstID() == pet_id then
+function PetModule:IsContainsPet(room_pets, pet_id)
+  for j, BigPet in pairs(room_pets) do
+    if BigPet.Pet:GetPstID() == pet_id then
       return true
     end
   end
@@ -230,33 +155,33 @@ PetModule.IsContainsPet = function(self, room_pets, pet_id)
 end
 
 local PetStatus = {Selected = 0, NotSelected = 1}
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
 
-PetModule.GetOtherNoRoomPets = function(self, room_pets)
-  -- function num : 0_19 , upvalues : _ENV, PetStatus
+function PetModule:GetOtherNoRoomPets(room_pets)
   local other_no_room_pets = {}
   local allpets = self:GetPets()
   local c = 1
-  for _i,pet in pairs(allpets) do
+  for _i, pet in pairs(allpets) do
     if not self:IsContainsPet(room_pets, pet:GetPstID()) then
-      other_no_room_pets[c] = {Status = PetStatus.NotSelected, SpaceID = -1, RoomType = -1, Pet = pet}
+      other_no_room_pets[c] = {
+        Status = PetStatus.NotSelected,
+        SpaceID = -1,
+        RoomType = -1,
+        Pet = pet
+      }
       c = c + 1
     end
   end
   return other_no_room_pets
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetChoosePet = function(self, pets, choose_types)
-  -- function num : 0_20 , upvalues : _ENV
+function PetModule:GetChoosePet(pets, choose_types)
   if choose_types == nil or #choose_types == 0 then
     return pets
   end
   local choose_pets = {}
   local i = 1
-  for _,pet in pairs(pets) do
-    if (pet.Pet):HaveType(choose_types) then
+  for _, pet in pairs(pets) do
+    if pet.Pet:HaveType(choose_types) then
       choose_pets[i] = pet
       i = i + 1
     end
@@ -264,39 +189,32 @@ PetModule.GetChoosePet = function(self, pets, choose_types)
   return choose_pets
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.MergeTables = function(self, ...)
-  -- function num : 0_21 , upvalues : _ENV
-  local tabs = {...}
+function PetModule:MergeTables(...)
+  local tabs = {
+    ...
+  }
   if not tabs then
     return {}
   end
   local origin = tabs[1]
   for i = 2, #tabs do
-    if origin and tabs[i] then
-      for k,v in pairs(tabs[i]) do
-        (table.insert)(origin, v)
+    if origin then
+      if tabs[i] then
+        for k, v in pairs(tabs[i]) do
+          table.insert(origin, v)
+        end
       end
-    end
-    do
-      do
-        origin = tabs[i]
-        -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    else
+      origin = tabs[i]
     end
   end
   return origin
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetSortPets = function(self, pets)
-  -- function num : 0_22 , upvalues : _ENV, PetStatus
+function PetModule:GetSortPets(pets)
   local res_pets = {}
   local i = 1
-  for _,pet in pairs(pets) do
+  for _, pet in pairs(pets) do
     if pet.SpaceID == -1 and pet.Status ~= PetStatus.Selected then
       res_pets[i] = pet
       i = i + 1
@@ -305,112 +223,94 @@ PetModule.GetSortPets = function(self, pets)
   return res_pets
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.SortPetsForAircraft = function(self, room, sortCls, petlist)
-  -- function num : 0_23 , upvalues : _ENV, PetStatus
+function PetModule:SortPetsForAircraft(room, sortCls, petlist)
   local room_pets = {}
   local other_room_pets = {}
   local space_id = room:SpaceId()
   local room_type_id = room:GetRoomType()
-  local aricraft = (GameGlobal.GetModule)(AircraftModule)
-  room_pets = aricraft:GetPets(space_id)
+  local aricraft = GameGlobal.GetModule(AircraftModule)
+  room_pets, other_room_pets = aricraft:GetPets(space_id)
   local all_room_pets = {}
   all_room_pets = self:MergeTables(all_room_pets, room_pets, other_room_pets)
   local other_no_room_pets = self:GetOtherNoRoomPets(all_room_pets)
   local all_pets = {}
   if petlist == nil then
-    for i,pet in pairs(room_pets) do
+    for i, pet in pairs(room_pets) do
       pet.Status = PetStatus.Selected
     end
     all_pets = self:MergeTables(all_pets, room_pets, other_room_pets, other_no_room_pets)
   else
     local all_pets = self:MergeTables(all_pets, all_room_pets, other_no_room_pets)
-    for i,pet in pairs(all_pets) do
-      for i,pet_id in pairs(petlist) do
-        if (pet.Pet):GetPstID() == pet_id then
+    for i, pet in pairs(all_pets) do
+      for i, pet_id in pairs(petlist) do
+        if pet.Pet:GetPstID() == pet_id then
           pet.Status = PetStatus.Selected
         end
       end
     end
   end
-  do
-    local out = {}
-    if (table.icontains)(sortCls._chooseType, AircraftEnterChooseType.None) then
-      out = all_pets
+  local out = {}
+  if table.icontains(sortCls._chooseType, AircraftEnterChooseType.None) then
+    out = all_pets
+  else
+    local select_pets = {}
+    local i = 1
+    for _, pet in pairs(all_pets) do
+      if pet.Status == PetStatus.Selected then
+        select_pets[i] = pet
+        i = i + 1
+      end
+    end
+    if table.icontains(sortCls._chooseType, AircraftEnterChooseType.NotEnter) then
+      out = self:GetSortPets(other_no_room_pets)
     else
-      local select_pets = {}
-      local i = 1
-      for _,pet in pairs(all_pets) do
-        if pet.Status == PetStatus.Selected then
-          select_pets[i] = pet
-          i = i + 1
-        end
-      end
-      if (table.icontains)(sortCls._chooseType, AircraftEnterChooseType.NotEnter) then
-        out = self:GetSortPets(other_no_room_pets)
-      else
-        local other_choose_pets = self:GetChoosePet(all_pets, sortCls._chooseType)
-        out = self:GetSortPets(other_choose_pets)
-      end
-      do
-        do
-          out = self:MergeTables(out, select_pets)
-          local mood_order = true
-          if sortCls._sortType == AircraftEnterSortType.Mood and sortCls._sortOrder == AircraftEnterSortOrder.DownToUp then
-            mood_order = false
-          end
-          local compare_func = self.ComparePet
-          if room:GetRoomType() == AirRoomType.EntertainRoom then
-            compare_func = self.CompareEntertainPet
-          end
-          ;
-          (table.sort)(out, function(a, b)
-    -- function num : 0_23_0 , upvalues : room_type_id, mood_order, PetStatus, compare_func, self, sortCls, _ENV
+      local other_choose_pets = self:GetChoosePet(all_pets, sortCls._chooseType)
+      out = self:GetSortPets(other_choose_pets)
+    end
+    out = self:MergeTables(out, select_pets)
+  end
+  local mood_order = true
+  if sortCls._sortType == AircraftEnterSortType.Mood and sortCls._sortOrder == AircraftEnterSortOrder.DownToUp then
+    mood_order = false
+  end
+  local compare_func = self.ComparePet
+  if room:GetRoomType() == AirRoomType.EntertainRoom then
+    compare_func = self.CompareEntertainPet
+  end
+  table.sort(out, function(a, b)
     local args = {}
-    args.a_skill_related = (a.Pet):SkillRelated(room_type_id)
-    args.b_skill_related = (b.Pet):SkillRelated(room_type_id)
-    args.a_tpl_id = (a.Pet):GetTemplateID()
-    args.b_tpl_id = (b.Pet):GetTemplateID()
-    args.a_star = (a.Pet):GetPetStar()
-    args.b_star = (b.Pet):GetPetStar()
+    args.a_skill_related = a.Pet:SkillRelated(room_type_id)
+    args.b_skill_related = b.Pet:SkillRelated(room_type_id)
+    args.a_tpl_id = a.Pet:GetTemplateID()
+    args.b_tpl_id = b.Pet:GetTemplateID()
+    args.a_star = a.Pet:GetPetStar()
+    args.b_star = b.Pet:GetPetStar()
     args.mood_order = mood_order
     if a.Status == PetStatus.Selected and b.Status == PetStatus.Selected then
       return compare_func(self, args)
-    else
-      if a.Status ~= PetStatus.Selected and b.Status ~= PetStatus.Selected then
-        if sortCls._sortType == AircraftEnterSortType.Mood then
-          return compare_func(self, args)
-        else
-          if sortCls._sortType == AircraftEnterSortType.WorkState then
-            if a.SpaceID == -1 then
-              if a.SpaceID == b.SpaceID then
-                return compare_func(self, args)
-              end
-              return sortCls._sortOrder == AircraftEnterSortOrder.UpToDown
-            elseif sortCls._sortOrder ~= AircraftEnterSortOrder.DownToUp then
-              do return b.SpaceID ~= -1 end
-              do return compare_func(self, args) end
-              do return a.Status == PetStatus.Selected end
-              -- DECOMPILER ERROR: 7 unprocessed JMP targets
-            end
+    elseif a.Status ~= PetStatus.Selected and b.Status ~= PetStatus.Selected then
+      if sortCls._sortType == AircraftEnterSortType.Mood then
+        return compare_func(self, args)
+      elseif sortCls._sortType == AircraftEnterSortType.WorkState then
+        if a.SpaceID == -1 then
+          if a.SpaceID == b.SpaceID then
+            return compare_func(self, args)
           end
+          return sortCls._sortOrder == AircraftEnterSortOrder.UpToDown
+        elseif b.SpaceID == -1 then
+          return sortCls._sortOrder == AircraftEnterSortOrder.DownToUp
+        else
+          return compare_func(self, args)
         end
       end
+    else
+      return a.Status == PetStatus.Selected
     end
-  end
-)
-          return out
-        end
-      end
-    end
-  end
+  end)
+  return out
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.SortPets = function(self, filters)
-  -- function num : 0_24 , upvalues : _ENV
+function PetModule:SortPets(filters)
   local out = {}
   local out_element = {}
   local out_first_tags = {}
@@ -422,73 +322,57 @@ PetModule.SortPets = function(self, filters)
   local first_tags = filters.tag_list
   local seconde_tags = filters.secondeTag_list
   if #elements + #first_tags + #seconde_tags == 0 then
-    for pstid,pet in pairs(self._pets) do
-      (table.insert)(out, pet)
+    for pstid, pet in pairs(self._pets) do
+      table.insert(out, pet)
     end
   else
-    do
-      for pstid,pet in pairs(self._pets) do
-        local es = pet:GetPetElements()
-        for _,e in pairs(es) do
-          if (table.icontains)(elements, e) then
-            (table.insert)(out_element, pet)
+    for pstid, pet in pairs(self._pets) do
+      local es = pet:GetPetElements()
+      for _, e in pairs(es) do
+        if table.icontains(elements, e) then
+          table.insert(out_element, pet)
+          break
+        end
+      end
+      local ts = pet:GetPetTags()
+      if table.icontains(first_tags, ts[1]) then
+        table.insert(out_first_tags, pet)
+      end
+      if 2 <= #ts then
+        for i = 2, #ts do
+          if table.icontains(seconde_tags, ts[i]) then
+            table.insert(out_second_tags, pet)
             break
           end
         end
-        do
-          local ts = pet:GetPetTags()
-          if (table.icontains)(first_tags, ts[1]) then
-            (table.insert)(out_first_tags, pet)
-          end
-          if #ts >= 2 then
-            for i = 2, #ts do
-              if (table.icontains)(seconde_tags, ts[i]) then
-                (table.insert)(out_second_tags, pet)
-                break
-              end
-            end
-          end
-          do
-            -- DECOMPILER ERROR at PC92: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
-      end
-      do
-        local temp = (self.GetIntersection)(#elements, out_element, #first_tags, out_first_tags)
-        temp = (self.GetIntersection)(#elements + #first_tags, temp, #seconde_tags, out_second_tags)
-        if temp ~= nil then
-          (table.append)(out, temp)
-        end
-        local sort_type = filters.sort_type
-        local sort_order = filters.sort_order
-        local default_order = PetSortOrder.Descending
-        if PetSortType.Element == sort_type then
-          default_order = PetSortOrder.Ascending
-        end
-        ;
-        (table.sort)(out, function(a, b)
-    -- function num : 0_24_0 , upvalues : sort_order, default_order, sort_type
-    if a:GetSortValue(sort_type) >= b:GetSortValue(sort_type) and (a:GetSortValue(sort_type) ~= b:GetSortValue(sort_type) or b:GetPetStar() >= a:GetPetStar()) and (a:GetSortValue(sort_type) ~= b:GetSortValue(sort_type) or a:GetPetStar() ~= b:GetPetStar() or a:GetTemplateID() >= b:GetTemplateID()) then
-      do return sort_order ~= default_order end
-      do return b:GetSortValue(sort_type) < a:GetSortValue(sort_type) or (a:GetSortValue(sort_type) == b:GetSortValue(sort_type) and b:GetPetStar() < a:GetPetStar()) or (a:GetSortValue(sort_type) == b:GetSortValue(sort_type) and a:GetPetStar() == b:GetPetStar() and a:GetTemplateID() < b:GetTemplateID()) end
-      -- DECOMPILER ERROR: 6 unprocessed JMP targets
-    end
-  end
-)
-        return out
       end
     end
+    local temp = self.GetIntersection(#elements, out_element, #first_tags, out_first_tags)
+    temp = self.GetIntersection(#elements + #first_tags, temp, #seconde_tags, out_second_tags)
+    if temp ~= nil then
+      table.append(out, temp)
+    end
   end
+  local sort_type = filters.sort_type
+  local sort_order = filters.sort_order
+  local default_order = PetSortOrder.Descending
+  if PetSortType.Element == sort_type then
+    default_order = PetSortOrder.Ascending
+  end
+  table.sort(out, function(a, b)
+    if sort_order == default_order then
+      return a:GetSortValue(sort_type) < b:GetSortValue(sort_type) or a:GetSortValue(sort_type) == b:GetSortValue(sort_type) and a:GetPetStar() > b:GetPetStar() or a:GetSortValue(sort_type) == b:GetSortValue(sort_type) and a:GetPetStar() == b:GetPetStar() and a:GetTemplateID() < b:GetTemplateID()
+    else
+      return a:GetSortValue(sort_type) > b:GetSortValue(sort_type) or a:GetSortValue(sort_type) == b:GetSortValue(sort_type) and a:GetPetStar() > b:GetPetStar() or a:GetSortValue(sort_type) == b:GetSortValue(sort_type) and a:GetPetStar() == b:GetPetStar() and a:GetTemplateID() < b:GetTemplateID()
+    end
+  end)
+  return out
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetPetExpItems = function(self, pet_pstid, filter)
-  -- function num : 0_25 , upvalues : _ENV
+function PetModule:GetPetExpItems(pet_pstid, filter)
   local pet = self:GetPet(pet_pstid)
   if pet == nil then
-    (Log.fatal)("Not find pet, pstid=", pet_pstid)
+    Log.fatal("Not find pet, pstid=", pet_pstid)
     return {}
   end
   local itemMd = self:GetModule(ItemModule)
@@ -500,90 +384,62 @@ PetModule.GetPetExpItems = function(self, pet_pstid, filter)
   if filter then
     local temp = {}
     local cfg = Cfg.cfg_item_pet_exp
-    for index,value in ipairs(items) do
-      if (cfg[value:GetTemplateID()]).Element == element or (cfg[value:GetTemplateID()]).Element == 0 then
-        (table.insert)(temp, value)
+    for index, value in ipairs(items) do
+      if cfg[value:GetTemplateID()].Element == element or cfg[value:GetTemplateID()].Element == 0 then
+        table.insert(temp, value)
       end
     end
     items = temp
   end
-  do
-    ;
-    (table.sort)(items, function(a, b)
-    -- function num : 0_25_0 , upvalues : _ENV, element
-    local ea = ((Cfg.cfg_item_pet_exp)[a:GetTemplateID()]).Element
-    local eb = ((Cfg.cfg_item_pet_exp)[b:GetTemplateID()]).Element
-    if (a:GetTemplate()).Color == (b:GetTemplate()).Color then
-      if ea >= eb then
-        do return ea ~= element or eb ~= element end
-        do return (b:GetTemplate()).Color < (a:GetTemplate()).Color end
-        if ea == element then
-          return true
-        elseif eb == element then
-          return false
-        elseif (a:GetTemplate()).Color == (b:GetTemplate()).Color then
-          if ea >= eb then
-            do return ea ~= eb end
-            do return (b:GetTemplate()).Color < (a:GetTemplate()).Color end
-            do return ea < eb end
-            -- DECOMPILER ERROR: 11 unprocessed JMP targets
-          end
-        end
+  table.sort(items, function(a, b)
+    local ea = Cfg.cfg_item_pet_exp[a:GetTemplateID()].Element
+    local eb = Cfg.cfg_item_pet_exp[b:GetTemplateID()].Element
+    if ea == element and eb == element then
+      if a:GetTemplate().Color == b:GetTemplate().Color then
+        return ea < eb
       end
+      return a:GetTemplate().Color > b:GetTemplate().Color
+    elseif ea == element then
+      return true
+    elseif eb == element then
+      return false
+    elseif ea == eb then
+      if a:GetTemplate().Color == b:GetTemplate().Color then
+        return ea < eb
+      end
+      return a:GetTemplate().Color > b:GetTemplate().Color
     end
-  end
-)
-    return items
-  end
+    return ea < eb
+  end)
+  return items
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.IsPetSkinID = function(self, tmpID)
-  -- function num : 0_26 , upvalues : _ENV
-  do return RoleAssetID.RoleAssetPetSkinBegin <= tmpID and tmpID <= RoleAssetID.RoleAssetPetSkinEnd end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function PetModule:IsPetSkinID(tmpID)
+  return tmpID >= RoleAssetID.RoleAssetPetSkinBegin and tmpID <= RoleAssetID.RoleAssetPetSkinEnd
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetSkinIDFromItemID = function(self, tmpID)
-  -- function num : 0_27 , upvalues : _ENV
+function PetModule:GetSkinIDFromItemID(tmpID)
   return tmpID - RoleAssetID.RoleAssetPetSkinBegin
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetItemIDFromSkinID = function(self, tmpID)
-  -- function num : 0_28 , upvalues : _ENV
+function PetModule:GetItemIDFromSkinID(tmpID)
   return tmpID + RoleAssetID.RoleAssetPetSkinBegin
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.AddPetSkins = function(self, petskin_list)
-  -- function num : 0_29 , upvalues : _ENV
+function PetModule:AddPetSkins(petskin_list)
   if petskin_list == nil or #petskin_list == 0 then
-    return 
+    return
   end
-  for _,petskin_data in pairs(petskin_list) do
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._petskins)[petskin_data.pet_template_id] = petskin_data
+  for _, petskin_data in pairs(petskin_list) do
+    self._petskins[petskin_data.pet_template_id] = petskin_data
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetPetSkinsData = function(self, pet_id)
-  -- function num : 0_30
-  return (self._petskins)[pet_id]
+function PetModule:GetPetSkinsData(pet_id)
+  return self._petskins[pet_id]
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetCurrentSkinId = function(self, pet_id)
-  -- function num : 0_31
+function PetModule:GetCurrentSkinId(pet_id)
   local skindata = self:GetPetSkinsData(pet_id)
   if skindata == nil then
     return 0
@@ -591,11 +447,8 @@ PetModule.GetCurrentSkinId = function(self, pet_id)
   return skindata.current_skin
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.HaveSkin = function(self, skinId)
-  -- function num : 0_32 , upvalues : _ENV
-  local skinCfg = (Cfg.cfg_pet_skin)[skinId]
+function PetModule:HaveSkin(skinId)
+  local skinCfg = Cfg.cfg_pet_skin[skinId]
   if not skinCfg then
     return false
   end
@@ -604,7 +457,7 @@ PetModule.HaveSkin = function(self, skinId)
   if skindata == nil then
     return false
   end
-  for index,value in ipairs(skindata.skin_info) do
+  for index, value in ipairs(skindata.skin_info) do
     if value.skin_id == skinId then
       return true
     end
@@ -612,113 +465,76 @@ PetModule.HaveSkin = function(self, skinId)
   return false
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.AddPets = function(self, pet_list, equip_refine_new)
-  -- function num : 0_33 , upvalues : _ENV
+function PetModule:AddPets(pet_list, equip_refine_new)
   self._equipRefineNew = equip_refine_new
   if pet_list == nil or #pet_list == 0 then
-    return 
+    return
   end
-  for _,pet_data in pairs(pet_list) do
+  for _, pet_data in pairs(pet_list) do
     self:AddPet(pet_data)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.InitNewPetList = function(self, new_pet_list)
-  -- function num : 0_34
+function PetModule:InitNewPetList(new_pet_list)
   self._newPetList = new_pet_list
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.AddPet = function(self, pet_data)
-  -- function num : 0_35 , upvalues : _ENV
+function PetModule:AddPet(pet_data)
   local pet = self:GetPet(pet_data.pet_pstid)
   if pet ~= nil then
     pet:SetData(pet_data)
   else
     pet = Pet:New(pet_data)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._pets)[pet_data.pet_pstid] = pet
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._petTabs)[pet:GetTemplateID()] = pet
+    self._pets[pet_data.pet_pstid] = pet
+    self._petTabs[pet:GetTemplateID()] = pet
   end
   return pet
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.HandlePetChange = function(self, msg)
-  -- function num : 0_36 , upvalues : _ENV
+function PetModule:HandlePetChange(msg)
   local pstid_list = {}
-  for pstid,pet_data in pairs(msg.data) do
+  for pstid, pet_data in pairs(msg.data) do
     local pet = self:AddPet(pet_data)
     pstid_list[#pstid_list + 1] = pstid
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetDataChangeEvent, pstid_list)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PetDataChangeEvent, pstid_list)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.HandleUpdateNewPetList = function(self, msg)
-  -- function num : 0_37 , upvalues : _ENV
+function PetModule:HandleUpdateNewPetList(msg)
   self._newPetList = msg.new_pet_list
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CheckCardNew)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CheckCardNew)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetNewPetList = function(self)
-  -- function num : 0_38
+function PetModule:GetNewPetList()
   return self._newPetList
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.CheckNewPetForMainUI = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function PetModule:CheckNewPetForMainUI()
   local star = 4
   local active = false
   for i = 1, #self._newPetList do
-    local tid = (self._newPetList)[i]
-    local cfg_pet = (Cfg.cfg_pet)[tid]
+    local tid = self._newPetList[i]
+    local cfg_pet = Cfg.cfg_pet[tid]
     if cfg_pet and star <= cfg_pet.Star then
       active = true
       break
     end
   end
-  do
-    return active
-  end
+  return active
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.CheckRefineRedForMainUI = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  for k,v in pairs(self._pets) do
-    if (UIPetEquipHelper.CheckRefineRed)(v) then
+function PetModule:CheckRefineRedForMainUI()
+  for k, v in pairs(self._pets) do
+    if UIPetEquipHelper.CheckRefineRed(v) then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.RequestPetAddExp = function(self, TT, pstid, items)
-  -- function num : 0_41 , upvalues : _ENV
+function PetModule:RequestPetAddExp(TT, pstid, items)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventPetAddExp)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventPetAddExp)
   request.pet_pstid = pstid
   request.items = items
   local reply = self:Call(TT, request)
@@ -731,32 +547,22 @@ PetModule.RequestPetAddExp = function(self, TT, pstid, items)
   return res
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetErrorMsg = function(self, errorcode)
-  -- function num : 0_42 , upvalues : _ENV
-  (Log.error)("###[GetErrorMsg] errorcode --> ", errorcode)
+function PetModule:GetErrorMsg(errorcode)
+  Log.error("###[GetErrorMsg] errorcode --> ", errorcode)
   if errorcode == PET_RESULT_CODE.PET_GET_EXP_ERR then
-    return (StringTable.Get)("str_pet_config_error_get_exp_err")
+    return StringTable.Get("str_pet_config_error_get_exp_err")
+  elseif errorcode == PET_RESULT_CODE.PET_ITEM_NOT_FOUND then
+    return StringTable.Get("str_pet_config_pet_error_item_not_found")
+  elseif errorcode == PET_RESULT_CODE.PET_DID_NOT_TRIGGERED_STORY then
+    return StringTable.Get("str_pet_config_pet_error_faild19")
   else
-    if errorcode == PET_RESULT_CODE.PET_ITEM_NOT_FOUND then
-      return (StringTable.Get)("str_pet_config_pet_error_item_not_found")
-    else
-      if errorcode == PET_RESULT_CODE.PET_DID_NOT_TRIGGERED_STORY then
-        return (StringTable.Get)("str_pet_config_pet_error_faild19")
-      else
-        return (StringTable.Get)("str_pet_config_pet_error_faild") .. errorcode
-      end
-    end
+    return StringTable.Get("str_pet_config_pet_error_faild") .. errorcode
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.RequestPetBreak = function(self, TT, pstid)
-  -- function num : 0_43 , upvalues : _ENV
+function PetModule:RequestPetBreak(TT, pstid)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventPetBreak)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventPetBreak)
   request.pet_pstid = pstid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -770,12 +576,9 @@ PetModule.RequestPetBreak = function(self, TT, pstid)
   return res
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.RequestPetAwake = function(self, TT, pstid, awakening)
-  -- function num : 0_44 , upvalues : _ENV
+function PetModule:RequestPetAwake(TT, pstid, awakening)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventPetAwake)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventPetAwake)
   request.pet_pstid = pstid
   request.awakening = awakening
   local reply = self:Call(TT, request)
@@ -790,29 +593,22 @@ PetModule.RequestPetAwake = function(self, TT, pstid, awakening)
   return res
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.CanSkillPreview = function(self, _skillId)
-  -- function num : 0_45 , upvalues : _ENV
+function PetModule:CanSkillPreview(_skillId)
   local b = BattleSkillCfg(_skillId)
-  do return not b or b.UICanPreview or false end
+  if b then
+    return b.UICanPreview or false
+  end
   return false
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.HandleAffinityAddCount = function(self, msg)
-  -- function num : 0_46
+function PetModule:HandleAffinityAddCount(msg)
   self._leftAffinityAddCount = msg.left_count
   self._maxAffinityAddCount = msg.max_count
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.RequestPetAddAffinity = function(self, TT, pstid)
-  -- function num : 0_47 , upvalues : _ENV
+function PetModule:RequestPetAddAffinity(TT, pstid)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestPetAddAffinity)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestPetAddAffinity)
   request.pet_pstid = pstid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -826,12 +622,9 @@ PetModule.RequestPetAddAffinity = function(self, TT, pstid)
   return res, replyEvent.m_aff_add_count
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.RequestPetViewTriggeredStory = function(self, TT, pstid, story_event_type, story_event_id)
-  -- function num : 0_48 , upvalues : _ENV
+function PetModule:RequestPetViewTriggeredStory(TT, pstid, story_event_type, story_event_id)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestPetViewTriggeredStory)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestPetViewTriggeredStory)
   request.pet_pstid = pstid
   request.story_event_type = story_event_type
   request.story_event_id = story_event_id
@@ -847,12 +640,9 @@ PetModule.RequestPetViewTriggeredStory = function(self, TT, pstid, story_event_t
   return res, replyEvent.m_story_id
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.RequestPetFinishTriggeredStory = function(self, TT, pstid, story_event_type, story_event_id)
-  -- function num : 0_49 , upvalues : _ENV
+function PetModule:RequestPetFinishTriggeredStory(TT, pstid, story_event_type, story_event_id)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestPetFinishTriggeredStory)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestPetFinishTriggeredStory)
   request.pet_pstid = pstid
   request.story_event_type = story_event_type
   request.story_event_id = story_event_id
@@ -868,12 +658,9 @@ PetModule.RequestPetFinishTriggeredStory = function(self, TT, pstid, story_event
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.RequestPetViewTriggeredTask = function(self, TT, pstid)
-  -- function num : 0_50 , upvalues : _ENV
+function PetModule:RequestPetViewTriggeredTask(TT, pstid)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestPetViewTriggeredTask)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestPetViewTriggeredTask)
   request.pet_pstid = pstid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -887,12 +674,9 @@ PetModule.RequestPetViewTriggeredTask = function(self, TT, pstid)
   return res, replyEvent.m_story_id
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.RequestPetAcceptTriggeredTask = function(self, TT, pstid)
-  -- function num : 0_51 , upvalues : _ENV
+function PetModule:RequestPetAcceptTriggeredTask(TT, pstid)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestPetAcceptTriggeredTask)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestPetAcceptTriggeredTask)
   request.pet_pstid = pstid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -906,12 +690,9 @@ PetModule.RequestPetAcceptTriggeredTask = function(self, TT, pstid)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.RequestCEventRequestPetTaskReward = function(self, TT, pstid, taskuid)
-  -- function num : 0_52 , upvalues : _ENV
+function PetModule:RequestCEventRequestPetTaskReward(TT, pstid, taskuid)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestPetTaskReward)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestPetTaskReward)
   request.pet_pstid = pstid
   request.task_uid = taskuid
   local reply = self:Call(TT, request)
@@ -926,12 +707,9 @@ PetModule.RequestCEventRequestPetTaskReward = function(self, TT, pstid, taskuid)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.RequestGivePetPresent = function(self, TT, pstid, items)
-  -- function num : 0_53 , upvalues : _ENV
+function PetModule:RequestGivePetPresent(TT, pstid, items)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestGivePetPresent)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestGivePetPresent)
   request.pet_pstid = pstid
   request.items = items
   local reply = self:Call(TT, request)
@@ -942,21 +720,16 @@ PetModule.RequestGivePetPresent = function(self, TT, pstid, items)
   res:SetSucc(true)
   local replyEvent = reply.msg
   res:SetResult(replyEvent.m_result)
-  do
-    if replyEvent.trigger_story_event_id > 0 then
-      local aricraft = (GameGlobal.GetModule)(AircraftModule)
-      aricraft:SetPetStoryEvent(EStoryTriggerType.GiveGift, pstid, replyEvent.trigger_story_event_id)
-    end
-    return res, replyEvent
+  if replyEvent.trigger_story_event_id > 0 then
+    local aricraft = GameGlobal.GetModule(AircraftModule)
+    aricraft:SetPetStoryEvent(EStoryTriggerType.GiveGift, pstid, replyEvent.trigger_story_event_id)
   end
+  return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.DelNewPetMark = function(self, TT, templateId)
-  -- function num : 0_54 , upvalues : _ENV
+function PetModule:DelNewPetMark(TT, templateId)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventDelNewpetMark)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventDelNewpetMark)
   request.template_id = templateId
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -967,16 +740,12 @@ PetModule.DelNewPetMark = function(self, TT, templateId)
   local replyEvent = reply.msg
   res:SetResult(replyEvent.ret)
   self._newPetList = replyEvent.new_pet_list
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CheckCardNew)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CheckCardNew)
   return res
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.BeNewPet = function(self, templateId)
-  -- function num : 0_55 , upvalues : _ENV
-  for k,v in pairs(self._newPetList) do
+function PetModule:BeNewPet(templateId)
+  for k, v in pairs(self._newPetList) do
     if v == templateId then
       return true
     end
@@ -984,53 +753,37 @@ PetModule.BeNewPet = function(self, templateId)
   return false
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.HaveNewPet = function(self)
-  -- function num : 0_56 , upvalues : _ENV
-  do return next(self._newPetList) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function PetModule:HaveNewPet()
+  return next(self._newPetList) ~= nil
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetPetDefaultSkills = function(self, tmpID)
-  -- function num : 0_57
-  local skillinfo = (self.petSkillRes):GetSKill(tmpID, 0, 0)
+function PetModule:GetPetDefaultSkills(tmpID)
+  local skillinfo = self.petSkillRes:GetSKill(tmpID, 0, 0)
   if skillinfo == nil then
     return nil
   end
   return skillinfo.ActiveSkill, skillinfo.ChainSkill1, skillinfo.PassiveSkill
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetTaskVec = function(self, pId)
-  -- function num : 0_58
-  local pet = (self._pets)[pId]
+function PetModule:GetTaskVec(pId)
+  local pet = self._pets[pId]
   if pet == nil then
     return nil
   end
   return pet:GetTaskInfoVec()
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetFirstTask = function(self, pId)
-  -- function num : 0_59
-  local pet = (self._pets)[pId]
+function PetModule:GetFirstTask(pId)
+  local pet = self._pets[pId]
   if pet == nil then
     return nil
   end
   return pet:GetFirstTaskInfo()
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.ReqUpEquipLv = function(self, TT, pstID)
-  -- function num : 0_60 , upvalues : _ENV
+function PetModule:ReqUpEquipLv(TT, pstID)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventPetEquip)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventPetEquip)
   request.pet_pstid = pstID
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -1044,12 +797,9 @@ PetModule.ReqUpEquipLv = function(self, TT, pstID)
   return res
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.ReqUpEquipRefineLvUp = function(self, TT, pstID)
-  -- function num : 0_61 , upvalues : _ENV
+function PetModule:ReqUpEquipRefineLvUp(TT, pstID)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventEquipRefineLevelUp)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventEquipRefineLevelUp)
   request.pet_pstid = pstID
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -1063,21 +813,15 @@ PetModule.ReqUpEquipRefineLvUp = function(self, TT, pstID)
   return res
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.ClickPetEquipRefine = function(self)
-  -- function num : 0_62 , upvalues : _ENV
+function PetModule:ClickPetEquipRefine()
   self._equipRefineNew = false
-  local msg = (NetMessageFactory:GetInstance()):CreateMessage(CEventClickPetEquipRefine)
+  local msg = NetMessageFactory:GetInstance():CreateMessage(CEventClickPetEquipRefine)
   self:Push(msg)
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.HandlePetLike = function(self, TT, pstID, isLike)
-  -- function num : 0_63 , upvalues : _ENV
+function PetModule:HandlePetLike(TT, pstID, isLike)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventPetLike)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventPetLike)
   request.pet_pstid = pstID
   request.b_like = isLike
   local reply = self:Call(TT, request)
@@ -1092,49 +836,31 @@ PetModule.HandlePetLike = function(self, TT, pstID, isLike)
   return res
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.PetEquipRefineNew = function(self)
-  -- function num : 0_64
+function PetModule:PetEquipRefineNew()
   return self._equipRefineNew
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.SavePetSortInfo = function(self, filter, sortOrder, sortType, sortParam)
-  -- function num : 0_65
+function PetModule:SavePetSortInfo(filter, sortOrder, sortType, sortParam)
   self.PetSortFilter = filter
   self.PetSortType = sortType
   self.PetSortOrder = sortOrder
   self._sortParam = sortParam
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.SavePetSecondAttributeFilterParam = function(self, state)
-  -- function num : 0_66
+function PetModule:SavePetSecondAttributeFilterParam(state)
   self.PetSortChooseSecondAttribute = state
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.SavePetSortElementIndex = function(self, index)
-  -- function num : 0_67
+function PetModule:SavePetSortElementIndex(index)
   self.PetSortElementIndex = index
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.ClearPetSortFilterInfo = function(self)
-  -- function num : 0_68
+function PetModule:ClearPetSortFilterInfo()
   self.PetSortFilter = nil
   self.PetSortChooseSecondAttribute = false
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.ClearAllPetSortInfo = function(self)
-  -- function num : 0_69
+function PetModule:ClearAllPetSortInfo()
   self.PetSortFilter = nil
   self.PetSortType = nil
   self.PetSortOrder = nil
@@ -1143,23 +869,17 @@ PetModule.ClearAllPetSortInfo = function(self)
   self._sortParam = nil
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.CheckHasCachePetSortInfo = function(self, isTower)
-  -- function num : 0_70 , upvalues : _ENV
-  if self.PetSortFilter == nil or (table.count)(self.PetSortFilter) <= 1 then
-    do return not isTower end
-    do return self.PetSortFilter ~= nil and (table.count)(self.PetSortFilter) > 0 end
-    -- DECOMPILER ERROR: 5 unprocessed JMP targets
+function PetModule:CheckHasCachePetSortInfo(isTower)
+  if isTower then
+    return self.PetSortFilter ~= nil and table.count(self.PetSortFilter) > 1
+  else
+    return self.PetSortFilter ~= nil and table.count(self.PetSortFilter) > 0
   end
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.UnlockSkinCG = function(self, TT, skinID)
-  -- function num : 0_71 , upvalues : _ENV
+function PetModule:UnlockSkinCG(TT, skinID)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventPetUnlockCG)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventPetUnlockCG)
   request.skin_id = skinID
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -1172,25 +892,20 @@ PetModule.UnlockSkinCG = function(self, TT, skinID)
   if replyEvent.nRet == PET_RESULT_CODE.PET_SUCCEED then
     skindata = self:GetPetSkinsData(replyEvent.pet_template_id)
     if skindata ~= nil then
-      for k,v in pairs(skindata.skin_info) do
+      for k, v in pairs(skindata.skin_info) do
         if v.skin_id == replyEvent.pet_skin_id then
           v.unlock_CG = 1
         end
       end
     end
   end
-  do
-    res:SetResult(replyEvent.nRet)
-    return res
-  end
+  res:SetResult(replyEvent.nRet)
+  return res
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.PetSkinChange = function(self, TT, skinID)
-  -- function num : 0_72 , upvalues : _ENV
+function PetModule:PetSkinChange(TT, skinID)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventPetSkinChange)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventPetSkinChange)
   request.skin_id = skinID
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -1200,69 +915,52 @@ PetModule.PetSkinChange = function(self, TT, skinID)
   end
   res:SetSucc(true)
   local replyEvent = reply.msg
-  do
-    if replyEvent.nRet == PET_RESULT_CODE.PET_SUCCEED then
-      local skindata = self:GetPetSkinsData(replyEvent.pet_template_id)
-      if skindata ~= nil then
-        skindata.current_skin = replyEvent.pet_current_skin_id
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetSkinChange)
-      end
+  if replyEvent.nRet == PET_RESULT_CODE.PET_SUCCEED then
+    local skindata = self:GetPetSkinsData(replyEvent.pet_template_id)
+    if skindata ~= nil then
+      skindata.current_skin = replyEvent.pet_current_skin_id
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetSkinChange)
     end
-    res:SetResult(replyEvent.nRet)
-    return res
   end
+  res:SetResult(replyEvent.nRet)
+  return res
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.HandlePetSkinChange = function(self, msg)
-  -- function num : 0_73 , upvalues : _ENV
-  for k,v in pairs(msg.data) do
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._petskins)[k] = v
+function PetModule:HandlePetSkinChange(msg)
+  for k, v in pairs(msg.data) do
+    self._petskins[k] = v
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetSkinChange)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetSkinChange)
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetBindPet = function(self, petTmpID)
-  -- function num : 0_74 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_pet)({BinderPetID = petTmpID})
+function PetModule:GetBindPet(petTmpID)
+  local cfgs = Cfg.cfg_pet({BinderPetID = petTmpID})
   if not cfgs or #cfgs == 0 then
-    cfgs = (Cfg.cfg_pet)({BinderPetID = ((Cfg.cfg_pet)[petTmpID]).BinderPetID})
+    cfgs = Cfg.cfg_pet({
+      BinderPetID = Cfg.cfg_pet[petTmpID].BinderPetID
+    })
   end
   if not cfgs or #cfgs == 0 then
     return nil
   end
-  local spPet = nil
-  for _,cfg in ipairs(cfgs) do
+  local spPet
+  for _, cfg in ipairs(cfgs) do
     if cfg.ID ~= petTmpID then
       spPet = cfg.ID
       break
     end
   end
-  do
-    do
-      if spPet then
-        local pet = self:GetPetByTemplateId(spPet)
-        if pet then
-          return pet
-        end
-      end
-      return nil
+  if spPet then
+    local pet = self:GetPetByTemplateId(spPet)
+    if pet then
+      return pet
     end
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.HandlePropertyCultivateInfo = function(self, TT)
-  -- function num : 0_75 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventPropertyCultivateInfo)
+function PetModule:HandlePropertyCultivateInfo(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventPropertyCultivateInfo)
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -1271,15 +969,12 @@ PetModule.HandlePropertyCultivateInfo = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  self._property_cultivate_data = (reply.msg).info
+  self._property_cultivate_data = reply.msg.info
   return reply.msg
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.HandlePropertyCultivateLv = function(self, TT, itemlist, idlist)
-  -- function num : 0_76 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventPropertyCultivateLv)
+function PetModule:HandlePropertyCultivateLv(TT, itemlist, idlist)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventPropertyCultivateLv)
   request.smelts = itemlist
   request.cfg_id = idlist
   local res = AsyncRequestRes:New()
@@ -1290,32 +985,25 @@ PetModule.HandlePropertyCultivateLv = function(self, TT, itemlist, idlist)
     return res, nil
   end
   res:SetSucc(true)
-  self._property_cultivate_data = (reply.msg).info
-  if (reply.msg).ret == PET_RESULT_CODE.PET_SUCCEED then
+  self._property_cultivate_data = reply.msg.info
+  if reply.msg.ret == PET_RESULT_CODE.PET_SUCCEED then
     local data = self:GetUIEducationData()
     local dataProperty = self:GetPropertyCultivateData()
-    for k,v in pairs(dataProperty) do
+    for k, v in pairs(dataProperty) do
       local element = data:Get(k)
       local stage = v.phase
       local level = v.lv
       element:SetCurrentLevel(stage, level)
-      ;
-      (Log.info)("[PetModule:HandlePropertyCultivateLv] elementType, stage, level ->: ", k, stage, level)
+      Log.info("[PetModule:HandlePropertyCultivateLv] elementType, stage, level ->: ", k, stage, level)
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.EducationChanged)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.EducationChanged)
   end
-  do
-    return res, reply.msg
-  end
+  return res, reply.msg
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.ReqAwakeLock = function(self, TT, pstID, lv)
-  -- function num : 0_77 , upvalues : _ENV
+function PetModule:ReqAwakeLock(TT, pstID, lv)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventLockAwake)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventLockAwake)
   request.pet_pstid = pstID
   request.lv = lv
   local reply = self:Call(TT, request)
@@ -1330,157 +1018,60 @@ PetModule.ReqAwakeLock = function(self, TT, pstID, lv)
   return res
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetPropertyCultivateData = function(self)
-  -- function num : 0_78
-  return (self._property_cultivate_data).type_lv
+function PetModule:GetPropertyCultivateData()
+  return self._property_cultivate_data.type_lv
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetUIEducationData = function(self, reset)
-  -- function num : 0_79 , upvalues : _ENV
+function PetModule:GetUIEducationData(reset)
   if self._educationData == nil or reset then
     self._educationData = UIEducationData:New()
   end
   return self._educationData
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetPetIndexStr = function(self)
-  -- function num : 0_80 , upvalues : _ENV
+function PetModule:GetPetIndexStr()
   local str = ""
   if next(self._pets) == nil then
     return str
   end
-  local pets = (Cfg.cfg_pet)({})
+  local pets = Cfg.cfg_pet({})
   local kvPets = {}
-  for k,v in pairs(pets) do
-    (table.insert)(kvPets, k)
+  for k, v in pairs(pets) do
+    table.insert(kvPets, k)
   end
-  ;
-  (table.sort)(kvPets)
-  for pstid,pet_data in pairs(self._pets) do
-    local index = (table.ikey)(kvPets, (pet_data._cfg_pet).ID)
+  table.sort(kvPets)
+  for pstid, pet_data in pairs(self._pets) do
+    local index = table.ikey(kvPets, pet_data._cfg_pet.ID)
     str = str .. index .. ","
   end
-  return (string.sub)(str, 1, -2)
+  return string.sub(str, 1, -2)
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetPetIndexStrNew = function(self)
-  -- function num : 0_81 , upvalues : _ENV
-  local str = ""
-  if next(self._pets) == nil then
-    return str
-  end
-  local pets = (Cfg.cfg_pet)({})
-  local kvPets = {}
-  for k,v in pairs(pets) do
-    (table.insert)(kvPets, k)
-  end
-  ;
-  (table.sort)(kvPets)
-  for i = 1, #kvPets do
-    local index = "F"
-    if self:HasPet(kvPets[i]) then
-      index = "T"
-    end
-    str = str .. index
-  end
-  ;
-  (Log.info)("GetPetIndexStr str =", str)
-  return (string.sub)(str, 1, -2)
-end
-
--- DECOMPILER ERROR at PC257: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.HasPet = function(self, id)
-  -- function num : 0_82 , upvalues : _ENV
-  for _,item in pairs(self._pets) do
-    if id == (item._cfg_pet).ID then
-      return true
-    end
-  end
-  return false
-end
-
--- DECOMPILER ERROR at PC260: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetPetSkinIndexStr = function(self)
-  -- function num : 0_83 , upvalues : _ENV
+function PetModule:GetPetSkinIndexStr()
   local str = ""
   if next(self._petskins) == nil then
     return str
   end
-  local petskins = (Cfg.cfg_pet_skin)({})
+  local petskins = Cfg.cfg_pet_skin({})
   local kvPetskins = {}
-  for k,v in pairs(petskins) do
-    (table.insert)(kvPetskins, k)
+  for k, v in pairs(petskins) do
+    table.insert(kvPetskins, k)
   end
-  ;
-  (table.sort)(kvPetskins)
-  for pstid,pet_data in pairs(self._petskins) do
-    for i,v in pairs(pet_data.skin_info) do
-      local index = (table.ikey)(kvPetskins, v.skin_id)
+  table.sort(kvPetskins)
+  for pstid, pet_data in pairs(self._petskins) do
+    for i, v in pairs(pet_data.skin_info) do
+      local index = table.ikey(kvPetskins, v.skin_id)
       str = str .. index .. ","
     end
   end
-  return (string.sub)(str, 1, -2)
+  return string.sub(str, 1, -2)
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.GetPetSkinIndexStrNew = function(self)
-  -- function num : 0_84 , upvalues : _ENV
-  local str = ""
-  if next(self._petskins) == nil then
-    return str
-  end
-  local petskins = (Cfg.cfg_pet_skin)({})
-  local kvPetskins = {}
-  for k,v in pairs(petskins) do
-    (table.insert)(kvPetskins, k)
-  end
-  ;
-  (table.sort)(kvPetskins)
-  for i = 1, #kvPetskins do
-    local index = "F"
-    if self:HasPetSkin(kvPetskins[i]) then
-      index = "T"
-    end
-    str = str .. index
-  end
-  ;
-  (Log.info)("GetPetSkinIndexStr str =", str)
-  return (string.sub)(str, 1, -2)
-end
-
--- DECOMPILER ERROR at PC266: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.HasPetSkin = function(self, id)
-  -- function num : 0_85 , upvalues : _ENV
-  for _,pet_data in pairs(self._petskins) do
-    for i,v in pairs(pet_data.skin_info) do
-      if id == v.skin_id then
-        return true
-      end
-    end
-  end
-  return false
-end
-
--- DECOMPILER ERROR at PC269: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.AddPetsByID = function(self, pet_list)
-  -- function num : 0_86 , upvalues : _ENV
+function PetModule:AddPetsByID(pet_list)
   if pet_list == nil or #pet_list == 0 then
-    return 
+    return
   end
-  for _,pet_id in pairs(pet_list) do
+  for _, pet_id in pairs(pet_list) do
     local pet_data = pet_data:New()
     pet_data.template_id = pet_id
     pet_data.pet_pstid = pet_id
@@ -1489,65 +1080,43 @@ PetModule.AddPetsByID = function(self, pet_list)
     pet_data.grade = maxGrade
     pet_data.level = pet:GetMaxLevel()
     pet_data.awakening = pet:GetMaxAwakening()
-    pet_data.equip_lv = ((ResourceHelper:GetInstance()):GetPetEquip()):GetMaxLv(pet:GetTemplateID())
+    pet_data.equip_lv = ResourceHelper:GetInstance():GetPetEquip():GetMaxLv(pet:GetTemplateID())
     pet_data.affinity_level = pet:GetPetAffinityMaxLevel()
     pet_data.equip_refine_lv = pet:GetEquipRefineMaxLv()
     pet:SetData(pet_data)
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._pets)[pet_data.pet_pstid] = pet
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._petTabs)[pet:GetTemplateID()] = pet
+    self._pets[pet_data.pet_pstid] = pet
+    self._petTabs[pet:GetTemplateID()] = pet
   end
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.AddPetSkinsDJ = function(self, petskin_list)
-  -- function num : 0_87 , upvalues : _ENV
+function PetModule:AddPetSkinsDJ(petskin_list)
   if petskin_list == nil or #petskin_list == 0 then
-    return 
+    return
   end
-  for _,petskin_id in pairs(petskin_list) do
-    local _petSkinCfg = (Cfg.cfg_pet_skin)[petskin_id]
-    do
-      if (self._petskins)[_petSkinCfg.PetId] == nil then
-        local pet_skin_data = pet_skin_data:New()
-        pet_skin_data.current_skin = 0
-        pet_skin_data.owner_pstid = _petSkinCfg.PetId
-        pet_skin_data.pet_template_id = _petSkinCfg.PetId
-        pet_skin_data.skin_info = {}
-        -- DECOMPILER ERROR at PC30: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self._petskins)[_petSkinCfg.PetId] = pet_skin_data
-      end
-      do
-        local skinInfo = PetSkinInfo:New()
-        skinInfo.skin_id = petskin_id
-        skinInfo.unlock_CG = 1
-        skinInfo.gain_time = 0
-        ;
-        (table.insert)(((self._petskins)[_petSkinCfg.PetId]).skin_info, skinInfo)
-        -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+  for _, petskin_id in pairs(petskin_list) do
+    local _petSkinCfg = Cfg.cfg_pet_skin[petskin_id]
+    if self._petskins[_petSkinCfg.PetId] == nil then
+      local pet_skin_data = pet_skin_data:New()
+      pet_skin_data.current_skin = 0
+      pet_skin_data.owner_pstid = _petSkinCfg.PetId
+      pet_skin_data.pet_template_id = _petSkinCfg.PetId
+      pet_skin_data.skin_info = {}
+      self._petskins[_petSkinCfg.PetId] = pet_skin_data
     end
+    local skinInfo = PetSkinInfo:New()
+    skinInfo.skin_id = petskin_id
+    skinInfo.unlock_CG = 1
+    skinInfo.gain_time = 0
+    table.insert(self._petskins[_petSkinCfg.PetId].skin_info, skinInfo)
   end
-  for k,v in pairs(self._pets) do
-    if (self._petskins)[k] ~= nil and ((self._petskins)[k]).skin_info ~= nil then
+  for k, v in pairs(self._pets) do
+    if self._petskins[k] ~= nil and self._petskins[k].skin_info ~= nil then
       local haveSkinTwo = false
-      local awakeningSkinID = (v._cfg_pet).SkinId + 1
-      -- DECOMPILER ERROR at PC75: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      ((self._petskins)[k]).current_skin = tonumber(PlayerPrefsGetPersonString("PetSkin_" .. k, (v._cfg_pet).SkinId))
-      local _petSkinCfg = (Cfg.cfg_pet_skin)[awakeningSkinID]
+      local awakeningSkinID = v._cfg_pet.SkinId + 1
+      self._petskins[k].current_skin = tonumber(PlayerPrefsGetPersonString("PetSkin_" .. k, v._cfg_pet.SkinId))
+      local _petSkinCfg = Cfg.cfg_pet_skin[awakeningSkinID]
       if _petSkinCfg ~= nil then
-        for index,skinInfoTemp in pairs(((self._petskins)[k]).skin_info) do
+        for index, skinInfoTemp in pairs(self._petskins[k].skin_info) do
           if skinInfoTemp.skin_id == awakeningSkinID then
             haveSkinTwo = true
           end
@@ -1557,102 +1126,42 @@ PetModule.AddPetSkinsDJ = function(self, petskin_list)
           skinInfo.skin_id = awakeningSkinID
           skinInfo.unlock_CG = 1
           skinInfo.gain_time = 0
-          ;
-          (table.insert)(((self._petskins)[k]).skin_info, skinInfo)
+          table.insert(self._petskins[k].skin_info, skinInfo)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.HandlePetSingleData = function(self, msg)
-  -- function num : 0_88 , upvalues : _ENV
+function PetModule:HandlePetSingleData(msg)
   self._pets = {}
   self._petTabs = {}
   self._petskins = {}
-  local strList = (string.split)(msg, "|")
+  local strList = string.split(msg, "|")
   local strpet = strList[1]
   local strpetSkin = strList[2]
-  local petIndexList = (string.split)(strpet, ",")
-  local petSkinIndexList = (string.split)(strpetSkin, ",")
-  local pets = (Cfg.cfg_pet)({})
+  local petIndexList = string.split(strpet, ",")
+  local petSkinIndexList = string.split(strpetSkin, ",")
+  local pets = Cfg.cfg_pet({})
   local kvPets = {}
-  for k,v in pairs(pets) do
-    (table.insert)(kvPets, k)
+  for k, v in pairs(pets) do
+    table.insert(kvPets, k)
   end
-  ;
-  (table.sort)(kvPets)
+  table.sort(kvPets)
   local testPet = {}
   for i = 1, #petIndexList do
-    (table.insert)(testPet, kvPets[tonumber(petIndexList[i])])
+    table.insert(testPet, kvPets[tonumber(petIndexList[i])])
   end
   self:AddPetsByID(testPet)
-  local petskins = (Cfg.cfg_pet_skin)({})
+  local petskins = Cfg.cfg_pet_skin({})
   local kvPetskins = {}
-  for k,v in pairs(petskins) do
-    (table.insert)(kvPetskins, k)
+  for k, v in pairs(petskins) do
+    table.insert(kvPetskins, k)
   end
-  ;
-  (table.sort)(kvPetskins)
+  table.sort(kvPetskins)
   local testSkin = {}
   for i = 1, #petSkinIndexList do
-    (table.insert)(testSkin, kvPetskins[tonumber(petSkinIndexList[i])])
+    table.insert(testSkin, kvPetskins[tonumber(petSkinIndexList[i])])
   end
   self:AddPetSkinsDJ(testSkin)
 end
-
--- DECOMPILER ERROR at PC278: Confused about usage of register: R1 in 'UnsetPending'
-
-PetModule.HandlePetSingleDataTAndF = function(self, msg)
-  -- function num : 0_89 , upvalues : _ENV
-  self._pets = {}
-  self._petTabs = {}
-  self._petskins = {}
-  local strList = (string.split)(msg, "|")
-  local strpet = strList[1]
-  ;
-  (Log.info)("strpet=", strpet)
-  local strpetSkin = strList[2]
-  ;
-  (Log.info)("strpetSkin=", strpetSkin)
-  local petIndexList = strpet
-  ;
-  (Log.info)("petIndexList=", petIndexList)
-  local petSkinIndexList = strpetSkin
-  ;
-  (Log.info)("petSkinIndexList=", petSkinIndexList)
-  local pets = (Cfg.cfg_pet)({})
-  local kvPets = {}
-  for k,v in pairs(pets) do
-    (table.insert)(kvPets, k)
-  end
-  ;
-  (table.sort)(kvPets)
-  local testPet = {}
-  for i = 1, #petIndexList do
-    local char = (string.sub)(petIndexList, i, i)
-    if char == "T" then
-      (table.insert)(testPet, kvPets[i])
-    end
-  end
-  self:AddPetsByID(testPet)
-  local petskins = (Cfg.cfg_pet_skin)({})
-  local kvPetskins = {}
-  for k,v in pairs(petskins) do
-    (table.insert)(kvPetskins, k)
-  end
-  ;
-  (table.sort)(kvPetskins)
-  local testSkin = {}
-  for i = 1, #petSkinIndexList do
-    local char = (string.sub)(petSkinIndexList, i, i)
-    if char == "T" then
-      (table.insert)(testSkin, kvPetskins[i])
-    end
-  end
-  self:AddPetSkinsDJ(testSkin)
-end
-
-

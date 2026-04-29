@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/battle_stat_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RenderBattleStatComponent", Object)
 RenderBattleStatComponent = RenderBattleStatComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderBattleStatComponent.Constructor = function(self)
-  -- function num : 0_0
+function RenderBattleStatComponent:Constructor()
   self._everSpeed = 1
   self._finishedSequenceNoDic = {}
   self._changeTeamOrderViewQueue = {}
@@ -20,187 +13,112 @@ RenderBattleStatComponent.Constructor = function(self)
   self._isPet1702361ActiveSkillPreview = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.Initialize = function(self)
-  -- function num : 0_1
+function RenderBattleStatComponent:Initialize()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.GetEverSpeed = function(self)
-  -- function num : 0_2
+function RenderBattleStatComponent:GetEverSpeed()
   return self._everSpeed
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.SetEverSpeed = function(self, speed)
-  -- function num : 0_3
-  if self._everSpeed < speed then
+function RenderBattleStatComponent:SetEverSpeed(speed)
+  if speed > self._everSpeed then
     self._everSpeed = speed
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.IsChangeTeamOrderViewDisabled = function(self)
-  -- function num : 0_4
+function RenderBattleStatComponent:IsChangeTeamOrderViewDisabled()
   return self._isChangeTeamOrderViewDisabled
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.SetChangeTeamOrderViewDisabled = function(self, v)
-  -- function num : 0_5
+function RenderBattleStatComponent:SetChangeTeamOrderViewDisabled(v)
   self._isChangeTeamOrderViewDisabled = v
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.GetChangeTeamOrderViewQueue = function(self)
-  -- function num : 0_6
+function RenderBattleStatComponent:GetChangeTeamOrderViewQueue()
   return self._changeTeamOrderViewQueue
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.ClearChangeTeamOrderViewQueue = function(self)
-  -- function num : 0_7
+function RenderBattleStatComponent:ClearChangeTeamOrderViewQueue()
   self._changeTeamOrderViewQueue = {}
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.GetCurrentTeamOrderRequest = function(self)
-  -- function num : 0_8
+function RenderBattleStatComponent:GetCurrentTeamOrderRequest()
   return self._currentTeamOrderRequest
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.AddChangeTeamOrderViewRequest = function(self, req)
-  -- function num : 0_9 , upvalues : _ENV
+function RenderBattleStatComponent:AddChangeTeamOrderViewRequest(req)
   self._viewQueueSequenceNo = self._viewQueueSequenceNo + 1
   req:SetRequestSequenceNo(self._viewQueueSequenceNo)
-  ;
-  (table.insert)(self._changeTeamOrderViewQueue, req)
+  table.insert(self._changeTeamOrderViewQueue, req)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.PopFirstTeamOrderRequestAsCurrent = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  self._currentTeamOrderRequest = (table.remove)(self._changeTeamOrderViewQueue, 1)
+function RenderBattleStatComponent:PopFirstTeamOrderRequestAsCurrent()
+  self._currentTeamOrderRequest = table.remove(self._changeTeamOrderViewQueue, 1)
   return self._currentTeamOrderRequest
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.MarkCurrentTeamOrderRequestFinished = function(self)
-  -- function num : 0_11
+function RenderBattleStatComponent:MarkCurrentTeamOrderRequestFinished()
   if not self._currentTeamOrderRequest then
-    return 
+    return
   end
-  local seqNo = (self._currentTeamOrderRequest):GetRequestSequenceNo()
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._finishedSequenceNoDic)[seqNo] = true
+  local seqNo = self._currentTeamOrderRequest:GetRequestSequenceNo()
+  self._finishedSequenceNoDic[seqNo] = true
   self._currentTeamOrderRequest = nil
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.IsChangeTeamOrderRequestFinished = function(self, seqNo)
-  -- function num : 0_12
-  return (self._finishedSequenceNoDic)[seqNo]
+function RenderBattleStatComponent:IsChangeTeamOrderRequestFinished(seqNo)
+  return self._finishedSequenceNoDic[seqNo]
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.AddTrapIDByCasterEntityID = function(self, trapID, casterEntityID)
-  -- function num : 0_13 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._trapIDBySummonCasterEntityID)[casterEntityID] then
-    (self._trapIDBySummonCasterEntityID)[casterEntityID] = {}
+function RenderBattleStatComponent:AddTrapIDByCasterEntityID(trapID, casterEntityID)
+  if not self._trapIDBySummonCasterEntityID[casterEntityID] then
+    self._trapIDBySummonCasterEntityID[casterEntityID] = {}
   end
-  if not (table.icontains)((self._trapIDBySummonCasterEntityID)[casterEntityID], trapID) then
-    (table.insert)((self._trapIDBySummonCasterEntityID)[casterEntityID], trapID)
+  if not table.icontains(self._trapIDBySummonCasterEntityID[casterEntityID], trapID) then
+    table.insert(self._trapIDBySummonCasterEntityID[casterEntityID], trapID)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.IsTrapSummonedByCasterBefore = function(self, trapID, casterEntityID)
-  -- function num : 0_14 , upvalues : _ENV
-  if not (self._trapIDBySummonCasterEntityID)[casterEntityID] then
+function RenderBattleStatComponent:IsTrapSummonedByCasterBefore(trapID, casterEntityID)
+  if not self._trapIDBySummonCasterEntityID[casterEntityID] then
     return false
   end
-  return (table.icontains)((self._trapIDBySummonCasterEntityID)[casterEntityID], trapID)
+  return table.icontains(self._trapIDBySummonCasterEntityID[casterEntityID], trapID)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.SetActorOutLineState = function(self, state)
-  -- function num : 0_15
+function RenderBattleStatComponent:SetActorOutLineState(state)
   self._setActorOutLineState = state
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.IsActorOutLine = function(self)
-  -- function num : 0_16
+function RenderBattleStatComponent:IsActorOutLine()
   return self._setActorOutLineState
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.IsPet1702361ActiveSkillPreview = function(self)
-  -- function num : 0_17
+function RenderBattleStatComponent:IsPet1702361ActiveSkillPreview()
   return self._isPet1702361ActiveSkillPreview
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBattleStatComponent.SetPet1702361ActiveSkillPreviewState = function(self, state)
-  -- function num : 0_18
+function RenderBattleStatComponent:SetPet1702361ActiveSkillPreviewState(state)
   self._isPet1702361ActiveSkillPreview = state
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.RenderBattleStat = function(self)
-  -- function num : 0_19
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).RenderBattleStat)
+function MainWorld:RenderBattleStat()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.RenderBattleStat)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.HasRenderBattleStat = function(self)
-  -- function num : 0_20
-  do return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).RenderBattleStat) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorld:HasRenderBattleStat()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.RenderBattleStat) ~= nil
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.AddRenderBattleStat = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).RenderBattleStat
+function MainWorld:AddRenderBattleStat()
+  local index = self.BW_UniqueComponentsEnum.RenderBattleStat
   local component = RenderBattleStatComponent:New(self)
   component:Initialize()
   self:SetUniqueComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.RemoveRenderBattleStat = function(self)
-  -- function num : 0_22
+function MainWorld:RemoveRenderBattleStat()
   if self:HasRenderBattleStat() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).RenderBattleStat, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.RenderBattleStat, nil)
   end
 end
-
-

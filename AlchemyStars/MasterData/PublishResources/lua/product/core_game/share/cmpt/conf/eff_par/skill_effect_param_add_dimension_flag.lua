@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_add_dimension_flag.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParam_AddDimensionFlag", SkillEffectParamBase)
 SkillEffectParam_AddDimensionFlag = SkillEffectParam_AddDimensionFlag
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_AddDimensionFlag.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_AddDimensionFlag:Constructor(t)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_AddDimensionFlag.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_AddDimensionFlag:GetEffectType()
   return SkillEffectType.AddDimensionFlag
 end
-
-

@@ -1,29 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/3900281/cfg_skill_view_393028102.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName=Skill02; PlayAudio,audioID = 5006,audioType=1; PlayCasterBindEffect,effectID=913; PlayCasterBindEffect,effectID=914; "}
-}
-, 
-{2, 2, 34, 1, 1, 700, 
-{gridEffectID = 909, gridEffectDelayTime = 0, gridIntervalTime = 100, showTimeDelay = 1000}
-}
-, 
-{3, 3, 0, 1, 1, 1900, 
-{" PlayCasterLineRenderer,group=Monster|Trap,targerEffectType=3026,lineEffectID=924,lineTarget=Hit,lineCurrent=Hit; "}
-}
-, 
-{4, 4, 36, 1, 1, 4000, 
-{gridEffectID = 917, gridEffectDelayTime = 0, gridIntervalTime = 0, showTimeDelay = 0}
-}
-, 
-{5, 5, 0, 2, 4, 500, 
-{" PlayCasterRenderState,renderState=1; PlayCasterAnimation,animName=Skill03_a; PlayCasterBindEffect,effectID=918; PlayAudio,audioID = 5005,audioType=1; Wait,waitTime=2167; PlayCasterBindEffect,effectID=919; PlayCasterBindEffect,effectID=974; PlayCasterAddBuff,buffID=30072; Wait,waitTime=300; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName=Skill02; PlayAudio,audioID = 5006,audioType=1; PlayCasterBindEffect,effectID=913; PlayCasterBindEffect,effectID=914; "
+    }
+  },
+  {
+    2,
+    2,
+    34,
+    1,
+    1,
+    700,
+    {
+      gridEffectID = 909,
+      gridEffectDelayTime = 0,
+      gridIntervalTime = 100,
+      showTimeDelay = 1000
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    1,
+    1900,
+    {
+      " PlayCasterLineRenderer,group=Monster|Trap,targerEffectType=3026,lineEffectID=924,lineTarget=Hit,lineCurrent=Hit; "
+    }
+  },
+  {
+    4,
+    4,
+    36,
+    1,
+    1,
+    4000,
+    {
+      gridEffectID = 917,
+      gridEffectDelayTime = 0,
+      gridIntervalTime = 0,
+      showTimeDelay = 0
+    }
+  },
+  {
+    5,
+    5,
+    0,
+    2,
+    4,
+    500,
+    {
+      " PlayCasterRenderState,renderState=1; PlayCasterAnimation,animName=Skill03_a; PlayCasterBindEffect,effectID=918; PlayAudio,audioID = 5005,audioType=1; Wait,waitTime=2167; PlayCasterBindEffect,effectID=919; PlayCasterBindEffect,effectID=974; PlayCasterAddBuff,buffID=30072; Wait,waitTime=300; "
+    }
+  }
 }
 return config, "ID", key
-

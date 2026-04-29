@@ -1,17 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/trap/9995007/cfg_skill_view_99950074.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 0, 0, 0, 
-{"PlayRefreshRoundCount; PlayCasterLegacyAnimation,animNames=eff_9995007_huode"}
-}
-, 
-{2, 2, 0, 1, 0, 0, 
-{" DataSelectResult,effectType=79,index=1; PlayDestroyTrap; "}
-}
+  {
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    {
+      "PlayRefreshRoundCount; PlayCasterLegacyAnimation,animNames=eff_9995007_huode"
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    0,
+    0,
+    {
+      " DataSelectResult,effectType=79,index=1; PlayDestroyTrap; "
+    }
+  }
 }
 return config, "ID", key
-

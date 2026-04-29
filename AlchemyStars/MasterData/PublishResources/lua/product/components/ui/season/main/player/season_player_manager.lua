@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/player/season_player_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonPlayerManager", Object)
 SeasonPlayerManager = SeasonPlayerManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonPlayerManager.Constructor = function(self)
-  -- function num : 0_0
+function SeasonPlayerManager:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerManager.OnInit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonPlayerManager:OnInit()
   self._seasonPlayer = SeasonPlayer:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerManager.OnAfterInit = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local uiSeasonModule = (GameGlobal.GetUIModule)(SeasonModule)
+function SeasonPlayerManager:OnAfterInit()
+  local uiSeasonModule = GameGlobal.GetUIModule(SeasonModule)
   local enterParam = uiSeasonModule:GetEnterSeasonParam()
   if enterParam then
-    (self._seasonPlayer):HandleEnter(enterParam)
+    self._seasonPlayer:HandleEnter(enterParam)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerManager.Update = function(self, deltaTime)
-  -- function num : 0_3
-  (self._seasonPlayer):Update(deltaTime)
+function SeasonPlayerManager:Update(deltaTime)
+  self._seasonPlayer:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerManager.Dispose = function(self, isExit)
-  -- function num : 0_4
-  (self._seasonPlayer):Dispose(isExit)
+function SeasonPlayerManager:Dispose(isExit)
+  self._seasonPlayer:Dispose(isExit)
   self._seasonPlayer = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerManager.GetPlayer = function(self)
-  -- function num : 0_5
+function SeasonPlayerManager:GetPlayer()
   return self._seasonPlayer
 end
-
-

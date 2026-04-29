@@ -1,27 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/minigame/ui_n20_minigame_wayline.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20MiniGameWayLine", UICustomWidget)
 UIN20MiniGameWayLine = UIN20MiniGameWayLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20MiniGameWayLine.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN20MiniGameWayLine:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameWayLine._GetComponents = function(self)
-  -- function num : 0_1
+function UIN20MiniGameWayLine:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameWayLine.SetData = function(self, state)
-  -- function num : 0_2
+function UIN20MiniGameWayLine:SetData(state)
 end
-
-

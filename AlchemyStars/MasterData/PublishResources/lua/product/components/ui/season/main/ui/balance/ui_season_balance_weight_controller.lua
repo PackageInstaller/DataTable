@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/balance/ui_season_balance_weight_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBalanceWeightController", UIController)
 UISeasonBalanceWeightController = UISeasonBalanceWeightController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBalanceWeightController.GetComponents = function(self)
-  -- function num : 0_0
+function UISeasonBalanceWeightController:GetComponents()
   self._weightPool = {}
   local w1pool = self:GetUIComponent("UISelectObjectPath", "w1")
   local w1 = w1pool:SpawnObject("UISeasonBalanceWeightItem")
@@ -16,34 +9,19 @@ UISeasonBalanceWeightController.GetComponents = function(self)
   local w2 = w2pool:SpawnObject("UISeasonBalanceWeightItem")
   local w3pool = self:GetUIComponent("UISelectObjectPath", "w3")
   local w3 = w3pool:SpawnObject("UISeasonBalanceWeightItem")
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._weightPool)[1] = w1
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._weightPool)[2] = w2
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._weightPool)[3] = w3
+  self._weightPool[1] = w1
+  self._weightPool[2] = w2
+  self._weightPool[3] = w3
   self._tips = self:GetUIComponent("UILocalizationText", "tips")
   self._enter = self:GetGameObject("enter")
   local backBtn = self:GetUIComponent("UISelectObjectPath", "backBtn")
   self._backBtn = backBtn:SpawnObject("UISeasonTopBtn")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_0_0 , upvalues : self
+  self._backBtn:SetData(function()
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceWeightController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonBalanceWeightController:OnShow(uiParams)
   self._closeCallback = uiParams[2]
   self:GetComponents()
   self._finish = false
@@ -53,67 +31,52 @@ UISeasonBalanceWeightController.OnShow = function(self, uiParams)
   self:ShowWeightInfo()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceWeightController.ShowWeightInfo = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_season_balance)({StageID = self._missionid})
+function UISeasonBalanceWeightController:ShowWeightInfo()
+  local cfgs = Cfg.cfg_season_balance({
+    StageID = self._missionid
+  })
   if cfgs and next(cfgs) then
     local cfg = cfgs[1]
     local weights = cfg.WeightList
     local allHave = true
-    local itemModule = (GameGlobal.GetModule)(ItemModule)
+    local itemModule = GameGlobal.GetModule(ItemModule)
     for i = 1, #weights do
       local weightid = weights[i]
       local count = itemModule:GetItemCount(weightid)
       local have = false
-      if count and count > 0 then
+      if count and 0 < count then
         have = true
       end
-      local widget = (self._weightPool)[i]
+      local widget = self._weightPool[i]
       widget:SetData(i, have, weightid)
       if not have and allHave then
         allHave = false
       end
     end
-    do
-      local tipsTex = allHave and "str_season_s2_last_quiz_2" or "str_season_s2_last_quiz_1"
-      do
-        local showTex = nil
-        if allHave then
-          showTex = "<color=#fff7e9>" .. (StringTable.Get)(tipsTex) .. "</color>"
-        else
-          showTex = "<color=#dcc4ae>" .. (StringTable.Get)(tipsTex) .. "</color>"
-        end
-        ;
-        (self._tips):SetText(showTex)
-        ;
-        (self._enter):SetActive(allHave)
-        self._finish = allHave
-        ;
-        (Log.error)("###[UISeasonBalanceWeightController] cfg_season_balance is nil ! missionid : ", self._missionid)
-      end
+    local tipsTex = allHave and "str_season_s2_last_quiz_2" or "str_season_s2_last_quiz_1"
+    local showTex
+    if allHave then
+      showTex = "<color=#fff7e9>" .. StringTable.Get(tipsTex) .. "</color>"
+    else
+      showTex = "<color=#dcc4ae>" .. StringTable.Get(tipsTex) .. "</color>"
     end
+    self._tips:SetText(showTex)
+    self._enter:SetActive(allHave)
+    self._finish = allHave
+  else
+    Log.error("###[UISeasonBalanceWeightController] cfg_season_balance is nil ! missionid : ", self._missionid)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceWeightController.OnHide = function(self)
-  -- function num : 0_3
+function UISeasonBalanceWeightController:OnHide()
   if self._closeCallback then
-    (self._closeCallback)(self._enterFinish)
+    self._closeCallback(self._enterFinish)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceWeightController.EnterBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UISeasonBalanceWeightController:EnterBtnOnClick(go)
   if self._finish then
     self._enterFinish = true
   end
   self:CloseDialog()
 end
-
-

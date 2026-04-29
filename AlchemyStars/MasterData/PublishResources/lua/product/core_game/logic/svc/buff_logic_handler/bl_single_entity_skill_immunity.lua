@@ -1,40 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_single_entity_skill_immunity.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSingleEntitySkillImmunity", BuffLogicBase)
 BuffLogicSingleEntitySkillImmunity = BuffLogicSingleEntitySkillImmunity
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSingleEntitySkillImmunity.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSingleEntitySkillImmunity:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSingleEntitySkillImmunity.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local cpt = ((self._buffInstance):Entity()):Attributes()
+function BuffLogicSingleEntitySkillImmunity:DoLogic(notify)
+  local cpt = self._buffInstance:Entity():Attributes()
   cpt:SetSimpleAttribute("BuffSingleEntitySkillImmunity", 1)
   return true
 end
 
 _class("BuffLogicRemoveSingleEntitySkillImmunity", BuffLogicBase)
 BuffLogicRemoveSingleEntitySkillImmunity = BuffLogicRemoveSingleEntitySkillImmunity
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSingleEntitySkillImmunity.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveSingleEntitySkillImmunity:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSingleEntitySkillImmunity.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local cpt = ((self._buffInstance):Entity()):Attributes()
+function BuffLogicRemoveSingleEntitySkillImmunity:DoLogic(notify)
+  local cpt = self._buffInstance:Entity():Attributes()
   cpt:RemoveSimpleAttribute("BuffSingleEntitySkillImmunity")
   return true
 end
-
-

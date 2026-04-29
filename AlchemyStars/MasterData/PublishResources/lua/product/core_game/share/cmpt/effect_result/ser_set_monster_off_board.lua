@@ -1,50 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_set_monster_off_board.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResultSetMonsterOffBoard", SkillEffectResultBase)
 SkillEffectResultSetMonsterOffBoard = SkillEffectResultSetMonsterOffBoard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultSetMonsterOffBoard.Constructor = function(self, bSetOff)
-  -- function num : 0_0
+function SkillEffectResultSetMonsterOffBoard:Constructor(bSetOff)
   self._bSetOff = bSetOff
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSetMonsterOffBoard.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultSetMonsterOffBoard:GetEffectType()
   return SkillEffectType.SetMonsterOffBoard
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSetMonsterOffBoard.SetTargetEntityID = function(self, targetEntityID)
-  -- function num : 0_2
+function SkillEffectResultSetMonsterOffBoard:SetTargetEntityID(targetEntityID)
   self._targetEntityID = targetEntityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSetMonsterOffBoard.GetTargetEntityID = function(self)
-  -- function num : 0_3
+function SkillEffectResultSetMonsterOffBoard:GetTargetEntityID()
   return self._targetEntityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSetMonsterOffBoard.SetIsSetOff = function(self, bSetOff)
-  -- function num : 0_4
+function SkillEffectResultSetMonsterOffBoard:SetIsSetOff(bSetOff)
   self._bSetOff = bSetOff
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSetMonsterOffBoard.GetIsSetOff = function(self)
-  -- function num : 0_5
+function SkillEffectResultSetMonsterOffBoard:GetIsSetOff()
   return self._bSetOff
 end
-
-

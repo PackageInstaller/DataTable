@@ -1,331 +1,305 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/anipop/anipop_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local anipopMessageDef = {CLSID_CEventRequestAnipopInfo = 44000, CLSID_CEventReplyAnipopInfo = 44001, CLSID_CEventNotifyAnipopInfo = 44002, CLSID_CEventNotifyAnipopRoundInfo = 44003, CLSID_AnipopSelectHardReq = 44004, CLSID_AnipopSelectHardRep = 44005, CLSID_CEventApplyChangeAnipopFormationReq = 44006, CLSID_CEventApplyChangeAnipopFormationRes = 44007, CLSID_CEventRequestAnipopSelectRelic = 44008, CLSID_CEventReplyAnipopSelectRelic = 44009, CLSID_CEventRequestAnipopBalance = 44010, CLSID_CEventReplyAnipopBalance = 44011, CLSID_AnipopRewardReq = 44012, CLSID_AnipopRewardRep = 44013, CLSID_AnipopConvertRelicReq = 44014, CLSID_AnipopConvertRelicRep = 44015, CLSID_AnipopUseRelicReq = 44016, CLSID_AnipopUseRelicRep = 44017, CLSID_AnipopChangeSkillReq = 44018, CLSID_AnipopChangeSkillRep = 44019}
-;
-(table.append)(MessageDef, anipopMessageDef)
-local AnipopOpResCode = {ANIPOP_SUCCESS = 0, ANIPOP_FAIL = 1, ANIPOP_UNLOCK = 2, ANIPOP_HARD_NOTFOUND = 3, ANIPOP_BALANCED = 4, ANIPOP_REWARD_NOTFOUND = 5, ANIPOP_REWARD_GEDED = 6, ANIPOP_SCORE_LEAK = 7, ANIPOP_GROUP_ERROR = 8, ANIPOP_SKILL_ERROR = 9, ANIPOP_RELIC_COUNTER_ERROR = 10, ANIPOP_RELIC_TRIGGER_ERROR = 11, ANIPOP_RELIC_CONVERT_ERROR = 12}
+local anipopMessageDef = {
+  CLSID_CEventRequestAnipopInfo = 44000,
+  CLSID_CEventReplyAnipopInfo = 44001,
+  CLSID_CEventNotifyAnipopInfo = 44002,
+  CLSID_CEventNotifyAnipopRoundInfo = 44003,
+  CLSID_AnipopSelectHardReq = 44004,
+  CLSID_AnipopSelectHardRep = 44005,
+  CLSID_CEventApplyChangeAnipopFormationReq = 44006,
+  CLSID_CEventApplyChangeAnipopFormationRes = 44007,
+  CLSID_CEventRequestAnipopSelectRelic = 44008,
+  CLSID_CEventReplyAnipopSelectRelic = 44009,
+  CLSID_CEventRequestAnipopBalance = 44010,
+  CLSID_CEventReplyAnipopBalance = 44011,
+  CLSID_AnipopRewardReq = 44012,
+  CLSID_AnipopRewardRep = 44013,
+  CLSID_AnipopConvertRelicReq = 44014,
+  CLSID_AnipopConvertRelicRep = 44015,
+  CLSID_AnipopUseRelicReq = 44016,
+  CLSID_AnipopUseRelicRep = 44017,
+  CLSID_AnipopChangeSkillReq = 44018,
+  CLSID_AnipopChangeSkillRep = 44019
+}
+table.append(MessageDef, anipopMessageDef)
+local AnipopOpResCode = {
+  ANIPOP_SUCCESS = 0,
+  ANIPOP_FAIL = 1,
+  ANIPOP_UNLOCK = 2,
+  ANIPOP_HARD_NOTFOUND = 3,
+  ANIPOP_BALANCED = 4,
+  ANIPOP_REWARD_NOTFOUND = 5,
+  ANIPOP_REWARD_GEDED = 6,
+  ANIPOP_SCORE_LEAK = 7,
+  ANIPOP_GROUP_ERROR = 8,
+  ANIPOP_SKILL_ERROR = 9,
+  ANIPOP_RELIC_COUNTER_ERROR = 10,
+  ANIPOP_RELIC_TRIGGER_ERROR = 11,
+  ANIPOP_RELIC_CONVERT_ERROR = 12
+}
 _enum("AnipopOpResCode", AnipopOpResCode)
 _class("CEventRequestAnipopInfo", CCallRequestEvent)
 CEventRequestAnipopInfo = CEventRequestAnipopInfo
--- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRequestAnipopInfo.Constructor = function(self)
-  -- function num : 0_0
+function CEventRequestAnipopInfo:Constructor()
 end
-
--- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
 
 CEventRequestAnipopInfo._proto = {}
 _class("CEventReplyAnipopInfo", CCallReplyEvent)
 CEventReplyAnipopInfo = CEventReplyAnipopInfo
--- DECOMPILER ERROR at PC67: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventReplyAnipopInfo.Constructor = function(self)
-  -- function num : 0_1
+function CEventReplyAnipopInfo:Constructor()
   self.m_ret = 0
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventReplyAnipopInfo._proto = {
-[1] = {"m_ret", "int"}
+  [1] = {"m_ret", "int"}
 }
 _class("CEventNotifyAnipopInfo", CSvrPushEvent)
 CEventNotifyAnipopInfo = CEventNotifyAnipopInfo
--- DECOMPILER ERROR at PC84: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventNotifyAnipopInfo.Constructor = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function CEventNotifyAnipopInfo:Constructor()
   self.data = anipop_info:New()
   self.end_time = 0
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventNotifyAnipopInfo._proto = {
-[1] = {"data", "anipop_info"}
-, 
-[2] = {"end_time", "time"}
+  [1] = {
+    "data",
+    "anipop_info"
+  },
+  [2] = {"end_time", "time"}
 }
 _class("CEventNotifyAnipopRoundInfo", CSvrPushEvent)
 CEventNotifyAnipopRoundInfo = CEventNotifyAnipopRoundInfo
--- DECOMPILER ERROR at PC106: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventNotifyAnipopRoundInfo.Constructor = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CEventNotifyAnipopRoundInfo:Constructor()
   self.data = AnipopRoundInfo:New()
   self.relic_info = RelicInfo:New()
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventNotifyAnipopRoundInfo._proto = {
-[1] = {"data", "AnipopRoundInfo"}
-, 
-[2] = {"relic_info", "RelicInfo"}
+  [1] = {
+    "data",
+    "AnipopRoundInfo"
+  },
+  [2] = {"relic_info", "RelicInfo"}
 }
 _class("AnipopSelectHardReq", CCallRequestEvent)
 AnipopSelectHardReq = AnipopSelectHardReq
--- DECOMPILER ERROR at PC128: Confused about usage of register: R2 in 'UnsetPending'
 
-AnipopSelectHardReq.Constructor = function(self)
-  -- function num : 0_4
+function AnipopSelectHardReq:Constructor()
   self.hard_id = 0
 end
 
--- DECOMPILER ERROR at PC136: Confused about usage of register: R2 in 'UnsetPending'
-
 AnipopSelectHardReq._proto = {
-[1] = {"hard_id", "int"}
+  [1] = {"hard_id", "int"}
 }
 _class("AnipopSelectHardRep", CCallReplyEvent)
 AnipopSelectHardRep = AnipopSelectHardRep
--- DECOMPILER ERROR at PC145: Confused about usage of register: R2 in 'UnsetPending'
 
-AnipopSelectHardRep.Constructor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function AnipopSelectHardRep:Constructor()
   self.ret = 0
   self.round_info = AnipopRoundInfo:New()
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R2 in 'UnsetPending'
-
 AnipopSelectHardRep._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"round_info", "AnipopRoundInfo"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "round_info",
+    "AnipopRoundInfo"
+  }
 }
 _class("CEventApplyChangeAnipopFormationReq", CCallRequestEvent)
 CEventApplyChangeAnipopFormationReq = CEventApplyChangeAnipopFormationReq
--- DECOMPILER ERROR at PC167: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventApplyChangeAnipopFormationReq.Constructor = function(self)
-  -- function num : 0_6
+function CEventApplyChangeAnipopFormationReq:Constructor()
   self.m_formation_id = 0
   self.m_formation_name = ""
   self.m_formation_pet_list = {}
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventApplyChangeAnipopFormationReq._proto = {
-[1] = {"m_formation_id", "int"}
-, 
-[2] = {"m_formation_name", "string"}
-, 
-[3] = {"m_formation_pet_list", "list<int64>"}
+  [1] = {
+    "m_formation_id",
+    "int"
+  },
+  [2] = {
+    "m_formation_name",
+    "string"
+  },
+  [3] = {
+    "m_formation_pet_list",
+    "list<int64>"
+  }
 }
 _class("CEventApplyChangeAnipopFormationRes", CCallReplyEvent)
 CEventApplyChangeAnipopFormationRes = CEventApplyChangeAnipopFormationRes
--- DECOMPILER ERROR at PC194: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventApplyChangeAnipopFormationRes.Constructor = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function CEventApplyChangeAnipopFormationRes:Constructor()
   self.m_result = 0
   self.m_formation_info = AnipopFormationInfo:New()
 end
 
--- DECOMPILER ERROR at PC207: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventApplyChangeAnipopFormationRes._proto = {
-[1] = {"m_result", "int"}
-, 
-[2] = {"m_formation_info", "AnipopFormationInfo"}
+  [1] = {"m_result", "int"},
+  [2] = {
+    "m_formation_info",
+    "AnipopFormationInfo"
+  }
 }
 _class("CEventRequestAnipopSelectRelic", CCallRequestEvent)
 CEventRequestAnipopSelectRelic = CEventRequestAnipopSelectRelic
--- DECOMPILER ERROR at PC216: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRequestAnipopSelectRelic.Constructor = function(self)
-  -- function num : 0_8
+function CEventRequestAnipopSelectRelic:Constructor()
   self.relic_id = 0
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRequestAnipopSelectRelic._proto = {
-[1] = {"relic_id", "int"}
+  [1] = {"relic_id", "int"}
 }
 _class("CEventReplyAnipopSelectRelic", CCallReplyEvent)
 CEventReplyAnipopSelectRelic = CEventReplyAnipopSelectRelic
--- DECOMPILER ERROR at PC233: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventReplyAnipopSelectRelic.Constructor = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function CEventReplyAnipopSelectRelic:Constructor()
   self.m_ret = 0
   self.relic_info = RelicInfo:New()
   self.relics = {}
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventReplyAnipopSelectRelic._proto = {
-[1] = {"m_ret", "int"}
-, 
-[2] = {"relic_info", "RelicInfo"}
-, 
-[3] = {"relics", "list<RoleAsset>"}
+  [1] = {"m_ret", "int"},
+  [2] = {"relic_info", "RelicInfo"},
+  [3] = {
+    "relics",
+    "list<RoleAsset>"
+  }
 }
 _class("CEventRequestAnipopBalance", CCallRequestEvent)
 CEventRequestAnipopBalance = CEventRequestAnipopBalance
--- DECOMPILER ERROR at PC260: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRequestAnipopBalance.Constructor = function(self)
-  -- function num : 0_10
+function CEventRequestAnipopBalance:Constructor()
 end
-
--- DECOMPILER ERROR at PC263: Confused about usage of register: R2 in 'UnsetPending'
 
 CEventRequestAnipopBalance._proto = {}
 _class("CEventReplyAnipopBalance", CCallReplyEvent)
 CEventReplyAnipopBalance = CEventReplyAnipopBalance
--- DECOMPILER ERROR at PC272: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventReplyAnipopBalance.Constructor = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function CEventReplyAnipopBalance:Constructor()
   self.ret = 0
   self.round_info = AnipopRoundInfo:New()
 end
 
--- DECOMPILER ERROR at PC285: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventReplyAnipopBalance._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"round_info", "AnipopRoundInfo"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "round_info",
+    "AnipopRoundInfo"
+  }
 }
 _class("AnipopRewardReq", CCallRequestEvent)
 AnipopRewardReq = AnipopRewardReq
--- DECOMPILER ERROR at PC294: Confused about usage of register: R2 in 'UnsetPending'
 
-AnipopRewardReq.Constructor = function(self)
-  -- function num : 0_12
+function AnipopRewardReq:Constructor()
   self.req_id = 0
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R2 in 'UnsetPending'
-
 AnipopRewardReq._proto = {
-[1] = {"req_id", "int"}
+  [1] = {"req_id", "int"}
 }
 _class("AnipopRewardRep", CCallReplyEvent)
 AnipopRewardRep = AnipopRewardRep
--- DECOMPILER ERROR at PC311: Confused about usage of register: R2 in 'UnsetPending'
 
-AnipopRewardRep.Constructor = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function AnipopRewardRep:Constructor()
   self.ret = 0
   self.week_info = AnipopWeekInfo:New()
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC329: Confused about usage of register: R2 in 'UnsetPending'
-
 AnipopRewardRep._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"week_info", "AnipopWeekInfo"}
-, 
-[3] = {"rewards", "list<RoleAsset>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "week_info",
+    "AnipopWeekInfo"
+  },
+  [3] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("AnipopConvertRelicReq", CCallRequestEvent)
 AnipopConvertRelicReq = AnipopConvertRelicReq
--- DECOMPILER ERROR at PC338: Confused about usage of register: R2 in 'UnsetPending'
 
-AnipopConvertRelicReq.Constructor = function(self)
-  -- function num : 0_14
+function AnipopConvertRelicReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC341: Confused about usage of register: R2 in 'UnsetPending'
 
 AnipopConvertRelicReq._proto = {}
 _class("AnipopConvertRelicRep", CCallReplyEvent)
 AnipopConvertRelicRep = AnipopConvertRelicRep
--- DECOMPILER ERROR at PC350: Confused about usage of register: R2 in 'UnsetPending'
 
-AnipopConvertRelicRep.Constructor = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function AnipopConvertRelicRep:Constructor()
   self.ret = 0
   self.relics = {}
   self.relic_info = RelicInfo:New()
 end
 
--- DECOMPILER ERROR at PC368: Confused about usage of register: R2 in 'UnsetPending'
-
 AnipopConvertRelicRep._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"relics", "list<RoleAsset>"}
-, 
-[3] = {"relic_info", "RelicInfo"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "relics",
+    "list<RoleAsset>"
+  },
+  [3] = {"relic_info", "RelicInfo"}
 }
 _class("AnipopUseRelicReq", CCallRequestEvent)
 AnipopUseRelicReq = AnipopUseRelicReq
--- DECOMPILER ERROR at PC377: Confused about usage of register: R2 in 'UnsetPending'
 
-AnipopUseRelicReq.Constructor = function(self)
-  -- function num : 0_16
+function AnipopUseRelicReq:Constructor()
   self.relic_id = 0
 end
 
--- DECOMPILER ERROR at PC385: Confused about usage of register: R2 in 'UnsetPending'
-
 AnipopUseRelicReq._proto = {
-[1] = {"relic_id", "int"}
+  [1] = {"relic_id", "int"}
 }
 _class("AnipopUseRelicRep", CCallReplyEvent)
 AnipopUseRelicRep = AnipopUseRelicRep
--- DECOMPILER ERROR at PC394: Confused about usage of register: R2 in 'UnsetPending'
 
-AnipopUseRelicRep.Constructor = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function AnipopUseRelicRep:Constructor()
   self.ret = 0
   self.relics = {}
   self.relic_info = RelicInfo:New()
 end
 
--- DECOMPILER ERROR at PC412: Confused about usage of register: R2 in 'UnsetPending'
-
 AnipopUseRelicRep._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"relics", "list<RoleAsset>"}
-, 
-[3] = {"relic_info", "RelicInfo"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "relics",
+    "list<RoleAsset>"
+  },
+  [3] = {"relic_info", "RelicInfo"}
 }
 _class("AnipopChangeSkillReq", CCallRequestEvent)
 AnipopChangeSkillReq = AnipopChangeSkillReq
--- DECOMPILER ERROR at PC421: Confused about usage of register: R2 in 'UnsetPending'
 
-AnipopChangeSkillReq.Constructor = function(self)
-  -- function num : 0_18
+function AnipopChangeSkillReq:Constructor()
   self.skill_relic_id = 0
 end
 
--- DECOMPILER ERROR at PC429: Confused about usage of register: R2 in 'UnsetPending'
-
 AnipopChangeSkillReq._proto = {
-[1] = {"skill_relic_id", "int"}
+  [1] = {
+    "skill_relic_id",
+    "int"
+  }
 }
 _class("AnipopChangeSkillRep", CCallReplyEvent)
 AnipopChangeSkillRep = AnipopChangeSkillRep
--- DECOMPILER ERROR at PC438: Confused about usage of register: R2 in 'UnsetPending'
 
-AnipopChangeSkillRep.Constructor = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function AnipopChangeSkillRep:Constructor()
   self.ret = 0
   self.relic_info = RelicInfo:New()
 end
 
--- DECOMPILER ERROR at PC451: Confused about usage of register: R2 in 'UnsetPending'
-
 AnipopChangeSkillRep._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"relic_info", "RelicInfo"}
+  [1] = {"ret", "int"},
+  [2] = {"relic_info", "RelicInfo"}
 }
-

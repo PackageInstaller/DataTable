@@ -1,18 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_hp_bomb_layer_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewHPBombLayer", BuffViewBase)
 BuffViewHPBombLayer = BuffViewHPBombLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewHPBombLayer.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local entityID = (self._buffResult):GetEntityID()
-  local layerCount = (self._buffResult):GetLayerCount()
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.HPBombLayer, entityID, layerCount)
+function BuffViewHPBombLayer:PlayView(TT)
+  local entityID = self._buffResult:GetEntityID()
+  local layerCount = self._buffResult:GetLayerCount()
+  self._world:EventDispatcher():Dispatch(GameEventType.HPBombLayer, entityID, layerCount)
 end
-
-

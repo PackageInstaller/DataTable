@@ -1,129 +1,86 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_monster_passive_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMonsterPassiveInfo", UICustomWidget)
 UIMonsterPassiveInfo = UIMonsterPassiveInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMonsterPassiveInfo.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+function UIMonsterPassiveInfo:OnShow()
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self.buttonClose = self:GetUIComponent("Button", "buttonClose")
   self._scrollView = self:GetUIComponent("ScrollRect", "ScrollView")
-  ;
-  ((self._scrollView).gameObject):SetActive(false)
+  self._scrollView.gameObject:SetActive(false)
   self._pool = self:GetUIComponent("UISelectObjectPath", "Content")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "Canvas")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
   self._scrollRect = self:GetUIComponent("RectTransform", "ScrollView")
   self._viewportRect = self:GetUIComponent("RectTransform", "Viewport")
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._contentRect)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._contentRect)
   self:SetCanvasShow(false)
   self._maxCount = 4
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonsterPassiveInfo.OnHide = function(self)
-  -- function num : 0_1
+function UIMonsterPassiveInfo:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonsterPassiveInfo.Init = function(self, entityid, tplId)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMonsterPassiveInfo:Init(entityid, tplId)
   self._entityId = entityid
   self._tplId = tplId
   self._totalCount = 0
   self._passiveSkillInfos = {}
-  local monsterConfigData = (ConfigServiceHelper.GetMonsterConfigData)()
+  local monsterConfigData = ConfigServiceHelper.GetMonsterConfigData()
   local passiveSkillInfos = monsterConfigData:GetMonsterPassiveInfo(tplId)
   local hasPassiveSkillInfo = monsterConfigData:IsHasPassiveSkillInfo(tplId)
   if not hasPassiveSkillInfo then
-    return 
+    return
   end
   self._totalCount = #passiveSkillInfos
   self._passiveSkillInfos = passiveSkillInfos
   if self._totalCount == 0 then
-    return 
+    return
   end
   self._passiveSkillInfos = passiveSkillInfos
   self:SetCanvasShow(true)
   self:_InitListView()
-  ;
-  ((self._scrollView).gameObject):SetActive(true)
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._contentRect)
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R6 in 'UnsetPending'
-
-  if ((self._contentRect).sizeDelta).y < 488 then
-    (self._scrollRect).sizeDelta = Vector2(((self._scrollRect).sizeDelta).x, ((self._contentRect).sizeDelta).y + 40)
+  self._scrollView.gameObject:SetActive(true)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._contentRect)
+  if self._contentRect.sizeDelta.y < 488 then
+    self._scrollRect.sizeDelta = Vector2(self._scrollRect.sizeDelta.x, self._contentRect.sizeDelta.y + 40)
   else
-    -- DECOMPILER ERROR at PC65: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._scrollRect).sizeDelta = Vector2(((self._scrollRect).sizeDelta).x, 528)
+    self._scrollRect.sizeDelta = Vector2(self._scrollRect.sizeDelta.x, 528)
   end
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, self
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     YIELD(TT)
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-    if ((self._contentRect).sizeDelta).y < 488 then
-      (self._scrollRect).sizeDelta = Vector2(((self._scrollRect).sizeDelta).x, ((self._contentRect).sizeDelta).y + 40)
+    if self._contentRect.sizeDelta.y < 488 then
+      self._scrollRect.sizeDelta = Vector2(self._scrollRect.sizeDelta.x, self._contentRect.sizeDelta.y + 40)
     else
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._scrollRect).sizeDelta = Vector2(((self._scrollRect).sizeDelta).x, 528)
+      self._scrollRect.sizeDelta = Vector2(self._scrollRect.sizeDelta.x, 528)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonsterPassiveInfo.SetCanvasShow = function(self, show)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not show or not 1 then
-    (self._canvasGroup).alpha = not self._canvasGroup or 0
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._canvasGroup).blocksRaycasts = show
+function UIMonsterPassiveInfo:SetCanvasShow(show)
+  if self._canvasGroup then
+    self._canvasGroup.alpha = show and 1 or 0
+    self._canvasGroup.blocksRaycasts = show
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonsterPassiveInfo._InitListView = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMonsterPassiveInfo:_InitListView()
   if self._totalCount == 0 then
-    return 
+    return
   end
-  local arr = (self._pool):SpawnObjects("UIMonsterPassiveInfoItem", self._totalCount)
-  for idx,item in ipairs(arr) do
-    local infos = (self._passiveSkillInfos)[idx]
+  local arr = self._pool:SpawnObjects("UIMonsterPassiveInfoItem", self._totalCount)
+  for idx, item in ipairs(arr) do
+    local infos = self._passiveSkillInfos[idx]
     if infos then
       item:Init(infos.type, infos.skillName, infos.skillDesc)
+    else
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonsterPassiveInfo.buttonCloseOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIMonsterPassiveInfo", input = "buttonCloseOnClick", 
-args = {}
-})
+function UIMonsterPassiveInfo:buttonCloseOnClick()
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIMonsterPassiveInfo",
+    input = "buttonCloseOnClick",
+    args = {}
+  })
   self:SetCanvasShow(false)
 end
-
-

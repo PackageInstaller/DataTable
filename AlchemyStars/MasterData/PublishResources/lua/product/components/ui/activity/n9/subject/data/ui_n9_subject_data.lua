@@ -1,67 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n9/subject/data/ui_n9_subject_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN9SubjectData", Object)
 UIN9SubjectData = UIN9SubjectData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN9SubjectData.Constructor = function(self, cfg)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN9SubjectData:Constructor(cfg)
   self._id = cfg.ID
   self._grade = cfg.Grade
-  self._des = (StringTable.Get)(cfg.Des)
+  self._des = StringTable.Get(cfg.Des)
   self._options = {}
   for i = 1, #cfg.Option do
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._options)[#self._options + 1] = (StringTable.Get)((cfg.Option)[i])
+    self._options[#self._options + 1] = StringTable.Get(cfg.Option[i])
   end
   self._answer = cfg.Answer
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectData.GetId = function(self)
-  -- function num : 0_1
+function UIN9SubjectData:GetId()
   return self._id
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectData.GetGrade = function(self)
-  -- function num : 0_2
+function UIN9SubjectData:GetGrade()
   return self._grade
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectData.GetDes = function(self)
-  -- function num : 0_3
+function UIN9SubjectData:GetDes()
   return self._des
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectData.GetOptions = function(self)
-  -- function num : 0_4
+function UIN9SubjectData:GetOptions()
   return self._options
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectData.GetAnswerIndex = function(self)
-  -- function num : 0_5
+function UIN9SubjectData:GetAnswerIndex()
   return self._answer
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectData.CheckIsRight = function(self, index)
-  -- function num : 0_6
-  do return index == self._answer end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIN9SubjectData:CheckIsRight(index)
+  return index == self._answer
 end
-
-

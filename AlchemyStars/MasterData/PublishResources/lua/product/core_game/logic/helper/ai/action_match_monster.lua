@@ -1,35 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_match_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMatchMonster", AINewNode)
 ActionMatchMonster = ActionMatchMonster
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMatchMonster.Constructor = function(self)
-  -- function num : 0_0
+function ActionMatchMonster:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMatchMonster.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionMatchMonster.super).Reset)(self)
+function ActionMatchMonster:Reset()
+  ActionMatchMonster.super.Reset(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMatchMonster.OnUpdate = function(self, dt)
-  -- function num : 0_2 , upvalues : _ENV
-  local monsterID = ((self.m_entityOwn):MonsterID()):GetMonsterID()
-  local monsterClassID = ((Cfg.cfg_monster)[monsterID]).ClassID
+function ActionMatchMonster:OnUpdate(dt)
+  local monsterID = self.m_entityOwn:MonsterID():GetMonsterID()
+  local monsterClassID = Cfg.cfg_monster[monsterID].ClassID
   local targetMonsterClassID = self:GetLogicData(-1)
   if monsterClassID == targetMonsterClassID then
     return AINewNodeStatus.Success
   end
   return AINewNodeStatus.Failure
 end
-
-

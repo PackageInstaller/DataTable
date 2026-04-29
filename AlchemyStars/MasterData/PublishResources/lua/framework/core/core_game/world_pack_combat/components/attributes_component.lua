@@ -1,116 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_combat/components/attributes_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AttributesComponent", Object)
 AttributesComponent = AttributesComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AttributesComponent.Constructor = function(self)
-  -- function num : 0_0
+function AttributesComponent:Constructor()
   self.modifierDic = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AttributesComponent.SetAttribute = function(self, attrName, modifier)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self.modifierDic)[attrName] = modifier
+function AttributesComponent:SetAttribute(attrName, modifier)
+  self.modifierDic[attrName] = modifier
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AttributesComponent.SetSimpleAttribute = function(self, attrName, value)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self.modifierDic)[attrName] = IModifyValue:New(value)
+function AttributesComponent:SetSimpleAttribute(attrName, value)
+  self.modifierDic[attrName] = IModifyValue:New(value)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AttributesComponent.RemoveSimpleAttribute = function(self, attrName)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.modifierDic)[attrName] = nil
+function AttributesComponent:RemoveSimpleAttribute(attrName)
+  self.modifierDic[attrName] = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AttributesComponent.GetAttributeModifier = function(self, attrName)
-  -- function num : 0_4
-  return (self.modifierDic)[attrName]
+function AttributesComponent:GetAttributeModifier(attrName)
+  return self.modifierDic[attrName]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AttributesComponent.GetAttribute = function(self, attrName)
-  -- function num : 0_5
-  local modifier = (self.modifierDic)[attrName]
+function AttributesComponent:GetAttribute(attrName)
+  local modifier = self.modifierDic[attrName]
   if modifier then
     return modifier:Value()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AttributesComponent.Modify = function(self, attrName, newValue, modifyID, option)
-  -- function num : 0_6 , upvalues : _ENV
-  local modifier = (self.modifierDic)[attrName]
+function AttributesComponent:Modify(attrName, newValue, modifyID, option)
+  local modifier = self.modifierDic[attrName]
   if not modifier then
-    (Log.exception)("Modify attribute not configed! ", attrName)
-    return 
+    Log.exception("Modify attribute not configed! ", attrName)
+    return
   end
   modifier:AddModify(newValue, modifyID, option)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AttributesComponent.RemoveModify = function(self, attrName, modifyID)
-  -- function num : 0_7
-  local modifier = (self.modifierDic)[attrName]
+function AttributesComponent:RemoveModify(attrName, modifyID)
+  local modifier = self.modifierDic[attrName]
   if modifier then
     modifier:RemoveModify(modifyID)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AttributesComponent.ClearModify = function(self, attrName)
-  -- function num : 0_8
-  local modifier = (self.modifierDic)[attrName]
+function AttributesComponent:ClearModify(attrName)
+  local modifier = self.modifierDic[attrName]
   if modifier then
     modifier:ClearModify()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AttributesComponent.CloneAttributes = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function AttributesComponent:CloneAttributes()
   local attributsList = {}
-  for key,value in pairs(self.modifierDic) do
+  for key, value in pairs(self.modifierDic) do
     local modifier = setmetatable(value, Classes[value._className])
     attributsList[key] = modifier
   end
   return attributsList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AttributesComponent.SetModifierDic = function(self, attributsList)
-  -- function num : 0_10
+function AttributesComponent:SetModifierDic(attributsList)
   self.modifierDic = attributsList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AttributesComponent.CalcMaxHp = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function AttributesComponent:CalcMaxHp()
   local baseMaxHp = self:GetAttribute("MaxHP") or 0
   local maxHpConstantFix = self:GetAttribute("MaxHPConstantFix")
   local maxHpPercentage = self:GetAttribute("MaxHPPercentage")
@@ -118,101 +72,64 @@ AttributesComponent.CalcMaxHp = function(self)
   if maxHpConstantFix ~= nil and maxHpPercentage ~= nil then
     result = baseMaxHp * (1 + maxHpPercentage) + maxHpConstantFix
   end
-  return (math.ceil)(result)
+  return math.ceil(result)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AttributesComponent.GetDefence = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function AttributesComponent:GetDefence()
   local baseDefence = self:GetAttribute("Defense")
   local defenceConstantFix = self:GetAttribute("DefenceConstantFix")
-  if not defenceConstantFix then
-    defenceConstantFix = 0
-  end
+  defenceConstantFix = defenceConstantFix or 0
   local defencePercentage = self:GetAttribute("DefencePercentage")
-  if not defencePercentage then
-    defencePercentage = 0
-  end
+  defencePercentage = defencePercentage or 0
   local defence = baseDefence * (1 + defencePercentage) + defenceConstantFix
-  return (math.ceil)(defence)
+  return math.ceil(defence)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AttributesComponent.GetAttack = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function AttributesComponent:GetAttack()
   local baseAttack = self:GetAttribute("Attack")
   if not baseAttack then
     return 0
   end
   local attackConstantFix = self:GetAttribute("AttackConstantFix")
-  if not attackConstantFix then
-    attackConstantFix = 0
-  end
+  attackConstantFix = attackConstantFix or 0
   local attackPercentage = self:GetAttribute("AttackPercentage")
-  if not attackPercentage then
-    attackPercentage = 0
-  end
+  attackPercentage = attackPercentage or 0
   local atk = baseAttack * (1 + attackPercentage) + attackConstantFix
-  return (math.ceil)(atk)
+  return math.ceil(atk)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AttributesComponent.GetCurrentHP = function(self)
-  -- function num : 0_14
+function AttributesComponent:GetCurrentHP()
   local baseHP = self:GetAttribute("HP")
   return baseHP
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AttributesComponent.GetAIMobility = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function AttributesComponent:GetAIMobility()
   local baseAIM = self:GetAttribute("Mobility")
   local maxAIM = self:GetAttribute("MaxMobility")
-  local ret = (math.min)(baseAIM, maxAIM)
-  return (math.ceil)(ret)
+  local ret = math.min(baseAIM, maxAIM)
+  return math.ceil(ret)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Attributes = function(self)
-  -- function num : 0_16
-  return self:GetComponent((self.WEComponentsEnum).Attributes)
+function Entity:Attributes()
+  return self:GetComponent(self.WEComponentsEnum.Attributes)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasAttributes = function(self)
-  -- function num : 0_17
-  return self:HasComponent((self.WEComponentsEnum).Attributes)
+function Entity:HasAttributes()
+  return self:HasComponent(self.WEComponentsEnum.Attributes)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddAttributes = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Attributes
+function Entity:AddAttributes()
+  local index = self.WEComponentsEnum.Attributes
   local component = AttributesComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveAttributes = function(self)
-  -- function num : 0_19
+function Entity:RemoveAttributes()
   if self:HasAttributes() then
-    self:RemoveComponent((self.WEComponentsEnum).Attributes)
+    self:RemoveComponent(self.WEComponentsEnum.Attributes)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceAttributes = function(self, component)
-  -- function num : 0_20
-  self:ReplaceComponent((self.WEComponentsEnum).Attributes, component)
+function Entity:ReplaceAttributes(component)
+  self:ReplaceComponent(self.WEComponentsEnum.Attributes, component)
 end
-
-

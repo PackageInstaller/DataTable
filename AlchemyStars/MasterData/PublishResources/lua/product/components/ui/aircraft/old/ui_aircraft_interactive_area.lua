@@ -1,106 +1,78 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/old/ui_aircraft_interactive_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftInteractiveArea", Object)
 UIAircraftInteractiveArea = UIAircraftInteractiveArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftInteractiveArea.Constructor = function(self, areaGameObject)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftInteractiveArea:Constructor(areaGameObject)
   self._pointList = {}
   self._pointOccupyList = {}
   self._occupiedPointCount = 0
   self._allOccupied = false
-  local pointsRoot = (areaGameObject.transform):Find("Points")
+  local pointsRoot = areaGameObject.transform:Find("Points")
   if not pointsRoot or pointsRoot.childCount == 0 then
     self._allOccupied = true
-    return 
+    return
   end
-  local targetRoot = (areaGameObject.transform):Find("TargetPoints")
+  local targetRoot = areaGameObject.transform:Find("TargetPoints")
   local targetPosList = {}
   if targetRoot then
     for i = 0, targetRoot.childCount - 1 do
-      targetPosList[#targetPosList + 1] = (targetRoot:GetChild(i)).position
+      targetPosList[#targetPosList + 1] = targetRoot:GetChild(i).position
     end
   end
-  do
-    local pointCount = pointsRoot.childCount
-    for i = 0, pointCount - 1 do
-      local pointPos = (pointsRoot:GetChild(i)).position
-      local closetIndex = 0
-      local closetDistance = 0
-      for j = 1, #targetPosList do
-        if j == 1 then
+  local pointCount = pointsRoot.childCount
+  for i = 0, pointCount - 1 do
+    local pointPos = pointsRoot:GetChild(i).position
+    local closetIndex = 0
+    local closetDistance = 0
+    for j = 1, #targetPosList do
+      if j == 1 then
+        closetIndex = j
+        closetDistance = Vector3.Distance(pointPos, targetPosList[j])
+      else
+        local distance = Vector3.Distance(pointPos, targetPosList[j])
+        if closetDistance > distance then
           closetIndex = j
-          closetDistance = (Vector3.Distance)(pointPos, targetPosList[j])
-        else
-          local distance = (Vector3.Distance)(pointPos, targetPosList[j])
-          if distance < closetDistance then
-            closetIndex = j
-            closetDistance = distance
-          end
+          closetDistance = distance
         end
       end
-      local faceIDStrList = (string.split)(((pointsRoot:GetChild(i)).gameObject).name, "|")
-      local faceIDList = {}
-      for i = 1, #faceIDStrList do
-        faceIDList[i] = tonumber(faceIDStrList[i])
-      end
-      local point = nil
-      if closetIndex > 0 then
-        point = UIAircraftInteractivePoint:New(pointPos, targetPosList[closetIndex], faceIDList)
-      else
-        point = UIAircraftInteractivePoint:New(pointPos, nil, faceIDList)
-      end
-      local index = #self._pointList + 1
-      point:SetIndex(index)
-      -- DECOMPILER ERROR at PC116: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      (self._pointList)[index] = point
     end
+    local faceIDStrList = string.split(pointsRoot:GetChild(i).gameObject.name, "|")
+    local faceIDList = {}
+    for i = 1, #faceIDStrList do
+      faceIDList[i] = tonumber(faceIDStrList[i])
+    end
+    local point
+    if 0 < closetIndex then
+      point = UIAircraftInteractivePoint:New(pointPos, targetPosList[closetIndex], faceIDList)
+    else
+      point = UIAircraftInteractivePoint:New(pointPos, nil, faceIDList)
+    end
+    local index = #self._pointList + 1
+    point:SetIndex(index)
+    self._pointList[index] = point
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftInteractiveArea.IsFull = function(self)
-  -- function num : 0_1
+function UIAircraftInteractiveArea:IsFull()
   return self._allOccupied
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftInteractiveArea.GetAndOccupyAvailablePoint = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftInteractiveArea:GetAndOccupyAvailablePoint()
   local indexList = {}
   for i = 1, #self._pointList do
-    if not (self._pointOccupyList)[i] then
+    if not self._pointOccupyList[i] then
       indexList[#indexList + 1] = i
     end
   end
-  local res = (math.random)(1, #indexList)
+  local res = math.random(1, #indexList)
   local index = indexList[res]
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._pointOccupyList)[index] = true
+  self._pointOccupyList[index] = true
   if #indexList == 1 then
     self._allOccupied = true
   end
-  return (self._pointList)[index]
+  return self._pointList[index]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftInteractiveArea.ReleasePoint = function(self, index)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._pointOccupyList)[index] = false
+function UIAircraftInteractiveArea:ReleasePoint(index)
+  self._pointOccupyList[index] = false
   self._allOccupied = false
 end
-
-

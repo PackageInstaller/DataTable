@@ -1,32 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_use_move_scope_record.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_UseMoveScopeRecord", SkillScopeCalculator_Base)
 SkillScopeCalculator_UseMoveScopeRecord = SkillScopeCalculator_UseMoveScopeRecord
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_UseMoveScopeRecord.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_UseMoveScopeRecord:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local attackRange = {}
   local wholeRange = {}
   local hostEntity = casterEntity
   if casterEntity and casterEntity:HasSuperEntity() then
-    hostEntity = (casterEntity:SuperEntityComponent()):GetSuperEntity()
+    hostEntity = casterEntity:SuperEntityComponent():GetSuperEntity()
   end
-  do
-    if hostEntity then
-      local moveScopeRecordCmpt = hostEntity:MoveScopeRecord()
-      if moveScopeRecordCmpt then
-        attackRange = moveScopeRecordCmpt:GetMoveScope()
-        wholeRange = moveScopeRecordCmpt:GetMoveScope()
-      end
+  if hostEntity then
+    local moveScopeRecordCmpt = hostEntity:MoveScopeRecord()
+    if moveScopeRecordCmpt then
+      attackRange = moveScopeRecordCmpt:GetMoveScope()
+      wholeRange = moveScopeRecordCmpt:GetMoveScope()
     end
-    local result = SkillScopeResult:New(SkillScopeType.UseMoveScopeRecord, casterPos, attackRange, wholeRange)
-    return result
   end
+  local result = SkillScopeResult:New(SkillScopeType.UseMoveScopeRecord, casterPos, attackRange, wholeRange)
+  return result
 end
-
-

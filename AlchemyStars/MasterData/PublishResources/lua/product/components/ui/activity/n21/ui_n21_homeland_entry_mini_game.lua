@@ -1,41 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21/ui_n21_homeland_entry_mini_game.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN21HomelandEntryMiniGame", Object)
 UIN21HomelandEntryMiniGame = UIN21HomelandEntryMiniGame
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN21HomelandEntryMiniGame.Constructor = function(self, campaign)
-  -- function num : 0_0
+function UIN21HomelandEntryMiniGame:Constructor(campaign)
   self._campaign = campaign
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21HomelandEntryMiniGame.GetNew = function(self)
-  -- function num : 0_1
+function UIN21HomelandEntryMiniGame:GetNew()
   return false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21HomelandEntryMiniGame.GetRedCount = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local primaryCount, seniorCount = (HomelandFindTreasureConst.GetSingleCount)()
+function UIN21HomelandEntryMiniGame:GetRedCount()
+  local primaryCount, seniorCount = HomelandFindTreasureConst.GetSingleCount()
   return seniorCount
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21HomelandEntryMiniGame.OpenUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (UIActivityHelper.PlayFirstPlot_Component)(self._campaign, ECampaignN21ComponentID.ECAMPAIGN_N21_MINI_GAME, function()
-    -- function num : 0_3_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIFindTreasureDetail", false, ECampaignType.CAMPAIGN_TYPE_N21, ECampaignN21ComponentID.ECAMPAIGN_N21_MINI_GAME)
-  end
-)
+function UIN21HomelandEntryMiniGame:OpenUI()
+  UIActivityHelper.PlayFirstPlot_Component(self._campaign, ECampaignN21ComponentID.ECAMPAIGN_N21_MINI_GAME, function()
+    GameGlobal.UIStateManager():ShowDialog("UIFindTreasureDetail", false, ECampaignType.CAMPAIGN_TYPE_N21, ECampaignN21ComponentID.ECAMPAIGN_N21_MINI_GAME)
+  end)
 end
-
-

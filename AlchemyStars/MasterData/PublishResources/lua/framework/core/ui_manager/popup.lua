@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/popup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Popup", Object)
 Popup = Popup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Popup.Constructor = function(self, uiMsgBoxName, priority, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function Popup:Constructor(uiMsgBoxName, priority, ...)
   self.uiMsgBoxName = uiMsgBoxName
-  if not priority then
-    self.priority = PopupPriority.Normal
-    self.params = {...}
-  end
+  self.priority = priority or PopupPriority.Normal
+  self.params = {
+    ...
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Popup.Priority = function(self, value)
-  -- function num : 0_1
+function Popup:Priority(value)
   if value then
     self.priority = value
   else
@@ -27,42 +17,31 @@ Popup.Priority = function(self, value)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Popup.Open = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  if not (GameGlobal.UIStateManager)() then
-    (Log.fatal)("[UIPopup] Popup:Open UIStateManager is nil, return")
-    return 
+function Popup:Open(TT)
+  if not GameGlobal.UIStateManager() then
+    Log.fatal("[UIPopup] Popup:Open UIStateManager is nil, return")
+    return
   end
-  local uiMsgBox = ((GameGlobal.UIStateManager)()):GetUIMessageBox(TT, self.uiMsgBoxName, true)
+  local uiMsgBox = GameGlobal.UIStateManager():GetUIMessageBox(TT, self.uiMsgBoxName, true)
   if not uiMsgBox then
-    (Log.fatal)("[UIPopup] Popup:Open cannot find uiMsgBox named ", self.uiMsgBoxName, ", return")
-    return 
+    Log.fatal("[UIPopup] Popup:Open cannot find uiMsgBox named ", self.uiMsgBoxName, ", return")
+    return
   end
-  ;
-  (Log.debug)("[UIPopup] Popup:Open,", self.uiMsgBoxName)
+  Log.debug("[UIPopup] Popup:Open,", self.uiMsgBoxName)
   uiMsgBox:Alert(self, self.params)
   uiMsgBox:SetShow(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Popup.Close = function(self, TT, clearCallback)
-  -- function num : 0_3 , upvalues : _ENV
+function Popup:Close(TT, clearCallback)
   clearCallback = clearCallback ~= false
-  local uiMsgBox = ((GameGlobal.UIStateManager)()):GetUIMessageBox(TT, self.uiMsgBoxName, false)
+  local uiMsgBox = GameGlobal.UIStateManager():GetUIMessageBox(TT, self.uiMsgBoxName, false)
   if not uiMsgBox then
-    return 
+    return
   end
-  ;
-  (Log.debug)("[UIPopup] Popup:Close,", self.uiMsgBoxName)
+  Log.debug("[UIPopup] Popup:Close,", self.uiMsgBoxName)
   if clearCallback then
-    (Log.debug)("[UIPopup] Popup:Close,", self.uiMsgBoxName, ",clearCallback")
+    Log.debug("[UIPopup] Popup:Close,", self.uiMsgBoxName, ",clearCallback")
     uiMsgBox:ClearCallback()
   end
   uiMsgBox:SetShow(false)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
-
-

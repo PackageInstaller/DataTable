@@ -1,34 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/scene/environment/season_scene_environment_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonSceneEnvironmentBase", Object)
 SeasonSceneEnvironmentBase = SeasonSceneEnvironmentBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonSceneEnvironmentBase.Constructor = function(self, sceneRoot)
-  -- function num : 0_0
+function SeasonSceneEnvironmentBase:Constructor(sceneRoot)
   self._sceneRootTransform = sceneRoot.transform
   self._isUnlock = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneEnvironmentBase.Update = function(self, deltaTime)
-  -- function num : 0_1
+function SeasonSceneEnvironmentBase:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneEnvironmentBase.Dispose = function(self)
-  -- function num : 0_2
+function SeasonSceneEnvironmentBase:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneEnvironmentBase.UnLock = function(self)
-  -- function num : 0_3
+function SeasonSceneEnvironmentBase:UnLock()
 end
-
-

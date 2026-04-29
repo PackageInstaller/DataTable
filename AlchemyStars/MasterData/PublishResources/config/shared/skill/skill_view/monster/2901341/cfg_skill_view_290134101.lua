@@ -1,21 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2901341/cfg_skill_view_290134101.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayAudio,audioID=6133,audioType=1; PlayCasterAnimation,animName=Skill01; PlayCasterBindEffect,effectID=3198; Wait,waitTime=200; PlayCasterBindEffect,effectID=3199; "}
-}
-, 
-{2, 2, 0, 2, 1, 200, 
-{" DataSelectDamage,damageIndex=1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; "}
-}
-, 
-{3, 3, 34, 2, 1, 0, 
-{showTimeDelay = 0, gridEffectID = 0, gridEffectDelayTime = 0, gridIntervalTime = 0}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayAudio,audioID=6133,audioType=1; PlayCasterAnimation,animName=Skill01; PlayCasterBindEffect,effectID=3198; Wait,waitTime=200; PlayCasterBindEffect,effectID=3199; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    2,
+    1,
+    200,
+    {
+      " DataSelectDamage,damageIndex=1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; "
+    }
+  },
+  {
+    3,
+    3,
+    34,
+    2,
+    1,
+    0,
+    {
+      showTimeDelay = 0,
+      gridEffectID = 0,
+      gridEffectDelayTime = 0,
+      gridIntervalTime = 0
+    }
+  }
 }
 return config, "ID", key
-

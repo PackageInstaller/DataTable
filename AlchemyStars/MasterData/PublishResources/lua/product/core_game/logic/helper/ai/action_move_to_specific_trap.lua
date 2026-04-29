@@ -1,34 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_to_specific_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMoveToSpecificTrap", ActionMoveBase)
 ActionMoveToSpecificTrap = ActionMoveToSpecificTrap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveToSpecificTrap.FindNewTargetPos = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local posSelf = (self.m_entityOwn):GetGridPosition()
-  local targetPos = (Vector2.New)(posSelf.x, posSelf.y)
-  local trapID = tonumber((self.m_configData)[1])
+function ActionMoveToSpecificTrap:FindNewTargetPos()
+  local posSelf = self.m_entityOwn:GetGridPosition()
+  local targetPos = Vector2.New(posSelf.x, posSelf.y)
+  local trapID = tonumber(self.m_configData[1])
   if trapID then
-    local trapLogicSvc = (self._world):GetService("TrapLogic")
+    local trapLogicSvc = self._world:GetService("TrapLogic")
     local trapPosList = trapLogicSvc:FindTrapPosByTrapID(trapID)
-    if #trapPosList > 0 then
+    if 0 < #trapPosList then
       local posListNearSelf = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
       posListNearSelf:AllowDuplicate()
-      for index,trapPos in ipairs(trapPosList) do
-        (AINewNode.InsertSortedArray)(posListNearSelf, posSelf, trapPos, index)
+      for index, trapPos in ipairs(trapPosList) do
+        AINewNode.InsertSortedArray(posListNearSelf, posSelf, trapPos, index)
       end
       local aiSortByDistance = posListNearSelf:GetAt(1)
       targetPos = aiSortByDistance.data
     end
   end
-  do
-    return targetPos
-  end
+  return targetPos
 end
-
-

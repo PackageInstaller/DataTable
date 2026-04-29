@@ -1,139 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/data/ui_haute_couture_data_qt_review2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureQTReview2", UIHauteCoutureDataBase)
 UIHauteCoutureQTReview2 = UIHauteCoutureQTReview2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureQTReview2.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureQTReview2:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.CostItemID = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCoutureQTReview2:CostItemID()
   return RoleAssetID.RoleAssetDrawCardSeniorSkinQT3
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.ShopGoodsOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIHauteCoutureDrawV2Controller")
+function UIHauteCoutureQTReview2:ShopGoodsOnClick()
+  GameGlobal.UIStateManager():ShowDialog("UIHauteCoutureDrawV2Controller")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.BuyItem = function(self)
-  -- function num : 0_3
+function UIHauteCoutureQTReview2:BuyItem()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.IsReview = function(self)
-  -- function num : 0_4
+function UIHauteCoutureQTReview2:IsReview()
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.HC_Type = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHauteCoutureQTReview2:HC_Type()
   return HauteCoutureType.HC_QT_Re
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.GetMainUIInfo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHauteCoutureQTReview2:GetMainUIInfo()
   return "UIHauteCoutureDraw_QT_Main_Review.prefab", UIHauteCoutureDraw_QT_Main_Review
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.GetMainUIBgInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHauteCoutureQTReview2:GetMainUIBgInfo()
   return "UIHauteCoutureDraw_QT_Bg.prefab", UIHauteCoutureDraw_QT_Bg
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.GetGetItemUIInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIHauteCoutureQTReview2:GetGetItemUIInfo()
   return "UIHauteCoutureDraw_QT_GetItemMain.prefab", UIHauteCoutureDraw_QT_GetItemMain
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.GetChargeUIInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHauteCoutureQTReview2:GetChargeUIInfo()
   return "UIHauteCoutureDraw_QT_ChargeMain.prefab", UIHauteCoutureDraw_QT_ChargeMain
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.GetChargeUIBgInfo = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHauteCoutureQTReview2:GetChargeUIBgInfo()
   return "UIHauteCoutureDraw_QT_ChargeBg.prefab", UIHauteCoutureDraw_QT_ChargeBg
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.GetRulesUIInfo = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHauteCoutureQTReview2:GetRulesUIInfo()
   return "UIHauteCoutureDraw_QT_RulesMain.prefab", UIHauteCoutureDraw_QT_RulesMain
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.GetRulesUIBgInfo = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHauteCoutureQTReview2:GetRulesUIBgInfo()
   return "UIHauteCoutureDraw_QT_RulesBg.prefab", UIHauteCoutureDraw_QT_RulesBg
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.GetVideoUIInfo = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHauteCoutureQTReview2:GetVideoUIInfo()
   return "UIHauteCoutureDraw_QT_VideoMain.prefab", UIHauteCoutureDraw_QT_VideoMain
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.GetDynamicProbablityUIInfo = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIHauteCoutureQTReview2:GetDynamicProbablityUIInfo()
   return "UIHauteCoutureDraw_QT_DynamicProbabilityMain.prefab", UIHauteCoutureDraw_QT_DynamicProbabilityMain
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.GetDynamicProbablityUIBgInfo = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIHauteCoutureQTReview2:GetDynamicProbablityUIBgInfo()
   return "UIHauteCoutureDraw_QT_DynamicProbabilityBg.prefab", UIHauteCoutureDraw_QT_DynamicProbabilityBg
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.SideEnterText = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  return (StringTable.Get)("str_senior_skin_draw_lobby_enter_title4")
+function UIHauteCoutureQTReview2:SideEnterText()
+  return StringTable.Get("str_senior_skin_draw_lobby_enter_title4")
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.Review_DuplicateRewardBgInfo = function(self)
-  -- function num : 0_17
+function UIHauteCoutureQTReview2:Review_DuplicateRewardBgInfo()
   return "UIHauteCoutureDuplicateRewardBgQT.prefab", nil
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureQTReview2.Review_DuplicateRewardUIInfo = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIHauteCoutureQTReview2:Review_DuplicateRewardUIInfo()
   return "UIHauteCoutureDuplicateRewardQT.prefab", UIHauteCoutureDuplicateRewardQT
 end
-
-

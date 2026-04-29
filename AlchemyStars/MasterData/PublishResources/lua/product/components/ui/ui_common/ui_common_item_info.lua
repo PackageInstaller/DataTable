@@ -1,56 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_common/ui_common_item_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICommonItemInfo", UIController)
 UICommonItemInfo = UICommonItemInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICommonItemInfo.Constructor = function(self)
-  -- function num : 0_0
+function UICommonItemInfo:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonItemInfo.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UICommonItemInfo:LoadDataOnEnter(TT, res, uiParams)
   self._reward = uiParams[1]
   self._deltaPosition = uiParams[2]
   self._infoPrefab = uiParams[3]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonItemInfo.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UICommonItemInfo:OnShow(uiParams)
   self._animation = self:GetUIComponent("Animation", "animation")
   self._itemInfo = self:GetUIComponent("UISelectObjectPath", "itemInfo")
   if self._infoPrefab ~= nil then
-    ((self._itemInfo):Engine()):SetObjectName(self._infoPrefab)
+    self._itemInfo:Engine():SetObjectName(self._infoPrefab)
   end
-  self._tips = (self._itemInfo):SpawnObject("UISelectInfo")
+  self._tips = self._itemInfo:SpawnObject("UISelectInfo")
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonItemInfo.OnHide = function(self)
-  -- function num : 0_3
+function UICommonItemInfo:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonItemInfo.BtnAnywhereOnClick = function(self)
-  -- function num : 0_4
+function UICommonItemInfo:BtnAnywhereOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonItemInfo.Flush = function(self)
-  -- function num : 0_5
-  (self._tips):SetData((self._reward).assetid, self._deltaPosition + ((self._animation).transform).position)
+function UICommonItemInfo:Flush()
+  self._tips:SetData(self._reward.assetid, self._deltaPosition + self._animation.transform.position)
 end
-
-

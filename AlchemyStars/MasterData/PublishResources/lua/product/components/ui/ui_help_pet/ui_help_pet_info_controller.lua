@@ -1,28 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_help_pet/ui_help_pet_info_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHelpPetInfoController", UIController)
 UIHelpPetInfoController = UIHelpPetInfoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHelpPetInfoController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHelpPetInfoController:Constructor()
   self._maxStarLevel = 6
-  self._prof2Img = {[2001] = "spirit_prof_5", [2002] = "spirit_prof_1", [2003] = "spirit_prof_3", [2004] = "spirit_prof_7"}
-  self._prof2Tex = {[2001] = "str_pet_tag_job_name_color_change", [2002] = "str_pet_tag_job_name_return_blood", [2003] = "str_pet_tag_job_name_attack", [2004] = "str_pet_tag_job_name_function"}
-  self._element2Str = {[ElementType.ElementType_Blue] = "str_pet_filter_water_element", [ElementType.ElementType_Red] = "str_pet_filter_fire_element", [ElementType.ElementType_Green] = "str_pet_filter_sen_element", [ElementType.ElementType_Yellow] = "str_pet_filter_electricity_element", [ElementType.ElementType_AnyNone] = "str_tale_pet_att_none"}
+  self._prof2Img = {
+    [2001] = "spirit_prof_5",
+    [2002] = "spirit_prof_1",
+    [2003] = "spirit_prof_3",
+    [2004] = "spirit_prof_7"
+  }
+  self._prof2Tex = {
+    [2001] = "str_pet_tag_job_name_color_change",
+    [2002] = "str_pet_tag_job_name_return_blood",
+    [2003] = "str_pet_tag_job_name_attack",
+    [2004] = "str_pet_tag_job_name_function"
+  }
+  self._element2Str = {
+    [ElementType.ElementType_Blue] = "str_pet_filter_water_element",
+    [ElementType.ElementType_Red] = "str_pet_filter_fire_element",
+    [ElementType.ElementType_Green] = "str_pet_filter_sen_element",
+    [ElementType.ElementType_Yellow] = "str_pet_filter_electricity_element",
+    [ElementType.ElementType_AnyNone] = "str_tale_pet_att_none"
+  }
   self._atlasAwake = self:GetAsset("UIPetDetail.spriteatlas", LoadType.SpriteAtlas)
   self._uiHeartItemAtlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
   self._atlasAwake1 = self:GetAsset("UIAwake.spriteatlas", LoadType.SpriteAtlas)
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController.GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHelpPetInfoController:GetComponents()
   self._skillsPools = self:GetUIComponent("UISelectObjectPath", "skills")
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self._firstElement = self:GetUIComponent("Image", "first")
@@ -33,8 +39,7 @@ UIHelpPetInfoController.GetComponents = function(self)
   self._englishNameText = self:GetUIComponent("UILocalizationText", "EnglishName")
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base)
+  self.uiItem:SetForm(UIItemForm.Base)
   self._attackText = self:GetUIComponent("UILocalizationText", "attackText")
   self._defenceText = self:GetUIComponent("UILocalizationText", "defenceText")
   self._healthText = self:GetUIComponent("UILocalizationText", "healthText")
@@ -61,19 +66,13 @@ UIHelpPetInfoController.GetComponents = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIHelpPetInfoController:OnShow(uiParams)
   self:GetComponents()
   self._petInfo = uiParams[1]
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController.OnValue = function(self)
-  -- function num : 0_3
+function UIHelpPetInfoController:OnValue()
   self:RefreshInfo()
   self:ShowStarLevel()
   self:ShowProf()
@@ -81,70 +80,55 @@ UIHelpPetInfoController.OnValue = function(self)
   self:_SetEquipLv()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController.ShowStarLevel = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local petStar = (self.pet):GetPetStar()
-  local awakenStep = (self.pet):GetPetAwakening()
-  local awakenLock = (self.pet):GetAwakeMatch()
-  ;
-  (self._stars):SpawnObjects("UIPetIntimacyStar", petStar)
-  local stars = (self._stars):GetAllSpawnList()
+function UIHelpPetInfoController:ShowStarLevel()
+  local petStar = self.pet:GetPetStar()
+  local awakenStep = self.pet:GetPetAwakening()
+  local awakenLock = self.pet:GetAwakeMatch()
+  self._stars:SpawnObjects("UIPetIntimacyStar", petStar)
+  local stars = self._stars:GetAllSpawnList()
   for i = 1, #stars do
-    local isBackBreak = awakenLock < i and i <= awakenStep
-    ;
-    (stars[i]):Refresh(i <= awakenStep, isBackBreak)
+    local isBackBreak = i > awakenLock and i <= awakenStep
+    stars[i]:Refresh(i <= awakenStep, isBackBreak)
   end
   local pet = self.pet
   local petId = pet:GetTemplateID()
   local awaken = pet:GetPetGrade()
-  local spriteName = (UIPetModule.GetAwakeSpriteName)(petId, awaken)
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._awakeCount).sprite = (self._atlasAwake1):GetSprite(spriteName)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local spriteName = UIPetModule.GetAwakeSpriteName(petId, awaken)
+  self._awakeCount.sprite = self._atlasAwake1:GetSprite(spriteName)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController.RefreshInfo = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHelpPetInfoController:RefreshInfo()
   local tempData = pet_data:New()
-  tempData.template_id = (self._petInfo).m_nTemplateID
-  tempData.current_skin = (self._petInfo).m_nSkinID
+  tempData.template_id = self._petInfo.m_nTemplateID
+  tempData.current_skin = self._petInfo.m_nSkinID
   local oriPet = Pet:New(tempData)
-  tempData.grade = (self._petInfo).m_nGrade
-  tempData.level = (self._petInfo).m_nLevel
-  tempData.awakening = (self._petInfo).m_nAwake
-  tempData.equip_lv = (self._petInfo).m_nEquipLevel
-  tempData.awake_lock = (self._petInfo).m_nAwakeLock
-  tempData.equip_refine_lv = (self._petInfo).m_nEquipRefineLevel
+  tempData.grade = self._petInfo.m_nGrade
+  tempData.level = self._petInfo.m_nLevel
+  tempData.awakening = self._petInfo.m_nAwake
+  tempData.equip_lv = self._petInfo.m_nEquipLevel
+  tempData.awake_lock = self._petInfo.m_nAwakeLock
+  tempData.equip_refine_lv = self._petInfo.m_nEquipRefineLevel
   oriPet:SetData(tempData)
   oriPet:CalAttr()
-  local pet, isEnhanced = (UIPetModule.ProcessSinglePetEnhance)(oriPet)
+  local pet, isEnhanced = UIPetModule.ProcessSinglePetEnhance(oriPet)
   self:RefreshEnhanceFlagArea(isEnhanced)
   self.pet = pet
   if self.pet then
-    local petId = (self.pet):GetTemplateID()
-    local helpIcon = (HelperProxy:GetInstance()):GetPetStaticBody((self.pet):GetTemplateID(), (self.pet):GetPetGrade(), (self.pet):GetSkinId(), PetSkinEffectPath.BODY_HELP)
+    local petId = self.pet:GetTemplateID()
+    local helpIcon = HelperProxy:GetInstance():GetPetStaticBody(self.pet:GetTemplateID(), self.pet:GetPetGrade(), self.pet:GetSkinId(), PetSkinEffectPath.BODY_HELP)
     if helpIcon then
-      (UICG.SetTransform)(self.cgRect, "UIHelpPetInfoController", helpIcon)
-      ;
-      (self.cgNormal):Load(helpIcon)
+      UICG.SetTransform(self.cgRect, "UIHelpPetInfoController", helpIcon)
+      self.cgNormal:Load(helpIcon)
     else
-      ;
-      (Log.fatal)("### [error] pet [", petId, "] no helpIcon")
+      Log.fatal("### [error] pet [", petId, "] no helpIcon")
     end
-    local uiModule = (self._petModule).uiModule
+    local uiModule = self._petModule.uiModule
     self._skillDetailInfos = uiModule:GetSkillDetailInfoBySkillTypeHideExtra(self.pet)
-    local creatCount = (table.count)(self._skillDetailInfos)
-    ;
-    (self._skillsPools):SpawnObjects("UIFightSkillItem", creatCount)
-    self._skillsSpawns = (self._skillsPools):GetAllSpawnList()
+    local creatCount = table.count(self._skillDetailInfos)
+    self._skillsPools:SpawnObjects("UIFightSkillItem", creatCount)
+    self._skillsSpawns = self._skillsPools:GetAllSpawnList()
     if self._skillsSpawns then
-      for index,value in ipairs(self._skillsSpawns) do
+      for index, value in ipairs(self._skillsSpawns) do
         if creatCount < index then
           value:Enable(false)
         else
@@ -152,112 +136,79 @@ UIHelpPetInfoController.RefreshInfo = function(self)
         end
       end
       for index = 1, creatCount do
-        ((self._skillsSpawns)[index]):SetData((self._skillDetailInfos)[index], self.pet, index)
+        self._skillsSpawns[index]:SetData(self._skillDetailInfos[index], self.pet, index)
       end
     end
   end
-  do
-    local itemIcon = (self.pet):GetPetItemIcon(PetSkinEffectPath.ITEM_ICON_HELP)
-    ;
-    (self.uiItem):SetData({icon = itemIcon, itemId = (self.pet):GetTemplateID()})
-    self:ShowElement()
-    self:ShowName()
-    self:RefreshAtt()
-  end
+  local itemIcon = self.pet:GetPetItemIcon(PetSkinEffectPath.ITEM_ICON_HELP)
+  self.uiItem:SetData({
+    icon = itemIcon,
+    itemId = self.pet:GetTemplateID()
+  })
+  self:ShowElement()
+  self:ShowName()
+  self:RefreshAtt()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController.ButtonOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  local id = tonumber((self.inp1).text)
-  local grade = tonumber((self.inp2).text)
+function UIHelpPetInfoController:ButtonOnClick(go)
+  local id = tonumber(self.inp1.text)
+  local grade = tonumber(self.inp2.text)
   local skinId = 0
-  local helpIcon = (HelperProxy:GetInstance()):GetPetStaticBody(id, grade, skinId, PetSkinEffectPath.BODY_HELP)
+  local helpIcon = HelperProxy:GetInstance():GetPetStaticBody(id, grade, skinId, PetSkinEffectPath.BODY_HELP)
   if helpIcon then
-    (UICG.SetTransform)(self.cgRect, "UIHelpPetInfoController", helpIcon)
-    ;
-    (self.cgNormal):Load(helpIcon)
+    UICG.SetTransform(self.cgRect, "UIHelpPetInfoController", helpIcon)
+    self.cgNormal:Load(helpIcon)
   else
-    ;
-    (Log.exception)("输入一头问题 id--> ", id, "| grade--> ", grade)
+    Log.exception("输入一头问题 id--> ", id, "| grade--> ", grade)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController.ShowElement = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
+function UIHelpPetInfoController:ShowElement()
+  local cfg_pet_element = Cfg.cfg_pet_element({})
   local elementTex = ""
   if cfg_pet_element then
-    local f = (self.pet):GetPetFirstElement()
-    local s = (self.pet):GetPetSecondElement()
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._firstElement).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[f]).Icon))
-    if s and s > 0 then
-      (self._secondBg):SetActive(true)
-      ;
-      ((self._secondElement).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._secondElement).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[s]).Icon))
-      elementTex = (StringTable.Get)("str_pet_detail_element_" .. f) .. "  " .. (StringTable.Get)("str_pet_detail_element_" .. s)
+    local f = self.pet:GetPetFirstElement()
+    local s = self.pet:GetPetSecondElement()
+    self._firstElement.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[f].Icon))
+    if s and 0 < s then
+      self._secondBg:SetActive(true)
+      self._secondElement.gameObject:SetActive(true)
+      self._secondElement.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[s].Icon))
+      elementTex = StringTable.Get("str_pet_detail_element_" .. f) .. "  " .. StringTable.Get("str_pet_detail_element_" .. s)
     else
-      elementTex = (StringTable.Get)((self._element2Str)[f])
-      ;
-      ((self._secondElement).gameObject):SetActive(false)
-      ;
-      (self._secondBg):SetActive(false)
+      elementTex = StringTable.Get(self._element2Str[f])
+      self._secondElement.gameObject:SetActive(false)
+      self._secondBg:SetActive(false)
     end
   end
-  do
-    ;
-    (self._elementTex):SetText(elementTex)
-  end
+  self._elementTex:SetText(elementTex)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController.RefreshAtt = function(self)
-  -- function num : 0_8
-  local _attackValue = (self.pet):GetPetAttack()
-  local _defenceValue = (self.pet):GetPetDefence()
-  local _healthValue = (self.pet):GetPetHealth()
-  ;
-  (self._attackText):SetText(_attackValue)
-  ;
-  (self._defenceText):SetText(_defenceValue)
-  ;
-  (self._healthText):SetText(_healthValue)
+function UIHelpPetInfoController:RefreshAtt()
+  local _attackValue = self.pet:GetPetAttack()
+  local _defenceValue = self.pet:GetPetDefence()
+  local _healthValue = self.pet:GetPetHealth()
+  self._attackText:SetText(_attackValue)
+  self._defenceText:SetText(_defenceValue)
+  self._healthText:SetText(_healthValue)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController.ShowName = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local name = (self.pet):GetPetName()
-  ;
-  (self._nameText):SetText((StringTable.Get)(name))
+function UIHelpPetInfoController:ShowName()
+  local name = self.pet:GetPetName()
+  self._nameText:SetText(StringTable.Get(name))
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController.RefreshStar = function(self)
-  -- function num : 0_10
-  local petStar = (self.pet):GetPetStar()
-  local awakenStep = (self.pet):GetPetAwakening()
+function UIHelpPetInfoController:RefreshStar()
+  local petStar = self.pet:GetPetStar()
+  local awakenStep = self.pet:GetPetAwakening()
   for starLevel = 1, self._maxStarLevel do
     local _itemIcon = self:GetUIComponent("Image", "star" .. starLevel)
     local starGo = self:GetGameObject("star" .. starLevel)
     if starLevel <= petStar then
       if starLevel <= awakenStep then
-        _itemIcon.sprite = (self._atlasAwake):GetSprite("spirit_xiangqing_icon22")
+        _itemIcon.sprite = self._atlasAwake:GetSprite("spirit_xiangqing_icon22")
       else
-        _itemIcon.sprite = (self._atlasAwake):GetSprite("spirit_xiangqing_icon21")
+        _itemIcon.sprite = self._atlasAwake:GetSprite("spirit_xiangqing_icon21")
       end
       starGo:SetActive(true)
     else
@@ -266,100 +217,70 @@ UIHelpPetInfoController.RefreshStar = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController.OnHide = function(self)
-  -- function num : 0_11
+function UIHelpPetInfoController:OnHide()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController.ShowProf = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local prof = (self.pet):GetProf()
-  ;
-  (self._profTex):SetText((StringTable.Get)((self._prof2Tex)[prof]))
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._profImg).sprite = (self._uiHeartItemAtlas):GetSprite((self._prof2Img)[prof])
+function UIHelpPetInfoController:ShowProf()
+  local prof = self.pet:GetProf()
+  self._profTex:SetText(StringTable.Get(self._prof2Tex[prof]))
+  self._profImg.sprite = self._uiHeartItemAtlas:GetSprite(self._prof2Img[prof])
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController.ExpSlider = function(self, curGrateMaxLevel, curLevel)
-  -- function num : 0_13
+function UIHelpPetInfoController:ExpSlider(curGrateMaxLevel, curLevel)
   local rate = 0
   if curGrateMaxLevel <= curLevel then
     rate = 1
   else
-    local curLevelExp = (self.pet):GetPetExp()
-    local upLevelAllExp = (self.pet):GetLevelUpNeedExp()
+    local curLevelExp = self.pet:GetPetExp()
+    local upLevelAllExp = self.pet:GetLevelUpNeedExp()
     rate = curLevelExp / upLevelAllExp
   end
-  do
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-    if self._firstIn == 0 then
-      (self._leveExpSlider).value = rate
-    else
-      if self._expTweener then
-        (self._expTweener):Kill()
-      end
-      self._expTweener = ((self._leveExpSlider):DOValue(0, 0.2)):OnComplete(function()
-    -- function num : 0_13_0 , upvalues : self, rate
-    self._expTweener = (self._leveExpSlider):DOValue(rate, 0.2)
-  end
-)
+  if self._firstIn == 0 then
+    self._leveExpSlider.value = rate
+  else
+    if self._expTweener then
+      self._expTweener:Kill()
     end
+    self._expTweener = self._leveExpSlider:DOValue(0, 0.2):OnComplete(function()
+      self._expTweener = self._leveExpSlider:DOValue(rate, 0.2)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController.RefreshLevelInfo = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local curGrateMaxLevel = (self.pet):GetMaxLevel()
-  local curLevel = (self.pet):GetPetLevel()
-  ;
-  (self._levelText):SetText(curLevel .. "<size=45><color=#acacac>/</color><color=#f96601>" .. curGrateMaxLevel .. "</color></size>")
-  local cfg_pet = (Cfg.cfg_pet)[(self.pet):GetTemplateID()]
+function UIHelpPetInfoController:RefreshLevelInfo()
+  local curGrateMaxLevel = self.pet:GetMaxLevel()
+  local curLevel = self.pet:GetPetLevel()
+  self._levelText:SetText(curLevel .. "<size=45><color=#acacac>/</color><color=#f96601>" .. curGrateMaxLevel .. "</color></size>")
+  local cfg_pet = Cfg.cfg_pet[self.pet:GetTemplateID()]
   if cfg_pet then
-    (Log.fatal)("###pet_detail -- cfg_pet is nil ! id -- " .. (self.pet):GetTemplateID())
-    local itemIcon = (self.pet):GetPetItemIcon(PetSkinEffectPath.ITEM_ICON_HELP)
-    ;
-    (self.uiItem):SetData({icon = itemIcon, itemId = (self.pet):GetTemplateID()})
+  else
+    Log.fatal("###pet_detail -- cfg_pet is nil ! id -- " .. self.pet:GetTemplateID())
   end
+  local itemIcon = self.pet:GetPetItemIcon(PetSkinEffectPath.ITEM_ICON_HELP)
+  self.uiItem:SetData({
+    icon = itemIcon,
+    itemId = self.pet:GetTemplateID()
+  })
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController.bgOnClick = function(self)
-  -- function num : 0_15
+function UIHelpPetInfoController:bgOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController._SetEquipLv = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_equipLv", "UIPetEquipLvIcon")
+function UIHelpPetInfoController:_SetEquipLv()
+  local obj = UIWidgetHelper.SpawnObject(self, "_equipLv", "UIPetEquipLvIcon")
   obj:SetData(self.pet, true)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetInfoController.RefreshEnhanceFlagArea = function(self, isEnhanced)
-  -- function num : 0_17
+function UIHelpPetInfoController:RefreshEnhanceFlagArea(isEnhanced)
   local flagGo = self:GetGameObject("EnhanceFlagArea")
   local flagSop = self:GetUIComponent("UISelectObjectPath", "EnhanceFlagArea")
   if not flagGo then
-    return 
+    return
   end
   flagGo:SetActive(isEnhanced)
   if isEnhanced then
     local flagWidget = flagSop:SpawnObject("UIPetEnhancedFlag")
+  else
   end
 end
-
-

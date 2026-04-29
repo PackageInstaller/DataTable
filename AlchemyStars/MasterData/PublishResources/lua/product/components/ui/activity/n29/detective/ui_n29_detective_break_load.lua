@@ -1,93 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/ui_n29_detective_break_load.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN29DetectiveBreakLoad", UIController)
 UIN29DetectiveBreakLoad = UIN29DetectiveBreakLoad
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29DetectiveBreakLoad.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN29DetectiveBreakLoad:Constructor()
   self._idStage = 0
   self._idReasoning = UIN29DetectiveLocalDb.Game_Continue
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveBreakLoad.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN29DetectiveBreakLoad:LoadDataOnEnter(TT, res, uiParams)
   self._localDb = UIN29DetectiveLocalDb:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveBreakLoad.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN29DetectiveBreakLoad:OnShow(uiParams)
   self._archivePreview = self:GetUIComponent("UISelectObjectPath", "archivePreview")
   self._animation = self:GetUIComponent("Animation", "animation")
-  self._uiWidgetArchive = (self._archivePreview):SpawnObject("UIN29DetectiveArchiveContent")
-  ;
-  (self._localDb):GameLoadDB()
-  self._idStage = (self._localDb):BreakPosition()
-  local componentInfo = ((self._localDb):DetectiveComponent()):GetComponentInfo()
-  ;
-  (self._uiWidgetArchive):SetDetectiveLocalDb(self._localDb)
-  ;
-  (self._uiWidgetArchive):SetIdReasoning(self._idReasoning)
-  ;
-  (self._uiWidgetArchive):FlushBreak(componentInfo.cur_info)
+  self._uiWidgetArchive = self._archivePreview:SpawnObject("UIN29DetectiveArchiveContent")
+  self._localDb:GameLoadDB()
+  self._idStage, self._idReasoning = self._localDb:BreakPosition()
+  local componentInfo = self._localDb:DetectiveComponent():GetComponentInfo()
+  self._uiWidgetArchive:SetDetectiveLocalDb(self._localDb)
+  self._uiWidgetArchive:SetIdReasoning(self._idReasoning)
+  self._uiWidgetArchive:FlushBreak(componentInfo.cur_info)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveBreakLoad.OnHide = function(self)
-  -- function num : 0_3
+function UIN29DetectiveBreakLoad:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveBreakLoad.BtnCloseOnClick = function(self, go)
-  -- function num : 0_4
+function UIN29DetectiveBreakLoad:BtnCloseOnClick(go)
   self:CloseDialogAnimation()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveBreakLoad.BtnNewGameOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN29DetectiveBreakLoad:BtnNewGameOnClick(go)
   self:CloseDialogAnimation(function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
     self:CallUIMethod("UIN29DetectiveLogin", "OnStartPlayGame", UIN29DetectiveLocalDb.Game_New, 1)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveBreakLoad.BtnContinueGameOnClick = function(self, go)
-  -- function num : 0_6
+function UIN29DetectiveBreakLoad:BtnContinueGameOnClick(go)
   self:CloseDialogAnimation(function()
-    -- function num : 0_6_0 , upvalues : self
     self:CallUIMethod("UIN29DetectiveLogin", "OnStartPlayGame", self._idReasoning, self._idStage)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveBreakLoad.CloseDialogAnimation = function(self, cbFinish)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN29DetectiveBreakLoad:CloseDialogAnimation(cbFinish)
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV, cbFinish
-    (self._animation):Play("uieff_UIN29DetectiveBreakLoad_out")
+    self._animation:Play("uieff_UIN29DetectiveBreakLoad_out")
     YIELD(TT, 167)
     self:CloseDialog()
     if cbFinish then
       cbFinish()
     end
-  end
-)
+  end)
 end
-
-

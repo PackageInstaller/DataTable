@@ -1,43 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn12n41/line/ui_cn12_n41_line_map_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN12N41LineMapLine", UICustomWidget)
 UICN12N41LineMapLine = UICN12N41LineMapLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN12N41LineMapLine.OnShow = function(self)
-  -- function num : 0_0
+function UICN12N41LineMapLine:OnShow()
   self._rect = self:GetUIComponent("RectTransform", "shape")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41LineMapLine.OnHide = function(self)
-  -- function num : 0_1
+function UICN12N41LineMapLine:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41LineMapLine.Flush = function(self, from, to)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN12N41LineMapLine:Flush(from, to)
   local trans = self:GetUIComponent("RectTransform", "shape")
   trans.anchorMax = Vector2(0, 0.5)
   trans.anchorMin = Vector2(0, 0.5)
-  local type = from.y < to.y and 2 or 1
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-[1] = {"line1"}
-, 
-[2] = {"line2"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, type)
-  if type ~= 1 or not Vector2(130, -30) then
-    local offset = Vector2(135, 35)
-  end
+  local type = to.y > from.y and 2 or 1
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    [1] = {"line1"},
+    [2] = {"line2"}
+  })
+  UIWidgetHelper.SetObjGroupShow(objs, type)
+  local offset = type == 1 and Vector2(130, -30) or Vector2(135, 35)
   local anchoredPosition = from + offset
   trans.anchoredPosition = anchoredPosition
 end
-
-

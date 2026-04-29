@@ -1,50 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_compare_trap_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ActionCompareTrapCount", AINewNode)
 ActionCompareTrapCount = ActionCompareTrapCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCompareTrapCount.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionCompareTrapCount:OnUpdate()
   local trapId = self:GetLogicData(-1)
   local compareMode = self:GetLogicData(-2)
   local count = self:GetLogicData(-3)
-  local gTrap = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
+  local gTrap = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
   local traps = gTrap:GetEntities()
   local trapCount = 0
-  for _,trap in ipairs(traps) do
-    if not trap:HasDeadMark() and (trap:Trap()):GetTrapID() == trapId then
+  for _, trap in ipairs(traps) do
+    if not trap:HasDeadMark() and trap:Trap():GetTrapID() == trapId then
       trapCount = trapCount + 1
     end
   end
   local res = false
-  if trapCount ~= count then
-    res = compareMode ~= "eq"
-    if trapCount == count then
-      res = compareMode ~= "ne"
-      if count >= trapCount then
-        res = compareMode ~= "gt"
-        if count > trapCount then
-          res = compareMode ~= "ge"
-          if trapCount >= count then
-            res = compareMode ~= "lt"
-            if trapCount > count then
-              res = compareMode ~= "le"
-              if res then
-                return AINewNodeStatus.Success
-              else
-                return AINewNodeStatus.Failure
-              end
-              -- DECOMPILER ERROR: 14 unprocessed JMP targets
-            end
-          end
-        end
-      end
-    end
+  if compareMode == "eq" then
+    res = trapCount == count
+  elseif compareMode == "ne" then
+    res = trapCount ~= count
+  elseif compareMode == "gt" then
+    res = count < trapCount
+  elseif compareMode == "ge" then
+    res = count <= trapCount
+  elseif compareMode == "lt" then
+    res = count > trapCount
+  elseif compareMode == "le" then
+    res = count >= trapCount
+  end
+  if res then
+    return AINewNodeStatus.Success
+  else
+    return AINewNodeStatus.Failure
   end
 end
-
-

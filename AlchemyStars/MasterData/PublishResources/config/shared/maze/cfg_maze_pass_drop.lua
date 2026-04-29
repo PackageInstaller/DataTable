@@ -1,11 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/maze/cfg_maze_pass_drop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, PassFixDropId = 2}
 local config = {
-{1, 6200000}
+  {1, 6200000}
 }
 return config, "ID", key
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_res_instance/ui_res_entry_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIResEntryCell", UICustomWidget)
 UIResEntryCell = UIResEntryCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIResEntryCell.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIResEntryCell:OnShow()
   self.nameTxt = self:GetUIComponent("UILocalizationText", "name")
   self.materialTxt = self:GetUIComponent("UILocalizationText", "material")
   self.dateTxt = self:GetUIComponent("UILocalizationText", "date")
@@ -16,165 +9,103 @@ UIResEntryCell.OnShow = function(self)
   self.unOpenTxt = self:GetUIComponent("UILocalizationText", "notopen")
   self.atlas = self:GetAsset("UIResInstance.spriteatlas", LoadType.SpriteAtlas)
   self.maskGO = self:GetGameObject("mask")
-  self.rectTrans = ((self:GetGameObject()).transform):GetComponent("RectTransform")
-  self.anim = ((self:GetGameObject()).transform):GetComponent("Animation")
+  self.rectTrans = self:GetGameObject().transform:GetComponent("RectTransform")
+  self.anim = self:GetGameObject().transform:GetComponent("Animation")
   self.module = self:GetModule(ResDungeonModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResEntryCell.Refresh = function(self, entryData, dontShowAni)
-  -- function num : 0_1
+function UIResEntryCell:Refresh(entryData, dontShowAni)
   self.entryData = entryData
-  local name = (self.entryData):GetEntryName()
-  ;
-  (self.nameTxt):SetText(name)
-  local materialName = (self.entryData):GetMaterialName()
-  ;
-  (self.materialTxt):SetText(materialName)
-  local date = (self.entryData):GetShowDate()
-  ;
-  (self.dateTxt):SetText(date)
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.picImg).sprite = (self.atlas):GetSprite((self.entryData):GetEntryPic())
+  local name = self.entryData:GetEntryName()
+  self.nameTxt:SetText(name)
+  local materialName = self.entryData:GetMaterialName()
+  self.materialTxt:SetText(materialName)
+  local date = self.entryData:GetShowDate()
+  self.dateTxt:SetText(date)
+  self.picImg.sprite = self.atlas:GetSprite(self.entryData:GetEntryPic())
   self:SetPos()
   self:CheckOpen(dontShowAni)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResEntryCell.GetMainType = function(self)
-  -- function num : 0_2
-  if self.entryData then
-    return (self.entryData):GetMainType()
-  end
+function UIResEntryCell:GetMainType()
+  return self.entryData and self.entryData:GetMainType()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResEntryCell.SetPos = function(self)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.rectTrans).anchoredPosition = (self.entryData):GetPos()
+function UIResEntryCell:SetPos()
+  self.rectTrans.anchoredPosition = self.entryData:GetPos()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResEntryCell.OnHide = function(self)
-  -- function num : 0_4
+function UIResEntryCell:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResEntryCell.picOnClick = function(self, _, subType)
-  -- function num : 0_5 , upvalues : _ENV
+function UIResEntryCell:picOnClick(_, subType)
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV, subType
-    local mainType = (self.entryData):GetMainType()
+    local mainType = self.entryData:GetMainType()
     local resDungeonModule = self:GetModule(ResDungeonModule)
-    local clientResInstance = (resDungeonModule:GetClientResInstance())
-    -- DECOMPILER ERROR at PC9: Overwrote pending register: R4 in 'AssignReg'
-
-    local result, data = .end, nil
+    local clientResInstance = resDungeonModule:GetClientResInstance()
+    local result, data
     if mainType == DungeonType.DungeonType_Coin then
-      result = resDungeonModule:GetCoinInstanceData(TT)
-    else
-      if mainType == DungeonType.DungeonType_Experience then
-        local subKey = clientResInstance.resInstanceSubLocalDBKey
-        ;
-        (LocalDB.SetInt)(subKey, 0)
-        -- DECOMPILER ERROR at PC33: Overwrote pending register: R5 in 'AssignReg'
-
-        result = resDungeonModule:GetExperienceInstanceData(TT)
-      else
-        do
-          -- DECOMPILER ERROR at PC43: Overwrote pending register: R5 in 'AssignReg'
-
-          if mainType == DungeonType.DungeonType_AircraftMaterial then
-            result = resDungeonModule:GetAircraftmaterialInstanceData(TT)
-          else
-            -- DECOMPILER ERROR at PC53: Overwrote pending register: R5 in 'AssignReg'
-
-            if mainType == DungeonType.DungeonType_equip then
-              result = resDungeonModule:GetEquipInstanceData(TT)
-            end
-          end
-          if result == OpenStatus.Dungeon_OpenToday then
-            if self.isOpen == false then
-              local result = resDungeonModule:GetOpenStatus(TT)
-              if result ~= {} then
-                local controller = ((GameGlobal.UIStateManager)()):GetController("UIResEntryController")
-                if controller then
-                  controller:Refresh()
-                end
-              end
-            end
-            do
-              self:ShowDialog("UIResDetailController", mainType, subType)
-              if result == OpenStatus.Dungeon_CloseToday then
-                if self.isOpen == false then
-                  (ToastManager.ShowToast)((StringTable.Get)("str_res_instance_entry_not_open_msg"))
-                  return 
-                else
-                  ;
-                  (ToastManager.ShowToast)((StringTable.Get)("str_res_instance_entry_kuatian_msg"))
-                  local result = resDungeonModule:GetOpenStatus(TT)
-                  if result ~= {} then
-                    local controller = ((GameGlobal.UIStateManager)()):GetController("UIResEntryController")
-                    if controller then
-                      controller:Refresh()
-                    end
-                  end
-                end
-              else
-                do
-                  if result == OpenStatus.Dungeon_ReturnError or result == OpenStatus.Dungeon_StatusError then
-                    (ToastManager.ShowToast)((StringTable.Get)("str_toast_manager_res_controller_open_unusual"))
-                  else
-                    if result == OpenStatus.Dungeon_EntryLocked then
-                      local condMissionID = ((Cfg.cfg_res_instance_entry)[mainType]).condition
-                      condMissionName = (DiscoveryStage.GetStageIndexString)(condMissionID)
-                      local text = (StringTable.Get)("str_res_instance_entry_unlock_cond", condMissionName)
-                      ;
-                      (ToastManager.ShowToast)(text)
-                    end
-                  end
-                end
-              end
-            end
+      result, data = resDungeonModule:GetCoinInstanceData(TT)
+    elseif mainType == DungeonType.DungeonType_Experience then
+      local subKey = clientResInstance.resInstanceSubLocalDBKey
+      LocalDB.SetInt(subKey, 0)
+      result, data = resDungeonModule:GetExperienceInstanceData(TT)
+    elseif mainType == DungeonType.DungeonType_AircraftMaterial then
+      result, data = resDungeonModule:GetAircraftmaterialInstanceData(TT)
+    elseif mainType == DungeonType.DungeonType_equip then
+      result, data = resDungeonModule:GetEquipInstanceData(TT)
+    end
+    if result == OpenStatus.Dungeon_OpenToday then
+      if self.isOpen == false then
+        local result = resDungeonModule:GetOpenStatus(TT)
+        if result ~= {} then
+          local controller = GameGlobal.UIStateManager():GetController("UIResEntryController")
+          if controller then
+            controller:Refresh()
           end
         end
       end
+      self:ShowDialog("UIResDetailController", mainType, subType)
+    elseif result == OpenStatus.Dungeon_CloseToday then
+      if self.isOpen == false then
+        ToastManager.ShowToast(StringTable.Get("str_res_instance_entry_not_open_msg"))
+        return
+      else
+        ToastManager.ShowToast(StringTable.Get("str_res_instance_entry_kuatian_msg"))
+        local result = resDungeonModule:GetOpenStatus(TT)
+        if result ~= {} then
+          local controller = GameGlobal.UIStateManager():GetController("UIResEntryController")
+          if controller then
+            controller:Refresh()
+          end
+        end
+      end
+    elseif result == OpenStatus.Dungeon_ReturnError or result == OpenStatus.Dungeon_StatusError then
+      ToastManager.ShowToast(StringTable.Get("str_toast_manager_res_controller_open_unusual"))
+    elseif result == OpenStatus.Dungeon_EntryLocked then
+      local condMissionID = Cfg.cfg_res_instance_entry[mainType].condition
+      condMissionName = DiscoveryStage.GetStageIndexString(condMissionID)
+      local text = StringTable.Get("str_res_instance_entry_unlock_cond", condMissionName)
+      ToastManager.ShowToast(text)
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResEntryCell.CheckOpen = function(self, dontShowAni)
-  -- function num : 0_6 , upvalues : _ENV
-  local mainType = (self.entryData):GetMainType()
-  local openStatus = (self.module):GetEntryOpenStatus(mainType)
+function UIResEntryCell:CheckOpen(dontShowAni)
+  local mainType = self.entryData:GetMainType()
+  local openStatus = self.module:GetEntryOpenStatus(mainType)
   self.isOpen = openStatus == OpenStatus.Dungeon_OpenToday
-  ;
-  (self.maskGO):SetActive(not self.isOpen)
+  self.maskGO:SetActive(not self.isOpen)
   if openStatus == OpenStatus.Dungeon_OpenToday then
-    (self.unOpenTxt):SetText((StringTable.Get)("str_res_instance_entry_not_open"))
+    self.unOpenTxt:SetText(StringTable.Get("str_res_instance_entry_not_open"))
   elseif openStatus == OpenStatus.Dungeon_EntryLocked then
-    (self.unOpenTxt):SetText((StringTable.Get)("str_res_instance_entry_locking"))
+    self.unOpenTxt:SetText(StringTable.Get("str_res_instance_entry_locking"))
   end
   if not dontShowAni then
     if self.isOpen then
-      (self.anim):Play("eff_UIResEntryCell_1")
+      self.anim:Play("eff_UIResEntryCell_1")
     else
-      (self.anim):Play("eff_UIResEntryCell_2")
+      self.anim:Play("eff_UIResEntryCell_2")
     end
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
-
-

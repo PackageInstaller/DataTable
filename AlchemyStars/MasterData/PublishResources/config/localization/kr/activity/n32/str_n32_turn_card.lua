@@ -1,8 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/activity/n32/str_n32_turn_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_n32_turn_card_day = "{1}일 ", str_n32_turn_card_hour = "{1}시간 ", str_n32_turn_card_minus = "{1}분", str_n32_turn_card_less_one_minus = "<1분", str_n32_turn_card_activity_end = "이벤트가 종료되었습니다.", str_n32_turn_card_activity_remain_time = "이벤트 남은 시간: ", str_n32_turn_card_main_title = "쉴 틈이 없는 미즈 로트", str_n32_turn_card_rule_description = "이벤트 설명", str_n32_turn_card_tab_title_award = "미즈 로트의 보물상자", str_n32_turn_card_tab_title_mission = "미즈 로트의 의뢰", str_n32_turn_card_receive = "수령", str_n32_turn_card_jump = "이동", str_n32_turn_card_daily_mission = "일일 퀘스트", str_n32_turn_card_cumulative_task = "누적 임무", str_n32_turn_card_refresh_time = "갱신 남은 시간: {1}", str_n32_turn_card_prize_pool = "보상 목록", str_n32_turn_card_prize1 = "특등상", str_n32_turn_card_prize2 = "1등상", str_n32_turn_card_prize3 = "2등상", str_n32_turn_card_award_description = "1. 이벤트 기간에 미즈 로트의 주화 1개마다 <size=32><color=#f08c58>1칸을 뒤집을 수 있으며</color></size>, <size=32><color=#f08c58>모든 칸을 뒤집어 이미지를 완성하면</color></size> 해당하는 보상을 획득할 수 있습니다. 자세한 보상 내용은 [보상 목록]에서 확인하세요.\n2. <size=32><color=#f08c58>미즈 로트의 주화</color></size>는 <size=32><color=#f08c58>[미즈 로트의 의뢰]</color></size> 내 임무를 완료하면 획득할 수 있습니다.", str_n32_turn_card_mission_description = "1. 이벤트 기간에 <size=32><color=#f08c58>일일 임무</color></size> 및 <size=32><color=#f08c58>누적 임무</color></size>를 완료하면 <size=32><color=#f08c58>미즈 로트의 주화</color></size>를 획득할 수 있고, 미즈 로트의 주화는 [미즈 로트의 보물상자] 내의 칸을 뒤집어 보상을 수령하는 데 사용할 수 있습니다.\n2. 일일 임무는 <size=32><color=#f08c58>매일 05:00</color></size>에 업데이트되며, 업데이트 시 완료되지 않은 임무의 진행도는 저장되지 않습니다.", str_n32_turn_card_item_less = "아이템 부족", str_n32_turn_card_remain = "잔여: {1}", str_n32_turn_card_process = "진행도: {1}", str_n32_turn_card_daily_mission_refresh = "일일 임무가 갱신되었습니다.", str_n32_turn_card_main_title_n37 = "「럭키박스」 대유행", str_n32_turn_card_tab_title_award_n37 = "신비한 보상", str_n32_turn_card_tab_title_mission_n37 = "추가 수당", str_n32_turn_card_award_description_n37 = "1. 이벤트 기간에 플레이 티켓 1장마다 <size=32><color=#f08c58>1칸을 뒤집을 수 있으며</color></size>, <size=32><color=#f08c58>모든 칸을 뒤집어 이미지를 완성하면</color></size> 해당하는 보상을 획득할 수 있습니다. 자세한 보상 내용은 [보상 목록]에서 확인하세요.\n2. <size=32><color=#f08c58>플레이 티켓</color></size>은 <size=32><color=#f08c58>[추가 수당]</color></size> 내 임무를 완료하면 획득할 수 있습니다.", str_n32_turn_card_mission_description_n37 = "1. 이벤트 기간에 <size=32><color=#f08c58>일일 임무</color></size> 및 <size=32><color=#f08c58>누적 임무</color></size>를 완료하면 <size=32><color=#f08c58>플레이 티켓</color></size>을 획득할 수 있고, 플레이 티켓은 [신비한 보상] 내의 칸을 뒤집어 보상을 수령하는 데 사용할 수 있습니다.\n2. 일일 임무는 <size=32><color=#f08c58>매일 05:00</color></size>에 업데이트되며, 업데이트 시 완료되지 않은 임무의 진행도는 저장되지 않습니다."}
+local config = {
+  str_n32_turn_card_day = "{1}일 ",
+  str_n32_turn_card_hour = "{1}시간 ",
+  str_n32_turn_card_minus = "{1}분",
+  str_n32_turn_card_less_one_minus = "<1분",
+  str_n32_turn_card_activity_end = "이벤트가 종료되었습니다.",
+  str_n32_turn_card_activity_remain_time = "이벤트 남은 시간: ",
+  str_n32_turn_card_main_title = "쉴 틈이 없는 미즈 로트",
+  str_n32_turn_card_rule_description = "이벤트 설명",
+  str_n32_turn_card_tab_title_award = "미즈 로트의 보물상자",
+  str_n32_turn_card_tab_title_mission = "미즈 로트의 의뢰",
+  str_n32_turn_card_receive = "수령",
+  str_n32_turn_card_jump = "이동",
+  str_n32_turn_card_daily_mission = "일일 퀘스트",
+  str_n32_turn_card_cumulative_task = "누적 임무",
+  str_n32_turn_card_refresh_time = "갱신 남은 시간: {1}",
+  str_n32_turn_card_prize_pool = "보상 목록",
+  str_n32_turn_card_prize1 = "특등상",
+  str_n32_turn_card_prize2 = "1등상",
+  str_n32_turn_card_prize3 = "2등상",
+  str_n32_turn_card_award_description = "1. 이벤트 기간에 미즈 로트의 주화 1개마다 <size=32><color=#f08c58>1칸을 뒤집을 수 있으며</color></size>, <size=32><color=#f08c58>모든 칸을 뒤집어 이미지를 완성하면</color></size> 해당하는 보상을 획득할 수 있습니다. 자세한 보상 내용은 [보상 목록]에서 확인하세요.\n2. <size=32><color=#f08c58>미즈 로트의 주화</color></size>는 <size=32><color=#f08c58>[미즈 로트의 의뢰]</color></size> 내 임무를 완료하면 획득할 수 있습니다.",
+  str_n32_turn_card_mission_description = "1. 이벤트 기간에 <size=32><color=#f08c58>일일 임무</color></size> 및 <size=32><color=#f08c58>누적 임무</color></size>를 완료하면 <size=32><color=#f08c58>미즈 로트의 주화</color></size>를 획득할 수 있고, 미즈 로트의 주화는 [미즈 로트의 보물상자] 내의 칸을 뒤집어 보상을 수령하는 데 사용할 수 있습니다.\n2. 일일 임무는 <size=32><color=#f08c58>매일 05:00</color></size>에 업데이트되며, 업데이트 시 완료되지 않은 임무의 진행도는 저장되지 않습니다.",
+  str_n32_turn_card_item_less = "아이템 부족",
+  str_n32_turn_card_remain = "잔여: {1}",
+  str_n32_turn_card_process = "진행도: {1}",
+  str_n32_turn_card_daily_mission_refresh = "일일 임무가 갱신되었습니다.",
+  str_n32_turn_card_main_title_n37 = "「럭키박스」 대유행",
+  str_n32_turn_card_tab_title_award_n37 = "신비한 보상",
+  str_n32_turn_card_tab_title_mission_n37 = "추가 수당",
+  str_n32_turn_card_award_description_n37 = "1. 이벤트 기간에 플레이 티켓 1장마다 <size=32><color=#f08c58>1칸을 뒤집을 수 있으며</color></size>, <size=32><color=#f08c58>모든 칸을 뒤집어 이미지를 완성하면</color></size> 해당하는 보상을 획득할 수 있습니다. 자세한 보상 내용은 [보상 목록]에서 확인하세요.\n2. <size=32><color=#f08c58>플레이 티켓</color></size>은 <size=32><color=#f08c58>[추가 수당]</color></size> 내 임무를 완료하면 획득할 수 있습니다.",
+  str_n32_turn_card_mission_description_n37 = "1. 이벤트 기간에 <size=32><color=#f08c58>일일 임무</color></size> 및 <size=32><color=#f08c58>누적 임무</color></size>를 완료하면 <size=32><color=#f08c58>플레이 티켓</color></size>을 획득할 수 있고, 플레이 티켓은 [신비한 보상] 내의 칸을 뒤집어 보상을 수령하는 데 사용할 수 있습니다.\n2. 일일 임무는 <size=32><color=#f08c58>매일 05:00</color></size>에 업데이트되며, 업데이트 시 완료되지 않은 임무의 진행도는 저장되지 않습니다."
+}
 return config
-

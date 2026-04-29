@@ -1,279 +1,177 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/cls/ui_n22_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N22Data", CampaignDataBase)
 N22Data = N22Data
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N22Data.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
+function N22Data:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.CheckRedAward = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function N22Data:CheckRedAward()
   local lp = self:GetLocalProcess()
-  local red = (self.mCampaign):CheckComponentRed(lp, ECampaignN22ComponentID.ECAMPAIGN_N22_CUMULATIVE_LOGIN)
+  local red = self.mCampaign:CheckComponentRed(lp, ECampaignN22ComponentID.ECAMPAIGN_N22_CUMULATIVE_LOGIN)
   return red
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.CheckRedNormal = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function N22Data:CheckRedNormal()
   local state = self:GetStateNormal()
   if state == UISummerOneEnterBtnState.Normal then
     local lp = self:GetLocalProcess()
-    local redActionPoint = (self.mCampaign):CheckComponentRed(lp, ECampaignN22ComponentID.ECAMPAIGN_N22_POWER2ITEM)
-    local redFixTeam = (self.mCampaign):CheckComponentRed(lp, ECampaignN22ComponentID.ECAMPAIGN_N22_FIRST_MEET)
+    local redActionPoint = self.mCampaign:CheckComponentRed(lp, ECampaignN22ComponentID.ECAMPAIGN_N22_POWER2ITEM)
+    local redFixTeam = self.mCampaign:CheckComponentRed(lp, ECampaignN22ComponentID.ECAMPAIGN_N22_FIRST_MEET)
     return redActionPoint or redFixTeam
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.CheckNewHard = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if not (N22Data.HasPrefsHard)() and self:GetStateHard() == UISummerOneEnterBtnState.Normal then
+function N22Data:CheckNewHard()
+  if not N22Data.HasPrefsHard() and self:GetStateHard() == UISummerOneEnterBtnState.Normal then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetComponentNormal = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponent(ECampaignN22ComponentID.ECAMPAIGN_N22_LINE_MISSION)
+function N22Data:GetComponentNormal()
+  local c = self.activityCampaign:GetComponent(ECampaignN22ComponentID.ECAMPAIGN_N22_LINE_MISSION)
   return c
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetComponentHard = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponent(ECampaignN22ComponentID.ECAMPAIGN_N22_DIFFICULT_MISSION)
+function N22Data:GetComponentHard()
+  local c = self.activityCampaign:GetComponent(ECampaignN22ComponentID.ECAMPAIGN_N22_DIFFICULT_MISSION)
   return c
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetComponentEntrust = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponent(ECampaignN22ComponentID.ECAMPAIGN_N22_ENTRUST)
+function N22Data:GetComponentEntrust()
+  local c = self.activityCampaign:GetComponent(ECampaignN22ComponentID.ECAMPAIGN_N22_ENTRUST)
   return c
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetComponentInfoNormal = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local cInfo = (self.activityCampaign):GetComponentInfo(ECampaignN22ComponentID.ECAMPAIGN_N22_LINE_MISSION)
+function N22Data:GetComponentInfoNormal()
+  local cInfo = self.activityCampaign:GetComponentInfo(ECampaignN22ComponentID.ECAMPAIGN_N22_LINE_MISSION)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetComponentInfoHard = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local cInfo = (self.activityCampaign):GetComponentInfo(ECampaignN22ComponentID.ECAMPAIGN_N22_DIFFICULT_MISSION)
+function N22Data:GetComponentInfoHard()
+  local cInfo = self.activityCampaign:GetComponentInfo(ECampaignN22ComponentID.ECAMPAIGN_N22_DIFFICULT_MISSION)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetComponentInfoEntrust = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cInfo = (self.activityCampaign):GetComponentInfo(ECampaignN22ComponentID.ECAMPAIGN_N22_ENTRUST)
+function N22Data:GetComponentInfoEntrust()
+  local cInfo = self.activityCampaign:GetComponentInfo(ECampaignN22ComponentID.ECAMPAIGN_N22_ENTRUST)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetStateShop = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponentInfo(ECampaignN22ComponentID.ECAMPAIGN_N22_SHOP)
+function N22Data:GetStateShop()
+  local c = self.activityCampaign:GetComponentInfo(ECampaignN22ComponentID.ECAMPAIGN_N22_SHOP)
   if c then
     return self:GetState(c)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetStateAward = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponentInfo(ECampaignN22ComponentID.ECAMPAIGN_N22_CUMULATIVE_LOGIN)
+function N22Data:GetStateAward()
+  local c = self.activityCampaign:GetComponentInfo(ECampaignN22ComponentID.ECAMPAIGN_N22_CUMULATIVE_LOGIN)
   if c then
     return self:GetState(c)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetState = function(self, cInfo)
-  -- function num : 0_12 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+function N22Data:GetState(cInfo)
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if nowTimestamp < cInfo.m_unlock_time then
     return UISummerOneEnterBtnState.NotOpen
+  elseif nowTimestamp > cInfo.m_close_time then
+    return UISummerOneEnterBtnState.Closed
+  elseif cInfo.m_b_unlock then
+    return UISummerOneEnterBtnState.Normal
   else
-    if cInfo.m_close_time < nowTimestamp then
-      return UISummerOneEnterBtnState.Closed
+    local cfgv = Cfg.cfg_campaign_mission[cInfo.m_need_mission_id]
+    if cfgv then
+      return UISummerOneEnterBtnState.Locked
     else
-      if cInfo.m_b_unlock then
-        return UISummerOneEnterBtnState.Normal
-      else
-        local cfgv = (Cfg.cfg_campaign_mission)[cInfo.m_need_mission_id]
-        if cfgv then
-          return UISummerOneEnterBtnState.Locked
-        else
-          return UISummerOneEnterBtnState.Normal
-        end
-      end
+      return UISummerOneEnterBtnState.Normal
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetStateNormal = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function N22Data:GetStateNormal()
   local cInfo = self:GetComponentInfoNormal()
   if not cInfo then
-    (Log.fatal)("### GetComponentHard failed.")
-    return 
+    Log.fatal("### GetComponentHard failed.")
+    return
   end
   return self:GetState(cInfo)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetStateHard = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function N22Data:GetStateHard()
   local cHardInfo = self:GetComponentInfoHard()
   if not cHardInfo then
-    (Log.fatal)("### GetComponentHard failed.")
-    return 
+    Log.fatal("### GetComponentHard failed.")
+    return
   end
   return self:GetState(cHardInfo)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetStateEntrust = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function N22Data:GetStateEntrust()
   local cEntrustInfo = self:GetComponentInfoEntrust()
   if not cEntrustInfo then
-    (Log.fatal)("### GetComponentEntrust failed.")
-    return 
+    Log.fatal("### GetComponentEntrust failed.")
+    return
   end
   return self:GetState(cEntrustInfo)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetPstId = function()
-  -- function num : 0_16 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function N22Data.GetPstId()
+  local mRole = GameGlobal.GetModule(RoleModule)
   return mRole:GetPstId()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetPrefsKey = function(str)
-  -- function num : 0_17 , upvalues : _ENV
-  local playerPrefsKey = (N22Data.GetPstId)() .. str
+function N22Data.GetPrefsKey(str)
+  local playerPrefsKey = N22Data.GetPstId() .. str
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetPrefsKeyMain = function()
-  -- function num : 0_18 , upvalues : _ENV
-  return (N22Data.GetPrefsKey)("UIN22DataPrefsKeyMain")
+function N22Data.GetPrefsKeyMain()
+  return N22Data.GetPrefsKey("UIN22DataPrefsKeyMain")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetPrefsKeyHard = function()
-  -- function num : 0_19 , upvalues : _ENV
-  return (N22Data.GetPrefsKey)("UIN22DataPrefsKeyHard")
+function N22Data.GetPrefsKeyHard()
+  return N22Data.GetPrefsKey("UIN22DataPrefsKeyHard")
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetPrefsKeyMission = function()
-  -- function num : 0_20 , upvalues : _ENV
-  return (N22Data.GetPrefsKey)("UIActivityN22lineMission")
+function N22Data.GetPrefsKeyMission()
+  return N22Data.GetPrefsKey("UIActivityN22lineMission")
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.GetPrefsKeyEntrust = function()
-  -- function num : 0_21 , upvalues : _ENV
-  return (N22Data.GetPrefsKey)("UIActivityN22lineEntrust")
+function N22Data.GetPrefsKeyEntrust()
+  return N22Data.GetPrefsKey("UIActivityN22lineEntrust")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.HasPrefsMain = function()
-  -- function num : 0_22 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N22Data.GetPrefsKeyMain)())
+function N22Data.HasPrefsMain()
+  return UnityEngine.PlayerPrefs.HasKey(N22Data.GetPrefsKeyMain())
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.HasPrefsHard = function()
-  -- function num : 0_23 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N22Data.GetPrefsKeyHard)())
+function N22Data.HasPrefsHard()
+  return UnityEngine.PlayerPrefs.HasKey(N22Data.GetPrefsKeyHard())
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.HasPrefsMission = function()
-  -- function num : 0_24 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N22Data.GetPrefsKeyMission)())
+function N22Data.HasPrefsMission()
+  return UnityEngine.PlayerPrefs.HasKey(N22Data.GetPrefsKeyMission())
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.HasPrefsEntrust = function()
-  -- function num : 0_25 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N22Data.GetPrefsKeyEntrust)())
+function N22Data.HasPrefsEntrust()
+  return UnityEngine.PlayerPrefs.HasKey(N22Data.GetPrefsKeyEntrust())
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.SetPrefsMain = function()
-  -- function num : 0_26 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N22Data.GetPrefsKeyMain)(), 1)
+function N22Data.SetPrefsMain()
+  UnityEngine.PlayerPrefs.SetInt(N22Data.GetPrefsKeyMain(), 1)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.SetPrefsHard = function()
-  -- function num : 0_27 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N22Data.GetPrefsKeyHard)(), 1)
+function N22Data.SetPrefsHard()
+  UnityEngine.PlayerPrefs.SetInt(N22Data.GetPrefsKeyHard(), 1)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.SetPrefsMission = function()
-  -- function num : 0_28 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N22Data.GetPrefsKeyMission)(), 1)
+function N22Data.SetPrefsMission()
+  UnityEngine.PlayerPrefs.SetInt(N22Data.GetPrefsKeyMission(), 1)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-N22Data.SetPrefsEntrust = function()
-  -- function num : 0_29 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N22Data.GetPrefsKeyEntrust)(), 1)
+function N22Data.SetPrefsEntrust()
+  UnityEngine.PlayerPrefs.SetInt(N22Data.GetPrefsKeyEntrust(), 1)
 end
-
-

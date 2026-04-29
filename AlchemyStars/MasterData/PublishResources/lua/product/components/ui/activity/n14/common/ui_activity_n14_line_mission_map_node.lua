@@ -1,41 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n14/common/ui_activity_n14_line_mission_map_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN14LineMissionMapNode", UICustomWidget)
 UIActivityN14LineMissionMapNode = UIActivityN14LineMissionMapNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN14LineMissionMapNode.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityN14LineMissionMapNode:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN14LineMissionMapNode.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN14LineMissionMapNode:OnShow(uiParams)
   self:InitWidget()
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnGo), UIEvent.Press, function(go)
-    -- function num : 0_1_0 , upvalues : self
-    (self._bgGo):SetActive(false)
-    ;
-    (self._maskGo):SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnGo), UIEvent.Release, function(go)
-    -- function num : 0_1_1 , upvalues : self
-    (self._bgGo):SetActive(true)
-    ;
-    (self._maskGo):SetActive(false)
-  end
-)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnGo), UIEvent.Press, function(go)
+    self._bgGo:SetActive(false)
+    self._maskGo:SetActive(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnGo), UIEvent.Release, function(go)
+    self._bgGo:SetActive(true)
+    self._maskGo:SetActive(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN14LineMissionMapNode.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN14LineMissionMapNode:InitWidget()
   self.bg = self:GetUIComponent("Image", "bg")
   self.name = self:GetUIComponent("UILocalizationText", "name")
   self.name2 = self:GetUIComponent("UILocalizationText", "name_boss")
@@ -46,157 +27,101 @@ UIActivityN14LineMissionMapNode.InitWidget = function(self)
   self.star2 = self:GetUIComponent("Image", "Star2")
   self.star3 = self:GetUIComponent("Image", "Star3")
   self._circleOutline = self:GetUIComponent("H3D.UGUI.CircleOutline", "name")
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
-  self._stars = {self.star1, self.star2, self.star3}
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
+  self._stars = {
+    self.star1,
+    self.star2,
+    self.star3
+  }
   self._buttonBg = {
-type1 = {"bg1", "bg2", "bg3"}
-}
+    type1 = {
+      "bg1",
+      "bg2",
+      "bg3"
+    }
+  }
   self._atlas = self:GetAsset("UIN14.spriteatlas", LoadType.SpriteAtlas)
-  self._anim = (self:GetGameObject()):GetComponent("Animation")
+  self._anim = self:GetGameObject():GetComponent("Animation")
   self._bgGo = self:GetGameObject("bg")
   self._btnGo = self:GetGameObject("btn")
   self._maskGo = self:GetGameObject("mask")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN14LineMissionMapNode.SetData = function(self, lineCfg, passInfo, cb, type, cfg, condition)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN14LineMissionMapNode:SetData(lineCfg, passInfo, cb, type, cfg, condition)
   self._missionID = lineCfg.CampaignMissionId
   self._onClick = cb
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMax = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2.zero
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  self._rectTransform.anchorMax = Vector2(0, 0.5)
+  self._rectTransform.anchorMin = Vector2(0, 0.5)
+  self._rectTransform.sizeDelta = Vector2.zero
+  self._rectTransform.anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if not missionCfg then
-    (Log.exception)("cfg_campaign_mission中找不到配置:", self._missionID)
+    Log.exception("cfg_campaign_mission中找不到配置:", self._missionID)
   end
-  ;
-  (self.name):SetText((StringTable.Get)(missionCfg.Name))
-  ;
-  (self.name2):SetText((StringTable.Get)(missionCfg.Name))
-  ;
-  ((self.name).gameObject):SetActive(missionCfg.Type ~= DiscoveryStageType.FightBoss)
-  ;
-  ((self.name2).gameObject):SetActive(missionCfg.Type == DiscoveryStageType.FightBoss)
+  self.name:SetText(StringTable.Get(missionCfg.Name))
+  self.name2:SetText(StringTable.Get(missionCfg.Name))
+  self.name.gameObject:SetActive(missionCfg.Type ~= DiscoveryStageType.FightBoss)
+  self.name2.gameObject:SetActive(missionCfg.Type == DiscoveryStageType.FightBoss)
   local hardParam = type
-  local typeCfg = nil
+  local typeCfg
   if lineCfg.WayPointType == 4 then
     typeCfg = cfg[111111]
   else
     typeCfg = cfg[missionCfg.Type]
   end
-  local bg = nil
-  local mask = (typeCfg[hardParam]).press
-  local lock = (typeCfg[hardParam]).lock
-  local textColor = nil
+  local bg
+  local mask = typeCfg[hardParam].press
+  local lock = typeCfg[hardParam].lock
+  local textColor
   if passInfo then
-    textColor = (typeCfg[hardParam]).textColor
+    textColor = typeCfg[hardParam].textColor
     local module = self:GetModule(MissionModule)
-    if not passInfo.star then
-      do
-        local stars = module:ParseStarInfo((typeCfg[hardParam]).normalStar)
-        bg = (typeCfg[hardParam]).normal
-        for i = 1, 3 do
-          local pass = i <= stars
-          if not pass or not (typeCfg[hardParam]).passStar then
-            local url = (typeCfg[hardParam]).normalStar
-          end
-          -- DECOMPILER ERROR at PC125: Confused about usage of register: R22 in 'UnsetPending'
-
-          ;
-          ((self._stars)[i]).sprite = (self._atlas):GetSprite(url)
-          ;
-          (((self._stars)[i]).gameObject):SetActive(not (string.isnullorempty)(url))
-        end
-        ;
-        (self.star):SetActive(missionCfg.Type ~= DiscoveryStageType.Plot)
-        textColor = (typeCfg[hardParam]).textColor
-        bg = (typeCfg[hardParam]).normal
-        do
-          local stars = 0
-          for i = 1, 3 do
-            local pass = i <= stars
-            if not pass or not (typeCfg[hardParam]).passStar then
-              local url = (typeCfg[hardParam]).normalStar
-            end
-            -- DECOMPILER ERROR at PC175: Confused about usage of register: R21 in 'UnsetPending'
-
-            ;
-            ((self._stars)[i]).sprite = (self._atlas):GetSprite(url)
-            ;
-            (((self._stars)[i]).gameObject):SetActive(not (string.isnullorempty)(url))
-          end
-          ;
-          (self.star):SetActive(missionCfg.Type ~= DiscoveryStageType.Plot)
-          self:ConditionShow(condition)
-          self:_SetRed(false)
-          -- DECOMPILER ERROR at PC208: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (self.bg).sprite = (self._atlas):GetSprite(bg)
-          -- DECOMPILER ERROR at PC214: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (self.mask).sprite = (self._atlas):GetSprite(mask)
-          -- DECOMPILER ERROR at PC220: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (self.lock).sprite = (self._atlas):GetSprite(lock)
-          -- DECOMPILER ERROR at PC224: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (self._circleOutline).effectColor = (typeCfg[hardParam]).textShadow
-          if missionCfg.Type ~= DiscoveryStageType.FightBoss or not self.name2 then
-            local nametext = self.name
-          end
-          nametext.color = textColor
-          self._isStoryNode = missionCfg.Type == DiscoveryStageType.Plot
-          if lineCfg.MapPosY >= 0 then
-            (self._anim):Play("uieff_UIXH1MissionNode_belowin")
-          else
-            (self._anim):Play("uieff_UIXH1MissionNode_topin")
-          end
-          -- DECOMPILER ERROR: 20 unprocessed JMP targets
-        end
-      end
+    local stars = module:ParseStarInfo(passInfo.star or typeCfg[hardParam].normalStar)
+    bg = typeCfg[hardParam].normal
+    for i = 1, 3 do
+      local pass = i <= stars
+      local url = pass and typeCfg[hardParam].passStar or typeCfg[hardParam].normalStar
+      self._stars[i].sprite = self._atlas:GetSprite(url)
+      self._stars[i].gameObject:SetActive(not string.isnullorempty(url))
     end
+    self.star:SetActive(missionCfg.Type ~= DiscoveryStageType.Plot)
+  else
+    textColor = typeCfg[hardParam].textColor
+    bg = typeCfg[hardParam].normal
+    local stars = 0
+    for i = 1, 3 do
+      local pass = i <= stars
+      local url = pass and typeCfg[hardParam].passStar or typeCfg[hardParam].normalStar
+      self._stars[i].sprite = self._atlas:GetSprite(url)
+      self._stars[i].gameObject:SetActive(not string.isnullorempty(url))
+    end
+    self.star:SetActive(missionCfg.Type ~= DiscoveryStageType.Plot)
+  end
+  self:ConditionShow(condition)
+  self:_SetRed(false)
+  self.bg.sprite = self._atlas:GetSprite(bg)
+  self.mask.sprite = self._atlas:GetSprite(mask)
+  self.lock.sprite = self._atlas:GetSprite(lock)
+  self._circleOutline.effectColor = typeCfg[hardParam].textShadow
+  local nametext = missionCfg.Type == DiscoveryStageType.FightBoss and self.name2 or self.name
+  nametext.color = textColor
+  self._isStoryNode = missionCfg.Type == DiscoveryStageType.Plot
+  if 0 <= lineCfg.MapPosY then
+    self._anim:Play("uieff_UIXH1MissionNode_belowin")
+  else
+    self._anim:Play("uieff_UIXH1MissionNode_topin")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN14LineMissionMapNode._SetRed = function(self, isShow)
-  -- function num : 0_4
+function UIActivityN14LineMissionMapNode:_SetRed(isShow)
   local redObj = self:GetGameObject("red")
   redObj:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN14LineMissionMapNode.ConditionShow = function(self, condition)
-  -- function num : 0_5
-  ((self.lock).gameObject):SetActive(not condition)
+function UIActivityN14LineMissionMapNode:ConditionShow(condition)
+  self.lock.gameObject:SetActive(not condition)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN14LineMissionMapNode.btnOnClick = function(self, go)
-  -- function num : 0_6
-  (self._onClick)(self._missionID, self._isStoryNode, (self._rectTransform).position)
+function UIActivityN14LineMissionMapNode:btnOnClick(go)
+  self._onClick(self._missionID, self._isStoryNode, self._rectTransform.position)
 end
-
-

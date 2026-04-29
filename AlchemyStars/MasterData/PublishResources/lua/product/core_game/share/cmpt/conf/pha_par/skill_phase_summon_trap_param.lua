@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_summon_trap_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseSummonTrapParam", SkillPhaseParamBase)
 SkillPhaseSummonTrapParam = SkillPhaseSummonTrapParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseSummonTrapParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseSummonTrapParam:Constructor(t)
   self._showTimeDelay = t.showTimeDelay or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSummonTrapParam.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhaseSummonTrapParam:GetCacheTable()
   local t = {}
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSummonTrapParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseSummonTrapParam:GetPhaseType()
   return SkillViewPhaseType.SummonTrap
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSummonTrapParam.GetShowTimeDelay = function(self)
-  -- function num : 0_3
+function SkillPhaseSummonTrapParam:GetShowTimeDelay()
   return self._showTimeDelay
 end
-
-

@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_damage_glancing.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetDamageGlancingRate", BuffLogicBase)
 BuffLogicSetDamageGlancingRate = BuffLogicSetDamageGlancingRate
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetDamageGlancingRate.Constructor = function(self, instance, param)
-  -- function num : 0_0
+function BuffLogicSetDamageGlancingRate:Constructor(instance, param)
   self._mulValue = param.mulValue
   self._maxType = param.maxType
   self._maxParam = param.maxParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetDamageGlancingRate.GetMaxValue = function(self)
-  -- function num : 0_1
+function BuffLogicSetDamageGlancingRate:GetMaxValue()
   if self._maxType == 1 then
-    local context = (self._buffInstance):Context()
+    local context = self._buffInstance:Context()
     local eCaster = context.casterEntity
     local cAttrCaster = eCaster:Attributes()
     local base = cAttrCaster:GetAttribute("MaxHP") or 0
@@ -28,27 +18,18 @@ BuffLogicSetDamageGlancingRate.GetMaxValue = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetDamageGlancingRate.DoLogic = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffLogicSetDamageGlancingRate:DoLogic()
   local maxValue = self:GetMaxValue()
-  local eBeneficiary = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):ChangeDamageGlancingParam(eBeneficiary, self:GetBuffSeq(), self._mulValue, maxValue)
+  local eBeneficiary = self._buffInstance:Entity()
+  self._buffLogicService:ChangeDamageGlancingParam(eBeneficiary, self:GetBuffSeq(), self._mulValue, maxValue)
   return BuffResultSetGlancingDamage:New(self._mulValue, maxValue)
 end
 
 _class("BuffLogicRemoveGlancingDamage", BuffLogicBase)
 BuffLogicRemoveGlancingDamage = BuffLogicRemoveGlancingDamage
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveGlancingDamage.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local eBeneficiary = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):RemoveDamageGlancingParam(eBeneficiary, self:GetBuffSeq())
+function BuffLogicRemoveGlancingDamage:DoLogic()
+  local eBeneficiary = self._buffInstance:Entity()
+  self._buffLogicService:RemoveDamageGlancingParam(eBeneficiary, self:GetBuffSeq())
   return BuffResultRemoveGlancingDamage:New()
 end
-
-

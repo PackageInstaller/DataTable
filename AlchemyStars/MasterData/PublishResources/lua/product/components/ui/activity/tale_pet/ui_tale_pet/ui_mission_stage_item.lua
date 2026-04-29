@@ -1,50 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_tale_pet/ui_mission_stage_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMissionStageItem", UICustomWidget)
 UIMissionStageItem = UIMissionStageItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMissionStageItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIMissionStageItem:OnShow(uiParams)
   self:_AttachEvents()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionStageItem.OnHide = function(self)
-  -- function num : 0_1
+function UIMissionStageItem:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionStageItem._AttachEvents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMissionStageItem:_AttachEvents()
   self:AttachEvent(GameEventType.TalePetInfoDataChange, self.InfoDataChange)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionStageItem._DetachEvents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMissionStageItem:_DetachEvents()
   self:DetachEvent(GameEventType.TalePetInfoDataChange)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionStageItem.InfoDataChange = function(self)
-  -- function num : 0_4
+function UIMissionStageItem:InfoDataChange()
   self:OnRefreshUI()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionStageItem.InitWidget = function(self)
-  -- function num : 0_5
+function UIMissionStageItem:InitWidget()
   self.stage = self:GetUIComponent("UILocalizationText", "stage")
   self.unselect = self:GetGameObject("unselect")
   self.select = self:GetGameObject("select")
@@ -53,142 +31,91 @@ UIMissionStageItem.InitWidget = function(self)
   self.unlock = self:GetGameObject("unlock")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionStageItem.SetData = function(self, index, callback, petId)
-  -- function num : 0_6
+function UIMissionStageItem:SetData(index, callback, petId)
   self.index = index
   self.callback = callback
   self.petId = petId
   self:OnRefreshUI()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionStageItem.OnRefreshUI = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self.unselect):SetActive(false)
-  ;
-  (self.select):SetActive(false)
-  ;
-  (self.complete):SetActive(false)
-  ;
-  (self.lock):SetActive(false)
-  ;
-  (self.unlock):SetActive(false)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.stage).color = Color(0, 0, 0, 1)
-  local talePetModule = (GameGlobal.GetModule)(TalePetModule)
+function UIMissionStageItem:OnRefreshUI()
+  self.unselect:SetActive(false)
+  self.select:SetActive(false)
+  self.complete:SetActive(false)
+  self.lock:SetActive(false)
+  self.unlock:SetActive(false)
+  self.stage.color = Color(0, 0, 0, 1)
+  local talePetModule = GameGlobal.GetModule(TalePetModule)
   local info = talePetModule:GetPetInfo(self.petId)
   local totalPro = talePetModule:GetTaskPhase(self.petId)
   if info == nil then
     if self.index == 1 then
-      (self.unlock):SetActive(true)
-      ;
-      (self.select):SetActive(true)
-      ;
-      (self.stage):SetText(1)
+      self.unlock:SetActive(true)
+      self.select:SetActive(true)
+      self.stage:SetText(1)
       self:btnClickOnClick()
     else
-      ;
-      (self.lock):SetActive(true)
-      ;
-      (self.stage):SetText("")
+      self.lock:SetActive(true)
+      self.stage:SetText("")
     end
-    return 
+    return
   end
   if info.pet_status == TalePetCallType.TPCT_Can_Do or info.pet_status == TalePetCallType.TPCT_Done then
-    (self.unlock):SetActive(true)
-    ;
-    (self.unselect):SetActive(true)
-    ;
-    (self.complete):SetActive(true)
-    ;
-    (self.stage):SetText(tostring(self.index))
+    self.unlock:SetActive(true)
+    self.unselect:SetActive(true)
+    self.complete:SetActive(true)
+    self.stage:SetText(tostring(self.index))
     if self.index == totalPro then
       self:btnClickOnClick()
     end
-    return 
+    return
   end
-  if info.task_phase < self.index - 1 then
-    (self.lock):SetActive(true)
-    ;
-    (self.stage):SetText("")
+  if self.index - 1 > info.task_phase then
+    self.lock:SetActive(true)
+    self.stage:SetText("")
+  elseif self.index - 1 == info.task_phase then
+    self.unlock:SetActive(true)
+    self.select:SetActive(true)
+    self.stage:SetText(tostring(self.index))
+    self:btnClickOnClick()
   else
-    if self.index - 1 == info.task_phase then
-      (self.unlock):SetActive(true)
-      ;
-      (self.select):SetActive(true)
-      ;
-      (self.stage):SetText(tostring(self.index))
+    self.unlock:SetActive(true)
+    self.unselect:SetActive(true)
+    self.complete:SetActive(true)
+    self.stage:SetText(tostring(self.index))
+    if self.index == totalPro then
       self:btnClickOnClick()
-    else
-      ;
-      (self.unlock):SetActive(true)
-      ;
-      (self.unselect):SetActive(true)
-      ;
-      (self.complete):SetActive(true)
-      ;
-      (self.stage):SetText(tostring(self.index))
-      if self.index == totalPro then
-        self:btnClickOnClick()
-      end
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionStageItem.btnClickOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local talePetModule = (GameGlobal.GetModule)(TalePetModule)
+function UIMissionStageItem:btnClickOnClick()
+  local talePetModule = GameGlobal.GetModule(TalePetModule)
   local info = talePetModule:GetPetInfo(self.petId)
   if info == nil then
-    return 
+    return
   end
   if (info.pet_status == TalePetCallType.TPCT_Can_Do or info.pet_status == TalePetCallType.TPCT_Done) and self.callback then
-    (self.callback)(self.index)
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.stage).color = Color(1, 1, 1, 1)
-    ;
-    (self.select):SetActive(true)
-    ;
-    (self.unselect):SetActive(false)
-    return 
+    self.callback(self.index)
+    self.stage.color = Color(1, 1, 1, 1)
+    self.select:SetActive(true)
+    self.unselect:SetActive(false)
+    return
   end
-  if info.task_phase + 1 < self.index then
-    (ToastManager.ShowToast)((StringTable.Get)("str_tale_pet_stage_tips"))
-    return 
+  if self.index > info.task_phase + 1 then
+    ToastManager.ShowToast(StringTable.Get("str_tale_pet_stage_tips"))
+    return
   end
   if self.callback then
-    (self.callback)(self.index)
-    ;
-    (self.select):SetActive(true)
-    -- DECOMPILER ERROR at PC73: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.stage).color = Color(1, 1, 1, 1)
-    ;
-    (self.unselect):SetActive(false)
+    self.callback(self.index)
+    self.select:SetActive(true)
+    self.stage.color = Color(1, 1, 1, 1)
+    self.unselect:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionStageItem.RefreshSelect = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self.select):SetActive(false)
-  ;
-  (self.unselect):SetActive(true)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.stage).color = Color(0, 0, 0, 1)
+function UIMissionStageItem:RefreshSelect()
+  self.select:SetActive(false)
+  self.unselect:SetActive(true)
+  self.stage.color = Color(0, 0, 0, 1)
 end
-
-

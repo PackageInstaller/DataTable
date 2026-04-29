@@ -1,16 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/module/trm_startup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("test_robot_module")
 local registry = require("smoke_test_registry")
--- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
 
-TestRobotModule.StubInit = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function TestRobotModule:StubInit()
   _G.SMOKE_TEST_ENABLED = true
   dofile("stub_aircraft_resource_room")
   dofile("stub_ui_sign_in_controller")
@@ -23,89 +14,74 @@ TestRobotModule.StubInit = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-TestRobotModule._GetTaskTypeFromStartupString = function(self, startupString)
-  -- function num : 0_1 , upvalues : _ENV
-  local args = (string.split)(startupString, "|")
+function TestRobotModule:_GetTaskTypeFromStartupString(startupString)
+  local args = string.split(startupString, "|")
   local taskType = tonumber(args[1])
   return taskType, args[1]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-TestRobotModule.StartAutoTestTask = function(self, arg)
-  -- function num : 0_2 , upvalues : _ENV
+function TestRobotModule:StartAutoTestTask(arg)
   self:StubInit()
-  return ((GameGlobal.TaskManager)()):StartTask(self.__TaskFnAutoStart, self, arg)
+  return GameGlobal.TaskManager():StartTask(self.__TaskFnAutoStart, self, arg)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-TestRobotModule.__TaskFnAutoStart = function(self, TT, arg)
-  -- function num : 0_3 , upvalues : _ENV, registry
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.LoginEmpty)
+function TestRobotModule:__TaskFnAutoStart(TT, arg)
+  GameGlobal.UIStateManager():SwitchState(UIStateType.LoginEmpty)
   YIELD(TT, TestConst.LoginDelay)
-  do
-    if self:IsCNVersion() then
-      local msdkAuthorityInfo = ((GameGlobal.GameLogic)()).msdkAuthorityInfo
-      msdkAuthorityInfo.open_id = self:GetTestAccountOpenID()
-    end
-    local lmodule = (GameGlobal.GetModule)(LoginModule)
-    lmodule:NewLoginStart()
-    lmodule:NewLoginGameTT(TT, {
-[1] = {ip = "127.0.0.1", port = "8111"}
-})
-    YIELD(TT, 3000)
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
-    if (roleModule.m_char_info).pstid <= 0 then
-      (Log.exception)(self._className, "登录失败?")
-      return 
-    end
-    if self:IsCNVersion() then
-      (LoginLuaHelper.CloseAllUI)()
-      while ((GameGlobal.UIStateManager)()):CurUIStateType() ~= UIStateType.UIMain do
-        YIELD(TT, 100)
-      end
-    end
-    local attendedParam = nil
-    if arg then
-      attendedParam = self:SetStartupParam(arg)
-    end
-    if attendedParam then
-      (Log.exception)("Attended Smoke Test is not supported anymore. ")
-      return 
-    end
-    local taskType = self:_GetTaskTypeFromStartupString(arg)
-    if taskType == TestRobotRunningMode.AutoTest then
-      AutoTestEnterCoreGame()
-      return 
-    end
-    local registryNode = registry[taskType]
-    if not registryNode then
-      (Log.exception)(self._className, "Registry not found for (TestRobotRunningMode)", taskType)
-      return 
-    end
-    self:GenerateRunDataFromTestCase(registryNode, arg)
-    self:Startup_InitializeTestCase(registryNode, arg)
+  if self:IsCNVersion() then
+    local msdkAuthorityInfo = GameGlobal.GameLogic().msdkAuthorityInfo
+    msdkAuthorityInfo.open_id = self:GetTestAccountOpenID()
   end
+  local lmodule = GameGlobal.GetModule(LoginModule)
+  lmodule:NewLoginStart()
+  lmodule:NewLoginGameTT(TT, {
+    [1] = {ip = "127.0.0.1", port = "8111"}
+  })
+  YIELD(TT, 3000)
+  local roleModule = GameGlobal.GetModule(RoleModule)
+  if roleModule.m_char_info.pstid <= 0 then
+    Log.exception(self._className, "登录失败?")
+    return
+  end
+  if self:IsCNVersion() then
+    LoginLuaHelper.CloseAllUI()
+    while GameGlobal.UIStateManager():CurUIStateType() ~= UIStateType.UIMain do
+      YIELD(TT, 100)
+    end
+  end
+  local attendedParam
+  if arg then
+    attendedParam = self:SetStartupParam(arg)
+  end
+  if attendedParam then
+    Log.exception("Attended Smoke Test is not supported anymore. ")
+    return
+  end
+  local taskType = self:_GetTaskTypeFromStartupString(arg)
+  if taskType == TestRobotRunningMode.AutoTest then
+    AutoTestEnterCoreGame()
+    return
+  end
+  local registryNode = registry[taskType]
+  if not registryNode then
+    Log.exception(self._className, "Registry not found for (TestRobotRunningMode)", taskType)
+    return
+  end
+  self:GenerateRunDataFromTestCase(registryNode, arg)
+  self:Startup_InitializeTestCase(registryNode, arg)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-TestRobotModule.GenerateRunDataFromTestCase = function(self, registryNode, strTestCase)
-  -- function num : 0_4 , upvalues : _ENV
-  local args = (string.split)(strTestCase, "|")
+function TestRobotModule:GenerateRunDataFromTestCase(registryNode, strTestCase)
+  local args = string.split(strTestCase, "|")
   local taskType, rawTaskType = self:_GetTaskTypeFromStartupString(strTestCase)
-  local runData = nil
+  local runData
   local clsName = registryNode.RunDataClassName
   local GlobalRunDataClass = _G[clsName]
   if not GlobalRunDataClass then
-    (Log.exception)(clsName, "Nil run data type for (TestRobotRunningMode)", tostring(rawTaskType))
-    return 
+    Log.exception(clsName, "Nil run data type for (TestRobotRunningMode)", tostring(rawTaskType))
+    return
   end
-  ;
-  (Log.info)(self._className, "Creating runData [", GlobalRunDataClass._className, "] for (TestRobotRunningMode)", taskType)
+  Log.info(self._className, "Creating runData [", GlobalRunDataClass._className, "] for (TestRobotRunningMode)", taskType)
   runData = GlobalRunDataClass:New()
   if runData then
     runData:ParseLevelData(args[2])
@@ -116,20 +92,17 @@ TestRobotModule.GenerateRunDataFromTestCase = function(self, registryNode, strTe
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-TestRobotModule.Startup_InitializeTestCase = function(self, registryNode, strTestCase)
-  -- function num : 0_5 , upvalues : _ENV, registry
+function TestRobotModule:Startup_InitializeTestCase(registryNode, strTestCase)
   local taskType, rawTaskType = self:_GetTaskTypeFromStartupString(strTestCase)
   local luaName = registryNode.TestCaseLuaName
   if not luaName then
-    (Log.exception)(self._className, "Nil test case lua name for (TestRobotRunningMode)", tostring(rawTaskType))
-    return 
+    Log.exception(self._className, "Nil test case lua name for (TestRobotRunningMode)", tostring(rawTaskType))
+    return
   end
   local stc = require(luaName)
   if not stc then
-    (Log.exception)(self._className, "The given test case file did not returns a sequence: ", tostring(luaName))
-    return 
+    Log.exception(self._className, "The given test case file did not returns a sequence: ", tostring(luaName))
+    return
   end
   local at = LAction_Tree:New(self)
   at:InitTreeByConfig(stc)
@@ -138,17 +111,13 @@ TestRobotModule.Startup_InitializeTestCase = function(self, registryNode, strTes
   local progressInfo = SmokingTestProgressInfo:New()
   if registryNode.InitTotalProgressProvider then
     if not self[registryNode.InitTotalProgressProvider] then
-      (Log.warn)(self._className, "invalid InitTotalProgressProvider :", tostring(registry.InitTotalProgressProvider))
+      Log.warn(self._className, "invalid InitTotalProgressProvider :", tostring(registry.InitTotalProgressProvider))
     else
-      local total = (self[registryNode.InitTotalProgressProvider])()
+      local total = self[registryNode.InitTotalProgressProvider]()
       progressInfo:SetTotalProgress(total)
     end
   end
-  do
-    self:SetProgressInfo(progressInfo)
-    self.m_eRunningMode = taskType
-    self.m_bEnableRobot = true
-  end
+  self:SetProgressInfo(progressInfo)
+  self.m_eRunningMode = taskType
+  self.m_bEnableRobot = true
 end
-
-

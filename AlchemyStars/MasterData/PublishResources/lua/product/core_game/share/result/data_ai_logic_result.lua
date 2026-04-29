@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_ai_logic_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataAILogicResult", Object)
 DataAILogicResult = DataAILogicResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataAILogicResult.Constructor = function(self, res)
-  -- function num : 0_0
+function DataAILogicResult:Constructor(res)
   self._res = res
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataAILogicResult.GetAIRecorder = function(self)
-  -- function num : 0_1
+function DataAILogicResult:GetAIRecorder()
   return self._res
 end
-
-

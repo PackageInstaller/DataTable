@@ -1,85 +1,92 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/pay/pay_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local payMessageDef = {CLSID_CEventTestAddDiamond = 16000, CLSID_CEventTestAddDiamondResult = 16001, CLSID_CEventTestUseDiamond = 16002, CLSID_CEventTestUseDiamondResult = 16003, CLSID_CEventMobileLoadMidasConfig = 16004, CLSID_CEventMobileLoadMidasConfigResult = 16005, CLSID_CEventMobileGetBalance = 16006, CLSID_CEventMobileCostMoney = 16007, CLSID_CEventMobileCostMoneyResult = 16008, CLSID_CEventMobileBuyGoods = 16009, CLSID_CEventMobileBuyGoodsResult = 16010, CLSID_CEventPushPayLoginCheckFailed = 16011, CLSID_CEventMobileBuySubscribe = 16012, CLSID_CEventMobileBuySubscribeResult = 16013, CLSID_CEventPushSubscribeInfoList = 16014, CLSID_CEventReqPayId = 16015, CLSID_CEventReqPayIdResult = 16016, CLSID_CEventReqPayAge = 16017, CLSID_CEventReqPayAgeResult = 16018, CLSID_CEventReqCanPay = 16019, CLSID_CEventReqCanPayResult = 16020, CLSID_CEventPushPayInfo = 16021, CLSID_CEventMobileDmmOrder = 16022, CLSID_CEventMobileDmmOrderResult = 16023, CLSID_CEventMobileGetProductsInfo = 16024, CLSID_CEventMobileGetProductsInfoResult = 16025, CLSID_CEventMobileQueryOrder = 16026, CLSID_CEventMobileQueryOrderResult = 16027}
-;
-(table.append)(MessageDef, payMessageDef)
+local payMessageDef = {
+  CLSID_CEventTestAddDiamond = 16000,
+  CLSID_CEventTestAddDiamondResult = 16001,
+  CLSID_CEventTestUseDiamond = 16002,
+  CLSID_CEventTestUseDiamondResult = 16003,
+  CLSID_CEventMobileLoadMidasConfig = 16004,
+  CLSID_CEventMobileLoadMidasConfigResult = 16005,
+  CLSID_CEventMobileGetBalance = 16006,
+  CLSID_CEventMobileCostMoney = 16007,
+  CLSID_CEventMobileCostMoneyResult = 16008,
+  CLSID_CEventMobileBuyGoods = 16009,
+  CLSID_CEventMobileBuyGoodsResult = 16010,
+  CLSID_CEventPushPayLoginCheckFailed = 16011,
+  CLSID_CEventMobileBuySubscribe = 16012,
+  CLSID_CEventMobileBuySubscribeResult = 16013,
+  CLSID_CEventPushSubscribeInfoList = 16014,
+  CLSID_CEventReqPayId = 16015,
+  CLSID_CEventReqPayIdResult = 16016,
+  CLSID_CEventReqPayAge = 16017,
+  CLSID_CEventReqPayAgeResult = 16018,
+  CLSID_CEventReqCanPay = 16019,
+  CLSID_CEventReqCanPayResult = 16020,
+  CLSID_CEventPushPayInfo = 16021,
+  CLSID_CEventMobileDmmOrder = 16022,
+  CLSID_CEventMobileDmmOrderResult = 16023,
+  CLSID_CEventMobileGetProductsInfo = 16024,
+  CLSID_CEventMobileGetProductsInfoResult = 16025,
+  CLSID_CEventMobileQueryOrder = 16026,
+  CLSID_CEventMobileQueryOrderResult = 16027
+}
+table.append(MessageDef, payMessageDef)
 _class("CEventTestAddDiamond", CCallRequestEvent)
 CEventTestAddDiamond = CEventTestAddDiamond
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventTestAddDiamond.Constructor = function(self)
-  -- function num : 0_0
+function CEventTestAddDiamond:Constructor()
   self.diamond_count = 0
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventTestAddDiamond._proto = {
-[1] = {"diamond_count", "int"}
+  [1] = {
+    "diamond_count",
+    "int"
+  }
 }
 _class("CEventTestAddDiamondResult", CCallReplyEvent)
 CEventTestAddDiamondResult = CEventTestAddDiamondResult
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventTestAddDiamondResult.Constructor = function(self)
-  -- function num : 0_1
+function CEventTestAddDiamondResult:Constructor()
   self.result = 0
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventTestAddDiamondResult._proto = {
-[1] = {"result", "int"}
+  [1] = {"result", "int"}
 }
 _class("CEventTestUseDiamond", CCallRequestEvent)
 CEventTestUseDiamond = CEventTestUseDiamond
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventTestUseDiamond.Constructor = function(self)
-  -- function num : 0_2
+function CEventTestUseDiamond:Constructor()
   self.diamond_count = 0
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventTestUseDiamond._proto = {
-[1] = {"diamond_count", "int"}
+  [1] = {
+    "diamond_count",
+    "int"
+  }
 }
 _class("CEventTestUseDiamondResult", CCallReplyEvent)
 CEventTestUseDiamondResult = CEventTestUseDiamondResult
--- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventTestUseDiamondResult.Constructor = function(self)
-  -- function num : 0_3
+function CEventTestUseDiamondResult:Constructor()
   self.result = 0
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventTestUseDiamondResult._proto = {
-[1] = {"result", "int"}
+  [1] = {"result", "int"}
 }
 _class("CEventMobileLoadMidasConfig", CCallRequestEvent)
 CEventMobileLoadMidasConfig = CEventMobileLoadMidasConfig
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileLoadMidasConfig.Constructor = function(self)
-  -- function num : 0_4
+function CEventMobileLoadMidasConfig:Constructor()
 end
-
--- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventMobileLoadMidasConfig._proto = {}
 _class("CEventMobileLoadMidasConfigResult", CCallReplyEvent)
 CEventMobileLoadMidasConfigResult = CEventMobileLoadMidasConfigResult
--- DECOMPILER ERROR at PC125: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileLoadMidasConfigResult.Constructor = function(self)
-  -- function num : 0_5
+function CEventMobileLoadMidasConfigResult:Constructor()
   self.ret = 0
   self.env = ""
   self.process = ""
@@ -88,252 +95,181 @@ CEventMobileLoadMidasConfigResult.Constructor = function(self)
   self.zone_id = 0
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileLoadMidasConfigResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"env", "string"}
-, 
-[3] = {"process", "string"}
-, 
-[4] = {"idc", "string"}
-, 
-[5] = {"idc_info", "string"}
-, 
-[6] = {"zone_id", "int"}
+  [1] = {"ret", "int"},
+  [2] = {"env", "string"},
+  [3] = {"process", "string"},
+  [4] = {"idc", "string"},
+  [5] = {"idc_info", "string"},
+  [6] = {"zone_id", "int"}
 }
 _class("CEventMobileGetBalance", CCliPushEvent)
 CEventMobileGetBalance = CEventMobileGetBalance
--- DECOMPILER ERROR at PC167: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileGetBalance.Constructor = function(self)
-  -- function num : 0_6
+function CEventMobileGetBalance:Constructor()
   self.is_for_charge = false
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileGetBalance._proto = {
-[1] = {"is_for_charge", "bool"}
+  [1] = {
+    "is_for_charge",
+    "bool"
+  }
 }
 _class("CEventMobileCostMoney", CCallRequestEvent)
 CEventMobileCostMoney = CEventMobileCostMoney
--- DECOMPILER ERROR at PC184: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileCostMoney.Constructor = function(self)
-  -- function num : 0_7
+function CEventMobileCostMoney:Constructor()
   self.amt = 0
   self.item_name = ""
   self.mark = ""
 end
 
--- DECOMPILER ERROR at PC202: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileCostMoney._proto = {
-[1] = {"amt", "int"}
-, 
-[2] = {"item_name", "string"}
-, 
-[3] = {"mark", "string"}
+  [1] = {"amt", "int"},
+  [2] = {"item_name", "string"},
+  [3] = {"mark", "string"}
 }
 _class("CEventMobileCostMoneyResult", CCallReplyEvent)
 CEventMobileCostMoneyResult = CEventMobileCostMoneyResult
--- DECOMPILER ERROR at PC211: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileCostMoneyResult.Constructor = function(self)
-  -- function num : 0_8
+function CEventMobileCostMoneyResult:Constructor()
   self.result = 0
   self.balance = 0
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileCostMoneyResult._proto = {
-[1] = {"result", "int"}
-, 
-[2] = {"balance", "int"}
+  [1] = {"result", "int"},
+  [2] = {"balance", "int"}
 }
 _class("CEventMobileBuyGoods", CCallRequestEvent)
 CEventMobileBuyGoods = CEventMobileBuyGoods
--- DECOMPILER ERROR at PC233: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileBuyGoods.Constructor = function(self)
-  -- function num : 0_9
+function CEventMobileBuyGoods:Constructor()
   self.num = 0
   self.productid = ""
   self.goodsmeta = ""
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileBuyGoods._proto = {
-[1] = {"num", "int"}
-, 
-[2] = {"productid", "string"}
-, 
-[3] = {"goodsmeta", "string"}
+  [1] = {"num", "int"},
+  [2] = {"productid", "string"},
+  [3] = {"goodsmeta", "string"}
 }
 _class("CEventMobileBuyGoodsResult", CCallReplyEvent)
 CEventMobileBuyGoodsResult = CEventMobileBuyGoodsResult
--- DECOMPILER ERROR at PC260: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileBuyGoodsResult.Constructor = function(self)
-  -- function num : 0_10
+function CEventMobileBuyGoodsResult:Constructor()
   self.result = 0
   self.token = ""
   self.url_params = ""
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileBuyGoodsResult._proto = {
-[1] = {"result", "int"}
-, 
-[2] = {"token", "string"}
-, 
-[3] = {"url_params", "string"}
+  [1] = {"result", "int"},
+  [2] = {"token", "string"},
+  [3] = {"url_params", "string"}
 }
 _class("CEventPushPayLoginCheckFailed", CSvrPushEvent)
 CEventPushPayLoginCheckFailed = CEventPushPayLoginCheckFailed
--- DECOMPILER ERROR at PC287: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushPayLoginCheckFailed.Constructor = function(self)
-  -- function num : 0_11
+function CEventPushPayLoginCheckFailed:Constructor()
 end
-
--- DECOMPILER ERROR at PC290: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventPushPayLoginCheckFailed._proto = {}
 _class("CEventMobileBuySubscribe", CCallRequestEvent)
 CEventMobileBuySubscribe = CEventMobileBuySubscribe
--- DECOMPILER ERROR at PC299: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileBuySubscribe.Constructor = function(self)
-  -- function num : 0_12
+function CEventMobileBuySubscribe:Constructor()
 end
-
--- DECOMPILER ERROR at PC302: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventMobileBuySubscribe._proto = {}
 _class("CEventMobileBuySubscribeResult", CCallReplyEvent)
 CEventMobileBuySubscribeResult = CEventMobileBuySubscribeResult
--- DECOMPILER ERROR at PC311: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileBuySubscribeResult.Constructor = function(self)
-  -- function num : 0_13
+function CEventMobileBuySubscribeResult:Constructor()
   self.result = 0
 end
 
--- DECOMPILER ERROR at PC319: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileBuySubscribeResult._proto = {
-[1] = {"result", "int"}
+  [1] = {"result", "int"}
 }
 _class("CEventPushSubscribeInfoList", CSvrPushEvent)
 CEventPushSubscribeInfoList = CEventPushSubscribeInfoList
--- DECOMPILER ERROR at PC328: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushSubscribeInfoList.Constructor = function(self)
-  -- function num : 0_14
+function CEventPushSubscribeInfoList:Constructor()
   self.subscribe_list = {}
 end
 
--- DECOMPILER ERROR at PC336: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushSubscribeInfoList._proto = {
-[1] = {"subscribe_list", "list<MobileSubscribeInfo>"}
+  [1] = {
+    "subscribe_list",
+    "list<MobileSubscribeInfo>"
+  }
 }
 _class("CEventReqPayId", CCallRequestEvent)
 CEventReqPayId = CEventReqPayId
--- DECOMPILER ERROR at PC345: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReqPayId.Constructor = function(self)
-  -- function num : 0_15
+function CEventReqPayId:Constructor()
 end
-
--- DECOMPILER ERROR at PC348: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventReqPayId._proto = {}
 _class("CEventReqPayIdResult", CCallReplyEvent)
 CEventReqPayIdResult = CEventReqPayIdResult
--- DECOMPILER ERROR at PC357: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReqPayIdResult.Constructor = function(self)
-  -- function num : 0_16
+function CEventReqPayIdResult:Constructor()
   self.result = 0
   self.cfg_id = 0
 end
 
--- DECOMPILER ERROR at PC370: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReqPayIdResult._proto = {
-[1] = {"result", "int"}
-, 
-[2] = {"cfg_id", "int"}
+  [1] = {"result", "int"},
+  [2] = {"cfg_id", "int"}
 }
 _class("CEventReqPayAge", CCallRequestEvent)
 CEventReqPayAge = CEventReqPayAge
--- DECOMPILER ERROR at PC379: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReqPayAge.Constructor = function(self)
-  -- function num : 0_17
+function CEventReqPayAge:Constructor()
   self.cfg_id = 0
 end
 
--- DECOMPILER ERROR at PC387: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReqPayAge._proto = {
-[1] = {"cfg_id", "int"}
+  [1] = {"cfg_id", "int"}
 }
 _class("CEventReqPayAgeResult", CCallReplyEvent)
 CEventReqPayAgeResult = CEventReqPayAgeResult
--- DECOMPILER ERROR at PC396: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReqPayAgeResult.Constructor = function(self)
-  -- function num : 0_18
+function CEventReqPayAgeResult:Constructor()
   self.result = 0
 end
 
--- DECOMPILER ERROR at PC404: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReqPayAgeResult._proto = {
-[1] = {"result", "int"}
+  [1] = {"result", "int"}
 }
 _class("CEventReqCanPay", CCallRequestEvent)
 CEventReqCanPay = CEventReqCanPay
--- DECOMPILER ERROR at PC413: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReqCanPay.Constructor = function(self)
-  -- function num : 0_19
+function CEventReqCanPay:Constructor()
   self.the_pay = 0
 end
 
--- DECOMPILER ERROR at PC421: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReqCanPay._proto = {
-[1] = {"the_pay", "int"}
+  [1] = {"the_pay", "int"}
 }
 _class("CEventReqCanPayResult", CCallReplyEvent)
 CEventReqCanPayResult = CEventReqCanPayResult
--- DECOMPILER ERROR at PC430: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReqCanPayResult.Constructor = function(self)
-  -- function num : 0_20
+function CEventReqCanPayResult:Constructor()
   self.result = 0
 end
 
--- DECOMPILER ERROR at PC438: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReqCanPayResult._proto = {
-[1] = {"result", "int"}
+  [1] = {"result", "int"}
 }
 _class("CEventPushPayInfo", CCliPushEvent)
 CEventPushPayInfo = CEventPushPayInfo
--- DECOMPILER ERROR at PC447: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushPayInfo.Constructor = function(self)
-  -- function num : 0_21
+function CEventPushPayInfo:Constructor()
   self.type = 0
   self.pay_type = ""
   self.midas_id = ""
@@ -341,25 +277,20 @@ CEventPushPayInfo.Constructor = function(self)
   self.first_or_not = false
 end
 
--- DECOMPILER ERROR at PC475: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushPayInfo._proto = {
-[1] = {"type", "int"}
-, 
-[2] = {"pay_type", "string"}
-, 
-[3] = {"midas_id", "string"}
-, 
-[4] = {"count", "int"}
-, 
-[5] = {"first_or_not", "bool"}
+  [1] = {"type", "int"},
+  [2] = {"pay_type", "string"},
+  [3] = {"midas_id", "string"},
+  [4] = {"count", "int"},
+  [5] = {
+    "first_or_not",
+    "bool"
+  }
 }
 _class("CEventMobileDmmOrder", CCallRequestEvent)
 CEventMobileDmmOrder = CEventMobileDmmOrder
--- DECOMPILER ERROR at PC484: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileDmmOrder.Constructor = function(self)
-  -- function num : 0_22
+function CEventMobileDmmOrder:Constructor()
   self.language = ""
   self.app_meta = ""
   self.pay_channel = ""
@@ -372,35 +303,28 @@ CEventMobileDmmOrder.Constructor = function(self)
   self.view_id = ""
 end
 
--- DECOMPILER ERROR at PC537: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileDmmOrder._proto = {
-[1] = {"language", "string"}
-, 
-[2] = {"app_meta", "string"}
-, 
-[3] = {"pay_channel", "string"}
-, 
-[4] = {"region", "string"}
-, 
-[5] = {"currency", "string"}
-, 
-[6] = {"amount", "string"}
-, 
-[7] = {"pay_desc", "string"}
-, 
-[8] = {"purchase_list", "list<DMMPurchaseInfo>"}
-, 
-[9] = {"pay_token", "string"}
-, 
-[10] = {"view_id", "string"}
+  [1] = {"language", "string"},
+  [2] = {"app_meta", "string"},
+  [3] = {
+    "pay_channel",
+    "string"
+  },
+  [4] = {"region", "string"},
+  [5] = {"currency", "string"},
+  [6] = {"amount", "string"},
+  [7] = {"pay_desc", "string"},
+  [8] = {
+    "purchase_list",
+    "list<DMMPurchaseInfo>"
+  },
+  [9] = {"pay_token", "string"},
+  [10] = {"view_id", "string"}
 }
 _class("CEventMobileDmmOrderResult", CCallReplyEvent)
 CEventMobileDmmOrderResult = CEventMobileDmmOrderResult
--- DECOMPILER ERROR at PC546: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileDmmOrderResult.Constructor = function(self)
-  -- function num : 0_23
+function CEventMobileDmmOrderResult:Constructor()
   self.result = 0
   self.reference_id = ""
   self.trans_info = ""
@@ -409,27 +333,21 @@ CEventMobileDmmOrderResult.Constructor = function(self)
   self.message = ""
 end
 
--- DECOMPILER ERROR at PC579: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileDmmOrderResult._proto = {
-[1] = {"result", "int"}
-, 
-[2] = {"reference_id", "string"}
-, 
-[3] = {"trans_info", "string"}
-, 
-[4] = {"pay_info", "string"}
-, 
-[5] = {"name", "string"}
-, 
-[6] = {"message", "string"}
+  [1] = {"result", "int"},
+  [2] = {
+    "reference_id",
+    "string"
+  },
+  [3] = {"trans_info", "string"},
+  [4] = {"pay_info", "string"},
+  [5] = {"name", "string"},
+  [6] = {"message", "string"}
 }
 _class("CEventMobileGetProductsInfo", CCallRequestEvent)
 CEventMobileGetProductsInfo = CEventMobileGetProductsInfo
--- DECOMPILER ERROR at PC588: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileGetProductsInfo.Constructor = function(self)
-  -- function num : 0_24
+function CEventMobileGetProductsInfo:Constructor()
   self.channel = ""
   self.currency_type = ""
   self.product_ids = {}
@@ -437,80 +355,75 @@ CEventMobileGetProductsInfo.Constructor = function(self)
   self.language = ""
 end
 
--- DECOMPILER ERROR at PC616: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileGetProductsInfo._proto = {
-[1] = {"channel", "string"}
-, 
-[2] = {"currency_type", "string"}
-, 
-[3] = {"product_ids", "list<string>"}
-, 
-[4] = {"product_type", "string"}
-, 
-[5] = {"language", "string"}
+  [1] = {"channel", "string"},
+  [2] = {
+    "currency_type",
+    "string"
+  },
+  [3] = {
+    "product_ids",
+    "list<string>"
+  },
+  [4] = {
+    "product_type",
+    "string"
+  },
+  [5] = {"language", "string"}
 }
 _class("CEventMobileGetProductsInfoResult", CCallReplyEvent)
 CEventMobileGetProductsInfoResult = CEventMobileGetProductsInfoResult
--- DECOMPILER ERROR at PC625: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileGetProductsInfoResult.Constructor = function(self)
-  -- function num : 0_25
+function CEventMobileGetProductsInfoResult:Constructor()
   self.result = 0
   self.midas_ret = 0
   self.product_info = {}
 end
 
--- DECOMPILER ERROR at PC643: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileGetProductsInfoResult._proto = {
-[1] = {"result", "int"}
-, 
-[2] = {"midas_ret", "int"}
-, 
-[3] = {"product_info", "list<MobileProductInfo>"}
+  [1] = {"result", "int"},
+  [2] = {"midas_ret", "int"},
+  [3] = {
+    "product_info",
+    "list<MobileProductInfo>"
+  }
 }
 _class("CEventMobileQueryOrder", CCallRequestEvent)
 CEventMobileQueryOrder = CEventMobileQueryOrder
--- DECOMPILER ERROR at PC652: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileQueryOrder.Constructor = function(self)
-  -- function num : 0_26
+function CEventMobileQueryOrder:Constructor()
   self.is_after_pay = false
   self.reference_id = ""
   self.transaction_id = ""
 end
 
--- DECOMPILER ERROR at PC670: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileQueryOrder._proto = {
-[1] = {"is_after_pay", "bool"}
-, 
-[2] = {"reference_id", "string"}
-, 
-[3] = {"transaction_id", "string"}
+  [1] = {
+    "is_after_pay",
+    "bool"
+  },
+  [2] = {
+    "reference_id",
+    "string"
+  },
+  [3] = {
+    "transaction_id",
+    "string"
+  }
 }
 _class("CEventMobileQueryOrderResult", CCallReplyEvent)
 CEventMobileQueryOrderResult = CEventMobileQueryOrderResult
--- DECOMPILER ERROR at PC679: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileQueryOrderResult.Constructor = function(self)
-  -- function num : 0_27
+function CEventMobileQueryOrderResult:Constructor()
   self.result = 0
   self.status = 0
   self.name = ""
   self.message = ""
 end
 
--- DECOMPILER ERROR at PC702: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileQueryOrderResult._proto = {
-[1] = {"result", "int"}
-, 
-[2] = {"status", "int"}
-, 
-[3] = {"name", "string"}
-, 
-[4] = {"message", "string"}
+  [1] = {"result", "int"},
+  [2] = {"status", "int"},
+  [3] = {"name", "string"},
+  [4] = {"message", "string"}
 }
-

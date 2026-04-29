@@ -1,51 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_double_chain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetDoubleChain", BuffLogicBase)
 BuffLogicSetDoubleChain = BuffLogicSetDoubleChain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetDoubleChain.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetDoubleChain:Constructor(buffInstance, logicParam)
   self._chainSkillCount = logicParam.chainSkillCount
   self._rate = logicParam.rate
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetDoubleChain.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("ChainSkillCount", self._chainSkillCount)
-  ;
-  (e:BuffComponent()):SetBuffValue("DoubleChainRate", self._rate)
+function BuffLogicSetDoubleChain:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("ChainSkillCount", self._chainSkillCount)
+  e:BuffComponent():SetBuffValue("DoubleChainRate", self._rate)
   local buffResult = BuffResultSetDoubleChain:New(self._chainSkillCount, self._rate)
   return buffResult
 end
 
 _class("BuffLogicResetDoubleChain", BuffLogicBase)
 BuffLogicResetDoubleChain = BuffLogicResetDoubleChain
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetDoubleChain.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetDoubleChain:Constructor(buffInstance, logicParam)
   self._chainSkillCount = logicParam.chainSkillCount
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetDoubleChain.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("ChainSkillCount", 1)
-  ;
-  (e:BuffComponent()):SetBuffValue("DoubleChainRate", 1)
+function BuffLogicResetDoubleChain:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("ChainSkillCount", 1)
+  e:BuffComponent():SetBuffValue("DoubleChainRate", 1)
   local buffResult = BuffResultResetDoubleChain:New(1, 1)
   return buffResult
 end
-
-

@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/l2r_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("L2RService", BaseService)
 L2RService = L2RService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-L2RService.Constructor = function(self, world)
-  -- function num : 0_0
+function L2RService:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RBoardLogicData = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RBoardLogicData()
+  if self._world:RunAtServer() then
+    return
   end
   local data = DataBoardLogicResult:New()
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+  local boardCmpt = self._world:GetBoardEntity():Board()
   local piecesEffectTypeList = boardCmpt:ClonePiecesEffectTypeList()
   data:SetPiecesEffectTypeList(piecesEffectTypeList)
   local prismEntityIDs = boardCmpt:ClonePrismEntityIDs()
@@ -35,34 +25,26 @@ L2RService.L2RBoardLogicData = function(self)
   data:SetImmuneHitbacks(immuneHitbackEIDs)
   local pieceEntities = boardCmpt:ClonePieceEntities()
   data:SetPieceEntities(pieceEntities)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, data)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RSyncPieceType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RSyncPieceType()
+  if self._world:RunAtServer() then
+    return
   end
   local data = DataPieceTypeResult:New()
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+  local boardCmpt = self._world:GetBoardEntity():Board()
   local pieceTable = boardCmpt:ClonePieceTable()
   data:SetPieceTable(pieceTable)
   local pieceTypes = self:_CalcBoardPosPieceType(pieceTable)
   data:SetPieceTypes(pieceTypes)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, data)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService._CalcBoardPosPieceType = function(self, pieceTable)
-  -- function num : 0_3 , upvalues : _ENV
+function L2RService:_CalcBoardPosPieceType(pieceTable)
   local posColor = {}
-  for x,row in pairs(pieceTable) do
-    for y,color in pairs(row) do
+  for x, row in pairs(pieceTable) do
+    for y, color in pairs(row) do
       local posIdx = x * 100 + y
       posColor[posIdx] = color
     end
@@ -70,15 +52,12 @@ L2RService._CalcBoardPosPieceType = function(self, pieceTable)
   return posColor
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService._CalcBoardBlockFlags = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local board = ((self._world):GetBoardEntity()):Board()
+function L2RService:_CalcBoardBlockFlags()
+  local board = self._world:GetBoardEntity():Board()
   local arr = board:GetBlockFlagArray()
   local posBlockData = {}
-  for x,row in pairs(arr) do
-    for y,data in pairs(row) do
+  for x, row in pairs(arr) do
+    for y, data in pairs(row) do
       local posIdx = x * 100 + y
       posBlockData[posIdx] = table_to_class(data)
     end
@@ -86,14 +65,11 @@ L2RService._CalcBoardBlockFlags = function(self)
   return posBlockData
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService._CalcImmuneHitbackEntities = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local BuffLogicSvc = (self._world):GetService("BuffLogic")
+function L2RService:_CalcImmuneHitbackEntities()
+  local BuffLogicSvc = self._world:GetService("BuffLogic")
   local es = {}
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).AI)
-  for i,e in ipairs(group:GetEntities()) do
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.AI)
+  for i, e in ipairs(group:GetEntities()) do
     if not BuffLogicSvc:CheckCanBeHitBack(e) then
       es[#es + 1] = e:GetID()
     end
@@ -101,61 +77,43 @@ L2RService._CalcImmuneHitbackEntities = function(self)
   return es
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RLoadingData = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function L2RService:L2RLoadingData()
   local res = L2R_LoadingResult:New()
-  do
-    if (self._world):MatchType() == MatchType.MT_Chess then
-      local creationResult = self:_GetChessPetCreationResult()
-      res:SetChessPetCreationResult(creationResult)
-    end
-    do
-      if (self._world):MatchType() ~= MatchType.MT_Chess then
-        local teamRes = self:_GetTeamCreationResult()
-        res:SetTeamCreationResult(teamRes)
-      end
-      local monsterCreationSvc = (self._world):GetService("MonsterCreationLogic")
-      local monsterResList = monsterCreationSvc:GenerateMonsterCreationResult()
-      res:SetLoadMonsterResultList(monsterResList)
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, LogicStepType.Loading, res)
-    end
+  if self._world:MatchType() == MatchType.MT_Chess then
+    local creationResult = self:_GetChessPetCreationResult()
+    res:SetChessPetCreationResult(creationResult)
   end
+  if self._world:MatchType() ~= MatchType.MT_Chess then
+    local teamRes = self:_GetTeamCreationResult()
+    res:SetTeamCreationResult(teamRes)
+  end
+  local monsterCreationSvc = self._world:GetService("MonsterCreationLogic")
+  local monsterResList = monsterCreationSvc:GenerateMonsterCreationResult()
+  res:SetLoadMonsterResultList(monsterResList)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, LogicStepType.Loading, res)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService._GetTeamCreationResult = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function L2RService:_GetTeamCreationResult()
   local teamRes = {}
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   teamRes[1] = self:_CalcTeamCreationResult(teamEntity)
   local petResList = self:_CalcPetCreationResultList(teamEntity)
-  ;
-  (teamRes[1]):SetPetCreationResultList(petResList)
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    local remoteTeamEntity = ((self._world):Player()):GetRemoteTeamEntity()
+  teamRes[1]:SetPetCreationResultList(petResList)
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    local remoteTeamEntity = self._world:Player():GetRemoteTeamEntity()
     teamRes[2] = self:_CalcTeamCreationResult(remoteTeamEntity)
     local petResList = self:_CalcPetCreationResultList(remoteTeamEntity)
-    ;
-    (teamRes[2]):SetPetCreationResultList(petResList)
+    teamRes[2]:SetPetCreationResultList(petResList)
   end
-  do
-    return teamRes
-  end
+  return teamRes
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService._CalcPetCreationResultList = function(self, teamEntity)
-  -- function num : 0_8 , upvalues : _ENV
+function L2RService:_CalcPetCreationResultList(teamEntity)
   local creationResList = {}
-  local petEntityList = (teamEntity:Team()):GetTeamPetEntities()
-  for petIndex,petEntity in ipairs(petEntityList) do
+  local petEntityList = teamEntity:Team():GetTeamPetEntities()
+  for petIndex, petEntity in ipairs(petEntityList) do
     local petRes = DataPetCreationResult:New()
-    local matchPet = (petEntity:MatchPet()):GetMatchPet()
+    local matchPet = petEntity:MatchPet():GetMatchPet()
     local eid = petEntity:GetID()
     petRes:SetPetCreationLogicEntityID(eid)
     local tplID = matchPet:GetTemplateID()
@@ -180,21 +138,18 @@ L2RService._CalcPetCreationResultList = function(self, teamEntity)
   return creationResList
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService._CalcTeamCreationResult = function(self, teamEntity)
-  -- function num : 0_9 , upvalues : _ENV
+function L2RService:_CalcTeamCreationResult(teamEntity)
   local teamRes = DataTeamCreationResult:New()
   teamRes:SetCreationResultTeamEntityID(teamEntity:GetID())
   local heroPos = teamEntity:GetGridPosition()
-  local heroRotation = (teamEntity:GridLocation()):GetGridDir()
+  local heroRotation = teamEntity:GridLocation():GetGridDir()
   teamRes:SetCreationResultBornPos(heroPos)
   teamRes:SetCreationResultBornRotation(heroRotation)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local firstElement = utilDataSvc:GetEntityElementPrimaryType(teamEntity)
   teamRes:SetCreationResultElement(firstElement)
-  local leader = (teamEntity:Team()):GetTeamLeaderEntity()
-  local petData = (leader:MatchPet()):GetMatchPet()
+  local leader = teamEntity:Team():GetTeamLeaderEntity()
+  local petData = leader:MatchPet():GetMatchPet()
   local hpOffset = petData:GetHPOffset()
   teamRes:SetCreationResultHPOffset(hpOffset)
   local attributesComponent = teamEntity:Attributes()
@@ -206,14 +161,11 @@ L2RService._CalcTeamCreationResult = function(self, teamEntity)
   return teamRes
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RNormalAttackData = function(self, normalSkillCalcor, teamEntity)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RNormalAttackData(normalSkillCalcor, teamEntity)
+  if self._world:RunAtServer() then
+    return
   end
-  local battleSvc = (self._world):GetService("Battle")
+  local battleSvc = self._world:GetService("Battle")
   local isFinalAtk = battleSvc:IsPlayerTurnFinalAttack()
   local playNormalSkillSequence = normalSkillCalcor:GetPlayNormalSkillSequence()
   local pathTriggerTrapsDic = normalSkillCalcor:GetTriggerTraps()
@@ -227,19 +179,15 @@ L2RService.L2RNormalAttackData = function(self, normalSkillCalcor, teamEntity)
   res:SetPathMoveStartWaitTime(pathMoveStartWaitTime)
   res:SetPetNormalAttackResultList(normalAtkData)
   res:SetPlayNormalAttackFinalAttack(isFinalAtk)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, LogicStepType.NormalAttack, res)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, LogicStepType.NormalAttack, res)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService._CloneNormalAtkData = function(self, teamEntity)
-  -- function num : 0_11 , upvalues : _ENV
+function L2RService:_CloneNormalAtkData(teamEntity)
   local normalAttackDataList = {}
-  local petRoundTeam = (teamEntity:LogicRoundTeam()):GetPetRoundTeam()
+  local petRoundTeam = teamEntity:LogicRoundTeam():GetPetRoundTeam()
   for petIndex = 1, #petRoundTeam do
     local petEntityID = petRoundTeam[petIndex]
-    local petEntity = (self._world):GetEntityByID(petEntityID)
+    local petEntity = self._world:GetEntityByID(petEntityID)
     local petAttackCmpt = petEntity:SkillPetAttackData()
     local normalAtkData = petAttackCmpt:GetNormalAttackData()
     local newData = table_to_class(normalAtkData)
@@ -248,23 +196,20 @@ L2RService._CloneNormalAtkData = function(self, teamEntity)
   return normalAttackDataList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RChainAttackData = function(self, teamEntity)
-  -- function num : 0_12 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RChainAttackData(teamEntity)
+  if self._world:RunAtServer() then
+    return
   end
   local resultList = {}
   local logicTeamCmpt = teamEntity:LogicRoundTeam()
   local petRoundTeam = logicTeamCmpt:GetPetRoundTeam()
   local roundTeam = {}
-  for _,v in ipairs(petRoundTeam) do
+  for _, v in ipairs(petRoundTeam) do
     roundTeam[#roundTeam + 1] = v
   end
   for petIndex = 1, #petRoundTeam do
     local petEntityID = petRoundTeam[petIndex]
-    local petEntity = (self._world):GetEntityByID(petEntityID)
+    local petEntity = self._world:GetEntityByID(petEntityID)
     local petAtkDataCmpt = petEntity:SkillPetAttackData()
     local chainResData = DataChainAttackResult:New()
     resultList[petEntityID] = chainResData
@@ -287,19 +232,15 @@ L2RService.L2RChainAttackData = function(self, teamEntity)
   end
   local res = L2R_ChainAttackResult:New(resultList)
   res:SetChainTeamResult(roundTeam)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, LogicStepType.ChainAttack, res)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, LogicStepType.ChainAttack, res)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService._CalcDeadEntityIDListByPet = function(self, petEntityID, chainTimes)
-  -- function num : 0_13 , upvalues : _ENV
+function L2RService:_CalcDeadEntityIDListByPet(petEntityID, chainTimes)
   local res = {}
   for chainTimeIdx = 1, chainTimes do
     local list = {}
-    local deadGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).DeadMark)
-    for _,e in ipairs(deadGroup:GetEntities()) do
+    local deadGroup = self._world:GetGroup(self._world.BW_WEMatchers.DeadMark)
+    for _, e in ipairs(deadGroup:GetEntities()) do
       local deadMarkCmpt = e:DeadMark()
       local chainTimeIndex = deadMarkCmpt:GetChainAttackIndex()
       local chainStageIndex = deadMarkCmpt:GetChainAttackStageIndex()
@@ -307,16 +248,12 @@ L2RService._CalcDeadEntityIDListByPet = function(self, petEntityID, chainTimes)
         if not list[chainStageIndex] then
           list[chainStageIndex] = {}
         end
-        ;
-        (table.insert)(list[chainStageIndex], e:GetID())
-      else
-        if deadMarkCmpt:GetDeadCasterID() == petEntityID and chainTimeIdx == chainTimeIndex then
-          if not list[chainStageIndex] then
-            list[chainStageIndex] = {}
-          end
-          ;
-          (table.insert)(list[chainStageIndex], e:GetID())
+        table.insert(list[chainStageIndex], e:GetID())
+      elseif deadMarkCmpt:GetDeadCasterID() == petEntityID and chainTimeIdx == chainTimeIndex then
+        if not list[chainStageIndex] then
+          list[chainStageIndex] = {}
         end
+        table.insert(list[chainStageIndex], e:GetID())
       end
     end
     res[chainTimeIdx] = list
@@ -324,88 +261,68 @@ L2RService._CalcDeadEntityIDListByPet = function(self, petEntityID, chainTimes)
   return res
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RActiveAttackData = function(self, casterEntity, activeSkillID)
-  -- function num : 0_14 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RActiveAttackData(casterEntity, activeSkillID)
+  if self._world:RunAtServer() then
+    return
   end
   local eid = casterEntity:GetID()
-  local res = (casterEntity:SkillContext()):GetResultContainer()
+  local res = casterEntity:SkillContext():GetResultContainer()
   local data = L2RActiveAttackResult:New(eid, res)
   data:SetL2RActiveAttackResult_SkillID(activeSkillID)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, LogicStepType.ActiveAttack, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, LogicStepType.ActiveAttack, data)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RFeatureAttackData = function(self, casterEntity, featureSkillID)
-  -- function num : 0_15 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RFeatureAttackData(casterEntity, featureSkillID)
+  if self._world:RunAtServer() then
+    return
   end
   local eid = casterEntity:GetID()
-  local res = (casterEntity:SkillContext()):GetResultContainer()
+  local res = casterEntity:SkillContext():GetResultContainer()
   local data = L2RFeatureAttackResult:New(eid, res)
   data:SetL2RFeatureAttackResult_SkillID(featureSkillID)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, LogicStepType.FeatureAttack, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, LogicStepType.FeatureAttack, data)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RAILogicData = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RAILogicData()
+  if self._world:RunAtServer() then
+    return
   end
-  local recordCmpt = ((self._world):GetBoardEntity()):AIRecorder()
+  local recordCmpt = self._world:GetBoardEntity():AIRecorder()
   local res = DataAILogicResult:New(recordCmpt)
-  ;
-  ((self._world):GetBoardEntity()):ReplaceAIRecorder()
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, res)
+  self._world:GetBoardEntity():ReplaceAIRecorder()
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2ROneSkillData = function(self, casterEntity, key)
-  -- function num : 0_17 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2ROneSkillData(casterEntity, key)
+  if self._world:RunAtServer() then
+    return
   end
-  local skillResult = (casterEntity:SkillContext()):GetResultContainer()
+  local skillResult = casterEntity:SkillContext():GetResultContainer()
   local data = DataSkillRoutineResult:New(casterEntity:GetID(), skillResult, key)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, data)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RChainPathData = function(self, teamEntity)
-  -- function num : 0_18 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RChainPathData(teamEntity)
+  if self._world:RunAtServer() then
+    return
   end
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   local logicPath = logicChainPathCmpt:GetLogicChainPath()
   local logicElementType = logicChainPathCmpt:GetLogicPieceType()
   local pathRes = {}
-  for _,v in ipairs(logicPath) do
+  for _, v in ipairs(logicPath) do
     local point = Vector2(v.x, v.y)
     pathRes[#pathRes + 1] = point
   end
   local logicTeamCmpt = teamEntity:LogicRoundTeam()
   local petList = logicTeamCmpt:GetPetRoundTeam()
   local roundTeam = {}
-  for _,v in ipairs(petList) do
+  for _, v in ipairs(petList) do
     roundTeam[#roundTeam + 1] = v
   end
   local cutChainPath = logicChainPathCmpt:GetCutChainPath()
   local cutChainPathRes = {}
-  for index,v in pairs(cutChainPath) do
+  for index, v in pairs(cutChainPath) do
     local point = Vector2(v.x, v.y)
     cutChainPathRes[index] = point
   end
@@ -416,34 +333,27 @@ L2RService.L2RChainPathData = function(self, teamEntity)
   res:SetChainTeamResult(roundTeam)
   res:SetCutChainPathResult(cutChainPathRes)
   res:SetPathChainRate(pathChainRate)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, res)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService._GetChessPetCreationResult = function(self)
-  -- function num : 0_19
-  local chessPetCreationSvc = (self._world):GetService("ChessPetCreationLogic")
+function L2RService:_GetChessPetCreationResult()
+  local chessPetCreationSvc = self._world:GetService("ChessPetCreationLogic")
   local chessPetResList = chessPetCreationSvc:GenerateChessPetCreationResult()
   return chessPetResList
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RChessPathData = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RChessPathData()
+  if self._world:RunAtServer() then
+    return
   end
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local logicChessPathComponent = boardEntity:LogicChessPath()
   local chessPath = logicChessPathComponent:GetLogicChessPath()
   local chessPetEntityID = logicChessPathComponent:GetLogicChessPetEntityID()
   local walkResultList = logicChessPathComponent:GetLogicWalkResultList()
   local pickUpPos = logicChessPathComponent:GetLogicPickUpPos()
   local pathRes = {}
-  for _,v in ipairs(chessPath) do
+  for _, v in ipairs(chessPath) do
     local point = Vector2(v.x, v.y)
     pathRes[#pathRes + 1] = point
   end
@@ -452,154 +362,106 @@ L2RService.L2RChessPathData = function(self)
   res:SetChessPetEntityID(chessPetEntityID)
   res:SetChessWalkResultList(walkResultList)
   res:SetChessPickUpPos(pickUpPos)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, res)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RChessAttackData = function(self, casterEntity, activeSkillID)
-  -- function num : 0_21 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RChessAttackData(casterEntity, activeSkillID)
+  if self._world:RunAtServer() then
+    return
   end
   local eid = casterEntity:GetID()
-  local res = (casterEntity:SkillContext()):GetResultContainer()
+  local res = casterEntity:SkillContext():GetResultContainer()
   local data = L2RActiveAttackResult:New(eid, res)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, LogicStepType.ActiveAttack, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, LogicStepType.ActiveAttack, data)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RSanRoundDecrease = function(self, curVal, oldVal, modifyValue, debtVal, modifyTimes)
-  -- function num : 0_22 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RSanRoundDecrease(curVal, oldVal, modifyValue, debtVal, modifyTimes)
+  if self._world:RunAtServer() then
+    return
   end
   local data = DataSanRoundDecreaseResult:New(curVal, oldVal, modifyValue, debtVal, modifyTimes)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, data)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RDayNightRoundChange = function(self, curState, oldState, restRound)
-  -- function num : 0_23 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RDayNightRoundChange(curState, oldState, restRound)
+  if self._world:RunAtServer() then
+    return
   end
   local data = DataDayNightRoundChangeResult:New(curState, oldState, restRound)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, data)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RSyncMoveData = function(self, entityID, syncMovePath)
-  -- function num : 0_24 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RSyncMoveData(entityID, syncMovePath)
+  if self._world:RunAtServer() then
+    return
   end
   local data = DataSyncMovePathResult:New(entityID, syncMovePath)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, data)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RNTSelectRoundTeamNormalBefore = function(self, elementType, chainPath)
-  -- function num : 0_25 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RNTSelectRoundTeamNormalBefore(elementType, chainPath)
+  if self._world:RunAtServer() then
+    return
   end
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataRenderNTSelectRoundTeamNormalBefore, elementType, chainPath)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataRenderNTSelectRoundTeamNormalBefore, elementType, chainPath)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RMirageWalkData = function(self, mirageWalkRes)
-  -- function num : 0_26 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RMirageWalkData(mirageWalkRes)
+  if self._world:RunAtServer() then
+    return
   end
   local res = L2RMirageMoveResult:New(mirageWalkRes)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, LogicStepType.MirageMove, res)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, LogicStepType.MirageMove, res)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RMirageWarningData = function(self, warningPosList)
-  -- function num : 0_27 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RMirageWarningData(warningPosList)
+  if self._world:RunAtServer() then
+    return
   end
   local res = L2RMirageWarningResult:New(warningPosList)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, LogicStepType.MirageWarning, res)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, LogicStepType.MirageWarning, res)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RPickUpComponentData = function(self, entityID, pickUpGridList, directionPickupData, reflectDir, pickUpExtraParam)
-  -- function num : 0_28 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RPickUpComponentData(entityID, pickUpGridList, directionPickupData, reflectDir, pickUpExtraParam)
+  if self._world:RunAtServer() then
+    return
   end
   local data = DataPickUpComponentResult:New(entityID, pickUpGridList, directionPickupData, reflectDir, pickUpExtraParam)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, data)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RNTClientUnscaledCountDownFinish = function(self, flagID)
-  -- function num : 0_29 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RNTClientUnscaledCountDownFinish(flagID)
+  if self._world:RunAtServer() then
+    return
   end
   local data = DataUnscaledCountDownFinish:New(flagID)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, data)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RStepPointRoundChange = function(self, curVal, oldVal)
-  -- function num : 0_30 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RStepPointRoundChange(curVal, oldVal)
+  if self._world:RunAtServer() then
+    return
   end
   local data = DataStepPointRoundChangeResult:New(curVal, oldVal)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, data)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RStepPointMoveCost = function(self, curVal, oldVal)
-  -- function num : 0_31 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RStepPointMoveCost(curVal, oldVal)
+  if self._world:RunAtServer() then
+    return
   end
   local data = DataStepPointMoveCostResult:New(curVal, oldVal)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, data)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RAutoBeadkSkillData = function(self, teamEntity)
-  -- function num : 0_32 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RAutoBeadkSkillData(teamEntity)
+  if self._world:RunAtServer() then
+    return
   end
-  local autoBeadServiceLogic = (self._world):GetService("AutoBeadLogic")
+  local autoBeadServiceLogic = self._world:GetService("AutoBeadLogic")
   local holderEntity = autoBeadServiceLogic:GetAutoBeadSkillHolder(teamEntity)
   if not holderEntity then
-    return 
+    return
   end
   local holderEntityID = holderEntity:GetID()
   local resultList = {}
@@ -611,27 +473,21 @@ L2RService.L2RAutoBeadkSkillData = function(self, teamEntity)
   local deadEntityIds = self:_CalcDeadEntityIDListByAutoBead(holderEntityID, #atkData)
   autoBeadResData:SetDeadEntityIDList(deadEntityIds)
   local res = L2R_AutoBeadAttackResult:New(resultList, holderEntityID)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, LogicStepType.AutoBeadAttack, res)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, LogicStepType.AutoBeadAttack, res)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService._CalcDeadEntityIDListByAutoBead = function(self, holderEntityID, skillCount)
-  -- function num : 0_33 , upvalues : _ENV
+function L2RService:_CalcDeadEntityIDListByAutoBead(holderEntityID, skillCount)
   local res = {}
   for skillIndex = 1, skillCount do
     local list = {}
-    local deadGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).DeadMark)
-    for _,e in ipairs(deadGroup:GetEntities()) do
+    local deadGroup = self._world:GetGroup(self._world.BW_WEMatchers.DeadMark)
+    for _, e in ipairs(deadGroup:GetEntities()) do
       local deadMarkCmpt = e:DeadMark()
       local autoBeadSkillIndex = deadMarkCmpt:GetAutoBeadAttackIndex()
       if holderEntityID == nil then
-        (table.insert)(list, e:GetID())
-      else
-        if deadMarkCmpt:GetDeadCasterID() == holderEntityID and skillIndex == autoBeadSkillIndex then
-          (table.insert)(list, e:GetID())
-        end
+        table.insert(list, e:GetID())
+      elseif deadMarkCmpt:GetDeadCasterID() == holderEntityID and skillIndex == autoBeadSkillIndex then
+        table.insert(list, e:GetID())
       end
     end
     res[skillIndex] = list
@@ -639,15 +495,9 @@ L2RService._CalcDeadEntityIDListByAutoBead = function(self, holderEntityID, skil
   return res
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService.L2RSyncColorPaletteData = function(self, entityID)
-  -- function num : 0_34 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    return 
+function L2RService:L2RSyncColorPaletteData(entityID)
+  if self._world:RunAtServer() then
+    return
   end
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, DataColorPaletteResult:New(entityID))
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, DataColorPaletteResult:New(entityID))
 end
-
-

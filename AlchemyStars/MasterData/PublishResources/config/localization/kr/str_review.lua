@@ -1,8 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/str_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_review_unlock_tip = "개방 소모", str_review_name = "여정 영상", str_review_extra_name = "이야기의 여행", str_review_downloading = "리소스 다운로드 중입니다. 잠시만 기다려 주세요.", str_review_download_finish = "[{1}] 관련 리소스 다운로드 완료", str_review_unlock_btn_text = "개방 소모", str_review_cant_unlock = "{1} 부족, 개방할 수 없습니다.", str_review_download_tip_title = "리소스 다운로드", str_review_download_tip_text = "본 여정 영상은 다운로드 후 체험이 가능합니다. 다운로드를 시작하겠습니까?", str_review_download_tip_size = "다운로드 크기: {1}M", str_review_not_download = "다운로드 대기", str_review_award_tip = "[바람이 불어오는 곳] 및 [돌아온 사람] 클리어 시 <color=#e3a437>보상 획득 가능</color>", str_review_tip1 = "현재 여정 영상을 다운로드 중입니다.", str_review_tip2 = "다른 여정 영상 다운로드 중", str_review_tip3 = "[{1}] 다운로드 완료", str_review_tip4 = "다운로드 실패, 디스크 공간이 부족합니다.", str_review_tip5 = "모바일 데이터를 사용해 다운로드하는 중입니다.", str_review_tip6 = "다운로드 실패", str_review_can_collect = "수령 가능", str_review_progress_intro = "보상 설명", str_review_progress_desc = "현재 진행도:", str_review_progress_tip = "첫 클리어 시 진행도 획득, 전체 진행도 조건 달성 시 <color=#f8b33b>보상 획득</color>", str_review_n1_name_eva = "폭풍이 멈추는 때", str_review_n1_desc_eva = "아이테르는 실종됐던 신비한 소녀 「이브」와 우연히 마주쳤고, 레디젤 렌치의 추격을 받았다. 일행은 이브와 사메야마의 고향인 크림슨 밸리로 향했고, 과거의 비밀을 파헤칠 준비를 시작했다.", str_review_n2_desc_fei = "히이로 군단장은 일행을 그녀의 고향인 운산으로 초대했다. 그러나 과거의 숙적을 만나고, 오해를 풀어내는 싸움을 겪게 된다.", str_review_n3_name = "여름의 꿈", str_review_n4_name = "엔드게임", str_review_n3_desc = "해변의 호텔에 초대를 받아 쉬는 사람들, 지역 축제에 참가할 준비를 한다. 그러나 바다 깊은 곳에 묻힌 증오는 그 자리에 그림자를 드리웠다.", str_review_n4_desc = "그날의 호텔은 알아볼 수 없을 정도로 변했지만, 동료들은 각자의 마음속 매듭에 깊이 빠져 있다. 이 겹겹의 미궁을 어떻게 헤쳐 나가야 할까.", str_review_n5_name = "사막 공방전", str_review_n5_desc = "콜로서스는 일루미나 전선의 신호를 받고, 우연히 암귀와의 공방전에 휘말리게 된다. 누군가는 희생됐고, 누군가는 구원을 받았으며, 모두가 일루미나 사람들과 함께 싸웠다.", str_review_n6_name = "바람에 실려온 편지", str_review_n6_desc = "헤븐즈 밸리로 돌아온 아이테르는 하얀 탑에 있는 낡고 오래된 쿠리어 센터를 수리하고, 자신만의 전통 명절을 보낼 생각이었지만, 뜻밖에도 밀렌이라는 이름의 적에게 끊임없이 방해를 받는다. 그리고 이 위기들은 어딘지 익숙한 가문의 갈등과 관계가 있다는 사실을 발견하게 되는데...", str_review_n7_name = "밤과 안개의 그림자", str_review_n7_desc = "아이테르는 계승할 유산이 있다는 사실을 알게 되어 움브라톤으로 향하고, 베델, 그리고 용병단과 동료가 된다. 그 무렵 섀도우마스터의 통치에 반기를 들려는 자들이 모습을 드러내고, 섀도우마스터의 숙적들과 관련된 비밀도 수면 위로 떠오른다.", str_review_n8_name = "영원한 백야", str_review_n8_desc = "움브라톤의 위기가 지나가고, 백야성은 축제를 맞이했다. 그러나 진정한 배후의 검은 손 역시 거대한 음모를 준비하는 중이었고, 축제에서 아이테르 일행과 전면전을 벌였다. 일행은 새로운 동료 헤이디의 도움 덕분에 마침내 위기를 해결했다.", str_review_n9_name = "모래시계의 여왕", str_review_n9_desc = "백야의 축제가 지나고, 북방도 새해를 맞이했다. 일행은 여왕의 초대를 받아 윈터 팰리스로 향했고, 과거와 현재가 교차하는 기묘한 모험을 통해 남들이 모르는 여왕의 면모를 알게 되었다.", str_review_n11_name = "종언! 소녀와 유적 - 극한지심거리 873m", str_review_n11_desc = "지하도시는 종말을 앞두고 있었고, 일행은 인공지능의 안내에 따라 위기를 해결하려 했으나 실패하고 말았다. 결국 아이테르는 모든 동료들과 함께 탈출을 선택할 수밖에 없었고, 지하도시는 폐허가 되어 버렸다.", str_review_n12_name = "종언! 소녀와 유적 진·극한지심거리 1024m", str_review_n12_desc = "지하도시는 종말을 앞두고 있었고, 일행은 인공지능의 안내에 따라 위기를 해결하려 했으나 실패하고 말았다. 결국 아이테르는 모든 동료들과 함께 탈출을 선택할 수밖에 없었고, 지하도시는 폐허가 되어 버렸다.", str_review_n12_progress_tip = "스토리 첫 감상 시 진행도를 획득하며, 총 진행도에 따라 <color=#f8b33b>보상을 획득</color>합니다.", str_review_n13_name = "홍옥에 내려앉은 눈꽃(상)", str_review_n13_desc = "이야기는 새로운 지역인 운도에서 시작되었다. 일행은 새 동료 요우의 기억을 되찾아 주기 위해 이곳으로 향했지만, 현지의 통치자와 반란군 간의 싸움에 휘말리고 말았다.", str_review_n14_name = "홍옥에 내려앉은 눈꽃(하)", str_review_n14_desc = "싸움은 끝을 맞이했고, 쇼군은 심판을 받았다. 과거의 진상을 알게 된 새로운 동료들은 서로 화해할 수 있었고, 요우도 기억을 되찾았다. 그리고 서로에게 작별을 고하고, 각자가 가야 할 곳으로 향했다.", str_review_n15_name = "질주! 세상의 끝을 향해!", str_review_n15_desc = "레디젤 렌치는 비상식적인 랠리를 성대하게 개최했지만, 도중에 암귀의 공격을 받게 되어 랠리는 혼란에 빠졌다. 참가자들은 잠시나마 서로 협력해 적을 쓰러트렸고, 마음속의 두려움을 이겨낼 수 있었다.", str_review_n16_name = "진실 아래: 광기의 단편", str_review_n16_desc = "실종된 소녀를 찾기 위해 아이테르와 카렌은 한밤중에 신비한 도시전설에 대해 조사하고, 우연히 진리의 결사의 거점에 들어서게 된다. 그곳을 벗어나기 위해서는 새로운 친구들과 기괴한 연극을 공연해야만 하는데..."}
+local config = {
+  str_review_unlock_tip = "개방 소모",
+  str_review_name = "여정 영상",
+  str_review_extra_name = "이야기의 여행",
+  str_review_downloading = "리소스 다운로드 중입니다. 잠시만 기다려 주세요.",
+  str_review_download_finish = "[{1}] 관련 리소스 다운로드 완료",
+  str_review_unlock_btn_text = "개방 소모",
+  str_review_cant_unlock = "{1} 부족, 개방할 수 없습니다.",
+  str_review_download_tip_title = "리소스 다운로드",
+  str_review_download_tip_text = "본 여정 영상은 다운로드 후 체험이 가능합니다. 다운로드를 시작하겠습니까?",
+  str_review_download_tip_size = "다운로드 크기: {1}M",
+  str_review_not_download = "다운로드 대기",
+  str_review_award_tip = "[바람이 불어오는 곳] 및 [돌아온 사람] 클리어 시 <color=#e3a437>보상 획득 가능</color>",
+  str_review_tip1 = "현재 여정 영상을 다운로드 중입니다.",
+  str_review_tip2 = "다른 여정 영상 다운로드 중",
+  str_review_tip3 = "[{1}] 다운로드 완료",
+  str_review_tip4 = "다운로드 실패, 디스크 공간이 부족합니다.",
+  str_review_tip5 = "모바일 데이터를 사용해 다운로드하는 중입니다.",
+  str_review_tip6 = "다운로드 실패",
+  str_review_can_collect = "수령 가능",
+  str_review_progress_intro = "보상 설명",
+  str_review_progress_desc = "현재 진행도:",
+  str_review_progress_tip = "첫 클리어 시 진행도 획득, 전체 진행도 조건 달성 시 <color=#f8b33b>보상 획득</color>",
+  str_review_n1_name_eva = "폭풍이 멈추는 때",
+  str_review_n1_desc_eva = "아이테르는 실종됐던 신비한 소녀 「이브」와 우연히 마주쳤고, 레디젤 렌치의 추격을 받았다. 일행은 이브와 사메야마의 고향인 크림슨 밸리로 향했고, 과거의 비밀을 파헤칠 준비를 시작했다.",
+  str_review_n2_desc_fei = "히이로 군단장은 일행을 그녀의 고향인 운산으로 초대했다. 그러나 과거의 숙적을 만나고, 오해를 풀어내는 싸움을 겪게 된다.",
+  str_review_n3_name = "여름의 꿈",
+  str_review_n4_name = "엔드게임",
+  str_review_n3_desc = "해변의 호텔에 초대를 받아 쉬는 사람들, 지역 축제에 참가할 준비를 한다. 그러나 바다 깊은 곳에 묻힌 증오는 그 자리에 그림자를 드리웠다.",
+  str_review_n4_desc = "그날의 호텔은 알아볼 수 없을 정도로 변했지만, 동료들은 각자의 마음속 매듭에 깊이 빠져 있다. 이 겹겹의 미궁을 어떻게 헤쳐 나가야 할까.",
+  str_review_n5_name = "사막 공방전",
+  str_review_n5_desc = "콜로서스는 일루미나 전선의 신호를 받고, 우연히 암귀와의 공방전에 휘말리게 된다. 누군가는 희생됐고, 누군가는 구원을 받았으며, 모두가 일루미나 사람들과 함께 싸웠다.",
+  str_review_n6_name = "바람에 실려온 편지",
+  str_review_n6_desc = "헤븐즈 밸리로 돌아온 아이테르는 하얀 탑에 있는 낡고 오래된 쿠리어 센터를 수리하고, 자신만의 전통 명절을 보낼 생각이었지만, 뜻밖에도 밀렌이라는 이름의 적에게 끊임없이 방해를 받는다. 그리고 이 위기들은 어딘지 익숙한 가문의 갈등과 관계가 있다는 사실을 발견하게 되는데...",
+  str_review_n7_name = "밤과 안개의 그림자",
+  str_review_n7_desc = "아이테르는 계승할 유산이 있다는 사실을 알게 되어 움브라톤으로 향하고, 베델, 그리고 용병단과 동료가 된다. 그 무렵 섀도우마스터의 통치에 반기를 들려는 자들이 모습을 드러내고, 섀도우마스터의 숙적들과 관련된 비밀도 수면 위로 떠오른다.",
+  str_review_n8_name = "영원한 백야",
+  str_review_n8_desc = "움브라톤의 위기가 지나가고, 백야성은 축제를 맞이했다. 그러나 진정한 배후의 검은 손 역시 거대한 음모를 준비하는 중이었고, 축제에서 아이테르 일행과 전면전을 벌였다. 일행은 새로운 동료 헤이디의 도움 덕분에 마침내 위기를 해결했다.",
+  str_review_n9_name = "모래시계의 여왕",
+  str_review_n9_desc = "백야의 축제가 지나고, 북방도 새해를 맞이했다. 일행은 여왕의 초대를 받아 윈터 팰리스로 향했고, 과거와 현재가 교차하는 기묘한 모험을 통해 남들이 모르는 여왕의 면모를 알게 되었다.",
+  str_review_n11_name = "종언! 소녀와 유적 - 극한지심거리 873m",
+  str_review_n11_desc = "지하도시는 종말을 앞두고 있었고, 일행은 인공지능의 안내에 따라 위기를 해결하려 했으나 실패하고 말았다. 결국 아이테르는 모든 동료들과 함께 탈출을 선택할 수밖에 없었고, 지하도시는 폐허가 되어 버렸다.",
+  str_review_n12_name = "종언! 소녀와 유적 진·극한지심거리 1024m",
+  str_review_n12_desc = "지하도시는 종말을 앞두고 있었고, 일행은 인공지능의 안내에 따라 위기를 해결하려 했으나 실패하고 말았다. 결국 아이테르는 모든 동료들과 함께 탈출을 선택할 수밖에 없었고, 지하도시는 폐허가 되어 버렸다.",
+  str_review_n12_progress_tip = "스토리 첫 감상 시 진행도를 획득하며, 총 진행도에 따라 <color=#f8b33b>보상을 획득</color>합니다.",
+  str_review_n13_name = "홍옥에 내려앉은 눈꽃(상)",
+  str_review_n13_desc = "이야기는 새로운 지역인 운도에서 시작되었다. 일행은 새 동료 요우의 기억을 되찾아 주기 위해 이곳으로 향했지만, 현지의 통치자와 반란군 간의 싸움에 휘말리고 말았다.",
+  str_review_n14_name = "홍옥에 내려앉은 눈꽃(하)",
+  str_review_n14_desc = "싸움은 끝을 맞이했고, 쇼군은 심판을 받았다. 과거의 진상을 알게 된 새로운 동료들은 서로 화해할 수 있었고, 요우도 기억을 되찾았다. 그리고 서로에게 작별을 고하고, 각자가 가야 할 곳으로 향했다.",
+  str_review_n15_name = "질주! 세상의 끝을 향해!",
+  str_review_n15_desc = "레디젤 렌치는 비상식적인 랠리를 성대하게 개최했지만, 도중에 암귀의 공격을 받게 되어 랠리는 혼란에 빠졌다. 참가자들은 잠시나마 서로 협력해 적을 쓰러트렸고, 마음속의 두려움을 이겨낼 수 있었다.",
+  str_review_n16_name = "진실 아래: 광기의 단편",
+  str_review_n16_desc = "실종된 소녀를 찾기 위해 아이테르와 카렌은 한밤중에 신비한 도시전설에 대해 조사하고, 우연히 진리의 결사의 거점에 들어서게 된다. 그곳을 벗어나기 위해서는 새로운 친구들과 기괴한 연극을 공연해야만 하는데..."
+}
 return config
-

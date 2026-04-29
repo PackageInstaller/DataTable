@@ -1,22 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_wait_active_skill_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckWaitActiveSkillCount", AINewNode)
 ActionCheckWaitActiveSkillCount = ActionCheckWaitActiveSkillCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckWaitActiveSkillCount.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionCheckWaitActiveSkillCount:OnUpdate()
   local target = self:GetLogicData(-1) or 1
-  local attributeCmpt = (self.m_entityOwn):Attributes()
+  local attributeCmpt = self.m_entityOwn:Attributes()
   local curValue = attributeCmpt:GetAttribute("WaitActiveSkillCount") or 1
-  if curValue <= target then
+  if target >= curValue then
     return AINewNodeStatus.Success
   end
   return AINewNodeStatus.Failure
 end
-
-

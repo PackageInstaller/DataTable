@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/th/str_physicalpower.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_physicalpower_current_time = "เวลาปัจจุบัน", str_physicalpower_next_time = "ฟื้นฟูปริซึมครั้งถัดไปใน", str_physicalpower_all_time = "ฟื้นฟูปริซึมทั้งหมดใน", str_physicalpower_error_phy_add_full = "ปริซึมถึงขีดจำกัดแล้ว ไม่สามารถฟื้นฟูได้อีก"}
+local config = {
+  str_physicalpower_current_time = "เวลาปัจจุบัน",
+  str_physicalpower_next_time = "ฟื้นฟูปริซึมครั้งถัดไปใน",
+  str_physicalpower_all_time = "ฟื้นฟูปริซึมทั้งหมดใน",
+  str_physicalpower_error_phy_add_full = "ปริซึมถึงขีดจำกัดแล้ว ไม่สามารถฟื้นฟูได้อีก"
+}
 return config
-

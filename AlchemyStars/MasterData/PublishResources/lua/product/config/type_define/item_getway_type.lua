@@ -1,10 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/config/type_define/item_getway_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 ItemGetwayFieldType = {FieldStart = 1, FieldEnd = 5}
-ItemGetwayType = {Jump = 1, Word = 2, GetWayIntroduce = 5}
-AwardHeadType = {Mission = 1, ExtMisson = 2, ResInstance = 3, Maze = 4, Tower = 5}
-AwardType = {First = 1, Pass = 2, ThreeStar = 3}
-
+ItemGetwayType = {
+  Jump = 1,
+  Word = 2,
+  GetWayIntroduce = 5
+}
+AwardHeadType = {
+  Mission = 1,
+  ExtMisson = 2,
+  ResInstance = 3,
+  Maze = 4,
+  Tower = 5
+}
+AwardType = {
+  First = 1,
+  Pass = 2,
+  ThreeStar = 3
+}

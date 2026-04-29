@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_hitback_and_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 require("skill_damage_effect_param")
 _class("SkillEffectHitBackAndDamageParam", SkillDamageEffectParam)
 SkillEffectHitBackAndDamageParam = SkillEffectHitBackAndDamageParam
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectHitBackAndDamageParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectHitBackAndDamageParam:Constructor(t)
   self._excludeCasterPos = t.excludeCasterPos
   self._ignorePlayerBlock = t.ignorePlayerBlock or false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectHitBackAndDamageParam.GetIgnorePlayerBlock = function(self)
-  -- function num : 0_1
+function SkillEffectHitBackAndDamageParam:GetIgnorePlayerBlock()
   return self._ignorePlayerBlock
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectHitBackAndDamageParam.ExcludeCasterPos = function(self)
-  -- function num : 0_2
+function SkillEffectHitBackAndDamageParam:ExcludeCasterPos()
   return self._excludeCasterPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectHitBackAndDamageParam.GetEffectType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectHitBackAndDamageParam:GetEffectType()
   return SkillEffectType.HitBackAndDamage
 end
-
-

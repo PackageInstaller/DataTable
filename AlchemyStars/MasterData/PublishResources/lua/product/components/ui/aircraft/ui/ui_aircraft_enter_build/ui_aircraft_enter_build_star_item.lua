@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_enter_build/ui_aircraft_enter_build_star_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftEnterBuildStarItem", UICustomWidget)
 UIAircraftEnterBuildStarItem = UIAircraftEnterBuildStarItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftEnterBuildStarItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIAircraftEnterBuildStarItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildStarItem.SetData = function(self, sprite)
-  -- function num : 0_1
+function UIAircraftEnterBuildStarItem:SetData(sprite)
   local img = self:GetUIComponent("Image", "img")
   img.sprite = sprite
 end
-
-

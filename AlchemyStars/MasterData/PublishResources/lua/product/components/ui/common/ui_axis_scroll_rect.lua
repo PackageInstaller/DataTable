@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/common/ui_axis_scroll_rect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAxisScrollRect", GameEventListener)
 UIAxisScrollRect = UIAxisScrollRect
 _class("UIAxisScrollRectData", Object)
@@ -11,26 +6,18 @@ _class("UIAxisScrollRectDataUI", Object)
 UIAxisScrollRectDataUI = UIAxisScrollRectDataUI
 _class("UIAxisScrollRectAdsorb", Object)
 UIAxisScrollRectAdsorb = UIAxisScrollRectAdsorb
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAxisScrollRectData.Constructor = function(self)
-  -- function num : 0_0
+function UIAxisScrollRectData:Constructor()
   self._luaIndex = 0
   self._ui = nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRectDataUI.Constructor = function(self)
-  -- function num : 0_1
+function UIAxisScrollRectDataUI:Constructor()
   self._data = nil
   self._widget = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRectAdsorb.Constructor = function(self)
-  -- function num : 0_2
+function UIAxisScrollRectAdsorb:Constructor()
   self._valid = false
   self._cdTick = 0
   self._cdPeriod = 0
@@ -38,10 +25,7 @@ UIAxisScrollRectAdsorb.Constructor = function(self)
   self._speed = 0
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRectAdsorb.Start = function(self, cdPeriod, currentValue, targetValue)
-  -- function num : 0_3
+function UIAxisScrollRectAdsorb:Start(cdPeriod, currentValue, targetValue)
   self._valid = true
   self._cdTick = 0
   self._cdPeriod = cdPeriod
@@ -49,30 +33,19 @@ UIAxisScrollRectAdsorb.Start = function(self, cdPeriod, currentValue, targetValu
   self._speed = (targetValue - currentValue) / cdPeriod
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRectAdsorb.Stop = function(self)
-  -- function num : 0_4
+function UIAxisScrollRectAdsorb:Stop()
   self._valid = false
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
-
 UIAxisScrollRect.PI_2 = 1.5707963
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
 UIAxisScrollRect.PI = 3.1415926
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
 UIAxisScrollRect.TWO_PI = 6.2831852
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAxisScrollRect.Constructor = function(self, world)
-  -- function num : 0_5 , upvalues : _ENV
+function UIAxisScrollRect:Constructor(world)
   local baseConstructor = GameEventListener.Constructor
   baseConstructor(self, world)
   self._gameGlobal = GameGlobal:GetInstance()
-  self._h3dTimer = (self._gameGlobal).h3dTimer
+  self._h3dTimer = self._gameGlobal.h3dTimer
   self._uiController = nil
   self._scrollRect = nil
   self._scrollContent = nil
@@ -95,7 +68,7 @@ UIAxisScrollRect.Constructor = function(self, world)
   self._autoAdsorb = true
   self._autoAdsorbDirty = false
   self._autoAdsorbPeriod = 200
-  self._autoAdsorbThreshold = 0.0005
+  self._autoAdsorbThreshold = 5.0E-4
   self._isDragging = false
   self._emptyCount = 0
   self._dataCount = 0
@@ -109,106 +82,75 @@ UIAxisScrollRect.Constructor = function(self, world)
   self._itemDataUIs = {}
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.Dispose = function(self)
-  -- function num : 0_6
+function UIAxisScrollRect:Dispose()
   self._itemDatas = nil
   self._itemDataUIs = nil
-  ;
-  (self._uiCustomEventListener):Dispose()
+  self._uiCustomEventListener:Dispose()
   self._uiCustomEventListener = nil
   if self._timerHandler ~= nil then
-    (self._h3dTimer):CancelEvent(self._timerHandler)
+    self._h3dTimer:CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self._gameGlobal = nil
   self._h3dTimer = nil
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.AddScaleRuler = function(self, orgScale, zoomInScaleX, zoomInScaleY)
-  -- function num : 0_7 , upvalues : _ENV
-  (table.insert)(self._scaleRuler, Vector3(orgScale, zoomInScaleX, zoomInScaleY))
+function UIAxisScrollRect:AddScaleRuler(orgScale, zoomInScaleX, zoomInScaleY)
+  table.insert(self._scaleRuler, Vector3(orgScale, zoomInScaleX, zoomInScaleY))
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.Create = function(self, uiController, scrollRectName, contentName, splitCount)
-  -- function num : 0_8 , upvalues : _ENV
+function UIAxisScrollRect:Create(uiController, scrollRectName, contentName, splitCount)
   self._uiController = uiController
   self._scrollRect = uiController:GetUIComponent("ScrollRect", scrollRectName)
   self._scrollContent = uiController:GetUIComponent("UISelectObjectPath", contentName)
   self._splitCount = splitCount
   self._splitAlpha = self.TWO_PI / self._splitCount
-  local content = (self._scrollRect).content
+  local content = self._scrollRect.content
   local image = content:GetComponent("Image")
   if image == nil then
-    image = (content.gameObject):AddComponent(typeof((UnityEngine.UI).Image))
+    image = content.gameObject:AddComponent(typeof(UnityEngine.UI.Image))
     image.color = Color(1, 1, 1, 0)
   end
-  local event = ((self._uiCustomEventListener).Get)(content.gameObject)
-  ;
-  (self._uiCustomEventListener):AddUICustomEventListener(event, UIEvent.BeginDrag, function(a)
-    -- function num : 0_8_0 , upvalues : self
+  local event = self._uiCustomEventListener.Get(content.gameObject)
+  self._uiCustomEventListener:AddUICustomEventListener(event, UIEvent.BeginDrag, function(a)
     self:OnBeginDrag(a)
-  end
-)
-  ;
-  (self._uiCustomEventListener):AddUICustomEventListener(event, UIEvent.Drag, function(a)
-    -- function num : 0_8_1 , upvalues : self
+  end)
+  self._uiCustomEventListener:AddUICustomEventListener(event, UIEvent.Drag, function(a)
     self:OnDrag(a)
-  end
-)
-  ;
-  (self._uiCustomEventListener):AddUICustomEventListener(event, UIEvent.EndDrag, function(a)
-    -- function num : 0_8_2 , upvalues : self
+  end)
+  self._uiCustomEventListener:AddUICustomEventListener(event, UIEvent.EndDrag, function(a)
     self:OnEndDrag(a)
-  end
-)
-  ;
-  ((self._scrollRect).onValueChanged):AddListener(function(value)
-    -- function num : 0_8_3 , upvalues : self
+  end)
+  self._scrollRect.onValueChanged:AddListener(function(value)
     self:OnScrollRectMoved(value)
-  end
-)
-  self._timerHandler = (self._h3dTimer):AddEventTimes(0, TimerTriggerCount.Infinite, function()
-    -- function num : 0_8_4 , upvalues : self
+  end)
+  self._timerHandler = self._h3dTimer:AddEventTimes(0, TimerTriggerCount.Infinite, function()
     self:OnTimer()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.SpawnObjects = function(self, uiCustomWidgetName, cellSize, spacing, isVert)
-  -- function num : 0_9 , upvalues : _ENV
+function UIAxisScrollRect:SpawnObjects(uiCustomWidgetName, cellSize, spacing, isVert)
   self._uiCustomWidgetName = uiCustomWidgetName
   self._cellSize = cellSize
   self._spacing = spacing
   self._vertLayout = isVert
   self._axisR = self._splitCount * (self:GetItemSize() + self._spacing) / self.TWO_PI
-  self._axisR = (self:GetItemSize() + self._spacing) * 0.5 / (math.tan)(self._splitAlpha * 0.5)
-  local itemCount = (math.ceil)(self._splitCount * 0.5)
-  self._itemPool = (self._scrollContent):SpawnObjects(self._uiCustomWidgetName, itemCount)
+  self._axisR = (self:GetItemSize() + self._spacing) * 0.5 / math.tan(self._splitAlpha * 0.5)
+  local itemCount = math.ceil(self._splitCount * 0.5)
+  self._itemPool = self._scrollContent:SpawnObjects(self._uiCustomWidgetName, itemCount)
   for i = 1, itemCount do
-    local uiWidget = (self._itemPool)[i]
+    local uiWidget = self._itemPool[i]
     uiWidget:Enable(false)
     self:SetWidgetUIToCellSize(uiWidget)
     local dataUI = UIAxisScrollRectDataUI:New()
     dataUI._widget = uiWidget
-    ;
-    (table.insert)(self._itemDataUIs, dataUI)
+    table.insert(self._itemDataUIs, dataUI)
   end
   self:UpdateEmptyCount()
   return self._itemPool
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.SetWidgetUIToCellSize = function(self, uiWidget)
-  -- function num : 0_10 , upvalues : _ENV
+function UIAxisScrollRect:SetWidgetUIToCellSize(uiWidget)
   local view = uiWidget:View()
   local rt = view.transform
   rt.pivot = Vector2.one * 0.5
@@ -219,40 +161,25 @@ UIAxisScrollRect.SetWidgetUIToCellSize = function(self, uiWidget)
   rt.anchoredPosition = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.AddContentChangedListener = function(self, fnListener)
-  -- function num : 0_11
+function UIAxisScrollRect:AddContentChangedListener(fnListener)
   self._fnContentChanged = fnListener
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.AddSelectChangedListener = function(self, fnListener)
-  -- function num : 0_12
+function UIAxisScrollRect:AddSelectChangedListener(fnListener)
   self._fnSelectChanged = fnListener
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.AddScrollChangedListener = function(self, fnListener)
-  -- function num : 0_13
+function UIAxisScrollRect:AddScrollChangedListener(fnListener)
   self._fnScrollChanged = fnListener
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.AddEndScrollEventListener = function(self, fnListener)
-  -- function num : 0_14
+function UIAxisScrollRect:AddEndScrollEventListener(fnListener)
   self._fnEndscrollEvent = fnListener
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.SetDataCount = function(self, dataCount, selectedLuaIndex, updateLayout)
-  -- function num : 0_15 , upvalues : _ENV
+function UIAxisScrollRect:SetDataCount(dataCount, selectedLuaIndex, updateLayout)
   self._dataCount = dataCount
-  if selectedLuaIndex >= 1 and selectedLuaIndex <= self._dataCount then
+  if 1 <= selectedLuaIndex and selectedLuaIndex <= self._dataCount then
     self._selectedLuaIndex = selectedLuaIndex
   else
     self._selectedLuaIndex = 1
@@ -260,8 +187,7 @@ UIAxisScrollRect.SetDataCount = function(self, dataCount, selectedLuaIndex, upda
   for i = 1, self._dataCount do
     local data = UIAxisScrollRectData:New()
     data._luaIndex = i
-    ;
-    (table.insert)(self._itemDatas, data)
+    table.insert(self._itemDatas, data)
   end
   self:UpdateContentSize()
   self._layoutDirty = true
@@ -270,55 +196,41 @@ UIAxisScrollRect.SetDataCount = function(self, dataCount, selectedLuaIndex, upda
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.FireUpdateItemLayout = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIAxisScrollRect:FireUpdateItemLayout()
   if self._layoutDirty then
     self._layoutDirty = false
     self:ScrollTo(self._selectedLuaIndex, nil)
     self:UpdateItemLayout()
     self:FireSelectChanged()
-  else
-    if self._fnContentChanged ~= nil then
-      for k,v in pairs(self._itemDataUIs) do
-        if v._data ~= nil then
-          (self._fnContentChanged)(v._widget, (v._data)._luaIndex)
-        end
+  elseif self._fnContentChanged ~= nil then
+    for k, v in pairs(self._itemDataUIs) do
+      if v._data ~= nil then
+        self._fnContentChanged(v._widget, v._data._luaIndex)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.GetItemSize = function(self)
-  -- function num : 0_17
+function UIAxisScrollRect:GetItemSize()
   if self._vertLayout then
-    return (self._cellSize).y
+    return self._cellSize.y
   else
-    return (self._cellSize).x
+    return self._cellSize.x
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.GetViewportSize = function(self)
-  -- function num : 0_18
-  local viewport = (self._scrollRect).viewport
+function UIAxisScrollRect:GetViewportSize()
+  local viewport = self._scrollRect.viewport
   if self._vertLayout then
-    return (viewport.rect).height
+    return viewport.rect.height
   else
-    return (viewport.rect).width
+    return viewport.rect.width
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.SetContentSize = function(self, contentSize)
-  -- function num : 0_19
+function UIAxisScrollRect:SetContentSize(contentSize)
   self._contentSize = contentSize
-  local content = (self._scrollRect).content
+  local content = self._scrollRect.content
   local sizeDelta = content.sizeDelta
   if self._vertLayout then
     sizeDelta.y = contentSize
@@ -328,37 +240,23 @@ UIAxisScrollRect.SetContentSize = function(self, contentSize)
   content.sizeDelta = sizeDelta
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.GetNormalizedPosition = function(self)
-  -- function num : 0_20
+function UIAxisScrollRect:GetNormalizedPosition()
   if self._vertLayout then
-    return 1 - (self._scrollRect).verticalNormalizedPosition
+    return 1 - self._scrollRect.verticalNormalizedPosition
   else
-    return (self._scrollRect).horizontalNormalizedPosition
+    return self._scrollRect.horizontalNormalizedPosition
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.SetNormalizedPosition = function(self, value)
-  -- function num : 0_21
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIAxisScrollRect:SetNormalizedPosition(value)
   if self._vertLayout then
-    (self._scrollRect).verticalNormalizedPosition = 1 - value
+    self._scrollRect.verticalNormalizedPosition = 1 - value
   else
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._scrollRect).horizontalNormalizedPosition = value
+    self._scrollRect.horizontalNormalizedPosition = value
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.NormalizedPosition = function(self, value)
-  -- function num : 0_22
+function UIAxisScrollRect:NormalizedPosition(value)
   if self._vertLayout then
     return 1 - value
   else
@@ -366,11 +264,8 @@ UIAxisScrollRect.NormalizedPosition = function(self, value)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.SetItemUIPosition = function(self, uiItem, position)
-  -- function num : 0_23
-  local view = (uiItem._widget):View()
+function UIAxisScrollRect:SetItemUIPosition(uiItem, position)
+  local view = uiItem._widget:View()
   local rt = view.transform
   local anchoredPosition = rt.anchoredPosition
   local anchorPivot = (rt.anchorMin + rt.anchorMax) * 0.5
@@ -382,11 +277,8 @@ UIAxisScrollRect.SetItemUIPosition = function(self, uiItem, position)
   rt.anchoredPosition = anchoredPosition
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.GetScrollVelocity = function(self)
-  -- function num : 0_24
-  local velocity = (self._scrollRect).velocity
+function UIAxisScrollRect:GetScrollVelocity()
+  local velocity = self._scrollRect.velocity
   if self._vertLayout then
     return velocity.y
   else
@@ -394,191 +286,139 @@ UIAxisScrollRect.GetScrollVelocity = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.SetScrollVelocity = function(self, velocity)
-  -- function num : 0_25
+function UIAxisScrollRect:SetScrollVelocity(velocity)
   local inVelocity = velocity
-  velocity = (self._scrollRect).velocity
+  velocity = self._scrollRect.velocity
   if self._vertLayout then
     velocity.y = inVelocity
   else
     velocity.x = inVelocity
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._scrollRect).velocity = velocity
+  self._scrollRect.velocity = velocity
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.GetScrollDragDelta = function(self, position)
-  -- function num : 0_26
+function UIAxisScrollRect:GetScrollDragDelta(position)
   local screenDelta = 0
   if self._vertLayout then
-    screenDelta = position.y - (self._beginDragPosition).y
+    screenDelta = position.y - self._beginDragPosition.y
   else
-    screenDelta = (self._beginDragPosition).x - position.x
+    screenDelta = self._beginDragPosition.x - position.x
   end
   return screenDelta
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.SetItemUIScale = function(self, uiItem, localScaleX, localScaleY)
-  -- function num : 0_27 , upvalues : _ENV
-  local view = (uiItem._widget):View()
+function UIAxisScrollRect:SetItemUIScale(uiItem, localScaleX, localScaleY)
+  local view = uiItem._widget:View()
   local rt = view.transform
   rt.localScale = Vector3(localScaleX, localScaleY, 1)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.UpdateEmptyCount = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIAxisScrollRect:UpdateEmptyCount()
   local itemSize = self:GetItemSize() + self._spacing
   local viewSize = self:GetViewportSize()
   self._emptyCount = viewSize / itemSize
-  self._emptyCount = (math.ceil)(self._emptyCount - 1)
+  self._emptyCount = math.ceil(self._emptyCount - 1)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.UpdateContentSize = function(self)
-  -- function num : 0_29
+function UIAxisScrollRect:UpdateContentSize()
   local itemSize = self:GetItemSize() + self._spacing
   local contentSize = itemSize * (self._emptyCount + self._dataCount)
   self:SetContentSize(contentSize)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.OnBeginDrag = function(self, eventData)
-  -- function num : 0_30
-  (self._adsorb):Stop()
+function UIAxisScrollRect:OnBeginDrag(eventData)
+  self._adsorb:Stop()
   self._isDragging = true
   self._beginDragPosition = eventData.position
-  ;
-  (self._scrollRect):OnBeginDrag(eventData)
+  self._scrollRect:OnBeginDrag(eventData)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.OnDrag = function(self, eventData)
-  -- function num : 0_31
-  (self._adsorb):Stop()
+function UIAxisScrollRect:OnDrag(eventData)
+  self._adsorb:Stop()
   self._isDragging = true
-  ;
-  (self._scrollRect):OnDrag(eventData)
+  self._scrollRect:OnDrag(eventData)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.OnEndDrag = function(self, eventData)
-  -- function num : 0_32
-  (self._adsorb):Stop()
+function UIAxisScrollRect:OnEndDrag(eventData)
+  self._adsorb:Stop()
   self._isDragging = false
-  ;
-  (self._scrollRect):OnEndDrag(eventData)
+  self._scrollRect:OnEndDrag(eventData)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.OnScrollRectMoved = function(self, value)
-  -- function num : 0_33
-  if not (self._adsorb)._valid then
+function UIAxisScrollRect:OnScrollRectMoved(value)
+  if not self._adsorb._valid then
     self._autoAdsorbDirty = true
   end
   local scrollValue = self:GetNormalizedPosition()
-  if (self._scrollLimit).z > 0 and scrollValue < (self._scrollLimit).z then
-    self:SetNormalizedPosition((self._scrollLimit).z)
-    value = (self._scrollRect).normalizedPosition
+  if self._scrollLimit.z > 0 and scrollValue < self._scrollLimit.z then
+    self:SetNormalizedPosition(self._scrollLimit.z)
+    value = self._scrollRect.normalizedPosition
   end
-  if (self._scrollLimit).w > 0 and (self._scrollLimit).w < scrollValue then
-    self:SetNormalizedPosition((self._scrollLimit).w)
-    value = (self._scrollRect).normalizedPosition
+  if 0 < self._scrollLimit.w and scrollValue > self._scrollLimit.w then
+    self:SetNormalizedPosition(self._scrollLimit.w)
+    value = self._scrollRect.normalizedPosition
   end
   if self._fnScrollChanged ~= nil then
-    (self._fnScrollChanged)(value)
+    self._fnScrollChanged(value)
   end
   self:UpdateSelectedIndex()
   self:UpdateItemLayout()
   self:FireSelectChanged()
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.OnTimer = function(self)
-  -- function num : 0_34
-  local deltaTime = (self._gameGlobal):GetDeltaTime()
+function UIAxisScrollRect:OnTimer()
+  local deltaTime = self._gameGlobal:GetDeltaTime()
   if self._fnEndscrollEventNextFrame then
     self._fnEndscrollEventNextFrame = false
     if self._fnEndscrollEvent ~= nil then
-      (self._fnEndscrollEvent)((self._scrollRect).normalizedPosition)
+      self._fnEndscrollEvent(self._scrollRect.normalizedPosition)
     end
   end
   self:CheckAdsorbMoved(deltaTime)
   self:AutoAdsorbMoved(deltaTime)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.GetEmptyItemUI = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  for k,v in pairs(self._itemDataUIs) do
+function UIAxisScrollRect:GetEmptyItemUI()
+  for k, v in pairs(self._itemDataUIs) do
     if v._data == nil then
       return v
     end
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.GetScaleRuler = function(self, orgScale)
-  -- function num : 0_36 , upvalues : _ENV
-  local minScale, maxScale = nil, nil
-  for k,v in pairs(self._scaleRuler) do
+function UIAxisScrollRect:GetScaleRuler(orgScale)
+  local minScale, maxScale
+  for k, v in pairs(self._scaleRuler) do
     if orgScale <= v.x then
       maxScale = v
       break
     end
     minScale = v
   end
-  do
-    local zoomInScale = Vector2(1, 1)
-    do
-      if maxScale ~= nil then
-        local dt = (orgScale - minScale.x) / (maxScale.x - minScale.x)
-        zoomInScale.x = minScale.y + dt * (maxScale.y - minScale.y)
-        zoomInScale.y = minScale.z + dt * (maxScale.z - minScale.z)
-      end
-      return zoomInScale
-    end
+  local zoomInScale = Vector2(1, 1)
+  if maxScale ~= nil then
+    local dt = (orgScale - minScale.x) / (maxScale.x - minScale.x)
+    zoomInScale.x = minScale.y + dt * (maxScale.y - minScale.y)
+    zoomInScale.y = minScale.z + dt * (maxScale.z - minScale.z)
   end
+  return zoomInScale
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.UpdateSelectedIndex = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function UIAxisScrollRect:UpdateSelectedIndex()
   local pastScrollValue = self:GetNormalizedPosition()
-  pastScrollValue = (math.min)(pastScrollValue, 1)
-  pastScrollValue = (math.max)(pastScrollValue, 0)
+  pastScrollValue = math.min(pastScrollValue, 1)
+  pastScrollValue = math.max(pastScrollValue, 0)
   local viewportSize = self:GetViewportSize()
   local itemSize = self:GetItemSize() + self._spacing
   local pastScrollHeight = pastScrollValue * (self._contentSize - viewportSize)
   local pastItemCount = pastScrollHeight / itemSize
-  local luaIndex = 1 + (math.floor)(pastItemCount + 0.5)
+  local luaIndex = 1 + math.floor(pastItemCount + 0.5)
   if luaIndex <= self._dataCount then
     self._selectedLuaIndex = luaIndex
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.UpdateItemLayout = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function UIAxisScrollRect:UpdateItemLayout()
   local itemSize = self:GetItemSize() + self._spacing
   local scrollValue = self:GetNormalizedPosition()
   local viewSize = self:GetViewportSize()
@@ -586,26 +426,23 @@ UIAxisScrollRect.UpdateItemLayout = function(self)
   local identityValue = (self._selectedLuaIndex - 1) * itemSize / totalScrollSize
   local offsetValue = identityValue - scrollValue
   local offsetAlpha = offsetValue * totalScrollSize / self._axisR
-  local deltaMin = (math.floor)((offsetAlpha + self.PI_2) / self._splitAlpha)
-  local deltaMax = (math.floor)((self.PI_2 - offsetAlpha) / self._splitAlpha)
+  local deltaMin = math.floor((offsetAlpha + self.PI_2) / self._splitAlpha)
+  local deltaMax = math.floor((self.PI_2 - offsetAlpha) / self._splitAlpha)
   local dataUICount = #self._itemDataUIs
   if dataUICount < deltaMin + deltaMax + 1 then
     deltaMax = deltaMax - 1
   end
   local theMinAlpha = offsetAlpha - deltaMin * self._splitAlpha
   local theMinIndex = self._selectedLuaIndex - deltaMin
-  local theMaxIndex = self._selectedLuaIndex + (deltaMax)
+  local theMaxIndex = self._selectedLuaIndex + deltaMax
   local theTmpIndex = theMinIndex
-  theMinIndex = (math.max)(theMinIndex, 1)
+  theMinIndex = math.max(theMinIndex, 1)
   theMinAlpha = theMinAlpha + (theMinIndex - theTmpIndex) * self._splitAlpha
-  theMaxIndex = (math.min)(theMaxIndex, self._dataCount)
-  for k,v in pairs(self._itemDatas) do
-    -- DECOMPILER ERROR at PC77: Confused about usage of register: R20 in 'UnsetPending'
-
-    if v._ui ~= nil and (v._luaIndex < theMinIndex or theMaxIndex < v._luaIndex) then
-      (v._ui)._data = nil
-      ;
-      ((v._ui)._widget):Enable(false)
+  theMaxIndex = math.min(theMaxIndex, self._dataCount)
+  for k, v in pairs(self._itemDatas) do
+    if v._ui ~= nil and (theMinIndex > v._luaIndex or theMaxIndex < v._luaIndex) then
+      v._ui._data = nil
+      v._ui._widget:Enable(false)
       v._ui = nil
     end
   end
@@ -613,33 +450,30 @@ UIAxisScrollRect.UpdateItemLayout = function(self)
   local identityPosition = scrollValue * totalScrollSize + viewSize * 0.5
   for i = theMinIndex, theMaxIndex do
     local itemAlpha = theMinAlpha + (i - theMinIndex) * self._splitAlpha
-    local itemData = (self._itemDatas)[i]
-    do
-      if itemData._ui == nil then
-        local ui = self:GetEmptyItemUI()
-        ui._data = itemData
-        ;
-        (ui._widget):Enable(true)
-        itemData._ui = ui
-        if self._fnContentChanged ~= nil then
-          (self._fnContentChanged)(ui._widget, i)
-        end
-      end
-      local deltaPosition = (math.sin)(itemAlpha) * self._axisR
-      local absItemAlpha = (math.abs)(itemAlpha)
-      local localScale = (math.sin)(self.PI_2 - absItemAlpha)
-      do
-        local cacheItem = {itemAlpha = itemAlpha, deltaPosition = deltaPosition, localScale = localScale}
-        cache[i] = cacheItem
-        -- DECOMPILER ERROR at PC138: LeaveBlock: unexpected jumping out DO_STMT
-
+    local itemData = self._itemDatas[i]
+    if itemData._ui == nil then
+      local ui = self:GetEmptyItemUI()
+      ui._data = itemData
+      ui._widget:Enable(true)
+      itemData._ui = ui
+      if self._fnContentChanged ~= nil then
+        self._fnContentChanged(ui._widget, i)
       end
     end
+    local deltaPosition = math.sin(itemAlpha) * self._axisR
+    local absItemAlpha = math.abs(itemAlpha)
+    local localScale = math.sin(self.PI_2 - absItemAlpha)
+    local cacheItem = {
+      itemAlpha = itemAlpha,
+      deltaPosition = deltaPosition,
+      localScale = localScale
+    }
+    cache[i] = cacheItem
   end
   local totalOffset = 0
   for i = self._selectedLuaIndex, theMinIndex, -1 do
     local cacheItem = cache[i]
-    local itemData = (self._itemDatas)[i]
+    local itemData = self._itemDatas[i]
     local offset = totalOffset
     local zoomInScale = self:GetScaleRuler(cacheItem.localScale)
     if i == self._selectedLuaIndex then
@@ -647,31 +481,17 @@ UIAxisScrollRect.UpdateItemLayout = function(self)
       offset = (zoomInScale.y - 1) * cacheItem.deltaPosition
       totalOffset = totalOffset - deltaSize
     else
-      do
-        do
-          do
-            local deltaSize = (zoomInScale.y - 1) * cacheItem.localScale * itemSize
-            offset = offset - deltaSize * 0.5
-            totalOffset = totalOffset - deltaSize
-            self:SetItemUIPosition(itemData._ui, identityPosition + cacheItem.deltaPosition + (offset))
-            self:SetItemUIScale(itemData._ui, cacheItem.localScale * zoomInScale.x, cacheItem.localScale * zoomInScale.y)
-            -- DECOMPILER ERROR at PC191: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC191: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC191: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC191: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
+      local deltaSize = (zoomInScale.y - 1) * cacheItem.localScale * itemSize
+      offset = offset - deltaSize * 0.5
+      totalOffset = totalOffset - deltaSize
     end
+    self:SetItemUIPosition(itemData._ui, identityPosition + cacheItem.deltaPosition + offset)
+    self:SetItemUIScale(itemData._ui, cacheItem.localScale * zoomInScale.x, cacheItem.localScale * zoomInScale.y)
   end
   local totalOffset = 0
   for i = self._selectedLuaIndex, theMaxIndex do
     local cacheItem = cache[i]
-    local itemData = (self._itemDatas)[i]
+    local itemData = self._itemDatas[i]
     local offset = totalOffset
     local zoomInScale = self:GetScaleRuler(cacheItem.localScale)
     if i == self._selectedLuaIndex then
@@ -679,180 +499,122 @@ UIAxisScrollRect.UpdateItemLayout = function(self)
       offset = (zoomInScale.y - 1) * cacheItem.deltaPosition
       totalOffset = totalOffset + deltaSize
     else
-      do
-        do
-          do
-            local deltaSize = (zoomInScale.y - 1) * cacheItem.localScale * itemSize
-            offset = offset + deltaSize * 0.5
-            totalOffset = totalOffset + deltaSize
-            self:SetItemUIPosition(itemData._ui, identityPosition + cacheItem.deltaPosition + (offset))
-            self:SetItemUIScale(itemData._ui, cacheItem.localScale * zoomInScale.x, cacheItem.localScale * zoomInScale.y)
-            -- DECOMPILER ERROR at PC244: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC244: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC244: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC244: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
+      local deltaSize = (zoomInScale.y - 1) * cacheItem.localScale * itemSize
+      offset = offset + deltaSize * 0.5
+      totalOffset = totalOffset + deltaSize
     end
+    self:SetItemUIPosition(itemData._ui, identityPosition + cacheItem.deltaPosition + offset)
+    self:SetItemUIScale(itemData._ui, cacheItem.localScale * zoomInScale.x, cacheItem.localScale * zoomInScale.y)
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.FireSelectChanged = function(self)
-  -- function num : 0_39
+function UIAxisScrollRect:FireSelectChanged()
   if self._selectedPreLuaIndex == self._selectedLuaIndex then
-    return 
+    return
   end
   if self._fnSelectChanged ~= nil then
     local preUI = self:GetItemWidgetUI(self._selectedPreLuaIndex)
     local curUI = self:GetItemWidgetUI(self._selectedLuaIndex)
-    ;
-    (self._fnSelectChanged)(self._selectedPreLuaIndex, self._selectedLuaIndex, preUI, curUI)
+    self._fnSelectChanged(self._selectedPreLuaIndex, self._selectedLuaIndex, preUI, curUI)
   end
-  do
-    self._selectedPreLuaIndex = self._selectedLuaIndex
-  end
+  self._selectedPreLuaIndex = self._selectedLuaIndex
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.CheckAdsorbMoved = function(self, deltaTime)
-  -- function num : 0_40 , upvalues : _ENV
+function UIAxisScrollRect:CheckAdsorbMoved(deltaTime)
   if not self._autoAdsorb then
-    return 
+    return
   end
   if not self._autoAdsorbDirty then
-    return 
+    return
   end
   if self._isDragging then
-    return 
+    return
   end
   local velocity = self:GetScrollVelocity()
-  if (math.abs)(velocity) > 100 then
-    return 
+  if math.abs(velocity) > 100 then
+    return
   end
   self._autoAdsorbDirty = false
   self:SetScrollVelocity(0)
   self:ScrollTo(self._selectedLuaIndex, self._autoAdsorbPeriod)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.AutoAdsorbMoved = function(self, deltaTime)
-  -- function num : 0_41
-  if not (self._adsorb)._valid then
-    return 
+function UIAxisScrollRect:AutoAdsorbMoved(deltaTime)
+  if not self._adsorb._valid then
+    return
   end
   local scrollValue = self:GetNormalizedPosition()
-  scrollValue = scrollValue + (self._adsorb)._speed * deltaTime
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._adsorb)._cdTick = (self._adsorb)._cdTick + deltaTime
-  if (self._adsorb)._cdPeriod <= (self._adsorb)._cdTick then
-    scrollValue = (self._adsorb)._targetValue
-    ;
-    (self._adsorb):Stop()
+  scrollValue = scrollValue + self._adsorb._speed * deltaTime
+  self._adsorb._cdTick = self._adsorb._cdTick + deltaTime
+  if self._adsorb._cdTick >= self._adsorb._cdPeriod then
+    scrollValue = self._adsorb._targetValue
+    self._adsorb:Stop()
   end
   self:SetNormalizedPosition(scrollValue)
-  if not (self._adsorb)._valid then
+  if not self._adsorb._valid then
     self._fnEndscrollEventNextFrame = true
   end
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.ScrollTo = function(self, luaIndex, durationMS)
-  -- function num : 0_42 , upvalues : _ENV
-  if luaIndex <= 0 or self._dataCount < luaIndex then
-    return 
+function UIAxisScrollRect:ScrollTo(luaIndex, durationMS)
+  if luaIndex <= 0 or luaIndex > self._dataCount then
+    return
   end
-  if (self._adsorb)._valid then
-    return 
+  if self._adsorb._valid then
+    return
   end
   local itemSize = self:GetItemSize() + self._spacing
   local scrollValue = self:GetNormalizedPosition()
   local viewSize = self:GetViewportSize()
   local totalScrollSize = self._contentSize - viewSize
   local identityValue = (luaIndex - 1) * itemSize / totalScrollSize
-  if self._autoAdsorbThreshold < (math.abs)(identityValue - scrollValue) then
+  if math.abs(identityValue - scrollValue) > self._autoAdsorbThreshold then
     if durationMS == nil then
       self:SetNormalizedPosition(identityValue)
       self._fnEndscrollEventNextFrame = true
     else
-      ;
-      (self._adsorb):Start(durationMS, scrollValue, identityValue)
+      self._adsorb:Start(durationMS, scrollValue, identityValue)
     end
   end
   return self:NormalizedPosition(identityValue)
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.GetSelectedLuaIndex = function(self)
-  -- function num : 0_43
+function UIAxisScrollRect:GetSelectedLuaIndex()
   return self._selectedLuaIndex
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.GetItemWidgetUI = function(self, luaIndex)
-  -- function num : 0_44
-  local itemData = nil
-  if luaIndex >= 1 and luaIndex <= self._dataCount then
-    itemData = (self._itemDatas)[luaIndex]
+function UIAxisScrollRect:GetItemWidgetUI(luaIndex)
+  local itemData
+  if 1 <= luaIndex and luaIndex <= self._dataCount then
+    itemData = self._itemDatas[luaIndex]
   end
   if itemData ~= nil and itemData._ui ~= nil then
-    return (itemData._ui)._widget
+    return itemData._ui._widget
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.GetDataCount = function(self)
-  -- function num : 0_45
+function UIAxisScrollRect:GetDataCount()
   return self._dataCount
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.GetEmptyCount = function(self)
-  -- function num : 0_46
+function UIAxisScrollRect:GetEmptyCount()
   return self._emptyCount
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.GetTotalCount = function(self)
-  -- function num : 0_47
+function UIAxisScrollRect:GetTotalCount()
   return self._dataCount + self._emptyCount
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.GetContentSize = function(self)
-  -- function num : 0_48
+function UIAxisScrollRect:GetContentSize()
   return self._contentSize
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.GetItemSpacing = function(self)
-  -- function num : 0_49
+function UIAxisScrollRect:GetItemSpacing()
   return self._spacing
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.SetAutoAdsorb = function(self, autoAdsorb, autoAdsorbPeriod)
-  -- function num : 0_50
+function UIAxisScrollRect:SetAutoAdsorb(autoAdsorb, autoAdsorbPeriod)
   self._autoAdsorb = autoAdsorb
   self._autoAdsorbPeriod = autoAdsorbPeriod
   if self._autoAdsorbPeriod == nil then
@@ -860,62 +622,30 @@ UIAxisScrollRect.SetAutoAdsorb = function(self, autoAdsorb, autoAdsorbPeriod)
   end
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.GetRawScrollRect = function(self)
-  -- function num : 0_51
+function UIAxisScrollRect:GetRawScrollRect()
   return self._scrollRect
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.GetScrollLimit = function(self)
-  -- function num : 0_52 , upvalues : _ENV
-  return Vector2((self._scrollLimit).x, (self._scrollLimit).y)
+function UIAxisScrollRect:GetScrollLimit()
+  return Vector2(self._scrollLimit.x, self._scrollLimit.y)
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAxisScrollRect.SetScrollLimit = function(self, minLuaIndex, maxLuaIndex)
-  -- function num : 0_53
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._scrollLimit).x = minLuaIndex
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._scrollLimit).y = maxLuaIndex
+function UIAxisScrollRect:SetScrollLimit(minLuaIndex, maxLuaIndex)
+  self._scrollLimit.x = minLuaIndex
+  self._scrollLimit.y = maxLuaIndex
   local itemSize = self:GetItemSize() + self._spacing
   local viewSize = self:GetViewportSize()
   local totalScrollSize = self._contentSize - viewSize
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R6 in 'UnsetPending'
-
   if minLuaIndex <= 0 then
-    (self._scrollLimit).z = -1
+    self._scrollLimit.z = -1
   else
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._scrollLimit).z = (minLuaIndex - 1) * itemSize / totalScrollSize
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._scrollLimit).z = (self._scrollLimit).z + 0.0005
+    self._scrollLimit.z = (minLuaIndex - 1) * itemSize / totalScrollSize
+    self._scrollLimit.z = self._scrollLimit.z + 5.0E-4
   end
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R6 in 'UnsetPending'
-
   if maxLuaIndex <= 0 then
-    (self._scrollLimit).w = -1
+    self._scrollLimit.w = -1
   else
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._scrollLimit).w = (maxLuaIndex - 1) * itemSize / totalScrollSize
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._scrollLimit).w = (self._scrollLimit).w + 0.0005
+    self._scrollLimit.w = (maxLuaIndex - 1) * itemSize / totalScrollSize
+    self._scrollLimit.w = self._scrollLimit.w + 5.0E-4
   end
 end
-
-

@@ -1,62 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/fsm/state_bounce_init.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateBounceInit", StateBounceBase)
 StateBounceInit = StateBounceInit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateBounceInit.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function StateBounceInit:OnEnter(TT, ...)
   self:Init()
-  ;
-  (self.objMgr):InitPlayer()
-  ;
-  (table.clear)(self.monsterGenerator)
-  local genIdArray = ((self.bounceData).levelCfg).MonsterGenerator
+  self.objMgr:InitPlayer()
+  table.clear(self.monsterGenerator)
+  local genIdArray = self.bounceData.levelCfg.MonsterGenerator
   if genIdArray then
-    for i,genId in ipairs(genIdArray) do
-      local genCfg = (Cfg.cfg_bounce_monster_gen)[genId]
+    for i, genId in ipairs(genIdArray) do
+      local genCfg = Cfg.cfg_bounce_monster_gen[genId]
       if genCfg then
         local generator = MonsterGenerator:New()
         generator:Init(genId)
         generator:SetCoreController(self.coreController)
-        ;
-        (table.insert)(self.monsterGenerator, generator)
+        table.insert(self.monsterGenerator, generator)
       else
-        do
-          do
-            ;
-            (Log.error)("StateBounceInit err:can\'t find cfg_bounce_monster_gen with id = " .. genId)
-            -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        Log.error("StateBounceInit err:can't find cfg_bounce_monster_gen with id = " .. genId)
       end
     end
   else
-    ;
-    (Log.error)("StateBounceInit err:can\'t find monster generator with levelId " .. (self.bounceData).levleId)
+    Log.error("StateBounceInit err:can't find monster generator with levelId " .. self.bounceData.levleId)
   end
-  ;
-  (self.coreController):ChgFsmState(StateBounce.Prepare)
+  self.coreController:ChgFsmState(StateBounce.Prepare)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBounceInit.StartGameCore = function(self, TT)
-  -- function num : 0_1
+function StateBounceInit:StartGameCore(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBounceInit.OnExit = function(self, TT)
-  -- function num : 0_2
+function StateBounceInit:OnExit(TT)
 end
-
-

@@ -1,170 +1,112 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/date/ui_activity_n33_date_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33DateData", Object)
 UIActivityN33DateData = UIActivityN33DateData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN33DateData.Constructor = function(self, campaign)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN33DateData:Constructor(campaign)
   self._campaign = campaign
-  self._comp = (self._campaign):GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_SIMULATION_OPERATION)
-  self._compInfo = (self._campaign):GetComponentInfo(ECampaignN33ComponentID.ECAMPAIGN_N33_SIMULATION_OPERATION)
+  self._comp = self._campaign:GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_SIMULATION_OPERATION)
+  self._compInfo = self._campaign:GetComponentInfo(ECampaignN33ComponentID.ECAMPAIGN_N33_SIMULATION_OPERATION)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateData.GetComponent = function(self)
-  -- function num : 0_1
+function UIActivityN33DateData:GetComponent()
   return self._comp
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateData.GetDatePetList = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN33DateData:GetDatePetList()
   local map = {}
-  local cfg = (Cfg.cfg_component_simulation_operation_story)({})
-  for _,v in pairs(cfg) do
+  local cfg = Cfg.cfg_component_simulation_operation_story({})
+  for _, v in pairs(cfg) do
     if map[v.PetId] then
-      (table.insert)(map[v.PetId], v)
+      table.insert(map[v.PetId], v)
     else
       map[v.PetId] = {}
-      ;
-      (table.insert)(map[v.PetId], v)
+      table.insert(map[v.PetId], v)
     end
   end
   return map
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateData.GetDateManualList = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN33DateData:GetDateManualList()
   local map = self:GetDatePetList()
   local list = {}
   local unReadList = {}
   local unLockList = {}
   local allDoneList = {}
   local lockedList = {}
-  for _,cfgs in pairs(map) do
+  for _, cfgs in pairs(map) do
     local hasRed = false
     local allOver = true
     local isOneOver = false
-    for i,v in pairs(cfgs) do
-      if i <= 2 then
-        local isOver = self:CheckStoryConditionIsOver(v.ID)
-        do
-          local isRead = self:CheckStoryIsRead(v.ID)
-          if not isOneOver then
-            isOneOver = isOver
-          end
-          if isOver and not isRead then
-            hasRed = true
-            allOver = false
-          end
+    for i, v in pairs(cfgs) do
+      if 2 < i then
+        break
+      end
+      local isOver = self:CheckStoryConditionIsOver(v.ID)
+      local isRead = self:CheckStoryIsRead(v.ID)
+      isOneOver = isOneOver or isOver
+      if isOver then
+        if not isRead then
+          hasRed = true
           allOver = false
-          -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_STMT
-
         end
+      else
+        allOver = false
       end
     end
     if allOver then
-      (table.insert)(allDoneList, cfgs)
+      table.insert(allDoneList, cfgs)
+    elseif not isOneOver then
+      table.insert(lockedList, cfgs)
+    elseif hasRed then
+      table.insert(unReadList, cfgs)
     else
-      if not isOneOver then
-        (table.insert)(lockedList, cfgs)
-      else
-        if hasRed then
-          (table.insert)(unReadList, cfgs)
-        else
-          ;
-          (table.insert)(unLockList, cfgs)
-        end
-      end
+      table.insert(unLockList, cfgs)
     end
   end
-  ;
-  (table.sort)(unReadList, function(a, b)
-    -- function num : 0_3_0
-    do return (a[1]).ID < (b[1]).ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  table.sort(unReadList, function(a, b)
+    return a[1].ID < b[1].ID
+  end)
+  table.sort(unLockList, function(a, b)
+    return a[1].ID < b[1].ID
+  end)
+  table.sort(allDoneList, function(a, b)
+    return a[1].ID < b[1].ID
+  end)
+  table.sort(lockedList, function(a, b)
+    return a[1].ID < b[1].ID
+  end)
+  for _, v in pairs(unReadList) do
+    table.insert(list, v)
   end
-)
-  ;
-  (table.sort)(unLockList, function(a, b)
-    -- function num : 0_3_1
-    do return (a[1]).ID < (b[1]).ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  for _, v in pairs(unLockList) do
+    table.insert(list, v)
   end
-)
-  ;
-  (table.sort)(allDoneList, function(a, b)
-    -- function num : 0_3_2
-    do return (a[1]).ID < (b[1]).ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  for _, v in pairs(allDoneList) do
+    table.insert(list, v)
   end
-)
-  ;
-  (table.sort)(lockedList, function(a, b)
-    -- function num : 0_3_3
-    do return (a[1]).ID < (b[1]).ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  for _,v in pairs(unReadList) do
-    (table.insert)(list, v)
-  end
-  for _,v in pairs(unLockList) do
-    (table.insert)(list, v)
-  end
-  for _,v in pairs(allDoneList) do
-    (table.insert)(list, v)
-  end
-  for _,v in pairs(lockedList) do
-    (table.insert)(list, v)
+  for _, v in pairs(lockedList) do
+    table.insert(list, v)
   end
   return list
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateData.GetMapShowPetList = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN33DateData:GetMapShowPetList()
   local res = {}
-  local cfgs = (Cfg.cfg_component_simulation_operation_story)({})
-  for _,cfg in pairs(cfgs) do
-    local isContain = (table.icontains)((self._compInfo).story_list, cfg.ID)
+  local cfgs = Cfg.cfg_component_simulation_operation_story({})
+  for _, cfg in pairs(cfgs) do
+    local isContain = table.icontains(self._compInfo.story_list, cfg.ID)
     if not isContain then
       if cfg.PreStory then
         local isRead = false
-        for i,v in pairs(cfg.PreStory) do
+        for i, v in pairs(cfg.PreStory) do
+          isRead = self:CheckStoryIsRead(v) or isRead
         end
-        if self:CheckStoryIsRead(v) or isRead then
-          (table.insert)(res, cfg)
+        if isRead then
+          table.insert(res, cfg)
         end
       else
-        do
-          do
-            local isOver = self:CheckStoryConditionIsOver(cfg.ID)
-            if isOver then
-              (table.insert)(res, cfg)
-            end
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        local isOver = self:CheckStoryConditionIsOver(cfg.ID)
+        if isOver then
+          table.insert(res, cfg)
         end
       end
     end
@@ -172,105 +114,76 @@ UIActivityN33DateData.GetMapShowPetList = function(self)
   return res
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateData.CheckStoryIsRead = function(self, storyId)
-  -- function num : 0_5 , upvalues : _ENV
-  return (table.icontains)((self._compInfo).story_list, storyId)
+function UIActivityN33DateData:CheckStoryIsRead(storyId)
+  return table.icontains(self._compInfo.story_list, storyId)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateData.CheckBuildGetLevel = function(self, buildId, level)
-  -- function num : 0_6
-  local isGetTargetLevel = level <= (((self._compInfo).arch_infos)[buildId]).level
-  do return isGetTargetLevel end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIActivityN33DateData:CheckBuildGetLevel(buildId, level)
+  local isGetTargetLevel = level <= self._compInfo.arch_infos[buildId].level
+  return isGetTargetLevel
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateData.CheckStoryConditionIsOver = function(self, storyId)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_simulation_operation_story)[storyId]
+function UIActivityN33DateData:CheckStoryConditionIsOver(storyId)
+  local cfg = Cfg.cfg_component_simulation_operation_story[storyId]
   local buildConditions = cfg.PreCondition
   local storyConditions = cfg.PreStory
   local isStoryOver = true
   if storyConditions then
-    for _,v in pairs(storyConditions) do
-      local isInvited = (table.icontains)((self._compInfo).story_list, v)
+    for _, v in pairs(storyConditions) do
+      local isInvited = table.icontains(self._compInfo.story_list, v)
       if not isInvited then
         isStoryOver = false
         break
       end
     end
   end
-  do
-    local isBuildOver = true
-    if buildConditions then
-      for _,v in pairs(buildConditions) do
-        local id = v[1]
-        local needLevel = v[2]
-        if not self:CheckBuildGetLevel(id, needLevel) then
-          isBuildOver = false
-          break
-        end
+  local isBuildOver = true
+  if buildConditions then
+    for _, v in pairs(buildConditions) do
+      local id = v[1]
+      local needLevel = v[2]
+      if not self:CheckBuildGetLevel(id, needLevel) then
+        isBuildOver = false
+        break
       end
     end
-    do
-      return not isStoryOver or isBuildOver
-    end
   end
+  return isStoryOver and isBuildOver
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateData.GetArchInfos = function(self)
-  -- function num : 0_8
-  return (self._compInfo).arch_infos
+function UIActivityN33DateData:GetArchInfos()
+  return self._compInfo.arch_infos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateData.OneSecondUpdate_GetArchInfos = function(self, TT, callFun)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityN33DateData:OneSecondUpdate_GetArchInfos(TT, callFun)
   local res = AsyncRequestRes:New()
-  local ret, archInfos = (self._comp):HandleGetArchInfos(TT, res)
+  local ret, archInfos = self._comp:HandleGetArchInfos(TT, res)
   if res:GetSucc() and callFun then
     callFun()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateData.OneSecondUpdate_PickUpCoin = function(self, TT, arch_id, callFun)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityN33DateData:OneSecondUpdate_PickUpCoin(TT, arch_id, callFun)
   local res = AsyncRequestRes:New()
-  local ret = (self._comp):HandlePickUpCoin(TT, res, arch_id)
+  local ret = self._comp:HandlePickUpCoin(TT, res, arch_id)
   if res:GetSucc() and callFun then
     callFun()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateData.OneSecondUpdate_UpgradeArch = function(self, TT, arch_id, callFun)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityN33DateData:OneSecondUpdate_UpgradeArch(TT, arch_id, callFun)
   local res = AsyncRequestRes:New()
-  local ret, rewards = (self._comp):HandleUpgradeArch(TT, res, arch_id)
+  local ret, rewards = self._comp:HandleUpgradeArch(TT, res, arch_id)
   local sortReward = self:SortReward(rewards)
   if res:GetSucc() and callFun then
     callFun(sortReward)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateData.CheckSimulationOperationIsOver = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local closeTime = ((self._comp).m_component_info).m_close_time
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+function UIActivityN33DateData:CheckSimulationOperationIsOver()
+  local closeTime = self._comp.m_component_info.m_close_time
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   if closeTime < curTime then
     return true
   else
@@ -278,38 +191,30 @@ UIActivityN33DateData.CheckSimulationOperationIsOver = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateData.GetIsPlayFinalStory = function(self)
-  -- function num : 0_13
-  local b = (self._compInfo).final_story
+function UIActivityN33DateData:GetIsPlayFinalStory()
+  local b = self._compInfo.final_story
   if b == 0 or b == false or b == nil then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateData.SortReward = function(self, data)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityN33DateData:SortReward(data)
   local newList = {}
   if not data then
     return newList
   end
-  for key,v in pairs(data) do
+  for key, v in pairs(data) do
     local id = v[1]
     if id == RoleAssetID.RoleAssetSimulationOperationCoin then
-      (table.insert)(newList, v)
+      table.insert(newList, v)
     end
   end
-  for key,v in pairs(data) do
+  for key, v in pairs(data) do
     local id = v[1]
     if id ~= RoleAssetID.RoleAssetSimulationOperationCoin then
-      (table.insert)(newList, v)
+      table.insert(newList, v)
     end
   end
   return newList
 end
-
-

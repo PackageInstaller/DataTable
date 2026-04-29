@@ -1,26 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/command_handler/choose_mini_maze_wave_award_cmd_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("command_base_handler")
-WaveResultAwardNextStateType = {None = 0, WaveSwitch = 1, WaitInput = 2}
+WaveResultAwardNextStateType = {
+  None = 0,
+  WaveSwitch = 1,
+  WaitInput = 2
+}
 _enum("WaveResultAwardNextStateType", WaveResultAwardNextStateType)
 _class("ChooseMiniMazeWaveAwardCommandHandler", CommandBaseHandler)
 ChooseMiniMazeWaveAwardCommandHandler = ChooseMiniMazeWaveAwardCommandHandler
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-ChooseMiniMazeWaveAwardCommandHandler.DoHandleCommand = function(self, cmd)
-  -- function num : 0_0 , upvalues : _ENV
+function ChooseMiniMazeWaveAwardCommandHandler:DoHandleCommand(cmd)
   local relicID = cmd:GetChooseRelicID()
   local partnerID = cmd:GetChoosePartnerID()
   local isOpening = cmd:IsBattleOpening()
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:SetWaveWaitApplyAward(relicID, isOpening, partnerID)
-  ;
-  (Log.debug)("[MiniMaze] ChooseMiniMazeWaveAwardCommandHandler relicID: ", relicID, " partnerID: ", partnerID, " isOpen ", isOpening)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.WaveResultAwardFinish, 1)
+  Log.debug("[MiniMaze] ChooseMiniMazeWaveAwardCommandHandler relicID: ", relicID, " partnerID: ", partnerID, " isOpen ", isOpening)
+  self._world:EventDispatcher():Dispatch(GameEventType.WaveResultAwardFinish, 1)
 end
-
-

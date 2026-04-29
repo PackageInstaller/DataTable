@@ -1,98 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/scene/season_maze_loading_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeLoadingEnter", LoadingHandler)
 SeasonMazeLoadingEnter = SeasonMazeLoadingEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeLoadingEnter.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("SeasonMazeLoadingEnter")
-  self._loginModule = (GameGlobal.GetModule)(LoginModule)
+function SeasonMazeLoadingEnter:Constructor()
+  GameGlobal.UIStateManager():Lock("SeasonMazeLoadingEnter")
+  self._loginModule = GameGlobal.GetModule(LoginModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLoadingEnter.PreLoadBeforeLoadLevel = function(self)
-  -- function num : 0_1
+function SeasonMazeLoadingEnter:PreLoadBeforeLoadLevel()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLoadingEnter.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  (GameGlobal:GetInstance()):ExitCoreGame()
-  local module = (GameGlobal.GetModule)(SeasonMazeModule)
+function SeasonMazeLoadingEnter:PreLoadAfterLoadLevel(TT, ...)
+  GameGlobal:GetInstance():ExitCoreGame()
+  local module = GameGlobal.GetModule(SeasonMazeModule)
   local res = module:ReqCurSeasonMazeDetailInfo(TT)
   self._canEnter = false
   if not res:GetSucc() then
-    return 
+    return
   end
   local obj = module:CurSeasonObj()
-  ;
-  (Log.info)("请求赛季秘境详细数据成功")
+  Log.info("请求赛季秘境详细数据成功")
   self._canEnter = true
   YIELD(TT)
-  ;
-  (module:UIModule()):Run(obj:GetMazeID())
+  module:UIModule():Run(obj:GetMazeID())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLoadingEnter.OnLoadingFinish = function(self, ...)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):UnLock("SeasonMazeLoadingEnter")
+function SeasonMazeLoadingEnter:OnLoadingFinish(...)
+  GameGlobal.UIStateManager():UnLock("SeasonMazeLoadingEnter")
   if self._canEnter then
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UISeasonMazeScene)
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UISeasonMazeScene)
   else
-    ;
-    (Log.error)("赛季秘境不可进入 弹回到游戏主界面")
-    ;
-    ((GameGlobal.GetModule)(SeasonMazeModule)):CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
+    Log.error("赛季秘境不可进入 弹回到游戏主界面")
+    GameGlobal.GetModule(SeasonMazeModule):CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLoadingEnter.NeedSwitchState = function(self)
-  -- function num : 0_4
+function SeasonMazeLoadingEnter:NeedSwitchState()
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLoadingEnter._CacheRT = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UICommonLoading")
+function SeasonMazeLoadingEnter:_CacheRT(TT)
+  local controller = GameGlobal.UIStateManager():GetController("UICommonLoading")
   if controller then
     controller:CacheRT(TT)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLoadingEnter.LoadingID = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local seasonID = (((GameGlobal.GetModule)(SeasonMazeModule)):UIModule()):GetSeasonID()
-  local cfg = (Cfg.cfg_season_loading)[seasonID]
-  do
-    if cfg then
-      local ids = cfg.loadingids
-      return ((GameGlobal.LoadingManager)()):FilterAndRandomLoadingID(ids)
-    end
-    return nil
+function SeasonMazeLoadingEnter:LoadingID()
+  local seasonID = GameGlobal.GetModule(SeasonMazeModule):UIModule():GetSeasonID()
+  local cfg = Cfg.cfg_season_loading[seasonID]
+  if cfg then
+    local ids = cfg.loadingids
+    return GameGlobal.LoadingManager():FilterAndRandomLoadingID(ids)
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeLoadingEnter._CheckLoginState = function(self)
-  -- function num : 0_7
-  return (self._loginModule):IsLogin()
+function SeasonMazeLoadingEnter:_CheckLoginState()
+  return self._loginModule:IsLogin()
 end
-
-

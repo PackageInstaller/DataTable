@@ -1,39 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/ui_n20_avg_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20AVGMain", UIController)
 UIN20AVGMain = UIN20AVGMain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20AVGMain.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN20AVGData()
-  self.strsCD = {"str_avg_n20_left_d_h", "str_avg_n20_left_d", "str_avg_n20_left_h_m", "str_avg_n20_left_h", "str_avg_n20_left_m"}
+function UIN20AVGMain:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN20AVGData()
+  self.strsCD = {
+    "str_avg_n20_left_d_h",
+    "str_avg_n20_left_d",
+    "str_avg_n20_left_h_m",
+    "str_avg_n20_left_h",
+    "str_avg_n20_left_m"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGMain.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  (self.data):RequestCampaign(TT)
-  if (self.data):IsActiveOpen() then
-    (self.data):Init()
-    ;
-    (self.data):Update()
+function UIN20AVGMain:LoadDataOnEnter(TT, res, uiParams)
+  self.data:RequestCampaign(TT)
+  if self.data:IsActiveOpen() then
+    self.data:Init()
+    self.data:Update()
   else
     res:SetSucc(false)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_n20_component_close_tips"))
+    ToastManager.ShowToast(StringTable.Get("str_n20_component_close_tips"))
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGMain.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN20AVGMain:OnShow(uiParams)
   self.txtLeftTime = self:GetUIComponent("RollingText", "txtLeftTime")
   self.btnNew = self:GetGameObject("btnNew")
   self.btnContinue = self:GetGameObject("btnContinue")
@@ -44,113 +35,71 @@ UIN20AVGMain.OnShow = function(self, uiParams)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGMain.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN20AVGMain:OnHide()
   self:DetachEvent(GameEventType.AVGFlushNewRed, self.AVGFlushNewRed)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGMain.Flush = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local info = (self.data):GetComponentInfoAVG()
-  ;
-  (UIForge.FlushCDText)(self.txtLeftTime, info.m_close_time, self.strsCD, false)
-  if (self.data):OnTheWay() then
-    (self.btnNew):SetActive(false)
-    ;
-    (self.btnContinue):SetActive(true)
+function UIN20AVGMain:Flush()
+  local info = self.data:GetComponentInfoAVG()
+  UIForge.FlushCDText(self.txtLeftTime, info.m_close_time, self.strsCD, false)
+  if self.data:OnTheWay() then
+    self.btnNew:SetActive(false)
+    self.btnContinue:SetActive(true)
   else
-    ;
-    (self.btnNew):SetActive(true)
-    ;
-    (self.btnContinue):SetActive(false)
+    self.btnNew:SetActive(true)
+    self.btnContinue:SetActive(false)
   end
   self:FlushNew()
   self:FlushRed()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGMain.FlushNew = function(self)
-  -- function num : 0_5
-  if (self.data):HasNewNode() then
-    (self.newSelect):SetActive(true)
+function UIN20AVGMain:FlushNew()
+  if self.data:HasNewNode() then
+    self.newSelect:SetActive(true)
   else
-    ;
-    (self.newSelect):SetActive(false)
+    self.newSelect:SetActive(false)
   end
-  if (self.data):HasNewBadge() or (self.data):HasNewCG() then
-    (self.newCollection):SetActive(true)
+  if self.data:HasNewBadge() or self.data:HasNewCG() then
+    self.newCollection:SetActive(true)
   else
-    ;
-    (self.newCollection):SetActive(false)
+    self.newCollection:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGMain.FlushRed = function(self)
-  -- function num : 0_6
-  if (self.data):HasRed() then
-    (self.redCollection):SetActive(true)
+function UIN20AVGMain:FlushRed()
+  if self.data:HasRed() then
+    self.redCollection:SetActive(true)
   else
-    ;
-    (self.redCollection):SetActive(false)
+    self.redCollection:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGMain.AVGFlushNewRed = function(self)
-  -- function num : 0_7
+function UIN20AVGMain:AVGFlushNewRed()
   self:FlushNew()
   self:FlushRed()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGMain.btnIntroOnClick = function(self, go)
-  -- function num : 0_8
+function UIN20AVGMain:btnIntroOnClick(go)
   self:ShowDialog("UIN20AVGIntro")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGMain.btnNewOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  local curNode = (self.data):CurNode()
+function UIN20AVGMain:btnNewOnClick(go)
+  local curNode = self.data:CurNode()
   self:SwitchState(UIStateType.UIN20AVGStory, curNode.id)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGMain.btnContinueOnClick = function(self, go)
-  -- function num : 0_10
-  self:ShowDialog("UIN20AVGNodeDetails", (self.data):CurNodeId())
+function UIN20AVGMain:btnContinueOnClick(go)
+  self:ShowDialog("UIN20AVGNodeDetails", self.data:CurNodeId())
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGMain.btnSelectOnClick = function(self, go)
-  -- function num : 0_11
+function UIN20AVGMain:btnSelectOnClick(go)
   self:ShowDialog("UIN20AVGGraph")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGMain.btnCollectionOnClick = function(self, go)
-  -- function num : 0_12
+function UIN20AVGMain:btnCollectionOnClick(go)
   self:ShowDialog("UIN20AVGCollection")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGMain.btnExitOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN20AVGMain:btnExitOnClick(go)
   self:SwitchState(UIStateType.UIActivityN20MainController)
 end
-
-

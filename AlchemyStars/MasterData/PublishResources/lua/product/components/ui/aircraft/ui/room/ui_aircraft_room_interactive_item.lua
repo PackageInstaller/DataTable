@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/room/ui_aircraft_room_interactive_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftRoomInteractiveItem", UICustomWidget)
 UIAircraftRoomInteractiveItem = UIAircraftRoomInteractiveItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftRoomInteractiveItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftRoomInteractiveItem:OnShow(uiParams)
   self._tipsIsShow = false
   self._levelLabel = self:GetUIComponent("UILocalizationText", "Level")
   self._favoribleTimes = self:GetUIComponent("UILocalizationText", "FavorableTimes")
@@ -19,25 +12,18 @@ UIAircraftRoomInteractiveItem.OnShow = function(self, uiParams)
   self._addedFavorableLabel = self:GetUIComponent("UILocalizationText", "AddedFavorable")
   self._addedFavorableRectTran = self:GetUIComponent("RectTransform", "AddedFavorable")
   self._tipsGo = self:GetGameObject("tips")
-  ;
-  ((self._addedFavorableRectTran).gameObject):SetActive(false)
+  self._addedFavorableRectTran.gameObject:SetActive(false)
   self:AttachEvent(GameEventType.AircraftAddPetFavorable, self.FavorableChanged)
   self:AttachEvent(GameEventType.PetDataChangeEvent, self.FavorableChangedUnPlayHud)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAircraftRoomInteractiveItem:OnHide()
   self._tipsIsShow = false
   self:DetachEvent(GameEventType.AircraftAddPetFavorable, self.FavorableChanged)
   self:DetachEvent(GameEventType.PetDataChangeEvent, self.FavorableChangedUnPlayHud)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveItem.Update = function(self, deltaTimeMS)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftRoomInteractiveItem:Update(deltaTimeMS)
   if self._curLevel ~= self._targetLevel or self._curFavorable ~= self._targetFavorable then
     local targetPercent = 1
     if self._targetLevel == self._curLevel then
@@ -45,86 +31,51 @@ UIAircraftRoomInteractiveItem.Update = function(self, deltaTimeMS)
       targetPercent = self._targetFavorable / self._targetMaxFavorable
     end
     local added = deltaTimeMS / 1000 * self._barSpeed
-    local curValue = (self._favorableBarImg1).value
+    local curValue = self._favorableBarImg1.value
     curValue = curValue + added
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R5 in 'UnsetPending'
-
-    if curValue < targetPercent then
-      (self._favorableBarImg1).value = curValue
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._favorableBarImg2).value = curValue
-    else
-      if self._curLevel ~= self._targetLevel then
-        self._curLevel = self._curLevel + 1
-        self._curFavorable = 0
-        -- DECOMPILER ERROR at PC40: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._favorableBarImg1).value = 0
-        -- DECOMPILER ERROR at PC42: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._favorableBarImg2).value = 0
-        -- DECOMPILER ERROR at PC52: Confused about usage of register: R5 in 'UnsetPending'
-
-        if self._curLevel == self._targetLevel and self._curFavorable == self._targetFavorable then
-          (self._favorableBarImg1).value = targetPercent
-          -- DECOMPILER ERROR at PC54: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._favorableBarImg2).value = targetPercent
-          self._curFavorable = self._targetFavorable
-          self:_RefreshPetInfo()
-        end
-      else
-        -- DECOMPILER ERROR at PC61: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._favorableBarImg1).value = targetPercent
-        -- DECOMPILER ERROR at PC63: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._favorableBarImg2).value = targetPercent
+    if targetPercent > curValue then
+      self._favorableBarImg1.value = curValue
+      self._favorableBarImg2.value = curValue
+    elseif self._curLevel ~= self._targetLevel then
+      self._curLevel = self._curLevel + 1
+      self._curFavorable = 0
+      self._favorableBarImg1.value = 0
+      self._favorableBarImg2.value = 0
+      if self._curLevel == self._targetLevel and self._curFavorable == self._targetFavorable then
+        self._favorableBarImg1.value = targetPercent
+        self._favorableBarImg2.value = targetPercent
         self._curFavorable = self._targetFavorable
         self:_RefreshPetInfo()
       end
+    else
+      self._favorableBarImg1.value = targetPercent
+      self._favorableBarImg2.value = targetPercent
+      self._curFavorable = self._targetFavorable
+      self:_RefreshPetInfo()
     end
   end
-  do
-    if self._isPlayHud then
-      self._hudTimer = self._hudTimer + deltaTimeMS / 1000
-      if self._hudDuration < self._hudTimer then
-        self._hudTimer = self._hudDuration
-        ;
-        ((self._addedFavorableRectTran).gameObject):SetActive(false)
-        self._isPlayHud = false
-      end
-      local percent = self._hudTimer / self._hudDuration
-      -- DECOMPILER ERROR at PC98: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      ((self._addedFavorableLabel).transform).localScale = (Vector3.Lerp)(self._hudInitScale, self._hudTargetScale, percent)
-      -- DECOMPILER ERROR at PC106: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._addedFavorableLabel).color = (Color.Lerp)(self._hudInitCol, self._hudTargetCol, percent)
-      -- DECOMPILER ERROR at PC114: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._addedFavorableRectTran).anchoredPosition = (Vector2.Lerp)(self._hudInitPos, self._hudTargetPos, percent)
+  if self._isPlayHud then
+    self._hudTimer = self._hudTimer + deltaTimeMS / 1000
+    if self._hudTimer > self._hudDuration then
+      self._hudTimer = self._hudDuration
+      self._addedFavorableRectTran.gameObject:SetActive(false)
+      self._isPlayHud = false
     end
-    do
-      if self._tipsIsShow then
-        local mouse = ((GameGlobal.EngineInput)()).mousePresent
-        if mouse and (((GameGlobal.EngineInput)()).GetMouseButtonDown)(0) then
-          self:CloseTips()
-        end
+    local percent = self._hudTimer / self._hudDuration
+    self._addedFavorableLabel.transform.localScale = Vector3.Lerp(self._hudInitScale, self._hudTargetScale, percent)
+    self._addedFavorableLabel.color = Color.Lerp(self._hudInitCol, self._hudTargetCol, percent)
+    self._addedFavorableRectTran.anchoredPosition = Vector2.Lerp(self._hudInitPos, self._hudTargetPos, percent)
+  end
+  if self._tipsIsShow then
+    local mouse = GameGlobal.EngineInput().mousePresent
+    if mouse then
+      if GameGlobal.EngineInput().GetMouseButtonDown(0) then
+        self:CloseTips()
       end
-      local touchCount = ((GameGlobal.EngineInput)()).touchCount
-      if touchCount > 0 then
-        local touch0 = (((GameGlobal.EngineInput)()).GetTouch)(0)
+    else
+      local touchCount = GameGlobal.EngineInput().touchCount
+      if 0 < touchCount then
+        local touch0 = GameGlobal.EngineInput().GetTouch(0)
         if touch0 and touch0.phase == TouchPhase.Began then
           self:CloseTips()
         end
@@ -133,10 +84,7 @@ UIAircraftRoomInteractiveItem.Update = function(self, deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveItem.Refresh = function(self, room, targetPet)
-  -- function num : 0_3
+function UIAircraftRoomInteractiveItem:Refresh(room, targetPet)
   self._targetPet = targetPet
   self._petData = targetPet:GetPetData()
   self._room = room
@@ -153,159 +101,94 @@ UIAircraftRoomInteractiveItem.Refresh = function(self, room, targetPet)
   if not self._addedFavorableRectTran then
     self._addedFavorableRectTran = self:GetUIComponent("RectTransform", "AddedFavorable")
   end
-  ;
-  ((self._addedFavorableRectTran).gameObject):SetActive(false)
+  self._addedFavorableRectTran.gameObject:SetActive(false)
   self:_GetPetData()
   self:_RefreshPetInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveItem._GetPetData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._maxLevel = (self._petData):GetPetAffinityMaxLevel()
-  self._curLevel = (self._petData):GetPetAffinityLevel()
-  self._curFavorable = (self._petData):GetPetAffinityExp() - ((Cfg.cfg_pet_affinity_exp)[self._curLevel]).NeedAffintyExp
-  self._curMaxFavorable = (self._petData):GetPetAffinityMaxExp(self._curLevel)
+function UIAircraftRoomInteractiveItem:_GetPetData()
+  self._maxLevel = self._petData:GetPetAffinityMaxLevel()
+  self._curLevel = self._petData:GetPetAffinityLevel()
+  self._curFavorable = self._petData:GetPetAffinityExp() - Cfg.cfg_pet_affinity_exp[self._curLevel].NeedAffintyExp
+  self._curMaxFavorable = self._petData:GetPetAffinityMaxExp(self._curLevel)
   self._targetLevel = self._curLevel
   self._targetFavorable = self._curFavorable
   self._targetMaxFavorable = self._curMaxFavorable
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveItem._RefreshPetInfo = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIAircraftRoomInteractiveItem:_RefreshPetInfo()
   if self._petData == nil then
-    return 
+    return
   end
   local percent = self._curFavorable / self._curMaxFavorable
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._nameLabel).text = (StringTable.Get)((self._petData):GetPetName())
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._levelLabel).text = self._curLevel
-  local expText = nil
+  self._nameLabel.text = StringTable.Get(self._petData:GetPetName())
+  self._levelLabel.text = self._curLevel
+  local expText
   if self._curLevel == self._maxLevel then
     expText = "MAX"
     percent = 1
   else
     expText = self._curFavorable .. "/" .. self._curMaxFavorable
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._favorableBarImg1).value = percent
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._favorableBarImg2).value = percent
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._favorableLabel).text = expText
+  self._favorableBarImg1.value = percent
+  self._favorableBarImg2.value = percent
+  self._favorableLabel.text = expText
   if not self._petModule then
-    self._petModule = (GameGlobal.GetModule)(PetModule)
+    self._petModule = GameGlobal.GetModule(PetModule)
   end
-  local remainAffinityCount = (self._petModule):GetLeftAffinityAddCount()
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._favoribleTimes).text = remainAffinityCount .. "/" .. (self._petModule):GetMaxAffinityAddCount()
+  local remainAffinityCount = self._petModule:GetLeftAffinityAddCount()
+  self._favoribleTimes.text = remainAffinityCount .. "/" .. self._petModule:GetMaxAffinityAddCount()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveItem.FavorableChangedUnPlayHud = function(self)
-  -- function num : 0_6
+function UIAircraftRoomInteractiveItem:FavorableChangedUnPlayHud()
   self:FavorableChanged()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveItem.FavorableChanged = function(self, addValue)
-  -- function num : 0_7 , upvalues : _ENV
-  self._targetLevel = (self._petData):GetPetAffinityLevel()
-  self._targetFavorable = (self._petData):GetPetAffinityExp() - ((Cfg.cfg_pet_affinity_exp)[self._targetLevel]).NeedAffintyExp
-  self._targetMaxFavorable = (self._petData):GetPetAffinityMaxExp(self._targetLevel)
+function UIAircraftRoomInteractiveItem:FavorableChanged(addValue)
+  self._targetLevel = self._petData:GetPetAffinityLevel()
+  self._targetFavorable = self._petData:GetPetAffinityExp() - Cfg.cfg_pet_affinity_exp[self._targetLevel].NeedAffintyExp
+  self._targetMaxFavorable = self._petData:GetPetAffinityMaxExp(self._targetLevel)
   if addValue then
     self._hudTimer = 0
-    local color = (self._addedFavorableLabel).color
+    local color = self._addedFavorableLabel.color
     self._hudInitScale = Vector3(0.16, 0.16, 0.16)
     self._hudInitCol = Color(color.r, color.g, color.b, 0.3)
     self._hudInitPos = Vector2(0, 0)
     self._hudTargetPos = Vector2(0, 30)
     self._hudTargetCol = Color(color.r, color.g, color.b, 1)
     self._hudTargetScale = Vector3(1, 1, 1)
-    -- DECOMPILER ERROR at PC69: Confused about usage of register: R3 in 'UnsetPending'
-
     if self._curLevel == self._maxLevel then
-      (self._addedFavorableLabel).text = (StringTable.Get)("str_affinity_max_en")
+      self._addedFavorableLabel.text = StringTable.Get("str_affinity_max_en")
     else
-      -- DECOMPILER ERROR at PC75: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._addedFavorableLabel).text = "+" .. addValue
+      self._addedFavorableLabel.text = "+" .. addValue
     end
-    -- DECOMPILER ERROR at PC79: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self._addedFavorableLabel).transform).localScale = self._hudInitScale
-    -- DECOMPILER ERROR at PC82: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._addedFavorableLabel).color = self._hudInitCol
-    -- DECOMPILER ERROR at PC85: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._addedFavorableRectTran).anchoredPosition = self._hudInitPos
-    ;
-    ((self._addedFavorableRectTran).gameObject):SetActive(true)
+    self._addedFavorableLabel.transform.localScale = self._hudInitScale
+    self._addedFavorableLabel.color = self._hudInitCol
+    self._addedFavorableRectTran.anchoredPosition = self._hudInitPos
+    self._addedFavorableRectTran.gameObject:SetActive(true)
     self._isPlayHud = true
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveItem._GetAddedFavorableExp = function(self)
-  -- function num : 0_8
+function UIAircraftRoomInteractiveItem:_GetAddedFavorableExp()
   return self._targetFavorable - self._curFavorable
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveItem.BtnReturnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  (self:GetGameObject()):SetActive(false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.InteractiveViewSwitchToRoomView, self._room, self._targetPet)
+function UIAircraftRoomInteractiveItem:BtnReturnOnClick(go)
+  self:GetGameObject():SetActive(false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.InteractiveViewSwitchToRoomView, self._room, self._targetPet)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveItem.exclamationIconOnClick = function(self)
-  -- function num : 0_10
+function UIAircraftRoomInteractiveItem:exclamationIconOnClick()
   self:ShowTips()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveItem.ShowTips = function(self)
-  -- function num : 0_11
-  (self._tipsGo):SetActive(true)
+function UIAircraftRoomInteractiveItem:ShowTips()
+  self._tipsGo:SetActive(true)
   self._tipsIsShow = true
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomInteractiveItem.CloseTips = function(self)
-  -- function num : 0_12
+function UIAircraftRoomInteractiveItem:CloseTips()
   self._tipsIsShow = false
-  ;
-  (self._tipsGo):SetActive(false)
+  self._tipsGo:SetActive(false)
 end
-
-

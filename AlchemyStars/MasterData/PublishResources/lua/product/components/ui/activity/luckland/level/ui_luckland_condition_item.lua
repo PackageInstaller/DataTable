@@ -1,82 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/level/ui_luckland_condition_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandConditionItem", UICustomWidget)
 UILuckLandConditionItem = UILuckLandConditionItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandConditionItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UILuckLandConditionItem:OnShow(uiParams)
   self._atlas = self:GetAsset("LuckLand.spriteatlas", LoadType.SpriteAtlas)
   self:_InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandConditionItem._InitWidget = function(self)
-  -- function num : 0_1
+function UILuckLandConditionItem:_InitWidget()
   self._desc = self:GetUIComponent("UILocalizationText", "Desc")
   self._isDone = self:GetUIComponent("Image", "IsDone")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandConditionItem.SetData = function(self, index, id, passInfo, fromInner)
-  -- function num : 0_2
+function UILuckLandConditionItem:SetData(index, id, passInfo, fromInner)
   self._index = index
-  ;
-  (self._desc):SetText(self:_ThreeConditionParse(id))
+  self._desc:SetText(self:_ThreeConditionParse(id))
   local isDone = false
-  if fromInner then
-    if passInfo.cur_star & 1 << index - 1 <= 0 then
-      isDone = not passInfo
-      isDone = passInfo.star & 1 << index - 1 > 0
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R6 in 'UnsetPending'
-
-      if isDone then
-        (self._isDone).sprite = (self._atlas):GetSprite("n11_gqxq_di06")
-      else
-        -- DECOMPILER ERROR at PC43: Confused about usage of register: R6 in 'UnsetPending'
-
-        (self._isDone).sprite = (self._atlas):GetSprite("n11_gqxq_di05")
-      end
-      -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  if passInfo then
+    if fromInner then
+      isDone = passInfo.cur_star & 1 << index - 1 > 0
+    else
+      isDone = 0 < passInfo.star & 1 << index - 1
     end
+  end
+  if isDone then
+    self._isDone.sprite = self._atlas:GetSprite("n11_gqxq_di06")
+  else
+    self._isDone.sprite = self._atlas:GetSprite("n11_gqxq_di05")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandConditionItem._ThreeConditionParse = function(self, id)
-  -- function num : 0_3 , upvalues : _ENV
+function UILuckLandConditionItem:_ThreeConditionParse(id)
   local str = ""
-  local cfg = (Cfg.cfg_luckland_client_threestarcondition)[id]
+  local cfg = Cfg.cfg_luckland_client_threestarcondition[id]
   if cfg then
     if cfg.Type == LuckLandThreeStarType.Score then
-      str = (StringTable.Get)(cfg.Name, (cfg.Value)[1])
-    else
-      if cfg.Type == LuckLandThreeStarType.BuildingLevel then
-        local buildingID = (cfg.Value)[1]
-        local buildingLevel = (cfg.Value)[2]
-        local buildingCfg = (Cfg.cfg_luckland_client_build)[buildingID]
-        local buildingName = ""
-        if buildingCfg then
-          str = (StringTable.Get)(cfg.Name, (StringTable.Get)(buildingCfg.BuildName), buildingLevel)
-        else
-          str = (StringTable.Get)(cfg.Name, buildingName, buildingLevel)
-        end
+      str = StringTable.Get(cfg.Name, cfg.Value[1])
+    elseif cfg.Type == LuckLandThreeStarType.BuildingLevel then
+      local buildingID = cfg.Value[1]
+      local buildingLevel = cfg.Value[2]
+      local buildingCfg = Cfg.cfg_luckland_client_build[buildingID]
+      local buildingName = ""
+      if buildingCfg then
+        str = StringTable.Get(cfg.Name, StringTable.Get(buildingCfg.BuildName), buildingLevel)
       else
-        do
-          if cfg.Type == LuckLandThreeStarType.HP then
-            str = (StringTable.Get)(cfg.Name, (cfg.Value)[1])
-          end
-          return str
-        end
+        str = StringTable.Get(cfg.Name, buildingName, buildingLevel)
       end
+    elseif cfg.Type == LuckLandThreeStarType.HP then
+      str = StringTable.Get(cfg.Name, cfg.Value[1])
     end
   end
+  return str
 end
-
-

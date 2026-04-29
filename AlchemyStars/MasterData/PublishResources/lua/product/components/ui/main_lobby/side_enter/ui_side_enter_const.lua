@@ -1,146 +1,97 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/side_enter/ui_side_enter_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISideEnterConst", Object)
 UISideEnterConst = UISideEnterConst
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterConst.Constructor = function(self)
-  -- function num : 0_0
+function UISideEnterConst:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterConst.GetCfg_ClassPrefab = function(cfgName, cfg, cls_key, pfb_key, baseClassName)
-  -- function num : 0_1 , upvalues : _ENV
+function UISideEnterConst.GetCfg_ClassPrefab(cfgName, cfg, cls_key, pfb_key, baseClassName)
   local class = cfg and cfg[cls_key] or ""
   local prefab = cfg and cfg[pfb_key] or ""
   local errStr = ""
-  if (string.isnullorempty)(class) then
+  if string.isnullorempty(class) then
     errStr = cls_key .. " 配置为空"
+  elseif string.isnullorempty(prefab) then
+    errStr = pfb_key .. " 配置为空"
+  elseif string.isnullorempty(prefab) or not string.endwith(prefab, ".prefab") then
+    errStr = pfb_key .. " 中配置的字段应该以 .prefab 结尾"
   else
-    if (string.isnullorempty)(prefab) then
-      errStr = pfb_key .. " 配置为空"
-    else
-      if (string.isnullorempty)(prefab) or not (string.endwith)(prefab, ".prefab") then
-        errStr = pfb_key .. " 中配置的字段应该以 .prefab 结尾"
-      else
-        local type = Classes[class]
-        if not type then
-          errStr = cls_key .. " 中配置的 " .. class .. " 类型不存在"
-        else
-          if not (string.isnullorempty)(baseClassName) and type._className ~= baseClassName and not type:IsChildOf(baseClassName) then
-            errStr = cls_key .. " 中配置的 " .. class .. "不是 " .. baseClassName .. " 的子类"
-          end
-        end
-      end
+    local type = Classes[class]
+    if not type then
+      errStr = cls_key .. " 中配置的 " .. class .. " 类型不存在"
+    elseif not string.isnullorempty(baseClassName) and type._className ~= baseClassName and not type:IsChildOf(baseClassName) then
+      errStr = cls_key .. " 中配置的 " .. class .. "不是 " .. baseClassName .. " 的子类"
     end
   end
-  do
-    if not (string.isnullorempty)(errStr) then
-      (Log.exception)("UISideEnterConst.GetCfg_ClassPrefab() ", cfgName, " ", errStr)
-    end
-    return class, prefab
+  if not string.isnullorempty(errStr) then
+    Log.exception("UISideEnterConst.GetCfg_ClassPrefab() ", cfgName, " ", errStr)
   end
+  return class, prefab
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterConst.GetCfg_SideEnterBtn = function(id)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_main_side_enter_btn)[id]
+function UISideEnterConst.GetCfg_SideEnterBtn(id)
+  local cfg = Cfg.cfg_main_side_enter_btn[id]
   if cfg == nil then
-    (Log.exception)("cfg_main_side_enter_btn[", id, "] = nil", (debug.traceback)())
+    Log.exception("cfg_main_side_enter_btn[", id, "] = nil", debug.traceback())
   end
   return cfg
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterConst.GetCfg_SideEnterBtn_Info = function(id)
-  -- function num : 0_3 , upvalues : _ENV
+function UISideEnterConst.GetCfg_SideEnterBtn_Info(id)
   local cfgName = "cfg_main_side_enter_btn[" .. id .. "]"
-  local cfg = (UISideEnterConst.GetCfg_SideEnterBtn)(id)
+  local cfg = UISideEnterConst.GetCfg_SideEnterBtn(id)
   local cls_key = "EntryClass"
   local pfb_key = "EntryPrefab"
-  return (UISideEnterConst.GetCfg_ClassPrefab)(cfgName, cfg, cls_key, pfb_key, UISideEnterItem_Base._className)
+  return UISideEnterConst.GetCfg_ClassPrefab(cfgName, cfg, cls_key, pfb_key, UISideEnterItem_Base._className)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterConst.GetCfg_SideEnterContent = function(id)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_main_side_enter_content)[id]
+function UISideEnterConst.GetCfg_SideEnterContent(id)
+  local cfg = Cfg.cfg_main_side_enter_content[id]
   if cfg == nil then
-    (Log.exception)("cfg_main_side_enter_content[", id, "] = nil", (debug.traceback)())
+    Log.exception("cfg_main_side_enter_content[", id, "] = nil", debug.traceback())
   end
   return cfg
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterConst.GetCfgList_SideEnterEdge = function()
-  -- function num : 0_5 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_main_side_enter_edge)({IsActive = true})
-  if not cfgs then
-    return {}
-  end
+function UISideEnterConst.GetCfgList_SideEnterEdge()
+  local cfgs = Cfg.cfg_main_side_enter_edge({IsActive = true})
+  return cfgs or {}
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterConst.GetCfgList_SideEnterCenter = function()
-  -- function num : 0_6 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_main_side_enter_center)({IsActive = true})
-  ;
-  (table.sort)(cfgs, function(a, b)
-    -- function num : 0_6_0
+function UISideEnterConst.GetCfgList_SideEnterCenter()
+  local cfgs = Cfg.cfg_main_side_enter_center({IsActive = true})
+  table.sort(cfgs, function(a, b)
     if a.Hot ~= b.Hot then
       return a.Hot
     end
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  if not cfgs then
-    return {}
-  end
+    return a.ID < b.ID
+  end)
+  return cfgs or {}
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterConst.GetCfg_SideEnterContent_Info = function(id, type)
-  -- function num : 0_7 , upvalues : _ENV
+function UISideEnterConst.GetCfg_SideEnterContent_Info(id, type)
   local cfgName = "cfg_main_side_enter_content[" .. id .. "]"
-  local cfg = (UISideEnterConst.GetCfg_SideEnterContent)(id)
+  local cfg = UISideEnterConst.GetCfg_SideEnterContent(id)
   local cls_key = type == 2 and "PageClass" or "SingleClass"
   local pfb_key = type == 2 and "PagePrefab" or "SinglePrefab"
-  return (UISideEnterConst.GetCfg_ClassPrefab)(cfgName, cfg, cls_key, pfb_key, UISideEnterCenterContentBase._className)
+  return UISideEnterConst.GetCfg_ClassPrefab(cfgName, cfg, cls_key, pfb_key, UISideEnterCenterContentBase._className)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterConst.SpawnSideEnterLoader = function(TT, uiView, widgetName, cfgList, hideCallback, redCallback)
-  -- function num : 0_8 , upvalues : _ENV
+function UISideEnterConst.SpawnSideEnterLoader(TT, uiView, widgetName, cfgList, hideCallback, redCallback)
   local showTb = {}
   local showCfg = {}
   for i = 1, #cfgList do
-    local btnKey = (cfgList[i]).BtnKey
-    local btnCfg = (UISideEnterConst.GetCfg_SideEnterBtn)(btnKey)
-    if (UISideEnterBtnConst.CheckOpen)(TT, btnCfg) then
-      (table.insert)(showCfg, cfgList[i])
+    local btnKey = cfgList[i].BtnKey
+    local btnCfg = UISideEnterConst.GetCfg_SideEnterBtn(btnKey)
+    if UISideEnterBtnConst.CheckOpen(TT, btnCfg) then
+      table.insert(showCfg, cfgList[i])
     end
   end
-  local objs = (UIWidgetHelper.SpawnObjects)(uiView, widgetName, "UISideEnterLoader", #showCfg)
+  local objs = UIWidgetHelper.SpawnObjects(uiView, widgetName, "UISideEnterLoader", #showCfg)
   for i = 1, #showCfg do
-    (objs[i]):SetData(TT, showCfg[i], hideCallback, redCallback)
-    if (objs[i]):GetShow() then
-      (table.insert)(showTb, objs[i])
+    objs[i]:SetData(TT, showCfg[i], hideCallback, redCallback)
+    if objs[i]:GetShow() then
+      table.insert(showTb, objs[i])
     end
   end
   return showTb
 end
-
-

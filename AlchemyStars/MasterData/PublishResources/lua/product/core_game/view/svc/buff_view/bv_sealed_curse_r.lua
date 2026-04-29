@@ -1,27 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_sealed_curse_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSetSealedCurse", BuffViewBase)
 BuffViewSetSealedCurse = BuffViewSetSealedCurse
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSetSealedCurse.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewSetSealedCurse:PlayView(TT)
   local res = self._buffResult
   local buffseq = res:GetBuffSeq()
-  local buffView = (self._entity):BuffView()
+  local buffView = self._entity:BuffView()
   local viewInstance = buffView:GetBuffViewInstance(buffseq)
   if not viewInstance then
-    (Log.error)(self._className, "no viewInstance! entity=", (self._entity):GetID())
-    return 
+    Log.error(self._className, "no viewInstance! entity=", self._entity:GetID())
+    return
   end
-  if viewInstance:GetMaxRoundCount() ~= 0 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BattlePetIconSealedCurse, ((self._entity):PetPstID()):GetPstID(), res:IsCursed(), buffseq, viewInstance:RemainRoundCount(), not (self._entity):HasPetPstID())
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if self._entity:HasPetPstID() then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.BattlePetIconSealedCurse, self._entity:PetPstID():GetPstID(), res:IsCursed(), buffseq, viewInstance:RemainRoundCount(), viewInstance:GetMaxRoundCount() == 0)
   end
 end
 
 _class("BuffViewResetSealedCurse", BuffViewSetSealedCurse)
-

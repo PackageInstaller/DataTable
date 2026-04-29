@@ -1,20 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_damage_by_add_blood_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_view_base_r")
 _class("BuffViewDamageByAddBlood", BuffViewBase)
 BuffViewDamageByAddBlood = BuffViewDamageByAddBlood
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewDamageByAddBlood.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local viewParams = ((self._viewInstance):BuffConfigData()):GetViewParams()
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  local effectService = (self._world):GetService("Effect")
-  local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : viewParams, _ENV, playBuffSvc, self, effectService
+function BuffViewDamageByAddBlood:PlayView(TT)
+  local viewParams = self._viewInstance:BuffConfigData():GetViewParams()
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  local effectService = self._world:GetService("Effect")
+  local taskID = GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     if viewParams and viewParams.playDelay then
       YIELD(TT, viewParams.playDelay)
     end
@@ -23,16 +15,13 @@ BuffViewDamageByAddBlood.PlayView = function(self, TT)
       effectService:CreateEffect(viewParams.damageEffectID, self._entity)
     end
     if viewParams and viewParams.audioID then
-      (AudioHelperController.PlayInnerGameSfx)(viewParams.audioID)
+      AudioHelperController.PlayInnerGameSfx(viewParams.audioID)
     end
     if viewParams and viewParams.finishDelay then
       YIELD(TT, viewParams.finishDelay)
     end
-  end
-)
-  while not (TaskHelper:GetInstance()):IsTaskFinished(taskID) do
+  end)
+  while not TaskHelper:GetInstance():IsTaskFinished(taskID) do
     YIELD(TT)
   end
 end
-
-

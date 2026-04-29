@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/world/unique_enter_data_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BattleWorldEnterDataComponent", Object)
 BattleWorldEnterDataComponent = BattleWorldEnterDataComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleWorldEnterDataComponent.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function BattleWorldEnterDataComponent:Constructor(world)
   self._worldInfo = world.BW_WorldInfo
   self._world = world
   self.localMatchPets = {}
@@ -22,172 +15,102 @@ BattleWorldEnterDataComponent.Constructor = function(self, world)
   self:InitializePetsData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleWorldEnterDataComponent.Init = function(self)
-  -- function num : 0_1
-  self.bonusCondition = (self._worldInfo).bonusCondition
+function BattleWorldEnterDataComponent:Init()
+  self.bonusCondition = self._worldInfo.bonusCondition
   if #self.bonusCondition > 1 then
     self.hasBonusCondition = true
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleWorldEnterDataComponent.IsHaveBonusCondition = function(self)
-  -- function num : 0_2
+function BattleWorldEnterDataComponent:IsHaveBonusCondition()
   return self.hasBonusCondition
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleWorldEnterDataComponent.GetClientCreateInfo = function(self)
-  -- function num : 0_3
-  return (self._worldInfo).clientCreateInfo
+function BattleWorldEnterDataComponent:GetClientCreateInfo()
+  return self._worldInfo.clientCreateInfo
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleWorldEnterDataComponent.GetLocalPlayerInfo = function(self)
-  -- function num : 0_4
-  return (self._worldInfo).localPlayerInfo
+function BattleWorldEnterDataComponent:GetLocalPlayerInfo()
+  return self._worldInfo.localPlayerInfo
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleWorldEnterDataComponent.GetMatchType = function(self, enterType)
-  -- function num : 0_5
-  return (self._world):MatchType(enterType)
+function BattleWorldEnterDataComponent:GetMatchType(enterType)
+  return self._world:MatchType(enterType)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleWorldEnterDataComponent.InitRemoterTeamInfo = function(self)
-  -- function num : 0_6
-  self.remoteTeamInfo = (self._worldInfo).remoteTeamInfo
+function BattleWorldEnterDataComponent:InitRemoterTeamInfo()
+  self.remoteTeamInfo = self._worldInfo.remoteTeamInfo
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleWorldEnterDataComponent.InitializePetsData = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local petList = (self:GetLocalPlayerInfo()).pet_list
-  for k,v in ipairs(petList) do
-    local petData = nil
+function BattleWorldEnterDataComponent:InitializePetsData()
+  local petList = self:GetLocalPlayerInfo().pet_list
+  for k, v in ipairs(petList) do
+    local petData
     if self:GetMatchType() == MatchType.MT_PopStar then
       petData = PopStarMatchPet:New(v)
     else
       petData = MatchPet:New(v)
     end
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.localMatchPets)[#self.localMatchPets + 1] = petData
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.localMatchPetDict)[v.pet_pstid] = petData
+    self.localMatchPets[#self.localMatchPets + 1] = petData
+    self.localMatchPetDict[v.pet_pstid] = petData
   end
   if self.remoteTeamInfo then
     petList = self.remoteTeamInfo
-    for k,v in ipairs(petList) do
+    for k, v in ipairs(petList) do
       local petInfo = v
       petInfo.pet_pstid = k
       local petData = MatchPet:New(petInfo)
-      -- DECOMPILER ERROR at PC53: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self.remoteMatchPets)[#self.remoteMatchPets + 1] = petData
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self.remoteMatchPetDict)[petInfo.pet_pstid] = petData
+      self.remoteMatchPets[#self.remoteMatchPets + 1] = petData
+      self.remoteMatchPetDict[petInfo.pet_pstid] = petData
     end
   end
-  do
-    self.TeamLeaderPetPstID = -1
-    return self.localMatchPetDict, self.remoteMatchPetDict
-  end
+  self.TeamLeaderPetPstID = -1
+  return self.localMatchPetDict, self.remoteMatchPetDict
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleWorldEnterDataComponent.GetLocalMatchPets = function(self)
-  -- function num : 0_8
-  return self.localMatchPetDict, (self:GetLocalPlayerInfo()).pet_list
+function BattleWorldEnterDataComponent:GetLocalMatchPets()
+  return self.localMatchPetDict, self:GetLocalPlayerInfo().pet_list
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleWorldEnterDataComponent.GetRemoteTeamInfo = function(self)
-  -- function num : 0_9
+function BattleWorldEnterDataComponent:GetRemoteTeamInfo()
   return self.remoteTeamInfo
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleWorldEnterDataComponent.GetRemoteMatchPets = function(self)
-  -- function num : 0_10
+function BattleWorldEnterDataComponent:GetRemoteMatchPets()
   return self.remoteMatchPetDict, self:GetRemoteTeamInfo()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleWorldEnterDataComponent.GetBonusCondition = function(self)
-  -- function num : 0_11
+function BattleWorldEnterDataComponent:GetBonusCondition()
   return self.bonusCondition
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleWorldEnterDataComponent.GetLocalMatchPetList = function(self)
-  -- function num : 0_12
+function BattleWorldEnterDataComponent:GetLocalMatchPetList()
   return self.localMatchPets
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleWorldEnterDataComponent.GetRemoteMatchPetList = function(self)
-  -- function num : 0_13
+function BattleWorldEnterDataComponent:GetRemoteMatchPetList()
   return self.remoteMatchPets
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleWorldEnterDataComponent.GetRemotePlayerPosition = function(self)
-  -- function num : 0_14
+function BattleWorldEnterDataComponent:GetRemotePlayerPosition()
   return self.remotePlayerPos
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleWorldEnterDataComponent.GetPetData = function(self, pstid)
-  -- function num : 0_15
-  if not (self.localMatchPetDict)[pstid] then
-    return (self.remoteMatchPetDict)[pstid]
-  end
+function BattleWorldEnterDataComponent:GetPetData(pstid)
+  return self.localMatchPetDict[pstid] or self.remoteMatchPetDict[pstid]
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.BattleWorldEnterData = function(self)
-  -- function num : 0_16
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).BattleEnterData)
+function MainWorld:BattleWorldEnterData()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.BattleEnterData)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.AddBattleWorldEnterData = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).BattleEnterData
+function MainWorld:AddBattleWorldEnterData()
+  local index = self.BW_UniqueComponentsEnum.BattleEnterData
   local com = BattleWorldEnterDataComponent:New(self)
   self:SetUniqueComponent(index, com)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.HasBattleWorldEnterData = function(self, flag)
-  -- function num : 0_18
+function MainWorld:HasBattleWorldEnterData(flag)
   local com = self:BattleWorldEnterData()
   if not com then
     return false
@@ -195,44 +118,27 @@ MainWorld.HasBattleWorldEnterData = function(self, flag)
   return com:HasFlag(flag)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetLocalMatchPetList = function(self)
-  -- function num : 0_19
+function MainWorld:GetLocalMatchPetList()
   local com = self:BattleWorldEnterData()
   return com:GetLocalMatchPetList()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetLocalMatchPets = function(self)
-  -- function num : 0_20
+function MainWorld:GetLocalMatchPets()
   local com = self:BattleWorldEnterData()
   return com:GetLocalMatchPets()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetRemoteMatchPetList = function(self)
-  -- function num : 0_21
+function MainWorld:GetRemoteMatchPetList()
   local com = self:BattleWorldEnterData()
   return com:GetRemoteMatchPetList()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetRemotePlayerPosition = function(self)
-  -- function num : 0_22
+function MainWorld:GetRemotePlayerPosition()
   local com = self:BattleWorldEnterData()
   return com:GetRemotePlayerPosition()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetPetData = function(self, pstid)
-  -- function num : 0_23
+function MainWorld:GetPetData(pstid)
   local com = self:BattleWorldEnterData()
   return com:GetPetData(pstid)
 end
-
-

@@ -1,26 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_light/ui_main_lobby_light.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyLight", UICustomWidget)
 UIMainLobbyLight = UIMainLobbyLight
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyLight.OnShow = function(self)
-  -- function num : 0_0
+function UIMainLobbyLight:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyLight.OnHide = function(self)
-  -- function num : 0_1
+function UIMainLobbyLight:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyLight.SetData = function(self)
-  -- function num : 0_2
+function UIMainLobbyLight:SetData()
 end
-
-

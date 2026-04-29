@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_select_end_reason.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionSelectEndReason", AINewNode)
 ActionSelectEndReason = ActionSelectEndReason
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSelectEndReason.Constructor = function(self)
-  -- function num : 0_0
+function ActionSelectEndReason:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSelectEndReason.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local aiComponent = (self.m_entityOwn):AI()
+function ActionSelectEndReason:OnUpdate()
+  local aiComponent = self.m_entityOwn:AI()
   local endReason = AIEndReasonType.NoMobility
   for i = 1, 1 do
     local nMobilityTotal = aiComponent:GetMobilityValid()
@@ -24,37 +14,29 @@ ActionSelectEndReason.OnUpdate = function(self)
       endReason = AIEndReasonType.NoMobility
       break
     end
-    local bMineDead = (AINewNode.IsEntityDead)(self.m_entityOwn)
+    local bMineDead = AINewNode.IsEntityDead(self.m_entityOwn)
     if bMineDead then
       endReason = AIEndReasonType.SelfDead
       break
     end
-    local bTargetDead = (AINewNode.IsEntityDead)(aiComponent:GetTargetEntity())
+    local bTargetDead = AINewNode.IsEntityDead(aiComponent:GetTargetEntity())
     if bTargetDead then
       endReason = AIEndReasonType.TargetDead
       break
     end
-    local buffCmpt = (self.m_entityOwn):BuffComponent()
-    do
-      if buffCmpt then
-        local isStun = buffCmpt:HasFlag(BuffFlags.SkipTurn)
-        if isStun then
-          endReason = AIEndReasonType.SkipTurn
-          break
-        end
+    local buffCmpt = self.m_entityOwn:BuffComponent()
+    if buffCmpt then
+      local isStun = buffCmpt:HasFlag(BuffFlags.SkipTurn)
+      if isStun then
+        endReason = AIEndReasonType.SkipTurn
+        break
       end
-      do
-        local isRoundEnd = aiComponent:IsAIRoundEnd()
-        if isRoundEnd then
-          endReason = AIEndReasonType.RoundEnd
-          break
-        end
-        -- DECOMPILER ERROR at PC60: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    end
+    local isRoundEnd = aiComponent:IsAIRoundEnd()
+    if isRoundEnd then
+      endReason = AIEndReasonType.RoundEnd
+      break
     end
   end
   return AINewNodeStatus.Other + endReason
 end
-
-

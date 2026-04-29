@@ -1,126 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_gather_throw_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParam_GatherThrowDamage", SkillEffectParamBase)
 SkillEffectParam_GatherThrowDamage = SkillEffectParam_GatherThrowDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_GatherThrowDamage.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_GatherThrowDamage:Constructor(t)
   self._monsterClassIdDic = {}
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
   if type(t.monsterClassID) == "number" then
-    (self._monsterClassIdDic)[t.monsterClassID] = true
-  else
-    if type(t.monsterClassID) == "table" then
-      for _,id in ipairs(t.monsterClassID) do
-        -- DECOMPILER ERROR at PC21: Confused about usage of register: R7 in 'UnsetPending'
-
-        (self._monsterClassIdDic)[id] = true
-      end
+    self._monsterClassIdDic[t.monsterClassID] = true
+  elseif type(t.monsterClassID) == "table" then
+    for _, id in ipairs(t.monsterClassID) do
+      self._monsterClassIdDic[id] = true
     end
   end
-  do
-    self._transPosList = {}
-    if t.transPosList then
-      for _,posInfo in ipairs(t.transPosList) do
-        local posV = Vector2(posInfo[1], posInfo[2])
-        ;
-        (table.insert)(self._transPosList, posV)
-      end
-    end
-    do
-      self._teleportParam = SkillEffectParam_Teleport:New(t)
-      self._basePercent = t.basePercent
-      self._addValue = t.addValue
-      self._damageScopeType = t.damageScopeType
-      self._damageScopeParam = t.damageScopeParam
-      self._damageScopeCenterType = t.damageScopeCenterType
-      self._damageTargetType = t.damageTargetType
-      self._formulaID = t.formulaID
+  self._transPosList = {}
+  if t.transPosList then
+    for _, posInfo in ipairs(t.transPosList) do
+      local posV = Vector2(posInfo[1], posInfo[2])
+      table.insert(self._transPosList, posV)
     end
   end
+  self._teleportParam = SkillEffectParam_Teleport:New(t)
+  self._basePercent = t.basePercent
+  self._addValue = t.addValue
+  self._damageScopeType = t.damageScopeType
+  self._damageScopeParam = t.damageScopeParam
+  self._damageScopeCenterType = t.damageScopeCenterType
+  self._damageTargetType = t.damageTargetType
+  self._formulaID = t.formulaID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_GatherThrowDamage.GetBasePercent = function(self)
-  -- function num : 0_1
+function SkillEffectParam_GatherThrowDamage:GetBasePercent()
   return self._basePercent
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_GatherThrowDamage.GetMonsterClassIdDic = function(self)
-  -- function num : 0_2
+function SkillEffectParam_GatherThrowDamage:GetMonsterClassIdDic()
   return self._monsterClassIdDic
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_GatherThrowDamage.GetAddValue = function(self)
-  -- function num : 0_3
+function SkillEffectParam_GatherThrowDamage:GetAddValue()
   return self._addValue
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_GatherThrowDamage.GetDamageScopeType = function(self)
-  -- function num : 0_4
+function SkillEffectParam_GatherThrowDamage:GetDamageScopeType()
   return self._damageScopeType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_GatherThrowDamage.GetDamageScopeParam = function(self)
-  -- function num : 0_5
+function SkillEffectParam_GatherThrowDamage:GetDamageScopeParam()
   return self._damageScopeParam
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_GatherThrowDamage.GetDamageScopeCenterType = function(self)
-  -- function num : 0_6
+function SkillEffectParam_GatherThrowDamage:GetDamageScopeCenterType()
   return self._damageScopeCenterType
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_GatherThrowDamage.GetDamageTargetType = function(self)
-  -- function num : 0_7
+function SkillEffectParam_GatherThrowDamage:GetDamageTargetType()
   return self._damageTargetType
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_GatherThrowDamage.GetEffectType = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillEffectParam_GatherThrowDamage:GetEffectType()
   return SkillEffectType.GatherThrowDamage
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_GatherThrowDamage.GetThrowDamageFormulaID = function(self)
-  -- function num : 0_9
+function SkillEffectParam_GatherThrowDamage:GetThrowDamageFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_GatherThrowDamage.GetTeleportParam = function(self)
-  -- function num : 0_10
+function SkillEffectParam_GatherThrowDamage:GetTeleportParam()
   return self._teleportParam
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_GatherThrowDamage.GetTeleportScope = function(self)
-  -- function num : 0_11
+function SkillEffectParam_GatherThrowDamage:GetTeleportScope()
   return self._transPosList
 end
-
-

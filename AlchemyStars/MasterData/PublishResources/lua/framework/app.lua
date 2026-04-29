@@ -1,69 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/app.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-(AppLuaProxy.OnUpdate)(function(e, unscaledE, timeMS, unscaledTimeMS)
-  -- function num : 0_0 , upvalues : _ENV
-  (GameGlobal:GetInstance()):Update(e, unscaledE, timeMS, unscaledTimeMS)
-end
-)
-;
-(AppLuaProxy.OnLateUpdate)(function()
-  -- function num : 0_1 , upvalues : _ENV
-  (GameGlobal:GetInstance()):LateUpdate()
-end
-)
-;
-(AppLuaProxy.OnFixedUpdate)(function(e)
-  -- function num : 0_2 , upvalues : _ENV
-  (GameGlobal:GetInstance()):FixedUpdate(e)
-end
-)
-;
-(AppLuaProxy.OnPause)(function(pauseStatus)
-  -- function num : 0_3 , upvalues : _ENV
-  (GameGlobal:GetInstance()):OnApplicationPause(pauseStatus)
-end
-)
-;
-(AppLuaProxy.OnFocus)(function(hasFocus)
-  -- function num : 0_4 , upvalues : _ENV
-  (GameGlobal:GetInstance()):OnApplicationFocus(hasFocus)
-end
-)
-;
-(AppLuaProxy.OnQuit)(function()
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ApplicationQuit)
-  ;
-  (GameGlobal:GetInstance()):OnApplicationQuit()
-end
-)
-;
-(AppLuaProxy.OnPinchIn)(function(deltaPinch)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PinchIn, deltaPinch)
-end
-)
-;
-(AppLuaProxy.OnPinchOut)(function(deltaPinch)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PinchOut, deltaPinch)
-end
-)
-;
-(AppLuaProxy.OnLuaDestroy)(function()
-  -- function num : 0_8 , upvalues : _ENV
-  (GameGlobal:GetInstance()):Dispose()
-  ;
-  (ResourceManager:GetInstance()):Dispose()
-end
-)
-;
-(AppLuaProxy.OnMonitor)(function()
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIMonitorController")
-end
-)
-
+AppLuaProxy.OnUpdate(function(e, unscaledE, timeMS, unscaledTimeMS)
+  GameGlobal:GetInstance():Update(e, unscaledE, timeMS, unscaledTimeMS)
+end)
+AppLuaProxy.OnLateUpdate(function()
+  GameGlobal:GetInstance():LateUpdate()
+end)
+AppLuaProxy.OnFixedUpdate(function(e)
+  GameGlobal:GetInstance():FixedUpdate(e)
+end)
+AppLuaProxy.OnPause(function(pauseStatus)
+  GameGlobal:GetInstance():OnApplicationPause(pauseStatus)
+end)
+AppLuaProxy.OnFocus(function(hasFocus)
+  GameGlobal:GetInstance():OnApplicationFocus(hasFocus)
+end)
+AppLuaProxy.OnQuit(function()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ApplicationQuit)
+  GameGlobal:GetInstance():OnApplicationQuit()
+end)
+AppLuaProxy.OnPinchIn(function(deltaPinch)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PinchIn, deltaPinch)
+end)
+AppLuaProxy.OnPinchOut(function(deltaPinch)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PinchOut, deltaPinch)
+end)
+AppLuaProxy.OnLuaDestroy(function()
+  GameGlobal:GetInstance():Dispose()
+  ResourceManager:GetInstance():Dispose()
+end)
+AppLuaProxy.OnMonitor(function()
+  GameGlobal.UIStateManager():ShowDialog("UIMonitorController")
+end)

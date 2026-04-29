@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/res_dungeon_elemental_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ElementalResDungeonRunData", TestRobotElementalRunData)
 ElementalResDungeonRunData = ElementalResDungeonRunData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ElementalResDungeonRunData.ParseLevelData = function(self, rawargs)
-  -- function num : 0_0 , upvalues : _ENV
-  local s = (string.split)(rawargs, ",")
+function ElementalResDungeonRunData:ParseLevelData(rawargs)
+  local s = string.split(rawargs, ",")
   local dungeonType = tonumber(s[1])
   self._dungeonType = dungeonType
   if dungeonType == DungeonType.DungeonType_Experience then
@@ -18,25 +11,15 @@ ElementalResDungeonRunData.ParseLevelData = function(self, rawargs)
     local missionID = tonumber(s[3])
     self._missionID = missionID
   else
-    do
-      local missionID = tonumber(s[2])
-      self._missionID = missionID
-    end
+    local missionID = tonumber(s[2])
+    self._missionID = missionID
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalResDungeonRunData.GetDungeonType = function(self)
-  -- function num : 0_1
+function ElementalResDungeonRunData:GetDungeonType()
   return self._resDungeonType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalResDungeonRunData.GetDungeonSubType = function(self)
-  -- function num : 0_2
+function ElementalResDungeonRunData:GetDungeonSubType()
   return self._dungeonSubType
 end
-
-

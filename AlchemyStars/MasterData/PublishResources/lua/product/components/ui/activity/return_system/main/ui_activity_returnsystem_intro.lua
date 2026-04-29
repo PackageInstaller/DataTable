@@ -1,51 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/main/ui_activity_returnsystem_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemIntro", UIController)
 UIActivityReturnSystemIntro = UIActivityReturnSystemIntro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemIntro.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityReturnSystemIntro:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemIntro.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityReturnSystemIntro:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemIntro.bgOnClick = function(self, go)
-  -- function num : 0_2
+function UIActivityReturnSystemIntro:bgOnClick(go)
   self:_PlayAnimOut()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemIntro.imgCloseOnClick = function(self, go)
-  -- function num : 0_3
+function UIActivityReturnSystemIntro:imgCloseOnClick(go)
   self:_PlayAnimOut()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemIntro._PlayAnimOut = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityReturnSystemIntro:_PlayAnimOut()
   self.anim = self:GetUIComponent("Animation", "animation")
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
     self:Lock("UIActivityReturnSystemIntro_PlayAnimOut")
-    ;
-    (self.anim):Play("uieff_Return_Intro_Fade")
+    self.anim:Play("uieff_Return_Intro_Fade")
     YIELD(TT, 133)
     self:UnLock("UIActivityReturnSystemIntro_PlayAnimOut")
     self:CloseDialog()
-  end
-, self)
+  end, self)
 end
-
-

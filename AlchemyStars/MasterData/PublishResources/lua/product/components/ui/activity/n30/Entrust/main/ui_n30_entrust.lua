@@ -1,64 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n30/Entrust/main/ui_n30_entrust.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN30Entrust", UIController)
 UIN30Entrust = UIN30Entrust
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN30Entrust.Constructor = function(self)
-  -- function num : 0_0
+function UIN30Entrust:Constructor()
   self._cdEnd = {tick = 0, period = 30000}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.RefreshClientData = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if self.m_client_data == nil or (self.m_client_data)._className ~= "N30EntrustData" then
+function UIN30Entrust:RefreshClientData()
+  if self.m_client_data == nil or self.m_client_data._className ~= "N30EntrustData" then
     self.m_client_data = N30EntrustData:New(self)
   end
-  ;
-  (self.m_client_data):RefreshClientData()
+  self.m_client_data:RefreshClientData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN30Entrust:LoadDataOnEnter(TT, res, uiParams)
   EntrustComponent:HookClientData(109301805, UIN30Entrust.RefreshClientData)
-  self._campaign = (UIActivityCampaign.New)()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N30, ECampaignN30ComponentID.ECAMPAIGN_N30_ENTRUST)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  do
-    if res and not res:GetSucc() then
-      local campModule = (GameGlobal.GetModule)(CampaignModule)
-      campModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-      self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, self
-    YIELD(TT)
-    self:OnActivityCloseEvent((self._campaign)._id)
+  self._campaign = UIActivityCampaign.New()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N30, ECampaignN30ComponentID.ECAMPAIGN_N30_ENTRUST)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  if res and not res:GetSucc() then
+    local campModule = GameGlobal.GetModule(CampaignModule)
+    campModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    self:StartTask(function(TT)
+      YIELD(TT)
+      self:OnActivityCloseEvent(self._campaign._id)
+    end)
+    return
   end
-)
-      return 
-    end
-    self._localProcess = (self._campaign):GetLocalProcess()
-    if not self._localProcess then
-      return 
-    end
-    self._entrustComponent = (self._localProcess):GetComponent(ECampaignN30ComponentID.ECAMPAIGN_N30_ENTRUST)
-    self._entrustData = (self._entrustComponent):GetClientData()
-    self._isReturn = uiParams[1]
+  self._localProcess = self._campaign:GetLocalProcess()
+  if not self._localProcess then
+    return
   end
+  self._entrustComponent = self._localProcess:GetComponent(ECampaignN30ComponentID.ECAMPAIGN_N30_ENTRUST)
+  self._entrustData = self._entrustComponent:GetClientData()
+  self._isReturn = uiParams[1]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN30Entrust:OnShow(uiParams)
   self._uiWidget = self:GetUIComponent("RectTransform", "uiWidget")
   self._btnAnywhere = self:GetUIComponent("RectTransform", "btnAnywhere")
   self._ltBtn = self:GetUIComponent("UISelectObjectPath", "ltBtn")
@@ -73,154 +50,99 @@ UIN30Entrust.OnShow = function(self, uiParams)
   self:CreateLines()
   self:FlushNodes()
   self:FlushEndDuration()
-  if (self._entrustData):ViewPlot() then
+  if self._entrustData:ViewPlot() then
     self:InAnimation()
   else
     self:PlayPlot(true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.OnHide = function(self)
-  -- function num : 0_4
+function UIN30Entrust:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._cdEnd).tick = (self._cdEnd).tick + deltaTimeMS
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._cdEnd).period <= (self._cdEnd).tick then
-    (self._cdEnd).tick = 0
+function UIN30Entrust:OnUpdate(deltaTimeMS)
+  self._cdEnd.tick = self._cdEnd.tick + deltaTimeMS
+  if self._cdEnd.tick >= self._cdEnd.period then
+    self._cdEnd.tick = 0
     self:FlushEndDuration()
     self:FlushNodeStatus()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.OnActivityCloseEvent = function(self, id)
-  -- function num : 0_6 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-    campaignModule:CampaignSwitchState(false, UIStateType.UIActivityN30MainController, UIStateType.UIMain, nil, (self._campaign)._id)
+function UIN30Entrust:OnActivityCloseEvent(id)
+  if self._campaign and self._campaign._id == id then
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    campaignModule:CampaignSwitchState(false, UIStateType.UIActivityN30MainController, UIStateType.UIMain, nil, self._campaign._id)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.BtnIntroOnClick = function(self, go)
-  -- function num : 0_7
+function UIN30Entrust:BtnIntroOnClick(go)
   self:ShowDialog("UIIntroLoader", "UIN30EntrustIntro")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.BtnPlotOnClick = function(self, go)
-  -- function num : 0_8
+function UIN30Entrust:BtnPlotOnClick(go)
   self:PlayPlot(false)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.PlayPlot = function(self, inAnimation)
-  -- function num : 0_9
-  ((self._animation).gameObject):SetActive(false)
+function UIN30Entrust:PlayPlot(inAnimation)
+  self._animation.gameObject:SetActive(false)
   self:ShowDialog("UIStoryController", 50500001, function()
-    -- function num : 0_9_0 , upvalues : self, inAnimation
-    (self._entrustData):ViewPlot(true)
-    ;
-    ((self._animation).gameObject):SetActive(true)
+    self._entrustData:ViewPlot(true)
+    self._animation.gameObject:SetActive(true)
     if inAnimation then
       self:InAnimation()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.BtnAnywhereOnClick = function(self, go)
-  -- function num : 0_10
+function UIN30Entrust:BtnAnywhereOnClick(go)
   self:EnterFullScreenBg(false)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.NodeOnClick = function(self, uiNode, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN30Entrust:NodeOnClick(uiNode, go)
   local node = uiNode:GetNodeData()
   if node:IsLocked() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n30_entrust_locked_prev_popup"))
+    ToastManager.ShowToast(StringTable.Get("str_n30_entrust_locked_prev_popup"))
+  elseif node:IsTimeLocked() then
+    ToastManager.ShowToast(StringTable.Get("str_n30_entrust_locked_time_popup"))
   else
-    if node:IsTimeLocked() then
-      (ToastManager.ShowToast)((StringTable.Get)("str_n30_entrust_locked_time_popup"))
-    else
-      ;
-      (self._entrustData):ViewNode(node:ID())
-      uiNode:FlushStatus()
-      self:ShowDialog("UIN30EntrustStage", node)
-    end
+    self._entrustData:ViewNode(node:ID())
+    uiNode:FlushStatus()
+    self:ShowDialog("UIN30EntrustStage", node)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.InitCommonTopButton = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local fnHelp = function()
-    -- function num : 0_12_0 , upvalues : self
+function UIN30Entrust:InitCommonTopButton()
+  local function fnHelp()
     self:ShowDialog("UIIntroLoader", "UIN30EntrustIntro")
   end
-
-  self._backBtns = (self._ltBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_12_1 , upvalues : self, _ENV
+  
+  self._backBtns = self._ltBtn:SpawnObject("UICommonTopButton")
+  self._backBtns:SetData(function()
     local lockName = "UIN30Entrust:EntrustMain_out"
     self:StartTask(function(TT)
-      -- function num : 0_12_1_0 , upvalues : self, lockName, _ENV
       self:Lock(lockName)
-      ;
-      (self._animation):Play("uieff_N30_EntrustMain_quit")
+      self._animation:Play("uieff_N30_EntrustMain_quit")
       YIELD(TT, 333)
       self:UnLock(lockName)
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN30MainController, UIStateType.UIMain, nil, (self._campaign)._id)
-    end
-)
-  end
-, fnHelp, function()
-    -- function num : 0_12_2 , upvalues : self, _ENV
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN30MainController, UIStateType.UIMain, nil, self._campaign._id)
+    end)
+  end, fnHelp, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, false, nil, function()
-    -- function num : 0_12_3 , upvalues : self
+  end, false, nil, function()
     self:EnterFullScreenBg(true)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.EnterFullScreenBg = function(self, isEnter)
-  -- function num : 0_13
-  ((self._uiWidget).gameObject):SetActive(not isEnter)
-  ;
-  ((self._btnAnywhere).gameObject):SetActive(isEnter)
+function UIN30Entrust:EnterFullScreenBg(isEnter)
+  self._uiWidget.gameObject:SetActive(not isEnter)
+  self._btnAnywhere.gameObject:SetActive(isEnter)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.ResetCellSize = function(self, go, cellSize)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN30Entrust:ResetCellSize(go, cellSize)
   if go == nil then
-    return 
+    return
   end
   local rt = go.transform
   rt.pivot = Vector2.one * 0.5
@@ -231,73 +153,59 @@ UIN30Entrust.ResetCellSize = function(self, go, cellSize)
   rt.anchoredPosition = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.CreateNodes = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  self._dataNodes = (self._entrustData):GetAllEntrust()
+function UIN30Entrust:CreateNodes()
+  self._dataNodes = self._entrustData:GetAllEntrust()
   local count = #self._dataNodes
-  self._widgetNodes = (self._uiNodes):SpawnObjects("UIN30EntrustMainNode", count)
-  for k,v in pairs(self._dataNodes) do
+  self._widgetNodes = self._uiNodes:SpawnObjects("UIN30EntrustMainNode", count)
+  for k, v in pairs(self._dataNodes) do
     local pos = Vector2.zero
     if v.PointPos ~= nil and #v.PointPos >= 2 then
-      pos.x = (v.PointPos)[1]
-      pos.y = (v.PointPos)[2]
+      pos.x = v.PointPos[1]
+      pos.y = v.PointPos[2]
     end
-    local ui = (self._widgetNodes)[k]
+    local ui = self._widgetNodes[k]
     self:ResetCellSize(ui:GetGameObject(), Vector2(478, 479))
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    ((ui:GetGameObject()).transform).anchoredPosition = pos
+    ui:GetGameObject().transform.anchoredPosition = pos
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.CreateLines = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN30Entrust:CreateLines()
   local count = #self._dataNodes - 1
-  self._widgetLines = (self._uiLines):SpawnObjects("UIN30EntrustMainLine", count)
-  for k,v in pairs(self._widgetLines) do
-    local preNode = (self._widgetNodes)[k]
-    local nxtNode = (self._widgetNodes)[k + 1]
+  self._widgetLines = self._uiLines:SpawnObjects("UIN30EntrustMainLine", count)
+  for k, v in pairs(self._widgetLines) do
+    local preNode = self._widgetNodes[k]
+    local nxtNode = self._widgetNodes[k + 1]
     local go = v:GetGameObject()
     self:ResetCellSize(go, Vector2(250, 51))
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (go.transform).pivot = Vector2(0, 0.5)
+    go.transform.pivot = Vector2(0, 0.5)
     v:SetPos(preNode, nxtNode)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.FlushNodes = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  for k,v in pairs(self._dataNodes) do
-    local ui = (self._widgetNodes)[k]
-    ui:SetData((self._entrustData):GetNodeData(v.ID))
+function UIN30Entrust:FlushNodes()
+  for k, v in pairs(self._dataNodes) do
+    local ui = self._widgetNodes[k]
+    ui:SetData(self._entrustData:GetNodeData(v.ID))
     ui:FlushStatus()
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.FlushNodeStatus = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  for k,v in pairs(self._dataNodes) do
-    local ui = (self._widgetNodes)[k]
+function UIN30Entrust:FlushNodeStatus()
+  for k, v in pairs(self._dataNodes) do
+    local ui = self._widgetNodes[k]
     ui:FlushStatus()
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.GetFormatTimerStr = function(self, deltaTime, txtColor)
-  -- function num : 0_19 , upvalues : _ENV
-  local id = {day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_error_107", clrFormat = "<color=#%s>%s</color>"}
+function UIN30Entrust:GetFormatTimerStr(deltaTime, txtColor)
+  local id = {
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_error_107",
+    clrFormat = "<color=#%s>%s</color>"
+  }
   if txtColor == nil then
     txtColor = "FFFFFF"
   end
@@ -305,73 +213,54 @@ UIN30Entrust.GetFormatTimerStr = function(self, deltaTime, txtColor)
   local hour = 0
   local min = 0
   local second = 0
-  if deltaTime >= 0 then
-    day = (UIActivityHelper.Time2Str)(deltaTime)
+  if 0 <= deltaTime then
+    day, hour, min, second = UIActivityHelper.Time2Str(deltaTime)
   end
-  local timeStr = nil
-  if day > 0 and hour > 0 then
-    timeStr = tostring(day) .. (StringTable.Get)(id.day)
-    timeStr = timeStr .. tostring(hour) .. (StringTable.Get)(id.hour)
+  local timeStr
+  if 0 < day and 0 < hour then
+    timeStr = tostring(day) .. StringTable.Get(id.day)
+    timeStr = timeStr .. tostring(hour) .. StringTable.Get(id.hour)
+  elseif 0 < day then
+    timeStr = tostring(day) .. StringTable.Get(id.day)
+  elseif 0 < hour and 0 < min then
+    timeStr = tostring(hour) .. StringTable.Get(id.hour)
+    timeStr = timeStr .. tostring(min) .. StringTable.Get(id.min)
+  elseif 0 < hour then
+    timeStr = tostring(hour) .. StringTable.Get(id.hour)
+  elseif 0 < min then
+    timeStr = tostring(min) .. StringTable.Get(id.min)
   else
-    if day > 0 then
-      timeStr = tostring(day) .. (StringTable.Get)(id.day)
-    else
-      if hour > 0 and min > 0 then
-        timeStr = tostring(hour) .. (StringTable.Get)(id.hour)
-        timeStr = timeStr .. tostring(min) .. (StringTable.Get)(id.min)
-      else
-        if hour > 0 then
-          timeStr = tostring(hour) .. (StringTable.Get)(id.hour)
-        else
-          if min > 0 then
-            timeStr = tostring(min) .. (StringTable.Get)(id.min)
-          else
-            timeStr = (StringTable.Get)(id.zero)
-          end
-        end
-      end
-    end
+    timeStr = StringTable.Get(id.zero)
   end
-  return (string.format)(id.clrFormat, txtColor, timeStr)
+  return string.format(id.clrFormat, txtColor, timeStr)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.FlushEndDuration = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local endTime = ((self._entrustComponent):GetComponentInfo()).m_close_time
+function UIN30Entrust:FlushEndDuration()
+  local endTime = self._entrustComponent:GetComponentInfo().m_close_time
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local deltaTime = (math.max)(endTime - curTime, 0)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local deltaTime = math.max(endTime - curTime, 0)
   local timerStr = self:GetFormatTimerStr(deltaTime)
-  local txtValue = (StringTable.Get)("str_n30_entrust_end_title", timerStr)
-  ;
-  (self._txtEndDuration):SetText(txtValue)
+  local txtValue = StringTable.Get("str_n30_entrust_end_title", timerStr)
+  self._txtEndDuration:SetText(txtValue)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.InAnimation = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIN30Entrust:InAnimation()
   local lockName = "UIN30Entrust:InAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
     if self._isReturn then
-      (self._animation):Play("uieff_N30_EntrustMain_in")
+      self._animation:Play("uieff_N30_EntrustMain_in")
     else
-      ;
-      (self._animation):Play("uieff_N30_EntrustMain")
+      self._animation:Play("uieff_N30_EntrustMain")
     end
     YIELD(TT, 500)
     self:UnLock(lockName)
-  end
-)
+  end)
   local lockName = "UIN30Entrust:InAnimation - 2"
   self:StartTask(function(TT)
-    -- function num : 0_21_1 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    for k,v in pairs(self._widgetNodes) do
+    for k, v in pairs(self._widgetNodes) do
       v:ShowNormalDoing(false)
       if k % 2 == 1 then
         v:PlayAnimation("uieff_N30_EntrustMainNode_up")
@@ -380,36 +269,27 @@ UIN30Entrust.InAnimation = function(self)
       end
     end
     YIELD(TT, 800)
-    for k,v in pairs(self._widgetNodes) do
+    for k, v in pairs(self._widgetNodes) do
       v:ShowNormalDoing(true)
       v:PlayAnimation("uieff_N30_EntrustMainNode")
     end
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30Entrust.OutAnimation = function(self)
-  -- function num : 0_22
-  (self._animation):Play("uieff_N30_EntrustMain_out")
+function UIN30Entrust:OutAnimation()
+  self._animation:Play("uieff_N30_EntrustMain_out")
 end
 
 _class("UIN30EntrustMainNode", UICustomWidget)
 UIN30EntrustMainNode = UIN30EntrustMainNode
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN30EntrustMainNode.Constructor = function(self)
-  -- function num : 0_23
+function UIN30EntrustMainNode:Constructor()
   self._cfg = nil
   self._node = nil
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustMainNode.OnShow = function(self, uiParams)
-  -- function num : 0_24
+function UIN30EntrustMainNode:OnShow(uiParams)
   self._uiLocked = self:GetUIComponent("RectTransform", "uiLocked")
   self._uiNormal = self:GetUIComponent("RectTransform", "uiNormal")
   self._uiFinish = self:GetUIComponent("RectTransform", "uiFinish")
@@ -426,162 +306,97 @@ UIN30EntrustMainNode.OnShow = function(self, uiParams)
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustMainNode.OnHide = function(self)
-  -- function num : 0_25
+function UIN30EntrustMainNode:OnHide()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustMainNode.ButtonOnClick = function(self, go)
-  -- function num : 0_26
-  (self:RootUIOwner()):NodeOnClick(self, go)
+function UIN30EntrustMainNode:ButtonOnClick(go)
+  self:RootUIOwner():NodeOnClick(self, go)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustMainNode.GetNodeData = function(self)
-  -- function num : 0_27
+function UIN30EntrustMainNode:GetNodeData()
   return self._node
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustMainNode.SetData = function(self, node)
-  -- function num : 0_28 , upvalues : _ENV
+function UIN30EntrustMainNode:SetData(node)
   self._node = node
   local cfg = node:GetCfg()
-  ;
-  (self._titleNormal):SetText((StringTable.Get)(cfg.StrTitle))
+  self._titleNormal:SetText(StringTable.Get(cfg.StrTitle))
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustMainNode.FlushStatus = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIN30EntrustMainNode:FlushStatus()
   local showLocked = false
   local showNormal = false
   local showFinish = false
   local showNew = false
   local showRemain = false
   local remainValue = 0
-  if (self._node):IsLocked() then
+  if self._node:IsLocked() then
     showLocked = true
-  else
-    if (self._node):IsNew() then
-      showRemain = (self._node):IsTimeLocked()
-      if showRemain then
-        showLocked = true
-        showRemain = true
-      else
-        showNormal = true
-        showNew = true
-      end
+  elseif self._node:IsNew() then
+    showRemain, remainValue = self._node:IsTimeLocked()
+    if showRemain then
+      showLocked = true
+      showRemain = true
     else
-      if (self._node):IsPass() then
-        showFinish = true
-      else
-        showNormal = true
-      end
+      showNormal = true
+      showNew = true
     end
+  elseif self._node:IsPass() then
+    showFinish = true
+  else
+    showNormal = true
   end
-  ;
-  ((self._uiLocked).gameObject):SetActive(showLocked)
-  ;
-  ((self._uiNormal).gameObject):SetActive(showNormal)
-  ;
-  ((self._uiFinish).gameObject):SetActive(showFinish)
-  ;
-  ((self._uiNew).gameObject):SetActive(showNew)
-  ;
-  ((self._imgRemainTime).gameObject):SetActive(showRemain)
+  self._uiLocked.gameObject:SetActive(showLocked)
+  self._uiNormal.gameObject:SetActive(showNormal)
+  self._uiFinish.gameObject:SetActive(showFinish)
+  self._uiNew.gameObject:SetActive(showNew)
+  self._imgRemainTime.gameObject:SetActive(showRemain)
   if showRemain then
     local colorStr = "FFFFFF"
-    local timerStr = (self:RootUIOwner()):GetFormatTimerStr(remainValue, colorStr)
-    ;
-    (self._txtRemainTime):SetText(timerStr)
+    local timerStr = self:RootUIOwner():GetFormatTimerStr(remainValue, colorStr)
+    self._txtRemainTime:SetText(timerStr)
   end
-  do
-    local value = (self._node):GetExplor()
-    -- DECOMPILER ERROR at PC81: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._imgProgressN).fillAmount = value
-    -- DECOMPILER ERROR at PC83: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._imgProgressC).fillAmount = value
-    local value = (self._node):GetExplor() * 100
-    local strExplor = (string.format)("%d<size=41>%%</size>", (math.floor)(value))
-    ;
-    (self._txtExplorValueN):SetText(strExplor)
-    ;
-    (self._txtExplorValueC):SetText(strExplor)
-  end
+  local value = self._node:GetExplor()
+  self._imgProgressN.fillAmount = value
+  self._imgProgressC.fillAmount = value
+  local value = self._node:GetExplor() * 100
+  local strExplor = string.format("%d<size=41>%%</size>", math.floor(value))
+  self._txtExplorValueN:SetText(strExplor)
+  self._txtExplorValueC:SetText(strExplor)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustMainNode.ShowNormalDoing = function(self, inShow)
-  -- function num : 0_30
-  ((self._bgNormalSel).gameObject):SetActive(inShow)
-  ;
-  ((self._imgDoing).gameObject):SetActive(inShow)
+function UIN30EntrustMainNode:ShowNormalDoing(inShow)
+  self._bgNormalSel.gameObject:SetActive(inShow)
+  self._imgDoing.gameObject:SetActive(inShow)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustMainNode.PlayAnimation = function(self, animName)
-  -- function num : 0_31
-  (self._animation):Play(animName)
+function UIN30EntrustMainNode:PlayAnimation(animName)
+  self._animation:Play(animName)
 end
 
 _class("UIN30EntrustMainLine", UICustomWidget)
 UIN30EntrustMainLine = UIN30EntrustMainLine
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN30EntrustMainLine.Constructor = function(self)
-  -- function num : 0_32
+function UIN30EntrustMainLine:Constructor()
   self._preNode = nil
   self._nxtNode = nil
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustMainLine.OnShow = function(self, uiParams)
-  -- function num : 0_33
-  self._rect = (self:GetGameObject()).transform
+function UIN30EntrustMainLine:OnShow(uiParams)
+  self._rect = self:GetGameObject().transform
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustMainLine.OnHide = function(self)
-  -- function num : 0_34
+function UIN30EntrustMainLine:OnHide()
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustMainLine.SetPos = function(self, preNode, nxtNode)
-  -- function num : 0_35 , upvalues : _ENV
+function UIN30EntrustMainLine:SetPos(preNode, nxtNode)
   self._preNode = preNode
   self._nxtNode = nxtNode
-  local from = ((preNode:GetGameObject()).transform).anchoredPosition
-  local to = ((nxtNode:GetGameObject()).transform).anchoredPosition
-  local dis = (Vector2.Distance)(from, to)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = Vector2(dis, ((self._rect).sizeDelta).y)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = from
+  local from = preNode:GetGameObject().transform.anchoredPosition
+  local to = nxtNode:GetGameObject().transform.anchoredPosition
+  local dis = Vector2.Distance(from, to)
+  self._rect.sizeDelta = Vector2(dis, self._rect.sizeDelta.y)
+  self._rect.anchoredPosition = from
   local v = to - from
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._rect).localRotation = (Quaternion.FromToRotation)(Vector3.right, Vector3(v.x, v.y, 0))
+  self._rect.localRotation = Quaternion.FromToRotation(Vector3.right, Vector3(v.x, v.y, 0))
 end
-
-

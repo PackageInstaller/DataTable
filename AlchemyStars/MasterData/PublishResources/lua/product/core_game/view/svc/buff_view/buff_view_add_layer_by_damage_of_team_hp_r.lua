@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_add_layer_by_damage_of_team_hp_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddLayerByDamageOfTeamHp", BuffViewBase)
 BuffViewAddLayerByDamageOfTeamHp = BuffViewAddLayerByDamageOfTeamHp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddLayerByDamageOfTeamHp.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewAddLayerByDamageOfTeamHp:PlayView(TT)
   local res = self._buffResult
   local curLayer = res:GetLayer()
   local buffseq = res:GetBuffSeq()
-  local buffView = (self._entity):BuffView()
+  local buffView = self._entity:BuffView()
   local viewInstance = buffView:GetBuffViewInstance(buffseq)
   if not viewInstance then
-    (Log.error)("BuffViewAddLayerByDamageOfTeamHp not find viewInstance! entity=", (self._entity):GetID(), " layer=", curLayer)
-    return 
+    Log.error("BuffViewAddLayerByDamageOfTeamHp not find viewInstance! entity=", self._entity:GetID(), " layer=", curLayer)
+    return
   end
   viewInstance:SetLayerCount(TT, curLayer)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
 end
-
-

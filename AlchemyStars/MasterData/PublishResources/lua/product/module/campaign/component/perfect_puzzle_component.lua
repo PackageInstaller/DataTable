@@ -1,59 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/perfect_puzzle_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("PerfectPuzzleComponent", ICampaignComponent)
 PerfectPuzzleComponent = PerfectPuzzleComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PerfectPuzzleComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PerfectPuzzleComponent:Constructor()
   self.m_component_info = PerfectPuzzleComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PerfectPuzzleComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PerfectPuzzleComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = PerfectPuzzleComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PerfectPuzzleComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function PerfectPuzzleComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PerfectPuzzleComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PerfectPuzzleComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_PERFECT_PUZZLE
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PerfectPuzzleComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function PerfectPuzzleComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PerfectPuzzleComponent.GetHasPassedDebris = function(self, missionId)
-  -- function num : 0_5 , upvalues : _ENV
-  local info = ((self.m_component_info).m_pass_mission_info)[missionId]
+function PerfectPuzzleComponent:GetHasPassedDebris(missionId)
+  local info = self.m_component_info.m_pass_mission_info[missionId]
   if info == nil then
     return false
   end
-  local cfg = (Cfg.cfg_component_perfect_puzzle)({MissionID = missionId})
+  local cfg = Cfg.cfg_component_perfect_puzzle({MissionID = missionId})
   if cfg == nil then
     return false
   end
@@ -63,72 +41,54 @@ PerfectPuzzleComponent.GetHasPassedDebris = function(self, missionId)
   return true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PerfectPuzzleComponent.HandleCompletePerfectPuzzle = function(self, TT, asyncRes, missionId, score)
-  -- function num : 0_6 , upvalues : _ENV
+function PerfectPuzzleComponent:HandleCompletePerfectPuzzle(TT, asyncRes, missionId, score)
   local request = CompletePerfectPuzzleReq:New()
   request.mission_id = missionId
   request.score = score
   local response = CompletePerfectPuzzleRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][PerfectPuzzleComponent] HandleCompleteTacitTestMission ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][PerfectPuzzleComponent] HandleCompleteTacitTestMission ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  ((self.m_component_info).m_pass_mission_info)[missionId] = response.info
+  self.m_component_info.m_pass_mission_info[missionId] = response.info
   return response.ret
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PerfectPuzzleComponent.HandleUnlockPerfectPuzzle = function(self, TT, asyncRes, missionId)
-  -- function num : 0_7 , upvalues : _ENV
+function PerfectPuzzleComponent:HandleUnlockPerfectPuzzle(TT, asyncRes, missionId)
   local request = UnlockPerfectPuzzleReq:New()
   request.mission_id = missionId
   local response = UnlockPerfectPuzzleRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][PerfectPuzzleComponent] HandleUnlockPerfectPuzzle ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][PerfectPuzzleComponent] HandleUnlockPerfectPuzzle ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).m_unlock_missions = response.m_unlock_missions
+  self.m_component_info.m_unlock_missions = response.m_unlock_missions
   return response.ret
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PerfectPuzzleComponent.HaveRedPoint = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local cfgs = (Cfg.cfg_component_perfect_puzzle)({ComponentID = self:GetComponentCfgId()})
+function PerfectPuzzleComponent:HaveRedPoint()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local cfgs = Cfg.cfg_component_perfect_puzzle({
+    ComponentID = self:GetComponentCfgId()
+  })
   if cfgs then
     for i = 1, #cfgs do
       local curTime = svrTimeModule:GetServerTime() * 0.001
-      local unlockTime = loginModule:GetTimeStampByTimeStr((cfgs[i]).UnlockTime, 0)
-      local isUnlock = unlockTime <= curTime
-      local key = "UICN13PostGameBackpack" .. ((GameGlobal.GetModule)(LoginModule)):GetRoleShowID() .. (cfgs[i]).ID
+      local unlockTime = loginModule:GetTimeStampByTimeStr(cfgs[i].UnlockTime, 0)
+      local isUnlock = curTime >= unlockTime
+      local key = "UICN13PostGameBackpack" .. GameGlobal.GetModule(LoginModule):GetRoleShowID() .. cfgs[i].ID
       if isUnlock then
-        local record = (LocalDB.GetInt)(key, 0)
+        local record = LocalDB.GetInt(key, 0)
         if record == 0 then
           return true
         end
       end
     end
   end
-  do return false end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return false
 end
-
-

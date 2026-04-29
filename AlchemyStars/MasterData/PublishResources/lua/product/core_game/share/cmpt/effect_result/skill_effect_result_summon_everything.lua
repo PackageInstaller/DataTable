@@ -1,84 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_summon_everything.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local SkillEffectEnum_SummonType = {Monster = 1, Trap = 2, Drop = 3}
+local SkillEffectEnum_SummonType = {
+  Monster = 1,
+  Trap = 2,
+  Drop = 3
+}
 _enum("SkillEffectEnum_SummonType", SkillEffectEnum_SummonType)
 _class("SkillEffectResult_SummonEverything", SkillEffectResultBase)
 SkillEffectResult_SummonEverything = SkillEffectResult_SummonEverything
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillEffectResult_SummonEverything.Constructor = function(self, nSummonType, nSummonID, posCenter, posSummon)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectResult_SummonEverything:Constructor(nSummonType, nSummonID, posCenter, posSummon)
   self.m_nSummonType = nSummonType
   self.m_nSummonID = nSummonID
-  if not posCenter then
-    self.m_posCenter = Vector2(0, 0)
-    self.m_posSummon = posSummon
-    self._dir = Vector2(0, 1)
-    self.m_monster = {}
-    self.m_trap = {}
-    self._transformData = nil
-  end
+  self.m_posCenter = posCenter or Vector2(0, 0)
+  self.m_posSummon = posSummon
+  self._dir = Vector2(0, 1)
+  self.m_monster = {}
+  self.m_trap = {}
+  self._transformData = nil
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResult_SummonEverything:GetEffectType()
   return SkillEffectType.SummonEverything
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.GetSummonType = function(self)
-  -- function num : 0_2
+function SkillEffectResult_SummonEverything:GetSummonType()
   return self.m_nSummonType
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.GetSummonID = function(self)
-  -- function num : 0_3
+function SkillEffectResult_SummonEverything:GetSummonID()
   return self.m_nSummonID
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.GetSummonPos = function(self)
-  -- function num : 0_4
+function SkillEffectResult_SummonEverything:GetSummonPos()
   return self.m_posSummon
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.SetSummonPos = function(self, posSummon)
-  -- function num : 0_5
+function SkillEffectResult_SummonEverything:SetSummonPos(posSummon)
   self.m_posSummon = posSummon
   if self._transformData then
-    (self._transformData):SetPosition(posSummon)
+    self._transformData:SetPosition(posSummon)
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.GetPosCenter = function(self)
-  -- function num : 0_6
+function SkillEffectResult_SummonEverything:GetPosCenter()
   return self.m_posCenter
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.GetGridPos = function(self)
-  -- function num : 0_7
+function SkillEffectResult_SummonEverything:GetGridPos()
   return self.m_posSummon
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.SetMonsterData = function(self, nMonsterID, entityWorkID, entityHp, transformData)
-  -- function num : 0_8
+function SkillEffectResult_SummonEverything:SetMonsterData(nMonsterID, entityWorkID, entityHp, transformData)
   local monsterData = {}
   monsterData.m_nMonsterID = nMonsterID
   monsterData.m_entityWorkID = entityWorkID
@@ -87,82 +58,51 @@ SkillEffectResult_SummonEverything.SetMonsterData = function(self, nMonsterID, e
   self._transformData = transformData
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.GetMonsterData = function(self)
-  -- function num : 0_9
+function SkillEffectResult_SummonEverything:GetMonsterData()
   return self.m_monster
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.SetTrapData = function(self, nTrapID, entityWorkID)
-  -- function num : 0_10
+function SkillEffectResult_SummonEverything:SetTrapData(nTrapID, entityWorkID)
   local trapData = {}
   trapData.m_nTrapID = nTrapID
   trapData.m_entityWorkID = entityWorkID
   self.m_trap = trapData
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.GetTrapData = function(self)
-  -- function num : 0_11
+function SkillEffectResult_SummonEverything:GetTrapData()
   return self.m_trap
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.GetSummonTransformData = function(self)
-  -- function num : 0_12
+function SkillEffectResult_SummonEverything:GetSummonTransformData()
   return self._transformData
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.SetDirection = function(self, direction)
-  -- function num : 0_13
+function SkillEffectResult_SummonEverything:SetDirection(direction)
   self._dir = direction
 end
 
 _class("RenderSummonFromCageParam", Object)
 RenderSummonFromCageParam = RenderSummonFromCageParam
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
 
-RenderSummonFromCageParam.Constructor = function(self)
-  -- function num : 0_14
+function RenderSummonFromCageParam:Constructor()
   self.cageSummonDelayTime = nil
   self.cageSummonMoveTime = nil
   self.cageSummonUnderDis = nil
   self.cageSummonMatAnim = nil
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.GetRenderIsFromCage = function(self)
-  -- function num : 0_15
+function SkillEffectResult_SummonEverything:GetRenderIsFromCage()
   return self.m_renderIsFromCage
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.SetRenderIsFromCage = function(self, fromCage)
-  -- function num : 0_16
+function SkillEffectResult_SummonEverything:SetRenderIsFromCage(fromCage)
   self.m_renderIsFromCage = fromCage
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.GetRenderFromCageParam = function(self)
-  -- function num : 0_17
+function SkillEffectResult_SummonEverything:GetRenderFromCageParam()
   return self.m_renderFromCageParam
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectResult_SummonEverything.SetRenderFromCageParam = function(self, param)
-  -- function num : 0_18
+function SkillEffectResult_SummonEverything:SetRenderFromCageParam(param)
   self.m_renderFromCageParam = param
 end
-
-

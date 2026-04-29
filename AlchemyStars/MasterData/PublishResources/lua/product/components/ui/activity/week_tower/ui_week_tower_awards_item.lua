@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/week_tower/ui_week_tower_awards_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWeekTowerAwardsItem", UICustomWidget)
 UIWeekTowerAwardsItem = UIWeekTowerAwardsItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWeekTowerAwardsItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWeekTowerAwardsItem:OnShow(uiParams)
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._starCount = self:GetUIComponent("UILocalizationText", "starCount")
   self._items = self:GetUIComponent("UISelectObjectPath", "items")
@@ -19,120 +12,86 @@ UIWeekTowerAwardsItem.OnShow = function(self, uiParams)
   self._anim = self:GetUIComponent("Animation", "UIWeekTowerAwardsItem")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerAwardsItem.SetData = function(self, questCmpt, quest, playEnterAnim, index)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWeekTowerAwardsItem:SetData(questCmpt, quest, playEnterAnim, index)
   self._questCmpt = questCmpt
   self._quest = quest
   local questInfo = quest:QuestInfo()
-  ;
-  (self._title):SetText((StringTable.Get)(questInfo.QuestName))
-  ;
-  (self._starCount):SetText(questInfo.total_progress)
+  self._title:SetText(StringTable.Get(questInfo.QuestName))
+  self._starCount:SetText(questInfo.total_progress)
   local status = quest:Status()
   if status == QuestStatus.QUEST_Taken then
-    (self._btnGot):SetActive(true)
-    ;
-    (self._btnCanGet):SetActive(false)
-    ;
-    (self._needStars):SetActive(false)
+    self._btnGot:SetActive(true)
+    self._btnCanGet:SetActive(false)
+    self._needStars:SetActive(false)
+  elseif status == QuestStatus.QUEST_Completed then
+    self._btnGot:SetActive(false)
+    self._btnCanGet:SetActive(true)
+    self._needStars:SetActive(false)
   else
-    if status == QuestStatus.QUEST_Completed then
-      (self._btnGot):SetActive(false)
-      ;
-      (self._btnCanGet):SetActive(true)
-      ;
-      (self._needStars):SetActive(false)
-    else
-      ;
-      (self._btnGot):SetActive(false)
-      ;
-      (self._btnCanGet):SetActive(false)
-      ;
-      (self._needStars):SetActive(true)
-      ;
-      (self._needStarCount):SetText(questInfo.cur_progress .. "/" .. questInfo.total_progress)
-    end
+    self._btnGot:SetActive(false)
+    self._btnCanGet:SetActive(false)
+    self._needStars:SetActive(true)
+    self._needStarCount:SetText(questInfo.cur_progress .. "/" .. questInfo.total_progress)
   end
   local rewards = questInfo.rewards
-  local uiAssets = (self._items):SpawnObjects("UIAsset", #rewards)
+  local uiAssets = self._items:SpawnObjects("UIAsset", #rewards)
   for i = 1, #rewards do
     local reward = rewards[i]
-    do
-      local uiAsset = uiAssets[i]
-      local cfgItem = (Cfg.cfg_item)[reward.assetid]
-      local icon = cfgItem.Icon
-      local quality = cfgItem.Color
-      uiAsset:SetData(reward.assetid)
-      uiAsset:SetItemData({showBG = true, icon = icon, text = reward.count, quality = quality})
-      local eventComponent = uiAsset:AddComponent(UIAssetComponentEvent)
-      eventComponent:SetClickCallBack(function(go)
-    -- function num : 0_1_0 , upvalues : self, reward
-    self:ShowTip(reward.assetid, go)
-  end
-)
-    end
+    local uiAsset = uiAssets[i]
+    local cfgItem = Cfg.cfg_item[reward.assetid]
+    local icon = cfgItem.Icon
+    local quality = cfgItem.Color
+    uiAsset:SetData(reward.assetid)
+    uiAsset:SetItemData({
+      showBG = true,
+      icon = icon,
+      text = reward.count,
+      quality = quality
+    })
+    local eventComponent = uiAsset:AddComponent(UIAssetComponentEvent)
+    eventComponent:SetClickCallBack(function(go)
+      self:ShowTip(reward.assetid, go)
+    end)
   end
   if playEnterAnim and index < 6 then
-    (self._anim):Play()
-    ;
-    (self._anim):Sample()
-    ;
-    (self._anim):Stop()
+    self._anim:Play()
+    self._anim:Sample()
+    self._anim:Stop()
     self._animTask = self:StartTask(function(TT)
-    -- function num : 0_1_1 , upvalues : index, _ENV, self
-    local frame = index - 1
-    while frame > 0 do
-      YIELD(TT)
-      frame = frame - 1
-    end
-    ;
-    (self._anim):Play()
-    self._animTask = nil
-  end
-)
+      local frame = index - 1
+      while 0 < frame do
+        YIELD(TT)
+        frame = frame - 1
+      end
+      self._anim:Play()
+      self._animTask = nil
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerAwardsItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWeekTowerAwardsItem:OnHide()
   if self._animTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._animTask)
+    GameGlobal.TaskManager():KillTask(self._animTask)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerAwardsItem.ShowTip = function(self, id, go)
-  -- function num : 0_3
-  self:CallUIMethod("UIWeekTowerAwardsController", "ShowAssetTips", id, (go.transform).position)
+function UIWeekTowerAwardsItem:ShowTip(id, go)
+  self:CallUIMethod("UIWeekTowerAwardsController", "ShowAssetTips", id, go.transform.position)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerAwardsItem.BtnCanGetOnClick = function(self)
-  -- function num : 0_4
+function UIWeekTowerAwardsItem:BtnCanGetOnClick()
   self:StartTask(self.DoTakeQuest, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerAwardsItem.DoTakeQuest = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UIWeekTowerAwardsItem:DoTakeQuest(TT)
   self:Lock("UIWeekTowerAwardsItem:DoTakeQuest")
   local res = AsyncRequestRes:New()
-  local ret, rewards = (self._questCmpt):HandleQuestTake(TT, res, (self._quest):ID())
+  local ret, rewards = self._questCmpt:HandleQuestTake(TT, res, self._quest:ID())
   if res:GetSucc() then
     self:ShowDialog("UIGetItemController", rewards)
     self:CallUIMethod("UIWeekTowerAwardsController", "RefreshUI")
   else
-    ;
-    (LogWrapper.LogFatal)("HandleQuestTake failed, ret:", ret)
+    LogWrapper.LogFatal("HandleQuestTake failed, ret:", ret)
   end
   self:UnLock("UIWeekTowerAwardsItem:DoTakeQuest")
 end
-
-

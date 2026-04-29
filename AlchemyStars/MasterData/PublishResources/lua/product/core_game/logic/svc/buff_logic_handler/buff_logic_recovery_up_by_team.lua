@@ -1,62 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_recovery_up_by_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddRecoveryUpByTeam", BuffLogicBase)
 BuffLogicAddRecoveryUpByTeam = BuffLogicAddRecoveryUpByTeam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddRecoveryUpByTeam.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddRecoveryUpByTeam:Constructor(buffInstance, logicParam)
   self._recoveryRate = logicParam.recoveryRate or 0
   self._maxRecoveryRate = logicParam.maxRecoveryRate
   self._modifyPetAttribute = logicParam.modifyPetAttribute or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddRecoveryUpByTeam.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicAddRecoveryUpByTeam:DoLogic(notify)
   local petEntity = self._entity
-  local eTeam = (petEntity:Pet()):GetOwnerTeamEntity()
-  local matchType = (self._world):MatchType()
-  if (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze and petEntity:HasPetPstID() then
+  local eTeam = petEntity:Pet():GetOwnerTeamEntity()
+  local matchType = self._world:MatchType()
+  if self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze and petEntity:HasPetPstID() then
     eTeam = petEntity
   end
   local cAttrTeam = eTeam:Attributes()
   local nRateTeamHP = cAttrTeam:GetCurrentHP() / cAttrTeam:CalcMaxHp()
   local nFinalRecoveryUpRate = (1 - nRateTeamHP) * 100 * self._recoveryRate
-  if self._maxRecoveryRate < nFinalRecoveryUpRate then
+  if nFinalRecoveryUpRate > self._maxRecoveryRate then
     nFinalRecoveryUpRate = self._maxRecoveryRate
   end
   local modifyEntity = eTeam
   if self._modifyPetAttribute == 1 then
     modifyEntity = self._entity
   end
-  ;
-  (modifyEntity:Attributes()):Modify("AddBloodRate", nFinalRecoveryUpRate, self:GetBuffSeq())
+  modifyEntity:Attributes():Modify("AddBloodRate", nFinalRecoveryUpRate, self:GetBuffSeq())
 end
 
 _class("BuffLogicRemoveRecoveryUpByTeam", BuffLogicBase)
 BuffLogicRemoveRecoveryUpByTeam = BuffLogicRemoveRecoveryUpByTeam
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveRecoveryUpByTeam.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveRecoveryUpByTeam:Constructor(buffInstance, logicParam)
   self._modifyPetAttribute = logicParam.modifyPetAttribute or 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveRecoveryUpByTeam.DoLogic = function(self)
-  -- function num : 0_3
-  local eBeneficiary = ((self._entity):Pet()):GetOwnerTeamEntity()
+function BuffLogicRemoveRecoveryUpByTeam:DoLogic()
+  local eBeneficiary = self._entity:Pet():GetOwnerTeamEntity()
   if self._modifyPetAttribute == 1 then
     eBeneficiary = self._entity
   end
-  ;
-  (eBeneficiary:Attributes()):RemoveModify("AddBloodRate", self:GetBuffSeq())
+  eBeneficiary:Attributes():RemoveModify("AddBloodRate", self:GetBuffSeq())
 end
-
-

@@ -1,8 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/activity/str_activity.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_activity_finished = "イベントは終了しました", str_activity_battle_pass = "バトルパス", str_activity_login_award = "サマー・ログイン", str_activity_point_not_enough = "行動ポイントが足りません。回復するまでお待ちください", str_activity_point_not_enough2 = "{1}が足りません", str_activity_day = "{1}日", str_activity_hour = "{1}時間", str_activity_minus = "{1}分", str_activity_less_one_minus = "<1分", str_activity_cook_btn_title = "厨房決戦", str_activity_dantang_login_title1 = "報酬受取残り時間：", str_activity_drop_time = "イベント残り時間：", str_activity_mission_remaining_time = "イベント残り時間：{1}", str_activity_time_tips1 = "イベント残り時間：{1}", str_activity_time_tips2 = "終了時間：{1}", str_activity_start_in = "{1}後解放", str_activity_battlepass_title = "特別事件簿", str_activity_login_title = "デイリーログイン", str_activity_intro_get = "受取可", str_activity_intro_lock = "未解放", str_activity_intro_got = "受取済", str_activity_detail_btn = "イベント紹介", str_activity_lock_time_tips = "解放時間：{1}", str_activity_cost_not_enough = "アイテムが足りません", str_activity_hard_level_lock_tips = "{1}をクリアすると解放", str_activity_sample_remain_time = "イベント終了まで：{1}", str_activity_exchange_remain_time = "交換終了まであと：{1}", str_activity_diff_unlock_tips = "前のポイントの任意のステージクリアで解放", str_activity_login_sign_8day_title = "イベント期間中累計8日のログインで光珀と限定アイコンを入手", str_activity_task_daily_desc = "本日の任務更新：{1}", str_activity_unlock_need_passing_pre_mission = "前ステージクリアで解放", str_activity_unlock_after_unlock_time = "解放時間になると解放"}
+local config = {
+  str_activity_finished = "イベントは終了しました",
+  str_activity_battle_pass = "バトルパス",
+  str_activity_login_award = "サマー・ログイン",
+  str_activity_point_not_enough = "行動ポイントが足りません。回復するまでお待ちください",
+  str_activity_point_not_enough2 = "{1}が足りません",
+  str_activity_day = "{1}日",
+  str_activity_hour = "{1}時間",
+  str_activity_minus = "{1}分",
+  str_activity_less_one_minus = "<1分",
+  str_activity_cook_btn_title = "厨房決戦",
+  str_activity_dantang_login_title1 = "報酬受取残り時間：",
+  str_activity_drop_time = "イベント残り時間：",
+  str_activity_mission_remaining_time = "イベント残り時間：{1}",
+  str_activity_time_tips1 = "イベント残り時間：{1}",
+  str_activity_time_tips2 = "終了時間：{1}",
+  str_activity_start_in = "{1}後解放",
+  str_activity_battlepass_title = "特別事件簿",
+  str_activity_login_title = "デイリーログイン",
+  str_activity_intro_get = "受取可",
+  str_activity_intro_lock = "未解放",
+  str_activity_intro_got = "受取済",
+  str_activity_detail_btn = "イベント紹介",
+  str_activity_lock_time_tips = "解放時間：{1}",
+  str_activity_cost_not_enough = "アイテムが足りません",
+  str_activity_hard_level_lock_tips = "{1}をクリアすると解放",
+  str_activity_sample_remain_time = "イベント終了まで：{1}",
+  str_activity_exchange_remain_time = "交換終了まであと：{1}",
+  str_activity_diff_unlock_tips = "前のポイントの任意のステージクリアで解放",
+  str_activity_login_sign_8day_title = "イベント期間中累計8日のログインで光珀と限定アイコンを入手",
+  str_activity_task_daily_desc = "本日の任務更新：{1}",
+  str_activity_unlock_need_passing_pre_mission = "前ステージクリアで解放",
+  str_activity_unlock_after_unlock_time = "解放時間になると解放"
+}
 return config
-

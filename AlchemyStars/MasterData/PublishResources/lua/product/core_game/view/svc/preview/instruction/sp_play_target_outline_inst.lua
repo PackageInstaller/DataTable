@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_target_outline_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayTargetOutlineInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayTargetOutlineInstruction = SkillPreviewPlayTargetOutlineInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayTargetOutlineInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayTargetOutlineInstruction:Constructor(params)
   self._downSample = params.DownSample
   self._blurNum = params.BlurNum
   self._intensity = params.Intensity
@@ -20,22 +13,17 @@ SkillPreviewPlayTargetOutlineInstruction.Constructor = function(self, params)
   self._outlinColorB = params.OutlinColorB
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayTargetOutlineInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayTargetOutlineInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
   local targetIDList = previewContext:GetTargetEntityIDList()
-  targetIDList = (table.unique)(targetIDList)
-  for _,id in pairs(targetIDList) do
+  targetIDList = table.unique(targetIDList)
+  for _, id in pairs(targetIDList) do
     local entity = world:GetEntityByID(id)
     if entity and entity:HasView() then
       local view = entity:View()
       local go = view:GetGameObject()
       local outlineCmpt = go:GetComponent(typeof(OutlineComponent))
-      if not outlineCmpt then
-        outlineCmpt = go:AddComponent(typeof(OutlineComponent))
-      end
+      outlineCmpt = outlineCmpt or go:AddComponent(typeof(OutlineComponent))
       outlineCmpt.enabled = true
       outlineCmpt.outlinColor = Color(self._outlinColorR / 255, self._outlinColorG / 255, self._outlinColorB / 255)
       outlineCmpt.downSample = tonumber(self._downSample)
@@ -43,14 +31,10 @@ SkillPreviewPlayTargetOutlineInstruction.DoInstruction = function(self, TT, cast
       outlineCmpt.intensity = tonumber(self._intensity)
       outlineCmpt.outlineSize = tonumber(self._outlineSize)
       if self._blendType == "Add" then
-        outlineCmpt.blendType = (OutlineComponent.BlendType).Add
-      else
-        if self._blendType == "Blend" then
-          outlineCmpt.blendType = (OutlineComponent.BlendType).Blend
-        end
+        outlineCmpt.blendType = OutlineComponent.BlendType.Add
+      elseif self._blendType == "Blend" then
+        outlineCmpt.blendType = OutlineComponent.BlendType.Blend
       end
     end
   end
 end
-
-

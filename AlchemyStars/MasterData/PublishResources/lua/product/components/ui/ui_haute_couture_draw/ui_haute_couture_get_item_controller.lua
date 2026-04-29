@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw/ui_haute_couture_get_item_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureGetItemController", UIController)
 UIHauteCoutureGetItemController = UIHauteCoutureGetItemController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureGetItemController.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureGetItemController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureGetItemController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCoutureGetItemController:OnShow(uiParams)
   self._title = self:GetUIComponent("UILocalizationText", "txt_title")
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   local itemInfo = self:GetUIComponent("UISelectObjectPath", "selectInfoPool")
   self._selectInfo = itemInfo:SpawnObject("UIHauteSelectInfo")
   local items = uiParams[1]
-  if not uiParams[2] then
-    local titleTex = (StringTable.Get)("str_senior_skin_draw_get_item_title")
-  end
-  ;
-  (self._title):SetText(titleTex)
+  local titleTex = uiParams[2] or StringTable.Get("str_senior_skin_draw_get_item_title")
+  self._title:SetText(titleTex)
   local noSort = uiParams[3]
   self._callback = uiParams[4]
   self._items = {}
@@ -32,48 +19,46 @@ UIHauteCoutureGetItemController.OnShow = function(self, uiParams)
   if noSort then
     sortItems = items
   else
-    sortItems = (self:GetModule(ItemModule)):SortRoleAsset(items)
+    sortItems = self:GetModule(ItemModule):SortRoleAsset(items)
   end
-  for i = 1, (table.count)(sortItems) do
-    local ItemTempleate = (Cfg.cfg_item)[(sortItems[i]).assetid]
-    -- DECOMPILER ERROR at PC86: Confused about usage of register: R12 in 'UnsetPending'
-
+  for i = 1, table.count(sortItems) do
+    local ItemTempleate = Cfg.cfg_item[sortItems[i].assetid]
     if ItemTempleate then
-      (self._items)[i] = {item_id = (sortItems[i]).assetid, item_count = (sortItems[i]).count, item_des = (sortItems[i]).des, award_type = (sortItems[i]).type, icon = ItemTempleate.Icon, item_name = ItemTempleate.Name, simple_desc = ItemTempleate.RpIntro, color = ItemTempleate.Color, showTag = (sortItems[i]).goumai}
+      self._items[i] = {
+        item_id = sortItems[i].assetid,
+        item_count = sortItems[i].count,
+        item_des = sortItems[i].des,
+        award_type = sortItems[i].type,
+        icon = ItemTempleate.Icon,
+        item_name = ItemTempleate.Name,
+        simple_desc = ItemTempleate.RpIntro,
+        color = ItemTempleate.Color,
+        showTag = sortItems[i].goumai
+      }
     end
   end
   if self._items and next(self._items) then
-    (self._pool):SpawnObjects("UIHauteCoutureGetItemCell", #self._items)
-    local pools = (self._pool):GetAllSpawnList()
+    self._pool:SpawnObjects("UIHauteCoutureGetItemCell", #self._items)
+    local pools = self._pool:GetAllSpawnList()
     for i = 1, #pools do
       local item = pools[i]
-      local data = (self._items)[i]
+      local data = self._items[i]
       item:SetData(data, function(id, pos)
-    -- function num : 0_1_0 , upvalues : self
-    self:ItemClick(id, pos)
-  end
-)
+        self:ItemClick(id, pos)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureGetItemController.ItemClick = function(self, id, pos)
-  -- function num : 0_2
+function UIHauteCoutureGetItemController:ItemClick(id, pos)
   if self._selectInfo then
-    (self._selectInfo):SetData(id, pos)
+    self._selectInfo:SetData(id, pos)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureGetItemController.bgOnClick = function(self, go)
-  -- function num : 0_3
+function UIHauteCoutureGetItemController:bgOnClick(go)
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
   self:CloseDialog()
 end
-
-

@@ -1,137 +1,90 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_camp_center/ui_main_lobby_camp_center.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyCampCenter", UICustomWidget)
 UIMainLobbyCampCenter = UIMainLobbyCampCenter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyCampCenter.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIMainLobbyCampCenter:OnShow(uiParams)
   self._BtnGo = self:GetGameObject("Btn")
   self._newGo = self:GetGameObject("_new")
   self._redGo = self:GetGameObject("_red")
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampCenter.OnHide = function(self)
-  -- function num : 0_1
+function UIMainLobbyCampCenter:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampCenter.SetData = function(self, data)
-  -- function num : 0_2
+function UIMainLobbyCampCenter:SetData(data)
   self._data = data
   self:_CheckPoint()
   self:PlayEnterAnim()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampCenter.PlayEnterAnim = function(self)
-  -- function num : 0_3
+function UIMainLobbyCampCenter:PlayEnterAnim()
   local anim = self:GetUIComponent("Animation", "UIMainLobbyCampCenter")
   anim:Play("uieff_UIMainLobbyCampCenter_in")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampCenter._Refresh = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMainLobbyCampCenter:_Refresh()
   self:Lock("UIMainLobbyCampCenter:_Refresh")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.ReLoadData, self)
+  GameGlobal.TaskManager():StartTask(self.ReLoadData, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampCenter.ReLoadData = function(self, TT)
-  -- function num : 0_5
+function UIMainLobbyCampCenter:ReLoadData(TT)
   if self._data then
-    (self._data):ReLoadData(TT)
+    self._data:ReLoadData(TT)
   end
   self:UnLock("UIMainLobbyCampCenter:_Refresh")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampCenter._CheckPoint = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local openList = (self._data):GetOpenList()
+function UIMainLobbyCampCenter:_CheckPoint()
+  local openList = self._data:GetOpenList()
   local open = false
   if openList and next(openList) then
     open = true
   end
-  ;
-  (self._BtnGo):SetActive(open)
+  self._BtnGo:SetActive(open)
   if open then
-    local redCount = (self._data):CheckRed()
-    local newCount = (self._data):CheckNew()
-    ;
-    (self._newGo):SetActive(newCount > 0)
-    ;
-    (self._redGo):SetActive(newCount == 0 and redCount > 0)
+    local redCount = self._data:CheckRed()
+    local newCount = self._data:CheckNew()
+    self._newGo:SetActive(0 < newCount)
+    self._redGo:SetActive(newCount == 0 and 0 < redCount)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampCenter.BtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_CAMPAIGN_CENTER)
+function UIMainLobbyCampCenter:BtnOnClick()
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_CAMPAIGN_CENTER)
   self:ShowDialog("UISideEnterCenterController")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampCenter._AttachEvents = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIMainLobbyCampCenter:_AttachEvents()
   self:AttachEvent(GameEventType.SideEnterRefresh, self._OnSideEnterRefresh)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampCenter._OnSideEnterRefresh = function(self)
-  -- function num : 0_9
+function UIMainLobbyCampCenter:_OnSideEnterRefresh()
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyCampCenter.RefreshCampSampleInfo = function(self, data)
-  -- function num : 0_10
+function UIMainLobbyCampCenter:RefreshCampSampleInfo(data)
   self._data = data
   self:_CheckPoint()
 end
 
 _class("MainLobbyCenterData", Object)
 MainLobbyCenterData = MainLobbyCenterData
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-MainLobbyCenterData.Constructor = function(self)
-  -- function num : 0_11
+function MainLobbyCenterData:Constructor()
   self._cfgid2loaddata = {}
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterData.SetAllList = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local campModule = (GameGlobal.GetModule)(CampaignModule)
+function MainLobbyCenterData:SetAllList()
+  local campModule = GameGlobal.GetModule(CampaignModule)
   local campDic = campModule:GetCampaignSampleDic()
-  local cfgs = (Cfg.cfg_main_side_enter_center)({IsActive = true})
+  local cfgs = Cfg.cfg_main_side_enter_center({IsActive = true})
   self._allList = {}
   if cfgs and next(cfgs) then
-    local svrTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
-    for idx,cfg in pairs(cfgs) do
+    local svrTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
+    for idx, cfg in pairs(cfgs) do
       local inner = false
       local contentParams = cfg.ContentParams
-      if contentParams and (table.count)(contentParams) > 0 then
+      if contentParams and table.count(contentParams) > 0 then
         local campType = contentParams.campaign_type
         local sampleInfo = campModule:GetSampleByType(campType)
         if sampleInfo and sampleInfo:IsShow(svrTime) then
@@ -141,174 +94,124 @@ MainLobbyCenterData.SetAllList = function(self)
           end
         end
       else
-        do
-          inner = true
-          do
-            if inner then
-              local data = nil
-              if cfg.GetDataClassName then
-                data = _createInstance(cfg.GetDataClassName, cfg)
-              else
-                data = MainLobbyCenterCampData:New(cfg)
-              end
-              ;
-              (table.insert)(self._allList, data)
-            end
-            -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        inner = true
+      end
+      if inner then
+        local data
+        if cfg.GetDataClassName then
+          data = _createInstance(cfg.GetDataClassName, cfg)
+        else
+          data = MainLobbyCenterCampData:New(cfg)
         end
+        table.insert(self._allList, data)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterData.LoadCampaignData = function(self, TT)
-  -- function num : 0_13
+function MainLobbyCenterData:LoadCampaignData(TT)
   self:SetAllList()
   self:LoadDataWithRequest(TT)
   self:SetOpenList()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterData.LoadDataWithRequest = function(self, TT)
-  -- function num : 0_14 , upvalues : _ENV
+function MainLobbyCenterData:LoadDataWithRequest(TT)
   if self._allList and next(self._allList) then
-    for key,value in pairs(self._allList) do
+    for key, value in pairs(self._allList) do
       value:LoadData(TT)
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterData.RefreshCampSampleInfo = function(self, TT)
-  -- function num : 0_15
+function MainLobbyCenterData:RefreshCampSampleInfo(TT)
   self:SetAllList()
   self:LoadDataWithRequest(TT)
   self:SetOpenList()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterData.ReLoadData = function(self, TT)
-  -- function num : 0_16 , upvalues : _ENV
+function MainLobbyCenterData:ReLoadData(TT)
   self:SetAllList()
   if self._allList and next(self._allList) then
-    for key,value in pairs(self._allList) do
+    for key, value in pairs(self._allList) do
       value:LoadData(TT)
     end
   end
-  do
-    self:SetOpenList()
-  end
+  self:SetOpenList()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterData.SetOpenList = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function MainLobbyCenterData:SetOpenList()
   self._openList = {}
   if self._allList and next(self._allList) then
-    for key,value in pairs(self._allList) do
+    for key, value in pairs(self._allList) do
       if value:CheckOpen() then
-        (table.insert)(self._openList, value)
+        table.insert(self._openList, value)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterData.GetOpenList = function(self)
-  -- function num : 0_18
+function MainLobbyCenterData:GetOpenList()
   return self._openList
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterData.CheckRed = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function MainLobbyCenterData:CheckRed()
   local redCount = 0
   if self._openList and next(self._openList) then
-    for key,value in pairs(self._openList) do
+    for key, value in pairs(self._openList) do
       local redNum = value:CheckRed()
       redCount = redCount + redNum
     end
   end
-  do
-    return redCount
-  end
+  return redCount
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterData.CheckNew = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function MainLobbyCenterData:CheckNew()
   local newCount = 0
   if self._openList and next(self._openList) then
-    for key,value in pairs(self._openList) do
+    for key, value in pairs(self._openList) do
       local newNum = value:CheckNew()
       newCount = newCount + newNum
     end
   end
-  do
-    return newCount
-  end
+  return newCount
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterData.FixedTime = function(beginTime, endTime)
-  -- function num : 0_21 , upvalues : _ENV
+function MainLobbyCenterData.FixedTime(beginTime, endTime)
   if beginTime == nil or endTime == nil then
-    (Log.exception)("###[MainLobbyCenterData] CheckOpen time = nil", (debug.traceback)())
+    Log.exception("###[MainLobbyCenterData] CheckOpen time = nil", debug.traceback())
     return false
   end
-  local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local beginTime = loginModule:GetTimeStampByTimeStr(beginTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
   local endTime = loginModule:GetTimeStampByTimeStr(endTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  if beginTime <= curTime and curTime < endTime then
+  if curTime >= beginTime and curTime < endTime then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterData.ServerTime = function(beginTime, endTime)
-  -- function num : 0_22 , upvalues : _ENV
+function MainLobbyCenterData.ServerTime(beginTime, endTime)
   if beginTime == nil or endTime == nil then
-    (Log.exception)("###[MainLobbyCenterData] CheckOpen time = nil", (debug.traceback)())
+    Log.exception("###[MainLobbyCenterData] CheckOpen time = nil", debug.traceback())
     return false
   end
-  local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local beginTime = loginModule:GetTimeStampByTimeStr(beginTime, Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone)
   local endTime = loginModule:GetTimeStampByTimeStr(endTime, Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone)
-  if beginTime <= curTime and curTime < endTime then
+  if curTime >= beginTime and curTime < endTime then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterData.Sample = function(campType, campID)
-  -- function num : 0_23 , upvalues : _ENV
-  local svrTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
-  local campModule = ((GameGlobal.GetModule)(CampaignModule))
-  local sampleInfo = nil
+function MainLobbyCenterData.Sample(campType, campID)
+  local svrTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
+  local campModule = GameGlobal.GetModule(CampaignModule)
+  local sampleInfo
   if campID then
     sampleInfo = campModule:GetReviewCampaignSampleByCampaignId(campID)
   else
@@ -317,90 +220,68 @@ MainLobbyCenterData.Sample = function(campType, campID)
   return sampleInfo and sampleInfo:IsShow(svrTime) or false
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterData.SampleHide = function(campType, campID)
-  -- function num : 0_24 , upvalues : _ENV
-  local campModule = ((GameGlobal.GetModule)(CampaignModule))
-  -- DECOMPILER ERROR at PC4: Overwrote pending register: R3 in 'AssignReg'
-
-  local sampleInfo = .end
+function MainLobbyCenterData.SampleHide(campType, campID)
+  local campModule = GameGlobal.GetModule(CampaignModule)
+  local sampleInfo
   if campID then
     sampleInfo = campModule:GetReviewCampaignSampleByCampaignId(campID)
   else
     sampleInfo = campModule:GetSampleByType(campType)
   end
-  local hide = sampleInfo and sampleInfo:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_HIDE)
-  do return hide end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local hide = not sampleInfo or sampleInfo:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_HIDE)
+  return hide
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterData.Channel = function(campType, campID)
-  -- function num : 0_25 , upvalues : _ENV
+function MainLobbyCenterData.Channel(campType, campID)
   if EDITOR then
     return true
   end
-  local current_channel_id = (((GCloud.MSDK).MSDKTools).GetConfigChannel)()
-  ;
-  (Log.info)("###[MainLobbyCenterData.Channel] CheckChannelOpen channel:", current_channel_id)
-  local cfg_msdk_channel = (Cfg.cfg_msdk_channel)[current_channel_id]
-  local campModule = ((GameGlobal.GetModule)(CampaignModule))
-  local camp_id = nil
+  local current_channel_id = GCloud.MSDK.MSDKTools.GetConfigChannel()
+  Log.info("###[MainLobbyCenterData.Channel] CheckChannelOpen channel:", current_channel_id)
+  local cfg_msdk_channel = Cfg.cfg_msdk_channel[current_channel_id]
+  local campModule = GameGlobal.GetModule(CampaignModule)
+  local camp_id
   if campID then
     camp_id = campID
   else
     local sampleInfo = campModule:GetSampleByType(campType)
     camp_id = sampleInfo.id
   end
-  do
-    do
-      if cfg_msdk_channel then
-        local openlist = cfg_msdk_channel.ChannelActivityOpenList
-        if openlist and (table.icontains)(openlist, camp_id) then
-          return true
-        end
-      end
-      return false
+  if cfg_msdk_channel then
+    local openlist = cfg_msdk_channel.ChannelActivityOpenList
+    if openlist and table.icontains(openlist, camp_id) then
+      return true
     end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterData.Author = function(campType, campID)
-  -- function num : 0_26 , upvalues : _ENV
+function MainLobbyCenterData.Author(campType, campID)
   if EDITOR then
     return true
   end
-  local info = ((GameGlobal.GameLogic)()).ClientInfo
+  local info = GameGlobal.GameLogic().ClientInfo
   local source = info.m_login_source
-  ;
-  (Log.debug)("###[MainLobbyCenterData] source:", source)
+  Log.debug("###[MainLobbyCenterData] source:", source)
   if not source then
     return false
   end
-  local cfg = (Cfg.cfg_activity_author)[source]
+  local cfg = Cfg.cfg_activity_author[source]
   if not cfg then
-    (Log.error)("###[MainLobbyCenterData] cfg_activity_author is nil !")
+    Log.error("###[MainLobbyCenterData] cfg_activity_author is nil !")
     return false
   end
   local openlist = cfg.AuthorActivityOpenList
-  local campModule = ((GameGlobal.GetModule)(CampaignModule))
-  local camp_id = nil
+  local campModule = GameGlobal.GetModule(CampaignModule)
+  local camp_id
   if campID then
     camp_id = campID
   else
     local sampleInfo = campModule:GetSampleByType(campType)
     camp_id = sampleInfo.id
   end
-  do
-    if openlist and (table.icontains)(openlist, camp_id) then
-      return true
-    end
-    return false
+  if openlist and table.icontains(openlist, camp_id) then
+    return true
   end
+  return false
 end
-
-

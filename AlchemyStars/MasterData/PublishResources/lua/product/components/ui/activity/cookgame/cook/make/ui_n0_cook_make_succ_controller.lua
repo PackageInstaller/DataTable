@@ -1,97 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cookgame/cook/make/ui_n0_cook_make_succ_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN0CookMakeSuccController", UIController)
 UIN0CookMakeSuccController = UIN0CookMakeSuccController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN0CookMakeSuccController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIN0CookMakeSuccController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeSuccController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN0CookMakeSuccController:OnShow(uiParams)
   self:InitWidget()
   self._dataId = uiParams[1]
   self._afterStoryId = uiParams[2]
-  self._foodCfg = (Cfg.cfg_component_newyear_dinner_food)[self._dataId]
+  self._foodCfg = Cfg.cfg_component_newyear_dinner_food[self._dataId]
   if not self._foodCfg then
-    (Log.error)("UIN0CookMakeSuccController error , cfg_component_newyear_dinner_food can not find id : " .. self._dataId)
-    return 
+    Log.error("UIN0CookMakeSuccController error , cfg_component_newyear_dinner_food can not find id : " .. self._dataId)
+    return
   end
-  self._foodId = (self._foodCfg).FoodID
-  ;
-  (self.title):SetText((StringTable.Get)((self._foodCfg).Name))
-  ;
-  (self.icon):LoadImage((self._foodCfg).BigTu)
-  self:InitReward((self._foodCfg).Reward)
+  self._foodId = self._foodCfg.FoodID
+  self.title:SetText(StringTable.Get(self._foodCfg.Name))
+  self.icon:LoadImage(self._foodCfg.BigTu)
+  self:InitReward(self._foodCfg.Reward)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeSuccController.InitReward = function(self, rewards)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN0CookMakeSuccController:InitReward(rewards)
   local len = #rewards
-  local items = (self.list):SpawnObjects("UIN0CookRewardItem", len)
-  for k,v in ipairs(items) do
+  local items = self.list:SpawnObjects("UIN0CookRewardItem", len)
+  for k, v in ipairs(items) do
     local rewardData = rewards[k]
     local tplId = rewardData[1]
     local num = rewardData[2]
     v:SetData(tplId, num, function(id, pos)
-    -- function num : 0_2_0 , upvalues : self
-    self:OnItemClicked(id, pos)
-  end
-)
+      self:OnItemClicked(id, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeSuccController.InitWidget = function(self)
-  -- function num : 0_3
+function UIN0CookMakeSuccController:InitWidget()
   self.list = self:GetUIComponent("UISelectObjectPath", "list")
   self.title = self:GetUIComponent("UILocalizationText", "title")
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self._itemInfo = self:GetUIComponent("UISelectObjectPath", "itemInfo")
-  self._selectInfo = (self._itemInfo):SpawnObject("UISelectInfo")
+  self._selectInfo = self._itemInfo:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeSuccController.OnItemClicked = function(self, matid, pos)
-  -- function num : 0_4
-  (self._selectInfo):SetData(matid, pos)
+function UIN0CookMakeSuccController:OnItemClicked(matid, pos)
+  self._selectInfo:SetData(matid, pos)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeSuccController.MaskOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN0CookMakeSuccController:MaskOnClick(go)
   self:CloseDialog()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN0CookMakeSucc)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN0CookMakeSucc)
   self:ChecAfterStory()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMakeSuccController.ChecAfterStory = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN0CookMakeSuccController:ChecAfterStory()
   if not self._afterStoryId then
-    return 
+    return
   end
   local key = "CookGameAfterStory_" .. self._foodId
-  if (UIN0CookData.HasKey)(key) then
-    return 
+  if UIN0CookData.HasKey(key) then
+    return
   end
-  ;
-  (UIN0CookData.SetKey)(key)
+  UIN0CookData.SetKey(key)
   self:ShowDialog("UIStoryController", self._afterStoryId)
 end
-
-

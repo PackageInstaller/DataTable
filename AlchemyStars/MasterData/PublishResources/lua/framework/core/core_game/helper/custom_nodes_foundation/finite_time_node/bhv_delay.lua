@@ -1,45 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/custom_nodes_foundation/finite_time_node/bhv_delay.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("abstract_bhv_finite_time")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-CustomNodeConfigStatic.Check_DelayBhv = function(cfg)
-  -- function num : 0_0
+function CustomNodeConfigStatic.Check_DelayBhv(cfg)
   if cfg.TimeLen then
     return true
   end
   return false
 end
 
-;
-(CustomNodeConfigStatic.AddChecker)("DelayBhv", CustomNodeConfigStatic.Check_DelayBhv)
+CustomNodeConfigStatic.AddChecker("DelayBhv", CustomNodeConfigStatic.Check_DelayBhv)
 _class("DelayBhv", FiniteTimeBhv)
 DelayBhv = DelayBhv
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-DelayBhv.Constructor = function(self)
-  -- function num : 0_1
+function DelayBhv:Constructor()
   self.delayTime = 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DelayBhv.InitializeNode = function(self, cfg, context)
-  -- function num : 0_2 , upvalues : _ENV
-  ((DelayBhv.super).InitializeNode)(self, cfg, context)
+function DelayBhv:InitializeNode(cfg, context)
+  DelayBhv.super.InitializeNode(self, cfg, context)
   self.delayTime = self:Parse(cfg.TimeLen)
   self:InitDuration(self.delayTime)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DelayBhv.Reset = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((DelayBhv.super).Reset)(self)
+function DelayBhv:Reset()
+  DelayBhv.super.Reset(self)
   self:InitDuration(self.delayTime)
 end
-
-

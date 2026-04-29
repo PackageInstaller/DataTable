@@ -1,32 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_add_trap_exist.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddTrapExist", BuffViewBase)
 BuffViewAddTrapExist = BuffViewAddTrapExist
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddTrapExist.PlayView = function(self, TT, notify)
-  -- function num : 0_0
+function BuffViewAddTrapExist:PlayView(TT, notify)
   local result = self._buffResult
-  local trapRenderSvc = (self._world):GetService("TrapRender")
+  local trapRenderSvc = self._world:GetService("TrapRender")
   local entity = self._entity
   local isForceFull = result:IsForceFull()
   trapRenderSvc:UpdateTrapExistShow(entity, isForceFull)
   local ignoreNextEffectUpdate = result:IgnoreNextEffectUpdate()
-  do
-    if ignoreNextEffectUpdate then
-      local roundRenderCmpt = entity:TrapRoundInfoRender()
-      if roundRenderCmpt then
-        roundRenderCmpt:SetEffectID(nil)
-      end
-    end
-    if result:IsDestroy() then
-      local trapServiceRender = (self._world):GetService("TrapRender")
-      trapServiceRender:PlayTrapDieSkill(TT, {entity})
+  if ignoreNextEffectUpdate then
+    local roundRenderCmpt = entity:TrapRoundInfoRender()
+    if roundRenderCmpt then
+      roundRenderCmpt:SetEffectID(nil)
     end
   end
+  if result:IsDestroy() then
+    local trapServiceRender = self._world:GetService("TrapRender")
+    trapServiceRender:PlayTrapDieSkill(TT, {entity})
+  end
 end
-
-

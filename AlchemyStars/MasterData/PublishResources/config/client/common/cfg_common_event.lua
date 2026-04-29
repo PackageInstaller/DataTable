@@ -1,11 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/common/cfg_common_event.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Type = 2, DateTimeBegin = 3, DateTimeEnd = 4}
+local key = {
+  ID = 1,
+  Type = 2,
+  DateTimeBegin = 3,
+  DateTimeEnd = 4
+}
 local config = {
-[1000001] = {1000001, 1, "2022-10-07 5:00:00", "2022-10-27 10:00:00"}
+  [1000001] = {
+    1000001,
+    1,
+    "2022-10-07 5:00:00",
+    "2022-10-27 10:00:00"
+  }
 }
 return config, "ID", key
-

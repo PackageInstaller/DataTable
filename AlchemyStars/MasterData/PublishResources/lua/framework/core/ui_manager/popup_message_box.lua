@@ -1,18 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/popup_message_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local PopupMsgBoxType = {Ok = "Ok", OkCancel = "OkCancel", OkCancelClose = "OkCancelClose", OkClose = "OkClose"}
+local PopupMsgBoxType = {
+  Ok = "Ok",
+  OkCancel = "OkCancel",
+  OkCancelClose = "OkCancelClose",
+  OkClose = "OkClose"
+}
 _enum("PopupMsgBoxType", PopupMsgBoxType)
 _class("UIMessageBox", Object)
 UIMessageBox = UIMessageBox
 local TABLE_CLEAR = table.clear
 local SHALLOW_COPY = table.shallowcopy
--- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
 
-UIMessageBox.Constructor = function(self)
-  -- function num : 0_0
+function UIMessageBox:Constructor()
   self.bShow = false
   self.view = nil
   self.name = nil
@@ -23,245 +21,167 @@ UIMessageBox.Constructor = function(self)
   self.type2ComponentTable = {}
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.Dispose = function(self)
-  -- function num : 0_1
+function UIMessageBox:Dispose()
   self.key2CustomWidgetPools = nil
   self.gameobject = nil
   self.name2Gameobjects = nil
   self.type2ComponentTable = nil
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.GetName = function(self)
-  -- function num : 0_2
+function UIMessageBox:GetName()
   return self.name
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.SetName = function(self, name)
-  -- function num : 0_3
+function UIMessageBox:SetName(name)
   self.name = name
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.Alert = function(self, popup, params)
-  -- function num : 0_4
+function UIMessageBox:Alert(popup, params)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.OnShow = function(self)
-  -- function num : 0_5
+function UIMessageBox:OnShow()
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.OnHide = function(self)
-  -- function num : 0_6
+function UIMessageBox:OnHide()
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.ClearCallback = function(self)
-  -- function num : 0_7
+function UIMessageBox:ClearCallback()
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.GetGameObject = function(self, name)
-  -- function num : 0_8 , upvalues : _ENV
+function UIMessageBox:GetGameObject(name)
   if not name then
     if self.gameobject == nil then
-      self.gameobject = (self.view):GetGameObject()
+      self.gameobject = self.view:GetGameObject()
     end
     return self.gameobject
   else
-    local obj = (self.name2Gameobjects)[name]
+    local obj = self.name2Gameobjects[name]
     if obj then
       return obj
     end
     local view = self.view
-    do
-      if view then
-        local target = view:GetGameObject(name)
-        -- DECOMPILER ERROR at PC26: Confused about usage of register: R5 in 'UnsetPending'
-
-        if target then
-          (self.name2Gameobjects)[name] = target
-          return target
-        end
+    if view then
+      local target = view:GetGameObject(name)
+      if target then
+        self.name2Gameobjects[name] = target
+        return target
       end
-      ;
-      (Log.fatal)("UIMessageBox", self:GetName(), " GetGameObject ->", name, "<- is Null !")
-      do return nil end
     end
+    Log.fatal("UIMessageBox", self:GetName(), " GetGameObject ->", name, "<- is Null !")
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.GetUIComponent = function(self, componentTypeName, name)
-  -- function num : 0_9 , upvalues : _ENV
+function UIMessageBox:GetUIComponent(componentTypeName, name)
   if componentTypeName == "UISelectObjectPath" then
-    local uiCustomWidgetPool = (self.key2CustomWidgetPools)[name]
+    local uiCustomWidgetPool = self.key2CustomWidgetPools[name]
     if uiCustomWidgetPool then
       return uiCustomWidgetPool
     end
     local view = self.view
-    do
-      do
-        if view then
-          local dynamicInfoOfEngine = view:GetUIComponent(componentTypeName, name)
-          if dynamicInfoOfEngine then
-            uiCustomWidgetPool = UICustomWidgetPool:New(self, dynamicInfoOfEngine)
-            -- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
-
-            ;
-            (self.key2CustomWidgetPools)[name] = uiCustomWidgetPool
-            return uiCustomWidgetPool
-          end
-        end
-        ;
-        (Log.fatal)("UIMessageBox", self.name, " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
-        do return nil end
-        local name2Component = (self.type2ComponentTable)[componentTypeName]
-        do
-          if name2Component then
-            local component = name2Component[name]
-            if component then
-              return component
-            end
-          end
-          local view = self.view
-          do
-            if view then
-              local target = view:GetUIComponent(componentTypeName, name)
-              -- DECOMPILER ERROR at PC59: Confused about usage of register: R6 in 'UnsetPending'
-
-              if target then
-                if name2Component == nil then
-                  (self.type2ComponentTable)[componentTypeName] = {}
-                  name2Component = (self.type2ComponentTable)[componentTypeName]
-                end
-                name2Component[name] = target
-                return target
-              end
-            end
-            ;
-            (Log.fatal)("UIMessageBox ", self:GetName(), " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
-            do return nil end
-          end
-        end
+    if view then
+      local dynamicInfoOfEngine = view:GetUIComponent(componentTypeName, name)
+      if dynamicInfoOfEngine then
+        uiCustomWidgetPool = UICustomWidgetPool:New(self, dynamicInfoOfEngine)
+        self.key2CustomWidgetPools[name] = uiCustomWidgetPool
+        return uiCustomWidgetPool
       end
     end
+    Log.fatal("UIMessageBox", self.name, " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
+    return nil
+  else
+    local name2Component = self.type2ComponentTable[componentTypeName]
+    if name2Component then
+      local component = name2Component[name]
+      if component then
+        return component
+      end
+    end
+    local view = self.view
+    if view then
+      local target = view:GetUIComponent(componentTypeName, name)
+      if target then
+        if name2Component == nil then
+          self.type2ComponentTable[componentTypeName] = {}
+          name2Component = self.type2ComponentTable[componentTypeName]
+        end
+        name2Component[name] = target
+        return target
+      end
+    end
+    Log.fatal("UIMessageBox ", self:GetName(), " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.GetCallBack = function(self, popup, btnCallback, param)
-  -- function num : 0_10 , upvalues : _ENV
+function UIMessageBox:GetCallBack(popup, btnCallback, param)
   return function()
-    -- function num : 0_10_0 , upvalues : self, btnCallback, param, _ENV, popup
     self:SetShow(false)
     if btnCallback then
       btnCallback(param)
     end
-    ;
-    (Log.debug)("[UIPopup] UIMessageBox:GetCallBack request ClosePopup")
-    ;
-    ((GameGlobal.UIStateManager)()):ClosePopup(popup)
+    Log.debug("[UIPopup] UIMessageBox:GetCallBack request ClosePopup")
+    GameGlobal.UIStateManager():ClosePopup(popup)
   end
-
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.Load = function(self, view, resRequest)
-  -- function num : 0_11 , upvalues : _ENV
+function UIMessageBox:Load(view, resRequest)
   self.view = view
   self.luaView = LuaUIView:New()
   self.resRequest = resRequest
   self:Show()
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.Show = function(self)
-  -- function num : 0_12
+function UIMessageBox:Show()
   if self.view then
-    (self.view):SetShow(true, self)
+    self.view:SetShow(true, self)
   end
   if self.luaView then
-    (self.luaView):SetShow(true, self)
+    self.luaView:SetShow(true, self)
   end
   self:OnShow()
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.Hide = function(self)
-  -- function num : 0_13
+function UIMessageBox:Hide()
   self:OnHide()
   local view = self.view
   if view then
     view:SetShow(false, nil)
   end
   if self.luaView then
-    (self.luaView):SetShow(false, nil)
+    self.luaView:SetShow(false, nil)
   end
   self:DisposeCustomWidgets()
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.UnLoad = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIMessageBox:UnLoad()
   self:Hide()
   local resRequest = self.resRequest
   if resRequest then
-    (UIResourceManager.DisposeView)(resRequest)
+    UIResourceManager.DisposeView(resRequest)
   end
   self.resRequest = nil
   self.view = nil
-  ;
-  (self.luaView):Dispose()
+  self.luaView:Dispose()
   self.luaView = nil
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.SetShow = function(self, bShow)
-  -- function num : 0_15 , upvalues : _ENV
+function UIMessageBox:SetShow(bShow)
   if self.bShow == bShow then
-    return 
+    return
   end
   self.bShow = bShow
-  ;
-  (UIHelper.SetActiveRecursively)(self:GetGameObject(), bShow)
+  UIHelper.SetActiveRecursively(self:GetGameObject(), bShow)
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.DisposeCustomWidgets = function(self)
-  -- function num : 0_16 , upvalues : SHALLOW_COPY, _ENV, TABLE_CLEAR
+function UIMessageBox:DisposeCustomWidgets()
   local key2CustomWidgetPools = SHALLOW_COPY(self.key2CustomWidgetPools)
-  for k,v in pairs(key2CustomWidgetPools) do
+  for k, v in pairs(key2CustomWidgetPools) do
     v:Dispose()
   end
   TABLE_CLEAR(self.key2CustomWidgetPools)
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R3 in 'UnsetPending'
-
-UIMessageBox.AddUIEvent = function(self, uiEventType, widget, name)
-  -- function num : 0_17
-  (self.luaView):AddUIEvent(uiEventType, widget, name)
+function UIMessageBox:AddUIEvent(uiEventType, widget, name)
+  self.luaView:AddUIEvent(uiEventType, widget, name)
 end
-
-

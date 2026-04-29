@@ -1,63 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_common/ui_currency_menu.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICurrencyMenu", UICustomWidget)
 UICurrencyMenu = UICurrencyMenu
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICurrencyMenu.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICurrencyMenu:Constructor()
   self.SortCurrencyId = {}
-  local count = (table.count)((Cfg.cfg_top_tips)({}))
-  for id,cfg in pairs((Cfg.cfg_top_tips)({})) do
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self.SortCurrencyId)[id] = cfg.Sort
+  local count = table.count(Cfg.cfg_top_tips({}))
+  for id, cfg in pairs(Cfg.cfg_top_tips({})) do
+    self.SortCurrencyId[id] = cfg.Sort
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICurrencyMenu:OnShow()
   self:AttachEvent(GameEventType.ShowHideTSFBtn, self.ShowHideTSFBtn)
   self:AttachEvent(GameEventType.ShowHideLimitedTimeRechargeBtn, self.ShowHideLimitedTimeRechargeBtn)
   self._topTips = self:GetUIComponent("UISelectObjectPath", "toptips")
-  self._topTipsInfo = (self._topTips):SpawnObject("UITopTipsContext")
+  self._topTipsInfo = self._topTips:SpawnObject("UITopTipsContext")
   self._panel = self:GetUIComponent("UISelectObjectPath", "panel")
   self._btnZJJSF = self:GetUIComponent("Button", "btnZJJSF")
   self._btnTSF = self:GetUIComponent("Button", "btnTSF")
-  ;
-  ((self._btnZJJSF).gameObject):SetActive(false)
-  ;
-  ((self._btnTSF).gameObject):SetActive(false)
+  self._btnZJJSF.gameObject:SetActive(false)
+  self._btnTSF.gameObject:SetActive(false)
   self._btnLimitedTimeRechargeGO = self:GetGameObject("BtnLimitedTimeRecharge")
-  ;
-  (self._btnLimitedTimeRechargeGO):SetActive(false)
+  self._btnLimitedTimeRechargeGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICurrencyMenu:OnHide()
   self:DetachEvent(GameEventType.ShowHideTSFBtn, self.ShowHideTSFBtn)
   self:DetachEvent(GameEventType.ShowHideLimitedTimeRechargeBtn, self.ShowHideLimitedTimeRechargeBtn)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu.GetItems = function(self)
-  -- function num : 0_3
+function UICurrencyMenu:GetItems()
   return self.items
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu.GetItemByTypeId = function(self, typeId)
-  -- function num : 0_4 , upvalues : _ENV
-  for index,item in ipairs(self.items) do
+function UICurrencyMenu:GetItemByTypeId(typeId)
+  for index, item in ipairs(self.items) do
     if item:GetTypeId() == typeId then
       return item
     end
@@ -65,116 +41,77 @@ UICurrencyMenu.GetItemByTypeId = function(self, typeId)
   return nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu.SetData = function(self, typeIds, hideAddBtn)
-  -- function num : 0_5 , upvalues : _ENV
+function UICurrencyMenu:SetData(typeIds, hideAddBtn)
   if not typeIds then
-    return 
+    return
   end
-  ;
-  (table.sort)(typeIds, function(a, b)
-    -- function num : 0_5_0 , upvalues : self
-    do return (self.SortCurrencyId)[a] < (self.SortCurrencyId)[b] end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(typeIds, function(a, b)
+    return self.SortCurrencyId[a] < self.SortCurrencyId[b]
+  end)
   local count = #typeIds
-  ;
-  (self._panel):SpawnObjects("UICurrencyItem", count)
-  self.items = (self._panel):GetAllSpawnList()
+  self._panel:SpawnObjects("UICurrencyItem", count)
+  self.items = self._panel:GetAllSpawnList()
   local index = 1
-  for key,item in pairs(self.items) do
+  for key, item in pairs(self.items) do
     local roleAssetId = typeIds[index]
     item:SetData(roleAssetId, function(id, go)
-    -- function num : 0_5_1 , upvalues : self
-    (self._topTipsInfo):SetData(id, go)
-  end
-, hideAddBtn)
+      self._topTipsInfo:SetData(id, go)
+    end, hideAddBtn)
     if roleAssetId == RoleAssetID.RoleAssetPhyPoint then
       item:SetAddCallBack(function()
-    -- function num : 0_5_2 , upvalues : self
-    self:ShowDialog("UIGetPhyPointController")
-  end
-)
+        self:ShowDialog("UIGetPhyPointController")
+      end)
     end
     index = index + 1
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu.ShowHideTSFBtn = function(self, isShow)
-  -- function num : 0_6 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UICurrencyMenu:ShowHideTSFBtn(isShow)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local isJapanZone = roleModule:IsJapanZone()
   if isJapanZone then
-    ((self._btnZJJSF).gameObject):SetActive(isShow)
-    ;
-    ((self._btnTSF).gameObject):SetActive(isShow)
+    self._btnZJJSF.gameObject:SetActive(isShow)
+    self._btnTSF.gameObject:SetActive(isShow)
   else
-    ;
-    ((self._btnZJJSF).gameObject):SetActive(false)
-    ;
-    ((self._btnTSF).gameObject):SetActive(false)
+    self._btnZJJSF.gameObject:SetActive(false)
+    self._btnTSF.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu.btnZJJSFOnClick = function(self)
-  -- function num : 0_7
+function UICurrencyMenu:btnZJJSFOnClick()
   self:ShowDialog("UIPayLawContentController", 2)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu.btnTSFOnClick = function(self)
-  -- function num : 0_8
+function UICurrencyMenu:btnTSFOnClick()
   self:ShowDialog("UIPayLawContentController", 1)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu.ShowHideLimitedTimeRechargeBtn = function(self, isShow)
-  -- function num : 0_9 , upvalues : _ENV
-  local open = (self:GetUIModule(SignInModule)):CheckEventOpen(CommonEventType.LimitedTimeRecharge)
-  local show = not open or isShow
-  ;
-  (self._btnLimitedTimeRechargeGO):SetActive(show)
+function UICurrencyMenu:ShowHideLimitedTimeRechargeBtn(isShow)
+  local open = self:GetUIModule(SignInModule):CheckEventOpen(CommonEventType.LimitedTimeRecharge)
+  local show = open and isShow
+  self._btnLimitedTimeRechargeGO:SetActive(show)
   if show then
     self._newLimitedTimeRechargeGO = self:GetGameObject("NewLimitedTimeRecharge")
-    local localDbKey = "LimitedTimeRechargeRead" .. (self:GetModule(RoleModule)):GetPstId()
-    ;
-    (self._newLimitedTimeRechargeGO):SetActive(not (LocalDB.HasKey)(localDbKey))
+    local localDbKey = "LimitedTimeRechargeRead" .. self:GetModule(RoleModule):GetPstId()
+    self._newLimitedTimeRechargeGO:SetActive(not LocalDB.HasKey(localDbKey))
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu.BtnLimitedTimeRechargeOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UICurrencyMenu:BtnLimitedTimeRechargeOnClick()
   self:ShowDialog("UIPayLawContentController", 3)
-  local localDbKey = "LimitedTimeRechargeRead" .. (self:GetModule(RoleModule)):GetPstId()
-  ;
-  (LocalDB.SetInt)(localDbKey, 1)
-  ;
-  (self._newLimitedTimeRechargeGO):SetActive(false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopNew)
+  local localDbKey = "LimitedTimeRechargeRead" .. self:GetModule(RoleModule):GetPstId()
+  LocalDB.SetInt(localDbKey, 1)
+  self._newLimitedTimeRechargeGO:SetActive(false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopNew)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu.OnOpenShop = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local open = (self:GetUIModule(SignInModule)):CheckEventOpen(CommonEventType.LimitedTimeRecharge)
-  local localDbKey = "LimitedTimeRechargeRead" .. (self:GetModule(RoleModule)):GetPstId()
-  if open and not (LocalDB.HasKey)(localDbKey) then
+function UICurrencyMenu:OnOpenShop()
+  local open = self:GetUIModule(SignInModule):CheckEventOpen(CommonEventType.LimitedTimeRecharge)
+  local localDbKey = "LimitedTimeRechargeRead" .. self:GetModule(RoleModule):GetPstId()
+  if open and not LocalDB.HasKey(localDbKey) then
     self:BtnLimitedTimeRechargeOnClick()
   end
 end
 
 local CurrenyTypeId = {StarPoint = 1001, Hp = 2001}
 _enum("CurrenyTypeId", CurrenyTypeId)
-

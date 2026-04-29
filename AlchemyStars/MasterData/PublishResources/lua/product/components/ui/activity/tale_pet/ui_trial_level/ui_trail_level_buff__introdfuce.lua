@@ -1,42 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_trial_level/ui_trail_level_buff__introdfuce.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITrailLevelBuffIntroduce", UIController)
 UITrailLevelBuffIntroduce = UITrailLevelBuffIntroduce
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITrailLevelBuffIntroduce.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UITrailLevelBuffIntroduce:OnShow(uiParams)
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._buffLevel = uiParams[1]
-  local cfg = (Cfg.cfg_trail_level_buff_level)[self._buffLevel]
+  local cfg = Cfg.cfg_trail_level_buff_level[self._buffLevel]
   if not cfg then
-    return 
+    return
   end
-  ;
-  (self._icon):LoadImage(cfg.BuffIcon)
+  self._icon:LoadImage(cfg.BuffIcon)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffIntroduce.MaskOnClick = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UITrailLevelBuffIntroduce:MaskOnClick()
   self:Lock("UITrailLevelBuffIntroduce_MaskOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.Close, self)
+  GameGlobal.TaskManager():StartTask(self.Close, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffIntroduce.Close = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function UITrailLevelBuffIntroduce:Close(TT)
   local anim = self:GetUIComponent("Animation", "Anim")
   anim:Play("uieff_yiTrailLevelBuffIntroduce_out")
   YIELD(TT, 500)
   self:CloseDialog()
   self:UnLock("UITrailLevelBuffIntroduce_MaskOnClick")
 end
-
-

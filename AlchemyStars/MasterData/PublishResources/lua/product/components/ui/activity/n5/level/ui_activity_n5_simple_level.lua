@@ -1,146 +1,157 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/level/ui_activity_n5_simple_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN5SimpleLevel", UIController)
 UIActivityN5SimpleLevel = UIActivityN5SimpleLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN5SimpleLevel.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN5SimpleLevel:Constructor()
   self._missionModule = self:GetModule(MissionModule)
   self._lineMissionManager = UIActivityN5LineMissionManager:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIActivityN5SimpleLevel:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N5, ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION, ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION_FIXTEAM)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N5, ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION, ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION_FIXTEAM)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if res and res:GetSucc() then
-    self._line_component = (self._campaign):GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION)
-    self._line_info = (self._line_component):GetComponentInfo()
-    local simpleOpenTime = (self._line_info).m_unlock_time
-    local simpleCloseTime = (self._line_info).m_close_time
-    local now = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
-    if now < simpleOpenTime then
+    self._line_component = self._campaign:GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION)
+    self._line_info = self._line_component:GetComponentInfo()
+    local simpleOpenTime = self._line_info.m_unlock_time
+    local simpleCloseTime = self._line_info.m_close_time
+    local now = self:GetModule(SvrTimeModule):GetServerTime() / 1000
+    if simpleOpenTime > now then
       res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
       campaignModule:ShowErrorToast(res.m_result, true)
-      return 
-    else
-      if simpleCloseTime < now then
-        res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
-        campaignModule:ShowErrorToast(res.m_result, true)
-        return 
-      end
+      return
+    elseif simpleCloseTime < now then
+      res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
+      campaignModule:ShowErrorToast(res.m_result, true)
+      return
     end
   end
-  do
-    if res and not res:GetSucc() then
-      campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    end
+  if res and not res:GetSucc() then
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN5SimpleLevel:OnShow(uiParams)
   self._isOpen = true
-  if uiParams and uiParams[1] and (uiParams[1])[2] then
-    self._fromMissionResult = (uiParams[1])[3]
+  if uiParams and uiParams[1] and uiParams[1][2] then
+    self._fromMissionResult = uiParams[1][3]
   end
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
   UIActivityN5SimpleLevel.SLeval = 999
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
   UIActivityN5SimpleLevel.Passed = 888
-  -- DECOMPILER ERROR at PC183: Confused about usage of register: R2 in 'UnsetPending'
-
   UIActivityN5SimpleLevel.NodeCfg = {
-[DiscoveryStageType.FightNormal] = {
-[1] = {normal = "n5_map_normal", press = "n5_map_normal1", lock = "n5_map_normal1", textColor = Color(0 / 255, 0 / 255, 0 / 255), textShadow = Color(0 / 255, 0 / 255, 0 / 255), normalStar = "n5_map_touming", passStar = "n5_map_badge"}
-, 
-[2] = {normal = "n5_map_boss", press = "n5_map_boss1", lock = "n5_map_boss1", textColor = Color(0.85490196078431, 0.85490196078431, 0.85490196078431), textShadow = Color(0.85490196078431, 0.85490196078431, 0.85490196078431), normalStar = "n5_map_touming", passStar = "n5_map_badge"}
-}
-, 
-[DiscoveryStageType.FightBoss] = {
-[1] = {normal = "n5_map_boss", press = "n5_map_boss1", lock = "n5_map_boss1", textColor = Color(0.85490196078431, 0.85490196078431, 0.85490196078431), textShadow = Color(0.85490196078431, 0.85490196078431, 0.85490196078431), normalStar = "n5_map_touming", passStar = "n5_map_badge"}
-, 
-[2] = {normal = "n5_map_boss", press = "n5_map_boss1", lock = "n5_map_boss1", textColor = Color(0.85490196078431, 0.85490196078431, 0.85490196078431), textShadow = Color(0.85490196078431, 0.85490196078431, 0.85490196078431), normalStar = "n5_map_touming", passStar = "n5_map_badge"}
-}
-, 
-[DiscoveryStageType.Plot] = {
-[1] = {normal = "n5_map_plot", press = "n5_map_plot1", lock = "n5_map_plot1", textColor = Color(0 / 255, 0 / 255, 0 / 255), textShadow = Color(0 / 255, 0 / 255, 0 / 255)}
-, 
-[2] = {normal = "n5_map_plot", press = "n5_map_plot1", lock = "n5_map_plot1", textColor = Color(0 / 255, 0 / 255, 0 / 255), textShadow = Color(0 / 255, 0 / 255, 0 / 255)}
-}
-, 
-[UIActivityN5SimpleLevel.SLeval] = {
-[1] = {normal = "n5_map_normal", press = "n5_map_normal1", lock = "n5_map_normal1", textColor = Color(0 / 255, 0 / 255, 0 / 255), textShadow = Color(0 / 255, 0 / 255, 0 / 255), normalStar = "n5_map_touming", passStar = "n5_map_badge"}
-, 
-[2] = {normal = "n5_map_normal", press = "n5_map_normal1", lock = "n5_map_normal1", textColor = Color(0 / 255, 0 / 255, 0 / 255), textShadow = Color(0 / 255, 0 / 255, 0 / 255), normalStar = "n5_map_touming", passStar = "n5_map_badge"}
-}
-}
+    [DiscoveryStageType.FightNormal] = {
+      [1] = {
+        normal = "n5_map_normal",
+        press = "n5_map_normal1",
+        lock = "n5_map_normal1",
+        textColor = Color(0 / 255, 0 / 255, 0 / 255),
+        textShadow = Color(0 / 255, 0 / 255, 0 / 255),
+        normalStar = "n5_map_touming",
+        passStar = "n5_map_badge"
+      },
+      [2] = {
+        normal = "n5_map_boss",
+        press = "n5_map_boss1",
+        lock = "n5_map_boss1",
+        textColor = Color(0.8549019607843137, 0.8549019607843137, 0.8549019607843137),
+        textShadow = Color(0.8549019607843137, 0.8549019607843137, 0.8549019607843137),
+        normalStar = "n5_map_touming",
+        passStar = "n5_map_badge"
+      }
+    },
+    [DiscoveryStageType.FightBoss] = {
+      [1] = {
+        normal = "n5_map_boss",
+        press = "n5_map_boss1",
+        lock = "n5_map_boss1",
+        textColor = Color(0.8549019607843137, 0.8549019607843137, 0.8549019607843137),
+        textShadow = Color(0.8549019607843137, 0.8549019607843137, 0.8549019607843137),
+        normalStar = "n5_map_touming",
+        passStar = "n5_map_badge"
+      },
+      [2] = {
+        normal = "n5_map_boss",
+        press = "n5_map_boss1",
+        lock = "n5_map_boss1",
+        textColor = Color(0.8549019607843137, 0.8549019607843137, 0.8549019607843137),
+        textShadow = Color(0.8549019607843137, 0.8549019607843137, 0.8549019607843137),
+        normalStar = "n5_map_touming",
+        passStar = "n5_map_badge"
+      }
+    },
+    [DiscoveryStageType.Plot] = {
+      [1] = {
+        normal = "n5_map_plot",
+        press = "n5_map_plot1",
+        lock = "n5_map_plot1",
+        textColor = Color(0 / 255, 0 / 255, 0 / 255),
+        textShadow = Color(0 / 255, 0 / 255, 0 / 255)
+      },
+      [2] = {
+        normal = "n5_map_plot",
+        press = "n5_map_plot1",
+        lock = "n5_map_plot1",
+        textColor = Color(0 / 255, 0 / 255, 0 / 255),
+        textShadow = Color(0 / 255, 0 / 255, 0 / 255)
+      }
+    },
+    [UIActivityN5SimpleLevel.SLeval] = {
+      [1] = {
+        normal = "n5_map_normal",
+        press = "n5_map_normal1",
+        lock = "n5_map_normal1",
+        textColor = Color(0 / 255, 0 / 255, 0 / 255),
+        textShadow = Color(0 / 255, 0 / 255, 0 / 255),
+        normalStar = "n5_map_touming",
+        passStar = "n5_map_badge"
+      },
+      [2] = {
+        normal = "n5_map_normal",
+        press = "n5_map_normal1",
+        lock = "n5_map_normal1",
+        textColor = Color(0 / 255, 0 / 255, 0 / 255),
+        textShadow = Color(0 / 255, 0 / 255, 0 / 255),
+        normalStar = "n5_map_touming",
+        passStar = "n5_map_badge"
+      }
+    }
+  }
   self:AttachEvents()
   self:_GetComponents()
-  local componentCfgId = (self._line_component):GetComponentCfgId()
-  ;
-  (self._lineMissionManager):Init(self._line_info, componentCfgId)
-  ;
-  (self._lineMissionManager):Update()
+  local componentCfgId = self._line_component:GetComponentCfgId()
+  self._lineMissionManager:Init(self._line_info, componentCfgId)
+  self._lineMissionManager:Update()
   self:Flush()
   self._enterLockName = "UIActivityN5SimpleLevel_OnShow"
-  self._enterLockTimeEvent = (UIActivityHelper.StartLockEvent)(self._enterLockName, self._enterLockTimeEvent, nil)
+  self._enterLockTimeEvent = UIActivityHelper.StartLockEvent(self._enterLockName, self._enterLockTimeEvent, nil)
   local bgLoader1 = self:GetUIComponent("RawImageLoader", "bg1")
   local bgLoader2 = self:GetUIComponent("RawImageLoader", "bg2")
   local _bgNames = {"n5_map_bg", "n5_map_bg2"}
-  self._scroller = UIActivityN5Scroller:New(self._contentRect, bgLoader1, bgLoader2, _bgNames, (self._lineMissionManager):GetScrollSpliterVec())
-  ;
-  ((self._scrollRect).onValueChanged):AddListener(function()
-    -- function num : 0_2_0 , upvalues : self
-    (self._scroller):OnChange()
-  end
-)
-  ;
-  (CutsceneManager.ExcuteCutsceneOut)()
+  self._scroller = UIActivityN5Scroller:New(self._contentRect, bgLoader1, bgLoader2, _bgNames, self._lineMissionManager:GetScrollSpliterVec())
+  self._scrollRect.onValueChanged:AddListener(function()
+    self._scroller:OnChange()
+  end)
+  CutsceneManager.ExcuteCutsceneOut()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (UIActivityHelper.CancelLockEvent)(self._enterLockName, self._enterLockTimeEvent)
-  ;
-  (UIActivityHelper.CancelLockEvent)(self._moveLockName, self._moveLockTimeEvent)
+function UIActivityN5SimpleLevel:OnHide()
+  UIActivityHelper.CancelLockEvent(self._enterLockName, self._enterLockTimeEvent)
+  UIActivityHelper.CancelLockEvent(self._moveLockName, self._moveLockTimeEvent)
   if self._countdownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._countdownTimer)
+    GameGlobal.Timer():CancelEvent(self._countdownTimer)
     self._countdownTimer = nil
   end
   if self._pointCountdownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._pointCountdownTimer)
+    GameGlobal.Timer():CancelEvent(self._pointCountdownTimer)
     self._pointCountdownTimer = nil
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
   UIActivityN5SimpleLevel.SLeval = nil
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
   UIActivityN5SimpleLevel.NodeCfg = nil
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.Flush = function(self)
-  -- function num : 0_4
+function UIActivityN5SimpleLevel:Flush()
   self:FlushPanel()
   self:FlushNodes()
   self:FlushLines()
@@ -148,37 +159,25 @@ UIActivityN5SimpleLevel.Flush = function(self)
   self:RefreshTryout()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.Dispose = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN5SimpleLevel:Dispose()
   if self._shot then
-    (self._shot):CleanRenderTexture()
+    self._shot:CleanRenderTexture()
     self._shot = nil
   end
-  ;
-  (UIActivityN5SimpleLevel.super):Dispose()
+  UIActivityN5SimpleLevel.super:Dispose()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel._GetComponents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN5SimpleLevel:_GetComponents()
   self._screenShotBg = self:GetUIComponent("RawImage", "ScreenShotBg")
   self._screenShotBgGo = self:GetGameObject("ScreenShotBg")
   self._tmpBgGo = self:GetGameObject("TmpBg")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_6_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:_Close()
-  end
-, nil, function()
-    -- function num : 0_6_1 , upvalues : self, _ENV
+  end, nil, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-)
+  end)
   self._scrollRect = self:GetUIComponent("ScrollRect", "MapContent")
   self._mapContentRect = self:GetUIComponent("RectTransform", "MapContent")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
@@ -191,228 +190,164 @@ UIActivityN5SimpleLevel._GetComponents = function(self)
   self._tryOutTip = self:GetGameObject("UICommonRedPoint")
   self._TryoutButtonGO = self:GetGameObject("TryoutButton")
   self._TryoutButtonCoverImgGo = self:GetGameObject("TryoutButtonCoverImg")
-  self._safeWidth = (((self:GetUIComponent("RectTransform", "SafeArea")).rect).size).x
+  self._safeWidth = self:GetUIComponent("RectTransform", "SafeArea").rect.size.x
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel._Close = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N5CloseDoor)
-  ;
-  (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIActivityN5, function()
-    -- function num : 0_7_0 , upvalues : _ENV, self
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-    campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN5, UIStateType.UIMain, nil, (self._campaign)._id)
-  end
-)
+function UIActivityN5SimpleLevel:_Close()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N5CloseDoor)
+  CutsceneManager.ExcuteCutsceneIn(UIStateType.UIActivityN5, function()
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN5, UIStateType.UIMain, nil, self._campaign._id)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.RefreshCountdown = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN5SimpleLevel:RefreshCountdown()
   self._time = self:GetUIComponent("UILocalizationText", "time")
-  local closeTime = (self._line_info).m_close_time
+  local closeTime = self._line_info.m_close_time
   self._isValid = true
-  local countDown = function()
-    -- function num : 0_8_0 , upvalues : self, _ENV, closeTime
-    local now = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
-    local time = (math.ceil)(closeTime - now)
+  
+  local function countDown()
+    local now = self:GetModule(SvrTimeModule):GetServerTime() / 1000
+    local time = math.ceil(closeTime - now)
     local timeStr = self:_GetRemainTime(time)
-    local showStr = (StringTable.Get)("str_n5_line_mission_ramaining_time", self:_GetRemainTime(time))
+    local showStr = StringTable.Get("str_n5_line_mission_ramaining_time", self:_GetRemainTime(time))
     if self._timeString ~= showStr then
-      (self._time):SetText(showStr)
+      self._time:SetText(showStr)
       self._timeString = showStr
     end
     if time < 0 and self._countdownTimer then
-      ((GameGlobal.Timer)()):CancelEvent(self._countdownTimer)
+      GameGlobal.Timer():CancelEvent(self._countdownTimer)
       self._countdownTimer = nil
       self._isValid = false
     end
   end
-
+  
   countDown()
   if self._countdownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._countdownTimer)
+    GameGlobal.Timer():CancelEvent(self._countdownTimer)
     self._countdownTimer = nil
   end
-  self._countdownTimer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, countDown)
+  self._countdownTimer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, countDown)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel._GetRemainTime = function(self, time)
-  -- function num : 0_9 , upvalues : _ENV
-  local day, hour, minute = nil, nil, nil
-  day = (math.floor)(time / 86400)
-  hour = (math.floor)(time / 3600) % 24
-  minute = (math.floor)(time / 60) % 60
+function UIActivityN5SimpleLevel:_GetRemainTime(time)
+  local day, hour, minute
+  day = math.floor(time / 86400)
+  hour = math.floor(time / 3600) % 24
+  minute = math.floor(time / 60) % 60
   local timestring = ""
-  if day > 0 then
-    timestring = "<color=#E03D22>" .. day .. "</color>" .. (StringTable.Get)("str_activity_common_day") .. "<color=#E03D22>" .. hour .. "</color>" .. (StringTable.Get)("str_activity_common_hour")
+  if 0 < day then
+    timestring = "<color=#E03D22>" .. day .. "</color>" .. StringTable.Get("str_activity_common_day") .. "<color=#E03D22>" .. hour .. "</color>" .. StringTable.Get("str_activity_common_hour")
+  elseif 0 < hour then
+    timestring = "<color=#E03D22>" .. hour .. "</color>" .. StringTable.Get("str_activity_common_hour") .. "<color=#E03D22>" .. minute .. "</color>" .. StringTable.Get("str_activity_common_minute")
+  elseif 0 < minute then
+    timestring = "<color=#E03D22>" .. minute .. "</color>" .. StringTable.Get("str_activity_common_minute")
   else
-    if hour > 0 then
-      timestring = "<color=#E03D22>" .. hour .. "</color>" .. (StringTable.Get)("str_activity_common_hour") .. "<color=#E03D22>" .. minute .. "</color>" .. (StringTable.Get)("str_activity_common_minute")
-    else
-      if minute > 0 then
-        timestring = "<color=#E03D22>" .. minute .. "</color>" .. (StringTable.Get)("str_activity_common_minute")
-      else
-        timestring = (StringTable.Get)("str_activity_common_less_minute")
-      end
-    end
+    timestring = StringTable.Get("str_activity_common_less_minute")
   end
-  return (string.format)((StringTable.Get)("str_activity_common_over"), timestring)
+  return string.format(StringTable.Get("str_activity_common_over"), timestring)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.RefreshTryout = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cmp = (self._campaign):GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION_FIXTEAM)
+function UIActivityN5SimpleLevel:RefreshTryout()
+  local cmp = self._campaign:GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION_FIXTEAM)
   local cmpInfo = cmp:GetComponentInfo()
   local cmpID = cmp:GetComponentCfgId()
   local newConfig = {}
-  local missionCfgs = (Cfg.cfg_component_line_mission)({ComponentID = cmpID})
-  for _,v in ipairs(missionCfgs) do
+  local missionCfgs = Cfg.cfg_component_line_mission({ComponentID = cmpID})
+  for _, v in ipairs(missionCfgs) do
     newConfig[v.CampaignMissionId] = v
   end
-  if not cmpInfo.m_pass_mission_info then
-    local passInfo = {}
+  local passInfo = cmpInfo.m_pass_mission_info or {}
+  
+  function self._isTryoutLevelPass(mid)
+    return passInfo[mid] ~= nil
   end
-  self._isTryoutLevelPass = function(mid)
-    -- function num : 0_10_0 , upvalues : passInfo
-    do return passInfo[mid] ~= nil end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
+  
   local allPass = true
-  for id,value in pairs(newConfig) do
-    if not (self._isTryoutLevelPass)(id) then
+  for id, value in pairs(newConfig) do
+    if not self._isTryoutLevelPass(id) then
       allPass = false
       break
     end
   end
-  do
-    ;
-    (self._tryOutTip):SetActive(not allPass)
-  end
+  self._tryOutTip:SetActive(not allPass)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.FlushPanel = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local totalWidth = (self._lineMissionManager):GetTotalWidth()
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._contentRect).sizeDelta = Vector2(totalWidth, ((self._contentRect).sizeDelta).y)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._contentRect).anchoredPosition = Vector2(self._safeWidth / 2 - totalWidth, 0)
+function UIActivityN5SimpleLevel:FlushPanel()
+  local totalWidth = self._lineMissionManager:GetTotalWidth()
+  self._contentRect.sizeDelta = Vector2(totalWidth, self._contentRect.sizeDelta.y)
+  self._contentRect.anchoredPosition = Vector2(self._safeWidth / 2 - totalWidth, 0)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.FlushNodes = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityN5SimpleLevel:FlushNodes()
   local normalNodeCount, bossNodeCount, plotNodeCount, slevelNodeCount = 0, 0, 0, 0
   local normalNodeIndex, bossNodeIndex, plotNodeIndex, slevelNodeIndex = 1, 1, 1, 1
-  local missionNodes = (self._lineMissionManager):GetNodes()
-  for i,node in pairs(missionNodes) do
+  local missionNodes = self._lineMissionManager:GetNodes()
+  for i, node in pairs(missionNodes) do
     if node.isSLevel then
       slevelNodeCount = slevelNodeCount + 1
+    elseif node.type == DiscoveryStageType.FightNormal then
+      normalNodeCount = normalNodeCount + 1
+    elseif node.type == DiscoveryStageType.FightBoss then
+      bossNodeCount = bossNodeCount + 1
     else
-      if node.type == DiscoveryStageType.FightNormal then
-        normalNodeCount = normalNodeCount + 1
-      else
-        if node.type == DiscoveryStageType.FightBoss then
-          bossNodeCount = bossNodeCount + 1
-        else
-          plotNodeCount = plotNodeCount + 1
-        end
-      end
+      plotNodeCount = plotNodeCount + 1
     end
   end
-  ;
-  (self._normalNodesPool):SpawnObjects("UIActivityN5MissionNode", normalNodeCount)
-  ;
-  (self._bossNodesPool):SpawnObjects("UIActivityN5MissionNode", bossNodeCount)
-  ;
-  (self._plotNodesPool):SpawnObjects("UIActivityN5MissionNode", plotNodeCount)
-  ;
-  (self._slevelNodesPool):SpawnObjects("UIActivityN5MissionNode", slevelNodeCount)
-  local normalNodes = (self._normalNodesPool):GetAllSpawnList()
-  local bossNodes = (self._bossNodesPool):GetAllSpawnList()
-  local plotNodes = (self._plotNodesPool):GetAllSpawnList()
-  local slevelNodes = (self._slevelNodesPool):GetAllSpawnList()
+  self._normalNodesPool:SpawnObjects("UIActivityN5MissionNode", normalNodeCount)
+  self._bossNodesPool:SpawnObjects("UIActivityN5MissionNode", bossNodeCount)
+  self._plotNodesPool:SpawnObjects("UIActivityN5MissionNode", plotNodeCount)
+  self._slevelNodesPool:SpawnObjects("UIActivityN5MissionNode", slevelNodeCount)
+  local normalNodes = self._normalNodesPool:GetAllSpawnList()
+  local bossNodes = self._bossNodesPool:GetAllSpawnList()
+  local plotNodes = self._plotNodesPool:GetAllSpawnList()
+  local slevelNodes = self._slevelNodesPool:GetAllSpawnList()
   self._uiMapNodes = {}
-  for i,node in pairs(missionNodes) do
-    local uiNode = nil
+  for i, node in pairs(missionNodes) do
+    local uiNode
     if node.isSLevel then
       uiNode = slevelNodes[slevelNodeIndex]
       slevelNodeIndex = slevelNodeIndex + 1
+    elseif node.type == DiscoveryStageType.FightNormal then
+      uiNode = normalNodes[normalNodeIndex]
+      normalNodeIndex = normalNodeIndex + 1
+    elseif node.type == DiscoveryStageType.FightBoss then
+      uiNode = bossNodes[bossNodeIndex]
+      bossNodeIndex = bossNodeIndex + 1
     else
-      if node.type == DiscoveryStageType.FightNormal then
-        uiNode = normalNodes[normalNodeIndex]
-        normalNodeIndex = normalNodeIndex + 1
-      else
-        if node.type == DiscoveryStageType.FightBoss then
-          uiNode = bossNodes[bossNodeIndex]
-          bossNodeIndex = bossNodeIndex + 1
-        else
-          uiNode = plotNodes[plotNodeIndex]
-          plotNodeIndex = plotNodeIndex + 1
-        end
-      end
+      uiNode = plotNodes[plotNodeIndex]
+      plotNodeIndex = plotNodeIndex + 1
     end
     uiNode:SetData(node, function(stageId, needScroll, trans)
-    -- function num : 0_12_0 , upvalues : self
-    self:_MoveToStage(stageId, needScroll, trans)
-  end
-, self._fromMissionResult)
-    -- DECOMPILER ERROR at PC109: Confused about usage of register: R20 in 'UnsetPending'
-
-    ;
-    (self._uiMapNodes)[#self._uiMapNodes + 1] = uiNode
+      self:_MoveToStage(stageId, needScroll, trans)
+    end, self._fromMissionResult)
+    self._uiMapNodes[#self._uiMapNodes + 1] = uiNode
   end
   self._fromMissionResult = nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.FlushLines = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local lines = (self._lineMissionManager):GetLines()
-  local len = (table.count)(lines)
+function UIActivityN5SimpleLevel:FlushLines()
+  local lines = self._lineMissionManager:GetLines()
+  local len = table.count(lines)
   if not lines or len <= 0 then
-    return 
+    return
   end
-  ;
-  (self._linesPool):SpawnObjects("UIActivityN5MissionLine", len)
-  local spawnLines = (self._linesPool):GetAllSpawnList()
+  self._linesPool:SpawnObjects("UIActivityN5MissionLine", len)
+  local spawnLines = self._linesPool:GetAllSpawnList()
   local i = 1
-  for k,v in ipairs(lines) do
+  for k, v in ipairs(lines) do
     local sNode = v[1]
     local eNode = v[2]
-    ;
-    (spawnLines[i]):Flush(sNode, eNode, false)
+    spawnLines[i]:Flush(sNode, eNode, false)
     i = i + 1
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.ShotTest = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._shot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
+function UIActivityN5SimpleLevel:ShotTest()
+  self._shot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
   local shotRect = self:GetUIComponent("RectTransform", "screenShot")
-  self._width = (shotRect.rect).width
-  self._height = (shotRect.rect).height
+  self._width = shotRect.rect.width
+  self._height = shotRect.rect.height
   local LeftTop = self:GetGameObject("LeftTop")
   local LeftBottom = self:GetGameObject("LeftBottom")
   local RightTop = self:GetGameObject("RightTop")
@@ -421,249 +356,173 @@ UIActivityN5SimpleLevel.ShotTest = function(self)
   LeftBottom:SetActive(false)
   RightTop:SetActive(false)
   RightBottom:SetActive(false)
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._shot).width = self._width
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._shot).height = self._height
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._shot).blurTimes = 0
-  ;
-  (self._shot):CleanRenderTexture()
-  self._rt = (self._shot):RefreshBlurTexture()
+  self._shot.width = self._width
+  self._shot.height = self._height
+  self._shot.blurTimes = 0
+  self._shot:CleanRenderTexture()
+  self._rt = self._shot:RefreshBlurTexture()
   LeftTop:SetActive(true)
   LeftBottom:SetActive(true)
   RightTop:SetActive(true)
   RightBottom:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel._CalcShotOffset = function(self, trans)
-  -- function num : 0_15 , upvalues : _ENV
-  local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
+function UIActivityN5SimpleLevel:_CalcShotOffset(trans)
+  local camera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
   local screenPos = camera:WorldToScreenPoint(trans.position)
-  return -(Vector2(screenPos.x, screenPos.y) - Vector2((UnityEngine.Screen).width, (UnityEngine.Screen).height) / 2)
+  return -(Vector2(screenPos.x, screenPos.y) - Vector2(UnityEngine.Screen.width, UnityEngine.Screen.height) / 2)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel._MoveToStage = function(self, stageId, needScroll, trans)
-  -- function num : 0_16 , upvalues : _ENV
-  local pos = ((self._lineMissionManager):GetScrollPos(stageId)).x
-  local curPos = ((self._contentRect).anchoredPosition).x
+function UIActivityN5SimpleLevel:_MoveToStage(stageId, needScroll, trans)
+  local pos = self._lineMissionManager:GetScrollPos(stageId).x
+  local curPos = self._contentRect.anchoredPosition.x
   local areaWidth = 408
   local halfScreen = self._safeWidth / 2
-  local targetPos = nil
+  local targetPos
   if needScroll then
     if curPos < pos - (halfScreen - areaWidth) then
       targetPos = pos - (halfScreen - areaWidth)
-    else
-      if pos + (halfScreen - areaWidth) < curPos then
-        targetPos = pos + (halfScreen - areaWidth)
-      end
+    elseif curPos > pos + (halfScreen - areaWidth) then
+      targetPos = pos + (halfScreen - areaWidth)
     end
   end
   if targetPos then
-    (self._scrollRect):StopMovement()
+    self._scrollRect:StopMovement()
     if self._tweener then
-      (self._tweener):Kill()
+      self._tweener:Kill()
     end
     local _moveTime = 0.5
-    self._tweener = (self._contentRect):DOAnchorPosX(targetPos, _moveTime)
+    self._tweener = self._contentRect:DOAnchorPosX(targetPos, _moveTime)
     self._moveLockName = "UIActivityN5SimpleLevel_MoveToStage"
-    self._moveLockTimeEvent = (UIActivityHelper.StartLockEvent)(self._moveLockName, self._moveLockTimeEvent, function()
-    -- function num : 0_16_0 , upvalues : self, stageId, trans
-    self:_EnterStage(stageId, trans)
-  end
-, _moveTime * 1000)
-  else
-    do
+    self._moveLockTimeEvent = UIActivityHelper.StartLockEvent(self._moveLockName, self._moveLockTimeEvent, function()
       self:_EnterStage(stageId, trans)
-    end
+    end, _moveTime * 1000)
+  else
+    self:_EnterStage(stageId, trans)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel._EnterStage = function(self, stageId, trans)
-  -- function num : 0_17 , upvalues : _ENV
-  local nodes = (self._lineMissionManager):GetNodes()
+function UIActivityN5SimpleLevel:_EnterStage(stageId, trans)
+  local nodes = self._lineMissionManager:GetNodes()
   local node = nodes[stageId]
   local stageType = node.type
   if stageType == DiscoveryStageType.Plot then
     self:CloseUIStage()
-    local titleId = (StringTable.Get)(node.title)
-    local titleName = (StringTable.Get)(node.name)
-    local storyId = (self._missionModule):GetStoryByStageIdStoryType(stageId, StoryTriggerType.Node)
+    local titleId = StringTable.Get(node.title)
+    local titleName = StringTable.Get(node.name)
+    local storyId = self._missionModule:GetStoryByStageIdStoryType(stageId, StoryTriggerType.Node)
     self:ShowDialog("UIActivityPlotEnter", titleId, titleName, storyId, function()
-    -- function num : 0_17_0 , upvalues : self, stageId
-    self:PlotEndCallback(stageId)
-  end
-)
+      self:PlotEndCallback(stageId)
+    end)
   else
-    do
-      self:ShotTest()
-      local passInfo = ((self._line_info).m_pass_mission_info)[stageId]
-      local extraCfg = (self._lineMissionManager):GetLineExtraConfig()
-      local scale = extraCfg._Scale
-      local offset = self:_CalcShotOffset(trans)
-      local autoFightShow = self:_CheckSerialAutoFightShow(stageType, stageId)
-      self:ShowDialog("UIActivityN5Stage", stageId, passInfo, self._line_component, self._rt, offset, self._width, self._height, scale, autoFightShow)
-    end
+    self:ShotTest()
+    local passInfo = self._line_info.m_pass_mission_info[stageId]
+    local extraCfg = self._lineMissionManager:GetLineExtraConfig()
+    local scale = extraCfg._Scale
+    local offset = self:_CalcShotOffset(trans)
+    local autoFightShow = self:_CheckSerialAutoFightShow(stageType, stageId)
+    self:ShowDialog("UIActivityN5Stage", stageId, passInfo, self._line_component, self._rt, offset, self._width, self._height, scale, autoFightShow)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel._CheckSerialAutoFightShow = function(self, stageType, stageId)
-  -- function num : 0_18 , upvalues : _ENV
+function UIActivityN5SimpleLevel:_CheckSerialAutoFightShow(stageType, stageId)
   local autoFightShow = false
   if stageType == DiscoveryStageType.Plot then
     autoFightShow = false
   else
-    local missionCfg = (Cfg.cfg_campaign_mission)[stageId]
+    local missionCfg = Cfg.cfg_campaign_mission[stageId]
     if missionCfg then
       local enableParam = missionCfg.EnableSerialAutoFight
       if enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_DISABLE then
         autoFightShow = false
-      else
-        if enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_ENABLE or enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_NEED_UNLOCK then
-          autoFightShow = true
-        end
+      elseif enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_ENABLE or enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_NEED_UNLOCK then
+        autoFightShow = true
       end
     end
   end
-  do
-    return autoFightShow
-  end
+  return autoFightShow
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.ShowSerialRewards = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityN5SimpleLevel:ShowSerialRewards()
   self:ShowDialog("UISerialAutoFightInfo", OpenUISerialFightInfoState.Finished)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.PlotEndCallback = function(self, stageId)
-  -- function num : 0_20 , upvalues : _ENV
-  local isActive = (self._line_component):IsPassCamMissionID(stageId)
+function UIActivityN5SimpleLevel:PlotEndCallback(stageId)
+  local isActive = self._line_component:IsPassCamMissionID(stageId)
   if isActive then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_20_0 , upvalues : self, stageId, _ENV
-    (self._line_component):SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
+    self._line_component:SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
     local res = AsyncRequestRes:New()
-    local award = (self._line_component):HandleCompleteStoryMission(TT, res, stageId)
+    local award = self._line_component:HandleCompleteStoryMission(TT, res, stageId)
     if not res:GetSucc() then
       local campaignModule = self:GetModule(CampaignModule)
-      campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+      campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    elseif table.count(award) ~= 0 then
+      self:ShowDialog("UIGetItemController", award, function()
+        self:SwitchState(UIStateType.UIActivityN5SimpleLevel)
+      end)
     else
-      do
-        if (table.count)(award) ~= 0 then
-          self:ShowDialog("UIGetItemController", award, function()
-      -- function num : 0_20_0_0 , upvalues : self, _ENV
       self:SwitchState(UIStateType.UIActivityN5SimpleLevel)
     end
-)
-        else
-          self:SwitchState(UIStateType.UIActivityN5SimpleLevel)
-        end
-      end
-    end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.CloseUIStage = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  if ((GameGlobal.UIStateManager)()):IsShow("UIActivityN5Stage") then
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIActivityN5Stage")
+function UIActivityN5SimpleLevel:CloseUIStage()
+  if GameGlobal.UIStateManager():IsShow("UIActivityN5Stage") then
+    GameGlobal.UIStateManager():CloseDialog("UIActivityN5Stage")
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.AttachEvents = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIActivityN5SimpleLevel:AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel._CheckActivityClose = function(self, id)
-  -- function num : 0_23 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityN5SimpleLevel:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_24
+function UIActivityN5SimpleLevel:OnUIGetItemCloseInQuest(type)
   if self._isOpen then
     self:_Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel._OnCampaignShopEnter = function(self)
-  -- function num : 0_25
+function UIActivityN5SimpleLevel:_OnCampaignShopEnter()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel._ShowUIGetItemController = function(self, rewards)
-  -- function num : 0_26 , upvalues : _ENV
+function UIActivityN5SimpleLevel:_ShowUIGetItemController(rewards)
   self:ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_26_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
+  end)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.TryoutButtonOnClick = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1ClickNormal)
+function UIActivityN5SimpleLevel:TryoutButtonOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1ClickNormal)
   if not self._isValid then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_110"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_110"))
+    return
   end
   self:ShowDialog("UIActivityPetTryController", ECampaignType.CAMPAIGN_TYPE_N5, ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION_FIXTEAM, self._isTryoutLevelPass, function(missionid)
-    -- function num : 0_27_0 , upvalues : _ENV, self
-    local missiontModule = (GameGlobal.GetModule)(MissionModule)
+    local missiontModule = GameGlobal.GetModule(MissionModule)
     local ctx = missiontModule:TeamCtx()
-    local localProcess = (self._campaign):GetLocalProcess()
+    local localProcess = self._campaign:GetLocalProcess()
     local missionComponent = localProcess:GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION_FIXTEAM)
-    local param = {missionid, missionComponent:GetCampaignMissionComponentId(), missionComponent:GetCampaignMissionParamKeyMap()}
+    local param = {
+      missionid,
+      missionComponent:GetCampaignMissionComponentId(),
+      missionComponent:GetCampaignMissionParamKeyMap()
+    }
     ctx:Init(TeamOpenerType.Campaign, param)
     ctx:ShowDialogUITeams(false)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5SimpleLevel.powerBtnOnClick = function(self)
-  -- function num : 0_28
+function UIActivityN5SimpleLevel:powerBtnOnClick()
   self:ShowDialog("UIActivityN5PointDetail")
 end
-
-

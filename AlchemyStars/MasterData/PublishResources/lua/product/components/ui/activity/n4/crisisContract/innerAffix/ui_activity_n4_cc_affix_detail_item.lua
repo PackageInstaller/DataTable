@@ -1,62 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/innerAffix/ui_activity_n4_cc_affix_detail_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN4CCAffixDetailItem", UICustomWidget)
 UIActivityN4CCAffixDetailItem = UIActivityN4CCAffixDetailItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN4CCAffixDetailItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityN4CCAffixDetailItem:OnShow()
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._go = self:GetGameObject()
-  self._anim = (self:GetGameObject()):GetComponent("Animation")
+  self._anim = self:GetGameObject():GetComponent("Animation")
   self._btnGo = self:GetGameObject("Btn")
-  ;
-  (self._btnGo):SetActive(false)
+  self._btnGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixDetailItem.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityN4CCAffixDetailItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixDetailItem.Refresh = function(self, descStr)
-  -- function num : 0_2
+function UIActivityN4CCAffixDetailItem:Refresh(descStr)
   if descStr == nil then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
-  ;
-  (self._nameLabel):SetText(descStr)
+  self._go:SetActive(true)
+  self._nameLabel:SetText(descStr)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixDetailItem.PlayInAni = function(self, delayMs)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN4CCAffixDetailItem:PlayInAni(delayMs)
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, delayMs, self
     YIELD(TT, delayMs)
-    ;
-    (self._btnGo):SetActive(true)
-    ;
-    (self._anim):Play("uianim_UIActivityN4CCAffixDetailItem_in")
-  end
-)
+    self._btnGo:SetActive(true)
+    self._anim:Play("uianim_UIActivityN4CCAffixDetailItem_in")
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixDetailItem.PlayOutAni = function(self)
-  -- function num : 0_4
-  (self._anim):Play("uianim_UIActivityN4CCAffixDetailItem_out")
+function UIActivityN4CCAffixDetailItem:PlayOutAni()
+  self._anim:Play("uianim_UIActivityN4CCAffixDetailItem_out")
 end
-
-

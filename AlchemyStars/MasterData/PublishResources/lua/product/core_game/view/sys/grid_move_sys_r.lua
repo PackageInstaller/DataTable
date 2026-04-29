@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/grid_move_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GridMoveSystem_Render", Object)
 GridMoveSystem_Render = GridMoveSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GridMoveSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function GridMoveSystem_Render:Constructor(world)
   self.world = world
-  self.group = world:GetGroup((world.BW_WEMatchers).GridMove)
-  self._timeService = (self.world):GetService("Time")
+  self.group = world:GetGroup(world.BW_WEMatchers.GridMove)
+  self._timeService = self.world:GetService("Time")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GridMoveSystem_Render.Execute = function(self)
-  -- function num : 0_1
-  (self.group):HandleForeach(self, self.UpdateGridMove)
+function GridMoveSystem_Render:Execute()
+  self.group:HandleForeach(self, self.UpdateGridMove)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GridMoveSystem_Render.UpdateGridMove = function(self, e)
-  -- function num : 0_2 , upvalues : _ENV
+function GridMoveSystem_Render:UpdateGridMove(e)
   if e:HasPauseFlag() then
-    return 
+    return
   end
   local gridMoveCmpt = e:GridMove()
   local locationComponent = e:Location()
@@ -36,92 +23,81 @@ GridMoveSystem_Render.UpdateGridMove = function(self, e)
   local gridMoveSpeed = gridMoveCmpt:GetSpeed()
   if gridMoveTargetPos == nil then
     e:RemoveGridMove()
-    return 
+    return
   end
   if not gridMoveSpeed then
     e:RemoveGridMove()
-    return 
+    return
   end
-  local boardServiceRender = (self.world):GetService("BoardRender")
+  local boardServiceRender = self.world:GetService("BoardRender")
   if locationComponent == nil then
     e:SetLocation(gridMoveCmpt:GetTargetPos(), Vector2(0, -1))
     e:RemoveGridMove()
-    return 
+    return
   end
   local gridPosition = boardServiceRender:GetRealEntityGridPos(e)
-  local distance = (Vector2.Distance)(gridMoveTargetPos, gridPosition)
-  local deltaTimeMS = (self._timeService):GetDeltaTimeMs()
+  local distance = Vector2.Distance(gridMoveTargetPos, gridPosition)
+  local deltaTimeMS = self._timeService:GetDeltaTimeMs()
   local movement = deltaTimeMS * gridMoveCmpt:GetSpeed() / 1000
   if distance < movement then
     e:SetPosition(gridMoveTargetPos)
     e:RemoveGridMove()
     if e:HasTeam() then
-      local pets = (e:Team()):GetTeamPetEntities()
-      for i,pet in ipairs(pets) do
+      local pets = e:Team():GetTeamPetEntities()
+      for i, pet in ipairs(pets) do
         pet:SetPosition(gridMoveTargetPos)
       end
     end
-    do
-      do return  end
-      if distance == 0 then
-        e:RemoveGridMove()
-        return 
-      else
-        local pos = (Vector2.Lerp)(gridPosition, gridMoveTargetPos, movement / distance)
-        local localPosition = boardServiceRender:GridPos2RenderPos(pos)
-        if gridMoveSetHeight then
-          pos = Vector3(localPosition.x, gridMoveSetHeight, localPosition.z)
-        end
-        e:SetPosition(pos)
-        if e:HasMonsterID() and distance > 0.5 and not gridMoveCmpt.hasRefreshPiece then
-          gridMoveCmpt.hasRefreshPiece = true
-          if gridMoveCmpt:IsRefreshPiece() then
-            self:RefreshTrapsInPath(e, gridMoveOriginPos, gridMoveTargetPos)
-          end
-        end
+    return
+  elseif distance == 0 then
+    e:RemoveGridMove()
+    return
+  else
+    local pos = Vector2.Lerp(gridPosition, gridMoveTargetPos, movement / distance)
+    local localPosition = boardServiceRender:GridPos2RenderPos(pos)
+    if gridMoveSetHeight then
+      pos = Vector3(localPosition.x, gridMoveSetHeight, localPosition.z)
+    end
+    e:SetPosition(pos)
+    if e:HasMonsterID() and 0.5 < distance and not gridMoveCmpt.hasRefreshPiece then
+      gridMoveCmpt.hasRefreshPiece = true
+      if gridMoveCmpt:IsRefreshPiece() then
+        self:RefreshTrapsInPath(e, gridMoveOriginPos, gridMoveTargetPos)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GridMoveSystem_Render.RefreshTrapsInPath = function(self, e, v2Origin, v2Target)
-  -- function num : 0_3 , upvalues : _ENV
-  local pieceService = (self.world):GetService("Piece")
-  local trapServiceRender = (self.world):GetService("TrapRender")
-  local v2GridOffset = (e:GridLocation()):GetGridOffset()
+function GridMoveSystem_Render:RefreshTrapsInPath(e, v2Origin, v2Target)
+  local pieceService = self.world:GetService("Piece")
+  local trapServiceRender = self.world:GetService("TrapRender")
+  local v2GridOffset = e:GridLocation():GetGridOffset()
   local v2OriginNonOffset = v2Origin - v2GridOffset
   local v2TargetNonOffset = v2Target - v2GridOffset
-  local tArea = (e:BodyArea()):GetArea()
+  local tArea = e:BodyArea():GetArea()
   local tNewAbsArea = {}
-  for _,v2Relative in ipairs(tArea) do
-    (table.insert)(tNewAbsArea, v2Relative + v2TargetNonOffset)
+  for _, v2Relative in ipairs(tArea) do
+    table.insert(tNewAbsArea, v2Relative + v2TargetNonOffset)
   end
   local tOldAbsArea = {}
-  for _,v2Relative in ipairs(tArea) do
-    (table.insert)(tOldAbsArea, v2Relative + v2OriginNonOffset)
+  for _, v2Relative in ipairs(tArea) do
+    table.insert(tOldAbsArea, v2Relative + v2OriginNonOffset)
   end
-  for _,v2 in ipairs(tNewAbsArea) do
-    if not (table.icontains)(tOldAbsArea, v2) then
+  for _, v2 in ipairs(tNewAbsArea) do
+    if not table.icontains(tOldAbsArea, v2) then
       self:_ShowHideTrapAtPos(v2, false)
     end
   end
-  for _,v2 in ipairs(tOldAbsArea) do
-    if not (table.icontains)(tNewAbsArea, v2) then
+  for _, v2 in ipairs(tOldAbsArea) do
+    if not table.icontains(tNewAbsArea, v2) then
       self:_ShowHideTrapAtPos(v2, true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GridMoveSystem_Render._ShowHideTrapAtPos = function(self, v2Pos, isShow)
-  -- function num : 0_4 , upvalues : _ENV
-  local trapServiceRender = (self.world):GetService("TrapRender")
-  if v2Pos.x == (math.floor)(v2Pos.x) and v2Pos.y == (math.floor)(v2Pos.y) then
+function GridMoveSystem_Render:_ShowHideTrapAtPos(v2Pos, isShow)
+  local trapServiceRender = self.world:GetService("TrapRender")
+  if v2Pos.x == math.floor(v2Pos.x) and v2Pos.y == math.floor(v2Pos.y) then
     trapServiceRender:ShowHideTrapAtPos(v2Pos, isShow)
   end
 end
-
-

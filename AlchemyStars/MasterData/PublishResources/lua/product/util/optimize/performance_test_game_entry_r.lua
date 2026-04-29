@@ -1,76 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/optimize/performance_test_game_entry_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PerformanceTestGameEntry", Object)
 PerformanceTestGameEntry = PerformanceTestGameEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PerformanceTestGameEntry.Constructor = function(self, levelID, sceneGO)
-  -- function num : 0_0
+function PerformanceTestGameEntry:Constructor(levelID, sceneGO)
   self._levelID = levelID
   self._sceneGO = sceneGO
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PerformanceTestGameEntry.InitalizeCoreGame = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PerformanceTestGameEntry:InitalizeCoreGame()
   local worldInfo = CutsceneWorldCreationContext:New()
   worldInfo.level_id = self._levelID
   worldInfo.matchType = MatchType.MT_Mission
   self._world = PerformanceWorld:New(worldInfo)
-  ;
-  (self._world):EnterWorld()
-  ;
-  (self._world):SetSceneGO(self._sceneGO)
-  local configService = (self._world):GetService("Config")
+  self._world:EnterWorld()
+  self._world:SetSceneGO(self._sceneGO)
+  local configService = self._world:GetService("Config")
   configService:InitConfig()
   self:_CacheAssetFile()
-  local entityService = (self._world):GetService("LogicEntity")
+  local entityService = self._world:GetService("LogicEntity")
   entityService:CreateBoardEntity()
   self:_DoRenderBoard()
   self:SetUpCutsceneCamera()
-  local goEffRuchangActorpoint = ((UnityEngine.GameObject).Find)(GameResourceConst.EffRuchangActorpoint)
+  local goEffRuchangActorpoint = UnityEngine.GameObject.Find(GameResourceConst.EffRuchangActorpoint)
   if goEffRuchangActorpoint then
     goEffRuchangActorpoint:SetActive(false)
   end
-  self._timeService = (self._world):GetService("Time")
+  self._timeService = self._world:GetService("Time")
   self._running = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PerformanceTestGameEntry._CacheAssetFile = function(self)
-  -- function num : 0_2
-  local entityService = (self._world):GetService("RenderEntity")
+function PerformanceTestGameEntry:_CacheAssetFile()
+  local entityService = self._world:GetService("RenderEntity")
   entityService:CreateRenderBoardEntity()
   self:_CacheGlobalAssetFile()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PerformanceTestGameEntry._CacheGlobalAssetFile = function(self)
-  -- function num : 0_3
+function PerformanceTestGameEntry:_CacheGlobalAssetFile()
   local file_name = "globalShaderEffects.asset"
-  local respool = (self._world):GetService("ResourcesPool")
+  local respool = self._world:GetService("ResourcesPool")
   respool:CacheAsset(file_name, 1)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PerformanceTestGameEntry._CacheCutsceneGridMaterial = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local loadingSvc = (self._world):GetService("Loading")
+function PerformanceTestGameEntry:_CacheCutsceneGridMaterial()
+  local loadingSvc = self._world:GetService("Loading")
   loadingSvc:_CacheGridMaterial()
-  local respool = (self._world):GetService("ResourcesPool")
+  local respool = self._world:GetService("ResourcesPool")
   local cachetable = {}
   loadingSvc:_CacheCurrentGrid(cachetable)
-  for k,v in pairs(cachetable) do
+  for k, v in pairs(cachetable) do
     local resname = v[1]
     local count = v[2]
-    if (string.endwith)(resname, ".mat") then
+    if string.endwith(resname, ".mat") then
       respool:CacheMaterial(resname, count)
     else
       respool:Cache(resname, count)
@@ -79,19 +58,14 @@ PerformanceTestGameEntry._CacheCutsceneGridMaterial = function(self)
   loadingSvc:_ReplaceCachedGridMaterial()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PerformanceTestGameEntry.CreateCutscenePlayer = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function PerformanceTestGameEntry:CreateCutscenePlayer()
   local entityConstId = EntityConfigIDRender.CutscenePlayer
   local ctx = EntityCreationContext:New()
   ctx.entity_config_id = entityConstId
   ctx.bShow = true
-  local entity = (self._world):CreateEntity()
-  ;
-  (self._world):SetEntityIdByEntityConfigId(entity, entityConstId)
-  ;
-  (EntityAssembler.AssembleEntityComponents)(entity, ctx)
+  local entity = self._world:CreateEntity()
+  self._world:SetEntityIdByEntityConfigId(entity, entityConstId)
+  EntityAssembler.AssembleEntityComponents(entity, ctx)
   local prefabPath = "1500331.prefab"
   entity:ReplaceAsset(NativeUnityPrefabAsset:New(prefabPath))
   local pos = Vector3(0, 0, 0)
@@ -99,114 +73,79 @@ PerformanceTestGameEntry.CreateCutscenePlayer = function(self)
   return entity
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PerformanceTestGameEntry.SetUpCutsceneCamera = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((self._world):MainCamera()):Camera()
-  local listenerSvc = (self._world):GetService("PerformanceListener")
-  local levelRawData = (Cfg.cfg_level)[self._levelID]
+function PerformanceTestGameEntry:SetUpCutsceneCamera()
+  self._world:MainCamera():Camera()
+  local listenerSvc = self._world:GetService("PerformanceListener")
+  local levelRawData = Cfg.cfg_level[self._levelID]
   listenerSvc:SetCamera(levelRawData.Theme)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PerformanceTestGameEntry.CalcCutsceneFov = function(self, fov)
-  -- function num : 0_7 , upvalues : _ENV
+function PerformanceTestGameEntry:CalcCutsceneFov(fov)
   local newFov = fov
   local defaultAspect = BattleConst.CameraDefaultAspect
-  local aspect = (UnityEngine.Screen).width / (UnityEngine.Screen).height
-  if aspect < defaultAspect then
+  local aspect = UnityEngine.Screen.width / UnityEngine.Screen.height
+  if defaultAspect > aspect then
     newFov = fov + (defaultAspect - aspect) * 6
   end
   return newFov
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PerformanceTestGameEntry.Stop = function(self)
-  -- function num : 0_8
+function PerformanceTestGameEntry:Stop()
   self._running = false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PerformanceTestGameEntry.Running = function(self)
-  -- function num : 0_9
+function PerformanceTestGameEntry:Running()
   return self._running
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PerformanceTestGameEntry.Dispose = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function PerformanceTestGameEntry:Dispose()
   self._matchEnterData = nil
   self._enterPreferenceData = nil
   self._request = nil
-  ;
-  (self._world):ExitWorld()
-  ;
-  (self._world):Dispose()
-  ;
-  (InnerGameHelperRender:GetInstance()):Dispose()
+  self._world:ExitWorld()
+  self._world:Dispose()
+  InnerGameHelperRender:GetInstance():Dispose()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PerformanceTestGameEntry.Update = function(self, curTimeMS, deltaTimeMS)
-  -- function num : 0_11
-  (self._timeService):SetCurrentTime(curTimeMS)
-  ;
-  (self._timeService):SetDeltaTime(deltaTimeMS)
-  ;
-  (self._world):UpdateWorld(deltaTimeMS)
+function PerformanceTestGameEntry:Update(curTimeMS, deltaTimeMS)
+  self._timeService:SetCurrentTime(curTimeMS)
+  self._timeService:SetDeltaTime(deltaTimeMS)
+  self._world:UpdateWorld(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PerformanceTestGameEntry.ReplayCutscene = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
-  local cutsceneSvc = (self._world):GetService("Cutscene")
+function PerformanceTestGameEntry:ReplayCutscene(TT)
+  local cutsceneSvc = self._world:GetService("Cutscene")
   cutsceneSvc:ReviewCutscene(TT, self._levelID)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CutsceneFinish)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CutsceneFinish)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PerformanceTestGameEntry._DoRenderBoard = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
+function PerformanceTestGameEntry:_DoRenderBoard()
+  local boardServiceRender = self._world:GetService("BoardRender")
   local gapTiles = BattleConst.GapTiles
   local gapTilesPosList = {}
-  for i,p in ipairs(gapTiles) do
+  for i, p in ipairs(gapTiles) do
     local gridPos = Vector2(p[1], p[2])
-    ;
-    (table.insert)(gapTilesPosList, gridPos)
+    table.insert(gapTilesPosList, gridPos)
   end
   local piecePosList = {}
   for x = 1, BattleConst.DefaultMaxX do
     for y = 1, BattleConst.DefaultMaxY do
       local gridPos = Vector2(x, y)
-      if not (table.icontains)(gapTilesPosList, gridPos) then
-        local pieceType = (math.random)(1, 4)
+      if not table.icontains(gapTilesPosList, gridPos) then
+        local pieceType = math.random(1, 4)
         local gridEntity = boardServiceRender:CreateGridEntity(pieceType, gridPos, true)
         gridEntity:SetViewVisible(false)
         local renderPos = boardServiceRender:GridPos2RenderPos(gridPos)
-        ;
-        (table.insert)(piecePosList, renderPos)
+        table.insert(piecePosList, renderPos)
       end
     end
   end
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderBoardCmpt = renderBoardEntity:RenderBoard()
   local brillantLineObj = renderBoardCmpt:GetBrillantGridObj()
   if brillantLineObj then
     brillantLineObj:SetActive(true)
     local curPieceTable = renderBoardCmpt._gridEntityTable
-    ;
-    (CellRenderManager.DrawRangeImmediate)(piecePosList)
+    CellRenderManager.DrawRangeImmediate(piecePosList)
   end
 end
-
-

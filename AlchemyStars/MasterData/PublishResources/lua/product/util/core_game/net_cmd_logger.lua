@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/net_cmd_logger.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("NetCmdLogger", Object)
 NetCmdLogger = NetCmdLogger
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-NetCmdLogger.Constructor = function(self)
-  -- function num : 0_0
+function NetCmdLogger:Constructor()
   self._enabled = false
   self._csLogger = {}
   self._commandCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCmdLogger.IsEnable = function(self)
-  -- function num : 0_1
+function NetCmdLogger:IsEnable()
   return self._enabled
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCmdLogger.BaseTOCS = function(self, msg, str)
-  -- function num : 0_2 , upvalues : _ENV
+function NetCmdLogger:BaseTOCS(msg, str)
   if msg.EntityID then
     str = str .. "ev_" .. tostring(self._commandCount) .. ".EntityID = " .. tostring(msg.EntityID) .. "; \n"
   end
@@ -40,31 +27,21 @@ NetCmdLogger.BaseTOCS = function(self, msg, str)
   return str
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCmdLogger.InsertToCSLog = function(self, str)
-  -- function num : 0_3 , upvalues : _ENV
+function NetCmdLogger:InsertToCSLog(str)
   str = str .. "cmdList.Add(ev_" .. tostring(self._commandCount) .. "); \n"
-  ;
-  (table.insert)(self._csLogger, str)
+  table.insert(self._csLogger, str)
   self._commandCount = self._commandCount + 1
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCmdLogger.PrintLogger = function(self)
-  -- function num : 0_4
+function NetCmdLogger:PrintLogger()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCmdLogger.MovePathCmdToCS = function(self, msg)
-  -- function num : 0_5 , upvalues : _ENV
+function NetCmdLogger:MovePathCmdToCS(msg)
   if not self:IsEnable() then
-    return 
+    return
   end
   local str = "CEventMovePathDoneCommand ev_" .. tostring(self._commandCount) .. " = new CEventMovePathDoneCommand(); \n"
-  for i,v in ipairs(msg.ChainPath) do
+  for i, v in ipairs(msg.ChainPath) do
     str = str .. "ev_" .. tostring(self._commandCount) .. ".ChainPath.Add(" .. tostring(v) .. "); \n"
   end
   str = str .. "ev_" .. tostring(self._commandCount) .. ".ElementType=" .. tostring(msg.ElementType) .. "; \n"
@@ -72,12 +49,9 @@ NetCmdLogger.MovePathCmdToCS = function(self, msg)
   self:InsertToCSLog(str)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCmdLogger.CastActiveSkillCmdToCS = function(self, msg)
-  -- function num : 0_6 , upvalues : _ENV
+function NetCmdLogger:CastActiveSkillCmdToCS(msg)
   if not self:IsEnable() then
-    return 
+    return
   end
   local str = "CEventCastActiveSkillCommand ev_" .. tostring(self._commandCount) .. "= new CEventCastActiveSkillCommand(); \n"
   str = str .. "ev_" .. tostring(self._commandCount) .. ".ActiveSkillID = " .. tostring(msg.ActiveSkillID) .. ";\n"
@@ -87,12 +61,9 @@ NetCmdLogger.CastActiveSkillCmdToCS = function(self, msg)
   self:InsertToCSLog(str)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCmdLogger.CastPickUpActiveSkillCmdToCS = function(self, msg)
-  -- function num : 0_7 , upvalues : _ENV
+function NetCmdLogger:CastPickUpActiveSkillCmdToCS(msg)
   if not self:IsEnable() then
-    return 
+    return
   end
   local str = "CEventCastPickUpActiveSkillCommand ev_" .. tostring(self._commandCount) .. "= new CEventCastPickUpActiveSkillCommand(); \n"
   str = str .. "ev_" .. tostring(self._commandCount) .. ".ActiveSkillID = " .. tostring(msg.ActiveSkillID) .. ";\n"
@@ -100,28 +71,25 @@ NetCmdLogger.CastPickUpActiveSkillCmdToCS = function(self, msg)
   str = str .. "ev_" .. tostring(self._commandCount) .. ".LastPickUpDirection = " .. tostring(msg.LastPickUpDirection) .. ";\n"
   str = str .. "ev_" .. tostring(self._commandCount) .. ".ReflectDir = " .. tostring(msg.ReflectDir) .. ";\n"
   str = str .. "ev_" .. tostring(self._commandCount) .. ".CasterTrapEntityID = " .. tostring(msg.CasterTrapEntityID) .. ";\n"
-  for i,v in ipairs(msg.PickUpPosList) do
+  for i, v in ipairs(msg.PickUpPosList) do
     str = str .. "ev_" .. tostring(self._commandCount) .. ".PickUpPosList.Add(" .. tostring(v) .. "); \n"
   end
-  for dir,v in pairs(msg.DirectionPickUpPos) do
+  for dir, v in pairs(msg.DirectionPickUpPos) do
     str = str .. "ev_" .. tostring(self._commandCount) .. ".DirectionPickUpPos.Add(" .. tostring(dir) .. "," .. tostring(v) .. "); \n"
   end
-  for i,v in ipairs(msg.PickUpExtraParamList) do
+  for i, v in ipairs(msg.PickUpExtraParamList) do
     str = str .. "ev_" .. tostring(self._commandCount) .. ".PickUpExtraParamList.Add(" .. tostring(v) .. "); \n"
   end
-  for i,v in ipairs(msg.PickUpDirList) do
+  for i, v in ipairs(msg.PickUpDirList) do
     str = str .. "ev_" .. tostring(self._commandCount) .. ".PickUpDirList.Add(" .. tostring(v) .. "); \n"
   end
   str = self:BaseTOCS(msg, str)
   self:InsertToCSLog(str)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCmdLogger.CastSelectTeamOrderPositionCmdToCS = function(self, msg)
-  -- function num : 0_8 , upvalues : _ENV
+function NetCmdLogger:CastSelectTeamOrderPositionCmdToCS(msg)
   if not self:IsEnable() then
-    return 
+    return
   end
   local str = "CEventCastSelectTeamOrderPositionCommand ev_" .. tostring(self._commandCount) .. " = new CEventCastSelectTeamOrderPositionCommand(); \n"
   str = str .. "ev_" .. tostring(self._commandCount) .. ".targetPos = " .. tostring(msg.targetPos) .. ";\n"
@@ -130,12 +98,9 @@ NetCmdLogger.CastSelectTeamOrderPositionCmdToCS = function(self, msg)
   self:InsertToCSLog(str)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCmdLogger.ChangeTeamLeaderCmdToCS = function(self, msg)
-  -- function num : 0_9 , upvalues : _ENV
+function NetCmdLogger:ChangeTeamLeaderCmdToCS(msg)
   if not self:IsEnable() then
-    return 
+    return
   end
   local str = "CEventChangeTeamLeaderCommand ev_" .. tostring(self._commandCount) .. " = new CEventChangeTeamLeaderCommand(); \n"
   str = str .. "ev_" .. tostring(self._commandCount) .. ".OldLeaderPstID = " .. tostring(msg.OldLeaderPstID) .. ";\n"
@@ -144,15 +109,10 @@ NetCmdLogger.ChangeTeamLeaderCmdToCS = function(self, msg)
   self:InsertToCSLog(str)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCmdLogger.GetLogger = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function NetCmdLogger:GetLogger()
   local retStr = ""
-  for i,logger in ipairs(self._csLogger) do
+  for i, logger in ipairs(self._csLogger) do
     retStr = retStr .. logger .. "\n"
   end
   return retStr
 end
-
-

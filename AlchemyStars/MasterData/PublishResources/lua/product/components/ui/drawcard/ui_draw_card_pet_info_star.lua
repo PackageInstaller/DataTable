@@ -1,32 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_pet_info_star.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardPetInfoStar", UICustomWidget)
 UIDrawCardPetInfoStar = UIDrawCardPetInfoStar
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardPetInfoStar.OnShow = function(self)
-  -- function num : 0_0
+function UIDrawCardPetInfoStar:OnShow()
   self._image = self:GetUIComponent("Image", "star")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPetInfoStar.SetData = function(self, image)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDrawCardPetInfoStar:SetData(image)
   local atlas = self:GetAsset("UIDrawCard.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._image).sprite = atlas:GetSprite(image)
+  self._image.sprite = atlas:GetSprite(image)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPetInfoStar.OnHide = function(self)
-  -- function num : 0_2
+function UIDrawCardPetInfoStar:OnHide()
 end
-
-

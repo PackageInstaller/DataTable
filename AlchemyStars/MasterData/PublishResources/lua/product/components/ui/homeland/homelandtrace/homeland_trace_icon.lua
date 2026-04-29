@@ -1,193 +1,132 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/homelandtrace/homeland_trace_icon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeTraceIcon", Object)
 HomeTraceIcon = HomeTraceIcon
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeTraceIcon.Constructor = function(self, traceID, traceItem, rootTrans)
-  -- function num : 0_0 , upvalues : _ENV
+function HomeTraceIcon:Constructor(traceID, traceItem, rootTrans)
   self._traceID = traceID
   self._traceItem = traceItem
-  self._tracemanager = (self._traceItem):GetManager()
-  self._traceManagerHelper = (self._tracemanager):GetHomelandTraceManagerHelper()
-  self._traceCfg = (self._traceManagerHelper):GetTraceInfo(traceID)
-  self._traceType = (self._traceCfg).TraceType
-  self._homelandClient = (self._tracemanager):GetHomelandClient()
-  self._homelandCameraManager = (self._homelandClient):CameraManager()
-  self._camera = (self._homelandCameraManager):GetCamera()
+  self._tracemanager = self._traceItem:GetManager()
+  self._traceManagerHelper = self._tracemanager:GetHomelandTraceManagerHelper()
+  self._traceCfg = self._traceManagerHelper:GetTraceInfo(traceID)
+  self._traceType = self._traceCfg.TraceType
+  self._homelandClient = self._tracemanager:GetHomelandClient()
+  self._homelandCameraManager = self._homelandClient:CameraManager()
+  self._camera = self._homelandCameraManager:GetCamera()
   self._uiRootRectTransform = rootTrans
   self._iconName = "UIHomelandTraceIcon.prefab"
   self._flashEffect = "UIHomelandTraceFlash.prefab"
-  self.screenOffset = Vector2((UnityEngine.Screen).width / 2, (UnityEngine.Screen).height / 2)
+  self.screenOffset = Vector2(UnityEngine.Screen.width / 2, UnityEngine.Screen.height / 2)
   self:Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceIcon.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomeTraceIcon:Init()
   self:CreateIcons()
-  self._onGetTracePoint = (GameHelper:GetInstance()):CreateCallback(self.OnGetTracePoint, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnGetTracePoint, self._onGetTracePoint)
-  self._onLeaveTracePoint = (GameHelper:GetInstance()):CreateCallback(self.OnLeaveTracePoint, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnLeaveTracePoint, self._onLeaveTracePoint)
+  self._onGetTracePoint = GameHelper:GetInstance():CreateCallback(self.OnGetTracePoint, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnGetTracePoint, self._onGetTracePoint)
+  self._onLeaveTracePoint = GameHelper:GetInstance():CreateCallback(self.OnLeaveTracePoint, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnLeaveTracePoint, self._onLeaveTracePoint)
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self:Emphasize()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceIcon.CreateIcons = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function HomeTraceIcon:CreateIcons()
   if not self._traceCfg then
-    return 
+    return
   end
-  self._resReq = (ResourceManager:GetInstance()):SyncLoadAsset(self._iconName, LoadType.GameObject)
-  self._reqIconObj = (self._resReq).Obj
-  ;
-  ((self._reqIconObj).transform):SetParent(self._uiRootRectTransform, false)
-  ;
-  (self._reqIconObj):SetActive(true)
-  self.view = ((self._reqIconObj).transform):GetComponent("UIView")
-  self._arrowPoint = (self.view):GetGameObject("arrowPoint")
-  self._tracePoint = (self.view):GetGameObject("tracePoint")
-  self._distanceText = ((self.view):GetGameObject("distance")):GetComponent("UILocalizationText")
-  self._arrival = (self.view):GetGameObject("arrival")
-  self._fxAniGo = (self.view):GetGameObject("Fx")
-  self._Ani = ((self.view):GetGameObject("Ani")):GetComponent("Animation")
+  self._resReq = ResourceManager:GetInstance():SyncLoadAsset(self._iconName, LoadType.GameObject)
+  self._reqIconObj = self._resReq.Obj
+  self._reqIconObj.transform:SetParent(self._uiRootRectTransform, false)
+  self._reqIconObj:SetActive(true)
+  self.view = self._reqIconObj.transform:GetComponent("UIView")
+  self._arrowPoint = self.view:GetGameObject("arrowPoint")
+  self._tracePoint = self.view:GetGameObject("tracePoint")
+  self._distanceText = self.view:GetGameObject("distance"):GetComponent("UILocalizationText")
+  self._arrival = self.view:GetGameObject("arrival")
+  self._fxAniGo = self.view:GetGameObject("Fx")
+  self._Ani = self.view:GetGameObject("Ani"):GetComponent("Animation")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceIcon.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomeTraceIcon:Dispose()
   if self._onGetTracePoint then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnGetTracePoint, self._onGetTracePoint)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnGetTracePoint, self._onGetTracePoint)
     self._onGetTracePoint = nil
   end
   if self._onLeaveTracePoint then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnLeaveTracePoint, self._onLeaveTracePoint)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnLeaveTracePoint, self._onLeaveTracePoint)
     self._onLeaveTracePoint = nil
   end
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self._reqIconObj = nil
-  ;
-  (self._resReq):Dispose()
+  self._resReq:Dispose()
   self._resReq = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceIcon.GetTraceManager = function(self)
-  -- function num : 0_4
+function HomeTraceIcon:GetTraceManager()
   return self._tracemanager
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceIcon.GetTraceId = function(self)
-  -- function num : 0_5
+function HomeTraceIcon:GetTraceId()
   return self._traceID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceIcon.GetTraceType = function(self)
-  -- function num : 0_6
+function HomeTraceIcon:GetTraceType()
   return self._traceType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceIcon.SetShow = function(self, bShow)
-  -- function num : 0_7
+function HomeTraceIcon:SetShow(bShow)
   if self._reqIconObj then
-    (self._reqIconObj):SetActive(bShow)
+    self._reqIconObj:SetActive(bShow)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceIcon.SetParent = function(self, parentTransform)
-  -- function num : 0_8
-  ((self._reqIconObj).transform):SetParent(parentTransform)
+function HomeTraceIcon:SetParent(parentTransform)
+  self._reqIconObj.transform:SetParent(parentTransform)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceIcon.Emphasize = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function HomeTraceIcon:Emphasize()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
-  ;
-  (self._Ani):Play("UIHomelandMinimapIconTrace_in")
+  self._Ani:Play("UIHomelandMinimapIconTrace_in")
   if not self._timerHandler then
-    self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Once, function()
-    -- function num : 0_9_0 , upvalues : self
-    (self._fxAniGo):SetActive(true)
-  end
-)
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Once, function()
+      self._fxAniGo:SetActive(true)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceIcon.GetTransform = function(self)
-  -- function num : 0_10
-  return (self._reqIconObj).transform
+function HomeTraceIcon:GetTransform()
+  return self._reqIconObj.transform
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceIcon.SetTracePointDir = function(self, dirInfo)
-  -- function num : 0_11 , upvalues : _ENV
-  (self._tracePoint):SetActive(dirInfo[2] > 1 or dirInfo[4] < 0)
-  local distance = (math.modf)(dirInfo[3])
-  ;
-  (self._distanceText):SetText(distance .. "m")
+function HomeTraceIcon:SetTracePointDir(dirInfo)
+  self._tracePoint:SetActive(dirInfo[2] > 1 or dirInfo[4] < 0)
+  local distance = math.modf(dirInfo[3])
+  self._distanceText:SetText(distance .. "m")
   local dir = dirInfo[1] - self.screenOffset
   local vec3 = Vector3(dir.x, dir.y, 0)
-  local angle = (Vector3.Angle)(vec3, Vector3.right)
-  if (dirInfo[1]).y < (self.screenOffset).y then
+  local angle = Vector3.Angle(vec3, Vector3.right)
+  if dirInfo[1].y < self.screenOffset.y then
     angle = -angle
   end
-  local rot = (Quaternion.AngleAxis)(angle - 90, Vector3.forward)
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  ((self._tracePoint).transform).localRotation = rot
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local rot = Quaternion.AngleAxis(angle - 90, Vector3.forward)
+  self._tracePoint.transform.localRotation = rot
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceIcon.OnGetTracePoint = function(self, index, config)
-  -- function num : 0_12
+function HomeTraceIcon:OnGetTracePoint(index, config)
   if not config.isNpc and self._reqIconObj then
-    (self._reqIconObj):SetActive(false)
+    self._reqIconObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTraceIcon.OnLeaveTracePoint = function(self, index, config)
-  -- function num : 0_13
+function HomeTraceIcon:OnLeaveTracePoint(index, config)
   if not config.isNpc and self._reqIconObj then
-    (self._reqIconObj):SetActive(true)
+    self._reqIconObj:SetActive(true)
   end
 end
-
-

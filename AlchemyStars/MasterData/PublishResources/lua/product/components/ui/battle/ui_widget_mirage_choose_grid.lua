@@ -1,34 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_mirage_choose_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetMirageChooseGrid", UICustomWidget)
 UIWidgetMirageChooseGrid = UIWidgetMirageChooseGrid
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetMirageChooseGrid.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWidgetMirageChooseGrid:Constructor()
   self:AttachEvent(GameEventType.RefreshMiragePickUpGrid, self.RefreshMiragePickUpGrid)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageChooseGrid.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWidgetMirageChooseGrid:OnShow()
   self.enableFakeInput = true
   self._chooseGridPanel = self:GetGameObject("ChooseGridPanel")
   self._choosehlg = self:GetGameObject("hlg")
-  ;
-  (self._choosehlg):SetActive(true)
+  self._choosehlg:SetActive(true)
   self._chooseNumText = self:GetUIComponent("UILocalizationText", "SelectGridNumText")
-  ;
-  (self._chooseNumText):SetText("1")
+  self._chooseNumText:SetText("1")
   self._activeSkillCancelBtn = self:GetUIComponent("Button", "btnCancel")
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._activeSkillCancelBtn).interactable = true
+  self._activeSkillCancelBtn.interactable = true
   self._btnConfirm = self:GetUIComponent("Button", "btnConfirm")
   self._btnConfirmGO = self:GetGameObject("btnConfirm")
   self._btnConfirmGray = self:GetUIComponent("Button", "btnConfirmGray")
@@ -38,27 +23,18 @@ UIWidgetMirageChooseGrid.OnShow = function(self)
   self:AttachEvent(GameEventType.AutoFight, self._AutoFight)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageChooseGrid.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetMirageChooseGrid:OnHide()
   self:DetachEvent(GameEventType.AutoFight, self._AutoFight)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageChooseGrid._AutoFight = function(self, enable)
-  -- function num : 0_3
+function UIWidgetMirageChooseGrid:_AutoFight(enable)
   self._autoFightState = enable
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageChooseGrid.ShowChooseGridPanel = function(self, show)
-  -- function num : 0_4
-  (self._chooseGridPanel):SetActive(show)
+function UIWidgetMirageChooseGrid:ShowChooseGridPanel(show)
+  self._chooseGridPanel:SetActive(show)
   if show then
-    (self._chooseNumText):SetText(1)
+    self._chooseNumText:SetText(1)
     self:SetPickUpConfirmBtnState(false)
     if self._autoFightState then
       self:HandleConfirm(true)
@@ -66,83 +42,49 @@ UIWidgetMirageChooseGrid.ShowChooseGridPanel = function(self, show)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageChooseGrid.RefreshMiragePickUpGrid = function(self, isPick)
-  -- function num : 0_5 , upvalues : _ENV
+function UIWidgetMirageChooseGrid:RefreshMiragePickUpGrid(isPick)
   local num = isPick and 0 or 1
-  ;
-  (self._chooseNumText):SetText(num)
+  self._chooseNumText:SetText(num)
   self:SetPickUpConfirmBtnState(isPick)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageChooseGrid.SetPickUpConfirmBtnState = function(self, canConfirmState)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._btnConfirm).interactable = canConfirmState
-  ;
-  (self._btnConfirmGO):SetActive(canConfirmState)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._btnConfirmGray).interactable = not canConfirmState
-  ;
-  (self._btnConfirmGrayGO):SetActive(not canConfirmState)
+function UIWidgetMirageChooseGrid:SetPickUpConfirmBtnState(canConfirmState)
+  self._btnConfirm.interactable = canConfirmState
+  self._btnConfirmGO:SetActive(canConfirmState)
+  self._btnConfirmGray.interactable = not canConfirmState
+  self._btnConfirmGrayGO:SetActive(not canConfirmState)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageChooseGrid.BtnCancelOnClick = function(self)
-  -- function num : 0_7
+function UIWidgetMirageChooseGrid:BtnCancelOnClick()
   if self._autoFightState then
-    return 
+    return
   end
   self:HandleCancel()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageChooseGrid.BtnConfirmOnClick = function(self)
-  -- function num : 0_8
+function UIWidgetMirageChooseGrid:BtnConfirmOnClick()
   if self._autoFightState then
-    return 
+    return
   end
   self:HandleConfirm(false)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageChooseGrid.BtnConfirmGrayOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIWidgetMirageChooseGrid:BtnConfirmGrayOnClick()
   if self._autoFightState then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIMirageChooseGridGray)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIMirageChooseGridGray)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageChooseGrid.HandleCancel = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIMirageCancelChoose)
+function UIWidgetMirageChooseGrid:HandleCancel()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIMirageCancelChoose)
   self:SetPickUpConfirmBtnState(false)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCancel)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCancel)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageChooseGrid.HandleConfirm = function(self, autoFight)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIMirageChooseGridConfirm, autoFight)
+function UIWidgetMirageChooseGrid:HandleConfirm(autoFight)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIMirageChooseGridConfirm, autoFight)
   self:ShowChooseGridPanel(false)
   self:SetPickUpConfirmBtnState(false)
 end
-
-

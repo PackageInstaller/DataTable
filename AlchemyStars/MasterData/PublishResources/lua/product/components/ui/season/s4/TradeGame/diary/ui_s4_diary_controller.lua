@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/diary/ui_s4_diary_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4DiaryController", UIController)
 UIS4DiaryController = UIS4DiaryController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4DiaryController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIS4DiaryController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4DiaryController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIS4DiaryController:OnShow(uiParams)
   self._tradeData = uiParams[1]
   self.OnChooseHarborId = uiParams[2]
   self:InitWidget()
@@ -23,28 +13,17 @@ UIS4DiaryController.OnShow = function(self, uiParams)
   self:PlayDiaryAnimIn()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4DiaryController.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS4DiaryController:InitWidget()
   self._backBtn = self:GetUIComponent("UISelectObjectPath", "_backBtn")
-  self._commonTopBtn = (self._backBtn):SpawnObject("UISeasonTopBtn")
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._commonTopBtn = self._backBtn:SpawnObject("UISeasonTopBtn")
+  self._commonTopBtn:SetData(function()
     self:Close()
-  end
-, function()
-    -- function num : 0_2_1 , upvalues : _ENV
-    local seasonModule = (GameGlobal.GetModule)(SeasonModule)
-    ;
-    (seasonModule:UIModule()):ExitSeasonTo(UIStateType.UIMain)
-  end
-, nil, function()
-    -- function num : 0_2_2 , upvalues : _ENV
-    (UISeasonHelper.ShowSeasonHelperBook)(UISeasonHelperTabIndex.Business)
-  end
-, nil)
+  end, function()
+    local seasonModule = GameGlobal.GetModule(SeasonModule)
+    seasonModule:UIModule():ExitSeasonTo(UIStateType.UIMain)
+  end, nil, function()
+    UISeasonHelper.ShowSeasonHelperBook(UISeasonHelperTabIndex.Business)
+  end, nil)
   self._harbourContent = self:GetUIComponent("UISelectObjectPath", "_harbourContent")
   self._seaContent = self:GetUIComponent("UISelectObjectPath", "_seaContent")
   self._harborTitle = self:GetUIComponent("UILocalizationText", "_harborTitle")
@@ -52,128 +31,90 @@ UIS4DiaryController.InitWidget = function(self)
   self._anim = self:GetUIComponent("Animation", "_anim")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4DiaryController.InitData = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local BusinessCompInfo = (self._tradeData):GetBusinessCompInfo()
+function UIS4DiaryController:InitData()
+  local BusinessCompInfo = self._tradeData:GetBusinessCompInfo()
   self.globalInfo = BusinessCompInfo.globalInfo
   self.eventInfo = BusinessCompInfo.eventInfo
   local haveGlobal, haveEvent = 0, 0
   if self.globalInfo then
-    haveGlobal = (table.count)(self.globalInfo)
+    haveGlobal = table.count(self.globalInfo)
   end
   if self.eventInfo then
-    haveEvent = (table.count)(self.eventInfo)
+    haveEvent = table.count(self.eventInfo)
   end
-  local globalCfg = (Cfg.cfg_component_business_global)({})
-  local eventCfg = (Cfg.cfg_component_business_event)({})
-  local allGlobal = (table.count)(globalCfg)
-  local allEvent = (table.count)(eventCfg)
+  local globalCfg = Cfg.cfg_component_business_global({})
+  local eventCfg = Cfg.cfg_component_business_event({})
+  local allGlobal = table.count(globalCfg)
+  local allEvent = table.count(eventCfg)
   self:SetTitle(haveGlobal, allGlobal, haveEvent, allEvent)
-  ;
-  (self._harbourContent):SpawnObjects("UIS4DiaryItem", allGlobal)
-  ;
-  (self._seaContent):SpawnObjects("UIS4DiaryItem", allEvent)
+  self._harbourContent:SpawnObjects("UIS4DiaryItem", allGlobal)
+  self._seaContent:SpawnObjects("UIS4DiaryItem", allEvent)
   self:InitHarborEvent()
   self:InitSeaEvent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4DiaryController.SetTitle = function(self, haveGlobal, allGlobal, haveEvent, allEvent)
-  -- function num : 0_4 , upvalues : _ENV
-  local harborTitle = (StringTable.Get)("str_season_s4_trade_harbor_event_collect", haveGlobal, allGlobal)
-  local seaTitle = (StringTable.Get)("str_season_s4_trade_sea_event_collect", haveEvent, allEvent)
-  ;
-  (self._harborTitle):SetText(harborTitle)
-  ;
-  (self._seaTitle):SetText(seaTitle)
+function UIS4DiaryController:SetTitle(haveGlobal, allGlobal, haveEvent, allEvent)
+  local harborTitle = StringTable.Get("str_season_s4_trade_harbor_event_collect", haveGlobal, allGlobal)
+  local seaTitle = StringTable.Get("str_season_s4_trade_sea_event_collect", haveEvent, allEvent)
+  self._harborTitle:SetText(harborTitle)
+  self._seaTitle:SetText(seaTitle)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4DiaryController.InitHarborEvent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local HarbourEvents = (self._harbourContent):GetAllSpawnList()
-  for i,v in ipairs(HarbourEvents) do
+function UIS4DiaryController:InitHarborEvent()
+  local HarbourEvents = self._harbourContent:GetAllSpawnList()
+  for i, v in ipairs(HarbourEvents) do
     local LockName = "UIS4DiaryItem_AnimIN"
-    do
-      self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, LockName, _ENV, HarbourEvents
-    self:Lock(LockName)
-    YIELD(TT, #HarbourEvents * 40)
-    self:UnLock(LockName)
-  end
-)
-      local have = nil
-      if (self.globalInfo)[i] then
-        have = true
-      else
-        have = false
-      end
-      v:SetData(i, have, true)
+    self:StartTask(function(TT)
+      self:Lock(LockName)
+      YIELD(TT, #HarbourEvents * 40)
+      self:UnLock(LockName)
+    end)
+    local have
+    if self.globalInfo[i] then
+      have = true
+    else
+      have = false
     end
+    v:SetData(i, have, true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4DiaryController.InitSeaEvent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local SeaEvents = (self._seaContent):GetAllSpawnList()
-  for i,v in ipairs(SeaEvents) do
+function UIS4DiaryController:InitSeaEvent()
+  local SeaEvents = self._seaContent:GetAllSpawnList()
+  for i, v in ipairs(SeaEvents) do
     local LockName = "UIS4DiaryItem_AnimIN"
-    do
-      self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, LockName, _ENV, SeaEvents
-    self:Lock(LockName)
-    YIELD(TT, #SeaEvents * 40)
-    self:UnLock(LockName)
-  end
-)
-      local have = nil
-      if (self.eventInfo)[i + 1000] then
-        have = true
-      else
-        have = false
-      end
-      v:SetData(i, have, false)
+    self:StartTask(function(TT)
+      self:Lock(LockName)
+      YIELD(TT, #SeaEvents * 40)
+      self:UnLock(LockName)
+    end)
+    local have
+    if self.eventInfo[i + 1000] then
+      have = true
+    else
+      have = false
     end
+    v:SetData(i, have, false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4DiaryController.Close = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIS4DiaryController:Close()
   local LockName = "UIS4DiaryController_AnimOut"
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, LockName, _ENV
     self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_UIS4DiaryController_out")
+    self._anim:Play("uianim_UIS4DiaryController_out")
     YIELD(TT, 300)
     self:UnLock(LockName)
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4DiaryController.PlayDiaryAnimIn = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIS4DiaryController:PlayDiaryAnimIn()
   local LockName = "UIS4DiaryController_AnimIN"
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, LockName, _ENV
     self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_UIS4DiaryController_in")
+    self._anim:Play("uianim_UIS4DiaryController_in")
     YIELD(TT, 200)
     self:UnLock(LockName)
-  end
-)
+  end)
 end
-
-

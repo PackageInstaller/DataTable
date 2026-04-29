@@ -1,47 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s7/awards/ui_widget_season_result_reward_s7.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetSeasonResultRewardS7", UICustomWidget)
 UIWidgetSeasonResultRewardS7 = UIWidgetSeasonResultRewardS7
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetSeasonResultRewardS7.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWidgetSeasonResultRewardS7:OnShow()
   self._trans = self:GetGameObject()
   self._itemID = nil
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UISeasonResultItemS7")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Result, nil, true)
-  ;
-  (self.uiItem):SetClickCallBack(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Result, nil, true)
+  self.uiItem:SetClickCallBack(function()
     self:BGOnClick()
-  end
-)
+  end)
   self.effStartTime = 2150
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSeasonResultRewardS7.SetShotEffStartTime = function(self)
-  -- function num : 0_1
+function UIWidgetSeasonResultRewardS7:SetShotEffStartTime()
   self.effStartTime = 750
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSeasonResultRewardS7.Init = function(self, count, iconID, threeStar, returnPrism, firstPass, extAward, doubleExtAward, activityAward, returnHelpAward)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetSeasonResultRewardS7:Init(count, iconID, threeStar, returnPrism, firstPass, extAward, doubleExtAward, activityAward, returnHelpAward)
   local itemCfg = Cfg.cfg_item
   local templateData = itemCfg[iconID]
   local taskID = -1
   if templateData then
     local showNumber = false
     self._itemID = iconID
-    local icon = (itemCfg[iconID]).Icon
+    local icon = itemCfg[iconID].Icon
     local quality = templateData.Color
     local text1 = count
     local resultType = UIItemResultType.None
@@ -52,149 +35,110 @@ UIWidgetSeasonResultRewardS7.Init = function(self, count, iconID, threeStar, ret
     if threeStar then
       resultType = UIItemResultType.ThreeStar
       taskID = self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, self
-    YIELD(TT, self.effStartTime)
-    ;
-    (self.uiItem):PlayAni("uieff_UiItem_GetSpecialItem")
-  end
-)
-    else
-      if firstPass then
-        resultType = UIItemResultType.First
-        taskID = self:StartTask(function(TT)
-    -- function num : 0_2_1 , upvalues : _ENV, self
-    YIELD(TT, self.effStartTime)
-    ;
-    (self.uiItem):PlayAni("uieff_UiItem_GetSpecialItem")
-  end
-)
+        YIELD(TT, self.effStartTime)
+        self.uiItem:PlayAni("uieff_UiItem_GetSpecialItem")
+      end)
+    elseif firstPass then
+      resultType = UIItemResultType.First
+      taskID = self:StartTask(function(TT)
+        YIELD(TT, self.effStartTime)
+        self.uiItem:PlayAni("uieff_UiItem_GetSpecialItem")
+      end)
+    elseif extAward then
+      resultType = UIItemResultType.Ext
+    elseif doubleExtAward then
+      resultType = UIItemResultType.DoubleExt
+    elseif returnPrism then
+      resultType = UIItemResultType.Result
+      if returnPrism == 1 then
+        resultText = StringTable.Get("str_battle_return_prism")
+        showNumber = true
+      elseif returnPrism == 2 then
+        resultText = StringTable.Get("str_battle_return_double")
       else
-        if extAward then
-          resultType = UIItemResultType.Ext
-        else
-          if doubleExtAward then
-            resultType = UIItemResultType.DoubleExt
-          else
-            if returnPrism then
-              resultType = UIItemResultType.Result
-              if returnPrism == 1 then
-                resultText = (StringTable.Get)("str_battle_return_prism")
-                showNumber = true
-              else
-                if returnPrism == 2 then
-                  resultText = (StringTable.Get)("str_battle_return_double")
-                else
-                  resultText = (StringTable.Get)("str_battle_failed_return", returnPrism)
-                end
-              end
-            else
-              if activityAward then
-                activityText = (StringTable.Get)("str_item_xianshi")
-              else
-                if returnHelpAward then
-                  returnHelpText = (StringTable.Get)("str_return_system_reward_title")
-                else
-                  resultType = UIItemResultType.Normal
-                  normalText = self:GetNormalTxt()
-                end
-              end
-            end
-          end
-        end
+        resultText = StringTable.Get("str_battle_failed_return", returnPrism)
       end
+    elseif activityAward then
+      activityText = StringTable.Get("str_item_xianshi")
+    elseif returnHelpAward then
+      returnHelpText = StringTable.Get("str_return_system_reward_title")
+    else
+      resultType = UIItemResultType.Normal
+      normalText = self:GetNormalTxt()
     end
-    ;
-    (self.uiItem):SetData({icon = icon, quality = quality, text1 = text1, showNumber = showNumber, resultType = resultType, resultText = resultText, normalText = normalText, itemId = self._itemID, activityText = activityText, returnHelpText = returnHelpText})
+    self.uiItem:SetData({
+      icon = icon,
+      quality = quality,
+      text1 = text1,
+      showNumber = showNumber,
+      resultType = resultType,
+      resultText = resultText,
+      normalText = normalText,
+      itemId = self._itemID,
+      activityText = activityText,
+      returnHelpText = returnHelpText
+    })
   end
-  do
-    return taskID
-  end
+  return taskID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSeasonResultRewardS7.GetNormalTxt = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWidgetSeasonResultRewardS7:GetNormalTxt()
   local match = self:GetModule(MatchModule)
   local enterData = match:GetMatchEnterData()
   local isNormal = true
   if MatchType.MT_Mission == enterData._match_type then
-    local missionID = (enterData:GetMissionCreateInfo()).mission_id
-    local dataList = (UICommonHelper:GetInstance()):GetPassAward(AwardHeadType.Mission, missionID)
+    local missionID = enterData:GetMissionCreateInfo().mission_id
+    local dataList = UICommonHelper:GetInstance():GetPassAward(AwardHeadType.Mission, missionID)
     isNormal = self:HasItem(dataList)
+  elseif MatchType.MT_ExtMission == enterData._match_type then
+    local createData = enterData:GetMissionCreateInfo()
+    local dataList = UICommonHelper:GetInstance():GetPassAward(AwardHeadType.ExtMisson, createData.m_nExtTaskID)
+    isNormal = self:HasItem(dataList)
+  elseif MatchType.MT_ResDungeon == enterData._match_type then
+    local createData = enterData:GetResDungeonInfo()
+    local dataList = UICommonHelper:GetInstance():GetPassAward(AwardHeadType.ResInstance, createData.res_dungeon_id)
+    isNormal = self:HasItem(dataList)
+  end
+  if isNormal then
+    return StringTable.Get("str_season_normal_award")
   else
-    do
-      if MatchType.MT_ExtMission == enterData._match_type then
-        local createData = enterData:GetMissionCreateInfo()
-        local dataList = (UICommonHelper:GetInstance()):GetPassAward(AwardHeadType.ExtMisson, createData.m_nExtTaskID)
-        isNormal = self:HasItem(dataList)
-      else
-        do
-          if MatchType.MT_ResDungeon == enterData._match_type then
-            local createData = enterData:GetResDungeonInfo()
-            local dataList = (UICommonHelper:GetInstance()):GetPassAward(AwardHeadType.ResInstance, createData.res_dungeon_id)
-            isNormal = self:HasItem(dataList)
-          end
-          do
-            if isNormal then
-              return (StringTable.Get)("str_season_normal_award")
-            else
-              return (StringTable.Get)("str_season_normal_award")
-            end
-          end
-        end
-      end
-    end
+    return StringTable.Get("str_season_normal_award")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSeasonResultRewardS7.HasItem = function(self, dataList)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWidgetSeasonResultRewardS7:HasItem(dataList)
   local isNormal = false
   if dataList then
-    for i,v in ipairs(dataList) do
+    for i, v in ipairs(dataList) do
       if v.ItemID == self._itemID then
         isNormal = true
         break
       end
     end
   end
-  do
-    return isNormal
-  end
+  return isNormal
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSeasonResultRewardS7.BGOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIWidgetSeasonResultRewardS7", input = "BGOnClick", 
-args = {}
-})
+function UIWidgetSeasonResultRewardS7:BGOnClick(go)
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIWidgetSeasonResultRewardS7",
+    input = "BGOnClick",
+    args = {}
+  })
   if self._itemID then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowItemTips, self._itemID, ((self._trans).transform).position)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowItemTips, self._itemID, self._trans.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSeasonResultRewardS7.SetLevelDiff = function(self, levelDiff)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWidgetSeasonResultRewardS7:SetLevelDiff(levelDiff)
   local typeMainBg = "exp_S7_map_daoju_di01"
   if levelDiff then
     if levelDiff == UISeasonLevelDiff.Normal then
       typeMainBg = "exp_S7map_daoju_di01"
-    else
-      if levelDiff == UISeasonLevelDiff.Hard then
-        typeMainBg = "exp_S7_map_daoju_di02"
-      end
+    elseif levelDiff == UISeasonLevelDiff.Hard then
+      typeMainBg = "exp_S7_map_daoju_di02"
     end
   end
   local atlasName = "UIS7Scene.spriteatlas"
-  ;
-  (self.uiItem):SetBtnImageByName(typeMainBg, atlasName)
+  self.uiItem:SetBtnImageByName(typeMainBg, atlasName)
 end
-
-

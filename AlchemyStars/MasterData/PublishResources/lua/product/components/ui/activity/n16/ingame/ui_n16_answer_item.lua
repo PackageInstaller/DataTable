@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n16/ingame/ui_n16_answer_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN16AnswerItem", UICustomWidget)
 UIN16AnswerItem = UIN16AnswerItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN16AnswerItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN16AnswerItem:OnShow(uiParams)
   self:InitWidget()
   self:AttachEvent(GameEventType.OnN16SelectClick, self._ShowOnError)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16AnswerItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN16AnswerItem:OnHide()
   self:DetachEvent(GameEventType.OnN16SelectClick, self._ShowOnError)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16AnswerItem.InitWidget = function(self)
-  -- function num : 0_2
+function UIN16AnswerItem:InitWidget()
   self.selet = self:GetUIComponent("Image", "Selet")
   self.option = self:GetUIComponent("UILocalizationText", "Option")
   self.content = self:GetUIComponent("UILocalizationText", "Content")
@@ -37,102 +24,65 @@ UIN16AnswerItem.InitWidget = function(self)
   self.anim = self:GetUIComponent("Animation", "go")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16AnswerItem.Refresh = function(self, data)
-  -- function num : 0_3
-  (self.option):SetText(self:GetOption())
-  ;
-  (self.content):SetText(data)
-  ;
-  (self.noContentMask):SetActive(not data)
-  ;
-  (self.isRight):SetActive(false)
-  ;
-  (self.isError):SetActive(false)
-  ;
-  (self.mask):SetActive(false)
+function UIN16AnswerItem:Refresh(data)
+  self.option:SetText(self:GetOption())
+  self.content:SetText(data)
+  self.noContentMask:SetActive(not data)
+  self.isRight:SetActive(false)
+  self.isError:SetActive(false)
+  self.mask:SetActive(false)
   self:SetColorDefault()
-  ;
-  ((self.selet).gameObject):SetActive(false)
+  self.selet.gameObject:SetActive(false)
   if data == "" or not data then
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16AnswerItem.SetData = function(self, nIndex, callback)
-  -- function num : 0_4
+function UIN16AnswerItem:SetData(nIndex, callback)
   self._onClickCallback = callback
   self._index = nIndex
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16AnswerItem.SeletOnClick = function(self, go)
-  -- function num : 0_5
+function UIN16AnswerItem:SeletOnClick(go)
   if self._onClickCallback then
-    (self._onClickCallback)(self._index)
+    self._onClickCallback(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16AnswerItem._ShowOnError = function(self, rightIndex, seletIndex)
-  -- function num : 0_6 , upvalues : _ENV
-  (self.isRight):SetActive(rightIndex == self._index)
-  ;
-  (self.isError):SetActive(seletIndex == self._index and rightIndex ~= self._index)
-  ;
-  ((self.selet).gameObject):SetActive(seletIndex == self._index and rightIndex ~= self._index)
+function UIN16AnswerItem:_ShowOnError(rightIndex, seletIndex)
+  self.isRight:SetActive(rightIndex == self._index)
+  self.isError:SetActive(seletIndex == self._index and rightIndex ~= self._index)
+  self.selet.gameObject:SetActive(seletIndex == self._index and rightIndex ~= self._index)
   if seletIndex == self._index and rightIndex ~= self._index then
-    (self.anim):Play("uieff_AnswerItem_SelectWrong")
+    self.anim:Play("uieff_AnswerItem_SelectWrong")
   end
   if rightIndex == self._index then
-    (self.anim):Play("uieff_AnswerItem_SelectRight")
+    self.anim:Play("uieff_AnswerItem_SelectRight")
   end
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R3 in 'UnsetPending'
-
   if seletIndex ~= self._index and rightIndex ~= self._index then
-    (self.selet).color = Color(0.66, 0.66, 0.66, 1)
+    self.selet.color = Color(0.66, 0.66, 0.66, 1)
   end
   if self._index == seletIndex then
     if seletIndex == rightIndex then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameSuccess)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameSuccess)
     else
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameFail)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameFail)
     end
   end
-  -- DECOMPILER ERROR: 10 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16AnswerItem.GetOption = function(self)
-  -- function num : 0_7
+function UIN16AnswerItem:GetOption()
   local op = ""
   if self._index == 1 then
     op = "A"
-  else
-    if self._index == 2 then
-      op = "B"
-    else
-      if self._index == 3 then
-        op = "C"
-      else
-        if self._index == 4 then
-          op = "D"
-        end
-      end
-    end
+  elseif self._index == 2 then
+    op = "B"
+  elseif self._index == 3 then
+    op = "C"
+  elseif self._index == 4 then
+    op = "D"
   end
   return op
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16AnswerItem.SetColorDefault = function(self)
-  -- function num : 0_8
+function UIN16AnswerItem:SetColorDefault()
 end
-
-

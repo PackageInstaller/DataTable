@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/idn/activity/n25/str_n25_oneandhalf_anniversary.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_n25_oneandhalf_anniversary_side_enter = "Perayaan HUT 1,5 Tahun", str_n25_oneandhalf_anniversary_play_pv = "Mainkan Pratinjau", str_n25_oneandhalf_anniversary_title = "Perayaan HUT 1,5 Tahun", str_n25_oneandhalf_anniversary_jump_pv = "Lewati"}
+local config = {
+  str_n25_oneandhalf_anniversary_side_enter = "Perayaan HUT 1,5 Tahun",
+  str_n25_oneandhalf_anniversary_play_pv = "Mainkan Pratinjau",
+  str_n25_oneandhalf_anniversary_title = "Perayaan HUT 1,5 Tahun",
+  str_n25_oneandhalf_anniversary_jump_pv = "Lewati"
+}
 return config
-

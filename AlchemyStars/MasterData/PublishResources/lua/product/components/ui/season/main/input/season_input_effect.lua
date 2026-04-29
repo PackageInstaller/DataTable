@@ -1,153 +1,96 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/input/season_input_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonInputEffect", Object)
 SeasonInputEffect = SeasonInputEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonInputEffect.Constructor = function(self, seasonID)
-  -- function num : 0_0 , upvalues : _ENV
-  self._uiSeasonModule = (GameGlobal.GetUIModule)(SeasonModule)
-  seasonID = (self._uiSeasonModule):GetSeasonID()
-  self._seasonManger = (self._uiSeasonModule):SeasonManager()
-  self._cfg = (Cfg.cfg_season_map)[seasonID]
-  self._player = ((self._seasonManger):SeasonPlayerManager()):GetPlayer()
+function SeasonInputEffect:Constructor(seasonID)
+  self._uiSeasonModule = GameGlobal.GetUIModule(SeasonModule)
+  seasonID = self._uiSeasonModule:GetSeasonID()
+  self._seasonManger = self._uiSeasonModule:SeasonManager()
+  self._cfg = Cfg.cfg_season_map[seasonID]
+  self._player = self._seasonManger:SeasonPlayerManager():GetPlayer()
   self._animNames = {}
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._animNames)[SeasonClickEffectPhase.In] = ((self._cfg).ClickEffectAnim)[SeasonClickEffectPhase.In]
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._animNames)[SeasonClickEffectPhase.Loop] = ((self._cfg).ClickEffectAnim)[SeasonClickEffectPhase.Loop]
+  self._animNames[SeasonClickEffectPhase.In] = self._cfg.ClickEffectAnim[SeasonClickEffectPhase.In]
+  self._animNames[SeasonClickEffectPhase.Loop] = self._cfg.ClickEffectAnim[SeasonClickEffectPhase.Loop]
   self._time = 0
   self._phase = SeasonClickEffectPhase.None
   self:_LoadClickEffect()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputEffect._LoadClickEffect = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._clickEffectReq = (ResourceManager:GetInstance()):SyncLoadAsset((self._cfg).ClickEffect, LoadType.GameObject)
+function SeasonInputEffect:_LoadClickEffect()
+  self._clickEffectReq = ResourceManager:GetInstance():SyncLoadAsset(self._cfg.ClickEffect, LoadType.GameObject)
   if not self._clickEffectReq then
-    (Log.error)("SeasonInputEffect load ClickEffect fail.")
-    return 
+    Log.error("SeasonInputEffect load ClickEffect fail.")
+    return
   end
-  self._gameObject = (self._clickEffectReq).Obj
-  self._transform = (self._gameObject).transform
-  local transform = (self._player):RealTransform()
-  ;
-  (self._transform):SetParent(transform.parent)
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._transform).position = transform.position
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._transform).rotation = transform.rotation
-  self._animation = (self._gameObject):GetComponent(typeof(UnityEngine.Animation))
-  ;
-  (self._gameObject):SetActive(false)
+  self._gameObject = self._clickEffectReq.Obj
+  self._transform = self._gameObject.transform
+  local transform = self._player:RealTransform()
+  self._transform:SetParent(transform.parent)
+  self._transform.position = transform.position
+  self._transform.rotation = transform.rotation
+  self._animation = self._gameObject:GetComponent(typeof(UnityEngine.Animation))
+  self._gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputEffect.Update = function(self, deltaTime)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonInputEffect:Update(deltaTime)
   if self._phase == SeasonClickEffectPhase.None then
-    return 
+    return
   end
   self._time = self._time - deltaTime
   if self._phase == SeasonClickEffectPhase.Click then
     self:SetPhase(SeasonClickEffectPhase.In)
-  else
-    if self._phase == SeasonClickEffectPhase.In then
-      if self._time <= 0 then
-        self:_PlayEffect(SeasonClickEffectPhase.Loop)
-      else
-        local position = (self._player):GetLastCorners()
-        if position then
-          self:UpdatePosition(position)
-        end
+  elseif self._phase == SeasonClickEffectPhase.In then
+    if self._time <= 0 then
+      self:_PlayEffect(SeasonClickEffectPhase.Loop)
+    else
+      local position = self._player:GetLastCorners()
+      if position then
+        self:UpdatePosition(position)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputEffect.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (table.clear)(self._animNames)
+function SeasonInputEffect:Dispose()
+  table.clear(self._animNames)
   if self._clickEffectReq then
-    (self._clickEffectReq):Dispose()
+    self._clickEffectReq:Dispose()
     self._clickEffectReq = nil
   end
-  ;
-  ((UnityEngine.Object).Destroy)(self._gameObject)
+  UnityEngine.Object.Destroy(self._gameObject)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputEffect.Click = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonInputEffect:Click()
   self._phase = SeasonClickEffectPhase.Click
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputEffect.UpdatePosition = function(self, position)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._transform).position = Vector3(position.x, 0.5, position.z)
+function SeasonInputEffect:UpdatePosition(position)
+  self._transform.position = Vector3(position.x, 0.5, position.z)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputEffect.SetPhase = function(self, phase)
-  -- function num : 0_6 , upvalues : _ENV
+function SeasonInputEffect:SetPhase(phase)
   if phase == SeasonClickEffectPhase.In then
-    (self._gameObject):SetActive(true)
+    self._gameObject:SetActive(true)
     self:_PlayEffect(SeasonClickEffectPhase.In)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputEffect.GetPhase = function(self)
-  -- function num : 0_7
+function SeasonInputEffect:GetPhase()
   return self._phase
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputEffect.Stop = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function SeasonInputEffect:Stop()
   self._phase = SeasonClickEffectPhase.None
-  ;
-  (self._gameObject):SetActive(false)
+  self._gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputEffect._PlayEffect = function(self, phase)
-  -- function num : 0_9
+function SeasonInputEffect:_PlayEffect(phase)
   self._phase = phase
-  local animationState = (self._animation):get_Item((self._animNames)[self._phase])
+  local animationState = self._animation:get_Item(self._animNames[self._phase])
   if animationState then
-    (self._animation):Stop()
-    ;
-    (self._animation):Play(animationState.name)
+    self._animation:Stop()
+    self._animation:Play(animationState.name)
     self._time = animationState.length * 1000
   else
     self._time = 0
   end
 end
-
-

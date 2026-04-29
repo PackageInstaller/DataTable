@@ -1,9 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/skill_audio_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-SkillAudioType = {Cast = 1, Hit = 2, Voice = 3}
+SkillAudioType = {
+  Cast = 1,
+  Hit = 2,
+  Voice = 3
+}
 SkillAudioType = SkillAudioType
 _enum("SkillAudioType", SkillAudioType)
-

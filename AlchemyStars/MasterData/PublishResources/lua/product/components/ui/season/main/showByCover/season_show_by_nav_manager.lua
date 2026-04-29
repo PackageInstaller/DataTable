@@ -1,106 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/showByCover/season_show_by_nav_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonShowByNavManager", Object)
 SeasonShowByNavManager = SeasonShowByNavManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonShowByNavManager.Constructor = function(self)
-  -- function num : 0_0
+function SeasonShowByNavManager:Constructor()
   self._flag = "_navshow"
   self._showFlag = "show"
   self._hideFlag = "hide"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonShowByNavManager.OnInit = function(self, seasonID)
-  -- function num : 0_1
+function SeasonShowByNavManager:OnInit(seasonID)
   self._covers = {}
   self.showListByArea = {}
   self.hideListByArea = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonShowByNavManager.Update = function(self, deltaTime)
-  -- function num : 0_2
+function SeasonShowByNavManager:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonShowByNavManager.OnShowCheck = function(self, areaName)
-  -- function num : 0_3 , upvalues : _ENV
-  for k,listGo in pairs(self.showListByArea) do
+function SeasonShowByNavManager:OnShowCheck(areaName)
+  for k, listGo in pairs(self.showListByArea) do
     local visible = k == areaName
-    for _,go in pairs(listGo) do
+    for _, go in pairs(listGo) do
       go:SetActive(visible)
     end
   end
-  for k,listgo in pairs(self.hideListByArea) do
+  for k, listgo in pairs(self.hideListByArea) do
     local visible = k ~= areaName
-    for _,go in pairs(listgo) do
+    for _, go in pairs(listgo) do
       go:SetActive(visible)
     end
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonShowByNavManager.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (table.clear)(self.showListByArea)
-  ;
-  (table.clear)(self.hideListByArea)
+function SeasonShowByNavManager:Dispose()
+  table.clear(self.showListByArea)
+  table.clear(self.hideListByArea)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonShowByNavManager.CoverFlag = function(self)
-  -- function num : 0_5
+function SeasonShowByNavManager:CoverFlag()
   return self._flag
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonShowByNavManager.AddCover = function(self, transform, areaName, showOrHide)
-  -- function num : 0_6 , upvalues : _ENV
+function SeasonShowByNavManager:AddCover(transform, areaName, showOrHide)
   if showOrHide == self._showFlag then
-    local listGo = (self.showListByArea)[areaName]
+    local listGo = self.showListByArea[areaName]
     if not listGo then
       listGo = {}
-      -- DECOMPILER ERROR at PC10: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self.showListByArea)[areaName] = listGo
+      self.showListByArea[areaName] = listGo
     end
-    ;
-    (table.insert)(listGo, transform.gameObject)
-  else
-    do
-      if showOrHide == self._hideFlag then
-        local listGo = (self.hideListByArea)[areaName]
-        if not listGo then
-          listGo = {}
-          -- DECOMPILER ERROR at PC27: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self.hideListByArea)[areaName] = listGo
-        end
-        ;
-        (table.insert)(listGo, transform.gameObject)
-      end
+    table.insert(listGo, transform.gameObject)
+  elseif showOrHide == self._hideFlag then
+    local listGo = self.hideListByArea[areaName]
+    if not listGo then
+      listGo = {}
+      self.hideListByArea[areaName] = listGo
     end
+    table.insert(listGo, transform.gameObject)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonShowByNavManager._TryCleanCover = function(self)
-  -- function num : 0_7
+function SeasonShowByNavManager:_TryCleanCover()
 end
-
-

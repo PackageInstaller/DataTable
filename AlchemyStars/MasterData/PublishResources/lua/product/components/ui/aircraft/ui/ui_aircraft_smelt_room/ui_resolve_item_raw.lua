@@ -1,49 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_smelt_room/ui_resolve_item_raw.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIResolveItemRaw", UICustomWidget)
 UIResolveItemRaw = UIResolveItemRaw
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIResolveItemRaw.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIResolveItemRaw:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResolveItemRaw.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIResolveItemRaw:InitWidget()
   self.item1 = self:GetUIComponent("UISelectObjectPath", "item1")
   self.item2 = self:GetUIComponent("UISelectObjectPath", "item2")
   self.item3 = self:GetUIComponent("UISelectObjectPath", "item3")
-  self._itemPool = {self.item1, self.item2, self.item3}
+  self._itemPool = {
+    self.item1,
+    self.item2,
+    self.item3
+  }
   self._items = {}
   self:AttachEvent(GameEventType.UIAircraftResolveItemOnclick, self.OnSelectionChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResolveItemRaw.SetData = function(self, tab2, cfgs, rawIndex, onClick, onLongPress, selections)
-  -- function num : 0_2
+function UIResolveItemRaw:SetData(tab2, cfgs, rawIndex, onClick, onLongPress, selections)
   for i = 1, 3 do
     local index = (rawIndex - 1) * 3 + i
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R12 in 'UnsetPending'
-
     if index <= #cfgs then
-      if not (self._items)[i] then
-        (self._items)[i] = ((self._itemPool)[i]):SpawnObject("UIResolveItem")
+      if not self._items[i] then
+        self._items[i] = self._itemPool[i]:SpawnObject("UIResolveItem")
       end
-      ;
-      ((self._items)[i]):Active(true)
-      ;
-      ((self._items)[i]):SetData(cfgs[index], index, onClick, onLongPress)
-    else
-      if (self._items)[i] then
-        ((self._items)[i]):Active(false)
-      end
+      self._items[i]:Active(true)
+      self._items[i]:SetData(cfgs[index], index, onClick, onLongPress)
+    elseif self._items[i] then
+      self._items[i]:Active(false)
     end
   end
   self._tab2 = tab2
@@ -51,27 +36,21 @@ UIResolveItemRaw.SetData = function(self, tab2, cfgs, rawIndex, onClick, onLongP
   self:OnSelectionChanged(self._tab2, selections)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResolveItemRaw.OnSelectionChanged = function(self, tab2, selections)
-  -- function num : 0_3 , upvalues : _ENV
+function UIResolveItemRaw:OnSelectionChanged(tab2, selections)
   if self._tab2 ~= tab2 then
     AirLog("tab2严重错误：", tab2)
-    return 
+    return
   end
   if tab2 == ResolveTab2.JuXiang then
     local selected = selections[1]
-    for idx,item in ipairs(self._items) do
+    for idx, item in ipairs(self._items) do
       local index = (self._rawIdx - 1) * 3 + idx
       item:ShowSelectBox(index == selected)
     end
   elseif tab2 == ResolveTab2.XinPo then
-    for idx,item in ipairs(self._items) do
+    for idx, item in ipairs(self._items) do
       local index = (self._rawIdx - 1) * 3 + idx
-      item:ShowSelector((table.icontains)(selections, index))
+      item:ShowSelector(table.icontains(selections, index))
     end
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
-
-

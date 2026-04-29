@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/skill_preview_scope_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_scope_filter_param")
 _class("SkillPreviewScopeParam", Object)
 SkillPreviewScopeParam = SkillPreviewScopeParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewScopeParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewScopeParam:Constructor(t)
   self._targetType = t.TargetType
   self._scopeType = t.ScopeType
   self._scopeCenterType = t.ScopeCenterType
@@ -20,87 +13,57 @@ SkillPreviewScopeParam.Constructor = function(self, t)
   self._canConvert = t.CanConvert or false
   self._targetTypeParam = t.TargetTypeParam
   if not t.ScopeCasterOccupiedFilter and not t.ScopeObstructingTrapFilter and not t.ScopeMonsterOccupiedPosFilter and not t.TargetSelectionMode then
-    self._scopeFilterParam = (SkillScopeFilterParam.GenerateDefaultParam)()
+    self._scopeFilterParam = SkillScopeFilterParam.GenerateDefaultParam()
   else
-    self._scopeFilterParam = SkillScopeFilterParam:New({scopeCasterOccupiedFilter = t.ScopeCasterOccupiedFilter, obstructingTrapFilter = t.ScopeObstructingTrapFilter, monsterOccupiedPosFilter = t.ScopeMonsterOccupiedPosFilter, targetSelectionMode = t.TargetSelectionMode})
+    self._scopeFilterParam = SkillScopeFilterParam:New({
+      scopeCasterOccupiedFilter = t.ScopeCasterOccupiedFilter,
+      obstructingTrapFilter = t.ScopeObstructingTrapFilter,
+      monsterOccupiedPosFilter = t.ScopeMonsterOccupiedPosFilter,
+      targetSelectionMode = t.TargetSelectionMode
+    })
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewScopeParam.GetScopeTargetType = function(self)
-  -- function num : 0_1
+function SkillPreviewScopeParam:GetScopeTargetType()
   return self._targetType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewScopeParam.GetScopeTargetTypeParam = function(self)
-  -- function num : 0_2
+function SkillPreviewScopeParam:GetScopeTargetTypeParam()
   return self._targetTypeParam
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewScopeParam.GetScopeType = function(self)
-  -- function num : 0_3
+function SkillPreviewScopeParam:GetScopeType()
   return self._scopeType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewScopeParam.GetScopeCenterType = function(self)
-  -- function num : 0_4
+function SkillPreviewScopeParam:GetScopeCenterType()
   return self._scopeCenterType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewScopeParam.GetScopeParamData = function(self)
-  -- function num : 0_5
+function SkillPreviewScopeParam:GetScopeParamData()
   return self._scopeParamData
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewScopeParam.SetScopeParamData = function(self, paramData)
-  -- function num : 0_6
+function SkillPreviewScopeParam:SetScopeParamData(paramData)
   self._scopeParamData = paramData
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewScopeParam.GetOnlyCanMove = function(self)
-  -- function num : 0_7
+function SkillPreviewScopeParam:GetOnlyCanMove()
   return self._onlyCanMove
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewScopeParam.GetScopeFilterParam = function(self)
-  -- function num : 0_8
+function SkillPreviewScopeParam:GetScopeFilterParam()
   return self._scopeFilterParam
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewScopeParam.GetNotDoor = function(self)
-  -- function num : 0_9
+function SkillPreviewScopeParam:GetNotDoor()
   return self._notDoor
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewScopeParam.GetCanConvert = function(self)
-  -- function num : 0_10
+function SkillPreviewScopeParam:GetCanConvert()
   return self._canConvert
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewScopeParam.GetNotExit = function(self)
-  -- function num : 0_11
+function SkillPreviewScopeParam:GetNotExit()
   return self._notExit
 end
-
-

@@ -1,121 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/world/unique_game_fsm_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("game_fsm_config")
 _class("GameFSMComponent", Object)
 GameFSMComponent = GameFSMComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GameFSMComponent.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function GameFSMComponent:Constructor(world)
   self.GameFSMGenInfo = GameFSMGenInfo:New()
   self.world = world
-  self.fsm_id = (world.BW_WorldInfo).fsm_id
-  self._timeService = (self.world):GetService("Time")
+  self.fsm_id = world.BW_WorldInfo.fsm_id
+  self._timeService = self.world:GetService("Time")
   self._enableHandleInput = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFSMComponent.Initialize = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.GameFSMGenInfo).CustomLogicConfigTable = GameFsmConfig
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.GameFSMGenInfo).CustomLogicConfigID = self.fsm_id
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.GameFSMGenInfo).World = self.world
-  self.fsmImp = (CustomLogicFactory.Static_CreateLogic)(self.GameFSMGenInfo)
+function GameFSMComponent:Initialize()
+  self.GameFSMGenInfo.CustomLogicConfigTable = GameFsmConfig
+  self.GameFSMGenInfo.CustomLogicConfigID = self.fsm_id
+  self.GameFSMGenInfo.World = self.world
+  self.fsmImp = CustomLogicFactory.Static_CreateLogic(self.GameFSMGenInfo)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFSMComponent.CurStateID = function(self)
-  -- function num : 0_2
-  local fsmNode = (((self.fsmImp).nodes).elements)[1]
+function GameFSMComponent:CurStateID()
+  local fsmNode = self.fsmImp.nodes.elements[1]
   return fsmNode:CurrentStateID()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFSMComponent.Update = function(self)
-  -- function num : 0_3
-  local deltaTime = (self._timeService):GetDeltaTimeMs()
-  return (self.fsmImp):Update(deltaTime)
+function GameFSMComponent:Update()
+  local deltaTime = self._timeService:GetDeltaTimeMs()
+  return self.fsmImp:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFSMComponent.EnableHandleInput = function(self, enable)
-  -- function num : 0_4
+function GameFSMComponent:EnableHandleInput(enable)
   self._enableHandleInput = enable
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFSMComponent.GetHandleInputEnable = function(self)
-  -- function num : 0_5
+function GameFSMComponent:GetHandleInputEnable()
   return self._enableHandleInput
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GameFSMComponent.Dispose = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (CustomLogicFactory.Static_DestroyLogic)(self.fsmImp)
+function GameFSMComponent:Dispose()
+  CustomLogicFactory.Static_DestroyLogic(self.fsmImp)
   self.fsmImp = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GameFSM = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function MainWorld:GameFSM()
   if EDITOR and CHECK_RENDER_ACCESS_LOGIC then
-    local debugInfo = (debug.getinfo)(2, "S")
+    local debugInfo = debug.getinfo(2, "S")
     local filePath = debugInfo.short_src
-    local renderIndex = (string.find)(filePath, "_r.lua")
+    local renderIndex = string.find(filePath, "_r.lua")
     if renderIndex ~= nil then
-      (Log.exception)("render file :", filePath, " call GameFSM() ", (Log.traceback)())
+      Log.exception("render file :", filePath, " call GameFSM() ", Log.traceback())
       return nil
     end
   end
-  do
-    return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).GameFSM)
-  end
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.GameFSM)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.HasGameFSM = function(self)
-  -- function num : 0_8
-  do return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).GameFSM) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorld:HasGameFSM()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.GameFSM) ~= nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.AddGameFSM = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).GameFSM
+function MainWorld:AddGameFSM()
+  local index = self.BW_UniqueComponentsEnum.GameFSM
   local component = GameFSMComponent:New(self)
   component:Initialize()
   self:SetUniqueComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.RemoveGameFSM = function(self)
-  -- function num : 0_10
+function MainWorld:RemoveGameFSM()
   if self:HasGameFSM() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).GameFSM, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.GameFSM, nil)
   end
 end
-
-

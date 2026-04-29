@@ -1,93 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_confirm_dialog_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftConfirmDialogController", UIController)
 UIAircraftConfirmDialogController = UIAircraftConfirmDialogController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftConfirmDialogController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftConfirmDialogController:OnShow(uiParams)
   self._module = self:GetModule(AircraftModule)
   self:InitWidget()
   self.roomData = uiParams[1]
-  self._spaceID = (self.roomData):SpaceId()
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.textName).text = (StringTable.Get)((self.roomData):GetRoomName())
-  local icon = nil
-  local roomType = (self.roomData):GetRoomType()
-  local room_cfg = (Cfg.cfg_aircraft_room)({})
-  for id,room_cfg in pairs(room_cfg) do
+  self._spaceID = self.roomData:SpaceId()
+  self.textName.text = StringTable.Get(self.roomData:GetRoomName())
+  local icon
+  local roomType = self.roomData:GetRoomType()
+  local room_cfg = Cfg.cfg_aircraft_room({})
+  for id, room_cfg in pairs(room_cfg) do
     if room_cfg.Level == 1 and room_cfg.RoomType == roomType then
       icon = room_cfg.RoomTypeIcon1
     end
   end
-  ;
-  (self.imageBg):LoadImage(icon)
+  self.imageBg:LoadImage(icon)
   local currency = self:GetUIComponent("UISelectObjectPath", "currency")
   self._topTips = currency:SpawnObject("UICurrencyMenu")
-  ;
-  (self._topTips):SetData({RoleAssetID.RoleAssetFirefly, CurrenyTypeId.StarPoint, RoleAssetID.RoleAssetGold})
-  local fireFly = (self._topTips):GetItemByTypeId(RoleAssetID.RoleAssetFirefly)
+  self._topTips:SetData({
+    RoleAssetID.RoleAssetFirefly,
+    CurrenyTypeId.StarPoint,
+    RoleAssetID.RoleAssetGold
+  })
+  local fireFly = self._topTips:GetItemByTypeId(RoleAssetID.RoleAssetFirefly)
   fireFly:CloseAddBtn()
   self:OnFireflyChanged()
-  local power = (self._topTips):GetItemByTypeId(CurrenyTypeId.StarPoint)
-  local powerAvai = (self._module):GetPower()
-  local powerMax = (self._module):GetMaxPower()
+  local power = self._topTips:GetItemByTypeId(CurrenyTypeId.StarPoint)
+  local powerAvai = self._module:GetPower()
+  local powerMax = self._module:GetMaxPower()
   power:SetText(powerAvai .. "/" .. powerMax)
   self:AttachEvent(GameEventType.AircraftOnFireFlyChanged, self.OnFireflyChanged)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftConfirmDialogController.OnFireflyChanged = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local fireFly = (self._topTips):GetItemByTypeId(RoleAssetID.RoleAssetFirefly)
-  fireFly:SetText((self._module):GetFirefly() .. "/" .. (math.floor)((self._module):GetMaxFirefly()))
+function UIAircraftConfirmDialogController:OnFireflyChanged()
+  local fireFly = self._topTips:GetItemByTypeId(RoleAssetID.RoleAssetFirefly)
+  fireFly:SetText(self._module:GetFirefly() .. "/" .. math.floor(self._module:GetMaxFirefly()))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftConfirmDialogController.InitWidget = function(self)
-  -- function num : 0_2
+function UIAircraftConfirmDialogController:InitWidget()
   self.textName = self:GetUIComponent("UILocalizationText", "TextName")
   self.imageBg = self:GetUIComponent("RawImageLoader", "Imagebg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftConfirmDialogController.ButtonCancelOnClick = function(self, go)
-  -- function num : 0_3
+function UIAircraftConfirmDialogController:ButtonCancelOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftConfirmDialogController.ButtonConfirmOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.RequestDown, self)
+function UIAircraftConfirmDialogController:ButtonConfirmOnClick(go)
+  GameGlobal.TaskManager():StartTask(self.RequestDown, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftConfirmDialogController.RequestDown = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
-  local module = ((GameGlobal.GameLogic)()):GetModule(AircraftModule)
+function UIAircraftConfirmDialogController:RequestDown(TT)
+  local module = GameGlobal.GameLogic():GetModule(AircraftModule)
   self:Lock(self:GetName())
   local result = module:RequestRoomDegrade(TT, self._spaceID)
   self:UnLock(self:GetName())
   if result:GetSucc() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftSettledPetChanged)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftPlayDoorAnim, AircraftDoorAnim.TearDown, self._spaceID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftSettledPetChanged)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftPlayDoorAnim, AircraftDoorAnim.TearDown, self._spaceID)
     self:CloseDialog()
   else
-    ;
-    (ToastManager.ShowToast)(module:GetErrorMsg(result:GetResult()))
+    ToastManager.ShowToast(module:GetErrorMsg(result:GetResult()))
   end
 end
-
-

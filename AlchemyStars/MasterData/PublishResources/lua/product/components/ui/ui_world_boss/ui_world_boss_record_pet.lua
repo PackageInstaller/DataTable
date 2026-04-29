@@ -1,79 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/ui_world_boss_record_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossRecordPet", UICustomWidget)
 UIWorldBossRecordPet = UIWorldBossRecordPet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossRecordPet.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWorldBossRecordPet:Constructor()
   self._petModule = self:GetModule(PetModule)
   self._atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
-  self._cfg = (Cfg.cfg_pet_element)({})
+  self._cfg = Cfg.cfg_pet_element({})
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRecordPet.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIWorldBossRecordPet:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRecordPet._GetComponents = function(self)
-  -- function num : 0_2
+function UIWorldBossRecordPet:_GetComponents()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._element1 = self:GetUIComponent("Image", "e1")
   self._element2 = self:GetUIComponent("Image", "e2")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRecordPet.SetData = function(self, pstId)
-  -- function num : 0_3
+function UIWorldBossRecordPet:SetData(pstId)
   self._pstId = pstId
   self:_SetUIInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRecordPet._SetUIInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._data = (self._petModule):GetPet(self._pstId)
+function UIWorldBossRecordPet:_SetUIInfo()
+  self._data = self._petModule:GetPet(self._pstId)
   if self._data then
-    local icon = (self._data):GetPetTeamBody(PetSkinEffectPath.CARD_TEAM)
+    local icon = self._data:GetPetTeamBody(PetSkinEffectPath.CARD_TEAM)
     if icon then
-      (self._icon):LoadImage(icon)
-      ;
-      ((self._icon).gameObject):SetActive(true)
+      self._icon:LoadImage(icon)
+      self._icon.gameObject:SetActive(true)
     end
-    local element1 = (self._data):GetPetFirstElement()
-    local element2 = (self._data):GetPetSecondElement()
-    ;
-    ((self._element1).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._element1).sprite = (self._atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((self._cfg)[element1]).Icon))
-    local haveElement2 = not element2 or element2 > 0
-    -- DECOMPILER ERROR at PC68: Confused about usage of register: R5 in 'UnsetPending'
-
+    local element1 = self._data:GetPetFirstElement()
+    local element2 = self._data:GetPetSecondElement()
+    self._element1.gameObject:SetActive(true)
+    self._element1.sprite = self._atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(self._cfg[element1].Icon))
+    local haveElement2 = element2 and 0 < element2
     if haveElement2 then
-      (self._element2).sprite = (self._atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((self._cfg)[element2]).Icon))
+      self._element2.sprite = self._atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(self._cfg[element2].Icon))
     end
-    ;
-    ((self._element2).gameObject):SetActive(haveElement2)
+    self._element2.gameObject:SetActive(haveElement2)
   else
-    ((self._icon).gameObject):SetActive(false)
-    ;
-    ((self._element1).gameObject):SetActive(false)
-    ;
-    ((self._element2).gameObject):SetActive(false)
+    self._icon.gameObject:SetActive(false)
+    self._element1.gameObject:SetActive(false)
+    self._element2.gameObject:SetActive(false)
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
-
-

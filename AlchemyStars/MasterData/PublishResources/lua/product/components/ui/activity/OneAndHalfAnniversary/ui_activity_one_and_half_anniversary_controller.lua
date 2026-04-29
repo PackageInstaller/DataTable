@@ -1,34 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/OneAndHalfAnniversary/ui_activity_one_and_half_anniversary_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityOneAndHalfAnniversaryController", UIController)
 UIActivityOneAndHalfAnniversaryController = UIActivityOneAndHalfAnniversaryController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityOneAndHalfAnniversaryController.OnInit = function(self)
-  -- function num : 0_0
+function UIActivityOneAndHalfAnniversaryController:OnInit()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityOneAndHalfAnniversaryController.PlayBtnOnClick = function(self)
-  -- function num : 0_1
+function UIActivityOneAndHalfAnniversaryController:PlayBtnOnClick()
   self:ShowDialog("UIActivityOneAndHalfAnniversaryVideoController")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityOneAndHalfAnniversaryController.QuitBtnOnClick = function(self)
-  -- function num : 0_2
+function UIActivityOneAndHalfAnniversaryController:QuitBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityOneAndHalfAnniversaryController.OnHide = function(self)
-  -- function num : 0_3
+function UIActivityOneAndHalfAnniversaryController:OnHide()
 end
-
-

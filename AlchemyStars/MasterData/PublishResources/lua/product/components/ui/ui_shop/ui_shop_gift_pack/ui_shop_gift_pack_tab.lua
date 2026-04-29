@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_gift_pack/ui_shop_gift_pack_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopGiftPackTab", UICustomWidget)
 UIShopGiftPackTab = UIShopGiftPackTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopGiftPackTab.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopGiftPackTab:Constructor()
   self.shopModule = self:GetModule(ShopModule)
-  self.clientShop = (self.shopModule):GetClientShop()
-  self._dataRecharge = (self.clientShop):GetRechargeShopData()
-  self._data = (self.clientShop):GetGiftPackShopData()
-  self._mRole = ((GameGlobal.GameLogic)()):GetModule(RoleModule)
+  self.clientShop = self.shopModule:GetClientShop()
+  self._dataRecharge = self.clientShop:GetRechargeShopData()
+  self._data = self.clientShop:GetGiftPackShopData()
+  self._mRole = GameGlobal.GameLogic():GetModule(RoleModule)
   self._curSelTab = 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopGiftPackTab:OnShow()
   self:AttachEvent(GameEventType.UpdateGiftPackShop, self.EnsureFlush)
   self._anim = self:GetUIComponent("Animation", "UIShopGiftPackTab")
   self._content = self:GetUIComponent("RectTransform", "Content")
@@ -33,99 +23,76 @@ UIShopGiftPackTab.OnShow = function(self)
   self:AttachEvent(GameEventType.ShopNew, self.CheckAllTabNew)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopGiftPackTab:OnHide()
   self:DetachEvent(GameEventType.UpdateGiftPackShop, self.EnsureFlush)
   self:DetachEvent(GameEventType.ShopNew, self.CheckAllTabNew)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.EnsureFlush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((self:RootUIOwner()):GetGameObject())
-  local root = nil
-  local goDepth = nil
+function UIShopGiftPackTab:EnsureFlush()
+  local root = self:RootUIOwner():GetGameObject()
+  local goDepth
   while goDepth == nil do
-    if (string.find)(root.name, "depth_") then
+    if string.find(root.name, "depth_") then
       goDepth = root
     else
-      root = ((root.transform).parent).gameObject
+      root = root.transform.parent.gameObject
     end
     if root == nil then
-      goDepth = (self._content).gameObject
+      goDepth = self._content.gameObject
     end
   end
   if goDepth.activeInHierarchy then
     self:Flush()
   else
     self:StartSafeTask("UIShopGiftPackTab::EnsureFlush", function(lockName, TT)
-    -- function num : 0_3_0 , upvalues : goDepth, _ENV, self
-    while not goDepth.activeInHierarchy do
-      YIELD(TT)
-    end
-    self:Flush()
-  end
-)
+      while not goDepth.activeInHierarchy do
+        YIELD(TT)
+      end
+      self:Flush()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.InitListView = function(self, scrollView, index)
-  -- function num : 0_4
+function UIShopGiftPackTab:InitListView(scrollView, index)
   local item = scrollView:NewListViewItem("dsvItem")
   local itemPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R5 in 'UnsetPending'
-
   if self._poolItems ~= nil then
-    (self._poolItems)[index] = itemPool
+    self._poolItems[index] = itemPool
   end
   if not item.IsInitHandlerCalled then
     item.IsInitHandlerCalled = true
     itemPool:SpawnObjects("UIShopGiftPackItemContainer", 1)
   end
   local luaIndex = index + 1
-  local uiItem = (itemPool:GetAllSpawnList())[1]
-  local dataItem = (self.filterItems)[luaIndex]
+  local uiItem = itemPool:GetAllSpawnList()[1]
+  local dataItem = self.filterItems[luaIndex]
   uiItem:Flush(dataItem:GetId())
   return item
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.OpenSelectAgePanel = function(self)
-  -- function num : 0_5
+function UIShopGiftPackTab:OpenSelectAgePanel()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.JumpItem = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
-  do
-    if roleModule:IsJapanZone() then
-      local payModule = (GameGlobal.GetModule)(PayModule)
-      if payModule:IsShowSelectAgePanel() then
-        self:ShowDialog("UISetAgeConfirmController")
-        payModule:OpenSelectAgePanel()
-        return 
-      end
+function UIShopGiftPackTab:JumpItem()
+  local roleModule = GameGlobal.GetModule(RoleModule)
+  if roleModule:IsJapanZone() then
+    local payModule = GameGlobal.GetModule(PayModule)
+    if payModule:IsShowSelectAgePanel() then
+      self:ShowDialog("UISetAgeConfirmController")
+      payModule:OpenSelectAgePanel()
+      return
     end
-    if not (self._param)[4] then
-      local jumpId = not self._param or 0
-    end
+  end
+  if self._param then
+    local jumpId = self._param[4] or 0
     if jumpId then
-      for i,item in ipairs(self.filterItems) do
+      for i, item in ipairs(self.filterItems) do
         if item and item:GetId() == jumpId then
           if self._poolItems == nil then
             self._poolItems = {}
           end
-          ;
-          (self._scrollRect):MovePanelToItemIndex(i - 1, 0)
-          local uiItem = (((self._poolItems)[i - 1]):GetAllSpawnList())[1]
+          self._scrollRect:MovePanelToItemIndex(i - 1, 0)
+          local uiItem = self._poolItems[i - 1]:GetAllSpawnList()[1]
           uiItem:OpenUIShopGiftPackDetail()
           break
         end
@@ -134,10 +101,7 @@ UIShopGiftPackTab.JumpItem = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.Flush = function(self)
-  -- function num : 0_7
+function UIShopGiftPackTab:Flush()
   self:FlushAllItems()
   self:CreateTab()
   self:FlushTab()
@@ -145,26 +109,20 @@ UIShopGiftPackTab.Flush = function(self)
   self:FlushTabContent(filterItems)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.FlushAllItems = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIShopGiftPackTab:FlushAllItems()
   self._poolItems = {}
-  self._items = (self._data):GetGoods()
+  self._items = self._data:GetGoods()
   local newItems = {}
-  for k,v in pairs(self._items) do
+  for k, v in pairs(self._items) do
     if not v:IsShowInSkinsTab() and not v:GetRechargeGift() then
-      (table.insert)(newItems, v)
+      table.insert(newItems, v)
     end
   end
   self._items = newItems
   return newItems
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.CreateTab = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIShopGiftPackTab:CreateTab()
   if not self._curSelTab then
     self._curSelTab = 1
   end
@@ -175,17 +133,17 @@ UIShopGiftPackTab.CreateTab = function(self)
   self._tabs = {}
   self._tabBtns = {}
   local tmpTab = {}
-  local cfgTabs = (Cfg.cfg_shop_gift_pack_tab)({})
+  local cfgTabs = Cfg.cfg_shop_gift_pack_tab({})
   local insertionOrder = {}
   for key in pairs(cfgTabs) do
-    (table.insert)(insertionOrder, key)
+    table.insert(insertionOrder, key)
   end
   local cfgTabsOrder = {}
-  for _,key in ipairs(insertionOrder) do
-    (table.insert)(cfgTabsOrder, cfgTabs[key])
+  for _, key in ipairs(insertionOrder) do
+    table.insert(cfgTabsOrder, cfgTabs[key])
   end
-  for index,value in ipairs(cfgTabsOrder) do
-    for key,val in pairs(self._items) do
+  for index, value in ipairs(cfgTabsOrder) do
+    for key, val in pairs(self._items) do
       if val:GetShopGiftTabID() == value.ID then
         tmpTab[value.ID] = value
         break
@@ -195,123 +153,86 @@ UIShopGiftPackTab.CreateTab = function(self)
   local allItemsTab = {}
   allItemsTab.ID = 0
   allItemsTab.Name = "str_shop_giftmarket_tab_name1"
-  ;
-  (table.insert)(self._tabBtns, allItemsTab)
-  for key,value in pairs(tmpTab) do
-    (table.insert)(self._tabBtns, value)
+  table.insert(self._tabBtns, allItemsTab)
+  for key, value in pairs(tmpTab) do
+    table.insert(self._tabBtns, value)
   end
-  ;
-  (table.sort)(self._tabBtns, function(a, b)
-    -- function num : 0_9_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._tabBtns, function(a, b)
+    return a.ID < b.ID
+  end)
   local count = #self._tabBtns
   if oldCount ~= 0 and oldCount ~= count then
     self._curSelTab = 1
   end
   local idTab = 1
-  local uiTabs = (self._tabContent):SpawnObjects("UIShopGiftPackTabBtn", count)
-  for k,v in ipairs(self._tabBtns) do
+  local uiTabs = self._tabContent:SpawnObjects("UIShopGiftPackTabBtn", count)
+  for k, v in ipairs(self._tabBtns) do
     local item = {
-data = {}
-, ui = uiTabs[idTab]}
-    ;
-    (item.ui):SetData(idTab, v.ID, (StringTable.Get)(v.Name), function(keyTab, go)
-    -- function num : 0_9_1 , upvalues : self
-    self:OnTabClick(keyTab, go)
-  end
-)
-    -- DECOMPILER ERROR at PC120: Confused about usage of register: R16 in 'UnsetPending'
-
-    ;
-    (self._tabs)[k] = item
-    ;
-    (item.ui):FlushNew(self:CheckTabNew(idTab, v.ID))
+      data = {},
+      ui = uiTabs[idTab]
+    }
+    item.ui:SetData(idTab, v.ID, StringTable.Get(v.Name), function(keyTab, go)
+      self:OnTabClick(keyTab, go)
+    end)
+    self._tabs[k] = item
+    item.ui:FlushNew(self:CheckTabNew(idTab, v.ID))
     idTab = idTab + 1
-    ;
-    (item.ui):GiftPackTabDetachEvent()
+    item.ui:GiftPackTabDetachEvent()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.FlushTab = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for _,value in ipairs(self._tabs) do
+function UIShopGiftPackTab:FlushTab()
+  for _, value in ipairs(self._tabs) do
     local ui = value.ui
     ui:SetSelected(self._curSelTab == ui:GetTabId())
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.FilterFlush = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIShopGiftPackTab:FilterFlush()
   self.filterItems = {}
   if self._curSelTab == 1 then
     self.filterItems = self._items
     return self.filterItems
   end
   for i = 1, #self._items do
-    local curShopGiftTabID = ((self._tabBtns)[self._curSelTab]).ID
-    if ((self._items)[i]):GetShopGiftTabID() == curShopGiftTabID then
-      (table.insert)(self.filterItems, (self._items)[i])
+    local curShopGiftTabID = self._tabBtns[self._curSelTab].ID
+    if self._items[i]:GetShopGiftTabID() == curShopGiftTabID then
+      table.insert(self.filterItems, self._items[i])
     end
   end
   return self.filterItems
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.FlushTabContent = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local itemCount = (table.count)(self.filterItems)
-  local localPosition = (self._content).localPosition
+function UIShopGiftPackTab:FlushTabContent()
+  local itemCount = table.count(self.filterItems)
+  local localPosition = self._content.localPosition
   if self._scrollRect then
-    (self._scrollRect):SetListItemCount(itemCount)
-    ;
-    (self._scrollRect):ResetListView()
-    ;
-    (self._scrollRect):RefreshAllShownItem()
-    ;
-    (self._scrollRect):MovePanelToItemIndex(0, 0)
+    self._scrollRect:SetListItemCount(itemCount)
+    self._scrollRect:ResetListView()
+    self._scrollRect:RefreshAllShownItem()
+    self._scrollRect:MovePanelToItemIndex(0, 0)
   else
     self._scrollRect = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
-    ;
-    (self._scrollRect):InitListView(itemCount, function(scrollView, index)
-    -- function num : 0_12_0 , upvalues : self
-    return self:InitListView(scrollView, index)
-  end
-, nil)
+    self._scrollRect:InitListView(itemCount, function(scrollView, index)
+      return self:InitListView(scrollView, index)
+    end, nil)
   end
   local localPositionY = localPosition.y
-  localPosition = (self._content).localPosition
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._content).localPosition = Vector3(localPosition.x, localPositionY, localPosition.z)
+  localPosition = self._content.localPosition
+  self._content.localPosition = Vector3(localPosition.x, localPositionY, localPosition.z)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.CheckAllTabNew = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  for _,tab in ipairs(self._tabs) do
-    (tab.ui):FlushNew(self:CheckTabNew((tab.ui):GetTabId(), (tab.ui):GetTiftPackTabId()))
+function UIShopGiftPackTab:CheckAllTabNew()
+  for _, tab in ipairs(self._tabs) do
+    tab.ui:FlushNew(self:CheckTabNew(tab.ui:GetTabId(), tab.ui:GetTiftPackTabId()))
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.CheckTabNew = function(self, tabId, giftPackTabId)
-  -- function num : 0_14 , upvalues : _ENV
+function UIShopGiftPackTab:CheckTabNew(tabId, giftPackTabId)
   local items = self:FlushAllItems()
-  for k,tab in pairs(self._tabs) do
-    if tabId == (tab.ui):GetTabId() then
-      for _,item in pairs(items) do
+  for k, tab in pairs(self._tabs) do
+    if tabId == tab.ui:GetTabId() then
+      for _, item in pairs(items) do
         if (item:GetShopGiftTabID() == giftPackTabId or tabId == 1) and self:CheckNew(item:GetId()) then
           return true
         end
@@ -321,28 +242,19 @@ UIShopGiftPackTab.CheckTabNew = function(self, tabId, giftPackTabId)
   return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.CheckNew = function(self, itemId)
-  -- function num : 0_15 , upvalues : _ENV
-  local itemData = (self._data):GetGoodBuyId(itemId)
+function UIShopGiftPackTab:CheckNew(itemId)
+  local itemData = self._data:GetGoodBuyId(itemId)
   local isNew = itemData:GetNew()
-  do
-    if itemData:GetRechargeGift() then
-      local key = "UIShopGiftPackItem" .. self:GetNewFlagKey(itemData:GetId())
-      return (LocalDB.GetInt)(key, 0) == 0
-    end
-    do return isNew end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if itemData:GetRechargeGift() then
+    local key = "UIShopGiftPackItem" .. self:GetNewFlagKey(itemData:GetId())
+    return LocalDB.GetInt(key, 0) == 0
   end
+  return isNew
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.OnTabClick = function(self, keyTab, go)
-  -- function num : 0_16
+function UIShopGiftPackTab:OnTabClick(keyTab, go)
   if self._curSelTab == keyTab then
-    return 
+    return
   end
   self._curSelTab = keyTab
   self:FlushAllItems()
@@ -352,118 +264,84 @@ UIShopGiftPackTab.OnTabClick = function(self, keyTab, go)
   self:InAnimation()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.Update = function(self, deltaTimeMS)
-  -- function num : 0_17
+function UIShopGiftPackTab:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.SetData = function(self, param)
-  -- function num : 0_18 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Gift)
+function UIShopGiftPackTab:SetData(param)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Gift)
   self._param = param
   self:JumpItem()
-  if self._param == nil or (self._param)[4] == nil then
+  if self._param == nil or self._param[4] == nil then
     self:InAnimation()
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.RefreshPanel = function(self, subTabType)
-  -- function num : 0_19
+function UIShopGiftPackTab:RefreshPanel(subTabType)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.ExcuteHideLogic = function(self, callBack)
-  -- function num : 0_20
+function UIShopGiftPackTab:ExcuteHideLogic(callBack)
   if callBack then
     callBack(self)
   end
   self._param = nil
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.InAnimation = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIShopGiftPackTab:InAnimation()
   if self._poolItems == nil then
-    return 
+    return
   end
-  local taskMgr = (GameGlobal.TaskManager)()
+  local taskMgr = GameGlobal.TaskManager()
   local task = taskMgr:FindTask(self._inAnimationTask)
   if task and task.state ~= TaskState.Stop then
-    return 
+    return
   end
   for index = 0, math.maxinteger do
-    local pool = (self._poolItems)[index]
-    if pool ~= nil then
-      local rowList = pool:GetAllSpawnList()
-      for ik,item in pairs(rowList) do
-        if item ~= nil then
-          (item:GetGameObject()):SetActive(false)
-        end
+    local pool = self._poolItems[index]
+    if pool == nil then
+      break
+    end
+    local rowList = pool:GetAllSpawnList()
+    for ik, item in pairs(rowList) do
+      if item ~= nil then
+        item:GetGameObject():SetActive(false)
       end
-      -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-      -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out IF_STMT
-
     end
   end
   self._inAnimationTask = self:StartSafeTask("UIShopGiftPackTab::InAnimation", function(lockName, TT)
-    -- function num : 0_21_0 , upvalues : _ENV, self
     YIELD(TT)
     local animLength = 0
     for index = 0, math.maxinteger do
       if not self._poolItems then
-        (Log.debug)("###[UIShopGiftPackTab] play anim , pools is reset , wait next play .")
+        Log.debug("###[UIShopGiftPackTab] play anim , pools is reset , wait next play .")
         self._poolItems = nil
-        return 
+        return
       end
-      local pool = (self._poolItems)[index]
-      if pool ~= nil then
-        do
-          local rowList = pool:GetAllSpawnList()
-          for ik,item in pairs(rowList) do
-            local luaIndex = index + 1
-            local data = (self.filterItems)[luaIndex]
-            if data then
-              (item:GetGameObject()):SetActive(true)
-              animLength = (math.max)(animLength, item:PlayInAnimation())
-            end
-          end
-          YIELD(TT)
-          -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_STMT
-
+      local pool = self._poolItems[index]
+      if pool == nil then
+        break
+      end
+      local rowList = pool:GetAllSpawnList()
+      for ik, item in pairs(rowList) do
+        local luaIndex = index + 1
+        local data = self.filterItems[luaIndex]
+        if data then
+          item:GetGameObject():SetActive(true)
+          animLength = math.max(animLength, item:PlayInAnimation())
         end
       end
+      YIELD(TT)
     end
-    if animLength > 0 then
+    if 0 < animLength then
       YIELD(TT, animLength)
     end
     self._inAnimationTask = nil
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.ShowSelf = function(self)
-  -- function num : 0_22
-  (self._anim):Stop()
-  ;
-  (self._anim):Play()
+function UIShopGiftPackTab:ShowSelf()
+  self._anim:Stop()
+  self._anim:Play()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackTab.HideSelf = function(self)
-  -- function num : 0_23
+function UIShopGiftPackTab:HideSelf()
 end
-
-

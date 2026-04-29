@@ -1,16 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_dynamic_scope_chain_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParam_DynamicScopeChainDamage", SkillDamageEffectParam)
 SkillEffectParam_DynamicScopeChainDamage = SkillEffectParam_DynamicScopeChainDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_DynamicScopeChainDamage.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_DynamicScopeChainDamage:GetEffectType()
   return SkillEffectType.DynamicScopeChainDamage
 end
-
-

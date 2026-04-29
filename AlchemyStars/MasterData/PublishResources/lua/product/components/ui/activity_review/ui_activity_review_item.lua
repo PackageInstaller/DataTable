@@ -1,16 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/ui_activity_review_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReviewItem", UICustomWidget)
 UIActivityReviewItem = UIActivityReviewItem
-local state = {CannotUnlock = 1, CanUnlock = 2, Download = 3, Downloading = 4, Normal = 5, NONE = 999}
+local state = {
+  CannotUnlock = 1,
+  CanUnlock = 2,
+  Download = 3,
+  Downloading = 4,
+  Normal = 5,
+  NONE = 999
+}
 _enum("UIReviewState", state)
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityReviewItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityReviewItem:OnShow(uiParams)
   self:InitWidget()
   self:AttachEvent(GameEventType.UIReviewOnUnlock, self.OnUnlock)
   self:AttachEvent(GameEventType.UIReviewRefreshRedpoint, self.RefreshRedpoint)
@@ -20,18 +20,12 @@ UIActivityReviewItem.OnShow = function(self, uiParams)
   self._isActive = true
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityReviewItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityReviewItem:OnHide()
   self:DetachEvent(GameEventType.ItemCountChanged, self.OnItemCountChanged)
   self._isActive = false
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityReviewItem.InitWidget = function(self)
-  -- function num : 0_2
+function UIActivityReviewItem:InitWidget()
   self.bg = self:GetUIComponent("RawImageLoader", "bg")
   self.redpoint = self:GetGameObject("redpoint")
   self.unlock = self:GetGameObject("unlock")
@@ -51,28 +45,21 @@ UIActivityReviewItem.InitWidget = function(self)
   self.index = self:GetUIComponent("UILocalizationText", "index")
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityReviewItem.SetData = function(self, data, index, lastOne)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityReviewItem:SetData(data, index, lastOne)
   self._data = data
   self._index = index
   self._idLastOne = lastOne
-  local cfg = (Cfg.cfg_activity_review)[(self._data):ActivityID()]
-  ;
-  (self.bg):LoadImage(cfg.ListItemBg1)
-  ;
-  (self.bg2):LoadImage(cfg.ListItemBg2)
-  ;
-  (self.title):LoadImage(cfg.TitleImage)
-  ;
-  (self.index):SetText((string.format)("%02d", (self._data):Index()))
+  local cfg = Cfg.cfg_activity_review[self._data:ActivityID()]
+  self.bg:LoadImage(cfg.ListItemBg1)
+  self.bg2:LoadImage(cfg.ListItemBg2)
+  self.title:LoadImage(cfg.TitleImage)
+  self.index:SetText(string.format("%02d", self._data:Index()))
   local paddingLeft = -135
   local paddingRight = 414
   local del1 = 580
   local del2 = 241
   local x = paddingLeft
-  local num = (math.floor)(self._index / 2)
+  local num = math.floor(self._index / 2)
   local x = x + num * (del1 + del2)
   local y = 208
   local value = self._index % 2
@@ -81,279 +68,159 @@ UIActivityReviewItem.SetData = function(self, data, index, lastOne)
   else
     y = -227
   end
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  (self.root).anchoredPosition = Vector2(x, y)
+  self.root.anchoredPosition = Vector2(x, y)
   if lastOne then
-    (self.line):SetActive(false)
+    self.line:SetActive(false)
   else
-    ;
-    (self.line):SetActive(true)
-    -- DECOMPILER ERROR at PC78: Confused about usage of register: R14 in 'UnsetPending'
-
+    self.line:SetActive(true)
     if self._index % 2 == 1 then
-      (self.hor).anchoredPosition = Vector2(254, 6)
-      -- DECOMPILER ERROR at PC84: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.hor).sizeDelta = Vector2(46, 3)
-      -- DECOMPILER ERROR at PC92: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.ver).localRotation = (Quaternion.Euler)(0, 0, -90)
-      -- DECOMPILER ERROR at PC98: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.ver).anchoredPosition = Vector2(310, -4)
-      -- DECOMPILER ERROR at PC104: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.ver).sizeDelta = Vector2(250, 3)
-      -- DECOMPILER ERROR at PC110: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.poi).anchoredPosition = Vector2(310, 6)
+      self.hor.anchoredPosition = Vector2(254, 6)
+      self.hor.sizeDelta = Vector2(46, 3)
+      self.ver.localRotation = Quaternion.Euler(0, 0, -90)
+      self.ver.anchoredPosition = Vector2(310, -4)
+      self.ver.sizeDelta = Vector2(250, 3)
+      self.poi.anchoredPosition = Vector2(310, 6)
     else
-      -- DECOMPILER ERROR at PC117: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.hor).anchoredPosition = Vector2(254, 6)
-      -- DECOMPILER ERROR at PC123: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.hor).sizeDelta = Vector2(166, 3)
-      -- DECOMPILER ERROR at PC131: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.ver).localRotation = (Quaternion.Euler)(0, 0, 90)
-      -- DECOMPILER ERROR at PC137: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.ver).anchoredPosition = Vector2(429, 16)
-      -- DECOMPILER ERROR at PC143: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.ver).sizeDelta = Vector2(250, 3)
-      -- DECOMPILER ERROR at PC149: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.poi).anchoredPosition = Vector2(429, 5)
+      self.hor.anchoredPosition = Vector2(254, 6)
+      self.hor.sizeDelta = Vector2(166, 3)
+      self.ver.localRotation = Quaternion.Euler(0, 0, 90)
+      self.ver.anchoredPosition = Vector2(429, 16)
+      self.ver.sizeDelta = Vector2(250, 3)
+      self.poi.anchoredPosition = Vector2(429, 5)
     end
   end
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityReviewItem.Refresh = function(self)
-  -- function num : 0_4
+function UIActivityReviewItem:Refresh()
   self:RefreshRedpoint()
   self:RefreshState()
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityReviewItem.itemOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityReviewItem:itemOnClick(go)
   if self._state == UIReviewState.CannotUnlock then
     self:ShowDialog("UIReviewUnlockTip", self._data)
-  else
-    if self._state == UIReviewState.CanUnlock then
-      self:ShowDialog("UIReviewUnlockTip", self._data)
-    else
-      if self._state == UIReviewState.Download then
-        self:ShowDialog("UIReviewDownloadTip", self._data)
-      else
-        if self._state == UIReviewState.Downloading then
-          (ToastManager.ShowToast)((StringTable.Get)("str_review_downloading"))
-        else
-          if self._state == UIReviewState.Normal then
-            (self._data):ActivityOnOpen()
-          end
-        end
-      end
+  elseif self._state == UIReviewState.CanUnlock then
+    self:ShowDialog("UIReviewUnlockTip", self._data)
+  elseif self._state == UIReviewState.Download then
+    self:ShowDialog("UIReviewDownloadTip", self._data)
+  elseif self._state == UIReviewState.Downloading then
+    ToastManager.ShowToast(StringTable.Get("str_review_downloading"))
+  elseif self._state == UIReviewState.Normal then
+    self._data:ActivityOnOpen()
+  end
+  Log.debug(self._data:AssetPackageID())
+end
+
+function UIActivityReviewItem:RefreshRedpoint(id)
+  if id then
+    if self._data:ActivityID() == id then
+      self.redpoint:SetActive(self._data:HasRedPoint())
     end
+  else
+    self.redpoint:SetActive(self._data:HasRedPoint())
   end
-  ;
-  (Log.debug)((self._data):AssetPackageID())
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityReviewItem.RefreshRedpoint = function(self, id)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC12: Unhandled construct in 'MakeBoolean' P1
-
-  if id and (self._data):ActivityID() == id then
-    (self.redpoint):SetActive((self._data):HasRedPoint())
-  end
-  ;
-  (self.redpoint):SetActive((self._data):HasRedPoint())
-end
-
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityReviewItem.RefreshState = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  if (self._data):IsUnlock() then
-    (self.unlock):SetActive(false)
-    if (self._data):IsFinished() then
-      if (self._data):IsDownloaded() then
+function UIActivityReviewItem:RefreshState()
+  if self._data:IsUnlock() then
+    self.unlock:SetActive(false)
+    if self._data:IsFinished() then
+      if self._data:IsDownloaded() then
         self._state = UIReviewState.Normal
-        ;
-        (self.finish):SetActive(true)
-        ;
-        (self.download):SetActive(false)
-        ;
-        (self.downloading):SetActive(false)
-        ;
-        (Log.debug)("[Review] 已完成，并且下载过")
+        self.finish:SetActive(true)
+        self.download:SetActive(false)
+        self.downloading:SetActive(false)
+        Log.debug("[Review] 已完成，并且下载过")
+      elseif self._data:IsDownLoading() then
+        self._state = UIReviewState.Downloading
+        self.finish:SetActive(false)
+        self.download:SetActive(false)
+        self.downloading:SetActive(true)
+        self:StartTask(self._OnDownloading, self)
+        Log.debug("[Review] 已完成，正在下载中")
       else
-        if (self._data):IsDownLoading() then
-          self._state = UIReviewState.Downloading
-          ;
-          (self.finish):SetActive(false)
-          ;
-          (self.download):SetActive(false)
-          ;
-          (self.downloading):SetActive(true)
-          self:StartTask(self._OnDownloading, self)
-          ;
-          (Log.debug)("[Review] 已完成，正在下载中")
-        else
-          ;
-          (self.finish):SetActive(true)
-          ;
-          (self.download):SetActive(false)
-          ;
-          (self.downloading):SetActive(false)
-          self._state = UIReviewState.Download
-          ;
-          (Log.debug)("[Review] 已完成，但本地没有资源")
-        end
+        self.finish:SetActive(true)
+        self.download:SetActive(false)
+        self.downloading:SetActive(false)
+        self._state = UIReviewState.Download
+        Log.debug("[Review] 已完成，但本地没有资源")
       end
     else
-      ;
-      (self.finish):SetActive(false)
-      if (self._data):IsDownloaded() then
-        (self.download):SetActive(false)
-        ;
-        (self.downloading):SetActive(false)
+      self.finish:SetActive(false)
+      if self._data:IsDownloaded() then
+        self.download:SetActive(false)
+        self.downloading:SetActive(false)
         self._state = UIReviewState.Normal
-        ;
-        (Log.debug)("[Review] 已下载未完成")
+        Log.debug("[Review] 已下载未完成")
+      elseif self._data:IsDownLoading() then
+        self.download:SetActive(false)
+        self.downloading:SetActive(true)
+        self._state = UIReviewState.Downloading
+        self:StartTask(self._OnDownloading, self)
+        Log.debug("[Review] 正在下载")
       else
-        if (self._data):IsDownLoading() then
-          (self.download):SetActive(false)
-          ;
-          (self.downloading):SetActive(true)
-          self._state = UIReviewState.Downloading
-          self:StartTask(self._OnDownloading, self)
-          ;
-          (Log.debug)("[Review] 正在下载")
-        else
-          ;
-          (self.download):SetActive(true)
-          ;
-          (self.downloading):SetActive(false)
-          self._state = UIReviewState.Download
-          ;
-          (Log.debug)("[Review] 待下载")
-        end
+        self.download:SetActive(true)
+        self.downloading:SetActive(false)
+        self._state = UIReviewState.Download
+        Log.debug("[Review] 待下载")
       end
     end
   else
-    ;
-    (self.unlock):SetActive(true)
-    ;
-    (self.download):SetActive(false)
-    ;
-    (self.downloading):SetActive(false)
-    ;
-    (self.finish):SetActive(false)
-    local asset = (self._data):UnlockCost()
-    ;
-    (self.itemcount):SetText("×" .. asset.count)
-    -- DECOMPILER ERROR at PC187: Confused about usage of register: R2 in 'UnsetPending'
-
-    if (self._data):CanUnlock() then
-      (self.itemcount).color = Color.green
+    self.unlock:SetActive(true)
+    self.download:SetActive(false)
+    self.downloading:SetActive(false)
+    self.finish:SetActive(false)
+    local asset = self._data:UnlockCost()
+    self.itemcount:SetText("×" .. asset.count)
+    if self._data:CanUnlock() then
+      self.itemcount.color = Color.green
       self._state = UIReviewState.CanUnlock
-      ;
-      (Log.debug)("[Review] 可解锁")
+      Log.debug("[Review] 可解锁")
     else
-      -- DECOMPILER ERROR at PC199: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.itemcount).color = Color.red
+      self.itemcount.color = Color.red
       self._state = UIReviewState.CannotUnlock
-      ;
-      (Log.debug)("[Review] 无法解锁")
+      Log.debug("[Review] 无法解锁")
     end
   end
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityReviewItem.OnUnlock = function(self, id)
-  -- function num : 0_8
-  if (self._data):ActivityID() == id or not (self._data):IsUnlock() then
+function UIActivityReviewItem:OnUnlock(id)
+  if self._data:ActivityID() == id or not self._data:IsUnlock() then
     self:Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityReviewItem.OnDownloadFinish = function(self, assetPackageID)
-  -- function num : 0_9
-  if (self._data):AssetPackageID() == assetPackageID then
+function UIActivityReviewItem:OnDownloadFinish(assetPackageID)
+  if self._data:AssetPackageID() == assetPackageID then
     self:Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityReviewItem.OnStartDownload = function(self, id)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self._data):ActivityID() == id then
+function UIActivityReviewItem:OnStartDownload(id)
+  if self._data:ActivityID() == id then
     self._state = UIReviewState.Downloading
-    ;
-    (self._data):Download()
+    self._data:Download()
     self:RefreshState()
     self:StartTask(self._OnDownloading, self)
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityReviewItem.OnItemCountChanged = function(self)
-  -- function num : 0_11
+function UIActivityReviewItem:OnItemCountChanged()
   self:RefreshState()
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityReviewItem._OnDownloading = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
-  do
-    while (self._data):IsDownLoading() do
-      local value = (self._data):DownloadProgress()
-      -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.progress).fillAmount = value
-      ;
-      (self.percent):SetText((math.floor)(value * 100) .. "%")
-      YIELD(TT)
-      if not self._isActive then
-        return 
-      end
-    end
-    if (self._data):IsDownloaded() then
-      self:RefreshState()
+function UIActivityReviewItem:_OnDownloading(TT)
+  while self._data:IsDownLoading() do
+    local value = self._data:DownloadProgress()
+    self.progress.fillAmount = value
+    self.percent:SetText(math.floor(value * 100) .. "%")
+    YIELD(TT)
+    if not self._isActive then
+      return
     end
   end
+  if self._data:IsDownloaded() then
+    self:RefreshState()
+  end
 end
-
-

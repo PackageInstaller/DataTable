@@ -1,16 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_logic/skill_scope_target_selector.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local TargetSelectFilterAttackType = {NormalAttack = 1, SingleSkillAttack = 2, GridSkillAttack = 3}
+local TargetSelectFilterAttackType = {
+  NormalAttack = 1,
+  SingleSkillAttack = 2,
+  GridSkillAttack = 3
+}
 _enum("TargetSelectFilterAttackType", TargetSelectFilterAttackType)
 _class("SkillScopeTargetData", Object)
 SkillScopeTargetData = SkillScopeTargetData
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillScopeTargetData.Constructor = function(self, pos, entity)
-  -- function num : 0_0
+function SkillScopeTargetData:Constructor(pos, entity)
   self.m_pos = pos
   self.m_entity = entity
   self.m_nID = entity:GetID()
@@ -18,376 +15,116 @@ end
 
 _class("SkillScopeTargetSelector", Object)
 SkillScopeTargetSelector = SkillScopeTargetSelector
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillScopeTargetSelector.Constructor = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeTargetSelector:Constructor(world)
   self._world = world
   self._selectFuncDic = {}
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.Self] = self._SelectSelf
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.Pet] = self._SelectPet
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.Monster] = self._SelectMonster
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.AllMover] = self._SelectAllMover
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.Board] = self._SelectBoard
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.NearestMonster] = self._SelectNearestMonster
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.PetAndTrap] = self._SelectPetAndTrap
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.Team] = self._SelecTeam
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.PetTeam] = self._SelectPetTeam
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.MonsterTrap] = self._SelectMonsterTrap
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.AllMoverExcept] = self._SelectAllMoverExceptBuff
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.PetMonsterTrap] = self._SelectPetMonsterTrap
-  -- DECOMPILER ERROR at PC67: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.NearestPetMonsterTrap] = self._SelectNearestPetMonsterTrap
-  -- DECOMPILER ERROR at PC72: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.OneOfProtectTrapAndPet] = self._SelectOneOfProtectTrapAndPet
-  -- DECOMPILER ERROR at PC77: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.PetMonsterTrapExceptSelfFlyMultiBodyArea] = self._SelectPetMonsterTrapGridExceptConveyorFlyMultiBodyArea
-  -- DECOMPILER ERROR at PC82: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.OwnedPhantom] = self._SelectOwnedPhantom
-  -- DECOMPILER ERROR at PC87: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.NearestMonsterTrap] = self._SelectNearestMonsterTrap
-  -- DECOMPILER ERROR at PC92: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.TrapWithHP] = self._SelectTrapWithHP
-  -- DECOMPILER ERROR at PC97: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.SpecificMonster] = self._SelectSpecificMonster
-  -- DECOMPILER ERROR at PC102: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.MonsterGroup] = self._SelectMonsterGroup
-  -- DECOMPILER ERROR at PC107: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.PetAndTrapBomb] = self._SelectPetAndTrapBomb
-  -- DECOMPILER ERROR at PC112: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.HighestHPPercentMonster] = self._SelectHighestHPPercentMonster
-  -- DECOMPILER ERROR at PC117: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.SpecificPet] = self._SelectSpecificPet
-  -- DECOMPILER ERROR at PC122: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.SpecificPrimaryElementPet] = self._SelectSpecificPrimaryElementPet
-  -- DECOMPILER ERROR at PC127: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.HighestHPMonster] = self._SelectHighestHPMonster
-  -- DECOMPILER ERROR at PC132: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.LowestHPPercentMonster] = self._SelectLowestHPPercentMonster
-  -- DECOMPILER ERROR at PC137: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.LowestHPPercentMonsterParam] = self._SelectLowestHPPercentMonsterParam
-  -- DECOMPILER ERROR at PC142: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.RandomNMonster] = self._SelectRandomNMonster
-  -- DECOMPILER ERROR at PC147: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.Captain] = self._SelecCaptain
-  -- DECOMPILER ERROR at PC152: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.FarestMonster] = self._SelectFarestMonster
-  -- DECOMPILER ERROR at PC157: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.Trap] = self._SelectTrap
-  -- DECOMPILER ERROR at PC162: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.DeadMonsterWithBuff] = self._SelectDeadMonsterWithBuff
-  -- DECOMPILER ERROR at PC167: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.MonsterHaveBuffANoBuffB] = self._SelectMonsterHaveBuffANoBuffB
-  -- DECOMPILER ERROR at PC172: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.NearestMonsterNoID] = self._SelectNearestMonsterNoID
-  -- DECOMPILER ERROR at PC177: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.NearestMonstersIsScope] = self._SelectNearestMonstersIsScope
-  -- DECOMPILER ERROR at PC182: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.SpecificTrap] = self._SelectSpecificTrap
-  -- DECOMPILER ERROR at PC187: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.SpecificTrapAndFarthestHitBackPlayer] = self._SelectSpecificTrapAndFarthestHitBackPlayer
-  -- DECOMPILER ERROR at PC192: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.MonsterTrapDeadOrAlive] = self._SelectMonsterTrapDeadOrAlive
-  -- DECOMPILER ERROR at PC197: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.AlignmentTargetEnemyTeam] = self._SelectAlignmentTargetEnemyTeam
-  -- DECOMPILER ERROR at PC202: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.AlignmentTargetFriendTeam] = self._SelectAlignmentTargetFriendTeam
-  -- DECOMPILER ERROR at PC207: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.AlignmentTargetFriendPet] = self._SelectAlignmentTargetFriendPet
-  -- DECOMPILER ERROR at PC212: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.AlignmentTargetEnemyPet] = self._SelectAlignmentTargetEnemyPet
-  -- DECOMPILER ERROR at PC217: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.AlignmentTargetEnemyTeamHaveBuffANoBuffB] = self._SelectAlignmentTargetEnemyTeamHaveBuffANoBuffB
-  -- DECOMPILER ERROR at PC222: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.GridCanPurifyTrap] = self._SelectGridCanPurifyTrap
-  -- DECOMPILER ERROR at PC227: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.AntiAITriggerEntity] = self._SelectAntiAITriggerEntity
-  -- DECOMPILER ERROR at PC232: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.MaxDamageDealerPetToCaster] = self._SelectMaxDamageDealerPetToCaster
-  -- DECOMPILER ERROR at PC237: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.MonsterTrapAndTrapSuperEntityIsCaster] = self._SelectMonsterTrapAndTrapSuperEntityIsCaster
-  -- DECOMPILER ERROR at PC242: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.MonsterOrEnemyPets] = self._SelectMonsterOrEnemyPets
-  -- DECOMPILER ERROR at PC247: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.NearestMonsterOneByOne] = self._SelectNearestMonsterOneByOne
-  -- DECOMPILER ERROR at PC252: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.LastActiveSkillCasterPet] = self._SelectLastActiveSkillCasterPet
-  -- DECOMPILER ERROR at PC257: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.EntityWithBuff] = self._SelectEntityWithBuff
-  -- DECOMPILER ERROR at PC262: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.MonsterOnSpecificTrap] = self._SelectMonsterOnSpecificTrap
-  -- DECOMPILER ERROR at PC267: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.CaptainInRange] = self._SelectCaptainInRange
-  -- DECOMPILER ERROR at PC272: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.N15ChessMonsterMoveTarget] = self._SelectN15ChessMonsterMoveTarget
-  -- DECOMPILER ERROR at PC277: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.N15ChessMonsterAttackTargets] = self._SelectN15ChessMonsterAttackTargets
-  -- DECOMPILER ERROR at PC282: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.NearestChessPet] = self._SelectNearestChessPet
-  -- DECOMPILER ERROR at PC287: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.ChessPet] = self._SelectChessPet
-  -- DECOMPILER ERROR at PC292: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.MonsterAndChessPet] = self._SelectMonsterAndChessPet
-  -- DECOMPILER ERROR at PC297: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.LessHPChessPet] = self._SelectLessHPChess
-  -- DECOMPILER ERROR at PC302: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.MonsterOrTeam] = self._SelectMonsterOrTeam
-  -- DECOMPILER ERROR at PC307: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.EntityWithBuffOrNearestMonster] = self._SelectEntityWithBuffOrNearestMonster
-  -- DECOMPILER ERROR at PC312: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.TrapSummonEntityIsCaster] = self._SelectTrapSummonEntityIsCaster
-  -- DECOMPILER ERROR at PC317: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.NearestAndFarestMonsterInScope] = self._SelectNearestAndFarestMonsterInScope
-  -- DECOMPILER ERROR at PC322: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.TrapPosByID] = self._SelectTrapPosByID
-  -- DECOMPILER ERROR at PC327: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.NearestMonsterSortByBodyArea] = self._SelectNearestMonsterSortByBodyArea
-  -- DECOMPILER ERROR at PC332: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.CasterSummoner] = self._SelectCasterSummoner
-  -- DECOMPILER ERROR at PC337: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.MostVisibleBuffMonster] = self._SelectMostVisibleBuffMonster
-  -- DECOMPILER ERROR at PC342: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.NearestPetMonsterTrapAndFilter] = self._SelectNearestPetMonsterTrapAndFilter
-  -- DECOMPILER ERROR at PC347: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.MySpecificTrapOrAnyMonster] = self._SelectMySpecificTrapOrAnyMonster
-  -- DECOMPILER ERROR at PC352: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.SelfInAttackRange] = self._SelectSelfInAttackRange
-  -- DECOMPILER ERROR at PC357: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.MonsterNotBoss] = self._SelectMonsterNotBoss
-  -- DECOMPILER ERROR at PC362: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.LastChainSkillRandomNMonster] = self._SelectLastChainSkillRandomNMonster
-  -- DECOMPILER ERROR at PC367: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.BuffLayerMostAndHighestHP] = self._SelectBuffLayerMostAndHighestHP
-  -- DECOMPILER ERROR at PC372: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.MonsterAroundDamageTarget] = self._SelectMonsterAroundDamageTarget
-  -- DECOMPILER ERROR at PC377: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.WorldBossMonster] = self._SelectWorldBossMonster
-  -- DECOMPILER ERROR at PC382: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.SingleGridMonsterLowestHPPercent] = self._SelectSingleGridMonsterLowestHPPercent
-  -- DECOMPILER ERROR at PC387: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.SelectMonsterCamp] = self._SelectMonsterCamp
-  -- DECOMPILER ERROR at PC392: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.PetIgnoreProtectedTrap] = self._SelectPetIgnoreProtectedTrap
-  -- DECOMPILER ERROR at PC397: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.MonsterTrapCanRepeat] = self._SelectMonsterTrapCanRepeat
-  -- DECOMPILER ERROR at PC402: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.PickUpPetOrTrap] = self._SelectPickUpPetOrTrap
-  -- DECOMPILER ERROR at PC407: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.FarestMonsterAndNoBuff] = self._SelectFarestMonsterAndNoBuff
-  -- DECOMPILER ERROR at PC412: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFuncDic)[SkillTargetType.MonsterWithTeamHPPercentDiffMax] = self._SelectMonsterWithTeamHPPercentDiffMax
+  self._selectFuncDic[SkillTargetType.Self] = self._SelectSelf
+  self._selectFuncDic[SkillTargetType.Pet] = self._SelectPet
+  self._selectFuncDic[SkillTargetType.Monster] = self._SelectMonster
+  self._selectFuncDic[SkillTargetType.AllMover] = self._SelectAllMover
+  self._selectFuncDic[SkillTargetType.Board] = self._SelectBoard
+  self._selectFuncDic[SkillTargetType.NearestMonster] = self._SelectNearestMonster
+  self._selectFuncDic[SkillTargetType.PetAndTrap] = self._SelectPetAndTrap
+  self._selectFuncDic[SkillTargetType.Team] = self._SelecTeam
+  self._selectFuncDic[SkillTargetType.PetTeam] = self._SelectPetTeam
+  self._selectFuncDic[SkillTargetType.MonsterTrap] = self._SelectMonsterTrap
+  self._selectFuncDic[SkillTargetType.AllMoverExcept] = self._SelectAllMoverExceptBuff
+  self._selectFuncDic[SkillTargetType.PetMonsterTrap] = self._SelectPetMonsterTrap
+  self._selectFuncDic[SkillTargetType.NearestPetMonsterTrap] = self._SelectNearestPetMonsterTrap
+  self._selectFuncDic[SkillTargetType.OneOfProtectTrapAndPet] = self._SelectOneOfProtectTrapAndPet
+  self._selectFuncDic[SkillTargetType.PetMonsterTrapExceptSelfFlyMultiBodyArea] = self._SelectPetMonsterTrapGridExceptConveyorFlyMultiBodyArea
+  self._selectFuncDic[SkillTargetType.OwnedPhantom] = self._SelectOwnedPhantom
+  self._selectFuncDic[SkillTargetType.NearestMonsterTrap] = self._SelectNearestMonsterTrap
+  self._selectFuncDic[SkillTargetType.TrapWithHP] = self._SelectTrapWithHP
+  self._selectFuncDic[SkillTargetType.SpecificMonster] = self._SelectSpecificMonster
+  self._selectFuncDic[SkillTargetType.MonsterGroup] = self._SelectMonsterGroup
+  self._selectFuncDic[SkillTargetType.PetAndTrapBomb] = self._SelectPetAndTrapBomb
+  self._selectFuncDic[SkillTargetType.HighestHPPercentMonster] = self._SelectHighestHPPercentMonster
+  self._selectFuncDic[SkillTargetType.SpecificPet] = self._SelectSpecificPet
+  self._selectFuncDic[SkillTargetType.SpecificPrimaryElementPet] = self._SelectSpecificPrimaryElementPet
+  self._selectFuncDic[SkillTargetType.HighestHPMonster] = self._SelectHighestHPMonster
+  self._selectFuncDic[SkillTargetType.LowestHPPercentMonster] = self._SelectLowestHPPercentMonster
+  self._selectFuncDic[SkillTargetType.LowestHPPercentMonsterParam] = self._SelectLowestHPPercentMonsterParam
+  self._selectFuncDic[SkillTargetType.RandomNMonster] = self._SelectRandomNMonster
+  self._selectFuncDic[SkillTargetType.Captain] = self._SelecCaptain
+  self._selectFuncDic[SkillTargetType.FarestMonster] = self._SelectFarestMonster
+  self._selectFuncDic[SkillTargetType.Trap] = self._SelectTrap
+  self._selectFuncDic[SkillTargetType.DeadMonsterWithBuff] = self._SelectDeadMonsterWithBuff
+  self._selectFuncDic[SkillTargetType.MonsterHaveBuffANoBuffB] = self._SelectMonsterHaveBuffANoBuffB
+  self._selectFuncDic[SkillTargetType.NearestMonsterNoID] = self._SelectNearestMonsterNoID
+  self._selectFuncDic[SkillTargetType.NearestMonstersIsScope] = self._SelectNearestMonstersIsScope
+  self._selectFuncDic[SkillTargetType.SpecificTrap] = self._SelectSpecificTrap
+  self._selectFuncDic[SkillTargetType.SpecificTrapAndFarthestHitBackPlayer] = self._SelectSpecificTrapAndFarthestHitBackPlayer
+  self._selectFuncDic[SkillTargetType.MonsterTrapDeadOrAlive] = self._SelectMonsterTrapDeadOrAlive
+  self._selectFuncDic[SkillTargetType.AlignmentTargetEnemyTeam] = self._SelectAlignmentTargetEnemyTeam
+  self._selectFuncDic[SkillTargetType.AlignmentTargetFriendTeam] = self._SelectAlignmentTargetFriendTeam
+  self._selectFuncDic[SkillTargetType.AlignmentTargetFriendPet] = self._SelectAlignmentTargetFriendPet
+  self._selectFuncDic[SkillTargetType.AlignmentTargetEnemyPet] = self._SelectAlignmentTargetEnemyPet
+  self._selectFuncDic[SkillTargetType.AlignmentTargetEnemyTeamHaveBuffANoBuffB] = self._SelectAlignmentTargetEnemyTeamHaveBuffANoBuffB
+  self._selectFuncDic[SkillTargetType.GridCanPurifyTrap] = self._SelectGridCanPurifyTrap
+  self._selectFuncDic[SkillTargetType.AntiAITriggerEntity] = self._SelectAntiAITriggerEntity
+  self._selectFuncDic[SkillTargetType.MaxDamageDealerPetToCaster] = self._SelectMaxDamageDealerPetToCaster
+  self._selectFuncDic[SkillTargetType.MonsterTrapAndTrapSuperEntityIsCaster] = self._SelectMonsterTrapAndTrapSuperEntityIsCaster
+  self._selectFuncDic[SkillTargetType.MonsterOrEnemyPets] = self._SelectMonsterOrEnemyPets
+  self._selectFuncDic[SkillTargetType.NearestMonsterOneByOne] = self._SelectNearestMonsterOneByOne
+  self._selectFuncDic[SkillTargetType.LastActiveSkillCasterPet] = self._SelectLastActiveSkillCasterPet
+  self._selectFuncDic[SkillTargetType.EntityWithBuff] = self._SelectEntityWithBuff
+  self._selectFuncDic[SkillTargetType.MonsterOnSpecificTrap] = self._SelectMonsterOnSpecificTrap
+  self._selectFuncDic[SkillTargetType.CaptainInRange] = self._SelectCaptainInRange
+  self._selectFuncDic[SkillTargetType.N15ChessMonsterMoveTarget] = self._SelectN15ChessMonsterMoveTarget
+  self._selectFuncDic[SkillTargetType.N15ChessMonsterAttackTargets] = self._SelectN15ChessMonsterAttackTargets
+  self._selectFuncDic[SkillTargetType.NearestChessPet] = self._SelectNearestChessPet
+  self._selectFuncDic[SkillTargetType.ChessPet] = self._SelectChessPet
+  self._selectFuncDic[SkillTargetType.MonsterAndChessPet] = self._SelectMonsterAndChessPet
+  self._selectFuncDic[SkillTargetType.LessHPChessPet] = self._SelectLessHPChess
+  self._selectFuncDic[SkillTargetType.MonsterOrTeam] = self._SelectMonsterOrTeam
+  self._selectFuncDic[SkillTargetType.EntityWithBuffOrNearestMonster] = self._SelectEntityWithBuffOrNearestMonster
+  self._selectFuncDic[SkillTargetType.TrapSummonEntityIsCaster] = self._SelectTrapSummonEntityIsCaster
+  self._selectFuncDic[SkillTargetType.NearestAndFarestMonsterInScope] = self._SelectNearestAndFarestMonsterInScope
+  self._selectFuncDic[SkillTargetType.TrapPosByID] = self._SelectTrapPosByID
+  self._selectFuncDic[SkillTargetType.NearestMonsterSortByBodyArea] = self._SelectNearestMonsterSortByBodyArea
+  self._selectFuncDic[SkillTargetType.CasterSummoner] = self._SelectCasterSummoner
+  self._selectFuncDic[SkillTargetType.MostVisibleBuffMonster] = self._SelectMostVisibleBuffMonster
+  self._selectFuncDic[SkillTargetType.NearestPetMonsterTrapAndFilter] = self._SelectNearestPetMonsterTrapAndFilter
+  self._selectFuncDic[SkillTargetType.MySpecificTrapOrAnyMonster] = self._SelectMySpecificTrapOrAnyMonster
+  self._selectFuncDic[SkillTargetType.SelfInAttackRange] = self._SelectSelfInAttackRange
+  self._selectFuncDic[SkillTargetType.MonsterNotBoss] = self._SelectMonsterNotBoss
+  self._selectFuncDic[SkillTargetType.LastChainSkillRandomNMonster] = self._SelectLastChainSkillRandomNMonster
+  self._selectFuncDic[SkillTargetType.BuffLayerMostAndHighestHP] = self._SelectBuffLayerMostAndHighestHP
+  self._selectFuncDic[SkillTargetType.MonsterAroundDamageTarget] = self._SelectMonsterAroundDamageTarget
+  self._selectFuncDic[SkillTargetType.WorldBossMonster] = self._SelectWorldBossMonster
+  self._selectFuncDic[SkillTargetType.SingleGridMonsterLowestHPPercent] = self._SelectSingleGridMonsterLowestHPPercent
+  self._selectFuncDic[SkillTargetType.SelectMonsterCamp] = self._SelectMonsterCamp
+  self._selectFuncDic[SkillTargetType.PetIgnoreProtectedTrap] = self._SelectPetIgnoreProtectedTrap
+  self._selectFuncDic[SkillTargetType.MonsterTrapCanRepeat] = self._SelectMonsterTrapCanRepeat
+  self._selectFuncDic[SkillTargetType.PickUpPetOrTrap] = self._SelectPickUpPetOrTrap
+  self._selectFuncDic[SkillTargetType.FarestMonsterAndNoBuff] = self._SelectFarestMonsterAndNoBuff
+  self._selectFuncDic[SkillTargetType.MonsterWithTeamHPPercentDiffMax] = self._SelectMonsterWithTeamHPPercentDiffMax
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector.DoSelectSkillTarget = function(self, casterEntity, targetType, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillScopeTargetSelector:DoSelectSkillTarget(casterEntity, targetType, skillScopeResult, skillID, targetTypeParam)
   local world = casterEntity:GetOwnerWorld()
   targetType = world:ReplaceSkillTarget(targetType)
-  local selectFunc = (self._selectFuncDic)[targetType]
+  local selectFunc = self._selectFuncDic[targetType]
   if selectFunc ~= nil then
     if skillID then
       local configService = world:GetService("Config")
       local skillConfigData = configService:GetSkillConfigData(skillID, casterEntity)
-      local utilData = (self._world):GetService("UtilData")
+      local utilData = self._world:GetService("UtilData")
       skillConfigData = utilData:ProcessAutoBeadSkillConfig(skillConfigData, casterEntity)
       local skillTargetTypeParam = skillConfigData:GetSkillTargetTypeParam()
-      if not targetTypeParam then
-        targetTypeParam = skillTargetTypeParam
-      end
+      targetTypeParam = targetTypeParam or skillTargetTypeParam
     end
-    do
-      do
-        local targetEntityIDArray = selectFunc(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-        do return targetEntityIDArray end
-        ;
-        (Log.fatal)("SkillScopeTargetSelector no skill target selector:", targetType)
-        return {}
-      end
-    end
+    local targetEntityIDArray = selectFunc(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
+    return targetEntityIDArray
+  else
+    Log.fatal("SkillScopeTargetSelector no skill target selector:", targetType)
   end
+  return {}
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector.SelectConditionFilter = function(self, targetEntity, isNormalAttack)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillScopeTargetSelector:SelectConditionFilter(targetEntity, isNormalAttack)
   local canBeSelected = true
   if targetEntity:HasOutsideRegion() then
     return false
@@ -399,66 +136,49 @@ SkillScopeTargetSelector.SelectConditionFilter = function(self, targetEntity, is
   if buffComponent then
     canBeSelected = not buffComponent:HasBuffEffect(BuffEffectType.NotBeSelectedAsSkillTarget)
   end
-  do
-    if isNormalAttack and targetEntity:HasRide() then
-      local rideCmpt = targetEntity:Ride()
-      canBeSelected = rideCmpt:GetRiderID() ~= targetEntity:GetID()
-    end
-    do return canBeSelected end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if isNormalAttack and targetEntity:HasRide() then
+    local rideCmpt = targetEntity:Ride()
+    canBeSelected = rideCmpt:GetRiderID() ~= targetEntity:GetID()
   end
+  return canBeSelected
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelecTeam = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_4
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function SkillScopeTargetSelector:_SelecTeam(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local teamEntityID = teamEntity:GetID()
   local targetIDArray = {}
   targetIDArray[#targetIDArray + 1] = teamEntityID
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelecCaptain = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_5
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function SkillScopeTargetSelector:_SelecCaptain(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   if casterEntity:HasPet() then
-    teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
+    teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
   end
-  local teamLeaderEntityID = (teamEntity:Team()):GetTeamLeaderEntityID()
+  local teamLeaderEntityID = teamEntity:Team():GetTeamLeaderEntityID()
   local targetIDArray = {}
   targetIDArray[#targetIDArray + 1] = teamLeaderEntityID
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectSelf = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_6
+function SkillScopeTargetSelector:_SelectSelf(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local casterEntityID = casterEntity:GetID()
-  do
-    if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-      local superEntity = (casterEntity:SuperEntityComponent()):GetSuperEntity()
-      casterEntityID = superEntity:GetID()
-    end
-    local targetIDArray = {}
-    targetIDArray[#targetIDArray + 1] = casterEntityID
-    return targetIDArray
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    local superEntity = casterEntity:SuperEntityComponent():GetSuperEntity()
+    casterEntityID = superEntity:GetID()
   end
+  local targetIDArray = {}
+  targetIDArray[#targetIDArray + 1] = casterEntityID
+  return targetIDArray
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectSelfInAttackRange = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectSelfInAttackRange(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local casterEntityID = casterEntity:GetID()
   local casterPos = casterEntity:GetGridPosition()
   local targetIDArray = {}
   local attackRange = skillScopeResult:GetAttackRange()
-  for _,pos in ipairs(attackRange) do
+  for _, pos in ipairs(attackRange) do
     if pos == casterPos then
       targetIDArray[#targetIDArray + 1] = casterEntityID
     end
@@ -466,42 +186,34 @@ SkillScopeTargetSelector._SelectSelfInAttackRange = function(self, casterEntity,
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectPet = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_8
-  local utilSvc = (self._world):GetService("UtilData")
-  do
-    if casterEntity and casterEntity:HasTrap() then
-      local isDimensionDoor = (casterEntity:Trap()):IsDimensionDoor()
-      if isDimensionDoor then
-        return self:_SelectPetOnly(casterEntity, skillScopeResult, skillID, targetTypeParam)
-      end
-    end
-    if utilSvc:GetProtectedTrap() and utilSvc:EntityAITargetTypeIsNormal(casterEntity) then
-      return self:_SelectTrapAndAoeSelectPet(casterEntity, skillScopeResult, skillID, targetTypeParam)
-    else
+function SkillScopeTargetSelector:_SelectPet(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local utilSvc = self._world:GetService("UtilData")
+  if casterEntity and casterEntity:HasTrap() then
+    local isDimensionDoor = casterEntity:Trap():IsDimensionDoor()
+    if isDimensionDoor then
       return self:_SelectPetOnly(casterEntity, skillScopeResult, skillID, targetTypeParam)
     end
   end
+  if utilSvc:GetProtectedTrap() and utilSvc:EntityAITargetTypeIsNormal(casterEntity) then
+    return self:_SelectTrapAndAoeSelectPet(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  else
+    return self:_SelectPetOnly(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectTrapAndAoeSelectPet = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectTrapAndAoeSelectPet(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDArray = {}
-  local listTrapMap = (self:_SelectTrap(casterEntity, skillScopeResult, skillID, targetTypeParam))
-  local trapTargetEntity = nil
-  for trapId,trapEntity in pairs(listTrapMap) do
+  local listTrapMap = self:_SelectTrap(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local trapTargetEntity
+  for trapId, trapEntity in pairs(listTrapMap) do
     local trapCmpt = trapEntity:Trap()
     if trapCmpt:GetTrapType() == TrapType.Protected then
       trapTargetEntity = trapEntity
     end
   end
   if trapTargetEntity then
-    (table.insert)(targetIDArray, trapTargetEntity:GetID())
-    local configService = (self._world):GetService("Config")
+    table.insert(targetIDArray, trapTargetEntity:GetID())
+    local configService = self._world:GetService("Config")
     local skillConfigData = configService:GetSkillConfigData(skillID, casterEntity)
     local skillType = SkillType.SKillTypeEnd
     if skillConfigData then
@@ -512,37 +224,31 @@ SkillScopeTargetSelector._SelectTrapAndAoeSelectPet = function(self, casterEntit
       local dir = self:_GetSkillDir(casterEntity, trapTargetEntity, skillScopeResult)
       petIDArray = self:_SelectPetOnlyWithDir(casterEntity, skillScopeResult, skillID, dir)
     else
-      do
-        petIDArray = self:_SelectPetOnly(casterEntity, skillScopeResult, skillID, targetTypeParam)
-        for _,petId in ipairs(petIDArray) do
-          (table.insert)(targetIDArray, petId)
-        end
-        do
-          return targetIDArray
-        end
-      end
+      petIDArray = self:_SelectPetOnly(casterEntity, skillScopeResult, skillID, targetTypeParam)
     end
+    for _, petId in ipairs(petIDArray) do
+      table.insert(targetIDArray, petId)
+    end
+  else
   end
+  return targetIDArray
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._GetSkillDir = function(self, casterEntity, trapTargetEntity, skillScopeResult)
-  -- function num : 0_10 , upvalues : _ENV
-  local utilSvc = (self._world):GetService("UtilData")
+function SkillScopeTargetSelector:_GetSkillDir(casterEntity, trapTargetEntity, skillScopeResult)
+  local utilSvc = self._world:GetService("UtilData")
   local listTarget = {}
-  local attackRange = (skillScopeResult:GetAttackRange())
-  local curDir = nil
-  for _,skillRangePos in ipairs(attackRange) do
+  local attackRange = skillScopeResult:GetAttackRange()
+  local curDir
+  for _, skillRangePos in ipairs(attackRange) do
     local listTrap = utilSvc:GetTrapsAtPos(skillRangePos)
     for i = 1, #listTrap do
-      local targetEntityID = (listTrap[i]):GetID()
+      local targetEntityID = listTrap[i]:GetID()
       if targetEntityID then
         local selectTrapFilter = self:_SelectTrapFilter(casterEntity, targetEntityID, true)
         if selectTrapFilter then
-          for j,bodyArea in ipairs((casterEntity:BodyArea()):GetArea()) do
-            local curMonsterBodyPos = (casterEntity:GridLocation()).Position + bodyArea
-            local dir = (GameHelper.ComputeLogicDir)(skillRangePos - curMonsterBodyPos)
+          for j, bodyArea in ipairs(casterEntity:BodyArea():GetArea()) do
+            local curMonsterBodyPos = casterEntity:GridLocation().Position + bodyArea
+            local dir = GameHelper.ComputeLogicDir(skillRangePos - curMonsterBodyPos)
             if dir.x == 0 or dir.y == 0 then
               curDir = dir
               break
@@ -550,60 +256,46 @@ SkillScopeTargetSelector._GetSkillDir = function(self, casterEntity, trapTargetE
           end
         end
       end
+      if curDir then
+        break
+      end
+    end
+    if curDir then
+      break
     end
   end
-  do
-    if curDir or not curDir then
-      return curDir
-    end
-  end
+  return curDir
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectPetOnlyWithDir = function(self, casterEntity, skillScopeResult, skillID, dir)
-  -- function num : 0_11 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectPetOnlyWithDir(casterEntity, skillScopeResult, skillID, dir)
   local targetIDArray = {}
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local playerPos = (teamEntity:GridLocation()).Position
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local playerPos = teamEntity:GridLocation().Position
   local attackRange = skillScopeResult:GetAttackRange()
   for i = 1, #attackRange do
     if playerPos == attackRange[i] then
-      local curDir = nil
-      for j,bodyArea in ipairs((casterEntity:BodyArea()):GetArea()) do
-        local curMonsterBodyPos = (casterEntity:GridLocation()).Position + bodyArea
-        local dir = (GameHelper.ComputeLogicDir)(playerPos - curMonsterBodyPos)
+      local curDir
+      for j, bodyArea in ipairs(casterEntity:BodyArea():GetArea()) do
+        local curMonsterBodyPos = casterEntity:GridLocation().Position + bodyArea
+        local dir = GameHelper.ComputeLogicDir(playerPos - curMonsterBodyPos)
         if dir.x == 0 or dir.y == 0 then
           curDir = dir
           break
         end
       end
-      do
-        do
-          if curDir == dir then
-            targetIDArray[#targetIDArray + 1] = teamEntity:GetID()
-          end
-          do break end
-          -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if curDir == dir then
+        targetIDArray[#targetIDArray + 1] = teamEntity:GetID()
       end
+      break
     end
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectPetOnly = function(self, casterEntity, skillScopeResult, skillID)
-  -- function num : 0_12
+function SkillScopeTargetSelector:_SelectPetOnly(casterEntity, skillScopeResult, skillID)
   local targetIDArray = {}
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local playerPos = (teamEntity:GridLocation()).Position
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local playerPos = teamEntity:GridLocation().Position
   local attackRange = skillScopeResult:GetAttackRange()
   for i = 1, #attackRange do
     if playerPos == attackRange[i] then
@@ -611,82 +303,68 @@ SkillScopeTargetSelector._SelectPetOnly = function(self, casterEntity, skillScop
       break
     end
   end
-  do
-    return targetIDArray
-  end
+  return targetIDArray
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectOneOfProtectTrapAndPet = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_13
-  local utilSvc = (self._world):GetService("UtilData")
+function SkillScopeTargetSelector:_SelectOneOfProtectTrapAndPet(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local utilSvc = self._world:GetService("UtilData")
   local protectTrapEntity = utilSvc:GetProtectedTrap()
   if protectTrapEntity and utilSvc:EntityAITargetTypeIsNormal(casterEntity) then
-    return {protectTrapEntity:GetID()}
+    return {
+      protectTrapEntity:GetID()
+    }
   else
     return self:_SelectPetOnly(casterEntity, skillScopeResult, skillID, targetTypeParam)
   end
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMonster = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_14 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectMonster(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDArray = {}
   local attackRange = skillScopeResult:GetAttackRange()
-  for _,skillRangePos in ipairs(attackRange) do
+  for _, skillRangePos in ipairs(attackRange) do
     local targetIDInSkillRangeList = self:_CalcMonsterInSkillRange(skillRangePos)
-    for _,v in ipairs(targetIDInSkillRangeList) do
-      if v > 0 then
+    for _, v in ipairs(targetIDInSkillRangeList) do
+      if 0 < v then
         targetIDArray[#targetIDArray + 1] = v
       end
     end
   end
-  if not targetTypeParam[1] then
-    local targetCount = not targetTypeParam or type(targetTypeParam) ~= "table" or (table.count)(targetTypeParam) <= 0 or 1
-  end
-  if targetCount == 0 then
-    targetCount = 999
-  end
-  do
+  if targetTypeParam and type(targetTypeParam) == "table" and 0 < table.count(targetTypeParam) then
+    local targetCount = targetTypeParam[1] or 1
+    if targetCount == 0 then
+      targetCount = 999
+    end
     local newTargetIDArray = {}
-    for i = 1, (table.count)(targetIDArray) do
+    for i = 1, table.count(targetIDArray) do
       if i <= targetCount then
-        (table.insert)(newTargetIDArray, targetIDArray[i])
+        table.insert(newTargetIDArray, targetIDArray[i])
       end
     end
     targetIDArray = newTargetIDArray
-    return targetIDArray
-  end
-end
-
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectAllMover = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_15 , upvalues : _ENV
-  local targetIDArray = {}
-  local pets = self:_SelectPet(casterEntity, skillScopeResult, skillID)
-  for _,v in ipairs(pets) do
-    (table.insert)(targetIDArray, v)
-  end
-  local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
-  for _,v in ipairs(monsters) do
-    (table.insert)(targetIDArray, v)
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectNearestMonster = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_16 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectAllMover(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDArray = {}
-  local casterPos = (casterEntity:GridLocation()).Position
+  local pets = self:_SelectPet(casterEntity, skillScopeResult, skillID)
+  for _, v in ipairs(pets) do
+    table.insert(targetIDArray, v)
+  end
+  local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
+  for _, v in ipairs(monsters) do
+    table.insert(targetIDArray, v)
+  end
+  return targetIDArray
+end
+
+function SkillScopeTargetSelector:_SelectNearestMonster(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local targetIDArray = {}
+  local casterPos = casterEntity:GridLocation().Position
   local allMonsters = {}
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local selectTargetData = utilScopeSvc:SortMonstersByPos(casterPos)
-  for _,element in ipairs(selectTargetData) do
+  for _, element in ipairs(selectTargetData) do
     local monsterEntity = element.monster_e
     allMonsters[#allMonsters + 1] = monsterEntity:GetID()
   end
@@ -695,34 +373,32 @@ SkillScopeTargetSelector._SelectNearestMonster = function(self, casterEntity, sk
   if selectedMonsterIds then
     for i = 1, #allMonsters do
       local monsterId = allMonsters[i]
-      for _,v in ipairs(selectedMonsterIds) do
+      for _, v in ipairs(selectedMonsterIds) do
         if v == monsterId then
           targetIDArray[#targetIDArray + 1] = monsterId
           isFind = true
           break
         end
       end
+      if isFind then
+        break
+      end
     end
   end
-  do
-    if not isFind then
-      return targetIDArray
-    end
-  end
+  return targetIDArray
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectFarestMonster = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_17 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectFarestMonster(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDArray = {}
-  local casterPos = (casterEntity:GridLocation()).Position
+  local casterPos = casterEntity:GridLocation().Position
   local allMonsters = {}
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local selectTargetData = utilScopeSvc:SortMonstersByPos(casterPos)
   local selectHpZero = 1
-  selectHpZero = not targetTypeParam or type(targetTypeParam) ~= "table" or targetTypeParam[1] or 1
-  for _,element in ipairs(selectTargetData) do
+  if targetTypeParam and type(targetTypeParam) == "table" then
+    selectHpZero = targetTypeParam[1] or 1
+  end
+  for _, element in ipairs(selectTargetData) do
     local monsterEntity = element.monster_e
     allMonsters[#allMonsters + 1] = monsterEntity:GetID()
   end
@@ -735,9 +411,9 @@ SkillScopeTargetSelector._SelectFarestMonster = function(self, casterEntity, ski
   if selectedMonsterIds then
     for i = 1, #allMonstersFar do
       local monsterId = allMonstersFar[i]
-      for _,v in ipairs(selectedMonsterIds) do
+      for _, v in ipairs(selectedMonsterIds) do
         if v == monsterId then
-          local e = (self._world):GetEntityByID(v)
+          local e = self._world:GetEntityByID(v)
           local percent = self:_GetHPPercent(e)
           local hpIsSatisfied = true
           if selectHpZero == 0 and percent == 0 then
@@ -750,125 +426,92 @@ SkillScopeTargetSelector._SelectFarestMonster = function(self, casterEntity, ski
           end
         end
       end
+      if isFind then
+        break
+      end
     end
   end
-  do
-    if not isFind then
-      return targetIDArray
-    end
-  end
+  return targetIDArray
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._CalcMonsterInSkillRange = function(self, skillRangePos, withDead)
-  -- function num : 0_18 , upvalues : _ENV
+function SkillScopeTargetSelector:_CalcMonsterInSkillRange(skillRangePos, withDead)
   local targetIDList = {}
   if skillRangePos._className == nil then
-    for _,v in ipairs(skillRangePos) do
+    for _, v in ipairs(skillRangePos) do
       local checkPos = v
       local targetEntityIDs = self:_FindTargetEntityInPos(checkPos, withDead)
-      if #targetEntityIDs > 0 then
-        (table.appendArray)(targetIDList, targetEntityIDs)
+      if 0 < #targetEntityIDs then
+        table.appendArray(targetIDList, targetEntityIDs)
       end
     end
   else
-    do
-      do
-        local targetEntityIDs = self:_FindTargetEntityInPos(skillRangePos, withDead)
-        if #targetEntityIDs > 0 then
-          (table.appendArray)(targetIDList, targetEntityIDs)
-        end
-        return targetIDList
-      end
+    local targetEntityIDs = self:_FindTargetEntityInPos(skillRangePos, withDead)
+    if 0 < #targetEntityIDs then
+      table.appendArray(targetIDList, targetEntityIDs)
     end
   end
+  return targetIDList
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._FindTargetEntityInPos = function(self, checkPos, withDead)
-  -- function num : 0_19 , upvalues : _ENV
+function SkillScopeTargetSelector:_FindTargetEntityInPos(checkPos, withDead)
   local targetEntityID = {}
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(monsterGroup:GetEntities()) do
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(monsterGroup:GetEntities()) do
     if (withDead or not e:HasDeadMark()) and self:SelectConditionFilter(e) then
       local monsterEntityID = e:GetID()
       local monster_grid_location_cmpt = e:GridLocation()
       local monster_body_area_cmpt = e:BodyArea()
       local monster_body_area = monster_body_area_cmpt:GetArea()
-      for i,bodyArea in ipairs(monster_body_area) do
+      for i, bodyArea in ipairs(monster_body_area) do
         local curMonsterBodyPos = monster_grid_location_cmpt.Position + bodyArea
         if curMonsterBodyPos == checkPos then
-          if e:HasRide() and (e:Ride()):GetRiderID() == monsterEntityID then
-            (table.insert)(targetEntityID, 1, monsterEntityID)
+          if e:HasRide() and e:Ride():GetRiderID() == monsterEntityID then
+            table.insert(targetEntityID, 1, monsterEntityID)
             break
           end
-          ;
-          (table.insert)(targetEntityID, monsterEntityID)
+          table.insert(targetEntityID, monsterEntityID)
           break
         end
       end
-      do
-        do
-          if not (table.intable)(targetEntityID, monsterEntityID) and monster_grid_location_cmpt:GetGridPos() == checkPos then
-            (table.insert)(targetEntityID, monsterEntityID)
-          end
-          -- DECOMPILER ERROR at PC80: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC80: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC80: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if not table.intable(targetEntityID, monsterEntityID) and monster_grid_location_cmpt:GetGridPos() == checkPos then
+        table.insert(targetEntityID, monsterEntityID)
       end
     end
   end
   return targetEntityID
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectBoard = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_20
-  local boardEntity = (self._world):GetBoardEntity()
+function SkillScopeTargetSelector:_SelectBoard(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local boardEntity = self._world:GetBoardEntity()
   local targetIDArray = {}
   targetIDArray[#targetIDArray + 1] = boardEntity:GetID()
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectPetTeam = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_21 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function SkillScopeTargetSelector:_SelectPetTeam(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local targetIDArray = {}
-  local pets = (teamEntity:Team()):GetTeamPetEntities()
-  for _,e in ipairs(pets) do
+  local pets = teamEntity:Team():GetTeamPetEntities()
+  for _, e in ipairs(pets) do
     if not targetTypeParam then
       targetIDArray[#targetIDArray + 1] = e:GetID()
-    else
-      if self:_CheckPetElement(e, targetTypeParam) then
-        targetIDArray[#targetIDArray + 1] = e:GetID()
-      end
+    elseif self:_CheckPetElement(e, targetTypeParam) then
+      targetIDArray[#targetIDArray + 1] = e:GetID()
     end
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._CheckPetElement = function(self, e, elements)
-  -- function num : 0_22 , upvalues : _ENV
-  if elements == 0 or (table.count)(elements) <= 0 then
+function SkillScopeTargetSelector:_CheckPetElement(e, elements)
+  if elements == 0 or 0 >= table.count(elements) then
     return true
   end
-  if nCount == 1 and elements[1] == 0 then
+  if 1 == nCount and 0 == elements[1] then
     return true
   end
   local elementCmpt = e:Element()
   local primaryType = elementCmpt:GetPrimaryType()
-  for _,pieceType in ipairs(elements) do
+  for _, pieceType in ipairs(elements) do
     if CanMatchPieceType(primaryType, pieceType) then
       return true
     end
@@ -876,18 +519,15 @@ SkillScopeTargetSelector._CheckPetElement = function(self, e, elements)
   return false
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._FindTargetEntityInPosByFilter = function(self, checkPos, filter)
-  -- function num : 0_23 , upvalues : _ENV
+function SkillScopeTargetSelector:_FindTargetEntityInPosByFilter(checkPos, filter)
   local targetEntityID = -1
-  local g = (self._world):GetGroup(filter)
-  for _,e in ipairs(g:GetEntities()) do
+  local g = self._world:GetGroup(filter)
+  for _, e in ipairs(g:GetEntities()) do
     local entityID = e:GetID()
     local cGridLocation = e:GridLocation()
     local cBodyArea = e:BodyArea()
     local area = cBodyArea:GetArea()
-    for i,bodyArea in ipairs(area) do
+    for i, bodyArea in ipairs(area) do
       local curMonsterBodyPos = cGridLocation.Position + bodyArea
       if curMonsterBodyPos == checkPos then
         targetEntityID = entityID
@@ -898,17 +538,14 @@ SkillScopeTargetSelector._FindTargetEntityInPosByFilter = function(self, checkPo
   return targetEntityID
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectTrap = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam, isAttack)
-  -- function num : 0_24 , upvalues : _ENV
-  local utilSvc = (self._world):GetService("UtilData")
+function SkillScopeTargetSelector:_SelectTrap(casterEntity, skillScopeResult, skillID, targetTypeParam, isAttack)
+  local utilSvc = self._world:GetService("UtilData")
   local listTarget = {}
   local attackRange = skillScopeResult:GetAttackRange()
-  for _,skillRangePos in ipairs(attackRange) do
+  for _, skillRangePos in ipairs(attackRange) do
     local listTrap = utilSvc:GetTrapsAtPos(skillRangePos)
     for i = 1, #listTrap do
-      local targetEntityID = (listTrap[i]):GetID()
+      local targetEntityID = listTrap[i]:GetID()
       if targetEntityID then
         local selectTrapFilter = self:_SelectTrapFilter(casterEntity, targetEntityID, isAttack)
         if selectTrapFilter then
@@ -920,66 +557,54 @@ SkillScopeTargetSelector._SelectTrap = function(self, casterEntity, skillScopeRe
   return listTarget
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectTrapWithHP = function(self, casterEntity, skillScopeResult, skillID)
-  -- function num : 0_25 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectTrapWithHP(casterEntity, skillScopeResult, skillID)
   local mapTrap = self:_SelectTrapByHit(casterEntity, skillScopeResult, skillID)
   local targetIDArray = {}
-  for key,value in pairs(mapTrap) do
-    (table.insert)(targetIDArray, key)
+  for key, value in pairs(mapTrap) do
+    table.insert(targetIDArray, key)
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectTrapByHit = function(self, casterEntity, skillScopeResult, skillID)
-  -- function num : 0_26 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectTrapByHit(casterEntity, skillScopeResult, skillID)
   local listTarget = {}
-  local listTargetByRange = self:_SelectEntityByTypeAndRange(((self._world).BW_WEMatchers).Trap, skillScopeResult:GetAttackRange())
-  for key,value in ipairs(listTargetByRange) do
+  local listTargetByRange = self:_SelectEntityByTypeAndRange(self._world.BW_WEMatchers.Trap, skillScopeResult:GetAttackRange())
+  for key, value in ipairs(listTargetByRange) do
     local entityTrap = value.m_entity
     local id = entityTrap:GetID()
-    if id > 0 and self:_SelectTrapFilter(casterEntity, id, true) then
+    if 0 < id and self:_SelectTrapFilter(casterEntity, id, true) then
       listTarget[id] = entityTrap
     end
   end
   return listTarget
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectTrapByHitCanRepeat = function(self, casterEntity, skillScopeResult, skillID)
-  -- function num : 0_27 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectTrapByHitCanRepeat(casterEntity, skillScopeResult, skillID)
   local listTarget = {}
-  local listTargetByRange = self:_SelectEntityByTypeAndRange(((self._world).BW_WEMatchers).Trap, skillScopeResult:GetAttackRange())
-  for key,value in ipairs(listTargetByRange) do
+  local listTargetByRange = self:_SelectEntityByTypeAndRange(self._world.BW_WEMatchers.Trap, skillScopeResult:GetAttackRange())
+  for key, value in ipairs(listTargetByRange) do
     local entityTrap = value.m_entity
     local id = entityTrap:GetID()
-    if id > 0 and self:_SelectTrapFilter(casterEntity, id, true) then
-      (table.insert)(listTarget, entityTrap)
+    if 0 < id and self:_SelectTrapFilter(casterEntity, id, true) then
+      table.insert(listTarget, entityTrap)
     end
   end
   return listTarget
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectTrapFilter = function(self, casterEntity, trapEntityID, isAttack, isDeadOrAlive)
-  -- function num : 0_28 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectTrapFilter(casterEntity, trapEntityID, isAttack, isDeadOrAlive)
   if isAttack == nil then
     isAttack = true
   end
-  local trapEntity = (self._world):GetEntityByID(trapEntityID)
+  local trapEntity = self._world:GetEntityByID(trapEntityID)
   local trapCmpt = trapEntity:Trap()
   if isDeadOrAlive or trapEntity:HasDeadMark() then
     return false
   end
-  if (trapEntity:Trap()):GetTrapType() == TrapType.BombByHitBack then
+  if trapEntity:Trap():GetTrapType() == TrapType.BombByHitBack then
     return true
   end
-  if (trapEntity:Attributes()):GetAttribute("CanBeAttacked") == 0 and isAttack then
+  if trapEntity:Attributes():GetAttribute("CanBeAttacked") == 0 and isAttack then
     return false
   end
   if casterEntity:HasPetPstID() and trapCmpt:GetTrapType() == TrapType.Protected then
@@ -988,340 +613,263 @@ SkillScopeTargetSelector._SelectTrapFilter = function(self, casterEntity, trapEn
   return true
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMonsterTrap = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_29 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectMonsterTrap(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDArray = {}
   local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
-  for _,v in ipairs(monsters) do
-    (table.insert)(targetIDArray, v)
+  for _, v in ipairs(monsters) do
+    table.insert(targetIDArray, v)
   end
   local mapTrap = self:_SelectTrapByHit(casterEntity, skillScopeResult, skillID, targetTypeParam)
-  for key,value in pairs(mapTrap) do
-    if (value:Trap()):GetTrapType() ~= TrapType.Protected then
-      (table.insert)(targetIDArray, key)
+  for key, value in pairs(mapTrap) do
+    if value:Trap():GetTrapType() ~= TrapType.Protected then
+      table.insert(targetIDArray, key)
     end
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMonsterTrapCanRepeat = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_30 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectMonsterTrapCanRepeat(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDArray = {}
   local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
-  for _,v in ipairs(monsters) do
-    (table.insert)(targetIDArray, v)
+  for _, v in ipairs(monsters) do
+    table.insert(targetIDArray, v)
   end
   local listTrap = self:_SelectTrapByHitCanRepeat(casterEntity, skillScopeResult, skillID, targetTypeParam)
-  for index,value in ipairs(listTrap) do
-    if (value:Trap()):GetTrapType() ~= TrapType.Protected then
+  for index, value in ipairs(listTrap) do
+    if value:Trap():GetTrapType() ~= TrapType.Protected then
       local entityID = value:GetID()
-      ;
-      (table.insert)(targetIDArray, entityID)
+      table.insert(targetIDArray, entityID)
     end
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectAllMoverExceptBuff = function(self, casterEntity, skillScopeResult, skillID, filterBuffEffect)
-  -- function num : 0_31 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectAllMoverExceptBuff(casterEntity, skillScopeResult, skillID, filterBuffEffect)
   local targetIDArray = {}
   local pets = self:_SelectPet(casterEntity, skillScopeResult, skillID, filterBuffEffect)
   local validatePets = self:_FilterByBuffEffect(pets, filterBuffEffect)
-  for _,v in ipairs(validatePets) do
-    (table.insert)(targetIDArray, v)
+  for _, v in ipairs(validatePets) do
+    table.insert(targetIDArray, v)
   end
   local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
   local validateMonsters = self:_FilterByBuffEffect(monsters, filterBuffEffect)
-  for _,v in ipairs(validateMonsters) do
-    (table.insert)(targetIDArray, v)
+  for _, v in ipairs(validateMonsters) do
+    table.insert(targetIDArray, v)
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._FilterByBuffEffect = function(self, movers, filterBuffEffect)
-  -- function num : 0_32 , upvalues : _ENV
+function SkillScopeTargetSelector:_FilterByBuffEffect(movers, filterBuffEffect)
   local targetIDArray = {}
-  for _,v in ipairs(movers) do
-    local buffCpt = ((self._world):GetEntityByID(v)):BuffComponent()
+  for _, v in ipairs(movers) do
+    local buffCpt = self._world:GetEntityByID(v):BuffComponent()
     local validate = true
     if buffCpt then
-      for _,value in ipairs(filterBuffEffect) do
+      for _, value in ipairs(filterBuffEffect) do
         if buffCpt:HasBuffEffect(value) then
           validate = false
           break
         end
       end
     end
-    do
-      do
-        if validate then
-          (table.insert)(targetIDArray, v)
-        end
-        -- DECOMPILER ERROR at PC34: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if validate then
+      table.insert(targetIDArray, v)
     end
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectPetMonsterTrap = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_33 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectPetMonsterTrap(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local arr = {}
   local pets = self:_SelectPet(casterEntity, skillScopeResult, skillID, targetTypeParam)
   if pets then
-    for i,v in ipairs(pets) do
-      (table.insert)(arr, v)
+    for i, v in ipairs(pets) do
+      table.insert(arr, v)
     end
   end
-  do
-    local monsterTrap = self:_SelectMonsterTrap(casterEntity, skillScopeResult, skillID, targetTypeParam)
-    if monsterTrap then
-      for i,v in ipairs(monsterTrap) do
-        (table.insert)(arr, v)
-      end
-    end
-    do
-      return arr
+  local monsterTrap = self:_SelectMonsterTrap(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  if monsterTrap then
+    for i, v in ipairs(monsterTrap) do
+      table.insert(arr, v)
     end
   end
+  return arr
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectPetAndTrap = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_34 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectPetAndTrap(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local arr = {}
   local pets = self:_SelectPet(casterEntity, skillScopeResult, skillID, targetTypeParam)
-  ;
-  (table.appendArray)(arr, pets)
+  table.appendArray(arr, pets)
   local mapTrap = self:_SelectTrapByHit(casterEntity, skillScopeResult, skillID, targetTypeParam)
   if mapTrap then
-    for key,value in pairs(mapTrap) do
-      (table.insert)(arr, key)
+    for key, value in pairs(mapTrap) do
+      table.insert(arr, key)
     end
   end
-  do
-    return arr
-  end
+  return arr
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectNearestPetMonsterTrap = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_35 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectNearestPetMonsterTrap(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targets = self:_SelectPetMonsterTrap(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local nearestIds, nearestMagnitude = {}, 999
-  local center = (casterEntity:GridLocation()):Center()
+  local center = casterEntity:GridLocation():Center()
   if targets then
-    for i,id in ipairs(targets) do
-      local e = (self._world):GetEntityByID(id)
-      local pos = (e:GridLocation()).Position
-      local bodyArea = (e:BodyArea()):GetArea()
-      for j,grid in ipairs(bodyArea) do
+    for i, id in ipairs(targets) do
+      local e = self._world:GetEntityByID(id)
+      local pos = e:GridLocation().Position
+      local bodyArea = e:BodyArea():GetArea()
+      for j, grid in ipairs(bodyArea) do
         local absPos = pos + grid
-        local magnitude = (Vector2.Magnitude)(absPos - center)
-        if magnitude < nearestMagnitude then
+        local magnitude = Vector2.Magnitude(absPos - center)
+        if nearestMagnitude > magnitude then
           nearestMagnitude = magnitude
           nearestIds = {id}
-        else
-          if nearestMagnitude == magnitude then
-            (table.insert)(nearestIds, id)
-          end
+        elseif nearestMagnitude == magnitude then
+          table.insert(nearestIds, id)
         end
       end
     end
   end
-  do
-    return nearestIds
-  end
+  return nearestIds
 end
 
--- DECOMPILER ERROR at PC130: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectNearestPetMonsterTrapAndFilter = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_36 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectNearestPetMonsterTrapAndFilter(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targets = self:_SelectPetMonsterTrap(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local nearestIds, nearestMagnitude = {}, 999
-  local center = (casterEntity:GridLocation()):Center()
-  if (table.count)(targets) > 1 then
-    local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-    if (table.intable)(targets, teamEntity:GetID()) then
+  local center = casterEntity:GridLocation():Center()
+  if table.count(targets) > 1 then
+    local teamEntity = self._world:Player():GetCurrentTeamEntity()
+    if table.intable(targets, teamEntity:GetID()) then
       local logicChainPathCmpt = teamEntity:LogicChainPath()
       local chainAcrossMonster = logicChainPathCmpt:GetChainAcrossMonster()
       if chainAcrossMonster then
-        (table.removev)(targets, teamEntity:GetID())
+        table.removev(targets, teamEntity:GetID())
       end
     end
   end
-  do
-    if targets then
-      for i,id in ipairs(targets) do
-        local e = (self._world):GetEntityByID(id)
-        local pos = (e:GridLocation()).Position
-        local bodyArea = (e:BodyArea()):GetArea()
-        for j,grid in ipairs(bodyArea) do
-          local absPos = pos + grid
-          local magnitude = (Vector2.Magnitude)(absPos - center)
-          if magnitude < nearestMagnitude then
-            nearestMagnitude = magnitude
-            nearestIds = {id}
-          else
-            if nearestMagnitude == magnitude then
-              (table.insert)(nearestIds, id)
-            end
-          end
-        end
-      end
-    end
-    do
-      return nearestIds
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC133: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectNearestMonsterTrap = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_37 , upvalues : _ENV
-  local targets = self:_SelectMonsterTrap(casterEntity, skillScopeResult, skillID, targetTypeParam)
-  local nearestIds, nearestMagnitude = {}, 999
-  local center = (casterEntity:GridLocation()):Center()
   if targets then
-    for i,id in ipairs(targets) do
-      local e = (self._world):GetEntityByID(id)
-      local pos = (e:GridLocation()).Position
-      local bodyArea = (e:BodyArea()):GetArea()
-      for j,grid in ipairs(bodyArea) do
+    for i, id in ipairs(targets) do
+      local e = self._world:GetEntityByID(id)
+      local pos = e:GridLocation().Position
+      local bodyArea = e:BodyArea():GetArea()
+      for j, grid in ipairs(bodyArea) do
         local absPos = pos + grid
-        local magnitude = (Vector2.Magnitude)(absPos - center)
-        if magnitude < nearestMagnitude then
+        local magnitude = Vector2.Magnitude(absPos - center)
+        if nearestMagnitude > magnitude then
           nearestMagnitude = magnitude
           nearestIds = {id}
-        else
-          if nearestMagnitude == magnitude then
-            (table.insert)(nearestIds, id)
-          end
+        elseif nearestMagnitude == magnitude then
+          table.insert(nearestIds, id)
         end
       end
     end
   end
-  do
-    return nearestIds
-  end
+  return nearestIds
 end
 
--- DECOMPILER ERROR at PC136: Confused about usage of register: R1 in 'UnsetPending'
+function SkillScopeTargetSelector:_SelectNearestMonsterTrap(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local targets = self:_SelectMonsterTrap(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local nearestIds, nearestMagnitude = {}, 999
+  local center = casterEntity:GridLocation():Center()
+  if targets then
+    for i, id in ipairs(targets) do
+      local e = self._world:GetEntityByID(id)
+      local pos = e:GridLocation().Position
+      local bodyArea = e:BodyArea():GetArea()
+      for j, grid in ipairs(bodyArea) do
+        local absPos = pos + grid
+        local magnitude = Vector2.Magnitude(absPos - center)
+        if nearestMagnitude > magnitude then
+          nearestMagnitude = magnitude
+          nearestIds = {id}
+        elseif nearestMagnitude == magnitude then
+          table.insert(nearestIds, id)
+        end
+      end
+    end
+  end
+  return nearestIds
+end
 
-SkillScopeTargetSelector._SelectPetMonsterTrapGridExceptConveyorFlyMultiBodyArea = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_38 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectPetMonsterTrapGridExceptConveyorFlyMultiBodyArea(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local arr = {}
   local pets = self:_SelectPet(casterEntity, skillScopeResult, skillID, targetTypeParam)
   if pets then
-    for i,v in ipairs(pets) do
-      (table.insert)(arr, v)
+    for i, v in ipairs(pets) do
+      table.insert(arr, v)
     end
   end
-  do
-    local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
-    local cfgService = (self._world):GetService("Config")
-    local monsterConfigData = cfgService:GetMonsterConfigData()
-    if monsters then
-      for i,v in ipairs(monsters) do
-        local e = (self._world):GetEntityByID(v)
-        local bodyArea = (e:BodyArea()):GetArea()
-        local monsterID = (e:MonsterID()):GetMonsterID()
-        local monsterRaceType = monsterConfigData:GetMonsterRaceType(monsterID)
-        if (table.count)(bodyArea) == 1 and monsterRaceType ~= MonsterRaceType.Fly then
-          (table.insert)(arr, v)
-        end
-      end
-    end
-    do
-      local listTrapMap = self:_SelectTrap(casterEntity, skillScopeResult, skillID, targetTypeParam, false)
-      if listTrapMap then
-        for id,trapEntity in pairs(listTrapMap) do
-          local cTrap = trapEntity:Trap()
-          if id ~= casterEntity:GetID() then
-            (table.insert)(arr, id)
-          end
-        end
-      end
-      do
-        return arr
+  local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
+  local cfgService = self._world:GetService("Config")
+  local monsterConfigData = cfgService:GetMonsterConfigData()
+  if monsters then
+    for i, v in ipairs(monsters) do
+      local e = self._world:GetEntityByID(v)
+      local bodyArea = e:BodyArea():GetArea()
+      local monsterID = e:MonsterID():GetMonsterID()
+      local monsterRaceType = monsterConfigData:GetMonsterRaceType(monsterID)
+      if table.count(bodyArea) == 1 and monsterRaceType ~= MonsterRaceType.Fly then
+        table.insert(arr, v)
       end
     end
   end
+  local listTrapMap = self:_SelectTrap(casterEntity, skillScopeResult, skillID, targetTypeParam, false)
+  if listTrapMap then
+    for id, trapEntity in pairs(listTrapMap) do
+      local cTrap = trapEntity:Trap()
+      if id ~= casterEntity:GetID() then
+        table.insert(arr, id)
+      end
+    end
+  end
+  return arr
 end
 
--- DECOMPILER ERROR at PC139: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectOwnedPhantom = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_39 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectOwnedPhantom(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDs = {}
-  local phantoms = (self._world):GetGroup(((self._world).BW_WEMatchers).Phantom)
+  local phantoms = self._world:GetGroup(self._world.BW_WEMatchers.Phantom)
   if phantoms and #phantoms:GetEntities() > 0 then
     local entitys = phantoms:GetEntities()
-    for _,entity in ipairs(entitys) do
-      if (entity:PhantomComponent()):GetOwnerEntityID() == casterEntity:GetID() and not entity:HasDeadMark() then
+    for _, entity in ipairs(entitys) do
+      if entity:PhantomComponent():GetOwnerEntityID() == casterEntity:GetID() and not entity:HasDeadMark() then
         targetIDs[#targetIDs + 1] = entity:GetID()
       end
     end
   else
-    do
-      ;
-      (Log.fatal)("场上没有幻象")
-      return targetIDs
-    end
+    Log.fatal("场上没有幻象")
   end
+  return targetIDs
 end
 
--- DECOMPILER ERROR at PC142: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._IsEntityInRange = function(self, entityWork, attackRange)
-  -- function num : 0_40 , upvalues : _ENV
+function SkillScopeTargetSelector:_IsEntityInRange(entityWork, attackRange)
   local posBase = entityWork:GetGridPosition()
-  local listBodyArea = (entityWork:BodyArea()):GetArea()
-  local posList = (table.create)(#listBodyArea, 0)
-  for key,value in pairs(listBodyArea) do
+  local listBodyArea = entityWork:BodyArea():GetArea()
+  local posList = table.create(#listBodyArea, 0)
+  for key, value in pairs(listBodyArea) do
     local posWork = posBase + value
-    if attackRange._className == nil and (table.icontains)(attackRange, posWork) then
-      (table.insert)(posList, posWork)
-    end
-    if attackRange == posWork then
-      (table.insert)(posList, posWork)
+    if attackRange._className == nil then
+      if table.icontains(attackRange, posWork) then
+        table.insert(posList, posWork)
+      end
+    elseif attackRange == posWork then
+      table.insert(posList, posWork)
     end
   end
-  do return (table.count)(posList) > 0, posList end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 0 < table.count(posList), posList
 end
 
--- DECOMPILER ERROR at PC145: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectEntityByTypeAndRange = function(self, nEntityGroupType, attackRange, isNormalAttack)
-  -- function num : 0_41 , upvalues : _ENV
-  local group = (self._world):GetGroup(nEntityGroupType)
+function SkillScopeTargetSelector:_SelectEntityByTypeAndRange(nEntityGroupType, attackRange, isNormalAttack)
+  local group = self._world:GetGroup(nEntityGroupType)
   local entityList = group:GetEntities()
   local listTarget = {}
-  for _,skillRangePos in ipairs(attackRange) do
-    for key,value in ipairs(entityList) do
+  for _, skillRangePos in ipairs(attackRange) do
+    for key, value in ipairs(entityList) do
       if not value:HasDeadMark() and self:SelectConditionFilter(value, isNormalAttack) then
         local bIsInRange, listPos = self:_IsEntityInRange(value, skillRangePos)
         if bIsInRange then
           for i = 1, #listPos do
             local targetData = SkillScopeTargetData:New(listPos[i], value)
-            ;
-            (table.insert)(listTarget, targetData)
+            table.insert(listTarget, targetData)
           end
         end
       end
@@ -1330,40 +878,34 @@ SkillScopeTargetSelector._SelectEntityByTypeAndRange = function(self, nEntityGro
   return listTarget
 end
 
--- DECOMPILER ERROR at PC148: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectSpecificMonster = function(self, casterEntity, skillScopeResult, skillID, listSpecificMonsterID)
-  -- function num : 0_42 , upvalues : _ENV
-  local listTargetByRange = self:_SelectEntityByTypeAndRange(((self._world).BW_WEMatchers).MonsterID, skillScopeResult:GetAttackRange())
-  local cfgService = (self._world):GetService("Config")
+function SkillScopeTargetSelector:_SelectSpecificMonster(casterEntity, skillScopeResult, skillID, listSpecificMonsterID)
+  local listTargetByRange = self:_SelectEntityByTypeAndRange(self._world.BW_WEMatchers.MonsterID, skillScopeResult:GetAttackRange())
+  local cfgService = self._world:GetService("Config")
   local monsterConfigData = cfgService:GetMonsterConfigData()
   local listReturn = {}
-  for key,value in ipairs(listTargetByRange) do
+  for key, value in ipairs(listTargetByRange) do
     local entityWork = value.m_entity
-    local nMonsterID = (entityWork:MonsterID()):GetMonsterID()
+    local nMonsterID = entityWork:MonsterID():GetMonsterID()
     local nMonsterClassID = monsterConfigData:GetMonsterClassID(nMonsterID)
-    if (table.icontains)(listSpecificMonsterID, nMonsterClassID) then
+    if table.icontains(listSpecificMonsterID, nMonsterClassID) then
       local nEntityID = entityWork:GetID()
-      if not (table.icontains)(listReturn, nEntityID) then
-        (table.insert)(listReturn, nEntityID)
+      if not table.icontains(listReturn, nEntityID) then
+        table.insert(listReturn, nEntityID)
       end
     end
   end
   return listReturn
 end
 
--- DECOMPILER ERROR at PC151: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMonsterGroup = function(self, casterEntity, skillScopeResult, skillID, nIncludeSelf)
-  -- function num : 0_43 , upvalues : _ENV
-  local listTargetByRange = self:_SelectEntityByTypeAndRange(((self._world).BW_WEMatchers).MonsterID, skillScopeResult:GetAttackRange())
+function SkillScopeTargetSelector:_SelectMonsterGroup(casterEntity, skillScopeResult, skillID, nIncludeSelf)
+  local listTargetByRange = self:_SelectEntityByTypeAndRange(self._world.BW_WEMatchers.MonsterID, skillScopeResult:GetAttackRange())
   local listReturn = {}
   local cmptCasterMonster = casterEntity:MonsterID()
   if cmptCasterMonster then
     local nSelfGroupID = cmptCasterMonster:GetMonsterGroupID()
-    for key,value in ipairs(listTargetByRange) do
+    for key, value in ipairs(listTargetByRange) do
       local entityWork = value.m_entity
-      local nMonsterGroupID = (entityWork:MonsterID()):GetMonsterGroupID()
+      local nMonsterGroupID = entityWork:MonsterID():GetMonsterGroupID()
       local bFind = false
       if nSelfGroupID == nMonsterGroupID then
         bFind = true
@@ -1373,289 +915,246 @@ SkillScopeTargetSelector._SelectMonsterGroup = function(self, casterEntity, skil
       end
       if bFind then
         local nEntityID = entityWork:GetID()
-        if not (table.icontains)(listReturn, nEntityID) then
-          (table.insert)(listReturn, nEntityID)
+        if not table.icontains(listReturn, nEntityID) then
+          table.insert(listReturn, nEntityID)
         end
       end
     end
   end
-  do
-    return listReturn
-  end
+  return listReturn
 end
 
--- DECOMPILER ERROR at PC154: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectPetAndTrapBomb = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_44 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectPetAndTrapBomb(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local arr = {}
   local pets = self:_SelectPet(casterEntity, skillScopeResult, skillID, targetTypeParam)
-  ;
-  (table.appendArray)(arr, pets)
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  table.appendArray(arr, pets)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local posPlayer = teamEntity:GetGridPosition()
   local posSelf = casterEntity:GetGridPosition()
   local mapTrap = self:_SelectTrapByHit(casterEntity, skillScopeResult, skillID, targetTypeParam)
   if mapTrap then
-    for key,entityBomb in pairs(mapTrap) do
-      if (GameHelper.IsPointOneLine)(posSelf, entityBomb:GetGridPosition(), posPlayer) then
-        (table.insert)(arr, key)
+    for key, entityBomb in pairs(mapTrap) do
+      if GameHelper.IsPointOneLine(posSelf, entityBomb:GetGridPosition(), posPlayer) then
+        table.insert(arr, key)
       end
     end
   end
-  do
-    return arr
-  end
+  return arr
 end
 
--- DECOMPILER ERROR at PC157: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectHighestHPPercentMonster = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_45 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectHighestHPPercentMonster(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDlist = {}
   local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
   if not monsters then
     return targetIDlist
   end
-  local count = (table.count)(monsters)
+  local count = table.count(monsters)
   if count == 0 then
     return targetIDlist
   end
   local fstId = monsters[1]
   if count == 1 then
-    (table.insert)(targetIDlist, fstId)
+    table.insert(targetIDlist, fstId)
     return targetIDlist
   end
   local highestHPPercent = 0
   local highestHPPercentId = 0
   for i = 1, count do
     local id = monsters[i]
-    local e = (self._world):GetEntityByID(id)
+    local e = self._world:GetEntityByID(id)
     local percent = self:_GetHPPercent(e)
     if highestHPPercent < percent then
       highestHPPercent = percent
       highestHPPercentId = id
     end
   end
-  if highestHPPercentId > 0 then
-    (table.insert)(targetIDlist, highestHPPercentId)
+  if 0 < highestHPPercentId then
+    table.insert(targetIDlist, highestHPPercentId)
   end
   return targetIDlist
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectSpecificPet = function(self, casterEntity, skillScopeResult, skillID, tSpecificPetID)
-  -- function num : 0_46 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectSpecificPet(casterEntity, skillScopeResult, skillID, tSpecificPetID)
   local tPetEntityID = {}
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local publicPetEntities = (teamEntity:Team()):GetTeamPetEntities()
-  for _,entity in ipairs(publicPetEntities) do
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local publicPetEntities = teamEntity:Team():GetTeamPetEntities()
+  for _, entity in ipairs(publicPetEntities) do
     local cPetPst = entity:PetPstID()
     local templateID = cPetPst:GetTemplateID()
-    if (table.icontains)(tSpecificPetID, templateID) then
-      (table.insert)(tPetEntityID, entity:GetID())
+    if table.icontains(tSpecificPetID, templateID) then
+      table.insert(tPetEntityID, entity:GetID())
     end
   end
   return tPetEntityID
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectSpecificPrimaryElementPet = function(self, casterEntity, skillScopeResult, skillID, tElement)
-  -- function num : 0_47 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectSpecificPrimaryElementPet(casterEntity, skillScopeResult, skillID, tElement)
   local dicElement = {}
-  for _,nElement in ipairs(tElement) do
+  for _, nElement in ipairs(tElement) do
     dicElement[nElement] = true
   end
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local publicPetEntities = (teamEntity:Team()):GetTeamPetEntities()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local publicPetEntities = teamEntity:Team():GetTeamPetEntities()
   local tPetEntityID = {}
-  for _,entity in ipairs(publicPetEntities) do
+  for _, entity in ipairs(publicPetEntities) do
     local cElement = entity:Element()
     local nMainElement = cElement:GetPrimaryType()
     if dicElement[nMainElement] then
-      (table.insert)(tPetEntityID, entity:GetID())
+      table.insert(tPetEntityID, entity:GetID())
     end
   end
   return tPetEntityID
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectHighestHPMonster = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_48 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectHighestHPMonster(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDlist = {}
   local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
   if not monsters then
     return targetIDlist
   end
-  local count = (table.count)(monsters)
+  local count = table.count(monsters)
   if count == 0 then
     return targetIDlist
   end
   local fstId = monsters[1]
   if count == 1 then
-    (table.insert)(targetIDlist, fstId)
+    table.insert(targetIDlist, fstId)
     return targetIDlist
   end
   local targetIDCount = 1
-  targetIDCount = not targetTypeParam or type(targetTypeParam) ~= "table" or targetTypeParam[1] or 1
+  if targetTypeParam and type(targetTypeParam) == "table" then
+    targetIDCount = targetTypeParam[1] or 1
+  end
   if targetIDCount == 1 then
     local highestHP = 0
     local highestHPId = 0
     for i = 1, count do
       local id = monsters[i]
-      local e = (self._world):GetEntityByID(id)
-      local hp = (e:Attributes()):GetCurrentHP()
+      local e = self._world:GetEntityByID(id)
+      local hp = e:Attributes():GetCurrentHP()
       if highestHP < hp then
         highestHP = hp
         highestHPId = id
       end
     end
-    if highestHPId > 0 then
-      (table.insert)(targetIDlist, highestHPId)
+    if 0 < highestHPId then
+      table.insert(targetIDlist, highestHPId)
     end
   else
-    do
-      local findID = {}
-      local hpDataList = {}
-      for i = 1, count do
-        local id = monsters[i]
-        if not findID[id] then
-          findID[id] = 1
-          local e = (self._world):GetEntityByID(id)
-          local hp = (e:Attributes()):GetCurrentHP()
-          local hpData = {hp = hp, id = id}
-          ;
-          (table.insert)(hpDataList, hpData)
-        end
+    local findID = {}
+    local hpDataList = {}
+    for i = 1, count do
+      local id = monsters[i]
+      if not findID[id] then
+        findID[id] = 1
+        local e = self._world:GetEntityByID(id)
+        local hp = e:Attributes():GetCurrentHP()
+        local hpData = {hp = hp, id = id}
+        table.insert(hpDataList, hpData)
       end
-      ;
-      (table.sort)(hpDataList, function(a, b)
-    -- function num : 0_48_0
-    do return b.hp < a.hp end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-      for i = 1, targetIDCount do
-        if hpDataList[i] then
-          (table.insert)(targetIDlist, (hpDataList[i]).id)
-        end
-      end
-      do
-        return targetIDlist
+    end
+    table.sort(hpDataList, function(a, b)
+      return a.hp > b.hp
+    end)
+    for i = 1, targetIDCount do
+      if hpDataList[i] then
+        table.insert(targetIDlist, hpDataList[i].id)
       end
     end
   end
+  return targetIDlist
 end
 
--- DECOMPILER ERROR at PC169: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._GetHPPercent = function(self, e)
-  -- function num : 0_49
-  local hp = (e:Attributes()):GetCurrentHP()
-  local maxHP = (e:Attributes()):CalcMaxHp()
+function SkillScopeTargetSelector:_GetHPPercent(e)
+  local hp = e:Attributes():GetCurrentHP()
+  local maxHP = e:Attributes():CalcMaxHp()
   local percent = hp / maxHP
   return percent
 end
 
--- DECOMPILER ERROR at PC172: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectLowestHPPercentMonster = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_50 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectLowestHPPercentMonster(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDlist = {}
   local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
-  local count = (table.count)(monsters)
+  local count = table.count(monsters)
   if not monsters or count == 0 then
     return targetIDlist, 1
   end
   if count == 1 then
     local fstId = monsters[1]
-    local e = (self._world):GetEntityByID(fstId)
+    local e = self._world:GetEntityByID(fstId)
     local percent = self:_GetHPPercent(e)
-    ;
-    (table.insert)(targetIDlist, fstId)
+    table.insert(targetIDlist, fstId)
     return targetIDlist, percent
   end
-  do
-    local hpPercent = 999
-    local hpPercentId = 0
-    local selectHpZero = 1
-    selectHpZero = not targetTypeParam or type(targetTypeParam) ~= "table" or targetTypeParam[1] or 1
-    local targetIDCount = 1
-    targetIDCount = not targetTypeParam or type(targetTypeParam) ~= "table" or targetTypeParam[2] or 1
-    if targetIDCount == 1 then
-      for i = 1, count do
-        local id = monsters[i]
-        local e = (self._world):GetEntityByID(id)
+  local hpPercent = 999
+  local hpPercentId = 0
+  local selectHpZero = 1
+  if targetTypeParam and type(targetTypeParam) == "table" then
+    selectHpZero = targetTypeParam[1] or 1
+  end
+  local targetIDCount = 1
+  if targetTypeParam and type(targetTypeParam) == "table" then
+    targetIDCount = targetTypeParam[2] or 1
+  end
+  if targetIDCount == 1 then
+    for i = 1, count do
+      local id = monsters[i]
+      local e = self._world:GetEntityByID(id)
+      local percent = self:_GetHPPercent(e)
+      local hpIsSatisfied = true
+      if selectHpZero == 0 and percent == 0 then
+        hpIsSatisfied = false
+      end
+      if hpIsSatisfied and hpPercent >= percent then
+        hpPercent = percent
+        hpPercentId = id
+      end
+    end
+    if hpPercentId == 0 then
+      local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+      local idx = utilScopeSvc:_GetRandomNumber(1, count)
+      local id = monsters[idx]
+      local e = self._world:GetEntityByID(id)
+      local percent = self:_GetHPPercent(e)
+      hpPercent = percent
+      hpPercentId = id
+    end
+    if 0 < hpPercentId then
+      table.insert(targetIDlist, hpPercentId)
+    end
+  else
+    local findID = {}
+    local hpDataList = {}
+    for i = 1, count do
+      local id = monsters[i]
+      if not findID[id] then
+        findID[id] = 1
+        local e = self._world:GetEntityByID(id)
         local percent = self:_GetHPPercent(e)
         local hpIsSatisfied = true
         if selectHpZero == 0 and percent == 0 then
           hpIsSatisfied = false
         end
-        if hpIsSatisfied and percent <= hpPercent then
-          hpPercent = percent
-          hpPercentId = id
-        end
-      end
-      if hpPercentId == 0 then
-        local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-        local idx = utilScopeSvc:_GetRandomNumber(1, count)
-        local id = monsters[idx]
-        local e = (self._world):GetEntityByID(id)
-        local percent = self:_GetHPPercent(e)
-        hpPercent = percent
-        hpPercentId = id
-      end
-      do
-        if hpPercentId > 0 then
-          (table.insert)(targetIDlist, hpPercentId)
-        end
-        local findID = {}
-        local hpDataList = {}
-        for i = 1, count do
-          local id = monsters[i]
-          if not findID[id] then
-            findID[id] = 1
-            local e = (self._world):GetEntityByID(id)
-            local percent = self:_GetHPPercent(e)
-            local hpIsSatisfied = true
-            if selectHpZero == 0 and percent == 0 then
-              hpIsSatisfied = false
-            end
-            if hpIsSatisfied then
-              local hpData = {percent = percent, id = id}
-              ;
-              (table.insert)(hpDataList, hpData)
-            end
-          end
-        end
-        ;
-        (table.sort)(hpDataList, function(a, b)
-    -- function num : 0_50_0
-    do return a.percent < b.percent end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-        for i = 1, targetIDCount do
-          if hpDataList[i] then
-            (table.insert)(targetIDlist, (hpDataList[i]).id)
-            hpPercent = (hpDataList[i]).percent
-          end
-        end
-        do
-          return targetIDlist, hpPercent
+        if hpIsSatisfied then
+          local hpData = {percent = percent, id = id}
+          table.insert(hpDataList, hpData)
         end
       end
     end
+    table.sort(hpDataList, function(a, b)
+      return a.percent < b.percent
+    end)
+    for i = 1, targetIDCount do
+      if hpDataList[i] then
+        table.insert(targetIDlist, hpDataList[i].id)
+        hpPercent = hpDataList[i].percent
+      end
+    end
   end
+  return targetIDlist, hpPercent
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectLowestHPPercentMonsterParam = function(self, casterEntity, skillScopeResult, skillID, param)
-  -- function num : 0_51
+function SkillScopeTargetSelector:_SelectLowestHPPercentMonsterParam(casterEntity, skillScopeResult, skillID, param)
   local ids, percent = self:_SelectLowestHPPercentMonster(casterEntity, skillScopeResult, skillID, param)
   local percentParam = 0
   if param then
@@ -1667,60 +1166,46 @@ SkillScopeTargetSelector._SelectLowestHPPercentMonsterParam = function(self, cas
   return {}
 end
 
--- DECOMPILER ERROR at PC178: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectRandomNMonster = function(self, casterEntity, skillScopeResult, skillID, param)
-  -- function num : 0_52 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectRandomNMonster(casterEntity, skillScopeResult, skillID, param)
   local monsterIdList = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
-  monsterIdList = (table.unique)(monsterIdList)
+  monsterIdList = table.unique(monsterIdList)
   local ids = {}
-  if monsterIdList and (table.count)(monsterIdList) > 0 then
-    local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  if monsterIdList and table.count(monsterIdList) > 0 then
+    local utilScopeSvc = self._world:GetService("UtilScopeCalc")
     local count = param[1]
-    if count and count > 0 then
+    if count and 0 < count then
       for i = 1, count do
-        if #monsterIdList ~= 0 then
-          local rate = param[1 + i]
-          local needCal = false
-          if rate >= 1 then
-            needCal = true
-          else
-            local randomNum = utilScopeSvc:_GetRandomNumber()
-            needCal = randomNum < rate
-          end
-          do
-            if needCal then
-              local idx = utilScopeSvc:_GetRandomNumber(1, (table.count)(monsterIdList))
-              ;
-              (table.insert)(ids, monsterIdList[idx])
-              ;
-              (table.remove)(monsterIdList, idx)
-            end
-            -- DECOMPILER ERROR at PC67: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC67: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        if #monsterIdList == 0 then
+          break
+        end
+        local rate = param[1 + i]
+        local needCal = false
+        if 1 <= rate then
+          needCal = true
+        else
+          local randomNum = utilScopeSvc:_GetRandomNumber()
+          needCal = rate > randomNum
+        end
+        if needCal then
+          local idx = utilScopeSvc:_GetRandomNumber(1, table.count(monsterIdList))
+          table.insert(ids, monsterIdList[idx])
+          table.remove(monsterIdList, idx)
         end
       end
     end
   end
-  do return ids end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return ids
 end
 
--- DECOMPILER ERROR at PC181: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectDeadMonster = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_53 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectDeadMonster(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDArray = {}
   local attackRange = skillScopeResult:GetAttackRange()
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  for _,skillRangePos in ipairs(attackRange) do
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  for _, skillRangePos in ipairs(attackRange) do
     local isHasMonster, monsterID = utilScopeSvc:IsPosHasMonster(skillRangePos)
     if isHasMonster then
-      local monsterEntity = (self._world):GetEntityByID(monsterID)
-      local curHp = (monsterEntity:Attributes()):GetCurrentHP()
+      local monsterEntity = self._world:GetEntityByID(monsterID)
+      local curHp = monsterEntity:Attributes():GetCurrentHP()
       if curHp and curHp <= 0 then
         targetIDArray[#targetIDArray + 1] = monsterID
       end
@@ -1729,186 +1214,145 @@ SkillScopeTargetSelector._SelectDeadMonster = function(self, casterEntity, skill
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC184: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectDeadMonsterWithBuff = function(self, casterEntity, skillScopeResult, skillID, filterBuffEffect)
-  -- function num : 0_54 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectDeadMonsterWithBuff(casterEntity, skillScopeResult, skillID, filterBuffEffect)
   local monsterIdList = self:_SelectDeadMonster(casterEntity, skillScopeResult, skillID, filterBuffEffect)
-  monsterIdList = (table.unique)(monsterIdList)
+  monsterIdList = table.unique(monsterIdList)
   local validateMonsters = self:_FilterMustHaveBuffEffect(monsterIdList, filterBuffEffect)
   local retTargetID = {}
   return validateMonsters
 end
 
--- DECOMPILER ERROR at PC187: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._FilterMustHaveBuffEffect = function(self, movers, filterBuffEffect)
-  -- function num : 0_55 , upvalues : _ENV
+function SkillScopeTargetSelector:_FilterMustHaveBuffEffect(movers, filterBuffEffect)
   local targetIDArray = {}
-  for _,v in ipairs(movers) do
-    local buffCpt = ((self._world):GetEntityByID(v)):BuffComponent()
+  for _, v in ipairs(movers) do
+    local buffCpt = self._world:GetEntityByID(v):BuffComponent()
     local validate = true
     if buffCpt then
-      for _,value in ipairs(filterBuffEffect) do
+      for _, value in ipairs(filterBuffEffect) do
         if not buffCpt:HasBuffEffect(value) then
           validate = false
           break
         end
       end
     end
-    do
-      do
-        if validate then
-          (table.insert)(targetIDArray, v)
-        end
-        -- DECOMPILER ERROR at PC34: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if validate then
+      table.insert(targetIDArray, v)
     end
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC190: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMonsterHaveBuffANoBuffB = function(self, casterEntity, skillScopeResult, skillID, filterBuffEffect)
-  -- function num : 0_56 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectMonsterHaveBuffANoBuffB(casterEntity, skillScopeResult, skillID, filterBuffEffect)
   local monsterIdList = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
-  monsterIdList = (table.unique)(monsterIdList)
-  local validateMonsters = self:_FilterMustHaveBuffEffect(monsterIdList, {filterBuffEffect[1]})
-  validateMonsters = self:_FilterByBuffEffect(validateMonsters, {filterBuffEffect[2]})
+  monsterIdList = table.unique(monsterIdList)
+  local validateMonsters = self:_FilterMustHaveBuffEffect(monsterIdList, {
+    filterBuffEffect[1]
+  })
+  validateMonsters = self:_FilterByBuffEffect(validateMonsters, {
+    filterBuffEffect[2]
+  })
   return validateMonsters
 end
 
--- DECOMPILER ERROR at PC193: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectNearestMonsterNoID = function(self, casterEntity, skillScopeResult, skillID, monsterIDList)
-  -- function num : 0_57 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectNearestMonsterNoID(casterEntity, skillScopeResult, skillID, monsterIDList)
   local ownPos = skillScopeResult:GetCenterPos()
-  local utilScopeCalc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeCalc = self._world:GetService("UtilScopeCalc")
   local targetIDArray = {}
   local selectedMonsterIds = self:_SelectMonster(casterEntity, skillScopeResult, skillID, nil)
   if selectedMonsterIds then
     local monsterList = utilScopeCalc:SortMonstersListByPos(ownPos, selectedMonsterIds)
-    for _,element in ipairs(monsterList) do
+    for _, element in ipairs(monsterList) do
       local monsterEntity = element.monster_e
-      if not (table.icontains)(monsterIDList, (monsterEntity:MonsterID()):GetMonsterClassID()) and not monsterEntity:HasDeadMark() then
+      if not table.icontains(monsterIDList, monsterEntity:MonsterID():GetMonsterClassID()) and not monsterEntity:HasDeadMark() then
         targetIDArray[#targetIDArray + 1] = monsterEntity:GetID()
         break
       end
     end
   end
-  do
-    return targetIDArray
-  end
+  return targetIDArray
 end
 
--- DECOMPILER ERROR at PC196: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectNearestMonstersIsScope = function(self, casterEntity, skillScopeResult, skillID, param)
-  -- function num : 0_58 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectNearestMonstersIsScope(casterEntity, skillScopeResult, skillID, param)
   local nMonsterCount = param[1]
   local ownPos = skillScopeResult:GetCenterPos()
   if #ownPos ~= 0 then
     if EDITOR then
-      (Log.exception)("CenterPosIsTable SkillID:", skillID)
+      Log.exception("CenterPosIsTable SkillID:", skillID)
     else
-      ;
-      (Log.fatal)("CenterPosIsTable SkillID:", skillID)
+      Log.fatal("CenterPosIsTable SkillID:", skillID)
     end
   end
-  local utilScopeCalc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeCalc = self._world:GetService("UtilScopeCalc")
   local selectedMonsterIds = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
-  selectedMonsterIds = (table.unique)(selectedMonsterIds)
+  selectedMonsterIds = table.unique(selectedMonsterIds)
   local sortMonsterList = utilScopeCalc:SortMonstersListByPos(ownPos, selectedMonsterIds)
   local targetIDArray = {}
-  for i,id in ipairs(sortMonsterList) do
-    if nMonsterCount >= i then
-      do
-        (table.insert)(targetIDArray, (id.monster_e):GetID())
-        -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  for i, id in ipairs(sortMonsterList) do
+    if i > nMonsterCount then
+      break
     end
+    table.insert(targetIDArray, id.monster_e:GetID())
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC199: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectSpecificTrap = function(self, casterEntity, skillScopeResult, skillID, param)
-  -- function num : 0_59 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectSpecificTrap(casterEntity, skillScopeResult, skillID, param)
   if type(param) == "number" then
     param = {param}
   end
-  local utilDatSvc = (self._world):GetService("UtilData")
+  local utilDatSvc = self._world:GetService("UtilData")
   local trapEntityList = self:_SelectTrap(casterEntity, skillScopeResult, skillID, nil, false)
   local resultList = {}
-  for _,entity in pairs(trapEntityList) do
-    if entity:Trap() and (table.intable)(param, (entity:Trap()):GetTrapID()) and utilDatSvc:IsTrapPosCanMoveMonster(entity, casterEntity) then
-      (table.insert)(resultList, entity:GetID())
+  for _, entity in pairs(trapEntityList) do
+    if entity:Trap() and table.intable(param, entity:Trap():GetTrapID()) and utilDatSvc:IsTrapPosCanMoveMonster(entity, casterEntity) then
+      table.insert(resultList, entity:GetID())
       break
     end
   end
-  do
-    return resultList
-  end
+  return resultList
 end
 
--- DECOMPILER ERROR at PC202: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectSpecificTrapAndFarthestHitBackPlayer = function(self, casterEntity, skillScopeResult, skillID, param)
-  -- function num : 0_60 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectSpecificTrapAndFarthestHitBackPlayer(casterEntity, skillScopeResult, skillID, param)
   if type(param) == "number" then
     param = {param}
   end
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local trapEntityList = self:_SelectTrap(casterEntity, skillScopeResult, skillID, nil, false)
   local tempEntityList = {}
   local resultList = {}
-  for _,entity in pairs(trapEntityList) do
-    if entity:Trap() and (table.intable)(param, (entity:Trap()):GetTrapID()) then
-      (table.insert)(tempEntityList, entity)
+  for _, entity in pairs(trapEntityList) do
+    if entity:Trap() and table.intable(param, entity:Trap():GetTrapID()) then
+      table.insert(tempEntityList, entity)
     end
   end
-  if #tempEntityList > 1 then
-    local utilCalcSvc = (self._world):GetService("UtilCalc")
+  if 1 < #tempEntityList then
+    local utilCalcSvc = self._world:GetService("UtilCalc")
     local posList = {}
-    for _,entity in ipairs(tempEntityList) do
+    for _, entity in ipairs(tempEntityList) do
       local attackerPos = entity:GetGridPosition()
-      ;
-      (table.insert)(posList, attackerPos)
+      table.insert(posList, attackerPos)
     end
     local pos = utilCalcSvc:GetHitBackPlayerFarthestPos(posList, casterEntity, HitBackDirectionType.EightDir, teamEntity)
-    for _,entity in ipairs(tempEntityList) do
+    for _, entity in ipairs(tempEntityList) do
       local attackerPos = entity:GetGridPosition()
       if attackerPos.x == pos.x and attackerPos.y == pos.y then
         resultList[1] = entity:GetID()
         break
       end
     end
-  else
-    do
-      if #tempEntityList == 1 then
-        resultList[1] = (tempEntityList[1]):GetID()
-      end
-      return resultList
-    end
+  elseif #tempEntityList == 1 then
+    resultList[1] = tempEntityList[1]:GetID()
   end
+  return resultList
 end
 
--- DECOMPILER ERROR at PC205: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMonsterDeadOrAlive = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_61 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectMonsterDeadOrAlive(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDArray = {}
   local attackRange = skillScopeResult:GetAttackRange()
-  for _,skillRangePos in ipairs(attackRange) do
+  for _, skillRangePos in ipairs(attackRange) do
     local targetIDInSkillRangeList = self:_CalcMonsterInSkillRange(skillRangePos, true)
-    for _,v in ipairs(targetIDInSkillRangeList) do
-      if v > 0 then
+    for _, v in ipairs(targetIDInSkillRangeList) do
+      if 0 < v then
         targetIDArray[#targetIDArray + 1] = v
       end
     end
@@ -1916,88 +1360,75 @@ SkillScopeTargetSelector._SelectMonsterDeadOrAlive = function(self, casterEntity
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC208: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectTrapByHitDeadOrAlive = function(self, casterEntity, skillScopeResult, skillID)
-  -- function num : 0_62 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectTrapByHitDeadOrAlive(casterEntity, skillScopeResult, skillID)
   local listTarget = {}
-  local listTargetByRange = self:_SelectEntityByTypeAndRange(((self._world).BW_WEMatchers).Trap, skillScopeResult:GetAttackRange())
-  for key,value in ipairs(listTargetByRange) do
+  local listTargetByRange = self:_SelectEntityByTypeAndRange(self._world.BW_WEMatchers.Trap, skillScopeResult:GetAttackRange())
+  for key, value in ipairs(listTargetByRange) do
     local entityTrap = value.m_entity
     local id = entityTrap:GetID()
-    if id > 0 and self:_SelectTrapFilter(casterEntity, id, true, true) then
+    if 0 < id and self:_SelectTrapFilter(casterEntity, id, true, true) then
       listTarget[id] = entityTrap
     end
   end
   return listTarget
 end
 
--- DECOMPILER ERROR at PC211: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMonsterTrapDeadOrAlive = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_63 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectMonsterTrapDeadOrAlive(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDArray = {}
   local monsters = self:_SelectMonsterDeadOrAlive(casterEntity, skillScopeResult, skillID, targetTypeParam)
-  for _,v in ipairs(monsters) do
-    (table.insert)(targetIDArray, v)
+  for _, v in ipairs(monsters) do
+    table.insert(targetIDArray, v)
   end
   local mapTrap = self:_SelectTrapByHitDeadOrAlive(casterEntity, skillScopeResult, skillID, targetTypeParam)
-  for key,value in pairs(mapTrap) do
-    if (value:Trap()):GetTrapType() ~= TrapType.Protected then
-      (table.insert)(targetIDArray, key)
+  for key, value in pairs(mapTrap) do
+    if value:Trap():GetTrapType() ~= TrapType.Protected then
+      table.insert(targetIDArray, key)
     end
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC214: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectAlignmentTargetEnemyTeam = function(self, casterEntity, skillScopeResult, skillID)
-  -- function num : 0_64 , upvalues : _ENV
-  local team1 = ((self._world):Player()):GetLocalTeamEntity()
-  local team2 = ((self._world):Player()):GetRemoteTeamEntity()
+function SkillScopeTargetSelector:_SelectAlignmentTargetEnemyTeam(casterEntity, skillScopeResult, skillID)
+  local team1 = self._world:Player():GetLocalTeamEntity()
+  local team2 = self._world:Player():GetRemoteTeamEntity()
   local teams = {team1, team2}
   local match = MatchAlignmentType
-  local casterAlignment = (casterEntity:Alignment()):GetAlignmentType()
+  local casterAlignment = casterEntity:Alignment():GetAlignmentType()
   local attackRange = skillScopeResult:GetAttackRange()
   local range = {}
-  for i,v in ipairs(attackRange) do
+  for i, v in ipairs(attackRange) do
     if v._className == "Vector2" then
       range[#range + 1] = v
     else
-      ;
-      (table.appendArray)(range, v)
+      table.appendArray(range, v)
     end
   end
   local es = {}
-  for i,e in ipairs(teams) do
-    local targetAlignment = (e:Alignment()):GetAlignmentType()
+  for i, e in ipairs(teams) do
+    local targetAlignment = e:Alignment():GetAlignmentType()
     local targetType = match(casterAlignment, targetAlignment)
-    if targetType == AlignmentTargetType.Enemy and not e:HasTeamDeadMark() and (table.icontains)(range, e:GetGridPosition()) then
+    if targetType == AlignmentTargetType.Enemy and not e:HasTeamDeadMark() and table.icontains(range, e:GetGridPosition()) then
       es[#es + 1] = e:GetID()
     end
   end
   local mapTrap = self:_SelectTrapByHit(casterEntity, skillScopeResult, skillID)
-  for key,value in pairs(mapTrap) do
-    if (value:Trap()):GetTrapType() ~= TrapType.Protected then
+  for key, value in pairs(mapTrap) do
+    if value:Trap():GetTrapType() ~= TrapType.Protected then
       es[#es + 1] = key
     end
   end
   return es
 end
 
--- DECOMPILER ERROR at PC217: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectAlignmentTargetFriendTeam = function(self, casterEntity, skillScopeResult, skillID)
-  -- function num : 0_65 , upvalues : _ENV
-  local team1 = ((self._world):Player()):GetLocalTeamEntity()
-  local team2 = ((self._world):Player()):GetRemoteTeamEntity()
+function SkillScopeTargetSelector:_SelectAlignmentTargetFriendTeam(casterEntity, skillScopeResult, skillID)
+  local team1 = self._world:Player():GetLocalTeamEntity()
+  local team2 = self._world:Player():GetRemoteTeamEntity()
   local teams = {team1, team2}
   local match = MatchAlignmentType
-  local casterAlignment = (casterEntity:Alignment()):GetAlignmentType()
+  local casterAlignment = casterEntity:Alignment():GetAlignmentType()
   local es = {}
-  for i,e in ipairs(teams) do
-    local targetAlignment = (e:Alignment()):GetAlignmentType()
+  for i, e in ipairs(teams) do
+    local targetAlignment = e:Alignment():GetAlignmentType()
     local targetType = match(casterAlignment, targetAlignment)
     if targetType == AlignmentTargetType.Friend then
       es[#es + 1] = e:GetID()
@@ -2006,209 +1437,175 @@ SkillScopeTargetSelector._SelectAlignmentTargetFriendTeam = function(self, caste
   return es
 end
 
--- DECOMPILER ERROR at PC220: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectAlignmentTargetFriendPet = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_66 , upvalues : _ENV
-  local team1 = ((self._world):Player()):GetLocalTeamEntity()
-  local team2 = ((self._world):Player()):GetRemoteTeamEntity()
+function SkillScopeTargetSelector:_SelectAlignmentTargetFriendPet(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local team1 = self._world:Player():GetLocalTeamEntity()
+  local team2 = self._world:Player():GetRemoteTeamEntity()
   local teams = {team1, team2}
   local match = MatchAlignmentType
-  local casterAlignment = (casterEntity:Alignment()):GetAlignmentType()
+  local casterAlignment = casterEntity:Alignment():GetAlignmentType()
   local attackRange = skillScopeResult:GetAttackRange()
   local targetPieceType = targetTypeParam
   local range = {}
-  for i,v in ipairs(attackRange) do
+  for i, v in ipairs(attackRange) do
     if v._className == "Vector2" then
       range[#range + 1] = v
     else
-      ;
-      (table.appendArray)(range, v)
+      table.appendArray(range, v)
     end
   end
   local es = {}
-  for i,eTeam in ipairs(teams) do
-    local targetAlignment = (eTeam:Alignment()):GetAlignmentType()
+  for i, eTeam in ipairs(teams) do
+    local targetAlignment = eTeam:Alignment():GetAlignmentType()
     local targetType = match(casterAlignment, targetAlignment)
-    if targetType == AlignmentTargetType.Friend and (table.icontains)(range, eTeam:GetGridPosition()) then
-      for i,e in ipairs((eTeam:Team()):GetTeamPetEntities()) do
-        if not targetPieceType or self:_CheckPetElement(e, targetPieceType) then
-          es[#es + 1] = e:GetID()
+    if targetType == AlignmentTargetType.Friend then
+      if table.icontains(range, eTeam:GetGridPosition()) then
+        for i, e in ipairs(eTeam:Team():GetTeamPetEntities()) do
+          if not targetPieceType or self:_CheckPetElement(e, targetPieceType) then
+            es[#es + 1] = e:GetID()
+          end
         end
       end
-    end
-    do break end
-  end
-  do
-    return es
-  end
-end
-
--- DECOMPILER ERROR at PC223: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectAlignmentTargetEnemyPet = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_67 , upvalues : _ENV
-  local team1 = ((self._world):Player()):GetLocalTeamEntity()
-  local team2 = ((self._world):Player()):GetRemoteTeamEntity()
-  local teams = {team1, team2}
-  local match = MatchAlignmentType
-  local casterAlignment = (casterEntity:Alignment()):GetAlignmentType()
-  local targetPieceType = targetTypeParam
-  local attackRange = skillScopeResult:GetAttackRange()
-  local range = {}
-  for i,v in ipairs(attackRange) do
-    if v._className == "Vector2" then
-      range[#range + 1] = v
-    else
-      ;
-      (table.appendArray)(range, v)
+      break
     end
   end
-  local es = {}
-  for i,eTeam in ipairs(teams) do
-    local targetAlignment = (eTeam:Alignment()):GetAlignmentType()
-    local targetType = match(casterAlignment, targetAlignment)
-    if targetType == AlignmentTargetType.Enemy and not eTeam:HasTeamDeadMark() and (table.icontains)(range, eTeam:GetGridPosition()) then
-      for i,e in ipairs((eTeam:Team()):GetTeamPetEntities()) do
-        if not targetPieceType or self:_CheckPetElement(e, targetPieceType) then
-          es[#es + 1] = e:GetID()
-        end
-      end
-    end
-    do break end
-  end
-  do
-    return es
-  end
-end
-
--- DECOMPILER ERROR at PC226: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectAlignmentTargetEnemyTeamHaveBuffANoBuffB = function(self, casterEntity, skillScopeResult, skillID, filterBuffEffect)
-  -- function num : 0_68 , upvalues : _ENV
-  local team1 = ((self._world):Player()):GetLocalTeamEntity()
-  local team2 = ((self._world):Player()):GetRemoteTeamEntity()
-  local teams = {team1, team2}
-  local match = MatchAlignmentType
-  local casterAlignment = (casterEntity:Alignment()):GetAlignmentType()
-  local attackRange = skillScopeResult:GetAttackRange()
-  local range = {}
-  for i,v in ipairs(attackRange) do
-    if v._className == "Vector2" then
-      range[#range + 1] = v
-    else
-      ;
-      (table.appendArray)(range, v)
-    end
-  end
-  local es = {}
-  for i,e in ipairs(teams) do
-    local targetAlignment = (e:Alignment()):GetAlignmentType()
-    local targetType = match(casterAlignment, targetAlignment)
-    if targetType == AlignmentTargetType.Enemy and not e:HasTeamDeadMark() and (table.icontains)(range, e:GetGridPosition()) then
-      es[#es + 1] = e:GetID()
-    end
-  end
-  es = self:_FilterMustHaveBuffEffect(es, {filterBuffEffect[1]})
-  es = self:_FilterByBuffEffect(es, {filterBuffEffect[2]})
   return es
 end
 
--- DECOMPILER ERROR at PC229: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectEntityWithBuff = function(self, casterEntity, skillScopeResult, skillID, filterBuffEffect)
-  -- function num : 0_69 , upvalues : _ENV
-  if not filterBuffEffect then
-    filterBuffEffect = {}
-  end
-  local targetBuffEffect = filterBuffEffect[1] or 0
-  local filterRange = filterBuffEffect[2]
-  local team1 = ((self._world):Player()):GetLocalTeamEntity()
-  local es = {team1}
-  local team2 = ((self._world):Player()):GetRemoteTeamEntity()
-  if team2 then
-    es[#es + 1] = team2
-  end
-  local monsters = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).AliveMonster)
-  ;
-  (table.appendArray)(es, monsters)
+function SkillScopeTargetSelector:_SelectAlignmentTargetEnemyPet(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local team1 = self._world:Player():GetLocalTeamEntity()
+  local team2 = self._world:Player():GetRemoteTeamEntity()
+  local teams = {team1, team2}
+  local match = MatchAlignmentType
+  local casterAlignment = casterEntity:Alignment():GetAlignmentType()
+  local targetPieceType = targetTypeParam
   local attackRange = skillScopeResult:GetAttackRange()
   local range = {}
-  for i,v in ipairs(attackRange) do
+  for i, v in ipairs(attackRange) do
     if v._className == "Vector2" then
       range[#range + 1] = v
     else
-      ;
-      (table.appendArray)(range, v)
+      table.appendArray(range, v)
+    end
+  end
+  local es = {}
+  for i, eTeam in ipairs(teams) do
+    local targetAlignment = eTeam:Alignment():GetAlignmentType()
+    local targetType = match(casterAlignment, targetAlignment)
+    if targetType == AlignmentTargetType.Enemy then
+      if not eTeam:HasTeamDeadMark() and table.icontains(range, eTeam:GetGridPosition()) then
+        for i, e in ipairs(eTeam:Team():GetTeamPetEntities()) do
+          if not targetPieceType or self:_CheckPetElement(e, targetPieceType) then
+            es[#es + 1] = e:GetID()
+          end
+        end
+      end
+      break
+    end
+  end
+  return es
+end
+
+function SkillScopeTargetSelector:_SelectAlignmentTargetEnemyTeamHaveBuffANoBuffB(casterEntity, skillScopeResult, skillID, filterBuffEffect)
+  local team1 = self._world:Player():GetLocalTeamEntity()
+  local team2 = self._world:Player():GetRemoteTeamEntity()
+  local teams = {team1, team2}
+  local match = MatchAlignmentType
+  local casterAlignment = casterEntity:Alignment():GetAlignmentType()
+  local attackRange = skillScopeResult:GetAttackRange()
+  local range = {}
+  for i, v in ipairs(attackRange) do
+    if v._className == "Vector2" then
+      range[#range + 1] = v
+    else
+      table.appendArray(range, v)
+    end
+  end
+  local es = {}
+  for i, e in ipairs(teams) do
+    local targetAlignment = e:Alignment():GetAlignmentType()
+    local targetType = match(casterAlignment, targetAlignment)
+    if targetType == AlignmentTargetType.Enemy and not e:HasTeamDeadMark() and table.icontains(range, e:GetGridPosition()) then
+      es[#es + 1] = e:GetID()
+    end
+  end
+  es = self:_FilterMustHaveBuffEffect(es, {
+    filterBuffEffect[1]
+  })
+  es = self:_FilterByBuffEffect(es, {
+    filterBuffEffect[2]
+  })
+  return es
+end
+
+function SkillScopeTargetSelector:_SelectEntityWithBuff(casterEntity, skillScopeResult, skillID, filterBuffEffect)
+  filterBuffEffect = filterBuffEffect or {}
+  local targetBuffEffect = filterBuffEffect[1] or 0
+  local filterRange = filterBuffEffect[2]
+  local team1 = self._world:Player():GetLocalTeamEntity()
+  local es = {team1}
+  local team2 = self._world:Player():GetRemoteTeamEntity()
+  if team2 then
+    es[#es + 1] = team2
+  end
+  local monsters = self._world:GetGroupEntities(self._world.BW_WEMatchers.AliveMonster)
+  table.appendArray(es, monsters)
+  local attackRange = skillScopeResult:GetAttackRange()
+  local range = {}
+  for i, v in ipairs(attackRange) do
+    if v._className == "Vector2" then
+      range[#range + 1] = v
+    else
+      table.appendArray(range, v)
     end
   end
   local ret = {}
-  for i,e in ipairs(es) do
+  for i, e in ipairs(es) do
     if filterRange then
       local inRange = self:_IsEntityInRange(e, attackRange)
-      if inRange and (e:BuffComponent()):HasBuffEffect(targetBuffEffect) then
+      if inRange and e:BuffComponent():HasBuffEffect(targetBuffEffect) then
         ret[#ret + 1] = e:GetID()
       end
-    else
-      do
-        do
-          if (e:BuffComponent()):HasBuffEffect(targetBuffEffect) then
-            ret[#ret + 1] = e:GetID()
-          end
-          -- DECOMPILER ERROR at PC97: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC97: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC97: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    elseif e:BuffComponent():HasBuffEffect(targetBuffEffect) then
+      ret[#ret + 1] = e:GetID()
     end
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC232: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectGridCanPurifyTrap = function(self, casterEntity, skillScopeResult, skillID, effectParam)
-  -- function num : 0_70 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectGridCanPurifyTrap(casterEntity, skillScopeResult, skillID, effectParam)
   local es = {}
   local tv2Candidate = {}
-  for _,v2GridPos in ipairs(skillScopeResult:GetAttackRange()) do
-    (table.insert)(tv2Candidate, v2GridPos)
+  for _, v2GridPos in ipairs(skillScopeResult:GetAttackRange()) do
+    table.insert(tv2Candidate, v2GridPos)
   end
   if #tv2Candidate == 0 then
     return es
   end
-  local udsvc = (self._world):GetService("UtilData")
-  for _,v2 in ipairs(tv2Candidate) do
+  local udsvc = self._world:GetService("UtilData")
+  for _, v2 in ipairs(tv2Candidate) do
     local array = udsvc:GetTrapsAtPos(v2)
-    for _,eTrap in ipairs(array) do
+    for _, eTrap in ipairs(array) do
       local cTrap = eTrap:Trap()
       if not eTrap:HasDeadMark() and cTrap:CanBePurified() then
-        (table.insert)(es, eTrap:GetID())
+        table.insert(es, eTrap:GetID())
       end
     end
   end
   return es
 end
 
--- DECOMPILER ERROR at PC235: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectAntiAITriggerEntity = function(self, casterEntity, skillScopeResult, skillID, effectParam)
-  -- function num : 0_71
-  local cBattleStat = (casterEntity:GetOwnerWorld()):BattleStat()
-  local e = (casterEntity:GetOwnerWorld()):GetEntityByID(cBattleStat:GetLastAntiTriggerEntityID())
+function SkillScopeTargetSelector:_SelectAntiAITriggerEntity(casterEntity, skillScopeResult, skillID, effectParam)
+  local cBattleStat = casterEntity:GetOwnerWorld():BattleStat()
+  local e = casterEntity:GetOwnerWorld():GetEntityByID(cBattleStat:GetLastAntiTriggerEntityID())
   if e then
-    return {e:GetID()}
+    return {
+      e:GetID()
+    }
   end
   return {}
 end
 
--- DECOMPILER ERROR at PC238: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMaxDamageDealerPetToCaster = function(self, casterEntity, skillScopeResult, skillID, effectParam)
-  -- function num : 0_72 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectMaxDamageDealerPetToCaster(casterEntity, skillScopeResult, skillID, effectParam)
   local cDamageStatistics = casterEntity:DamageStatisticsComponent()
   if not cDamageStatistics then
     return {}
@@ -2216,244 +1613,187 @@ SkillScopeTargetSelector._SelectMaxDamageDealerPetToCaster = function(self, cast
   local es = {}
   local array = cDamageStatistics:GetDamageSourceArray()
   for i = #array, 1, -1 do
-    local e = (self._world):GetEntityByID((array[i]).entityID)
+    local e = self._world:GetEntityByID(array[i].entityID)
     if e:HasPetPstID() then
       if e:HasBuffFlag(BuffFlags.SealedCurse) then
-        (Log.info)("MaxDamageDealerPetToCaster: skip already cursed target: ", e:GetID())
+        Log.info("MaxDamageDealerPetToCaster: skip already cursed target: ", e:GetID())
       else
-        ;
-        (table.insert)(es, e:GetID())
-        ;
-        (Log.info)("MaxDamageDealerPetToCaster: curse target: ", e:GetID())
+        table.insert(es, e:GetID())
+        Log.info("MaxDamageDealerPetToCaster: curse target: ", e:GetID())
         break
       end
     end
   end
-  do
-    return es
-  end
+  return es
 end
 
--- DECOMPILER ERROR at PC241: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMonsterTrapAndTrapSuperEntityIsCaster = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_73 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectMonsterTrapAndTrapSuperEntityIsCaster(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDArray = {}
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
+  if self._world:MatchType() == MatchType.MT_BlackFist then
     local es = self:_SelectAlignmentTargetEnemyTeam(casterEntity, skillScopeResult, skillID)
-    ;
-    (table.appendArray)(targetIDArray, es)
+    table.appendArray(targetIDArray, es)
   else
-    do
-      do
-        local monsterTrapID = self:_SelectMonsterTrap(casterEntity, skillScopeResult, skillID, targetTypeParam)
-        ;
-        (table.appendArray)(targetIDArray, monsterTrapID)
-        local trapEntityList = self:_SelectTrap(casterEntity, skillScopeResult, skillID, nil, false)
-        for _,entity in pairs(trapEntityList) do
-          if entity:HasSummoner() then
-            local superEntityID = (entity:Summoner()):GetSummonerEntityID()
-            if superEntityID == casterEntity:GetID() and not (table.intable)(targetIDArray, entity:GetID()) then
-              (table.insert)(targetIDArray, entity:GetID())
-            end
-          end
-        end
-        return targetIDArray
+    local monsterTrapID = self:_SelectMonsterTrap(casterEntity, skillScopeResult, skillID, targetTypeParam)
+    table.appendArray(targetIDArray, monsterTrapID)
+  end
+  local trapEntityList = self:_SelectTrap(casterEntity, skillScopeResult, skillID, nil, false)
+  for _, entity in pairs(trapEntityList) do
+    if entity:HasSummoner() then
+      local superEntityID = entity:Summoner():GetSummonerEntityID()
+      if superEntityID == casterEntity:GetID() and not table.intable(targetIDArray, entity:GetID()) then
+        table.insert(targetIDArray, entity:GetID())
       end
     end
   end
+  return targetIDArray
 end
 
--- DECOMPILER ERROR at PC244: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMonsterOrEnemyPets = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_74
+function SkillScopeTargetSelector:_SelectMonsterOrEnemyPets(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local ret = self:_SelectMonster(casterEntity, skillScopeResult, skillID, targetTypeParam)
   return ret
 end
 
--- DECOMPILER ERROR at PC247: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectNearestMonsterOneByOne = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_75 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectNearestMonsterOneByOne(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDArray = {}
-  do
-    if (self._world):MatchType() == MatchType.MT_BlackFist then
-      local targetIDArray = self:_SelectAlignmentTargetEnemyTeam(casterEntity, skillScopeResult, skillID)
-      return targetIDArray
-    end
-    local targetIDCount = targetTypeParam[1]
-    local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID, nil)
-    if (table.count)(monsters) == 0 then
-      return targetIDArray
-    end
-    local selectCenterPos = skillScopeResult:GetCenterPos()
-    local utilScopeCalc = (self._world):GetService("UtilScopeCalc")
-    local calcCount = 0
-    while 1 do
-      if (table.count)(monsters) > 0 then
-        local monsterList = utilScopeCalc:SortMonstersListByPos(selectCenterPos, monsters)
-        for _,element in ipairs(monsterList) do
-          local monsterEntity = element.monster_e
-          if not (table.icontains)(targetIDArray, monsterEntity:GetID()) and not monsterEntity:HasDeadMark() then
-            targetIDArray[#targetIDArray + 1] = monsterEntity:GetID()
-            selectCenterPos = monsterEntity:GetGridPosition()
-            while (table.intable)(monsters, monsterEntity:GetID()) do
-              (table.removev)(monsters, monsterEntity:GetID())
-            end
-            break
-          end
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    local targetIDArray = self:_SelectAlignmentTargetEnemyTeam(casterEntity, skillScopeResult, skillID)
+    return targetIDArray
+  end
+  local targetIDCount = targetTypeParam[1]
+  local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID, nil)
+  if table.count(monsters) == 0 then
+    return targetIDArray
+  end
+  local selectCenterPos = skillScopeResult:GetCenterPos()
+  local utilScopeCalc = self._world:GetService("UtilScopeCalc")
+  local calcCount = 0
+  while table.count(monsters) > 0 do
+    local monsterList = utilScopeCalc:SortMonstersListByPos(selectCenterPos, monsters)
+    for _, element in ipairs(monsterList) do
+      local monsterEntity = element.monster_e
+      if not table.icontains(targetIDArray, monsterEntity:GetID()) and not monsterEntity:HasDeadMark() then
+        targetIDArray[#targetIDArray + 1] = monsterEntity:GetID()
+        selectCenterPos = monsterEntity:GetGridPosition()
+        while table.intable(monsters, monsterEntity:GetID()) do
+          table.removev(monsters, monsterEntity:GetID())
         end
-        do
-          if targetIDCount > (table.count)(targetIDArray) then
-            do
-              calcCount = calcCount + 1
-              -- DECOMPILER ERROR at PC97: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC97: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC97: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC97: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC97: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
+        break
       end
     end
-    if calcCount <= 10 then
-      return targetIDArray
+    if targetIDCount <= table.count(targetIDArray) then
+      break
+    end
+    calcCount = calcCount + 1
+    if 10 < calcCount then
+      break
     end
   end
+  return targetIDArray
 end
 
--- DECOMPILER ERROR at PC250: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectLastActiveSkillCasterPet = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_76
-  local cBattleStat = (casterEntity:GetOwnerWorld()):BattleStat()
-  local e = (casterEntity:GetOwnerWorld()):GetEntityByID(cBattleStat:GetLastActiveSkillCasterID())
+function SkillScopeTargetSelector:_SelectLastActiveSkillCasterPet(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local cBattleStat = casterEntity:GetOwnerWorld():BattleStat()
+  local e = casterEntity:GetOwnerWorld():GetEntityByID(cBattleStat:GetLastActiveSkillCasterID())
   if e then
-    return {e:GetID()}
+    return {
+      e:GetID()
+    }
   end
   return {}
 end
 
--- DECOMPILER ERROR at PC253: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMonsterOnSpecificTrap = function(self, casterEntity, skillScopeResult, skillID, param)
-  -- function num : 0_77 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectMonsterOnSpecificTrap(casterEntity, skillScopeResult, skillID, param)
   if type(param) == "number" then
     param = {param}
   end
-  local utilDatSvc = (self._world):GetService("UtilData")
+  local utilDatSvc = self._world:GetService("UtilData")
   local trapEntityList = self:_SelectTrap(casterEntity, skillScopeResult, skillID, nil, false)
   local resultList = {}
   local trapPosList = {}
-  for _,entity in pairs(trapEntityList) do
-    if entity:Trap() and not entity:HasDeadMark() and (table.intable)(param, (entity:Trap()):GetTrapID()) then
+  for _, entity in pairs(trapEntityList) do
+    if entity:Trap() and not entity:HasDeadMark() and table.intable(param, entity:Trap():GetTrapID()) then
       local trapPos = entity:GetGridPosition()
-      ;
-      (table.insert)(trapPosList, trapPos)
+      table.insert(trapPosList, trapPos)
     end
   end
   local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
   if monsters then
-    for i,v in ipairs(monsters) do
-      local e = (self._world):GetEntityByID(v)
-      local bodyArea = (e:BodyArea()):GetArea()
-      local pos = (e:GridLocation()).Position
-      for j,grid in ipairs(bodyArea) do
+    for i, v in ipairs(monsters) do
+      local e = self._world:GetEntityByID(v)
+      local bodyArea = e:BodyArea():GetArea()
+      local pos = e:GridLocation().Position
+      for j, grid in ipairs(bodyArea) do
         local workPos = pos + grid
-        if (table.intable)(trapPosList, workPos) and not (table.intable)(resultList, v) then
-          (table.insert)(resultList, v)
+        if table.intable(trapPosList, workPos) and not table.intable(resultList, v) then
+          table.insert(resultList, v)
         end
       end
     end
   end
-  do
-    return resultList
-  end
+  return resultList
 end
 
--- DECOMPILER ERROR at PC256: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectCaptainInRange = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_78 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function SkillScopeTargetSelector:_SelectCaptainInRange(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   if casterEntity:HasPet() then
-    teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
+    teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
   end
-  local teamLeaderEntityID = (teamEntity:Team()):GetTeamLeaderEntityID()
+  local teamLeaderEntityID = teamEntity:Team():GetTeamLeaderEntityID()
   local targetIDArray = {}
   local teamLeaderGridPos = teamEntity:GetGridPosition()
   local attackRange = skillScopeResult:GetAttackRange()
-  if (table.icontains)(attackRange, teamLeaderGridPos) then
+  if table.icontains(attackRange, teamLeaderGridPos) then
     targetIDArray[#targetIDArray + 1] = teamLeaderEntityID
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC259: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectN15ChessMonsterMoveTarget = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_79
-  local utilScopeCalc = (self._world):GetService("UtilScopeCalc")
+function SkillScopeTargetSelector:_SelectN15ChessMonsterMoveTarget(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local utilScopeCalc = self._world:GetService("UtilScopeCalc")
   local casterPos = casterEntity:GetGridPosition()
   local entityIDList = utilScopeCalc:GetSortChessPetByMonsterPos(casterPos)
-  if #entityIDList >= 1 then
-    return {entityIDList[1]}
+  if 1 <= #entityIDList then
+    return {
+      entityIDList[1]
+    }
   else
     return {}
   end
 end
 
--- DECOMPILER ERROR at PC262: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectN15ChessMonsterAttackTargets = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_80
-  local utilScopeCalc = (self._world):GetService("UtilScopeCalc")
+function SkillScopeTargetSelector:_SelectN15ChessMonsterAttackTargets(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local utilScopeCalc = self._world:GetService("UtilScopeCalc")
   local attackRange = skillScopeResult:GetAttackRange()
   local entityIDList = utilScopeCalc:ChessMonsterSelectTarget(attackRange, targetTypeParam[1])
   return entityIDList
 end
 
--- DECOMPILER ERROR at PC265: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectNearestChessPet = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_81 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectNearestChessPet(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDArray = {}
-  local casterPos = (casterEntity:GridLocation()).Position
+  local casterPos = casterEntity:GridLocation().Position
   local AllChessPet = {}
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local chessPetGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).ChessPet)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local chessPetGroup = self._world:GetGroup(self._world.BW_WEMatchers.ChessPet)
   local chessPetIDList = {}
-  for _,e in ipairs(chessPetGroup:GetEntities()) do
-    (table.insert)(chessPetIDList, e:GetID())
+  for _, e in ipairs(chessPetGroup:GetEntities()) do
+    table.insert(chessPetIDList, e:GetID())
   end
   local selectTargetData = utilScopeSvc:SortMonstersListByPos(casterPos, chessPetIDList)
-  if selectTargetData ~= nil and #selectTargetData > 0 then
+  if selectTargetData ~= nil and 0 < #selectTargetData then
     local firstData = selectTargetData[1]
     local entity = firstData.monster_e
     targetIDArray[#targetIDArray + 1] = entity:GetID()
   end
-  do
-    return targetIDArray
-  end
+  return targetIDArray
 end
 
--- DECOMPILER ERROR at PC268: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectChessPet = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_82 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectChessPet(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDArray = {}
   local attackRange = skillScopeResult:GetAttackRange()
-  for _,skillRangePos in ipairs(attackRange) do
+  for _, skillRangePos in ipairs(attackRange) do
     local targetIDInSkillRangeList = self:_CalcChessPetInSkillRange(skillRangePos)
-    for _,v in ipairs(targetIDInSkillRangeList) do
-      if v > 0 then
+    for _, v in ipairs(targetIDInSkillRangeList) do
+      if 0 < v then
         targetIDArray[#targetIDArray + 1] = v
       end
     end
@@ -2461,20 +1801,17 @@ SkillScopeTargetSelector._SelectChessPet = function(self, casterEntity, skillSco
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC271: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._CalcChessPetInSkillRange = function(self, skillRangePos, withDead)
-  -- function num : 0_83 , upvalues : _ENV
+function SkillScopeTargetSelector:_CalcChessPetInSkillRange(skillRangePos, withDead)
   local targetIDList = {}
   local targetEntityID = -1
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).ChessPet)
-  for _,e in ipairs(monsterGroup:GetEntities()) do
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.ChessPet)
+  for _, e in ipairs(monsterGroup:GetEntities()) do
     if (withDead or not e:HasDeadMark()) and self:SelectConditionFilter(e) then
       local monsterEntityID = e:GetID()
       local monster_grid_location_cmpt = e:GridLocation()
       local monster_body_area_cmpt = e:BodyArea()
       local monster_body_area = monster_body_area_cmpt:GetArea()
-      for i,bodyArea in ipairs(monster_body_area) do
+      for i, bodyArea in ipairs(monster_body_area) do
         local curMonsterBodyPos = monster_grid_location_cmpt.Position + bodyArea
         if curMonsterBodyPos == skillRangePos then
           targetEntityID = monsterEntityID
@@ -2483,47 +1820,41 @@ SkillScopeTargetSelector._CalcChessPetInSkillRange = function(self, skillRangePo
       end
     end
   end
-  if targetEntityID > 0 then
+  if 0 < targetEntityID then
     targetIDList[#targetIDList + 1] = targetEntityID
   end
   return targetIDList
 end
 
--- DECOMPILER ERROR at PC274: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMonsterAndChessPet = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_84 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectMonsterAndChessPet(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDArray = {}
   local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
-  for _,v in ipairs(monsters) do
-    (table.insert)(targetIDArray, v)
+  for _, v in ipairs(monsters) do
+    table.insert(targetIDArray, v)
   end
   local chessPets = self:_SelectChessPet(casterEntity, skillScopeResult, skillID, targetTypeParam)
-  for _,v in ipairs(chessPets) do
-    (table.insert)(targetIDArray, v)
+  for _, v in ipairs(chessPets) do
+    table.insert(targetIDArray, v)
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC277: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectLessHPChess = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_85 , upvalues : _ENV
-  local targetEntityID = nil
+function SkillScopeTargetSelector:_SelectLessHPChess(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local targetEntityID
   local hp = 1000
   local attackRange = skillScopeResult:GetAttackRange()
-  for _,skillRangePos in ipairs(attackRange) do
-    local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).ChessPet)
-    for _,e in ipairs(monsterGroup:GetEntities()) do
+  for _, skillRangePos in ipairs(attackRange) do
+    local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.ChessPet)
+    for _, e in ipairs(monsterGroup:GetEntities()) do
       if not e:HasDeadMark() and self:SelectConditionFilter(e) then
         local monsterEntityID = e:GetID()
         local monster_grid_location_cmpt = e:GridLocation()
         local monster_body_area_cmpt = e:BodyArea()
         local monster_body_area = monster_body_area_cmpt:GetArea()
-        local curHp = (e:Attributes()):GetCurrentHP()
-        for i,bodyArea in ipairs(monster_body_area) do
+        local curHp = e:Attributes():GetCurrentHP()
+        for i, bodyArea in ipairs(monster_body_area) do
           local curMonsterBodyPos = monster_grid_location_cmpt.Position + bodyArea
-          if curMonsterBodyPos == skillRangePos and curHp < hp then
+          if curMonsterBodyPos == skillRangePos and hp > curHp then
             targetEntityID = monsterEntityID
             hp = curHp
             break
@@ -2535,40 +1866,31 @@ SkillScopeTargetSelector._SelectLessHPChess = function(self, casterEntity, skill
   return {targetEntityID}
 end
 
--- DECOMPILER ERROR at PC280: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMonsterOrTeam = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_86
+function SkillScopeTargetSelector:_SelectMonsterOrTeam(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
-  if #monsters > 0 then
+  if 0 < #monsters then
     return monsters
   else
     return self:_SelecTeam(casterEntity, skillScopeResult, skillID, targetTypeParam)
   end
 end
 
--- DECOMPILER ERROR at PC283: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectEntityWithBuffOrNearestMonster = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_87
+function SkillScopeTargetSelector:_SelectEntityWithBuffOrNearestMonster(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local buffTargets = self:_SelectEntityWithBuff(casterEntity, skillScopeResult, skillID, targetTypeParam)
-  if #buffTargets > 0 then
+  if 0 < #buffTargets then
     return buffTargets
   else
     return self:_SelectNearestMonsterWithScopeCenter(casterEntity, skillScopeResult, skillID, targetTypeParam)
   end
 end
 
--- DECOMPILER ERROR at PC286: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectNearestMonsterWithScopeCenter = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_88 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectNearestMonsterWithScopeCenter(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDArray = {}
   local casterPos = skillScopeResult:GetCenterPos()
   local allMonsters = {}
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local selectTargetData = utilScopeSvc:SortMonstersByPos(casterPos, true)
-  for _,element in ipairs(selectTargetData) do
+  for _, element in ipairs(selectTargetData) do
     local monsterEntity = element.monster_e
     allMonsters[#allMonsters + 1] = monsterEntity:GetID()
   end
@@ -2577,211 +1899,161 @@ SkillScopeTargetSelector._SelectNearestMonsterWithScopeCenter = function(self, c
   if selectedMonsterIds then
     for i = 1, #allMonsters do
       local monsterId = allMonsters[i]
-      for _,v in ipairs(selectedMonsterIds) do
+      for _, v in ipairs(selectedMonsterIds) do
         if v == monsterId then
           targetIDArray[#targetIDArray + 1] = monsterId
           isFind = true
           break
         end
       end
-    end
-  end
-  do
-    if not isFind then
-      return targetIDArray
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC289: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectTrapSummonEntityIsCaster = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_89 , upvalues : _ENV
-  local targetIDArray = {}
-  local trapEntityList = self:_SelectTrap(casterEntity, skillScopeResult, skillID, nil, false)
-  for _,entity in pairs(trapEntityList) do
-    if entity:HasSummoner() then
-      local summonEntityID = (entity:Summoner()):GetSummonerEntityID()
-      local summonEntity = entity:GetSummonerEntity()
-      if summonEntity and summonEntity:HasSuperEntity() and summonEntity:GetSuperEntity() then
-        summonEntityID = (summonEntity:GetSuperEntity()):GetID()
-      end
-      if summonEntityID == casterEntity:GetID() and not (table.intable)(targetIDArray, entity:GetID()) then
-        (table.insert)(targetIDArray, entity:GetID())
+      if isFind then
+        break
       end
     end
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC292: Confused about usage of register: R1 in 'UnsetPending'
+function SkillScopeTargetSelector:_SelectTrapSummonEntityIsCaster(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local targetIDArray = {}
+  local trapEntityList = self:_SelectTrap(casterEntity, skillScopeResult, skillID, nil, false)
+  for _, entity in pairs(trapEntityList) do
+    if entity:HasSummoner() then
+      local summonEntityID = entity:Summoner():GetSummonerEntityID()
+      local summonEntity = entity:GetSummonerEntity()
+      if summonEntity and summonEntity:HasSuperEntity() and summonEntity:GetSuperEntity() then
+        summonEntityID = summonEntity:GetSuperEntity():GetID()
+      end
+      if summonEntityID == casterEntity:GetID() and not table.intable(targetIDArray, entity:GetID()) then
+        table.insert(targetIDArray, entity:GetID())
+      end
+    end
+  end
+  return targetIDArray
+end
 
-SkillScopeTargetSelector._SelectNearestAndFarestMonsterInScope = function(self, casterEntity, skillScopeResult, skillID, param)
-  -- function num : 0_90 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectNearestAndFarestMonsterInScope(casterEntity, skillScopeResult, skillID, param)
   local nMonsterCount = param[1]
   local ownPos = skillScopeResult:GetCenterPos()
   if #ownPos ~= 0 then
     if EDITOR then
-      (Log.exception)("CenterPosIsTable SkillID:", skillID)
+      Log.exception("CenterPosIsTable SkillID:", skillID)
     else
-      ;
-      (Log.fatal)("CenterPosIsTable SkillID:", skillID)
+      Log.fatal("CenterPosIsTable SkillID:", skillID)
     end
   end
-  local utilScopeCalc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeCalc = self._world:GetService("UtilScopeCalc")
   local selectedMonsterIds = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
-  selectedMonsterIds = (table.unique)(selectedMonsterIds)
+  selectedMonsterIds = table.unique(selectedMonsterIds)
   local sortMonsterList = utilScopeCalc:SortMonstersListByPos(ownPos, selectedMonsterIds)
   local targetIDArray = {}
-  for i,id in ipairs(sortMonsterList) do
-    if nMonsterCount >= i then
-      do
-        (table.insert)(targetIDArray, (id.monster_e):GetID())
-        -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  for i, id in ipairs(sortMonsterList) do
+    if i > nMonsterCount then
+      break
     end
+    table.insert(targetIDArray, id.monster_e:GetID())
   end
   local findFarestCount = 1
   local monsterListCount = #sortMonsterList
   for i = monsterListCount, 1, -1 do
-    if nMonsterCount >= findFarestCount then
-      do
-        (table.insert)(targetIDArray, ((sortMonsterList[i]).monster_e):GetID())
-        findFarestCount = findFarestCount + 1
-        -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if nMonsterCount < findFarestCount then
+      break
     end
+    table.insert(targetIDArray, sortMonsterList[i].monster_e:GetID())
+    findFarestCount = findFarestCount + 1
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC295: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectTrapPosByID = function(self, casterEntity, skillScopeResult, skillID, param)
-  -- function num : 0_91 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectTrapPosByID(casterEntity, skillScopeResult, skillID, param)
   if type(param) == "number" then
     param = {param}
   end
-  local utilDatSvc = (self._world):GetService("UtilData")
+  local utilDatSvc = self._world:GetService("UtilData")
   local trapEntityList = self:_SelectTrap(casterEntity, skillScopeResult, skillID, nil, false)
   local resultList = {}
-  for _,entity in pairs(trapEntityList) do
-    if entity:Trap() and (table.intable)(param, (entity:Trap()):GetTrapID()) then
-      (table.insert)(resultList, entity:GetID())
+  for _, entity in pairs(trapEntityList) do
+    if entity:Trap() and table.intable(param, entity:Trap():GetTrapID()) then
+      table.insert(resultList, entity:GetID())
     end
   end
   return resultList
 end
 
--- DECOMPILER ERROR at PC298: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectNearestMonsterSortByBodyArea = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_92 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectNearestMonsterSortByBodyArea(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local nMonsterCount = targetTypeParam[1] or 1
   local casterPos = skillScopeResult:GetCenterPos()
-  if not casterPos then
-    casterPos = (casterEntity:GridLocation()).Position
-  end
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  casterPos = casterPos or casterEntity:GridLocation().Position
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local selectedMonsterIds = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
-  selectedMonsterIds = (table.unique)(selectedMonsterIds)
+  selectedMonsterIds = table.unique(selectedMonsterIds)
   local sortMonsterList = utilScopeSvc:SortMonstersListByBodyAreaAndPos(casterPos, selectedMonsterIds, true)
   local targetIDArray = {}
-  for i,id in ipairs(sortMonsterList) do
-    if nMonsterCount >= i then
-      do
-        (table.insert)(targetIDArray, (id.monster_e):GetID())
-        -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  for i, id in ipairs(sortMonsterList) do
+    if i > nMonsterCount then
+      break
     end
+    table.insert(targetIDArray, id.monster_e:GetID())
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC301: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectCasterSummoner = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_93
+function SkillScopeTargetSelector:_SelectCasterSummoner(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local useEntity = casterEntity
   local casterEntityID = casterEntity:GetID()
-  do
-    if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-      local superEntity = (casterEntity:SuperEntityComponent()):GetSuperEntity()
-      if superEntity then
-        casterEntityID = superEntity:GetID()
-        useEntity = superEntity
-      end
-    end
-    local ownerID = nil
-    do
-      if useEntity:HasSummoner() then
-        local ownerEntity = useEntity:GetSummonerEntity()
-        if ownerEntity then
-          ownerID = ownerEntity:GetID()
-        end
-      end
-      local targetIDArray = {}
-      if ownerID then
-        targetIDArray[#targetIDArray + 1] = ownerID
-      end
-      return targetIDArray
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    local superEntity = casterEntity:SuperEntityComponent():GetSuperEntity()
+    if superEntity then
+      casterEntityID = superEntity:GetID()
+      useEntity = superEntity
     end
   end
+  local ownerID
+  if useEntity:HasSummoner() then
+    local ownerEntity = useEntity:GetSummonerEntity()
+    if ownerEntity then
+      ownerID = ownerEntity:GetID()
+    end
+  end
+  local targetIDArray = {}
+  if ownerID then
+    targetIDArray[#targetIDArray + 1] = ownerID
+  end
+  return targetIDArray
 end
 
--- DECOMPILER ERROR at PC304: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMostVisibleBuffMonster = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_94 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectMostVisibleBuffMonster(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local selectHpZero = 1
-  selectHpZero = not targetTypeParam or type(targetTypeParam) ~= "table" or targetTypeParam[1] or 1
+  if targetTypeParam and type(targetTypeParam) == "table" then
+    selectHpZero = targetTypeParam[1] or 1
+  end
   local maxVal = 0
   local maxTarget = {}
-  local globalMonsterGroup = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(globalMonsterGroup) do
+  local globalMonsterGroup = self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(globalMonsterGroup) do
     if not e:HasDeadMark() and self:SelectConditionFilter(e) then
       local cBuff = e:BuffComponent()
       local buffArray = cBuff:GetBuffArray()
       local count = 0
-      for _,instance in ipairs(buffArray) do
+      for _, instance in ipairs(buffArray) do
         local buffID = instance:BuffID()
-        local cfgBuff = (Cfg.cfg_buff)[buffID]
+        local cfgBuff = Cfg.cfg_buff[buffID]
         if cfgBuff.ShowBuffIcon then
           count = count + 1
         end
       end
       local isHPValid = true
-      do
-        do
-          if selectHpZero == 0 then
-            local percent = self:_GetHPPercent(e)
-            isHPValid = percent > 0
-          end
-          if isHPValid then
-            if maxVal == count then
-              (table.insert)(maxTarget, e:GetID())
-            elseif maxVal < count then
-              maxTarget = {}
-              maxVal = count
-              ;
-              (table.insert)(maxTarget, e:GetID())
-            end
-          end
-          -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_STMT
-
+      if selectHpZero == 0 then
+        local percent = self:_GetHPPercent(e)
+        isHPValid = 0 < percent
+      end
+      if isHPValid then
+        if maxVal == count then
+          table.insert(maxTarget, e:GetID())
+        elseif maxVal < count then
+          maxTarget = {}
+          maxVal = count
+          table.insert(maxTarget, e:GetID())
         end
       end
     end
@@ -2789,16 +2061,14 @@ SkillScopeTargetSelector._SelectMostVisibleBuffMonster = function(self, casterEn
   if #maxTarget == 0 then
     return {}
   end
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local idx = utilScopeSvc:_GetRandomNumber(1, #maxTarget)
-  do return {maxTarget[idx]} end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  return {
+    maxTarget[idx]
+  }
 end
 
--- DECOMPILER ERROR at PC307: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMySpecificTrapOrAnyMonster = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_95 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectMySpecificTrapOrAnyMonster(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local arr = {}
   local specificTrapIds = {}
   if targetTypeParam and type(targetTypeParam) == "table" then
@@ -2806,77 +2076,61 @@ SkillScopeTargetSelector._SelectMySpecificTrapOrAnyMonster = function(self, cast
   end
   local listTrapMap = self:_SelectTrap(casterEntity, skillScopeResult, skillID, targetTypeParam, false)
   if listTrapMap then
-    for id,trapEntity in pairs(listTrapMap) do
+    for id, trapEntity in pairs(listTrapMap) do
       local cTrap = trapEntity:Trap()
       local trapId = cTrap:GetTrapID()
       if trapEntity:HasSummoner() then
-        local summonerEntityID = (trapEntity:Summoner()):GetSummonerEntityID()
-        if summonerEntityID == casterEntity:GetID() and (table.icontains)(specificTrapIds, trapId) then
-          (table.insert)(arr, id)
+        local summonerEntityID = trapEntity:Summoner():GetSummonerEntityID()
+        if summonerEntityID == casterEntity:GetID() and table.icontains(specificTrapIds, trapId) then
+          table.insert(arr, id)
         end
       end
     end
   end
-  do
-    if #arr > 0 then
-      return arr
-    end
-    if (self._world):MatchType() == MatchType.MT_BlackFist then
-      local es = self:_SelectAlignmentTargetEnemyTeam(casterEntity, skillScopeResult, skillID)
-      ;
-      (table.appendArray)(arr, es)
-    else
-      do
-        do
-          local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
-          ;
-          (table.appendArray)(arr, monsters)
-          return arr
-        end
-      end
-    end
+  if 0 < #arr then
+    return arr
   end
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    local es = self:_SelectAlignmentTargetEnemyTeam(casterEntity, skillScopeResult, skillID)
+    table.appendArray(arr, es)
+  else
+    local monsters = self:_SelectMonster(casterEntity, skillScopeResult, skillID)
+    table.appendArray(arr, monsters)
+  end
+  return arr
 end
 
--- DECOMPILER ERROR at PC310: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMonsterNotBoss = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_96 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectMonsterNotBoss(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local targetIDArray = {}
   local attackRange = skillScopeResult:GetAttackRange()
-  for _,skillRangePos in ipairs(attackRange) do
+  for _, skillRangePos in ipairs(attackRange) do
     local targetIDInSkillRangeList = self:_CalcMonsterInSkillRange(skillRangePos)
-    for _,v in ipairs(targetIDInSkillRangeList) do
-      if v > 0 then
-        local monsterEntity = (self._world):GetEntityByID(v)
+    for _, v in ipairs(targetIDInSkillRangeList) do
+      if 0 < v then
+        local monsterEntity = self._world:GetEntityByID(v)
         if not monsterEntity:HasBoss() then
           targetIDArray[#targetIDArray + 1] = v
         end
       end
     end
   end
-  if not targetTypeParam[1] then
-    local targetCount = not targetTypeParam or type(targetTypeParam) ~= "table" or (table.count)(targetTypeParam) <= 0 or 1
-  end
-  if targetCount == 0 then
-    targetCount = 999
-  end
-  do
+  if targetTypeParam and type(targetTypeParam) == "table" and 0 < table.count(targetTypeParam) then
+    local targetCount = targetTypeParam[1] or 1
+    if targetCount == 0 then
+      targetCount = 999
+    end
     local newTargetIDArray = {}
-    for i = 1, (table.count)(targetIDArray) do
+    for i = 1, table.count(targetIDArray) do
       if i <= targetCount then
-        (table.insert)(newTargetIDArray, targetIDArray[i])
+        table.insert(newTargetIDArray, targetIDArray[i])
       end
     end
     targetIDArray = newTargetIDArray
-    return targetIDArray
   end
+  return targetIDArray
 end
 
--- DECOMPILER ERROR at PC313: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectLastChainSkillRandomNMonster = function(self, casterEntity, skillScopeResult, skillID, param)
-  -- function num : 0_97 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectLastChainSkillRandomNMonster(casterEntity, skillScopeResult, skillID, param)
   if casterEntity:HasSuperEntity() then
     casterEntity = casterEntity:GetSuperEntity()
   end
@@ -2884,193 +2138,149 @@ SkillScopeTargetSelector._SelectLastChainSkillRandomNMonster = function(self, ca
   local petAttackDataCmpt = casterEntity:SkillPetAttackData()
   local multiStageChainAttackDataList = petAttackDataCmpt:GetMultiStageChainAttackDataList()
   if multiStageChainAttackDataList then
-    for _,chainAttackDataList in ipairs(multiStageChainAttackDataList) do
-      for k,skillChainAttackData in pairs(chainAttackDataList) do
+    for _, chainAttackDataList in ipairs(multiStageChainAttackDataList) do
+      for k, skillChainAttackData in pairs(chainAttackDataList) do
         local attdata = skillChainAttackData
         local damageResultArray = attdata:GetEffectResultByArrayAll(SkillEffectType.Damage)
         if damageResultArray then
-          for k,res in ipairs(damageResultArray) do
+          for k, res in ipairs(damageResultArray) do
             local targetEntityID = res:GetTargetID()
-            if targetEntityID > 0 and not (table.intable)(monsterIdList, targetEntityID) then
-              (table.insert)(monsterIdList, targetEntityID)
+            if 0 < targetEntityID and not table.intable(monsterIdList, targetEntityID) then
+              table.insert(monsterIdList, targetEntityID)
             end
           end
         end
       end
     end
   end
-  do
-    local ids = {}
-    if monsterIdList and (table.count)(monsterIdList) > 0 then
-      local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-      local count = param[1]
-      if count and count > 0 then
-        for i = 1, count do
-          if #monsterIdList ~= 0 then
-            local rate = param[1 + i]
-            local needCal = false
-            if rate >= 1 then
-              needCal = true
-            else
-              local randomNum = utilScopeSvc:_GetRandomNumber()
-              needCal = randomNum < rate
-            end
-            do
-              if needCal then
-                local idx = utilScopeSvc:_GetRandomNumber(1, (table.count)(monsterIdList))
-                ;
-                (table.insert)(ids, monsterIdList[idx])
-                ;
-                (table.remove)(monsterIdList, idx)
-              end
-              -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC112: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+  local ids = {}
+  if monsterIdList and 0 < table.count(monsterIdList) then
+    local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+    local count = param[1]
+    if count and 0 < count then
+      for i = 1, count do
+        if #monsterIdList == 0 then
+          break
+        end
+        local rate = param[1 + i]
+        local needCal = false
+        if 1 <= rate then
+          needCal = true
+        else
+          local randomNum = utilScopeSvc:_GetRandomNumber()
+          needCal = rate > randomNum
+        end
+        if needCal then
+          local idx = utilScopeSvc:_GetRandomNumber(1, table.count(monsterIdList))
+          table.insert(ids, monsterIdList[idx])
+          table.remove(monsterIdList, idx)
         end
       end
     end
-    do return ids end
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
   end
+  return ids
 end
 
--- DECOMPILER ERROR at PC316: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectBuffLayerMostAndHighestHP = function(self, casterEntity, skillScopeResult, skillID, param)
-  -- function num : 0_98 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectBuffLayerMostAndHighestHP(casterEntity, skillScopeResult, skillID, param)
   local targetIDArray = {}
   local targetBuffEffect = param[1] or 0
   local es = {}
-  local monsters = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).AliveMonster)
-  do
-    for _,monster in ipairs(monsters) do
-      local buffComponent = monster:BuffComponent()
-      if buffComponent and buffComponent:HasBuffEffect(targetBuffEffect) then
-        (table.insert)(es, monster)
+  local monsters = self._world:GetGroupEntities(self._world.BW_WEMatchers.AliveMonster)
+  for _, monster in ipairs(monsters) do
+    local buffComponent = monster:BuffComponent()
+    if buffComponent and buffComponent:HasBuffEffect(targetBuffEffect) then
+      table.insert(es, monster)
+    end
+  end
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  if 0 < table.count(es) then
+    local buffLogicService = self._world:GetService("BuffLogic")
+    table.sort(es, function(a, b)
+      local buffLayerA = buffLogicService:GetBuffLayer(a, targetBuffEffect)
+      local buffLayerB = buffLogicService:GetBuffLayer(b, targetBuffEffect)
+      if buffLayerA == buffLayerB then
+        local hpA = a:Attributes():GetCurrentHP()
+        local hpB = b:Attributes():GetCurrentHP()
+        return hpA > hpB
       end
-    end
-  end
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  if (table.count)(es) > 0 then
-    local buffLogicService = (self._world):GetService("BuffLogic")
-    ;
-    (table.sort)(es, function(a, b)
-    -- function num : 0_98_0 , upvalues : buffLogicService, targetBuffEffect
-    local buffLayerA = buffLogicService:GetBuffLayer(a, targetBuffEffect)
-    local buffLayerB = buffLogicService:GetBuffLayer(b, targetBuffEffect)
-    if buffLayerA == buffLayerB then
-      local hpA = (a:Attributes()):GetCurrentHP()
-      local hpB = (b:Attributes()):GetCurrentHP()
-      return hpB < hpA
-    end
-    do return buffLayerB < buffLayerA end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
-  end
-)
+      return buffLayerA > buffLayerB
+    end)
     local mostBuffLayer = 0
     local mostHP = 0
     local randomEntityList = {}
-    for i,e in ipairs(es) do
+    for i, e in ipairs(es) do
       local curBuffLayer = buffLogicService:GetBuffLayer(e, targetBuffEffect)
-      local curHP = (e:Attributes()):GetCurrentHP()
-      -- DECOMPILER ERROR at PC70: Unhandled construct in 'MakeBoolean' P1
-
-      if i == 1 and curBuffLayer ~= 0 then
-        do
-          mostBuffLayer = curBuffLayer
-          mostHP = curHP
-          if mostBuffLayer == curBuffLayer and mostHP == curHP then
-            (table.insert)(randomEntityList, e)
-          end
-          -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out IF_STMT
-
+      local curHP = e:Attributes():GetCurrentHP()
+      if i == 1 then
+        if curBuffLayer == 0 then
+          break
         end
+        mostBuffLayer = curBuffLayer
+        mostHP = curHP
+      elseif mostBuffLayer == curBuffLayer and mostHP == curHP then
+        table.insert(randomEntityList, e)
       end
     end
-    if (table.count)(randomEntityList) > 0 then
-      (table.insert)(randomEntityList, es[1])
-      local idx = utilScopeSvc:_GetRandomNumber(1, (table.count)(randomEntityList))
+    if 0 < table.count(randomEntityList) then
+      table.insert(randomEntityList, es[1])
+      local idx = utilScopeSvc:_GetRandomNumber(1, table.count(randomEntityList))
       local monster = randomEntityList[idx]
-      ;
-      (table.insert)(targetIDArray, monster:GetID())
+      table.insert(targetIDArray, monster:GetID())
     else
-      do
-        do
-          ;
-          (table.insert)(targetIDArray, (es[1]):GetID())
-          if (table.count)(es) == 0 and (table.count)(monsters) > 0 then
-            targetIDArray = self:_SelectNearestMonster(casterEntity, skillScopeResult, skillID, param)
-          end
-          return targetIDArray
-        end
-      end
+      table.insert(targetIDArray, es[1]:GetID())
     end
   end
+  if table.count(es) == 0 and 0 < table.count(monsters) then
+    targetIDArray = self:_SelectNearestMonster(casterEntity, skillScopeResult, skillID, param)
+  end
+  return targetIDArray
 end
 
--- DECOMPILER ERROR at PC319: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMonsterAroundDamageTarget = function(self, casterEntity, skillScopeResult, skillID, param)
-  -- function num : 0_99 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectMonsterAroundDamageTarget(casterEntity, skillScopeResult, skillID, param)
   local targetIDArray = {}
   local selectCount = param[1] or -1
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local preDamageStageIndex = 1
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, preDamageStageIndex)
-  if not damageResultArray or (table.count)(damageResultArray) == 0 then
+  if not damageResultArray or table.count(damageResultArray) == 0 then
     return targetIDArray
   end
-  local randomService = (self._world):GetService("RandomLogic")
-  for _,v in ipairs(damageResultArray) do
+  local randomService = self._world:GetService("RandomLogic")
+  for _, v in ipairs(damageResultArray) do
     local damageResult = v
     local targetEntityID = damageResult:GetTargetID()
-    local defenderEntity = (self._world):GetEntityByID(targetEntityID)
+    local defenderEntity = self._world:GetEntityByID(targetEntityID)
     if defenderEntity then
       local monsterIDListAroundDefender = {}
-      local defenderBodyArea = (defenderEntity:BodyArea()):GetArea()
+      local defenderBodyArea = defenderEntity:BodyArea():GetArea()
       local bodyAreaCount = #defenderBodyArea
       local onlyMaxRing = true
       local ringCount = 1
       local defenderPos = defenderEntity:GetGridPosition()
-      local defenderRingPosList = (ComputeScopeRange.ComputeRange_SquareRing)(defenderPos, bodyAreaCount, ringCount, onlyMaxRing)
-      for index,ringPos in ipairs(defenderRingPosList) do
+      local defenderRingPosList = ComputeScopeRange.ComputeRange_SquareRing(defenderPos, bodyAreaCount, ringCount, onlyMaxRing)
+      for index, ringPos in ipairs(defenderRingPosList) do
         local withDead = false
         local targetEntityIDs = self:_FindTargetEntityInPos(ringPos, withDead)
-        if #targetEntityIDs > 0 then
-          for idIndex,targetEntityID in ipairs(targetEntityIDs) do
-            if not (table.icontains)(monsterIDListAroundDefender, targetEntityID) then
-              (table.insert)(monsterIDListAroundDefender, targetEntityID)
+        if 0 < #targetEntityIDs then
+          for idIndex, targetEntityID in ipairs(targetEntityIDs) do
+            if not table.icontains(monsterIDListAroundDefender, targetEntityID) then
+              table.insert(monsterIDListAroundDefender, targetEntityID)
             end
           end
         end
       end
-      do
-        if #monsterIDListAroundDefender > 0 then
-          if selectCount == -1 or #monsterIDListAroundDefender <= selectCount then
-            (table.appendArray)(targetIDArray, monsterIDListAroundDefender)
-          else
-            monsterIDListAroundDefender = randomService:Shuffle(monsterIDListAroundDefender)
-            for monsterIndex,monsterID in ipairs(monsterIDListAroundDefender) do
-              if monsterIndex <= selectCount then
-                (table.insert)(targetIDArray, monsterID)
-              else
-                break
-              end
+      if 0 < #monsterIDListAroundDefender then
+        if selectCount == -1 or selectCount >= #monsterIDListAroundDefender then
+          table.appendArray(targetIDArray, monsterIDListAroundDefender)
+        else
+          monsterIDListAroundDefender = randomService:Shuffle(monsterIDListAroundDefender)
+          for monsterIndex, monsterID in ipairs(monsterIDListAroundDefender) do
+            if selectCount >= monsterIndex then
+              table.insert(targetIDArray, monsterID)
+            else
+              break
             end
           end
-        end
-        do
-          -- DECOMPILER ERROR at PC123: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC123: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC123: LeaveBlock: unexpected jumping out IF_STMT
-
         end
       end
     end
@@ -3078,44 +2288,37 @@ SkillScopeTargetSelector._SelectMonsterAroundDamageTarget = function(self, caste
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC322: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectWorldBossMonster = function(self, casterEntity, skillScopeResult)
-  -- function num : 0_100 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectWorldBossMonster(casterEntity, skillScopeResult)
   local targetIDArray = {}
-  local listTargetByRange = self:_SelectEntityByTypeAndRange(((self._world).BW_WEMatchers).MonsterID, skillScopeResult:GetAttackRange())
-  for key,value in ipairs(listTargetByRange) do
+  local listTargetByRange = self:_SelectEntityByTypeAndRange(self._world.BW_WEMatchers.MonsterID, skillScopeResult:GetAttackRange())
+  for key, value in ipairs(listTargetByRange) do
     local monsterEntity = value.m_entity
     local monsterIdCmpt = monsterEntity:MonsterID()
     if monsterIdCmpt then
       local isWorldBoss = monsterIdCmpt:IsWorldBoss()
       if isWorldBoss then
         local id = monsterEntity:GetID()
-        ;
-        (table.insert)(targetIDArray, id)
+        table.insert(targetIDArray, id)
       end
     end
   end
   return targetIDArray
 end
 
--- DECOMPILER ERROR at PC325: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectSingleGridMonsterLowestHPPercent = function(self, casterEntity, skillScopeResult)
-  -- function num : 0_101 , upvalues : _ENV
-  local listTargetByRange = self:_SelectEntityByTypeAndRange(((self._world).BW_WEMatchers).MonsterID, skillScopeResult:GetAttackRange())
+function SkillScopeTargetSelector:_SelectSingleGridMonsterLowestHPPercent(casterEntity, skillScopeResult)
+  local listTargetByRange = self:_SelectEntityByTypeAndRange(self._world.BW_WEMatchers.MonsterID, skillScopeResult:GetAttackRange())
   local lowestHPPercent = 1
-  local lowestHPEntity = nil
-  for key,value in ipairs(listTargetByRange) do
+  local lowestHPEntity
+  for key, value in ipairs(listTargetByRange) do
     local monsterEntity = value.m_entity
     if not monsterEntity:HasDeadMark() and monsterEntity:GetID() ~= casterEntity:GetID() then
-      local bodyArea = (monsterEntity:BodyArea()):GetArea()
+      local bodyArea = monsterEntity:BodyArea():GetArea()
       if #bodyArea == 1 then
         local cAttribute = monsterEntity:Attributes()
         local maxHP = cAttribute:CalcMaxHp()
         local currentHP = cAttribute:GetCurrentHP()
         local percent = currentHP / maxHP
-        if percent < lowestHPPercent then
+        if lowestHPPercent > percent then
           lowestHPPercent = percent
           lowestHPEntity = monsterEntity
         end
@@ -3129,86 +2332,69 @@ SkillScopeTargetSelector._SelectSingleGridMonsterLowestHPPercent = function(self
   return ret
 end
 
--- DECOMPILER ERROR at PC328: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMonsterCamp = function(self, casterEntity, skillScopeResult, skillID, param)
-  -- function num : 0_102 , upvalues : _ENV
-  local listTargetByRange = self:_SelectEntityByTypeAndRange(((self._world).BW_WEMatchers).MonsterID, skillScopeResult:GetAttackRange())
+function SkillScopeTargetSelector:_SelectMonsterCamp(casterEntity, skillScopeResult, skillID, param)
+  local listTargetByRange = self:_SelectEntityByTypeAndRange(self._world.BW_WEMatchers.MonsterID, skillScopeResult:GetAttackRange())
   local ret = {}
-  for key,value in ipairs(listTargetByRange) do
+  for key, value in ipairs(listTargetByRange) do
     local monsterEntity = value.m_entity
     if not monsterEntity:HasDeadMark() then
       local monsterIDCmpt = monsterEntity:MonsterID()
       local campType = monsterIDCmpt:GetCampType()
-      if (table.icontains)(param, campType) then
-        (table.insert)(ret, monsterEntity:GetID())
+      if table.icontains(param, campType) then
+        table.insert(ret, monsterEntity:GetID())
       end
     end
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC331: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectPetIgnoreProtectedTrap = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_103
+function SkillScopeTargetSelector:_SelectPetIgnoreProtectedTrap(casterEntity, skillScopeResult, skillID, targetTypeParam)
   return self:_SelectPetOnly(casterEntity, skillScopeResult, skillID, targetTypeParam)
 end
 
--- DECOMPILER ERROR at PC334: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectPickUpPetOrTrap = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_104 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectPickUpPetOrTrap(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
   local pickGridPos = activeSkillPickUpComponent:GetAllValidPickUpGridPos()
   local pickPetPstID = activeSkillPickUpComponent:GetPickUpPetPstID()
   local ret = {}
-  local id = nil
+  local id
   if pickGridPos and #pickGridPos ~= 0 then
-    local listTargetByRange = self:_SelectEntityByTypeAndRange(((self._world).BW_WEMatchers).Trap, pickGridPos)
-    for _,value in ipairs(listTargetByRange) do
+    local listTargetByRange = self:_SelectEntityByTypeAndRange(self._world.BW_WEMatchers.Trap, pickGridPos)
+    for _, value in ipairs(listTargetByRange) do
       local entityTrap = value.m_entity
       local trapComponent = entityTrap:Trap()
-      if (table.icontains)(targetTypeParam, trapComponent:GetTrapID()) then
+      if table.icontains(targetTypeParam, trapComponent:GetTrapID()) then
         id = entityTrap:GetID()
         break
       end
     end
   else
-    do
-      do
-        local utilDataSvc = (self._world):GetService("UtilData")
-        id = utilDataSvc:GetEntityIDByPstID(pickPetPstID)
-        ;
-        (table.insert)(ret, id)
-        return ret
-      end
-    end
+    local utilDataSvc = self._world:GetService("UtilData")
+    id = utilDataSvc:GetEntityIDByPstID(pickPetPstID)
   end
+  table.insert(ret, id)
+  return ret
 end
 
--- DECOMPILER ERROR at PC337: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectFarestMonsterAndNoBuff = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_105 , upvalues : _ENV
-  local listTargetByRange = self:_SelectEntityByTypeAndRange(((self._world).BW_WEMatchers).MonsterID, skillScopeResult:GetAttackRange())
+function SkillScopeTargetSelector:_SelectFarestMonsterAndNoBuff(casterEntity, skillScopeResult, skillID, targetTypeParam)
+  local listTargetByRange = self:_SelectEntityByTypeAndRange(self._world.BW_WEMatchers.MonsterID, skillScopeResult:GetAttackRange())
   local ret = {}
   local disLen = 0
-  local ownerPos = (casterEntity:GetGridPosition())
-  local selectMonster = nil
-  for key,value in ipairs(listTargetByRange) do
+  local ownerPos = casterEntity:GetGridPosition()
+  local selectMonster
+  for key, value in ipairs(listTargetByRange) do
     local monsterEntity = value.m_entity
     if not monsterEntity:HasDeadMark() then
       local conform = false
       local buffCmpt = monsterEntity:BuffComponent()
-      for _,buffEffectID in ipairs(targetTypeParam) do
+      for _, buffEffectID in ipairs(targetTypeParam) do
         if not buffCmpt:HasBuffEffect(buffEffectID) then
           conform = true
         end
       end
       if conform then
         local monsterPos = monsterEntity:GetGridPosition()
-        local distance = (Vector2.Distance)(monsterPos, ownerPos)
+        local distance = Vector2.Distance(monsterPos, ownerPos)
         if disLen < distance then
           disLen = distance
           selectMonster = monsterEntity
@@ -3217,35 +2403,36 @@ SkillScopeTargetSelector._SelectFarestMonsterAndNoBuff = function(self, casterEn
     end
   end
   if selectMonster then
-    return {selectMonster:GetID()}
+    return {
+      selectMonster:GetID()
+    }
   else
     return {}
   end
 end
 
--- DECOMPILER ERROR at PC340: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillScopeTargetSelector._SelectMonsterWithTeamHPPercentDiffMax = function(self, casterEntity, skillScopeResult, skillID, targetTypeParam)
-  -- function num : 0_106 , upvalues : _ENV
+function SkillScopeTargetSelector:_SelectMonsterWithTeamHPPercentDiffMax(casterEntity, skillScopeResult, skillID, targetTypeParam)
   local isNormalAttack = false
   if targetTypeParam and #targetTypeParam ~= 0 and targetTypeParam[1] == 1 then
     isNormalAttack = true
   end
-  local listTargetByRange = self:_SelectEntityByTypeAndRange(((self._world).BW_WEMatchers).MonsterID, skillScopeResult:GetAttackRange(), isNormalAttack)
+  local listTargetByRange = self:_SelectEntityByTypeAndRange(self._world.BW_WEMatchers.MonsterID, skillScopeResult:GetAttackRange(), isNormalAttack)
   local hpPerDiffMax = -1
-  local selectMonster = nil
-  local battleSvc = (self._world):GetService("Battle")
+  local selectMonster
+  local battleSvc = self._world:GetService("Battle")
   local casterHP, casterMaxHP = battleSvc:GetCasterHP(casterEntity)
   local casterHPPer = casterHP / casterMaxHP
-  for key,value in ipairs(listTargetByRange) do
+  for key, value in ipairs(listTargetByRange) do
     local monsterEntity = value.m_entity
     local targetHP, targetMaxHP = battleSvc:GetCasterHP(monsterEntity)
     local hpPercent = targetHP / targetMaxHP
-    if not monsterEntity:HasDeadMark() and targetHP > 0 then
-      if (monsterEntity:MonsterID()):IsWorldBoss() then
-        return {monsterEntity:GetID()}
+    if not monsterEntity:HasDeadMark() and 0 < targetHP then
+      if monsterEntity:MonsterID():IsWorldBoss() then
+        return {
+          monsterEntity:GetID()
+        }
       end
-      local hpPerDiff = (math.abs)(hpPercent - casterHPPer)
+      local hpPerDiff = math.abs(hpPercent - casterHPPer)
       if hpPerDiffMax < hpPerDiff then
         hpPerDiffMax = hpPerDiff
         selectMonster = monsterEntity
@@ -3253,16 +2440,16 @@ SkillScopeTargetSelector._SelectMonsterWithTeamHPPercentDiffMax = function(self,
     end
   end
   if selectMonster then
-    return {selectMonster:GetID()}
+    return {
+      selectMonster:GetID()
+    }
   else
-    do
-      if #listTargetByRange > 0 then
-        local entity = (listTargetByRange[#listTargetByRange]).m_entity
-        return {entity:GetID()}
-      end
-      do return {} end
+    if 0 < #listTargetByRange then
+      local entity = listTargetByRange[#listTargetByRange].m_entity
+      return {
+        entity:GetID()
+      }
     end
+    return {}
   end
 end
-
-

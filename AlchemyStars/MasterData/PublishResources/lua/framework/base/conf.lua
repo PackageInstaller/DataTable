@@ -1,29 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/conf.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local _true = {}
 local _false = {}
 local _nil = {}
-local wrapv = function(v)
-  -- function num : 0_0 , upvalues : _ENV, _true, _false, _nil
-  if not v or not _true then
-    do return type(v) ~= "boolean" or _false end
-    if v == nil then
-      return _nil
-    end
-    return v
+
+local function wrapv(v)
+  if type(v) == "boolean" then
+    return v and _true or _false
   end
+  if v == nil then
+    return _nil
+  end
+  return v
 end
 
-local parsewhere = function(ws)
-  -- function num : 0_1 , upvalues : _ENV, wrapv
-  local ks = (table.keys)(ws)
-  ;
-  (table.sort)(ks)
+local function parsewhere(ws)
+  local ks = table.keys(ws)
+  table.sort(ks)
   local vs = {}
-  for i,k in next do
+  for i, k in next, ks, nil do
     vs[i] = wrapv(ws[k])
   end
   return ks, vs
@@ -34,9 +27,9 @@ local tbpkeys = {}
 local tbkeys = {}
 local tbindexs = {}
 local tbs2names = {}
-local index = function(tbname, ks, vs)
-  -- function num : 0_2 , upvalues : _ENV, tbpkeys, tbindexs, tbs, wrapv
-  local indexk = (table.concat)(ks, "|")
+
+local function index(tbname, ks, vs)
+  local indexk = table.concat(ks, "|")
   local tbpkey = tbpkeys[tbname]
   local tbindex = tbindexs[tbname]
   if not tbindex then
@@ -44,171 +37,140 @@ local index = function(tbname, ks, vs)
     tbindexs[tbname] = tbindex
   end
   local idx = tbindex[indexk]
-  do
-    if not idx then
-      local tb = tbs[tbname]
-      idx = {}
-      for _,line in next do
-        local pkeys = idx
-        for ii = 1, #ks do
-          local k = ks[ii]
-          local v = wrapv(line[k])
-          if not pkeys[v] then
-            do
-              pkeys[v] = {}
-              pkeys = pkeys[v]
-              -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
-        ;
-        (table.insert)(pkeys, line[tbpkey])
+  if not idx then
+    local tb = tbs[tbname]
+    idx = {}
+    for _, line in next, tb, nil do
+      local pkeys = idx
+      for ii = 1, #ks do
+        local k = ks[ii]
+        local v = wrapv(line[k])
+        pkeys[v] = pkeys[v] or {}
+        pkeys = pkeys[v]
       end
-      tbindex[indexk] = idx
+      table.insert(pkeys, line[tbpkey])
     end
-    local pv = idx
-    for ii = 1, #vs do
-      local v = vs[ii]
-      pv = pv[v]
-      if not pv then
-        return 
-      end
-    end
-    return pv
+    tbindex[indexk] = idx
   end
+  local pv = idx
+  for ii = 1, #vs do
+    local v = vs[ii]
+    pv = pv[v]
+    if not pv then
+      return
+    end
+  end
+  return pv
 end
 
-local pvalue = function(tbname, cond)
-  -- function num : 0_3 , upvalues : parsewhere, tbpkeys, index
+local function pvalue(tbname, cond)
   local ks, vs = parsewhere(cond)
   local len = #ks
   if len <= 0 then
-    return 
-  else
-    if len == 1 and ks[1] == tbpkeys[tbname] then
-      return vs[1]
-    end
+    return
+  elseif len == 1 and ks[1] == tbpkeys[tbname] then
+    return vs[1]
   end
   return index(tbname, ks, vs)
 end
 
 local sum = 0
-local conf = function(tbname, cond)
-  -- function num : 0_4 , upvalues : tbs, _ENV, tbkeys, tbpkeys, tbs2names, pvalue
+
+local function conf(tbname, cond)
   local tb = tbs[tbname]
   if not tb then
     local _, cfg, pkey, keys = dofile(tbname)
-    do
-      tbkeys[tbname] = keys
-      tbs[tbname] = cfg
-      tbpkeys[tbname] = pkey
-      tbs2names[cfg] = tbname
-      tb = tbs[tbname]
-      if keys then
-        for _,line in next do
-          setmetatable(line, {__index = function(tb1, fn)
-    -- function num : 0_4_0 , upvalues : _ENV, keys
-    local v = rawget(tb1, fn)
-    if v ~= nil then
-      return v
-    end
-    local key = keys[fn]
-    if key then
-      return tb1[key]
-    end
-  end
-})
-        end
+    tbkeys[tbname] = keys
+    tbs[tbname] = cfg
+    tbpkeys[tbname] = pkey
+    tbs2names[cfg] = tbname
+    tb = tbs[tbname]
+    if keys then
+      for _, line in next, tb, nil do
+        setmetatable(line, {
+          __index = function(tb1, fn)
+            local v = rawget(tb1, fn)
+            if v ~= nil then
+              return v
+            end
+            local key = keys[fn]
+            if key then
+              return tb1[key]
+            end
+          end
+        })
       end
     end
   end
-  do
-    if not cond or not next(cond) then
-      return tb
-    end
-    local pv = pvalue(tbname, cond)
-    if type(pv) == "table" then
-      local length = #pv
-      if length <= 0 then
-        return 
-      end
-      local vs = {}
-      for ii = 1, length do
-        vs[ii] = tb[pv[ii]]
-      end
-      return vs
-    end
-    do
-      if pv then
-        local idx = tb[pv]
-      end
-      if idx then
-        return {idx}
-      end
-    end
+  if not cond or not next(cond) then
+    return tb
   end
+  local pv = pvalue(tbname, cond)
+  if type(pv) == "table" then
+    local length = #pv
+    if length <= 0 then
+      return
+    end
+    local vs = {}
+    for ii = 1, length do
+      vs[ii] = tb[pv[ii]]
+    end
+    return vs
+  end
+  local idx = pv and tb[pv]
+  return idx and {idx}
 end
 
 local oq = {}
 local cache = {}
 local sets = {}
 local names = {}
-local callout = function(tb, func)
-  -- function num : 0_5 , upvalues : _ENV, sets, cache
-  setmetatable(tb, {__index = function(tb, fn)
-    -- function num : 0_5_0 , upvalues : sets, cache, _ENV, func
-    local set = sets[fn]
-    if set then
-      return set
-    end
-    local cachetb = cache[tb]
-    if not cachetb then
-      cachetb = {}
-      cache[tb] = cachetb
-    end
-    local cfg = cachetb[fn]
-    if cfg then
+
+local function callout(tb, func)
+  setmetatable(tb, {
+    __index = function(tb, fn)
+      local set = sets[fn]
+      if set then
+        return set
+      end
+      local cachetb = cache[tb]
+      if not cachetb then
+        cachetb = {}
+        cache[tb] = cachetb
+      end
+      local cfg = cachetb[fn]
+      if cfg then
+        return cfg
+      end
+      local v = rawget(tb, fn)
+      if v ~= nil then
+        return v
+      end
+      cfg = setmetatable({}, {
+        __call = function(_, args)
+          return func(tb, fn, args)
+        end,
+        __index = function(_, key)
+          local v1 = func(tb, fn)
+          return v1[key]
+        end
+      })
+      cachetb[fn] = cfg
       return cfg
     end
-    local v = rawget(tb, fn)
-    if v ~= nil then
-      return v
-    end
-    cfg = setmetatable({}, {__call = function(_, args)
-      -- function num : 0_5_0_0 , upvalues : func, tb, fn
-      return func(tb, fn, args)
-    end
-, __index = function(_, key)
-      -- function num : 0_5_0_1 , upvalues : func, tb, fn
-      local v1 = func(tb, fn)
-      return v1[key]
-    end
-})
-    cachetb[fn] = cfg
-    return cfg
-  end
-})
+  })
 end
-
--- DECOMPILER ERROR at PC21: Confused about usage of register: R19 in 'UnsetPending'
 
 _G.Cfg = {}
 callout(Cfg, function(cfg, tbname, cond)
-  -- function num : 0_6 , upvalues : conf
   return conf(tbname, cond)
-end
-)
--- DECOMPILER ERROR at PC28: Confused about usage of register: R19 in 'UnsetPending'
+end)
 
-_G.CfgClear = function(tbname)
-  -- function num : 0_7 , upvalues : tbs, _ENV, tbs2names, tbpkeys, tbindexs
+function _G.CfgClear(tbname)
   if tbname then
     if not tbs[tbname] then
-      (Log.error)("CfgClear() not find table name:", tbname)
-      return 
+      Log.error("CfgClear() not find table name:", tbname)
+      return
     end
     tbs2names[tbs[tbname]] = nil
     tbs[tbname] = nil
@@ -222,33 +184,20 @@ _G.CfgClear = function(tbname)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R19 in 'UnsetPending'
-
-;
-(_G.Cfg).FindCfg = function(tbname, cond)
-  -- function num : 0_8 , upvalues : conf
+function _G.Cfg.FindCfg(tbname, cond)
   return conf(tbname, cond)
 end
 
-_T = function(s)
-  -- function num : 0_9
+function _T(s)
   return s
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R19 in 'UnsetPending'
-
-_G.BattleSkillCfg = function(skillId)
-  -- function num : 0_10 , upvalues : _ENV
-  if not (Cfg.cfg_battle_skill)[skillId] and not (Cfg.cfg_pet_battle_skill)[skillId] then
-    local skillCfg = (Cfg.cfg_passive_skill)[skillId]
-  end
+function _G.BattleSkillCfg(skillId)
+  local skillCfg = Cfg.cfg_battle_skill[skillId] or Cfg.cfg_pet_battle_skill[skillId] or Cfg.cfg_passive_skill[skillId]
   return skillCfg
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R19 in 'UnsetPending'
-
-_G.IsConf = function(tb)
-  -- function num : 0_11 , upvalues : tbs2names, tbpkeys
+function _G.IsConf(tb)
   local name = tbs2names[tb]
   if name then
     if tbpkeys[name] then
@@ -259,8 +208,7 @@ _G.IsConf = function(tb)
   end
 end
 
-local cloneconf = function(st)
-  -- function num : 0_12 , upvalues : _ENV, cloneconf
+local function cloneconf(st)
   if not st then
     return st
   end
@@ -271,7 +219,7 @@ local cloneconf = function(st)
   if type(st) ~= "table" then
     error("source is not table in table.clone")
   else
-    for k,v in next do
+    for k, v in next, st, nil do
       if type(v) ~= "table" then
         dt[k] = v
       else
@@ -279,36 +227,29 @@ local cloneconf = function(st)
       end
     end
   end
-  do
-    return dt
-  end
+  return dt
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R20 in 'UnsetPending'
-
-_G.CloneConf = function(name)
-  -- function num : 0_13 , upvalues : tbs, tbkeys, _ENV, cloneconf
+function _G.CloneConf(name)
   local dt = {}
   local tb = tbs[name]
   local keys = tbkeys[name]
-  for k,line in next do
+  for k, line in next, tb, nil do
     dt[k] = cloneconf(line)
     if keys then
-      setmetatable(dt[k], {__index = function(tb1, fn)
-    -- function num : 0_13_0 , upvalues : _ENV, keys
-    local v = rawget(tb1, fn)
-    if v ~= nil then
-      return v
-    end
-    local key = keys[fn]
-    if key then
-      return tb1[key]
-    end
-  end
-})
+      setmetatable(dt[k], {
+        __index = function(tb1, fn)
+          local v = rawget(tb1, fn)
+          if v ~= nil then
+            return v
+          end
+          local key = keys[fn]
+          if key then
+            return tb1[key]
+          end
+        end
+      })
     end
   end
   return dt
 end
-
-

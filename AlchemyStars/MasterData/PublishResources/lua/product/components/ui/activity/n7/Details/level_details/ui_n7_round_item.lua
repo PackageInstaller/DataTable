@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/Details/level_details/ui_n7_round_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN7RoundItem", UICustomWidget)
 UIN7RoundItem = UIN7RoundItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN7RoundItem.Constructor = function(self)
-  -- function num : 0_0
+function UIN7RoundItem:Constructor()
   self._callback = nil
   self._index = 0
   self._myCfg = nil
@@ -16,17 +9,11 @@ UIN7RoundItem.Constructor = function(self)
   self._isLast = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7RoundItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN7RoundItem:OnShow(uiParams)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7RoundItem._GetComponent = function(self)
-  -- function num : 0_2
+function UIN7RoundItem:_GetComponent()
   self.lock = self:GetGameObject("lock")
   self.unlock = self:GetGameObject("unlock")
   self.select = self:GetGameObject("select")
@@ -36,104 +23,66 @@ UIN7RoundItem._GetComponent = function(self)
   self.roundNumberUnlockText = self:GetUIComponent("UILocalizationText", "roundNumberUnlockText")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7RoundItem.SetData = function(self, i, myCfg, callback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN7RoundItem:SetData(i, myCfg, callback)
   self._index = i
   self._myCfg = myCfg
   self._callback = callback
   local state = N7RoundState.Lock
-  if self.myCfg and (self.myCfg).NeedMissionId == 0 then
+  if self.myCfg and self.myCfg.NeedMissionId == 0 then
     state = N7RoundState.UnLock
   end
   self:_SetState(state)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7RoundItem._SetState = function(self, state)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN7RoundItem:_SetState(state)
   self.state = state
   if self.state == N7RoundState.Lock then
-    (self.lock):SetActive(true)
-    ;
-    (self.unlock):SetActive(false)
+    self.lock:SetActive(true)
+    self.unlock:SetActive(false)
     if self._isLast == false then
-      (self.arrowsUnlock):SetActive(false)
-      ;
-      (self.arrowsLock):SetActive(true)
+      self.arrowsUnlock:SetActive(false)
+      self.arrowsLock:SetActive(true)
     end
-  else
-    if self.state == N7RoundState.UnLock then
-      (self.lock):SetActive(false)
-      ;
-      (self.unlock):SetActive(true)
-      if self._isLast == false then
-        (self.arrowsUnlock):SetActive(true)
-        ;
-        (self.arrowsLock):SetActive(false)
-      end
+  elseif self.state == N7RoundState.UnLock then
+    self.lock:SetActive(false)
+    self.unlock:SetActive(true)
+    if self._isLast == false then
+      self.arrowsUnlock:SetActive(true)
+      self.arrowsLock:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7RoundItem._OnClickHandel = function(self)
-  -- function num : 0_5
+function UIN7RoundItem:_OnClickHandel()
   self:SetSelectState(true)
   if self._callback then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7RoundItem.SetSelectState = function(self, selectState)
-  -- function num : 0_6
+function UIN7RoundItem:SetSelectState(selectState)
   self._selectState = selectState
-  ;
-  (self.select):SetActive(self._selectState)
+  self.select:SetActive(self._selectState)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7RoundItem.CloseArrows = function(self)
-  -- function num : 0_7
+function UIN7RoundItem:CloseArrows()
   self._isLast = true
-  ;
-  (self.arrowsLock):SetActive(false)
-  ;
-  (self.arrowsUnlock):SetActive(false)
+  self.arrowsLock:SetActive(false)
+  self.arrowsUnlock:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7RoundItem.GetState = function(self)
-  -- function num : 0_8
+function UIN7RoundItem:GetState()
   return self.state
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7RoundItem.GetMissionID = function(self)
-  -- function num : 0_9
-  return (self._myCfg).MissionID
+function UIN7RoundItem:GetMissionID()
+  return self._myCfg.MissionID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7RoundItem.btnLockOnClick = function(self, go)
-  -- function num : 0_10
+function UIN7RoundItem:btnLockOnClick(go)
   self:_OnClickHandel()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7RoundItem.btnUnlockOnClick = function(self, go)
-  -- function num : 0_11
+function UIN7RoundItem:btnUnlockOnClick(go)
   self:_OnClickHandel()
 end
-
-

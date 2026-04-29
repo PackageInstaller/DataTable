@@ -1,39 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_recommend_new/ui_shop_recommend_group_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopRecommendGroupCls", Object)
 UIShopRecommendGroupCls = UIShopRecommendGroupCls
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopRecommendGroupCls.Constructor = function(self, group, list)
-  -- function num : 0_0
+function UIShopRecommendGroupCls:Constructor(group, list)
   self.group = group
   self.list = list
   self:SortList()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendGroupCls.SortList = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.sort)(self.list, function(a, b)
-    -- function num : 0_1_0 , upvalues : _ENV
-    local cfg_a = (Cfg.cfg_shop_recommend_ad)[a]
-    local cfg_b = (Cfg.cfg_shop_recommend_ad)[b]
-    do return cfg_a.ID < cfg_b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function UIShopRecommendGroupCls:SortList()
+  table.sort(self.list, function(a, b)
+    local cfg_a = Cfg.cfg_shop_recommend_ad[a]
+    local cfg_b = Cfg.cfg_shop_recommend_ad[b]
+    return cfg_a.ID < cfg_b.ID
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendGroupCls.CheckTabType = function(self, tabType)
-  -- function num : 0_2 , upvalues : _ENV
-  for index,value in ipairs(self.list) do
-    local cfg = (Cfg.cfg_shop_recommend_ad)[value]
+function UIShopRecommendGroupCls:CheckTabType(tabType)
+  for index, value in ipairs(self.list) do
+    local cfg = Cfg.cfg_shop_recommend_ad[value]
     if cfg.TabType == tabType then
       return true
     end
@@ -41,17 +25,11 @@ UIShopRecommendGroupCls.CheckTabType = function(self, tabType)
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendGroupCls.GetName = function(self, idx)
-  -- function num : 0_3 , upvalues : _ENV
-  return ((Cfg.cfg_shop_recommend_ad)[(self.list)[idx]]).Name
+function UIShopRecommendGroupCls:GetName(idx)
+  return Cfg.cfg_shop_recommend_ad[self.list[idx]].Name
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendGroupCls.GroupType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIShopRecommendGroupCls:GroupType()
   if #self.list > 1 then
     return UIShopRecommendGroupType.Two
   else
@@ -59,63 +37,37 @@ UIShopRecommendGroupCls.GroupType = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendGroupCls.GetTabType = function(self, idx)
-  -- function num : 0_5 , upvalues : _ENV
-  return ((Cfg.cfg_shop_recommend_ad)[(self.list)[idx]]).TabType
+function UIShopRecommendGroupCls:GetTabType(idx)
+  return Cfg.cfg_shop_recommend_ad[self.list[idx]].TabType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendGroupCls.GetPic = function(self, idx)
-  -- function num : 0_6 , upvalues : _ENV
-  return ((Cfg.cfg_shop_recommend_ad)[(self.list)[idx]]).Pic
+function UIShopRecommendGroupCls:GetPic(idx)
+  return Cfg.cfg_shop_recommend_ad[self.list[idx]].Pic
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendGroupCls.GetID = function(self, idx)
-  -- function num : 0_7
-  return (self.list)[idx]
+function UIShopRecommendGroupCls:GetID(idx)
+  return self.list[idx]
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendGroupCls.GetEffIcon = function(self)
-  -- function num : 0_8
+function UIShopRecommendGroupCls:GetEffIcon()
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendGroupCls.GetUIType = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg = (Cfg.cfg_shop_recommend_ad)[(self.list)[1]]
+function UIShopRecommendGroupCls:GetUIType()
+  local cfg = Cfg.cfg_shop_recommend_ad[self.list[1]]
   return cfg.UIType
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendGroupCls.GetPetParams = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfg = (Cfg.cfg_shop_recommend_ad)[(self.list)[1]]
+function UIShopRecommendGroupCls:GetPetParams()
+  local cfg = Cfg.cfg_shop_recommend_ad[self.list[1]]
   return cfg.PetParams
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendGroupCls.GetGiftParams = function(self, idx)
-  -- function num : 0_11 , upvalues : _ENV
-  return ((Cfg.cfg_shop_recommend_ad)[(self.list)[idx]]).GiftParams
+function UIShopRecommendGroupCls:GetGiftParams(idx)
+  return Cfg.cfg_shop_recommend_ad[self.list[idx]].GiftParams
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendGroupCls.GetGroupName = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cfg = (Cfg.cfg_shop_recommend_ad)[(self.list)[1]]
+function UIShopRecommendGroupCls:GetGroupName()
+  local cfg = Cfg.cfg_shop_recommend_ad[self.list[1]]
   return cfg.GroupName
 end
-
-

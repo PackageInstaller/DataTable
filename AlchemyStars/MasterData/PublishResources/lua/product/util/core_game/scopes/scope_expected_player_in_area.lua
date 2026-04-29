@@ -1,35 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_expected_player_in_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_ExpectedPlayerInArea", SkillScopeCalculator_Base)
 SkillScopeCalculator_ExpectedPlayerInArea = SkillScopeCalculator_ExpectedPlayerInArea
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_ExpectedPlayerInArea.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = (self._gridFilter)._world
-  local teamEntity = (world:Player()):GetLocalTeamEntity()
+function SkillScopeCalculator_ExpectedPlayerInArea:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local world = self._gridFilter._world
+  local teamEntity = world:Player():GetLocalTeamEntity()
   local playerPos = teamEntity:GetGridPosition()
   local ret = {}
-  local boardServiceLogic = ((self._gridFilter)._world):GetService("BoardLogic")
-  local board = (((self._gridFilter)._world):GetBoardEntity()):Board()
-  local pieceTable = (board:ClonePieceTable())
-  local playerInArea = nil
-  for i,v in ipairs(scopeParam) do
-    if (v.x)[1] <= playerPos.x and playerPos.x <= (v.x)[2] and (v.y)[1] <= playerPos.y and playerPos.y <= (v.y)[2] then
+  local boardServiceLogic = self._gridFilter._world:GetService("BoardLogic")
+  local board = self._gridFilter._world:GetBoardEntity():Board()
+  local pieceTable = board:ClonePieceTable()
+  local playerInArea
+  for i, v in ipairs(scopeParam) do
+    if playerPos.x >= v.x[1] and playerPos.x <= v.x[2] and playerPos.y >= v.y[1] and playerPos.y <= v.y[2] then
       playerInArea = v
     end
   end
-  for x,col in pairs(pieceTable) do
-    if x < (playerInArea.x)[1] or (playerInArea.x)[2] < x then
-      for y,v in pairs(col) do
-        if y < (playerInArea.y)[1] or (playerInArea.y)[2] < y then
+  for x, col in pairs(pieceTable) do
+    if x < playerInArea.x[1] or x > playerInArea.x[2] then
+      for y, v in pairs(col) do
+        if y < playerInArea.y[1] or y > playerInArea.y[2] then
           local grid = Vector2(x, y)
-          ;
-          (table.insert)(ret, grid)
+          table.insert(ret, grid)
         end
       end
     end
@@ -37,5 +29,3 @@ SkillScopeCalculator_ExpectedPlayerInArea.CalcRange = function(self, scopeType, 
   local result = SkillScopeResult:New(SkillScopeType.ExpectedPlayerInArea, centerPos, ret, ret)
   return result
 end
-
-

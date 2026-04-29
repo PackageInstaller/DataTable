@@ -1,239 +1,137 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/fishing/logic/homeland_fishting_status.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandFishingStatus", Object)
 HomelandFishingStatus = HomelandFishingStatus
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandFishingStatus.Constructor = function(self)
-  -- function num : 0_0
+function HomelandFishingStatus:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.Init = function(self, homelandFishing)
-  -- function num : 0_1
+function HomelandFishingStatus:Init(homelandFishing)
   self._homelandFishing = homelandFishing
   self._timer = 0
-  self._characterManager = ((self._homelandFishing):HomelandClient()):CharacterManager()
-  self._mainCharacterController = (self._characterManager):MainCharacterController()
+  self._characterManager = self._homelandFishing:HomelandClient():CharacterManager()
+  self._mainCharacterController = self._characterManager:MainCharacterController()
   self._isLock = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.Enter = function(self, param)
-  -- function num : 0_2
+function HomelandFishingStatus:Enter(param)
   self._timer = 0
   self._isLock = false
   self:OnEnter(param)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.Exit = function(self)
-  -- function num : 0_3
+function HomelandFishingStatus:Exit()
   self:OnExit()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.Update = function(self, deltaTime)
-  -- function num : 0_4
+function HomelandFishingStatus:Update(deltaTime)
   if self._isLock then
-    return 
+    return
   end
   self._timer = self._timer + deltaTime
   self:OnUpdate(deltaTime)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.FsmExist = function(self)
-  -- function num : 0_5
+function HomelandFishingStatus:FsmExist()
   self:SetFishRodStatus(false)
   self:OnFsmExit()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.Destroy = function(self)
-  -- function num : 0_6
+function HomelandFishingStatus:Destroy()
   self:OnDestroy()
   self._homelandFishing = nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.LockStatus = function(self)
-  -- function num : 0_7
+function HomelandFishingStatus:LockStatus()
   self._isLock = true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.UnLockStatus = function(self)
-  -- function num : 0_8
+function HomelandFishingStatus:UnLockStatus()
   self._isLock = false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.LockUI = function(self, name)
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock(name)
+function HomelandFishingStatus:LockUI(name)
+  GameGlobal.UIStateManager():Lock(name)
   self:SetForbiddenMove(true)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.UnLockUI = function(self, name)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):UnLock(name)
+function HomelandFishingStatus:UnLockUI(name)
+  GameGlobal.UIStateManager():UnLock(name)
   self:SetForbiddenMove(false)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.ShowDialog = function(self, uiName, ...)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog(uiName, ...)
+function HomelandFishingStatus:ShowDialog(uiName, ...)
+  GameGlobal.UIStateManager():ShowDialog(uiName, ...)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.SwitchStatus = function(self, statusType, param)
-  -- function num : 0_12
-  (self._homelandFishing):SwitchStatus(statusType, param)
+function HomelandFishingStatus:SwitchStatus(statusType, param)
+  self._homelandFishing:SwitchStatus(statusType, param)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.GetStatusLength = function(self)
-  -- function num : 0_13
+function HomelandFishingStatus:GetStatusLength()
   return self._timer
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.CharacterTransform = function(self)
-  -- function num : 0_14
-  return (self._characterManager):GetCharacterTransform()
+function HomelandFishingStatus:CharacterTransform()
+  return self._characterManager:GetCharacterTransform()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.PlayAnimation = function(self, name)
-  -- function num : 0_15
-  (self._mainCharacterController):SetAnimatorTrigger(name)
+function HomelandFishingStatus:PlayAnimation(name)
+  self._mainCharacterController:SetAnimatorTrigger(name)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.PlayAnimationLoop = function(self, name)
-  -- function num : 0_16
-  (self._mainCharacterController):SetAnimatorBool(name, true)
+function HomelandFishingStatus:PlayAnimationLoop(name)
+  self._mainCharacterController:SetAnimatorBool(name, true)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.StopPlayAnimationLoop = function(self, name)
-  -- function num : 0_17
-  (self._mainCharacterController):SetAnimatorBool(name, false)
+function HomelandFishingStatus:StopPlayAnimationLoop(name)
+  self._mainCharacterController:SetAnimatorBool(name, false)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.PlayFishRodAnimation = function(self, name)
-  -- function num : 0_18
-  (self._homelandFishing):PlayFishRodAnimation(name)
+function HomelandFishingStatus:PlayFishRodAnimation(name)
+  self._homelandFishing:PlayFishRodAnimation(name)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.PlayFishRodAnimationLoop = function(self, name)
-  -- function num : 0_19
-  (self._homelandFishing):PlayFishRodAnimation(name)
+function HomelandFishingStatus:PlayFishRodAnimationLoop(name)
+  self._homelandFishing:PlayFishRodAnimation(name)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.StopFishRodyAnimationLoop = function(self, name)
-  -- function num : 0_20
-  (self._homelandFishing):StopFishRodyAnimationLoop(name)
+function HomelandFishingStatus:StopFishRodyAnimationLoop(name)
+  self._homelandFishing:StopFishRodyAnimationLoop(name)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.SetFishRodStatus = function(self, status)
-  -- function num : 0_21
-  (self._homelandFishing):SetFishRodStatus(status)
+function HomelandFishingStatus:SetFishRodStatus(status)
+  self._homelandFishing:SetFishRodStatus(status)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.OnEnter = function(self, param)
-  -- function num : 0_22
+function HomelandFishingStatus:OnEnter(param)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.OnExit = function(self)
-  -- function num : 0_23
+function HomelandFishingStatus:OnExit()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.OnUpdate = function(self, deltaTime)
-  -- function num : 0_24
+function HomelandFishingStatus:OnUpdate(deltaTime)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.FishingStatus = function(self)
-  -- function num : 0_25
+function HomelandFishingStatus:FishingStatus()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.OnFsmExit = function(self)
-  -- function num : 0_26
+function HomelandFishingStatus:OnFsmExit()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.OnDestroy = function(self)
-  -- function num : 0_27
+function HomelandFishingStatus:OnDestroy()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.IsInRiver = function(self, pos)
-  -- function num : 0_28
-  return (self._homelandFishing):IsInRiver(pos)
+function HomelandFishingStatus:IsInRiver(pos)
+  return self._homelandFishing:IsInRiver(pos)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.IsRiverFishing = function(self)
-  -- function num : 0_29
-  return (self._homelandFishing):IsRiverFishing()
+function HomelandFishingStatus:IsRiverFishing()
+  return self._homelandFishing:IsRiverFishing()
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.IsMatchFishing = function(self)
-  -- function num : 0_30
-  return (self._mainCharacterController):GetIsFishMach()
+function HomelandFishingStatus:IsMatchFishing()
+  return self._mainCharacterController:GetIsFishMach()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatus.SetForbiddenMove = function(self, forbidden)
-  -- function num : 0_31
-  (self._mainCharacterController):SetForbiddenMove(forbidden, true)
+function HomelandFishingStatus:SetForbiddenMove(forbidden)
+  self._mainCharacterController:SetForbiddenMove(forbidden, true)
 end
-
-

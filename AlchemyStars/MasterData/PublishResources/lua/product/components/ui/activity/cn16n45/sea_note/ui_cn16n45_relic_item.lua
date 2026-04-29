@@ -1,22 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn16n45/sea_note/ui_cn16n45_relic_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN16N45RelicItem", UICustomWidget)
 UICN16N45RelicItem = UICN16N45RelicItem
-local RelicState = {Game = "Game", RelicStag = "RelicStag", ItemToStag = "ItemToStag"}
+local RelicState = {
+  Game = "Game",
+  RelicStag = "RelicStag",
+  ItemToStag = "ItemToStag"
+}
 _enum("RelicState", RelicState)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UICN16N45RelicItem.Constructor = function(self)
-  -- function num : 0_0
+function UICN16N45RelicItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45RelicItem.SetData = function(self, posIndex, clickCB, mainCtrl, data, isOdd, layer, relicId)
-  -- function num : 0_1 , upvalues : _ENV, RelicState
+function UICN16N45RelicItem:SetData(posIndex, clickCB, mainCtrl, data, isOdd, layer, relicId)
   self.icon = self:GetUIComponent("Image", "icon")
   self.Text = self:GetUIComponent("Text", "Text")
   self.bgButton = self:GetUIComponent("Button", "bg")
@@ -30,193 +24,132 @@ UICN16N45RelicItem.SetData = function(self, posIndex, clickCB, mainCtrl, data, i
   self._uicustomEventListener = UICustomUIEventListener:New()
   self:InitBtnPress()
   self._mRelicState = RelicState.Game
-  local relicCfg = (Cfg.cfg_south_sea_antique)[relicId]
-  self.initPos = ((self.mainCtrl).RelicStagAreaRectTf).anchoredPosition
+  local relicCfg = Cfg.cfg_south_sea_antique[relicId]
+  self.initPos = self.mainCtrl.RelicStagAreaRectTf.anchoredPosition
   self.singleDeltaStagX = 120
   self.singleDeltaStagY = 122
   self.singleDeltaStag = 114
   local altas = self:GetAsset("UICN9.spriteatlas", LoadType.SpriteAtlas)
   local spriteScoure = altas:GetSprite(relicCfg.GameIcon)
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self.icon).sprite = spriteScoure
+  self.icon.sprite = spriteScoure
   self.relicType = relicCfg.ID
-  local x = 54
-  local y = 53
+  local x = 54.0
+  local y = 53.0
   local row = data.x
   local vec = data.y
   local rowPos = row * x
   local vecPos = vec * y
   self.anim = self:GetUIComponent("Animation", "UICN16N45RelicItem")
-  ;
-  (self.anim):Play("uieff_CN9RelicItem_in")
-  ;
-  (self.rootRectTf):DOAnchorPos(Vector2(rowPos, vecPos), 0)
-  -- DECOMPILER ERROR at PC87: Confused about usage of register: R17 in 'UnsetPending'
-
-  ;
-  (self.Text).text = "" .. row .. "-" .. vec .. " - " .. layer
+  self.anim:Play("uieff_CN9RelicItem_in")
+  self.rootRectTf:DOAnchorPos(Vector2(rowPos, vecPos), 0)
+  self.Text.text = "" .. row .. "-" .. vec .. " - " .. layer
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45RelicItem.InitBtnPress = function(self)
-  -- function num : 0_2 , upvalues : _ENV, RelicState
-  (self._uicustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)((self.bgButton).gameObject), UIEvent.Press, function(go)
-    -- function num : 0_2_0 , upvalues : self, RelicState, _ENV
-    if (self.bgButton).interactable == false then
-      return 
+function UICN16N45RelicItem:InitBtnPress()
+  self._uicustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self.bgButton.gameObject), UIEvent.Press, function(go)
+    if self.bgButton.interactable == false then
+      return
     end
-    if #(self.mainCtrl)._stagAreaList == 7 then
-      return 
+    if #self.mainCtrl._stagAreaList == 7 then
+      return
     end
     if self._mRelicState == RelicState.Game or self._mRelicState == RelicState.ItemToStag then
-      local tf = (self.bgButton).transform
+      local tf = self.bgButton.transform
       tf:DOScale(Vector3(0.9, 0.9, 0.9), 0.15)
     end
-  end
-)
-  ;
-  (self._uicustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)((self.bgButton).gameObject), UIEvent.Release, function(go)
-    -- function num : 0_2_1 , upvalues : self, RelicState, _ENV
-    if (self.bgButton).interactable == false then
-      return 
+  end)
+  self._uicustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self.bgButton.gameObject), UIEvent.Release, function(go)
+    if self.bgButton.interactable == false then
+      return
     end
-    if #(self.mainCtrl)._stagAreaList == 7 then
-      return 
+    if #self.mainCtrl._stagAreaList == 7 then
+      return
     end
     if self._mRelicState == RelicState.Game or self._mRelicState == RelicState.ItemToStag then
-      local tf = (self.bgButton).transform
+      local tf = self.bgButton.transform
       tf:DOScale(Vector3(1, 1, 1), 0.15)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45RelicItem.Refresh = function(self)
-  -- function num : 0_3
+function UICN16N45RelicItem:Refresh()
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45RelicItem.SetRelicStagIndex = function(self, index)
-  -- function num : 0_4 , upvalues : RelicState, _ENV
+function UICN16N45RelicItem:SetRelicStagIndex(index)
   self.CurRelicStagIndex = index
   if self._mRelicState == RelicState.RelicStag then
     local targetPos = index * Vector2(self.singleDeltaStag, 0)
-    do
-      ((self.rootRectTf).transform):SetParent(((self.mainCtrl).RelicStagAreaRectTf).transform)
-      self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(33, TimerTriggerCount.Once, function()
-    -- function num : 0_4_0 , upvalues : self, targetPos
-    (self.rootRectTf):DOAnchorPos(targetPos, 0.5)
-  end
-)
+    self.rootRectTf.transform:SetParent(self.mainCtrl.RelicStagAreaRectTf.transform)
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(33, TimerTriggerCount.Once, function()
+      self.rootRectTf:DOAnchorPos(targetPos, 0.5)
+    end)
+  elseif self._mRelicState == RelicState.ItemToStag then
+    local targetPos = index * Vector2(0, self.singleDeltaStagY)
+    if index < 6 then
+      targetPos = index * Vector2(0, self.singleDeltaStagY)
+    else
+      local curIndex = index - 5
+      targetPos = curIndex * Vector2(0, self.singleDeltaStagY)
+      targetPos.x = self.singleDeltaStagX
     end
-  else
-    do
-      if self._mRelicState == RelicState.ItemToStag then
-        local targetPos = index * Vector2(0, self.singleDeltaStagY)
-        if index < 6 then
-          targetPos = index * Vector2(0, self.singleDeltaStagY)
-        else
-          local curIndex = index - 5
-          targetPos = curIndex * Vector2(0, self.singleDeltaStagY)
-          targetPos.x = self.singleDeltaStagX
-        end
-        do
-          ;
-          ((self.rootRectTf).transform):SetParent(((self.mainCtrl).ItemStagAreaRectTf).transform)
-          self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(33, TimerTriggerCount.Once, function()
-    -- function num : 0_4_1 , upvalues : self, targetPos
-    (self.rootRectTf):DOAnchorPos(targetPos, 0.5)
-  end
-)
-        end
-      end
-    end
+    self.rootRectTf.transform:SetParent(self.mainCtrl.ItemStagAreaRectTf.transform)
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(33, TimerTriggerCount.Once, function()
+      self.rootRectTf:DOAnchorPos(targetPos, 0.5)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45RelicItem.PlayDisAnim = function(self)
-  -- function num : 0_5
-  (self.anim):Play("uieff_CN9RelicItem_end")
+function UICN16N45RelicItem:PlayDisAnim()
+  self.anim:Play("uieff_CN9RelicItem_end")
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45RelicItem.BgOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV, RelicState
-  if #(self.mainCtrl)._stagAreaList == 7 then
-    return 
+function UICN16N45RelicItem:BgOnClick()
+  if #self.mainCtrl._stagAreaList == 7 then
+    return
   end
   local count = 0
-  for i = 1, #(self.mainCtrl)._stagAreaList do
+  for i = 1, #self.mainCtrl._stagAreaList do
     count = 1
-    local one = ((self.mainCtrl)._stagAreaList)[i]
-    for j = 1, #(self.mainCtrl)._stagAreaList do
-      local two = ((self.mainCtrl)._stagAreaList)[j]
+    local one = self.mainCtrl._stagAreaList[i]
+    for j = 1, #self.mainCtrl._stagAreaList do
+      local two = self.mainCtrl._stagAreaList[j]
       if two.relicType == one.relicType then
         count = count + 1
-        if count > 4 then
-          return 
+        if 4 < count then
+          return
         end
       end
     end
   end
-  if (self.bgButton).interactable == false then
-    return 
+  if self.bgButton.interactable == false then
+    return
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCN9Mie_ClickRelic)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCN9Mie_ClickRelic)
   if self._mRelicState == RelicState.Game then
     if self.clickCB ~= nil then
-      (self.clickCB)()
+      self.clickCB()
     end
     self._mRelicState = RelicState.RelicStag
     if self.mainCtrl ~= nil then
-      (self.mainCtrl):CheckRelicItem(self, RelicState.Game)
+      self.mainCtrl:CheckRelicItem(self, RelicState.Game)
     end
-  else
-    if self._mRelicState == RelicState.ItemToStag and (self.clickCB ~= nil) then
-      self._mRelicState = RelicState.RelicStag
-      if self.mainCtrl ~= nil then
-        (self.mainCtrl):CheckRelicItem(self, RelicState.ItemToStag)
-      end
+  elseif self._mRelicState == RelicState.ItemToStag then
+    if self.clickCB ~= nil then
+    end
+    self._mRelicState = RelicState.RelicStag
+    if self.mainCtrl ~= nil then
+      self.mainCtrl:CheckRelicItem(self, RelicState.ItemToStag)
     end
   end
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45RelicItem.SetCanPoint = function(self, enable)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
+function UICN16N45RelicItem:SetCanPoint(enable)
   if enable then
-    (self.bgButton).interactable = true
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.icon).color = Color.white
+    self.bgButton.interactable = true
+    self.icon.color = Color.white
   else
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.bgButton).interactable = false
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.icon).color = Color.gray
+    self.bgButton.interactable = false
+    self.icon.color = Color.gray
   end
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.Text).text = "" .. (self.data).x .. "-" .. (self.data).y .. " - " .. self.layer
+  self.Text.text = "" .. self.data.x .. "-" .. self.data.y .. " - " .. self.layer
 end
-
-

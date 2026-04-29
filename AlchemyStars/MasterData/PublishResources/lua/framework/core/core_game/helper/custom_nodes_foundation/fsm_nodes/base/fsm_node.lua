@@ -1,38 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/custom_nodes_foundation/fsm_nodes/base/fsm_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
--- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomNodeConfigStatic.Check_FSMNode = function(cfg)
-  -- function num : 0_0 , upvalues : _ENV
+function CustomNodeConfigStatic.Check_FSMNode(cfg)
   if nodeCfg.Nodes then
     return true
   end
   return false
 end
 
-;
-(CustomNodeConfigStatic.AddChecker)("FSMNode", CustomNodeConfigStatic.Check_FSMNode)
+CustomNodeConfigStatic.AddChecker("FSMNode", CustomNodeConfigStatic.Check_FSMNode)
 _class("FSMNode", CustomNode)
 FSMNode = FSMNode
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-FSMNode.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function FSMNode:Constructor()
   self.mStates = ArrayList:New()
   self.mTransition = ArrayList:New()
   self.mCurrentState = nil
   self.mDefaultStateID = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMNode.InitializeNode = function(self, cfg, context)
-  -- function num : 0_2 , upvalues : _ENV
-  ((FSMNode.super).InitializeNode)(self, cfg, context)
-  self.OwnerEntity = (context.GenInfo).OwnerEntity
+function FSMNode:InitializeNode(cfg, context)
+  FSMNode.super.InitializeNode(self, cfg, context)
+  self.OwnerEntity = context.GenInfo.OwnerEntity
   self.MaxTransitionsPerFrame = cfg.MaxTransitionsPerFrame
   local mStates = self.mStates
   mStates:Clear()
@@ -41,38 +27,33 @@ FSMNode.InitializeNode = function(self, cfg, context)
   for i = 1, #nodeCfgList do
     local nodeCfg = nodeCfgList[i]
     local subNode = logic:CreateNode(nodeCfg, context)
-    ;
-    (CLHelper.Assert)(subNode)
+    CLHelper.Assert(subNode)
     subNode:Deactivate()
     mStates:PushBack(subNode)
   end
-  ;
-  (CLHelper.Assert)(mStates:Size() > 0)
+  CLHelper.Assert(mStates:Size() > 0)
   if cfg.DefaultState and cfg.DefaultState ~= "" then
     self.mDefaultStateID = cfg.DefaultState
   else
-    self.mDefaultStateID = (mStates:GetAt(1)):StateID()
+    self.mDefaultStateID = mStates:GetAt(1):StateID()
   end
   local node_transitions = cfg.GlobalTransition
   if node_transitions then
     for i = 1, #node_transitions do
-      local nodeCfg = (node_transitions[i]).Transition
+      local nodeCfg = node_transitions[i].Transition
       local subNode = logic:CreateNode(nodeCfg, context)
-      ;
-      (CLHelper.Assert)(subNode)
+      CLHelper.Assert(subNode)
       subNode:Deactivate()
-      ;
-      (self.mTransition):PushBack({subNode, (node_transitions[i]).OnlyOnce})
+      self.mTransition:PushBack({
+        subNode,
+        node_transitions[i].OnlyOnce
+      })
     end
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMNode.Destroy = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((FSMNode.super).Destroy)(self)
+function FSMNode:Destroy()
+  FSMNode.super.Destroy(self)
   local curState = self.mCurrentState
   if curState ~= nil then
     curState:Exit()
@@ -84,144 +65,107 @@ FSMNode.Destroy = function(self)
       state:Destroy()
     end
   end
-  do
-    for i = 1, (self.mTransition):Size() do
-      local transition = ((self.mTransition):GetAt(i))[1]
-      transition:Destroy()
-    end
-    self.mTransition = nil
-    self.mStates = nil
-    self.mCurrentState = nil
-    self.mDefaultStateID = nil
+  for i = 1, self.mTransition:Size() do
+    local transition = self.mTransition:GetAt(i)[1]
+    transition:Destroy()
   end
+  self.mTransition = nil
+  self.mStates = nil
+  self.mCurrentState = nil
+  self.mDefaultStateID = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMNode.Update = function(self, dt)
-  -- function num : 0_4
+function FSMNode:Update(dt)
   local mStates = self.mStates
   if mStates == nil then
-    return 
+    return
   end
   if self.mCurrentState == nil then
     self.mCurrentState = self:FindState(self.mDefaultStateID)
     if self.mCurrentState then
-      (self.mCurrentState):Enter()
+      self.mCurrentState:Enter()
     end
   end
-  for j = 1, (self.mTransition):Size() do
-    local transition = ((self.mTransition):GetAt(j))[1]
-    local only_once = ((self.mTransition):GetAt(j))[2]
+  for j = 1, self.mTransition:Size() do
+    local transition = self.mTransition:GetAt(j)[1]
+    local only_once = self.mTransition:GetAt(j)[2]
     local global_trans_goal_state = transition:CheckTransitions()
-    if global_trans_goal_state and (self.mCurrentState):StateID() ~= global_trans_goal_state then
+    if global_trans_goal_state and self.mCurrentState:StateID() ~= global_trans_goal_state then
       self:TransToState(global_trans_goal_state)
       transition:Reset()
       if only_once then
-        (self.mTransition):RemoveAt(j)
+        self.mTransition:RemoveAt(j)
       end
       break
     end
   end
-  do
-    for i = 1, self.MaxTransitionsPerFrame do
-      local oldStateID = ((self.mCurrentState):StateID())
-      local goalStateID = nil
-      goalStateID = (self.mCurrentState):CheckTransitions()
-      if goalStateID and oldStateID ~= goalStateID then
-        do
-          self:TransToState(goalStateID)
-          -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  for i = 1, self.MaxTransitionsPerFrame do
+    local oldStateID = self.mCurrentState:StateID()
+    local goalStateID
+    goalStateID = self.mCurrentState:CheckTransitions()
+    if not goalStateID or oldStateID == goalStateID then
+      break
     end
-    ;
-    (self.mCurrentState):Update(dt)
+    self:TransToState(goalStateID)
   end
+  self.mCurrentState:Update(dt)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMNode.TransToState = function(self, goalStateID)
-  -- function num : 0_5
+function FSMNode:TransToState(goalStateID)
   local mGoalState = self:FindState(goalStateID)
   if mGoalState then
-    (self.mCurrentState):Exit()
+    self.mCurrentState:Exit()
     self.mCurrentState = mGoalState
-    ;
-    (self.mCurrentState):Enter()
+    self.mCurrentState:Enter()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMNode.CollectInterfaceInChildren = function(self, interfaceList, funcName)
-  -- function num : 0_6 , upvalues : _ENV
+function FSMNode:CollectInterfaceInChildren(interfaceList, funcName)
   local nodes = self.mStates
   for i = 1, nodes:Size() do
     local node = nodes:GetAt(i)
-    ;
-    (CustomNodeStatic.TraverseCollectInterface)(interfaceList, funcName, node)
+    CustomNodeStatic.TraverseCollectInterface(interfaceList, funcName, node)
   end
-  for i = 1, (self.mTransition):Size() do
-    local transition_node = ((self.mTransition):GetAt(i))[1]
-    ;
-    (CustomNodeStatic.TraverseCollectInterface)(interfaceList, funcName, transition_node)
+  for i = 1, self.mTransition:Size() do
+    local transition_node = self.mTransition:GetAt(i)[1]
+    CustomNodeStatic.TraverseCollectInterface(interfaceList, funcName, transition_node)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMNode.Activate = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((FSMNode.super).Activate)(self)
+function FSMNode:Activate()
+  FSMNode.super.Activate(self)
   local curState = self.mCurrentState
   if curState ~= nil and not curState.IsActive then
     curState:Activate()
   end
-  for i = 1, (self.mTransition):Size() do
-    (((self.mTransition):GetAt(i))[1]):Activate()
+  for i = 1, self.mTransition:Size() do
+    self.mTransition:GetAt(i)[1]:Activate()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMNode.Deactivate = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  ((FSMNode.super).Deactivate)(self)
+function FSMNode:Deactivate()
+  FSMNode.super.Deactivate(self)
   local curState = self.mCurrentState
   if curState ~= nil and curState.IsActive then
     curState:Deactivate()
   end
-  for i = 1, (self.mTransition):Size() do
-    (((self.mTransition):GetAt(i))[1]):Deactivate()
+  for i = 1, self.mTransition:Size() do
+    self.mTransition:GetAt(i)[1]:Deactivate()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMNode.CurrentState = function(self)
-  -- function num : 0_9
+function FSMNode:CurrentState()
   return self.mCurrentState
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMNode.CurrentStateID = function(self)
-  -- function num : 0_10
+function FSMNode:CurrentStateID()
   local mCurrentState = self.mCurrentState
   if mCurrentState then
     return mCurrentState:StateID()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMNode.FindState = function(self, stateID)
-  -- function num : 0_11
+function FSMNode:FindState(stateID)
   local mStates = self.mStates
   if not mStates then
     return nil
@@ -234,10 +178,7 @@ FSMNode.FindState = function(self, stateID)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMNode.Reset = function(self, stateID)
-  -- function num : 0_12
+function FSMNode:Reset(stateID)
   local mCurrentState = self.mCurrentState
   if mCurrentState then
     mCurrentState:Exit()
@@ -249,16 +190,11 @@ FSMNode.Reset = function(self, stateID)
     mCurrentState:Activate()
     mCurrentState:Enter()
   end
-  for i = 1, (self.mTransition):Size() do
-    (((self.mTransition):GetAt(i))[1]):Reset()
+  for i = 1, self.mTransition:Size() do
+    self.mTransition:GetAt(i)[1]:Reset()
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMNode.CanStop = function(self)
-  -- function num : 0_13
+function FSMNode:CanStop()
   return false
 end
-
-

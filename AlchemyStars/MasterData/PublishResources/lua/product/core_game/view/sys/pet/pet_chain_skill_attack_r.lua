@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/pet/pet_chain_skill_attack_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PetChainSkillAttack", Object)
 PetChainSkillAttack = PetChainSkillAttack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PetChainSkillAttack.Constructor = function(self, world)
-  -- function num : 0_0
+function PetChainSkillAttack:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PetChainSkillAttack._GetChainSkillPhaseArray = function(self, casterEntity, skillID)
-  -- function num : 0_1
-  local configService = (self._world):GetService("Config")
+function PetChainSkillAttack:_GetChainSkillPhaseArray(casterEntity, skillID)
+  local configService = self._world:GetService("Config")
   local skinId = 1
   if casterEntity:MatchPet() then
-    skinId = ((casterEntity:MatchPet()):GetMatchPet()):GetSkinId()
+    skinId = casterEntity:MatchPet():GetMatchPet():GetSkinId()
   end
   local skillConfigData = configService:GetSkillConfigData(skillID, casterEntity)
   local skillPhaseArray = skillConfigData:GetSkillPhaseArray(skinId)
   return skillPhaseArray
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PetChainSkillAttack._CheckFinalAttack = function(self, skillEffectResultContainer, casterEntity)
-  -- function num : 0_2 , upvalues : _ENV
+function PetChainSkillAttack:_CheckFinalAttack(skillEffectResultContainer, casterEntity)
   local damageReslut = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   if damageReslut == nil then
     skillEffectResultContainer:SetFinalAttack(false)
@@ -42,28 +29,23 @@ PetChainSkillAttack._CheckFinalAttack = function(self, skillEffectResultContaine
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PetChainSkillAttack._SortForFinalAttack = function(self, skillDamageResultArray, casterEntity)
-  -- function num : 0_3 , upvalues : _ENV
+function PetChainSkillAttack:_SortForFinalAttack(skillDamageResultArray, casterEntity)
   if skillDamageResultArray == nil or #skillDamageResultArray <= 1 then
     return skillDamageResultArray
   end
   local count = #skillDamageResultArray
-  local CmpBodyAreafunc = function(skillDamageEffectResult1, skillDamageEffectResult2)
-    -- function num : 0_3_0 , upvalues : self
+  
+  local function CmpBodyAreafunc(skillDamageEffectResult1, skillDamageEffectResult2)
     local areaCount1 = self:_GetAreaCount(skillDamageEffectResult1)
     local areaCount2 = self:_GetAreaCount(skillDamageEffectResult2)
-    do return areaCount1 < areaCount2 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+    return areaCount1 < areaCount2
   end
-
-  ;
-  (table.sort)(skillDamageResultArray, CmpBodyAreafunc)
+  
+  table.sort(skillDamageResultArray, CmpBodyAreafunc)
   local lastSkillDamageResult = skillDamageResultArray[count]
   local maxAreaCount = self:_GetAreaCount(lastSkillDamageResult)
   local sortByAreaArray = {}
-  for _,v in ipairs(skillDamageResultArray) do
+  for _, v in ipairs(skillDamageResultArray) do
     local curAreaCount = self:_GetAreaCount(v)
     if curAreaCount == maxAreaCount then
       sortByAreaArray[#sortByAreaArray + 1] = v
@@ -73,29 +55,23 @@ PetChainSkillAttack._SortForFinalAttack = function(self, skillDamageResultArray,
   if areaArrayCount <= 1 then
     return skillDamageResultArray
   else
-    local CmpDistancefunc = function(skillDamageEffectResult1, skillDamageEffectResult2)
-    -- function num : 0_3_1 , upvalues : self, casterEntity
-    local dis1 = self:_GetDistanceToPlayer(skillDamageEffectResult1, casterEntity)
-    local dis2 = self:_GetDistanceToPlayer(skillDamageEffectResult2, casterEntity)
-    do return dis1 < dis2 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-    ;
-    (table.sort)(sortByAreaArray, CmpDistancefunc)
+    local function CmpDistancefunc(skillDamageEffectResult1, skillDamageEffectResult2)
+      local dis1 = self:_GetDistanceToPlayer(skillDamageEffectResult1, casterEntity)
+      
+      local dis2 = self:_GetDistanceToPlayer(skillDamageEffectResult2, casterEntity)
+      return dis1 < dis2
+    end
+    
+    table.sort(sortByAreaArray, CmpDistancefunc)
     local maxDistanceResult = sortByAreaArray[areaArrayCount]
-    ;
-    (table.removev)(skillDamageResultArray, maxDistanceResult)
+    table.removev(skillDamageResultArray, maxDistanceResult)
     skillDamageResultArray[#skillDamageResultArray + 1] = maxDistanceResult
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PetChainSkillAttack._GetAreaCount = function(self, skillDamageResult)
-  -- function num : 0_4
+function PetChainSkillAttack:_GetAreaCount(skillDamageResult)
   local entityID = skillDamageResult:GetTargetID()
-  local entity = (self._world):GetEntityByID(entityID)
+  local entity = self._world:GetEntityByID(entityID)
   if entity == nil then
     return 0
   end
@@ -107,140 +83,117 @@ PetChainSkillAttack._GetAreaCount = function(self, skillDamageResult)
   return areaCount
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PetChainSkillAttack._GetDistanceToPlayer = function(self, skillDamageResult, casterEntity)
-  -- function num : 0_5 , upvalues : _ENV
-  local playerPos = (casterEntity:GridLocation()).Position
+function PetChainSkillAttack:_GetDistanceToPlayer(skillDamageResult, casterEntity)
+  local playerPos = casterEntity:GridLocation().Position
   local gridPos = skillDamageResult:GetGridPos()
-  return (Vector2.Distance)(gridPos, playerPos)
+  return Vector2.Distance(gridPos, playerPos)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PetChainSkillAttack.GetPetForward = function(self, casterEntity)
-  -- function num : 0_6 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-  local casterPos = (casterEntity:GridLocation()).Position
+function PetChainSkillAttack:GetPetForward(casterEntity)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local casterPos = casterEntity:GridLocation().Position
   local damageResultList = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
-  if not damageResultList or (table.count)(damageResultList) == 0 then
-    return 
+  if not damageResultList or table.count(damageResultList) == 0 then
+    return
   end
-  local beAttackEntityID = (damageResultList[1]):GetTargetID()
-  local targetEntity = (self._world):GetEntityByID(beAttackEntityID)
+  local beAttackEntityID = damageResultList[1]:GetTargetID()
+  local targetEntity = self._world:GetEntityByID(beAttackEntityID)
   if not targetEntity then
-    return 
+    return
   end
-  local get_index = function(c, p)
-    -- function num : 0_6_0
-    if p.x - c.x == 0 and p.y - c.y > 0 then
+  
+  local function get_index(c, p)
+    if p.x - c.x == 0 and 0 < p.y - c.y then
       return 1
     end
-    if p.x - c.x > 0 and p.y - c.y > 0 then
+    if p.x - c.x > 0 and 0 < p.y - c.y then
       return 2
     end
     if p.x - c.x > 0 and p.y - c.y == 0 then
       return 3
     end
-    if p.x - c.x > 0 and p.y - c.y < 0 then
+    if p.x - c.x > 0 and 0 > p.y - c.y then
       return 4
     end
-    if p.x - c.x == 0 and p.y - c.y < 0 then
+    if p.x - c.x == 0 and 0 > p.y - c.y then
       return 5
     end
-    if p.x - c.x < 0 and p.y - c.y < 0 then
+    if p.x - c.x < 0 and 0 > p.y - c.y then
       return 6
     end
     if p.x - c.x < 0 and p.y - c.y == 0 then
       return 7
     end
-    if p.x - c.x < 0 and p.y - c.y > 0 then
+    if p.x - c.x < 0 and 0 < p.y - c.y then
       return 8
     end
     return 1
   end
-
+  
   local damagePosList = {}
-  for i,result in ipairs(damageResultList) do
+  for i, result in ipairs(damageResultList) do
     if result:GetGridPos() then
-      (table.insert)(damagePosList, result:GetGridPos())
+      table.insert(damagePosList, result:GetGridPos())
     end
   end
-  local cmpFunc = function(damageResultPos1, damageResultPos2)
-    -- function num : 0_6_1 , upvalues : _ENV, casterPos, get_index
-    local dis1 = (Vector2.Distance)(damageResultPos1, casterPos)
-    local dis2 = (Vector2.Distance)(damageResultPos2, casterPos)
-    if get_index(casterPos, damageResultPos1) >= get_index(casterPos, damageResultPos2) then
-      do return dis1 ~= dis2 end
-      do return dis1 < dis2 end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  
+  local function cmpFunc(damageResultPos1, damageResultPos2)
+    local dis1 = Vector2.Distance(damageResultPos1, casterPos)
+    local dis2 = Vector2.Distance(damageResultPos2, casterPos)
+    if dis1 == dis2 then
+      return get_index(casterPos, damageResultPos1) < get_index(casterPos, damageResultPos2)
+    else
+      return dis1 < dis2
     end
   end
-
-  ;
-  (table.sort)(damagePosList, cmpFunc)
+  
+  table.sort(damagePosList, cmpFunc)
   local dir = damagePosList[1] - casterPos
   return dir
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PetChainSkillAttack._IsLastPlayChainSkill = function(self, casterEntity)
-  -- function num : 0_7 , upvalues : _ENV
-  local playerEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
+function PetChainSkillAttack:_IsLastPlayChainSkill(casterEntity)
+  local playerEntity = casterEntity:Pet():GetOwnerTeamEntity()
   local cChainSkillSequence = playerEntity:ChainSkillSequence()
-  local arr = {playerEntity:GetID()}
+  local arr = {
+    playerEntity:GetID()
+  }
   if cChainSkillSequence.ChainSkillSeqTable then
-    for i,v in ipairs(cChainSkillSequence.ChainSkillSeqTable) do
-      (table.insert)(arr, v)
+    for i, v in ipairs(cChainSkillSequence.ChainSkillSeqTable) do
+      table.insert(arr, v)
     end
   end
-  do
-    if arr[(table.count)(arr)] == casterEntity:GetID() then
-      return true
-    end
-    return false
+  if arr[table.count(arr)] == casterEntity:GetID() then
+    return true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PetChainSkillAttack._ShowChainAttackMonsterDead = function(self, TT)
-  -- function num : 0_8
-  local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
+function PetChainSkillAttack:_ShowChainAttackMonsterDead(TT)
+  local sMonsterShowRender = self._world:GetService("MonsterShowRender")
   sMonsterShowRender:DoAllMonsterDeadRender(TT)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PetChainSkillAttack._OnResultDeadEntityAddDeadFlag = function(self, casterEntityID, chainTimeIndex, chainStageIndex)
-  -- function num : 0_9 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local chainAtkResCmpt = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.ChainAttack)
+function PetChainSkillAttack:_OnResultDeadEntityAddDeadFlag(casterEntityID, chainTimeIndex, chainStageIndex)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local chainAtkResCmpt = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.ChainAttack)
   local deadEntityIdList = chainAtkResCmpt:GetDeadEntityIDListByPet(casterEntityID)
-  if not chainStageIndex then
-    chainStageIndex = 1
-  end
-  if deadEntityIdList[chainTimeIndex] and (deadEntityIdList[chainTimeIndex])[chainStageIndex] then
-    local deadList = (deadEntityIdList[chainTimeIndex])[chainStageIndex]
-    for _,eid in ipairs(deadList) do
-      local e = (self._world):GetEntityByID(eid)
+  chainStageIndex = chainStageIndex or 1
+  if deadEntityIdList[chainTimeIndex] and deadEntityIdList[chainTimeIndex][chainStageIndex] then
+    local deadList = deadEntityIdList[chainTimeIndex][chainStageIndex]
+    for _, eid in ipairs(deadList) do
+      local e = self._world:GetEntityByID(eid)
       e:AddDeadFlag()
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PetChainSkillAttack.GetReplaceEntity = function(self, casterEntity)
-  -- function num : 0_10
+function PetChainSkillAttack:GetReplaceEntity(casterEntity)
   local buffViewCmpt = casterEntity:BuffView()
   local replaceChainEntityID = buffViewCmpt:GetBuffValue("ReplaceEntityID")
-  local replaceChainEntity = (self._world):GetEntityByID(replaceChainEntityID)
+  local replaceChainEntity = self._world:GetEntityByID(replaceChainEntityID)
   if not replaceChainEntity then
-    return 
+    return
   end
   return replaceChainEntity
 end
-
-

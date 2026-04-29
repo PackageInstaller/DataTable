@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/module/trm_exception.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("test_robot_module")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotModule.Exception_DisableAutoKill = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function TestRobotModule:Exception_DisableAutoKill()
   SmokingTestAgent.IsActive = false
 end
 
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.Exception_SendWorkWXError = function(self, message)
-  -- function num : 0_1 , upvalues : _ENV
-  (WorkWXPoster.SendError)(message)
+function TestRobotModule:Exception_SendWorkWXError(message)
+  WorkWXPoster.SendError(message)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.Exception_DeclareExceptionThrew = function(self, msg)
-  -- function num : 0_2 , upvalues : _ENV
+function TestRobotModule:Exception_DeclareExceptionThrew(msg)
   self:Exception_DisableAutoKill()
   self:Exception_SendWorkWXError(msg)
   if self:GetMissionRunData() then
-    (self:GetMissionRunData()):DeclareException()
+    self:GetMissionRunData():DeclareException()
     self:WriteProgressLog()
   else
-    ;
-    (SmokingTestHub.WriteBoardLog)("【异常】测试环境启动失败")
+    SmokingTestHub.WriteBoardLog("【异常】测试环境启动失败")
   end
 end
-
-

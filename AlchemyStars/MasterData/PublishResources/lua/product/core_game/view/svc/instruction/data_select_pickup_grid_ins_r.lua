@@ -1,39 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_select_pickup_grid_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DataSelectPickupGridInstruction", BaseInstruction)
 DataSelectPickupGridInstruction = DataSelectPickupGridInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSelectPickupGridInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function DataSelectPickupGridInstruction:Constructor(paramList)
   self._gridIndex = tonumber(paramList.gridIndex)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectPickupGridInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function DataSelectPickupGridInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local pickUpType = self:_GetPickUpType(casterEntity)
   local renderPickUpComponent = casterEntity:RenderPickUpComponent()
   local scopeGridList = renderPickUpComponent:GetAllValidPickUpGridPos()
   phaseContext:SetCurGridPos(scopeGridList[self._gridIndex])
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectPickupGridInstruction._GetPickUpType = function(self, casterEntity)
-  -- function num : 0_2
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function DataSelectPickupGridInstruction:_GetPickUpType(casterEntity)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local world = casterEntity:GetOwnerWorld()
   local configService = world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, casterEntity)
   return skillConfigData:GetSkillPickType()
 end
-
-

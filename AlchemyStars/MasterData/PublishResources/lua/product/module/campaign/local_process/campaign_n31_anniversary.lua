@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n31_anniversary.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignN31Anniversary", ICampaignComponentLocalProcessBase)
 CCampaignN31Anniversary = CCampaignN31Anniversary
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignN31Anniversary.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignN31Anniversary:Constructor()
   self._cumulativeLoginComponent = nil
   self._cumulativeLoginComponentInfo = nil
   self._timeRewardComponent = nil
@@ -16,55 +9,37 @@ CCampaignN31Anniversary.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31Anniversary.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignN31Anniversary:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N31_ANNIVERSARY
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31Anniversary.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignN31Anniversary:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31Anniversary.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignN31Anniversary:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetCumulativeLoginComponent()
   self:_GetTimeRewardComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31Anniversary._GetCumulativeLoginComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._cumulativeLoginComponent = (self._campaignObj):GetComponent(ECampaignN31AnniversaryComponentID.CUMULATIVE_LOGIN)
+function CCampaignN31Anniversary:_GetCumulativeLoginComponent()
+  self._cumulativeLoginComponent = self._campaignObj:GetComponent(ECampaignN31AnniversaryComponentID.CUMULATIVE_LOGIN)
   if not self._cumulativeLoginComponent then
-    return 
+    return
   end
-  self._cumulativeLoginComponentInfo = (self._cumulativeLoginComponent):ComponentInfo()
+  self._cumulativeLoginComponentInfo = self._cumulativeLoginComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31Anniversary._GetTimeRewardComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._timeRewardComponent = (self._campaignObj):GetComponent(ECampaignN31AnniversaryComponentID.TIME_REWARD)
+function CCampaignN31Anniversary:_GetTimeRewardComponent()
+  self._timeRewardComponent = self._campaignObj:GetComponent(ECampaignN31AnniversaryComponentID.TIME_REWARD)
   if not self._timeRewardComponent then
-    return 
+    return
   end
-  self._timeRewardComponentInfo = (self._timeRewardComponent):ComponentInfo()
+  self._timeRewardComponentInfo = self._timeRewardComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31Anniversary.GetComponent = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignN31Anniversary:GetComponent(componentID)
   if ECampaignN31AnniversaryComponentID.CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginComponent
   end
@@ -74,10 +49,7 @@ CCampaignN31Anniversary.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31Anniversary.GetComponentInfo = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignN31Anniversary:GetComponentInfo(componentID)
   if ECampaignN31AnniversaryComponentID.CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginComponentInfo
   end
@@ -87,24 +59,12 @@ CCampaignN31Anniversary.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31Anniversary.GetEntryNew = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignN31Anniversary:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_N31_ANNIVERSARY)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31Anniversary.AccumulateLoginReddot = function(self)
-  -- function num : 0_9
-  if self._cumulativeLoginComponent then
-    return (self._cumulativeLoginComponent):HaveRedPoint()
-  end
+function CCampaignN31Anniversary:AccumulateLoginReddot()
+  return self._cumulativeLoginComponent and self._cumulativeLoginComponent:HaveRedPoint()
 end
-
-

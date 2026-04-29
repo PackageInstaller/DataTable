@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/level_par/level_story_tips_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LevelStoryTipsParam", Object)
 LevelStoryTipsParam = LevelStoryTipsParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LevelStoryTipsParam.Constructor = function(self, t)
-  -- function num : 0_0
+function LevelStoryTipsParam:Constructor(t)
   self._type = t.Type
   self._param = t.Param
   self._tipsID = t.TipsID
@@ -16,47 +9,30 @@ LevelStoryTipsParam.Constructor = function(self, t)
   self._speakerMonsterID = t.SpeakerMonsterID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelStoryTipsParam.GetSpeakerType = function(self)
-  -- function num : 0_1
+function LevelStoryTipsParam:GetSpeakerType()
   return self._speakerType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelStoryTipsParam.GetSpeakerMonsterID = function(self)
-  -- function num : 0_2
+function LevelStoryTipsParam:GetSpeakerMonsterID()
   return self._speakerMonsterID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelStoryTipsParam.GetType = function(self)
-  -- function num : 0_3
+function LevelStoryTipsParam:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelStoryTipsParam.GetParam = function(self)
-  -- function num : 0_4
+function LevelStoryTipsParam:GetParam()
   return self._param
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelStoryTipsParam.GetID = function(self)
-  -- function num : 0_5
+function LevelStoryTipsParam:GetID()
   return self._tipsID
 end
 
 _class("StoryTipsParam", Object)
 StoryTipsParam = StoryTipsParam
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-StoryTipsParam.Constructor = function(self, t)
-  -- function num : 0_6 , upvalues : _ENV
+function StoryTipsParam:Constructor(t)
   self._text = t.Text
   self._duration = nil
   if t.Duration then
@@ -66,19 +42,11 @@ StoryTipsParam.Constructor = function(self, t)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryTipsParam.GetText = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local text = (StringTable.Get)(self._text)
+function StoryTipsParam:GetText()
+  local text = StringTable.Get(self._text)
   return text
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryTipsParam.GetDuration = function(self)
-  -- function num : 0_8
+function StoryTipsParam:GetDuration()
   return self._duration
 end
-
-

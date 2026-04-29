@@ -1,40 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_summon_trap_or_heal_by_trap_buff_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SummonTrapOrHealByTrapBuffLayer", SkillEffectCalc_Base)
 SkillEffectCalc_SummonTrapOrHealByTrapBuffLayer = SkillEffectCalc_SummonTrapOrHealByTrapBuffLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SummonTrapOrHealByTrapBuffLayer.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_SummonTrapOrHealByTrapBuffLayer:DoSkillEffectCalculator(skillEffectCalcParam)
   local param = skillEffectCalcParam.skillEffectParam
-  local pos = (skillEffectCalcParam.skillRange)[1]
-  local utilData = (self._world):GetService("UtilData")
-  local tTrapEntities = (utilData:GetAllTrapEntitiesAtPosByTrapID(pos, param:GetTrapID()))
-  local trapEntity = nil
-  for _,trap in ipairs(tTrapEntities) do
+  local pos = skillEffectCalcParam.skillRange[1]
+  local utilData = self._world:GetService("UtilData")
+  local tTrapEntities = utilData:GetAllTrapEntitiesAtPosByTrapID(pos, param:GetTrapID())
+  local trapEntity
+  for _, trap in ipairs(tTrapEntities) do
     if not trap:HasDeadMark() then
       trapEntity = trap
       break
     end
   end
-  do
-    if not trapEntity then
-      return self:_DoSingleSummonTrap(skillEffectCalcParam)
-    else
-      return self:_DoHealByTrapBuffLayer(skillEffectCalcParam, trapEntity)
-    end
+  if not trapEntity then
+    return self:_DoSingleSummonTrap(skillEffectCalcParam)
+  else
+    return self:_DoHealByTrapBuffLayer(skillEffectCalcParam, trapEntity)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrapOrHealByTrapBuffLayer._DoSingleSummonTrap = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_SummonTrapOrHealByTrapBuffLayer:_DoSingleSummonTrap(skillEffectCalcParam)
   local param = skillEffectCalcParam.skillEffectParam
-  local pos = (skillEffectCalcParam.skillRange)[1]
+  local pos = skillEffectCalcParam.skillRange[1]
   local trapID = param:GetTrapID()
   local summonMultipleTrapParam = SkillEffectSummonMultipleTrapParam:New({trapID = trapID, ignoreBlock = 1})
   local summonMultipleTrapCalc = SkillEffectCalc_SummonMultipleTrap:New(self._world)
@@ -43,63 +31,69 @@ SkillEffectCalc_SummonTrapOrHealByTrapBuffLayer._DoSingleSummonTrap = function(s
   return tResults
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrapOrHealByTrapBuffLayer._DoHealByTrapBuffLayer = function(self, skillEffectCalcParam, selectedTrapEntity)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_SummonTrapOrHealByTrapBuffLayer:_DoHealByTrapBuffLayer(skillEffectCalcParam, selectedTrapEntity)
   local param = skillEffectCalcParam.skillEffectParam
   local buffEffectType = param:GetLayerBuffEffectType()
   local cBuff = selectedTrapEntity:BuffComponent()
   if not cBuff then
-    return 
+    return
   end
-  local blsvc = (self._world):GetService("BuffLogic")
+  local blsvc = self._world:GetService("BuffLogic")
   local curLayerMark = blsvc:GetBuffLayer(selectedTrapEntity, buffEffectType)
   local tResults = {}
-  local entityCaster = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local entityCaster = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local entityHealed = entityCaster
   if entityHealed:HasPet() then
-    entityHealed = (entityCaster:Pet()):GetOwnerTeamEntity()
+    entityHealed = entityCaster:Pet():GetOwnerTeamEntity()
   end
   if entityHealed and entityHealed:HasTeamDeadMark() then
-    return 
+    return
   end
-  if entityHealed and (entityHealed:Attributes()):GetAttribute("BuffForbidCure") then
-    return 
+  if entityHealed and entityHealed:Attributes():GetAttribute("BuffForbidCure") then
+    return
   end
   local percentList = param:GetPercentList()
   local percent = percentList[curLayerMark + 1]
   if not percent then
-    (Log.error)("HealByTrapBuffLayer: no percent found for layer=", curLayerMark)
-    return 
+    Log.error("HealByTrapBuffLayer: no percent found for layer=", curLayerMark)
+    return
   end
   local cAttributes = entityCaster:Attributes()
   local casterAttack = cAttributes:GetAttack()
   local val = casterAttack * percent
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   local rate = 0
-  if not (casterEntity:Attributes()):GetAttribute("AddBloodRate") then
-    rate = val == 0 or 0
+  if val ~= 0 then
+    rate = casterEntity:Attributes():GetAttribute("AddBloodRate") or 0
+    rate = rate + (entityHealed:Attributes():GetAttribute("AddBloodRate") or 0)
+    val = val * (1 + rate)
   end
-  rate = (rate) + ((entityHealed:Attributes()):GetAttribute("AddBloodRate") or 0)
-  val = val * (1 + (rate))
-  val = (math.floor)(val)
-  local logger = (self._world):GetMatchLogger()
-  logger:AddBloodLog(casterEntity:GetID(), {key = "CalcAddBlood", desc = "技能加血 攻击者[attacker] 被击者[defender] 施法者攻击力[atk] 加血量[blood] 回血加成系数[rate]", attacker = casterEntity:GetID(), defender = skillEffectCalcParam.casterEntityID, blood = val, rate = rate, atk = casterAttack})
+  val = math.floor(val)
+  local logger = self._world:GetMatchLogger()
+  logger:AddBloodLog(casterEntity:GetID(), {
+    key = "CalcAddBlood",
+    desc = "技能加血 攻击者[attacker] 被击者[defender] 施法者攻击力[atk] 加血量[blood] 回血加成系数[rate]",
+    attacker = casterEntity:GetID(),
+    defender = skillEffectCalcParam.casterEntityID,
+    blood = val,
+    rate = rate,
+    atk = casterAttack
+  })
   local result = SkillEffectResult_AddBlood:New(AddBlood_Type.Attribute, percent, skillEffectCalcParam.gridPos, param:GetSkillEffectDamageStageIndex())
   result:SetAddData(entityHealed:GetID(), val)
-  ;
-  (table.insert)(tResults, result)
+  table.insert(tResults, result)
   local destroyTrapParam = SkillEffectDestroyTrapParam:New({
-trapID = {param:GetTrapID()}
-})
+    trapID = {
+      param:GetTrapID()
+    }
+  })
   local destroyTrapCalc = SkillEffectCalc_DestroyTrap:New(self._world)
-  local destroyTrapCalcParam = SkillEffectCalcParam:New(skillEffectCalcParam.casterEntityID, {selectedTrapEntity:GetID()}, destroyTrapParam, skillEffectCalcParam.skillID, skillEffectCalcParam.skillRange, skillEffectCalcParam.attackPos, skillEffectCalcParam.gridPos, skillEffectCalcParam.centerPos, skillEffectCalcParam.wholeRange)
+  local destroyTrapCalcParam = SkillEffectCalcParam:New(skillEffectCalcParam.casterEntityID, {
+    selectedTrapEntity:GetID()
+  }, destroyTrapParam, skillEffectCalcParam.skillID, skillEffectCalcParam.skillRange, skillEffectCalcParam.attackPos, skillEffectCalcParam.gridPos, skillEffectCalcParam.centerPos, skillEffectCalcParam.wholeRange)
   local tDestroyResults = destroyTrapCalc:DoSkillEffectCalculator(destroyTrapCalcParam)
   if tDestroyResults then
-    (table.appendArray)(tResults, tDestroyResults)
+    table.appendArray(tResults, tDestroyResults)
   end
   return tResults
 end
-
-

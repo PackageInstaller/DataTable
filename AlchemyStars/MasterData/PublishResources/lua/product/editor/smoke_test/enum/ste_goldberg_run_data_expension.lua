@@ -1,7 +1,1 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/enum/ste_goldberg_run_data_expension.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 STGoldbergRunDataExpension = {N12HardAffix = 1}
-

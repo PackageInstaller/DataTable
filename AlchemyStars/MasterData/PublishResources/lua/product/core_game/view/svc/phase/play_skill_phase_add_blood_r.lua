@@ -1,34 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_phase_add_blood_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillPhase_AddBlood", PlaySkillPhaseBase)
 PlaySkillPhase_AddBlood = PlaySkillPhase_AddBlood
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillPhase_AddBlood.Constructor = function(self)
-  -- function num : 0_0
+function PlaySkillPhase_AddBlood:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhase_AddBlood.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_1
+function PlaySkillPhase_AddBlood:PlayFlight(TT, casterEntity, phaseParam)
   self:_PlayFlightAll(TT, casterEntity, phaseParam)
   self:_DelayTime(TT, phaseParam:GetShowTimeDelay())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhase_AddBlood._PlayFlightAll = function(self, TT, casterEntity, paramWork)
-  -- function num : 0_2 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillPhase_AddBlood:_PlayFlightAll(TT, casterEntity, paramWork)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddBlood)
-  if skillResultArray == nil then
-    (Log.error)("加血表现里，给[", casterEntity:GetID(), "]加血时没有找到逻辑数据")
-    return 
+  if nil == skillResultArray then
+    Log.error("加血表现里，给[", casterEntity:GetID(), "]加血时没有找到逻辑数据")
+    return
   end
   local posCast = self:_GetEntityBasePos(casterEntity)
   local nIntervalTime = paramWork:GetGridIntervalTime()
@@ -37,25 +24,19 @@ PlaySkillPhase_AddBlood._PlayFlightAll = function(self, TT, casterEntity, paramW
     local nTargetID = skillResult:GetTargetID()
     local nAddValue = skillResult:GetAddValue()
     local damageInfo = skillResult:GetDamageInfo()
-    local targetEntity = (self._world):GetEntityByID(nTargetID)
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(self._PlayFlightOne, self, casterEntity, targetEntity, paramWork:GetGridEffectID(), paramWork:GetGridEffectDelayTime(), damageInfo)
+    local targetEntity = self._world:GetEntityByID(nTargetID)
+    GameGlobal.TaskManager():CoreGameStartTask(self._PlayFlightOne, self, casterEntity, targetEntity, paramWork:GetGridEffectID(), paramWork:GetGridEffectDelayTime(), damageInfo)
     self:_DelayTime(TT, nIntervalTime)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhase_AddBlood._PlayFlightOne = function(self, TT, casterEntity, entityWork, nEffectID, nEffectTime, damageInfo)
-  -- function num : 0_3 , upvalues : _ENV
+function PlaySkillPhase_AddBlood:_PlayFlightOne(TT, casterEntity, entityWork, nEffectID, nEffectTime, damageInfo)
   local posCast = self:_GetEntityBasePos(casterEntity)
   local posTarget = entityWork:GetDamageCenter()
   self:_PlayEffect(TT, posCast, posTarget, nEffectID, nEffectTime)
   if entityWork then
-    local playDamageService = (self._world):GetService("PlayDamage")
+    local playDamageService = self._world:GetService("PlayDamage")
     damageInfo:SetShowType(DamageShowType.Single)
     playDamageService:AsyncUpdateHPAndDisplayDamage(entityWork, damageInfo)
   end
 end
-
-

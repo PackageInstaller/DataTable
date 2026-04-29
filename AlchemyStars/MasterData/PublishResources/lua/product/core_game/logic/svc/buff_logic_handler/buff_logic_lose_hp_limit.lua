@@ -1,47 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_lose_hp_limit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicLoseHPLimit", BuffLogicBase)
 BuffLogicLoseHPLimit = BuffLogicLoseHPLimit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicLoseHPLimit.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicLoseHPLimit:Constructor(buffInstance, logicParam)
   self._percent = logicParam.percent
   self._fixValue = logicParam.fixValue
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicLoseHPLimit.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("MaxLoseHPPercent", {percent = self._percent, fixValue = self._fixValue})
+function BuffLogicLoseHPLimit:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("MaxLoseHPPercent", {
+    percent = self._percent,
+    fixValue = self._fixValue
+  })
 end
 
 _class("BuffLogicAttackIgnoreLoseHPLimit", BuffLogicBase)
 BuffLogicAttackIgnoreLoseHPLimit = BuffLogicAttackIgnoreLoseHPLimit
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAttackIgnoreLoseHPLimit.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffLogicAttackIgnoreLoseHPLimit:Constructor(buffInstance, logicParam)
   self._isSet = tonumber(logicParam.isSet)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAttackIgnoreLoseHPLimit.DoLogic = function(self)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
+function BuffLogicAttackIgnoreLoseHPLimit:DoLogic()
+  local e = self._buffInstance:Entity()
   local buffVal = 0
   if self._isSet and self._isSet == 1 then
     buffVal = 1
   end
-  ;
-  (e:BuffComponent()):SetBuffValue("AttackIgnoreMaxLoseHPPercent", buffVal)
+  e:BuffComponent():SetBuffValue("AttackIgnoreMaxLoseHPPercent", buffVal)
 end
-
-

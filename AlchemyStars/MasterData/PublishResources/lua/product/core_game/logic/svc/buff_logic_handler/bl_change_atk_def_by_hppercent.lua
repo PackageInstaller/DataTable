@@ -1,33 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_atk_def_by_hppercent.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeAtkDefByHpPercent", BuffLogicBase)
 BuffLogicChangeAtkDefByHpPercent = BuffLogicChangeAtkDefByHpPercent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAtkDefByHpPercent.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeAtkDefByHpPercent:Constructor(buffInstance, logicParam)
   self._maxPercent = logicParam.maxPercent or 0
   self._entity = buffInstance._entity
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAtkDefByHpPercent.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  local battleService = (self._world):GetService("Battle")
+function BuffLogicChangeAtkDefByHpPercent:DoLogic()
+  local e = self._buffInstance:Entity()
+  local battleService = self._world:GetService("Battle")
   local hp, maxHP = battleService:GetCasterHP(e)
   local costHPPercent = (maxHP - hp) / maxHP
   local value = costHPPercent * self._maxPercent
-  ;
-  (self._buffLogicService):ChangeBaseAttack(e, (self._buffInstance):BuffSeq(), ModifyBaseAttackType.AttackPercentage, value)
-  ;
-  (self._buffLogicService):ChangeBaseDefence(e, (self._buffInstance):BuffSeq(), ModifyBaseDefenceType.DefencePercentage, value)
-  local teamEntity = (e:Pet()):GetOwnerTeamEntity()
+  self._buffLogicService:ChangeBaseAttack(e, self._buffInstance:BuffSeq(), ModifyBaseAttackType.AttackPercentage, value)
+  self._buffLogicService:ChangeBaseDefence(e, self._buffInstance:BuffSeq(), ModifyBaseDefenceType.DefencePercentage, value)
+  local teamEntity = e:Pet():GetOwnerTeamEntity()
   self:UpdateTeamDefenceLogic(teamEntity)
 end
-
-

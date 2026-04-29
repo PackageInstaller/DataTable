@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/collage/ui_season_maze_collage_content_bead_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeCollageContentBeadItem", UICustomWidget)
 UISeasonMazeCollageContentBeadItem = UISeasonMazeCollageContentBeadItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeCollageContentBeadItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeCollageContentBeadItem:OnShow()
   self:InitWidget()
   self._atlas = self:GetAsset("SeasonMaze.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentBeadItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeCollageContentBeadItem:InitWidget()
   self.lockGo = self:GetGameObject("lock")
   self.newGo = self:GetGameObject("new")
   self.txtName = self:GetUIComponent("UILocalizationText", "name1")
@@ -25,113 +15,70 @@ UISeasonMazeCollageContentBeadItem.InitWidget = function(self)
   self.imgBg = self:GetUIComponent("Image", "colorBg")
   self.imgType = self:GetUIComponent("Image", "imgType")
   self._starGO = {}
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._starGO)[1] = self:GetGameObject("Star1")
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._starGO)[2] = self:GetGameObject("Star2")
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._starGO)[3] = self:GetGameObject("Star3")
+  self._starGO[1] = self:GetGameObject("Star1")
+  self._starGO[2] = self:GetGameObject("Star2")
+  self._starGO[3] = self:GetGameObject("Star3")
   self._txtLock = self:GetUIComponent("UILocalizationText", "txtLock")
   self._gameObject = self:GetGameObject()
-  ;
-  (self._gameObject):SetActive(false)
+  self._gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentBeadItem.SetData = function(self, d, rowIndex, clickCb)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._gameObject):SetActive(false)
+function UISeasonMazeCollageContentBeadItem:SetData(d, rowIndex, clickCb)
+  self._gameObject:SetActive(false)
   self._data = d
-  self._itemId = (self._data):GetCfgId()
+  self._itemId = self._data:GetCfgId()
   self._clickCb = clickCb
-  local cfg = (self._data):GetCfg()
-  local strName = (StringTable.Get)(cfg.Name)
-  ;
-  (self.txtName):SetText(strName)
-  ;
-  (self.txtName2):SetText(strName)
-  ;
-  (self.icon):LoadImage(cfg.Icon)
-  ;
-  (self.newGo):SetActive((self._data):GetNew())
-  local bLock = not (self._data):GetUnlock()
-  ;
-  (self.lockGo):SetActive(bLock)
-  do
-    if bLock then
-      local preUnlock, level = (self._data):GetPreConditionUnlock()
-      if not preUnlock then
-        (self._txtLock):SetText((StringTable.Get)("str_season_maze_enter_bead_book_lock_desc", level))
-      else
-        ;
-        (self._txtLock):SetText((StringTable.Get)("str_season_maze_enter_handbook_cond_desc", (self._data):GetUnLockLv()))
-      end
-    end
-    -- DECOMPILER ERROR at PC76: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.imgType).sprite = (self._atlas):GetSprite(self:_GetTypeSprite(cfg.Type))
-    if rowIndex and rowIndex < 3 then
-      local delta = rowIndex * 70
-      if delta == 0 then
-        (self._gameObject):SetActive(true)
-      else
-        local timerEvent = ((GameGlobal.Timer)()):AddEventTimes(delta, TimerTriggerCount.Once, function()
-    -- function num : 0_2_0 , upvalues : self
-    (self._gameObject):SetActive(true)
-  end
-)
-      end
+  local cfg = self._data:GetCfg()
+  local strName = StringTable.Get(cfg.Name)
+  self.txtName:SetText(strName)
+  self.txtName2:SetText(strName)
+  self.icon:LoadImage(cfg.Icon)
+  self.newGo:SetActive(self._data:GetNew())
+  local bLock = not self._data:GetUnlock()
+  self.lockGo:SetActive(bLock)
+  if bLock then
+    local preUnlock, level = self._data:GetPreConditionUnlock()
+    if not preUnlock then
+      self._txtLock:SetText(StringTable.Get("str_season_maze_enter_bead_book_lock_desc", level))
     else
-      do
-        ;
-        (self._gameObject):SetActive(true)
-        for key,value in ipairs(self._starGO) do
-          value:SetActive(key < cfg.Lv)
-        end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
+      self._txtLock:SetText(StringTable.Get("str_season_maze_enter_handbook_cond_desc", self._data:GetUnLockLv()))
     end
+  end
+  self.imgType.sprite = self._atlas:GetSprite(self:_GetTypeSprite(cfg.Type))
+  if rowIndex and rowIndex < 3 then
+    local delta = rowIndex * 70
+    if delta == 0 then
+      self._gameObject:SetActive(true)
+    else
+      local timerEvent = GameGlobal.Timer():AddEventTimes(delta, TimerTriggerCount.Once, function()
+        self._gameObject:SetActive(true)
+      end)
+    end
+  else
+    self._gameObject:SetActive(true)
+  end
+  for key, value in ipairs(self._starGO) do
+    value:SetActive(key < cfg.Lv)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentBeadItem.BeadItemOnClick = function(self)
-  -- function num : 0_3
-  if (self._data):GetNew() then
-    (self._data):SetNewAsRead()
-    ;
-    (self.newGo):SetActive(false)
+function UISeasonMazeCollageContentBeadItem:BeadItemOnClick()
+  if self._data:GetNew() then
+    self._data:SetNewAsRead()
+    self.newGo:SetActive(false)
   end
   if self._clickCb then
-    (self._clickCb)(self._itemId, ((self.lockGo).transform).position)
+    self._clickCb(self._itemId, self.lockGo.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentBeadItem._GetTypeSprite = function(self, type)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeCollageContentBeadItem:_GetTypeSprite(type)
   if type == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Skill then
     return "thread_junei_zdz01"
-  else
-    if type == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Strong then
-      return "thread_junei_zdz02"
-    else
-      if type == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Energy then
-        return "thread_junei_zdz03"
-      end
-    end
+  elseif type == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Strong then
+    return "thread_junei_zdz02"
+  elseif type == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Energy then
+    return "thread_junei_zdz03"
   end
   return "thread_junei_zdz03"
 end
-
-

@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_map_node_item_star.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMapNodeItemStar", UICustomWidget)
 UIMapNodeItemStar = UIMapNodeItemStar
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMapNodeItemStar.OnShow = function(self)
-  -- function num : 0_0
+function UIMapNodeItemStar:OnShow()
   self._imgStar = self:GetGameObject("imgStar")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemStar.OnHide = function(self)
-  -- function num : 0_1
+function UIMapNodeItemStar:OnHide()
   self._imgStar = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemStar.Flush = function(self, active)
-  -- function num : 0_2
-  (self._imgStar):SetActive(active)
+function UIMapNodeItemStar:Flush(active)
+  self._imgStar:SetActive(active)
 end
-
-

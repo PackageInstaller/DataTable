@@ -1,33 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_simple_haute_couture/common/probability/ui_simple_haute_couture_probablity.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISimpleHauteCoutureProbability", UIController)
 UISimpleHauteCoutureProbability = UISimpleHauteCoutureProbability
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimpleHauteCoutureProbability.Constructor = function(self)
-  -- function num : 0_0
+function UISimpleHauteCoutureProbability:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureProbability.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISimpleHauteCoutureProbability:OnShow(uiParams)
   self.altas = self:GetAsset("UISimpleHauteCoutureFei.spriteatlas", LoadType.SpriteAtlas)
   self._campaign = uiParams[1]
-  self._randomLotteryComponent = (self._campaign):GetComponent(ECampaignPetSkinComponentID.RANDOMLOTTERY)
-  self._cfgProbablity = (self._randomLotteryComponent):GetProbablityCfg()
-  self._cfgMain = (self._randomLotteryComponent):GetCfgMain()
+  self._randomLotteryComponent = self._campaign:GetComponent(ECampaignPetSkinComponentID.RANDOMLOTTERY)
+  self._cfgProbablity = self._randomLotteryComponent:GetProbablityCfg()
+  self._cfgMain = self._randomLotteryComponent:GetCfgMain()
   self:_GetComponents()
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureProbability._GetComponents = function(self)
-  -- function num : 0_2
+function UISimpleHauteCoutureProbability:_GetComponents()
   self._bigList = self:GetUIComponent("UISelectObjectPath", "BigList")
   self._smallList = self:GetUIComponent("UISelectObjectPath", "SmallList")
   self._info1 = self:GetUIComponent("UILocalizationText", "info1")
@@ -38,81 +25,55 @@ UISimpleHauteCoutureProbability._GetComponents = function(self)
   self._selectInfo = itemInfo:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureProbability._InitComponents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._info1):SetText((StringTable.Get)((self._cfgMain).ProbablityTxt))
-  ;
-  (self._title0):SetText((StringTable.Get)((self._cfgMain).ProbablityTitle0))
-  ;
-  (self._title1):SetText((StringTable.Get)((self._cfgMain).ProbablityTitle1))
-  ;
-  (self._title2):SetText((StringTable.Get)((self._cfgMain).ProbablityTitle2))
+function UISimpleHauteCoutureProbability:_InitComponents()
+  self._info1:SetText(StringTable.Get(self._cfgMain.ProbablityTxt))
+  self._title0:SetText(StringTable.Get(self._cfgMain.ProbablityTitle0))
+  self._title1:SetText(StringTable.Get(self._cfgMain.ProbablityTitle1))
+  self._title2:SetText(StringTable.Get(self._cfgMain.ProbablityTitle2))
   if not self._cfgProbablity then
-    (Log.exception)("cfg_junior_skin_draw_probablity 请配置概率！")
-    return 
+    Log.exception("cfg_junior_skin_draw_probablity 请配置概率！")
+    return
   end
-  ;
-  (table.sort)(self._cfgProbablity, function(a, b)
-    -- function num : 0_3_0
-    do return a.Sort < b.Sort end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._cfgProbablity, function(a, b)
+    return a.Sort < b.Sort
+  end)
   local bigCfgs = {}
   local smallCfgs = {}
-  for _,cfg in pairs(self._cfgProbablity) do
+  for _, cfg in pairs(self._cfgProbablity) do
     if cfg.IsBigRewards then
-      (table.insert)(bigCfgs, cfg)
+      table.insert(bigCfgs, cfg)
     else
-      ;
-      (table.insert)(smallCfgs, cfg)
+      table.insert(smallCfgs, cfg)
     end
   end
-  local bigItems = (self._bigList):SpawnObjects("UISimpleHauteCoutureProbabiltyItem", (table.count)(bigCfgs))
-  local smallItems = (self._smallList):SpawnObjects("UISimpleHauteCoutureProbabiltyItem", (table.count)(smallCfgs))
+  local bigItems = self._bigList:SpawnObjects("UISimpleHauteCoutureProbabiltyItem", table.count(bigCfgs))
+  local smallItems = self._smallList:SpawnObjects("UISimpleHauteCoutureProbabiltyItem", table.count(smallCfgs))
   local index = 1
-  for _,item in pairs(bigItems) do
+  for _, item in pairs(bigItems) do
     item:SetData(bigCfgs[index], true, function(id, pos)
-    -- function num : 0_3_1 , upvalues : self
-    self:ItemClick(id, pos)
-  end
-)
+      self:ItemClick(id, pos)
+    end)
     index = index + 1
   end
   index = 1
-  for _,item in pairs(smallItems) do
+  for _, item in pairs(smallItems) do
     item:SetData(smallCfgs[index], false, function(id, pos)
-    -- function num : 0_3_2 , upvalues : self
-    self:ItemClick(id, pos)
-  end
-)
+      self:ItemClick(id, pos)
+    end)
     index = index + 1
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureProbability.MaskOnClick = function(self)
-  -- function num : 0_4
+function UISimpleHauteCoutureProbability:MaskOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureProbability.CloseOnClick = function(self)
-  -- function num : 0_5
+function UISimpleHauteCoutureProbability:CloseOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureProbability.ItemClick = function(self, id, pos)
-  -- function num : 0_6
+function UISimpleHauteCoutureProbability:ItemClick(id, pos)
   if self._selectInfo then
-    (self._selectInfo):SetData(id, pos)
+    self._selectInfo:SetData(id, pos)
   end
 end
-
-

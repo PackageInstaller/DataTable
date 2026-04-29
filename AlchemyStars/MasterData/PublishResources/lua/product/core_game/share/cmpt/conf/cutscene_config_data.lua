@@ -1,88 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/cutscene_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CutsceneConfigData", Object)
 CutsceneConfigData = CutsceneConfigData
 CutscenePhaseType = {Instruction = 0}
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneConfigData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CutsceneConfigData:Constructor()
   self._phaseDataArray = {}
   self._viewParamDic = {}
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._viewParamDic)[CutscenePhaseType.Instruction] = CutsceneInstructionParam
+  self._viewParamDic[CutscenePhaseType.Instruction] = CutsceneInstructionParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneConfigData.ParseCutsceneConfig = function(self, cutsceneID)
-  -- function num : 0_1
+function CutsceneConfigData:ParseCutsceneConfig(cutsceneID)
   self._phaseDataArray = {}
   local phaseRawDataArray = self:_GetPhaseRawDataArray(cutsceneID)
   local phaseCount = phaseRawDataArray and phaseRawDataArray:Size() or 0
   for i = 1, phaseCount do
     local phaseRawData = phaseRawDataArray:GetAt(i)
     local onePhaseData = self:_ParseOnePhaseRawData(phaseRawData)
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._phaseDataArray)[#self._phaseDataArray + 1] = onePhaseData
+    self._phaseDataArray[#self._phaseDataArray + 1] = onePhaseData
   end
   return self._phaseDataArray
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneConfigData.GetCutscenePhaseArray = function(self)
-  -- function num : 0_2
+function CutsceneConfigData:GetCutscenePhaseArray()
   return self._phaseDataArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneConfigData._GetPhaseRawDataArray = function(self, cutsceneID)
-  -- function num : 0_3 , upvalues : _ENV
+function CutsceneConfigData:_GetPhaseRawDataArray(cutsceneID)
   local rawDataArray = ArrayList:New()
   local cutsceneTableName = "cfg_cutscene_" .. cutsceneID
-  local fileExist = (ResourceManager:GetInstance()):HasLua(cutsceneTableName)
+  local fileExist = ResourceManager:GetInstance():HasLua(cutsceneTableName)
   if not fileExist then
-    (Log.warn)("cannot find cutscene:", cutsceneTableName)
+    Log.warn("cannot find cutscene:", cutsceneTableName)
     return nil
   end
-  local cutsceneList = (table.cloneconf)((Cfg[cutsceneTableName])())
-  ;
-  (table.sort)(cutsceneList, function(a, b)
-    -- function num : 0_3_0
-    do return a.ViewPhase < b.ViewPhase end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  for k,v in ipairs(cutsceneList) do
+  local cutsceneList = table.cloneconf(Cfg[cutsceneTableName]())
+  table.sort(cutsceneList, function(a, b)
+    return a.ViewPhase < b.ViewPhase
+  end)
+  for k, v in ipairs(cutsceneList) do
     rawDataArray:Insert(v, k)
   end
   return rawDataArray
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneConfigData._ParseOnePhaseRawData = function(self, phaseRawData)
-  -- function num : 0_4 , upvalues : _ENV
+function CutsceneConfigData:_ParseOnePhaseRawData(phaseRawData)
   if not phaseRawData then
-    return 
+    return
   end
-  local phaseClass = (self._viewParamDic)[phaseRawData.PhaseType]
+  local phaseClass = self._viewParamDic[phaseRawData.PhaseType]
   if not phaseClass then
-    (Log.fatal)("parse cutscene phase error, phase type = ", phaseRawData.PhaseType)
-    return 
+    Log.fatal("parse cutscene phase error, phase type = ", phaseRawData.PhaseType)
+    return
   end
   local insParam = phaseClass:New(phaseRawData.PhaseParam)
   local phaseParam = CutscenePhaseParam:New(phaseRawData.DelayType, phaseRawData.DelayFromPhase, phaseRawData.DelayMS, insParam)
   return phaseParam
 end
-
-

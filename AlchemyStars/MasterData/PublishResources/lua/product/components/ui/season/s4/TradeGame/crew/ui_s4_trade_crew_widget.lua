@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/crew/ui_s4_trade_crew_widget.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeCrewWidget", UICustomWidget)
 UIS4TradeCrewWidget = UIS4TradeCrewWidget
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeCrewWidget.Constructor = function(self)
-  -- function num : 0_0
+function UIS4TradeCrewWidget:Constructor()
   self._sliderWidth = 515
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewWidget.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIS4TradeCrewWidget:OnShow(uiParams)
   self._atlas = self:GetAsset("UIS4TradeGame.spriteatlas", LoadType.SpriteAtlas)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewWidget._GetComponents = function(self)
-  -- function num : 0_2
+function UIS4TradeCrewWidget:_GetComponents()
   local comp1, comp2, comp3 = {}, {}, {}
   comp1.valueComp = self:GetUIComponent("UILocalizationText", "power1Value")
   comp1.sliderComp = self:GetUIComponent("Slider", "power1Slider")
@@ -46,119 +33,73 @@ UIS4TradeCrewWidget._GetComponents = function(self)
   comp3.fill = self:GetUIComponent("Image", "Fill3")
   comp3.fillAreaObj = self:GetGameObject("FillArea3")
   comp3.powerNextSlider = self:GetUIComponent("Slider", "power3NextSlider")
-  self._compTb = {comp1, comp2, comp3}
+  self._compTb = {
+    comp1,
+    comp2,
+    comp3
+  }
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewWidget.SetData = function(self, tradeData, selectID)
-  -- function num : 0_3
+function UIS4TradeCrewWidget:SetData(tradeData, selectID)
   self._tradeData = tradeData
   self._selectID = selectID
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewWidget._InitComponents = function(self)
-  -- function num : 0_4
+function UIS4TradeCrewWidget:_InitComponents()
   self:Refresh(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewWidget.Refresh = function(self, isShowNext)
-  -- function num : 0_5 , upvalues : _ENV
-  local maxValue = (self._tradeData):GetShipMaxValueByID(self._selectID)
-  local curValue = (self._tradeData):GetShipCurValueByID(self._selectID)
-  local needValue = (self._tradeData):GetShipNeedValueByID(self._selectID)
-  local nextValue = (self._tradeData):GetShipNextValueByID(self._selectID)
-  local nextNeedValue = (self._tradeData):GetShipNextNeedValueByID(self._selectID)
-  for i,comp in pairs(self._compTb) do
+function UIS4TradeCrewWidget:Refresh(isShowNext)
+  local maxValue = self._tradeData:GetShipMaxValueByID(self._selectID)
+  local curValue = self._tradeData:GetShipCurValueByID(self._selectID)
+  local needValue = self._tradeData:GetShipNeedValueByID(self._selectID)
+  local nextValue = self._tradeData:GetShipNextValueByID(self._selectID)
+  local nextNeedValue = self._tradeData:GetShipNextNeedValueByID(self._selectID)
+  for i, comp in pairs(self._compTb) do
     local value = ""
     local addValue = ""
     local tempValue = nextValue[i] - curValue[i]
-    addValue = tempValue == 0 or (tempValue > 0 and "+" .. tempValue) or tempValue
-    if needValue[i] <= curValue[i] then
+    if tempValue ~= 0 then
+      addValue = 0 < tempValue and "+" .. tempValue or tempValue
+    end
+    if curValue[i] >= needValue[i] then
       value = "<color=#bb9246>" .. curValue[i] .. "</color>" .. "/" .. needValue[i]
       if isShowNext then
-        value = "<color=#bb9246>" .. curValue[i] .. (addValue) .. "</color>" .. "/" .. needValue[i]
+        value = "<color=#bb9246>" .. curValue[i] .. addValue .. "</color>" .. "/" .. needValue[i]
       end
-      -- DECOMPILER ERROR at PC63: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (comp.fill).sprite = (self._atlas):GetSprite("exp_s4_paoshang_zjm_jdt2")
+      comp.fill.sprite = self._atlas:GetSprite("exp_s4_paoshang_zjm_jdt2")
     else
       value = "<color=#985542>" .. curValue[i] .. "</color>" .. "/" .. needValue[i]
       if isShowNext then
-        value = "<color=#985542>" .. curValue[i] .. (addValue) .. "</color>" .. "/" .. needValue[i]
+        value = "<color=#985542>" .. curValue[i] .. addValue .. "</color>" .. "/" .. needValue[i]
       end
-      -- DECOMPILER ERROR at PC85: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (comp.fill).sprite = (self._atlas):GetSprite("exp_s4_paoshang_zjm_jdt3")
+      comp.fill.sprite = self._atlas:GetSprite("exp_s4_paoshang_zjm_jdt3")
     end
-    -- DECOMPILER ERROR at PC88: Confused about usage of register: R15 in 'UnsetPending'
-
-    ;
-    (comp.sliderComp).maxValue = maxValue[i]
-    -- DECOMPILER ERROR at PC91: Confused about usage of register: R15 in 'UnsetPending'
-
-    ;
-    (comp.sliderComp).value = curValue[i]
-    ;
-    (comp.valueComp):SetText(value)
-    ;
-    ((comp.levelUpRect).gameObject):SetActive(isShowNext)
-    ;
-    (comp.fillAreaObj):SetActive(isShowNext)
-    -- DECOMPILER ERROR at PC114: Confused about usage of register: R15 in 'UnsetPending'
-
-    ;
-    (comp.targetRect).anchoredPosition = Vector2(self._sliderWidth * needValue[i] / maxValue[i], 2)
-    -- DECOMPILER ERROR at PC124: Confused about usage of register: R15 in 'UnsetPending'
-
-    ;
-    (comp.levelUpRect).anchoredPosition = Vector2(self._sliderWidth * nextNeedValue[i] / maxValue[i], 3)
-    -- DECOMPILER ERROR at PC127: Confused about usage of register: R15 in 'UnsetPending'
-
-    ;
-    (comp.powerNextSlider).maxValue = maxValue[i]
-    -- DECOMPILER ERROR at PC130: Confused about usage of register: R15 in 'UnsetPending'
-
-    ;
-    (comp.powerNextSlider).value = nextValue[i]
+    comp.sliderComp.maxValue = maxValue[i]
+    comp.sliderComp.value = curValue[i]
+    comp.valueComp:SetText(value)
+    comp.levelUpRect.gameObject:SetActive(isShowNext)
+    comp.fillAreaObj:SetActive(isShowNext)
+    comp.targetRect.anchoredPosition = Vector2(self._sliderWidth * needValue[i] / maxValue[i], 2)
+    comp.levelUpRect.anchoredPosition = Vector2(self._sliderWidth * nextNeedValue[i] / maxValue[i], 3)
+    comp.powerNextSlider.maxValue = maxValue[i]
+    comp.powerNextSlider.value = nextValue[i]
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewWidget.OptionRefresh = function(self, optionValue)
-  -- function num : 0_6 , upvalues : _ENV
-  local optionValue = (self._tradeData):GetShipOptionValue(self._selectID, optionValue)
-  local maxValue = (self._tradeData):GetShipMaxValueByID(self._selectID)
-  for i,comp in pairs(self._compTb) do
+function UIS4TradeCrewWidget:OptionRefresh(optionValue)
+  local optionValue = self._tradeData:GetShipOptionValue(self._selectID, optionValue)
+  local maxValue = self._tradeData:GetShipMaxValueByID(self._selectID)
+  for i, comp in pairs(self._compTb) do
     local value = optionValue[i] .. "/" .. maxValue[i]
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (comp.sliderComp).maxValue = maxValue[i]
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (comp.sliderComp).value = optionValue[i]
-    ;
-    (comp.valueComp):SetText(value)
-    ;
-    ((comp.levelUpRect).gameObject):SetActive(false)
+    comp.sliderComp.maxValue = maxValue[i]
+    comp.sliderComp.value = optionValue[i]
+    comp.valueComp:SetText(value)
+    comp.levelUpRect.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewWidget.GetCompByType = function(self, type)
-  -- function num : 0_7
-  return (self._compTb)[type + 1]
+function UIS4TradeCrewWidget:GetCompByType(type)
+  return self._compTb[type + 1]
 end
-
-

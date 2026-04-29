@@ -1,24 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_enemy_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetEnemyPet", UICustomWidget)
 UIWidgetEnemyPet = UIWidgetEnemyPet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetEnemyPet.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWidgetEnemyPet:OnShow()
   self._uiBattleAtlas = self:GetAsset("InnerUI.spriteatlas", LoadType.SpriteAtlas)
   self.petIndex = 0
   self.petPstID = 0
   self._showMultiBuffLayer = nil
   self._offset = self:GetUIComponent("RectTransform", "offset")
   self._tweenerOffset = nil
-  local effCharge = (self:GetGameObject("EffCharge")).transform
-  self._effCharge = (UIHelper.GetGameObject)("UIEff_UIWidgetBattlePet_Charge_N7.prefab")
-  ;
-  ((self._effCharge).transform):SetParent(effCharge, false)
+  local effCharge = self:GetGameObject("EffCharge").transform
+  self._effCharge = UIHelper.GetGameObject("UIEff_UIWidgetBattlePet_Charge_N7.prefab")
+  self._effCharge.transform:SetParent(effCharge, false)
   self.txtEnergy = self:GetUIComponent("UILocalizationText", "CurEnergyText")
   self._PassiveSkillGO = self:GetGameObject("PassiveSkill")
   self._txtAccumulate = self:GetUIComponent("UILocalizationText", "AccumulateTxt")
@@ -41,26 +33,21 @@ UIWidgetEnemyPet.OnShow = function(self)
   self._attrMain = self:GetUIComponent("Image", "Attribute")
   self._attrVice = self:GetUIComponent("Image", "Attribute2")
   self._touchArea = self:GetGameObject("TouchArea")
-  ;
-  (self._touchArea):SetActive(false)
+  self._touchArea:SetActive(false)
   self.powerFull = self:GetGameObject("EffPowerFull")
-  ;
-  (self.powerFull):SetActive(false)
+  self.powerFull:SetActive(false)
   self._rootAnimation = self:GetUIComponent("Animation", "root")
   self._addCdAnimation = false
   self._skillReadyGO = self:GetGameObject("UISkillReadyN7")
   self._skillReadyBG = self:GetUIComponent("Image", "skillReadyBG")
   self._skillReadyBGAtlas = self:GetAsset("UISkillReady.spriteatlas", LoadType.SpriteAtlas)
   self.alreadyCastActiveImage = self:GetGameObject("AlreadyCastActiveImage")
-  ;
-  (self.alreadyCastActiveImage):SetActive(false)
+  self.alreadyCastActiveImage:SetActive(false)
   self._cdGO = self:GetGameObject("CD")
-  local etl = (UICustomUIEventListener.Get)(self._touchArea)
+  local etl = UICustomUIEventListener.Get(self._touchArea)
   self:AddUICustomEventListener(etl, UIEvent.Click, function(go)
-    -- function num : 0_0_0 , upvalues : self
-    (self.clickCallback)(go)
-  end
-)
+    self.clickCallback(go)
+  end)
   self.isReady = false
   self.skillID = nil
   self.Power = 0
@@ -75,17 +62,11 @@ UIWidgetEnemyPet.OnShow = function(self)
   self:AttachEvent(GameEventType.EnemyPetCastActiveSkill, self.OnCastActiveSkill)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (UIHelper.DestroyGameObject)(self._effCharge)
+function UIWidgetEnemyPet:OnHide()
+  UIHelper.DestroyGameObject(self._effCharge)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.SetData = function(self, index, petData, clickCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetEnemyPet:SetData(index, petData, clickCallback)
   self.uiid = index
   self.petIndex = index
   self.petPstID = petData:GetPstID()
@@ -93,7 +74,7 @@ UIWidgetEnemyPet.SetData = function(self, index, petData, clickCallback)
   self.skillID = petData:GetPetActiveSkill()
   self._passiveSkillID = petData:GetPetPassiveSkill()
   self.clickCallback = clickCallback
-  local skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(self.skillID, self.petPstID)
+  local skillConfigData = ConfigServiceHelper.GetSkillConfigData(self.skillID, self.petPstID)
   self.skillTriggerType = skillConfigData:GetSkillTriggerType()
   local triggerPower = skillConfigData:GetSkillTriggerParam()
   self.maxPower = triggerPower
@@ -106,11 +87,9 @@ UIWidgetEnemyPet.SetData = function(self, index, petData, clickCallback)
     end
   end
   local headIconName = petData:GetPetHead(PetSkinEffectPath.HEAD_ICON_CHAIN_SKILL_PREVIEW)
-  ;
-  (self.headIcon):LoadImage(headIconName)
+  self.headIcon:LoadImage(headIconName)
   local bodyName = petData:GetPetTeamBody(PetSkinEffectPath.CARD_TEAM)
-  ;
-  (self._imgChainSkillIcon):LoadImage(bodyName)
+  self._imgChainSkillIcon:LoadImage(bodyName)
   self:ShowElement(petData)
   self._mainAttr = petData:GetPetFirstElement()
   self._viceAttr = petData:GetPetSecondElement()
@@ -123,102 +102,76 @@ UIWidgetEnemyPet.SetData = function(self, index, petData, clickCallback)
   self:InitSkillReadyEff()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.InitSkillReadyEff = function(self)
-  -- function num : 0_3
-  local element2Color = {[1] = "sprite_skill_shui", [2] = "sprite_skill_huo", [3] = "sprite_skill_sen", [4] = "sprite_skill_lei"}
+function UIWidgetEnemyPet:InitSkillReadyEff()
+  local element2Color = {
+    [1] = "sprite_skill_shui",
+    [2] = "sprite_skill_huo",
+    [3] = "sprite_skill_sen",
+    [4] = "sprite_skill_lei"
+  }
   local animationName = element2Color[self.petElement]
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._skillReadyBG).sprite = (self._skillReadyBGAtlas):GetSprite(animationName)
+  self._skillReadyBG.sprite = self._skillReadyBGAtlas:GetSprite(animationName)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.OnChangePower = function(self, power, effect)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWidgetEnemyPet:OnChangePower(power, effect)
   if self.skillTriggerType == SkillTriggerType.LegendEnergy then
     self.Power = power
-    ;
-    (self._cdGO):SetActive(false)
-    return 
+    self._cdGO:SetActive(false)
+    return
   end
   if power <= 0 then
     power = 0
   end
   if self.Power == 0 then
-    if (GuideHelper.DontShowMainSkillMission)() then
-      (self._cdGO):SetActive(false)
+    if GuideHelper.DontShowMainSkillMission() then
+      self._cdGO:SetActive(false)
     else
-      ;
-      (self._cdGO):SetActive(power ~= 0)
+      self._cdGO:SetActive(power ~= 0)
     end
   end
   if self.isReady or self.Power == 0 then
-    (self.alreadyCastActiveImage):SetActive(false)
+    self.alreadyCastActiveImage:SetActive(false)
   end
-  ;
-  (self.txtEnergy):SetText(tostring(power))
+  self.txtEnergy:SetText(tostring(power))
   if self.Power == power then
-    return 
+    return
   end
   self.Power = power
   self:_OnPlayPowerAddEffect(effect)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.OnChangeLegendPower = function(self, power, effect)
-  -- function num : 0_5 , upvalues : _ENV
+function UIWidgetEnemyPet:OnChangeLegendPower(power, effect)
   if self.skillTriggerType ~= SkillTriggerType.LegendEnergy then
-    return 
+    return
   end
-  ;
-  (self._cdGO):SetActive(false)
-  ;
-  (self.alreadyCastActiveImage):SetActive(false)
-  ;
-  ((self._PassiveSkillGO).gameObject):SetActive(true)
-  ;
-  ((self._txtAccumulate).gameObject):SetActive(power ~= 0)
-  ;
-  (self._txtAccumulate):SetText(tostring(power))
+  self._cdGO:SetActive(false)
+  self.alreadyCastActiveImage:SetActive(false)
+  self._PassiveSkillGO.gameObject:SetActive(true)
+  self._txtAccumulate.gameObject:SetActive(power ~= 0)
+  self._txtAccumulate:SetText(tostring(power))
   if self.Power == power then
-    return 
+    return
   end
   self.Power = power
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet._OnPlayPowerAddEffect = function(self, effect)
-  -- function num : 0_6
+function UIWidgetEnemyPet:_OnPlayPowerAddEffect(effect)
   if self.Power > 0 then
-    (self._effCharge):SetActive(false)
+    self._effCharge:SetActive(false)
     if effect then
-      (self._effCharge):SetActive(true)
+      self._effCharge:SetActive(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.OnPowerReady = function(self, playReminder)
-  -- function num : 0_7 , upvalues : _ENV
-  (self.powerFull):SetActive(true)
+function UIWidgetEnemyPet:OnPowerReady(playReminder)
+  self.powerFull:SetActive(true)
   if playReminder then
-    (InnerGameHelperRender.InnerGamePlayPetUIVoice)("Charge", self._petTemplateID)
-    ;
-    (self._skillReadyGO):SetActive(false)
-    ;
-    (self._skillReadyGO):SetActive(true)
+    InnerGameHelperRender.InnerGamePlayPetUIVoice("Charge", self._petTemplateID)
+    self._skillReadyGO:SetActive(false)
+    self._skillReadyGO:SetActive(true)
   end
-  ;
-  (self._cdGO):SetActive(false)
+  self._cdGO:SetActive(false)
   self.isReady = true
   if self.skillTriggerType ~= SkillTriggerType.LegendEnergy then
     self.Power = 0
@@ -226,453 +179,299 @@ UIWidgetEnemyPet.OnPowerReady = function(self, playReminder)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.OnPowerCancelReady = function(self, addCdAnimation)
-  -- function num : 0_8 , upvalues : _ENV
-  (self.powerFull):SetActive(false)
+function UIWidgetEnemyPet:OnPowerCancelReady(addCdAnimation)
+  self.powerFull:SetActive(false)
   self.isReady = false
   if self.skillTriggerType ~= SkillTriggerType.LegendEnergy then
-    (self._cdGO):SetActive(true)
+    self._cdGO:SetActive(true)
     if addCdAnimation ~= 0 then
       self._addCdAnimation = true
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.OnShowPetInfoInish = function(self)
-  -- function num : 0_9
+function UIWidgetEnemyPet:OnShowPetInfoInish()
   if not self._addCdAnimation then
-    return 
+    return
   end
   self._addCdAnimation = false
-  ;
-  (self._rootAnimation):Play("uieff_jiacdbuff")
+  self._rootAnimation:Play("uieff_jiacdbuff")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.FlushIndex = function(self, idx)
-  -- function num : 0_10
+function UIWidgetEnemyPet:FlushIndex(idx)
   self.petIndex = idx
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.IsMyPet = function(self, petPstID)
-  -- function num : 0_11
+function UIWidgetEnemyPet:IsMyPet(petPstID)
   if self.petPstID == petPstID then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.GetPetPstID = function(self)
-  -- function num : 0_12
+function UIWidgetEnemyPet:GetPetPstID()
   return self.petPstID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.GetSkillID = function(self)
-  -- function num : 0_13
+function UIWidgetEnemyPet:GetSkillID()
   return self.skillID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.Index = function(self)
-  -- function num : 0_14
+function UIWidgetEnemyPet:Index()
   return self.uiid
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.OnCastActiveSkill = function(self, pstid)
-  -- function num : 0_15 , upvalues : _ENV
+function UIWidgetEnemyPet:OnCastActiveSkill(pstid)
   if self.petPstID == pstid then
-    local pm = (GameGlobal.GetModule)(PetAudioModule)
-    ;
-    (InnerGameHelperRender.InnerGamePlayPetUIVoice)("Skill", self._petTemplateID, true)
+    local pm = GameGlobal.GetModule(PetAudioModule)
+    InnerGameHelperRender.InnerGamePlayPetUIVoice("Skill", self._petTemplateID, true)
     self:ClearPower()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.ClearPower = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIWidgetEnemyPet:ClearPower()
   if self.skillTriggerType == SkillTriggerType.LegendEnergy then
-    local skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(self.skillID, self.petPstID)
+    local skillConfigData = ConfigServiceHelper.GetSkillConfigData(self.skillID, self.petPstID)
     self.Power = self.Power - skillConfigData:GetSkillTriggerParam()
     if self.Power < skillConfigData:GetSkillTriggerParam() then
       self.isReady = false
-      ;
-      (self.powerFull):SetActive(false)
+      self.powerFull:SetActive(false)
     end
     self:OnChangeLegendPower(self.Power, nil)
   else
-    do
-      self.Power = 0
-      self.isReady = false
-      ;
-      (self.powerFull):SetActive(false)
-      ;
-      (self.alreadyCastActiveImage):SetActive(true)
-    end
+    self.Power = 0
+    self.isReady = false
+    self.powerFull:SetActive(false)
+    self.alreadyCastActiveImage:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.ShowElement = function(self, pet)
-  -- function num : 0_17 , upvalues : _ENV
+function UIWidgetEnemyPet:ShowElement(pet)
   if pet == nil then
-    return 
+    return
   end
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
+  local cfg_pet_element = Cfg.cfg_pet_element({})
   if cfg_pet_element then
     local _1stElement = pet:GetPetFirstElement()
     if _1stElement then
-      ((self._attrMain).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._attrMain).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[_1stElement]).Icon .. "_battle"))
+      self._attrMain.gameObject:SetActive(true)
+      self._attrMain.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[_1stElement].Icon .. "_battle"))
     else
-      ;
-      ((self._attrMain).gameObject):SetActive(false)
+      self._attrMain.gameObject:SetActive(false)
     end
     local _2ndElement = pet:GetPetSecondElement()
     if _2ndElement then
-      ((self._attrVice).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC60: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._attrVice).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[_2ndElement]).Icon .. "_battle"))
+      self._attrVice.gameObject:SetActive(true)
+      self._attrVice.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[_2ndElement].Icon .. "_battle"))
     else
-      ;
-      ((self._attrVice).gameObject):SetActive(false)
+      self._attrVice.gameObject:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.InOutQueue = function(self, petPstID, out)
-  -- function num : 0_18
+function UIWidgetEnemyPet:InOutQueue(petPstID, out)
   if petPstID ~= self.petPstID then
-    return 
+    return
   end
   if self._tweenerOffset then
-    (self._tweenerOffset):Complete()
+    self._tweenerOffset:Complete()
   end
   local duration = 0.2
   local offsetEndX = 0
   if out then
     offsetEndX = 25
   end
-  self._tweenerOffset = (self._offset):DOAnchorPosX(offsetEndX, duration)
+  self._tweenerOffset = self._offset:DOAnchorPosX(offsetEndX, duration)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.FlushPetChainSkillItem = function(self, isLocalTeam, chainPathLen, elementType)
-  -- function num : 0_19
+function UIWidgetEnemyPet:FlushPetChainSkillItem(isLocalTeam, chainPathLen, elementType)
   if isLocalTeam then
-    return 
+    return
   end
   if chainPathLen == 0 then
     self:InOutQueue(self.petPstID, false)
-    return 
-  else
-    if chainPathLen == 1 then
-      if self.petIndex == 1 then
-        self:InOutQueue(self.petPstID, true)
-      else
-        self:InOutQueue(self.petPstID, false)
-        return 
-      end
+    return
+  elseif chainPathLen == 1 then
+    if self.petIndex == 1 then
+      self:InOutQueue(self.petPstID, true)
     else
-      if self.petIndex == 1 then
-        self:InOutQueue(self.petPstID, true)
-      else
-        if (self._mainAttr ~= elementType and self._viceAttr ~= elementType) or self.isSealedCurse then
-          self:InOutQueue(self.petPstID, false)
-          return 
-        else
-          self:InOutQueue(self.petPstID, true)
-        end
-      end
+      self:InOutQueue(self.petPstID, false)
+      return
     end
+  elseif self.petIndex == 1 then
+    self:InOutQueue(self.petPstID, true)
+  elseif self._mainAttr ~= elementType and self._viceAttr ~= elementType or self.isSealedCurse then
+    self:InOutQueue(self.petPstID, false)
+    return
+  else
+    self:InOutQueue(self.petPstID, true)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.ShowHideChainSkillCG = function(self, petPstID, isShow)
-  -- function num : 0_20 , upvalues : _ENV
+function UIWidgetEnemyPet:ShowHideChainSkillCG(petPstID, isShow)
   if petPstID ~= self.petPstID then
-    return 
+    return
   end
   local s, e = 0, -280
   if not isShow then
-    s = e
+    s, e = e, s
   end
-  ;
-  ((((self._goChainSkillReady).transform):DOAnchorPosX(0, 0.2)):OnStart(function()
-    -- function num : 0_20_0 , upvalues : isShow, self, _ENV, e
+  self._goChainSkillReady.transform:DOAnchorPosX(0, 0.2):OnStart(function()
     if isShow then
-      (self._goChainSkillReady):SetActive(true)
-      ;
-      ((self._offset).gameObject):SetActive(false)
-      ;
-      (self._skillReadyGO):SetActive(false)
+      self._goChainSkillReady:SetActive(true)
+      self._offset.gameObject:SetActive(false)
+      self._skillReadyGO:SetActive(false)
     end
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    ((self._goChainSkillReady).transform).anchoredPosition = Vector2(e, 0)
-  end
-)):OnComplete(function()
-    -- function num : 0_20_1 , upvalues : isShow, self
+    self._goChainSkillReady.transform.anchoredPosition = Vector2(e, 0)
+  end):OnComplete(function()
     if not isShow then
-      (self._goChainSkillReady):SetActive(false)
-      ;
-      ((self._offset).gameObject):SetActive(true)
+      self._goChainSkillReady:SetActive(false)
+      self._offset.gameObject:SetActive(true)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.InitLegendEnergySkill = function(self)
-  -- function num : 0_21
-  ((self._imageDiamondLight).gameObject):SetActive(false)
-  ;
-  ((self._imageDiamondBlack).gameObject):SetActive(false)
-  ;
-  ((self._imageIconA).gameObject):SetActive(true)
-  ;
-  ((self._imageIconB).gameObject):SetActive(false)
-  ;
-  ((self._imageIconC).gameObject):SetActive(false)
+function UIWidgetEnemyPet:InitLegendEnergySkill()
+  self._imageDiamondLight.gameObject:SetActive(false)
+  self._imageDiamondBlack.gameObject:SetActive(false)
+  self._imageIconA.gameObject:SetActive(true)
+  self._imageIconB.gameObject:SetActive(false)
+  self._imageIconC.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.InitPassiveSkill = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIWidgetEnemyPet:InitPassiveSkill()
   if not self._passiveSkillID or self._passiveSkillID == 0 then
-    ((self._PassiveSkillGO).gameObject):SetActive(false)
-    return 
+    self._PassiveSkillGO.gameObject:SetActive(false)
+    return
   end
-  local passiveSkillCfg = ((Cfg.cfg_passive_skill)[self._passiveSkillID]).ShowMethod
+  local passiveSkillCfg = Cfg.cfg_passive_skill[self._passiveSkillID].ShowMethod
   if passiveSkillCfg == nil then
-    ((self._PassiveSkillGO).gameObject):SetActive(false)
-    return 
+    self._PassiveSkillGO.gameObject:SetActive(false)
+    return
   end
-  ;
-  ((self._PassiveSkillGO).gameObject):SetActive(true)
-  do
-    if passiveSkillCfg[1] == "1" then
-      local defaultLight = true
-      if passiveSkillCfg[2] == "1" then
-        defaultLight = true
-      else
-        defaultLight = false
-      end
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R3 in 'UnsetPending'
-
-      if passiveSkillCfg[3] then
-        if passiveSkillCfg[3] == "1" then
-          (self._imageDiamondLight).sprite = (self._uiBattleAtlas):GetSprite("1601561_nina_san_02")
-          -- DECOMPILER ERROR at PC57: Confused about usage of register: R3 in 'UnsetPending'
-
-          ;
-          (self._imageDiamondBlack).sprite = (self._uiBattleAtlas):GetSprite("1601561_nina_san_01")
-        else
-          -- DECOMPILER ERROR at PC64: Confused about usage of register: R3 in 'UnsetPending'
-
-          ;
-          (self._imageDiamondLight).sprite = (self._uiBattleAtlas):GetSprite("thread_junei_icon8")
-          -- DECOMPILER ERROR at PC70: Confused about usage of register: R3 in 'UnsetPending'
-
-          ;
-          (self._imageDiamondBlack).sprite = (self._uiBattleAtlas):GetSprite("thread_junei_icon9")
-        end
-      else
-        -- DECOMPILER ERROR at PC77: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._imageDiamondLight).sprite = (self._uiBattleAtlas):GetSprite("thread_junei_icon8")
-        -- DECOMPILER ERROR at PC83: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._imageDiamondBlack).sprite = (self._uiBattleAtlas):GetSprite("thread_junei_icon9")
-      end
-      ;
-      ((self._imageDiamondLight).gameObject):SetActive(defaultLight)
-      ;
-      ((self._imageDiamondBlack).gameObject):SetActive(not defaultLight)
-      ;
-      ((self._imageIconA).gameObject):SetActive(false)
-      ;
-      ((self._imageIconB).gameObject):SetActive(false)
-      ;
-      ((self._imageIconC).gameObject):SetActive(false)
-      ;
-      ((self._txtAccumulate).gameObject):SetActive(false)
-      self:AttachEvent(GameEventType.ActivatePassive, self.ActivatePassive)
+  self._PassiveSkillGO.gameObject:SetActive(true)
+  if passiveSkillCfg[1] == "1" then
+    local defaultLight = true
+    if passiveSkillCfg[2] == "1" then
+      defaultLight = true
+    else
+      defaultLight = false
     end
-    if passiveSkillCfg[1] == "2" or passiveSkillCfg[1] == "3" then
-      ((self._txtAccumulate).gameObject):SetActive(true)
-      ;
-      (self._txtAccumulate):SetText("0")
-      ;
-      ((self._imageIconA).gameObject):SetActive(false)
-      ;
-      ((self._imageIconB).gameObject):SetActive(false)
-      ;
-      ((self._imageIconC).gameObject):SetActive(false)
-      ;
-      ((self._imageDiamondLight).gameObject):SetActive(false)
-      ;
-      ((self._imageDiamondBlack).gameObject):SetActive(false)
+    if passiveSkillCfg[3] then
+      if passiveSkillCfg[3] == "1" then
+        self._imageDiamondLight.sprite = self._uiBattleAtlas:GetSprite("1601561_nina_san_02")
+        self._imageDiamondBlack.sprite = self._uiBattleAtlas:GetSprite("1601561_nina_san_01")
+      else
+        self._imageDiamondLight.sprite = self._uiBattleAtlas:GetSprite("thread_junei_icon8")
+        self._imageDiamondBlack.sprite = self._uiBattleAtlas:GetSprite("thread_junei_icon9")
+      end
+    else
+      self._imageDiamondLight.sprite = self._uiBattleAtlas:GetSprite("thread_junei_icon8")
+      self._imageDiamondBlack.sprite = self._uiBattleAtlas:GetSprite("thread_junei_icon9")
+    end
+    self._imageDiamondLight.gameObject:SetActive(defaultLight)
+    self._imageDiamondBlack.gameObject:SetActive(not defaultLight)
+    self._imageIconA.gameObject:SetActive(false)
+    self._imageIconB.gameObject:SetActive(false)
+    self._imageIconC.gameObject:SetActive(false)
+    self._txtAccumulate.gameObject:SetActive(false)
+    self:AttachEvent(GameEventType.ActivatePassive, self.ActivatePassive)
+  end
+  if passiveSkillCfg[1] == "2" or passiveSkillCfg[1] == "3" then
+    self._txtAccumulate.gameObject:SetActive(true)
+    self._txtAccumulate:SetText("0")
+    self._imageIconA.gameObject:SetActive(false)
+    self._imageIconB.gameObject:SetActive(false)
+    self._imageIconC.gameObject:SetActive(false)
+    self._imageDiamondLight.gameObject:SetActive(false)
+    self._imageDiamondBlack.gameObject:SetActive(false)
+    if passiveSkillCfg[2] == "a" then
+      self._imageIconA.gameObject:SetActive(true)
+    elseif passiveSkillCfg[2] == "b" then
+      self._imageIconB.gameObject:SetActive(true)
+    elseif passiveSkillCfg[2] == "c" then
+      self._imageIconC.gameObject:SetActive(true)
+    end
+    if self.skillTriggerType == SkillTriggerType.LegendEnergy then
+      self._txtAccumulate1:SetText("0")
+      self._imageIconA1.gameObject:SetActive(false)
+      self._imageIconB1.gameObject:SetActive(false)
+      self._imageIconC1.gameObject:SetActive(false)
+      self._imageDiamondLight.gameObject:SetActive(false)
+      self._imageDiamondBlack.gameObject:SetActive(false)
       if passiveSkillCfg[2] == "a" then
-        ((self._imageIconA).gameObject):SetActive(true)
-      else
-        if passiveSkillCfg[2] == "b" then
-          ((self._imageIconB).gameObject):SetActive(true)
-        else
-          if passiveSkillCfg[2] == "c" then
-            ((self._imageIconC).gameObject):SetActive(true)
-          end
-        end
-      end
-      if self.skillTriggerType == SkillTriggerType.LegendEnergy then
-        (self._txtAccumulate1):SetText("0")
-        ;
-        ((self._imageIconA1).gameObject):SetActive(false)
-        ;
-        ((self._imageIconB1).gameObject):SetActive(false)
-        ;
-        ((self._imageIconC1).gameObject):SetActive(false)
-        ;
-        ((self._imageDiamondLight).gameObject):SetActive(false)
-        ;
-        ((self._imageDiamondBlack).gameObject):SetActive(false)
-        if passiveSkillCfg[2] == "a" then
-          ((self._imageIconA1).gameObject):SetActive(true)
-        else
-          if passiveSkillCfg[2] == "b" then
-            ((self._imageIconB1).gameObject):SetActive(true)
-          else
-            if passiveSkillCfg[2] == "c" then
-              ((self._imageIconC1).gameObject):SetActive(true)
-            end
-          end
-        end
-      end
-      ;
-      ((self._PassiveSkillGO).gameObject):SetActive(false)
-      if passiveSkillCfg[3] then
-        self._showMultiBuffLayer = {}
-        local arr = (string.split)(passiveSkillCfg[3], "|")
-        for _,buffID in ipairs(arr) do
-          (table.insert)(self._showMultiBuffLayer, tonumber(buffID))
-        end
-      end
-      do
-        self:AttachEvent(GameEventType.SetAccumulateNum, self.SetAccumulateNum)
+        self._imageIconA1.gameObject:SetActive(true)
+      elseif passiveSkillCfg[2] == "b" then
+        self._imageIconB1.gameObject:SetActive(true)
+      elseif passiveSkillCfg[2] == "c" then
+        self._imageIconC1.gameObject:SetActive(true)
       end
     end
+    self._PassiveSkillGO.gameObject:SetActive(false)
+    if passiveSkillCfg[3] then
+      self._showMultiBuffLayer = {}
+      local arr = string.split(passiveSkillCfg[3], "|")
+      for _, buffID in ipairs(arr) do
+        table.insert(self._showMultiBuffLayer, tonumber(buffID))
+      end
+    end
+    self:AttachEvent(GameEventType.SetAccumulateNum, self.SetAccumulateNum)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.ActivatePassive = function(self, pstId, onOff)
-  -- function num : 0_23
+function UIWidgetEnemyPet:ActivatePassive(pstId, onOff)
   if pstId == self.petPstID then
-    ((self._imageDiamondLight).gameObject):SetActive(onOff)
-    ;
-    ((self._imageDiamondBlack).gameObject):SetActive(not onOff)
+    self._imageDiamondLight.gameObject:SetActive(onOff)
+    self._imageDiamondBlack.gameObject:SetActive(not onOff)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.SetAccumulateNum = function(self, pstId, num)
-  -- function num : 0_24 , upvalues : _ENV
+function UIWidgetEnemyPet:SetAccumulateNum(pstId, num)
   if pstId == self.petPstID then
-    if self._showMultiBuffLayer and (table.count)(self._showMultiBuffLayer) > 0 then
+    if self._showMultiBuffLayer and table.count(self._showMultiBuffLayer) > 0 then
       local layer = 0
-      local viewInstanceArray = (InnerGameHelperRender.GetBuffViewByPetPstID)(self.petPstID)
-      for i,buffView in ipairs(viewInstanceArray) do
-        local curLayer = not (table.icontains)(self._showMultiBuffLayer, buffView:BuffID()) or buffView:GetLayerCount() or 0
-        layer = layer + curLayer
+      local viewInstanceArray = InnerGameHelperRender.GetBuffViewByPetPstID(self.petPstID)
+      for i, buffView in ipairs(viewInstanceArray) do
+        if table.icontains(self._showMultiBuffLayer, buffView:BuffID()) then
+          local curLayer = buffView:GetLayerCount() or 0
+          layer = layer + curLayer
+        end
       end
       num = layer
     end
-    do
-      if num <= 0 then
-        if self.skillTriggerType == SkillTriggerType.LegendEnergy then
-          ((self._txtAccumulate1).gameObject):SetActive(false)
-        else
-          ;
-          ((self._PassiveSkillGO).gameObject):SetActive(false)
-        end
+    if num <= 0 then
+      if self.skillTriggerType == SkillTriggerType.LegendEnergy then
+        self._txtAccumulate1.gameObject:SetActive(false)
       else
-        ;
-        ((self._PassiveSkillGO).gameObject):SetActive(true)
-        if self.skillTriggerType == SkillTriggerType.LegendEnergy then
-          ((self._txtAccumulate1).gameObject):SetActive(true)
-          ;
-          (self._txtAccumulate1):SetText(tostring(num))
-        else
-          ;
-          (self._txtAccumulate):SetText(tostring(num))
-        end
+        self._PassiveSkillGO.gameObject:SetActive(false)
+      end
+    else
+      self._PassiveSkillGO.gameObject:SetActive(true)
+      if self.skillTriggerType == SkillTriggerType.LegendEnergy then
+        self._txtAccumulate1.gameObject:SetActive(true)
+        self._txtAccumulate1:SetText(tostring(num))
+      else
+        self._txtAccumulate:SetText(tostring(num))
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet._OnChangePetActiveSkill = function(self, pstId, skillID)
-  -- function num : 0_25
+function UIWidgetEnemyPet:_OnChangePetActiveSkill(pstId, skillID)
   if pstId ~= self.petPstID then
-    return 
+    return
   end
   self.skillID = skillID
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet.OnChangeHeadAlpha = function(self, alpha)
-  -- function num : 0_26
-  local color = (self.headMask).color
+function UIWidgetEnemyPet:OnChangeHeadAlpha(alpha)
+  local color = self.headMask.color
   color.a = alpha
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.headMask).color = color
+  self.headMask.color = color
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetEnemyPet._ActiveBattlePet = function(self)
-  -- function num : 0_27
+function UIWidgetEnemyPet:_ActiveBattlePet()
   if self._touchArea then
-    (self._touchArea):SetActive(true)
+    self._touchArea:SetActive(true)
   end
 end
-
-

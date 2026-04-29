@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_level_trap_common_summon_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayLevelTrapCommonSummonInstruction", BaseInstruction)
 PlayLevelTrapCommonSummonInstruction = PlayLevelTrapCommonSummonInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayLevelTrapCommonSummonInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayLevelTrapCommonSummonInstruction:Constructor(paramList)
   self._paramList = paramList
   self._destroyEffectID = tonumber(paramList.destroyEffectID)
   self._lvUpEffectID = tonumber(paramList.lvUpEffectID)
@@ -21,34 +14,27 @@ PlayLevelTrapCommonSummonInstruction.Constructor = function(self, paramList)
   self._forceMeanTime = 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayLevelTrapCommonSummonInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayLevelTrapCommonSummonInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local routineCmpt = (casterEntity:SkillRoutine()):GetResultContainer()
+  local routineCmpt = casterEntity:SkillRoutine():GetResultContainer()
   if not routineCmpt then
-    return 
+    return
   end
-  local resultArray = nil
+  local resultArray
   resultArray = routineCmpt:GetEffectResultsAsArray(SkillEffectType.LevelTrapAbsortSummon)
+  resultArray = resultArray or routineCmpt:GetEffectResultsAsArray(SkillEffectType.LevelTrapUpLevel)
+  resultArray = resultArray or routineCmpt:GetEffectResultsAsArray(SkillEffectType.LevelTrapSummonOrUpLevel)
   if not resultArray then
-    resultArray = routineCmpt:GetEffectResultsAsArray(SkillEffectType.LevelTrapUpLevel)
-  end
-  if not resultArray then
-    resultArray = routineCmpt:GetEffectResultsAsArray(SkillEffectType.LevelTrapSummonOrUpLevel)
-  end
-  if not resultArray then
-    return 
+    return
   end
   local effectService = world:GetService("Effect")
   local trapServiceRender = world:GetService("TrapRender")
   local hasMaxLevel = false
   if self._lvUpEffectID and self._lvUpEffectID > 0 then
-    for _,result in ipairs(resultArray) do
+    for _, result in ipairs(resultArray) do
       local destroyList = result:GetDestroyList()
       if destroyList then
-        for index,destroyResult in ipairs(destroyList) do
+        for index, destroyResult in ipairs(destroyList) do
           local eID = destroyResult:GetEntityID()
           local eTrap = world:GetEntityByID(eID)
           if eTrap then
@@ -58,102 +44,91 @@ PlayLevelTrapCommonSummonInstruction.DoInstruction = function(self, TT, casterEn
       end
     end
   end
-  do
-    if self._destroyDelay > 0 then
-      YIELD(TT, self._destroyDelay)
-    end
-    for _,result in ipairs(resultArray) do
-      do
-        local destroyList = result:GetDestroyList()
-        if destroyList then
-          for index,destroyResult in ipairs(destroyList) do
-            local eID = destroyResult:GetEntityID()
-            local eTrap = world:GetEntityByID(eID)
-            if eTrap then
-              trapServiceRender:PlayTrapDieSkill(TT, {eTrap}, true)
-              if self._destroyEffectID and self._destroyEffectID > 0 then
-                effectService:CreateWorldPositionEffect(self._destroyEffectID, eTrap:GetGridPosition())
-              end
-              if self._destroyInterval > 0 and index < #destroyList then
-                YIELD(TT, self._destroyInterval)
-              end
-            end
-          end
-          -- DECOMPILER ERROR at PC129: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC129: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
-    end
-    if self._summonDelay > 0 then
-      YIELD(TT, self._summonDelay)
-    end
-    for _,result in ipairs(resultArray) do
-      local summonList = result:GetSummonList()
-      if result:HasMaxLevel() then
-        hasMaxLevel = true
-      end
-      if summonList then
-        for __,summonResult in ipairs(summonList) do
-          local trapIDList = summonResult:GetTrapIDList()
-          for i = 1, #trapIDList do
-            local trapEntity = world:GetEntityByID(trapIDList[i])
-            local summonPos = Vector2((summonResult:GetPos()).x, (summonResult:GetPos()).y)
-            if self._forceMeanTime and self._forceMeanTime == 1 then
-              ((GameGlobal.TaskManager)()):CoreGameStartTask(function()
-    -- function num : 0_1_0 , upvalues : self, TT, world, trapEntity, summonPos
-    self:_ShowTrap(TT, world, trapEntity, summonPos)
+  if 0 < self._destroyDelay then
+    YIELD(TT, self._destroyDelay)
   end
-)
-            else
-              self:_ShowTrap(TT, world, trapEntity, summonPos)
-            end
+  for _, result in ipairs(resultArray) do
+    local destroyList = result:GetDestroyList()
+    if destroyList then
+      for index, destroyResult in ipairs(destroyList) do
+        local eID = destroyResult:GetEntityID()
+        local eTrap = world:GetEntityByID(eID)
+        if eTrap then
+          trapServiceRender:PlayTrapDieSkill(TT, {eTrap}, true)
+          if self._destroyEffectID and 0 < self._destroyEffectID then
+            effectService:CreateWorldPositionEffect(self._destroyEffectID, eTrap:GetGridPosition())
+          end
+          if 0 < self._destroyInterval and index < #destroyList then
+            YIELD(TT, self._destroyInterval)
           end
         end
       end
     end
-    if hasMaxLevel then
-      effectService:CreateScreenEffPointEffect(self._maxLevelCamEffectID)
-      ;
-      (AudioHelperController.PlayInnerGameSfx)(self._maxLevelAudioID)
+  end
+  if 0 < self._summonDelay then
+    YIELD(TT, self._summonDelay)
+  end
+  for _, result in ipairs(resultArray) do
+    local summonList = result:GetSummonList()
+    if result:HasMaxLevel() then
+      hasMaxLevel = true
     end
+    if summonList then
+      for __, summonResult in ipairs(summonList) do
+        local trapIDList = summonResult:GetTrapIDList()
+        for i = 1, #trapIDList do
+          local trapEntity = world:GetEntityByID(trapIDList[i])
+          local summonPos = Vector2(summonResult:GetPos().x, summonResult:GetPos().y)
+          if self._forceMeanTime and self._forceMeanTime == 1 then
+            GameGlobal.TaskManager():CoreGameStartTask(function()
+              self:_ShowTrap(TT, world, trapEntity, summonPos)
+            end)
+          else
+            self:_ShowTrap(TT, world, trapEntity, summonPos)
+          end
+        end
+      end
+    end
+  end
+  if hasMaxLevel then
+    effectService:CreateScreenEffPointEffect(self._maxLevelCamEffectID)
+    AudioHelperController.PlayInnerGameSfx(self._maxLevelAudioID)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayLevelTrapCommonSummonInstruction._ShowTrap = function(self, TT, world, trapEntity, pos)
-  -- function num : 0_2
+function PlayLevelTrapCommonSummonInstruction:_ShowTrap(TT, world, trapEntity, pos)
   local trapServiceRender = world:GetService("TrapRender")
   trapServiceRender:CreateSingleTrapRender(TT, trapEntity, true)
   trapEntity:SetPosition(pos)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayLevelTrapCommonSummonInstruction.GetCacheResource = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayLevelTrapCommonSummonInstruction:GetCacheResource()
   local t = {}
   if self._destroyEffectID and self._destroyEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._destroyEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._destroyEffectID].ResPath,
+      1
+    })
   end
-  if self._lvUpEffectID and self._lvUpEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._lvUpEffectID]).ResPath, 1})
+  if self._lvUpEffectID and 0 < self._lvUpEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._lvUpEffectID].ResPath,
+      1
+    })
   end
-  if self._maxLevelCamEffectID and self._maxLevelCamEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._maxLevelCamEffectID]).ResPath, 1})
+  if self._maxLevelCamEffectID and 0 < self._maxLevelCamEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._maxLevelCamEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayLevelTrapCommonSummonInstruction.GetCacheAudio = function(self)
-  -- function num : 0_4
+function PlayLevelTrapCommonSummonInstruction:GetCacheAudio()
   if self._maxLevelAudioID and self._maxLevelAudioID > 0 then
-    return {self._maxLevelAudioID}
+    return {
+      self._maxLevelAudioID
+    }
   end
 end
-
-

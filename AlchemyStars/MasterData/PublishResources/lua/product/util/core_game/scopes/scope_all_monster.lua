@@ -1,22 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_all_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_AllMonster", SkillScopeCalculator_Base)
 SkillScopeCalculator_AllMonster = SkillScopeCalculator_AllMonster
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_AllMonster.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local monsterList, monsterPosList = (self._gridFilter):SelectAllMonster(casterEntity)
+function SkillScopeCalculator_AllMonster:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local monsterList, monsterPosList = self._gridFilter:SelectAllMonster(casterEntity)
   local ids = {}
-  for _,m in pairs(monsterList) do
+  for _, m in pairs(monsterList) do
     ids[#ids + 1] = m:GetID()
   end
   local result = SkillScopeResult:New(SkillScopeType.AllMonster, centerPos, monsterPosList, monsterPosList, ids)
   return result
 end
-
-

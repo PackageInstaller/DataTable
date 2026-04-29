@@ -1,55 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_tetris.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultTetrisRandom", BuffResultBase)
 BuffResultTetrisRandom = BuffResultTetrisRandom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultTetrisRandom.Constructor = function(self, newTetrisIndex, newTetrisType)
-  -- function num : 0_0
+function BuffResultTetrisRandom:Constructor(newTetrisIndex, newTetrisType)
   self._newTetrisIndex = newTetrisIndex
   self._newTetrisType = newTetrisType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultTetrisRandom.GetNewTetrisIndex = function(self)
-  -- function num : 0_1
+function BuffResultTetrisRandom:GetNewTetrisIndex()
   return self._newTetrisIndex
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultTetrisRandom.GetNewTetrisType = function(self)
-  -- function num : 0_2
+function BuffResultTetrisRandom:GetNewTetrisType()
   return self._newTetrisType
 end
 
 _class("BuffResultTetrisChangePower", BuffResultBase)
 BuffResultTetrisChangePower = BuffResultTetrisChangePower
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultTetrisChangePower.Constructor = function(self, newPower, newPos)
-  -- function num : 0_3
+function BuffResultTetrisChangePower:Constructor(newPower, newPos)
   self._newPower = newPower
   self._newPos = newPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultTetrisChangePower.GetNewPower = function(self)
-  -- function num : 0_4
+function BuffResultTetrisChangePower:GetNewPower()
   return self._newPower
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultTetrisChangePower.GetNewPos = function(self)
-  -- function num : 0_5
+function BuffResultTetrisChangePower:GetNewPos()
   return self._newPos
 end
-
-

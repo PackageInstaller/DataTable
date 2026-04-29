@@ -1,27 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/team/ui_season_maze_team_heart_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeTeamHeartItem", UIHeartItem)
 UISeasonMazeTeamHeartItem = UISeasonMazeTeamHeartItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeTeamHeartItem.PetDataChangeEvent = function(self)
-  -- function num : 0_0
+function UISeasonMazeTeamHeartItem:PetDataChangeEvent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTeamHeartItem.GetMazePower = function(self)
-  -- function num : 0_1
-  return 
+function UISeasonMazeTeamHeartItem:GetMazePower()
+  return
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeTeamHeartItem.CancelNew = function(self)
-  -- function num : 0_2
+function UISeasonMazeTeamHeartItem:CancelNew()
 end
-
-

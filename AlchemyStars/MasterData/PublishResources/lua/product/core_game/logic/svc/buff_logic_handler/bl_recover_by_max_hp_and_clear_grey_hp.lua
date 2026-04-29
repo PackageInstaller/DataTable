@@ -1,39 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_recover_by_max_hp_and_clear_grey_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicRecoverByMaxHPAndClearGreyHP", BuffLogicBase)
 BuffLogicRecoverByMaxHPAndClearGreyHP = BuffLogicRecoverByMaxHPAndClearGreyHP
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRecoverByMaxHPAndClearGreyHP.Constructor = function(self, _, logicParam)
-  -- function num : 0_0
+function BuffLogicRecoverByMaxHPAndClearGreyHP:Constructor(_, logicParam)
   self._baseRate = logicParam.baseRate
   self._subRate = logicParam.subRate
   self._limitRate = logicParam.limitRate
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRecoverByMaxHPAndClearGreyHP.DoLogic = function(self, _)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicRecoverByMaxHPAndClearGreyHP:DoLogic(_)
   local e = self:GetEntity()
   if e:HasSuperEntity() then
     e = e:GetSuperEntity()
   end
-  local count = (self._buffLogicService):GetRecoverByMaxHPCount(e) or 0
-  local curRate = (math.max)(self._baseRate - self._subRate * count, self._limitRate)
-  local damageInfo = (self._buffLogicService):GetRecoverByMaxHP(e, curRate)
-  local calcDamageSvc = (self._world):GetService("CalcDamage")
+  local count = self._buffLogicService:GetRecoverByMaxHPCount(e) or 0
+  local curRate = math.max(self._baseRate - self._subRate * count, self._limitRate)
+  local damageInfo = self._buffLogicService:GetRecoverByMaxHP(e, curRate)
+  local calcDamageSvc = self._world:GetService("CalcDamage")
   calcDamageSvc:AddTargetHP(e:GetID(), damageInfo)
   count = count + 1
-  ;
-  (self._buffLogicService):SetRecoverByMaxHPCount(e, count)
-  ;
-  (self._buffLogicService):ClearGreyHP(e)
+  self._buffLogicService:SetRecoverByMaxHPCount(e, count)
+  self._buffLogicService:ClearGreyHP(e)
   return BuffResultRecoverByMaxHPAndClearGreyHP:New(e:GetID(), damageInfo)
 end
-
-

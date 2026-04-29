@@ -1,154 +1,104 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/cardbag/ui_luckland_cardbag.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandCardBag", UIController)
 UILuckLandCardBag = UILuckLandCardBag
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandCardBag.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UILuckLandCardBag:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UILuckLandCardBag:OnShow(uiParams)
   self._perRowCount = 8
   self._preIndex = 0
   self._curIndex = 0
   self._fromInnerGame = uiParams[1]
   self._showDeleteBtn = uiParams[2]
-  self._levelCardDatas = (LuckLandData:GetInstance()):CurCardDatas()
+  self._levelCardDatas = LuckLandData:GetInstance():CurCardDatas()
   if self._fromInnerGame then
-    local entityMgr = (LuckLandInnerGameHelper.GetEntityMgr)()
+    local entityMgr = LuckLandInnerGameHelper.GetEntityMgr()
     if entityMgr then
       local backpackPets = entityMgr:GetBackpackPets()
-      ;
-      (self._levelCardDatas):ResetAllCardDatasFromInnerGame(backpackPets)
+      self._levelCardDatas:ResetAllCardDatasFromInnerGame(backpackPets)
     end
   end
-  do
-    self._cardWidgets = {}
-    self._isDelete = false
-    self:_InitWidget()
-    self:_OnValue()
-    self:AttachEvent(GameEventType.OnLuckLandDeleteCardSucc, self._OnLuckLandDeleteCardSucc)
-    if self._fromInnerGame then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UILuckLandCardBag)
-    end
+  self._cardWidgets = {}
+  self._isDelete = false
+  self:_InitWidget()
+  self:_OnValue()
+  self:AttachEvent(GameEventType.OnLuckLandDeleteCardSucc, self._OnLuckLandDeleteCardSucc)
+  if self._fromInnerGame then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UILuckLandCardBag)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UILuckLandCardBag:OnHide()
   if self._task1 then
-    ((GameGlobal.TaskManager)()):KillTask(self._task1)
+    GameGlobal.TaskManager():KillTask(self._task1)
     self._task1 = nil
   end
   if self._task then
-    ((GameGlobal.TaskManager)()):KillTask(self._task)
+    GameGlobal.TaskManager():KillTask(self._task)
     self._task = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag._InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UILuckLandCardBag:_InitWidget()
   self._cardCount = self:GetUIComponent("UILocalizationText", "CardCount")
   self._deleteCost = self:GetUIComponent("UILocalizationText", "DeleteCost")
   self._costGO = self:GetGameObject("Cost")
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._deleteBtnGO = self:GetGameObject("DeleteBtn")
   self._cancleDeleteBtnGO = self:GetGameObject("CancleDeleteBtn")
-  if self._showDeleteBtn then
-    (self._deleteBtnGO):SetActive(not (self._levelCardDatas):IsOnlyOne())
-    if self._showDeleteBtn then
-      (self._costGO):SetActive(not (self._levelCardDatas):IsOnlyOne())
-      ;
-      (self._cancleDeleteBtnGO):SetActive(false)
-      self._markGO = {}
-      self._markAnimation = {}
-      for i = 1, 4 do
-        -- DECOMPILER ERROR at PC65: Confused about usage of register: R5 in 'UnsetPending'
-
-        (self._markGO)[i] = self:GetGameObject("Mark" .. i)
-        -- DECOMPILER ERROR at PC73: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._markAnimation)[i] = self:GetUIComponent("Animation", "Mark" .. i)
-        ;
-        ((self._markAnimation)[i]):Play("uieff_UILuckLandCardBag_click_out")
-      end
-      if self._showDeleteBtn and (LuckLandInnerGameHelper.CheckWord)(LuckLandWordType.LockDeleteCard) then
-        (self._deleteBtnGO):SetActive(false)
-        ;
-        (self._costGO):SetActive(false)
-      end
-      self._animation = self:GetUIComponent("Animation", "Animation")
-    end
+  self._deleteBtnGO:SetActive(self._showDeleteBtn and not self._levelCardDatas:IsOnlyOne())
+  self._costGO:SetActive(self._showDeleteBtn and not self._levelCardDatas:IsOnlyOne())
+  self._cancleDeleteBtnGO:SetActive(false)
+  self._markGO = {}
+  self._markAnimation = {}
+  for i = 1, 4 do
+    self._markGO[i] = self:GetGameObject("Mark" .. i)
+    self._markAnimation[i] = self:GetUIComponent("Animation", "Mark" .. i)
+    self._markAnimation[i]:Play("uieff_UILuckLandCardBag_click_out")
   end
+  if self._showDeleteBtn and LuckLandInnerGameHelper.CheckWord(LuckLandWordType.LockDeleteCard) then
+    self._deleteBtnGO:SetActive(false)
+    self._costGO:SetActive(false)
+  end
+  self._animation = self:GetUIComponent("Animation", "Animation")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag.SortBtn1OnClick = function(self, go)
-  -- function num : 0_4
-  (self._levelCardDatas):Sort(function(a, b)
-    -- function num : 0_4_0
-    if a:Camp() >= b:Camp() then
-      do return a:Camp() == b:Camp() end
-      do return b:UniqueID() < a:UniqueID() end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UILuckLandCardBag:SortBtn1OnClick(go)
+  self._levelCardDatas:Sort(function(a, b)
+    if a:Camp() ~= b:Camp() then
+      return a:Camp() < b:Camp()
+    else
+      return a:UniqueID() > b:UniqueID()
     end
-  end
-)
+  end)
   self:_RefreshBtns(1)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag.SortBtn2OnClick = function(self, go)
-  -- function num : 0_5
-  (self._levelCardDatas):Sort(function(a, b)
-    -- function num : 0_5_0
-    if a:Attribute() >= b:Attribute() then
-      do return a:Attribute() == b:Attribute() end
-      do return b:UniqueID() < a:UniqueID() end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UILuckLandCardBag:SortBtn2OnClick(go)
+  self._levelCardDatas:Sort(function(a, b)
+    if a:Attribute() ~= b:Attribute() then
+      return a:Attribute() < b:Attribute()
+    else
+      return a:UniqueID() > b:UniqueID()
     end
-  end
-)
+  end)
   self:_RefreshBtns(2)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag.SortBtn3OnClick = function(self, go)
-  -- function num : 0_6
-  (self._levelCardDatas):Sort(function(a, b)
-    -- function num : 0_6_0
-    if b:Star() >= a:Star() then
-      do return a:Star() == b:Star() end
-      do return b:UniqueID() < a:UniqueID() end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UILuckLandCardBag:SortBtn3OnClick(go)
+  self._levelCardDatas:Sort(function(a, b)
+    if a:Star() ~= b:Star() then
+      return a:Star() > b:Star()
+    else
+      return a:UniqueID() > b:UniqueID()
     end
-  end
-)
+  end)
   self:_RefreshBtns(3)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag.SortBtn4OnClick = function(self, go)
-  -- function num : 0_7
-  (self._levelCardDatas):Sort(function(a, b)
-    -- function num : 0_7_0
+function UILuckLandCardBag:SortBtn4OnClick(go)
+  self._levelCardDatas:Sort(function(a, b)
     local a_id = 1
     local b_id = 1
     if a:FirstSkill() then
@@ -157,206 +107,159 @@ UILuckLandCardBag.SortBtn4OnClick = function(self, go)
     if b:FirstSkill() then
       b_id = b:FirstSkill()
     end
-    if a_id >= b_id then
-      do return a_id == b_id end
-      do return b:UniqueID() < a:UniqueID() end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+    if a_id ~= b_id then
+      return a_id < b_id
+    else
+      return a:UniqueID() > b:UniqueID()
     end
-  end
-)
+  end)
   self:_RefreshBtns(4)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag._RefreshBtns = function(self, index)
-  -- function num : 0_8 , upvalues : _ENV
+function UILuckLandCardBag:_RefreshBtns(index)
   if self._curIndex == index then
-    return 
+    return
   end
   self._preIndex = self._curIndex
   self._curIndex = index
   self:Lock("UILuckLandCardBag")
   self._task1 = self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
     for i = 1, 4 do
       if i == self._curIndex then
-        ((self._markAnimation)[i]):Play("uieff_UILuckLandCardBag_click_in")
+        self._markAnimation[i]:Play("uieff_UILuckLandCardBag_click_in")
       end
       if i == self._preIndex then
-        ((self._markAnimation)[i]):Play("uieff_UILuckLandCardBag_click_out")
+        self._markAnimation[i]:Play("uieff_UILuckLandCardBag_click_out")
       end
     end
     self:_RefreshScrollView()
     self:_DynamicListPlayAnimation(TT)
     YIELD(TT, 667)
     self:UnLock("UILuckLandCardBag")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag._DynamicListPlayAnimation = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
-  local showTabIds = (self._scrollView):GetVisibleItemIDsInScrollView()
+function UILuckLandCardBag:_DynamicListPlayAnimation(TT)
+  local showTabIds = self._scrollView:GetVisibleItemIDsInScrollView()
   if not showTabIds then
-    return 
+    return
   end
   for index = 0, showTabIds.Count - 1 do
-    local id = (math.floor)(showTabIds[index])
-    local item = (self._scrollView):GetShownItemByItemIndex(id)
-    local view = (item.gameObject):GetComponent(typeof(UIView))
+    local id = math.floor(showTabIds[index])
+    local item = self._scrollView:GetShownItemByItemIndex(id)
+    local view = item.gameObject:GetComponent(typeof(UIView))
     local animation = view:GetUIComponent("Animation", "Animation")
     local itemPool = self:GetUIComponentDynamic("UISelectObjectPath", view:GetGameObject("Root"))
     if animation then
-      (view:GetGameObject("Root")):SetActive(false)
+      view:GetGameObject("Root"):SetActive(false)
       YIELD(TT, index * 50)
-      ;
-      (view:GetGameObject("Root")):SetActive(true)
+      view:GetGameObject("Root"):SetActive(true)
       animation:Play("uieff_UILuckLandCardBagItem_in")
       local itemWidgets = itemPool:GetAllSpawnList()
       for i = 1, #itemWidgets do
-        (itemWidgets[i]):PlayAnimation()
+        itemWidgets[i]:PlayAnimation()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag.DeleteBtnOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
-  local isOnlyOne = ((LuckLandData:GetInstance()):CurCardDatas()):IsOnlyOne()
+function UILuckLandCardBag:DeleteBtnOnClick(go)
+  local isOnlyOne = LuckLandData:GetInstance():CurCardDatas():IsOnlyOne()
   if isOnlyOne then
-    (ToastManager.ShowToast)((StringTable.Get)("str_luckland_cardbag_delete_error1"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_luckland_cardbag_delete_error1"))
+    return
   end
-  local curCost = ((LuckLandData:GetInstance()):CurCardDatas()):CurDeleteCost()
-  local curMoney = (LuckLandInnerGameHelper.GetCurMoney)()
-  if curMoney < curCost then
-    (ToastManager.ShowToast)((StringTable.Get)("str_luckland_cardbag_delete_error"))
-    return 
+  local curCost = LuckLandData:GetInstance():CurCardDatas():CurDeleteCost()
+  local curMoney = LuckLandInnerGameHelper.GetCurMoney()
+  if curCost > curMoney then
+    ToastManager.ShowToast(StringTable.Get("str_luckland_cardbag_delete_error"))
+    return
   end
-  for _,cardWidget in pairs(self._cardWidgets) do
+  for _, cardWidget in pairs(self._cardWidgets) do
     cardWidget:ShowDeleteBtn(true)
   end
-  ;
-  (self._deleteBtnGO):SetActive(false)
-  ;
-  (self._cancleDeleteBtnGO):SetActive(true)
+  self._deleteBtnGO:SetActive(false)
+  self._cancleDeleteBtnGO:SetActive(true)
   self._isDelete = true
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag.CancleDeleteBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  for _,cardWidget in pairs(self._cardWidgets) do
+function UILuckLandCardBag:CancleDeleteBtnOnClick(go)
+  for _, cardWidget in pairs(self._cardWidgets) do
     cardWidget:ShowDeleteBtn(false)
   end
-  local isOnlyOne = (self._levelCardDatas):IsOnlyOne()
-  ;
-  (self._deleteBtnGO):SetActive(not isOnlyOne)
-  ;
-  (self._costGO):SetActive(not isOnlyOne)
-  ;
-  (self._cancleDeleteBtnGO):SetActive(false)
+  local isOnlyOne = self._levelCardDatas:IsOnlyOne()
+  self._deleteBtnGO:SetActive(not isOnlyOne)
+  self._costGO:SetActive(not isOnlyOne)
+  self._cancleDeleteBtnGO:SetActive(false)
   self._isDelete = false
-  if self._showDeleteBtn and (LuckLandInnerGameHelper.CheckWord)(LuckLandWordType.LockDeleteCard) then
-    (self._deleteBtnGO):SetActive(false)
-    ;
-    (self._costGO):SetActive(false)
+  if self._showDeleteBtn and LuckLandInnerGameHelper.CheckWord(LuckLandWordType.LockDeleteCard) then
+    self._deleteBtnGO:SetActive(false)
+    self._costGO:SetActive(false)
   end
-  local cost = ((LuckLandData:GetInstance()):CurCardDatas()):CurDeleteCost()
-  local total = (LuckLandInnerGameHelper.GetCurMoney)()
-  if total < cost then
-    (self._deleteCost):SetText("<color=#f35349>" .. cost .. "</color>/" .. total)
+  local cost = LuckLandData:GetInstance():CurCardDatas():CurDeleteCost()
+  local total = LuckLandInnerGameHelper.GetCurMoney()
+  if cost > total then
+    self._deleteCost:SetText("<color=#f35349>" .. cost .. "</color>/" .. total)
   else
-    ;
-    (self._deleteCost):SetText("<color=#d5c5ff>" .. cost .. "</color>/" .. total)
+    self._deleteCost:SetText("<color=#d5c5ff>" .. cost .. "</color>/" .. total)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag._OnValue = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UILuckLandCardBag:_OnValue()
   self:_SetCommonTopButton()
   self:_InitDynamicScrollView()
   if self._showDeleteBtn then
-    (self._cardCount):SetText((StringTable.Get)("str_luckland_cardbag_total", (self._levelCardDatas):TotalCount()))
-    local cost = ((LuckLandData:GetInstance()):CurCardDatas()):CurDeleteCost()
-    local total = (LuckLandInnerGameHelper.GetCurMoney)()
-    if total < cost then
-      (self._deleteCost):SetText("<color=#f35349>" .. cost .. "</color>/" .. total)
+    self._cardCount:SetText(StringTable.Get("str_luckland_cardbag_total", self._levelCardDatas:TotalCount()))
+    local cost = LuckLandData:GetInstance():CurCardDatas():CurDeleteCost()
+    local total = LuckLandInnerGameHelper.GetCurMoney()
+    if cost > total then
+      self._deleteCost:SetText("<color=#f35349>" .. cost .. "</color>/" .. total)
     else
-      ;
-      (self._deleteCost):SetText("<color=#d5c5ff>" .. cost .. "</color>/" .. total)
+      self._deleteCost:SetText("<color=#d5c5ff>" .. cost .. "</color>/" .. total)
     end
   end
-  do
-    if self._fromInnerGame then
-      (self._cardCount):SetText((StringTable.Get)("str_luckland_cardbag_total", (self._levelCardDatas):TotalCount()))
-    else
-      ;
-      (self._cardCount):SetText((StringTable.Get)("str_luckland_cardbag_total1"))
-    end
+  if self._fromInnerGame then
+    self._cardCount:SetText(StringTable.Get("str_luckland_cardbag_total", self._levelCardDatas:TotalCount()))
+  else
+    self._cardCount:SetText(StringTable.Get("str_luckland_cardbag_total1"))
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag._SetCommonTopButton = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local closeCallback = function()
-    -- function num : 0_13_0 , upvalues : self, _ENV
+function UILuckLandCardBag:_SetCommonTopButton()
+  local function closeCallback()
     self:StartTask(function(TT)
-      -- function num : 0_13_0_0 , upvalues : self, _ENV
       self:Lock("UILuckLandCardBag")
-      ;
-      (self._animation):Play("uieff_UILuckLandCardBag_out")
+      
+      self._animation:Play("uieff_UILuckLandCardBag_out")
       YIELD(TT, 333)
       self:UnLock("UILuckLandCardBag")
       self:CloseDialog()
-    end
-, self)
+    end, self)
   end
-
-  local helpCallBack = function()
-    -- function num : 0_13_1 , upvalues : self
+  
+  local function helpCallBack()
     self:ShowDialog("UIIntroLoader", "UILuckLandCardBag")
   end
-
-  local obj = (UIWidgetHelper.SpawnObject)(self, "BackBtns", "UINewCommonTopButton")
+  
+  local obj = UIWidgetHelper.SpawnObject(self, "BackBtns", "UINewCommonTopButton")
   obj:SetData(closeCallback, helpCallBack, nil, true)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag._InitDynamicScrollView = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (self._scrollView):InitListView((math.ceil)((self._levelCardDatas):TotalCount() / self._perRowCount), function(scrollview, index)
-    -- function num : 0_14_0 , upvalues : self
+function UILuckLandCardBag:_InitDynamicScrollView()
+  self._scrollView:InitListView(math.ceil(self._levelCardDatas:TotalCount() / self._perRowCount), function(scrollview, index)
     return self:_OnGetItemByIndex(scrollview, index)
-  end
-)
+  end)
   self:Lock("UILuckLandCardBag")
   self._task = self:StartTask(function(TT)
-    -- function num : 0_14_1 , upvalues : self, _ENV
     self:_DynamicListPlayAnimation(TT)
     YIELD(TT, 667)
     self:UnLock("UILuckLandCardBag")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag._OnGetItemByIndex = function(self, scrollview, index)
-  -- function num : 0_15 , upvalues : _ENV
+function UILuckLandCardBag:_OnGetItemByIndex(scrollview, index)
   local item = scrollview:NewListViewItem("UILuckLandCardBagItem")
-  local view = (item.gameObject):GetComponent(typeof(UIView))
+  local view = item.gameObject:GetComponent(typeof(UIView))
   local itemPool = self:GetUIComponentDynamic("UISelectObjectPath", view:GetGameObject("Root"))
   if not item.IsInitHandlerCalled then
     item.IsInitHandlerCalled = true
@@ -367,48 +270,32 @@ UILuckLandCardBag._OnGetItemByIndex = function(self, scrollview, index)
     local itemWidget = itemWidgets[i]
     if itemWidget then
       local widgetIndex = index * self._perRowCount + i
-      local data = (self._levelCardDatas):GetCardDataByIndex(widgetIndex)
+      local data = self._levelCardDatas:GetCardDataByIndex(widgetIndex)
       itemWidget:SetData(data, self._isDelete, self._fromInnerGame, true)
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R14 in 'UnsetPending'
-
-      if not (self._cardWidgets)[widgetIndex] then
-        (self._cardWidgets)[widgetIndex] = itemWidget
+      if not self._cardWidgets[widgetIndex] then
+        self._cardWidgets[widgetIndex] = itemWidget
       end
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag._RefreshScrollView = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  (self._scrollView):SetListItemCount((math.ceil)((self._levelCardDatas):TotalCount() / self._perRowCount))
-  ;
-  (self._scrollView):MovePanelToItemIndex(0, 0)
+function UILuckLandCardBag:_RefreshScrollView()
+  self._scrollView:SetListItemCount(math.ceil(self._levelCardDatas:TotalCount() / self._perRowCount))
+  self._scrollView:MovePanelToItemIndex(0, 0)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardBag._OnLuckLandDeleteCardSucc = function(self, uniqueID)
-  -- function num : 0_17 , upvalues : _ENV
-  (self._cardCount):SetText((StringTable.Get)("str_luckland_cardbag_total", (self._levelCardDatas):TotalCount()))
+function UILuckLandCardBag:_OnLuckLandDeleteCardSucc(uniqueID)
+  self._cardCount:SetText(StringTable.Get("str_luckland_cardbag_total", self._levelCardDatas:TotalCount()))
   if self._showDeleteBtn then
-    local cost = ((LuckLandData:GetInstance()):CurCardDatas()):CurDeleteCost()
-    local total = (LuckLandInnerGameHelper.GetCurMoney)()
-    if total < cost then
-      (self._deleteCost):SetText("<color=#f35349>" .. cost .. "</color>/" .. total)
+    local cost = LuckLandData:GetInstance():CurCardDatas():CurDeleteCost()
+    local total = LuckLandInnerGameHelper.GetCurMoney()
+    if cost > total then
+      self._deleteCost:SetText("<color=#f35349>" .. cost .. "</color>/" .. total)
     else
-      ;
-      (self._deleteCost):SetText("<color=#d5c5ff>" .. cost .. "</color>/" .. total)
+      self._deleteCost:SetText("<color=#d5c5ff>" .. cost .. "</color>/" .. total)
     end
   end
-  do
-    ;
-    (self._scrollView):SetListItemCount((math.ceil)((self._levelCardDatas):TotalCount() / self._perRowCount))
-    ;
-    (self._scrollView):RefreshAllShownItem()
-  end
+  self._scrollView:SetListItemCount(math.ceil(self._levelCardDatas:TotalCount() / self._perRowCount))
+  self._scrollView:RefreshAllShownItem()
 end
-
-

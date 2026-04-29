@@ -1,46 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/map/s_maze_map_room_battle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("s_maze_map_room_base")
 _class("SMazeMapRoom_Battle", SMazeMapRoomBase)
 SMazeMapRoom_Battle = SMazeMapRoom_Battle
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeMapRoom_Battle.Constructor = function(self)
-  -- function num : 0_0
+function SMazeMapRoom_Battle:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoom_Battle.IsDestroyedByBomb = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  do return self._type == SeasonMazeRoomType.SMRT_Empty and self._srcType == SeasonMazeRoomType.SMRT_PVE end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SMazeMapRoom_Battle:IsDestroyedByBomb()
+  return self._type == SeasonMazeRoomType.SMRT_Empty and self._srcType == SeasonMazeRoomType.SMRT_PVE
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoom_Battle.Boom = function(self, svrData)
-  -- function num : 0_2 , upvalues : _ENV
+function SMazeMapRoom_Battle:Boom(svrData)
   if self._type == SeasonMazeRoomType.SMRT_PVE and svrData.type == SeasonMazeRoomType.SMRT_PVE and svrData.is_bomb then
     self._type = SeasonMazeRoomType.SMRT_Empty
     self._srcType = SeasonMazeRoomType.SMRT_PVE
     self._destroyed = true
-    ;
-    (Log.info)("使用炸弹后战斗房改为空白房:", self._id)
-    ;
-    (self._req):Dispose()
+    Log.info("使用炸弹后战斗房改为空白房:", self._id)
+    self._req:Dispose()
     self:_LoadModel(SeasonMazeRoomType.SMRT_Empty)
     self:Anim_Init(SMazeNodeState.Reachable)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoom_Battle.OnTrigger = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SMazeMapRoom_Battle:OnTrigger()
   self:BindEvent(GameEventType.OnSeasonMazeRoomOperationFinish, self.OnTriggerComplete)
   if self:IsDestroyedByBomb() then
     self:ShowDialog("UISeasonMazeRoomEmpty", self:NodeID())
@@ -49,14 +30,9 @@ SMazeMapRoom_Battle.OnTrigger = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoom_Battle.OnTriggerComplete = function(self, autoFightReward)
-  -- function num : 0_4 , upvalues : _ENV
+function SMazeMapRoom_Battle:OnTriggerComplete(autoFightReward)
   self:UnBindEvent(GameEventType.OnSeasonMazeRoomOperationFinish)
-  local autoFightReward = (SeasonMazeTool:GetInstance()):Efts2Assets(autoFightReward)
+  local autoFightReward = SeasonMazeTool:GetInstance():Efts2Assets(autoFightReward)
   self:SetAwardAssets(autoFightReward)
   self:Finish()
 end
-
-

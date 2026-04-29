@@ -1,130 +1,87 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/fishing/logic/homeland_fishting_status_throw.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandFishingStatusThrow", HomelandFishingStatus)
 HomelandFishingStatusThrowThrow = HomelandFishingStatusThrow
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandFishingStatusThrow.OnEnter = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandFishingStatusThrow:OnEnter()
   if self._throwPowerCallback == nil then
-    self._throwPowerCallback = (GameHelper:GetInstance()):CreateCallback(self.ThrowPowerChange, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.FishingThrowPower, self._throwPowerCallback)
+    self._throwPowerCallback = GameHelper:GetInstance():CreateCallback(self.ThrowPowerChange, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.FishingThrowPower, self._throwPowerCallback)
   end
   if self._startThrowPowerCallback == nil then
-    self._startThrowPowerCallback = (GameHelper:GetInstance()):CreateCallback(self.StartThrowPower, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.FishingStartThrow, self._startThrowPowerCallback)
+    self._startThrowPowerCallback = GameHelper:GetInstance():CreateCallback(self.StartThrowPower, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.FishingStartThrow, self._startThrowPowerCallback)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetInteractPointUIStatus, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetInteractPointUIStatus, true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusThrow.OnExit = function(self)
-  -- function num : 0_1
+function HomelandFishingStatusThrow:OnExit()
   self:RemoveCallback()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusThrow.FishingStatus = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandFishingStatusThrow:FishingStatus()
   return FishgingStatus.Throw
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusThrow.OnDestroy = function(self)
-  -- function num : 0_3
+function HomelandFishingStatusThrow:OnDestroy()
   self:RemoveCallback()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusThrow.RemoveCallback = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandFishingStatusThrow:RemoveCallback()
   if self._throwPowerCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.FishingThrowPower, self._throwPowerCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.FishingThrowPower, self._throwPowerCallback)
     self._throwPowerCallback = nil
   end
   if self._startThrowPowerCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.FishingStartThrow, self._startThrowPowerCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.FishingStartThrow, self._startThrowPowerCallback)
     self._startThrowPowerCallback = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusThrow.ThrowPowerChange = function(self, power)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.ThrowAnim, self, power)
+function HomelandFishingStatusThrow:ThrowPowerChange(power)
+  GameGlobal.TaskManager():StartTask(self.ThrowAnim, self, power)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusThrow.ThrowAnim = function(self, TT, power)
-  -- function num : 0_6 , upvalues : _ENV
+function HomelandFishingStatusThrow:ThrowAnim(TT, power)
   self:LockStatus()
   self:LockUI("HomelandFishingStatusThrow_ThrowAnim")
   local result, floatPosition = self:IsThrowSuccess(power)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FishThrowResult, result)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FishThrowResult, result)
   if result then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ForceFinishGuideStep, GuideType.Button)
-    local anim = (HomelandFishingConst.GetAnimationCfg)(FishgingAnimation.FishThrowSuccess)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ForceFinishGuideStep, GuideType.Button)
+    local anim = HomelandFishingConst.GetAnimationCfg(FishgingAnimation.FishThrowSuccess)
     self:PlayAnimation(anim.name)
     self:PlayFishRodAnimation(anim.rodname)
     YIELD(TT, 800)
     local layers = 0
     layers = layers | 1 << HomeBuildLayer.Water
-    local castRes, hitInfo = ((UnityEngine.Physics).Raycast)(floatPosition + Vector3(0, 1, 0), Vector3.down, nil, 1000, layers)
+    local castRes, hitInfo = UnityEngine.Physics.Raycast(floatPosition + Vector3(0, 1, 0), Vector3.down, nil, 1000, layers)
     if castRes then
       floatPosition = hitInfo.point
     end
-    ;
-    (self._homelandFishing):CreateFloat(floatPosition)
+    self._homelandFishing:CreateFloat(floatPosition)
     YIELD(TT, anim.length - 800)
     self:SwitchStatus(FishgingStatus.Fishing, floatPosition)
   else
-    do
-      ;
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_fish_toss_miss"))
-      do
-        local anim = (HomelandFishingConst.GetAnimationCfg)(FishgingAnimation.FishThrowFailure)
-        self:PlayAnimation(anim.name)
-        self:PlayFishRodAnimation(anim.rodname)
-        YIELD(TT, anim.length - 50)
-        self:SwitchStatus(FishgingStatus.Throw)
-        self:SetFishRodStatus(false)
-        self:UnLockUI("HomelandFishingStatusThrow_ThrowAnim")
-        self:UnLockStatus()
-      end
-    end
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_fish_toss_miss"))
+    local anim = HomelandFishingConst.GetAnimationCfg(FishgingAnimation.FishThrowFailure)
+    self:PlayAnimation(anim.name)
+    self:PlayFishRodAnimation(anim.rodname)
+    YIELD(TT, anim.length - 50)
+    self:SwitchStatus(FishgingStatus.Throw)
+    self:SetFishRodStatus(false)
   end
+  self:UnLockUI("HomelandFishingStatusThrow_ThrowAnim")
+  self:UnLockStatus()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusThrow.StartThrowPower = function(self)
-  -- function num : 0_7
+function HomelandFishingStatusThrow:StartThrowPower()
   self:SetFishRodStatus(true)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingStatusThrow.IsThrowSuccess = function(self, power)
-  -- function num : 0_8 , upvalues : _ENV
-  local minDistance = (HomelandFishingConst.GetThrowMinDistance)()
-  local maxDistance = (HomelandFishingConst.GetThrowMaxDistance)()
+function HomelandFishingStatusThrow:IsThrowSuccess(power)
+  local minDistance = HomelandFishingConst.GetThrowMinDistance()
+  local maxDistance = HomelandFishingConst.GetThrowMaxDistance()
   local distance = minDistance + (maxDistance - minDistance) * power
   local transform = self:CharacterTransform()
   local pos = transform.position + transform:TransformDirection(Vector3(0, 0, distance))
   return self:IsInRiver(Vector2(pos.x, pos.z)), pos
 end
-
-

@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/skill_scope_filter_pass_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillScopeFilterPassParam", Object)
 SkillScopeFilterPassParam = SkillScopeFilterPassParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeFilterPassParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillScopeFilterPassParam:Constructor(t)
   self._casterPos = t.casterPos
   self._casterBodyAreaArray = t.casterBodyAreaArray
   self._world = t.world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeFilterPassParam.GetCasterPos = function(self)
-  -- function num : 0_1
+function SkillScopeFilterPassParam:GetCasterPos()
   return self._casterPos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeFilterPassParam.GetCasterBodyAreaArray = function(self)
-  -- function num : 0_2
+function SkillScopeFilterPassParam:GetCasterBodyAreaArray()
   return self._casterBodyAreaArray
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeFilterPassParam.GetWorld = function(self)
-  -- function num : 0_3
+function SkillScopeFilterPassParam:GetWorld()
   return self._world
 end
-
-

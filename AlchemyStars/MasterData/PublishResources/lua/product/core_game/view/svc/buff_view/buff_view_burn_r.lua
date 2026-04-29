@@ -1,16 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_burn_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddBurn", BuffViewBase)
 BuffViewAddBurn = BuffViewAddBurn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddBurn.PlayView = function(self, TT)
-  -- function num : 0_0
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function BuffViewAddBurn:PlayView(TT)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayDamageBuff(TT, self)
 end
-
-

@@ -1,60 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_random_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeRandomDamagePercent", BuffLogicBase)
 BuffLogicChangeRandomDamagePercent = BuffLogicChangeRandomDamagePercent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeRandomDamagePercent.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffInstance)._effectList = logicParam.effectList
+function BuffLogicChangeRandomDamagePercent:Constructor(buffInstance, logicParam)
+  self._buffInstance._effectList = logicParam.effectList
   self._min = logicParam.min or 0
   self._max = logicParam.max or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeRandomDamagePercent.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeRandomDamagePercent:DoLogic()
   local casterEntity = self._entity
   if not casterEntity then
-    return 
+    return
   end
-  local randomService = (self._world):GetService("RandomLogic")
+  local randomService = self._world:GetService("RandomLogic")
   local val = randomService:LogicRand(self._min, self._max)
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):ChangeSkillParam(casterEntity, self:GetBuffSeq(), paramType, val)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:ChangeSkillParam(casterEntity, self:GetBuffSeq(), paramType, val)
   end
 end
 
 _class("BuffLogicRemoveRandomDamagePercent", BuffLogicBase)
 BuffLogicRemoveRandomDamagePercent = BuffLogicRemoveRandomDamagePercent
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveRandomDamagePercent.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveRandomDamagePercent:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveRandomDamagePercent.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local context = (self._buffInstance):Context()
+function BuffLogicRemoveRandomDamagePercent:DoLogic()
+  local context = self._buffInstance:Context()
   if not context then
-    return 
+    return
   end
   local casterEntity = self._entity
   if not casterEntity then
-    return 
+    return
   end
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillParam(casterEntity, self:GetBuffSeq(), paramType)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillParam(casterEntity, self:GetBuffSeq(), paramType)
   end
   return true
 end
-
-

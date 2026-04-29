@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_monster_skill_immunity_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewMonsterSkillImmunity", BuffViewBase)
 BuffViewMonsterSkillImmunity = BuffViewMonsterSkillImmunity
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewMonsterSkillImmunity.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewMonsterSkillImmunity:PlayView(TT)
   if not self:ViewParams() then
-    return 
+    return
   end
-  local effectID = (self:ViewParams()).LoadEffectID
+  local effectID = self:ViewParams().LoadEffectID
   if not effectID then
-    return 
+    return
   end
-  local sEffect = (self._world):GetService("Effect")
+  local sEffect = self._world:GetService("Effect")
   local e = self:Entity()
   local cEffectHolder = e:EffectHolder()
   local eEffect = sEffect:CreateEffect(effectID, e)
@@ -26,19 +19,15 @@ end
 
 _class("BuffViewRemoveMonsterSkillImmunity", BuffViewBase)
 BuffViewRemoveMonsterSkillImmunity = BuffViewRemoveMonsterSkillImmunity
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRemoveMonsterSkillImmunity.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local sEffect = (self._world):GetService("Effect")
+function BuffViewRemoveMonsterSkillImmunity:PlayView(TT)
+  local sEffect = self._world:GetService("Effect")
   local e = self:Entity()
   local cEffectHolder = e:EffectHolder()
   local effects = cEffectHolder:GetEffectList("MonsterSkillImmunity")
-  if effects and (table.count)(effects) > 0 then
-    for _,effId in ipairs(effects) do
+  if effects and table.count(effects) > 0 then
+    for _, effId in ipairs(effects) do
       sEffect:DestroyEffectByID(effId)
     end
   end
 end
-
-

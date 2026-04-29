@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_summon_on_fix_pos_limit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SummonOnFixPosLimit", Object)
 SkillEffectCalc_SummonOnFixPosLimit = SkillEffectCalc_SummonOnFixPosLimit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SummonOnFixPosLimit.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SummonOnFixPosLimit:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonOnFixPosLimit.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_SummonOnFixPosLimit:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillEffectParamSummon = skillEffectCalcParam.skillEffectParam
   local trapID = skillEffectParamSummon:GetTrapID()
   local limitCount = skillEffectParamSummon:GetLimitCount()
@@ -26,20 +16,19 @@ SkillEffectCalc_SummonOnFixPosLimit.DoSkillEffectCalculator = function(self, ski
   if ignoreBlock then
     blockFlag = 0
   end
-  local battleFlags = (self._world):BattleFlags()
+  local battleFlags = self._world:BattleFlags()
   local summonIndex = battleFlags:GetSummonOnFixPosLimitIndex()
   local index = 0
   local summonPosList = {}
   for i = 1, summonCount do
-    index = (math.fmod)(summonIndex + i, #posList)
+    index = math.fmod(summonIndex + i, #posList)
     if index == 0 then
       index = #posList
     end
-    if (table.count)(summonPosList) <= limitCount then
-      (table.insert)(summonPosList, posList[index])
+    if limitCount >= table.count(summonPosList) then
+      table.insert(summonPosList, posList[index])
     else
-      ;
-      (Log.debug)("")
+      Log.debug("")
     end
   end
   battleFlags:SetSummonOnFixPosLimitIndex(index)
@@ -48,17 +37,12 @@ SkillEffectCalc_SummonOnFixPosLimit.DoSkillEffectCalculator = function(self, ski
   local entityIDList = battleFlags:GetSummonOnFixPosLimitEntityID(trapID)
   local meantimeCount = #summonPosList + #entityIDList
   local curIndex = 1
-  do
-    while limitCount < meantimeCount do
-      local curEntityID = entityIDList[curIndex]
-      meantimeCount = meantimeCount - 1
-      curIndex = curIndex + 1
-      ;
-      (table.insert)(destroyEntityIDList, curEntityID)
-    end
-    result:SetDestroyEntityIDList(destroyEntityIDList)
-    return result
+  while limitCount < meantimeCount do
+    local curEntityID = entityIDList[curIndex]
+    meantimeCount = meantimeCount - 1
+    curIndex = curIndex + 1
+    table.insert(destroyEntityIDList, curEntityID)
   end
+  result:SetDestroyEntityIDList(destroyEntityIDList)
+  return result
 end
-
-

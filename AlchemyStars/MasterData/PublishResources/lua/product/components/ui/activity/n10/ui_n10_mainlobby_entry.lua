@@ -1,64 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n10/ui_n10_mainlobby_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN10MainLobbyEntry", UICustomWidget)
 UIN10MainLobbyEntry = UIN10MainLobbyEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN10MainLobbyEntry.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN10MainLobbyEntry:Constructor()
   self._campaignModule = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10MainLobbyEntry.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN10MainLobbyEntry:OnShow(uiParams)
   self:_GetComponents()
   self:StartTask(self.RequestData, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10MainLobbyEntry._GetComponents = function(self)
-  -- function num : 0_2
+function UIN10MainLobbyEntry:_GetComponents()
   self._redPoint = self:GetGameObject("RedPoint")
   self._newFlag = self:GetGameObject("NewFlag")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10MainLobbyEntry.RequestData = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN10MainLobbyEntry:RequestData(TT)
   self:Lock("UIN10MainLobbyEntry")
   local res = AsyncRequestRes:New()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N10, ECampaignN10ComponentID.ECAMPAIGN_N10_STORY, ECampaignN10ComponentID.ECAMPAIGN_N10_LOTTERY, ECampaignN10ComponentID.ECAMPAIGN_N10_LEVEL_FIXTEAM, ECampaignN10ComponentID.ECAMPAIGN_N10_CUMULATIVE_LOGIN)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N10, ECampaignN10ComponentID.ECAMPAIGN_N10_STORY, ECampaignN10ComponentID.ECAMPAIGN_N10_LOTTERY, ECampaignN10ComponentID.ECAMPAIGN_N10_LEVEL_FIXTEAM, ECampaignN10ComponentID.ECAMPAIGN_N10_CUMULATIVE_LOGIN)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if res:GetSucc() then
-    local process = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N10)
+    local process = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N10)
     local showNew = process:HaveNewFlag()
     local showredPoint = process:HaveRedPoint()
-    ;
-    (self._newFlag):SetActive(showNew)
-    if showredPoint then
-      do
-        (self._redPoint):SetActive(not showNew)
-        self:UnLock("UIN10MainLobbyEntry")
-      end
-    end
+    self._newFlag:SetActive(showNew)
+    self._redPoint:SetActive(showredPoint and not showNew)
   end
+  self:UnLock("UIN10MainLobbyEntry")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10MainLobbyEntry.EntryBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN10MainLobbyEntry:EntryBtnOnClick(go)
   self:SwitchState(UIStateType.UIN10MainController)
 end
-
-

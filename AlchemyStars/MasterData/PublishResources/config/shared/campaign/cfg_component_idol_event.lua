@@ -1,226 +1,1103 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_idol_event.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, EventId = 3, EventType = 4, PetId = 5, PreEventId = 6, AddValue = 7, DesFuns = 8, StoryId = 9, CondLimit1 = 10, CondLimit2 = 11, CondLimit3 = 12, CondLimitName = 13, CondLimitResult = 14, CondLimitHead = 15, CondLimitSpine = 16, Question = 17, Desc = 18, Name = 19, PetHead = 20}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  EventId = 3,
+  EventType = 4,
+  PetId = 5,
+  PreEventId = 6,
+  AddValue = 7,
+  DesFuns = 8,
+  StoryId = 9,
+  CondLimit1 = 10,
+  CondLimit2 = 11,
+  CondLimit3 = 12,
+  CondLimitName = 13,
+  CondLimitResult = 14,
+  CondLimitHead = 15,
+  CondLimitSpine = 16,
+  Question = 17,
+  Desc = 18,
+  Name = 19,
+  PetHead = 20
+}
 local common = {
-{
-{2, 150}
-, 
-{2, 100}
-}
-, 
-{
-{2, 180}
-, 
-{2, 110}
-}
-, 
-{
-{1, 200}
-, 
-{1, 120}
-}
-, 
-{
-{2, 100}
-, 
-{2, 150}
-}
-, 
-{
-{3, 180}
-, 
-{3, 110}
-}
-, 
-{
-{3, 120}
-, 
-{3, 200}
-}
-, 
-{
-{1, 150}
-, 
-{1, 100}
-}
-, 
-{
-{1, 120}
-, 
-{1, 200}
-}
-, 
-{
-{3, 150}
-, 
-{3, 100}
-}
-, 
-{
-{1, 100}
-, 
-{1, 150}
-}
-, 
-{
-{2, 110}
-, 
-{2, 180}
-}
-, 
-{
-{1, 180}
-, 
-{1, 110}
-}
-, 
-{
-{2, 120}
-, 
-{2, 200}
-}
-, 
-{
-{1, 100}
-, 
-{2, 100}
-, 
-{3, 100}
-}
-, "str_n25_idol_y_arrange_desc_1", "str_n25_idol_y_arrange_title_1", "n25_ych_head07", "str_n25_idol_y_arrange_desc_2", "str_n25_idol_y_arrange_title_2", "str_n25_idol_y_arrange_desc_3", "str_n25_idol_y_arrange_title_3", "str_n25_idol_y_arrange_desc_4", "str_n25_idol_y_arrange_title_4", "n25_ych_head08", "str_n25_idol_y_arrange_desc_5", "str_n25_idol_y_arrange_title_5", "str_n25_idol_y_arrange_desc_6", "str_n25_idol_y_arrange_title_6", "str_n25_idol_y_arrange_desc_7", "str_n25_idol_y_arrange_title_7", "n25_ych_head09", "str_n25_idol_y_arrange_desc_8", "str_n25_idol_y_arrange_title_8", "str_n25_idol_y_arrange_desc_9", "str_n25_idol_y_arrange_title_9", "str_n25_idol_y_arrange_desc_10", "str_n25_idol_y_arrange_title_10", "n25_ych_head03", "str_n25_idol_y_arrange_desc_11", "str_n25_idol_y_arrange_title_11", "n25_ych_head06", "str_n25_idol_y_arrange_desc_12", "str_n25_idol_y_arrange_title_12", "n25_ych_head02", "str_n25_idol_y_arrange_desc_13", "str_n25_idol_y_arrange_title_13", "n25_ych_head05", "str_n25_idol_y_arrange_desc_14", "str_n25_idol_y_arrange_title_14", "n25_ych_head01", "str_n25_idol_y_arrange_desc_15", "str_n25_idol_y_arrange_title_15", "n25_ych_head04", "str_n25_idol_game_puppy_question_1", "str_n25_idol_game_puppy_question_2", "str_n25_idol_game_puppy_question_3", "str_n25_idol_game_puppy_question_4", "str_n25_idol_game_puppy_question_5", 
-{2000, 0, 5000}
-, 
-{5000, 0, 2000}
-, 
-{2000, 5000, 0}
-, 
-{5000, 2000, 0}
-, 
-{0, 2000, 5000}
-, 
-{"str_n25_idol_game_puppy_question_cond_1_2", "str_n25_idol_game_puppy_question_cond_1_1", "str_n25_idol_game_puppy_question_cond_1_3"}
-, 
-{"str_n25_idol_game_puppy_result_1_2", "str_n25_idol_game_puppy_result_1_1", "str_n25_idol_game_puppy_result_1_3"}
-, 
-{"n25_ych_head11", "n25_ych_head12", "n25_ych_head13"}
-, 
-{"wuyu", "luobai", "jianjidechen"}
-, 
-{"str_n25_idol_game_puppy_question_cond_2_3", "str_n25_idol_game_puppy_question_cond_2_1", "str_n25_idol_game_puppy_question_cond_2_2"}
-, 
-{"str_n25_idol_game_puppy_result_2_3", "str_n25_idol_game_puppy_result_2_1", "str_n25_idol_game_puppy_result_2_2"}
-, 
-{"n25_ych_head13", "n25_ych_head12", "n25_ych_head11"}
-, 
-{"jianjidechen", "luobai", "wuyu"}
-, 
-{"str_n25_idol_game_puppy_question_cond_3_2", "str_n25_idol_game_puppy_question_cond_3_3", "str_n25_idol_game_puppy_question_cond_3_1"}
-, 
-{"str_n25_idol_game_puppy_result_3_2", "str_n25_idol_game_puppy_result_3_3", "str_n25_idol_game_puppy_result_3_1"}
-, 
-{"n25_ych_head11", "n25_ych_head13", "n25_ych_head12"}
-, 
-{"wuyu", "jianjidechen", "luobai"}
-, 
-{"str_n25_idol_game_puppy_question_cond_4_3", "str_n25_idol_game_puppy_question_cond_4_2", "str_n25_idol_game_puppy_question_cond_4_1"}
-, 
-{"str_n25_idol_game_puppy_result_4_3", "str_n25_idol_game_puppy_result_4_2", "str_n25_idol_game_puppy_result_4_1"}
-, 
-{"n25_ych_head13", "n25_ych_head11", "n25_ych_head12"}
-, 
-{"jianjidechen", "wuyu", "luobai"}
-, 
-{"str_n25_idol_game_puppy_question_cond_5_1", "str_n25_idol_game_puppy_question_cond_5_2", "str_n25_idol_game_puppy_question_cond_5_3"}
-, 
-{"str_n25_idol_game_puppy_result_5_1", "str_n25_idol_game_puppy_result_5_2", "str_n25_idol_game_puppy_result_5_3"}
-, 
-{"n25_ych_head12", "n25_ych_head11", "n25_ych_head13"}
-, 
-{"luobai", "wuyu", "jianjidechen"}
+  {
+    {2, 150},
+    {2, 100}
+  },
+  {
+    {2, 180},
+    {2, 110}
+  },
+  {
+    {1, 200},
+    {1, 120}
+  },
+  {
+    {2, 100},
+    {2, 150}
+  },
+  {
+    {3, 180},
+    {3, 110}
+  },
+  {
+    {3, 120},
+    {3, 200}
+  },
+  {
+    {1, 150},
+    {1, 100}
+  },
+  {
+    {1, 120},
+    {1, 200}
+  },
+  {
+    {3, 150},
+    {3, 100}
+  },
+  {
+    {1, 100},
+    {1, 150}
+  },
+  {
+    {2, 110},
+    {2, 180}
+  },
+  {
+    {1, 180},
+    {1, 110}
+  },
+  {
+    {2, 120},
+    {2, 200}
+  },
+  {
+    {1, 100},
+    {2, 100},
+    {3, 100}
+  },
+  "str_n25_idol_y_arrange_desc_1",
+  "str_n25_idol_y_arrange_title_1",
+  "n25_ych_head07",
+  "str_n25_idol_y_arrange_desc_2",
+  "str_n25_idol_y_arrange_title_2",
+  "str_n25_idol_y_arrange_desc_3",
+  "str_n25_idol_y_arrange_title_3",
+  "str_n25_idol_y_arrange_desc_4",
+  "str_n25_idol_y_arrange_title_4",
+  "n25_ych_head08",
+  "str_n25_idol_y_arrange_desc_5",
+  "str_n25_idol_y_arrange_title_5",
+  "str_n25_idol_y_arrange_desc_6",
+  "str_n25_idol_y_arrange_title_6",
+  "str_n25_idol_y_arrange_desc_7",
+  "str_n25_idol_y_arrange_title_7",
+  "n25_ych_head09",
+  "str_n25_idol_y_arrange_desc_8",
+  "str_n25_idol_y_arrange_title_8",
+  "str_n25_idol_y_arrange_desc_9",
+  "str_n25_idol_y_arrange_title_9",
+  "str_n25_idol_y_arrange_desc_10",
+  "str_n25_idol_y_arrange_title_10",
+  "n25_ych_head03",
+  "str_n25_idol_y_arrange_desc_11",
+  "str_n25_idol_y_arrange_title_11",
+  "n25_ych_head06",
+  "str_n25_idol_y_arrange_desc_12",
+  "str_n25_idol_y_arrange_title_12",
+  "n25_ych_head02",
+  "str_n25_idol_y_arrange_desc_13",
+  "str_n25_idol_y_arrange_title_13",
+  "n25_ych_head05",
+  "str_n25_idol_y_arrange_desc_14",
+  "str_n25_idol_y_arrange_title_14",
+  "n25_ych_head01",
+  "str_n25_idol_y_arrange_desc_15",
+  "str_n25_idol_y_arrange_title_15",
+  "n25_ych_head04",
+  "str_n25_idol_game_puppy_question_1",
+  "str_n25_idol_game_puppy_question_2",
+  "str_n25_idol_game_puppy_question_3",
+  "str_n25_idol_game_puppy_question_4",
+  "str_n25_idol_game_puppy_question_5",
+  {
+    2000,
+    0,
+    5000
+  },
+  {
+    5000,
+    0,
+    2000
+  },
+  {
+    2000,
+    5000,
+    0
+  },
+  {
+    5000,
+    2000,
+    0
+  },
+  {
+    0,
+    2000,
+    5000
+  },
+  {
+    "str_n25_idol_game_puppy_question_cond_1_2",
+    "str_n25_idol_game_puppy_question_cond_1_1",
+    "str_n25_idol_game_puppy_question_cond_1_3"
+  },
+  {
+    "str_n25_idol_game_puppy_result_1_2",
+    "str_n25_idol_game_puppy_result_1_1",
+    "str_n25_idol_game_puppy_result_1_3"
+  },
+  {
+    "n25_ych_head11",
+    "n25_ych_head12",
+    "n25_ych_head13"
+  },
+  {
+    "wuyu",
+    "luobai",
+    "jianjidechen"
+  },
+  {
+    "str_n25_idol_game_puppy_question_cond_2_3",
+    "str_n25_idol_game_puppy_question_cond_2_1",
+    "str_n25_idol_game_puppy_question_cond_2_2"
+  },
+  {
+    "str_n25_idol_game_puppy_result_2_3",
+    "str_n25_idol_game_puppy_result_2_1",
+    "str_n25_idol_game_puppy_result_2_2"
+  },
+  {
+    "n25_ych_head13",
+    "n25_ych_head12",
+    "n25_ych_head11"
+  },
+  {
+    "jianjidechen",
+    "luobai",
+    "wuyu"
+  },
+  {
+    "str_n25_idol_game_puppy_question_cond_3_2",
+    "str_n25_idol_game_puppy_question_cond_3_3",
+    "str_n25_idol_game_puppy_question_cond_3_1"
+  },
+  {
+    "str_n25_idol_game_puppy_result_3_2",
+    "str_n25_idol_game_puppy_result_3_3",
+    "str_n25_idol_game_puppy_result_3_1"
+  },
+  {
+    "n25_ych_head11",
+    "n25_ych_head13",
+    "n25_ych_head12"
+  },
+  {
+    "wuyu",
+    "jianjidechen",
+    "luobai"
+  },
+  {
+    "str_n25_idol_game_puppy_question_cond_4_3",
+    "str_n25_idol_game_puppy_question_cond_4_2",
+    "str_n25_idol_game_puppy_question_cond_4_1"
+  },
+  {
+    "str_n25_idol_game_puppy_result_4_3",
+    "str_n25_idol_game_puppy_result_4_2",
+    "str_n25_idol_game_puppy_result_4_1"
+  },
+  {
+    "n25_ych_head13",
+    "n25_ych_head11",
+    "n25_ych_head12"
+  },
+  {
+    "jianjidechen",
+    "wuyu",
+    "luobai"
+  },
+  {
+    "str_n25_idol_game_puppy_question_cond_5_1",
+    "str_n25_idol_game_puppy_question_cond_5_2",
+    "str_n25_idol_game_puppy_question_cond_5_3"
+  },
+  {
+    "str_n25_idol_game_puppy_result_5_1",
+    "str_n25_idol_game_puppy_result_5_2",
+    "str_n25_idol_game_puppy_result_5_3"
+  },
+  {
+    "n25_ych_head12",
+    "n25_ych_head11",
+    "n25_ych_head13"
+  },
+  {
+    "luobai",
+    "wuyu",
+    "jianjidechen"
+  }
 }
 local config = {
-{1, 107610808, 1, 1, 1500331, nil, common[1], nil, 50371401, nil, nil, nil, nil, nil, nil, nil, nil, common[15], common[16], common[17]}
-, 
-{2, 107610808, 2, 1, 1500331, 1, common[2], nil, 50371501, nil, nil, nil, nil, nil, nil, nil, nil, common[18], common[19], common[17]}
-, 
-{3, 107610808, 3, 1, 1500331, 2, common[3], nil, 50371601, nil, nil, nil, nil, nil, nil, nil, nil, common[20], common[21], common[17]}
-, 
-{4, 107610808, 4, 1, 1601781, nil, common[4], nil, 50371101, nil, nil, nil, nil, nil, nil, nil, nil, common[22], common[23], common[24]}
-, 
-{5, 107610808, 5, 1, 1601781, 4, common[5], nil, 50371201, nil, nil, nil, nil, nil, nil, nil, nil, common[25], common[26], common[24]}
-, 
-{6, 107610808, 6, 1, 1601781, 5, common[6], nil, 50371301, nil, nil, nil, nil, nil, nil, nil, nil, common[27], common[28], common[24]}
-, 
-{7, 107610808, 7, 1, 1601771, nil, common[7], nil, 50370801, nil, nil, nil, nil, nil, nil, nil, nil, common[29], common[30], common[31]}
-, 
-{8, 107610808, 8, 1, 1601771, 7, common[5], nil, 50370901, nil, nil, nil, nil, nil, nil, nil, nil, common[32], common[33], common[31]}
-, 
-{9, 107610808, 9, 1, 1601771, 8, common[8], nil, 50371001, nil, nil, nil, nil, nil, nil, nil, nil, common[34], common[35], common[31]}
-, 
-{10, 107610808, 10, 1, 1600251, nil, common[9], nil, 50372201, nil, nil, nil, nil, nil, nil, nil, nil, common[36], common[37], common[38]}
-, 
-{11, 107610808, 11, 1, 1601401, nil, common[10], nil, 50371701, nil, nil, nil, nil, nil, nil, nil, nil, common[39], common[40], common[41]}
-, 
-{12, 107610808, 12, 1, 1601431, nil, common[11], nil, 50371901, nil, nil, nil, nil, nil, nil, nil, nil, common[42], common[43], common[44]}
-, 
-{13, 107610808, 13, 1, 1601561, nil, common[12], nil, 50372001, nil, nil, nil, nil, nil, nil, nil, nil, common[45], common[46], common[47]}
-, 
-{14, 107610808, 14, 1, 1601721, nil, common[6], nil, 50371801, nil, nil, nil, nil, nil, nil, nil, nil, common[48], common[49], common[50]}
-, 
-{15, 107610808, 15, 1, 1601161, nil, common[13], nil, 50372101, nil, nil, nil, nil, nil, nil, nil, nil, common[51], common[52], common[53]}
-, 
-{16, 107610808, 16, 2, nil, nil, nil, common[59], nil, common[14], nil, nil, common[64], common[65], common[66], common[67], common[54]}
-, 
-{17, 107610808, 17, 2, nil, nil, nil, common[60], nil, common[14], nil, nil, common[68], common[69], common[70], common[71], common[55]}
-, 
-{18, 107610808, 18, 2, nil, nil, nil, common[61], nil, common[14], nil, nil, common[72], common[73], common[74], common[75], common[56]}
-, 
-{19, 107610808, 19, 2, nil, nil, nil, common[62], nil, common[14], nil, nil, common[76], common[77], common[78], common[79], common[57]}
-, 
-{20, 107610808, 20, 2, nil, nil, nil, common[63], nil, common[14], nil, nil, common[80], common[81], common[82], common[83], common[58]}
-, 
-{21, 121210808, 1, 1, 1500331, nil, common[1], nil, 50371401, nil, nil, nil, nil, nil, nil, nil, nil, common[15], common[16], common[17]}
-, 
-{22, 121210808, 2, 1, 1500331, 1, common[2], nil, 50371501, nil, nil, nil, nil, nil, nil, nil, nil, common[18], common[19], common[17]}
-, 
-{23, 121210808, 3, 1, 1500331, 2, common[3], nil, 50371601, nil, nil, nil, nil, nil, nil, nil, nil, common[20], common[21], common[17]}
-, 
-{24, 121210808, 4, 1, 1601781, nil, common[4], nil, 50371101, nil, nil, nil, nil, nil, nil, nil, nil, common[22], common[23], common[24]}
-, 
-{25, 121210808, 5, 1, 1601781, 4, common[5], nil, 50371201, nil, nil, nil, nil, nil, nil, nil, nil, common[25], common[26], common[24]}
-, 
-{26, 121210808, 6, 1, 1601781, 5, common[6], nil, 50371301, nil, nil, nil, nil, nil, nil, nil, nil, common[27], common[28], common[24]}
-, 
-{27, 121210808, 7, 1, 1601771, nil, common[7], nil, 50370801, nil, nil, nil, nil, nil, nil, nil, nil, common[29], common[30], common[31]}
-, 
-{28, 121210808, 8, 1, 1601771, 7, common[5], nil, 50370901, nil, nil, nil, nil, nil, nil, nil, nil, common[32], common[33], common[31]}
-, 
-{29, 121210808, 9, 1, 1601771, 8, common[8], nil, 50371001, nil, nil, nil, nil, nil, nil, nil, nil, common[34], common[35], common[31]}
-, 
-{30, 121210808, 10, 1, 1600251, nil, common[9], nil, 50372201, nil, nil, nil, nil, nil, nil, nil, nil, common[36], common[37], common[38]}
-, 
-{31, 121210808, 11, 1, 1601401, nil, common[10], nil, 50371701, nil, nil, nil, nil, nil, nil, nil, nil, common[39], common[40], common[41]}
-, 
-{32, 121210808, 12, 1, 1601431, nil, common[11], nil, 50371901, nil, nil, nil, nil, nil, nil, nil, nil, common[42], common[43], common[44]}
-, 
-{33, 121210808, 13, 1, 1601561, nil, common[12], nil, 50372001, nil, nil, nil, nil, nil, nil, nil, nil, common[45], common[46], common[47]}
-, 
-{34, 121210808, 14, 1, 1601721, nil, common[6], nil, 50371801, nil, nil, nil, nil, nil, nil, nil, nil, common[48], common[49], common[50]}
-, 
-{35, 121210808, 15, 1, 1601161, nil, common[13], nil, 50372101, nil, nil, nil, nil, nil, nil, nil, nil, common[51], common[52], common[53]}
-, 
-{36, 121210808, 16, 2, nil, nil, nil, common[59], nil, common[14], nil, nil, common[64], common[65], common[66], common[67], common[54]}
-, 
-{37, 121210808, 17, 2, nil, nil, nil, common[60], nil, common[14], nil, nil, common[68], common[69], common[70], common[71], common[55]}
-, 
-{38, 121210808, 18, 2, nil, nil, nil, common[61], nil, common[14], nil, nil, common[72], common[73], common[74], common[75], common[56]}
-, 
-{39, 121210808, 19, 2, nil, nil, nil, common[62], nil, common[14], nil, nil, common[76], common[77], common[78], common[79], common[57]}
-, 
-{40, 121210808, 20, 2, nil, nil, nil, common[63], nil, common[14], nil, nil, common[80], common[81], common[82], common[83], common[58]}
+  {
+    1,
+    107610808,
+    1,
+    1,
+    1500331,
+    nil,
+    common[1],
+    nil,
+    50371401,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[15],
+    common[16],
+    common[17]
+  },
+  {
+    2,
+    107610808,
+    2,
+    1,
+    1500331,
+    1,
+    common[2],
+    nil,
+    50371501,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[18],
+    common[19],
+    common[17]
+  },
+  {
+    3,
+    107610808,
+    3,
+    1,
+    1500331,
+    2,
+    common[3],
+    nil,
+    50371601,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[20],
+    common[21],
+    common[17]
+  },
+  {
+    4,
+    107610808,
+    4,
+    1,
+    1601781,
+    nil,
+    common[4],
+    nil,
+    50371101,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[22],
+    common[23],
+    common[24]
+  },
+  {
+    5,
+    107610808,
+    5,
+    1,
+    1601781,
+    4,
+    common[5],
+    nil,
+    50371201,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[25],
+    common[26],
+    common[24]
+  },
+  {
+    6,
+    107610808,
+    6,
+    1,
+    1601781,
+    5,
+    common[6],
+    nil,
+    50371301,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[27],
+    common[28],
+    common[24]
+  },
+  {
+    7,
+    107610808,
+    7,
+    1,
+    1601771,
+    nil,
+    common[7],
+    nil,
+    50370801,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    8,
+    107610808,
+    8,
+    1,
+    1601771,
+    7,
+    common[5],
+    nil,
+    50370901,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[32],
+    common[33],
+    common[31]
+  },
+  {
+    9,
+    107610808,
+    9,
+    1,
+    1601771,
+    8,
+    common[8],
+    nil,
+    50371001,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35],
+    common[31]
+  },
+  {
+    10,
+    107610808,
+    10,
+    1,
+    1600251,
+    nil,
+    common[9],
+    nil,
+    50372201,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[36],
+    common[37],
+    common[38]
+  },
+  {
+    11,
+    107610808,
+    11,
+    1,
+    1601401,
+    nil,
+    common[10],
+    nil,
+    50371701,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[39],
+    common[40],
+    common[41]
+  },
+  {
+    12,
+    107610808,
+    12,
+    1,
+    1601431,
+    nil,
+    common[11],
+    nil,
+    50371901,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[42],
+    common[43],
+    common[44]
+  },
+  {
+    13,
+    107610808,
+    13,
+    1,
+    1601561,
+    nil,
+    common[12],
+    nil,
+    50372001,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[45],
+    common[46],
+    common[47]
+  },
+  {
+    14,
+    107610808,
+    14,
+    1,
+    1601721,
+    nil,
+    common[6],
+    nil,
+    50371801,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[48],
+    common[49],
+    common[50]
+  },
+  {
+    15,
+    107610808,
+    15,
+    1,
+    1601161,
+    nil,
+    common[13],
+    nil,
+    50372101,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[51],
+    common[52],
+    common[53]
+  },
+  {
+    16,
+    107610808,
+    16,
+    2,
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    common[14],
+    nil,
+    nil,
+    common[64],
+    common[65],
+    common[66],
+    common[67],
+    common[54]
+  },
+  {
+    17,
+    107610808,
+    17,
+    2,
+    nil,
+    nil,
+    nil,
+    common[60],
+    nil,
+    common[14],
+    nil,
+    nil,
+    common[68],
+    common[69],
+    common[70],
+    common[71],
+    common[55]
+  },
+  {
+    18,
+    107610808,
+    18,
+    2,
+    nil,
+    nil,
+    nil,
+    common[61],
+    nil,
+    common[14],
+    nil,
+    nil,
+    common[72],
+    common[73],
+    common[74],
+    common[75],
+    common[56]
+  },
+  {
+    19,
+    107610808,
+    19,
+    2,
+    nil,
+    nil,
+    nil,
+    common[62],
+    nil,
+    common[14],
+    nil,
+    nil,
+    common[76],
+    common[77],
+    common[78],
+    common[79],
+    common[57]
+  },
+  {
+    20,
+    107610808,
+    20,
+    2,
+    nil,
+    nil,
+    nil,
+    common[63],
+    nil,
+    common[14],
+    nil,
+    nil,
+    common[80],
+    common[81],
+    common[82],
+    common[83],
+    common[58]
+  },
+  {
+    21,
+    121210808,
+    1,
+    1,
+    1500331,
+    nil,
+    common[1],
+    nil,
+    50371401,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[15],
+    common[16],
+    common[17]
+  },
+  {
+    22,
+    121210808,
+    2,
+    1,
+    1500331,
+    1,
+    common[2],
+    nil,
+    50371501,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[18],
+    common[19],
+    common[17]
+  },
+  {
+    23,
+    121210808,
+    3,
+    1,
+    1500331,
+    2,
+    common[3],
+    nil,
+    50371601,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[20],
+    common[21],
+    common[17]
+  },
+  {
+    24,
+    121210808,
+    4,
+    1,
+    1601781,
+    nil,
+    common[4],
+    nil,
+    50371101,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[22],
+    common[23],
+    common[24]
+  },
+  {
+    25,
+    121210808,
+    5,
+    1,
+    1601781,
+    4,
+    common[5],
+    nil,
+    50371201,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[25],
+    common[26],
+    common[24]
+  },
+  {
+    26,
+    121210808,
+    6,
+    1,
+    1601781,
+    5,
+    common[6],
+    nil,
+    50371301,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[27],
+    common[28],
+    common[24]
+  },
+  {
+    27,
+    121210808,
+    7,
+    1,
+    1601771,
+    nil,
+    common[7],
+    nil,
+    50370801,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[29],
+    common[30],
+    common[31]
+  },
+  {
+    28,
+    121210808,
+    8,
+    1,
+    1601771,
+    7,
+    common[5],
+    nil,
+    50370901,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[32],
+    common[33],
+    common[31]
+  },
+  {
+    29,
+    121210808,
+    9,
+    1,
+    1601771,
+    8,
+    common[8],
+    nil,
+    50371001,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35],
+    common[31]
+  },
+  {
+    30,
+    121210808,
+    10,
+    1,
+    1600251,
+    nil,
+    common[9],
+    nil,
+    50372201,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[36],
+    common[37],
+    common[38]
+  },
+  {
+    31,
+    121210808,
+    11,
+    1,
+    1601401,
+    nil,
+    common[10],
+    nil,
+    50371701,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[39],
+    common[40],
+    common[41]
+  },
+  {
+    32,
+    121210808,
+    12,
+    1,
+    1601431,
+    nil,
+    common[11],
+    nil,
+    50371901,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[42],
+    common[43],
+    common[44]
+  },
+  {
+    33,
+    121210808,
+    13,
+    1,
+    1601561,
+    nil,
+    common[12],
+    nil,
+    50372001,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[45],
+    common[46],
+    common[47]
+  },
+  {
+    34,
+    121210808,
+    14,
+    1,
+    1601721,
+    nil,
+    common[6],
+    nil,
+    50371801,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[48],
+    common[49],
+    common[50]
+  },
+  {
+    35,
+    121210808,
+    15,
+    1,
+    1601161,
+    nil,
+    common[13],
+    nil,
+    50372101,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[51],
+    common[52],
+    common[53]
+  },
+  {
+    36,
+    121210808,
+    16,
+    2,
+    nil,
+    nil,
+    nil,
+    common[59],
+    nil,
+    common[14],
+    nil,
+    nil,
+    common[64],
+    common[65],
+    common[66],
+    common[67],
+    common[54]
+  },
+  {
+    37,
+    121210808,
+    17,
+    2,
+    nil,
+    nil,
+    nil,
+    common[60],
+    nil,
+    common[14],
+    nil,
+    nil,
+    common[68],
+    common[69],
+    common[70],
+    common[71],
+    common[55]
+  },
+  {
+    38,
+    121210808,
+    18,
+    2,
+    nil,
+    nil,
+    nil,
+    common[61],
+    nil,
+    common[14],
+    nil,
+    nil,
+    common[72],
+    common[73],
+    common[74],
+    common[75],
+    common[56]
+  },
+  {
+    39,
+    121210808,
+    19,
+    2,
+    nil,
+    nil,
+    nil,
+    common[62],
+    nil,
+    common[14],
+    nil,
+    nil,
+    common[76],
+    common[77],
+    common[78],
+    common[79],
+    common[57]
+  },
+  {
+    40,
+    121210808,
+    20,
+    2,
+    nil,
+    nil,
+    nil,
+    common[63],
+    nil,
+    common[14],
+    nil,
+    nil,
+    common[80],
+    common[81],
+    common[82],
+    common[83],
+    common[58]
+  }
 }
 return config, "ID", key
-

@@ -1,101 +1,72 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/talent_tree_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("TalentTreeComponent", ICampaignComponent)
 TalentTreeComponent = TalentTreeComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-TalentTreeComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function TalentTreeComponent:Constructor()
   self.m_component_info = TalentTreeComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function TalentTreeComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = TalentTreeComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function TalentTreeComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function TalentTreeComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_TALENT_TREE
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function TalentTreeComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.HandleOperateTalentTreeSkill = function(self, TT, asyncRes, operate_type, skill_type_id, skill_solt_id)
-  -- function num : 0_5 , upvalues : _ENV
+function TalentTreeComponent:HandleOperateTalentTreeSkill(TT, asyncRes, operate_type, skill_type_id, skill_solt_id)
   local request = OperateTalentTreeSkillReq:New()
   request.operate_type = operate_type
   request.skill_type_id = skill_type_id
   request.skill_solt_id = skill_solt_id
   local response = OperateTalentTreeSkillRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][TalentTreeComponent] HandleOperateTalentTreeSkill ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][TalentTreeComponent] HandleOperateTalentTreeSkill ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).m_talent_info = response.m_talent_info
+  self.m_component_info.m_talent_info = response.m_talent_info
   return response.ret
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.HaveRedPoint = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function TalentTreeComponent:HaveRedPoint()
   if not self:ComponentIsOpen() then
     return false
   end
   if self.m_component_info then
     local comCfgID = self:GetComponentCfgId()
-    local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = comCfgID, Type = 1, Level = 1})
+    local cfgs = Cfg.cfg_component_talent_tree_skill({
+      ComponentID = comCfgID,
+      Type = 1,
+      Level = 1
+    })
     self._passiveList = {}
     for i = 1, #cfgs do
-      (table.insert)(self._passiveList, cfgs[i])
+      table.insert(self._passiveList, cfgs[i])
     end
-    ;
-    (table.sort)(self._passiveList, function(a, b)
-    -- function num : 0_6_0
-    do return a.OrderId < b.OrderId end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    table.sort(self._passiveList, function(a, b)
+      return a.OrderId < b.OrderId
+    end)
     for i = 1, #self._passiveList do
-      local passid = ((self._passiveList)[i]).SkillTypeID
+      local passid = self._passiveList[i].SkillTypeID
       local succ_p = self:CheckSkillCanUpLv(passid)
       if succ_p then
         return true
       end
-      local childList = ((self._passiveList)[i]).ChildSkill
+      local childList = self._passiveList[i].ChildSkill
       for j = 1, #childList do
         local childid = childList[j]
         local succ = self:CheckSkillCanUpLv(childid)
@@ -105,21 +76,16 @@ TalentTreeComponent.HaveRedPoint = function(self)
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.CheckSkillCanUpLv = function(self, rootid)
-  -- function num : 0_7
-  local info = (self.m_component_info).m_talent_info
+function TalentTreeComponent:CheckSkillCanUpLv(rootid)
+  local info = self.m_component_info.m_talent_info
   local skillInfo = info.m_skill_list
   if skillInfo[rootid] then
     local level = skillInfo[rootid]
     local maxLv = self:GetSkillMaxLv(rootid)
-    if maxLv <= level then
+    if level >= maxLv then
       return false
     else
       local enough = self:CheckUpLvEnough(rootid, level)
@@ -130,33 +96,25 @@ TalentTreeComponent.CheckSkillCanUpLv = function(self, rootid)
       end
     end
   else
-    do
-      do
-        local unlock = self:CheckRootUnLock(rootid)
-        if unlock then
-          local cfg = self:GetRootIDCfg(rootid)
-          local buyCost = (cfg.Price)[2]
-          local haveCount = self:GetItemHaveCount((cfg.Price)[1])
-          return buyCost <= haveCount
-        else
-          return false
-        end
-        -- DECOMPILER ERROR: 3 unprocessed JMP targets
-      end
+    local unlock = self:CheckRootUnLock(rootid)
+    if unlock then
+      local cfg = self:GetRootIDCfg(rootid)
+      local buyCost = cfg.Price[2]
+      local haveCount = self:GetItemHaveCount(cfg.Price[1])
+      return buyCost <= haveCount
+    else
+      return false
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.CheckRootUnLock = function(self, rootid)
-  -- function num : 0_8
+function TalentTreeComponent:CheckRootUnLock(rootid)
   local type = self:GetRootIDType(rootid)
   if type == 1 then
     local preid = self:GetPreParentID(rootid)
     if preid then
       local preLv = self:GetRoorIDLv(preid)
-      if preLv and preLv > 0 then
+      if preLv and 0 < preLv then
         local needCost = self:GetRootIDNeedCost(rootid)
         local preCost = self:GetPreCost(rootid)
         return needCost <= preCost
@@ -169,20 +127,16 @@ TalentTreeComponent.CheckRootUnLock = function(self, rootid)
   else
     local parentid = self:GetParentRootID(rootid)
     local lv = self:GetRoorIDLv(parentid)
-    if lv and lv > 0 then
+    if lv and 0 < lv then
       return true
     end
     return false
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.GetPreCost = function(self, rootid)
-  -- function num : 0_9 , upvalues : _ENV
+function TalentTreeComponent:GetPreCost(rootid)
   local preCost = 0
-  for index,value in ipairs(self._passiveList) do
+  for index, value in ipairs(self._passiveList) do
     if value.SkillTypeID == rootid then
       return preCost
     else
@@ -193,21 +147,15 @@ TalentTreeComponent.GetPreCost = function(self, rootid)
   return preCost
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.GetRootIDCost = function(self, rootid)
-  -- function num : 0_10
-  local info = (self.m_component_info).m_talent_info
+function TalentTreeComponent:GetRootIDCost(rootid)
+  local info = self.m_component_info.m_talent_info
   local costInfo = info.m_skill_cost
   return costInfo[rootid] or 0
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.GetPreParentID = function(self, rootid)
-  -- function num : 0_11 , upvalues : _ENV
-  local preid = nil
-  for index,value in ipairs(self._passiveList) do
+function TalentTreeComponent:GetPreParentID(rootid)
+  local preid
+  for index, value in ipairs(self._passiveList) do
     if value.SkillTypeID == rootid then
       return preid
     else
@@ -217,19 +165,13 @@ TalentTreeComponent.GetPreParentID = function(self, rootid)
   return preid
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.GetRootIDNeedCost = function(self, rootid)
-  -- function num : 0_12
+function TalentTreeComponent:GetRootIDNeedCost(rootid)
   local cfg = self:GetRootIDCfg(rootid)
   return cfg.NeedCost
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.GetRoorIDLv = function(self, rootid)
-  -- function num : 0_13
-  local info = (self.m_component_info).m_talent_info
+function TalentTreeComponent:GetRoorIDLv(rootid)
+  local info = self.m_component_info.m_talent_info
   local skillInfo = info.m_skill_list
   if skillInfo[rootid] then
     return skillInfo[rootid]
@@ -237,61 +179,54 @@ TalentTreeComponent.GetRoorIDLv = function(self, rootid)
   return nil
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.GetSkillMaxLv = function(self, rootid)
-  -- function num : 0_14 , upvalues : _ENV
+function TalentTreeComponent:GetSkillMaxLv(rootid)
   local comCfgID = self:GetComponentCfgId()
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = comCfgID, SkillTypeID = rootid})
+  local cfgs = Cfg.cfg_component_talent_tree_skill({ComponentID = comCfgID, SkillTypeID = rootid})
   return #cfgs
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.CheckUpLvEnough = function(self, rootid, currLv)
-  -- function num : 0_15 , upvalues : _ENV
+function TalentTreeComponent:CheckUpLvEnough(rootid, currLv)
   local comCfgID = self:GetComponentCfgId()
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = comCfgID, SkillTypeID = rootid, Level = currLv + 1})
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = comCfgID,
+    SkillTypeID = rootid,
+    Level = currLv + 1
+  })
   local cfg = cfgs[1]
   local cost = cfg.UpgradeCost
   local haveCount = self:GetItemHaveCount(cfg.CostItemId)
-  do return cost <= haveCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return cost <= haveCount
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.GetItemHaveCount = function(self, costid)
-  -- function num : 0_16 , upvalues : _ENV
-  local haveCount = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(costid)
+function TalentTreeComponent:GetItemHaveCount(costid)
+  local haveCount = GameGlobal.GetModule(ItemModule):GetItemCount(costid)
   return haveCount
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.GetRootIDType = function(self, rootid)
-  -- function num : 0_17 , upvalues : _ENV
+function TalentTreeComponent:GetRootIDType(rootid)
   local comCfgID = self:GetComponentCfgId()
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = comCfgID, SkillTypeID = rootid, Level = 1})
-  return (cfgs[1]).Type
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = comCfgID,
+    SkillTypeID = rootid,
+    Level = 1
+  })
+  return cfgs[1].Type
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.GetRootIDCfg = function(self, rootid)
-  -- function num : 0_18 , upvalues : _ENV
+function TalentTreeComponent:GetRootIDCfg(rootid)
   local comCfgID = self:GetComponentCfgId()
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = comCfgID, SkillTypeID = rootid, Level = 1})
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = comCfgID,
+    SkillTypeID = rootid,
+    Level = 1
+  })
   return cfgs[1]
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.GetParentRootID = function(self, rootid)
-  -- function num : 0_19 , upvalues : _ENV
-  for index,value in ipairs(self._passiveList) do
+function TalentTreeComponent:GetParentRootID(rootid)
+  for index, value in ipairs(self._passiveList) do
     local childList = value.ChildSkill
-    for idx,val in ipairs(childList) do
+    for idx, val in ipairs(childList) do
       if val == rootid then
         return value.SkillTypeID
       end
@@ -300,36 +235,32 @@ TalentTreeComponent.GetParentRootID = function(self, rootid)
   return nil
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.GetAllCanCostLevelItemCount = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function TalentTreeComponent:GetAllCanCostLevelItemCount()
   local allCanCostList = {}
   if self.m_component_info then
     local comCfgID = self:GetComponentCfgId()
-    local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = comCfgID, Type = 1, Level = 1})
+    local cfgs = Cfg.cfg_component_talent_tree_skill({
+      ComponentID = comCfgID,
+      Type = 1,
+      Level = 1
+    })
     self._passiveList = {}
     for i = 1, #cfgs do
-      (table.insert)(self._passiveList, cfgs[i])
+      table.insert(self._passiveList, cfgs[i])
     end
-    ;
-    (table.sort)(self._passiveList, function(a, b)
-    -- function num : 0_20_0
-    do return a.OrderId < b.OrderId end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    table.sort(self._passiveList, function(a, b)
+      return a.OrderId < b.OrderId
+    end)
     for i = 1, #self._passiveList do
-      local passid = ((self._passiveList)[i]).SkillTypeID
+      local passid = self._passiveList[i].SkillTypeID
       local succ_p, costInfo = self:CheckSkillIsUpLv(passid)
       if succ_p then
         if allCanCostList[costInfo[1]] == nil then
           allCanCostList[costInfo[1]] = {}
         end
-        ;
-        (table.insert)(allCanCostList[costInfo[1]], costInfo)
+        table.insert(allCanCostList[costInfo[1]], costInfo)
       end
-      local childList = ((self._passiveList)[i]).ChildSkill
+      local childList = self._passiveList[i].ChildSkill
       for j = 1, #childList do
         local childid = childList[j]
         local succ, costInfo = self:CheckSkillIsUpLv(childid)
@@ -337,31 +268,32 @@ TalentTreeComponent.GetAllCanCostLevelItemCount = function(self)
           if allCanCostList[costInfo[1]] == nil then
             allCanCostList[costInfo[1]] = {}
           end
-          ;
-          (table.insert)(allCanCostList[costInfo[1]], costInfo)
+          table.insert(allCanCostList[costInfo[1]], costInfo)
         end
       end
     end
   end
-  do
-    return allCanCostList
-  end
+  return allCanCostList
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-TalentTreeComponent.CheckSkillIsUpLv = function(self, rootId)
-  -- function num : 0_21 , upvalues : _ENV
-  local info = (self.m_component_info).m_talent_info
+function TalentTreeComponent:CheckSkillIsUpLv(rootId)
+  local info = self.m_component_info.m_talent_info
   local skillInfo = info.m_skill_list
   if skillInfo[rootId] then
     local level = skillInfo[rootId]
     local maxLv = self:GetSkillMaxLv(rootId)
     local comCfgID = self:GetComponentCfgId()
     if level < maxLv then
-      local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = comCfgID, SkillTypeID = rootId, Level = level + 1})
+      local cfgs = Cfg.cfg_component_talent_tree_skill({
+        ComponentID = comCfgID,
+        SkillTypeID = rootId,
+        Level = level + 1
+      })
       local cfg = cfgs[1]
-      return level < maxLv, {cfg.CostItemId, cfg.UpgradeCost}
+      return level < maxLv, {
+        cfg.CostItemId,
+        cfg.UpgradeCost
+      }
     else
       return level < maxLv, {}
     end
@@ -369,14 +301,14 @@ TalentTreeComponent.CheckSkillIsUpLv = function(self, rootId)
     local unlock = self:CheckRootUnLock(rootId)
     if unlock then
       local cfg = self:GetRootIDCfg(rootId)
-      local buyCost = (cfg.Price)[2]
-      local haveCount = self:GetItemHaveCount((cfg.Price)[1])
-      return buyCost <= haveCount, {(cfg.Price)[1], (cfg.Price)[2]}
+      local buyCost = cfg.Price[2]
+      local haveCount = self:GetItemHaveCount(cfg.Price[1])
+      return buyCost <= haveCount, {
+        cfg.Price[1],
+        cfg.Price[2]
+      }
     else
       return false, {}
     end
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
-
-

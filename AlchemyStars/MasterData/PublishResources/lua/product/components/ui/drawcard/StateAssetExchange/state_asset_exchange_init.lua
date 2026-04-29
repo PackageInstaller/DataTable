@@ -1,26 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/StateAssetExchange/state_asset_exchange_init.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateAssetExchangeInit", State)
 StateAssetExchangeInit = StateAssetExchangeInit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateAssetExchangeInit.OnEnter = function(self, TT, ...)
-  -- function num : 0_0
+function StateAssetExchangeInit:OnEnter(TT, ...)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAssetExchangeInit.OnExit = function(self, TT)
-  -- function num : 0_1
+function StateAssetExchangeInit:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAssetExchangeInit.Destroy = function(self)
-  -- function num : 0_2
+function StateAssetExchangeInit:Destroy()
 end
-
-

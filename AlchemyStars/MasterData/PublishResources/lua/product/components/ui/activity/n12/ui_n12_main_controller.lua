@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/ui_n12_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12MainController", UIController)
 UIN12MainController = UIN12MainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12MainController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12MainController:Constructor()
   self._loginModule = self:GetModule(LoginModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
@@ -17,93 +10,58 @@ UIN12MainController.Constructor = function(self)
   self._showSpine = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN12MainController:LoadDataOnEnter(TT, res, uiParams)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N12, ECampaignN12ComponentID.ECAMPAIGN_N12_ENTRUST, ECampaignN12ComponentID.ECAMPAIGN_N12_DAILY_MISSION, ECampaignN12ComponentID.ECAMPAIGN_N12_CUMULATIVE_LOGIN, ECampaignN12ComponentID.ECAMPAIGN_N12_LEVEL_FIXTEAM, ECampaignN12ComponentID.ECAMPAIGN_N12_PERSON_PROGRESS_SCORE, ECampaignN12ComponentID.ECAMPAIGN_N12_STORY, ECampaignN12ComponentID.ECAMPAIGN_N12_QUEST_MISSION)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N12, ECampaignN12ComponentID.ECAMPAIGN_N12_ENTRUST, ECampaignN12ComponentID.ECAMPAIGN_N12_DAILY_MISSION, ECampaignN12ComponentID.ECAMPAIGN_N12_CUMULATIVE_LOGIN, ECampaignN12ComponentID.ECAMPAIGN_N12_LEVEL_FIXTEAM, ECampaignN12ComponentID.ECAMPAIGN_N12_PERSON_PROGRESS_SCORE, ECampaignN12ComponentID.ECAMPAIGN_N12_STORY, ECampaignN12ComponentID.ECAMPAIGN_N12_QUEST_MISSION)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  self._cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
-  self._dailyMissionComponent = (self._campaign):GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_DAILY_MISSION)
-  self._dailyMissionComponentInfo = (self._dailyMissionComponent):GetComponentInfo()
-  self._challengeMissionComponent = (self._campaign):GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
-  self._challengeMissionComponentInfo = (self._challengeMissionComponent):GetComponentInfo()
-  self._entrustComponent = (self._campaign):GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_ENTRUST)
-  self._entrustCompInfo = (self._entrustComponent):GetComponentInfo()
+  self._cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
+  self._dailyMissionComponent = self._campaign:GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_DAILY_MISSION)
+  self._dailyMissionComponentInfo = self._dailyMissionComponent:GetComponentInfo()
+  self._challengeMissionComponent = self._campaign:GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
+  self._challengeMissionComponentInfo = self._challengeMissionComponent:GetComponentInfo()
+  self._entrustComponent = self._campaign:GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_ENTRUST)
+  self._entrustCompInfo = self._entrustComponent:GetComponentInfo()
   self._battlePassCampaign = UIActivityCampaign:New()
   local bp_res = AsyncRequestRes:New()
-  ;
-  (self._battlePassCampaign):LoadCampaignInfo(TT, bp_res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+  self._battlePassCampaign:LoadCampaignInfo(TT, bp_res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN12MainController:OnShow(uiParams)
   self._rt = uiParams[1]
   self:_AttachEvent()
   self:_GetComponent()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController._AttachEvent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN12MainController:_AttachEvent()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController._GetComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN12MainController:_GetComponent()
   self._backBtn = self:GetUIComponent("UISelectObjectPath", "BackBtn")
-  self._commonTopBtn = (self._backBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_4_0 , upvalues : self
+  self._commonTopBtn = self._backBtn:SpawnObject("UICommonTopButton")
+  self._commonTopBtn:SetData(function()
     self:_Close()
-  end
-, nil, nil, false, function()
-    -- function num : 0_4_1 , upvalues : self
+  end, nil, nil, false, function()
     if not self._showSpine then
       self:_ShowBgSpine(true, "uieff_N12_Main_Hide")
     end
-  end
-)
+  end)
   self._remainTime = self:GetUIComponent("UILocalizationText", "RemainTime")
   self._unLockTime = self:GetUIComponent("UILocalizationText", "UnLockTime")
   self._entrustRollingText = self:GetUIComponent("RollingText", "EntrustUnLockTime")
   self._entrustText = self:GetUIComponent("UILocalizationText", "EntrustUnLockTime")
   self._entrustGameLockImg = self:GetGameObject("EntrustGameLockImg")
   self._btnImg = {}
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._btnImg)[ECampaignN12ComponentID.ECAMPAIGN_N12_PERSON_PROGRESS_SCORE] = self:GetUIComponent("Image", "ScoreStore")
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._btnImg)[ECampaignN12ComponentID.ECAMPAIGN_N12_CUMULATIVE_LOGIN] = self:GetUIComponent("Image", "LoginAwardBtn")
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._btnImg)[ECampaignN12ComponentID.ECAMPAIGN_N12_DAILY_MISSION] = self:GetUIComponent("RawImage", "NormalLevelBtn")
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._btnImg)[ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION] = self:GetUIComponent("Image", "HardLevelBtn")
-  -- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._btnImg)[ECampaignN12ComponentID.ECAMPAIGN_N12_ENTRUST] = self:GetUIComponent("Image", "EntrustGameBtn")
+  self._btnImg[ECampaignN12ComponentID.ECAMPAIGN_N12_PERSON_PROGRESS_SCORE] = self:GetUIComponent("Image", "ScoreStore")
+  self._btnImg[ECampaignN12ComponentID.ECAMPAIGN_N12_CUMULATIVE_LOGIN] = self:GetUIComponent("Image", "LoginAwardBtn")
+  self._btnImg[ECampaignN12ComponentID.ECAMPAIGN_N12_DAILY_MISSION] = self:GetUIComponent("RawImage", "NormalLevelBtn")
+  self._btnImg[ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION] = self:GetUIComponent("Image", "HardLevelBtn")
+  self._btnImg[ECampaignN12ComponentID.ECAMPAIGN_N12_ENTRUST] = self:GetUIComponent("Image", "EntrustGameBtn")
   self._loginAwardRedPoint = self:GetGameObject("LoginAwardRedPoint")
   self._entrustGameRedPoint = self:GetGameObject("EntrustGameRedPoint")
   self._normalLevelRedPoint = self:GetGameObject("NormalLevelRedPoint")
@@ -111,390 +69,277 @@ UIN12MainController._GetComponent = function(self)
   self._scoreStoreRedPoint = self:GetGameObject("ScoreStoreRedPoint")
   self._entrustGameNew = self:GetGameObject("EntrustGameNew")
   self._battlePassRedPoint = self:GetGameObject("BattlePassRedPoint")
-  self._animation = ((self.view).gameObject):GetComponent("Animation")
+  self._animation = self.view.gameObject:GetComponent("Animation")
   self._screenCut = self:GetUIComponent("RawImage", "ScreenCut")
   self._normalLevelText = self:GetUIComponent("RawImage", "NormalLevelText")
   self._textObj = self:GetGameObject("Text")
-  self._textRender = (self._textObj):GetComponent(typeof(UnityEngine.Renderer))
+  self._textRender = self._textObj:GetComponent(typeof(UnityEngine.Renderer))
   self._normalLevelBtnLock = self:GetGameObject("NormalLevelBtnLock")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController._OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN12MainController:_OnValue()
   if self._rt then
-    (self._screenCut).texture = self._rt
-    ;
-    (self._animation):Play("uieff_N12_Main_In")
+    self._screenCut.texture = self._rt
+    self._animation:Play("uieff_N12_Main_In")
   else
-    ;
-    (self._animation):Play("uieff_N12_Main_In2")
+    self._animation:Play("uieff_N12_Main_In2")
   end
-  ;
-  ((self._textRender).material):SetTexture("_MainTex", ((self._normalLevelText).material):GetTexture("_MainTex"))
+  self._textRender.material:SetTexture("_MainTex", self._normalLevelText.material:GetTexture("_MainTex"))
   self:_PlayStory()
   self:_RefreshRemainTime()
-  self._timeEvent = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_5_0 , upvalues : self
+  self._timeEvent = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:_RefreshRemainTime()
-  end
-)
+  end)
   self:_RefreshEntrustUnLockRemainTime(true)
-  local remainTime = (self._entrustCompInfo).m_unlock_time - (self._svrTimeModule):GetServerTime() * 0.001
-  if remainTime > 0 then
-    self._entruskTimeEvent = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_5_1 , upvalues : self
-    self:_RefreshEntrustUnLockRemainTime(false)
-  end
-)
+  local remainTime = self._entrustCompInfo.m_unlock_time - self._svrTimeModule:GetServerTime() * 0.001
+  if 0 < remainTime then
+    self._entruskTimeEvent = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+      self:_RefreshEntrustUnLockRemainTime(false)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController._Close = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN12MainController:_Close()
   self:SwitchState(UIStateType.UIMain)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController.OnHide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN12MainController:OnHide()
   if self._timeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timeEvent)
+    GameGlobal.Timer():CancelEvent(self._timeEvent)
     self._timeEvent = nil
   end
   if self._entruskTimeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._entruskTimeEvent)
+    GameGlobal.Timer():CancelEvent(self._entruskTimeEvent)
     self._entruskTimeEvent = nil
   end
   if self._clearNewTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._clearNewTask)
+    GameGlobal.TaskManager():KillTask(self._clearNewTask)
     self._clearNewTask = nil
   end
   if self._refreshCoomponentStateTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._refreshCoomponentStateTask)
+    GameGlobal.TaskManager():KillTask(self._refreshCoomponentStateTask)
     self._refreshCoomponentStateTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController.AfterUILayerChanged = function(self)
-  -- function num : 0_8
+function UIN12MainController:AfterUILayerChanged()
   self:_RefreshComponentState()
   self:_CheckRedPointAll()
   self:_CheckNewAll()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController._RefreshEntrustUnLockRemainTime = function(self, refresh)
-  -- function num : 0_9 , upvalues : _ENV
-  local remainTime = (self._entrustCompInfo).m_unlock_time - (self._svrTimeModule):GetServerTime() * 0.001
+function UIN12MainController:_RefreshEntrustUnLockRemainTime(refresh)
+  local remainTime = self._entrustCompInfo.m_unlock_time - self._svrTimeModule:GetServerTime() * 0.001
   local str = ""
-  if remainTime > 0 then
-    str = (StringTable.Get)("str_n12_activity_unlock_time", (N12ToolFunctions.GetRemainTime)(remainTime))
+  if 0 < remainTime then
+    str = StringTable.Get("str_n12_activity_unlock_time", N12ToolFunctions.GetRemainTime(remainTime))
   end
   if refresh then
-    (self._entrustRollingText):RefreshText(str)
+    self._entrustRollingText:RefreshText(str)
   else
-    ;
-    (self._entrustText):SetText(str)
+    self._entrustText:SetText(str)
   end
-  ;
-  (self._entrustGameLockImg):SetActive(remainTime > 0)
+  self._entrustGameLockImg:SetActive(0 < remainTime)
   if remainTime <= 0 and self._entruskTimeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._entruskTimeEvent)
+    GameGlobal.Timer():CancelEvent(self._entruskTimeEvent)
     self._entruskTimeEvent = nil
     self._refreshCoomponentStateTask = self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : _ENV, self
-    local res = AsyncRequestRes:New()
-    ;
-    (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N12, ECampaignN12ComponentID.ECAMPAIGN_N12_ENTRUST)
-    ;
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-    if res:GetSucc() then
-      self:_RefreshComponentState()
-    end
+      local res = AsyncRequestRes:New()
+      self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N12, ECampaignN12ComponentID.ECAMPAIGN_N12_ENTRUST)
+      self._campaign:ReLoadCampaignInfo_Force(TT, res)
+      if res:GetSucc() then
+        self:_RefreshComponentState()
+      end
+    end)
   end
-)
-  end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController._RefreshRemainTime = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN12MainController:_RefreshRemainTime()
   local str = "str_n12_reward_remain_time"
   local remainTime = 0
-  local curtime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  remainTime = (self._dailyMissionComponentInfo).m_close_time - curtime
-  if remainTime > 0 then
+  local curtime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  remainTime = self._dailyMissionComponentInfo.m_close_time - curtime
+  if 0 < remainTime then
     str = "str_n12_normal_remain_time"
   else
-    remainTime = (self._entrustCompInfo).m_close_time - curtime
-    if remainTime > 0 then
+    remainTime = self._entrustCompInfo.m_close_time - curtime
+    if 0 < remainTime then
       str = "str_n12_entrust_remain_time"
     end
   end
-  ;
-  (self._remainTime):SetText((StringTable.Get)(str, (N12ToolFunctions.GetRemainTime)(remainTime)))
+  self._remainTime:SetText(StringTable.Get(str, N12ToolFunctions.GetRemainTime(remainTime)))
   if remainTime <= 0 and self._timeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timeEvent)
+    GameGlobal.Timer():CancelEvent(self._timeEvent)
     self._timeEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController._RefreshComponentState = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  for key,value in pairs(ECampaignN12ComponentID) do
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._componentState)[value] = self:_GetComponentState(value)
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R6 in 'UnsetPending'
-
-    if (self._btnImg)[value] then
-      if (self._componentState)[value] then
-        ((self._btnImg)[value]).color = Color.white
+function UIN12MainController:_RefreshComponentState()
+  for key, value in pairs(ECampaignN12ComponentID) do
+    self._componentState[value] = self:_GetComponentState(value)
+    if self._btnImg[value] then
+      if self._componentState[value] then
+        self._btnImg[value].color = Color.white
       else
-        -- DECOMPILER ERROR at PC27: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        ((self._btnImg)[value]).color = Color.gray
+        self._btnImg[value].color = Color.gray
       end
       if value == ECampaignN12ComponentID.ECAMPAIGN_N12_DAILY_MISSION then
-        (self._normalLevelBtnLock):SetActive(not (self._componentState)[value])
+        self._normalLevelBtnLock:SetActive(not self._componentState[value])
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController._GetComponentState = function(self, componentid)
-  -- function num : 0_12
-  return (self._campaign):CheckComponentOpen(componentid)
+function UIN12MainController:_GetComponentState(componentid)
+  return self._campaign:CheckComponentOpen(componentid)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController._CheckRedPointAll = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (self._loginAwardRedPoint):SetActive((self._redDotModule):_RequestRedDotStatus4N12(RedDotType.RDT_N12_LOGIN_AWARD))
-  ;
-  (self._entrustGameRedPoint):SetActive(false)
-  ;
-  (self._normalLevelRedPoint):SetActive((self._redDotModule):_RequestRedDotStatus4N12(RedDotType.RDT_N12_DAILYMISSION))
-  if not (self._redDotModule):_RequestRedDotStatus4N12(RedDotType.RDT_N12_CHALLENGEEMISSION) then
-    (self._hardLevelRedPoint):SetActive((self._redDotModule):_RequestRedDotStatus4N12(RedDotType.RDT_N12_FIXLINEMISSION))
-    if not (self._redDotModule):_RequestRedDotStatus4N12(RedDotType.RDT_N12_SCORE_AWARD) then
-      (self._scoreStoreRedPoint):SetActive((self._redDotModule):_RequestRedDotStatus4N12(RedDotType.RDT_N12_STORY))
-      ;
-      (self._battlePassRedPoint):SetActive((UIActivityBattlePassHelper.CheckCampaignRedPoint)(self._battlePassCampaign))
-    end
-  end
+function UIN12MainController:_CheckRedPointAll()
+  self._loginAwardRedPoint:SetActive(self._redDotModule:_RequestRedDotStatus4N12(RedDotType.RDT_N12_LOGIN_AWARD))
+  self._entrustGameRedPoint:SetActive(false)
+  self._normalLevelRedPoint:SetActive(self._redDotModule:_RequestRedDotStatus4N12(RedDotType.RDT_N12_DAILYMISSION))
+  self._hardLevelRedPoint:SetActive(self._redDotModule:_RequestRedDotStatus4N12(RedDotType.RDT_N12_CHALLENGEEMISSION) or self._redDotModule:_RequestRedDotStatus4N12(RedDotType.RDT_N12_FIXLINEMISSION))
+  self._scoreStoreRedPoint:SetActive(self._redDotModule:_RequestRedDotStatus4N12(RedDotType.RDT_N12_SCORE_AWARD) or self._redDotModule:_RequestRedDotStatus4N12(RedDotType.RDT_N12_STORY))
+  self._battlePassRedPoint:SetActive(UIActivityBattlePassHelper.CheckCampaignRedPoint(self._battlePassCampaign))
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController._CheckNewAll = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (self._entrustGameNew):SetActive((self._redDotModule):_RequestRedDotStatus4N12(RedDotType.RDT_N12_ENTRUSTMISSION_NEW))
+function UIN12MainController:_CheckNewAll()
+  self._entrustGameNew:SetActive(self._redDotModule:_RequestRedDotStatus4N12(RedDotType.RDT_N12_ENTRUSTMISSION_NEW))
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController.ActivityIntroBtnOnClick = function(self, go)
-  -- function num : 0_15
+function UIN12MainController:ActivityIntroBtnOnClick(go)
   self:ShowDialog("UIN12IntroController", "UIN12MainController")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController.BattlePassBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
-  (UIActivityBattlePassHelper.OpenMainController)()
+function UIN12MainController:BattlePassBtnOnClick(go)
+  UIActivityBattlePassHelper.OpenMainController()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController.ScoreStoreOnClick = function(self, go)
-  -- function num : 0_17 , upvalues : _ENV
-  if not (self._componentState)[ECampaignN12ComponentID.ECAMPAIGN_N12_PERSON_PROGRESS_SCORE] then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n12_activity_over"))
-    return 
+function UIN12MainController:ScoreStoreOnClick(go)
+  if not self._componentState[ECampaignN12ComponentID.ECAMPAIGN_N12_PERSON_PROGRESS_SCORE] then
+    ToastManager.ShowToast(StringTable.Get("str_n12_activity_over"))
+    return
   end
   self:SwitchState(UIStateType.UIN12IntegralController)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController.LoginAwardBtnOnClick = function(self, go)
-  -- function num : 0_18 , upvalues : _ENV
-  if not (self._componentState)[ECampaignN12ComponentID.ECAMPAIGN_N12_CUMULATIVE_LOGIN] then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n12_activity_over"))
-    return 
+function UIN12MainController:LoginAwardBtnOnClick(go)
+  if not self._componentState[ECampaignN12ComponentID.ECAMPAIGN_N12_CUMULATIVE_LOGIN] then
+    ToastManager.ShowToast(StringTable.Get("str_n12_activity_over"))
+    return
   end
   self:ShowDialog("UIActivityTotalLoginAwardController", true, ECampaignType.CAMPAIGN_TYPE_N12, ECampaignN12ComponentID.ECAMPAIGN_N12_CUMULATIVE_LOGIN)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController.NormalLevelBtnOnClick = function(self, go)
-  -- function num : 0_19 , upvalues : _ENV
-  local remainTime = (self._dailyMissionComponentInfo).m_unlock_time - (self._svrTimeModule):GetServerTime() * 0.001
-  if remainTime > 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n12_activity_lock"))
-    return 
+function UIN12MainController:NormalLevelBtnOnClick(go)
+  local remainTime = self._dailyMissionComponentInfo.m_unlock_time - self._svrTimeModule:GetServerTime() * 0.001
+  if 0 < remainTime then
+    ToastManager.ShowToast(StringTable.Get("str_n12_activity_lock"))
+    return
   end
-  if not (self._componentState)[ECampaignN12ComponentID.ECAMPAIGN_N12_DAILY_MISSION] then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n12_activity_over"))
-    return 
+  if not self._componentState[ECampaignN12ComponentID.ECAMPAIGN_N12_DAILY_MISSION] then
+    ToastManager.ShowToast(StringTable.Get("str_n12_activity_over"))
+    return
   end
   self:SwitchState(UIStateType.UIN12NormalLevel)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController.HardLevelBtnOnClick = function(self, go)
-  -- function num : 0_20 , upvalues : _ENV
-  local remainTime = (self._challengeMissionComponentInfo).m_unlock_time - (self._svrTimeModule):GetServerTime() * 0.001
-  if remainTime > 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n12_activity_lock"))
-    return 
+function UIN12MainController:HardLevelBtnOnClick(go)
+  local remainTime = self._challengeMissionComponentInfo.m_unlock_time - self._svrTimeModule:GetServerTime() * 0.001
+  if 0 < remainTime then
+    ToastManager.ShowToast(StringTable.Get("str_n12_activity_lock"))
+    return
   end
-  if not (self._componentState)[ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION] then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n12_activity_over"))
-    return 
+  if not self._componentState[ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION] then
+    ToastManager.ShowToast(StringTable.Get("str_n12_activity_over"))
+    return
   end
   self:SwitchState(UIStateType.UIN12HardlLevel)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController.EntrustGameBtnOnClick = function(self, go)
-  -- function num : 0_21 , upvalues : _ENV
-  local remainTime = (self._entrustCompInfo).m_unlock_time - (self._svrTimeModule):GetServerTime() * 0.001
-  if remainTime > 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n12_activity_lock"))
-    return 
+function UIN12MainController:EntrustGameBtnOnClick(go)
+  local remainTime = self._entrustCompInfo.m_unlock_time - self._svrTimeModule:GetServerTime() * 0.001
+  if 0 < remainTime then
+    ToastManager.ShowToast(StringTable.Get("str_n12_activity_lock"))
+    return
   end
-  if not (self._componentState)[ECampaignN12ComponentID.ECAMPAIGN_N12_ENTRUST] then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n12_activity_over"))
-    return 
+  if not self._componentState[ECampaignN12ComponentID.ECAMPAIGN_N12_ENTRUST] then
+    ToastManager.ShowToast(StringTable.Get("str_n12_activity_over"))
+    return
   end
   self:SwitchState(UIStateType.UIN12EntrustStageController)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController._ShowBgSpine = function(self, showSpine, animationName)
-  -- function num : 0_22
+function UIN12MainController:_ShowBgSpine(showSpine, animationName)
   self._showSpine = showSpine
-  ;
-  (self._animation):Play(animationName)
+  self._animation:Play(animationName)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController.bgOnClick = function(self, go)
-  -- function num : 0_23
+function UIN12MainController:bgOnClick(go)
   if self._showSpine then
     self:_ShowBgSpine(false, "uieff_N12_Main_Show")
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController.StoryReviewBtnOnClick = function(self, go)
-  -- function num : 0_24 , upvalues : _ENV
+function UIN12MainController:StoryReviewBtnOnClick(go)
   local canReviewStages = {}
-  local cfgs = (Cfg.cfg_n12_story_review)({})
+  local cfgs = Cfg.cfg_n12_story_review({})
   if cfgs then
     for i = 1, #cfgs do
       local cfg = cfgs[i]
       local curStage = DiscoveryStage:New()
       curStage.id = cfg.ID
-      curStage.longDesc = (StringTable.Get)(cfg.Des)
-      curStage.name = (StringTable.Get)(cfg.Name)
-      curStage.stageIdx = (StringTable.Get)(cfg.StageIndexTitle)
-      curStage.fullname = (StringTable.Get)(cfg.FullName)
+      curStage.longDesc = StringTable.Get(cfg.Des)
+      curStage.name = StringTable.Get(cfg.Name)
+      curStage.stageIdx = StringTable.Get(cfg.StageIndexTitle)
+      curStage.fullname = StringTable.Get(cfg.FullName)
       local storyList = DiscoveryStoryList:New()
       local slist = {}
       storyList.stageId = cfg.ID
       local storyListCfg = cfg.StoryList
       for j = 1, #storyListCfg do
         local story = DiscoveryStory:New()
-        story:Init((storyListCfg[j])[1], (storyListCfg[j])[2])
-        ;
-        (table.insert)(slist, story)
+        story:Init(storyListCfg[j][1], storyListCfg[j][2])
+        table.insert(slist, story)
       end
       storyList.list = slist
       curStage.story = storyList
-      ;
-      (table.insert)(canReviewStages, curStage)
+      table.insert(canReviewStages, curStage)
     end
   end
-  do
-    local tempStage = canReviewStages[1]
-    self:ShowDialog("UIPlot", tempStage, canReviewStages, false, true, (StringTable.Get)("str_n12_story_review_stage_title"))
-  end
+  local tempStage = canReviewStages[1]
+  self:ShowDialog("UIPlot", tempStage, canReviewStages, false, true, StringTable.Get("str_n12_story_review_stage_title"))
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController._CheckGuide = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN12MainController)
+function UIN12MainController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN12MainController)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MainController._PlayStory = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  if not ((self._campaign):GetSample()):GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW) then
-    return 
+function UIN12MainController:_PlayStory()
+  if not self._campaign:GetSample():GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW) then
+    return
   end
   if self._cfg_campaign ~= nil then
-    if (self._cfg_campaign).FirstEnterStoryID ~= nil and ((self._cfg_campaign).FirstEnterStoryID)[1] ~= nil then
-      ((GameGlobal.GetModule)(StoryModule)):StartStory(((self._cfg_campaign).FirstEnterStoryID)[1], function()
-    -- function num : 0_26_0 , upvalues : self, _ENV
-    self._clearNewTask = self:StartTask(function(TT)
-      -- function num : 0_26_0_0 , upvalues : _ENV, self
-      local res = AsyncRequestRes:New()
-      ;
-      ((GameGlobal.GetModule)(CampaignModule)):CampaignClearNewFlag(TT, res, (self._campaign)._id)
-      if res:GetSucc() then
-        (Log.info)("n12 play first enter story succ.")
-        self:_CheckGuide()
-      end
-    end
-, self)
-  end
-, true)
+    if self._cfg_campaign.FirstEnterStoryID ~= nil and self._cfg_campaign.FirstEnterStoryID[1] ~= nil then
+      GameGlobal.GetModule(StoryModule):StartStory(self._cfg_campaign.FirstEnterStoryID[1], function()
+        self._clearNewTask = self:StartTask(function(TT)
+          local res = AsyncRequestRes:New()
+          GameGlobal.GetModule(CampaignModule):CampaignClearNewFlag(TT, res, self._campaign._id)
+          if res:GetSucc() then
+            Log.info("n12 play first enter story succ.")
+            self:_CheckGuide()
+          end
+        end, self)
+      end, true)
     else
       self._clearNewTask = self:StartTask(function(TT)
-    -- function num : 0_26_1 , upvalues : _ENV, self
-    local res = AsyncRequestRes:New()
-    ;
-    ((GameGlobal.GetModule)(CampaignModule)):CampaignClearNewFlag(TT, res, (self._campaign)._id)
-    if res:GetSucc() then
-      self:_CheckGuide()
-      ;
-      (Log.info)("n12 play first enter story succ.")
-    end
-  end
-, self)
+        local res = AsyncRequestRes:New()
+        GameGlobal.GetModule(CampaignModule):CampaignClearNewFlag(TT, res, self._campaign._id)
+        if res:GetSucc() then
+          self:_CheckGuide()
+          Log.info("n12 play first enter story succ.")
+        end
+      end, self)
     end
   end
 end
-
-

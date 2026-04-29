@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_modify_curse_tower_element.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicModifyCurseTowerElement", BuffLogicBase)
 BuffLogicModifyCurseTowerElement = BuffLogicModifyCurseTowerElement
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicModifyCurseTowerElement.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicModifyCurseTowerElement:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicModifyCurseTowerElement.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
+function BuffLogicModifyCurseTowerElement:DoLogic()
+  local e = self._buffInstance:Entity()
   local gridLocCmpt = e:GridLocation()
   local curGridPos = gridLocCmpt:GetGridPos()
   local curseTowerCmpt = e:CurseTower()
   if not curseTowerCmpt then
-    return 
+    return
   end
   local towerIndex = self:CalcTowerIndex(curGridPos)
   curseTowerCmpt:SetTowerIndex(towerIndex)
@@ -29,14 +19,11 @@ BuffLogicModifyCurseTowerElement.DoLogic = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicModifyCurseTowerElement.CalcTowerIndex = function(self, towerPos)
-  -- function num : 0_2
+function BuffLogicModifyCurseTowerElement:CalcTowerIndex(towerPos)
   local xEqualOne = towerPos.x - 1 < 0.99
-  local xEqualEight = towerPos.x - 8 < 0.99
-  local yEqualOne = towerPos.y - 1 < 0.99
-  local yEqualEight = towerPos.y - 8 < 0.99
+  local xEqualEight = 0.99 > towerPos.x - 8
+  local yEqualOne = 0.99 > towerPos.y - 1
+  local yEqualEight = 0.99 > towerPos.y - 8
   if xEqualOne and yEqualOne then
     return 4
   end
@@ -46,16 +33,12 @@ BuffLogicModifyCurseTowerElement.CalcTowerIndex = function(self, towerPos)
   if xEqualEight and yEqualEight then
     return 2
   end
-  do return 1 end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
+  return 1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicModifyCurseTowerElement.CalcCurseTowerElement = function(self, towerIndex)
-  -- function num : 0_3 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local teamOrder = (teamEntity:Team()):GetTeamOrder()
+function BuffLogicModifyCurseTowerElement:CalcCurseTowerElement(towerIndex)
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local teamOrder = teamEntity:Team():GetTeamOrder()
   local teamCount = #teamOrder
   local petPstID = -1
   if towerIndex <= teamCount then
@@ -63,12 +46,10 @@ BuffLogicModifyCurseTowerElement.CalcCurseTowerElement = function(self, towerInd
   else
     petPstID = teamOrder[teamCount]
   end
-  local petEntity = (teamEntity:Team()):GetPetEntityByPetPstID(petPstID)
+  local petEntity = teamEntity:Team():GetPetEntityByPetPstID(petPstID)
   if petEntity == nil then
     return ElementType.ElementType_None
   end
   local elementCmpt = petEntity:Element()
   return elementCmpt:GetPrimaryType()
 end
-
-

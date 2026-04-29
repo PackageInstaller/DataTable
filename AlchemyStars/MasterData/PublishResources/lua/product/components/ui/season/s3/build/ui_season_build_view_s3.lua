@@ -1,43 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/build/ui_season_build_view_s3.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuildViewS3", UICustomWidget)
 UISeasonBuildViewS3 = UISeasonBuildViewS3
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuildViewS3.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonBuildViewS3:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildViewS3.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonBuildViewS3:InitWidget()
   self.imgBuild = self:GetUIComponent("RawImageLoader", "imgBuild")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildViewS3.Init = function(self, context)
-  -- function num : 0_2
+function UISeasonBuildViewS3:Init(context)
   self._context = context
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildViewS3.Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local level = (self._context):GetCurLevel()
-  local cfg = (self._context):GetBuildCfgByLevel(level)
+function UISeasonBuildViewS3:Refresh()
+  local level = self._context:GetCurLevel()
+  local cfg = self._context:GetBuildCfgByLevel(level)
   if cfg then
-    local showCfg = (Cfg.cfg_season_castle_show)[cfg.ID]
+    local showCfg = Cfg.cfg_season_castle_show[cfg.ID]
     if showCfg then
-      (self.imgBuild):LoadImage(showCfg.Bg)
+      self.imgBuild:LoadImage(showCfg.Bg)
     end
   end
 end
-
-

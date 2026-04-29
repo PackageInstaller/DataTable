@@ -1,32 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_death.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDeath", BuffLogicBase)
 BuffLogicDeath = BuffLogicDeath
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDeath.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicDeath:Constructor(buffInstance, logicParam)
   self._killHPPercent = logicParam.killHPPercent
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDeath.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._entity):HasDeadMark() then
-    return 
+function BuffLogicDeath:DoLogic(notify)
+  if self._entity:HasDeadMark() then
+    return
   end
   local buffLogicSvc = self:GetBuffLogicService()
   if not buffLogicSvc:IsTargetCanBeToDie(self._entity) then
-    return 
+    return
   end
-  ;
-  ((self._entity):BuffComponent()):SetBuffValue("SecKillHPPercent", self._killHPPercent)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataBuffValue, (self._entity):GetID(), "SecKillHPPercent", self._killHPPercent)
+  self._entity:BuffComponent():SetBuffValue("SecKillHPPercent", self._killHPPercent)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataBuffValue, self._entity:GetID(), "SecKillHPPercent", self._killHPPercent)
 end
-
-

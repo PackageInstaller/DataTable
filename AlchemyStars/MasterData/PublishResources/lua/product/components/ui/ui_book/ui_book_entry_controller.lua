@@ -1,96 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_book/ui_book_entry_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookEntryController", UIController)
 UIBookEntryController = UIBookEntryController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookEntryController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.medalModule = (GameGlobal.GetModule)(MedalModule)
-  self.uiMedalModuel = (self.medalModule):GetUIModule()
+function UIBookEntryController:Constructor()
+  self.medalModule = GameGlobal.GetModule(MedalModule)
+  self.uiMedalModuel = self.medalModule:GetUIModule()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookEntryController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBookEntryController:OnShow(uiParams)
   local topButton = self:GetUIComponent("UISelectObjectPath", "topbtn")
   self.topButtonWidget = topButton:SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
+  self.topButtonWidget:SetData(function()
     self:CloseDialog()
-  end
-)
+  end)
   local atlas = self:GetAsset("UIBook.spriteatlas", LoadType.SpriteAtlas)
   self.qingBaoCmp = UIBookEntryCell:New()
-  ;
-  (self.qingBaoCmp):Refresh(self:GetUIComponent("UIView", "g_1"), BookMainType.RenShiQingBao, atlas)
+  self.qingBaoCmp:Refresh(self:GetUIComponent("UIView", "g_1"), BookMainType.RenShiQingBao, atlas)
   self.cgCmp = UIBookEntryCell:New()
-  ;
-  (self.cgCmp):Refresh(self:GetUIComponent("UIView", "g_2"), BookMainType.CG, atlas)
+  self.cgCmp:Refresh(self:GetUIComponent("UIView", "g_2"), BookMainType.CG, atlas)
   self.musicCmp = UIBookEntryCell:New()
-  ;
-  (self.musicCmp):Refresh(self:GetUIComponent("UIView", "g_3"), BookMainType.Music, atlas)
+  self.musicCmp:Refresh(self:GetUIComponent("UIView", "g_3"), BookMainType.Music, atlas)
   self.plotCmp = UIBookEntryCell:New()
-  ;
-  (self.plotCmp):Refresh(self:GetUIComponent("UIView", "g_4"), BookMainType.Plot, atlas)
+  self.plotCmp:Refresh(self:GetUIComponent("UIView", "g_4"), BookMainType.Plot, atlas)
   self.medalCmp = UIBookEntryCell:New()
-  ;
-  (self.medalCmp):Refresh(self:GetUIComponent("UIView", "g_5"), BookMainType.Medal, atlas)
-  local unLock = ((GameGlobal.GetModule)(RoleModule)):CheckModuleUnlock(GameModuleID.MD_MEDAL)
-  ;
-  (self.medalCmp):SetUnlock(unLock)
+  self.medalCmp:Refresh(self:GetUIComponent("UIView", "g_5"), BookMainType.Medal, atlas)
+  local unLock = GameGlobal.GetModule(RoleModule):CheckModuleUnlock(GameModuleID.MD_MEDAL)
+  self.medalCmp:SetUnlock(unLock)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookEntryController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBookEntryController:OnHide()
   self:DetachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookEntryController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_3
+function UIBookEntryController:LoadDataOnEnter(TT, res, uiParams)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookEntryController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_4
+function UIBookEntryController:OnUpdate(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookEntryController.OnHide = function(self)
-  -- function num : 0_5
-  (self.qingBaoCmp):OnHide()
-  ;
-  (self.cgCmp):OnHide()
-  ;
-  (self.musicCmp):OnHide()
-  ;
-  (self.plotCmp):OnHide()
-  ;
-  (self.medalCmp):OnHide()
+function UIBookEntryController:OnHide()
+  self.qingBaoCmp:OnHide()
+  self.cgCmp:OnHide()
+  self.musicCmp:OnHide()
+  self.plotCmp:OnHide()
+  self.medalCmp:OnHide()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookEntryController.AfterUILayerChanged = function(self)
-  -- function num : 0_6
-  if not (self.uiMedalModuel):IsMedalNew() then
-    local bRed = (self.uiMedalModuel):IsMedalBoardNew()
-  end
-  ;
-  (self.medalCmp):SetRed(bRed)
+function UIBookEntryController:AfterUILayerChanged()
+  local bRed = self.uiMedalModuel:IsMedalNew() or self.uiMedalModuel:IsMedalBoardNew()
+  self.medalCmp:SetRed(bRed)
 end
-
-

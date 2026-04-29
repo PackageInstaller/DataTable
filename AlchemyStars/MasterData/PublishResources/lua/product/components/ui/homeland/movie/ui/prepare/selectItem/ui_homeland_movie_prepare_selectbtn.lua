@@ -1,47 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/prepare/selectItem/ui_homeland_movie_prepare_selectbtn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMovieSelectBtn", UICustomWidget)
 UIHomelandMovieSelectBtn = UIHomelandMovieSelectBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMovieSelectBtn.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIHomelandMovieSelectBtn:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSelectBtn.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandMovieSelectBtn:OnShow(uiParams)
   self:AttachEvent(GameEventType.UIHomelandMoviePrepareTitleBtnClick, self.MoviePrepareTitleBtnClick)
   self:AttachEvent(GameEventType.UIHomelandMoviePrepareItemBtnClick, self.RefreshUI)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSelectBtn.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandMovieSelectBtn:OnHide()
   self:DetachEvent(GameEventType.UIHomelandMoviePrepareTitleBtnClick, self.MoviePrepareTitleBtnClick)
   self:DetachEvent(GameEventType.UIHomelandMoviePrepareItemBtnClick, self.RefreshUI)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSelectBtn.InitWidget = function(self)
-  -- function num : 0_3
+function UIHomelandMovieSelectBtn:InitWidget()
   self._stateGo = self:GetGameObject("state")
   self._state = self:GetUIComponent("Image", "state")
   self._txt = self:GetUIComponent("UILocalizationText", "txt")
   self._rect = self:GetUIComponent("RectTransform", "tra")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSelectBtn.SetData = function(self, index, data, prepareType, rectPos, selectTitleId, atlas)
-  -- function num : 0_4
+function UIHomelandMovieSelectBtn:SetData(index, data, prepareType, rectPos, selectTitleId, atlas)
   self._index = index
   self._data = data
   self._prepareType = prepareType
@@ -51,41 +32,23 @@ UIHomelandMovieSelectBtn.SetData = function(self, index, data, prepareType, rect
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSelectBtn.RefreshUI = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._rect).anchoredPosition = self._rectPos
+function UIHomelandMovieSelectBtn:RefreshUI()
+  self._rect.anchoredPosition = self._rectPos
   if not self._data then
-    return 
+    return
   end
-  local show = (HomelandMoviePrepareManager:GetInstance()):CheckHadSelect(self._prepareType, (self._data).ID)
-  ;
-  (self._stateGo):SetActive(not show)
-  local sp = (self._data).ID == self._selectTitleId and "dy_qqzb_xz02" or "dy_qqzb_xz01"
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._state).sprite = (self._atlas):GetSprite(sp)
-  ;
-  (self._txt):SetText((StringTable.Get)((self._data).Name))
+  local show = HomelandMoviePrepareManager:GetInstance():CheckHadSelect(self._prepareType, self._data.ID)
+  self._stateGo:SetActive(not show)
+  local sp = self._data.ID == self._selectTitleId and "dy_qqzb_xz02" or "dy_qqzb_xz01"
+  self._state.sprite = self._atlas:GetSprite(sp)
+  self._txt:SetText(StringTable.Get(self._data.Name))
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSelectBtn.MoviePrepareTitleBtnClick = function(self, selectTitleId)
-  -- function num : 0_6
+function UIHomelandMovieSelectBtn:MoviePrepareTitleBtnClick(selectTitleId)
   self._selectTitleId = selectTitleId
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSelectBtn.BtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIHomelandMovieSelectBtnClick, (self._data).ID, self._prepareType)
+function UIHomelandMovieSelectBtn:BtnOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIHomelandMovieSelectBtnClick, self._data.ID, self._prepareType)
 end
-
-

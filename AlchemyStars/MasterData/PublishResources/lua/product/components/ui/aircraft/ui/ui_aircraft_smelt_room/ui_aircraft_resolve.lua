@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_smelt_room/ui_aircraft_resolve.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftResolve", UICustomWidget)
 UIAircraftResolve = UIAircraftResolve
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftResolve.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._JXPressCfg = (Cfg.cfg_item_smelt_long_press)[0]
+function UIAircraftResolve:OnShow(uiParams)
+  self._JXPressCfg = Cfg.cfg_item_smelt_long_press[0]
   self._pressTimeGape = 0
   self:InitWidget()
   self:AddButtonEvent()
@@ -18,114 +11,97 @@ UIAircraftResolve.OnShow = function(self, uiParams)
   self._petModule = self:GetModule(PetModule)
   self._itemModule = self:GetModule(ItemModule)
   self:RefreshData()
-  self._itemColorFrame = {[ItemColor.ItemColor_White] = "spirit_shengji_se1", [ItemColor.ItemColor_Green] = "spirit_shengji_se2", [ItemColor.ItemColor_Blue] = "spirit_shengji_se3", [ItemColor.ItemColor_Purple] = "spirit_shengji_se4", [ItemColor.ItemColor_Yellow] = "spirit_shengji_se5", [ItemColor.ItemColor_Golden] = "spirit_shengji_se6"}
+  self._itemColorFrame = {
+    [ItemColor.ItemColor_White] = "spirit_shengji_se1",
+    [ItemColor.ItemColor_Green] = "spirit_shengji_se2",
+    [ItemColor.ItemColor_Blue] = "spirit_shengji_se3",
+    [ItemColor.ItemColor_Purple] = "spirit_shengji_se4",
+    [ItemColor.ItemColor_Yellow] = "spirit_shengji_se5",
+    [ItemColor.ItemColor_Golden] = "spirit_shengji_se6"
+  }
   self._tab2 = nil
   self._selections = {}
-  self._xinpoFilter = (self.filter):SpawnObject("UIAircraftGuangPoFilter")
-  ;
-  (self._xinpoFilter):SetData(function(type, toggle)
-    -- function num : 0_0_0 , upvalues : self
+  self._xinpoFilter = self.filter:SpawnObject("UIAircraftGuangPoFilter")
+  self._xinpoFilter:SetData(function(type, toggle)
     self:OnXinpoFilterChanged(type, toggle)
-  end
-)
-  self._onClickItem = function(idx)
-    -- function num : 0_0_1 , upvalues : self
+  end)
+  
+  function self._onClickItem(idx)
     self:OnClickItem(idx)
   end
-
-  self._onLongPressItem = function(idx, go)
-    -- function num : 0_0_2 , upvalues : self, _ENV
-    local id = nil
+  
+  function self._onLongPressItem(idx, go)
+    local id
     if self._tab2 == ResolveTab2.JuXiang then
-      id = ((((self._juxiangCfgs)[idx]).Input)[1])[1]
-      self:ShowItemTips(id, (go.transform).position)
-    else
-      if self._tab2 == ResolveTab2.XinPo then
-        id = ((((self._xinpoCfgs)[idx]).Input)[1])[1]
-      end
+      id = self._juxiangCfgs[idx].Input[1][1]
+      self:ShowItemTips(id, go.transform.position)
+    elseif self._tab2 == ResolveTab2.XinPo then
+      id = self._xinpoCfgs[idx].Input[1][1]
     end
-    self:ShowItemTips(id, (go.transform).position)
+    self:ShowItemTips(id, go.transform.position)
   end
-
-  ;
-  (self.scrollView):InitListView(0, function(scrollView, index)
-    -- function num : 0_0_3 , upvalues : self
+  
+  self.scrollView:InitListView(0, function(scrollView, index)
     return self:_newRawItem(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.RefreshData = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local juxiang_show = (Cfg.cfg_item_smelt)({Tab = ResolveTab2.JuXiang})
+function UIAircraftResolve:RefreshData()
+  local juxiang_show = Cfg.cfg_item_smelt({
+    Tab = ResolveTab2.JuXiang
+  })
   if juxiang_show == nil then
     juxiang_show = {}
   end
-  ;
-  (table.sort)(juxiang_show, function(a, b)
-    -- function num : 0_1_0
-    do return a.Index < b.Index end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  local xinPoCfgs = (Cfg.cfg_item_smelt)({Tab = ResolveTab2.XinPo})
+  table.sort(juxiang_show, function(a, b)
+    return a.Index < b.Index
+  end)
+  local xinPoCfgs = Cfg.cfg_item_smelt({
+    Tab = ResolveTab2.XinPo
+  })
   if xinPoCfgs == nil then
     xinPoCfgs = {}
   end
   local xinpo_show = {}
   local xinpo_star = {
-[XinPoFilter.All] = {}
-, 
-[XinPoFilter.Star4] = {}
-, 
-[XinPoFilter.Star5] = {}
-, 
-[XinPoFilter.Star6] = {}
-}
-  for _,cfg in pairs(xinPoCfgs) do
+    [XinPoFilter.All] = {},
+    [XinPoFilter.Star4] = {},
+    [XinPoFilter.Star5] = {},
+    [XinPoFilter.Star6] = {}
+  }
+  for _, cfg in pairs(xinPoCfgs) do
     if cfg.Pet == nil then
       AirError("心珀材料没配星灵ID:", cfg.ID)
     end
     if #cfg.Input > 1 then
       AirError("心珀材料配了多个输入:", cfg.ID)
     end
-    local pet = (self._petModule):GetPetByTemplateId(cfg.Pet)
+    local pet = self._petModule:GetPetByTemplateId(cfg.Pet)
     if pet and pet:IsBreakFull() then
-      local id = ((cfg.Input)[1])[1]
-      if (self._roleModule):GetAssetCount(id) > 0 then
+      local id = cfg.Input[1][1]
+      if self._roleModule:GetAssetCount(id) > 0 then
         xinpo_show[#xinpo_show + 1] = cfg
       end
     end
   end
-  ;
-  (table.sort)(xinpo_show, function(a, b)
-    -- function num : 0_1_1
-    do return a.Index < b.Index end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  for idx,cfg in ipairs(xinpo_show) do
-    local pet = (self._petModule):GetPetByTemplateId(cfg.Pet)
+  table.sort(xinpo_show, function(a, b)
+    return a.Index < b.Index
+  end)
+  for idx, cfg in ipairs(xinpo_show) do
+    local pet = self._petModule:GetPetByTemplateId(cfg.Pet)
     local star = pet:GetPetStar()
     if star <= 3 then
       AirError("三星星灵不应该有心珀:", cfg.ID)
     end
-    ;
-    (table.insert)(xinpo_star[star], idx)
-    ;
-    (table.insert)(xinpo_star[XinPoFilter.All], idx)
+    table.insert(xinpo_star[star], idx)
+    table.insert(xinpo_star[XinPoFilter.All], idx)
   end
   self._juxiangCfgs = juxiang_show
   self._xinpoCfgs = xinpo_show
   self._xinPo_Star = xinpo_star
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftResolve:InitWidget()
   self.scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self.filter = self:GetUIComponent("UISelectObjectPath", "Filter")
   self.tip = self:GetUIComponent("UILocalizationText", "tip")
@@ -148,153 +124,115 @@ UIAircraftResolve.InitWidget = function(self)
   self._itemAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.AddButtonEvent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self.addButton).gameObject), UIEvent.Click, function(go)
-    -- function num : 0_3_0 , upvalues : self, _ENV
+function UIAircraftResolve:AddButtonEvent()
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.addButton.gameObject), UIEvent.Click, function(go)
     if self._timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._timerEvent = nil
     end
     if self._longTrigger then
-      return 
+      return
     end
     self:OnJuxiangAdd()
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self.addButton).gameObject), UIEvent.Press, function(go)
-    -- function num : 0_3_1 , upvalues : self, _ENV
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.addButton.gameObject), UIEvent.Press, function(go)
     if self._timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._timerEvent = nil
     end
     self:LongEvent(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self.addButton).gameObject), UIEvent.Release, function(go)
-    -- function num : 0_3_2 , upvalues : self, _ENV
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.addButton.gameObject), UIEvent.Release, function(go)
     if self._timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._pressTime = nil
       self._longTrigger = false
       self._timerEvent = nil
     end
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self.removeButton).gameObject), UIEvent.Press, function(go)
-    -- function num : 0_3_3 , upvalues : self, _ENV
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.removeButton.gameObject), UIEvent.Press, function(go)
     if self._timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._timerEvent = nil
     end
     self:LongEvent(false)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self.removeButton).gameObject), UIEvent.Release, function(go)
-    -- function num : 0_3_4 , upvalues : self, _ENV
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.removeButton.gameObject), UIEvent.Release, function(go)
     if self._timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._pressTime = nil
       self._longTrigger = false
       self._timerEvent = nil
     end
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self.removeButton).gameObject), UIEvent.Click, function(go)
-    -- function num : 0_3_5 , upvalues : self, _ENV
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.removeButton.gameObject), UIEvent.Click, function(go)
     if self._timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._timerEvent = nil
     end
     if self._longTrigger then
-      return 
+      return
     end
     self:OnJuxiangRemove()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.LongEvent = function(self, isAdd)
-  -- function num : 0_4 , upvalues : _ENV
+function UIAircraftResolve:LongEvent(isAdd)
   if self._pressTime then
-    local changeNum = nil
-    do
-      do
-        for i,v in pairs((self._JXPressCfg).Value) do
-          local tempLimitTime = v[1] * 1000
-          if self._pressTime <= tempLimitTime then
-            changeNum = v[2]
-            break
-          end
-        end
-        do
-          if not changeNum then
-            changeNum = (((self._JXPressCfg).Value)[#(self._JXPressCfg).Value])[2]
-          end
-          self._pressTimeGape = 1 / changeNum * 1000
-          self._pressTime = self._pressTime + self._pressTimeGape
-        end
-        local time = (((self._JXPressCfg).Value)[1])[1]
-        do
-          local num = (((self._JXPressCfg).Value)[1])[2]
-          self._pressTimeGape = time / num * 1000
-          self._pressTime = self._pressTimeGape
-          if isAdd then
-            local select = (self._selections)[1]
-            local cfg = (self._juxiangCfgs)[select]
-            local from = ((cfg.Input)[1])[1]
-            local fromCfg = (Cfg.cfg_item)[from]
-            local maxNum = (self._itemModule):GetItemCount(fromCfg.ID)
-            if self._juxiangCount < maxNum then
-              self._timerEvent = ((GameGlobal.Timer)()):AddEvent(self._pressTimeGape, function()
-    -- function num : 0_4_0 , upvalues : self, maxNum, isAdd
-    self._longTrigger = true
-    local tempNum = self._juxiangCount + 1
-    if maxNum < tempNum then
-      self._juxiangCount = maxNum
-    else
-      self._juxiangCount = tempNum
-    end
-    self:RefreshExchangeInfo()
-    self:LongEvent(isAdd)
-  end
-)
-            end
-          else
-            do
-              if self._juxiangCount > 0 then
-                self._timerEvent = ((GameGlobal.Timer)()):AddEvent(self._pressTimeGape, function()
-    -- function num : 0_4_1 , upvalues : self, isAdd
-    self._longTrigger = true
-    local tempNum = self._juxiangCount - 1
-    if tempNum >= 0 then
-      self._juxiangCount = tempNum
-    else
-      self._juxiangCount = 0
-    end
-    self:RefreshExchangeInfo()
-    self:LongEvent(isAdd)
-  end
-)
-              end
-            end
-          end
-        end
+    local changeNum
+    for i, v in pairs(self._JXPressCfg.Value) do
+      local tempLimitTime = v[1] * 1000
+      if tempLimitTime >= self._pressTime then
+        changeNum = v[2]
+        break
       end
     end
+    changeNum = changeNum or self._JXPressCfg.Value[#self._JXPressCfg.Value][2]
+    self._pressTimeGape = 1 / changeNum * 1000
+    self._pressTime = self._pressTime + self._pressTimeGape
+  else
+    local time = self._JXPressCfg.Value[1][1]
+    local num = self._JXPressCfg.Value[1][2]
+    self._pressTimeGape = time / num * 1000
+    self._pressTime = self._pressTimeGape
+  end
+  if isAdd then
+    local select = self._selections[1]
+    local cfg = self._juxiangCfgs[select]
+    local from = cfg.Input[1][1]
+    local fromCfg = Cfg.cfg_item[from]
+    local maxNum = self._itemModule:GetItemCount(fromCfg.ID)
+    if maxNum > self._juxiangCount then
+      self._timerEvent = GameGlobal.Timer():AddEvent(self._pressTimeGape, function()
+        self._longTrigger = true
+        local tempNum = self._juxiangCount + 1
+        if tempNum > maxNum then
+          self._juxiangCount = maxNum
+        else
+          self._juxiangCount = tempNum
+        end
+        self:RefreshExchangeInfo()
+        self:LongEvent(isAdd)
+      end)
+    end
+  elseif self._juxiangCount > 0 then
+    self._timerEvent = GameGlobal.Timer():AddEvent(self._pressTimeGape, function()
+      self._longTrigger = true
+      local tempNum = self._juxiangCount - 1
+      if 0 <= tempNum then
+        self._juxiangCount = tempNum
+      else
+        self._juxiangCount = 0
+      end
+      self:RefreshExchangeInfo()
+      self:LongEvent(isAdd)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve._newRawItem = function(self, scrollView, index)
-  -- function num : 0_5 , upvalues : _ENV
+function UIAircraftResolve:_newRawItem(scrollView, index)
   if index < 0 then
-    return 
+    return
   end
   index = index + 1
   local rowItem = scrollView:NewListViewItem("item")
@@ -303,58 +241,45 @@ UIAircraftResolve._newRawItem = function(self, scrollView, index)
     rowItem.IsInitHandlerCalled = true
     rowPool:SpawnObject("UIResolveItemRaw")
   end
-  local item = (rowPool:GetAllSpawnList())[1]
+  local item = rowPool:GetAllSpawnList()[1]
   if self._tab2 == ResolveTab2.JuXiang then
     item:SetData(ResolveTab2.JuXiang, self._juxiangCfgs, index, self._onClickItem, self._onLongPressItem, self._selections)
-  else
-    if self._tab2 == ResolveTab2.XinPo then
-      item:SetData(ResolveTab2.XinPo, self._xinpoCfgs, index, self._onClickItem, self._onLongPressItem, self._selections)
-    end
+  elseif self._tab2 == ResolveTab2.XinPo then
+    item:SetData(ResolveTab2.XinPo, self._xinpoCfgs, index, self._onClickItem, self._onLongPressItem, self._selections)
   end
   return rowItem
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.OnTab2Changed = function(self, tab2)
-  -- function num : 0_6 , upvalues : _ENV
+function UIAircraftResolve:OnTab2Changed(tab2)
   if self._tab2 == tab2 then
-    return 
+    return
   end
   self._tab2 = tab2
   if tab2 == ResolveTab2.JuXiang then
-    (self.tip):SetText((StringTable.Get)("str_aircraft_resolve_tip1"))
-    ;
-    (self.tip1):RefreshText((StringTable.Get)("str_aircraft_smelt_juxiang_tip"))
-    ;
-    (self._xinpoFilter):Active(false)
+    self.tip:SetText(StringTable.Get("str_aircraft_resolve_tip1"))
+    self.tip1:RefreshText(StringTable.Get("str_aircraft_smelt_juxiang_tip"))
+    self._xinpoFilter:Active(false)
     self._juxiangCount = 0
     self:RefreshItems(#self._juxiangCfgs)
   else
     if tab2 == ResolveTab2.XinPo then
-      (self.tip):SetText((StringTable.Get)("str_aircraft_resolve_tip2"))
-      ;
-      (self.tip1):RefreshText((StringTable.Get)("str_aircraft_smelt_xinpo_tip"))
-      ;
-      (self._xinpoFilter):Active(true)
+      self.tip:SetText(StringTable.Get("str_aircraft_resolve_tip2"))
+      self.tip1:RefreshText(StringTable.Get("str_aircraft_smelt_xinpo_tip"))
+      self._xinpoFilter:Active(true)
       self:RefreshItems(#self._xinpoCfgs)
+    else
     end
   end
-  -- DECOMPILER ERROR at PC67: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.juXiangBtn).interactable = tab2 ~= ResolveTab2.JuXiang
-  -- DECOMPILER ERROR at PC75: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.xinPoBtn).interactable = tab2 ~= ResolveTab2.XinPo
-  local selecetIdx = (self._selections)[1]
+  self.juXiangBtn.interactable = tab2 ~= ResolveTab2.JuXiang
+  self.xinPoBtn.interactable = tab2 ~= ResolveTab2.XinPo
+  local selecetIdx = self._selections[1]
   self._selections = {}
   if self._tab2 == ResolveTab2.JuXiang then
     if next(self._juxiangCfgs) then
-      if not (self.juxiang).activeSelf then
+      if not self.juxiang.activeSelf then
         self:OnClickItem(1)
-      elseif selecetIdx and (selecetIdx <= 3 or not 1) then
+      elseif selecetIdx then
+        selecetIdx = 3 < selecetIdx and 1 or selecetIdx
         self:OnClickItem(selecetIdx)
       else
         self:OnClickItem(1)
@@ -365,183 +290,137 @@ UIAircraftResolve.OnTab2Changed = function(self, tab2)
   elseif self._tab2 == ResolveTab2.XinPo then
     self:OnClickItem(nil)
   end
-  ;
-  (self.juxiang):SetActive(tab2 == ResolveTab2.JuXiang)
-  -- DECOMPILER ERROR: 9 unprocessed JMP targets
+  self.juxiang:SetActive(tab2 == ResolveTab2.JuXiang)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.RefreshItems = function(self, count)
-  -- function num : 0_7 , upvalues : _ENV
-  count = (math.ceil)(count / 3)
-  ;
-  (self.scrollView):SetListItemCount(count)
-  ;
-  (self.scrollView):MovePanelToItemIndex(0, 0)
+function UIAircraftResolve:RefreshItems(count)
+  count = math.ceil(count / 3)
+  self.scrollView:SetListItemCount(count)
+  self.scrollView:MovePanelToItemIndex(0, 0)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.OnXinpoFilterChanged = function(self, type, isOn)
-  -- function num : 0_8 , upvalues : _ENV
+function UIAircraftResolve:OnXinpoFilterChanged(type, isOn)
   if self._tab2 ~= ResolveTab2.XinPo then
-    return 
+    return
   end
   if type == XinPoFilter.All then
     if isOn then
       self._selections = {}
-      for _,idx in ipairs((self._xinPo_Star)[XinPoFilter.All]) do
-        (table.insert)(self._selections, idx)
+      for _, idx in ipairs(self._xinPo_Star[XinPoFilter.All]) do
+        table.insert(self._selections, idx)
       end
     else
-      do
-        self._selections = {}
-        for _,idx in ipairs((self._xinPo_Star)[type]) do
-          if (table.icontains)(self._selections, idx) and not isOn then
-            (table.removev)(self._selections, idx)
-          end
-          if isOn then
-            (table.insert)(self._selections, idx)
-          end
+      self._selections = {}
+    end
+  else
+    for _, idx in ipairs(self._xinPo_Star[type]) do
+      if table.icontains(self._selections, idx) then
+        if not isOn then
+          table.removev(self._selections, idx)
         end
-        do
-          self:RefreshExchangeInfo()
-          ;
-          (GameGlobal:EventDispatcher()):Dispatch(GameEventType.UIAircraftResolveItemOnclick, self._tab2, self._selections)
-        end
+      elseif isOn then
+        table.insert(self._selections, idx)
       end
     end
   end
+  self:RefreshExchangeInfo()
+  GameGlobal:EventDispatcher():Dispatch(GameEventType.UIAircraftResolveItemOnclick, self._tab2, self._selections)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.OnJuxiangAdd = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIAircraftResolve:OnJuxiangAdd()
   if self._tab2 == ResolveTab2.JuXiang then
-    local select = (self._selections)[1]
-    local cfg = (self._juxiangCfgs)[select]
-    local input = ((cfg.Input)[1])[1]
-    local own = (self._itemModule):GetItemCount(input)
+    local select = self._selections[1]
+    local cfg = self._juxiangCfgs[select]
+    local input = cfg.Input[1][1]
+    local own = self._itemModule:GetItemCount(input)
     if own < self._juxiangCount + 1 then
-      return 
+      return
     end
     self._juxiangCount = self._juxiangCount + 1
     self:RefreshExchangeInfo()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.OnJuxiangRemove = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIAircraftResolve:OnJuxiangRemove()
   if self._tab2 == ResolveTab2.JuXiang then
     if self._juxiangCount <= 0 then
-      return 
+      return
     end
     self._juxiangCount = self._juxiangCount - 1
     self:RefreshExchangeInfo()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.OnClickItem = function(self, idx)
-  -- function num : 0_11 , upvalues : _ENV
+function UIAircraftResolve:OnClickItem(idx)
   if self._tab2 == ResolveTab2.JuXiang then
     if idx == nil then
       self._selections = {}
+    elseif table.icontains(self._selections, idx) then
+      self._selections = {}
     else
-      if (table.icontains)(self._selections, idx) then
-        self._selections = {}
-      else
-        self._selections = {idx}
-        self._juxiangCount = 0
-      end
+      self._selections = {idx}
+      self._juxiangCount = 0
     end
-  else
-    if self._tab2 == ResolveTab2.XinPo then
-      if idx == nil then
-        self._selections = {}
-        ;
-        (self._xinpoFilter):Refresh(false, false, false)
+  elseif self._tab2 == ResolveTab2.XinPo then
+    if idx == nil then
+      self._selections = {}
+      self._xinpoFilter:Refresh(false, false, false)
+    else
+      if table.icontains(self._selections, idx) then
+        table.removev(self._selections, idx)
       else
-        if (table.icontains)(self._selections, idx) then
-          (table.removev)(self._selections, idx)
-        else
-          ;
-          (table.insert)(self._selections, idx)
-        end
-        local star4, star5, star6 = true, true, true
-        if next((self._xinPo_Star)[XinPoFilter.Star4]) then
-          for _,idx in ipairs((self._xinPo_Star)[XinPoFilter.Star4]) do
-            if not (table.icontains)(self._selections, idx) then
-              star4 = false
-              break
-            end
-          end
-        else
-          do
-            star4 = false
-            if next((self._xinPo_Star)[XinPoFilter.Star5]) then
-              for _,idx in ipairs((self._xinPo_Star)[XinPoFilter.Star5]) do
-                if not (table.icontains)(self._selections, idx) then
-                  star5 = false
-                  break
-                end
-              end
-            else
-              do
-                star5 = false
-                if next((self._xinPo_Star)[XinPoFilter.Star6]) then
-                  for _,idx in ipairs((self._xinPo_Star)[XinPoFilter.Star6]) do
-                    if not (table.icontains)(self._selections, idx) then
-                      star6 = false
-                      break
-                    end
-                  end
-                else
-                  do
-                    do
-                      star6 = false
-                      ;
-                      (self._xinpoFilter):Refresh(star4, star5, star6)
-                      self:RefreshExchangeInfo()
-                      ;
-                      (GameGlobal:EventDispatcher()):Dispatch(GameEventType.UIAircraftResolveItemOnclick, self._tab2, self._selections)
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+        table.insert(self._selections, idx)
       end
+      local star4, star5, star6 = true, true, true
+      if next(self._xinPo_Star[XinPoFilter.Star4]) then
+        for _, idx in ipairs(self._xinPo_Star[XinPoFilter.Star4]) do
+          if not table.icontains(self._selections, idx) then
+            star4 = false
+            break
+          end
+        end
+      else
+        star4 = false
+      end
+      if next(self._xinPo_Star[XinPoFilter.Star5]) then
+        for _, idx in ipairs(self._xinPo_Star[XinPoFilter.Star5]) do
+          if not table.icontains(self._selections, idx) then
+            star5 = false
+            break
+          end
+        end
+      else
+        star5 = false
+      end
+      if next(self._xinPo_Star[XinPoFilter.Star6]) then
+        for _, idx in ipairs(self._xinPo_Star[XinPoFilter.Star6]) do
+          if not table.icontains(self._selections, idx) then
+            star6 = false
+            break
+          end
+        end
+      else
+        star6 = false
+      end
+      self._xinpoFilter:Refresh(star4, star5, star6)
     end
   end
+  self:RefreshExchangeInfo()
+  GameGlobal:EventDispatcher():Dispatch(GameEventType.UIAircraftResolveItemOnclick, self._tab2, self._selections)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.SetData = function(self, tab1, onShowItemTip)
-  -- function num : 0_12 , upvalues : _ENV
+function UIAircraftResolve:SetData(tab1, onShowItemTip)
   self._tab1 = tab1
   self._onShowItemTip = onShowItemTip
   if tab1 == ResolveTab1.JuXiang then
     self:OnTab2Changed(ResolveTab2.JuXiang)
-  else
-    if tab1 == ResolveTab1.XinPo then
-      self:OnTab2Changed(ResolveTab2.XinPo)
-    end
+  elseif tab1 == ResolveTab1.XinPo then
+    self:OnTab2Changed(ResolveTab2.XinPo)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.SetShow = function(self, show)
-  -- function num : 0_13
-  (self:GetGameObject()):SetActive(show)
+function UIAircraftResolve:SetShow(show)
+  self:GetGameObject():SetActive(show)
   if not show then
     self._selections = {}
     self._tab1 = nil
@@ -549,11 +428,8 @@ UIAircraftResolve.SetShow = function(self, show)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.JumpTo = function(self, jumpID)
-  -- function num : 0_14 , upvalues : _ENV
-  local targetCfg = (Cfg.cfg_item_smelt)[jumpID]
+function UIAircraftResolve:JumpTo(jumpID)
+  local targetCfg = Cfg.cfg_item_smelt[jumpID]
   if targetCfg.Tab == ResolveTab2.JuXiang or targetCfg.Tab == ResolveTab2.XinPo then
     self:OnTab2Changed(targetCfg.Tab)
   else
@@ -561,276 +437,217 @@ UIAircraftResolve.JumpTo = function(self, jumpID)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.RefreshExchangeInfo = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIAircraftResolve:RefreshExchangeInfo()
   if self._tab2 == ResolveTab2.JuXiang then
-    local select = (self._selections)[1]
+    local select = self._selections[1]
     if select then
-      local cfg = (self._juxiangCfgs)[select]
-      local from = ((cfg.Input)[1])[1]
-      local fromStep = ((cfg.Input)[1])[2]
-      local to = (cfg.Output)[1]
-      local toStep = (cfg.Output)[2]
-      local fromCfg = (Cfg.cfg_item)[from]
-      local toCfg = (Cfg.cfg_item)[to]
-      do
-        (self.juxiang1_name):SetText((StringTable.Get)(fromCfg.Name))
-        ;
-        (self.juxiang1_icon):LoadImage(fromCfg.Icon)
-        -- DECOMPILER ERROR at PC46: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self.juxiang1_color).sprite = (self._itemAtlas):GetSprite((UIEnum.ItemColorFrame)(fromCfg.Color))
-        ;
-        (self.count):SetText(self._juxiangCount * fromStep)
-        ;
-        (self.juxiang2_icon):LoadImage(toCfg.Icon)
-        ;
-        (self.juxiang2_name):SetText((StringTable.Get)(toCfg.Name))
-        ;
-        (self.juxiang2_count):SetText(self._juxiangCount * toStep)
-        -- DECOMPILER ERROR at PC76: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self.juxiang2_color).sprite = (self._itemAtlas):GetSprite((UIEnum.ItemColorFrame)(toCfg.Color))
-        ;
-        (self.juxiang):SetActive(true)
+      local cfg = self._juxiangCfgs[select]
+      local from = cfg.Input[1][1]
+      local fromStep = cfg.Input[1][2]
+      local to = cfg.Output[1]
+      local toStep = cfg.Output[2]
+      local fromCfg = Cfg.cfg_item[from]
+      local toCfg = Cfg.cfg_item[to]
+      self.juxiang1_name:SetText(StringTable.Get(fromCfg.Name))
+      self.juxiang1_icon:LoadImage(fromCfg.Icon)
+      self.juxiang1_color.sprite = self._itemAtlas:GetSprite(UIEnum.ItemColorFrame(fromCfg.Color))
+      self.count:SetText(self._juxiangCount * fromStep)
+      self.juxiang2_icon:LoadImage(toCfg.Icon)
+      self.juxiang2_name:SetText(StringTable.Get(toCfg.Name))
+      self.juxiang2_count:SetText(self._juxiangCount * toStep)
+      self.juxiang2_color.sprite = self._itemAtlas:GetSprite(UIEnum.ItemColorFrame(toCfg.Color))
+      self.juxiang:SetActive(true)
+    else
+      self.juxiang:SetActive(false)
+    end
+    self.xinPoGo:SetActive(false)
+  else
+    if self._tab2 == ResolveTab2.XinPo then
+      local outPuts = {}
+      for _, select in ipairs(self._selections) do
+        local cfg = self._xinpoCfgs[select]
+        local from = cfg.Input[1][1]
+        if cfg.Input[1][2] ~= 1 then
+          AirError("心珀材料的输入数量必须是1:", cfg.ID)
+        end
+        local count = self._itemModule:GetItemCount(from)
+        local toID = cfg.Output[1]
+        local toCount = cfg.Output[2] * count
+        if not outPuts[toID] then
+          outPuts[toID] = 0
+        end
+        outPuts[toID] = outPuts[toID] + toCount
+      end
+      local outPutCount = table.count(outPuts)
+      if 0 < outPutCount then
+        self.xinPoGo:SetActive(true)
+        self.xinpo:SpawnObjects("UIItem", outPutCount)
+        local outPutItems = self.xinpo:GetAllSpawnList()
+        local idx = 1
+        for key, count in pairs(outPuts) do
+          local item = outPutItems[idx]
+          item:SetForm(UIItemForm.Base, 1)
+          local cfg = Cfg.cfg_item[key]
+          item:SetData({
+            icon = cfg.Icon,
+            quality = cfg.Color,
+            text1 = count,
+            text2 = StringTable.Get(cfg.Name),
+            itemId = key
+          })
+          item:SetClickCallBack(function(go)
+            self:ShowItemTips(key, go.transform.position)
+          end)
+          idx = idx + 1
+        end
+      else
+        self.xinPoGo:SetActive(false)
       end
     else
-      do
-        do
-          ;
-          (self.juxiang):SetActive(false)
-          ;
-          (self.xinPoGo):SetActive(false)
-          if self._tab2 == ResolveTab2.XinPo then
-            local outPuts = {}
-            for _,select in ipairs(self._selections) do
-              local cfg = (self._xinpoCfgs)[select]
-              local from = ((cfg.Input)[1])[1]
-              if ((cfg.Input)[1])[2] ~= 1 then
-                AirError("心珀材料的输入数量必须是1:", cfg.ID)
-              end
-              local count = (self._itemModule):GetItemCount(from)
-              local toID = (cfg.Output)[1]
-              local toCount = (cfg.Output)[2] * count
-              if not outPuts[toID] then
-                outPuts[toID] = 0
-              end
-              outPuts[toID] = outPuts[toID] + toCount
-            end
-            local outPutCount = (table.count)(outPuts)
-            if outPutCount > 0 then
-              (self.xinPoGo):SetActive(true)
-              ;
-              (self.xinpo):SpawnObjects("UIItem", outPutCount)
-              local outPutItems = (self.xinpo):GetAllSpawnList()
-              local idx = 1
-              for key,count in pairs(outPuts) do
-                local item = outPutItems[idx]
-                item:SetForm(UIItemForm.Base, 1)
-                local cfg = (Cfg.cfg_item)[key]
-                item:SetData({icon = cfg.Icon, quality = cfg.Color, text1 = count, text2 = (StringTable.Get)(cfg.Name), itemId = key})
-                item:SetClickCallBack(function(go)
-    -- function num : 0_15_0 , upvalues : self, key
-    self:ShowItemTips(key, (go.transform).position)
-  end
-)
-                idx = idx + 1
-              end
-            else
-              do
-                ;
-                (self.xinPoGo):SetActive(false)
-              end
-            end
-          end
-        end
-      end
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.JuXiangBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
+function UIAircraftResolve:JuXiangBtnOnClick(go)
   self:OnTab2Changed(ResolveTab2.JuXiang)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.XinPoBtnOnClick = function(self, go)
-  -- function num : 0_17 , upvalues : _ENV
+function UIAircraftResolve:XinPoBtnOnClick(go)
   self:OnTab2Changed(ResolveTab2.XinPo)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.SmeltButtonOnClick = function(self, go)
-  -- function num : 0_18 , upvalues : _ENV
+function UIAircraftResolve:SmeltButtonOnClick(go)
   if not next(self._selections) then
-    return 
+    return
   end
   local result = self:CheckResolve()
-  if result > 0 then
-    if result & AirItemErrorCode.FireflyOverflow > 0 then
-      (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_aircraft_firefly_overflow"), function(param)
-    -- function num : 0_18_0 , upvalues : _ENV, self
-    AirLog("萤火超上限，继续分解")
-    self:StartTask(self.Resolve, self)
-  end
-, nil, function(param)
-    -- function num : 0_18_1 , upvalues : _ENV
-    AirLog("取消分解材料")
-  end
-, nil)
+  if 0 < result then
+    if 0 < result & AirItemErrorCode.FireflyOverflow then
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_aircraft_firefly_overflow"), function(param)
+        AirLog("萤火超上限，继续分解")
+        self:StartTask(self.Resolve, self)
+      end, nil, function(param)
+        AirLog("取消分解材料")
+      end, nil)
     else
       AirLog("分解材料错误:", result)
     end
-    return 
+    return
   end
   self:StartTask(self.Resolve, self)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.juxiang1_iconOnClick = function(self, go)
-  -- function num : 0_19 , upvalues : _ENV
-  if self._tab2 == ResolveTab2.JuXiang and (self._selections)[1] then
-    local id = ((((self._juxiangCfgs)[(self._selections)[1]]).Input)[1])[1]
-    self:ShowItemTips(id, (go.transform).position)
+function UIAircraftResolve:juxiang1_iconOnClick(go)
+  if self._tab2 == ResolveTab2.JuXiang and self._selections[1] then
+    local id = self._juxiangCfgs[self._selections[1]].Input[1][1]
+    self:ShowItemTips(id, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.juxiang2_iconOnClick = function(self, go)
-  -- function num : 0_20 , upvalues : _ENV
-  if self._tab2 == ResolveTab2.JuXiang and (self._selections)[1] then
-    local id = (((self._juxiangCfgs)[(self._selections)[1]]).Output)[1]
-    self:ShowItemTips(id, (go.transform).position)
+function UIAircraftResolve:juxiang2_iconOnClick(go)
+  if self._tab2 == ResolveTab2.JuXiang and self._selections[1] then
+    local id = self._juxiangCfgs[self._selections[1]].Output[1]
+    self:ShowItemTips(id, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.Resolve = function(self, TT)
-  -- function num : 0_21 , upvalues : _ENV
+function UIAircraftResolve:Resolve(TT)
   self:Lock(self:GetName())
-  local res, reply, assets = nil, nil, nil
+  local res, reply, assets
   if self._tab2 == ResolveTab2.JuXiang then
-    local id = ((self._juxiangCfgs)[(self._selections)[1]]).ID
-    res = (self._airModule):HandleItemSmelt(TT, id, self._juxiangCount)
+    local id = self._juxiangCfgs[self._selections[1]].ID
+    res, reply = self._airModule:HandleItemSmelt(TT, id, self._juxiangCount)
     local asset = ItemAsset:New()
     asset.assetid = reply.id
     asset.count = reply.num
     assets = {asset}
-  else
-    do
-      if self._tab2 == ResolveTab2.XinPo then
-        local inputs = {}
-        for _,idx in ipairs(self._selections) do
-          local asset = RoleAsset:New()
-          asset.assetid = ((self._xinpoCfgs)[idx]).ID
-          local itemID = ((((self._xinpoCfgs)[idx]).Input)[1])[1]
-          asset.count = (self._itemModule):GetItemCount(itemID)
-          inputs[#inputs + 1] = asset
-        end
-        -- DECOMPILER ERROR at PC72: Overwrote pending register: R3 in 'AssignReg'
-
-        res = (self._airModule):HandleMultItemSmelt(TT, inputs)
-        local obatins = {}
-        for _,obatin in ipairs(reply.item_list) do
-          if not obatins[obatin.assetid] then
-            obatins[obatin.assetid] = 0
-          end
-          obatins[obatin.assetid] = obatins[obatin.assetid] + obatin.count
-        end
-        assets = {}
-        for id,count in pairs(obatins) do
-          local asset = RoleAsset:New()
-          asset.assetid = id
-          asset.count = count
-          assets[#assets + 1] = asset
-        end
+  elseif self._tab2 == ResolveTab2.XinPo then
+    local inputs = {}
+    for _, idx in ipairs(self._selections) do
+      local asset = RoleAsset:New()
+      asset.assetid = self._xinpoCfgs[idx].ID
+      local itemID = self._xinpoCfgs[idx].Input[1][1]
+      asset.count = self._itemModule:GetItemCount(itemID)
+      inputs[#inputs + 1] = asset
+    end
+    res, reply = self._airModule:HandleMultItemSmelt(TT, inputs)
+    local obatins = {}
+    for _, obatin in ipairs(reply.item_list) do
+      if not obatins[obatin.assetid] then
+        obatins[obatin.assetid] = 0
       end
-      do
-        if res:GetSucc() then
-          self:ShowDialog("UIGetItemController", assets)
-          for _,value in ipairs(assets) do
-            if value.assetid == RoleAssetID.RoleAssetFirefly then
-              ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshMainUI)
-              break
-            end
-          end
-          do
-            self:RefreshAfterSmelt()
-            ;
-            (ToastManager.ShowToast)((self._airModule):GetErrorMsg(res:GetResult()))
-            self:UnLock(self:GetName())
-          end
-        end
-      end
+      obatins[obatin.assetid] = obatins[obatin.assetid] + obatin.count
+    end
+    assets = {}
+    for id, count in pairs(obatins) do
+      local asset = RoleAsset:New()
+      asset.assetid = id
+      asset.count = count
+      assets[#assets + 1] = asset
     end
   end
+  if res:GetSucc() then
+    self:ShowDialog("UIGetItemController", assets)
+    for _, value in ipairs(assets) do
+      if value.assetid == RoleAssetID.RoleAssetFirefly then
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshMainUI)
+        break
+      end
+    end
+    self:RefreshAfterSmelt()
+  else
+    ToastManager.ShowToast(self._airModule:GetErrorMsg(res:GetResult()))
+  end
+  self:UnLock(self:GetName())
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.CheckResolve = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIAircraftResolve:CheckResolve()
   local result = AirItemErrorCode.None
   if self._tab2 == ResolveTab2.JuXiang then
     if self._juxiangCount == 0 then
       result = result | AirItemErrorCode.Zero
     end
-    local cfg = (self._juxiangCfgs)[(self._selections)[1]]
-    for idx,item in ipairs(cfg.Input) do
+    local cfg = self._juxiangCfgs[self._selections[1]]
+    for idx, item in ipairs(cfg.Input) do
       local id = item[1]
       local need = item[2]
-      if (self._roleModule):GetAssetCount(id) < need * self._juxiangCount then
+      if self._roleModule:GetAssetCount(id) < need * self._juxiangCount then
         result = result | AirItemErrorCode.NotEnough
       end
     end
-    if (cfg.Output)[1] == RoleAssetID.RoleAssetFirefly then
-      local _count = (cfg.Output)[2]
-      if (self._airModule):GetMaxFirefly() < (self._airModule):GetFirefly() + _count * self._juxiangCount then
+    if cfg.Output[1] == RoleAssetID.RoleAssetFirefly then
+      local _count = cfg.Output[2]
+      if self._airModule:GetFirefly() + _count * self._juxiangCount > self._airModule:GetMaxFirefly() then
         result = result | AirItemErrorCode.FireflyOverflow
       end
     end
-  else
+  elseif self._tab2 == ResolveTab2.XinPo then
   end
-  do
-    if self._tab2 == ResolveTab2.XinPo then
-      return result
-    end
-  end
+  return result
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.RefreshAfterSmelt = function(self)
-  -- function num : 0_23
+function UIAircraftResolve:RefreshAfterSmelt()
   self:RefreshData()
   local cur = self._tab2
   self._tab2 = nil
   self:OnTab2Changed(cur)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftResolve.ShowItemTips = function(self, id, pos)
-  -- function num : 0_24
-  (self._onShowItemTip)(id, pos)
+function UIAircraftResolve:ShowItemTips(id, pos)
+  self._onShowItemTip(id, pos)
 end
 
 local ResolveTab2 = {JuXiang = 402, XinPo = 502}
 _enum("ResolveTab2", ResolveTab2)
-local ResolveTab1 = {HeCheng = 1, XinPo = 2, JuXiang = 3}
+local ResolveTab1 = {
+  HeCheng = 1,
+  XinPo = 2,
+  JuXiang = 3
+}
 _enum("ResolveTab1", ResolveTab1)
-local SmeltRoomUIType = {Compond = 1, Resolve = 2, Camp = 3}
+local SmeltRoomUIType = {
+  Compond = 1,
+  Resolve = 2,
+  Camp = 3
+}
 _enum("SmeltRoomUIType", SmeltRoomUIType)
-

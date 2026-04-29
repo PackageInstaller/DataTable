@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_pet_minos_ghost_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectPetMinosGhostDamageParam", SkillDamageEffectParam)
 SkillEffectPetMinosGhostDamageParam = SkillEffectPetMinosGhostDamageParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectPetMinosGhostDamageParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectPetMinosGhostDamageParam:Constructor(t)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPetMinosGhostDamageParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectPetMinosGhostDamageParam:GetEffectType()
   return SkillEffectType.PetMinosGhostDamage
 end
-
-

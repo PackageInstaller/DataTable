@@ -1,51 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_lost_land/ui_lost_land_stage_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILostLandStageController", UIController)
 UILostLandStageController = UILostLandStageController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILostLandStageController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UILostLandStageController:Constructor()
   self._itemCountPerRow = 3
   self._missionCount = 0
   self._missionTable = {}
   self._missionid2activityrewards = {}
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._module = (GameGlobal.GetModule)(LostAreaModule)
-  self._uiModule = (GameGlobal.GetUIModule)(LostAreaModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._module = GameGlobal.GetModule(LostAreaModule)
+  self._uiModule = GameGlobal.GetUIModule(LostAreaModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.OnShow = function(self, uiParams)
-  -- function num : 0_1
-  self._enterData = (self._uiModule):GetCurrentEnterData()
+function UILostLandStageController:OnShow(uiParams)
+  self._enterData = self._uiModule:GetCurrentEnterData()
   self._missionid = uiParams[1] or nil
   if not self._missionid then
     self._missionid = self:GetFirstNotPassMission()
   end
   self:GetCurrentGroupAndStageIdx()
-  self._stageData = (self._uiModule):GetMissionDataByMissionID(self._missionid)
+  self._stageData = self._uiModule:GetMissionDataByMissionID(self._missionid)
   self:GetComponents()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.GetFirstNotPassMission = function(self)
-  -- function num : 0_2
-  local missionid = (self._uiModule):GetCurrentStageID()
+function UILostLandStageController:GetFirstNotPassMission()
+  local missionid = self._uiModule:GetCurrentStageID()
   return missionid
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.GetCurrentGroupAndStageIdx = function(self)
-  -- function num : 0_3
-  local missionTab = (self._enterData):GetMissionTable()
+function UILostLandStageController:GetCurrentGroupAndStageIdx()
+  local missionTab = self._enterData:GetMissionTable()
   for i = 1, #missionTab do
     local group = missionTab[i]
     for j = 1, #group do
@@ -59,22 +43,16 @@ UILostLandStageController.GetCurrentGroupAndStageIdx = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.GetComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UILostLandStageController:GetComponents()
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self._uiHeartItemAtlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
   local itemTips = self:GetUIComponent("UISelectObjectPath", "MatTip")
   self._selectInfo = itemTips:SpawnObject("UISelectInfo")
   local ltBtns = self:GetUIComponent("UISelectObjectPath", "TopButtons")
   self._backBtn = ltBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_4_0 , upvalues : self
+  self._backBtn:SetData(function()
     self:CloseController()
-  end
-)
+  end)
   self._bg = self:GetUIComponent("RawImageLoader", "bg")
   self._stageName = self:GetUIComponent("UILocalizationText", "stageName")
   self._name = self:GetUIComponent("UILocalizationText", "name")
@@ -91,202 +69,141 @@ UILostLandStageController.GetComponents = function(self)
   self._stagePools = self:GetUIComponent("UISelectObjectPath", "stagePools")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.CloseController = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UILostLandStageController:CloseController()
   self:SwitchState(UIStateType.UIDiscovery)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.OnValue = function(self)
-  -- function num : 0_6
+function UILostLandStageController:OnValue()
   self:InitTimer()
   self:InitEnterInfo()
   self:ClickSucc()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.OnHide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UILostLandStageController:OnHide()
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.InitEnterInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UILostLandStageController:InitEnterInfo()
   self:InitWeekInfo()
   self:InitStagePool()
-  ;
-  (self._name):SetText((StringTable.Get)((self._enterData):GetName()))
-  ;
-  (self._bg):LoadImage((self._enterData):GetCg())
+  self._name:SetText(StringTable.Get(self._enterData:GetName()))
+  self._bg:LoadImage(self._enterData:GetCg())
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.InitTimer = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self._resetTime = (self._uiModule):GetResetTime()
+function UILostLandStageController:InitTimer()
+  self._resetTime = self._uiModule:GetResetTime()
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
-  self._timerEvent = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_9_0 , upvalues : self
+  self._timerEvent = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:SetTimerTex()
-  end
-)
+  end)
   self:SetTimerTex()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.SetTimerTex = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local svrTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+function UILostLandStageController:SetTimerTex()
+  local svrTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   local sec = self._resetTime - svrTime
   if sec < 0 then
     self:TimeReset()
   else
-    local timeTex = (self._uiModule):Time2Tex(sec)
-    ;
-    (self._timer):SetText((StringTable.Get)("str_lost_land_reset_time_tips", timeTex))
+    local timeTex = self._uiModule:Time2Tex(sec)
+    self._timer:SetText(StringTable.Get("str_lost_land_reset_time_tips", timeTex))
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.TimeReset = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UILostLandStageController:TimeReset()
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
-  ;
-  (self._uiModule):ResetTime(UILostLandResetTimeDialog.Stage)
+  self._uiModule:ResetTime(UILostLandResetTimeDialog.Stage)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.InitEnemyInfo = function(self)
-  -- function num : 0_12
+function UILostLandStageController:InitEnemyInfo()
   if self._enemies == nil then
-    self._enemies = (self._enemyMsg):SpawnObject("UIEnemyMsg")
+    self._enemies = self._enemyMsg:SpawnObject("UIEnemyMsg")
   end
-  ;
-  (self._enemies):SetData((self._stageData):GetLevelID())
+  self._enemies:SetData(self._stageData:GetLevelID())
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.InitWeekAwardInfo = function(self)
-  -- function num : 0_13
-  local petAwardCount = (self._uiModule):GetPetAwardCount()
-  local award_count = (self._stageData):GetPetAward()
-  ;
-  (self._weekAwardPool):SpawnObjects("UILostLandMissionInfoItem", petAwardCount)
-  local pools = (self._weekAwardPool):GetAllSpawnList()
+function UILostLandStageController:InitWeekAwardInfo()
+  local petAwardCount = self._uiModule:GetPetAwardCount()
+  local award_count = self._stageData:GetPetAward()
+  self._weekAwardPool:SpawnObjects("UILostLandMissionInfoItem", petAwardCount)
+  local pools = self._weekAwardPool:GetAllSpawnList()
   for i = 1, #pools do
     local item = pools[i]
     item:SetData(i, award_count, function(id, pos)
-    -- function num : 0_13_0 , upvalues : self
-    self:ItemInfo(id, pos)
-  end
-)
+      self:ItemInfo(id, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.InitWeekInfo = function(self)
-  -- function num : 0_14
-  local recommendList = (self._uiModule):GetRecommendConditionList()
-  ;
-  (self._recommendPools):SpawnObjects("UILostLandStageFilterItem", #recommendList)
-  local pools = (self._recommendPools):GetAllSpawnList()
+function UILostLandStageController:InitWeekInfo()
+  local recommendList = self._uiModule:GetRecommendConditionList()
+  self._recommendPools:SpawnObjects("UILostLandStageFilterItem", #recommendList)
+  local pools = self._recommendPools:GetAllSpawnList()
   for i = 1, #pools do
     local item = pools[i]
     item:SetData(recommendList[i])
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.InitStagePool = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  self._missionTable = (self._enterData):GetMissionTable()
+function UILostLandStageController:InitStagePool()
+  self._missionTable = self._enterData:GetMissionTable()
   self._idx2tableIdx = {}
   local count = 0
   for i = 1, #self._missionTable do
-    local group = (self._missionTable)[i]
+    local group = self._missionTable[i]
     for j = 1, #group do
       count = count + 1
       local tableIdx = {}
       tableIdx.group = i
       tableIdx.stage = j
-      -- DECOMPILER ERROR at PC23: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._idx2tableIdx)[count] = tableIdx
+      self._idx2tableIdx[count] = tableIdx
     end
   end
-  ;
-  (self._stagePools):SpawnObjects("UILostLandStageItem", count)
-  local pools = (self._stagePools):GetAllSpawnList()
+  self._stagePools:SpawnObjects("UILostLandStageItem", count)
+  local pools = self._stagePools:GetAllSpawnList()
   for i = 1, #pools do
     local item = pools[i]
-    local groupIdx = ((self._idx2tableIdx)[i]).group
-    local stageIdx = ((self._idx2tableIdx)[i]).stage
-    local groupCount = (table.count)(self._missionTable)
-    local stageCount = (table.count)((self._missionTable)[groupIdx])
-    local missionid = ((self._missionTable)[groupIdx])[stageIdx]
+    local groupIdx = self._idx2tableIdx[i].group
+    local stageIdx = self._idx2tableIdx[i].stage
+    local groupCount = table.count(self._missionTable)
+    local stageCount = table.count(self._missionTable[groupIdx])
+    local missionid = self._missionTable[groupIdx][stageIdx]
     local upOrDown = groupIdx % 2
-    local width = (self._enterData):GetItemShowWidth()
+    local width = self._enterData:GetItemShowWidth()
     item:SetData(groupIdx, stageIdx, groupCount, stageCount, missionid, function(groupIdx, stageIdx)
-    -- function num : 0_15_0 , upvalues : self
-    self:OnStageItemClick(groupIdx, stageIdx)
-  end
-, upOrDown, width)
+      self:OnStageItemClick(groupIdx, stageIdx)
+    end, upOrDown, width)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.OnStageItemClick = function(self, groupIdx, stageIdx)
-  -- function num : 0_16
+function UILostLandStageController:OnStageItemClick(groupIdx, stageIdx)
   if self._groupIdx == groupIdx and self._stageIdx == stageIdx then
-    return 
+    return
   end
   self._groupIdx = groupIdx
   self._stageIdx = stageIdx
   self:ClickSucc()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.ClickSucc = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local missionId = ((self._missionTable)[self._groupIdx])[self._stageIdx]
-  ;
-  (ToastManager.ShowToast)("missionid --> " .. missionId)
+function UILostLandStageController:ClickSucc()
+  local missionId = self._missionTable[self._groupIdx][self._stageIdx]
+  ToastManager.ShowToast("missionid --> " .. missionId)
   self._missionid = missionId
-  self._stageData = (self._uiModule):GetMissionDataByMissionID(self._missionid)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUILostLandStageItemClick, self._groupIdx, self._stageIdx)
+  self._stageData = self._uiModule:GetMissionDataByMissionID(self._missionid)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUILostLandStageItemClick, self._groupIdx, self._stageIdx)
   self:InitStageInfo()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.InitStageInfo = function(self)
-  -- function num : 0_18
+function UILostLandStageController:InitStageInfo()
   self:InitEnemyInfo()
   self:InitWeekAwardInfo()
   self:InitRecommendLv()
@@ -295,203 +212,148 @@ UILostLandStageController.InitStageInfo = function(self)
   self:InitStageName()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.InitRecommendLv = function(self)
-  -- function num : 0_19
-  local recommendGrade = (self._stageData):GetRecommendGrade()
-  local recommendLv = (self._stageData):GetRecommendLv()
-  if recommendGrade and recommendGrade > 0 then
-    ((self._recommendLV).gameObject):SetActive(true)
-    ;
-    (self._recommendLV):SetText(recommendGrade)
+function UILostLandStageController:InitRecommendLv()
+  local recommendGrade = self._stageData:GetRecommendGrade()
+  local recommendLv = self._stageData:GetRecommendLv()
+  if recommendGrade and 0 < recommendGrade then
+    self._recommendLV.gameObject:SetActive(true)
+    self._recommendLV:SetText(recommendGrade)
   else
-    ;
-    ((self._recommendLV).gameObject):SetActive(false)
+    self._recommendLV.gameObject:SetActive(false)
   end
-  if recommendLv and recommendLv > 0 then
-    ((self._recommendLV2).gameObject):SetActive(true)
-    ;
-    (self._recommendLV2):SetText(recommendLv)
+  if recommendLv and 0 < recommendLv then
+    self._recommendLV2.gameObject:SetActive(true)
+    self._recommendLV2:SetText(recommendLv)
   else
-    ;
-    ((self._recommendLV2).gameObject):SetActive(false)
+    self._recommendLV2.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.InitStageAwardTT = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local passTimes = (self._stageData):GetPassTimes()
+function UILostLandStageController:InitStageAwardTT()
+  local passTimes = self._stageData:GetPassTimes()
   if passTimes <= 0 then
-    (self._awardGot):SetActive(false)
+    self._awardGot:SetActive(false)
   else
-    ;
-    (self._awardGot):SetActive(true)
+    self._awardGot:SetActive(true)
   end
-  if (self._missionid2activityrewards)[self._missionid] then
+  if self._missionid2activityrewards[self._missionid] then
     self._activity_rewards = {}
-    for i = 1, #(self._missionid2activityrewards)[self._missionid] do
-      local _data = ((self._missionid2activityrewards)[self._missionid])[i]
-      ;
-      (table.insert)(self._activity_rewards, _data)
+    for i = 1, #self._missionid2activityrewards[self._missionid] do
+      local _data = self._missionid2activityrewards[self._missionid][i]
+      table.insert(self._activity_rewards, _data)
     end
     self:InitStageAward()
   else
     self:Lock("UILostLandStageController:InitStageAwardTT")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self._OnInitStageAwardTT, self)
+    GameGlobal.TaskManager():StartTask(self._OnInitStageAwardTT, self)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController._OnInitStageAwardTT = function(self, TT)
-  -- function num : 0_21 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UILostLandStageController:_OnInitStageAwardTT(TT)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local res, rewards = campaignModule:HandleCampaignGetMatchMissionExReward(TT, MatchType.MT_LostArea, self._missionid)
   self:UnLock("UILostLandStageController:InitStageAwardTT")
   local items = {}
   if res:GetSucc() then
-    for i = 1, (table.count)(rewards) do
+    for i = 1, table.count(rewards) do
       local _data = {}
       _data.item = rewards[i]
       _data.type = StageAwardType.Activity
-      ;
-      (table.insert)(items, _data)
+      table.insert(items, _data)
     end
   else
-    do
-      ;
-      (Log.error)("###[UILostLandStageController] HandleCampaignGetMatchMissionExReward fail ! mission id --> ", self._missionid)
-      if not self._missionid2activityrewards then
-        self._missionid2activityrewards = {}
-      end
-      -- DECOMPILER ERROR at PC55: Confused about usage of register: R6 in 'UnsetPending'
-
-      if not (self._missionid2activityrewards)[self._missionid] then
-        (self._missionid2activityrewards)[self._missionid] = items
-      end
-      self._activity_rewards = {}
-      for i = 1, #items do
-        local _data = items[i]
-        ;
-        (table.insert)(self._activity_rewards, _data)
-      end
-      self:InitStageAward()
-    end
+    Log.error("###[UILostLandStageController] HandleCampaignGetMatchMissionExReward fail ! mission id --> ", self._missionid)
   end
+  if not self._missionid2activityrewards then
+    self._missionid2activityrewards = {}
+  end
+  if not self._missionid2activityrewards[self._missionid] then
+    self._missionid2activityrewards[self._missionid] = items
+  end
+  self._activity_rewards = {}
+  for i = 1, #items do
+    local _data = items[i]
+    table.insert(self._activity_rewards, _data)
+  end
+  self:InitStageAward()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.InitStageAward = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local dropItems = (self._stageData):GetAward()
+function UILostLandStageController:InitStageAward()
+  local dropItems = self._stageData:GetAward()
   local items = {}
   for i = 1, #dropItems do
     local _data = {}
     _data.type = StageAwardType.First
     _data.item = dropItems[i]
-    ;
-    (table.insert)(items, _data)
+    table.insert(items, _data)
   end
-  ;
-  (table.appendArray)(self._activity_rewards, items)
-  ;
-  (self._awardContent):SpawnObjects("UIItem", #self._activity_rewards)
-  local items = (self._awardContent):GetAllSpawnList()
-  do
-    for i,data in ipairs(self._activity_rewards) do
-      local item = data.item
-      ;
-      (items[i]):SetForm(UIItemForm.Tower, UIItemScale.Level3)
-      local cfgItem = (Cfg.cfg_item)[item.assetid]
-      if not cfgItem then
-        (Log.error)("###[UILostLandStageController] cfgItem is nil ! id --> ", item.assetid)
-      end
-      local strKey = ""
-      local activityText = ""
-      local awardType = data.type
-      if awardType == StageAwardType.First then
-        strKey = "str_discovery_first_award"
-      else
-        if awardType == StageAwardType.Star then
-          strKey = "str_discovery_3star_award"
-        else
-          if awardType == StageAwardType.Activity then
-            strKey = "str_discovery_activity_award"
-            activityText = "str_item_xianshi"
-          else
-            if awardType == StageAwardType.HasGen then
-              strKey = "str_discovery_already_collect"
-            else
-              strKey = "str_discovery_normal_award"
-            end
-          end
-        end
-      end
-      ;
-      (items[i]):SetData({text1 = item.count, awardText = (StringTable.Get)(strKey), icon = cfgItem.Icon, itemId = item.assetid, quality = cfgItem.Color, activityText = (StringTable.Get)(activityText)})
-      ;
-      (items[i]):SetClickCallBack(function(go)
-    -- function num : 0_22_0 , upvalues : self, item
-    self:ItemInfo(item.assetid, (go.transform).position)
-  end
-)
+  table.appendArray(self._activity_rewards, items)
+  self._awardContent:SpawnObjects("UIItem", #self._activity_rewards)
+  local items = self._awardContent:GetAllSpawnList()
+  for i, data in ipairs(self._activity_rewards) do
+    local item = data.item
+    items[i]:SetForm(UIItemForm.Tower, UIItemScale.Level3)
+    local cfgItem = Cfg.cfg_item[item.assetid]
+    if not cfgItem then
+      Log.error("###[UILostLandStageController] cfgItem is nil ! id --> ", item.assetid)
     end
+    local strKey = ""
+    local activityText = ""
+    local awardType = data.type
+    if awardType == StageAwardType.First then
+      strKey = "str_discovery_first_award"
+    elseif awardType == StageAwardType.Star then
+      strKey = "str_discovery_3star_award"
+    elseif awardType == StageAwardType.Activity then
+      strKey = "str_discovery_activity_award"
+      activityText = "str_item_xianshi"
+    elseif awardType == StageAwardType.HasGen then
+      strKey = "str_discovery_already_collect"
+    else
+      strKey = "str_discovery_normal_award"
+    end
+    items[i]:SetData({
+      text1 = item.count,
+      awardText = StringTable.Get(strKey),
+      icon = cfgItem.Icon,
+      itemId = item.assetid,
+      quality = cfgItem.Color,
+      activityText = StringTable.Get(activityText)
+    })
+    items[i]:SetClickCallBack(function(go)
+      self:ItemInfo(item.assetid, go.transform.position)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.InitWord = function(self)
-  -- function num : 0_23
-  local word = (self._stageData):GetWord()
-  ;
-  (self._wordParent):SetActive(word ~= nil)
+function UILostLandStageController:InitWord()
+  local word = self._stageData:GetWord()
+  self._wordParent:SetActive(word ~= nil)
   if word then
-    (self._word):SetText(word)
+    self._word:SetText(word)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.InitStageName = function(self)
-  -- function num : 0_24
-  local name = (self._stageData):GetMissionName()
-  ;
-  (self._stageName):SetText(name)
+function UILostLandStageController:InitStageName()
+  local name = self._stageData:GetMissionName()
+  self._stageName:SetText(name)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.BattleButtonOnClick = function(self, go)
-  -- function num : 0_25 , upvalues : _ENV
-  local missionID = ((self._missionTable)[self._groupIdx])[self._stageIdx]
-  local missionData = (self._uiModule):GetMissionDataByMissionID(missionID)
+function UILostLandStageController:BattleButtonOnClick(go)
+  local missionID = self._missionTable[self._groupIdx][self._stageIdx]
+  local missionData = self._uiModule:GetMissionDataByMissionID(missionID)
   local lock = missionData:GetLockType()
-  do
-    if lock == UILostLandMissionLockType.LOCK then
-      local tips = (StringTable.Get)("str_lost_land_stage_lock_tips")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
-    end
-    local ctx = ((GameGlobal.GetModule)(MissionModule)):TeamCtx()
-    ctx:Init(TeamOpenerType.LostLand, self._missionid)
-    self:Lock("DoEnterTeam")
-    ctx:ShowDialogUITeams()
+  if lock == UILostLandMissionLockType.LOCK then
+    local tips = StringTable.Get("str_lost_land_stage_lock_tips")
+    ToastManager.ShowToast(tips)
+    return
   end
+  local ctx = GameGlobal.GetModule(MissionModule):TeamCtx()
+  ctx:Init(TeamOpenerType.LostLand, self._missionid)
+  self:Lock("DoEnterTeam")
+  ctx:ShowDialogUITeams()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandStageController.ItemInfo = function(self, id, pos)
-  -- function num : 0_26
-  (self._selectInfo):SetData(id, pos)
+function UILostLandStageController:ItemInfo(id, pos)
+  self._selectInfo:SetData(id, pos)
 end
-
-

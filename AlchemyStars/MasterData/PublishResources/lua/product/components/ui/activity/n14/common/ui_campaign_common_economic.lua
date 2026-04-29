@@ -1,63 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n14/common/ui_campaign_common_economic.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICampaignCommonEconomic", UICustomWidget)
 UICampaignCommonEconomic = UICampaignCommonEconomic
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICampaignCommonEconomic.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICampaignCommonEconomic:OnShow()
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtShopCount = self:GetUIComponent("UILocalizationText", "txtShopCount")
   self:AttachEvent(GameEventType.ItemCountChanged, self.FlushCurrencyCount)
   self:AttachEvent(GameEventType.ActivityShopBuySuccess, self.FlushCurrencyCount)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCommonEconomic.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICampaignCommonEconomic:OnHide()
   self:DetachEvent(GameEventType.ItemCountChanged, self.FlushCurrencyCount)
   self:DetachEvent(GameEventType.ActivityShopBuySuccess, self.FlushCurrencyCount)
-  ;
-  (self.imgIcon):DestoryLastImage()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCommonEconomic.Flush = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICampaignCommonEconomic:Flush()
   self.data = N14Data:New()
-  local res = (self.data):RequestCampaign(TaskToken:New(), ECampaignType.CAMPAIGN_TYPE_N14)
+  local res = self.data:RequestCampaign(TaskToken:New(), ECampaignType.CAMPAIGN_TYPE_N14)
   if res then
-    self:FlushCurrencyIcon()
-    self:FlushCurrencyCount()
   end
+  self:FlushCurrencyIcon()
+  self:FlushCurrencyCount()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCommonEconomic.FlushCurrencyIcon = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local currencyId = (self.data):GetCurrencyId()
-  local cfgItem = (Cfg.cfg_item)[currencyId]
+function UICampaignCommonEconomic:FlushCurrencyIcon()
+  local currencyId = self.data:GetCurrencyId()
+  local cfgItem = Cfg.cfg_item[currencyId]
   if cfgItem then
-    (self.imgIcon):LoadImage(cfgItem.Icon)
+    self.imgIcon:LoadImage(cfgItem.Icon)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCommonEconomic.FlushCurrencyCount = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local currencyId = (self.data):GetCurrencyId()
-  local count = (self:GetModule(ItemModule)):GetItemCount(currencyId) or 0
-  local preZero = (UIActivityHelper.GetZeroStrFrontNum)(7, count)
-  local fmtStr = (string.format)("<color=#545454>%s</color><color=#fff0ad>%s</color>", preZero, tostring(count))
-  ;
-  (self.txtShopCount):SetText(fmtStr)
+function UICampaignCommonEconomic:FlushCurrencyCount()
+  local currencyId = self.data:GetCurrencyId()
+  local count = self:GetModule(ItemModule):GetItemCount(currencyId) or 0
+  local preZero = UIActivityHelper.GetZeroStrFrontNum(7, count)
+  local fmtStr = string.format("<color=#545454>%s</color><color=#fff0ad>%s</color>", preZero, tostring(count))
+  self.txtShopCount:SetText(fmtStr)
 end
-
-

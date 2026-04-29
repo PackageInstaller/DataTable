@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/rebuilding_event/ui_activity_n_plus_six_event_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityNPlusSixEventData", Object)
 UIActivityNPlusSixEventData = UIActivityNPlusSixEventData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNPlusSixEventData.Constructor = function(self, eventId)
-  -- function num : 0_0 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_build_event)[eventId]
+function UIActivityNPlusSixEventData:Constructor(eventId)
+  local cfg = Cfg.cfg_component_build_event[eventId]
   if not cfg then
-    return 
+    return
   end
   self._eventId = eventId
   self._type = cfg.Type
@@ -19,153 +12,98 @@ UIActivityNPlusSixEventData.Constructor = function(self, eventId)
   if cfg.Reward then
     for i = 1, #cfg.Reward do
       local reward = RoleAsset:New()
-      reward.assetid = ((cfg.Reward)[i])[1]
-      reward.count = ((cfg.Reward)[i])[2]
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._rewards)[#self._rewards + 1] = reward
+      reward.assetid = cfg.Reward[i][1]
+      reward.count = cfg.Reward[i][2]
+      self._rewards[#self._rewards + 1] = reward
     end
   end
-  do
-    self._name = ""
-    if cfg.Name then
-      self._name = (StringTable.Get)(cfg.Name)
-    end
-    self._title = ""
-    if cfg.Title then
-      self._title = (StringTable.Get)(cfg.Title)
-    end
-    self._des = ""
-    if cfg.Des then
-      self._des = (StringTable.Get)(cfg.Des)
-    end
-    local posConfig = cfg.MapPos
-    self._posX = posConfig[1]
-    self._posY = posConfig[2]
-    self._spineName = cfg.SpineName
-    self._idleAnimName = cfg.IdleAnimName
-    self._completeAnimName = cfg.CompleteAnimName
-    self._completAnimLength = cfg.CompleteAnimLength
-    local triggerArea = cfg.TriggerArea
-    self._triggerPosX = triggerArea[1]
-    self._triggerPosY = triggerArea[2]
-    self._triggerWidth = triggerArea[3]
-    self._triggerHeight = triggerArea[4]
-    self._height = cfg.Height
+  self._name = ""
+  if cfg.Name then
+    self._name = StringTable.Get(cfg.Name)
   end
+  self._title = ""
+  if cfg.Title then
+    self._title = StringTable.Get(cfg.Title)
+  end
+  self._des = ""
+  if cfg.Des then
+    self._des = StringTable.Get(cfg.Des)
+  end
+  local posConfig = cfg.MapPos
+  self._posX = posConfig[1]
+  self._posY = posConfig[2]
+  self._spineName = cfg.SpineName
+  self._idleAnimName = cfg.IdleAnimName
+  self._completeAnimName = cfg.CompleteAnimName
+  self._completAnimLength = cfg.CompleteAnimLength
+  local triggerArea = cfg.TriggerArea
+  self._triggerPosX = triggerArea[1]
+  self._triggerPosY = triggerArea[2]
+  self._triggerWidth = triggerArea[3]
+  self._triggerHeight = triggerArea[4]
+  self._height = cfg.Height
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventData.GetEventId = function(self)
-  -- function num : 0_1
+function UIActivityNPlusSixEventData:GetEventId()
   return self._eventId
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventData.GetType = function(self)
-  -- function num : 0_2
+function UIActivityNPlusSixEventData:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventData.GetRewards = function(self)
-  -- function num : 0_3
+function UIActivityNPlusSixEventData:GetRewards()
   return self._rewards
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventData.GetName = function(self)
-  -- function num : 0_4
+function UIActivityNPlusSixEventData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventData.GetTitle = function(self)
-  -- function num : 0_5
+function UIActivityNPlusSixEventData:GetTitle()
   return self._title
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventData.GetDes = function(self)
-  -- function num : 0_6
+function UIActivityNPlusSixEventData:GetDes()
   return self._des
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventData.GetPosX = function(self)
-  -- function num : 0_7
+function UIActivityNPlusSixEventData:GetPosX()
   return self._posX
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventData.GetPosY = function(self)
-  -- function num : 0_8
+function UIActivityNPlusSixEventData:GetPosY()
   return self._posY
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventData.GetSpineName = function(self)
-  -- function num : 0_9
+function UIActivityNPlusSixEventData:GetSpineName()
   return self._spineName
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventData.GetIdleAnimName = function(self)
-  -- function num : 0_10
+function UIActivityNPlusSixEventData:GetIdleAnimName()
   return self._idleAnimName
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventData.GetCompleteAnimName = function(self)
-  -- function num : 0_11
+function UIActivityNPlusSixEventData:GetCompleteAnimName()
   return self._completeAnimName
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventData.GetCompleteAnimLength = function(self)
-  -- function num : 0_12
+function UIActivityNPlusSixEventData:GetCompleteAnimLength()
   return self._completAnimLength
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventData.GetTriggerAreaPosX = function(self)
-  -- function num : 0_13
+function UIActivityNPlusSixEventData:GetTriggerAreaPosX()
   return self._triggerPosX
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventData.GetTriggerAreaPosY = function(self)
-  -- function num : 0_14
+function UIActivityNPlusSixEventData:GetTriggerAreaPosY()
   return self._triggerPosY
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventData.GetTriggerAreaWidth = function(self)
-  -- function num : 0_15
+function UIActivityNPlusSixEventData:GetTriggerAreaWidth()
   return self._triggerWidth
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventData.GetTriggerAreaHeight = function(self)
-  -- function num : 0_16
+function UIActivityNPlusSixEventData:GetTriggerAreaHeight()
   return self._triggerHeight
 end
-
-

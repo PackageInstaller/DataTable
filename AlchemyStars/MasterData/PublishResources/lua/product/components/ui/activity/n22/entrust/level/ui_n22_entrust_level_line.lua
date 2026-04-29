@@ -1,53 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/entrust/level/ui_n22_entrust_level_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22EntrustLevelLine", UICustomWidget)
 UIN22EntrustLevelLine = UIN22EntrustLevelLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22EntrustLevelLine.OnShow = function(self)
-  -- function num : 0_0
+function UIN22EntrustLevelLine:OnShow()
   self._rect = self:GetUIComponent("RectTransform", "shape")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelLine.OnHide = function(self)
-  -- function num : 0_1
+function UIN22EntrustLevelLine:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelLine.SetPos = function(self, from, to)
-  -- function num : 0_2 , upvalues : _ENV
-  local dis = (Vector2.Distance)(from, to)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = Vector2(dis, ((self._rect).sizeDelta).y)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = from
+function UIN22EntrustLevelLine:SetPos(from, to)
+  local dis = Vector2.Distance(from, to)
+  self._rect.sizeDelta = Vector2(dis, self._rect.sizeDelta.y)
+  self._rect.anchoredPosition = from
   local v = to - from
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect).localRotation = (Quaternion.FromToRotation)(Vector3.right, Vector3(v.x, v.y, 0))
+  self._rect.localRotation = Quaternion.FromToRotation(Vector3.right, Vector3(v.x, v.y, 0))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelLine.PlayAnim = function(self, id, animName, delayTime, time, callback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN22EntrustLevelLine:PlayAnim(id, animName, delayTime, time, callback)
   local widgetName = "shape"
   local obj = self:GetGameObject(widgetName)
   local lockName = "UIN22EntrustLevelLine_PlayAnim()_" .. id
   self:Lock(lockName)
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : delayTime, obj, _ENV, self, time, lockName, callback
     if delayTime and delayTime ~= 0 then
       obj:SetActive(false)
       YIELD(TT, delayTime)
@@ -59,30 +33,17 @@ UIN22EntrustLevelLine.PlayAnim = function(self, id, animName, delayTime, time, c
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelLine._DoSizeDlta = function(self, time)
-  -- function num : 0_4 , upvalues : _ENV
-  local target = (self._rect).sizeDelta
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = Vector2(0, ((self._rect).sizeDelta).y)
-  ;
-  (self._rect):DOSizeDelta(target, time / 1000)
+function UIN22EntrustLevelLine:_DoSizeDlta(time)
+  local target = self._rect.sizeDelta
+  self._rect.sizeDelta = Vector2(0, self._rect.sizeDelta.y)
+  self._rect:DOSizeDelta(target, time / 1000)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelLine.SetDebugText = function(self, txt)
-  -- function num : 0_5 , upvalues : _ENV
-  (self:GetGameObject("_debug")):SetActive((UIActivityHelper.CheckDebugOpen)())
+function UIN22EntrustLevelLine:SetDebugText(txt)
+  self:GetGameObject("_debug"):SetActive(UIActivityHelper.CheckDebugOpen())
   local obj = self:GetUIComponent("UILocalizationText", "_debug")
   obj:SetText(txt)
 end
-
-

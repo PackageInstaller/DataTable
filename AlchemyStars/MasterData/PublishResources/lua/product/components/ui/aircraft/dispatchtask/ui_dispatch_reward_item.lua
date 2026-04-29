@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/dispatchtask/ui_dispatch_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDispatchRewardItem", UICustomWidget)
 UIDispatchRewardItem = UIDispatchRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDispatchRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDispatchRewardItem:OnShow(uiParams)
   self._uiCommonAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
   self._iconImg = self:GetUIComponent("RawImageLoader", "icon")
   self._countLabel = self:GetUIComponent("UILocalizationText", "count")
@@ -26,42 +19,29 @@ UIDispatchRewardItem.OnShow = function(self, uiParams)
   self._targetCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchRewardItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDispatchRewardItem:OnHide()
   self._uiCommonAtlas = nil
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchRewardItem.Refresh = function(self, itemInfo, callback, isPlayAnim)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDispatchRewardItem:Refresh(itemInfo, callback, isPlayAnim)
   self._itemInfo = itemInfo
-  local ItemTempleate = (Cfg.cfg_item)[itemInfo.id]
-  ;
-  (self._iconImg):LoadImage(ItemTempleate.Icon)
-  ;
-  (self._maxGo):SetActive(itemInfo.isMax)
-  ;
-  (self._newGo):SetActive(itemInfo.isNew)
+  local ItemTempleate = Cfg.cfg_item[itemInfo.id]
+  self._iconImg:LoadImage(ItemTempleate.Icon)
+  self._maxGo:SetActive(itemInfo.isMax)
+  self._newGo:SetActive(itemInfo.isNew)
   if itemInfo.des then
-    (self._desPanel):SetActive(true)
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._desLabel).text = itemInfo.des
+    self._desPanel:SetActive(true)
+    self._desLabel.text = itemInfo.des
   else
-    ;
-    (self._desPanel):SetActive(false)
+    self._desPanel:SetActive(false)
   end
   if itemInfo.isBook == false and itemInfo.isFuniture == false then
     if self._timerHandler then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+      GameGlobal.Timer():CancelEvent(self._timerHandler)
       self._timerHandler = nil
     end
     if isPlayAnim then
@@ -70,42 +50,27 @@ UIDispatchRewardItem.Refresh = function(self, itemInfo, callback, isPlayAnim)
         self._curCount = self._targetCount
         self._targetCount = itemInfo.count
         if self._currentCount ~= self._targetCount then
-          self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(self._delayTime, TimerTriggerCount.Infinite, function()
-    -- function num : 0_2_0 , upvalues : self
-    self:_OnUpdateAnmim()
-  end
-)
+          self._timerHandler = GameGlobal.Timer():AddEventTimes(self._delayTime, TimerTriggerCount.Infinite, function()
+            self:_OnUpdateAnmim()
+          end)
         else
-          -- DECOMPILER ERROR at PC77: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._countLabel).text = itemInfo.count
-          -- DECOMPILER ERROR at PC86: Confused about usage of register: R5 in 'UnsetPending'
-
+          self._countLabel.text = itemInfo.count
           if itemInfo.isExtraReward then
-            (self._countLabel).text = itemInfo.count .. "/" .. itemInfo.maxCount
+            self._countLabel.text = itemInfo.count .. "/" .. itemInfo.maxCount
           end
         end
       else
-        -- DECOMPILER ERROR at PC90: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._countLabel).text = itemInfo.count
+        self._countLabel.text = itemInfo.count
         self._curCount = 0
         self._targetCount = 0
       end
     else
-      -- DECOMPILER ERROR at PC96: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._countLabel).text = itemInfo.count
+      self._countLabel.text = itemInfo.count
       if type(itemInfo.count) == "number" then
         self._curCount = itemInfo.count
         self._targetCount = self._curCount
-        -- DECOMPILER ERROR at PC114: Confused about usage of register: R5 in 'UnsetPending'
-
         if itemInfo.isExtraReward then
-          (self._countLabel).text = itemInfo.count .. "/" .. itemInfo.maxCount
+          self._countLabel.text = itemInfo.count .. "/" .. itemInfo.maxCount
         end
       else
         self._curCount = 0
@@ -113,67 +78,48 @@ UIDispatchRewardItem.Refresh = function(self, itemInfo, callback, isPlayAnim)
       end
     end
   end
-  -- DECOMPILER ERROR at PC127: Confused about usage of register: R5 in 'UnsetPending'
-
   if itemInfo.isBook then
-    (self._countLabel).text = (StringTable.Get)("str_dispatch_room_book")
+    self._countLabel.text = StringTable.Get("str_dispatch_room_book")
     self._curCount = 0
     self._targetCount = self._curCount
   end
-  -- DECOMPILER ERROR at PC139: Confused about usage of register: R5 in 'UnsetPending'
-
   if itemInfo.isFuniture then
-    (self._countLabel).text = (StringTable.Get)("str_dispatch_room_funiture")
+    self._countLabel.text = StringTable.Get("str_dispatch_room_funiture")
     self._curCount = 0
     self._targetCount = self._curCount
   end
-  local qualityName = (UIEnum.ItemColorFrame)(ItemTempleate.Color)
+  local qualityName = UIEnum.ItemColorFrame(ItemTempleate.Color)
   if qualityName ~= "" then
-    (self._qualityGo):SetActive(true)
-    -- DECOMPILER ERROR at PC158: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._qualityImg).sprite = (self._uiCommonAtlas):GetSprite(qualityName)
+    self._qualityGo:SetActive(true)
+    self._qualityImg.sprite = self._uiCommonAtlas:GetSprite(qualityName)
   else
-    ;
-    (self._qualityGo):SetActive(false)
+    self._qualityGo:SetActive(false)
   end
   self._callback = callback
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchRewardItem._OnUpdateAnmim = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDispatchRewardItem:_OnUpdateAnmim()
   self._timer = self._timer + self._delayTime
   local percent = self._timer / self._totalTime
-  if self._totalTime < self._timer then
+  if self._timer > self._totalTime then
     percent = 1
     self._curCount = self._targetCount
     if self._timerHandler then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+      GameGlobal.Timer():CancelEvent(self._timerHandler)
       self._timerHandler = nil
     end
   end
-  local phyRec = (((DG.Tweening).DOVirtual).EasedValue)(self._curCount, self._targetCount, percent, ((DG.Tweening).Ease).OutQuad)
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self._itemInfo).isExtraReward then
-    (self._countLabel).text = (math.floor)(phyRec) .. "/" .. (self._itemInfo).maxCount
+  local phyRec = DG.Tweening.DOVirtual.EasedValue(self._curCount, self._targetCount, percent, DG.Tweening.Ease.OutQuad)
+  if self._itemInfo.isExtraReward then
+    self._countLabel.text = math.floor(phyRec) .. "/" .. self._itemInfo.maxCount
   else
-    ;
-    (self._countLabel):SetText((math.floor)(phyRec))
+    self._countLabel:SetText(math.floor(phyRec))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchRewardItem.MaskOnClick = function(self, go)
-  -- function num : 0_4
-  (self._newGo):SetActive(false)
+function UIDispatchRewardItem:MaskOnClick(go)
+  self._newGo:SetActive(false)
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
-
-

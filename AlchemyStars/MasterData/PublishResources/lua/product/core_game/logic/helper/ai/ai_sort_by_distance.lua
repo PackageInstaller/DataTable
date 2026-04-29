@@ -1,83 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/ai_sort_by_distance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AiSortByDistance", Object)
 AiSortByDistance = AiSortByDistance
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AiSortByDistance.Constructor = function(self, centrePos, dataPos, nIndex)
-  -- function num : 0_0
+function AiSortByDistance:Constructor(centrePos, dataPos, nIndex)
   self.centre = centrePos
   self.data = dataPos
   self.m_nIndex = nIndex or 0
   self.m_nDistance = self:Distance()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AiSortByDistance.GetDistance = function(self)
-  -- function num : 0_1
+function AiSortByDistance:GetDistance()
   return self.m_nDistance
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AiSortByDistance.GetPosData = function(self)
-  -- function num : 0_2
+function AiSortByDistance:GetPosData()
   return self.data
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AiSortByDistance.Distance = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return (GameHelper.ComputeLogicDistance)(self.centre, self.data)
+function AiSortByDistance:Distance()
+  return GameHelper.ComputeLogicDistance(self.centre, self.data)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AiSortByDistance._ComparerByFar = function(dataA, dataB)
-  -- function num : 0_4
+function AiSortByDistance._ComparerByFar(dataA, dataB)
   local nDistanceA = dataA:GetDistance()
   local nDistanceB = dataB:GetDistance()
-  if nDistanceB < nDistanceA then
+  if nDistanceA > nDistanceB then
     return 1
-  else
-    if nDistanceA < nDistanceB then
-      return -1
-    else
-      return dataB.m_nIndex - dataA.m_nIndex
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AiSortByDistance._ComparerByNear = function(dataNew, dataOld)
-  -- function num : 0_5
-  local nDistanceA = dataNew:GetDistance()
-  local nDistanceB = dataOld:GetDistance()
-  if nDistanceB < nDistanceA then
+  elseif nDistanceA < nDistanceB then
     return -1
   else
-    if nDistanceA < nDistanceB then
-      return 1
-    else
-      return dataOld.m_nIndex - dataNew.m_nIndex
-    end
+    return dataB.m_nIndex - dataA.m_nIndex
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
+function AiSortByDistance._ComparerByNear(dataNew, dataOld)
+  local nDistanceA = dataNew:GetDistance()
+  local nDistanceB = dataOld:GetDistance()
+  if nDistanceA > nDistanceB then
+    return -1
+  elseif nDistanceA < nDistanceB then
+    return 1
+  else
+    return dataOld.m_nIndex - dataNew.m_nIndex
+  end
+end
 
-AiSortByDistance._ComparerByNear_2 = function(dataA, dataB)
-  -- function num : 0_6 , upvalues : _ENV
+function AiSortByDistance._ComparerByNear_2(dataA, dataB)
   if dataA.data == dataB.data then
     return 0
   end
-  return (AiSortByDistance._ComparerByNear)(dataA, dataB)
+  return AiSortByDistance._ComparerByNear(dataA, dataB)
 end
-
-

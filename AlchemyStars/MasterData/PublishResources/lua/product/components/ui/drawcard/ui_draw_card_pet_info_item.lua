@@ -1,16 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_pet_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardPetInfoItem", Object)
 UIDrawCardPetInfoItem = UIDrawCardPetInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardPetInfoItem.Constructor = function(self, go)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDrawCardPetInfoItem:Constructor(go)
   self._go = go
-  self.boxNames = {"obtain_huodong_bing", "obtain_huodong_huo", "obtain_huodong_sen", "obtain_huodong_lei"}
+  self.boxNames = {
+    "obtain_huodong_bing",
+    "obtain_huodong_huo",
+    "obtain_huodong_sen",
+    "obtain_huodong_lei"
+  }
   self._assets = {}
   local view = go:GetComponent("UIView")
   self.icon = view:GetUIComponent("Image", "icon")
@@ -22,107 +20,72 @@ UIDrawCardPetInfoItem.Constructor = function(self, go)
   self._events = UICustomUIEventListener:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPetInfoItem.SetData = function(self, tmpID, cfg, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDrawCardPetInfoItem:SetData(tmpID, cfg, callback)
   local offset = cfg.pos
   self.ID = tmpID
-  local petCfg = (Cfg.cfg_pet)[self.ID]
+  local petCfg = Cfg.cfg_pet[self.ID]
   if not petCfg then
-    (Log.warn)("### no pet in cfg_pet. self.ID=", self.ID)
-    return 
+    Log.warn("### no pet in cfg_pet. self.ID=", self.ID)
+    return
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.name).text = (StringTable.Get)(petCfg.Name)
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.icon).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((Cfg.cfg_pet_element)[petCfg.FirstElement]).IconWhite))
+  self.name.text = StringTable.Get(petCfg.Name)
+  self.icon.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(Cfg.cfg_pet_element[petCfg.FirstElement].IconWhite))
   local atlas = self:GetAsset("UIDrawCard.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.box).sprite = atlas:GetSprite((self.boxNames)[petCfg.FirstElement])
+  self.box.sprite = atlas:GetSprite(self.boxNames[petCfg.FirstElement])
   if cfg.type == 4 or cfg.type == 5 then
     if not self.stars then
-      self.stars = UICustomWidgetPool:New(self, (self._view):GetUIComponent("UISelectObjectPath", "stars"))
+      self.stars = UICustomWidgetPool:New(self, self._view:GetUIComponent("UISelectObjectPath", "stars"))
     end
-    local stars = (self.stars):GetAllSpawnList()
+    local stars = self.stars:GetAllSpawnList()
     for i = 1, petCfg.Star do
-      (stars[i]):SetData(cfg.star)
+      stars[i]:SetData(cfg.star)
     end
+  elseif cfg.type == 6 or cfg.type == 7 then
+    local image = self._view:GetUIComponent("RawImageLoader", "stars")
+    local rect = self._view:GetUIComponent("RectTransform", "stars")
+    if image == nil then
+      Log.exception("星灵控件配置错误:", cfg.type)
+    end
+    local starCfg = cfg.starCfg
+    image:LoadImage(starCfg.name)
+    rect.sizeDelta = Vector2(starCfg.size[1], starCfg.size[2])
+    rect.anchoredPosition = Vector2(starCfg.pos[1], starCfg.pos[2])
   else
-    do
-      if cfg.type == 6 or cfg.type == 7 then
-        local image = (self._view):GetUIComponent("RawImageLoader", "stars")
-        local rect = (self._view):GetUIComponent("RectTransform", "stars")
-        if image == nil then
-          (Log.exception)("星灵控件配置错误:", cfg.type)
-        end
-        local starCfg = cfg.starCfg
-        image:LoadImage(starCfg.name)
-        rect.sizeDelta = Vector2((starCfg.size)[1], (starCfg.size)[2])
-        rect.anchoredPosition = Vector2((starCfg.pos)[1], (starCfg.pos)[2])
-      else
-        do
-          if not self.stars then
-            self.stars = UICustomWidgetPool:New(self, (self._view):GetUIComponent("UISelectObjectPath", "stars"))
-          end
-          local stars = (self.stars):SpawnObjects("UIDrawCardPetInfoStar", petCfg.Star)
-          for i = 1, petCfg.Star do
-            if cfg.starColor then
-              local curColor = cfg.starColor
-              ;
-              (stars[i]):SetData(curColor)
-            end
-          end
-          do
-            local rect = (self._go):GetComponent(typeof(UnityEngine.RectTransform))
-            rect.anchoredPosition = Vector2(offset[1], offset[2])
-            ;
-            (self._events):AddUICustomEventListener((UICustomUIEventListener.Get)(self.btn), UIEvent.Click, function()
-    -- function num : 0_1_0 , upvalues : callback, self
-    if callback then
-      callback(self.ID)
+    if not self.stars then
+      self.stars = UICustomWidgetPool:New(self, self._view:GetUIComponent("UISelectObjectPath", "stars"))
     end
-  end
-)
-          end
-        end
+    local stars = self.stars:SpawnObjects("UIDrawCardPetInfoStar", petCfg.Star)
+    for i = 1, petCfg.Star do
+      if cfg.starColor then
+        local curColor = cfg.starColor
+        stars[i]:SetData(curColor)
       end
     end
   end
+  local rect = self._go:GetComponent(typeof(UnityEngine.RectTransform))
+  rect.anchoredPosition = Vector2(offset[1], offset[2])
+  self._events:AddUICustomEventListener(UICustomUIEventListener.Get(self.btn), UIEvent.Click, function()
+    if callback then
+      callback(self.ID)
+    end
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPetInfoItem.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._events):Dispose()
+function UIDrawCardPetInfoItem:Dispose()
+  self._events:Dispose()
   if self.stars then
-    (self.stars):Dispose()
+    self.stars:Dispose()
   end
-  for _,req in pairs(self._assets) do
+  for _, req in pairs(self._assets) do
     req:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPetInfoItem.GetAsset = function(self, name, type)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._assets)[name] then
-    return ((self._assets)[name]).Obj
+function UIDrawCardPetInfoItem:GetAsset(name, type)
+  if self._assets[name] then
+    return self._assets[name].Obj
   end
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset(name, type)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._assets)[name] = req
+  local req = ResourceManager:GetInstance():SyncLoadAsset(name, type)
+  self._assets[name] = req
   return req.Obj
 end
-
-

@@ -1,65 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_is_summon_pos_valid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
-local EnumAI_SummonType = {MonsterLand = 1, MonsterFly = 2, SummonTrap = 3}
+local EnumAI_SummonType = {
+  MonsterLand = 1,
+  MonsterFly = 2,
+  SummonTrap = 3
+}
 _enum("EnumAI_SummonType", EnumAI_SummonType)
 _class("ActionIsSummonPosValid", AINewNode)
 ActionIsSummonPosValid = ActionIsSummonPosValid
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
 
-ActionIsSummonPosValid.Constructor = function(self)
-  -- function num : 0_0 , upvalues : EnumAI_SummonType
+function ActionIsSummonPosValid:Constructor()
   self.m_nPosSource = 1
   self.m_nSummonType = EnumAI_SummonType.MonsterLand
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-ActionIsSummonPosValid.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV, EnumAI_SummonType
-  ((ActionIsSummonPosValid.super).Reset)(self)
+function ActionIsSummonPosValid:Reset()
+  ActionIsSummonPosValid.super.Reset(self)
   self.m_nPosSource = 1
   self.m_nSummonType = EnumAI_SummonType.MonsterLand
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-ActionIsSummonPosValid.OnUpdate = function(self, dt)
-  -- function num : 0_2 , upvalues : _ENV, EnumAI_SummonType
+function ActionIsSummonPosValid:OnUpdate(dt)
   local nSummonType = self:GetLogicData(-1)
   local nBlockFlag = BlockFlag.MonsterLand
   if EnumAI_SummonType.MonsterLand == nSummonType then
     nBlockFlag = BlockFlag.MonsterLand
-  else
-    if EnumAI_SummonType.MonsterFly == nSummonType then
-      nBlockFlag = BlockFlag.MonsterFly
-    else
-      if EnumAI_SummonType.SummonTrap == nSummonType then
-        nBlockFlag = BlockFlag.SummonTrap
-      end
-    end
+  elseif EnumAI_SummonType.MonsterFly == nSummonType then
+    nBlockFlag = BlockFlag.MonsterFly
+  elseif EnumAI_SummonType.SummonTrap == nSummonType then
+    nBlockFlag = BlockFlag.SummonTrap
   end
   local bValid = true
-  if self.m_nPosSource == 1 then
-    local pos = (self.m_entityOwn):GetGridPosition()
-    local area = ((self.m_entityOwn):BodyArea()):GetArea()
-    local boardServiceLogic = (self._world):GetService("BoardLogic")
-    for _,value in ipairs(area) do
+  if 1 == self.m_nPosSource then
+    local pos = self.m_entityOwn:GetGridPosition()
+    local area = self.m_entityOwn:BodyArea():GetArea()
+    local boardServiceLogic = self._world:GetService("BoardLogic")
+    for _, value in ipairs(area) do
       if boardServiceLogic:IsPosBlock(pos + value, nBlockFlag) then
         bValid = false
         break
       end
     end
   end
-  do
-    if not bValid then
-      return AINewNodeStatus.Failure
-    end
-    return AINewNodeStatus.Success
+  if not bValid then
+    return AINewNodeStatus.Failure
   end
+  return AINewNodeStatus.Success
 end
-
-

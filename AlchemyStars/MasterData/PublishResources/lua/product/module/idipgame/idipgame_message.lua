@@ -1,35 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/idipgame/idipgame_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
 local idipgameMessageDef = {CLSID_CEventNotifyIDIPBan = 28000, CLSID_CEventNotifyIDIPRelogin = 28001}
-;
-(table.append)(MessageDef, idipgameMessageDef)
+table.append(MessageDef, idipgameMessageDef)
 _class("CEventNotifyIDIPBan", CSvrPushEvent)
 CEventNotifyIDIPBan = CEventNotifyIDIPBan
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventNotifyIDIPBan.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CEventNotifyIDIPBan:Constructor()
   self.info = idip_ban_msg:New()
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventNotifyIDIPBan._proto = {
-[1] = {"info", "idip_ban_msg"}
+  [1] = {
+    "info",
+    "idip_ban_msg"
+  }
 }
 _class("CEventNotifyIDIPRelogin", CSvrPushEvent)
 CEventNotifyIDIPRelogin = CEventNotifyIDIPRelogin
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventNotifyIDIPRelogin.Constructor = function(self)
-  -- function num : 0_1
+function CEventNotifyIDIPRelogin:Constructor()
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventNotifyIDIPRelogin._proto = {}
-

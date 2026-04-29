@@ -1,82 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_diff/ui_diff_path_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiffPathItem", UICustomWidget)
 UIDiffPathItem = UIDiffPathItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiffPathItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._rect = (self:GetGameObject()):GetComponent("RectTransform")
+function UIDiffPathItem:OnShow()
+  self._rect = self:GetGameObject():GetComponent("RectTransform")
   local vec0_5 = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMax = vec0_5
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMin = vec0_5
-  self._rectRoot = (self:GetGameObject("shape")):GetComponent("RectTransform")
+  self._rect.anchorMax = vec0_5
+  self._rect.anchorMin = vec0_5
+  self._rectRoot = self:GetGameObject("shape"):GetComponent("RectTransform")
   self._line = self:GetGameObject("line")
-  ;
-  (self._line):SetActive(false)
+  self._line:SetActive(false)
   self._shadow = self:GetGameObject("shadow")
-  ;
-  (self._shadow):SetActive(false)
+  self._shadow:SetActive(false)
   self._sNode = nil
   self._eNode = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffPathItem.OnHide = function(self)
-  -- function num : 0_1
+function UIDiffPathItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffPathItem.SetData = function(self, posS, posE)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._line):SetActive(not isShadow)
-  ;
-  (self._shadow):SetActive(isShadow)
+function UIDiffPathItem:SetData(posS, posE)
+  self._line:SetActive(not isShadow)
+  self._shadow:SetActive(isShadow)
   if not posS then
-    return 
+    return
   end
   local posS = posS
   local posE = posE
-  local dis = (Vector2.Distance)(posS, posE)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rectRoot).sizeDelta = Vector2(dis, ((self._rectRoot).sizeDelta).y)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = posS
+  local dis = Vector2.Distance(posS, posE)
+  self._rectRoot.sizeDelta = Vector2(dis, self._rectRoot.sizeDelta.y)
+  self._rect.anchoredPosition = posS
   local v = posE - posS
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._rect).localRotation = (Quaternion.FromToRotation)(Vector3.right, Vector3(v.x, v.y, 0))
+  self._rect.localRotation = Quaternion.FromToRotation(Vector3.right, Vector3(v.x, v.y, 0))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffPathItem.Animation = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._eNode):State() == DiscoveryStageState.CanPlay and (self._eNode):IsFirstShow() then
-    local targetWidth = ((self._rectRoot).sizeDelta).x
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._rectRoot).sizeDelta = Vector2(0, ((self._rectRoot).sizeDelta).y)
-    ;
-    (self._rectRoot):DOSizeDelta(Vector2(targetWidth, ((self._rectRoot).sizeDelta).y), 0.8)
+function UIDiffPathItem:Animation()
+  if self._eNode:State() == DiscoveryStageState.CanPlay and self._eNode:IsFirstShow() then
+    local targetWidth = self._rectRoot.sizeDelta.x
+    self._rectRoot.sizeDelta = Vector2(0, self._rectRoot.sizeDelta.y)
+    self._rectRoot:DOSizeDelta(Vector2(targetWidth, self._rectRoot.sizeDelta.y), 0.8)
   end
 end
-
-

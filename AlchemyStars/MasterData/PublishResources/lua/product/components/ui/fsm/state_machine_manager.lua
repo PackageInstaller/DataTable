@@ -1,54 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/fsm/state_machine_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateMachineManager", Singleton)
 StateMachineManager = StateMachineManager
 local idSeedStateMachine = 1
--- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
 
-StateMachineManager.Constructor = function(self)
-  -- function num : 0_0
+function StateMachineManager:Constructor()
   self._stateMachineDict = {}
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-StateMachineManager.CreateStateMachine = function(self, enumName, tStateEnum)
-  -- function num : 0_1 , upvalues : idSeedStateMachine, _ENV
+function StateMachineManager:CreateStateMachine(enumName, tStateEnum)
   local id = idSeedStateMachine
   idSeedStateMachine = idSeedStateMachine + 1
-  local sm = (StateMachine.CreateInstance)(id, enumName)
-  for key,enum in pairs(tStateEnum) do
+  local sm = StateMachine.CreateInstance(id, enumName)
+  for key, enum in pairs(tStateEnum) do
     local name = enumName .. key
-    local state = (State.CreateInstance)(name, enum)
+    local state = State.CreateInstance(name, enum)
     if state then
       state:SetFsm(sm)
       sm:AddState(state)
     else
-      ;
-      (Log.fatal)("### no class named :", name)
+      Log.fatal("### no class named :", name)
     end
   end
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._stateMachineDict)[id] = sm
+  self._stateMachineDict[id] = sm
   return sm
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-StateMachineManager.DestroyStateMachine = function(self, fsmId)
-  -- function num : 0_2
-  local sm = nil
-  if self._stateMachineDict and (self._stateMachineDict)[fsmId] then
-    sm = (self._stateMachineDict)[fsmId]
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._stateMachineDict)[fsmId] = nil
+function StateMachineManager:DestroyStateMachine(fsmId)
+  local sm
+  if self._stateMachineDict and self._stateMachineDict[fsmId] then
+    sm = self._stateMachineDict[fsmId]
+    self._stateMachineDict[fsmId] = nil
   end
   if sm then
     sm:Destroy()
@@ -56,47 +36,31 @@ StateMachineManager.DestroyStateMachine = function(self, fsmId)
   end
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-StateMachineManager.AddState = function(self, fsmId, state)
-  -- function num : 0_3
+function StateMachineManager:AddState(fsmId, state)
   local sm = self:GetStateMachine(fsmId)
   if sm then
     sm:AddState(state)
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-StateMachineManager.GetStateMachine = function(self, fsmId)
-  -- function num : 0_4
-  do
-    if self._stateMachineDict and (self._stateMachineDict)[fsmId] then
-      local sm = (self._stateMachineDict)[fsmId]
-      return sm
-    end
-    return nil
+function StateMachineManager:GetStateMachine(fsmId)
+  if self._stateMachineDict and self._stateMachineDict[fsmId] then
+    local sm = self._stateMachineDict[fsmId]
+    return sm
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-StateMachineManager.Init = function(self, fsmId, stateId)
-  -- function num : 0_5
+function StateMachineManager:Init(fsmId, stateId)
   local sm = self:GetStateMachine(fsmId)
   if sm then
     sm:Init(stateId)
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-StateMachineManager.ChangeState = function(self, fsmId, stateId)
-  -- function num : 0_6
+function StateMachineManager:ChangeState(fsmId, stateId)
   local sm = self:GetStateMachine(fsmId)
   if sm then
     sm:ChangeState(stateId)
   end
 end
-
-

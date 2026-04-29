@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_normal_attack_for_add_blood_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseNormalAttackForAddBloodParam", SkillPhaseParamBase)
 SkillPhaseNormalAttackForAddBloodParam = SkillPhaseNormalAttackForAddBloodParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseNormalAttackForAddBloodParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseNormalAttackForAddBloodParam:Constructor(t)
   self._castTotalTime = t.castTotalTime
   self._longCastTotalTime = t.longCastTotalTime
   self._hpDelayTime = t.hpDelayTime
@@ -25,24 +18,15 @@ SkillPhaseNormalAttackForAddBloodParam.Constructor = function(self, t)
   self._normalDoubleHitAnimation = t.normalDoubleHitAnimation
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackForAddBloodParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseNormalAttackForAddBloodParam:GetPhaseType()
   return SkillViewPhaseType.NormalAttackForAddBlood
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackForAddBloodParam.GetCastEffectID = function(self)
-  -- function num : 0_2
+function SkillPhaseNormalAttackForAddBloodParam:GetCastEffectID()
   return self._castEffectID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackForAddBloodParam.GetAnimationName = function(self, isFinalAttack)
-  -- function num : 0_3
+function SkillPhaseNormalAttackForAddBloodParam:GetAnimationName(isFinalAttack)
   if isFinalAttack and self._castLongAnimation then
     return self._castLongAnimation
   else
@@ -50,10 +34,7 @@ SkillPhaseNormalAttackForAddBloodParam.GetAnimationName = function(self, isFinal
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackForAddBloodParam.GetHitPointDelay = function(self, isFinalAttack)
-  -- function num : 0_4
+function SkillPhaseNormalAttackForAddBloodParam:GetHitPointDelay(isFinalAttack)
   if isFinalAttack and self._longHitPointDelay then
     return self._longHitPointDelay
   else
@@ -61,10 +42,7 @@ SkillPhaseNormalAttackForAddBloodParam.GetHitPointDelay = function(self, isFinal
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackForAddBloodParam.GetCastTotalTime = function(self, isFinalAttack)
-  -- function num : 0_5
+function SkillPhaseNormalAttackForAddBloodParam:GetCastTotalTime(isFinalAttack)
   if isFinalAttack and self._longCastTotalTime then
     return self._longCastTotalTime
   else
@@ -72,28 +50,22 @@ SkillPhaseNormalAttackForAddBloodParam.GetCastTotalTime = function(self, isFinal
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackForAddBloodParam.GetCacheTable = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillPhaseNormalAttackForAddBloodParam:GetCacheTable()
   local t = {}
   if self._castEffectID and self._castEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._castEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._castEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackForAddBloodParam.GetHPDelay = function(self)
-  -- function num : 0_7
+function SkillPhaseNormalAttackForAddBloodParam:GetHPDelay()
   return self._hpDelayTime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackForAddBloodParam.GetHitEffectDelay = function(self, isFinalAttack)
-  -- function num : 0_8
+function SkillPhaseNormalAttackForAddBloodParam:GetHitEffectDelay(isFinalAttack)
   if isFinalAttack and self._longAtkEffectDelay then
     return self._longAtkEffectDelay
   else
@@ -101,25 +73,14 @@ SkillPhaseNormalAttackForAddBloodParam.GetHitEffectDelay = function(self, isFina
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackForAddBloodParam.GetDamageIndex = function(self)
-  -- function num : 0_9
+function SkillPhaseNormalAttackForAddBloodParam:GetDamageIndex()
   return self._nDamageIndex
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackForAddBloodParam.GetNormalDoubleHitEffectID = function(self)
-  -- function num : 0_10
+function SkillPhaseNormalAttackForAddBloodParam:GetNormalDoubleHitEffectID()
   return self._normalDoubleHitEffectID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackForAddBloodParam.GetNormalDoubleHitAnimation = function(self)
-  -- function num : 0_11
+function SkillPhaseNormalAttackForAddBloodParam:GetNormalDoubleHitAnimation()
   return self._normalDoubleHitAnimation
 end
-
-

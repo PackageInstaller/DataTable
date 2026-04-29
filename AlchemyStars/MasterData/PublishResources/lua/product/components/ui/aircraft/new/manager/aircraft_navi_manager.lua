@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/manager/aircraft_navi_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftNaviManager", Object)
 AircraftNaviManager = AircraftNaviManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftNaviManager.Constructor = function(self, main)
-  -- function num : 0_0
+function AircraftNaviManager:Constructor(main)
   self._groupSeq = 0
   self._main = main
   self._normalGroups = {}
@@ -16,382 +9,265 @@ AircraftNaviManager.Constructor = function(self, main)
   self._actions = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftNaviManager.Init = function(self)
-  -- function num : 0_1
+function AircraftNaviManager:Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftNaviManager.Dispose = function(self)
-  -- function num : 0_2
+function AircraftNaviManager:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftNaviManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_3 , upvalues : _ENV
-  for seq,group in pairs(self._normalGroups) do
+function AircraftNaviManager:Update(deltaTimeMS)
+  for seq, group in pairs(self._normalGroups) do
     group:Update(deltaTimeMS)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R7 in 'UnsetPending'
-
     if group:IsDissolved() then
-      (self._normalGroups)[seq] = nil
+      self._normalGroups[seq] = nil
     end
   end
-  for seq,group in pairs(self._specailGroups) do
+  for seq, group in pairs(self._specailGroups) do
     group:Update(deltaTimeMS)
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R7 in 'UnsetPending'
-
     if group:IsDissolved() then
-      (self._specailGroups)[seq] = nil
+      self._specailGroups[seq] = nil
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftNaviManager.OnPetBlocked = function(self, pet, moveAction)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._actions)[pet:PstID()] then
-    (Log.fatal)("正在处理该星灵：", pet:TemplateID(), "，是否为拜访:", pet:IsVisitPet())
-    return 
+function AircraftNaviManager:OnPetBlocked(pet, moveAction)
+  if self._actions[pet:PstID()] then
+    Log.fatal("正在处理该星灵：", pet:TemplateID(), "，是否为拜访:", pet:IsVisitPet())
+    return
   end
   AirLog("开始处理拥堵星灵:", pet:TemplateID(), "，唯一id:", pet:PstID())
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._actions)[pet:PstID()] = moveAction
-  local nearTarget = (AircraftNaviHelper.IsPetNearTarget)(pet)
+  self._actions[pet:PstID()] = moveAction
+  local nearTarget = AircraftNaviHelper.IsPetNearTarget(pet)
   if nearTarget then
-    for _,group in pairs(self._specailGroups) do
+    for _, group in pairs(self._specailGroups) do
       if group:TryAdd(pet) then
         AirLog("趋近目标点星灵加入特殊组:", pet:TemplateID())
-        return 
+        return
       end
     end
     AirLog("趋近目标点星灵未成组:", pet:TemplateID())
     local group = AircraftPetGroupSpecail:New(pet, self:_seq(), function(pet)
-    -- function num : 0_4_0 , upvalues : self
-    self:onContinue(pet)
-  end
-)
-    -- DECOMPILER ERROR at PC66: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._specailGroups)[group:Seq()] = group
+      self:onContinue(pet)
+    end)
+    self._specailGroups[group:Seq()] = group
   else
-    do
-      for _,group in pairs(self._normalGroups) do
-        if group:TryAdd(pet) then
-          AirLog("被阻挡星灵加入普通组:", pet:TemplateID())
-          return 
-        end
+    for _, group in pairs(self._normalGroups) do
+      if group:TryAdd(pet) then
+        AirLog("被阻挡星灵加入普通组:", pet:TemplateID())
+        return
       end
-      AirLog("普通被阻挡星灵未成组:", pet:TemplateID())
-      local group = AircraftPetGroupNormal:New(pet, self:_seq(), function(pet)
-    -- function num : 0_4_1 , upvalues : self
-    self:onContinue(pet)
-  end
-)
-      -- DECOMPILER ERROR at PC100: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._normalGroups)[group:Seq()] = group
     end
+    AirLog("普通被阻挡星灵未成组:", pet:TemplateID())
+    local group = AircraftPetGroupNormal:New(pet, self:_seq(), function(pet)
+      self:onContinue(pet)
+    end)
+    self._normalGroups[group:Seq()] = group
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftNaviManager._seq = function(self)
-  -- function num : 0_5
+function AircraftNaviManager:_seq()
   self._groupSeq = self._groupSeq + 1
   return self._groupSeq
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftNaviManager.TryRemovePet = function(self, pet)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._actions)[pet:PstID()] then
-    (self._actions)[pet:PstID()] = nil
-    for key,group in pairs(self._specailGroups) do
+function AircraftNaviManager:TryRemovePet(pet)
+  if self._actions[pet:PstID()] then
+    self._actions[pet:PstID()] = nil
+    for key, group in pairs(self._specailGroups) do
       if group:TryRemove(pet) then
         AirLog("删除1个特殊组星灵:", pet:TemplateID())
         return true
       end
     end
-    for key,group in pairs(self._normalGroups) do
+    for key, group in pairs(self._normalGroups) do
       if group:TryRemove(pet) then
         AirLog("删除1个拥堵星灵:", pet:TemplateID())
         return true
       end
     end
-    ;
-    (Log.exception)("找不到需要删除的拥堵星灵:", pet:TemplateID(), "，是否为拜访:", pet:IsVisitPet())
+    Log.exception("找不到需要删除的拥堵星灵:", pet:TemplateID(), "，是否为拜访:", pet:IsVisitPet())
   end
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftNaviManager.onContinue = function(self, pet)
-  -- function num : 0_7 , upvalues : _ENV
-  local action = (self._actions)[pet:PstID()]
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._actions)[pet:PstID()] = nil
+function AircraftNaviManager:onContinue(pet)
+  local action = self._actions[pet:PstID()]
+  self._actions[pet:PstID()] = nil
   AirLog("星灵拥堵处理完成，继续走:", pet:TemplateID(), "，唯一id:", pet:PstID())
   action:Resume()
 end
 
 _class("AircraftNaviHelper", Object)
 AircraftNaviHelper = AircraftNaviHelper
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftNaviHelper.IsBlock = function(pet1, pet2)
-  -- function num : 0_8 , upvalues : _ENV
+function AircraftNaviHelper.IsBlock(pet1, pet2)
   if pet1:GetFloor() == pet2:GetFloor() then
-    local distance = (Vector3.Distance)(pet1:WorldPosition(), pet2:WorldPosition())
+    local distance = Vector3.Distance(pet1:WorldPosition(), pet2:WorldPosition())
     local radius = pet1:NaviRadius() + pet2:NaviRadius()
     if distance < radius + 0.5 then
       return true
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftNaviHelper.SameAndNearTarget = function(pet1, pet2)
-  -- function num : 0_9 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC22: Unhandled construct in 'MakeBoolean' P1
-
-  if pet1:HasMoveTarget() and pet2:HasMoveTarget() and (Vector3.Distance)(pet1:GetMoveTarget(), pet2:GetMoveTarget()) < 0.1 then
-    local d1 = pet1:GetMoveTarget() - pet1:WorldPosition()
-    d1.y = 0
-    if d1:Magnitude() < pet1:NaviRadius() + 0.05 then
-      return true
-    end
-    local d2 = pet2:GetMoveTarget() - pet2:WorldPosition()
-    d2.y = 0
-    if d2:Magnitude() < pet2:NaviRadius() + 0.05 then
-      return true
-    end
-  end
-  do
-    do return  end
-    return false
-  end
-end
-
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftNaviHelper.IsPetNearTarget = function(pet)
-  -- function num : 0_10
-  do
-    if pet:HasMoveTarget() then
-      local d1 = pet:GetMoveTarget() - pet:WorldPosition()
+function AircraftNaviHelper.SameAndNearTarget(pet1, pet2)
+  if pet1:HasMoveTarget() and pet2:HasMoveTarget() then
+    if Vector3.Distance(pet1:GetMoveTarget(), pet2:GetMoveTarget()) < 0.1 then
+      local d1 = pet1:GetMoveTarget() - pet1:WorldPosition()
       d1.y = 0
-      if d1:Magnitude() < pet:NaviRadius() + 2 then
+      if d1:Magnitude() < pet1:NaviRadius() + 0.05 then
+        return true
+      end
+      local d2 = pet2:GetMoveTarget() - pet2:WorldPosition()
+      d2.y = 0
+      if d2:Magnitude() < pet2:NaviRadius() + 0.05 then
         return true
       end
     end
-    return false
+    return
   end
+  return false
+end
+
+function AircraftNaviHelper.IsPetNearTarget(pet)
+  if pet:HasMoveTarget() then
+    local d1 = pet:GetMoveTarget() - pet:WorldPosition()
+    d1.y = 0
+    if d1:Magnitude() < pet:NaviRadius() + 2 then
+      return true
+    end
+  end
+  return false
 end
 
 _class("AircraftPetWaiter", Object)
 AircraftPetWaiter = AircraftPetWaiter
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPetWaiter.Constructor = function(self, pet, duration)
-  -- function num : 0_11
+function AircraftPetWaiter:Constructor(pet, duration)
   self._time = duration
   self._pet = pet
   self._timeUp = false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetWaiter.Update = function(self, deltaTimeMS)
-  -- function num : 0_12
+function AircraftPetWaiter:Update(deltaTimeMS)
   self._time = self._time - deltaTimeMS
   if self._time <= 0 then
     self._timeUp = true
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetWaiter.RemainTime = function(self)
-  -- function num : 0_13
+function AircraftPetWaiter:RemainTime()
   return self._time
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetWaiter.TimeUp = function(self)
-  -- function num : 0_14
+function AircraftPetWaiter:TimeUp()
   return self._timeUp
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetWaiter.Pet = function(self)
-  -- function num : 0_15
+function AircraftPetWaiter:Pet()
   return self._pet
 end
 
 _class("AircraftWaitQueue", Object)
 AircraftWaitQueue = AircraftWaitQueue
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftWaitQueue.Constructor = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function AircraftWaitQueue:Constructor()
   self._queue = AircraftQueue:New()
 end
 
 _class("AircraftPetGroupNormal", Object)
 AircraftPetGroupNormal = AircraftPetGroupNormal
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPetGroupNormal.Constructor = function(self, pet, seq, onContinue)
-  -- function num : 0_17 , upvalues : _ENV
+function AircraftPetGroupNormal:Constructor(pet, seq, onContinue)
   self._seq = seq
   self._queue = AircraftQueue:New()
   self._onContinue = onContinue
   self._floor = pet:GetFloor()
-  local waiter = AircraftPetWaiter:New(pet, (math.random)(1200, 3000))
-  ;
-  (self._queue):Enqueue(waiter)
+  local waiter = AircraftPetWaiter:New(pet, math.random(1200, 3000))
+  self._queue:Enqueue(waiter)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetGroupNormal.Seq = function(self)
-  -- function num : 0_18
+function AircraftPetGroupNormal:Seq()
   return self._seq
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetGroupNormal.Update = function(self, dt)
-  -- function num : 0_19
+function AircraftPetGroupNormal:Update(dt)
   if self:IsDissolved() then
-    return 
+    return
   end
-  local waiter = (self._queue):Peek()
+  local waiter = self._queue:Peek()
   waiter:Update(dt)
   if waiter:TimeUp() then
-    (self._queue):Dequeue()
-    ;
-    (self._onContinue)(waiter:Pet())
+    self._queue:Dequeue()
+    self._onContinue(waiter:Pet())
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetGroupNormal.IsDissolved = function(self)
-  -- function num : 0_20
-  do return (self._queue):Count() == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftPetGroupNormal:IsDissolved()
+  return self._queue:Count() == 0
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetGroupNormal.TryAdd = function(self, pet)
-  -- function num : 0_21 , upvalues : _ENV
+function AircraftPetGroupNormal:TryAdd(pet)
   if pet:GetFloor() ~= self._floor then
     return false
   end
-  local contains = (self._queue):ContainsBy(function(w)
-    -- function num : 0_21_0 , upvalues : _ENV, pet
+  local contains = self._queue:ContainsBy(function(w)
     local waiter = w
-    if (AircraftNaviHelper.IsBlock)(waiter:Pet(), pet) then
+    if AircraftNaviHelper.IsBlock(waiter:Pet(), pet) then
       return true
     end
+  end)
+  if contains then
+    local waiter = AircraftPetWaiter:New(pet, math.random(1200, 3000))
+    self._queue:Enqueue(waiter)
+    return true
   end
-)
-  do
-    if contains then
-      local waiter = AircraftPetWaiter:New(pet, (math.random)(1200, 3000))
-      ;
-      (self._queue):Enqueue(waiter)
-      return true
-    end
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetGroupNormal.TryRemove = function(self, pet)
-  -- function num : 0_22
-  local contains = (self._queue):RemoveFirst(function(w)
-    -- function num : 0_22_0 , upvalues : pet
+function AircraftPetGroupNormal:TryRemove(pet)
+  local contains = self._queue:RemoveFirst(function(w)
     local waiter = w
-    if (waiter:Pet()):PstID() == pet:PstID() then
+    if waiter:Pet():PstID() == pet:PstID() then
       return true
     end
     return false
-  end
-)
+  end)
   return contains
 end
 
 _class("AircraftPetGroupSpecail", AircraftPetGroupNormal)
 AircraftPetGroupSpecail = AircraftPetGroupSpecail
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPetGroupSpecail.Update = function(self, dt)
-  -- function num : 0_23
+function AircraftPetGroupSpecail:Update(dt)
   if self:IsDissolved() then
-    return 
+    return
   end
-  local waiter = (self._queue):Peek()
+  local waiter = self._queue:Peek()
   waiter:Update(dt)
   if waiter:TimeUp() then
     local pet = waiter:Pet()
-    ;
-    (self._queue):Dequeue()
-    ;
-    (self._onContinue)(pet)
+    self._queue:Dequeue()
+    self._onContinue(pet)
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetGroupSpecail.TryAdd = function(self, pet)
-  -- function num : 0_24 , upvalues : _ENV
+function AircraftPetGroupSpecail:TryAdd(pet)
   if pet:GetFloor() ~= self._floor then
     return false
   end
-  local contains = (self._queue):ContainsBy(function(w)
-    -- function num : 0_24_0 , upvalues : _ENV, pet
+  local contains = self._queue:ContainsBy(function(w)
     local waiter = w
-    if (AircraftNaviHelper.SameAndNearTarget)(waiter:Pet(), pet) then
+    if AircraftNaviHelper.SameAndNearTarget(waiter:Pet(), pet) then
       return true
     end
-  end
-)
+  end)
   if contains then
-    (pet:NaviObstacle()).enabled = false
-    local waiter = AircraftPetWaiter:New(pet, (math.random)(1200, 3000))
-    ;
-    (self._queue):Enqueue(waiter)
+    pet:NaviObstacle().enabled = false
+    local waiter = AircraftPetWaiter:New(pet, math.random(1200, 3000))
+    self._queue:Enqueue(waiter)
     return true
   end
-  do
-    return false
-  end
+  return false
 end
-
-

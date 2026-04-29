@@ -1,28 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_component_local_process_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ICampaignComponentLocalProcessBase", Object)
 ICampaignComponentLocalProcessBase = ICampaignComponentLocalProcessBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ICampaignComponentLocalProcessBase.Constructor = function(self)
-  -- function num : 0_0
+function ICampaignComponentLocalProcessBase:Constructor()
   self.m_adapter_pool = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponentLocalProcessBase.Init = function(self, a_adapter_pool)
-  -- function num : 0_1
+function ICampaignComponentLocalProcessBase:Init(a_adapter_pool)
   self.m_adapter_pool = a_adapter_pool
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponentLocalProcessBase.GetCampaignType = function(self)
-  -- function num : 0_2
+function ICampaignComponentLocalProcessBase:GetCampaignType()
 end
-
-

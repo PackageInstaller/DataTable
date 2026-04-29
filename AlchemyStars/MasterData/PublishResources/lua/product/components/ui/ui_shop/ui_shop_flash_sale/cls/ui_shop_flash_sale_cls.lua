@@ -1,33 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_flash_sale/cls/ui_shop_flash_sale_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FlashSaleShopData", Object)
 FlashSaleShopData = FlashSaleShopData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FlashSaleShopData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function FlashSaleShopData:Constructor()
   self._goods = {}
   self._goodPriceList = {}
-  self._mPay = (GameGlobal.GetModule)(PayModule)
+  self._mPay = GameGlobal.GetModule(PayModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopData.UpdateByServerData = function(self, marketInfo, cfgs)
-  -- function num : 0_1 , upvalues : _ENV
+function FlashSaleShopData:UpdateByServerData(marketInfo, cfgs)
   if not marketInfo then
-    (Log.fatal)("FlashSaleShopData No Goods.")
-    return 
+    Log.fatal("FlashSaleShopData No Goods.")
+    return
   end
   self._goods = {}
   local serGoods = marketInfo.goods
-  for _,good in ipairs(serGoods) do
+  for _, good in ipairs(serGoods) do
     local id = good.gift_id
     local cfgServer = cfgs[id]
-    local cfgClient = (Cfg.cfg_shop_giftmarket_goods)[id]
+    local cfgClient = Cfg.cfg_shop_giftmarket_goods[id]
     local giftType = tonumber(cfgServer[ConfigKey.ConfigKey_ShopGiftType])
     if cfgServer and cfgClient and (giftType == ShopGiftType.SGT_CampaignGift or giftType == ShopGiftType.SGT_CampaignWeekCard) then
       local item = FlashSaleShopItem:New(id)
@@ -37,11 +27,11 @@ FlashSaleShopData.UpdateByServerData = function(self, marketInfo, cfgs)
       local maxBuyCount = tonumber(cfgServer[ConfigKey.ConfigKey_SaleNum])
       item:SetMaxBuyCount(maxBuyCount)
       local strOneTime = cfgServer[ConfigKey.ConfigKey_DirectAssetList]
-      local lstOneTime = (FlashSaleShopData.ItemString2List)(strOneTime)
+      local lstOneTime = FlashSaleShopData.ItemString2List(strOneTime)
       local awardsImmediately = self:Lst2FlashSaleShopItemAward(lstOneTime)
       item:SetAwardsImmediately(awardsImmediately)
       local strCycle = cfgServer[ConfigKey.ConfigKey_CycleAcceptAssetList]
-      local lstCycle = (FlashSaleShopData.ItemString2List)(strCycle)
+      local lstCycle = FlashSaleShopData.ItemString2List(strCycle)
       local awardsDaily = self:Lst2FlashSaleShopItemAward(lstCycle)
       item:SetAwardsDaily(awardsDaily)
       item:SetIsMonthCard(giftType == ShopGiftType.SGT_MonthCard)
@@ -62,7 +52,7 @@ FlashSaleShopData.UpdateByServerData = function(self, marketInfo, cfgs)
         item:SetPriceIcon(nil)
         item:SetPriceItemId(nil)
         item:SetPrice(priceNotCash)
-        item:SetPriceWithCurrencySymbol((ClientShop.PriceUnit)() .. (UIShopToolFunctions.GetPrice)(priceNotCash))
+        item:SetPriceWithCurrencySymbol(ClientShop.PriceUnit() .. UIShopToolFunctions.GetPrice(priceNotCash))
       else
         local priceRawNotCash = tonumber(cfgServer[ConfigKey.ConfigKey_RawPrice])
         local priceNotCash = tonumber(cfgServer[ConfigKey.ConfigKey_NowPrice])
@@ -85,115 +75,88 @@ FlashSaleShopData.UpdateByServerData = function(self, marketInfo, cfgs)
         item._price = priceNotCash
       end
       item._discount = tonumber(cfgServer[ConfigKey.ConfigKey_Discount])
-      item:SetName((StringTable.Get)(cfgClient.Name))
+      item:SetName(StringTable.Get(cfgClient.Name))
       item:SetIcon(cfgClient.Icon)
       item:SetIconDetail(cfgClient.IconDetail)
-      ;
-      (table.insert)(self._goods, item)
+      table.insert(self._goods, item)
+    else
     end
   end
-  -- DECOMPILER ERROR: 11 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopData.UpdateByServerData_LevelGift = function(self, item, goods, cfgv, cfgClient)
-  -- function num : 0_2 , upvalues : _ENV
+function FlashSaleShopData:UpdateByServerData_LevelGift(item, goods, cfgv, cfgClient)
   local strShopGiftType = cfgv[ConfigKey.ConfigKey_ShopGiftType]
   if tonumber(strShopGiftType) == ShopGiftType.SGT_LevelGift then
     item:SetLevelGift(true)
     local saleNum = tonumber(cfgv[ConfigKey.ConfigKey_SaleNum])
     if saleNum ~= 1 then
-      (Log.exception)("FlashSaleShopData:UpdateByServerData_LevelGift()", " [cfg_shop_giftmarket_goods]", " ID = ", goods.gift_id, " Error: GiftType == 5 and SaleNum ~= 1")
+      Log.exception("FlashSaleShopData:UpdateByServerData_LevelGift()", " [cfg_shop_giftmarket_goods]", " ID = ", goods.gift_id, " Error: GiftType == 5 and SaleNum ~= 1")
     end
     local levelLock = goods.gift_lock_status & GiftLockStatus.GLS_LevelLock ~= 0
     local preLock = goods.gift_lock_status & GiftLockStatus.GLS_PreposeLock ~= 0
     local buy = goods.selled_num ~= 0
     item:SetLevelGiftLock(levelLock)
-    local isShow = (not preLock and not buy)
+    local isShow = not preLock and not buy
     item:SetLevelGiftShow(isShow)
     item:SetLevelGiftLockLv(tonumber(cfgv[ConfigKey.ConfigKey_LevelCondition]))
     local free = cfgClient.SaleType == 0
-    local red = isShow and ((not levelLock and free))
+    local red = isShow and not levelLock and free
     item:SetLevelGiftRed(red)
   end
-  -- DECOMPILER ERROR: 9 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopData.UpdateGoodsPrice = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local goodPriceList = (self._mPay):GetGoodPriceList()
-  if goodPriceList and (table.count)(goodPriceList) > 0 then
-    for _,goods in pairs(self._goods) do
+function FlashSaleShopData:UpdateGoodsPrice()
+  local goodPriceList = self._mPay:GetGoodPriceList()
+  if goodPriceList and table.count(goodPriceList) > 0 then
+    for _, goods in pairs(self._goods) do
       local midasId = goods:GetMidasId()
-      if not (string.isnullorempty)(midasId) and goodPriceList[midasId] then
+      if not string.isnullorempty(midasId) and goodPriceList[midasId] then
         local goodPrice = goodPriceList[midasId]
         goods._price = goodPrice.microprice / 1000000
         goods:SetPriceWithCurrencySymbol(goodPrice.price)
       end
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateFlashSaleItemPrice)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateFlashSaleItemPrice)
   else
-    ;
-    (Log.fatal)("### [Pay]no data in goodPriceList.")
+    Log.fatal("### [Pay]no data in goodPriceList.")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopData.ItemString2List = function(itemStr)
-  -- function num : 0_4 , upvalues : _ENV
+function FlashSaleShopData.ItemString2List(itemStr)
   local lst = {}
-  local a = (string.split)(itemStr, "|")
-  for _,idcount in ipairs(a) do
-    local strs = (string.split)(idcount, ",")
+  local a = string.split(itemStr, "|")
+  for _, idcount in ipairs(a) do
+    local strs = string.split(idcount, ",")
     local templateId = tonumber(strs[1])
     local count = tonumber(strs[2])
-    ;
-    (table.insert)(lst, {templateId = templateId, count = count})
+    table.insert(lst, {templateId = templateId, count = count})
   end
   return lst
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopData.Lst2FlashSaleShopItemAward = function(self, lst)
-  -- function num : 0_5 , upvalues : _ENV
+function FlashSaleShopData:Lst2FlashSaleShopItemAward(lst)
   local items = {}
-  for _,item in ipairs(lst) do
+  for _, item in ipairs(lst) do
     local item = FlashSaleShopItemAward:New(item.templateId, item.count)
-    ;
-    (table.insert)(items, item)
+    table.insert(items, item)
   end
   return items
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopData.GetGoods = function(self)
-  -- function num : 0_6
+function FlashSaleShopData:GetGoods()
   return self._goods
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopData.GetGoodBuyId = function(self, id)
-  -- function num : 0_7 , upvalues : _ENV
-  for _,goods in ipairs(self._goods) do
+function FlashSaleShopData:GetGoodBuyId(id)
+  for _, goods in ipairs(self._goods) do
     if goods:GetId() == id then
       return goods
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopData.GetNew = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  for _,goods in ipairs(self._goods) do
+function FlashSaleShopData:GetNew()
+  for _, goods in ipairs(self._goods) do
     if goods:GetNew() then
       return true
     end
@@ -203,10 +166,8 @@ end
 
 _class("ShopFlashSalePriceItem", Object)
 ShopFlashSalePriceItem = ShopFlashSalePriceItem
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
 
-ShopFlashSalePriceItem.Constructor = function(self, id)
-  -- function num : 0_9
+function ShopFlashSalePriceItem:Constructor(id)
   self._priceIcon = ""
   self._priceItemId = 0
   self._priceRaw = 1
@@ -215,88 +176,57 @@ ShopFlashSalePriceItem.Constructor = function(self, id)
   self._priceWithCurrencySymbol = ""
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopFlashSalePriceItem.GetPriceIcon = function(self)
-  -- function num : 0_10
+function ShopFlashSalePriceItem:GetPriceIcon()
   return self._priceIcon
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopFlashSalePriceItem.SetPriceIcon = function(self, priceIcon)
-  -- function num : 0_11
+function ShopFlashSalePriceItem:SetPriceIcon(priceIcon)
   self._priceIcon = priceIcon
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopFlashSalePriceItem.GetPriceItemId = function(self)
-  -- function num : 0_12
+function ShopFlashSalePriceItem:GetPriceItemId()
   return self._priceItemId
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopFlashSalePriceItem.SetPriceItemId = function(self, priceItemId)
-  -- function num : 0_13
+function ShopFlashSalePriceItem:SetPriceItemId(priceItemId)
   self._priceItemId = priceItemId
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopFlashSalePriceItem.GetPrice = function(self)
-  -- function num : 0_14
+function ShopFlashSalePriceItem:GetPrice()
   return self._price
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopFlashSalePriceItem.GetPriceRaw = function(self)
-  -- function num : 0_15
+function ShopFlashSalePriceItem:GetPriceRaw()
   return self._priceRaw
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopFlashSalePriceItem.GetDiscount = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function ShopFlashSalePriceItem:GetDiscount()
   if self._discount > 0 then
     local discount = self._discount / 10
-    local i, f = (math.modf)(discount)
+    local i, f = math.modf(discount)
     if f <= 0 then
       discount = i
     end
-    local str = (StringTable.Get)("str_pay_discount_percent", discount)
+    local str = StringTable.Get("str_pay_discount_percent", discount)
     return self._discount, str
   end
-  do
-    return nil, nil
-  end
+  return nil, nil
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopFlashSalePriceItem.GetPriceWithCurrencySymbol = function(self)
-  -- function num : 0_17
+function ShopFlashSalePriceItem:GetPriceWithCurrencySymbol()
   return self._priceWithCurrencySymbol
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopFlashSalePriceItem.SetPriceWithCurrencySymbol = function(self, priceWithCurrencySymbol)
-  -- function num : 0_18 , upvalues : _ENV
-  priceWithCurrencySymbol = (RechargeShopItem.RemoveDot00)(priceWithCurrencySymbol)
+function ShopFlashSalePriceItem:SetPriceWithCurrencySymbol(priceWithCurrencySymbol)
+  priceWithCurrencySymbol = RechargeShopItem.RemoveDot00(priceWithCurrencySymbol)
   self._priceWithCurrencySymbol = priceWithCurrencySymbol
 end
 
 _class("FlashSaleShopItem", ShopFlashSalePriceItem)
 FlashSaleShopItem = FlashSaleShopItem
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
 
-FlashSaleShopItem.Constructor = function(self, id)
-  -- function num : 0_19 , upvalues : _ENV
-  ((FlashSaleShopItem.super).Constructor)(self, id)
+function FlashSaleShopItem:Constructor(id)
+  FlashSaleShopItem.super.Constructor(self, id)
   self._currencyGoodsType = MidasCurrencyGoodsType.MIDAS_CURRENCY_GOODS_TYPE_GIFT_PACK
   self._id = id
   self._type = GiftPackType.Item
@@ -318,503 +248,319 @@ FlashSaleShopItem.Constructor = function(self, id)
   self._new = false
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetCurrencyGoodsType = function(self)
-  -- function num : 0_20
+function FlashSaleShopItem:GetCurrencyGoodsType()
   return self._currencyGoodsType
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetId = function(self)
-  -- function num : 0_21
+function FlashSaleShopItem:GetId()
   return self._id
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetType = function(self)
-  -- function num : 0_22
+function FlashSaleShopItem:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetType = function(self, ptype)
-  -- function num : 0_23
+function FlashSaleShopItem:SetType(ptype)
   self._type = ptype
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetMidasId = function(self)
-  -- function num : 0_24
+function FlashSaleShopItem:GetMidasId()
   return self._midasId
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetMidasId = function(self, midasId)
-  -- function num : 0_25 , upvalues : _ENV
+function FlashSaleShopItem:SetMidasId(midasId)
   self._midasId = midasId
-  ;
-  (Log.debug)("midasId : ", self._midasId)
+  Log.debug("midasId : ", self._midasId)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetName = function(self)
-  -- function num : 0_26
+function FlashSaleShopItem:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetName = function(self, name)
-  -- function num : 0_27
+function FlashSaleShopItem:SetName(name)
   self._name = name
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetRefreshTime = function(self)
-  -- function num : 0_28
+function FlashSaleShopItem:GetRefreshTime()
   return self._refreshTime
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetRefreshTime = function(self, refreshTime)
-  -- function num : 0_29
+function FlashSaleShopItem:SetRefreshTime(refreshTime)
   self._refreshTime = refreshTime
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetEndTime = function(self)
-  -- function num : 0_30
+function FlashSaleShopItem:GetEndTime()
   return self._endTime
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetEndTime = function(self, endTime)
-  -- function num : 0_31
+function FlashSaleShopItem:SetEndTime(endTime)
   self._endTime = endTime
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.IsMonthCard = function(self)
-  -- function num : 0_32
+function FlashSaleShopItem:IsMonthCard()
   return self._isMonthCard
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetIsMonthCard = function(self, isMonthCard)
-  -- function num : 0_33
+function FlashSaleShopItem:SetIsMonthCard(isMonthCard)
   self._isMonthCard = isMonthCard
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.IsBattlePassGift = function(self)
-  -- function num : 0_34
+function FlashSaleShopItem:IsBattlePassGift()
   return self._isBattlePassGift
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetBattlePassGift = function(self, isBattlePassGift)
-  -- function num : 0_35
+function FlashSaleShopItem:SetBattlePassGift(isBattlePassGift)
   self._isBattlePassGift = isBattlePassGift
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.IsWeekCard = function(self)
-  -- function num : 0_36
+function FlashSaleShopItem:IsWeekCard()
   return self.isWeekCard
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.IsLevelGift = function(self)
-  -- function num : 0_37
+function FlashSaleShopItem:IsLevelGift()
   return self._isLevelGift
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetLevelGift = function(self, isLevelGift)
-  -- function num : 0_38
+function FlashSaleShopItem:SetLevelGift(isLevelGift)
   self._isLevelGift = isLevelGift
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.IsLevelGiftShow = function(self)
-  -- function num : 0_39
+function FlashSaleShopItem:IsLevelGiftShow()
   return self._isLevelGiftShow
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetLevelGiftShow = function(self, isLevelGiftShow)
-  -- function num : 0_40
+function FlashSaleShopItem:SetLevelGiftShow(isLevelGiftShow)
   self._isLevelGiftShow = isLevelGiftShow
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.IsLevelGiftLock = function(self)
-  -- function num : 0_41
+function FlashSaleShopItem:IsLevelGiftLock()
   return self._isLevelGiftLock
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetLevelGiftLock = function(self, isLevelGiftLock)
-  -- function num : 0_42
+function FlashSaleShopItem:SetLevelGiftLock(isLevelGiftLock)
   self._isLevelGiftLock = isLevelGiftLock
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetLevelGiftLockLv = function(self, lv)
-  -- function num : 0_43
+function FlashSaleShopItem:SetLevelGiftLockLv(lv)
   self._isLevelGiftLockLv = lv
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetLevelGiftLockLv = function(self)
-  -- function num : 0_44
+function FlashSaleShopItem:GetLevelGiftLockLv()
   return self._isLevelGiftLockLv
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetLevelGiftRed = function(self, red)
-  -- function num : 0_45
+function FlashSaleShopItem:SetLevelGiftRed(red)
   self._isLevelGiftRed = red
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.IsLevelGiftRed = function(self)
-  -- function num : 0_46
+function FlashSaleShopItem:IsLevelGiftRed()
   return self._isLevelGiftRed
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetCycleType = function(self)
-  -- function num : 0_47
+function FlashSaleShopItem:GetCycleType()
   return self._cycleType
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetCycleType = function(self, refreshMethod)
-  -- function num : 0_48 , upvalues : _ENV
+function FlashSaleShopItem:SetCycleType(refreshMethod)
   if refreshMethod == 1 then
     self._cycleType = GiftPackCycleType.Weekly
+  elseif refreshMethod == 2 then
+    self._cycleType = GiftPackCycleType.Monthly
+  elseif refreshMethod == 3 then
+    self._cycleType = GiftPackCycleType.Cycle
   else
-    if refreshMethod == 2 then
-      self._cycleType = GiftPackCycleType.Monthly
-    else
-      if refreshMethod == 3 then
-        self._cycleType = GiftPackCycleType.Cycle
-      else
-        self._cycleType = GiftPackCycleType.Once
-      end
-    end
+    self._cycleType = GiftPackCycleType.Once
   end
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetCycleDayCount = function(self)
-  -- function num : 0_49
+function FlashSaleShopItem:GetCycleDayCount()
   return self._cycleDayCount
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetCycleDayCount = function(self, cycleDayCount)
-  -- function num : 0_50
+function FlashSaleShopItem:SetCycleDayCount(cycleDayCount)
   self._cycleDayCount = cycleDayCount
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetMonthCardMaxDayNum = function()
-  -- function num : 0_51 , upvalues : _ENV
-  local cfgv = (Cfg.cfg_shop_global)[1]
+function FlashSaleShopItem.GetMonthCardMaxDayNum()
+  local cfgv = Cfg.cfg_shop_global[1]
   if cfgv then
     return cfgv.MonthCardMaxDayNum
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetMonthCycleDay = function()
-  -- function num : 0_52 , upvalues : _ENV
-  local cfg = (Cfg.cfg_shop_global)[1]
+function FlashSaleShopItem.GetMonthCycleDay()
+  local cfg = Cfg.cfg_shop_global[1]
   if cfg then
     return cfg.MonthCycleDay
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.CheckDayCount = function(self)
-  -- function num : 0_53 , upvalues : _ENV
+function FlashSaleShopItem:CheckDayCount()
   local isMonthCard = self:IsMonthCard()
   if isMonthCard then
-    local d, h, m, s = (UICommonHelper.S2DHMS)(self:GetRefreshTime())
-    local dayCount = (math.ceil)(d)
-    local monthCycleDay = (FlashSaleShopItem.GetMonthCycleDay)()
-    local monthCardMaxDayNum = (FlashSaleShopItem.GetMonthCardMaxDayNum)()
+    local d, h, m, s = UICommonHelper.S2DHMS(self:GetRefreshTime())
+    local dayCount = math.ceil(d)
+    local monthCycleDay = FlashSaleShopItem.GetMonthCycleDay()
+    local monthCardMaxDayNum = FlashSaleShopItem.GetMonthCardMaxDayNum()
     if monthCardMaxDayNum < dayCount + monthCycleDay then
       if self._type == GiftPackType.Currency then
-        ((GameGlobal.GetUIModule)(ShopModule)):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "month_card_day_count_limit_reached")
+        GameGlobal.GetUIModule(ShopModule):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "month_card_day_count_limit_reached")
       end
-      ;
-      (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_pay_month_card_max_day_count_cant_over_limit", (FlashSaleShopItem.GetMonthCardMaxDayNum)()))
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_pay_month_card_max_day_count_cant_over_limit", FlashSaleShopItem.GetMonthCardMaxDayNum()))
       return false
     end
   else
-    do
-      local nowTime = (UICommonHelper.GetNowTimestamp)()
-      do
-        local endTime = self:GetEndTime()
-        if endTime < nowTime then
-          if self._type == GiftPackType.Currency then
-            ((GameGlobal.GetUIModule)(ShopModule)):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "gift_invalid")
-          end
-          ;
-          (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_pay_gift_invalid"))
-          return false
-        end
-        return true
+    local nowTime = UICommonHelper.GetNowTimestamp()
+    local endTime = self:GetEndTime()
+    if nowTime > endTime then
+      if self._type == GiftPackType.Currency then
+        GameGlobal.GetUIModule(ShopModule):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "gift_invalid")
       end
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_pay_gift_invalid"))
+      return false
     end
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetCycleTypeStr = function(self)
-  -- function num : 0_54 , upvalues : _ENV
+function FlashSaleShopItem:GetCycleTypeStr()
   if self:IsMonthCard() then
     local rt = self:GetRefreshTime()
     if rt <= 0 then
-      return (StringTable.Get)("str_pay_not_buy_yet")
+      return StringTable.Get("str_pay_not_buy_yet")
     else
-      local d, h, m, s = (UICommonHelper.S2DHMS)(rt)
-      local leftDays = (math.ceil)(d)
-      return (StringTable.Get)("str_pay_left_collect_day", leftDays)
+      local d, h, m, s = UICommonHelper.S2DHMS(rt)
+      local leftDays = math.ceil(d)
+      return StringTable.Get("str_pay_left_collect_day", leftDays)
     end
   else
-    do
-      local soldOut = self:HasSoldOut()
-      if soldOut then
-        return 
-      end
-      local endTime = self:GetEndTime()
-      local mShop = (GameGlobal.GetModule)(ShopModule)
-      local notShowLeftTime = (mShop:GetClientShop()):GetNotShowLeftTime()
-      if notShowLeftTime < endTime then
-        return 
-      end
-      local leftSeconds = (UICommonHelper.CalcLeftSeconds)(endTime)
-      if leftSeconds <= 0 then
-        return (StringTable.Get)("str_pay_expired")
-      end
-      local d, h, m, s = (UICommonHelper.S2DHMS)(leftSeconds)
-      if d >= 1 then
-        return (StringTable.Get)("str_pay_left_day", (math.ceil)(d))
-      else
-        if h >= 1 then
-          return (StringTable.Get)("str_pay_left_hour", (math.ceil)(h))
-        else
-          if m >= 1 then
-            return (StringTable.Get)("str_pay_left_minute", (math.ceil)(m))
-          else
-            return (StringTable.Get)("str_pay_left_minute", "<1")
-          end
-        end
-      end
+    local soldOut = self:HasSoldOut()
+    if soldOut then
+      return
+    end
+    local endTime = self:GetEndTime()
+    local mShop = GameGlobal.GetModule(ShopModule)
+    local notShowLeftTime = mShop:GetClientShop():GetNotShowLeftTime()
+    if endTime > notShowLeftTime then
+      return
+    end
+    local leftSeconds = UICommonHelper.CalcLeftSeconds(endTime)
+    if leftSeconds <= 0 then
+      return StringTable.Get("str_pay_expired")
+    end
+    local d, h, m, s = UICommonHelper.S2DHMS(leftSeconds)
+    if 1 <= d then
+      return StringTable.Get("str_pay_left_day", math.ceil(d))
+    elseif 1 <= h then
+      return StringTable.Get("str_pay_left_hour", math.ceil(h))
+    elseif 1 <= m then
+      return StringTable.Get("str_pay_left_minute", math.ceil(m))
+    else
+      return StringTable.Get("str_pay_left_minute", "<1")
     end
   end
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetRefreshTimeStr = function(self)
-  -- function num : 0_55 , upvalues : _ENV
+function FlashSaleShopItem:GetRefreshTimeStr()
   if self:IsMonthCard() then
-    return 
+    return
   end
   local cycleType = self:GetCycleType()
   if cycleType == GiftPackCycleType.Once then
-    return 
+    return
   end
   local refreshTime = self:GetRefreshTime()
-  local leftSeconds = (UICommonHelper.CalcLeftSeconds)(refreshTime)
+  local leftSeconds = UICommonHelper.CalcLeftSeconds(refreshTime)
   if leftSeconds <= 0 then
-    return 
+    return
   end
-  local d, h, m, s = (UICommonHelper.S2DHMS)(leftSeconds)
-  if d >= 1 then
-    return (StringTable.Get)("str_pay_purchase_refresh_n_day", (math.floor)(d))
+  local d, h, m, s = UICommonHelper.S2DHMS(leftSeconds)
+  if 1 <= d then
+    return StringTable.Get("str_pay_purchase_refresh_n_day", math.floor(d))
+  elseif 1 <= h then
+    return StringTable.Get("str_pay_purchase_refresh_n_hour", math.floor(h))
+  elseif 1 <= m then
+    return StringTable.Get("str_pay_purchase_refresh_n_minute", math.floor(m))
   else
-    if h >= 1 then
-      return (StringTable.Get)("str_pay_purchase_refresh_n_hour", (math.floor)(h))
-    else
-      if m >= 1 then
-        return (StringTable.Get)("str_pay_purchase_refresh_n_minute", (math.floor)(m))
-      else
-        return (StringTable.Get)("str_pay_purchase_refresh_n_minute", "<1")
-      end
-    end
+    return StringTable.Get("str_pay_purchase_refresh_n_minute", "<1")
   end
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetPriceIcon = function(self)
-  -- function num : 0_56
+function FlashSaleShopItem:GetPriceIcon()
   return self._priceIcon
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetPriceIcon = function(self, priceIcon)
-  -- function num : 0_57
+function FlashSaleShopItem:SetPriceIcon(priceIcon)
   self._priceIcon = priceIcon
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetPriceItemId = function(self)
-  -- function num : 0_58
+function FlashSaleShopItem:GetPriceItemId()
   return self._priceItemId
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetPriceItemId = function(self, priceItemId)
-  -- function num : 0_59
+function FlashSaleShopItem:SetPriceItemId(priceItemId)
   self._priceItemId = priceItemId
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetPrice = function(self)
-  -- function num : 0_60
+function FlashSaleShopItem:GetPrice()
   return self._price
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetPrice = function(self, price)
-  -- function num : 0_61
+function FlashSaleShopItem:SetPrice(price)
   self._price = price
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetPriceWithCurrencySymbol = function(self)
-  -- function num : 0_62
+function FlashSaleShopItem:GetPriceWithCurrencySymbol()
   return self._priceWithCurrencySymbol
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetPriceWithCurrencySymbol = function(self, priceWithCurrencySymbol)
-  -- function num : 0_63 , upvalues : _ENV
-  priceWithCurrencySymbol = (RechargeShopItem.RemoveDot00)(priceWithCurrencySymbol)
+function FlashSaleShopItem:SetPriceWithCurrencySymbol(priceWithCurrencySymbol)
+  priceWithCurrencySymbol = RechargeShopItem.RemoveDot00(priceWithCurrencySymbol)
   self._priceWithCurrencySymbol = priceWithCurrencySymbol
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetIcon = function(self)
-  -- function num : 0_64
+function FlashSaleShopItem:GetIcon()
   return self._icon
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetIcon = function(self, icon)
-  -- function num : 0_65
+function FlashSaleShopItem:SetIcon(icon)
   self._icon = icon
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetIconDetail = function(self)
-  -- function num : 0_66
+function FlashSaleShopItem:GetIconDetail()
   return self._iconDetail
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetIconDetail = function(self, iconDetail)
-  -- function num : 0_67
+function FlashSaleShopItem:SetIconDetail(iconDetail)
   self._iconDetail = iconDetail
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetBuyCount = function(self)
-  -- function num : 0_68
+function FlashSaleShopItem:GetBuyCount()
   return self._buyCount
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetBuyCount = function(self, buyCount)
-  -- function num : 0_69
+function FlashSaleShopItem:SetBuyCount(buyCount)
   self._buyCount = buyCount
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetMaxBuyCount = function(self)
-  -- function num : 0_70
+function FlashSaleShopItem:GetMaxBuyCount()
   return self._maxBuyCount
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetMaxBuyCount = function(self, maxBuyCount)
-  -- function num : 0_71
+function FlashSaleShopItem:SetMaxBuyCount(maxBuyCount)
   self._maxBuyCount = maxBuyCount
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.HasSoldOut = function(self)
-  -- function num : 0_72
+function FlashSaleShopItem:HasSoldOut()
   local buyCount = self:GetBuyCount()
   local maxBuyCount = self:GetMaxBuyCount()
-  local soldOut = maxBuyCount <= buyCount
-  do return soldOut end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local soldOut = buyCount >= maxBuyCount
+  return soldOut
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetCountStr = function(self)
-  -- function num : 0_73 , upvalues : _ENV
+function FlashSaleShopItem:GetCountStr()
   if self:IsBattlePassGift() then
     return ""
   end
@@ -827,114 +573,72 @@ FlashSaleShopItem.GetCountStr = function(self)
   local cycleType = self:GetCycleType()
   local strLimit = ""
   if cycleType == GiftPackCycleType.Weekly then
-    strLimit = (StringTable.Get)("str_pay_purchase_limitation_weekly", n2m)
+    strLimit = StringTable.Get("str_pay_purchase_limitation_weekly", n2m)
+  elseif cycleType == GiftPackCycleType.Monthly then
+    strLimit = StringTable.Get("str_pay_purchase_limitation_monthly", n2m)
+  elseif cycleType == GiftPackCycleType.Cycle then
+    local dayCount = self:GetCycleDayCount()
+    strLimit = StringTable.Get("str_pay_purchase_limitation_n_day", dayCount, n2m)
   else
-    if cycleType == GiftPackCycleType.Monthly then
-      strLimit = (StringTable.Get)("str_pay_purchase_limitation_monthly", n2m)
-    else
-      if cycleType == GiftPackCycleType.Cycle then
-        local dayCount = self:GetCycleDayCount()
-        strLimit = (StringTable.Get)("str_pay_purchase_limitation_n_day", dayCount, n2m)
-      else
-        do
-          strLimit = (StringTable.Get)("str_pay_purchase_limitation_forever", n2m)
-          return strLimit
-        end
-      end
-    end
+    strLimit = StringTable.Get("str_pay_purchase_limitation_forever", n2m)
   end
+  return strLimit
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetAwardsImmediately = function(self)
-  -- function num : 0_74
+function FlashSaleShopItem:GetAwardsImmediately()
   return self._awardsImmediately
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetAwardsImmediately = function(self, awardsImmediately)
-  -- function num : 0_75
+function FlashSaleShopItem:SetAwardsImmediately(awardsImmediately)
   self._awardsImmediately = awardsImmediately
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetAwardsDaily = function(self)
-  -- function num : 0_76
+function FlashSaleShopItem:GetAwardsDaily()
   return self._awardsDaily
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetAwardsDaily = function(self, awardsDaily)
-  -- function num : 0_77
+function FlashSaleShopItem:SetAwardsDaily(awardsDaily)
   self._awardsDaily = awardsDaily
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.GetNew = function(self)
-  -- function num : 0_78 , upvalues : _ENV
-  local record = (UIShopToolFunctions.GetLocalDBInt)(self._id, 0)
-  do return record <= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function FlashSaleShopItem:GetNew()
+  local record = UIShopToolFunctions.GetLocalDBInt(self._id, 0)
+  return record <= 0
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItem.SetNew = function(self, new)
-  -- function num : 0_79 , upvalues : _ENV
+function FlashSaleShopItem:SetNew(new)
   local record = 0
   if not new then
     record = 1
   end
-  ;
-  (UIShopToolFunctions.SetLocalDBInt)(self._id, record)
+  UIShopToolFunctions.SetLocalDBInt(self._id, record)
 end
 
 _class("FlashSaleShopItemAward", Object)
 FlashSaleShopItemAward = FlashSaleShopItemAward
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
 
-FlashSaleShopItemAward.Constructor = function(self, templateId, count)
-  -- function num : 0_80 , upvalues : _ENV
+function FlashSaleShopItemAward:Constructor(templateId, count)
   self._templateId = templateId
   self._count = count
-  local cfg = (Cfg.cfg_item)[self._templateId]
+  local cfg = Cfg.cfg_item[self._templateId]
   if cfg then
-    self._name = (StringTable.Get)(cfg.Name)
+    self._name = StringTable.Get(cfg.Name)
     self._icon = cfg.Icon
   end
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItemAward.GetTemplateId = function(self)
-  -- function num : 0_81
+function FlashSaleShopItemAward:GetTemplateId()
   return self._templateId
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItemAward.GetIcon = function(self)
-  -- function num : 0_82
+function FlashSaleShopItemAward:GetIcon()
   return self._icon
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItemAward.GetName = function(self)
-  -- function num : 0_83
+function FlashSaleShopItemAward:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-FlashSaleShopItemAward.GetCount = function(self)
-  -- function num : 0_84
+function FlashSaleShopItemAward:GetCount()
   return self._count
 end
-
-

@@ -1,164 +1,82 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/homeland_mini_map_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandMinimapConst", Object)
 HomelandMinimapConst = HomelandMinimapConst
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandMinimapConst.Constructor = function(self)
-  -- function num : 0_0
+function HomelandMinimapConst:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMinimapConst.Init = function()
-  -- function num : 0_1 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_minimap_const)[1]
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
+function HomelandMinimapConst.Init()
+  local cfg = Cfg.cfg_homeland_minimap_const[1]
   HomelandMinimapConst.MaxmapScaleSpeed = cfg.ScaleSpeed / 1000
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
   HomelandMinimapConst.BigmapScale = cfg.DefaultScale / 1000
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
   HomelandMinimapConst.MinimapScale = cfg.MinimapScale / 1000
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
   HomelandMinimapConst.MinScale = cfg.MinScale / 1000
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
   HomelandMinimapConst.MaxScale = cfg.MaxScale / 1000
   local size = cfg.MapSize
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
   HomelandMinimapConst.MapSize = Vector2(size[1] / 1000, size[2] / 1000)
   size = cfg.MapBackgroundSize
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
   HomelandMinimapConst.MapBackgroundSize = Vector2(size[1] / 1000, size[2] / 1000)
   size = cfg.MapMinPos
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R2 in 'UnsetPending'
-
   HomelandMinimapConst.RealMapMinPositionValue = Vector3(size[1] / 1000, size[2] / 1000, size[3] / 1000)
   size = cfg.MapMaxPos
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R2 in 'UnsetPending'
-
   HomelandMinimapConst.RealMapMaxPositionValue = Vector3(size[1] / 1000, size[2] / 1000, size[3] / 1000)
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R2 in 'UnsetPending'
-
   HomelandMinimapConst.MapTextureName = cfg.MapTexture
-  -- DECOMPILER ERROR at PC68: Confused about usage of register: R2 in 'UnsetPending'
-
   HomelandMinimapConst.MapBackgroundTextureName = cfg.MapBackgroundTexture
-  -- DECOMPILER ERROR at PC72: Confused about usage of register: R2 in 'UnsetPending'
-
   HomelandMinimapConst.IconClickRange = cfg.IconClickeRange / 1000
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R2 in 'UnsetPending'
-
   HomelandMinimapConst.FocusSpeed = cfg.FocusSpeed / 1000
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMinimapConst.GetMaxmapScaleSpeed = function()
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandMinimapConst.GetMaxmapScaleSpeed()
   return HomelandMinimapConst.MaxmapScaleSpeed
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMinimapConst.GetBigmapScale = function()
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandMinimapConst.GetBigmapScale()
   return HomelandMinimapConst.BigmapScale
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMinimapConst.SetBigmapScale = function(scale)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function HomelandMinimapConst.SetBigmapScale(scale)
   HomelandMinimapConst.BigmapScale = scale
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMinimapConst.GetMinimapScale = function()
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandMinimapConst.GetMinimapScale()
   return HomelandMinimapConst.MinimapScale
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMinimapConst.GetMinScale = function()
-  -- function num : 0_6 , upvalues : _ENV
+function HomelandMinimapConst.GetMinScale()
   return HomelandMinimapConst.MinScale
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMinimapConst.GetMaxScale = function()
-  -- function num : 0_7 , upvalues : _ENV
+function HomelandMinimapConst.GetMaxScale()
   return HomelandMinimapConst.MaxScale
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMinimapConst.GetMapSize = function()
-  -- function num : 0_8 , upvalues : _ENV
+function HomelandMinimapConst.GetMapSize()
   return HomelandMinimapConst.MapSize
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMinimapConst.GetMapBackgroundSize = function()
-  -- function num : 0_9 , upvalues : _ENV
+function HomelandMinimapConst.GetMapBackgroundSize()
   return HomelandMinimapConst.MapBackgroundSize
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMinimapConst.RealMapMinPosition = function()
-  -- function num : 0_10 , upvalues : _ENV
+function HomelandMinimapConst.RealMapMinPosition()
   return HomelandMinimapConst.RealMapMinPositionValue
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMinimapConst.RealMapMaxPosition = function()
-  -- function num : 0_11 , upvalues : _ENV
+function HomelandMinimapConst.RealMapMaxPosition()
   return HomelandMinimapConst.RealMapMaxPositionValue
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMinimapConst.GetMapTextureName = function()
-  -- function num : 0_12 , upvalues : _ENV
+function HomelandMinimapConst.GetMapTextureName()
   return HomelandMinimapConst.MapTextureName
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMinimapConst.GetMapBackgroundTextureName = function()
-  -- function num : 0_13 , upvalues : _ENV
+function HomelandMinimapConst.GetMapBackgroundTextureName()
   return HomelandMinimapConst.MapBackgroundTextureName
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMinimapConst.GetIconClickRange = function()
-  -- function num : 0_14 , upvalues : _ENV
+function HomelandMinimapConst.GetIconClickRange()
   return HomelandMinimapConst.IconClickRange
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMinimapConst.GetFocusSpeed = function()
-  -- function num : 0_15 , upvalues : _ENV
+function HomelandMinimapConst.GetFocusSpeed()
   return HomelandMinimapConst.FocusSpeed
 end
-
-

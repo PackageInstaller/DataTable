@@ -1,13 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/player_info/cfg_player_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, data = 2}
 local config = {
-{1, -300}
-, 
-{2, 0}
+  {1, -300},
+  {2, 0}
 }
 return config, "ID", key
-

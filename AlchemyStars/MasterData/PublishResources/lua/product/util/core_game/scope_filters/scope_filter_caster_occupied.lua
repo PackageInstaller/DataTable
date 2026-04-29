@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scope_filters/scope_filter_caster_occupied.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_filter_base")
 _class("SkillScopeFilter_CasterOccupied", SkillScopeFilter_Base)
 SkillScopeFilter_CasterOccupied = SkillScopeFilter_CasterOccupied
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeFilter_CasterOccupied.DoModifyRange = function(self, scopeResult, filterParam, passParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeFilter_CasterOccupied:DoModifyRange(scopeResult, filterParam, passParam)
   local casterOccupiedPosArray = {}
   local casterPos = passParam:GetCasterPos()
   local bodyAreaArray = passParam:GetCasterBodyAreaArray()
   if bodyAreaArray then
-    for _,areaPos in ipairs(bodyAreaArray) do
-      (table.insert)(casterOccupiedPosArray, areaPos + casterPos)
+    for _, areaPos in ipairs(bodyAreaArray) do
+      table.insert(casterOccupiedPosArray, areaPos + casterPos)
     end
   else
-    do
-      ;
-      (table.insert)(casterOccupiedPosArray, casterPos)
-      local isInclude = filterParam:GetCasterOccupiedPosFilter() == 1
-      if isInclude then
-        self:AddPosToScopeResult(scopeResult, casterOccupiedPosArray)
-      else
-        self:RemovePosFromScopeResult(scopeResult, casterOccupiedPosArray)
-      end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
+    table.insert(casterOccupiedPosArray, casterPos)
+  end
+  local isInclude = filterParam:GetCasterOccupiedPosFilter() == 1
+  if isInclude then
+    self:AddPosToScopeResult(scopeResult, casterOccupiedPosArray)
+  else
+    self:RemovePosFromScopeResult(scopeResult, casterOccupiedPosArray)
   end
 end
-
-

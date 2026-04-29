@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_target_select_bomb.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionTarget_SelectBomb", AINewNode)
 ActionTarget_SelectBomb = ActionTarget_SelectBomb
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionTarget_SelectBomb.Constructor = function(self)
-  -- function num : 0_0
+function ActionTarget_SelectBomb:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTarget_SelectBomb.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionTarget_SelectBomb.super).Reset)(self)
+function ActionTarget_SelectBomb:Reset()
+  ActionTarget_SelectBomb.super.Reset(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTarget_SelectBomb.OnBegin = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local aiCmpt = (self.m_entityOwn):AI()
+function ActionTarget_SelectBomb:OnBegin()
+  local aiCmpt = self.m_entityOwn:AI()
   local entityPlayer = aiCmpt:GetTargetDefault()
   local posPlayer = entityPlayer:GetGridPosition()
   local entityBombOld = aiCmpt:GetTargetEntity()
@@ -32,17 +19,17 @@ ActionTarget_SelectBomb.OnBegin = function(self)
   end
   local nGameRound = self:GetGameRountNow()
   local nSaveRound = self:GetRuntimeData("BombRound")
-  if nSaveRound == nil or nSaveRound ~= nGameRound then
+  if nil == nSaveRound or nSaveRound ~= nGameRound then
     self:_AllocBomb(nGameRound, posPlayer)
   end
   local nMobilityValid = aiCmpt:GetMobilityValid()
   if nSaveRound == nGameRound then
     local listBindMonsterID = {}
     local pFindNewBomb = self:_FindValidBomb(posPlayer, 1)
-    if pFindNewBomb == nil then
+    if nil == pFindNewBomb then
       local sortFreeBomb = self:_FindBombAllFree(listBindMonsterID, nGameRound, posPlayer)
       if sortFreeBomb:Size() > 0 then
-        local posSelf = (self.m_entityOwn):GetGridPosition()
+        local posSelf = self.m_entityOwn:GetGridPosition()
         for i = 1, sortFreeBomb:Size() do
           local sortData = sortFreeBomb:GetAt(i)
           local posBomb = sortData:GetPosData()
@@ -50,23 +37,22 @@ ActionTarget_SelectBomb.OnBegin = function(self)
           for j = 1, #listBombAround do
             local walkData = listBombAround[j]
             local posPlan = walkData:GetPos()
-            if (GameHelper.ComputeLogicStep)(posSelf, posPlan) <= nMobilityValid and self:_IsOneLine(posPlan, posBomb, posPlayer) then
-              pFindNewBomb = (self._world):GetEntityByID(sortData.m_nIndex)
+            if nMobilityValid >= GameHelper.ComputeLogicStep(posSelf, posPlan) and self:_IsOneLine(posPlan, posBomb, posPlayer) then
+              pFindNewBomb = self._world:GetEntityByID(sortData.m_nIndex)
               break
             end
           end
         end
       end
     end
-    do
-      if pFindNewBomb then
-        local pOldBomb = nil
-        local entityBombOld = aiCmpt:GetTargetEntity()
-        if entityBombOld ~= entityPlayer then
-          pOldBomb = entityBombOld
-        end
+    if pFindNewBomb then
+      local pOldBomb
+      local entityBombOld = aiCmpt:GetTargetEntity()
+      if entityBombOld ~= entityPlayer then
+        pOldBomb = entityBombOld
       end
       if pOldBomb and pOldBomb:GetID() == pFindNewBomb:GetID() then
+      else
         self:_UnBindBomb(pOldBomb)
         self:_UnBindBomb(pFindNewBomb)
         self:_BindBombAndMonster(nGameRound, pFindNewBomb, self.m_entityOwn)
@@ -75,11 +61,8 @@ ActionTarget_SelectBomb.OnBegin = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTarget_SelectBomb.OnUpdate = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local aiCmpt = (self.m_entityOwn):AI()
+function ActionTarget_SelectBomb:OnUpdate()
+  local aiCmpt = self.m_entityOwn:AI()
   local entityPlayer = aiCmpt:GetTargetDefault()
   local posPlayer = entityPlayer:GetGridPosition()
   local nGameRound = self:GetGameRountNow()
@@ -90,11 +73,11 @@ ActionTarget_SelectBomb.OnUpdate = function(self)
     self:PrintLog("行动目标<无需修改>, nGameRound = ", nGameRound)
   else
     nSelectBomb = true
-    local posSelf = (self.m_entityOwn):GetGridPosition()
+    local posSelf = self.m_entityOwn:GetGridPosition()
     local posBomb = entityTarget:GetGridPosition()
-    local nDistanceFormBomb = (GameHelper.ComputeLogicDistance)(posSelf, posBomb)
-    local nDistanceFormPlay = (GameHelper.ComputeLogicDistance)(posSelf, posPlayer)
-    if nDistanceFormPlay < nDistanceFormBomb then
+    local nDistanceFormBomb = GameHelper.ComputeLogicDistance(posSelf, posBomb)
+    local nDistanceFormPlay = GameHelper.ComputeLogicDistance(posSelf, posPlayer)
+    if nDistanceFormBomb > nDistanceFormPlay then
       aiCmpt:SetRuntimeData("Target", nil)
       nSelectBomb = false
       self:PrintLog("行动目标<修改失败>, nGameRound = ", nGameRound, ", BombID = ", entityTarget:GetID())
@@ -102,67 +85,50 @@ ActionTarget_SelectBomb.OnUpdate = function(self)
       self:PrintLog("行动目标<修改成功>, nGameRound = ", nGameRound, ", BombID = ", entityTarget:GetID())
     end
   end
-  do
-    if nSelectBomb then
-      return AINewNodeStatus.Success
-    end
-    return AINewNodeStatus.Failure
+  if nSelectBomb then
+    return AINewNodeStatus.Success
   end
+  return AINewNodeStatus.Failure
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTarget_SelectBomb.OnEnd = function(self)
-  -- function num : 0_4
+function ActionTarget_SelectBomb:OnEnd()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTarget_SelectBomb._FindBombAllFree = function(self, listBindMonsterID, nRoundData, posPlayer)
-  -- function num : 0_5 , upvalues : _ENV
-  local utilSvc = (self._world):GetService("TrapLogic")
+function ActionTarget_SelectBomb:_FindBombAllFree(listBindMonsterID, nRoundData, posPlayer)
+  local utilSvc = self._world:GetService("TrapLogic")
   local listBomb = utilSvc:FindTrapByType(TrapType.BombByHitBack)
   local sortFreeBomb = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
   for i = 1, #listBomb do
     local entityBomb = listBomb[i]
-    local trapCmpt = (listBomb[i]):Trap()
+    local trapCmpt = listBomb[i]:Trap()
     local bFindFree = true
-    do
-      if trapCmpt:IsTrapHaveOwner(nRoundData) then
-        local nOwnerEntity = (self._world):GetEntityByID(trapCmpt:GetOwnerID())
-        if nOwnerEntity and not (AINewNode.IsEntityDead)(nOwnerEntity) then
-          bFindFree = false
-        end
+    if trapCmpt:IsTrapHaveOwner(nRoundData) then
+      local nOwnerEntity = self._world:GetEntityByID(trapCmpt:GetOwnerID())
+      if nOwnerEntity and not AINewNode.IsEntityDead(nOwnerEntity) then
+        bFindFree = false
       end
-      if not bFindFree then
-        (table.insert)(listBindMonsterID, trapCmpt:GetOwnerID())
-      else
-        local posBomb = entityBomb:GetGridPosition()
-        sortFreeBomb:Insert(AiSortByDistance:New(posPlayer, posBomb, entityBomb:GetID()))
-      end
-      do
-        -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    end
+    if not bFindFree then
+      table.insert(listBindMonsterID, trapCmpt:GetOwnerID())
+    else
+      local posBomb = entityBomb:GetGridPosition()
+      sortFreeBomb:Insert(AiSortByDistance:New(posPlayer, posBomb, entityBomb:GetID()))
     end
   end
   return sortFreeBomb
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTarget_SelectBomb._UnBindBomb = function(self, entityBomb)
-  -- function num : 0_6
-  if entityBomb == nil then
-    return 
+function ActionTarget_SelectBomb:_UnBindBomb(entityBomb)
+  if nil == entityBomb then
+    return
   end
   local cmptTrap = entityBomb:Trap()
-  if cmptTrap == nil then
-    return 
+  if nil == cmptTrap then
+    return
   end
   local nMonsterID = cmptTrap:GetOwnerID()
-  if nMonsterID and nMonsterID > 0 then
-    local entityMonster = (self._world):GetEntityByID(nMonsterID)
+  if nMonsterID and 0 < nMonsterID then
+    local entityMonster = self._world:GetEntityByID(nMonsterID)
     if entityMonster then
       local aiCmpt = entityMonster:AI()
       if aiCmpt then
@@ -170,70 +136,53 @@ ActionTarget_SelectBomb._UnBindBomb = function(self, entityBomb)
       end
     end
   end
-  do
-    cmptTrap:SetOwner(nil, -1)
-  end
+  cmptTrap:SetOwner(nil, -1)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTarget_SelectBomb._BindBombAndMonster = function(self, nRoundData, entityBomb, entityMonster)
-  -- function num : 0_7
+function ActionTarget_SelectBomb:_BindBombAndMonster(nRoundData, entityBomb, entityMonster)
   local trapCmpt = entityBomb:Trap()
   trapCmpt:SetOwner(entityMonster:GetID(), nRoundData)
   local aiCmpt = entityMonster:AI()
-  do
-    if aiCmpt then
-      local nBombEntityID = entityBomb:GetID()
-      aiCmpt:SetRuntimeData("Target", nBombEntityID)
-      aiCmpt:SetRuntimeData("BombRound", nRoundData)
-    end
-    return entityMonster:GetID()
+  if aiCmpt then
+    local nBombEntityID = entityBomb:GetID()
+    aiCmpt:SetRuntimeData("Target", nBombEntityID)
+    aiCmpt:SetRuntimeData("BombRound", nRoundData)
   end
+  return entityMonster:GetID()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTarget_SelectBomb._AllocBomb = function(self, nRoundData, posPlayer)
-  -- function num : 0_8 , upvalues : _ENV
+function ActionTarget_SelectBomb:_AllocBomb(nRoundData, posPlayer)
   local listBindMonsterID = {}
   local sortFreeBomb = self:_FindBombAllFree(listBindMonsterID, nRoundData, posPlayer)
   local sortArrayByBomb, sortArrayByMonster = self:_ComputeDistance_BombToMonster(sortFreeBomb)
   for i = 1, sortFreeBomb:Size() do
     local sortBombData = sortFreeBomb:GetAt(i)
-    local entityBomb = (self._world):GetEntityByID(sortBombData.m_nIndex)
+    local entityBomb = self._world:GetEntityByID(sortBombData.m_nIndex)
     local entityBindMonster = self:_FindBindMonsterByBomb(sortArrayByBomb, sortArrayByMonster, listBindMonsterID, sortBombData, posPlayer)
     if entityBindMonster then
       self:_BindBombAndMonster(nRoundData, entityBomb, entityBindMonster)
-      ;
-      (table.insert)(listBindMonsterID, entityBindMonster:GetID())
+      table.insert(listBindMonsterID, entityBindMonster:GetID())
     end
   end
   return sortFreeBomb
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTarget_SelectBomb._FindSortArray = function(self, sortArrayList, nKeyID)
-  -- function num : 0_9 , upvalues : _ENV
+function ActionTarget_SelectBomb:_FindSortArray(sortArrayList, nKeyID)
   local sortArray = sortArrayList[nKeyID]
-  if sortArray == nil then
+  if nil == sortArray then
     sortArray = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
     sortArrayList[nKeyID] = sortArray
   end
   return sortArray
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTarget_SelectBomb._ComputeDistance_BombToMonster = function(self, listFreeBomb)
-  -- function num : 0_10 , upvalues : _ENV
+function ActionTarget_SelectBomb:_ComputeDistance_BombToMonster(listFreeBomb)
   local listDistanceByBomb = {}
   local listDistanceByMonster = {}
-  local listMonster = ((self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)):GetEntities()
+  local listMonster = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID):GetEntities()
   for j = 1, #listMonster do
     local entityMonster = listMonster[j]
-    local nMonsterType = (entityMonster:MonsterID()):GetMonsterType()
+    local nMonsterType = entityMonster:MonsterID():GetMonsterType()
     if MonsterType.HitFly == nMonsterType then
       local posMonster = entityMonster:GetGridPosition()
       local nMonsterID = entityMonster:GetID()
@@ -251,110 +200,90 @@ ActionTarget_SelectBomb._ComputeDistance_BombToMonster = function(self, listFree
   return listDistanceByBomb, listDistanceByMonster
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTarget_SelectBomb._FindBindMonsterByBomb = function(self, listDistanceByBomb, listDistanceByMonster, listBindID, sortBombData, posPlayer)
-  -- function num : 0_11 , upvalues : _ENV
+function ActionTarget_SelectBomb:_FindBindMonsterByBomb(listDistanceByBomb, listDistanceByMonster, listBindID, sortBombData, posPlayer)
   local posBomb = sortBombData:GetPosData()
   local nBombEntityID = sortBombData.m_nIndex
   local sortDistanceByMonsterID = self:_FindSortArray(listDistanceByBomb, nBombEntityID)
-  if sortDistanceByMonsterID == nil then
+  if nil == sortDistanceByMonsterID then
     return nil
   end
   local listFindMonsterID = {}
   for i = 1, sortDistanceByMonsterID:Size() do
     local sortData_Monster = sortDistanceByMonsterID:GetAt(i)
     local nMonsterID = sortData_Monster.m_nIndex
-    if not (table.icontains)(listBindID, nMonsterID) then
+    if not table.icontains(listBindID, nMonsterID) then
       local nDistance = sortData_Monster:GetDistance()
       local nFindBombID = self:_FindNearBombByMonster(listDistanceByMonster, nMonsterID, nDistance, posPlayer)
-      if nFindBombID == nil or nFindBombID == nBombEntityID then
-        (table.insert)(listFindMonsterID, nMonsterID)
+      if nil == nFindBombID or nFindBombID == nBombEntityID then
+        table.insert(listFindMonsterID, nMonsterID)
         break
       end
     end
   end
-  do
-    local entityFind = nil
-    local nFindCount = (table.count)(listFindMonsterID)
-    for i = 1, nFindCount do
-      local entityWork = (self._world):GetEntityByID(listFindMonsterID[i])
-      local posMonster = entityWork:GetGridPosition()
-      if self:_IsOneLine(posMonster, posBomb, posPlayer) then
-        entityFind = entityWork
-        break
-      end
-    end
-    do
-      if entityFind == nil and nFindCount > 0 then
-        entityFind = (self._world):GetEntityByID(listFindMonsterID[1])
-      end
-      return entityFind
+  local entityFind
+  local nFindCount = table.count(listFindMonsterID)
+  for i = 1, nFindCount do
+    local entityWork = self._world:GetEntityByID(listFindMonsterID[i])
+    local posMonster = entityWork:GetGridPosition()
+    if self:_IsOneLine(posMonster, posBomb, posPlayer) then
+      entityFind = entityWork
+      break
     end
   end
+  if nil == entityFind and 0 < nFindCount then
+    entityFind = self._world:GetEntityByID(listFindMonsterID[1])
+  end
+  return entityFind
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTarget_SelectBomb._FindNearBombByMonster = function(self, listDistanceByMonster, nMonsterID, nDistance, posPlayer)
-  -- function num : 0_12
-  local nFindBombID = nil
+function ActionTarget_SelectBomb:_FindNearBombByMonster(listDistanceByMonster, nMonsterID, nDistance, posPlayer)
+  local nFindBombID
   local sortDistanceByBombID = self:_FindSortArray(listDistanceByMonster, nMonsterID)
   for j = 1, sortDistanceByBombID:Size() do
     local sortData_Bomb = sortDistanceByBombID:GetAt(j)
     local nDistanceTemp = sortData_Bomb:GetDistance()
-    if nDistanceTemp < nDistance then
+    if nDistance > nDistanceTemp then
       nFindBombID = sortData_Bomb.m_nIndex
       break
-    else
-      if nDistanceTemp == nDistance and self:_IsHaveValidWalkPos(nMonsterID, sortData_Bomb.m_nIndex, posPlayer) then
-        nFindBombID = sortData_Bomb.m_nIndex
-      end
+    elseif nDistanceTemp == nDistance and self:_IsHaveValidWalkPos(nMonsterID, sortData_Bomb.m_nIndex, posPlayer) then
+      nFindBombID = sortData_Bomb.m_nIndex
     end
   end
-  do
-    return nFindBombID
-  end
+  return nFindBombID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTarget_SelectBomb._IsHaveValidWalkPos = function(self, nMonsterID, nBombID, posPlayer)
-  -- function num : 0_13 , upvalues : _ENV
-  local entityMonster = (self._world):GetEntityByID(nMonsterID)
+function ActionTarget_SelectBomb:_IsHaveValidWalkPos(nMonsterID, nBombID, posPlayer)
+  local entityMonster = self._world:GetEntityByID(nMonsterID)
   local aiCmpt = entityMonster:AI()
   local posMonster = entityMonster:GetGridPosition()
-  local posBomb = ((self._world):GetEntityByID(nBombID)):GetGridPosition()
-  local listBombAround = (ComputeScopeRange.ComputeRange_CrossScope)(posBomb, 1, 1)
+  local posBomb = self._world:GetEntityByID(nBombID):GetGridPosition()
+  local listBombAround = ComputeScopeRange.ComputeRange_CrossScope(posBomb, 1, 1)
   local nWalkStep = aiCmpt:GetMobilityValid()
   for i = 1, #listBombAround do
     local posWork = listBombAround[i]
-    local nStep = (GameHelper.ComputeLogicStep)(posMonster, posWork)
-    if nStep <= nWalkStep and self:_IsOneLine(posWork, posBomb, posPlayer) then
+    local nStep = GameHelper.ComputeLogicStep(posMonster, posWork)
+    if nWalkStep >= nStep and self:_IsOneLine(posWork, posBomb, posPlayer) then
       return nBombID
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTarget_SelectBomb._FindValidBomb = function(self, posPlayer, nStep)
-  -- function num : 0_14 , upvalues : _ENV
+function ActionTarget_SelectBomb:_FindValidBomb(posPlayer, nStep)
   local entitySelf = self.m_entityOwn
   local cmptAI = entitySelf:AI()
   local posSelf = entitySelf:GetGridPosition()
-  local selfBodyArea = (entitySelf:BodyArea()):GetArea()
-  local listWalkRange = (ComputeScopeRange.ComputeRange_WalkMathPos)(posSelf, #selfBodyArea, nStep, nil)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local selfBodyArea = entitySelf:BodyArea():GetArea()
+  local listWalkRange = ComputeScopeRange.ComputeRange_WalkMathPos(posSelf, #selfBodyArea, nStep, nil)
+  local utilDataSvc = self._world:GetService("UtilData")
   for i = 1, #listWalkRange do
-    local posWork = (listWalkRange[i]):GetPos()
+    local posWork = listWalkRange[i]:GetPos()
     local listBomb = utilDataSvc:FindEntityByPosAndType(posWork, EnumTargetEntity.Trap, TrapType.BombByHitBack)
-    if (table.count)(listBomb) > 0 then
+    if table.count(listBomb) > 0 then
       for k = 1, #listBomb do
         local entityBombID = listBomb[k]
         if self:_IsOneLine(posSelf, posWork, posPlayer) then
-          local entity = (self._world):GetEntityByID(entityBombID)
+          local entity = self._world:GetEntityByID(entityBombID)
           if not entity:HasDeadMark() then
             return entity
           end
@@ -367,42 +296,30 @@ end
 
 _class("BombSortByDistance", AiSortByDistance)
 BombSortByDistance = BombSortByDistance
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
 
-BombSortByDistance.Constructor = function(self, centrePos, dataPos, nIndex, posPlayer, entityBind)
-  -- function num : 0_15
+function BombSortByDistance:Constructor(centrePos, dataPos, nIndex, posPlayer, entityBind)
   self.m_posPlayer = posPlayer
   self.m_entityBind = entityBind
   self.m_nDisPlayer = self:Distance(self.centre, self.m_posPlayer)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BombSortByDistance.GetEntityBind = function(self)
-  -- function num : 0_16
+function BombSortByDistance:GetEntityBind()
   return self.m_entityBind
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BombSortByDistance._ComparerByBomb = function(dataNew, dataOld)
-  -- function num : 0_17
+function BombSortByDistance._ComparerByBomb(dataNew, dataOld)
   local nDistanceA = dataNew:GetDistance()
   local nDistanceB = dataOld:GetDistance()
-  if nDistanceB < nDistanceA then
+  if nDistanceA > nDistanceB then
     return -1
+  elseif nDistanceA < nDistanceB then
+    return 1
   else
-    if nDistanceA < nDistanceB then
-      return 1
+    local nDis = dataNew.m_nDisPlayer - dataOld.m_nDisPlayer
+    if 0 == nDis then
+      return dataOld.m_nIndex - dataNew.m_nIndex
     else
-      local nDis = dataNew.m_nDisPlayer - dataOld.m_nDisPlayer
-      if nDis == 0 then
-        return dataOld.m_nIndex - dataNew.m_nIndex
-      else
-        return nDis
-      end
+      return nDis
     end
   end
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/main/level/ui_activity_n20_normal_level_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN20NormalLevelNode", UICustomWidget)
 UIActivityN20NormalLevelNode = UIActivityN20NormalLevelNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN20NormalLevelNode.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN20NormalLevelNode:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20NormalLevelNode.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN20NormalLevelNode:InitWidget()
   self.bg = self:GetUIComponent("Image", "bg")
   self.name = self:GetUIComponent("UILocalizationText", "name")
   self.shadowLabel = self:GetUIComponent("UILocalizationText", "Shadow")
@@ -24,108 +14,76 @@ UIActivityN20NormalLevelNode.InitWidget = function(self)
   self.star1 = self:GetUIComponent("Image", "Star1")
   self.star2 = self:GetUIComponent("Image", "Star2")
   self.star3 = self:GetUIComponent("Image", "Star3")
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
-  self._stars = {self.star1, self.star2, self.star3}
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
+  self._stars = {
+    self.star1,
+    self.star2,
+    self.star3
+  }
   self._atlas = self:GetAsset("UIN20.spriteatlas", LoadType.SpriteAtlas)
-  self._anim = (self:GetGameObject()):GetComponent("Animation")
+  self._anim = self:GetGameObject():GetComponent("Animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20NormalLevelNode.SetData = function(self, lineCfg, passInfo, cb)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN20NormalLevelNode:SetData(lineCfg, passInfo, cb)
   self._missionID = lineCfg.CampaignMissionId
   self._onClick = cb
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMax = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2.zero
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  self._rectTransform.anchorMax = Vector2(0, 0.5)
+  self._rectTransform.anchorMin = Vector2(0, 0.5)
+  self._rectTransform.sizeDelta = Vector2.zero
+  self._rectTransform.anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if not missionCfg then
-    (Log.exception)("cfg_campaign_mission中找不到配置:", self._missionID)
+    Log.exception("cfg_campaign_mission中找不到配置:", self._missionID)
   end
-  ;
-  (self.name):SetText((StringTable.Get)(missionCfg.Name))
-  ;
-  (self.shadowLabel):SetText((StringTable.Get)(missionCfg.Name))
+  self.name:SetText(StringTable.Get(missionCfg.Name))
+  self.shadowLabel:SetText(StringTable.Get(missionCfg.Name))
   local hardParam = 1
-  local typeCfg = nil
+  local typeCfg
   if lineCfg.WayPointType == 4 then
-    typeCfg = (UIActivityN20NormalLevel.NodeCfg)[UIActivityN20NormalLevel.SLeval]
+    typeCfg = UIActivityN20NormalLevel.NodeCfg[UIActivityN20NormalLevel.SLeval]
   else
-    typeCfg = (UIActivityN20NormalLevel.NodeCfg)[missionCfg.Type]
+    typeCfg = UIActivityN20NormalLevel.NodeCfg[missionCfg.Type]
   end
-  local bg, textColor, shadowColor = nil, nil, nil
+  local bg, textColor, shadowColor
   if passInfo then
-    textColor = (typeCfg[hardParam]).textColor
-    shadowColor = (typeCfg[hardParam]).textShadow
+    textColor = typeCfg[hardParam].textColor
+    shadowColor = typeCfg[hardParam].textShadow
     local module = self:GetModule(MissionModule)
     local stars = module:ParseStarInfo(passInfo.star)
-    bg = (typeCfg[hardParam]).normal
+    bg = typeCfg[hardParam].normal
     for i = 1, 3 do
       local pass = i <= stars
-      -- DECOMPILER ERROR at PC97: Confused about usage of register: R17 in 'UnsetPending'
-
       if pass then
-        ((self._stars)[i]).sprite = (self._atlas):GetSprite((typeCfg[hardParam]).passStar)
+        self._stars[i].sprite = self._atlas:GetSprite(typeCfg[hardParam].passStar)
       else
-        -- DECOMPILER ERROR at PC106: Confused about usage of register: R17 in 'UnsetPending'
-
-        ((self._stars)[i]).sprite = (self._atlas):GetSprite((typeCfg[hardParam]).normalStar)
+        self._stars[i].sprite = self._atlas:GetSprite(typeCfg[hardParam].normalStar)
       end
     end
-    ;
-    (self.star):SetActive(missionCfg.Type ~= DiscoveryStageType.Plot)
+    self.star:SetActive(missionCfg.Type ~= DiscoveryStageType.Plot)
   else
-    textColor = (typeCfg[hardParam]).textColor
-    shadowColor = (typeCfg[hardParam]).textShadow
-    bg = (typeCfg[hardParam]).normal
+    textColor = typeCfg[hardParam].textColor
+    shadowColor = typeCfg[hardParam].textShadow
+    bg = typeCfg[hardParam].normal
     local stars = 0
     for i = 1, 3 do
       local pass = i <= stars
-      -- DECOMPILER ERROR at PC143: Confused about usage of register: R16 in 'UnsetPending'
-
       if pass then
-        ((self._stars)[i]).sprite = (self._atlas):GetSprite((typeCfg[hardParam]).passStar)
+        self._stars[i].sprite = self._atlas:GetSprite(typeCfg[hardParam].passStar)
       else
-        -- DECOMPILER ERROR at PC152: Confused about usage of register: R16 in 'UnsetPending'
-
-        ((self._stars)[i]).sprite = (self._atlas):GetSprite((typeCfg[hardParam]).normalStar)
+        self._stars[i].sprite = self._atlas:GetSprite(typeCfg[hardParam].normalStar)
       end
     end
-    ;
-    (self.star):SetActive(missionCfg.Type ~= DiscoveryStageType.Plot)
+    self.star:SetActive(missionCfg.Type ~= DiscoveryStageType.Plot)
   end
-  -- DECOMPILER ERROR at PC169: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self.bg).sprite = (self._atlas):GetSprite(bg)
+  self.bg.sprite = self._atlas:GetSprite(bg)
   self._isStoryNode = missionCfg.Type == DiscoveryStageType.Plot
-  if lineCfg.MapPosY >= 0 then
-    (self._anim):Play("uieff_UIXH1MissionNode_belowin")
+  if 0 <= lineCfg.MapPosY then
+    self._anim:Play("uieff_UIXH1MissionNode_belowin")
   else
-    (self._anim):Play("uieff_UIXH1MissionNode_topin")
+    self._anim:Play("uieff_UIXH1MissionNode_topin")
   end
-  -- DECOMPILER ERROR: 13 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20NormalLevelNode.btnOnClick = function(self, go)
-  -- function num : 0_3
-  (self._onClick)(self._missionID, self._isStoryNode, (self._rectTransform).position)
+function UIActivityN20NormalLevelNode:btnOnClick(go)
+  self._onClick(self._missionID, self._isStoryNode, self._rectTransform.position)
 end
-
-

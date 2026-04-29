@@ -1,41 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_config/auto_test_211208_143022.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 AutoTest_211208_143022 = {
-cases = {
-[1] = {
-[1] = {action = "WaitGameFsm", 
-args = {id = 5}
+  cases = {
+    [1] = {
+      [1] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [2] = {
+        action = "CheckBattleResult",
+        args = {trigger = 80, victory = 1}
+      },
+      [3] = {
+        action = "FakeInputChain",
+        args = {
+          chainPath = {
+            [1] = 502.0,
+            [2] = 402.0,
+            [3] = 302.0,
+            [4] = 202.0
+          },
+          pieceType = 1
+        }
+      },
+      [4] = {
+        action = "WaitGameOver",
+        args = {}
+      },
+      name = "逃离到出口"
+    }
+  },
+  name = "108逃离关",
+  petList = {
+    [1] = {
+      awakening = 3,
+      equiplv = 1,
+      grade = 3,
+      id = 1600061,
+      level = 1,
+      name = "p1"
+    }
+  },
+  remotePet = {},
+  setup = {
+    [1] = {
+      args = {levelID = 108, matchType = 1},
+      setup = "LevelBasic"
+    }
+  }
 }
-, 
-[2] = {action = "CheckBattleResult", 
-args = {trigger = 80, victory = 1}
-}
-, 
-[3] = {action = "FakeInputChain", 
-args = {
-chainPath = {[1] = 502, [2] = 402, [3] = 302, [4] = 202}
-, pieceType = 1}
-}
-, 
-[4] = {action = "WaitGameOver", 
-args = {}
-}
-, name = "逃离到出口"}
-}
-, name = "108逃离关", 
-petList = {
-[1] = {awakening = 3, equiplv = 1, grade = 3, id = 1600061, level = 1, name = "p1"}
-}
-, 
-remotePet = {}
-, 
-setup = {
-[1] = {
-args = {levelID = 108, matchType = 1}
-, setup = "LevelBasic"}
-}
-}
-

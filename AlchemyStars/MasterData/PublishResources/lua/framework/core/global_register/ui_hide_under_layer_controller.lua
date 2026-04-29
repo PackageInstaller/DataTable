@@ -1,12 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/global_register/ui_hide_under_layer_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("switch")
 _class("UIHideUnderLayerControllerVER120", Singleton)
 UIHideUnderLayerControllerVER120 = UIHideUnderLayerControllerVER120
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHideUnderLayerControllerVER120.uiMap = {UIActivityReview = true, UIBattle = true, UIBattleResultComplete = true, UICampaignShopConfirmDetailController = true, UICampaignShopConfirmNormalController = true, UICommonLoading = true, UIDiscovery = true, UIGetItemController = true, UIN1Controller = true, UIN1LineMission = true, UIN1LineMission_Review = true, UIN1TacticsMission = true, UIN2LineMissionController = true, UIQuestAwardsInfoController = true, UIReport = true, UIShare = true, UIShopConfirmDetailController = true, UIShopConfirmNormalController = true, UIShopController = true, UISideEnterCenterController = true, UITeamsGuide = true, UIMailController = true, UISetController = true, UIQuestController = true, UIPlayerInfoController = true, UIGuideFailedController = true, UIStageRecordController = true}
-
+UIHideUnderLayerControllerVER120.uiMap = {
+  UIActivityReview = true,
+  UIBattle = true,
+  UIBattleResultComplete = true,
+  UICampaignShopConfirmDetailController = true,
+  UICampaignShopConfirmNormalController = true,
+  UICommonLoading = true,
+  UIDiscovery = true,
+  UIGetItemController = true,
+  UIN1Controller = true,
+  UIN1LineMission = true,
+  UIN1LineMission_Review = true,
+  UIN1TacticsMission = true,
+  UIN2LineMissionController = true,
+  UIQuestAwardsInfoController = true,
+  UIReport = true,
+  UIShare = true,
+  UIShopConfirmDetailController = true,
+  UIShopConfirmNormalController = true,
+  UIShopController = true,
+  UISideEnterCenterController = true,
+  UITeamsGuide = true,
+  UIMailController = true,
+  UISetController = true,
+  UIQuestController = true,
+  UIPlayerInfoController = true,
+  UIGuideFailedController = true,
+  UIStageRecordController = true
+}

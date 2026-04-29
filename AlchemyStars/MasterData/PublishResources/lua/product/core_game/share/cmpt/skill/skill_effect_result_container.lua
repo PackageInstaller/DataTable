@@ -1,17 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/skill/skill_effect_result_container.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResultContainer", Object)
 SkillEffectResultContainer = SkillEffectResultContainer
 require("skill_effect_type")
-SkillEffectResultTypeOverride = {[SkillEffectType.SummonMultipleTrap] = SkillEffectType.SummonTrap, [SkillEffectType.EnhanceOccupiedGrid] = SkillEffectType.SummonTrap}
+SkillEffectResultTypeOverride = {
+  [SkillEffectType.SummonMultipleTrap] = SkillEffectType.SummonTrap,
+  [SkillEffectType.EnhanceOccupiedGrid] = SkillEffectType.SummonTrap
+}
 _enum("SkillEffectResultTypeOverride", SkillEffectResultTypeOverride)
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultContainer.Constructor = function(self)
-  -- function num : 0_0
+function SkillEffectResultContainer:Constructor()
   self._isFinalAttack = false
   self._finalAttackEntityID = nil
   self._scopeResult = nil
@@ -22,10 +18,7 @@ SkillEffectResultContainer.Constructor = function(self)
   self._isInvalidated = false
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.Clear = function(self)
-  -- function num : 0_1
+function SkillEffectResultContainer:Clear()
   self._isFinalAttack = false
   self._finalAttackEntityID = nil
   self._scopeResult = nil
@@ -36,180 +29,129 @@ SkillEffectResultContainer.Clear = function(self)
   self._isInvalidated = false
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.SetScopeResult = function(self, result)
-  -- function num : 0_2
+function SkillEffectResultContainer:SetScopeResult(result)
   self._scopeResult = result
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetScopeResult = function(self)
-  -- function num : 0_3
+function SkillEffectResultContainer:GetScopeResult()
   return self._scopeResult
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.AddEffectResult = function(self, result, bReplace)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillEffectResultContainer:AddEffectResult(result, bReplace)
   if result == nil then
-    (Log.error)("SkillEffectResultContainer:AddEffectResult result is nil")
-    return 
+    Log.error("SkillEffectResultContainer:AddEffectResult result is nil")
+    return
   end
   local effect_type = result:GetEffectType()
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  if (self._effectResultDic)[effect_type] == nil then
-    (self._effectResultDic)[effect_type] = {}
+  if self._effectResultDic[effect_type] == nil then
+    self._effectResultDic[effect_type] = {}
   end
-  local results = (self._effectResultDic)[effect_type]
+  local results = self._effectResultDic[effect_type]
   if not results.array then
     results.array = {}
   end
   local bAddSuccess = false
   if bReplace then
-    for k,v in ipairs(results.array) do
+    for k, v in ipairs(results.array) do
       if result:IsSame(v) then
         bAddSuccess = true
-        -- DECOMPILER ERROR at PC37: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (results.array)[k] = result
+        results.array[k] = result
         break
       end
     end
   end
-  do
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R6 in 'UnsetPending'
-
-    if bAddSuccess == false then
-      (results.array)[#results.array + 1] = result
-    end
-    if not results.pos then
-      results.pos = {}
-    end
-    local posGrid = result:GetGridPos()
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R7 in 'UnsetPending'
-
-    if posGrid then
-      (results.pos)[(Vector2.Pos2Index)(posGrid)] = result
-    end
-    if not results.target then
-      results.target = {}
-    end
-    -- DECOMPILER ERROR at PC75: Confused about usage of register: R7 in 'UnsetPending'
-
-    if result:GetTargetID() then
-      (results.target)[result:GetTargetID()] = result
-    end
+  if false == bAddSuccess then
+    results.array[#results.array + 1] = result
+  end
+  if not results.pos then
+    results.pos = {}
+  end
+  local posGrid = result:GetGridPos()
+  if posGrid then
+    results.pos[Vector2.Pos2Index(posGrid)] = result
+  end
+  if not results.target then
+    results.target = {}
+  end
+  if result:GetTargetID() then
+    results.target[result:GetTargetID()] = result
   end
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetEffectResultByArray = function(self, type, index)
-  -- function num : 0_5
-  local res = (self._effectResultDic)[type]
+function SkillEffectResultContainer:GetEffectResultByArray(type, index)
+  local res = self._effectResultDic[type]
   if res then
     if index == nil then
       index = 1
     end
-    return (res.array)[index]
+    return res.array[index]
   end
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetEffectResultByArrayAll = function(self, type)
-  -- function num : 0_6
-  local res = (self._effectResultDic)[type]
+function SkillEffectResultContainer:GetEffectResultByArrayAll(type)
+  local res = self._effectResultDic[type]
   if res then
     return res.array
   end
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetEffectResultByPos = function(self, type, pos)
-  -- function num : 0_7 , upvalues : _ENV
-  local res = (self._effectResultDic)[type]
-  if res == nil then
+function SkillEffectResultContainer:GetEffectResultByPos(type, pos)
+  local res = self._effectResultDic[type]
+  if nil == res then
     return nil
   end
-  return (res.pos)[(Vector2.Pos2Index)(pos)]
+  return res.pos[Vector2.Pos2Index(pos)]
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetEffectResultByTargetID = function(self, type, targetid)
-  -- function num : 0_8
-  local res = (self._effectResultDic)[type]
+function SkillEffectResultContainer:GetEffectResultByTargetID(type, targetid)
+  local res = self._effectResultDic[type]
   if res then
-    return (res.target)[targetid]
+    return res.target[targetid]
   end
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetEffectResultsAsPosDic = function(self, type)
-  -- function num : 0_9
-  if not (self._effectResultDic)[type] then
-    return 
+function SkillEffectResultContainer:GetEffectResultsAsPosDic(type)
+  if not self._effectResultDic[type] then
+    return
   end
-  return ((self._effectResultDic)[type]).pos
+  return self._effectResultDic[type].pos
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetEffectResultsAsTargetIdDic = function(self, type)
-  -- function num : 0_10
-  if not (self._effectResultDic)[type] then
-    return 
+function SkillEffectResultContainer:GetEffectResultsAsTargetIdDic(type)
+  if not self._effectResultDic[type] then
+    return
   end
-  return ((self._effectResultDic)[type]).target
+  return self._effectResultDic[type].target
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetEffectResultsAsArray = function(self, type, damageStageIndex)
-  -- function num : 0_11
-  if not (self._effectResultDic)[type] then
-    return 
+function SkillEffectResultContainer:GetEffectResultsAsArray(type, damageStageIndex)
+  if not self._effectResultDic[type] then
+    return
   end
-  local effectResultDic = self:_FilterByStage(((self._effectResultDic)[type]).array, damageStageIndex)
+  local effectResultDic = self:_FilterByStage(self._effectResultDic[type].array, damageStageIndex)
   return effectResultDic
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer._FilterByStage = function(self, damageResultArrayAllStage, damageStageIndex)
-  -- function num : 0_12 , upvalues : _ENV
-  do
-    if damageStageIndex then
-      local effectResultDic = {}
-      for _,damageResult in ipairs(damageResultArrayAllStage) do
-        if damageResult:GetDamageStageIndex() == damageStageIndex then
-          (table.insert)(effectResultDic, damageResult)
-        end
+function SkillEffectResultContainer:_FilterByStage(damageResultArrayAllStage, damageStageIndex)
+  if damageStageIndex then
+    local effectResultDic = {}
+    for _, damageResult in ipairs(damageResultArrayAllStage) do
+      if damageResult:GetDamageStageIndex() == damageStageIndex then
+        table.insert(effectResultDic, damageResult)
       end
-      return effectResultDic
     end
-    return damageResultArrayAllStage
+    return effectResultDic
   end
+  return damageResultArrayAllStage
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetEffectResultsStageCount = function(self, type)
-  -- function num : 0_13 , upvalues : _ENV
-  if not (self._effectResultDic)[type] then
-    return 
+function SkillEffectResultContainer:GetEffectResultsStageCount(type)
+  if not self._effectResultDic[type] then
+    return
   end
   local stageCount = 0
-  local effectResultDic = ((self._effectResultDic)[type]).array
-  for _,effectResult in ipairs(effectResultDic) do
+  local effectResultDic = self._effectResultDic[type].array
+  for _, effectResult in ipairs(effectResultDic) do
     local stageIndex = effectResult:GetDamageStageIndex()
     if stageCount < stageIndex then
       stageCount = stageIndex
@@ -218,53 +160,32 @@ SkillEffectResultContainer.GetEffectResultsStageCount = function(self, type)
   return stageCount
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetEffectResultDict = function(self)
-  -- function num : 0_14
+function SkillEffectResultContainer:GetEffectResultDict()
   return self._effectResultDic
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.SetEffectResultDict = function(self, results)
-  -- function num : 0_15
+function SkillEffectResultContainer:SetEffectResultDict(results)
   self._effectResultDic = results
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.SetFinalAttack = function(self, isFinalAttack)
-  -- function num : 0_16
+function SkillEffectResultContainer:SetFinalAttack(isFinalAttack)
   self._isFinalAttack = isFinalAttack
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.SetFinalAttackEntityID = function(self, entityID)
-  -- function num : 0_17
+function SkillEffectResultContainer:SetFinalAttackEntityID(entityID)
   self._finalAttackEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetFinalAttackEntityID = function(self)
-  -- function num : 0_18
+function SkillEffectResultContainer:GetFinalAttackEntityID()
   return self._finalAttackEntityID
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.IsFinalAttack = function(self)
-  -- function num : 0_19
+function SkillEffectResultContainer:IsFinalAttack()
   return self._isFinalAttack
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.IsFinalDamageResult = function(self, res)
-  -- function num : 0_20 , upvalues : _ENV
-  for i,r in ipairs(((self._effectResultDic)[SkillEffectType.Damage]).array) do
+function SkillEffectResultContainer:IsFinalDamageResult(res)
+  for i, r in ipairs(self._effectResultDic[SkillEffectType.Damage].array) do
     if r ~= res and not r:IsUsed() then
       return false
     end
@@ -272,123 +193,70 @@ SkillEffectResultContainer.IsFinalDamageResult = function(self, res)
   return true
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.SetSkillID = function(self, nSkillID)
-  -- function num : 0_21
+function SkillEffectResultContainer:SetSkillID(nSkillID)
   self.m_nSkillID = nSkillID
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetSkillID = function(self)
-  -- function num : 0_22
+function SkillEffectResultContainer:GetSkillID()
   return self.m_nSkillID
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.SetChainEffectResultTimeIndex = function(self, idx)
-  -- function num : 0_23
+function SkillEffectResultContainer:SetChainEffectResultTimeIndex(idx)
   self._chainTimeIndex = idx
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetChainEffectResultTimeIndex = function(self)
-  -- function num : 0_24
+function SkillEffectResultContainer:GetChainEffectResultTimeIndex()
   return self._chainTimeIndex
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.SetChainEffectResultStageIndex = function(self, idx)
-  -- function num : 0_25
+function SkillEffectResultContainer:SetChainEffectResultStageIndex(idx)
   self.chainStageIndex = idx
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetChainEffectResultStageIndex = function(self)
-  -- function num : 0_26
+function SkillEffectResultContainer:GetChainEffectResultStageIndex()
   return self.chainStageIndex or 1
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.SetNormalAttack = function(self, isNormalAttack)
-  -- function num : 0_27
+function SkillEffectResultContainer:SetNormalAttack(isNormalAttack)
   self._isNormalAttack = isNormalAttack
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.IsNormalAttack = function(self)
-  -- function num : 0_28
+function SkillEffectResultContainer:IsNormalAttack()
   return self._isNormalAttack
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.SetLastNormalAttackAtOnGrid = function(self, isLastNormalAttackAtOneGrid)
-  -- function num : 0_29
+function SkillEffectResultContainer:SetLastNormalAttackAtOnGrid(isLastNormalAttackAtOneGrid)
   self._isLastNormalAttackAtOneGrid = isLastNormalAttackAtOneGrid
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.IsLastNormalAttackAtOnGrid = function(self)
-  -- function num : 0_30
+function SkillEffectResultContainer:IsLastNormalAttackAtOnGrid()
   return self._isLastNormalAttackAtOneGrid
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetEffectResultsByType = function(self, type)
-  -- function num : 0_31
-  return (self._effectResultDic)[type]
+function SkillEffectResultContainer:GetEffectResultsByType(type)
+  return self._effectResultDic[type]
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.SetNormalAttackBeAttackOriPos = function(self, pos)
-  -- function num : 0_32
+function SkillEffectResultContainer:SetNormalAttackBeAttackOriPos(pos)
   self._normalAttackBeAttackOriPos = pos
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetNormalAttackBeAttackOriPos = function(self)
-  -- function num : 0_33
+function SkillEffectResultContainer:GetNormalAttackBeAttackOriPos()
   return self._normalAttackBeAttackOriPos
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.SetAutoBeadResultSkillIndex = function(self, idx)
-  -- function num : 0_34
+function SkillEffectResultContainer:SetAutoBeadResultSkillIndex(idx)
   self._autoBeadSkillIndex = idx
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetAutoBeadResultSkillIndex = function(self)
-  -- function num : 0_35
+function SkillEffectResultContainer:GetAutoBeadResultSkillIndex()
   return self._autoBeadSkillIndex
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.SetIsInvalidated = function(self, invalidated)
-  -- function num : 0_36
+function SkillEffectResultContainer:SetIsInvalidated(invalidated)
   self._isInvalidated = invalidated
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultContainer.GetIsInvalidated = function(self)
-  -- function num : 0_37
+function SkillEffectResultContainer:GetIsInvalidated()
   return self._isInvalidated
 end
-
-

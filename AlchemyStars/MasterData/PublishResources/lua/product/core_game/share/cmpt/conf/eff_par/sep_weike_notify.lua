@@ -1,41 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_weike_notify.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-SkillEffect_WeikeNotify_CompanionType = {TypeA = 1, TypeB = 2, TypeC = 3}
+SkillEffect_WeikeNotify_CompanionType = {
+  TypeA = 1,
+  TypeB = 2,
+  TypeC = 3
+}
 _enum("SkillEffect_WeikeNotify_CompanionType", SkillEffect_WeikeNotify_CompanionType)
-SkillEffect_WeikeNotify_SkillType = {NormalSkill = 1, ChainSkill1 = 2, ChainSkill2 = 3, ChainSkill3 = 4, ActiveSkill = 5}
+SkillEffect_WeikeNotify_SkillType = {
+  NormalSkill = 1,
+  ChainSkill1 = 2,
+  ChainSkill2 = 3,
+  ChainSkill3 = 4,
+  ActiveSkill = 5
+}
 _enum("SkillEffect_WeikeNotify_SkillType", SkillEffect_WeikeNotify_SkillType)
 _class("SkillEffectParam_WeikeNotify", SkillEffectParamBase)
 SkillEffectParam_WeikeNotify = SkillEffectParam_WeikeNotify
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_WeikeNotify.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_WeikeNotify:GetEffectType()
   return SkillEffectType.WeikeNotify
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_WeikeNotify.Constructor = function(self, t, petId, effectIndex, skillType, grade, awaking)
-  -- function num : 0_1
+function SkillEffectParam_WeikeNotify:Constructor(t, petId, effectIndex, skillType, grade, awaking)
   self._companionType = t.companionType
   self._skillType = t.skillType
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_WeikeNotify.GetCompanionType = function(self)
-  -- function num : 0_2
+function SkillEffectParam_WeikeNotify:GetCompanionType()
   return self._companionType
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_WeikeNotify.GetSkillType = function(self)
-  -- function num : 0_3
+function SkillEffectParam_WeikeNotify:GetSkillType()
   return self._skillType
 end
-
-

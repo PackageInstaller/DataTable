@@ -1,39 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_change_element_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayChangeElementInstruction", BaseInstruction)
 PlayChangeElementInstruction = PlayChangeElementInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayChangeElementInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayChangeElementInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayChangeElementInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayChangeElementInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ChangeElement)
   if #resultArray == 0 then
-    return 
+    return
   end
   local result = resultArray[1]
   local target = world:GetEntityByID(result:GetTarget())
   local elementType = result:GetElementType()
   if not target then
-    (Log.fatal)("没有施法者，变身失败")
-    return 
+    Log.fatal("没有施法者，变身失败")
+    return
   end
-  local sliderEntityID = (target:HP()):GetHPSliderEntityID()
+  local sliderEntityID = target:HP():GetHPSliderEntityID()
   local sliderEntity = world:GetEntityByID(sliderEntityID)
-  ;
-  (TaskManager:GetInstance()):CoreGameStartTask((InnerGameHelperRender:GetInstance()).SetHpSliderElementIcon, InnerGameHelperRender:GetInstance(), sliderEntity, elementType)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossElement, elementType, target:GetID())
+  TaskManager:GetInstance():CoreGameStartTask(InnerGameHelperRender:GetInstance().SetHpSliderElementIcon, InnerGameHelperRender:GetInstance(), sliderEntity, elementType)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossElement, elementType, target:GetID())
 end
-
-

@@ -1,223 +1,161 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/cls/movie_data_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MovieDataHelper", Object)
 MovieDataHelper = MovieDataHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MovieDataHelper.Constructor = function(self)
-  -- function num : 0_0
+function MovieDataHelper:Constructor()
   self:Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataHelper.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._cfgMovie = (Cfg.cfg_homeland_movice)({})
-  self._cfgMovieItem = (Cfg.cfg_homeland_movice_item)({})
-  self._cfgMovieScore = (Cfg.cfg_homeland_movice_score)({})
-  self._cfgAnonymousLetter = (Cfg.cfg_homeland_anonymous_letter)({})
+function MovieDataHelper:Init()
+  self._cfgMovie = Cfg.cfg_homeland_movice({})
+  self._cfgMovieItem = Cfg.cfg_homeland_movice_item({})
+  self._cfgMovieScore = Cfg.cfg_homeland_movice_score({})
+  self._cfgAnonymousLetter = Cfg.cfg_homeland_anonymous_letter({})
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataHelper.GetMovieCfgByMovieId = function(self, id)
-  -- function num : 0_2
-  local cfg = (self._cfgMovie)[id]
+function MovieDataHelper:GetMovieCfgByMovieId(id)
+  local cfg = self._cfgMovie[id]
   return cfg
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataHelper.GetMovieItemTitleById = function(self, id, phase)
-  -- function num : 0_3 , upvalues : _ENV
+function MovieDataHelper:GetMovieItemTitleById(id, phase)
   local movieCfg = self:GetMovieCfgByMovieId(id)
   if not movieCfg then
-    return 
+    return
   end
-  do
-    if phase == MoviePrepareType.PT_Scene then
-      local endList = {}
-      for i = 1, 2 do
-        (table.insert)(endList, (movieCfg.ItemPosList)[i])
-      end
-      return endList
+  if phase == MoviePrepareType.PT_Scene then
+    local endList = {}
+    for i = 1, 2 do
+      table.insert(endList, movieCfg.ItemPosList[i])
     end
-    do
-      if phase == MoviePrepareType.PT_Prop then
-        local endList = {}
-        for i = 3, #movieCfg.ItemPosList do
-          (table.insert)(endList, (movieCfg.ItemPosList)[i])
-        end
-        return endList
-      end
-      if phase == MoviePrepareType.PT_Actor then
-        return movieCfg.RolePosList
-      end
+    return endList
+  end
+  if phase == MoviePrepareType.PT_Prop then
+    local endList = {}
+    for i = 3, #movieCfg.ItemPosList do
+      table.insert(endList, movieCfg.ItemPosList[i])
     end
+    return endList
+  end
+  if phase == MoviePrepareType.PT_Actor then
+    return movieCfg.RolePosList
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataHelper.GetMovieItemByItemId = function(self, itemid)
-  -- function num : 0_4
-  return (self._cfgMovieItem)[itemid]
+function MovieDataHelper:GetMovieItemByItemId(itemid)
+  return self._cfgMovieItem[itemid]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataHelper.GetSkinByPrefabId = function(self, petID)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet_skin)({Prefab = petID .. ".prefab"})
+function MovieDataHelper:GetSkinByPrefabId(petID)
+  local cfg = Cfg.cfg_pet_skin({
+    Prefab = petID .. ".prefab"
+  })
   return cfg
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataHelper.GetArchitectureItemCfg = function(self, itemid)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item_architecture)({})
+function MovieDataHelper:GetArchitectureItemCfg(itemid)
+  local cfg = Cfg.cfg_item_architecture({})
   return cfg[itemid]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataHelper.GetAnonymousMovieTimeById = function(self, id)
-  -- function num : 0_7 , upvalues : _ENV
-  self._unlockTime = ((self._cfgAnonymousLetter)[id]).UnlockTime
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function MovieDataHelper:GetAnonymousMovieTimeById(id)
+  self._unlockTime = self._cfgAnonymousLetter[id].UnlockTime
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local unlockTime = loginModule:GetTimeStampByTimeStr(self._unlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   local sec = nowTime - unlockTime
   return sec
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataHelper.GetAllAnonymousId = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function MovieDataHelper:GetAllAnonymousId()
   local AnonymousId = {}
-  for k,v in ipairs(self._cfgAnonymousLetter) do
-    (table.insert)(AnonymousId, v.ID)
+  for k, v in ipairs(self._cfgAnonymousLetter) do
+    table.insert(AnonymousId, v.ID)
   end
   return AnonymousId
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataHelper.SortAnonymous = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function MovieDataHelper:SortAnonymous()
   local sortId = self:GetAllAnonymousId()
-  local sortFuc = function(a, b)
-    -- function num : 0_9_0 , upvalues : self
+  
+  local function sortFuc(a, b)
     local acout = self:GetAnonymousCountdownTimeById(a)
     local bcount = self:GetAnonymousCountdownTimeById(b)
-    do return acout < bcount end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+    return acout < bcount
   end
-
-  ;
-  (table.sort)(sortId, sortFuc)
+  
+  table.sort(sortId, sortFuc)
   return sortId
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataHelper.GetAnonymousCountdownTimeById = function(self, id)
-  -- function num : 0_10 , upvalues : _ENV
-  self._unlockTime = ((self._cfgAnonymousLetter)[id]).UnlockTime
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function MovieDataHelper:GetAnonymousCountdownTimeById(id)
+  self._unlockTime = self._cfgAnonymousLetter[id].UnlockTime
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local unlockTime = loginModule:GetTimeStampByTimeStr(self._unlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   local countdown = unlockTime - nowTime
   return countdown
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataHelper.GetFormatTimerStr = function(self, time)
-  -- function num : 0_11 , upvalues : _ENV
-  local timeStr = nil
+function MovieDataHelper:GetFormatTimerStr(time)
+  local timeStr
   local hour, min, second = MovieDataHelper:Time2Str(time)
-  if hour > 0 and min ~= 0 then
+  if 0 < hour and min ~= 0 then
     if min < 10 then
       timeStr = hour .. ":0" .. min
     else
       timeStr = hour .. ":" .. min
     end
+  elseif 0 < hour and min == 0 then
+    timeStr = hour .. ":00"
+  elseif 0 < min then
+    timeStr = "00:" .. min
+  elseif hour == 0 and min == 0 and 0 < second then
+    timeStr = "00:01"
   else
-    if hour > 0 and min == 0 then
-      timeStr = hour .. ":00"
-    else
-      if min > 0 then
-        timeStr = "00:" .. min
-      else
-        if hour == 0 and min == 0 and second > 0 then
-          timeStr = "00:01"
-        else
-          timeStr = nil
-        end
-      end
-    end
+    timeStr = nil
   end
   return timeStr
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataHelper.Time2Str = function(self, time)
-  -- function num : 0_12 , upvalues : _ENV
+function MovieDataHelper:Time2Str(time)
   local second = time % 60
-  local min = (math.floor)(time / 60) % 60
-  local hour = (math.floor)(time / 60 / 60)
+  local min = math.floor(time / 60) % 60
+  local hour = math.floor(time / 60 / 60)
   return hour, min, second
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MovieDataHelper.ShowOrNot = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function MovieDataHelper:ShowOrNot()
   local Anonymousname = {}
-  for k,v in ipairs(self._cfgAnonymousLetter) do
-    (table.insert)(Anonymousname, v.ID)
+  for k, v in ipairs(self._cfgAnonymousLetter) do
+    table.insert(Anonymousname, v.ID)
   end
-  local homeModule = (GameGlobal.GetModule)(HomelandModule)
+  local homeModule = GameGlobal.GetModule(HomelandModule)
   local Anonymouslist = homeModule:GetAnonymousLetterRreward()
   if #Anonymouslist == 0 then
-    for _,v in ipairs(Anonymousname) do
+    for _, v in ipairs(Anonymousname) do
       local sec = self:GetAnonymousMovieTimeById(v)
-      if sec > 0 then
+      if 0 < sec then
         return true, v
       end
     end
   else
-    do
-      for k1,v1 in ipairs(Anonymousname) do
-        for k2,v2 in ipairs(Anonymouslist) do
-          for i = 1, #Anonymouslist do
-            if v1 == v2 then
-              (table.remove)(Anonymousname, k1)
-            end
+    for k1, v1 in ipairs(Anonymousname) do
+      for k2, v2 in ipairs(Anonymouslist) do
+        for i = 1, #Anonymouslist do
+          if v1 == v2 then
+            table.remove(Anonymousname, k1)
           end
         end
       end
-      for _,v in ipairs(Anonymousname) do
-        local sec = self:GetAnonymousMovieTimeById(v)
-        if sec > 0 then
-          return true, v
-        end
-      end
-      do
-        return false
+    end
+    for _, v in ipairs(Anonymousname) do
+      local sec = self:GetAnonymousMovieTimeById(v)
+      if 0 < sec then
+        return true, v
       end
     end
   end
+  return false
 end
-
-

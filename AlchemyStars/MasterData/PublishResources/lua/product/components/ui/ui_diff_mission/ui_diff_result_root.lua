@@ -1,64 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_diff_mission/ui_diff_result_root.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiffResultRoot", UICustomWidget)
 UIDiffResultRoot = UIDiffResultRoot
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiffResultRoot.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UIDiffResultRoot:OnShow(uiParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffResultRoot.GetComponents = function(self)
-  -- function num : 0_1
+function UIDiffResultRoot:GetComponents()
   self._layout = self:GetUIComponent("UISelectObjectPath", "layout")
   self._go = self:GetGameObject("go")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffResultRoot.SetData = function(self, stageid, stageName, conds, nodeid)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDiffResultRoot:SetData(stageid, stageName, conds, nodeid)
   self:GetComponents()
   if nodeid then
-    (self._go):SetActive(true)
-    local node = nil
-    local nodeCfg = (Cfg.cfg_difficulty_parent_mission)[nodeid]
+    self._go:SetActive(true)
+    local node
+    local nodeCfg = Cfg.cfg_difficulty_parent_mission[nodeid]
     if nodeCfg.ComponentID then
-      local t_conds = conds
-      local all = {}
-      for index,value in ipairs(t_conds) do
-        (table.insert)(all, value)
-      end
-      local uiModule = (GameGlobal.GetUIModule)(DifficultyMissionModule)
-      uiModule:CreateEntiesDesc()
-      ;
-      (self._layout):SpawnObjects("UIDiffResultItem", #all)
-      local pools = (self._layout):GetAllSpawnList()
-      for i = 1, #pools do
-        local item = pools[i]
-        local condID = all[i]
-        local cfg = (Cfg.cfg_difficulty_mission_enties)[condID]
-        if not cfg then
-          (Log.error)("###[UIDiffResultRoot] cfg is nil ! id --> ", condID)
-        end
-        local tex = uiModule:GetDiffMissionEnties(cfg.Desc)
-        local finish = false
-        if (table.icontains)(t_conds, condID) then
-          finish = true
-        end
-        item:SetData(tex, finish)
-      end
-      do
-        ;
-        (self._go):SetActive(false)
-      end
+    else
     end
+    local t_conds = conds
+    local all = {}
+    for index, value in ipairs(t_conds) do
+      table.insert(all, value)
+    end
+    local uiModule = GameGlobal.GetUIModule(DifficultyMissionModule)
+    uiModule:CreateEntiesDesc()
+    self._layout:SpawnObjects("UIDiffResultItem", #all)
+    local pools = self._layout:GetAllSpawnList()
+    for i = 1, #pools do
+      local item = pools[i]
+      local condID = all[i]
+      local cfg = Cfg.cfg_difficulty_mission_enties[condID]
+      if not cfg then
+        Log.error("###[UIDiffResultRoot] cfg is nil ! id --> ", condID)
+      end
+      local tex = uiModule:GetDiffMissionEnties(cfg.Desc)
+      local finish = false
+      if table.icontains(t_conds, condID) then
+        finish = true
+      end
+      item:SetData(tex, finish)
+    end
+  else
+    self._go:SetActive(false)
   end
 end
-
-

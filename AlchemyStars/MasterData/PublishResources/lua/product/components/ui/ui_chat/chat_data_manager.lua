@@ -1,91 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/chat_data_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChatDataManager", Object)
 ChatDataManager = ChatDataManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChatDataManager.Constructor = function(self)
-  -- function num : 0_0
+function ChatDataManager:Constructor()
   self._chatDatas = nil
   self._chatDataKey = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatDataManager.SendMessage = function(self, TT, chatFriendManager, friendId, messageType, message, emojiId)
-  -- function num : 0_1 , upvalues : _ENV
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
+function ChatDataManager:SendMessage(TT, chatFriendManager, friendId, messageType, message, emojiId)
+  local socialModule = GameGlobal.GetModule(SocialModule)
   local res, msgInfo = socialModule:SendFriendMsg(TT, friendId, messageType, message, emojiId)
   if res:GetSucc() then
     local chatData = ChatData:New(msgInfo.msg_id, msgInfo.friend_msg_type, msgInfo.chat_message, msgInfo.emoji_id, true, msgInfo.chat_time)
     self:AddChatData(friendId, chatData)
     self:ReceiveMessage(friendId)
+  elseif res:GetResult() == SocialErrorCode.SOCIAL_CHAT_PEER_NOT_FRIEND then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ChatFriendNotYourFriend, friendId)
   else
-    do
-      if res:GetResult() == SocialErrorCode.SOCIAL_CHAT_PEER_NOT_FRIEND then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChatFriendNotYourFriend, friendId)
-      else
-        chatFriendManager:HandleErrorMsgCode(res:GetResult())
-      end
-    end
+    chatFriendManager:HandleErrorMsgCode(res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatDataManager.ReceiveMessage = function(self, friendId)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ReceiveChatMessage, friendId, true)
+function ChatDataManager:ReceiveMessage(friendId)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ReceiveChatMessage, friendId, true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatDataManager.AddChatData = function(self, friendId, chatData)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self._chatDatas)[friendId] == nil then
-    (self._chatDatas)[friendId] = {}
+function ChatDataManager:AddChatData(friendId, chatData)
+  if self._chatDatas[friendId] == nil then
+    self._chatDatas[friendId] = {}
   end
   local hasContain = false
-  local chatCount = #(self._chatDatas)[friendId]
+  local chatCount = #self._chatDatas[friendId]
   for i = 1, chatCount do
-    local tempChatData = ((self._chatDatas)[friendId])[i]
+    local tempChatData = self._chatDatas[friendId][i]
     if tempChatData:GetId() == chatData:GetId() then
       hasContain = true
       break
     end
   end
-  do
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R5 in 'UnsetPending'
-
-    if not hasContain then
-      ((self._chatDatas)[friendId])[#(self._chatDatas)[friendId] + 1] = chatData
-      self:_RefreshChatDataTimeStatus()
-    end
+  if not hasContain then
+    self._chatDatas[friendId][#self._chatDatas[friendId] + 1] = chatData
+    self:_RefreshChatDataTimeStatus()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatDataManager.DeleteChatData = function(self, friendId)
-  -- function num : 0_4
-  if not friendId or not (self._chatDatas)[friendId] then
-    return 
+function ChatDataManager:DeleteChatData(friendId)
+  if not friendId or not self._chatDatas[friendId] then
+    return
   end
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._chatDatas)[friendId] = nil
+  self._chatDatas[friendId] = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatDataManager.GetChatData = function(self, friendId)
-  -- function num : 0_5
+function ChatDataManager:GetChatData(friendId)
   if not self._chatDatas or not friendId then
     return nil
   end
@@ -93,14 +58,11 @@ ChatDataManager.GetChatData = function(self, friendId)
   if success then
     self:_RefreshChatDataTimeStatus()
   end
-  return (self._chatDatas)[friendId]
+  return self._chatDatas[friendId]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatDataManager.RequestChatData = function(self, TT, chatFriendManager, friendId)
-  -- function num : 0_6 , upvalues : _ENV
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
+function ChatDataManager:RequestChatData(TT, chatFriendManager, friendId)
+  local socialModule = GameGlobal.GetModule(SocialModule)
   local res, msgList = socialModule:SelectChatFriend(TT, friendId)
   if res:GetSucc() then
     if msgList then
@@ -110,120 +72,98 @@ ChatDataManager.RequestChatData = function(self, TT, chatFriendManager, friendId
         self:AddChatData(friendId, chatData)
       end
     end
-    do
-      chatFriendManager:ResetFriendUnReadMessageStatus(friendId)
-      chatFriendManager:HandleErrorMsgCode(res:GetResult())
-      do return  end
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateUnReadMessageStatus)
-      self:SaveAllChatDatas()
-      self:PushCurStoreMaxMsgId(friendId)
-      return self:GetChatData(friendId)
-    end
+    chatFriendManager:ResetFriendUnReadMessageStatus(friendId)
+  else
+    chatFriendManager:HandleErrorMsgCode(res:GetResult())
+    return
   end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateUnReadMessageStatus)
+  self:SaveAllChatDatas()
+  self:PushCurStoreMaxMsgId(friendId)
+  return self:GetChatData(friendId)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatDataManager.PushCurStoreMaxMsgId = function(self, senderPstId)
-  -- function num : 0_7 , upvalues : _ENV
-  if not (self._chatDatas)[senderPstId] then
-    return 
+function ChatDataManager:PushCurStoreMaxMsgId(senderPstId)
+  if not self._chatDatas[senderPstId] then
+    return
   end
-  if #(self._chatDatas)[senderPstId] <= 0 then
-    return 
+  if #self._chatDatas[senderPstId] <= 0 then
+    return
   end
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
-  local chatData = ((self._chatDatas)[senderPstId])[#(self._chatDatas)[senderPstId]]
+  local socialModule = GameGlobal.GetModule(SocialModule)
+  local chatData = self._chatDatas[senderPstId][#self._chatDatas[senderPstId]]
   socialModule:PushCurStoreMaxMsgId(senderPstId, chatData:GetId())
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatDataManager._RemoveChatData = function(self, friendId)
-  -- function num : 0_8 , upvalues : _ENV
-  if not (self._chatDatas)[friendId] then
-    return 
+function ChatDataManager:_RemoveChatData(friendId)
+  if not self._chatDatas[friendId] then
+    return
   end
-  local chatCount = #(self._chatDatas)[friendId]
-  local maxCount = ((Cfg.cfg_friend_global)[1]).client_save_max_msg_count
+  local chatCount = #self._chatDatas[friendId]
+  local maxCount = Cfg.cfg_friend_global[1].client_save_max_msg_count
   if chatCount <= maxCount then
     return false
   end
   local moreCount = chatCount - maxCount
   for i = moreCount, 1, -1 do
-    (table.remove)((self._chatDatas)[friendId], i)
+    table.remove(self._chatDatas[friendId], i)
   end
   return true
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatDataManager.GetAllChatDatas = function(self, TT, friendList)
-  -- function num : 0_9
+function ChatDataManager:GetAllChatDatas(TT, friendList)
   self._chatDatas = {}
   self:_ReadLocalChatDatas(friendList)
   self:_ReadServerChatDatas(TT)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatDataManager._ReadLocalChatDatas = function(self, friendList)
-  -- function num : 0_10 , upvalues : _ENV
+function ChatDataManager:_ReadLocalChatDatas(friendList)
   local chatDataKey = self:_GetChatDataKey()
-  local localChatDatasStr = ((UnityEngine.PlayerPrefs).GetString)(chatDataKey)
+  local localChatDatasStr = UnityEngine.PlayerPrefs.GetString(chatDataKey)
   if not localChatDatasStr or localChatDatasStr == "" then
-    return 
+    return
   end
   local func = load("return" .. localChatDatasStr)
   if func == nil then
-    localChatDatasStr = (string.gsub)(localChatDatasStr, "\\", "\\\\")
-    localChatDatasStr = (string.gsub)(localChatDatasStr, "\r\n", "")
+    localChatDatasStr = string.gsub(localChatDatasStr, "\\", "\\\\")
+    localChatDatasStr = string.gsub(localChatDatasStr, "\r\n", "")
     func = load("return" .. localChatDatasStr)
   end
   local chatDataTable = {}
   if func ~= nil then
     chatDataTable = func()
   end
-  local isContainFriendIdFunc = function(friendDatas, friendId)
-    -- function num : 0_10_0 , upvalues : _ENV
+  
+  local function isContainFriendIdFunc(friendDatas, friendId)
     if not friendDatas then
       return false
     end
-    for k,v in pairs(friendDatas) do
+    for k, v in pairs(friendDatas) do
       if friendId == v:GetFriendId() then
         return true
       end
     end
     return false
   end
-
-  for friendId,chatDatas in pairs(chatDataTable) do
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R12 in 'UnsetPending'
-
+  
+  for friendId, chatDatas in pairs(chatDataTable) do
     if isContainFriendIdFunc(friendList, friendId) then
-      if (self._chatDatas)[friendId] == nil then
-        (self._chatDatas)[friendId] = {}
+      if self._chatDatas[friendId] == nil then
+        self._chatDatas[friendId] = {}
       end
       for i = 1, #chatDatas do
         local data = chatDatas[i]
         local chatData = ChatData:New(data._id, data._messageType, data._message, data._emojiId, data._isSelf, data._date)
-        -- DECOMPILER ERROR at PC83: Confused about usage of register: R18 in 'UnsetPending'
-
-        ;
-        ((self._chatDatas)[friendId])[#(self._chatDatas)[friendId] + 1] = chatData
+        self._chatDatas[friendId][#self._chatDatas[friendId] + 1] = chatData
       end
     end
   end
   self:_RefreshChatDataTimeStatus()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatDataManager._RefreshChatDataTimeStatus = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  for friendId,chatDatas in pairs(self._chatDatas) do
-    local firstData = nil
+function ChatDataManager:_RefreshChatDataTimeStatus()
+  for friendId, chatDatas in pairs(self._chatDatas) do
+    local firstData
     for i = 1, #chatDatas do
       local chatData = chatDatas[i]
       if i == 1 then
@@ -238,77 +178,51 @@ ChatDataManager._RefreshChatDataTimeStatus = function(self)
           local preMin = preDate.min
           local curMin = curDate.min
           local min = (curDate.hour - preDate.hour) * 60 + curMin - preMin
-          if min >= 30 then
+          if 30 <= min then
             chatData:SetShowTimeStatus(true)
             firstData = chatData
           else
             chatData:SetShowTimeStatus(false)
           end
         else
-          do
-            do
-              chatData:SetShowTimeStatus(true)
-              firstData = chatData
-              -- DECOMPILER ERROR at PC58: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC58: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC58: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC58: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC58: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+          chatData:SetShowTimeStatus(true)
+          firstData = chatData
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatDataManager._ReadServerChatDatas = function(self, TT)
-  -- function num : 0_12
+function ChatDataManager:_ReadServerChatDatas(TT)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatDataManager.SaveAllChatDatas = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function ChatDataManager:SaveAllChatDatas()
   local chatDataKey = self:_GetChatDataKey()
-  if not self._chatDatas or (table.count)(self._chatDatas) <= 0 then
-    ((UnityEngine.PlayerPrefs).DeleteKey)(chatDataKey)
-    return 
+  if not self._chatDatas or table.count(self._chatDatas) <= 0 then
+    UnityEngine.PlayerPrefs.DeleteKey(chatDataKey)
+    return
   end
-  for k,v in pairs(self._chatDatas) do
+  for k, v in pairs(self._chatDatas) do
     for i = 1, #v do
-      (v[i]):EncodeMessage()
+      v[i]:EncodeMessage()
     end
   end
   local chatDatasStr = echo_not_escape(self._chatDatas)
-  for k,v in pairs(self._chatDatas) do
+  for k, v in pairs(self._chatDatas) do
     for i = 1, #v do
-      (v[i]):DecodeMessage()
+      v[i]:DecodeMessage()
     end
   end
-  ;
-  ((UnityEngine.PlayerPrefs).SetString)(chatDataKey, chatDatasStr)
+  UnityEngine.PlayerPrefs.SetString(chatDataKey, chatDatasStr)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatDataManager._GetChatDataKey = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function ChatDataManager:_GetChatDataKey()
   if self._chatDataKey then
     return self._chatDataKey
   end
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local chatDataKey = "CHAT_DATA_KEY_1VERSION" .. pstId
   self._chatDataKey = chatDataKey
   return chatDataKey
 end
-
-

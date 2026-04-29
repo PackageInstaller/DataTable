@@ -1,30 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_random_pos_empty_or_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_RandomPosEmptyOrTrap", SkillScopeCalculator_Base)
 SkillScopeCalculator_RandomPosEmptyOrTrap = SkillScopeCalculator_RandomPosEmptyOrTrap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_RandomPosEmptyOrTrap.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_RandomPosEmptyOrTrap:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local trapID = scopeParam
   local randPos = {}
-  local pieces = (self._gridFilter):GetEmptyPieces()
+  local pieces = self._gridFilter:GetEmptyPieces()
   if #pieces == 0 then
-    pieces = (self._gridFilter):GetTrapPiecesExceptTrapID(trapID)
+    pieces = self._gridFilter:GetTrapPiecesExceptTrapID(trapID)
   end
-  do
-    if #pieces > 0 then
-      local randomIndex = (self._gridFilter):_GetRandomNumber(0, #pieces)
-      ;
-      (table.insert)(randPos, pieces[randomIndex])
-    end
-    local result = SkillScopeResult:New(SkillScopeType.RandomPosEmptyOrTrap, centerPos, randPos, randPos)
-    return result
+  if 0 < #pieces then
+    local randomIndex = self._gridFilter:_GetRandomNumber(0, #pieces)
+    table.insert(randPos, pieces[randomIndex])
   end
+  local result = SkillScopeResult:New(SkillScopeType.RandomPosEmptyOrTrap, centerPos, randPos, randPos)
+  return result
 end
-
-

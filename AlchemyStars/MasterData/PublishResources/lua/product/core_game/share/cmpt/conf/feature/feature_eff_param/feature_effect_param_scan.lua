@@ -1,80 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_eff_param/feature_effect_param_scan.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureEffectParamScan", FeatureEffectParamBase)
 FeatureEffectParamScan = FeatureEffectParamScan
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamScan.GetFeatureType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function FeatureEffectParamScan:GetFeatureType()
   return FeatureType.Scan
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamScan.Constructor = function(self, t)
-  -- function num : 0_1
+function FeatureEffectParamScan:Constructor(t)
   if not t then
-    return 
+    return
   end
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamScan._RefreshData = function(self, t)
-  -- function num : 0_2
+function FeatureEffectParamScan:_RefreshData(t)
   self._summonTrapSkillID = t.SummonTrapSkillID
   self._forceMovementSkillID = t.ForceMovementSkillID
   self._summonScanTrapSkillID = t.SummonScanTrapSkillID
   self._emptySkillID = t.EmptySkillID
   self._diedTrapIncluded = t.DiedTrapIncluded == 1
   self._summonTrapDescKey = t.summonTrapDescKey
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamScan.GetSummonTrapSkillID = function(self)
-  -- function num : 0_3
+function FeatureEffectParamScan:GetSummonTrapSkillID()
   return self._summonTrapSkillID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamScan.GetForceMovementSkillID = function(self)
-  -- function num : 0_4
+function FeatureEffectParamScan:GetForceMovementSkillID()
   return self._forceMovementSkillID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamScan.GetSummonScanTrapSkillID = function(self)
-  -- function num : 0_5
+function FeatureEffectParamScan:GetSummonScanTrapSkillID()
   return self._summonScanTrapSkillID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamScan.GetEmptySkillID = function(self)
-  -- function num : 0_6
+function FeatureEffectParamScan:GetEmptySkillID()
   return self._emptySkillID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamScan.IsDiedTrapIncluded = function(self)
-  -- function num : 0_7
+function FeatureEffectParamScan:IsDiedTrapIncluded()
   return self._diedTrapIncluded
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamScan.GetFeatureSummonTrapDescKey = function(self)
-  -- function num : 0_8
+function FeatureEffectParamScan:GetFeatureSummonTrapDescKey()
   return self._summonTrapDescKey
 end
-
-

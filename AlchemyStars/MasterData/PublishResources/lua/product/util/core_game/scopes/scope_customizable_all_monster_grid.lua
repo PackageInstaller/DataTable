@@ -1,57 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_customizable_all_monster_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_CustomizableAllMonsterGrid", SkillScopeCalculator_Base)
 SkillScopeCalculator_CustomizableAllMonsterGrid = SkillScopeCalculator_CustomizableAllMonsterGrid
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_CustomizableAllMonsterGrid.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_CustomizableAllMonsterGrid:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local monsterPosList = {}
   local filterType = scopeParam[1]
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local utilSvc = world:GetService("UtilData")
-  if world:MatchType() == MatchType.MT_BlackFist and casterEntity then
-    if casterEntity:HasSuperEntity() then
-      casterEntity = casterEntity:GetSuperEntity()
-    else
-      if casterEntity:HasSummoner() then
+  if world:MatchType() == MatchType.MT_BlackFist then
+    if casterEntity then
+      if casterEntity:HasSuperEntity() then
+        casterEntity = casterEntity:GetSuperEntity()
+      elseif casterEntity:HasSummoner() then
         casterEntity = casterEntity:GetSummonerEntity()
       end
+      if casterEntity:HasPet() then
+        local teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
+        local enemyEntity = teamEntity:Team():GetEnemyTeamEntity()
+        monsterPosList[1] = enemyEntity:GetGridPosition()
+      end
     end
-    if casterEntity:HasPet() then
-      local teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-      local enemyEntity = (teamEntity:Team()):GetEnemyTeamEntity()
-      monsterPosList[1] = enemyEntity:GetGridPosition()
-    end
-  end
-  do
-    local globalMonsterGroupEntities = world:GetGroupEntities((world.BW_WEMatchers).MonsterID)
-    for _,e in ipairs(globalMonsterGroupEntities) do
+  else
+    local globalMonsterGroupEntities = world:GetGroupEntities(world.BW_WEMatchers.MonsterID)
+    for _, e in ipairs(globalMonsterGroupEntities) do
       if self:_IsMonsterTarget(e, filterType) then
         local monster_grid_location_cmpt = e:GridLocation()
-        local bodyAreaList = (e:BodyArea()):GetArea()
-        for _,v2Body in ipairs(bodyAreaList) do
+        local bodyAreaList = e:BodyArea():GetArea()
+        for _, v2Body in ipairs(bodyAreaList) do
           local pos = monster_grid_location_cmpt.Position + v2Body
-          ;
-          (table.insert)(monsterPosList, pos)
+          table.insert(monsterPosList, pos)
         end
       end
     end
-    do
-      local result = SkillScopeResult:New(SkillScopeType.CustomizableAllMonsterGrid, casterPos, monsterPosList, monsterPosList)
-      return result
-    end
   end
+  local result = SkillScopeResult:New(SkillScopeType.CustomizableAllMonsterGrid, casterPos, monsterPosList, monsterPosList)
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_CustomizableAllMonsterGrid._IsMonsterTarget = function(self, e, filterType)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_CustomizableAllMonsterGrid:_IsMonsterTarget(e, filterType)
   if e:HasDeadMark() then
     return false
   end
@@ -68,19 +54,11 @@ SkillScopeCalculator_CustomizableAllMonsterGrid._IsMonsterTarget = function(self
     if not utilData:IsEntityForceMovementTarget(e) then
       return false
     end
-  else
-    do
-      do
-        if filterType == CustomizableAllMonsterGridFilter.ForceMovementIncludeMultiSize then
-          local utilData = world:GetService("UtilData")
-          if not utilData:IsEntityForceMovementTarget(e, true) then
-            return false
-          end
-        end
-        return true
-      end
+  elseif filterType == CustomizableAllMonsterGridFilter.ForceMovementIncludeMultiSize then
+    local utilData = world:GetService("UtilData")
+    if not utilData:IsEntityForceMovementTarget(e, true) then
+      return false
     end
   end
+  return true
 end
-
-

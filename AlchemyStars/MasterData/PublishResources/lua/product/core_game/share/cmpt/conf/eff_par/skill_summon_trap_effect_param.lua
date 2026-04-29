@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_summon_trap_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillSummonTrapEffectParam", SkillEffectParamBase)
 SkillSummonTrapEffectParam = SkillSummonTrapEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillSummonTrapEffectParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillSummonTrapEffectParam:Constructor(t)
   self._trapID = t.trapID
   self._block = t.block or 1
   self._transferDisabled = t.transferDisabled == 1
@@ -17,128 +10,80 @@ SkillSummonTrapEffectParam.Constructor = function(self, t)
   self._overlapCheckSuper = t.overlapCheckSuper or 0
   self._absorbTrapNum = t.absorbTrapNum or 0
   self._moveTrap = t.moveTrap or 0
-  if not t.type then
-    self._type = SummonTrapType.Normal
-    self._stopSummonTrapType = t.stopSummonTrapType
-    self._blockByMonster = t.blockByMonster or 0
-    self._randomCount = t.randomCount
-    self._usePickUpDir = t.usePickUpDir or 0
-    self._aiOrder = t.aiOrder
-    self._rangeM = t.rangeM
-    -- DECOMPILER ERROR: 8 unprocessed JMP targets
-  end
+  self._type = t.type or SummonTrapType.Normal
+  self._stopSummonTrapType = t.stopSummonTrapType
+  self._blockByMonster = t.blockByMonster or 0
+  self._randomCount = t.randomCount
+  self._usePickUpDir = t.usePickUpDir or 0
+  self._aiOrder = t.aiOrder
+  self._rangeM = t.rangeM
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillSummonTrapEffectParam:GetEffectType()
   return SkillEffectType.SummonTrap
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectParam.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillSummonTrapEffectParam:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectParam.GetBlock = function(self)
-  -- function num : 0_3
+function SkillSummonTrapEffectParam:GetBlock()
   return self._block
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectParam.IsTransferDisabled = function(self)
-  -- function num : 0_4
+function SkillSummonTrapEffectParam:IsTransferDisabled()
   return self._transferDisabled
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectParam.IsTrapOverlap = function(self)
-  -- function num : 0_5
-  do return self._overlapFlag == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillSummonTrapEffectParam:IsTrapOverlap()
+  return self._overlapFlag == 1
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectParam.IsTrapOverlapCheckSuper = function(self)
-  -- function num : 0_6
-  do return self._overlapCheckSuper == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillSummonTrapEffectParam:IsTrapOverlapCheckSuper()
+  return self._overlapCheckSuper == 1
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectParam.GetAbsorbTrapNum = function(self)
-  -- function num : 0_7
+function SkillSummonTrapEffectParam:GetAbsorbTrapNum()
   return self._absorbTrapNum
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectParam.GetMoveTrap = function(self)
-  -- function num : 0_8
-  do return self._moveTrap == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillSummonTrapEffectParam:GetMoveTrap()
+  return self._moveTrap == 1
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectParam.GetSummonType = function(self)
-  -- function num : 0_9
+function SkillSummonTrapEffectParam:GetSummonType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectParam.GetStopSummonTrapType = function(self)
-  -- function num : 0_10
+function SkillSummonTrapEffectParam:GetStopSummonTrapType()
   return self._stopSummonTrapType
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectParam.GetRandomCount = function(self)
-  -- function num : 0_11
+function SkillSummonTrapEffectParam:GetRandomCount()
   return self._randomCount
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectParam.IsBlockByMonster = function(self)
-  -- function num : 0_12
-  do return self._blockByMonster == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillSummonTrapEffectParam:IsBlockByMonster()
+  return self._blockByMonster == 1
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectParam.IsUsePickUpDir = function(self)
-  -- function num : 0_13
-  do return self._usePickUpDir == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillSummonTrapEffectParam:IsUsePickUpDir()
+  return self._usePickUpDir == 1
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectParam.GetTrapAIOrder = function(self)
-  -- function num : 0_14
+function SkillSummonTrapEffectParam:GetTrapAIOrder()
   return self._aiOrder
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectParam.GetRangeM = function(self)
-  -- function num : 0_15
+function SkillSummonTrapEffectParam:GetRangeM()
   return self._rangeM
 end
 
-local SummonTrapType = {Normal = 1, ByTargetUnderGrid = 2, Range = 3, RandomRange = 4, RandomRangeWithBlock = 5}
+local SummonTrapType = {
+  Normal = 1,
+  ByTargetUnderGrid = 2,
+  Range = 3,
+  RandomRange = 4,
+  RandomRangeWithBlock = 5
+}
 _enum("SummonTrapType", SummonTrapType)
-

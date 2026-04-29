@@ -1,50 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_move_board.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamMoveBoard", SkillEffectParamBase)
 SkillEffectParamMoveBoard = SkillEffectParamMoveBoard
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamMoveBoard.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParamMoveBoard:Constructor(t)
   self._times = t.times or 1
-  if t.direction and (t.direction)[1] and (t.direction)[2] then
-    self._direction = Vector2((t.direction)[1], (t.direction)[2])
+  if t.direction and t.direction[1] and t.direction[2] then
+    self._direction = Vector2(t.direction[1], t.direction[2])
   else
     self._direction = Vector2(0, 1)
   end
   self._destroyOutTrap = t.destroyOutTrap or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamMoveBoard.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamMoveBoard:GetEffectType()
   return SkillEffectType.MoveBoard
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamMoveBoard.GetTimes = function(self)
-  -- function num : 0_2
+function SkillEffectParamMoveBoard:GetTimes()
   return self._times
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamMoveBoard.GetDirection = function(self)
-  -- function num : 0_3
+function SkillEffectParamMoveBoard:GetDirection()
   return self._direction
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamMoveBoard.GetDestroyOutTrap = function(self)
-  -- function num : 0_4
+function SkillEffectParamMoveBoard:GetDestroyOutTrap()
   return self._destroyOutTrap
 end
-
-

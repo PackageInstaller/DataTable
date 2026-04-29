@@ -1,45 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s5/awards/ui_season_item_s5.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonItemS5", UICustomWidget)
 UISeasonItemS5 = UISeasonItemS5
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonItemS5.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mRole = (GameGlobal.GetModule)(RoleModule)
+function UISeasonItemS5:Constructor()
+  self.mRole = GameGlobal.GetModule(RoleModule)
   self.colorTxtCount = Color.white
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonItemS5.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonItemS5:OnShow()
   self._trans = self:GetGameObject()
   self.bg = self:GetUIComponent("Image", "bg")
   self.bgGo = self:GetGameObject("bg")
   self.quality = self:GetUIComponent("Image", "quality")
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
-  self.colorTxtCount = (self.txtCount).color
+  self.colorTxtCount = self.txtCount.color
   self.first = self:GetGameObject("first")
   self.atlas = self:GetAsset("UIS5Scene.spriteatlas", LoadType.SpriteAtlas)
   self.rect = self:GetUIComponent("RectTransform", "rect")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonItemS5.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIcon):DestoryLastImage()
+function UISeasonItemS5:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonItemS5.Flush = function(self, roleAsset, funcClick, notShowTips)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonItemS5:Flush(roleAsset, funcClick, notShowTips)
   self.roleAsset = roleAsset
   local icon = ""
   local color = 1
@@ -49,108 +33,63 @@ UISeasonItemS5.Flush = function(self, roleAsset, funcClick, notShowTips)
     color = 6
     count = roleAsset.count
   else
-    local cfg = (Cfg.cfg_item)[roleAsset.assetid]
+    local cfg = Cfg.cfg_item[roleAsset.assetid]
     icon = cfg.Icon
     color = cfg.Color
     count = roleAsset.count
   end
-  do
-    ;
-    (self.imgIcon):LoadImage(icon)
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.quality).sprite = (self.atlas):GetSprite("exp_s5_map_daoju_pinji0" .. color)
-    ;
-    (self.txtCount):SetText(self:FormatCount(count))
-    ;
-    (self.first):SetActive(roleAsset.first ~= nil)
-    self.funcClick = funcClick
-    self._notShowTips = notShowTips
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-end
-
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonItemS5.SetFin = function(self, show)
-  -- function num : 0_4
-  (self:GetGameObject("_fin")):SetActive(show)
-end
-
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonItemS5.FormatCount = function(self, count)
-  -- function num : 0_5 , upvalues : _ENV
-  if not count or count == "" then
-    return ""
-  end
-  if count > 999999 then
-    local c = (math.floor)(count * 0.0001)
-    return (StringTable.Get)("str_homeland_backpack_n_w", c)
-  else
-    do
-      do
-        if count > 99999 then
-          local c = (math.floor)(count * 0.001) * 0.1
-          return (StringTable.Get)("str_homeland_backpack_n_w", c)
-        end
-        return tostring(count)
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonItemS5.TxtCountRedIfNotEnough = function(self, cost)
-  -- function num : 0_6 , upvalues : _ENV
-  local c = (self.mRole):GetAssetCount((self.roleAsset).assetid) or 0
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  if cost <= c then
-    (self.txtCount).color = self.colorTxtCount
-  else
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.txtCount).color = Color.red
-  end
-end
-
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonItemS5.SetNotShowTips = function(self, notShowTips)
-  -- function num : 0_7
+  self.imgIcon:LoadImage(icon)
+  self.quality.sprite = self.atlas:GetSprite("exp_s5_map_daoju_pinji0" .. color)
+  self.txtCount:SetText(self:FormatCount(count))
+  self.first:SetActive(roleAsset.first ~= nil)
+  self.funcClick = funcClick
   self._notShowTips = notShowTips
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
+function UISeasonItemS5:SetFin(show)
+  self:GetGameObject("_fin"):SetActive(show)
+end
 
-UISeasonItemS5.BtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  if self.funcClick then
-    (self.funcClick)()
+function UISeasonItemS5:FormatCount(count)
+  if not count or count == "" then
+    return ""
   end
-  if not self._notShowTips then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowItemTips, (self.roleAsset).assetid, ((self._trans).transform).position)
+  if 999999 < count then
+    local c = math.floor(count * 1.0E-4)
+    return StringTable.Get("str_homeland_backpack_n_w", c)
+  elseif 99999 < count then
+    local c = math.floor(count * 0.001) * 0.1
+    return StringTable.Get("str_homeland_backpack_n_w", c)
+  end
+  return tostring(count)
+end
+
+function UISeasonItemS5:TxtCountRedIfNotEnough(cost)
+  local c = self.mRole:GetAssetCount(self.roleAsset.assetid) or 0
+  if cost <= c then
+    self.txtCount.color = self.colorTxtCount
+  else
+    self.txtCount.color = Color.red
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
+function UISeasonItemS5:SetNotShowTips(notShowTips)
+  self._notShowTips = notShowTips
+end
 
-UISeasonItemS5.GetBtn = function(self)
-  -- function num : 0_9
+function UISeasonItemS5:BtnOnClick(go)
+  if self.funcClick then
+    self.funcClick()
+  end
+  if not self._notShowTips then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowItemTips, self.roleAsset.assetid, self._trans.transform.position)
+  end
+end
+
+function UISeasonItemS5:GetBtn()
   return self.bgGo
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonItemS5.SetRect = function(self, scale)
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.rect).localScale = Vector3(scale, scale, scale)
+function UISeasonItemS5:SetRect(scale)
+  self.rect.localScale = Vector3(scale, scale, scale)
 end
-
-

@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/edit/filter/ui_n22_medal_filter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22MedalFilter", UIController)
 UIN22MedalFilter = UIN22MedalFilter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22MedalFilter.Constructor = function(self)
-  -- function num : 0_0
+function UIN22MedalFilter:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalFilter.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN22MedalFilter:OnShow(uiParams)
   self.listData = uiParams[1]
   self.filter = uiParams[2]
   self.clickCallback = uiParams[3]
@@ -23,85 +13,55 @@ UIN22MedalFilter.OnShow = function(self, uiParams)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalFilter.OnHide = function(self)
-  -- function num : 0_2
+function UIN22MedalFilter:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalFilter.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local filters = (self.listData):GetFilterIds()
-  local len = (table.count)(filters)
-  ;
-  (self.poolContent):SpawnObjects("UIN22MedalFilterItem", len)
-  local uis = (self.poolContent):GetAllSpawnList()
-  for i,filter in ipairs(filters) do
-    do
-      local ui = uis[i]
-      local filterData = (self.listData):GetFilterInfoById(filter)
-      local name = filterData.Name
-      ui:Flush(filter, (StringTable.Get)(name), function()
-    -- function num : 0_3_0 , upvalues : self, filter
-    self:FlushSelect(filter)
-    if self.clickCallback then
-      (self.clickCallback)(filter)
-    end
-    self:AnimCloseDialog()
-  end
-)
-    end
+function UIN22MedalFilter:Flush()
+  local filters = self.listData:GetFilterIds()
+  local len = table.count(filters)
+  self.poolContent:SpawnObjects("UIN22MedalFilterItem", len)
+  local uis = self.poolContent:GetAllSpawnList()
+  for i, filter in ipairs(filters) do
+    local ui = uis[i]
+    local filterData = self.listData:GetFilterInfoById(filter)
+    local name = filterData.Name
+    ui:Flush(filter, StringTable.Get(name), function()
+      self:FlushSelect(filter)
+      if self.clickCallback then
+        self.clickCallback(filter)
+      end
+      self:AnimCloseDialog()
+    end)
   end
   self:FlushSelect(self.filter)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalFilter.FlushSelect = function(self, filter)
-  -- function num : 0_4 , upvalues : _ENV
-  local uis = (self.poolContent):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
+function UIN22MedalFilter:FlushSelect(filter)
+  local uis = self.poolContent:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
     ui:FlushSelect(filter)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalFilter.BgOnClick = function(self, go)
-  -- function num : 0_5
+function UIN22MedalFilter:BgOnClick(go)
   self:AnimCloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalFilter.AnimCloseDialog = function(self)
-  -- function num : 0_6
+function UIN22MedalFilter:AnimCloseDialog()
   self:PlayAnimOut(function()
-    -- function num : 0_6_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalFilter.PlayAnimOut = function(self, callback)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN22MedalFilter:PlayAnimOut(callback)
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV, callback
     local key = "uieff_UIN22MedalFilter_out"
     self:Lock(key)
-    ;
-    (self.anim):Play("uieff_UIN22MedalFilter_out")
+    self.anim:Play("uieff_UIN22MedalFilter_out")
     YIELD(TT, 233)
     if callback then
       callback()
     end
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
-
-

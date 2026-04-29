@@ -1,29 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_is_unlock_hp_round.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionIsUnlockHPRound", AINewNode)
 ActionIsUnlockHPRound = ActionIsUnlockHPRound
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionIsUnlockHPRound.Constructor = function(self)
-  -- function num : 0_0
+function ActionIsUnlockHPRound:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionIsUnlockHPRound.OnUpdate = function(self, dt)
-  -- function num : 0_1 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function ActionIsUnlockHPRound:OnUpdate(dt)
+  local battleStatCmpt = self._world:BattleStat()
   local round = battleStatCmpt:GetCurWaveTotalRoundCount()
-  local buffCmpt = (self.m_entityOwn):BuffComponent()
+  local buffCmpt = self.m_entityOwn:BuffComponent()
   local unlockRound = buffCmpt:GetLastUnlockHPRound()
   if round == unlockRound then
     return AINewNodeStatus.Success
   end
   return AINewNodeStatus.Failure
 end
-
-

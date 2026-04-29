@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/cast_chess_move_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CastChessMoveCommand", IEntityCommand)
 CastChessMoveCommand = CastChessMoveCommand
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CastChessMoveCommand.Constructor = function(self)
-  -- function num : 0_0
+function CastChessMoveCommand:Constructor()
   self._commandType = "CastChessMove"
   self._casterEntityID = -1
   self._chessPath = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessMoveCommand.GetCommandType = function(self)
-  -- function num : 0_1
+function CastChessMoveCommand:GetCommandType()
   return self._commandType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessMoveCommand.GetExecStateID = function(self, runAtClient)
-  -- function num : 0_2 , upvalues : _ENV
+function CastChessMoveCommand:GetExecStateID(runAtClient)
   if runAtClient then
     return GameStateID.PickUpChessPet
   else
@@ -32,52 +19,31 @@ CastChessMoveCommand.GetExecStateID = function(self, runAtClient)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessMoveCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function CastChessMoveCommand:IsExecExcluded()
   return 1
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessMoveCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function CastChessMoveCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessMoveCommand.GetCmdCasterEntityID = function(self)
-  -- function num : 0_5
+function CastChessMoveCommand:GetCmdCasterEntityID()
   return self._casterEntityID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessMoveCommand.GetCmdChessPath = function(self)
-  -- function num : 0_6
+function CastChessMoveCommand:GetCmdChessPath()
   return self._chessPath
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessMoveCommand.SetCmdCasterEntityID = function(self, casterEntityID)
-  -- function num : 0_7
+function CastChessMoveCommand:SetCmdCasterEntityID(casterEntityID)
   self._casterEntityID = casterEntityID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessMoveCommand.SetCmdChessPath = function(self, chessPath)
-  -- function num : 0_8
+function CastChessMoveCommand:SetCmdChessPath(chessPath)
   self._chessPath = chessPath
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessMoveCommand.ToNetMessage = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function CastChessMoveCommand:ToNetMessage()
   local msg = CEventCastChessPetMoveCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -85,29 +51,20 @@ CastChessMoveCommand.ToNetMessage = function(self)
   msg.IsAutoFight = self.IsAutoFight
   msg.CmdIndex = self.CmdIndex
   msg.casterEntityID = self:GetCmdCasterEntityID()
-  for i,pos in ipairs(self._chessPath) do
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R7 in 'UnsetPending'
-
-    (msg.chessPath)[#msg.chessPath + 1] = (Vector2.Pos2Index)(pos)
+  for i, pos in ipairs(self._chessPath) do
+    msg.chessPath[#msg.chessPath + 1] = Vector2.Pos2Index(pos)
   end
   return msg
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessMoveCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_10 , upvalues : _ENV
+function CastChessMoveCommand:FromNetMessage(msg)
   self._casterEntityID = msg.casterEntityID
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
   self.IsAutoFight = msg.IsAutoFight
   self.CmdIndex = msg.CmdIndex
-  for i,v in ipairs(msg.chessPath) do
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._chessPath)[#self._chessPath + 1] = (Vector2.Index2Pos)(v)
+  for i, v in ipairs(msg.chessPath) do
+    self._chessPath[#self._chessPath + 1] = Vector2.Index2Pos(v)
   end
 end
-
-

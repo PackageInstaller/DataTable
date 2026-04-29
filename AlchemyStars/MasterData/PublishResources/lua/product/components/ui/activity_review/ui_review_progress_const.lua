@@ -1,23 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/ui_review_progress_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIReviewProgressConst", UICustomWidget)
 UIReviewProgressConst = UIReviewProgressConst
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIReviewProgressConst.SpawnObject = function(uiView, widgetName, reviewData)
-  -- function num : 0_0 , upvalues : _ENV
+function UIReviewProgressConst.SpawnObject(uiView, widgetName, reviewData)
   local id = reviewData and reviewData:ActivityID() or 0
-  local cfg = (Cfg.cfg_activity_review_ui_progress)[id]
+  local cfg = Cfg.cfg_activity_review_ui_progress[id]
   if not cfg then
-    (Log.exception)("UIReviewProgressConst.SpawnObject() cfg_activity_review_ui_progress[", id, "] = nil")
-    return 
+    Log.exception("UIReviewProgressConst.SpawnObject() cfg_activity_review_ui_progress[", id, "] = nil")
+    return
   end
-  local progress = (UIWidgetHelper.SpawnObject)(uiView, widgetName, "UIReviewProgress", cfg.PrefabProgress)
+  local progress = UIWidgetHelper.SpawnObject(uiView, widgetName, "UIReviewProgress", cfg.PrefabProgress)
   progress:SetData(reviewData, cfg)
   return progress
 end
-
-

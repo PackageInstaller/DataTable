@@ -1,31 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/task/ui_n25_vampire_challenge_task.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireChallengeTask", UIController)
 UIN25VampireChallengeTask = UIN25VampireChallengeTask
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireChallengeTask.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25VampireChallengeTask:LoadDataOnEnter(TT, res, uiParams)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_QUEST, ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER)
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_QUEST, ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER)
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  self._questComponent = (self._localProcess):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_QUEST)
-  self._questComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_QUEST)
-  self._bloodsuckerComponent = (self._localProcess):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER)
-  self._bloodsuckerComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER)
+  self._questComponent = self._localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_QUEST)
+  self._questComponentInfo = self._localProcess:GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_QUEST)
+  self._bloodsuckerComponent = self._localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER)
+  self._bloodsuckerComponentInfo = self._localProcess:GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTask.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN25VampireChallengeTask:OnShow(uiParams)
   self.isHide = false
   local TopBtn = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self.poolContent = self:GetUIComponent("UISelectObjectPath", "Content")
@@ -37,163 +26,102 @@ UIN25VampireChallengeTask.OnShow = function(self, uiParams)
   self.tempAni = self:GetUIComponent("Animation", "tempItem")
   local backBtns = TopBtn:SpawnObject("UINewCommonTopButton")
   backBtns:SetData(function()
-    -- function num : 0_1_0 , upvalues : self
     self:CloseDialog()
-  end
-, nil, function()
-    -- function num : 0_1_1 , upvalues : self, _ENV
+  end, nil, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-)
-  ;
-  (self.tempItem):SetActive(false)
+  end)
+  self.tempItem:SetActive(false)
   self:Flush(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTask.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN25VampireChallengeTask:OnHide()
   self.isHide = true
   local strUIN25VampireMain = "UIN25VampireMain"
-  if ((GameGlobal.UIStateManager)()):IsShow(strUIN25VampireMain) then
-    ((GameGlobal.UIStateManager)()):CallUIMethod(strUIN25VampireMain, "FlushRedPointTalentTree")
-    ;
-    ((GameGlobal.UIStateManager)()):CallUIMethod(strUIN25VampireMain, "FlushRedPointChallengeTask")
+  if GameGlobal.UIStateManager():IsShow(strUIN25VampireMain) then
+    GameGlobal.UIStateManager():CallUIMethod(strUIN25VampireMain, "FlushRedPointTalentTree")
+    GameGlobal.UIStateManager():CallUIMethod(strUIN25VampireMain, "FlushRedPointChallengeTask")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTask.Flush = function(self, playAni)
-  -- function num : 0_3 , upvalues : _ENV
-  local componentId = (self._questComponent):GetComponentCfgId((self._campaign)._id, (self._questComponentInfo).m_component_id)
-  self._questInfoList = (self._questComponent):GetQuestInfo()
-  ;
-  (self._questComponent):SortQuestInfoByCampaignQuestStatus(self._questInfoList)
-  local len = (table.count)(self._questInfoList)
-  ;
-  (self.poolContent):SpawnObjects("UIN25VampireChallengeTaskItem", len)
-  self.uis = (self.poolContent):GetAllSpawnList()
+function UIN25VampireChallengeTask:Flush(playAni)
+  local componentId = self._questComponent:GetComponentCfgId(self._campaign._id, self._questComponentInfo.m_component_id)
+  self._questInfoList = self._questComponent:GetQuestInfo()
+  self._questComponent:SortQuestInfoByCampaignQuestStatus(self._questInfoList)
+  local len = table.count(self._questInfoList)
+  self.poolContent:SpawnObjects("UIN25VampireChallengeTaskItem", len)
+  self.uis = self.poolContent:GetAllSpawnList()
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV, playAni
     local lockName = self:GetName() .. "Flush"
     YIELD(TT, 100)
     self:Lock(lockName)
-    for i,data in pairs(self._questInfoList) do
-      local ui = (self.uis)[i]
+    for i, data in pairs(self._questInfoList) do
+      local ui = self.uis[i]
       ui:Flush(data, self, playAni)
       YIELD(TT)
     end
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTask.BackGroundOnClick = function(self, go)
-  -- function num : 0_4
+function UIN25VampireChallengeTask:BackGroundOnClick(go)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTask.ReqAwards = function(self, id)
-  -- function num : 0_5
+function UIN25VampireChallengeTask:ReqAwards(id)
   self:StartTask(self._ReqAwards, self, id)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTask._ReqAwards = function(self, TT, id)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN25VampireChallengeTask:_ReqAwards(TT, id)
   local res = AsyncRequestRes:New()
-  local lastdata = (self._bloodsuckerComponentInfo).talent_info
-  local res, rewards = (self._questComponent):HandleQuestTake(TT, res, id)
+  local lastdata = self._bloodsuckerComponentInfo.talent_info
+  local res, rewards = self._questComponent:HandleQuestTake(TT, res, id)
   if res == 0 then
-    local callback = function()
-    -- function num : 0_6_0 , upvalues : self
-    self:HideCallBack()
-  end
-
+    local function callback()
+      self:HideCallBack()
+    end
+    
     self:ShowDialog("UIN25VampireChallengeTaskGain", self._bloodsuckerComponentInfo, rewards, lastdata, callback, id)
     self:Flush(false)
     YIELD(TT, 100)
     if not self.isHide then
-      (self.tempItem):SetActive(true)
-      ;
-      (self.tempAni):Play("uieffanim_UIN25VampireChallengeTaskItem_in")
+      self.tempItem:SetActive(true)
+      self.tempAni:Play("uieffanim_UIN25VampireChallengeTaskItem_in")
     end
+  else
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTask.HideCallBack = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN25VampireChallengeTask:HideCallBack()
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV
     local lockName = self:GetName() .. "HideCallBack"
     self:Lock(lockName)
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.scrollRect).enabled = false
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.sizeFilter).enabled = false
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.verticalLayoutGroup).enabled = false
-    ;
-    (self.tempAni):Play("uieffanim_UIN25VampireChallengeTaskItem_out")
+    self.scrollRect.enabled = false
+    self.sizeFilter.enabled = false
+    self.verticalLayoutGroup.enabled = false
+    self.tempAni:Play("uieffanim_UIN25VampireChallengeTaskItem_out")
     YIELD(TT, 500)
-    if self.rect == nil or (self.rect).transform == nil then
-      return 
+    if self.rect == nil or self.rect.transform == nil then
+      return
     end
     if self.isHide then
-      return 
+      return
     end
-    ;
-    (((self.rect).transform):DOLocalMoveY((((self.rect).transform).localPosition).y + 293, 0.5)):OnComplete(function()
-      -- function num : 0_7_0_0 , upvalues : self, _ENV, lockName
-      (self.tempItem):SetActive(false)
-      -- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
-
-      ;
-      (self.scrollRect).enabled = true
-      -- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
-      ;
-      (self.sizeFilter).enabled = true
-      -- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-      ;
-      (self.verticalLayoutGroup).enabled = true
-      -- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-      ;
-      (self.rect).anchoredPosition = Vector2(0, 0)
+    self.rect.transform:DOLocalMoveY(self.rect.transform.localPosition.y + 293, 0.5):OnComplete(function()
+      self.tempItem:SetActive(false)
+      self.scrollRect.enabled = true
+      self.sizeFilter.enabled = true
+      self.verticalLayoutGroup.enabled = true
+      self.rect.anchoredPosition = Vector2(0, 0)
       self:UnLock(lockName)
-    end
-)
-  end
-, self)
+    end)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTask.GetNextShowData = function(self)
-  -- function num : 0_8
+function UIN25VampireChallengeTask:GetNextShowData()
   if not self._questInfoList then
-    return 
+    return
   end
   if #self._questInfoList < 2 then
-    return 
+    return
   end
-  return (self._questInfoList)[2]
+  return self._questInfoList[2]
 end
-
-

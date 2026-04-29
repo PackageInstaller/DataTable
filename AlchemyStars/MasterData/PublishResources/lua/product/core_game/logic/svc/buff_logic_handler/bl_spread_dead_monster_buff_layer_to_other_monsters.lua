@@ -1,65 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_spread_dead_monster_buff_layer_to_other_monsters.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSpreadDeadMonsterBuffLayerToOtherMonsters", BuffLogicBase)
 BuffLogicSpreadDeadMonsterBuffLayerToOtherMonsters = BuffLogicSpreadDeadMonsterBuffLayerToOtherMonsters
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSpreadDeadMonsterBuffLayerToOtherMonsters.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._maxSingleTargetAddLayer = logicParam.maxSingleTargetAddLayer
-  end
+function BuffLogicSpreadDeadMonsterBuffLayerToOtherMonsters:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._maxSingleTargetAddLayer = logicParam.maxSingleTargetAddLayer
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSpreadDeadMonsterBuffLayerToOtherMonsters.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local targetSelector = (self._world):GetSkillScopeTargetSelector()
-  local e = (self._buffInstance):Entity()
-  local lsvcBuff = (self._world):GetService("BuffLogic")
+function BuffLogicSpreadDeadMonsterBuffLayerToOtherMonsters:DoLogic(notify)
+  local targetSelector = self._world:GetSkillScopeTargetSelector()
+  local e = self._buffInstance:Entity()
+  local lsvcBuff = self._world:GetService("BuffLogic")
   local eNotify = notify:GetNotifyEntity()
   local layer = lsvcBuff:GetBuffLayer(eNotify, self._layerType)
   if not layer or layer <= 0 then
-    return 
+    return
   end
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalculator = SkillScopeCalculator:New(utilScopeSvc)
   local fullScreenCalc = SkillScopeCalculator_FullScreen:New(scopeCalculator)
-  local scopeResult = fullScreenCalc:CalcRange(SkillScopeType.FullScreen, 0, e:GetGridPosition(), (e:BodyArea()):GetArea(), e:GetGridDirection(), SkillTargetType.Monster, e:GetGridPosition())
+  local scopeResult = fullScreenCalc:CalcRange(SkillScopeType.FullScreen, 0, e:GetGridPosition(), e:BodyArea():GetArea(), e:GetGridDirection(), SkillTargetType.Monster, e:GetGridPosition())
   local tmpTargetIDs = targetSelector:DoSelectSkillTarget(e, SkillTargetType.Monster, scopeResult)
   local targetIDs = {}
-  for _,id in ipairs(tmpTargetIDs) do
-    if id ~= eNotify:GetID() and not (table.icontains)(targetIDs, id) then
-      (table.insert)(targetIDs, id)
+  for _, id in ipairs(tmpTargetIDs) do
+    if id ~= eNotify:GetID() and not table.icontains(targetIDs, id) then
+      table.insert(targetIDs, id)
     end
   end
   if #targetIDs == 0 then
-    return 
+    return
   end
   local ownerEntity = notify:GetNotifyEntity()
   local ownerEntityID = ownerEntity and ownerEntity:GetID() or nil
   local defenderEntity = notify:GetDefenderEntity()
   local defenderEntityID = defenderEntity and defenderEntity:GetID() or nil
   local result = BuffResultSpreadDeadMonsterBuffLayerToOtherMonsters:New(ownerEntityID, defenderEntityID)
-  local avgLayer = (math.ceil)(layer / #targetIDs)
-  if self._maxSingleTargetAddLayer < avgLayer then
+  local avgLayer = math.ceil(layer / #targetIDs)
+  if avgLayer > self._maxSingleTargetAddLayer then
     avgLayer = self._maxSingleTargetAddLayer
   end
-  for _,targetID in ipairs(targetIDs) do
-    local eTarget = (self._world):GetEntityByID(targetID)
-    local buffInstance = (eTarget:BuffComponent()):GetSingleBuffByBuffEffect(self._layerType)
-    if not (self._buffInstance):Context() or not ((self._buffInstance):Context()).casterEntity then
-      local casterEntity = not buffInstance or nil
+  for _, targetID in ipairs(targetIDs) do
+    local eTarget = self._world:GetEntityByID(targetID)
+    local buffInstance = eTarget:BuffComponent():GetSingleBuffByBuffEffect(self._layerType)
+    if buffInstance then
+      local casterEntity = self._buffInstance:Context() and self._buffInstance:Context().casterEntity or nil
+      local finalLayer = lsvcBuff:AddBuffLayer(eTarget, self._layerType, avgLayer, nil, casterEntity, "SpreadDeadMonsterBuffLayerToOtherMonsters")
+      result:AddSpreadResult(targetID, self._layerType, avgLayer, finalLayer, buffInstance:BuffSeq(), casterEntity)
     end
-    local finalLayer = lsvcBuff:AddBuffLayer(eTarget, self._layerType, avgLayer, nil, casterEntity, "SpreadDeadMonsterBuffLayerToOtherMonsters")
-    result:AddSpreadResult(targetID, self._layerType, avgLayer, finalLayer, buffInstance:BuffSeq(), casterEntity)
   end
   return result
 end
-
-

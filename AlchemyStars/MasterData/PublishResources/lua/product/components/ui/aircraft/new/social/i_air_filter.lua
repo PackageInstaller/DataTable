@@ -1,35 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/social/i_air_filter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("IAirFilter", Object)
 IAirFilter = IAirFilter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-IAirFilter.Filter = function(self, elements)
-  -- function num : 0_0
+function IAirFilter:Filter(elements)
 end
 
 _class("SocialWeightFilter", IAirFilter)
 SocialWeightFilter = SocialWeightFilter
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-SocialWeightFilter.Filter = function(self, pet)
-  -- function num : 0_1
+function SocialWeightFilter:Filter(pet)
   return true
 end
 
 _class("AreaFilter", IAirFilter)
 AreaFilter = AreaFilter
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-AreaFilter.Filter = function(self, pet)
-  -- function num : 0_2
+function AreaFilter:Filter(pet)
   local area = pet:GetWanderingArea()
   local spaceId = pet:GetSpace()
-  do return area ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return area ~= nil
 end
-
-

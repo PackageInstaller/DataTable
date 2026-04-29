@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/bead/season_maze_bead_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeBeadData", Object)
 SeasonMazeBeadData = SeasonMazeBeadData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeBeadData.Constructor = function(self, index, data)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMazeBeadData:Constructor(index, data)
   self.index = index
   self.data = data
   if self.data then
-    local cfg = (Cfg.cfg_component_season_maze_autobead)[(data.bead_info).cfg_id]
+    local cfg = Cfg.cfg_component_season_maze_autobead[data.bead_info.cfg_id]
     if cfg then
       self.level = cfg.Lv
       self.type = cfg.Type
@@ -23,24 +16,16 @@ SeasonMazeBeadData.Constructor = function(self, index, data)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeBeadData.IsMax = function(self)
-  -- function num : 0_1
-  do return not self.level or self.level == 4 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function SeasonMazeBeadData:IsMax()
+  return self.level and self.level == 4
 end
 
 _class("SeasonMazeBeadPair", Object)
 SeasonMazeBeadPair = SeasonMazeBeadPair
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeBeadPair.Constructor = function(self, uid1, uid2, beadData1, beadData2)
-  -- function num : 0_2
+function SeasonMazeBeadPair:Constructor(uid1, uid2, beadData1, beadData2)
   self.uid1 = uid1
   self.uid2 = uid2
   self.beadData = {beadData1, beadData2}
   self.choice = true
 end
-
-

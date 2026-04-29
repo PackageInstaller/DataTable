@@ -1,8 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/str_notice.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_notice_system_notice = "시스템 공지", str_notice_active_notice = "이벤트 공지", str_notice_login_sure = "확인"}
+local config = {
+  str_notice_system_notice = "시스템 공지",
+  str_notice_active_notice = "이벤트 공지",
+  str_notice_login_sure = "확인"
+}
 return config
-

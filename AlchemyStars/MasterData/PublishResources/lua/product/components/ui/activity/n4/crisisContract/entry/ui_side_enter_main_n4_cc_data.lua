@@ -1,21 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/entry/ui_side_enter_main_n4_cc_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_lobby_center_camp_data")
 _class("UISideEnterMainN4CCData", MainLobbyCenterCampData)
 UISideEnterMainN4CCData = UISideEnterMainN4CCData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterMainN4CCData.CheckNew = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local btnKey = (self._cfg).BtnKey
-  local cfg = (Cfg.cfg_main_side_enter_btn)[btnKey]
+function UISideEnterMainN4CCData:CheckNew()
+  local btnKey = self._cfg.BtnKey
+  local cfg = Cfg.cfg_main_side_enter_btn[btnKey]
   local campType = cfg.CampaignType
   local campID = cfg.CampaignId
-  local campModule = ((GameGlobal.GetModule)(CampaignModule))
-  local sampleInfo = nil
+  local campModule = GameGlobal.GetModule(CampaignModule)
+  local sampleInfo
   if campID then
     sampleInfo = campModule:GetReviewCampaignSampleByCampaignId(campID)
   else
@@ -23,5 +16,3 @@ UISideEnterMainN4CCData.CheckNew = function(self)
   end
   return sampleInfo and sampleInfo:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_CAN_CHALLENGE) and 1 or 0
 end
-
-

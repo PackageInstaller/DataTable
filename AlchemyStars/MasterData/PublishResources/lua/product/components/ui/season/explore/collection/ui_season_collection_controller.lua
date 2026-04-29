@@ -1,49 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/explore/collection/ui_season_collection_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonCollectionController", UIController)
 UISeasonCollectionController = UISeasonCollectionController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonCollectionController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonCollectionController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollectionController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonCollectionController:OnShow(uiParams)
   self:InitWidget()
   self:_RefreshCgNew()
   self:_RefreshMusicNew()
   self:_RefreshRareItemNew()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollectionController.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonCollectionController:InitWidget()
   local topBtns = self:GetUIComponent("UISelectObjectPath", "TopBtns")
   self._backBtns = topBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, nil, function()
-    -- function num : 0_2_1 , upvalues : _ENV, self
-    local currentStateUI = ((GameGlobal.UIStateManager)()):CurUIStateType()
+  end, nil, function()
+    local currentStateUI = GameGlobal.UIStateManager():CurUIStateType()
     if currentStateUI == UIStateType.UISeasonExploreMainController then
       self:SwitchState(UIStateType.UIMain)
     else
-      ;
-      ((GameGlobal.GetUIModule)(SeasonModule)):ExitSeasonTo(UIStateType.UIMain)
+      GameGlobal.GetUIModule(SeasonModule):ExitSeasonTo(UIStateType.UIMain)
     end
-  end
-)
+  end)
   self.cgBtn = self:GetUIComponent("Image", "CgBtn")
   self.musicBtn = self:GetUIComponent("Image", "MusicBtn")
   self.rareBtn = self:GetUIComponent("Image", "RareBtn")
@@ -52,64 +33,35 @@ UISeasonCollectionController.InitWidget = function(self)
   self.newRare = self:GetGameObject("newRare")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollectionController.CgBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonCollectionController:CgBtnOnClick(go)
   self:ShowDialog("UISeasonCgCollectionController", function()
-    -- function num : 0_3_0 , upvalues : self
     self:_RefreshCgNew()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollectionController.MusicBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UISeasonCollectionController:MusicBtnOnClick(go)
   self:ShowDialog("UISeasonMusicCollectionController", function()
-    -- function num : 0_4_0 , upvalues : self
     self:_RefreshMusicNew()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollectionController.RareBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UISeasonCollectionController:RareBtnOnClick(go)
   self:ShowDialog("UISeasonRareCollectionController", function()
-    -- function num : 0_5_0 , upvalues : self
     self:_RefreshRareItemNew()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollectionController._RefreshCgNew = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local hasNew = (UISeasonExploreHelper.IsSeasonCgHasNew)()
-  ;
-  (self.newCg):SetActive(hasNew)
+function UISeasonCollectionController:_RefreshCgNew()
+  local hasNew = UISeasonExploreHelper.IsSeasonCgHasNew()
+  self.newCg:SetActive(hasNew)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollectionController._RefreshMusicNew = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local hasNew = (UISeasonExploreHelper.IsSeasonMusicHasNew)()
-  ;
-  (self.newMusic):SetActive(hasNew)
+function UISeasonCollectionController:_RefreshMusicNew()
+  local hasNew = UISeasonExploreHelper.IsSeasonMusicHasNew()
+  self.newMusic:SetActive(hasNew)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollectionController._RefreshRareItemNew = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local hasNew = (UISeasonExploreHelper.IsSeasonRareItemHasNew)()
-  ;
-  (self.newRare):SetActive(hasNew)
+function UISeasonCollectionController:_RefreshRareItemNew()
+  local hasNew = UISeasonExploreHelper.IsSeasonRareItemHasNew()
+  self.newRare:SetActive(hasNew)
 end
-
-

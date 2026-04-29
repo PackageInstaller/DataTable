@@ -1,36 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_pet_skill_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopPetSkillItem", UICustomWidget)
 UIShopPetSkillItem = UIShopPetSkillItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopPetSkillItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopPetSkillItem:Constructor()
   self._index = 1
   self._skillConfigHelper = SkillConfigHelper:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetSkillItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopPetSkillItem:OnShow()
   self._go = self:GetGameObject()
   self._Anim = self:GetUIComponent("Animation", "Anim")
   self._imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self._txtSkill = self:GetUIComponent("UILocalizationText", "txtSkill")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._txtDesc = self:GetUIComponent("UILocalizedTMP", "txtDesc")
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._txtDesc).onHrefClick = function(hrefName)
-    -- function num : 0_1_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):ShowDialog("UISkillHrefInfo", hrefName)
+  
+  function self._txtDesc.onHrefClick(hrefName)
+    GameGlobal.UIStateManager():ShowDialog("UISkillHrefInfo", hrefName)
   end
-
+  
   self._txtEnergy = self:GetUIComponent("UILocalizationText", "txtEnergy")
   self._energy = self:GetGameObject("energy")
   self._chain = self:GetGameObject("chain")
@@ -45,9 +32,8 @@ UIShopPetSkillItem.OnShow = function(self)
   self._chainSkillSpawns = nil
   local sop = self:GetUIComponent("UISelectObjectPath", "preattack")
   sop:SpawnObject("UIPreAttackItem")
-  self.preAttackCell = (sop:GetAllSpawnList())[1]
-  ;
-  (self.preAttackCell):Enable(false)
+  self.preAttackCell = sop:GetAllSpawnList()[1]
+  self.preAttackCell:Enable(false)
   self._activeVar = self:GetUIComponent("UISelectObjectPath", "activeVar")
   self._activeVarGo = self:GetGameObject("activeVar")
   self._topCanvasGroup = self:GetUIComponent("CanvasGroup", "top")
@@ -56,167 +42,130 @@ UIShopPetSkillItem.OnShow = function(self)
   self._activeVarTipGo = self:GetGameObject("activeVarTip")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetSkillItem.ShowInAnim = function(self)
-  -- function num : 0_2
-  (self._Anim):Play("uieff_UIShopPetSkillItem_in")
+function UIShopPetSkillItem:ShowInAnim()
+  self._Anim:Play("uieff_UIShopPetSkillItem_in")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetSkillItem.HideAnim = function(self)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._topCanvasGroup).alpha = 0
+function UIShopPetSkillItem:HideAnim()
+  self._topCanvasGroup.alpha = 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetSkillItem.ShowPreAttack = function(self)
-  -- function num : 0_4
+function UIShopPetSkillItem:ShowPreAttack()
   if self.preAttackCell then
-    (self.preAttackCell):SetData(nil, self._skillID, true, self.pet)
+    self.preAttackCell:SetData(nil, self._skillID, true, self.pet)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetSkillItem.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIShopPetSkillItem:OnHide()
   if self._imgIcon then
-    (self._imgIcon):DestoryLastImage()
+    self._imgIcon:DestoryLastImage()
   end
   self:DetachEvent(GameEventType.OnUISkillScopeClose, self.OnUISkillScopeClose)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetSkillItem.SetActiveVar = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._activeVarGo):SetActive(false)
-  ;
-  (self._activeVarTipGo):SetActive(false)
-  local cfg = nil
+function UIShopPetSkillItem:SetActiveVar()
+  self._activeVarGo:SetActive(false)
+  self._activeVarTipGo:SetActive(false)
+  local cfg
   cfg = BattleSkillCfg(self._skillID)
   if cfg then
     local skillType = cfg.Type
     if skillType == PetSkillType.SkillType_Active then
-      local activeVar = nil
+      local activeVar
       local activeSkillID = self._skillID
-      local activeVarTab = (self.pet):GetPetVariantActiveSkill()
-      if activeVarTab and (table.count)(activeVarTab) > 0 then
+      local activeVarTab = self.pet:GetPetVariantActiveSkill()
+      if activeVarTab and table.count(activeVarTab) > 0 then
         activeVar = activeVarTab[activeSkillID]
       end
-      if activeVar and (table.count)(activeVar) > 0 then
+      if activeVar and table.count(activeVar) > 0 then
         self._activeVarIdx = 1
         self._activeVarTab = {}
-        ;
-        (table.insert)(self._activeVarTab, self._skillID)
-        for index,value in ipairs(activeVar) do
-          (table.insert)(self._activeVarTab, value)
+        table.insert(self._activeVarTab, self._skillID)
+        for index, value in ipairs(activeVar) do
+          table.insert(self._activeVarTab, value)
         end
-        ;
-        (self._activeVarTipGo):SetActive(true)
-        ;
-        (self._activeVarGo):SetActive(true)
-        self._activeVarPool = (self._activeVar):SpawnObject("UIFightSkillActiveVar")
+        self._activeVarTipGo:SetActive(true)
+        self._activeVarGo:SetActive(true)
+        self._activeVarPool = self._activeVar:SpawnObject("UIFightSkillActiveVar")
         local count = #self._activeVarTab
-        ;
-        (self._activeVarPool):SetData(count, self._activeVarIdx, function(idx)
-    -- function num : 0_6_0 , upvalues : self
-    self:ChangeVarIdx(idx)
-  end
-, UIFightSkillActiveVarFromType.Shop)
+        self._activeVarPool:SetData(count, self._activeVarIdx, function(idx)
+          self:ChangeVarIdx(idx)
+        end, UIFightSkillActiveVarFromType.Shop)
       end
-    else
-      do
-        if skillType == PetSkillType.SkillType_ChainSkill then
-          local count = (table.count)(self._skillList)
-          if count > 1 then
-            (self._activeVarGo):SetActive(true)
-            self._activeVarPool = (self._activeVar):SpawnObject("UIFightSkillActiveVar")
-            ;
-            (self._activeVarPool):SetData(count, self._index, function(idx)
-    -- function num : 0_6_1 , upvalues : self
-    self:ChangeVarIdx(idx)
-  end
-, UIFightSkillActiveVarFromType.Shop)
-          end
-        end
+    elseif skillType == PetSkillType.SkillType_ChainSkill then
+      local count = table.count(self._skillList)
+      if 1 < count then
+        self._activeVarGo:SetActive(true)
+        self._activeVarPool = self._activeVar:SpawnObject("UIFightSkillActiveVar")
+        self._activeVarPool:SetData(count, self._index, function(idx)
+          self:ChangeVarIdx(idx)
+        end, UIFightSkillActiveVarFromType.Shop)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetSkillItem.ChangeVarIdx = function(self, idx)
-  -- function num : 0_7 , upvalues : _ENV
+function UIShopPetSkillItem:ChangeVarIdx(idx)
   local cfg = BattleSkillCfg(self._skillID)
   if cfg.Type == PetSkillType.SkillType_ChainSkill then
     self._index = idx
     local skills = {}
-    local len = (table.count)(self._skillList)
-    for i,v in ipairs(self._skillList) do
-      local skillData = (self._skillConfigHelper):GetSkillData(v)
-      local skill = {id = skillData:GetID(), name = skillData:GetSkillName(), desc = skillData:GetPetSkillDes(), icon = skillData:GetSkillIcon(), chainCount = skillData:GetSkillTriggerParam()}
-      ;
-      (table.insert)(skills, skill)
+    local len = table.count(self._skillList)
+    for i, v in ipairs(self._skillList) do
+      local skillData = self._skillConfigHelper:GetSkillData(v)
+      local skill = {
+        id = skillData:GetID(),
+        name = skillData:GetSkillName(),
+        desc = skillData:GetPetSkillDes(),
+        icon = skillData:GetSkillIcon(),
+        chainCount = skillData:GetSkillTriggerParam()
+      }
+      table.insert(skills, skill)
     end
     self:ImgIconDOFadeCallback(len, skills)
   else
-    do
-      local skillid = (self._activeVarTab)[idx]
-      self._skillID = skillid
-      self:RefreshData()
-    end
+    local skillid = self._activeVarTab[idx]
+    self._skillID = skillid
+    self:RefreshData()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetSkillItem.RefreshData = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIShopPetSkillItem:RefreshData()
   local skill_cfg = BattleSkillCfg(self._skillID)
   local skillType = skill_cfg.Type
   local skillTypeStr = ""
-  local id = nil
+  local id
   if skillType == PetSkillType.SkillType_Active then
     skillTypeStr = "str_pet_config_common_major_des"
     id = self._skillID
-  else
-    if skillType == PetSkillType.SkillType_ChainSkill then
-      skillTypeStr = "str_pet_config_common_chain_des"
-      id = self._skillList
-    else
-      if skillType == PetSkillType.SkillType_Passive then
-        skillTypeStr = "str_pet_config_skill_equip"
-        id = self._skillID
-      end
-    end
+  elseif skillType == PetSkillType.SkillType_ChainSkill then
+    skillTypeStr = "str_pet_config_common_chain_des"
+    id = self._skillList
+  elseif skillType == PetSkillType.SkillType_Passive then
+    skillTypeStr = "str_pet_config_skill_equip"
+    id = self._skillID
   end
-  ;
-  (self._txtSkill):SetText((StringTable.Get)(skillTypeStr))
+  self._txtSkill:SetText(StringTable.Get(skillTypeStr))
   self._chainSkillSpawns = nil
   self._chainSkillSpawns = nil
   if skillType == PetSkillType.SkillType_ChainSkill then
-    (self._energy):SetActive(false)
-    ;
-    (self._chain):SetActive(true)
+    self._energy:SetActive(false)
+    self._chain:SetActive(true)
     local skills = {}
-    local len = (table.count)(id)
-    ;
-    (self._chainSkill):SpawnObjects("UIPetChainSkillItem", len)
-    self._chainSkillSpawns = (self._chainSkill):GetAllSpawnList()
-    for i,v in ipairs(id) do
-      local skillConfigData = (self._skillConfigHelper):GetSkillData(v)
-      local skill = {id = skillConfigData:GetID(), name = skillConfigData:GetSkillName(), desc = skillConfigData:GetPetSkillDes(), icon = skillConfigData:GetSkillIcon(), chainCount = skillConfigData:GetSkillTriggerParam()}
-      ;
-      (table.insert)(skills, skill)
-      ;
-      ((self._chainSkillSpawns)[i]):Flush(skill)
+    local len = table.count(id)
+    self._chainSkill:SpawnObjects("UIPetChainSkillItem", len)
+    self._chainSkillSpawns = self._chainSkill:GetAllSpawnList()
+    for i, v in ipairs(id) do
+      local skillConfigData = self._skillConfigHelper:GetSkillData(v)
+      local skill = {
+        id = skillConfigData:GetID(),
+        name = skillConfigData:GetSkillName(),
+        desc = skillConfigData:GetPetSkillDes(),
+        icon = skillConfigData:GetSkillIcon(),
+        chainCount = skillConfigData:GetSkillTriggerParam()
+      }
+      table.insert(skills, skill)
+      self._chainSkillSpawns[i]:Flush(skill)
     end
     self._index = 1
     if len == 1 then
@@ -224,63 +173,52 @@ UIShopPetSkillItem.RefreshData = function(self)
     else
       self:ImgIconDOFadeCallback(len, skills)
     end
-  else
-    do
-      if skillType == PetSkillType.SkillType_Active then
-        (self._chain):SetActive(false)
-        local skillConfigData = (self._skillConfigHelper):GetSkillData(id)
-        if skillConfigData then
-          (self._go):SetActive(true)
-          if (UILogicPetHelper.ShowSkillEnergy)(skillConfigData:GetSkillTriggerType()) then
-            (self._energy):SetActive(true)
-          else
-            ;
-            (self._energy):SetActive(false)
-          end
-          local skill = {id = skillConfigData:GetID(), name = skillConfigData:GetSkillName(), desc = skillConfigData:GetPetSkillDes(), icon = skillConfigData:GetSkillIcon(), chainCount = skillConfigData:GetSkillTriggerParam()}
-          self:FlushOtherSkill(skill, PetSkillType.SkillType_Active)
-          ;
-          (self._txtEnergy):SetText((StringTable.Get)("str_discovery_cool_down", skillConfigData:GetSkillTriggerParam()))
-        else
-          do
-            do
-              ;
-              (self._go):SetActive(false)
-              if skillType == PetSkillType.SkillType_Passive then
-                (self._energy):SetActive(false)
-                ;
-                (self._chain):SetActive(false)
-                local confV = BattleSkillCfg(id)
-                if confV then
-                  (self._go):SetActive(true)
-                  local skill = {id = confV.ID, name = confV.Name, desc = confV.Desc, icon = confV.Icon, chainCount = confV.TriggerParam}
-                  self:FlushEquipSkill(skill)
-                else
-                  do
-                    do
-                      ;
-                      (self._go):SetActive(false)
-                      -- DECOMPILER ERROR at PC226: Confused about usage of register: R5 in 'UnsetPending'
-
-                      if self._sv then
-                        (self._sv).verticalNormalizedPosition = 1
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+  elseif skillType == PetSkillType.SkillType_Active then
+    self._chain:SetActive(false)
+    local skillConfigData = self._skillConfigHelper:GetSkillData(id)
+    if skillConfigData then
+      self._go:SetActive(true)
+      if UILogicPetHelper.ShowSkillEnergy(skillConfigData:GetSkillTriggerType()) then
+        self._energy:SetActive(true)
+      else
+        self._energy:SetActive(false)
       end
+      local skill = {
+        id = skillConfigData:GetID(),
+        name = skillConfigData:GetSkillName(),
+        desc = skillConfigData:GetPetSkillDes(),
+        icon = skillConfigData:GetSkillIcon(),
+        chainCount = skillConfigData:GetSkillTriggerParam()
+      }
+      self:FlushOtherSkill(skill, PetSkillType.SkillType_Active)
+      self._txtEnergy:SetText(StringTable.Get("str_discovery_cool_down", skillConfigData:GetSkillTriggerParam()))
+    else
+      self._go:SetActive(false)
     end
+  elseif skillType == PetSkillType.SkillType_Passive then
+    self._energy:SetActive(false)
+    self._chain:SetActive(false)
+    local confV = BattleSkillCfg(id)
+    if confV then
+      self._go:SetActive(true)
+      local skill = {
+        id = confV.ID,
+        name = confV.Name,
+        desc = confV.Desc,
+        icon = confV.Icon,
+        chainCount = confV.TriggerParam
+      }
+      self:FlushEquipSkill(skill)
+    else
+      self._go:SetActive(false)
+    end
+  end
+  if self._sv then
+    self._sv.verticalNormalizedPosition = 1
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetSkillItem.Flush = function(self, nIndex, clientPet, skill_id_list)
-  -- function num : 0_9
+function UIShopPetSkillItem:Flush(nIndex, clientPet, skill_id_list)
   self.pet = clientPet
   self._petId = clientPet:GetTemplateID()
   self._skillList = skill_id_list
@@ -290,115 +228,75 @@ UIShopPetSkillItem.Flush = function(self, nIndex, clientPet, skill_id_list)
   self:ShowPreAttack()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetSkillItem.ImgIconDOFadeCallback = function(self, len, skills)
-  -- function num : 0_10
+function UIShopPetSkillItem:ImgIconDOFadeCallback(len, skills)
   local skill = skills[self._index]
   if skill then
     self:FlushOtherSkill(skill, len)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetSkillItem.FlushEquipSkill = function(self, skill, len)
-  -- function num : 0_11 , upvalues : _ENV
-  local descStr = (HelperProxy:GetInstance()):GetEquipSkillDesc(skill.desc, (self.pet):GetTemplateID(), (self.pet):GetEquipLv(), skill.id)
-  ;
-  (self._txtDesc):SetText(descStr)
+function UIShopPetSkillItem:FlushEquipSkill(skill, len)
+  local descStr = HelperProxy:GetInstance():GetEquipSkillDesc(skill.desc, self.pet:GetTemplateID(), self.pet:GetEquipLv(), skill.id)
+  self._txtDesc:SetText(descStr)
   self:FlushSkill(skill, len)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetSkillItem.FlushOtherSkill = function(self, skill, len)
-  -- function num : 0_12
-  (self._txtDesc):SetText(skill.desc)
+function UIShopPetSkillItem:FlushOtherSkill(skill, len)
+  self._txtDesc:SetText(skill.desc)
   self:FlushSkill(skill, len)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetSkillItem.FlushSkill = function(self, skill, len)
-  -- function num : 0_13 , upvalues : _ENV
-  (self._imgIcon):DestoryLastImage()
-  ;
-  (self._imgIcon):LoadImage(skill.icon)
-  ;
-  (self._txtName):SetText((StringTable.Get)(skill.name))
-  self._canViewSkillScope = (self._module):CanSkillPreview(skill.id)
-  ;
-  (self._btnScope):SetActive(not self._btnScope or self._canViewSkillScope or false)
+function UIShopPetSkillItem:FlushSkill(skill, len)
+  self._imgIcon:DestoryLastImage()
+  self._imgIcon:LoadImage(skill.icon)
+  self._txtName:SetText(StringTable.Get(skill.name))
+  self._canViewSkillScope = self._module:CanSkillPreview(skill.id)
+  if self._btnScope then
+    self._btnScope:SetActive(self._canViewSkillScope or false)
+  end
   if self._canViewSkillScope then
     self._atlas = self:GetAsset("UIShop.spriteatlas", LoadType.SpriteAtlas)
-    self._state2sprite = {[1] = "spirit_xiangqing_btn4", [2] = "spirit_xiangqing_btn3"}
-    self._state2texColor = {[1] = Color(1, 1, 1, 1), [2] = Color(0.56862745098039, 0.56862745098039, 0.56862745098039, 1)}
+    self._state2sprite = {
+      [1] = "spirit_xiangqing_btn4",
+      [2] = "spirit_xiangqing_btn3"
+    }
+    self._state2texColor = {
+      [1] = Color(1, 1, 1, 1),
+      [2] = Color(0.5686274509803921, 0.5686274509803921, 0.5686274509803921, 1)
+    }
   end
   if self._chainSkillSpawns then
-    for i,v in ipairs(self._chainSkillSpawns) do
+    for i, v in ipairs(self._chainSkillSpawns) do
       v:FlushSelect(skill.id, len)
     end
   end
-  do
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FlushSkillScope, skill.id)
-  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FlushSkillScope, skill.id)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetSkillItem.imgIconOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
-  (Log.warn)("### imgIconOnClick ")
+function UIShopPetSkillItem:imgIconOnClick(go)
+  Log.warn("### imgIconOnClick ")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetSkillItem.btnScopeOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIShopPetSkillItem:btnScopeOnClick(go)
   if self._canViewSkillScope then
-    (self._btnScopeImg).sprite = (self._atlas):GetSprite((self._state2sprite)[2])
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._btnTex).color = (self._state2texColor)[2]
+    self._btnScopeImg.sprite = self._atlas:GetSprite(self._state2sprite[2])
+    self._btnTex.color = self._state2texColor[2]
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._skillIconRect).sizeDelta = Vector2(162, 157)
-  local cfg = (BattleSkillCfg(self._skillID))
-  -- DECOMPILER ERROR at PC23: Overwrote pending register: R3 in 'AssignReg'
-
-  local skillID = .end
+  self._skillIconRect.sizeDelta = Vector2(162, 157)
+  local cfg = BattleSkillCfg(self._skillID)
+  local skillID
   if cfg.Type ~= PetSkillType.SkillType_ChainSkill then
     skillID = self._skillID
   else
-    skillID = (self._skillList)[self._index]
+    skillID = self._skillList[self._index]
   end
-  self:ShowDialog("UISkillScope", skillID, nil, (self._btnScope).transform, self.pet)
+  self:ShowDialog("UISkillScope", skillID, nil, self._btnScope.transform, self.pet)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopPetSkillItem.OnUISkillScopeClose = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIShopPetSkillItem:OnUISkillScopeClose()
   if self._canViewSkillScope then
-    (self._btnScopeImg).sprite = (self._atlas):GetSprite((self._state2sprite)[1])
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._btnTex).color = (self._state2texColor)[1]
+    self._btnScopeImg.sprite = self._atlas:GetSprite(self._state2sprite[1])
+    self._btnTex.color = self._state2texColor[1]
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillIconRect).sizeDelta = Vector2(146, 141)
+  self._skillIconRect.sizeDelta = Vector2(146, 141)
 end
-
-

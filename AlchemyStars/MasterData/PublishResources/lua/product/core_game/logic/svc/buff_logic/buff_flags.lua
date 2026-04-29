@@ -1,7 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic/buff_flags.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-BuffFlags = {SkipTurn = 0, ImmuneAttack = 1, ImmuneControl = 2, Silence = 3, Benumb = 4, Invincible = 8, BreakInvincible = 16, SealedCurse = 32, CanOverdraw = 33, Overdraw = 34, Pet1702361NotLinkLine = 35, MAX = 63}
-
+BuffFlags = {
+  SkipTurn = 0,
+  ImmuneAttack = 1,
+  ImmuneControl = 2,
+  Silence = 3,
+  Benumb = 4,
+  Invincible = 8,
+  BreakInvincible = 16,
+  SealedCurse = 32,
+  CanOverdraw = 33,
+  Overdraw = 34,
+  Pet1702361NotLinkLine = 35,
+  MAX = 63
+}

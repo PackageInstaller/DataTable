@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n26/ui_activity_n26_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN26Helper", Object)
 UIActivityN26Helper = UIActivityN26Helper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN26Helper.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityN26Helper:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26Helper.CheckComponentStatus = function(component)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN26Helper.CheckComponentStatus(component)
   if not component then
     return ActivityComponentStatus.Close, 0
   end
@@ -22,18 +12,18 @@ UIActivityN26Helper.CheckComponentStatus = function(component)
   if not info then
     return ActivityComponentStatus.Close, 0
   end
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  if info.m_close_time <= curTime then
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  if curTime >= info.m_close_time then
     return ActivityComponentStatus.Close, 0
   end
   local opentTime = info.m_open_time
   local unLockTime = info.m_unlock_time
   local time = opentTime
-  if time < unLockTime then
+  if unLockTime > time then
     time = unLockTime
   end
-  if time < curTime then
+  if curTime > time then
     if not info.m_b_unlock then
       return ActivityComponentStatus.MissionLock, 0
     end
@@ -42,209 +32,157 @@ UIActivityN26Helper.CheckComponentStatus = function(component)
   return ActivityComponentStatus.TimeLock, time - curTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26Helper.GetTimeString = function(seconds)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN26Helper.GetTimeString(seconds)
   if seconds < 0 then
     seconds = 0
   end
   local timeStr = ""
-  local day = (math.floor)(seconds / 3600 / 24)
-  if day > 0 then
+  local day = math.floor(seconds / 3600 / 24)
+  if 0 < day then
     seconds = seconds - day * 3600 * 24
-    local hour = (math.floor)((seconds) / 3600)
-    timeStr = (StringTable.Get)("str_n26_day", day)
-    if hour > 0 then
-      timeStr = timeStr .. (StringTable.Get)("str_n26_hour", hour)
+    local hour = math.floor(seconds / 3600)
+    timeStr = StringTable.Get("str_n26_day", day)
+    if 0 < hour then
+      timeStr = timeStr .. StringTable.Get("str_n26_hour", hour)
+    end
+  elseif 60 <= seconds then
+    local hour = math.floor(seconds / 3600)
+    seconds = seconds - hour * 3600
+    if 0 < hour then
+      timeStr = StringTable.Get("str_n26_hour", hour)
+    end
+    local minus = math.floor(seconds / 60)
+    if minus then
+      timeStr = timeStr .. StringTable.Get("str_n26_minus", minus)
     end
   else
-    do
-      if seconds >= 60 then
-        local hour = (math.floor)((seconds) / 3600)
-        seconds = seconds - hour * 3600
-        if hour > 0 then
-          timeStr = (StringTable.Get)("str_n26_hour", hour)
-        end
-        local minus = (math.floor)((seconds) / 60)
-        if minus then
-          timeStr = timeStr .. (StringTable.Get)("str_n26_minus", minus)
-        end
-      else
-        do
-          timeStr = (StringTable.Get)("str_n26_less_one_minus")
-          return timeStr
-        end
-      end
-    end
+    timeStr = StringTable.Get("str_n26_less_one_minus")
   end
+  return timeStr
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26Helper.GetItemCountStr = function(byteCount, count, preColor, countColor)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN26Helper.GetItemCountStr(byteCount, count, preColor, countColor)
   local dight = 0
   local tmpCount = count
   if tmpCount < 0 then
     tmpCount = -tmpCount
   end
-  while tmpCount > 0 do
-    tmpCount = (math.floor)(tmpCount / 10)
+  while 0 < tmpCount do
+    tmpCount = math.floor(tmpCount / 10)
     dight = dight + 1
   end
   local pre = ""
-  if count >= 0 then
-    for i = 1, byteCount - (dight) do
+  if 0 <= count then
+    for i = 1, byteCount - dight do
       pre = pre .. "0"
     end
   else
-    do
-      for i = 1, byteCount - (dight) - 1 do
-        pre = pre .. "0"
-      end
-      do
-        if count > 0 then
-          return (string.format)("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
-        else
-          if count == 0 then
-            return (string.format)("<color=" .. preColor .. ">%s</color>", pre)
-          else
-            return (string.format)("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
-          end
-        end
-      end
+    for i = 1, byteCount - dight - 1 do
+      pre = pre .. "0"
     end
+  end
+  if 0 < count then
+    return string.format("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
+  elseif count == 0 then
+    return string.format("<color=" .. preColor .. ">%s</color>", pre)
+  else
+    return string.format("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26Helper.ShowRewards = function(rewards, callback)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN26Helper.ShowRewards(rewards, callback)
   local petIdList = {}
-  local mPet = (GameGlobal.GetModule)(PetModule)
-  for _,reward in pairs(rewards) do
+  local mPet = GameGlobal.GetModule(PetModule)
+  for _, reward in pairs(rewards) do
     if mPet:IsPetID(reward.assetid) then
-      (table.insert)(petIdList, reward)
+      table.insert(petIdList, reward)
     end
   end
-  if (table.count)(petIdList) > 0 then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIPetObtain", petIdList, function()
-    -- function num : 0_4_0 , upvalues : _ENV, rewards, callback
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", rewards, function()
-      -- function num : 0_4_0_0 , upvalues : callback
-      if callback then
-        callback()
-      end
-    end
-)
+  if table.count(petIdList) > 0 then
+    GameGlobal.UIStateManager():ShowDialog("UIPetObtain", petIdList, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      GameGlobal.UIStateManager():ShowDialog("UIGetItemController", rewards, function()
+        if callback then
+          callback()
+        end
+      end)
+    end)
+    return
   end
-)
-    return 
-  end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_4_1 , upvalues : callback
+  GameGlobal.UIStateManager():ShowDialog("UIGetItemController", rewards, function()
     if callback then
       callback()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26Helper.GetNewFlagKey = function(id)
-  -- function num : 0_5 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityN26Helper.GetNewFlagKey(id)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. id
   return key
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26Helper.GetNewFlagStatus = function(id)
-  -- function num : 0_6 , upvalues : _ENV
-  local key = (UIActivityN26Helper.GetNewFlagKey)(id)
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+function UIActivityN26Helper.GetNewFlagStatus(id)
+  local key = UIActivityN26Helper.GetNewFlagKey(id)
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return true
   end
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key)
-  do return value == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key)
+  return value == 0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26Helper.SetNewFlagStatus = function(id, status)
-  -- function num : 0_7 , upvalues : _ENV
-  local key = (UIActivityN26Helper.GetNewFlagKey)(id)
+function UIActivityN26Helper.SetNewFlagStatus(id, status)
+  local key = UIActivityN26Helper.GetNewFlagKey(id)
   if status then
-    ((UnityEngine.PlayerPrefs).SetInt)(key, 0)
+    UnityEngine.PlayerPrefs.SetInt(key, 0)
   else
-    ;
-    ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+    UnityEngine.PlayerPrefs.SetInt(key, 1)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26Helper.ShowOrNot = function()
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN26Helper.ShowOrNot()
   local Anonymousname = {}
-  local cfgAnonymousLetter = (Cfg.cfg_homeland_anonymous_letter)({})
-  for k,v in ipairs(cfgAnonymousLetter) do
-    (table.insert)(Anonymousname, v.ID)
+  local cfgAnonymousLetter = Cfg.cfg_homeland_anonymous_letter({})
+  for k, v in ipairs(cfgAnonymousLetter) do
+    table.insert(Anonymousname, v.ID)
   end
-  local homeModule = (GameGlobal.GetModule)(HomelandModule)
+  local homeModule = GameGlobal.GetModule(HomelandModule)
   local Anonymouslist = homeModule:GetAnonymousLetterRreward()
   if #Anonymouslist == 0 then
-    for _,v in ipairs(Anonymousname) do
-      local sec = (UIActivityN26Helper.GetAnonymousMovieTimeById)(v)
-      if sec > 0 then
+    for _, v in ipairs(Anonymousname) do
+      local sec = UIActivityN26Helper.GetAnonymousMovieTimeById(v)
+      if 0 < sec then
         return true
       end
     end
   else
-    do
-      for k1,v1 in ipairs(Anonymousname) do
-        for k2,v2 in ipairs(Anonymouslist) do
-          for i = 1, #Anonymouslist do
-            if v1 == v2 then
-              (table.remove)(Anonymousname, k1)
-            end
+    for k1, v1 in ipairs(Anonymousname) do
+      for k2, v2 in ipairs(Anonymouslist) do
+        for i = 1, #Anonymouslist do
+          if v1 == v2 then
+            table.remove(Anonymousname, k1)
           end
         end
       end
-      for _,v in ipairs(Anonymousname) do
-        local sec = (UIActivityN26Helper.GetAnonymousMovieTimeById)(v)
-        if sec > 0 then
-          return true
-        end
-      end
-      do
-        return false
+    end
+    for _, v in ipairs(Anonymousname) do
+      local sec = UIActivityN26Helper.GetAnonymousMovieTimeById(v)
+      if 0 < sec then
+        return true
       end
     end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN26Helper.GetAnonymousMovieTimeById = function(id)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfgAnonymousLetter = (Cfg.cfg_homeland_anonymous_letter)({})
-  local unlockTime = (cfgAnonymousLetter[id]).UnlockTime
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function UIActivityN26Helper.GetAnonymousMovieTimeById(id)
+  local cfgAnonymousLetter = Cfg.cfg_homeland_anonymous_letter({})
+  local unlockTime = cfgAnonymousLetter[id].UnlockTime
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local unlockTimeStr = loginModule:GetTimeStampByTimeStr(unlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local nowTime = (math.ceil)(svrTimeModule:GetServerTime() * 0.001)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local nowTime = math.ceil(svrTimeModule:GetServerTime() * 0.001)
   local sec = nowTime - unlockTimeStr
   return sec
 end
-
-

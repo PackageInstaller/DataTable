@@ -1,72 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n16/hard_level/ui_n16_hard_level_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local N16HardLevelItemState = {Normal = 1, Lock = 2, Pass = 3}
+local N16HardLevelItemState = {
+  Normal = 1,
+  Lock = 2,
+  Pass = 3
+}
 _enum("N16HardLevelItemState", N16HardLevelItemState)
 _class("UIN16HardLevelItem", Object)
 UIN16HardLevelItem = UIN16HardLevelItem
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN16HardLevelItem.Constructor = function(self, uiview)
-  -- function num : 0_0
+function UIN16HardLevelItem:Constructor(uiview)
   self._view = uiview
-  self._normal = (self._view):GetUIComponent("Image", "normal")
-  self._press = (self._view):GetUIComponent("Image", "press")
-  self._pass = (self._view):GetUIComponent("Image", "pass")
-  self._img = (self._view):GetUIComponent("Image", "img")
-  self._way = (self._view):GetGameObject("way")
-  self._close = (self._view):GetUIComponent("Image", "close")
-  self._name = (self._view):GetUIComponent("UILocalizationText", "name")
-  self._animation = (self._view):GetUIComponent("Animation", "anim")
-  self._localPos = (((self._view).transform).localPosition):Clone()
+  self._normal = self._view:GetUIComponent("Image", "normal")
+  self._press = self._view:GetUIComponent("Image", "press")
+  self._pass = self._view:GetUIComponent("Image", "pass")
+  self._img = self._view:GetUIComponent("Image", "img")
+  self._way = self._view:GetGameObject("way")
+  self._close = self._view:GetUIComponent("Image", "close")
+  self._name = self._view:GetUIComponent("UILocalizationText", "name")
+  self._animation = self._view:GetUIComponent("Animation", "anim")
+  self._localPos = self._view.transform.localPosition:Clone()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16HardLevelItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN16HardLevelItem:OnHide()
   if self._animOpenTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._animOpenTimer)
+    GameGlobal.Timer():CancelEvent(self._animOpenTimer)
     self._animOpenTimer = nil
   end
   if self._animPassTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._animPassTimer)
+    GameGlobal.Timer():CancelEvent(self._animPassTimer)
     self._animPassTimer = nil
   end
   self._EMIMat = nil
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16HardLevelItem.SetData = function(self, idx, cfg, passInfo, cur, atlas)
-  -- function num : 0_2 , upvalues : _ENV, N16HardLevelItemState
-  self._isHard = idx > 6
-  local levelCfg = (UIN16HardLevel.LevelCfg)[idx]
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._normal).sprite = atlas:GetSprite(levelCfg.normal)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._pass).sprite = atlas:GetSprite(levelCfg.close)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._close).sprite = atlas:GetSprite(levelCfg.close)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._press).sprite = atlas:GetSprite(levelCfg.press)
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._img).sprite = atlas:GetSprite(levelCfg.img)
+function UIN16HardLevelItem:SetData(idx, cfg, passInfo, cur, atlas)
+  self._isHard = 6 < idx
+  local levelCfg = UIN16HardLevel.LevelCfg[idx]
+  self._normal.sprite = atlas:GetSprite(levelCfg.normal)
+  self._pass.sprite = atlas:GetSprite(levelCfg.close)
+  self._close.sprite = atlas:GetSprite(levelCfg.close)
+  self._press.sprite = atlas:GetSprite(levelCfg.press)
+  self._img.sprite = atlas:GetSprite(levelCfg.img)
   if idx < cur then
     if not passInfo then
-      (Log.exception)("没有通关信息：", idx)
+      Log.exception("没有通关信息：", idx)
     end
     self:SetUiState(N16HardLevelItemState.Pass)
   elseif cur < idx then
@@ -74,83 +50,51 @@ UIN16HardLevelItem.SetData = function(self, idx, cfg, passInfo, cur, atlas)
   else
     self:SetUiState(N16HardLevelItemState.Normal)
   end
-  local missionCfg = (Cfg.cfg_campaign_mission)[cfg.CampaignMissionId]
-  ;
-  (self._name):SetText((StringTable.Get)(missionCfg.Name))
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  local missionCfg = Cfg.cfg_campaign_mission[cfg.CampaignMissionId]
+  self._name:SetText(StringTable.Get(missionCfg.Name))
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16HardLevelItem.SetUiState = function(self, uiState)
-  -- function num : 0_3 , upvalues : N16HardLevelItemState
-  ((self._pass).gameObject):SetActive(false)
-  ;
-  ((self._close).gameObject):SetActive(false)
+function UIN16HardLevelItem:SetUiState(uiState)
+  self._pass.gameObject:SetActive(false)
+  self._close.gameObject:SetActive(false)
   self:SetGray(false, self._normal)
   self:SetGray(false, self._img)
   if N16HardLevelItemState.Normal == uiState then
-    ((self._normal).gameObject):SetActive(true)
-  else
-    if N16HardLevelItemState.Lock == uiState then
-      ((self._close).gameObject):SetActive(true)
-      self:SetGray(true, self._normal)
-      self:SetGray(true, self._img)
-    else
-      if N16HardLevelItemState.Pass == uiState then
-        ((self._pass).gameObject):SetActive(true)
-      end
-    end
+    self._normal.gameObject:SetActive(true)
+  elseif N16HardLevelItemState.Lock == uiState then
+    self._close.gameObject:SetActive(true)
+    self:SetGray(true, self._normal)
+    self:SetGray(true, self._img)
+  elseif N16HardLevelItemState.Pass == uiState then
+    self._pass.gameObject:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16HardLevelItem.LocalPosition = function(self)
-  -- function num : 0_4
+function UIN16HardLevelItem:LocalPosition()
   return self._localPos
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16HardLevelItem.Anim_Pass = function(self)
-  -- function num : 0_5 , upvalues : _ENV, N16HardLevelItemState
-  self._animPassTimer = ((GameGlobal.Timer)()):AddEvent(333, function()
-    -- function num : 0_5_0 , upvalues : self, N16HardLevelItemState
+function UIN16HardLevelItem:Anim_Pass()
+  self._animPassTimer = GameGlobal.Timer():AddEvent(333, function()
     self:SetUiState(N16HardLevelItemState.Pass)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16HardLevelItem.Anim_Open = function(self)
-  -- function num : 0_6 , upvalues : _ENV, N16HardLevelItemState
-  self._animOpenTimer = ((GameGlobal.Timer)()):AddEvent(500, function()
-    -- function num : 0_6_0 , upvalues : self, N16HardLevelItemState
+function UIN16HardLevelItem:Anim_Open()
+  self._animOpenTimer = GameGlobal.Timer():AddEvent(500, function()
     self:SetUiState(N16HardLevelItemState.Normal)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16HardLevelItem.Anim_In = function(self)
-  -- function num : 0_7
+function UIN16HardLevelItem:Anim_In()
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16HardLevelItem.SetGray = function(self, gray, image)
-  -- function num : 0_8 , upvalues : _ENV
-  self._EMIMat = (UnityEngine.Material):New(image.material)
+function UIN16HardLevelItem:SetGray(gray, image)
+  self._EMIMat = UnityEngine.Material:New(image.material)
   image.material = self._EMIMat
   if gray then
-    (image.material):SetFloat("_LuminosityAmount", 1)
+    image.material:SetFloat("_LuminosityAmount", 1)
   else
-    ;
-    (image.material):SetFloat("_LuminosityAmount", 0)
+    image.material:SetFloat("_LuminosityAmount", 0)
   end
 end
-
-

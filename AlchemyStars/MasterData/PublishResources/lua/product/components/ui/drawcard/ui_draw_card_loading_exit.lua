@@ -1,32 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_loading_exit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardLoadingExit", LoadingHandler)
 UIDrawCardLoadingExit = UIDrawCardLoadingExit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardLoadingExit.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
-  (AudioHelperController.ReleaseUISoundList)({CriAudioIDConst.DrawCard_tuijingtou, CriAudioIDConst.DrawCard_lagan_new, CriAudioIDConst.Drawcard_lagan_eft_3, CriAudioIDConst.Drawcard_lagan_eft_4, CriAudioIDConst.Drawcard_lagan_eft_5, CriAudioIDConst.Drawcard_lagan_eft_6, CriAudioIDConst.Drawcard_light_one, CriAudioIDConst.Drawcard_light_more, CriAudioIDConst.Drawcard_light_one, CriAudioIDConst.Drawcard_mul_show, CriAudioIDConst.Drawcard_lagan_once})
+function UIDrawCardLoadingExit:PreLoadAfterLoadLevel(TT, ...)
+  AudioHelperController.ReleaseUISoundList({
+    CriAudioIDConst.DrawCard_tuijingtou,
+    CriAudioIDConst.DrawCard_lagan_new,
+    CriAudioIDConst.Drawcard_lagan_eft_3,
+    CriAudioIDConst.Drawcard_lagan_eft_4,
+    CriAudioIDConst.Drawcard_lagan_eft_5,
+    CriAudioIDConst.Drawcard_lagan_eft_6,
+    CriAudioIDConst.Drawcard_light_one,
+    CriAudioIDConst.Drawcard_light_more,
+    CriAudioIDConst.Drawcard_light_one,
+    CriAudioIDConst.Drawcard_mul_show,
+    CriAudioIDConst.Drawcard_lagan_once
+  })
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardLoadingExit.OnLoadingFinish = function(self, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(GambleModule)
+function UIDrawCardLoadingExit:OnLoadingFinish(...)
+  local module = GameGlobal.GetModule(GambleModule)
   module:ClearContext()
-  ;
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardLoadingExit.LoadingType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDrawCardLoadingExit:LoadingType()
   return LoadingType.BOTTOM
 end
-
-

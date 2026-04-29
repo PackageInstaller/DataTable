@@ -1,26 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/ani_pop_star/stn_ani_pop_star_check_dangling_relics.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("AniPopStar_CheckDanglingRelics", CTestRobot_Base)
 AniPopStar_CheckDanglingRelics = AniPopStar_CheckDanglingRelics
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AniPopStar_CheckDanglingRelics.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local anipopModule = (GameGlobal.GetModule)(AnipopModule)
+function AniPopStar_CheckDanglingRelics:OnWorking()
+  local anipopModule = GameGlobal.GetModule(AnipopModule)
   local aniPopInfo = anipopModule:GetAniPopInfo()
-  local nRelicCount = (table.count)((aniPopInfo.relic_info).dangling_relics)
+  local nRelicCount = table.count(aniPopInfo.relic_info.dangling_relics)
   nRelicCount = 0
-  if nRelicCount > 0 then
+  if 0 < nRelicCount then
     self.m_nLogicResult = 1
-    self.m_pReturnData = (aniPopInfo.relic_info).dangling_relics
+    self.m_pReturnData = aniPopInfo.relic_info.dangling_relics
   else
     self.m_nLogicResult = 0
   end
-  return ((AniPopStar_CheckDanglingRelics.super).OnWorking)(self)
+  return AniPopStar_CheckDanglingRelics.super.OnWorking(self)
 end
-
-

@@ -1,148 +1,93 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/manager/aircraft_pet_loader.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftPetLoader", Object)
 AircraftPetLoader = AircraftPetLoader
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPetLoader.Init = function(self, onLoadingCountChanged)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftPetLoader:Init(onLoadingCountChanged)
   self._queue = AircraftQueue:New()
   self._pets = {}
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset("AircraftPetSelectAnimRef.prefab", LoadType.GameObject)
-  self._clickAnimClip = ((req.Obj):GetComponent(typeof(UnityEngine.Animation))).clip
+  local req = ResourceManager:GetInstance():SyncLoadAsset("AircraftPetSelectAnimRef.prefab", LoadType.GameObject)
+  self._clickAnimClip = req.Obj:GetComponent(typeof(UnityEngine.Animation)).clip
   self._clickReq = req
   self._onLoadingCountChanged = onLoadingCountChanged
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetLoader.SyncLoadePet = function(self, pet)
-  -- function num : 0_1 , upvalues : _ENV
+function AircraftPetLoader:SyncLoadePet(pet)
   local req = AircraftPetRequestSync:New(pet:TemplateID(), pet:PstID(), pet:PrefabName(), self._clickAnimClip)
   pet:Show(req)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetLoader.AsyncLoadPet = function(self, pet)
-  -- function num : 0_2 , upvalues : _ENV
+function AircraftPetLoader:AsyncLoadPet(pet)
   local pstID = pet:PstID()
-  if (self._pets)[pstID] then
+  if self._pets[pstID] then
     return false
   end
-  ;
-  (self._queue):Enqueue(AircraftPetRequestAsync:New(pet:TemplateID(), pstID, pet:PrefabName(), self._clickAnimClip))
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._pets)[pstID] = pet
+  self._queue:Enqueue(AircraftPetRequestAsync:New(pet:TemplateID(), pstID, pet:PrefabName(), self._clickAnimClip))
+  self._pets[pstID] = pet
   self:onLoadingChanged()
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetLoader.TryDelPet = function(self, pet)
-  -- function num : 0_3
+function AircraftPetLoader:TryDelPet(pet)
   local id = pet:PstID()
-  do
-    if (self._pets)[id] then
-      local req = (self._queue):PopFirst(function(r)
-    -- function num : 0_3_0 , upvalues : id
-    local req = r
-    do return req:ID() == id end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  if self._pets[id] then
+    local req = self._queue:PopFirst(function(r)
+      local req = r
+      return req:ID() == id
+    end)
+    req:Close()
+    self._pets[id] = nil
+    self:onLoadingChanged()
+    return true
   end
-)
-      req:Close()
-      -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._pets)[id] = nil
-      self:onLoadingChanged()
-      return true
-    end
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetLoader.Dispose = function(self)
-  -- function num : 0_4
-  (self._queue):ForEach(function(r)
-    -- function num : 0_4_0
+function AircraftPetLoader:Dispose()
+  self._queue:ForEach(function(r)
     local req = r
     req:Close()
-  end
-)
-  ;
-  (self._queue):Clear()
+  end)
+  self._queue:Clear()
   self._pets = {}
-  ;
-  (self._clickReq):Dispose()
+  self._clickReq:Dispose()
   self._clickReq = nil
   self:onLoadingChanged()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetLoader.Update = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._queue):Count() <= 0 then
-    return 
+function AircraftPetLoader:Update()
+  if self._queue:Count() <= 0 then
+    return
   end
-  local req = (self._queue):Peek()
+  local req = self._queue:Peek()
   if req:State() == AircraftPetLoadState.Wait then
     req:Load()
-    return 
+    return
   end
   if req:State() == AircraftPetLoadState.Loading then
-    return 
+    return
   end
   if req:State() == AircraftPetLoadState.Finish then
     local id = req:ID()
-    local pet = (self._pets)[id]
+    local pet = self._pets[id]
     pet:Show(req, self._clickAnimClip)
-    ;
-    (self._queue):Dequeue()
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._pets)[id] = nil
+    self._queue:Dequeue()
+    self._pets[id] = nil
     self:onLoadingChanged()
-    return 
+    return
   end
-  do
-    if req:State() == AircraftPetLoadState.Closed then
-      (self._queue):Dequeue()
-      -- DECOMPILER ERROR at PC59: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._pets)[req:ID()] = nil
-      self:onLoadingChanged()
-      return 
-    end
+  if req:State() == AircraftPetLoadState.Closed then
+    self._queue:Dequeue()
+    self._pets[req:ID()] = nil
+    self:onLoadingChanged()
+    return
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetLoader.onLoadingChanged = function(self)
-  -- function num : 0_6
+function AircraftPetLoader:onLoadingChanged()
   if self._onLoadingCountChanged then
-    (self._onLoadingCountChanged)((self._queue):Count())
+    self._onLoadingCountChanged(self._queue:Count())
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetLoader.LoadingCount = function(self)
-  -- function num : 0_7
-  return (self._queue):Count()
+function AircraftPetLoader:LoadingCount()
+  return self._queue:Count()
 end
-
-

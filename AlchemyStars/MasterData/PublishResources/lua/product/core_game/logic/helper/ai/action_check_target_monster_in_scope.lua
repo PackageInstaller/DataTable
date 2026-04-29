@@ -1,49 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_target_monster_in_scope.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckTargetMonsterInScope", AINewNode)
 ActionCheckTargetMonsterInScope = ActionCheckTargetMonsterInScope
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckTargetMonsterInScope.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionCheckTargetMonsterInScope:OnUpdate()
   local skill = self:GetLogicData(-1)
   local targetMonsterAI = self:GetLogicData(-2)
   local entityCaster = self.m_entityOwn
   local aiComponent = entityCaster:AI()
-  if aiComponent == nil then
+  if nil == aiComponent then
     return false
   end
   local selfPos = entityCaster:GetGridPosition()
-  local dir = (entityCaster:GridLocation()).Direction
-  local selfBodyArea = (entityCaster:BodyArea()):GetArea()
+  local dir = entityCaster:GridLocation().Direction
+  local selfBodyArea = entityCaster:BodyArea():GetArea()
   local skillRangeData = self:CalculateSkillRange(skill, selfPos, dir, selfBodyArea)
   local targetPos = skillRangeData[1]
   local skillScope = {}
-  local cfgService = (self._world):GetService("Config")
+  local cfgService = self._world:GetService("Config")
   local monsterConfigData = cfgService:GetMonsterConfigData()
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,entity in ipairs(monsterGroup:GetEntities()) do
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, entity in ipairs(monsterGroup:GetEntities()) do
     local monsterID = entity:MonsterID()
     local monsterAIIDList = monsterConfigData:GetMonsterAIID(monsterID:GetMonsterID())
-    if (monsterAIIDList[1])[1] == targetMonsterAI then
-      local bodyAreaList = (entity:BodyArea()):GetArea()
-      local gridPos = (entity:GridLocation()):GetGridPos()
-      for _,bodyArea in ipairs(bodyAreaList) do
+    if monsterAIIDList[1][1] == targetMonsterAI then
+      local bodyAreaList = entity:BodyArea():GetArea()
+      local gridPos = entity:GridLocation():GetGridPos()
+      for _, bodyArea in ipairs(bodyAreaList) do
         local workPos = gridPos + bodyArea
-        ;
-        (table.insert)(skillScope, workPos)
+        table.insert(skillScope, workPos)
       end
     end
   end
-  if (table.intable)(skillScope, targetPos) then
+  if table.intable(skillScope, targetPos) then
     return AINewNodeStatus.Success
   else
     return AINewNodeStatus.Failure
   end
 end
-
-

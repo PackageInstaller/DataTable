@@ -1,41 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/week_tower/ui_week_tower_node_loader.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWeekTowerNodeLoader", UICustomWidget)
 UIWeekTowerNodeLoader = UIWeekTowerNodeLoader
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWeekTowerNodeLoader.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWeekTowerNodeLoader:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerNodeLoader.SetData = function(self, index, missionCount, data, callback, width, open)
-  -- function num : 0_1
+function UIWeekTowerNodeLoader:SetData(index, missionCount, data, callback, width, open)
   self:DisposeCustomWidgets()
   local pool = self:GetUIComponent("UISelectObjectPath", "pool")
-  ;
-  (pool.dynamicInfoOfEngine):SetObjectName(data:GetWidgetName() .. ".prefab")
+  pool.dynamicInfoOfEngine:SetObjectName(data:GetWidgetName() .. ".prefab")
   self._widget = pool:SpawnObject("UIWeekTowerNodeItem")
-  ;
-  (self._widget):SetData(index, missionCount, data, callback, width, open)
+  self._widget:SetData(index, missionCount, data, callback, width, open)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerNodeLoader.Active = function(self, active)
-  -- function num : 0_2
-  (self:GetGameObject()):SetActive(active)
+function UIWeekTowerNodeLoader:Active(active)
+  self:GetGameObject():SetActive(active)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerNodeLoader.Open = function(self)
-  -- function num : 0_3
-  (self._widget):Open()
+function UIWeekTowerNodeLoader:Open()
+  self._widget:Open()
 end
-
-

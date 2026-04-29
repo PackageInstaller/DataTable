@@ -1,50 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_nodefence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetNoDefence", BuffLogicBase)
 BuffLogicSetNoDefence = BuffLogicSetNoDefence
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetNoDefence.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicSetNoDefence:Constructor(buffInstance, logicParam)
   self._defPercent = tonumber(logicParam.defPercent) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetNoDefence.DoLogic = function(self)
-  -- function num : 0_1
-  local petEntity = (self._buffInstance):Entity()
+function BuffLogicSetNoDefence:DoLogic()
+  local petEntity = self._buffInstance:Entity()
   local attributeCmpt = petEntity:Attributes()
   attributeCmpt:SetSimpleAttribute("NoDefence", self._defPercent)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetNoDefence.DoOverlap = function(self, logicParam)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffLogicSetNoDefence:DoOverlap(logicParam)
   local newParam = tonumber(logicParam.defPercent) or 1
   self._defPercent = self._defPercent + newParam
 end
 
 _class("BuffLogicResetNoDefence", BuffLogicBase)
 BuffLogicResetNoDefence = BuffLogicResetNoDefence
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetNoDefence.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicResetNoDefence:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetNoDefence.DoLogic = function(self)
-  -- function num : 0_4
-  local petEntity = (self._buffInstance):Entity()
+function BuffLogicResetNoDefence:DoLogic()
+  local petEntity = self._buffInstance:Entity()
   local attributeCmpt = petEntity:Attributes()
   attributeCmpt:SetSimpleAttribute("NoDefence", 0)
 end
-
-

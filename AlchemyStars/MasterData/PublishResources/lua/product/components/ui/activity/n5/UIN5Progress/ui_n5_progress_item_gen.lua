@@ -1,52 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/UIN5Progress/ui_n5_progress_item_gen.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5ProgressItemGen", UICustomWidget)
 UIN5ProgressItemGen = UIN5ProgressItemGen
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5ProgressItemGen.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN5ProgressItemGen:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItemGen.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN5ProgressItemGen:InitWidget()
   self._gens = {}
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._gens)[UIN5ProgressCellType.CELL_NPC_DETAIL] = "NpcDetailGen"
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._gens)[UIN5ProgressCellType.CELL_SIMPLE] = "SimpleGen"
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._gens)[UIN5ProgressCellType.CELL_PLAYER] = "PlayerDetailGen"
+  self._gens[UIN5ProgressCellType.CELL_NPC_DETAIL] = "NpcDetailGen"
+  self._gens[UIN5ProgressCellType.CELL_SIMPLE] = "SimpleGen"
+  self._gens[UIN5ProgressCellType.CELL_PLAYER] = "PlayerDetailGen"
   self._widgets = {}
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._widgets)[UIN5ProgressCellType.CELL_NPC_DETAIL] = "UIN5ProgressItemNpcDetail"
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._widgets)[UIN5ProgressCellType.CELL_SIMPLE] = "UIN5ProgressItemSimple"
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._widgets)[UIN5ProgressCellType.CELL_PLAYER] = "UIN5ProgressItemPlayerDetail"
+  self._widgets[UIN5ProgressCellType.CELL_NPC_DETAIL] = "UIN5ProgressItemNpcDetail"
+  self._widgets[UIN5ProgressCellType.CELL_SIMPLE] = "UIN5ProgressItemSimple"
+  self._widgets[UIN5ProgressCellType.CELL_PLAYER] = "UIN5ProgressItemPlayerDetail"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItemGen.SetData = function(self, index, count, itemInfo, componentInfo, callback, itemCallBack, specificData, cmptCfgId)
-  -- function num : 0_2
+function UIN5ProgressItemGen:SetData(index, count, itemInfo, componentInfo, callback, itemCallBack, specificData, cmptCfgId)
   self:InitWidget()
   self._index = index
   self._count = count
@@ -59,33 +28,23 @@ UIN5ProgressItemGen.SetData = function(self, index, count, itemInfo, componentIn
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItemGen._OnValue = function(self)
-  -- function num : 0_3
-  local genName = (self._gens)[(self._itemInfo).cellType]
-  local widgetName = (self._widgets)[(self._itemInfo).cellType]
+function UIN5ProgressItemGen:_OnValue()
+  local genName = self._gens[self._itemInfo.cellType]
+  local widgetName = self._widgets[self._itemInfo.cellType]
   if genName and widgetName then
     self:DisposeCustomWidgets()
     local gen = self:GetUIComponent("UISelectObjectPath", genName)
     if gen then
       self._widget = gen:SpawnObject(widgetName)
       if self._widget then
-        (self._widget):SetData(self._index, self._count, self._itemInfo, self._componentInfo, self._callback, self._itemCallback, self._specificData, self._cmptCfgId, function()
-    -- function num : 0_3_0 , upvalues : self
-    self:_OnExpandDetail()
-  end
-)
+        self._widget:SetData(self._index, self._count, self._itemInfo, self._componentInfo, self._callback, self._itemCallback, self._specificData, self._cmptCfgId, function()
+          self:_OnExpandDetail()
+        end)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItemGen._OnExpandDetail = function(self)
-  -- function num : 0_4
-  (((self:GetGameObject()).transform).parent):SetAsLastSibling()
+function UIN5ProgressItemGen:_OnExpandDetail()
+  self:GetGameObject().transform.parent:SetAsLastSibling()
 end
-
-

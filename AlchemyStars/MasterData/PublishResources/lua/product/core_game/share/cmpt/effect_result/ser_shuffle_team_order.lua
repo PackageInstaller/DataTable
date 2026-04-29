@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_shuffle_team_order.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_ShuffleTeamOrder", SkillEffectResultBase)
 SkillEffectResult_ShuffleTeamOrder = SkillEffectResult_ShuffleTeamOrder
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_ShuffleTeamOrder.Constructor = function(self, targetID, oldTeamLeaderPstID, newTeamLeaderPstID, oldTeamOrder, newTeamOrder)
-  -- function num : 0_0
+function SkillEffectResult_ShuffleTeamOrder:Constructor(targetID, oldTeamLeaderPstID, newTeamLeaderPstID, oldTeamOrder, newTeamOrder)
   self._targetEntityID = targetID
   self._oldTeamLeaderPstID = oldTeamLeaderPstID
   self._newTeamLeaderPstID = newTeamLeaderPstID
@@ -17,46 +10,26 @@ SkillEffectResult_ShuffleTeamOrder.Constructor = function(self, targetID, oldTea
   self._newTeamOrder = newTeamOrder
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ShuffleTeamOrder.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResult_ShuffleTeamOrder:GetEffectType()
   return SkillEffectType.ShufflePetTeamOrder
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ShuffleTeamOrder.GetTargetEntityID = function(self)
-  -- function num : 0_2
+function SkillEffectResult_ShuffleTeamOrder:GetTargetEntityID()
   return self._targetEntityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ShuffleTeamOrder.GetOldTeamLeaderPstID = function(self)
-  -- function num : 0_3
+function SkillEffectResult_ShuffleTeamOrder:GetOldTeamLeaderPstID()
   return self._oldTeamLeaderPstID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ShuffleTeamOrder.GetNewTeamLeaderPstID = function(self)
-  -- function num : 0_4
+function SkillEffectResult_ShuffleTeamOrder:GetNewTeamLeaderPstID()
   return self._newTeamLeaderPstID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ShuffleTeamOrder.GetOldTeamOrder = function(self)
-  -- function num : 0_5
+function SkillEffectResult_ShuffleTeamOrder:GetOldTeamOrder()
   return self._oldTeamOrder
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ShuffleTeamOrder.GetNewTeamOrder = function(self)
-  -- function num : 0_6
+function SkillEffectResult_ShuffleTeamOrder:GetNewTeamOrder()
   return self._newTeamOrder
 end
-
-

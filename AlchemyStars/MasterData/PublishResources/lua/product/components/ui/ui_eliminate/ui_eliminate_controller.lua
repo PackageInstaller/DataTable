@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/ui_eliminate_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateController", UIController)
 UIEliminateController = UIEliminateController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateController.Constructor = function(self)
-  -- function num : 0_0
+function UIEliminateController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_1 , upvalues : _ENV
-  self._anipopModule = (GameGlobal.GetModule)(AnipopModule)
-  res = (self._anipopModule):RequestAnipopInfo(TT)
+function UIEliminateController:LoadDataOnEnter(TT, res)
+  self._anipopModule = GameGlobal.GetModule(AnipopModule)
+  res = self._anipopModule:RequestAnipopInfo(TT)
   if not res:GetSucc() then
-    (Log.fatal)("请求消灭星星数据失败:", res:GetResult())
+    Log.fatal("请求消灭星星数据失败:", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIEliminateController:OnShow(uiParams)
   self:AttachEvent(GameEventType.AniPopRoundRes, self.InitComponent)
   self:AttachEvent(GameEventType.AniPopRefreshRedPoint, self.AniPopRefreshRedPoint)
   self._isEnd = uiParams[1]
@@ -39,31 +26,21 @@ UIEliminateController.OnShow = function(self, uiParams)
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIEliminateController:OnHide()
   if self._countTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._countTimer)
+    GameGlobal.Timer():CancelEvent(self._countTimer)
     self._countTimer = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController._GetComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIEliminateController:_GetComponent()
   local topBarPool = self:GetUIComponent("UISelectObjectPath", "CommonTopBar")
   local topBtns = topBarPool:SpawnObject("UINewCommonTopButton")
   topBtns:SetData(function()
-    -- function num : 0_4_0 , upvalues : self
     self:_Close()
-  end
-, function()
-    -- function num : 0_4_1 , upvalues : self
+  end, function()
     self:ShowDialog("UIHelpController", "UIEliminateController")
-  end
-)
+  end)
   self._endTimeTxt = self:GetUIComponent("UILocalizationText", "endTimeTxt")
   self._enemyAttrIcon = self:GetUIComponent("Image", "enemyAttrIcon")
   self._enemyAttrTxt = self:GetUIComponent("UILocalizationText", "enemyAttrTxt")
@@ -82,274 +59,176 @@ UIEliminateController._GetComponent = function(self)
   self._propertyAtlas = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.InitComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local anipopInfo = (self._anipopModule):GetAniPopInfo()
+function UIEliminateController:InitComponent()
+  local anipopInfo = self._anipopModule:GetAniPopInfo()
   self._curSeason = anipopInfo.cur_season
-  local seasonCfg = (Cfg.cfg_anipop_season)[self._curSeason]
-  local usingID = (anipopInfo.relic_info).init_skill_relic
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._enemyAttrIcon).sprite = (self._propertyAtlas):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((Cfg.cfg_pet_element)[seasonCfg.MonsterAttId]).Icon))
+  local seasonCfg = Cfg.cfg_anipop_season[self._curSeason]
+  local usingID = anipopInfo.relic_info.init_skill_relic
+  self._enemyAttrIcon.sprite = self._propertyAtlas:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(Cfg.cfg_pet_element[seasonCfg.MonsterAttId].Icon))
   local roundInfo = anipopInfo.round_info
   if roundInfo.select_hard_id ~= 0 then
-    (self._completeGO):SetActive(true)
-    ;
-    (self._continueGO):SetActive(true)
-    ;
-    (self._startGO):SetActive(false)
-    local levelProcessTxt = roundInfo.mission_index .. "/" .. (table.count)(roundInfo.level_list)
-    ;
-    (self._progressValueTxt):SetText((StringTable.Get)("str_eliminate_progress", levelProcessTxt))
-    ;
-    (self._difficultyTxt):SetText((StringTable.Get)("str_eliminate_difficulty", roundInfo.select_hard_id))
+    self._completeGO:SetActive(true)
+    self._continueGO:SetActive(true)
+    self._startGO:SetActive(false)
+    local levelProcessTxt = roundInfo.mission_index .. "/" .. table.count(roundInfo.level_list)
+    self._progressValueTxt:SetText(StringTable.Get("str_eliminate_progress", levelProcessTxt))
+    self._difficultyTxt:SetText(StringTable.Get("str_eliminate_difficulty", roundInfo.select_hard_id))
   else
-    do
-      ;
-      (self._completeGO):SetActive(false)
-      ;
-      (self._continueGO):SetActive(false)
-      ;
-      (self._startGO):SetActive(true)
-      self:EndOldRoundInfo()
-      local weekInfo = anipopInfo.week_info
-      if weekInfo then
-        local curHardID = anipopInfo.cur_hard_id
-        local hardCfg = (Cfg.cfg_anipop_hard)[curHardID]
-        local scoreHardID = (anipopInfo.week_info).hard_id
-        local scoreHardCfg = (Cfg.cfg_anipop_hard)[scoreHardID]
-        local showTotalScore = (math.min)(weekInfo.total_score, scoreHardCfg.MaxScore)
-        ;
-        (self._scoreValueTxt):SetText("<color=#ffffff>" .. showTotalScore .. "</color>/" .. scoreHardCfg.MaxScore)
-        local dropMax = hardCfg.DropMax
-        if (EliminateHelper.IsAniPopUseNewCfg)() then
-          dropMax = hardCfg.NewDropMax
-        end
-        ;
-        (self._exploreValueTxt):SetText(weekInfo.search_reward_num .. "/" .. dropMax)
-      else
-        do
-          ;
-          (Log.fatal)("weekInfo错误，为空")
-          self:CountDown()
-          self._countTimer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_5_0 , upvalues : self
-    self:CountDown()
+    self._completeGO:SetActive(false)
+    self._continueGO:SetActive(false)
+    self._startGO:SetActive(true)
   end
-)
-          self:CheckAwardRed()
-        end
-      end
+  self:EndOldRoundInfo()
+  local weekInfo = anipopInfo.week_info
+  if weekInfo then
+    local curHardID = anipopInfo.cur_hard_id
+    local hardCfg = Cfg.cfg_anipop_hard[curHardID]
+    local scoreHardID = anipopInfo.week_info.hard_id
+    local scoreHardCfg = Cfg.cfg_anipop_hard[scoreHardID]
+    local showTotalScore = math.min(weekInfo.total_score, scoreHardCfg.MaxScore)
+    self._scoreValueTxt:SetText("<color=#ffffff>" .. showTotalScore .. "</color>/" .. scoreHardCfg.MaxScore)
+    local dropMax = hardCfg.DropMax
+    if EliminateHelper.IsAniPopUseNewCfg() then
+      dropMax = hardCfg.NewDropMax
     end
+    self._exploreValueTxt:SetText(weekInfo.search_reward_num .. "/" .. dropMax)
+  else
+    Log.fatal("weekInfo错误，为空")
   end
+  self:CountDown()
+  self._countTimer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+    self:CountDown()
+  end)
+  self:CheckAwardRed()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.CheckRoundOver = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local aniPopInfo = (self._anipopModule):GetAniPopInfo()
+function UIEliminateController:CheckRoundOver()
+  local aniPopInfo = self._anipopModule:GetAniPopInfo()
   local roundInfo = aniPopInfo.round_info
-  local leftHP = (math.floor)(roundInfo.team_blood * 100)
+  local leftHP = math.floor(roundInfo.team_blood * 100)
   if leftHP == 0 then
     self:ShowDialog("UIEliminateResultController")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.CheckAwardRed = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._redPointObj):SetActive((EliminateHelper.CheckAwardRed)())
+function UIEliminateController:CheckAwardRed()
+  self._redPointObj:SetActive(EliminateHelper.CheckAwardRed())
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController._Close = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIEliminateController:_Close()
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-    (self._screenShot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-    local rt = (self._screenShot):RefreshBlurTexture()
-    local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
+    self._screenShot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+    local rt = self._screenShot:RefreshBlurTexture()
+    local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+    UnityEngine.Graphics.Blit(rt, cache_rt)
     YIELD(TT)
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._eff).texture = rt
+    self._eff.texture = rt
     self:Lock("uieff_UIEliminateController_out")
-    ;
-    (self._anim):Play("uieff_UIEliminateController_out")
+    self._anim:Play("uieff_UIEliminateController_out")
     YIELD(TT, 500)
     self:UnLock("uieff_UIEliminateController_out")
     self:SwitchState(UIStateType.UIDiscovery)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.CountDown = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if not (tolua.isnull)(self._endTimeTxt) then
-    local endTime = (self._anipopModule).end_time
-    local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-    local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-    local timeTxt = (StringTable.Get)("str_eliminate_time", (UITimerHelper.GetTimeString)(endTime - curTime))
-    ;
-    (self._endTimeTxt):SetText(timeTxt)
+function UIEliminateController:CountDown()
+  if not tolua.isnull(self._endTimeTxt) then
+    local endTime = self._anipopModule.end_time
+    local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+    local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+    local timeTxt = StringTable.Get("str_eliminate_time", UITimerHelper.GetTimeString(endTime - curTime))
+    self._endTimeTxt:SetText(timeTxt)
     if endTime - curTime <= 0 then
       self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
-    if self:LoadData(TT) then
-      self:InitComponent()
-    else
-      self:SwitchState(UIStateType.UIDiscovery)
-    end
-  end
-)
-      return 
+        if self:LoadData(TT) then
+          self:InitComponent()
+        else
+          self:SwitchState(UIStateType.UIDiscovery)
+        end
+      end)
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.SupportCampOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
-  local seasonCfg = (Cfg.cfg_anipop_season)[self._curSeason]
+function UIEliminateController:SupportCampOnClick(go)
+  local seasonCfg = Cfg.cfg_anipop_season[self._curSeason]
   self:ShowDialog("UIEliminateSupportCampController", seasonCfg.FettersId)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.FettersOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  local seasonCfg = (Cfg.cfg_anipop_season)[self._curSeason]
+function UIEliminateController:FettersOnClick(go)
+  local seasonCfg = Cfg.cfg_anipop_season[self._curSeason]
   self:ShowDialog("UIEliminateFettersController", seasonCfg.FettersId)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.TotalScoreOnClick = function(self, go)
-  -- function num : 0_12
+function UIEliminateController:TotalScoreOnClick(go)
   self:ShowDialog("UIEliminateAwardController")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.StartOnClick = function(self, go)
-  -- function num : 0_13
+function UIEliminateController:StartOnClick(go)
   self:ShowDialog("UIEliminateDiffController")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.ContinueOnClick = function(self, go)
-  -- function num : 0_14
+function UIEliminateController:ContinueOnClick(go)
   self:ShowDialog("UIEliminateLevelController")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.CompleteOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  local title = (StringTable.Get)("str_eliminate_res_tip")
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", title, function()
-    -- function num : 0_15_0 , upvalues : self
+function UIEliminateController:CompleteOnClick(go)
+  local title = StringTable.Get("str_eliminate_res_tip")
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", title, function()
     self:ShowDialog("UIEliminateResultController")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController._CheckGuide = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+function UIEliminateController:_CheckGuide()
+  local guideModule = GameGlobal.GetModule(GuideModule)
   if not guideModule:IsGuideDone(128102) then
     self:ShowDialog("UIStoryController", 50690101, function()
-    -- function num : 0_16_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIEliminateController2)
-  end
-)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIEliminateController2)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.StoryBtnOnClick = function(self)
-  -- function num : 0_17
+function UIEliminateController:StoryBtnOnClick()
   self:ShowDialog("UIStoryController", 50690101)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.EndOldRoundInfo = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local anipopInfo = (self._anipopModule):GetAniPopInfo()
-  local usingID = (anipopInfo.relic_info).init_skill_relic
+function UIEliminateController:EndOldRoundInfo()
+  local anipopInfo = self._anipopModule:GetAniPopInfo()
+  local usingID = anipopInfo.relic_info.init_skill_relic
   if usingID == 0 then
     local roundInfo = anipopInfo.round_info
-    do
-      do
-        if roundInfo.select_hard_id ~= 0 then
-          local title = (StringTable.Get)("str_eliminate_season_switch_tip1")
-          ;
-          (PopupManager.Alert)("UIEliminateMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", title, function()
-    -- function num : 0_18_0 , upvalues : self
-    self:ShowDialog("UIEliminateResultController", false)
-  end
-)
-        end
-        local defaultSkillID = (((Cfg.cfg_eliminate_relic_book)({Type = 1, IsDefault = true}))[1]).ItemID
-        self:StartTask(function(TT)
-    -- function num : 0_18_1 , upvalues : self, defaultSkillID, _ENV
-    local res = (self._anipopModule):AnipopChangeSkill(TT, defaultSkillID)
-    if res:GetSucc() then
-      (Log.fatal)("装备初始技能失败！！！", res:GetResult())
+    if roundInfo.select_hard_id ~= 0 then
+      local title = StringTable.Get("str_eliminate_season_switch_tip1")
+      PopupManager.Alert("UIEliminateMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", title, function()
+        self:ShowDialog("UIEliminateResultController", false)
+      end)
     end
-  end
-)
+    local defaultSkillID = Cfg.cfg_eliminate_relic_book({Type = 1, IsDefault = true})[1].ItemID
+    self:StartTask(function(TT)
+      local res = self._anipopModule:AnipopChangeSkill(TT, defaultSkillID)
+      if res:GetSucc() then
+      else
+        Log.fatal("装备初始技能失败！！！", res:GetResult())
       end
-    end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.LoadData = function(self, TT)
-  -- function num : 0_19 , upvalues : _ENV
-  local res = (self._anipopModule):RequestAnipopInfo(TT)
+function UIEliminateController:LoadData(TT)
+  local res = self._anipopModule:RequestAnipopInfo(TT)
   if res:GetSucc() then
     return true
   else
-    ;
-    (Log.fatal)("请求启迪互联数据失败")
+    Log.fatal("请求启迪互联数据失败")
     return false
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.BookOnClick = function(self)
-  -- function num : 0_20
+function UIEliminateController:BookOnClick()
   self:ShowDialog("UIEliminateBookController")
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateController.AniPopRefreshRedPoint = function(self)
-  -- function num : 0_21
+function UIEliminateController:AniPopRefreshRedPoint()
   self:CheckAwardRed()
 end
-
-

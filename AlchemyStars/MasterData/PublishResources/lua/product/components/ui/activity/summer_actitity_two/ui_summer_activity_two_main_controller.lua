@@ -1,44 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/ui_summer_activity_two_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoMainController", UIController)
 UISummerActivityTwoMainController = UISummerActivityTwoMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoMainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UISummerActivityTwoMainController:LoadDataOnEnter(TT, res, uiParams)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SUMMER_II, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_STORY, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_CUMULATIVE_LOGIN, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_2, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_3, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_4, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_5, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_6)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SUMMER_II, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_STORY, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_CUMULATIVE_LOGIN, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_2, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_3, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_4, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_5, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_6)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  self._missionComponentInfo = (self._localProcess):GetComponentInfo(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
-  self._personProgress1CompInfo = (self._localProcess):GetComponentInfo(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1)
+  self._missionComponentInfo = self._localProcess:GetComponentInfo(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
+  self._personProgress1CompInfo = self._localProcess:GetComponentInfo(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1)
   local missionEndTime = 0
   if self._missionComponentInfo then
-    missionEndTime = (self._missionComponentInfo).m_close_time
+    missionEndTime = self._missionComponentInfo.m_close_time
   end
-  local sample = (self._campaign):GetSample()
+  local sample = self._campaign:GetSample()
   if not sample then
-    return 
+    return
   end
   self._activeEndTime = sample.end_time
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  if self._activeEndTime < nowTime then
-    (Log.error)("Time error!")
-    return 
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  if nowTime > self._activeEndTime then
+    Log.error("Time error!")
+    return
   end
   if missionEndTime <= nowTime then
     self._status = 2
@@ -47,78 +39,60 @@ UISummerActivityTwoMainController.LoadDataOnEnter = function(self, TT, res, uiPa
     self._status = 1
     self._endTime = missionEndTime
   end
-  local cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
+  local cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
   local plotIdList = cfg_campaign.FirstEnterStoryID
   self._plotId = nil
-  if plotIdList and #plotIdList > 0 then
+  if plotIdList and 0 < #plotIdList then
     self._plotId = plotIdList[1]
   end
   self._playPlot = self:IsFirstEnter()
-  self._activeTitle1 = (StringTable.Get)(cfg_campaign.CampaignName)
-  self._activeTitle2 = (StringTable.Get)(cfg_campaign.CampaignSubtitle)
+  self._activeTitle1 = StringTable.Get(cfg_campaign.CampaignName)
+  self._activeTitle2 = StringTable.Get(cfg_campaign.CampaignSubtitle)
   if self._status == 2 then
     self._totalLevelDatas = {}
   else
-    self._totalLevelDatas = (self._campaignModule):GetSummerTwoLevelData(TT)
+    self._totalLevelDatas = self._campaignModule:GetSummerTwoLevelData(TT)
   end
   self:LoadDataOnEnter_BattlePass(TT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.LoadDataOnEnter_BattlePass = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function UISummerActivityTwoMainController:LoadDataOnEnter_BattlePass(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   self._battlepassCampaign = UIActivityCampaign:New()
-  ;
-  (self._battlepassCampaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+  self._battlepassCampaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.RequestLevelData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.RequestLevelDataCoro, self)
+function UISummerActivityTwoMainController:RequestLevelData()
+  GameGlobal.TaskManager():StartTask(self.RequestLevelDataCoro, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.RequestLevelDataCoro = function(self, TT)
-  -- function num : 0_3
+function UISummerActivityTwoMainController:RequestLevelDataCoro(TT)
   self:Lock("UISummerActivityTwoMainController_RequestLevelDataCoro")
   if self._status == 2 then
     self._totalLevelDatas = {}
   else
-    self._totalLevelDatas = (self._campaignModule):GetSummerTwoLevelData(TT)
+    self._totalLevelDatas = self._campaignModule:GetSummerTwoLevelData(TT)
   end
   self:RefreshLevelRed()
   self:UnLock("UISummerActivityTwoMainController_RequestLevelDataCoro")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.OnShow = function(self, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
+function UISummerActivityTwoMainController:OnShow(uiParams)
   local showBtn = self:GetGameObject("ShowBtn")
   showBtn:SetActive(false)
-  local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+  local open_id = GameGlobal.GameLogic():GetOpenId()
   local save_key = "summer_two_new_" .. open_id
-  if not (LocalDB.HasKey)(save_key) then
-    (LocalDB.SetInt)(save_key, 0)
+  if not LocalDB.HasKey(save_key) then
+    LocalDB.SetInt(save_key, 0)
   end
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_4_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.CloseCoro, self)
-  end
-, nil, nil, false, function()
-    -- function num : 0_4_1 , upvalues : self
+  self._backBtn:SetData(function()
+    GameGlobal.TaskManager():StartTask(self.CloseCoro, self)
+  end, nil, nil, false, function()
     self:HideBtnOnClick()
-  end
-)
+  end)
   self._plotRed = self:GetGameObject("plotRed")
   self._loginRed = self:GetGameObject("loginRed")
   self._battlepassRed = self:GetGameObject("_battlepassRed")
@@ -129,37 +103,20 @@ UISummerActivityTwoMainController.OnShow = function(self, uiParams)
   self._timeLabel = self:GetUIComponent("UILocalizationText", "Time")
   self._scoreRedGo = self:GetGameObject("ScoreRed")
   self._anim = self:GetUIComponent("Animation", "Anim")
-  if self._playPlot and self._plotId and self._plotId > 0 then
+  if self._playPlot and self._plotId and 0 < self._plotId then
     self:Lock("summeriiplaystory")
-    ;
-    ((GameGlobal.Timer)()):AddEvent(1333, function()
-    -- function num : 0_4_2 , upvalues : self, _ENV
-    self:UnLock("summeriiplaystory")
-    self:ShowDialog("UIStoryController", self._plotId, function()
-      -- function num : 0_4_2_0 , upvalues : _ENV
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISummerActivityTwoMainController)
-    end
-)
-  end
-)
+    GameGlobal.Timer():AddEvent(1333, function()
+      self:UnLock("summeriiplaystory")
+      self:ShowDialog("UIStoryController", self._plotId, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISummerActivityTwoMainController)
+      end)
+    end)
   end
   self:SetFirstEnter()
-  -- DECOMPILER ERROR at PC109: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._title1Label).text = self._activeTitle1
-  -- DECOMPILER ERROR at PC112: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._title1ShadowLabel).text = self._activeTitle1
-  -- DECOMPILER ERROR at PC115: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._title2Label).text = self._activeTitle2
-  -- DECOMPILER ERROR at PC118: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._title2ShadowLabel).text = self._activeTitle2
+  self._title1Label.text = self._activeTitle1
+  self._title1ShadowLabel.text = self._activeTitle1
+  self._title2Label.text = self._activeTitle2
+  self._title2ShadowLabel.text = self._activeTitle2
   self:InitRemainTime()
   self:AttachEvent(GameEventType.SummerTwoRewardRefresh, self.RefreshRewardRedStatus)
   self:AttachEvent(GameEventType.OnSummerActivityTwoLevelUIClose, self.RequestLevelData)
@@ -178,113 +135,69 @@ UISummerActivityTwoMainController.OnShow = function(self, uiParams)
   self._shot = self:GetUIComponent("H3DUIBlurHelper", "screenShot")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.CloseCoro = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UISummerActivityTwoMainController:CloseCoro(TT)
   self:Lock("UISummerActivityTwoMainController_CloseCoro")
-  ;
-  (self._anim):Play("uieff_Summer2_Main_Out")
+  self._anim:Play("uieff_Summer2_Main_Out")
   YIELD(TT, 300)
   self:SwitchState(UIStateType.UIMain)
   self:UnLock("UISummerActivityTwoMainController_CloseCoro")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.Dispose = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISummerActivityTwoMainController:Dispose()
   if self._shot then
-    (self._shot):CleanRenderTexture()
+    self._shot:CleanRenderTexture()
     self._shot = nil
   end
-  ;
-  (UISummerActivityTwoMainController.super):Dispose()
+  UISummerActivityTwoMainController.super:Dispose()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.Shot = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._shot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
+function UISummerActivityTwoMainController:Shot()
+  self._shot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
   local shotRect = self:GetUIComponent("RectTransform", "screenShot")
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._shot).width = (shotRect.rect).width
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._shot).height = (shotRect.rect).height
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._shot).blurTimes = 0
-  ;
-  (self._shot):CleanRenderTexture()
-  self._rt = (self._shot):RefreshBlurTexture()
+  self._shot.width = shotRect.rect.width
+  self._shot.height = shotRect.rect.height
+  self._shot.blurTimes = 0
+  self._shot:CleanRenderTexture()
+  self._rt = self._shot:RefreshBlurTexture()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.SetRed = function(self)
-  -- function num : 0_8
+function UISummerActivityTwoMainController:SetRed()
   self:LoginRed()
   self:PlotRed()
   self:BattlePassRed()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.LoginRed = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UISummerActivityTwoMainController:LoginRed()
   local red = self:_CheckRedPoint(self._redLoginRewardBtn, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_CUMULATIVE_LOGIN)
-  ;
-  (self._loginRed):SetActive(red)
+  self._loginRed:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController._CheckRedPoint = function(self, obj, ...)
-  -- function num : 0_10
-  local bShow = (self._campaign):CheckComponentRed(...)
+function UISummerActivityTwoMainController:_CheckRedPoint(obj, ...)
+  local bShow = self._campaign:CheckComponentRed(...)
   return bShow
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.PlotRed = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISummerActivityTwoMainController:PlotRed()
   local red = self:_CheckRedPoint(self._redLoginRewardBtn, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_STORY)
-  ;
-  (self._plotRed):SetActive(red)
+  self._plotRed:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.BattlePassRed = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local bShow = (UIActivityHelper.CheckCampaignSampleRedPoint)(self._battlepassCampaign)
-  ;
-  (self._battlepassRed):SetActive(bShow)
+function UISummerActivityTwoMainController:BattlePassRed()
+  local bShow = UIActivityHelper.CheckCampaignSampleRedPoint(self._battlepassCampaign)
+  self._battlepassRed:SetActive(bShow)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.CheckMissionCondition = function(self, storyid)
-  -- function num : 0_13 , upvalues : _ENV
+function UISummerActivityTwoMainController:CheckMissionCondition(storyid)
   local unlock = true
-  local cfg_campaign_story = (Cfg.cfg_campaign_story)[storyid]
+  local cfg_campaign_story = Cfg.cfg_campaign_story[storyid]
   if not cfg_campaign_story then
-    (Log.error)("###[UISummerActivityTwoMainController] cfg_campaign_story is nil ! id --> ", storyid)
+    Log.error("###[UISummerActivityTwoMainController] cfg_campaign_story is nil ! id --> ", storyid)
   end
   if cfg_campaign_story and cfg_campaign_story.ComponentID then
-    local com = (self._campaignModule):GetComponentByComponentId(cfg_campaign_story.ComponentID)
+    local com = self._campaignModule:GetComponentByComponentId(cfg_campaign_story.ComponentID)
     if com then
       for i = 1, #cfg_campaign_story.NeedMissionList do
-        local missionid = (cfg_campaign_story.NeedMissionList)[i]
+        local missionid = cfg_campaign_story.NeedMissionList[i]
         local pass = com:IsPassCamMissionID(missionid)
         if not pass then
           unlock = false
@@ -292,286 +205,203 @@ UISummerActivityTwoMainController.CheckMissionCondition = function(self, storyid
         end
       end
     else
-      do
-        do
-          unlock = false
-          return unlock
-        end
-      end
+      unlock = false
     end
   end
+  return unlock
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.InitButtonClickAnim = function(self, btnName, clickedGoName)
-  -- function num : 0_14 , upvalues : _ENV
+function UISummerActivityTwoMainController:InitButtonClickAnim(btnName, clickedGoName)
   local btnGo = self:GetGameObject(btnName)
   local clickedGo = self:GetGameObject(clickedGoName)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(btnGo), UIEvent.Press, function(go)
-    -- function num : 0_14_0 , upvalues : clickedGo
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(btnGo), UIEvent.Press, function(go)
     clickedGo:SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(btnGo), UIEvent.Release, function(go)
-    -- function num : 0_14_1 , upvalues : clickedGo
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(btnGo), UIEvent.Release, function(go)
     clickedGo:SetActive(false)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.OnHide = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UISummerActivityTwoMainController:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self:DetachEvent(GameEventType.SummerTwoRewardRefresh, self.RefreshRewardRedStatus)
   self:DetachEvent(GameEventType.OnSummerActivityTwoLevelUIClose, self.RequestLevelData)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.RefreshRewardRedStatus = function(self)
-  -- function num : 0_16
+function UISummerActivityTwoMainController:RefreshRewardRedStatus()
   local status1 = self:HasCanGetReward(self._personProgress1CompInfo)
   if status1 then
-    (self._scoreRedGo):SetActive(true)
+    self._scoreRedGo:SetActive(true)
   else
-    ;
-    (self._scoreRedGo):SetActive(false)
+    self._scoreRedGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.HasCanGetReward = function(self, progressComponentInfo)
-  -- function num : 0_17 , upvalues : _ENV
+function UISummerActivityTwoMainController:HasCanGetReward(progressComponentInfo)
   local _scoreDatas = UISummerActivityTwoScoreData:New(progressComponentInfo)
   local rewards_red = _scoreDatas:HasCanGetReward()
   return rewards_red
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.InitRemainTime = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UISummerActivityTwoMainController:InitRemainTime()
   self:RefreshRemainTime()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_18_0 , upvalues : self
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:RefreshRemainTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.RefreshRemainTime = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)(self._endTime - nowTime)
+function UISummerActivityTwoMainController:RefreshRemainTime()
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(self._endTime - nowTime)
   if seconds < 0 then
     seconds = 0
   end
   if seconds == 0 and self._status == 2 then
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
   if seconds == 0 and self._status == 1 then
     self._endTime = self._activeEndTime
     self._status = 2
-    return 
+    return
   end
   local timeStr = ""
-  local day = (math.floor)(seconds / 3600 / 24)
-  if day > 0 then
+  local day = math.floor(seconds / 3600 / 24)
+  if 0 < day then
     seconds = seconds - day * 3600 * 24
-    local hour = (math.floor)((seconds) / 3600)
-    timeStr = (StringTable.Get)("str_summer_activity_two_day", day)
-    if hour > 0 then
-      timeStr = timeStr .. (StringTable.Get)("str_summer_activity_two_hour", hour)
+    local hour = math.floor(seconds / 3600)
+    timeStr = StringTable.Get("str_summer_activity_two_day", day)
+    if 0 < hour then
+      timeStr = timeStr .. StringTable.Get("str_summer_activity_two_hour", hour)
+    end
+  elseif 60 <= seconds then
+    local hour = math.floor(seconds / 3600)
+    seconds = seconds - hour * 3600
+    if 0 < hour then
+      timeStr = StringTable.Get("str_summer_activity_two_hour", hour)
+    end
+    local minus = math.floor(seconds / 60)
+    if minus then
+      timeStr = timeStr .. StringTable.Get("str_summer_activity_two_minus", minus)
     end
   else
-    do
-      if seconds >= 60 then
-        local hour = (math.floor)((seconds) / 3600)
-        seconds = seconds - hour * 3600
-        if hour > 0 then
-          timeStr = (StringTable.Get)("str_summer_activity_two_hour", hour)
-        end
-        local minus = (math.floor)((seconds) / 60)
-        if minus then
-          timeStr = timeStr .. (StringTable.Get)("str_summer_activity_two_minus", minus)
-        end
-      else
-        do
-          timeStr = (StringTable.Get)("str_summer_activity_two_less_minus")
-          local timeTips = ""
-          if self._status == 1 then
-            timeTips = (StringTable.Get)("str_summer_activity_two_time_tips1", timeStr)
-          else
-            if self._status == 2 then
-              timeTips = (StringTable.Get)("str_summer_activity_two_time_tips2", timeStr)
-            end
-          end
-          -- DECOMPILER ERROR at PC118: Confused about usage of register: R6 in 'UnsetPending'
-
-          ;
-          (self._timeLabel).text = timeTips
-        end
-      end
-    end
+    timeStr = StringTable.Get("str_summer_activity_two_less_minus")
   end
+  local timeTips = ""
+  if self._status == 1 then
+    timeTips = StringTable.Get("str_summer_activity_two_time_tips1", timeStr)
+  elseif self._status == 2 then
+    timeTips = StringTable.Get("str_summer_activity_two_time_tips2", timeStr)
+  end
+  self._timeLabel.text = timeTips
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.IsFirstEnter = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UISummerActivityTwoMainController:IsFirstEnter()
   local key = self:GetFirstEnterKey()
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return true
   end
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key)
-  do return value == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key)
+  return value == 0
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.SetFirstEnter = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UISummerActivityTwoMainController:SetFirstEnter()
   local key = self:GetFirstEnterKey()
-  local value = ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+  local value = UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.GetFirstEnterKey = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UISummerActivityTwoMainController:GetFirstEnterKey()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "SummerActivityTwoFirstEnter"
   return key
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.IsActivityOpen = function(self)
-  -- function num : 0_23
-  do return self._status == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UISummerActivityTwoMainController:IsActivityOpen()
+  return self._status == 1
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.BattleCardBtnOnClick = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  ((UIActivityBattlePassHelper.OpenMainController)())(self._battlepassCampaign)
+function UISummerActivityTwoMainController:BattleCardBtnOnClick()
+  UIActivityBattlePassHelper.OpenMainController()(self._battlepassCampaign)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.LoginRewardBtnOnClick = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UISummerActivityTwoMainController:LoginRewardBtnOnClick()
   self:ShowDialog("UIActivityTotalLoginAwardController", false, ECampaignType.CAMPAIGN_TYPE_SUMMER_II, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_CUMULATIVE_LOGIN)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.PlotBtnOnClick = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UISummerActivityTwoMainController:PlotBtnOnClick()
   self:ShowDialog("UISummerActivityTwoPlotDetailController", ECampaignType.CAMPAIGN_TYPE_SUMMER_II, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_STORY)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.BtnScoreBtnOnClick = function(self)
-  -- function num : 0_27
+function UISummerActivityTwoMainController:BtnScoreBtnOnClick()
   self:ShowDialog("UISummerActivityTwoScoreController")
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.PlotReviewBtnOnClick = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UISummerActivityTwoMainController:PlotReviewBtnOnClick()
   local canReviewStages = {}
-  local cfgs = (Cfg.cfg_component_summer_ii_plot_review)({})
+  local cfgs = Cfg.cfg_component_summer_ii_plot_review({})
   if cfgs then
     for i = 1, #cfgs do
       local cfg = cfgs[i]
       local curStage = DiscoveryStage:New()
       curStage.id = cfg.ID
-      curStage.longDesc = (StringTable.Get)(cfg.Des)
-      curStage.name = (StringTable.Get)(cfg.Name)
-      curStage.stageIdx = (StringTable.Get)(cfg.StageIndexTitle)
-      curStage.fullname = (StringTable.Get)(cfg.FullName)
+      curStage.longDesc = StringTable.Get(cfg.Des)
+      curStage.name = StringTable.Get(cfg.Name)
+      curStage.stageIdx = StringTable.Get(cfg.StageIndexTitle)
+      curStage.fullname = StringTable.Get(cfg.FullName)
       local storyList = DiscoveryStoryList:New()
       local slist = {}
       storyList.stageId = cfg.ID
       local storyListCfg = cfg.StoryList
       for i = 1, #storyListCfg do
         local story = DiscoveryStory:New()
-        story:Init((storyListCfg[i])[1], (storyListCfg[i])[2])
-        ;
-        (table.insert)(slist, story)
+        story:Init(storyListCfg[i][1], storyListCfg[i][2])
+        table.insert(slist, story)
       end
       storyList.list = slist
       curStage.story = storyList
       curStage.state = DiscoveryStageState.Nomal
-      ;
-      (table.insert)(canReviewStages, curStage)
+      table.insert(canReviewStages, curStage)
     end
   end
-  do
-    local tempStage = canReviewStages[1]
-    self:ShowDialog("UIPlot", tempStage, canReviewStages, false, true, (StringTable.Get)("str_summer_activity_two_plot_review_stage_title"), UISummerActivityTwoConst.PlotReviewBg)
-  end
+  local tempStage = canReviewStages[1]
+  self:ShowDialog("UIPlot", tempStage, canReviewStages, false, true, StringTable.Get("str_summer_activity_two_plot_review_stage_title"), UISummerActivityTwoConst.PlotReviewBg)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.ShuiBtnOnClick = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UISummerActivityTwoMainController:ShuiBtnOnClick()
   if not self:IsActivityOpen() then
     self:RefreshLevelRed()
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_summer_activity_two_level_entrance_closed"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_summer_activity_two_level_entrance_closed"))
+    return
   end
   self:Shot()
-  self:ShowDialog("UISummerActivityTwoLevelController", {false, self._rt})
+  self:ShowDialog("UISummerActivityTwoLevelController", {
+    false,
+    self._rt
+  })
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.intrBtnOnClick = function(self, go)
-  -- function num : 0_30
+function UISummerActivityTwoMainController:intrBtnOnClick(go)
   self:ShowDialog("UIActivityIntroController", "UISummerTwo")
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.RefreshLevelRed = function(self)
-  -- function num : 0_31
+function UISummerActivityTwoMainController:RefreshLevelRed()
   local levelRed = self:GetGameObject("LevelRed")
   if not self:IsActivityOpen() then
     levelRed:SetActive(false)
-    return 
+    return
   end
-  levelRed:SetActive((self._totalLevelDatas):GetLevelRedStatus())
+  levelRed:SetActive(self._totalLevelDatas:GetLevelRedStatus())
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.HideBtnOnClick = function(self)
-  -- function num : 0_32
+function UISummerActivityTwoMainController:HideBtnOnClick()
   local topBtn = self:GetGameObject("TopBtn")
   local showBtn = self:GetGameObject("ShowBtn")
   topBtn:SetActive(false)
@@ -582,19 +412,14 @@ UISummerActivityTwoMainController.HideBtnOnClick = function(self)
   anim:Play("uieff_UISummerActivityTwoMainController_enjoy")
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoMainController.ShowBtnOnClick = function(self)
-  -- function num : 0_33
+function UISummerActivityTwoMainController:ShowBtnOnClick()
   local topBtn = self:GetGameObject("TopBtn")
   local showBtn = self:GetGameObject("ShowBtn")
   topBtn:SetActive(true)
   showBtn:SetActive(false)
   local anim = self:GetUIComponent("Animation", "HideAnim")
   local state = anim:get_Item("uieff_UISummerActivityTwoMainController_enjoy")
-  state.time = (state.clip).length
+  state.time = state.clip.length
   state.speed = -1
   anim:Play("uieff_UISummerActivityTwoMainController_enjoy")
 end
-
-

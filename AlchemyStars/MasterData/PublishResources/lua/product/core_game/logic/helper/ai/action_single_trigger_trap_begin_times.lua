@@ -1,27 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_single_trigger_trap_begin_times.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_single_trigger_trap_round")
 _class("ActionSingleTriggerTrapBeginTimes", ActionSingleTriggerTrapRound)
 ActionSingleTriggerTrapBeginTimes = ActionSingleTriggerTrapBeginTimes
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSingleTriggerTrapBeginTimes.Update = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionSingleTriggerTrapBeginTimes:Update()
   local vecSkillLists = self:GetConfigSkillList()
-  if not self:GetRuntimeData("RunRoundCount") then
-    local nGameRound = not vecSkillLists or 1
-  end
-  do
+  if vecSkillLists then
+    local nGameRound = self:GetRuntimeData("RunRoundCount") or 1
     local useRound = nGameRound % #vecSkillLists
     if useRound == 0 then
       useRound = #vecSkillLists
     end
     self._skillID = vecSkillLists[useRound]
-    return AINewNodeStatus.Success
   end
+  return AINewNodeStatus.Success
 end
-
-

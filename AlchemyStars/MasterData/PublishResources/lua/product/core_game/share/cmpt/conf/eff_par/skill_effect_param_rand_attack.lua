@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_rand_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParam_RandAttack", SkillEffectParamBase)
 SkillEffectParam_RandAttack = SkillEffectParam_RandAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_RandAttack.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_RandAttack:Constructor(t)
   self.m_nMinTimes = t.minTimes
   self.m_nMaxTimes = t.maxTimes
   self.m_nAddTimes = t.addTimes
@@ -17,46 +10,26 @@ SkillEffectParam_RandAttack.Constructor = function(self, t)
   self.m_nFormulaID = t.formulaID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_RandAttack.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_RandAttack:GetEffectType()
   return SkillEffectType.RandAttack
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_RandAttack.GetMinTimes = function(self)
-  -- function num : 0_2
+function SkillEffectParam_RandAttack:GetMinTimes()
   return self.m_nMinTimes
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_RandAttack.GetMaxTimes = function(self)
-  -- function num : 0_3
+function SkillEffectParam_RandAttack:GetMaxTimes()
   return self.m_nMaxTimes
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_RandAttack.GetAddTimes = function(self)
-  -- function num : 0_4
+function SkillEffectParam_RandAttack:GetAddTimes()
   return self.m_nAddTimes
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_RandAttack.GetPercent = function(self)
-  -- function num : 0_5
+function SkillEffectParam_RandAttack:GetPercent()
   return self.m_nPercent
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_RandAttack.GetFormulaID = function(self)
-  -- function num : 0_6
+function SkillEffectParam_RandAttack:GetFormulaID()
   return self.m_nFormulaID
 end
-
-

@@ -1,34 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/pop_star/pop_star_loading_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PopStarLoadingSystem", MainStateSystem)
 PopStarLoadingSystem = PopStarLoadingSystem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarLoadingSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PopStarLoadingSystem:_GetMainStateID()
   return GameStateID.PopStarLoading
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLoadingSystem.Filter = function(self, world)
-  -- function num : 0_1
+function PopStarLoadingSystem:Filter(world)
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLoadingSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function PopStarLoadingSystem:_OnMainStateEnter(TT)
   self:_DoCreateNetworkEntity()
   self:_DoCreateLogicBoard()
   self:_DoParseAffixData()
   self:_DoParseTrapRefreshData()
   self:_DoParsePropRefreshData()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   configService:InitConfig()
   self:_DoLogicPreLoadPetSkillConfig()
   self:_DoRenderCreateRenderBoard()
@@ -36,76 +23,57 @@ PopStarLoadingSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicCalcAndNotifyLoadingResult()
   local waitTaskIDs = {}
   local clientLoadingTaskID = self:_DoRenderLoading(TT)
-  ;
-  (table.insert)(waitTaskIDs, clientLoadingTaskID)
+  table.insert(waitTaskIDs, clientLoadingTaskID)
   self:_WaitTasksEnd(TT, waitTaskIDs)
   self:_DoRenderMatchStart(TT)
   self:_DoRenderPreloadCfg()
   self:_DoLogicMatchStart()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLoadingSystem._DoCreateNetworkEntity = function(self)
-  -- function num : 0_3
-  local entityService = (self._world):GetService("LogicEntity")
+function PopStarLoadingSystem:_DoCreateNetworkEntity()
+  local entityService = self._world:GetService("LogicEntity")
   entityService:CreateNetworkEntity()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLoadingSystem._DoCreateLogicBoard = function(self)
-  -- function num : 0_4
-  local entityService = (self._world):GetService("LogicEntity")
+function PopStarLoadingSystem:_DoCreateLogicBoard()
+  local entityService = self._world:GetService("LogicEntity")
   entityService:CreateBoardEntity()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLoadingSystem._DoParseAffixData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local affixService = (self._world):GetService("Affix")
-  local words = ((self._world).BW_WorldInfo).wordBuffIds
+function PopStarLoadingSystem:_DoParseAffixData()
+  local affixService = self._world:GetService("Affix")
+  local words = self._world.BW_WorldInfo.wordBuffIds
   if words then
-    for _,wordID in ipairs(words) do
-      local cfg = (Cfg.cfg_word_buff)[wordID]
+    for _, wordID in ipairs(words) do
+      local cfg = Cfg.cfg_word_buff[wordID]
       if cfg.affixList then
-        (table.appendArray)((self._world)._affixList, cfg.affixList)
+        table.appendArray(self._world._affixList, cfg.affixList)
       end
     end
-    affixService:ParseAffixData((self._world)._affixList)
+    affixService:ParseAffixData(self._world._affixList)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLoadingSystem._DoParseTrapRefreshData = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local popStarSvc = (self._world):GetService("PopStarLogic")
-  local missionID = ((self._world).BW_WorldInfo).missionID
-  local cfgMission = (Cfg.cfg_popstar_mission)[missionID]
+function PopStarLoadingSystem:_DoParseTrapRefreshData()
+  local popStarSvc = self._world:GetService("PopStarLogic")
+  local missionID = self._world.BW_WorldInfo.missionID
+  local cfgMission = Cfg.cfg_popstar_mission[missionID]
   popStarSvc:DoParseTrapRefreshData(cfgMission.TrapRefreshID)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLoadingSystem._DoParsePropRefreshData = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local popStarSvc = (self._world):GetService("PopStarLogic")
-  local missionID = ((self._world).BW_WorldInfo).missionID
-  local cfgMission = (Cfg.cfg_popstar_mission)[missionID]
+function PopStarLoadingSystem:_DoParsePropRefreshData()
+  local popStarSvc = self._world:GetService("PopStarLogic")
+  local missionID = self._world.BW_WorldInfo.missionID
+  local cfgMission = Cfg.cfg_popstar_mission[missionID]
   popStarSvc:DoParsePropRefreshData(cfgMission.PropRefreshIDList)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLoadingSystem._DoLogicPreLoadPetSkillConfig = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
-  local joinedPlayerInfo = ((self._world).BW_WorldInfo).localPlayerInfo
-  for _,petInfo in ipairs(joinedPlayerInfo.pet_list) do
+function PopStarLoadingSystem:_DoLogicPreLoadPetSkillConfig()
+  local configService = self._world:GetService("Config")
+  local joinedPlayerInfo = self._world.BW_WorldInfo.localPlayerInfo
+  for _, petInfo in ipairs(joinedPlayerInfo.pet_list) do
     local petPstID = petInfo.pet_pstid
-    local petData = (self._world):GetPetData(petPstID)
+    local petData = self._world:GetPetData(petPstID)
     local activeSkillID = petData:GetPetActiveSkill()
     if activeSkillID then
       configService:GetSkillConfigData(activeSkillID)
@@ -113,60 +81,35 @@ PopStarLoadingSystem._DoLogicPreLoadPetSkillConfig = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLoadingSystem._DoLogicLoading = function(self)
-  -- function num : 0_9
-  local entityService = (self._world):GetService("LogicEntity")
+function PopStarLoadingSystem:_DoLogicLoading()
+  local entityService = self._world:GetService("LogicEntity")
   entityService:GenerateBoardData()
   entityService:CreateBattleTeamLogic()
   local eTraps = {}
   local waveNum = 1
   eTraps = entityService:CreateWaveTraps(waveNum)
-  ;
-  ((self._world):BattleStat()):SetFirstWaveTrapIDList(eTraps)
+  self._world:BattleStat():SetFirstWaveTrapIDList(eTraps)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLoadingSystem._DoLogicCalcAndNotifyLoadingResult = function(self)
-  -- function num : 0_10
-  local svc = (self._world):GetService("L2R")
+function PopStarLoadingSystem:_DoLogicCalcAndNotifyLoadingResult()
+  local svc = self._world:GetService("L2R")
   svc:L2RLoadingData()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLoadingSystem._DoLogicMatchStart = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local svc = (self._world):GetService("L2R")
+function PopStarLoadingSystem:_DoLogicMatchStart()
+  local svc = self._world:GetService("L2R")
   svc:L2RBoardLogicData()
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.PopStarLoadingFinish, 1)
+  self._world:EventDispatcher():Dispatch(GameEventType.PopStarLoadingFinish, 1)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLoadingSystem._DoRenderCreateRenderBoard = function(self)
-  -- function num : 0_12
+function PopStarLoadingSystem:_DoRenderCreateRenderBoard()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLoadingSystem._DoRenderLoading = function(self, TT)
-  -- function num : 0_13
+function PopStarLoadingSystem:_DoRenderLoading(TT)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLoadingSystem._DoRenderMatchStart = function(self, TT)
-  -- function num : 0_14
+function PopStarLoadingSystem:_DoRenderMatchStart(TT)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarLoadingSystem._DoRenderPreloadCfg = function(self)
-  -- function num : 0_15
+function PopStarLoadingSystem:_DoRenderPreloadCfg()
 end
-
-

@@ -1,92 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_cls/ui_timer_holder.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITimerHolder", Object)
 UITimerHolder = UITimerHolder
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITimerHolder.Constructor = function(self)
-  -- function num : 0_0
+function UITimerHolder:Constructor()
   self._timers = {}
-  self._onTigger = function(key, func)
-    -- function num : 0_0_0 , upvalues : self
+  
+  function self._onTigger(key, func)
     if not self._timers then
-      return 
+      return
     end
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._timers)[key] = nil
+    self._timers[key] = nil
     func()
   end
-
-  self._onTiggerInfinite = function(key, func)
-    -- function num : 0_0_1 , upvalues : self
+  
+  function self._onTiggerInfinite(key, func)
     if not self._timers then
-      return 
+      return
     end
     func()
   end
-
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimerHolder.StartTimer = function(self, key, time, func)
-  -- function num : 0_1 , upvalues : _ENV
+function UITimerHolder:StartTimer(key, time, func)
   if not key then
-    (Log.fatal)("Key must be given!")
-    return 
+    Log.fatal("Key must be given!")
+    return
   end
-  if (self._timers)[key] then
+  if self._timers[key] then
     self:StopTimer(key)
   end
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._timers)[key] = ((GameGlobal.Timer)()):AddEvent(time, self._onTigger, key, func)
+  self._timers[key] = GameGlobal.Timer():AddEvent(time, self._onTigger, key, func)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimerHolder.StartTimerInfinite = function(self, key, time, func)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._timers)[key] then
+function UITimerHolder:StartTimerInfinite(key, time, func)
+  if self._timers[key] then
     self:StopTimer(key)
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._timers)[key] = ((GameGlobal.Timer)()):AddEventTimes(time, TimerTriggerCount.Infinite, self._onTiggerInfinite, key, func)
+  self._timers[key] = GameGlobal.Timer():AddEventTimes(time, TimerTriggerCount.Infinite, self._onTiggerInfinite, key, func)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimerHolder.StopTimer = function(self, key)
-  -- function num : 0_3 , upvalues : _ENV
-  local event = (self._timers)[key]
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
+function UITimerHolder:StopTimer(key)
+  local event = self._timers[key]
   if event then
-    (self._timers)[key] = nil
-    ;
-    ((GameGlobal.Timer)()):CancelEvent(event)
+    self._timers[key] = nil
+    GameGlobal.Timer():CancelEvent(event)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimerHolder.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UITimerHolder:Dispose()
   if not self._timers then
-    return 
+    return
   end
-  for key,event in pairs(self._timers) do
-    ((GameGlobal.Timer)()):CancelEvent(event)
+  for key, event in pairs(self._timers) do
+    GameGlobal.Timer():CancelEvent(event)
   end
   self._timers = nil
 end
-
-

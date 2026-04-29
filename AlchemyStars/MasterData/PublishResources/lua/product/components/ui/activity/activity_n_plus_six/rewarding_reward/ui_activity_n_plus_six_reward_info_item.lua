@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/rewarding_reward/ui_activity_n_plus_six_reward_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityNPlusSixRewardInfoItem", UICustomWidget)
 UIActivityNPlusSixRewardInfoItem = UIActivityNPlusSixRewardInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNPlusSixRewardInfoItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityNPlusSixRewardInfoItem:OnShow()
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._go = self:GetGameObject("Go")
   self._getBtn = self:GetGameObject("GetBtn")
@@ -21,131 +14,84 @@ UIActivityNPlusSixRewardInfoItem.OnShow = function(self)
   self._selectedGo = self:GetGameObject("Selected")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardInfoItem.Refresh = function(self, quest, questComponent, rewardController)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityNPlusSixRewardInfoItem:Refresh(quest, questComponent, rewardController)
   self._rewardController = rewardController
   self._questComponent = questComponent
   self._quest = quest
-  ;
-  (self._go):SetActive(true)
-  local questInfo = (self._quest):QuestInfo()
-  local status = (self._quest):Status()
-  ;
-  (self._name):SetText((StringTable.Get)(questInfo.QuestName))
-  ;
-  (self._des):SetText((StringTable.Get)(questInfo.QuestDesc))
-  ;
-  (self._desRollingText):RefreshText((StringTable.Get)(questInfo.QuestDesc))
+  self._go:SetActive(true)
+  local questInfo = self._quest:QuestInfo()
+  local status = self._quest:Status()
+  self._name:SetText(StringTable.Get(questInfo.QuestName))
+  self._des:SetText(StringTable.Get(questInfo.QuestDesc))
+  self._desRollingText:RefreshText(StringTable.Get(questInfo.QuestDesc))
   if status == QuestStatus.QUEST_NotStart or status == QuestStatus.QUEST_Accepted then
-    (self._getBtn):SetActive(false)
-    ;
-    (self._hasGet):SetActive(false)
-    ;
-    (self._unComplete):SetActive(true)
-    ;
-    (self._selectBtGo):SetActive(true)
-  else
-    if status == QuestStatus.QUEST_Completed then
-      (self._getBtn):SetActive(true)
-      ;
-      (self._hasGet):SetActive(false)
-      ;
-      (self._unComplete):SetActive(false)
-      ;
-      (self._selectBtGo):SetActive(false)
-    else
-      if status == QuestStatus.QUEST_Taken then
-        (self._getBtn):SetActive(false)
-        ;
-        (self._hasGet):SetActive(true)
-        ;
-        (self._unComplete):SetActive(false)
-        ;
-        (self._selectBtGo):SetActive(true)
-      end
-    end
+    self._getBtn:SetActive(false)
+    self._hasGet:SetActive(false)
+    self._unComplete:SetActive(true)
+    self._selectBtGo:SetActive(true)
+  elseif status == QuestStatus.QUEST_Completed then
+    self._getBtn:SetActive(true)
+    self._hasGet:SetActive(false)
+    self._unComplete:SetActive(false)
+    self._selectBtGo:SetActive(false)
+  elseif status == QuestStatus.QUEST_Taken then
+    self._getBtn:SetActive(false)
+    self._hasGet:SetActive(true)
+    self._unComplete:SetActive(false)
+    self._selectBtGo:SetActive(true)
   end
   self._rewards = questInfo.rewards
-  ;
-  (self._contents):SpawnObjects("UIActivityNPlusSixRewardItem", #self._rewards)
-  local items = (self._contents):GetAllSpawnList()
+  self._contents:SpawnObjects("UIActivityNPlusSixRewardItem", #self._rewards)
+  local items = self._contents:GetAllSpawnList()
   for i = 1, #self._rewards do
-    (items[i]):Refresh((self._rewards)[i], status == QuestStatus.QUEST_Taken)
+    items[i]:Refresh(self._rewards[i], status == QuestStatus.QUEST_Taken)
   end
-  ;
-  (self._selectedGo):SetActive(false)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._selectedGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardInfoItem.GetQuest = function(self)
-  -- function num : 0_2
+function UIActivityNPlusSixRewardInfoItem:GetQuest()
   return self._quest
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardInfoItem.SetSelectStatus = function(self, selected)
-  -- function num : 0_3
-  (self._selectedGo):SetActive(false)
+function UIActivityNPlusSixRewardInfoItem:SetSelectStatus(selected)
+  self._selectedGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardInfoItem.SelectedBtnOnClick = function(self)
-  -- function num : 0_4
-  (self._rewardController):SelectRewardItem(self._quest)
+function UIActivityNPlusSixRewardInfoItem:SelectedBtnOnClick()
+  self._rewardController:SelectRewardItem(self._quest)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardInfoItem.GetBtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.GetRewards, self)
+function UIActivityNPlusSixRewardInfoItem:GetBtnOnClick()
+  GameGlobal.TaskManager():StartTask(self.GetRewards, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardInfoItem.GetRewards = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityNPlusSixRewardInfoItem:GetRewards(TT)
   self:Lock("UIActivityNPlusSixRewardInfoItem_GetRewards")
   local res = AsyncRequestRes:New()
-  local ret, rewards = (self._questComponent):HandleQuestTake(TT, res, (self._quest):ID())
+  local ret, rewards = self._questComponent:HandleQuestTake(TT, res, self._quest:ID())
   if ret == 0 then
     self:ShowRewards(rewards)
   else
-    ;
-    (Log.error)("GetRewards error")
+    Log.error("GetRewards error")
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixBuildingRewardGet)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixBuildingRewardGet)
   self:UnLock("UIActivityNPlusSixRewardInfoItem_GetRewards")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardInfoItem.ShowRewards = function(self, rewards)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityNPlusSixRewardInfoItem:ShowRewards(rewards)
   local petIdList = {}
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  for _,reward in pairs(rewards) do
+  local petModule = GameGlobal.GetModule(PetModule)
+  for _, reward in pairs(rewards) do
     if petModule:IsPetID(reward.assetid) then
-      (table.insert)(petIdList, reward)
+      table.insert(petIdList, reward)
     end
   end
-  if (table.count)(petIdList) > 0 then
+  if table.count(petIdList) > 0 then
     self:ShowDialog("UIPetObtain", petIdList, function()
-    -- function num : 0_7_0 , upvalues : _ENV, self, rewards
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", rewards)
-  end
-)
-    return 
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      self:ShowDialog("UIGetItemController", rewards)
+    end)
+    return
   end
   self:ShowDialog("UIGetItemController", rewards)
 end
-
-

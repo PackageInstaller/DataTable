@@ -1,29 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/post/ui_n27_post_package_grid_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27PostPackageGridManager", Object)
 UIN27PostPackageGridManager = UIN27PostPackageGridManager
 local testItem = {
-{1, 1, 1, 1}
-, 
-{1, 0, 0, 1}
-, 
-{1, 1, 1, 1}
+  {
+    1,
+    1,
+    1,
+    1
+  },
+  {
+    1,
+    0,
+    0,
+    1
+  },
+  {
+    1,
+    1,
+    1,
+    1
+  }
 }
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN27PostPackageGridManager.Constructor = function(self, mainGridWidth, mainGridHeight)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN27PostPackageGridManager:Constructor(mainGridWidth, mainGridHeight)
   self._mainGridWidth = mainGridWidth
   self._mainGridHeight = mainGridHeight
   self._itemDetailMap = {}
-  local itemDetailCfg = (Cfg.cfg_post_station_game_item_detail)({})
-  for _,v in pairs(itemDetailCfg) do
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R9 in 'UnsetPending'
-
-    (self._itemDetailMap)[v.ID] = v
+  local itemDetailCfg = Cfg.cfg_post_station_game_item_detail({})
+  for _, v in pairs(itemDetailCfg) do
+    self._itemDetailMap[v.ID] = v
   end
   self._mainMatrix = {}
   self._mainGridItemMap = {}
@@ -31,78 +35,42 @@ UIN27PostPackageGridManager.Constructor = function(self, mainGridWidth, mainGrid
   self._cacheCheckItemWidgetMatrix = {}
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27PostPackageGridManager.InjectWidgetToMainMatrix = function(self, x, y, widget)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not (self._mainMatrix)[x] then
-    (self._mainMatrix)[x] = {}
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    ((self._mainMatrix)[x])[y] = widget
-  end
+function UIN27PostPackageGridManager:InjectWidgetToMainMatrix(x, y, widget)
+  self._mainMatrix[x] = self._mainMatrix[x] or {}
+  self._mainMatrix[x][y] = widget
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27PostPackageGridManager.GetMainMatrixWidget = function(self, x, y)
-  -- function num : 0_2
+function UIN27PostPackageGridManager:GetMainMatrixWidget(x, y)
   if not self:CheckXInBound(x) or not self:CheckYInBound(y) then
     return nil
   end
-  return ((self._mainMatrix)[x])[y]
+  return self._mainMatrix[x][y]
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27PostPackageGridManager.GetItemDetail = function(self, itemID)
-  -- function num : 0_3
-  return (self._itemDetailMap)[itemID]
+function UIN27PostPackageGridManager:GetItemDetail(itemID)
+  return self._itemDetailMap[itemID]
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27PostPackageGridManager.CopyMatrix = function(self, oriMatrix)
-  -- function num : 0_4
+function UIN27PostPackageGridManager:CopyMatrix(oriMatrix)
   local col = #oriMatrix
   local row = #oriMatrix[1]
   local matrix_new = {}
   for i = 1, col do
     for j = 1, row do
-      if not matrix_new[i] then
-        do
-          matrix_new[i] = {}
-          -- DECOMPILER ERROR at PC20: Confused about usage of register: R13 in 'UnsetPending'
-
-          ;
-          (matrix_new[i])[j] = (oriMatrix[i])[j]
-          -- DECOMPILER ERROR at PC21: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC21: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      matrix_new[i] = matrix_new[i] or {}
+      matrix_new[i][j] = oriMatrix[i][j]
     end
   end
   return matrix_new
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27PostPackageGridManager.GetItemSize = function(self, itemID)
-  -- function num : 0_5
-  local detail = (self._itemDetailMap)[itemID]
-  return #(detail.Matrix)[1], #detail.Matrix
+function UIN27PostPackageGridManager:GetItemSize(itemID)
+  local detail = self._itemDetailMap[itemID]
+  return #detail.Matrix[1], #detail.Matrix
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27PostPackageGridManager.GetItemNDCCenter = function(self, itemID)
-  -- function num : 0_6
-  local detail = (self._itemDetailMap)[itemID]
+function UIN27PostPackageGridManager:GetItemNDCCenter(itemID)
+  local detail = self._itemDetailMap[itemID]
   local center = detail.Center
   local matrix = detail.Matrix
   local cx, cy = center[1], center[2]
@@ -110,16 +78,13 @@ UIN27PostPackageGridManager.GetItemNDCCenter = function(self, itemID)
   return cx / mx, cy / my
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27PostPackageGridManager.TryToInsertMainMatrix = function(self, itemID, matrix, widget, rotationID, scale)
-  -- function num : 0_7 , upvalues : _ENV
-  local item = (self._itemDetailMap)[itemID]
-  if rotationID & 1 ~= 0 then
-    local centerFlip = not item
-    local center = (table.shallowcopy)(item.Center)
+function UIN27PostPackageGridManager:TryToInsertMainMatrix(itemID, matrix, widget, rotationID, scale)
+  local item = self._itemDetailMap[itemID]
+  if item then
+    local centerFlip = rotationID & 1 == 0
+    local center = table.shallowcopy(item.Center)
     if centerFlip then
-      center[1] = center[2]
+      center[1], center[2] = center[2], center[1]
     end
     local mx, my = #matrix[1], #matrix
     local cx, cy = center[1], center[2]
@@ -133,57 +98,50 @@ UIN27PostPackageGridManager.TryToInsertMainMatrix = function(self, itemID, matri
         if not self:CheckXInBound(cacuWidgetRaw) or not self:CheckYInBound(cacuWidgetCol) then
           return false
         end
-        local cacuWidget = ((self._mainMatrix)[cacuWidgetCol])[cacuWidgetRaw]
-        if cacuWidget:GetIsOccupy() and (matrix[j])[i] == 1 then
+        local cacuWidget = self._mainMatrix[cacuWidgetCol][cacuWidgetRaw]
+        if cacuWidget:GetIsOccupy() and matrix[j][i] == 1 then
           return false
         end
-        if (matrix[j])[i] == 1 then
-          (table.insert)(itemWidgetMatrix, cacuWidget)
+        if matrix[j][i] == 1 then
+          table.insert(itemWidgetMatrix, cacuWidget)
         end
       end
     end
     local blockList = {}
     self._atomicItemID = self._atomicItemID + 1
-    for _,v in pairs(itemWidgetMatrix) do
+    for _, v in pairs(itemWidgetMatrix) do
       v:SetOccupy(true, self._atomicItemID, itemID)
-      ;
-      (table.insert)(blockList, v)
+      table.insert(blockList, v)
     end
-    local scaleX = scale.x > 0 and 1 or -1
-    do
-      local scaleY = scale.y > 0 and 1 or -1
-      -- DECOMPILER ERROR at PC125: Confused about usage of register: R21 in 'UnsetPending'
-
-      ;
-      (self._mainGridItemMap)[self._atomicItemID] = {itemID = itemID, matrix = matrix, widget = widget, rotationID = rotationID, scale = Vector3(scaleX, scaleY, 1), blockList = blockList}
-      do return true, self._atomicItemID end
-      do return false, nil end
-      -- DECOMPILER ERROR: 12 unprocessed JMP targets
-    end
+    local scaleX = 0 < scale.x and 1 or -1
+    local scaleY = 0 < scale.y and 1 or -1
+    self._mainGridItemMap[self._atomicItemID] = {
+      itemID = itemID,
+      matrix = matrix,
+      widget = widget,
+      rotationID = rotationID,
+      scale = Vector3(scaleX, scaleY, 1),
+      blockList = blockList
+    }
+    return true, self._atomicItemID
   end
+  return false, nil
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27PostPackageGridManager.ClearCheckBlocksColor = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  for _,v in pairs(self._cacheCheckItemWidgetMatrix) do
+function UIN27PostPackageGridManager:ClearCheckBlocksColor()
+  for _, v in pairs(self._cacheCheckItemWidgetMatrix) do
     v:ClearCheckColor()
   end
-  ;
-  (table.clear)(self._cacheCheckItemWidgetMatrix)
+  table.clear(self._cacheCheckItemWidgetMatrix)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27PostPackageGridManager.CheckItemHoveredOnMainMatrix = function(self, itemID, matrix, widget, rotationID)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN27PostPackageGridManager:CheckItemHoveredOnMainMatrix(itemID, matrix, widget, rotationID)
   self:ClearCheckBlocksColor()
-  local item = (self._itemDetailMap)[itemID]
+  local item = self._itemDetailMap[itemID]
   local centerFlip = rotationID & 1 == 0
-  local center = (table.shallowcopy)(item.Center)
+  local center = table.shallowcopy(item.Center)
   if centerFlip then
-    center[1] = center[2]
+    center[1], center[2] = center[2], center[1]
   end
   local mx, my = #matrix[1], #matrix
   local cx, cy = center[1], center[2]
@@ -197,114 +155,73 @@ UIN27PostPackageGridManager.CheckItemHoveredOnMainMatrix = function(self, itemID
       if not self:CheckXInBound(cacuWidgetRaw) or not self:CheckYInBound(cacuWidgetCol) then
         checkResult = false
       else
-        local cacuWidget = ((self._mainMatrix)[cacuWidgetCol])[cacuWidgetRaw]
-        if cacuWidget:GetIsOccupy() and (matrix[j])[i] == 1 then
+        local cacuWidget = self._mainMatrix[cacuWidgetCol][cacuWidgetRaw]
+        if cacuWidget:GetIsOccupy() and matrix[j][i] == 1 then
           checkResult = false
         end
-        if (matrix[j])[i] == 1 then
-          (table.insert)(self._cacheCheckItemWidgetMatrix, cacuWidget)
+        if matrix[j][i] == 1 then
+          table.insert(self._cacheCheckItemWidgetMatrix, cacuWidget)
         end
       end
     end
   end
-  for _,v in pairs(self._cacheCheckItemWidgetMatrix) do
+  for _, v in pairs(self._cacheCheckItemWidgetMatrix) do
     v:ShowCheckColor(checkResult)
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27PostPackageGridManager.ClearGrid = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (table.clear)(self._mainGridItemMap)
-  for _,array in pairs(self._mainMatrix) do
-    for _,v in pairs(array) do
+function UIN27PostPackageGridManager:ClearGrid()
+  table.clear(self._mainGridItemMap)
+  for _, array in pairs(self._mainMatrix) do
+    for _, v in pairs(array) do
       v:SetOccupy(false, nil, nil)
     end
   end
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27PostPackageGridManager.RemoveItemDetailInGridMap = function(self, atomicItemID)
-  -- function num : 0_11
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._mainGridItemMap)[atomicItemID] = nil
+function UIN27PostPackageGridManager:RemoveItemDetailInGridMap(atomicItemID)
+  self._mainGridItemMap[atomicItemID] = nil
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27PostPackageGridManager.GetItemDetailOnGridMap = function(self, atomicItemID)
-  -- function num : 0_12
-  return (self._mainGridItemMap)[atomicItemID]
+function UIN27PostPackageGridManager:GetItemDetailOnGridMap(atomicItemID)
+  return self._mainGridItemMap[atomicItemID]
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27PostPackageGridManager.CheckXInBound = function(self, value)
-  -- function num : 0_13
-  if value > 0 and value <= self._mainGridWidth then
+function UIN27PostPackageGridManager:CheckXInBound(value)
+  if 0 < value and value <= self._mainGridWidth then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27PostPackageGridManager.CheckYInBound = function(self, value)
-  -- function num : 0_14
-  if value > 0 and value <= self._mainGridHeight then
+function UIN27PostPackageGridManager:CheckYInBound(value)
+  if 0 < value and value <= self._mainGridHeight then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27PostPackageGridManager.RotateItemClockwise = function(self, itemMatrix)
-  -- function num : 0_15
+function UIN27PostPackageGridManager:RotateItemClockwise(itemMatrix)
   local col = #itemMatrix
   local row = #itemMatrix[1]
   local matrix_new = {}
   for i = 1, col do
     for j = 1, row do
-      if not matrix_new[row - j + 1] then
-        do
-          matrix_new[row - j + 1] = {}
-          -- DECOMPILER ERROR at PC26: Confused about usage of register: R13 in 'UnsetPending'
-
-          ;
-          (matrix_new[row - j + 1])[i] = (itemMatrix[i])[j]
-          -- DECOMPILER ERROR at PC27: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC27: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      matrix_new[row - j + 1] = matrix_new[row - j + 1] or {}
+      matrix_new[row - j + 1][i] = itemMatrix[i][j]
     end
   end
   return matrix_new
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27PostPackageGridManager.FlipItem = function(self, itemMatrix)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN27PostPackageGridManager:FlipItem(itemMatrix)
   local col = #itemMatrix
   local row = #itemMatrix[1]
-  local center = (math.floor)(row / 2)
+  local center = math.floor(row / 2)
   for i = 1, col do
     for j = 1, center do
-      -- DECOMPILER ERROR at PC25: Confused about usage of register: R14 in 'UnsetPending'
-
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R13 in 'UnsetPending'
-
-      (itemMatrix[i])[j] = (itemMatrix[i])[row - j + 1]
+      itemMatrix[i][j], itemMatrix[i][row - j + 1] = itemMatrix[i][row - j + 1], itemMatrix[i][j]
     end
   end
   return itemMatrix
 end
-
-

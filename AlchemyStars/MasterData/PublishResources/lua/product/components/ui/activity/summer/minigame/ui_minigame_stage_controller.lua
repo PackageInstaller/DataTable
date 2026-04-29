@@ -1,27 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/minigame/ui_minigame_stage_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMiniGameStageController", UIController)
 UIMiniGameStageController = UIMiniGameStageController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMiniGameStageController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMiniGameStageController:Constructor()
   self._wayPointCell = {}
   self._wayLineCell = {}
   self._curMissionID = 0
   self._firstMissionID = 1
   self._rewards = nil
-  self._textColor = {[true] = Color(1, 1, 1, 1), [false] = Color(1, 1, 1, 0.8)}
+  self._textColor = {
+    [true] = Color(1, 1, 1, 1),
+    [false] = Color(1, 1, 1, 0.8)
+  }
   self._componentID = 122110007
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMiniGameStageController:LoadDataOnEnter(TT, res, uiParams)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._loginModule = self:GetModule(LoginModule)
   self._campaignModule = self:GetModule(CampaignModule)
@@ -29,74 +22,57 @@ UIMiniGameStageController.LoadDataOnEnter = function(self, TT, res, uiParams)
   if not uiParams or not uiParams[1] then
     local campaignType = ECampaignType.CAMPAIGN_TYPE_N48
     local componentIds = {}
-    self._campaign = (UIActivityHelper.LoadDataOnEnter)(TT, res, campaignType, componentIds)
+    self._campaign = UIActivityHelper.LoadDataOnEnter(TT, res, campaignType, componentIds)
     if res and not res:GetSucc() then
-      (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-      return 
+      self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+      return
     end
-    self._process = (self._campaign):GetLocalProcess()
-    self._component = (self._process):GetComponent((UIActivityN48Helper.GetComponentId)("game"))
+    self._process = self._campaign:GetLocalProcess()
+    self._component = self._process:GetComponent(UIActivityN48Helper.GetComponentId("game"))
   else
-    do
-      self._campaign = uiParams[1]
-      self._component = uiParams[2]
-      self._componentInfo = (self._component):GetComponentInfo()
-      local openTime = (self._componentInfo).m_unlock_time
-      local closeTime = (self._componentInfo).m_close_time
-      local nowtime = (self._svrTimeModule):GetServerTime() / 1000
-      if nowtime < openTime then
-        res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
-        ;
-        (self._campaignModule):ShowErrorToast(res.m_result, true)
-        return 
-      end
-      if closeTime < nowtime then
-        res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
-        ;
-        (self._campaignModule):ShowErrorToast(res.m_result, true)
-        return 
-      end
-    end
+    self._campaign = uiParams[1]
+    self._component = uiParams[2]
+  end
+  self._componentInfo = self._component:GetComponentInfo()
+  local openTime = self._componentInfo.m_unlock_time
+  local closeTime = self._componentInfo.m_close_time
+  local nowtime = self._svrTimeModule:GetServerTime() / 1000
+  if openTime > nowtime then
+    res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
+    self._campaignModule:ShowErrorToast(res.m_result, true)
+    return
+  end
+  if closeTime < nowtime then
+    res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
+    self._campaignModule:ShowErrorToast(res.m_result, true)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  self._cfg_stage = (Cfg.cfg_component_mini_game_mission)({ComponentID = self._componentID})
-  ;
-  (table.sort)(self._cfg_stage, function(a, b)
-    -- function num : 0_2_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  self._firstMissionID = ((self._cfg_stage)[1]).ID
-  self._lastBGMResName = (AudioHelperController.GetCurrentBgm)()
+function UIMiniGameStageController:OnShow(uiParams)
+  self._cfg_stage = Cfg.cfg_component_mini_game_mission({
+    ComponentID = self._componentID
+  })
+  table.sort(self._cfg_stage, function(a, b)
+    return a.ID < b.ID
+  end)
+  self._firstMissionID = self._cfg_stage[1].ID
+  self._lastBGMResName = AudioHelperController.GetCurrentBgm()
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._GetComponents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMiniGameStageController:_GetComponents()
   self._backBtn = self:GetUIComponent("UISelectObjectPath", "BackBtn")
-  self._commonTopBtn = (self._backBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_3_0 , upvalues : self
+  self._commonTopBtn = self._backBtn:SpawnObject("UICommonTopButton")
+  self._commonTopBtn:SetData(function()
     self:_Close()
-  end
-, function()
-    -- function num : 0_3_1 , upvalues : self
+  end, function()
     self:ShowDialog("UIHelpController", "UIMiniGameStageController")
-  end
-)
+  end)
   self._remainTime = self:GetUIComponent("UILocalizationText", "Time")
   self._itemTips = self:GetUIComponent("UISelectObjectPath", "ItemTips")
-  self._tips = (self._itemTips):SpawnObject("UISelectInfo")
+  self._tips = self._itemTips:SpawnObject("UISelectInfo")
   self._content = self:GetUIComponent("RectTransform", "Content")
   self._wayPoint = self:GetUIComponent("UISelectObjectPath", "WayPoint")
   self._wayLine = self:GetUIComponent("UISelectObjectPath", "WayLine")
@@ -108,57 +84,21 @@ UIMiniGameStageController._GetComponents = function(self)
   self._selectMakt = self:GetGameObject("SelectMark")
   self._mark = self:GetGameObject("Mark")
   self._BASBtn = {}
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._BASBtn)[ScoreType.B] = self:GetGameObject("B")
-  -- DECOMPILER ERROR at PC93: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._BASBtn)[ScoreType.A] = self:GetGameObject("A")
-  -- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._BASBtn)[ScoreType.S] = self:GetGameObject("S")
+  self._BASBtn[ScoreType.B] = self:GetGameObject("B")
+  self._BASBtn[ScoreType.A] = self:GetGameObject("A")
+  self._BASBtn[ScoreType.S] = self:GetGameObject("S")
   self._BASScore = {}
-  -- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._BASScore)[ScoreType.B] = self:GetUIComponent("UILocalizationText", "BScore")
-  -- DECOMPILER ERROR at PC118: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._BASScore)[ScoreType.A] = self:GetUIComponent("UILocalizationText", "AScore")
-  -- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._BASScore)[ScoreType.S] = self:GetUIComponent("UILocalizationText", "SScore")
+  self._BASScore[ScoreType.B] = self:GetUIComponent("UILocalizationText", "BScore")
+  self._BASScore[ScoreType.A] = self:GetUIComponent("UILocalizationText", "AScore")
+  self._BASScore[ScoreType.S] = self:GetUIComponent("UILocalizationText", "SScore")
   self._BASRedPoint = {}
-  -- DECOMPILER ERROR at PC135: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._BASRedPoint)[ScoreType.B] = self:GetGameObject("BRedPoint")
-  -- DECOMPILER ERROR at PC142: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._BASRedPoint)[ScoreType.A] = self:GetGameObject("ARedPoint")
-  -- DECOMPILER ERROR at PC149: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._BASRedPoint)[ScoreType.S] = self:GetGameObject("SRedPoint")
+  self._BASRedPoint[ScoreType.B] = self:GetGameObject("BRedPoint")
+  self._BASRedPoint[ScoreType.A] = self:GetGameObject("ARedPoint")
+  self._BASRedPoint[ScoreType.S] = self:GetGameObject("SRedPoint")
   self._BASState = {}
-  -- DECOMPILER ERROR at PC158: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._BASState)[ScoreType.B] = self:GetGameObject("BState")
-  -- DECOMPILER ERROR at PC165: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._BASState)[ScoreType.A] = self:GetGameObject("AState")
-  -- DECOMPILER ERROR at PC172: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._BASState)[ScoreType.S] = self:GetGameObject("SState")
+  self._BASState[ScoreType.B] = self:GetGameObject("BState")
+  self._BASState[ScoreType.A] = self:GetGameObject("AState")
+  self._BASState[ScoreType.S] = self:GetGameObject("SState")
   self._receiveRewardBtnText = self:GetUIComponent("UILocalizationText", "ReceiveRewardBtnText")
   self._receiveRewardBtnLock = self:GetGameObject("ReceiveRewardBtnLock")
   self._storyBtn = self:GetGameObject("StoryBtn")
@@ -169,102 +109,75 @@ UIMiniGameStageController._GetComponents = function(self)
   self._blackMask = self:GetGameObject("black_mask")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMiniGameStageController:_OnValue()
   self:_PlayStory()
   self:_SetRemainTime()
   self:_CreateStageMap()
-  self:_ClickWayPoint(((self._cfg_stage)[1]).ID, false)
-  ;
-  (self._description):SetText((StringTable.Get)("str_summer_minigame_description"))
+  self:_ClickWayPoint(self._cfg_stage[1].ID, false)
+  self._description:SetText(StringTable.Get("str_summer_minigame_description"))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._PlayStory = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if (LocalDB.GetInt)("ui_minigame_first_story" .. (self._loginModule):GetRoleShowID()) > 0 then
-    return 
+function UIMiniGameStageController:_PlayStory()
+  if LocalDB.GetInt("ui_minigame_first_story" .. self._loginModule:GetRoleShowID()) > 0 then
+    return
   end
   self:_hide(true)
-  ;
-  ((GameGlobal.GetModule)(StoryModule)):StartStory((self._componentInfo).m_first_story_id, function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
+  GameGlobal.GetModule(StoryModule):StartStory(self._componentInfo.m_first_story_id, function()
     self:_hide(false)
-    ;
-    (AudioHelperController.PlayBGM)(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
-    ;
-    (LocalDB.SetInt)("ui_minigame_first_story" .. (self._loginModule):GetRoleShowID(), 1)
-  end
-)
+    AudioHelperController.PlayBGM(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
+    LocalDB.SetInt("ui_minigame_first_story" .. self._loginModule:GetRoleShowID(), 1)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._SetRemainTime = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local time = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  time = (self._componentInfo).m_close_time - time
-  ;
-  (self._remainTime):SetText(self:_GetRemainTime(time))
+function UIMiniGameStageController:_SetRemainTime()
+  local time = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  time = self._componentInfo.m_close_time - time
+  self._remainTime:SetText(self:_GetRemainTime(time))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._CreateStageMap = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local wayPointCount = (table.count)(self._cfg_stage)
+function UIMiniGameStageController:_CreateStageMap()
+  local wayPointCount = table.count(self._cfg_stage)
   local vector = Vector2(0.5, 0.5)
-  local waypoint_offset_y = {[0] = -145, [1] = 154}
-  local rotation_z = {[0] = 19, [1] = -19}
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-  if wayPointCount > 5 then
-    (self._content).sizeDelta = Vector2(1500 + (wayPointCount - 5) * 500, 0)
+  local waypoint_offset_y = {
+    [0] = -145,
+    [1] = 154
+  }
+  local rotation_z = {
+    [0] = 19,
+    [1] = -19
+  }
+  if 5 < wayPointCount then
+    self._content.sizeDelta = Vector2(1500 + (wayPointCount - 5) * 500, 0)
   end
-  local servertime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  ;
-  (self._wayPoint):SpawnObjects("UIMiniGameWayPoint", wayPointCount)
-  self._wayPointCell = (self._wayPoint):GetAllSpawnList()
-  for key,value in pairs(self._wayPointCell) do
-    self:_SetWayInfo((value.view).transform, vector, Vector3(((self._content).sizeDelta).x * -0.5 + 250 + (key - 1) * 295, waypoint_offset_y[key % 2], 0), Vector3.zero)
-    local missionID = ((self._cfg_stage)[key]).ID
-    value:SetData(self, missionID, (self._cfg_stage)[key], ((self._componentInfo).mission_info_list)[missionID], servertime, function(missionID)
-    -- function num : 0_7_0 , upvalues : self
-    self:_ClickWayPoint(missionID, true)
+  local servertime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  self._wayPoint:SpawnObjects("UIMiniGameWayPoint", wayPointCount)
+  self._wayPointCell = self._wayPoint:GetAllSpawnList()
+  for key, value in pairs(self._wayPointCell) do
+    self:_SetWayInfo(value.view.transform, vector, Vector3(self._content.sizeDelta.x * -0.5 + 250 + (key - 1) * 295, waypoint_offset_y[key % 2], 0), Vector3.zero)
+    local missionID = self._cfg_stage[key].ID
+    value:SetData(self, missionID, self._cfg_stage[key], self._componentInfo.mission_info_list[missionID], servertime, function(missionID)
+      self:_ClickWayPoint(missionID, true)
+    end, self:_IsNewUnLockMission(missionID))
   end
-, self:_IsNewUnLockMission(missionID))
+  self._wayLine:SpawnObjects("UIMiniGameWayLine", wayPointCount - 1)
+  self._wayLineCell = self._wayLine:GetAllSpawnList()
+  for key, value in pairs(self._wayLineCell) do
+    self:_SetWayInfo(value.view.transform, vector, Vector3(self._content.sizeDelta.x * -0.5 + 397.5 + (key - 1) * 295, -25, 0), Vector3(0, 0, rotation_z[key % 2]))
+    value:SetData(servertime >= self._componentInfo.mission_info_list[self._cfg_stage[key + 1].ID].unlock_time)
   end
-  ;
-  (self._wayLine):SpawnObjects("UIMiniGameWayLine", wayPointCount - 1)
-  self._wayLineCell = (self._wayLine):GetAllSpawnList()
-  for key,value in pairs(self._wayLineCell) do
-    self:_SetWayInfo((value.view).transform, vector, Vector3(((self._content).sizeDelta).x * -0.5 + 397.5 + (key - 1) * 295, -25, 0), Vector3(0, 0, rotation_z[key % 2]))
-    value:SetData((((self._componentInfo).mission_info_list)[((self._cfg_stage)[key + 1]).ID]).unlock_time <= servertime)
-  end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._RefreshWayPointWayLineInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local servertime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  for key,value in pairs(self._wayPointCell) do
+function UIMiniGameStageController:_RefreshWayPointWayLineInfo()
+  local servertime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  for key, value in pairs(self._wayPointCell) do
     value:RefreshUnLockState(servertime)
   end
-  for key,value in pairs(self._wayLineCell) do
-    value:SetData((((self._componentInfo).mission_info_list)[((self._cfg_stage)[key + 1]).ID]).unlock_time <= servertime)
+  for key, value in pairs(self._wayLineCell) do
+    value:SetData(servertime >= self._componentInfo.mission_info_list[self._cfg_stage[key + 1].ID].unlock_time)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._SetWayInfo = function(self, transform, vector2, vector3, eulerAngles)
-  -- function num : 0_9
+function UIMiniGameStageController:_SetWayInfo(transform, vector2, vector3, eulerAngles)
   transform.anchorMin = vector2
   transform.anchorMax = vector2
   transform.pivot = vector2
@@ -272,15 +185,12 @@ UIMiniGameStageController._SetWayInfo = function(self, transform, vector2, vecto
   transform.eulerAngles = eulerAngles
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._IsNewUnLockMission = function(self, id)
-  -- function num : 0_10 , upvalues : _ENV
-  local str = (LocalDB.GetString)("MiniGameNewStage" .. (self._loginModule):GetRoleShowID())
-  local ids = (string.split)(str, ",")
-  local nowTime = (self._svrTimeModule):GetServerTime() * 0.001
-  local mission = ((self._componentInfo).mission_info_list)[id]
-  if mission.unlock_time <= nowTime then
+function UIMiniGameStageController:_IsNewUnLockMission(id)
+  local str = LocalDB.GetString("MiniGameNewStage" .. self._loginModule:GetRoleShowID())
+  local ids = string.split(str, ",")
+  local nowTime = self._svrTimeModule:GetServerTime() * 0.001
+  local mission = self._componentInfo.mission_info_list[id]
+  if nowTime >= mission.unlock_time then
     for i = 1, #ids do
       if ids[i] == tostring(id) then
         return false
@@ -292,16 +202,13 @@ UIMiniGameStageController._IsNewUnLockMission = function(self, id)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._Close = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local str = (LocalDB.GetString)("MiniGameNewStage" .. (self._loginModule):GetRoleShowID())
-  local ids = (string.split)(str, ",")
-  local nowTime = (self._svrTimeModule):GetServerTime() * 0.001
-  local list = (self._componentInfo).mission_info_list
-  for key,value in pairs(list) do
-    if value.unlock_time <= nowTime then
+function UIMiniGameStageController:_Close()
+  local str = LocalDB.GetString("MiniGameNewStage" .. self._loginModule:GetRoleShowID())
+  local ids = string.split(str, ",")
+  local nowTime = self._svrTimeModule:GetServerTime() * 0.001
+  local list = self._componentInfo.mission_info_list
+  for key, value in pairs(list) do
+    if nowTime >= value.unlock_time then
       local recorded = false
       for j = 1, #ids do
         if ids[j] == tostring(key) then
@@ -313,36 +220,30 @@ UIMiniGameStageController._Close = function(self)
       end
     end
   end
-  ;
-  (LocalDB.SetString)("MiniGameNewStage" .. (self._loginModule):GetRoleShowID(), str)
+  LocalDB.SetString("MiniGameNewStage" .. self._loginModule:GetRoleShowID(), str)
   self:CloseDialog()
   if self._callBack then
-    (self._callBack)()
+    self._callBack()
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityDialogRefresh)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityDialogRefresh)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._ClickWayPoint = function(self, missionID, manual)
-  -- function num : 0_12 , upvalues : _ENV
+function UIMiniGameStageController:_ClickWayPoint(missionID, manual)
   if manual then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1ClickNormal)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1ClickNormal)
   end
   if self:_CheckCampaignClose() then
-    return 
+    return
   end
   if manual then
-    (self._stageAnimation):Play((MGAnimations.Other).Switch)
+    self._stageAnimation:Play(MGAnimations.Other.Switch)
   end
-  ;
-  (self._switchAnimation):Play((MGAnimations.Other).SwitchMark)
-  local servertime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  local miss_info = ((self._componentInfo).mission_info_list)[missionID]
+  self._switchAnimation:Play(MGAnimations.Other.SwitchMark)
+  local servertime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  local miss_info = self._componentInfo.mission_info_list[missionID]
   if servertime < miss_info.unlock_time then
-    (ToastManager.ShowToast)((StringTable.Get)("str_summer_minigame_lock"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_summer_minigame_lock"))
+    return
   end
   if self._curMissionID ~= missionID then
     self._curMissionID = missionID
@@ -351,203 +252,131 @@ UIMiniGameStageController._ClickWayPoint = function(self, missionID, manual)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._RefreshUIInfo = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  self._current_stage_cfg = (self._cfg_stage)[self:_GetMissionIndex(self._curMissionID)]
+function UIMiniGameStageController:_RefreshUIInfo()
+  self._current_stage_cfg = self._cfg_stage[self:_GetMissionIndex(self._curMissionID)]
   if self._current_stage_cfg then
-    (self._title):SetText((StringTable.Get)((self._current_stage_cfg).Title))
-    ;
-    (self._stageDescription):SetText((StringTable.Get)((self._current_stage_cfg).Description))
-    local mission_info = (((self._componentInfo).mission_info_list)[self._curMissionID]).mission_info
-    ;
-    (self._bestScore):SetText(mission_info.max_score)
+    self._title:SetText(StringTable.Get(self._current_stage_cfg.Title))
+    self._stageDescription:SetText(StringTable.Get(self._current_stage_cfg.Description))
+    local mission_info = self._componentInfo.mission_info_list[self._curMissionID].mission_info
+    self._bestScore:SetText(mission_info.max_score)
     self:_RefreshBASInfo(mission_info, self._current_stage_cfg)
     self:_RefreshRewards(ScoreType.B)
-    ;
-    (self._storyBtn):SetActive(mission_info.story_mask > 0)
+    self._storyBtn:SetActive(mission_info.story_mask > 0)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._RefreshBASInfo = function(self, miss_info, cfg_stage)
-  -- function num : 0_14 , upvalues : _ENV
-  for key,value in pairs(ScoreType) do
-    ((self._BASScore)[value]):SetText((cfg_stage.Score)[(math.min)(value, 3)])
+function UIMiniGameStageController:_RefreshBASInfo(miss_info, cfg_stage)
+  for key, value in pairs(ScoreType) do
+    self._BASScore[value]:SetText(cfg_stage.Score[math.min(value, 3)])
     local showredpoint = value <= miss_info.mission_grade and miss_info.reward_mask & value == 0
-    ;
-    ((self._BASRedPoint)[value]):SetActive(showredpoint)
-    ;
-    ((self._BASState)[value]):SetActive((value <= miss_info.mission_grade and not showredpoint))
+    self._BASRedPoint[value]:SetActive(showredpoint)
+    self._BASState[value]:SetActive(value <= miss_info.mission_grade and not showredpoint)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._ReceiveRewardBtnState = function(self, mission_info, scoretype)
-  -- function num : 0_15 , upvalues : _ENV
+function UIMiniGameStageController:_ReceiveRewardBtnState(mission_info, scoretype)
   local str = ""
-  if mission_info.mission_grade < scoretype then
-    str = (StringTable.Get)("str_summer_minigame_notreached")
+  if scoretype > mission_info.mission_grade then
+    str = StringTable.Get("str_summer_minigame_notreached")
+  elseif mission_info.reward_mask & scoretype == 0 then
+    str = StringTable.Get("str_summer_minigame_getaward")
   else
-    if mission_info.reward_mask & scoretype == 0 then
-      str = (StringTable.Get)("str_summer_minigame_getaward")
-    else
-      str = (StringTable.Get)("str_summer_minigame_gotaward")
-    end
+    str = StringTable.Get("str_summer_minigame_gotaward")
   end
   local state = mission_info.reward_mask & scoretype == 0 and scoretype <= mission_info.mission_grade
-  ;
-  (self._receiveRewardBtnText):SetText(str)
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._receiveRewardBtnText).color = (self._textColor)[state]
-  ;
-  (self._receiveRewardBtnLock):SetActive(not state)
-  ;
-  (self._light):SetActive(state)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._receiveRewardBtnText:SetText(str)
+  self._receiveRewardBtnText.color = self._textColor[state]
+  self._receiveRewardBtnLock:SetActive(not state)
+  self._light:SetActive(state)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._RewardState = function(self, mission_info)
-  -- function num : 0_16
+function UIMiniGameStageController:_RewardState(mission_info)
   if self._rewards then
     for i = 1, #self._rewards do
-      ((self._rewards)[i]):RefreshUIInfo(mission_info)
+      self._rewards[i]:RefreshUIInfo(mission_info)
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._RefreshSelectMark = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local gameObject = ((self._wayPointCell)[self:_GetMissionIndex(self._curMissionID)])._di
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._mark).transform).position = (gameObject.transform).position
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._mark).transform).localPosition = Vector3((((self._mark).transform).localPosition).x - 20, (((self._mark).transform).localPosition).y + 26)
+function UIMiniGameStageController:_RefreshSelectMark()
+  local gameObject = self._wayPointCell[self:_GetMissionIndex(self._curMissionID)]._di
+  self._mark.transform.position = gameObject.transform.position
+  self._mark.transform.localPosition = Vector3(self._mark.transform.localPosition.x - 20, self._mark.transform.localPosition.y + 26)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._RefreshRewards = function(self, scoretype)
-  -- function num : 0_18 , upvalues : _ENV
+function UIMiniGameStageController:_RefreshRewards(scoretype)
   if self._current_stage_cfg then
     self._current_scoretype = scoretype
-    local rewards = nil
+    local rewards
     if scoretype == ScoreType.B then
-      rewards = (self._current_stage_cfg).ScoreBReward
-    else
-      if scoretype == ScoreType.A then
-        rewards = (self._current_stage_cfg).ScoreAReward
-      else
-        if scoretype == ScoreType.S then
-          rewards = (self._current_stage_cfg).ScoreSReward
-        end
-      end
+      rewards = self._current_stage_cfg.ScoreBReward
+    elseif scoretype == ScoreType.A then
+      rewards = self._current_stage_cfg.ScoreAReward
+    elseif scoretype == ScoreType.S then
+      rewards = self._current_stage_cfg.ScoreSReward
     end
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self._selectMakt).transform).localPosition = Vector3(((((self._BASBtn)[scoretype]).transform).localPosition).x, 81.6)
-    local mission_info = (((self._componentInfo).mission_info_list)[self._curMissionID]).mission_info
+    self._selectMakt.transform.localPosition = Vector3(self._BASBtn[scoretype].transform.localPosition.x, 81.6)
+    local mission_info = self._componentInfo.mission_info_list[self._curMissionID].mission_info
     self:_ReceiveRewardBtnState(mission_info, scoretype)
-    local count = (table.count)(rewards)
-    if count > 0 then
-      (self._reward):SpawnObjects("UIMiniGameRewardItem", count)
-      self._rewards = (self._reward):GetAllSpawnList()
+    local count = table.count(rewards)
+    if 0 < count then
+      self._reward:SpawnObjects("UIMiniGameRewardItem", count)
+      self._rewards = self._reward:GetAllSpawnList()
       for i = 1, #self._rewards do
-        ((self._rewards)[i]):SetData(rewards[i], scoretype, mission_info, function(id, pos)
-    -- function num : 0_18_0 , upvalues : self
-    self:_ShowRewardTips(id, pos)
-  end
-)
+        self._rewards[i]:SetData(rewards[i], scoretype, mission_info, function(id, pos)
+          self:_ShowRewardTips(id, pos)
+        end)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._ShowRewardTips = function(self, id, pos)
-  -- function num : 0_19
-  (self._tips):SetData(id, pos)
+function UIMiniGameStageController:_ShowRewardTips(id, pos)
+  self._tips:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._GetRemainTime = function(self, time)
-  -- function num : 0_20 , upvalues : _ENV
-  local day, hour, minute = nil, nil, nil
-  day = (math.floor)(time / 86400)
-  hour = (math.floor)(time / 3600) % 24
-  minute = (math.floor)(time / 60) % 60
+function UIMiniGameStageController:_GetRemainTime(time)
+  local day, hour, minute
+  day = math.floor(time / 86400)
+  hour = math.floor(time / 3600) % 24
+  minute = math.floor(time / 60) % 60
   local timestring = ""
-  if day > 0 then
-    timestring = day .. (StringTable.Get)("str_activity_common_day") .. hour .. (StringTable.Get)("str_activity_common_hour")
+  if 0 < day then
+    timestring = day .. StringTable.Get("str_activity_common_day") .. hour .. StringTable.Get("str_activity_common_hour")
+  elseif 0 < hour then
+    timestring = hour .. StringTable.Get("str_activity_common_hour") .. minute .. StringTable.Get("str_activity_common_minute")
+  elseif 0 < minute then
+    timestring = minute .. StringTable.Get("str_activity_common_minute")
   else
-    if hour > 0 then
-      timestring = hour .. (StringTable.Get)("str_activity_common_hour") .. minute .. (StringTable.Get)("str_activity_common_minute")
-    else
-      if minute > 0 then
-        timestring = minute .. (StringTable.Get)("str_activity_common_minute")
-      else
-        timestring = (StringTable.Get)("str_activity_common_less_minute")
-      end
-    end
+    timestring = StringTable.Get("str_activity_common_less_minute")
   end
-  return (string.format)((StringTable.Get)("str_activity_common_over"), timestring)
+  return string.format(StringTable.Get("str_activity_common_over"), timestring)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController.BOnClick = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1ClickNormal)
+function UIMiniGameStageController:BOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1ClickNormal)
   self:_RefreshRewards(ScoreType.B)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController.AOnClick = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1ClickNormal)
+function UIMiniGameStageController:AOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1ClickNormal)
   self:_RefreshRewards(ScoreType.A)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController.SOnClick = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1ClickNormal)
+function UIMiniGameStageController:SOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1ClickNormal)
   self:_RefreshRewards(ScoreType.S)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController.ReceiveRewardBtnOnClick = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1ClickNormal)
-  if (self._receiveRewardBtnLock).activeSelf then
-    return 
+function UIMiniGameStageController:ReceiveRewardBtnOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1ClickNormal)
+  if self._receiveRewardBtnLock.activeSelf then
+    return
   end
   self:Lock("UIMiniGameStageController:ReceiveRewardBtnOnClick")
   self:StartTask(function(TT)
-    -- function num : 0_24_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
-    local result, rewards = (self._component):HandleRecvRewardMsg(TT, res, ((self._cfg_stage)[self:_GetMissionIndex(self._curMissionID)]).ID, self._current_scoretype)
+    local result, rewards = self._component:HandleRecvRewardMsg(TT, res, self._cfg_stage[self:_GetMissionIndex(self._curMissionID)].ID, self._current_scoretype)
     if result and result:GetSucc() then
       self:ShowDialog("UIGetItemController", rewards)
       self:_RefreshUIWhenReceiveReward()
@@ -555,180 +384,120 @@ UIMiniGameStageController.ReceiveRewardBtnOnClick = function(self)
       self:_Close()
     end
     self:UnLock("UIMiniGameStageController:ReceiveRewardBtnOnClick")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._RefreshUIWhenReceiveReward = function(self)
-  -- function num : 0_25
-  local miss_info = (((self._componentInfo).mission_info_list)[self._curMissionID]).mission_info
-  local showredpoint = self._current_scoretype <= miss_info.mission_grade and miss_info.reward_mask & self._current_scoretype == 0
-  ;
-  ((self._BASRedPoint)[self._current_scoretype]):SetActive(showredpoint)
-  ;
-  ((self._BASState)[self._current_scoretype]):SetActive(not showredpoint and self._current_scoretype <= miss_info.mission_grade)
+function UIMiniGameStageController:_RefreshUIWhenReceiveReward()
+  local miss_info = self._componentInfo.mission_info_list[self._curMissionID].mission_info
+  local showredpoint = miss_info.mission_grade >= self._current_scoretype and miss_info.reward_mask & self._current_scoretype == 0
+  self._BASRedPoint[self._current_scoretype]:SetActive(showredpoint)
+  self._BASState[self._current_scoretype]:SetActive(not showredpoint and miss_info.mission_grade >= self._current_scoretype)
   self:_ReceiveRewardBtnState(miss_info, self._current_scoretype)
   self:_RewardState(miss_info)
-  ;
-  ((self._wayPointCell)[self:_GetMissionIndex(self._curMissionID)]):RefreshRedpointStateZi(miss_info)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self._wayPointCell[self:_GetMissionIndex(self._curMissionID)]:RefreshRedpointStateZi(miss_info)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._RefreshUIWhenGameOver = function(self)
-  -- function num : 0_26
-  local mission_info = (((self._componentInfo).mission_info_list)[self._curMissionID]).mission_info
-  ;
-  (self._bestScore):SetText(mission_info.max_score)
+function UIMiniGameStageController:_RefreshUIWhenGameOver()
+  local mission_info = self._componentInfo.mission_info_list[self._curMissionID].mission_info
+  self._bestScore:SetText(mission_info.max_score)
   self:_RefreshBASInfo(mission_info, self._current_stage_cfg)
   self:_ReceiveRewardBtnState(mission_info, self._current_scoretype)
   self:_RewardState(mission_info)
-  ;
-  ((self._wayPointCell)[self:_GetMissionIndex(self._curMissionID)]):RefreshRedpointStateZi(mission_info)
-  ;
-  (self._storyBtn):SetActive(mission_info.story_mask > 0)
+  self._wayPointCell[self:_GetMissionIndex(self._curMissionID)]:RefreshRedpointStateZi(mission_info)
+  self._storyBtn:SetActive(mission_info.story_mask > 0)
   self:_RefreshWayPointWayLineInfo()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController.StoryBtnOnClick = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1ClickNormal)
+function UIMiniGameStageController:StoryBtnOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1ClickNormal)
   if self._curMissionID == self._firstMissionID then
     self:_hide(true)
-    ;
-    ((GameGlobal.GetModule)(StoryModule)):StartStory((self._componentInfo).m_first_story_id, function()
-    -- function num : 0_27_0 , upvalues : self
-    self:_hide(false)
-    self:_PlayMissStory()
-  end
-)
-  else
-    self:_PlayMissStory()
-  end
-end
-
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._PlayMissStory = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  if ((self._current_stage_cfg).StoryID)[1] then
-    self:_hide(true)
-    ;
-    ((GameGlobal.GetModule)(StoryModule)):StartStory(((self._current_stage_cfg).StoryID)[1], function()
-    -- function num : 0_28_0 , upvalues : self, _ENV
-    self:_hide(false)
-    if ((self._current_stage_cfg).StoryID)[2] then
-      self:_hide(true)
-      ;
-      ((GameGlobal.GetModule)(StoryModule)):StartStory(((self._current_stage_cfg).StoryID)[2], function()
-      -- function num : 0_28_0_0 , upvalues : self, _ENV
+    GameGlobal.GetModule(StoryModule):StartStory(self._componentInfo.m_first_story_id, function()
       self:_hide(false)
-      ;
-      (AudioHelperController.PlayBGM)(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
-    end
-)
-    else
-      ;
-      (AudioHelperController.PlayBGM)(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
-    end
-  end
-)
+      self:_PlayMissStory()
+    end)
   else
-    ;
-    (AudioHelperController.PlayBGM)(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
+    self:_PlayMissStory()
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
+function UIMiniGameStageController:_PlayMissStory()
+  if self._current_stage_cfg.StoryID[1] then
+    self:_hide(true)
+    GameGlobal.GetModule(StoryModule):StartStory(self._current_stage_cfg.StoryID[1], function()
+      self:_hide(false)
+      if self._current_stage_cfg.StoryID[2] then
+        self:_hide(true)
+        GameGlobal.GetModule(StoryModule):StartStory(self._current_stage_cfg.StoryID[2], function()
+          self:_hide(false)
+          AudioHelperController.PlayBGM(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
+        end)
+      else
+        AudioHelperController.PlayBGM(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
+      end
+    end)
+  else
+    AudioHelperController.PlayBGM(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
+  end
+end
 
-UIMiniGameStageController.GameBtnOnClick = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1ClickNormal)
+function UIMiniGameStageController:GameBtnOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1ClickNormal)
   if self:_CheckCampaignClose() then
-    return 
+    return
   end
   if not self:_CheckPreMission(self._curMissionID) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_summer_minigame_premissionunfinished"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_summer_minigame_premissionunfinished"))
+    return
   end
-  if (table.icontains)((self._current_stage_cfg).StoryActiveType, 1) and ((((self._componentInfo).mission_info_list)[self._curMissionID]).mission_info).story_mask & 1 == 0 then
+  if table.icontains(self._current_stage_cfg.StoryActiveType, 1) and self._componentInfo.mission_info_list[self._curMissionID].mission_info.story_mask & 1 == 0 then
     self:_hide(true)
-    ;
-    ((GameGlobal.GetModule)(StoryModule)):StartStory(((self._current_stage_cfg).StoryID)[1], function()
-    -- function num : 0_29_0 , upvalues : self, _ENV
-    self:StartTask(function(TT)
-      -- function num : 0_29_0_0 , upvalues : _ENV, self
-      local res = AsyncRequestRes:New()
-      res = (self._component):HandleStoryMsg(TT, res, ((self._cfg_stage)[self:_GetMissionIndex(self._curMissionID)]).ID, 1)
-      if res:GetSucc() then
-        self:ShowDialog("UIMiniGameController", (self._current_stage_cfg).ID, self._component, self._componentInfo, self._lastBGMResName, function()
-        -- function num : 0_29_0_0_0 , upvalues : self
-        self:_hide(false)
-        self:_RefreshUIWhenGameOver()
-      end
-)
-      end
-    end
-)
-  end
-)
+    GameGlobal.GetModule(StoryModule):StartStory(self._current_stage_cfg.StoryID[1], function()
+      self:StartTask(function(TT)
+        local res = AsyncRequestRes:New()
+        res = self._component:HandleStoryMsg(TT, res, self._cfg_stage[self:_GetMissionIndex(self._curMissionID)].ID, 1)
+        if res:GetSucc() then
+          self:ShowDialog("UIMiniGameController", self._current_stage_cfg.ID, self._component, self._componentInfo, self._lastBGMResName, function()
+            self:_hide(false)
+            self:_RefreshUIWhenGameOver()
+          end)
+        end
+      end)
+    end)
   else
-    self:ShowDialog("UIMiniGameController", (self._current_stage_cfg).ID, self._component, self._componentInfo, self._lastBGMResName, function()
-    -- function num : 0_29_1 , upvalues : self
-    self:_hide(false)
-    self:_RefreshUIWhenGameOver()
-  end
-)
+    self:ShowDialog("UIMiniGameController", self._current_stage_cfg.ID, self._component, self._componentInfo, self._lastBGMResName, function()
+      self:_hide(false)
+      self:_RefreshUIWhenGameOver()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._CheckCampaignClose = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  local time = (self._componentInfo).m_close_time - (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+function UIMiniGameStageController:_CheckCampaignClose()
+  local time = self._componentInfo.m_close_time - math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   if time <= 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
     self:_Close()
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._CheckPreMission = function(self, missionID)
-  -- function num : 0_31
+function UIMiniGameStageController:_CheckPreMission(missionID)
   if missionID == self._firstMissionID then
     return true
   end
-  do return ((((self._componentInfo).mission_info_list)[missionID - 1]).mission_info).max_score > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return self._componentInfo.mission_info_list[missionID - 1].mission_info.max_score > 0
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._hide = function(self, hide)
-  -- function num : 0_32
-  (self._blackMask):SetActive(hide)
+function UIMiniGameStageController:_hide(hide)
+  self._blackMask:SetActive(hide)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameStageController._GetMissionIndex = function(self, missionID)
-  -- function num : 0_33 , upvalues : _ENV
-  for key,value in pairs(self._cfg_stage) do
+function UIMiniGameStageController:_GetMissionIndex(missionID)
+  for key, value in pairs(self._cfg_stage) do
     if value.ID == missionID then
       return key
     end
   end
   return 1
 end
-
-

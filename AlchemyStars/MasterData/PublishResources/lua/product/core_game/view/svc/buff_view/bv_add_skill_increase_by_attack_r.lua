@@ -1,37 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_add_skill_increase_by_attack_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddSkillIncreaseByAttack", BuffViewBase)
 BuffViewAddSkillIncreaseByAttack = BuffViewAddSkillIncreaseByAttack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddSkillIncreaseByAttack.Constructor = function(self)
-  -- function num : 0_0
-  self._buffView = (self:Entity()):BuffView()
+function BuffViewAddSkillIncreaseByAttack:Constructor()
+  self._buffView = self:Entity():BuffView()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddSkillIncreaseByAttack.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
-  local attackerID = (notify._attacker):GetID()
-  local myID = (self:Entity()):GetID()
-  do return not (self._buffView):GetBuffValue("SkillIncreaseByAttackLayer") and (self:GetBuffResult()):GetLayer() == attackerID ~= myID or 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function BuffViewAddSkillIncreaseByAttack:IsNotifyMatch(notify)
+  local attackerID = notify._attacker:GetID()
+  local myID = self:Entity():GetID()
+  return attackerID == myID and self:GetBuffResult():GetLayer() == (self._buffView:GetBuffValue("SkillIncreaseByAttackLayer") or 1)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddSkillIncreaseByAttack.PlayView = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  local layer = (self._buffResult):GetLayer()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAccumulateNum, ((self:Entity()):PetPstID()):GetPstID(), layer)
+function BuffViewAddSkillIncreaseByAttack:PlayView(TT)
+  local layer = self._buffResult:GetLayer()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAccumulateNum, self:Entity():PetPstID():GetPstID(), layer)
   layer = layer + 1
-  ;
-  (self._buffView):SetBuffValue("SkillIncreaseByAttackLayer", layer)
+  self._buffView:SetBuffValue("SkillIncreaseByAttackLayer", layer)
 end
-
-

@@ -1,18 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_detonate_monster_weak.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 require("skill_damage_effect_param")
 _class("SkillEffectParamDetonateMonsterWeak", SkillDamageEffectParam)
 SkillEffectParamDetonateMonsterWeak = SkillEffectParamDetonateMonsterWeak
-local DetonateMonsterWeakType = {NormalAttack = 1, ChainInScope = 2, ActivePick = 3, MAX = 9}
+local DetonateMonsterWeakType = {
+  NormalAttack = 1,
+  ChainInScope = 2,
+  ActivePick = 3,
+  MAX = 9
+}
 _enum("DetonateMonsterWeakType", DetonateMonsterWeakType)
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillEffectParamDetonateMonsterWeak.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamDetonateMonsterWeak:Constructor(t)
   self._count = t.count or 1
   self._type = t.type
   self._splashTargetType = t.splashTargetType
@@ -22,60 +20,34 @@ SkillEffectParamDetonateMonsterWeak.Constructor = function(self, t)
   self._splashPercent = t.splashPercent
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamDetonateMonsterWeak.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamDetonateMonsterWeak:GetEffectType()
   return SkillEffectType.DetonateMonsterWeak
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamDetonateMonsterWeak.GetDetonateMonsterWeakType = function(self)
-  -- function num : 0_2
+function SkillEffectParamDetonateMonsterWeak:GetDetonateMonsterWeakType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamDetonateMonsterWeak.GetDetonateMonsterWeakCount = function(self)
-  -- function num : 0_3
+function SkillEffectParamDetonateMonsterWeak:GetDetonateMonsterWeakCount()
   return self._count
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamDetonateMonsterWeak.GetSplashTargetType = function(self)
-  -- function num : 0_4
+function SkillEffectParamDetonateMonsterWeak:GetSplashTargetType()
   return self._splashTargetType
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamDetonateMonsterWeak.GetSplashScopeType = function(self)
-  -- function num : 0_5
+function SkillEffectParamDetonateMonsterWeak:GetSplashScopeType()
   return self._splashScopeType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamDetonateMonsterWeak.GetSplashScopeParam = function(self)
-  -- function num : 0_6
+function SkillEffectParamDetonateMonsterWeak:GetSplashScopeParam()
   return self._splashScopeParam
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamDetonateMonsterWeak.GetSplashFormulaID = function(self)
-  -- function num : 0_7
+function SkillEffectParamDetonateMonsterWeak:GetSplashFormulaID()
   return self._splashFormulaID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamDetonateMonsterWeak.GetSplashPercent = function(self)
-  -- function num : 0_8
+function SkillEffectParamDetonateMonsterWeak:GetSplashPercent()
   return self._splashPercent
 end
-
-

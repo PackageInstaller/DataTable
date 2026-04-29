@@ -1,192 +1,113 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/notify_chess.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("notify_type")
 require("notify_attack")
 _class("NTChessBeHit", NotifyAttackBase)
 NTChessBeHit = NotifyAttackBase
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-NTChessBeHit.GetNotifyType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function NTChessBeHit:GetNotifyType()
   return NotifyType.ChessBeHit
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessBeHit.NeedCheckGameTurn = function(self)
-  -- function num : 0_1
+function NTChessBeHit:NeedCheckGameTurn()
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessBeHit.GetNotifyEntity = function(self)
-  -- function num : 0_2
+function NTChessBeHit:GetNotifyEntity()
   return self._defender
 end
 
 _class("NTChessDead", INotifyBase)
 NTChessDead = NTChessDead
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-NTChessDead.Constructor = function(self, chessEntity)
-  -- function num : 0_3
+function NTChessDead:Constructor(chessEntity)
   self._ownerEntity = chessEntity
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessDead.GetNotifyType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function NTChessDead:GetNotifyType()
   return NotifyType.ChessDead
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessDead.GetNotifyEntity = function(self)
-  -- function num : 0_5
+function NTChessDead:GetNotifyEntity()
   return self._ownerEntity
 end
 
 _class("NTChessHPChange", INotifyBase)
 NTChessHPChange = NTChessHPChange
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-NTChessHPChange.Constructor = function(self, entity, hp, maxhp, notifyIndex)
-  -- function num : 0_6
+function NTChessHPChange:Constructor(entity, hp, maxhp, notifyIndex)
   self._ownerEntity = entity
   self.hp = hp
   self.maxhp = maxhp
   self.notifyIndex = notifyIndex
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.GetNotifyIndex = function(self)
-  -- function num : 0_7
+function NTChessHPChange:GetNotifyIndex()
   return self.notifyIndex
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.GetNotifyType = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function NTChessHPChange:GetNotifyType()
   return NotifyType.ChessHPChange
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.GetNotifyEntity = function(self)
-  -- function num : 0_9
+function NTChessHPChange:GetNotifyEntity()
   return self._ownerEntity
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.GetMaxHP = function(self)
-  -- function num : 0_10
+function NTChessHPChange:GetMaxHP()
   return self.maxhp
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.GetHP = function(self)
-  -- function num : 0_11
+function NTChessHPChange:GetHP()
   return self.hp
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.GetHPPercent = function(self)
-  -- function num : 0_12
+function NTChessHPChange:GetHPPercent()
   return self.hp / self.maxhp * 100
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.SetChangeHP = function(self, changeHP)
-  -- function num : 0_13
+function NTChessHPChange:SetChangeHP(changeHP)
   self._changeHP = changeHP
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.GetChangeHP = function(self)
-  -- function num : 0_14
+function NTChessHPChange:GetChangeHP()
   return self._changeHP
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.SetDamageSrcEntityID = function(self, srcID)
-  -- function num : 0_15
+function NTChessHPChange:SetDamageSrcEntityID(srcID)
   self._damageSrcEntityID = srcID
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.GetDamageSrcEntityID = function(self)
-  -- function num : 0_16
+function NTChessHPChange:GetDamageSrcEntityID()
   return self._damageSrcEntityID
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.SetDamageType = function(self, damageType)
-  -- function num : 0_17
+function NTChessHPChange:SetDamageType(damageType)
   self._damageType = damageType
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.GetDamageType = function(self)
-  -- function num : 0_18
+function NTChessHPChange:GetDamageType()
   return self._damageType
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.SetAttackPos = function(self, attackPos)
-  -- function num : 0_19
+function NTChessHPChange:SetAttackPos(attackPos)
   self._attackPos = attackPos
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.GetAttackPos = function(self)
-  -- function num : 0_20
+function NTChessHPChange:GetAttackPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.SetAttackEntityID = function(self, attackEntityID)
-  -- function num : 0_21
+function NTChessHPChange:SetAttackEntityID(attackEntityID)
   self._attackEntityID = attackEntityID
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.GetAttackEntityID = function(self)
-  -- function num : 0_22
+function NTChessHPChange:GetAttackEntityID()
   return self._attackEntityID
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.SetDamageInfo = function(self, damageInfo)
-  -- function num : 0_23
+function NTChessHPChange:SetDamageInfo(damageInfo)
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChessHPChange.GetDamageInfo = function(self)
-  -- function num : 0_24
+function NTChessHPChange:GetDamageInfo()
   return self._damageInfo
 end
-
-

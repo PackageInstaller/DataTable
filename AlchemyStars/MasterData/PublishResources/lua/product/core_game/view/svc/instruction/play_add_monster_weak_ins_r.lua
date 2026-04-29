@@ -1,46 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_add_monster_weak_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayAddMonsterWeakInstruction", BaseInstruction)
 PlayAddMonsterWeakInstruction = PlayAddMonsterWeakInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAddMonsterWeakInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayAddMonsterWeakInstruction:Constructor(paramList)
   self._weakEffectID = tonumber(paramList.weakEffectID)
   self._convertDelayTime = tonumber(paramList.convertDelayTime)
   self._hitEffectID = tonumber(paramList.hitEffectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAddMonsterWeakInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayAddMonsterWeakInstruction:GetCacheResource()
   local t = {}
   if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAddMonsterWeakInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayAddMonsterWeakInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddMonsterWeak)
-  if resultArray == nil or (table.count)(resultArray) == 0 then
-    (Log.fatal)("PlayAddMonsterWeakInstruction, result is nil.")
-    return 
+  if resultArray == nil or table.count(resultArray) == 0 then
+    Log.fatal("PlayAddMonsterWeakInstruction, result is nil.")
+    return
   end
   local playSkillService = world:GetService("PlaySkill")
   local monsterRSvc = world:GetService("MonsterShowRender")
-  for i,v in ipairs(resultArray) do
+  for i, v in ipairs(resultArray) do
     local res = v
     local entityID = res:GetEntityID()
     local weakResults = res:GetWeakResult()
@@ -48,17 +38,15 @@ PlayAddMonsterWeakInstruction.DoInstruction = function(self, TT, casterEntity, p
     local targetEntity = world:GetEntityByID(entityID)
     local targetRenderPos = targetEntity:GetDamageCenter()
     monsterRSvc:ShowMonsterWeak(targetEntity, weakResults)
-    if damageResults and (table.count)(damageResults) > 0 then
-      for _,damageResult in ipairs(damageResults) do
+    if damageResults and table.count(damageResults) > 0 then
+      for _, damageResult in ipairs(damageResults) do
         local targetEntityID = damageResult:GetTargetID()
         local targetEntity = world:GetEntityByID(targetEntityID)
         local damageInfo = damageResult:GetDamageInfo(1)
         local damageGridPos = damageResult:GetGridPos()
-        local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName("Hit")):SetHandleBeHitParam_HitEffectID(self._hitEffectID)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(TurnToTargetType.None)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(false)):SetHandleBeHitParam_SkillID(skillID)
+        local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName("Hit"):SetHandleBeHitParam_HitEffectID(self._hitEffectID):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(TurnToTargetType.None):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(false):SetHandleBeHitParam_SkillID(skillID)
         playSkillService:HandleBeHit(TT, beHitParam)
       end
     end
   end
 end
-
-

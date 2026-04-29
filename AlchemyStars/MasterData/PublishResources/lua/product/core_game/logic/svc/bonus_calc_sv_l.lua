@@ -1,190 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/bonus_calc_sv_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BonusCalcService", BaseService)
 BonusCalcService = BonusCalcService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BonusCalcService.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function BonusCalcService:Constructor(world)
   self._bonusConditionFuncDic = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.NoAdditional] = self._NoAdditional
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.Health] = self._CalcHealth
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.LastWaveRoundNum] = self._CalcLastWaveRoundNum
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.SuperChainCount] = self._CalcSuperChainCount
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.ActiveSkillCount] = self._CalcActiveSkillCount
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.AllElementTeam] = self._CalcAllElementTeam
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.SelectElement] = self._CalcSelectElement
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.MatchNum] = self._CalcMatchNum
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.TrapAttackTimes] = self._CalcTrapAttackTimes
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.TrapAttackDammage] = self._CalcTrapAttackDammage
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.TrapAttackTotalTimes] = self._CalcTrapAttackTotalTimes
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.TrapAttackTotalDamage] = self._CalTrapAttackTotalDamage
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.SmashTrapCount] = self._CalSmashTrapCount
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.SmashTrapTotalCount] = self._CalSmashTrapTotalCount
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.TotalMatchPropertyNum] = self._CalTotalMatchPropertyNum
-  -- DECOMPILER ERROR at PC81: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.OnceMatchPropertyNum] = self._CalOnceMatchPropertyNum
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.OnceMatchNorAttTimes] = self._CalOnceMatchNorAttTimes
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.ColorSkillCount] = self._CalColorSkillCount
-  -- DECOMPILER ERROR at PC96: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.AuroraTimeCount] = self._CalAuroraTimeCount
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.PlayerBeHitCount] = self._CalPlayerBeHitCount
-  -- DECOMPILER ERROR at PC106: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.CompelHelpPet] = self._CalCompelHelpPet
-  -- DECOMPILER ERROR at PC111: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.ForbidHelpPet] = self._CalForbidHelpPet
-  -- DECOMPILER ERROR at PC116: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.KillMonstersInLimitedRound] = self._CalKillMonstersInLimitedRound
-  -- DECOMPILER ERROR at PC121: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.KillMonstersWithBuff] = self._CalKillMonstersWithBuff
-  -- DECOMPILER ERROR at PC126: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.CollectItems] = self._CalCollectItems
-  -- DECOMPILER ERROR at PC131: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.UIChangeTeamLeaderCount] = self._CalChangeTeamLeaderTimes
-  -- DECOMPILER ERROR at PC136: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.HitBySkill] = self._CalHitBySkill
-  -- DECOMPILER ERROR at PC141: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.ChessDeadPlayerPawnCount] = self._CalChessDeadPlayerPawnCount
-  -- DECOMPILER ERROR at PC146: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.MonsterEscapeLessThan] = self._CalMonsterEscapeLessThan
-  -- DECOMPILER ERROR at PC151: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.PopStarNumber] = self.CalPopStarNumber
-  -- DECOMPILER ERROR at PC156: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bonusConditionFuncDic)[BonusObjectiveType.BossHealth] = self._CalcBossHealth
+  self._bonusConditionFuncDic[BonusObjectiveType.NoAdditional] = self._NoAdditional
+  self._bonusConditionFuncDic[BonusObjectiveType.Health] = self._CalcHealth
+  self._bonusConditionFuncDic[BonusObjectiveType.LastWaveRoundNum] = self._CalcLastWaveRoundNum
+  self._bonusConditionFuncDic[BonusObjectiveType.SuperChainCount] = self._CalcSuperChainCount
+  self._bonusConditionFuncDic[BonusObjectiveType.ActiveSkillCount] = self._CalcActiveSkillCount
+  self._bonusConditionFuncDic[BonusObjectiveType.AllElementTeam] = self._CalcAllElementTeam
+  self._bonusConditionFuncDic[BonusObjectiveType.SelectElement] = self._CalcSelectElement
+  self._bonusConditionFuncDic[BonusObjectiveType.MatchNum] = self._CalcMatchNum
+  self._bonusConditionFuncDic[BonusObjectiveType.TrapAttackTimes] = self._CalcTrapAttackTimes
+  self._bonusConditionFuncDic[BonusObjectiveType.TrapAttackDammage] = self._CalcTrapAttackDammage
+  self._bonusConditionFuncDic[BonusObjectiveType.TrapAttackTotalTimes] = self._CalcTrapAttackTotalTimes
+  self._bonusConditionFuncDic[BonusObjectiveType.TrapAttackTotalDamage] = self._CalTrapAttackTotalDamage
+  self._bonusConditionFuncDic[BonusObjectiveType.SmashTrapCount] = self._CalSmashTrapCount
+  self._bonusConditionFuncDic[BonusObjectiveType.SmashTrapTotalCount] = self._CalSmashTrapTotalCount
+  self._bonusConditionFuncDic[BonusObjectiveType.TotalMatchPropertyNum] = self._CalTotalMatchPropertyNum
+  self._bonusConditionFuncDic[BonusObjectiveType.OnceMatchPropertyNum] = self._CalOnceMatchPropertyNum
+  self._bonusConditionFuncDic[BonusObjectiveType.OnceMatchNorAttTimes] = self._CalOnceMatchNorAttTimes
+  self._bonusConditionFuncDic[BonusObjectiveType.ColorSkillCount] = self._CalColorSkillCount
+  self._bonusConditionFuncDic[BonusObjectiveType.AuroraTimeCount] = self._CalAuroraTimeCount
+  self._bonusConditionFuncDic[BonusObjectiveType.PlayerBeHitCount] = self._CalPlayerBeHitCount
+  self._bonusConditionFuncDic[BonusObjectiveType.CompelHelpPet] = self._CalCompelHelpPet
+  self._bonusConditionFuncDic[BonusObjectiveType.ForbidHelpPet] = self._CalForbidHelpPet
+  self._bonusConditionFuncDic[BonusObjectiveType.KillMonstersInLimitedRound] = self._CalKillMonstersInLimitedRound
+  self._bonusConditionFuncDic[BonusObjectiveType.KillMonstersWithBuff] = self._CalKillMonstersWithBuff
+  self._bonusConditionFuncDic[BonusObjectiveType.CollectItems] = self._CalCollectItems
+  self._bonusConditionFuncDic[BonusObjectiveType.UIChangeTeamLeaderCount] = self._CalChangeTeamLeaderTimes
+  self._bonusConditionFuncDic[BonusObjectiveType.HitBySkill] = self._CalHitBySkill
+  self._bonusConditionFuncDic[BonusObjectiveType.ChessDeadPlayerPawnCount] = self._CalChessDeadPlayerPawnCount
+  self._bonusConditionFuncDic[BonusObjectiveType.MonsterEscapeLessThan] = self._CalMonsterEscapeLessThan
+  self._bonusConditionFuncDic[BonusObjectiveType.PopStarNumber] = self.CalPopStarNumber
+  self._bonusConditionFuncDic[BonusObjectiveType.BossHealth] = self._CalcBossHealth
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService.CalcCondition = function(self, conditionType, conditionParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local calcFunc = (self._bonusConditionFuncDic)[conditionType]
+function BonusCalcService:CalcCondition(conditionType, conditionParam)
+  local calcFunc = self._bonusConditionFuncDic[conditionType]
   if calcFunc ~= nil then
     return calcFunc(self, conditionParam)
   else
-    ;
-    (Log.fatal)("No bonus calculator", conditionType)
+    Log.fatal("No bonus calculator", conditionType)
   end
   return false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._NoAdditional = function(self)
-  -- function num : 0_2
-  return (self:_GetBattleStatComponent()):GetBattleLevelResult()
+function BonusCalcService:_NoAdditional()
+  return self:_GetBattleStatComponent():GetBattleLevelResult()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalCompelHelpPet = function(self)
-  -- function num : 0_3
-  local bComplete = (self:_GetBattleStatComponent()):GetBattleLevelResult()
+function BonusCalcService:_CalCompelHelpPet()
+  local bComplete = self:_GetBattleStatComponent():GetBattleLevelResult()
   if bComplete then
-    return (self._world):IsHaveHelpPet()
+    return self._world:IsHaveHelpPet()
   end
   return bComplete
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalForbidHelpPet = function(self)
-  -- function num : 0_4
-  local bComplete = (self:_GetBattleStatComponent()):GetBattleLevelResult()
+function BonusCalcService:_CalForbidHelpPet()
+  local bComplete = self:_GetBattleStatComponent():GetBattleLevelResult()
   if bComplete then
-    return not (self._world):IsHaveHelpPet()
+    return not self._world:IsHaveHelpPet()
   end
   return bComplete
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalcHealth = function(self, conditionParam)
-  -- function num : 0_5
-  local calcDamageService = (self._world):GetService("CalcDamage")
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+function BonusCalcService:_CalcHealth(conditionParam)
+  local calcDamageService = self._world:GetService("CalcDamage")
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   if teamEntity == nil then
     return false
   end
@@ -197,85 +81,70 @@ BonusCalcService._CalcHealth = function(self, conditionParam)
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalcLastWaveRoundNum = function(self, conditionParam)
-  -- function num : 0_6 , upvalues : _ENV
-  local leftWaveCount = (self:_GetBattleStatComponent())._curWaveLeftRoundCount
+function BonusCalcService:_CalcLastWaveRoundNum(conditionParam)
+  local leftWaveCount = self:_GetBattleStatComponent()._curWaveLeftRoundCount
   local needCount = tonumber(conditionParam[1])
-  if needCount <= leftWaveCount then
+  if leftWaveCount >= needCount then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalcSuperChainCount = function(self, conditionParam)
-  -- function num : 0_7 , upvalues : _ENV
+function BonusCalcService:_CalcSuperChainCount(conditionParam)
   local superChainCount = tonumber(conditionParam[1])
-  local curSuperChainCount = (self:_GetBattleStatComponent()):GetSuperChainCount()
+  local curSuperChainCount = self:_GetBattleStatComponent():GetSuperChainCount()
   if superChainCount <= curSuperChainCount then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalcActiveSkillCount = function(self, conditionParam)
-  -- function num : 0_8 , upvalues : _ENV
+function BonusCalcService:_CalcActiveSkillCount(conditionParam)
   local activeSkillCount = tonumber(conditionParam[1])
-  local curActiveSkillCount = (self:_GetBattleStatComponent()):GetActiveSkillCount()
+  local curActiveSkillCount = self:_GetBattleStatComponent():GetActiveSkillCount()
   if activeSkillCount <= curActiveSkillCount then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalcAllElementTeam = function(self, conditionParam)
-  -- function num : 0_9 , upvalues : _ENV
+function BonusCalcService:_CalcAllElementTeam(conditionParam)
   local teamElement = {}
-  local joinedPlayerInfo = ((self._world):BattleWorldEnterData()):GetLocalPlayerInfo()
-  for petIndex,petinfo in ipairs(joinedPlayerInfo.pet_list) do
+  local joinedPlayerInfo = self._world:BattleWorldEnterData():GetLocalPlayerInfo()
+  for petIndex, petinfo in ipairs(joinedPlayerInfo.pet_list) do
     local petPstID = petinfo.pet_pstid
-    local petData = ((self._world):BattleWorldEnterData()):GetPetData(petPstID)
+    local petData = self._world:BattleWorldEnterData():GetPetData(petPstID)
     local elementType = petData:GetPetFirstElement()
     teamElement[#teamElement + 1] = elementType
   end
-  local hasBlue = (table.icontains)(teamElement, ElementType.ElementType_Blue)
+  local hasBlue = table.icontains(teamElement, ElementType.ElementType_Blue)
   if not hasBlue then
     return false
   end
-  local hasRed = (table.icontains)(teamElement, ElementType.ElementType_Red)
+  local hasRed = table.icontains(teamElement, ElementType.ElementType_Red)
   if not hasRed then
     return false
   end
-  local hasGreen = (table.icontains)(teamElement, ElementType.ElementType_Green)
+  local hasGreen = table.icontains(teamElement, ElementType.ElementType_Green)
   if not hasGreen then
     return false
   end
-  local hasYellow = (table.icontains)(teamElement, ElementType.ElementType_Yellow)
+  local hasYellow = table.icontains(teamElement, ElementType.ElementType_Yellow)
   if not hasYellow then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalcSelectElement = function(self, conditionParam)
-  -- function num : 0_10 , upvalues : _ENV
+function BonusCalcService:_CalcSelectElement(conditionParam)
   local memCount = tonumber(conditionParam[1])
   local memElement = tonumber(conditionParam[2])
   local curCount = 0
-  local joinedPlayerInfo = ((self._world):BattleWorldEnterData()):GetLocalPlayerInfo()
-  for petIndex,petInfo in ipairs(joinedPlayerInfo.pet_list) do
+  local joinedPlayerInfo = self._world:BattleWorldEnterData():GetLocalPlayerInfo()
+  for petIndex, petInfo in ipairs(joinedPlayerInfo.pet_list) do
     local petPstID = petInfo.pet_pstid
-    local petData = ((self._world):BattleWorldEnterData()):GetPetData(petPstID)
+    local petData = self._world:BattleWorldEnterData():GetPetData(petPstID)
     local elementType = petData:GetPetFirstElement()
     if elementType == memElement then
       curCount = curCount + 1
@@ -287,47 +156,31 @@ BonusCalcService._CalcSelectElement = function(self, conditionParam)
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalcMatchNum = function(self, conditionParam)
-  -- function num : 0_11 , upvalues : _ENV
+function BonusCalcService:_CalcMatchNum(conditionParam)
   local matchType = tonumber(conditionParam[1])
   local matchParam = tonumber(conditionParam[2])
   if matchType == 1 then
-    local oneMatchNum = (self:_GetBattleStatComponent()):GetOneMatchMaxNum()
+    local oneMatchNum = self:_GetBattleStatComponent():GetOneMatchMaxNum()
     if matchParam <= oneMatchNum then
       return true
     end
-  else
-    do
-      if matchType == 2 then
-        local totalMatchNum = (self:_GetBattleStatComponent()):GetTotalMatchNum()
-        if matchParam <= totalMatchNum then
-          return true
-        end
-      else
-        do
-          if matchType == 3 then
-            local elementMatchArray = (self:_GetBattleStatComponent()):GetElementMatchNum()
-            for k,v in pairs(elementMatchArray) do
-              if matchParam <= v then
-                return true
-              end
-            end
-          end
-          do
-            return false
-          end
-        end
+  elseif matchType == 2 then
+    local totalMatchNum = self:_GetBattleStatComponent():GetTotalMatchNum()
+    if matchParam <= totalMatchNum then
+      return true
+    end
+  elseif matchType == 3 then
+    local elementMatchArray = self:_GetBattleStatComponent():GetElementMatchNum()
+    for k, v in pairs(elementMatchArray) do
+      if v >= matchParam then
+        return true
       end
     end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalTotalMatchPropertyNum = function(self, conditionParam)
-  -- function num : 0_12 , upvalues : _ENV
+function BonusCalcService:_CalTotalMatchPropertyNum(conditionParam)
   local l_PieceType = tonumber(conditionParam[1])
   local l_MatchNum = tonumber(conditionParam[2])
   local battleStateCmpt = self:_GetBattleStatComponent()
@@ -339,10 +192,7 @@ BonusCalcService._CalTotalMatchPropertyNum = function(self, conditionParam)
   return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalOnceMatchPropertyNum = function(self, conditionParam)
-  -- function num : 0_13 , upvalues : _ENV
+function BonusCalcService:_CalOnceMatchPropertyNum(conditionParam)
   local l_PieceType = tonumber(conditionParam[1])
   local l_MatchNum = tonumber(conditionParam[2])
   local battleStateCmpt = self:_GetBattleStatComponent()
@@ -354,13 +204,10 @@ BonusCalcService._CalOnceMatchPropertyNum = function(self, conditionParam)
   return false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalcTrapAttackTimes = function(self, conditionParam)
-  -- function num : 0_14 , upvalues : _ENV
+function BonusCalcService:_CalcTrapAttackTimes(conditionParam)
   local battleStateCmpt = self:_GetBattleStatComponent()
   local trap_attack_times = battleStateCmpt:GetTakeAttackTimesByTrap()
-  for key,value in pairs(conditionParam) do
+  for key, value in pairs(conditionParam) do
     if trap_attack_times[key] ~= nil and value <= trap_attack_times[key] then
       return false
     end
@@ -368,13 +215,10 @@ BonusCalcService._CalcTrapAttackTimes = function(self, conditionParam)
   return true
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalcTrapAttackDammage = function(self, conditionParam)
-  -- function num : 0_15 , upvalues : _ENV
+function BonusCalcService:_CalcTrapAttackDammage(conditionParam)
   local battleStateCmpt = self:_GetBattleStatComponent()
   local trap_attack_damage = battleStateCmpt:GetTakeAttackDamageByTrap()
-  for key,value in pairs(conditionParam) do
+  for key, value in pairs(conditionParam) do
     if trap_attack_damage[key] ~= nil and value <= trap_attack_damage[key] then
       return false
     end
@@ -382,85 +226,68 @@ BonusCalcService._CalcTrapAttackDammage = function(self, conditionParam)
   return true
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalcTrapAttackTotalTimes = function(self, conditionParam)
-  -- function num : 0_16 , upvalues : _ENV
+function BonusCalcService:_CalcTrapAttackTotalTimes(conditionParam)
   local battleStateCmpt = self:_GetBattleStatComponent()
   local trap_attack_times = battleStateCmpt:GetTakeAttackTimesByTrap()
   local nCondCount = 0
-  for key,value in pairs(conditionParam) do
+  for key, value in pairs(conditionParam) do
     if key ~= "TotalCount" and trap_attack_times[key] ~= nil then
       nCondCount = nCondCount + trap_attack_times[key]
     end
   end
-  if conditionParam.TotalCount <= nCondCount then
+  if nCondCount >= conditionParam.TotalCount then
     return false
   else
     return true
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalTrapAttackTotalDamage = function(self, conditionParam)
-  -- function num : 0_17 , upvalues : _ENV
+function BonusCalcService:_CalTrapAttackTotalDamage(conditionParam)
   local battleStateCmpt = self:_GetBattleStatComponent()
   local trap_attack_damage = battleStateCmpt:GetTakeAttackDamageByTrap()
   local nTotalDamage = 0
-  for key,value in pairs(conditionParam) do
+  for key, value in pairs(conditionParam) do
     if key ~= "TotalCount" and trap_attack_damage[key] ~= nil then
       nTotalDamage = nTotalDamage + trap_attack_damage[key]
     end
   end
-  if conditionParam.TotalCount <= nTotalDamage then
+  if nTotalDamage >= conditionParam.TotalCount then
     return false
   else
     return true
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalSmashTrapCount = function(self, conditionParam)
-  -- function num : 0_18 , upvalues : _ENV
+function BonusCalcService:_CalSmashTrapCount(conditionParam)
   local battleStateCmpt = self:_GetBattleStatComponent()
   local smash_trap_count = battleStateCmpt:GetSmashTrapCount()
   local bIsFinish = true
-  for key,value in pairs(conditionParam) do
-    if smash_trap_count[key] == nil or smash_trap_count[key] < value then
+  for key, value in pairs(conditionParam) do
+    if smash_trap_count[key] == nil or value > smash_trap_count[key] then
       bIsFinish = false
       break
     end
   end
-  do
-    return bIsFinish
-  end
+  return bIsFinish
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalSmashTrapTotalCount = function(self, conditionParam)
-  -- function num : 0_19 , upvalues : _ENV
+function BonusCalcService:_CalSmashTrapTotalCount(conditionParam)
   local battleStateCmpt = self:_GetBattleStatComponent()
   local smash_trap_count = battleStateCmpt:GetSmashTrapCount()
   local nTotalSmashCount = 0
-  for key,value in pairs(conditionParam) do
+  for key, value in pairs(conditionParam) do
     if key ~= "TotalCount" and smash_trap_count[key] ~= nil then
       nTotalSmashCount = nTotalSmashCount + smash_trap_count[key]
     end
   end
-  if conditionParam.TotalCount <= nTotalSmashCount then
+  if nTotalSmashCount >= conditionParam.TotalCount then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalOnceMatchNorAttTimes = function(self, conditionParam)
-  -- function num : 0_20 , upvalues : _ENV
+function BonusCalcService:_CalOnceMatchNorAttTimes(conditionParam)
   local nNorAttTimes = tonumber(conditionParam[1])
   local battleStateCmpt = self:_GetBattleStatComponent()
   local nOneChainNormalAttackCount = battleStateCmpt:GetOneChainNormalAttackCount()
@@ -470,10 +297,7 @@ BonusCalcService._CalOnceMatchNorAttTimes = function(self, conditionParam)
   return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalColorSkillCount = function(self, conditionParam)
-  -- function num : 0_21 , upvalues : _ENV
+function BonusCalcService:_CalColorSkillCount(conditionParam)
   local nColorSkillCount = tonumber(conditionParam[1])
   local battleStateCmpt = self:_GetBattleStatComponent()
   local nCmptColorSkillCount = battleStateCmpt:GetColorSkillCount()
@@ -483,10 +307,7 @@ BonusCalcService._CalColorSkillCount = function(self, conditionParam)
   return false
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalAuroraTimeCount = function(self, conditionParam)
-  -- function num : 0_22 , upvalues : _ENV
+function BonusCalcService:_CalAuroraTimeCount(conditionParam)
   local x = tonumber(conditionParam[1])
   local battleStateCmpt = self:_GetBattleStatComponent()
   local cnt = battleStateCmpt:GetAuroraTimeCount()
@@ -496,149 +317,113 @@ BonusCalcService._CalAuroraTimeCount = function(self, conditionParam)
   return false
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalPlayerBeHitCount = function(self, conditionParam)
-  -- function num : 0_23 , upvalues : _ENV
+function BonusCalcService:_CalPlayerBeHitCount(conditionParam)
   local x = tonumber(conditionParam[1])
   local battleStateCmpt = self:_GetBattleStatComponent()
   local cnt = battleStateCmpt:GetPlayerBeHitCount()
-  if cnt < x then
+  if x > cnt then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalKillMonstersInLimitedRound = function(self, conditionParam)
-  -- function num : 0_24 , upvalues : _ENV
+function BonusCalcService:_CalKillMonstersInLimitedRound(conditionParam)
   local roundLimit = conditionParam.roundLimit
   local tBossID = conditionParam.tBossID
   local isAllMonsterKilled = true
-  local globalMonsterGroup = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(globalMonsterGroup) do
-    if (table.icontains)(tBossID, (e:MonsterID()):GetMonsterID()) and isAllMonsterKilled then
+  local globalMonsterGroup = self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(globalMonsterGroup) do
+    if table.icontains(tBossID, e:MonsterID():GetMonsterID()) and isAllMonsterKilled then
       isAllMonsterKilled = e:HasDeadMark()
     end
   end
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local curWaveDeadMonsterParam = battleStatCmpt:GetCurWaveDeadMonsterParam()
   if isAllMonsterKilled then
-    for _,param in ipairs(curWaveDeadMonsterParam) do
-      isAllMonsterKilled = not (table.icontains)(tBossID, param:GetMonsterID()) or not isAllMonsterKilled or param:GetDeadWave() <= roundLimit
+    for _, param in ipairs(curWaveDeadMonsterParam) do
+      if table.icontains(tBossID, param:GetMonsterID()) then
+        isAllMonsterKilled = isAllMonsterKilled and roundLimit >= param:GetDeadWave()
+      end
     end
   end
-  do return isAllMonsterKilled end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return isAllMonsterKilled
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalKillMonstersWithBuff = function(self, param)
-  -- function num : 0_25 , upvalues : _ENV
+function BonusCalcService:_CalKillMonstersWithBuff(param)
   local requireCount = param.requireCount
   local tBossID = param.tBossID
   local tBuffID = param.tBuffID
   local count = 0
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local totalDeadMonsterBuffInfo = battleStatCmpt:GetTotalDeadMonsterBuffInfo()
-  for _,monsterID in ipairs(tBossID) do
+  for _, monsterID in ipairs(tBossID) do
     if totalDeadMonsterBuffInfo[monsterID] then
       local tBuffInfo = totalDeadMonsterBuffInfo[monsterID]
       if #tBuffInfo ~= 0 then
-        for _,info in ipairs(tBuffInfo) do
-          local union = (table.union)(tBuffID, info.buffIDs)
-          if #union > 0 then
+        for _, info in ipairs(tBuffInfo) do
+          local union = table.union(tBuffID, info.buffIDs)
+          if 0 < #union then
             count = count + 1
           end
         end
       end
     end
   end
-  count = (math.min)(count, requireCount)
-  do return requireCount <= count, count, requireCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  count = math.min(count, requireCount)
+  return requireCount <= count, count, requireCount
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalCollectItems = function(self, param)
-  -- function num : 0_26
+function BonusCalcService:_CalCollectItems(param)
   local maxCollectCount = param.count
-  local curCollectNum = ((self._world):BattleStat()):GetDropCollectNumByItemID(param.id)
-  do return maxCollectCount <= curCollectNum, curCollectNum, maxCollectCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local curCollectNum = self._world:BattleStat():GetDropCollectNumByItemID(param.id)
+  return maxCollectCount <= curCollectNum, curCollectNum, maxCollectCount
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalChangeTeamLeaderTimes = function(self, param)
-  -- function num : 0_27
+function BonusCalcService:_CalChangeTeamLeaderTimes(param)
   local maxCount = param.count
-  local count = ((self._world):BattleStat()):GetTeamLeaderChangeNum()
-  do return count <= maxCount, count, maxCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local count = self._world:BattleStat():GetTeamLeaderChangeNum()
+  return maxCount >= count, count, maxCount
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalMonsterEscapeLessThan = function(self, param)
-  -- function num : 0_28
+function BonusCalcService:_CalMonsterEscapeLessThan(param)
   local maxCount = param.count
-  local count = ((self._world):BattleStat()):GetMonsterEscapeNum()
-  do return count < maxCount, count, maxCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local count = self._world:BattleStat():GetMonsterEscapeNum()
+  return maxCount > count, count, maxCount
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalHitBySkill = function(self, param)
-  -- function num : 0_29
+function BonusCalcService:_CalHitBySkill(param)
   local skillID = param.skillID
   local requireCount = param.count
-  local count = ((self._world):BattleStat()):GetPlayerSkillHitCount(skillID)
-  do return count <= requireCount, count, requireCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local count = self._world:BattleStat():GetPlayerSkillHitCount(skillID)
+  return requireCount >= count, count, requireCount
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalChessDeadPlayerPawnCount = function(self, param)
-  -- function num : 0_30
+function BonusCalcService:_CalChessDeadPlayerPawnCount(param)
   local requireCount = param.count
-  local count = ((self._world):BattleStat()):GetChessDeadPlayerPawnCount()
-  do return count <= requireCount, count, requireCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local count = self._world:BattleStat():GetChessDeadPlayerPawnCount()
+  return requireCount >= count, count, requireCount
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService.CalPopStarNumber = function(self, param)
-  -- function num : 0_31 , upvalues : _ENV
+function BonusCalcService:CalPopStarNumber(param)
   local requireNum = tonumber(param[1])
-  local popStarSvc = (self._world):GetService("PopStarLogic")
-  if not popStarSvc and (self._world):IsDevelopEnv() then
-    (Log.exception)("！！！三星条件或胜利条件配置错误，使用了消灭星星模式特有的条件！！！")
+  local popStarSvc = self._world:GetService("PopStarLogic")
+  if not popStarSvc and self._world:IsDevelopEnv() then
+    Log.exception("！！！三星条件或胜利条件配置错误，使用了消灭星星模式特有的条件！！！")
   end
   local curNum = popStarSvc:GetPopGridNum()
-  do return requireNum <= curNum, curNum, requireNum end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return requireNum <= curNum, curNum, requireNum
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService.CalcBonusObjective = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  local bonusCalcService = (self._world):GetService("BonusCalc")
-  local star3CalcService = (self._world):GetService("Star3Calc")
+function BonusCalcService:CalcBonusObjective()
+  local bonusCalcService = self._world:GetService("BonusCalc")
+  local star3CalcService = self._world:GetService("Star3Calc")
   local conditionParser = ObjectiveConditionParamParser:New()
   local calcResultArray = {}
-  local conditionIDArray = ((self._world):BattleWorldEnterData()):GetBonusCondition()
-  for _,conditionID in ipairs(conditionIDArray) do
-    local conditionData = (Cfg.cfg_threestarcondition)[conditionID]
+  local conditionIDArray = self._world:BattleWorldEnterData():GetBonusCondition()
+  for _, conditionID in ipairs(conditionIDArray) do
+    local conditionData = Cfg.cfg_threestarcondition[conditionID]
     if conditionData == nil then
-      return 
+      return
     end
     local conditionType = conditionData.ConditionType
     local conditionParamArray = star3CalcService:GetConditionNumber(conditionID)
@@ -652,40 +437,27 @@ BonusCalcService.CalcBonusObjective = function(self)
       end
     end
   end
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:SetBonusMatchResult(calcResultArray)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-BonusCalcService._CalcBossHealth = function(self, conditionParam)
-  -- function num : 0_33 , upvalues : _ENV
-  local gBoss = (self._world):GetGroup(((self._world).BW_WEMatchers).Boss)
+function BonusCalcService:_CalcBossHealth(conditionParam)
+  local gBoss = self._world:GetGroup(self._world.BW_WEMatchers.Boss)
   local eBossList = gBoss:GetEntities()
-  if eBossList and (table.count)(eBossList) > 0 then
-    for i,e in ipairs(eBossList) do
+  if eBossList and table.count(eBossList) > 0 then
+    for i, e in ipairs(eBossList) do
       if not e:HasDeadMark() then
-        local curHp = (e:Attributes()):GetCurrentHP()
-        local maxHp = (e:Attributes()):CalcMaxHp()
+        local curHp = e:Attributes():GetCurrentHP()
+        local maxHp = e:Attributes():CalcMaxHp()
         local targetPercent = conditionParam / 100
         local curPercent = curHp / maxHp
-        if curPercent <= targetPercent then
+        if targetPercent >= curPercent then
           return true
         else
           return false
         end
       else
-        do
-          do
-            do return false end
-            -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        return false
       end
     end
   else
@@ -693,5 +465,3 @@ BonusCalcService._CalcBossHealth = function(self, conditionParam)
   end
   return false
 end
-
-

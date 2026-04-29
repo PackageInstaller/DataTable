@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/common_build/ui_homeland_minimap_icon_common_build.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapIconCommonBuild", UIHomelandMinimapIconBase)
 UIHomelandMinimapIconCommonBuild = UIHomelandMinimapIconCommonBuild
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapIconCommonBuild.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandMinimapIconCommonBuild:OnShow(uiParams)
   self._selectGO = self:GetGameObject("selected")
   self._museum = self:GetGameObject("Museum")
   self._wishingPool = self:GetGameObject("WishingPool")
@@ -17,94 +10,52 @@ UIHomelandMinimapIconCommonBuild.OnShow = function(self, uiParams)
   self._medalWall = self:GetGameObject("MedalWall")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconCommonBuild.OnInitDone = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local building = (self:GetIconData()):GetParam()
+function UIHomelandMinimapIconCommonBuild:OnInitDone()
+  local building = self:GetIconData():GetParam()
   if building:GetBuildType() == ArchitectureSubType.Museum then
-    (self._museum):SetActive(true)
-  else
-    if building:GetBuildType() == ArchitectureSubType.Wishing_Pool then
-      (self._wishingPool):SetActive(true)
-    else
-      if building:GetBuildType() == ArchitectureSubType.Storage_Box then
-        (self._storageBox):SetActive(true)
-      else
-        if building:GetBuildType() == ArchitectureSubType.Album then
-          (self._album):SetActive(true)
-        else
-          if building:GetBuildType() == ArchitectureSubType.Medal_Wall then
-            (self._medalWall):SetActive(true)
-          end
-        end
-      end
-    end
+    self._museum:SetActive(true)
+  elseif building:GetBuildType() == ArchitectureSubType.Wishing_Pool then
+    self._wishingPool:SetActive(true)
+  elseif building:GetBuildType() == ArchitectureSubType.Storage_Box then
+    self._storageBox:SetActive(true)
+  elseif building:GetBuildType() == ArchitectureSubType.Album then
+    self._album:SetActive(true)
+  elseif building:GetBuildType() == ArchitectureSubType.Medal_Wall then
+    self._medalWall:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconCommonBuild.OnSelected = function(self)
-  -- function num : 0_2
-  (self._selectGO):SetActive(true)
+function UIHomelandMinimapIconCommonBuild:OnSelected()
+  self._selectGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconCommonBuild.OnUnSelected = function(self)
-  -- function num : 0_3
-  (self._selectGO):SetActive(false)
+function UIHomelandMinimapIconCommonBuild:OnUnSelected()
+  self._selectGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconCommonBuild.GetShowName = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local building = (self:GetIconData()):GetParam()
+function UIHomelandMinimapIconCommonBuild:GetShowName()
+  local building = self:GetIconData():GetParam()
   local skinID = building:SkinID()
-  local cfgSkin = (Cfg.cfg_item_architecture_skin)[skinID]
+  local cfgSkin = Cfg.cfg_item_architecture_skin[skinID]
   local name = ""
   if cfgSkin then
-    name = (StringTable.Get)(cfgSkin.SkinName)
+    name = StringTable.Get(cfgSkin.SkinName)
   else
     local itemID = building:GetBuildId()
-    local cfg = (Cfg.cfg_item)[itemID]
-    name = (StringTable.Get)(cfg.Name)
+    local cfg = Cfg.cfg_item[itemID]
+    name = StringTable.Get(cfg.Name)
   end
-  do
-    return name
-  end
+  return name
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconCommonBuild.GetAnimationName = function(self, animType)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMinimapIconCommonBuild:GetAnimationName(animType)
   if not self._animationNames then
     self._animationNames = {}
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.IN] = "UIHomelandMinimapCommonBuildIcon_in"
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.OUT] = "UIHomelandMinimapCommonBuildIcon_out"
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.SELECT] = "UIHomelandMinimapCommonBuildIcon_Selected_in"
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.UNSELECT] = "UIHomelandMinimapCommonBuildIcon_Selected_out"
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.EXPANSION] = "UIHomelandMinimapCommonBuildIcon_expansion"
+    self._animationNames[MinimapIconAnimationType.IN] = "UIHomelandMinimapCommonBuildIcon_in"
+    self._animationNames[MinimapIconAnimationType.OUT] = "UIHomelandMinimapCommonBuildIcon_out"
+    self._animationNames[MinimapIconAnimationType.SELECT] = "UIHomelandMinimapCommonBuildIcon_Selected_in"
+    self._animationNames[MinimapIconAnimationType.UNSELECT] = "UIHomelandMinimapCommonBuildIcon_Selected_out"
+    self._animationNames[MinimapIconAnimationType.EXPANSION] = "UIHomelandMinimapCommonBuildIcon_expansion"
   end
-  return (self._animationNames)[animType]
+  return self._animationNames[animType]
 end
-
-

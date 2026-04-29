@@ -1,48 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/graph/ui_n28_avg_graph_node_hide.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGGraphNodeHide", UIN28AVGGraphNodeBase)
 UIN28AVGGraphNodeHide = UIN28AVGGraphNodeHide
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGGraphNodeHide.InitComponent = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((UIN28AVGGraphNodeHide.super).InitComponent)(self)
+function UIN28AVGGraphNodeHide:InitComponent()
+  UIN28AVGGraphNodeHide.super.InitComponent(self)
   self.new = self:GetGameObject("new")
   self.glowEff = self:GetGameObject("glowEff")
-  ;
-  (self.new):SetActive(false)
+  self.new:SetActive(false)
   self.lock = self:GetGameObject("lock")
-  ;
-  (self.lock):SetActive(false)
+  self.lock:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodeHide.FlushName = function(self)
-  -- function num : 0_1
-  (self.txtName):SetText((self.node).title)
-  ;
-  (self.txtName1):SetText((self.node).title)
+function UIN28AVGGraphNodeHide:FlushName()
+  self.txtName:SetText(self.node.title)
+  self.txtName1:SetText(self.node.title)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodeHide.FlushNew = function(self)
-  -- function num : 0_2
-  local isNew = (self.node):IsHideNew()
-  ;
-  (self.new):SetActive(isNew)
-  ;
-  (self.glowEff):SetActive(isNew)
+function UIN28AVGGraphNodeHide:FlushNew()
+  local isNew = self.node:IsHideNew()
+  self.new:SetActive(isNew)
+  self.glowEff:SetActive(isNew)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodeHide.PlayAnim = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN28AVGGraphNodeHide:PlayAnim(TT)
   local key = "UIN28AVGGraphNodeHidePlayAnim"
   self:Lock(key)
   local go = self:GetGameObject()
@@ -53,5 +32,3 @@ UIN28AVGGraphNodeHide.PlayAnim = function(self, TT)
   self:FlushNew()
   self:UnLock(key)
 end
-
-

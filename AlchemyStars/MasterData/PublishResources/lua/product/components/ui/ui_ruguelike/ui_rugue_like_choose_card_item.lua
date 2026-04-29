@@ -1,124 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_ruguelike/ui_rugue_like_choose_card_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIRugueLikeChooseCardItem", UICustomWidget)
 UIRugueLikeChooseCardItem = UIRugueLikeChooseCardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIRugueLikeChooseCardItem.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIRugueLikeChooseCardItem:OnShow(uiParam)
   self._atlas = self:GetAsset("UIMazeChoose.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeChooseCardItem.GetComponents = function(self)
-  -- function num : 0_1
+function UIRugueLikeChooseCardItem:GetComponents()
   self._card = self:GetUIComponent("RectTransform", "card")
   self._itemPool = self:GetUIComponent("UISelectObjectPath", "itemPool")
   self._itemPoolCanvasGroup = self:GetUIComponent("CanvasGroup", "itemPool")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeChooseCardItem.SetData = function(self, index, itemID, pos, _cardClick)
-  -- function num : 0_2 , upvalues : _ENV
+function UIRugueLikeChooseCardItem:SetData(index, itemID, pos, _cardClick)
   self:GetComponents()
   self._index = index
   self._pos = pos
   self._callback = _cardClick
   self._canClick = false
-  self._item = (self._itemPool):SpawnObject("UIRugueLikeBackpackItem")
-  ;
-  (self._item):SetData(index, itemID, function()
-    -- function num : 0_2_0 , upvalues : self
+  self._item = self._itemPool:SpawnObject("UIRugueLikeBackpackItem")
+  self._item:SetData(index, itemID, function()
     self:CardClick()
-  end
-)
-  ;
-  (self._card):DOScale(Vector3(1, 1, 1), 0.2)
-  ;
-  ((self._card):DOMove(pos, 0.2)):OnComplete(function()
-    -- function num : 0_2_1 , upvalues : self
+  end)
+  self._card:DOScale(Vector3(1, 1, 1), 0.2)
+  self._card:DOMove(pos, 0.2):OnComplete(function()
     self._canClick = true
-  end
-)
+  end)
   self._colorBg = self:GetUIComponent("Image", "colorBg")
-  ;
-  ((self._colorBg).gameObject):SetActive(false)
-  local cfg_item = (Cfg.cfg_item)[itemID]
+  self._colorBg.gameObject:SetActive(false)
+  local cfg_item = Cfg.cfg_item[itemID]
   if cfg_item then
     local color = cfg_item.Color
-    -- DECOMPILER ERROR at PC57: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._colorBg).sprite = (self._atlas):GetSprite("map_xuanzhong_di" .. color)
+    self._colorBg.sprite = self._atlas:GetSprite("map_xuanzhong_di" .. color)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeChooseCardItem.CardClick = function(self)
-  -- function num : 0_3
+function UIRugueLikeChooseCardItem:CardClick()
   if self._canClick == true then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeChooseCardItem.Flush = function(self, itemid)
-  -- function num : 0_4 , upvalues : _ENV
+function UIRugueLikeChooseCardItem:Flush(itemid)
   self:Lock("UIRugueLikeChooseCardItem:Flush")
-  ;
-  (self._itemPoolCanvasGroup):DOFade(0, 0.5)
-  ;
-  ((self._card):DOScale(Vector3(0.1, 0.1, 0.1), 0.5)):OnComplete(function()
-    -- function num : 0_4_0 , upvalues : self, _ENV, itemid
-    (self._card):DOScale(Vector3(1, 1, 1), 0.1)
-    ;
-    (self._itemPoolCanvasGroup):DOFade(1, 0.1)
+  self._itemPoolCanvasGroup:DOFade(0, 0.5)
+  self._card:DOScale(Vector3(0.1, 0.1, 0.1), 0.5):OnComplete(function()
+    self._card:DOScale(Vector3(1, 1, 1), 0.1)
+    self._itemPoolCanvasGroup:DOFade(1, 0.1)
     self:UnLock("UIRugueLikeChooseCardItem:Flush")
-    ;
-    (self._item):Flush(itemid)
-    local cfg_item = (Cfg.cfg_item)[itemid]
+    self._item:Flush(itemid)
+    local cfg_item = Cfg.cfg_item[itemid]
     if cfg_item then
       local color = cfg_item.Color
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._colorBg).sprite = (self._atlas):GetSprite("map_xuanzhong_di" .. color)
+      self._colorBg.sprite = self._atlas:GetSprite("map_xuanzhong_di" .. color)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeChooseCardItem.CancelOrSelect = function(self, select)
-  -- function num : 0_5 , upvalues : _ENV
+function UIRugueLikeChooseCardItem:CancelOrSelect(select)
   if select then
-    (self._card):DOScale(Vector3(1.1, 1.1, 1.1), 0.2)
+    self._card:DOScale(Vector3(1.1, 1.1, 1.1), 0.2)
   else
-    ;
-    (self._card):DOScale(Vector3(1, 1, 1), 0.2)
+    self._card:DOScale(Vector3(1, 1, 1), 0.2)
   end
-  ;
-  ((self._colorBg).gameObject):SetActive(select)
+  self._colorBg.gameObject:SetActive(select)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeChooseCardItem.MoveTwwen = function(self, move, pos)
-  -- function num : 0_6
+function UIRugueLikeChooseCardItem:MoveTwwen(move, pos)
   if move then
-    (self._card):DOMove(pos, 0.2)
+    self._card:DOMove(pos, 0.2)
   else
-    ;
-    ((self._card).gameObject):SetActive(false)
+    self._card.gameObject:SetActive(false)
   end
 end
-
-

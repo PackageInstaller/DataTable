@@ -1,23 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/common/stn_common_back_to_lobby.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Common_BackToLobby", Common_AsyncBase)
 Common_BackToLobby = Common_BackToLobby
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Common_BackToLobby.TaskFunc = function(self, TT, outResult)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
-  if ((GameGlobal.UIStateManager)()):CurUIStateType() ~= UIStateType.UIMain then
+function Common_BackToLobby:TaskFunc(TT, outResult)
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
+  if GameGlobal.UIStateManager():CurUIStateType() ~= UIStateType.UIMain then
     return false
   end
-  self._beginUnscaledTimeMS = (UnityEngine.Time).unscaledTime * 1000
-  while (UnityEngine.Time).unscaledTime * 1000 - self._beginUnscaledTimeMS < 5000 do
+  self._beginUnscaledTimeMS = UnityEngine.Time.unscaledTime * 1000
+  while UnityEngine.Time.unscaledTime * 1000 - self._beginUnscaledTimeMS < 5000 do
     YIELD(TT)
   end
 end
-
-

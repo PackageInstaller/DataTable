@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/test_world_creation_context.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_world_creation_context")
 require("components_lookup_test")
 _class("TestWorldCreationContext", BaseWorldCreationContext)
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
 
-TestWorldCreationContext.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function TestWorldCreationContext:Constructor()
   self.WCC_StartCreationIndex = 1
   self.WCC_EntityCreationProto = Entity
   self.BWCC_EComponentsEnum = WEComponents_Test
@@ -19,5 +12,3 @@ TestWorldCreationContext.Constructor = function(self)
   self.LevelID = 0
   self.GameMode = 0
 end
-
-

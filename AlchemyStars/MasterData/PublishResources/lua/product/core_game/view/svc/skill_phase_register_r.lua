@@ -1,409 +1,103 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/skill_phase_register_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
--- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillService.RegistSkillPhaseFunc = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillService:RegistSkillPhaseFunc(world)
   self._phaseFuncDic = {}
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.Instruction] = PlaySkillInstructionPhase:New(self, world)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.AttackAnimation] = PlaySkillAttackAnimationPhase:New(self, world)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.CastAnimation] = PlaySkillCastAnimationPhase:New(self, world)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.OnHit] = PlaySkillOnHitPhase:New(self, world)
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.GridArray] = PlaySkillGridArrayPhase:New(self, world)
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ScreenShake] = PlaySkillScreenShakePhase:New(self, world)
-  -- DECOMPILER ERROR at PC64: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.WaveGridArray] = PlaySkillWaveGridArrayPhase:New(self, world)
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.RoleCG] = PlaySkillRoleCGPhase:New(self, world)
-  -- DECOMPILER ERROR at PC82: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.SquareRing] = PlaySkillSquareRingPhase:New(self, world)
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.LRAttackAnimation] = PlaySkillLRAttackAnimationPhase:New(self, world)
-  -- DECOMPILER ERROR at PC100: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.FireAnimation] = PlaySkillFireAnimationPhase:New(self, world)
-  -- DECOMPILER ERROR at PC109: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ImpactAnimation] = PlaySkillImpactAnimationPhase:New(self, world)
-  -- DECOMPILER ERROR at PC118: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.FlightVehicle] = PlaySkillFlightVehiclePhase:New(self, world)
-  -- DECOMPILER ERROR at PC127: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.TurnRoundFlightVehicle] = PlaySkillTurnRoundFlightVehiclePhase:New(self, world)
-  -- DECOMPILER ERROR at PC136: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.AddGridEffect] = PlaySkillAddGridEffectPhase:New(self, world)
-  -- DECOMPILER ERROR at PC145: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.RoundGridDifferent] = PlaySkillRoundGridPhase:New(self, world)
-  -- DECOMPILER ERROR at PC154: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.AbsorbPieceAnimation] = PlaySkillAbsorbPiecePhase:New(self, world)
-  -- DECOMPILER ERROR at PC163: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.TrajectoryAnimation] = PlaySkillTrajectoryAnimationPhase:New(self, world)
-  -- DECOMPILER ERROR at PC172: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.FlashKnifeAndLine] = PlaySkillFlashKnifeAndLinePhase:New(self, world)
-  -- DECOMPILER ERROR at PC181: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.SummonTrap] = PlaySkillSummonTrapPhase:New(self, world)
-  -- DECOMPILER ERROR at PC190: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.GridReturn] = PlaySkillPhase_GridReturn:New(self, world)
-  -- DECOMPILER ERROR at PC199: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.RandAttack] = PlaySkillPhase_RandAttack:New(self, world)
-  -- DECOMPILER ERROR at PC208: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.RangeAttackAnimation] = PlaySkillRangeAttackAnimationPhase:New(self, world)
-  -- DECOMPILER ERROR at PC217: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.HitBack] = PlaySkillHitBackPhase:New(self, world)
-  -- DECOMPILER ERROR at PC226: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.PullAround] = PlaySkillPullAroundPhase:New(self, world)
-  -- DECOMPILER ERROR at PC235: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ShowWarningArea] = PlaySkillPhase_ShowWarningArea:New(self, world)
-  -- DECOMPILER ERROR at PC244: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ConvertElment] = PlaySkillConvertElementPhase:New(self, world)
-  -- DECOMPILER ERROR at PC253: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ScopeForward] = PlaySkillScopeForwardPhase:New(self, world)
-  -- DECOMPILER ERROR at PC262: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.EffectLineFlyWithDirection] = PlaySkillLineFlyWithDirectionPhase:New(self, world)
-  -- DECOMPILER ERROR at PC271: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.Charge] = PlaySkillChargePhase:New(self, world)
-  -- DECOMPILER ERROR at PC280: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.SummonEverything] = PlaySkillPhase_SummonEverything:New(self, world)
-  -- DECOMPILER ERROR at PC289: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.AddBlood] = PlaySkillPhase_AddBlood:New(self, world)
-  -- DECOMPILER ERROR at PC298: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.Blink] = PlaySkillBlinkPhase:New(self, world)
-  -- DECOMPILER ERROR at PC307: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.RemoveEffect] = PlaySkillRemoveEffectPhase:New(self, world)
-  -- DECOMPILER ERROR at PC316: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.TrainConvertElement] = PlaySkillTrainConvertElementPhase:New(self, world)
-  -- DECOMPILER ERROR at PC325: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.TrainHitBack] = PlaySkillTrainHitBackPhase:New(self, world)
-  -- DECOMPILER ERROR at PC334: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.EffectRangeAttack] = PlaySkillAttackEffectAnimationPhase:New(self, world)
-  -- DECOMPILER ERROR at PC343: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.PlayAudio] = PlaySkillPlayAudioPhase:New(self, world)
-  -- DECOMPILER ERROR at PC352: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.StoryTips] = PlaySkillStoryTipsPhase:New(self, world)
-  -- DECOMPILER ERROR at PC361: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.LRAttackDifferentAnimation] = PlaySkillLRAttackDifferentAnimationPhase:New(self, world)
-  -- DECOMPILER ERROR at PC370: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.LeaveEnterBattleField] = PlaySkillLeaveEnterBattleFieldPhase:New(self, world)
-  -- DECOMPILER ERROR at PC379: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.PlayLoopAudio] = PlaySkillPlayLoopAudioPhase:New(self, world)
-  -- DECOMPILER ERROR at PC388: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.PlayEffect] = PlaySkillPlayEffectPhase:New(self, world)
-  -- DECOMPILER ERROR at PC397: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.WaveGridTransform] = PlaySkillWaveGridTransformPhase:New(self, world)
-  -- DECOMPILER ERROR at PC406: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ScopeForwardTransform] = PlaySkillScopeForwardTransformPhase:New(self, world)
-  -- DECOMPILER ERROR at PC415: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.PlayEffectAtSomeElementGrid] = PlaySkillPlayEffectAtSomeElementGridPhase:New(self, world)
-  -- DECOMPILER ERROR at PC424: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ShowHideRole] = PlaySkillPhase_ShowHideRole:New(self, world)
-  -- DECOMPILER ERROR at PC433: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.PlayEffectAtGrid] = PlaySkillPhasePlayEffectAtGridPhase:New(self, world)
-  -- DECOMPILER ERROR at PC442: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.GridSpread] = PlaySkillGridSpreadPhase:New(self, world)
-  -- DECOMPILER ERROR at PC451: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.GridDark] = PlaySkillPhase_GridDark:New(self, world)
-  -- DECOMPILER ERROR at PC460: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.Trajectory] = PlaySkillPhase_Trajectory:New(self, world)
-  -- DECOMPILER ERROR at PC469: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ScopeForwardByDistance] = PlaySkillPhaseScopeForwardByDistance:New(self, world)
-  -- DECOMPILER ERROR at PC478: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.MultiGridEffect] = PlaySkillPhaseMultiGridEffect:New(self, world)
-  -- DECOMPILER ERROR at PC487: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.CenterFirst] = PlaySkillPhaseCenterFirst:New(self, world)
-  -- DECOMPILER ERROR at PC496: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ScopeGroup] = PlaySkillPhaseScopeGroup:New(self, world)
-  -- DECOMPILER ERROR at PC505: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.AOEDamage] = PlaySkillAOEDamagePhase:New(self, world)
-  -- DECOMPILER ERROR at PC514: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.MultiGridColumnAndRowCenterRandom] = PlaySkillPhaseMultiGridColumnAndRowCenterRandom:New(self, world)
-  -- DECOMPILER ERROR at PC523: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ColumnForward] = PlaySkillPhaseColumnForward:New(self, world)
-  -- DECOMPILER ERROR at PC532: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ConvertOccupiedGridPhase] = PlaySkillConvertOccupiedGrid:New(self, world)
-  -- DECOMPILER ERROR at PC541: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ContinueAttack] = PlaySkillContinueAttackPhase:New(self, world)
-  -- DECOMPILER ERROR at PC550: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.SinkAllTarget] = PlaySkillSinkAllTargetPhase:New(self, world)
-  -- DECOMPILER ERROR at PC559: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ScopeTrajectory] = PlaySkillPhaseScopeTrajectory:New(self, world)
-  -- DECOMPILER ERROR at PC568: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.BombBullet] = PlaySkillBombBulletPhase:New(self, world)
-  -- DECOMPILER ERROR at PC577: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.SacrificeTrapsAndDamage] = PlaySkillSacrificeTrapsAndDamagePhase:New(self, world)
-  -- DECOMPILER ERROR at PC586: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.MultiGridDamageTrace] = PlaySkillMultiGridDamageTracePhase:New(self, world)
-  -- DECOMPILER ERROR at PC595: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.BulletFlyToCasterFromEdge] = PlaySkillPhaseBulletFlyCaster:New(self, world)
-  -- DECOMPILER ERROR at PC604: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.TrainResetElement] = PlaySkillTrainResetElementPhase:New(self, world)
-  -- DECOMPILER ERROR at PC613: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.MultiStageDamage] = PlaySkillMultiStageDamagePhase:New(self, world)
-  -- DECOMPILER ERROR at PC622: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.SphereTrajectoryMultiStageDamage] = PlaySkillSphereTrajectoryMultiStageDamagePhase:New(self, world)
-  -- DECOMPILER ERROR at PC631: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.CircleFlyMultipleEffect] = PlaySkillCircleFlyMultipleEffectPhase:New(self, world)
-  -- DECOMPILER ERROR at PC640: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.SummonChessSoldier] = PlaySkillPhaseSummonChessSoldier:New(self, world)
-  -- DECOMPILER ERROR at PC649: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.TeleportAndSummonTrap] = PlaySkillTeleportAndSummonTrapPhase:New(self, world)
-  -- DECOMPILER ERROR at PC658: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.NormalAttackForAddBlood] = PlaySkillNormalAttackForAddBloodPhase:New(self, world)
-  -- DECOMPILER ERROR at PC667: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ScopePushOrPull] = PlaySkillScopePushOrPullPhase:New(self, world)
-  -- DECOMPILER ERROR at PC676: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.MiejinRoll] = PlayMiejinRollPhase:New(self, world)
-  -- DECOMPILER ERROR at PC685: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.GatherThrowDamage] = PlaySkillGatherThrowDamagePhase:New(self, world)
-  -- DECOMPILER ERROR at PC694: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.AbsorbTrapsAndDamageByPickupTarget] = PlaySkillAbsorbTrapsAndDamageByPickupTargetPhase:New(self, world)
-  -- DECOMPILER ERROR at PC703: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.FlotageTrajectory] = PlaySkillFlotageTrajectoryPhase:New(self, world)
-  -- DECOMPILER ERROR at PC712: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.NormalAttackOnlyAnimation] = PlaySkillNormalAttackOnlyAnimationPhase:New(self, world)
-  -- DECOMPILER ERROR at PC721: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.CircularTrajectory] = PlaySkillCircularTrajectoryPhase:New(self, world)
-  -- DECOMPILER ERROR at PC730: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.NormalAttackWithMove] = PlaySkillNormalAttackWithMovePhase:New(self, world)
-  -- DECOMPILER ERROR at PC739: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.Transposition] = PlaySkillTranspositionPhase:New(self, world)
-  -- DECOMPILER ERROR at PC748: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.TrajectoryHitOnOwnTrapPos] = PlaySkillTrajectoryHitOnOwnTrapPosPhase:New(self, world)
-  -- DECOMPILER ERROR at PC757: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ZhongxuSummonTrapOrAttachFlag] = PlaySkillZhongxuSummonTrapOrAttachFlagPhase:New(self, world)
-  -- DECOMPILER ERROR at PC766: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.CasterRotationTrajectory] = PlaySkillCasterRotationTrajectoryPhase:New(self, world)
-  -- DECOMPILER ERROR at PC775: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.DashTeleportWithPath] = PlaySkillDashTeleportWithPathPhase:New(self, world)
-  -- DECOMPILER ERROR at PC784: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ControlMonsterMoveAttackSummon] = PlaySkillControlMonsterMoveAttackSummonPhase:New(self, world)
-  -- DECOMPILER ERROR at PC793: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ConvertDamageTeleportByLinkLine] = PlaySkillConvertDamageTeleportByLinkLinePhase:New(self, world)
-  -- DECOMPILER ERROR at PC802: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.DrillerSummonBaseMonster] = PlaySkillDrillerSummonBaseMonsterPhase:New(self, world)
-  -- DECOMPILER ERROR at PC811: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.DrillerSacrificeTrapAndDamage] = PlaySkillDrillerSacrificeTrapAndDamagePhase:New(self, world)
-  -- DECOMPILER ERROR at PC820: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.DrillerExplosion] = PlaySkillDrillerExplosionPhase:New(self, world)
-  -- DECOMPILER ERROR at PC829: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.DrillerExplosionSimple] = PlaySkillDrillerExplosionSimplePhase:New(self, world)
-  -- DECOMPILER ERROR at PC838: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.NightKingTeleportDamageWithPath] = PlaySkillNightKingTeleportDamageWithPathPhase:New(self, world)
-  -- DECOMPILER ERROR at PC847: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.PetANaTuoLiTraction] = PlaySkillPetANaTuoLiTractionPhase:New(self, world)
-  -- DECOMPILER ERROR at PC856: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ScopeForwardNoAttack] = PlaySkillScopeForwardNoAttackPhase:New(self, world)
-  -- DECOMPILER ERROR at PC865: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.ScopeForwardTransformNoAttack] = PlaySkillScopeForwardTransformNoAttackPhase:New(self, world)
-  -- DECOMPILER ERROR at PC874: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.Pet1602091Chain] = PlayPet1602901ChainPhase:New(self, world)
-  -- DECOMPILER ERROR at PC883: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.MultiRandomTrajectory] = PlaySkillMultiRandomTrajectoryPhase:New(self, world)
-  -- DECOMPILER ERROR at PC892: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._phaseFuncDic)[SkillViewPhaseType.Moye] = PlaySkillMoyePhase:New(self, world)
+  
+  self._phaseFuncDic[SkillViewPhaseType.Instruction] = PlaySkillInstructionPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.AttackAnimation] = PlaySkillAttackAnimationPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.CastAnimation] = PlaySkillCastAnimationPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.OnHit] = PlaySkillOnHitPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.GridArray] = PlaySkillGridArrayPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ScreenShake] = PlaySkillScreenShakePhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.WaveGridArray] = PlaySkillWaveGridArrayPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.RoleCG] = PlaySkillRoleCGPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.SquareRing] = PlaySkillSquareRingPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.LRAttackAnimation] = PlaySkillLRAttackAnimationPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.FireAnimation] = PlaySkillFireAnimationPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ImpactAnimation] = PlaySkillImpactAnimationPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.FlightVehicle] = PlaySkillFlightVehiclePhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.TurnRoundFlightVehicle] = PlaySkillTurnRoundFlightVehiclePhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.AddGridEffect] = PlaySkillAddGridEffectPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.RoundGridDifferent] = PlaySkillRoundGridPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.AbsorbPieceAnimation] = PlaySkillAbsorbPiecePhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.TrajectoryAnimation] = PlaySkillTrajectoryAnimationPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.FlashKnifeAndLine] = PlaySkillFlashKnifeAndLinePhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.SummonTrap] = PlaySkillSummonTrapPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.GridReturn] = PlaySkillPhase_GridReturn:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.RandAttack] = PlaySkillPhase_RandAttack:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.RangeAttackAnimation] = PlaySkillRangeAttackAnimationPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.HitBack] = PlaySkillHitBackPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.PullAround] = PlaySkillPullAroundPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ShowWarningArea] = PlaySkillPhase_ShowWarningArea:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ConvertElment] = PlaySkillConvertElementPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ScopeForward] = PlaySkillScopeForwardPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.EffectLineFlyWithDirection] = PlaySkillLineFlyWithDirectionPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.Charge] = PlaySkillChargePhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.SummonEverything] = PlaySkillPhase_SummonEverything:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.AddBlood] = PlaySkillPhase_AddBlood:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.Blink] = PlaySkillBlinkPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.RemoveEffect] = PlaySkillRemoveEffectPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.TrainConvertElement] = PlaySkillTrainConvertElementPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.TrainHitBack] = PlaySkillTrainHitBackPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.EffectRangeAttack] = PlaySkillAttackEffectAnimationPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.PlayAudio] = PlaySkillPlayAudioPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.StoryTips] = PlaySkillStoryTipsPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.LRAttackDifferentAnimation] = PlaySkillLRAttackDifferentAnimationPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.LeaveEnterBattleField] = PlaySkillLeaveEnterBattleFieldPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.PlayLoopAudio] = PlaySkillPlayLoopAudioPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.PlayEffect] = PlaySkillPlayEffectPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.WaveGridTransform] = PlaySkillWaveGridTransformPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ScopeForwardTransform] = PlaySkillScopeForwardTransformPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.PlayEffectAtSomeElementGrid] = PlaySkillPlayEffectAtSomeElementGridPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ShowHideRole] = PlaySkillPhase_ShowHideRole:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.PlayEffectAtGrid] = PlaySkillPhasePlayEffectAtGridPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.GridSpread] = PlaySkillGridSpreadPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.GridDark] = PlaySkillPhase_GridDark:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.Trajectory] = PlaySkillPhase_Trajectory:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ScopeForwardByDistance] = PlaySkillPhaseScopeForwardByDistance:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.MultiGridEffect] = PlaySkillPhaseMultiGridEffect:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.CenterFirst] = PlaySkillPhaseCenterFirst:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ScopeGroup] = PlaySkillPhaseScopeGroup:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.AOEDamage] = PlaySkillAOEDamagePhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.MultiGridColumnAndRowCenterRandom] = PlaySkillPhaseMultiGridColumnAndRowCenterRandom:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ColumnForward] = PlaySkillPhaseColumnForward:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ConvertOccupiedGridPhase] = PlaySkillConvertOccupiedGrid:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ContinueAttack] = PlaySkillContinueAttackPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.SinkAllTarget] = PlaySkillSinkAllTargetPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ScopeTrajectory] = PlaySkillPhaseScopeTrajectory:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.BombBullet] = PlaySkillBombBulletPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.SacrificeTrapsAndDamage] = PlaySkillSacrificeTrapsAndDamagePhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.MultiGridDamageTrace] = PlaySkillMultiGridDamageTracePhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.BulletFlyToCasterFromEdge] = PlaySkillPhaseBulletFlyCaster:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.TrainResetElement] = PlaySkillTrainResetElementPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.MultiStageDamage] = PlaySkillMultiStageDamagePhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.SphereTrajectoryMultiStageDamage] = PlaySkillSphereTrajectoryMultiStageDamagePhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.CircleFlyMultipleEffect] = PlaySkillCircleFlyMultipleEffectPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.SummonChessSoldier] = PlaySkillPhaseSummonChessSoldier:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.TeleportAndSummonTrap] = PlaySkillTeleportAndSummonTrapPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.NormalAttackForAddBlood] = PlaySkillNormalAttackForAddBloodPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ScopePushOrPull] = PlaySkillScopePushOrPullPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.MiejinRoll] = PlayMiejinRollPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.GatherThrowDamage] = PlaySkillGatherThrowDamagePhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.AbsorbTrapsAndDamageByPickupTarget] = PlaySkillAbsorbTrapsAndDamageByPickupTargetPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.FlotageTrajectory] = PlaySkillFlotageTrajectoryPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.NormalAttackOnlyAnimation] = PlaySkillNormalAttackOnlyAnimationPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.CircularTrajectory] = PlaySkillCircularTrajectoryPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.NormalAttackWithMove] = PlaySkillNormalAttackWithMovePhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.Transposition] = PlaySkillTranspositionPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.TrajectoryHitOnOwnTrapPos] = PlaySkillTrajectoryHitOnOwnTrapPosPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ZhongxuSummonTrapOrAttachFlag] = PlaySkillZhongxuSummonTrapOrAttachFlagPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.CasterRotationTrajectory] = PlaySkillCasterRotationTrajectoryPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.DashTeleportWithPath] = PlaySkillDashTeleportWithPathPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ControlMonsterMoveAttackSummon] = PlaySkillControlMonsterMoveAttackSummonPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ConvertDamageTeleportByLinkLine] = PlaySkillConvertDamageTeleportByLinkLinePhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.DrillerSummonBaseMonster] = PlaySkillDrillerSummonBaseMonsterPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.DrillerSacrificeTrapAndDamage] = PlaySkillDrillerSacrificeTrapAndDamagePhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.DrillerExplosion] = PlaySkillDrillerExplosionPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.DrillerExplosionSimple] = PlaySkillDrillerExplosionSimplePhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.NightKingTeleportDamageWithPath] = PlaySkillNightKingTeleportDamageWithPathPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.PetANaTuoLiTraction] = PlaySkillPetANaTuoLiTractionPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ScopeForwardNoAttack] = PlaySkillScopeForwardNoAttackPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.ScopeForwardTransformNoAttack] = PlaySkillScopeForwardTransformNoAttackPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.Pet1602091Chain] = PlayPet1602901ChainPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.MultiRandomTrajectory] = PlaySkillMultiRandomTrajectoryPhase:New(self, world)
+  self._phaseFuncDic[SkillViewPhaseType.Moye] = PlaySkillMoyePhase:New(self, world)
 end
-
-

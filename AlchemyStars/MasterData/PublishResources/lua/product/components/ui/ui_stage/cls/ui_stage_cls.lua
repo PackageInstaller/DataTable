@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/cls/ui_stage_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DiscoveryStage", Object)
 DiscoveryStage = DiscoveryStage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DiscoveryStage.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function DiscoveryStage:Constructor()
   self.id = 0
   self.type = DiscoveryStageType.FightNormal
   self.stageIdx = ""
@@ -27,146 +20,116 @@ DiscoveryStage.Constructor = function(self)
   self.nodeId = 0
   self.prevStageId = {}
   self.unlockTimestamp = 0
-  self._module = (GameGlobal.GetModule)(MissionModule)
-  self._data = (self._module):GetDiscoveryData()
+  self._module = GameGlobal.GetModule(MissionModule)
+  self._data = self._module:GetDiscoveryData()
   self.sectionId = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStage.Init = function(self, id, nodeId)
-  -- function num : 0_1 , upvalues : _ENV
+function DiscoveryStage:Init(id, nodeId)
   self.id = id
   self.nodeId = nodeId
-  local cfg = (Cfg.cfg_mission)[id]
+  local cfg = Cfg.cfg_mission[id]
   if cfg then
     if cfg.Type == 1 then
       self.type = DiscoveryStageType.FightNormal
+    elseif cfg.Type == 2 then
+      self.type = DiscoveryStageType.FightBoss
     else
-      if cfg.Type == 2 then
-        self.type = DiscoveryStageType.FightBoss
-      else
-        self.type = DiscoveryStageType.Plot
-      end
+      self.type = DiscoveryStageType.Plot
     end
-    self.stageIdx = (DiscoveryStage.GetStageIndexString)(id)
-    self.name = (StringTable.Get)(cfg.Name)
+    self.stageIdx = DiscoveryStage.GetStageIndexString(id)
+    self.name = StringTable.Get(cfg.Name)
     self.icon = cfg.Icon
-    self.desc = (StringTable.Get)(cfg.Desc)
-    self.longDesc = (StringTable.Get)(cfg.Desc .. "_long")
+    self.desc = StringTable.Get(cfg.Desc)
+    self.longDesc = StringTable.Get(cfg.Desc .. "_long")
     self.need_power = cfg.NeedPower
     self.prevStageId = cfg.NeedMissionList
     self.unlockTimestamp = cfg.UnlockTime or 0
     self:FormatAwards(cfg)
     self.enemies = cfg.MonsterList
-    local ids = {cfg.ThreeStarCondition1, cfg.ThreeStarCondition2, cfg.ThreeStarCondition3}
-    for i,v in ipairs(ids) do
+    local ids = {
+      cfg.ThreeStarCondition1,
+      cfg.ThreeStarCondition2,
+      cfg.ThreeStarCondition3
+    }
+    for i, v in ipairs(ids) do
       local cond = StageCondition:New()
       cond:Init(i, v)
-      ;
-      (table.insert)(self.three_star_condition, cond)
+      table.insert(self.three_star_condition, cond)
     end
     self.sectionId = cfg.Section
   end
-  do
-    local cfg_mission_chapter = ((Cfg.cfg_mission_chapter)({MissionID = self.id}))[1]
-    if cfg_mission_chapter then
-      self.cg = cfg_mission_chapter.BG
-    end
-    self.story = DiscoveryStoryList:New()
-    ;
-    (self.story):Init(self.id)
+  local cfg_mission_chapter = Cfg.cfg_mission_chapter({
+    MissionID = self.id
+  })[1]
+  if cfg_mission_chapter then
+    self.cg = cfg_mission_chapter.BG
   end
+  self.story = DiscoveryStoryList:New()
+  self.story:Init(self.id)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStage.GetStageIndexString = function(stageid)
-  -- function num : 0_2 , upvalues : _ENV
+function DiscoveryStage.GetStageIndexString(stageid)
   if stageid == nil then
     return ""
   end
-  local cfgs = (Cfg.cfg_mission_chapter)({MissionID = stageid})
+  local cfgs = Cfg.cfg_mission_chapter({MissionID = stageid})
   if cfgs and #cfgs == 1 then
-    local id = (cfgs[1]).WayPointID
-    local waypointCfg = (Cfg.cfg_waypoint)[id]
+    local id = cfgs[1].WayPointID
+    local waypointCfg = Cfg.cfg_waypoint[id]
     if not waypointCfg then
-      (Log.fatal)("Key not found in cfg_waypoint:", id)
+      Log.fatal("Key not found in cfg_waypoint:", id)
       return ""
     end
-    return (StringTable.Get)(waypointCfg.Name)
+    return StringTable.Get(waypointCfg.Name)
   else
-    do
-      ;
-      (Log.fatal)("cfg_mission_chapter error, MissionID:", stageid)
-      do return "" end
-    end
+    Log.fatal("cfg_mission_chapter error, MissionID:", stageid)
+    return ""
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStage.FormatAwards = function(self, cfg)
-  -- function num : 0_3 , upvalues : _ENV
+function DiscoveryStage:FormatAwards(cfg)
   self.awards = {}
   if not self:HasPassThreeStar() then
     local awardsStar = self:GetSortedArr(AwardType.ThreeStar, cfg, StageAwardType.Star)
     if awardsStar then
-      for i,v in ipairs(awardsStar) do
-        -- DECOMPILER ERROR at PC23: Confused about usage of register: R8 in 'UnsetPending'
-
-        (self.awards)[#self.awards + 1] = v
+      for i, v in ipairs(awardsStar) do
+        self.awards[#self.awards + 1] = v
       end
     end
   end
-  do
-    if not self:HasFirstPass() then
-      local awardsFirst = self:GetSortedArr(AwardType.First, cfg, StageAwardType.First)
-      if awardsFirst then
-        for i,v in ipairs(awardsFirst) do
-          -- DECOMPILER ERROR at PC47: Confused about usage of register: R8 in 'UnsetPending'
-
-          (self.awards)[#self.awards + 1] = v
-        end
+  if not self:HasFirstPass() then
+    local awardsFirst = self:GetSortedArr(AwardType.First, cfg, StageAwardType.First)
+    if awardsFirst then
+      for i, v in ipairs(awardsFirst) do
+        self.awards[#self.awards + 1] = v
       end
     end
-    do
-      local normalArr = self:GetSortedArr(AwardType.Pass, cfg, StageAwardType.Normal)
-      if normalArr then
-        for i,v in ipairs(normalArr) do
-          -- DECOMPILER ERROR at PC67: Confused about usage of register: R8 in 'UnsetPending'
-
-          (self.awards)[#self.awards + 1] = v
-        end
-      end
+  end
+  local normalArr = self:GetSortedArr(AwardType.Pass, cfg, StageAwardType.Normal)
+  if normalArr then
+    for i, v in ipairs(normalArr) do
+      self.awards[#self.awards + 1] = v
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStage.GetSortedArr = function(self, awardType, cfg, stageAwardType)
-  -- function num : 0_4 , upvalues : _ENV
-  local list = (UICommonHelper:GetInstance()):GetDropByAwardType(awardType, cfg)
+function DiscoveryStage:GetSortedArr(awardType, cfg, stageAwardType)
+  local list = UICommonHelper:GetInstance():GetDropByAwardType(awardType, cfg)
   local vecSort = SortedArray:New(Algorithm.COMPARE_CUSTOM, DiscoveryStage._LessComparer)
   if list then
-    for i,v in ipairs(list) do
+    for i, v in ipairs(list) do
       local award = Award:New()
       award:InitWithCount(v.ItemID, v.Count, v.Type)
       award:FlushType(stageAwardType)
       vecSort:Insert(award)
     end
   end
-  do
-    return vecSort.elements
-  end
+  return vecSort.elements
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStage.HasPassThreeStar = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  for index,value in ipairs(self.three_star_condition) do
+function DiscoveryStage:HasPassThreeStar()
+  for index, value in ipairs(self.three_star_condition) do
     if not value.satisfy then
       return false
     end
@@ -174,121 +137,86 @@ DiscoveryStage.HasPassThreeStar = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStage.HasFirstPass = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  do return self.state == DiscoveryStageState.Nomal end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function DiscoveryStage:HasFirstPass()
+  return self.state == DiscoveryStageState.Nomal
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStage._LessComparer = function(nItemIDA, nItemIDB)
-  -- function num : 0_7
+function DiscoveryStage._LessComparer(nItemIDA, nItemIDB)
   return -1
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStage.UpdateStar = function(self, star)
-  -- function num : 0_8
+function DiscoveryStage:UpdateStar(star)
   self.star = star or 0
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStage.UpdateState = function(self, state)
-  -- function num : 0_9 , upvalues : _ENV
+function DiscoveryStage:UpdateState(state)
   self.state = state
-  local cfg = (Cfg.cfg_mission)[self.id]
+  local cfg = Cfg.cfg_mission[self.id]
   self:FormatAwards(cfg)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStage.UpdateCondition = function(self, conditions)
-  -- function num : 0_10 , upvalues : _ENV
+function DiscoveryStage:UpdateCondition(conditions)
   local l_cur_star_num = 0
-  for index,value in ipairs(self.three_star_condition) do
+  for index, value in ipairs(self.three_star_condition) do
     if value.satisfy == true then
       l_cur_star_num = l_cur_star_num + 1
     end
   end
   local l_finish_star_num = #conditions
-  for index,value in ipairs(self.three_star_condition) do
+  for index, value in ipairs(self.three_star_condition) do
     if l_finish_star_num == l_cur_star_num then
       value:FlushSatisfy(false)
     end
-    for i,v in ipairs(conditions) do
+    for i, v in ipairs(conditions) do
       if v == index then
         value:FlushSatisfy(true)
       end
     end
   end
-  local cfg = (Cfg.cfg_mission)[self.id]
+  local cfg = Cfg.cfg_mission[self.id]
   self:FormatAwards(cfg)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStage.IsThereStory = function(self)
-  -- function num : 0_11
-  if (self.story):Count() <= 0 then
-    do return not self.story end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function DiscoveryStage:IsThereStory()
+  if self.story then
+    return self.story:Count() > 0
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStage.GetChapter = function(self)
-  -- function num : 0_12
-  local chapter = (self._data):GetChapterByStageId(self.id)
+function DiscoveryStage:GetChapter()
+  local chapter = self._data:GetChapterByStageId(self.id)
   if chapter then
     return chapter
   end
-  return (self._data):GetLastChapter()
+  return self._data:GetLastChapter()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStage.NeedLevel = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local cfg = (Cfg.cfg_mission)[self.id]
+function DiscoveryStage:NeedLevel()
+  local cfg = Cfg.cfg_mission[self.id]
   if cfg then
     return cfg.NeedLevel
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStage.LevelReach = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function DiscoveryStage:LevelReach()
   if GameSingle then
     return true
   end
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local lv = roleModule:GetLevel()
-  if self:NeedLevel() <= lv then
+  if lv >= self:NeedLevel() then
     return true
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStage.IsGuideStage = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  return (DiscoveryStage.IsGuideStageId)(self.id)
+function DiscoveryStage:IsGuideStage()
+  return DiscoveryStage.IsGuideStageId(self.id)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStage.IsGuideStageId = function(id)
-  -- function num : 0_16 , upvalues : _ENV
-  if ((Cfg.cfg_mission_guide)())[id] then
+function DiscoveryStage.IsGuideStageId(id)
+  if Cfg.cfg_mission_guide()[id] then
     return true
   end
   return false
@@ -296,131 +224,108 @@ end
 
 _class("StageCondition", Object)
 StageCondition = StageCondition
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-StageCondition.Constructor = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function StageCondition:Constructor()
   self.id = 0
   self.content = ""
   self.satisfy = false
-  self._module = (GameGlobal.GetModule)(MissionModule)
+  self._module = GameGlobal.GetModule(MissionModule)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-StageCondition.Init = function(self, idx, id)
-  -- function num : 0_18
+function StageCondition:Init(idx, id)
   self.id = id or 0
-  local desc = (self._module):Get3StarConditionDesc(id, "FFA222") or ""
+  local desc = self._module:Get3StarConditionDesc(id, "FFA222") or ""
   self.content = desc
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-StageCondition.FlushSatisfy = function(self, isSatisfy)
-  -- function num : 0_19
+function StageCondition:FlushSatisfy(isSatisfy)
   self.satisfy = isSatisfy or false
 end
 
 _class("DiscoveryStoryList", Object)
 DiscoveryStoryList = DiscoveryStoryList
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
 
-DiscoveryStoryList.Constructor = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function DiscoveryStoryList:Constructor()
   self.stageId = 0
   self.list = {}
   self._cfg = Cfg.cfg_mission_story
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStoryList.Init = function(self, stageId)
-  -- function num : 0_21 , upvalues : _ENV
-  local cfgv = (self._cfg)[stageId]
+function DiscoveryStoryList:Init(stageId)
+  local cfgv = self._cfg[stageId]
   self.stageId = stageId
   if cfgv and cfgv.StoryID then
-    for i,v in ipairs(cfgv.StoryID) do
+    for i, v in ipairs(cfgv.StoryID) do
       local story = DiscoveryStory:New()
-      story:Init(v, (cfgv.StoryActiveType)[i])
-      ;
-      (table.insert)(self.list, story)
+      story:Init(v, cfgv.StoryActiveType[i])
+      table.insert(self.list, story)
     end
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStoryList.GetStoryByStoryType = function(self, storyType)
-  -- function num : 0_22 , upvalues : _ENV
+function DiscoveryStoryList:GetStoryByStoryType(storyType)
   if not self.list then
-    return 
+    return
   end
-  for i,v in ipairs(self.list) do
+  for i, v in ipairs(self.list) do
     if v.activeType == storyType then
       return v
     end
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStoryList.Count = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function DiscoveryStoryList:Count()
   if not self.list then
     return 0
   end
-  return (table.count)(self.list)
+  return table.count(self.list)
 end
 
 _class("DiscoveryStory", Object)
 DiscoveryStory = DiscoveryStory
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
 
-DiscoveryStory.Constructor = function(self)
-  -- function num : 0_24
+function DiscoveryStory:Constructor()
   self.id = 0
   self.activeType = nil
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-DiscoveryStory.Init = function(self, storyId, storyType)
-  -- function num : 0_25 , upvalues : _ENV
+function DiscoveryStory:Init(storyId, storyType)
   self.id = storyId
   if storyType == 1 then
     self.activeType = StoryTriggerType.BeforeFight
-  else
-    if storyType == 2 then
-      self.activeType = StoryTriggerType.AfterFight
-    else
-      if storyType == 3 then
-        self.activeType = StoryTriggerType.Node
-      else
-        if storyType == 4 then
-          self.activeType = StoryTriggerType.BattleBefore
-        else
-          if storyType == 5 then
-            self.activeType = StoryTriggerType.BattleAfter
-          end
-        end
-      end
-    end
+  elseif storyType == 2 then
+    self.activeType = StoryTriggerType.AfterFight
+  elseif storyType == 3 then
+    self.activeType = StoryTriggerType.Node
+  elseif storyType == 4 then
+    self.activeType = StoryTriggerType.BattleBefore
+  elseif storyType == 5 then
+    self.activeType = StoryTriggerType.BattleAfter
   end
 end
 
 local DiscoveryStageState = {Nomal = 0, CanPlay = 1}
 _enum("DiscoveryStageState", DiscoveryStageState)
-local DiscoveryStageType = {FightNormal = 1, FightBoss = 2, Plot = 3, Node = 4, SNode = 5}
+local DiscoveryStageType = {
+  FightNormal = 1,
+  FightBoss = 2,
+  Plot = 3,
+  Node = 4,
+  SNode = 5
+}
 _enum("DiscoveryStageType", DiscoveryStageType)
-local StoryTriggerType = {BeforeFight = 1, AfterFight = 2, Node = 3, BattleBefore = 4, BattleAfter = 5}
+local StoryTriggerType = {
+  BeforeFight = 1,
+  AfterFight = 2,
+  Node = 3,
+  BattleBefore = 4,
+  BattleAfter = 5
+}
 _enum("StoryTriggerType", StoryTriggerType)
 _class("UISerialAutoFightOptionCampParams", Object)
 UISerialAutoFightOptionCampParams = UISerialAutoFightOptionCampParams
--- DECOMPILER ERROR at PC137: Confused about usage of register: R3 in 'UnsetPending'
 
-UISerialAutoFightOptionCampParams.Constructor = function(self, pointComp, campType, forceTitleState, needTicket, componentId, campaignMissionParams)
-  -- function num : 0_26
+function UISerialAutoFightOptionCampParams:Constructor(pointComp, campType, forceTitleState, needTicket, componentId, campaignMissionParams)
   self._pointComp = pointComp
   self._campType = campType
   self._forceTitleState = forceTitleState
@@ -428,5 +333,3 @@ UISerialAutoFightOptionCampParams.Constructor = function(self, pointComp, campTy
   self._componentId = componentId
   self._campaignMissionParams = campaignMissionParams
 end
-
-

@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/ui_n29_detective_fragment_popup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN29DetectiveFragmentPopup", UIController)
 UIN29DetectiveFragmentPopup = UIN29DetectiveFragmentPopup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29DetectiveFragmentPopup.Constructor = function(self)
-  -- function num : 0_0
+function UIN29DetectiveFragmentPopup:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveFragmentPopup.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIN29DetectiveFragmentPopup:LoadDataOnEnter(TT, res, uiParams)
   self._idFragment = uiParams[1]
   self._switchLock = uiParams[2]
   self._fnFinish = uiParams[3]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveFragmentPopup.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N20ShowNormalResult)
+function UIN29DetectiveFragmentPopup:OnShow(uiParams)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N20ShowNormalResult)
   self._iconLoader = self:GetUIComponent("RawImageLoader", "icon")
   self._txtNameValue = self:GetUIComponent("UILocalizationText", "txtNameValue")
   self._descContent = self:GetUIComponent("UILocalizationText", "descContent")
@@ -33,63 +20,40 @@ UIN29DetectiveFragmentPopup.OnShow = function(self, uiParams)
   self:UnLock(self._switchLock)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveFragmentPopup.OnHide = function(self)
-  -- function num : 0_3
+function UIN29DetectiveFragmentPopup:OnHide()
   if self._fnFinish ~= nil then
-    (self._fnFinish)()
+    self._fnFinish()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveFragmentPopup.BtnAnywhereOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN29DetectiveFragmentPopup:BtnAnywhereOnClick(go)
   self:Lock(self._switchLock)
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
-    (self._animation):Play("uieff_UIN29DetectiveFragmentPopup_out")
+    self._animation:Play("uieff_UIN29DetectiveFragmentPopup_out")
     YIELD(TT, 200)
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveFragmentPopup.Flush = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local allItem = (Cfg.cfg_component_detective_item)({})
+function UIN29DetectiveFragmentPopup:Flush()
+  local allItem = Cfg.cfg_component_detective_item({})
   local cfg = allItem[self._idFragment]
-  ;
-  (self._txtNameValue):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._iconLoader):LoadImage(cfg.Icon)
-  ;
-  (self._descContent):SetText((StringTable.Get)(cfg.Info))
+  self._txtNameValue:SetText(StringTable.Get(cfg.Name))
+  self._iconLoader:LoadImage(cfg.Icon)
+  self._descContent:SetText(StringTable.Get(cfg.Info))
 end
 
 _class("UIN29DetectiveFragmentItem", UICustomWidget)
 UIN29DetectiveFragmentItem = UIN29DetectiveFragmentItem
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29DetectiveFragmentItem.OnShow = function(self, uiParams)
-  -- function num : 0_6
+function UIN29DetectiveFragmentItem:OnShow(uiParams)
   self._iconLoader = self:GetUIComponent("RawImageLoader", "icon")
   self._txtNameValue = self:GetUIComponent("UILocalizationText", "txtNameValue")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveFragmentItem.Flush = function(self, id)
-  -- function num : 0_7 , upvalues : _ENV
-  local allItem = (Cfg.cfg_component_detective_item)({})
+function UIN29DetectiveFragmentItem:Flush(id)
+  local allItem = Cfg.cfg_component_detective_item({})
   local cfg = allItem[id]
-  ;
-  (self._txtNameValue):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._iconLoader):LoadImage(cfg.Icon)
+  self._txtNameValue:SetText(StringTable.Get(cfg.Name))
+  self._iconLoader:LoadImage(cfg.Icon)
 end
-
-

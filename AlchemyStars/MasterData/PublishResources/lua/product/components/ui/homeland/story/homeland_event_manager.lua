@@ -1,388 +1,272 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/story/homeland_event_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandEventManager", Object)
 HomelandEventManager = HomelandEventManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandEventManager.Constructor = function(self)
-  -- function num : 0_0
+function HomelandEventManager:Constructor()
   self._saveStoryID = nil
   self._saveStoryFinishEvent = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.Init = function(self, homelandClient)
-  -- function num : 0_1 , upvalues : _ENV
-  self._common_dis_r = ((Cfg.cfg_homeland_global).StoryPointAreaR).IntValue or 5
-  self._common_dis_n = ((Cfg.cfg_homeland_global).StoryStandDistance).IntValue or 3
-  self._homeModule = (GameGlobal.GetModule)(HomelandModule)
-  self._uiHomeModule = (GameGlobal.GetUIModule)(HomelandModule)
+function HomelandEventManager:Init(homelandClient)
+  self._common_dis_r = Cfg.cfg_homeland_global.StoryPointAreaR.IntValue or 5
+  self._common_dis_n = Cfg.cfg_homeland_global.StoryStandDistance.IntValue or 3
+  self._homeModule = GameGlobal.GetModule(HomelandModule)
+  self._uiHomeModule = GameGlobal.GetUIModule(HomelandModule)
   self._homelandClient = homelandClient
   self._storyRoot = nil
-  self._storyRoot = ((UnityEngine.GameObject).Find)("HomeStoryRoot")
+  self._storyRoot = UnityEngine.GameObject.Find("HomeStoryRoot")
   if not self._storyRoot then
-    self._req = (ResourceManager:GetInstance()):SyncLoadAsset("HomeStoryRoot.prefab", LoadType.GameObject)
-    self._storyRoot = (self._req).Obj
+    self._req = ResourceManager:GetInstance():SyncLoadAsset("HomeStoryRoot.prefab", LoadType.GameObject)
+    self._storyRoot = self._req.Obj
   end
-  ;
-  (self._storyRoot):SetActive(true)
+  self._storyRoot:SetActive(true)
   self:ReSetStoryRoot()
-  self._mainCameraTr = ((self._storyRoot).transform):Find("StoryMainCamera")
-  self._mainCamera = (self._mainCameraTr).gameObject
+  self._mainCameraTr = self._storyRoot.transform:Find("StoryMainCamera")
+  self._mainCamera = self._mainCameraTr.gameObject
   self:ShowStoryCamera(false)
   self:HideAllCamera()
   self:GetAllWaitStory()
   self:AddListener()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.AddListener = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self.StopStoryHandler = (GameHelper:GetInstance()):CreateCallback(self.RemoveStory, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.HomeLandEventChange, self.StopStoryHandler)
+function HomelandEventManager:AddListener()
+  self.StopStoryHandler = GameHelper:GetInstance():CreateCallback(self.RemoveStory, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.HomeLandEventChange, self.StopStoryHandler)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.RemoveStory = function(self, idList)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandEventManager:RemoveStory(idList)
   if idList and next(idList) then
-    for _,id in pairs(idList) do
+    for _, id in pairs(idList) do
       self:StopStory(id)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.RemoveListener = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.HomeLandEventChange, self.StopStoryHandler)
+function HomelandEventManager:RemoveListener()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.HomeLandEventChange, self.StopStoryHandler)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.ReplyPetBe = function(self, pstid, type)
-  -- function num : 0_5
+function HomelandEventManager:ReplyPetBe(pstid, type)
   if not self._replyPets then
     self._replyPets = {}
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._replyPets)[pstid] = type
+  self._replyPets[pstid] = type
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.GetReplyType = function(self, pstid)
-  -- function num : 0_6
-  if self._replyPets and (self._replyPets)[pstid] then
-    local _type = (self._replyPets)[pstid]
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._replyPets)[pstid] = nil
+function HomelandEventManager:GetReplyType(pstid)
+  if self._replyPets and self._replyPets[pstid] then
+    local _type = self._replyPets[pstid]
+    self._replyPets[pstid] = nil
     return _type
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.GetAllWaitStory = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function HomelandEventManager:GetAllWaitStory()
   self._succStoryList = {}
   self._miniMapAll = {}
   self._miniMapAdd = {}
-  local info = (self._homeModule):GetHomeLandEventInfo()
+  local info = self._homeModule:GetHomeLandEventInfo()
   local events = info.trigger_event_list
   local e_count = 0
   if events then
-    e_count = (table.count)(events)
+    e_count = table.count(events)
   end
-  ;
-  (Log.debug)("###[HomelandEventManager] 服务器已经触发事件数量=", e_count)
-  for waitStory,time in pairs(events) do
-    local cfg = (Cfg.cfg_homeland_event)[waitStory]
+  Log.debug("###[HomelandEventManager] 服务器已经触发事件数量=", e_count)
+  for waitStory, time in pairs(events) do
+    local cfg = Cfg.cfg_homeland_event[waitStory]
     if not cfg then
-      (Log.error)("###[HomelandEventManager] cfg is nil ! id --> ", waitStory)
+      Log.error("###[HomelandEventManager] cfg is nil ! id --> ", waitStory)
     else
       local succ, pet = self:StartStory(waitStory, cfg)
       if succ then
         local data = {}
         data.pet = pet
         data.id = waitStory
-        ;
-        (table.insert)(self._succStoryList, data)
-        ;
-        (table.insert)(self._miniMapAll, waitStory)
+        table.insert(self._succStoryList, data)
+        table.insert(self._miniMapAll, waitStory)
       end
     end
   end
-  local newEventTriggerList, newEventTriggerCount = (self._uiHomeModule):GetEventInfo()
+  local newEventTriggerList, newEventTriggerCount = self._uiHomeModule:GetEventInfo()
   local n_e_count = 0
   if newEventTriggerList then
-    n_e_count = (table.count)(newEventTriggerList)
+    n_e_count = table.count(newEventTriggerList)
   end
-  ;
-  (Log.debug)("###[HomelandEventManager] 服务器本次触发事件数量=", n_e_count)
+  Log.debug("###[HomelandEventManager] 服务器本次触发事件数量=", n_e_count)
   local newTriggerCount = 0
   local triggerSuccList = {}
   self._eventTipsList = {}
   local startTriggerNewEvent = true
-  local uiHomeModule = (GameGlobal.GetUIModule)(HomelandModule)
+  local uiHomeModule = GameGlobal.GetUIModule(HomelandModule)
   local saveList = uiHomeModule:SaveStoryList()
   local s_count = 0
   if saveList and next(saveList) then
-    s_count = (table.count)(saveList)
+    s_count = table.count(saveList)
     for i = 1, #saveList do
       local id = saveList[i]
-      if not (table.icontains)(newEventTriggerList, id) and not events[id] then
-        (table.insert)(newEventTriggerList, id)
+      if not table.icontains(newEventTriggerList, id) and not events[id] then
+        table.insert(newEventTriggerList, id)
         newEventTriggerCount = newEventTriggerCount + 1
       end
     end
   end
-  do
-    ;
-    (Log.debug)("###[HomelandEventManager] 客户端强制触发事件数量=", s_count)
-    for i = 1, #newEventTriggerList do
-      if newEventTriggerCount > newTriggerCount then
-        local startSucc = false
-        local pet = nil
-        local waitStory = newEventTriggerList[i]
-        local cfg = (Cfg.cfg_homeland_event)[waitStory]
-        if not cfg then
-          (Log.error)("###[HomelandEventManager] cfg is nil ! id --> ", waitStory)
-        else
-          startSucc = self:StartStory(waitStory, cfg)
-        end
-        if startSucc then
-          if startTriggerNewEvent then
-            (table.insert)(triggerSuccList, waitStory)
-            newTriggerCount = newTriggerCount + 1
-            local data = {}
-            data.id = waitStory
-            data.pet = pet
-            ;
-            (table.insert)(self._eventTipsList, data)
-          end
-          do
-            do
-              do
-                local data = {}
-                data.pet = pet
-                data.id = waitStory
-                ;
-                (table.insert)(self._succStoryList, data)
-                ;
-                (table.insert)(self._miniMapAdd, waitStory)
-                ;
-                (Log.debug)("###[HomelandEventManager] [", waitStory, "] 剧情触发失败！")
-                -- DECOMPILER ERROR at PC190: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC190: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC190: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC190: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC190: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC190: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
-        end
+  Log.debug("###[HomelandEventManager] 客户端强制触发事件数量=", s_count)
+  for i = 1, #newEventTriggerList do
+    if newTriggerCount >= newEventTriggerCount then
+      break
+    end
+    local startSucc = false
+    local pet
+    local waitStory = newEventTriggerList[i]
+    local cfg = Cfg.cfg_homeland_event[waitStory]
+    if not cfg then
+      Log.error("###[HomelandEventManager] cfg is nil ! id --> ", waitStory)
+    else
+      startSucc, pet = self:StartStory(waitStory, cfg)
+    end
+    if startSucc then
+      if startTriggerNewEvent then
+        table.insert(triggerSuccList, waitStory)
+        newTriggerCount = newTriggerCount + 1
+        local data = {}
+        data.id = waitStory
+        data.pet = pet
+        table.insert(self._eventTipsList, data)
       end
+      local data = {}
+      data.pet = pet
+      data.id = waitStory
+      table.insert(self._succStoryList, data)
+      table.insert(self._miniMapAdd, waitStory)
+    else
+      Log.debug("###[HomelandEventManager] [", waitStory, "] 剧情触发失败！")
     end
-    startTriggerNewEvent = false
-    if triggerSuccList and #triggerSuccList > 0 then
-      ((GameGlobal.TaskManager)()):StartTask(self._TriggerEventsReq, self, triggerSuccList)
-    end
-    ;
-    (Log.debug)("###[HomelandEventManager] 一共触发了[", #self._succStoryList, "]个事件")
   end
+  startTriggerNewEvent = false
+  if triggerSuccList and 0 < #triggerSuccList then
+    GameGlobal.TaskManager():StartTask(self._TriggerEventsReq, self, triggerSuccList)
+  end
+  Log.debug("###[HomelandEventManager] 一共触发了[", #self._succStoryList, "]个事件")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.SendStoryEventTip = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  do
-    if self._eventTipsList and next(self._eventTipsList) then
-      local cfgs = (Cfg.cfg_homeland_event)({})
-      for i = 1, #self._eventTipsList do
-        local id = ((self._eventTipsList)[i]).id
-        local pet = ((self._eventTipsList)[i]).pet
-        local cfg = cfgs[id]
-        if not cfg.EventTipIcon then
-          local face = not cfg or "Norm"
-        end
+function HomelandEventManager:SendStoryEventTip()
+  if self._eventTipsList and next(self._eventTipsList) then
+    local cfgs = Cfg.cfg_homeland_event({})
+    for i = 1, #self._eventTipsList do
+      local id = self._eventTipsList[i].id
+      local pet = self._eventTipsList[i].pet
+      local cfg = cfgs[id]
+      if cfg then
+        local face = cfg.EventTipIcon or "Norm"
         local pstid = pet:PstID()
-        local icon = ((HelperProxy:GetInstance()):HomeGetBody(pstid, face))
-        local tex = nil
+        local icon = HelperProxy:GetInstance():HomeGetBody(pstid, face)
+        local tex
         if cfg.EventTipTex then
-          tex = (StringTable.Get)(cfg.EventTipTex)
+          tex = StringTable.Get(cfg.EventTipTex)
         else
           local petName = pet:PetName()
-          tex = (StringTable.Get)("str_homeland_pet_story_event_tips", petName)
+          tex = StringTable.Get("str_homeland_pet_story_event_tips", petName)
         end
-        do
-          do
-            local param = {}
-            param[1] = icon
-            param[2] = tex
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIHomeEventTips, UIHomeEventTipsType.PetBody, param)
-            -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
-      end
-      self._eventTipsList = {}
-    end
-    if next(self._miniMapAll) then
-      for i = 1, #self._miniMapAll do
-        local id = (self._miniMapAll)[i]
-        local type = HomelandMimimapIconMarkType.Pet
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnInitMinimapIconMark, type, id)
+        local param = {}
+        param[1] = icon
+        param[2] = tex
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIHomeEventTips, UIHomeEventTipsType.PetBody, param)
       end
     end
-    do
-      if next(self._miniMapAdd) then
-        for i = 1, #self._miniMapAdd do
-          local id = (self._miniMapAdd)[i]
-          local type = HomelandMimimapIconMarkType.Pet
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnAddMinimapIconMark, type, id)
-        end
-      end
+    self._eventTipsList = {}
+  end
+  if next(self._miniMapAll) then
+    for i = 1, #self._miniMapAll do
+      local id = self._miniMapAll[i]
+      local type = HomelandMimimapIconMarkType.Pet
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnInitMinimapIconMark, type, id)
+    end
+  end
+  if next(self._miniMapAdd) then
+    for i = 1, #self._miniMapAdd do
+      local id = self._miniMapAdd[i]
+      local type = HomelandMimimapIconMarkType.Pet
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnAddMinimapIconMark, type, id)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager._TriggerEventsReq = function(self, TT, triggerSuccList)
-  -- function num : 0_9
-  (self._homeModule):HandleClientTriggerEventReq(TT, triggerSuccList)
+function HomelandEventManager:_TriggerEventsReq(TT, triggerSuccList)
+  self._homeModule:HandleClientTriggerEventReq(TT, triggerSuccList)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.GetStoryList = function(self)
-  -- function num : 0_10
+function HomelandEventManager:GetStoryList()
   return self._succStoryList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.StopStory = function(self, id)
-  -- function num : 0_11 , upvalues : _ENV
-  local removeIdx = nil
+function HomelandEventManager:StopStory(id)
+  local removeIdx
   for i = 1, #self._succStoryList do
-    local data = (self._succStoryList)[i]
+    local data = self._succStoryList[i]
     if data.id == id then
       removeIdx = i
       break
     end
   end
-  do
-    if removeIdx then
-      local data = (self._succStoryList)[removeIdx]
-      local pet = data.pet
-      local behavior = pet:GetPetBehavior()
-      behavior:ChangeBehavior(HomelandPetBehaviorType.Free)
-      pet:SetStoryID(nil)
-      pet:SetOccupied(HomelandPetOccupiedType.None)
-      ;
-      (table.remove)(self._succStoryList, removeIdx)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnRemoveMinimapIconMark, HomelandMimimapIconMarkType.Pet, id)
-    else
-      do
-        ;
-        (Log.debug)("###[HomelandEventManager] stop a nil story ! id --> ", id)
-      end
-    end
+  if removeIdx then
+    local data = self._succStoryList[removeIdx]
+    local pet = data.pet
+    local behavior = pet:GetPetBehavior()
+    behavior:ChangeBehavior(HomelandPetBehaviorType.Free)
+    pet:SetStoryID(nil)
+    pet:SetOccupied(HomelandPetOccupiedType.None)
+    table.remove(self._succStoryList, removeIdx)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnRemoveMinimapIconMark, HomelandMimimapIconMarkType.Pet, id)
+  else
+    Log.debug("###[HomelandEventManager] stop a nil story ! id --> ", id)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.StartStory = function(self, id, cfg)
-  -- function num : 0_12 , upvalues : _ENV
-  (Log.debug)("###[HomelandEventManager] 开启一个剧情[", id, "]")
+function HomelandEventManager:StartStory(id, cfg)
+  Log.debug("###[HomelandEventManager] 开启一个剧情[", id, "]")
   local waitTypes = cfg.WaitType
   local startSucc = false
-  local homePet = nil
+  local homePet
   local petid = cfg.PetID
   if self._succStoryList and #self._succStoryList > 0 then
     for i = 1, #self._succStoryList do
-      local data = (self._succStoryList)[i]
+      local data = self._succStoryList[i]
       local pet = data.pet
       local storyid = data.id
       local _petid = pet:TemplateID()
       if _petid == petid then
-        (Log.debug)("###[HomelandEventManager] 剧情[", id, "]触发失败,该星灵[", _petid, "]已经在触发一个剧情[", storyid, "]了")
+        Log.debug("###[HomelandEventManager] 剧情[", id, "]触发失败,该星灵[", _petid, "]已经在触发一个剧情[", storyid, "]了")
         return false
       end
     end
   end
-  do
-    local typeIdx = 1
-    for i = 1, #waitTypes do
-      local waitType = waitTypes[i]
-      if waitType == 1 then
-        startSucc = self:Action_Point(cfg, id)
-      else
-        -- DECOMPILER ERROR at PC64: Overwrote pending register: R5 in 'AssignReg'
-
-        if waitType == 2 then
-          startSucc = self:Action_Walk(cfg, id)
-        else
-          -- DECOMPILER ERROR at PC74: Overwrote pending register: R5 in 'AssignReg'
-
-          if waitType == 3 then
-            startSucc = self:Action_Furniture(cfg, typeIdx, id)
-            typeIdx = typeIdx + 1
-          else
-            -- DECOMPILER ERROR at PC85: Overwrote pending register: R5 in 'AssignReg'
-
-            if waitType == 4 then
-              startSucc = self:Action_FurniturePoint(cfg, typeIdx, id)
-              typeIdx = typeIdx + 1
-            end
-          end
-        end
-      end
-      if startSucc then
-        return startSucc, homePet
-      end
+  local typeIdx = 1
+  for i = 1, #waitTypes do
+    local waitType = waitTypes[i]
+    if waitType == 1 then
+      startSucc, homePet = self:Action_Point(cfg, id)
+    elseif waitType == 2 then
+      startSucc, homePet = self:Action_Walk(cfg, id)
+    elseif waitType == 3 then
+      startSucc, homePet = self:Action_Furniture(cfg, typeIdx, id)
+      typeIdx = typeIdx + 1
+    elseif waitType == 4 then
+      startSucc, homePet = self:Action_FurniturePoint(cfg, typeIdx, id)
+      typeIdx = typeIdx + 1
     end
-    return startSucc, homePet
+    if startSucc then
+      return startSucc, homePet
+    end
   end
+  return startSucc, homePet
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.Action_Point = function(self, cfg, id)
-  -- function num : 0_13 , upvalues : _ENV
+function HomelandEventManager:Action_Point(cfg, id)
   local petid = cfg.PetID
   local waitPos = cfg.StandPos
   local waitRot = cfg.StandRot
   local posArr = {}
   for i = 1, #waitPos do
-    local pos = Vector3((waitPos[i])[1], (waitPos[i])[2], (waitPos[i])[3])
+    local pos = Vector3(waitPos[i][1], waitPos[i][2], waitPos[i][3])
     posArr[i] = pos
   end
   local canStart = false
@@ -396,70 +280,58 @@ HomelandEventManager.Action_Point = function(self, cfg, id)
       break
     end
   end
-  do
-    local startPos = nil
-    local startRot = Vector3(0, 0, 0)
-    if canStart then
-      startPos = posArr[startIdx]
+  local startPos
+  local startRot = Vector3(0, 0, 0)
+  if canStart then
+    startPos = posArr[startIdx]
+    if waitRot[startIdx] then
+      startRot = Vector3(waitRot[startIdx][1], waitRot[startIdx][2], waitRot[startIdx][3])
+    end
+  else
+    local checkPos = posArr[startIdx]
+    local hit = UnityEngine.AI.NavMeshHit:New()
+    local _canStart, hit = self:CheckPosCanStand(checkPos, hit, self._common_dis_r)
+    if _canStart then
+      startPos = hit.position
+      canStart = true
       if waitRot[startIdx] then
-        startRot = Vector3((waitRot[startIdx])[1], (waitRot[startIdx])[2], (waitRot[startIdx])[3])
+        startRot = Vector3(waitRot[startIdx][1], waitRot[startIdx][2], waitRot[startIdx][3])
       end
     else
-      local checkPos = posArr[startIdx]
-      local hit = ((UnityEngine.AI).NavMeshHit):New()
-      local _canStart, hit = self:CheckPosCanStand(checkPos, hit, self._common_dis_r)
-      if _canStart then
-        startPos = hit.position
-        canStart = true
-        if waitRot[startIdx] then
-          startRot = Vector3((waitRot[startIdx])[1], (waitRot[startIdx])[2], (waitRot[startIdx])[3])
-        end
-      else
-        ;
-        (Log.debug)("###[HomelandEventManager] 剧情触发失败，因为没有点,id[", id, "]")
-      end
-    end
-    do
-      local homePet = nil
-      if canStart then
-        homePet = ((self._homelandClient):PetManager()):GetPetSync(petid)
-        if homePet then
-          homePet:SetOccupied(HomelandPetOccupiedType.StoryWaiting)
-          homePet:SetStoryID(id)
-          local petBehavior = homePet:GetPetBehavior()
-          petBehavior:ChangeBehavior(HomelandPetBehaviorType.StoryWaitingStand)
-          local currentBe = petBehavior:GetCurBehavior()
-          local succ = currentBe:TriggerSucc(startPos, startRot, id)
-          if not succ then
-            canStart = false
-            ;
-            (Log.debug)("###[HomelandEventManager] 定点剧情触发失败,id[", id, "]")
-            homePet:SetOccupied(HomelandPetOccupiedType.None)
-            petBehavior:RandomBehavior()
-          end
-        else
-          do
-            canStart = false
-            ;
-            (Log.debug)("###[HomelandEventManager] 剧情触发失败，因为没有星灵,id[", id, "]")
-            return canStart, homePet
-          end
-        end
-      end
+      Log.debug("###[HomelandEventManager] 剧情触发失败，因为没有点,id[", id, "]")
     end
   end
+  local homePet
+  if canStart then
+    homePet = self._homelandClient:PetManager():GetPetSync(petid)
+    if homePet then
+      homePet:SetOccupied(HomelandPetOccupiedType.StoryWaiting)
+      homePet:SetStoryID(id)
+      local petBehavior = homePet:GetPetBehavior()
+      petBehavior:ChangeBehavior(HomelandPetBehaviorType.StoryWaitingStand)
+      local currentBe = petBehavior:GetCurBehavior()
+      local succ = currentBe:TriggerSucc(startPos, startRot, id)
+      if not succ then
+        canStart = false
+        Log.debug("###[HomelandEventManager] 定点剧情触发失败,id[", id, "]")
+        homePet:SetOccupied(HomelandPetOccupiedType.None)
+        petBehavior:RandomBehavior()
+      end
+    else
+      canStart = false
+      Log.debug("###[HomelandEventManager] 剧情触发失败，因为没有星灵,id[", id, "]")
+    end
+  end
+  return canStart, homePet
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.Action_Walk = function(self, cfg, id)
-  -- function num : 0_14 , upvalues : _ENV
+function HomelandEventManager:Action_Walk(cfg, id)
   local petid = cfg.PetID
   local type = cfg.WalkType
   local canStart = false
-  local homePet = nil
+  local homePet
   if type == 1 or type == 2 then
-    homePet = ((self._homelandClient):PetManager()):GetPetSync(petid)
+    homePet = self._homelandClient:PetManager():GetPetSync(petid)
     if homePet then
       canStart = true
       homePet:SetOccupied(HomelandPetOccupiedType.StoryWaiting)
@@ -470,307 +342,215 @@ HomelandEventManager.Action_Walk = function(self, cfg, id)
       local succ = currentBe:TriggerSucc(type, cfg)
       if not succ then
         canStart = false
-        ;
-        (Log.debug)("###[HomelandEventManager] 散步剧情触发失败,id[", id, "]")
+        Log.debug("###[HomelandEventManager] 散步剧情触发失败,id[", id, "]")
         homePet:SetOccupied(HomelandPetOccupiedType.None)
         petBehavior:RandomBehavior()
       end
     else
-      do
-        ;
-        (Log.debug)("###[HomelandEventManager] 剧情触发失败，因为没有星灵,id[", id, "]")
-        return canStart, homePet
-      end
+      Log.debug("###[HomelandEventManager] 剧情触发失败，因为没有星灵,id[", id, "]")
     end
+  else
   end
+  return canStart, homePet
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.Action_Furniture = function(self, cfg, idx, id)
-  -- function num : 0_15 , upvalues : _ENV
+function HomelandEventManager:Action_Furniture(cfg, idx, id)
   local furnitureTypes = cfg.BuildType
   local furnitureType = furnitureTypes[idx]
-  if not furnitureType then
-    furnitureType = furnitureTypes[1]
-  end
+  furnitureType = furnitureType or furnitureTypes[1]
   local interactIDs = cfg.InteractID
   local interactID = interactIDs[idx]
   interactID = interactID or interactIDs[1] or nil
   local petid = cfg.PetID
   local canStart = false
-  local homePet = nil
+  local homePet
   local furniture = self:GetFurnitureWithType(furnitureType)
   if furniture then
-    homePet = ((self._homelandClient):PetManager()):GetPetSync(petid)
+    homePet = self._homelandClient:PetManager():GetPetSync(petid)
     if homePet then
       canStart = true
       homePet:SetOccupied(HomelandPetOccupiedType.StoryWaiting)
       homePet:SetStoryID(id)
       local petBehavior = homePet:GetPetBehavior()
-      do
-        petBehavior:ChangeBehavior(HomelandPetBehaviorType.StoryWaitingBuild)
-        local args = {furniture = furniture, interactID = interactID, id = id}
-        local currentBe = petBehavior:GetCurBehavior()
-        petBehavior:SetStoryBehaviorArgs(args, function(furniture, interactID, id)
-    -- function num : 0_15_0 , upvalues : currentBe, _ENV, homePet, petBehavior
-    local succC = currentBe:TriggerSucc(furniture, interactID, id)
-    if not succC then
-      (Log.debug)("###[HomelandEventManager] 回调交互剧情触发失败,id[", id, "]")
-      homePet:SetOccupied(HomelandPetOccupiedType.None)
-      petBehavior:RandomBehavior()
-    end
-  end
-)
-        local succ = currentBe:TriggerSucc(furniture, interactID, id)
-        if not succ then
-          canStart = false
-          ;
-          (Log.debug)("###[HomelandEventManager] 交互剧情触发失败,id[", id, "]")
+      petBehavior:ChangeBehavior(HomelandPetBehaviorType.StoryWaitingBuild)
+      local args = {
+        furniture = furniture,
+        interactID = interactID,
+        id = id
+      }
+      local currentBe = petBehavior:GetCurBehavior()
+      petBehavior:SetStoryBehaviorArgs(args, function(furniture, interactID, id)
+        local succC = currentBe:TriggerSucc(furniture, interactID, id)
+        if not succC then
+          Log.debug("###[HomelandEventManager] 回调交互剧情触发失败,id[", id, "]")
           homePet:SetOccupied(HomelandPetOccupiedType.None)
           petBehavior:RandomBehavior()
         end
+      end)
+      local succ = currentBe:TriggerSucc(furniture, interactID, id)
+      if not succ then
+        canStart = false
+        Log.debug("###[HomelandEventManager] 交互剧情触发失败,id[", id, "]")
+        homePet:SetOccupied(HomelandPetOccupiedType.None)
+        petBehavior:RandomBehavior()
       end
     else
-      do
-        ;
-        (Log.debug)("###[HomelandEventManager] 剧情触发失败，因为没有星灵,id[", id, "]")
-        ;
-        (Log.debug)("###[HomelandEventManager] 剧情触发失败，因为没有家具,id[", id, "]")
-        return canStart, homePet
-      end
+      Log.debug("###[HomelandEventManager] 剧情触发失败，因为没有星灵,id[", id, "]")
     end
+  else
+    Log.debug("###[HomelandEventManager] 剧情触发失败，因为没有家具,id[", id, "]")
   end
+  return canStart, homePet
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.Action_FurniturePoint = function(self, cfg, idx, id)
-  -- function num : 0_16 , upvalues : _ENV
+function HomelandEventManager:Action_FurniturePoint(cfg, idx, id)
   local petid = cfg.PetID
   local waitPoss = cfg.BuildDis
   local waitPos = waitPoss[idx]
-  if not waitPos then
-    waitPos = waitPoss[1]
-  end
+  waitPos = waitPos or waitPoss[1]
   local waitRots = cfg.BuildRot
   local waitRot = waitRots[idx]
-  if not waitRot then
-    waitRot = waitRots[1]
-  end
+  waitRot = waitRot or waitRots[1]
   local furnitureTypes = cfg.BuildType
   local furnitureType = furnitureTypes[idx]
-  if not furnitureType then
-    furnitureType = furnitureTypes[1]
-  end
+  furnitureType = furnitureType or furnitureTypes[1]
   local furniture = self:GetFurnitureWithType(furnitureType)
   if not furniture then
-    (Log.debug)("###[HomelandEventManager] 触发失败，没有家具,type-->", furnitureType)
-    return 
+    Log.debug("###[HomelandEventManager] 触发失败，没有家具,type-->", furnitureType)
+    return
   end
   local pos = furniture:Pos()
   local rotY = furniture:RotY()
-  local rot = (Quaternion.Euler)(0, rotY, 0)
+  local rot = Quaternion.Euler(0, rotY, 0)
   local dir = rot * Vector3(0, 0, 1)
-  local tmp_n = nil
+  local tmp_n
   if waitPos then
     tmp_n = waitPos
   else
     tmp_n = self._common_dis_n
   end
   local tmpPos = pos + dir * tmp_n
-  local tmpCanStart = (self:CheckPosCanStand(tmpPos, nil, 0))
-  local homePet = nil
+  local tmpCanStart = self:CheckPosCanStand(tmpPos, nil, 0)
+  local homePet
   local canStart = false
-  local startRot, startPos = nil, nil
+  local startRot, startPos
   if tmpCanStart then
     startPos = tmpPos
   else
-    local hit = ((UnityEngine.AI).NavMeshHit):New()
-    tmpCanStart = self:CheckPosCanStand(tmpPos, hit, self._common_dis_r)
+    local hit = UnityEngine.AI.NavMeshHit:New()
+    tmpCanStart, hit = self:CheckPosCanStand(tmpPos, hit, self._common_dis_r)
     if tmpCanStart then
       startPos = hit.position
     end
   end
-  do
-    -- DECOMPILER ERROR at PC80: Overwrote pending register: R23 in 'AssignReg'
-
-    if startPos then
-      homePet = (hit:PetManager()):GetPetSync(petid)
-      if homePet then
-        canStart = true
-        startRot = (Quaternion.LookRotation)(pos)
-        if waitRot then
-          local _rotOffset = Vector3(waitRot[1], waitRot[2], waitRot[3])
-          local _eular = startRot:ToEulerAngles()
-          startRot = _eular + _rotOffset
-        end
-        do
-          homePet:SetOccupied(HomelandPetOccupiedType.StoryWaiting)
-          homePet:SetStoryID(id)
-          local petBehavior = homePet:GetPetBehavior()
-          petBehavior:ChangeBehavior(HomelandPetBehaviorType.StoryWaitingBuildStand)
-          local currentBe = petBehavior:GetCurBehavior()
-          do
-            local succ = currentBe:TriggerSucc(startPos, startRot, id)
-            if not succ then
-              canStart = false
-              ;
-              (Log.debug)("###[HomelandEventManager] 家具旁站立剧情触发失败,id[", id, "]")
-              homePet:SetOccupied(HomelandPetOccupiedType.None)
-              petBehavior:RandomBehavior()
-            end
-            ;
-            (Log.debug)("###[HomelandEventManager] 剧情触发失败，因为没有星灵,id[", id, "]")
-            return canStart, homePet
-          end
-        end
+  if startPos then
+    homePet = self._homelandClient:PetManager():GetPetSync(petid)
+    if homePet then
+      canStart = true
+      startRot = Quaternion.LookRotation(pos)
+      if waitRot then
+        local _rotOffset = Vector3(waitRot[1], waitRot[2], waitRot[3])
+        local _eular = startRot:ToEulerAngles()
+        startRot = _eular + _rotOffset
       end
+      homePet:SetOccupied(HomelandPetOccupiedType.StoryWaiting)
+      homePet:SetStoryID(id)
+      local petBehavior = homePet:GetPetBehavior()
+      petBehavior:ChangeBehavior(HomelandPetBehaviorType.StoryWaitingBuildStand)
+      local currentBe = petBehavior:GetCurBehavior()
+      local succ = currentBe:TriggerSucc(startPos, startRot, id)
+      if not succ then
+        canStart = false
+        Log.debug("###[HomelandEventManager] 家具旁站立剧情触发失败,id[", id, "]")
+        homePet:SetOccupied(HomelandPetOccupiedType.None)
+        petBehavior:RandomBehavior()
+      end
+    else
+      Log.debug("###[HomelandEventManager] 剧情触发失败，因为没有星灵,id[", id, "]")
     end
   end
+  return canStart, homePet
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.GetFurnitureWithType = function(self, type)
-  -- function num : 0_17 , upvalues : _ENV
-  local buildMgr = (self._homelandClient):BuildManager()
+function HomelandEventManager:GetFurnitureWithType(type)
+  local buildMgr = self._homelandClient:BuildManager()
   local buildings = buildMgr:GetBuildingsFilter(function(building)
-    -- function num : 0_17_0 , upvalues : type
     if building._cfgID == type then
       return true
     end
     return false
-  end
-)
-  local buildingCount = (table.count)(buildings)
+  end)
+  local buildingCount = table.count(buildings)
   if buildingCount <= 0 then
-    (Log.debug)("###[HomelandEventManager] buildingCount <= 0 ! id -- ", type)
-    return 
+    Log.debug("###[HomelandEventManager] buildingCount <= 0 ! id -- ", type)
+    return
   end
   return buildings[1]
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.CheckPosCanStand = function(self, pos, hit, dis)
-  -- function num : 0_18 , upvalues : _ENV
-  local _canStart, _hit = (((UnityEngine.AI).NavMesh).SamplePosition)(pos, hit, dis, ((UnityEngine.AI).NavMesh).AllAreas)
+function HomelandEventManager:CheckPosCanStand(pos, hit, dis)
+  local _canStart, _hit = UnityEngine.AI.NavMesh.SamplePosition(pos, hit, dis, UnityEngine.AI.NavMesh.AllAreas)
   return _canStart, _hit
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.HideAllCamera = function(self)
-  -- function num : 0_19
+function HomelandEventManager:HideAllCamera()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.ShowStoryCamera = function(self, show)
-  -- function num : 0_20
-  (self._mainCamera):SetActive(show)
+function HomelandEventManager:ShowStoryCamera(show)
+  self._mainCamera:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.GetStoryRoot = function(self)
-  -- function num : 0_21
+function HomelandEventManager:GetStoryRoot()
   return self._storyRoot
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.SetStoryRoot = function(self, pos, rot, scale)
-  -- function num : 0_22
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R4 in 'UnsetPending'
-
-  ((self._storyRoot).transform).localPosition = pos
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._storyRoot).transform).localScale = scale
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._storyRoot).transform).rotation = rot
+function HomelandEventManager:SetStoryRoot(pos, rot, scale)
+  self._storyRoot.transform.localPosition = pos
+  self._storyRoot.transform.localScale = scale
+  self._storyRoot.transform.rotation = rot
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.ReSetStoryRoot = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ((self._storyRoot).transform).localPosition = Vector3(1, 1, 1)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._storyRoot).transform).localScale = Vector3(1, 1, 1)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._storyRoot).transform).rotation = Quaternion.identity
+function HomelandEventManager:ReSetStoryRoot()
+  self._storyRoot.transform.localPosition = Vector3(1, 1, 1)
+  self._storyRoot.transform.localScale = Vector3(1, 1, 1)
+  self._storyRoot.transform.rotation = Quaternion.identity
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.GetStoryCamera = function(self)
-  -- function num : 0_24
+function HomelandEventManager:GetStoryCamera()
   return self._mainCameraTr
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_25
+function HomelandEventManager:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.Dispose = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CloseHomeStory)
+function HomelandEventManager:Dispose()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CloseHomeStory)
   if self._req then
-    (self._req):Dispose()
+    self._req:Dispose()
     self._req = nil
   end
   self:RemoveListener()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.SetFinishStoryID = function(self, id)
-  -- function num : 0_27
+function HomelandEventManager:SetFinishStoryID(id)
   self._saveStoryID = id
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.GetFinishStoryID = function(self)
-  -- function num : 0_28
+function HomelandEventManager:GetFinishStoryID()
   local saveId = self._saveStoryID
   self._saveStoryID = nil
   return saveId
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.SetFinishStoryEvent = function(self, fnFinishEvent)
-  -- function num : 0_29
+function HomelandEventManager:SetFinishStoryEvent(fnFinishEvent)
   self._saveStoryFinishEvent = fnFinishEvent
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandEventManager.InvokeFinishStoryEvent = function(self)
-  -- function num : 0_30
+function HomelandEventManager:InvokeFinishStoryEvent()
   if self._saveStoryFinishEvent == nil then
-    return 
+    return
   end
   local fnEvent = self._saveStoryFinishEvent
   self._saveStoryFinishEvent = nil
   fnEvent()
 end
-
-

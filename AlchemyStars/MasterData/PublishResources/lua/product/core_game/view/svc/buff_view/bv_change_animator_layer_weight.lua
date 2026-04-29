@@ -1,20 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_change_animator_layer_weight.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeAnimatorLayerWeight", BuffViewBase)
 BuffViewChangeAnimatorLayerWeight = BuffViewChangeAnimatorLayerWeight
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeAnimatorLayerWeight.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewChangeAnimatorLayerWeight:PlayView(TT)
   local entity = self._entity
-  local changeInfo = (self._buffResult):GetChangeInfo()
+  local changeInfo = self._buffResult:GetChangeInfo()
   if entity and changeInfo then
     entity:SetAnimatorLayerWeight(changeInfo)
     entity:SetKeepAnimatorLayerWeight(true)
   end
 end
-
-

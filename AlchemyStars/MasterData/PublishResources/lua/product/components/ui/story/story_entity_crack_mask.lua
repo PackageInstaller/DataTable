@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/story/story_entity_crack_mask.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StoryEntityCrackMask", StoryEntity)
 StoryEntityCrackMask = StoryEntityCrackMask
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StoryEntityCrackMask.Constructor = function(self, ID, storyManager)
-  -- function num : 0_0 , upvalues : _ENV
-  ((StoryEntityCrackMask.super).Constructor)(self, ID, nil, nil, storyManager)
+function StoryEntityCrackMask:Constructor(ID, storyManager)
+  StoryEntityCrackMask.super.Constructor(self, ID, nil, nil, storyManager)
   self._type = StoryEntityType.CrackMask
   self._allMaterial = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityCrackMask._TriggerKeyframe = function(self, keyframeData)
-  -- function num : 0_1
+function StoryEntityCrackMask:_TriggerKeyframe(keyframeData)
   if keyframeData.Active ~= nil then
     if keyframeData.Start then
       self:_CollectMaterial(keyframeData)
@@ -30,50 +20,28 @@ StoryEntityCrackMask._TriggerKeyframe = function(self, keyframeData)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityCrackMask._CollectMaterial = function(self, keyframeData)
-  -- function num : 0_2 , upvalues : _ENV
+function StoryEntityCrackMask:_CollectMaterial(keyframeData)
   self._allMaterial = {}
   if keyframeData.EntityIDs then
-    local entityIDs = (string.split)(keyframeData.EntityIDs, ",")
+    local entityIDs = string.split(keyframeData.EntityIDs, ",")
     if #entityIDs <= 0 then
-      return 
+      return
     end
     for i = 1, #entityIDs do
-      local storyEntity = (self._storyManager):GetStoryEntity(tonumber(entityIDs[i]))
+      local storyEntity = self._storyManager:GetStoryEntity(tonumber(entityIDs[i]))
       if storyEntity then
-        local entityType = (storyEntity:GetEntityType())
-        local material = nil
+        local entityType = storyEntity:GetEntityType()
+        local material
         if entityType == StoryEntityType.Spine or entityType == StoryEntityType.Effect or entityType == StoryEntityType.Picture then
           material = storyEntity:GetMaterial()
         end
         if material then
           if type(material) == "table" then
-            for key,value in pairs(material) do
-              (table.insert)(self._allMaterial, value)
+            for key, value in pairs(material) do
+              table.insert(self._allMaterial, value)
             end
           else
-            do
-              do
-                ;
-                (table.insert)(self._allMaterial, material)
-                -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
+            table.insert(self._allMaterial, material)
           end
         end
       end
@@ -81,18 +49,15 @@ StoryEntityCrackMask._CollectMaterial = function(self, keyframeData)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityCrackMask._SetMaterialStencil = function(self, stencil)
-  -- function num : 0_3 , upvalues : _ENV
+function StoryEntityCrackMask:_SetMaterialStencil(stencil)
   if not self._allMaterial or #self._allMaterial <= 0 then
-    return 
+    return
   end
   local compValue, idValue, opValue = 8, 0, 0
   if stencil then
-    compValue = 3
+    compValue, idValue, opValue = 3, 17, 0
   end
-  for key,value in pairs(self._allMaterial) do
+  for key, value in pairs(self._allMaterial) do
     if value then
       value:SetFloat("_StencilComp", compValue)
       value:SetFloat("_Stencil", idValue)
@@ -102,12 +67,7 @@ StoryEntityCrackMask._SetMaterialStencil = function(self, stencil)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityCrackMask.Destroy = function(self)
-  -- function num : 0_4
+function StoryEntityCrackMask:Destroy()
   self:_SetMaterialStencil(false)
   self._allMaterial = nil
 end
-
-

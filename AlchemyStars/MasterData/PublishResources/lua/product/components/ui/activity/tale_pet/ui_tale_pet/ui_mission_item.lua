@@ -1,58 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_tale_pet/ui_mission_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMissionItem", UICustomWidget)
 UIMissionItem = UIMissionItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMissionItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self.talePetModule = (GameGlobal.GetModule)(TalePetModule)
+function UIMissionItem:OnShow(uiParams)
+  self.talePetModule = GameGlobal.GetModule(TalePetModule)
   self.describle = ""
   self.num = 0
   self:InitWidget()
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMissionItem:OnHide()
   self.active = false
   self:_DetachEvents()
   if self.showInTask then
-    ((GameGlobal.TaskManager)()):KillTask(self.showInTask)
+    GameGlobal.TaskManager():KillTask(self.showInTask)
     self.showInTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionItem._AttachEvents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMissionItem:_AttachEvents()
   self:AttachEvent(GameEventType.TalePetInfoDataChange, self.InfoDataChange)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionItem._DetachEvents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMissionItem:_DetachEvents()
   self:DetachEvent(GameEventType.TalePetInfoDataChange, self.InfoDataChange)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionItem.InfoDataChange = function(self)
-  -- function num : 0_4
+function UIMissionItem:InfoDataChange()
   self:OnRefreshUI()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionItem.InitWidget = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMissionItem:InitWidget()
   self.Bg = self:GetUIComponent("Image", "Bg")
   self.progress = self:GetUIComponent("Slider", "progress")
   self.curNum = self:GetUIComponent("UILocalizationText", "curNum")
@@ -69,39 +47,22 @@ UIMissionItem.InitWidget = function(self)
   self.atlas = self:GetAsset("UITalePet.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionItem.ShowInAnim = function(self)
-  -- function num : 0_6
+function UIMissionItem:ShowInAnim()
   self.showInTask = self:StartTask(self.ShowInAnimT, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionItem.ShowInAnimT = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UIMissionItem:ShowInAnimT(TT)
   self.itemRect = self:GetUIComponent("RectTransform", "item")
   self.itemCanvas = self:GetUIComponent("CanvasGroup", "item")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.itemCanvas).alpha = 0
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.itemRect).anchoredPosition = Vector2(900, ((self.itemRect).anchoredPosition).y)
+  self.itemCanvas.alpha = 0
+  self.itemRect.anchoredPosition = Vector2(900, self.itemRect.anchoredPosition.y)
   local durA = 0.3
-  ;
-  (self.itemCanvas):DOFade(1, durA)
-  local durR = 0.66666666666667
-  ;
-  (self.itemRect):DOAnchorPosX(315.5, durR)
+  self.itemCanvas:DOFade(1, durA)
+  local durR = 0.6666666666666666
+  self.itemRect:DOAnchorPosX(315.5, durR)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionItem.SetData = function(self, index, petId, stage, active)
-  -- function num : 0_8
+function UIMissionItem:SetData(index, petId, stage, active)
   self.index = index
   self.petId = petId
   self.stage = stage
@@ -113,102 +74,71 @@ UIMissionItem.SetData = function(self, index, petId, stage, active)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionItem.OnRefreshUI = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg_stage = (Cfg.cfg_tale_task)({PetID = self.petId, Phase = self.stage})
+function UIMissionItem:OnRefreshUI()
+  local cfg_stage = Cfg.cfg_tale_task({
+    PetID = self.petId,
+    Phase = self.stage
+  })
   local cfg = cfg_stage[self.index]
   if not cfg then
-    return 
+    return
   end
-  if (self.talePetModule):IsOpenActity() then
-    (self.txtDescrible):SetText((StringTable.Get)(cfg.ActiveDesc))
-    self.describle = (StringTable.Get)(cfg.ActiveDesc)
+  if self.talePetModule:IsOpenActity() then
+    self.txtDescrible:SetText(StringTable.Get(cfg.ActiveDesc))
+    self.describle = StringTable.Get(cfg.ActiveDesc)
   else
-    ;
-    (self.txtDescrible):SetText((StringTable.Get)(cfg.TaskDesc))
-    self.describle = (StringTable.Get)(cfg.TaskDesc)
+    self.txtDescrible:SetText(StringTable.Get(cfg.TaskDesc))
+    self.describle = StringTable.Get(cfg.TaskDesc)
   end
-  local info = (self.talePetModule):GetPetInfo(self.petId)
+  local info = self.talePetModule:GetPetInfo(self.petId)
   if info == nil then
-    return 
+    return
   end
   if info.pet_status == TalePetCallType.TPCT_Can_Do or info.pet_status == TalePetCallType.TPCT_Done then
     self:MissionComRefresh()
-    return 
+    return
   end
-  local curInfo = nil
-  for key,value in pairs(info.datas) do
+  local curInfo
+  for key, value in pairs(info.datas) do
     if key == cfg.ID then
       curInfo = value
     end
   end
   if curInfo == nil then
     self:MissionComRefresh()
-    return 
+    return
   end
-  ;
-  (self.btnSubmit):SetActive(false)
-  ;
-  (self.running):SetActive(false)
-  ;
-  (self.complete):SetActive(false)
+  self.btnSubmit:SetActive(false)
+  self.running:SetActive(false)
+  self.complete:SetActive(false)
   if curInfo.status then
     self:MissionComRefresh()
   else
-    -- DECOMPILER ERROR at PC101: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.progress).value = curInfo.cur / curInfo.total
+    self.progress.value = curInfo.cur / curInfo.total
     self.num = curInfo.total
-    ;
-    (self.curNum):SetText("<color=#fd9e00>" .. curInfo.cur .. "</color><color=#ffffff>/</color><color=#ffffff>" .. curInfo.total .. "</color>")
-    -- DECOMPILER ERROR at PC118: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.Bg).sprite = (self.atlas):GetSprite(self.BgSpriteN)
+    self.curNum:SetText("<color=#fd9e00>" .. curInfo.cur .. "</color><color=#ffffff>/</color><color=#ffffff>" .. curInfo.total .. "</color>")
+    self.Bg.sprite = self.atlas:GetSprite(self.BgSpriteN)
     if curInfo.item_cfg_id > 0 then
-      (self.btnSubmit):SetActive(true)
-      ;
-      (self.running):SetActive(false)
+      self.btnSubmit:SetActive(true)
+      self.running:SetActive(false)
     else
-      ;
-      (self.running):SetActive(true)
-      ;
-      (self.btnSubmit):SetActive(false)
+      self.running:SetActive(true)
+      self.btnSubmit:SetActive(false)
     end
   end
   self.curInfo = curInfo
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionItem.MissionComRefresh = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.progress).value = 1
-  ;
-  (self.curNum):SetText((StringTable.Get)("str_tale_pet_task_comp"))
-  ;
-  (self.btnSubmit):SetActive(false)
-  ;
-  (self.running):SetActive(false)
-  ;
-  (self.complete):SetActive(true)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.Bg).sprite = (self.atlas):GetSprite(self.BgSpriteY)
+function UIMissionItem:MissionComRefresh()
+  self.progress.value = 1
+  self.curNum:SetText(StringTable.Get("str_tale_pet_task_comp"))
+  self.btnSubmit:SetActive(false)
+  self.running:SetActive(false)
+  self.complete:SetActive(true)
+  self.Bg.sprite = self.atlas:GetSprite(self.BgSpriteY)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMissionItem.btnSubmitOnClick = function(self)
-  -- function num : 0_11
-  local itemId = (self.curInfo).item_cfg_id
+function UIMissionItem:btnSubmitOnClick()
+  local itemId = self.curInfo.item_cfg_id
   self:ShowDialog("UIMissionSubmitItem", itemId, self.describle, self.num)
 end
-
-

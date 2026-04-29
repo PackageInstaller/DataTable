@@ -1,80 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/bead/ui_season_maze_bead_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeBeadIntro", UIController)
 UISeasonMazeBeadIntro = UISeasonMazeBeadIntro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeBeadIntro.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeBeadIntro:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadIntro.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonMazeBeadIntro:OnShow(uiParams)
   self._data = {}
   self:InitWidget()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadIntro.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonMazeBeadIntro:InitWidget()
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadIntro._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazeBeadIntro:_OnValue()
   self:_InitData()
-  ;
-  (self._content):SpawnObjects("UISeasonMazeBeadIntroItem", #self._data)
-  self._widgets = (self._content):GetAllSpawnList()
-  for key,value in pairs(self._widgets) do
-    value:SetData((self._data)[key])
+  self._content:SpawnObjects("UISeasonMazeBeadIntroItem", #self._data)
+  self._widgets = self._content:GetAllSpawnList()
+  for key, value in pairs(self._widgets) do
+    value:SetData(self._data[key])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadIntro._InitData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeBeadIntro:_InitData()
   local titlePrefix = "str_season_maze_bead_intro_title_"
   local descPrefix = "str_season_maze_bead_intro_desc_"
   local index = 1
-  while 1 do
-    while 1 do
-      local valid = (StringTable.Has)(titlePrefix .. index)
-      if valid then
-        do
-          local t = {}
-          t.title = (StringTable.Get)(titlePrefix .. index)
-          t.desc = (StringTable.Get)(descPrefix .. index)
-          ;
-          (table.insert)(self._data, t)
-          index = index + 1
-          -- DECOMPILER ERROR at PC32: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC32: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  while true do
+    local valid = StringTable.Has(titlePrefix .. index)
+    if valid then
+      local t = {}
+      t.title = StringTable.Get(titlePrefix .. index)
+      t.desc = StringTable.Get(descPrefix .. index)
+      table.insert(self._data, t)
+      index = index + 1
+    else
+      break
     end
-    break
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadIntro.CloseBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UISeasonMazeBeadIntro:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

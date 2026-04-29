@@ -1,17 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/homeland/cfg_homeland_shop_order_color.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Count = 2, Color = 3}
+local key = {
+  ID = 1,
+  Count = 2,
+  Color = 3
+}
 local config = {
-{1, 0, "#FFFFFF"}
-, 
-{2, 20, "#44B454"}
-, 
-{3, 50, "#FAAA28"}
-, 
-{4, 80, "#FF4200"}
+  {
+    1,
+    0,
+    "#FFFFFF"
+  },
+  {
+    2,
+    20,
+    "#44B454"
+  },
+  {
+    3,
+    50,
+    "#FAAA28"
+  },
+  {
+    4,
+    80,
+    "#FF4200"
+  }
 }
 return config, "ID", key
-

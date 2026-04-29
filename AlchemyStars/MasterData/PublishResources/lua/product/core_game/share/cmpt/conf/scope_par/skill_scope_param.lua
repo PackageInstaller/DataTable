@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/scope_par/skill_scope_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillNRowsMColumnsScopeParam", Object)
 SkillNRowsMColumnsScopeParam = SkillNRowsMColumnsScopeParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillNRowsMColumnsScopeParam.Constructor = function(self, rows, columns, scopeCenterParam)
-  -- function num : 0_0
+function SkillNRowsMColumnsScopeParam:Constructor(rows, columns, scopeCenterParam)
   self._rows = rows
   self._columns = columns
   self._scopeCenterParam = scopeCenterParam
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillNRowsMColumnsScopeParam.GetSkillScopeRows = function(self)
-  -- function num : 0_1
+function SkillNRowsMColumnsScopeParam:GetSkillScopeRows()
   return self._rows
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillNRowsMColumnsScopeParam.GetSkillScopeColumns = function(self)
-  -- function num : 0_2
+function SkillNRowsMColumnsScopeParam:GetSkillScopeColumns()
   return self._columns
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillNRowsMColumnsScopeParam.GetScopeCenterParam = function(self)
-  -- function num : 0_3
+function SkillNRowsMColumnsScopeParam:GetScopeCenterParam()
   return self._scopeCenterParam
 end
-
-

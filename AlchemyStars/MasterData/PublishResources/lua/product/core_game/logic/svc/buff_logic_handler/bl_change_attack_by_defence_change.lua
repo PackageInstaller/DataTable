@@ -1,47 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_attack_by_defence_change.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeAttackByDefenceChange", BuffLogicBase)
 BuffLogicChangeAttackByDefenceChange = BuffLogicChangeAttackByDefenceChange
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAttackByDefenceChange.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeAttackByDefenceChange:Constructor(buffInstance, logicParam)
   self._percent = logicParam.percent or 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttackByDefenceChange.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local attributesComponent = (self._entity):Attributes()
+function BuffLogicChangeAttackByDefenceChange:DoLogic()
+  local attributesComponent = self._entity:Attributes()
   local totalDefence = attributesComponent:GetDefence()
   local baseDefence = attributesComponent:GetAttribute("Defense")
   local change = totalDefence - baseDefence
   if change ~= 0 then
     change = change * self._percent
-    ;
-    (self._buffLogicService):ChangeBaseAttack(self._entity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, change)
+    self._buffLogicService:ChangeBaseAttack(self._entity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, change)
     return true
   end
 end
 
 _class("BuffLogicRemoveChangeAttackByDefenceChange", BuffLogicBase)
 BuffLogicRemoveChangeAttackByDefenceChange = BuffLogicRemoveChangeAttackByDefenceChange
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveChangeAttackByDefenceChange.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveChangeAttackByDefenceChange:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveChangeAttackByDefenceChange.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._buffLogicService):RemoveBaseAttack(self._entity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix)
+function BuffLogicRemoveChangeAttackByDefenceChange:DoLogic()
+  self._buffLogicService:RemoveBaseAttack(self._entity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix)
   return true
 end
-
-

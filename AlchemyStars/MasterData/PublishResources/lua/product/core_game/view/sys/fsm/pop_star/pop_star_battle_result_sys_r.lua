@@ -1,42 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/pop_star/pop_star_battle_result_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pop_star_battle_result_system")
 _class("PopStarBattleResultSystem_Render", PopStarBattleResultSystem)
 PopStarBattleResultSystem_Render = PopStarBattleResultSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarBattleResultSystem_Render._DoRenderShowExit = function(self, TT, victory, defeatType)
-  -- function num : 0_0 , upvalues : _ENV
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function PopStarBattleResultSystem_Render:_DoRenderShowExit(TT, victory, defeatType)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayBuffView(TT, NTGameOver:New(victory, defeatType))
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSetGraphicRaycaster, false)
-  do
-    if victory == 1 then
-      local guideService = (self._world):GetService("Guide")
-      guideService:Trigger(GameEventType.GuideBattleFinish)
-      guideService:YieldComplete()
-    end
-    local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-    local utilData = (self._world):GetService("UtilData")
-    if victory ~= 0 and not utilData:PlayerIsDead(teamEntity) then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowTransitionEffect)
-      YIELD(TT, 1000)
-    end
-    ;
-    ((UnityEngine.Shader).DisableKeyword)("_CELL_CLIP")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSetGraphicRaycaster, false)
+  if victory == 1 then
+    local guideService = self._world:GetService("Guide")
+    guideService:Trigger(GameEventType.GuideBattleFinish)
+    guideService:YieldComplete()
   end
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local utilData = self._world:GetService("UtilData")
+  if victory ~= 0 and not utilData:PlayerIsDead(teamEntity) then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowTransitionEffect)
+    YIELD(TT, 1000)
+  end
+  UnityEngine.Shader.DisableKeyword("_CELL_CLIP")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleResultSystem_Render._DoRenderBattleResult = function(self)
-  -- function num : 0_1
-  local battleSvcRender = (self._world):GetService("RenderBattle")
+function PopStarBattleResultSystem_Render:_DoRenderBattleResult()
+  local battleSvcRender = self._world:GetService("RenderBattle")
   battleSvcRender:NotifyUIBattleGameOver(self.battleMatchResult)
 end
-
-

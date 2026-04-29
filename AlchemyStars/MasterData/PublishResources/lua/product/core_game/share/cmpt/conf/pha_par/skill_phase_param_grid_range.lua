@@ -1,178 +1,115 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_grid_range.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
-local SkillPhaseParam_GridRange_SortCenterType = {CasterPos = 0, CasterX = 1, CasterY = 2, User = 3}
+local SkillPhaseParam_GridRange_SortCenterType = {
+  CasterPos = 0,
+  CasterX = 1,
+  CasterY = 2,
+  User = 3
+}
 _enum("SkillPhaseParam_GridRange_SortCenterType", SkillPhaseParam_GridRange_SortCenterType)
 _class("SkillPhaseParam_GridRange", SkillPhaseParamBase)
 SkillPhaseParam_GridRange = SkillPhaseParam_GridRange
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillPhaseParam_GridRange.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseParam_GridRange:Constructor(t)
   self._scopeCenterType = t.scopeCenterType
   self._scopeType = t.scopeType
   self._scopeParam = t.scopeParam
-  if not t.targetType then
-    self._targetType = SkillTargetType.Pet
-    self._sortCenterType = t.sortCenterType
-    self._sortCenterPos = t.sortCenterPos
-    self._groupIntervalTime = t.groupIntervalTime
-    self._gridEffectID = t.gridEffectID
-    self._gridIntervalTime = t.gridIntervalTime
-    self._hasConvert = t.hasConvert
-    self._bestConvertTime = t.bestConvertTime
-    self._damageIndex = t.damageIndex
-    self._hitAnimationName = t.hitAnimationName
-    self._hitEffectID = t.hitEffectID
-    self._finishDelayTime = t.finishDelayTime
-  end
+  self._targetType = t.targetType or SkillTargetType.Pet
+  self._sortCenterType = t.sortCenterType
+  self._sortCenterPos = t.sortCenterPos
+  self._groupIntervalTime = t.groupIntervalTime
+  self._gridEffectID = t.gridEffectID
+  self._gridIntervalTime = t.gridIntervalTime
+  self._hasConvert = t.hasConvert
+  self._bestConvertTime = t.bestConvertTime
+  self._damageIndex = t.damageIndex
+  self._hitAnimationName = t.hitAnimationName
+  self._hitEffectID = t.hitEffectID
+  self._finishDelayTime = t.finishDelayTime
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhaseParam_GridRange:GetCacheTable()
   local listID = {}
   self:AddEffectIDToListID(listID, self._gridEffectID)
   self:AddEffectIDToListID(listID, self._hitEffectID)
   return self:GetCacheTableFromListID(listID)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseParam_GridRange:GetPhaseType()
   return SkillViewPhaseType.GridRangeEffect
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetGroupIntervalTime = function(self)
-  -- function num : 0_3
+function SkillPhaseParam_GridRange:GetGroupIntervalTime()
   return self._groupIntervalTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetGridEffectID = function(self)
-  -- function num : 0_4
+function SkillPhaseParam_GridRange:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetGridIntervalTime = function(self)
-  -- function num : 0_5
+function SkillPhaseParam_GridRange:GetGridIntervalTime()
   return self._gridIntervalTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetBestEffectTime = function(self)
-  -- function num : 0_6
+function SkillPhaseParam_GridRange:GetBestEffectTime()
   return self._bestEffectTime
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetFinishDelayTime = function(self)
-  -- function num : 0_7
+function SkillPhaseParam_GridRange:GetFinishDelayTime()
   return self._finishDelayTime
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.HasDamage = function(self)
-  -- function num : 0_8
-  if self._damageIndex <= 0 then
-    do return not self._damageIndex end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function SkillPhaseParam_GridRange:HasDamage()
+  if self._damageIndex then
+    return self._damageIndex > 0
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetDamageIndex = function(self)
-  -- function num : 0_9
+function SkillPhaseParam_GridRange:GetDamageIndex()
   return self._damageIndex
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.HasConvert = function(self)
-  -- function num : 0_10
-  if self._hasConvert ~= 1 then
-    do return not self._hasConvert end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function SkillPhaseParam_GridRange:HasConvert()
+  if self._hasConvert then
+    return self._hasConvert == 1
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetGridEffectTime = function(self)
-  -- function num : 0_11
+function SkillPhaseParam_GridRange:GetGridEffectTime()
   return self._gridEffectTime
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetHitAnimationName = function(self)
-  -- function num : 0_12
+function SkillPhaseParam_GridRange:GetHitAnimationName()
   return self._hitAnimationName
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetHitEffectID = function(self)
-  -- function num : 0_13
+function SkillPhaseParam_GridRange:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetScopeCenterType = function(self)
-  -- function num : 0_14
+function SkillPhaseParam_GridRange:GetScopeCenterType()
   return self._scopeCenterType
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetScapeType = function(self)
-  -- function num : 0_15
+function SkillPhaseParam_GridRange:GetScapeType()
   return self._scopeType
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetScapeParam = function(self)
-  -- function num : 0_16
+function SkillPhaseParam_GridRange:GetScapeParam()
   return self._scopeParam
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetSortCenterType = function(self)
-  -- function num : 0_17
+function SkillPhaseParam_GridRange:GetSortCenterType()
   return self._sortCenterType
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetSortCenterPos = function(self)
-  -- function num : 0_18
+function SkillPhaseParam_GridRange:GetSortCenterPos()
   return self._sortCenterPos
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridRange.GetTargetType = function(self)
-  -- function num : 0_19
+function SkillPhaseParam_GridRange:GetTargetType()
   return self._targetType
 end
-
-

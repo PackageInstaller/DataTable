@@ -1,50 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/shop/ui_homeland_shop_tab_order_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandShopTabOrderItem", UICustomWidget)
 UIHomelandShopTabOrderItem = UIHomelandShopTabOrderItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandShopTabOrderItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandShopTabOrderItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderItem.OnHide = function(self, stamp)
-  -- function num : 0_1
+function UIHomelandShopTabOrderItem:OnHide(stamp)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderItem.SetData = function(self, roleAsset, color1, color2)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandShopTabOrderItem:SetData(roleAsset, color1, color2)
   self._roleAsset = roleAsset
   local itemId = roleAsset.assetid
   local requireCount = roleAsset.count
-  ;
-  (UIWidgetHelper.SetItemIcon)(self, itemId, "_icon")
-  ;
-  (UIWidgetHelper.SetItemIconColor)(self, itemId, "_iconColor", "UIHomelandBuildInfo.spriteatlas", "N17_produce_bg_item_")
-  local count = (UIHomelandShopHelper.GetItemCount_ForSale)(itemId)
-  local notEnough = count < requireCount
-  ;
-  (self:GetGameObject("_redBg")):SetActive(notEnough)
+  UIWidgetHelper.SetItemIcon(self, itemId, "_icon")
+  UIWidgetHelper.SetItemIconColor(self, itemId, "_iconColor", "UIHomelandBuildInfo.spriteatlas", "N17_produce_bg_item_")
+  local count = UIHomelandShopHelper.GetItemCount_ForSale(itemId)
+  local notEnough = requireCount > count
+  self:GetGameObject("_redBg"):SetActive(notEnough)
   local c1 = notEnough and color1 or color2
   local c2 = color2
-  local text = (UIActivityHelper.GetColorText)(c1, count, c2, "/" .. requireCount)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_text", text)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  local text = UIActivityHelper.GetColorText(c1, count, c2, "/" .. requireCount)
+  UIWidgetHelper.SetLocalizationText(self, "_text", text)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderItem.BtnOnClick = function(self, go)
-  -- function num : 0_3
-  self:ShowDialog("UIItemTipsHomeland", (self._roleAsset).assetid, go)
+function UIHomelandShopTabOrderItem:BtnOnClick(go)
+  self:ShowDialog("UIItemTipsHomeland", self._roleAsset.assetid, go)
 end
-
-

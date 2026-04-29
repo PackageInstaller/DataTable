@@ -1,53 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_play_effect_at_some_element_grid_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhasePlayEffectAtSomeElementGridParam", SkillPhaseParamBase)
 SkillPhasePlayEffectAtSomeElementGridParam = SkillPhasePlayEffectAtSomeElementGridParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhasePlayEffectAtSomeElementGridParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhasePlayEffectAtSomeElementGridParam:Constructor(t)
   self._targetElementArray = t.targetElements
   self._effectIDArray = t.effectID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayEffectAtSomeElementGridParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhasePlayEffectAtSomeElementGridParam:GetPhaseType()
   return SkillViewPhaseType.PlayEffectAtSomeElementGrid
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayEffectAtSomeElementGridParam.GetEffectIDArray = function(self)
-  -- function num : 0_2
+function SkillPhasePlayEffectAtSomeElementGridParam:GetEffectIDArray()
   return self._effectIDArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayEffectAtSomeElementGridParam.GetTargetElementArray = function(self)
-  -- function num : 0_3
+function SkillPhasePlayEffectAtSomeElementGridParam:GetTargetElementArray()
   return self._targetElementArray
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayEffectAtSomeElementGridParam.GetCacheTable = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillPhasePlayEffectAtSomeElementGridParam:GetCacheTable()
   local t = {}
   if self._effectIDArray then
-    for _,effectID in ipairs(self._effectIDArray) do
-      t[#t + 1] = {((Cfg.cfg_effect)[effectID]).ResPath, 1}
+    for _, effectID in ipairs(self._effectIDArray) do
+      t[#t + 1] = {
+        Cfg.cfg_effect[effectID].ResPath,
+        1
+      }
     end
   end
-  do
-    return t
-  end
+  return t
 end
-
-

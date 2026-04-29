@@ -1,62 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/render_round_team_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RenderRoundTeamComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderRoundTeamComponent.Constructor = function(self, roundTeam)
-  -- function num : 0_0
+function RenderRoundTeamComponent:Constructor(roundTeam)
   self._roundTeam = roundTeam
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderRoundTeamComponent.GetRoundTeam = function(self)
-  -- function num : 0_1
+function RenderRoundTeamComponent:GetRoundTeam()
   return self._roundTeam
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RenderRoundTeam = function(self)
-  -- function num : 0_2
-  return self:GetComponent((self.WEComponentsEnum).RenderRoundTeam)
+function Entity:RenderRoundTeam()
+  return self:GetComponent(self.WEComponentsEnum.RenderRoundTeam)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasRenderRoundTeam = function(self)
-  -- function num : 0_3
-  return self:HasComponent((self.WEComponentsEnum).RenderRoundTeam)
+function Entity:HasRenderRoundTeam()
+  return self:HasComponent(self.WEComponentsEnum.RenderRoundTeam)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddRenderRoundTeam = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderRoundTeam
+function Entity:AddRenderRoundTeam()
+  local index = self.WEComponentsEnum.RenderRoundTeam
   local component = RenderRoundTeamComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRenderRoundTeam = function(self, roundTeam)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderRoundTeam
+function Entity:ReplaceRenderRoundTeam(roundTeam)
+  local index = self.WEComponentsEnum.RenderRoundTeam
   local component = RenderRoundTeamComponent:New(roundTeam)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveRenderRoundTeam = function(self)
-  -- function num : 0_6
+function Entity:RemoveRenderRoundTeam()
   if self:HasRenderRoundTeam() then
-    self:RemoveComponent((self.WEComponentsEnum).RenderRoundTeam)
+    self:RemoveComponent(self.WEComponentsEnum.RenderRoundTeam)
   end
 end
-
-

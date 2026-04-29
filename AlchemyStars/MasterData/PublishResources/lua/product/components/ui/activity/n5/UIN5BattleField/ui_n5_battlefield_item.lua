@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/UIN5BattleField/ui_n5_battlefield_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5BattleFieldItem", UICustomWidget)
 UIN5BattleFieldItem = UIN5BattleFieldItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5BattleFieldItem.Constructor = function(self)
-  -- function num : 0_0
+function UIN5BattleFieldItem:Constructor()
   self._callback = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN5BattleFieldItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIN5BattleFieldItem:_GetComponents()
   self._background = self:GetUIComponent("RawImageLoader", "Background")
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._tag = self:GetUIComponent("RawImageLoader", "Tag")
@@ -35,10 +22,7 @@ UIN5BattleFieldItem._GetComponents = function(self)
   self:_AddUIEvent(self._backgroundBtn)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldItem.SetData = function(self, index, cfg, maxMilitaryExploit, challengemissioninfo, callback)
-  -- function num : 0_3
+function UIN5BattleFieldItem:SetData(index, cfg, maxMilitaryExploit, challengemissioninfo, callback)
   self._index = index
   self._cfg = cfg
   self._maxMilitaryExploit = maxMilitaryExploit
@@ -47,80 +31,47 @@ UIN5BattleFieldItem.SetData = function(self, index, cfg, maxMilitaryExploit, cha
   self:_SetUIInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldItem._SetUIInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._background):LoadImage((BattleFieldDifficultyImg.MapCardImg)[(self._cfg).Index])
-  ;
-  (self._icon):LoadImage((BattleFieldDifficultyImg.MapAvatarImg)[(self._cfg).Index])
-  ;
-  (self._tag):LoadImage((BattleFieldDifficultyImg.MapTagImg)[(self._cfg).Index])
-  ;
-  (self._name):RefreshText((StringTable.Get)((self._cfg).MissionName))
-  if self._maxMilitaryExploit <= (self._challengemissioninfo).military_exploit and self._maxMilitaryExploit > 0 then
-    (self._militaryExploit):SetText("")
-    ;
-    (self._militaryExploitMax):SetText((self._challengemissioninfo).military_exploit)
+function UIN5BattleFieldItem:_SetUIInfo()
+  self._background:LoadImage(BattleFieldDifficultyImg.MapCardImg[self._cfg.Index])
+  self._icon:LoadImage(BattleFieldDifficultyImg.MapAvatarImg[self._cfg.Index])
+  self._tag:LoadImage(BattleFieldDifficultyImg.MapTagImg[self._cfg.Index])
+  self._name:RefreshText(StringTable.Get(self._cfg.MissionName))
+  if self._challengemissioninfo.military_exploit >= self._maxMilitaryExploit and self._maxMilitaryExploit > 0 then
+    self._militaryExploit:SetText("")
+    self._militaryExploitMax:SetText(self._challengemissioninfo.military_exploit)
   else
-    ;
-    (self._militaryExploit):SetText((self._challengemissioninfo).military_exploit)
-    ;
-    (self._militaryExploitMax):SetText("")
+    self._militaryExploit:SetText(self._challengemissioninfo.military_exploit)
+    self._militaryExploitMax:SetText("")
   end
-  ;
-  (self._difficulty):SetText((StringTable.Get)((BattleFieldDifficultyText.DifficultyText)[(self._cfg).Index]))
+  self._difficulty:SetText(StringTable.Get(BattleFieldDifficultyText.DifficultyText[self._cfg.Index]))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldItem.RefreshMilitaryExploit = function(self, maxMilitaryExploit, militaryexploit)
-  -- function num : 0_5
+function UIN5BattleFieldItem:RefreshMilitaryExploit(maxMilitaryExploit, militaryexploit)
   if maxMilitaryExploit <= militaryexploit then
-    (self._militaryExploit):SetText("")
-    ;
-    (self._militaryExploitMax):SetText(militaryexploit)
+    self._militaryExploit:SetText("")
+    self._militaryExploitMax:SetText(militaryexploit)
   else
-    ;
-    (self._militaryExploit):SetText(militaryexploit)
-    ;
-    (self._militaryExploitMax):SetText("")
+    self._militaryExploit:SetText(militaryexploit)
+    self._militaryExploitMax:SetText("")
   end
-  ;
-  (self._militaryExploit):SetText(militaryexploit)
+  self._militaryExploit:SetText(militaryexploit)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldItem.BackgroundOnClick = function(self, go)
-  -- function num : 0_6
+function UIN5BattleFieldItem:BackgroundOnClick(go)
   if self._callback then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldItem._AddUIEvent = function(self, btn)
-  -- function num : 0_7 , upvalues : _ENV
-  ((UIEventTriggerListener.Get)(btn)).onDown = function(go)
-    -- function num : 0_7_0 , upvalues : self
+function UIN5BattleFieldItem:_AddUIEvent(btn)
+  UIEventTriggerListener.Get(btn).onDown = function(go)
     self:_OnPress(go, true)
   end
-
-  ;
-  ((UIEventTriggerListener.Get)(btn)).onUp = function(go)
-    -- function num : 0_7_1 , upvalues : self
+  UIEventTriggerListener.Get(btn).onUp = function(go)
     self:_OnPress(go, false)
   end
-
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldItem._OnPress = function(self, go, show)
-  -- function num : 0_8
-  (self._select):SetActive(show)
+function UIN5BattleFieldItem:_OnPress(go, show)
+  self._select:SetActive(show)
 end
-
-

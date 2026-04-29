@@ -1,280 +1,139 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/obj_con/objective_condition_param_parser.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ObjectiveConditionParamParser", Object)
 ObjectiveConditionParamParser = ObjectiveConditionParamParser
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ObjectiveConditionParamParser.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ObjectiveConditionParamParser:Constructor()
   self._conditionParamFuncDic = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.NoAdditional] = self._ParseNoAdditianlParam
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.Health] = self._ParseHealthParam
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.LastWaveRoundNum] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.SuperChainCount] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.ActiveSkillCount] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.AllElementTeam] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.SelectElement] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.MatchNum] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.TrapAttackTimes] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.TrapAttackDammage] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.TrapAttackTotalTimes] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.TrapAttackTotalDamage] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.SmashTrapCount] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.SmashTrapTotalCount] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.TotalMatchPropertyNum] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.OnceMatchPropertyNum] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.OnceMatchNorAttTimes] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.ColorSkillCount] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.AuroraTimeCount] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.PlayerBeHitCount] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.CompelHelpPet] = self._ParseParam_CompelHelpPet
-  -- DECOMPILER ERROR at PC111: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.ForbidHelpPet] = self._ParseParam_ForbidHelpPet
-  -- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.KillMonstersInLimitedRound] = self._ParseParam_KillMonstersInLimitedRound
-  -- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.KillMonstersWithBuff] = self._ParseParam_KillMonstersWithBuff
-  -- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.CollectItems] = self._ParseParam_CollectItems
-  -- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.UIChangeTeamLeaderCount] = self._ParseParam_UIChangeTeamLeaderCount
-  -- DECOMPILER ERROR at PC136: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.HitBySkill] = self._ParseParam_HitBySkill
-  -- DECOMPILER ERROR at PC141: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.ChessDeadPlayerPawnCount] = self._ParseParam_ChessDeadPlayerPawnCount
-  -- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.MonsterEscapeLessThan] = self._ParseParam_MonsterEscapeLessThan
-  -- DECOMPILER ERROR at PC151: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.PopStarNumber] = self._ParseMatchNumber
-  -- DECOMPILER ERROR at PC156: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._conditionParamFuncDic)[BonusObjectiveType.BossHealth] = self._ParseBossHealthParam
+  self._conditionParamFuncDic[BonusObjectiveType.NoAdditional] = self._ParseNoAdditianlParam
+  self._conditionParamFuncDic[BonusObjectiveType.Health] = self._ParseHealthParam
+  self._conditionParamFuncDic[BonusObjectiveType.LastWaveRoundNum] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.SuperChainCount] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.ActiveSkillCount] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.AllElementTeam] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.SelectElement] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.MatchNum] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.TrapAttackTimes] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.TrapAttackDammage] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.TrapAttackTotalTimes] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.TrapAttackTotalDamage] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.SmashTrapCount] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.SmashTrapTotalCount] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.TotalMatchPropertyNum] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.OnceMatchPropertyNum] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.OnceMatchNorAttTimes] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.ColorSkillCount] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.AuroraTimeCount] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.PlayerBeHitCount] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.CompelHelpPet] = self._ParseParam_CompelHelpPet
+  self._conditionParamFuncDic[BonusObjectiveType.ForbidHelpPet] = self._ParseParam_ForbidHelpPet
+  self._conditionParamFuncDic[BonusObjectiveType.KillMonstersInLimitedRound] = self._ParseParam_KillMonstersInLimitedRound
+  self._conditionParamFuncDic[BonusObjectiveType.KillMonstersWithBuff] = self._ParseParam_KillMonstersWithBuff
+  self._conditionParamFuncDic[BonusObjectiveType.CollectItems] = self._ParseParam_CollectItems
+  self._conditionParamFuncDic[BonusObjectiveType.UIChangeTeamLeaderCount] = self._ParseParam_UIChangeTeamLeaderCount
+  self._conditionParamFuncDic[BonusObjectiveType.HitBySkill] = self._ParseParam_HitBySkill
+  self._conditionParamFuncDic[BonusObjectiveType.ChessDeadPlayerPawnCount] = self._ParseParam_ChessDeadPlayerPawnCount
+  self._conditionParamFuncDic[BonusObjectiveType.MonsterEscapeLessThan] = self._ParseParam_MonsterEscapeLessThan
+  self._conditionParamFuncDic[BonusObjectiveType.PopStarNumber] = self._ParseMatchNumber
+  self._conditionParamFuncDic[BonusObjectiveType.BossHealth] = self._ParseBossHealthParam
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ObjectiveConditionParamParser.ParseObjectiveConditionParam = function(self, conditionType, conditionParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local parseFunc = (self._conditionParamFuncDic)[conditionType]
-  local bonusConditionParamData = nil
+function ObjectiveConditionParamParser:ParseObjectiveConditionParam(conditionType, conditionParam)
+  local parseFunc = self._conditionParamFuncDic[conditionType]
+  local bonusConditionParamData
   if parseFunc ~= nil then
     bonusConditionParamData = parseFunc(self, conditionParam)
   else
-    ;
-    (Log.fatal)("parse bonus obj Func is null,effect", conditionType)
+    Log.fatal("parse bonus obj Func is null,effect", conditionType)
   end
   return bonusConditionParamData
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ObjectiveConditionParamParser._ParseNoAdditianlParam = function(self, conditionParam)
-  -- function num : 0_2
+function ObjectiveConditionParamParser:_ParseNoAdditianlParam(conditionParam)
   return conditionParam
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ObjectiveConditionParamParser._ParseHealthParam = function(self, conditionParam)
-  -- function num : 0_3 , upvalues : _ENV
+function ObjectiveConditionParamParser:_ParseHealthParam(conditionParam)
   local percent = tonumber(conditionParam[1])
   return percent
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ObjectiveConditionParamParser._ParseMatchNumber = function(self, conditionParam)
-  -- function num : 0_4
+function ObjectiveConditionParamParser:_ParseMatchNumber(conditionParam)
   return conditionParam
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ObjectiveConditionParamParser._ParseParam_CompelHelpPet = function(self, conditionParam)
-  -- function num : 0_5
+function ObjectiveConditionParamParser:_ParseParam_CompelHelpPet(conditionParam)
   return conditionParam
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ObjectiveConditionParamParser._ParseParam_ForbidHelpPet = function(self, conditionParam)
-  -- function num : 0_6
+function ObjectiveConditionParamParser:_ParseParam_ForbidHelpPet(conditionParam)
   return conditionParam
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ObjectiveConditionParamParser._ParseParam_KillMonstersInLimitedRound = function(self, conditionParam)
-  -- function num : 0_7 , upvalues : _ENV
+function ObjectiveConditionParamParser:_ParseParam_KillMonstersInLimitedRound(conditionParam)
   local roundLimit = tonumber(conditionParam[1])
-  local splitBossID = (string.split)(conditionParam[2], ",")
+  local splitBossID = string.split(conditionParam[2], ",")
   local tBossID = {}
-  for _,bossID in ipairs(splitBossID) do
+  for _, bossID in ipairs(splitBossID) do
     local n = tonumber(bossID)
     if n then
-      (table.insert)(tBossID, n)
+      table.insert(tBossID, n)
     end
   end
   return {roundLimit = roundLimit, tBossID = tBossID}
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ObjectiveConditionParamParser._ParseParam_KillMonstersWithBuff = function(self, conditionParam)
-  -- function num : 0_8 , upvalues : _ENV
+function ObjectiveConditionParamParser:_ParseParam_KillMonstersWithBuff(conditionParam)
   local requireCount = tonumber(conditionParam[1])
-  local splitBossID = (string.split)(conditionParam[2], ",")
-  local splitbuffID = (string.split)(conditionParam[3], ",")
+  local splitBossID = string.split(conditionParam[2], ",")
+  local splitbuffID = string.split(conditionParam[3], ",")
   local tBossID = {}
-  for _,bossID in ipairs(splitBossID) do
+  for _, bossID in ipairs(splitBossID) do
     local n = tonumber(bossID)
     if n then
-      (table.insert)(tBossID, n)
+      table.insert(tBossID, n)
     end
   end
   local tBuffID = {}
-  for _,buffID in ipairs(splitbuffID) do
+  for _, buffID in ipairs(splitbuffID) do
     local n = tonumber(buffID)
     if n then
-      (table.insert)(tBuffID, n)
+      table.insert(tBuffID, n)
     end
   end
-  return {requireCount = requireCount, tBossID = tBossID, tBuffID = tBuffID}
+  return {
+    requireCount = requireCount,
+    tBossID = tBossID,
+    tBuffID = tBuffID
+  }
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ObjectiveConditionParamParser._ParseParam_CollectItems = function(self, conditionParam)
-  -- function num : 0_9 , upvalues : _ENV
+function ObjectiveConditionParamParser:_ParseParam_CollectItems(conditionParam)
   local id = tonumber(conditionParam[1])
   local count = tonumber(conditionParam[2])
   return {id = id, count = count}
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ObjectiveConditionParamParser._ParseParam_UIChangeTeamLeaderCount = function(self, conditionParam)
-  -- function num : 0_10 , upvalues : _ENV
+function ObjectiveConditionParamParser:_ParseParam_UIChangeTeamLeaderCount(conditionParam)
   local count = tonumber(conditionParam[1])
   return {count = count}
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ObjectiveConditionParamParser._ParseParam_HitBySkill = function(self, conditionParam)
-  -- function num : 0_11 , upvalues : _ENV
+function ObjectiveConditionParamParser:_ParseParam_HitBySkill(conditionParam)
   local count = tonumber(conditionParam[1])
   local skillID = tonumber(conditionParam[2])
   return {count = count, skillID = skillID}
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ObjectiveConditionParamParser._ParseParam_ChessDeadPlayerPawnCount = function(self, conditionParam)
-  -- function num : 0_12 , upvalues : _ENV
+function ObjectiveConditionParamParser:_ParseParam_ChessDeadPlayerPawnCount(conditionParam)
   local count = tonumber(conditionParam[1])
   return {count = count}
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ObjectiveConditionParamParser._ParseParam_MonsterEscapeLessThan = function(self, conditionParam)
-  -- function num : 0_13 , upvalues : _ENV
+function ObjectiveConditionParamParser:_ParseParam_MonsterEscapeLessThan(conditionParam)
   local count = tonumber(conditionParam[1])
   return {count = count}
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ObjectiveConditionParamParser._ParseBossHealthParam = function(self, conditionParam)
-  -- function num : 0_14 , upvalues : _ENV
+function ObjectiveConditionParamParser:_ParseBossHealthParam(conditionParam)
   local percent = tonumber(conditionParam[1])
   return percent
 end
-
-

@@ -1,36 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_combat/install/world_pack_combat_installer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("enum_lookup")
-WEComponents_Combat = ComponentsLookup:New({"Abilities", "Attributes", "Location", "MainFSM", "Movement"})
+WEComponents_Combat = ComponentsLookup:New({
+  "Abilities",
+  "Attributes",
+  "Location",
+  "MainFSM",
+  "Movement"
+})
 WUniqueComponents_Combat = ComponentsLookup:New({})
 _staticClass("CombatPackInstaller")
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
 
-CombatPackInstaller.InstallEntityComponentsLookup = function(self, weComponents)
-  -- function num : 0_0 , upvalues : _ENV
+function CombatPackInstaller:InstallEntityComponentsLookup(weComponents)
   weComponents:MergeLookup(WEComponents_Combat)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatPackInstaller.InstallUniqueComponentsLookup = function(self, uniqueComponents)
-  -- function num : 0_1 , upvalues : _ENV
+function CombatPackInstaller:InstallUniqueComponentsLookup(uniqueComponents)
   local lookup = WUniqueComponents_Combat
   uniqueComponents:MergeLookup(lookup)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatPackInstaller.InstallEntityMatchers = function(self, entityMatchers, weComponents)
-  -- function num : 0_2 , upvalues : _ENV
-  entityMatchers.Location = Matcher:New({weComponents.Location}, {}, {})
-  entityMatchers.CanMove = Matcher:New({weComponents.Movement, weComponents.Location}, {}, {})
-  entityMatchers.MainFSM = Matcher:New({weComponents.MainFSM}, {}, {})
-  entityMatchers.Abilities = Matcher:New({weComponents.Abilities}, {}, {})
-  entityMatchers.Attributes = Matcher:New({weComponents.Attributes}, {}, {})
+function CombatPackInstaller:InstallEntityMatchers(entityMatchers, weComponents)
+  entityMatchers.Location = Matcher:New({
+    weComponents.Location
+  }, {}, {})
+  entityMatchers.CanMove = Matcher:New({
+    weComponents.Movement,
+    weComponents.Location
+  }, {}, {})
+  entityMatchers.MainFSM = Matcher:New({
+    weComponents.MainFSM
+  }, {}, {})
+  entityMatchers.Abilities = Matcher:New({
+    weComponents.Abilities
+  }, {}, {})
+  entityMatchers.Attributes = Matcher:New({
+    weComponents.Attributes
+  }, {}, {})
 end
-
-

@@ -1,79 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_gift_pack/ui_shop_gift_pack_item_container.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopGiftPackItemContainer", UICustomWidget)
 UIShopGiftPackItemContainer = UIShopGiftPackItemContainer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopGiftPackItemContainer.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopGiftPackItemContainer:Constructor()
   self.shopModule = self:GetModule(ShopModule)
-  self.clientShop = (self.shopModule):GetClientShop()
-  self._data = (self.clientShop):GetGiftPackShopData()
+  self.clientShop = self.shopModule:GetClientShop()
+  self._data = self.clientShop:GetGiftPackShopData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackItemContainer.OnShow = function(self)
-  -- function num : 0_1
+function UIShopGiftPackItemContainer:OnShow()
   self.normal_month = self:GetUIComponent("UISelectObjectPath", "normal_month")
   self.gonormal_month = self:GetGameObject("normal_month")
-  self.uiNormal = (self.normal_month):SpawnObject("UIShopGiftPackItem")
-  ;
-  ((self.uiNormal):GetGameObject()).name = 0
+  self.uiNormal = self.normal_month:SpawnObject("UIShopGiftPackItem")
+  self.uiNormal:GetGameObject().name = 0
   self.week = self:GetUIComponent("UISelectObjectPath", "week")
   self.goweek = self:GetGameObject("week")
-  self.uiWeek = (self.week):SpawnObject("UIShopGiftPackItemWeek")
-  ;
-  ((self.uiWeek):GetGameObject()).name = 0
+  self.uiWeek = self.week:SpawnObject("UIShopGiftPackItemWeek")
+  self.uiWeek:GetGameObject().name = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackItemContainer.OnHide = function(self)
-  -- function num : 0_2
+function UIShopGiftPackItemContainer:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackItemContainer.Flush = function(self, id)
-  -- function num : 0_3
-  self._itemData = (self._data):GetGoodBuyId(id)
-  if (self._itemData):IsWeekCard() and false then
-    (self.gonormal_month):SetActive(false)
-    ;
-    (self.goweek):SetActive(true)
-    ;
-    (self.uiWeek):Flush(id)
+function UIShopGiftPackItemContainer:Flush(id)
+  self._itemData = self._data:GetGoodBuyId(id)
+  if self._itemData:IsWeekCard() and false then
+    self.gonormal_month:SetActive(false)
+    self.goweek:SetActive(true)
+    self.uiWeek:Flush(id)
   else
-    ;
-    (self.gonormal_month):SetActive(true)
-    ;
-    (self.goweek):SetActive(false)
-    ;
-    (self.uiNormal):Flush(id)
+    self.gonormal_month:SetActive(true)
+    self.goweek:SetActive(false)
+    self.uiNormal:Flush(id)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackItemContainer.OpenUIShopGiftPackDetail = function(self)
-  -- function num : 0_4
-  if (self._itemData):IsWeekCard() and false then
-    (self.uiWeek):OpenUIShopGiftPackDetail()
+function UIShopGiftPackItemContainer:OpenUIShopGiftPackDetail()
+  if self._itemData:IsWeekCard() and false then
+    self.uiWeek:OpenUIShopGiftPackDetail()
   else
-    ;
-    (self.uiNormal):OpenUIShopGiftPackDetail()
+    self.uiNormal:OpenUIShopGiftPackDetail()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackItemContainer.PlayInAnimation = function(self)
-  -- function num : 0_5
-  return (self.uiNormal):PlayInAnimation()
+function UIShopGiftPackItemContainer:PlayInAnimation()
+  return self.uiNormal:PlayInAnimation()
 end
-
-

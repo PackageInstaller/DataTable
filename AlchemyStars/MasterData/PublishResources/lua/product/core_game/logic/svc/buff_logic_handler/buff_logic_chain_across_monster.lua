@@ -1,64 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_chain_across_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChainAcrossMonster", BuffLogicBase)
 BuffLogicChainAcrossMonster = BuffLogicChainAcrossMonster
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChainAcrossMonster.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChainAcrossMonster:Constructor(buffInstance, logicParam)
   self._remove = logicParam.remove or 0
   self._moveEffect = logicParam.moveEffect
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChainAcrossMonster.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChainAcrossMonster:DoLogic(notify)
   local notifyType = notify:GetNotifyType()
   if notifyType ~= NotifyType.PlayerEachMoveStart and notifyType ~= NotifyType.PlayerEachMoveEnd then
-    return 
+    return
   end
   local chainIndex = notify:GetChainIndex()
   if chainIndex == 1 then
-    return 
+    return
   end
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   local chainAcrossMonster = logicChainPathCmpt:GetChainAcrossMonster()
   if not chainAcrossMonster then
-    return 
+    return
   end
   local chainPosList = logicChainPathCmpt:GetLogicChainPath()
   local monsterPosList = logicChainPathCmpt:GetChainMonsterPosList()
-  local entity = (notify:GetNotifyEntity())
-  local buffResult = nil
+  local entity = notify:GetNotifyEntity()
+  local buffResult
   if notifyType == NotifyType.PlayerEachMoveStart then
     local nextPos = notify:GetPos()
-    local curChainIndex = (math.max)(1, chainIndex - 1)
+    local curChainIndex = math.max(1, chainIndex - 1)
     local curPos = chainPosList[curChainIndex]
-    if not (table.intable)(monsterPosList, curPos) and (table.intable)(monsterPosList, nextPos) then
+    if not table.intable(monsterPosList, curPos) and table.intable(monsterPosList, nextPos) then
       buffResult = BuffResultChainAcrossMonster:New(entity:GetID(), notifyType, chainIndex, curPos, false)
     end
-  else
-    do
-      if notifyType == NotifyType.PlayerEachMoveEnd then
-        local curPos = notify:GetPos()
-        local lastPos = notify:GetOldPos()
-        if not (table.intable)(monsterPosList, curPos) and (table.intable)(monsterPosList, lastPos) then
-          buffResult = BuffResultChainAcrossMonster:New(entity:GetID(), notifyType, chainIndex, curPos, true)
-        end
-      end
-      do
-        if not buffResult then
-          return 
-        end
-        return buffResult
-      end
+  elseif notifyType == NotifyType.PlayerEachMoveEnd then
+    local curPos = notify:GetPos()
+    local lastPos = notify:GetOldPos()
+    if not table.intable(monsterPosList, curPos) and table.intable(monsterPosList, lastPos) then
+      buffResult = BuffResultChainAcrossMonster:New(entity:GetID(), notifyType, chainIndex, curPos, true)
     end
   end
+  if not buffResult then
+    return
+  end
+  return buffResult
 end
-
-

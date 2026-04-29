@@ -1,53 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/cc_affix_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("elemental_run_data")
 _class("CCAffixRunData", TestRobotElementalRunData)
 CCAffixRunData = CCAffixRunData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CCAffixRunData.ParseLevelData = function(self, rawargs)
-  -- function num : 0_0 , upvalues : _ENV
-  local args = (string.split)(rawargs, ",")
+function CCAffixRunData:ParseLevelData(rawargs)
+  local args = string.split(rawargs, ",")
   self._missionID = tonumber(args[1])
   self._componentEnumID = tonumber(args[2])
   self._componentConfigID = tonumber(args[3])
   self._affixList = {}
-  if (table.count)(args) > 3 then
+  if 3 < table.count(args) then
     for i = 4, #args do
-      (table.insert)(self._affixList, tonumber(args[i]))
+      table.insert(self._affixList, tonumber(args[i]))
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCAffixRunData.GetMissionID = function(self)
-  -- function num : 0_1
+function CCAffixRunData:GetMissionID()
   return self._missionID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCAffixRunData.GetComponentEnumID = function(self)
-  -- function num : 0_2
+function CCAffixRunData:GetComponentEnumID()
   return self._componentEnumID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCAffixRunData.GetComponentConfigID = function(self)
-  -- function num : 0_3
+function CCAffixRunData:GetComponentConfigID()
   return self._componentConfigID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCAffixRunData.GetAffixList = function(self)
-  -- function num : 0_4
+function CCAffixRunData:GetAffixList()
   return self._affixList
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/tracepoint/ui_homeland_minimap_icon_trace.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapIconTrace", UIHomelandMinimapIconBase)
 UIHomelandMinimapIconTrace = UIHomelandMinimapIconTrace
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapIconTrace.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMinimapIconTrace:OnShow(uiParams)
   self._selectGO = self:GetGameObject("Selected")
   self._tracePointGO = self:GetGameObject("tracePoint")
   self._arrivalGO = self:GetGameObject("arrival")
@@ -21,38 +14,32 @@ UIHomelandMinimapIconTrace.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.TracePointInOutMiniMap, self.ShowMiniMapAni)
   self._fx = self:GetGameObject("AnimFx")
   self._fxAnim = self:GetUIComponent("Animation", "AnimFx")
-  self.screenOffset = Vector2((UnityEngine.Screen).width / 2, (UnityEngine.Screen).height / 2)
+  self.screenOffset = Vector2(UnityEngine.Screen.width / 2, UnityEngine.Screen.height / 2)
   self._isInView = true
   self._showOnceOnEnter = false
   self._showOnceOnLeave = false
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTrace.OnInitDone = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.birthId = (self:GetIconData()):GetIndex()
+function UIHomelandMinimapIconTrace:OnInitDone()
+  self.birthId = self:GetIconData():GetIndex()
   self.info = self:GetIconData()
-  if not ((self.info)._params).isNpc then
-    self._maxSize = (HomelandMinimapConst.GetMapSize)()
-    local len = (HomelandMinimapConst.RealMapMaxPosition)() - (HomelandMinimapConst.RealMapMinPosition)()
-    local sc = (math.abs)(len.x)
+  if not self.info._params.isNpc then
+    self._maxSize = HomelandMinimapConst.GetMapSize()
+    local len = HomelandMinimapConst.RealMapMaxPosition() - HomelandMinimapConst.RealMapMinPosition()
+    local sc = math.abs(len.x)
     sc = 4000 / sc
-    self._radius = ((self.info)._params).radius
-    self._scale = self._radius / (sc) * 1.4
+    self._radius = self.info._params.radius
+    self._scale = self._radius / sc * 1.4
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTrace.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandMinimapIconTrace:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self:DetachEvent(GameEventType.OnGetTracePoint, self.OnEnter)
@@ -60,151 +47,98 @@ UIHomelandMinimapIconTrace.OnHide = function(self)
   self:DetachEvent(GameEventType.TracePointInOutMiniMap, self.ShowMiniMapAni)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTrace.OnSelected = function(self)
-  -- function num : 0_3
-  (self._selectGO):SetActive(true)
+function UIHomelandMinimapIconTrace:OnSelected()
+  self._selectGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTrace.OnUnSelected = function(self)
-  -- function num : 0_4
-  (self._selectGO):SetActive(false)
+function UIHomelandMinimapIconTrace:OnUnSelected()
+  self._selectGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTrace.GetShowIconOffset = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMinimapIconTrace:GetShowIconOffset()
   return Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTrace.GetShowName = function(self)
-  -- function num : 0_6
+function UIHomelandMinimapIconTrace:GetShowName()
   return ""
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTrace.OnEnter = function(self, index)
-  -- function num : 0_7 , upvalues : _ENV
-  if (self.info)._id == HomelandMapIconType.TracePoint and (self.info)._index == index and not self._showOnceOnEnter then
-    (self._roundGO):SetActive(not ((self.info)._params).isNpc)
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._roundGO).transform).localScale = Vector3(self._scale, self._scale, 0)
+function UIHomelandMinimapIconTrace:OnEnter(index)
+  if self.info._id == HomelandMapIconType.TracePoint and self.info._index == index and not self._showOnceOnEnter then
+    self._roundGO:SetActive(not self.info._params.isNpc)
+    self._roundGO.transform.localScale = Vector3(self._scale, self._scale, 0)
     self:ShowAni(false)
     self._showOnceOnEnter = true
     self._showOnceOnLeave = false
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTrace.OnLeave = function(self, index)
-  -- function num : 0_8 , upvalues : _ENV
-  if (self.info)._id == HomelandMapIconType.TracePoint and (self.info)._index == index and not self._showOnceOnLeave then
-    (self._roundGO):SetActive(false)
+function UIHomelandMinimapIconTrace:OnLeave(index)
+  if self.info._id == HomelandMapIconType.TracePoint and self.info._index == index and not self._showOnceOnLeave then
+    self._roundGO:SetActive(false)
     self:ShowAni(true)
     self._showOnceOnLeave = true
     self._showOnceOnEnter = false
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTrace.Update = function(self, dirInfo)
-  -- function num : 0_9
-  (self._arrivalGO):SetActive(self._isInView)
-  ;
-  (self._bgGo):SetActive(not self._isInView)
-  ;
-  (self._arrowPoint):SetActive(not self._isInView)
+function UIHomelandMinimapIconTrace:Update(dirInfo)
+  self._arrivalGO:SetActive(self._isInView)
+  self._bgGo:SetActive(not self._isInView)
+  self._arrowPoint:SetActive(not self._isInView)
   self:SetTracePointDir(dirInfo)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTrace.SetTracePointDir = function(self, dirInfo)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._arrowPoint):SetActive(dirInfo[2] > 1)
+function UIHomelandMinimapIconTrace:SetTracePointDir(dirInfo)
+  self._arrowPoint:SetActive(dirInfo[2] > 1)
   local dir = dirInfo[1] - self.screenOffset
   local vec3 = Vector3(dir.x, dir.y, 0)
-  local angle = (Vector3.Angle)(vec3, Vector3.right)
-  if (dirInfo[1]).y < (self.screenOffset).y then
+  local angle = Vector3.Angle(vec3, Vector3.right)
+  if dirInfo[1].y < self.screenOffset.y then
     angle = -angle
   end
-  local rot = (Quaternion.AngleAxis)(angle - 90, Vector3.forward)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self._arrowPoint).transform).localRotation = rot
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local rot = Quaternion.AngleAxis(angle - 90, Vector3.forward)
+  self._arrowPoint.transform.localRotation = rot
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTrace.ShowAni = function(self, isIn)
-  -- function num : 0_11
+function UIHomelandMinimapIconTrace:ShowAni(isIn)
   if isIn then
-    (self.anim):Play("UIHomelandMinimapIconTrace_in")
+    self.anim:Play("UIHomelandMinimapIconTrace_in")
     self:FlashAniTimer()
     self._showAni = false
   else
-    ;
-    (self.anim):Play("UIHomelandMinimapIconTrace_out")
-    ;
-    (self._fx):SetActive(false)
+    self.anim:Play("UIHomelandMinimapIconTrace_out")
+    self._fx:SetActive(false)
     self._showAni = true
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTrace.ShowMiniMapAni = function(self, isIn)
-  -- function num : 0_12
+function UIHomelandMinimapIconTrace:ShowMiniMapAni(isIn)
   if isIn then
-    if (self._roundGO).activeSelf then
-      (self.anim):Play("UIHomelandMinimapIconTrace_round_in")
+    if self._roundGO.activeSelf then
+      self.anim:Play("UIHomelandMinimapIconTrace_round_in")
     end
     if self._showAni then
-      return 
+      return
     end
-    ;
-    (self.anim):Play("UIHomelandMinimapIconTrace_in")
+    self.anim:Play("UIHomelandMinimapIconTrace_in")
     self:FlashAniTimer()
   else
-    if (self._roundGO).activeSelf then
-      (self.anim):Play("UIHomelandMinimapIconTrace_round_out")
+    if self._roundGO.activeSelf then
+      self.anim:Play("UIHomelandMinimapIconTrace_round_out")
     end
     if self._showAni then
-      return 
+      return
     end
-    ;
-    (self.anim):Play("UIHomelandMinimapIconTrace_out")
-    ;
-    (self._fx):SetActive(false)
+    self.anim:Play("UIHomelandMinimapIconTrace_out")
+    self._fx:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTrace.FlashAniTimer = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(600, TimerTriggerCount.Once, function()
-    -- function num : 0_13_0 , upvalues : self
-    (self._fxAnim):Stop()
-    ;
-    (self._fx):SetActive(true)
-    ;
-    (self._fxAnim):Play("UIHomelandMinimapIconTrace_expansion")
-  end
-)
+function UIHomelandMinimapIconTrace:FlashAniTimer(TT)
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(600, TimerTriggerCount.Once, function()
+    self._fxAnim:Stop()
+    self._fx:SetActive(true)
+    self._fxAnim:Play("UIHomelandMinimapIconTrace_expansion")
+  end)
 end
-
-

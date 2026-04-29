@@ -1,44 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_super_force_refresh_unlock_hp_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSuperForceRefreshUnlockHP", BuffViewBase)
 BuffViewSuperForceRefreshUnlockHP = BuffViewSuperForceRefreshUnlockHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSuperForceRefreshUnlockHP.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local buffView = (self._entity):BuffView()
+function BuffViewSuperForceRefreshUnlockHP:PlayView(TT)
+  local buffView = self._entity:BuffView()
   local index = buffView:GetHPLockIndex()
-  local hpComponent = (self._entity):HP()
+  local hpComponent = self._entity:HP()
   if hpComponent:IsShowHPSlider() then
     local sepPoolWidget = hpComponent:GetSepPoolWidget()
     if sepPoolWidget then
       local sepPool = sepPoolWidget:GetAllSpawnList()
-      if sepPool and (table.count)(sepPool) > 0 then
-        for i = 1, (table.count)(sepPool) do
-          ((sepPool[i]):GetGameObject()):SetActive(false)
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeBossHPLock, i, false)
+      if sepPool and table.count(sepPool) > 0 then
+        for i = 1, table.count(sepPool) do
+          sepPool[i]:GetGameObject():SetActive(false)
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeBossHPLock, i, false)
         end
       end
     end
   end
-  do
-    local hp = (self._entity):HP()
-    hp:SetHPLockSepList({})
-    ;
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTBreakHPLock:New(self._entity))
-    buffView:ResetHPLockState()
-  end
+  local hp = self._entity:HP()
+  hp:SetHPLockSepList({})
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, NTBreakHPLock:New(self._entity))
+  buffView:ResetHPLockState()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewSuperForceRefreshUnlockHP.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewSuperForceRefreshUnlockHP:IsNotifyMatch(notify)
   return true
 end
-
-

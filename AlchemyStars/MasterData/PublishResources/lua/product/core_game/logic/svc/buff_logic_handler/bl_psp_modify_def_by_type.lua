@@ -1,64 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_psp_modify_def_by_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicPSPModifyDefByType", BuffLogicBase)
 BuffLogicPSPModifyDefByType = BuffLogicPSPModifyDefByType
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicPSPModifyDefByType.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicPSPModifyDefByType:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue or 0
   self._modifyType = logicParam.modifyType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicPSPModifyDefByType.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
+function BuffLogicPSPModifyDefByType:DoLogic()
+  local entity = self._buffInstance:Entity()
   if not entity:Attributes() then
     return false
   end
-  local battleSvc = (self._world):GetService("Battle")
+  local battleSvc = self._world:GetService("Battle")
   local count = battleSvc:GetCountByModifyType(self._modifyType)
   if not count then
-    return 
+    return
   end
   local addValue = self._mulValue * count
-  local curModifyVal = (self._buffLogicService):GetModifyValueByID(entity, "DefencePercentage", self:GetBuffSeq())
+  local curModifyVal = self._buffLogicService:GetModifyValueByID(entity, "DefencePercentage", self:GetBuffSeq())
   addValue = addValue + curModifyVal
-  ;
-  (self._buffLogicService):ChangeBaseDefence(entity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage, addValue)
+  self._buffLogicService:ChangeBaseDefence(entity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage, addValue)
   if entity:HasPetPstID() then
-    local teamEntity = (entity:Pet()):GetOwnerTeamEntity()
+    local teamEntity = entity:Pet():GetOwnerTeamEntity()
     self:UpdateTeamDefenceLogic(teamEntity)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicPSPModifyDefByType.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicPSPModifyDefByType:DoOverlap(logicParam)
   return self:DoLogic()
 end
 
 _class("BuffLogicUndoPSPModifyDefByType", BuffLogicBase)
 BuffLogicUndoPSPModifyDefByType = BuffLogicUndoPSPModifyDefByType
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoPSPModifyDefByType.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicUndoPSPModifyDefByType:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUndoPSPModifyDefByType.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):RemoveBaseDefence(e, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage)
+function BuffLogicUndoPSPModifyDefByType:DoLogic()
+  local e = self._buffInstance:Entity()
+  self._buffLogicService:RemoveBaseDefence(e, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage)
 end
-
-

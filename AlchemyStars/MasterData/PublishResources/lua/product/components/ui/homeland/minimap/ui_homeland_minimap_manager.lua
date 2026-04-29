@@ -1,120 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui_homeland_minimap_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapManager", Object)
 UIHomelandMinimapManager = UIHomelandMinimapManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (HomelandMinimapConst.Init)()
-  self._addIcontCallback = (GameHelper:GetInstance()):CreateCallback(self.AddMinimapIcon, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.MinimapAddIcon, self._addIcontCallback)
-  self._removeIcontCallback = (GameHelper:GetInstance()):CreateCallback(self.RemoveMinimapIcon, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.MinimapRemoveIcon, self._removeIcontCallback)
+function UIHomelandMinimapManager:Constructor()
+  HomelandMinimapConst.Init()
+  self._addIcontCallback = GameHelper:GetInstance():CreateCallback(self.AddMinimapIcon, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.MinimapAddIcon, self._addIcontCallback)
+  self._removeIcontCallback = GameHelper:GetInstance():CreateCallback(self.RemoveMinimapIcon, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.MinimapRemoveIcon, self._removeIcontCallback)
   self._iconDatas = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapManager.Destroy = function(self)
-  -- function num : 0_1
+function UIHomelandMinimapManager:Destroy()
   self:RemoveListener()
   self._iconDatas = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapManager.RemoveListener = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandMinimapManager:RemoveListener()
   if self._addIcontCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.MinimapAddIcon, self._addIcontCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.MinimapAddIcon, self._addIcontCallback)
     self._addIcontCallback = nil
   end
   if self._removeIcontCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.MinimapRemoveIcon, self._removeIcontCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.MinimapRemoveIcon, self._removeIcontCallback)
     self._removeIcontCallback = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapManager.AddMinimapIcon = function(self, id, index, transform, param)
-  -- function num : 0_3
+function UIHomelandMinimapManager:AddMinimapIcon(id, index, transform, param)
   local t = {}
   t.id = id
   t.index = index
   t.transform = transform
   t.param = param
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._iconDatas)[#self._iconDatas + 1] = t
+  self._iconDatas[#self._iconDatas + 1] = t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapManager.RemoveMinimapIcon = function(self, id, index)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandMinimapManager:RemoveMinimapIcon(id, index)
   for i = 1, #self._iconDatas do
-    if ((self._iconDatas)[i]).id == id and ((self._iconDatas)[i]).index == index then
-      (table.remove)(self._iconDatas, i)
-      return 
+    if self._iconDatas[i].id == id and self._iconDatas[i].index == index then
+      table.remove(self._iconDatas, i)
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapUpdate)
+function UIHomelandMinimapManager:Update(deltaTimeMS)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapUpdate)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapManager.GetIconData = function(self)
-  -- function num : 0_6
+function UIHomelandMinimapManager:GetIconData()
   return self._iconDatas
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapManager.SetIconMarkStatus = function(self, type, id, status)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomelandMinimapManager:SetIconMarkStatus(type, id, status)
   local key = self:GetSaveKey(type, id)
   if status then
-    (LocalDB.SetInt)(key, 1)
+    LocalDB.SetInt(key, 1)
   else
-    ;
-    (LocalDB.SetInt)(key, 0)
+    LocalDB.SetInt(key, 0)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapManager.GetIconMarkStatus = function(self, type, id)
-  -- function num : 0_8 , upvalues : _ENV
+function UIHomelandMinimapManager:GetIconMarkStatus(type, id)
   local key = self:GetSaveKey(type, id)
-  if not (LocalDB.HasKey)(key) then
+  if not LocalDB.HasKey(key) then
     return true
   end
-  local value = (LocalDB.GetInt)(key, 0)
-  do return value == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = LocalDB.GetInt(key, 0)
+  return value == 1
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapManager.GetSaveKey = function(self, type, id)
-  -- function num : 0_9 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function UIHomelandMinimapManager:GetSaveKey(type, id)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local roleId = loginModule:GetRoleShowID()
   return "MINIMAPICONMARKSTATUS" .. roleId .. type .. id
 end
-
-

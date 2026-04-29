@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/task/ui_homeland_task_guide_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandTaskGuideItem", UICustomWidget)
 UIHomelandTaskGuideItem = UIHomelandTaskGuideItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandTaskGuideItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandTaskGuideItem:Constructor()
   self._atlas = self:GetAsset("UIHomelandTask.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskGuideItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandTaskGuideItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskGuideItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandTaskGuideItem:_GetComponents()
   self._stateLeft = self:GetUIComponent("Image", "StateLeft")
   self._stateTag = self:GetUIComponent("Image", "StateTag")
   self._title = self:GetUIComponent("UILocalizationText", "Title")
@@ -34,70 +21,42 @@ UIHomelandTaskGuideItem._GetComponents = function(self)
   self._stateTagObj = self:GetGameObject("StateTag")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskGuideItem.SetData = function(self, quest)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandTaskGuideItem:SetData(quest)
   self._quest = quest
-  local questInfo = (self._quest):QuestInfo()
-  local cfg = (Cfg.cfg_homeland_task)[questInfo.quest_id]
+  local questInfo = self._quest:QuestInfo()
+  local cfg = Cfg.cfg_homeland_task[questInfo.quest_id]
   local leftSprite = "N17_task_kuang04"
   local tagSprite = "N17_task_icon06"
-  local titleColor = Color(0.61960784313725, 0.61960784313725, 0.61960784313725)
-  local valueStr = (StringTable.Get)(cfg.TaskContent, questInfo.cur_progress, questInfo.total_progress)
+  local titleColor = Color(0.6196078431372549, 0.6196078431372549, 0.6196078431372549)
+  local valueStr = StringTable.Get(cfg.TaskContent, questInfo.cur_progress, questInfo.total_progress)
   local background = "N17_task_di11"
   local lock = false
   if questInfo.status == QuestStatus.QUEST_NotStart then
     lock = true
-  else
-    if questInfo.status == QuestStatus.QUEST_Accepted then
-      leftSprite = "N17_task_kuang05"
-      tagSprite = "N17_task_icon07"
-      titleColor = Color(0.36078431372549, 0.36078431372549, 0.36078431372549)
-    else
-      if questInfo.status == QuestStatus.QUEST_Completed then
-        leftSprite = "N17_task_kuang06"
-        tagSprite = "N17_task_icon08"
-      else
-        if questInfo.status == QuestStatus.QUEST_Taken then
-          leftSprite = "N17_task_kuang06"
-          tagSprite = "N17_task_icon08"
-          background = "N17_task_di12"
-        end
-      end
-    end
+  elseif questInfo.status == QuestStatus.QUEST_Accepted then
+    leftSprite = "N17_task_kuang05"
+    tagSprite = "N17_task_icon07"
+    titleColor = Color(0.3607843137254902, 0.3607843137254902, 0.3607843137254902)
+  elseif questInfo.status == QuestStatus.QUEST_Completed then
+    leftSprite = "N17_task_kuang06"
+    tagSprite = "N17_task_icon08"
+  elseif questInfo.status == QuestStatus.QUEST_Taken then
+    leftSprite = "N17_task_kuang06"
+    tagSprite = "N17_task_icon08"
+    background = "N17_task_di12"
   end
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._stateLeft).sprite = (self._atlas):GetSprite(leftSprite)
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._stateTag).sprite = (self._atlas):GetSprite(tagSprite)
-  local titleStr = (StringTable.Get)(cfg.TaskTitle)
+  self._stateLeft.sprite = self._atlas:GetSprite(leftSprite)
+  self._stateTag.sprite = self._atlas:GetSprite(tagSprite)
+  local titleStr = StringTable.Get(cfg.TaskTitle)
   if lock then
-    titleStr = (StringTable.Get)("str_homeland_task_guidetask_lock")
+    titleStr = StringTable.Get("str_homeland_task_guidetask_lock")
   end
-  ;
-  (self._title):SetText(titleStr)
-  -- DECOMPILER ERROR at PC88: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._title).color = titleColor
-  ;
-  (self._value):SetText((string.format)("<color=#808080>%s</color>", valueStr))
-  ;
-  (self._stateText):SetActive(questInfo.status <= QuestStatus.QUEST_Accepted)
-  ;
-  (self._gray):SetActive(questInfo.status == QuestStatus.QUEST_Taken)
-  ;
-  (self._background):LoadImage(background)
-  ;
-  (self._unLock):SetActive(lock)
-  ;
-  (self._stateTagObj):SetActive(not lock)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._title:SetText(titleStr)
+  self._title.color = titleColor
+  self._value:SetText(string.format("<color=#808080>%s</color>", valueStr))
+  self._stateText:SetActive(questInfo.status <= QuestStatus.QUEST_Accepted)
+  self._gray:SetActive(questInfo.status == QuestStatus.QUEST_Taken)
+  self._background:LoadImage(background)
+  self._unLock:SetActive(lock)
+  self._stateTagObj:SetActive(not lock)
 end
-
-

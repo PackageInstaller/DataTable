@@ -1,90 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/component/logic_extensions/entity_command_dispatcher.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EntityCommandSimpleDispatcher", IEntityCommandDispatcher)
 EntityCommandSimpleDispatcher = EntityCommandSimpleDispatcher
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-EntityCommandSimpleDispatcher.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function EntityCommandSimpleDispatcher:Constructor()
   self.OnHandleCommand = DelegateEvent:New()
   self.owner = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityCommandSimpleDispatcher.HandleCommand = function(self, cmd)
-  -- function num : 0_1
-  (self.OnHandleCommand)(cmd)
+function EntityCommandSimpleDispatcher:HandleCommand(cmd)
+  self.OnHandleCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityCommandSimpleDispatcher.BindOwner = function(self, owner)
-  -- function num : 0_2
+function EntityCommandSimpleDispatcher:BindOwner(owner)
   self.owner = owner
-  for i = 1, (owner._components):Size() do
-    local cmpt = (owner._components):GetAt(i)
+  for i = 1, owner._components:Size() do
+    local cmpt = owner._components:GetAt(i)
     if cmpt.HandleCommand then
-      (self.OnHandleCommand):AddEvent(cmpt, cmpt.HandleCommand)
+      self.OnHandleCommand:AddEvent(cmpt, cmpt.HandleCommand)
     end
   end
-  ;
-  (owner.Ev_OnComponentAdded):AddEvent(self, self._onComponentAdded)
-  ;
-  (owner.Ev_OnComponentRemoved):AddEvent(self, self._onComponentRemoved)
-  ;
-  (owner.Ev_OnComponentReplaced):AddEvent(self, self._onComponentReplaced)
+  owner.Ev_OnComponentAdded:AddEvent(self, self._onComponentAdded)
+  owner.Ev_OnComponentRemoved:AddEvent(self, self._onComponentRemoved)
+  owner.Ev_OnComponentReplaced:AddEvent(self, self._onComponentReplaced)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityCommandSimpleDispatcher.UnBindOwner = function(self)
-  -- function num : 0_3
+function EntityCommandSimpleDispatcher:UnBindOwner()
   local owner = self.owner
-  ;
-  (owner.Ev_OnComponentAdded):RemoveEvent(self, self._onComponentAdded)
-  ;
-  (owner.Ev_OnComponentRemoved):RemoveEvent(self, self._onComponentRemoved)
-  ;
-  (owner.Ev_OnComponentReplaced):RemoveEvent(self, self._onComponentReplaced)
+  owner.Ev_OnComponentAdded:RemoveEvent(self, self._onComponentAdded)
+  owner.Ev_OnComponentRemoved:RemoveEvent(self, self._onComponentRemoved)
+  owner.Ev_OnComponentReplaced:RemoveEvent(self, self._onComponentReplaced)
   self.owner = nil
-  ;
-  (self.OnHandleCommand):Clear()
+  self.OnHandleCommand:Clear()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityCommandSimpleDispatcher._onComponentAdded = function(self, entity, index, component)
-  -- function num : 0_4
+function EntityCommandSimpleDispatcher:_onComponentAdded(entity, index, component)
   if component.HandleCommand then
-    (self.OnHandleCommand):AddEvent(component, component.HandleCommand)
+    self.OnHandleCommand:AddEvent(component, component.HandleCommand)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityCommandSimpleDispatcher._onComponentRemoved = function(self, entity, index, component)
-  -- function num : 0_5
+function EntityCommandSimpleDispatcher:_onComponentRemoved(entity, index, component)
   if component.HandleCommand then
-    (self.OnHandleCommand):RemoveEvent(component, component.HandleCommand)
+    self.OnHandleCommand:RemoveEvent(component, component.HandleCommand)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EntityCommandSimpleDispatcher._onComponentReplaced = function(self, entity, index, previousComponent, newComponent)
-  -- function num : 0_6
+function EntityCommandSimpleDispatcher:_onComponentReplaced(entity, index, previousComponent, newComponent)
   if previousComponent ~= newComponent then
     if previousComponent.HandleCommand then
-      (self.OnHandleCommand):RemoveEvent(previousComponent, previousComponent.HandleCommand)
+      self.OnHandleCommand:RemoveEvent(previousComponent, previousComponent.HandleCommand)
     end
     if newComponent.HandleCommand then
-      (self.OnHandleCommand):AddEvent(newComponent, newComponent.HandleCommand)
+      self.OnHandleCommand:AddEvent(newComponent, newComponent.HandleCommand)
     end
   end
 end
-
-

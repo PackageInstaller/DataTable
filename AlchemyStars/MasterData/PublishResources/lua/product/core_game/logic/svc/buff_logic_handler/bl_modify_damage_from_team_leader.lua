@@ -1,41 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_modify_damage_from_team_leader.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDoModifyDamageFromTeamLeader", BuffLogicBase)
 BuffLogicDoModifyDamageFromTeamLeader = BuffLogicDoModifyDamageFromTeamLeader
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDoModifyDamageFromTeamLeader.Constructor = function(self, _buffIns, logicParam)
-  -- function num : 0_0
+function BuffLogicDoModifyDamageFromTeamLeader:Constructor(_buffIns, logicParam)
   self._modifyValue = logicParam.modifyValue
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDoModifyDamageFromTeamLeader.DoLogic = function(self)
-  -- function num : 0_1
+function BuffLogicDoModifyDamageFromTeamLeader:DoLogic()
   local val = self._modifyValue
-  ;
-  (self._buffLogicService):ChangeFinalBehitByTeamLeaderDamageParam(self._entity, self:GetBuffSeq(), val)
+  self._buffLogicService:ChangeFinalBehitByTeamLeaderDamageParam(self._entity, self:GetBuffSeq(), val)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDoModifyDamageFromTeamLeader.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicDoModifyDamageFromTeamLeader:DoOverlap(logicParam)
   self._modifyValue = logicParam.modifyValue
   self:DoLogic()
 end
 
 _class("BuffLogicRemoveModifyDamageFromTeamLeader", BuffLogicBase)
 BuffLogicRemoveModifyDamageFromTeamLeader = BuffLogicRemoveModifyDamageFromTeamLeader
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveModifyDamageFromTeamLeader.DoLogic = function(self)
-  -- function num : 0_3
-  (self._buffLogicService):RemoveFinalBehitByTeamLeaderDamageParam(self._entity, self:GetBuffSeq())
+function BuffLogicRemoveModifyDamageFromTeamLeader:DoLogic()
+  self._buffLogicService:RemoveFinalBehitByTeamLeaderDamageParam(self._entity, self:GetBuffSeq())
 end
-
-

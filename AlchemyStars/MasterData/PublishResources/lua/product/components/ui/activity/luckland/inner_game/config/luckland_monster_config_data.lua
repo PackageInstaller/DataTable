@@ -1,67 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/config/luckland_monster_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLMonsterConfigData", Object)
 LLMonsterConfigData = LLMonsterConfigData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLMonsterConfigData.Constructor = function(self, monsterID)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_luckland_client_enemy)[monsterID]
+function LLMonsterConfigData:Constructor(monsterID)
+  self._cfg = Cfg.cfg_luckland_client_enemy[monsterID]
   if not self._cfg then
-    (Log.fatal)("LLMonsterConfigData not find monsterID:", monsterID)
+    Log.fatal("LLMonsterConfigData not find monsterID:", monsterID)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLMonsterConfigData.GetMonsterID = function(self)
-  -- function num : 0_1
-  return (self._cfg).ID
+function LLMonsterConfigData:GetMonsterID()
+  return self._cfg.ID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLMonsterConfigData.GetMonsterHPBase = function(self)
-  -- function num : 0_2
-  return (self._cfg).EnemyHp
+function LLMonsterConfigData:GetMonsterHPBase()
+  return self._cfg.EnemyHp
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLMonsterConfigData.GetMonsterHPHardRate = function(self)
-  -- function num : 0_3
-  return (self._cfg).HPHardRate
+function LLMonsterConfigData:GetMonsterHPHardRate()
+  return self._cfg.HPHardRate
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LLMonsterConfigData.GetMonsterAtkBase = function(self)
-  -- function num : 0_4
-  return (self._cfg).EnemyAtk
+function LLMonsterConfigData:GetMonsterAtkBase()
+  return self._cfg.EnemyAtk
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LLMonsterConfigData.GetMonsterAtkHardRate = function(self)
-  -- function num : 0_5
-  return (self._cfg).AtkHardRate
+function LLMonsterConfigData:GetMonsterAtkHardRate()
+  return self._cfg.AtkHardRate
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LLMonsterConfigData.GetBuffIDList = function(self)
-  -- function num : 0_6
-  return (self._cfg).BuffIDList
+function LLMonsterConfigData:GetBuffIDList()
+  return self._cfg.BuffIDList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LLMonsterConfigData.GetCountDown = function(self)
-  -- function num : 0_7
-  return (self._cfg).EnemyLifeCount
+function LLMonsterConfigData:GetCountDown()
+  return self._cfg.EnemyLifeCount
 end
-
-

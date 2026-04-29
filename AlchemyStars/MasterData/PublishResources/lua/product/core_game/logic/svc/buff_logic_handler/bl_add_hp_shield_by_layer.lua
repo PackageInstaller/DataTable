@@ -1,162 +1,104 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_add_hp_shield_by_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_shield_hp")
 _class("BuffLogicAddHPShieldByLayer", BuffLogicBase)
 BuffLogicAddHPShieldByLayer = BuffLogicAddHPShieldByLayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddHPShieldByLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._shieldPercent = logicParam.shieldPercent
-    if not logicParam.shieldFromType then
-      self._shieldFromType = HPShieldFromType.OwnerHP
-      self._shieldFromParam = logicParam.shieldFromParam
-    end
-  end
+function BuffLogicAddHPShieldByLayer:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._shieldPercent = logicParam.shieldPercent
+  self._shieldFromType = logicParam.shieldFromType or HPShieldFromType.OwnerHP
+  self._shieldFromParam = logicParam.shieldFromParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddHPShieldByLayer.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local teamEntity = nil
-  if (self._entity):HasTeam() then
+function BuffLogicAddHPShieldByLayer:DoLogic(notify)
+  local teamEntity
+  if self._entity:HasTeam() then
     teamEntity = self._entity
-  else
-    if (self._entity):HasPet() then
-      teamEntity = ((self._entity):Pet()):GetOwnerTeamEntity()
-    end
+  elseif self._entity:HasPet() then
+    teamEntity = self._entity:Pet():GetOwnerTeamEntity()
   end
   local value = 0
   if self._shieldFromType == HPShieldFromType.OwnerHP then
-    value = ((self._entity):Attributes()):GetCurrentHP()
-  else
-    if self._shieldFromType == HPShieldFromType.CasterHP then
-      local casterEntity = ((self._buffInstance):Context()).casterEntity
-      if casterEntity:HasPetPstID() then
-        local pstid = (casterEntity:PetPstID()):GetPstID()
-        local petData = (self._world):GetPetData(pstid)
-        value = petData:GetPetHealth()
-      else
-        do
-          if casterEntity:HasMonsterID() then
-            teamEntity = casterEntity
-            local configService = (self._world):GetService("Config")
-            local monsterConfigData = configService:GetMonsterConfigData()
-            local monsterid = (casterEntity:MonsterID()):GetMonsterID()
-            local maxhp = configService:GetMonsterHealth(casterEntity)
-            value = maxhp
-          else
-            do
-              do
-                value = 0
-                if self._shieldFromType == HPShieldFromType.LastDamage then
-                  value = notify:GetDamage()
-                else
-                  if self._shieldFromType == HPShieldFromType.SpecificPet then
-                    local pets = (teamEntity:Team()):GetTeamPetEntities()
-                    for i,e in ipairs(pets) do
-                      local cPetPstID = e:PetPstID()
-                      if self._shieldFromParam == cPetPstID:GetTemplateID() then
-                        value = (e:Attributes()):GetCurrentHP()
-                        break
-                      end
-                    end
-                  else
-                    do
-                      if self._shieldFromType == HPShieldFromType.SpilledHP then
-                        value = ((self._buffInstance):Context()).hpSpilled
-                      else
-                        if self._shieldFromType == HPShieldFromType.OwnerDefence then
-                          local attributesComponent = (self._entity):Attributes()
-                          local totalDefence = attributesComponent:GetDefence()
-                          value = totalDefence
-                        else
-                          do
-                            if self._shieldFromType == HPShieldFromType.OwnerBaseDefence then
-                              local attributesComponent = (self._entity):Attributes()
-                              local baseDefence = attributesComponent:GetAttribute("Defense")
-                              value = baseDefence
-                            end
-                            do
-                              local curMarkLayer = (self._buffLogicService):GetBuffLayer(self._entity, self._layerType)
-                              local addShield = (math.floor)(self._shieldPercent * value * curMarkLayer)
-                              local curHpSh = (self._buffLogicService):AddHPShield(teamEntity, addShield)
-                              local damageInfo = DamageInfo:New(0, DamageType.Recover)
-                              damageInfo:SetHPShield(curHpSh)
-                              ;
-                              (Log.debug)("Buff AddShieldByLayer, entityID: ", (self._entity):GetID(), " addShield: ", addShield, " setShield: ", curHpSh)
-                              local buffResult = BuffResultAddHPShield:New(teamEntity:GetID(), damageInfo)
-                              return buffResult
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+    value = self._entity:Attributes():GetCurrentHP()
+  elseif self._shieldFromType == HPShieldFromType.CasterHP then
+    local casterEntity = self._buffInstance:Context().casterEntity
+    if casterEntity:HasPetPstID() then
+      local pstid = casterEntity:PetPstID():GetPstID()
+      local petData = self._world:GetPetData(pstid)
+      value = petData:GetPetHealth()
+    elseif casterEntity:HasMonsterID() then
+      teamEntity = casterEntity
+      local configService = self._world:GetService("Config")
+      local monsterConfigData = configService:GetMonsterConfigData()
+      local monsterid = casterEntity:MonsterID():GetMonsterID()
+      local maxhp = configService:GetMonsterHealth(casterEntity)
+      value = maxhp
+    else
+      value = 0
+    end
+  elseif self._shieldFromType == HPShieldFromType.LastDamage then
+    value = notify:GetDamage()
+  elseif self._shieldFromType == HPShieldFromType.SpecificPet then
+    local pets = teamEntity:Team():GetTeamPetEntities()
+    for i, e in ipairs(pets) do
+      local cPetPstID = e:PetPstID()
+      if self._shieldFromParam == cPetPstID:GetTemplateID() then
+        value = e:Attributes():GetCurrentHP()
+        break
       end
     end
+  elseif self._shieldFromType == HPShieldFromType.SpilledHP then
+    value = self._buffInstance:Context().hpSpilled
+  elseif self._shieldFromType == HPShieldFromType.OwnerDefence then
+    local attributesComponent = self._entity:Attributes()
+    local totalDefence = attributesComponent:GetDefence()
+    value = totalDefence
+  elseif self._shieldFromType == HPShieldFromType.OwnerBaseDefence then
+    local attributesComponent = self._entity:Attributes()
+    local baseDefence = attributesComponent:GetAttribute("Defense")
+    value = baseDefence
   end
+  local curMarkLayer = self._buffLogicService:GetBuffLayer(self._entity, self._layerType)
+  local addShield = math.floor(self._shieldPercent * value * curMarkLayer)
+  local curHpSh = self._buffLogicService:AddHPShield(teamEntity, addShield)
+  local damageInfo = DamageInfo:New(0, DamageType.Recover)
+  damageInfo:SetHPShield(curHpSh)
+  Log.debug("Buff AddShieldByLayer, entityID: ", self._entity:GetID(), " addShield: ", addShield, " setShield: ", curHpSh)
+  local buffResult = BuffResultAddHPShield:New(teamEntity:GetID(), damageInfo)
+  return buffResult
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddHPShieldByLayer.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicAddHPShieldByLayer:DoOverlap(logicParam)
   self._shieldPercent = logicParam.shieldPercent
   return self:DoLogic()
 end
 
 _class("BuffLogicRemoveHPShieldByLayer", BuffLogicBase)
 BuffLogicRemoveHPShieldByLayer = BuffLogicRemoveHPShieldByLayer
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveHPShieldByLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicRemoveHPShieldByLayer:Constructor(buffInstance, logicParam)
   self._isOwner = logicParam.isOwner
   self._ignoreCheckShieldToHPEffect = logicParam.ignoreCheckShieldToHPEffect
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveHPShieldByLayer.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local entity = nil
+function BuffLogicRemoveHPShieldByLayer:DoLogic()
+  local entity
   if self._isOwner then
-    entity = (self._buffInstance):Entity()
+    entity = self._buffInstance:Entity()
   end
-  if (self._entity):HasTeam() then
+  if self._entity:HasTeam() then
     entity = self._entity
-  else
-    if (self._entity):HasPet() then
-      (entity:Pet()):GetOwnerTeamEntity()
-    end
+  elseif self._entity:HasPet() then
+    entity:Pet():GetOwnerTeamEntity()
   end
-  if self._ignoreCheckShieldToHPEffect == 1 or not (entity:BuffComponent()):HasBuffEffect(BuffEffectType.ShieldToHP) then
-    (entity:BuffComponent()):SetBuffValue("HPShield", 0)
+  if self._ignoreCheckShieldToHPEffect == 1 or not entity:BuffComponent():HasBuffEffect(BuffEffectType.ShieldToHP) then
+    entity:BuffComponent():SetBuffValue("HPShield", 0)
   end
   local damageInfo = DamageInfo:New(0, DamageType.Recover)
   damageInfo:SetHPShield(0)
-  ;
-  (Log.debug)("Buff RemoveShieldByLayer,entityID: ", entity:GetID())
+  Log.debug("Buff RemoveShieldByLayer,entityID: ", entity:GetID())
   local buffResult = BuffResultRemoveHPShield:New(entity:GetID(), damageInfo)
   return buffResult
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveHPShieldByLayer.DoOverlap = function(self, logicParam)
-  -- function num : 0_5
+function BuffLogicRemoveHPShieldByLayer:DoOverlap(logicParam)
 end
-
-

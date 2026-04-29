@@ -1,50 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_forecast/ui_pet_forecast_view_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetForecastViewItem", UICustomWidget)
 UIPetForecastViewItem = UIPetForecastViewItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetForecastViewItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetForecastViewItem:OnShow()
   self.logo = self:GetUIComponent("RawImageLoader", "logo")
   self.imgProperty = self:GetUIComponent("Image", "imgProperty")
   self.atlas = self:GetAsset("UIPetForecast.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastViewItem.OnHide = function(self)
-  -- function num : 0_1
-  (self.logo):DestoryLastImage()
+function UIPetForecastViewItem:OnHide()
+  self.logo:DestoryLastImage()
   self.logo = nil
   self.imgProperty = nil
   self.atlas = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastViewItem.Flush = function(self, tplId)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetForecastViewItem:Flush(tplId)
   self.tplId = tplId
-  local cfgv = (Cfg.cfg_pet)[tplId]
+  local cfgv = Cfg.cfg_pet[tplId]
   if cfgv then
-    (self.logo):LoadImage(cfgv.Logo)
-    local shsl = {"shui", "huo", "sen", "lei"}
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.imgProperty).sprite = (self.atlas):GetSprite("main_prec_shuxing_" .. (shsl[cfgv.FirstElement] or ""))
+    self.logo:LoadImage(cfgv.Logo)
+    local shsl = {
+      "shui",
+      "huo",
+      "sen",
+      "lei"
+    }
+    self.imgProperty.sprite = self.atlas:GetSprite("main_prec_shuxing_" .. (shsl[cfgv.FirstElement] or ""))
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastViewItem.bgOnClick = function(self, go)
-  -- function num : 0_3
+function UIPetForecastViewItem:bgOnClick(go)
   self:ShowDialog("UIShopPetDetailController", self.tplId)
 end
-
-

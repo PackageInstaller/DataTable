@@ -1,51 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/helper/ui_review_activity_n1.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIReviewActivityN1", UIReviewActivityBase)
 UIReviewActivityN1 = UIReviewActivityN1
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIReviewActivityN1.Constructor = function(self, id, sample)
-  -- function num : 0_0
+function UIReviewActivityN1:Constructor(id, sample)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN1.AssetPackageID = function(self)
-  -- function num : 0_1
+function UIReviewActivityN1:AssetPackageID()
   return 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN1.ActivityOnOpen = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIActivityEveSinsaMainController_Review)
+function UIReviewActivityN1:ActivityOnOpen()
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIActivityEveSinsaMainController_Review)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN1.GetBattleExitParam = function(self, comID, missionCreateInfo, isWin, battleresultRt)
-  -- function num : 0_3 , upvalues : _ENV
+function UIReviewActivityN1:GetBattleExitParam(comID, missionCreateInfo, isWin, battleresultRt)
   if comID == ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_LINE_MISSION then
     return UIStateType.UIActivityEveSinsaLevelAController_Review, nil
-  else
-    if comID == ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_TREE_MISSION then
-      return UIStateType.UIActivityEveSinsaLevelBController_Review, nil
-    end
+  elseif comID == ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_TREE_MISSION then
+    return UIStateType.UIActivityEveSinsaLevelBController_Review, nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN1.GetRedAndNewData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIReviewActivityN1:GetRedAndNewData()
   if self._redNewData == nil then
     self._redNewData = UIActivityEveSinaNewFlagRedPoint_Review:New()
   end
   return self._redNewData
 end
-
-

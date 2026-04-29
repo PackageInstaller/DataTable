@@ -1,74 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/Domitory/ui_homeland_minimap_icon_domitory.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapIconDomitory", UIHomelandMinimapIconBase)
 UIHomelandMinimapIconDomitory = UIHomelandMinimapIconDomitory
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapIconDomitory.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandMinimapIconDomitory:OnShow(uiParams)
   self._selectGO = self:GetGameObject("Selected")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconDomitory.OnInitDone = function(self)
-  -- function num : 0_1
+function UIHomelandMinimapIconDomitory:OnInitDone()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconDomitory.OnSelected = function(self)
-  -- function num : 0_2
-  (self._selectGO):SetActive(true)
+function UIHomelandMinimapIconDomitory:OnSelected()
+  self._selectGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconDomitory.OnUnSelected = function(self)
-  -- function num : 0_3
-  (self._selectGO):SetActive(false)
+function UIHomelandMinimapIconDomitory:OnUnSelected()
+  self._selectGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconDomitory.GetShowName = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local building = (self:GetIconData()):GetParam()
-  local cfg = (Cfg.cfg_item_architecture)[building:GetBuildId()]
-  return (StringTable.Get)(cfg.Name)
+function UIHomelandMinimapIconDomitory:GetShowName()
+  local building = self:GetIconData():GetParam()
+  local cfg = Cfg.cfg_item_architecture[building:GetBuildId()]
+  return StringTable.Get(cfg.Name)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconDomitory.GetAnimationName = function(self, animType)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMinimapIconDomitory:GetAnimationName(animType)
   if not self._animationNames then
     self._animationNames = {}
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.IN] = "UIHomelandMinimapIconDomitory_in"
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.OUT] = "UIHomelandMinimapIconDomitory_out"
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.SELECT] = "UIHomelandMinimapIconDomitory_Selected_in"
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.UNSELECT] = "UIHomelandMinimapIconDomitory_Selected_out"
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.EXPANSION] = "UIHomelandMinimapIconDomitory_expansion"
+    self._animationNames[MinimapIconAnimationType.IN] = "UIHomelandMinimapIconDomitory_in"
+    self._animationNames[MinimapIconAnimationType.OUT] = "UIHomelandMinimapIconDomitory_out"
+    self._animationNames[MinimapIconAnimationType.SELECT] = "UIHomelandMinimapIconDomitory_Selected_in"
+    self._animationNames[MinimapIconAnimationType.UNSELECT] = "UIHomelandMinimapIconDomitory_Selected_out"
+    self._animationNames[MinimapIconAnimationType.EXPANSION] = "UIHomelandMinimapIconDomitory_expansion"
   end
-  return (self._animationNames)[animType]
+  return self._animationNames[animType]
 end
-
-

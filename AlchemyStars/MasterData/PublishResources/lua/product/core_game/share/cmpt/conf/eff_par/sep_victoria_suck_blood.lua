@@ -1,45 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_victoria_suck_blood.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectParam_VictoriaSuckBlood", SkillEffectParamBase)
 SkillEffectParam_VictoriaSuckBlood = SkillEffectParam_VictoriaSuckBlood
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_VictoriaSuckBlood.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_VictoriaSuckBlood:Constructor(t)
   self.percent = t.percent
   self.formulaID = t.formulaID
   self.formulaID2 = t.formulaID2
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_VictoriaSuckBlood.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_VictoriaSuckBlood:GetEffectType()
   return SkillEffectType.VictoriaSuckBlood
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_VictoriaSuckBlood.GetDamagePercent = function(self)
-  -- function num : 0_2
+function SkillEffectParam_VictoriaSuckBlood:GetDamagePercent()
   return self.percent
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_VictoriaSuckBlood.GetDamageFormulaID = function(self)
-  -- function num : 0_3
+function SkillEffectParam_VictoriaSuckBlood:GetDamageFormulaID()
   return self.formulaID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_VictoriaSuckBlood.GetDamageFormulaID2 = function(self)
-  -- function num : 0_4
+function SkillEffectParam_VictoriaSuckBlood:GetDamageFormulaID2()
   return self.formulaID2
 end
-
-

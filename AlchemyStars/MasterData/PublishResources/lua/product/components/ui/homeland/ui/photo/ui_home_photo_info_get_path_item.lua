@@ -1,27 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/photo/ui_home_photo_info_get_path_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePhotoInfoGetPathItem", UICustomWidget)
 UIHomePhotoInfoGetPathItem = UIHomePhotoInfoGetPathItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePhotoInfoGetPathItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomePhotoInfoGetPathItem:OnShow(uiParams)
   self.pathTxt = self:GetUIComponent("RollingText", "pathTxt")
   self.color = self:GetUIComponent("Image", "Image")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoInfoGetPathItem.SetData = function(self, txt, color)
-  -- function num : 0_1
-  (self.pathTxt):RefreshText(txt)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.color).color = color
+function UIHomePhotoInfoGetPathItem:SetData(txt, color)
+  self.pathTxt:RefreshText(txt)
+  self.color.color = color
 end
-
-

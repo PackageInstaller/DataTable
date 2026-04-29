@@ -1,74 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/dantang/ui_campaign_center_dantang_pre.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICampaignCenterDanTangPre", UISideEnterCenterContentBase)
 UICampaignCenterDanTangPre = UICampaignCenterDanTangPre
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICampaignCenterDanTangPre.DoInit = function(self)
-  -- function num : 0_0
+function UICampaignCenterDanTangPre:DoInit()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTangPre.InitWidget = function(self)
-  -- function num : 0_1
+function UICampaignCenterDanTangPre:InitWidget()
   self.red = self:GetGameObject("redGo")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTangPre.DoLoadData = function(self, TT)
-  -- function num : 0_2
+function UICampaignCenterDanTangPre:DoLoadData(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTangPre.DoShow = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICampaignCenterDanTangPre:DoShow()
   self:_CheckRed()
   self:AttachEvent(GameEventType.DanTangPreAwardCollected, self._CheckRed)
-  ;
-  (AudioHelperController.PlayBGM)(CriAudioIDConst.BGMDanTang, AudioConstValue.BGMCrossFadeTime)
+  AudioHelperController.PlayBGM(CriAudioIDConst.BGMDanTang, AudioConstValue.BGMCrossFadeTime)
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self
-    (self._data):ClearCampaignNew(TT)
-  end
-)
+    self._data:ClearCampaignNew(TT)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTangPre.DoHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (AudioHelperController.PlayBGM)(CriAudioIDConst.BGMMainUI, AudioConstValue.BGMCrossFadeTime)
+function UICampaignCenterDanTangPre:DoHide()
+  AudioHelperController.PlayBGM(CriAudioIDConst.BGMMainUI, AudioConstValue.BGMCrossFadeTime)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTangPre.DoDestroy = function(self)
-  -- function num : 0_5
+function UICampaignCenterDanTangPre:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTangPre.AwardBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UICampaignCenterDanTangPre:AwardBtnOnClick(go)
   self:ShowDialog("UICampaignCenterDanTangPreAwards")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignCenterDanTangPre._CheckRed = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local cptInfo = (self._data):GetComponentInfo(ECCampaignInlandS0ComponentID.TIME_REWARD)
-  local canCollect = ((cptInfo.m_reward_info)[1]).rec_reward_status == ETimeRewardRewardStatus.E_TIME_REWARD_CAN_RECV
-  ;
-  (self.red):SetActive(canCollect)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UICampaignCenterDanTangPre:_CheckRed()
+  local cptInfo = self._data:GetComponentInfo(ECCampaignInlandS0ComponentID.TIME_REWARD)
+  local canCollect = cptInfo.m_reward_info[1].rec_reward_status == ETimeRewardRewardStatus.E_TIME_REWARD_CAN_RECV
+  self.red:SetActive(canCollect)
 end
-
-

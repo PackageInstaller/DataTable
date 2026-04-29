@@ -1,45 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/wish/ui_recruit_wish.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIRecruitWish", UIController)
 UIRecruitWish = UIRecruitWish
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIRecruitWish.Constructor = function(self)
-  -- function num : 0_0
+function UIRecruitWish:Constructor()
   self._cdEnd = {tick = 0, period = 1000}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWish.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIRecruitWish:LoadDataOnEnter(TT, res, uiParams)
   local param = uiParams[1]
   self._indexPool = param.indexPool
-  self._cfgRecruit = (Cfg.cfg_recruit_pool_view)[param.idRecruit]
+  self._cfgRecruit = Cfg.cfg_recruit_pool_view[param.idRecruit]
   if self._cfgRecruit == nil then
-    (Log.fatal)("[UIRecruitWish] cfg_recruit_pool_view is nil, id ->: ", param.idRecruit)
+    Log.fatal("[UIRecruitWish] cfg_recruit_pool_view is nil, id ->: ", param.idRecruit)
     res:SetSucc(false)
-    return 
+    return
   end
-  self._cfgOptional = (Cfg.cfg_optional_pool)[param.idOptional]
+  self._cfgOptional = Cfg.cfg_optional_pool[param.idOptional]
   if self._cfgOptional == nil then
-    (Log.fatal)("[UIRecruitWish] cfg_optional_pool is nil, id ->: ", param.idOptional)
+    Log.fatal("[UIRecruitWish] cfg_optional_pool is nil, id ->: ", param.idOptional)
     res:SetSucc(false)
-    return 
+    return
   end
-  ;
-  (Log.info)("[UIRecruitWish] indexPool, cfgRecruit.ID, cfgOptional.ID ->: ", self._indexPool, (self._cfgRecruit).ID, (self._cfgOptional).ID)
+  Log.info("[UIRecruitWish] indexPool, cfgRecruit.ID, cfgOptional.ID ->: ", self._indexPool, self._cfgRecruit.ID, self._cfgOptional.ID)
   self._wishChanged = false
   self._gambleModule = self:GetModule(GambleModule)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWish.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIRecruitWish:OnShow(uiParams)
   self:UIWidget()
   self:CreatePetUp()
   self:CreatePetWish()
@@ -48,37 +34,24 @@ UIRecruitWish.OnShow = function(self, uiParams)
   self:FlushTips()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWish.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._cdEnd).tick = (self._cdEnd).tick + deltaTimeMS
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._cdEnd).period <= (self._cdEnd).tick then
-    (self._cdEnd).tick = 0
+function UIRecruitWish:OnUpdate(deltaTimeMS)
+  self._cdEnd.tick = self._cdEnd.tick + deltaTimeMS
+  if self._cdEnd.tick >= self._cdEnd.period then
+    self._cdEnd.tick = 0
     self:CheckAutoClose()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWish.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIRecruitWish:OnHide()
   if self._wishChanged then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateDrawCardRed)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateDrawCardRed)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWish.BtnOKOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIRecruitWish:BtnOKOnClick(go)
   local count = 0
-  local selWish = (self._gambleModule):GetOptionalPool(self._indexPool)
-  for k,v in pairs(selWish) do
+  local selWish = self._gambleModule:GetOptionalPool(self._indexPool)
+  for k, v in pairs(selWish) do
     if v ~= 0 then
       count = count + 1
     end
@@ -86,22 +59,14 @@ UIRecruitWish.BtnOKOnClick = function(self, go)
   if count == ElementType.ElementType_Yellow then
     self:CloseDialog()
   else
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_draw_card_wish_not_working_tips"), function(param)
-    -- function num : 0_5_0 , upvalues : self
-    self:CloseDialog()
-  end
-, nil, function(param)
-    -- function num : 0_5_1
-  end
-, nil)
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_draw_card_wish_not_working_tips"), function(param)
+      self:CloseDialog()
+    end, nil, function(param)
+    end, nil)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWish.UIWidget = function(self, go)
-  -- function num : 0_6
+function UIRecruitWish:UIWidget(go)
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._effectTips = self:GetUIComponent("UILocalizationText", "effectTips")
   self._openTips = self:GetUIComponent("UILocalizationText", "openTips")
@@ -111,100 +76,76 @@ UIRecruitWish.UIWidget = function(self, go)
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWish.CreatePetUp = function(self)
-  -- function num : 0_7
-  local uiWidgets = (self._uiPetUp):SpawnObjects("UIDrawCardAwardPetItem", 1)
-  local sixup = (self._cfgRecruit).sixup
-  self._petUp = {petTid = (sixup[1])[1], uiWidget = uiWidgets[1]}
+function UIRecruitWish:CreatePetUp()
+  local uiWidgets = self._uiPetUp:SpawnObjects("UIDrawCardAwardPetItem", 1)
+  local sixup = self._cfgRecruit.sixup
+  self._petUp = {
+    petTid = sixup[1][1],
+    uiWidget = uiWidgets[1]
+  }
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWish.CreatePetWish = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIRecruitWish:CreatePetWish()
   self._petWish = {}
-  local selWish = (self._gambleModule):GetOptionalPool(self._indexPool)
+  local selWish = self._gambleModule:GetOptionalPool(self._indexPool)
   local count = ElementType.ElementType_Yellow
-  local uiList = (self._uiPetWish):SpawnObjects("UIRecruitWishItem", count)
+  local uiList = self._uiPetWish:SpawnObjects("UIRecruitWishItem", count)
   for i = 1, count do
     local petTid = selWish[i]
     if petTid == nil then
       petTid = 0
     end
-    local wish = {petTid = petTid, uiWidget = uiList[i]}
-    ;
-    (table.insert)(self._petWish, wish)
-    ;
-    (wish.uiWidget):SetData(i, wish.petTid, function(elementType, petTid)
-    -- function num : 0_8_0 , upvalues : self
-    self:OnSelectPet(elementType, petTid)
-  end
-)
-  end
-end
-
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWish.FlushPetUp = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  ((self._petUp).uiWidget):SetData(6, (self._petUp).petTid, nil)
-  ;
-  ((self._petUp).uiWidget):ShowPetAwakening(true)
-  ;
-  ((self._petUp).uiWidget):RootLocalScale(Vector3(1, 1, 1))
-  ;
-  ((self._petUp).uiWidget):AnimRootPosition(Vector2(0, -126))
-end
-
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWish.FlushPetWish = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for k,v in pairs(self._petWish) do
-    (v.uiWidget):SetPetTid(v.petTid)
+    local wish = {
+      petTid = petTid,
+      uiWidget = uiList[i]
+    }
+    table.insert(self._petWish, wish)
+    wish.uiWidget:SetData(i, wish.petTid, function(elementType, petTid)
+      self:OnSelectPet(elementType, petTid)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
+function UIRecruitWish:FlushPetUp()
+  self._petUp.uiWidget:SetData(6, self._petUp.petTid, nil)
+  self._petUp.uiWidget:ShowPetAwakening(true)
+  self._petUp.uiWidget:RootLocalScale(Vector3(1.0, 1.0, 1.0))
+  self._petUp.uiWidget:AnimRootPosition(Vector2(0, -126))
+end
 
-UIRecruitWish.FlushTips = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local poolTitle = (StringTable.Get)((self._cfgRecruit).PoolTitle)
-  ;
-  (self._title):SetText((StringTable.Get)("str_draw_card_wish_title", poolTitle))
-  ;
-  (self._effectTips):SetText((StringTable.Get)("str_draw_card_wish_wish_effect", poolTitle))
+function UIRecruitWish:FlushPetWish()
+  for k, v in pairs(self._petWish) do
+    v.uiWidget:SetPetTid(v.petTid)
+  end
+end
+
+function UIRecruitWish:FlushTips()
+  local poolTitle = StringTable.Get(self._cfgRecruit.PoolTitle)
+  self._title:SetText(StringTable.Get("str_draw_card_wish_title", poolTitle))
+  self._effectTips:SetText(StringTable.Get("str_draw_card_wish_wish_effect", poolTitle))
   local wishCount = 0
-  for k,v in pairs(self._petWish) do
+  for k, v in pairs(self._petWish) do
     if v.petTid ~= 0 then
       wishCount = wishCount + 1
     end
   end
-  ;
-  ((self._openTips).gameObject):SetActive(wishCount == ElementType.ElementType_Yellow)
-  ;
-  ((self._unopenTips).gameObject):SetActive(wishCount ~= ElementType.ElementType_Yellow)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._openTips.gameObject:SetActive(wishCount == ElementType.ElementType_Yellow)
+  self._unopenTips.gameObject:SetActive(wishCount ~= ElementType.ElementType_Yellow)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWish.CheckAutoClose = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local awardPools = (self._gambleModule):GetPrizePools()
+function UIRecruitWish:CheckAutoClose()
+  local awardPools = self._gambleModule:GetPrizePools()
   local poolData = awardPools[self._indexPool]
   local now = GetSvrTimeNow()
   local time = 0
   local closeType2 = poolData.close_condition2
-  if closeType2 and closeType2 > 0 then
+  if closeType2 and 0 < closeType2 then
     time = closeType2
   else
     time = poolData.extend_data
   end
-  if time <= now then
-    local stateMgr = (GameGlobal.UIStateManager)()
+  if now >= time then
+    local stateMgr = GameGlobal.UIStateManager()
     local uiName = "UIRecruitWishSelection"
     if stateMgr:IsShow(uiName) then
       stateMgr:CloseDialog(uiName)
@@ -216,40 +157,28 @@ UIRecruitWish.CheckAutoClose = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWish.OnSelectPet = function(self, elementType, selPetTid)
-  -- function num : 0_13
-  local param = {idOptional = (self._cfgOptional).ID, elementType = elementType, selPetTid = selPetTid}
+function UIRecruitWish:OnSelectPet(elementType, selPetTid)
+  local param = {
+    idOptional = self._cfgOptional.ID,
+    elementType = elementType,
+    selPetTid = selPetTid
+  }
   self:ShowDialog("UIRecruitWishSelection", param, function(newPetTid)
-    -- function num : 0_13_0 , upvalues : self, elementType
     self:OnReplacePet(elementType, newPetTid)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitWish.OnReplacePet = function(self, elementType, newPetTid)
-  -- function num : 0_14 , upvalues : _ENV
+function UIRecruitWish:OnReplacePet(elementType, newPetTid)
   self:StartSafeTask("UIRecruitWishSelection::FlushDefaultSelection", function(lockName, TT)
-    -- function num : 0_14_0 , upvalues : self, elementType, newPetTid, _ENV
-    local retCode = (self._gambleModule):HandleOptionalPoolReq(TT, self._indexPool, elementType, {newPetTid})
+    local retCode = self._gambleModule:HandleOptionalPoolReq(TT, self._indexPool, elementType, {newPetTid})
     if retCode == GAMBLE_CODE.GAMBLE_SUCCESS then
-      local theWish = (self._petWish)[elementType]
+      local theWish = self._petWish[elementType]
       theWish.petTid = newPetTid
-      ;
-      (theWish.uiWidget):SetPetTid(newPetTid)
+      theWish.uiWidget:SetPetTid(newPetTid)
       self:FlushTips()
       self._wishChanged = true
     else
-      do
-        ;
-        (Log.fatal)("[UIRecruitWish] HandleOptionalPoolReq ret ->: ", retCode)
-      end
+      Log.fatal("[UIRecruitWish] HandleOptionalPoolReq ret ->: ", retCode)
     end
-  end
-)
+  end)
 end
-
-

@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/battleaffix/ui_n12_battle_affix_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12BattleAffixItem", UICustomWidget)
 UIN12BattleAffixItem = UIN12BattleAffixItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12BattleAffixItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12BattleAffixItem:Constructor()
   self._atlas = self:GetAsset("UIN12.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12BattleAffixItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN12BattleAffixItem:OnShow(uiParams)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12BattleAffixItem._GetComponent = function(self)
-  -- function num : 0_2
+function UIN12BattleAffixItem:_GetComponent()
   self._affix = self:GetGameObject("Affix")
   self._other = self:GetGameObject("Other")
   self._gainType = self:GetUIComponent("Image", "GainType")
@@ -33,66 +20,44 @@ UIN12BattleAffixItem._GetComponent = function(self)
   self._recommend = self:GetUIComponent("UILocalizationText", "Recommend ")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12BattleAffixItem.SetData = function(self, levelType, noAffix, campaignMissionId, affixId)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._affix):SetActive(not noAffix)
-  ;
-  (self._other):SetActive(noAffix)
-  ;
-  (self._scoreBg):SetActive(levelType == N12LevelType.Challenge)
-  do
-    if noAffix then
-      local tempDailyMissionCfgs = nil
-      if levelType == N12LevelType.Daily then
-        tempDailyMissionCfgs = (Cfg.cfg_component_daily_mission)({CampaignMissionId = campaignMissionId})
-      elseif levelType == N12LevelType.Challenge then
-        tempDailyMissionCfgs = (Cfg.cfg_component_challenge_mission)({CampaignMissionId = campaignMissionId})
-      end
-      self._curDailyMissionCfg = tempDailyMissionCfgs[1]
-      ;
-      (self._diffText):SetText((StringTable.Get)(HardLevelTypeText[(self._curDailyMissionCfg).HardID]))
-      ;
-      (self._recommend):SetText((StringTable.Get)("str_n12_recommend_info", (self._curDailyMissionCfg).RecommendAwaken, (self._curDailyMissionCfg).RecommendLV))
-      -- DECOMPILER ERROR at PC74: Confused about usage of register: R6 in 'UnsetPending'
-
-      if levelType == N12LevelType.Challenge then
-        (self._score).color = Color(1, 0.77647058823529, 0.18039215686275)
-        ;
-        (self._score):SetText((self._curDailyMissionCfg).BaseScore)
-      end
-      return 
+function UIN12BattleAffixItem:SetData(levelType, noAffix, campaignMissionId, affixId)
+  self._affix:SetActive(not noAffix)
+  self._other:SetActive(noAffix)
+  self._scoreBg:SetActive(levelType == N12LevelType.Challenge)
+  if noAffix then
+    local tempDailyMissionCfgs
+    if levelType == N12LevelType.Daily then
+      tempDailyMissionCfgs = Cfg.cfg_component_daily_mission({CampaignMissionId = campaignMissionId})
+    elseif levelType == N12LevelType.Challenge then
+      tempDailyMissionCfgs = Cfg.cfg_component_challenge_mission({CampaignMissionId = campaignMissionId})
     end
-    self._missionAffixCfg = (Cfg.cfg_component_mission_affix)[affixId]
-    if not self._missionAffixCfg then
-      (Log.error)("cfg_component_mission_affix does not exist." .. affixId)
-      return 
-    end
-    local affixCfg = (Cfg.cfg_affix)[(self._missionAffixCfg).AffixID]
-    if not affixCfg then
-      (Log.error)("cfg_affix does not exist." .. (self._missionAffixCfg).AffixID)
-      return 
-    end
-    ;
-    (N12ToolFunctions.SetAffixText)(self._text, affixCfg)
+    self._curDailyMissionCfg = tempDailyMissionCfgs[1]
+    self._diffText:SetText(StringTable.Get(HardLevelTypeText[self._curDailyMissionCfg.HardID]))
+    self._recommend:SetText(StringTable.Get("str_n12_recommend_info", self._curDailyMissionCfg.RecommendAwaken, self._curDailyMissionCfg.RecommendLV))
     if levelType == N12LevelType.Challenge then
-      (self._score):SetText((self._missionAffixCfg).AffixScore)
-      local color = Color(1, 0.77647058823529, 0.18039215686275)
-      if (self._missionAffixCfg).GainType == GainType.Friend then
-        color = Color.red
-      end
-      -- DECOMPILER ERROR at PC138: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._score).color = color
+      self._score.color = Color(1.0, 0.7764705882352941, 0.1803921568627451)
+      self._score:SetText(self._curDailyMissionCfg.BaseScore)
     end
-    -- DECOMPILER ERROR at PC147: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._gainType).sprite = (self._atlas):GetSprite(GainTypeSprite[(self._missionAffixCfg).GainType])
-    -- DECOMPILER ERROR: 9 unprocessed JMP targets
+    return
   end
+  self._missionAffixCfg = Cfg.cfg_component_mission_affix[affixId]
+  if not self._missionAffixCfg then
+    Log.error("cfg_component_mission_affix does not exist." .. affixId)
+    return
+  end
+  local affixCfg = Cfg.cfg_affix[self._missionAffixCfg.AffixID]
+  if not affixCfg then
+    Log.error("cfg_affix does not exist." .. self._missionAffixCfg.AffixID)
+    return
+  end
+  N12ToolFunctions.SetAffixText(self._text, affixCfg)
+  if levelType == N12LevelType.Challenge then
+    self._score:SetText(self._missionAffixCfg.AffixScore)
+    local color = Color(1.0, 0.7764705882352941, 0.1803921568627451)
+    if self._missionAffixCfg.GainType == GainType.Friend then
+      color = Color.red
+    end
+    self._score.color = color
+  end
+  self._gainType.sprite = self._atlas:GetSprite(GainTypeSprite[self._missionAffixCfg.GainType])
 end
-
-

@@ -1,151 +1,101 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/breed/ui_homeland_breed_manual.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBreedManual", UICustomWidget)
 UIHomelandBreedManual = UIHomelandBreedManual
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBreedManual.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandBreedManual:Constructor()
   self._curTagIndex = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManual.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandBreedManual:OnShow(uiParams)
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManual._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandBreedManual:_GetComponents()
   self._tagList = self:GetUIComponent("UISelectObjectPath", "TagList")
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self.scrollView = self:GetUIComponent("ScrollRect", "ScrollView")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManual._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandBreedManual:_OnValue()
   self:_FilterData()
   local count = 0
   local tagData = {}
-  for _species,_st in pairs(self._data) do
-    for _pedigree,_pt in pairs(_st) do
+  for _species, _st in pairs(self._data) do
+    for _pedigree, _pt in pairs(_st) do
       local t = {}
       t.species = _species
       t.pedigree = _pedigree
       t.pt = _pt
-      ;
-      (table.insert)(tagData, t)
+      table.insert(tagData, t)
       count = count + 1
     end
   end
-  ;
-  (self._tagList):SpawnObjects("UIHomelandBreedManualTag", count)
-  self._tags = (self._tagList):GetAllSpawnList()
+  self._tagList:SpawnObjects("UIHomelandBreedManualTag", count)
+  self._tags = self._tagList:GetAllSpawnList()
   for i = 1, count do
-    ((self._tags)[i]):SetData(tagData[i], i, function(data, index)
-    -- function num : 0_3_0 , upvalues : self
-    self:_RefreshItem(data, index)
+    self._tags[i]:SetData(tagData[i], i, function(data, index)
+      self:_RefreshItem(data, index)
+    end)
   end
-)
-  end
-  if #tagData > 0 then
+  if 0 < #tagData then
     self:_RefreshItem(tagData[1], 1)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManual.SetData = function(self)
-  -- function num : 0_4
+function UIHomelandBreedManual:SetData()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManual.Update = function(self, deltaTime)
-  -- function num : 0_5
+function UIHomelandBreedManual:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManual._RefreshItem = function(self, data, index)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandBreedManual:_RefreshItem(data, index)
   if self._curTagIndex == index then
-    return 
+    return
   end
-  ;
-  (self.scrollView):StopMovement()
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.scrollView).horizontalNormalizedPosition = 0
+  self.scrollView:StopMovement()
+  self.scrollView.horizontalNormalizedPosition = 0
   local count = 0
   local itemData = {}
-  for _rarity,_rt in pairs(data.pt) do
-    for _series,_st in pairs(_rt) do
+  for _rarity, _rt in pairs(data.pt) do
+    for _series, _st in pairs(_rt) do
       local t = {}
       t.species = data.species
       t.pedigree = data.pedigree
       t.rarity = _rarity
       t.series = _series
       t.st = _st
-      ;
-      (table.insert)(itemData, t)
+      table.insert(itemData, t)
       count = count + 1
     end
   end
-  ;
-  (self._content):SpawnObjects("UIHomelandBreedManualItem", count)
-  self._items = (self._content):GetAllSpawnList()
+  self._content:SpawnObjects("UIHomelandBreedManualItem", count)
+  self._items = self._content:GetAllSpawnList()
   for i = 1, count do
-    ((self._items)[i]):SetData(itemData[i])
+    self._items[i]:SetData(itemData[i])
   end
   if self._curTagIndex > 0 then
-    ((self._tags)[self._curTagIndex]):RefreshState(false)
+    self._tags[self._curTagIndex]:RefreshState(false)
   end
   self._curTagIndex = index
-  ;
-  ((self._tags)[self._curTagIndex]):RefreshState(true)
+  self._tags[self._curTagIndex]:RefreshState(true)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManual._FilterData = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomelandBreedManual:_FilterData()
   self._data = {}
-  local allTree = (Cfg.cfg_item_tree_attribute)({})
-  for _,tree in pairs(allTree) do
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R7 in 'UnsetPending'
-
-    if not (self._data)[tree.Species] then
-      (self._data)[tree.Species] = {}
+  local allTree = Cfg.cfg_item_tree_attribute({})
+  for _, tree in pairs(allTree) do
+    if not self._data[tree.Species] then
+      self._data[tree.Species] = {}
     end
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R7 in 'UnsetPending'
-
-    if not ((self._data)[tree.Species])[tree.Pedigree] then
-      ((self._data)[tree.Species])[tree.Pedigree] = {}
+    if not self._data[tree.Species][tree.Pedigree] then
+      self._data[tree.Species][tree.Pedigree] = {}
     end
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R7 in 'UnsetPending'
-
-    if not (((self._data)[tree.Species])[tree.Pedigree])[tree.Rarity] then
-      (((self._data)[tree.Species])[tree.Pedigree])[tree.Rarity] = {}
+    if not self._data[tree.Species][tree.Pedigree][tree.Rarity] then
+      self._data[tree.Species][tree.Pedigree][tree.Rarity] = {}
     end
-    -- DECOMPILER ERROR at PC69: Confused about usage of register: R7 in 'UnsetPending'
-
-    if not ((((self._data)[tree.Species])[tree.Pedigree])[tree.Rarity])[tree.SerialNum] then
-      ((((self._data)[tree.Species])[tree.Pedigree])[tree.Rarity])[tree.SerialNum] = {}
+    if not self._data[tree.Species][tree.Pedigree][tree.Rarity][tree.SerialNum] then
+      self._data[tree.Species][tree.Pedigree][tree.Rarity][tree.SerialNum] = {}
     end
-    ;
-    (table.insert)(((((self._data)[tree.Species])[tree.Pedigree])[tree.Rarity])[tree.SerialNum], tree)
+    table.insert(self._data[tree.Species][tree.Pedigree][tree.Rarity][tree.SerialNum], tree)
   end
 end
-
-

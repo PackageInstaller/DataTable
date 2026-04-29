@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/wave_switch_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("WaveSwitchSystem", MainStateSystem)
 WaveSwitchSystem = WaveSwitchSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-WaveSwitchSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function WaveSwitchSystem:_GetMainStateID()
   return GameStateID.WaveSwitch
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveSwitchSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
+function WaveSwitchSystem:_OnMainStateEnter(TT)
   local calcStateTraps = self:_DoLogicCalcTrap()
   self:_DoRenderTrapState(TT, calcStateTraps)
   self:_DoLogicCalcBattleState()
@@ -29,256 +19,171 @@ WaveSwitchSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicSwitchToWaveEnter()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveSwitchSystem._DoLogicCalcTrap = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function WaveSwitchSystem:_DoLogicCalcTrap()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   return trapServiceLogic:CalcTrapState(TrapDestroyType.DestoryByWave)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveSwitchSystem._DoLogicCalcBattleState = function(self)
-  -- function num : 0_3
-  local boardEntity = (self._world):GetBoardEntity()
-  local battleStatCmpt = (self._world):BattleStat()
+function WaveSwitchSystem:_DoLogicCalcBattleState()
+  local boardEntity = self._world:GetBoardEntity()
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:MoveToNextWave()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveSwitchSystem._DoLogicSwitchToWaveEnter = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.WaveSwitchFinish, 1)
+function WaveSwitchSystem:_DoLogicSwitchToWaveEnter()
+  self._world:EventDispatcher():Dispatch(GameEventType.WaveSwitchFinish, 1)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveSwitchSystem._GetWaveBoard = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
-  local waveNum = (battleStatCmpt:GetCurWaveIndex())
-  -- DECOMPILER ERROR at PC5: Overwrote pending register: R3 in 'AssignReg'
-
-  local waveBoard = .end
-  if (self._world)._matchType == MatchType.MT_Conquest or (self._world)._matchType == MatchType.MT_SimpleBattleField then
-    local boardID = (((self._world).BW_WorldInfo).boardIDList)[waveNum]
+function WaveSwitchSystem:_GetWaveBoard()
+  local battleStatCmpt = self._world:BattleStat()
+  local waveNum = battleStatCmpt:GetCurWaveIndex()
+  local waveBoard
+  if self._world._matchType == MatchType.MT_Conquest or self._world._matchType == MatchType.MT_SimpleBattleField then
+    local boardID = self._world.BW_WorldInfo.boardIDList[waveNum]
     if boardID then
-      local cfg = (Cfg.cfg_preset_board)[boardID]
+      local cfg = Cfg.cfg_preset_board[boardID]
       if cfg then
         waveBoard = cfg.Board
       end
     end
   else
-    do
-      local configService = (self._world):GetService("Config")
-      do
-        local levelConfigData = configService:GetLevelConfigData()
-        waveBoard = levelConfigData:GetWaveBoard(waveNum)
-        return waveBoard
-      end
-    end
+    local configService = self._world:GetService("Config")
+    local levelConfigData = configService:GetLevelConfigData()
+    waveBoard = levelConfigData:GetWaveBoard(waveNum)
   end
+  return waveBoard
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveSwitchSystem._DoLogicRefreshWaveBoard = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function WaveSwitchSystem:_DoLogicRefreshWaveBoard()
   local waveBoard = self:_GetWaveBoard()
   if not waveBoard then
-    return 
+    return
   end
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  local triggerService = (self._world):GetService("Trigger")
-  local utilData = (self._world):GetService("UtilData")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local triggerService = self._world:GetService("Trigger")
+  local utilData = self._world:GetService("UtilData")
   local waveBoardResult = {}
   local tConvertInfo = {}
-  for x,row in pairs(waveBoard) do
-    for y,color in pairs(row) do
+  for x, row in pairs(waveBoard) do
+    for y, color in pairs(row) do
       local posWork = Vector2(x, y)
       if boardServiceLogic:GetCanConvertGridElement(posWork) then
         if not waveBoardResult[x] then
           waveBoardResult[x] = {}
         end
-        -- DECOMPILER ERROR at PC42: Confused about usage of register: R18 in 'UnsetPending'
-
-        ;
-        (waveBoardResult[x])[y] = color
+        waveBoardResult[x][y] = color
         local oldColor = utilData:FindPieceElement(posWork)
         boardServiceLogic:SetPieceTypeLogic(color, posWork)
         local convertInfo = NTGridConvert_ConvertInfo:New(posWork, oldColor, color)
-        ;
-        (table.insert)(tConvertInfo, convertInfo)
+        table.insert(tConvertInfo, convertInfo)
       end
     end
   end
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   triggerService:Notify(NTGridConvert:New(boardEntity, tConvertInfo))
   return waveBoardResult
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveSwitchSystem._DoLogicAddWaveSwitchBuff = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
-  if (self._world)._matchType == MatchType.MT_Conquest or (self._world)._matchType == MatchType.MT_SimpleBattleField then
-    local buffLogic = ((self._world):GetService("BuffLogic"))
-    -- DECOMPILER ERROR at PC20: Overwrote pending register: R3 in 'AssignReg'
-
-    local buffList = .end
-    if (self._world)._matchType == MatchType.MT_Conquest then
+function WaveSwitchSystem:_DoLogicAddWaveSwitchBuff()
+  local configService = self._world:GetService("Config")
+  if self._world._matchType == MatchType.MT_Conquest or self._world._matchType == MatchType.MT_SimpleBattleField then
+    local buffLogic = self._world:GetService("BuffLogic")
+    local buffList
+    if self._world._matchType == MatchType.MT_Conquest then
       buffList = configService:GetN5WaveBuff()
-    else
-      if (self._world)._matchType == MatchType.MT_SimpleBattleField then
-        buffList = configService:GetCNN5WaveBuff()
-      end
+    elseif self._world._matchType == MatchType.MT_SimpleBattleField then
+      buffList = configService:GetCNN5WaveBuff()
     end
     if buffList then
-      for i,param in ipairs(buffList) do
+      for i, param in ipairs(buffList) do
         buffLogic:AddBuffByTargetType(param.BuffID, param.BuffTargetType, param.BuffTargetParam)
       end
     end
   end
-  do
-    local waveIndex = ((self._world):BattleStat()):GetCurWaveIndex()
-    local triggerService = (self._world):GetService("Trigger")
-    triggerService:Notify(NTWaveSwitch:New(waveIndex))
-  end
+  local waveIndex = self._world:BattleStat():GetCurWaveIndex()
+  local triggerService = self._world:GetService("Trigger")
+  triggerService:Notify(NTWaveSwitch:New(waveIndex))
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveSwitchSystem._DoLogicRefreshPetPower = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function WaveSwitchSystem:_DoLogicRefreshPetPower()
   local petPowerStateList = {}
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).Pet)
-  for _,e in ipairs(group:GetEntities()) do
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.Pet)
+  for _, e in ipairs(group:GetEntities()) do
     local tNotify = self:_LogicRefreshPetPower(e, petPowerStateList)
   end
   return petPowerStateList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveSwitchSystem._LogicRefreshPetPower = function(self, e, petPowerStateList)
-  -- function num : 0_9 , upvalues : _ENV
+function WaveSwitchSystem:_LogicRefreshPetPower(e, petPowerStateList)
   if e:HasPetDeadMark() then
-    return 
+    return
   end
   local petPstIDComponent = e:PetPstID()
   local petPstID = petPstIDComponent:GetPstID()
   local attributesComponent = e:Attributes()
-  local localSkillID = (e:SkillInfo()):GetActiveSkillID()
-  do
-    if not localSkillID then
-      local petData = (self._world):GetPetData(petPstID)
-      localSkillID = petData:GetPetActiveSkill()
-    end
-    local configService = (self._world):GetService("Config")
-    local skillConfigData = configService:GetSkillConfigData(localSkillID)
-    if skillConfigData:GetSkillTriggerType() ~= SkillTriggerType.LegendEnergy or skillConfigData:GetSkillTriggerType() == SkillTriggerType.BuffLayer then
-      local sourceActiveSkillID = (e:SkillInfo()):GetActiveSkillID()
-      local variantActiveSkillInfo = (e:SkillInfo()):GetVariantActiveSkillInfo()
-      local utilDataSvc = (self._world):GetService("UtilData")
-      local ready = utilDataSvc:GetPetSkillReadyAttr(e, sourceActiveSkillID)
-      if variantActiveSkillInfo and variantActiveSkillInfo[sourceActiveSkillID] then
-        local variantList = (table.clone)(variantActiveSkillInfo[sourceActiveSkillID])
-        ;
-        (table.insert)(variantList, sourceActiveSkillID)
-        for i,skillID in ipairs(variantList) do
-          if utilDataSvc:GetPetSkillReadyAttr(e, skillID) == 1 then
-            ready = 1
-          end
-        end
-      end
-      do
-        do
-          local power = attributesComponent:GetAttribute("Power")
-          if not petPowerStateList[petPstID] then
-            petPowerStateList[petPstID] = {}
-          end
-          -- DECOMPILER ERROR at PC98: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (petPowerStateList[petPstID]).petEntityID = e:GetID()
-          -- DECOMPILER ERROR at PC100: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (petPowerStateList[petPstID]).petPstID = petPstID
-          -- DECOMPILER ERROR at PC102: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (petPowerStateList[petPstID]).ready = ready
-          -- DECOMPILER ERROR at PC104: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (petPowerStateList[petPstID]).power = power
-          local power = attributesComponent:GetAttribute("Power")
-          do
-            local ready = attributesComponent:GetAttribute("Ready")
-            if not petPowerStateList[petPstID] then
-              petPowerStateList[petPstID] = {}
-            end
-            -- DECOMPILER ERROR at PC120: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            (petPowerStateList[petPstID]).petEntityID = e:GetID()
-            -- DECOMPILER ERROR at PC122: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            (petPowerStateList[petPstID]).petPstID = petPstID
-            -- DECOMPILER ERROR at PC124: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            (petPowerStateList[petPstID]).ready = ready
-            -- DECOMPILER ERROR at PC126: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            (petPowerStateList[petPstID]).power = power
-            local battleStatComponent = (self._world):BattleStat()
-            local curRound = battleStatComponent:GetLevelTotalRoundCount()
-            local curWaveIndex = battleStatComponent:GetCurWaveIndex()
-            local lastWaveIndex = curWaveIndex - 1
-            local curWaveRoundHadCastSkillList = battleStatComponent:GetPetDoActiveSkillRecord(petPstID, curRound)
-            if curWaveRoundHadCastSkillList and (table.count)(curWaveRoundHadCastSkillList) > 0 then
-              local activeSkillID = (e:SkillInfo()):GetActiveSkillID()
-              local keyStr = "HadSaveSkillGrayWatch" .. "_Round_" .. tostring(curRound) .. "_Skill_" .. tostring(activeSkillID)
-              local buffComponent = e:BuffComponent()
-              buffComponent:SetBuffValue(keyStr, true)
-              battleStatComponent:SetLastDoActiveSkillRound(petPstID, nil)
-            end
-          end
+  local localSkillID = e:SkillInfo():GetActiveSkillID()
+  if not localSkillID then
+    local petData = self._world:GetPetData(petPstID)
+    localSkillID = petData:GetPetActiveSkill()
+  end
+  local configService = self._world:GetService("Config")
+  local skillConfigData = configService:GetSkillConfigData(localSkillID)
+  if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
+  elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.BuffLayer then
+    local sourceActiveSkillID = e:SkillInfo():GetActiveSkillID()
+    local variantActiveSkillInfo = e:SkillInfo():GetVariantActiveSkillInfo()
+    local utilDataSvc = self._world:GetService("UtilData")
+    local ready = utilDataSvc:GetPetSkillReadyAttr(e, sourceActiveSkillID)
+    if variantActiveSkillInfo and variantActiveSkillInfo[sourceActiveSkillID] then
+      local variantList = table.clone(variantActiveSkillInfo[sourceActiveSkillID])
+      table.insert(variantList, sourceActiveSkillID)
+      for i, skillID in ipairs(variantList) do
+        if utilDataSvc:GetPetSkillReadyAttr(e, skillID) == 1 then
+          ready = 1
         end
       end
     end
+    local power = attributesComponent:GetAttribute("Power")
+    if not petPowerStateList[petPstID] then
+      petPowerStateList[petPstID] = {}
+    end
+    petPowerStateList[petPstID].petEntityID = e:GetID()
+    petPowerStateList[petPstID].petPstID = petPstID
+    petPowerStateList[petPstID].ready = ready
+    petPowerStateList[petPstID].power = power
+  else
+    local power = attributesComponent:GetAttribute("Power")
+    local ready = attributesComponent:GetAttribute("Ready")
+    if not petPowerStateList[petPstID] then
+      petPowerStateList[petPstID] = {}
+    end
+    petPowerStateList[petPstID].petEntityID = e:GetID()
+    petPowerStateList[petPstID].petPstID = petPstID
+    petPowerStateList[petPstID].ready = ready
+    petPowerStateList[petPstID].power = power
+  end
+  local battleStatComponent = self._world:BattleStat()
+  local curRound = battleStatComponent:GetLevelTotalRoundCount()
+  local curWaveIndex = battleStatComponent:GetCurWaveIndex()
+  local lastWaveIndex = curWaveIndex - 1
+  local curWaveRoundHadCastSkillList = battleStatComponent:GetPetDoActiveSkillRecord(petPstID, curRound)
+  if curWaveRoundHadCastSkillList and table.count(curWaveRoundHadCastSkillList) > 0 then
+    local activeSkillID = e:SkillInfo():GetActiveSkillID()
+    local keyStr = "HadSaveSkillGrayWatch" .. "_Round_" .. tostring(curRound) .. "_Skill_" .. tostring(activeSkillID)
+    local buffComponent = e:BuffComponent()
+    buffComponent:SetBuffValue(keyStr, true)
+    battleStatComponent:SetLastDoActiveSkillRound(petPstID, nil)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveSwitchSystem._DoRenderShowSwitch = function(self, TT, waveBoard)
-  -- function num : 0_10
+function WaveSwitchSystem:_DoRenderShowSwitch(TT, waveBoard)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveSwitchSystem._DoRenderTrapState = function(self, TT, calcStateTraps)
-  -- function num : 0_11
+function WaveSwitchSystem:_DoRenderTrapState(TT, calcStateTraps)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveSwitchSystem._DoRenderAddWaveSwitchBuff = function(self, TT)
-  -- function num : 0_12
+function WaveSwitchSystem:_DoRenderAddWaveSwitchBuff(TT)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveSwitchSystem._DoRenderRefreshPetPower = function(self, TT, petPowerStateList)
-  -- function num : 0_13
+function WaveSwitchSystem:_DoRenderRefreshPetPower(TT, petPowerStateList)
 end
-
-

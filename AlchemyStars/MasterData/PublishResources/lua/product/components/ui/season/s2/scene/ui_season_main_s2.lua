@@ -1,140 +1,102 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s2/scene/ui_season_main_s2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMainS2", UIController)
 UISeasonMainS2 = UISeasonMainS2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMainS2.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMainS2:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
-  local module = (GameGlobal.GetModule)(SeasonModule)
+  local module = GameGlobal.GetModule(SeasonModule)
   module:ForceRequestCurSeasonData(TT)
   self._seasonObj = module:GetCurSeasonObj()
   if not self._seasonObj then
     res:SetSucc(false)
-    ;
-    (Log.error)("无法获取到赛季数据")
-    return 
+    Log.error("无法获取到赛季数据")
+    return
   end
   res:SetSucc(true)
-  self._actionPointCpt = (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.ACTION_POINT)
-  self._component = (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
-  self._componentInfo = (self._seasonObj):GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
+  self._actionPointCpt = self._seasonObj:GetComponent(ECCampaignSeasonComponentID.ACTION_POINT)
+  self._component = self._seasonObj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
+  self._componentInfo = self._seasonObj:GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMainS2:OnShow(uiParams)
   self.showTestFuncEntry = true
   self._disableOpenListReasons = {}
   self:InitWidget()
-  ;
-  (self._black):SetActive(false)
-  self._uiModule = (GameGlobal.GetUIModule)(SeasonModule)
-  self._seasonManager = (self._uiModule):SeasonManager()
-  local topBtn = (self.topBtns):SpawnObject("UISeasonTopBtn")
-  local cfg = (Cfg.cfg_season_campaign_client)[(self._seasonObj):GetSeasonID()]
-  local entryVideoFunc = nil
+  self._black:SetActive(false)
+  self._uiModule = GameGlobal.GetUIModule(SeasonModule)
+  self._seasonManager = self._uiModule:SeasonManager()
+  local topBtn = self.topBtns:SpawnObject("UISeasonTopBtn")
+  local cfg = Cfg.cfg_season_campaign_client[self._seasonObj:GetSeasonID()]
+  local entryVideoFunc
   if cfg.EnterVideo then
-    entryVideoFunc = function()
-    -- function num : 0_1_0 , upvalues : self
-    if (self._seasonManager):LockUI() then
-      return 
+    function entryVideoFunc()
+      if self._seasonManager:LockUI() then
+        return
+      end
+      self:_PlayEnterVideo()
+      self:_TryStopPlayer()
     end
-    self:_PlayEnterVideo()
-    self:_TryStopPlayer()
-  end
-
   end
   topBtn:SetData(function()
-    -- function num : 0_1_1 , upvalues : self, _ENV
     self._active = false
-    if (self._component):ComponentIsOpen() then
-      (self._uiModule):ExitSeasonTo(UIStateType.UIS2Main)
+    if self._component:ComponentIsOpen() then
+      self._uiModule:ExitSeasonTo(UIStateType.UIS2Main)
     else
-      ;
-      (self._uiModule):ExitSeasonTo(UIStateType.UIMain)
+      self._uiModule:ExitSeasonTo(UIStateType.UIMain)
     end
-  end
-, function()
-    -- function num : 0_1_2 , upvalues : self, _ENV
+  end, function()
     self._active = false
-    ;
-    (self._uiModule):ExitSeasonTo(UIStateType.UIMain)
-  end
-, function()
-    -- function num : 0_1_3 , upvalues : _ENV, self
-    (Log.info)("隐藏ui")
+    self._uiModule:ExitSeasonTo(UIStateType.UIMain)
+  end, function()
+    Log.info("隐藏ui")
     self:SetShow(false)
     self:_TryStopPlayer()
-  end
-, function()
-    -- function num : 0_1_4 , upvalues : self, _ENV
-    if (self._seasonManager):LockUI() then
-      return 
+  end, function()
+    if self._seasonManager:LockUI() then
+      return
     end
-    ;
-    (UISeasonHelper.ShowSeasonHelperBook)(UISeasonHelperTabIndex.Main)
+    UISeasonHelper.ShowSeasonHelperBook(UISeasonHelperTabIndex.Main)
     self:_TryStopPlayer()
-  end
-, entryVideoFunc)
-  self._ovalArea = (self.ovalAreaPool):SpawnObject("UISeasonMainOvalArea")
-  self._seasonMap = (self.mapAreaPool):SpawnObject("UISeasonMapArea")
-  self._seasonDaily = (self._daily):SpawnObject("UISeasonDaily")
-  ;
-  (self._seasonDaily):SetData(true)
+  end, entryVideoFunc)
+  self._ovalArea = self.ovalAreaPool:SpawnObject("UISeasonMainOvalArea")
+  self._seasonMap = self.mapAreaPool:SpawnObject("UISeasonMapArea")
+  self._seasonDaily = self._daily:SpawnObject("UISeasonDaily")
+  self._seasonDaily:SetData(true)
   self:InitBuffLevelArea()
   self:InitFinalPlotEnterArea()
   self._active = true
-  local cur, ceil = (self._actionPointCpt):GetItemCount()
-  ;
-  (self._pointCount):SetText((string.format)("<color=#ff9d32>%s</color>/%s", cur, ceil))
-  local actionPointID = (self._actionPointCpt):GetItemId()
+  local cur, ceil = self._actionPointCpt:GetItemCount()
+  self._pointCount:SetText(string.format("<color=#ff9d32>%s</color>/%s", cur, ceil))
+  local actionPointID = self._actionPointCpt:GetItemId()
   local atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC97: Confused about usage of register: R9 in 'UnsetPending'
-
-  if (Cfg.cfg_top_tips)[actionPointID] then
-    (self._topTipIcon).sprite = atlas:GetSprite(((Cfg.cfg_top_tips)[actionPointID]).Icon)
+  if Cfg.cfg_top_tips[actionPointID] then
+    self._topTipIcon.sprite = atlas:GetSprite(Cfg.cfg_top_tips[actionPointID].Icon)
   end
   self:SetShow(true)
   self:_SetTaskListNavi()
   self:_SetTaskListBtn()
   self:AttachEvents()
-  self._levelList = (self.levelListPool):SpawnObject("UISeasonMainLevelListS2")
-  ;
-  (self._levelList):SetData(self._seasonObj)
-  local infos = (self._componentInfo).m_pass_mission_info
-  if (UISeasonHelper.CheckEnterVideo)((self._seasonObj):GetSeasonID()) or (table.count)(infos) > 0 then
+  self._levelList = self.levelListPool:SpawnObject("UISeasonMainLevelListS2")
+  self._levelList:SetData(self._seasonObj)
+  local infos = self._componentInfo.m_pass_mission_info
+  if UISeasonHelper.CheckEnterVideo(self._seasonObj:GetSeasonID()) or table.count(infos) > 0 then
     self:AfterPlayEnterVideo(false)
   else
-    ;
-    (UISeasonHelper.AfterShowEnterVideo)((self._seasonObj):GetSeasonID())
-    ;
-    (self._black):SetActive(true)
+    UISeasonHelper.AfterShowEnterVideo(self._seasonObj:GetSeasonID())
+    self._black:SetActive(true)
     self:_PlayEnterVideo(function()
-    -- function num : 0_1_5 , upvalues : self
-    (self._black):SetActive(false)
-    self:AfterPlayEnterVideo(true)
-  end
-)
+      self._black:SetActive(false)
+      self:AfterPlayEnterVideo(true)
+    end)
   end
   self:_ResetCollectionInfo()
   self:_ResetQuestRed()
-  self._modeSwitch = (self._modeSwitchLoader):SpawnObject("UISeasonModeSwitchS2")
-  ;
-  (self._modeSwitch):SetData(self._seasonObj)
-  local mode = ((self._seasonManager):SeasonMapManager()):Mode()
+  self._modeSwitch = self._modeSwitchLoader:SpawnObject("UISeasonModeSwitchS2")
+  self._modeSwitch:SetData(self._seasonObj)
+  local mode = self._seasonManager:SeasonMapManager():Mode()
   self:_OnModeChanged(mode)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.AttachEvents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMainS2:AttachEvents()
   self:AttachEvent(GameEventType.SeasonLeaveToBattle, self.LeaveToBattle)
   self:AttachEvent(GameEventType.SeasonLeaveToMain, self.LeaveToMain)
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
@@ -154,338 +116,239 @@ UISeasonMainS2.AttachEvents = function(self)
   self:AttachEvent(GameEventType.OnSeasonStoryChanged, self._OnSeasonStoryChanged)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.DisableOpenList = function(self, bDisable, reason)
-  -- function num : 0_3
+function UISeasonMainS2:DisableOpenList(bDisable, reason)
   if not self._disableOpenListReasons then
     self._disableOpenListReasons = {}
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._disableOpenListReasons)[reason] = bDisable
+  self._disableOpenListReasons[reason] = bDisable
   self:_TryShowOpenList()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.IsDisableOpenList = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMainS2:IsDisableOpenList()
   if self._disableOpenListReasons then
-    for key,value in pairs(self._disableOpenListReasons) do
+    for key, value in pairs(self._disableOpenListReasons) do
       if value then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.OnAfterUILayerChanged = function(self)
-  -- function num : 0_5
+function UISeasonMainS2:OnAfterUILayerChanged()
   self:_TryShowOpenList()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._TryShowOpenList = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local topui = ((GameGlobal.UIStateManager)()):IsTopUI(self:GetName())
+function UISeasonMainS2:_TryShowOpenList()
+  local topui = GameGlobal.UIStateManager():IsTopUI(self:GetName())
   if topui then
     self:ShowOpenList()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.ShowOpenList = function(self)
-  -- function num : 0_7
+function UISeasonMainS2:ShowOpenList()
   if self:IsDisableOpenList() then
-    return 
+    return
   end
   if self:CheckShowExpressBubbleOnEnter() then
-    return 
+    return
   end
   if self:CheckShowSerialRewards() then
-    return 
+    return
   end
   if self:CheckShowCollectionRewardOnEnter() then
-    return 
+    return
   end
   if self:CheckShowCollectionComposePlotOnEnter() then
-    return 
+    return
   end
   if self:CalcBuffLevelOnEnter() then
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.CheckShowExpressBubbleOnEnter = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local uiSeasonModule = (GameGlobal.GetUIModule)(SeasonModule)
+function UISeasonMainS2:CheckShowExpressBubbleOnEnter()
+  local uiSeasonModule = GameGlobal.GetUIModule(SeasonModule)
   local waitShowBubbles = uiSeasonModule:GetWaitShowBubbleCallbacks()
-  if waitShowBubbles and #waitShowBubbles > 0 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SeasonTryShowEventBubble)
+  if waitShowBubbles and 0 < #waitShowBubbles then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SeasonTryShowEventBubble)
     uiSeasonModule:EraseFirstWaitShowBubbleCallback()
     return true
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_9
+function UISeasonMainS2:OnUIGetItemCloseInQuest(type)
   self:RefreshBuffArea()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.OnUpdate = function(self, dtMS)
-  -- function num : 0_10 , upvalues : _ENV
-  if (IsPc() or IsUnityEditor()) and (((GameGlobal.EngineInput)()).GetKeyDown)((UnityEngine.KeyCode).BackQuote) then
+function UISeasonMainS2:OnUpdate(dtMS)
+  if (IsPc() or IsUnityEditor()) and GameGlobal.EngineInput().GetKeyDown(UnityEngine.KeyCode.BackQuote) then
     self.showTestFuncEntry = not self.showTestFuncEntry
     self:SwitchTestFuncEntry(self.showTestFuncEntry)
   end
-  if not (self._uiModule):InSeasaonRunning() then
-    return 
+  if not self._uiModule:InSeasaonRunning() then
+    return
   end
   if not self._active then
-    return 
+    return
   end
   if self._ovalArea then
-    (self._ovalArea):Update(dtMS)
+    self._ovalArea:Update(dtMS)
   end
   if self._seasonMap then
-    (self._seasonMap):Update(dtMS)
+    self._seasonMap:Update(dtMS)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.OnHide = function(self)
-  -- function num : 0_11
+function UISeasonMainS2:OnHide()
   self._active = false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.InitWidget = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UISeasonMainS2:InitWidget()
   self._animation = self:GetUIComponent("Animation", "SafeArea")
   self.buffLevelGen = self:GetUIComponent("UISelectObjectPath", "BuffLevelArea")
   self.finalPlotEnterGen = self:GetUIComponent("UISelectObjectPath", "FinalPlotEnterArea")
   self.collectionCount = self:GetUIComponent("UILocalizationText", "CollectionCount")
   self.topBtns = self:GetUIComponent("UISelectObjectPath", "TopBtns")
-  do
-    if (EngineGameHelper.IsDevelopmentBuild)() or (HelperProxy:GetInstance()):GetConfig("EnableTestFunc", "false") == "true" then
-      local testFuncPool = self:GetUIComponent("UISelectObjectPath", "TestFunc")
-      if testFuncPool then
-        self._testFunc = testFuncPool:SpawnObject("UISeasonTestFunc")
-      end
+  if EngineGameHelper.IsDevelopmentBuild() or HelperProxy:GetInstance():GetConfig("EnableTestFunc", "false") == "true" then
+    local testFuncPool = self:GetUIComponent("UISelectObjectPath", "TestFunc")
+    if testFuncPool then
+      self._testFunc = testFuncPool:SpawnObject("UISeasonTestFunc")
     end
-    self.levelListPool = self:GetUIComponent("UISelectObjectPath", "LevelList")
-    self.ovalAreaPool = self:GetUIComponent("UISelectObjectPath", "OvalArea")
-    self.mapAreaPool = self:GetUIComponent("UISelectObjectPath", "MapArea")
-    self._levelInfos = self:GetUIComponent("UISelectObjectPath", "LevelInfos")
-    self.root = self:GetGameObject("Root")
-    self.showUI = self:GetGameObject("ShowUI")
-    self._levelBtn = self:GetGameObject("LevelBtn")
-    self._pointCount = self:GetUIComponent("UILocalizationText", "PointCount")
-    self._collageNew = self:GetGameObject("CollageNew")
-    self._questRed = self:GetGameObject("QuestRed")
-    self._topTipIcon = self:GetUIComponent("Image", "TopTipIcon")
-    self._black = self:GetGameObject("Black")
-    self._daily = self:GetUIComponent("UISelectObjectPath", "Daily")
-    self._modeSwitchLoader = self:GetUIComponent("UISelectObjectPath", "ModeSwitch")
-    self._playerIcon = self:GetUIComponent("Image", "PlayerIcon")
-    self.extraStoryBtn = self:GetGameObject("ExtraStory")
+  end
+  self.levelListPool = self:GetUIComponent("UISelectObjectPath", "LevelList")
+  self.ovalAreaPool = self:GetUIComponent("UISelectObjectPath", "OvalArea")
+  self.mapAreaPool = self:GetUIComponent("UISelectObjectPath", "MapArea")
+  self._levelInfos = self:GetUIComponent("UISelectObjectPath", "LevelInfos")
+  self.root = self:GetGameObject("Root")
+  self.showUI = self:GetGameObject("ShowUI")
+  self._levelBtn = self:GetGameObject("LevelBtn")
+  self._pointCount = self:GetUIComponent("UILocalizationText", "PointCount")
+  self._collageNew = self:GetGameObject("CollageNew")
+  self._questRed = self:GetGameObject("QuestRed")
+  self._topTipIcon = self:GetUIComponent("Image", "TopTipIcon")
+  self._black = self:GetGameObject("Black")
+  self._daily = self:GetUIComponent("UISelectObjectPath", "Daily")
+  self._modeSwitchLoader = self:GetUIComponent("UISelectObjectPath", "ModeSwitch")
+  self._playerIcon = self:GetUIComponent("Image", "PlayerIcon")
+  self.extraStoryBtn = self:GetGameObject("ExtraStory")
+end
+
+function UISeasonMainS2:_SetTaskListNavi()
+  local className, prefabName = UISeasonHelper.GetCurSeasonTaskList("Navi")
+  if not string.isnullorempty(className) then
+    local obj = UIWidgetHelper.SpawnObject(self, "TaskListNavi", className, prefabName)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._SetTaskListNavi = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local className, prefabName = (UISeasonHelper.GetCurSeasonTaskList)("Navi")
-  if not (string.isnullorempty)(className) then
-    local obj = (UIWidgetHelper.SpawnObject)(self, "TaskListNavi", className, prefabName)
+function UISeasonMainS2:_SetTaskListBtn()
+  local className, prefabName = UISeasonHelper.GetCurSeasonTaskList("Btn")
+  if not string.isnullorempty(className) then
+    local obj = UIWidgetHelper.SpawnObject(self, "TaskListBtn", className, prefabName)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._SetTaskListBtn = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local className, prefabName = (UISeasonHelper.GetCurSeasonTaskList)("Btn")
-  if not (string.isnullorempty)(className) then
-    local obj = (UIWidgetHelper.SpawnObject)(self, "TaskListBtn", className, prefabName)
-  end
-end
-
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.InitBuffLevelArea = function(self)
-  -- function num : 0_15
-  self._buffLevelArea = (self.buffLevelGen):SpawnObject("UISeasonBuffMainAreaS2")
+function UISeasonMainS2:InitBuffLevelArea()
+  self._buffLevelArea = self.buffLevelGen:SpawnObject("UISeasonBuffMainAreaS2")
   if self._buffLevelArea then
-    (self._buffLevelArea):SetData(self._seasonObj)
+    self._buffLevelArea:SetData(self._seasonObj)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.InitFinalPlotEnterArea = function(self)
-  -- function num : 0_16
+function UISeasonMainS2:InitFinalPlotEnterArea()
   if not self.finalPlotEnterGen then
-    return 
+    return
   end
-  self._finalPlotEnterArea = (self.finalPlotEnterGen):SpawnObject("UISeasonFinalPlotEnter")
+  self._finalPlotEnterArea = self.finalPlotEnterGen:SpawnObject("UISeasonFinalPlotEnter")
   if self._finalPlotEnterArea then
-    (self._finalPlotEnterArea):SetData(self._seasonObj)
+    self._finalPlotEnterArea:SetData(self._seasonObj)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.SwitchTestFuncEntry = function(self, show)
-  -- function num : 0_17
+function UISeasonMainS2:SwitchTestFuncEntry(show)
   if self._testFunc ~= nil then
-    (self._testFunc):Switch(show)
+    self._testFunc:Switch(show)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.SetShow = function(self, show)
-  -- function num : 0_18
-  (self.root):SetActive(show)
-  ;
-  (self.showUI):SetActive(not show)
+function UISeasonMainS2:SetShow(show)
+  self.root:SetActive(show)
+  self.showUI:SetActive(not show)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.PlayerIconOnClick = function(self, go)
-  -- function num : 0_19 , upvalues : _ENV
-  if (self._seasonManager):LockUI() then
-    return 
+function UISeasonMainS2:PlayerIconOnClick(go)
+  if self._seasonManager:LockUI() then
+    return
   end
-  ;
-  ((self._seasonManager):SeasonCameraManager()):SwitchMode(SeasonCameraMode.Follow)
+  self._seasonManager:SeasonCameraManager():SwitchMode(SeasonCameraMode.Follow)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.ArchieveBtnOnClick = function(self, go)
-  -- function num : 0_20 , upvalues : _ENV
-  if (self._seasonManager):LockUI() then
-    return 
+function UISeasonMainS2:ArchieveBtnOnClick(go)
+  if self._seasonManager:LockUI() then
+    return
   end
   self:_TryStopPlayer()
-  ;
-  (UISeasonHelper.ShowCurSeasonQuest)()
+  UISeasonHelper.ShowCurSeasonQuest()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.CollectionBtnOnClick = function(self, go)
-  -- function num : 0_21 , upvalues : _ENV
-  if (self._seasonManager):LockUI() then
-    return 
+function UISeasonMainS2:CollectionBtnOnClick(go)
+  if self._seasonManager:LockUI() then
+    return
   end
   self:_TryStopPlayer()
-  ;
-  (UISeasonHelper.ShowCurSeasonCollage)()
+  UISeasonHelper.ShowCurSeasonCollage()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.TopTipOnClick = function(self, go)
-  -- function num : 0_22
-  if (self._seasonManager):LockUI() then
-    return 
+function UISeasonMainS2:TopTipOnClick(go)
+  if self._seasonManager:LockUI() then
+    return
   end
   self:_TryStopPlayer()
-  self:ShowDialog("UISeasonActionPointTipS2", self._actionPointCpt, (go.transform).anchoredPosition)
+  self:ShowDialog("UISeasonActionPointTipS2", self._actionPointCpt, go.transform.anchoredPosition)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.RefreshBuffArea = function(self)
-  -- function num : 0_23
+function UISeasonMainS2:RefreshBuffArea()
   if self._buffLevelArea then
-    (self._buffLevelArea):RefreshInfo()
+    self._buffLevelArea:RefreshInfo()
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.LeaveToBattle = function(self)
-  -- function num : 0_24
+function UISeasonMainS2:LeaveToBattle()
   self._active = false
-  ;
-  (self._uiModule):ExitSeasonGame()
+  self._uiModule:ExitSeasonGame()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.LeaveToMain = function(self)
-  -- function num : 0_25
+function UISeasonMainS2:LeaveToMain()
   self._active = false
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.ShowUIOnClick = function(self)
-  -- function num : 0_26
+function UISeasonMainS2:ShowUIOnClick()
   self:SetShow(true)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.AfterPlayEnterVideo = function(self, played)
-  -- function num : 0_27 , upvalues : _ENV
-  if (UISeasonHelper.CheckEnterStory)((self._seasonObj):GetSeasonID()) then
+function UISeasonMainS2:AfterPlayEnterVideo(played)
+  if UISeasonHelper.CheckEnterStory(self._seasonObj:GetSeasonID()) then
     self:AfterPlayEnterStory(false)
   else
-    local cfg = (Cfg.cfg_season_campaign_client)[(self._seasonObj):GetSeasonID()]
-    ;
-    (UISeasonHelper.PlayStoryInSeasonScence)(cfg.EnterStory, function()
-    -- function num : 0_27_0 , upvalues : self
-    self:AfterPlayEnterStory(true)
-  end
-)
+    local cfg = Cfg.cfg_season_campaign_client[self._seasonObj:GetSeasonID()]
+    UISeasonHelper.PlayStoryInSeasonScence(cfg.EnterStory, function()
+      self:AfterPlayEnterStory(true)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.AfterPlayEnterStory = function(self, played)
-  -- function num : 0_28 , upvalues : _ENV
+function UISeasonMainS2:AfterPlayEnterStory(played)
   if played then
-    (UISeasonHelper.AfterPlayEnterStory)((self._seasonObj):GetSeasonID())
+    UISeasonHelper.AfterPlayEnterStory(self._seasonObj:GetSeasonID())
   end
   self:_PlayEnterAnim()
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.ShowSerialRewards = function(self)
-  -- function num : 0_29
+function UISeasonMainS2:ShowSerialRewards()
   self._isWaitShowSerialRewards = true
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.CheckShowSerialRewards = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UISeasonMainS2:CheckShowSerialRewards()
   if self._isWaitShowSerialRewards then
     self:ShowDialog("UISerialAutoFightInfo", OpenUISerialFightInfoState.Finished)
     self._isWaitShowSerialRewards = false
@@ -493,261 +356,186 @@ UISeasonMainS2.CheckShowSerialRewards = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.CheckShowCollectionRewardOnEnter = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function UISeasonMainS2:CheckShowCollectionRewardOnEnter()
   local seasonModule = self:GetModule(SeasonModule)
   local waitShowRewards = seasonModule:GetWaitShowCollectionRewards()
-  if waitShowRewards and #waitShowRewards > 0 then
-    local showRewards = {waitShowRewards[1]}
-    ;
-    (UISeasonHelper.ShowUIGetRewards)(showRewards)
+  if waitShowRewards and 0 < #waitShowRewards then
+    local showRewards = {
+      waitShowRewards[1]
+    }
+    UISeasonHelper.ShowUIGetRewards(showRewards)
     seasonModule:EraseFirstWaitShowCollectionRewards()
     return true
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.CalcBuffLevelOnEnter = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function UISeasonMainS2:CalcBuffLevelOnEnter()
   local seasonModule = self:GetModule(SeasonModule)
-  local componentID = (self._seasonObj):GetSeasonMissionComponentCfgID()
-  local curLevel, curProgress = (UISeasonHelper.CalcBuffLevel)(componentID)
+  local componentID = self._seasonObj:GetSeasonMissionComponentCfgID()
+  local curLevel, curProgress = UISeasonHelper.CalcBuffLevel(componentID)
   local oldLevel, oldProgress = seasonModule:GetRecordBuffLevel()
   if oldLevel == -1 then
     seasonModule:RecordBuffLevel(curLevel, curProgress)
-  else
-    if curLevel ~= oldLevel then
-      self:DisableOpenList(true, UISeasonMainDisableOpenListReason.BuffLevelUp)
-      self:ShowDialog("UISeasonBuffLevelUpS2", oldLevel, curLevel, componentID, function()
-    -- function num : 0_32_0 , upvalues : self, _ENV
-    self:DisableOpenList(false, UISeasonMainDisableOpenListReason.BuffLevelUp)
-  end
-)
-      seasonModule:RecordBuffLevel(curLevel, curProgress)
-      return true
-    end
+  elseif curLevel ~= oldLevel then
+    self:DisableOpenList(true, UISeasonMainDisableOpenListReason.BuffLevelUp)
+    self:ShowDialog("UISeasonBuffLevelUpS2", oldLevel, curLevel, componentID, function()
+      self:DisableOpenList(false, UISeasonMainDisableOpenListReason.BuffLevelUp)
+    end)
+    seasonModule:RecordBuffLevel(curLevel, curProgress)
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.CheckShowCollectionComposePlotOnEnter = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function UISeasonMainS2:CheckShowCollectionComposePlotOnEnter()
   if not self.questCmpt then
-    self.questCmpt = (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.QUEST_STORY)
+    self.questCmpt = self._seasonObj:GetComponent(ECCampaignSeasonComponentID.QUEST_STORY)
   end
   if self.questCmpt and self.questCmpt then
-    self._questList = (self.questCmpt):GetQuestInfo()
-    ;
-    ((self.questCmpt):GetCampaignQuestStatus(self._questList))
-    local questStatus = nil
-    do
-      local completedQuest = nil
-      local seasonId = ((self._seasonObj):GetSeasonID())
-      local finalStoryQuestId = nil
-      local seasonClientCfg = (Cfg.cfg_season_campaign_client)[seasonId]
-      if seasonClientCfg then
-        finalStoryQuestId = seasonClientCfg.FinalStoryQuestID
+    self._questList = self.questCmpt:GetQuestInfo()
+    local questStatus = self.questCmpt:GetCampaignQuestStatus(self._questList)
+    local completedQuest
+    local seasonId = self._seasonObj:GetSeasonID()
+    local finalStoryQuestId
+    local seasonClientCfg = Cfg.cfg_season_campaign_client[seasonId]
+    if seasonClientCfg then
+      finalStoryQuestId = seasonClientCfg.FinalStoryQuestID
+    end
+    for quest, v in pairs(questStatus) do
+      if v ~= CampaignQuestStatus.CQS_Completed or finalStoryQuestId and quest._questInfo.quest_id == finalStoryQuestId then
+      else
+        completedQuest = quest
+        break
       end
-      for quest,v in pairs(questStatus) do
-        if v == CampaignQuestStatus.CQS_Completed then
-          if finalStoryQuestId and (quest._questInfo).quest_id == finalStoryQuestId then
-            do
-              completedQuest = quest
-              do break end
-              -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+    end
+    if completedQuest then
+      self:DisableOpenList(true, UISeasonMainDisableOpenListReason.QuestPlot)
+      do
+        local function cb()
+          self:OnCollectionComposePlotEnd(completedQuest)
         end
-      end
-      if completedQuest then
-        self:DisableOpenList(true, UISeasonMainDisableOpenListReason.QuestPlot)
-        local cb = function()
-    -- function num : 0_33_0 , upvalues : self, completedQuest
-    self:OnCollectionComposePlotEnd(completedQuest)
-  end
-
-        local composeStoryID = nil
-        local cfgs = (Cfg.cfg_item_season_collection)({ComposeQuestID = (completedQuest._questInfo).quest_id})
-        do
-          if #cfgs > 0 then
-            local cfg = cfgs[1]
-            composeStoryID = cfg.ComposeStoryID
-          end
-          if composeStoryID then
-            (self._animation):Stop()
-            ;
-            (UISeasonHelper.PlayStoryInSeasonScence)(composeStoryID, cb)
-            return true
-          end
+        
+        local composeStoryID
+        local cfgs = Cfg.cfg_item_season_collection({
+          ComposeQuestID = completedQuest._questInfo.quest_id
+        })
+        if 0 < #cfgs then
+          local cfg = cfgs[1]
+          composeStoryID = cfg.ComposeStoryID
+        end
+        if composeStoryID then
+          self._animation:Stop()
+          UISeasonHelper.PlayStoryInSeasonScence(composeStoryID, cb)
+          return true
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.OnCollectionComposePlotEnd = function(self, completedQuest)
-  -- function num : 0_34 , upvalues : _ENV
+function UISeasonMainS2:OnCollectionComposePlotEnd(completedQuest)
   if not self.questCmpt then
     self:DisableOpenList(false, UISeasonMainDisableOpenListReason.QuestPlot)
-    return 
+    return
   end
-  local questStatus = (self.questCmpt):CheckCampaignQuestStatus(completedQuest._questInfo)
+  local questStatus = self.questCmpt:CheckCampaignQuestStatus(completedQuest._questInfo)
   if questStatus == CampaignQuestStatus.CQS_Completed then
-    (self.questCmpt):Start_HandleQuestTake((completedQuest._questInfo).quest_id, function(res, rewards)
-    -- function num : 0_34_0 , upvalues : self, _ENV
-    if not self.view then
-      return 
-    end
-    if res and res:GetSucc() then
-      (UISeasonHelper.ShowUIGetRewards)(rewards)
-    end
-    self:DisableOpenList(false, UISeasonMainDisableOpenListReason.QuestPlot)
-  end
-)
+    self.questCmpt:Start_HandleQuestTake(completedQuest._questInfo.quest_id, function(res, rewards)
+      if not self.view then
+        return
+      end
+      if res and res:GetSucc() then
+        UISeasonHelper.ShowUIGetRewards(rewards)
+      else
+      end
+      self:DisableOpenList(false, UISeasonMainDisableOpenListReason.QuestPlot)
+    end)
+  else
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._OnGetCollection = function(self)
-  -- function num : 0_35
+function UISeasonMainS2:_OnGetCollection()
   self:_ResetCollectionInfo()
   self:_TryShowOpenList()
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._ResetCollectionInfo = function(self)
-  -- function num : 0_36
-  local data = (self._uiModule):GetCollageData()
+function UISeasonMainS2:_ResetCollectionInfo()
+  local data = self._uiModule:GetCollageData()
   data:FlushAllCollages()
   local count = data:GetCollectionProgress()
-  ;
-  (self.collectionCount):SetText(count)
+  self.collectionCount:SetText(count)
   self:_ResetCollageNew()
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._ResetCollageNew = function(self)
-  -- function num : 0_37
-  local data = (self._uiModule):GetCollageData()
-  ;
-  (self._collageNew):SetActive(data:CollectionHasNew())
+function UISeasonMainS2:_ResetCollageNew()
+  local data = self._uiModule:GetCollageData()
+  self._collageNew:SetActive(data:CollectionHasNew())
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._ResetQuestRed = function(self)
-  -- function num : 0_38 , upvalues : _ENV
-  local cpt = (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.QUEST)
-  ;
-  (self._questRed):SetActive(cpt:HaveRedPoint())
+function UISeasonMainS2:_ResetQuestRed()
+  local cpt = self._seasonObj:GetComponent(ECCampaignSeasonComponentID.QUEST)
+  self._questRed:SetActive(cpt:HaveRedPoint())
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._PlayEnterVideo = function(self, onEnd)
-  -- function num : 0_39 , upvalues : _ENV
-  local seasonAudio = ((self._seasonManager):SeasonAudioManager()):GetSeasonAudio()
+function UISeasonMainS2:_PlayEnterVideo(onEnd)
+  local seasonAudio = self._seasonManager:SeasonAudioManager():GetSeasonAudio()
   seasonAudio:StopSeasonSounds()
-  local cfg = (Cfg.cfg_season_campaign_client)[(self._seasonObj):GetSeasonID()]
-  local leftBg, rightBg = nil, nil
+  local cfg = Cfg.cfg_season_campaign_client[self._seasonObj:GetSeasonID()]
+  local leftBg, rightBg
   if cfg.EnterVideoBG then
-    leftBg = (cfg.EnterVideoBG)[1]
-    rightBg = (cfg.EnterVideoBG)[2]
+    leftBg = cfg.EnterVideoBG[1]
+    rightBg = cfg.EnterVideoBG[2]
   end
   self:ShowDialog("UICriVideoController", cfg.EnterVideo, leftBg, function()
-    -- function num : 0_39_0 , upvalues : seasonAudio, onEnd
     seasonAudio:ResumeSeasonSounds()
     if onEnd then
       onEnd()
     end
-  end
-, rightBg)
+  end, rightBg)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._OnActionPointChanged = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  local cur, ceil = (self._actionPointCpt):GetItemCount()
-  ;
-  (self._pointCount):SetText((string.format)("<color=#ff9d32>%s</color>/%s", cur, ceil))
+function UISeasonMainS2:_OnActionPointChanged()
+  local cur, ceil = self._actionPointCpt:GetItemCount()
+  self._pointCount:SetText(string.format("<color=#ff9d32>%s</color>/%s", cur, ceil))
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._OnAutoFightSweepFinished = function(self)
-  -- function num : 0_41
+function UISeasonMainS2:_OnAutoFightSweepFinished()
   self:_OnActionPointChanged()
   self:_ResetCollectionInfo()
   self:_ResetQuestRed()
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._TryStopPlayer = function(self)
-  -- function num : 0_42
-  (((self._seasonManager):SeasonPlayerManager()):GetPlayer()):Stop(false)
+function UISeasonMainS2:_TryStopPlayer()
+  self._seasonManager:SeasonPlayerManager():GetPlayer():Stop(false)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._PlayEnterAnim = function(self)
-  -- function num : 0_43 , upvalues : _ENV
-  (self._animation):Play("uieffanim_UISeasonMain_in")
-  ;
-  ((self._seasonManager):SeasonCameraManager()):DoEnterAnim()
+function UISeasonMainS2:_PlayEnterAnim()
+  self._animation:Play("uieffanim_UISeasonMain_in")
+  self._seasonManager:SeasonCameraManager():DoEnterAnim()
   self:StartTask(function(TT)
-    -- function num : 0_43_0 , upvalues : _ENV, self
     YIELD(TT, 400)
-    ;
-    ((self._seasonManager):SeasonMapManager()):TryResumeExpress()
+    self._seasonManager:SeasonMapManager():TryResumeExpress()
     self:_CheckExtraStory()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._OnSeasonDailyResetSucc = function(self)
-  -- function num : 0_44
+function UISeasonMainS2:_OnSeasonDailyResetSucc()
   if self._seasonDaily then
-    (self._seasonDaily):SetData()
+    self._seasonDaily:SetData()
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._OnDiffChanged = function(self, curDiff)
-  -- function num : 0_45 , upvalues : _ENV
+function UISeasonMainS2:_OnDiffChanged(curDiff)
   if curDiff == UISeasonLevelDiff.Normal then
     self:_PlayBtmEftOut()
   else
     if curDiff == UISeasonLevelDiff.Hard then
       self:_PlayBtmEftIn()
+    else
     end
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._PlayBtmEft = function(self, isIn)
-  -- function num : 0_46
+function UISeasonMainS2:_PlayBtmEft(isIn)
   if isIn then
     self:_PlayBtmEftIn()
   else
@@ -755,183 +543,126 @@ UISeasonMainS2._PlayBtmEft = function(self, isIn)
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._PlayBtmEftIn = function(self)
-  -- function num : 0_47
+function UISeasonMainS2:_PlayBtmEftIn()
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._PlayBtmEftOut = function(self)
-  -- function num : 0_48
+function UISeasonMainS2:_PlayBtmEftOut()
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.IsPlayAnimation = function(self)
-  -- function num : 0_49
+function UISeasonMainS2:IsPlayAnimation()
   if self._animation then
     local name = "uieffanim_UISeasonMain_in"
-    if (self._animation):IsPlaying(name) then
-      local state = (self._animation):get_Item(name)
+    if self._animation:IsPlaying(name) then
+      local state = self._animation:get_Item(name)
       return true, state.length
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._OnModeChanged = function(self, mode)
-  -- function num : 0_50 , upvalues : _ENV
+function UISeasonMainS2:_OnModeChanged(mode)
   local atlas = self:GetAsset("UIS2Main.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
   if mode == SeasonMapMode.Mode2 then
-    (self._playerIcon).sprite = atlas:GetSprite("exp_s2_map_head03")
-  else
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-    if mode == SeasonMapMode.Mode1 then
-      (self._playerIcon).sprite = atlas:GetSprite("exp_s2_map_head01")
-    end
+    self._playerIcon.sprite = atlas:GetSprite("exp_s2_map_head03")
+  elseif mode == SeasonMapMode.Mode1 then
+    self._playerIcon.sprite = atlas:GetSprite("exp_s2_map_head01")
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._TriggerGuide = function(self)
-  -- function num : 0_51
+function UISeasonMainS2:_TriggerGuide()
   self:_CheckGuide()
   self:_CheckBalanceGuide()
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._CheckGuide = function(self)
-  -- function num : 0_52 , upvalues : _ENV
+function UISeasonMainS2:_CheckGuide()
   if self:_CheckModeValid(SeasonMapMode.Mode2) then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISeasonMainS2)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISeasonMainS2)
   end
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._CheckBalanceGuide = function(self)
-  -- function num : 0_53 , upvalues : _ENV
-  local cfg = (Cfg.cfg_guide_const).guide_season_s2_balance
+function UISeasonMainS2:_CheckBalanceGuide()
+  local cfg = Cfg.cfg_guide_const.guide_season_s2_balance
   if cfg then
-    local id = (cfg.ArrayValue)[1]
-    local progress = (cfg.ArrayValue)[2]
-    if ((self._componentInfo).m_stage_info)[id] and progress <= ((self._componentInfo).m_stage_info)[id] then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.S2BalanceGame)
+    local id = cfg.ArrayValue[1]
+    local progress = cfg.ArrayValue[2]
+    if self._componentInfo.m_stage_info[id] and progress <= self._componentInfo.m_stage_info[id] then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.S2BalanceGame)
     end
   end
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._CheckModeValid = function(self, mode)
-  -- function num : 0_54 , upvalues : _ENV
-  local cfg = (Cfg.cfg_season_map)[(self._seasonObj):GetSeasonID()]
+function UISeasonMainS2:_CheckModeValid(mode)
+  local cfg = Cfg.cfg_season_map[self._seasonObj:GetSeasonID()]
   if not cfg then
-    (Log.exception)("cfg_season_map 中找不到配置:", (self._seasonObj):GetSeasonID())
+    Log.exception("cfg_season_map 中找不到配置:", self._seasonObj:GetSeasonID())
     return false
   end
   if cfg.ModeUnlock == nil or next(cfg.ModeUnlock) == nil then
     return false
   end
-  local condition = (cfg.ModeUnlock)[mode]
-  if (string.isnullorempty)(condition) then
+  local condition = cfg.ModeUnlock[mode]
+  if string.isnullorempty(condition) then
     return true
   end
-  local valid = ((GameGlobal.GetModule)(SeasonModule)):CheckCondition(condition, (self._componentInfo).m_stage_info)
+  local valid = GameGlobal.GetModule(SeasonModule):CheckCondition(condition, self._componentInfo.m_stage_info)
   return valid
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._OnSeasonStoryChanged = function(self, isOpen)
-  -- function num : 0_55 , upvalues : _ENV
+function UISeasonMainS2:_OnSeasonStoryChanged(isOpen)
   self:StartTask(function(TT)
-    -- function num : 0_55_0 , upvalues : isOpen, self, _ENV
     if isOpen then
       self:Lock("uianim_UISeasonMainS2_out02")
-      ;
-      (self._animation):Play("uianim_UISeasonMainS2_out02")
+      self._animation:Play("uianim_UISeasonMainS2_out02")
       YIELD(TT, 367)
       self:UnLock("uianim_UISeasonMainS2_out02")
     else
       self:Lock("uianim_UISeasonMainS2_in02")
-      ;
-      (self._animation):Play("uianim_UISeasonMainS2_in02")
+      self._animation:Play("uianim_UISeasonMainS2_in02")
       YIELD(TT, 1000)
       self:UnLock("uianim_UISeasonMainS2_in02")
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._CheckExtraStory = function(self)
-  -- function num : 0_56 , upvalues : _ENV
+function UISeasonMainS2:_CheckExtraStory()
   local playStory = false
   local canShowBtn = false
-  local seasonID = (self._seasonObj):GetSeasonID()
-  local cfg = (Cfg.cfg_season_campaign_client)[seasonID]
-  local pstID = ((GameGlobal.GetModule)(RoleModule)):GetPstId()
+  local seasonID = self._seasonObj:GetSeasonID()
+  local cfg = Cfg.cfg_season_campaign_client[seasonID]
+  local pstID = GameGlobal.GetModule(RoleModule):GetPstId()
   local key = "S2_ExtraStory_" .. seasonID .. "_" .. pstID
   if cfg.FinalStoryID then
-    local checkTime = ((GameGlobal.GetModule)(LoginModule)):GetTimeStampByTimeStr(cfg.FinalStoryUnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+    local checkTime = GameGlobal.GetModule(LoginModule):GetTimeStampByTimeStr(cfg.FinalStoryUnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
     local timeUp = checkTime < GetSvrTimeNow()
     if timeUp then
-      local questFinish = (UISeasonTaskListHelper.CheckQuestFin)(cfg.FinalStoryQuestID)
+      local questFinish = UISeasonTaskListHelper.CheckQuestFin(cfg.FinalStoryQuestID)
       if questFinish then
         canShowBtn = true
-        local finished = (LocalDB.GetInt)(key, 0) == 1
+        local finished = LocalDB.GetInt(key, 0) == 1
         if not finished then
           playStory = true
         end
       end
     end
   end
-  ;
-  (self.extraStoryBtn):SetActive(canShowBtn)
+  self.extraStoryBtn:SetActive(canShowBtn)
   if playStory then
-    (UISeasonHelper.PlayStoryInSeasonScence)(cfg.FinalStoryID, function()
-    -- function num : 0_56_0 , upvalues : _ENV, key, self
-    (LocalDB.SetInt)(key, 1)
-    self:_AfterExtraStory()
-  end
-)
+    UISeasonHelper.PlayStoryInSeasonScence(cfg.FinalStoryID, function()
+      LocalDB.SetInt(key, 1)
+      self:_AfterExtraStory()
+    end)
   else
     self:_AfterExtraStory()
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2._AfterExtraStory = function(self)
-  -- function num : 0_57
+function UISeasonMainS2:_AfterExtraStory()
   self:_TriggerGuide()
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainS2.ExtraStoryOnClick = function(self)
-  -- function num : 0_58 , upvalues : _ENV
-  local seasonID = (self._seasonObj):GetSeasonID()
-  local cfg = (Cfg.cfg_season_campaign_client)[seasonID]
-  ;
-  (UISeasonHelper.PlayStoryInSeasonScence)(cfg.FinalStoryID, function()
-    -- function num : 0_58_0
-  end
-)
+function UISeasonMainS2:ExtraStoryOnClick()
+  local seasonID = self._seasonObj:GetSeasonID()
+  local cfg = Cfg.cfg_season_campaign_client[seasonID]
+  UISeasonHelper.PlayStoryInSeasonScence(cfg.FinalStoryID, function()
+  end)
 end
-
-

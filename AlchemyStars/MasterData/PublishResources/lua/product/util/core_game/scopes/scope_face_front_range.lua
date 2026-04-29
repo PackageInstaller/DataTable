@@ -1,95 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_face_front_range.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_FaceFrontRange", SkillScopeCalculator_Base)
 SkillScopeCalculator_FaceFrontRange = SkillScopeCalculator_FaceFrontRange
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_FaceFrontRange.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_FaceFrontRange:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local casterPos = centerPos
   local usecasterDir = scopeParam[3] or 0
   local listPosAttack = {}
   local listPosWhole = {}
-  local casterDirList = {Vector2(0, 1), Vector2(0, -1), Vector2(1, 0), Vector2(-1, 0)}
+  local casterDirList = {
+    Vector2(0, 1),
+    Vector2(0, -1),
+    Vector2(1, 0),
+    Vector2(-1, 0)
+  }
   if usecasterDir == 1 then
     casterDirList = {casterDir}
   end
-  for k,dir in pairs(casterDirList) do
-    local curListPosAttack, curListPosWhole = self:_OnCalcFrontRange(scopeParam, bodyArea, casterPos, R23_PC40)
-    ;
-    (table.appendArray)(listPosAttack, curListPosAttack)
-    ;
-    (table.appendArray)(listPosWhole, curListPosWhole)
+  for k, dir in pairs(casterDirList) do
+    local curListPosAttack, curListPosWhole = self:_OnCalcFrontRange(scopeParam, bodyArea, casterPos, dir)
+    table.appendArray(listPosAttack, curListPosAttack)
+    table.appendArray(listPosWhole, curListPosWhole)
   end
   local result = SkillScopeResult:New(SkillScopeType.FaceFrontRange, casterPos, listPosAttack, listPosWhole, nil)
   return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_FaceFrontRange._OnCalcFrontRange = function(self, scopeParam, bodyArea, casterPos, dirVector2)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_FaceFrontRange:_OnCalcFrontRange(scopeParam, bodyArea, casterPos, dirVector2)
   local nCountRow = scopeParam[1]
   local nCountCol = scopeParam[2]
-  local fDirStand45 = (math.sqrt)(2) / 2
-  local nBodyCount = (table.count)(bodyArea)
+  local fDirStand45 = math.sqrt(2) / 2
+  local nBodyCount = table.count(bodyArea)
   local nBodyBig = 1
   if nBodyCount == 4 then
     nBodyBig = 2
-  else
-    if nBodyCount == 9 then
-      nBodyBig = 3
-    end
+  elseif nBodyCount == 9 then
+    nBodyBig = 3
   end
   local dirWork = dirVector2.normalized
   local nLoopRowStart = 0
   local nLoopColStart = 0
   local nLoopRowEnd = 0
   local nLoopColEnd = 0
-  if dirWork.y > 0 and -fDirStand45 <= dirWork.x and dirWork.x <= fDirStand45 then
+  if 0 < dirWork.y and dirWork.x >= -fDirStand45 and fDirStand45 >= dirWork.x then
     nLoopRowStart = self:_ComputeHalfStartPos(nCountRow)
     nLoopColStart = nBodyBig
     nLoopRowEnd = nLoopRowStart + nCountRow
     nLoopColEnd = nLoopColStart + nCountCol
-  else
-    if dirWork.x > 0 and -fDirStand45 <= dirWork.y and dirWork.y <= fDirStand45 then
-      nLoopRowStart = nBodyBig
-      nLoopColStart = self:_ComputeHalfStartPos(nCountRow)
-      nLoopRowEnd = nLoopRowStart + nCountCol
-      nLoopColEnd = nLoopColStart + nCountRow
-    else
-      if dirWork.y < 0 and -fDirStand45 <= dirWork.x and dirWork.x <= fDirStand45 then
-        nLoopRowStart = self:_ComputeHalfStartPos(nCountRow)
-        nLoopColStart = -nCountCol
-        nLoopRowEnd = nLoopRowStart + nCountRow
-        nLoopColEnd = nLoopColStart + nCountCol
-      else
-        if dirWork.x < 0 and -fDirStand45 <= dirWork.y and dirWork.y <= fDirStand45 then
-          nLoopRowStart = -nCountCol
-          nLoopColStart = self:_ComputeHalfStartPos(nCountRow)
-          nLoopRowEnd = nLoopRowStart + nCountCol
-          nLoopColEnd = nLoopColStart + nCountRow
-        end
-      end
-    end
+  elseif 0 < dirWork.x and dirWork.y >= -fDirStand45 and fDirStand45 >= dirWork.y then
+    nLoopRowStart = nBodyBig
+    nLoopColStart = self:_ComputeHalfStartPos(nCountRow)
+    nLoopRowEnd = nLoopRowStart + nCountCol
+    nLoopColEnd = nLoopColStart + nCountRow
+  elseif 0 > dirWork.y and dirWork.x >= -fDirStand45 and fDirStand45 >= dirWork.x then
+    nLoopRowStart = self:_ComputeHalfStartPos(nCountRow)
+    nLoopColStart = -nCountCol
+    nLoopRowEnd = nLoopRowStart + nCountRow
+    nLoopColEnd = nLoopColStart + nCountCol
+  elseif 0 > dirWork.x and dirWork.y >= -fDirStand45 and fDirStand45 >= dirWork.y then
+    nLoopRowStart = -nCountCol
+    nLoopColStart = self:_ComputeHalfStartPos(nCountRow)
+    nLoopRowEnd = nLoopRowStart + nCountCol
+    nLoopColEnd = nLoopColStart + nCountRow
   end
   local listPosWhole = {}
   local listPosAttack = {}
   for i = nLoopRowStart, nLoopRowEnd - 1 do
     for j = nLoopColStart, nLoopColEnd - 1 do
-      local posWork = casterPos + (Vector2.New)(i, j)
-      if (self._gridFilter):IsValidPiecePos(posWork) then
-        (table.insert)(listPosAttack, posWork)
+      local posWork = casterPos + Vector2.New(i, j)
+      if self._gridFilter:IsValidPiecePos(posWork) then
+        table.insert(listPosAttack, posWork)
       end
-      ;
-      (table.insert)(listPosWhole, posWork)
+      table.insert(listPosWhole, posWork)
     end
   end
   return listPosAttack, listPosWhole
 end
-
-

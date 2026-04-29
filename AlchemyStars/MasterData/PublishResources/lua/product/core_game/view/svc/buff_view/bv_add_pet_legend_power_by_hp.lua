@@ -1,31 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_add_pet_legend_power_by_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddPetLegendPowerByHP", BuffViewBase)
 BuffViewAddPetLegendPowerByHP = BuffViewAddPetLegendPowerByHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddPetLegendPowerByHP.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewAddPetLegendPowerByHP:PlayView(TT)
   local result = self._buffResult
   local petPstID = result:GetPetPstID()
   local curPower = result:GetCurrentPower()
   local isReady = result:IsSkillReady()
   local previouslyReady = result:IsPreviouslyReady()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetLegendPowerChange, petPstID, curPower, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PetLegendPowerChange, petPstID, curPower, true)
   if isReady then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, isReady, previouslyReady)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, isReady, previouslyReady)
   end
   local entityID = result:GetPetEntityID()
   local requireNTPowerReady = result:IsNTPowerReadyRequired()
   if requireNTPowerReady then
-    local notify = NTPowerReady:New((self._world):GetEntityByID(entityID))
-    ;
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, notify)
+    local notify = NTPowerReady:New(self._world:GetEntityByID(entityID))
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, notify)
   end
 end
-
-

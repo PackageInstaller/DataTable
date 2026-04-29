@@ -1,37 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/common/ui_item_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIItemTips", UIController)
 UIItemTips = UIItemTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIItemTips.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mRole = (GameGlobal.GetModule)(RoleModule)
+function UIItemTips:Constructor()
+  self.mRole = GameGlobal.GetModule(RoleModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemTips.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIItemTips:OnShow(uiParams)
   self.ra = uiParams[1]
   self.go = uiParams[2]
   self.uiName = uiParams[3]
-  self.uiCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self.uiName)
+  self.uiCamera = GameGlobal.UIStateManager():GetControllerCamera(self.uiName)
   self.bg = self:GetGameObject("bg")
-  local passEvent = (self.bg):GetComponent("PassEventComponent")
+  local passEvent = self.bg:GetComponent("PassEventComponent")
   passEvent:SetClickCallback(function()
-    -- function num : 0_1_0 , upvalues : self
     self:closeOnClick()
-  end
-)
-  self.black_mask = (((((self:GetGameObject()).transform).parent).parent):Find("BGMaskCanvas/black_mask")):GetComponent(typeof((UnityEngine.UI).Image))
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.black_mask).raycastTarget = false
+  end)
+  self.black_mask = self:GetGameObject().transform.parent.parent:Find("BGMaskCanvas/black_mask"):GetComponent(typeof(UnityEngine.UI.Image))
+  self.black_mask.raycastTarget = false
   self.rect = self:GetUIComponent("RectTransform", "rect")
   self.itemPool = self:GetUIComponent("UISelectObjectPath", "itemPool")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
@@ -40,49 +25,33 @@ UIItemTips.OnShow = function(self, uiParams)
   self:FlushPos()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemTips.OnHide = function(self)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.black_mask).raycastTarget = true
+function UIItemTips:OnHide()
+  self.black_mask.raycastTarget = true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemTips.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local tpl = (Cfg.cfg_item)[(self.ra).assetid]
-  local ui = (self.itemPool):SpawnObject("UIItem")
+function UIItemTips:Flush()
+  local tpl = Cfg.cfg_item[self.ra.assetid]
+  local ui = self.itemPool:SpawnObject("UIItem")
   ui:SetForm(UIItemForm.Base)
-  ui:SetData({text1 = (self.ra).count, icon = tpl.Icon, itemId = tpl.ID, quality = tpl.Color})
-  ;
-  (self.txtName):SetText((StringTable.Get)(tpl.Name))
-  ;
-  (self.txtDesc):SetText((StringTable.Get)(tpl.Intro))
+  ui:SetData({
+    text1 = self.ra.count,
+    icon = tpl.Icon,
+    itemId = tpl.ID,
+    quality = tpl.Color
+  })
+  self.txtName:SetText(StringTable.Get(tpl.Name))
+  self.txtDesc:SetText(StringTable.Get(tpl.Intro))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemTips.FlushPos = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIItemTips:FlushPos()
   if self.go then
-    local posScreen = (self.uiCamera):WorldToScreenPoint(((self.go).transform).position)
-    local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-    local res, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)((self.rect).parent, posScreen, camera, nil)
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.rect).anchoredPosition = pos
+    local posScreen = self.uiCamera:WorldToScreenPoint(self.go.transform.position)
+    local camera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+    local res, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self.rect.parent, posScreen, camera, nil)
+    self.rect.anchoredPosition = pos
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemTips.closeOnClick = function(self)
-  -- function num : 0_5
+function UIItemTips:closeOnClick()
   self:CloseDialog()
 end
-
-

@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_add_blood_over_flow.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParam_AddBloodOverFlow", SkillEffectParamBase)
 SkillEffectParam_AddBloodOverFlow = SkillEffectParam_AddBloodOverFlow
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_AddBloodOverFlow.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_AddBloodOverFlow:Constructor(t)
   self._addBlood = t.addBlood
   self._summonTrap = t.summonTrap
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_AddBloodOverFlow.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_AddBloodOverFlow:GetEffectType()
   return SkillEffectType.AddBloodOverFlow
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_AddBloodOverFlow.GetAddBlood = function(self)
-  -- function num : 0_2
+function SkillEffectParam_AddBloodOverFlow:GetAddBlood()
   return self._addBlood
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_AddBloodOverFlow.GetSummonTrap = function(self)
-  -- function num : 0_3
+function SkillEffectParam_AddBloodOverFlow:GetSummonTrap()
   return self._summonTrap
 end
-
-

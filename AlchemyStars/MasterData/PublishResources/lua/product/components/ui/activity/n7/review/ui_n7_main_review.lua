@@ -1,51 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/review/ui_n7_main_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN7MainReview", UIController)
 UIN7MainReview = UIN7MainReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN7MainReview.Constructor = function(self, ui_root_transform)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN7DataReview()
+function UIN7MainReview:Constructor(ui_root_transform)
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN7DataReview()
   self.CampaignTypeN7Review = ECampaignType.CAMPAIGN_TYPE_REVIEW_N7
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
-  (self.data):RequestCampaign(TT, self.CampaignTypeN7Review, res)
+function UIN7MainReview:LoadDataOnEnter(TT, res, uiParams)
+  self.data:RequestCampaign(TT, self.CampaignTypeN7Review, res)
   if res and not res:GetSucc() then
-    (self.mCampaign):CheckErrorCode(res.m_result, (self.mCampaign)._id, nil, nil)
-    return 
+    self.mCampaign:CheckErrorCode(res.m_result, self.mCampaign._id, nil, nil)
+    return
   end
-  ;
-  (self.data):Init()
+  self.data:Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN7MainReview:OnShow(uiParams)
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_2_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.CloseCoro, self)
-  end
-, nil, nil, false, function()
-    -- function num : 0_2_1 , upvalues : self
+  self._backBtn:SetData(function()
+    GameGlobal.TaskManager():StartTask(self.CloseCoro, self)
+  end, nil, nil, false, function()
     self:ShowHideUi(false)
-  end
-)
+  end)
   self._showBtn = self:GetGameObject("ShowBtn")
-  ;
-  (self._showBtn):SetActive(false)
+  self._showBtn:SetActive(false)
   self.ui = self:GetGameObject("ui")
   self._levelRed = self:GetGameObject("LevelRed")
   self.ImgIcon = self:GetUIComponent("RawImageLoader", "ImgIcon")
@@ -57,313 +37,211 @@ UIN7MainReview.OnShow = function(self, uiParams)
   self.goBtnGot = self:GetGameObject("BtnGot")
   self.shot = self:GetUIComponent("RawImage", "RawImage")
   self.imgRT = uiParams[1]
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R3 in 'UnsetPending'
-
   if self.imgRT then
-    (self.shot).color = Color.white
-    -- DECOMPILER ERROR at PC79: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.shot).texture = self.imgRT
+    self.shot.color = Color.white
+    self.shot.texture = self.imgRT
   else
-    -- DECOMPILER ERROR at PC84: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.shot).color = Color.black
+    self.shot.color = Color.black
   end
   self:AttachEvent(GameEventType.ActivityN7MainRefresh, self.RequestAndRefresh)
   self:AttachEvent(GameEventType.SummerTwoLoginRed, self.FlushRed)
   self:Flush()
   self:CheckGuide()
-  ;
-  (CutsceneManager.ExcuteCutsceneOut)()
+  CutsceneManager.ExcuteCutsceneOut()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.ImgIcon):DestoryLastImage()
+function UIN7MainReview:OnHide()
+  self.ImgIcon:DestoryLastImage()
   self:DetachEvent(GameEventType.ActivityN7MainRefresh, self.RequestAndRefresh)
   self:DetachEvent(GameEventType.SummerTwoLoginRed, self.FlushRed)
   if self.imgRT then
-    (self.imgRT):Release()
+    self.imgRT:Release()
     self.imgRT = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.RequestAndRefresh = function(self)
-  -- function num : 0_4
+function UIN7MainReview:RequestAndRefresh()
   self:StartTask(self.RequestData, self, function()
-    -- function num : 0_4_0 , upvalues : self
     self:Flush()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.RequestData = function(self, TT, callback)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN7MainReview:RequestData(TT, callback)
   self:Lock("UIActivityN7MainController_RequestData")
   local checkList = {}
   checkList[#checkList + 1] = RedDotType.RDT_SHADOW_TOWN
   checkList[#checkList + 1] = RedDotType.RDT_BLACKFIST_PRESTIGE
   checkList[#checkList + 1] = RedDotType.RDT_BLACKFIST_FUNCTION
-  self._redStatus = (self._redDotModule):RequestRedDotStatus(TT, checkList)
+  self._redStatus = self._redDotModule:RequestRedDotStatus(TT, checkList)
   if callback then
     callback()
   end
   self:UnLock("UIActivityN7MainController_RequestData")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.CloseCoro = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN7MainReview:CloseCoro(TT)
   self:Lock("UIActivityN7MainController_CloseCoro")
   self:SwitchState(UIStateType.UIActivityReview)
   self:UnLock("UIActivityN7MainController_CloseCoro")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.Flush = function(self)
-  -- function num : 0_7
+function UIN7MainReview:Flush()
   self:FlushRed()
   self:FlushProgress()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.FlushRed = function(self)
-  -- function num : 0_8
-  (self._levelRed):SetActive((self.data):CheckRedNormal())
+function UIN7MainReview:FlushRed()
+  self._levelRed:SetActive(self.data:CheckRedNormal())
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.FlushProgress = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local percent = (self.data):GetCurProgressPercent()
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.sldProgress).value = percent
-  ;
-  (self.txtProgress):SetText((math.floor)(percent * 100) .. "%")
-  local progressCanGet = (self.data):GetProgressCanGet()
-  ;
-  (self.goBtnGot):SetActive(false)
-  ;
-  (self.goBtnCanGet):SetActive(false)
-  ;
-  (self.goBtnNot):SetActive(false)
+function UIN7MainReview:FlushProgress()
+  local percent = self.data:GetCurProgressPercent()
+  self.sldProgress.value = percent
+  self.txtProgress:SetText(math.floor(percent * 100) .. "%")
+  local progressCanGet = self.data:GetProgressCanGet()
+  self.goBtnGot:SetActive(false)
+  self.goBtnCanGet:SetActive(false)
+  self.goBtnNot:SetActive(false)
   local icon, name, desc = "", "", ""
   if progressCanGet then
-    (self.goBtnCanGet):SetActive(true)
-    icon = progressCanGet:IconNameDesc()
+    self.goBtnCanGet:SetActive(true)
+    icon, name, desc = progressCanGet:IconNameDesc()
   else
-    local progressNext = (self.data):GetProgressNext()
+    local progressNext = self.data:GetProgressNext()
     if progressNext then
-      (self.goBtnNot):SetActive(true)
-      -- DECOMPILER ERROR at PC55: Overwrote pending register: R5 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC56: Overwrote pending register: R4 in 'AssignReg'
-
-      icon = progressNext:IconNameDesc()
+      self.goBtnNot:SetActive(true)
+      icon, name, desc = progressNext:IconNameDesc()
     else
-      ;
-      (self.goBtnGot):SetActive(true)
-      local len = (table.count)((self.data).progresses)
-      local lastProgress = ((self.data).progresses)[len]
-      -- DECOMPILER ERROR at PC73: Overwrote pending register: R5 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC74: Overwrote pending register: R4 in 'AssignReg'
-
-      icon = lastProgress:IconNameDesc()
+      self.goBtnGot:SetActive(true)
+      local len = table.count(self.data.progresses)
+      local lastProgress = self.data.progresses[len]
+      icon, name, desc = lastProgress:IconNameDesc()
     end
   end
-  do
-    ;
-    (self.ImgIcon):LoadImage(icon)
-    self:FlushAwards()
-  end
+  self.ImgIcon:LoadImage(icon)
+  self:FlushAwards()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.FlushAwards = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local percent = (self.data):GetCurProgressPercent()
+function UIN7MainReview:FlushAwards()
+  local percent = self.data:GetCurProgressPercent()
   local nextIndex = 0
-  for i,progress in pairs((self.data).progresses) do
+  for i, progress in pairs(self.data.progresses) do
     if percent * 100 < progress.progress then
       nextIndex = i
       break
     end
   end
-  do
-    local len = #(self.data).progresses
-    ;
-    (self.poolAward):SpawnObjects("UIN7MainAwardItemReview", len)
-    local uis = (self.poolAward):GetAllSpawnList()
-    for i,progress in pairs((self.data).progresses) do
-      local ui = uis[i]
-      local isReach = false
-      if progress.progress <= percent * 100 then
-        isReach = true
-      end
-      ui:Flush(isReach, nextIndex == i, (self.data):CheckGot(progress.progress))
+  local len = #self.data.progresses
+  self.poolAward:SpawnObjects("UIN7MainAwardItemReview", len)
+  local uis = self.poolAward:GetAllSpawnList()
+  for i, progress in pairs(self.data.progresses) do
+    local ui = uis[i]
+    local isReach = false
+    if progress.progress <= percent * 100 then
+      isReach = true
     end
-    self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : _ENV, uis
-    for i,ui in ipairs(uis) do
+    ui:Flush(isReach, nextIndex == i, self.data:CheckGot(progress.progress))
+  end
+  self:StartTask(function(TT)
+    for i, ui in ipairs(uis) do
       ui:PlayAnim()
       YIELD(TT, 40)
     end
-  end
-, self)
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
+  end, self)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.CheckGuide = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN7MainReview)
+function UIN7MainReview:CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN7MainReview)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.ShowHideUi = function(self, isShow)
-  -- function num : 0_12
-  (self._showBtn):SetActive(not isShow)
-  ;
-  (self.ui):SetActive(isShow)
+function UIN7MainReview:ShowHideUi(isShow)
+  self._showBtn:SetActive(not isShow)
+  self.ui:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.ShowBtnOnClick = function(self)
-  -- function num : 0_13
+function UIN7MainReview:ShowBtnOnClick()
   self:ShowHideUi(true)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.LevelBtnOnClick = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local cType, cId = (self.data):GetCampaignTypeId()
-  ;
-  (self.mCampaign):CampaignSwitchState(true, UIStateType.UIN7LevelReview, UIStateType.UIMain, nil, cId)
+function UIN7MainReview:LevelBtnOnClick()
+  local cType, cId = self.data:GetCampaignTypeId()
+  self.mCampaign:CampaignSwitchState(true, UIStateType.UIN7LevelReview, UIStateType.UIMain, nil, cId)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.BlackFightAwardBtnOnClick = function(self)
-  -- function num : 0_15
+function UIN7MainReview:BlackFightAwardBtnOnClick()
   self:ShowDialog("UIBlackFightPaperReview")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.BtnAwardIntroOnClick = function(self)
-  -- function num : 0_16
+function UIN7MainReview:BtnAwardIntroOnClick()
   self:ShowDialog("UIN7AwardProgressReview")
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.BtnCanGetOnClick = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local progressCanGet = (self.data):GetProgressCanGet()
+function UIN7MainReview:BtnCanGetOnClick()
+  local progressCanGet = self.data:GetProgressCanGet()
   if not progressCanGet then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_17_0 , upvalues : self, _ENV, progressCanGet
     local key = "UIN7AwardProgressReviewImgCanGetOnClick"
     self:Lock(key)
-    local c = (self.data):GetComponentProgress()
+    local c = self.data:GetComponentProgress()
     local res = AsyncRequestRes:New()
     c:HandleReceiveReward(TT, res, progressCanGet.progress)
-    if (N7DataReview.CheckCode)(res) then
+    if N7DataReview.CheckCode(res) then
       self:ShowUIGetItemController(progressCanGet.awards)
       self:Flush()
     end
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.ShowUIGetItemController = function(self, rewards)
-  -- function num : 0_18 , upvalues : _ENV
+function UIN7MainReview:ShowUIGetItemController(rewards)
   if not rewards then
-    return 
+    return
   end
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
   local tempPets = {}
-  if #rewards > 0 then
+  if 0 < #rewards then
     for i = 1, #rewards do
-      local ispet = (self._petModule):IsPetID((rewards[i]).assetid)
+      local ispet = self._petModule:IsPetID(rewards[i].assetid)
       if ispet then
-        (table.insert)(tempPets, rewards[i])
+        table.insert(tempPets, rewards[i])
       end
     end
   end
-  do
-    local cbFunc = function()
-    -- function num : 0_18_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
+  
+  local function cbFunc()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
   end
-
-    if #tempPets > 0 then
-      self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_18_1 , upvalues : _ENV, self, rewards, cbFunc
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", rewards, cbFunc)
-  end
-)
-    else
+  
+  if 0 < #tempPets then
+    self:ShowDialog("UIPetObtain", tempPets, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
       self:ShowDialog("UIGetItemController", rewards, cbFunc)
-    end
+    end)
+  else
+    self:ShowDialog("UIGetItemController", rewards, cbFunc)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.ImgIconOnClick = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local ra = nil
-  local progressCanGet = (self.data):GetProgressCanGet()
+function UIN7MainReview:ImgIconOnClick()
+  local ra
+  local progressCanGet = self.data:GetProgressCanGet()
   if progressCanGet then
     ra = progressCanGet:Get1stAward()
   else
-    local progressNext = (self.data):GetProgressNext()
+    local progressNext = self.data:GetProgressNext()
     if progressNext then
       ra = progressNext:Get1stAward()
     else
-      local len = (table.count)((self.data).progresses)
-      local lastProgress = ((self.data).progresses)[len]
+      local len = table.count(self.data.progresses)
+      local lastProgress = self.data.progresses[len]
       ra = lastProgress:Get1stAward()
     end
   end
-  do
-    self:ShowDialog("UIItemTips", ra, (self.ImgIcon).gameObject, "UIN7MainReview", Vector2(400, 150))
-  end
+  self:ShowDialog("UIItemTips", ra, self.ImgIcon.gameObject, "UIN7MainReview", Vector2(400, 150))
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainReview.BtnOnClick = function(self)
-  -- function num : 0_20
+function UIN7MainReview:BtnOnClick()
   self:ShowDialog("UIN7AwardProgressReview")
 end
-
-

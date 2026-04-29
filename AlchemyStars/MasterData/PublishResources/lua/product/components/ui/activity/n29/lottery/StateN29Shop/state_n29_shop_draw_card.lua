@@ -1,55 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/lottery/StateN29Shop/state_n29_shop_draw_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateN29ShopDrawCard", StateN29ShopBase)
 StateN29ShopDrawCard = StateN29ShopDrawCard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateN29ShopDrawCard.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function StateN29ShopDrawCard:OnEnter(TT, ...)
   self:Init()
-  ;
-  (self._uiModule):LockAchievementFinishPanel(true)
+  self._uiModule:LockAchievementFinishPanel(true)
   self.lockKey = "UIN29ShopDoDraw"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(self.lockKey)
-  local lotteryType = (table.unpack)({...})
+  GameGlobal.UIStateManager():Lock(self.lockKey)
+  local lotteryType = table.unpack({
+    ...
+  })
   self:DoDraw(TT, lotteryType)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopDrawCard.OnExit = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):UnLock(self.lockKey)
+function StateN29ShopDrawCard:OnExit(TT)
+  GameGlobal.UIStateManager():UnLock(self.lockKey)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopDrawCard.DoDraw = function(self, TT, lotteryType)
-  -- function num : 0_2 , upvalues : _ENV
+function StateN29ShopDrawCard:DoDraw(TT, lotteryType)
   local res = AsyncRequestRes:New()
   local getRewards, isOpenNew = self:_SendDrawReq(TT, res, self:CurPageIndex(), lotteryType)
-  if (UIN29ShopData.CheckCode)(res) then
-    (self.ui):_RecordRewardsInfo(getRewards, lotteryType, nil, isOpenNew, nil)
+  if UIN29ShopData.CheckCode(res) then
+    self.ui:_RecordRewardsInfo(getRewards, lotteryType, nil, isOpenNew, nil)
     self:ChangeState(StateN29Shop.SpineAnim, lotteryType)
   else
     self:ChangeState(StateN29Shop.Init)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopDrawCard._SendDrawReq = function(self, TT, res, boxIndex, lotteryType)
-  -- function num : 0_3
-  local cLottery = (self.data):GetComponentShop()
+function StateN29ShopDrawCard:_SendDrawReq(TT, res, boxIndex, lotteryType)
+  local cLottery = self.data:GetComponentShop()
   if cLottery then
     return cLottery:HandleLottery(TT, res, boxIndex, lotteryType)
   end
   res:SetSucc(false)
   return nil
 end
-
-

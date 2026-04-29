@@ -1,44 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/common/ui_s_maze_room_leave_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISMazeRoomLeaveBtn", UICustomWidget)
 UISMazeRoomLeaveBtn = UISMazeRoomLeaveBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISMazeRoomLeaveBtn.Constructor = function(self)
-  -- function num : 0_0
+function UISMazeRoomLeaveBtn:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeRoomLeaveBtn.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISMazeRoomLeaveBtn:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeRoomLeaveBtn.SetData = function(self, callback)
-  -- function num : 0_2
+function UISMazeRoomLeaveBtn:SetData(callback)
   self.callback = callback
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeRoomLeaveBtn.OnHide = function(self)
-  -- function num : 0_3
+function UISMazeRoomLeaveBtn:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISMazeRoomLeaveBtn.ButtonBackOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UISMazeRoomLeaveBtn:ButtonBackOnClick(go)
   if self.callback then
-    (self.callback)()
+    self.callback()
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCancel)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCancel)
 end
-
-

@@ -1,31 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/date/main/ui_activity_n33_date_main_filter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33DateMainFilter", UICustomWidget)
 UIActivityN33DateMainFilter = UIActivityN33DateMainFilter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN33DateMainFilter.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN33DateMainFilter:Constructor()
   self._type = nil
-  self._sliderPos = {Vector2(-154, -31), Vector2(0, -31), Vector2(154, -31)}
+  self._sliderPos = {
+    Vector2(-154, -31),
+    Vector2(0, -31),
+    Vector2(154, -31)
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainFilter.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN33DateMainFilter:OnShow()
   self:AttachEvent(GameEventType.OnN33FindPet, self.OnN33FindPet)
   self:_GetComponent()
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainFilter._GetComponent = function(self)
-  -- function num : 0_2
+function UIActivityN33DateMainFilter:_GetComponent()
   self._sliderIcon = self:GetUIComponent("RectTransform", "sliderIcon")
   self._anim = self:GetUIComponent("Animation", "anim")
   self._allSelectObj = self:GetGameObject("allSelect")
@@ -33,157 +24,93 @@ UIActivityN33DateMainFilter._GetComponent = function(self)
   self._buildSelectObj = self:GetGameObject("buildSelect")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainFilter._Init = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN33DateMainFilter:_Init()
   self._type = UIActivityN33DateMainFilterType.All
-  ;
-  (self._allSelectObj):SetActive(true)
-  ;
-  (self._petSelectObj):SetActive(false)
-  ;
-  (self._buildSelectObj):SetActive(false)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._sliderIcon).anchoredPosition = (self._sliderPos)[UIActivityN33DateMainFilterType.All]
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnDateFilterClick, self._type)
+  self._allSelectObj:SetActive(true)
+  self._petSelectObj:SetActive(false)
+  self._buildSelectObj:SetActive(false)
+  self._sliderIcon.anchoredPosition = self._sliderPos[UIActivityN33DateMainFilterType.All]
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnDateFilterClick, self._type)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainFilter.OnN33FindPet = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN33DateMainFilter:OnN33FindPet()
   self._type = UIActivityN33DateMainFilterType.All
-  ;
-  (self._allSelectObj):SetActive(true)
-  ;
-  (self._petSelectObj):SetActive(false)
-  ;
-  (self._buildSelectObj):SetActive(false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnDateFilterClick, self._type)
+  self._allSelectObj:SetActive(true)
+  self._petSelectObj:SetActive(false)
+  self._buildSelectObj:SetActive(false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnDateFilterClick, self._type)
   self:_PlayFilterAnim(UIActivityN33DateMainFilterType.All)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainFilter.FilterAll = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN33DateMainFilter:FilterAll()
   if self._type == UIActivityN33DateMainFilterType.All then
-    return 
+    return
   end
   self._type = UIActivityN33DateMainFilterType.All
-  ;
-  (self._allSelectObj):SetActive(true)
-  ;
-  (self._petSelectObj):SetActive(false)
-  ;
-  (self._buildSelectObj):SetActive(false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnDateFilterClick, self._type)
+  self._allSelectObj:SetActive(true)
+  self._petSelectObj:SetActive(false)
+  self._buildSelectObj:SetActive(false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnDateFilterClick, self._type)
   self:_PlayFilterAnim(UIActivityN33DateMainFilterType.All)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainFilter.LeftFilterBtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN33DateMainFilter:LeftFilterBtnOnClick()
   if self._type == UIActivityN33DateMainFilterType.All then
     self:_PlayFilterAnim(UIActivityN33DateMainFilterType.All)
-  else
-    if self._type == UIActivityN33DateMainFilterType.Pet then
-      self._type = UIActivityN33DateMainFilterType.Build
-      ;
-      (self._allSelectObj):SetActive(false)
-      ;
-      (self._petSelectObj):SetActive(false)
-      ;
-      (self._buildSelectObj):SetActive(true)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnDateFilterClick, self._type)
-      self:_PlayFilterAnim(UIActivityN33DateMainFilterType.Build)
-    else
-      if self._type == UIActivityN33DateMainFilterType.Build then
-        self._type = UIActivityN33DateMainFilterType.All
-        ;
-        (self._allSelectObj):SetActive(true)
-        ;
-        (self._petSelectObj):SetActive(false)
-        ;
-        (self._buildSelectObj):SetActive(false)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnDateFilterClick, self._type)
-        self:_PlayFilterAnim(UIActivityN33DateMainFilterType.All)
-      end
-    end
+  elseif self._type == UIActivityN33DateMainFilterType.Pet then
+    self._type = UIActivityN33DateMainFilterType.Build
+    self._allSelectObj:SetActive(false)
+    self._petSelectObj:SetActive(false)
+    self._buildSelectObj:SetActive(true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnDateFilterClick, self._type)
+    self:_PlayFilterAnim(UIActivityN33DateMainFilterType.Build)
+  elseif self._type == UIActivityN33DateMainFilterType.Build then
+    self._type = UIActivityN33DateMainFilterType.All
+    self._allSelectObj:SetActive(true)
+    self._petSelectObj:SetActive(false)
+    self._buildSelectObj:SetActive(false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnDateFilterClick, self._type)
+    self:_PlayFilterAnim(UIActivityN33DateMainFilterType.All)
   end
-  -- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._sliderIcon).anchoredPosition = (self._sliderPos)[self._type]
+  self._sliderIcon.anchoredPosition = self._sliderPos[self._type]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainFilter.RightFilterBtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityN33DateMainFilter:RightFilterBtnOnClick()
   if self._type == UIActivityN33DateMainFilterType.All then
     self._type = UIActivityN33DateMainFilterType.Build
-    ;
-    (self._allSelectObj):SetActive(false)
-    ;
-    (self._petSelectObj):SetActive(false)
-    ;
-    (self._buildSelectObj):SetActive(true)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnDateFilterClick, self._type)
+    self._allSelectObj:SetActive(false)
+    self._petSelectObj:SetActive(false)
+    self._buildSelectObj:SetActive(true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnDateFilterClick, self._type)
     self:_PlayFilterAnim(UIActivityN33DateMainFilterType.Build)
-  else
-    if self._type == UIActivityN33DateMainFilterType.Pet then
-      self:_PlayFilterAnim(UIActivityN33DateMainFilterType.Pet)
-    else
-      if self._type == UIActivityN33DateMainFilterType.Build then
-        self._type = UIActivityN33DateMainFilterType.Pet
-        ;
-        (self._allSelectObj):SetActive(false)
-        ;
-        (self._petSelectObj):SetActive(true)
-        ;
-        (self._buildSelectObj):SetActive(false)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnDateFilterClick, self._type)
-        self:_PlayFilterAnim(UIActivityN33DateMainFilterType.Pet)
-      end
-    end
+  elseif self._type == UIActivityN33DateMainFilterType.Pet then
+    self:_PlayFilterAnim(UIActivityN33DateMainFilterType.Pet)
+  elseif self._type == UIActivityN33DateMainFilterType.Build then
+    self._type = UIActivityN33DateMainFilterType.Pet
+    self._allSelectObj:SetActive(false)
+    self._petSelectObj:SetActive(true)
+    self._buildSelectObj:SetActive(false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnDateFilterClick, self._type)
+    self:_PlayFilterAnim(UIActivityN33DateMainFilterType.Pet)
   end
-  -- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._sliderIcon).anchoredPosition = (self._sliderPos)[self._type]
+  self._sliderIcon.anchoredPosition = self._sliderPos[self._type]
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainFilter._PlayFilterAnim = function(self, type)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN33DateMainFilter:_PlayFilterAnim(type)
   self:Lock("UIActivityN33DateMainFilter_PlayFilterAnim")
   if type == UIActivityN33DateMainFilterType.All then
-    (self._anim):Play("uieffanim_UIActivityN33DateMainFilter_01")
-  else
-    if type == UIActivityN33DateMainFilterType.Pet then
-      (self._anim):Play("uieffanim_UIActivityN33DateMainFilter_03")
-    else
-      if type == UIActivityN33DateMainFilterType.Build then
-        (self._anim):Play("uieffanim_UIActivityN33DateMainFilter_02")
-      end
-    end
+    self._anim:Play("uieffanim_UIActivityN33DateMainFilter_01")
+  elseif type == UIActivityN33DateMainFilterType.Pet then
+    self._anim:Play("uieffanim_UIActivityN33DateMainFilter_03")
+  elseif type == UIActivityN33DateMainFilterType.Build then
+    self._anim:Play("uieffanim_UIActivityN33DateMainFilter_02")
   end
   self:UnLock("UIActivityN33DateMainFilter_PlayFilterAnim")
 end
 
-local UIActivityN33DateMainFilterType = {All = 1, Build = 2, Pet = 3}
+local UIActivityN33DateMainFilterType = {
+  All = 1,
+  Build = 2,
+  Pet = 3
+}
 _enum("UIActivityN33DateMainFilterType", UIActivityN33DateMainFilterType)
-

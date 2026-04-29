@@ -1,24 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_close_line_renderer_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewCloseLineRenderer", BuffViewBase)
 BuffViewCloseLineRenderer = BuffViewCloseLineRenderer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewCloseLineRenderer.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewCloseLineRenderer:PlayView(TT)
   local buffResult = self._buffResult
   local entity = self._entity
-  local entityViewRoot = (((entity:View()).ViewWrapper).GameObject).transform
+  local entityViewRoot = entity:View().ViewWrapper.GameObject.transform
   local renderers = entityViewRoot:GetComponentsInChildren(typeof(UnityEngine.LineRenderer), true)
   for i = 0, renderers.Length - 1 do
     local line = renderers[i]
     if line then
-      (line.gameObject):SetActive(false)
+      line.gameObject:SetActive(false)
     end
   end
 end
-
-

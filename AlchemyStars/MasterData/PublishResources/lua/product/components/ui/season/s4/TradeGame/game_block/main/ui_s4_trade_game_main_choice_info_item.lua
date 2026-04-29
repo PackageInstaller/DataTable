@@ -1,92 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/game_block/main/ui_s4_trade_game_main_choice_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeGameMainChoiceInfoItem", UICustomWidget)
 UIS4TradeGameMainChoiceInfoItem = UIS4TradeGameMainChoiceInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeGameMainChoiceInfoItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIS4TradeGameMainChoiceInfoItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainChoiceInfoItem._GetComponents = function(self)
-  -- function num : 0_1
+function UIS4TradeGameMainChoiceInfoItem:_GetComponents()
   self._value = self:GetUIComponent("UILocalizationText", "value")
   self._percent = self:GetUIComponent("UILocalizationText", "percent")
   self._targetTxt = self:GetUIComponent("UILocalizationText", "targetTxt")
   self._lineObj = self:GetGameObject("Line")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainChoiceInfoItem.SetData = function(self, data, isEnd)
-  -- function num : 0_2
+function UIS4TradeGameMainChoiceInfoItem:SetData(data, isEnd)
   self._data = data
-  ;
-  (self._lineObj):SetActive(not isEnd)
+  self._lineObj:SetActive(not isEnd)
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainChoiceInfoItem._InitComponents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local str = "str_season_s4_trade_game_choice" .. (self._data).valueType
-  local txt = (StringTable.Get)(str)
-  ;
-  (self._targetTxt):SetText(txt)
-  if (self._data).value <= 0 or not "+" .. (self._data).value then
-    local valueTxt = (self._data).value
-  end
-  ;
-  (self._value):SetText(valueTxt)
-  local tempTxt = (self._data).percent .. "%"
-  local percentTxt = (StringTable.Get)("str_season_s4_trade_chance")
-  ;
-  (self._percent):SetText(tempTxt .. percentTxt)
+function UIS4TradeGameMainChoiceInfoItem:_InitComponents()
+  local str = "str_season_s4_trade_game_choice" .. self._data.valueType
+  local txt = StringTable.Get(str)
+  self._targetTxt:SetText(txt)
+  local valueTxt = self._data.value > 0 and "+" .. self._data.value or self._data.value
+  self._value:SetText(valueTxt)
+  local tempTxt = self._data.percent .. "%"
+  local percentTxt = StringTable.Get("str_season_s4_trade_chance")
+  self._percent:SetText(tempTxt .. percentTxt)
   self:SetSelect(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainChoiceInfoItem.SetSelect = function(self, isSelect)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIS4TradeGameMainChoiceInfoItem:SetSelect(isSelect)
   if isSelect then
-    (self._value).color = Color(0.89019607843137, 0.86274509803922, 0.7843137254902)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._percent).color = Color(0.89019607843137, 0.86274509803922, 0.7843137254902)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._targetTxt).color = Color(0.89019607843137, 0.86274509803922, 0.7843137254902)
+    self._value.color = Color(0.8901960784313725, 0.8627450980392157, 0.7843137254901961)
+    self._percent.color = Color(0.8901960784313725, 0.8627450980392157, 0.7843137254901961)
+    self._targetTxt.color = Color(0.8901960784313725, 0.8627450980392157, 0.7843137254901961)
   else
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._value).color = Color(0.34509803921569, 0.27843137254902, 0.25490196078431)
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._percent).color = Color(0.59607843137255, 0.33333333333333, 0.25882352941176)
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._targetTxt).color = Color(0.34509803921569, 0.27843137254902, 0.25490196078431)
+    self._value.color = Color(0.34509803921568627, 0.2784313725490196, 0.2549019607843137)
+    self._percent.color = Color(0.596078431372549, 0.3333333333333333, 0.25882352941176473)
+    self._targetTxt.color = Color(0.34509803921568627, 0.2784313725490196, 0.2549019607843137)
   end
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._data).value < 0 then
-    (self._value).color = Color(0.83921568627451, 0.43529411764706, 0.32549019607843)
+  if self._data.value < 0 then
+    self._value.color = Color(0.8392156862745098, 0.43529411764705883, 0.3254901960784314)
   end
 end
-
-

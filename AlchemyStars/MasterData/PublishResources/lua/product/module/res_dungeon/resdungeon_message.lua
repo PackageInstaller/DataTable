@@ -1,167 +1,171 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/res_dungeon/resdungeon_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local resdungeonMessageDef = {CLSID_CEventPushResDungeonData = 19000, CLSID_CEventPushAlreadyReturnPowerDungeon = 19001, CLSID_CEventApplyDungeonStatus = 19002, CLSID_CEventApplyDungeonStatusResult = 19003, CLSID_CEventApplyDungeonData = 19004, CLSID_CEventApplyDungeonDataResult = 19005, CLSID_CEventSetDoubleResStatus = 19006, CLSID_CEventSetDoubleResStatusResult = 19007, CLSID_CEventCheckPassedReq = 19008, CLSID_CEventCheckPassedResult = 19009}
-;
-(table.append)(MessageDef, resdungeonMessageDef)
-local RES_DUNGEON_CODE = {RES_DUNGEON_SUCCEED = 0, RES_DUNGEON_FAIL = 1, RES_DUNGEON_ID_ERROR = -2, RES_DUNGEON_CONFIG_ERROR = -3, RES_DUNGEON_STAR_COUNT_ERROR = -4, RES_DUNGEON_HAVENT_PASS_MISSION_CONDITION = -5, RES_DUNGEON_PREV_LEVEL_LOCKED = -11, RES_DUNGEON_CENTRALROOM_LEVEL_NOT_ENOUGH = -12, RES_DUNGEON_HAVENT_CONFIG_THIS_LEVEL = -13, RES_DUNGEON_DOUBLE_RES_NOT_ENOUGH = -14, RES_DUNGEON_DOUBLE_RES_INVALID = -15, RES_DUNGEON_AIRCRAFT_RESOURCE_ROOM_UNOPEN = -16, RES_DUNGEON_CLOSED = -17}
+local resdungeonMessageDef = {
+  CLSID_CEventPushResDungeonData = 19000,
+  CLSID_CEventPushAlreadyReturnPowerDungeon = 19001,
+  CLSID_CEventApplyDungeonStatus = 19002,
+  CLSID_CEventApplyDungeonStatusResult = 19003,
+  CLSID_CEventApplyDungeonData = 19004,
+  CLSID_CEventApplyDungeonDataResult = 19005,
+  CLSID_CEventSetDoubleResStatus = 19006,
+  CLSID_CEventSetDoubleResStatusResult = 19007,
+  CLSID_CEventCheckPassedReq = 19008,
+  CLSID_CEventCheckPassedResult = 19009
+}
+table.append(MessageDef, resdungeonMessageDef)
+local RES_DUNGEON_CODE = {
+  RES_DUNGEON_SUCCEED = 0,
+  RES_DUNGEON_FAIL = 1,
+  RES_DUNGEON_ID_ERROR = -2,
+  RES_DUNGEON_CONFIG_ERROR = -3,
+  RES_DUNGEON_STAR_COUNT_ERROR = -4,
+  RES_DUNGEON_HAVENT_PASS_MISSION_CONDITION = -5,
+  RES_DUNGEON_PREV_LEVEL_LOCKED = -11,
+  RES_DUNGEON_CENTRALROOM_LEVEL_NOT_ENOUGH = -12,
+  RES_DUNGEON_HAVENT_CONFIG_THIS_LEVEL = -13,
+  RES_DUNGEON_DOUBLE_RES_NOT_ENOUGH = -14,
+  RES_DUNGEON_DOUBLE_RES_INVALID = -15,
+  RES_DUNGEON_AIRCRAFT_RESOURCE_ROOM_UNOPEN = -16,
+  RES_DUNGEON_CLOSED = -17
+}
 _enum("RES_DUNGEON_CODE", RES_DUNGEON_CODE)
 _class("CEventPushResDungeonData", CSvrPushEvent)
 CEventPushResDungeonData = CEventPushResDungeonData
--- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPushResDungeonData.Constructor = function(self)
-  -- function num : 0_0
+function CEventPushResDungeonData:Constructor()
   self.all_instance = {}
   self.open_status = {}
   self.passed_instance = {}
   self.double_res_state = false
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPushResDungeonData._proto = {
-[1] = {"all_instance", "map<int,list<int>>"}
-, 
-[2] = {"open_status", "map<int,int>"}
-, 
-[3] = {"passed_instance", "list<int>"}
-, 
-[4] = {"double_res_state", "bool"}
+  [1] = {
+    "all_instance",
+    "map<int,list<int>>"
+  },
+  [2] = {
+    "open_status",
+    "map<int,int>"
+  },
+  [3] = {
+    "passed_instance",
+    "list<int>"
+  },
+  [4] = {
+    "double_res_state",
+    "bool"
+  }
 }
 _class("CEventPushAlreadyReturnPowerDungeon", CSvrPushEvent)
 CEventPushAlreadyReturnPowerDungeon = CEventPushAlreadyReturnPowerDungeon
--- DECOMPILER ERROR at PC77: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPushAlreadyReturnPowerDungeon.Constructor = function(self)
-  -- function num : 0_1
+function CEventPushAlreadyReturnPowerDungeon:Constructor()
   self.ids = {}
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPushAlreadyReturnPowerDungeon._proto = {
-[1] = {"ids", "list<int>"}
+  [1] = {"ids", "list<int>"}
 }
 _class("CEventApplyDungeonStatus", CCallRequestEvent)
 CEventApplyDungeonStatus = CEventApplyDungeonStatus
--- DECOMPILER ERROR at PC94: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventApplyDungeonStatus.Constructor = function(self)
-  -- function num : 0_2
+function CEventApplyDungeonStatus:Constructor()
 end
-
--- DECOMPILER ERROR at PC97: Confused about usage of register: R2 in 'UnsetPending'
 
 CEventApplyDungeonStatus._proto = {}
 _class("CEventApplyDungeonStatusResult", CCallReplyEvent)
 CEventApplyDungeonStatusResult = CEventApplyDungeonStatusResult
--- DECOMPILER ERROR at PC106: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventApplyDungeonStatusResult.Constructor = function(self)
-  -- function num : 0_3
+function CEventApplyDungeonStatusResult:Constructor()
   self.open_status = {}
   self.double_res_state = false
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventApplyDungeonStatusResult._proto = {
-[1] = {"open_status", "map<int,int>"}
-, 
-[2] = {"double_res_state", "bool"}
+  [1] = {
+    "open_status",
+    "map<int,int>"
+  },
+  [2] = {
+    "double_res_state",
+    "bool"
+  }
 }
 _class("CEventApplyDungeonData", CCallRequestEvent)
 CEventApplyDungeonData = CEventApplyDungeonData
--- DECOMPILER ERROR at PC128: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventApplyDungeonData.Constructor = function(self)
-  -- function num : 0_4
+function CEventApplyDungeonData:Constructor()
 end
-
--- DECOMPILER ERROR at PC131: Confused about usage of register: R2 in 'UnsetPending'
 
 CEventApplyDungeonData._proto = {}
 _class("CEventApplyDungeonDataResult", CCallReplyEvent)
 CEventApplyDungeonDataResult = CEventApplyDungeonDataResult
--- DECOMPILER ERROR at PC140: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventApplyDungeonDataResult.Constructor = function(self)
-  -- function num : 0_5
+function CEventApplyDungeonDataResult:Constructor()
   self.all_instance = {}
   self.open_status = {}
   self.passed_instance = {}
   self.double_res_state = false
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventApplyDungeonDataResult._proto = {
-[1] = {"all_instance", "map<int,list<int>>"}
-, 
-[2] = {"open_status", "map<int,int>"}
-, 
-[3] = {"passed_instance", "list<int>"}
-, 
-[4] = {"double_res_state", "bool"}
+  [1] = {
+    "all_instance",
+    "map<int,list<int>>"
+  },
+  [2] = {
+    "open_status",
+    "map<int,int>"
+  },
+  [3] = {
+    "passed_instance",
+    "list<int>"
+  },
+  [4] = {
+    "double_res_state",
+    "bool"
+  }
 }
 _class("CEventSetDoubleResStatus", CCallRequestEvent)
 CEventSetDoubleResStatus = CEventSetDoubleResStatus
--- DECOMPILER ERROR at PC172: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventSetDoubleResStatus.Constructor = function(self)
-  -- function num : 0_6
+function CEventSetDoubleResStatus:Constructor()
   self.open_switch_on = false
 end
 
--- DECOMPILER ERROR at PC180: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventSetDoubleResStatus._proto = {
-[1] = {"open_switch_on", "bool"}
+  [1] = {
+    "open_switch_on",
+    "bool"
+  }
 }
 _class("CEventSetDoubleResStatusResult", CCallReplyEvent)
 CEventSetDoubleResStatusResult = CEventSetDoubleResStatusResult
--- DECOMPILER ERROR at PC189: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventSetDoubleResStatusResult.Constructor = function(self)
-  -- function num : 0_7
+function CEventSetDoubleResStatusResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventSetDoubleResStatusResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventCheckPassedReq", CCallRequestEvent)
 CEventCheckPassedReq = CEventCheckPassedReq
--- DECOMPILER ERROR at PC206: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventCheckPassedReq.Constructor = function(self)
-  -- function num : 0_8
+function CEventCheckPassedReq:Constructor()
   self.level_id = 0
 end
 
--- DECOMPILER ERROR at PC214: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventCheckPassedReq._proto = {
-[1] = {"level_id", "int"}
+  [1] = {"level_id", "int"}
 }
 _class("CEventCheckPassedResult", CCallReplyEvent)
 CEventCheckPassedResult = CEventCheckPassedResult
--- DECOMPILER ERROR at PC223: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventCheckPassedResult.Constructor = function(self)
-  -- function num : 0_9
+function CEventCheckPassedResult:Constructor()
   self.is_passed = false
 end
 
--- DECOMPILER ERROR at PC231: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventCheckPassedResult._proto = {
-[1] = {"is_passed", "bool"}
+  [1] = {"is_passed", "bool"}
 }
-

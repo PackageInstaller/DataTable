@@ -1,212 +1,135 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/buy_gift_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("BuyGiftComponent", ICampaignComponent)
 BuyGiftComponent = BuyGiftComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuyGiftComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function BuyGiftComponent:Constructor()
   self.m_component_info = BuyGiftComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuyGiftComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = BuyGiftComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function BuyGiftComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function BuyGiftComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_BUY_GIFT
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function BuyGiftComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.GetGiftTypeKey = function(self, gift_type)
-  -- function num : 0_5 , upvalues : _ENV
-  local type2id = {[CampaignGiftType.ECGT_ADVANCED] = "str_activity_battlepass_elite", [CampaignGiftType.ECGT_LUXURY] = "str_activity_battlepass_deluxe", [CampaignGiftType.ECGT_ADDITIONALBUY] = "str_activity_battlepass_deluxe"}
+function BuyGiftComponent:GetGiftTypeKey(gift_type)
+  local type2id = {
+    [CampaignGiftType.ECGT_ADVANCED] = "str_activity_battlepass_elite",
+    [CampaignGiftType.ECGT_LUXURY] = "str_activity_battlepass_deluxe",
+    [CampaignGiftType.ECGT_ADDITIONALBUY] = "str_activity_battlepass_deluxe"
+  }
   return type2id[gift_type]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.HandleApplyBuyGift = function(self, TT, asyncRes, gift_id, count)
-  -- function num : 0_6 , upvalues : _ENV
+function BuyGiftComponent:HandleApplyBuyGift(TT, asyncRes, gift_id, count)
   local request = BuyGiftComponentApplyBuyReq:New()
   local response = BuyGiftComponentApplyBuyRep:New()
   request.m_gift_id = gift_id
   request.m_buy_count = count
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][BuyGiftComponent] HandleApplyBuyGift ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][BuyGiftComponent] HandleApplyBuyGift ret:", asyncRes.m_result)
     return nil
   end
   asyncRes:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_7 , upvalues : _ENV
+function BuyGiftComponent:CampaignComponentPushNotify(notify_data)
   if BuyGiftComponentNotifyType.BuyGiftComponentNotify_BuyStateChanged == notify_data.m_notify_type then
     local ev = NotifyBuyGiftComponentBuyStateChange:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
       self:OnBuyStateChanged(ev)
     else
-      ;
-      (Log.error)("[CampaignCom][BuyGiftComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][BuyGiftComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.OnBuyStateChanged = function(self, ev)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_component_info).m_buy_gift_map = ev.m_buy_gift_map
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).m_buy_state = ev.m_buy_state
+function BuyGiftComponent:OnBuyStateChanged(ev)
+  self.m_component_info.m_buy_gift_map = ev.m_buy_gift_map
+  self.m_component_info.m_buy_state = ev.m_buy_state
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.GetAllGiftIDByType = function(self, gift_type)
-  -- function num : 0_9 , upvalues : _ENV
+function BuyGiftComponent:GetAllGiftIDByType(gift_type)
   local tb = {}
-  for index,value in ipairs((self.m_component_info).m_campaign_gift_list) do
+  for index, value in ipairs(self.m_component_info.m_campaign_gift_list) do
     if value.m_gift_type == gift_type then
-      (table.insert)(tb, value.m_gift_id)
-      ;
-      (Log.debug)("BuyGiftComponent:GetAllGiftIDByType() gift_type = ", gift_type, ", gift_id = ", value.m_gift_id)
+      table.insert(tb, value.m_gift_id)
+      Log.debug("BuyGiftComponent:GetAllGiftIDByType() gift_type = ", gift_type, ", gift_id = ", value.m_gift_id)
     end
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.GetFirstGiftIDByType = function(self, gift_type)
-  -- function num : 0_10
+function BuyGiftComponent:GetFirstGiftIDByType(gift_type)
   local list = self:GetAllGiftIDByType(gift_type)
   return list[1] or 0
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.GetAllGiftMidasId = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function BuyGiftComponent:GetAllGiftMidasId()
   local tb = {}
-  for index,value in ipairs((self.m_component_info).m_campaign_gift_list) do
-    if not (self.m_component_info).m_is_us or not value.m_us_midas_id then
-      local midasId = value.m_midas_id
-    end
-    if not (string.isnullorempty)(midasId) then
-      (table.insert)(tb, midasId)
+  for index, value in ipairs(self.m_component_info.m_campaign_gift_list) do
+    local midasId = self.m_component_info.m_is_us and value.m_us_midas_id or value.m_midas_id
+    if not string.isnullorempty(midasId) then
+      table.insert(tb, midasId)
     end
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.GetGiftMidasIdById = function(self, gift_id)
-  -- function num : 0_12 , upvalues : _ENV
-  for index,value in ipairs((self.m_component_info).m_campaign_gift_list) do
+function BuyGiftComponent:GetGiftMidasIdById(gift_id)
+  for index, value in ipairs(self.m_component_info.m_campaign_gift_list) do
     if value.m_gift_id == gift_id then
-      if not (self.m_component_info).m_is_us or not value.m_us_midas_id then
-        do
-          do return value.m_midas_id end
-          -- DECOMPILER ERROR at PC17: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC17: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC17: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC17: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      return self.m_component_info.m_is_us and value.m_us_midas_id or value.m_midas_id
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.GetAllGiftLocalPrice = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function BuyGiftComponent:GetAllGiftLocalPrice()
   local tb = self:GetAllGiftMidasId()
-  local mPay = (GameGlobal.GetModule)(PayModule)
+  local mPay = GameGlobal.GetModule(PayModule)
   mPay:GetLocalPrice(tb)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.GetGiftPriceById = function(self, gift_id)
-  -- function num : 0_14 , upvalues : _ENV
+function BuyGiftComponent:GetGiftPriceById(gift_id)
   local midasId = self:GetGiftMidasIdById(gift_id)
-  local mPay = (GameGlobal.GetModule)(PayModule)
+  local mPay = GameGlobal.GetModule(PayModule)
   local goodPriceList = mPay:GetGoodPriceList()
-  ;
-  (Log.debug)("BuyGiftComponent:GetGiftPriceById() midasId = ", midasId, " goodPriceList = ")
-  for k,v in pairs(goodPriceList) do
-    (Log.debug)("k : ", k, "v : ", v)
+  Log.debug("BuyGiftComponent:GetGiftPriceById() midasId = ", midasId, " goodPriceList = ")
+  for k, v in pairs(goodPriceList) do
+    Log.debug("k : ", k, "v : ", v)
   end
   return goodPriceList[midasId]
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.GetGiftPriceForShowById = function(self, gift_id)
-  -- function num : 0_15
+function BuyGiftComponent:GetGiftPriceForShowById(gift_id)
   local giftPrice = self:GetGiftPriceById(gift_id)
   return giftPrice and giftPrice.price or ""
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.GetGiftPriceForBuyById = function(self, gift_id)
-  -- function num : 0_16
+function BuyGiftComponent:GetGiftPriceForBuyById(gift_id)
   local giftPrice = self:GetGiftPriceById(gift_id)
   return giftPrice and giftPrice.microprice / 1000000 or 0
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.GetGiftExtraAwardById = function(self, gift_id)
-  -- function num : 0_17 , upvalues : _ENV
-  for index,value in ipairs((self.m_component_info).m_campaign_gift_list) do
+function BuyGiftComponent:GetGiftExtraAwardById(gift_id)
+  for index, value in ipairs(self.m_component_info.m_campaign_gift_list) do
     if value.m_gift_id == gift_id then
       return value.m_extra_award
     end
@@ -214,54 +137,39 @@ BuyGiftComponent.GetGiftExtraAwardById = function(self, gift_id)
   return {}
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.GetGiftBuyCount = function(self, gift_id)
-  -- function num : 0_18
+function BuyGiftComponent:GetGiftBuyCount(gift_id)
   local gift = self:GetGoodCfgById(gift_id)
-  local buyCount = ((self.m_component_info).m_buy_gift_map)[gift_id] or 0
+  local buyCount = self.m_component_info.m_buy_gift_map[gift_id] or 0
   local saleCount = gift and gift.SaleNum or 0
   return buyCount, saleCount
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.GetGiftCfgById = function(self, gift_id)
-  -- function num : 0_19 , upvalues : _ENV
+function BuyGiftComponent:GetGiftCfgById(gift_id)
   local componentCfgId = self:GetComponentCfgId()
-  local gifts = (Cfg.cfg_component_buy_gift)({ComponentID = componentCfgId, GiftID = gift_id})
+  local gifts = Cfg.cfg_component_buy_gift({ComponentID = componentCfgId, GiftID = gift_id})
   return gifts[1]
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.GetGiftCfgShowAwardById = function(self, gift_id)
-  -- function num : 0_20 , upvalues : _ENV
+function BuyGiftComponent:GetGiftCfgShowAwardById(gift_id)
   local gift = self:GetGiftCfgById(gift_id)
   local tb = {}
   if gift then
     for i = 1, #gift.ShowIcon do
-      local info = {ShowIcon = (gift.ShowIcon)[i], ShowDesc = (gift.ShowDesc)[i]}
-      ;
-      (table.insert)(tb, info)
+      local info = {
+        ShowIcon = gift.ShowIcon[i],
+        ShowDesc = gift.ShowDesc[i]
+      }
+      table.insert(tb, info)
     end
   end
-  do
-    return tb
-  end
+  return tb
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.GetGoodCfgById = function(self, gift_id)
-  -- function num : 0_21 , upvalues : _ENV
-  return (Cfg.cfg_shop_common_goods)[gift_id]
+function BuyGiftComponent:GetGoodCfgById(gift_id)
+  return Cfg.cfg_shop_common_goods[gift_id]
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.BuyGift = function(self, gift_id, gift_num, gift_type)
-  -- function num : 0_22
+function BuyGiftComponent:BuyGift(gift_id, gift_num, gift_type)
   local good = self:GetGoodCfgById(gift_id)
   local saleType = good.SaleType
   if saleType == 888 then
@@ -271,24 +179,15 @@ BuyGiftComponent.BuyGift = function(self, gift_id, gift_num, gift_type)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.BuyGift_RoleAsset = function(self, gift_id, gift_num)
-  -- function num : 0_23 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_23_0 , upvalues : _ENV, self, gift_id, gift_num
+function BuyGiftComponent:BuyGift_RoleAsset(gift_id, gift_num)
+  GameGlobal.TaskManager():StartTask(function(TT)
     local res = AsyncRequestRes:New()
     local ret = self:HandleApplyBuyGift(TT, res, gift_id, gift_num)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityNormalBuyResult, gift_id, res)
-  end
-, self)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityNormalBuyResult, gift_id, res)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.BuyGift_DirectAMidas = function(self, gift_id, gift_type)
-  -- function num : 0_24 , upvalues : _ENV
+function BuyGiftComponent:BuyGift_DirectAMidas(gift_id, gift_type)
   local midasId = self:GetGiftMidasIdById(gift_id)
   local price = self:GetGiftPriceForBuyById(gift_id)
   local item = UIActivityPayItem:New(gift_id)
@@ -297,125 +196,85 @@ BuyGiftComponent.BuyGift_DirectAMidas = function(self, gift_id, gift_type)
   if IsPc() or IsUnityEditor() then
     if gift_type == CampaignGiftType.ECGT_SENIOR_SKIN then
       local giftCfg = self:GetGiftCfgById(gift_id)
-      ;
-      (Log.debug)("BuyGift_DirectAMidas gift_id: ", gift_id)
+      Log.debug("BuyGift_DirectAMidas gift_id: ", gift_id)
       if giftCfg then
-        (Log.debug)("BuyGift_DirectAMidas giftCfg.Name:", (StringTable.Get)((giftCfg.Name)[1]))
-        item:SetName((StringTable.Get)((giftCfg.Name)[1]))
+        Log.debug("BuyGift_DirectAMidas giftCfg.Name:", StringTable.Get(giftCfg.Name[1]))
+        item:SetName(StringTable.Get(giftCfg.Name[1]))
       end
       local showPrice = self:GetGiftPriceForShowById(gift_id)
       item:SetPriceWithCurrencySymbol(showPrice)
+    elseif gift_type ~= nil then
+      local typeKey = self:GetGiftTypeKey(gift_type)
+      local typeName = StringTable.Get(typeKey)
+      local showPrice = self:GetGiftPriceForShowById(gift_id)
+      local giftName = StringTable.Get("str_activity_battlepass_n5_main_title")
+      item:SetPriceWithCurrencySymbol(showPrice)
+      item:SetName(giftName .. typeName)
     else
-      do
-        if gift_type ~= nil then
-          local typeKey = self:GetGiftTypeKey(gift_type)
-          local typeName = (StringTable.Get)(typeKey)
-          local showPrice = self:GetGiftPriceForShowById(gift_id)
-          local giftName = (StringTable.Get)("str_activity_battlepass_n5_main_title")
-          item:SetPriceWithCurrencySymbol(showPrice)
-          item:SetName(giftName .. typeName)
-        else
-          do
-            local giftCfg = self:GetGiftCfgById(gift_id)
-            ;
-            (Log.debug)("BuyGift_DirectAMidas gift_id: ", gift_id)
-            if giftCfg then
-              (Log.debug)("BuyGift_DirectAMidas giftCfg.Name:", (StringTable.Get)((giftCfg.Name)[1]))
-              item:SetName((StringTable.Get)((giftCfg.Name)[1]))
-            end
-            do
-              local showPrice = self:GetGiftPriceForShowById(gift_id)
-              item:SetPriceWithCurrencySymbol(showPrice)
-              if (string.isnullorempty)(midasId) then
-                ((GameGlobal.GetUIModule)(ShopModule)):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "midasId_is_empty")
-                ;
-                (Log.fatal)("### [Pay]midasId can\'t be empty")
-                return 
-              end
-              ;
-              ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_24_0 , upvalues : _ENV, self, item
+      local giftCfg = self:GetGiftCfgById(gift_id)
+      Log.debug("BuyGift_DirectAMidas gift_id: ", gift_id)
+      if giftCfg then
+        Log.debug("BuyGift_DirectAMidas giftCfg.Name:", StringTable.Get(giftCfg.Name[1]))
+        item:SetName(StringTable.Get(giftCfg.Name[1]))
+      end
+      local showPrice = self:GetGiftPriceForShowById(gift_id)
+      item:SetPriceWithCurrencySymbol(showPrice)
+    end
+  end
+  if string.isnullorempty(midasId) then
+    GameGlobal.GetUIModule(ShopModule):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "midasId_is_empty")
+    Log.fatal("### [Pay]midasId can't be empty")
+    return
+  end
+  GameGlobal.TaskManager():StartTask(function(TT)
     local res = AsyncRequestRes:New()
     local ret = self:HandleApplyBuyGift(TT, res, item:GetId(), item:GetBuyCount())
     if res:GetSucc() then
       self:CanCharge(item)
     end
-  end
-, self)
-            end
-          end
-        end
-      end
-    end
-  end
+  end, self)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.CanCharge = function(self, item)
-  -- function num : 0_25 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("BuyGiftComponent:CanCharge")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.CanChargeCoro, self, item)
+function BuyGiftComponent:CanCharge(item)
+  GameGlobal.UIStateManager():Lock("BuyGiftComponent:CanCharge")
+  GameGlobal.TaskManager():StartTask(self.CanChargeCoro, self, item)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.CanChargeCoro = function(self, TT, item)
-  -- function num : 0_26 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
-  local payModule = (GameGlobal.GetModule)(PayModule)
+function BuyGiftComponent:CanChargeCoro(TT, item)
+  local roleModule = GameGlobal.GetModule(RoleModule)
+  local payModule = GameGlobal.GetModule(PayModule)
   if roleModule:IsJapanZone() and payModule:NeedSelectAge(TT) then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UISetAgeConfirmController")
+    GameGlobal.UIStateManager():ShowDialog("UISetAgeConfirmController")
   else
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.BuyGoodsTask, self, item)
+    GameGlobal.TaskManager():StartTask(self.BuyGoodsTask, self, item)
   end
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("BuyGiftComponent:CanCharge")
+  GameGlobal.UIStateManager():UnLock("BuyGiftComponent:CanCharge")
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponent.BuyGoodsTask = function(self, TT, item)
-  -- function num : 0_27 , upvalues : _ENV
-  local mPay = (GameGlobal.GetModule)(PayModule)
+function BuyGiftComponent:BuyGoodsTask(TT, item)
+  local mPay = GameGlobal.GetModule(PayModule)
   if IsAndroid() or IsUnityEditor() or IsPc() then
     if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
       local res, replyEvent = mPay:SendBuyGoodsRequest(TT, item:GetMidasId(), item:GetBuyCount())
-      ;
-      (Log.debug)("BuyGiftComponent:BuyGoodsTask IsAndroid start res ", res.m_result)
+      Log.debug("BuyGiftComponent:BuyGoodsTask IsAndroid start res ", res.m_result)
       if not res:GetSucc() then
         if res.m_result == PayErrorCode.PAY_ERROR_NOT_USE_MIDAS then
-          (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_pay_direct_buy_need_open_switch"))
+          PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_pay_direct_buy_need_open_switch"))
         else
-          ;
-          (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_pay_direct_buy_fail_try_later"))
+          PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_pay_direct_buy_fail_try_later"))
         end
-      else
-        if not replyEvent then
-          (Log.debug)("BuyGiftComponent:BuyGoodsTask failed no replyEvent")
-        else
-          if res.m_result == PayErrorCode.PAY_SUCC then
-            local token = replyEvent.token
-            local url = replyEvent.url_params
-            ;
-            (Log.debug)("BuyGiftComponent:BuyGoodsTask success token ", token, " url ", url)
-            mPay:BuyCampaignGoodsByUrl(url, item)
-          end
-        end
+      elseif not replyEvent then
+        Log.debug("BuyGiftComponent:BuyGoodsTask failed no replyEvent")
+      elseif res.m_result == PayErrorCode.PAY_SUCC then
+        local token = replyEvent.token
+        local url = replyEvent.url_params
+        Log.debug("BuyGiftComponent:BuyGoodsTask success token ", token, " url ", url)
+        mPay:BuyCampaignGoodsByUrl(url, item)
       end
-    else
-      do
-        if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-          mPay:BuyCampaignGoods(item)
-        end
-        if IsIos() then
-          mPay:BuyCampaignGoods(item)
-        end
-      end
+    elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+      mPay:BuyCampaignGoods(item)
     end
+  elseif IsIos() then
+    mPay:BuyCampaignGoods(item)
   end
 end
-
-

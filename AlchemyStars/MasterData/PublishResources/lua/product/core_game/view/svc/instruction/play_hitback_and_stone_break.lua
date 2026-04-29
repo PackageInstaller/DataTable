@@ -1,104 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_hitback_and_stone_break.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayHitBackAndStoneBreakInstruction", BaseInstruction)
 PlayHitBackAndStoneBreakInstruction = PlayHitBackAndStoneBreakInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayHitBackAndStoneBreakInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayHitBackAndStoneBreakInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayHitBackAndStoneBreakInstruction.GetCacheResource = function(self)
-  -- function num : 0_1
+function PlayHitBackAndStoneBreakInstruction:GetCacheResource()
   local t = {}
   return t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayHitBackAndStoneBreakInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayHitBackAndStoneBreakInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
-  local bodyArea = (casterEntity:BodyArea()):GetArea()
+  local bodyArea = casterEntity:BodyArea():GetArea()
   local casterPos = casterEntity:GetRenderGridPosition()
-  local resultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local resultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultList = resultContainer:GetEffectResultsAsArray(SkillEffectType.HitBack)
   local hitBackResult = resultList[1]
   local targetID = hitBackResult:GetTargetID()
   local hitBackDir = hitBackResult:GetHitDir()
   local newPos = hitBackResult:GetPosTarget()
-  local targetEntity = (self._world):GetEntityByID(targetID)
+  local targetEntity = self._world:GetEntityByID(targetID)
   local resultList2 = resultContainer:GetEffectResultsAsArray(SkillEffectType.DestroyTrap, 2)
-  local trapServiceRender = (self._world):GetService("TrapRender")
+  local trapServiceRender = self._world:GetService("TrapRender")
   self._taskID = {}
   local targetRealPos = targetEntity:GetRenderGridPosition()
-  while 1 do
-    if targetRealPos.x ~= newPos.x or targetRealPos.y ~= newPos.y then
-      self:PlayDestroyTrap(TT, resultList2, targetEntity, hitBackDir, trapServiceRender)
-      targetRealPos = targetEntity:GetRenderGridPosition()
-      YIELD(TT)
-      -- DECOMPILER ERROR at PC62: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-      -- DECOMPILER ERROR at PC62: LeaveBlock: unexpected jumping out IF_STMT
-
-    end
+  while targetRealPos.x ~= newPos.x or targetRealPos.y ~= newPos.y do
+    self:PlayDestroyTrap(TT, resultList2, targetEntity, hitBackDir, trapServiceRender)
+    targetRealPos = targetEntity:GetRenderGridPosition()
+    YIELD(TT)
   end
   self:PlayDestroyTrap(TT, resultList2, targetEntity, hitBackDir, trapServiceRender)
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(self._taskID) do
+  while not TaskHelper:GetInstance():IsAllTaskFinished(self._taskID) do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayHitBackAndStoneBreakInstruction.PlayDestroyTrap = function(self, TT, resultList, casterEntity, teleportDir, trapServiceRender)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayHitBackAndStoneBreakInstruction:PlayDestroyTrap(TT, resultList, casterEntity, teleportDir, trapServiceRender)
   if not resultList then
-    return 
+    return
   end
-  for i,v in ipairs(resultList) do
+  for i, v in ipairs(resultList) do
     local pos = v:GetTrapPos()
     local entityID = v:GetEntityID()
-    local entity = (self._world):GetEntityByID(entityID)
+    local entity = self._world:GetEntityByID(entityID)
     local trapRenderCmpt = entity:TrapRender()
     local hadPlayDead = trapRenderCmpt:GetHadPlayDead()
     if self:NeedPlayDead(casterEntity, pos, teleportDir) and not hadPlayDead then
-      local id = ((GameGlobal.TaskManager)()):CoreGameStartTask(trapServiceRender.PlayTrapDieSkill, trapServiceRender, {entity})
-      ;
-      (table.insert)(self._taskID, id)
+      local id = GameGlobal.TaskManager():CoreGameStartTask(trapServiceRender.PlayTrapDieSkill, trapServiceRender, {entity})
+      table.insert(self._taskID, id)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayHitBackAndStoneBreakInstruction.NeedPlayDead = function(self, casterEntity, pos, teleportDir)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayHitBackAndStoneBreakInstruction:NeedPlayDead(casterEntity, pos, teleportDir)
   local casterRealPos = casterEntity:GetRenderGridPosition()
-  -- DECOMPILER ERROR at PC13: Unhandled construct in 'MakeBoolean' P1
-
-  if teleportDir == Vector2(0, 1) and pos.y <= casterRealPos.y then
-    return true
-  end
-  -- DECOMPILER ERROR at PC26: Unhandled construct in 'MakeBoolean' P1
-
-  if teleportDir == Vector2(0, -1) and casterRealPos.y <= pos.y then
-    return true
-  end
-  -- DECOMPILER ERROR at PC39: Unhandled construct in 'MakeBoolean' P1
-
-  if teleportDir == Vector2(1, 0) and casterRealPos.y <= pos.y then
-    return true
-  end
-  if teleportDir == Vector2(-1, 0) and casterRealPos.y <= pos.y then
+  if teleportDir == Vector2(0, 1) then
+    if pos.y <= casterRealPos.y then
+      return true
+    end
+  elseif teleportDir == Vector2(0, -1) then
+    if pos.y >= casterRealPos.y then
+      return true
+    end
+  elseif teleportDir == Vector2(1, 0) then
+    if pos.y >= casterRealPos.y then
+      return true
+    end
+  elseif teleportDir == Vector2(-1, 0) and pos.y >= casterRealPos.y then
     return true
   end
   return false
 end
-
-

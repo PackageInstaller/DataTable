@@ -1,48 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_clingy_summon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ClingySummon", SkillEffectCalc_Base)
 SkillEffectCalc_ClingySummon = SkillEffectCalc_ClingySummon
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ClingySummon.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ClingySummon:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ClingySummon.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_ClingySummon:DoSkillEffectCalculator(skillEffectCalcParam)
   local effectParam = skillEffectCalcParam:GetSkillEffectParam()
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local casterPos = casterEntity:GetGridPosition()
-  local areaCount = (casterEntity:BodyArea()):GetAreaCount()
+  local areaCount = casterEntity:BodyArea():GetAreaCount()
   local monsterIDs = effectParam:GetSummonList()
   local result = {}
   local clingyMonster = SkillEffectResult_SummonEverything:New(SkillEffectEnum_SummonType.Monster, monsterIDs[1], casterPos, casterPos)
-  ;
-  (table.insert)(result, clingyMonster)
-  if areaCount > 1 then
+  table.insert(result, clingyMonster)
+  if 1 < areaCount then
     local positions = {}
-    local area = (casterEntity:BodyArea()):GetArea()
-    for _,position in ipairs(area) do
+    local area = casterEntity:BodyArea():GetArea()
+    for _, position in ipairs(area) do
       if position.x ~= 0 or position.y ~= 0 then
-        (table.insert)(positions, casterPos + position)
+        table.insert(positions, casterPos + position)
       end
     end
-    local randomSvc = (self._world):GetService("RandomLogic")
+    local randomSvc = self._world:GetService("RandomLogic")
     local index = randomSvc:LogicRand(1, #positions)
     local summonPosition = positions[index]
     local clingyMonsterOther = SkillEffectResult_SummonEverything:New(SkillEffectEnum_SummonType.Monster, monsterIDs[1], casterPos, summonPosition)
-    ;
-    (table.insert)(result, clingyMonsterOther)
+    table.insert(result, clingyMonsterOther)
   end
-  do
-    return result
-  end
+  return result
 end
-
-

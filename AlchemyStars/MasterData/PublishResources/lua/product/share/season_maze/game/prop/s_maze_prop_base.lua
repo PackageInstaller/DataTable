@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/prop/s_maze_prop_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazePropBase", Object)
 SMazePropBase = SMazePropBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazePropBase.Constructor = function(self, id, count)
-  -- function num : 0_0 , upvalues : _ENV
+function SMazePropBase:Constructor(id, count)
   self._id = id
   self._count = count
-  local cfg = ((Cfg.cfg_component_season_maze_once)({OnceID = id}))[1]
+  local cfg = Cfg.cfg_component_season_maze_once({OnceID = id})[1]
   self._type = cfg.Type
   self._cfgID = cfg.ID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazePropBase.ID = function(self)
-  -- function num : 0_1
+function SMazePropBase:ID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazePropBase.Count = function(self)
-  -- function num : 0_2
+function SMazePropBase:Count()
   return self._count
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazePropBase.Type = function(self)
-  -- function num : 0_3
+function SMazePropBase:Type()
   return self._type
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazePropBase.CfgID = function(self)
-  -- function num : 0_4
+function SMazePropBase:CfgID()
   return self._cfgID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazePropBase.Use = function(self, TT)
-  -- function num : 0_5
+function SMazePropBase:Use(TT)
   return false
 end
-
-

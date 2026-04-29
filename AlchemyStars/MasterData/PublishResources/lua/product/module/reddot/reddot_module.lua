@@ -1,224 +1,143 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/reddot/reddot_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RedDotModule", GameModule)
 RedDotModule = RedDotModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RedDotModule.Constructor = function(self)
-  -- function num : 0_0
+function RedDotModule:Constructor()
   self._RedDot2GameEvent = {}
   self._RedDotPrivateFunctionList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RedDotModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self.caller):RegisterPushHandler(CEventNotifyLightRedDot, self._HandleNotifyLightRedDot, self)
+function RedDotModule:Init()
+  self.caller:RegisterPushHandler(CEventNotifyLightRedDot, self._HandleNotifyLightRedDot, self)
   self:RegisterRedDotCheckFunciton(self._RequestRedDotStatus4N8)
   self:RegisterRedDotCheckFunciton(self._RequestRedDotStatus4N11)
   self:RegisterRedDotCheckFunciton(self._RequestRedDotStatus4N12)
   self:RegisterRedDotCheckFunciton(self._RequestRedDotStatus4N14)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RedDotModule.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.caller):UnRegisterPushHandler(CEventNotifyLightRedDot)
+function RedDotModule:Dispose()
+  self.caller:UnRegisterPushHandler(CEventNotifyLightRedDot)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RedDotModule.RegisterRedDotCheckFunciton = function(self, RedDotStatusFunction)
-  -- function num : 0_3 , upvalues : _ENV
-  (table.insert)(self._RedDotPrivateFunctionList, RedDotStatusFunction)
+function RedDotModule:RegisterRedDotCheckFunciton(RedDotStatusFunction)
+  table.insert(self._RedDotPrivateFunctionList, RedDotStatusFunction)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RedDotModule._RequestRedDotStatus4N8 = function(self, reddottype)
-  -- function num : 0_4 , upvalues : _ENV
-  if reddottype < RedDotType.RDT_N8_FUNCTION_NEW or RedDotType.RDT_N8_LINEMISSION < reddottype then
+function RedDotModule:_RequestRedDotStatus4N8(reddottype)
+  if reddottype < RedDotType.RDT_N8_FUNCTION_NEW or reddottype > RedDotType.RDT_N8_LINEMISSION then
     return RedDotType.RDT_INVALID
   end
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N8)
   if not localProcess then
     return false
   end
   if reddottype == RedDotType.RDT_N8_FUNCTION_NEW then
     return localProcess:GetStepStatusNew()
+  elseif reddottype == RedDotType.RDT_N8_ENTRY_REDDOT then
+    return localProcess:GetEntryRedDot()
+  elseif reddottype == RedDotType.RDT_N8_LOGIN_AWARD then
+    return localProcess:GetLoginAwardRedDot()
+  elseif reddottype == RedDotType.RDT_N8_SIMULATOR_PRESTIGE then
+    return localProcess:GetPrestigeRedDot()
+  elseif reddottype == RedDotType.RDT_N8_SIMULATOR_FUNCTION then
+    return localProcess:GetSimulatorRedDot()
+  elseif reddottype == RedDotType.RDT_N8_LINEMISSION then
+    return localProcess:GetShadowTownRedDot()
   else
-    if reddottype == RedDotType.RDT_N8_ENTRY_REDDOT then
-      return localProcess:GetEntryRedDot()
-    else
-      if reddottype == RedDotType.RDT_N8_LOGIN_AWARD then
-        return localProcess:GetLoginAwardRedDot()
-      else
-        if reddottype == RedDotType.RDT_N8_SIMULATOR_PRESTIGE then
-          return localProcess:GetPrestigeRedDot()
-        else
-          if reddottype == RedDotType.RDT_N8_SIMULATOR_FUNCTION then
-            return localProcess:GetSimulatorRedDot()
-          else
-            if reddottype == RedDotType.RDT_N8_LINEMISSION then
-              return localProcess:GetShadowTownRedDot()
-            else
-              return false
-            end
-          end
-        end
-      end
-    end
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RedDotModule._RequestRedDotStatus4N11 = function(self, reddottype)
-  -- function num : 0_5 , upvalues : _ENV
-  if reddottype < RedDotType.RDT_N11_FUNCTION_NEW or RedDotType.RDT_N11_FIXLINEMISSION < reddottype then
+function RedDotModule:_RequestRedDotStatus4N11(reddottype)
+  if reddottype < RedDotType.RDT_N11_FUNCTION_NEW or reddottype > RedDotType.RDT_N11_FIXLINEMISSION then
     return RedDotType.RDT_INVALID
   end
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N11)
   if not localProcess then
     return false
   end
   if reddottype == RedDotType.RDT_N11_FUNCTION_NEW then
     return localProcess:GetStepStatusNew()
+  elseif reddottype == RedDotType.RDT_N11_ENTRY_REDDOT then
+    return localProcess:GetEntryRedDot()
+  elseif reddottype == RedDotType.RDT_N11_LOGIN_AWARD then
+    return localProcess:GetLoginAwardRedDot()
+  elseif reddottype == RedDotType.RDT_N11_EASYLINEMISSION then
+    return localProcess:GetEasyMissionRedDot()
+  elseif reddottype == RedDotType.RDT_N11_HARDLINEMISSION then
+    return localProcess:GetHardMissionRedDot()
+  elseif reddottype == RedDotType.RDT_N11_FIXLINEMISSION then
+    return localProcess:GetEasyMissionRedDot()
   else
-    if reddottype == RedDotType.RDT_N11_ENTRY_REDDOT then
-      return localProcess:GetEntryRedDot()
-    else
-      if reddottype == RedDotType.RDT_N11_LOGIN_AWARD then
-        return localProcess:GetLoginAwardRedDot()
-      else
-        if reddottype == RedDotType.RDT_N11_EASYLINEMISSION then
-          return localProcess:GetEasyMissionRedDot()
-        else
-          if reddottype == RedDotType.RDT_N11_HARDLINEMISSION then
-            return localProcess:GetHardMissionRedDot()
-          else
-            if reddottype == RedDotType.RDT_N11_FIXLINEMISSION then
-              return localProcess:GetEasyMissionRedDot()
-            else
-              return false
-            end
-          end
-        end
-      end
-    end
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RedDotModule._RequestRedDotStatus4N12 = function(self, reddottype)
-  -- function num : 0_6 , upvalues : _ENV
-  if reddottype < RedDotType.RDT_N12_FUNCTION_NEW or RedDotType.RDT_N12_ENTRUSTMISSION_NEW < reddottype then
+function RedDotModule:_RequestRedDotStatus4N12(reddottype)
+  if reddottype < RedDotType.RDT_N12_FUNCTION_NEW or reddottype > RedDotType.RDT_N12_ENTRUSTMISSION_NEW then
     return RedDotType.RDT_INVALID
   end
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N12)
   if not localProcess then
     return false
   end
   if reddottype == RedDotType.RDT_N12_FUNCTION_NEW then
     return localProcess:GetStepStatusNew()
+  elseif reddottype == RedDotType.RDT_N12_ENTRY_REDDOT then
+    return localProcess:GetEntryRedDot()
+  elseif reddottype == RedDotType.RDT_N12_LOGIN_AWARD then
+    return localProcess:GetLoginAwardRedDot()
+  elseif reddottype == RedDotType.RDT_N12_SCORE_AWARD then
+    return localProcess:GetScoreRedDot()
+  elseif reddottype == RedDotType.RDT_N12_STORY then
+    return localProcess:GetStoryRedDot()
+  elseif reddottype == RedDotType.RDT_N12_CHALLENGEEMISSION then
+    return localProcess:GetChallengeMissionRedDot()
+  elseif reddottype == RedDotType.RDT_N12_FIXLINEMISSION then
+    return localProcess:GetFixMissionRedDot()
+  elseif reddottype == RedDotType.RDT_N12_DAILYMISSION then
+    return localProcess:GetDailyMissionRedDot()
+  elseif reddottype == RedDotType.RDT_N12_ENTRUSTMISSION then
+    return localProcess:GetEntrustMissionRedDot()
+  elseif reddottype == RedDotType.RDT_N12_ENTRUSTMISSION_NEW then
+    return localProcess:GetEntrustMissionNew()
   else
-    if reddottype == RedDotType.RDT_N12_ENTRY_REDDOT then
-      return localProcess:GetEntryRedDot()
-    else
-      if reddottype == RedDotType.RDT_N12_LOGIN_AWARD then
-        return localProcess:GetLoginAwardRedDot()
-      else
-        if reddottype == RedDotType.RDT_N12_SCORE_AWARD then
-          return localProcess:GetScoreRedDot()
-        else
-          if reddottype == RedDotType.RDT_N12_STORY then
-            return localProcess:GetStoryRedDot()
-          else
-            if reddottype == RedDotType.RDT_N12_CHALLENGEEMISSION then
-              return localProcess:GetChallengeMissionRedDot()
-            else
-              if reddottype == RedDotType.RDT_N12_FIXLINEMISSION then
-                return localProcess:GetFixMissionRedDot()
-              else
-                if reddottype == RedDotType.RDT_N12_DAILYMISSION then
-                  return localProcess:GetDailyMissionRedDot()
-                else
-                  if reddottype == RedDotType.RDT_N12_ENTRUSTMISSION then
-                    return localProcess:GetEntrustMissionRedDot()
-                  else
-                    if reddottype == RedDotType.RDT_N12_ENTRUSTMISSION_NEW then
-                      return localProcess:GetEntrustMissionNew()
-                    else
-                      return false
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RedDotModule._RequestRedDotStatus4N14 = function(self, reddottype)
-  -- function num : 0_7 , upvalues : _ENV
-  if reddottype < RedDotType.RDT_N14_FUNCTION_NEW or RedDotType.RDT_N14_FISHING_REDDOT < reddottype then
+function RedDotModule:_RequestRedDotStatus4N14(reddottype)
+  if reddottype < RedDotType.RDT_N14_FUNCTION_NEW or reddottype > RedDotType.RDT_N14_FISHING_REDDOT then
     return RedDotType.RDT_INVALID
   end
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N14)
   if not localProcess then
     return false
   end
   if reddottype == RedDotType.RDT_N14_FUNCTION_NEW then
     return localProcess:GetStepStatusNew()
+  elseif reddottype == RedDotType.RDT_N14_ENTRY_REDDOT then
+    return localProcess:GetEntryRedDot()
+  elseif reddottype == RedDotType.RDT_N14_LOGIN_AWARD then
+    return localProcess:GetLoginAwardRedDot()
+  elseif reddottype == RedDotType.RDT_N14_EASYLINEMISSION then
+    return localProcess:GetEasyMissionRedDot()
+  elseif reddottype == RedDotType.RDT_N14_HARDLINEMISSION_NEW then
+    return localProcess:GetHardMissionRedDot()
+  elseif reddottype == RedDotType.RDT_N14_FIXLINEMISSION then
+    return localProcess:GetFixMissionRedDot()
+  elseif reddottype == RedDotType.RDT_N14_FISHING_NEW then
+    return localProcess:GetFishingNewMark()
   else
-    if reddottype == RedDotType.RDT_N14_ENTRY_REDDOT then
-      return localProcess:GetEntryRedDot()
-    else
-      if reddottype == RedDotType.RDT_N14_LOGIN_AWARD then
-        return localProcess:GetLoginAwardRedDot()
-      else
-        if reddottype == RedDotType.RDT_N14_EASYLINEMISSION then
-          return localProcess:GetEasyMissionRedDot()
-        else
-          if reddottype == RedDotType.RDT_N14_HARDLINEMISSION_NEW then
-            return localProcess:GetHardMissionRedDot()
-          else
-            if reddottype == RedDotType.RDT_N14_FIXLINEMISSION then
-              return localProcess:GetFixMissionRedDot()
-            else
-              if reddottype == RedDotType.RDT_N14_FISHING_NEW then
-                return localProcess:GetFishingNewMark()
-              else
-                return false
-              end
-            end
-          end
-        end
-      end
-    end
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RedDotModule.RequestPrivteRedDotStatus = function(self, reddottype)
-  -- function num : 0_8 , upvalues : _ENV
-  for _,_function in ipairs(self._RedDotPrivateFunctionList) do
+function RedDotModule:RequestPrivteRedDotStatus(reddottype)
+  for _, _function in ipairs(self._RedDotPrivateFunctionList) do
     local retRedDot = _function(self, reddottype)
     if retRedDot ~= RedDotType.RDT_INVALID then
       return retRedDot
@@ -227,184 +146,86 @@ RedDotModule.RequestPrivteRedDotStatus = function(self, reddottype)
   return RedDotType.RDT_INVALID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-RedDotModule.RequestRedDotStatus = function(self, TT, checkList)
-  -- function num : 0_9 , upvalues : _ENV
+function RedDotModule:RequestRedDotStatus(TT, checkList)
   local result = {}
   local netCheckList = {}
-  for _,redDot in pairs(checkList) do
+  for _, redDot in pairs(checkList) do
     if redDot == RedDotType.RDT_SHOP_EXCHANGE then
-      local shopModule = (GameGlobal.GetModule)(ShopModule)
+      local shopModule = GameGlobal.GetModule(ShopModule)
       result[RedDotType.RDT_SHOP_EXCHANGE] = shopModule:ExchangeRedDotChecker()
+    elseif redDot == RedDotType.RDT_BLACKFIST_FUNCTION_NEW then
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_N7)
+      result[redDot] = sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
+    elseif redDot == RedDotType.RDT_ENTRY_REDDOT then
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      local localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N7)
+      result[redDot] = localProcess:GetEntryRedDot()
+    elseif redDot == RedDotType.RDT_LOGIN_AWARD then
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      local localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N7)
+      result[redDot] = localProcess:GetLoginAwardRedDot()
+    elseif redDot == RedDotType.RDT_BLACKFIST_PRESTIGE then
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      local localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N7)
+      result[redDot] = localProcess:GetPrestigeRedDot()
+    elseif redDot == RedDotType.RDT_SHADOW_TOWN then
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      local localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N7)
+      result[redDot] = localProcess:GetShadowTownRedDot()
+    elseif redDot == RedDotType.RDT_BLACKFIST_FUNCTION then
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      local localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N7)
+      result[redDot] = localProcess:GetBlackFistRedDot()
     else
-      do
-        if redDot == RedDotType.RDT_BLACKFIST_FUNCTION_NEW then
-          local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-          local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_N7)
-          if sample then
-            do
-              result[redDot] = sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-              if redDot == RedDotType.RDT_ENTRY_REDDOT then
-                local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-                local localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N7)
-                result[redDot] = localProcess:GetEntryRedDot()
-              else
-                do
-                  if redDot == RedDotType.RDT_LOGIN_AWARD then
-                    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-                    local localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N7)
-                    result[redDot] = localProcess:GetLoginAwardRedDot()
-                  else
-                    do
-                      if redDot == RedDotType.RDT_BLACKFIST_PRESTIGE then
-                        local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-                        local localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N7)
-                        result[redDot] = localProcess:GetPrestigeRedDot()
-                      else
-                        do
-                          if redDot == RedDotType.RDT_SHADOW_TOWN then
-                            local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-                            local localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N7)
-                            result[redDot] = localProcess:GetShadowTownRedDot()
-                          else
-                            do
-                              if redDot == RedDotType.RDT_BLACKFIST_FUNCTION then
-                                local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-                                local localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N7)
-                                result[redDot] = localProcess:GetBlackFistRedDot()
-                              else
-                                do
-                                  do
-                                    local nRetValue = self:RequestPrivteRedDotStatus(redDot)
-                                    if nRetValue ~= RedDotType.RDT_INVALID then
-                                      result[redDot] = nRetValue
-                                    else
-                                      result[redDot] = false
-                                      netCheckList[#netCheckList + 1] = redDot
-                                    end
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out DO_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out DO_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out DO_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out DO_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out DO_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out DO_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out DO_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                    -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out IF_STMT
-
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+      local nRetValue = self:RequestPrivteRedDotStatus(redDot)
+      if nRetValue ~= RedDotType.RDT_INVALID then
+        result[redDot] = nRetValue
+      else
+        result[redDot] = false
+        netCheckList[#netCheckList + 1] = redDot
       end
     end
   end
   if #netCheckList <= 0 then
     return result
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventGetRedDotStatusReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventGetRedDotStatusReq)
   request.check_list = netCheckList
   local reply = self:Call(TT, request)
   local replyEvent = reply.msg
   if replyEvent then
-    for _,redDot in pairs(replyEvent.red_dot_list) do
+    for _, redDot in pairs(replyEvent.red_dot_list) do
       result[redDot] = true
     end
   end
-  do
-    return result
-  end
+  return result
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-RedDotModule.ListenRedDot = function(self, redDot2GameEvent)
-  -- function num : 0_10 , upvalues : _ENV
-  local msg = (NetMessageFactory:GetInstance()):CreateMessage(CEventListenRedDotStatus)
-  for redDot,gameEvent in pairs(redDot2GameEvent) do
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self._RedDot2GameEvent)[redDot] = gameEvent
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (msg.red_dot_list)[#msg.red_dot_list + 1] = redDot
+function RedDotModule:ListenRedDot(redDot2GameEvent)
+  local msg = NetMessageFactory:GetInstance():CreateMessage(CEventListenRedDotStatus)
+  for redDot, gameEvent in pairs(redDot2GameEvent) do
+    self._RedDot2GameEvent[redDot] = gameEvent
+    msg.red_dot_list[#msg.red_dot_list + 1] = redDot
   end
   self:Push(msg)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-RedDotModule.UnListenRedDot = function(self, RedDotList)
-  -- function num : 0_11 , upvalues : _ENV
-  for _,redDot in pairs(RedDotList) do
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._RedDot2GameEvent)[redDot] = nil
+function RedDotModule:UnListenRedDot(RedDotList)
+  for _, redDot in pairs(RedDotList) do
+    self._RedDot2GameEvent[redDot] = nil
   end
-  local msg = (NetMessageFactory:GetInstance()):CreateMessage(CEventUnListenRedDotStatus)
+  local msg = NetMessageFactory:GetInstance():CreateMessage(CEventUnListenRedDotStatus)
   msg.red_dot_list = RedDotList
   self:Push(msg)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-RedDotModule._HandleNotifyLightRedDot = function(self, msg)
-  -- function num : 0_12 , upvalues : _ENV
+function RedDotModule:_HandleNotifyLightRedDot(msg)
   local redDotStatus = msg.red_dot_status
-  for redDotType,status in pairs(redDotStatus) do
-    local gameEventType = (self._RedDot2GameEvent)[redDotType]
+  for redDotType, status in pairs(redDotStatus) do
+    local gameEventType = self._RedDot2GameEvent[redDotType]
     if gameEventType ~= nil then
-      ((GameGlobal.EventDispatcher)()):Dispatch(gameEventType, status)
+      GameGlobal.EventDispatcher():Dispatch(gameEventType, status)
     end
   end
 end
-
-

@@ -1,48 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_combo_increase_crit_prob.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicComboIncreaseCritProb", BuffLogicBase)
 BuffLogicComboIncreaseCritProb = BuffLogicComboIncreaseCritProb
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicComboIncreaseCritProb.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicComboIncreaseCritProb:Constructor(buffInstance, logicParam)
   self._addValue = logicParam.addValue or 0
   self._maxValue = logicParam.maxValue or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicComboIncreaseCritProb.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("EachComboIncreaseCritProb", self._addValue)
-  ;
-  (e:BuffComponent()):SetBuffValue("ComboIncreaseCritProbMax", self._maxValue)
+function BuffLogicComboIncreaseCritProb:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("EachComboIncreaseCritProb", self._addValue)
+  e:BuffComponent():SetBuffValue("ComboIncreaseCritProbMax", self._maxValue)
   return true
 end
 
 _class("BuffLogicComboIncreaseCritProbUndo", BuffLogicBase)
 BuffLogicComboIncreaseCritProbUndo = BuffLogicComboIncreaseCritProbUndo
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicComboIncreaseCritProbUndo.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicComboIncreaseCritProbUndo:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicComboIncreaseCritProbUndo.DoLogic = function(self)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("EachComboIncreaseCritProb", 0)
-  ;
-  (e:BuffComponent()):SetBuffValue("ComboIncreaseCritProbMax", 0)
+function BuffLogicComboIncreaseCritProbUndo:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("EachComboIncreaseCritProb", 0)
+  e:BuffComponent():SetBuffValue("ComboIncreaseCritProbMax", 0)
   return true
 end
-
-

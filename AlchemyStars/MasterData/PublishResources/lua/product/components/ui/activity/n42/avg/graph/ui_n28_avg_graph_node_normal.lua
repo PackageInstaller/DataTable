@@ -1,59 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/graph/ui_n28_avg_graph_node_normal.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGGraphNodeNormal", UIN28AVGGraphNodeBase)
 UIN28AVGGraphNodeNormal = UIN28AVGGraphNodeNormal
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGGraphNodeNormal.FlushName = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local state = (self.node):State()
+function UIN28AVGGraphNodeNormal:FlushName()
+  local state = self.node:State()
   if state == N28AVGStoryNodeState.CantPlay then
-    (self.txtName):SetText("???")
-    ;
-    (self.txtName1):SetText("???")
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.txtName1Outline).effectColor = Color(0.41176470588235, 0.41176470588235, 0.50196078431373, 1)
+    self.txtName:SetText("???")
+    self.txtName1:SetText("???")
+    self.txtName1Outline.effectColor = Color(0.4117647058823529, 0.4117647058823529, 0.5019607843137255, 1)
   else
-    ;
-    (self.txtName):SetText((self.node).title)
-    ;
-    (self.txtName1):SetText((self.node).title)
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.txtName1Outline).effectColor = Color(0.24313725490196, 0.61176470588235, 0.78039215686275, 1)
+    self.txtName:SetText(self.node.title)
+    self.txtName1:SetText(self.node.title)
+    self.txtName1Outline.effectColor = Color(0.24313725490196078, 0.611764705882353, 0.7803921568627451, 1)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodeNormal.FlushState = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28AVGGraphNodeNormal:FlushState()
   self.imgBG1 = self:GetUIComponent("Image", "imgBG1")
-  local state = (self.node):State()
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
+  local state = self.node:State()
   if state == N28AVGStoryNodeState.CantPlay then
-    (self.imgBG).sprite = (self.atlas):GetSprite("N28_avg_jd_di03")
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.imgBG1).sprite = (self.atlas):GetSprite("N28_avg_jd_icon06")
+    self.imgBG.sprite = self.atlas:GetSprite("N28_avg_jd_di03")
+    self.imgBG1.sprite = self.atlas:GetSprite("N28_avg_jd_icon06")
   else
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.imgBG).sprite = (self.atlas):GetSprite("N28_avg_jd_di02")
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.imgBG1).sprite = (self.atlas):GetSprite("N28_avg_jd_icon05")
+    self.imgBG.sprite = self.atlas:GetSprite("N28_avg_jd_di02")
+    self.imgBG1.sprite = self.atlas:GetSprite("N28_avg_jd_icon05")
   end
 end
-
-

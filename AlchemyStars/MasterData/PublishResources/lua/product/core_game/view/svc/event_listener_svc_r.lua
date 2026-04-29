@@ -1,147 +1,81 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/event_listener_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EventListenerServiceRender", BaseService)
 EventListenerServiceRender = EventListenerServiceRender
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-EventListenerServiceRender.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function EventListenerServiceRender:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
+  self._configService = self._world:GetService("Config")
   self._preClickSkillID = -1
   self._currentSkillID = -1
-  self._autoBinder = AutoEventBinder:New((self._world):EventDispatcher())
-  ;
-  (self._autoBinder):BindEvent(GameEventType.MatchStart, self, self._OnMatchStart)
-  ;
-  (Log.notice)("EventListenerServiceRender start")
-  ;
-  (self._autoBinder):BindEvent(GameEventType.ClickPetHead, self, self._OnClickPetHead)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.ClickTrapHead, self, self._OnClickTrapHead)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.ClickPersonaSkill, self, self._OnClickPersonaSkill)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.StopPreviewActiveSkill, self, self._StopPreviewActiveSkill)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.CasterPreviewAnimatorExitPreview, self, self._CasterPreviewAnimatorExitPreview)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.StopPreviewFeatureSkill, self, self._StopPreviewFeatureSkill)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.CastActiveSkill, self, self.OnCastActiveSkill)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.CastActiveSkillNoPet, self, self.OnCastActiveSkillNoPet)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.CastPersonaSkill, self, self.OnCastPersonaSkill)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.ActiveSkillPickUp, self, self.OnActiveSkillPickUp)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.CancelActiveSkillCast, self, self.OnCancelActiveSkillCast)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.CastPickUpSkill, self, self.OnCastPickUpSkill)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.CastShopSkill, self, self.OnCastShopSkill)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.CancelChainSkillCast, self, self.OnCancelChainSkillCast)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.CastPickUpChainSkill, self, self.OnCastPickUpChainSkill)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.CancelReborn, self, self.OnCancelReborn)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.PreClickPetHead, self, self.OnPreClickHead)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.AutoFight, self, self._AutoFight)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.DoubleSpeed, self, self._DoubleSpeed)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.ChangeTeamLeader, self, self._ChangeTeamLeader)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.UIChangeTeamLeader, self, self._OnUIChangeTeamLeader)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.DumpSyncLog, self, self._DumpSyncLog)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.SpecialMissionQuitGame, self, self.OnSpecialMissionQuitGame)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.ClickUI2ClosePreviewMonster, self, self.OnClickUI2ClosePreviewMonster)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.OnUIGMCheatCommand, self, self.OnUIGMCheatCommand)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.ClientExceptionReport, self, self.OnClientExceptionReport)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.BattleUISelectTargetTeamPosition, self, self.OnBattleUISelectTargetTeamPosition)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.ClearSelectedTeamOrderPosition, self, self.OnClearSelectedTeamOrderPosition)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.ChessUIInputMoveAction, self, self.OnChessUIInputMoveAction)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.ChessUIInputAttackAction, self, self.OnChessUIInputAttackAction)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.ChessUIInputSkipAction, self, self.OnChessUIInputSkipAction)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.ChessUIInputFinishTurnAction, self, self.OnChessUIInputFinishTurnAction)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.GuideChessClick, self, self.OnGuideChessClick)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.UIMiniMazeChooseWaveAward, self, self.OnUIMiniMazeChooseWaveAward)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.GuideMonsterClick, self, self.OnGuideMonsterClick)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.ScanFeatureSaveInfo, self, self.OnScanFeatureSaveInfo)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.MirageUIClearPickUp, self, self.OnMirageUIClearPickUp)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.MirageUIConfirmPickUp, self, self.OnMirageUIConfirmPickUp)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.MirageUICountDownOver, self, self.OnMirageUICountDownOver)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.MirageUIRefreshStep, self, self.OnMirageUIRefreshStep)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.UIBattleSwitchPetEquipRefine, self, self.OnSwitchPetEquipRefine)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.UIBlackChange, self, self.OnResolutionChanged)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.PopStarPickUp, self, self.OnPopStarPickUp)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.UIChooseEnterPuzzle, self, self.OnEnterPuzzle)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.SyncClientUnscaledCountDownFinish, self, self.OnSyncClientUnscaledCountDownFinish)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.UIShowChangeTeamLeaderData, self, self.HandleShowChangeTeamLeader)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.IstavanPreviewChoosePetHeadUI, self, self.OnSPIstavanChoosePetHead)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.UITetrisOP, self, self.OnTetrisFeatureOP)
+  self._autoBinder = AutoEventBinder:New(self._world:EventDispatcher())
+  self._autoBinder:BindEvent(GameEventType.MatchStart, self, self._OnMatchStart)
+  Log.notice("EventListenerServiceRender start")
+  self._autoBinder:BindEvent(GameEventType.ClickPetHead, self, self._OnClickPetHead)
+  self._autoBinder:BindEvent(GameEventType.ClickTrapHead, self, self._OnClickTrapHead)
+  self._autoBinder:BindEvent(GameEventType.ClickPersonaSkill, self, self._OnClickPersonaSkill)
+  self._autoBinder:BindEvent(GameEventType.StopPreviewActiveSkill, self, self._StopPreviewActiveSkill)
+  self._autoBinder:BindEvent(GameEventType.CasterPreviewAnimatorExitPreview, self, self._CasterPreviewAnimatorExitPreview)
+  self._autoBinder:BindEvent(GameEventType.StopPreviewFeatureSkill, self, self._StopPreviewFeatureSkill)
+  self._autoBinder:BindEvent(GameEventType.CastActiveSkill, self, self.OnCastActiveSkill)
+  self._autoBinder:BindEvent(GameEventType.CastActiveSkillNoPet, self, self.OnCastActiveSkillNoPet)
+  self._autoBinder:BindEvent(GameEventType.CastPersonaSkill, self, self.OnCastPersonaSkill)
+  self._autoBinder:BindEvent(GameEventType.ActiveSkillPickUp, self, self.OnActiveSkillPickUp)
+  self._autoBinder:BindEvent(GameEventType.CancelActiveSkillCast, self, self.OnCancelActiveSkillCast)
+  self._autoBinder:BindEvent(GameEventType.CastPickUpSkill, self, self.OnCastPickUpSkill)
+  self._autoBinder:BindEvent(GameEventType.CastShopSkill, self, self.OnCastShopSkill)
+  self._autoBinder:BindEvent(GameEventType.CancelChainSkillCast, self, self.OnCancelChainSkillCast)
+  self._autoBinder:BindEvent(GameEventType.CastPickUpChainSkill, self, self.OnCastPickUpChainSkill)
+  self._autoBinder:BindEvent(GameEventType.CancelReborn, self, self.OnCancelReborn)
+  self._autoBinder:BindEvent(GameEventType.PreClickPetHead, self, self.OnPreClickHead)
+  self._autoBinder:BindEvent(GameEventType.AutoFight, self, self._AutoFight)
+  self._autoBinder:BindEvent(GameEventType.DoubleSpeed, self, self._DoubleSpeed)
+  self._autoBinder:BindEvent(GameEventType.ChangeTeamLeader, self, self._ChangeTeamLeader)
+  self._autoBinder:BindEvent(GameEventType.UIChangeTeamLeader, self, self._OnUIChangeTeamLeader)
+  self._autoBinder:BindEvent(GameEventType.DumpSyncLog, self, self._DumpSyncLog)
+  self._autoBinder:BindEvent(GameEventType.SpecialMissionQuitGame, self, self.OnSpecialMissionQuitGame)
+  self._autoBinder:BindEvent(GameEventType.ClickUI2ClosePreviewMonster, self, self.OnClickUI2ClosePreviewMonster)
+  self._autoBinder:BindEvent(GameEventType.OnUIGMCheatCommand, self, self.OnUIGMCheatCommand)
+  self._autoBinder:BindEvent(GameEventType.ClientExceptionReport, self, self.OnClientExceptionReport)
+  self._autoBinder:BindEvent(GameEventType.BattleUISelectTargetTeamPosition, self, self.OnBattleUISelectTargetTeamPosition)
+  self._autoBinder:BindEvent(GameEventType.ClearSelectedTeamOrderPosition, self, self.OnClearSelectedTeamOrderPosition)
+  self._autoBinder:BindEvent(GameEventType.ChessUIInputMoveAction, self, self.OnChessUIInputMoveAction)
+  self._autoBinder:BindEvent(GameEventType.ChessUIInputAttackAction, self, self.OnChessUIInputAttackAction)
+  self._autoBinder:BindEvent(GameEventType.ChessUIInputSkipAction, self, self.OnChessUIInputSkipAction)
+  self._autoBinder:BindEvent(GameEventType.ChessUIInputFinishTurnAction, self, self.OnChessUIInputFinishTurnAction)
+  self._autoBinder:BindEvent(GameEventType.GuideChessClick, self, self.OnGuideChessClick)
+  self._autoBinder:BindEvent(GameEventType.UIMiniMazeChooseWaveAward, self, self.OnUIMiniMazeChooseWaveAward)
+  self._autoBinder:BindEvent(GameEventType.GuideMonsterClick, self, self.OnGuideMonsterClick)
+  self._autoBinder:BindEvent(GameEventType.ScanFeatureSaveInfo, self, self.OnScanFeatureSaveInfo)
+  self._autoBinder:BindEvent(GameEventType.MirageUIClearPickUp, self, self.OnMirageUIClearPickUp)
+  self._autoBinder:BindEvent(GameEventType.MirageUIConfirmPickUp, self, self.OnMirageUIConfirmPickUp)
+  self._autoBinder:BindEvent(GameEventType.MirageUICountDownOver, self, self.OnMirageUICountDownOver)
+  self._autoBinder:BindEvent(GameEventType.MirageUIRefreshStep, self, self.OnMirageUIRefreshStep)
+  self._autoBinder:BindEvent(GameEventType.UIBattleSwitchPetEquipRefine, self, self.OnSwitchPetEquipRefine)
+  self._autoBinder:BindEvent(GameEventType.UIBlackChange, self, self.OnResolutionChanged)
+  self._autoBinder:BindEvent(GameEventType.PopStarPickUp, self, self.OnPopStarPickUp)
+  self._autoBinder:BindEvent(GameEventType.UIChooseEnterPuzzle, self, self.OnEnterPuzzle)
+  self._autoBinder:BindEvent(GameEventType.SyncClientUnscaledCountDownFinish, self, self.OnSyncClientUnscaledCountDownFinish)
+  self._autoBinder:BindEvent(GameEventType.UIShowChangeTeamLeaderData, self, self.HandleShowChangeTeamLeader)
+  self._autoBinder:BindEvent(GameEventType.IstavanPreviewChoosePetHeadUI, self, self.OnSPIstavanChoosePetHead)
+  self._autoBinder:BindEvent(GameEventType.UITetrisOP, self, self.OnTetrisFeatureOP)
   self._fightResultEventListener = FightResultEventListenerRender:New(self._world, self._autoBinder)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.Dispose = function(self)
-  -- function num : 0_1
-  (self._autoBinder):UnBindAllEvents()
+function EventListenerServiceRender:Dispose()
+  self._autoBinder:UnBindAllEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._OnMatchStart = function(self)
-  -- function num : 0_2
-  local battleRenderConfigCmpt = (self._world):BattleRenderConfig()
+function EventListenerServiceRender:_OnMatchStart()
+  local battleRenderConfigCmpt = self._world:BattleRenderConfig()
   battleRenderConfigCmpt:SetIsMatchStart(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._OnClickPetHead = function(self, castSkillPetPstID, energyReady, curSkillID)
-  -- function num : 0_3 , upvalues : _ENV
-  local svc = (self._world):GetService("RenderEntity")
+function EventListenerServiceRender:_OnClickPetHead(castSkillPetPstID, energyReady, curSkillID)
+  local svc = self._world:GetService("RenderEntity")
   svc:DestroyGhost()
-  local playSkillService = (self._world):GetService("PlaySkill")
-  local configService = (self._world):GetService("Config")
+  local playSkillService = self._world:GetService("PlaySkill")
+  local configService = self._world:GetService("Config")
   if castSkillPetPstID ~= 0 then
-    local e = ((self._world):Player()):GetPetEntityByPetPstID(castSkillPetPstID)
+    local e = self._world:Player():GetPetEntityByPetPstID(castSkillPetPstID)
     local skillInfoComponent = e:SkillInfo()
     local skillID = skillInfoComponent:GetActiveSkillID()
     local hp = e:HP()
@@ -149,282 +83,227 @@ EventListenerServiceRender._OnClickPetHead = function(self, castSkillPetPstID, e
     if curSkillID then
       local skillConfigData = configService:GetSkillConfigData(skillID, e)
       local subSkillList = skillConfigData:GetSubSkillIDList()
-      if #subSkillList > 0 and (table.icontains)(subSkillList, curSkillID) then
+      if 0 < #subSkillList and table.icontains(subSkillList, curSkillID) then
         skillID = curSkillID
       else
         local extraSkillList = skillInfoComponent:GetExtraActiveSkillIDList()
-        if extraSkillList and (table.icontains)(extraSkillList, curSkillID) then
+        if extraSkillList and table.icontains(extraSkillList, curSkillID) then
           skillID = curSkillID
         else
           local variantActiveSkillInfo = skillInfoComponent:GetVariantActiveSkillInfo()
           if variantActiveSkillInfo then
             local variantList = variantActiveSkillInfo[skillID]
-            if variantList and (table.icontains)(variantList, curSkillID) then
+            if variantList and table.icontains(variantList, curSkillID) then
               skillID = curSkillID
             end
           end
         end
       end
     end
-    do
-      local renderBoardEntity = (self._world):GetRenderBoardEntity()
-      local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
-      pickUpTargetCmpt:SetCurActiveSkillInfo(skillID, castSkillPetPstID)
-      e:ReplacePreviewActiveSkill(skillID, castSkillPetPstID)
-      if (self._world):MatchType() == MatchType.MT_PopStar then
-        local popStarRSvc = (self._world):GetService("PopStarRender")
-        popStarRSvc:PopStarShowCasterEntity(castSkillPetPstID)
-      else
-        do
-          if not (table.icontains)(BattleConst.NoShowCasterEntityOnPreview, skillID) then
-            local skillConfigData = configService:GetSkillConfigData(skillID, e)
-            local pickUpType = skillConfigData:GetSkillPickType()
-            if pickUpType ~= SkillPickUpType.LinkLineSP then
-              playSkillService:ShowCasterEntity(e:GetID())
-            end
-          end
-          do
-            self:_PreviewSkill(skillID, castSkillPetPstID)
-          end
-        end
+    local renderBoardEntity = self._world:GetRenderBoardEntity()
+    local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
+    pickUpTargetCmpt:SetCurActiveSkillInfo(skillID, castSkillPetPstID)
+    e:ReplacePreviewActiveSkill(skillID, castSkillPetPstID)
+    if self._world:MatchType() == MatchType.MT_PopStar then
+      local popStarRSvc = self._world:GetService("PopStarRender")
+      popStarRSvc:PopStarShowCasterEntity(castSkillPetPstID)
+    elseif not table.icontains(BattleConst.NoShowCasterEntityOnPreview, skillID) then
+      local skillConfigData = configService:GetSkillConfigData(skillID, e)
+      local pickUpType = skillConfigData:GetSkillPickType()
+      if pickUpType ~= SkillPickUpType.LinkLineSP then
+        playSkillService:ShowCasterEntity(e:GetID())
       end
     end
+    self:_PreviewSkill(skillID, castSkillPetPstID)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._OnClickTrapHead = function(self, skillID, trapEntityID, energyReady)
-  -- function num : 0_4 , upvalues : _ENV
+function EventListenerServiceRender:_OnClickTrapHead(skillID, trapEntityID, energyReady)
   if self._preClickSkillID ~= skillID then
-    (Log.fatal)("click head skill not match", self._preClickSkillID, skillID)
-    return 
+    Log.fatal("click head skill not match", self._preClickSkillID, skillID)
+    return
   end
-  local svc = (self._world):GetService("RenderEntity")
+  local svc = self._world:GetService("RenderEntity")
   svc:DestroyGhost()
-  local trap = (self._world):GetEntityByID(trapEntityID)
+  local trap = self._world:GetEntityByID(trapEntityID)
   if not trap then
-    return 
+    return
   end
   trap:RemovePreviewPickUpComponent()
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   pickUpTargetCmpt:SetCurActiveSkillInfo(skillID, -1)
   pickUpTargetCmpt:SetEntityID(trap:GetID())
   trap:ReplacePreviewActiveSkill(skillID, trapEntityID)
-  local playSkillService = (self._world):GetService("PlaySkill")
+  local playSkillService = self._world:GetService("PlaySkill")
   playSkillService:ShowCasterEntity(trap:GetID())
-  local pickUpCmpt = (self._world):PickUp()
+  local pickUpCmpt = self._world:PickUp()
   pickUpCmpt:SetCurActiveSkillInfo(skillID, -1)
   pickUpCmpt:SetEntityID(trap:GetID())
   self:_PreviewSkill(skillID, trapEntityID)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._OnClickPersonaSkill = function(self, featureType, skillID)
-  -- function num : 0_5 , upvalues : _ENV
-  local svc = (self._world):GetService("RenderEntity")
+function EventListenerServiceRender:_OnClickPersonaSkill(featureType, skillID)
+  local svc = self._world:GetService("RenderEntity")
   svc:DestroyGhost()
-  do
-    if (self._world):MatchType() == MatchType.MT_PopStar then
-      local popStarRSvc = (self._world):GetService("PopStarRender")
-      popStarRSvc:PopStarShowCasterEntity(-1)
-    end
-    local skillHolder = (FeatureServiceHelper.GetFeatureSkillHolderEntity)(featureType)
-    local e = skillHolder
-    if not e then
-      return 
-    end
-    e:RemovePreviewPickUpComponent()
-    local renderBoardEntity = (self._world):GetRenderBoardEntity()
-    local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
-    pickUpTargetCmpt:SetCurActiveSkillInfo(skillID, -1)
-    pickUpTargetCmpt:SetEntityID(e:GetID())
-    e:ReplacePreviewActiveSkill(skillID)
-    local playSkillService = (self._world):GetService("PlaySkill")
-    local teamEntity = ((self._world):Player()):GetPreviewTeamEntity()
-    playSkillService:ShowPlayerEntity(teamEntity)
-    if (self._world):MatchType() ~= MatchType.MT_PopStar then
-      local teamLeaderEntityID = (teamEntity:Team()):GetTeamLeaderEntityID()
-      local teamLeaderEntity = (self._world):GetEntityByID(teamLeaderEntityID)
-      if teamLeaderEntity:HasView() then
-        teamLeaderEntity:SetViewVisible(false)
-        teamLeaderEntity:SetViewVisible(true)
-      end
-    end
-    do
-      local pickUpCmpt = (self._world):PickUp()
-      pickUpCmpt:SetCurActiveSkillInfo(skillID, -1)
-      pickUpCmpt:SetEntityID(e:GetID())
-      local castSkillPetPstID = 0
-      self:_PreviewSkill(skillID, castSkillPetPstID)
+  if self._world:MatchType() == MatchType.MT_PopStar then
+    local popStarRSvc = self._world:GetService("PopStarRender")
+    popStarRSvc:PopStarShowCasterEntity(-1)
+  end
+  local skillHolder = FeatureServiceHelper.GetFeatureSkillHolderEntity(featureType)
+  local e = skillHolder
+  if not e then
+    return
+  end
+  e:RemovePreviewPickUpComponent()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
+  pickUpTargetCmpt:SetCurActiveSkillInfo(skillID, -1)
+  pickUpTargetCmpt:SetEntityID(e:GetID())
+  e:ReplacePreviewActiveSkill(skillID)
+  local playSkillService = self._world:GetService("PlaySkill")
+  local teamEntity = self._world:Player():GetPreviewTeamEntity()
+  playSkillService:ShowPlayerEntity(teamEntity)
+  if self._world:MatchType() ~= MatchType.MT_PopStar then
+    local teamLeaderEntityID = teamEntity:Team():GetTeamLeaderEntityID()
+    local teamLeaderEntity = self._world:GetEntityByID(teamLeaderEntityID)
+    if teamLeaderEntity:HasView() then
+      teamLeaderEntity:SetViewVisible(false)
+      teamLeaderEntity:SetViewVisible(true)
     end
   end
+  local pickUpCmpt = self._world:PickUp()
+  pickUpCmpt:SetCurActiveSkillInfo(skillID, -1)
+  pickUpCmpt:SetEntityID(e:GetID())
+  local castSkillPetPstID = 0
+  self:_PreviewSkill(skillID, castSkillPetPstID)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._PreviewSkill = function(self, skillID, castSkillPetPstID)
-  -- function num : 0_6 , upvalues : _ENV
-  local sPreviewSkill = (self._world):GetService("PreviewActiveSkill")
+function EventListenerServiceRender:_PreviewSkill(skillID, castSkillPetPstID)
+  local sPreviewSkill = self._world:GetService("PreviewActiveSkill")
   sPreviewSkill:StartPreviewFocusEffect()
-  local skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(skillID, castSkillPetPstID)
+  local skillConfigData = ConfigServiceHelper.GetSkillConfigData(skillID, castSkillPetPstID)
   local pickUpType = skillConfigData:GetSkillPickType()
   local curState = self:_GetCurState()
   if pickUpType == SkillPickUpType.None then
     if curState == GameStateID.WaitInput then
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputFinish, 3)
+      self._world:EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 3)
+    elseif curState == GameStateID.PickUpActiveSkillTarget then
+      self._world:EventDispatcher():Dispatch(GameEventType.PickUpActiveSkillTargetFinish, 3)
+    elseif curState == GameStateID.PreviewActiveSkill then
     else
-      if curState == GameStateID.PickUpActiveSkillTarget then
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.PickUpActiveSkillTargetFinish, 3)
-      else
-      end
+      Log.fatal("preview skill state error:", curState)
     end
-    if curState == GameStateID.PreviewActiveSkill then
-      (Log.fatal)("preview skill state error:", curState)
-      if pickUpType == SkillPickUpType.FeatureSkipPreview then
-        (((self._world).EventDispatcher)()):Dispatch(GameEventType.CastPersonaSkill, skillID)
-      else
-        if curState == GameStateID.WaitInput then
-          sPreviewSkill:PlaySkillView_Preview(self._world, skillID, castSkillPetPstID, true)
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputFinish, 3)
-        else
-          if curState == GameStateID.PickUpActiveSkillTarget then
-            sPreviewSkill:PlaySkillView_Preview(self._world, skillID, castSkillPetPstID, true)
-            ;
-            ((self._world):EventDispatcher()):Dispatch(GameEventType.PickUpActiveSkillTargetFinish, 3)
-          else
-            if curState == GameStateID.PreviewActiveSkill then
-              sPreviewSkill:PlaySkillView_Preview(self._world, skillID, castSkillPetPstID, true)
-            else
-              ;
-              (Log.fatal)("preview pick up skill state error:", curState)
-            end
-          end
-        end
-      end
-    end
+  elseif pickUpType == SkillPickUpType.FeatureSkipPreview then
+    self._world.EventDispatcher():Dispatch(GameEventType.CastPersonaSkill, skillID)
+  elseif curState == GameStateID.WaitInput then
+    sPreviewSkill:PlaySkillView_Preview(self._world, skillID, castSkillPetPstID, true)
+    self._world:EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 3)
+  elseif curState == GameStateID.PickUpActiveSkillTarget then
+    sPreviewSkill:PlaySkillView_Preview(self._world, skillID, castSkillPetPstID, true)
+    self._world:EventDispatcher():Dispatch(GameEventType.PickUpActiveSkillTargetFinish, 3)
+  elseif curState == GameStateID.PreviewActiveSkill then
+    sPreviewSkill:PlaySkillView_Preview(self._world, skillID, castSkillPetPstID, true)
+  else
+    Log.fatal("preview pick up skill state error:", curState)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._GetCurState = function(self)
-  -- function num : 0_7
-  local utilDataSvc = (self._world):GetService("UtilData")
+function EventListenerServiceRender:_GetCurState()
+  local utilDataSvc = self._world:GetService("UtilData")
   return utilDataSvc:GetCurMainStateID()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._CasterPreviewAnimatorExitPreview = function(self, petPstID, activeSkillID)
-  -- function num : 0_8 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function EventListenerServiceRender:_CasterPreviewAnimatorExitPreview(petPstID, activeSkillID)
+  local utilDataSvc = self._world:GetService("UtilData")
   local petEntityID = utilDataSvc:GetEntityIDByPstID(petPstID)
   if not petEntityID then
-    return 
+    return
   end
-  local petEntity = (self._world):GetEntityByID(petEntityID)
+  local petEntity = self._world:GetEntityByID(petEntityID)
   if not petEntity then
-    return 
+    return
   end
   if not activeSkillID then
-    return 
+    return
   end
-  local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID, petEntity)
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID, petEntity)
   local pickUpType = skillConfigData:GetSkillPickType()
   if pickUpType == SkillPickUpType.None then
-    return 
+    return
   end
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   previewActiveSkillService:PlayCasterPreviewAnim(petEntity, false, "AtkUltPreviewCancel")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._StopPreviewActiveSkill = function(self, isSwitch, bShowPlayerEntity, activeSkillID, petPstID)
-  -- function num : 0_9 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetPreviewTeamEntity()
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+function EventListenerServiceRender:_StopPreviewActiveSkill(isSwitch, bShowPlayerEntity, activeSkillID, petPstID)
+  local teamEntity = self._world:Player():GetPreviewTeamEntity()
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   if isSwitch ~= true then
     previewActiveSkillService:StopDarkScreenImmediately()
   end
-  local svc = (self._world):GetService("RenderEntity")
+  local svc = self._world:GetService("RenderEntity")
   svc:DestroyGhost()
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self.DoCancelPreviewInstruction, self, activeSkillID, petPstID)
-  do
-    if bShowPlayerEntity then
-      local playSkillService = (self._world):GetService("PlaySkill")
-      playSkillService:ShowPlayerEntity(teamEntity)
-    end
-    previewActiveSkillService:_DestroyPickUpArrow()
-    local flashEnemyEntities = ((self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)):GetEntities()
-    for _,v in ipairs(flashEnemyEntities) do
-      local comp = v:MaterialAnimationComponent()
-      if comp then
-        comp:StopLayer(MaterialAnimLayer.SkillPreview)
-      end
-    end
-    previewActiveSkillService:ResetPreview()
-    previewActiveSkillService:_ClearPreviewActiveSkill(isSwitch)
-    previewActiveSkillService:ClearPreviewLinkLine(activeSkillID, petPstID)
-    local pieceService = (self._world):GetService("Piece")
-    pieceService:RefreshPieceAnim()
+  GameGlobal.TaskManager():CoreGameStartTask(self.DoCancelPreviewInstruction, self, activeSkillID, petPstID)
+  if bShowPlayerEntity then
+    local playSkillService = self._world:GetService("PlaySkill")
+    playSkillService:ShowPlayerEntity(teamEntity)
   end
+  previewActiveSkillService:_DestroyPickUpArrow()
+  local flashEnemyEntities = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID):GetEntities()
+  for _, v in ipairs(flashEnemyEntities) do
+    local comp = v:MaterialAnimationComponent()
+    if comp then
+      comp:StopLayer(MaterialAnimLayer.SkillPreview)
+    end
+  end
+  previewActiveSkillService:ResetPreview()
+  previewActiveSkillService:_ClearPreviewActiveSkill(isSwitch)
+  previewActiveSkillService:ClearPreviewLinkLine(activeSkillID, petPstID)
+  local pieceService = self._world:GetService("Piece")
+  pieceService:RefreshPieceAnim()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._StopPreviewFeatureSkill = function(self, isSwitch, bShowPlayerEntity, featureSkillID, featureType)
-  -- function num : 0_10 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetPreviewTeamEntity()
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+function EventListenerServiceRender:_StopPreviewFeatureSkill(isSwitch, bShowPlayerEntity, featureSkillID, featureType)
+  local teamEntity = self._world:Player():GetPreviewTeamEntity()
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   if isSwitch ~= true then
     previewActiveSkillService:StopDarkScreenImmediately()
   end
-  local svc = (self._world):GetService("RenderEntity")
+  local svc = self._world:GetService("RenderEntity")
   svc:DestroyGhost()
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self.DoFeatureCancelPreviewInstruction, self, featureSkillID, featureType)
-  do
-    if bShowPlayerEntity then
-      local playSkillService = (self._world):GetService("PlaySkill")
-      playSkillService:ShowPlayerEntity(teamEntity)
-    end
-    previewActiveSkillService:_DestroyPickUpArrow()
-    local flashEnemyEntities = ((self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)):GetEntities()
-    for _,v in ipairs(flashEnemyEntities) do
-      local comp = v:MaterialAnimationComponent()
-      if comp then
-        comp:StopLayer(MaterialAnimLayer.SkillPreview)
-      end
-    end
-    previewActiveSkillService:ResetPreview()
-    previewActiveSkillService:_ClearPreviewActiveSkill(isSwitch)
-    local pieceService = (self._world):GetService("Piece")
-    pieceService:RefreshPieceAnim()
+  GameGlobal.TaskManager():CoreGameStartTask(self.DoFeatureCancelPreviewInstruction, self, featureSkillID, featureType)
+  if bShowPlayerEntity then
+    local playSkillService = self._world:GetService("PlaySkill")
+    playSkillService:ShowPlayerEntity(teamEntity)
   end
+  previewActiveSkillService:_DestroyPickUpArrow()
+  local flashEnemyEntities = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID):GetEntities()
+  for _, v in ipairs(flashEnemyEntities) do
+    local comp = v:MaterialAnimationComponent()
+    if comp then
+      comp:StopLayer(MaterialAnimLayer.SkillPreview)
+    end
+  end
+  previewActiveSkillService:ResetPreview()
+  previewActiveSkillService:_ClearPreviewActiveSkill(isSwitch)
+  local pieceService = self._world:GetService("Piece")
+  pieceService:RefreshPieceAnim()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.CastPickUpActiveSkill = function(self, TT, activeSkillID, petPstID, entityID)
-  -- function num : 0_11 , upvalues : _ENV
+function EventListenerServiceRender:CastPickUpActiveSkill(TT, activeSkillID, petPstID, entityID)
   local configService = self._configService
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local casterPetEntityID = utilDataSvc:GetEntityIDByPstID(petPstID)
-  local petEntity = (self._world):GetEntityByID(casterPetEntityID)
+  local petEntity = self._world:GetEntityByID(casterPetEntityID)
   local skillConfigData = configService:GetSkillConfigData(activeSkillID, petEntity)
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
-  local svc = (self._world):GetService("RenderEntity")
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
+  local svc = self._world:GetService("RenderEntity")
   svc:DestroyGhost()
   previewActiveSkillService:_DestroyPickUpArrow()
   previewActiveSkillService:_RevertBright()
-  local flashEnemyEntities = ((self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)):GetEntities()
-  for _,v in ipairs(flashEnemyEntities) do
+  local flashEnemyEntities = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID):GetEntities()
+  for _, v in ipairs(flashEnemyEntities) do
     local comp = v:MaterialAnimationComponent()
     if comp then
       comp:StopLayer(MaterialAnimLayer.SkillPreview)
@@ -434,8 +313,8 @@ EventListenerServiceRender.CastPickUpActiveSkill = function(self, TT, activeSkil
   previewActiveSkillService:_ClearPreviewActiveSkill(false, true)
   if skillConfigData:GetSkillType() == SkillType.Active then
     if casterPetEntityID < 0 then
-      (Log.fatal)("caster entity id invalid")
-      return 
+      Log.fatal("caster entity id invalid")
+      return
     end
     self:_LogPetCasterInfo(casterPetEntityID, activeSkillID)
     skillConfigData = configService:GetSkillConfigData(activeSkillID, petEntity)
@@ -445,529 +324,420 @@ EventListenerServiceRender.CastPickUpActiveSkill = function(self, TT, activeSkil
     if canSendBefore then
       self:DoActiveSkillInstruction(TT, activeSkillID, petPstID)
       local canSend, errorType = self:_CheckCanSendActivePickSkillCmd(previewPickUpComponent, petEntity, activeSkillID, pickUpType)
-      ;
-      ((self._world):GetService("Piece")):RefreshPieceAnim()
+      self._world:GetService("Piece"):RefreshPieceAnim()
       if canSend then
         self:SendCastPickUpActiveSkillCommand(activeSkillID, petPstID, previewPickUpComponent)
         if pickUpType == SkillPickUpType.LinkLine or pickUpType == SkillPickUpType.LinkLineSP or pickUpType == SkillPickUpType.Moye then
-          local inputCmpt = (self._world):Input()
+          local inputCmpt = self._world:Input()
           inputCmpt:SetPreviewActiveSkill(false)
         end
       else
-        do
-          do
-            local errorStep = ActivePickSkillCheckErrorStep.SendBeforeAfterDoIns
-            self:_OnCastActivePickSkillFail(errorStep, errorType, activeSkillID, petPstID, previewPickUpComponent)
-            do
-              local errorStep = ActivePickSkillCheckErrorStep.SendBeforeDoIns
-              self:_OnCastActivePickSkillFail(errorStep, errorTypeBefore, activeSkillID, petPstID, previewPickUpComponent)
-              if skillConfigData:GetSkillType() == SkillType.TrapSkill then
-                self:DoActiveSkillInstruction(TT, activeSkillID, petPstID, entityID)
-                local casterEntity = (self._world):GetEntityByID(entityID)
-                local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
-                ;
-                ((self._world):GetService("Piece")):RefreshPieceAnim()
-                self:SendCastPickUpActiveSkillCommand(activeSkillID, 0, previewPickUpComponent, entityID)
-              else
-                do
-                  if skillConfigData:GetSkillType() == SkillType.FeatureSkill then
-                    self:DoActiveSkillInstruction(TT, activeSkillID, petPstID, entityID)
-                    local casterEntity = (self._world):GetEntityByID(entityID)
-                    local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
-                    ;
-                    ((self._world):GetService("Piece")):RefreshPieceAnim()
-                    self:SendCastPickUpActiveSkillCommand(activeSkillID, 0, previewPickUpComponent, entityID)
-                  end
-                end
-              end
-            end
-          end
-        end
+        local errorStep = ActivePickSkillCheckErrorStep.SendBeforeAfterDoIns
+        self:_OnCastActivePickSkillFail(errorStep, errorType, activeSkillID, petPstID, previewPickUpComponent)
       end
+    else
+      local errorStep = ActivePickSkillCheckErrorStep.SendBeforeDoIns
+      self:_OnCastActivePickSkillFail(errorStep, errorTypeBefore, activeSkillID, petPstID, previewPickUpComponent)
     end
+  elseif skillConfigData:GetSkillType() == SkillType.TrapSkill then
+    self:DoActiveSkillInstruction(TT, activeSkillID, petPstID, entityID)
+    local casterEntity = self._world:GetEntityByID(entityID)
+    local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
+    self._world:GetService("Piece"):RefreshPieceAnim()
+    self:SendCastPickUpActiveSkillCommand(activeSkillID, 0, previewPickUpComponent, entityID)
+  elseif skillConfigData:GetSkillType() == SkillType.FeatureSkill then
+    self:DoActiveSkillInstruction(TT, activeSkillID, petPstID, entityID)
+    local casterEntity = self._world:GetEntityByID(entityID)
+    local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
+    self._world:GetService("Piece"):RefreshPieceAnim()
+    self:SendCastPickUpActiveSkillCommand(activeSkillID, 0, previewPickUpComponent, entityID)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnCastActiveSkill = function(self, activeSkillID, petPstID)
-  -- function num : 0_12 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function EventListenerServiceRender:OnCastActiveSkill(activeSkillID, petPstID)
+  local utilDataSvc = self._world:GetService("UtilData")
   local casterPetEntityID = utilDataSvc:GetEntityIDByPstID(petPstID)
   if casterPetEntityID < 0 then
-    (Log.fatal)("caster entity id invalid")
-    return 
+    Log.fatal("caster entity id invalid")
+    return
   end
-  local e = (self._world):GetEntityByID(casterPetEntityID)
+  local e = self._world:GetEntityByID(casterPetEntityID)
   local configService = self._configService
   local skillConfigData = configService:GetSkillConfigData(activeSkillID)
   local pickUpType = skillConfigData:GetSkillPickType()
-  local playSkillService = (self._world):GetService("PlaySkill")
-  if not (table.icontains)(BattleConst.NoShowCasterEntityOnPreview, activeSkillID) and pickUpType ~= SkillPickUpType.LinkLineSP then
+  local playSkillService = self._world:GetService("PlaySkill")
+  if not table.icontains(BattleConst.NoShowCasterEntityOnPreview, activeSkillID) and pickUpType ~= SkillPickUpType.LinkLineSP then
     playSkillService:ShowCasterEntity(casterPetEntityID)
   end
-  local petEntity = (self._world):GetEntityByID(casterPetEntityID)
+  local petEntity = self._world:GetEntityByID(casterPetEntityID)
   petEntity:RemovePreviewPickUpComponent()
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
-  local svc = (self._world):GetService("RenderEntity")
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
+  local svc = self._world:GetService("RenderEntity")
   svc:DestroyGhost()
   if pickUpType == SkillPickUpType.None then
     self:_LogPetCasterInfo(casterPetEntityID, activeSkillID)
     previewActiveSkillService:_RevertBright()
     previewActiveSkillService:ResetPreview()
     previewActiveSkillService:_ClearPreviewActiveSkill(false, true)
-    ;
-    ((self._world):GetService("Piece")):RefreshPieceAnim()
+    self._world:GetService("Piece"):RefreshPieceAnim()
     self:SendCastActiveSkillCommand(activeSkillID, petPstID)
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(self.DoActiveSkillInstruction, self, activeSkillID, petPstID)
+    GameGlobal.TaskManager():CoreGameStartTask(self.DoActiveSkillInstruction, self, activeSkillID, petPstID)
   else
-    local monsterEntities = ((self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)):GetEntities()
-    for _,v in ipairs(monsterEntities) do
-      if v:BuffView() and not (v:BuffView()):HasBuffEffect(BuffEffectType.NotPlayMaterialAnimation) then
+    local monsterEntities = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID):GetEntities()
+    for _, v in ipairs(monsterEntities) do
+      if v:BuffView() and not v:BuffView():HasBuffEffect(BuffEffectType.NotPlayMaterialAnimation) then
         v:NewEnableTransparent()
       end
     end
-    local pickUpCmpt = (self._world):PickUp()
+    local pickUpCmpt = self._world:PickUp()
     pickUpCmpt:SetCurActiveSkillInfo(activeSkillID, petPstID)
-    ;
-    (Log.notice)("cast pick up active skill", activeSkillID)
+    Log.notice("cast pick up active skill", activeSkillID)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnCastActiveSkillNoPet = function(self, activeSkillID, trapEntityID)
-  -- function num : 0_13 , upvalues : _ENV
-  local trap = (self._world):GetEntityByID(trapEntityID)
-  local entityPos = (trap:GridLocation()):CenterNoOffset()
+function EventListenerServiceRender:OnCastActiveSkillNoPet(activeSkillID, trapEntityID)
+  local trap = self._world:GetEntityByID(trapEntityID)
+  local entityPos = trap:GridLocation():CenterNoOffset()
   local configService = self._configService
   local skillConfigData = configService:GetSkillConfigData(activeSkillID)
   local pickUpType = skillConfigData:GetSkillPickType()
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
-  local svc = (self._world):GetService("RenderEntity")
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
+  local svc = self._world:GetService("RenderEntity")
   svc:DestroyGhost()
   if pickUpType == SkillPickUpType.None then
     previewActiveSkillService:_RevertBright()
     previewActiveSkillService:ResetPreview()
     previewActiveSkillService:_ClearPreviewActiveSkill(false, true)
-    ;
-    ((self._world):GetService("Piece")):RefreshPieceAnim()
+    self._world:GetService("Piece"):RefreshPieceAnim()
     self:SendCastActiveSkillCommand(activeSkillID, 0, trap:GetID())
   else
-    local monsterEntities = ((self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)):GetEntities()
-    for _,v in ipairs(monsterEntities) do
-      if v:BuffView() and not (v:BuffView()):HasBuffEffect(BuffEffectType.NotPlayMaterialAnimation) then
+    local monsterEntities = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID):GetEntities()
+    for _, v in ipairs(monsterEntities) do
+      if v:BuffView() and not v:BuffView():HasBuffEffect(BuffEffectType.NotPlayMaterialAnimation) then
         v:NewEnableTransparent()
       end
     end
-    local pickUpCmpt = (self._world):PickUp()
+    local pickUpCmpt = self._world:PickUp()
     pickUpCmpt:SetCurActiveSkillInfo(activeSkillID, -1)
     pickUpCmpt:SetEntityID(trap:GetID())
-    ;
-    (Log.notice)("cast pick up active skill", activeSkillID)
+    Log.notice("cast pick up active skill", activeSkillID)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnCastPersonaSkill = function(self, personaSkillID)
-  -- function num : 0_14 , upvalues : _ENV
+function EventListenerServiceRender:OnCastPersonaSkill(personaSkillID)
   local configService = self._configService
   local skillConfigData = configService:GetSkillConfigData(personaSkillID)
   local pickUpType = skillConfigData:GetSkillPickType()
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
-  local svc = (self._world):GetService("RenderEntity")
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
+  local svc = self._world:GetService("RenderEntity")
   svc:DestroyGhost()
   if pickUpType == SkillPickUpType.None or pickUpType == SkillPickUpType.FeatureSkipPreview then
     previewActiveSkillService:_RevertBright()
     previewActiveSkillService:ResetPreview()
     previewActiveSkillService:_ClearPreviewActiveSkill(false, true)
-    ;
-    ((self._world):GetService("Piece")):RefreshPieceAnim()
+    self._world:GetService("Piece"):RefreshPieceAnim()
     self:SendCastActiveSkillCommand(personaSkillID, 0, nil)
   else
-    local monsterEntities = ((self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)):GetEntities()
-    for _,v in ipairs(monsterEntities) do
-      if v:BuffView() and not (v:BuffView()):HasBuffEffect(BuffEffectType.NotPlayMaterialAnimation) then
+    local monsterEntities = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID):GetEntities()
+    for _, v in ipairs(monsterEntities) do
+      if v:BuffView() and not v:BuffView():HasBuffEffect(BuffEffectType.NotPlayMaterialAnimation) then
         v:NewEnableTransparent()
       end
     end
-    local pickUpCmpt = (self._world):PickUp()
+    local pickUpCmpt = self._world:PickUp()
     local petPstID = 0
     pickUpCmpt:SetCurActiveSkillInfo(personaSkillID, petPstID)
-    ;
-    (Log.notice)("cast pick up personaSkillID skill", personaSkillID)
+    Log.notice("cast pick up personaSkillID skill", personaSkillID)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnCastShopSkill = function(self, skillID, selectInfo)
-  -- function num : 0_15 , upvalues : _ENV
+function EventListenerServiceRender:OnCastShopSkill(skillID, selectInfo)
   local configService = self._configService
   local skillConfigData = configService:GetSkillConfigData(skillID)
   local pickUpType = skillConfigData:GetSkillPickType()
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
-  local svc = (self._world):GetService("RenderEntity")
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
+  local svc = self._world:GetService("RenderEntity")
   svc:DestroyGhost()
   if pickUpType == SkillPickUpType.None then
     previewActiveSkillService:_RevertBright()
     previewActiveSkillService:ResetPreview()
     previewActiveSkillService:_ClearPreviewActiveSkill(false, true)
-    ;
-    ((self._world):GetService("Piece")):RefreshPieceAnim()
+    self._world:GetService("Piece"):RefreshPieceAnim()
     self:SendCastSelectInfoActiveSkillCommand(skillID, 0, selectInfo)
   else
-    local monsterEntities = ((self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)):GetEntities()
-    for _,v in ipairs(monsterEntities) do
-      if v:BuffView() and not (v:BuffView()):HasBuffEffect(BuffEffectType.NotPlayMaterialAnimation) then
+    local monsterEntities = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID):GetEntities()
+    for _, v in ipairs(monsterEntities) do
+      if v:BuffView() and not v:BuffView():HasBuffEffect(BuffEffectType.NotPlayMaterialAnimation) then
         v:NewEnableTransparent()
       end
     end
-    local pickUpCmpt = (self._world):PickUp()
+    local pickUpCmpt = self._world:PickUp()
     local petPstID = 0
     pickUpCmpt:SetCurActiveSkillInfo(skillID, petPstID)
-    ;
-    (Log.notice)("cast pick up shop skill", skillID)
+    Log.notice("cast pick up shop skill", skillID)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnActiveSkillPickUp = function(self, activeSkillID, petPstID)
-  -- function num : 0_16 , upvalues : _ENV
-  local skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(activeSkillID, petPstID)
+function EventListenerServiceRender:OnActiveSkillPickUp(activeSkillID, petPstID)
+  local skillConfigData = ConfigServiceHelper.GetSkillConfigData(activeSkillID, petPstID)
   local pickUpType = skillConfigData:GetSkillPickType()
   local curState = self:_GetCurState()
   if curState == GameStateID.PreviewActiveSkill then
-    do
-      if pickUpType == SkillPickUpType.LinkLine or pickUpType == SkillPickUpType.Moye then
-        local inputCmpt = (self._world):Input()
-        inputCmpt:SetPreviewActiveSkill(true)
+    if pickUpType == SkillPickUpType.LinkLine or pickUpType == SkillPickUpType.Moye then
+      local inputCmpt = self._world:Input()
+      inputCmpt:SetPreviewActiveSkill(true)
+    end
+    if pickUpType == SkillPickUpType.LinkLineSP then
+      self:OnPet1702361ActiveStart(activeSkillID, petPstID)
+    else
+      self._world:EventDispatcher():Dispatch(GameEventType.PreviewActiveSkillFinish, 3)
+      local utilStatSvc = self._world:GetService("UtilData")
+      if not utilStatSvc:GetStatAutoFight() then
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.PickUPValidGridShowChooseTarget, true)
       end
-      if pickUpType == SkillPickUpType.LinkLineSP then
-        self:OnPet1702361ActiveStart(activeSkillID, petPstID)
-      else
-        ;
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.PreviewActiveSkillFinish, 3)
-        local utilStatSvc = (self._world):GetService("UtilData")
-        if not utilStatSvc:GetStatAutoFight() then
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PickUPValidGridShowChooseTarget, true)
-        end
-        local sPreviewSkill = (self._world):GetService("PreviewActiveSkill")
-        if pickUpType == SkillPickUpType.PickUpUIAndTrap then
-          sPreviewSkill:PlaySkillView_PlayPickUI(self._world, activeSkillID, petPstID, true)
-        end
+      local sPreviewSkill = self._world:GetService("PreviewActiveSkill")
+      if pickUpType == SkillPickUpType.PickUpUIAndTrap then
+        sPreviewSkill:PlaySkillView_PlayPickUI(self._world, activeSkillID, petPstID, true)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnCancelActiveSkillCast = function(self, activeSkillID, petPstID)
-  -- function num : 0_17 , upvalues : _ENV
-  local taskManager = (GameGlobal.TaskManager)()
+function EventListenerServiceRender:OnCancelActiveSkillCast(activeSkillID, petPstID)
+  local taskManager = GameGlobal.TaskManager()
   local nTaskID = taskManager:CoreGameStartTask(self.TT_OnCancelActiveSkillCast, self, activeSkillID, petPstID)
   local configService = self._configService
   local skillConfigData = configService:GetSkillConfigData(activeSkillID)
   if not skillConfigData then
-    (Log.exception)("OnCancelActiveSkillCast no skill config ,skillId: ", activeSkillID)
-    return 
+    Log.exception("OnCancelActiveSkillCast no skill config ,skillId: ", activeSkillID)
+    return
   end
   if skillConfigData:GetSkillType() == SkillType.TrapSkill then
-    local casterEntity = (self._world):GetEntityByID(petPstID)
+    local casterEntity = self._world:GetEntityByID(petPstID)
     if casterEntity then
       casterEntity:RemovePreviewPickUpComponent()
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.TT_OnCancelActiveSkillCast = function(self, TT, activeSkillID, petPstID)
-  -- function num : 0_18
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+function EventListenerServiceRender:TT_OnCancelActiveSkillCast(TT, activeSkillID, petPstID)
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   previewActiveSkillService:CancelActiveSkillCast(TT, activeSkillID, petPstID)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnCancelChainSkillCast = function(self, skillID, petPstID)
-  -- function num : 0_19 , upvalues : _ENV
-  local TT_OnCancelChainSkillCast = function(TT)
-    -- function num : 0_19_0 , upvalues : self, _ENV
-    local sPreviewSkill = (self._world):GetService("PreviewActiveSkill")
+function EventListenerServiceRender:OnCancelChainSkillCast(skillID, petPstID)
+  local function TT_OnCancelChainSkillCast(TT)
+    local sPreviewSkill = self._world:GetService("PreviewActiveSkill")
+    
     sPreviewSkill:ClearChainPreviewData()
     sPreviewSkill:StopPreviewChainSkill(TT)
     YIELD(TT, 200)
-    local renderBoardEntity = (self._world):GetRenderBoardEntity()
+    local renderBoardEntity = self._world:GetRenderBoardEntity()
     local renderBoardCmpt = renderBoardEntity:RenderBoard()
     local taskID = renderBoardCmpt:GetDimensionClearPreviewTaskID()
-    while not (TaskHelper:GetInstance()):IsTaskFinished(taskID) do
+    while not TaskHelper:GetInstance():IsTaskFinished(taskID) do
       YIELD(TT)
     end
     local cmd = CancelChainSkillCommand:New()
-    ;
-    ((self._world):Player()):SendCommand(cmd)
+    self._world:Player():SendCommand(cmd)
   end
-
-  local taskManager = (GameGlobal.TaskManager)()
+  
+  local taskManager = GameGlobal.TaskManager()
   local nTaskID = taskManager:CoreGameStartTask(TT_OnCancelChainSkillCast, self)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnCastPickUpChainSkill = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local CastPickUpChainSkill = function(TT)
-    -- function num : 0_20_0 , upvalues : self, _ENV
-    local sPreviewSkill = (self._world):GetService("PreviewActiveSkill")
+function EventListenerServiceRender:OnCastPickUpChainSkill()
+  local function CastPickUpChainSkill(TT)
+    local sPreviewSkill = self._world:GetService("PreviewActiveSkill")
+    
     sPreviewSkill:ClearChainPreviewData()
     YIELD(TT, 200)
-    local renderBoardEntity = (self._world):GetRenderBoardEntity()
+    local renderBoardEntity = self._world:GetRenderBoardEntity()
     local renderBoardCmpt = renderBoardEntity:RenderBoard()
     local taskID = renderBoardCmpt:GetDimensionClearPreviewTaskID()
-    while not (TaskHelper:GetInstance()):IsTaskFinished(taskID) do
+    while not TaskHelper:GetInstance():IsTaskFinished(taskID) do
       YIELD(TT)
     end
     local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
     local cmd = CastPickUpChainSkillCommand:New()
     cmd:SetCmdPickUpResult(pickUpTargetCmpt:GetCurPickUpGridSafePos())
-    ;
-    ((self._world):Player()):SendCommand(cmd)
+    self._world:Player():SendCommand(cmd)
   end
-
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(CastPickUpChainSkill, self)
+  
+  GameGlobal.TaskManager():CoreGameStartTask(CastPickUpChainSkill, self)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.DoActiveSkillInstruction = function(self, TT, activeSkillID, petPstID, entityID)
-  -- function num : 0_21 , upvalues : _ENV
+function EventListenerServiceRender:DoActiveSkillInstruction(TT, activeSkillID, petPstID, entityID)
   if not activeSkillID or not petPstID then
-    return 
+    return
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
-  local petEntity = (self._world):GetEntityByID(petEntityId)
-  if not petEntity then
-    petEntity = (self._world):GetEntityByID(entityID)
-  end
+  local petEntity = self._world:GetEntityByID(petEntityId)
+  petEntity = petEntity or self._world:GetEntityByID(entityID)
   local taskIDList = {}
-  local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
-  for _,v in ipairs(skillConfigData._previewParamList) do
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
+  for _, v in ipairs(skillConfigData._previewParamList) do
     if v:GetPreviewType() == SkillPreviewType.Instruction then
       local instructionParam = v
-      for _,skillPreviewConfigData in pairs(instructionParam._previewList) do
+      for _, skillPreviewConfigData in pairs(instructionParam._previewList) do
         local instructionSet = skillPreviewConfigData:GetActiveSkillInstructionSet()
         if instructionSet then
           local previewContext = previewActiveSkillService:CreatePreviewContext(skillPreviewConfigData, petEntity)
-          local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, petEntity, previewContext)
-          ;
-          (table.insert)(taskIDList, taskID)
+          local taskID = GameGlobal.TaskManager():CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, petEntity, previewContext)
+          table.insert(taskIDList, taskID)
         end
       end
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.DoCancelPreviewInstruction = function(self, TT, activeSkillID, petPstID)
-  -- function num : 0_22 , upvalues : _ENV
+function EventListenerServiceRender:DoCancelPreviewInstruction(TT, activeSkillID, petPstID)
   if not activeSkillID or not petPstID then
-    return 
+    return
   end
   if activeSkillID <= 0 then
-    return 
+    return
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
-  local petEntity = (self._world):GetEntityByID(petEntityId)
+  local petEntity = self._world:GetEntityByID(petEntityId)
   if not petEntity then
-    local renderBoardEntity = (self._world):GetRenderBoardEntity()
+    local renderBoardEntity = self._world:GetRenderBoardEntity()
     local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
     local entityID = pickUpTargetCmpt:GetEntityID()
-    petEntity = (self._world):GetEntityByID(entityID)
+    petEntity = self._world:GetEntityByID(entityID)
   end
-  do
-    if petEntity and petEntity:HasHP() then
-      local hp = petEntity:HP()
-      hp:SetHPPosDirty(true)
-    else
-      do
-        do return  end
-        local taskIDList = {}
-        local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
-        local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
-        for _,v in ipairs(skillConfigData._previewParamList) do
-          if v:GetPreviewType() == SkillPreviewType.Instruction then
-            local instructionParam = v
-            for _,skillPreviewConfigData in pairs(instructionParam._previewList) do
-              local instructionSet = skillPreviewConfigData:GetCancelPreviewInstructionSet()
-              if instructionSet then
-                local previewContext = previewActiveSkillService:CreatePreviewContext(skillPreviewConfigData, petEntity)
-                local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, petEntity, previewContext)
-                ;
-                (table.insert)(taskIDList, taskID)
-              end
-            end
-          end
-        end
-        do
-          while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
-            YIELD(TT)
-          end
+  if petEntity and petEntity:HasHP() then
+    local hp = petEntity:HP()
+    hp:SetHPPosDirty(true)
+  else
+    return
+  end
+  local taskIDList = {}
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
+  for _, v in ipairs(skillConfigData._previewParamList) do
+    if v:GetPreviewType() == SkillPreviewType.Instruction then
+      local instructionParam = v
+      for _, skillPreviewConfigData in pairs(instructionParam._previewList) do
+        local instructionSet = skillPreviewConfigData:GetCancelPreviewInstructionSet()
+        if instructionSet then
+          local previewContext = previewActiveSkillService:CreatePreviewContext(skillPreviewConfigData, petEntity)
+          local taskID = GameGlobal.TaskManager():CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, petEntity, previewContext)
+          table.insert(taskIDList, taskID)
         end
       end
     end
   end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
+    YIELD(TT)
+  end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.DoFeatureCancelPreviewInstruction = function(self, TT, featureSkillID, featureType)
-  -- function num : 0_23 , upvalues : _ENV
+function EventListenerServiceRender:DoFeatureCancelPreviewInstruction(TT, featureSkillID, featureType)
   if not featureSkillID or not featureType then
-    return 
+    return
   end
   if featureSkillID <= 0 then
-    return 
+    return
   end
-  local skillHolder = (FeatureServiceHelper.GetFeatureSkillHolderEntity)(featureType)
+  local skillHolder = FeatureServiceHelper.GetFeatureSkillHolderEntity(featureType)
   local e = skillHolder
   if not e then
-    return 
+    return
   end
   local taskIDList = {}
-  local skillConfigData = (self._configService):GetSkillConfigData(featureSkillID)
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
-  for _,v in ipairs(skillConfigData._previewParamList) do
+  local skillConfigData = self._configService:GetSkillConfigData(featureSkillID)
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
+  for _, v in ipairs(skillConfigData._previewParamList) do
     if v:GetPreviewType() == SkillPreviewType.Instruction then
       local instructionParam = v
-      for _,skillPreviewConfigData in pairs(instructionParam._previewList) do
+      for _, skillPreviewConfigData in pairs(instructionParam._previewList) do
         local instructionSet = skillPreviewConfigData:GetCancelPreviewInstructionSet()
         if instructionSet then
           local previewContext = previewActiveSkillService:CreatePreviewContext(skillPreviewConfigData, e)
-          local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, e, previewContext)
-          ;
-          (table.insert)(taskIDList, taskID)
+          local taskID = GameGlobal.TaskManager():CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, e, previewContext)
+          table.insert(taskIDList, taskID)
         end
       end
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnCastPickUpSkill = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function EventListenerServiceRender:OnCastPickUpSkill()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   if pickUpTargetCmpt == nil then
-    (Log.fatal)("pick up target is nil")
-    return 
+    Log.fatal("pick up target is nil")
+    return
   end
   local activeSkillID = pickUpTargetCmpt:GetCurActiveSkillID()
   local petPstID = pickUpTargetCmpt:GetPetPstid()
   local entityID = pickUpTargetCmpt:GetEntityID()
-  if (entityID < 0 and petPstID < 0) or activeSkillID < 0 then
-    (Log.fatal)("OnCastPickUpSkill id invalid")
-    return 
+  if entityID < 0 and petPstID < 0 or activeSkillID < 0 then
+    Log.fatal("OnCastPickUpSkill id invalid")
+    return
   end
-  do
-    if SkillPickUpType.Puzzle == pickUpTargetCmpt:GetPickUpTargetType() then
-      local previewPuzzleSvc = (self._world):GetService("PreviewPuzzle")
-      previewPuzzleSvc:LeavePuzzle()
-    end
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(self.CastPickUpActiveSkill, self, activeSkillID, petPstID, entityID)
+  if SkillPickUpType.Puzzle == pickUpTargetCmpt:GetPickUpTargetType() then
+    local previewPuzzleSvc = self._world:GetService("PreviewPuzzle")
+    previewPuzzleSvc:LeavePuzzle()
   end
+  GameGlobal.TaskManager():CoreGameStartTask(self.CastPickUpActiveSkill, self, activeSkillID, petPstID, entityID)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnCancelReborn = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self._CancelRebornTask, self)
+function EventListenerServiceRender:OnCancelReborn()
+  GameGlobal.TaskManager():CoreGameStartTask(self._CancelRebornTask, self)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._CancelRebornTask = function(self, TT)
-  -- function num : 0_26 , upvalues : _ENV
-  (Log.debug)("[match] EventListenerServiceRender:_CancelRebornTask")
-  local playerEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local utilData = (self._world):GetService("UtilData")
-  do
-    if utilData:PlayerIsDead(playerEntity) and playerEntity then
-      local deadTriggerParam = "Death"
-      playerEntity:SetAnimatorControllerTriggers({deadTriggerParam})
-      YIELD(TT, 1000)
-    end
-    if not GameSingle then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowGuideFailed)
-      ;
-      (GuideHelper.IsUIGuideFailedComplete)(TT)
-    end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowTransitionEffect)
+function EventListenerServiceRender:_CancelRebornTask(TT)
+  Log.debug("[match] EventListenerServiceRender:_CancelRebornTask")
+  local playerEntity = self._world:Player():GetLocalTeamEntity()
+  local utilData = self._world:GetService("UtilData")
+  if utilData:PlayerIsDead(playerEntity) and playerEntity then
+    local deadTriggerParam = "Death"
+    playerEntity:SetAnimatorControllerTriggers({deadTriggerParam})
     YIELD(TT, 1000)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowUIResult, false)
   end
+  if not GameSingle then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowGuideFailed)
+    GuideHelper.IsUIGuideFailedComplete(TT)
+  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowTransitionEffect)
+  YIELD(TT, 1000)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowUIResult, false)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnPreClickHead = function(self, skillID)
-  -- function num : 0_27
+function EventListenerServiceRender:OnPreClickHead(skillID)
   self._preClickSkillID = skillID
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.GetPreClickHeadSkillID = function(self)
-  -- function num : 0_28
+function EventListenerServiceRender:GetPreClickHeadSkillID()
   return self._preClickSkillID
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.SendCastActiveSkillCommand = function(self, skillID, petPstID, casterTrapID)
-  -- function num : 0_29 , upvalues : _ENV
+function EventListenerServiceRender:SendCastActiveSkillCommand(skillID, petPstID, casterTrapID)
   local cmd = CastActiveSkillCommand:New()
   cmd:SetCmdActiveSkillID(skillID)
   cmd:SetCmdCasterPstID(petPstID)
   if casterTrapID then
     cmd:SetCmdCasterTrapEntityID(casterTrapID)
   end
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.SendCastPickUpActiveSkillCommand = function(self, skillID, petPstID, previewPickUpComponent, casterTrapID)
-  -- function num : 0_30 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function EventListenerServiceRender:SendCastPickUpActiveSkillCommand(skillID, petPstID, previewPickUpComponent, casterTrapID)
+  local utilDataSvc = self._world:GetService("UtilData")
   local casterPetEntityID = utilDataSvc:GetEntityIDByPstID(petPstID)
-  local petEntity = (self._world):GetEntityByID(casterPetEntityID)
-  local skillConfigData = (self._configService):GetSkillConfigData(skillID, petEntity)
+  local petEntity = self._world:GetEntityByID(casterPetEntityID)
+  local skillConfigData = self._configService:GetSkillConfigData(skillID, petEntity)
   local pickUpType = skillConfigData:GetSkillPickType()
   local canSend, errorType = self:_CheckCanSendActivePickSkillCmd(previewPickUpComponent, petEntity, skillID, pickUpType)
   if canSend then
@@ -983,282 +753,201 @@ EventListenerServiceRender.SendCastPickUpActiveSkillCommand = function(self, ski
     cmd:SetReflectDir(previewPickUpComponent:GetReflectDir())
     cmd:SetCmdPickUpExtraParamResult(previewPickUpComponent:GetAllPickExtraParam())
     cmd:SetPickUpPetPstID(previewPickUpComponent:GetPickUpPetPstID())
-    local utilDataSvcL = (self._world):GetService("UtilData")
+    local utilDataSvcL = self._world:GetService("UtilData")
     if pickUpType == SkillPickUpType.PickUpAndTurnTetris then
       if not previewPickUpComponent:GetTetrisDirIndex() then
-        (Log.fatal)("GetTetrisDirIndex Is Nil")
+        Log.fatal("GetTetrisDirIndex Is Nil")
       end
       local newDirIndex = utilDataSvcL:GetFeatureTetrisDirIndex()
       local tetrisDirIndex = newDirIndex
       cmd:SetPickUpTetrisDirIndex(tetrisDirIndex)
     end
-    do
-      ;
-      ((self._world):Player()):SendCommand(cmd)
-      do
-        local curstateid = self:_GetCurState()
-        ;
-        (Log.debug)("EventListenerServiceRender:SendCastPickUpActiveSkillCommand gamefsm state ", curstateid)
-        ;
-        (Log.debug)("EventListenerServiceRender:SendCastPickUpActiveSkillCommand error no previewPickUpComponent, skillID: ", skillID)
-        do
-          local errorStep = ActivePickSkillCheckErrorStep.TrySend
-          self:_OnCastActivePickSkillFail(errorStep, errorType, skillID, petPstID, previewPickUpComponent)
-          local worldPickUpCmpt = (self._world):PickUp()
-          worldPickUpCmpt:ResetPickUpData()
-        end
-      end
-    end
+    self._world:Player():SendCommand(cmd)
+    local curstateid = self:_GetCurState()
+    Log.debug("EventListenerServiceRender:SendCastPickUpActiveSkillCommand gamefsm state ", curstateid)
+  else
+    Log.debug("EventListenerServiceRender:SendCastPickUpActiveSkillCommand error no previewPickUpComponent, skillID: ", skillID)
+    local errorStep = ActivePickSkillCheckErrorStep.TrySend
+    self:_OnCastActivePickSkillFail(errorStep, errorType, skillID, petPstID, previewPickUpComponent)
   end
+  local worldPickUpCmpt = self._world:PickUp()
+  worldPickUpCmpt:ResetPickUpData()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.SendCastSelectInfoActiveSkillCommand = function(self, skillID, petPstID, selectInfo)
-  -- function num : 0_31 , upvalues : _ENV
+function EventListenerServiceRender:SendCastSelectInfoActiveSkillCommand(skillID, petPstID, selectInfo)
   local cmd = CastSelectInfoActiveSkillCommand:New()
   cmd:SetCmdActiveSkillID(skillID)
   cmd:SetCmdCasterPstID(petPstID)
   cmd:SetCmdSelectInfo(selectInfo)
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._AutoFight = function(self, enable)
-  -- function num : 0_32 , upvalues : _ENV
+function EventListenerServiceRender:_AutoFight(enable)
   local cmd = AutoFightCommand:New()
   cmd:SetCmdAutoFight(enable)
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._DoubleSpeed = function(self, speed)
-  -- function num : 0_33
-  ((self._world):RenderBattleStat()):SetEverSpeed(speed)
+function EventListenerServiceRender:_DoubleSpeed(speed)
+  self._world:RenderBattleStat():SetEverSpeed(speed)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._LogPetCasterInfo = function(self, casterPetEntityID, skillID)
-  -- function num : 0_34 , upvalues : _ENV
-  local petEntity = (self._world):GetEntityByID(casterPetEntityID)
+function EventListenerServiceRender:_LogPetCasterInfo(casterPetEntityID, skillID)
+  local petEntity = self._world:GetEntityByID(casterPetEntityID)
   if petEntity == nil then
-    (Log.notice)("caster is nil:", skillID)
-    return 
+    Log.notice("caster is nil:", skillID)
+    return
   end
   local pstIDCmpt = petEntity:PetPstID()
   if pstIDCmpt == nil then
-    return 
+    return
   end
   local petTemplateID = pstIDCmpt:GetTemplateID()
-  ;
-  (Log.notice)("[Skill] Caster:", petTemplateID, ",skill:", skillID)
+  Log.notice("[Skill] Caster:", petTemplateID, ",skill:", skillID)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._ChangeTeamLeader = function(self, petPstID, oldPstID)
-  -- function num : 0_35 , upvalues : _ENV
+function EventListenerServiceRender:_ChangeTeamLeader(petPstID, oldPstID)
   local cmd = ChangeTeamLeaderCommand:New()
   cmd:SetNewTeamLeaderPstID(petPstID)
   cmd:SetOldTeamLeaderPstID(oldPstID)
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._OnUIChangeTeamLeader = function(self, newPetPstID, oldPetPstID, remainTimes, teamOrderBefore, teamOrderAfter)
-  -- function num : 0_36 , upvalues : _ENV
-  local renderBattleService = (self._world):GetService("RenderBattle")
+function EventListenerServiceRender:_OnUIChangeTeamLeader(newPetPstID, oldPetPstID, remainTimes, teamOrderBefore, teamOrderAfter)
+  local renderBattleService = self._world:GetService("RenderBattle")
   renderBattleService:RenderChangeTeamLeader(newPetPstID, oldPetPstID)
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self._OnPlayBuffViewTeamOrderChange, self, newPetPstID, teamOrderBefore, teamOrderAfter)
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self._OnPlayBuffViewChangeTeamLeader, self, newPetPstID, oldPetPstID)
+  GameGlobal.TaskManager():CoreGameStartTask(self._OnPlayBuffViewTeamOrderChange, self, newPetPstID, teamOrderBefore, teamOrderAfter)
+  GameGlobal.TaskManager():CoreGameStartTask(self._OnPlayBuffViewChangeTeamLeader, self, newPetPstID, oldPetPstID)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._OnPlayBuffViewChangeTeamLeader = function(self, TT, newPetPstID, oldPetPstID)
-  -- function num : 0_37 , upvalues : _ENV
-  local playBuffService = (self._world):GetService("PlayBuff")
-  local petEntity = ((self._world):Player()):GetPetEntityByPetPstID(newPetPstID)
-  local oldLeaderPetEntity = ((self._world):Player()):GetPetEntityByPetPstID(oldPetPstID)
+function EventListenerServiceRender:_OnPlayBuffViewChangeTeamLeader(TT, newPetPstID, oldPetPstID)
+  local playBuffService = self._world:GetService("PlayBuff")
+  local petEntity = self._world:Player():GetPetEntityByPetPstID(newPetPstID)
+  local oldLeaderPetEntity = self._world:Player():GetPetEntityByPetPstID(oldPetPstID)
   playBuffService:PlayBuffView(TT, NTChangeTeamLeader:New(petEntity, oldLeaderPetEntity))
-  local playDamageService = (self._world):GetService("PlayDamage")
+  local playDamageService = self._world:GetService("PlayDamage")
   playDamageService:OnTeamOrderChangeRefresh()
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._OnPlayBuffViewTeamOrderChange = function(self, TT, newPetPstID, teamOrderBefore, teamOrderAfter)
-  -- function num : 0_38 , upvalues : _ENV
-  local playBuffService = (self._world):GetService("PlayBuff")
-  local petEntity = ((self._world):Player()):GetPetEntityByPetPstID(newPetPstID)
+function EventListenerServiceRender:_OnPlayBuffViewTeamOrderChange(TT, newPetPstID, teamOrderBefore, teamOrderAfter)
+  local playBuffService = self._world:GetService("PlayBuff")
+  local petEntity = self._world:Player():GetPetEntityByPetPstID(newPetPstID)
   local cPet = petEntity:Pet()
   local eTeam = cPet:GetOwnerTeamEntity()
   playBuffService:PlayBuffView(TT, NTTeamOrderChange:New(eTeam, teamOrderBefore, teamOrderAfter))
-  local playDamageService = (self._world):GetService("PlayDamage")
+  local playDamageService = self._world:GetService("PlayDamage")
   playDamageService:OnTeamOrderChangeRefresh()
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._DumpSyncLog = function(self)
-  -- function num : 0_39
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+function EventListenerServiceRender:_DumpSyncLog()
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   utilCalcSvc:SaveSyncLog()
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnSpecialMissionQuitGame = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  local utilCalc = (self._world):GetService("UtilCalc")
-  local battleSvcR = (self._world):GetService("RenderBattle")
-  local battleResult = utilCalc:CalcBattleResult((self._world):MatchType(GetMatchTypeType.CalcBattleResult), true)
+function EventListenerServiceRender:OnSpecialMissionQuitGame()
+  local utilCalc = self._world:GetService("UtilCalc")
+  local battleSvcR = self._world:GetService("RenderBattle")
+  local battleResult = utilCalc:CalcBattleResult(self._world:MatchType(GetMatchTypeType.CalcBattleResult), true)
   battleSvcR:NotifyUIBattleGameOver(battleResult)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnClickUI2ClosePreviewMonster = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  local prvwSvc = (self._world):GetService("PreviewMonsterTrap")
+function EventListenerServiceRender:OnClickUI2ClosePreviewMonster()
+  local prvwSvc = self._world:GetService("PreviewMonsterTrap")
   prvwSvc:ClearMonsterTrapPreview()
-  if (self._world):MatchType() == MatchType.MT_PopStar then
-    local popStarRSvc = (self._world):GetService("PopStarRender")
+  if self._world:MatchType() == MatchType.MT_PopStar then
+    local popStarRSvc = self._world:GetService("PopStarRender")
     popStarRSvc:StopPreviewPopStar()
   else
-    do
-      self:HandleShowChangeTeamLeader()
-    end
+    self:HandleShowChangeTeamLeader()
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.HandleShowChangeTeamLeader = function(self)
-  -- function num : 0_42 , upvalues : _ENV
-  if (self._world):MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
-    local popStarProRSvc = (self._world):GetService("PopStarProRender")
+function EventListenerServiceRender:HandleShowChangeTeamLeader()
+  if self._world:MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
+    local popStarProRSvc = self._world:GetService("PopStarProRender")
     popStarProRSvc:StopPreviewPopStar()
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnUIGMCheatCommand = function(self, cmd)
-  -- function num : 0_43
-  ((self._world):Player()):SendCommand(cmd)
+function EventListenerServiceRender:OnUIGMCheatCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnClientExceptionReport = function(self, cmd)
-  -- function num : 0_44
-  ((self._world):Player()):SendCommand(cmd)
+function EventListenerServiceRender:OnClientExceptionReport(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnBattleUISelectTargetTeamPosition = function(self, petPstID)
-  -- function num : 0_45 , upvalues : _ENV
-  local eTeam = ((self._world):Player()):GetLocalTeamEntity()
-  local ePet = (eTeam:Team()):GetPetEntityByPetPstID(petPstID)
+function EventListenerServiceRender:OnBattleUISelectTargetTeamPosition(petPstID)
+  local eTeam = self._world:Player():GetLocalTeamEntity()
+  local ePet = eTeam:Team():GetPetEntityByPetPstID(petPstID)
   if not ePet then
-    return 
+    return
   end
   local targetPos = 0
-  for index,pstID in ipairs((eTeam:Team()):GetTeamOrder()) do
+  for index, pstID in ipairs(eTeam:Team():GetTeamOrder()) do
     if pstID == petPstID then
       targetPos = index
       break
     end
   end
-  do
-    local cmd = (CastSelectTeamOrderPositionCommand.GenerateCommand)(eTeam:GetID(), petPstID, targetPos)
-    ;
-    ((self._world):Player()):SendCommand(cmd)
-  end
+  local cmd = CastSelectTeamOrderPositionCommand.GenerateCommand(eTeam:GetID(), petPstID, targetPos)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnClearSelectedTeamOrderPosition = function(self, petPstID)
-  -- function num : 0_46 , upvalues : _ENV
-  local eTeam = ((self._world):Player()):GetLocalTeamEntity()
-  local ePet = (eTeam:Team()):GetPetEntityByPetPstID(petPstID)
+function EventListenerServiceRender:OnClearSelectedTeamOrderPosition(petPstID)
+  local eTeam = self._world:Player():GetLocalTeamEntity()
+  local ePet = eTeam:Team():GetPetEntityByPetPstID(petPstID)
   if not ePet then
-    return 
+    return
   end
-  local cmd = (CastClearSelectedTeamOrderPositionCommand.GenerateCommand)(eTeam:GetID(), petPstID)
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  local cmd = CastClearSelectedTeamOrderPositionCommand.GenerateCommand(eTeam:GetID(), petPstID)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnChessUIInputMoveAction = function(self)
-  -- function num : 0_47 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.FinishTurnOnly)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessUIStateBlockRaycast, false)
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function EventListenerServiceRender:OnChessUIInputMoveAction()
+  self._world:EventDispatcher():Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.FinishTurnOnly)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChessUIStateBlockRaycast, false)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpResCmpt = renderBoardEntity:PickUpChessResult()
   local chessPetID = pickUpResCmpt:GetPickUpChessPetEntityID()
   local chessPath = pickUpResCmpt:GetChessPetMovePath()
-  local chessSvcRender = (self._world):GetService("ChessRender")
+  local chessSvcRender = self._world:GetService("ChessRender")
   chessSvcRender:ClearAllChessUnitPreview()
   chessSvcRender:HdieChessPetCanMoveEffect(chessPetID)
   local cmd = CastChessMoveCommand:New()
   cmd:SetCmdCasterEntityID(chessPetID)
   cmd:SetCmdChessPath(chessPath)
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnChessUIInputAttackAction = function(self)
-  -- function num : 0_48 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.FinishTurnOnly)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessUIStateBlockRaycast, false)
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function EventListenerServiceRender:OnChessUIInputAttackAction()
+  self._world:EventDispatcher():Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.FinishTurnOnly)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChessUIStateBlockRaycast, false)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpResCmpt = renderBoardEntity:PickUpChessResult()
   local chessPetID = pickUpResCmpt:GetPickUpChessPetEntityID()
   local chessPath = pickUpResCmpt:GetChessPetMovePath()
   local monsterID = pickUpResCmpt:GetPickUpMonsterEntityID()
   local pickUpPos = pickUpResCmpt:GetCurChessPickUpPos()
-  local chessSvcRender = (self._world):GetService("ChessRender")
+  local chessSvcRender = self._world:GetService("ChessRender")
   chessSvcRender:ClearAllChessUnitPreview()
   chessSvcRender:HdieChessPetCanMoveEffect(chessPetID)
   local cmd = CastChessPetAttackCommand:New()
   cmd:SetCmdCasterEntityID(chessPetID)
   cmd:SetCmdChessPath(chessPath)
   cmd:SetCmdPickUpResult(pickUpPos)
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnChessUIInputSkipAction = function(self)
-  -- function num : 0_49 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function EventListenerServiceRender:OnChessUIInputSkipAction()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpResCmpt = renderBoardEntity:PickUpChessResult()
   local chessPetID = pickUpResCmpt:GetPickUpChessPetEntityID()
   local targetPos = pickUpResCmpt:GetCurChessPickUpPos()
-  local chessSvcRender = (self._world):GetService("ChessRender")
+  local chessSvcRender = self._world:GetService("ChessRender")
   chessSvcRender:ClearAllChessUnitPreview()
   chessSvcRender:HdieChessPetCanMoveEffect(chessPetID)
-  local chessPetEntity = (self._world):GetEntityByID(chessPetID)
+  local chessPetEntity = self._world:GetEntityByID(chessPetID)
   local matAnimCmpt = chessPetEntity:MaterialAnimationComponent()
   if matAnimCmpt then
     matAnimCmpt:PlayInvalid()
@@ -1266,107 +955,80 @@ EventListenerServiceRender.OnChessUIInputSkipAction = function(self)
   local cmd = CastChessPetEndTurnCommand:New()
   cmd:SetCmdTurnType(ChessTurnEndType.Single)
   cmd:SetTurnEndEntityID(chessPetID)
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnChessUIInputFinishTurnAction = function(self)
-  -- function num : 0_50 , upvalues : _ENV
-  local chessSvcRender = (self._world):GetService("ChessRender")
+function EventListenerServiceRender:OnChessUIInputFinishTurnAction()
+  local chessSvcRender = self._world:GetService("ChessRender")
   chessSvcRender:ClearAllChessUnitPreview()
   chessSvcRender:HdieAllChessPetCanMoveEffect()
   local cmd = CastChessPetEndTurnCommand:New()
   cmd:SetCmdTurnType(ChessTurnEndType.All)
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.FinishChessPetTurn = function(self, finishAll, targetEntityID)
-  -- function num : 0_51 , upvalues : _ENV
-  local chessSvcRender = (self._world):GetService("ChessRender")
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).ChessPetRender)
+function EventListenerServiceRender:FinishChessPetTurn(finishAll, targetEntityID)
+  local chessSvcRender = self._world:GetService("ChessRender")
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.ChessPetRender)
   local chessPetEntitys = group:GetEntities()
-  for i,v in ipairs(chessPetEntitys) do
+  for i, v in ipairs(chessPetEntitys) do
     local chessPetRenderCmpt = v:ChessPetRender()
     if finishAll then
       chessPetRenderCmpt:SetChessPetFinishTurn(true)
-    else
-      if targetEntityID == v:GetID() then
-        chessPetRenderCmpt:SetChessPetFinishTurn(true)
-      end
+    elseif targetEntityID == v:GetID() then
+      chessPetRenderCmpt:SetChessPetFinishTurn(true)
     end
     chessSvcRender:RefreshChessPetFinishStateRender(v)
   end
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnGuideChessClick = function(self, entityID)
-  -- function num : 0_52
-  local entity = (self._world):GetEntityByID(entityID)
+function EventListenerServiceRender:OnGuideChessClick(entityID)
+  local entity = self._world:GetEntityByID(entityID)
   local posCaster = entity:GetGridPosition()
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local targetPos = boardServiceRender:GridPosition2LocationPos(posCaster, entity)
-  local chessPickUpCmpt = (self._world):ChessPickUp()
+  local chessPickUpCmpt = self._world:ChessPickUp()
   chessPickUpCmpt:SetChessClickPos(targetPos)
-  local component = (self._world):GetUniqueComponent(((self._world).BW_UniqueComponentsEnum).ChessPickUp)
-  ;
-  (self._world):SetUniqueComponent(((self._world).BW_UniqueComponentsEnum).ChessPickUp, component)
+  local component = self._world:GetUniqueComponent(self._world.BW_UniqueComponentsEnum.ChessPickUp)
+  self._world:SetUniqueComponent(self._world.BW_UniqueComponentsEnum.ChessPickUp, component)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnGuideMonsterClick = function(self, entityID)
-  -- function num : 0_53 , upvalues : _ENV
-  local entity = (self._world):GetEntityByID(entityID)
+function EventListenerServiceRender:OnGuideMonsterClick(entityID)
+  local entity = self._world:GetEntityByID(entityID)
   local position = entity:GetGridPosition()
-  local boardSvcR = (self._world):GetService("BoardRender")
-  local inputCmpt = (self._world):Input()
+  local boardSvcR = self._world:GetService("BoardRender")
+  local inputCmpt = self._world:Input()
   local v3Pos = boardSvcR:GridPos2RenderPos(position)
   inputCmpt:SetTouchBeginPosition(v3Pos)
-  local prvwSvc = (self._world):GetService("PreviewMonsterTrap")
+  local prvwSvc = self._world:GetService("PreviewMonsterTrap")
   prvwSvc:CheckPreviewMonsterAction(position, Vector2(0, 0))
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._OnCastActivePickSkillFail = function(self, errorStep, errorType, activeSkillID, petPstID, previewPickUpComponent)
-  -- function num : 0_54 , upvalues : _ENV
+function EventListenerServiceRender:_OnCastActivePickSkillFail(errorStep, errorType, activeSkillID, petPstID, previewPickUpComponent)
   local pickPosList = {}
   if previewPickUpComponent then
     pickPosList = previewPickUpComponent:GetAllValidPickUpGridPos()
   end
-  local cmd = (ClientExceptionReportCommand.CreateAutoFightPickErrorReport)(activeSkillID, errorStep, errorType, pickPosList)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClientExceptionReport, cmd)
+  local cmd = ClientExceptionReportCommand.CreateAutoFightPickErrorReport(activeSkillID, errorStep, errorType, pickPosList)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ClientExceptionReport, cmd)
   self:OnCancelActiveSkillCast(activeSkillID, petPstID)
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._OnCastActivePickSkillFailSwithState = function(self, TT)
-  -- function num : 0_55 , upvalues : _ENV
+function EventListenerServiceRender:_OnCastActivePickSkillFailSwithState(TT)
   YIELD(TT, 500)
-  if (self._world):RunAtClient() and (self._world):GetGameTurn() == GameTurnType.LocalPlayerTurn then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.PickUpActiveSkillTargetFinish, 1)
+  if self._world:RunAtClient() and self._world:GetGameTurn() == GameTurnType.LocalPlayerTurn then
+    self._world:EventDispatcher():Dispatch(GameEventType.PickUpActiveSkillTargetFinish, 1)
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender._CheckCanSendActivePickSkillCmd = function(self, previewPickUpComponent, petEntity, skillID, pickUpType)
-  -- function num : 0_56 , upvalues : _ENV
+function EventListenerServiceRender:_CheckCanSendActivePickSkillCmd(previewPickUpComponent, petEntity, skillID, pickUpType)
   local dbgCheck = true
   if not dbgCheck then
     return true, 0
   end
   local errorType = 0
   local canSend = true
-  local isReady = (AutoPickCheckHelperRender.CheckPetSkillReady)(petEntity, skillID)
+  local isReady = AutoPickCheckHelperRender.CheckPetSkillReady(petEntity, skillID)
   if not isReady then
     errorType = ActivePickSkillCheckErrorType.PetNotReady
     canSend = false
@@ -1382,327 +1044,251 @@ EventListenerServiceRender._CheckCanSendActivePickSkillCmd = function(self, prev
       end
     end
   else
-    do
-      canSend = false
-      errorType = ActivePickSkillCheckErrorType.NoActivePickCmpt
-      return canSend, errorType
-    end
+    canSend = false
+    errorType = ActivePickSkillCheckErrorType.NoActivePickCmpt
   end
+  return canSend, errorType
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnScanFeatureSaveInfo = function(self, data)
-  -- function num : 0_57 , upvalues : _ENV
-  local localTeamEntity = ((self._world):Player()):GetLocalTeamEntity()
+function EventListenerServiceRender:OnScanFeatureSaveInfo(data)
+  local localTeamEntity = self._world:Player():GetLocalTeamEntity()
   local cmd = ScanFeatureCommand:New(localTeamEntity:GetID(), data.skillType, data.trapID)
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnUIMiniMazeChooseWaveAward = function(self, relicID, partnerID, isOpening)
-  -- function num : 0_58 , upvalues : _ENV
+function EventListenerServiceRender:OnUIMiniMazeChooseWaveAward(relicID, partnerID, isOpening)
   local cmd = ChooseMiniMazeWaveAwardCommand:New()
   cmd:SetChooseRelicID(relicID)
   cmd:SetChoosePartnerID(partnerID)
   if isOpening ~= nil then
     cmd:SetIsBattleOpening(isOpening)
   end
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnMirageUIClearPickUp = function(self)
-  -- function num : 0_59 , upvalues : _ENV
-  local pickUpCmpt = (self._world):MiragePickUp()
+function EventListenerServiceRender:OnMirageUIClearPickUp()
+  local pickUpCmpt = self._world:MiragePickUp()
   pickUpCmpt:GetCurPickUpGridPos(Vector2.zero)
-  local mirageSvcRender = (self._world):GetService("MirageRender")
+  local mirageSvcRender = self._world:GetService("MirageRender")
   mirageSvcRender:ClearMiragePick()
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnMirageUIConfirmPickUp = function(self, autoFight)
-  -- function num : 0_60 , upvalues : _ENV
-  local piece_service = (self._world):GetService("Piece")
+function EventListenerServiceRender:OnMirageUIConfirmPickUp(autoFight)
+  local piece_service = self._world:GetService("Piece")
   piece_service:RefreshPieceAnim()
-  local gridPos = nil
+  local gridPos
   if not autoFight then
-    local pickUpCmpt = (self._world):MiragePickUp()
+    local pickUpCmpt = self._world:MiragePickUp()
     gridPos = pickUpCmpt:GetCurPickUpGridPos()
   else
-    do
-      do
-        local mirageSvcRender = (self._world):GetService("MirageRender")
-        gridPos = mirageSvcRender:GetMirageAutoFightPickUpPos()
-        if gridPos == Vector2.zero then
-          return 
-        end
-        local cmd = MiragePickUpCommand:New()
-        cmd:SetPickUpGridPos(gridPos)
-        ;
-        ((self._world):Player()):SendCommand(cmd)
-      end
-    end
+    local mirageSvcRender = self._world:GetService("MirageRender")
+    gridPos = mirageSvcRender:GetMirageAutoFightPickUpPos()
   end
+  if gridPos == Vector2.zero then
+    return
+  end
+  local cmd = MiragePickUpCommand:New()
+  cmd:SetPickUpGridPos(gridPos)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnMirageUICountDownOver = function(self)
-  -- function num : 0_61 , upvalues : _ENV
-  local piece_service = (self._world):GetService("Piece")
+function EventListenerServiceRender:OnMirageUICountDownOver()
+  local piece_service = self._world:GetService("Piece")
   piece_service:RefreshPieceAnim()
-  local pickUpCmpt = (self._world):MiragePickUp()
+  local pickUpCmpt = self._world:MiragePickUp()
   pickUpCmpt:GetCurPickUpGridPos(Vector2.zero)
   local cmd = MirageForceCloseCommand:New()
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnMirageUIRefreshStep = function(self, stepNum)
-  -- function num : 0_62
-  local mirageSvcRender = (self._world):GetService("MirageRender")
+function EventListenerServiceRender:OnMirageUIRefreshStep(stepNum)
+  local mirageSvcRender = self._world:GetService("MirageRender")
   mirageSvcRender:RefreshMirageStepNum(stepNum)
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnSwitchPetEquipRefine = function(self, uiState, petPstID)
-  -- function num : 0_63 , upvalues : _ENV
+function EventListenerServiceRender:OnSwitchPetEquipRefine(uiState, petPstID)
   local cmd = SwitchPetEquipRefineUICommand:New()
   cmd:SetCmdRefineUIState(uiState)
   cmd:SetCmdCasterPstID(petPstID)
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnPopStarPickUp = function(self, pos, connectPieces)
-  -- function num : 0_64 , upvalues : _ENV
+function EventListenerServiceRender:OnPopStarPickUp(pos, connectPieces)
   local cmd = PopStarPickUpCommand:New()
   cmd:SetCmdPickUpPos(pos)
   cmd:SetCmdConnectPieces(connectPieces)
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnResolutionChanged = function(self)
-  -- function num : 0_65 , upvalues : _ENV
+function EventListenerServiceRender:OnResolutionChanged()
   local curState = self:_GetCurState()
   if curState == GameStateID.Loading then
-    (Log.info)("进局loading过程中改变分辨率 不处理")
-    return 
+    Log.info("进局loading过程中改变分辨率 不处理")
+    return
   end
-  local cameraSvc = (self._world):GetService("Camera")
+  local cameraSvc = self._world:GetService("Camera")
   if cameraSvc then
     cameraSvc:ResetFov_ForFoldableDevice()
   end
-  local entities = ((self._world):GetGroup(((self._world).BW_WEMatchers).HP)):GetEntities()
-  for _,e in ipairs(entities) do
-    (e:HP()):SetHPPosDirty(true)
+  local entities = self._world:GetGroup(self._world.BW_WEMatchers.HP):GetEntities()
+  for _, e in ipairs(entities) do
+    e:HP():SetHPPosDirty(true)
   end
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnEnterPuzzle = function(self)
-  -- function num : 0_66 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function EventListenerServiceRender:OnEnterPuzzle()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   if pickUpTargetCmpt == nil then
-    (Log.fatal)("OnEnterPuzzle pick up target is nil")
-    return 
+    Log.fatal("OnEnterPuzzle pick up target is nil")
+    return
   end
   local activeSkillID = pickUpTargetCmpt:GetCurActiveSkillID()
   local petPstID = pickUpTargetCmpt:GetPetPstid()
   if petPstID < 0 or activeSkillID < 0 then
-    (Log.fatal)("OnEnterPuzzle id invalid")
-    return 
+    Log.fatal("OnEnterPuzzle id invalid")
+    return
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
-  local petEntity = (self._world):GetEntityByID(petEntityId)
+  local petEntity = self._world:GetEntityByID(petEntityId)
   if not petEntity then
-    (Log.fatal)("DoPreActiveSkillInstruction pet entity is invalid")
-    return 
+    Log.fatal("DoPreActiveSkillInstruction pet entity is invalid")
+    return
   end
-  local previewPuzzleSvc = (self._world):GetService("PreviewPuzzle")
+  local previewPuzzleSvc = self._world:GetService("PreviewPuzzle")
   previewPuzzleSvc:PreEnterPuzzle()
-  local funCallBack = function()
-    -- function num : 0_66_0 , upvalues : self, activeSkillID, _ENV, previewPuzzleSvc, petEntityId
-    local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
+  
+  local function funCallBack()
+    local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
     local pickUpParam = skillConfigData:GetSkillPickParam()
     local countdownTime = pickUpParam.CountdownTime
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ShowPuzzleUI, true, countdownTime)
+    self._world:EventDispatcher():Dispatch(GameEventType.ShowPuzzleUI, true, countdownTime)
     previewPuzzleSvc:EnterPuzzle(petEntityId, pickUpParam)
   end
-
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self.DoPreActiveSkillInstruction, self, activeSkillID, petEntity, funCallBack)
+  
+  GameGlobal.TaskManager():CoreGameStartTask(self.DoPreActiveSkillInstruction, self, activeSkillID, petEntity, funCallBack)
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.DoPreActiveSkillInstruction = function(self, TT, activeSkillID, petEntity, funCallBack)
-  -- function num : 0_67 , upvalues : _ENV
+function EventListenerServiceRender:DoPreActiveSkillInstruction(TT, activeSkillID, petEntity, funCallBack)
   if not activeSkillID or not petEntity then
-    return 
+    return
   end
   local prePickUpCmpt = petEntity:PreviewPickUpComponent()
   if not prePickUpCmpt then
-    (Log.fatal)("DoPreActiveSkillInstruction PreviewPickUpComponent is nil")
-    return 
+    Log.fatal("DoPreActiveSkillInstruction PreviewPickUpComponent is nil")
+    return
   end
   local pickUpPos = prePickUpCmpt:GetLastPickUpGridPos()
   local taskIDList = {}
-  local skillConfigData = (self._configService):GetSkillConfigData(activeSkillID)
-  local preASSvc = (self._world):GetService("PreviewActiveSkill")
-  for _,v in ipairs(skillConfigData._previewParamList) do
+  local skillConfigData = self._configService:GetSkillConfigData(activeSkillID)
+  local preASSvc = self._world:GetService("PreviewActiveSkill")
+  for _, v in ipairs(skillConfigData._previewParamList) do
     if v:GetPreviewType() == SkillPreviewType.Instruction then
       local instructionParam = v
-      for _,skillPreviewConfigData in pairs(instructionParam._previewList) do
+      for _, skillPreviewConfigData in pairs(instructionParam._previewList) do
         local instructionSet = skillPreviewConfigData:GetPreActiveSkillInstructionSet()
         if instructionSet then
           local previewContext = preASSvc:CreatePreviewContext(skillPreviewConfigData, petEntity, pickUpPos)
           previewContext:SetPreviewActiveSkillID(activeSkillID)
-          local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(preASSvc.DoPreviewInstruction, preASSvc, instructionSet, petEntity, previewContext)
-          ;
-          (table.insert)(taskIDList, taskID)
+          local taskID = GameGlobal.TaskManager():CoreGameStartTask(preASSvc.DoPreviewInstruction, preASSvc, instructionSet, petEntity, previewContext)
+          table.insert(taskIDList, taskID)
         end
       end
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
-      YIELD(TT)
-    end
-    if funCallBack then
-      funCallBack()
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
+    YIELD(TT)
+  end
+  if funCallBack then
+    funCallBack()
   end
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnSyncClientUnscaledCountDownFinish = function(self, flagID, state)
-  -- function num : 0_68 , upvalues : _ENV
+function EventListenerServiceRender:OnSyncClientUnscaledCountDownFinish(flagID, state)
   local cmd = SyncClientUnscaledCountDownCommand:New()
   cmd:SetCmdFlagID(flagID)
   cmd:SetCmdState(state)
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnSPIstavanChoosePetHead = function(self, petPstID)
-  -- function num : 0_69 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function EventListenerServiceRender:OnSPIstavanChoosePetHead(petPstID)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   local activeSkillID = pickUpTargetCmpt:GetCurActiveSkillID()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local petEntityId = utilDataSvc:GetEntityIDByPstID(pickUpTargetCmpt:GetPetPstid())
-  local petEntity = (self._world):GetEntityByID(petEntityId)
+  local petEntity = self._world:GetEntityByID(petEntityId)
   if not petEntity:HasPreviewPickUpComponent() then
     petEntity:AddPreviewPickUpComponent()
   end
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(activeSkillID, petEntity)
   local previewPickUpComponent = petEntity:PreviewPickUpComponent()
   previewPickUpComponent:SetPickUpPetPstID(petPstID)
   previewPickUpComponent:ClearGridPos()
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_69_0 , upvalues : self, _ENV, skillConfigData, petEntity, utilDataSvc, activeSkillID, petPstID
-    local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
-    for i,v in ipairs(skillConfigData._previewParamList) do
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+    local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
+    for i, v in ipairs(skillConfigData._previewParamList) do
       if v:GetPreviewType() == SkillPreviewType.Instruction then
         local instructionParam = v
-        for _,skillPreviewConfigData in ipairs(instructionParam._previewList) do
+        for _, skillPreviewConfigData in ipairs(instructionParam._previewList) do
           local instructionSet = previewActiveSkillService:_GetInstructSet(PickUpInstructionType.Repeat, skillPreviewConfigData)
           if instructionSet then
             local previewContext = previewActiveSkillService:_GetPreviewContext(PickUpInstructionType.Repeat, skillPreviewConfigData, petEntity, skillPreviewConfigData:GetID(), {})
-            local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, petEntity, previewContext)
+            local taskID = GameGlobal.TaskManager():CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, petEntity, previewContext)
           end
         end
       end
     end
     local canCast = utilDataSvc:CheckPetCanCastSkill(petEntity, activeSkillID, petPstID)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.RefreshPickUpNum, 0)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.EnablePickUpSkillCast, canCast)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.IstavanPreviewCancelPetHeadUI, false, petPstID)
-  end
-)
+    self._world:EventDispatcher():Dispatch(GameEventType.RefreshPickUpNum, 0)
+    self._world:EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, canCast)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.IstavanPreviewCancelPetHeadUI, false, petPstID)
+  end)
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnTetrisFeatureOP = function(self, opType, opValue)
-  -- function num : 0_70 , upvalues : _ENV
+function EventListenerServiceRender:OnTetrisFeatureOP(opType, opValue)
   local cmd = TetrisFeatureCommand:New(opType, opValue)
-  ;
-  ((self._world):Player()):SendCommand(cmd)
+  self._world:Player():SendCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-EventListenerServiceRender.OnPet1702361ActiveStart = function(self, activeSkillID, petPstID)
-  -- function num : 0_71 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function EventListenerServiceRender:OnPet1702361ActiveStart(activeSkillID, petPstID)
+  local utilDataSvc = self._world:GetService("UtilData")
   local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
-  local petEntity = (self._world):GetEntityByID(petEntityId)
+  local petEntity = self._world:GetEntityByID(petEntityId)
   local activeSkillPickUpComponent = petEntity:ActiveSkillPickUpComponent()
   if not activeSkillPickUpComponent then
     petEntity:AddActiveSkillPickUpComponent()
   end
-  local renderBattleStatCmpt = (self._world):RenderBattleStat()
+  local renderBattleStatCmpt = self._world:RenderBattleStat()
   renderBattleStatCmpt:SetPet1702361ActiveSkillPreviewState(true)
-  local taskManager = (GameGlobal.TaskManager)()
+  local taskManager = GameGlobal.TaskManager()
   taskManager:CoreGameStartTask(function(TT)
-    -- function num : 0_71_0 , upvalues : self, activeSkillID, petPstID, _ENV
-    local inputCmpt = (self._world):Input()
+    local inputCmpt = self._world:Input()
     inputCmpt:SetPreviewActiveSkillPlay(true)
-    local sPreviewSkill = (self._world):GetService("PreviewActiveSkill")
+    local sPreviewSkill = self._world:GetService("PreviewActiveSkill")
     local taskID = sPreviewSkill:PlaySkillView_PlayPreviewInstSet(activeSkillID, petPstID, PickUpInstructionType.Empty)
-    while not (TaskHelper:GetInstance()):IsTaskFinished(taskID) do
+    while not TaskHelper:GetInstance():IsTaskFinished(taskID) do
       YIELD(TT)
     end
-    local previewEntity = (self._world):GetPreviewEntity()
+    local previewEntity = self._world:GetPreviewEntity()
     local previewLinkLineCmpt = previewEntity:PreviewLinkLine()
     local previewChainPathCmpt = previewEntity:PreviewChainPath()
     previewChainPathCmpt:SetLinkLineType(ELinkLineType.ELLT_LINE_NoElementCostStep)
     previewLinkLineCmpt:SetLinkLineType(ELinkLineType.ELLT_LINE_NoElementCostStep)
-    local inputCmpt = (self._world):Input()
+    local inputCmpt = self._world:Input()
     inputCmpt:SetPreviewActiveSkill(true)
     inputCmpt:SetPreviewActiveSkillPlay(false)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.PreviewActiveSkillFinish, 3)
-    local utilStatSvc = (self._world):GetService("UtilData")
+    self._world:EventDispatcher():Dispatch(GameEventType.PreviewActiveSkillFinish, 3)
+    local utilStatSvc = self._world:GetService("UtilData")
     if not utilStatSvc:GetStatAutoFight() then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PickUPValidGridShowChooseTarget, true)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.PickUPValidGridShowChooseTarget, true)
     end
-    local utilDataSvc = (self._world):GetService("UtilData")
+    local utilDataSvc = self._world:GetService("UtilData")
     local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
-    local petEntity = (self._world):GetEntityByID(petEntityId)
+    local petEntity = self._world:GetEntityByID(petEntityId)
     local pickUpNum = utilDataSvc:GetPet1702361LinkLineStep(petEntity, activeSkillID)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.RefreshPickUpNum, pickUpNum)
-  end
-)
+    self._world:EventDispatcher():Dispatch(GameEventType.RefreshPickUpNum, pickUpNum)
+  end)
 end
-
-

@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/string_table/string_table.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StringTable", Singleton)
 StringTable = StringTable
 local TABLE_CLEAR = table.clear
@@ -10,45 +5,38 @@ local STR_LEN = string.len
 local STR_GSUB = string.gsub
 local STR_GMATCH = string.gmatch
 local IS_NULL_OR_EMPTY = string.isnullorempty
-local ELanguageType = {Unkown = -100, ChineseSimplified = 1, ChineseTraditional = 2, English = 3}
--- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
+local ELanguageType = {
+  Unkown = -100,
+  ChineseSimplified = 1,
+  ChineseTraditional = 2,
+  English = 3
+}
 
-StringTable.Constructor = function(self)
-  -- function num : 0_0 , upvalues : ELanguageType
+function StringTable:Constructor()
   self._stringTable = {}
   self._LanguageType = ELanguageType.ChineseSimplified
   self._prefixs = {}
   self.alterStringTable = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R6 in 'UnsetPending'
-
-StringTable.Get = function(strID, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  local rawStr = (StringTable:GetInstance()):FindString(strID)
-  if (GameHelper.IsNull)(...) then
+function StringTable.Get(strID, ...)
+  local rawStr = StringTable:GetInstance():FindString(strID)
+  if GameHelper.IsNull(...) then
     return rawStr
   else
-    return (StringTable:GetInstance()):FindStringWithParams(rawStr, ...)
+    return StringTable:GetInstance():FindStringWithParams(rawStr, ...)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R6 in 'UnsetPending'
-
-StringTable.Has = function(strID)
-  -- function num : 0_2 , upvalues : _ENV
-  local t = (StringTable:GetInstance())._stringTable
-  if t[strID] == nil then
-    do return not t end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function StringTable.Has(strID)
+  local t = StringTable:GetInstance()._stringTable
+  if t then
+    return t[strID] ~= nil
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R6 in 'UnsetPending'
-
-StringTable.ClearTable = function(self)
-  -- function num : 0_3 , upvalues : TABLE_CLEAR
+function StringTable:ClearTable()
   TABLE_CLEAR(self._stringTable)
   if self.alterStringTable then
     TABLE_CLEAR(self.alterStringTable)
@@ -56,164 +44,119 @@ StringTable.ClearTable = function(self)
   self._prefixs = {}
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R6 in 'UnsetPending'
-
-StringTable.Init = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local lang_list = (Cfg.language_list)()
-  for key,value in pairs(lang_list) do
+function StringTable:Init()
+  local lang_list = Cfg.language_list()
+  for key, value in pairs(lang_list) do
     local filename = value.filename
     local keyprefix = value.keyprefix
-    if (ResourceManager:GetInstance()):HasLua(filename) then
-      if keyprefix and #keyprefix > 0 then
-        (Log.debug)("language cfg have keyprefix ", filename)
-        for i,p in ipairs(keyprefix) do
-          -- DECOMPILER ERROR at PC41: Confused about usage of register: R14 in 'UnsetPending'
-
-          if (string.len)(p) > 1 then
-            (self._prefixs)[p] = {filename = filename, prefixs = keyprefix}
-            ;
-            (Log.debug)("[stringTable] prefix=", p, " file=", filename)
+    if ResourceManager:GetInstance():HasLua(filename) then
+      if keyprefix and 0 < #keyprefix then
+        Log.debug("language cfg have keyprefix ", filename)
+        for i, p in ipairs(keyprefix) do
+          if string.len(p) > 1 then
+            self._prefixs[p] = {filename = filename, prefixs = keyprefix}
+            Log.debug("[stringTable] prefix=", p, " file=", filename)
           end
         end
       else
-        do
-          local cfgTable = (Cfg[filename])()
-          for k,v in pairs(cfgTable) do
-            self:_AddStringFromConfig(k, v)
-          end
-          do
-            do
-              ;
-              (Log.fatal)("language cfg missing: ", filename)
-              -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+        local cfgTable = Cfg[filename]()
+        for k, v in pairs(cfgTable) do
+          self:_AddStringFromConfig(k, v)
         end
       end
+    else
+      Log.fatal("language cfg missing: ", filename)
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R6 in 'UnsetPending'
-
-StringTable.FindString = function(self, strID)
-  -- function num : 0_5 , upvalues : IS_NULL_OR_EMPTY, _ENV
+function StringTable:FindString(strID)
   if IS_NULL_OR_EMPTY(strID) then
-    (Log.warn)("StringTable:FindString, You Should not pass null or empty string to StringTable.Get()")
-    return 
+    Log.warn("StringTable:FindString, You Should not pass null or empty string to StringTable.Get()")
+    return
   end
-  local val = (self._stringTable)[strID]
+  local val = self._stringTable[strID]
   if not val then
     local loadtb = {}
-    for prefix,tb in pairs(self._prefixs) do
+    for prefix, tb in pairs(self._prefixs) do
       local filename = tb.filename
-      if (string.match)(strID, prefix .. ".*") then
-        (Log.debug)("StringTable:FindString() strID=", strID, " load file:", filename)
-        local cfgTable = (Cfg[filename])()
-        for k,v in pairs(cfgTable) do
+      if string.match(strID, prefix .. ".*") then
+        Log.debug("StringTable:FindString() strID=", strID, " load file:", filename)
+        local cfgTable = Cfg[filename]()
+        for k, v in pairs(cfgTable) do
           self:_AddStringFromConfig(k, v)
         end
         loadtb[#loadtb + 1] = tb
       end
     end
-    for _,tb in ipairs(loadtb) do
-      for i,p in ipairs(tb.prefixs) do
-        -- DECOMPILER ERROR at PC63: Confused about usage of register: R14 in 'UnsetPending'
-
-        (self._prefixs)[p] = nil
+    for _, tb in ipairs(loadtb) do
+      for i, p in ipairs(tb.prefixs) do
+        self._prefixs[p] = nil
       end
     end
-    ;
-    (Log.warn)("StringTable:FindString, can\'t find string, id:", strID)
+    Log.warn("StringTable:FindString, can't find string, id:", strID)
     local err = "ERR:" .. strID
     self:AddString(strID, err, true)
     return self:FindString(strID)
   end
-  do
-    return val
-  end
+  return val
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R6 in 'UnsetPending'
-
-StringTable.SingularPlurality = function(self, rawStr)
-  -- function num : 0_6 , upvalues : STR_GMATCH, _ENV
+function StringTable:SingularPlurality(rawStr)
   local ttt = {}
   for mstr in STR_GMATCH(rawStr, "({%s*%d+%s*:%s*%a*%s*|%s*%a*%s*})") do
-    local digital = (string.match)(mstr, "{%s*(%d+)")
-    local singular = (string.match)(mstr, ":%s*(%a*)")
-    local plurality = (string.match)(mstr, "|%s*(%a*)")
-    ttt[digital] = {mstr, singular, plurality}
+    local digital = string.match(mstr, "{%s*(%d+)")
+    local singular = string.match(mstr, ":%s*(%a*)")
+    local plurality = string.match(mstr, "|%s*(%a*)")
+    ttt[digital] = {
+      mstr,
+      singular,
+      plurality
+    }
   end
   return rawStr, ttt
 end
 
 local regex = "{%d+}"
--- DECOMPILER ERROR at PC45: Confused about usage of register: R7 in 'UnsetPending'
 
-StringTable.FindStringWithParams = function(self, rawStr, ...)
-  -- function num : 0_7 , upvalues : STR_GSUB, STR_GMATCH, regex, _ENV, STR_LEN
+function StringTable:FindStringWithParams(rawStr, ...)
   rawStr = STR_GSUB(rawStr, "{{", "{")
   rawStr = STR_GSUB(rawStr, "}}", "}")
   rawStr = STR_GSUB(rawStr, "##", "#")
   local newStr, digTab = self:SingularPlurality(rawStr)
   for match in STR_GMATCH(newStr, regex) do
-    local argIndex = (string.sub)(match, 2, STR_LEN(match) - 1)
+    local argIndex = string.sub(match, 2, STR_LEN(match) - 1)
     local toReplace = select(argIndex, ...)
     if toReplace then
       if digTab[argIndex] ~= nil then
-        if toReplace > 1 then
-          newStr = STR_GSUB(newStr, (digTab[argIndex])[1], (digTab[argIndex])[3])
+        if 1 < toReplace then
+          newStr = STR_GSUB(newStr, digTab[argIndex][1], digTab[argIndex][3])
         else
-          newStr = STR_GSUB(newStr, (digTab[argIndex])[1], (digTab[argIndex])[2])
+          newStr = STR_GSUB(newStr, digTab[argIndex][1], digTab[argIndex][2])
         end
       end
       newStr = STR_GSUB(newStr, match, toReplace)
     else
-      ;
-      (Log.fatal)("StringTable:FindStringWithParams Error,本地化参数不足:", rawStr)
+      Log.fatal("StringTable:FindStringWithParams Error,本地化参数不足:", rawStr)
     end
   end
   return newStr
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R7 in 'UnsetPending'
-
-StringTable._AddStringFromConfig = function(self, key, value, checkDup)
-  -- function num : 0_8 , upvalues : _ENV, STR_LEN
+function StringTable:_AddStringFromConfig(key, value, checkDup)
   checkDup = checkDup ~= false
-  if checkDup and (self._stringTable)[key] then
-    (Log.sys)("StringTable:AddStringFromConfig Error, String table conflict,key:", key, ",val:", (self._stringTable)[key])
-  else
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
-    if STR_LEN(key) ~= 0 then
-      (self._stringTable)[key] = value
-    end
+  if checkDup and self._stringTable[key] then
+    Log.sys("StringTable:AddStringFromConfig Error, String table conflict,key:", key, ",val:", self._stringTable[key])
+  elseif STR_LEN(key) ~= 0 then
+    self._stringTable[key] = value
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R7 in 'UnsetPending'
-
-StringTable._GetLanguageType = function(self)
-  -- function num : 0_9 , upvalues : ELanguageType, _ENV
+function StringTable:_GetLanguageType()
   if self._LanguageType ~= ELanguageType.Unkown then
     return self._LanguageType
   end
-  local curLanguage = (HelperProxy:GetInstance()):GetLanguage()
+  local curLanguage = HelperProxy:GetInstance():GetLanguage()
   if curLanguage == "Chinese" or curLanguage == "ChineseSimplified" then
     self._LanguageType = ELanguageType.ChineseSimplified
   else
@@ -222,73 +165,49 @@ StringTable._GetLanguageType = function(self)
   return self._LanguageType
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R7 in 'UnsetPending'
-
-StringTable._GetLanguageValue = function(self, key, valuesTable)
-  -- function num : 0_10 , upvalues : ELanguageType
+function StringTable:_GetLanguageValue(key, valuesTable)
   local langtype = self:_GetLanguageType()
   if langtype == ELanguageType.ChineseSimplified then
     return valuesTable.des
+  elseif langtype == ELanguageType.ChineseTraditional then
+    return valuesTable.des_tr
+  elseif langtype == ELanguageType.English then
+    return valuesTable.des_en
   else
-    if langtype == ELanguageType.ChineseTraditional then
-      return valuesTable.des_tr
-    else
-      if langtype == ELanguageType.English then
-        return valuesTable.des_en
-      else
-        return valuesTable.des
-      end
-    end
+    return valuesTable.des
   end
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R7 in 'UnsetPending'
-
-StringTable.AddString = function(self, key, value, checkDup)
-  -- function num : 0_11 , upvalues : _ENV, STR_LEN
-  if checkDup and (self._stringTable)[key] then
-    (Log.sys)("StringTable:AddString Error, String table conflict,key:", key, " val:", (self._stringTable)[key])
-  else
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-    if STR_LEN(key) ~= 0 then
-      (self._stringTable)[key] = value
-    end
+function StringTable:AddString(key, value, checkDup)
+  if checkDup and self._stringTable[key] then
+    Log.sys("StringTable:AddString Error, String table conflict,key:", key, " val:", self._stringTable[key])
+  elseif STR_LEN(key) ~= 0 then
+    self._stringTable[key] = value
   end
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R7 in 'UnsetPending'
-
-StringTable.EnumToString = function(id_str_conf, enum_id, ...)
-  -- function num : 0_12 , upvalues : _ENV
+function StringTable.EnumToString(id_str_conf, enum_id, ...)
   local t = type(enum_id)
   local key = enum_id
   if t == "userdata" then
     key = enum_id:ToInt()
   end
   local ret = ""
-  if key < 0 and (Cfg.str_call_ret)[tostring(key)] ~= nil then
-    ret = "id:" .. key .. ",des:" .. (StringTable:GetInstance()):FindStringWithParams(((Cfg.str_call_ret)[tostring(key)]).des, ...)
+  if key < 0 and Cfg.str_call_ret[tostring(key)] ~= nil then
+    ret = "id:" .. key .. ",des:" .. StringTable:GetInstance():FindStringWithParams(Cfg.str_call_ret[tostring(key)].des, ...)
+  elseif id_str_conf[tostring(key)] ~= nil then
+    ret = "id:" .. key .. ",des:" .. StringTable:GetInstance():FindStringWithParams(id_str_conf[tostring(key)].des, ...)
   else
-    if id_str_conf[tostring(key)] ~= nil then
-      ret = "id:" .. key .. ",des:" .. (StringTable:GetInstance()):FindStringWithParams((id_str_conf[tostring(key)]).des, ...)
-    else
-      local enum_name = "unknow enum!"
-      if id_str_conf.enum_name ~= nil then
-        enum_name = (id_str_conf.enum_name).des
-      end
-      local cfg_name = "unknow cfg!"
-      if id_str_conf.cfg_name ~= nil then
-        cfg_name = (id_str_conf.cfg_name).des
-      end
-      ret = (StringTable:GetInstance()):FindStringWithParams(((Cfg.str_enum2string_common).undefined_id).des, key, enum_name, cfg_name)
+    local enum_name = "unknow enum!"
+    if id_str_conf.enum_name ~= nil then
+      enum_name = id_str_conf.enum_name.des
     end
+    local cfg_name = "unknow cfg!"
+    if id_str_conf.cfg_name ~= nil then
+      cfg_name = id_str_conf.cfg_name.des
+    end
+    ret = StringTable:GetInstance():FindStringWithParams(Cfg.str_enum2string_common.undefined_id.des, key, enum_name, cfg_name)
   end
-  do
-    ;
-    (Log.debug)("StringTable:EnumToString : ", ret)
-    return ret
-  end
+  Log.debug("StringTable:EnumToString : ", ret)
+  return ret
 end
-
-

@@ -1,69 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/res_pet_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ResPetSkill", Object)
 ResPetSkill = ResPetSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ResPetSkill.Constructor = function(self)
-  -- function num : 0_0
+function ResPetSkill:Constructor()
   self._SkillRes = {}
   self:Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ResPetSkill.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ResPetSkill:Init()
   self._SkillRes = {}
-  local cfg = (Cfg.cfg_pet_skill)({})
-  for k,v in pairs(cfg) do
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R7 in 'UnsetPending'
-
-    if (self._SkillRes)[v.PetID] == nil then
-      (self._SkillRes)[v.PetID] = {}
+  local cfg = Cfg.cfg_pet_skill({})
+  for k, v in pairs(cfg) do
+    if self._SkillRes[v.PetID] == nil then
+      self._SkillRes[v.PetID] = {}
     end
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R7 in 'UnsetPending'
-
-    if ((self._SkillRes)[v.PetID])[v.Grade] == nil then
-      ((self._SkillRes)[v.PetID])[v.Grade] = {}
+    if self._SkillRes[v.PetID][v.Grade] == nil then
+      self._SkillRes[v.PetID][v.Grade] = {}
     end
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (((self._SkillRes)[v.PetID])[v.Grade])[v.Awakening] = v
+    self._SkillRes[v.PetID][v.Grade][v.Awakening] = v
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ResPetSkill.GetSKill = function(self, petId, grade, awakening)
-  -- function num : 0_2 , upvalues : _ENV
+function ResPetSkill:GetSKill(petId, grade, awakening)
   if petId == nil or grade == nil or awakening == nil then
     return nil
   end
-  if (self._SkillRes)[petId] == nil then
-    (Log.error)("ResPetSkill:GetSKill petId error ", petId)
+  if self._SkillRes[petId] == nil then
+    Log.error("ResPetSkill:GetSKill petId error ", petId)
     return nil
   end
-  if ((self._SkillRes)[petId])[grade] == nil then
-    (Log.error)("ResPetSkill:GetSKill petId grade error ", petId, ", ", grade)
+  if self._SkillRes[petId][grade] == nil then
+    Log.error("ResPetSkill:GetSKill petId grade error ", petId, ", ", grade)
     return nil
   end
-  local skill = (((self._SkillRes)[petId])[grade])[awakening]
+  local skill = self._SkillRes[petId][grade][awakening]
   if skill == nil then
-    (Log.error)("ResPetSkill:GetSKill petId grade awakening error ", petId, ", ", grade, ", ", awakening)
+    Log.error("ResPetSkill:GetSKill petId grade awakening error ", petId, ", ", grade, ", ", awakening)
     return nil
   end
   return skill
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ResPetSkill.GetNormalSKill = function(self, petId, grade, awakening)
-  -- function num : 0_3
+function ResPetSkill:GetNormalSKill(petId, grade, awakening)
   local ns = self:GetSKill(petId, grade, awakening)
   if ns == nil then
     return nil
@@ -71,10 +48,7 @@ ResPetSkill.GetNormalSKill = function(self, petId, grade, awakening)
   return ns.NormalSkill
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ResPetSkill.GetActiveSkill = function(self, petId, grade, awakening)
-  -- function num : 0_4
+function ResPetSkill:GetActiveSkill(petId, grade, awakening)
   local ns = self:GetSKill(petId, grade, awakening)
   if ns == nil then
     return nil
@@ -82,10 +56,7 @@ ResPetSkill.GetActiveSkill = function(self, petId, grade, awakening)
   return ns.ActiveSkill
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ResPetSkill.GetExtraActiveSkill = function(self, petId, grade, awakening)
-  -- function num : 0_5
+function ResPetSkill:GetExtraActiveSkill(petId, grade, awakening)
   local ns = self:GetSKill(petId, grade, awakening)
   if ns == nil then
     return nil
@@ -93,10 +64,7 @@ ResPetSkill.GetExtraActiveSkill = function(self, petId, grade, awakening)
   return ns.ExtraActiveSkill
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ResPetSkill.GetVariantActiveSkill = function(self, petId, grade, awakening)
-  -- function num : 0_6
+function ResPetSkill:GetVariantActiveSkill(petId, grade, awakening)
   local ns = self:GetSKill(petId, grade, awakening)
   if ns == nil then
     return nil
@@ -104,10 +72,7 @@ ResPetSkill.GetVariantActiveSkill = function(self, petId, grade, awakening)
   return ns.VariantActiveSkillInfo
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ResPetSkill.GetPassiveSkill = function(self, petId, grade, awakening)
-  -- function num : 0_7
+function ResPetSkill:GetPassiveSkill(petId, grade, awakening)
   local ns = self:GetSKill(petId, grade, awakening)
   if ns == nil then
     return nil
@@ -115,10 +80,7 @@ ResPetSkill.GetPassiveSkill = function(self, petId, grade, awakening)
   return ns.PassiveSkill
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ResPetSkill.GetIntensifyBuffList = function(self, petId, grade, awakening)
-  -- function num : 0_8
+function ResPetSkill:GetIntensifyBuffList(petId, grade, awakening)
   local ns = self:GetSKill(petId, grade, awakening)
   if ns == nil then
     return nil
@@ -126,28 +88,29 @@ ResPetSkill.GetIntensifyBuffList = function(self, petId, grade, awakening)
   return ns.IntensifyBuff
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ResPetSkill.GetChainSkill = function(self, petId, grade, awakening)
-  -- function num : 0_9
+function ResPetSkill:GetChainSkill(petId, grade, awakening)
   local ns = self:GetSKill(petId, grade, awakening)
   if ns == nil then
     return nil
   end
-  local ss = {ns.ChainSkill1, ns.ChainSkill2, ns.ChainSkill3, ns.ChainSkill4}
+  local ss = {
+    ns.ChainSkill1,
+    ns.ChainSkill2,
+    ns.ChainSkill3,
+    ns.ChainSkill4
+  }
   return ss
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ResPetSkill.GetWorkSkill = function(self, petId, grade, awakening)
-  -- function num : 0_10
+function ResPetSkill:GetWorkSkill(petId, grade, awakening)
   local ns = self:GetSKill(petId, grade, awakening)
   if ns == nil then
     return nil
   end
-  local ss = {ns.WorkSkill1, ns.WorkSkill2, ns.WorkSkill3}
+  local ss = {
+    ns.WorkSkill1,
+    ns.WorkSkill2,
+    ns.WorkSkill3
+  }
   return ss
 end
-
-

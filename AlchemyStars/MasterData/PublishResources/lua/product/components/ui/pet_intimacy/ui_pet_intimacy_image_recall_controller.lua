@@ -1,49 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet_intimacy/ui_pet_intimacy_image_recall_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetIntimacyImageRecallController", UIController)
 UIPetIntimacyImageRecallController = UIPetIntimacyImageRecallController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetIntimacyImageRecallController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetIntimacyImageRecallController:OnShow(uiParams)
   self._imageRecallData = uiParams[1]
   self._petData = uiParams[2]
   self._indexLabel = self:GetUIComponent("UILocalizationText", "Index")
   self._desLabel = self:GetUIComponent("UILocalizationText", "Des")
   self._titleLabel = self:GetUIComponent("UILocalizationText", "Title")
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._indexLabel).text = (self._imageRecallData).index
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._desLabel).text = (HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)((self._imageRecallData).des))
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._titleLabel).text = (StringTable.Get)((self._petData):GetPetName()) .. "  " .. (StringTable.Get)((self._imageRecallData).title)
+  self._indexLabel.text = self._imageRecallData.index
+  self._desLabel.text = HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get(self._imageRecallData.des))
+  self._titleLabel.text = StringTable.Get(self._petData:GetPetName()) .. "  " .. StringTable.Get(self._imageRecallData.title)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecallController.ButtonBackgroundOnClick = function(self, go)
-  -- function num : 0_1
+function UIPetIntimacyImageRecallController:ButtonBackgroundOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecallController.ButtonPlayOnClick = function(self, go)
-  -- function num : 0_2
-  self:ShowDialog("UIStoryController", (self._imageRecallData).storyId, function()
-    -- function num : 0_2_0 , upvalues : self
+function UIPetIntimacyImageRecallController:ButtonPlayOnClick(go)
+  self:ShowDialog("UIStoryController", self._imageRecallData.storyId, function()
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

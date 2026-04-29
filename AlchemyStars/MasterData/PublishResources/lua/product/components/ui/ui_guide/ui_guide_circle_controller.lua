@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_guide/ui_guide_circle_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGuideCircleController", UIController)
 UIGuideCircleController = UIGuideCircleController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGuideCircleController.Constructor = function(self)
-  -- function num : 0_0
+function UIGuideCircleController:Constructor()
   self._scaleFactor = 0.44140625
   self._updateInterval = 1
   self._curInterval = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideCircleController.OnShow = function(self, UIParams)
-  -- function num : 0_1 , upvalues : _ENV
-  (GuideHelper.GuideLoadLock)(false, "Circle")
+function UIGuideCircleController:OnShow(UIParams)
+  GuideHelper.GuideLoadLock(false, "Circle")
   self.atlas = self:GetAsset("UIGuide.spriteatlas", LoadType.SpriteAtlas)
-  self._main = (self:GetModule(AircraftModule)):GetClientMain()
-  self._seasonMgr = (self:GetUIModule(SeasonModule)):SeasonManager()
-  self._seasonMazeMgr = ((GameGlobal.GetUIModule)(SeasonMazeModule)):SeasonMazeManager()
+  self._main = self:GetModule(AircraftModule):GetClientMain()
+  self._seasonMgr = self:GetUIModule(SeasonModule):SeasonManager()
+  self._seasonMazeMgr = GameGlobal.GetUIModule(SeasonMazeModule):SeasonMazeManager()
   self.canClick = false
   self.data = UIParams[1]
   self.gridPos = UIParams[2]
@@ -31,10 +21,7 @@ UIGuideCircleController.OnShow = function(self, UIParams)
   self.backs = {}
   for i = 1, 4 do
     local back = self:GetUIComponent("RectTransform", "Back" .. i)
-    -- DECOMPILER ERROR at PC58: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.backs)[i] = back
+    self.backs[i] = back
   end
   self.ltTitleTxt = self:GetUIComponent("UILocalizationText", "lttitle")
   self.rtTitleTxt = self:GetUIComponent("UILocalizationText", "rttitle")
@@ -49,48 +36,30 @@ UIGuideCircleController.OnShow = function(self, UIParams)
   self.ldGO = self:GetGameObject("ld")
   self.rdGO = self:GetGameObject("rd")
   self.ltMaskRect = self:GetUIComponent("RectTransform", "ltmask")
-  -- DECOMPILER ERROR at PC126: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.ltMaskRect).sizeDelta = Vector2(0, 70)
+  self.ltMaskRect.sizeDelta = Vector2(0, 70)
   self.rtMaskRect = self:GetUIComponent("RectTransform", "rtmask")
-  -- DECOMPILER ERROR at PC137: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.rtMaskRect).sizeDelta = Vector2(0, 70)
+  self.rtMaskRect.sizeDelta = Vector2(0, 70)
   self.ldMaskRect = self:GetUIComponent("RectTransform", "ldmask")
-  -- DECOMPILER ERROR at PC148: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.ldMaskRect).sizeDelta = Vector2(0, 70)
+  self.ldMaskRect.sizeDelta = Vector2(0, 70)
   self.rdMaskRect = self:GetUIComponent("RectTransform", "rdmask")
-  -- DECOMPILER ERROR at PC159: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.rdMaskRect).sizeDelta = Vector2(0, 70)
+  self.rdMaskRect.sizeDelta = Vector2(0, 70)
   self.ltTitleGO = self:GetGameObject("lttitlego")
-  ;
-  (self.ltTitleGO):SetActive(false)
+  self.ltTitleGO:SetActive(false)
   self.rtTitleGO = self:GetGameObject("rttitlego")
-  ;
-  (self.rtTitleGO):SetActive(false)
+  self.rtTitleGO:SetActive(false)
   self.ldTitleGO = self:GetGameObject("ldtitlego")
-  ;
-  (self.ldTitleGO):SetActive(false)
+  self.ldTitleGO:SetActive(false)
   self.rdTitleGO = self:GetGameObject("rdtitlego")
-  ;
-  (self.rdTitleGO):SetActive(false)
+  self.rdTitleGO:SetActive(false)
   self.continueGO = self:GetGameObject("continue")
-  ;
-  (self.continueGO):SetActive(false)
+  self.continueGO:SetActive(false)
   self.fingerGO = self:GetGameObject("finger")
-  ;
-  (self.fingerGO):SetActive(false)
+  self.fingerGO:SetActive(false)
   self.fingerImage = self:GetUIComponent("Image", "circle")
   self.p_black = self:GetGameObject("p_black")
   self.p_black_mask = self:GetUIComponent("RectTransform", "p_black_mask")
   self.p_black_masked = self:GetUIComponent("Image", "p_black_masked")
-  self.p_black_masked_mat = (self.p_black_masked).material
+  self.p_black_masked_mat = self.p_black_masked.material
   self.describeGO = self:GetGameObject("describe")
   self.describeRect = self:GetUIComponent("RectTransform", "describe")
   self.desCharactorImg = self:GetUIComponent("Image", "des_charactor")
@@ -100,254 +69,184 @@ UIGuideCircleController.OnShow = function(self, UIParams)
   self:AttachEvent(GameEventType.UIBlackChange, self.Refresh)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideCircleController.Refresh = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIGuideCircleController:Refresh()
   local pos = Vector2.zero
   if self:IsFingerType() then
-    if (self.data).type == GuideCircleType.AirPet then
+    if self.data.type == GuideCircleType.AirPet then
       pos = self:AirPet2WorldPos()
-    else
-      if (self.data).type == GuideCircleType.Finger then
-        pos = self:Room2WorldPos()
-      else
-        if (self.data).type == GuideCircleType.AirSmelt then
-          pos = self:AirSmelt2WorldPos()
-        else
-          if (self.data).type == GuideCircleType.AirSandBox then
-            pos = self:AirSandBox2WorldPos()
-          else
-            if (self.data).type == GuideCircleType.AirTactic then
-              pos = self:AirTactic2WorldPos()
-            else
-              if (self.data).type == GuideCircleType.SeasonEventPoint then
-                pos = self:SeasonEventPointPos(false)
-              else
-                if (self.data).type == GuideCircleType.SeasonMazePoint then
-                  pos = self:SeasonMazePointPos(false)
-                end
-              end
-            end
-          end
-        end
-      end
+    elseif self.data.type == GuideCircleType.Finger then
+      pos = self:Room2WorldPos()
+    elseif self.data.type == GuideCircleType.AirSmelt then
+      pos = self:AirSmelt2WorldPos()
+    elseif self.data.type == GuideCircleType.AirSandBox then
+      pos = self:AirSandBox2WorldPos()
+    elseif self.data.type == GuideCircleType.AirTactic then
+      pos = self:AirTactic2WorldPos()
+    elseif self.data.type == GuideCircleType.SeasonEventPoint then
+      pos = self:SeasonEventPointPos(false)
+    elseif self.data.type == GuideCircleType.SeasonMazePoint then
+      pos = self:SeasonMazePointPos(false)
     end
   else
-    local screenPos = (InnerGameHelperRender.GridPos2WorldPos)(self.gridPos, self.data)
-    local sw = (ResolutionManager.ScreenWidth)()
-    local rw = (ResolutionManager.RealWidth)()
+    local screenPos = InnerGameHelperRender.GridPos2WorldPos(self.gridPos, self.data)
+    local sw = ResolutionManager.ScreenWidth()
+    local rw = ResolutionManager.RealWidth()
     local factor = rw / sw
     local sx, sy = screenPos.x * factor, screenPos.y * factor
-    pos = Vector2(sx - (self.data).radius * 0.5 + ((self.data).offset)[1], sy - (self.data).radius * 0.5 + ((self.data).offset)[2])
+    pos = Vector2(sx - self.data.radius * 0.5 + self.data.offset[1], sy - self.data.radius * 0.5 + self.data.offset[2])
   end
-  do
-    -- DECOMPILER ERROR at PC120: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.selectRect).sizeDelta = Vector2((self.data).radius, (self.data).radius)
-    -- DECOMPILER ERROR at PC122: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.selectRect).anchoredPosition = pos
-    -- DECOMPILER ERROR at PC136: Confused about usage of register: R2 in 'UnsetPending'
-
-    if (self.data).alpha then
-      (self.p_black_masked).color = Color(0, 0, 0, (self.data).alpha / 255)
-    else
-      -- DECOMPILER ERROR at PC145: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.p_black_masked).color = Color(0, 0, 0, 0.87450980392157)
-    end
-    self:SetMaskPos(pos)
-    self:RefreshTxt()
-    self:RefreshFinger()
-    self:RefreshDescribe()
+  self.selectRect.sizeDelta = Vector2(self.data.radius, self.data.radius)
+  self.selectRect.anchoredPosition = pos
+  if self.data.alpha then
+    self.p_black_masked.color = Color(0, 0, 0, self.data.alpha / 255)
+  else
+    self.p_black_masked.color = Color(0, 0, 0, 0.8745098039215686)
   end
+  self:SetMaskPos(pos)
+  self:RefreshTxt()
+  self:RefreshFinger()
+  self:RefreshDescribe()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideCircleController.Room2WorldPos = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local go = (self._main):GetBtnGuide(((self.data).param)[1])
-  local worldPos = (go.transform).position
-  local camera = (self._main):GetMainCamera()
+function UIGuideCircleController:Room2WorldPos()
+  local go = self._main:GetBtnGuide(self.data.param[1])
+  local worldPos = go.transform.position
+  local camera = self._main:GetMainCamera()
   local screenPos = camera:WorldToScreenPoint(worldPos)
-  local sw = (ResolutionManager.ScreenWidth)()
-  local rw = (ResolutionManager.RealWidth)()
+  local sw = ResolutionManager.ScreenWidth()
+  local rw = ResolutionManager.RealWidth()
   local factor = rw / sw
   local sx, sy = screenPos.x * factor, screenPos.y * factor
-  screenPos = Vector2(sx - (self.data).radius * 0.5 + ((self.data).offset)[1], sy - (self.data).radius * 0.5 + ((self.data).offset)[2])
+  screenPos = Vector2(sx - self.data.radius * 0.5 + self.data.offset[1], sy - self.data.radius * 0.5 + self.data.offset[2])
   return screenPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideCircleController.AirPet2WorldPos = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local petId = ((self.data).param)[1]
-  local pet = (self._main):GetPetByTmpID(petId)
+function UIGuideCircleController:AirPet2WorldPos()
+  local petId = self.data.param[1]
+  local pet = self._main:GetPetByTmpID(petId)
   local go = pet:GameObject()
-  local worldPos = (go.transform).position
-  local camera = (self._main):GetMainCamera()
+  local worldPos = go.transform.position
+  local camera = self._main:GetMainCamera()
   local screenPos = camera:WorldToScreenPoint(worldPos)
-  local sw = (ResolutionManager.ScreenWidth)()
-  local rw = (ResolutionManager.RealWidth)()
+  local sw = ResolutionManager.ScreenWidth()
+  local rw = ResolutionManager.RealWidth()
   local factor = rw / sw
   local sx, sy = screenPos.x * factor, screenPos.y * factor
-  screenPos = Vector2(sx - (self.data).radius * 0.5 + ((self.data).offset)[1], sy - (self.data).radius * 0.5 + ((self.data).offset)[2])
+  screenPos = Vector2(sx - self.data.radius * 0.5 + self.data.offset[1], sy - self.data.radius * 0.5 + self.data.offset[2])
   return screenPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideCircleController.AirSmelt2WorldPos = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local roomGo = ((self._main):GetRoomBySpaceID(((self.data).param)[1])):GetRoomGameObject()
-  local tf = (GameObjectHelper.FindChild)(roomGo.transform, "UIAircraftSmeltTip")
+function UIGuideCircleController:AirSmelt2WorldPos()
+  local roomGo = self._main:GetRoomBySpaceID(self.data.param[1]):GetRoomGameObject()
+  local tf = GameObjectHelper.FindChild(roomGo.transform, "UIAircraftSmeltTip")
   local worldPos = tf.position
-  local camera = (self._main):GetMainCamera()
+  local camera = self._main:GetMainCamera()
   local screenPos = camera:WorldToScreenPoint(worldPos)
-  local sw = (ResolutionManager.ScreenWidth)()
-  local rw = (ResolutionManager.RealWidth)()
+  local sw = ResolutionManager.ScreenWidth()
+  local rw = ResolutionManager.RealWidth()
   local factor = rw / sw
   local sx, sy = screenPos.x * factor, screenPos.y * factor
-  screenPos = Vector2(sx - (self.data).radius * 0.5 + ((self.data).offset)[1], sy - (self.data).radius * 0.5 + ((self.data).offset)[2])
+  screenPos = Vector2(sx - self.data.radius * 0.5 + self.data.offset[1], sy - self.data.radius * 0.5 + self.data.offset[2])
   return screenPos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideCircleController.AirSandBox2WorldPos = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local roomGo = ((self._main):GetRoomBySpaceID(((self.data).param)[1])):GetRoomGameObject()
-  local tf = (GameObjectHelper.FindChild)(roomGo.transform, "DispatchTaskMap")
+function UIGuideCircleController:AirSandBox2WorldPos()
+  local roomGo = self._main:GetRoomBySpaceID(self.data.param[1]):GetRoomGameObject()
+  local tf = GameObjectHelper.FindChild(roomGo.transform, "DispatchTaskMap")
   local worldPos = tf.position
-  local camera = (self._main):GetMainCamera()
+  local camera = self._main:GetMainCamera()
   local screenPos = camera:WorldToScreenPoint(worldPos)
-  local sw = (ResolutionManager.ScreenWidth)()
-  local rw = (ResolutionManager.RealWidth)()
+  local sw = ResolutionManager.ScreenWidth()
+  local rw = ResolutionManager.RealWidth()
   local factor = rw / sw
   local sx, sy = screenPos.x * factor, screenPos.y * factor
-  screenPos = Vector2(sx - (self.data).radius * 0.5 + ((self.data).offset)[1], sy - (self.data).radius * 0.5 + ((self.data).offset)[2])
+  screenPos = Vector2(sx - self.data.radius * 0.5 + self.data.offset[1], sy - self.data.radius * 0.5 + self.data.offset[2])
   return screenPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideCircleController.AirTactic2WorldPos = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local roomGo = ((self._main):GetRoomBySpaceID(((self.data).param)[1])):GetRoomGameObject()
-  local tf = (GameObjectHelper.FindChild)(roomGo.transform, "tactic")
+function UIGuideCircleController:AirTactic2WorldPos()
+  local roomGo = self._main:GetRoomBySpaceID(self.data.param[1]):GetRoomGameObject()
+  local tf = GameObjectHelper.FindChild(roomGo.transform, "tactic")
   local worldPos = tf.position
-  local camera = (self._main):GetMainCamera()
+  local camera = self._main:GetMainCamera()
   local screenPos = camera:WorldToScreenPoint(worldPos)
-  local sw = (ResolutionManager.ScreenWidth)()
-  local rw = (ResolutionManager.RealWidth)()
+  local sw = ResolutionManager.ScreenWidth()
+  local rw = ResolutionManager.RealWidth()
   local factor = rw / sw
   local sx, sy = screenPos.x * factor, screenPos.y * factor
-  screenPos = Vector2(sx - (self.data).radius * 0.5 + ((self.data).offset)[1], sy - (self.data).radius * 0.5 + ((self.data).offset)[2])
+  screenPos = Vector2(sx - self.data.radius * 0.5 + self.data.offset[1], sy - self.data.radius * 0.5 + self.data.offset[2])
   return screenPos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideCircleController.SeasonEventPointPos = function(self, isUpdate)
-  -- function num : 0_8 , upvalues : _ENV
-  local id = ((self.data).param)[1]
-  local eventPoint = ((self._seasonMgr):SeasonMapManager()):GetEventPoint(id)
+function UIGuideCircleController:SeasonEventPointPos(isUpdate)
+  local id = self.data.param[1]
+  local eventPoint = self._seasonMgr:SeasonMapManager():GetEventPoint(id)
   if eventPoint then
     local worldPos = eventPoint:Position()
-    local camera = ((self._seasonMgr):SeasonCameraManager()):Camera()
+    local camera = self._seasonMgr:SeasonCameraManager():Camera()
     if not isUpdate then
-      (((self._seasonMgr):SeasonCameraManager()):SeasonCamera()):Focus(eventPoint:Position())
+      self._seasonMgr:SeasonCameraManager():SeasonCamera():Focus(eventPoint:Position())
     end
     local screenPos = camera:WorldToScreenPoint(worldPos)
-    local sw = (ResolutionManager.ScreenWidth)()
-    local rw = (ResolutionManager.RealWidth)()
+    local sw = ResolutionManager.ScreenWidth()
+    local rw = ResolutionManager.RealWidth()
     local factor = rw / sw
     local sx, sy = screenPos.x * factor, screenPos.y * factor
-    screenPos = Vector2(sx - (self.data).radius * 0.5 + ((self.data).offset)[1], sy - (self.data).radius * 0.5 + ((self.data).offset)[2])
+    screenPos = Vector2(sx - self.data.radius * 0.5 + self.data.offset[1], sy - self.data.radius * 0.5 + self.data.offset[2])
     return screenPos
   else
-    do
-      ;
-      (Log.error)("UIGuideCircleController SeasonEventPointPos eventpoint is nil.", id)
-      return Vector2.zero
-    end
+    Log.error("UIGuideCircleController SeasonEventPointPos eventpoint is nil.", id)
   end
+  return Vector2.zero
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideCircleController.SeasonMazePointPos = function(self, isUpdate)
-  -- function num : 0_9 , upvalues : _ENV
-  local id = ((self.data).param)[1]
-  local node = ((self._seasonMazeMgr):MapManager()):GetNode(id)
+function UIGuideCircleController:SeasonMazePointPos(isUpdate)
+  local id = self.data.param[1]
+  local node = self._seasonMazeMgr:MapManager():GetNode(id)
   if node then
     local worldPos = node:Position()
-    local camera = ((self._seasonMazeMgr):SeasonMazeCameraManager()):Camera()
+    local camera = self._seasonMazeMgr:SeasonMazeCameraManager():Camera()
     local screenPos = camera:WorldToScreenPoint(worldPos)
-    local sw = (ResolutionManager.ScreenWidth)()
-    local rw = (ResolutionManager.RealWidth)()
+    local sw = ResolutionManager.ScreenWidth()
+    local rw = ResolutionManager.RealWidth()
     local factor = rw / sw
     local sx, sy = screenPos.x * factor, screenPos.y * factor
-    screenPos = Vector2(sx - (self.data).radius * 0.5 + ((self.data).offset)[1], sy - (self.data).radius * 0.5 + ((self.data).offset)[2])
+    screenPos = Vector2(sx - self.data.radius * 0.5 + self.data.offset[1], sy - self.data.radius * 0.5 + self.data.offset[2])
     return screenPos
   else
-    do
-      ;
-      (Log.error)("UIGuideCircleController SeasonMazeNodePos node is nil.", id)
-      return Vector2.zero
-    end
+    Log.error("UIGuideCircleController SeasonMazeNodePos node is nil.", id)
   end
+  return Vector2.zero
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideCircleController.RefreshTxt = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self.data).lt then
-    (self.ltGO):SetActive(true)
-    ;
-    (self.ltTitleTxt):SetText((StringTable.Get)((self.data).lttitle))
-    ;
-    (self.ltDescTxt):SetText((StringTable.Get)((self.data).lt))
+function UIGuideCircleController:RefreshTxt()
+  if self.data.lt then
+    self.ltGO:SetActive(true)
+    self.ltTitleTxt:SetText(StringTable.Get(self.data.lttitle))
+    self.ltDescTxt:SetText(StringTable.Get(self.data.lt))
   else
-    ;
-    (self.ltGO):SetActive(false)
+    self.ltGO:SetActive(false)
   end
-  if (self.data).rt then
-    (self.rtGO):SetActive(true)
-    ;
-    (self.rtTitleTxt):SetText((StringTable.Get)((self.data).rttitle))
-    ;
-    (self.rtDescTxt):SetText((StringTable.Get)((self.data).rt))
+  if self.data.rt then
+    self.rtGO:SetActive(true)
+    self.rtTitleTxt:SetText(StringTable.Get(self.data.rttitle))
+    self.rtDescTxt:SetText(StringTable.Get(self.data.rt))
   else
-    ;
-    (self.rtGO):SetActive(false)
+    self.rtGO:SetActive(false)
   end
-  if (self.data).lb then
-    (self.ldGO):SetActive(true)
-    ;
-    (self.ldTitleTxt):SetText((StringTable.Get)((self.data).lbtitle))
-    ;
-    (self.ldDescTxt):SetText((StringTable.Get)((self.data).lb))
+  if self.data.lb then
+    self.ldGO:SetActive(true)
+    self.ldTitleTxt:SetText(StringTable.Get(self.data.lbtitle))
+    self.ldDescTxt:SetText(StringTable.Get(self.data.lb))
   else
-    ;
-    (self.ldGO):SetActive(false)
+    self.ldGO:SetActive(false)
   end
-  if (self.data).rb then
-    (self.rdGO):SetActive(true)
-    ;
-    (self.rdTitleTxt):SetText((StringTable.Get)((self.data).rbtitle))
-    ;
-    (self.rdDescTxt):SetText((StringTable.Get)((self.data).rb))
+  if self.data.rb then
+    self.rdGO:SetActive(true)
+    self.rdTitleTxt:SetText(StringTable.Get(self.data.rbtitle))
+    self.rdDescTxt:SetText(StringTable.Get(self.data.rb))
   else
-    ;
-    (self.rdGO):SetActive(false)
+    self.rdGO:SetActive(false)
   end
   if not self:IsFingerType() then
     self:DoAni()
@@ -358,237 +257,153 @@ end
 
 local time1 = 0.4
 local time2 = 400
--- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
 
-UIGuideCircleController.DoAni = function(self)
-  -- function num : 0_11 , upvalues : _ENV, time1, time2
+function UIGuideCircleController:DoAni()
   self._taskID = self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self, _ENV, time1, time2
-    if (self.data).lt then
-      (self.ltMaskRect):DOSizeDelta(Vector2(600, 70), time1)
+    if self.data.lt then
+      self.ltMaskRect:DOSizeDelta(Vector2(600, 70), time1)
       YIELD(TT, time2)
-      ;
-      (self.ltTitleGO):SetActive(true)
+      self.ltTitleGO:SetActive(true)
     end
-    if (self.data).rt then
-      (self.rtMaskRect):DOSizeDelta(Vector2(600, 70), time1)
+    if self.data.rt then
+      self.rtMaskRect:DOSizeDelta(Vector2(600, 70), time1)
       YIELD(TT, time2)
-      ;
-      (self.rtTitleGO):SetActive(true)
+      self.rtTitleGO:SetActive(true)
     end
-    if (self.data).lb then
-      (self.ldMaskRect):DOSizeDelta(Vector2(600, 70), time1)
+    if self.data.lb then
+      self.ldMaskRect:DOSizeDelta(Vector2(600, 70), time1)
       YIELD(TT, time2)
-      ;
-      (self.ldTitleGO):SetActive(true)
+      self.ldTitleGO:SetActive(true)
     end
-    if (self.data).rb then
-      (self.rdMaskRect):DOSizeDelta(Vector2(600, 70), time1)
+    if self.data.rb then
+      self.rdMaskRect:DOSizeDelta(Vector2(600, 70), time1)
       YIELD(TT, time2)
-      ;
-      (self.rdTitleGO):SetActive(true)
+      self.rdTitleGO:SetActive(true)
     end
     YIELD(TT, 800)
     self.canClick = true
-    ;
-    (self.continueGO):SetActive(true)
-  end
-)
+    self.continueGO:SetActive(true)
+  end)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGuideCircleController.RefreshFinger = function(self)
-  -- function num : 0_12
+function UIGuideCircleController:RefreshFinger()
   if self:IsFingerType() then
-    if (self.data).showFinger == false then
-      (self.fingerGO):SetActive(false)
+    if self.data.showFinger == false then
+      self.fingerGO:SetActive(false)
     else
-      ;
-      (self.fingerGO):SetActive(true)
+      self.fingerGO:SetActive(true)
     end
   else
-    ;
-    (self.fingerGO):SetActive(false)
+    self.fingerGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGuideCircleController.RefreshDescribe = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  if (self.data).describe then
+function UIGuideCircleController:RefreshDescribe()
+  if self.data.describe then
     if not self.describeBgOldWidth or not self.describeBgOldHeight then
-      self.describeBgOldWidth = ((self.describeRect).sizeDelta).x
-      self.describeBgOldHeight = ((self.describeRect).sizeDelta).y
+      self.describeBgOldWidth = self.describeRect.sizeDelta.x
+      self.describeBgOldHeight = self.describeRect.sizeDelta.y
     end
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-    if (self.data).descrbeIcon then
-      (self.desCharactorImg).sprite = (self.atlas):GetSprite((self.data).descrbeIcon)
+    if self.data.descrbeIcon then
+      self.desCharactorImg.sprite = self.atlas:GetSprite(self.data.descrbeIcon)
     end
-    ;
-    (self.describeText):SetText((StringTable.Get)((self.data).describe))
-    local settings = (self.describeText):GetGenerationSettings(((self.describeTextRect).rect).size)
-    local tg = (self.describeText).cachedTextGenerator
+    self.describeText:SetText(StringTable.Get(self.data.describe))
+    local settings = self.describeText:GetGenerationSettings(self.describeTextRect.rect.size)
+    local tg = self.describeText.cachedTextGenerator
     tg:Invalidate()
-    tg:Populate((self.describeText).text, settings)
-    ;
-    ((UnityEngine.Canvas).ForceUpdateCanvases)()
-    -- DECOMPILER ERROR at PC72: Confused about usage of register: R3 in 'UnsetPending'
-
-    if (tg.lines).Count > 4 then
-      (self.describeRect).sizeDelta = Vector2(self.describeBgOldWidth, self.describeBgOldHeight + ((tg.lines).Count - 4) * (self.describeText).fontSize)
+    tg:Populate(self.describeText.text, settings)
+    UnityEngine.Canvas.ForceUpdateCanvases()
+    if tg.lines.Count > 4 then
+      self.describeRect.sizeDelta = Vector2(self.describeBgOldWidth, self.describeBgOldHeight + (tg.lines.Count - 4) * self.describeText.fontSize)
     else
-      -- DECOMPILER ERROR at PC79: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.describeRect).sizeDelta = Vector2(self.describeBgOldWidth, self.describeBgOldHeight)
+      self.describeRect.sizeDelta = Vector2(self.describeBgOldWidth, self.describeBgOldHeight)
     end
-    -- DECOMPILER ERROR at PC93: Confused about usage of register: R3 in 'UnsetPending'
-
-    if (self.data).describeOffset then
-      (self.describeRect).anchoredPosition = Vector3(((self.data).describeOffset)[1], ((self.data).describeOffset)[2])
+    if self.data.describeOffset then
+      self.describeRect.anchoredPosition = Vector3(self.data.describeOffset[1], self.data.describeOffset[2])
     end
-    ;
-    (self.describeGO):SetActive(true)
+    self.describeGO:SetActive(true)
   else
-    do
-      ;
-      (self.describeGO):SetActive(false)
-    end
+    self.describeGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGuideCircleController.IsFingerType = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  do return not self.data or (self.data).type == GuideCircleType.Finger or (self.data).type == GuideCircleType.AirPet or (self.data).type == GuideCircleType.AirSmelt or (self.data).type == GuideCircleType.AirSandBox or (self.data).type == GuideCircleType.AirTactic or (self.data).type == GuideCircleType.SeasonMazePoint or (self.data).type == GuideCircleType.SeasonEventPoint end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIGuideCircleController:IsFingerType()
+  return self.data and (self.data.type == GuideCircleType.Finger or self.data.type == GuideCircleType.AirPet or self.data.type == GuideCircleType.AirSmelt or self.data.type == GuideCircleType.AirSandBox or self.data.type == GuideCircleType.AirTactic or self.data.type == GuideCircleType.SeasonMazePoint or self.data.type == GuideCircleType.SeasonEventPoint)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGuideCircleController.AnyClickClose = function(self)
-  -- function num : 0_15
-  if self.data then
-    return (self.data).anyClose
-  end
+function UIGuideCircleController:AnyClickClose()
+  return self.data and self.data.anyClose
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGuideCircleController.OnHide = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIGuideCircleController:OnHide()
   if self._taskID then
-    ((GameGlobal.TaskManager)()):KillTask(self._taskID)
+    GameGlobal.TaskManager():KillTask(self._taskID)
   end
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGuideCircleController.circleOnClick = function(self)
-  -- function num : 0_17
+function UIGuideCircleController:circleOnClick()
   self:OnClickBack()
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGuideCircleController.Back1OnClick = function(self)
-  -- function num : 0_18
+function UIGuideCircleController:Back1OnClick()
   self:CheckClick()
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGuideCircleController.Back2OnClick = function(self)
-  -- function num : 0_19
+function UIGuideCircleController:Back2OnClick()
   self:CheckClick()
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGuideCircleController.Back3OnClick = function(self)
-  -- function num : 0_20
+function UIGuideCircleController:Back3OnClick()
   self:CheckClick()
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGuideCircleController.Back4OnClick = function(self)
-  -- function num : 0_21
+function UIGuideCircleController:Back4OnClick()
   self:CheckClick()
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGuideCircleController.CheckClick = function(self)
-  -- function num : 0_22
+function UIGuideCircleController:CheckClick()
   if self:AnyClickClose() then
     self:OnClickBack()
-  else
-    if not self:IsFingerType() then
-      self:OnClickBack()
-    end
+  elseif not self:IsFingerType() then
+    self:OnClickBack()
   end
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGuideCircleController.OnClickBack = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIGuideCircleController:OnClickBack()
   if self.canClick then
-    if (self.data).type == GuideCircleType.SeasonEventPoint and ((self.data).param)[2] then
-      local id = ((self.data).param)[2]
-      local eventPoint = ((self._seasonMgr):SeasonMapManager()):GetEventPoint(id)
-      ;
-      (((self._seasonMgr):SeasonInputManager()):GetInput()):SetClickUnLockZone(true)
-      ;
-      ((((self._seasonMgr):SeasonInputManager()):GetInput()):GetClickEffect()):Click()
-      ;
-      (((self._seasonMgr):SeasonInputManager()):GetInput()):SetCurClickEventPoint(eventPoint)
+    if self.data.type == GuideCircleType.SeasonEventPoint and self.data.param[2] then
+      local id = self.data.param[2]
+      local eventPoint = self._seasonMgr:SeasonMapManager():GetEventPoint(id)
+      self._seasonMgr:SeasonInputManager():GetInput():SetClickUnLockZone(true)
+      self._seasonMgr:SeasonInputManager():GetInput():GetClickEffect():Click()
+      self._seasonMgr:SeasonInputManager():GetInput():SetCurClickEventPoint(eventPoint)
       eventPoint:GuideMove(function()
-    -- function num : 0_23_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.Circle)
-  end
-)
-    else
-      do
-        if (self.data).type == GuideCircleType.SeasonMazePoint and ((self.data).param)[1] and not (self.data).anyClose then
-          local id = ((self.data).param)[1]
-          local node = ((self._seasonMazeMgr):MapManager()):GetNode(id)
-          if node then
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonMazeClickRoom, (node:Room()):Type(), (node:Room()):ID(), node:Position())
-          else
-            ;
-            (Log.fatal)("UIGuideCircleController OnClickBack  can\'t find node ", id)
-          end
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.Circle)
-        else
-          do
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.Circle)
-            self:CloseDialog()
-          end
-        end
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Circle)
+      end)
+    elseif self.data.type == GuideCircleType.SeasonMazePoint and self.data.param[1] and not self.data.anyClose then
+      local id = self.data.param[1]
+      local node = self._seasonMazeMgr:MapManager():GetNode(id)
+      if node then
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonMazeClickRoom, node:Room():Type(), node:Room():ID(), node:Position())
+      else
+        Log.fatal("UIGuideCircleController OnClickBack  can't find node ", id)
       end
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Circle)
+    else
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Circle)
     end
+    self:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGuideCircleController.SetMaskPos = function(self, pos)
-  -- function num : 0_24 , upvalues : _ENV
-  local w, h = (self.data).radius, (self.data).radius
+function UIGuideCircleController:SetMaskPos(pos)
+  local w, h = self.data.radius, self.data.radius
   local x = pos.x
   local y = pos.y
-  local screenWidth = (ResolutionManager.RealWidth)()
-  local screenHeight = (ResolutionManager.RealHeight)()
-  local width = (ResolutionManager.ScreenWidth)()
-  local height = (ResolutionManager.ScreenHeight)()
+  local screenWidth = ResolutionManager.RealWidth()
+  local screenHeight = ResolutionManager.RealHeight()
+  local width = ResolutionManager.ScreenWidth()
+  local height = ResolutionManager.ScreenHeight()
   local wc, hc = screenWidth / width, screenHeight / height
   if wc ~= hc then
     if wc < hc then
@@ -598,74 +413,69 @@ UIGuideCircleController.SetMaskPos = function(self, pos)
     end
   end
   local rects = {
-{x = 0, y = 0, width = x, height = screenHeight}
-, 
-{x = x, y = y + h, width = screenWidth - x, height = screenHeight - y - h}
-, 
-{x = x + w, y = 0, width = screenWidth - x - w, height = y + h}
-, 
-{x = x, y = 0, width = w, height = y}
-}
+    {
+      x = 0,
+      y = 0,
+      width = x,
+      height = screenHeight
+    },
+    {
+      x = x,
+      y = y + h,
+      width = screenWidth - x,
+      height = screenHeight - y - h
+    },
+    {
+      x = x + w,
+      y = 0,
+      width = screenWidth - x - w,
+      height = y + h
+    },
+    {
+      x = x,
+      y = 0,
+      width = w,
+      height = y
+    }
+  }
   for i = 1, 4 do
-    local back = (self.backs)[i]
+    local back = self.backs[i]
     local data = rects[i]
     back.sizeDelta = Vector2(data.width, data.height)
     back.anchoredPosition = Vector2(data.x, data.y)
   end
   if self.p_black_masked_mat then
-    local realRadius = (self.data).radius * self._scaleFactor
-    ;
-    (self.p_black_masked_mat):SetFloat("_Radius", realRadius)
-    local offsetX = pos.x + ((self.data).radius - screenWidth) * 0.5
-    local offsetY = pos.y + ((self.data).radius - screenHeight) * 0.5
-    ;
-    (self.p_black_masked_mat):SetVector("_Center", Vector4(offsetX, offsetY, 0, 0))
+    local realRadius = self.data.radius * self._scaleFactor
+    self.p_black_masked_mat:SetFloat("_Radius", realRadius)
+    local offsetX = pos.x + (self.data.radius - screenWidth) * 0.5
+    local offsetY = pos.y + (self.data.radius - screenHeight) * 0.5
+    self.p_black_masked_mat:SetVector("_Center", Vector4(offsetX, offsetY, 0, 0))
   end
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGuideCircleController.OnUpdate = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIGuideCircleController:OnUpdate()
   self._curInterval = self._curInterval + 1
-  if self._updateInterval <= self._curInterval then
+  if self._curInterval >= self._updateInterval then
     self._curInterval = 0
     local pos = Vector2.zero
     if self:IsFingerType() then
-      if (self.data).type == GuideCircleType.AirPet then
+      if self.data.type == GuideCircleType.AirPet then
         pos = self:AirPet2WorldPos()
-      else
-        if (self.data).type == GuideCircleType.Finger then
-          pos = self:Room2WorldPos()
-        else
-          if (self.data).type == GuideCircleType.AirSmelt then
-            pos = self:AirSmelt2WorldPos()
-          else
-            if (self.data).type == GuideCircleType.AirSandBox then
-              pos = self:AirSandBox2WorldPos()
-            else
-              if (self.data).type == GuideCircleType.AirTactic then
-                pos = self:AirTactic2WorldPos()
-              else
-                if (self.data).type == GuideCircleType.SeasonEventPoint then
-                  pos = self:SeasonEventPointPos(true)
-                else
-                  if (self.data).type == GuideCircleType.SeasonMazePoint then
-                    pos = self:SeasonMazePointPos(true)
-                  end
-                end
-              end
-            end
-          end
-        end
+      elseif self.data.type == GuideCircleType.Finger then
+        pos = self:Room2WorldPos()
+      elseif self.data.type == GuideCircleType.AirSmelt then
+        pos = self:AirSmelt2WorldPos()
+      elseif self.data.type == GuideCircleType.AirSandBox then
+        pos = self:AirSandBox2WorldPos()
+      elseif self.data.type == GuideCircleType.AirTactic then
+        pos = self:AirTactic2WorldPos()
+      elseif self.data.type == GuideCircleType.SeasonEventPoint then
+        pos = self:SeasonEventPointPos(true)
+      elseif self.data.type == GuideCircleType.SeasonMazePoint then
+        pos = self:SeasonMazePointPos(true)
       end
-      -- DECOMPILER ERROR at PC86: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.selectRect).anchoredPosition = pos
+      self.selectRect.anchoredPosition = pos
       self:SetMaskPos(pos)
     end
   end
 end
-
-

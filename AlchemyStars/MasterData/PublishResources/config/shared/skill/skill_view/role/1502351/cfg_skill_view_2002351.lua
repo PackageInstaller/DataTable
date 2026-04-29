@@ -1,17 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1502351/cfg_skill_view_2002351.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{"PlayAudio,audioID =150235102,audioType=1; PlayCasterAnimation,animName = AtkChain; PlayCasterBindEffect,effectID =150235103; Wait,waitTime = 3000; "}
-}
-, 
-{2, 2, 7, 1, 1, 550, 
-{gridEffectID = 0, columnInternalTime = 0, hitAnimName = "Hit", hitEffectID = 150235104, gridEffectWaitTime = 0, hitWaitTime = 0}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      "PlayAudio,audioID =150235102,audioType=1; PlayCasterAnimation,animName = AtkChain; PlayCasterBindEffect,effectID =150235103; Wait,waitTime = 3000; "
+    }
+  },
+  {
+    2,
+    2,
+    7,
+    1,
+    1,
+    550,
+    {
+      gridEffectID = 0,
+      columnInternalTime = 0,
+      hitAnimName = "Hit",
+      hitEffectID = 150235104,
+      gridEffectWaitTime = 0,
+      hitWaitTime = 0
+    }
+  }
 }
 return config, "ID", key
-

@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n48/main/ui_n48_main_lobby_entry_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN48MainLobbyEntry", UICustomWidget)
 UIN48MainLobbyEntry = UIN48MainLobbyEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN48MainLobbyEntry.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN48MainLobbyEntry:Constructor()
   self._campaignModule = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48MainLobbyEntry.SetData = function(self, sampleInfo, controller)
-  -- function num : 0_1
+function UIN48MainLobbyEntry:SetData(sampleInfo, controller)
   self:_InitWidget()
   self:_RefView()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48MainLobbyEntry._InitWidget = function(self)
-  -- function num : 0_2
+function UIN48MainLobbyEntry:_InitWidget()
   self._redPoint = self:GetGameObject("_redPoint")
   self._newFlag = self:GetGameObject("_newFlag")
   self.shopText = self:GetGameObject("shopText")
@@ -33,74 +20,47 @@ UIN48MainLobbyEntry._InitWidget = function(self)
   self._shot = self:GetUIComponent("H3DUIBlurHelper", "shot")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48MainLobbyEntry._RefView = function(self)
-  -- function num : 0_3
+function UIN48MainLobbyEntry:_RefView()
   self:StartTask(self._SetState, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48MainLobbyEntry._SetState = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  (self.shopText):SetActive(false)
-  ;
-  (self.lineText):SetActive(false)
-  ;
-  (self.blackText):SetActive(false)
-  ;
-  (self.gameText):SetActive(false)
+function UIN48MainLobbyEntry:_SetState(TT)
+  self.shopText:SetActive(false)
+  self.lineText:SetActive(false)
+  self.blackText:SetActive(false)
+  self.gameText:SetActive(false)
   self:Lock("UIN48MainLobbyEntry")
   local res = AsyncRequestRes:New()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N48)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N48)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if res:GetSucc() then
-    local process = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N48)
+    local process = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N48)
     local showNew = process:GetEntryNew()
     local showredPoint = process:GetEntryRedDot()
-    ;
-    (self._newFlag):SetActive(showNew)
-    if showredPoint then
-      do
-        (self._redPoint):SetActive(not showNew)
-        if (UIActivityN48Helper.CheckComponentStatus)(process:GetComponent((UIActivityN48Helper.GetComponentId)("game"))) == ActivityN48ComponentStatus.Open then
-          (self.gameText):SetActive(true)
-          self:UnLock("UIN48MainLobbyEntry")
-          return 
-        else
-          if (UIActivityN48Helper.CheckComponentStatus)(process:GetComponent((UIActivityN48Helper.GetComponentId)("black"))) == ActivityN48ComponentStatus.Open then
-            (self.blackText):SetActive(true)
-            self:UnLock("UIN48MainLobbyEntry")
-            return 
-          else
-            if (UIActivityN48Helper.CheckComponentStatus)(process:GetComponent((UIActivityN48Helper.GetComponentId)("line"))) == ActivityN48ComponentStatus.Open then
-              (self.lineText):SetActive(true)
-              self:UnLock("UIN48MainLobbyEntry")
-              return 
-            else
-              if (UIActivityN48Helper.CheckComponentStatus)(process:GetComponent((UIActivityN48Helper.GetComponentId)("shop"))) == ActivityN48ComponentStatus.Open then
-                (self.shopText):SetActive(true)
-                self:UnLock("UIN48MainLobbyEntry")
-                return 
-              end
-            end
-          end
-        end
-        self:UnLock("UIN48MainLobbyEntry")
-      end
+    self._newFlag:SetActive(showNew)
+    self._redPoint:SetActive(showredPoint and not showNew)
+    if UIActivityN48Helper.CheckComponentStatus(process:GetComponent(UIActivityN48Helper.GetComponentId("game"))) == ActivityN48ComponentStatus.Open then
+      self.gameText:SetActive(true)
+      self:UnLock("UIN48MainLobbyEntry")
+      return
+    elseif UIActivityN48Helper.CheckComponentStatus(process:GetComponent(UIActivityN48Helper.GetComponentId("black"))) == ActivityN48ComponentStatus.Open then
+      self.blackText:SetActive(true)
+      self:UnLock("UIN48MainLobbyEntry")
+      return
+    elseif UIActivityN48Helper.CheckComponentStatus(process:GetComponent(UIActivityN48Helper.GetComponentId("line"))) == ActivityN48ComponentStatus.Open then
+      self.lineText:SetActive(true)
+      self:UnLock("UIN48MainLobbyEntry")
+      return
+    elseif UIActivityN48Helper.CheckComponentStatus(process:GetComponent(UIActivityN48Helper.GetComponentId("shop"))) == ActivityN48ComponentStatus.Open then
+      self.shopText:SetActive(true)
+      self:UnLock("UIN48MainLobbyEntry")
+      return
     end
   end
+  self:UnLock("UIN48MainLobbyEntry")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48MainLobbyEntry.EntryBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN48MainLobbyEntry:EntryBtnOnClick(go)
   self:SwitchState(UIStateType.UIN48MainController)
 end
-
-

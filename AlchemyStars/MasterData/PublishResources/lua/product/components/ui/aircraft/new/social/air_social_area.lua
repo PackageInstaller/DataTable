@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/social/air_social_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirSocialArea", Object)
 AirSocialArea = AirSocialArea
 local SOCIAL_TIME = 300000
 local GATHER_ROUND = 20
 local WALKTALK_ROUND = 20
 local PER_TIME = 5000
--- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
 
-AirSocialArea.Constructor = function(self, aircraftMain)
-  -- function num : 0_0
+function AirSocialArea:Constructor(aircraftMain)
   self.m_AirMain = aircraftMain
   self.m_Pets = {}
   self.m_LibTypes = {}
@@ -23,59 +16,45 @@ AirSocialArea.Constructor = function(self, aircraftMain)
   self.log = ""
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.Dispose = function(self, needRandom, isLeave)
-  -- function num : 0_1 , upvalues : _ENV
+function AirSocialArea:Dispose(needRandom, isLeave)
   self:RandomAllPet(needRandom)
   self.m_LibTypes = {}
   if self.m_LibMaker then
-    (self.m_LibMaker):Dispose()
+    self.m_LibMaker:Dispose()
   end
   self.m_LibMaker = nil
   if not isLeave then
-    for key,pet in pairs(self.m_Pets) do
+    for key, pet in pairs(self.m_Pets) do
       pet:ResetSocialParam()
     end
   end
-  do
-    ;
-    (table.clear)(self.m_Pets)
-  end
+  table.clear(self.m_Pets)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.RandomAllPet = function(self, needRandom)
-  -- function num : 0_2 , upvalues : _ENV
+function AirSocialArea:RandomAllPet(needRandom)
   if self.m_Pets then
-    for key,_pet in pairs(self.m_Pets) do
+    for key, _pet in pairs(self.m_Pets) do
       local pet = _pet
       if needRandom and pet:IsAlive() then
-        (self.m_AirMain):RandomActionForPet(pet)
+        self.m_AirMain:RandomActionForPet(pet)
+      else
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.StartAllPetAction = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function AirSocialArea:StartAllPetAction()
   if self.m_Pets then
-    for key,_pet in pairs(self.m_Pets) do
+    for key, _pet in pairs(self.m_Pets) do
       local pet = _pet
       pet:StartIdleAction()
     end
   end
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.SetAllPetSocialState = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function AirSocialArea:SetAllPetSocialState()
   if self.m_Pets then
-    for key,_pet in pairs(self.m_Pets) do
+    for key, _pet in pairs(self.m_Pets) do
       local pet = _pet
       AirLog("星灵开始社交:", pet:TemplateID())
       pet:SetState(AirPetState.Social)
@@ -83,177 +62,118 @@ AirSocialArea.SetAllPetSocialState = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.GetAreaType = function(self)
-  -- function num : 0_5
+function AirSocialArea:GetAreaType()
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.GetPets = function(self)
-  -- function num : 0_6
+function AirSocialArea:GetPets()
   return self.m_Pets
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.AddPet = function(self, petId, pet)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self.m_Pets)[petId] = pet
+function AirSocialArea:AddPet(petId, pet)
+  self.m_Pets[petId] = pet
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.RemovePet = function(self, petId)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_Pets)[petId] = nil
+function AirSocialArea:RemovePet(petId)
+  self.m_Pets[petId] = nil
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.AddLib = function(self, libType)
-  -- function num : 0_9
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_LibTypes)[libType] = true
+function AirSocialArea:AddLib(libType)
+  self.m_LibTypes[libType] = true
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.GetLibs = function(self)
-  -- function num : 0_10
+function AirSocialArea:GetLibs()
   return self.m_LibTypes
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.RemoveLib = function(self, libType)
-  -- function num : 0_11
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_LibTypes)[libType] = nil
+function AirSocialArea:RemoveLib(libType)
+  self.m_LibTypes[libType] = nil
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.GetRoom = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (Log.error)("AirSocialArea:GetRoom() need override")
+function AirSocialArea:GetRoom()
+  Log.error("AirSocialArea:GetRoom() need override")
   return nil
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.SetFurniture = function(self, f, pets)
-  -- function num : 0_13 , upvalues : _ENV
+function AirSocialArea:SetFurniture(f, pets)
   self.m_Furniture = f
   if not pets then
-    (table.clear)(self.m_Pets)
+  else
+    table.clear(self.m_Pets)
     self.m_Pets = {}
-    local allCount = (self.m_Furniture):AvailableCount()
+    local allCount = self.m_Furniture:AvailableCount()
     local index = 0
-    for _,pet in pairs(pets) do
+    for _, pet in pairs(pets) do
       index = index + 1
-      if index <= allCount then
+      if allCount >= index then
         self:AddPet(pet:TemplateID(), pet)
       end
     end
-    for key,pet in pairs(self.m_Pets) do
-      pet:SetSocialFurnitureKey((self.m_Furniture):GetPstKey())
+    for key, pet in pairs(self.m_Pets) do
+      pet:SetSocialFurnitureKey(self.m_Furniture:GetPstKey())
     end
   end
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.GetFurniture = function(self)
-  -- function num : 0_14
+function AirSocialArea:GetFurniture()
   return self.m_Furniture
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.IsFurnitureInteract = function(self)
-  -- function num : 0_15
-  do return self.m_Furniture ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AirSocialArea:IsFurnitureInteract()
+  return self.m_Furniture ~= nil
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.GetMainLibType = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function AirSocialArea:GetMainLibType()
   if not self.m_FinalLibType then
-    self.m_FinalLibType = ((table.keys)(self.m_LibTypes))[1]
+    self.m_FinalLibType = table.keys(self.m_LibTypes)[1]
   end
   return self.m_FinalLibType
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.InitLibMaker = function(self, isSerialize)
-  -- function num : 0_17 , upvalues : _ENV
+function AirSocialArea:InitLibMaker(isSerialize)
   if isSerialize then
-    local curCount = (table.count)(self.m_Pets)
+    local curCount = table.count(self.m_Pets)
     local expectCount = self.m_SocialPetCount
     if expectCount ~= curCount then
       return true
     end
   end
-  do
-    self.m_LibMaker = AirLibMaker:New(self, self.m_AirMain)
-    self:CalRemainTimeByRound()
-    for key,pet in pairs(self.m_Pets) do
-      pet:SetSocialActionType(self:GetMainLibType())
+  self.m_LibMaker = AirLibMaker:New(self, self.m_AirMain)
+  self:CalRemainTimeByRound()
+  for key, pet in pairs(self.m_Pets) do
+    pet:SetSocialActionType(self:GetMainLibType())
+  end
+  self:SetSocialPetCount(table.count(self.m_Pets), true)
+  self:InitMaxRound()
+  local type = self:GetAreaType()
+  if type == AirSocialAreaType.Happy then
+    local type = self:GetRestAreaType()
+    for key, pet in pairs(self.m_Pets) do
+      pet:SetSocialAreaType(type)
     end
-    self:SetSocialPetCount((table.count)(self.m_Pets), true)
-    self:InitMaxRound()
-    local type = self:GetAreaType()
-    if type == AirSocialAreaType.Happy then
-      local type = self:GetRestAreaType()
-      for key,pet in pairs(self.m_Pets) do
-        pet:SetSocialAreaType(type)
-      end
-    end
-    do
-      ;
-      (math.randomseed)((os.clock)() * 1000000)
-      local teamId = (math.random)(1, 99999)
-      for key,value in pairs(self.m_Pets) do
-        value.a = self:GetMainLibType() .. "  " .. teamId
-      end
-    end
+  end
+  math.randomseed(os.clock() * 1000000)
+  local teamId = math.random(1, 99999)
+  for key, value in pairs(self.m_Pets) do
+    value.a = self:GetMainLibType() .. "  " .. teamId
   end
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.InitMaxRound = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function AirSocialArea:InitMaxRound()
   self.m_MaxRound = 0
-  for key,pet in pairs(self.m_Pets) do
+  for key, pet in pairs(self.m_Pets) do
     local id = pet:TemplateID()
-    local cfg = (Cfg.cfg_aircraft_pet)[id]
+    local cfg = Cfg.cfg_aircraft_pet[id]
     if cfg and cfg.SocialTag then
       local tag = cfg.SocialTag
-      local key = nil
+      local key
       if tag == AircraftSocialTag.Hot then
         key = "aircraft_social_reqing_time"
-      else
-        if tag == AircraftSocialTag.Normal then
-          key = "aircraft_social_zhengchang_time"
-        else
-          if tag == AircraftSocialTag.Lone then
-            key = "aircraft_social_lengmo_time"
-          end
-        end
+      elseif tag == AircraftSocialTag.Normal then
+        key = "aircraft_social_zhengchang_time"
+      elseif tag == AircraftSocialTag.Lone then
+        key = "aircraft_social_lengmo_time"
       end
-      local value = ((Cfg.cfg_aircraft_const)[key]).IntValue
+      local value = Cfg.cfg_aircraft_const[key].IntValue
       self.m_MaxRound = self.m_MaxRound + value
     end
   end
@@ -262,224 +182,174 @@ AirSocialArea.InitMaxRound = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.GetLibMaker = function(self)
-  -- function num : 0_19
+function AirSocialArea:GetLibMaker()
   return self.m_LibMaker
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.GetStateTypes = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function AirSocialArea:GetStateTypes()
   local index = 1
   local mainType = self:GetMainLibType()
   if mainType == AirSocialActionType.Gather then
     if self.m_SocialRound > 0 then
-      return {AirGroupActionStateType.Located, AirGroupActionStateType.LookAt, AirGroupActionStateType.Talk}
+      return {
+        AirGroupActionStateType.Located,
+        AirGroupActionStateType.LookAt,
+        AirGroupActionStateType.Talk
+      }
     else
-      return {AirGroupActionStateType.Move, AirGroupActionStateType.LookAt, AirGroupActionStateType.Talk}
+      return {
+        AirGroupActionStateType.Move,
+        AirGroupActionStateType.LookAt,
+        AirGroupActionStateType.Talk
+      }
     end
-  else
-    if mainType == AirSocialActionType.WalkTalk then
-      if self.m_SocialRound > 0 then
-        return {AirGroupActionStateType.Located, AirGroupActionStateType.MoveTalk}
-      else
-        return {AirGroupActionStateType.Move, AirGroupActionStateType.MoveTalk}
-      end
+  elseif mainType == AirSocialActionType.WalkTalk then
+    if self.m_SocialRound > 0 then
+      return {
+        AirGroupActionStateType.Located,
+        AirGroupActionStateType.MoveTalk
+      }
     else
-      if mainType == AirSocialActionType.Furniture then
-        if self.m_SocialRound > 0 then
-          return {AirGroupActionStateType.Located, AirGroupActionStateType.FurnitureTalk}
-        else
-          return {AirGroupActionStateType.Move, AirGroupActionStateType.FurnitureTalk}
-        end
-      end
+      return {
+        AirGroupActionStateType.Move,
+        AirGroupActionStateType.MoveTalk
+      }
+    end
+  elseif mainType == AirSocialActionType.Furniture then
+    if self.m_SocialRound > 0 then
+      return {
+        AirGroupActionStateType.Located,
+        AirGroupActionStateType.FurnitureTalk
+      }
+    else
+      return {
+        AirGroupActionStateType.Move,
+        AirGroupActionStateType.FurnitureTalk
+      }
     end
   end
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.SetSocialRound = function(self, round, syn)
-  -- function num : 0_21 , upvalues : _ENV
+function AirSocialArea:SetSocialRound(round, syn)
   self.m_SocialRound = round
   if syn then
-    for key,pet in pairs(self.m_Pets) do
+    for key, pet in pairs(self.m_Pets) do
       pet:SetSocialRound(self.m_SocialRound)
     end
     self:CalRemainTimeByRound()
   end
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.GetSocialRound = function(self)
-  -- function num : 0_22
+function AirSocialArea:GetSocialRound()
   return self.m_SocialRound
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea._SetRemainTime = function(self, time)
-  -- function num : 0_23 , upvalues : _ENV
+function AirSocialArea:_SetRemainTime(time)
   self.m_RemainTime = time
-  for key,pet in pairs(self.m_Pets) do
+  for key, pet in pairs(self.m_Pets) do
     pet:SetSocialRemainTime(self.m_RemainTime)
   end
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.GetMaxRound = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function AirSocialArea:GetMaxRound()
   local finalType = self:GetMainLibType()
   if finalType == AirSocialActionType.Gather then
     return self.m_MaxRound
-  else
-    if finalType == AirSocialActionType.WalkTalk then
-      return self.m_MaxRound
-    end
+  elseif finalType == AirSocialActionType.WalkTalk then
+    return self.m_MaxRound
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.CalRemainTimeByRound = function(self)
-  -- function num : 0_25 , upvalues : _ENV, GATHER_ROUND, PER_TIME, SOCIAL_TIME, WALKTALK_ROUND
+function AirSocialArea:CalRemainTimeByRound()
   local remainTime = 0
   local finalType = self:GetMainLibType()
   if finalType == AirSocialActionType.Gather then
-    if self.m_SocialRound > 0 then
+    if 0 < self.m_SocialRound then
       remainTime = (GATHER_ROUND - self.m_SocialRound) * PER_TIME
     else
       remainTime = SOCIAL_TIME
     end
-  else
-    if finalType == AirSocialActionType.WalkTalk then
-      if self.m_SocialRound > 0 then
-        remainTime = (WALKTALK_ROUND - self.m_SocialRound) * PER_TIME
-      else
-        remainTime = SOCIAL_TIME
-      end
+  elseif finalType == AirSocialActionType.WalkTalk then
+    if 0 < self.m_SocialRound then
+      remainTime = (WALKTALK_ROUND - self.m_SocialRound) * PER_TIME
     else
-      if finalType == AirSocialActionType.Furniture then
-        if (AirHelper.IsActionSeqFurniture)(self.m_Furniture) then
-          remainTime = ((self.m_LibMaker):GetSeqMaker()):GetRemainTime(self.m_SocialRound, 1)
-        else
-          remainTime = SOCIAL_TIME
-        end
-      end
+      remainTime = SOCIAL_TIME
+    end
+  elseif finalType == AirSocialActionType.Furniture then
+    if AirHelper.IsActionSeqFurniture(self.m_Furniture) then
+      remainTime = self.m_LibMaker:GetSeqMaker():GetRemainTime(self.m_SocialRound, 1)
+    else
+      remainTime = SOCIAL_TIME
     end
   end
   self:_SetRemainTime(remainTime)
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.GetRemainTime = function(self)
-  -- function num : 0_26
+function AirSocialArea:GetRemainTime()
   return self.m_RemainTime
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.SetSocialPointHolderIndex = function(self, pointHolderIndex, syn)
-  -- function num : 0_27 , upvalues : _ENV
+function AirSocialArea:SetSocialPointHolderIndex(pointHolderIndex, syn)
   self.m_SocialPointHolderIndex = pointHolderIndex
   if syn then
-    for key,pet in pairs(self.m_Pets) do
+    for key, pet in pairs(self.m_Pets) do
       pet:SetSocialPointHolderIndex(self.m_SocialPointHolderIndex)
     end
   end
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.GetSocialPointHolderIndex = function(self)
-  -- function num : 0_28
+function AirSocialArea:GetSocialPointHolderIndex()
   return self.m_SocialPointHolderIndex
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.SetSocialPetCount = function(self, count, syn)
-  -- function num : 0_29 , upvalues : _ENV
+function AirSocialArea:SetSocialPetCount(count, syn)
   self.m_SocialPetCount = count
   if syn then
-    for key,pet in pairs(self.m_Pets) do
+    for key, pet in pairs(self.m_Pets) do
       pet:SetSocialPetCount(self.m_SocialPetCount)
     end
   end
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialArea.GetSocialPetCount = function(self)
-  -- function num : 0_30
+function AirSocialArea:GetSocialPetCount()
   return self.m_SocialPetCount
 end
 
 _class("AirSocialWorkArea", AirSocialArea)
 AirSocialWorkArea = AirSocialWorkArea
--- DECOMPILER ERROR at PC111: Confused about usage of register: R4 in 'UnsetPending'
 
-AirSocialWorkArea.GetAreaType = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function AirSocialWorkArea:GetAreaType()
   return AirSocialAreaType.Work
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialWorkArea.SetSpaceId = function(self, spaceId)
-  -- function num : 0_32
+function AirSocialWorkArea:SetSpaceId(spaceId)
   self.m_SpaceId = spaceId
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialWorkArea.GetSpaceId = function(self)
-  -- function num : 0_33
+function AirSocialWorkArea:GetSpaceId()
   return self.m_SpaceId
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialWorkArea.GetRoom = function(self)
-  -- function num : 0_34
-  return (self.m_AirMain):GetRoomBySpaceID(self.m_SpaceId)
+function AirSocialWorkArea:GetRoom()
+  return self.m_AirMain:GetRoomBySpaceID(self.m_SpaceId)
 end
 
 _class("AirSocialHappyArea", AirSocialArea)
 AirSocialHappyArea = AirSocialHappyArea
--- DECOMPILER ERROR at PC129: Confused about usage of register: R4 in 'UnsetPending'
 
-AirSocialHappyArea.GetAreaType = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function AirSocialHappyArea:GetAreaType()
   return AirSocialAreaType.Happy
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialHappyArea.SetRestAreaType = function(self, type)
-  -- function num : 0_36
+function AirSocialHappyArea:SetRestAreaType(type)
   self.m_RestAreaType = type
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialHappyArea.GetRestAreaType = function(self)
-  -- function num : 0_37
+function AirSocialHappyArea:GetRestAreaType()
   return self.m_RestAreaType
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R4 in 'UnsetPending'
-
-AirSocialHappyArea.GetRoom = function(self)
-  -- function num : 0_38
-  return (self.m_AirMain):GetRoomByArea(self.m_RestAreaType)
+function AirSocialHappyArea:GetRoom()
+  return self.m_AirMain:GetRoomByArea(self.m_RestAreaType)
 end
-
-

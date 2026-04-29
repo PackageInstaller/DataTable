@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_cross_edges.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_CrossEdges", SkillScopeCalculator_Base)
 SkillScopeCalculator_CrossEdges = SkillScopeCalculator_CrossEdges
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_CrossEdges.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_CrossEdges:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local params = scopeParam
-  local world = (self._gridFilter)._world
-  local teamEntity = (world:Player()):GetCurrentTeamEntity()
+  local world = self._gridFilter._world
+  local teamEntity = world:Player():GetCurrentTeamEntity()
   local playerPos = teamEntity:GetGridPosition()
   local boardServiceLogic = world:GetService("BoardLogic")
   local maxX = boardServiceLogic:GetCurBoardMaxX()
@@ -25,8 +18,7 @@ SkillScopeCalculator_CrossEdges.CalcRange = function(self, scopeType, scopeParam
       upPos = tmp
     end
   end
-  ;
-  (table.insert)(sourcePos, upPos)
+  table.insert(sourcePos, upPos)
   local downPos = Vector2(casterPos.x, casterPos.y)
   for i = 1, maxY do
     local tmp = Vector2(casterPos.x, casterPos.y - i)
@@ -34,8 +26,7 @@ SkillScopeCalculator_CrossEdges.CalcRange = function(self, scopeType, scopeParam
       downPos = tmp
     end
   end
-  ;
-  (table.insert)(sourcePos, downPos)
+  table.insert(sourcePos, downPos)
   local leftPos = Vector2(casterPos.x, casterPos.y)
   for i = 1, maxX do
     local tmp = Vector2(casterPos.x - i, casterPos.y)
@@ -43,8 +34,7 @@ SkillScopeCalculator_CrossEdges.CalcRange = function(self, scopeType, scopeParam
       leftPos = tmp
     end
   end
-  ;
-  (table.insert)(sourcePos, leftPos)
+  table.insert(sourcePos, leftPos)
   local rightPos = Vector2(casterPos.x, casterPos.y)
   for i = 1, maxX do
     local tmp = Vector2(casterPos.x + i, casterPos.y)
@@ -52,10 +42,9 @@ SkillScopeCalculator_CrossEdges.CalcRange = function(self, scopeType, scopeParam
       rightPos = tmp
     end
   end
-  ;
-  (table.insert)(sourcePos, rightPos)
+  table.insert(sourcePos, rightPos)
   local ret = {}
-  for i,pos in ipairs(sourcePos) do
+  for i, pos in ipairs(sourcePos) do
     if pos == casterPos then
       pos = self:FindPos(casterPos, pos, ret)
     end
@@ -65,66 +54,48 @@ SkillScopeCalculator_CrossEdges.CalcRange = function(self, scopeType, scopeParam
     if not self:CheckPosValid(pos, ret) then
       pos = self:FindPos(casterPos, pos, ret)
     end
-    ;
-    (table.insert)(ret, pos)
+    table.insert(ret, pos)
   end
   local result = SkillScopeResult:New(SkillScopeType.CrossEdges, centerPos, ret, ret)
   return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_CrossEdges.CheckPosValid = function(self, pos, ret)
-  -- function num : 0_1 , upvalues : _ENV
-  if not (self._gridFilter):IsPosBlock(pos, BlockFlag.SummonTrap) and not (table.Vector2Include)(ret, pos) then
+function SkillScopeCalculator_CrossEdges:CheckPosValid(pos, ret)
+  if not self._gridFilter:IsPosBlock(pos, BlockFlag.SummonTrap) and not table.Vector2Include(ret, pos) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_CrossEdges.FindPos = function(self, casterPos, sourcePos, retList, ringBegin, index)
-  -- function num : 0_2 , upvalues : _ENV
-  local sortF = function(a, b)
-    -- function num : 0_2_0 , upvalues : _ENV, casterPos
-    local da = (Vector2.Distance)(a, casterPos)
-    local db = (Vector2.Distance)(b, casterPos)
-    do return da < db end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillScopeCalculator_CrossEdges:FindPos(casterPos, sourcePos, retList, ringBegin, index)
+  local function sortF(a, b)
+    local da = Vector2.Distance(a, casterPos)
+    
+    local db = Vector2.Distance(b, casterPos)
+    return da < db
   end
-
-  do
-    if not ringBegin then
-      local rList = {}
-      ;
-      (table.insert)(rList, Vector2(sourcePos.x, sourcePos.y - 1))
-      ;
-      (table.insert)(rList, Vector2(sourcePos.x, sourcePos.y + 1))
-      ;
-      (table.insert)(rList, Vector2(sourcePos.x - 1, sourcePos.y))
-      ;
-      (table.insert)(rList, Vector2(sourcePos.x + 1, sourcePos.y))
-      ;
-      (table.sort)(rList, sortF)
-      for i,pos in ipairs(rList) do
-        if self:CheckPosValid(pos, retList) and pos ~= casterPos then
-          return pos
-        end
+  
+  if not ringBegin then
+    local rList = {}
+    table.insert(rList, Vector2(sourcePos.x, sourcePos.y - 1))
+    table.insert(rList, Vector2(sourcePos.x, sourcePos.y + 1))
+    table.insert(rList, Vector2(sourcePos.x - 1, sourcePos.y))
+    table.insert(rList, Vector2(sourcePos.x + 1, sourcePos.y))
+    table.sort(rList, sortF)
+    for i, pos in ipairs(rList) do
+      if self:CheckPosValid(pos, retList) and pos ~= casterPos then
+        return pos
       end
-      ringBegin = 2
     end
-    for i = ringBegin, 10 do
-      local ringList = (ComputeScopeRange.ComputeRange_SquareRing)(sourcePos, 1, R14_PC70)
-      ;
-      (table.sort)(ringList, R14_PC70)
-      for _,pos in ipairs(ringList) do
-        if self:CheckPosValid(pos, retList) and pos ~= casterPos then
-          return pos
-        end
+    ringBegin = 2
+  end
+  for i = ringBegin, 10 do
+    local ringList = ComputeScopeRange.ComputeRange_SquareRing(sourcePos, 1, i)
+    table.sort(ringList, sortF)
+    for _, pos in ipairs(ringList) do
+      if self:CheckPosValid(pos, retList) and pos ~= casterPos then
+        return pos
       end
     end
   end
 end
-
-

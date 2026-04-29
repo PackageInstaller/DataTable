@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_trap_move_and_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectTrapMoveAndDamageResult", SkillEffectResultBase)
 SkillEffectTrapMoveAndDamageResult = SkillEffectTrapMoveAndDamageResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectTrapMoveAndDamageResult.Constructor = function(self, entityID, walkResultList, damageResult, isOut)
-  -- function num : 0_0
+function SkillEffectTrapMoveAndDamageResult:Constructor(entityID, walkResultList, damageResult, isOut)
   self._entityID = entityID
   self._walkResultList = walkResultList
   self._damageResult = damageResult
   self._isOut = isOut
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapMoveAndDamageResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectTrapMoveAndDamageResult:GetEffectType()
   return SkillEffectType.TrapMoveAndDamage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapMoveAndDamageResult.GetEntityID = function(self)
-  -- function num : 0_2
+function SkillEffectTrapMoveAndDamageResult:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapMoveAndDamageResult.GetWalkResultList = function(self)
-  -- function num : 0_3
+function SkillEffectTrapMoveAndDamageResult:GetWalkResultList()
   return self._walkResultList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapMoveAndDamageResult.GetDamageResult = function(self)
-  -- function num : 0_4
+function SkillEffectTrapMoveAndDamageResult:GetDamageResult()
   return self._damageResult
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapMoveAndDamageResult.IsOutBoard = function(self)
-  -- function num : 0_5
+function SkillEffectTrapMoveAndDamageResult:IsOutBoard()
   return self._isOut
 end
-
-

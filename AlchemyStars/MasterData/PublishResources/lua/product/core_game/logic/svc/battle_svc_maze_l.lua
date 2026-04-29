@@ -1,67 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/battle_svc_maze_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 require("battle_svc_l")
 _class("BattleService_Maze", BattleService)
 BattleService_Maze = BattleService_Maze
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleService_Maze.AddPetDeadMark = function(self, teamEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function BattleService_Maze:AddPetDeadMark(teamEntity)
   local deadPet = {}
-  local petEntities = (teamEntity:Team()):GetTeamPetEntities()
-  for id,entity in ipairs(petEntities) do
-    local curHP = (entity:Attributes()):GetCurrentHP()
+  local petEntities = teamEntity:Team():GetTeamPetEntities()
+  for id, entity in ipairs(petEntities) do
+    local curHP = entity:Attributes():GetCurrentHP()
     if curHP <= 0 and not entity:HasPetDeadMark() then
       entity:AddPetDeadMark()
-      ;
-      (table.insert)(deadPet, entity:GetID())
-      ;
-      (Log.fatal)("PetDead PetEntityID:", entity:GetID(), "HP:", curHP, "TID:", (entity:PetPstID()):GetTemplateID())
-      local teamOrder = (teamEntity:Team()):CloneTeamOrder()
-      local deadPstID = (entity:PetPstID()):GetPstID()
+      table.insert(deadPet, entity:GetID())
+      Log.fatal("PetDead PetEntityID:", entity:GetID(), "HP:", curHP, "TID:", entity:PetPstID():GetTemplateID())
+      local teamOrder = teamEntity:Team():CloneTeamOrder()
+      local deadPstID = entity:PetPstID():GetPstID()
       local petOrder = 1
-      for index,pstID in ipairs(teamOrder) do
+      for index, pstID in ipairs(teamOrder) do
         if deadPstID == pstID then
           petOrder = index
           break
         end
       end
-      do
-        do
-          ;
-          (entity:PetPstID()):SetTeamOrderBeforeDead(petOrder)
-          -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      entity:PetPstID():SetTeamOrderBeforeDead(petOrder)
     end
   end
   return deadPet
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleService_Maze.GetNonHelperAlivePet = function(self, teamEntity)
-  -- function num : 0_1 , upvalues : _ENV
+function BattleService_Maze:GetNonHelperAlivePet(teamEntity)
   local teamLeader = teamEntity:GetTeamLeaderPetEntity()
-  local petEntities = ((teamEntity:Team()):GetTeamPetEntities())
-  local secondaryPetEntity = nil
-  for id,entity in ipairs(petEntities) do
-    if entity:GetID() ~= teamLeader:GetID() and not entity:HasPetDeadMark() and not (entity:PetPstID()):IsHelpPet() then
+  local petEntities = teamEntity:Team():GetTeamPetEntities()
+  local secondaryPetEntity
+  for id, entity in ipairs(petEntities) do
+    if entity:GetID() ~= teamLeader:GetID() and not entity:HasPetDeadMark() and not entity:PetPstID():IsHelpPet() then
       if not entity:HasBuffFlag(BuffFlags.SealedCurse) and not entity:HasBuffFlag(BuffFlags.Pet1702361NotLinkLine) then
         return entity
       else
-        if not secondaryPetEntity then
-          secondaryPetEntity = entity
-        end
+        secondaryPetEntity = secondaryPetEntity or entity
       end
     end
   end
@@ -71,107 +46,84 @@ BattleService_Maze.GetNonHelperAlivePet = function(self, teamEntity)
   return nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleService_Maze.UnLoadTeamMemberLogic = function(self, teamEntity)
-  -- function num : 0_2 , upvalues : _ENV
+function BattleService_Maze:UnLoadTeamMemberLogic(teamEntity)
   local teamLeader = teamEntity:GetTeamLeaderPetEntity()
-  local petEntities = (teamEntity:Team()):GetTeamPetEntities()
+  local petEntities = teamEntity:Team():GetTeamPetEntities()
   local unloadList = {}
-  for id,entity in ipairs(petEntities) do
+  for id, entity in ipairs(petEntities) do
     if id ~= teamLeader:GetID() and entity:HasPetDeadMark() then
-      (table.insert)(unloadList, entity)
+      table.insert(unloadList, entity)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleService_Maze.ChangeTeamLeaderLogic = function(self, teamEntity)
-  -- function num : 0_3 , upvalues : _ENV
+function BattleService_Maze:ChangeTeamLeaderLogic(teamEntity)
   local teamLeader = teamEntity:GetTeamLeaderPetEntity()
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
   if teamLeader:HasPetDeadMark() then
-    ((self._world).BW_WorldInfo).TeamLeaderPetPstID = (teamLeader:PetPstID()):GetPstID()
-    local oldLeaderTemplateID = (teamLeader:PetPstID()):GetTemplateID()
+    self._world.BW_WorldInfo.TeamLeaderPetPstID = teamLeader:PetPstID():GetPstID()
+    local oldLeaderTemplateID = teamLeader:PetPstID():GetTemplateID()
     local replaceEntity = self:GetNonHelperAlivePet(teamEntity)
     if replaceEntity then
-      ((self._world):GetService("Trigger")):Notify(NTBeforeMazeTeamLeaderSucceed:New(replaceEntity))
+      self._world:GetService("Trigger"):Notify(NTBeforeMazeTeamLeaderSucceed:New(replaceEntity))
       teamEntity:SetTeamLeaderPetEntity(replaceEntity)
       local petDeadRes = DataPetDeadResult:New()
       local deadList = {}
       deadList[#deadList + 1] = teamEntity:GetID()
       petDeadRes:DataSetDeadPetEntityIDList(deadList)
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, petDeadRes)
-      local battleStatCmpt = (self._world):BattleStat()
+      self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, petDeadRes)
+      local battleStatCmpt = self._world:BattleStat()
       battleStatCmpt:AddPassiveTeamLeaderChangeNum()
-      local newLeaderTemplateID = (replaceEntity:PetPstID()):GetTemplateID()
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.MazeChangeTeamLeader, oldLeaderTemplateID, newLeaderTemplateID)
+      local newLeaderTemplateID = replaceEntity:PetPstID():GetTemplateID()
+      self._world:EventDispatcher():Dispatch(GameEventType.MazeChangeTeamLeader, oldLeaderTemplateID, newLeaderTemplateID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleService_Maze.TeamLeaderResurgence = function(self, originalLeader, teamEntity)
-  -- function num : 0_4 , upvalues : _ENV
+function BattleService_Maze:TeamLeaderResurgence(originalLeader, teamEntity)
   local teamLeader = teamEntity:GetTeamLeaderPetEntity()
-  local oldLeaderTemplateID = (teamLeader:PetPstID()):GetTemplateID()
+  local oldLeaderTemplateID = teamLeader:PetPstID():GetTemplateID()
   local replaceEntity = originalLeader
-  local entityService = (self._world):GetService("LogicEntity")
+  local entityService = self._world:GetService("LogicEntity")
   if replaceEntity then
     teamEntity:SetTeamLeaderPetEntity(replaceEntity)
-    local battleStatCmpt = (self._world):BattleStat()
+    local battleStatCmpt = self._world:BattleStat()
     battleStatCmpt:AddPassiveTeamLeaderChangeNum()
-    local newLeaderTemplateID = (replaceEntity:PetPstID()):GetTemplateID()
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.MazeChangeTeamLeader, oldLeaderTemplateID, newLeaderTemplateID)
+    local newLeaderTemplateID = replaceEntity:PetPstID():GetTemplateID()
+    self._world:EventDispatcher():Dispatch(GameEventType.MazeChangeTeamLeader, oldLeaderTemplateID, newLeaderTemplateID)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleService_Maze.UnloadPetLogic = function(self, teamEntity)
-  -- function num : 0_5
-  local tOldTeamOrder = (teamEntity:Team()):CloneTeamOrder()
+function BattleService_Maze:UnloadPetLogic(teamEntity)
+  local tOldTeamOrder = teamEntity:Team():CloneTeamOrder()
   local deadPetThisTime = self:AddPetDeadMark(teamEntity)
   self:UnLoadDeadPetBuff(teamEntity)
   self:RemoveDeadPetPassiveSkill(teamEntity)
   self:ChangeTeamLeaderLogic(teamEntity)
   self:UnLoadTeamMemberLogic(teamEntity)
-  local ntChangeTeamOrder = nil
-  if #deadPetThisTime > 0 then
+  local ntChangeTeamOrder
+  if 0 < #deadPetThisTime then
     ntChangeTeamOrder = self:ChangeTeamOrderOnUnloadPet(teamEntity, tOldTeamOrder, deadPetThisTime)
   end
   return ntChangeTeamOrder
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleService_Maze.UnLoadDeadPetBuff = function(self, teamEntity)
-  -- function num : 0_6 , upvalues : _ENV
-  local buffLogicService = (self._world):GetService("BuffLogic")
-  local petList = (teamEntity:Team()):GetTeamPetEntities()
-  for i,entity in ipairs(petList) do
+function BattleService_Maze:UnLoadDeadPetBuff(teamEntity)
+  local buffLogicService = self._world:GetService("BuffLogic")
+  local petList = teamEntity:Team():GetTeamPetEntities()
+  for i, entity in ipairs(petList) do
     if entity:HasPetDeadMark() then
       buffLogicService:RemoveAllBuffInstance(entity)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleService_Maze.RemoveDeadPetPassiveSkill = function(self, teamEntity)
-  -- function num : 0_7 , upvalues : _ENV
-  local petList = (teamEntity:Team()):GetTeamPetEntities()
-  for i,entity in ipairs(petList) do
+function BattleService_Maze:RemoveDeadPetPassiveSkill(teamEntity)
+  local petList = teamEntity:Team():GetTeamPetEntities()
+  for i, entity in ipairs(petList) do
     if entity:HasPetDeadMark() then
-      local buffSource = BuffSource:New(BuffSourceType.PassiveSkill, (entity:PetPstID()):GetPstID())
-      local buffEntityList = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).Buff)
-      for _,buffEntity in ipairs(buffEntityList) do
+      local buffSource = BuffSource:New(BuffSourceType.PassiveSkill, entity:PetPstID():GetPstID())
+      local buffEntityList = self._world:GetGroupEntities(self._world.BW_WEMatchers.Buff)
+      for _, buffEntity in ipairs(buffEntityList) do
         local buffComponent = buffEntity:BuffComponent()
         buffComponent:UnLoadBuff(buffSource)
       end
@@ -179,94 +131,70 @@ BattleService_Maze.RemoveDeadPetPassiveSkill = function(self, teamEntity)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleService_Maze.PlayerIsDead = function(self, teamEntity)
-  -- function num : 0_8
+function BattleService_Maze:PlayerIsDead(teamEntity)
   return self:IsAllPetDead()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleService_Maze.HandlePlayerCalculation = function(self)
-  -- function num : 0_9
+function BattleService_Maze:HandlePlayerCalculation()
   return self:IsAllPetDead()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleService_Maze.IsAllPetDead = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local petEntities = (teamEntity:Team()):GetTeamPetEntities()
-  for _,entity in ipairs(petEntities) do
-    local curHP = (entity:Attributes()):GetCurrentHP()
-    if curHP > 0 then
+function BattleService_Maze:IsAllPetDead()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local petEntities = teamEntity:Team():GetTeamPetEntities()
+  for _, entity in ipairs(petEntities) do
+    local curHP = entity:Attributes():GetCurrentHP()
+    if 0 < curHP then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleService_Maze.GetCasterHP = function(self, casterEntity)
-  -- function num : 0_11
+function BattleService_Maze:GetCasterHP(casterEntity)
   local attributeCmpt = casterEntity:Attributes()
   local HP = attributeCmpt:GetCurrentHP()
   local maxHP = attributeCmpt:CalcMaxHp()
   return HP, maxHP
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleService_Maze.ChangeTeamOrderOnUnloadPet = function(self, teamEntity, oldTeamOrder, deadPets)
-  -- function num : 0_12 , upvalues : _ENV
+function BattleService_Maze:ChangeTeamOrderOnUnloadPet(teamEntity, oldTeamOrder, deadPets)
   local cTeam = teamEntity:Team()
-  local tTeamOrderAfterLeaderCheck = (teamEntity:Team()):CloneTeamOrder()
+  local tTeamOrderAfterLeaderCheck = teamEntity:Team():CloneTeamOrder()
   local tNewTeamOrder = {}
   local deadPetPstIDs = {}
-  local helpPetPstID = nil
-  for index,pstID in ipairs(tTeamOrderAfterLeaderCheck) do
+  local helpPetPstID
+  for index, pstID in ipairs(tTeamOrderAfterLeaderCheck) do
     local e = cTeam:GetPetEntityByPetPstID(pstID)
-    if (e:PetPstID()):IsHelpPet() then
+    if e:PetPstID():IsHelpPet() then
       helpPetPstID = pstID
+    elseif not e:HasPetDeadMark() then
+      table.insert(tNewTeamOrder, pstID)
     else
-      if not e:HasPetDeadMark() then
-        (table.insert)(tNewTeamOrder, pstID)
-      else
-        ;
-        (table.insert)(deadPetPstIDs, pstID)
-      end
+      table.insert(deadPetPstIDs, pstID)
     end
   end
-  if helpPetPstID then
-    local isHelpPetDead = (cTeam:GetPetEntityByPetPstID(helpPetPstID)):HasPetDeadMark()
-  end
+  local isHelpPetDead = helpPetPstID and cTeam:GetPetEntityByPetPstID(helpPetPstID):HasPetDeadMark()
   if helpPetPstID and not isHelpPetDead then
-    (table.insert)(tNewTeamOrder, helpPetPstID)
+    table.insert(tNewTeamOrder, helpPetPstID)
   end
-  for _,pstID in ipairs(deadPetPstIDs) do
-    (table.insert)(tNewTeamOrder, pstID)
+  for _, pstID in ipairs(deadPetPstIDs) do
+    table.insert(tNewTeamOrder, pstID)
   end
   if helpPetPstID and isHelpPetDead then
-    (table.insert)(tNewTeamOrder, helpPetPstID)
+    table.insert(tNewTeamOrder, helpPetPstID)
   end
   cTeam:SetTeamOrder(tNewTeamOrder)
   local nt = NTTeamOrderChange:New(teamEntity, oldTeamOrder, tNewTeamOrder)
-  ;
-  ((self._world):GetService("Trigger")):Notify(nt)
+  self._world:GetService("Trigger"):Notify(nt)
   return nt
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleService_Maze.GetTeamHP = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function BattleService_Maze:GetTeamHP()
   local HP, maxHP = 0, 0
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local teamPetEntities = (teamEntity:Team()):GetTeamPetEntities()
-  for _,petEntity in ipairs(teamPetEntities) do
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local teamPetEntities = teamEntity:Team():GetTeamPetEntities()
+  for _, petEntity in ipairs(teamPetEntities) do
     local attributeCmpt = petEntity:Attributes()
     HP = HP + attributeCmpt:GetCurrentHP()
     maxHP = maxHP + attributeCmpt:CalcMaxHp()
@@ -274,19 +202,14 @@ BattleService_Maze.GetTeamHP = function(self)
   return HP, maxHP
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleService_Maze.GetAlivePetCount = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function BattleService_Maze:GetAlivePetCount()
   local count = 0
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local petList = (teamEntity:Team()):GetTeamPetEntities()
-  for i,entity in ipairs(petList) do
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local petList = teamEntity:Team():GetTeamPetEntities()
+  for i, entity in ipairs(petList) do
     if not entity:HasPetDeadMark() then
       count = count + 1
     end
   end
   return count
 end
-
-

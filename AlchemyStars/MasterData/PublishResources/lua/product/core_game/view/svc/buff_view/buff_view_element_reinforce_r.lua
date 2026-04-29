@@ -1,65 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_element_reinforce_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewElementReinforce", BuffViewBase)
 BuffViewElementReinforce = BuffViewElementReinforce
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewElementReinforce.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewElementReinforce:PlayView(TT)
   local e = self:Entity()
   local world = self:World()
-  local hpSliderEntityId = (e:HP()):GetHPSliderEntityID()
+  local hpSliderEntityId = e:HP():GetHPSliderEntityID()
   local eHPSlider = world:GetEntityByID(hpSliderEntityId)
   if not eHPSlider then
-    (Log.fatal)("### no HPSlider.", (e:Asset()):GetResPath())
-    return 
+    Log.fatal("### no HPSlider.", e:Asset():GetResPath())
+    return
   end
-  local go = (InnerGameHelperRender:GetInstance()):GetGameObject(eHPSlider)
+  local go = InnerGameHelperRender:GetInstance():GetGameObject(eHPSlider)
   if not go then
-    return 
+    return
   end
   local uiView = go:GetComponent("UIView")
   local imgBG = uiView:GetUIComponent("Image", "imgBG")
   local eff_glow = uiView:GetGameObject("eff_glow")
-  ;
-  (imgBG.gameObject):SetActive(true)
+  imgBG.gameObject:SetActive(true)
   eff_glow:SetActive(true)
-  local anim = ((eff_glow.transform).parent):GetComponent(typeof(UnityEngine.Animation))
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local anim = eff_glow.transform.parent:GetComponent(typeof(UnityEngine.Animation))
+  local cfg_pet_element = Cfg.cfg_pet_element({})
+  local utilDataSvc = self._world:GetService("UtilData")
   local elementType = utilDataSvc:GetEntityElementPrimaryType(e)
-  local name = "uieff_hpslider_" .. (cfg_pet_element[elementType]).IconWhite
+  local name = "uieff_hpslider_" .. cfg_pet_element[elementType].IconWhite
   YIELD(TT)
   anim:Play(name)
 end
 
 _class("BuffViewRemoveElementReinforce", BuffViewBase)
 BuffViewRemoveElementReinforce = BuffViewRemoveElementReinforce
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRemoveElementReinforce.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewRemoveElementReinforce:PlayView(TT)
   local e = self:Entity()
   local world = self:World()
-  local hpSliderEntityId = (e:HP()):GetHPSliderEntityID()
+  local hpSliderEntityId = e:HP():GetHPSliderEntityID()
   local eHPSlider = world:GetEntityByID(hpSliderEntityId)
   if not eHPSlider then
-    (Log.fatal)("### no HPSlider.", (e:Asset()):GetResPath())
-    return 
+    Log.fatal("### no HPSlider.", e:Asset():GetResPath())
+    return
   end
-  local go = (InnerGameHelperRender:GetInstance()):GetGameObject(eHPSlider)
+  local go = InnerGameHelperRender:GetInstance():GetGameObject(eHPSlider)
   if not go then
-    return 
+    return
   end
   local uiView = go:GetComponent("UIView")
   local imgBG = uiView:GetUIComponent("Image", "imgBG")
   local eff_glow = uiView:GetGameObject("eff_glow")
-  ;
-  (imgBG.gameObject):SetActive(false)
+  imgBG.gameObject:SetActive(false)
   eff_glow:SetActive(false)
 end
-
-

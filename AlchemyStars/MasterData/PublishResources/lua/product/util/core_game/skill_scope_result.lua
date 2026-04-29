@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/skill_scope_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillScopeResult", Object)
 SkillScopeResult = SkillScopeResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeResult.Constructor = function(self, type, centerPos, attackRange, wholeRange, targetIds)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeResult:Constructor(type, centerPos, attackRange, wholeRange, targetIds)
   self._scopeType = type
   self._attackGridRange = attackRange
   self._wholeGridRange = wholeRange
@@ -22,227 +15,143 @@ SkillScopeResult.Constructor = function(self, type, centerPos, attackRange, whol
   self._specialScopeResult = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.SetEffectTargetIdArray = function(self, targetIdArray)
-  -- function num : 0_1
+function SkillScopeResult:SetEffectTargetIdArray(targetIdArray)
   self._effectTargetIdArray = targetIdArray
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
+function SkillScopeResult:GetEffectTargetIdArray()
+  return self._effectTargetIdArray or {}
+end
 
-SkillScopeResult.GetEffectTargetIdArray = function(self)
-  -- function num : 0_2
-  if not self._effectTargetIdArray then
+function SkillScopeResult:GetScopeType()
+  return self._scopeType
+end
+
+function SkillScopeResult:GetCenterPos()
+  return self._centerPos
+end
+
+function SkillScopeResult:GetAttackRange()
+  return self._attackGridRange
+end
+
+function SkillScopeResult:GetWholeGridRange()
+  return self._wholeGridRange
+end
+
+function SkillScopeResult:GetTargetIDs()
+  if self._targertIDs and #self._targertIDs > 0 then
+    local tmp = {}
+    for i = 1, #self._targertIDs do
+      tmp[i] = self._targertIDs[i]
+    end
+    return tmp
+  else
     return {}
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.GetScopeType = function(self)
-  -- function num : 0_3
-  return self._scopeType
-end
-
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.GetCenterPos = function(self)
-  -- function num : 0_4
-  return self._centerPos
-end
-
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.GetAttackRange = function(self)
-  -- function num : 0_5
-  return self._attackGridRange
-end
-
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.GetWholeGridRange = function(self)
-  -- function num : 0_6
-  return self._wholeGridRange
-end
-
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.GetTargetIDs = function(self)
-  -- function num : 0_7
-  if self._targertIDs and #self._targertIDs > 0 then
-    local tmp = {}
-    for i = 1, #self._targertIDs do
-      tmp[i] = (self._targertIDs)[i]
-    end
-    return tmp
-  else
-    do
-      do return {} end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.AddTargetID = function(self, id)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillScopeResult:AddTargetID(id)
   if self._targertIDs == nil then
     self._targertIDs = {}
   end
-  if not (table.icontains)(self._targertIDs, id) then
-    (table.insert)(self._targertIDs, id)
+  if not table.icontains(self._targertIDs, id) then
+    table.insert(self._targertIDs, id)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.AddTargetIDAndPos = function(self, id, pos)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillScopeResult:AddTargetIDAndPos(id, pos)
   self:AddTargetID(id)
   if self._targetPosID == nil then
     self._targetPosID = {}
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._targetPosID)[(Vector2.Pos2Index)(pos)] = id
+  self._targetPosID[Vector2.Pos2Index(pos)] = id
   if self._gridPosTargetIdDic == nil then
     self._gridPosTargetIdDic = SortedDictionary:New(Algorithm.COMPARE_CUSTOM, Algorithm.LessVectorXYComparer)
   end
-  ;
-  (self._gridPosTargetIdDic):Insert(pos, id)
+  self._gridPosTargetIdDic:Insert(pos, id)
 end
 
 _class("GridPosTargetIdRecordData", Object)
 GridPosTargetIdRecordData = GridPosTargetIdRecordData
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-GridPosTargetIdRecordData.Constructor = function(self, pos, ids)
-  -- function num : 0_10
+function GridPosTargetIdRecordData:Constructor(pos, ids)
   self.recordPos = pos
   self.idList = ids
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.AddTargetIDAndPosAllowDuplicate = function(self, id, pos)
-  -- function num : 0_11 , upvalues : _ENV
+function SkillScopeResult:AddTargetIDAndPosAllowDuplicate(id, pos)
   if not self._gridPosTargetIdRecordList then
     self._gridPosTargetIdRecordList = {}
   end
   local hasPos = false
-  for index,record in ipairs(self._gridPosTargetIdRecordList) do
+  for index, record in ipairs(self._gridPosTargetIdRecordList) do
     if record.recordPos == pos then
-      if not (table.icontains)(record.idList, id) then
-        (table.insert)(record.idList, id)
+      if not table.icontains(record.idList, id) then
+        table.insert(record.idList, id)
       end
       hasPos = true
       break
     end
   end
-  do
-    if not hasPos then
-      local record = GridPosTargetIdRecordData:New(pos, {id})
-      ;
-      (table.insert)(self._gridPosTargetIdRecordList, record)
-    end
+  if not hasPos then
+    local record = GridPosTargetIdRecordData:New(pos, {id})
+    table.insert(self._gridPosTargetIdRecordList, record)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.GetGridPosTargetIDRecordList = function(self)
-  -- function num : 0_12
+function SkillScopeResult:GetGridPosTargetIDRecordList()
   return self._gridPosTargetIdRecordList
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.GetTargetIDByPos = function(self, pos)
-  -- function num : 0_13 , upvalues : _ENV
+function SkillScopeResult:GetTargetIDByPos(pos)
   if self._targetPosID then
-    return (self._targetPosID)[(Vector2.Pos2Index)(pos)]
+    return self._targetPosID[Vector2.Pos2Index(pos)]
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.GetGridPosTargetIDDic = function(self)
-  -- function num : 0_14
+function SkillScopeResult:GetGridPosTargetIDDic()
   return self._gridPosTargetIdDic
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.ClearTargetIDs = function(self)
-  -- function num : 0_15
+function SkillScopeResult:ClearTargetIDs()
   self._targertIDs = {}
-  ;
-  (self._gridPosTargetIdDic):Clear()
+  self._gridPosTargetIdDic:Clear()
   self._gridPosTargetIdRecordList = {}
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.SetAttackRange = function(self, attackRange)
-  -- function num : 0_16
+function SkillScopeResult:SetAttackRange(attackRange)
   self._attackGridRange = attackRange
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.SetWholeAttackRange = function(self, Range)
-  -- function num : 0_17
+function SkillScopeResult:SetWholeAttackRange(Range)
   self._wholeGridRange = Range
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.RemoveTargetIDByPos = function(self, pos)
-  -- function num : 0_18 , upvalues : _ENV
-  local targetID = (self._gridPosTargetIdDic):Find(pos)
-  ;
-  (table.removev)(self._targertIDs, targetID)
-  ;
-  (self._gridPosTargetIdDic):Remove(pos)
+function SkillScopeResult:RemoveTargetIDByPos(pos)
+  local targetID = self._gridPosTargetIdDic:Find(pos)
+  table.removev(self._targertIDs, targetID)
+  self._gridPosTargetIdDic:Remove(pos)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-Algorithm.LessVectorXYComparer = function(leftVec2, rightVec2)
-  -- function num : 0_19
+function Algorithm.LessVectorXYComparer(leftVec2, rightVec2)
   if leftVec2.x < rightVec2.x then
     return 1
+  elseif leftVec2.x > rightVec2.x then
+    return -1
+  elseif leftVec2.y < rightVec2.y then
+    return 1
+  elseif leftVec2.y > rightVec2.y then
+    return -1
   else
-    if rightVec2.x < leftVec2.x then
-      return -1
-    else
-      if leftVec2.y < rightVec2.y then
-        return 1
-      else
-        if rightVec2.y < leftVec2.y then
-          return -1
-        else
-          return 0
-        end
-      end
-    end
+    return 0
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.SetSpecialScopeResult = function(self, specialScopeResult)
-  -- function num : 0_20
+function SkillScopeResult:SetSpecialScopeResult(specialScopeResult)
   self._specialScopeResult = specialScopeResult
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeResult.GetSpecialScopeResult = function(self)
-  -- function num : 0_21
+function SkillScopeResult:GetSpecialScopeResult()
   return self._specialScopeResult
 end
-
-

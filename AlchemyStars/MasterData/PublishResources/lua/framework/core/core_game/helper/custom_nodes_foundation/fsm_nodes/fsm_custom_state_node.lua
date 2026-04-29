@@ -1,12 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/custom_nodes_foundation/fsm_nodes/fsm_custom_state_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
--- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomNodeConfigStatic.Check_CustomBehaviorStateNode = function(cfg)
-  -- function num : 0_0
+function CustomNodeConfigStatic.Check_CustomBehaviorStateNode(cfg)
   if cfg.CustomBehavior and cfg.GoalState then
     return true
   end
@@ -16,97 +8,62 @@ CustomNodeConfigStatic.Check_CustomBehaviorStateNode = function(cfg)
   return false
 end
 
-;
-(CustomNodeConfigStatic.AddChecker)("CustomBehaviorStateNode", CustomNodeConfigStatic.Check_CustomBehaviorStateNode)
+CustomNodeConfigStatic.AddChecker("CustomBehaviorStateNode", CustomNodeConfigStatic.Check_CustomBehaviorStateNode)
 _class("CustomBehaviorStateNode", StateNode)
 CustomBehaviorStateNode = CustomBehaviorStateNode
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-CustomBehaviorStateNode.Constructor = function(self)
-  -- function num : 0_1
+function CustomBehaviorStateNode:Constructor()
   self.CustomBehavior = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomBehaviorStateNode.InitializeNode = function(self, cfg, context)
-  -- function num : 0_2 , upvalues : _ENV
-  ((CustomBehaviorStateNode.super).InitializeNode)(self, cfg, context)
+function CustomBehaviorStateNode:InitializeNode(cfg, context)
+  CustomBehaviorStateNode.super.InitializeNode(self, cfg, context)
   self.GoalState = self:Parse(cfg.GoalState)
   local logic = context.Logic
   local nodeCfg = cfg.CustomBehavior
   self.CustomBehavior = logic:CreateNode(nodeCfg, context)
-  ;
-  (self.CustomBehavior):Deactivate()
+  self.CustomBehavior:Deactivate()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomBehaviorStateNode.Destroy = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.CustomBehavior):Destroy()
-  ;
-  ((CustomBehaviorStateNode.super).Destroy)(self)
+function CustomBehaviorStateNode:Destroy()
+  self.CustomBehavior:Destroy()
+  CustomBehaviorStateNode.super.Destroy(self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomBehaviorStateNode.Activate = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((CustomBehaviorStateNode.super).Activate)(self)
+function CustomBehaviorStateNode:Activate()
+  CustomBehaviorStateNode.super.Activate(self)
   if self.CustomBehavior then
-    (self.CustomBehavior):Activate()
+    self.CustomBehavior:Activate()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomBehaviorStateNode.Deactivate = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((CustomBehaviorStateNode.super).Deactivate)(self)
+function CustomBehaviorStateNode:Deactivate()
+  CustomBehaviorStateNode.super.Deactivate(self)
   if self.CustomBehavior then
-    (self.CustomBehavior):Deactivate()
+    self.CustomBehavior:Deactivate()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomBehaviorStateNode.Enter = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((CustomBehaviorStateNode.super).Enter)(self)
+function CustomBehaviorStateNode:Enter()
+  CustomBehaviorStateNode.super.Enter(self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomBehaviorStateNode.Exit = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((CustomBehaviorStateNode.super).Exit)(self)
-  ;
-  (self.CustomBehavior):Reset()
+function CustomBehaviorStateNode:Exit()
+  CustomBehaviorStateNode.super.Exit(self)
+  self.CustomBehavior:Reset()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomBehaviorStateNode.CheckTransitions = function(self)
-  -- function num : 0_8
-  if (self.CustomBehavior):CanStop() then
+function CustomBehaviorStateNode:CheckTransitions()
+  if self.CustomBehavior:CanStop() then
     return self.GoalState
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomBehaviorStateNode.Update = function(self, dt)
-  -- function num : 0_9
-  (self.CustomBehavior):Update(dt)
+function CustomBehaviorStateNode:Update(dt)
+  self.CustomBehavior:Update(dt)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomBehaviorStateNode.CollectInterfaceInChildren = function(self, interfaceList, funcName)
-  -- function num : 0_10 , upvalues : _ENV
-  (CustomNodeStatic.TraverseCollectInterface)(interfaceList, funcName, self.CustomBehavior)
+function CustomBehaviorStateNode:CollectInterfaceInChildren(interfaceList, funcName)
+  CustomNodeStatic.TraverseCollectInterface(interfaceList, funcName, self.CustomBehavior)
 end
-
-

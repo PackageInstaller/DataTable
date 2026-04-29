@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/lottery/ui_n27_lottery_extend.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_get_item_controller")
 require("ui_get_item_controller_item")
 require("ui_item")
 require("ui_item_node")
 _class("UIN27LotteryGetItem", UIGetItemController)
 UIN27LotteryGetItem = UIN27LotteryGetItem
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27LotteryGetItem.Constructor = function(self)
-  -- function num : 0_0
+function UIN27LotteryGetItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryGetItem._InitListView = function(self, scrollView, index)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN27LotteryGetItem:_InitListView(scrollView, index)
   if index < 0 then
     return nil
   end
-  local count = nil
-  if (table.count)(self._itemList) > 5 then
+  local count
+  if table.count(self._itemList) > 5 then
     count = 5
   else
-    count = (table.count)(self._itemList)
+    count = table.count(self._itemList)
   end
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
@@ -38,8 +28,8 @@ UIN27LotteryGetItem._InitListView = function(self, scrollView, index)
   for i = 1, count do
     local giftItem = rowList[i]
     local itemIndex = self:_GetCurPageFirstIndex() + i - 1
-    if self._listItemTotalCount < itemIndex then
-      (giftItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._listItemTotalCount then
+      giftItem:GetGameObject():SetActive(false)
     else
       self:_ShowItem(giftItem, itemIndex, i)
     end
@@ -47,10 +37,7 @@ UIN27LotteryGetItem._InitListView = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27LotteryGetItem._ShowItem = function(self, giftItem, index, tweenIdx)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN27LotteryGetItem:_ShowItem(giftItem, index, tweenIdx)
   local beforeTime = 0
   if not self._inited then
     beforeTime = self._beforeTime
@@ -58,24 +45,18 @@ UIN27LotteryGetItem._ShowItem = function(self, giftItem, index, tweenIdx)
   local item_data = self:_GetItemDataByIndex(index)
   if item_data then
     giftItem:SetData(item_data, index, function(id, pos)
-    -- function num : 0_2_0 , upvalues : self
-    self:OnItemSelect(id, pos)
-  end
-, Color(0.87058823529412, 0.84705882352941, 0.82352941176471, 1), tweenIdx, beforeTime)
-    ;
-    (giftItem:GetGameObject()):SetActive(true)
+      self:OnItemSelect(id, pos)
+    end, Color(0.8705882352941177, 0.8470588235294118, 0.8235294117647058, 1), tweenIdx, beforeTime)
+    giftItem:GetGameObject():SetActive(true)
   else
-    ;
-    (giftItem:GetGameObject()):SetActive(false)
+    giftItem:GetGameObject():SetActive(false)
   end
 end
 
 _class("UIN27LotteryGetItemRowItem", UIGetItemControllerItem)
 UIN27LotteryGetItemRowItem = UIN27LotteryGetItemRowItem
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27LotteryGetItemRowItem.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN27LotteryGetItemRowItem:OnShow(uiParams)
   self._rect = self:GetUIComponent("RectTransform", "rect")
   self._anim = self:GetUIComponent("Animation", "rect")
   self._eff = self:GetGameObject("Effect")
@@ -85,92 +66,62 @@ UIN27LotteryGetItemRowItem.OnShow = function(self, uiParams)
   self._itemCount = 0
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIN27LotteryGetItemUIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base)
-  ;
-  (self.uiItem):SetClickCallBack(function(go)
-    -- function num : 0_3_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Base)
+  self.uiItem:SetClickCallBack(function(go)
     self:itemOnClick(go)
-  end
-)
+  end)
 end
 
 _class("UIN27LotteryGetItemUIItem", UIItem)
 UIN27LotteryGetItemUIItem = UIN27LotteryGetItemUIItem
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27LotteryGetItemUIItem.OnShow = function(self, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
-  (UIItem.OnShow)(self, uiParams)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Normal] = UIN27ItemNormalNode:New(self:GetUIComponent("UIView", "g_normal"), self)
+function UIN27LotteryGetItemUIItem:OnShow(uiParams)
+  UIItem.OnShow(self, uiParams)
+  self._nodes[UIItemNode.Normal] = UIN27ItemNormalNode:New(self:GetUIComponent("UIView", "g_normal"), self)
 end
 
 _class("UIN27ItemNormalNode", UIItemNormalNode)
 UIN27ItemNormalNode = UIN27ItemNormalNode
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
+UIN27ItemNormalNode._itemColorFrame = {
+  [ItemColor.ItemColor_White] = "N27_shop_se1",
+  [ItemColor.ItemColor_Green] = "N27_shop_se2",
+  [ItemColor.ItemColor_Blue] = "N27_shop_se3",
+  [ItemColor.ItemColor_Purple] = "N27_shop_se4",
+  [ItemColor.ItemColor_Yellow] = "N27_shop_se5",
+  [ItemColor.ItemColor_Golden] = "N27_shop_se6"
+}
 
-UIN27ItemNormalNode._itemColorFrame = {[ItemColor.ItemColor_White] = "N27_shop_se1", [ItemColor.ItemColor_Green] = "N27_shop_se2", [ItemColor.ItemColor_Blue] = "N27_shop_se3", [ItemColor.ItemColor_Purple] = "N27_shop_se4", [ItemColor.ItemColor_Yellow] = "N27_shop_se5", [ItemColor.ItemColor_Golden] = "N27_shop_se6"}
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27ItemNormalNode.SetOffset = function(self, showText1)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIN27ItemNormalNode:SetOffset(showText1)
   if showText1 then
-    (self._qualityRect).anchoredPosition = Vector2(0, 0)
+    self._qualityRect.anchoredPosition = Vector2(0, 0)
   else
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._qualityRect).anchoredPosition = Vector2(0, 0)
+    self._qualityRect.anchoredPosition = Vector2(0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27ItemNormalNode.SetIconOffset = function(self, itemId)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIN27ItemNormalNode:SetIconOffset(itemId)
   if self:_IsPet(itemId) then
-    (self._iconRect).anchoredPosition = Vector2(0, 15)
+    self._iconRect.anchoredPosition = Vector2(0, 15)
   else
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._iconRect).anchoredPosition = Vector2(0, 20)
+    self._iconRect.anchoredPosition = Vector2(0, 20)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27ItemNormalNode.SetQuality = function(self, quality)
-  -- function num : 0_7
+function UIN27ItemNormalNode:SetQuality(quality)
   if quality <= 0 then
     self:ShowQuality(false)
-    return 
+    return
   end
   local atlas = self:CallUIMethod("UIN27LotteryMain", "GetSpriteAtlas")
-  local qualityName = (self._itemColorFrame)[quality]
+  local qualityName = self._itemColorFrame[quality]
   if atlas ~= nil and qualityName ~= "" then
     self:ShowQuality(true)
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._quality).sprite = atlas:GetSprite(qualityName)
+    self._quality.sprite = atlas:GetSprite(qualityName)
   else
     self:ShowQuality(false)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27ItemNormalNode.CallUIMethod = function(self, uiName, methodName, ...)
-  -- function num : 0_8 , upvalues : _ENV
-  return ((GameGlobal.UIStateManager)()):CallUIMethod(uiName, methodName, ...)
+function UIN27ItemNormalNode:CallUIMethod(uiName, methodName, ...)
+  return GameGlobal.UIStateManager():CallUIMethod(uiName, methodName, ...)
 end
-
-

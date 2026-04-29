@@ -1,582 +1,478 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/fishing/logic/homeland_fishting.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local FishgingStatus = {None = 0, Throw = 1, Fishing = 2, Bite = 3, FishDecoupling = 4, FishSuccess = 5, Finish = 6}
+local FishgingStatus = {
+  None = 0,
+  Throw = 1,
+  Fishing = 2,
+  Bite = 3,
+  FishDecoupling = 4,
+  FishSuccess = 5,
+  Finish = 6
+}
 _enum("FishgingStatus", FishgingStatus)
-local FishingPositionType = {None = 0, Normal = 1, WishingCoin = 2, RareFishing = 3, PetFishing = 4}
+local FishingPositionType = {
+  None = 0,
+  Normal = 1,
+  WishingCoin = 2,
+  RareFishing = 3,
+  PetFishing = 4
+}
 _enum("FishingPositionType", FishingPositionType)
-local FishgingAnimation = {FishThrowSuccess = 0, FishThrowFailure = 1, FishIdle = 2, FishPowerChange = 3, FishPowerGreate = 4, PersonPowerGreat = 5, DecouplingFishPowerGreat = 6, DecouplingPersonPowerGreat = 7, FishSuccess = 8, FishCancel = 9, FishFailure = 10, CancelFishing = 11}
+local FishgingAnimation = {
+  FishThrowSuccess = 0,
+  FishThrowFailure = 1,
+  FishIdle = 2,
+  FishPowerChange = 3,
+  FishPowerGreate = 4,
+  PersonPowerGreat = 5,
+  DecouplingFishPowerGreat = 6,
+  DecouplingPersonPowerGreat = 7,
+  FishSuccess = 8,
+  FishCancel = 9,
+  FishFailure = 10,
+  CancelFishing = 11
+}
 _enum("FishgingAnimation", FishgingAnimation)
-local FishgingFailureReason = {TimeOut = 1, PersonPowerGreat = 2, FishPowerGreat = 3}
+local FishgingFailureReason = {
+  TimeOut = 1,
+  PersonPowerGreat = 2,
+  FishPowerGreat = 3
+}
 _enum("FishgingFailureReason", FishgingFailureReason)
 _class("HomelandFishing", Object)
 HomelandFishing = HomelandFishing
--- DECOMPILER ERROR at PC55: Confused about usage of register: R4 in 'UnsetPending'
 
-HomelandFishing.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._guideModule = (GameGlobal.GetModule)(GuideModule)
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function HomelandFishing:Constructor()
+  self._guideModule = GameGlobal.GetModule(GuideModule)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   self._homelandClient = homeLandModule:GetClient()
   self._dicRareFishing = {}
   self:RegisterStatus()
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.HomelandClient = function(self)
-  -- function num : 0_1
+function HomelandFishing:HomelandClient()
   return self._homelandClient
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local buildManager = (self._homelandClient):BuildManager()
-  local characterManager = (self._homelandClient):CharacterManager()
+function HomelandFishing:Init()
+  local buildManager = self._homelandClient:BuildManager()
+  local characterManager = self._homelandClient:CharacterManager()
   self._characterController = characterManager:MainCharacterController()
-  local area = (buildManager:GetHomeArea()):GetArea()
+  local area = buildManager:GetHomeArea():GetArea()
   local points = {}
-  for i = 1, (area.RiverPoints).Count do
-    local p = (area.RiverPoints)[i - 1]
+  for i = 1, area.RiverPoints.Count do
+    local p = area.RiverPoints[i - 1]
     points[i] = Vector2(p.x, p.z)
   end
   points[#points + 1] = points[1]
   self._buildPoly = BuildPoly:New(points)
-  local wishBuilding = nil
+  local wishBuilding
   local buildings = buildManager:GetBuildings()
-  for k,v in pairs(buildings) do
+  for k, v in pairs(buildings) do
     if v:GetBuildType() == ArchitectureSubType.Wishing_Pool then
       wishBuilding = v
       break
     end
   end
-  do
-    if wishBuilding then
-      local triggerRoot = (wishBuilding._transform):Find("FishingArea")
-      if triggerRoot then
-        local points = {}
-        for i = 0, triggerRoot.childCount - 1 do
-          local p = (triggerRoot:GetChild(i)).position
-          points[i + 1] = Vector2(p.x, p.z)
-        end
-        points[#points + 1] = points[1]
-        self._wishBuildingPoly = BuildPoly:New(points)
+  if wishBuilding then
+    local triggerRoot = wishBuilding._transform:Find("FishingArea")
+    if triggerRoot then
+      local points = {}
+      for i = 0, triggerRoot.childCount - 1 do
+        local p = triggerRoot:GetChild(i).position
+        points[i + 1] = Vector2(p.x, p.z)
       end
-    end
-    do
-      self._characterManager = (self._homelandClient):CharacterManager()
-      if self._addFishingPositionCallback == nil then
-        self._addFishingPositionCallback = (GameHelper:GetInstance()):CreateCallback(self.AddFishingPosition, self)
-        ;
-        ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.FishingAddFishingPosition, self._addFishingPositionCallback)
-      end
-      if self._hideFishPositionCallback == nil then
-        self._hideFishPositionCallback = (GameHelper:GetInstance()):CreateCallback(self.HideFishingPos, self)
-        ;
-        ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.FishMatchReady, self._hideFishPositionCallback)
-      end
-      if self._showFishPositionCallback == nil then
-        self._showFishPositionCallback = (GameHelper:GetInstance()):CreateCallback(self.ShowFishingPos, self)
-        ;
-        ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.FishMatchEnd, self._showFishPositionCallback)
-      end
-      if self._removeFishingPositionCallback == nil then
-        self._removeFishingPositionCallback = (GameHelper:GetInstance()):CreateCallback(self.RemoveFishingPosition, self)
-        ;
-        ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.FishingRemoveFishingPosition, self._removeFishingPositionCallback)
-      end
-      if self._onHomelandFunctionUnlock == nil then
-        self._onHomelandFunctionUnlock = (GameHelper:GetInstance()):CreateCallback(self.OnHomelandFunctionUnlock, self)
-        ;
-        ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.HomeLandFunctionUnlock, self._onHomelandFunctionUnlock)
-      end
-      if self._refreshFishingPositionCallback == nil then
-        self._refreshFishingPositionCallback = (GameHelper:GetInstance()):CreateCallback(self.RefreshFishingPosition, self)
-        ;
-        ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.FishingRefreshFishingPosition, self._refreshFishingPositionCallback)
-      end
-      if self._fishMatchStartCallback == nil then
-        self._fishMatchStartCallback = (GameHelper:GetInstance()):CreateCallback(self.FishMatchStart, self)
-        ;
-        ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.FishMatchStart, self._fishMatchStartCallback)
-      end
-      self._fishingPosition = {}
-      self:RefreshFishingPosition()
+      points[#points + 1] = points[1]
+      self._wishBuildingPoly = BuildPoly:New(points)
     end
   end
+  self._characterManager = self._homelandClient:CharacterManager()
+  if self._addFishingPositionCallback == nil then
+    self._addFishingPositionCallback = GameHelper:GetInstance():CreateCallback(self.AddFishingPosition, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.FishingAddFishingPosition, self._addFishingPositionCallback)
+  end
+  if self._hideFishPositionCallback == nil then
+    self._hideFishPositionCallback = GameHelper:GetInstance():CreateCallback(self.HideFishingPos, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.FishMatchReady, self._hideFishPositionCallback)
+  end
+  if self._showFishPositionCallback == nil then
+    self._showFishPositionCallback = GameHelper:GetInstance():CreateCallback(self.ShowFishingPos, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.FishMatchEnd, self._showFishPositionCallback)
+  end
+  if self._removeFishingPositionCallback == nil then
+    self._removeFishingPositionCallback = GameHelper:GetInstance():CreateCallback(self.RemoveFishingPosition, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.FishingRemoveFishingPosition, self._removeFishingPositionCallback)
+  end
+  if self._onHomelandFunctionUnlock == nil then
+    self._onHomelandFunctionUnlock = GameHelper:GetInstance():CreateCallback(self.OnHomelandFunctionUnlock, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.HomeLandFunctionUnlock, self._onHomelandFunctionUnlock)
+  end
+  if self._refreshFishingPositionCallback == nil then
+    self._refreshFishingPositionCallback = GameHelper:GetInstance():CreateCallback(self.RefreshFishingPosition, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.FishingRefreshFishingPosition, self._refreshFishingPositionCallback)
+  end
+  if self._fishMatchStartCallback == nil then
+    self._fishMatchStartCallback = GameHelper:GetInstance():CreateCallback(self.FishMatchStart, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.FishMatchStart, self._fishMatchStartCallback)
+  end
+  self._fishingPosition = {}
+  self:RefreshFishingPosition()
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.RegisterStatus = function(self)
-  -- function num : 0_3 , upvalues : _ENV, FishgingStatus
+function HomelandFishing:RegisterStatus()
   self._status = {}
   local throw = HomelandFishingStatusThrowThrow:New()
   throw:Init(self)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._status)[FishgingStatus.Throw] = throw
+  self._status[FishgingStatus.Throw] = throw
   local fishing = HomelandFishingStatusFishing:New()
   fishing:Init(self)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._status)[FishgingStatus.Fishing] = fishing
+  self._status[FishgingStatus.Fishing] = fishing
   local bite = HomelandFishingStatusBite:New()
   bite:Init(self)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._status)[FishgingStatus.Bite] = bite
+  self._status[FishgingStatus.Bite] = bite
   local decoupling = HomelandFishingStatusDecoupling:New()
   decoupling:Init(self)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._status)[FishgingStatus.FishDecoupling] = decoupling
+  self._status[FishgingStatus.FishDecoupling] = decoupling
   local success = HomelandFishingStatusSuccess:New()
   success:Init(self)
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._status)[FishgingStatus.FishSuccess] = success
+  self._status[FishgingStatus.FishSuccess] = success
   local finish = HomelandFishingStatusFinish:New()
   finish:Init(self)
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._status)[FishgingStatus.Finish] = finish
+  self._status[FishgingStatus.Finish] = finish
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.Update = function(self)
-  -- function num : 0_4 , upvalues : FishgingStatus, _ENV
+function HomelandFishing:Update()
   if not self._currentStatus then
-    return 
+    return
   end
-  if self._currentStatus == FishgingStatus.Bite and (self._guideModule):IsGuideProcessKey("guide_fishing") then
+  if self._currentStatus == FishgingStatus.Bite and self._guideModule:IsGuideProcessKey("guide_fishing") then
     self:RereshFishLinePos()
-    return 
+    return
   end
-  local status = (self._status)[self._currentStatus]
-  status:Update((UnityEngine.Time).deltaTime)
+  local status = self._status[self._currentStatus]
+  status:Update(UnityEngine.Time.deltaTime)
   self:RereshFishLinePos()
   self:_RereshFishLinePos_Pet()
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.Destroy = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandFishing:Destroy()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   if self._fishPositionTimerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._fishPositionTimerHandler)
+    GameGlobal.Timer():CancelEvent(self._fishPositionTimerHandler)
     self._fishPositionTimerHandler = nil
   end
-  do
-    if self._currentStatus then
-      local status = (self._status)[self._currentStatus]
-      if status then
-        status:Exit()
-      end
-      self._currentStatus = nil
+  if self._currentStatus then
+    local status = self._status[self._currentStatus]
+    if status then
+      status:Exit()
     end
-    for k,v in pairs(self._status) do
-      v:Destroy()
-    end
-    self._status = nil
-    if self._addFishingPositionCallback then
-      ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.FishingAddFishingPosition, self._addFishingPositionCallback)
-      self._addFishingPositionCallback = nil
-    end
-    if self._removeFishingPositionCallback then
-      ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.FishingRemoveFishingPosition, self._removeFishingPositionCallback)
-      self._removeFishingPositionCallback = nil
-    end
-    if self._onHomelandFunctionUnlock then
-      ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.HomeLandFunctionUnlock, self._onHomelandFunctionUnlock)
-      self._onHomelandFunctionUnlock = nil
-    end
-    if self._refreshFishingPositionCallback then
-      ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.FishingRefreshFishingPosition, self._refreshFishingPositionCallback)
-      self._refreshFishingPositionCallback = nil
-    end
-    if self._fishMatchStartCallback then
-      ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.FishMatchStart, self._fishMatchStartCallback)
-      self._fishMatchStartCallback = nil
-    end
-    if self._fishingPosition then
-      for k,v in pairs(self._fishingPosition) do
-        if v then
-          if v.obj then
-            (v.obj):Dispose()
-          end
-          self:DestroyFishPositionTrace(k)
-        end
-      end
-      self._fishingPosition = nil
-    end
-    self:DestroyFloat()
+    self._currentStatus = nil
   end
+  for k, v in pairs(self._status) do
+    v:Destroy()
+  end
+  self._status = nil
+  if self._addFishingPositionCallback then
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.FishingAddFishingPosition, self._addFishingPositionCallback)
+    self._addFishingPositionCallback = nil
+  end
+  if self._removeFishingPositionCallback then
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.FishingRemoveFishingPosition, self._removeFishingPositionCallback)
+    self._removeFishingPositionCallback = nil
+  end
+  if self._onHomelandFunctionUnlock then
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.HomeLandFunctionUnlock, self._onHomelandFunctionUnlock)
+    self._onHomelandFunctionUnlock = nil
+  end
+  if self._refreshFishingPositionCallback then
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.FishingRefreshFishingPosition, self._refreshFishingPositionCallback)
+    self._refreshFishingPositionCallback = nil
+  end
+  if self._fishMatchStartCallback then
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.FishMatchStart, self._fishMatchStartCallback)
+    self._fishMatchStartCallback = nil
+  end
+  if self._fishingPosition then
+    for k, v in pairs(self._fishingPosition) do
+      if v then
+        if v.obj then
+          v.obj:Dispose()
+        end
+        self:DestroyFishPositionTrace(k)
+      end
+    end
+    self._fishingPosition = nil
+  end
+  self:DestroyFloat()
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.FsmExit = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function HomelandFishing:FsmExit()
   if self._status then
-    for k,v in pairs(self._status) do
+    for k, v in pairs(self._status) do
       v:FsmExist()
     end
   end
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.SwitchStatus = function(self, statuType, param)
-  -- function num : 0_7 , upvalues : _ENV
+function HomelandFishing:SwitchStatus(statuType, param)
   if statuType == nil then
-    return 
+    return
   end
   if self._currentStatus == statuType then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeFishingStatus, self._currentStatus)
-    return 
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeFishingStatus, self._currentStatus)
+    return
   end
-  local status = nil
+  local status
   if self._currentStatus then
-    status = (self._status)[self._currentStatus]
+    status = self._status[self._currentStatus]
     if status then
       status:Exit()
     end
   end
   self._currentStatus = statuType
-  status = (self._status)[self._currentStatus]
+  status = self._status[self._currentStatus]
   if status then
     status:Enter(param)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeFishingStatus, self._currentStatus)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeFishingStatus, self._currentStatus)
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.FishMatchStart = function(self)
-  -- function num : 0_8
+function HomelandFishing:FishMatchStart()
   self._isRiverFishing = true
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.IsRiverFishing = function(self)
-  -- function num : 0_9
+function HomelandFishing:IsRiverFishing()
   return self._isRiverFishing
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.ExitHomeland = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function HomelandFishing:ExitHomeland()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.EnterFishing = function(self, isRiverFishing)
-  -- function num : 0_11 , upvalues : FishgingStatus, _ENV
+function HomelandFishing:EnterFishing(isRiverFishing)
   if self._currentStatus ~= nil and self._currentStatus ~= FishgingStatus.None then
-    return 
+    return
   end
   self._isRiverFishing = isRiverFishing
   self:SwitchStatus(FishgingStatus.Throw)
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1, TimerTriggerCount.Infinite, function()
-    -- function num : 0_11_0 , upvalues : self
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(1, TimerTriggerCount.Infinite, function()
     self:Update()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.ExistFishing = function(self)
-  -- function num : 0_12 , upvalues : FishgingStatus, _ENV
+function HomelandFishing:ExistFishing()
   if self._currentStatus == FishgingStatus.None or self._currentStatus == nil then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetInteractPointUIStatus, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetInteractPointUIStatus, true)
   self:FsmExit()
   self:SwitchStatus(FishgingStatus.None)
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.IsInRiver = function(self, pos)
-  -- function num : 0_13
-  if (self._buildPoly):Contains(pos) then
+function HomelandFishing:IsInRiver(pos)
+  if self._buildPoly:Contains(pos) then
     return true
   end
-  if self._wishBuildingPoly and (self._wishBuildingPoly):Contains(pos) then
+  if self._wishBuildingPoly and self._wishBuildingPoly:Contains(pos) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.OnHomelandFunctionUnlock = function(self, functionType)
-  -- function num : 0_14 , upvalues : _ENV
+function HomelandFishing:OnHomelandFunctionUnlock(functionType)
   if functionType == HomelandUnlockType.E_HOMELAND_UNLOCK_FISHING_UI then
     self:RefreshMapIcons()
   end
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.RefreshFishingPosition = function(self)
-  -- function num : 0_15 , upvalues : _ENV, FishingPositionType
+function HomelandFishing:RefreshFishingPosition()
   if self._fishPositionTimerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._fishPositionTimerHandler)
+    GameGlobal.Timer():CancelEvent(self._fishPositionTimerHandler)
     self._fishPositionTimerHandler = nil
   end
   self._fishPositionRefreshTime = 0
   local dicLookup = {}
-  local fishingPositioninfo = (self._homelandModule):GetFishingPostionData()
+  local fishingPositioninfo = self._homelandModule:GetFishingPostionData()
   if fishingPositioninfo then
-    for k,v in pairs(fishingPositioninfo) do
+    for k, v in pairs(fishingPositioninfo) do
       dicLookup[v.fishing_position_id] = v.fishing_position_id
       self:AddFishingPosition(v.fishing_position_id, FishingPositionType.Normal)
-      if v.next_refresh_time and v.next_refresh_time > 0 and v.next_refresh_time < self._fishPositionRefreshTime then
+      if v.next_refresh_time and 0 < v.next_refresh_time and v.next_refresh_time < self._fishPositionRefreshTime then
         self._fishPositionRefreshTime = v.next_refresh_time
       end
     end
   end
-  do
-    local wishCoinPosition = (self._homelandModule):GetWishingCoinPostionData()
-    if wishCoinPosition then
-      for k,v in pairs(wishCoinPosition) do
-        dicLookup[v] = v
-        self:AddFishingPosition(v, FishingPositionType.WishingCoin)
-      end
+  local wishCoinPosition = self._homelandModule:GetWishingCoinPostionData()
+  if wishCoinPosition then
+    for k, v in pairs(wishCoinPosition) do
+      dicLookup[v] = v
+      self:AddFishingPosition(v, FishingPositionType.WishingCoin)
     end
-    do
-      for k,v in pairs(self._dicRareFishing) do
-        v:RefreshCurrentState()
-      end
-      local rarePosition = (self._homelandModule):GetAllRareFishingPosition()
-      local rareClue = (self._homelandModule):GetAllRareFishingClue()
-      local rareCfgs = Cfg.cfg_homeland_rare_clue
-      if rarePosition then
-        for _,v in pairs(rarePosition) do
-          dicLookup[v] = v
-          for k,clue in pairs(rareClue) do
-            if clue.rare_fishing_position ~= 0 then
-              local fishClue = k
-              local data = rareCfgs({ID = fishClue})
-              for _,rareFishClue in pairs(data) do
-                local posionType = rareFishClue.type
-                if posionType == 1 then
-                  self:AddFishingPosition(v, FishingPositionType.RareFishing)
-                else
-                  self:AddFishingPosition(v, FishingPositionType.PetFishing)
-                end
-              end
+  end
+  for k, v in pairs(self._dicRareFishing) do
+    v:RefreshCurrentState()
+  end
+  local rarePosition = self._homelandModule:GetAllRareFishingPosition()
+  local rareClue = self._homelandModule:GetAllRareFishingClue()
+  local rareCfgs = Cfg.cfg_homeland_rare_clue
+  if rarePosition then
+    for _, v in pairs(rarePosition) do
+      dicLookup[v] = v
+      for k, clue in pairs(rareClue) do
+        if clue.rare_fishing_position ~= 0 then
+          local fishClue = k
+          local data = rareCfgs({ID = fishClue})
+          for _, rareFishClue in pairs(data) do
+            local posionType = rareFishClue.type
+            if posionType == 1 then
+              self:AddFishingPosition(v, FishingPositionType.RareFishing)
+            else
+              self:AddFishingPosition(v, FishingPositionType.PetFishing)
             end
           end
         end
       end
-      do
-        local removeList = {}
-        for k,v in pairs(self._fishingPosition) do
-          local find = false
-          find = not v or dicLookup[k] ~= nil
-          if not find then
-            removeList[#removeList + 1] = k
-          end
-        end
-        for i = 1, #removeList do
-          self:RemoveFishingPosition(removeList[i])
-        end
-        if self._fishPositionRefreshTime > 0 then
-          self._fishPositionTimerHandler = ((GameGlobal.Timer)()):AddEventTimes(1, TimerTriggerCount.Infinite, function()
-    -- function num : 0_15_0 , upvalues : _ENV, self
-    local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-    local nowTime = svrTimeModule:GetServerTime() / 1000
-    if self._fishPositionRefreshTime <= nowTime then
-      ((GameGlobal.TaskManager)()):StartTask(self.LoadFishingPositionData, self)
     end
   end
-)
-        end
-        -- DECOMPILER ERROR: 4 unprocessed JMP targets
-      end
+  local removeList = {}
+  for k, v in pairs(self._fishingPosition) do
+    local find = false
+    if v then
+      find = dicLookup[k] ~= nil
     end
+    if not find then
+      removeList[#removeList + 1] = k
+    end
+  end
+  for i = 1, #removeList do
+    self:RemoveFishingPosition(removeList[i])
+  end
+  if self._fishPositionRefreshTime > 0 then
+    self._fishPositionTimerHandler = GameGlobal.Timer():AddEventTimes(1, TimerTriggerCount.Infinite, function()
+      local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+      local nowTime = svrTimeModule:GetServerTime() / 1000
+      if nowTime >= self._fishPositionRefreshTime then
+        GameGlobal.TaskManager():StartTask(self.LoadFishingPositionData, self)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.DestroyFishPositionTrace = function(self, positionId)
-  -- function num : 0_16 , upvalues : _ENV
-  local cfg = (HomelandFishingConst.GetFishingPositionCfg)(positionId)
+function HomelandFishing:DestroyFishPositionTrace(positionId)
+  local cfg = HomelandFishingConst.GetFishingPositionCfg(positionId)
   if cfg == nil or cfg.TraceId == nil then
-    return 
+    return
   end
-  local homelandTraceManager = (self._homelandClient):GetHomelandTraceManager()
+  local homelandTraceManager = self._homelandClient:GetHomelandTraceManager()
   homelandTraceManager:DisposeTrace(cfg.TraceId, nil)
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.CreateFishPositionTrace = function(self, positionId, position)
-  -- function num : 0_17 , upvalues : _ENV
-  local cfg = (HomelandFishingConst.GetFishingPositionCfg)(positionId)
+function HomelandFishing:CreateFishPositionTrace(positionId, position)
+  local cfg = HomelandFishingConst.GetFishingPositionCfg(positionId)
   if cfg == nil or cfg.TraceId == nil then
-    return 
+    return
   end
-  local homelandTraceManager = (self._homelandClient):GetHomelandTraceManager()
+  local homelandTraceManager = self._homelandClient:GetHomelandTraceManager()
   homelandTraceManager:StartTrace(cfg.TraceId, nil, position)
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.LoadFishingPositionData = function(self, TT)
-  -- function num : 0_18
-  (self._homelandModule):ApplyFishPostionData(TT)
+function HomelandFishing:LoadFishingPositionData(TT)
+  self._homelandModule:ApplyFishPostionData(TT)
   self:RefreshFishingPosition()
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.PositionType2MapIconType = function(self, fishingPositionType)
-  -- function num : 0_19 , upvalues : FishingPositionType, _ENV
+function HomelandFishing:PositionType2MapIconType(fishingPositionType)
   local homelandMapIconType = 0
   if fishingPositionType == FishingPositionType.Normal then
     homelandMapIconType = HomelandMapIconType.FishingPoint
+  elseif fishingPositionType == FishingPositionType.WishingCoin then
+    homelandMapIconType = HomelandMapIconType.WishCoinPoint
+  elseif fishingPositionType == FishingPositionType.RareFishing then
+    homelandMapIconType = HomelandMapIconType.RareFishingPoint
+  elseif fishingPositionType == FishingPositionType.PetFishing then
+    homelandMapIconType = HomelandMapIconType.PetFishingPoint
   else
-    if fishingPositionType == FishingPositionType.WishingCoin then
-      homelandMapIconType = HomelandMapIconType.WishCoinPoint
-    else
-      if fishingPositionType == FishingPositionType.RareFishing then
-        homelandMapIconType = HomelandMapIconType.RareFishingPoint
-      else
-        if fishingPositionType == FishingPositionType.PetFishing then
-          homelandMapIconType = HomelandMapIconType.PetFishingPoint
-        else
-          homelandMapIconType = 0
-        end
-      end
-    end
+    homelandMapIconType = 0
   end
   return homelandMapIconType
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.AddFishingPosition = function(self, positionId, fishingPositionType)
-  -- function num : 0_20 , upvalues : _ENV, FishingPositionType
+function HomelandFishing:AddFishingPosition(positionId, fishingPositionType)
   if not self._fishingPosition then
     self._fishingPosition = {}
   end
-  if (self._fishingPosition)[positionId] then
-    return 
+  if self._fishingPosition[positionId] then
+    return
   end
   local fnGetFishingPositionCfg = HomelandFishingConst.GetFishingPositionCfg
   local homelandMapIconType = self:PositionType2MapIconType(fishingPositionType)
   if homelandMapIconType == FishingPositionType.None then
-    return 
+    return
   end
   local cfg = fnGetFishingPositionCfg(positionId)
   if not cfg then
-    return 
+    return
   end
   local t = {}
   t.obj = nil
   t.type = fishingPositionType
   if cfg.Model then
-    local req = (ResourceManager:GetInstance()):SyncLoadAsset(cfg.Model .. ".prefab", LoadType.GameObject)
+    local req = ResourceManager:GetInstance():SyncLoadAsset(cfg.Model .. ".prefab", LoadType.GameObject)
     local go = req.Obj
     go:SetActive(true)
     local transform = go.transform
-    local position = (self._homelandModule):GetFishingPositionRandomPosition(positionId)
+    local position = self._homelandModule:GetFishingPositionRandomPosition(positionId)
     transform.position = position
     t.obj = req
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._fishingPosition)[positionId] = t
+    self._fishingPosition[positionId] = t
     self:CreateFishPositionTrace(positionId, position)
-    if (self._homelandModule):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_FISHING_UI) then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapAddIcon, homelandMapIconType, positionId, transform, positionId)
+    if self._homelandModule:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_FISHING_UI) then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapAddIcon, homelandMapIconType, positionId, transform, positionId)
     end
   else
-    do
-      -- DECOMPILER ERROR at PC78: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._fishingPosition)[positionId] = t
-    end
+    self._fishingPosition[positionId] = t
   end
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.RemoveFishingPosition = function(self, positionId)
-  -- function num : 0_21 , upvalues : _ENV
+function HomelandFishing:RemoveFishingPosition(positionId)
   if not self._fishingPosition then
     self._fishingPosition = {}
   end
-  if not (self._fishingPosition)[positionId] then
-    return 
+  if not self._fishingPosition[positionId] then
+    return
   end
-  local t = (self._fishingPosition)[positionId]
+  local t = self._fishingPosition[positionId]
   if t.obj then
-    (t.obj):Dispose()
+    t.obj:Dispose()
   end
-  do
-    if (self._homelandModule):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_FISHING_UI) then
-      local homelandMapIconType = self:PositionType2MapIconType(t.type)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapRemoveIcon, homelandMapIconType, positionId)
-    end
-    self:DestroyFishPositionTrace(positionId)
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._fishingPosition)[positionId] = nil
+  if self._homelandModule:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_FISHING_UI) then
+    local homelandMapIconType = self:PositionType2MapIconType(t.type)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapRemoveIcon, homelandMapIconType, positionId)
   end
+  self:DestroyFishPositionTrace(positionId)
+  self._fishingPosition[positionId] = nil
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.GetFishingPosition = function(self, pos)
-  -- function num : 0_22 , upvalues : FishingPositionType, _ENV
+function HomelandFishing:GetFishingPosition(pos)
   if not self._fishingPosition then
     return self:GetDefaultFishingPosition(), FishingPositionType.Normal
   end
-  for k,v in pairs(self._fishingPosition) do
-    local cfg = (HomelandFishingConst.GetFishingPositionCfg)(k)
+  for k, v in pairs(self._fishingPosition) do
+    local cfg = HomelandFishingConst.GetFishingPositionCfg(k)
     if cfg == nil then
-      (Log.error)("HomelandFishing:GetFishingPosition error ", k)
+      Log.error("HomelandFishing:GetFishingPosition error ", k)
     end
-    local position = (self._homelandModule):GetFishingPositionRandomPosition(k)
-    local distance = (Vector3.Distance)(pos, position)
+    local position = self._homelandModule:GetFishingPositionRandomPosition(k)
+    local distance = Vector3.Distance(pos, position)
     if distance <= cfg.Range / 1000 then
       return k, v.type
     end
@@ -584,67 +480,49 @@ HomelandFishing.GetFishingPosition = function(self, pos)
   return self:GetDefaultFishingPosition(), FishingPositionType.Normal
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.GetDefaultFishingPosition = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  return (HomelandFishingConst.GetDefaultFishingPosition)()
+function HomelandFishing:GetDefaultFishingPosition()
+  return HomelandFishingConst.GetDefaultFishingPosition()
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.RefreshMapIcons = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function HomelandFishing:RefreshMapIcons()
   if self._fishingPosition then
-    for k,v in pairs(self._fishingPosition) do
+    for k, v in pairs(self._fishingPosition) do
       if v and v.obj then
-        local transform = ((v.obj).Obj).transform
+        local transform = v.obj.Obj.transform
         local homelandMapIconType = self:PositionType2MapIconType(v.type)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapAddIcon, homelandMapIconType, k, transform, k)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapAddIcon, homelandMapIconType, k, transform, k)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC130: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.HideFishingPos = function(self, positionId)
-  -- function num : 0_25 , upvalues : _ENV
+function HomelandFishing:HideFishingPos(positionId)
   if not self._fishPosList then
     self._fishPosList = {}
   end
   if not self._fishingPosition then
-    return 
+    return
   end
-  for i,v in pairs(self._fishingPosition) do
+  for i, v in pairs(self._fishingPosition) do
     local t = {}
     t.posID = i
     t.type = v.type
     self:RemoveFishingPosition(i)
-    ;
-    (table.insert)(self._fishPosList, t)
+    table.insert(self._fishPosList, t)
   end
 end
 
--- DECOMPILER ERROR at PC133: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.ShowFishingPos = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function HomelandFishing:ShowFishingPos()
   if not self._fishPosList then
-    return 
+    return
   end
-  for i,v in pairs(self._fishPosList) do
+  for i, v in pairs(self._fishPosList) do
     self:AddFishingPosition(v.posID, v.type)
   end
-  ;
-  (table.clear)(self._fishPosList)
+  table.clear(self._fishPosList)
 end
 
--- DECOMPILER ERROR at PC136: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.SetFishRodStatus = function(self, status)
-  -- function num : 0_27
+function HomelandFishing:SetFishRodStatus(status)
   self:InitFishRod(status)
   self:InitFishLine(status)
   if not status then
@@ -652,226 +530,153 @@ HomelandFishing.SetFishRodStatus = function(self, status)
   end
 end
 
--- DECOMPILER ERROR at PC139: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.InitFishRod = function(self, status)
-  -- function num : 0_28 , upvalues : _ENV
-  local findTreasureManager = (self._homelandClient):FindTreasureManager()
+function HomelandFishing:InitFishRod(status)
+  local findTreasureManager = self._homelandClient:FindTreasureManager()
   if findTreasureManager and findTreasureManager:IsFindingTreasure() then
-    return 
+    return
   end
   if status then
-    local fishrod = (HomelandFishingConst.GetCurrentFishRod)()
+    local fishrod = HomelandFishingConst.GetCurrentFishRod()
     local model = fishrod:GetModelName()
-    self._fishRodgo = (self._characterController):AttachModel(model, fishrod:GetAttachPath())
+    self._fishRodgo = self._characterController:AttachModel(model, fishrod:GetAttachPath())
     if self._fishRodgo then
-      self._fishRodAnim = (self._fishRodgo):GetComponentInChildren(typeof(UnityEngine.Animator))
-      ;
-      (self._fishRodgo):SetActive(false)
+      self._fishRodAnim = self._fishRodgo:GetComponentInChildren(typeof(UnityEngine.Animator))
+      self._fishRodgo:SetActive(false)
     end
   else
-    do
-      ;
-      (self._characterController):ReleaseAttachedModel()
-      self._fishRodgo = nil
-      self._fishRodAnim = nil
+    self._characterController:ReleaseAttachedModel()
+    self._fishRodgo = nil
+    self._fishRodAnim = nil
+  end
+end
+
+function HomelandFishing:PlayFishRodAnimation(name)
+  if self._fishRodgo then
+    self._fishRodgo:SetActive(true)
+  end
+  if self._fishRodAnim then
+    self._fishRodAnim:SetTrigger(name)
+  end
+end
+
+function HomelandFishing:PlayFishRodAnimationLoop(name)
+  if self._fishRodgo then
+    self._fishRodgo:SetActive(true)
+  end
+  if self._fishRodAnim then
+    self._fishRodAnim:SetBool(name, true)
+  end
+end
+
+function HomelandFishing:StopFishRodyAnimationLoop(name)
+  if self._fishRodgo then
+    self._fishRodgo:SetActive(true)
+  end
+  if self._fishRodAnim then
+    self._fishRodAnim:SetBool(name, false)
+  end
+end
+
+function HomelandFishing:InitFishLine(status)
+  if status then
+    if self._fishRodgo then
+      self._fishLine = self._fishRodgo.transform:Find("Line"):GetComponent("LineRenderer")
+      self._fishLineFirstPointTran = self._fishRodgo.transform:Find("hl_tool_5012001/Bone_all/Dummy_5012001/Dummy001/Bone0001/Bone002/Bone003/Bone004/Bone005/Bone006/Bone007")
     end
+  else
+    self._fishLine = nil
   end
 end
 
--- DECOMPILER ERROR at PC142: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.PlayFishRodAnimation = function(self, name)
-  -- function num : 0_29
-  if self._fishRodgo then
-    (self._fishRodgo):SetActive(true)
-  end
-  if self._fishRodAnim then
-    (self._fishRodAnim):SetTrigger(name)
-  end
-end
-
--- DECOMPILER ERROR at PC145: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.PlayFishRodAnimationLoop = function(self, name)
-  -- function num : 0_30
-  if self._fishRodgo then
-    (self._fishRodgo):SetActive(true)
-  end
-  if self._fishRodAnim then
-    (self._fishRodAnim):SetBool(name, true)
-  end
-end
-
--- DECOMPILER ERROR at PC148: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.StopFishRodyAnimationLoop = function(self, name)
-  -- function num : 0_31
-  if self._fishRodgo then
-    (self._fishRodgo):SetActive(true)
-  end
-  if self._fishRodAnim then
-    (self._fishRodAnim):SetBool(name, false)
-  end
-end
-
--- DECOMPILER ERROR at PC151: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.InitFishLine = function(self, status)
-  -- function num : 0_32
-  if status and self._fishRodgo then
-    self._fishLine = (((self._fishRodgo).transform):Find("Line")):GetComponent("LineRenderer")
-    self._fishLineFirstPointTran = ((self._fishRodgo).transform):Find("hl_tool_5012001/Bone_all/Dummy_5012001/Dummy001/Bone0001/Bone002/Bone003/Bone004/Bone005/Bone006/Bone007")
-  end
-  self._fishLine = nil
-end
-
--- DECOMPILER ERROR at PC154: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.CreateFloat = function(self, pos)
-  -- function num : 0_33 , upvalues : _ENV
+function HomelandFishing:CreateFloat(pos)
   self:DestroyFloat()
   self._fishingFloat = HomelandFishingFloat:New(FishgingFloatType.Main, pos)
 end
 
--- DECOMPILER ERROR at PC157: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.DestroyFloat = function(self)
-  -- function num : 0_34
+function HomelandFishing:DestroyFloat()
   if self._fishingFloat then
-    (self._fishingFloat):Release()
+    self._fishingFloat:Release()
     self._fishingFloat = nil
   end
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.FishBite = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  (Log.error)("鱼咬钩")
+function HomelandFishing:FishBite()
+  Log.error("鱼咬钩")
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.RereshFishLinePos = function(self)
-  -- function num : 0_36
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
+function HomelandFishing:RereshFishLinePos()
   if self._fishLine and self._fishingFloat and self._fishLineFirstPointTran then
-    (self._fishLine).positionCount = 2
+    self._fishLine.positionCount = 2
     if self._fishLineFirstPointTran then
-      (self._fishLine):SetPosition(0, (self._fishLineFirstPointTran).position)
-      ;
-      (self._fishLine):SetPosition(1, (self._fishingFloat):GetFloatPosition())
+      self._fishLine:SetPosition(0, self._fishLineFirstPointTran.position)
+      self._fishLine:SetPosition(1, self._fishingFloat:GetFloatPosition())
     end
   end
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.GetRareFishing = function(self, rareId)
-  -- function num : 0_37 , upvalues : _ENV
-  local rareFishing = (self._dicRareFishing)[rareId]
+function HomelandFishing:GetRareFishing(rareId)
+  local rareFishing = self._dicRareFishing[rareId]
   if rareFishing == nil then
     rareFishing = HomelandRareFishing:New(rareId, self)
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._dicRareFishing)[rareId] = rareFishing
+    self._dicRareFishing[rareId] = rareFishing
   end
   return rareFishing
 end
 
--- DECOMPILER ERROR at PC169: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.StartFishTools = function(self, pet, fishLine, fishLineFirstPointTran)
-  -- function num : 0_38 , upvalues : _ENV
+function HomelandFishing:StartFishTools(pet, fishLine, fishLineFirstPointTran)
   self:StopFishTools()
-  local power = (math.random)(30, 70) / 100
+  local power = math.random(30, 70) / 100
   local result, floatPosition = self:_IsThrowSuccess(pet, power)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._fishTools).fishFloat = HomelandFishingFloat:New(FishgingFloatType.Pet, floatPosition)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._fishTools).fishLine = fishLine
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._fishTools).fishLineFirstPointTran = fishLineFirstPointTran
+  self._fishTools.fishFloat = HomelandFishingFloat:New(FishgingFloatType.Pet, floatPosition)
+  self._fishTools.fishLine = fishLine
+  self._fishTools.fishLineFirstPointTran = fishLineFirstPointTran
 end
 
--- DECOMPILER ERROR at PC172: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.StopFishTools = function(self)
-  -- function num : 0_39
-  if not self._fishTools then
-    self._fishTools = {}
-    if (self._fishTools).fishFloat then
-      ((self._fishTools).fishFloat):Release()
-      -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._fishTools).fishFloat = nil
-    end
+function HomelandFishing:StopFishTools()
+  self._fishTools = self._fishTools or {}
+  if self._fishTools.fishFloat then
+    self._fishTools.fishFloat:Release()
+    self._fishTools.fishFloat = nil
   end
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.DestroyFishTools = function(self)
-  -- function num : 0_40
+function HomelandFishing:DestroyFishTools()
   self:StopFishTools()
   self._fishTools = {}
 end
 
--- DECOMPILER ERROR at PC178: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing.SetFishToolsShow = function(self, isShow)
-  -- function num : 0_41
-  local fishFloat = (self._fishTools).fishFloat
+function HomelandFishing:SetFishToolsShow(isShow)
+  local fishFloat = self._fishTools.fishFloat
   if fishFloat then
-    local fishLine = (self._fishTools).fishLine
-    if fishLine then
-      (fishLine.gameObject):SetActive(isShow)
-    end
+  end
+  local fishLine = self._fishTools.fishLine
+  if fishLine then
+    fishLine.gameObject:SetActive(isShow)
   end
 end
 
--- DECOMPILER ERROR at PC181: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing._RereshFishLinePos_Pet = function(self)
-  -- function num : 0_42
+function HomelandFishing:_RereshFishLinePos_Pet()
   if not self._fishTools then
-    return 
+    return
   end
-  local fishLine = (self._fishTools).fishLine
-  local fishLineFirstPointTran = (self._fishTools).fishLineFirstPointTran
-  local fishFloat = (self._fishTools).fishFloat
+  local fishLine = self._fishTools.fishLine
+  local fishLineFirstPointTran = self._fishTools.fishLineFirstPointTran
+  local fishFloat = self._fishTools.fishFloat
   if fishLine and fishFloat and fishLineFirstPointTran then
-    (fishLine.gameObject):SetActive(true)
+    fishLine.gameObject:SetActive(true)
     fishLine.positionCount = 2
     fishLine:SetPosition(0, fishLineFirstPointTran.position)
     fishLine:SetPosition(1, fishFloat:GetFloatPosition())
-  else
-    if fishLine then
-      (fishLine.gameObject):SetActive(false)
-    end
+  elseif fishLine then
+    fishLine.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC184: Confused about usage of register: R4 in 'UnsetPending'
-
-HomelandFishing._IsThrowSuccess = function(self, pet, power)
-  -- function num : 0_43 , upvalues : _ENV
-  local minDistance = (HomelandFishingConst.GetThrowMinDistance)()
-  local maxDistance = (HomelandFishingConst.GetThrowMaxDistance)()
+function HomelandFishing:_IsThrowSuccess(pet, power)
+  local minDistance = HomelandFishingConst.GetThrowMinDistance()
+  local maxDistance = HomelandFishingConst.GetThrowMaxDistance()
   local distance = minDistance + (maxDistance - minDistance) * power
   local transform = pet:AgentTransform()
   local pos = transform.position + transform:TransformDirection(Vector3(0, 0, distance))
   return self:IsInRiver(Vector2(pos.x, pos.z)), pos
 end
-
-

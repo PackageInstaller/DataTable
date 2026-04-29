@@ -1,18 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_trial_level/ui_trail_level_reward_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local TrailLevelRewardStatus = {UnComplete = 2, UnGet = 0, HasGet = 1}
+local TrailLevelRewardStatus = {
+  UnComplete = 2,
+  UnGet = 0,
+  HasGet = 1
+}
 _enum("TrailLevelRewardStatus", TrailLevelRewardStatus)
 _class("UITrailLevelRewardController", UIController)
 UITrailLevelRewardController = UITrailLevelRewardController
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UITrailLevelRewardController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  local talePetModule = (GameGlobal.GetModule)(TalePetModule)
-  self._level = talePetModule:GetLevelCount()
+function UITrailLevelRewardController:LoadDataOnEnter(TT, res, uiParams)
+  local talePetModule = GameGlobal.GetModule(TalePetModule)
+  self._level, self._maxLevel = talePetModule:GetLevelCount()
   self._rewardData = {}
   local rewardDatas = talePetModule:GetTrailLevelRewardList()
   for i = 1, #rewardDatas do
@@ -20,47 +17,32 @@ UITrailLevelRewardController.LoadDataOnEnter = function(self, TT, res, uiParams)
     local rewardData = {}
     rewardData.id = data[1]
     rewardData.status = data[2]
-    local cfg = (Cfg.cfg_tale_stage_reward)[rewardData.id]
+    local cfg = Cfg.cfg_tale_stage_reward[rewardData.id]
     rewardData.count = cfg.Count
     rewardData.icon = cfg.Icon
     rewardData.dropId = cfg.DropId
-    rewardData.name = (StringTable.Get)(cfg.Name)
-    rewardData.des = (StringTable.Get)(cfg.Desc, rewardData.count)
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R13 in 'UnsetPending'
-
-    ;
-    (self._rewardData)[#self._rewardData + 1] = rewardData
+    rewardData.name = StringTable.Get(cfg.Name)
+    rewardData.des = StringTable.Get(cfg.Desc, rewardData.count)
+    self._rewardData[#self._rewardData + 1] = rewardData
   end
   self._rewardCount = #self._rewardData
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelRewardController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UITrailLevelRewardController:OnShow(uiParams)
   self._levelLabel = self:GetUIComponent("UILocalizationText", "Level")
   local param = self._level .. "/<color=#FF7800>" .. self._maxLevel .. "</color>"
-  ;
-  (self._levelLabel):SetText((StringTable.Get)("str_tale_pet_trail_level_reward_progress", param))
+  self._levelLabel:SetText(StringTable.Get("str_tale_pet_trail_level_reward_progress", param))
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "RewardList")
   self:_InitScrollView()
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelRewardController._InitScrollView = function(self)
-  -- function num : 0_2
-  (self._scrollView):InitListView(self._rewardCount, function(scrollview, index)
-    -- function num : 0_2_0 , upvalues : self
+function UITrailLevelRewardController:_InitScrollView()
+  self._scrollView:InitListView(self._rewardCount, function(scrollview, index)
     return self:_OnGetRewardItem(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelRewardController._OnGetRewardItem = function(self, scrollView, index)
-  -- function num : 0_3 , upvalues : _ENV
+function UITrailLevelRewardController:_OnGetRewardItem(scrollView, index)
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -69,38 +51,25 @@ UITrailLevelRewardController._OnGetRewardItem = function(self, scrollView, index
   end
   local rowList = rowPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      if self._rewardCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      else
-        ;
-        (itemWidget:GetGameObject()):SetActive(true)
-        self:_RefreshRewardItemInfo(itemWidget, itemIndex)
-      end
+  if itemWidget then
+    local itemIndex = index + 1
+    if itemIndex > self._rewardCount then
+      itemWidget:GetGameObject():SetActive(false)
+    else
+      itemWidget:GetGameObject():SetActive(true)
+      self:_RefreshRewardItemInfo(itemWidget, itemIndex)
     end
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
-    return item
   end
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
+  return item
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelRewardController._RefreshRewardItemInfo = function(self, itemWidget, index)
-  -- function num : 0_4
-  itemWidget:Refresh((self._rewardData)[index])
+function UITrailLevelRewardController:_RefreshRewardItemInfo(itemWidget, index)
+  itemWidget:Refresh(self._rewardData[index])
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelRewardController.MaskOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TalePetTrailLevelRewardChange)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TalePetRedStatusChange)
+function UITrailLevelRewardController:MaskOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TalePetTrailLevelRewardChange)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TalePetRedStatusChange)
   self:CloseDialog()
 end
-
-

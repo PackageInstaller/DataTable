@@ -1,124 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/guide/guide_path_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuidePathComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-GuidePathComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function GuidePathComponent:Constructor()
   self._guidePath = {}
   self._refreshType = GuideRefreshType.None
   self._invokeType = GuideInvokeType.None
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePathComponent.GetInvokeType = function(self)
-  -- function num : 0_1
+function GuidePathComponent:GetInvokeType()
   return self._invokeType
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePathComponent.SetInvokeType = function(self, invokeType)
-  -- function num : 0_2
+function GuidePathComponent:SetInvokeType(invokeType)
   self._invokeType = invokeType
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePathComponent.GetGuideRefreshType = function(self)
-  -- function num : 0_3
+function GuidePathComponent:GetGuideRefreshType()
   return self._refreshType
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePathComponent.SetGuideRefreshType = function(self, refreshType)
-  -- function num : 0_4
+function GuidePathComponent:SetGuideRefreshType(refreshType)
   self._refreshType = refreshType
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePathComponent.SetGuidePath = function(self, path)
-  -- function num : 0_5 , upvalues : _ENV
+function GuidePathComponent:SetGuidePath(path)
   self._guidePath = {}
-  for k,v in ipairs(path) do
+  for k, v in ipairs(path) do
     local vec = Vector2(v[1], v[2])
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._guidePath)[#self._guidePath + 1] = vec
+    self._guidePath[#self._guidePath + 1] = vec
   end
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePathComponent.GetGuidePath = function(self)
-  -- function num : 0_6
+function GuidePathComponent:GetGuidePath()
   return self._guidePath
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePathComponent.IsMatchGuidePath = function(self, chainPath)
-  -- function num : 0_7
+function GuidePathComponent:IsMatchGuidePath(chainPath)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePathComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_8
+function GuidePathComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePathComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_9
+function GuidePathComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GuidePath = function(self)
-  -- function num : 0_10
-  return self:GetComponent((self.WEComponentsEnum).GuidePath)
+function Entity:GuidePath()
+  return self:GetComponent(self.WEComponentsEnum.GuidePath)
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasGuidePath = function(self)
-  -- function num : 0_11
-  return self:HasComponent((self.WEComponentsEnum).GuidePath)
+function Entity:HasGuidePath()
+  return self:HasComponent(self.WEComponentsEnum.GuidePath)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddGuidePath = function(self, newPath)
-  -- function num : 0_12 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GuidePath
+function Entity:AddGuidePath(newPath)
+  local index = self.WEComponentsEnum.GuidePath
   local component = GuidePathComponent:New(newPath)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceGuidePath = function(self)
-  -- function num : 0_13
-  local index = (self.WEComponentsEnum).GuidePath
+function Entity:ReplaceGuidePath()
+  local index = self.WEComponentsEnum.GuidePath
   local cmpt = self:GuidePath()
   self:ReplaceComponent(index, cmpt)
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveGuidePath = function(self)
-  -- function num : 0_14
+function Entity:RemoveGuidePath()
   if self:HasGuidePath() then
-    self:RemoveComponent((self.WEComponentsEnum).GuidePath)
+    self:RemoveComponent(self.WEComponentsEnum.GuidePath)
   end
 end
-
-

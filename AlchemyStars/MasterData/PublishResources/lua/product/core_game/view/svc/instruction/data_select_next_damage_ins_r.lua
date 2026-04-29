@@ -1,34 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_select_next_damage_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DataSelectNextDamageInstruction", BaseInstruction)
 DataSelectNextDamageInstruction = DataSelectNextDamageInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSelectNextDamageInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function DataSelectNextDamageInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectNextDamageInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function DataSelectNextDamageInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageStageIndex = phaseContext:GetCurDamageResultStageIndex()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, damageStageIndex)
   local damageIndex = phaseContext:GetCurDamageResultIndex()
   damageIndex = damageIndex + 1
   phaseContext:SetCurDamageResultIndex(damageIndex)
-  if #damageResultArray < damageIndex or #damageResultArray == 0 then
+  if damageIndex > #damageResultArray or #damageResultArray == 0 then
     phaseContext:SetCurTargetEntityID(-1)
-    return 
+    return
   end
   local damageResult = damageResultArray[damageIndex]
   local targetEntityID = damageResult:GetTargetID()
   phaseContext:SetCurTargetEntityID(targetEntityID)
 end
-
-

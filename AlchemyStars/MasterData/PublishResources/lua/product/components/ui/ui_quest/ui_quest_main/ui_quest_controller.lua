@@ -1,29 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_main/ui_quest_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestController", UIController)
 UIQuestController = UIQuestController
-local ClientQuestType = {QT_None = 0, QT_Main = 1, QT_Daily = 2, QT_Branch = 3, QT_Growth = 4, QT_Achieve = 5, QT_Season = 10001}
+local ClientQuestType = {
+  QT_None = 0,
+  QT_Main = 1,
+  QT_Daily = 2,
+  QT_Branch = 3,
+  QT_Growth = 4,
+  QT_Achieve = 5,
+  QT_Season = 10001
+}
 _enum("ClientQuestType", ClientQuestType)
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
 
-UIQuestController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._canShare = (self:GetModule(ShareModule)):CanShare()
+function UIQuestController:LoadDataOnEnter(TT, res, uiParams)
+  self._canShare = self:GetModule(ShareModule):CanShare()
   local questModule = self:GetModule(QuestModule)
   questModule:CalReqQuestDailyRefreshTime(TT)
   questModule:CalcRedPoint()
   self._showSeasonTab = false
-  self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  local seasonid = (self._seasonModule):GetCurSeasonID()
-  if seasonid and seasonid > 0 then
-    local className, prefabName = (UISeasonHelper.GetCurSeasonQuestContent)()
+  self._seasonModule = GameGlobal.GetModule(SeasonModule)
+  local seasonid = self._seasonModule:GetCurSeasonID()
+  if seasonid and 0 < seasonid then
+    local className, prefabName = UISeasonHelper.GetCurSeasonQuestContent()
     if className then
-      local resSeason = (self._seasonModule):ForceRequestCurSeasonData(TT)
+      local resSeason = self._seasonModule:ForceRequestCurSeasonData(TT)
       if resSeason:GetSucc() then
-        local component = (self._seasonModule):GetCurSeasonQuestComponent()
+        local component = self._seasonModule:GetCurSeasonQuestComponent()
         if component then
           local isOpen = component:ComponentIsOpen()
           if isOpen then
@@ -33,15 +34,10 @@ UIQuestController.LoadDataOnEnter = function(self, TT, res, uiParams)
       end
     end
   end
-  do
-    res:SetSucc(true)
-  end
+  res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV, ClientQuestType
+function UIQuestController:OnShow(uiParams)
   self._goTab = {}
   self._controllerTab = {}
   self._first = 1
@@ -56,7 +52,7 @@ UIQuestController.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.QuestAwardItemClick, self.QuestAwardItemClick)
   self:AttachEvent(GameEventType.QuestGotoRefresh, self.GotoRefresh)
   self:AttachEvent(GameEventType.SeasonQuestCloseCB, self.SeasonQuestCloseCB)
-  self._cfg_type = (Cfg.cfg_quest_main_type)({})
+  self._cfg_type = Cfg.cfg_quest_main_type({})
   self._type_open_state = {}
   self:_CheckQuestOpenState()
   self._currrentIndex = 1
@@ -64,409 +60,279 @@ UIQuestController.OnShow = function(self, uiParams)
   if uiParams[1] then
     self._currrentType = uiParams[1]
     local questModule = self:GetModule(QuestModule)
-    -- DECOMPILER ERROR at PC74: Unhandled construct in 'MakeBoolean' P1
-
-    if self._currrentType == ClientQuestType.QT_Growth and not questModule:IsGrowthVisible() and (table.count)(self._type_open_state) > 0 then
-      self._currrentType = ((self._type_open_state)[self._currrentIndex]).ClientType
-    end
-    self._params = uiParams[2]
-    for i = 1, (table.count)(self._type_open_state) do
-      if self._currrentType == ((self._type_open_state)[i]).ClientType then
-        self._currrentIndex = i
-        break
+    if self._currrentType == ClientQuestType.QT_Growth and not questModule:IsGrowthVisible() then
+      if table.count(self._type_open_state) > 0 then
+        self._currrentType = self._type_open_state[self._currrentIndex].ClientType
+      end
+    else
+      self._params = uiParams[2]
+      for i = 1, table.count(self._type_open_state) do
+        if self._currrentType == self._type_open_state[i].ClientType then
+          self._currrentIndex = i
+          break
+        end
       end
     end
-  else
-    do
-      if (table.count)(self._type_open_state) > 0 then
-        self._currrentType = ((self._type_open_state)[self._currrentIndex]).ClientType
-      end
-      self._rtTexGo = self:GetGameObject("RtTex")
-      local cachFunc = uiParams[3]
-      if cachFunc then
-        self.rectTex = cachFunc()
-      end
-      if self.rectTex == nil then
-        (self._rtTexGo):SetActive(false)
-      else
-        ;
-        (self._rtTexGo):SetActive(true)
-        local isRt = (UIWidgetHelper.SetRawImageTexture)(self, "RtTex", self.rectTex)
-      end
-      do
-        self:_OnValue()
-        self:StartTask(self._ShowLock, self)
-      end
-    end
+  elseif table.count(self._type_open_state) > 0 then
+    self._currrentType = self._type_open_state[self._currrentIndex].ClientType
   end
+  self._rtTexGo = self:GetGameObject("RtTex")
+  local cachFunc = uiParams[3]
+  if cachFunc then
+    self.rectTex = cachFunc()
+  end
+  if self.rectTex == nil then
+    self._rtTexGo:SetActive(false)
+  else
+    self._rtTexGo:SetActive(true)
+    local isRt = UIWidgetHelper.SetRawImageTexture(self, "RtTex", self.rectTex)
+  end
+  self:_OnValue()
+  self:StartTask(self._ShowLock, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController._ShowLock = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function UIQuestController:_ShowLock(TT)
   self:Lock("UIQuestController.Show")
   YIELD(TT, 500)
   self:UnLock("UIQuestController.Show")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIQuestController:OnHide()
   self:DetachEvent(GameEventType.ChangeQuestController, self.ChangeQuestController)
   self:DetachEvent(GameEventType.QuestUpdate, self.QuestUpdate)
   self:DetachEvent(GameEventType.QuestAwardItemClick, self.QuestAwardItemClick)
   self:UnLock("LoadSeasonQuestData")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.GotoRefresh = function(self)
-  -- function num : 0_4
+function UIQuestController:GotoRefresh()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.ChangeQuestController = function(self, uiParams)
-  -- function num : 0_5 , upvalues : _ENV
-  for i = 1, (table.count)(self._type_open_state) do
-    if uiParams == ((self._type_open_state)[i]).ClientType then
+function UIQuestController:ChangeQuestController(uiParams)
+  for i = 1, table.count(self._type_open_state) do
+    if uiParams == self._type_open_state[i].ClientType then
       self:_ItemClick(i, uiParams)
-      return 
+      return
     end
   end
-  ;
-  (Log.error)("jump error , target is not open !")
+  Log.error("jump error , target is not open !")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.QuestUpdate = function(self)
-  -- function num : 0_6
-  ((self._controllerTab)[self._currrentType]):RefrenshList()
+function UIQuestController:QuestUpdate()
+  self._controllerTab[self._currrentType]:RefrenshList()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.QuestAwardItemClick = function(self, matid, pos)
-  -- function num : 0_7
-  (self._selectInfo):SetData(matid, pos)
+function UIQuestController:QuestAwardItemClick(matid, pos)
+  self._selectInfo:SetData(matid, pos)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.SetBackBtnActive = function(self, active)
-  -- function num : 0_8
-  (self._backBtnsGo):SetActive(active)
+function UIQuestController:SetBackBtnActive(active)
+  self._backBtnsGo:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController._GetComponents = function(self)
-  -- function num : 0_9
+function UIQuestController:_GetComponents()
   self._detailPool = self:GetUIComponent("UISelectObjectPath", "detailPool")
   self._detailPoolGo = self:GetGameObject("detailPool")
   self._detailPoolGrid = self:GetUIComponent("GridLayoutGroup", "detailPool")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "Center")
   self._itemInfo = self:GetUIComponent("UISelectObjectPath", "itemInfo")
-  self._selectInfo = (self._itemInfo):SpawnObject("UISelectInfo")
+  self._selectInfo = self._itemInfo:SpawnObject("UISelectInfo")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtnsGo = self:GetGameObject("backBtns")
   self._backBtns = backBtns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_9_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-)
+  end)
   self._safeArea = self:GetUIComponent("RectTransform", "SafeArea")
-  self._canvas = ((self._safeArea).parent):GetComponent("RectTransform")
-  local safesize = ((self._canvas).rect).size
-  safesize.x = safesize.x * (((self._safeArea).anchorMax).x - ((self._safeArea).anchorMin).x)
+  self._canvas = self._safeArea.parent:GetComponent("RectTransform")
+  local safesize = self._canvas.rect.size
+  safesize.x = safesize.x * (self._safeArea.anchorMax.x - self._safeArea.anchorMin.x)
   safesize.x = safesize.x + 1
   safesize.y = safesize.y + 1
   self._cellSize = safesize
   self._pools = self:GetUIComponent("UISelectObjectPath", "pools")
   self:_InitTypeComponents()
   self._backGrabScreen = self:GetGameObject("backGrabScreen")
-  ;
-  (self._backGrabScreen):SetActive(true)
+  self._backGrabScreen:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController._InitTypeComponents = function(self)
-  -- function num : 0_10 , upvalues : ClientQuestType
+function UIQuestController:_InitTypeComponents()
   self._dailyTypeGrid = self:GetUIComponent("GridLayoutGroup", "dailyTypePool")
   self._dailyTypePool = self:GetUIComponent("UISelectObjectPath", "dailyTypePool")
-  self._dailyItem = (self._dailyTypePool):SpawnObject("UIQuestDailyItem")
+  self._dailyItem = self._dailyTypePool:SpawnObject("UIQuestDailyItem")
   self._dailyTypeGo = self:GetGameObject("dailyTypePool")
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._goTab)[ClientQuestType.QT_Daily] = self._dailyTypeGo
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._controllerTab)[ClientQuestType.QT_Daily] = self._dailyItem
+  self._goTab[ClientQuestType.QT_Daily] = self._dailyTypeGo
+  self._controllerTab[ClientQuestType.QT_Daily] = self._dailyItem
   self._storyTypeGrid = self:GetUIComponent("GridLayoutGroup", "dailyTypePool")
   self._storyTypePool = self:GetUIComponent("UISelectObjectPath", "storyTypePool")
-  self._storyItem = (self._storyTypePool):SpawnObject("UINewQuestStoryItem")
+  self._storyItem = self._storyTypePool:SpawnObject("UINewQuestStoryItem")
   self._storyTypeGo = self:GetGameObject("storyTypePool")
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._goTab)[ClientQuestType.QT_Main] = self._storyTypeGo
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._controllerTab)[ClientQuestType.QT_Main] = self._storyItem
+  self._goTab[ClientQuestType.QT_Main] = self._storyTypeGo
+  self._controllerTab[ClientQuestType.QT_Main] = self._storyItem
   self._sideTypeGrid = self:GetUIComponent("GridLayoutGroup", "dailyTypePool")
   self._sideTypePool = self:GetUIComponent("UISelectObjectPath", "sideTypePool")
-  self._sideItem = (self._sideTypePool):SpawnObject("UIQuestSideItem")
+  self._sideItem = self._sideTypePool:SpawnObject("UIQuestSideItem")
   self._sideTypeGo = self:GetGameObject("sideTypePool")
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._goTab)[ClientQuestType.QT_Branch] = self._sideTypeGo
-  -- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._controllerTab)[ClientQuestType.QT_Branch] = self._sideItem
+  self._goTab[ClientQuestType.QT_Branch] = self._sideTypeGo
+  self._controllerTab[ClientQuestType.QT_Branch] = self._sideItem
   self._growthTypeGrid = self:GetUIComponent("GridLayoutGroup", "dailyTypePool")
   self._growthTypePool = self:GetUIComponent("UISelectObjectPath", "growthTypePool")
-  self._growthItem = (self._growthTypePool):SpawnObject("UIQuestGrowthItem")
+  self._growthItem = self._growthTypePool:SpawnObject("UIQuestGrowthItem")
   self._growthTypeGo = self:GetGameObject("growthTypePool")
-  -- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._goTab)[ClientQuestType.QT_Growth] = self._growthTypeGo
-  -- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._controllerTab)[ClientQuestType.QT_Growth] = self._growthItem
+  self._goTab[ClientQuestType.QT_Growth] = self._growthTypeGo
+  self._controllerTab[ClientQuestType.QT_Growth] = self._growthItem
   self._achieveTypeGrid = self:GetUIComponent("GridLayoutGroup", "dailyTypePool")
   self._achieveTypePool = self:GetUIComponent("UISelectObjectPath", "achieveTypePool")
-  self._achieveItem = (self._achieveTypePool):SpawnObject("UIQuestAchievementItem")
+  self._achieveItem = self._achieveTypePool:SpawnObject("UIQuestAchievementItem")
   self._achieveTypeGo = self:GetGameObject("achieveTypePool")
-  -- DECOMPILER ERROR at PC130: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._goTab)[ClientQuestType.QT_Achieve] = self._achieveTypeGo
-  -- DECOMPILER ERROR at PC134: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._controllerTab)[ClientQuestType.QT_Achieve] = self._achieveItem
+  self._goTab[ClientQuestType.QT_Achieve] = self._achieveTypeGo
+  self._controllerTab[ClientQuestType.QT_Achieve] = self._achieveItem
   if self._showSeasonTab then
     self._seasonTypePool = self:GetUIComponent("UISelectObjectPath", "seasonTypePool")
-    self._seasonItem = (self._seasonTypePool):SpawnObject("UIQuestSeasonItem")
+    self._seasonItem = self._seasonTypePool:SpawnObject("UIQuestSeasonItem")
     self._seasonTypeGo = self:GetGameObject("seasonTypePool")
-    -- DECOMPILER ERROR at PC155: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._goTab)[ClientQuestType.QT_Season] = self._seasonTypeGo
-    -- DECOMPILER ERROR at PC159: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._controllerTab)[ClientQuestType.QT_Season] = self._seasonItem
+    self._goTab[ClientQuestType.QT_Season] = self._seasonTypeGo
+    self._controllerTab[ClientQuestType.QT_Season] = self._seasonItem
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController._CheckQuestOpenState = function(self)
-  -- function num : 0_11 , upvalues : _ENV, ClientQuestType
-  local module = (GameGlobal.GetModule)(QuestModule)
+function UIQuestController:_CheckQuestOpenState()
+  local module = GameGlobal.GetModule(QuestModule)
   if module == nil then
-    (Log.fatal)("[quest] error --> module is nil !")
-    return 
+    Log.fatal("[quest] error --> module is nil !")
+    return
   end
-  for i = 1, (table.count)(self._cfg_type) do
-    if ((self._cfg_type)[i]).ClientType == ClientQuestType.QT_Season and self._showSeasonTab then
-      (table.insert)(self._type_open_state, (self._cfg_type)[i])
-    end
-    -- DECOMPILER ERROR at PC57: Unhandled construct in 'MakeBoolean' P1
-
-    if module:CheckQuestTypeUnlock(((self._cfg_type)[i]).RealType) and ((self._cfg_type)[i]).RealType == QuestType.QT_Growth and module:IsGrowthVisible() then
-      (table.insert)(self._type_open_state, (self._cfg_type)[i])
-    end
-    if ((self._cfg_type)[i]).RealType == QuestType.QT_Branch then
-      local taskList = module:GetQuestByQuestType(((self._cfg_type)[i]).RealType)
-      local taskListT = {}
-      for i = 1, #taskList do
-        local quest = (taskList[i]):QuestInfo()
-        if quest.status ~= QuestStatus.QUEST_NotStart then
-          (table.insert)(taskListT, taskList[i])
-        end
+  for i = 1, table.count(self._cfg_type) do
+    if self._cfg_type[i].ClientType == ClientQuestType.QT_Season then
+      if self._showSeasonTab then
+        table.insert(self._type_open_state, self._cfg_type[i])
       end
-      if #taskListT > 0 then
-        (table.insert)(self._type_open_state, (self._cfg_type)[i])
-      end
-    else
-      do
-        do
-          ;
-          (table.insert)(self._type_open_state, (self._cfg_type)[i])
-          -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out IF_STMT
-
+    elseif module:CheckQuestTypeUnlock(self._cfg_type[i].RealType) then
+      if self._cfg_type[i].RealType == QuestType.QT_Growth then
+        if module:IsGrowthVisible() then
+          table.insert(self._type_open_state, self._cfg_type[i])
         end
+      elseif self._cfg_type[i].RealType == QuestType.QT_Branch then
+        local taskList = module:GetQuestByQuestType(self._cfg_type[i].RealType)
+        local taskListT = {}
+        for i = 1, #taskList do
+          local quest = taskList[i]:QuestInfo()
+          if quest.status ~= QuestStatus.QUEST_NotStart then
+            table.insert(taskListT, taskList[i])
+          end
+        end
+        if 0 < #taskListT then
+          table.insert(self._type_open_state, self._cfg_type[i])
+        end
+      else
+        table.insert(self._type_open_state, self._cfg_type[i])
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController._OnValue = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (self._pools):SpawnObjects("UIQuestTypeBtnItem", (table.count)(self._type_open_state))
-  self._type_btns = (self._pools):GetAllSpawnList()
-  for i = 1, (table.count)(self._type_open_state) do
-    ((self._type_btns)[i]):SetData(i, (self._type_open_state)[i], function(idx, type)
-    -- function num : 0_12_0 , upvalues : self
-    self:_ItemClick(idx, type)
-  end
-)
+function UIQuestController:_OnValue()
+  self._pools:SpawnObjects("UIQuestTypeBtnItem", table.count(self._type_open_state))
+  self._type_btns = self._pools:GetAllSpawnList()
+  for i = 1, table.count(self._type_open_state) do
+    self._type_btns[i]:SetData(i, self._type_open_state[i], function(idx, type)
+      self:_ItemClick(idx, type)
+    end)
   end
   self:_ShowInfo()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController._ItemClick = function(self, idx, type)
-  -- function num : 0_13 , upvalues : ClientQuestType, _ENV
+function UIQuestController:_ItemClick(idx, type)
   if idx == self._currrentIndex then
-    return 
+    return
   end
   if type == ClientQuestType.QT_Season then
     self:Lock("LoadSeasonQuestData")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.LoadSeasonQuestData, self, idx, type)
+    GameGlobal.TaskManager():StartTask(self.LoadSeasonQuestData, self, idx, type)
   else
     self:ShowClickInfo(idx, type)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.ShowClickInfo = function(self, idx, type)
-  -- function num : 0_14
+function UIQuestController:ShowClickInfo(idx, type)
   if self._currrentIndex ~= 0 then
-    ((self._type_btns)[self._currrentIndex]):Select(false)
+    self._type_btns[self._currrentIndex]:Select(false)
   end
-  ;
-  ((self._controllerTab)[self._currrentType]):OnClose()
+  self._controllerTab[self._currrentType]:OnClose()
   self._currrentIndex = idx
   self._currrentType = type
   self:_ShowInfo()
   self:_ShowShareBtn()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.LoadSeasonQuestData = function(self, TT, idx, type)
-  -- function num : 0_15 , upvalues : _ENV
+function UIQuestController:LoadSeasonQuestData(TT, idx, type)
   local succ = true
   self:UnLock("LoadSeasonQuestData")
   if succ then
     if not self._seasonModule then
-      self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
+      self._seasonModule = GameGlobal.GetModule(SeasonModule)
     end
-    local seasonid = (self._seasonModule):GetCurSeasonID()
-    local component = (self._seasonModule):GetCurSeasonQuestComponent()
+    local seasonid = self._seasonModule:GetCurSeasonID()
+    local component = self._seasonModule:GetCurSeasonQuestComponent()
     local isOpen = false
     if component then
       isOpen = component:ComponentIsOpen()
     end
-    if seasonid > 0 and isOpen then
-      (Log.debug)("###[UIQuestController] _ItemClick season type is open !")
+    if 0 < seasonid and isOpen then
+      Log.debug("###[UIQuestController] _ItemClick season type is open !")
     else
-      ;
-      (Log.debug)("###[UIQuestController] _ItemClick season type is close !")
+      Log.debug("###[UIQuestController] _ItemClick season type is close !")
       self:SeasonQuestCloseCB()
-      return 
+      return
     end
     self:ShowClickInfo(idx, type)
   else
-    do
-      local tips = (StringTable.Get)("str_activity_common_notice_content")
-      ;
-      (ToastManager.ShowToast)(tips)
-      self:SwitchState(UIStateType.UIMain)
-    end
+    local tips = StringTable.Get("str_activity_common_notice_content")
+    ToastManager.ShowToast(tips)
+    self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.SeasonQuestCloseCB = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local tips = (StringTable.Get)("str_activity_error_109")
-  ;
-  (ToastManager.ShowToast)(tips)
+function UIQuestController:SeasonQuestCloseCB()
+  local tips = StringTable.Get("str_activity_error_109")
+  ToastManager.ShowToast(tips)
   self._type_open_state = {}
   self._showSeasonTab = false
   self:_CheckQuestOpenState()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.ChangeCanvasGroup = function(self)
-  -- function num : 0_17
+function UIQuestController:ChangeCanvasGroup()
   self:Lock("UIQuestControllerChangeCanvasGroup")
-  ;
-  ((self._canvasGroup):DOFade(0, 0.082)):OnComplete(function()
-    -- function num : 0_17_0 , upvalues : self
-    ((self._canvasGroup):DOFade(1, 0.082)):OnComplete(function()
-      -- function num : 0_17_0_0 , upvalues : self
+  self._canvasGroup:DOFade(0, 0.082):OnComplete(function()
+    self._canvasGroup:DOFade(1, 0.082):OnComplete(function()
       self:UnLock("UIQuestControllerChangeCanvasGroup")
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController._ShowInfo = function(self)
-  -- function num : 0_18 , upvalues : ClientQuestType, _ENV
+function UIQuestController:_ShowInfo()
   if self._currrentIndex ~= 0 then
-    ((self._type_btns)[self._currrentIndex]):Select(true)
+    self._type_btns[self._currrentIndex]:Select(true)
     if self._currrentType == ClientQuestType.QT_Season then
-      (self:GetModule(QuestModule)):SetSeasonNew()
-      ;
-      ((self._type_btns)[self._currrentIndex]):CheckQuestRedPoint()
+      self:GetModule(QuestModule):SetSeasonNew()
+      self._type_btns[self._currrentIndex]:CheckQuestRedPoint()
     end
   end
   self:_ItemActiveAndHide()
-  local realType = ((self._type_open_state)[self._currrentIndex]).RealType
-  ;
-  ((self._controllerTab)[self._currrentType]):SetData(realType)
+  local realType = self._type_open_state[self._currrentIndex].RealType
+  self._controllerTab[self._currrentType]:SetData(realType)
   if realType == 3 then
-    (self._backGrabScreen):SetActive(false)
+    self._backGrabScreen:SetActive(false)
   else
-    ;
-    (self._backGrabScreen):SetActive(true)
+    self._backGrabScreen:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController._ItemActiveAndHide = function(self)
-  -- function num : 0_19
+function UIQuestController:_ItemActiveAndHide()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.GetQuestStoryListItem = function(self, index)
-  -- function num : 0_20
+function UIQuestController:GetQuestStoryListItem(index)
   if self._storyItem then
     return nil
   else
@@ -474,10 +340,7 @@ UIQuestController.GetQuestStoryListItem = function(self, index)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.GetQuestStoryScroll = function(self)
-  -- function num : 0_21
+function UIQuestController:GetQuestStoryScroll()
   if self._storyItem then
     return nil
   else
@@ -485,34 +348,25 @@ UIQuestController.GetQuestStoryScroll = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.GetQuestStoryDetailItemGet = function(self)
-  -- function num : 0_22
+function UIQuestController:GetQuestStoryDetailItemGet()
   if self._storyItem then
-    return (self._storyItem):GetGuideFirstItemBtn(true)
+    return self._storyItem:GetGuideFirstItemBtn(true)
   else
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.GetQuestStoryDetailItemGoto = function(self)
-  -- function num : 0_23
+function UIQuestController:GetQuestStoryDetailItemGoto()
   if self._storyItem then
-    return (self._storyItem):GetGuideFirstGoToBtn()
+    return self._storyItem:GetGuideFirstGoToBtn()
   else
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.GetQuestTypeBtn = function(self, questType)
-  -- function num : 0_24 , upvalues : _ENV
+function UIQuestController:GetQuestTypeBtn(questType)
   if self._type_btns then
-    for index,value in ipairs(self._type_btns) do
+    for index, value in ipairs(self._type_btns) do
       if value._type == questType then
         return value:GetGameObject("bg")
       end
@@ -523,13 +377,10 @@ UIQuestController.GetQuestTypeBtn = function(self, questType)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.GetQuestSideTypeGotoBtn = function(self, questId)
-  -- function num : 0_25 , upvalues : _ENV
+function UIQuestController:GetQuestSideTypeGotoBtn(questId)
   if self._sideItem then
-    for index,item in ipairs((self._sideItem)._items) do
-      if (item._data).quest_id == questId then
+    for index, item in ipairs(self._sideItem._items) do
+      if item._data.quest_id == questId then
         return item:GetGameObject("GoTo")
       end
     end
@@ -539,51 +390,33 @@ UIQuestController.GetQuestSideTypeGotoBtn = function(self, questId)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.GetQuestGrowthTypeLook = function(self)
-  -- function num : 0_26
+function UIQuestController:GetQuestGrowthTypeLook()
   if self._growthItem then
-    return (self._growthItem):GetGameObject("look")
+    return self._growthItem:GetGameObject("look")
   else
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController.GetQuestGrowthAward = function(self, index)
-  -- function num : 0_27
+function UIQuestController:GetQuestGrowthAward(index)
   if self._growthItem then
-    return (self._growthItem):GetAward(index)
+    return self._growthItem:GetAward(index)
   else
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-UIQuestController._ShowShareBtn = function(self)
-  -- function num : 0_28 , upvalues : ClientQuestType
-  local show = (self._currrentType == ClientQuestType.QT_Achieve and self._canShare)
+function UIQuestController:_ShowShareBtn()
+  local show = self._currrentType == ClientQuestType.QT_Achieve and self._canShare
   if show then
-    (self._backBtns):SetData(function()
-    -- function num : 0_28_0 , upvalues : self
-    self:CloseDialog()
-  end
-, nil, nil, nil, nil, true, function()
-    -- function num : 0_28_1 , upvalues : self
-    self:ShowDialog("UIQuestAchievementShare")
-  end
-)
+    self._backBtns:SetData(function()
+      self:CloseDialog()
+    end, nil, nil, nil, nil, true, function()
+      self:ShowDialog("UIQuestAchievementShare")
+    end)
   else
-    (self._backBtns):SetData(function()
-    -- function num : 0_28_2 , upvalues : self
-    self:CloseDialog()
+    self._backBtns:SetData(function()
+      self:CloseDialog()
+    end)
   end
-)
-  end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
-
-

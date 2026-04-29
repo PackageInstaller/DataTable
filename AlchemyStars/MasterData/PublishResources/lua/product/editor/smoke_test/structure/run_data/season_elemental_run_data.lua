@@ -1,41 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/season_elemental_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ElementalSeasonRunData", TestRobotElementalRunData)
 ElementalSeasonRunData = ElementalSeasonRunData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ElementalSeasonRunData.ParseLevelData = function(self, rawargs)
-  -- function num : 0_0 , upvalues : _ENV
-  local args = (string.split)(rawargs, ",")
+function ElementalSeasonRunData:ParseLevelData(rawargs)
+  local args = string.split(rawargs, ",")
   self._missionID = tonumber(args[1])
-  if not tonumber(args[2]) then
-    self._componentID = UISeasonID.S1
-    self._dailyProcess = tonumber(args[3]) or -1
-  end
+  self._componentID = tonumber(args[2]) or UISeasonID.S1
+  self._dailyProcess = tonumber(args[3]) or -1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalSeasonRunData.GetMissionID = function(self)
-  -- function num : 0_1
+function ElementalSeasonRunData:GetMissionID()
   return self._missionID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalSeasonRunData.GetComponentID = function(self)
-  -- function num : 0_2
+function ElementalSeasonRunData:GetComponentID()
   return self._componentID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalSeasonRunData.GetDailyProcess = function(self)
-  -- function num : 0_3
+function ElementalSeasonRunData:GetDailyProcess()
   return self._dailyProcess
 end
-
-

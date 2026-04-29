@@ -1,127 +1,79 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/homeland_pet_loader.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandPetLoader", Object)
 HomelandPetLoader = HomelandPetLoader
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetLoader.Init = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandPetLoader:Init()
   self._queue = HomelandQueue:New()
   self._pets = {}
-  self._clickReq = (ResourceManager:GetInstance()):SyncLoadAsset("AircraftPetSelectAnimRef.prefab", LoadType.GameObject)
-  self._clickAnimClip = (((self._clickReq).Obj):GetComponent(typeof(UnityEngine.Animation))).clip
+  self._clickReq = ResourceManager:GetInstance():SyncLoadAsset("AircraftPetSelectAnimRef.prefab", LoadType.GameObject)
+  self._clickAnimClip = self._clickReq.Obj:GetComponent(typeof(UnityEngine.Animation)).clip
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetLoader.SyncLoadePet = function(self, pet)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandPetLoader:SyncLoadePet(pet)
   local req = HomelandPetRequestSync:New(pet:TemplateID(), pet:PstID(), pet:PrefabName(), self._clickAnimClip)
   pet:Show(req, self._clickAnimClip)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetLoader.AsyncLoadPet = function(self, pet)
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandPetLoader:AsyncLoadPet(pet)
   local pstID = pet:PstID()
-  if (self._pets)[pstID] then
-    return 
+  if self._pets[pstID] then
+    return
   end
-  ;
-  (self._queue):Enqueue(HomelandPetRequestAsync:New(pet:TemplateID(), pstID, pet:PrefabName(), self._clickAnimClip))
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._pets)[pstID] = pet
+  self._queue:Enqueue(HomelandPetRequestAsync:New(pet:TemplateID(), pstID, pet:PrefabName(), self._clickAnimClip))
+  self._pets[pstID] = pet
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetLoader.SyncLoadePetSkinModle = function(self, pet)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandPetLoader:SyncLoadePetSkinModle(pet)
   local req = HomelandPetRequestSync:New(pet:TemplateID(), pet:PstID(), pet:PrefabName(), self._clickAnimClip)
   pet:ShowSkinModle(req, self._clickAnimClip)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetLoader.InterruptAsyncLoad = function(self, pet)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._queue):ForEach(function(r)
-    -- function num : 0_4_0 , upvalues : pet, _ENV
+function HomelandPetLoader:InterruptAsyncLoad(pet)
+  self._queue:ForEach(function(r)
     local req = r
     if req:PstID() == pet:PstID() then
       if req:State() == HomelandPetLoadState.Wait then
         req:Close()
-      else
-        if req:State() == HomelandPetLoadState.Loading then
-          req:Dispose()
-        end
+      elseif req:State() == HomelandPetLoadState.Loading then
+        req:Dispose()
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetLoader.Dispose = function(self)
-  -- function num : 0_5
-  (self._queue):ForEach(function(r)
-    -- function num : 0_5_0
+function HomelandPetLoader:Dispose()
+  self._queue:ForEach(function(r)
     local req = r
     req:Close()
-  end
-)
-  ;
-  (self._queue):Clear()
+  end)
+  self._queue:Clear()
   self._pets = nil
-  ;
-  (self._clickReq):Dispose()
+  self._clickReq:Dispose()
   self._clickReq = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetLoader.Update = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._queue):Count() <= 0 then
-    return 
+function HomelandPetLoader:Update()
+  if self._queue:Count() <= 0 then
+    return
   end
-  local req = (self._queue):Peek()
+  local req = self._queue:Peek()
   if req:State() == HomelandPetLoadState.Wait then
     req:Load()
-    return 
+    return
   end
   if req:State() == HomelandPetLoadState.Loading then
-    return 
+    return
   end
   if req:State() == HomelandPetLoadState.Finish then
     local pstid = req:PstID()
-    local pet = (self._pets)[pstid]
+    local pet = self._pets[pstid]
     pet:Show(req, self._clickAnimClip)
-    ;
-    (self._queue):Dequeue()
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._pets)[pstid] = nil
-    return 
+    self._queue:Dequeue()
+    self._pets[pstid] = nil
+    return
   end
-  do
-    if req:State() == HomelandPetLoadState.Closed then
-      (self._queue):Dequeue()
-      -- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._pets)[req:PstID()] = nil
-      return 
-    end
+  if req:State() == HomelandPetLoadState.Closed then
+    self._queue:Dequeue()
+    self._pets[req:PstID()] = nil
+    return
   end
 end
-
-

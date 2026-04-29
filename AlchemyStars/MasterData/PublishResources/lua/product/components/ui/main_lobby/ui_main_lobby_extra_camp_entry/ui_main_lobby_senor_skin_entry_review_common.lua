@@ -1,51 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_extra_camp_entry/ui_main_lobby_senor_skin_entry_review_common.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_main_lobby_extra_base")
 _class("UIMainLobbySeniorSkinEntryReviewCommon", UIMainLobbyExtraBase)
 UIMainLobbySeniorSkinEntryReviewCommon = UIMainLobbySeniorSkinEntryReviewCommon
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbySeniorSkinEntryReviewCommon.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._campModule = (GameGlobal.GetModule)(CampaignModule)
+function UIMainLobbySeniorSkinEntryReviewCommon:OnShow()
+  self._campModule = GameGlobal.GetModule(CampaignModule)
   self:AttachEvent(GameEventType.RefreshSeniorSkinRedPoint, self.RefreshSampleData)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbySeniorSkinEntryReviewCommon.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMainLobbySeniorSkinEntryReviewCommon:OnHide()
   self:DetachEvent(GameEventType.RefreshSeniorSkinRedPoint, self.RefreshSampleData)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbySeniorSkinEntryReviewCommon.RefreshView = function(self)
-  -- function num : 0_2
+function UIMainLobbySeniorSkinEntryReviewCommon:RefreshView()
   self:SetRed()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbySeniorSkinEntryReviewCommon.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIMainLobbySeniorSkinEntryReviewCommon:BtnOnClick(go)
   if self:CheckCampaignOpen() then
     self:ShowDialog("UIHauteCoutureDrawV2ReviewController")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbySeniorSkinEntryReviewCommon.SetRed = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMainLobbySeniorSkinEntryReviewCommon:SetRed()
   local redGo = self:GetGameObject("redGo")
-  if self._sample_info then
-    local red = (self._sample_info):GetStepStatus(ECampaignStep.CAMPAIGN_STEP_RAFFLE)
-  end
+  local red = self._sample_info and self._sample_info:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_RAFFLE)
   redGo:SetActive(red)
 end
-
-

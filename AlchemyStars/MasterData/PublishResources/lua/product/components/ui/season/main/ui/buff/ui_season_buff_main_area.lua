@@ -1,87 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/buff/ui_season_buff_main_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuffMainArea", UICustomWidget)
 UISeasonBuffMainArea = UISeasonBuffMainArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuffMainArea.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonBuffMainArea:OnShow(uiParams)
   self.levelText = self:GetUIComponent("UILocalizationText", "Lv")
   self.fullAreaGo = self:GetGameObject("FullArea")
-  ;
-  (self.fullAreaGo):SetActive(false)
+  self.fullAreaGo:SetActive(false)
   self.progressCellsRect = self:GetUIComponent("RectTransform", "ProgressCells")
   self.progressCellsGo = self:GetGameObject("ProgressCells")
-  ;
-  (self.progressCellsGo):SetActive(true)
+  self.progressCellsGo:SetActive(true)
   self.progressCellsGen = self:GetUIComponent("UISelectObjectPath", "ProgressCells")
   self.btnRect = self:GetUIComponent("RectTransform", "DetailBtn")
   self.bgRect = self:GetUIComponent("RectTransform", "Bg")
-  self._baseBgWidth = ((self.bgRect).sizeDelta).x
-  self._baseBtnWidthWidth = ((self.btnRect).sizeDelta).x
-  self._basePosX = ((self.btnRect).anchoredPosition).x
+  self._baseBgWidth = self.bgRect.sizeDelta.x
+  self._baseBtnWidthWidth = self.btnRect.sizeDelta.x
+  self._basePosX = self.btnRect.anchoredPosition.x
   self._progressAreaLayout = self:GetUIComponent("LayoutElement", "ProgressArea")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffMainArea.DetailBtnOnClick = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local uiMoudle = (GameGlobal.GetUIModule)(SeasonModule)
-  if (uiMoudle:SeasonManager()):LockUI() then
-    return 
+function UISeasonBuffMainArea:DetailBtnOnClick()
+  local uiMoudle = GameGlobal.GetUIModule(SeasonModule)
+  if uiMoudle:SeasonManager():LockUI() then
+    return
   end
-  ;
-  (((uiMoudle:SeasonManager()):SeasonPlayerManager()):GetPlayer()):Stop(false)
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UISeasonBuffMainInfo", self.componentID, self._curLevel, self._curProgress, self._isMaxLevel, self._curMaxProgress)
+  uiMoudle:SeasonManager():SeasonPlayerManager():GetPlayer():Stop(false)
+  GameGlobal.UIStateManager():ShowDialog("UISeasonBuffMainInfo", self.componentID, self._curLevel, self._curProgress, self._isMaxLevel, self._curMaxProgress)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffMainArea.SetData = function(self, obj)
-  -- function num : 0_2
+function UISeasonBuffMainArea:SetData(obj)
   self._seasonObj = obj
-  self._progressCells = (self.progressCellsGen):SpawnObject("UISeasonBuffProgressCells")
+  self._progressCells = self.progressCellsGen:SpawnObject("UISeasonBuffProgressCells")
   self:RefreshInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffMainArea.RefreshInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self.componentID = (self._seasonObj):GetSeasonMissionComponentCfgID()
-  local curLevel, curProgress, maxLevel, isMaxLevel, curMaxProgress = (UISeasonHelper.CalcBuffLevel)(self.componentID)
+function UISeasonBuffMainArea:RefreshInfo()
+  self.componentID = self._seasonObj:GetSeasonMissionComponentCfgID()
+  local curLevel, curProgress, maxLevel, isMaxLevel, curMaxProgress = UISeasonHelper.CalcBuffLevel(self.componentID)
   self._curLevel = curLevel
   self._curProgress = curProgress
   self._isMaxLevel = isMaxLevel
   self._curMaxProgress = curMaxProgress
-  ;
-  (self.levelText):SetText((StringTable.Get)("str_season_buff_level", tostring(curLevel)))
-  ;
-  (self.fullAreaGo):SetActive(isMaxLevel)
-  ;
-  (self.progressCellsGo):SetActive(not isMaxLevel)
+  self.levelText:SetText(StringTable.Get("str_season_buff_level", tostring(curLevel)))
+  self.fullAreaGo:SetActive(isMaxLevel)
+  self.progressCellsGo:SetActive(not isMaxLevel)
   if self._progressCells then
-    (self._progressCells):SetData(curProgress, curMaxProgress)
+    self._progressCells:SetData(curProgress, curMaxProgress)
   end
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R6 in 'UnsetPending'
-
   if isMaxLevel then
-    (self._progressAreaLayout).preferredWidth = 0
+    self._progressAreaLayout.preferredWidth = 0
   else
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.progressCellsRect).anchoredPosition = Vector2(-(self._curMaxProgress - 2) * 40 - 10, 0)
-    -- DECOMPILER ERROR at PC56: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._progressAreaLayout).preferredWidth = self._curMaxProgress * 40
+    self.progressCellsRect.anchoredPosition = Vector2(-(self._curMaxProgress - 2) * 40 - 10, 0)
+    self._progressAreaLayout.preferredWidth = self._curMaxProgress * 40
   end
 end
-
-

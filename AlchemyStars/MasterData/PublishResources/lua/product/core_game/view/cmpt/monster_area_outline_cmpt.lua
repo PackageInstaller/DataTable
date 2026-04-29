@@ -1,77 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/monster_area_outline_cmpt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MonsterAreaOutLineComponent", Object)
 MonsterAreaOutLineComponent = MonsterAreaOutLineComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterAreaOutLineComponent.Constructor = function(self)
-  -- function num : 0_0
+function MonsterAreaOutLineComponent:Constructor()
   self._renderEntityIDList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterAreaOutLineComponent.AddEntityID = function(self, entityID)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.insert)(self._renderEntityIDList, entityID)
+function MonsterAreaOutLineComponent:AddEntityID(entityID)
+  table.insert(self._renderEntityIDList, entityID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterAreaOutLineComponent.ClearEntityIDList = function(self)
-  -- function num : 0_2
+function MonsterAreaOutLineComponent:ClearEntityIDList()
   self._renderEntityIDList = {}
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterAreaOutLineComponent.GetEntityIDList = function(self)
-  -- function num : 0_3
+function MonsterAreaOutLineComponent:GetEntityIDList()
   return self._renderEntityIDList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.MonsterAreaOutLineComponent = function(self)
-  -- function num : 0_4
-  return self:GetComponent((self.WEComponentsEnum).MonsterAreaOutLineComponent)
+function Entity:MonsterAreaOutLineComponent()
+  return self:GetComponent(self.WEComponentsEnum.MonsterAreaOutLineComponent)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasMonsterAreaOutLineComponent = function(self)
-  -- function num : 0_5
-  return self:HasComponent((self.WEComponentsEnum).MonsterAreaOutLineComponent)
+function Entity:HasMonsterAreaOutLineComponent()
+  return self:HasComponent(self.WEComponentsEnum.MonsterAreaOutLineComponent)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddMonsterAreaOutLineComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MonsterAreaOutLineComponent
+function Entity:AddMonsterAreaOutLineComponent()
+  local index = self.WEComponentsEnum.MonsterAreaOutLineComponent
   local component = MonsterAreaOutLineComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceMonsterAreaOutLineComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MonsterAreaOutLineComponent
+function Entity:ReplaceMonsterAreaOutLineComponent()
+  local index = self.WEComponentsEnum.MonsterAreaOutLineComponent
   local component = MonsterAreaOutLineComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveMonsterAreaOutLineComponent = function(self)
-  -- function num : 0_8
+function Entity:RemoveMonsterAreaOutLineComponent()
   if self:HasMonsterAreaOutLineComponent() then
-    self:RemoveComponent((self.WEComponentsEnum).MonsterAreaOutLineComponent)
+    self:RemoveComponent(self.WEComponentsEnum.MonsterAreaOutLineComponent)
   end
 end
-
-

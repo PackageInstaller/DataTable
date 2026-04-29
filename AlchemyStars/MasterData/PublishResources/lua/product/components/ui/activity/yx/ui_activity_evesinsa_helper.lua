@@ -1,79 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/ui_activity_evesinsa_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityEveSinsaHelper", Object)
 UIActivityEveSinsaHelper = UIActivityEveSinsaHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityEveSinsaHelper.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityEveSinsaHelper:Constructor()
 end
 
-local EActivityEveSinsaTimePhase = {EPhase_Line = 1, EPhase_Tree = 2, EPhase_Shop = 3, EPhase_Over = 4}
+local EActivityEveSinsaTimePhase = {
+  EPhase_Line = 1,
+  EPhase_Tree = 2,
+  EPhase_Shop = 3,
+  EPhase_Over = 4
+}
 _enum("EActivityEveSinsaTimePhase", EActivityEveSinsaTimePhase)
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityEveSinsaHelper.CheckTimePhase = function(campaign)
-  -- function num : 0_1 , upvalues : _ENV, EActivityEveSinsaTimePhase
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local endTime = (UIActivityEveSinsaHelper.GetPhaseEndTime)(campaign, EActivityEveSinsaTimePhase.EPhase_Line)
+function UIActivityEveSinsaHelper.CheckTimePhase(campaign)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local endTime = UIActivityEveSinsaHelper.GetPhaseEndTime(campaign, EActivityEveSinsaTimePhase.EPhase_Line)
   local stamp = endTime - curTime
-  if stamp > 0 then
+  if 0 < stamp then
     return EActivityEveSinsaTimePhase.EPhase_Line
   end
-  endTime = (UIActivityEveSinsaHelper.GetPhaseEndTime)(campaign, EActivityEveSinsaTimePhase.EPhase_Tree)
+  endTime = UIActivityEveSinsaHelper.GetPhaseEndTime(campaign, EActivityEveSinsaTimePhase.EPhase_Tree)
   stamp = endTime - curTime
-  if stamp > 0 then
+  if 0 < stamp then
     return EActivityEveSinsaTimePhase.EPhase_Tree
   end
-  endTime = (UIActivityEveSinsaHelper.GetPhaseEndTime)(campaign, EActivityEveSinsaTimePhase.EPhase_Shop)
+  endTime = UIActivityEveSinsaHelper.GetPhaseEndTime(campaign, EActivityEveSinsaTimePhase.EPhase_Shop)
   stamp = endTime - curTime
-  if stamp > 0 then
+  if 0 < stamp then
     return EActivityEveSinsaTimePhase.EPhase_Shop
   end
   return EActivityEveSinsaTimePhase.EPhase_Over
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaHelper.GetPhaseEndTime = function(campaign, phase)
-  -- function num : 0_2 , upvalues : EActivityEveSinsaTimePhase, _ENV
+function UIActivityEveSinsaHelper.GetPhaseEndTime(campaign, phase)
   if phase == EActivityEveSinsaTimePhase.EPhase_Over then
-    (Log.error)("UIActivityEveSinsaHelper.GetPhaseEndTime phase = ", phase)
+    Log.error("UIActivityEveSinsaHelper.GetPhaseEndTime phase = ", phase)
     return 0
   end
-  local phase2id = {ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_TREE_MISSION, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_TREE_MISSION, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_EXCHANGE1}
+  local phase2id = {
+    ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_TREE_MISSION,
+    ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_TREE_MISSION,
+    ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_EXCHANGE1
+  }
   local id = phase2id[phase]
-  local phase2name = {"m_unlock_time", "m_close_time", "m_close_time"}
+  local phase2name = {
+    "m_unlock_time",
+    "m_close_time",
+    "m_close_time"
+  }
   local name = phase2name[phase]
   local componentInfo = campaign:GetComponentInfo(id)
   return componentInfo and componentInfo[name] or 0
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaHelper.GetPhaseBgUrl = function(campaign, phase)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg_campaign = (Cfg.cfg_campaign)({CampaignID = campaign._id})
+function UIActivityEveSinsaHelper.GetPhaseBgUrl(campaign, phase)
+  local cfg_campaign = Cfg.cfg_campaign({
+    CampaignID = campaign._id
+  })
   if cfg_campaign then
-    local url = (cfg_campaign[1]).BGImage
+    local url = cfg_campaign[1].BGImage
     return url[phase]
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaHelper.CheckSpecialMissionShow = function(campaign)
-  -- function num : 0_4 , upvalues : _ENV
-  if (UIActivityEveSinsaHelper.CheckSpecialMissionCanPlay)(campaign) then
+function UIActivityEveSinsaHelper.CheckSpecialMissionShow(campaign)
+  if UIActivityEveSinsaHelper.CheckSpecialMissionCanPlay(campaign) then
     return false
   end
   local cmptId = ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_LINE_MISSION
   local component = campaign:GetComponent(cmptId)
-  local missionId, needId = (UIActivityEveSinsaHelper.GetSpecialMission)(campaign)
+  local missionId, needId = UIActivityEveSinsaHelper.GetSpecialMission(campaign)
   local pre_mission_id = 5011013
   if component:IsPassCamMissionID(pre_mission_id) then
     return true, missionId
@@ -81,28 +78,22 @@ UIActivityEveSinsaHelper.CheckSpecialMissionShow = function(campaign)
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaHelper.CheckSpecialMissionCanPlay = function(campaign)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityEveSinsaHelper.CheckSpecialMissionCanPlay(campaign)
   local cmptId = ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_TREE_MISSION
   local component = campaign:GetComponent(cmptId)
-  local missionId, needId = (UIActivityEveSinsaHelper.GetSpecialMission)(campaign)
+  local missionId, needId = UIActivityEveSinsaHelper.GetSpecialMission(campaign)
   if missionId and component:IsPassCamMissionID(needId) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaHelper.GetSpecialMission = function(campaign)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityEveSinsaHelper.GetSpecialMission(campaign)
   local cmptId = ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_LINE_MISSION
   local component = campaign:GetComponent(cmptId)
   local componentCfgId = component:GetComponentCfgId()
-  local lineCfg = (UIActivityEveSinsaHelper.MakeLineConfig)(componentCfgId)
-  for k,v in pairs(lineCfg) do
+  local lineCfg = UIActivityEveSinsaHelper.MakeLineConfig(componentCfgId)
+  for k, v in pairs(lineCfg) do
     local otherComponentId = v.NeedMissionComponentID
     if otherComponentId and otherComponentId ~= 0 and v.WayPointType == WayPointType.WayPointType_S then
       return k, v.NeedMissionId
@@ -110,16 +101,11 @@ UIActivityEveSinsaHelper.GetSpecialMission = function(campaign)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaHelper.MakeLineConfig = function(componentId)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityEveSinsaHelper.MakeLineConfig(componentId)
   local newConfig = {}
-  local config = (Cfg.cfg_component_line_mission)({ComponentID = componentId})
-  for _,v in ipairs(config) do
+  local config = Cfg.cfg_component_line_mission({ComponentID = componentId})
+  for _, v in ipairs(config) do
     newConfig[v.CampaignMissionId] = v
   end
   return newConfig
 end
-
-

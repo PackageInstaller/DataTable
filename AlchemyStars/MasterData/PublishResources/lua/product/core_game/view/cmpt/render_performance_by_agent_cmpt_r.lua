@@ -1,75 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/render_performance_by_agent_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RenderPerformanceByAgentComponent", Object)
 RenderPerformanceByAgentComponent = RenderPerformanceByAgentComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderPerformanceByAgentComponent.Constructor = function(self, agentEntityID)
-  -- function num : 0_0
+function RenderPerformanceByAgentComponent:Constructor(agentEntityID)
   self._agentEntityID = agentEntityID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderPerformanceByAgentComponent.GetAgentEntityID = function(self)
-  -- function num : 0_1
+function RenderPerformanceByAgentComponent:GetAgentEntityID()
   return self._agentEntityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderPerformanceByAgentComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_2
+function RenderPerformanceByAgentComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderPerformanceByAgentComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_3
+function RenderPerformanceByAgentComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RenderPerformanceByAgent = function(self)
-  -- function num : 0_4
-  return self:GetComponent((self.WEComponentsEnum).RenderPerformanceByAgent)
+function Entity:RenderPerformanceByAgent()
+  return self:GetComponent(self.WEComponentsEnum.RenderPerformanceByAgent)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasRenderPerformanceByAgent = function(self)
-  -- function num : 0_5
-  return self:HasComponent((self.WEComponentsEnum).RenderPerformanceByAgent)
+function Entity:HasRenderPerformanceByAgent()
+  return self:HasComponent(self.WEComponentsEnum.RenderPerformanceByAgent)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddRenderPerformanceByAgent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderPerformanceByAgent
+function Entity:AddRenderPerformanceByAgent()
+  local index = self.WEComponentsEnum.RenderPerformanceByAgent
   local component = RenderPerformanceByAgentComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRenderPerformanceByAgent = function(self, agentEntityID)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderPerformanceByAgent
+function Entity:ReplaceRenderPerformanceByAgent(agentEntityID)
+  local index = self.WEComponentsEnum.RenderPerformanceByAgent
   local component = RenderPerformanceByAgentComponent:New(agentEntityID)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveRenderPerformanceByAgent = function(self)
-  -- function num : 0_8
+function Entity:RemoveRenderPerformanceByAgent()
   if self:HasRenderPerformanceByAgent() then
-    self:RemoveComponent((self.WEComponentsEnum).RenderPerformanceByAgent)
+    self:RemoveComponent(self.WEComponentsEnum.RenderPerformanceByAgent)
   end
 end
-
-

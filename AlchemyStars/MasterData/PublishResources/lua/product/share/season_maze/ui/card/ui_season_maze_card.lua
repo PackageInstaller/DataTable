@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/card/ui_season_maze_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeCard", UICustomWidget)
 UISeasonMazeCard = UISeasonMazeCard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeCard.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeCard:OnShow(uiParams)
   self._playType = SeasonMazeCardPlayType.None
   self._p0 = Vector3.zero
   self._p1 = Vector3.zero
@@ -17,7 +10,7 @@ UISeasonMazeCard.OnShow = function(self, uiParams)
   self._p1Y = 0.5
   self._time = 0
   self._speed = 3
-  self._camera = ((GameGlobal.UIStateManager)()):GetControllerCamera((self.uiOwner):GetName())
+  self._camera = GameGlobal.UIStateManager():GetControllerCamera(self.uiOwner:GetName())
   self:_InitWidget()
   self:AttachEvent(GameEventType.OnSeasonMazeCardSettle, self._OnCardSettle)
   self:AttachEvent(GameEventType.OnSeasonMazeItemUseEnd, self._OnItemUseEnd)
@@ -26,18 +19,12 @@ UISeasonMazeCard.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.ApplicationFocus, self.OnApplicationFocus)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard.OnHide = function(self)
-  -- function num : 0_1
+function UISeasonMazeCard:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._gameObject = (self.view):GetGameObject()
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+function UISeasonMazeCard:_InitWidget()
+  self._gameObject = self.view:GetGameObject()
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self._cards = self:GetUIComponent("UISelectObjectPath", "Cards")
   self._beadBtn = self:GetGameObject("BeadBtn")
   self._bagBtn = self:GetGameObject("BagBtn")
@@ -46,486 +33,336 @@ UISeasonMazeCard._InitWidget = function(self)
   self._redCountValue = self:GetUIComponent("UILocalizationText", "CountValue")
   self._template = self:GetUIComponent("UISelectObjectPath", "Template")
   self._templateGO = self:GetGameObject("Template")
-  self._templateTransform = (self._templateGO).transform
-  self._templateWidget = (self._template):SpawnObject("UISeasonMazeCardItem")
+  self._templateTransform = self._templateGO.transform
+  self._templateWidget = self._template:SpawnObject("UISeasonMazeCardItem")
   self._cardsGO = self:GetGameObject("Cards")
   self._black = self:GetGameObject("Black")
-  self._animation = (self._gameObject):GetComponent(typeof(UnityEngine.Animation))
+  self._animation = self._gameObject:GetComponent(typeof(UnityEngine.Animation))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard.SetData = function(self, ids, closeAnim)
-  -- function num : 0_3
+function UISeasonMazeCard:SetData(ids, closeAnim)
   if ids then
-    (self._gameObject):SetActive(true)
+    self._gameObject:SetActive(true)
     self._ids = ids
     self._curIndex = 0
-    ;
-    (self._templateGO):SetActive(false)
+    self._templateGO:SetActive(false)
     self:_OnValue()
+  elseif closeAnim then
+    self:_OnClose()
   else
-    if closeAnim then
-      self:_OnClose()
-    else
-      if self._allWidgets then
-        (self._cards):ClearWidgets()
-        self._allWidgets = nil
-      end
-      ;
-      (self._gameObject):SetActive(false)
+    if self._allWidgets then
+      self._cards:ClearWidgets()
+      self._allWidgets = nil
     end
+    self._gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard.OnUpdate = function(self, dtMS)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeCard:OnUpdate(dtMS)
   if self._playing then
     if self._playType == SeasonMazeCardPlayType.Button then
       self._time = self._time + dtMS * 0.001 * self._speed
-      local bezierP = (BezierTool.BezierCurve2)(self._p0, self._p1, self._p2, self._time)
-      local position = Vector3(bezierP.x, bezierP.y, ((self._templateTransform).position).z)
-      if (self._p2).y <= position.y then
-        position.x = (self._p2).x
-        position.y = (self._p2).y
-        -- DECOMPILER ERROR at PC40: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._templateTransform).position = position
+      local bezierP = BezierTool.BezierCurve2(self._p0, self._p1, self._p2, self._time)
+      local position = Vector3(bezierP.x, bezierP.y, self._templateTransform.position.z)
+      if position.y >= self._p2.y then
+        position.x = self._p2.x
+        position.y = self._p2.y
+        self._templateTransform.position = position
         self._playing = false
         self._playType = SeasonMazeCardPlayType.None
       else
-        -- DECOMPILER ERROR at PC47: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._templateTransform).position = position
+        self._templateTransform.position = position
       end
-    else
-    end
-  end
-  do
-    if self._playType == SeasonMazeCardPlayType.Drag then
+    elseif self._playType == SeasonMazeCardPlayType.Drag then
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._CalcBezierP = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local curWidget = (self._allWidgets)[self._curIndex]
+function UISeasonMazeCard:_CalcBezierP()
+  local curWidget = self._allWidgets[self._curIndex]
   if curWidget then
     self._p0 = curWidget:Position()
     self._p1 = self:_CalcBezierP1(curWidget)
-    self._p2 = (self._camera):ScreenToWorldPoint(Vector3((UnityEngine.Screen).width * 0.5, (UnityEngine.Screen).height * 0.65, 0))
+    self._p2 = self._camera:ScreenToWorldPoint(Vector3(UnityEngine.Screen.width * 0.5, UnityEngine.Screen.height * 0.65, 0))
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._CalcBezierP1 = function(self, widget)
-  -- function num : 0_6 , upvalues : _ENV
-  local y = (UnityEngine.Screen).height * self._p1Y
-  local x = (UnityEngine.Screen).width * 0.5
+function UISeasonMazeCard:_CalcBezierP1(widget)
+  local y = UnityEngine.Screen.height * self._p1Y
+  local x = UnityEngine.Screen.width * 0.5
   local screenPosition = Vector3(x, y, 0)
   if self._count % 2 == 0 then
     local midIndex = self._count / 2
-    if self._curIndex <= midIndex then
-      screenPosition = Vector3((widget:LocalPosition()).x + 2 * self._offsetX + x, y, 0)
+    if midIndex >= self._curIndex then
+      screenPosition = Vector3(widget:LocalPosition().x + 2 * self._offsetX + x, y, 0)
     else
-      screenPosition = Vector3((widget:LocalPosition()).x - 2 * self._offsetX + x, y, 0)
+      screenPosition = Vector3(widget:LocalPosition().x - 2 * self._offsetX + x, y, 0)
     end
   else
-    do
-      do
-        local midIndex = (math.floor)(self._count / 2) + 1
-        if self._curIndex < midIndex then
-          screenPosition = Vector3((widget:LocalPosition()).x + 2 * self._offsetX + x, y, 0)
-        else
-          if midIndex < self._curIndex then
-            screenPosition = Vector3((widget:LocalPosition()).x - 2 * self._offsetX + x, y, 0)
-          end
-        end
-        return (self._camera):ScreenToWorldPoint(screenPosition)
-      end
+    local midIndex = math.floor(self._count / 2) + 1
+    if midIndex > self._curIndex then
+      screenPosition = Vector3(widget:LocalPosition().x + 2 * self._offsetX + x, y, 0)
+    elseif midIndex < self._curIndex then
+      screenPosition = Vector3(widget:LocalPosition().x - 2 * self._offsetX + x, y, 0)
     end
   end
+  return self._camera:ScreenToWorldPoint(screenPosition)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._OnValue = function(self)
-  -- function num : 0_7
+function UISeasonMazeCard:_OnValue()
   self._count = #self._ids
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._OnClose = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonMazeCard:_OnClose()
   self:Lock("UISeasonMazeCardOnClose")
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
-    (self._animation):Play("uieff_UISeasonMazeCard_out")
+    self._animation:Play("uieff_UISeasonMazeCard_out")
     YIELD(TT, 500)
     if self._allWidgets then
-      (self._cards):ClearWidgets()
+      self._cards:ClearWidgets()
       self._allWidgets = nil
     end
-    ;
-    (self._gameObject):SetActive(false)
+    self._gameObject:SetActive(false)
     self:UnLock("UISeasonMazeCardOnClose")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._Refresh = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonMazeCard:_Refresh()
   self:Lock("UISeasonMazeCardRefresh")
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
-    (self._cardsGO):SetActive(true)
-    ;
-    (self._black):SetActive(true)
+    self._cardsGO:SetActive(true)
+    self._black:SetActive(true)
     self:_RefreshNew()
     if not self._allWidgets then
-      (self._cards):SpawnObjects("UISeasonMazeCardItem", self._count)
+      self._cards:SpawnObjects("UISeasonMazeCardItem", self._count)
     end
-    ;
-    (self._animation):Play("uieff_UISeasonMazeCard_in")
+    self._animation:Play("uieff_UISeasonMazeCard_in")
     YIELD(TT)
-    self._allWidgets = (self._cards):GetAllSpawnList()
+    self._allWidgets = self._cards:GetAllSpawnList()
     for i = 1, self._count do
-      ((self._allWidgets)[i]):SetData(i, (self._ids)[i], function(index)
-      -- function num : 0_9_0_0 , upvalues : self
-      self:_OnClickCard(index)
-    end
-, function()
-      -- function num : 0_9_0_1 , upvalues : self, _ENV
-      self:PlayCard(SeasonMazeCardPlayType.Button)
-    end
-, true, self, true)
+      self._allWidgets[i]:SetData(i, self._ids[i], function(index)
+        self:_OnClickCard(index)
+      end, function()
+        self:PlayCard(SeasonMazeCardPlayType.Button)
+      end, true, self, true)
     end
     YIELD(TT, 433)
     self:UnLock("UISeasonMazeCardRefresh")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._OnClickCard = function(self, index)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonMazeCard:_OnClickCard(index)
   if self._curIndex == index then
     self._curIndex = 0
-    for _,value in ipairs(self._allWidgets) do
+    for _, value in ipairs(self._allWidgets) do
       value:ReSet()
     end
   else
-    do
-      self._curIndex = index
-      for _,value in ipairs(self._allWidgets) do
-        value:SetOffect(index)
-      end
-      do
-        self:PreView((self._ids)[self._curIndex])
-      end
+    self._curIndex = index
+    for _, value in ipairs(self._allWidgets) do
+      value:SetOffect(index)
     end
   end
+  self:PreView(self._ids[self._curIndex])
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard.ReSet = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonMazeCard:ReSet()
   if self._allWidgets then
     self._curIndex = 0
-    self:PreView((self._ids)[self._curIndex])
-    for _,value in ipairs(self._allWidgets) do
+    self:PreView(self._ids[self._curIndex])
+    for _, value in ipairs(self._allWidgets) do
       value:ReSet()
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard.PlayCard = function(self, playType)
-  -- function num : 0_12 , upvalues : _ENV
+function UISeasonMazeCard:PlayCard(playType)
   self._playType = playType
   self:Lock("UISeasonMazeCardPlayCard")
   self._playTask = self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, _ENV
-    local id = (self._ids)[self._curIndex]
+    local id = self._ids[self._curIndex]
     if id then
       if self._playType == SeasonMazeCardPlayType.Button then
-        local cardWidget = (self._allWidgets)[self._curIndex]
+        local cardWidget = self._allWidgets[self._curIndex]
         cardWidget:PlayBtnAnimation()
         YIELD(TT, 333)
         if not self.view then
           self:UnLock("UISeasonMazeCardPlayCard")
-          return 
+          return
         end
         cardWidget:RootAlpha(0)
-        ;
-        (self._templateGO):SetActive(true)
-        ;
-        (self._templateWidget):RootAlpha(1)
-        ;
-        (self._templateWidget):QualityAlpha(1)
-        ;
-        (self._templateWidget):SetData(self._curIndex, id, function()
-      -- function num : 0_12_0_0
-    end
-, nil, false, nil, true)
-        ;
-        (self._templateWidget):Mark(true)
-        -- DECOMPILER ERROR at PC59: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._templateTransform).position = cardWidget:Position()
+        self._templateGO:SetActive(true)
+        self._templateWidget:RootAlpha(1)
+        self._templateWidget:QualityAlpha(1)
+        self._templateWidget:SetData(self._curIndex, id, function()
+        end, nil, false, nil, true)
+        self._templateWidget:Mark(true)
+        self._templateTransform.position = cardWidget:Position()
         self._playing = true
         self._time = 0
         self:_CalcBezierP()
-        ;
-        (self._templateWidget):PlayAnim("uieff_UISeasonMazeCardItem_play")
+        self._templateWidget:PlayAnim("uieff_UISeasonMazeCardItem_play")
         YIELD(TT, 300)
         if not self.view then
           self:UnLock("UISeasonMazeCardPlayCard")
-          return 
+          return
         end
         self:_TweenAnchorPosition(self._curIndex)
-        ;
-        (self._templateWidget):PlayAnim("uieff_UISeasonMazeCardItem_play_out")
+        self._templateWidget:PlayAnim("uieff_UISeasonMazeCardItem_play_out")
         YIELD(TT, 60)
         if not self.view then
           self:UnLock("UISeasonMazeCardPlayCard")
-          return 
+          return
         end
-        ;
-        (SMazeAdaptor.PlayCard)(id)
+        SMazeAdaptor.PlayCard(id)
         self:_CloseRaycast()
         YIELD(TT, 1173)
         if not self.view then
           self:UnLock("UISeasonMazeCardPlayCard")
-          return 
+          return
         end
-      else
-        do
-          if self._playType == SeasonMazeCardPlayType.Drag then
-            (self._templateWidget):Mark(true)
-            ;
-            (self._templateWidget):QualityAlpha(1)
-            ;
-            (self._templateWidget):PlayAnim("uieff_UISeasonMazeCardItem_play02_out")
-            self:_TweenAnchorPosition(self._curIndex)
-            YIELD(TT, 60)
-            if not self.view then
-              self:UnLock("UISeasonMazeCardPlayCard")
-              return 
-            end
-            ;
-            (SMazeAdaptor.PlayCard)(id)
-            self:_CloseRaycast()
-            YIELD(TT, 1173)
-            if not self.view then
-              self:UnLock("UISeasonMazeCardPlayCard")
-              return 
-            end
-          end
-          ;
-          (self._templateGO):SetActive(false)
+      elseif self._playType == SeasonMazeCardPlayType.Drag then
+        self._templateWidget:Mark(true)
+        self._templateWidget:QualityAlpha(1)
+        self._templateWidget:PlayAnim("uieff_UISeasonMazeCardItem_play02_out")
+        self:_TweenAnchorPosition(self._curIndex)
+        YIELD(TT, 60)
+        if not self.view then
           self:UnLock("UISeasonMazeCardPlayCard")
+          return
+        end
+        SMazeAdaptor.PlayCard(id)
+        self:_CloseRaycast()
+        YIELD(TT, 1173)
+        if not self.view then
+          self:UnLock("UISeasonMazeCardPlayCard")
+          return
         end
       end
+      self._templateGO:SetActive(false)
     end
-  end
-, self)
+    self:UnLock("UISeasonMazeCardPlayCard")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._CloseRaycast = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonMazeCard:_CloseRaycast()
   if self._allWidgets then
-    for _,widget in ipairs(self._allWidgets) do
+    for _, widget in ipairs(self._allWidgets) do
       widget:EnableRaycast(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._TweenAnchorPosition = function(self, index)
-  -- function num : 0_14 , upvalues : _ENV
+function UISeasonMazeCard:_TweenAnchorPosition(index)
   if self._allWidgets then
-    for _index,widget in ipairs(self._allWidgets) do
+    for _index, widget in ipairs(self._allWidgets) do
       local rectTransform = widget:RectTransform()
       if _index < index then
-        self._tweener = rectTransform:DOAnchorPosX((rectTransform.anchoredPosition).x + 182.05, 0.3)
-      else
-        if index < _index then
-          self._tweener = rectTransform:DOAnchorPosX((rectTransform.anchoredPosition).x - 182.05, 0.3)
-        end
+        self._tweener = rectTransform:DOAnchorPosX(rectTransform.anchoredPosition.x + 182.05, 0.3)
+      elseif index < _index then
+        self._tweener = rectTransform:DOAnchorPosX(rectTransform.anchoredPosition.x - 182.05, 0.3)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard.BeadBtnOnClick = function(self, go)
-  -- function num : 0_15
+function UISeasonMazeCard:BeadBtnOnClick(go)
   self:ShowDialog("UISeasonMazeBead")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard.BagBtnOnClick = function(self, go)
-  -- function num : 0_16
+function UISeasonMazeCard:BagBtnOnClick(go)
   self:ShowDialog("UISeasonMazeBackPackController", 1)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._OnCardSettle = function(self, card)
-  -- function num : 0_17
-  local cardWidget = (self._allWidgets)[self._curIndex]
+function UISeasonMazeCard:_OnCardSettle(card)
+  local cardWidget = self._allWidgets[self._curIndex]
   if cardWidget then
     cardWidget:OnPlayCard(card:ActPoint(), card:ResValue())
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard.PreView = function(self, id)
-  -- function num : 0_18 , upvalues : _ENV
-  (SMazeAdaptor.OnChooseCard)(id, id ~= nil)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UISeasonMazeCard:PreView(id)
+  SMazeAdaptor.OnChooseCard(id, id ~= nil)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._OnItemUseEnd = function(self, propType)
-  -- function num : 0_19 , upvalues : _ENV
+function UISeasonMazeCard:_OnItemUseEnd(propType)
   if propType then
     if propType == SeasonMazeEffectType.SMET_Once_Shoe then
       self:_PlayAnimation(propType)
-    else
-      if propType == SeasonMazeEffectType.SMET_Once_Sprint then
-        self:_PlayAnimation(propType)
-      else
-        if propType == SeasonMazeEffectType.SMET_Once_Retrun then
-          self:SetData(nil, true)
-        else
-        end
-      end
+    elseif propType == SeasonMazeEffectType.SMET_Once_Sprint then
+      self:_PlayAnimation(propType)
+    elseif propType == SeasonMazeEffectType.SMET_Once_Retrun then
+      self:SetData(nil, true)
+    elseif propType == SeasonMazeEffectType.SMET_Once_Bomb then
     end
-  end
-  if propType == SeasonMazeEffectType.SMET_Once_Bomb then
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._RefreshNew = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UISeasonMazeCard:_RefreshNew()
   local count = 0
   self._isUnlock = false
-  local seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
+  local seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
   local seasonMazeObj = seasonMazeModule:CurSeasonObj()
   if seasonMazeObj then
     local componentInfo = seasonMazeObj:GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
     if componentInfo then
       if componentInfo.m_auto_bead_map then
-        for _,value in pairs(componentInfo.m_auto_bead_map) do
+        for _, value in pairs(componentInfo.m_auto_bead_map) do
           local data = value
-          if data and (data.bead_info).b_new then
+          if data and data.bead_info.b_new then
             count = count + 1
           end
         end
       end
-      do
-        local cfgs = (Cfg.cfg_component_season_maze)({Hard = componentInfo.hard})
-        if (cfgs[1]).BeadSlotCnt <= 0 then
-          do
-            self._isUnlock = not cfgs or not cfgs[1]
-            if count ~= 1 then
-              (self._red):SetActive(not self._isUnlock)
-              ;
-              (self._redCount):SetActive(count > 1)
-              ;
-              (self._redCountValue):SetText(tostring(count))
-              self:_CheckGuide()
-              ;
-              (self._beadBtn):SetActive(self._isUnlock)
-              -- DECOMPILER ERROR: 5 unprocessed JMP targets
-            end
-          end
-        end
+      local cfgs = Cfg.cfg_component_season_maze({
+        Hard = componentInfo.hard
+      })
+      if cfgs and cfgs[1] then
+        self._isUnlock = 0 < cfgs[1].BeadSlotCnt
       end
     end
   end
+  if self._isUnlock then
+    self._red:SetActive(count == 1)
+    self._redCount:SetActive(1 < count)
+    self._redCountValue:SetText(tostring(count))
+    self:_CheckGuide()
+  end
+  self._beadBtn:SetActive(self._isUnlock)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard.OnBeginDrag = function(self, eventData, card)
-  -- function num : 0_21
+function UISeasonMazeCard:OnBeginDrag(eventData, card)
   if self._idDraging then
-    return 
+    return
   end
   self._idDraging = true
   self._curDragCard = card
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._templateTransform).position = card:Position()
-  ;
-  (self._templateWidget):SetData(card:Index(), card:ID(), function()
-    -- function num : 0_21_0
-  end
-, nil, false, nil, true)
-  ;
-  (self._templateWidget):RootAlpha(1)
-  ;
-  (self._templateWidget):QualityAlpha(1)
-  ;
-  (self._templateWidget):Mark(true)
+  self._templateTransform.position = card:Position()
+  self._templateWidget:SetData(card:Index(), card:ID(), function()
+  end, nil, false, nil, true)
+  self._templateWidget:RootAlpha(1)
+  self._templateWidget:QualityAlpha(1)
+  self._templateWidget:Mark(true)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard.OnDrag = function(self, eventData)
-  -- function num : 0_22 , upvalues : _ENV
+function UISeasonMazeCard:OnDrag(eventData)
   if self._idDraging and self._curDragCard then
-    if not (self._templateGO).activeSelf then
-      (self._templateGO):SetActive(true)
-      ;
-      (self._templateWidget):PlayAnim("uieff_UISeasonMazeCardItem_play02_in")
-      ;
-      (self._curDragCard):RootAlpha(0)
+    if not self._templateGO.activeSelf then
+      self._templateGO:SetActive(true)
+      self._templateWidget:PlayAnim("uieff_UISeasonMazeCardItem_play02_in")
+      self._curDragCard:RootAlpha(0)
     end
-    local position = self:ScreenPointToLocalPointInRectangle((self._gameObject).transform, eventData)
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._templateTransform).localPosition = Vector3(position.x, position.y, 0)
+    local position = self:ScreenPointToLocalPointInRectangle(self._gameObject.transform, eventData)
+    self._templateTransform.localPosition = Vector3(position.x, position.y, 0)
     self._dragSucc = self:_OnDragCheck()
-    if self._dragSucc and self._curIndex ~= (self._curDragCard):Index() then
-      self:_OnClickCard((self._curDragCard):Index())
+    if self._dragSucc and self._curIndex ~= self._curDragCard:Index() then
+      self:_OnClickCard(self._curDragCard:Index())
     end
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard.OnDragEnd = function(self, eventData)
-  -- function num : 0_23
+function UISeasonMazeCard:OnDragEnd(eventData)
   if self._curDragCard then
     if self._dragSucc then
       self:_OnDragSucc()
@@ -536,177 +373,122 @@ UISeasonMazeCard.OnDragEnd = function(self, eventData)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._OnDragCheck = function(self)
-  -- function num : 0_24
-  do return ((self._templateTransform).anchoredPosition).y > 300 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UISeasonMazeCard:_OnDragCheck()
+  return self._templateTransform.anchoredPosition.y > 300
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard.OnReleased = function(self)
-  -- function num : 0_25
+function UISeasonMazeCard:OnReleased()
   self._idDraging = false
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._OnDragSucc = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UISeasonMazeCard:_OnDragSucc()
   self:PlayCard(SeasonMazeCardPlayType.Drag)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._OnDragFail = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UISeasonMazeCard:_OnDragFail()
   self:ReSet()
-  ;
-  (self._templateGO):SetActive(false)
+  self._templateGO:SetActive(false)
   self._playType = SeasonMazeCardPlayType.None
   if self._playTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._playTask)
+    GameGlobal.TaskManager():KillTask(self._playTask)
     self._playTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard.ScreenPointToLocalPointInRectangle = function(self, rect, eventData)
-  -- function num : 0_28 , upvalues : _ENV
-  local res, position = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(rect, eventData.position, eventData.pressEventCamera, nil)
+function UISeasonMazeCard:ScreenPointToLocalPointInRectangle(rect, eventData)
+  local res, position = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(rect, eventData.position, eventData.pressEventCamera, nil)
   return position
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._TempCloseRoom = function(self, isTempClose)
-  -- function num : 0_29
+function UISeasonMazeCard:_TempCloseRoom(isTempClose)
   if isTempClose then
-    (self._gameObject):SetActive(true)
-    ;
-    (self._cardsGO):SetActive(false)
-    ;
-    (self._black):SetActive(false)
-    ;
-    (self._beadBtn):SetActive(self._isUnlock == true)
-    ;
-    (self._bagBtn):SetActive(true)
-    ;
-    (self._animation):Play("uieff_UISeasonMazeCard_in")
+    self._gameObject:SetActive(true)
+    self._cardsGO:SetActive(false)
+    self._black:SetActive(false)
+    self._beadBtn:SetActive(self._isUnlock == true)
+    self._bagBtn:SetActive(true)
+    self._animation:Play("uieff_UISeasonMazeCard_in")
   elseif self._allWidgets then
-    (self._gameObject):SetActive(true)
-    ;
-    (self._cardsGO):SetActive(true)
-    ;
-    (self._black):SetActive(true)
-    ;
-    (self._beadBtn):SetActive(self._isUnlock == true)
-    ;
-    (self._bagBtn):SetActive(true)
+    self._gameObject:SetActive(true)
+    self._cardsGO:SetActive(true)
+    self._black:SetActive(true)
+    self._beadBtn:SetActive(self._isUnlock == true)
+    self._bagBtn:SetActive(true)
   else
-    (self._gameObject):SetActive(false)
+    self._gameObject:SetActive(false)
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard.OnApplicationFocus = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UISeasonMazeCard:OnApplicationFocus()
   if not EDITOR then
     if self._tweener then
-      (self._tweener):Kill()
+      self._tweener:Kill()
       self._tweener = nil
     end
-    ;
-    (self._templateGO):SetActive(false)
+    self._templateGO:SetActive(false)
     self:ReSet()
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard.GetMiddleCard = function(self)
-  -- function num : 0_31
+function UISeasonMazeCard:GetMiddleCard()
   if self._allWidgets and #self._allWidgets > 2 then
-    return ((self._allWidgets)[2]):GetMiddleCardBtnGo()
+    return self._allWidgets[2]:GetMiddleCardBtnGo()
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._CheckGuide = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function UISeasonMazeCard:_CheckGuide()
   self:Lock("UISeasonMazeCard_CheckGuide")
   self:StartTask(function(TT)
-    -- function num : 0_32_0 , upvalues : _ENV, self
     YIELD(TT, 33)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISeasonMazeBead)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISeasonMazeBead)
     self:UnLock("UISeasonMazeCard_CheckGuide")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCard._PlayAnimation = function(self, propType)
-  -- function num : 0_33 , upvalues : _ENV
+function UISeasonMazeCard:_PlayAnimation(propType)
   if self._allWidgets then
     if propType then
       if self._shoeTask then
-        ((GameGlobal.TaskManager)()):KillTask(self._shoeTask)
+        GameGlobal.TaskManager():KillTask(self._shoeTask)
         self._shoeTask = nil
       end
       if self._spriteTask then
-        ((GameGlobal.TaskManager)()):KillTask(self._spriteTask)
+        GameGlobal.TaskManager():KillTask(self._spriteTask)
         self._spriteTask = nil
       end
       if propType == SeasonMazeEffectType.SMET_Once_Shoe then
         self:Lock("UISeasonMazeCardAnimationShoe")
         self._shoeTask = self:StartTask(function(TT)
-    -- function num : 0_33_0 , upvalues : _ENV, self
-    local time = 0
-    local count = 0
-    for index,widget in ipairs(self._allWidgets) do
-      local delayTime = (index - 1) * 30
-      if delayTime > 0 then
-        YIELD(TT, delayTime)
-      end
-      widget:PlayAnim("uianim_UISeasonMazeCardItem_running_shoes")
-      YIELD(TT, 30)
-      widget:PlayDiceAnimation()
-      widget:RefreshDiceValue()
-      widget:RefreshResValue()
-      count = count + 1
-    end
-    time = 267 + (count - 1) * 30
-    YIELD(TT, time)
-    self:UnLock("UISeasonMazeCardAnimationShoe")
-  end
-)
-      else
-        if propType == SeasonMazeEffectType.SMET_Once_Sprint then
-          self:Lock("UISeasonMazeCardAnimationSprint")
-          self._spriteTask = self:StartTask(function(TT)
-    -- function num : 0_33_1 , upvalues : self
-    self:SetData(nil, true)
-    self:UnLock("UISeasonMazeCardAnimationSprint")
-  end
-)
-        end
+          local time = 0
+          local count = 0
+          for index, widget in ipairs(self._allWidgets) do
+            local delayTime = (index - 1) * 30
+            if 0 < delayTime then
+              YIELD(TT, delayTime)
+            end
+            widget:PlayAnim("uianim_UISeasonMazeCardItem_running_shoes")
+            YIELD(TT, 30)
+            widget:PlayDiceAnimation()
+            widget:RefreshDiceValue()
+            widget:RefreshResValue()
+            count = count + 1
+          end
+          time = 267 + (count - 1) * 30
+          YIELD(TT, time)
+          self:UnLock("UISeasonMazeCardAnimationShoe")
+        end)
+      elseif propType == SeasonMazeEffectType.SMET_Once_Sprint then
+        self:Lock("UISeasonMazeCardAnimationSprint")
+        self._spriteTask = self:StartTask(function(TT)
+          self:SetData(nil, true)
+          self:UnLock("UISeasonMazeCardAnimationSprint")
+        end)
       end
     else
-      ;
-      (self._animation):Stop()
-      for _,widget in ipairs(self._allWidgets) do
+      self._animation:Stop()
+      for _, widget in ipairs(self._allWidgets) do
         widget:StopAnim()
       end
     end
   end
 end
-
-

@@ -1,68 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_monster_move_grid_to_skill_range_far.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectMonsterMoveGridToSkillRangeFar", SkillEffectParamBase)
 SkillEffectMonsterMoveGridToSkillRangeFar = SkillEffectMonsterMoveGridToSkillRangeFar
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectMonsterMoveGridToSkillRangeFar.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectMonsterMoveGridToSkillRangeFar:Constructor(t)
   self._skillID = t.skillID
   self._preferElement = t.preferElement
   self._flushTrapIDs = {}
   if t.flushTrapIDs then
-    for _,id in ipairs(t.flushTrapIDs) do
-      -- DECOMPILER ERROR at PC14: Confused about usage of register: R7 in 'UnsetPending'
-
-      (self._flushTrapIDs)[id] = true
+    for _, id in ipairs(t.flushTrapIDs) do
+      self._flushTrapIDs[id] = true
     end
   end
-  do
-    local disableDieSkill = t.disableDieSkill or 0
-    if disableDieSkill == 1 then
-      self._disableDieSkill = true
-    else
-      self._disableDieSkill = false
-    end
+  local disableDieSkill = t.disableDieSkill or 0
+  if disableDieSkill == 1 then
+    self._disableDieSkill = true
+  else
+    self._disableDieSkill = false
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridToSkillRangeFar.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectMonsterMoveGridToSkillRangeFar:GetEffectType()
   return SkillEffectType.MonsterMoveGridToSkillRangeFar
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridToSkillRangeFar.GetCheckSkillID = function(self)
-  -- function num : 0_2
+function SkillEffectMonsterMoveGridToSkillRangeFar:GetCheckSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridToSkillRangeFar.GetPreferElement = function(self)
-  -- function num : 0_3
+function SkillEffectMonsterMoveGridToSkillRangeFar:GetPreferElement()
   return self._preferElement
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridToSkillRangeFar.GetFlushTrapIDs = function(self)
-  -- function num : 0_4
+function SkillEffectMonsterMoveGridToSkillRangeFar:GetFlushTrapIDs()
   return self._flushTrapIDs
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridToSkillRangeFar.GetDisableDieSkill = function(self)
-  -- function num : 0_5
+function SkillEffectMonsterMoveGridToSkillRangeFar:GetDisableDieSkill()
   return self._disableDieSkill
 end
-
-

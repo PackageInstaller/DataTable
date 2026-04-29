@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/ui_set_bind_mail_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISetBindMailController", UIController)
 UISetBindMailController = UISetBindMailController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISetBindMailController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISetBindMailController:OnShow(uiParams)
   self._mailInput = self:GetUIComponent("InputField", "Mail")
   self._codeInput = self:GetUIComponent("InputField", "Code")
   self._codeTips = self:GetGameObject("CodeTips")
@@ -22,124 +15,86 @@ UISetBindMailController.OnShow = function(self, uiParams)
   self._sendCodeBtnName = self:GetGameObject("SendCodeBtnName")
   self._timerGo = self:GetGameObject("Timer")
   self._timerLabel = self:GetUIComponent("UILocalizationText", "Timer")
-  ;
-  (self._timerGo):SetActive(false)
+  self._timerGo:SetActive(false)
   self._isInCD = false
   self._timerCoro = nil
-  ;
-  (self._codeTips):SetActive(false)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._cancelBtn), UIEvent.Press, function(go)
-    -- function num : 0_0_0 , upvalues : self
-    (self._cancelBtnNormal):SetActive(false)
-    ;
-    (self._cancelBtnClick):SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._cancelBtn), UIEvent.Release, function(go)
-    -- function num : 0_0_1 , upvalues : self
-    (self._cancelBtnNormal):SetActive(true)
-    ;
-    (self._cancelBtnClick):SetActive(false)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._bindBtn), UIEvent.Press, function(go)
-    -- function num : 0_0_2 , upvalues : self
-    (self._bindBtnNormal):SetActive(false)
-    ;
-    (self._bindBtnClick):SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._bindBtn), UIEvent.Release, function(go)
-    -- function num : 0_0_3 , upvalues : self
-    (self._bindBtnNormal):SetActive(true)
-    ;
-    (self._bindBtnClick):SetActive(false)
-  end
-)
-  self._oldChannelId = (((GameGlobal.GameLogic)()).ClientInfo).m_login_source
+  self._codeTips:SetActive(false)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._cancelBtn), UIEvent.Press, function(go)
+    self._cancelBtnNormal:SetActive(false)
+    self._cancelBtnClick:SetActive(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._cancelBtn), UIEvent.Release, function(go)
+    self._cancelBtnNormal:SetActive(true)
+    self._cancelBtnClick:SetActive(false)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._bindBtn), UIEvent.Press, function(go)
+    self._bindBtnNormal:SetActive(false)
+    self._bindBtnClick:SetActive(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._bindBtn), UIEvent.Release, function(go)
+    self._bindBtnNormal:SetActive(true)
+    self._bindBtnClick:SetActive(false)
+  end)
+  self._oldChannelId = GameGlobal.GameLogic().ClientInfo.m_login_source
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindMailController.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISetBindMailController:OnHide()
   if self._timerCoro then
-    ((GameGlobal.TaskManager)()):KillTask(self._timerCoro)
+    GameGlobal.TaskManager():KillTask(self._timerCoro)
     self._timerCoro = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindMailController.CancelBtnOnClick = function(self)
-  -- function num : 0_2
+function UISetBindMailController:CancelBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindMailController.SendCodeBtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISetBindMailController:SendCodeBtnOnClick()
   if self._isInCD then
-    return 
+    return
   end
-  local mail = (self._mailInput).text
-  if (string.isnullorempty)(mail) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_set_change_passwd_mail_Is_null"))
-    return 
+  local mail = self._mailInput.text
+  if string.isnullorempty(mail) then
+    ToastManager.ShowToast(StringTable.Get("str_set_change_passwd_mail_Is_null"))
+    return
   end
   if self:CheckEmail(mail) == false then
-    (ToastManager.ShowToast)((StringTable.Get)("str_set_change_passwd_mail_format_error"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_set_change_passwd_mail_format_error"))
+    return
   end
   self:Lock("UISetBindMailController_SendCodeBtnOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.SendCodeBtnOnClickCoro, self, mail)
+  GameGlobal.TaskManager():StartTask(self.SendCodeBtnOnClickCoro, self, mail)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindMailController.SendCodeBtnOnClickCoro = function(self, TT, account)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (SDKProxy:GetInstance()):RequestVerifyCode(TT, account, (INTL.VerifyCodeType).Login, "")
-  if ret.RetCode == (INTL.INTLErrorCode).SUCCESS then
-    (ToastManager.ShowToast)((StringTable.Get)("str_login_code_tip"))
-    ;
-    (self._codeTips):SetActive(true)
+function UISetBindMailController:SendCodeBtnOnClickCoro(TT, account)
+  local ret = SDKProxy:GetInstance():RequestVerifyCode(TT, account, INTL.VerifyCodeType.Login, "")
+  if ret.RetCode == INTL.INTLErrorCode.SUCCESS then
+    ToastManager.ShowToast(StringTable.Get("str_login_code_tip"))
+    self._codeTips:SetActive(true)
     self:StartCDTimer()
   else
-    ;
-    (UICommonHelper:GetInstance()):HandleLoginErrorCode(ret.RetCode, ret.ThirdCode)
+    UICommonHelper:GetInstance():HandleLoginErrorCode(ret.RetCode, ret.ThirdCode)
   end
   self:UnLock("UISetBindMailController_SendCodeBtnOnClick")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindMailController.StartCDTimer = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._timerCoro = ((GameGlobal.TaskManager)()):StartTask(self.StartCDTimerCoro, self)
+function UISetBindMailController:StartCDTimer()
+  self._timerCoro = GameGlobal.TaskManager():StartTask(self.StartCDTimerCoro, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindMailController.StartCDTimerCoro = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UISetBindMailController:StartCDTimerCoro(TT)
   self._isInCD = true
-  ;
-  (self._timerGo):SetActive(true)
-  ;
-  (self._sendCodeBtnName):SetActive(false)
+  self._timerGo:SetActive(true)
+  self._sendCodeBtnName:SetActive(false)
   local timer = 0
   local CD = 60
-  while 1 do
-    (self._timerLabel):SetText((StringTable.Get)("str_set_send_code_cd_tips", CD - timer))
+  while true do
+    self._timerLabel:SetText(StringTable.Get("str_set_send_code_cd_tips", CD - timer))
     YIELD(TT, 1000)
     timer = timer + 1
     if CD <= timer then
-      (self._timerGo):SetActive(false)
-      ;
-      (self._sendCodeBtnName):SetActive(true)
+      self._timerGo:SetActive(false)
+      self._sendCodeBtnName:SetActive(true)
       self._isInCD = false
       self._timerCoro = nil
       break
@@ -147,66 +102,55 @@ UISetBindMailController.StartCDTimerCoro = function(self, TT)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindMailController.BindBtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local mail = (self._mailInput).text
-  local code = (self._codeInput).text
-  if (string.isnullorempty)(mail) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_set_change_passwd_mail_Is_null"))
-    return 
+function UISetBindMailController:BindBtnOnClick()
+  local mail = self._mailInput.text
+  local code = self._codeInput.text
+  if string.isnullorempty(mail) then
+    ToastManager.ShowToast(StringTable.Get("str_set_change_passwd_mail_Is_null"))
+    return
   end
   if self:CheckEmail(mail) == false then
-    (ToastManager.ShowToast)((StringTable.Get)("str_set_change_passwd_mail_format_error"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_set_change_passwd_mail_format_error"))
+    return
   end
-  if (string.isnullorempty)(code) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_login_msdk_intl_login_reg_vc_error"))
-    return 
+  if string.isnullorempty(code) then
+    ToastManager.ShowToast(StringTable.Get("str_login_msdk_intl_login_reg_vc_error"))
+    return
   end
   self:Lock("UISetBindMailController:BindBtnOnClick")
   self:SetShowBusy(true)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.BindBtnOnClickCoro, self, mail, "", code)
+  GameGlobal.TaskManager():StartTask(self.BindBtnOnClickCoro, self, mail, "", code)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindMailController.BindBtnOnClickCoro = function(self, TT, mail, password, code)
-  -- function num : 0_8 , upvalues : _ENV
-  local channelName = (SDKProxy:GetInstance()):GetIntlChannel((EngineGameHelper.SAIchannelId)())
+function UISetBindMailController:BindBtnOnClickCoro(TT, mail, password, code)
+  local channelName = SDKProxy:GetInstance():GetIntlChannel(EngineGameHelper.SAIchannelId())
   if channelName == nil then
     self:SetShowBusy(false)
     self:UnLock("UISetBindMailController:BindBtnOnClick")
-    return 
+    return
   end
-  local str = (SDKProxy:GetInstance()):SerializeBindJson(mail, password, code)
-  local ret = (SDKProxy:GetInstance()):BindChannel(TT, channelName, str)
-  if ret.RetCode == (INTL.INTLErrorCode).SUCCESS then
-    (ToastManager.ShowToast)((StringTable.Get)("str_set_bind_bind_success"))
+  local str = SDKProxy:GetInstance():SerializeBindJson(mail, password, code)
+  local ret = SDKProxy:GetInstance():BindChannel(TT, channelName, str)
+  if ret.RetCode == INTL.INTLErrorCode.SUCCESS then
+    ToastManager.ShowToast(StringTable.Get("str_set_bind_bind_success"))
     YIELD(TT)
     if self._oldChannelId == MobileClientLoginChannel.MCLC_GUEST then
-      (SDKProxy:GetInstance()):ResetGuest(TT)
+      SDKProxy:GetInstance():ResetGuest(TT)
     end
     self:CloseDialog()
     self:ShowDialog("UISetBindMailChangePasswordController", mail)
   else
-    ;
-    (UICommonHelper:GetInstance()):HandleLoginErrorCode(ret.RetCode, ret.ThirdCode)
+    UICommonHelper:GetInstance():HandleLoginErrorCode(ret.RetCode, ret.ThirdCode)
   end
   self:SetShowBusy(false)
   self:UnLock("UISetBindMailController:BindBtnOnClick")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindMailController.CheckEmail = function(self, strContent)
-  -- function num : 0_9 , upvalues : _ENV
+function UISetBindMailController:CheckEmail(strContent)
   if not strContent then
     return false
   end
-  if (string.len)(strContent) < 3 then
+  if string.len(strContent) < 3 then
     return false
   end
   if strContent:match("[A-Za-z0-9%.%%%+%-]+@[A-Za-z0-9%.%%%+%-]+%.%w%w%w?%w?") then
@@ -216,15 +160,10 @@ UISetBindMailController.CheckEmail = function(self, strContent)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindMailController.CheckPassWordValid = function(self, info)
-  -- function num : 0_10 , upvalues : _ENV
-  local t = (string.match)(info, "[^%w_!%[%]%-%+%(%)@#%$%%%^&%*=\\/%?<>,:;|]")
+function UISetBindMailController:CheckPassWordValid(info)
+  local t = string.match(info, "[^%w_!%[%]%-%+%(%)@#%$%%%^&%*=\\/%?<>,:;|]")
   if t ~= nil then
     return false
   end
   return true
 end
-
-

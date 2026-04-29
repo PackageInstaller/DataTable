@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/wave_enter_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("WaveEnterSystem", MainStateSystem)
 WaveEnterSystem = WaveEnterSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-WaveEnterSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function WaveEnterSystem:_GetMainStateID()
   return GameStateID.WaveEnter
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function WaveEnterSystem:_OnMainStateEnter(TT)
   self:_DoLogicInitWaveBattleState()
   self:_DoRenderWaveInfo(TT)
   self:_DoLogicCloseAuroraTime()
   self:_DoRenderCloseAuroraTime(TT)
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local waveNum = battleStatCmpt:GetCurWaveIndex()
   self:_DoLogicNotifyWaveEnter(waveNum)
   self:_DoRenderNotifyWaveEnter(TT, waveNum)
@@ -35,7 +25,7 @@ WaveEnterSystem._OnMainStateEnter = function(self, TT)
   self:_DoRenderShowWaveMonsters(TT, spawnMonsters)
   local waitTaskIDList = {}
   if showTrapsTaskID ~= nil then
-    (table.insert)(waitTaskIDList, showTrapsTaskID)
+    table.insert(waitTaskIDList, showTrapsTaskID)
   end
   self:_WaitTasksEnd(TT, waitTaskIDList)
   self:_DoRenderWaveEnterInnerStory(TT)
@@ -48,237 +38,160 @@ WaveEnterSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicSwitchFsmState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoLogicInitWaveBattleState = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function WaveEnterSystem:_DoLogicInitWaveBattleState()
+  local battleStatCmpt = self._world:BattleStat()
   local waveNum = battleStatCmpt:GetCurWaveIndex()
-  ;
-  (Log.notice)("EnterWave WaveNum:", waveNum)
+  Log.notice("EnterWave WaveNum:", waveNum)
   local levelRoundCount = battleStatCmpt:GetLevelLeftRoundCount()
   if battleStatCmpt:AssignWaveResult() then
-    local configService = (self._world):GetService("Config")
+    local configService = self._world:GetService("Config")
     local levelConfigData = configService:GetLevelConfigData()
-    local l_arrAssignWaveParams = (levelConfigData:GetLevelCompleteConditionParams())[1]
+    local l_arrAssignWaveParams = levelConfigData:GetLevelCompleteConditionParams()[1]
     local l_round_num = l_arrAssignWaveParams[LevelCompleteAssignWaveParamExp.RoundNum]
     if l_round_num ~= nil then
       battleStatCmpt:InitCurWaveRound(l_round_num)
     else
       battleStatCmpt:InitCurWaveRound(levelRoundCount)
     end
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.UpdateRoundCount, battleStatCmpt:GetCurWaveRound())
+    self._world:EventDispatcher():Dispatch(GameEventType.UpdateRoundCount, battleStatCmpt:GetCurWaveRound())
   else
-    do
-      battleStatCmpt:InitCurWaveRound(levelRoundCount)
-      battleStatCmpt:InitCurWaveAllMonsterDeadTimes()
-      self:_DoLogicLoadArchievedBattle()
-      local battleSvc = (self._world):GetService("Battle")
-      local isExit = battleSvc:IsCurWaveExit()
-      local exitPos = battleSvc:CurWaveExitPos()
-      local data = DataWaveEnterResult:New(waveNum, isExit, exitPos)
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, data)
-    end
+    battleStatCmpt:InitCurWaveRound(levelRoundCount)
   end
+  battleStatCmpt:InitCurWaveAllMonsterDeadTimes()
+  self:_DoLogicLoadArchievedBattle()
+  local battleSvc = self._world:GetService("Battle")
+  local isExit = battleSvc:IsCurWaveExit()
+  local exitPos = battleSvc:CurWaveExitPos()
+  local data = DataWaveEnterResult:New(waveNum, isExit, exitPos)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, data)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoLogicLoadArchievedBattle = function(self)
-  -- function num : 0_3
-  local battle_archive = ((self._world):GetService("Maze")):GetBattleArchive()
+function WaveEnterSystem:_DoLogicLoadArchievedBattle()
+  local battle_archive = self._world:GetService("Maze"):GetBattleArchive()
   if battle_archive then
-    local ccsvc = (self._world):GetService("CompleteCondition")
-    local cfgsvc = (self._world):GetService("Config")
-    local cond = (cfgsvc:GetLevelConfigData()):GetLevelCompleteConditionType()
-    if (battle_archive.completion).cond == cond then
-      ccsvc:SetArchivedData(cond, (battle_archive.completion).data)
+    local ccsvc = self._world:GetService("CompleteCondition")
+    local cfgsvc = self._world:GetService("Config")
+    local cond = cfgsvc:GetLevelConfigData():GetLevelCompleteConditionType()
+    if battle_archive.completion.cond == cond then
+      ccsvc:SetArchivedData(cond, battle_archive.completion.data)
     end
-    ;
-    ((self._world):BattleStat()):SetArchivedDrops(battle_archive.drops)
+    self._world:BattleStat():SetArchivedDrops(battle_archive.drops)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoLogicCreateWaveTraps = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function WaveEnterSystem:_DoLogicCreateWaveTraps()
+  local battleStatCmpt = self._world:BattleStat()
   local waveNum = battleStatCmpt:GetCurWaveIndex()
   local eTraps = {}
   if waveNum ~= 1 then
-    local entityService = (self._world):GetService("LogicEntity")
+    local entityService = self._world:GetService("LogicEntity")
     eTraps = entityService:CreateWaveTraps(waveNum)
   else
-    do
-      local trapIDList = ((self._world):BattleStat()):GetFirstWaveTrapIDList()
-      for _,id in ipairs(trapIDList) do
-        local entity = (self._world):GetEntityByID(id)
-        ;
-        (table.insert)(eTraps, entity)
-      end
-      do
-        return eTraps
-      end
+    local trapIDList = self._world:BattleStat():GetFirstWaveTrapIDList()
+    for _, id in ipairs(trapIDList) do
+      local entity = self._world:GetEntityByID(id)
+      table.insert(eTraps, entity)
     end
   end
+  return eTraps
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoLogicCreateWaveMonsters = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function WaveEnterSystem:_DoLogicCreateWaveMonsters()
+  local battleStatCmpt = self._world:BattleStat()
   local waveNum = battleStatCmpt:GetCurWaveIndex()
-  local trapsvc = (self._world):GetService("TrapLogic")
+  local trapsvc = self._world:GetService("TrapLogic")
   local eMonsters = {}
-  local monsterRefreshPosType, hitbackResult = nil, nil
+  local monsterRefreshPosType, hitbackResult
   if waveNum == 1 then
-    local monsterIDList = ((self._world):BattleStat()):GetFirstWaveMonsterIDList()
-    for _,id in ipairs(monsterIDList) do
-      local entity = (self._world):GetEntityByID(id)
-      ;
-      (table.insert)(eMonsters, entity)
+    local monsterIDList = self._world:BattleStat():GetFirstWaveMonsterIDList()
+    for _, id in ipairs(monsterIDList) do
+      local entity = self._world:GetEntityByID(id)
+      table.insert(eMonsters, entity)
     end
-    if eMonsters and not ((self._world):GetService("Maze")):IsArchivedBattle() then
-      local monsterCreationSvc = (self._world):GetService("MonsterCreationLogic")
-      for _,e in ipairs(eMonsters) do
+    if eMonsters and not self._world:GetService("Maze"):IsArchivedBattle() then
+      local monsterCreationSvc = self._world:GetService("MonsterCreationLogic")
+      for _, e in ipairs(eMonsters) do
         monsterCreationSvc:CalcAppearSkill(e)
         local tEntities, tResults = trapsvc:TriggerTrapByEntity(e, TrapTriggerOrigin.Move)
         e:AddAppearTriggerTrap(tEntities, tResults)
       end
     end
   else
-    do
-      do
-        local entityService = (self._world):GetService("LogicEntity")
-        eMonsters = entityService:CreateWaveMonsters(waveNum)
-        return eMonsters, hitbackResult
-      end
-    end
+    local entityService = self._world:GetService("LogicEntity")
+    eMonsters, hitbackResult = entityService:CreateWaveMonsters(waveNum)
   end
+  return eMonsters, hitbackResult
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoLogicSwitchFsmState = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function WaveEnterSystem:_DoLogicSwitchFsmState()
+  local battleStatCmpt = self._world:BattleStat()
   if battleStatCmpt:GetCurWaveIndex() == 1 then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.WaveEnterFinish, 2)
+    self._world:EventDispatcher():Dispatch(GameEventType.WaveEnterFinish, 2)
   else
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.WaveEnterFinish, 1)
+    self._world:EventDispatcher():Dispatch(GameEventType.WaveEnterFinish, 1)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoLogicNotifyWaveStart = function(self, waveNum)
-  -- function num : 0_7 , upvalues : _ENV
-  local triggerService = (self._world):GetService("Trigger")
+function WaveEnterSystem:_DoLogicNotifyWaveStart(waveNum)
+  local triggerService = self._world:GetService("Trigger")
   triggerService:Notify(NTWaveTurnStart:New(waveNum))
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoLogicNotifyWaveEnter = function(self, waveNum)
-  -- function num : 0_8 , upvalues : _ENV
-  local triggerService = (self._world):GetService("Trigger")
+function WaveEnterSystem:_DoLogicNotifyWaveEnter(waveNum)
+  local triggerService = self._world:GetService("Trigger")
   triggerService:Notify(NTWaveEnter:New(waveNum))
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem.V2Str2V2 = function(self, str)
-  -- function num : 0_9 , upvalues : _ENV
-  if (string.isnullorempty)(str) then
+function WaveEnterSystem:V2Str2V2(str)
+  if string.isnullorempty(str) then
     return Vector2.zero
   end
-  local dirStrs = (string.split)(str, ",")
+  local dirStrs = string.split(str, ",")
   local dir = Vector2(tonumber(dirStrs[1]), tonumber(dirStrs[2]))
   return dir
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem.V2StrArr2V2Arr = function(self, strs)
-  -- function num : 0_10 , upvalues : _ENV
-  if (string.isnullorempty)(strs) then
+function WaveEnterSystem:V2StrArr2V2Arr(strs)
+  if string.isnullorempty(strs) then
     return nil
   end
-  local dirStrs = (string.split)(strs, ";")
+  local dirStrs = string.split(strs, ";")
   local arr = {}
-  for i,v in ipairs(dirStrs) do
+  for i, v in ipairs(dirStrs) do
     local v2 = self:V2Str2V2(v)
-    ;
-    (table.insert)(arr, v2)
+    table.insert(arr, v2)
   end
   return arr
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoLogicCalcPreMove = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local aiService = (self.world):GetService("AI")
+function WaveEnterSystem:_DoLogicCalcPreMove()
+  local aiService = self.world:GetService("AI")
   aiService:RunAiLogic_WaitEnd(AILogicPeriodType.Prev)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoRenderWaveInfo = function(self, TT)
-  -- function num : 0_12
+function WaveEnterSystem:_DoRenderWaveInfo(TT)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoRenderShowWaveTraps = function(self, TT, spawnTraps)
-  -- function num : 0_13
+function WaveEnterSystem:_DoRenderShowWaveTraps(TT, spawnTraps)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoRenderPreShowMonster = function(self, TT)
-  -- function num : 0_14
+function WaveEnterSystem:_DoRenderPreShowMonster(TT)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoRenderShowWaveMonsters = function(self, TT, spawnMonsters)
-  -- function num : 0_15
+function WaveEnterSystem:_DoRenderShowWaveMonsters(TT, spawnMonsters)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoRenderWaveEnterInnerStory = function(self, TT)
-  -- function num : 0_16
+function WaveEnterSystem:_DoRenderWaveEnterInnerStory(TT)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoRenderNotifyWaveStart = function(self, TT, waveNum)
-  -- function num : 0_17
+function WaveEnterSystem:_DoRenderNotifyWaveStart(TT, waveNum)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoRenderNotifyWaveEnter = function(self, TT, waveNum)
-  -- function num : 0_18
+function WaveEnterSystem:_DoRenderNotifyWaveEnter(TT, waveNum)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoRenderPlayPreMove = function(self, TT)
-  -- function num : 0_19
+function WaveEnterSystem:_DoRenderPlayPreMove(TT)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveEnterSystem._DoRenderRefreshMonsterHitBackTeam = function(self, TT, hitbackResult)
-  -- function num : 0_20
+function WaveEnterSystem:_DoRenderRefreshMonsterHitBackTeam(TT, hitbackResult)
 end
-
-

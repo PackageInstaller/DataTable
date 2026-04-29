@@ -1,62 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/sakura/ui_sakura_draw_shop/ui_sakura_draw_shop_award_box_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISakuraDrawShopAwardBoxCell", UICustomWidget)
 UISakuraDrawShopAwardBoxCell = UISakuraDrawShopAwardBoxCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISakuraDrawShopAwardBoxCell.Constructor = function(self)
-  -- function num : 0_0
+function UISakuraDrawShopAwardBoxCell:Constructor()
   self.listInited = false
   self.rowCellItemNum = 3
   self.rowCellCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardBoxCell.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISakuraDrawShopAwardBoxCell:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardBoxCell.InitWidget = function(self)
-  -- function num : 0_2
+function UISakuraDrawShopAwardBoxCell:InitWidget()
   self.awardList = self:GetUIComponent("UIDynamicScrollView", "AwardList")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardBoxCell._InitAwardListUi = function(self)
-  -- function num : 0_3
-  self.rowCellCount = #(self._data).itemGroup
+function UISakuraDrawShopAwardBoxCell:_InitAwardListUi()
+  self.rowCellCount = #self._data.itemGroup
   if self.listInited then
-    (self.awardList):SetListItemCount(self.rowCellCount)
-    ;
-    (self.awardList):RefreshAllShownItem()
-    ;
-    (self.awardList):MovePanelToItemIndex(0, 0)
-    ;
-    (self.awardList):FinishSnapImmediately()
-    return 
+    self.awardList:SetListItemCount(self.rowCellCount)
+    self.awardList:RefreshAllShownItem()
+    self.awardList:MovePanelToItemIndex(0, 0)
+    self.awardList:FinishSnapImmediately()
+    return
   else
     self.listInited = true
   end
-  ;
-  (self.awardList):InitListView(self.rowCellCount, function(scrollview, index)
-    -- function num : 0_3_0 , upvalues : self
+  self.awardList:InitListView(self.rowCellCount, function(scrollview, index)
     return self:_OnGetAwardRowCell(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardBoxCell._OnGetAwardRowCell = function(self, scrollview, index)
-  -- function num : 0_4
+function UISakuraDrawShopAwardBoxCell:_OnGetAwardRowCell(scrollview, index)
   local item = scrollview:NewListViewItem("RowCell")
   local cellPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -65,32 +40,22 @@ UISakuraDrawShopAwardBoxCell._OnGetAwardRowCell = function(self, scrollview, ind
   end
   local rowList = cellPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local rowIndex = index + 1
-      if self.rowCellCount < rowIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      else
-        itemWidget:InitData(((self._data).itemGroup)[rowIndex], self._itemInfoCallback)
-      end
+  if itemWidget then
+    local rowIndex = index + 1
+    if rowIndex > self.rowCellCount then
+      itemWidget:GetGameObject():SetActive(false)
+    else
+      itemWidget:InitData(self._data.itemGroup[rowIndex], self._itemInfoCallback)
     end
-    return item
   end
+  return item
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardBoxCell.SetData = function(self)
-  -- function num : 0_5
+function UISakuraDrawShopAwardBoxCell:SetData()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardBoxCell.InitData = function(self, data, itemInfoCallBack)
-  -- function num : 0_6
+function UISakuraDrawShopAwardBoxCell:InitData(data, itemInfoCallBack)
   self._data = data
   self._itemInfoCallback = itemInfoCallBack
   self:_InitAwardListUi()
 end
-
-

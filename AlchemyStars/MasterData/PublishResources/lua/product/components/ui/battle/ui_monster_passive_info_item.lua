@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_monster_passive_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMonsterPassiveInfoItem", UICustomWidget)
 UIMonsterPassiveInfoItem = UIMonsterPassiveInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMonsterPassiveInfoItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMonsterPassiveInfoItem:OnShow()
   self._descName = self:GetUIComponent("RollingText", "descName")
   self._typeName = self:GetUIComponent("RollingText", "typeName")
   self._typeNameBG = self:GetUIComponent("Image", "bg")
@@ -19,63 +12,34 @@ UIMonsterPassiveInfoItem.OnShow = function(self)
   self._uiBattleAtlas = self:GetAsset("UIBattle.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonsterPassiveInfoItem.OnHide = function(self)
-  -- function num : 0_1
+function UIMonsterPassiveInfoItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonsterPassiveInfoItem.Init = function(self, type, name, desc)
-  -- function num : 0_2 , upvalues : _ENV
-  local iconName, typeName = nil, nil
+function UIMonsterPassiveInfoItem:Init(type, name, desc)
+  local iconName, typeName
   if type == MonsterPassiveInfoType.Base then
     iconName = "thread_junei_tipsborad04"
     typeName = "str_battle_monster_base_passive"
-  else
-    if type == MonsterPassiveInfoType.AntiSkill then
-      iconName = "thread_junei_tipsborad05"
-      typeName = "str_battle_monster_passive_skill"
-    end
+  elseif type == MonsterPassiveInfoType.AntiSkill then
+    iconName = "thread_junei_tipsborad05"
+    typeName = "str_battle_monster_passive_skill"
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._typeNameBG).sprite = (self._uiBattleAtlas):GetSprite(iconName)
-  local temp = (StringTable.Get)(typeName)
-  ;
-  (self._typeName):RefreshText((StringTable.Get)(typeName))
-  temp = (StringTable.Get)(name)
-  ;
-  (self._descName):RefreshText((StringTable.Get)(name))
-  temp = (StringTable.Get)(desc)
-  ;
-  (self._describeText):SetText((StringTable.Get)(desc))
+  self._typeNameBG.sprite = self._uiBattleAtlas:GetSprite(iconName)
+  local temp = StringTable.Get(typeName)
+  self._typeName:RefreshText(StringTable.Get(typeName))
+  temp = StringTable.Get(name)
+  self._descName:RefreshText(StringTable.Get(name))
+  temp = StringTable.Get(desc)
+  self._describeText:SetText(StringTable.Get(desc))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMonsterPassiveInfoItem.InitElite = function(self, index, eliteID)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfgElite = (Cfg.cfg_monster_elite)[eliteID]
+function UIMonsterPassiveInfoItem:InitElite(index, eliteID)
+  local cfgElite = Cfg.cfg_monster_elite[eliteID]
   if not cfgElite then
-    return 
+    return
   end
-  ;
-  ((self._buffIcon).gameObject):SetActive(false)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._describeText).text = (StringTable.Get)(cfgElite.Name) .. " : " .. (StringTable.Get)(cfgElite.Desc)
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._textRect).sizeDelta = Vector2(580, ((self._textRect).sizeDelta).y)
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._layout).padding).left = -25
+  self._buffIcon.gameObject:SetActive(false)
+  self._describeText.text = StringTable.Get(cfgElite.Name) .. " : " .. StringTable.Get(cfgElite.Desc)
+  self._textRect.sizeDelta = Vector2(580, self._textRect.sizeDelta.y)
+  self._layout.padding.left = -25
 end
-
-

@@ -1,17 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/chat_friend_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChatFriendPetData", Object)
 ChatFriendPetData = ChatFriendPetData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChatFriendPetData.Constructor = function(self, playerPstId, helpPetInfo)
-  -- function num : 0_0 , upvalues : _ENV
-  self.ElementSpriteName = {[ElementType.ElementType_Blue] = "bing_color", [ElementType.ElementType_Red] = "huo_color", [ElementType.ElementType_Green] = "sen_color", [ElementType.ElementType_Yellow] = "lei_color"}
+function ChatFriendPetData:Constructor(playerPstId, helpPetInfo)
+  self.ElementSpriteName = {
+    [ElementType.ElementType_Blue] = "bing_color",
+    [ElementType.ElementType_Red] = "huo_color",
+    [ElementType.ElementType_Green] = "sen_color",
+    [ElementType.ElementType_Yellow] = "lei_color"
+  }
   if not helpPetInfo then
-    return 
+    return
   end
   self._petTemplateId = helpPetInfo.pet_template_id
   self._level = helpPetInfo.level
@@ -20,15 +18,12 @@ ChatFriendPetData.Constructor = function(self, playerPstId, helpPetInfo)
   self._equipLevel = helpPetInfo.equip_level
   self._equipRefineLevel = helpPetInfo.equip_refine_level
   self._skinId = helpPetInfo.skin_id
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   self._helpPetInfo = roleModule:GetHelpPetData(playerPstId, EnumHelpSourceType.E_HelpSource_Friend, helpPetInfo)
   self:_ParseConfig()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendPetData.Init = function(self, friendPetData)
-  -- function num : 0_1
+function ChatFriendPetData:Init(friendPetData)
   self._petTemplateId = friendPetData:GetPetTemplateId()
   self._level = friendPetData:GetLevel()
   self._awake = friendPetData:GetAwake()
@@ -40,128 +35,84 @@ ChatFriendPetData.Init = function(self, friendPetData)
   self:_ParseConfig()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendPetData._ParseConfig = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ChatFriendPetData:_ParseConfig()
   if not self._petTemplateId then
-    return 
+    return
   end
-  local cfg_pet = (Cfg.cfg_pet)[self._petTemplateId]
+  local cfg_pet = Cfg.cfg_pet[self._petTemplateId]
   if not cfg_pet then
-    return 
+    return
   end
   self._firstElement = cfg_pet.FirstElement
   self._secondElement = 0
-  if cfg_pet.Element2NeedGrade <= self._grade then
+  if self._grade >= cfg_pet.Element2NeedGrade then
     self._secondElement = cfg_pet.SecondElement
   end
-  self._head = (HelperProxy:GetInstance()):GetPetHead(self._petTemplateId, self._grade, self._skinId, PetSkinEffectPath.HEAD_ICON_CHAT_FIREND)
+  self._head = HelperProxy:GetInstance():GetPetHead(self._petTemplateId, self._grade, self._skinId, PetSkinEffectPath.HEAD_ICON_CHAT_FIREND)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendPetData.GetPetTemplateId = function(self)
-  -- function num : 0_3
+function ChatFriendPetData:GetPetTemplateId()
   return self._petTemplateId
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendPetData.GetLevel = function(self)
-  -- function num : 0_4
+function ChatFriendPetData:GetLevel()
   return self._level
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendPetData.GetAwake = function(self)
-  -- function num : 0_5
+function ChatFriendPetData:GetAwake()
   return self._awake
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendPetData.GetGrade = function(self)
-  -- function num : 0_6
+function ChatFriendPetData:GetGrade()
   return self._grade
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendPetData.GetEquipLevel = function(self)
-  -- function num : 0_7
+function ChatFriendPetData:GetEquipLevel()
   return self._equipLevel
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendPetData.GetEquipRefineLevel = function(self)
-  -- function num : 0_8
+function ChatFriendPetData:GetEquipRefineLevel()
   return self._equipRefineLevel
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendPetData.GetSkinId = function(self)
-  -- function num : 0_9
+function ChatFriendPetData:GetSkinId()
   return self._skinId
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendPetData.GetFirstElement = function(self)
-  -- function num : 0_10
+function ChatFriendPetData:GetFirstElement()
   return self._firstElement
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendPetData.GetFirstElementName = function(self)
-  -- function num : 0_11
+function ChatFriendPetData:GetFirstElementName()
   if self._firstElement ~= nil and self._firstElement ~= 0 then
-    return (self.ElementSpriteName)[self._firstElement]
+    return self.ElementSpriteName[self._firstElement]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendPetData.GetSecondElement = function(self)
-  -- function num : 0_12
+function ChatFriendPetData:GetSecondElement()
   return self._secondElement
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendPetData.GetSecondElementName = function(self)
-  -- function num : 0_13
+function ChatFriendPetData:GetSecondElementName()
   if self._secondElement ~= nil and self._secondElement ~= 0 then
-    return (self.ElementSpriteName)[self._secondElement]
+    return self.ElementSpriteName[self._secondElement]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendPetData.GetHeadIcon = function(self)
-  -- function num : 0_14
+function ChatFriendPetData:GetHeadIcon()
   return self._head
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendPetData.GetHelpPetData = function(self)
-  -- function num : 0_15
+function ChatFriendPetData:GetHelpPetData()
   return self._helpPetInfo
 end
 
 _class("ChatFriendData", Object)
 ChatFriendData = ChatFriendData
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
 
-ChatFriendData.Constructor = function(self, friendId, headIcon, headBg, headFrame, level, name, hasNewMessage, isOnline, createDate, recentMsgTime, lastLogOutTime, remarkName, helpPet, world_boss_info, homeland_info, difficulty_mission, sailing_mission, title_used, fifure_used, open_id, plat_id, login_source, board_pet, back_id, background_type, pet_grade, pet_template_id, skin_id, is_hand_operate, handle_ope_spine_id)
-  -- function num : 0_16 , upvalues : _ENV
+function ChatFriendData:Constructor(friendId, headIcon, headBg, headFrame, level, name, hasNewMessage, isOnline, createDate, recentMsgTime, lastLogOutTime, remarkName, helpPet, world_boss_info, homeland_info, difficulty_mission, sailing_mission, title_used, fifure_used, open_id, plat_id, login_source, board_pet, back_id, background_type, pet_grade, pet_template_id, skin_id, is_hand_operate, handle_ope_spine_id)
   self._friendId = friendId
   self._headIcon = headIcon
   self._headBg = headBg
@@ -179,37 +130,29 @@ ChatFriendData.Constructor = function(self, friendId, headIcon, headBg, headFram
   if helpPet then
     for i = 1, #helpPet do
       local pet = ChatFriendPetData:New(self._friendId, helpPet[i])
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R36 in 'UnsetPending'
-
-      ;
-      (self._petDataList)[#self._petDataList + 1] = pet
+      self._petDataList[#self._petDataList + 1] = pet
     end
   end
-  do
-    self._worldBossInfo = world_boss_info
-    self._homeland_info = homeland_info
-    self._difficulty_mission = difficulty_mission
-    self._sailing_mission = sailing_mission
-    self._title_used = title_used
-    self._fifure_used = fifure_used
-    self._open_id = open_id
-    self._plat_id = plat_id
-    self._login_source = login_source
-    self._board_pet = board_pet
-    self._back_id = back_id
-    self._background_type = background_type
-    self._pet_grade = pet_grade
-    self._pet_template_id = pet_template_id
-    self._skin_id = skin_id
-    self._is_hand_operate = is_hand_operate
-    self._handle_ope_spine_id = handle_ope_spine_id
-  end
+  self._worldBossInfo = world_boss_info
+  self._homeland_info = homeland_info
+  self._difficulty_mission = difficulty_mission
+  self._sailing_mission = sailing_mission
+  self._title_used = title_used
+  self._fifure_used = fifure_used
+  self._open_id = open_id
+  self._plat_id = plat_id
+  self._login_source = login_source
+  self._board_pet = board_pet
+  self._back_id = back_id
+  self._background_type = background_type
+  self._pet_grade = pet_grade
+  self._pet_template_id = pet_template_id
+  self._skin_id = skin_id
+  self._is_hand_operate = is_hand_operate
+  self._handle_ope_spine_id = handle_ope_spine_id
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.Init = function(self, friendData)
-  -- function num : 0_17 , upvalues : _ENV
+function ChatFriendData:Init(friendData)
   self._friendId = friendData:GetFriendId()
   self._headIcon = friendData:GetHeadIcon()
   self._headBg = friendData:GetHeadBg()
@@ -228,377 +171,233 @@ ChatFriendData.Init = function(self, friendData)
     for i = 1, #petDataList do
       local chatFriendPetData = ChatFriendPetData:New()
       chatFriendPetData:Init(petDataList[i])
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._petDataList)[#self._petDataList + 1] = chatFriendPetData
+      self._petDataList[#self._petDataList + 1] = chatFriendPetData
     end
   end
-  do
-    self._worldBossInfo = friendData:GetWorldBossInfo()
-    self._open_id = friendData:GetOpenID()
-    self._plat_id = friendData:GetPlatID()
-    self._login_source = friendData:GetLoginSource()
-    self._board_pet = friendData:GetBoardPet()
-    self._back_id = friendData:GetBackID()
-    self._background_type = friendData:GetBackgroundType()
-    self._pet_grade = friendData:GetPetGrade()
-    self._pet_template_id = friendData:GetTemplateID()
-    self._skin_id = friendData:GetSkinId()
-    self._is_hand_operate = friendData:GetIsHandOperate()
-    self._handle_ope_spine_id = friendData:GetHandOperateSpineId()
-  end
+  self._worldBossInfo = friendData:GetWorldBossInfo()
+  self._open_id = friendData:GetOpenID()
+  self._plat_id = friendData:GetPlatID()
+  self._login_source = friendData:GetLoginSource()
+  self._board_pet = friendData:GetBoardPet()
+  self._back_id = friendData:GetBackID()
+  self._background_type = friendData:GetBackgroundType()
+  self._pet_grade = friendData:GetPetGrade()
+  self._pet_template_id = friendData:GetTemplateID()
+  self._skin_id = friendData:GetSkinId()
+  self._is_hand_operate = friendData:GetIsHandOperate()
+  self._handle_ope_spine_id = friendData:GetHandOperateSpineId()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetIsHandOperate = function(self)
-  -- function num : 0_18
+function ChatFriendData:GetIsHandOperate()
   return self._is_hand_operate
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetHandOperateSpineId = function(self)
-  -- function num : 0_19
+function ChatFriendData:GetHandOperateSpineId()
   return self._handle_ope_spine_id
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetWakeUpOpen = function(self)
-  -- function num : 0_20
+function ChatFriendData:GetWakeUpOpen()
   return self._wakeUpType
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.SetWakeUpOpen = function(self, type)
-  -- function num : 0_21
+function ChatFriendData:SetWakeUpOpen(type)
   self._wakeUpType = type
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetPetDataList = function(self)
-  -- function num : 0_22
+function ChatFriendData:GetPetDataList()
   return self._petDataList
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetFriendId = function(self)
-  -- function num : 0_23
+function ChatFriendData:GetFriendId()
   return self._friendId
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetHeadIcon = function(self)
-  -- function num : 0_24
+function ChatFriendData:GetHeadIcon()
   return self._headIcon
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetHeadBg = function(self)
-  -- function num : 0_25
+function ChatFriendData:GetHeadBg()
   return self._headBg
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetHeadFrame = function(self)
-  -- function num : 0_26
+function ChatFriendData:GetHeadFrame()
   return self._headFrame
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetHeadIconName = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  local cfg_head = (Cfg.cfg_role_head_image)[self._headIcon]
-  if not cfg_head then
-    cfg_head = (Cfg.cfg_role_head_image)[1]
-  end
+function ChatFriendData:GetHeadIconName()
+  local cfg_head = Cfg.cfg_role_head_image[self._headIcon]
+  cfg_head = cfg_head or Cfg.cfg_role_head_image[1]
   if not cfg_head then
     return "", ""
   end
   return cfg_head.Icon, cfg_head.Tag
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetHeadBgName = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  local cfg_head_bg = (Cfg.cfg_player_head_bg)[self._headBg]
-  do
-    if not cfg_head_bg then
-      local bid = (HelperProxy:GetInstance()):GetHeadBgDefaultID()
-      cfg_head_bg = (Cfg.cfg_player_head_bg)[bid]
-    end
-    return cfg_head_bg.Icon
+function ChatFriendData:GetHeadBgName()
+  local cfg_head_bg = Cfg.cfg_player_head_bg[self._headBg]
+  if not cfg_head_bg then
+    local bid = HelperProxy:GetInstance():GetHeadBgDefaultID()
+    cfg_head_bg = Cfg.cfg_player_head_bg[bid]
   end
+  return cfg_head_bg.Icon
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetHeadFrameName = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local cfg_head_frame = (Cfg.cfg_role_head_frame)[self._headFrame]
-  do
-    if not cfg_head_frame then
-      local id = (HelperProxy:GetInstance()):GetHeadFrameDefaultID()
-      cfg_head_frame = (Cfg.cfg_role_head_frame)[id]
-    end
-    return cfg_head_frame.Icon
+function ChatFriendData:GetHeadFrameName()
+  local cfg_head_frame = Cfg.cfg_role_head_frame[self._headFrame]
+  if not cfg_head_frame then
+    local id = HelperProxy:GetInstance():GetHeadFrameDefaultID()
+    cfg_head_frame = Cfg.cfg_role_head_frame[id]
   end
+  return cfg_head_frame.Icon
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetLevel = function(self)
-  -- function num : 0_30
+function ChatFriendData:GetLevel()
   return self._level
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetOriginalName = function(self)
-  -- function num : 0_31
+function ChatFriendData:GetOriginalName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetRemarkName = function(self)
-  -- function num : 0_32
+function ChatFriendData:GetRemarkName()
   return self._remarkName
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetName = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  if (string.isnullorempty)(self._remarkName) then
+function ChatFriendData:GetName()
+  if string.isnullorempty(self._remarkName) then
     return self._name
   end
   return self._remarkName
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetWorldBossInfo = function(self)
-  -- function num : 0_34
+function ChatFriendData:GetWorldBossInfo()
   return self._worldBossInfo
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.ResetUnReadMessageStatus = function(self)
-  -- function num : 0_35
+function ChatFriendData:ResetUnReadMessageStatus()
   self._hasNewMessage = false
   self._recentMsgTime = 0
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.HasNewMessage = function(self)
-  -- function num : 0_36
+function ChatFriendData:HasNewMessage()
   return self._hasNewMessage
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetRecentMsgTime = function(self)
-  -- function num : 0_37
+function ChatFriendData:GetRecentMsgTime()
   return self._recentMsgTime
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.IsOnline = function(self)
-  -- function num : 0_38
+function ChatFriendData:IsOnline()
   return self._isOnLine
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetLastOnLineTime = function(self)
-  -- function num : 0_39
+function ChatFriendData:GetLastOnLineTime()
   return self._lastOnlineTime
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetLastOnlineStatusStr = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function ChatFriendData:GetLastOnlineStatusStr()
   if self._isOnLine then
-    return (StringTable.Get)("str_chat_online")
+    return StringTable.Get("str_chat_online")
   else
     local seconds = self:_GetServerTime() - self._lastOnlineTime
     if seconds <= 60 then
-      return (StringTable.Get)("str_chat_minus_ago", 1)
+      return StringTable.Get("str_chat_minus_ago", 1)
     end
-    do
-      if seconds < 3600 then
-        local min = (math.floor)(seconds / 60)
-        return (StringTable.Get)("str_chat_minus_ago", min)
-      end
-      do
-        if seconds < 86400 then
-          local hour = (math.floor)(seconds / 3600)
-          return (StringTable.Get)("str_chat_hour_ago", hour)
-        end
-        do
-          if seconds < 259200 then
-            local day = (math.floor)(seconds / 86400)
-            return (StringTable.Get)("str_chat_day_ago", day)
-          end
-          do return (StringTable.Get)("str_chat_day_ago", 3) end
-        end
-      end
+    if seconds < 3600 then
+      local min = math.floor(seconds / 60)
+      return StringTable.Get("str_chat_minus_ago", min)
     end
+    if seconds < 86400 then
+      local hour = math.floor(seconds / 3600)
+      return StringTable.Get("str_chat_hour_ago", hour)
+    end
+    if seconds < 259200 then
+      local day = math.floor(seconds / 86400)
+      return StringTable.Get("str_chat_day_ago", day)
+    end
+    return StringTable.Get("str_chat_day_ago", 3)
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData._GetServerTime = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local tmSecond, nMilliSecond = (math.modf)(time_mod:GetServerTime() / 1000)
+function ChatFriendData:_GetServerTime()
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local tmSecond, nMilliSecond = math.modf(time_mod:GetServerTime() / 1000)
   return tmSecond
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetCreateDate = function(self)
-  -- function num : 0_42
+function ChatFriendData:GetCreateDate()
   return self._createDate
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetCreateDateStr = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function ChatFriendData:GetCreateDateStr()
   return TimeToDate(self._createDate, "day")
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetShowFriendId = function(self)
-  -- function num : 0_44 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function ChatFriendData:GetShowFriendId()
+  local loginModule = GameGlobal.GetModule(LoginModule)
   if not self._friendId then
     return ""
   end
   return loginModule:GetShowIdByPstId(self._friendId)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.IsSelected = function(self)
-  -- function num : 0_45
+function ChatFriendData:IsSelected()
   return self._isSelected
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.SetSelectedStatus = function(self, status)
-  -- function num : 0_46
+function ChatFriendData:SetSelectedStatus(status)
   self._isSelected = status
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.SetSuggestSource = function(self, suggestSource)
-  -- function num : 0_47
+function ChatFriendData:SetSuggestSource(suggestSource)
   self._suggestSource = suggestSource
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetSuggestSource = function(self)
-  -- function num : 0_48 , upvalues : _ENV
+function ChatFriendData:GetSuggestSource()
   if self._suggestSource == SocialRecommendType.SocialRecommendType_Common then
-    return (StringTable.Get)("str_chat_suggest_source_has_same_friend")
-  else
-    if self._suggestSource == SocialRecommendType.SocialRecommendType_Help then
-      return (StringTable.Get)("str_chat_suggest_source_used_help_pet")
-    end
+    return StringTable.Get("str_chat_suggest_source_has_same_friend")
+  elseif self._suggestSource == SocialRecommendType.SocialRecommendType_Help then
+    return StringTable.Get("str_chat_suggest_source_used_help_pet")
   end
   return ""
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetHomelandInfo = function(self)
-  -- function num : 0_49
+function ChatFriendData:GetHomelandInfo()
   return self._homeland_info
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetLoginSource = function(self)
-  -- function num : 0_50
+function ChatFriendData:GetLoginSource()
   return self._login_source
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetPlatID = function(self)
-  -- function num : 0_51
+function ChatFriendData:GetPlatID()
   return self._plat_id
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetOpenID = function(self)
-  -- function num : 0_52
+function ChatFriendData:GetOpenID()
   return self._open_id
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetBoardPet = function(self)
-  -- function num : 0_53
+function ChatFriendData:GetBoardPet()
   return self._board_pet
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetBackID = function(self)
-  -- function num : 0_54
+function ChatFriendData:GetBackID()
   return self._back_id
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetBackgroundType = function(self)
-  -- function num : 0_55
+function ChatFriendData:GetBackgroundType()
   return self._background_type
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetPetGrade = function(self)
-  -- function num : 0_56
+function ChatFriendData:GetPetGrade()
   return self._pet_grade
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetTemplateID = function(self)
-  -- function num : 0_57
+function ChatFriendData:GetTemplateID()
   return self._pet_template_id
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatFriendData.GetSkinId = function(self)
-  -- function num : 0_58
+function ChatFriendData:GetSkinId()
   return self._skin_id
 end
-
-

@@ -1,17 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_coffin_musume_change_def_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewCoffinMusumeChangeDefenceByCandle", BuffViewBase)
 BuffViewCoffinMusumeChangeDefenceByCandle = BuffViewCoffinMusumeChangeDefenceByCandle
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewCoffinMusumeChangeDefenceByCandle.PlayView = function(self, TT, notify)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewCoffinMusumeChangeDefenceByCandle:PlayView(TT, notify)
   local buffResult = self._buffResult
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.UpdateCoffinMusumeUIDef, buffResult)
+  self._world:EventDispatcher():Dispatch(GameEventType.UpdateCoffinMusumeUIDef, buffResult)
 end
-
-

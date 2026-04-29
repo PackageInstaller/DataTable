@@ -1,49 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/monster_move_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("MonsterMoveServiceRender", BaseService)
 MonsterMoveServiceRender = MonsterMoveServiceRender
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterMoveServiceRender.Constructor = function(self, world)
-  -- function num : 0_0
+function MonsterMoveServiceRender:Constructor(world)
   self.world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveServiceRender._DoRenderTrapBeforeMonster = function(self, TT)
-  -- function num : 0_1
-  local playAISvc = (self._world):GetService("PlayAI")
+function MonsterMoveServiceRender:_DoRenderTrapBeforeMonster(TT)
+  local playAISvc = self._world:GetService("PlayAI")
   if playAISvc == nil then
-    return 
+    return
   end
   playAISvc:DoCommonRountine(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveServiceRender._DoRenderPlayMonsterAction = function(self, TT)
-  -- function num : 0_2
-  local playAISvc = (self._world):GetService("PlayAI")
+function MonsterMoveServiceRender:_DoRenderPlayMonsterAction(TT)
+  local playAISvc = self._world:GetService("PlayAI")
   if playAISvc == nil then
-    return 
+    return
   end
   playAISvc:DoMainAIRountine(TT)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveServiceRender._DoRenderTrapAfterMonster = function(self, TT)
-  -- function num : 0_3
-  local playAISvc = (self._world):GetService("PlayAI")
+function MonsterMoveServiceRender:_DoRenderTrapAfterMonster(TT)
+  local playAISvc = self._world:GetService("PlayAI")
   if playAISvc == nil then
-    return 
+    return
   end
   playAISvc:DoCommonRountine(TT)
 end
-
-

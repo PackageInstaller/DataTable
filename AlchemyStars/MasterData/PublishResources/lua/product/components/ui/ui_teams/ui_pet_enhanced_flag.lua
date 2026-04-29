@@ -1,14 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_teams/ui_pet_enhanced_flag.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEnhancedFlag", UICustomWidget)
 UIPetEnhancedFlag = UIPetEnhancedFlag
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEnhancedFlag.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPetEnhancedFlag:OnShow(uiParams)
 end
-
-

@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_psp_add_relic_counter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicPSPAddRelicCounter", BuffLogicBase)
 BuffLogicPSPAddRelicCounter = BuffLogicPSPAddRelicCounter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicPSPAddRelicCounter.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicPSPAddRelicCounter:Constructor(buffInstance, logicParam)
   self._relicID = logicParam.relicID or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicPSPAddRelicCounter.DoLogic = function(self)
-  -- function num : 0_1
-  local svc = (self._world):GetService("PopStarProLogic")
+function BuffLogicPSPAddRelicCounter:DoLogic()
+  local svc = self._world:GetService("PopStarProLogic")
   svc:AddRelicCounter(self._relicID)
 end
-
-

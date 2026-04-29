@@ -1,104 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn13/perfect_puzzle/ui_activity_cn13_perfect_puzzle_entry_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityCN13PerfectPuzzleEntryController", UISideEnterCenterContentBase)
 UIActivityCN13PerfectPuzzleEntryController = UIActivityCN13PerfectPuzzleEntryController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCN13PerfectPuzzleEntryController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityCN13PerfectPuzzleEntryController:LoadDataOnEnter(TT, res)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignType, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST, ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
   if res and res:GetSucc() then
-    self._localProcess = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_INLAND_PERFECT_PUZZLE)
-    self.personProcess = (self._localProcess):GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
-    self.personProcessInfo = (self._localProcess):GetComponentInfo(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
-    self._questComponent = (self._localProcess):GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST)
-    self.questcmptInfo = (self._localProcess):GetComponentInfo(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST)
+    self._localProcess = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_INLAND_PERFECT_PUZZLE)
+    self.personProcess = self._localProcess:GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
+    self.personProcessInfo = self._localProcess:GetComponentInfo(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
+    self._questComponent = self._localProcess:GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST)
+    self.questcmptInfo = self._localProcess:GetComponentInfo(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST)
     self:RefreshRedPoint()
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN13PerfectPuzzleEntryController.DoInit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityCN13PerfectPuzzleEntryController:DoInit()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
   self._campaign = self._data
-  local sample = (self._campaign):GetSample()
+  local sample = self._campaign:GetSample()
   self._endTime = sample.end_time
-  local localProcess = (self._campaign):GetLocalProcess()
+  local localProcess = self._campaign:GetLocalProcess()
   self._component = localProcess:GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE)
   self._compoentInfo = localProcess:GetComponentInfo(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
   self:InitWidget()
   self._lineDatas = {}
   self:_LevelDataClassify()
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
+  self.itemModule = GameGlobal.GetModule(ItemModule)
   self.costId = 3000386
-  local curCount = (self.itemModule):GetItemCount(self.costId)
+  local curCount = self.itemModule:GetItemCount(self.costId)
   self:AttachEvent(GameEventType.PerfectPuzzleEntryRefresh, self._RefreshUIInfo)
-  ;
-  (self.totalPieceCountText):SetText(curCount)
+  self.totalPieceCountText:SetText(curCount)
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self, _ENV
-    (self._campaign):ClearCampaignNew(TT)
-    self._localProcess = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_INLAND_PERFECT_PUZZLE)
-    self.personProcess = (self._localProcess):GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
-    self.personProcessInfo = (self._localProcess):GetComponentInfo(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
-    self._questComponent = (self._localProcess):GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST)
-    self.questcmptInfo = (self._localProcess):GetComponentInfo(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST)
+    self._campaign:ClearCampaignNew(TT)
+    self._localProcess = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_INLAND_PERFECT_PUZZLE)
+    self.personProcess = self._localProcess:GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
+    self.personProcessInfo = self._localProcess:GetComponentInfo(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERSON_PROCESS)
+    self._questComponent = self._localProcess:GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST)
+    self.questcmptInfo = self._localProcess:GetComponentInfo(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_QUEST)
     self:RefreshRedPoint()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN13PerfectPuzzleEntryController.DoShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityCN13PerfectPuzzleEntryController:DoShow(uiParams)
   self.taskId = self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    while 1 do
+    while true do
       self:_OnValue()
       YIELD(TT, 1000)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN13PerfectPuzzleEntryController.DoHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityCN13PerfectPuzzleEntryController:DoHide()
   self:DetachEvent(GameEventType.PerfectPuzzleEntryRefresh)
   if self.taskId then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
     self.taskId = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN13PerfectPuzzleEntryController.DoDestroy = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityCN13PerfectPuzzleEntryController:DoDestroy()
   self:DetachEvent(GameEventType.PerfectPuzzleEntryRefresh)
-  ;
-  (UIActivityCN13PerfectPuzzleEntryController.super):Dispose()
+  UIActivityCN13PerfectPuzzleEntryController.super:Dispose()
   if self.taskId then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
     self.taskId = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN13PerfectPuzzleEntryController.InitWidget = function(self)
-  -- function num : 0_5
+function UIActivityCN13PerfectPuzzleEntryController:InitWidget()
   self.restTimeArea = self:GetGameObject("RestTimeArea")
   self.storyText = self:GetUIComponent("UILocalizationText", "StoryText")
   self.redPoint = self:GetUIComponent("UISelectObjectPath", "RedPoint")
@@ -116,196 +87,121 @@ UIActivityCN13PerfectPuzzleEntryController.InitWidget = function(self)
   self.scrollView = self:GetUIComponent("ScrollRect", "Scroll View")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN13PerfectPuzzleEntryController._OnValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityCN13PerfectPuzzleEntryController:_OnValue()
   if self.restTimeText then
-    local curTime = (self._svrTimeModule):GetServerTime() * 0.001
+    local curTime = self._svrTimeModule:GetServerTime() * 0.001
     local endTime = self._endTime
     if curTime < endTime then
-      (self.restTimeText):SetText((StringTable.Get)("str_activity_common_remainingtime_3", "：" .. (UIActivityHelper.GetFormatTimerStr)(endTime - curTime)))
+      self.restTimeText:SetText(StringTable.Get("str_activity_common_remainingtime_3", "：" .. UIActivityHelper.GetFormatTimerStr(endTime - curTime)))
     else
-      ;
-      (self.restTimeText):SetText((StringTable.Get)("str_activity_common_state_over"))
+      self.restTimeText:SetText(StringTable.Get("str_activity_common_state_over"))
     end
     self:_RefreshLevel()
     self:RefreshRedPoint()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN13PerfectPuzzleEntryController.RefreshRedPoint = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityCN13PerfectPuzzleEntryController:RefreshRedPoint()
   if self._questComponent == nil then
-    ((self.getPieceRedPointObj).gameObject):SetActive(false)
-    ;
-    ((self.puzzlePlanRedPointObj).gameObject):SetActive(false)
-    ;
-    (Log.error)("任务组件为空，这种情况不合理吧")
-    return 
+    self.getPieceRedPointObj.gameObject:SetActive(false)
+    self.puzzlePlanRedPointObj.gameObject:SetActive(false)
+    Log.error("任务组件为空，这种情况不合理吧")
+    return
   end
-  local questList = (self._questComponent):GetQuestInfo()
+  local questList = self._questComponent:GetQuestInfo()
   local questRed = false
-  if (self._questComponent):HasQuestCanClaim(questList) then
+  if self._questComponent:HasQuestCanClaim(questList) then
     questRed = true
   end
-  ;
-  ((self.getPieceRedPointObj).gameObject):SetActive(questRed)
-  local planRed = (self.personProcess):HasCanGetReward()
-  ;
-  ((self.puzzlePlanRedPointObj).gameObject):SetActive(planRed)
+  self.getPieceRedPointObj.gameObject:SetActive(questRed)
+  local planRed = self.personProcess:HasCanGetReward()
+  self.puzzlePlanRedPointObj.gameObject:SetActive(planRed)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN13PerfectPuzzleEntryController._RefreshUIInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local curCount = (self.itemModule):GetItemCount(self.costId)
-  ;
-  (self.totalPieceCountText):SetText(curCount)
+function UIActivityCN13PerfectPuzzleEntryController:_RefreshUIInfo()
+  local curCount = self.itemModule:GetItemCount(self.costId)
+  self.totalPieceCountText:SetText(curCount)
   self:_RefreshLevel()
   self:RefreshRedPoint()
-  local count = (table.count)((self._compoentInfo).m_pass_mission_info)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
+  local count = table.count(self._compoentInfo.m_pass_mission_info)
   if count < 1 then
-    (self.scrollView).horizontalNormalizedPosition = 0
-  else
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-    if count == 1 then
-      (self.scrollView).horizontalNormalizedPosition = 0.46
-    else
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-      if count == 2 then
-        (self.scrollView).horizontalNormalizedPosition = 0.95
-      else
-        -- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-        if count >= 3 then
-          (self.scrollView).horizontalNormalizedPosition = 1
-        end
-      end
-    end
+    self.scrollView.horizontalNormalizedPosition = 0
+  elseif count == 1 then
+    self.scrollView.horizontalNormalizedPosition = 0.46
+  elseif count == 2 then
+    self.scrollView.horizontalNormalizedPosition = 0.95
+  elseif 3 <= count then
+    self.scrollView.horizontalNormalizedPosition = 1
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.QuestUpdate)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.QuestUpdate)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN13PerfectPuzzleEntryController.AfterUILayerChanged = function(self)
-  -- function num : 0_9
+function UIActivityCN13PerfectPuzzleEntryController:AfterUILayerChanged()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN13PerfectPuzzleEntryController._LevelDataClassify = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_perfect_puzzle)({ComponentID = (self._component):GetComponentCfgId()})
+function UIActivityCN13PerfectPuzzleEntryController:_LevelDataClassify()
+  local cfgs = Cfg.cfg_component_perfect_puzzle({
+    ComponentID = self._component:GetComponentCfgId()
+  })
   if cfgs then
-    for _,cfg in pairs(cfgs) do
-      (table.insert)(self._lineDatas, cfg)
+    for _, cfg in pairs(cfgs) do
+      table.insert(self._lineDatas, cfg)
     end
   end
-  do
-    ;
-    (table.sort)(self._lineDatas, function(a, b)
-    -- function num : 0_10_0
-    do return a.MissionID < b.MissionID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-    local count = (table.count)(self._lineDatas)
-    ;
-    (self.roadPointPool):SpawnObjects("UICN13PerfectPuzzleRoadPointItem", count)
-    self:_RefreshLevel()
-    local count = (table.count)((self._compoentInfo).m_pass_mission_info)
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R4 in 'UnsetPending'
-
-    if count < 1 then
-      (self.scrollView).horizontalNormalizedPosition = 0
-    else
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R4 in 'UnsetPending'
-
-      if count == 1 then
-        (self.scrollView).horizontalNormalizedPosition = 0.46
-      else
-        -- DECOMPILER ERROR at PC55: Confused about usage of register: R4 in 'UnsetPending'
-
-        if count == 2 then
-          (self.scrollView).horizontalNormalizedPosition = 0.95
-        else
-          -- DECOMPILER ERROR at PC60: Confused about usage of register: R4 in 'UnsetPending'
-
-          if count >= 3 then
-            (self.scrollView).horizontalNormalizedPosition = 1
-          end
-        end
-      end
-    end
+  table.sort(self._lineDatas, function(a, b)
+    return a.MissionID < b.MissionID
+  end)
+  local count = table.count(self._lineDatas)
+  self.roadPointPool:SpawnObjects("UICN13PerfectPuzzleRoadPointItem", count)
+  self:_RefreshLevel()
+  local count = table.count(self._compoentInfo.m_pass_mission_info)
+  if count < 1 then
+    self.scrollView.horizontalNormalizedPosition = 0
+  elseif count == 1 then
+    self.scrollView.horizontalNormalizedPosition = 0.46
+  elseif count == 2 then
+    self.scrollView.horizontalNormalizedPosition = 0.95
+  elseif 3 <= count then
+    self.scrollView.horizontalNormalizedPosition = 1
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN13PerfectPuzzleEntryController._RefreshLevel = function(self)
-  -- function num : 0_11
-  self._nodeWidgets = (self.roadPointPool):GetAllSpawnList()
+function UIActivityCN13PerfectPuzzleEntryController:_RefreshLevel()
+  self._nodeWidgets = self.roadPointPool:GetAllSpawnList()
   for i = 1, #self._nodeWidgets do
-    ((self._nodeWidgets)[i]):SetData((self._lineDatas)[i], i, self._component, self._campaign)
+    self._nodeWidgets[i]:SetData(self._lineDatas[i], i, self._component, self._campaign)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN13PerfectPuzzleEntryController.ActivityTipsbtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  if not (self._campaign):CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
-    return 
+function UIActivityCN13PerfectPuzzleEntryController:ActivityTipsbtnOnClick(go)
+  if not self._campaign:CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
+    return
   end
   self:ShowDialog("UIIntroLoader", "UIActivityCN13PerfectPuzzleEntryController", MaskType.MT_Default)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN13PerfectPuzzleEntryController.PuzzlePlanBtnOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  if not (self._campaign):CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
-    return 
+function UIActivityCN13PerfectPuzzleEntryController:PuzzlePlanBtnOnClick(go)
+  if not self._campaign:CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
+    return
   end
   self:ShowDialog("UICN13PuzzlePlanPopUp")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN13PerfectPuzzleEntryController.GetPieceBtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
-  if not (self._campaign):CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
-    return 
+function UIActivityCN13PerfectPuzzleEntryController:GetPieceBtnOnClick(go)
+  if not self._campaign:CheckComponentOpen(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE) then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
+    return
   end
   self:ShowDialog("UICN13GetPiecePopUp")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN13PerfectPuzzleEntryController.PieceRootOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  local pos = (go.transform).position - ((self.rightTop).transform).position
+function UIActivityCN13PerfectPuzzleEntryController:PieceRootOnClick(go)
+  local pos = go.transform.position - self.rightTop.transform.position
   UITopTipsContext:PopupTips(self.costId, Vector2(-120, 10), pos)
 end
-
-

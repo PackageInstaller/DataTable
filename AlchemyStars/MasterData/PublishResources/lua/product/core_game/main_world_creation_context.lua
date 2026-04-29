@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/main_world_creation_context.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_world_creation_context")
 require("components_lookup")
 _class("MainWorldCreationContext", BaseWorldCreationContext)
 MainWorldCreationContext = MainWorldCreationContext
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-MainWorldCreationContext.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function MainWorldCreationContext:Constructor()
   self.WCC_StartCreationIndex = 1
   self.WCC_EntityCreationProto = Entity
   local wEComponents = ComponentsLookup:New({})
@@ -70,53 +63,33 @@ MainWorldCreationContext.Constructor = function(self)
   self.linkLineType = ELinkLineType.ELLT_LINE_Common
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorldCreationContext.InitializePetsData = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local petList = (self.localPlayerInfo).pet_list
-  for k,v in ipairs(petList) do
-    local petData = nil
+function MainWorldCreationContext:InitializePetsData()
+  local petList = self.localPlayerInfo.pet_list
+  for k, v in ipairs(petList) do
+    local petData
     if self.matchType == MatchType.MT_PopStar then
       petData = PopStarMatchPet:New(v)
     else
       petData = MatchPet:New(v)
     end
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.localMatchPets)[#self.localMatchPets + 1] = petData
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.localMatchPetDict)[v.pet_pstid] = petData
+    self.localMatchPets[#self.localMatchPets + 1] = petData
+    self.localMatchPetDict[v.pet_pstid] = petData
   end
   if self.remoteTeamInfo then
     petList = self.remoteTeamInfo
-    for k,v in ipairs(petList) do
+    for k, v in ipairs(petList) do
       local petInfo = v
       petInfo.pet_pstid = k
       local petData = MatchPet:New(petInfo)
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self.remoteMatchPets)[#self.remoteMatchPets + 1] = petData
-      -- DECOMPILER ERROR at PC54: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self.remoteMatchPetDict)[petInfo.pet_pstid] = petData
+      self.remoteMatchPets[#self.remoteMatchPets + 1] = petData
+      self.remoteMatchPetDict[petInfo.pet_pstid] = petData
     end
   end
-  do
-    self.TeamLeaderPetPstID = -1
-    return self.localMatchPetDict, self.remoteMatchPetDict
-  end
+  self.TeamLeaderPetPstID = -1
+  return self.localMatchPetDict, self.remoteMatchPetDict
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorldCreationContext.InitializeBonusCondition = function(self, clientCreateInfo)
-  -- function num : 0_2
+function MainWorldCreationContext:InitializeBonusCondition(clientCreateInfo)
   self.clientCreateInfo = clientCreateInfo
   self.bonusCondition = self:_CalcBonusConditionArray()
   if #self.bonusCondition > 1 then
@@ -124,228 +97,154 @@ MainWorldCreationContext.InitializeBonusCondition = function(self, clientCreateI
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorldCreationContext._CalcBonusConditionArray = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function MainWorldCreationContext:_CalcBonusConditionArray()
   local bonusConditionArray = {}
   if self.matchType == MatchType.MT_Mission then
-    local missionInfo = ((self.clientCreateInfo).mission_info)[1]
-    local missionData = (Cfg.cfg_mission)[missionInfo.mission_id]
+    local missionInfo = self.clientCreateInfo.mission_info[1]
+    local missionData = Cfg.cfg_mission[missionInfo.mission_id]
     local conditionID = missionData.ThreeStarCondition1
     bonusConditionArray[#bonusConditionArray + 1] = conditionID
     conditionID = missionData.ThreeStarCondition2
     bonusConditionArray[#bonusConditionArray + 1] = conditionID
     conditionID = missionData.ThreeStarCondition3
     bonusConditionArray[#bonusConditionArray + 1] = conditionID
-  else
-    do
-      if self.matchType == MatchType.MT_Campaign then
-        local missionInfo = ((self.clientCreateInfo).campaign_mission_info)[1]
-        local missionData = (Cfg.cfg_campaign_mission)[missionInfo.nCampaignMissionId]
-        if missionData and missionData.IgnoreThreeStar == 0 then
-          local conditionID = missionData.ThreeStarCondition1
-          bonusConditionArray[#bonusConditionArray + 1] = conditionID
-          conditionID = missionData.ThreeStarCondition2
-          bonusConditionArray[#bonusConditionArray + 1] = conditionID
-          conditionID = missionData.ThreeStarCondition3
-          bonusConditionArray[#bonusConditionArray + 1] = conditionID
-        end
-      else
-        do
-          if MatchType.MT_ExtMission == self.matchType then
-            local extMissionInfo = ((self.clientCreateInfo).m_extMissionInfo)[1]
-            local extTaskData = (Cfg.cfg_extra_mission_task)[extMissionInfo.m_nExtTaskID]
-            local conditionID = 0
-            conditionID = extTaskData.ThreeStarCondition1
-            bonusConditionArray[#bonusConditionArray + 1] = conditionID
-            conditionID = extTaskData.ThreeStarCondition2
-            bonusConditionArray[#bonusConditionArray + 1] = conditionID
-            conditionID = extTaskData.ThreeStarCondition3
-            bonusConditionArray[#bonusConditionArray + 1] = conditionID
-          else
-            do
-              if MatchType.MT_ResDungeon == self.matchType then
-                local info = ((self.clientCreateInfo).resdungeon_info)[1]
-                local cfg = (Cfg.cfg_res_instance_detail)[info.res_dungeon_id]
-                local conditionID = 0
-                conditionID = cfg.ThreeStarCondition1
-                bonusConditionArray[#bonusConditionArray + 1] = conditionID
-                conditionID = cfg.ThreeStarCondition2
-                bonusConditionArray[#bonusConditionArray + 1] = conditionID
-                conditionID = cfg.ThreeStarCondition3
-                bonusConditionArray[#bonusConditionArray + 1] = conditionID
-              else
-                do
-                  if self.matchType == MatchType.MT_Chess then
-                    local info = ((self.clientCreateInfo).chess_mission_info)[1]
-                    local cfg = (Cfg.cfg_chess_mission)[info.mission_id]
-                    local conditionID = 0
-                    conditionID = cfg.ThreeStarCondition1
-                    bonusConditionArray[#bonusConditionArray + 1] = conditionID
-                    conditionID = cfg.ThreeStarCondition2
-                    bonusConditionArray[#bonusConditionArray + 1] = conditionID
-                    conditionID = cfg.ThreeStarCondition3
-                    bonusConditionArray[#bonusConditionArray + 1] = conditionID
-                  else
-                    do
-                      if self.matchType == MatchType.MT_PopStar then
-                        local missionInfo = ((self.clientCreateInfo).popstar_mission_info)[1]
-                        local missionData = (Cfg.cfg_popstar_mission)[missionInfo.mission_id]
-                        if missionData and missionData.IgnoreThreeStar == 0 then
-                          local conditionID = missionData.ThreeStarCondition1
-                          bonusConditionArray[#bonusConditionArray + 1] = conditionID
-                          conditionID = missionData.ThreeStarCondition2
-                          bonusConditionArray[#bonusConditionArray + 1] = conditionID
-                          conditionID = missionData.ThreeStarCondition3
-                          bonusConditionArray[#bonusConditionArray + 1] = conditionID
-                        end
-                      else
-                        do
-                          if self.matchType == MatchType.MT_Season then
-                            local info = ((self.clientCreateInfo).season_mission_info)[1]
-                            local cfg = (Cfg.cfg_season_mission)[info.mission_id]
-                            local conditionID = 0
-                            conditionID = cfg.ThreeStarCondition1
-                            bonusConditionArray[#bonusConditionArray + 1] = conditionID
-                            conditionID = cfg.ThreeStarCondition2
-                            bonusConditionArray[#bonusConditionArray + 1] = conditionID
-                            conditionID = cfg.ThreeStarCondition3
-                            bonusConditionArray[#bonusConditionArray + 1] = conditionID
-                          else
-                          end
-                          do
-                            if self.matchType == MatchType.MT_PopStarPro then
-                              return bonusConditionArray
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+  elseif self.matchType == MatchType.MT_Campaign then
+    local missionInfo = self.clientCreateInfo.campaign_mission_info[1]
+    local missionData = Cfg.cfg_campaign_mission[missionInfo.nCampaignMissionId]
+    if missionData and missionData.IgnoreThreeStar == 0 then
+      local conditionID = missionData.ThreeStarCondition1
+      bonusConditionArray[#bonusConditionArray + 1] = conditionID
+      conditionID = missionData.ThreeStarCondition2
+      bonusConditionArray[#bonusConditionArray + 1] = conditionID
+      conditionID = missionData.ThreeStarCondition3
+      bonusConditionArray[#bonusConditionArray + 1] = conditionID
     end
+  elseif MatchType.MT_ExtMission == self.matchType then
+    local extMissionInfo = self.clientCreateInfo.m_extMissionInfo[1]
+    local extTaskData = Cfg.cfg_extra_mission_task[extMissionInfo.m_nExtTaskID]
+    local conditionID = 0
+    conditionID = extTaskData.ThreeStarCondition1
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+    conditionID = extTaskData.ThreeStarCondition2
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+    conditionID = extTaskData.ThreeStarCondition3
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+  elseif MatchType.MT_ResDungeon == self.matchType then
+    local info = self.clientCreateInfo.resdungeon_info[1]
+    local cfg = Cfg.cfg_res_instance_detail[info.res_dungeon_id]
+    local conditionID = 0
+    conditionID = cfg.ThreeStarCondition1
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+    conditionID = cfg.ThreeStarCondition2
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+    conditionID = cfg.ThreeStarCondition3
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+  elseif self.matchType == MatchType.MT_Chess then
+    local info = self.clientCreateInfo.chess_mission_info[1]
+    local cfg = Cfg.cfg_chess_mission[info.mission_id]
+    local conditionID = 0
+    conditionID = cfg.ThreeStarCondition1
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+    conditionID = cfg.ThreeStarCondition2
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+    conditionID = cfg.ThreeStarCondition3
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+  elseif self.matchType == MatchType.MT_PopStar then
+    local missionInfo = self.clientCreateInfo.popstar_mission_info[1]
+    local missionData = Cfg.cfg_popstar_mission[missionInfo.mission_id]
+    if missionData and missionData.IgnoreThreeStar == 0 then
+      local conditionID = missionData.ThreeStarCondition1
+      bonusConditionArray[#bonusConditionArray + 1] = conditionID
+      conditionID = missionData.ThreeStarCondition2
+      bonusConditionArray[#bonusConditionArray + 1] = conditionID
+      conditionID = missionData.ThreeStarCondition3
+      bonusConditionArray[#bonusConditionArray + 1] = conditionID
+    end
+  elseif self.matchType == MatchType.MT_Season then
+    local info = self.clientCreateInfo.season_mission_info[1]
+    local cfg = Cfg.cfg_season_mission[info.mission_id]
+    local conditionID = 0
+    conditionID = cfg.ThreeStarCondition1
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+    conditionID = cfg.ThreeStarCondition2
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+    conditionID = cfg.ThreeStarCondition3
+    bonusConditionArray[#bonusConditionArray + 1] = conditionID
+  elseif self.matchType == MatchType.MT_PopStarPro then
   end
+  return bonusConditionArray
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorldCreationContext.GetLocalMatchPetList = function(self)
-  -- function num : 0_4
+function MainWorldCreationContext:GetLocalMatchPetList()
   return self.localMatchPets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorldCreationContext.GetRemoteMatchPetList = function(self)
-  -- function num : 0_5
+function MainWorldCreationContext:GetRemoteMatchPetList()
   return self.remoteMatchPets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorldCreationContext.GetRemotePlayerPosition = function(self)
-  -- function num : 0_6
+function MainWorldCreationContext:GetRemotePlayerPosition()
   return self.remotePlayerPos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorldCreationContext.GetPetData = function(self, pstid)
-  -- function num : 0_7
-  if not (self.localMatchPetDict)[pstid] then
-    return (self.remoteMatchPetDict)[pstid]
-  end
+function MainWorldCreationContext:GetPetData(pstid)
+  return self.localMatchPetDict[pstid] or self.remoteMatchPetDict[pstid]
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorldCreationContext.GetPlayerPstID = function(self)
-  -- function num : 0_8
-  return (self.localPlayerInfo).pstid
+function MainWorldCreationContext:GetPlayerPstID()
+  return self.localPlayerInfo.pstid
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorldCreationContext.GetPlayerLevel = function(self)
-  -- function num : 0_9
-  return (self.localPlayerInfo).nLevel
+function MainWorldCreationContext:GetPlayerLevel()
+  return self.localPlayerInfo.nLevel
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorldCreationContext.AvailableInRender = function(self, index)
-  -- function num : 0_10
-  do return self._sharedComponentStartIndex <= index end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorldCreationContext:AvailableInRender(index)
+  return index >= self._sharedComponentStartIndex
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorldCreationContext.UniqueCmptAvailableInRender = function(self, index)
-  -- function num : 0_11
-  do return self._sharedCmptUniqueStartIndex <= index end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorldCreationContext:UniqueCmptAvailableInRender(index)
+  return index >= self._sharedCmptUniqueStartIndex
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorldCreationContext.GetConquestCreateInfo = function(self)
-  -- function num : 0_12
-  return ((self.clientCreateInfo).conquest_mission_info)[1]
+function MainWorldCreationContext:GetConquestCreateInfo()
+  return self.clientCreateInfo.conquest_mission_info[1]
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorldCreationContext.GetSimpleConquestCreateInfo = function(self)
-  -- function num : 0_13
-  return ((self.clientCreateInfo).simple_conquest_mission_info)[1]
+function MainWorldCreationContext:GetSimpleConquestCreateInfo()
+  return self.clientCreateInfo.simple_conquest_mission_info[1]
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorldCreationContext.GetLocalHelpPetPstID = function(self)
-  -- function num : 0_14
+function MainWorldCreationContext:GetLocalHelpPetPstID()
   return self.localHelpPetPstID
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorldCreationContext.GetPopStarProCreateInfo = function(self)
-  -- function num : 0_15
-  return ((self.clientCreateInfo).anipop_mission_info)[1]
+function MainWorldCreationContext:GetPopStarProCreateInfo()
+  return self.clientCreateInfo.anipop_mission_info[1]
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorldCreationContext.GetSeasonMazeCreateInfo = function(self)
-  -- function num : 0_16
-  return ((self.clientCreateInfo).season_maze_mission_info)[1]
+function MainWorldCreationContext:GetSeasonMazeCreateInfo()
+  return self.clientCreateInfo.season_maze_mission_info[1]
 end
 
-WorldRunPostion = {AtServer = 1, AtClient = 2, Cutscene = 3, Performance = 4}
+WorldRunPostion = {
+  AtServer = 1,
+  AtClient = 2,
+  Cutscene = 3,
+  Performance = 4
+}
 _enum("WorldRunPostion", WorldRunPostion)
 _class("PlayerCreationContext", Object)
 PlayerCreationContext = PlayerCreationContext
--- DECOMPILER ERROR at PC81: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayerCreationContext.Constructor = function(self)
-  -- function num : 0_17
+function PlayerCreationContext:Constructor()
   self.player_id = 0
   self.player_runtime_data = nil
   self.character_context = nil
   self.pet_contexts = {}
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerCreationContext.Destructor = function(self)
-  -- function num : 0_18
+function PlayerCreationContext:Destructor()
   self.character_context = nil
   self.player_runtime_data = nil
   self.pet_contexts = nil
@@ -353,14 +252,10 @@ end
 
 _class("EntityCreationContext", Object)
 EntityCreationContext = EntityCreationContext
--- DECOMPILER ERROR at PC93: Confused about usage of register: R0 in 'UnsetPending'
 
-EntityCreationContext.Constructor = function(self)
-  -- function num : 0_19
+function EntityCreationContext:Constructor()
   self.entity_config_id = 0
   self.bShow = true
   self.entity_config = nil
   self.entity_runtime_data = nil
 end
-
-

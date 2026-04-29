@@ -1,126 +1,78 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/manager/aircraft_present_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftPresentManager", Object)
 AircraftPresentManager = AircraftPresentManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPresentManager.Constructor = function(self, aircraftMain)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftPresentManager:Constructor(aircraftMain)
   self._main = aircraftMain
-  self._aircraftModule = (GameGlobal.GetModule)(AircraftModule)
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._aircraftModule = GameGlobal.GetModule(AircraftModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPresentManager.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local presentPetsPstidList = (self._aircraftModule):GetHavePresentPets()
-  for k,petPstid in pairs(presentPetsPstidList) do
-    local pet = (self._petModule):GetPet(petPstid)
+function AircraftPresentManager:Init()
+  local presentPetsPstidList = self._aircraftModule:GetHavePresentPets()
+  for k, petPstid in pairs(presentPetsPstidList) do
+    local pet = self._petModule:GetPet(petPstid)
     if pet then
       local petID = pet:GetTemplateID()
       self:DelieverPetWander(petID)
     else
-      do
-        do
-          ;
-          (Log.exception)("背包中没有星灵，不能送礼！")
-          -- DECOMPILER ERROR at PC23: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC23: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC23: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      Log.exception("背包中没有星灵，不能送礼！")
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPresentManager.Dispose = function(self)
-  -- function num : 0_2
+function AircraftPresentManager:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPresentManager.AcceptPresent = function(self, pet)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.reqAcceptGift, self, pet)
+function AircraftPresentManager:AcceptPresent(pet)
+  GameGlobal.TaskManager():StartTask(self.reqAcceptGift, self, pet)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPresentManager.reqAcceptGift = function(self, TT, pet)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, true, "reqAcceptGift")
+function AircraftPresentManager:reqAcceptGift(TT, pet)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, true, "reqAcceptGift")
   local tmpID = pet:TemplateID()
-  local res, assetList = (self._aircraftModule):AcceptPresentByTemplateID(TT, tmpID)
+  local res, assetList = self._aircraftModule:AcceptPresentByTemplateID(TT, tmpID)
   if not res:GetSucc() then
     AirLog("收取礼物失败，错误码:", res:GetResult())
-    ;
-    (ToastManager.ShowToast)((self._aircraftModule):GetErrorMsg(res:GetResult()))
+    ToastManager.ShowToast(self._aircraftModule:GetErrorMsg(res:GetResult()))
     self:OnAcceptPresentEnd(tmpID)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, false, "reqAcceptGift")
-  local currentPet = (self._main):GetPetByTmpID(tmpID)
-  if assetList and (table.count)(assetList) > 0 then
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, false, "reqAcceptGift")
+  local currentPet = self._main:GetPetByTmpID(tmpID)
+  if assetList and table.count(assetList) > 0 then
     local delieverPresentAction = AirActionDelieverPresent:New(currentPet, assetList, self._main)
     currentPet:StartMainAction(delieverPresentAction)
-    local _x, _z = (self._main):GetMainCameraXZ()
-    local _y = (pet:WorldPosition()).y
+    local _x, _z = self._main:GetMainCameraXZ()
+    local _y = pet:WorldPosition().y
     local lookAtPoint = Vector3(_x, _y, _z)
     local rotateAction = AirActionRotate:New(pet, lookAtPoint)
     pet:StartViceAction(rotateAction)
   end
-  do
-    self:OnAcceptPresentEnd(tmpID)
-  end
+  self:OnAcceptPresentEnd(tmpID)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPresentManager.OnAcceptPresentEnd = function(self, petTemplateID)
-  -- function num : 0_5
-  local pet = (self._main):GetPetByTmpID(petTemplateID)
+function AircraftPresentManager:OnAcceptPresentEnd(petTemplateID)
+  local pet = self._main:GetPetByTmpID(petTemplateID)
   pet:StopMatAnim()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPresentManager.DelieverPetWander = function(self, petTemplateID)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._main):IsRandomStoryPet(petTemplateID) then
+function AircraftPresentManager:DelieverPetWander(petTemplateID)
+  if self._main:IsRandomStoryPet(petTemplateID) then
     AirLog("送礼星灵触发随机剧情，不触发送礼：", petTemplateID)
-    return 
+    return
   end
   AirLog("创建1个送礼星灵：", petTemplateID)
-  local pet, sp = (self._main):AddPet(petTemplateID)
+  local pet, sp = self._main:AddPet(petTemplateID)
   if pet then
     pet:SetGiftFlag(true)
-    ;
-    (self._main):RandomInitActionForPet(pet)
+    self._main:RandomInitActionForPet(pet)
     local presentBubbleID = AircraftPetGiftBubble.Gift
-    local faceAction = AirActionEffect:New(pet, presentBubbleID, AircraftPetSlotType.Head, (Vector3(0.4, 0.5, 0)), nil)
+    local faceAction = AirActionEffect:New(pet, presentBubbleID, AircraftPetSlotType.Head, Vector3(0.4, 0.5, 0), nil)
     pet:StartSpecialAction(AircraftSpecialActionType.PresentBag, faceAction)
     local obj = faceAction:GetGameObject()
     pet:SetPresentObject(obj)
+  elseif sp then
+    Log.debug("###[AircraftPresentManager] 送礼星灵创建失败，有sp星灵存在,sp:", sp)
   else
-    do
-      if sp then
-        (Log.debug)("###[AircraftPresentManager] 送礼星灵创建失败，有sp星灵存在,sp:", sp)
-      else
-        ;
-        (Log.debug)("###[AircraftPresentManager] 送礼星灵创建失败")
-      end
-    end
+    Log.debug("###[AircraftPresentManager] 送礼星灵创建失败")
   end
 end
-
-

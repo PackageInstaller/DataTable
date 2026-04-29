@@ -1,66 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/bag/ui_activity_n29_detective_clue_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN29DetectiveClueItem", UICustomWidget)
 UIActivityN29DetectiveClueItem = UIActivityN29DetectiveClueItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN29DetectiveClueItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN29DetectiveClueItem:OnShow(uiParams)
   self._delay = 0.05
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveClueItem._GetComponent = function(self)
-  -- function num : 0_1
+function UIActivityN29DetectiveClueItem:_GetComponent()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._selcetObj = self:GetGameObject("select")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveClueItem.GetCfg = function(self)
-  -- function num : 0_2
+function UIActivityN29DetectiveClueItem:GetCfg()
   return self._data
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveClueItem.SetData = function(self, data, index, callback)
-  -- function num : 0_3
+function UIActivityN29DetectiveClueItem:SetData(data, index, callback)
   self._data = data
   self._callback = callback
   self:_SetAnimation(self._delay * (index - 1))
-  ;
-  (self._icon):LoadImage((self._data).Icon)
+  self._icon:LoadImage(self._data.Icon)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveClueItem.SetSelect = function(self, isSelect)
-  -- function num : 0_4
-  (self._selcetObj):SetActive(isSelect)
+function UIActivityN29DetectiveClueItem:SetSelect(isSelect)
+  self._selcetObj:SetActive(isSelect)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveClueItem._SetAnimation = function(self, delay)
-  -- function num : 0_5 , upvalues : _ENV
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "anim", "anim", "uieff_UIN29DetectiveClueItem_in", delay, 300, nil)
+function UIActivityN29DetectiveClueItem:_SetAnimation(delay)
+  UIWidgetHelper.PlayAnimationInSequence(self, "anim", "anim", "uieff_UIN29DetectiveClueItem_in", delay, 300, nil)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveClueItem.ItemBtnOnClick = function(self)
-  -- function num : 0_6
+function UIActivityN29DetectiveClueItem:ItemBtnOnClick()
   self:SetSelect(true)
   if self._callback then
-    (self._callback)(self)
+    self._callback(self)
   end
 end
-
-

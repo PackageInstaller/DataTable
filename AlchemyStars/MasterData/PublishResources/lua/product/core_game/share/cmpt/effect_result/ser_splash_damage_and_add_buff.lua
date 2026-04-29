@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_splash_damage_and_add_buff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectSplashDamageAndAddBuffResult", SkillEffectResultBase)
 SkillEffectSplashDamageAndAddBuffResult = SkillEffectSplashDamageAndAddBuffResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectSplashDamageAndAddBuffResult.Constructor = function(self, centerPos, damageResults, buffResults)
-  -- function num : 0_0
+function SkillEffectSplashDamageAndAddBuffResult:Constructor(centerPos, damageResults, buffResults)
   self._centerPos = centerPos
   self._damageResults = damageResults
   self._buffResults = buffResults
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSplashDamageAndAddBuffResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectSplashDamageAndAddBuffResult:GetEffectType()
   return SkillEffectType.SplashDamageAndAddBuff
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSplashDamageAndAddBuffResult.GetCenterPos = function(self)
-  -- function num : 0_2
+function SkillEffectSplashDamageAndAddBuffResult:GetCenterPos()
   return self._centerPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSplashDamageAndAddBuffResult.GetDamageResults = function(self)
-  -- function num : 0_3
+function SkillEffectSplashDamageAndAddBuffResult:GetDamageResults()
   return self._damageResults
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSplashDamageAndAddBuffResult.GetBuffResults = function(self)
-  -- function num : 0_4
+function SkillEffectSplashDamageAndAddBuffResult:GetBuffResults()
   return self._buffResults
 end
-
-

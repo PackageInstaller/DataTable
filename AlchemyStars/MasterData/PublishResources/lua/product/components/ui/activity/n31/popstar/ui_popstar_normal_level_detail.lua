@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/popstar/ui_popstar_normal_level_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPopStarNormalLevelDetail", UIController)
 UIPopStarNormalLevelDetail = UIPopStarNormalLevelDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPopStarNormalLevelDetail.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPopStarNormalLevelDetail:OnShow(uiParams)
   self._levelData = uiParams[1]
   self._nameLabel = self:GetUIComponent("UILocalizationText", "LevelName")
   self._desLabel = self:GetUIComponent("UILocalizationText", "Des")
@@ -23,95 +16,63 @@ UIPopStarNormalLevelDetail.OnShow = function(self, uiParams)
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarNormalLevelDetail.Refresh = function(self)
-  -- function num : 0_1
-  (self._iconLoader):LoadImage((self._levelData):GetlevelDetailIcon())
-  ;
-  (self._nameLabel):SetText((self._levelData):GetName())
-  ;
-  (self._desLabel):SetText((self._levelData):GetDes())
-  local firstRewards = (self._levelData):GetPassReward()
-  ;
-  (self._firstRewardsLoader):SpawnObjects("UIPopStarRewardItem", #firstRewards)
-  local list = (self._firstRewardsLoader):GetAllSpawnList()
+function UIPopStarNormalLevelDetail:Refresh()
+  self._iconLoader:LoadImage(self._levelData:GetlevelDetailIcon())
+  self._nameLabel:SetText(self._levelData:GetName())
+  self._desLabel:SetText(self._levelData:GetDes())
+  local firstRewards = self._levelData:GetPassReward()
+  self._firstRewardsLoader:SpawnObjects("UIPopStarRewardItem", #firstRewards)
+  local list = self._firstRewardsLoader:GetAllSpawnList()
   for i = 1, #list do
     local item = list[i]
-    item:SetData(firstRewards[i], (self._levelData):IsComplete(), 1, function(id, pos)
-    -- function num : 0_1_0 , upvalues : self
-    self:ShowTips(id, pos)
+    item:SetData(firstRewards[i], self._levelData:IsComplete(), 1, function(id, pos)
+      self:ShowTips(id, pos)
+    end)
   end
-)
-  end
-  local threeStarRewards = (self._levelData):GetThreeStarReward()
-  ;
-  (self._threeStarRewardsLoader):SpawnObjects("UIPopStarRewardItem", #threeStarRewards)
-  local list = (self._threeStarRewardsLoader):GetAllSpawnList()
+  local threeStarRewards = self._levelData:GetThreeStarReward()
+  self._threeStarRewardsLoader:SpawnObjects("UIPopStarRewardItem", #threeStarRewards)
+  local list = self._threeStarRewardsLoader:GetAllSpawnList()
   for i = 1, #list do
     local item = list[i]
-    item:SetData(threeStarRewards[i], (self._levelData):IsThreeStarRewardComplete(), 1, function(id, pos)
-    -- function num : 0_1_1 , upvalues : self
-    self:ShowTips(id, pos)
+    item:SetData(threeStarRewards[i], self._levelData:IsThreeStarRewardComplete(), 1, function(id, pos)
+      self:ShowTips(id, pos)
+    end)
   end
-)
-  end
-  local teams = (self._levelData):GetTeam()
-  ;
-  (self._teamsLoader):SpawnObjects("UIPopStarPetItem", #teams)
-  local list = (self._teamsLoader):GetAllSpawnList()
+  local teams = self._levelData:GetTeam()
+  self._teamsLoader:SpawnObjects("UIPopStarPetItem", #teams)
+  local list = self._teamsLoader:GetAllSpawnList()
   for i = 1, #list do
     local item = list[i]
     item:SetData(teams[i], 0.8, function(id, pos)
-    -- function num : 0_1_2 , upvalues : self
-    if id <= 0 then
-      return 
-    end
-    self:ShowSkillTips(id, pos)
-  end
-)
+      if id <= 0 then
+        return
+      end
+      self:ShowSkillTips(id, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarNormalLevelDetail.ShowTips = function(self, itemId, pos)
-  -- function num : 0_2
-  (self._tips):SetData(itemId, pos)
+function UIPopStarNormalLevelDetail:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarNormalLevelDetail.ShowSkillTips = function(self, petId, pos)
-  -- function num : 0_3
-  (self._skilltips):SetData(pos, 0, petId, nil)
+function UIPopStarNormalLevelDetail:ShowSkillTips(petId, pos)
+  self._skilltips:SetData(pos, 0, petId, nil)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarNormalLevelDetail.BtnCloseOnClick = function(self)
-  -- function num : 0_4
+function UIPopStarNormalLevelDetail:BtnCloseOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarNormalLevelDetail.BtnStartBattleOnClick = function(self)
-  -- function num : 0_5
-  if not (self._levelData):IsActivityOpen() then
-    return 
+function UIPopStarNormalLevelDetail:BtnStartBattleOnClick()
+  if not self._levelData:IsActivityOpen() then
+    return
   end
   self:StartTask(self.EnterBattle, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarNormalLevelDetail.EnterBattle = function(self, TT)
-  -- function num : 0_6
+function UIPopStarNormalLevelDetail:EnterBattle(TT)
   self:Lock("UIPopStarNormalLevelDetail_EnterBattle")
-  ;
-  (self._levelData):EnterBattle(TT)
+  self._levelData:EnterBattle(TT)
   self:UnLock("UIPopStarNormalLevelDetail_EnterBattle")
 end
-
-

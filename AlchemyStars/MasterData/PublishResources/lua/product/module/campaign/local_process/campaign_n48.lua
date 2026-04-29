@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n48.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignN48", ICampaignComponentLocalProcessBase)
 CCampaignN48 = CCampaignN48
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignN48.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignN48:Constructor()
   self._cumulativeLoginComponent = nil
   self._cumulativeLoginCompInfo = nil
   self._lineMissionComponent = nil
@@ -26,24 +19,15 @@ CCampaignN48.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignN48:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N48
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignN48:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignN48:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetCumulativeLoginComponent()
   self:_GetLineMissionComponent()
@@ -54,87 +38,63 @@ CCampaignN48.InitComponent = function(self, campaignObj)
   self:_GetShavingIceComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48._GetShavingIceComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._campaignShavingIceComponent = (self._campaignObj):GetComponent(ECampaignN48ComponentID.MINI_GAME)
+function CCampaignN48:_GetShavingIceComponent()
+  self._campaignShavingIceComponent = self._campaignObj:GetComponent(ECampaignN48ComponentID.MINI_GAME)
   if not self._campaignShavingIceComponent then
-    return 
+    return
   end
-  self._shavingIceComponentInfo = (self._campaignShavingIceComponent):ComponentInfo()
+  self._shavingIceComponentInfo = self._campaignShavingIceComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48._GetDifficultyMissionComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._diffcultyMissionComponent = (self._campaignObj):GetComponent(ECampaignN48ComponentID.HEIXIA)
+function CCampaignN48:_GetDifficultyMissionComponent()
+  self._diffcultyMissionComponent = self._campaignObj:GetComponent(ECampaignN48ComponentID.HEIXIA)
   if not self._diffcultyMissionComponent then
-    return 
+    return
   end
-  self._difficultyMissionCompInfo = (self._diffcultyMissionComponent):ComponentInfo()
+  self._difficultyMissionCompInfo = self._diffcultyMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48._GetLineMissionComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._lineMissionComponent = (self._campaignObj):GetComponent(ECampaignN48ComponentID.LINE_MISSION)
+function CCampaignN48:_GetLineMissionComponent()
+  self._lineMissionComponent = self._campaignObj:GetComponent(ECampaignN48ComponentID.LINE_MISSION)
   if not self._lineMissionComponent then
-    return 
+    return
   end
-  self._lineMissionComponentInfo = (self._lineMissionComponent):ComponentInfo()
+  self._lineMissionComponentInfo = self._lineMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48._GetCumulativeLoginComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._cumulativeLoginComponent = (self._campaignObj):GetComponent(ECampaignN48ComponentID.CUMULATIVE_LOGIN)
+function CCampaignN48:_GetCumulativeLoginComponent()
+  self._cumulativeLoginComponent = self._campaignObj:GetComponent(ECampaignN48ComponentID.CUMULATIVE_LOGIN)
   if not self._cumulativeLoginComponent then
-    return 
+    return
   end
-  self._cumulativeLoginComponentInfo = (self._cumulativeLoginComponent):ComponentInfo()
+  self._cumulativeLoginComponentInfo = self._cumulativeLoginComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48._GetShopComponent = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._powerShopComponent = (self._campaignObj):GetComponent(ECampaignN48ComponentID.SHOP)
+function CCampaignN48:_GetShopComponent()
+  self._powerShopComponent = self._campaignObj:GetComponent(ECampaignN48ComponentID.SHOP)
   if not self._powerShopComponent then
-    return 
+    return
   end
-  self._powerShopCompInfo = (self._powerShopComponent):ComponentInfo()
+  self._powerShopCompInfo = self._powerShopComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48._GetPower2ItemComponent = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self._power2itemComponent = (self._campaignObj):GetComponent(ECampaignN48ComponentID.POWER2ITEM)
+function CCampaignN48:_GetPower2ItemComponent()
+  self._power2itemComponent = self._campaignObj:GetComponent(ECampaignN48ComponentID.POWER2ITEM)
   if not self._power2itemComponent then
-    return 
+    return
   end
-  self._power2itemComponentInfo = (self._power2itemComponent):ComponentInfo()
+  self._power2itemComponentInfo = self._power2itemComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48._GetSharedStoryComponent = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  self._storySharedComponent = (self._campaignObj):GetComponent(ECampaignN48ComponentID.SHARED)
+function CCampaignN48:_GetSharedStoryComponent()
+  self._storySharedComponent = self._campaignObj:GetComponent(ECampaignN48ComponentID.SHARED)
   if not self._storySharedComponent then
-    return 
+    return
   end
-  self._storySharedComponentInfo = (self._storySharedComponent):ComponentInfo()
+  self._storySharedComponentInfo = self._storySharedComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.GetComponent = function(self, componentID)
-  -- function num : 0_11 , upvalues : _ENV
+function CCampaignN48:GetComponent(componentID)
   if ECampaignN48ComponentID.CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginComponent
   end
@@ -159,10 +119,7 @@ CCampaignN48.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.GetComponentInfo = function(self, componentID)
-  -- function num : 0_12 , upvalues : _ENV
+function CCampaignN48:GetComponentInfo(componentID)
   if ECampaignN48ComponentID.CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginComponentInfo
   end
@@ -187,167 +144,103 @@ CCampaignN48.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.GetEntryNew = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignN48:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_N48)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.GetEntryRedDot = function(self)
-  -- function num : 0_14
-  if not self:AccumulateLoginReddot() and not self:LineMissionRedDot() then
-    return self:DifficultyMissionRedDot()
-  end
+function CCampaignN48:GetEntryRedDot()
+  return self:AccumulateLoginReddot() or self:LineMissionRedDot() or self:DifficultyMissionRedDot()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.AccumulateLoginReddot = function(self)
-  -- function num : 0_15
-  if self._cumulativeLoginComponent then
-    return (self._cumulativeLoginComponent):HaveRedPoint()
-  end
+function CCampaignN48:AccumulateLoginReddot()
+  return self._cumulativeLoginComponent and self._cumulativeLoginComponent:HaveRedPoint()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.BattlePassRedPoint = function(self, battlePassCampaign)
-  -- function num : 0_16 , upvalues : _ENV
-  return (UIActivityBattlePassHelper.CheckCampaignRedPoint)(battlePassCampaign)
+function CCampaignN48:BattlePassRedPoint(battlePassCampaign)
+  return UIActivityBattlePassHelper.CheckCampaignRedPoint(battlePassCampaign)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.LineMissionRedDot = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  if not (self._lineMissionComponent):ComponentIsOpen() then
+function CCampaignN48:LineMissionRedDot()
+  if not self._lineMissionComponent:ComponentIsOpen() then
     return false
   end
   local red = false
-  local isCross = (UIActivityN48Helper.LocalDB_Get_CrossDay)("line", "Red")
-  red = not (self._lineMissionComponent):HaveRedPoint() or isCross
+  local isCross = UIActivityN48Helper.LocalDB_Get_CrossDay("line", "Red")
+  red = self._lineMissionComponent:HaveRedPoint() and isCross
   return red
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.DifficultyMissionRedDot = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  if not (self._diffcultyMissionComponent):ComponentIsOpen() then
+function CCampaignN48:DifficultyMissionRedDot()
+  if not self._diffcultyMissionComponent:ComponentIsOpen() then
     return false
   end
   local red = false
-  local isCross = (UIActivityN48Helper.LocalDB_Get_CrossDay)("hard", "Red")
-  if not red then
-    red = (self._diffcultyMissionComponent):HaveRedPoint()
-  end
-  return not red or isCross
+  local isCross = UIActivityN48Helper.LocalDB_Get_CrossDay("hard", "Red")
+  red = red or self._diffcultyMissionComponent:HaveRedPoint()
+  return red and isCross
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.GetLottleryNew = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  if not (self._powerShopComponent):ComponentIsOpen() then
+function CCampaignN48:GetLottleryNew()
+  if not self._powerShopComponent:ComponentIsOpen() then
     return false
   end
-  return (UIActivityN48Helper.GetNewFlagStatus)("N48_Lottlery")
+  return UIActivityN48Helper.GetNewFlagStatus("N48_Lottlery")
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.ClearLottleryNew = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  (UIActivityN48Helper.SetNewFlagStatus)("N48_Lottlery", false)
+function CCampaignN48:ClearLottleryNew()
+  UIActivityN48Helper.SetNewFlagStatus("N48_Lottlery", false)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.GetChessNew = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  if not (self._campaignShavingIceComponent):ComponentIsOpen() then
+function CCampaignN48:GetChessNew()
+  if not self._campaignShavingIceComponent:ComponentIsOpen() then
     return false
   end
-  return (UIActivityN48Helper.GetNewFlagStatus)("N48_Chess")
+  return UIActivityN48Helper.GetNewFlagStatus("N48_Chess")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.ClearChessNew = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  (UIActivityN48Helper.SetNewFlagStatus)("N48_Chess", false)
+function CCampaignN48:ClearChessNew()
+  UIActivityN48Helper.SetNewFlagStatus("N48_Chess", false)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.GetHardLineNew = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  if not (self._diffcultyMissionComponent):ComponentIsOpen() then
+function CCampaignN48:GetHardLineNew()
+  if not self._diffcultyMissionComponent:ComponentIsOpen() then
     return false
   end
-  return (UIActivityN48Helper.GetNewFlagStatus)("N48_Hard_line")
+  return UIActivityN48Helper.GetNewFlagStatus("N48_Hard_line")
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.ClearHardLineNew = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  (UIActivityN48Helper.SetNewFlagStatus)("N48_Hard_line", false)
+function CCampaignN48:ClearHardLineNew()
+  UIActivityN48Helper.SetNewFlagStatus("N48_Hard_line", false)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.GetLoginNew = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  if not (self._cumulativeLoginComponent):ComponentIsOpen() then
+function CCampaignN48:GetLoginNew()
+  if not self._cumulativeLoginComponent:ComponentIsOpen() then
     return false
   end
-  return (UIActivityN48Helper.GetNewFlagStatus)("N48_Login")
+  return UIActivityN48Helper.GetNewFlagStatus("N48_Login")
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.ClearLoginNew = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  (UIActivityN48Helper.SetNewFlagStatus)("N48_Login", false)
+function CCampaignN48:ClearLoginNew()
+  UIActivityN48Helper.SetNewFlagStatus("N48_Login", false)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.GetBattlePassNew = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  return (UIActivityN48Helper.GetNewFlagStatus)("BattlePass")
+function CCampaignN48:GetBattlePassNew()
+  return UIActivityN48Helper.GetNewFlagStatus("BattlePass")
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.ClearBattlePassNew = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  (UIActivityN48Helper.SetNewFlagStatus)("BattlePass", false)
+function CCampaignN48:ClearBattlePassNew()
+  UIActivityN48Helper.SetNewFlagStatus("BattlePass", false)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.GetLineMissionNew = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  if not (self._lineMissionComponent):ComponentIsOpen() then
+function CCampaignN48:GetLineMissionNew()
+  if not self._lineMissionComponent:ComponentIsOpen() then
     return false
   end
-  return (UIActivityN48Helper.GetNewFlagStatus)("N48_LineMission")
+  return UIActivityN48Helper.GetNewFlagStatus("N48_LineMission")
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN48.ClearLineMissionNew = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  (UIActivityN48Helper.SetNewFlagStatus)("N48_LineMission", false)
+function CCampaignN48:ClearLineMissionNew()
+  UIActivityN48Helper.SetNewFlagStatus("N48_LineMission", false)
 end
-
-

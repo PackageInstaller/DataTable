@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_transfer_monster_weak.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_TransferMonsterWeak", SkillEffectCalc_Base)
 SkillEffectCalc_TransferMonsterWeak = SkillEffectCalc_TransferMonsterWeak
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_TransferMonsterWeak.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_TransferMonsterWeak:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TransferMonsterWeak.DoSkillEffectCalculator = function(self, paramSECP)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_TransferMonsterWeak:DoSkillEffectCalculator(paramSECP)
   local casterID = paramSECP:GetCasterEntityID()
-  local weakEntity = (self._world):GetEntityByID(casterID)
+  local weakEntity = self._world:GetEntityByID(casterID)
   if weakEntity:HasSuperEntity() then
     weakEntity = weakEntity:GetSuperEntity()
   end
   if not weakEntity:HasMonsterWeak() then
-    return 
+    return
   end
   local monsterWeakCmpt = weakEntity:MonsterWeak()
   local weakCount = monsterWeakCmpt:GetMonsterWeakCount()
@@ -31,143 +21,118 @@ SkillEffectCalc_TransferMonsterWeak.DoSkillEffectCalculator = function(self, par
   for i = 1, weakCount do
     local result = self:_CalculateTransferOneWeak(weakEntity, weakEdges[i], paramSECP)
     if result then
-      (table.insert)(results, result)
+      table.insert(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TransferMonsterWeak._OnGetNearestWeakEdges = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local centerPos = (entity:GridLocation()):Center()
+function SkillEffectCalc_TransferMonsterWeak:_OnGetNearestWeakEdges(entity)
+  local utilDataSvc = self._world:GetService("UtilData")
+  local centerPos = entity:GridLocation():Center()
   local monsterList = {}
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,entity in ipairs(monsterGroup:GetEntities()) do
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, entity in ipairs(monsterGroup:GetEntities()) do
     if utilDataSvc:OnCheckTargetCanAddWeak(entity:GetID()) then
-      (table.insert)(monsterList, entity)
+      table.insert(monsterList, entity)
     end
   end
   local edgeList = {}
-  for _,entity in ipairs(monsterList) do
+  for _, entity in ipairs(monsterList) do
     local tmpEdges = self:_GetInactiveMonsterWeakEdges(entity)
-    if tmpEdges and #tmpEdges > 0 then
-      (table.appendArray)(edgeList, tmpEdges)
+    if tmpEdges and 0 < #tmpEdges then
+      table.appendArray(edgeList, tmpEdges)
     end
   end
-  local sortFun = function(dataA, dataB)
-    -- function num : 0_2_0 , upvalues : self, centerPos
+  
+  local function sortFun(dataA, dataB)
     local disA = self:_CalculateDistance(dataA, centerPos)
     local disB = self:_CalculateDistance(dataB, centerPos)
-    do return disA < disB end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+    return disA < disB
   end
-
-  ;
-  (table.sort)(edgeList, sortFun)
+  
+  table.sort(edgeList, sortFun)
   return edgeList
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TransferMonsterWeak._GetInactiveMonsterWeakEdges = function(self, entity)
-  -- function num : 0_3 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function SkillEffectCalc_TransferMonsterWeak:_GetInactiveMonsterWeakEdges(entity)
+  local utilDataSvc = self._world:GetService("UtilData")
   local allWeakEdges = utilDataSvc:OnGetEntityWeakEdgeDataList(entity:GetID())
   if not entity:HasMonsterWeak() then
     return allWeakEdges
   end
   local monsterWeakComponent = entity:MonsterWeak()
   local inactiveList = {}
-  for _,weakEdge in ipairs(allWeakEdges) do
+  for _, weakEdge in ipairs(allWeakEdges) do
     if not monsterWeakComponent:GetMonsterWeakDataByKey(weakEdge:GetKey()) then
-      (table.insert)(inactiveList, weakEdge)
+      table.insert(inactiveList, weakEdge)
     end
   end
   return inactiveList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TransferMonsterWeak._CalculateDistance = function(self, data, centerPos)
-  -- function num : 0_4 , upvalues : _ENV
-  local monsterEntity = (self._world):GetEntityByID(data:GetEntityID())
-  local monsterCenter = (monsterEntity:GridLocation()):Center()
+function SkillEffectCalc_TransferMonsterWeak:_CalculateDistance(data, centerPos)
+  local monsterEntity = self._world:GetEntityByID(data:GetEntityID())
+  local monsterCenter = monsterEntity:GridLocation():Center()
   local disMin = 999999
   local edgePosList = data:GetEdgePosList()
-  for _,edgePos in ipairs(edgePosList) do
+  for _, edgePos in ipairs(edgePosList) do
     local edgePosCur = monsterCenter + edgePos
-    local disCur = (Vector2.Distance)(centerPos, edgePosCur)
-    if disCur < disMin then
+    local disCur = Vector2.Distance(centerPos, edgePosCur)
+    if disMin > disCur then
       disMin = disCur
     end
   end
   return disMin
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TransferMonsterWeak._CalculateTransferOneWeak = function(self, weakEntity, weakData, paramSECP)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillEffectCalc_TransferMonsterWeak:_CalculateTransferOneWeak(weakEntity, weakData, paramSECP)
   local resultEntityID = paramSECP:GetCasterEntityID()
   local weakResult = {}
   local damageResult = {}
   if weakData then
     resultEntityID = weakData:GetEntityID()
-    ;
-    (table.insert)(weakResult, weakData)
+    table.insert(weakResult, weakData)
   else
     local damageSkillResult = self:_DoDamage(weakEntity, paramSECP)
     if damageSkillResult then
       resultEntityID = damageSkillResult:GetTargetID()
-      ;
-      (table.insert)(damageResult, damageSkillResult)
+      table.insert(damageResult, damageSkillResult)
     end
   end
-  do
-    local skillResult = SkillEffectResultAddMonsterWeak:New(resultEntityID, weakResult, damageResult)
-    return skillResult
-  end
+  local skillResult = SkillEffectResultAddMonsterWeak:New(resultEntityID, weakResult, damageResult)
+  return skillResult
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TransferMonsterWeak._DoDamage = function(self, weakEntity, paramSECP)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillEffectCalc_TransferMonsterWeak:_DoDamage(weakEntity, paramSECP)
   local skillID = paramSECP:GetSkillID()
   local skillParam = paramSECP:GetSkillEffectParam()
   local damageStageIndex = skillParam:GetSkillEffectDamageStageIndex()
-  local petTemplateID = (skillParam:GetPetTemplateID())
-  local castPetEntity = nil
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local pets = (teamEntity:Team()):GetTeamPetEntities()
-  for _,e in ipairs(pets) do
+  local petTemplateID = skillParam:GetPetTemplateID()
+  local castPetEntity
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local pets = teamEntity:Team():GetTeamPetEntities()
+  for _, e in ipairs(pets) do
     local cPetPstID = e:PetPstID()
     if petTemplateID == cPetPstID:GetTemplateID() then
       castPetEntity = e
       break
     end
   end
-  do
-    if not castPetEntity then
-      return 
-    end
-    local attackerPos = weakEntity:GetGridPosition()
-    local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-    local monsterList, posList = utilScopeSvc:SelectNearestMonsterOnPos(attackerPos, 1)
-    if #monsterList == 0 or #posList == 0 then
-      return 
-    end
-    local defender = monsterList[1]
-    local defenderID = defender:GetID()
-    local defenderPos = posList[1]
-    local effectCalcSvc = self._skillEffectService
-    local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(castPetEntity, attackerPos, defender, defenderPos, skillID, skillParam, SkillEffectType.TransferMonsterWeak, damageStageIndex)
-    local skillResult = effectCalcSvc:NewSkillDamageEffectResult(defenderPos, defenderID, nTotalDamage, listDamageInfo, damageStageIndex)
-    return skillResult
+  if not castPetEntity then
+    return
   end
+  local attackerPos = weakEntity:GetGridPosition()
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local monsterList, posList = utilScopeSvc:SelectNearestMonsterOnPos(attackerPos, 1)
+  if #monsterList == 0 or #posList == 0 then
+    return
+  end
+  local defender = monsterList[1]
+  local defenderID = defender:GetID()
+  local defenderPos = posList[1]
+  local effectCalcSvc = self._skillEffectService
+  local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(castPetEntity, attackerPos, defender, defenderPos, skillID, skillParam, SkillEffectType.TransferMonsterWeak, damageStageIndex)
+  local skillResult = effectCalcSvc:NewSkillDamageEffectResult(defenderPos, defenderID, nTotalDamage, listDamageInfo, damageStageIndex)
+  return skillResult
 end
-
-

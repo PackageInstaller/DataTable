@@ -1,115 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/chess/preview_chess_pet_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewChessPetComponent", Object)
 PreviewChessPetComponent = PreviewChessPetComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewChessPetComponent.Constructor = function(self)
-  -- function num : 0_0
+function PreviewChessPetComponent:Constructor()
   self._moveRangeEffectEntityIDList = {}
   self._attackTargetEffectEntityIDList = {}
   self._attackRangeEffectEntityIDList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChessPetComponent.AddMoveRangeEffectEntityID = function(self, entityID)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._moveRangeEffectEntityIDList)[#self._moveRangeEffectEntityIDList + 1] = entityID
+function PreviewChessPetComponent:AddMoveRangeEffectEntityID(entityID)
+  self._moveRangeEffectEntityIDList[#self._moveRangeEffectEntityIDList + 1] = entityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChessPetComponent.AddAttackRangeEffectEntityID = function(self, entityID)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._attackRangeEffectEntityIDList)[#self._attackRangeEffectEntityIDList + 1] = entityID
+function PreviewChessPetComponent:AddAttackRangeEffectEntityID(entityID)
+  self._attackRangeEffectEntityIDList[#self._attackRangeEffectEntityIDList + 1] = entityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChessPetComponent.AddAttackTargetEffectEntityID = function(self, entityID)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._attackTargetEffectEntityIDList)[#self._attackTargetEffectEntityIDList + 1] = entityID
+function PreviewChessPetComponent:AddAttackTargetEffectEntityID(entityID)
+  self._attackTargetEffectEntityIDList[#self._attackTargetEffectEntityIDList + 1] = entityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChessPetComponent.GetMoveRangeEffectEntityIDList = function(self)
-  -- function num : 0_4
+function PreviewChessPetComponent:GetMoveRangeEffectEntityIDList()
   return self._moveRangeEffectEntityIDList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChessPetComponent.GetAttackRangeEffectEntityIDList = function(self)
-  -- function num : 0_5
+function PreviewChessPetComponent:GetAttackRangeEffectEntityIDList()
   return self._attackRangeEffectEntityIDList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChessPetComponent.GetAttackTargetEffectEntityIDList = function(self)
-  -- function num : 0_6
+function PreviewChessPetComponent:GetAttackTargetEffectEntityIDList()
   return self._attackTargetEffectEntityIDList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChessPetComponent.ClearChessPetPreviewList = function(self)
-  -- function num : 0_7
+function PreviewChessPetComponent:ClearChessPetPreviewList()
   self._moveRangeEffectEntityIDList = {}
   self._attackTargetEffectEntityIDList = {}
   self._attackRangeEffectEntityIDList = {}
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PreviewChessPet = function(self)
-  -- function num : 0_8
-  return self:GetComponent((self.WEComponentsEnum).PreviewChessPet)
+function Entity:PreviewChessPet()
+  return self:GetComponent(self.WEComponentsEnum.PreviewChessPet)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPreviewChessPet = function(self)
-  -- function num : 0_9
-  return self:HasComponent((self.WEComponentsEnum).PreviewChessPet)
+function Entity:HasPreviewChessPet()
+  return self:HasComponent(self.WEComponentsEnum.PreviewChessPet)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPreviewChessPet = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewChessPet
+function Entity:AddPreviewChessPet()
+  local index = self.WEComponentsEnum.PreviewChessPet
   local component = PreviewChessPetComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePreviewChessPet = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewChessPet
+function Entity:ReplacePreviewChessPet()
+  local index = self.WEComponentsEnum.PreviewChessPet
   local component = PreviewChessPetComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePreviewChessPet = function(self)
-  -- function num : 0_12
+function Entity:RemovePreviewChessPet()
   if self:HasPreviewChessPet() then
-    self:RemoveComponent((self.WEComponentsEnum).PreviewChessPet)
+    self:RemoveComponent(self.WEComponentsEnum.PreviewChessPet)
   end
 end
-
-

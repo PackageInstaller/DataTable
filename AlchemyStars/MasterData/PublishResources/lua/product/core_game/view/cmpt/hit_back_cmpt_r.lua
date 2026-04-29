@@ -1,13 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/hit_back_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HitbackComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-HitbackComponent.Constructor = function(self, startPos, speed, targetPos, hitDir, gridOffset)
-  -- function num : 0_0
+function HitbackComponent:Constructor(startPos, speed, targetPos, hitDir, gridOffset)
   self._isStartMove = nil
   self._speed = speed
   self._targetPos = targetPos
@@ -18,116 +11,68 @@ HitbackComponent.Constructor = function(self, startPos, speed, targetPos, hitDir
   self._hitbackEnd = false
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackComponent.GetDeltaTime = function(self)
-  -- function num : 0_1
+function HitbackComponent:GetDeltaTime()
   return self._deltaTime
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackComponent.AppendDeltaTime = function(self, dt)
-  -- function num : 0_2
+function HitbackComponent:AppendDeltaTime(dt)
   self._deltaTime = self._deltaTime + dt
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackComponent.ResetDeltaTime = function(self)
-  -- function num : 0_3
+function HitbackComponent:ResetDeltaTime()
   self._deltaTime = 0
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackComponent.GetHitbackSpeed = function(self)
-  -- function num : 0_4
+function HitbackComponent:GetHitbackSpeed()
   return self._speed
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackComponent.GetHitbackStartPos = function(self)
-  -- function num : 0_5
+function HitbackComponent:GetHitbackStartPos()
   return self._startPos
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackComponent.SetStartMoving = function(self, _isMoving)
-  -- function num : 0_6
+function HitbackComponent:SetStartMoving(_isMoving)
   self._isStartMove = _isMoving
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackComponent.IsStartMoving = function(self)
-  -- function num : 0_7
+function HitbackComponent:IsStartMoving()
   return self._isStartMove
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackComponent.GetHitbackTargetPos = function(self)
-  -- function num : 0_8
+function HitbackComponent:GetHitbackTargetPos()
   return self._targetPos
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackComponent.SetMaterialAnim = function(self, materialAnim)
-  -- function num : 0_9
+function HitbackComponent:SetMaterialAnim(materialAnim)
   self._materialAnim = materialAnim
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackComponent.GetMaterialAnim = function(self)
-  -- function num : 0_10
+function HitbackComponent:GetMaterialAnim()
   return self._materialAnim
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackComponent.IsHitbackEnd = function(self)
-  -- function num : 0_11
+function HitbackComponent:IsHitbackEnd()
   return self._hitbackEnd
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackComponent.SetHitbackEnd = function(self)
-  -- function num : 0_12
+function HitbackComponent:SetHitbackEnd()
   self._hitbackEnd = true
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-HitbackComponent.GetGridOffset = function(self)
-  -- function num : 0_13
+function HitbackComponent:GetGridOffset()
   return self._gridOffset
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Hitback = function(self)
-  -- function num : 0_14
-  return self:GetComponent((self.WEComponentsEnum).Hitback)
+function Entity:Hitback()
+  return self:GetComponent(self.WEComponentsEnum.Hitback)
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasHitback = function(self)
-  -- function num : 0_15
-  return self:HasComponent((self.WEComponentsEnum).Hitback)
+function Entity:HasHitback()
+  return self:HasComponent(self.WEComponentsEnum.Hitback)
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddHitback = function(self, startPos, speed, targetPos, hitDir)
-  -- function num : 0_16 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Hitback
+function Entity:AddHitback(startPos, speed, targetPos, hitDir)
+  local index = self.WEComponentsEnum.Hitback
   local gridOffset = self:GetGridOffset()
   if gridOffset then
     targetPos = targetPos + gridOffset
@@ -136,26 +81,18 @@ Entity.AddHitback = function(self, startPos, speed, targetPos, hitDir)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceHitback = function(self, startPos, speed, targetPos, hitDir)
-  -- function num : 0_17 , upvalues : _ENV
+function Entity:ReplaceHitback(startPos, speed, targetPos, hitDir)
   local gridOffset = self:GetGridOffset()
   if gridOffset then
     targetPos = targetPos + gridOffset
   end
-  local index = (self.WEComponentsEnum).Hitback
+  local index = self.WEComponentsEnum.Hitback
   local component = HitbackComponent:New(startPos, speed, targetPos, hitDir, gridOffset)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveHitback = function(self)
-  -- function num : 0_18
+function Entity:RemoveHitback()
   if self:HasHitback() then
-    self:RemoveComponent((self.WEComponentsEnum).Hitback)
+    self:RemoveComponent(self.WEComponentsEnum.Hitback)
   end
 end
-
-

@@ -1,85 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw/ui_haute_couture_draw_rule_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawRuleItem", UICustomWidget)
 UIHauteCoutureDrawRuleItem = UIHauteCoutureDrawRuleItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawRuleItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHauteCoutureDrawRuleItem:OnShow(uiParams)
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._content = self:GetUIComponent("UILocalizationText", "content")
   self._prizeImg = self:GetUIComponent("RawImageLoader", "prizeImg")
   self._count = self:GetUIComponent("UILocalizationText", "count")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRuleItem.SetImg = function(self, img, count)
-  -- function num : 0_1
-  (self._prizeImg):LoadImage(img)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  if count > 1 then
-    (self._count).text = "x" .. count
+function UIHauteCoutureDrawRuleItem:SetImg(img, count)
+  self._prizeImg:LoadImage(img)
+  if 1 < count then
+    self._count.text = "x" .. count
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRuleItem.SetProbablity = function(self, value)
-  -- function num : 0_2
+function UIHauteCoutureDrawRuleItem:SetProbablity(value)
   self._currentValue = value
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRuleItem.SetData = function(self, row, col)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHauteCoutureDrawRuleItem:SetData(row, col)
   if row == 1 and col == 1 then
-    ((self._content).gameObject):SetActive(false)
-    ;
-    ((self._prizeImg).gameObject):SetActive(false)
-    ;
-    ((self._title).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._title).text = (StringTable.Get)("str_senior_skin_draw_rule_round_title")
+    self._content.gameObject:SetActive(false)
+    self._prizeImg.gameObject:SetActive(false)
+    self._title.gameObject:SetActive(true)
+    self._title.text = StringTable.Get("str_senior_skin_draw_rule_round_title")
+  elseif row == 1 then
+    self._title.text = StringTable.Get("str_senior_skin_draw_rule_round", col - 1)
+    self._content.gameObject:SetActive(false)
+    self._prizeImg.gameObject:SetActive(false)
+    self._title.gameObject:SetActive(true)
+  elseif col == 1 then
+    self._title.gameObject:SetActive(false)
+    self._content.gameObject:SetActive(false)
+    self._prizeImg.gameObject:SetActive(true)
   else
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
-
-    if row == 1 then
-      (self._title).text = (StringTable.Get)("str_senior_skin_draw_rule_round", col - 1)
-      ;
-      ((self._content).gameObject):SetActive(false)
-      ;
-      ((self._prizeImg).gameObject):SetActive(false)
-      ;
-      ((self._title).gameObject):SetActive(true)
-    else
-      if col == 1 then
-        ((self._title).gameObject):SetActive(false)
-        ;
-        ((self._content).gameObject):SetActive(false)
-        ;
-        ((self._prizeImg).gameObject):SetActive(true)
-      else
-        ;
-        ((self._content).gameObject):SetActive(false)
-        ;
-        ((self._prizeImg).gameObject):SetActive(false)
-        ;
-        ((self._title).gameObject):SetActive(true)
-        -- DECOMPILER ERROR at PC85: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._title).text = "0.01%"
-      end
-    end
+    self._content.gameObject:SetActive(false)
+    self._prizeImg.gameObject:SetActive(false)
+    self._title.gameObject:SetActive(true)
+    self._title.text = "0.01%"
   end
 end
-
-

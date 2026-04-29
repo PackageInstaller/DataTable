@@ -1,99 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/data/d_shop_main_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DShopMainTab", Object)
 DShopMainTab = DShopMainTab
 local StringGet = StringTable.Get
--- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
 
-DShopMainTab.Constructor = function(self, cfg, uniqueid, componentID)
-  -- function num : 0_0
+function DShopMainTab:Constructor(cfg, uniqueid, componentID)
   if not cfg then
-    return 
+    return
   end
   self.cfg = cfg
   self._uniqueid = uniqueid
   self._componentID = componentID
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-DShopMainTab.GetId = function(self)
-  -- function num : 0_1
-  return (self.cfg).ID
+function DShopMainTab:GetId()
+  return self.cfg.ID
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-DShopMainTab.GetMainTab = function(self)
-  -- function num : 0_2
-  return (self.cfg).MainTab
+function DShopMainTab:GetMainTab()
+  return self.cfg.MainTab
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-DShopMainTab.GetName = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return (StringTable.Get)((self.cfg).TabName)
+function DShopMainTab:GetName()
+  return StringTable.Get(self.cfg.TabName)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-DShopMainTab.GetEnName = function(self)
-  -- function num : 0_4
-  return (self.cfg).EnName
+function DShopMainTab:GetEnName()
+  return self.cfg.EnName
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-DShopMainTab.GetIcon = function(self)
-  -- function num : 0_5
-  return (self.cfg).TabIcon
+function DShopMainTab:GetIcon()
+  return self.cfg.TabIcon
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-DShopMainTab.GetSelectIcon = function(self)
-  -- function num : 0_6
-  return (self.cfg).TabIconSelect
+function DShopMainTab:GetSelectIcon()
+  return self.cfg.TabIconSelect
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-DShopMainTab.IsOpen = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function DShopMainTab:IsOpen()
   local mainTabType = self:GetMainTab()
-  return (UIShopController.CheckIsOpen)(mainTabType)
+  return UIShopController.CheckIsOpen(mainTabType)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-DShopMainTab.GetSortIndex = function(self)
-  -- function num : 0_8
-  return (self.cfg).SortIndex
+function DShopMainTab:GetSortIndex()
+  return self.cfg.SortIndex
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-DShopMainTab.GetUniqueID = function(self)
-  -- function num : 0_9
+function DShopMainTab:GetUniqueID()
   return self._uniqueid
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-DShopMainTab.GetComponentID = function(self)
-  -- function num : 0_10
+function DShopMainTab:GetComponentID()
   return self._componentID
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-DShopMainTab.SetUniqueid = function(self, uniqueid)
-  -- function num : 0_11
+function DShopMainTab:SetUniqueid(uniqueid)
   self._uniqueid = uniqueid
 end
-
-

@@ -1,114 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/common/ui_season_maze_up_lv.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeUpLv", UIController)
 UISeasonMazeUpLv = UISeasonMazeUpLv
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeUpLv.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMazeUpLv:InitWidget()
   self._lv = self:GetUIComponent("UILocalizedTMP", "lv")
   self._lv1 = self:GetUIComponent("UILocalizedTMP", "lv1")
   self._tex = self:GetGameObject("tex")
-  ;
-  (self._tex):SetActive(false)
+  self._tex:SetActive(false)
   self._root = self:GetUIComponent("RectTransform", "Content")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeUpLv.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeUpLv:OnShow(uiParams)
   self:InitWidget()
   self._timerList = {}
   self._lastLv = uiParams[1]
   self._nextLv = uiParams[2]
-  ;
-  (self._lv):SetText(tostring(self._lastLv))
-  ;
-  (self._lv1):SetText(tostring(self._nextLv))
-  local seasonObj = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()
+  self._lv:SetText(tostring(self._lastLv))
+  self._lv1:SetText(tostring(self._nextLv))
+  local seasonObj = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj()
   local com = seasonObj:GetMazeComponent()
   local cfgid = com:GetComponentCfgId()
-  local cfgs = (Cfg.cfg_component_season_maze_lv)({ComponentID = cfgid, Lv = self._nextLv})
+  local cfgs = Cfg.cfg_component_season_maze_lv({
+    ComponentID = cfgid,
+    Lv = self._nextLv
+  })
   if cfgs and next(cfgs) then
     local cfg_lv = cfgs[1]
     local key = cfg_lv.UpLvDesc
     local n = 0
-    while 1 do
+    while true do
       n = n + 1
-      local keyHead = (StringTable.Has)(key .. "_" .. n)
+      local keyHead = StringTable.Has(key .. "_" .. n)
       if not keyHead then
         n = n - 1
         break
       end
     end
-    do
-      do
-        if n <= 0 then
-          (Log.fatal)("###[UISeasonMazeUpLv] no [" .. key .. "_x] in str smaze.xlsx")
-          return 
-        end
-        self:ShowDescList(key, n)
-        ;
-        (Log.error)("###[UISeasonMazeUpLv] cfg_component_season_maze_lv is nil ! lv:", self._nextLv)
-      end
+    if n <= 0 then
+      Log.fatal("###[UISeasonMazeUpLv] no [" .. key .. "_x] in str smaze.xlsx")
+      return
     end
+    self:ShowDescList(key, n)
+  else
+    Log.error("###[UISeasonMazeUpLv] cfg_component_season_maze_lv is nil ! lv:", self._nextLv)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeUpLv.ShowDescList = function(self, key, n)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeUpLv:ShowDescList(key, n)
   self:Lock("UISeasonMazeUpLv:ShowDescList")
-  self._lockTimer = ((GameGlobal.Timer)()):AddEvent(600 + (n - 1) * 50, function()
-    -- function num : 0_2_0 , upvalues : self
+  self._lockTimer = GameGlobal.Timer():AddEvent(600 + (n - 1) * 50, function()
     self:UnLock("UISeasonMazeUpLv:ShowDescList")
-  end
-)
+  end)
   for i = 1, n do
-    local go = ((UnityEngine.GameObject).Instantiate)(self._tex, self._root)
-    do
-      (go:GetComponent(typeof(UILocalizationText))):SetText((StringTable.Get)(key .. "_" .. i))
-      local timer = ((GameGlobal.Timer)()):AddEvent(600 + (i - 1) * 50, function()
-    -- function num : 0_2_1 , upvalues : go
-    go:SetActive(true)
-  end
-)
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._timerList)[#self._timerList + 1] = timer
-    end
+    local go = UnityEngine.GameObject.Instantiate(self._tex, self._root)
+    go:GetComponent(typeof(UILocalizationText)):SetText(StringTable.Get(key .. "_" .. i))
+    local timer = GameGlobal.Timer():AddEvent(600 + (i - 1) * 50, function()
+      go:SetActive(true)
+    end)
+    self._timerList[#self._timerList + 1] = timer
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeUpLv.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonMazeUpLv:BgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeUpLv.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeUpLv:OnHide()
   if self._timerList and next(self._timerList) then
-    for k,v in pairs(self._timerList) do
-      ((GameGlobal.Timer)()):CancelEvent(v)
+    for k, v in pairs(self._timerList) do
+      GameGlobal.Timer():CancelEvent(v)
     end
   end
-  do
-    if self._lockTimer then
-      ((GameGlobal.Timer)()):CancelEvent(self._lockTimer)
-    end
-    ;
-    (SMazeAdaptor.OnLvUpDialogClose)()
+  if self._lockTimer then
+    GameGlobal.Timer():CancelEvent(self._lockTimer)
   end
+  SMazeAdaptor.OnLvUpDialogClose()
 end
-
-

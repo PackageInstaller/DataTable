@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/fsm/state_machine.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateMachine", Object)
 StateMachine = StateMachine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateMachine.Constructor = function(self, stateEnumName)
-  -- function num : 0_0
+function StateMachine:Constructor(stateEnumName)
   self.Id = 0
   self.dictState = {}
   self.curState = nil
@@ -16,83 +9,71 @@ StateMachine.Constructor = function(self, stateEnumName)
   self.stateEnumName = stateEnumName
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateMachine.CreateInstance = function(fsmId, stateEnumName)
-  -- function num : 0_1 , upvalues : _ENV
+function StateMachine.CreateInstance(fsmId, stateEnumName)
   local sm = StateMachine:New(stateEnumName)
   sm.Id = fsmId
   return sm
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateMachine.Init = function(self, stateEnum, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  if not (self.dictState)[stateEnum] then
-    (Log.fatal)("### StateMachine does not contain state:", stateEnum)
-    return 
+function StateMachine:Init(stateEnum, ...)
+  if not self.dictState[stateEnum] then
+    Log.fatal("### StateMachine does not contain state:", stateEnum)
+    return
   end
-  local curState = (self.dictState)[stateEnum]
+  local curState = self.dictState[stateEnum]
   if curState == nil then
-    (Log.fatal)("### No state:", GetEnumKey(self.stateEnumName, stateEnum))
-    return 
+    Log.fatal("### No state:", GetEnumKey(self.stateEnumName, stateEnum))
+    return
   end
   self.curState = curState
-  local args = {...}
-  self.coId = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, _ENV, args
-    self:EnterState(TT, self.curState, (table.unpack)(args))
-  end
-, self)
+  local args = {
+    ...
+  }
+  self.coId = GameGlobal.TaskManager():StartTask(function(TT)
+    self:EnterState(TT, self.curState, table.unpack(args))
+  end, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateMachine.ChangeState = function(self, stateEnum, ...)
-  -- function num : 0_3 , upvalues : _ENV
+function StateMachine:ChangeState(stateEnum, ...)
   if not self.dictState then
-    (Log.fatal)("### StateMachine dictState nil")
-    return 
+    Log.fatal("### StateMachine dictState nil")
+    return
   end
-  if not (self.dictState)[stateEnum] then
-    (Log.fatal)("### StateMachine does not contain state:", stateEnum)
-    return 
+  if not self.dictState[stateEnum] then
+    Log.fatal("### StateMachine does not contain state:", stateEnum)
+    return
   end
   local curState = self.curState
-  local nextState = (self.dictState)[stateEnum]
+  local nextState = self.dictState[stateEnum]
   if nextState == nil then
-    (Log.fatal)("No next state:", stateEnum)
-    return 
+    Log.fatal("No next state:", stateEnum)
+    return
   end
   if curState == nextState then
-    (Log.fatal)("Already in state:", self:GetEnumKey(curState))
-    return 
+    Log.fatal("Already in state:", self:GetEnumKey(curState))
+    return
   end
   self.curState = nextState
-  local args = {...}
+  local args = {
+    ...
+  }
   local coId = self.coId
-  self.coId = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, coId, self, curState, args
-    while (TaskHelper:GetInstance()):IsAllTaskFinished({coId}) == false do
+  self.coId = GameGlobal.TaskManager():StartTask(function(TT)
+    while TaskHelper:GetInstance():IsAllTaskFinished({coId}) == false do
       YIELD(TT)
     end
     self:ExitState(TT, curState)
-    self:EnterState(TT, self.curState, (table.unpack)(args))
-  end
-, self)
+    self:EnterState(TT, self.curState, table.unpack(args))
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateMachine.Destroy = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function StateMachine:Destroy()
   if self.coId then
-    ((GameGlobal.TaskManager)()):KillTask(self.coId)
+    GameGlobal.TaskManager():KillTask(self.coId)
     self.coId = nil
   end
   if self.dictState then
-    for k,state in pairs(self.dictState) do
+    for k, state in pairs(self.dictState) do
       state:Destroy()
       state = nil
     end
@@ -101,61 +82,40 @@ StateMachine.Destroy = function(self)
   self.curState = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StateMachine.GetState = function(self, stateEnum)
-  -- function num : 0_5
-  if self.dictState and (self.dictState)[stateEnum] then
-    return (self.dictState)[stateEnum]
+function StateMachine:GetState(stateEnum)
+  if self.dictState and self.dictState[stateEnum] then
+    return self.dictState[stateEnum]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-StateMachine.AddState = function(self, pState)
-  -- function num : 0_6 , upvalues : _ENV
+function StateMachine:AddState(pState)
   if pState == nil then
     return false
   end
   local stateEnum = pState.EnumValue
   local state = self:GetState(stateEnum)
   if state then
-    (Log.fatal)("State already exist.", stateEnum)
+    Log.fatal("State already exist.", stateEnum)
     return false
   end
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.dictState)[stateEnum] = pState
+  self.dictState[stateEnum] = pState
   return true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-StateMachine.GetCurState = function(self)
-  -- function num : 0_7
+function StateMachine:GetCurState()
   return self.curState
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-StateMachine.SetData = function(self, data)
-  -- function num : 0_8
+function StateMachine:SetData(data)
   self._data = data
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-StateMachine.GetData = function(self)
-  -- function num : 0_9
+function StateMachine:GetData()
   return self._data
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-StateMachine.Update = function(self, update)
-  -- function num : 0_10
+function StateMachine:Update(update)
   if update == nil then
     return self.update
   else
@@ -163,43 +123,29 @@ StateMachine.Update = function(self, update)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-StateMachine.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_11
+function StateMachine:OnUpdate(deltaTimeMS)
   if self.curState and self:Update() then
-    (self.curState):OnUpdate(deltaTimeMS)
+    self.curState:OnUpdate(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-StateMachine.EnterState = function(self, TT, state, ...)
-  -- function num : 0_12 , upvalues : _ENV
+function StateMachine:EnterState(TT, state, ...)
   if IsUnityEditor() then
-    (Log.warn)("###[FSM] OnEnter", self:GetEnumKey(state))
+    Log.warn("###[FSM] OnEnter", self:GetEnumKey(state))
   end
   state:OnEnter(TT, ...)
   self:Update(true)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-StateMachine.ExitState = function(self, TT, state)
-  -- function num : 0_13 , upvalues : _ENV
+function StateMachine:ExitState(TT, state)
   if IsUnityEditor() then
-    (Log.warn)("###[FSM] OnExit", self:GetEnumKey(state))
+    Log.warn("###[FSM] OnExit", self:GetEnumKey(state))
   end
   self:Update(false)
   state:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-StateMachine.GetEnumKey = function(self, state)
-  -- function num : 0_14 , upvalues : _ENV
+function StateMachine:GetEnumKey(state)
   local key = GetEnumKey(self.stateEnumName, state.EnumValue)
   return key
 end
-
-

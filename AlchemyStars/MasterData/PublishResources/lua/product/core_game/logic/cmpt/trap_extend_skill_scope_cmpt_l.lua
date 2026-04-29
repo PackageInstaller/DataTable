@@ -1,83 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/trap_extend_skill_scope_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TrapExtendSkillScopeComponent", Object)
 TrapExtendSkillScopeComponent = TrapExtendSkillScopeComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TrapExtendSkillScopeComponent.Constructor = function(self, param)
-  -- function num : 0_0
+function TrapExtendSkillScopeComponent:Constructor(param)
   self._scopeType = param.scopeType
   self._scopeParam = param.scopeParam
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapExtendSkillScopeComponent.GetScopeType = function(self)
-  -- function num : 0_1
+function TrapExtendSkillScopeComponent:GetScopeType()
   return self._scopeType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapExtendSkillScopeComponent.GetScopeParam = function(self)
-  -- function num : 0_2
+function TrapExtendSkillScopeComponent:GetScopeParam()
   return self._scopeParam
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapExtendSkillScopeComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_3
+function TrapExtendSkillScopeComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapExtendSkillScopeComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_4
+function TrapExtendSkillScopeComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.TrapExtendSkillScope = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).TrapExtendSkillScope)
+function Entity:TrapExtendSkillScope()
+  return self:GetComponent(self.WEComponentsEnum.TrapExtendSkillScope)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasTrapExtendSkillScope = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).TrapExtendSkillScope)
+function Entity:HasTrapExtendSkillScope()
+  return self:HasComponent(self.WEComponentsEnum.TrapExtendSkillScope)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddTrapExtendSkillScope = function(self, param)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).TrapExtendSkillScope
+function Entity:AddTrapExtendSkillScope(param)
+  local index = self.WEComponentsEnum.TrapExtendSkillScope
   local component = TrapExtendSkillScopeComponent:New(param)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceTrapExtendSkillScope = function(self, param)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).TrapExtendSkillScope
+function Entity:ReplaceTrapExtendSkillScope(param)
+  local index = self.WEComponentsEnum.TrapExtendSkillScope
   local component = TrapExtendSkillScopeComponent:New(param)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveTrapExtendSkillScope = function(self)
-  -- function num : 0_9
+function Entity:RemoveTrapExtendSkillScope()
   if self:HasTrapExtendSkillScope() then
-    self:RemoveComponent((self.WEComponentsEnum).TrapExtendSkillScope)
+    self:RemoveComponent(self.WEComponentsEnum.TrapExtendSkillScope)
   end
 end
-
-

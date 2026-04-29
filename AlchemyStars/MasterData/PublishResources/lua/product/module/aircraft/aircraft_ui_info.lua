@@ -1,8 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/aircraft/aircraft_ui_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-AirRoomChangeLevelDataType = {NumberInt = 1, NumberFloat = 2, TextData = 3, NumberPercent = 4, CurAndLimit = 5, Time = 6, Hour = 7}
-AirLevelInfoTitle = {RoomLevel = "str_aircraft_level_room_level", RoomLevelLimit = "str_aircraft_level_room_level_ceiling", FireflyLimit = "str_aircraft_level_firefly_ceiling", AmbientLimit = "str_aircraft_level_ambient_ceiling", PowerLimit = "str_aircraft_level_power_ceiling", FireflyRate = "str_aircraft_level_fire_recover_speed", ExPhysicLimit = "str_aircraft_level_phsy_ceiling", PhysicStorageLimit = "str_aircraft_level_store_phsy_ceiling", PhysicRate = "str_aircraft_level_phsy_recover_speed", ResDungeonLevel = "str_aircraft_level_resource_level", ResRewardCD = "str_aircraft_level_resource_award_cd", ResRewardCount = "str_aircraft_level_double_ceiling", LightInitCount = "str_aircraft_level_light_init_count", MazeProduct = "str_aircraft_product_of_maze", DrawCardCount = "str_aircraft_level_card_count", DrawCardProbability = "str_aircraft_level_card_rate", AssetZoneOpen = "str_aircraft_level_resource_unlock", AssetZoneClose = "str_aircraft_level_resource_close", MazeRelicUnlock = "str_aircraft_level_maze_relic_unlock", MazeRelicClose = "str_aircraft_level_maze_relic_close", MazeRoomOpen = "str_aircraft_level_maze_room_unlock", MazeRoomClose = "str_aircraft_level_maze_room_close", MazeAssetIncrease = "str_aircraft_maze_levelup_tip", MazeAssetDecrease = "str_aircraft_maze_leveldown_tip", DispatchTeamChange = "str_dispatch_room_level_change_team_tips", DispatchPetCount = "str_dispatch_room_level_change_pet_num_tips", AtomStorageCeiling = "str_aircraft_atom_storage_ceiling", AtomRecoverSpeed = "str_aircraft_atom_recover_speed2", UnlockMoreAsset = "str_aircraft_unlock_highlevel_item", PhyRecoverSpeed = "str_aircraft_func_phys_recover_speed", DrawcardAssetRocoverSpeed = "str_aircraft_func_card_recover", TacticTapeStorageCount = "str_aircraft_tactic_tape_storage_count", TacticTapeMakeTime = "str_aircraft_tactic_tape_make_time", TacticTapeMakeTime = "str_aircraft_tactic_tape_make_time", TacticTapeWeeklyFreeTimes = "str_aircraft_tactic_tape_weekly_free_times", NONE = ""}
-
+AirRoomChangeLevelDataType = {
+  NumberInt = 1,
+  NumberFloat = 2,
+  TextData = 3,
+  NumberPercent = 4,
+  CurAndLimit = 5,
+  Time = 6,
+  Hour = 7
+}
+AirLevelInfoTitle = {
+  RoomLevel = "str_aircraft_level_room_level",
+  RoomLevelLimit = "str_aircraft_level_room_level_ceiling",
+  FireflyLimit = "str_aircraft_level_firefly_ceiling",
+  AmbientLimit = "str_aircraft_level_ambient_ceiling",
+  PowerLimit = "str_aircraft_level_power_ceiling",
+  FireflyRate = "str_aircraft_level_fire_recover_speed",
+  ExPhysicLimit = "str_aircraft_level_phsy_ceiling",
+  PhysicStorageLimit = "str_aircraft_level_store_phsy_ceiling",
+  PhysicRate = "str_aircraft_level_phsy_recover_speed",
+  ResDungeonLevel = "str_aircraft_level_resource_level",
+  ResRewardCD = "str_aircraft_level_resource_award_cd",
+  ResRewardCount = "str_aircraft_level_double_ceiling",
+  LightInitCount = "str_aircraft_level_light_init_count",
+  MazeProduct = "str_aircraft_product_of_maze",
+  DrawCardCount = "str_aircraft_level_card_count",
+  DrawCardProbability = "str_aircraft_level_card_rate",
+  AssetZoneOpen = "str_aircraft_level_resource_unlock",
+  AssetZoneClose = "str_aircraft_level_resource_close",
+  MazeRelicUnlock = "str_aircraft_level_maze_relic_unlock",
+  MazeRelicClose = "str_aircraft_level_maze_relic_close",
+  MazeRoomOpen = "str_aircraft_level_maze_room_unlock",
+  MazeRoomClose = "str_aircraft_level_maze_room_close",
+  MazeAssetIncrease = "str_aircraft_maze_levelup_tip",
+  MazeAssetDecrease = "str_aircraft_maze_leveldown_tip",
+  DispatchTeamChange = "str_dispatch_room_level_change_team_tips",
+  DispatchPetCount = "str_dispatch_room_level_change_pet_num_tips",
+  AtomStorageCeiling = "str_aircraft_atom_storage_ceiling",
+  AtomRecoverSpeed = "str_aircraft_atom_recover_speed2",
+  UnlockMoreAsset = "str_aircraft_unlock_highlevel_item",
+  PhyRecoverSpeed = "str_aircraft_func_phys_recover_speed",
+  DrawcardAssetRocoverSpeed = "str_aircraft_func_card_recover",
+  TacticTapeStorageCount = "str_aircraft_tactic_tape_storage_count",
+  TacticTapeMakeTime = "str_aircraft_tactic_tape_make_time",
+  TacticTapeMakeTime = "str_aircraft_tactic_tape_make_time",
+  TacticTapeWeeklyFreeTimes = "str_aircraft_tactic_tape_weekly_free_times",
+  NONE = ""
+}

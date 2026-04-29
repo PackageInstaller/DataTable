@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_summer_ii.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignSummerII", ICampaignComponentLocalProcessBase)
 CCampaignSummerII = CCampaignSummerII
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignSummerII.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignSummerII:Constructor()
   self._summerIIMissionComponent = nil
   self._summerIIMissionCompInfo = nil
   self._storyComponent = nil
@@ -20,24 +13,15 @@ CCampaignSummerII.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSummerII.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignSummerII:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_SUMMER_II
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSummerII.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignSummerII:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSummerII.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignSummerII:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetSummerIIMissionComponent()
   self:_GetStoryComponent()
@@ -45,54 +29,39 @@ CCampaignSummerII.InitComponent = function(self, campaignObj)
   self:_GetPersonProgress1Component()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSummerII._GetSummerIIMissionComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._summerIIMissionComponent = (self._campaignObj):GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
+function CCampaignSummerII:_GetSummerIIMissionComponent()
+  self._summerIIMissionComponent = self._campaignObj:GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
   if not self._summerIIMissionComponent then
-    return 
+    return
   end
-  self._summerIIMissionCompInfo = (self._summerIIMissionComponent):ComponentInfo()
+  self._summerIIMissionCompInfo = self._summerIIMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSummerII._GetStoryComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._storyComponent = (self._campaignObj):GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_STORY)
+function CCampaignSummerII:_GetStoryComponent()
+  self._storyComponent = self._campaignObj:GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_STORY)
   if not self._storyComponent then
-    return 
+    return
   end
-  self._storyComponentInfo = (self._storyComponent):ComponentInfo()
+  self._storyComponentInfo = self._storyComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSummerII._GetCumulativeLoginComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._cumulativeLoginComponent = (self._campaignObj):GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_CUMULATIVE_LOGIN)
+function CCampaignSummerII:_GetCumulativeLoginComponent()
+  self._cumulativeLoginComponent = self._campaignObj:GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_CUMULATIVE_LOGIN)
   if not self._cumulativeLoginComponent then
-    return 
+    return
   end
-  self._cumulativeLoginCompInfo = (self._cumulativeLoginComponent):GetComponentInfo()
+  self._cumulativeLoginCompInfo = self._cumulativeLoginComponent:GetComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSummerII._GetPersonProgress1Component = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._personProgress1Component = (self._campaignObj):GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1)
+function CCampaignSummerII:_GetPersonProgress1Component()
+  self._personProgress1Component = self._campaignObj:GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1)
   if not self._personProgress1Component then
-    return 
+    return
   end
-  self._personProgress1CompInfo = (self._personProgress1Component):ComponentInfo()
+  self._personProgress1CompInfo = self._personProgress1Component:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSummerII.GetComponent = function(self, componentID)
-  -- function num : 0_8 , upvalues : _ENV
+function CCampaignSummerII:GetComponent(componentID)
   if ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION == componentID then
     return self._summerIIMissionComponent
   end
@@ -108,10 +77,7 @@ CCampaignSummerII.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSummerII.GetComponentInfo = function(self, componentID)
-  -- function num : 0_9 , upvalues : _ENV
+function CCampaignSummerII:GetComponentInfo(componentID)
   if ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION == componentID then
     return self._summerIIMissionCompInfo
   end
@@ -126,5 +92,3 @@ CCampaignSummerII.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

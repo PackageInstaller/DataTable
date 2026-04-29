@@ -1,25 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/53950/cfg_skill_view_53950052.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterTurnToTargetGrid; PlayCasterAnimation,animName = Skill01; PlayCasterBindEffect,effectID =200380101; PlayAudio,audioID = 5081,audioType=1; Wait,waitTime=1100; PlayCasterBindEffect,effectID =200380104; Wait,waitTime=500; "}
-}
-, 
-{2, 2, 0, 1, 1, 0, 
-{" DataSelectDamage,damageIndex=1,damageStageIndex = 1; Jump,condition=CheckDamageIndexValid,result=0,goto=phaseEnd; PlayTargetBeHitEffect,hitEffectID=200380102,label=doAgain; Wait,waitTime=1100; PlayTargetBeHitEffect,hitEffectID=200380103; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; "}
-}
-, 
-{3, 3, 0, 1, 1, 600, 
-{" DataSelectDamage,damageIndex = 1,damageStageIndex=1; DataSelectDamageInfo,damageInfoIndex = 1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; Wait,waitTime=350; DataSelectDamage,damageIndex = 1,damageStageIndex=2; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; Wait,waitTime=1000; "}
-}
-, 
-{4, 4, 0, 1, 1, 0, 
-{" DataSelectBuff,buffIndex=1; PlayTargetAddBuff,buffID=5395011,label=doAgain; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=doAgain; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterTurnToTargetGrid; PlayCasterAnimation,animName = Skill01; PlayCasterBindEffect,effectID =200380101; PlayAudio,audioID = 5081,audioType=1; Wait,waitTime=1100; PlayCasterBindEffect,effectID =200380104; Wait,waitTime=500; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    1,
+    0,
+    {
+      " DataSelectDamage,damageIndex=1,damageStageIndex = 1; Jump,condition=CheckDamageIndexValid,result=0,goto=phaseEnd; PlayTargetBeHitEffect,hitEffectID=200380102,label=doAgain; Wait,waitTime=1100; PlayTargetBeHitEffect,hitEffectID=200380103; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; "
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    1,
+    600,
+    {
+      " DataSelectDamage,damageIndex = 1,damageStageIndex=1; DataSelectDamageInfo,damageInfoIndex = 1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; Wait,waitTime=350; DataSelectDamage,damageIndex = 1,damageStageIndex=2; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; Wait,waitTime=1000; "
+    }
+  },
+  {
+    4,
+    4,
+    0,
+    1,
+    1,
+    0,
+    {
+      " DataSelectBuff,buffIndex=1; PlayTargetAddBuff,buffID=5395011,label=doAgain; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=doAgain; "
+    }
+  }
 }
 return config, "ID", key
-

@@ -1,91 +1,84 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_lock_chain_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicLockChainSkill", BuffLogicBase)
 BuffLogicLockChainSkill = BuffLogicLockChainSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicLockChainSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicLockChainSkill:Constructor(buffInstance, logicParam)
   self._lockIndex = tonumber(logicParam.index)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicLockChainSkill.DoLogic = function(self)
-  -- function num : 0_1
+function BuffLogicLockChainSkill:DoLogic()
   local e = self:GetEntity()
   if not e:HasSkillInfo() then
-    return 
+    return
   end
   local cSkillInfo = e:SkillInfo()
   cSkillInfo:LockChainSkillIndex(self._lockIndex)
-  return {index = self._lockIndex}
+  return {
+    index = self._lockIndex
+  }
 end
 
 _class("BuffLogicUnlockChainSkill", BuffLogicBase)
 BuffLogicUnlockChainSkill = BuffLogicUnlockChainSkill
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUnlockChainSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffLogicUnlockChainSkill:Constructor(buffInstance, logicParam)
   self._unlockIndex = tonumber(logicParam.index)
   self._unlockShowIndex = tonumber(logicParam.showIndex)
   self._randomCount = tonumber(logicParam.randomCount)
-  if not logicParam.randomShowIndex then
-    self._randomShowIndex = {0, 1, 2, 3}
-    self._addBuffList = logicParam.addBuffList
-    if not self._unlockIndex and not self._randomCount then
-      self._unlockAll = true
-    end
+  self._randomShowIndex = logicParam.randomShowIndex or {
+    0,
+    1,
+    2,
+    3
+  }
+  self._addBuffList = logicParam.addBuffList
+  if not self._unlockIndex and not self._randomCount then
+    self._unlockAll = true
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUnlockChainSkill.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffLogicUnlockChainSkill:DoLogic()
   local e = self:GetEntity()
   if not e:HasSkillInfo() then
-    return 
+    return
   end
   local cSkillInfo = e:SkillInfo()
   if self._unlockAll then
     cSkillInfo:UnlockAllChainSkill()
-  else
-    if self._randomCount then
-      local lockChainSkillList = (table.clone)(cSkillInfo:GetLockChainSkillIndex())
-      local unlockIndexList = {}
-      local buffSvc = (self._world):GetService("BuffLogic")
-      local result = BuffResultAddBuff:New()
-      for i,index in ipairs(lockChainSkillList) do
-        if i <= self._randomCount then
-          cSkillInfo:UnlockChainSkillIndex(index)
-          local showIndex = (self._randomShowIndex)[index]
-          ;
-          (table.insert)(unlockIndexList, showIndex)
-          local buffID = (self._addBuffList)[index]
-          local buffSource = BuffSource:New(BuffSourceType.Buff, e:GetID())
-          local ins = buffSvc:AddBuff(buffID, e, nil, buffSource)
-          if ins then
-            result:AddBuffData(e:GetID(), ins:BuffSeq())
-          end
-        end
-      end
-      return {unlockList = unlockIndexList, isAll = self._unlockAll, addBuffResult = result}
-    else
-      do
-        cSkillInfo:UnlockChainSkillIndex(self._unlockIndex)
-        if self._unlockShowIndex then
-          return {index = self._unlockShowIndex, isAll = self._unlockAll}
-        else
-          return {index = self._unlockIndex, isAll = self._unlockAll}
+  elseif self._randomCount then
+    local lockChainSkillList = table.clone(cSkillInfo:GetLockChainSkillIndex())
+    local unlockIndexList = {}
+    local buffSvc = self._world:GetService("BuffLogic")
+    local result = BuffResultAddBuff:New()
+    for i, index in ipairs(lockChainSkillList) do
+      if i <= self._randomCount then
+        cSkillInfo:UnlockChainSkillIndex(index)
+        local showIndex = self._randomShowIndex[index]
+        table.insert(unlockIndexList, showIndex)
+        local buffID = self._addBuffList[index]
+        local buffSource = BuffSource:New(BuffSourceType.Buff, e:GetID())
+        local ins = buffSvc:AddBuff(buffID, e, nil, buffSource)
+        if ins then
+          result:AddBuffData(e:GetID(), ins:BuffSeq())
         end
       end
     end
+    return {
+      unlockList = unlockIndexList,
+      isAll = self._unlockAll,
+      addBuffResult = result
+    }
+  else
+    cSkillInfo:UnlockChainSkillIndex(self._unlockIndex)
+  end
+  if self._unlockShowIndex then
+    return {
+      index = self._unlockShowIndex,
+      isAll = self._unlockAll
+    }
+  else
+    return {
+      index = self._unlockIndex,
+      isAll = self._unlockAll
+    }
   end
 end
-
-

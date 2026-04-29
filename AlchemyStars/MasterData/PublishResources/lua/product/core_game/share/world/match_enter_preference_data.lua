@@ -1,54 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/world/match_enter_preference_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MatchEnterPreFerenceData", Object)
 MatchEnterPreFerenceData = MatchEnterPreFerenceData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MatchEnterPreFerenceData.Constructor = function(self, joined_players)
-  -- function num : 0_0 , upvalues : _ENV
+function MatchEnterPreFerenceData:Constructor(joined_players)
   if joined_players == nil then
-    return 
+    return
   end
   local petList = {}
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self.enterTime = (math.floor)(timeModule:GetServerTime() / 1000)
-  self.localDBKey = ((GameGlobal.GetModule)(RoleModule)):SkillAnimationLocalDBKey()
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
+  self.enterTime = math.floor(timeModule:GetServerTime() / 1000)
+  self.localDBKey = GameGlobal.GetModule(RoleModule):SkillAnimationLocalDBKey()
   self.preferenceSkillSpine = self:GetSkillAnimationPermissionType()
   if self.preferenceSkillSpine == SkillAnimationPermissionType.Once then
-    for key,value in pairs(joined_players) do
+    for key, value in pairs(joined_players) do
       local pet_list = value.pet_list
       for i = 1, #pet_list do
-        local petId = (pet_list[i]).template_id
+        local petId = pet_list[i].template_id
         local canPlay = self:GetCanPlaySkillSpine(petId, self.localDBKey)
-        if canPlay and not (table.intable)(petList, petId) then
-          (table.insert)(petList, petId)
+        if canPlay and not table.intable(petList, petId) then
+          table.insert(petList, petId)
         end
       end
     end
   end
-  do
-    self.preferenceSkillSpineLastPlayList = petList
-    self.hadPlaySkillSpineNameList = {}
-  end
+  self.preferenceSkillSpineLastPlayList = petList
+  self.hadPlaySkillSpineNameList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterPreFerenceData.GetSkillAnimationPermissionType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillPermission = (LocalDB.GetInt)(self.localDBKey, SkillAnimationPermissionType.Open)
+function MatchEnterPreFerenceData:GetSkillAnimationPermissionType()
+  local skillPermission = LocalDB.GetInt(self.localDBKey, SkillAnimationPermissionType.Open)
   return skillPermission
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterPreFerenceData.GetCanPlaySkillSpine = function(self, petId, dbKey)
-  -- function num : 0_2 , upvalues : _ENV
+function MatchEnterPreFerenceData:GetCanPlaySkillSpine(petId, dbKey)
   local skillKey = dbKey .. petId
-  local petSkillLastPlayTimeStamp = (LocalDB.GetInt)(skillKey, 0)
+  local petSkillLastPlayTimeStamp = LocalDB.GetInt(skillKey, 0)
   local daysInclude = self:DaysInclude(self.enterTime, petSkillLastPlayTimeStamp, 5)
   if not daysInclude then
     return true
@@ -56,22 +41,13 @@ MatchEnterPreFerenceData.GetCanPlaySkillSpine = function(self, petId, dbKey)
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterPreFerenceData.SameDay = function(self, t1, t2)
-  -- function num : 0_3 , upvalues : _ENV
-  do return (os.date)("%Y", t1) == (os.date)("%Y", t2) and (os.date)("%m", t1) == (os.date)("%m", t2) and (os.date)("%d", t1) == (os.date)("%d", t2) end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MatchEnterPreFerenceData:SameDay(t1, t2)
+  return os.date("%Y", t1) == os.date("%Y", t2) and os.date("%m", t1) == os.date("%m", t2) and os.date("%d", t1) == os.date("%d", t2)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchEnterPreFerenceData.DaysInclude = function(self, t1, t2, hour)
-  -- function num : 0_4
+function MatchEnterPreFerenceData:DaysInclude(t1, t2, hour)
   if t2 == 0 then
     return false
   end
   return self:SameDay(t1 - hour * 60 * 60, t2 - hour * 60 * 60)
 end
-
-

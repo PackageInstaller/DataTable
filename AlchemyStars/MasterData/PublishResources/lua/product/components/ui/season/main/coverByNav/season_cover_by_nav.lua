@@ -1,51 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/coverByNav/season_cover_by_nav.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonCoverByNav", Object)
 SeasonCoverByNav = SeasonCoverByNav
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonCoverByNav.Constructor = function(self, transform, areaName)
-  -- function num : 0_0
+function SeasonCoverByNav:Constructor(transform, areaName)
   self._transform = transform
   self._rawPosition = transform.position
   self._navAreaName = areaName
   self._yDelta = 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCoverByNav.OnCoverCheck = function(self, areaName)
-  -- function num : 0_1
-  do return self._navAreaName == areaName end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SeasonCoverByNav:OnCoverCheck(areaName)
+  return self._navAreaName == areaName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCoverByNav.IncreaseBuildingY = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._transform).position = Vector3((self._rawPosition).x, (self._rawPosition).y + self._yDelta, (self._rawPosition).z)
+function SeasonCoverByNav:IncreaseBuildingY()
+  self._transform.position = Vector3(self._rawPosition.x, self._rawPosition.y + self._yDelta, self._rawPosition.z)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCoverByNav.ReduceBuildingY = function(self)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._transform).position = self._rawPosition
+function SeasonCoverByNav:ReduceBuildingY()
+  self._transform.position = self._rawPosition
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCoverByNav.Dispose = function(self)
-  -- function num : 0_4
+function SeasonCoverByNav:Dispose()
   self._transform = nil
 end
-
-

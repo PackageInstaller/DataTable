@@ -1,52 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/medal_wall/homeland_medal_wall_config.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 MedalWallConfig = {}
--- DECOMPILER ERROR at PC3: Confused about usage of register: R0 in 'UnsetPending'
-
 MedalWallConfig.XMin = -1.5
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
-
 MedalWallConfig.XMax = 1.5
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 MedalWallConfig.YMin = -0.5
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
 MedalWallConfig.YMax = 0.5
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
 MedalWallConfig.ScaleMin = -4
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
 MedalWallConfig.ScaleMax = 4
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
 MedalWallConfig.SpeedMin = 3
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
 MedalWallConfig.SpeedMax = 10
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
 MedalWallConfig.WheelFactor = 5
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
 MedalWallConfig.HomelandMedalWallWidth = 5.08
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MedalWallConfig.MedalOffset = 0.0001
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
+MedalWallConfig.MedalOffset = 1.0E-4
 MedalWallConfig.MobileWheelFactor = 0.01
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
 MedalWallConfig.MobileMoveXFactor = 0.002
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
 MedalWallConfig.MobileMoveYFactor = 0.001
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
 MedalWallConfig.CameraResetPosTime = 0.3
-

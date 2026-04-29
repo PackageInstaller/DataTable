@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/act_nightking_can_counter_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionNightKingCanCounterAttack", AINewNode)
 ActionNightKingCanCounterAttack = ActionNightKingCanCounterAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionNightKingCanCounterAttack.Constructor = function(self)
-  -- function num : 0_0
+function ActionNightKingCanCounterAttack:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionNightKingCanCounterAttack.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionNightKingCanCounterAttack:OnUpdate()
   local ownEntity = self.m_entityOwn
   local myPos = ownEntity:GetGridPosition()
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   if not utilScopeSvc:IsNightKingCanCounterAttack(ownEntity, teamEntity) then
-    (Log.fatal)("NightKingCanCounterAttack Failure")
+    Log.fatal("NightKingCanCounterAttack Failure")
     return AINewNodeStatus.Failure
   end
   local newDir, newBodyArea = utilScopeSvc:GetCounterAttackSwitchBodyArea(ownEntity, teamEntity)
@@ -29,13 +19,10 @@ ActionNightKingCanCounterAttack.OnUpdate = function(self)
     local area = newBodyArea[i]
     local newPos = area + myPos
     if utilScopeSvc:IsPosBlock(newPos, BlockFlag.MonsterLand) then
-      (Log.fatal)("NightKingCanCounterAttack Failure")
+      Log.fatal("NightKingCanCounterAttack Failure")
       return AINewNodeStatus.Failure
     end
   end
-  ;
-  (Log.fatal)("NightKingCanCounterAttack Success")
+  Log.fatal("NightKingCanCounterAttack Success")
   return AINewNodeStatus.Success
 end
-
-

@@ -1,44 +1,168 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/season/task/cfg_season_castle_show.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Title = 2, TaskTitle = 3, TaskDesc = 4, PlanTitle = 5, AndongTalk = 6, Bg = 7}
-local common = {"str_season_s3_castle_mission_fin_title"}
+local key = {
+  ID = 1,
+  Title = 2,
+  TaskTitle = 3,
+  TaskDesc = 4,
+  PlanTitle = 5,
+  AndongTalk = 6,
+  Bg = 7
+}
+local common = {
+  "str_season_s3_castle_mission_fin_title"
+}
 local config = {
-{1, "str_season_s3_castle_lvup_title_1", common[1], "str_season_s3_castle_mission_desc_1", "str_season_s3_castle_build_desc_1", "str_season_s3_castle_andong_talk_1", "exp_S3_cj_cb1"}
-, 
-{2, "str_season_s3_castle_lvup_title_2", common[1], "str_season_s3_castle_mission_desc_2", "str_season_s3_castle_build_desc_2", "str_season_s3_castle_andong_talk_2", "exp_S3_cj_cb2"}
-, 
-{3, "str_season_s3_castle_lvup_title_3", common[1], "str_season_s3_castle_mission_desc_3", "str_season_s3_castle_build_desc_3", "str_season_s3_castle_andong_talk_3", "exp_S3_cj_cb3"}
-, 
-{4, "str_season_s3_castle_lvup_title_4", common[1], "str_season_s3_castle_mission_desc_4", "str_season_s3_castle_build_desc_4", "str_season_s3_castle_andong_talk_4", "exp_S3_cj_cb4"}
-, 
-{5, "str_season_s3_castle_lvup_title_5", common[1], "str_season_s3_castle_mission_desc_5", "str_season_s3_castle_build_desc_5", "str_season_s3_castle_andong_talk_5", "exp_S3_cj_cb5"}
-, 
-{6, "str_season_s3_castle_lvup_title_6", common[1], "str_season_s3_castle_mission_desc_6", "str_season_s3_castle_build_desc_6", "str_season_s3_castle_andong_talk_6", "exp_S3_cj_cb6"}
-, 
-{7, "str_season_s3_castle_lvup_title_7", common[1], "str_season_s3_castle_mission_desc_7", "str_season_s3_castle_build_desc_7", "str_season_s3_castle_andong_talk_7", "exp_S3_cj_cb7"}
-, 
-{8, "str_season_s3_castle_lvup_title_8", common[1], "str_season_s3_castle_mission_desc_8", "str_season_s3_castle_build_desc_8", "str_season_s3_castle_andong_talk_8", "exp_S3_cj_cb8"}
-, 
-{9, "str_season_s3_castle_lvup_title_9", common[1], "str_season_s3_castle_mission_desc_9", "str_season_s3_castle_build_desc_9", "str_season_s3_castle_andong_talk_9", "exp_S3_cj_cb9"}
-, 
-{10, "str_season_s3_castle_lvup_title_10", common[1], "str_season_s3_castle_mission_desc_10", "str_season_s3_castle_build_desc_10", "str_season_s3_castle_andong_talk_10", "exp_S3_cj_cb10"}
-, 
-{11, "str_season_s3_castle_lvup_title_11", common[1], "str_season_s3_castle_mission_desc_11", "str_season_s3_castle_build_desc_11", "str_season_s3_castle_andong_talk_11", "exp_S3_cj_cb11"}
-, 
-{12, "str_season_s3_castle_lvup_title_12", common[1], "str_season_s3_castle_mission_desc_12", "str_season_s3_castle_build_desc_12", "str_season_s3_castle_andong_talk_12", "exp_S3_cj_cb12"}
-, 
-{13, "str_season_s3_castle_lvup_title_13", common[1], "str_season_s3_castle_mission_desc_13", "str_season_s3_castle_build_desc_13", "str_season_s3_castle_andong_talk_13", "exp_S3_cj_cb13"}
-, 
-{14, "str_season_s3_castle_lvup_title_14", common[1], "str_season_s3_castle_mission_desc_14", "str_season_s3_castle_build_desc_14", "str_season_s3_castle_andong_talk_14", "exp_S3_cj_cb14"}
-, 
-{15, "str_season_s3_castle_lvup_title_15", common[1], "str_season_s3_castle_mission_desc_15", "str_season_s3_castle_build_desc_15", "str_season_s3_castle_andong_talk_15", "exp_S3_cj_cb15"}
-, 
-{16, "str_season_s3_castle_lvup_title_16", common[1], "str_season_s3_castle_mission_desc_16", "str_season_s3_castle_build_desc_16", "str_season_s3_castle_andong_talk_16", "exp_S3_cj_cb16"}
-, 
-{17, "str_season_s3_castle_build_lvmax_title", nil, nil, nil, nil, "exp_S3_cj_cb17"}
+  {
+    1,
+    "str_season_s3_castle_lvup_title_1",
+    common[1],
+    "str_season_s3_castle_mission_desc_1",
+    "str_season_s3_castle_build_desc_1",
+    "str_season_s3_castle_andong_talk_1",
+    "exp_S3_cj_cb1"
+  },
+  {
+    2,
+    "str_season_s3_castle_lvup_title_2",
+    common[1],
+    "str_season_s3_castle_mission_desc_2",
+    "str_season_s3_castle_build_desc_2",
+    "str_season_s3_castle_andong_talk_2",
+    "exp_S3_cj_cb2"
+  },
+  {
+    3,
+    "str_season_s3_castle_lvup_title_3",
+    common[1],
+    "str_season_s3_castle_mission_desc_3",
+    "str_season_s3_castle_build_desc_3",
+    "str_season_s3_castle_andong_talk_3",
+    "exp_S3_cj_cb3"
+  },
+  {
+    4,
+    "str_season_s3_castle_lvup_title_4",
+    common[1],
+    "str_season_s3_castle_mission_desc_4",
+    "str_season_s3_castle_build_desc_4",
+    "str_season_s3_castle_andong_talk_4",
+    "exp_S3_cj_cb4"
+  },
+  {
+    5,
+    "str_season_s3_castle_lvup_title_5",
+    common[1],
+    "str_season_s3_castle_mission_desc_5",
+    "str_season_s3_castle_build_desc_5",
+    "str_season_s3_castle_andong_talk_5",
+    "exp_S3_cj_cb5"
+  },
+  {
+    6,
+    "str_season_s3_castle_lvup_title_6",
+    common[1],
+    "str_season_s3_castle_mission_desc_6",
+    "str_season_s3_castle_build_desc_6",
+    "str_season_s3_castle_andong_talk_6",
+    "exp_S3_cj_cb6"
+  },
+  {
+    7,
+    "str_season_s3_castle_lvup_title_7",
+    common[1],
+    "str_season_s3_castle_mission_desc_7",
+    "str_season_s3_castle_build_desc_7",
+    "str_season_s3_castle_andong_talk_7",
+    "exp_S3_cj_cb7"
+  },
+  {
+    8,
+    "str_season_s3_castle_lvup_title_8",
+    common[1],
+    "str_season_s3_castle_mission_desc_8",
+    "str_season_s3_castle_build_desc_8",
+    "str_season_s3_castle_andong_talk_8",
+    "exp_S3_cj_cb8"
+  },
+  {
+    9,
+    "str_season_s3_castle_lvup_title_9",
+    common[1],
+    "str_season_s3_castle_mission_desc_9",
+    "str_season_s3_castle_build_desc_9",
+    "str_season_s3_castle_andong_talk_9",
+    "exp_S3_cj_cb9"
+  },
+  {
+    10,
+    "str_season_s3_castle_lvup_title_10",
+    common[1],
+    "str_season_s3_castle_mission_desc_10",
+    "str_season_s3_castle_build_desc_10",
+    "str_season_s3_castle_andong_talk_10",
+    "exp_S3_cj_cb10"
+  },
+  {
+    11,
+    "str_season_s3_castle_lvup_title_11",
+    common[1],
+    "str_season_s3_castle_mission_desc_11",
+    "str_season_s3_castle_build_desc_11",
+    "str_season_s3_castle_andong_talk_11",
+    "exp_S3_cj_cb11"
+  },
+  {
+    12,
+    "str_season_s3_castle_lvup_title_12",
+    common[1],
+    "str_season_s3_castle_mission_desc_12",
+    "str_season_s3_castle_build_desc_12",
+    "str_season_s3_castle_andong_talk_12",
+    "exp_S3_cj_cb12"
+  },
+  {
+    13,
+    "str_season_s3_castle_lvup_title_13",
+    common[1],
+    "str_season_s3_castle_mission_desc_13",
+    "str_season_s3_castle_build_desc_13",
+    "str_season_s3_castle_andong_talk_13",
+    "exp_S3_cj_cb13"
+  },
+  {
+    14,
+    "str_season_s3_castle_lvup_title_14",
+    common[1],
+    "str_season_s3_castle_mission_desc_14",
+    "str_season_s3_castle_build_desc_14",
+    "str_season_s3_castle_andong_talk_14",
+    "exp_S3_cj_cb14"
+  },
+  {
+    15,
+    "str_season_s3_castle_lvup_title_15",
+    common[1],
+    "str_season_s3_castle_mission_desc_15",
+    "str_season_s3_castle_build_desc_15",
+    "str_season_s3_castle_andong_talk_15",
+    "exp_S3_cj_cb15"
+  },
+  {
+    16,
+    "str_season_s3_castle_lvup_title_16",
+    common[1],
+    "str_season_s3_castle_mission_desc_16",
+    "str_season_s3_castle_build_desc_16",
+    "str_season_s3_castle_andong_talk_16",
+    "exp_S3_cj_cb16"
+  },
+  {
+    17,
+    "str_season_s3_castle_build_lvmax_title",
+    nil,
+    nil,
+    nil,
+    nil,
+    "exp_S3_cj_cb17"
+  }
 }
 return config, "ID", key
-

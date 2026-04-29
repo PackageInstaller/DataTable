@@ -1,42 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/grid_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 GridHelper = {}
 local GridSize = 0.25
 local MAXNUMBER = 99999999
 local FloatRate = 10000
--- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
 GridHelper.SIZE = GridSize
--- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
 GridHelper.PICKUPHEIGHT = 0.1
 local Min = math.min
 local Max = math.max
 local Abs = math.abs
-local Cos = function(angle)
-  -- function num : 0_0 , upvalues : _ENV
-  return (math.cos)((math.rad)(angle))
+
+local function Cos(angle)
+  return math.cos(math.rad(angle))
 end
 
-local Sin = function(angle)
-  -- function num : 0_1 , upvalues : _ENV
-  return (math.sin)((math.rad)(angle))
+local function Sin(angle)
+  return math.sin(math.rad(angle))
 end
 
 local Dot = Vector2.Dot
 local Floor = math.floor
-local Round = function(f)
-  -- function num : 0_2 , upvalues : Floor
+
+local function Round(f)
   return Floor(f + 0.5)
 end
 
-local FixFloat = function(f)
-  -- function num : 0_3 , upvalues : Floor, Abs
+local function FixFloat(f)
   local ff = Floor(f + 0.5)
-  if Abs(ff - f) < 1e-06 then
+  if Abs(ff - f) < 1.0E-6 then
     return ff, true
   else
     return f, false
@@ -45,19 +34,28 @@ end
 
 local furnitureSeq = 0
 local edges = {
-{ori = Vector2(-1, 1), dir = Vector2(1, 0)}
-, 
-{ori = Vector2(1, 1), dir = Vector2(0, -1)}
-, 
-{ori = Vector2(1, -1), dir = Vector2(-1, 0)}
-, 
-{ori = Vector2(-1, -1), dir = Vector2(0, 1)}
+  {
+    ori = Vector2(-1, 1),
+    dir = Vector2(1, 0)
+  },
+  {
+    ori = Vector2(1, 1),
+    dir = Vector2(0, -1)
+  },
+  {
+    ori = Vector2(1, -1),
+    dir = Vector2(-1, 0)
+  },
+  {
+    ori = Vector2(-1, -1),
+    dir = Vector2(0, 1)
+  }
 }
-local calBound = function(points)
-  -- function num : 0_4 , upvalues : MAXNUMBER, _ENV, Min, Max, Floor
+
+local function calBound(points)
   local xMin, yMin = MAXNUMBER, MAXNUMBER
   local xMax, yMax = -MAXNUMBER, -MAXNUMBER
-  for _,p in ipairs(points) do
+  for _, p in ipairs(points) do
     xMin = Min(p.x, xMin)
     xMax = Max(p.x, xMax)
     yMin = Min(p.y, yMin)
@@ -70,41 +68,47 @@ local calBound = function(points)
   return xMin, xMax, yMin, yMax
 end
 
-local isValidPos = function(sur, pos, layer)
-  -- function num : 0_5
+local function isValidPos(sur, pos, layer)
   local tiles = sur:Tiles()
-  do
-    if tiles[pos.x] then
-      local tile = (tiles[pos.x])[pos.y]
-      if tile then
-        return not tile:Occupied(layer)
-      end
+  if tiles[pos.x] then
+    local tile = tiles[pos.x][pos.y]
+    if tile then
+      return not tile:Occupied(layer)
     end
-    return false
   end
+  return false
 end
 
-local occupyGridsOBB = function(fur, gridPos, rotY)
-  -- function num : 0_6 , upvalues : FixFloat, Cos, Sin, _ENV, calBound
+local function occupyGridsOBB(fur, gridPos, rotY)
   local cos = FixFloat(Cos(rotY))
   local sin = FixFloat(Sin(rotY))
   local xAxis = Vector2(cos, -sin)
   local yAxis = Vector2(sin, cos)
   local size = fur:Size()
-  local origin = gridPos + xAxis * (fur:Offset()).x + yAxis * (fur:Offset()).y
+  local origin = gridPos + xAxis * fur:Offset().x + yAxis * fur:Offset().y
   origin.x = FixFloat(origin.x)
   origin.y = FixFloat(origin.y)
   local leftTop = origin + yAxis * size.y
   local rightTop = leftTop + xAxis * size.x
   local rightBottom = origin + xAxis * size.x
-  local points = {origin, leftTop, rightTop, rightBottom}
+  local points = {
+    origin,
+    leftTop,
+    rightTop,
+    rightBottom
+  }
   local furOBB = OBB:New(points, xAxis, yAxis, fur:Size())
   local xMin, xMax, yMin, yMax = calBound(points)
   local grids = {}
   for w = xMin, xMax do
     for h = yMin, yMax do
       local cross = false
-      local ps = {Vector2(w, h), Vector2(w, h + 1), Vector2(w + 1, h + 1), Vector2(w + 1, h)}
+      local ps = {
+        Vector2(w, h),
+        Vector2(w, h + 1),
+        Vector2(w + 1, h + 1),
+        Vector2(w + 1, h)
+      }
       local obb = OBB:New(ps, Vector2(1, 0), Vector2(0, 1), Vector2(1, 1))
       if furOBB:Intersect(obb) and obb:Intersect(furOBB) then
         grids[#grids + 1] = Vector2(w + 1, h + 1)
@@ -114,47 +118,35 @@ local occupyGridsOBB = function(fur, gridPos, rotY)
   return grids
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R17 in 'UnsetPending'
-
-GridHelper.FurnitureOccupyGrids = function(fur, gridPos, rotY)
-  -- function num : 0_7 , upvalues : occupyGridsOBB
+function GridHelper.FurnitureOccupyGrids(fur, gridPos, rotY)
   return occupyGridsOBB(fur, gridPos, rotY)
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R17 in 'UnsetPending'
-
-GridHelper.GetFurniturePosRot = function(sur, gridPos, rotY)
-  -- function num : 0_8 , upvalues : GridSize, _ENV
+function GridHelper.GetFurniturePosRot(sur, gridPos, rotY)
   local pos = sur:WorldPosition()
   pos = pos + sur:Right() * (gridPos.x * GridSize) + sur:Forward() * (gridPos.y * GridSize)
   local rot = sur:WorldRotation()
-  rot = rot * (Quaternion.Euler)(0, rotY, 0)
+  rot = rot * Quaternion.Euler(0, rotY, 0)
   return pos, rot
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R17 in 'UnsetPending'
-
-GridHelper.GetGridsWorldPos = function(sur, grids)
-  -- function num : 0_9 , upvalues : _ENV, GridSize
+function GridHelper.GetGridsWorldPos(sur, grids)
   local right = sur:Right()
   local forward = sur:Forward()
   local worldPos = sur:WorldPosition()
   local ps = {}
-  for i,pos in ipairs(grids) do
+  for i, pos in ipairs(grids) do
     ps[i] = worldPos + right * (pos.x - 1) * GridSize + forward * (pos.y - 1) * GridSize
   end
   return ps, sur:WorldRotation()
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R17 in 'UnsetPending'
-
-GridHelper.CanFurniturPlaceAt = function(sur, fur, gridPos, rotY)
-  -- function num : 0_10 , upvalues : _ENV, isValidPos
-  local grids = (GridHelper.FurnitureOccupyGrids)(fur, gridPos, rotY)
+function GridHelper.CanFurniturPlaceAt(sur, fur, gridPos, rotY)
+  local grids = GridHelper.FurnitureOccupyGrids(fur, gridPos, rotY)
   local w = sur:Width()
   local h = sur:Height()
   local layer = fur:Layer()
-  for _,pos in ipairs(grids) do
+  for _, pos in ipairs(grids) do
     local valid = isValidPos(sur, pos, layer)
     if not valid then
       return false, grids
@@ -163,21 +155,18 @@ GridHelper.CanFurniturPlaceAt = function(sur, fur, gridPos, rotY)
   return true, grids
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R17 in 'UnsetPending'
-
-GridHelper.BeyondSurfaceEdge = function(sur, fur, gridPos, rotY)
-  -- function num : 0_11 , upvalues : _ENV, isValidPos
-  local grids = (GridHelper.FurnitureOccupyGrids)(fur, gridPos, rotY)
+function GridHelper.BeyondSurfaceEdge(sur, fur, gridPos, rotY)
+  local grids = GridHelper.FurnitureOccupyGrids(fur, gridPos, rotY)
   local tiles = sur:Tiles()
   local w = sur:Width()
   local h = sur:Height()
   local layer = fur:Layer()
   local valid = true
-  for _,pos in ipairs(grids) do
-    if pos.x < 0 or w < pos.x or pos.y < 0 or h < pos.y then
+  for _, pos in ipairs(grids) do
+    if pos.x < 0 or w < pos.x or 0 > pos.y or h < pos.y then
       return true
     end
-    if tiles[pos.x] == nil or (tiles[pos.x])[pos.y] == nil then
+    if tiles[pos.x] == nil or tiles[pos.x][pos.y] == nil then
       return true
     end
     if not isValidPos(sur, pos, layer) and valid then
@@ -187,22 +176,19 @@ GridHelper.BeyondSurfaceEdge = function(sur, fur, gridPos, rotY)
   return false, valid, grids
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R17 in 'UnsetPending'
-
-GridHelper.FindLocationOn = function(furID, sur)
-  -- function num : 0_12 , upvalues : _ENV, MAXNUMBER, Min, Max, Floor, edges
-  local cfg = (Cfg.cfg_item_furniture)[furID]
+function GridHelper.FindLocationOn(furID, sur)
+  local cfg = Cfg.cfg_item_furniture[furID]
   local locate = cfg.LocateType
   if locate ~= sur:GridType() then
     return false
   end
-  local size = Vector2((cfg.Size)[1], (cfg.Size)[2])
+  local size = Vector2(cfg.Size[1], cfg.Size[2])
   local furLayer = cfg.Layer
   local tiles = sur:Tiles()
   local xMin, xMax = MAXNUMBER, -MAXNUMBER
   local yMin, yMax = MAXNUMBER, -MAXNUMBER
-  for x,ts in pairs(tiles) do
-    for y,_ in pairs(ts) do
+  for x, ts in pairs(tiles) do
+    for y, _ in pairs(ts) do
       xMin = Min(xMin, x)
       xMax = Max(xMax, x)
       yMin = Min(yMin, y)
@@ -212,12 +198,12 @@ GridHelper.FindLocationOn = function(furID, sur)
   local centerX = Floor((xMin + xMax) / 2)
   local centerY = Floor((yMin + yMax) / 2)
   local layer = Max(Max(centerX - xMin, xMax - centerX), Max(centerY - yMin, yMax - centerY))
-  local check = function(x, y)
-    -- function num : 0_12_0 , upvalues : tiles, _ENV, size, furLayer
+  
+  local function check(x, y)
     if tiles[x] == nil then
       return false
     end
-    local t = (tiles[x])[y]
+    local t = tiles[x][y]
     if t == null then
       return false
     end
@@ -238,15 +224,15 @@ GridHelper.FindLocationOn = function(furID, sur)
     end
     return true
   end
-
+  
   if check(centerX, centerY) then
     return true, Vector2(centerX - 1, centerY - 1)
   end
   local center = Vector2(centerX, centerY)
   for l = 1, layer do
     for e = 1, 4 do
-      local ori = center + (edges[e]).ori * l
-      local dir = (edges[e]).dir
+      local ori = center + edges[e].ori * l
+      local dir = edges[e].dir
       for c = 0, l do
         local cur = ori + dir * c
         if check(cur.x, cur.y) then
@@ -259,10 +245,7 @@ GridHelper.FindLocationOn = function(furID, sur)
   return false
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R17 in 'UnsetPending'
-
-GridHelper.ToInt = function(f)
-  -- function num : 0_13 , upvalues : FloatRate, FixFloat, Floor
+function GridHelper.ToInt(f)
   local t = f * FloatRate
   local result, fixed = FixFloat(t)
   if fixed then
@@ -272,25 +255,16 @@ GridHelper.ToInt = function(f)
   end
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R17 in 'UnsetPending'
-
-GridHelper.ToFloat = function(i)
-  -- function num : 0_14 , upvalues : FloatRate
+function GridHelper.ToFloat(i)
   return i / FloatRate
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R17 in 'UnsetPending'
-
-GridHelper.CreateFurnitureInstanceID = function()
-  -- function num : 0_15 , upvalues : furnitureSeq
+function GridHelper.CreateFurnitureInstanceID()
   furnitureSeq = furnitureSeq + 1
   return furnitureSeq
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R17 in 'UnsetPending'
-
-GridHelper.LocalPos2GridPos = function(pos)
-  -- function num : 0_16 , upvalues : GridSize, Floor, FixFloat, _ENV
+function GridHelper.LocalPos2GridPos(pos)
   local x = pos.x / GridSize
   local y = pos.z / GridSize
   x = Floor(FixFloat(x))
@@ -298,10 +272,7 @@ GridHelper.LocalPos2GridPos = function(pos)
   return Vector2(x, y)
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R17 in 'UnsetPending'
-
-GridHelper.Test = function(n)
-  -- function num : 0_17 , upvalues : _ENV
+function GridHelper.Test(n)
   local m = AircraftRandomActionManager:New()
   local r = {}
   for i = 1, n do
@@ -309,22 +280,17 @@ GridHelper.Test = function(n)
     if r[a.index] == nil then
       r[a.index] = {count = 0, info = a}
     end
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (r[a.index]).count = (r[a.index]).count + 1
+    r[a.index].count = r[a.index].count + 1
   end
-  for idx,re in pairs(r) do
-    (Log.fatal)("索引：", idx, "，类型：", (re.info).type, "，区域：", (re.info).area, "，理论权重：", (re.info).weight, "，家具：", (re.info).fur, "，实际次数：", re.count, "，实际概率：", re.count / n)
+  for idx, re in pairs(r) do
+    Log.fatal("索引：", idx, "，类型：", re.info.type, "，区域：", re.info.area, "，理论权重：", re.info.weight, "，家具：", re.info.fur, "，实际次数：", re.count, "，实际概率：", re.count / n)
   end
 end
 
 _class("OBB", Object)
 OBB = OBB
--- DECOMPILER ERROR at PC114: Confused about usage of register: R17 in 'UnsetPending'
 
-OBB.Constructor = function(self, points, xAxis, yAxis, size)
-  -- function num : 0_18 , upvalues : Dot
+function OBB:Constructor(points, xAxis, yAxis, size)
   self._points = points
   self._size = size
   self._axisX = xAxis
@@ -337,20 +303,14 @@ OBB.Constructor = function(self, points, xAxis, yAxis, size)
   self._yProjMax = Dot(rightTop, self._axisY)
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R17 in 'UnsetPending'
-
-OBB.Points = function(self)
-  -- function num : 0_19
+function OBB:Points()
   return self._points
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R17 in 'UnsetPending'
-
-OBB.Intersect = function(self, other)
-  -- function num : 0_20 , upvalues : MAXNUMBER, _ENV, Dot, Min, Max
+function OBB:Intersect(other)
   local xMin, xMax = MAXNUMBER, -MAXNUMBER
   local yMin, yMax = MAXNUMBER, -MAXNUMBER
-  for _,point in ipairs(other:Points()) do
+  for _, point in ipairs(other:Points()) do
     local x = Dot(point, self._axisX)
     local y = Dot(point, self._axisY)
     xMin = Min(xMin, x)
@@ -358,15 +318,11 @@ OBB.Intersect = function(self, other)
     yMin = Min(yMin, y)
     yMax = Max(yMax, y)
   end
-  do
-    if self._xProjMax <= xMin or xMax <= self._xProjMin then
-      return false
-    end
-    if self._yProjMax <= yMin or yMax <= self._yProjMin then
-      return false
-    end
-    return true
+  if xMin >= self._xProjMax or xMax <= self._xProjMin then
+    return false
   end
+  if yMin >= self._yProjMax or yMax <= self._yProjMin then
+    return false
+  end
+  return true
 end
-
-

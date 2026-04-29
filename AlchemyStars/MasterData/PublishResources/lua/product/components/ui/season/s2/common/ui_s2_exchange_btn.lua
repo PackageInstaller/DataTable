@@ -1,137 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s2/common/ui_s2_exchange_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS2ExchangeBtn", UICustomWidget)
 UIS2ExchangeBtn = UIS2ExchangeBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS2ExchangeBtn.OnShow = function(self)
-  -- function num : 0_0
+function UIS2ExchangeBtn:OnShow()
   self._constBtnName = self:GetName()
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2ExchangeBtn.OnHide = function(self)
-  -- function num : 0_1
+function UIS2ExchangeBtn:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2ExchangeBtn.SetData = function(self, seasonId, component)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS2ExchangeBtn:SetData(seasonId, component)
   self._seasonId = seasonId
   self._component = component
-  if component then
-    local isOpen = component:ComponentIsOpen()
-  end
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_iconGroup", "UIS2BtnIcon")
+  local isOpen = component and component:ComponentIsOpen()
+  local obj = UIWidgetHelper.SpawnObject(self, "_iconGroup", "UIS2BtnIcon")
   obj:SetData(self:GetName())
   self._state = isOpen and 1 or 2
   self:_SetState(self._state)
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2ExchangeBtn._Refresh = function(self)
-  -- function num : 0_3
+function UIS2ExchangeBtn:_Refresh()
   if self._component == nil then
-    return 
+    return
   end
-  local id1, id2 = (self._component):GetCostItemId(true), (self._component):GetCostItemId(false)
+  local id1, id2 = self._component:GetCostItemId(true), self._component:GetCostItemId(false)
   self:_SetIconText(id1, "_icon1", "_text1")
   self:_SetIconText(id2, "_icon2", "_text2")
   self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2ExchangeBtn._SetState = function(self, state)
-  -- function num : 0_4
-  (self:GetGameObject("_over")):SetActive(state == 2)
+function UIS2ExchangeBtn:_SetState(state)
+  self:GetGameObject("_over"):SetActive(state == 2)
   local alpha = state == 2 and 0.5 or 1
   local obj = self:GetUIComponent("CanvasGroup", "_alphaGroup")
   obj.alpha = alpha
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2ExchangeBtn._SetIconText = function(self, itemId, widgetIcon, widgetText)
-  -- function num : 0_5 , upvalues : _ENV
+function UIS2ExchangeBtn:_SetIconText(itemId, widgetIcon, widgetText)
   local atlasName = "UICommon.spriteatlas"
   local spriteName = "toptoon_" .. itemId
-  ;
-  (UIWidgetHelper.SetImageSprite)(self, widgetIcon, atlasName, spriteName)
-  ;
-  (UIWidgetHelper.SetItemCount)(self, itemId, widgetText)
+  UIWidgetHelper.SetImageSprite(self, widgetIcon, atlasName, spriteName)
+  UIWidgetHelper.SetItemCount(self, itemId, widgetText)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2ExchangeBtn._CalcNew = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local isNew = not (UISeasonLocalDBHelper.SeasonBtn_Has)(self._constBtnName, "New")
+function UIS2ExchangeBtn:_CalcNew()
+  local isNew = not UISeasonLocalDBHelper.SeasonBtn_Has(self._constBtnName, "New")
   return isNew
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2ExchangeBtn._CalcRed = function(self)
-  -- function num : 0_7
-  if self._component then
-    local isRed = (self._component):HaveRedPoint()
-  end
+function UIS2ExchangeBtn:_CalcRed()
+  local isRed = self._component and self._component:HaveRedPoint()
   return isRed
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2ExchangeBtn._CheckPoint = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIS2ExchangeBtn:_CheckPoint()
   local new = self:_CalcNew()
   local red = self:_CalcRed()
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, new, red, "_new", "_red")
+  UIWidgetHelper.SetNewAndReds(self, new, red, "_new", "_red")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2ExchangeBtn.BtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.info)("UIS2ExchangeBtn:BtnOnClick")
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+function UIS2ExchangeBtn:BtnOnClick()
+  Log.info("UIS2ExchangeBtn:BtnOnClick")
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   if seasonModule:CheckSeasonClose_ShowClientError(self._seasonId) then
-    return 
+    return
   end
   if self._state == 2 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_s1_main_btn_over"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_season_s1_main_btn_over"))
+    return
   end
-  ;
-  (UISeasonLocalDBHelper.SeasonBtn_Set)(self._constBtnName, "New")
+  UISeasonLocalDBHelper.SeasonBtn_Set(self._constBtnName, "New")
   self:_CheckPoint()
-  ;
-  (UISeasonHelper.ShowCurSeasonExchange)()
+  UISeasonHelper.ShowCurSeasonExchange()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2ExchangeBtn._AttachEvents = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIS2ExchangeBtn:_AttachEvents()
   self:AttachEvent(GameEventType.ItemCountChanged, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2ExchangeBtn._DetachEvents = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIS2ExchangeBtn:_DetachEvents()
   self:DetachEvent(GameEventType.ItemCountChanged, self._Refresh)
 end
-
-

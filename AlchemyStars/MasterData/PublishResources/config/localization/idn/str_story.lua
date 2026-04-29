@@ -1,8 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/idn/str_story.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_story_btn_hide = "Sembunyikan", str_story_btn_review = "Rekap", str_story_btn_auto = "Auto", str_story_btn_skip = "Lewati", str_story_skip_confirm = "Lewati Cutscene?", str_story_skip_affinity_confirm = "Ada kesempatan untuk mempelajari lebih lanjut tentang Aurorian di Cerita ini. Lewati? \n(Cerita dapat direkap di File)", str_story_add_affinity = "Affinity +{1}"}
+local config = {
+  str_story_btn_hide = "Sembunyikan",
+  str_story_btn_review = "Rekap",
+  str_story_btn_auto = "Auto",
+  str_story_btn_skip = "Lewati",
+  str_story_skip_confirm = "Lewati Cutscene?",
+  str_story_skip_affinity_confirm = [[
+Ada kesempatan untuk mempelajari lebih lanjut tentang Aurorian di Cerita ini. Lewati? 
+(Cerita dapat direkap di File)]],
+  str_story_add_affinity = "Affinity +{1}"
+}
 return config
-

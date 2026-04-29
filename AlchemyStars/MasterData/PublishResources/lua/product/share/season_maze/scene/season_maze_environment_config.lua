@@ -1,20 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/scene/season_maze_environment_config.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local SeasonMazeEnvironmentConfig = {
-[UISeasonID.S1] = {
-[1] = {value = "SeasonMazeSceneGiantLizard", param = nil}
-, 
-[2] = {value = "SeasonMazeSceneSmallLizard", 
-param = {1}
-}
-, 
-[3] = {value = "SeasonMazeSceneSmallLizard", 
-param = {2}
-}
-}
+  [UISeasonID.S1] = {
+    [1] = {
+      value = "SeasonMazeSceneGiantLizard",
+      param = nil
+    },
+    [2] = {
+      value = "SeasonMazeSceneSmallLizard",
+      param = {1}
+    },
+    [3] = {
+      value = "SeasonMazeSceneSmallLizard",
+      param = {2}
+    }
+  }
 }
 _enum("SeasonMazeEnvironmentConfig", SeasonMazeEnvironmentConfig)
-

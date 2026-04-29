@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_recharge/ui_shop_currency_1_to_2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopCurrency1To2", UIController)
 UIShopCurrency1To2 = UIShopCurrency1To2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopCurrency1To2.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopCurrency1To2:Constructor()
   self.shopModule = self:GetModule(ShopModule)
-  self.clientShop = (self.shopModule):GetClientShop()
-  self._data = (self.clientShop):GetRechargeShopData()
-  self._rateYJ2GP = (self.clientShop):GetDiamondExchangeGlowRate()
+  self.clientShop = self.shopModule:GetClientShop()
+  self._data = self.clientShop:GetRechargeShopData()
+  self._rateYJ2GP = self.clientShop:GetDiamondExchangeGlowRate()
   self._curCount = 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrency1To2.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PayModule)):RequestGetBalanceNormal()
+function UIShopCurrency1To2:LoadDataOnEnter(TT, res, uiParams)
+  GameGlobal.GetModule(PayModule):RequestGetBalanceNormal()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrency1To2.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopCurrency1To2:OnShow(uiParams)
   self._txtExchange = self:GetUIComponent("UILocalizationText", "txtExchange")
   self._txtGuangpo = self:GetUIComponent("UILocalizationText", "txtGuangpo")
   self._txtYaojing = self:GetUIComponent("UILocalizationText", "txtYaojing")
@@ -35,196 +22,132 @@ UIShopCurrency1To2.OnShow = function(self, uiParams)
   self._btnMinus = self:GetUIComponent("Button", "btnMinus")
   self._btnAdd = self:GetUIComponent("Button", "btnAdd")
   self._btnTop = self:GetUIComponent("Button", "btnTop")
-  if (EngineGameHelper.EnableAppleVerifyBulletin)() then
+  if EngineGameHelper.EnableAppleVerifyBulletin() then
     self._btnRecharge = self:GetGameObject("btnRecharge")
-    ;
-    (self._btnRecharge):SetActive(false)
+    self._btnRecharge:SetActive(false)
   end
-  local count1, _ = (self.shopModule):GetDiamondCount()
+  local count1, _ = self.shopModule:GetDiamondCount()
   local diff = uiParams[1]
-  if diff and self._rateYJ2GP < diff then
-    local ceil = (math.ceil)(diff / self._rateYJ2GP)
+  if diff and diff > self._rateYJ2GP then
+    local ceil = math.ceil(diff / self._rateYJ2GP)
     local max = count1
     if max < 1 then
       max = 1
     end
-    self._curCount = (Mathf.Clamp)(ceil, 1, max)
+    self._curCount = Mathf.Clamp(ceil, 1, max)
   end
-  do
-    self:Flush()
-    self:AttachEvent(GameEventType.DiamondCountChanged, self.Flush)
-  end
+  self:Flush()
+  self:AttachEvent(GameEventType.DiamondCountChanged, self.Flush)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrency1To2.OnHide = function(self)
-  -- function num : 0_3
+function UIShopCurrency1To2:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrency1To2.Flush = function(self)
-  -- function num : 0_4
+function UIShopCurrency1To2:Flush()
   self:FlushBtns()
   self:FlushCurCount()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrency1To2.FlushBtns = function(self)
-  -- function num : 0_5
-  local count1, _ = (self.shopModule):GetDiamondCount()
-  local interactable = count1 > 0
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._btnBottom).interactable = interactable
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._btnMinus).interactable = interactable
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._btnAdd).interactable = interactable
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._btnTop).interactable = interactable
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIShopCurrency1To2:FlushBtns()
+  local count1, _ = self.shopModule:GetDiamondCount()
+  local interactable = 0 < count1
+  self._btnBottom.interactable = interactable
+  self._btnMinus.interactable = interactable
+  self._btnAdd.interactable = interactable
+  self._btnTop.interactable = interactable
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrency1To2.FlushCurCount = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local count1, _ = (self.shopModule):GetDiamondCount()
+function UIShopCurrency1To2:FlushCurCount()
+  local count1, _ = self.shopModule:GetDiamondCount()
   local guangpo = self._curCount * self._rateYJ2GP
-  ;
-  (self._txtGuangpo):SetText(guangpo)
-  ;
-  (self._txtYaojing):SetText((string.format)(self._curCount .. "/" .. count1))
+  self._txtGuangpo:SetText(guangpo)
+  self._txtYaojing:SetText(string.format(self._curCount .. "/" .. count1))
   if count1 <= 0 then
-    (self._txtExchange):SetText((StringTable.Get)("str_pay_yj_not_enough_cant_exchange"))
-    ;
-    (self._txtBuyCount):SetText(0)
+    self._txtExchange:SetText(StringTable.Get("str_pay_yj_not_enough_cant_exchange"))
+    self._txtBuyCount:SetText(0)
   else
-    ;
-    (self._txtExchange):SetText((string.format)((StringTable.Get)("str_pay_cost_n_yj_exchange_m_gp", self._curCount, guangpo)))
-    ;
-    (self._txtBuyCount):SetText(self._curCount)
+    self._txtExchange:SetText(string.format(StringTable.Get("str_pay_cost_n_yj_exchange_m_gp", self._curCount, guangpo)))
+    self._txtBuyCount:SetText(self._curCount)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrency1To2.bgOnClick = function(self, go)
-  -- function num : 0_7
+function UIShopCurrency1To2:bgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrency1To2.btnCancelOnClick = function(self, go)
-  -- function num : 0_8
+function UIShopCurrency1To2:btnCancelOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrency1To2.btnEnsureOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  local count1, freeCount1 = (self.shopModule):GetDiamondCount()
-  if (EngineGameHelper.EnableAppleVerifyBulletin)() and count1 <= 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_pay_yj_not_enough_cant_exchange"))
-    return 
+function UIShopCurrency1To2:btnEnsureOnClick(go)
+  local count1, freeCount1 = self.shopModule:GetDiamondCount()
+  if EngineGameHelper.EnableAppleVerifyBulletin() and count1 <= 0 then
+    ToastManager.ShowToast(StringTable.Get("str_pay_yj_not_enough_cant_exchange"))
+    return
   end
   if count1 <= 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_common_stop_pay"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_common_stop_pay"))
+    return
   end
   local mShop = self:GetModule(ShopModule)
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, mShop, _ENV
     self:Lock("ApplyDiamondExchangeGlow")
     local guangpo = self._curCount * self._rateYJ2GP
     local ret = mShop:ApplyDiamondExchangeGlow(TT, self._curCount, guangpo)
-    do
-      if (ClientShop.CheckShopCode)(ret:GetResult()) then
-        local toast = (string.format)((StringTable.Get)("str_pay_cost_n_yj_exchange_m_gp_success", self._curCount, guangpo))
-        ;
-        (ToastManager.ShowToast)(toast)
-        self:CloseDialog()
-      end
-      self:UnLock("ApplyDiamondExchangeGlow")
+    if ClientShop.CheckShopCode(ret:GetResult()) then
+      local toast = string.format(StringTable.Get("str_pay_cost_n_yj_exchange_m_gp_success", self._curCount, guangpo))
+      ToastManager.ShowToast(toast)
+      self:CloseDialog()
     end
-  end
-, self)
+    self:UnLock("ApplyDiamondExchangeGlow")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrency1To2.btnRechargeOnClick = function(self, go)
-  -- function num : 0_10
+function UIShopCurrency1To2:btnRechargeOnClick(go)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrency1To2.btnBottomOnClick = function(self, go)
-  -- function num : 0_11
-  local count1, _ = (self.shopModule):GetDiamondCount()
+function UIShopCurrency1To2:btnBottomOnClick(go)
+  local count1, _ = self.shopModule:GetDiamondCount()
   if count1 <= 0 then
-    return 
+    return
   end
   self._curCount = 1
   self:FlushCurCount()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrency1To2.btnTopOnClick = function(self, go)
-  -- function num : 0_12
-  local count1, _ = (self.shopModule):GetDiamondCount()
+function UIShopCurrency1To2:btnTopOnClick(go)
+  local count1, _ = self.shopModule:GetDiamondCount()
   if count1 <= 0 then
-    return 
+    return
   end
   self._curCount = count1
   self:FlushCurCount()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrency1To2.btnMinusOnClick = function(self, go)
-  -- function num : 0_13
-  local count1, _ = (self.shopModule):GetDiamondCount()
+function UIShopCurrency1To2:btnMinusOnClick(go)
+  local count1, _ = self.shopModule:GetDiamondCount()
   if count1 <= 0 then
-    return 
+    return
   end
   if self._curCount <= 1 then
     self._curCount = 1
     self:FlushCurCount()
-    return 
+    return
   end
   self._curCount = self._curCount - 1
   self:FlushCurCount()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopCurrency1To2.btnAddOnClick = function(self, go)
-  -- function num : 0_14
-  local count1, _ = (self.shopModule):GetDiamondCount()
+function UIShopCurrency1To2:btnAddOnClick(go)
+  local count1, _ = self.shopModule:GetDiamondCount()
   if count1 <= 0 then
-    return 
+    return
   end
   if count1 <= self._curCount then
     self._curCount = count1
     self:FlushCurCount()
-    return 
+    return
   end
   self._curCount = self._curCount + 1
   self:FlushCurCount()
 end
-
-

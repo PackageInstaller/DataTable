@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/ui_medal_list/ui_medal_list_item_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalListItemDetail", UICustomWidget)
 UIMedalListItemDetail = UIMedalListItemDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalListItemDetail.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMedalListItemDetail:OnShow(uiParams)
   self:InitWidget()
   self._atlas = self:GetAsset("UIMedal.spriteatlas", LoadType.SpriteAtlas)
-  self._disCoveryData = ((GameGlobal.GetModule)(MissionModule)):GetDiscoveryData()
+  self._disCoveryData = GameGlobal.GetModule(MissionModule):GetDiscoveryData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListItemDetail.InitWidget = function(self)
-  -- function num : 0_1
+function UIMedalListItemDetail:InitWidget()
   self.medalIcon = self:GetUIComponent("Image", "medalIcon")
   self.medalName = self:GetUIComponent("UILocalizationText", "medalName")
   self.noReceive = self:GetGameObject("noReceive")
@@ -31,70 +21,38 @@ UIMedalListItemDetail.InitWidget = function(self)
   self._ani = self:GetUIComponent("Animation", "_ani")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListItemDetail.SetData = function(self, itemData)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMedalListItemDetail:SetData(itemData)
   local isRecevie = itemData:IsReceive()
-  ;
-  (self.noReceive):SetActive(not isRecevie)
-  ;
-  (self.receiveIcon):SetActive(isRecevie)
-  ;
-  (self.progress):SetActive(false)
+  self.noReceive:SetActive(not isRecevie)
+  self.receiveIcon:SetActive(isRecevie)
+  self.progress:SetActive(false)
   local cfgMedal = itemData:GetTempl()
   local cfgItem = itemData:GetTemplateItem()
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.medalIcon).sprite = (self._atlas):GetSprite(cfgMedal.Icon)
-  ;
-  (self.medalIcon):SetNativeSize()
-  ;
-  (self.medalName):SetText((StringTable.Get)(cfgItem.Name))
-  ;
-  (self.txtMedalDesc):SetText((StringTable.Get)(cfgItem.RpIntro))
+  self.medalIcon.sprite = self._atlas:GetSprite(cfgMedal.Icon)
+  self.medalIcon:SetNativeSize()
+  self.medalName:SetText(StringTable.Get(cfgItem.Name))
+  self.txtMedalDesc:SetText(StringTable.Get(cfgItem.RpIntro))
   if isRecevie then
-    (self.txtProgressStatus):SetText((StringTable.Get)("str_medal_unlocked"))
-    ;
-    (self.txUnlockDesc):SetText((StringTable.Get)(cfgMedal.GetPathDesc))
+    self.txtProgressStatus:SetText(StringTable.Get("str_medal_unlocked"))
+    self.txUnlockDesc:SetText(StringTable.Get(cfgMedal.GetPathDesc))
+  elseif itemData:IsFunctionLock() then
+    self.txtProgressStatus:SetText(StringTable.Get("str_medal_lock"))
+    self.txUnlockDesc:SetText(StringTable.Get(cfgMedal.UnlockDesc))
   else
-    if itemData:IsFunctionLock() then
-      (self.txtProgressStatus):SetText((StringTable.Get)("str_medal_lock"))
-      ;
-      (self.txUnlockDesc):SetText((StringTable.Get)(cfgMedal.UnlockDesc))
-    else
-      ;
-      (self.txtProgressStatus):SetText((StringTable.Get)("str_medal_progress"))
-      ;
-      (self.txUnlockDesc):SetText((StringTable.Get)(cfgMedal.GetPathDesc))
-      local showProgress = cfgMedal.IsAutoTake
-      ;
-      (self.progress):SetActive(showProgress)
-      if showProgress then
-        local p, curInfo, totalInfo = itemData:GetProgress()
-        -- DECOMPILER ERROR at PC106: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self.progressImageRt).localScale = Vector3(p, 1, 1)
-        local strTable = {}
-        ;
-        (table.insert)(strTable, "<color=#ffffff/>")
-        ;
-        (table.insert)(strTable, curInfo)
-        ;
-        (table.insert)(strTable, "</color>/")
-        ;
-        (table.insert)(strTable, totalInfo)
-        ;
-        (self.txtProgressDetail):SetText((table.concat)(strTable))
-      end
+    self.txtProgressStatus:SetText(StringTable.Get("str_medal_progress"))
+    self.txUnlockDesc:SetText(StringTable.Get(cfgMedal.GetPathDesc))
+    local showProgress = cfgMedal.IsAutoTake
+    self.progress:SetActive(showProgress)
+    if showProgress then
+      local p, curInfo, totalInfo = itemData:GetProgress()
+      self.progressImageRt.localScale = Vector3(p, 1, 1)
+      local strTable = {}
+      table.insert(strTable, "<color=#ffffff/>")
+      table.insert(strTable, curInfo)
+      table.insert(strTable, "</color>/")
+      table.insert(strTable, totalInfo)
+      self.txtProgressDetail:SetText(table.concat(strTable))
     end
   end
-  do
-    ;
-    (self._ani):Play("uieff_UIMedalListItemDetail_in")
-  end
+  self._ani:Play("uieff_UIMedalListItemDetail_in")
 end
-
-

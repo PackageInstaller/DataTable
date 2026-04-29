@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_delete_board_bind_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayDeleteBoardBindEffectInstruction", BaseInstruction)
 PlayDeleteBoardBindEffectInstruction = PlayDeleteBoardBindEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayDeleteBoardBindEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayDeleteBoardBindEffectInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDeleteBoardBindEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayDeleteBoardBindEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local boardEntity = world:GetRenderBoardEntity()
   local entityList = {}
@@ -24,15 +14,11 @@ PlayDeleteBoardBindEffectInstruction.DoInstruction = function(self, TT, casterEn
     local casterEffectHolderCmpt = boardEntity:EffectHolder()
     local effectEntityIDList = casterEffectHolderCmpt:GetEffectEntityIDByEffectID(self._casterEffectID)
     if effectEntityIDList then
-      for _,effectEntityID in ipairs(effectEntityIDList) do
+      for _, effectEntityID in ipairs(effectEntityIDList) do
         local effectEntity = world:GetEntityByID(effectEntityID)
         world:DestroyEntity(effectEntity)
       end
     end
-    do
-      casterEffectHolderCmpt:ClearEffectByEffectID(self._casterEffectID)
-    end
+    casterEffectHolderCmpt:ClearEffectByEffectID(self._casterEffectID)
   end
 end
-
-

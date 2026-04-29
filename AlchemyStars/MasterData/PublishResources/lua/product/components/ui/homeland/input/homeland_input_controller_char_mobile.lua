@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/input/homeland_input_controller_char_mobile.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homeland_input_controller_char_base")
 _class("HomelandInputControllerCharMobile", HomelandInputControllerCharBase)
 HomelandInputControllerCharMobile = HomelandInputControllerCharMobile
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandInputControllerCharMobile.Constructor = function(self)
-  -- function num : 0_0
+function HomelandInputControllerCharMobile:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharMobile.Init = function(self, mainCharacterController, followCameraController)
-  -- function num : 0_1 , upvalues : _ENV
-  ((HomelandInputControllerCharMobile.super).Init)(self, mainCharacterController, followCameraController)
+function HomelandInputControllerCharMobile:Init(mainCharacterController, followCameraController)
+  HomelandInputControllerCharMobile.super.Init(self, mainCharacterController, followCameraController)
   self._rotateFactorX = 0.1
   self._rotateFactorY = 0.05
   self._inputMoveVec = Vector2.zero
@@ -27,17 +17,11 @@ HomelandInputControllerCharMobile.Init = function(self, mainCharacterController,
   self._guideLock = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharMobile.Leave = function(self)
-  -- function num : 0_2
+function HomelandInputControllerCharMobile:Leave()
   self:Reset()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharMobile.Reset = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandInputControllerCharMobile:Reset()
   self._inputMoveVec = Vector2.zero
   self._movementVec = nil
   self._moveInput = false
@@ -45,70 +29,49 @@ HomelandInputControllerCharMobile.Reset = function(self)
   self._moveType = HomelandCharMoveType.Idle
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharMobile.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._mainCharacterController):State() == HomelandActorStateType.Dash then
-    return 
+function HomelandInputControllerCharMobile:OnUpdate(deltaTimeMS)
+  if self._mainCharacterController:State() == HomelandActorStateType.Dash then
+    return
   end
   if self._guideLock then
-    return 
+    return
   end
   if self._moveInput or self._rotateInput then
-    if (self._inputMoveVec).x ~= 0 or (self._inputMoveVec).y ~= 0 then
-      self._movementVec = (self._followCameraController):CalcMovement(Vector3((self._inputMoveVec).x, 0, (self._inputMoveVec).y))
+    if self._inputMoveVec.x ~= 0 or self._inputMoveVec.y ~= 0 then
+      self._movementVec = self._followCameraController:CalcMovement(Vector3(self._inputMoveVec.x, 0, self._inputMoveVec.y))
     else
       self._movementVec = nil
     end
     self._moveInput = false
   end
-  if self._movementVec and (self._mainCharacterController):CanReceiveMoveInput() then
+  if self._movementVec and self._mainCharacterController:CanReceiveMoveInput() then
     if self:IsRushing() then
-      (self._mainCharacterController):Move((self._movementVec):SetNormalize(), HomelandCharMoveType.Rush, deltaTimeMS)
+      self._mainCharacterController:Move(self._movementVec:SetNormalize(), HomelandCharMoveType.Rush, deltaTimeMS)
     else
-      ;
-      (self._mainCharacterController):Move((self._movementVec):SetNormalize(), self._moveType, deltaTimeMS)
+      self._mainCharacterController:Move(self._movementVec:SetNormalize(), self._moveType, deltaTimeMS)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharMobile.HandleMove = function(self, moveVec, moveState)
-  -- function num : 0_5
+function HomelandInputControllerCharMobile:HandleMove(moveVec, moveState)
   self._inputMoveVec = moveVec
   self._moveType = moveState
   self._moveInput = true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharMobile.HandleRotate = function(self, rotateVec)
-  -- function num : 0_6
-  (self._followCameraController):HandleRotate(rotateVec.x * self._rotateFactorX, rotateVec.y * self._rotateFactorY)
+function HomelandInputControllerCharMobile:HandleRotate(rotateVec)
+  self._followCameraController:HandleRotate(rotateVec.x * self._rotateFactorX, rotateVec.y * self._rotateFactorY)
   self._rotateInput = true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharMobile.HandleScale = function(self, scale)
-  -- function num : 0_7
-  (self._followCameraController):HandleScale(scale)
+function HomelandInputControllerCharMobile:HandleScale(scale)
+  self._followCameraController:HandleScale(scale)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharMobile.HandleRotateInInteract = function(self, rotateVec)
-  -- function num : 0_8
-  (self._followCameraController):HandleRotate(rotateVec.x, rotateVec.y)
+function HomelandInputControllerCharMobile:HandleRotateInInteract(rotateVec)
+  self._followCameraController:HandleRotate(rotateVec.x, rotateVec.y)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharMobile.SetGuideLock = function(self, guideLock)
-  -- function num : 0_9
+function HomelandInputControllerCharMobile:SetGuideLock(guideLock)
   self._guideLock = guideLock
 end
-
-

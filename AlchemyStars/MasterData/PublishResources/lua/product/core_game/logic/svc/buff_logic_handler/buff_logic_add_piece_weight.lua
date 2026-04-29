@@ -1,42 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_piece_weight.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddPieceWeight", BuffLogicBase)
 BuffLogicAddPieceWeight = BuffLogicAddPieceWeight
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddPieceWeight.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddPieceWeight:Constructor(buffInstance, logicParam)
   self._pieceType = logicParam.pieceType
   self._addValue = logicParam.addValue
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddPieceWeight.DoLogic = function(self)
-  -- function num : 0_1
-  local world = (self._buffInstance):World()
+function BuffLogicAddPieceWeight:DoLogic()
+  local world = self._buffInstance:World()
   local boardServiceLogic = world:GetService("BoardLogic")
-  boardServiceLogic:ModifyPieceWeight(self._pieceType, self._addValue, (self._buffInstance):BuffSeq())
+  boardServiceLogic:ModifyPieceWeight(self._pieceType, self._addValue, self._buffInstance:BuffSeq())
 end
 
 _class("BuffLogicRemovePieceWeight", BuffLogicBase)
 BuffLogicRemovePieceWeight = BuffLogicRemovePieceWeight
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemovePieceWeight.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemovePieceWeight:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemovePieceWeight.DoLogic = function(self)
-  -- function num : 0_3
-  local world = (self._buffInstance):World()
+function BuffLogicRemovePieceWeight:DoLogic()
+  local world = self._buffInstance:World()
   local boardServiceLogic = world:GetService("BoardLogic")
-  boardServiceLogic:RemoveModifyPieceWeight(self._pieceType, (self._buffInstance):BuffSeq())
+  boardServiceLogic:RemoveModifyPieceWeight(self._pieceType, self._buffInstance:BuffSeq())
 end
-
-

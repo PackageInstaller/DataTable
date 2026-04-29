@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_forecast/ui_pet_forecast_comic.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetForecastComic", UICustomWidget)
 UIPetForecastComic = UIPetForecastComic
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetForecastComic.SetData = function(self, day, forecastData, isSelected)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetForecastComic:SetData(day, forecastData, isSelected)
   self.day = day
   self._forecastData = forecastData
-  local piece = (self._forecastData):GetPiece(day)
+  local piece = self._forecastData:GetPiece(day)
   local unlock = piece.state == PredictionStatus.PRES_Accepted
   local unreach = piece.state == PredictionStatus.PRES_UnReach
   local state = unlock and "unlock" or "lock"
-  local comicImg = (self._forecastData):GetCfg_imgs(day, state)
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_img", comicImg)
+  local comicImg = self._forecastData:GetCfg_imgs(day, state)
+  UIWidgetHelper.SetRawImage(self, "_img", comicImg)
   local key = unreach and "colorUnreach" or nil
-  ;
-  (self._forecastData):SetObjColor(self, "RawImage", "_img", key)
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  self._forecastData:SetObjColor(self, "RawImage", "_img", key)
 end
-
-

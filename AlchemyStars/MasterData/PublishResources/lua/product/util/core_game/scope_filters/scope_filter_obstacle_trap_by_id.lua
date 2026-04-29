@@ -1,30 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scope_filters/scope_filter_obstacle_trap_by_id.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("trap_type")
 require("scope_filter_base")
 _class("SkillScopeFilter_ObstacleTrapByID", SkillScopeFilter_Base)
 SkillScopeFilter_ObstacleTrapByID = SkillScopeFilter_ObstacleTrapByID
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeFilter_ObstacleTrapByID.DoModifyRange = function(self, scopeResult, filterParam, passParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeFilter_ObstacleTrapByID:DoModifyRange(scopeResult, filterParam, passParam)
   local world = passParam._world
   local utilSvc = world:GetService("UtilData")
   local obstacledPosArray = {}
   local obstructTrapIDList = filterParam:GetObstructingTrapByIDFilter()
   local wholeGridRange = scopeResult:GetWholeGridRange()
-  for _,gridPos in ipairs(wholeGridRange) do
+  for _, gridPos in ipairs(wholeGridRange) do
     local trapsEntityAtPos = utilSvc:GetTrapsAtPos(gridPos)
-    for _,entity in ipairs(trapsEntityAtPos) do
+    for _, entity in ipairs(trapsEntityAtPos) do
       local trapComponent = entity:Trap()
       if trapComponent then
         local trapID = trapComponent:GetTrapID()
-        local isObstruct = (table.icontains)(obstructTrapIDList, trapID)
+        local isObstruct = table.icontains(obstructTrapIDList, trapID)
         if isObstruct then
-          (table.insert)(obstacledPosArray, gridPos)
+          table.insert(obstacledPosArray, gridPos)
         end
       end
     end
@@ -35,7 +28,4 @@ SkillScopeFilter_ObstacleTrapByID.DoModifyRange = function(self, scopeResult, fi
   else
     self:RemovePosFromScopeResult(scopeResult, obstacledPosArray)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
-
-

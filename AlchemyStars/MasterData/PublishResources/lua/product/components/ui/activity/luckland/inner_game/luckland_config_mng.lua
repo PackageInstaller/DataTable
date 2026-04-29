@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/luckland_config_mng.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLConfigMng", Singleton)
 LLConfigMng = LLConfigMng
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLConfigMng.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LLConfigMng:Constructor()
   self._levelCfgData = LLLevelConfigData:New(self)
   self._petCfgDataDic = {}
   self._monsterCfgDataDic = {}
@@ -17,137 +10,90 @@ LLConfigMng.Constructor = function(self)
   self._buffCfgDataDic = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLConfigMng.Dispose = function(self)
-  -- function num : 0_1
+function LLConfigMng:Dispose()
   self._levelCfgData = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLConfigMng.Init = function(self, missionID)
-  -- function num : 0_2
-  (self._levelCfgData):ParseLevelConfig(missionID)
+function LLConfigMng:Init(missionID)
+  self._levelCfgData:ParseLevelConfig(missionID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLConfigMng.GetLevelConfigData = function(self)
-  -- function num : 0_3
+function LLConfigMng:GetLevelConfigData()
   return self._levelCfgData
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LLConfigMng.GetPetConfigData = function(self, ID)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._petCfgDataDic)[ID] ~= nil then
-    return (self._petCfgDataDic)[ID]
+function LLConfigMng:GetPetConfigData(ID)
+  if self._petCfgDataDic[ID] ~= nil then
+    return self._petCfgDataDic[ID]
   end
   local cfgData = LLPetConfigData:New(ID)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._petCfgDataDic)[ID] = cfgData
+  self._petCfgDataDic[ID] = cfgData
   return cfgData
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LLConfigMng.GetMonsterConfigData = function(self, ID)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._monsterCfgDataDic)[ID] ~= nil then
-    return (self._monsterCfgDataDic)[ID]
+function LLConfigMng:GetMonsterConfigData(ID)
+  if self._monsterCfgDataDic[ID] ~= nil then
+    return self._monsterCfgDataDic[ID]
   end
   local cfgData = LLMonsterConfigData:New(ID)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._monsterCfgDataDic)[ID] = cfgData
+  self._monsterCfgDataDic[ID] = cfgData
   return cfgData
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LLConfigMng.GetBuildingConfigData = function(self, ID)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._buildingCfgDataDic)[ID] ~= nil then
-    return (self._buildingCfgDataDic)[ID]
+function LLConfigMng:GetBuildingConfigData(ID)
+  if self._buildingCfgDataDic[ID] ~= nil then
+    return self._buildingCfgDataDic[ID]
   end
   local cfgData = LLBuildingConfigData:New(ID)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buildingCfgDataDic)[ID] = cfgData
+  self._buildingCfgDataDic[ID] = cfgData
   return cfgData
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LLConfigMng.GetAffixConfigData = function(self, ID)
-  -- function num : 0_7 , upvalues : _ENV
-  if (self._affixCfgDataDic)[ID] ~= nil then
-    return (self._affixCfgDataDic)[ID]
+function LLConfigMng:GetAffixConfigData(ID)
+  if self._affixCfgDataDic[ID] ~= nil then
+    return self._affixCfgDataDic[ID]
   end
   local cfgData = LLAffixConfigData:New(ID)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._affixCfgDataDic)[ID] = cfgData
+  self._affixCfgDataDic[ID] = cfgData
   return cfgData
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LLConfigMng.GetBuffConfigData = function(self, buffID)
-  -- function num : 0_8 , upvalues : _ENV
-  if (self._buffCfgDataDic)[buffID] ~= nil then
-    return (self._buffCfgDataDic)[buffID]
+function LLConfigMng:GetBuffConfigData(buffID)
+  if self._buffCfgDataDic[buffID] ~= nil then
+    return self._buffCfgDataDic[buffID]
   end
   local buffConfigData = LLBuffConfigData:New(buffID)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffCfgDataDic)[buffID] = buffConfigData
+  self._buffCfgDataDic[buffID] = buffConfigData
   return buffConfigData
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LLConfigMng.GetReDrawCost = function(self, reDrawCount, roundCount)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg = (Cfg.cfg_luckland_client_redraw_cost)({RoundCount = roundCount})
-  if not cfg then
-    cfg = (Cfg.cfg_luckland_client_redraw_cost)({RoundCount = LuckLandConst.CFGMaxCount})
-  end
+function LLConfigMng:GetReDrawCost(reDrawCount, roundCount)
+  local cfg = Cfg.cfg_luckland_client_redraw_cost({RoundCount = roundCount})
+  cfg = cfg or Cfg.cfg_luckland_client_redraw_cost({
+    RoundCount = LuckLandConst.CFGMaxCount
+  })
   local cosCfg = cfg[1]
   local maxCount = #cosCfg.Cost
-  local cost = (cosCfg.Cost)[maxCount]
+  local cost = cosCfg.Cost[maxCount]
   if reDrawCount < maxCount then
-    cost = (cosCfg.Cost)[reDrawCount]
+    cost = cosCfg.Cost[reDrawCount]
   end
-  local rate = (self._levelCfgData):GetReDrawCostRate()
+  local rate = self._levelCfgData:GetReDrawCostRate()
   cost = cost * rate
   if cost < 1 then
     return 1
   end
-  return (math.ceil)(cost)
+  return math.ceil(cost)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LLConfigMng.GetDeleteCardCost = function(self, delCount)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfg = (Cfg.cfg_luckland_client_delete_cost)({Count = delCount})
-  if not cfg then
-    cfg = (Cfg.cfg_luckland_client_delete_cost)({Count = LuckLandConst.CFGMaxCount})
-  end
-  local cost = (cfg[1]).Cost
+function LLConfigMng:GetDeleteCardCost(delCount)
+  local cfg = Cfg.cfg_luckland_client_delete_cost({Count = delCount})
+  cfg = cfg or Cfg.cfg_luckland_client_delete_cost({
+    Count = LuckLandConst.CFGMaxCount
+  })
+  local cost = cfg[1].Cost
   if cost < 1 then
     return 1
   end
-  return (math.ceil)(cost)
+  return math.ceil(cost)
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/story/home_story_entity_postprocessing.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeStoryEntityPostProcessing", HomeStoryEntity)
 HomeStoryEntityPostProcessing = HomeStoryEntityPostProcessing
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeStoryEntityPostProcessing.Constructor = function(self, ID, resourceName, storyManager)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomeStoryEntityPostProcessing.super).Constructor)(self, ID, nil, nil, storyManager)
+function HomeStoryEntityPostProcessing:Constructor(ID, resourceName, storyManager)
+  HomeStoryEntityPostProcessing.super.Constructor(self, ID, nil, nil, storyManager)
   self._type = HomeStoryEntityType.PostProcessing
   self._resName = resourceName
   self._resRequest = nil
@@ -17,48 +10,29 @@ HomeStoryEntityPostProcessing.Constructor = function(self, ID, resourceName, sto
   self:_AddPostProcessing()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityPostProcessing._TriggerKeyframe = function(self, keyframeData)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
+function HomeStoryEntityPostProcessing:_TriggerKeyframe(keyframeData)
   if keyframeData.Active ~= nil then
-    (self._postProcessing).enabled = keyframeData.Active
+    self._postProcessing.enabled = keyframeData.Active
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityPostProcessing._AddPostProcessing = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._resRequest = (ResourceManager:GetInstance()):SyncLoadAsset(self._resName, LoadType.Asset)
-  if self._resRequest ~= nil and (self._resRequest).Obj then
-    local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIStoryController")
-    self._postProcessing = (camera.gameObject):AddComponent(typeof((UnityEngine.H3DPostProcessing).PostProcessing))
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._postProcessing).profile = (self._resRequest).Obj
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._postProcessing).enabled = false
+function HomeStoryEntityPostProcessing:_AddPostProcessing()
+  self._resRequest = ResourceManager:GetInstance():SyncLoadAsset(self._resName, LoadType.Asset)
+  if self._resRequest ~= nil and self._resRequest.Obj then
+    local camera = GameGlobal.UIStateManager():GetControllerCamera("UIStoryController")
+    self._postProcessing = camera.gameObject:AddComponent(typeof(UnityEngine.H3DPostProcessing.PostProcessing))
+    self._postProcessing.profile = self._resRequest.Obj
+    self._postProcessing.enabled = false
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityPostProcessing.Destroy = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomeStoryEntityPostProcessing:Destroy()
   if self._postProcessing ~= nil then
-    ((UnityEngine.Object).Destroy)(self._postProcessing)
+    UnityEngine.Object.Destroy(self._postProcessing)
     self._postProcessing = nil
   end
   if self._resRequest ~= nil then
-    (self._resRequest):Dispose()
+    self._resRequest:Dispose()
     self._resRequest = nil
   end
 end
-
-

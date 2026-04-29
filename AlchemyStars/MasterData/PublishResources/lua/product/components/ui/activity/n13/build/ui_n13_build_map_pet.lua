@@ -1,38 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n13/build/ui_n13_build_map_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN13BuildMapPet", UICustomWidget)
 UIN13BuildMapPet = UIN13BuildMapPet
-local EUIN13BuildMapPetState = {Idle = 1, Plan = 2, Action = 3, Picnic = 4, Story = 5, Leave = 6}
+local EUIN13BuildMapPetState = {
+  Idle = 1,
+  Plan = 2,
+  Action = 3,
+  Picnic = 4,
+  Story = 5,
+  Leave = 6
+}
 _enum("EUIN13BuildMapPetState", EUIN13BuildMapPetState)
-local EUIN13BuildMapPetPlanType = {Move = 1, Act1 = 2, Act2 = 3}
+local EUIN13BuildMapPetPlanType = {
+  Move = 1,
+  Act1 = 2,
+  Act2 = 3
+}
 _enum("EUIN13BuildMapPetPlanType", EUIN13BuildMapPetPlanType)
--- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
 
-UIN13BuildMapPet.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN13BuildMapPet:OnShow(uiParams)
   self._open = true
-  self._player = (self:GetGameObject()):GetComponent("RectTransform")
+  self._player = self:GetGameObject():GetComponent("RectTransform")
   self._playerTweener = nil
   self:SetShowDebug(false)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet.OnHide = function(self)
-  -- function num : 0_1
+function UIN13BuildMapPet:OnHide()
   self._open = false
   if self._playerTweener then
-    (self._playerTweener):Kill()
+    self._playerTweener:Kill()
   end
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet.Init = function(self, nodeData, petId, petSpine, nodeId, nodeStartPointList, moveCallback, stopCallback, btnCallback)
-  -- function num : 0_2 , upvalues : EUIN13BuildMapPetState
+function UIN13BuildMapPet:Init(nodeData, petId, petSpine, nodeId, nodeStartPointList, moveCallback, stopCallback, btnCallback)
   self._nodeData = nodeData
   self._petId = petId
   self._nodeId = nodeId
@@ -48,36 +46,24 @@ UIN13BuildMapPet.Init = function(self, nodeData, petId, petSpine, nodeId, nodeSt
   self:_SetSpine(petSpine)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet.Start = function(self)
-  -- function num : 0_3 , upvalues : _ENV, EUIN13BuildMapPetState
-  (Log.info)("UIN13BuildMapPet:Start()")
+function UIN13BuildMapPet:Start()
+  Log.info("UIN13BuildMapPet:Start()")
   if self._state == EUIN13BuildMapPetState.Idle then
     self:_Do_Plan()
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet.Leave = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.info)("UIN13BuildMapPet:Leave()")
+function UIN13BuildMapPet:Leave()
+  Log.info("UIN13BuildMapPet:Leave()")
   self._flagLeave = true
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet.GetNodeId = function(self)
-  -- function num : 0_5
+function UIN13BuildMapPet:GetNodeId()
   return self._nodeId
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet.SetPetPicnic = function(self, nodeId, story, callback)
-  -- function num : 0_6 , upvalues : _ENV, EUIN13BuildMapPetState
-  (Log.debug)("UIN13BuildMapPet:SetPetPicnic(), petId = ", self._petId)
+function UIN13BuildMapPet:SetPetPicnic(nodeId, story, callback)
+  Log.debug("UIN13BuildMapPet:SetPetPicnic(), petId = ", self._petId)
   self._state = EUIN13BuildMapPetState.Picnic
   self:_KillAllTask()
   self._nodeId = nodeId
@@ -85,10 +71,7 @@ UIN13BuildMapPet.SetPetPicnic = function(self, nodeId, story, callback)
   self:_ActEating(story, callback)
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet.SetBtnShow = function(self, show)
-  -- function num : 0_7 , upvalues : EUIN13BuildMapPetState
+function UIN13BuildMapPet:SetBtnShow(show)
   if self._state == EUIN13BuildMapPetState.Story and not show then
     self:_Do_Plan()
   end
@@ -99,93 +82,75 @@ UIN13BuildMapPet.SetBtnShow = function(self, show)
   obj:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._SetPos = function(self, nodeId)
-  -- function num : 0_8 , upvalues : _ENV
-  local pos = (self._nodeData):GetNodePos(nodeId)
-  local rect = (self:GetGameObject()):GetComponent("RectTransform")
+function UIN13BuildMapPet:_SetPos(nodeId)
+  local pos = self._nodeData:GetNodePos(nodeId)
+  local rect = self:GetGameObject():GetComponent("RectTransform")
   rect.anchorMax = Vector2(0, 0.5)
   rect.anchorMin = Vector2(0, 0.5)
   rect.sizeDelta = Vector2.zero
   rect.anchoredPosition = pos
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._IsTaskRun = function(self)
-  -- function num : 0_9
-  do return self._task ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIN13BuildMapPet:_IsTaskRun()
+  return self._task ~= nil
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._KillAllTask = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN13BuildMapPet:_KillAllTask()
   if self._task then
-    ((GameGlobal.TaskManager)()):KillTask(self._task)
+    GameGlobal.TaskManager():KillTask(self._task)
     self._task = nil
   end
   if self._playerTweener then
-    (self._playerTweener):Kill()
+    self._playerTweener:Kill()
     self._playerTweener = nil
   end
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._Do_Idle = function(self)
-  -- function num : 0_11 , upvalues : EUIN13BuildMapPetState
+function UIN13BuildMapPet:_Do_Idle()
   self._state = EUIN13BuildMapPetState.Idle
   self:_SetSpineAnimation_Idle()
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._Do_Plan = function(self)
-  -- function num : 0_12 , upvalues : EUIN13BuildMapPetState, _ENV, EUIN13BuildMapPetPlanType
+function UIN13BuildMapPet:_Do_Plan()
   self._state = EUIN13BuildMapPetState.Plan
   if self:_IsTaskRun() then
-    (Log.debug)("UIN13BuildMapPet:_Do_Plan() IsTaskRun == true petId = ", self._petId)
-    return 
+    Log.debug("UIN13BuildMapPet:_Do_Plan() IsTaskRun == true petId = ", self._petId)
+    return
   end
   self._task = self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : _ENV, self, EUIN13BuildMapPetPlanType
-    local cfg = (Cfg.cfg_n13_map_pet_setting)[1]
+    local cfg = Cfg.cfg_n13_map_pet_setting[1]
     local petPlanDuration = cfg.PetPlanDuration or 1
     self:_SetSpineAnimation_Idle()
     self:_SetDebugText("Plan")
     YIELD(TT, petPlanDuration)
     self._task = nil
     if not self._open then
-      return 
+      return
     end
     if self._flagLeave then
       self:_Do_Leave()
-      return 
+      return
     end
-    local plans = {EUIN13BuildMapPetPlanType.Move, EUIN13BuildMapPetPlanType.Act1, EUIN13BuildMapPetPlanType.Act2}
-    local flagStart = (table.icontains)(self._nodeStartPointList, self._nodeId)
+    local plans = {
+      EUIN13BuildMapPetPlanType.Move,
+      EUIN13BuildMapPetPlanType.Act1,
+      EUIN13BuildMapPetPlanType.Act2
+    }
+    local flagStart = table.icontains(self._nodeStartPointList, self._nodeId)
     if not flagStart then
-      (table.shuffle)(plans)
+      table.shuffle(plans)
     end
     local plan = plans[1]
-    local path = nil
+    local path
     if plan == EUIN13BuildMapPetPlanType.Move then
-      path = (self._moveCallback)(self._petId)
+      path = self._moveCallback(self._petId)
+      plan = #path == 0 and plans[2] or plan
     end
-    if #path ~= 0 or not plans[2] then
-      self:_Do_Action(plan, path)
-    end
-  end
-, self)
+    self:_Do_Action(plan, path)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._Do_Action = function(self, plan, path)
-  -- function num : 0_13 , upvalues : EUIN13BuildMapPetState, EUIN13BuildMapPetPlanType
+function UIN13BuildMapPet:_Do_Action(plan, path)
   self._state = EUIN13BuildMapPetState.Action
   if plan == EUIN13BuildMapPetPlanType.Move and path then
     if #path ~= 0 then
@@ -194,23 +159,16 @@ UIN13BuildMapPet._Do_Action = function(self, plan, path)
     else
       self:WalkOver(self._nodeId)
     end
-  else
-    if plan == EUIN13BuildMapPetPlanType.Act1 then
-      self:_Act1()
-    else
-      if plan == EUIN13BuildMapPetPlanType.Act2 then
-        self:_Act2()
-      end
-    end
+  elseif plan == EUIN13BuildMapPetPlanType.Act1 then
+    self:_Act1()
+  elseif plan == EUIN13BuildMapPetPlanType.Act2 then
+    self:_Act2()
   end
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._Do_Leave = function(self)
-  -- function num : 0_14 , upvalues : EUIN13BuildMapPetState
+function UIN13BuildMapPet:_Do_Leave()
   self._state = EUIN13BuildMapPetState.Leave
-  local path = (self._moveCallback)(self._petId, true)
+  local path = self._moveCallback(self._petId, true)
   if #path ~= 0 then
     self:_SetDebugText("L: " .. path[#path])
     self:WalkAlong(path)
@@ -219,144 +177,101 @@ UIN13BuildMapPet._Do_Leave = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._Do_Story = function(self)
-  -- function num : 0_15 , upvalues : _ENV, EUIN13BuildMapPetState
-  (Log.debug)("UIN13BuildMapPet:_Do_Story() petId = ", self._petId)
+function UIN13BuildMapPet:_Do_Story()
+  Log.debug("UIN13BuildMapPet:_Do_Story() petId = ", self._petId)
   self:_SetDebugText("Story")
   self._state = EUIN13BuildMapPetState.Story
   self:_KillAllTask()
   self:_SetSpineAnimation_Idle()
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet.WalkAlong = function(self, pathData)
-  -- function num : 0_16 , upvalues : _ENV
-  if not pathData or (table.count)(pathData) == 0 then
-    return 
+function UIN13BuildMapPet:WalkAlong(pathData)
+  if not pathData or table.count(pathData) == 0 then
+    return
   end
-  local cfg = (Cfg.cfg_n13_map_pet_setting)[1]
+  local cfg = Cfg.cfg_n13_map_pet_setting[1]
   local petSpeed = cfg.PetSpeed / 1000
-  local duration = (table.count)(pathData) * petSpeed
+  local duration = table.count(pathData) * petSpeed
   local waypoints = {}
-  for i,v in ipairs(pathData) do
-    (table.insert)(waypoints, (self._nodeData):GetNodePos(v, true))
+  for i, v in ipairs(pathData) do
+    table.insert(waypoints, self._nodeData:GetNodePos(v, true))
   end
-  local waypointsLen = (table.count)(waypoints)
-  self._playerTweener = (((self._player):DOLocalPath(waypoints, duration)):SetEase(((DG.Tweening).Ease).Linear)):OnWaypointChange(function(waypointIndex)
-    -- function num : 0_16_0 , upvalues : waypointsLen, self, waypoints
+  local waypointsLen = table.count(waypoints)
+  self._playerTweener = self._player:DOLocalPath(waypoints, duration):SetEase(DG.Tweening.Ease.Linear):OnWaypointChange(function(waypointIndex)
     waypointIndex = waypointIndex + 1
     if waypointIndex < waypointsLen then
       local nextwaypointIndex = waypointIndex + 1
       self:Turn(waypoints[waypointIndex], waypoints[nextwaypointIndex])
     end
-  end
-)
-  local curPos = (self._nodeData):GetNodePos(self._nodeId)
+  end)
+  local curPos = self._nodeData:GetNodePos(self._nodeId)
   local targetId = pathData[#pathData]
-  local targetPos = (self._nodeData):GetNodePos(targetId)
-  ;
-  (((self._playerTweener):OnStart(function()
-    -- function num : 0_16_1
-  end
-)):OnUpdate(function()
-    -- function num : 0_16_2
-  end
-)):OnComplete(function()
-    -- function num : 0_16_3 , upvalues : self, targetId
+  local targetPos = self._nodeData:GetNodePos(targetId)
+  self._playerTweener:OnStart(function()
+  end):OnUpdate(function()
+  end):OnComplete(function()
     self:WalkOver(targetId)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet.WalkOver = function(self, targetNodeId)
-  -- function num : 0_17 , upvalues : EUIN13BuildMapPetState
+function UIN13BuildMapPet:WalkOver(targetNodeId)
   if not self._open then
-    return 
+    return
   end
   self:_SetSpineAnimation_Idle()
   self._nodeId = targetNodeId
   if self._state == EUIN13BuildMapPetState.Action then
     self:_Do_Plan()
-  else
-    if self._state == EUIN13BuildMapPetState.Leave then
-      self._flagLeave = false
-      if (self._stopCallback)(self._petId) then
-        self:_Do_Idle()
-      else
-        self:_Do_Plan()
-      end
+  elseif self._state == EUIN13BuildMapPetState.Leave then
+    self._flagLeave = false
+    if self._stopCallback(self._petId) then
+      self:_Do_Idle()
+    else
+      self:_Do_Plan()
     end
   end
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet.Turn = function(self, curPos, targetPos)
-  -- function num : 0_18
-  if (curPos.x >= targetPos.x or not 1) and (targetPos.x >= curPos.x or not -1) then
-    local h = not curPos or not targetPos or 0
+function UIN13BuildMapPet:Turn(curPos, targetPos)
+  if curPos and targetPos then
+    local h = curPos.x < targetPos.x and 1 or curPos.x > targetPos.x and -1 or 0
+    local v = curPos.y < targetPos.y and 1 or curPos.y > targetPos.y and -1 or 0
+    self:_SetSpineAnimation_Walk(h, v)
   end
-  local v = (curPos.y < targetPos.y and 1) or (targetPos.y < curPos.y and -1) or 0
-  self:_SetSpineAnimation_Walk(h, v)
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._Act1 = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local cfg = (Cfg.cfg_n13_map_pet_setting)[1]
+function UIN13BuildMapPet:_Act1()
+  local cfg = Cfg.cfg_n13_map_pet_setting[1]
   local name = "Act_1"
   local lockName = ""
   local duration = cfg.PetAct1Duration / 1000
   self:_Act_Process(name, lockName, duration, function()
-    -- function num : 0_19_0 , upvalues : self
     self:_SetSpineAnimation_Act1()
-  end
-, function()
-    -- function num : 0_19_1 , upvalues : self
+  end, function()
     self:_Do_Plan()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._Act2 = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local cfg = (Cfg.cfg_n13_map_pet_setting)[1]
+function UIN13BuildMapPet:_Act2()
+  local cfg = Cfg.cfg_n13_map_pet_setting[1]
   local name = "Act_2"
   local lockName = ""
   local duration = cfg.PetAct2Duration / 1000
   self:_Act_Process(name, lockName, duration, function()
-    -- function num : 0_20_0 , upvalues : self
     self:_SetSpineAnimation_Act2()
-  end
-, function()
-    -- function num : 0_20_1 , upvalues : self
+  end, function()
     self:_Do_Plan()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._ActEating = function(self, story, callback)
-  -- function num : 0_21 , upvalues : _ENV
-  local cfg = (Cfg.cfg_n13_map_pet_setting)[1]
+function UIN13BuildMapPet:_ActEating(story, callback)
+  local cfg = Cfg.cfg_n13_map_pet_setting[1]
   local name = "Act_Eating"
   local lockName = "UIN13BuildMapPet:_ActEating"
   local duration = cfg.PetActEatingDuration / 1000
   self:_Act_Process(name, lockName, duration, function()
-    -- function num : 0_21_0 , upvalues : self
     self:_SetSpineAnimation_Picnic()
-  end
-, function()
-    -- function num : 0_21_1 , upvalues : story, self, callback
+  end, function()
     if story ~= nil then
       self:_Do_Story()
     else
@@ -365,23 +280,18 @@ UIN13BuildMapPet._ActEating = function(self, story, callback)
     if callback then
       callback()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._Act_Process = function(self, name, lockName, duration, startCallback, stopCallback)
-  -- function num : 0_22 , upvalues : _ENV
+function UIN13BuildMapPet:_Act_Process(name, lockName, duration, startCallback, stopCallback)
   if self:_IsTaskRun() then
-    (Log.debug)("UIN13BuildMapPet:_Act_Process() IsTaskRun == true petId = ", self._petId)
-    return 
+    Log.debug("UIN13BuildMapPet:_Act_Process() IsTaskRun == true petId = ", self._petId)
+    return
   end
-  if not (string.isnullorempty)(lockName) then
-    ((GameGlobal.UIStateManager)()):Lock(lockName)
+  if not string.isnullorempty(lockName) then
+    GameGlobal.UIStateManager():Lock(lockName)
   end
   self._task = self:StartTask(function(TT)
-    -- function num : 0_22_0 , upvalues : startCallback, duration, self, name, _ENV, lockName, stopCallback
     if startCallback then
       startCallback()
     end
@@ -389,212 +299,160 @@ UIN13BuildMapPet._Act_Process = function(self, name, lockName, duration, startCa
       self:_SetDebugText(name .. ": " .. i)
       YIELD(TT, 1000)
     end
-    if not (string.isnullorempty)(lockName) then
-      ((GameGlobal.UIStateManager)()):UnLock(lockName)
+    if not string.isnullorempty(lockName) then
+      GameGlobal.UIStateManager():UnLock(lockName)
     end
     self._task = nil
     if not self._open then
-      return 
+      return
     end
     if stopCallback then
       stopCallback()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._SetSpine = function(self, petSpine)
-  -- function num : 0_23 , upvalues : _ENV
+function UIN13BuildMapPet:_SetSpine(petSpine)
   self._spine = self:GetUIComponent("SpineLoader", "Spine")
-  ;
-  (self._spine):LoadSpine(petSpine)
-  local cfg = (Cfg.cfg_n13_map_pet_setting)[1]
+  self._spine:LoadSpine(petSpine)
+  local cfg = Cfg.cfg_n13_map_pet_setting[1]
   local scale = cfg.PetSpineScale / 100
-  local trans = (self:GetGameObject("Spine")).transform
+  local trans = self:GetGameObject("Spine").transform
   if trans then
     trans.localScale = Vector3(scale, scale, scale)
   end
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._SetSpineAnimation = function(self, idx)
-  -- function num : 0_24
-  self._spineAnimationName = {[1] = "back_idle", [2] = "back_walk", [3] = "front_idle", [4] = "front_walk", [5] = "sit_eat", [6] = "sit_idle", [7] = "special"}
-  local spineSke = (self._spine).CurrentSkeleton
-  if not spineSke then
-    spineSke = (self._spine).CurrentMultiSkeleton
-  end
+function UIN13BuildMapPet:_SetSpineAnimation(idx)
+  self._spineAnimationName = {
+    [1] = "back_idle",
+    [2] = "back_walk",
+    [3] = "front_idle",
+    [4] = "front_walk",
+    [5] = "sit_eat",
+    [6] = "sit_idle",
+    [7] = "special"
+  }
+  local spineSke = self._spine.CurrentSkeleton
+  spineSke = spineSke or self._spine.CurrentMultiSkeleton
   if spineSke then
-    (spineSke.AnimationState):SetAnimation(0, (self._spineAnimationName)[idx], true)
+    spineSke.AnimationState:SetAnimation(0, self._spineAnimationName[idx], true)
   end
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._SetSpineAnimation_Idle = function(self)
-  -- function num : 0_25
+function UIN13BuildMapPet:_SetSpineAnimation_Idle()
   self:_SetSpineAnimation(3)
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._SetSpineAnimation_Walk = function(self, h, v)
-  -- function num : 0_26
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
+function UIN13BuildMapPet:_SetSpineAnimation_Walk(h, v)
   if self._spine then
     if h ~= 0 then
-      (((self._spine).CurrentSkeleton).Skeleton).ScaleX = h
+      self._spine.CurrentSkeleton.Skeleton.ScaleX = h
     end
-    local idx = v > 0 and 2 or 4
+    local idx = 0 < v and 2 or 4
     self:_SetSpineAnimation(idx)
   end
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._SetSpineAnimation_Picnic = function(self)
-  -- function num : 0_27
+function UIN13BuildMapPet:_SetSpineAnimation_Picnic()
   self:_SetSpineAnimation(5)
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._SetSpineAnimation_Act1 = function(self)
-  -- function num : 0_28
+function UIN13BuildMapPet:_SetSpineAnimation_Act1()
   self:_SetSpineAnimation(7)
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._SetSpineAnimation_Act2 = function(self)
-  -- function num : 0_29
+function UIN13BuildMapPet:_SetSpineAnimation_Act2()
   self:_SetSpineAnimation(7)
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet.BtnOnClick = function(self, go)
-  -- function num : 0_30
+function UIN13BuildMapPet:BtnOnClick(go)
   if self._btnCallback then
-    (self._btnCallback)(self._petId)
+    self._btnCallback(self._petId)
   end
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet.TestBtnOnClick = function(self, go)
-  -- function num : 0_31
+function UIN13BuildMapPet:TestBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._TestSpineAnimation = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function UIN13BuildMapPet:_TestSpineAnimation()
   self._testSpineAniIdx = self._testSpineAniIdx or 0
   self._testSpineAniIdx = (self._testSpineAniIdx + 1) % 7
   self:_SetSpineAnimation(self._testSpineAniIdx + 1)
-  ;
-  (ToastManager.ShowToast)((self._spineAnimationName)[self._testSpineAniIdx + 1])
+  ToastManager.ShowToast(self._spineAnimationName[self._testSpineAniIdx + 1])
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._TestWalk = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function UIN13BuildMapPet:_TestWalk()
   local tb = {
-{-1, -1}
-, 
-{-1, 0}
-, 
-{-1, 1}
-, 
-{0, -1}
-, 
-{0, 0}
-, 
-{0, 1}
-, 
-{1, -1}
-, 
-{1, 0}
-, 
-{1, 1}
-}
-  local tb2 = {"左下", "左中", "左上", "中下", "中中", "中上", "右下", "右中", "右上"}
+    {-1, -1},
+    {-1, 0},
+    {-1, 1},
+    {0, -1},
+    {0, 0},
+    {0, 1},
+    {1, -1},
+    {1, 0},
+    {1, 1}
+  }
+  local tb2 = {
+    "左下",
+    "左中",
+    "左上",
+    "中下",
+    "中中",
+    "中上",
+    "右下",
+    "右中",
+    "右上"
+  }
   self._testDir = self._testDir or -1
-  self._testDir = (self._testDir + 1) % (table.count)(tb)
+  self._testDir = (self._testDir + 1) % table.count(tb)
   local dir = self._testDir + 1
-  local h = (tb[dir])[1]
-  local v = (tb[dir])[2]
+  local h = tb[dir][1]
+  local v = tb[dir][2]
   self:_SetSpineAnimation_Walk(h, v)
-  ;
-  (ToastManager.ShowToast)(tb2[dir])
+  ToastManager.ShowToast(tb2[dir])
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._SetDebugHead = function(self, petId)
-  -- function num : 0_34
+function UIN13BuildMapPet:_SetDebugHead(petId)
   local url = "head1_" .. petId
   local obj = self:GetUIComponent("RawImageLoader", "head")
   obj:LoadImage(url)
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet.SetShowDebug = function(self, show)
-  -- function num : 0_35
+function UIN13BuildMapPet:SetShowDebug(show)
   self._flagShowDebug = show
   local obj = self:GetGameObject("debug")
   obj:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._SetDebugName = function(self)
-  -- function num : 0_36
+function UIN13BuildMapPet:_SetDebugName()
   if not self._open then
-    return 
+    return
   end
   local obj = self:GetUIComponent("UILocalizationText", "debugName")
   obj:SetText(self._petId)
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet._SetDebugText = function(self, str)
-  -- function num : 0_37
+function UIN13BuildMapPet:_SetDebugText(str)
   if not self._open then
-    return 
+    return
   end
   local obj = self:GetUIComponent("UILocalizationText", "debugTxt")
   obj:SetText(str)
 end
 
--- DECOMPILER ERROR at PC141: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN13BuildMapPet.SetDebugState = function(self, state)
-  -- function num : 0_38 , upvalues : _ENV
+function UIN13BuildMapPet:SetDebugState(state)
   if not self._open then
-    return 
+    return
   end
   if not self._debugState then
-    self._debugState = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"fixed"}
-, 
-{"unfixed"}
-, 
-{"leave"}
-, 
-{"spare"}
-})
+    self._debugState = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+      {"fixed"},
+      {"unfixed"},
+      {"leave"},
+      {"spare"}
+    })
   end
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._debugState, state)
+  UIWidgetHelper.SetObjGroupShow(self._debugState, state)
 end
-
-

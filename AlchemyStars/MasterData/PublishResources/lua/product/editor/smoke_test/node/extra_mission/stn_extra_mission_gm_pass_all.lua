@@ -1,16 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/extra_mission/stn_extra_mission_gm_pass_all.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("ExtraMission_GM_PassAll", Common_AsyncBase)
 ExtraMission_GM_PassAll = ExtraMission_GM_PassAll
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ExtraMission_GM_PassAll.TaskFunc = function(self, TT, status)
-  -- function num : 0_0
-  (self._manager):AsyncGM_CompleteAllExtTask(TT, status)
+function ExtraMission_GM_PassAll:TaskFunc(TT, status)
+  self._manager:AsyncGM_CompleteAllExtTask(TT, status)
 end
-
-

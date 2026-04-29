@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/loader/season_map_eventpoint_request_async.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapEventPointRequestAsync", Object)
 SeasonMapEventPointRequestAsync = SeasonMapEventPointRequestAsync
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapEventPointRequestAsync.Constructor = function(self, id, resName)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMapEventPointRequestAsync:Constructor(id, resName)
   self._id = id
   self._resName = resName
   self._gameObject = nil
@@ -16,81 +9,56 @@ SeasonMapEventPointRequestAsync.Constructor = function(self, id, resName)
   self._state = SeasonEventPointLoadState.Wait
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointRequestAsync.ID = function(self)
-  -- function num : 0_1
+function SeasonMapEventPointRequestAsync:ID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointRequestAsync.ResName = function(self)
-  -- function num : 0_2
+function SeasonMapEventPointRequestAsync:ResName()
   return self._resName
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointRequestAsync.GameObject = function(self)
-  -- function num : 0_3
+function SeasonMapEventPointRequestAsync:GameObject()
   return self._gameObject
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointRequestAsync.State = function(self)
-  -- function num : 0_4
+function SeasonMapEventPointRequestAsync:State()
   return self._state
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointRequestAsync.Dispose = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function SeasonMapEventPointRequestAsync:Dispose()
   if self._request then
-    (self._request):Dispose()
+    self._request:Dispose()
     self._request = nil
   end
   if self._asyncLoadTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._asyncLoadTask)
+    GameGlobal.TaskManager():KillTask(self._asyncLoadTask)
     self._asyncLoadTask = nil
   end
   self._state = SeasonEventPointLoadState.Closed
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointRequestAsync.Load = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SeasonMapEventPointRequestAsync:Load()
   self._state = SeasonEventPointLoadState.Loading
-  self._asyncLoadTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
-    (Log.info)("Start async loading season eventpoint", self._id)
-    local req = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, self._resName, LoadType.GameObject)
+  self._asyncLoadTask = GameGlobal.TaskManager():StartTask(function(TT)
+    Log.info("Start async loading season eventpoint", self._id)
+    local req = ResourceManager:GetInstance():AsyncLoadAsset(TT, self._resName, LoadType.GameObject)
     if not req then
-      (Log.error)("Failed to load the season eventpoint asset.", self._resName)
+      Log.error("Failed to load the season eventpoint asset.", self._resName)
     end
     self._request = req
     if self._state == SeasonEventPointLoadState.Invalid then
       self:Dispose()
-      return 
+      return
     end
     self._gameObject = req.Obj
     self._state = SeasonEventPointLoadState.Finish
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointRequestAsync.Close = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function SeasonMapEventPointRequestAsync:Close()
   if self._state == SeasonEventPointLoadState.Loading then
     self._state = SeasonEventPointLoadState.Invalid
   else
     self._state = SeasonEventPointLoadState.Closed
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/level/ui_summer_activity_two_level_boss_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoLevelBossItem", UICustomWidget)
 UISummerActivityTwoLevelBossItem = UISummerActivityTwoLevelBossItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoLevelBossItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISummerActivityTwoLevelBossItem:OnShow()
   self._tipsLabel = self:GetUIComponent("UILocalizationText", "Tips")
   self._tipsGo = self:GetGameObject("Tips")
   self._lockGo = self:GetGameObject("Lock")
@@ -20,180 +13,112 @@ UISummerActivityTwoLevelBossItem.OnShow = function(self)
   self._redGo = self:GetGameObject("Red")
   self._iconImg = self:GetUIComponent("RawImageLoader", "Icon")
   self._iconGo = self:GetGameObject("Icon")
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._timerHandler = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelBossItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISummerActivityTwoLevelBossItem:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelBossItem.Refresh = function(self, levelData)
-  -- function num : 0_2 , upvalues : _ENV
+function UISummerActivityTwoLevelBossItem:Refresh(levelData)
   self._levelData = levelData
-  local status = (self._levelData):GetStatus()
+  local status = self._levelData:GetStatus()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
-  ;
-  (self._iconImg):LoadImage(UISummerActivityTwoConst.EntryIcon)
+  self._iconImg:LoadImage(UISummerActivityTwoConst.EntryIcon)
   if status == UISummerActivityTwoLevelStatus.UnOpen then
-    (self._lockGo):SetActive(true)
-    ;
-    (self._redGo):SetActive(false)
-    ;
-    (self._scoreGo):SetActive(false)
-    ;
-    (self._iconGo):SetActive(false)
-    ;
-    (self._tipsGo):SetActive(true)
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._scoreLabel).text = 0
-    ;
-    (self._nameLabel):SetText((self._levelData):GetName())
-    ;
-    (self._tipsLabel):SetText((StringTable.Get)("str_summer_activity_two_level_un_open_tips"))
+    self._lockGo:SetActive(true)
+    self._redGo:SetActive(false)
+    self._scoreGo:SetActive(false)
+    self._iconGo:SetActive(false)
+    self._tipsGo:SetActive(true)
+    self._scoreLabel.text = 0
+    self._nameLabel:SetText(self._levelData:GetName())
+    self._tipsLabel:SetText(StringTable.Get("str_summer_activity_two_level_un_open_tips"))
     if levelData:IsPreLevelCondition() then
-      (self._timerGo):SetActive(false)
+      self._timerGo:SetActive(false)
     else
-      ;
-      (self._timerGo):SetActive(true)
-      -- DECOMPILER ERROR at PC78: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._timerLabel).text = (StringTable.Get)("str_summer_activity_two_boss_level_unopen_time_tips", self:RefreshRemainTime())
-      self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(10, TimerTriggerCount.Infinite, function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._timerLabel).text = (StringTable.Get)("str_summer_activity_two_boss_level_unopen_time_tips", self:RefreshRemainTime())
-  end
-)
+      self._timerGo:SetActive(true)
+      self._timerLabel.text = StringTable.Get("str_summer_activity_two_boss_level_unopen_time_tips", self:RefreshRemainTime())
+      self._timerHandler = GameGlobal.Timer():AddEventTimes(10, TimerTriggerCount.Infinite, function()
+        self._timerLabel.text = StringTable.Get("str_summer_activity_two_boss_level_unopen_time_tips", self:RefreshRemainTime())
+      end)
     end
-  else
-    if status == UISummerActivityTwoLevelStatus.UnComplete then
-      (self._lockGo):SetActive(false)
-      ;
-      (self._redGo):SetActive(true)
-      ;
-      (self._timerGo):SetActive(false)
-      ;
-      (self._nameLabel):SetText((self._levelData):GetName())
-      ;
-      (self._scoreGo):SetActive(false)
-      ;
-      (self._iconGo):SetActive(false)
-      ;
-      (self._tipsGo):SetActive(true)
-      ;
-      (self._tipsLabel):SetText((StringTable.Get)("str_summer_activity_two_level_unstart"))
-      -- DECOMPILER ERROR at PC132: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._scoreLabel).text = 0
-    else
-      if status == UISummerActivityTwoLevelStatus.Complete then
-        (self._lockGo):SetActive(false)
-        ;
-        (self._redGo):SetActive(false)
-        ;
-        (self._timerGo):SetActive(false)
-        ;
-        (self._nameLabel):SetText((self._levelData):GetName())
-        ;
-        (self._scoreGo):SetActive(true)
-        ;
-        (self._iconGo):SetActive(true)
-        ;
-        (self._tipsGo):SetActive(false)
-        -- DECOMPILER ERROR at PC172: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._scoreLabel).text = (self._levelData):GetMaxScore()
-      end
-    end
+  elseif status == UISummerActivityTwoLevelStatus.UnComplete then
+    self._lockGo:SetActive(false)
+    self._redGo:SetActive(true)
+    self._timerGo:SetActive(false)
+    self._nameLabel:SetText(self._levelData:GetName())
+    self._scoreGo:SetActive(false)
+    self._iconGo:SetActive(false)
+    self._tipsGo:SetActive(true)
+    self._tipsLabel:SetText(StringTable.Get("str_summer_activity_two_level_unstart"))
+    self._scoreLabel.text = 0
+  elseif status == UISummerActivityTwoLevelStatus.Complete then
+    self._lockGo:SetActive(false)
+    self._redGo:SetActive(false)
+    self._timerGo:SetActive(false)
+    self._nameLabel:SetText(self._levelData:GetName())
+    self._scoreGo:SetActive(true)
+    self._iconGo:SetActive(true)
+    self._tipsGo:SetActive(false)
+    self._scoreLabel.text = self._levelData:GetMaxScore()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelBossItem.BtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._levelData):GetStatus() == UISummerActivityTwoLevelStatus.UnOpen then
-    if (self._levelData):IsPreLevelCondition() then
-      (ToastManager.ShowToast)((StringTable.Get)("str_summer_activity_two_level_unlock_tips"))
+function UISummerActivityTwoLevelBossItem:BtnOnClick()
+  if self._levelData:GetStatus() == UISummerActivityTwoLevelStatus.UnOpen then
+    if self._levelData:IsPreLevelCondition() then
+      ToastManager.ShowToast(StringTable.Get("str_summer_activity_two_level_unlock_tips"))
     else
       local remainTimeStr = self:RefreshRemainTime()
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_summer_activity_two_normal_level_unopen_tips", remainTimeStr))
+      ToastManager.ShowToast(StringTable.Get("str_summer_activity_two_normal_level_unopen_tips", remainTimeStr))
     end
-    do
-      do return  end
-      self:ShowDialog("UISummerActivityTwoLevelDetail", self._levelData)
-    end
+    return
   end
+  self:ShowDialog("UISummerActivityTwoLevelDetail", self._levelData)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelBossItem.BtnMaskOnClick = function(self)
-  -- function num : 0_4
+function UISummerActivityTwoLevelBossItem:BtnMaskOnClick()
   self:BtnOnClick()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelBossItem.RefreshRemainTime = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)((self._levelData):GetTimes() - nowTime)
+function UISummerActivityTwoLevelBossItem:RefreshRemainTime()
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(self._levelData:GetTimes() - nowTime)
   if seconds < 0 then
     seconds = 0
-    ;
-    (self._levelData):CalStatus()
+    self._levelData:CalStatus()
     self:Refresh(self._levelData)
-    return 
+    return
   end
   local timeStr = ""
-  local day = (math.floor)(seconds / 3600 / 24)
-  if day > 0 then
+  local day = math.floor(seconds / 3600 / 24)
+  if 0 < day then
     seconds = seconds - day * 3600 * 24
-    local hour = (math.floor)((seconds) / 3600)
-    timeStr = (StringTable.Get)("str_summer_activity_two_day", day)
-    if hour > 0 then
-      timeStr = timeStr .. (StringTable.Get)("str_summer_activity_two_hour", hour)
+    local hour = math.floor(seconds / 3600)
+    timeStr = StringTable.Get("str_summer_activity_two_day", day)
+    if 0 < hour then
+      timeStr = timeStr .. StringTable.Get("str_summer_activity_two_hour", hour)
+    end
+  elseif 60 <= seconds then
+    local hour = math.floor(seconds / 3600)
+    seconds = seconds - hour * 3600
+    if 0 < hour then
+      timeStr = StringTable.Get("str_summer_activity_two_hour", hour)
+    end
+    local minus = math.floor(seconds / 60)
+    if minus then
+      timeStr = timeStr .. StringTable.Get("str_summer_activity_two_minus", minus)
     end
   else
-    do
-      if seconds >= 60 then
-        local hour = (math.floor)((seconds) / 3600)
-        seconds = seconds - hour * 3600
-        if hour > 0 then
-          timeStr = (StringTable.Get)("str_summer_activity_two_hour", hour)
-        end
-        local minus = (math.floor)((seconds) / 60)
-        if minus then
-          timeStr = timeStr .. (StringTable.Get)("str_summer_activity_two_minus", minus)
-        end
-      else
-        do
-          timeStr = (StringTable.Get)("str_summer_activity_two_less_minus")
-          return timeStr
-        end
-      end
-    end
+    timeStr = StringTable.Get("str_summer_activity_two_less_minus")
   end
+  return timeStr
 end
-
-

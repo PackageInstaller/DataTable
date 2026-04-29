@@ -1,15 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/serial_auto_fight/ui_serial_auto_fight_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISerialAutoFightConst", Object)
 UISerialAutoFightConst = UISerialAutoFightConst
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISerialAutoFightConst.GetSweepDuration = function()
-  -- function num : 0_0
+function UISerialAutoFightConst.GetSweepDuration()
   return 500
 end
-
-

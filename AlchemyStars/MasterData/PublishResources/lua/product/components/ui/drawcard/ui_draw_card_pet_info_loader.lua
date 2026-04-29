@@ -1,62 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_pet_info_loader.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardPetInfoLoader", UICustomWidget)
 UIDrawCardPetInfoLoader = UIDrawCardPetInfoLoader
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardPetInfoLoader.OnShow = function(self)
-  -- function num : 0_0
-  self._prefabs = {[1] = "UIDrawCardPetInfoItem1.prefab", [2] = "UIDrawCardPetInfoItem2.prefab", [3] = "UIDrawCardPetInfoItem3.prefab", [4] = "UIDrawCardPetInfoItem2.prefab", [5] = "UIDrawCardPetInfoItem3.prefab", [6] = "UIDrawCardPetInfoItem4.prefab", [7] = "UIDrawCardPetInfoItem5.prefab"}
+function UIDrawCardPetInfoLoader:OnShow()
+  self._prefabs = {
+    [1] = "UIDrawCardPetInfoItem1.prefab",
+    [2] = "UIDrawCardPetInfoItem2.prefab",
+    [3] = "UIDrawCardPetInfoItem3.prefab",
+    [4] = "UIDrawCardPetInfoItem2.prefab",
+    [5] = "UIDrawCardPetInfoItem3.prefab",
+    [6] = "UIDrawCardPetInfoItem4.prefab",
+    [7] = "UIDrawCardPetInfoItem5.prefab"
+  }
   self._loader = self:GetUIComponent("UISelectObjectPath", "loader")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPetInfoLoader.SetData = function(self, tmpID, cfg, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDrawCardPetInfoLoader:SetData(tmpID, cfg, callback)
   local type = cfg.type
-  local prefab = (self._prefabs)[type]
+  local prefab = self._prefabs[type]
   if self._prefab ~= prefab then
     self:Clear()
-    self._req = (ResourceManager:GetInstance()):SyncLoadAsset((self._prefabs)[type], LoadType.GameObject)
-    local t = ((self._req).Obj).transform
-    t:SetParent((self:GetGameObject()).transform)
+    self._req = ResourceManager:GetInstance():SyncLoadAsset(self._prefabs[type], LoadType.GameObject)
+    local t = self._req.Obj.transform
+    t:SetParent(self:GetGameObject().transform)
     t.localPosition = Vector3.zero
     t.localRotation = Quaternion.identity
     t.localScale = Vector3.one
-    ;
-    ((self._req).Obj):SetActive(true)
-    self._widget = UIDrawCardPetInfoItem:New((self._req).Obj)
+    self._req.Obj:SetActive(true)
+    self._widget = UIDrawCardPetInfoItem:New(self._req.Obj)
     self._prefab = prefab
   end
-  do
-    ;
-    (self._widget):SetData(tmpID, cfg, callback)
-  end
+  self._widget:SetData(tmpID, cfg, callback)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPetInfoLoader.Clear = function(self)
-  -- function num : 0_2
+function UIDrawCardPetInfoLoader:Clear()
   if self._req then
-    (self._req):Dispose()
+    self._req:Dispose()
     self._req = nil
   end
   if self._widget then
-    (self._widget):Dispose()
+    self._widget:Dispose()
     self._widget = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPetInfoLoader.OnHide = function(self)
-  -- function num : 0_3
+function UIDrawCardPetInfoLoader:OnHide()
   self:Clear()
 end
-
-

@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_rotate_by_pick_sector.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_RotateByPickSector", Object)
 SkillEffectCalc_RotateByPickSector = SkillEffectCalc_RotateByPickSector
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_RotateByPickSector.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_RotateByPickSector:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_RotateByPickSector.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_RotateByPickSector:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local pickupComponent = casterEntity:ActiveSkillPickUpComponent()
   if not pickupComponent then
-    (Log.error)(self._className, "施法者没有ActiveSkillPickupComponent")
-    return 
+    Log.error(self._className, "施法者没有ActiveSkillPickupComponent")
+    return
   end
   local pickupPosArray = pickupComponent:GetAllValidPickUpGridPos()
   if #pickupPosArray < 2 then
-    (Log.error)(self._className, "没有足够点选位置记录")
-    return 
+    Log.error(self._className, "没有足够点选位置记录")
+    return
   end
   local sep = skillEffectCalcParam.skillEffectParam
   local absRotateAngle = sep:GetAbsRotateAngle()
@@ -38,23 +28,18 @@ SkillEffectCalc_RotateByPickSector.DoSkillEffectCalculator = function(self, skil
   local expandDir = expandDirPos - mainDirPos
   local mainDirVec3 = Vector3(mainDir.x, mainDir.y, 0)
   local expandDirVec3 = Vector3(expandDir.x, expandDir.y, 0)
-  local crossRes = (Vector3.Cross)(mainDirVec3, expandDirVec3)
+  local crossRes = Vector3.Cross(mainDirVec3, expandDirVec3)
   local angleDirFlag = 0
-  if crossRes.z > 0 then
+  if 0 < crossRes.z then
     angleDirFlag = -1
-  else
-    if crossRes.z < 0 then
-      angleDirFlag = 1
-    end
+  elseif 0 > crossRes.z then
+    angleDirFlag = 1
   end
   local finalRotateAngle = absRotateAngle * angleDirFlag
   local curDirV3 = Vector3(curDir.x, 0, curDir.y)
-  local endRotation = (Quaternion.Euler)(0, finalRotateAngle, 0)
+  local endRotation = Quaternion.Euler(0, finalRotateAngle, 0)
   local dirNewV3 = endRotation * curDirV3
   local dirNew = Vector2(dirNewV3.x, dirNewV3.z)
-  ;
-  (table.insert)(results, SkillEffectResult_RotateByPickSector:New(finalRotateAngle, dirNew))
+  table.insert(results, SkillEffectResult_RotateByPickSector:New(finalRotateAngle, dirNew))
   return results
 end
-
-

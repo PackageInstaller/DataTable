@@ -1,20 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn13/perfect_puzzle/cn13_perfect_puzzle_piece_item_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CN13PerfectPuzzlePieceItemData", Object)
 CN13PerfectPuzzlePieceItemData = CN13PerfectPuzzlePieceItemData
 local toint = math.tointeger
--- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
 
-CN13PerfectPuzzlePieceItemData.Init = function(self, data, verIndex, hoIndex, verCount, hoCount)
-  -- function num : 0_0
+function CN13PerfectPuzzlePieceItemData:Init(data, verIndex, hoIndex, verCount, hoCount)
   self.resName = data
   self.verIndex = verIndex
   self.hoIndex = hoIndex
   self.verCount = verCount
   self.hoCount = hoCount
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_activity_alice/ui_activity_alice_quest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityAliceQuest", UICustomWidget)
 UIActivityAliceQuest = UIActivityAliceQuest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityAliceQuest.SetData = function(self, index, quest, callback, getCallback)
-  -- function num : 0_0
+function UIActivityAliceQuest:SetData(index, quest, callback, getCallback)
   self:GetComponents()
   self._questInfo = quest:QuestInfo()
   self._callback = callback
@@ -16,10 +9,7 @@ UIActivityAliceQuest.SetData = function(self, index, quest, callback, getCallbac
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAliceQuest.GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityAliceQuest:GetComponents()
   self._got = self:GetGameObject("got")
   self._com = self:GetGameObject("com")
   self._not = self:GetGameObject("not")
@@ -31,75 +21,56 @@ UIActivityAliceQuest.GetComponents = function(self)
   self._img = self:GetUIComponent("Image", "Image")
   local sop = self:GetUIComponent("UISelectObjectPath", "pool")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base, UIItemScale.Level3)
-  ;
-  (self.uiItem):SetClickCallBack(function(go)
-    -- function num : 0_1_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Base, UIItemScale.Level3)
+  self.uiItem:SetClickCallBack(function(go)
     self:ItemOnClick(go)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAliceQuest.ItemOnClick = function(self, go)
-  -- function num : 0_2
+function UIActivityAliceQuest:ItemOnClick(go)
   if self._callback then
-    (self._callback)(self._id, (go.transform).position)
+    self._callback(self._id, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAliceQuest.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg_vice_awards = (Cfg.cfg_activity_vice_quest_rewards_view)[(self._questInfo).quest_id]
-  local reward = nil
+function UIActivityAliceQuest:OnValue()
+  local cfg_vice_awards = Cfg.cfg_activity_vice_quest_rewards_view[self._questInfo.quest_id]
+  local reward
   if cfg_vice_awards then
-    local awardsView = (cfg_vice_awards.AwardsView)[1]
+    local awardsView = cfg_vice_awards.AwardsView[1]
     reward = RoleAsset:New()
     reward.assetid = awardsView[1]
     reward.count = awardsView[2]
   else
-    do
-      reward = ((self._questInfo).rewards)[1]
-      self._id = reward.assetid
-      local cfg_item = (Cfg.cfg_item)[self._id]
-      if not cfg_item then
-        (Log.error)("###[UIShopSailingPlanItem] cfg_item is nil ! id : ", self._id)
-      end
-      local icon = cfg_item.Icon
-      local quality = cfg_item.Color
-      local text1 = self._count
-      local itemid = self._id
-      ;
-      (self.uiItem):SetData({icon = icon, quality = quality, text1 = text1, itemId = itemid})
-      local desc = (StringTable.Get)((self._questInfo).CondDesc)
-      ;
-      (self._desc):SetText(desc)
-      local rate = "（" .. (self._questInfo).cur_progress .. "/" .. (self._questInfo).total_progress .. "）"
-      ;
-      (self._rate):SetText(rate)
-      local status = (self._questInfo).status
-      ;
-      (self._not):SetActive(status == QuestStatus.QUEST_Accepted or status == QuestStatus.QUEST_NotStart)
-      ;
-      (self._com):SetActive(status == QuestStatus.QUEST_Completed)
-      ;
-      (self._got):SetActive(status == QuestStatus.QUEST_Taken)
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
+    reward = self._questInfo.rewards[1]
   end
+  self._id = reward.assetid
+  local cfg_item = Cfg.cfg_item[self._id]
+  if not cfg_item then
+    Log.error("###[UIShopSailingPlanItem] cfg_item is nil ! id : ", self._id)
+  end
+  local icon = cfg_item.Icon
+  local quality = cfg_item.Color
+  local text1 = self._count
+  local itemid = self._id
+  self.uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    itemId = itemid
+  })
+  local desc = StringTable.Get(self._questInfo.CondDesc)
+  self._desc:SetText(desc)
+  local rate = "（" .. self._questInfo.cur_progress .. "/" .. self._questInfo.total_progress .. "）"
+  self._rate:SetText(rate)
+  local status = self._questInfo.status
+  self._not:SetActive(status == QuestStatus.QUEST_Accepted or status == QuestStatus.QUEST_NotStart)
+  self._com:SetActive(status == QuestStatus.QUEST_Completed)
+  self._got:SetActive(status == QuestStatus.QUEST_Taken)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAliceQuest.BtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIActivityAliceQuest:BtnOnClick(go)
   if self._getCallback then
-    (self._getCallback)((self._questInfo).quest_id)
+    self._getCallback(self._questInfo.quest_id)
   end
 end
-
-

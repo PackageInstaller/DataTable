@@ -1,32 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/editor/hot_reload_editor.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-if (UnityEngine.Application).isPlaying and IsUnityEditor() then
+if UnityEngine.Application.isPlaying and IsUnityEditor() then
   HotReload = {}
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-  HotReload.reloadUIController = function(filePath)
-  -- function num : 0_0 , upvalues : _ENV
-  local file = (io.open)(filePath, "r")
-  ;
-  (Log.debug)("Reload lua ", filePath)
-  if file then
-    local content = file:read("a")
-    file:close()
-    local classNameList = ArrayList:New()
-    for className in (string.gmatch)(content, "_class%(%s*\"([^%s]+)\"") do
-      classNameList:PushBack(className)
-    end
-    local isUIController = false
-    for id = 1, classNameList:Size() do
-      if IsSubClassOf(classNameList:GetAt(id), "UIController") then
-        isUIController = true
-        break
+  
+  function HotReload.reloadUIController(filePath)
+    local file = io.open(filePath, "r")
+    Log.debug("Reload lua ", filePath)
+    if file then
+      local content = file:read("a")
+      file:close()
+      local classNameList = ArrayList:New()
+      for className in string.gmatch(content, "_class%(%s*\"([^%s]+)\"") do
+        classNameList:PushBack(className)
       end
-    end
-    do
+      local isUIController = false
+      for id = 1, classNameList:Size() do
+        if IsSubClassOf(classNameList:GetAt(id), "UIController") then
+          isUIController = true
+          break
+        end
+      end
       local isUIWidget = false
       for id = 1, classNameList:Size() do
         if IsSubClassOf(classNameList:GetAt(id), "UICustomWidget") then
@@ -34,71 +25,48 @@ if (UnityEngine.Application).isPlaying and IsUnityEditor() then
           break
         end
       end
-      do
-        if not isUIController and not isUIWidget then
-          return 
-        end
-        for id = 1, classNameList:Size() do
-          _removeClass(classNameList:GetAt(id))
-        end
-        local fileName = (HotReload.getLuaName)(filePath)
-        -- DECOMPILER ERROR at PC87: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (package.loaded)[fileName] = nil
-        require(fileName)
+      if not isUIController and not isUIWidget then
+        return
       end
+      for id = 1, classNameList:Size() do
+        _removeClass(classNameList:GetAt(id))
+      end
+      local fileName = HotReload.getLuaName(filePath)
+      package.loaded[fileName] = nil
+      require(fileName)
     end
   end
-end
-
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-  HotReload.reloadConfig = function(filePath)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfgName = (HotReload.getLuaName)(filePath)
-  CfgClear(cfgName)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  if cfgName == "cfg_lod" then
-    (package.loaded)[cfgName] = nil
-    require(cfgName)
+  
+  function HotReload.reloadConfig(filePath)
+    local cfgName = HotReload.getLuaName(filePath)
+    CfgClear(cfgName)
+    if cfgName == "cfg_lod" then
+      package.loaded[cfgName] = nil
+      require(cfgName)
+    end
+  end
+  
+  function HotReload.reloadCoreGameLua(filePath)
+    local file = io.open(filePath, "r")
+    Log.debug("Reload lua ", filePath)
+    if file then
+      local content = file:read("a")
+      file:close()
+      local classNameList = ArrayList:New()
+      for className in string.gmatch(content, "_class%(%s*\"([^%s]+)\"") do
+        classNameList:PushBack(className)
+      end
+      for id = 1, classNameList:Size() do
+        _removeClass(classNameList:GetAt(id))
+      end
+      local fileName = HotReload.getLuaName(filePath)
+      package.loaded[fileName] = nil
+      require(fileName)
+    end
+  end
+  
+  function HotReload.getLuaName(filePath)
+    local _, _, fileName = string.find(filePath, "/([^/]+)%.lua$")
+    return fileName
   end
 end
-
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-  HotReload.reloadCoreGameLua = function(filePath)
-  -- function num : 0_2 , upvalues : _ENV
-  local file = (io.open)(filePath, "r")
-  ;
-  (Log.debug)("Reload lua ", filePath)
-  if file then
-    local content = file:read("a")
-    file:close()
-    local classNameList = ArrayList:New()
-    for className in (string.gmatch)(content, "_class%(%s*\"([^%s]+)\"") do
-      classNameList:PushBack(className)
-    end
-    for id = 1, classNameList:Size() do
-      _removeClass(classNameList:GetAt(id))
-    end
-    local fileName = (HotReload.getLuaName)(filePath)
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (package.loaded)[fileName] = nil
-    require(fileName)
-  end
-end
-
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-  HotReload.getLuaName = function(filePath)
-  -- function num : 0_3 , upvalues : _ENV
-  local _, _, fileName = (string.find)(filePath, "/([^/]+)%.lua$")
-  return fileName
-end
-
-end
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/map/s_maze_map_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeMapManager", Object)
 SMazeMapManager = SMazeMapManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeMapManager.Constructor = function(self, mn)
-  -- function num : 0_0
+function SMazeMapManager:Constructor(mn)
   self._points = nil
   self._manager = mn
   self._reachable = {}
@@ -16,128 +9,90 @@ SMazeMapManager.Constructor = function(self, mn)
   self:_Make()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapManager.OnInit = function(self, sceneManager)
-  -- function num : 0_1 , upvalues : _ENV
+function SMazeMapManager:OnInit(sceneManager)
   self._sceneManager = sceneManager
   self._historyEventPointMgr = SMazeMapHistoryEventpointMgr:New()
-  local pRootGo = (self._sceneManager):GetEventPointRoot()
-  ;
-  (self._historyEventPointMgr):Init((self._manager):SeasonMazeID(), pRootGo)
+  local pRootGo = self._sceneManager:GetEventPointRoot()
+  self._historyEventPointMgr:Init(self._manager:SeasonMazeID(), pRootGo)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapManager.Update = function(self, dt)
-  -- function num : 0_2
+function SMazeMapManager:Update(dt)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapManager.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for key,point in pairs(self._transPoint) do
+function SMazeMapManager:Dispose()
+  for key, point in pairs(self._transPoint) do
     point:Dispose()
   end
   self._transPoint = nil
-  for key,point in pairs(self._points) do
+  for key, point in pairs(self._points) do
     point:Dispose()
   end
   self._points = nil
-  for key,req in pairs(self._resReqs) do
+  for key, req in pairs(self._resReqs) do
     req:Dispose()
   end
   self._resReqs = nil
-  ;
-  (self._historyEventPointMgr):Dispose()
+  self._historyEventPointMgr:Dispose()
   self._historyEventPointMgr = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapManager._Make = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local obj = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()
+function SMazeMapManager:_Make()
+  local obj = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj()
   local cpt = obj:GetMazeComponent()
   local info = cpt:GetComponentInfo()
   self._points = {}
-  for pointID,svrRoom in pairs(info.rooms) do
+  for pointID, svrRoom in pairs(info.rooms) do
     local node = SMazeMapNode:New(obj:GetMazeID(), pointID)
-    local room = ((self._manager):Factory()):CreateRoom(svrRoom.type, svrRoom, node)
+    local room = self._manager:Factory():CreateRoom(svrRoom.type, svrRoom, node)
     node:_SetRoom(room)
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._points)[pointID] = node
+    self._points[pointID] = node
   end
   local mazeId = obj:GetMazeID()
   self._transPoint = {}
   self._dumpLinePoints = {}
-  for pointID,svrRoom in pairs(info.rooms) do
-    local cfg = (Cfg.cfg_component_season_maze_point)[pointID]
+  for pointID, svrRoom in pairs(info.rooms) do
+    local cfg = Cfg.cfg_component_season_maze_point[pointID]
     local id = cfg.TansportID
     local dumpLinePoints = cfg.DumpLinePointID
-    do
-      if id and not (self._transPoint)[id] then
+    if id then
+      if not self._transPoint[id] then
         local node = SMazeMapNode:New(mazeId, id)
-        -- DECOMPILER ERROR at PC64: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        (self._transPoint)[id] = node
+        self._transPoint[id] = node
       end
-      if dumpLinePoints and #dumpLinePoints > 0 then
-        for i,nodeId in ipairs(dumpLinePoints) do
-          local node = (self._dumpLinePoints)[nodeId]
-          if not node then
-            node = SMazeMapNode:New(mazeId, nodeId)
-            -- DECOMPILER ERROR at PC86: Confused about usage of register: R19 in 'UnsetPending'
-
-            ;
-            (self._dumpLinePoints)[nodeId] = node
-          end
-          ;
-          ((self._points)[pointID]):AddDumpLinePoint(node)
+    elseif dumpLinePoints and 0 < #dumpLinePoints then
+      for i, nodeId in ipairs(dumpLinePoints) do
+        local node = self._dumpLinePoints[nodeId]
+        if not node then
+          node = SMazeMapNode:New(mazeId, nodeId)
+          self._dumpLinePoints[nodeId] = node
         end
-      end
-      do
-        -- DECOMPILER ERROR at PC94: LeaveBlock: unexpected jumping out DO_STMT
-
+        self._points[pointID]:AddDumpLinePoint(node)
       end
     end
   end
   self:_MakeLink(cpt:GetComponentCfgId(), info.hard)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapManager._MakeLink = function(self, cptID, hard)
-  -- function num : 0_5 , upvalues : _ENV
-  for id,point in pairs(self._points) do
-    local cfg = (Cfg.cfg_component_season_maze_point)[id]
+function SMazeMapManager:_MakeLink(cptID, hard)
+  for id, point in pairs(self._points) do
+    local cfg = Cfg.cfg_component_season_maze_point[id]
     local nextIds = cfg.LockPoint
     local nexts = {}
     if nextIds then
-      for _,nID in ipairs(nextIds) do
-        (table.insert)(nexts, (self._points)[nID])
+      for _, nID in ipairs(nextIds) do
+        table.insert(nexts, self._points[nID])
       end
     end
-    do
-      do
-        point:_Link(nexts, self:GetTransportPointByID(point:TransportID()))
-        -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    point:_Link(nexts, self:GetTransportPointByID(point:TransportID()))
   end
-  local mazeCfg = ((Cfg.cfg_component_season_maze)({ComponentID = cptID, Hard = hard}))[1]
-  local startID = (mazeCfg.SpecialPoints)[1]
+  local mazeCfg = Cfg.cfg_component_season_maze({ComponentID = cptID, Hard = hard})[1]
+  local startID = mazeCfg.SpecialPoints[1]
   local branchStarts = {}
-  local start = (self._points)[startID]
+  local start = self._points[startID]
   branchStarts[start:BranchIdx()] = start
-  for id,node in pairs(self._points) do
+  for id, node in pairs(self._points) do
     if node:NextPoints() and #node:NextPoints() > 0 then
-      for _,next in ipairs(node:NextPoints()) do
+      for _, next in ipairs(node:NextPoints()) do
         if not branchStarts[next:BranchIdx()] then
           branchStarts[next:BranchIdx()] = node
         end
@@ -145,95 +100,71 @@ SMazeMapManager._MakeLink = function(self, cptID, hard)
     end
   end
   local branches = {}
-  for idx,branch in pairs(branchStarts) do
+  for idx, branch in pairs(branchStarts) do
     local tb = {}
     local tmp = branch
-    ;
-    (table.insert)(tb, branch)
-    while 1 do
-      if tmp then
-        local found = false
-        if tmp:NextPoints() then
-          for _,next in ipairs(tmp:NextPoints()) do
-            if next:BranchIdx() == idx then
-              (table.insert)(tb, next)
-              tmp = next
-              found = true
+    table.insert(tb, branch)
+    while tmp do
+      local found = false
+      if tmp:NextPoints() then
+        for _, next in ipairs(tmp:NextPoints()) do
+          if next:BranchIdx() == idx then
+            table.insert(tb, next)
+            tmp = next
+            found = true
+            break
+          elseif 1 < #tb then
+            local transportId = tmp:TransportID() or 0
+            if transportId < 1 then
+              table.insert(tb, next)
+              found = false
               break
-            else
-              if not tmp:TransportID() then
-                local transportId = #tb <= 1 or 0
-              end
-              if transportId < 1 then
-                (table.insert)(tb, next)
-                found = false
-                break
-              end
             end
           end
         end
-        do
-          do
-            if not found then
-              tmp = nil
-            end
-            -- DECOMPILER ERROR at PC136: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC136: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC136: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+      end
+      if not found then
+        tmp = nil
       end
     end
     branches[idx] = tb
   end
   self._pointNumPerLine = {}
-  for i,subBranch in ipairs(branches) do
+  for i, subBranch in ipairs(branches) do
     local num = 0
     num = #subBranch
-    for _,node in pairs(subBranch) do
+    for _, node in pairs(subBranch) do
       local dumpPoints = node:GetDumpLinePoint()
       num = num + #dumpPoints
     end
-    -- DECOMPILER ERROR at PC159: Confused about usage of register: R14 in 'UnsetPending'
-
-    ;
-    (self._pointNumPerLine)[i] = num
+    self._pointNumPerLine[i] = num
   end
-  for i,nodes in ipairs(branches) do
+  for i, nodes in ipairs(branches) do
     local go = self:_LoadPrefab("pfb_Scene_line_3.prefab")
-    -- DECOMPILER ERROR at PC172: Confused about usage of register: R14 in 'UnsetPending'
-
-    ;
-    (go.transform).position = Vector3.zero
+    go.transform.position = Vector3.zero
     local lines = go:GetComponentsInChildren(typeof(UnityEngine.LineRenderer))
-    local pointCount = (self._pointNumPerLine)[i]
+    local pointCount = self._pointNumPerLine[i]
     for i = 0, lines.Length - 1 do
       local line = lines[i]
       line.positionCount = pointCount
       local pIndex = 0
-      for _,node in pairs(nodes) do
+      for _, node in pairs(nodes) do
         line:SetPosition(pIndex, node:Position())
         pIndex = pIndex + 1
         local dumPoint = node:GetDumpLinePoint()
-        for _,dumpNode in pairs(dumPoint) do
+        for _, dumpNode in pairs(dumPoint) do
           line:SetPosition(pIndex, dumpNode:Position())
           pIndex = pIndex + 1
         end
       end
     end
   end
-  for id,node in pairs(self._points) do
+  for id, node in pairs(self._points) do
     if node:TransportID() then
-      local transportPoint = (self._transPoint)[node:TransportID()]
-      local next = (node:NextPoints())[1]
+      local transportPoint = self._transPoint[node:TransportID()]
+      local next = node:NextPoints()[1]
       local obj = self:_LoadPrefab("pfb_Scene_line_4.prefab")
-      -- DECOMPILER ERROR at PC239: Confused about usage of register: R16 in 'UnsetPending'
-
-      ;
-      (obj.transform).position = Vector3.zero
+      obj.transform.position = Vector3.zero
       local lines = obj:GetComponentsInChildren(typeof(UnityEngine.LineRenderer))
       for i = 0, lines.Length - 1 do
         local line = lines[i]
@@ -242,10 +173,7 @@ SMazeMapManager._MakeLink = function(self, cptID, hard)
         line:SetPosition(1, transportPoint:Position())
       end
       local obj2 = self:_LoadPrefab("pfb_Scene_line_4.prefab")
-      -- DECOMPILER ERROR at PC270: Confused about usage of register: R18 in 'UnsetPending'
-
-      ;
-      (obj2.transform).position = Vector3.zero
+      obj2.transform.position = Vector3.zero
       local lines2 = obj2:GetComponentsInChildren(typeof(UnityEngine.LineRenderer))
       for i = 0, lines2.Length - 1 do
         local line2 = lines2[i]
@@ -255,16 +183,13 @@ SMazeMapManager._MakeLink = function(self, cptID, hard)
       end
     end
   end
-  for id,node in pairs(self._points) do
+  for id, node in pairs(self._points) do
     local targetID = node:TransRoomTargetID() or 0
-    if targetID > 0 then
-      local targetNode = (self._points)[targetID]
+    if 0 < targetID then
+      local targetNode = self._points[targetID]
       if targetNode then
         local obj = self:_LoadPrefab("pfb_Scene_line_4.prefab")
-        -- DECOMPILER ERROR at PC318: Confused about usage of register: R16 in 'UnsetPending'
-
-        ;
-        (obj.transform).position = Vector3.zero
+        obj.transform.position = Vector3.zero
         local lines = obj:GetComponentsInChildren(typeof(UnityEngine.LineRenderer))
         for i = 0, lines.Length - 1 do
           local line = lines[i]
@@ -273,115 +198,78 @@ SMazeMapManager._MakeLink = function(self, cptID, hard)
           line:SetPosition(1, targetNode:Position())
         end
       else
-        do
-          do
-            ;
-            (Log.error)("s_maze_map_manager ，传送房间找不到目标ID ", targetID)
-            -- DECOMPILER ERROR at PC349: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC349: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC349: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC349: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC349: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        Log.error("s_maze_map_manager ，传送房间找不到目标ID ", targetID)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapManager.GetNode = function(self, id)
-  -- function num : 0_6
-  return (self._points)[id]
+function SMazeMapManager:GetNode(id)
+  return self._points[id]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapManager.GetRoomByGameObject = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  for _,node in pairs(self._points) do
-    if (node:Room()):GameObject() == go then
+function SMazeMapManager:GetRoomByGameObject(go)
+  for _, node in pairs(self._points) do
+    if node:Room():GameObject() == go then
       return node
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapManager.GetTransportPointByGameObject = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  for _,node in pairs(self._transPoint) do
-    if node:IsTransfortPoint() and (node:GetTransfortPoint()):GameObject() == go then
+function SMazeMapManager:GetTransportPointByGameObject(go)
+  for _, node in pairs(self._transPoint) do
+    if node:IsTransfortPoint() and node:GetTransfortPoint():GameObject() == go then
       return node
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapManager.ReMake = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  for key,point in pairs(self._transPoint) do
+function SMazeMapManager:ReMake()
+  for key, point in pairs(self._transPoint) do
     point:Dispose()
   end
   self._transPoint = nil
-  for key,point in pairs(self._points) do
+  for key, point in pairs(self._points) do
     point:Dispose()
   end
   self._points = nil
-  for key,req in pairs(self._resReqs) do
+  for key, req in pairs(self._resReqs) do
     req:Dispose()
   end
   self._resReqs = {}
   self:_Make()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapManager.GetTransportPointByID = function(self, id)
-  -- function num : 0_10
-  if id then
-    return (self._transPoint)[id]
-  end
+function SMazeMapManager:GetTransportPointByID(id)
+  return id and self._transPoint[id]
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapManager.RefreshLinkState = function(self, curPointID, startState, onInit)
-  -- function num : 0_11 , upvalues : _ENV
+function SMazeMapManager:RefreshLinkState(curPointID, startState, onInit)
   local start = self:GetNode(curPointID)
-  local search = function(point, reachable)
-    -- function num : 0_11_0 , upvalues : _ENV, search
+  
+  local function search(point, reachable)
     local nexts = point:NextPoints()
     if not nexts or not next(nexts) then
-      return 
+      return
     end
-    for _,next in ipairs(nexts) do
+    for _, next in ipairs(nexts) do
       reachable[next:ID()] = true
       search(next, reachable)
     end
   end
-
+  
   local reachable = {}
   search(start, reachable)
-  for id,point in pairs(self._points) do
+  for id, point in pairs(self._points) do
     local state = SMazeNodeState.UnReachable
     if id == start:ID() then
       state = startState
-    else
-      if reachable[id] == true then
-        state = SMazeNodeState.Reachable
-      end
+    elseif reachable[id] == true then
+      state = SMazeNodeState.Reachable
     end
     point:SetState(state, onInit)
     if point:TransportID() then
-      local transPoint = (self._transPoint)[point:TransportID()]
+      local transPoint = self._transPoint[point:TransportID()]
       if point:ID() == start:ID() then
         transPoint:SetState(SMazeNodeState.StayTemp, onInit)
       else
@@ -391,29 +279,19 @@ SMazeMapManager.RefreshLinkState = function(self, curPointID, startState, onInit
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapManager.GetNodes = function(self, filter)
-  -- function num : 0_12 , upvalues : _ENV
+function SMazeMapManager:GetNodes(filter)
   local results = {}
-  for _,point in pairs(self._points) do
+  for _, point in pairs(self._points) do
     if filter(point) then
-      (table.insert)(results, point)
+      table.insert(results, point)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapManager._LoadPrefab = function(self, name)
-  -- function num : 0_13 , upvalues : _ENV
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset(name, LoadType.GameObject)
-  ;
-  (req.Obj):SetActive(true)
-  ;
-  (table.insert)(self._resReqs, req)
+function SMazeMapManager:_LoadPrefab(name)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(name, LoadType.GameObject)
+  req.Obj:SetActive(true)
+  table.insert(self._resReqs, req)
   return req.Obj
 end
-
-

@@ -1,122 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/chat/chat_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChatModule", GameModule)
 ChatModule = ChatModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChatModule.Constructor = function(self)
-  -- function num : 0_0
+function ChatModule:Constructor()
   self.m_module_map = {}
   self.m_config_map = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self.caller):RegisterPushHandler(CEventPushJoinChatChannelResultMessage, self.HandlePushJoinStaticChatChannelResultMessage, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushChatMessageToChannel, self.HandlePushGameChatMessage, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushChatMessageToPlayer, self.HandlePushGameChatMessagePlayer, self)
+function ChatModule:Init()
+  self.caller:RegisterPushHandler(CEventPushJoinChatChannelResultMessage, self.HandlePushJoinStaticChatChannelResultMessage, self)
+  self.caller:RegisterPushHandler(CEventPushChatMessageToChannel, self.HandlePushGameChatMessage, self)
+  self.caller:RegisterPushHandler(CEventPushChatMessageToPlayer, self.HandlePushGameChatMessagePlayer, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatModule.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.caller):UnRegisterPushHandler(CEventPushJoinChatChannelResultMessage)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventPushChatMessageToChannel)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventPushChatMessageToPlayer)
-  ;
-  ((ChatModule.super).Dispose)(self)
+function ChatModule:Dispose()
+  self.caller:UnRegisterPushHandler(CEventPushJoinChatChannelResultMessage)
+  self.caller:UnRegisterPushHandler(CEventPushChatMessageToChannel)
+  self.caller:UnRegisterPushHandler(CEventPushChatMessageToPlayer)
+  ChatModule.super.Dispose(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatModule.RegisterChannel = function(self, channel_token, game_module, channel_config)
-  -- function num : 0_3 , upvalues : _ENV
+function ChatModule:RegisterChannel(channel_token, game_module, channel_config)
   local key = tostring(channel_token.server_type) .. tostring(channel_token.server_id) .. tostring(channel_token.channel_type) .. tostring(channel_token.channel_id)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_module_map)[key] = game_module
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_config_map)[key] = channel_config
+  self.m_module_map[key] = game_module
+  self.m_config_map[key] = channel_config
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatModule.UnRegisterChannel = function(self, channel_token)
-  -- function num : 0_4 , upvalues : _ENV
+function ChatModule:UnRegisterChannel(channel_token)
   local key = tostring(channel_token.server_type) .. tostring(channel_token.server_id) .. tostring(channel_token.channel_type) .. tostring(channel_token.channel_id)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_module_map)[key] = nil
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_config_map)[key] = nil
+  self.m_module_map[key] = nil
+  self.m_config_map[key] = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatModule.GetChannelConfig = function(self, channel_token)
-  -- function num : 0_5 , upvalues : _ENV
+function ChatModule:GetChannelConfig(channel_token)
   local key = tostring(channel_token.server_type) .. tostring(channel_token.server_id) .. tostring(channel_token.channel_type) .. tostring(channel_token.channel_id)
-  return (self.m_config_map)[key]
+  return self.m_config_map[key]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatModule.ReceiveChatMessage = function(self, chatMessage)
-  -- function num : 0_6 , upvalues : _ENV
-  if ((chatMessage.m_msg).m_channel).channel_type == CHAT_CHANNEL_TYPE.CHAT_CHANNEL_TYPE_SYSTEM then
-    self:ReceiveSystemMessage((chatMessage.m_msg).m_sender, (chatMessage.m_msg).m_message)
-  else
-    if ((chatMessage.m_msg).m_channel).server_type == SERVER_TYPE.SERVER_TYPE_GAME or ((chatMessage.m_msg).m_channel).server_type == SERVER_TYPE.SERVER_TYPE_UNIQUE then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DemoGameChatEvent, chatMessage)
-    else
-      if ((chatMessage.m_msg).m_channel).server_type == SERVER_TYPE.SERVER_TYPE_ROOM then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DemoRoomChatEvent, chatMessage)
-      else
-        if ((chatMessage.m_msg).m_channel).server_type == SERVER_TYPE.SERVER_TYPE_MATCH then
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DemoMatchChatEvent, chatMessage)
-        end
-      end
-    end
+function ChatModule:ReceiveChatMessage(chatMessage)
+  if chatMessage.m_msg.m_channel.channel_type == CHAT_CHANNEL_TYPE.CHAT_CHANNEL_TYPE_SYSTEM then
+    self:ReceiveSystemMessage(chatMessage.m_msg.m_sender, chatMessage.m_msg.m_message)
+  elseif chatMessage.m_msg.m_channel.server_type == SERVER_TYPE.SERVER_TYPE_GAME or chatMessage.m_msg.m_channel.server_type == SERVER_TYPE.SERVER_TYPE_UNIQUE then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.DemoGameChatEvent, chatMessage)
+  elseif chatMessage.m_msg.m_channel.server_type == SERVER_TYPE.SERVER_TYPE_ROOM then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.DemoRoomChatEvent, chatMessage)
+  elseif chatMessage.m_msg.m_channel.server_type == SERVER_TYPE.SERVER_TYPE_MATCH then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.DemoMatchChatEvent, chatMessage)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatModule.ReceiveChatMessagePlayer = function(self, chatMessage)
-  -- function num : 0_7 , upvalues : _ENV
-  if ((chatMessage.m_msg).m_channel).channel_type == CHAT_CHANNEL_TYPE.CHAT_CHANNEL_TYPE_SYSTEM then
-    self:ReceiveSystemMessage((chatMessage.m_msg).m_sender, (chatMessage.m_msg).m_message)
+function ChatModule:ReceiveChatMessagePlayer(chatMessage)
+  if chatMessage.m_msg.m_channel.channel_type == CHAT_CHANNEL_TYPE.CHAT_CHANNEL_TYPE_SYSTEM then
+    self:ReceiveSystemMessage(chatMessage.m_msg.m_sender, chatMessage.m_msg.m_message)
   else
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DemoGameChatPrivateEvent, chatMessage)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.DemoGameChatPrivateEvent, chatMessage)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatModule.ReceiveSystemMessage = function(self, sender, message)
-  -- function num : 0_8 , upvalues : _ENV
-  local sysmessage = (string.split)(message.chat_message, " ")
+function ChatModule:ReceiveSystemMessage(sender, message)
+  local sysmessage = string.split(message.chat_message, " ")
   local title = ""
   local notify_params = {}
   local index = 1
-  for key,value in ipairs(sysmessage) do
+  for key, value in ipairs(sysmessage) do
     if key == 1 then
       title = value
     else
@@ -124,55 +69,48 @@ ChatModule.ReceiveSystemMessage = function(self, sender, message)
       index = index + 1
     end
   end
-  ;
-  (Log.debug)("System Notify sender:" .. sender.nick .. ", message:" .. message.chat_message .. ", split count:" .. #sysmessage)
+  Log.debug("System Notify sender:" .. sender.nick .. ", message:" .. message.chat_message .. ", split count:" .. #sysmessage)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatModule.SendChatMessage = function(self, TT, sender_pstid, channel, message)
-  -- function num : 0_9 , upvalues : _ENV
-  if sender_pstid == 0 or channel.server_id == 0 or message.chat_message == "" or message.chat_message == nil then
-    (Log.fatal)("chat param error")
-    return 
+function ChatModule:SendChatMessage(TT, sender_pstid, channel, message)
+  if 0 == sender_pstid or 0 == channel.server_id or "" == message.chat_message or nil == message.chat_message then
+    Log.fatal("chat param error")
+    return
   end
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
   local key = tostring(channel.server_type) .. tostring(channel.server_id) .. tostring(channel.channel_type) .. tostring(channel.channel_id)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventSendChatMessageToChannel)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventSendChatMessageToChannel)
   request.m_sender_pstid = sender_pstid
   request.m_channel = channel
   request.m_message = message
-  local module = (self.m_module_map)[key]
-  if module == nil then
-    (Log.fatal)("ChatModule:SendChatMessage 还没有加入频道[" .. key .. "]")
-    return 
+  local module = self.m_module_map[key]
+  if nil == module then
+    Log.fatal("ChatModule:SendChatMessage 还没有加入频道[" .. key .. "]")
+    return
   end
   local reply = module:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("ChatModule:SendChatMessage failed with !reply:Succ()")
+    Log.fatal("ChatModule:SendChatMessage failed with !reply:Succ()")
     return res
   end
   local replyEvent = CEventSendChatMessageToChannelResult(reply.msg)
   if replyEvent == nil then
-    (Log.fatal)("ChatModule:SendChatMessage failed with replyEvent == nil")
+    Log.fatal("ChatModule:SendChatMessage failed with replyEvent == nil")
     return res
   end
   if replyEvent.m_ret ~= 0 then
-    (Log.fatal)("ChatModule:SendChatMessage failed with ret= " .. replyEvent.m_ret)
+    Log.fatal("ChatModule:SendChatMessage failed with ret= " .. replyEvent.m_ret)
     return res
   end
   res:SetSucc(true)
   return res
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatModule.SendChatPrivateMessage = function(self, TT, sender_pstid, receiver_pstid, message)
-  -- function num : 0_10 , upvalues : _ENV
-  if sender_pstid == 0 or receiver_pstid == 0 or receiver_pstid == nil or message.chat_message == "" or message.chat_message == nil then
-    (Log.fatal)("chat param error")
-    return 
+function ChatModule:SendChatPrivateMessage(TT, sender_pstid, receiver_pstid, message)
+  if 0 == sender_pstid or 0 == receiver_pstid or nil == receiver_pstid or "" == message.chat_message or nil == message.chat_message then
+    Log.fatal("chat param error")
+    return
   end
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
@@ -183,53 +121,42 @@ ChatModule.SendChatPrivateMessage = function(self, TT, sender_pstid, receiver_ps
   channel.channel_type = CHAT_CHANNEL_TYPE.CHAT_CHANNEL_TYPE_PRIVATE
   channel.channel_id = 0
   local key = tostring(channel.server_type) .. tostring(channel.server_id) .. tostring(channel.channel_type) .. tostring(channel.channel_id)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventSendChatMessageToPlayer)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventSendChatMessageToPlayer)
   request.m_sender_pstid = sender_pstid
   request.m_receiver_pstid = receiver_pstid
   request.m_message = message
-  local module = (self.m_module_map)[key]
-  if module == nil then
-    (Log.fatal)("ChatModule:SendChatMessage m_module_map[" .. key .. "] == nil")
-    return 
+  local module = self.m_module_map[key]
+  if nil == module then
+    Log.fatal("ChatModule:SendChatMessage m_module_map[" .. key .. "] == nil")
+    return
   end
   local reply = module:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("ChatModule:SendChatMessage failed with !reply:Succ()")
+    Log.fatal("ChatModule:SendChatMessage failed with !reply:Succ()")
     return res
   end
   local replyEvent = CEventSendChatMessageToPlayerResult(reply.msg)
   if replyEvent == nil then
-    (Log.fatal)("ChatModule:SendChatMessage failed with replyEvent == nil")
+    Log.fatal("ChatModule:SendChatMessage failed with replyEvent == nil")
     return res
   end
   if replyEvent.m_ret ~= 0 then
-    (Log.fatal)("ChatModule:SendChatMessage failed with ret= " .. replyEvent.m_ret)
+    Log.fatal("ChatModule:SendChatMessage failed with ret= " .. replyEvent.m_ret)
     return res
   end
   res:SetSucc(true)
   return res
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatModule.HandlePushJoinStaticChatChannelResultMessage = function(self, msg)
-  -- function num : 0_11 , upvalues : _ENV
-  (Log.fatal)("LoginModule:玩家加入常驻频道! channel_id: ", (msg.m_channel).channel_id, ", name:", (msg.m_channel_config).channel_name)
+function ChatModule:HandlePushJoinStaticChatChannelResultMessage(msg)
+  Log.fatal("LoginModule:玩家加入常驻频道! channel_id: ", msg.m_channel.channel_id, ", name:", msg.m_channel_config.channel_name)
   self:RegisterChannel(msg.m_channel, self, msg.m_channel_config)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatModule.HandlePushGameChatMessage = function(self, msg)
-  -- function num : 0_12
+function ChatModule:HandlePushGameChatMessage(msg)
   self:ReceiveChatMessage(msg)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatModule.HandlePushGameChatMessagePlayer = function(self, msg)
-  -- function num : 0_13
+function ChatModule:HandlePushGameChatMessagePlayer(msg)
   self:ReceiveChatMessagePlayer(msg)
 end
-
-

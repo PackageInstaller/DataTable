@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_trap_creation_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataTrapCreationResult", Object)
 DataTrapCreationResult = DataTrapCreationResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataTrapCreationResult.Constructor = function(self)
-  -- function num : 0_0
+function DataTrapCreationResult:Constructor()
   self._trapConfigID = nil
   self._trapEntityID = nil
   self._replaceTrapID = nil
@@ -17,102 +10,58 @@ DataTrapCreationResult.Constructor = function(self)
   self._transferTrapID = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapCreationResult.SetTrapEntityID = function(self, eid)
-  -- function num : 0_1
+function DataTrapCreationResult:SetTrapEntityID(eid)
   self._trapEntityID = eid
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapCreationResult.GetTrapEntityID = function(self)
-  -- function num : 0_2
+function DataTrapCreationResult:GetTrapEntityID()
   return self._trapEntityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapCreationResult.SetTrapHP = function(self, hp)
-  -- function num : 0_3
+function DataTrapCreationResult:SetTrapHP(hp)
   self._trapHP = hp
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapCreationResult.SetTrapHPMax = function(self, hpMax)
-  -- function num : 0_4
+function DataTrapCreationResult:SetTrapHPMax(hpMax)
   self._trapHPMax = hpMax
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapCreationResult.GetTrapHP = function(self)
-  -- function num : 0_5
+function DataTrapCreationResult:GetTrapHP()
   return self._trapHP
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapCreationResult.GetTrapHPMax = function(self)
-  -- function num : 0_6
+function DataTrapCreationResult:GetTrapHPMax()
   return self._trapHPMax
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapCreationResult.SetReplaceTrapID = function(self, id)
-  -- function num : 0_7
+function DataTrapCreationResult:SetReplaceTrapID(id)
   self._replaceTrapID = id
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapCreationResult.GetReplaceTrapID = function(self)
-  -- function num : 0_8
+function DataTrapCreationResult:GetReplaceTrapID()
   return self._replaceTrapID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapCreationResult.SetTransferTrapID = function(self, id)
-  -- function num : 0_9
+function DataTrapCreationResult:SetTransferTrapID(id)
   self._transferTrapID = id
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapCreationResult.GetTransferTrapID = function(self)
-  -- function num : 0_10
+function DataTrapCreationResult:GetTransferTrapID()
   return self._transferTrapID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapCreationResult.SetTrapCreationResult_TrapID = function(self, id)
-  -- function num : 0_11
+function DataTrapCreationResult:SetTrapCreationResult_TrapID(id)
   self._trapConfigID = id
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapCreationResult.GetTrapCreationResult_TrapID = function(self)
-  -- function num : 0_12
+function DataTrapCreationResult:GetTrapCreationResult_TrapID()
   return self._trapConfigID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapCreationResult.SetTrapWallPosList = function(self, trapWallPosList)
-  -- function num : 0_13
+function DataTrapCreationResult:SetTrapWallPosList(trapWallPosList)
   self._trapWallPosList = trapWallPosList
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapCreationResult.GetTrapWallPosList = function(self)
-  -- function num : 0_14
+function DataTrapCreationResult:GetTrapWallPosList()
   return self._trapWallPosList
 end
-
-

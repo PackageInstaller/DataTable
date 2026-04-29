@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/trap_round_info_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TrapRoundInfoRenderComponent", Object)
 TrapRoundInfoRenderComponent = TrapRoundInfoRenderComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TrapRoundInfoRenderComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function TrapRoundInfoRenderComponent:Constructor()
   self._roundInfoEntityID = 0
   self._offset = Vector3(0, 0, 0)
   self._headShowType = 1
@@ -22,10 +15,7 @@ TrapRoundInfoRenderComponent.Constructor = function(self)
   self._childAnimState = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.SetParam = function(self, entityid, headshowtype, param)
-  -- function num : 0_1 , upvalues : _ENV
+function TrapRoundInfoRenderComponent:SetParam(entityid, headshowtype, param)
   self._roundInfoEntityID = entityid
   self._offset = Vector3(param.x, param.y, param.z)
   self._headShowType = headshowtype
@@ -36,162 +26,95 @@ TrapRoundInfoRenderComponent.SetParam = function(self, entityid, headshowtype, p
   self._levelNum = param.levelTrapNum
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.GetCurChildAnimState = function(self, index)
-  -- function num : 0_2
-  return (self._childAnimState)[index]
+function TrapRoundInfoRenderComponent:GetCurChildAnimState(index)
+  return self._childAnimState[index]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.SetCurChildAnimState = function(self, index, state)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._childAnimState)[index] = state
+function TrapRoundInfoRenderComponent:SetCurChildAnimState(index, state)
+  self._childAnimState[index] = state
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.GetChildCount = function(self)
-  -- function num : 0_4
+function TrapRoundInfoRenderComponent:GetChildCount()
   return self._childCount
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.GetInAnimName = function(self)
-  -- function num : 0_5
+function TrapRoundInfoRenderComponent:GetInAnimName()
   return self._inAnimName
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.GetOutAnimName = function(self)
-  -- function num : 0_6
+function TrapRoundInfoRenderComponent:GetOutAnimName()
   return self._outAnimName
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.GetRoundEffectList = function(self)
-  -- function num : 0_7
+function TrapRoundInfoRenderComponent:GetRoundEffectList()
   return self._roundEffectList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.GetHeadShowType = function(self)
-  -- function num : 0_8
+function TrapRoundInfoRenderComponent:GetHeadShowType()
   return self._headShowType
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.GetLastEffectId = function(self)
-  -- function num : 0_9
+function TrapRoundInfoRenderComponent:GetLastEffectId()
   return self._lastEffectId
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.GetOffset = function(self)
-  -- function num : 0_10
+function TrapRoundInfoRenderComponent:GetOffset()
   return self._offset
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.SetRoundInfoEntityID = function(self, id)
-  -- function num : 0_11
+function TrapRoundInfoRenderComponent:SetRoundInfoEntityID(id)
   self._roundInfoEntityID = id
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.GetRoundInfoEntityID = function(self)
-  -- function num : 0_12
+function TrapRoundInfoRenderComponent:GetRoundInfoEntityID()
   return self._roundInfoEntityID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.GetLevelTrapNum = function(self)
-  -- function num : 0_13
+function TrapRoundInfoRenderComponent:GetLevelTrapNum()
   return self._levelNum
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.GetEffectID = function(self)
-  -- function num : 0_14
+function TrapRoundInfoRenderComponent:GetEffectID()
   return self._effect_id
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.SetEffectID = function(self, effectId)
-  -- function num : 0_15
+function TrapRoundInfoRenderComponent:SetEffectID(effectId)
   self._effect_id = effectId
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.GetIsShow = function(self)
-  -- function num : 0_16
+function TrapRoundInfoRenderComponent:GetIsShow()
   return self._isShow
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapRoundInfoRenderComponent.SetIsShow = function(self, isShow)
-  -- function num : 0_17
+function TrapRoundInfoRenderComponent:SetIsShow(isShow)
   self._isShow = isShow
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.TrapRoundInfoRender = function(self)
-  -- function num : 0_18
-  return self:GetComponent((self.WEComponentsEnum).TrapRoundInfoRender)
+function Entity:TrapRoundInfoRender()
+  return self:GetComponent(self.WEComponentsEnum.TrapRoundInfoRender)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasTrapRoundInfoRender = function(self)
-  -- function num : 0_19
-  return self:HasComponent((self.WEComponentsEnum).TrapRoundInfoRender)
+function Entity:HasTrapRoundInfoRender()
+  return self:HasComponent(self.WEComponentsEnum.TrapRoundInfoRender)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddTrapRoundInfoRender = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).TrapRoundInfoRender
+function Entity:AddTrapRoundInfoRender()
+  local index = self.WEComponentsEnum.TrapRoundInfoRender
   local component = TrapRoundInfoRenderComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceTrapRoundInfoRender = function(self, entityID, headshowtype, param)
-  -- function num : 0_21 , upvalues : _ENV
+function Entity:ReplaceTrapRoundInfoRender(entityID, headshowtype, param)
   local roundinfo = self:TrapRoundInfoRender()
   if roundinfo == nil then
     roundinfo = TrapRoundInfoRenderComponent:New()
   end
   roundinfo:SetParam(entityID, headshowtype, param)
-  self:ReplaceComponent((self.WEComponentsEnum).TrapRoundInfoRender, roundinfo)
+  self:ReplaceComponent(self.WEComponentsEnum.TrapRoundInfoRender, roundinfo)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveTrapRoundInfoRender = function(self)
-  -- function num : 0_22
+function Entity:RemoveTrapRoundInfoRender()
   if self:HasTrapRoundInfoRender() then
-    self:RemoveComponent((self.WEComponentsEnum).TrapRoundInfoRender)
+    self:RemoveComponent(self.WEComponentsEnum.TrapRoundInfoRender)
   end
 end
-
-

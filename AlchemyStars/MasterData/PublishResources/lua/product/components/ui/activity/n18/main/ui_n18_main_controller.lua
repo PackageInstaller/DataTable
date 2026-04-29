@@ -1,71 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n18/main/ui_n18_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN18MainController", UIController)
 UIN18MainController = UIN18MainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN18MainController.Constructor = function(self, ui_root_transform)
-  -- function num : 0_0 , upvalues : _ENV
-  self.strsLeftTime = {"str_n18_left_time_d_h", "str_n18_left_time_h_m", "str_n18_left_time_m"}
-  self.strsTakeAwardLeftTime = {"str_n18_take_award_left_time_d_h", "str_n18_take_award_left_time_h_m", "str_n18_take_award_left_time_m"}
-  self.strsWillOpen = {"str_n14_will_open_after_d_h", "str_n14_will_open_after_h_m", "str_n14_will_open_after_m"}
-  self.lanActivityTip = {"str_activity_common_state_notstart", "str_activity_common_end"}
+function UIN18MainController:Constructor(ui_root_transform)
+  self.strsLeftTime = {
+    "str_n18_left_time_d_h",
+    "str_n18_left_time_h_m",
+    "str_n18_left_time_m"
+  }
+  self.strsTakeAwardLeftTime = {
+    "str_n18_take_award_left_time_d_h",
+    "str_n18_take_award_left_time_h_m",
+    "str_n18_take_award_left_time_m"
+  }
+  self.strsWillOpen = {
+    "str_n14_will_open_after_d_h",
+    "str_n14_will_open_after_h_m",
+    "str_n14_will_open_after_m"
+  }
+  self.lanActivityTip = {
+    "str_activity_common_state_notstart",
+    "str_activity_common_end"
+  }
   self._loginModule = self:GetModule(LoginModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN18MainController:LoadDataOnEnter(TT, res, uiParams)
   if not self.data then
     self.data = N18Data:New()
   end
-  self.mCampaign = (self.data):GetCampaignModule()
-  ;
-  (self.data):RequestCampaign(TT, ECampaignType.CAMPAIGN_TYPE_N18, res)
+  self.mCampaign = self.data:GetCampaignModule()
+  self.data:RequestCampaign(TT, ECampaignType.CAMPAIGN_TYPE_N18, res)
   self.isShow = true
   self:LoadDataOnEnter_BattlePass(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.LoadDataOnEnter_BattlePass = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN18MainController:LoadDataOnEnter_BattlePass(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   self._battlepassCampaign = UIActivityCampaign:New()
-  ;
-  (self._battlepassCampaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+  self._battlepassCampaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
-  (N18Data.SetPrefsMain)()
+function UIN18MainController:OnShow(uiParams)
+  N18Data.SetPrefsMain()
   self.atlas = self:GetAsset("UIN18.spriteatlas", LoadType.SpriteAtlas)
-  self._useColor = {Color(1, 1, 1, 1), Color(0.36470588235294, 0.36470588235294, 0.36470588235294, 0.84705882352941)}
+  self._useColor = {
+    Color(1, 1, 1, 1),
+    Color(0.36470588235294116, 0.36470588235294116, 0.36470588235294116, 0.8470588235294118)
+  }
   local btns = self:GetUIComponent("UISelectObjectPath", "btns")
   self._backBtns = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, nil, nil, false, function()
-    -- function num : 0_3_1 , upvalues : self
+  end, nil, nil, false, function()
     if self.isShow then
       self.isShow = false
       self:ShowHideUI()
     end
-  end
-)
-  self.animTopBtns = ((self._backBtns):GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+  end)
+  self.animTopBtns = self._backBtns:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
   self.txtStageLeftTime = self:GetUIComponent("RollingText", "txtStageLeftTime")
   local economics = self:GetUIComponent("UISelectObjectPath", "economics")
   local UIN18CampaignEconomic = economics:SpawnObject("UIN18CampaignEconomic")
@@ -91,146 +86,123 @@ UIN18MainController.OnShow = function(self, uiParams)
   self.imgStageNormal = self:GetUIComponent("Image", "btnStageNormal")
   self.imgStageHard = self:GetUIComponent("Image", "btnStageHard")
   self.imgCatchFish = self:GetUIComponent("Image", "btnCatchFish")
-  self._masktable = {self:GetGameObject("MaskStageNormal"), self:GetGameObject("MaskStageHard"), self:GetGameObject("MaskCatchFish")}
-  self._modRawImagetable = {self:GetUIComponent("RawImage", "Normal"), self:GetUIComponent("RawImage", "Hard"), self:GetUIComponent("RawImage", "CatchFish")}
-  self._modImagetable = {self:GetUIComponent("Image", "btnStageNormal"), self:GetUIComponent("Image", "btnStageHard"), self:GetUIComponent("Image", "btnCatchFish")}
-  self._modTexttable = {self:GetUIComponent("UILocalizationText", "StageNormalText"), self:GetUIComponent("UILocalizationText", "StageHardText")}
+  self._masktable = {
+    self:GetGameObject("MaskStageNormal"),
+    self:GetGameObject("MaskStageHard"),
+    self:GetGameObject("MaskCatchFish")
+  }
+  self._modRawImagetable = {
+    self:GetUIComponent("RawImage", "Normal"),
+    self:GetUIComponent("RawImage", "Hard"),
+    self:GetUIComponent("RawImage", "CatchFish")
+  }
+  self._modImagetable = {
+    self:GetUIComponent("Image", "btnStageNormal"),
+    self:GetUIComponent("Image", "btnStageHard"),
+    self:GetUIComponent("Image", "btnCatchFish")
+  }
+  self._modTexttable = {
+    self:GetUIComponent("UILocalizationText", "StageNormalText"),
+    self:GetUIComponent("UILocalizationText", "StageHardText")
+  }
   self:AttachEvent(GameEventType.QuestUpdate, self._OnComponentStepChange)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._OnComponentStepChange)
   self:AttachEvent(GameEventType.OnCloseMinigame, self.OnMiniGameClose)
-  self.teActivity = (UIActivityHelper.StartTimerEvent)(self.teActivity, function()
-    -- function num : 0_3_2 , upvalues : self
+  self.teActivity = UIActivityHelper.StartTimerEvent(self.teActivity, function()
     self:FlushCDActivity()
-  end
-, 60000)
+  end, 60000)
   self.mask_big_root = self:GetGameObject("maskBigRoot")
-  ;
-  (self.mask_big_root):SetActive(false)
+  self.mask_big_root:SetActive(false)
   self.mask_big = self:GetUIComponent("MeshRenderer", "maskBig")
   self.mask_big2 = self:GetUIComponent("MeshRenderer", "maskBig2")
-  self.reqBg = (ResourceManager:GetInstance()):SyncLoadAsset("n18_zjm_bg1" .. ".mat", LoadType.Mat)
-  self.bgAsset = (self.reqBg).Obj
-  ;
-  ((self.mask_big).material):SetTexture("_MainTex1", (self.bgAsset):GetTexture("_MainTex"))
-  ;
-  ((self.mask_big2).material):SetTexture("_MainTex1", (self.bgAsset):GetTexture("_MainTex"))
+  self.reqBg = ResourceManager:GetInstance():SyncLoadAsset("n18_zjm_bg1" .. ".mat", LoadType.Mat)
+  self.bgAsset = self.reqBg.Obj
+  self.mask_big.material:SetTexture("_MainTex1", self.bgAsset:GetTexture("_MainTex"))
+  self.mask_big2.material:SetTexture("_MainTex1", self.bgAsset:GetTexture("_MainTex"))
   self.anim = self:GetUIComponent("Animation", "anim")
   self.rt = self:GetUIComponent("RawImage", "rt")
   self:Flush()
   if self:_SetImgRT(uiParams[1]) then
-    (self.mask_big_root):SetActive(true)
+    self.mask_big_root:SetActive(true)
     self:_CheckGuide()
-    ;
-    (UIWidgetHelper.PlayAnimation)(self, "anim", "eff_UIN18MainController_in", 500, function()
-    -- function num : 0_3_3 , upvalues : self
-    ((self.rt).gameObject):SetActive(false)
-  end
-)
+    UIWidgetHelper.PlayAnimation(self, "anim", "eff_UIN18MainController_in", 500, function()
+      self.rt.gameObject:SetActive(false)
+    end)
   else
-    ;
-    ((self.rt).gameObject):SetActive(false)
+    self.rt.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController._PlayAnimIn = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN18MainController:_PlayAnimIn()
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
-    (self.mask_big_root):SetActive(true)
+    self.mask_big_root:SetActive(true)
     local lockName = self:GetName() .. "_PlayAnimIn()"
     self:Lock(lockName)
-    ;
-    (self.anim):Play("eff_UIN18MainController_in")
+    self.anim:Play("eff_UIN18MainController_in")
     YIELD(TT, 1700)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN18MainController)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN18MainController)
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController._PlayAnimOut = function(self, cb)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN18MainController:_PlayAnimOut(cb)
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV, cb
     local lockName = self:GetName() .. "_PlayAnimOut()"
     self:Lock(lockName)
-    ;
-    (self.anim):Play("eff_UIN18MainController_out")
+    self.anim:Play("eff_UIN18MainController_out")
     YIELD(TT, 500)
     self:UnLock(lockName)
     cb()
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController._SetImgRT = function(self, imgRT)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIN18MainController:_SetImgRT(imgRT)
   if imgRT ~= nil then
-    (self.rt).texture = imgRT
+    self.rt.texture = imgRT
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.OnHide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN18MainController:OnHide()
   self:DetachEvent(GameEventType.QuestUpdate, self._OnComponentStepChange)
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._OnComponentStepChange)
   self:DetachEvent(GameEventType.OnCloseMinigame, self.OnMiniGameClose)
-  self.teActivity = (UIActivityHelper.CancelTimerEvent)(self.teActivity)
+  self.teActivity = UIActivityHelper.CancelTimerEvent(self.teActivity)
   self:CancelTimerEvent(ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_COMMON)
   self:CancelTimerEvent(ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_HARD)
   self:CancelTimerEvent(ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME)
   self.data = nil
   self.btnStageNormal = nil
   self.btnStageHard = nil
-  ;
-  (self.reqBg):Dispose()
+  self.reqBg:Dispose()
   self.reqBg = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.CancelTimerEvent = function(self, nState)
-  -- function num : 0_8 , upvalues : _ENV
-  if nState == ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_COMMON and self.teNormal then
-    ((GameGlobal.Timer)()):CancelEvent(self.teNormal)
-    self.teNormal = nil
-  end
-  if nState == ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_HARD and self.teHard then
-    ((GameGlobal.Timer)()):CancelEvent(self.teHard)
-    self.teHard = nil
-  end
-  if nState == ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME and self.teMini then
-    ((GameGlobal.Timer)()):CancelEvent(self.teMini)
+function UIN18MainController:CancelTimerEvent(nState)
+  if nState == ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_COMMON then
+    if self.teNormal then
+      GameGlobal.Timer():CancelEvent(self.teNormal)
+      self.teNormal = nil
+    end
+  elseif nState == ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_HARD then
+    if self.teHard then
+      GameGlobal.Timer():CancelEvent(self.teHard)
+      self.teHard = nil
+    end
+  elseif nState == ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME and self.teMini then
+    GameGlobal.Timer():CancelEvent(self.teMini)
     self.teMini = nil
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_9
+function UIN18MainController:_OnComponentStepChange(campaign_id, component_id, component_step)
   if self.data then
     self:Flush()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.Flush = function(self)
-  -- function num : 0_10
+function UIN18MainController:Flush()
   self:FlushStateBattlePass()
   self:FlushStateShop()
   self:FlushStateAward()
@@ -242,364 +214,242 @@ UIN18MainController.Flush = function(self)
   self:FlushMinigameStage()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.SetModeState = function(self, mode, isOpen)
-  -- function num : 0_11
-  if (self._masktable)[mode] then
-    ((self._masktable)[mode]):SetActive(not isOpen)
+function UIN18MainController:SetModeState(mode, isOpen)
+  if self._masktable[mode] then
+    self._masktable[mode]:SetActive(not isOpen)
   end
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self._modRawImagetable)[mode] and (not isOpen or not (self._useColor)[1]) then
-    ((self._modRawImagetable)[mode]).color = (self._useColor)[2]
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
-    if (self._modImagetable)[mode] and (not isOpen or not (self._useColor)[1]) then
-      ((self._modImagetable)[mode]).color = (self._useColor)[2]
-    end
+  if self._modRawImagetable[mode] then
+    self._modRawImagetable[mode].color = isOpen and self._useColor[1] or self._useColor[2]
+  end
+  if self._modImagetable[mode] then
+    self._modImagetable[mode].color = isOpen and self._useColor[1] or self._useColor[2]
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.FlushStateBattlePass = function(self)
-  -- function num : 0_12
-  local open = ((self.data):GetActivityCampaign()):CheckCampaignOpen()
+function UIN18MainController:FlushStateBattlePass()
+  local open = self.data:GetActivityCampaign():CheckCampaignOpen()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.FlushStateShop = function(self)
-  -- function num : 0_13
-  local s = (self.data):GetStateShop()
+function UIN18MainController:FlushStateShop()
+  local s = self.data:GetStateShop()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.FlushStateAward = function(self)
-  -- function num : 0_14
-  local s = (self.data):GetStateCumulativeLogin()
+function UIN18MainController:FlushStateAward()
+  local s = self.data:GetStateCumulativeLogin()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.FlushStateMinigame = function(self)
-  -- function num : 0_15
-  local s = (self.data):GetStateMiniGame()
+function UIN18MainController:FlushStateMinigame()
+  local s = self.data:GetStateMiniGame()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.FlushRedPointBattlePass = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local bShow = (UIActivityHelper.CheckCampaignSampleRedPoint)(self._battlepassCampaign)
-  ;
-  (self.redBattlePass):SetActive(bShow)
+function UIN18MainController:FlushRedPointBattlePass()
+  local bShow = UIActivityHelper.CheckCampaignSampleRedPoint(self._battlepassCampaign)
+  self.redBattlePass:SetActive(bShow)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.FlushRedPointAward = function(self)
-  -- function num : 0_17
-  local red = (self.data):CheckRedCumulativeLogin()
-  ;
-  (self.redAward):SetActive(red)
+function UIN18MainController:FlushRedPointAward()
+  local red = self.data:CheckRedCumulativeLogin()
+  self.redAward:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.FlushRedPointStageNormal = function(self)
-  -- function num : 0_18
+function UIN18MainController:FlushRedPointStageNormal()
   if not self.data then
-    return 
+    return
   end
-  if not (self.data):CheckRedNormal() then
-    local red = (self.data):CheckRedLevelFixteam()
-  end
-  ;
-  (self.redStageNormal):SetActive(red)
+  local red = self.data:CheckRedNormal() or self.data:CheckRedLevelFixteam()
+  self.redStageNormal:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.FlushNewStageHard = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIN18MainController:FlushNewStageHard()
   if not self.data then
-    return 
+    return
   end
-  local new = ((self.data):GetStateHard() == UIN18BtnState.Normal and not (N18Data.HasPrefsHard)())
-  ;
-  (self.newStageHard):SetActive(new)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local new = self.data:GetStateHard() == UIN18BtnState.Normal and not N18Data.HasPrefsHard()
+  self.newStageHard:SetActive(new)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.FlushNewCatchFish = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIN18MainController:FlushNewCatchFish()
   if not self.data then
-    return 
+    return
   end
-  local new = not (self.data):CheckNewMiniGame() or (self.data):GetStateMiniGame() == UIN18BtnState.Normal
-  local red = ((self.data):GetStateMiniGame() == UIN18BtnState.Normal and (self.data):CheckRedMiniGame())
-  ;
-  (UIActivityHelper.SetWidgetNewAndRed)(self.newCatchFish, new, self.redCatchFish, red)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  local new = self.data:CheckNewMiniGame() and self.data:GetStateMiniGame() == UIN18BtnState.Normal
+  local red = self.data:GetStateMiniGame() == UIN18BtnState.Normal and self.data:CheckRedMiniGame()
+  UIActivityHelper.SetWidgetNewAndRed(self.newCatchFish, new, self.redCatchFish, red)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.FlushCDActivity = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
-  local cHardInfo = (self.data):GetComponentInfoHard()
-  local cs = (self.data):GetCampaignSample()
+function UIN18MainController:FlushCDActivity()
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
+  local cHardInfo = self.data:GetComponentInfoHard()
+  local cs = self.data:GetCampaignSample()
   if nowTimestamp < cHardInfo.m_close_time then
     self:FlushCDText(self.txtStageLeftTime, cHardInfo.m_close_time, self.strsLeftTime)
+  elseif nowTimestamp < cs.end_time then
+    self:FlushCDText(self.txtStageLeftTime, cs.end_time, self.strsTakeAwardLeftTime)
   else
-    if nowTimestamp < cs.end_time then
-      self:FlushCDText(self.txtStageLeftTime, cs.end_time, self.strsTakeAwardLeftTime)
-    else
-      ;
-      (self.txtStageLeftTime):RefreshText((StringTable.Get)("str_activity_n16_main_remaintime_close"))
-      self.teActivity = (UIActivityHelper.CancelTimerEvent)(self.teActivity)
-    end
+    self.txtStageLeftTime:RefreshText(StringTable.Get("str_activity_n16_main_remaintime_close"))
+    self.teActivity = UIActivityHelper.CancelTimerEvent(self.teActivity)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.RegisterTimeEvent = function(self, seconds, componentId)
-  -- function num : 0_22 , upvalues : _ENV
+function UIN18MainController:RegisterTimeEvent(seconds, componentId)
   self:CancelTimerEvent(componentId)
-  ;
-  (Log.warn)("### RegisterTimeEvent componentId=", componentId)
+  Log.warn("### RegisterTimeEvent componentId=", componentId)
   if seconds < 60 then
     seconds = 60
   end
   local ms = seconds * 1000
-  local te = ((GameGlobal.Timer)()):AddEvent(ms, function()
-    -- function num : 0_22_0 , upvalues : self, componentId, _ENV
+  local te = GameGlobal.Timer():AddEvent(ms, function()
     self:StartTask(function(TT)
-      -- function num : 0_22_0_0 , upvalues : self, componentId, _ENV
       if self.data then
-        (self.data):RequestCampaign(TT)
+        self.data:RequestCampaign(TT)
         if componentId == ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_COMMON then
           self:FlushNormalStage()
-        else
-          if componentId == ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_HARD then
-            self:FlushHardStage()
-          else
-            if componentId == ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME then
-              self:FlushMinigameStage()
-            end
-          end
+        elseif componentId == ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_HARD then
+          self:FlushHardStage()
+        elseif componentId == ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME then
+          self:FlushMinigameStage()
         end
       end
-    end
-, self)
-  end
-)
+    end, self)
+  end)
   if componentId == ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_COMMON then
     self.teNormal = te
-  else
-    if componentId == ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_HARD then
-      self.teHard = te
-    else
-      if componentId == ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME then
-        self.teMini = te
-      end
-    end
+  elseif componentId == ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_HARD then
+    self.teHard = te
+  elseif componentId == ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME then
+    self.teMini = te
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.FlushNormalStage = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.btnStageNormal).interactable = false
-  local cNormalInfo = (self.data):GetComponentInfoNormal()
+function UIN18MainController:FlushNormalStage()
+  self.btnStageNormal.interactable = false
+  local cNormalInfo = self.data:GetComponentInfoNormal()
   if not cNormalInfo then
-    (Log.fatal)("### cNormalInfo nil.")
-    return 
+    Log.fatal("### cNormalInfo nil.")
+    return
   end
-  local state = (self.data):GetStateNormal()
+  local state = self.data:GetStateNormal()
   self:SetModeState(1, state == UIN18BtnState.Normal)
   if state == UIN18BtnState.NotOpen then
-    local leftSeconds = (UICommonHelper.CalcLeftSeconds)(cNormalInfo.m_unlock_time)
+    local leftSeconds = UICommonHelper.CalcLeftSeconds(cNormalInfo.m_unlock_time)
     self:RegisterTimeEvent(leftSeconds, ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_COMMON)
   elseif state == UIN18BtnState.Closed then
     self:CancelTimerEvent(ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_COMMON)
+  elseif state == UIN18BtnState.Normal then
+    self.btnStageNormal.interactable = true
+    local leftSeconds = UICommonHelper.CalcLeftSeconds(cNormalInfo.m_close_time)
+    self:RegisterTimeEvent(leftSeconds, ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_COMMON)
   else
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R3 in 'UnsetPending'
-
-    if state == UIN18BtnState.Normal then
-      (self.btnStageNormal).interactable = true
-      local leftSeconds = (UICommonHelper.CalcLeftSeconds)(cNormalInfo.m_close_time)
-      self:RegisterTimeEvent(leftSeconds, ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_COMMON)
-    else
-      (Log.fatal)("### state=", state)
-    end
+    Log.fatal("### state=", state)
   end
   self:FlushRedPointStageNormal()
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.FlushCDText = function(self, uiText, time, strs)
-  -- function num : 0_24 , upvalues : _ENV
-  local leftSeconds = (UICommonHelper.CalcLeftSeconds)(time)
-  local d, h, m, s = (UICommonHelper.S2DHMS)(leftSeconds)
-  if d >= 1 then
-    uiText:RefreshText((StringTable.Get)(strs[1], (math.floor)(d), (math.floor)(h)))
+function UIN18MainController:FlushCDText(uiText, time, strs)
+  local leftSeconds = UICommonHelper.CalcLeftSeconds(time)
+  local d, h, m, s = UICommonHelper.S2DHMS(leftSeconds)
+  if 1 <= d then
+    uiText:RefreshText(StringTable.Get(strs[1], math.floor(d), math.floor(h)))
+  elseif 1 <= h then
+    uiText:RefreshText(StringTable.Get(strs[2], math.floor(h), math.floor(m)))
+  elseif 1 <= m then
+    uiText:RefreshText(StringTable.Get(strs[3], math.floor(m)))
   else
-    if h >= 1 then
-      uiText:RefreshText((StringTable.Get)(strs[2], (math.floor)(h), (math.floor)(m)))
-    else
-      if m >= 1 then
-        uiText:RefreshText((StringTable.Get)(strs[3], (math.floor)(m)))
-      else
-        uiText:RefreshText((StringTable.Get)(strs[3], "<1"))
-      end
-    end
+    uiText:RefreshText(StringTable.Get(strs[3], "<1"))
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.FlushHardStage = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.btnStageHard).interactable = false
-  ;
-  (self.cdStageHard):SetActive(false)
-  local stateHard = (self.data):GetStateHard()
-  local cHardInfo = (self.data):GetComponentInfoHard()
+function UIN18MainController:FlushHardStage()
+  self.btnStageHard.interactable = false
+  self.cdStageHard:SetActive(false)
+  local stateHard = self.data:GetStateHard()
+  local cHardInfo = self.data:GetComponentInfoHard()
   if not cHardInfo then
-    (Log.fatal)("### cHardInfo nil.")
-    return 
+    Log.fatal("### cHardInfo nil.")
+    return
   end
-  ;
-  (self.hardLockStage):SetActive(stateHard ~= UIN18BtnState.Normal)
+  self.hardLockStage:SetActive(stateHard ~= UIN18BtnState.Normal)
   self:SetModeState(2, stateHard == UIN18BtnState.Normal)
   if stateHard == UIN18BtnState.NotOpen then
-    (self.cdStageHard):SetActive(true)
+    self.cdStageHard:SetActive(true)
     self:FlushCDText(self.txtStageHardOpenTime, cHardInfo.m_unlock_time, self.strsWillOpen)
-    local leftSeconds = (UICommonHelper.CalcLeftSeconds)(cHardInfo.m_unlock_time)
+    local leftSeconds = UICommonHelper.CalcLeftSeconds(cHardInfo.m_unlock_time)
     local secondsLeft = leftSeconds % 60
     self:RegisterTimeEvent(secondsLeft, ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_HARD)
   elseif stateHard == UIN18BtnState.Locked then
-    (self.cdStageHard):SetActive(true)
-    local cfgv = (Cfg.cfg_campaign_mission)[cHardInfo.m_need_mission_id]
-    local lvName = (StringTable.Get)(cfgv.Name)
-    ;
-    (self.txtStageHardOpenTime):RefreshText((StringTable.Get)("str_activity_common_will_open_after_clearance", lvName))
+    self.cdStageHard:SetActive(true)
+    local cfgv = Cfg.cfg_campaign_mission[cHardInfo.m_need_mission_id]
+    local lvName = StringTable.Get(cfgv.Name)
+    self.txtStageHardOpenTime:RefreshText(StringTable.Get("str_activity_common_will_open_after_clearance", lvName))
   elseif stateHard == UIN18BtnState.Closed then
     self:CancelTimerEvent(ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_HARD)
   else
-    -- DECOMPILER ERROR at PC96: Confused about usage of register: R3 in 'UnsetPending'
-
-    (self.btnStageHard).interactable = true
-    local leftSeconds = (UICommonHelper.CalcLeftSeconds)(cHardInfo.m_close_time)
+    self.btnStageHard.interactable = true
+    local leftSeconds = UICommonHelper.CalcLeftSeconds(cHardInfo.m_close_time)
     self:RegisterTimeEvent(leftSeconds, ECampaignN18ComponentID.ECAMPAIGN_N18_LEVEL_HARD)
   end
   self:FlushNewStageHard()
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.FlushMinigameStage = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIN18MainController:FlushMinigameStage()
   self:FlushStateMinigame()
-  local stateMini = (self.data):GetStateMiniGame()
-  local cGameInfo = (self.data):GetComponentInfoMinigame()
-  ;
-  (self.lockImage):SetActive(stateMini == UIN18BtnState.NotOpen)
-  ;
-  (self.lockStage):SetActive(stateMini ~= UIN18BtnState.Normal)
+  local stateMini = self.data:GetStateMiniGame()
+  local cGameInfo = self.data:GetComponentInfoMinigame()
+  self.lockImage:SetActive(stateMini == UIN18BtnState.NotOpen)
+  self.lockStage:SetActive(stateMini ~= UIN18BtnState.Normal)
   self:SetModeState(3, stateMini == UIN18BtnState.Normal)
-  ;
-  ((self.txtminigameOpenTime).gameObject):SetActive(false)
+  self.txtminigameOpenTime.gameObject:SetActive(false)
   if not stateMini or not cGameInfo then
-    return 
+    return
   end
   if stateMini == UIN18BtnState.NotOpen then
-    ((self.txtminigameOpenTime).gameObject):SetActive(true)
+    self.txtminigameOpenTime.gameObject:SetActive(true)
     self:FlushCDText(self.txtminigameOpenTime, cGameInfo.m_unlock_time, self.strsWillOpen)
-    local leftSeconds = (UICommonHelper.CalcLeftSeconds)(cGameInfo.m_unlock_time)
+    local leftSeconds = UICommonHelper.CalcLeftSeconds(cGameInfo.m_unlock_time)
     local secondsLeft = leftSeconds % 60
     self:RegisterTimeEvent(secondsLeft, ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME)
   elseif stateMini == UIN18BtnState.Locked then
-    local cfgv = (Cfg.cfg_campaign_mission)[cGameInfo.m_need_mission_id]
-    local lvName = (StringTable.Get)(cfgv.Name)
-    ;
-    ((self.txtminigameOpenTime).gameObject):SetActive(true)
+    local cfgv = Cfg.cfg_campaign_mission[cGameInfo.m_need_mission_id]
+    local lvName = StringTable.Get(cfgv.Name)
+    self.txtminigameOpenTime.gameObject:SetActive(true)
   elseif stateMini == UIN18BtnState.Closed then
     self:CancelTimerEvent(ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME)
   else
-    local leftSeconds = (UICommonHelper.CalcLeftSeconds)(cGameInfo.m_close_time)
+    local leftSeconds = UICommonHelper.CalcLeftSeconds(cGameInfo.m_close_time)
     self:RegisterTimeEvent(leftSeconds, ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME)
   end
   self:FlushNewCatchFish()
-  -- DECOMPILER ERROR: 9 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.bgOnClick = function(self, go)
-  -- function num : 0_27
+function UIN18MainController:bgOnClick(go)
   if not self.isShow then
     self.isShow = true
     self:ShowHideUI()
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.btnIntroOnClick = function(self, go)
-  -- function num : 0_28
+function UIN18MainController:btnIntroOnClick(go)
   self:ShowDialog("UIN18Intro2", "UIN18Main")
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.btnBattlePassOnClick = function(self, go)
-  -- function num : 0_29 , upvalues : _ENV
-  ((UIActivityBattlePassHelper.OpenMainController)())(self._battlepassCampaign)
+function UIN18MainController:btnBattlePassOnClick(go)
+  UIActivityBattlePassHelper.OpenMainController()(self._battlepassCampaign)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.btnLoginAwardOnClick = function(self, go)
-  -- function num : 0_30 , upvalues : _ENV
+function UIN18MainController:btnLoginAwardOnClick(go)
   self:ShowDialog("UIActivityTotalLoginAwardController", false, ECampaignType.CAMPAIGN_TYPE_N18, ECampaignN18ComponentID.ECAMPAIGN_N18_CUMULATIVE_LOGIN)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.btnShopOnClick = function(self, go)
-  -- function num : 0_31 , upvalues : _ENV
-  local cType, cId = (self.data):GetCampaignTypeId()
-  ;
-  (ClientCampaignShop.OpenCampaignShop)(cType, cId, function()
-    -- function num : 0_31_0 , upvalues : _ENV, cId
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIN18MainController:btnShopOnClick(go)
+  local cType, cId = self.data:GetCampaignTypeId()
+  ClientCampaignShop.OpenCampaignShop(cType, cId, function()
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
     campaignModule:CampaignSwitchState(true, UIStateType.UIN18Main, UIStateType.UIMain, nil, cId)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.btnStageNormalOnClick = function(self, go)
-  -- function num : 0_32 , upvalues : _ENV
-  local state = (self.data):GetStateNormal()
+function UIN18MainController:btnStageNormalOnClick(go)
+  local state = self.data:GetStateNormal()
   if state == UIN18BtnState.Normal then
     self:SwitchState(UIStateType.UIN18LineMissionController)
   else
@@ -607,116 +457,78 @@ UIN18MainController.btnStageNormalOnClick = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.btnStageHardOnClick = function(self, go)
-  -- function num : 0_33 , upvalues : _ENV
-  local stateHard = (self.data):GetStateHard()
+function UIN18MainController:btnStageHardOnClick(go)
+  local stateHard = self.data:GetStateHard()
   if stateHard == UIN18BtnState.Locked then
-    local cHardInfo = (self.data):GetComponentInfoHard()
+    local cHardInfo = self.data:GetComponentInfoHard()
     if cHardInfo then
-      local cfgv = (Cfg.cfg_campaign_mission)[cHardInfo.m_need_mission_id]
+      local cfgv = Cfg.cfg_campaign_mission[cHardInfo.m_need_mission_id]
       if cfgv then
-        local lvName = (StringTable.Get)(cfgv.Name)
-        local msg = (StringTable.Get)("str_activity_common_will_open_after_clearance", lvName)
-        ;
-        (ToastManager.ShowToast)(msg)
+        local lvName = StringTable.Get(cfgv.Name)
+        local msg = StringTable.Get("str_activity_common_will_open_after_clearance", lvName)
+        ToastManager.ShowToast(msg)
       end
     end
+  elseif stateHard == UIN18BtnState.Normal then
+    if not N18Data.HasPrefsHard() then
+      N18Data.SetPrefsHard()
+    end
+    self:SwitchState(UIStateType.UIN18HardMissionController)
   else
-    do
-      if stateHard == UIN18BtnState.Normal then
-        if not (N18Data.HasPrefsHard)() then
-          (N18Data.SetPrefsHard)()
-        end
-        self:SwitchState(UIStateType.UIN18HardMissionController)
-      else
-        self:_ShowBtnErrorMsg(stateHard)
-      end
-    end
+    self:_ShowBtnErrorMsg(stateHard)
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.BtnCatchFishOnClick = function(self, go)
-  -- function num : 0_34 , upvalues : _ENV
-  local statefish = (self.data):GetStateMiniGame()
+function UIN18MainController:BtnCatchFishOnClick(go)
+  local statefish = self.data:GetStateMiniGame()
   if statefish == UIN18BtnState.Locked then
-    return 
-  else
-    if statefish == UIN18BtnState.Normal then
-      (UIActivityHelper.PlayFirstPlot_Component)((self.data):GetActivityCampaign(), ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME, function()
-    -- function num : 0_34_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIFindTreasureDetail", true, ECampaignType.CAMPAIGN_TYPE_N18, ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME)
-  end
-)
-      if not (N18Data.HasPrefsMiniGame)() then
-        (N18Data.SetPrefsMiniGame)()
-      end
-    else
-      self:_ShowBtnErrorMsg(statefish)
+    return
+  elseif statefish == UIN18BtnState.Normal then
+    UIActivityHelper.PlayFirstPlot_Component(self.data:GetActivityCampaign(), ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME, function()
+      GameGlobal.UIStateManager():ShowDialog("UIFindTreasureDetail", true, ECampaignType.CAMPAIGN_TYPE_N18, ECampaignN18ComponentID.ECAMPAIGN_N18_MINI_GAME)
+    end)
+    if not N18Data.HasPrefsMiniGame() then
+      N18Data.SetPrefsMiniGame()
     end
+  else
+    self:_ShowBtnErrorMsg(statefish)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController._ShowBtnErrorMsg = function(self, btnState)
-  -- function num : 0_35 , upvalues : _ENV
+function UIN18MainController:_ShowBtnErrorMsg(btnState)
   local errType = 0
   if btnState == UIN18BtnState.NotOpen then
     errType = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
-  else
-    if btnState == UIN18BtnState.Closed then
-      errType = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
-    end
+  elseif btnState == UIN18BtnState.Closed then
+    errType = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
   end
-  ;
-  (self.mCampaign):ShowErrorToast(errType, true)
+  self.mCampaign:ShowErrorToast(errType, true)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.ShowHideUI = function(self)
-  -- function num : 0_36
+function UIN18MainController:ShowHideUI()
   local uielem = self:GetGameObject("UIElements")
   if self.isShow then
-    (self.anim):Play("eff_UIN18MainController_in_2")
+    self.anim:Play("eff_UIN18MainController_in_2")
   else
-    ;
-    (self.anim):Play("eff_UIN18MainController_out")
+    self.anim:Play("eff_UIN18MainController_out")
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController._CheckGuide = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function UIN18MainController:_CheckGuide()
   self:Lock("UIN18MainControllerCheckGuide")
   self:StartTask(function(TT)
-    -- function num : 0_37_0 , upvalues : _ENV, self
     YIELD(TT, 1700)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN18MainController)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN18MainController)
     self:UnLock("UIN18MainControllerCheckGuide")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN18MainController.OnMiniGameClose = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function UIN18MainController:OnMiniGameClose()
   local res = AsyncRequestRes:New()
   self:StartTask(function(TT)
-    -- function num : 0_38_0 , upvalues : self, _ENV, res
-    (self.data):RequestCampaign(TT, ECampaignType.CAMPAIGN_TYPE_N18, res)
+    self.data:RequestCampaign(TT, ECampaignType.CAMPAIGN_TYPE_N18, res)
     if res:GetSucc() then
       self:Flush()
     end
-  end
-, self)
+  end, self)
 end
-
-

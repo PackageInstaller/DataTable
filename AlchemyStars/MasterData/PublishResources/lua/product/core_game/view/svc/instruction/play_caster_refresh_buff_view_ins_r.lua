@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_refresh_buff_view_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterRefreshBuffViewInstruction", BaseInstruction)
 PlayCasterRefreshBuffViewInstruction = PlayCasterRefreshBuffViewInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterRefreshBuffViewInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterRefreshBuffViewInstruction:Constructor(paramList)
   self._buffID = tonumber(paramList.buffID) or 0
   self._buffEffectType = tonumber(paramList.buffEffectType) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterRefreshBuffViewInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterRefreshBuffViewInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local playBuffService = world:GetService("PlayBuff")
   local utilDataSvc = world:GetService("UtilData")
@@ -26,7 +16,7 @@ PlayCasterRefreshBuffViewInstruction.DoInstruction = function(self, TT, casterEn
   local buffViewComponent = casterEntity:BuffView()
   if buffViewComponent then
     local viewIns = buffViewComponent:GetBuffViewInstanceArray()
-    for _,inst in ipairs(viewIns) do
+    for _, inst in ipairs(viewIns) do
       local buffID = inst:BuffID()
       local buffEffectType = inst:GetBuffEffectType()
       if self._buffID == buffID or self._buffEffectType == buffEffectType then
@@ -35,5 +25,3 @@ PlayCasterRefreshBuffViewInstruction.DoInstruction = function(self, TT, casterEn
     end
   end
 end
-
-

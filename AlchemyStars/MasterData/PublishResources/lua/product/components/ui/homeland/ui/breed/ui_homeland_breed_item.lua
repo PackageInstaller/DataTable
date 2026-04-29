@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/breed/ui_homeland_breed_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBreedItem", UICustomWidget)
 UIHomelandBreedItem = UIHomelandBreedItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBreedItem.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandBreedItem:Constructor()
   self._data = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandBreedItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandBreedItem:_GetComponents()
   self._backgroundRect = self:GetUIComponent("RectTransform", "Background")
   self._quality = self:GetUIComponent("Image", "Quality")
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
@@ -30,27 +17,16 @@ UIHomelandBreedItem._GetComponents = function(self)
   self._flag = self:GetUIComponent("Image", "Flag")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItem.SetData = function(self, data, backgroundSize, iconSize)
-  -- function num : 0_3
+function UIHomelandBreedItem:SetData(data, backgroundSize, iconSize)
   self._data = data
-  ;
-  ((self.view).gameObject):SetActive(self._data ~= nil)
+  self.view.gameObject:SetActive(self._data ~= nil)
   if self._data then
-    (self._icon):LoadImage((self._data).Icon)
+    self._icon:LoadImage(self._data.Icon)
   end
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
   if backgroundSize then
-    (self._backgroundRect).sizeDelta = backgroundSize
+    self._backgroundRect.sizeDelta = backgroundSize
   end
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
   if iconSize then
-    (self._iconRect).sizeDelta = iconSize
+    self._iconRect.sizeDelta = iconSize
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
-
-

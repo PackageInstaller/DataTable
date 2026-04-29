@@ -1,103 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_lost_land/ui_lost_land_mission_info_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILostLandMissionInfoController", UIController)
 UILostLandMissionInfoController = UILostLandMissionInfoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILostLandMissionInfoController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UILostLandMissionInfoController:OnShow(uiParams)
   self._missionid = uiParams[1]
-  self._uiModule = (GameGlobal.GetUIModule)(LostAreaModule)
+  self._uiModule = GameGlobal.GetUIModule(LostAreaModule)
   self:GetComponents()
   self:GetAwardInfo()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMissionInfoController.GetComponents = function(self)
-  -- function num : 0_1
+function UILostLandMissionInfoController:GetComponents()
   self._recommendPools = self:GetUIComponent("UISelectObjectPath", "recommendPools")
   self._awardPool = self:GetUIComponent("UISelectObjectPath", "awardPool")
   local itemTips = self:GetUIComponent("UISelectObjectPath", "itemTips")
   self._selectInfo = itemTips:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMissionInfoController.OnValue = function(self)
-  -- function num : 0_2
+function UILostLandMissionInfoController:OnValue()
   self:GetFilterData()
   self:SetAwardPool()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMissionInfoController.SetAwardPool = function(self)
-  -- function num : 0_3
-  self._count = (self._uiModule):GetPetAwardCount()
-  ;
-  (self._awardPool):SpawnObjects("UILostLandMissionInfoItem", self._count)
+function UILostLandMissionInfoController:SetAwardPool()
+  self._count = self._uiModule:GetPetAwardCount()
+  self._awardPool:SpawnObjects("UILostLandMissionInfoItem", self._count)
   self:SetAwardData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMissionInfoController.SetAwardData = function(self)
-  -- function num : 0_4
-  local pools = (self._awardPool):GetAllSpawnList()
+function UILostLandMissionInfoController:SetAwardData()
+  local pools = self._awardPool:GetAllSpawnList()
   for i = 1, #pools do
     local item = pools[i]
     if i <= self._count then
       item:Active(true)
       item:SetData(i, self._petAwardCount, function(id, pos)
-    -- function num : 0_4_0 , upvalues : self
-    self:ItemInfo(id, pos)
-  end
-)
+        self:ItemInfo(id, pos)
+      end)
     else
       item:Active(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMissionInfoController.ItemInfo = function(self, id, pos)
-  -- function num : 0_5
-  (self._selectInfo):SetData(id, pos)
+function UILostLandMissionInfoController:ItemInfo(id, pos)
+  self._selectInfo:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMissionInfoController.closeBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UILostLandMissionInfoController:closeBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMissionInfoController.GetFilterData = function(self)
-  -- function num : 0_7
-  local recommendList = (self._uiModule):GetRecommendConditionList()
-  ;
-  (self._recommendPools):SpawnObjects("UILostLandFilterItem", #recommendList)
-  local pools = (self._recommendPools):GetAllSpawnList()
+function UILostLandMissionInfoController:GetFilterData()
+  local recommendList = self._uiModule:GetRecommendConditionList()
+  self._recommendPools:SpawnObjects("UILostLandFilterItem", #recommendList)
+  local pools = self._recommendPools:GetAllSpawnList()
   for i = 1, #pools do
     local item = pools[i]
     item:SetData(recommendList[i])
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMissionInfoController.GetAwardInfo = function(self)
-  -- function num : 0_8
-  local stageData = (self._uiModule):GetMissionDataByMissionID(self._missionid)
+function UILostLandMissionInfoController:GetAwardInfo()
+  local stageData = self._uiModule:GetMissionDataByMissionID(self._missionid)
   self._petAwardCount = stageData:GetPetAward()
 end
-
-

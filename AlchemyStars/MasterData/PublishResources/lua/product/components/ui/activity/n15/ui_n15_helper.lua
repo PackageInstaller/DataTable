@@ -1,162 +1,147 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n15/ui_n15_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local N15ToolFunctions = {GetRemainTime = function(time, color)
-  -- function num : 0_0 , upvalues : _ENV
-  local colorStart, colorEnd, day, hour, minute, daystr, hourstr, minutestr = nil, nil, nil, nil, nil, nil, nil, nil
-  day = (math.floor)(time / 86400)
-  hour = (math.floor)(time / 3600) % 24
-  minute = (math.floor)(time / 60) % 60
-  if color then
-    colorStart = "<color=#" .. color .. ">"
-    colorEnd = "</color>"
-    if day then
-      daystr = colorStart .. day .. colorEnd
+local N15ToolFunctions = {
+  GetRemainTime = function(time, color)
+    local colorStart, colorEnd, day, hour, minute, daystr, hourstr, minutestr
+    day = math.floor(time / 86400)
+    hour = math.floor(time / 3600) % 24
+    minute = math.floor(time / 60) % 60
+    if color then
+      colorStart = "<color=#" .. color .. ">"
+      colorEnd = "</color>"
+      if day then
+        daystr = colorStart .. day .. colorEnd
+      else
+        daystr = day
+      end
+      if hour then
+        hourstr = colorStart .. hour .. colorEnd
+      else
+        hourstr = hour
+      end
+      if minute then
+        minutestr = colorStart .. minute .. colorEnd
+      else
+        minutestr = minute
+      end
     else
       daystr = day
-    end
-    if hour then
-      hourstr = colorStart .. hour .. colorEnd
-    else
       hourstr = hour
-    end
-    if minute then
-      minutestr = colorStart .. minute .. colorEnd
-    else
       minutestr = minute
     end
-  else
-    daystr = day
-    hourstr = hour
-    minutestr = minute
-  end
-  local timestring = ""
-  if day > 0 then
-    timestring = daystr .. (StringTable.Get)("str_activity_common_day")
-    if hour > 0 then
-      timestring = timestring .. hourstr .. (StringTable.Get)("str_activity_common_hour")
-    end
-  else
-    if hour > 0 then
-      timestring = hourstr .. (StringTable.Get)("str_activity_common_hour")
-      if minute > 0 then
-        timestring = timestring .. minutestr .. (StringTable.Get)("str_activity_common_minute")
+    local timestring = ""
+    if 0 < day then
+      timestring = daystr .. StringTable.Get("str_activity_common_day")
+      if 0 < hour then
+        timestring = timestring .. hourstr .. StringTable.Get("str_activity_common_hour")
       end
+    elseif 0 < hour then
+      timestring = hourstr .. StringTable.Get("str_activity_common_hour")
+      if 0 < minute then
+        timestring = timestring .. minutestr .. StringTable.Get("str_activity_common_minute")
+      end
+    elseif 0 < minute then
+      timestring = minutestr .. StringTable.Get("str_activity_common_minute")
     else
-      if minute > 0 then
-        timestring = minutestr .. (StringTable.Get)("str_activity_common_minute")
-      else
-        timestring = (StringTable.Get)("str_activity_common_less_minute")
+      timestring = StringTable.Get("str_activity_common_less_minute")
+    end
+    return timestring
+  end,
+  GetRemainTimer = function(endtime)
+    local remainTime = 0
+    local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+    local curtime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+    remainTime = endtime - curtime
+    return remainTime
+  end,
+  ShowRewards = function(rewards, callback)
+    local petIdList = {}
+    local mPet = GameGlobal.GetModule(PetModule)
+    for _, reward in pairs(rewards) do
+      if mPet:IsPetID(reward.assetid) then
+        table.insert(petIdList, reward)
       end
     end
-  end
-  return timestring
-end
-, GetRemainTimer = function(endtime)
-  -- function num : 0_1 , upvalues : _ENV
-  local remainTime = 0
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curtime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  remainTime = endtime - curtime
-  return remainTime
-end
-, ShowRewards = function(rewards, callback)
-  -- function num : 0_2 , upvalues : _ENV
-  local petIdList = {}
-  local mPet = (GameGlobal.GetModule)(PetModule)
-  for _,reward in pairs(rewards) do
-    if mPet:IsPetID(reward.assetid) then
-      (table.insert)(petIdList, reward)
+    if table.count(petIdList) > 0 then
+      GameGlobal.UIStateManager():ShowDialog("UIPetObtain", petIdList, function()
+        GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+        GameGlobal.UIStateManager():ShowDialog("UIGetItemController", rewards, function()
+          if callback then
+            callback()
+          end
+        end)
+      end)
+      return
     end
-  end
-  if (table.count)(petIdList) > 0 then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIPetObtain", petIdList, function()
-    -- function num : 0_2_0 , upvalues : _ENV, rewards, callback
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", rewards, function()
-      -- function num : 0_2_0_0 , upvalues : callback
+    GameGlobal.UIStateManager():ShowDialog("UIGetItemController", rewards, function()
       if callback then
         callback()
       end
+    end)
+  end,
+  SetGrey = function(objs, gray)
+    if not objs then
+      return
     end
-)
-  end
-)
-    return 
-  end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_2_1 , upvalues : callback
-    if callback then
-      callback()
+    for _, obj in pairs(objs) do
+      local rawimg = obj.gameObject:GetComponent("RawImage")
+      local emiMat = UnityEngine.Material:New(rawimg.material)
+      local texture = rawimg.material.mainTexture
+      rawimg.material = emiMat
+      rawimg.material.mainTexture = texture
+      rawimg.material:SetFloat("_LuminosityAmount", gray)
     end
+  end,
+  GetItemIcon = function(itemid)
+    local cfg = Cfg.cfg_item[itemid]
+    if not cfg then
+      return ""
+    end
+    return cfg.Icon
+  end,
+  GetLottleryNewName = function()
+    local dbStr = "N15LottleryNew"
+    local roleModule = GameGlobal.GetModule(RoleModule)
+    local pstid = roleModule:GetPstId()
+    dbStr = dbStr .. pstid
+    return dbStr
+  end,
+  GetLocalPoltNewName = function(polt_id)
+    local roleModule = GameGlobal.GetModule(RoleModule)
+    local pstid = roleModule:GetPstId()
+    local dbStr = "n15" .. polt_id .. pstid
+    return dbStr
+  end,
+  GetBigRawrdData = function()
+    local data = {}
+    data.size = {356, 357}
+    data.state = {
+      nomarl = "n15_shop_grand1",
+      select = "n15_shop_grand2",
+      pop = "n15_shop_grand3",
+      grey = "n15_shop_grand4"
+    }
+    data.getPos = {}
+    return data
   end
-)
-end
-, SetGrey = function(objs, gray)
-  -- function num : 0_3 , upvalues : _ENV
-  if not objs then
-    return 
-  end
-  for _,obj in pairs(objs) do
-    local rawimg = (obj.gameObject):GetComponent("RawImage")
-    local emiMat = (UnityEngine.Material):New(rawimg.material)
-    local texture = (rawimg.material).mainTexture
-    rawimg.material = emiMat
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (rawimg.material).mainTexture = texture
-    ;
-    (rawimg.material):SetFloat("_LuminosityAmount", gray)
-  end
-end
-, GetItemIcon = function(itemid)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[itemid]
-  if not cfg then
-    return ""
-  end
-  return cfg.Icon
-end
-, GetLottleryNewName = function()
-  -- function num : 0_5 , upvalues : _ENV
-  local dbStr = "N15LottleryNew"
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
-  local pstid = roleModule:GetPstId()
-  dbStr = dbStr .. pstid
-  return dbStr
-end
-, GetLocalPoltNewName = function(polt_id)
-  -- function num : 0_6 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
-  local pstid = roleModule:GetPstId()
-  local dbStr = "n15" .. polt_id .. pstid
-  return dbStr
-end
-, GetBigRawrdData = function()
-  -- function num : 0_7
-  local data = {}
-  data.size = {356, 357}
-  data.state = {nomarl = "n15_shop_grand1", select = "n15_shop_grand2", pop = "n15_shop_grand3", grey = "n15_shop_grand4"}
-  data.getPos = {}
-  return data
-end
 }
 _enum("N15ToolFunctions", N15ToolFunctions)
-local N15LotteryState = {None = 1, WaitRequestResult = 2, LotterySpine = 3, LotteryResultSpine = 4, ShowRewards = 5}
+local N15LotteryState = {
+  None = 1,
+  WaitRequestResult = 2,
+  LotterySpine = 3,
+  LotteryResultSpine = 4,
+  ShowRewards = 5
+}
 _enum("N15LotteryState", N15LotteryState)
-local N15LotteryTitle = {"str_n15_desert_award_pool", "str_n15_volcano_award_pool", "str_n15_gorge_award_pool"}
+local N15LotteryTitle = {
+  "str_n15_desert_award_pool",
+  "str_n15_volcano_award_pool",
+  "str_n15_gorge_award_pool"
+}
 _enum("N15LotteryTitle", N15LotteryTitle)
 _class("DrawAnimData", Object)
 DrawAnimData = DrawAnimData
--- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
 
-DrawAnimData.Constructor = function(self)
-  -- function num : 0_8
+function DrawAnimData:Constructor()
   self.award_idx = 0
   self.anim_idx = 0
   self.anim_speed = 0
@@ -166,10 +151,7 @@ DrawAnimData.Constructor = function(self)
   self.anim_end = true
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R3 in 'UnsetPending'
-
-DrawAnimData.RefData = function(self)
-  -- function num : 0_9
+function DrawAnimData:RefData()
   self.award_idx = 0
   self.anim_idx = 0
   self.anim_speed = 0
@@ -178,11 +160,6 @@ DrawAnimData.RefData = function(self)
   self.anim_end = true
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R3 in 'UnsetPending'
-
-DrawAnimData.RefIDXTab = function(self)
-  -- function num : 0_10
+function DrawAnimData:RefIDXTab()
   self.anim_idx_tab = {}
 end
-
-

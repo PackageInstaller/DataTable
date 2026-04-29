@@ -1,99 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/data/wave_data_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("WaveDataComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-WaveDataComponent.Constructor = function(self)
-  -- function num : 0_0
+function WaveDataComponent:Constructor()
   self._waveIndex = -1
   self._isCurWaveExit = false
   self._exitTrapPos = nil
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveDataComponent.SetWaveIndex = function(self, index)
-  -- function num : 0_1
+function WaveDataComponent:SetWaveIndex(index)
   self._waveIndex = index
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveDataComponent.GetWaveIndex = function(self)
-  -- function num : 0_2
+function WaveDataComponent:GetWaveIndex()
   return self._waveIndex
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveDataComponent.SetExitWave = function(self, isExit)
-  -- function num : 0_3
+function WaveDataComponent:SetExitWave(isExit)
   self._isCurWaveExit = isExit
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveDataComponent.IsExitWave = function(self)
-  -- function num : 0_4
+function WaveDataComponent:IsExitWave()
   return self._isCurWaveExit
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveDataComponent.SetExitWavePos = function(self, pos)
-  -- function num : 0_5
+function WaveDataComponent:SetExitWavePos(pos)
   self._exitTrapPos = pos
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveDataComponent.GetExitWavePos = function(self)
-  -- function num : 0_6
+function WaveDataComponent:GetExitWavePos()
   return self._exitTrapPos
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.WaveData = function(self)
-  -- function num : 0_7
-  return self:GetComponent((self.WEComponentsEnum).WaveData)
+function Entity:WaveData()
+  return self:GetComponent(self.WEComponentsEnum.WaveData)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasWaveData = function(self)
-  -- function num : 0_8
-  return self:HasComponent((self.WEComponentsEnum).WaveData)
+function Entity:HasWaveData()
+  return self:HasComponent(self.WEComponentsEnum.WaveData)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddWaveData = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).WaveData
+function Entity:AddWaveData()
+  local index = self.WEComponentsEnum.WaveData
   local component = WaveDataComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceWaveData = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).WaveData
+function Entity:ReplaceWaveData()
+  local index = self.WEComponentsEnum.WaveData
   local component = WaveDataComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveWaveData = function(self)
-  -- function num : 0_11
+function Entity:RemoveWaveData()
   if self:HasWaveData() then
-    self:RemoveComponent((self.WEComponentsEnum).WaveData)
+    self:RemoveComponent(self.WEComponentsEnum.WaveData)
   end
 end
-
-

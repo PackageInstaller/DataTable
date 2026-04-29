@@ -1,61 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/ui_chat_delete_friend_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChatDeleteFriendController", UIController)
 UIChatDeleteFriendController = UIChatDeleteFriendController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChatDeleteFriendController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIChatDeleteFriendController:OnShow(uiParams)
   self._friendData = uiParams[1]
   self._chatFriendManager = uiParams[2]
   self:_GetComponents()
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatDeleteFriendController._GetComponents = function(self)
-  -- function num : 0_1
+function UIChatDeleteFriendController:_GetComponents()
   self._name = self:GetUIComponent("UILocalizationText", "Name")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatDeleteFriendController._Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._name).text = (StringTable.Get)("str_chat_delete_friend_confirm", (self._friendData):GetName())
+function UIChatDeleteFriendController:_Init()
+  self._name.text = StringTable.Get("str_chat_delete_friend_confirm", self._friendData:GetName())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatDeleteFriendController.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIChatDeleteFriendController:ConfirmBtnOnClick(go)
   self:Lock("ConfirmBtnOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._DeleteFriend, self)
+  GameGlobal.TaskManager():StartTask(self._DeleteFriend, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatDeleteFriendController._DeleteFriend = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._chatFriendManager):DeleteFriend(TT, (self._friendData):GetFriendId())
+function UIChatDeleteFriendController:_DeleteFriend(TT)
+  self._chatFriendManager:DeleteFriend(TT, self._friendData:GetFriendId())
   self:UnLock("ConfirmBtnOnClick")
   self:CloseDialog()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeFriendInfoSuccess)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeFriendInfoSuccess)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatDeleteFriendController.CancelBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIChatDeleteFriendController:CancelBtnOnClick(go)
   self:CloseDialog()
 end
-
-

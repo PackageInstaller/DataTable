@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_trajectory_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseTrajectoryParam", SkillPhaseParamBase)
 SkillPhaseTrajectoryParam = SkillPhaseTrajectoryParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseTrajectoryParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseTrajectoryParam:Constructor(t)
   self._gridEffectID = t.gridEffectID
   self._ballHigh = t.ballHigh
   self._flyTime = t.flyTime
@@ -18,70 +11,44 @@ SkillPhaseTrajectoryParam.Constructor = function(self, t)
   self._upTime = t.upTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseTrajectoryParam:GetPhaseType()
   return SkillViewPhaseType.TrajectoryAnimation
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryParam.GetBallHigh = function(self)
-  -- function num : 0_2
+function SkillPhaseTrajectoryParam:GetBallHigh()
   return self._ballHigh
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryParam.GetGridEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseTrajectoryParam:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryParam.FlyTime = function(self)
-  -- function num : 0_4
+function SkillPhaseTrajectoryParam:FlyTime()
   return self._flyTime
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryParam.GetCameraAngle = function(self)
-  -- function num : 0_5
+function SkillPhaseTrajectoryParam:GetCameraAngle()
   return self._cameraAngle
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryParam.GetFlyRadius = function(self)
-  -- function num : 0_6
+function SkillPhaseTrajectoryParam:GetFlyRadius()
   return self._flyRadius
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryParam.GetHideDistance = function(self)
-  -- function num : 0_7
+function SkillPhaseTrajectoryParam:GetHideDistance()
   return self._hideDistance
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryParam.GetUpTime = function(self)
-  -- function num : 0_8
+function SkillPhaseTrajectoryParam:GetUpTime()
   return self._upTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryParam.GetCacheTable = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillPhaseTrajectoryParam:GetCacheTable()
   local t = {
-{((Cfg.cfg_effect)[self._gridEffectID]).ResPath, 1}
-}
+    {
+      Cfg.cfg_effect[self._gridEffectID].ResPath,
+      1
+    }
+  }
   return t
 end
-
-

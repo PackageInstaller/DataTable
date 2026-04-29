@@ -1,154 +1,94 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/_review/ui_n5_main_controller_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5MainController_Review", UIController)
 UIN5MainController_Review = UIN5MainController_Review
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5MainController_Review._GetComponents = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN5MainController_Review:_GetComponents()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_0_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     self:SwitchState(UIStateType.UIActivityReview)
-  end
-, nil, nil, false, function()
-    -- function num : 0_0_1 , upvalues : self
+  end, nil, nil, false, function()
     self:HideBtnOnClick()
-  end
-)
+  end)
   self._lineMissionRedPoint = self:GetUIComponent("UISelectObjectPath", "_lineMissionRedPoint")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainController_Review.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIN5MainController_Review:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaignModule = campaignModule
-  local uiModule = (GameGlobal.GetUIModule)(CampaignModule)
-  self._reviewData = (uiModule:GetReviewData()):GetActivityByType(ECampaignType.CAMPAIGN_TYPE_REVIEW_N5)
-  ;
-  (self._reviewData):ReqDetailInfo(TT, res)
-  self._campaign = (self._reviewData):GetDetailInfo()
+  local uiModule = GameGlobal.GetUIModule(CampaignModule)
+  self._reviewData = uiModule:GetReviewData():GetActivityByType(ECampaignType.CAMPAIGN_TYPE_REVIEW_N5)
+  self._reviewData:ReqDetailInfo(TT, res)
+  self._campaign = self._reviewData:GetDetailInfo()
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainController_Review.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN5MainController_Review:OnShow(uiParams)
   self._timePhase = nil
   self:_GetComponents()
   local progressPool = self:GetUIComponent("UISelectObjectPath", "_progress")
   local progress = progressPool:SpawnObject("UIN5ReviewProgress")
   progress:SetData(self._reviewData)
-  ;
-  (CutsceneManager.ExcuteCutsceneOut)()
+  CutsceneManager.ExcuteCutsceneOut()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainController_Review.HideBtnOnClick = function(self)
-  -- function num : 0_3
+function UIN5MainController_Review:HideBtnOnClick()
   local root = self:GetGameObject("_root")
   root:SetActive(false)
   local showBtn = self:GetGameObject("_showBtn")
   showBtn:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainController_Review.ShowBtnOnClick = function(self)
-  -- function num : 0_4
+function UIN5MainController_Review:ShowBtnOnClick()
   local root = self:GetGameObject("_root")
   root:SetActive(true)
   local showBtn = self:GetGameObject("_showBtn")
   showBtn:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainController_Review.OnHide = function(self)
-  -- function num : 0_5
+function UIN5MainController_Review:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainController_Review.LineMissionBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN5MainController_Review:LineMissionBtnOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV
     self:Lock("UIN5MainControllerReviewPlayAnimation")
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N5NormalClick)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N5NormalClick)
     if self:_CheckCampaignClose() or not self:_GetComponentState(ECampaignReviewN5ComponentID.ECAMPAIGN_REVIEW_ReviewN5_LINE_MISSION) then
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_end"))
+      ToastManager.ShowToast(StringTable.Get("str_activity_common_end"))
       self:UnLock("UIN5MainControllerReviewPlayAnimation")
-      return 
+      return
     end
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N5CloseDoor)
-    ;
-    (self._campaignModule):CampaignSwitchState(true, UIStateType.UIActivityN5SimpleLevelReview, UIStateType.UIMain, nil, (self._campaign)._id)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N5CloseDoor)
+    self._campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN5SimpleLevelReview, UIStateType.UIMain, nil, self._campaign._id)
     self:UnLock("UIN5MainControllerReviewPlayAnimation")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainController_Review._CheckCampaignClose = function(self)
-  -- function num : 0_7
-  return not (self._campaign):CheckCampaignOpen()
+function UIN5MainController_Review:_CheckCampaignClose()
+  return not self._campaign:CheckCampaignOpen()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainController_Review._GetComponentState = function(self, componentid)
-  -- function num : 0_8
-  return (self._campaign):CheckComponentOpen(componentid)
+function UIN5MainController_Review:_GetComponentState(componentid)
+  return self._campaign:CheckComponentOpen(componentid)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainController_Review._AttachEvents = function(self)
-  -- function num : 0_9
+function UIN5MainController_Review:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainController_Review._DetachEvents = function(self)
-  -- function num : 0_10
+function UIN5MainController_Review:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainController_Review._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_11
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIN5MainController_Review:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckRedPointAll()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainController_Review._CheckRedPointAll = function(self)
-  -- function num : 0_12
+function UIN5MainController_Review:_CheckRedPointAll()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5MainController_Review._CheckRedPoint = function(self, obj, ...)
-  -- function num : 0_13
+function UIN5MainController_Review:_CheckRedPoint(obj, ...)
   obj:SetActive(false)
 end
-
-

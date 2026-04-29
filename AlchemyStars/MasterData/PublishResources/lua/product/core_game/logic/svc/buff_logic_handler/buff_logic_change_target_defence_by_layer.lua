@@ -1,65 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_target_defence_by_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicChangeTargetDefenceByLayer", BuffLogicBase)
 BuffLogicChangeTargetDefenceByLayer = BuffLogicChangeTargetDefenceByLayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeTargetDefenceByLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._oneLayerAddMulValue = logicParam.oneLayerAddMulValue or 0
-    self._oneLayerAddValue = logicParam.oneLayerAddValue or 0
-    self._checkTargetBuff = logicParam.checkTargetBuff or 0
-    self._minMulValue = logicParam.minMulValue
-    self._maxMulValue = logicParam.maxMulValue
-  end
+function BuffLogicChangeTargetDefenceByLayer:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._oneLayerAddMulValue = logicParam.oneLayerAddMulValue or 0
+  self._oneLayerAddValue = logicParam.oneLayerAddValue or 0
+  self._checkTargetBuff = logicParam.checkTargetBuff or 0
+  self._minMulValue = logicParam.minMulValue
+  self._maxMulValue = logicParam.maxMulValue
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeTargetDefenceByLayer.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeTargetDefenceByLayer:DoLogic(notify)
   local defenderEntity = notify:GetDefenderEntity()
-  if not defenderEntity or not defenderEntity:Attributes() or defenderEntity:HasDeadMark() then
+  if not (defenderEntity and defenderEntity:Attributes()) or defenderEntity:HasDeadMark() then
     return false
   end
-  local buffOwner = (self._buffInstance):Entity()
+  local buffOwner = self._buffInstance:Entity()
   if self._checkTargetBuff == 1 then
     buffOwner = defenderEntity
   end
   if not defenderEntity:MonsterID() then
     return false
   end
-  local curMarkLayer = (self._buffLogicService):GetBuffLayer(buffOwner, self._layerType) or 0
+  local curMarkLayer = self._buffLogicService:GetBuffLayer(buffOwner, self._layerType) or 0
   if curMarkLayer == 0 then
     return false
   end
-  do
-    if self._oneLayerAddMulValue ~= 0 then
-      local change = self._oneLayerAddMulValue * curMarkLayer
-      change = self:_CalcValueLimit(change)
-      ;
-      (self._buffLogicService):ChangeBaseDefence(defenderEntity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage, change)
-    end
-    if self._oneLayerAddValue ~= 0 then
-      local change = (math.floor)(self._oneLayerAddValue * curMarkLayer)
-      change = self:_CalcValueLimit(change)
-      ;
-      (self._buffLogicService):ChangeBaseDefence(defenderEntity, self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix, change)
-    end
+  if self._oneLayerAddMulValue ~= 0 then
+    local change = self._oneLayerAddMulValue * curMarkLayer
+    change = self:_CalcValueLimit(change)
+    self._buffLogicService:ChangeBaseDefence(defenderEntity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage, change)
+  end
+  if self._oneLayerAddValue ~= 0 then
+    local change = math.floor(self._oneLayerAddValue * curMarkLayer)
+    change = self:_CalcValueLimit(change)
+    self._buffLogicService:ChangeBaseDefence(defenderEntity, self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix, change)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeTargetDefenceByLayer._CalcValueLimit = function(self, value)
-  -- function num : 0_2
-  if self._maxMulValue and self._maxMulValue < value then
+function BuffLogicChangeTargetDefenceByLayer:_CalcValueLimit(value)
+  if self._maxMulValue and value > self._maxMulValue then
     value = self._maxMulValue
   end
   if self._minMulValue and value < self._minMulValue then
@@ -70,24 +51,15 @@ end
 
 _class("BuffLogicRemoveChangeTargetDefenceByLayer", BuffLogicBase)
 BuffLogicRemoveChangeTargetDefenceByLayer = BuffLogicRemoveChangeTargetDefenceByLayer
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveChangeTargetDefenceByLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicRemoveChangeTargetDefenceByLayer:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveChangeTargetDefenceByLayer.DoLogic = function(self, notify)
-  -- function num : 0_4 , upvalues : _ENV
+function BuffLogicRemoveChangeTargetDefenceByLayer:DoLogic(notify)
   local defenderEntity = notify:GetDefenderEntity()
-  if not defenderEntity or not defenderEntity:Attributes() or defenderEntity:HasDeadMark() then
-    return 
+  if not (defenderEntity and defenderEntity:Attributes()) or defenderEntity:HasDeadMark() then
+    return
   end
-  ;
-  (self._buffLogicService):RemoveBaseDefence(defenderEntity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage)
-  ;
-  (self._buffLogicService):RemoveBaseDefence(defenderEntity, self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix)
+  self._buffLogicService:RemoveBaseDefence(defenderEntity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage)
+  self._buffLogicService:RemoveBaseDefence(defenderEntity, self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix)
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/alchemy/ShopLevelUP/ui_cn20_n49_alchemy_shop_rlitt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49AlchemyShopRevenueLevelUpInfoItemItem", UICustomWidget)
 UICN20N49AlchemyShopRevenueLevelUpInfoItemItem = UICN20N49AlchemyShopRevenueLevelUpInfoItemItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49AlchemyShopRevenueLevelUpInfoItemItem.OnShow = function(self)
-  -- function num : 0_0
+function UICN20N49AlchemyShopRevenueLevelUpInfoItemItem:OnShow()
   self:InitWidgets()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopRevenueLevelUpInfoItemItem.InitWidgets = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN20N49AlchemyShopRevenueLevelUpInfoItemItem:InitWidgets()
   self._countTex = self:GetUIComponent("UILocalizationText", "Count")
   self._priceTex = self:GetUIComponent("UILocalizationText", "Price")
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
@@ -27,33 +17,23 @@ UICN20N49AlchemyShopRevenueLevelUpInfoItemItem.InitWidgets = function(self)
   self._atlas = self:GetAsset("UICN20N49_Ryza.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopRevenueLevelUpInfoItemItem.BtnOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN20N49AlchemyShopRevenueLevelUpInfoItemItem:BtnOnClick(go)
   if self.tipsCallback then
-    (self.tipsCallback)((self._roleAsset).assetid, Vector3(0.5, ((go.transform).position).y - 0.3, 0))
+    self.tipsCallback(self._roleAsset.assetid, Vector3(0.5, go.transform.position.y - 0.3, 0))
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49AlchemyShopRevenueLevelUpInfoItemItem.SetData = function(self, cfgData, callback)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN20N49AlchemyShopRevenueLevelUpInfoItemItem:SetData(cfgData, callback)
   self.tipsCallback = callback
   self._roleAsset = cfgData
   if self._roleAsset then
-    local cfg = (Cfg.cfg_item)[(self._roleAsset).assetid]
+    local cfg = Cfg.cfg_item[self._roleAsset.assetid]
     if cfg then
-      (self._icon):LoadImage(cfg.Icon)
+      self._icon:LoadImage(cfg.Icon)
     end
-    local price, color = (UICN20N49Ryza_Shop.GetItemPriceColor)((self._roleAsset).assetid)
-    local spName = (UICN20N49Ryza_Shop.Color2SpName)(color)
-    ;
-    (self._priceGo):SetActive(true)
-    ;
-    (self._priceTex):SetText((self._roleAsset).count)
+    local price, color = UICN20N49Ryza_Shop.GetItemPriceColor(self._roleAsset.assetid)
+    local spName = UICN20N49Ryza_Shop.Color2SpName(color)
+    self._priceGo:SetActive(true)
+    self._priceTex:SetText(self._roleAsset.count)
   end
 end
-
-

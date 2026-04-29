@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/old/next/ui_aircraft_evilshow_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftEvilShowItem", UICustomWidget)
 UIAircraftEvilShowItem = UIAircraftEvilShowItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftEvilShowItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIAircraftEvilShowItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEvilShowItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIAircraftEvilShowItem:InitWidget()
   self.textEvilName = self:GetUIComponent("UILocalizationText", "TextEvilName")
   self.textStar = self:GetUIComponent("UILocalizationText", "TextStar")
   self.textProperty = self:GetUIComponent("UILocalizationText", "TextProperty")
@@ -27,62 +17,39 @@ UIAircraftEvilShowItem.InitWidget = function(self)
   self.buttonNext = self:GetGameObject("ButtonNext")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEvilShowItem.SetData = function(self, _evils)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftEvilShowItem:SetData(_evils)
   self.currentIdx = 1
   self.evilCount = #_evils
   self.indexImages = {}
   for i = 1, self.evilCount do
-    local idx = ((UnityEngine.GameObject).Instantiate)(self.indexItem, self.indexLayoutTr)
-    ;
-    (table.insert)(self.indexImages, idx:GetComponent("Image"))
+    local idx = UnityEngine.GameObject.Instantiate(self.indexItem, self.indexLayoutTr)
+    table.insert(self.indexImages, idx:GetComponent("Image"))
   end
-  ;
-  (self.indexItem):SetActive(false)
+  self.indexItem:SetActive(false)
   self:OnSelectChanged(1)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEvilShowItem.OnSelectChanged = function(self, _idx)
-  -- function num : 0_3 , upvalues : _ENV
-  ((self.indexImages)[self.currentIdx]):CrossFadeColor(Color(1, 1, 1), 0, true, false)
-  ;
-  ((self.indexImages)[_idx]):CrossFadeColor(Color(0.6, 0.6, 0.6), 0, true, false)
+function UIAircraftEvilShowItem:OnSelectChanged(_idx)
+  self.indexImages[self.currentIdx]:CrossFadeColor(Color(1, 1, 1), 0, true, false)
+  self.indexImages[_idx]:CrossFadeColor(Color(0.6, 0.6, 0.6), 0, true, false)
   self.currentIdx = _idx
-  ;
-  (self.buttonLast):SetActive(self.currentIdx > 1)
-  ;
-  (self.buttonNext):SetActive(self.currentIdx < self.evilCount)
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.textEvilAmount).text = self.currentIdx .. "/" .. self.evilCount
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self.buttonLast:SetActive(self.currentIdx > 1)
+  self.buttonNext:SetActive(self.currentIdx < self.evilCount)
+  self.textEvilAmount.text = self.currentIdx .. "/" .. self.evilCount
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEvilShowItem.ButtonLastOnClick = function(self, go)
-  -- function num : 0_4
+function UIAircraftEvilShowItem:ButtonLastOnClick(go)
   if self.currentIdx <= 1 then
     self.currentIdx = 1
-    return 
+    return
   end
   self:OnSelectChanged(self.currentIdx - 1)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEvilShowItem.ButtonNextOnClick = function(self, go)
-  -- function num : 0_5
-  if self.evilCount <= self.currentIdx then
+function UIAircraftEvilShowItem:ButtonNextOnClick(go)
+  if self.currentIdx >= self.evilCount then
     self.currentIdx = self.evilCount
-    return 
+    return
   end
   self:OnSelectChanged(self.currentIdx + 1)
 end
-
-

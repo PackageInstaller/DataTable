@@ -1,81 +1,251 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_detective_talk.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, ClueId = 3, StoryID = 4, Title = 5, NeedClue = 6, Evidence = 7}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  ClueId = 3,
+  StoryID = 4,
+  Title = 5,
+  NeedClue = 6,
+  Evidence = 7
+}
 local config = {
-{1, 108911209, 3, 50470101, "str_n29_detective_talk_1"}
-, 
-{2, 108911209, 4, 50470102, "str_n29_detective_talk_2"}
-, 
-{3, 108911209, 6, 50470103, "str_n29_detective_talk_3", 
-{2, 3, 5}
-, 5}
-, 
-{4, 108911209, 7, 50470104, "str_n29_detective_talk_4", 
-{6, 1, 5}
-, 6}
-, 
-{5, 108911209, 8, 50470201, "str_n29_detective_talk_5"}
-, 
-{6, 108911209, 24, 50470202, "str_n29_detective_talk_6", 
-{16, 23, 18}
-, 23}
-, 
-{7, 108911209, 9, 50470203, "str_n29_detective_talk_7"}
-, 
-{8, 108911209, 10, 50470204, "str_n29_detective_talk_8"}
-, 
-{9, 108911209, 11, 50470205, "str_n29_detective_talk_9", 
-{7, 9, 8}
-, 9}
-, 
-{10, 108911209, 15, 50470206, "str_n29_detective_talk_10", 
-{12, 11, 9}
-, 12}
-, 
-{11, 108911209, 20, 50470207, "str_n29_detective_talk_11", 
-{5, 6, 17}
-, 17}
-, 
-{12, 108911209, 12, 50470208, "str_n29_detective_talk_12"}
-, 
-{13, 108911209, 13, 50470209, "str_n29_detective_talk_13"}
-, 
-{14, 108911209, 21, 50470210, "str_n29_detective_talk_14", 
-{18, 6, 5}
-, 18}
-, 
-{15, 108911209, 22, 50470211, "str_n29_detective_talk_15", 
-{6, 19, 5}
-, 19}
-, 
-{16, 108911209, 14, 50470212, "str_n29_detective_talk_16"}
-, 
-{17, 108911209, 23, 50470213, "str_n29_detective_talk_17", 
-{18, 8, 16}
-, 16}
-, 
-{18, 108911209, 25, 50470301, "str_n29_detective_talk_18"}
-, 
-{19, 108911209, 33, 50470302, "str_n29_detective_talk_19", 
-{14, 19, 30}
-, 30}
-, 
-{20, 108911209, 32, 50470303, "str_n29_detective_talk_20", 
-{31, 19, 22}
-, 31}
-, 
-{21, 108911209, 26, 50470304, "str_n29_detective_talk_21"}
-, 
-{22, 108911209, 27, 50470305, "str_n29_detective_talk_22", 
-{1, 26, 3}
-, 26}
-, 
-{23, 108911209, 28, 50470306, "str_n29_detective_talk_23", 
-{26, 3, 1}
-, 26}
+  {
+    1,
+    108911209,
+    3,
+    50470101,
+    "str_n29_detective_talk_1"
+  },
+  {
+    2,
+    108911209,
+    4,
+    50470102,
+    "str_n29_detective_talk_2"
+  },
+  {
+    3,
+    108911209,
+    6,
+    50470103,
+    "str_n29_detective_talk_3",
+    {
+      2,
+      3,
+      5
+    },
+    5
+  },
+  {
+    4,
+    108911209,
+    7,
+    50470104,
+    "str_n29_detective_talk_4",
+    {
+      6,
+      1,
+      5
+    },
+    6
+  },
+  {
+    5,
+    108911209,
+    8,
+    50470201,
+    "str_n29_detective_talk_5"
+  },
+  {
+    6,
+    108911209,
+    24,
+    50470202,
+    "str_n29_detective_talk_6",
+    {
+      16,
+      23,
+      18
+    },
+    23
+  },
+  {
+    7,
+    108911209,
+    9,
+    50470203,
+    "str_n29_detective_talk_7"
+  },
+  {
+    8,
+    108911209,
+    10,
+    50470204,
+    "str_n29_detective_talk_8"
+  },
+  {
+    9,
+    108911209,
+    11,
+    50470205,
+    "str_n29_detective_talk_9",
+    {
+      7,
+      9,
+      8
+    },
+    9
+  },
+  {
+    10,
+    108911209,
+    15,
+    50470206,
+    "str_n29_detective_talk_10",
+    {
+      12,
+      11,
+      9
+    },
+    12
+  },
+  {
+    11,
+    108911209,
+    20,
+    50470207,
+    "str_n29_detective_talk_11",
+    {
+      5,
+      6,
+      17
+    },
+    17
+  },
+  {
+    12,
+    108911209,
+    12,
+    50470208,
+    "str_n29_detective_talk_12"
+  },
+  {
+    13,
+    108911209,
+    13,
+    50470209,
+    "str_n29_detective_talk_13"
+  },
+  {
+    14,
+    108911209,
+    21,
+    50470210,
+    "str_n29_detective_talk_14",
+    {
+      18,
+      6,
+      5
+    },
+    18
+  },
+  {
+    15,
+    108911209,
+    22,
+    50470211,
+    "str_n29_detective_talk_15",
+    {
+      6,
+      19,
+      5
+    },
+    19
+  },
+  {
+    16,
+    108911209,
+    14,
+    50470212,
+    "str_n29_detective_talk_16"
+  },
+  {
+    17,
+    108911209,
+    23,
+    50470213,
+    "str_n29_detective_talk_17",
+    {
+      18,
+      8,
+      16
+    },
+    16
+  },
+  {
+    18,
+    108911209,
+    25,
+    50470301,
+    "str_n29_detective_talk_18"
+  },
+  {
+    19,
+    108911209,
+    33,
+    50470302,
+    "str_n29_detective_talk_19",
+    {
+      14,
+      19,
+      30
+    },
+    30
+  },
+  {
+    20,
+    108911209,
+    32,
+    50470303,
+    "str_n29_detective_talk_20",
+    {
+      31,
+      19,
+      22
+    },
+    31
+  },
+  {
+    21,
+    108911209,
+    26,
+    50470304,
+    "str_n29_detective_talk_21"
+  },
+  {
+    22,
+    108911209,
+    27,
+    50470305,
+    "str_n29_detective_talk_22",
+    {
+      1,
+      26,
+      3
+    },
+    26
+  },
+  {
+    23,
+    108911209,
+    28,
+    50470306,
+    "str_n29_detective_talk_23",
+    {
+      26,
+      3,
+      1
+    },
+    26
+  }
 }
 return config, "ID", key
-

@@ -1,58 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_cost_caster_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectCostCasterHPParam", SkillEffectParamBase)
 SkillEffectCostCasterHPParam = SkillEffectCostCasterHPParam
 local SkillEffectCostCasterHPType = {CurHPPercent = 1, MaxHPPercent = 2}
 _enum("SkillEffectCostCasterHPType", SkillEffectCostCasterHPType)
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillEffectCostCasterHPParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCostCasterHPParam:Constructor(t)
   self._costType = t.costType
   self._costPercent = t.costPercent
   local ignoreShieldParam = t.ignoreShield or 1
   self._ignoreShield = tonumber(ignoreShieldParam) == 1
   self._leastHP = t.leastHP
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectCostCasterHPParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCostCasterHPParam:GetEffectType()
   return SkillEffectType.CostCasterHP
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectCostCasterHPParam.GetCostType = function(self)
-  -- function num : 0_2
+function SkillEffectCostCasterHPParam:GetCostType()
   return self._costType
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectCostCasterHPParam.GetCostPercent = function(self)
-  -- function num : 0_3
+function SkillEffectCostCasterHPParam:GetCostPercent()
   return self._costPercent
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectCostCasterHPParam.GetIgnoreShield = function(self)
-  -- function num : 0_4
+function SkillEffectCostCasterHPParam:GetIgnoreShield()
   return self._ignoreShield
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectCostCasterHPParam.GetLeastHP = function(self)
-  -- function num : 0_5
+function SkillEffectCostCasterHPParam:GetLeastHP()
   return self._leastHP
 end
-
-

@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/goldberg_event/stn_ge_handle_select_affix.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("GoldbergEventTest_HandleSelectAffix", Common_AsyncBase)
 GoldbergEventTest_HandleSelectAffix = GoldbergEventTest_HandleSelectAffix
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GoldbergEventTest_HandleSelectAffix.TaskFunc = function(self, TT, result)
-  -- function num : 0_0 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function GoldbergEventTest_HandleSelectAffix:TaskFunc(TT, result)
+  local runData = self.m_pManager:GetMissionRunData()
   if not runData:HaseAffix() then
-    return 
+    return
   end
   local campaignID = runData:GetCampaignID()
   local componentsID = runData:GetComponentID()
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local res = AsyncRequestRes:New()
   local request = SummerIISelectAffixReq:New()
   local response = SummerIISelectAffixRep:New()
@@ -25,9 +18,7 @@ GoldbergEventTest_HandleSelectAffix.TaskFunc = function(self, TT, result)
   request.nHardId = runData:GetHardID()
   campaignModule:CampaignComProtoRequest(TT, res, campaignID, componentsID, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= res.m_result then
-    (Log.fatal)("1111111")
+    Log.fatal("1111111")
   end
   self.m_nNodeState = 1
 end
-
-

@@ -1,136 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/valentine/ui/widgets/ui_activity_valentine_mailbox_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityValentineMailboxItem", UICustomWidget)
 UIActivityValentineMailboxItem = UIActivityValentineMailboxItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityValentineMailboxItem.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityValentineMailboxItem:Constructor()
   self._mailInfo = nil
   self._data = nil
   self._openTime = 1000
   self._spineAnimState = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMailboxItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityValentineMailboxItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMailboxItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIActivityValentineMailboxItem:_GetComponents()
   self._letterTxt = self:GetUIComponent("UILocalizationText", "letterTxt")
   self._petHeadImg = self:GetUIComponent("RawImageLoader", "petHeadImg")
   self._spine = self:GetUIComponent("SpineLoader", "spine")
   self._anim = self:GetUIComponent("Animation", "anim")
-  ;
-  (self._spine):LoadSpine("n27_g_xin_spine_idle")
-  self._spineAnimState = ((self._spine).CurrentSkeleton).AnimationState
+  self._spine:LoadSpine("n27_g_xin_spine_idle")
+  self._spineAnimState = self._spine.CurrentSkeleton.AnimationState
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMailboxItem.SetData = function(self, mailInfo, data)
-  -- function num : 0_3 , upvalues : _ENV
-  local questId = ((Cfg.cfg_Component_mini_mail)[mailInfo.id]).QuestId
+function UIActivityValentineMailboxItem:SetData(mailInfo, data)
+  local questId = Cfg.cfg_Component_mini_mail[mailInfo.id].QuestId
   self._mailInfo = mailInfo
   self._data = data
-  self._letterCfg = ((Cfg.cfg_valentine_letter)({QuestId = questId}))[1]
+  self._letterCfg = Cfg.cfg_valentine_letter({QuestId = questId})[1]
   self._state = mailInfo.state
-  local aniName = (self._letterCfg).UnReadSpine
+  local aniName = self._letterCfg.UnReadSpine
   if self._state == MiniMailStateType.MMST_Unread then
     aniName = aniName .. "_1"
-  else
-    if self._state == MiniMailStateType.MMST_Read then
-      aniName = aniName .. "_3"
-    end
+  elseif self._state == MiniMailStateType.MMST_Read then
+    aniName = aniName .. "_3"
   end
-  ;
-  (self._spineAnimState):SetAnimation(0, aniName, false)
-  local name = (StringTable.Get)((self._letterCfg).Name)
-  ;
-  (self._letterTxt):SetText((StringTable.Get)("str_n27_valentine_y_mailbox_1", name))
-  ;
-  (self._petHeadImg):LoadImage((self._letterCfg).Head)
+  self._spineAnimState:SetAnimation(0, aniName, false)
+  local name = StringTable.Get(self._letterCfg.Name)
+  self._letterTxt:SetText(StringTable.Get("str_n27_valentine_y_mailbox_1", name))
+  self._petHeadImg:LoadImage(self._letterCfg.Head)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMailboxItem.SetLetterOpen = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityValentineMailboxItem:SetLetterOpen()
   if self._state == MiniMailStateType.MMST_Unread then
     self:StartTask(self._SetLetterOpen, self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMailboxItem._SetLetterOpen = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
-  local mailComponent = (self._data):GetMailComponent()
+function UIActivityValentineMailboxItem:_SetLetterOpen(TT)
+  local mailComponent = self._data:GetMailComponent()
   local res = AsyncRequestRes:New()
-  local code = mailComponent:HandleReadMiniMail(TT, res, (self._mailInfo).id)
+  local code = mailComponent:HandleReadMiniMail(TT, res, self._mailInfo.id)
   if res:GetSucc() then
-    local mainController = ((GameGlobal.UIStateManager)()):GetController("UIActivityValentineMainController")
-    local endController = ((GameGlobal.UIStateManager)()):GetController("UIActivityValentineEndController")
+    local mainController = GameGlobal.UIStateManager():GetController("UIActivityValentineMainController")
+    local endController = GameGlobal.UIStateManager():GetController("UIActivityValentineEndController")
     if mainController then
       mainController:CheckMailRed()
-    else
-      if endController then
-        endController:CheckMailRed()
-      end
+    elseif endController then
+      endController:CheckMailRed()
     end
   else
-    do
-      ;
-      (Log.fatal)("设置信件已读失败：", code)
-    end
+    Log.fatal("设置信件已读失败：", code)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMailboxItem.LetterBtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._data):CheckMailIsOver() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n27_valentine_y_offline"))
+function UIActivityValentineMailboxItem:LetterBtnOnClick()
+  if self._data:CheckMailIsOver() then
+    ToastManager.ShowToast(StringTable.Get("str_n27_valentine_y_offline"))
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
   local isUnRead = self._state == MiniMailStateType.MMST_Unread
   self:SetLetterOpen()
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._OpenLetter, self, isUnRead)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  GameGlobal.TaskManager():StartTask(self._OpenLetter, self, isUnRead)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMailboxItem._OpenLetter = function(self, TT, isUnRead)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityValentineMailboxItem:_OpenLetter(TT, isUnRead)
   if isUnRead then
-    local aniName = (self._letterCfg).UnReadSpine .. "_2"
-    ;
-    (self._spineAnimState):SetAnimation(0, aniName, false)
-    ;
-    (self._anim):Play("uieff_UIActivityValentineMailboxItem_eff")
+    local aniName = self._letterCfg.UnReadSpine .. "_2"
+    self._spineAnimState:SetAnimation(0, aniName, false)
+    self._anim:Play("uieff_UIActivityValentineMailboxItem_eff")
     YIELD(TT, self._openTime)
   else
-    do
-      ;
-      (self._anim):Play("uieff_UIActivityValentineMailboxItem_eff")
-      YIELD(TT, 200)
-      self._state = (self._mailInfo).state
-      self:ShowDialog("UIActivityValentineLetterController", self._letterCfg)
-    end
+    self._anim:Play("uieff_UIActivityValentineMailboxItem_eff")
+    YIELD(TT, 200)
   end
+  self._state = self._mailInfo.state
+  self:ShowDialog("UIActivityValentineLetterController", self._letterCfg)
 end
-
-

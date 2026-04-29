@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/player/season_maze_player.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazePlayer", Object)
 SeasonMazePlayer = SeasonMazePlayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazePlayer.Constructor = function(self, mn)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMazePlayer:Constructor(mn)
   self._seasonMazeManager = mn
   self._crossFadeTime = 0.2
   self._curModel = nil
@@ -17,97 +10,65 @@ SeasonMazePlayer.Constructor = function(self, mn)
   self._y = 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.OnInit = function(self, mazeID)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonMazePlayer:OnInit(mazeID)
   self:_CreatePlayer()
   self:_CreateModels(mazeID)
-  self._headSlot = (GameObjectHelper.FindChild)((self._playerRoot).transform, "Bip001 HeadNub")
-  self._coverManager = (self._seasonMazeManager):SeasonMazeCoverManager()
-  self._zoneFlagLayer = ((self._seasonMazeManager):SeasonMazeSceneManager()):GetLayer(SeasonSceneLayer.ZoneFlag)
-  self._mapMaterialLayer = ((self._seasonMazeManager):SeasonMazeSceneManager()):GetLayer(SeasonSceneLayer.SoundMaterial)
-  local cfg = (Cfg.cfg_season_maze_client)[mazeID]
+  self._headSlot = GameObjectHelper.FindChild(self._playerRoot.transform, "Bip001 HeadNub")
+  self._coverManager = self._seasonMazeManager:SeasonMazeCoverManager()
+  self._zoneFlagLayer = self._seasonMazeManager:SeasonMazeSceneManager():GetLayer(SeasonSceneLayer.ZoneFlag)
+  self._mapMaterialLayer = self._seasonMazeManager:SeasonMazeSceneManager():GetLayer(SeasonSceneLayer.SoundMaterial)
+  local cfg = Cfg.cfg_season_maze_client[mazeID]
   self._interactDuration = cfg.PlayerIdleTime
   self._interactTimer = self._interactDuration
   self._playerEffect = SeasonMazePlayerEffect:New()
-  ;
-  (self._playerEffect):Init(self._playerRoot)
+  self._playerEffect:Init(self._playerRoot)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.PlayEffect = function(self, key, position)
-  -- function num : 0_2
+function SeasonMazePlayer:PlayEffect(key, position)
   if self._playerEffect then
-    (self._playerEffect):PlayEffect(key, position)
+    self._playerEffect:PlayEffect(key, position)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.PlayEffectWithParent = function(self, key, parent)
-  -- function num : 0_3
+function SeasonMazePlayer:PlayEffectWithParent(key, parent)
   if self._playerEffect then
-    (self._playerEffect):PlayEffectWithParent(key, parent)
+    self._playerEffect:PlayEffectWithParent(key, parent)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer._CreatePlayer = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._playerRoot = (GameObjectHelper.CreateEmpty)("Player", nil)
-  self._agent = (GameObjectHelper.CreateEmpty)("Agent", nil)
-  self._agentTransform = (self._agent).transform
-  ;
-  (self._agentTransform):SetParent((self._playerRoot).transform)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._agentTransform).position = Vector3.zero
+function SeasonMazePlayer:_CreatePlayer()
+  self._playerRoot = GameObjectHelper.CreateEmpty("Player", nil)
+  self._agent = GameObjectHelper.CreateEmpty("Agent", nil)
+  self._agentTransform = self._agent.transform
+  self._agentTransform:SetParent(self._playerRoot.transform)
+  self._agentTransform.position = Vector3.zero
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer._CreateModels = function(self, mazeID)
-  -- function num : 0_5 , upvalues : _ENV
+function SeasonMazePlayer:_CreateModels(mazeID)
   self._curModel = SeasonMazePlayerModel:New(self, mazeID)
   self._follower = SeasonMazePlayerFollower:New(self, mazeID)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.Dispose = function(self, isExit)
-  -- function num : 0_6 , upvalues : _ENV
+function SeasonMazePlayer:Dispose(isExit)
   self._isDisposed = true
-  ;
-  (self._playerEffect):Dispose()
-  ;
-  (self._curModel):Dispose()
+  self._playerEffect:Dispose()
+  self._curModel:Dispose()
   self._curModel = nil
-  ;
-  ((UnityEngine.Object).Destroy)(self._playerRoot)
+  UnityEngine.Object.Destroy(self._playerRoot)
   self._coverManager = nil
-  ;
-  (self._follower):Dispose()
+  self._follower:Dispose()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.Update = function(self, deltaTime)
-  -- function num : 0_7 , upvalues : _ENV
+function SeasonMazePlayer:Update(deltaTime)
   if self._isDisposed then
-    return 
+    return
   end
-  ;
-  (self._curModel):Update(deltaTime)
-  ;
-  (self._follower):Update(deltaTime)
+  self._curModel:Update(deltaTime)
+  self._follower:Update(deltaTime)
   self:_CheckPosition(0)
   self:_CheckCover()
   self._interactTimer = self._interactTimer - deltaTime
-  if self._interactTimer <= 0 and not self._onBattleRoom then
+  if 0 >= self._interactTimer and not self._onBattleRoom then
     self:ResetRotation()
     self:PlayAnimation(SeasonMazePlayerAnimation.Click)
     self:PlayAnimationQueued(SeasonMazePlayerAnimation.Stand, 0.3)
@@ -115,259 +76,167 @@ SeasonMazePlayer.Update = function(self, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.IsPlayer = function(self, gameObject)
-  -- function num : 0_8
-  do return not gameObject or gameObject == (self._curModel):GameObject() end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function SeasonMazePlayer:IsPlayer(gameObject)
+  return gameObject and gameObject == self._curModel:GameObject()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.PlayerRoot = function(self)
-  -- function num : 0_9
+function SeasonMazePlayer:PlayerRoot()
   return self._playerRoot
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.PlayerTansform = function(self)
-  -- function num : 0_10
-  return (self._playerRoot).transform
+function SeasonMazePlayer:PlayerTansform()
+  return self._playerRoot.transform
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.AgentTansform = function(self)
-  -- function num : 0_11
+function SeasonMazePlayer:AgentTansform()
   return self._agentTransform
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.Position = function(self)
-  -- function num : 0_12
-  return (self._agentTransform).position
+function SeasonMazePlayer:Position()
+  return self._agentTransform.position
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.HeadPosition = function(self)
-  -- function num : 0_13
-  return (self._agentTransform).position + ((self._curModel):RootTransform()).up * 0.81
+function SeasonMazePlayer:HeadPosition()
+  return self._agentTransform.position + self._curModel:RootTransform().up * 0.81
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.Rotation = function(self)
-  -- function num : 0_14
-  return (self._agentTransform).rotation
+function SeasonMazePlayer:Rotation()
+  return self._agentTransform.rotation
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.PlayAnimation = function(self, name, fadeTime)
-  -- function num : 0_15
-  local animation = (self._curModel):Animation()
+function SeasonMazePlayer:PlayAnimation(name, fadeTime)
+  local animation = self._curModel:Animation()
   if not animation or not name then
-    return 
+    return
   end
-  if not fadeTime then
-    fadeTime = self._crossFadeTime
-  end
+  fadeTime = fadeTime or self._crossFadeTime
   animation:CrossFade(name, fadeTime)
-  local fanim = (self._follower):Animation()
+  local fanim = self._follower:Animation()
   if fanim and name then
     fanim:CrossFade(name, fadeTime)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.PlayAnimationQueued = function(self, name, fadeTime)
-  -- function num : 0_16
-  local animation = (self._curModel):Animation()
+function SeasonMazePlayer:PlayAnimationQueued(name, fadeTime)
+  local animation = self._curModel:Animation()
   if not animation or not name then
-    return 
+    return
   end
-  if not fadeTime then
-    fadeTime = self._crossFadeTime
-  end
+  fadeTime = fadeTime or self._crossFadeTime
   animation:CrossFadeQueued(name, fadeTime)
-  local fanim = (self._follower):Animation()
+  local fanim = self._follower:Animation()
   if fanim and name then
     fanim:CrossFadeQueued(name, fadeTime)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.InteractOnRoom = function(self, roomType)
-  -- function num : 0_17 , upvalues : _ENV
+function SeasonMazePlayer:InteractOnRoom(roomType)
   if roomType == SeasonMazeRoomType.SMRT_PVE then
     self:SetBattleRoomState(true)
     self:ResetRotation()
     self:PlayAnimation(SeasonMazePlayerAnimation.BattleIdle)
+  elseif roomType == SeasonMazeRoomType.SMRT_Empty then
+    self:ResetRotation()
+    self:PlayAnimation(SeasonMazePlayerAnimation.Stand)
+    self._interactTimer = self._interactDuration
   else
-    if roomType == SeasonMazeRoomType.SMRT_Empty then
-      self:ResetRotation()
-      self:PlayAnimation(SeasonMazePlayerAnimation.Stand)
-      self._interactTimer = self._interactDuration
-    else
-      self:ResetRotation()
-      self._interactTimer = self._interactDuration
-    end
+    self:ResetRotation()
+    self._interactTimer = self._interactDuration
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer._CheckCover = function(self, deltaTime)
-  -- function num : 0_18
-  (self._coverManager):OnCoverCheck((self._curModel):Position())
+function SeasonMazePlayer:_CheckCover(deltaTime)
+  self._coverManager:OnCoverCheck(self._curModel:Position())
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.GetBoneNode = function(self, name)
-  -- function num : 0_19 , upvalues : _ENV
-  local boneTransform = (GameObjectHelper.FindChild)((self._curModel):Transform(), name)
+function SeasonMazePlayer:GetBoneNode(name)
+  local boneTransform = GameObjectHelper.FindChild(self._curModel:Transform(), name)
   if boneTransform then
     return boneTransform
   end
-  return (self._curModel):Transform()
+  return self._curModel:Transform()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.RotateToPosition = function(self, targetPosition, speed)
-  -- function num : 0_20 , upvalues : _ENV
+function SeasonMazePlayer:RotateToPosition(targetPosition, speed)
   local targetPosition = Vector3(targetPosition.x, self._y, targetPosition.z)
-  local direction = targetPosition - (self._agentTransform).position
-  local angle = (Vector3.Angle)((self._agentTransform).forward, direction)
-  local cross = (Vector3.Cross)((self._agentTransform).forward, direction)
+  local direction = targetPosition - self._agentTransform.position
+  local angle = Vector3.Angle(self._agentTransform.forward, direction)
+  local cross = Vector3.Cross(self._agentTransform.forward, direction)
   if cross.y < 0 then
     angle = -angle
   end
-  if not speed then
-    speed = 1
-  end
-  local up = (self._agentTransform).up
+  speed = speed or 1
+  local up = self._agentTransform.up
   angle = angle * speed
-  local axis = (UnityEngine.Space).Self
-  ;
-  (self._agentTransform):Rotate(up, angle, axis)
-  ;
-  (self._curModel):Rotate(up, angle, axis)
+  local axis = UnityEngine.Space.Self
+  self._agentTransform:Rotate(up, angle, axis)
+  self._curModel:Rotate(up, angle, axis)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer._CheckPosition = function(self, deltaTime)
-  -- function num : 0_21 , upvalues : _ENV
+function SeasonMazePlayer:_CheckPosition(deltaTime)
   local mapMaterial = SeasonMapMaterial.Default
-  local originPos = (self._agentTransform).position
+  local originPos = self._agentTransform.position
   originPos.y = originPos.y + 0.2
   local direction = Vector3(0, -1, 0)
-  local results = ((UnityEngine.Physics).RaycastAll)(originPos, direction, 1000, 1 << SeasonLayerMask.Scene)
-  if results and results.Length > 0 then
+  local results = UnityEngine.Physics.RaycastAll(originPos, direction, 1000, 1 << SeasonLayerMask.Scene)
+  if results and 0 < results.Length then
     local sortResult = {}
     for i = 0, results.Length - 1 do
-      (table.insert)(sortResult, results[i])
+      table.insert(sortResult, results[i])
     end
-    ;
-    (table.sort)(sortResult, function(a, b)
-    -- function num : 0_21_0
-    do return (b.point).y < (a.point).y end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    table.sort(sortResult, function(a, b)
+      return a.point.y > b.point.y
+    end)
     local findSoudMat = false
     for i = 1, #sortResult do
-      local trans = (sortResult[i]).transform
+      local trans = sortResult[i].transform
       if not findSoudMat then
-        mapMaterial = (self._mapMaterialLayer):GetMapMaterial(trans.gameObject)
+        mapMaterial, findSoudMat = self._mapMaterialLayer:GetMapMaterial(trans.gameObject)
       end
     end
   end
-  do
-    if self._curMapMaterial ~= mapMaterial then
-      self._curMapMaterial = mapMaterial
-    end
+  if self._curMapMaterial ~= mapMaterial then
+    self._curMapMaterial = mapMaterial
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.PlayStepAudio = function(self, deltaTime)
-  -- function num : 0_22
-  if ((self._seasonMazeManager):SeasonMazeAudioManager()):GetSeasonMazeAudio() then
-    (((self._seasonMazeManager):SeasonMazeAudioManager()):GetSeasonMazeAudio()):PlayStepSound(self._curMapMaterial, deltaTime)
+function SeasonMazePlayer:PlayStepAudio(deltaTime)
+  if self._seasonMazeManager:SeasonMazeAudioManager():GetSeasonMazeAudio() then
+    self._seasonMazeManager:SeasonMazeAudioManager():GetSeasonMazeAudio():PlayStepSound(self._curMapMaterial, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.SetPos = function(self, pos)
-  -- function num : 0_23
+function SeasonMazePlayer:SetPos(pos)
   pos.y = self._y
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._agentTransform).position = pos
-  ;
-  (self._curModel):SetPosition(pos)
+  self._agentTransform.position = pos
+  self._curModel:SetPosition(pos)
   self._interactTimer = self._interactDuration
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.GetModelTransform = function(self)
-  -- function num : 0_24
-  return (self._curModel):Transform()
+function SeasonMazePlayer:GetModelTransform()
+  return self._curModel:Transform()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.GetModelGameObject = function(self)
-  -- function num : 0_25
-  return (self._curModel):GameObject()
+function SeasonMazePlayer:GetModelGameObject()
+  return self._curModel:GameObject()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.GetUp = function(self)
-  -- function num : 0_26
-  return (self._agentTransform).up
+function SeasonMazePlayer:GetUp()
+  return self._agentTransform.up
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.MoveFollowerImmidiately = function(self)
-  -- function num : 0_27
-  (self._follower):FollowImmidiately()
+function SeasonMazePlayer:MoveFollowerImmidiately()
+  self._follower:FollowImmidiately()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.SetBattleRoomState = function(self, isBattleRoom)
-  -- function num : 0_28
+function SeasonMazePlayer:SetBattleRoomState(isBattleRoom)
   self._onBattleRoom = isBattleRoom
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.ResetRotation = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function SeasonMazePlayer:ResetRotation()
   self:RotateToPosition(self:Position() + Vector3.forward)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayer.ModelRotation = function(self)
-  -- function num : 0_30
-  return (self._curModel):Rotation()
+function SeasonMazePlayer:ModelRotation()
+  return self._curModel:Rotation()
 end
-
-

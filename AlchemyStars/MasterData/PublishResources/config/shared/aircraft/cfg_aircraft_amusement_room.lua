@@ -1,25 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/aircraft/cfg_aircraft_amusement_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, StoryEventId = 2, AmbientLimit = 3, AddAmbient = 4}
+local key = {
+  ID = 1,
+  StoryEventId = 2,
+  AmbientLimit = 3,
+  AddAmbient = 4
+}
 local config = {
-[7201001] = {7201001, 10201, 0, 0}
-, 
-[7202001] = {7202001, 10202, 0, 0}
-, 
-[7203001] = {7203001, 10204, 0, 0}
-, 
-[7204001] = {7204001, 10203, 0, 0}
-, 
-[7201002] = {7201002, 0, 0, 0}
-, 
-[7202002] = {7202002, 0, 0, 0}
-, 
-[7203002] = {7203002, 0, 0, 0}
-, 
-[7204002] = {7204002, 0, 0, 0}
+  [7201001] = {
+    7201001,
+    10201,
+    0,
+    0
+  },
+  [7202001] = {
+    7202001,
+    10202,
+    0,
+    0
+  },
+  [7203001] = {
+    7203001,
+    10204,
+    0,
+    0
+  },
+  [7204001] = {
+    7204001,
+    10203,
+    0,
+    0
+  },
+  [7201002] = {
+    7201002,
+    0,
+    0,
+    0
+  },
+  [7202002] = {
+    7202002,
+    0,
+    0,
+    0
+  },
+  [7203002] = {
+    7203002,
+    0,
+    0,
+    0
+  },
+  [7204002] = {
+    7204002,
+    0,
+    0,
+    0
+  }
 }
 return config, "ID", key
-

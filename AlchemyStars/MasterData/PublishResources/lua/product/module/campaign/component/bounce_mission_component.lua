@@ -1,53 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/bounce_mission_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BounceMissionComponent", ICampaignComponent)
 BounceMissionComponent = BounceMissionComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BounceMissionComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function BounceMissionComponent:Constructor()
   self.m_component_info = ClientBounceMissionComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceMissionComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BounceMissionComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = ClientBounceMissionComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceMissionComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function BounceMissionComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceMissionComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function BounceMissionComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_BOUNCE_MISSION
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceMissionComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function BounceMissionComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceMissionComponent.HandleBounceMissionSettle = function(self, TT, asyncRes, missionId, killNum, killBossNum, cost_time)
-  -- function num : 0_5 , upvalues : _ENV
+function BounceMissionComponent:HandleBounceMissionSettle(TT, asyncRes, missionId, killNum, killBossNum, cost_time)
   local request = BounceMissionSettleReq:New()
   local response = BounceMissionSettleRes:New()
   request.mission_id = missionId
@@ -55,61 +33,44 @@ BounceMissionComponent.HandleBounceMissionSettle = function(self, TT, asyncRes, 
   request.kill_boss_num = killBossNum
   request.game_cost_time = cost_time
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   local res = AsyncRequestRes:New()
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][BounceMissionComponent] HandleBounceMissionSettle ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][BounceMissionComponent] HandleBounceMissionSettle ret:", asyncRes.m_result)
     res:SetSucc(false)
     return res
   end
   res:SetSucc(true)
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).m_cur_mission = missionId
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  ((self.m_component_info).m_pass_mission_info)[missionId] = response.info
+  self.m_component_info.m_cur_mission = missionId
+  self.m_component_info.m_pass_mission_info[missionId] = response.info
   return res
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceMissionComponent.HandleBounceMissionGetReward = function(self, TT, asyncRes, missionId, entieId)
-  -- function num : 0_6 , upvalues : _ENV
+function BounceMissionComponent:HandleBounceMissionGetReward(TT, asyncRes, missionId, entieId)
   local request = BounceMissionGetRewardReq:New()
   local response = BounceMissionGetRewardRes:New()
   request.mission_id = missionId
   request.entie_id = entieId
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   local res = AsyncRequestRes:New()
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][BounceMissionComponent] HandleBounceMissionGetReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][BounceMissionComponent] HandleBounceMissionGetReward ret:", asyncRes.m_result)
     res:SetResult(asyncRes.m_result)
     return res
   end
   res:SetSucc(true)
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  ((self.m_component_info).m_pass_mission_info)[missionId] = response.info
+  self.m_component_info.m_pass_mission_info[missionId] = response.info
   return res, response
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceMissionComponent.MissionCanRecvReward = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local passMission = (self.m_component_info).m_pass_mission_info
+function BounceMissionComponent:MissionCanRecvReward()
+  local passMission = self.m_component_info.m_pass_mission_info
   if passMission == nil then
     return false
   end
-  for k,v in pairs(passMission) do
-    for sk,sv in pairs(v.enties_list) do
+  for k, v in pairs(passMission) do
+    for sk, sv in pairs(v.enties_list) do
       if sv == BounceMission_Status.E_BounceMission_Status_CAN_RECV then
         return true
       end
@@ -117,5 +78,3 @@ BounceMissionComponent.MissionCanRecvReward = function(self)
   end
   return false
 end
-
-

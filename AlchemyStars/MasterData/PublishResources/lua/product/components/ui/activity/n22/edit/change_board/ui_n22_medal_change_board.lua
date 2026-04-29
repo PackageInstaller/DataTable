@@ -1,101 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/edit/change_board/ui_n22_medal_change_board.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22MedalChangeBoard", UIController)
 UIN22MedalChangeBoard = UIN22MedalChangeBoard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22MedalChangeBoard.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mMedal = (GameGlobal.GetModule)(MedalModule)
-  self.data = (self.mMedal):GetN22MedalEditData()
+function UIN22MedalChangeBoard:Constructor()
+  self.mMedal = GameGlobal.GetModule(MedalModule)
+  self.data = self.mMedal:GetN22MedalEditData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalChangeBoard.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN22MedalChangeBoard:OnShow(uiParams)
   self.curBoardId = uiParams[1]
   self.callbackFlushBoard = uiParams[2]
   self.poolContent = self:GetUIComponent("UISelectObjectPath", "Content")
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalChangeBoard.OnHide = function(self)
-  -- function num : 0_2
+function UIN22MedalChangeBoard:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalChangeBoard.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN22MedalChangeBoard:Flush()
   local boards = self:GetSortMedals()
-  local len = (table.count)(boards)
-  ;
-  (self.poolContent):SpawnObjects("UIN22MedalChangeBoardItem", len)
-  local uis = (self.poolContent):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
+  local len = table.count(boards)
+  self.poolContent:SpawnObjects("UIN22MedalChangeBoardItem", len)
+  local uis = self.poolContent:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
     local board = boards[i]
-    do
-      ui:Flush(board, self.curBoardId, function()
-    -- function num : 0_3_0 , upvalues : self, _ENV, board
-    self:StartTask(function(TT)
-      -- function num : 0_3_0_0 , upvalues : self, _ENV, board
-      local key = "UIN22MedalChangeBoardItemBtnReplaceOnClick"
-      self:Lock(key)
-      local placement_infoSer = (self.mMedal):GetPlacementInfo()
-      local placement_info = medal_placement_info:New()
-      placement_info.board_back_id = board.medal_id
-      placement_info.medal_on_board = placement_infoSer.medal_on_board
-      local res = (self.mMedal):ReqSaveMedal(TT, placement_info)
-      if (N22MedalEditData.CheckCode)(res) then
-        if self.callbackFlushBoard then
-          (self.callbackFlushBoard)()
+    ui:Flush(board, self.curBoardId, function()
+      self:StartTask(function(TT)
+        local key = "UIN22MedalChangeBoardItemBtnReplaceOnClick"
+        self:Lock(key)
+        local placement_infoSer = self.mMedal:GetPlacementInfo()
+        local placement_info = medal_placement_info:New()
+        placement_info.board_back_id = board.medal_id
+        placement_info.medal_on_board = placement_infoSer.medal_on_board
+        local res = self.mMedal:ReqSaveMedal(TT, placement_info)
+        if N22MedalEditData.CheckCode(res) then
+          if self.callbackFlushBoard then
+            self.callbackFlushBoard()
+          end
+          self:CloseDialog()
         end
-        self:CloseDialog()
-      end
-      self:UnLock(key)
-    end
-)
-  end
-)
-    end
+        self:UnLock(key)
+      end)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalChangeBoard.GetSortMedals = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN22MedalChangeBoard:GetSortMedals()
   local dataBoard = UIMedalBgListData:New()
-  dataBoard:Init((self.mMedal):GetMedalBoardVec())
+  dataBoard:Init(self.mMedal:GetMedalBoardVec())
   local boards = dataBoard:GetSortMedals()
   local t = {}
   if boards then
-    for index,board in ipairs(boards) do
+    for index, board in ipairs(boards) do
       if board.status == RewardStatus.E_MEDAL_REWARD_LOCK then
-        do
-          (table.insert)(t, board)
-          -- DECOMPILER ERROR at PC28: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC28: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      else
+        table.insert(t, board)
       end
     end
   end
   return t
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalChangeBoard.BgOnClick = function(self, go)
-  -- function num : 0_5
+function UIN22MedalChangeBoard:BgOnClick(go)
   self:CloseDialog()
 end
-
-

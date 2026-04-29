@@ -1,40 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/new/award/ui_draw_card_award_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardAwardController", UIController)
 UIDrawCardAwardController = UIDrawCardAwardController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardAwardController.Constructor = function(self)
-  -- function num : 0_0
+function UIDrawCardAwardController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIDrawCardAwardController:OnShow(uiParams)
   self._questList = uiParams[1]
   self._comp = uiParams[2]
   self:_GetComponent()
   self:InitComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDrawCardAwardController:OnHide()
   if self._countTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._countTimer)
+    GameGlobal.Timer():CancelEvent(self._countTimer)
     self._countTimer = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardController._GetComponent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDrawCardAwardController:_GetComponent()
   self:AttachEvent(GameEventType.OnDrawCardGetAward, self.InitComponent)
   self._awardArea = self:GetUIComponent("UISelectObjectPath", "awardArea")
   self._leftTime = self:GetUIComponent("UILocalizationText", "leftTime")
@@ -44,225 +28,149 @@ UIDrawCardAwardController._GetComponent = function(self)
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardController.InitComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  do
-    if not self.finalAward then
-      local len = (table.count)(self._questList)
-      self.finalAward = (self._questList)[len]
-      ;
-      (table.remove)(self._questList, len)
-    end
-    local finalAwardItem = (self._finalAward):SpawnObject("UIDrawCardAwardItem")
-    finalAwardItem:SetData(self.finalAward, 1, true, function(id, pos)
-    -- function num : 0_4_0 , upvalues : self
-    self:OnItemSelect(id, pos)
+function UIDrawCardAwardController:InitComponent()
+  if not self.finalAward then
+    local len = table.count(self._questList)
+    self.finalAward = self._questList[len]
+    table.remove(self._questList, len)
   end
-, function()
-    -- function num : 0_4_1 , upvalues : self, _ENV
+  local finalAwardItem = self._finalAward:SpawnObject("UIDrawCardAwardItem")
+  finalAwardItem:SetData(self.finalAward, 1, true, function(id, pos)
+    self:OnItemSelect(id, pos)
+  end, function()
     self:StartTask(function(TT)
-      -- function num : 0_4_1_0 , upvalues : _ENV, self
       local res = AsyncRequestRes:New()
-      local ret, rewards = (self._comp):HandleOneKeyTakeQuest(TT, res)
+      local ret, rewards = self._comp:HandleOneKeyTakeQuest(TT, res)
       if res:GetSucc() then
         self:ShowDialog("UIGetItemController", rewards, function()
-        -- function num : 0_4_1_0_0 , upvalues : _ENV
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnDrawCardGetAward)
-      end
-)
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.OnDrawCardGetAward)
+        end)
       else
-        ;
-        (Log.fatal)("一键领取所有奖励失败：", res:GetResult())
+        Log.fatal("一键领取所有奖励失败：", res:GetResult())
       end
-    end
-)
+    end)
+  end)
+  self._quests = self._awardArea:SpawnObjects("UIDrawCardAwardItem", #self._questList)
+  for i, award in pairs(self._quests) do
+    award:SetData(self._questList[i], i, false, function(id, pos)
+      self:OnItemSelect(id, pos)
+    end, function()
+      self:StartTask(function(TT)
+        local res = AsyncRequestRes:New()
+        local ret, rewards = self._comp:HandleOneKeyTakeQuest(TT, res)
+        if res:GetSucc() then
+          self:ShowDialog("UIGetItemController", rewards, function()
+            self:InitComponent()
+            GameGlobal.EventDispatcher():Dispatch(GameEventType.OnDrawCardGetAward)
+          end)
+        else
+          Log.fatal("一键领取所有奖励失败：", res:GetResult())
+        end
+      end)
+    end)
   end
-)
-    self._quests = (self._awardArea):SpawnObjects("UIDrawCardAwardItem", #self._questList)
-    for i,award in pairs(self._quests) do
-      award:SetData((self._questList)[i], i, false, function(id, pos)
-    -- function num : 0_4_2 , upvalues : self
-    self:OnItemSelect(id, pos)
+  local questList = self._comp:GetQuestInfo()
+  local finalQuest = questList[table.count(questList)]
+  if finalQuest._questInfo.cur_progress >= finalQuest._questInfo.total_progress then
+    self._curTimeTxt:SetText(StringTable.Get("str_aircraft_tactic_rank_btn_finish"))
+  else
+    self._curTimeTxt:SetText(StringTable.Get("str_draw_card_award_time_info1", finalQuest._questInfo.cur_progress))
   end
-, function()
-    -- function num : 0_4_3 , upvalues : self, _ENV
-    self:StartTask(function(TT)
-      -- function num : 0_4_3_0 , upvalues : _ENV, self
-      local res = AsyncRequestRes:New()
-      local ret, rewards = (self._comp):HandleOneKeyTakeQuest(TT, res)
-      if res:GetSucc() then
-        self:ShowDialog("UIGetItemController", rewards, function()
-        -- function num : 0_4_3_0_0 , upvalues : self, _ENV
-        self:InitComponent()
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnDrawCardGetAward)
-      end
-)
-      else
-        ;
-        (Log.fatal)("一键领取所有奖励失败：", res:GetResult())
-      end
-    end
-)
-  end
-)
-    end
-    local questList = (self._comp):GetQuestInfo()
-    local finalQuest = questList[(table.count)(questList)]
-    if (finalQuest._questInfo).total_progress <= (finalQuest._questInfo).cur_progress then
-      (self._curTimeTxt):SetText((StringTable.Get)("str_aircraft_tactic_rank_btn_finish"))
-    else
-      ;
-      (self._curTimeTxt):SetText((StringTable.Get)("str_draw_card_award_time_info1", (finalQuest._questInfo).cur_progress))
-    end
+  self:CountDown()
+  self._countTimer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:CountDown()
-    self._countTimer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_4_4 , upvalues : self
-    self:CountDown()
-  end
-)
-    local curQuest, index = self:GetCurQuest()
-    local percent = index / (table.count)(self._questList)
-    -- DECOMPILER ERROR at PC98: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._scrollRect).horizontalNormalizedPosition = percent
-    self:StartTask(function(TT)
-    -- function num : 0_4_5 , upvalues : _ENV, self
-    local time = 18 * (table.count)(self._questList)
+  end)
+  local curQuest, index = self:GetCurQuest()
+  local percent = index / table.count(self._questList)
+  self._scrollRect.horizontalNormalizedPosition = percent
+  self:StartTask(function(TT)
+    local time = 18 * table.count(self._questList)
     self:Lock("UIDrawCardAwardController_Enter")
     YIELD(TT, time)
     self:UnLock("UIDrawCardAwardController_Enter")
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardController.CountDown = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if not (tolua.isnull)(self._anim) then
-    local endTime = ((self._comp).m_component_info).m_close_time
-    local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-    local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-    local timeTxt = (StringTable.Get)("str_draw_card_award_time_info2", self:GetTimeString(endTime - curTime))
-    ;
-    (self._leftTime):SetText(timeTxt)
+function UIDrawCardAwardController:CountDown()
+  if not tolua.isnull(self._anim) then
+    local endTime = self._comp.m_component_info.m_close_time
+    local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+    local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+    local timeTxt = StringTable.Get("str_draw_card_award_time_info2", self:GetTimeString(endTime - curTime))
+    self._leftTime:SetText(timeTxt)
     if endTime - curTime <= 0 then
       self:SwitchState(UIStateType.UIMain)
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_junior_skin_draw_common_main_end"))
-      return 
+      ToastManager.ShowToast(StringTable.Get("str_junior_skin_draw_common_main_end"))
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardController.OnItemSelect = function(self, id, pos)
-  -- function num : 0_6
-  do
-    if not self._selectInfo then
-      local selectInfoPool = self:GetUIComponent("UISelectObjectPath", "selectInfoPool")
-      self._selectInfo = selectInfoPool:SpawnObject("UISelectInfo")
-    end
-    ;
-    (self._selectInfo):SetData(id, pos)
+function UIDrawCardAwardController:OnItemSelect(id, pos)
+  if not self._selectInfo then
+    local selectInfoPool = self:GetUIComponent("UISelectObjectPath", "selectInfoPool")
+    self._selectInfo = selectInfoPool:SpawnObject("UISelectInfo")
   end
+  self._selectInfo:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardController.FullBtnOnClick = function(self)
-  -- function num : 0_7
+function UIDrawCardAwardController:FullBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardController.GetCurQuest = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local curQuest = nil
-  local questList = (self._comp):GetQuestInfo()
+function UIDrawCardAwardController:GetCurQuest()
+  local curQuest
+  local questList = self._comp:GetQuestInfo()
   local index = 0
-  for i,quest in pairs(questList) do
-    if (quest._questInfo).status < QuestStatus.QUEST_Completed then
+  for i, quest in pairs(questList) do
+    if quest._questInfo.status < QuestStatus.QUEST_Completed then
       curQuest = quest
       index = i
       break
-    else
-      if (quest._questInfo).status == QuestStatus.QUEST_Completed then
-        curQuest = quest
-        index = i
-        break
-      end
+    elseif quest._questInfo.status == QuestStatus.QUEST_Completed then
+      curQuest = quest
+      index = i
+      break
     end
   end
-  do
-    do
-      if not curQuest then
-        local len = (table.count)(questList)
-        curQuest = questList[len]
-        index = len
-      end
-      if index ~= 1 or not 0 then
-        return curQuest, index
-      end
-    end
+  if not curQuest then
+    local len = table.count(questList)
+    curQuest = questList[len]
+    index = len
   end
+  index = index == 1 and 0 or index
+  return curQuest, index
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardController.GetTimeString = function(self, seconds, dayStr, hourStr, minusStr, lessOneMinusStr)
-  -- function num : 0_9 , upvalues : _ENV
+function UIDrawCardAwardController:GetTimeString(seconds, dayStr, hourStr, minusStr, lessOneMinusStr)
   if seconds < 0 then
     seconds = 0
   end
-  if not dayStr then
-    dayStr = "str_activity_common_day"
-  end
-  if not hourStr then
-    hourStr = "str_activity_common_hour"
-  end
-  if not minusStr then
-    minusStr = "str_activity_common_minute"
-  end
-  if not lessOneMinusStr then
-    lessOneMinusStr = "str_activity_common_less_minute"
-  end
+  dayStr = dayStr or "str_activity_common_day"
+  hourStr = hourStr or "str_activity_common_hour"
+  minusStr = minusStr or "str_activity_common_minute"
+  lessOneMinusStr = lessOneMinusStr or "str_activity_common_less_minute"
   local timeStr = ""
-  local day = (math.floor)(seconds / 3600 / 24)
-  if day > 0 then
+  local day = math.floor(seconds / 3600 / 24)
+  if 0 < day then
     seconds = seconds - day * 3600 * 24
-    local hour = (math.floor)((seconds) / 3600)
-    timeStr = day .. (StringTable.Get)(dayStr)
-    if hour > 0 then
-      timeStr = timeStr .. hour .. (StringTable.Get)(hourStr)
+    local hour = math.floor(seconds / 3600)
+    timeStr = day .. StringTable.Get(dayStr)
+    if 0 < hour then
+      timeStr = timeStr .. hour .. StringTable.Get(hourStr)
+    end
+  elseif 60 <= seconds then
+    local hour = math.floor(seconds / 3600)
+    seconds = seconds - hour * 3600
+    if 0 < hour then
+      timeStr = hour .. StringTable.Get(hourStr)
+    end
+    local minus = math.floor(seconds / 60)
+    if minus ~= 0 then
+      timeStr = timeStr .. minus .. StringTable.Get(minusStr)
     end
   else
-    do
-      if seconds >= 60 then
-        local hour = (math.floor)((seconds) / 3600)
-        seconds = seconds - hour * 3600
-        if hour > 0 then
-          timeStr = hour .. (StringTable.Get)(hourStr)
-        end
-        local minus = (math.floor)((seconds) / 60)
-        if minus ~= 0 then
-          timeStr = timeStr .. minus .. (StringTable.Get)(minusStr)
-        end
-      else
-        do
-          timeStr = (StringTable.Get)(lessOneMinusStr)
-          return timeStr
-        end
-      end
-    end
+    timeStr = StringTable.Get(lessOneMinusStr)
   end
+  return timeStr
 end
-
-

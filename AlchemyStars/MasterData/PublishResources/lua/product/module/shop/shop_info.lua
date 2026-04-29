@@ -1,53 +1,119 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/shop/shop_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local MarketType = {Shop_Error = 0, Shop_BlackMarket = 1, Shop_MysteryMarket = 2, Shop_PayMarket = 3, Shop_GiftMarket = 4, Shop_XingZuan = 5, Shop_HuiYao = 6, Shop_GuangPo = 7, Shop_SkinMarket = 8, Shop_HongPiao = 9, Shop_Furniture = 10, Shop_Furniture_Precious = 11, Shop_WorldBoss = 12, Shop_BattlePass = 13, Shop_Season = 100, Shop_CampaignMarket = 100100}
+local MarketType = {
+  Shop_Error = 0,
+  Shop_BlackMarket = 1,
+  Shop_MysteryMarket = 2,
+  Shop_PayMarket = 3,
+  Shop_GiftMarket = 4,
+  Shop_XingZuan = 5,
+  Shop_HuiYao = 6,
+  Shop_GuangPo = 7,
+  Shop_SkinMarket = 8,
+  Shop_HongPiao = 9,
+  Shop_Furniture = 10,
+  Shop_Furniture_Precious = 11,
+  Shop_WorldBoss = 12,
+  Shop_BattlePass = 13,
+  Shop_Season = 100,
+  Shop_CampaignMarket = 100100
+}
 _enum("MarketType", MarketType)
 local RecommendType = {RecommendType_CountLimit = 1, RecommendType_TimeLimit = 2}
 _enum("RecommendType", RecommendType)
-local ShopGiftType = {SGT_NormalGift = 1, SGT_MonthCard = 2, SGT_BattlePassGift = 3, SGT_WeekCard = 4, SGT_LevelGift = 5, SGT_RechargeGift = 6, SGT_CommonTime = 10}
+local ShopGiftType = {
+  SGT_NormalGift = 1,
+  SGT_MonthCard = 2,
+  SGT_BattlePassGift = 3,
+  SGT_WeekCard = 4,
+  SGT_LevelGift = 5,
+  SGT_RechargeGift = 6,
+  SGT_CommonTime = 10
+}
 _enum("ShopGiftType", ShopGiftType)
-local PageType = {PageType_NewPreferential = 1, PageType_MonthMembershipCard = 2, PageType_ChoicenessGift = 3, PageType_FashionClothes = 4, PageType_Furniture = 5}
+local PageType = {
+  PageType_NewPreferential = 1,
+  PageType_MonthMembershipCard = 2,
+  PageType_ChoicenessGift = 3,
+  PageType_FashionClothes = 4,
+  PageType_Furniture = 5
+}
 _enum("PageType", PageType)
 local ExchangePhyPointType = {EPPT_LEFT = 1, EPPT_RIGHT = 2}
 _enum("ExchangePhyPointType", ExchangePhyPointType)
-local SpecialNum = {FreeGiftSaleType = 0, NeedPayMoney = 888, EitherDiamondOrMoney = 8889, MysteryGoodsUnlimitedNum = 888888888}
+local SpecialNum = {
+  FreeGiftSaleType = 0,
+  NeedPayMoney = 888,
+  EitherDiamondOrMoney = 8889,
+  MysteryGoodsUnlimitedNum = 888888888
+}
 _enum("SpecialNum", SpecialNum)
-local ConfigKey = {ConfigKey_ID = 1, ConfigKey_ItemId = 2, ConfigKey_ItemCount = 3, ConfigKey_SaleType = 4, ConfigKey_RawPrice = 5, ConfigKey_NowPrice = 6, ConfigKey_Discount = 7, ConfigKey_SaleNum = 8, ConfigKey_SaleTag = 9, ConfigKey_MidasItemId = 10, ConfigKey_FirstPresentCount = 11, ConfigKey_FixedPresentCount = 12, ConfigKey_ShowBeginTime = 13, ConfigKey_ShowEndTime = 14, ConfigKey_RefreshMethod = 15, ConfigKey_FirstRefreshDate = 16, ConfigKey_RefreshInterval = 17, ConfigKey_DirectAssetList = 18, ConfigKey_CycleAcceptAssetList = 19, ConfigKey_ShopGiftType = 20, ConfigKey_LimitDay = 21, ConfigKey_ProposeGift = 22, ConfigKey_LevelCondition = 23, ConfigKey_AcceptUseFullLife = 24, ConfigKey_BattleType = 25, ConfigKey_ConvertType = 26, ConfigKey_ConvertPrice = 27, ConfigKey_IsAddBagNum = 50}
+local ConfigKey = {
+  ConfigKey_ID = 1,
+  ConfigKey_ItemId = 2,
+  ConfigKey_ItemCount = 3,
+  ConfigKey_SaleType = 4,
+  ConfigKey_RawPrice = 5,
+  ConfigKey_NowPrice = 6,
+  ConfigKey_Discount = 7,
+  ConfigKey_SaleNum = 8,
+  ConfigKey_SaleTag = 9,
+  ConfigKey_MidasItemId = 10,
+  ConfigKey_FirstPresentCount = 11,
+  ConfigKey_FixedPresentCount = 12,
+  ConfigKey_ShowBeginTime = 13,
+  ConfigKey_ShowEndTime = 14,
+  ConfigKey_RefreshMethod = 15,
+  ConfigKey_FirstRefreshDate = 16,
+  ConfigKey_RefreshInterval = 17,
+  ConfigKey_DirectAssetList = 18,
+  ConfigKey_CycleAcceptAssetList = 19,
+  ConfigKey_ShopGiftType = 20,
+  ConfigKey_LimitDay = 21,
+  ConfigKey_ProposeGift = 22,
+  ConfigKey_LevelCondition = 23,
+  ConfigKey_AcceptUseFullLife = 24,
+  ConfigKey_BattleType = 25,
+  ConfigKey_ConvertType = 26,
+  ConfigKey_ConvertPrice = 27,
+  ConfigKey_IsAddBagNum = 50
+}
 _enum("ConfigKey", ConfigKey)
-local RefreshMethod = {RM_ByWeek = 1, RM_ByMonth = 2, RM_CycleRefresh = 3, RM_OneOff = 4}
+local RefreshMethod = {
+  RM_ByWeek = 1,
+  RM_ByMonth = 2,
+  RM_CycleRefresh = 3,
+  RM_OneOff = 4
+}
 _enum("RefreshMethod", RefreshMethod)
-local CommonShopType = {CommonShopType_Skin = 1, CommonShopType_Campaign = 2, CommonShopType_SeniorSkin = 3}
+local CommonShopType = {
+  CommonShopType_Skin = 1,
+  CommonShopType_Campaign = 2,
+  CommonShopType_SeniorSkin = 3
+}
 _enum("CommonShopType", CommonShopType)
 _class("GoodsInfo", Object)
 GoodsInfo = GoodsInfo
--- DECOMPILER ERROR at PC124: Confused about usage of register: R9 in 'UnsetPending'
 
-GoodsInfo.Constructor = function(self)
-  -- function num : 0_0
+function GoodsInfo:Constructor()
   self.goods_id = 0
   self.selled_num = 0
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R9 in 'UnsetPending'
-
 GoodsInfo._proto = {
-[1] = {"goods_id", "int"}
-, 
-[2] = {"selled_num", "int"}
+  [1] = {"goods_id", "int"},
+  [2] = {"selled_num", "int"}
 }
 local GiftLockStatus = {GLS_LevelLock = 1, GLS_PreposeLock = 16}
 _enum("GiftLockStatus", GiftLockStatus)
-local FurnitureShopType = {FRN_Set = 1, FRN_Components = 2, FRN_Precious = 3}
+local FurnitureShopType = {
+  FRN_Set = 1,
+  FRN_Components = 2,
+  FRN_Precious = 3
+}
 _enum("FurnitureShopType", FurnitureShopType)
 _class("MonthGiftGoodsInfo", Object)
 MonthGiftGoodsInfo = MonthGiftGoodsInfo
--- DECOMPILER ERROR at PC161: Confused about usage of register: R11 in 'UnsetPending'
 
-MonthGiftGoodsInfo.Constructor = function(self)
-  -- function num : 0_1
+function MonthGiftGoodsInfo:Constructor()
   self.gift_id = 0
   self.effect_daynum = 0
   self.take_effect_day = 0
@@ -59,33 +125,42 @@ MonthGiftGoodsInfo.Constructor = function(self)
   self.deadline_timestamp = 0
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R11 in 'UnsetPending'
-
 MonthGiftGoodsInfo._proto = {
-[1] = {"gift_id", "int"}
-, 
-[2] = {"effect_daynum", "int"}
-, 
-[3] = {"take_effect_day", "int"}
-, 
-[4] = {"selled_num", "int"}
-, 
-[5] = {"last_refresh_time", "time"}
-, 
-[6] = {"deadline_time", "time"}
-, 
-[7] = {"month_card_days", "int"}
-, 
-[8] = {"gift_lock_status", "int"}
-, 
-[9] = {"deadline_timestamp", "time"}
+  [1] = {"gift_id", "int"},
+  [2] = {
+    "effect_daynum",
+    "int"
+  },
+  [3] = {
+    "take_effect_day",
+    "int"
+  },
+  [4] = {"selled_num", "int"},
+  [5] = {
+    "last_refresh_time",
+    "time"
+  },
+  [6] = {
+    "deadline_time",
+    "time"
+  },
+  [7] = {
+    "month_card_days",
+    "int"
+  },
+  [8] = {
+    "gift_lock_status",
+    "int"
+  },
+  [9] = {
+    "deadline_timestamp",
+    "time"
+  }
 }
 _class("SkinMarketGoodsInfo", Object)
 SkinMarketGoodsInfo = SkinMarketGoodsInfo
--- DECOMPILER ERROR at PC218: Confused about usage of register: R11 in 'UnsetPending'
 
-SkinMarketGoodsInfo.Constructor = function(self)
-  -- function num : 0_2
+function SkinMarketGoodsInfo:Constructor()
   self.goodid = 0
   self.endtime = 0
   self.saletype = 0
@@ -95,29 +170,19 @@ SkinMarketGoodsInfo.Constructor = function(self)
   self.discount = 0
 end
 
--- DECOMPILER ERROR at PC256: Confused about usage of register: R11 in 'UnsetPending'
-
 SkinMarketGoodsInfo._proto = {
-[1] = {"goodid", "int"}
-, 
-[2] = {"endtime", "time"}
-, 
-[3] = {"saletype", "int"}
-, 
-[4] = {"price", "int"}
-, 
-[5] = {"skin_id", "int"}
-, 
-[6] = {"new_price", "int"}
-, 
-[7] = {"discount", "int"}
+  [1] = {"goodid", "int"},
+  [2] = {"endtime", "time"},
+  [3] = {"saletype", "int"},
+  [4] = {"price", "int"},
+  [5] = {"skin_id", "int"},
+  [6] = {"new_price", "int"},
+  [7] = {"discount", "int"}
 }
 _class("MarketInfo", Object)
 MarketInfo = MarketInfo
--- DECOMPILER ERROR at PC265: Confused about usage of register: R11 in 'UnsetPending'
 
-MarketInfo.Constructor = function(self)
-  -- function num : 0_3
+function MarketInfo:Constructor()
   self.market_type = 0
   self.cur_level_id = 0
   self.last_auto_refresh_time = 0
@@ -129,76 +194,93 @@ MarketInfo.Constructor = function(self)
   self.new_mark_goods = {}
 end
 
--- DECOMPILER ERROR at PC313: Confused about usage of register: R11 in 'UnsetPending'
-
 MarketInfo._proto = {
-[1] = {"market_type", "int"}
-, 
-[2] = {"cur_level_id", "int"}
-, 
-[3] = {"last_auto_refresh_time", "time"}
-, 
-[4] = {"last_apply_refresh_time", "time"}
-, 
-[5] = {"today_refreshed_count", "int"}
-, 
-[6] = {"goods", "list<GoodsInfo>"}
-, 
-[7] = {"version", "int"}
-, 
-[8] = {"old_selling_goods", "list<int>"}
-, 
-[9] = {"new_mark_goods", "list<int>"}
+  [1] = {
+    "market_type",
+    "int"
+  },
+  [2] = {
+    "cur_level_id",
+    "int"
+  },
+  [3] = {
+    "last_auto_refresh_time",
+    "time"
+  },
+  [4] = {
+    "last_apply_refresh_time",
+    "time"
+  },
+  [5] = {
+    "today_refreshed_count",
+    "int"
+  },
+  [6] = {
+    "goods",
+    "list<GoodsInfo>"
+  },
+  [7] = {"version", "int"},
+  [8] = {
+    "old_selling_goods",
+    "list<int>"
+  },
+  [9] = {
+    "new_mark_goods",
+    "list<int>"
+  }
 }
 _class("GiftMarketInfo", Object)
 GiftMarketInfo = GiftMarketInfo
--- DECOMPILER ERROR at PC322: Confused about usage of register: R11 in 'UnsetPending'
 
-GiftMarketInfo.Constructor = function(self)
-  -- function num : 0_4
+function GiftMarketInfo:Constructor()
   self.last_accept_gift_time = 0
   self.goods = {}
   self.old_selling_goods = {}
   self.new_mark_goods = {}
 end
 
--- DECOMPILER ERROR at PC345: Confused about usage of register: R11 in 'UnsetPending'
-
 GiftMarketInfo._proto = {
-[1] = {"last_accept_gift_time", "time"}
-, 
-[2] = {"goods", "list<MonthGiftGoodsInfo>"}
-, 
-[3] = {"old_selling_goods", "list<int>"}
-, 
-[4] = {"new_mark_goods", "list<int>"}
+  [1] = {
+    "last_accept_gift_time",
+    "time"
+  },
+  [2] = {
+    "goods",
+    "list<MonthGiftGoodsInfo>"
+  },
+  [3] = {
+    "old_selling_goods",
+    "list<int>"
+  },
+  [4] = {
+    "new_mark_goods",
+    "list<int>"
+  }
 }
 _class("all_market_data", Object)
 all_market_data = all_market_data
--- DECOMPILER ERROR at PC354: Confused about usage of register: R11 in 'UnsetPending'
 
-all_market_data.Constructor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function all_market_data:Constructor()
   self.pstid = 0
   self.market_datas = {}
   self.month_card_data = GiftMarketInfo:New()
 end
 
--- DECOMPILER ERROR at PC372: Confused about usage of register: R11 in 'UnsetPending'
-
 all_market_data._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"market_datas", "map<int,MarketInfo>"}
-, 
-[3] = {"month_card_data", "GiftMarketInfo"}
+  [1] = {"pstid", "int64"},
+  [2] = {
+    "market_datas",
+    "map<int,MarketInfo>"
+  },
+  [3] = {
+    "month_card_data",
+    "GiftMarketInfo"
+  }
 }
 _class("AllShopConfig", Object)
 AllShopConfig = AllShopConfig
--- DECOMPILER ERROR at PC381: Confused about usage of register: R11 in 'UnsetPending'
 
-AllShopConfig.Constructor = function(self)
-  -- function num : 0_6
+function AllShopConfig:Constructor()
   self.mystery_market_config = {}
   self.black_market_config = {}
   self.xingzuan_market_config = {}
@@ -214,41 +296,64 @@ AllShopConfig.Constructor = function(self)
   self.battlepass_market_config = {}
 end
 
--- DECOMPILER ERROR at PC449: Confused about usage of register: R11 in 'UnsetPending'
-
 AllShopConfig._proto = {
-[1] = {"mystery_market_config", "map<int,map<int,int>>"}
-, 
-[2] = {"black_market_config", "map<int,map<int,int>>"}
-, 
-[3] = {"xingzuan_market_config", "map<int,map<int,int>>"}
-, 
-[4] = {"yaojing_market_config", "map<int,map<int,int>>"}
-, 
-[5] = {"guangpo_market_config", "map<int,map<int,int>>"}
-, 
-[6] = {"pay_market_config", "map<int,map<int,string>>"}
-, 
-[7] = {"gift_market_config", "map<int,map<int,string>>"}
-, 
-[8] = {"skin_market_config", "map<int,map<int,string>>"}
-, 
-[9] = {"hongpiao_market_config", "map<int,map<int,int>>"}
-, 
-[10] = {"furniture_market_config", "map<int,map<int,int>>"}
-, 
-[11] = {"furniture_precious_market_config", "map<int,map<int,int>>"}
-, 
-[12] = {"season_market_config", "map<int,map<int,int>>"}
-, 
-[13] = {"battlepass_market_config", "map<int,map<int,int>>"}
+  [1] = {
+    "mystery_market_config",
+    "map<int,map<int,int>>"
+  },
+  [2] = {
+    "black_market_config",
+    "map<int,map<int,int>>"
+  },
+  [3] = {
+    "xingzuan_market_config",
+    "map<int,map<int,int>>"
+  },
+  [4] = {
+    "yaojing_market_config",
+    "map<int,map<int,int>>"
+  },
+  [5] = {
+    "guangpo_market_config",
+    "map<int,map<int,int>>"
+  },
+  [6] = {
+    "pay_market_config",
+    "map<int,map<int,string>>"
+  },
+  [7] = {
+    "gift_market_config",
+    "map<int,map<int,string>>"
+  },
+  [8] = {
+    "skin_market_config",
+    "map<int,map<int,string>>"
+  },
+  [9] = {
+    "hongpiao_market_config",
+    "map<int,map<int,int>>"
+  },
+  [10] = {
+    "furniture_market_config",
+    "map<int,map<int,int>>"
+  },
+  [11] = {
+    "furniture_precious_market_config",
+    "map<int,map<int,int>>"
+  },
+  [12] = {
+    "season_market_config",
+    "map<int,map<int,int>>"
+  },
+  [13] = {
+    "battlepass_market_config",
+    "map<int,map<int,int>>"
+  }
 }
 _class("ExchangePhyState", Object)
 ExchangePhyState = ExchangePhyState
--- DECOMPILER ERROR at PC458: Confused about usage of register: R11 in 'UnsetPending'
 
-ExchangePhyState.Constructor = function(self)
-  -- function num : 0_7
+function ExchangePhyState:Constructor()
   self.cur_times = 0
   self.max_times = 0
   self.cost_id = 0
@@ -257,27 +362,24 @@ ExchangePhyState.Constructor = function(self)
   self.begin_end = {}
 end
 
--- DECOMPILER ERROR at PC491: Confused about usage of register: R11 in 'UnsetPending'
-
 ExchangePhyState._proto = {
-[1] = {"cur_times", "int"}
-, 
-[2] = {"max_times", "int"}
-, 
-[3] = {"cost_id", "int"}
-, 
-[4] = {"cost_count", "int"}
-, 
-[5] = {"add_phy_count", "int"}
-, 
-[6] = {"begin_end", "list<string>"}
+  [1] = {"cur_times", "int"},
+  [2] = {"max_times", "int"},
+  [3] = {"cost_id", "int"},
+  [4] = {"cost_count", "int"},
+  [5] = {
+    "add_phy_count",
+    "int"
+  },
+  [6] = {
+    "begin_end",
+    "list<string>"
+  }
 }
 _class("EventBuyItemOnce", Object)
 EventBuyItemOnce = EventBuyItemOnce
--- DECOMPILER ERROR at PC500: Confused about usage of register: R11 in 'UnsetPending'
 
-EventBuyItemOnce.Constructor = function(self)
-  -- function num : 0_8
+function EventBuyItemOnce:Constructor()
   self.goods_id = 0
   self.buy_num = 0
   self.currency_type = 0
@@ -285,17 +387,16 @@ EventBuyItemOnce.Constructor = function(self)
   self.discount = 0
 end
 
--- DECOMPILER ERROR at PC528: Confused about usage of register: R11 in 'UnsetPending'
-
 EventBuyItemOnce._proto = {
-[1] = {"goods_id", "int"}
-, 
-[2] = {"buy_num", "int"}
-, 
-[3] = {"currency_type", "int"}
-, 
-[4] = {"selling_price", "int"}
-, 
-[5] = {"discount", "float"}
+  [1] = {"goods_id", "int"},
+  [2] = {"buy_num", "int"},
+  [3] = {
+    "currency_type",
+    "int"
+  },
+  [4] = {
+    "selling_price",
+    "int"
+  },
+  [5] = {"discount", "float"}
 }
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_air_nav_menu/ui_air_nav_menu.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAirNavMenu", UICustomWidget)
 UIAirNavMenu = UIAirNavMenu
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAirNavMenu.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAirNavMenu:OnShow(uiParams)
   self._assetCount = 0
   self._enterlvCount = 0
   self._storyCount = 0
@@ -19,31 +12,62 @@ UIAirNavMenu.OnShow = function(self, uiParams)
   self._isDetailOpen = false
   self._atlas = self:GetAsset("UIAircraftMainUI.spriteatlas", LoadType.SpriteAtlas)
   self._count2pos = {
-[1] = {[1] = Vector2(-260, 10)}
-, 
-[2] = {[1] = Vector2(-250, 105), [2] = Vector2(-250, -55)}
-, 
-[3] = {[1] = Vector2(-190, 200), [2] = Vector2(-260, 10), [3] = Vector2(-175, -180)}
-, 
-[4] = {[1] = Vector2(-145, 240), [2] = Vector2(-250, 105), [3] = Vector2(-240, -55), [4] = Vector2(-135, -205)}
-}
-  self._state2name = {[AirNavMenuBtnState.Asset] = "str_aircraft_quality_menu_asset_collect", [AirNavMenuBtnState.Room] = "str_aircraft_quality_menu_enter_lv", [AirNavMenuBtnState.Story] = "str_aircraft_quality_menu_pet_story", [AirNavMenuBtnState.Discovery] = "str_aircraft_quality_menu_discovery_finish"}
-  self._state2icon = {[AirNavMenuBtnState.Asset] = "wind_tongyong_icon25", [AirNavMenuBtnState.Room] = "wind_tongyong_icon26", [AirNavMenuBtnState.Story] = "wind_tongyong_icon24", [AirNavMenuBtnState.Discovery] = "wind_tongyong_icon23"}
-  self._state2circleColor = {[AirNavMenuBtnState.Asset] = Color(0.13333333333333, 0.7843137254902, 0.94901960784314, 1), [AirNavMenuBtnState.Room] = Color(0.45098039215686, 0.90196078431373, 0.50196078431373, 1), [AirNavMenuBtnState.Story] = Color(0.97647058823529, 0.55686274509804, 0.27843137254902, 1), [AirNavMenuBtnState.Discovery] = Color(0.96470588235294, 0.84313725490196, 0.33333333333333, 1)}
-  self._state2maskImg = {[AirNavMenuBtnState.Asset] = "wind_tongyong_fang3", [AirNavMenuBtnState.Room] = "wind_tongyong_fang4", [AirNavMenuBtnState.Story] = "wind_tongyong_fang2", [AirNavMenuBtnState.Discovery] = "wind_tongyong_fang1"}
-  self._module = (GameGlobal.GetModule)(AircraftModule)
+    [1] = {
+      [1] = Vector2(-260, 10)
+    },
+    [2] = {
+      [1] = Vector2(-250, 105),
+      [2] = Vector2(-250, -55)
+    },
+    [3] = {
+      [1] = Vector2(-190, 200),
+      [2] = Vector2(-260, 10),
+      [3] = Vector2(-175, -180)
+    },
+    [4] = {
+      [1] = Vector2(-145, 240),
+      [2] = Vector2(-250, 105),
+      [3] = Vector2(-240, -55),
+      [4] = Vector2(-135, -205)
+    }
+  }
+  self._state2name = {
+    [AirNavMenuBtnState.Asset] = "str_aircraft_quality_menu_asset_collect",
+    [AirNavMenuBtnState.Room] = "str_aircraft_quality_menu_enter_lv",
+    [AirNavMenuBtnState.Story] = "str_aircraft_quality_menu_pet_story",
+    [AirNavMenuBtnState.Discovery] = "str_aircraft_quality_menu_discovery_finish"
+  }
+  self._state2icon = {
+    [AirNavMenuBtnState.Asset] = "wind_tongyong_icon25",
+    [AirNavMenuBtnState.Room] = "wind_tongyong_icon26",
+    [AirNavMenuBtnState.Story] = "wind_tongyong_icon24",
+    [AirNavMenuBtnState.Discovery] = "wind_tongyong_icon23"
+  }
+  self._state2circleColor = {
+    [AirNavMenuBtnState.Asset] = Color(0.13333333333333333, 0.7843137254901961, 0.9490196078431372, 1),
+    [AirNavMenuBtnState.Room] = Color(0.45098039215686275, 0.9019607843137255, 0.5019607843137255, 1),
+    [AirNavMenuBtnState.Story] = Color(0.9764705882352941, 0.5568627450980392, 0.2784313725490196, 1),
+    [AirNavMenuBtnState.Discovery] = Color(0.9647058823529412, 0.8431372549019608, 0.3333333333333333, 1)
+  }
+  self._state2maskImg = {
+    [AirNavMenuBtnState.Asset] = "wind_tongyong_fang3",
+    [AirNavMenuBtnState.Room] = "wind_tongyong_fang4",
+    [AirNavMenuBtnState.Story] = "wind_tongyong_fang2",
+    [AirNavMenuBtnState.Discovery] = "wind_tongyong_fang1"
+  }
+  self._module = GameGlobal.GetModule(AircraftModule)
   self._btnState = AirNavMenuBtnState.All
   self._showSpaceId = {}
-  self._navAnim = {[1] = "uieff_aircraftNav_Panel_Show", [2] = "uieff_aircraftNav_Panel_Hide"}
+  self._navAnim = {
+    [1] = "uieff_aircraftNav_Panel_Show",
+    [2] = "uieff_aircraftNav_Panel_Hide"
+  }
   self.maxCountTime_start = 0
   self.maxCountTime_end = 20
   self.maxCountTime_Gaps = self.maxCountTime_end - self.maxCountTime_start
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.SetData = function(self, main, focusRoom, focusPet)
-  -- function num : 0_1
+function UIAirNavMenu:SetData(main, focusRoom, focusPet)
   self:GetComponent()
   self._main = main
   self:GetAirNavMenuData()
@@ -52,56 +76,47 @@ UIAirNavMenu.SetData = function(self, main, focusRoom, focusPet)
   self._focusRoom = focusRoom
   self._focusPet = focusPet
   if self._allCount > 0 then
-    (self._CountPanel):SetActive(true)
-    ;
-    (self._allCountTex):SetText(self._allCount)
+    self._CountPanel:SetActive(true)
+    self._allCountTex:SetText(self._allCount)
   else
     self._isDetailOpen = false
-    ;
-    (self._CountPanel):SetActive(false)
+    self._CountPanel:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.CalcMaskImgSizeWithPosZ = function(self, BoxColliderSizeX, BoxColliderSizeY)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAirNavMenu:CalcMaskImgSizeWithPosZ(BoxColliderSizeX, BoxColliderSizeY)
   local k = 26
   local sizeX = BoxColliderSizeX * k
   local sizeY = BoxColliderSizeY * k
   return Vector2(sizeX, sizeY)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.GetAirNavMenuData = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local roomList = (self._module):GetAllRooms()
+function UIAirNavMenu:GetAirNavMenuData()
+  local roomList = self._module:GetAllRooms()
   self._assetCount = 0
   self._assetRoomList = {}
-  for spaceid,room in pairs(roomList) do
+  for spaceid, room in pairs(roomList) do
     local roomType = room:GetRoomType()
     if roomType ~= AirRoomType.DispatchRoom then
       local canCollect = room:CanCollect()
       if canCollect then
         self._assetCount = self._assetCount + 1
-        ;
-        (table.insert)(self._assetRoomList, room)
+        table.insert(self._assetRoomList, room)
       end
     end
   end
   self._enterlvCount = 0
   self._enterLvRoomList = {}
   for i = 1, 16 do
-    local canLvUp = (self._module):CanRoomLevelUp(i)
+    local canLvUp = self._module:CanRoomLevelUp(i)
     if canLvUp then
       self._enterlvCount = self._enterlvCount + 1
     end
-    local canEnter = (self._module):CanRoomSettlePet(i)
+    local canEnter = self._module:CanRoomSettlePet(i)
     if canEnter then
       self._enterlvCount = self._enterlvCount + 1
     end
-    local canBuild = (self._main):GetRoomCanBuildForNav(i)
+    local canBuild = self._main:GetRoomCanBuildForNav(i)
     if canBuild then
       self._enterlvCount = self._enterlvCount + 1
     end
@@ -113,22 +128,19 @@ UIAirNavMenu.GetAirNavMenuData = function(self)
       data.enter = canEnter
       data.build = canBuild
       data.spaceid = i
-      ;
-      (table.insert)(self._enterLvRoomList, data)
+      table.insert(self._enterLvRoomList, data)
     end
   end
-  local _pets = (self._main):GetPets(function(pet)
-    -- function num : 0_3_0 , upvalues : _ENV
+  local _pets = self._main:GetPets(function(pet)
     local _pet = pet
-    if _pet:IsGiftPet() or ((_pet:IsVisitPet() and _pet:HasVisitGift()) or _pet:GetState() == AirPetState.RandomEvent) then
+    if _pet:IsGiftPet() or _pet:IsVisitPet() and _pet:HasVisitGift() or _pet:GetState() == AirPetState.RandomEvent then
       return true
     else
       return false
     end
-  end
-, true)
+  end, true)
   self._storyPets = {}
-  for i = 1, (table.count)(_pets) do
+  for i = 1, table.count(_pets) do
     local _pet = _pets[i]
     local _petData = {}
     if _pet:IsVisitPet() then
@@ -137,30 +149,25 @@ UIAirNavMenu.GetAirNavMenuData = function(self)
       _petData.isVisitPet = false
     end
     _petData.pet = _pet
-    ;
-    (table.insert)(self._storyPets, _petData)
+    table.insert(self._storyPets, _petData)
   end
-  self._storyCount = (table.count)(self._storyPets)
+  self._storyCount = table.count(self._storyPets)
   self._discoveryCount = 0
   self._discoveryList = {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.RefreshData = function(self)
-  -- function num : 0_4
+function UIAirNavMenu:RefreshData()
   self:GetAirNavMenuData()
   self._allCount = self._assetCount + self._enterlvCount + self._storyCount + self._discoveryCount
   if self._allCount > 0 then
-    (self._CountPanel):SetActive(true)
+    self._CountPanel:SetActive(true)
     self:AllCountAnim()
   else
     if self._isDetailOpen then
       self:CloseNavMenu()
     end
     self._isDetailOpen = false
-    ;
-    (self._CountPanel):SetActive(false)
+    self._CountPanel:SetActive(false)
   end
   if self._isDetailOpen then
     self:CreateCircleData()
@@ -169,83 +176,65 @@ UIAirNavMenu.RefreshData = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.AllCountAnim = function(self)
-  -- function num : 0_5
+function UIAirNavMenu:AllCountAnim()
   self.accTime = 0
   self._tweening = true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.Update = function(self, dms)
-  -- function num : 0_6 , upvalues : _ENV
+function UIAirNavMenu:Update(dms)
   if self._tweening then
     self.accTime = self.accTime + dms
     local tweenCount = (self.accTime - self.maxCountTime_start) / self.maxCountTime_Gaps
-    if self.maxCountTime_end <= self.accTime then
+    if self.accTime >= self.maxCountTime_end then
       tweenCount = 1
       self._tweening = false
     end
-    do
-      do
-        if tweenCount <= 1 and tweenCount >= 0 then
-          local cRec = (((DG.Tweening).DOVirtual).EasedValue)(self._lastAllCount, self._allCount, tweenCount, ((DG.Tweening).Ease).OutQuad)
-          ;
-          (self._allCountTex):SetText((math.floor)(cRec))
+    if tweenCount <= 1 and 0 <= tweenCount then
+      local cRec = DG.Tweening.DOVirtual.EasedValue(self._lastAllCount, self._allCount, tweenCount, DG.Tweening.Ease.OutQuad)
+      self._allCountTex:SetText(math.floor(cRec))
+    end
+    if not self._tweening then
+      self._lastAllCount = self._allCount
+    end
+  end
+  if self._circleOpen then
+    if self._roomEffs and 0 < #self._roomEffs then
+      for i = 1, #self._roomEffs do
+        if i <= #self._storyPets then
+          local effItem = self._roomEffs[i]
+          local pet = self._storyPets[i].pet
+          local petGo = pet:GameObject()
+          local pos = self:GetPosWithGameObject(petGo)
+          effItem:FlushPos(pos)
         end
-        if not self._tweening then
-          self._lastAllCount = self._allCount
+      end
+    end
+    if self._roomEffsOutLine and 0 < #self._roomEffsOutLine then
+      for i = 1, #self._roomEffsOutLine do
+        if i <= #self._storyPets then
+          local effItem = self._roomEffsOutLine[i]
+          local pet = self._storyPets[i].pet
+          local petGo = pet:GameObject()
+          local pos = self:GetPosWithGameObject(petGo)
+          effItem:FlushPos(pos)
         end
-        if self._circleOpen then
-          if self._roomEffs and #self._roomEffs > 0 then
-            for i = 1, #self._roomEffs do
-              if i <= #self._storyPets then
-                local effItem = (self._roomEffs)[i]
-                local pet = ((self._storyPets)[i]).pet
-                local petGo = pet:GameObject()
-                local pos = self:GetPosWithGameObject(petGo)
-                effItem:FlushPos(pos)
-              end
-            end
-          end
-          do
-            if self._roomEffsOutLine and #self._roomEffsOutLine > 0 then
-              for i = 1, #self._roomEffsOutLine do
-                if i <= #self._storyPets then
-                  local effItem = (self._roomEffsOutLine)[i]
-                  local pet = ((self._storyPets)[i]).pet
-                  local petGo = pet:GameObject()
-                  local pos = self:GetPosWithGameObject(petGo)
-                  effItem:FlushPos(pos)
-                end
-              end
-            end
-            do
-              if self._roomEffsHead and #self._roomEffsHead > 0 then
-                for i = 1, #self._roomEffsHead do
-                  if i <= #self._storyPets then
-                    local effItem = (self._roomEffsHead)[i]
-                    local pet = ((self._storyPets)[i]).pet
-                    local petGo = pet:GameObject()
-                    local pos = self:GetPosWithGameObject(petGo)
-                    effItem:FlushPos(pos)
-                  end
-                end
-              end
-            end
-          end
+      end
+    end
+    if self._roomEffsHead and 0 < #self._roomEffsHead then
+      for i = 1, #self._roomEffsHead do
+        if i <= #self._storyPets then
+          local effItem = self._roomEffsHead[i]
+          local pet = self._storyPets[i].pet
+          local petGo = pet:GameObject()
+          local pos = self:GetPosWithGameObject(petGo)
+          effItem:FlushPos(pos)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.GetComponent = function(self)
-  -- function num : 0_7
+function UIAirNavMenu:GetComponent()
   self._btnPool = self:GetUIComponent("UISelectObjectPath", "itemPool")
   self._allCountTex = self:GetUIComponent("UILocalizationText", "allCount")
   self._assetRoomEffPool = self:GetUIComponent("UISelectObjectPath", "assetRoomEffPool")
@@ -262,187 +251,117 @@ UIAirNavMenu.GetComponent = function(self)
   self._storyPetCircleEffPoolOutLineGo = self:GetGameObject("storyPetCircleEffPoolOutLine")
   self._alpha = self:GetGameObject("alpha")
   self._CountPanel = self:GetGameObject("CountPanel")
-  ;
-  (self._CountPanel):SetActive(true)
+  self._CountPanel:SetActive(true)
   self._normalGo = self:GetGameObject("normal")
-  ;
-  (self._normalGo):SetActive(true)
+  self._normalGo:SetActive(true)
   self._detailGo = self:GetGameObject("detail")
-  ;
-  (self._detailGo):SetActive(false)
+  self._detailGo:SetActive(false)
   self._circlrImgGo = self:GetGameObject("circlrBg")
   self._circlrImg = self:GetUIComponent("Image", "circlrBg")
-  ;
-  (self._circlrImgGo):SetActive(false)
+  self._circlrImgGo:SetActive(false)
   self._maskGo = self:GetGameObject("mask")
   self._maskRect = self:GetUIComponent("RectTransform", "mask")
-  ;
-  (self._maskGo):SetActive(false)
+  self._maskGo:SetActive(false)
   self._circleAnim = self:GetUIComponent("Animation", "CountPanel")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "mask")
   self._iconRect = self:GetUIComponent("RectTransform", "normalIcon")
   self._iconImg = self:GetUIComponent("Image", "normalIcon")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu._CheckNormalDetailActive = function(self)
-  -- function num : 0_8
-  (self._detailGo):SetActive(self._isDetailOpen)
-  ;
-  (self._maskGo):SetActive(self._isDetailOpen)
-  ;
-  (self._normalGo):SetActive(not self._isDetailOpen)
+function UIAirNavMenu:_CheckNormalDetailActive()
+  self._detailGo:SetActive(self._isDetailOpen)
+  self._maskGo:SetActive(self._isDetailOpen)
+  self._normalGo:SetActive(not self._isDetailOpen)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu._ShowCircleBg = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._circlrImgGo):SetActive(self._btnState ~= AirNavMenuBtnState.All)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIAirNavMenu:_ShowCircleBg()
+  self._circlrImgGo:SetActive(self._btnState ~= AirNavMenuBtnState.All)
   if self._btnState ~= AirNavMenuBtnState.All then
-    (self._circlrImg).color = (self._state2circleColor)[self._btnState]
+    self._circlrImg.color = self._state2circleColor[self._btnState]
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.CreateCircleData = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIAirNavMenu:CreateCircleData()
   self._showCount = 0
   self._showTab = {}
-  if self._assetCount > 0 then
+  if 0 < self._assetCount then
     self._showCount = self._showCount + 1
     local tab = {}
     tab.state = AirNavMenuBtnState.Asset
     tab.count = self._assetCount
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._showTab)[#self._showTab + 1] = tab
+    self._showTab[#self._showTab + 1] = tab
   end
-  do
-    if self._enterlvCount > 0 then
-      self._showCount = self._showCount + 1
-      local tab = {}
-      tab.state = AirNavMenuBtnState.Room
-      tab.count = self._enterlvCount
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._showTab)[#self._showTab + 1] = tab
-    end
-    do
-      if self._storyCount > 0 then
-        self._showCount = self._showCount + 1
-        local tab = {}
-        tab.state = AirNavMenuBtnState.Story
-        tab.count = self._storyCount
-        -- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-        ;
-        (self._showTab)[#self._showTab + 1] = tab
-      end
-      do
-        if self._discoveryCount > 0 then
-          self._showCount = self._showCount + 1
-          local tab = {}
-          tab.state = AirNavMenuBtnState.Discovery
-          tab.count = self._discoveryCount
-          -- DECOMPILER ERROR at PC70: Confused about usage of register: R2 in 'UnsetPending'
-
-          ;
-          (self._showTab)[#self._showTab + 1] = tab
-        end
-      end
-    end
+  if 0 < self._enterlvCount then
+    self._showCount = self._showCount + 1
+    local tab = {}
+    tab.state = AirNavMenuBtnState.Room
+    tab.count = self._enterlvCount
+    self._showTab[#self._showTab + 1] = tab
+  end
+  if 0 < self._storyCount then
+    self._showCount = self._showCount + 1
+    local tab = {}
+    tab.state = AirNavMenuBtnState.Story
+    tab.count = self._storyCount
+    self._showTab[#self._showTab + 1] = tab
+  end
+  if 0 < self._discoveryCount then
+    self._showCount = self._showCount + 1
+    local tab = {}
+    tab.state = AirNavMenuBtnState.Discovery
+    tab.count = self._discoveryCount
+    self._showTab[#self._showTab + 1] = tab
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.SpawnBtnItems = function(self, needAnim)
-  -- function num : 0_11
-  (self._btnPool):SpawnObjects("UIAirNavMenuBtnItem", #self._showTab)
-  local pools = (self._btnPool):GetAllSpawnList()
+function UIAirNavMenu:SpawnBtnItems(needAnim)
+  self._btnPool:SpawnObjects("UIAirNavMenuBtnItem", #self._showTab)
+  local pools = self._btnPool:GetAllSpawnList()
   for i = 1, #pools do
     local item = pools[i]
     if i <= self._showCount then
-      (item:GetGameObject()):SetActive(true)
+      item:GetGameObject():SetActive(true)
       local idx = i
-      local state = ((self._showTab)[i]).state
-      local count = ((self._showTab)[i]).count
-      local icon = (self._atlas):GetSprite((self._state2icon)[state])
-      local name = (self._state2name)[state]
-      local pos = ((self._count2pos)[self._showCount])[i]
-      local cb = function(state)
-    -- function num : 0_11_0 , upvalues : self
-    self:OnItemClick(state)
-  end
-
+      local state = self._showTab[i].state
+      local count = self._showTab[i].count
+      local icon = self._atlas:GetSprite(self._state2icon[state])
+      local name = self._state2name[state]
+      local pos = self._count2pos[self._showCount][i]
+      
+      local function cb(state)
+        self:OnItemClick(state)
+      end
+      
       item:SetData(idx, state, self._btnState, count, icon, name, pos, cb)
       if needAnim then
         local yieldTime = (idx - 1) * 33
         item:PlayAnim_In(yieldTime)
       end
     else
-      do
-        do
-          ;
-          (item:GetGameObject()):SetActive(false)
-          -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      item:GetGameObject():SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.CloseAllEff = function(self)
-  -- function num : 0_12
-  (self._assetRoomEffPoolGo):SetActive(false)
-  ;
-  (self._enterRoomEffPoolGo):SetActive(false)
-  ;
-  (self._storyPetEffPoolGo):SetActive(false)
-  ;
-  (self._discoveryRoomEffPoolGo):SetActive(false)
-  ;
-  (self._storyPetCircleEffPoolGo):SetActive(false)
-  ;
-  (self._storyPetCircleEffPoolOutLineGo):SetActive(false)
-  ;
-  (self._alpha):SetActive(false)
+function UIAirNavMenu:CloseAllEff()
+  self._assetRoomEffPoolGo:SetActive(false)
+  self._enterRoomEffPoolGo:SetActive(false)
+  self._storyPetEffPoolGo:SetActive(false)
+  self._discoveryRoomEffPoolGo:SetActive(false)
+  self._storyPetCircleEffPoolGo:SetActive(false)
+  self._storyPetCircleEffPoolOutLineGo:SetActive(false)
+  self._alpha:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.ShowAllEff = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIAirNavMenu:ShowAllEff()
   self:GetAirNavMenuData()
-  ;
-  (self._assetRoomEffPoolGo):SetActive(true)
-  ;
-  (self._enterRoomEffPoolGo):SetActive(true)
-  ;
-  (self._storyPetEffPoolGo):SetActive(true)
-  ;
-  (self._discoveryRoomEffPoolGo):SetActive(true)
-  ;
-  (self._storyPetCircleEffPoolGo):SetActive(false)
-  ;
-  (self._storyPetCircleEffPoolOutLineGo):SetActive(false)
-  ;
-  (self._alpha):SetActive(false)
+  self._assetRoomEffPoolGo:SetActive(true)
+  self._enterRoomEffPoolGo:SetActive(true)
+  self._storyPetEffPoolGo:SetActive(true)
+  self._discoveryRoomEffPoolGo:SetActive(true)
+  self._storyPetCircleEffPoolGo:SetActive(false)
+  self._storyPetCircleEffPoolOutLineGo:SetActive(false)
+  self._alpha:SetActive(false)
   self:ShowStoryPetEff()
   if self._btnState == AirNavMenuBtnState.Story then
     self:ShowStoryPetCircleEff()
@@ -452,11 +371,8 @@ UIAirNavMenu.ShowAllEff = function(self)
   self:ShowEnterLvRoomEff()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.OnEffAssetRoomClick = function(self, room)
-  -- function num : 0_14 , upvalues : _ENV
-  (Log.debug)("###[UIAirNavMenu] OnEffAssetRoomClick !")
+function UIAirNavMenu:OnEffAssetRoomClick(room)
+  Log.debug("###[UIAirNavMenu] OnEffAssetRoomClick !")
   local clickRoom = room
   local roomType = room:GetRoomType()
   if roomType == AirRoomType.TacticRoom then
@@ -465,667 +381,424 @@ UIAirNavMenu.OnEffAssetRoomClick = function(self, room)
     self:Lock("UIAirNavMenu:CollectOneAsset")
     local spaceid = clickRoom:SpaceId()
     self:CloseNavMenu()
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.OnOnEffAssetRoomClick, self, spaceid)
+    GameGlobal.TaskManager():StartTask(self.OnOnEffAssetRoomClick, self, spaceid)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.OnOnEffAssetRoomClick = function(self, TT, spaceid)
-  -- function num : 0_15 , upvalues : _ENV
-  (Log.debug)("###[UIAirNavMenu] OnOnEffAssetRoomClick !")
-  local res, msg = (self._module):RequestCollectAsset(TT, spaceid)
+function UIAirNavMenu:OnOnEffAssetRoomClick(TT, spaceid)
+  Log.debug("###[UIAirNavMenu] OnOnEffAssetRoomClick !")
+  local res, msg = self._module:RequestCollectAsset(TT, spaceid)
   self:UnLock("UIAirNavMenu:CollectOneAsset")
   if res and res:GetSucc() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshMainUI)
-    ;
-    (Log.debug)("###[UIAirNavMenu] CollectAllAsset  Succ!")
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshMainUI)
+    Log.debug("###[UIAirNavMenu] CollectAllAsset  Succ!")
     local matList = msg.asset
     self:ShowDialog("UIGetItemController", matList)
   else
-    do
-      self:GetAssetFailTips(res:GetResult())
-      ;
-      (Log.error)("###[NavMenu]UIAirNavMenu:OnCollectAllAsset result --> ", res:GetResult())
-    end
+    self:GetAssetFailTips(res:GetResult())
+    Log.error("###[NavMenu]UIAirNavMenu:OnCollectAllAsset result --> ", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.OnEffEnterRoomClick = function(self, data)
-  -- function num : 0_16 , upvalues : _ENV
+function UIAirNavMenu:OnEffEnterRoomClick(data)
   self:CloseNavMenu()
   local spaceid = data.spaceid
   if data.build then
-    ((GameGlobal.UIStateManager)()):CallUIMethod("UIAircraftController", "SelectRoom", spaceid)
+    GameGlobal.UIStateManager():CallUIMethod("UIAircraftController", "SelectRoom", spaceid)
   else
     if data.enter then
-      ((GameGlobal.UIStateManager)()):CallUIMethod("UIAircraftController", "SetNavMenuData", 1)
-    else
-      if data.lv then
-        ((GameGlobal.UIStateManager)()):CallUIMethod("UIAircraftController", "SetNavMenuData", 2)
-      end
+      GameGlobal.UIStateManager():CallUIMethod("UIAircraftController", "SetNavMenuData", 1)
+    elseif data.lv then
+      GameGlobal.UIStateManager():CallUIMethod("UIAircraftController", "SetNavMenuData", 2)
     end
-    ;
-    ((GameGlobal.UIStateManager)()):CallUIMethod("UIAircraftController", "SelectAndFocusRoom", spaceid)
+    GameGlobal.UIStateManager():CallUIMethod("UIAircraftController", "SelectAndFocusRoom", spaceid)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.OnStoryPetClick = function(self, aircraftPet)
-  -- function num : 0_17
+function UIAirNavMenu:OnStoryPetClick(aircraftPet)
   local cliclPet = aircraftPet
   if self._focusPet then
-    (self._focusPet)(cliclPet)
+    self._focusPet(cliclPet)
   end
   self:CloseNavMenu()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.OnEffDiscoveryRoomClick = function(self, room)
-  -- function num : 0_18 , upvalues : _ENV
+function UIAirNavMenu:OnEffDiscoveryRoomClick(room)
   local spaceid = room:SpaceId()
-  local clickRoom = (self._main):GetRoomBySpaceID(spaceid)
+  local clickRoom = self._main:GetRoomBySpaceID(spaceid)
   local roomType = room:GetRoomType()
   if self._focusRoom then
-    (self._focusRoom)(clickRoom, function()
-    -- function num : 0_18_0 , upvalues : _ENV, spaceid, roomType
-    ((GameGlobal.UIStateManager)()):CallUIMethod("UIAircraftController", "SelectRoom", spaceid)
-    if roomType == AirRoomType.TacticRoom then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIAircraftTactic")
-    else
-      if roomType == AirRoomType.DispatchRoom then
-        ((GameGlobal.UIStateManager)()):ShowDialog("UIDispatchMapController")
+    self._focusRoom(clickRoom, function()
+      GameGlobal.UIStateManager():CallUIMethod("UIAircraftController", "SelectRoom", spaceid)
+      if roomType == AirRoomType.TacticRoom then
+        GameGlobal.UIStateManager():ShowDialog("UIAircraftTactic")
+      elseif roomType == AirRoomType.DispatchRoom then
+        GameGlobal.UIStateManager():ShowDialog("UIDispatchMapController")
       end
-    end
-  end
-)
+    end)
   end
   self:CloseNavMenu()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.ShowAssetRoomEff = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIAirNavMenu:ShowAssetRoomEff()
   local roomList = self._assetRoomList
-  local tableCount = (table.count)(roomList)
-  ;
-  (self._assetRoomEffPool):SpawnObjects("UIAirNavMenuAssetRoomEff", tableCount)
-  local roomEffs = (self._assetRoomEffPool):GetAllSpawnList()
+  local tableCount = table.count(roomList)
+  self._assetRoomEffPool:SpawnObjects("UIAirNavMenuAssetRoomEff", tableCount)
+  local roomEffs = self._assetRoomEffPool:GetAllSpawnList()
   for i = 1, #roomEffs do
     local active = true
-    if tableCount < i then
+    if i > tableCount then
       active = false
     else
       local data = roomList[i]
       local spaceid = data:SpaceId()
-      if (self._showSpaceId)[spaceid] then
+      if self._showSpaceId[spaceid] then
         active = false
       end
     end
-    do
-      local effItem = roomEffs[i]
-      if active then
-        local data = roomList[i]
-        local spaceid = data:SpaceId()
-        local roomGo = (self._main):GetRoomGoSpaceID(spaceid)
-        local pos = self:GetPosWithGameObject(roomGo)
-        local sizeX = ((roomGo:GetComponent("BoxCollider")).size).x
-        local sizeY = ((roomGo:GetComponent("BoxCollider")).size).y
-        local size = self:CalcMaskImgSizeWithPosZ(sizeX, sizeY)
-        ;
-        (effItem:GetGameObject()):SetActive(true)
-        effItem:SetData(pos, size, data, function(room)
-    -- function num : 0_19_0 , upvalues : self
-    self:OnEffAssetRoomClick(room)
-  end
-)
-        -- DECOMPILER ERROR at PC69: Confused about usage of register: R17 in 'UnsetPending'
-
-        ;
-        (self._showSpaceId)[spaceid] = true
-      else
-        do
-          do
-            ;
-            (effItem:GetGameObject()):SetActive(false)
-            -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
-      end
+    local effItem = roomEffs[i]
+    if active then
+      local data = roomList[i]
+      local spaceid = data:SpaceId()
+      local roomGo = self._main:GetRoomGoSpaceID(spaceid)
+      local pos = self:GetPosWithGameObject(roomGo)
+      local sizeX = roomGo:GetComponent("BoxCollider").size.x
+      local sizeY = roomGo:GetComponent("BoxCollider").size.y
+      local size = self:CalcMaskImgSizeWithPosZ(sizeX, sizeY)
+      effItem:GetGameObject():SetActive(true)
+      effItem:SetData(pos, size, data, function(room)
+        self:OnEffAssetRoomClick(room)
+      end)
+      self._showSpaceId[spaceid] = true
+    else
+      effItem:GetGameObject():SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.ShowEnterLvRoomEff = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIAirNavMenu:ShowEnterLvRoomEff()
   local roomList = self._enterLvRoomList
-  local tableCount = (table.count)(roomList)
-  ;
-  (self._enterRoomEffPool):SpawnObjects("UIAirNavMenuEnterRoomEff", tableCount)
-  local roomEffs = (self._enterRoomEffPool):GetAllSpawnList()
+  local tableCount = table.count(roomList)
+  self._enterRoomEffPool:SpawnObjects("UIAirNavMenuEnterRoomEff", tableCount)
+  local roomEffs = self._enterRoomEffPool:GetAllSpawnList()
   for i = 1, #roomEffs do
     local active = true
-    if tableCount < i then
+    if i > tableCount then
       active = false
     else
       local data = roomList[i]
       local spaceid = data.spaceid
-      if (self._showSpaceId)[spaceid] then
+      if self._showSpaceId[spaceid] then
         active = false
       end
     end
-    do
-      local effItem = roomEffs[i]
-      if active then
-        local data = roomList[i]
-        local spaceid = data.spaceid
-        local roomGo = (self._main):GetRoomGoSpaceID(spaceid)
-        local pos = self:GetPosWithGameObject(roomGo)
-        local sizeX = ((roomGo:GetComponent("BoxCollider")).size).x
-        local sizeY = ((roomGo:GetComponent("BoxCollider")).size).y
-        local size = self:CalcMaskImgSizeWithPosZ(sizeX, sizeY)
-        ;
-        (effItem:GetGameObject()):SetActive(true)
-        effItem:SetData(pos, size, data, function(data)
-    -- function num : 0_20_0 , upvalues : self
-    self:OnEffEnterRoomClick(data)
-  end
-)
-        -- DECOMPILER ERROR at PC67: Confused about usage of register: R17 in 'UnsetPending'
-
-        ;
-        (self._showSpaceId)[spaceid] = true
-      else
-        do
-          do
-            ;
-            (effItem:GetGameObject()):SetActive(false)
-            -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
-      end
+    local effItem = roomEffs[i]
+    if active then
+      local data = roomList[i]
+      local spaceid = data.spaceid
+      local roomGo = self._main:GetRoomGoSpaceID(spaceid)
+      local pos = self:GetPosWithGameObject(roomGo)
+      local sizeX = roomGo:GetComponent("BoxCollider").size.x
+      local sizeY = roomGo:GetComponent("BoxCollider").size.y
+      local size = self:CalcMaskImgSizeWithPosZ(sizeX, sizeY)
+      effItem:GetGameObject():SetActive(true)
+      effItem:SetData(pos, size, data, function(data)
+        self:OnEffEnterRoomClick(data)
+      end)
+      self._showSpaceId[spaceid] = true
+    else
+      effItem:GetGameObject():SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.ShowStoryPetEff = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIAirNavMenu:ShowStoryPetEff()
   local storyPets = self._storyPets
-  local tableCount = (table.count)(storyPets)
-  ;
-  (self._storyPetEffPool):SpawnObjects("UIAirNavMenuPetStoryEff", tableCount)
-  self._roomEffsHead = (self._storyPetEffPool):GetAllSpawnList()
+  local tableCount = table.count(storyPets)
+  self._storyPetEffPool:SpawnObjects("UIAirNavMenuPetStoryEff", tableCount)
+  self._roomEffsHead = self._storyPetEffPool:GetAllSpawnList()
   for i = 1, #self._roomEffsHead do
-    local effItem = (self._roomEffsHead)[i]
-    if i <= tableCount then
-      local pet = (storyPets[i]).pet
-      local isVisitPet = (storyPets[i]).isVisitPet
+    local effItem = self._roomEffsHead[i]
+    if tableCount >= i then
+      local pet = storyPets[i].pet
+      local isVisitPet = storyPets[i].isVisitPet
       local petGo = pet:GameObject()
       local pos = self:GetPosWithGameObject(petGo)
       effItem:SetData(pos, Vector2(0, 0), pet, isVisitPet, function(aircraftPet)
-    -- function num : 0_21_0 , upvalues : self
-    self:OnStoryPetClick(aircraftPet)
-  end
-)
-      ;
-      (effItem:GetGameObject()):SetActive(true)
+        self:OnStoryPetClick(aircraftPet)
+      end)
+      effItem:GetGameObject():SetActive(true)
     else
-      do
-        do
-          ;
-          (effItem:GetGameObject()):SetActive(false)
-          -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      effItem:GetGameObject():SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.ShowDiscoveryRoomEff = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIAirNavMenu:ShowDiscoveryRoomEff()
   local roomList = self._discoveryList
-  local tableCount = (table.count)(roomList)
-  ;
-  (self._discoveryRoomEffPool):SpawnObjects("UIAirNavMenuDiscoveryRoomEff", tableCount)
-  local roomEffs = (self._discoveryRoomEffPool):GetAllSpawnList()
+  local tableCount = table.count(roomList)
+  self._discoveryRoomEffPool:SpawnObjects("UIAirNavMenuDiscoveryRoomEff", tableCount)
+  local roomEffs = self._discoveryRoomEffPool:GetAllSpawnList()
   for i = 1, #roomEffs do
     local active = true
-    if tableCount < i then
+    if i > tableCount then
       active = false
     else
       local data = roomList[i]
       local _room = data.room
       local spaceid = _room:SpaceId()
-      if (self._showSpaceId)[spaceid] then
+      if self._showSpaceId[spaceid] then
         active = false
       end
     end
-    do
-      local effItem = roomEffs[i]
-      if active then
-        local data = roomList[i]
-        local _room = data.room
-        local spaceid = _room:SpaceId()
-        local roomGo = (self._main):GetRoomGoSpaceID(spaceid)
-        local pos = self:GetPosWithGameObject(roomGo)
-        local sizeX = ((roomGo:GetComponent("BoxCollider")).size).x
-        local sizeY = ((roomGo:GetComponent("BoxCollider")).size).y
-        local size = self:CalcMaskImgSizeWithPosZ(sizeX, sizeY)
-        ;
-        (effItem:GetGameObject()):SetActive(true)
-        effItem:SetData(pos, size, data, function(data)
-    -- function num : 0_22_0 , upvalues : self
-    self:OnEffDiscoveryRoomClick(data)
-  end
-)
-        -- DECOMPILER ERROR at PC71: Confused about usage of register: R18 in 'UnsetPending'
-
-        ;
-        (self._showSpaceId)[spaceid] = true
-      else
-        do
-          do
-            ;
-            (effItem:GetGameObject()):SetActive(false)
-            -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
-      end
+    local effItem = roomEffs[i]
+    if active then
+      local data = roomList[i]
+      local _room = data.room
+      local spaceid = _room:SpaceId()
+      local roomGo = self._main:GetRoomGoSpaceID(spaceid)
+      local pos = self:GetPosWithGameObject(roomGo)
+      local sizeX = roomGo:GetComponent("BoxCollider").size.x
+      local sizeY = roomGo:GetComponent("BoxCollider").size.y
+      local size = self:CalcMaskImgSizeWithPosZ(sizeX, sizeY)
+      effItem:GetGameObject():SetActive(true)
+      effItem:SetData(pos, size, data, function(data)
+        self:OnEffDiscoveryRoomClick(data)
+      end)
+      self._showSpaceId[spaceid] = true
+    else
+      effItem:GetGameObject():SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.OnItemClick = function(self, state)
-  -- function num : 0_23 , upvalues : _ENV
+function UIAirNavMenu:OnItemClick(state)
   self._btnState = state
   self:_RefreshBtnState()
   self._showSpaceId = {}
   self:_ShowCircleBg()
   if self._btnState == AirNavMenuBtnState.Asset then
     self:CollectAllAsset()
-    return 
+    return
   end
-  ;
-  (self._assetRoomEffPoolGo):SetActive(self._btnState == AirNavMenuBtnState.Asset)
-  ;
-  (self._enterRoomEffPoolGo):SetActive(self._btnState == AirNavMenuBtnState.Room)
-  ;
-  (self._storyPetEffPoolGo):SetActive(self._btnState == AirNavMenuBtnState.Story)
-  ;
-  (self._discoveryRoomEffPoolGo):SetActive(self._btnState == AirNavMenuBtnState.Discovery)
-  ;
-  (self._storyPetCircleEffPoolGo):SetActive(self._btnState == AirNavMenuBtnState.Story)
-  ;
-  (self._storyPetCircleEffPoolOutLineGo):SetActive(self._btnState == AirNavMenuBtnState.Story)
-  ;
-  (self._alpha):SetActive(self._btnState == AirNavMenuBtnState.Story)
+  self._assetRoomEffPoolGo:SetActive(self._btnState == AirNavMenuBtnState.Asset)
+  self._enterRoomEffPoolGo:SetActive(self._btnState == AirNavMenuBtnState.Room)
+  self._storyPetEffPoolGo:SetActive(self._btnState == AirNavMenuBtnState.Story)
+  self._discoveryRoomEffPoolGo:SetActive(self._btnState == AirNavMenuBtnState.Discovery)
+  self._storyPetCircleEffPoolGo:SetActive(self._btnState == AirNavMenuBtnState.Story)
+  self._storyPetCircleEffPoolOutLineGo:SetActive(self._btnState == AirNavMenuBtnState.Story)
+  self._alpha:SetActive(self._btnState == AirNavMenuBtnState.Story)
   if self._btnState == AirNavMenuBtnState.Room then
     self:ShowEnterLvRoomEff()
   elseif self._btnState == AirNavMenuBtnState.Story then
     local giftPets = {}
     local visitPets = {}
-    for _,v in pairs(self._storyPets) do
+    for _, v in pairs(self._storyPets) do
       local pet = v.pet
       if pet:IsGiftPet() then
-        (table.insert)(giftPets, pet)
+        table.insert(giftPets, pet)
       elseif pet:HasVisitGift() then
-        (table.insert)(visitPets, pet)
+        table.insert(visitPets, pet)
       end
     end
-    ;
-    (self._main):AcceptAllPresent(giftPets, visitPets, function(assetList)
-    -- function num : 0_23_0 , upvalues : _ENV, self
-    if #assetList > 0 then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", assetList, function()
-      -- function num : 0_23_0_0 , upvalues : _ENV, self
-      for _,v in pairs(self._storyPets) do
-        local pet = v.pet
-        pet:StopSpecialAction(AircraftSpecialActionType.PresentBag)
-        if pet:IsGiftPet() then
-          pet:SetGiftFlag(nil)
-        else
-          if pet:HasVisitGift() then
-            pet:SetVisitGift(nil)
+    self._main:AcceptAllPresent(giftPets, visitPets, function(assetList)
+      if 0 < #assetList then
+        GameGlobal.UIStateManager():ShowDialog("UIGetItemController", assetList, function()
+          for _, v in pairs(self._storyPets) do
+            local pet = v.pet
+            pet:StopSpecialAction(AircraftSpecialActionType.PresentBag)
+            if pet:IsGiftPet() then
+              pet:SetGiftFlag(nil)
+            elseif pet:HasVisitGift() then
+              pet:SetVisitGift(nil)
+            end
+            if pet:IsWorkingPet() then
+              AirLog("送礼星灵走回工作房间：", pet:TemplateID(), "，空间id：", pet:GetSpace())
+              local action = AirActionMoveToWork:New(self._main, pet)
+              pet:StartMainAction(action)
+            end
+            GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshNavMenuData)
           end
-        end
-        if pet:IsWorkingPet() then
-          AirLog("送礼星灵走回工作房间：", pet:TemplateID(), "，空间id：", pet:GetSpace())
-          local action = AirActionMoveToWork:New(self._main, pet)
-          pet:StartMainAction(action)
-        end
-        do
-          do
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshNavMenuData)
-            -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
+        end)
+      else
+        self:ShowStoryPetEff()
+        self:ShowStoryPetCircleEff()
       end
-    end
-)
-    else
-      self:ShowStoryPetEff()
-      self:ShowStoryPetCircleEff()
-    end
-  end
-)
+    end)
   elseif self._btnState == AirNavMenuBtnState.Discovery then
-    local room = ((self._discoveryList)[1]).room
+    local room = self._discoveryList[1].room
     self:OnEffDiscoveryRoomClick(room)
   end
   self._circleOpen = self._btnState == AirNavMenuBtnState.Story
-  -- DECOMPILER ERROR: 13 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.ShowStoryPetCircleEff = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIAirNavMenu:ShowStoryPetCircleEff()
   local storyPets = self._storyPets
-  ;
-  (self._storyPetCircleEffPool):SpawnObjects("UIAirNavMenuPetStoryCircleEff", #storyPets)
-  self._roomEffs = (self._storyPetCircleEffPool):GetAllSpawnList()
+  self._storyPetCircleEffPool:SpawnObjects("UIAirNavMenuPetStoryCircleEff", #storyPets)
+  self._roomEffs = self._storyPetCircleEffPool:GetAllSpawnList()
   for i = 1, #self._roomEffs do
-    local effItem = (self._roomEffs)[i]
+    local effItem = self._roomEffs[i]
     if i <= #storyPets then
-      local pet = (storyPets[i]).pet
+      local pet = storyPets[i].pet
       local petGo = pet:GameObject()
       local pos = self:GetPosWithGameObject(petGo)
       effItem:SetData(pos, Vector2(64, 64), pet)
-      ;
-      (effItem:GetGameObject()):SetActive(true)
+      effItem:GetGameObject():SetActive(true)
     else
-      do
-        do
-          ;
-          (effItem:GetGameObject()):SetActive(false)
-          -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      effItem:GetGameObject():SetActive(false)
     end
   end
-  ;
-  (self._storyPetCircleEffPoolOutLine):SpawnObjects("UIAirNavMenuPetStoryCircleEff", #storyPets)
-  self._roomEffsOutLine = (self._storyPetCircleEffPoolOutLine):GetAllSpawnList()
+  self._storyPetCircleEffPoolOutLine:SpawnObjects("UIAirNavMenuPetStoryCircleEff", #storyPets)
+  self._roomEffsOutLine = self._storyPetCircleEffPoolOutLine:GetAllSpawnList()
   for i = 1, #self._roomEffsOutLine do
-    local effItem = (self._roomEffsOutLine)[i]
+    local effItem = self._roomEffsOutLine[i]
     if i <= #storyPets then
-      local pet = (storyPets[i]).pet
+      local pet = storyPets[i].pet
       local petGo = pet:GameObject()
       local pos = self:GetPosWithGameObject(petGo)
       effItem:SetData(pos, Vector2(66, 66), pet)
-      ;
-      (effItem:GetGameObject()):SetActive(true)
+      effItem:GetGameObject():SetActive(true)
     else
-      do
-        do
-          ;
-          (effItem:GetGameObject()):SetActive(false)
-          -- DECOMPILER ERROR at PC92: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC92: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC92: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      effItem:GetGameObject():SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu._RefreshBtnState = function(self)
-  -- function num : 0_25
-  local pools = (self._btnPool):GetAllSpawnList()
+function UIAirNavMenu:_RefreshBtnState()
+  local pools = self._btnPool:GetAllSpawnList()
   for i = 1, #pools do
     local item = pools[i]
     item:RefreshBtnState(self._btnState)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.normalBtnOnClick = function(self, go)
-  -- function num : 0_26 , upvalues : _ENV
+function UIAirNavMenu:normalBtnOnClick(go)
   if not self._isDetailOpen then
-    ((GameGlobal.UIStateManager)()):CallUIMethod("UIAircraftController", "ClearCurrentRoom")
+    GameGlobal.UIStateManager():CallUIMethod("UIAircraftController", "ClearCurrentRoom")
     self._isDetailOpen = true
-    local currentCameraPos = ((GameGlobal.UIStateManager)()):CallUIMethod("UIAircraftController", "GetCurrentCameraPos")
-    local targetCameraPos = ((GameGlobal.UIStateManager)()):CallUIMethod("UIAircraftController", "GetNavMenuTargetCameraPos")
-    local distance = (Vector3.Distance)(currentCameraPos, targetCameraPos)
+    local currentCameraPos = GameGlobal.UIStateManager():CallUIMethod("UIAircraftController", "GetCurrentCameraPos")
+    local targetCameraPos = GameGlobal.UIStateManager():CallUIMethod("UIAircraftController", "GetNavMenuTargetCameraPos")
+    local distance = Vector3.Distance(currentCameraPos, targetCameraPos)
     local speed = 0.15
     local moveTime = distance / speed
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftMainMoveCameraToNavMenu, function()
-    -- function num : 0_26_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetCameraToNavMenuPos)
-    ;
-    (self._circleAnim):Play((self._navAnim)[1])
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._canvasGroup).alpha = 0
-    ;
-    (self._canvasGroup):DOFade(1, 0.1)
-    self:Lock("AirNavMenu_CircleAnim")
-    ;
-    ((GameGlobal.Timer)()):AddEvent(500, function()
-      -- function num : 0_26_0_0 , upvalues : self
-      self:UnLock("AirNavMenu_CircleAnim")
-    end
-)
-    self:_CheckNormalDetailActive()
-    self:CreateCircleData()
-    self:SpawnBtnItems(true)
-    self:_ShowCircleBg()
-    self:CloseAllEff()
-    ;
-    ((GameGlobal.Timer)()):AddEvent(200, function()
-      -- function num : 0_26_0_1 , upvalues : self
-      self:ShowAllEff()
-    end
-)
-  end
-, moveTime)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftMainMoveCameraToNavMenu, function()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.SetCameraToNavMenuPos)
+      self._circleAnim:Play(self._navAnim[1])
+      self._canvasGroup.alpha = 0
+      self._canvasGroup:DOFade(1, 0.1)
+      self:Lock("AirNavMenu_CircleAnim")
+      GameGlobal.Timer():AddEvent(500, function()
+        self:UnLock("AirNavMenu_CircleAnim")
+      end)
+      self:_CheckNormalDetailActive()
+      self:CreateCircleData()
+      self:SpawnBtnItems(true)
+      self:_ShowCircleBg()
+      self:CloseAllEff()
+      GameGlobal.Timer():AddEvent(200, function()
+        self:ShowAllEff()
+      end)
+    end, moveTime)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.CollectAllAsset = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  (Log.debug)("###[UIAirNavMenu] CollectAllAsset !")
+function UIAirNavMenu:CollectAllAsset()
+  Log.debug("###[UIAirNavMenu] CollectAllAsset !")
   if #self._assetRoomList <= 0 then
-    (Log.error)("###[UIAirNavMenu] self._assetRoomList count == 0 , but click all collect !")
-    return 
+    Log.error("###[UIAirNavMenu] self._assetRoomList count == 0 , but click all collect !")
+    return
   end
   if #self._assetRoomList == 1 then
-    local room = (self._assetRoomList)[1]
+    local room = self._assetRoomList[1]
     local roomType = room:GetRoomType()
     if roomType == AirRoomType.TacticRoom then
       self:OnEffDiscoveryRoomClick(room)
-      return 
+      return
     end
   end
-  do
-    self:Lock("UIAirNavMenu:CollectAllAsset")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.OnCollectAllAsset, self)
-  end
+  self:Lock("UIAirNavMenu:CollectAllAsset")
+  GameGlobal.TaskManager():StartTask(self.OnCollectAllAsset, self)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.OnCollectAllAsset = function(self, TT)
-  -- function num : 0_28 , upvalues : _ENV
-  local res, msg = (self._module):OneKeyCollectAsset(TT)
-  ;
-  (Log.debug)("###[UIAirNavMenu] OnCollectAllAsset !")
+function UIAirNavMenu:OnCollectAllAsset(TT)
+  local res, msg = self._module:OneKeyCollectAsset(TT)
+  Log.debug("###[UIAirNavMenu] OnCollectAllAsset !")
   self:UnLock("UIAirNavMenu:CollectAllAsset")
   if res and res:GetSucc() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshMainUI)
-    ;
-    (Log.debug)("###[UIAirNavMenu] CollectAllAsset  Succ!")
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshMainUI)
+    Log.debug("###[UIAirNavMenu] CollectAllAsset  Succ!")
     local matList = msg.asset
     self:ShowDialog("UIGetItemController", matList)
   else
-    do
-      self:GetAssetFailTips(res:GetResult())
-      ;
-      (Log.debug)("###[NavMenu]UIAirNavMenu:OnCollectAllAsset result --> ", res:GetResult())
-    end
+    self:GetAssetFailTips(res:GetResult())
+    Log.debug("###[NavMenu]UIAirNavMenu:OnCollectAllAsset result --> ", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.GetAssetFailTips = function(self, result)
-  -- function num : 0_29 , upvalues : _ENV
+function UIAirNavMenu:GetAssetFailTips(result)
   if result == AircraftEventResult.COLLECT_ASSET_EMPTY or result == AircraftEventResult.COLLECT_ASSET_ERROR_PHY then
-    local tips = (StringTable.Get)("str_physicalpower_error_phy_add_full")
-    ;
-    (ToastManager.ShowToast)(tips)
+    local tips = StringTable.Get("str_physicalpower_error_phy_add_full")
+    ToastManager.ShowToast(tips)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.CloseNavMenu = function(self)
-  -- function num : 0_30
+function UIAirNavMenu:CloseNavMenu()
   self:bgOnClick()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.IsDetailOpen = function(self)
-  -- function num : 0_31
+function UIAirNavMenu:IsDetailOpen()
   return self._isDetailOpen
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.bgOnClick = function(self, go)
-  -- function num : 0_32 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIAirNavMenu:bgOnClick(go)
   if self._isDetailOpen then
-    (self._canvasGroup).alpha = 1
-    ;
-    (self._canvasGroup):DOFade(0, 0.1)
-    ;
-    (self._circleAnim):Play((self._navAnim)[2])
+    self._canvasGroup.alpha = 1
+    self._canvasGroup:DOFade(0, 0.1)
+    self._circleAnim:Play(self._navAnim[2])
     self:Lock("AirNavMenu_CircleAnim")
-    ;
-    ((GameGlobal.Timer)()):AddEvent(667, function()
-    -- function num : 0_32_0 , upvalues : self, _ENV
-    self._showSpaceId = {}
-    self._isDetailOpen = false
-    self._btnState = AirNavMenuBtnState.All
-    self:_CheckNormalDetailActive()
-    self:_ShowCircleBg()
-    self._circleOpen = false
-    self._petEffHead = (self._storyPetEffPool):GetAllSpawnList()
-    if self._petEffHead and (table.count)(self._petEffHead) > 0 then
-      for i = 1, #self._petEffHead do
-        local effItem = (self._petEffHead)[i]
-        ;
-        (effItem:GetGameObject()):SetActive(false)
+    GameGlobal.Timer():AddEvent(667, function()
+      self._showSpaceId = {}
+      self._isDetailOpen = false
+      self._btnState = AirNavMenuBtnState.All
+      self:_CheckNormalDetailActive()
+      self:_ShowCircleBg()
+      self._circleOpen = false
+      self._petEffHead = self._storyPetEffPool:GetAllSpawnList()
+      if self._petEffHead and table.count(self._petEffHead) > 0 then
+        for i = 1, #self._petEffHead do
+          local effItem = self._petEffHead[i]
+          effItem:GetGameObject():SetActive(false)
+        end
       end
-    end
-    do
-      self._petEff = (self._storyPetCircleEffPool):GetAllSpawnList()
-      if self._petEff and (table.count)(self._petEff) > 0 then
+      self._petEff = self._storyPetCircleEffPool:GetAllSpawnList()
+      if self._petEff and 0 < table.count(self._petEff) then
         for i = 1, #self._petEff do
-          local effItem = (self._petEff)[i]
-          ;
-          (effItem:GetGameObject()):SetActive(false)
+          local effItem = self._petEff[i]
+          effItem:GetGameObject():SetActive(false)
         end
       end
-      do
-        self._petEffOut = (self._storyPetCircleEffPoolOutLine):GetAllSpawnList()
-        if self._petEffOut and (table.count)(self._petEffOut) > 0 then
-          for i = 1, #self._petEffOut do
-            local effItem = (self._petEffOut)[i]
-            ;
-            (effItem:GetGameObject()):SetActive(false)
-          end
-        end
-        do
-          ;
-          (self._storyPetCircleEffPoolGo):SetActive(false)
-          ;
-          (self._storyPetCircleEffPoolOutLineGo):SetActive(false)
-          ;
-          (self._alpha):SetActive(false)
-          self:UnLock("AirNavMenu_CircleAnim")
+      self._petEffOut = self._storyPetCircleEffPoolOutLine:GetAllSpawnList()
+      if self._petEffOut and 0 < table.count(self._petEffOut) then
+        for i = 1, #self._petEffOut do
+          local effItem = self._petEffOut[i]
+          effItem:GetGameObject():SetActive(false)
         end
       end
-    end
-  end
-)
+      self._storyPetCircleEffPoolGo:SetActive(false)
+      self._storyPetCircleEffPoolOutLineGo:SetActive(false)
+      self._alpha:SetActive(false)
+      self:UnLock("AirNavMenu_CircleAnim")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.OnHide = function(self)
-  -- function num : 0_33
+function UIAirNavMenu:OnHide()
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.GetPosWithGameObject = function(self, go)
-  -- function num : 0_34 , upvalues : _ENV
+function UIAirNavMenu:GetPosWithGameObject(go)
   local tr = go.transform
-  local box = (go:GetComponent("BoxCollider"))
-  local petPos = nil
+  local box = go:GetComponent("BoxCollider")
+  local petPos
   if box then
     petPos = tr.position + box.center
   else
@@ -1134,37 +807,28 @@ UIAirNavMenu.GetPosWithGameObject = function(self, go)
   local camera3d = self:GetAirCamera3D()
   local screenPos = camera3d:WorldToScreenPoint(petPos)
   local camera2d = self:GetAirCamera2D()
-  local res, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(self._maskRect, screenPos, camera2d, nil)
+  local res, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self._maskRect, screenPos, camera2d, nil)
   return pos
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.GetAirCamera3D = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  return ((GameGlobal.UIStateManager)()):CallUIMethod("UIAircraftController", "GetAirCamera3D")
+function UIAirNavMenu:GetAirCamera3D()
+  return GameGlobal.UIStateManager():CallUIMethod("UIAircraftController", "GetAirCamera3D")
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.GetAirCamera2D = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  return ((GameGlobal.UIStateManager)()):CallUIMethod("UIAircraftController", "GetAirCamera2D")
+function UIAirNavMenu:GetAirCamera2D()
+  return GameGlobal.UIStateManager():CallUIMethod("UIAircraftController", "GetAirCamera2D")
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenu.ResetIconPos = function(self)
-  -- function num : 0_37 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._iconRect).anchoredPosition = Vector2(-95.2, -5.7)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._iconImg).color = Color(1, 1, 1, 1)
+function UIAirNavMenu:ResetIconPos()
+  self._iconRect.anchoredPosition = Vector2(-95.2, -5.7)
+  self._iconImg.color = Color(1, 1, 1, 1)
 end
 
-local AirNavMenuBtnState = {All = 0, Asset = 1, Room = 2, Story = 3, Discovery = 4}
+local AirNavMenuBtnState = {
+  All = 0,
+  Asset = 1,
+  Room = 2,
+  Story = 3,
+  Discovery = 4
+}
 _enum("AirNavMenuBtnState", AirNavMenuBtnState)
-

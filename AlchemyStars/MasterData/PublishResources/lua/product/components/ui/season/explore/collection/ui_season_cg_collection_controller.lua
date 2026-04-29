@@ -1,43 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/explore/collection/ui_season_cg_collection_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonCgCollectionController", UIController)
 UISeasonCgCollectionController = UISeasonCgCollectionController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonCgCollectionController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonCgCollectionController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgCollectionController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonCgCollectionController:OnShow(uiParams)
   self.closeCb = uiParams[1]
   self._itemCountPerRow = 3
-  self._bookModule = (GameGlobal.GetModule)(BookModule)
+  self._bookModule = GameGlobal.GetModule(BookModule)
   self:InitWidget()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgCollectionController.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonCgCollectionController:InitWidget()
   local topBtns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtns = topBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
     if self.closeCb then
-      (self.closeCb)()
+      self.closeCb()
     end
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   self.txtCollectionCount = self:GetUIComponent("UILocalizationText", "txtCollectionCount")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
   self._scrollRect = self:GetUIComponent("ScrollRect", "ScrollView")
@@ -45,63 +29,45 @@ UISeasonCgCollectionController.InitWidget = function(self)
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgCollectionController.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._cfgs = (UISeasonExploreHelper.GetSeasonCgCfgs)()
+function UISeasonCgCollectionController:OnValue()
+  self._cfgs = UISeasonExploreHelper.GetSeasonCgCfgs()
   local count = #self._cfgs
-  if count > 0 then
+  if 0 < count then
     self:Sort()
-    ;
-    (self.txtCollectionCount):SetText(count)
+    self.txtCollectionCount:SetText(count)
     self._collectionCount = count
-    self._listShowItemCount = (math.ceil)(self._collectionCount / self._itemCountPerRow)
+    self._listShowItemCount = math.ceil(self._collectionCount / self._itemCountPerRow)
     self:_InitSrollView()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgCollectionController.Sort = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (table.sort)(self._cfgs, function(a, b)
-    -- function num : 0_4_0 , upvalues : self
-    local k, isUnLockA = (self._bookModule):GetSeasonStory(a)
+function UISeasonCgCollectionController:Sort()
+  table.sort(self._cfgs, function(a, b)
+    local k, isUnLockA = self._bookModule:GetSeasonStory(a)
     local a1 = 0
     if isUnLockA then
       a1 = 1
     end
-    local m, isUnLockB = (self._bookModule):GetSeasonStory(b)
+    local m, isUnLockB = self._bookModule:GetSeasonStory(b)
     local b1 = 0
     if isUnLockB then
       b1 = 1
     end
-    if b1 >= a1 then
-      do return a1 == b1 end
-      do return a.ID < b.ID end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if a1 ~= b1 then
+      return a1 > b1
     end
-  end
-)
+    return a.ID < b.ID
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgCollectionController._InitSrollView = function(self)
-  -- function num : 0_5
-  (self._scrollView):InitListView(self._listShowItemCount, function(scrollView, index)
-    -- function num : 0_5_0 , upvalues : self
+function UISeasonCgCollectionController:_InitSrollView()
+  self._scrollView:InitListView(self._listShowItemCount, function(scrollView, index)
     return self:InitCellList(scrollView, index)
-  end
-)
+  end)
   self._inited = true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgCollectionController.InitCellList = function(self, scrollView, index)
-  -- function num : 0_6
+function UISeasonCgCollectionController:InitCellList(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -115,8 +81,8 @@ UISeasonCgCollectionController.InitCellList = function(self, scrollView, index)
   for i = 1, self._itemCountPerRow do
     local cellItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._collectionCount < itemIndex then
-      (cellItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._collectionCount then
+      cellItem:GetGameObject():SetActive(false)
     else
       self:ShowCellItem(cellItem, itemIndex)
     end
@@ -124,29 +90,19 @@ UISeasonCgCollectionController.InitCellList = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgCollectionController.ShowCellItem = function(self, cellItem, index)
-  -- function num : 0_7
-  (cellItem:GetGameObject()):SetActive(true)
-  local cfg = (self._cfgs)[index]
+function UISeasonCgCollectionController:ShowCellItem(cellItem, index)
+  cellItem:GetGameObject():SetActive(true)
+  local cfg = self._cfgs[index]
   if cfg ~= nil then
     cellItem:SetData(cfg, index, function(idx, isUnlock)
-    -- function num : 0_7_0 , upvalues : self
-    self:OnClickCell(idx, isUnlock)
-  end
-)
+      self:OnClickCell(idx, isUnlock)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgCollectionController.OnClickCell = function(self, index, isUnlock)
-  -- function num : 0_8
+function UISeasonCgCollectionController:OnClickCell(index, isUnlock)
   if isUnlock then
-    local cfg = (self._cfgs)[index]
+    local cfg = self._cfgs[index]
     self:ShowDialog("UISeasonCgDetailController", cfg)
   end
 end
-
-

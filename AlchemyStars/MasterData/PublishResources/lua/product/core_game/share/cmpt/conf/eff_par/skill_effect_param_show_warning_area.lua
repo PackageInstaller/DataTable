@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_show_warning_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local ShowWarningCenterType = {Self = 1, CanUseCenterArray = 2}
 _enum("ShowWarningCenterType", ShowWarningCenterType)
 require("skill_effect_param_base")
 _class("SkillEffectParam_ShowWarningArea", SkillEffectParamBase)
 SkillEffectParam_ShowWarningArea = SkillEffectParam_ShowWarningArea
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillEffectParam_ShowWarningArea.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : ShowWarningCenterType
+function SkillEffectParam_ShowWarningArea:Constructor(t)
   self.m_WarningCenterType = ShowWarningCenterType.Self
   if t.centerType then
     self.m_WarningCenterType = t.centerType
@@ -22,63 +15,36 @@ SkillEffectParam_ShowWarningArea.Constructor = function(self, t)
   self.m_nWarningSkillID2 = t.warningSkillID2
   self.m_bValidArea = t.validArea
   self._getScopeResultFromAI = t.getScopeResultFromAI == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_ShowWarningArea.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_ShowWarningArea:GetEffectType()
   return SkillEffectType.ShowWarningArea
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_ShowWarningArea.GetWarningSkillID = function(self)
-  -- function num : 0_2
+function SkillEffectParam_ShowWarningArea:GetWarningSkillID()
   return self.m_nWarningSkillID
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_ShowWarningArea.GetWarningSkillID2 = function(self)
-  -- function num : 0_3
+function SkillEffectParam_ShowWarningArea:GetWarningSkillID2()
   return self.m_nWarningSkillID2
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_ShowWarningArea.GetValidArea = function(self)
-  -- function num : 0_4
+function SkillEffectParam_ShowWarningArea:GetValidArea()
   return self.m_bValidArea
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_ShowWarningArea.GetWarningCenterType = function(self)
-  -- function num : 0_5
+function SkillEffectParam_ShowWarningArea:GetWarningCenterType()
   return self.m_WarningCenterType
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_ShowWarningArea.GetCanUseCenterArray = function(self)
-  -- function num : 0_6
+function SkillEffectParam_ShowWarningArea:GetCanUseCenterArray()
   return self.m_CanUseCenterArray
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_ShowWarningArea.IsContainCasterArea = function(self)
-  -- function num : 0_7
+function SkillEffectParam_ShowWarningArea:IsContainCasterArea()
   return self.m_ContainCasterArea
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_ShowWarningArea.IsGetScopeResultFromAI = function(self)
-  -- function num : 0_8
+function SkillEffectParam_ShowWarningArea:IsGetScopeResultFromAI()
   return self._getScopeResultFromAI
 end
-
-

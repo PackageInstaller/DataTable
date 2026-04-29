@@ -1,86 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/hard_level/ui_activity_n32_hard_level_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN32NHardLevelNode", UIActivityNHardLevelNode)
 UIActivityN32NHardLevelNode = UIActivityN32NHardLevelNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN32NHardLevelNode.OnInit = function(self)
-  -- function num : 0_0
+function UIActivityN32NHardLevelNode:OnInit()
   self._open = self:GetGameObject("Open")
   self._lockIconLoader = self:GetUIComponent("RawImageLoader", "LockIcon")
   self._completeIconLoader = self:GetUIComponent("RawImageLoader", "CompleteIcon")
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32NHardLevelNode.GetLockTipsString = function(self)
-  -- function num : 0_1
+function UIActivityN32NHardLevelNode:GetLockTipsString()
   return "str_n32_hard_level_lock_tips"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32NHardLevelNode.PlayAnimation = function(self)
-  -- function num : 0_2
+function UIActivityN32NHardLevelNode:PlayAnimation()
   if self._anim then
-    if ((self._rectTransform).anchoredPosition).y > 0 then
-      (self._anim):Play("uieff_UIActivityN32NHardLevelNode_in01")
-    else
-      if ((self._rectTransform).anchoredPosition).y <= 0 then
-        (self._anim):Play("uieff_UIActivityN32NHardLevelNode_in02")
-      end
+    if self._rectTransform.anchoredPosition.y > 0 then
+      self._anim:Play("uieff_UIActivityN32NHardLevelNode_in01")
+    elseif self._rectTransform.anchoredPosition.y <= 0 then
+      self._anim:Play("uieff_UIActivityN32NHardLevelNode_in02")
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32NHardLevelNode.OnLevelOpen = function(self, clientCfg)
-  -- function num : 0_3
-  (self._open):SetActive(true)
-  ;
-  (self._lock):SetActive(false)
-  ;
-  (self._complete):SetActive(false)
+function UIActivityN32NHardLevelNode:OnLevelOpen(clientCfg)
+  self._open:SetActive(true)
+  self._lock:SetActive(false)
+  self._complete:SetActive(false)
   if clientCfg then
-    (self._iconLoader):LoadImage(clientCfg.Icon)
+    self._iconLoader:LoadImage(clientCfg.Icon)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32NHardLevelNode.OnLevelLock = function(self, clientCfg)
-  -- function num : 0_4
-  (self._open):SetActive(false)
-  ;
-  (self._lock):SetActive(true)
-  ;
-  (self._complete):SetActive(false)
+function UIActivityN32NHardLevelNode:OnLevelLock(clientCfg)
+  self._open:SetActive(false)
+  self._lock:SetActive(true)
+  self._complete:SetActive(false)
   if clientCfg then
-    (self._iconLoader):LoadImage(clientCfg.Icon)
-    ;
-    (self._lockIconLoader):LoadImage(clientCfg.CloseIcon)
+    self._iconLoader:LoadImage(clientCfg.Icon)
+    self._lockIconLoader:LoadImage(clientCfg.CloseIcon)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32NHardLevelNode.OnLevelComplete = function(self, clientCfg)
-  -- function num : 0_5
-  (self._open):SetActive(true)
-  ;
-  (self._lock):SetActive(false)
-  ;
-  (self._complete):SetActive(true)
+function UIActivityN32NHardLevelNode:OnLevelComplete(clientCfg)
+  self._open:SetActive(true)
+  self._lock:SetActive(false)
+  self._complete:SetActive(true)
   if clientCfg then
-    (self._iconLoader):LoadImage(clientCfg.Icon)
-    ;
-    (self._completeIconLoader):LoadImage(clientCfg.CompleteIcon)
+    self._iconLoader:LoadImage(clientCfg.Icon)
+    self._completeIconLoader:LoadImage(clientCfg.CompleteIcon)
   end
 end
-
-

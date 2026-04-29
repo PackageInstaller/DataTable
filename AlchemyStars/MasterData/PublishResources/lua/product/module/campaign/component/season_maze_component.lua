@@ -1,127 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/season_maze_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeComponent", ICampaignComponent)
 SeasonMazeComponent = SeasonMazeComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMazeComponent:Constructor()
   self._componentInfo = SeasonMazeComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonMazeComponent:ComponentInfo()
   if not self._componentInfo then
     self._componentInfo = SeasonMazeComponentInfo:New()
   end
   return self._componentInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function SeasonMazeComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonMazeComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_SEASON_MAZE
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self._componentInfo)
+function SeasonMazeComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self._componentInfo)
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.CurOperate = function(self)
-  -- function num : 0_5
+function SeasonMazeComponent:CurOperate()
   local comInfo = self:ComponentInfo()
   return comInfo.cur_state
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.GetOnceNum = function(self, cfgId)
-  -- function num : 0_6
+function SeasonMazeComponent:GetOnceNum(cfgId)
   local comInfo = self:ComponentInfo()
-  local inon = ((comInfo.m_bag_info).once_item_list)[cfgId]
+  local inon = comInfo.m_bag_info.once_item_list[cfgId]
   return inon or 0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.GetEffectNum = function(self, effectType, id)
-  -- function num : 0_7 , upvalues : _ENV
+function SeasonMazeComponent:GetEffectNum(effectType, id)
   local comInfo = self:ComponentInfo()
   if comInfo == nil then
     return 0
   end
   if effectType == SeasonMazeEffectType.SMET_Pet then
-    local inon = ((comInfo.m_bag_info).pet_list)[id]
+    local inon = comInfo.m_bag_info.pet_list[id]
     return inon and 1 or 0
-  else
-    do
-      if effectType == SeasonMazeEffectType.SMET_Relic then
-        local inon = ((comInfo.m_bag_info).relic_list)[id]
-        return inon and 1 or 0
-      else
-        do
-          if effectType == SeasonMazeEffectType.SMET_Once then
-            local inon = ((comInfo.m_bag_info).once_item_list)[id]
-            return inon or 0
-          else
-            do
-              if effectType == SeasonMazeEffectType.SMET_Pro then
-                return self:GetAttrValue(id)
-              else
-                if effectType == SeasonMazeEffectType.SMET_Hand then
-                  local inon = (comInfo.wait_hands)[id]
-                  if inon == nil then
-                    inon = (comInfo.fold_hands)[id]
-                  end
-                  return inon and 1 or 0
-                else
-                  do
-                    do
-                      if effectType == SeasonMazeEffectType.SMET_Bead then
-                        local num = 0
-                        for k,v in pairs(comInfo.m_auto_bead_map) do
-                          if (v.bead_info).cfg_id == id then
-                            num = num + 1
-                          end
-                        end
-                        return num
-                      end
-                      return 0
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+  elseif effectType == SeasonMazeEffectType.SMET_Relic then
+    local inon = comInfo.m_bag_info.relic_list[id]
+    return inon and 1 or 0
+  elseif effectType == SeasonMazeEffectType.SMET_Once then
+    local inon = comInfo.m_bag_info.once_item_list[id]
+    return inon or 0
+  elseif effectType == SeasonMazeEffectType.SMET_Pro then
+    return self:GetAttrValue(id)
+  elseif effectType == SeasonMazeEffectType.SMET_Hand then
+    local inon = comInfo.wait_hands[id]
+    if inon == nil then
+      inon = comInfo.fold_hands[id]
+    end
+    return inon and 1 or 0
+  elseif effectType == SeasonMazeEffectType.SMET_Bead then
+    local num = 0
+    for k, v in pairs(comInfo.m_auto_bead_map) do
+      if v.bead_info.cfg_id == id then
+        num = num + 1
       end
     end
+    return num
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_8 , upvalues : _ENV
+function SeasonMazeComponent:CampaignComponentPushNotify(notify_data)
   if SeasonMazeComponentNotifyType.SeasonMazeComponentNotifyType_Ore == notify_data.m_notify_type then
     self:NotifyOre(notify_data.m_data)
   end
@@ -172,507 +121,270 @@ SeasonMazeComponent.CampaignComponentPushNotify = function(self, notify_data)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.NotifyBeadFitChange = function(self, data)
-  -- function num : 0_9 , upvalues : _ENV
+function SeasonMazeComponent:NotifyBeadFitChange(data)
   local ev = SeasonMazeNotifyAutoBeadSlotUnlock:New()
-  local ret = (ComponentDataHelper.ParseData)(data, ev)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
+  local ret = ComponentDataHelper.ParseData(data, ev)
   if ret then
-    (self._componentInfo).m_auto_bead_fit_list = ev.auto_bead_fit
+    self._componentInfo.m_auto_bead_fit_list = ev.auto_bead_fit
   else
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] NotifyBeadFitChange ParseData error! ret:", ret)
+    Log.error("[CampaignCom][SeasonMazeComponent] NotifyBeadFitChange ParseData error! ret:", ret)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.NotifyFormationChange = function(self, data)
-  -- function num : 0_10 , upvalues : _ENV
+function SeasonMazeComponent:NotifyFormationChange(data)
   local ev = SeasonMazeNotifyFormationChange:New()
-  local ret = (ComponentDataHelper.ParseData)(data, ev)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
+  local ret = ComponentDataHelper.ParseData(data, ev)
   if ret then
-    (self._componentInfo).m_formation_list = ev.m_formation_list
+    self._componentInfo.m_formation_list = ev.m_formation_list
   else
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] NotifyFormationChange ParseData error! ret:", ret)
+    Log.error("[CampaignCom][SeasonMazeComponent] NotifyFormationChange ParseData error! ret:", ret)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.NotifyRelicChange = function(self, data)
-  -- function num : 0_11 , upvalues : _ENV
+function SeasonMazeComponent:NotifyRelicChange(data)
   local ev = SeasonMazeNotifyRelicChange:New()
-  local ret = (ComponentDataHelper.ParseData)(data, ev)
+  local ret = ComponentDataHelper.ParseData(data, ev)
   if ret then
-    for k,v in pairs(ev.relic_list) do
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R9 in 'UnsetPending'
-
-      (((self._componentInfo).m_bag_info).relic_list)[k] = v
+    for k, v in pairs(ev.relic_list) do
+      self._componentInfo.m_bag_info.relic_list[k] = v
     end
   else
-    do
-      ;
-      (Log.error)("[CampaignCom][SeasonMazeComponent] NotifyRelicChange ParseData error! ret:", ret)
-    end
+    Log.error("[CampaignCom][SeasonMazeComponent] NotifyRelicChange ParseData error! ret:", ret)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.NotifySuitInfoChange = function(self, data)
-  -- function num : 0_12 , upvalues : _ENV
+function SeasonMazeComponent:NotifySuitInfoChange(data)
   local ev = SeasonMazeNotifySuitInfoChange:New()
-  local ret = (ComponentDataHelper.ParseData)(data, ev)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
+  local ret = ComponentDataHelper.ParseData(data, ev)
   if ret then
-    (self._componentInfo).suit_info = ev.info
+    self._componentInfo.suit_info = ev.info
   else
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] NotifySuitInfoChange ParseData error! ret:", ret)
+    Log.error("[CampaignCom][SeasonMazeComponent] NotifySuitInfoChange ParseData error! ret:", ret)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.NotifyRoom = function(self, data)
-  -- function num : 0_13 , upvalues : _ENV
+function SeasonMazeComponent:NotifyRoom(data)
   local ev = SeasonMazeNotifyRoom:New()
-  local ret = (ComponentDataHelper.ParseData)(data, ev)
+  local ret = ComponentDataHelper.ParseData(data, ev)
   if ret then
-    for key,value in pairs(ev.rooms) do
-      -- DECOMPILER ERROR at PC16: Confused about usage of register: R9 in 'UnsetPending'
-
-      ((self._componentInfo).rooms)[key] = value
+    for key, value in pairs(ev.rooms) do
+      self._componentInfo.rooms[key] = value
     end
   else
-    do
-      ;
-      (Log.error)("SeasonMazeComponent:SeasonMazeNotifyRoom ParseData error! ret:", ret)
-    end
+    Log.error("SeasonMazeComponent:SeasonMazeNotifyRoom ParseData error! ret:", ret)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.NotifyOre = function(self, data)
-  -- function num : 0_14 , upvalues : _ENV
+function SeasonMazeComponent:NotifyOre(data)
   local ev = SeasonMazeNotifyOre:New()
-  local ret = (ComponentDataHelper.ParseData)(data, ev)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
+  local ret = ComponentDataHelper.ParseData(data, ev)
   if ret then
-    (self._componentInfo).occupy_ore = ev.occupy_ore
+    self._componentInfo.occupy_ore = ev.occupy_ore
   else
-    ;
-    (Log.error)("SeasonMazeComponent:NotifyOre ParseData error! ret:", ret)
+    Log.error("SeasonMazeComponent:NotifyOre ParseData error! ret:", ret)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.NotifyExtract = function(self, data)
-  -- function num : 0_15 , upvalues : _ENV
+function SeasonMazeComponent:NotifyExtract(data)
   self._extra_hands_data = nil
   local ev = SeasonMazeNotifyExtract:New()
-  local ret = (ComponentDataHelper.ParseData)(data, ev)
+  local ret = ComponentDataHelper.ParseData(data, ev)
   if ret then
     self._extra_hands_data = ev
   else
-    ;
-    (Log.error)("SeasonMazeComponent:NotifyExtract ParseData error! ret:", ret)
+    Log.error("SeasonMazeComponent:NotifyExtract ParseData error! ret:", ret)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.NotifyBoss = function(self, data)
-  -- function num : 0_16 , upvalues : _ENV
+function SeasonMazeComponent:NotifyBoss(data)
   local ev = SeasonMazeNotifyBoss:New()
-  local ret = (ComponentDataHelper.ParseData)(data, ev)
+  local ret = ComponentDataHelper.ParseData(data, ev)
   if ret then
-    for key,value in pairs(ev.boss_info) do
-      -- DECOMPILER ERROR at PC16: Confused about usage of register: R9 in 'UnsetPending'
-
-      ((self._componentInfo).boss_info)[key] = value
+    for key, value in pairs(ev.boss_info) do
+      self._componentInfo.boss_info[key] = value
     end
   else
-    do
-      ;
-      (Log.error)("SeasonMazeComponent:NotifyBoss ParseData error! ret:", ret)
-    end
+    Log.error("SeasonMazeComponent:NotifyBoss ParseData error! ret:", ret)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.NotifyCurState = function(self, data)
-  -- function num : 0_17 , upvalues : _ENV
+function SeasonMazeComponent:NotifyCurState(data)
   local ev = SeasonMazeNotifyCurState:New()
-  local ret = (ComponentDataHelper.ParseData)(data, ev)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
+  local ret = ComponentDataHelper.ParseData(data, ev)
   if ret then
-    (self._componentInfo).cur_state = ev.cur_state
+    self._componentInfo.cur_state = ev.cur_state
   else
-    ;
-    (Log.error)("SeasonMazeComponent:NotifyCurState ParseData error! ret:", ret)
+    Log.error("SeasonMazeComponent:NotifyCurState ParseData error! ret:", ret)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.NotifyOnceItem = function(self, data)
-  -- function num : 0_18 , upvalues : _ENV
+function SeasonMazeComponent:NotifyOnceItem(data)
   local ev = SeasonMazeNotifyOnceItem:New()
-  local ret = (ComponentDataHelper.ParseData)(data, ev)
+  local ret = ComponentDataHelper.ParseData(data, ev)
   if ret then
-    for key,value in pairs(ev.list) do
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R9 in 'UnsetPending'
-
-      (((self._componentInfo).m_bag_info).once_item_list)[key] = value
+    for key, value in pairs(ev.list) do
+      self._componentInfo.m_bag_info.once_item_list[key] = value
     end
   else
-    do
-      ;
-      (Log.error)("SeasonMazeComponent:NotifyOnceItem ParseData error! ret:", ret)
-    end
+    Log.error("SeasonMazeComponent:NotifyOnceItem ParseData error! ret:", ret)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.NotifyRandomRelic = function(self, data)
-  -- function num : 0_19 , upvalues : _ENV
+function SeasonMazeComponent:NotifyRandomRelic(data)
   local ev = SeasonMazeNotifyRandomRelic:New()
-  local ret = (ComponentDataHelper.ParseData)(data, ev)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
+  local ret = ComponentDataHelper.ParseData(data, ev)
   if ret then
-    (self._componentInfo).relic_random = ev.relic_random
+    self._componentInfo.relic_random = ev.relic_random
   else
-    ;
-    (Log.error)("SeasonMazeComponent:NotifyRandomRelic ParseData error! ret:", ret)
+    Log.error("SeasonMazeComponent:NotifyRandomRelic ParseData error! ret:", ret)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.NotifyNewHand = function(self, data)
-  -- function num : 0_20 , upvalues : _ENV
+function SeasonMazeComponent:NotifyNewHand(data)
   local ev = SeasonMazeNotifyNewHand:New()
-  local ret = (ComponentDataHelper.ParseData)(data, ev)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
+  local ret = ComponentDataHelper.ParseData(data, ev)
   if ret then
-    (self._componentInfo).new_hands = ev.new_hands
+    self._componentInfo.new_hands = ev.new_hands
   else
-    ;
-    (Log.error)("SeasonMazeComponent:NotifyNewHand ParseData error! ret:", ret)
+    Log.error("SeasonMazeComponent:NotifyNewHand ParseData error! ret:", ret)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.NotifyHandBag = function(self, data)
-  -- function num : 0_21 , upvalues : _ENV
+function SeasonMazeComponent:NotifyHandBag(data)
   local ev = SeasonMazeNotifyHandBag:New()
-  local ret = (ComponentDataHelper.ParseData)(data, ev)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
+  local ret = ComponentDataHelper.ParseData(data, ev)
   if ret then
-    (self._componentInfo).wait_hands = ev.wait_hands
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._componentInfo).fold_hands = ev.fold_hands
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._componentInfo).rand_hands = ev.rand_hands
+    self._componentInfo.wait_hands = ev.wait_hands
+    self._componentInfo.fold_hands = ev.fold_hands
+    self._componentInfo.rand_hands = ev.rand_hands
   else
-    ;
-    (Log.error)("SeasonMazeComponent:NotifyHandBag ParseData error! ret:", ret)
+    Log.error("SeasonMazeComponent:NotifyHandBag ParseData error! ret:", ret)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.NotifyAttrChange = function(self, data)
-  -- function num : 0_22 , upvalues : _ENV
+function SeasonMazeComponent:NotifyAttrChange(data)
   local ev = SeasonMazeNotifyAttrChange:New()
-  local ret = (ComponentDataHelper.ParseData)(data, ev)
+  local ret = ComponentDataHelper.ParseData(data, ev)
   if ret then
-    for k,v in pairs(ev.attr_change) do
-      local ov = ((self._componentInfo).attr_list)[k]
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      ((self._componentInfo).attr_list)[k] = v
-      ;
-      ((GameGlobal.GetModule)(SeasonMazeModule)):SetAttrReason(k, (ev.attr_reason)[k], ov, v)
+    for k, v in pairs(ev.attr_change) do
+      local ov = self._componentInfo.attr_list[k]
+      self._componentInfo.attr_list[k] = v
+      GameGlobal.GetModule(SeasonMazeModule):SetAttrReason(k, ev.attr_reason[k], ov, v)
     end
   else
-    do
-      ;
-      (Log.error)("[CampaignCom][SeasonMazeComponent] NotifyAttrChange ParseData error! ret:", ret)
-    end
+    Log.error("[CampaignCom][SeasonMazeComponent] NotifyAttrChange ParseData error! ret:", ret)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.NotifyAutoBeadChange = function(self, data)
-  -- function num : 0_23 , upvalues : _ENV
+function SeasonMazeComponent:NotifyAutoBeadChange(data)
   local ev = SeasonMazeNotifyAutoBeadChange:New()
-  local ret = (ComponentDataHelper.ParseData)(data, ev)
+  local ret = ComponentDataHelper.ParseData(data, ev)
   if ret then
-    for k,v in pairs(ev.bead_map) do
-      -- DECOMPILER ERROR at PC16: Confused about usage of register: R9 in 'UnsetPending'
-
-      ((self._componentInfo).m_auto_bead_map)[k] = v
+    for k, v in pairs(ev.bead_map) do
+      self._componentInfo.m_auto_bead_map[k] = v
     end
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._componentInfo).m_new_auto_bead_cnt = ev.new_cnt
+    self._componentInfo.m_new_auto_bead_cnt = ev.new_cnt
   else
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] NotifyAutoBeadChange ParseData error! ret:", ret)
+    Log.error("[CampaignCom][SeasonMazeComponent] NotifyAutoBeadChange ParseData error! ret:", ret)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.NotifyPetChange = function(self, data)
-  -- function num : 0_24 , upvalues : _ENV
+function SeasonMazeComponent:NotifyPetChange(data)
   local ev = SeasonMazeNotifyPetChange:New()
-  local ret = (ComponentDataHelper.ParseData)(data, ev)
+  local ret = ComponentDataHelper.ParseData(data, ev)
   if ret then
-    for i,v in pairs(ev.pet_list) do
-      -- DECOMPILER ERROR at PC18: Confused about usage of register: R9 in 'UnsetPending'
-
-      (((self._componentInfo).m_bag_info).pet_list)[v.petID] = v
-      local ore = ((self._componentInfo).occupy_ore)[v.petID]
+    for i, v in pairs(ev.pet_list) do
+      self._componentInfo.m_bag_info.pet_list[v.petID] = v
+      local ore = self._componentInfo.occupy_ore[v.petID]
       if ore ~= nil and self:GetPetState(v.petID, ESeasonMazePetStateType.ESeasonMazePetStateType_Dispatch) ~= true then
-        (Log.info)("派遣结束:", v.petID)
-        -- DECOMPILER ERROR at PC40: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        ((self._componentInfo).occupy_ore)[v.petID] = nil
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_season_maze_ore_room_tips_back"))
+        Log.info("派遣结束:", v.petID)
+        self._componentInfo.occupy_ore[v.petID] = nil
+        ToastManager.ShowToast(StringTable.Get("str_season_maze_ore_room_tips_back"))
       end
     end
   else
-    do
-      ;
-      (Log.error)("[CampaignCom][SeasonMazeComponent] NotifyPetStateChange ParseData error! ret:", ret)
-    end
+    Log.error("[CampaignCom][SeasonMazeComponent] NotifyPetStateChange ParseData error! ret:", ret)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.CopyInfo = function(self, msgInfo)
-  -- function num : 0_25
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._componentInfo).enter_time = msgInfo.enter_time
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).hard = msgInfo.hard
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).rooms = msgInfo.rooms
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).wait_hands = msgInfo.wait_hands
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).fold_hands = msgInfo.fold_hands
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).rand_hands = msgInfo.rand_hands
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).boss_info = msgInfo.boss_info
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).cur_hand = msgInfo.cur_hand
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).past_hand = msgInfo.past_hand
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).cur_point = msgInfo.cur_point
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).do_layer_num = msgInfo.do_layer_num
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).hard_num = msgInfo.hard_num
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).tmp_point = msgInfo.tmp_point
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).occupy_ore = msgInfo.occupy_ore
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).cur_state = msgInfo.cur_state
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).save_info = msgInfo.save_info
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).slot_info = msgInfo.slot_info
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).relic_random = msgInfo.relic_random
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).new_hands = msgInfo.new_hands
-  -- DECOMPILER ERROR at PC59: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).round_num = msgInfo.round_num
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).suit_info = msgInfo.suit_info
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).attr_list = msgInfo.attr_list
-  -- DECOMPILER ERROR at PC68: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_formation_list = msgInfo.m_formation_list
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_init_select = msgInfo.m_init_select
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_auto_bead_map = msgInfo.m_auto_bead_map
-  -- DECOMPILER ERROR at PC77: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_auto_bead_fit_list = msgInfo.m_auto_bead_fit_list
-  -- DECOMPILER ERROR at PC80: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_new_auto_bead_cnt = msgInfo.m_new_auto_bead_cnt
-  -- DECOMPILER ERROR at PC83: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_bag_info = msgInfo.m_bag_info
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_world_boss_info = msgInfo.m_world_boss_info
-  -- DECOMPILER ERROR at PC89: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_recruit_room_pet_list = msgInfo.m_recruit_room_pet_list
-  -- DECOMPILER ERROR at PC92: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_recruit_room_reflush_cnt = msgInfo.m_recruit_room_reflush_cnt
-  -- DECOMPILER ERROR at PC95: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).manunl_ban_pets = msgInfo.manunl_ban_pets
+function SeasonMazeComponent:CopyInfo(msgInfo)
+  self._componentInfo.enter_time = msgInfo.enter_time
+  self._componentInfo.hard = msgInfo.hard
+  self._componentInfo.rooms = msgInfo.rooms
+  self._componentInfo.wait_hands = msgInfo.wait_hands
+  self._componentInfo.fold_hands = msgInfo.fold_hands
+  self._componentInfo.rand_hands = msgInfo.rand_hands
+  self._componentInfo.boss_info = msgInfo.boss_info
+  self._componentInfo.cur_hand = msgInfo.cur_hand
+  self._componentInfo.past_hand = msgInfo.past_hand
+  self._componentInfo.cur_point = msgInfo.cur_point
+  self._componentInfo.do_layer_num = msgInfo.do_layer_num
+  self._componentInfo.hard_num = msgInfo.hard_num
+  self._componentInfo.tmp_point = msgInfo.tmp_point
+  self._componentInfo.occupy_ore = msgInfo.occupy_ore
+  self._componentInfo.cur_state = msgInfo.cur_state
+  self._componentInfo.save_info = msgInfo.save_info
+  self._componentInfo.slot_info = msgInfo.slot_info
+  self._componentInfo.relic_random = msgInfo.relic_random
+  self._componentInfo.new_hands = msgInfo.new_hands
+  self._componentInfo.round_num = msgInfo.round_num
+  self._componentInfo.suit_info = msgInfo.suit_info
+  self._componentInfo.attr_list = msgInfo.attr_list
+  self._componentInfo.m_formation_list = msgInfo.m_formation_list
+  self._componentInfo.m_init_select = msgInfo.m_init_select
+  self._componentInfo.m_auto_bead_map = msgInfo.m_auto_bead_map
+  self._componentInfo.m_auto_bead_fit_list = msgInfo.m_auto_bead_fit_list
+  self._componentInfo.m_new_auto_bead_cnt = msgInfo.m_new_auto_bead_cnt
+  self._componentInfo.m_bag_info = msgInfo.m_bag_info
+  self._componentInfo.m_world_boss_info = msgInfo.m_world_boss_info
+  self._componentInfo.m_recruit_room_pet_list = msgInfo.m_recruit_room_pet_list
+  self._componentInfo.m_recruit_room_reflush_cnt = msgInfo.m_recruit_room_reflush_cnt
+  self._componentInfo.manunl_ban_pets = msgInfo.manunl_ban_pets
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeSelectHard = function(self, TT, asyncRes, harId, pet_list)
-  -- function num : 0_26 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeSelectHard(TT, asyncRes, harId, pet_list)
   local request = SeasonMazeSelectHardReq:New()
   local response = SeasonMazeSelectHardResult:New()
   request.hard = harId
   request.pet_list = pet_list
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeSelectHard ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeSelectHard ret:", asyncRes.m_result)
     return nil
   end
   self:CopyInfo(response.info)
   return response
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeRandomHand = function(self, TT, asyncRes)
-  -- function num : 0_27 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeRandomHand(TT, asyncRes)
   local request = SeasonMazeRandomHandReq:New()
   local response = SeasonMazeRandomHandResult:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeRandomHand ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeRandomHand ret:", asyncRes.m_result)
     return nil
   end
-  local cnt = (table.count)(ComponentInfo.round_num)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (ComponentInfo.round_num)[cnt] = 0
+  local cnt = table.count(ComponentInfo.round_num)
+  ComponentInfo.round_num[cnt] = 0
   ComponentInfo.wait_hands = response.wait_hands
   ComponentInfo.fold_hands = response.fold_hands
   ComponentInfo.rand_hands = response.rand_hands
   return response
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeChooseHand = function(self, TT, asyncRes, id)
-  -- function num : 0_28 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeChooseHand(TT, asyncRes, id)
   local request = SeasonMazeChooseHandReq:New()
   local response = SeasonMazeChooseHandResult:New()
   request.id = id
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeChooseHand ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeChooseHand ret:", asyncRes.m_result)
     return nil
   end
   ComponentInfo.cur_hand = response.cur_hand
@@ -682,31 +394,24 @@ SeasonMazeComponent.HandleSeasonMazeChooseHand = function(self, TT, asyncRes, id
   return response
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeGoPoint = function(self, TT, asyncRes, pointId, isTmp)
-  -- function num : 0_29 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeGoPoint(TT, asyncRes, pointId, isTmp)
   local request = SeasonMazeGoPointReq:New()
   local response = SeasonMazeGoPointResult:New()
   request.id = pointId
   request.is_tmp = isTmp
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeGoPoint ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeGoPoint ret:", asyncRes.m_result)
     return nil
   end
   if isTmp then
     ComponentInfo.tmp_point = response.tmp_point
   else
     ComponentInfo.cur_hand = response.cur_hand
-    for key,value in pairs(response.rooms) do
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R13 in 'UnsetPending'
-
-      (ComponentInfo.rooms)[key] = value
+    for key, value in pairs(response.rooms) do
+      ComponentInfo.rooms[key] = value
     end
     ComponentInfo.past_hand = response.past_hand
     ComponentInfo.cur_point = response.cur_point
@@ -714,262 +419,177 @@ SeasonMazeComponent.HandleSeasonMazeGoPoint = function(self, TT, asyncRes, point
   return response
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeBattle = function(self, TT, asyncRes)
-  -- function num : 0_30 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeBattle(TT, asyncRes)
   local request = SeasonMazeBattleReq:New()
   local response = SeasonMazeBattleResult:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeBattle ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeBattle ret:", asyncRes.m_result)
     return nil
   end
-  for key,value in pairs(response.rooms) do
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R11 in 'UnsetPending'
-
-    (ComponentInfo.rooms)[key] = value
+  for key, value in pairs(response.rooms) do
+    ComponentInfo.rooms[key] = value
   end
   return response
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeEvent = function(self, TT, asyncRes, cfgId)
-  -- function num : 0_31 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeEvent(TT, asyncRes, cfgId)
   local request = SeasonMazeEventReq:New()
   local response = SeasonMazeEventResult:New()
   request.cfg_id = cfgId
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeEvent ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeEvent ret:", asyncRes.m_result)
     return nil
   end
-  for key,value in pairs(response.rooms) do
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R12 in 'UnsetPending'
-
-    (ComponentInfo.rooms)[key] = value
+  for key, value in pairs(response.rooms) do
+    ComponentInfo.rooms[key] = value
   end
   return response
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeResource = function(self, TT, asyncRes)
-  -- function num : 0_32 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeResource(TT, asyncRes)
   local request = SeasonMazeResourceReq:New()
   local response = SeasonMazeResourceResult:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeResource ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeResource ret:", asyncRes.m_result)
     return nil
   end
-  for key,value in pairs(response.rooms) do
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R11 in 'UnsetPending'
-
-    (ComponentInfo.rooms)[key] = value
+  for key, value in pairs(response.rooms) do
+    ComponentInfo.rooms[key] = value
   end
   return response
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeOre = function(self, TT, asyncRes, cfg_id, is_do, rd_index)
-  -- function num : 0_33 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeOre(TT, asyncRes, cfg_id, is_do, rd_index)
   local request = SeasonMazeOreReq:New()
   local response = SeasonMazeOreResult:New()
   request.cfg_id = cfg_id
   request.is_do = is_do
   request.rd_index = rd_index
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeOre ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeOre ret:", asyncRes.m_result)
     return nil
   end
   if is_do then
-    for key,value in pairs(response.rooms) do
-      -- DECOMPILER ERROR at PC42: Confused about usage of register: R14 in 'UnsetPending'
-
-      (ComponentInfo.rooms)[key] = value
+    for key, value in pairs(response.rooms) do
+      ComponentInfo.rooms[key] = value
     end
-    for key,value in pairs(response.occupy_ore) do
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R14 in 'UnsetPending'
-
-      (ComponentInfo.occupy_ore)[key] = value
+    for key, value in pairs(response.occupy_ore) do
+      ComponentInfo.occupy_ore[key] = value
     end
   else
-    do
-      -- DECOMPILER ERROR at PC55: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (ComponentInfo.occupy_ore)[cfg_id] = nil
-      return response
-    end
+    ComponentInfo.occupy_ore[cfg_id] = nil
   end
+  return response
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeBox = function(self, TT, asyncRes, index)
-  -- function num : 0_34 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeBox(TT, asyncRes, index)
   local request = SeasonMazeBoxReq:New()
   local response = SeasonMazeBoxResult:New()
   request.index = index
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeBox ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeBox ret:", asyncRes.m_result)
     return nil
   end
-  for key,value in pairs(response.rooms) do
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R12 in 'UnsetPending'
-
-    (ComponentInfo.rooms)[key] = value
+  for key, value in pairs(response.rooms) do
+    ComponentInfo.rooms[key] = value
   end
   return response
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeRound = function(self, TT, asyncRes)
-  -- function num : 0_35 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeRound(TT, asyncRes)
   local request = SeasonMazeRoundReq:New()
   local response = SeasonMazeRoundResult:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeRound ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeRound ret:", asyncRes.m_result)
     return nil
   end
-  for key,value in pairs(response.rooms) do
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R11 in 'UnsetPending'
-
-    (ComponentInfo.rooms)[key] = value
+  for key, value in pairs(response.rooms) do
+    ComponentInfo.rooms[key] = value
   end
   return response
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeAltar = function(self, TT, asyncRes, cfg_id, is_delet, index)
-  -- function num : 0_36 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeAltar(TT, asyncRes, cfg_id, is_delet, index)
   local request = SeasonMazeAltarReq:New()
   local response = SeasonMazeAltarResult:New()
   request.cfg_id = cfg_id
   request.is_delet = is_delet
   request.index = index
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeAltar ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeAltar ret:", asyncRes.m_result)
     return nil
   end
-  if index ~= 0 or not ComponentInfo.wait_hands then
-    local list = ComponentInfo.fold_hands
-  end
+  local list = index == 0 and ComponentInfo.wait_hands or ComponentInfo.fold_hands
   if is_delet then
-    (table.removev)(list, cfg_id)
+    table.removev(list, cfg_id)
   else
-    ;
-    (table.removev)(list, cfg_id)
-    ;
-    (table.insert)(ComponentInfo.wait_hands, response.cfg_id)
+    table.removev(list, cfg_id)
+    table.insert(ComponentInfo.wait_hands, response.cfg_id)
   end
-  for key,value in pairs(response.rooms) do
-    -- DECOMPILER ERROR at PC64: Confused about usage of register: R15 in 'UnsetPending'
-
-    (ComponentInfo.rooms)[key] = value
+  for key, value in pairs(response.rooms) do
+    ComponentInfo.rooms[key] = value
   end
   return response
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeRoomEnd = function(self, TT, asyncRes)
-  -- function num : 0_37 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeRoomEnd(TT, asyncRes)
   local request = SeasonMazeRoomEndReq:New()
   local response = SeasonMazeRoomEndResult:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeRoomEnd ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeRoomEnd ret:", asyncRes.m_result)
     return nil
   end
-  if (table.count)(response.rooms) > 0 then
-    for key,value in pairs(response.rooms) do
-      -- DECOMPILER ERROR at PC43: Confused about usage of register: R11 in 'UnsetPending'
-
-      (ComponentInfo.rooms)[key] = value
+  if table.count(response.rooms) > 0 then
+    for key, value in pairs(response.rooms) do
+      ComponentInfo.rooms[key] = value
     end
   else
-    do
-      self:CopyInfo(response.info)
-      local curRoom = ((self._componentInfo).rooms)[(self._componentInfo).cur_point]
-      -- DECOMPILER ERROR at PC70: Confused about usage of register: R7 in 'UnsetPending'
-
-      if curRoom ~= nil and (curRoom.type == SeasonMazeRoomType.SMRT_Shop or curRoom.type == SeasonMazeRoomType.SMRT_BeadShop) then
-        ((self._componentInfo).slot_info).items = {}
-        -- DECOMPILER ERROR at PC73: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        ((self._componentInfo).slot_info).reset_cnt = 0
-        -- DECOMPILER ERROR at PC76: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        ((self._componentInfo).slot_info).dis_index = 0
-      end
-      -- DECOMPILER ERROR at PC79: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._componentInfo).cur_state = response.cur_state
-      return response
-    end
+    self:CopyInfo(response.info)
   end
+  local curRoom = self._componentInfo.rooms[self._componentInfo.cur_point]
+  if curRoom ~= nil and (curRoom.type == SeasonMazeRoomType.SMRT_Shop or curRoom.type == SeasonMazeRoomType.SMRT_BeadShop) then
+    self._componentInfo.slot_info.items = {}
+    self._componentInfo.slot_info.reset_cnt = 0
+    self._componentInfo.slot_info.dis_index = 0
+  end
+  self._componentInfo.cur_state = response.cur_state
+  return response
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeChooseRelic = function(self, TT, asyncRes, index, operate)
-  -- function num : 0_38 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeChooseRelic(TT, asyncRes, index, operate)
   local request = SeasonMazeChooseRelicReq:New()
   local response = SeasonMazeChooseRelicResult:New()
   request.index = index
   request.operate = operate
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeChooseRelic ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeChooseRelic ret:", asyncRes.m_result)
     return nil
   end
   ComponentInfo.relic_random = response.relic_random
@@ -977,20 +597,15 @@ SeasonMazeComponent.HandleSeasonMazeChooseRelic = function(self, TT, asyncRes, i
   return response
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeNewHand = function(self, TT, asyncRes, index)
-  -- function num : 0_39 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeNewHand(TT, asyncRes, index)
   local request = SeasonMazeNewHandReq:New()
   local response = SeasonMazeNewHandResult:New()
   request.index = index
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeNewHand ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeNewHand ret:", asyncRes.m_result)
     return nil
   end
   ComponentInfo.new_hands = response.new_hands
@@ -998,605 +613,412 @@ SeasonMazeComponent.HandleSeasonMazeNewHand = function(self, TT, asyncRes, index
   return response
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeGetMarket = function(self, TT, asyncRes)
-  -- function num : 0_40 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeGetMarket(TT, asyncRes)
   local request = SeasonMazeGetMarketReq:New()
   local response = SeasonMazeGetMarketResult:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeGetMarket ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeGetMarket ret:", asyncRes.m_result)
     return nil
   end
-  for key,value in pairs(response.rooms) do
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R11 in 'UnsetPending'
-
-    (ComponentInfo.rooms)[key] = value
+  for key, value in pairs(response.rooms) do
+    ComponentInfo.rooms[key] = value
   end
   return response
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeOperaMarket = function(self, TT, asyncRes, pst_id, unique_id)
-  -- function num : 0_41 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeOperaMarket(TT, asyncRes, pst_id, unique_id)
   local request = SeasonMazeOperaMarketReq:New()
   local response = SeasonMazeOperaMarketResult:New()
   request.pst_id = pst_id
   request.unique_id = unique_id
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeOperaMarket ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeOperaMarket ret:", asyncRes.m_result)
     return nil
   end
-  for key,value in pairs(response.rooms) do
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R13 in 'UnsetPending'
-
-    (ComponentInfo.rooms)[key] = value
+  for key, value in pairs(response.rooms) do
+    ComponentInfo.rooms[key] = value
   end
   return response
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeRoundEnd = function(self, TT, asyncRes)
-  -- function num : 0_42 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeRoundEnd(TT, asyncRes)
   local request = SeasonMazeRoundEndReq:New()
   local response = SeasonMazeRoundEndResult:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeRoundEnd ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeRoundEnd ret:", asyncRes.m_result)
     return nil
   end
-  for key,value in pairs(ComponentInfo.round_num) do
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R11 in 'UnsetPending'
-
+  for key, value in pairs(ComponentInfo.round_num) do
     if value <= 0 then
-      (ComponentInfo.round_num)[key] = 1
+      ComponentInfo.round_num[key] = 1
       break
     end
   end
-  do
-    return response
-  end
+  return response
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeClearing = function(self, TT, asyncRes, is_initiative)
-  -- function num : 0_43 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeClearing(TT, asyncRes, is_initiative)
   local request = SeasonMazeClearingReq:New()
   local response = SeasonMazeClearingResult:New()
   request.is_initiative = is_initiative or false
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeClearing ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeClearing ret:", asyncRes.m_result)
     return nil
   end
   self:CopyInfo(response.info)
   return response
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeUseOnce = function(self, TT, asyncRes, cfg_id, param)
-  -- function num : 0_44 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeUseOnce(TT, asyncRes, cfg_id, param)
   local request = SeasonMazeUseOnceReq:New()
   local response = SeasonMazeUseOnceResult:New()
   request.cfg_id = cfg_id
   request.param = param or 0
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeUseOnce ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeUseOnce ret:", asyncRes.m_result)
     return nil
   end
-  for key,value in pairs(response.rooms) do
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R13 in 'UnsetPending'
-
-    (ComponentInfo.rooms)[key] = value
+  for key, value in pairs(response.rooms) do
+    ComponentInfo.rooms[key] = value
   end
-  if (table.count)(response.fold_hands) > 0 then
+  if 0 < table.count(response.fold_hands) then
     ComponentInfo.fold_hands = response.fold_hands
     ComponentInfo.rand_hands = response.rand_hands
     ComponentInfo.wait_hands = response.wait_hands
   end
-  if response.cur_point > 0 then
+  if 0 < response.cur_point then
     ComponentInfo.cur_point = response.cur_point
   end
   local componentId = self:GetComponentCfgId()
-  local cfg = (Cfg.cfg_component_season_maze_once)({ComponentID = componentId, OnceID = cfg_id})
-  -- DECOMPILER ERROR at PC82: Confused about usage of register: R10 in 'UnsetPending'
-
-  if cfg and cfg[1] and (cfg[1]).Type == SeasonMazeEffectType.SMET_Once_Sprint then
-    (ComponentInfo.cur_hand).id = -1
-    -- DECOMPILER ERROR at PC88: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (ComponentInfo.cur_hand).steps = self:GetAttrValue(SeasonMazeAttrType.SMAT_Round_Step_All)
+  local cfg = Cfg.cfg_component_season_maze_once({ComponentID = componentId, OnceID = cfg_id})
+  if cfg and cfg[1] and cfg[1].Type == SeasonMazeEffectType.SMET_Once_Sprint then
+    ComponentInfo.cur_hand.id = -1
+    ComponentInfo.cur_hand.steps = self:GetAttrValue(SeasonMazeAttrType.SMAT_Round_Step_All)
   end
   return response
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeSaveLv = function(self, TT, asyncRes, num)
-  -- function num : 0_45 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeSaveLv(TT, asyncRes, num)
   local request = SeasonMazeSaveLvReq:New()
   local response = SeasonMazeSaveLvResult:New()
   request.num = num
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeSaveLv ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeSaveLv ret:", asyncRes.m_result)
     return nil
   end
   ComponentInfo.save_info = response.save_info
   return response
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeGetSlot = function(self, TT, asyncRes)
-  -- function num : 0_46 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeGetSlot(TT, asyncRes)
   local request = SeasonMazeGetSlotReq:New()
   local response = SeasonMazeGetSlotResult:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeGetSlot ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeGetSlot ret:", asyncRes.m_result)
     return nil
   end
   ComponentInfo.slot_info = response.slot_info
   return response
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeOperaSlot = function(self, TT, asyncRes, index, is_re)
-  -- function num : 0_47 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeOperaSlot(TT, asyncRes, index, is_re)
   local request = SeasonMazeOperaSlotReq:New()
   local response = SeasonMazeOperaSlotResult:New()
   request.index = index
   request.is_re = is_re
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("SeasonMazeComponent:HandleSeasonMazeOperaSlot ret:", asyncRes.m_result)
+    Log.error("SeasonMazeComponent:HandleSeasonMazeOperaSlot ret:", asyncRes.m_result)
     return nil
   end
   if is_re then
     ComponentInfo.slot_info = response.slot_info
   else
-    for key,value in pairs(response.info) do
-      -- DECOMPILER ERROR at PC45: Confused about usage of register: R13 in 'UnsetPending'
-
-      ((ComponentInfo.slot_info).items)[key] = value
+    for key, value in pairs(response.info) do
+      ComponentInfo.slot_info.items[key] = value
     end
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R8 in 'UnsetPending'
-
-    if (ComponentInfo.slot_info).dis_index == index then
-      (ComponentInfo.slot_info).dis_index = -1
+    if ComponentInfo.slot_info.dis_index == index then
+      ComponentInfo.slot_info.dis_index = -1
     end
   end
   return response
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeChangeFormation = function(self, TT, asyncRes, teamInfo)
-  -- function num : 0_48 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeChangeFormation(TT, asyncRes, teamInfo)
   local request = SeasonMazeChangeFormationReq:New()
   local response = SeasonMazeChangeFormationReply:New()
   request.formation_index = teamInfo.id
   request.info = teamInfo
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeChangeFormation ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeChangeFormation ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (ComponentInfo.m_formation_list)[teamInfo.id] = teamInfo
+  ComponentInfo.m_formation_list[teamInfo.id] = teamInfo
   return response
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeInitPetSelect = function(self, TT, asyncRes, pet_list)
-  -- function num : 0_49 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeInitPetSelect(TT, asyncRes, pet_list)
   local request = SeasonMazeInitSelectReq:New()
   local response = SeasonMazeInitSelectReply:New()
   request.pet_list = pet_list
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeInitPetSelect ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeInitPetSelect ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  ((self._componentInfo).m_bag_info).pet_list = response.pet_list
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_formation_list = response.formation_list
+  self._componentInfo.m_bag_info.pet_list = response.pet_list
+  self._componentInfo.m_formation_list = response.formation_list
   return response
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeFitAutoBead = function(self, TT, asyncRes, bead_list)
-  -- function num : 0_50 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeFitAutoBead(TT, asyncRes, bead_list)
   local request = SeasonMazeFitAutoBeadReq:New()
   local response = SeasonMazeFitAutoBeadReply:New()
   request.fit_beads = bead_list
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeFitAutoBead ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeFitAutoBead ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_auto_bead_map = response.m_auto_bead_map
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_auto_bead_fit_list = response.m_auto_bead_fit_list
+  self._componentInfo.m_auto_bead_map = response.m_auto_bead_map
+  self._componentInfo.m_auto_bead_fit_list = response.m_auto_bead_fit_list
   return response
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeAutoBeadCompose = function(self, TT, asyncRes, compose_list)
-  -- function num : 0_51 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeAutoBeadCompose(TT, asyncRes, compose_list)
   local request = SeasonMazeAutoBeadComposeReq:New()
   local response = SeasonMazeAutoBeadComposeReply:New()
   request.compose_list = compose_list
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeAutoBeadCompose ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeAutoBeadCompose ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_auto_bead_map = response.m_auto_bead_map
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_auto_bead_fit_list = response.m_auto_bead_fit_list
+  self._componentInfo.m_auto_bead_map = response.m_auto_bead_map
+  self._componentInfo.m_auto_bead_fit_list = response.m_auto_bead_fit_list
   return response.m_new_bead
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeCure = function(self, TT, asyncRes)
-  -- function num : 0_52 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeCure(TT, asyncRes)
   local request = SeasonMazeHealthyReq:New()
   local response = SeasonMazeHealthyReply:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeCure ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeCure ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self._componentInfo).m_bag_info).pet_list = response.pet_list
+  self._componentInfo.m_bag_info.pet_list = response.pet_list
   return response
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeResurrectPet = function(self, TT, asyncRes, pet_id)
-  -- function num : 0_53 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeResurrectPet(TT, asyncRes, pet_id)
   local request = SeasonMazeResurrectPetReq:New()
   local response = SeasonMazeResurrectPetReply:New()
   request.pet_id = pet_id
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeResurrectPet ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeResurrectPet ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R7 in 'UnsetPending'
-
-  if (((self._componentInfo).m_bag_info).pet_list)[pet_id] then
-    ((((self._componentInfo).m_bag_info).pet_list)[pet_id]).state = 0
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((((self._componentInfo).m_bag_info).pet_list)[pet_id]).cur_blood_prcent = 1
+  if self._componentInfo.m_bag_info.pet_list[pet_id] then
+    self._componentInfo.m_bag_info.pet_list[pet_id].state = 0
+    self._componentInfo.m_bag_info.pet_list[pet_id].cur_blood_prcent = 1
   end
   return response
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazePetRecruitList = function(self, TT, asyncRes)
-  -- function num : 0_54 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazePetRecruitList(TT, asyncRes)
   local request = SeasonMazePetRecruitListReq:New()
   local response = SeasonMazePetRecruitListReply:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] HandleSeasonMazePetRecruitList ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMazeComponent] HandleSeasonMazePetRecruitList ret:", asyncRes.m_result)
     return nil
   end
   return response
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazePetRecruitSelect = function(self, TT, asyncRes, pet_id)
-  -- function num : 0_55 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazePetRecruitSelect(TT, asyncRes, pet_id)
   local request = SeasonMazePetRecruitSelectReq:New()
   local response = SeasonMazePetRecruitSelectReply:New()
   request.pet_id = pet_id
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] HandleSeasonMazePetRecruitSelect ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMazeComponent] HandleSeasonMazePetRecruitSelect ret:", asyncRes.m_result)
     return nil
   end
   return response
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazePetRecruitReset = function(self, TT, asyncRes)
-  -- function num : 0_56 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazePetRecruitReset(TT, asyncRes)
   local request = SeasonMazePetRecruitResetReq:New()
   local response = SeasonMazePetRecruitResetReply:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] HandleSeasonMazePetRecruitReset ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMazeComponent] HandleSeasonMazePetRecruitReset ret:", asyncRes.m_result)
     return nil
   end
   return response
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeSelectFullBreakPet = function(self, TT, asyncRes, pet_id)
-  -- function num : 0_57 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeSelectFullBreakPet(TT, asyncRes, pet_id)
   local request = SeasonMazeSelectFullBreakPetReq:New()
   local response = SeasonMazeSelectFullBreakPetReply:New()
   request.pet_id = pet_id
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeSelectFullBreakPet ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeSelectFullBreakPet ret:", asyncRes.m_result)
     return nil
   end
   return response
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeClearAllBeadNew = function(self, TT, asyncRes)
-  -- function num : 0_58 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeClearAllBeadNew(TT, asyncRes)
   local request = SeasonMazeClearAllBeadNewReq:New()
   local response = SeasonMazeClearAllBeadNewReply:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeClearAllBeadNew ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeClearAllBeadNew ret:", asyncRes.m_result)
     return nil
   end
-  for k,v in pairs((self._componentInfo).m_auto_bead_map) do
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R11 in 'UnsetPending'
-
-    (v.bead_info).b_new = false
+  for k, v in pairs(self._componentInfo.m_auto_bead_map) do
+    v.bead_info.b_new = false
   end
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_new_auto_bead_cnt = 0
+  self._componentInfo.m_new_auto_bead_cnt = 0
   return response
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeRecruitRoomSelectProp = function(self, TT, asyncRes, prop)
-  -- function num : 0_59 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeRecruitRoomSelectProp(TT, asyncRes, prop)
   local request = SeasonMazeRecruitRoomSelectPropReq:New()
   local response = SeasonMazeRecruitRoomSelectPropResult:New()
   request.prop = prop
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeRecruitRoomSelectProp ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeRecruitRoomSelectProp ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_recruit_room_pet_list = response.cur_pets
+  self._componentInfo.m_recruit_room_pet_list = response.cur_pets
   return response
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeRecruitRoomReflush = function(self, TT, asyncRes)
-  -- function num : 0_60 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeRecruitRoomReflush(TT, asyncRes)
   local request = SeasonMazeRecruitRoomReflushReq:New()
   local response = SeasonMazeRecruitRoomReflushReply:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeRecruitRoomReflush ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeRecruitRoomReflush ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_recruit_room_pet_list = response.pet_list
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_recruit_room_reflush_cnt = (self._componentInfo).m_recruit_room_reflush_cnt + 1
+  self._componentInfo.m_recruit_room_pet_list = response.pet_list
+  self._componentInfo.m_recruit_room_reflush_cnt = self._componentInfo.m_recruit_room_reflush_cnt + 1
   return response
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeRecruitRoomSelect = function(self, TT, asyncRes, pet_id)
-  -- function num : 0_61 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeRecruitRoomSelect(TT, asyncRes, pet_id)
   local request = SeasonMazeRecruitRoomSelectReq:New()
   local response = SeasonMazeRecruitRoomSelectReply:New()
   request.pet_id = pet_id
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeRecruitRoomSelect ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeRecruitRoomSelect ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_recruit_room_pet_list = {}
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._componentInfo).m_recruit_room_reflush_cnt = 0
+  self._componentInfo.m_recruit_room_pet_list = {}
+  self._componentInfo.m_recruit_room_reflush_cnt = 0
   return response
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeRoomTransfer = function(self, TT, asyncRes, point_id)
-  -- function num : 0_62 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeRoomTransfer(TT, asyncRes, point_id)
   local request = SeasonMazeRoomTransferReq:New()
   local response = SeasonMazeRoomTransferResult:New()
   request.point_id = point_id
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeRoomTransfer ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeRoomTransfer ret:", asyncRes.m_result)
     return nil
   end
-  for key,value in pairs(response.rooms) do
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R12 in 'UnsetPending'
-
-    (ComponentInfo.rooms)[key] = value
+  for key, value in pairs(response.rooms) do
+    ComponentInfo.rooms[key] = value
   end
   ComponentInfo.cur_point = response.cur_point
   return response
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleSeasonMazeBanPet = function(self, TT, asyncRes, ban_list)
-  -- function num : 0_63 , upvalues : _ENV
+function SeasonMazeComponent:HandleSeasonMazeBanPet(TT, asyncRes, ban_list)
   local request = SeasonMazeManunlBanPetReq:New()
   local response = SeasonMazeManunlBanPetResult:New()
   request.ban_list = ban_list
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeBanPet ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMazeComponent] HandleSeasonMazeBanPet ret:", asyncRes.m_result)
     return nil
   end
   ComponentInfo.manunl_ban_pets = ban_list
   return response
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.HandleCampaignLoadComponentRank = function(self, TT, asyncRes, sub_key)
-  -- function num : 0_64 , upvalues : _ENV
-  local rank_info = (self.m_campaign_com_module):CampaignLoadComponentRank(TT, asyncRes, self:GetComponentCfgId(), sub_key)
+function SeasonMazeComponent:HandleCampaignLoadComponentRank(TT, asyncRes, sub_key)
+  local rank_info = self.m_campaign_com_module:CampaignLoadComponentRank(TT, asyncRes, self:GetComponentCfgId(), sub_key)
   if asyncRes:GetSucc() then
     local addCnt = 0
-    local cfgs = (Cfg.cfg_component_season_maze_fake_rank)({})
-    for key,value in pairs(cfgs) do
+    local cfgs = Cfg.cfg_component_season_maze_fake_rank({})
+    for key, value in pairs(cfgs) do
       local info = RankShowSimpleOne:New()
       info.pstid = 0
       info.head = value.Head
@@ -1604,61 +1026,42 @@ SeasonMazeComponent.HandleCampaignLoadComponentRank = function(self, TT, asyncRe
       info.nick = value.Name
       info.head_bg = value.HeadBG
       info.frame_id = value.FrameID
-      ;
-      (table.insert)(rank_info.infos, info)
+      table.insert(rank_info.infos, info)
       addCnt = addCnt + 1
     end
-    if (table.count)(rank_info.infos) > 1 and addCnt > 0 then
-      (table.sort)(rank_info.infos, function(a, b)
-    -- function num : 0_64_0
-    do return b.damage < a.damage end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    if 1 < table.count(rank_info.infos) and 0 < addCnt then
+      table.sort(rank_info.infos, function(a, b)
+        return a.damage > b.damage
+      end)
     end
   end
-  do
-    return rank_info
-  end
+  return rank_info
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.GetAttrValue = function(self, type)
-  -- function num : 0_65
-  local attMap = (self:GetComponentInfo()).attr_list
+function SeasonMazeComponent:GetAttrValue(type)
+  local attMap = self:GetComponentInfo().attr_list
   return attMap[type] or 0
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.GetPetState = function(self, petID, stateType)
-  -- function num : 0_66 , upvalues : _ENV
-  if (((self._componentInfo).m_bag_info).pet_list)[petID] == nil then
+function SeasonMazeComponent:GetPetState(petID, stateType)
+  if self._componentInfo.m_bag_info.pet_list[petID] == nil then
     return false
   end
-  local state = ((((self._componentInfo).m_bag_info).pet_list)[petID]).state
+  local state = self._componentInfo.m_bag_info.pet_list[petID].state
   if state == nil then
     return false
   end
   local type = tonumber(stateType)
-  do return 1 << type & state > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 1 << type & state > 0
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent.GetCampaignMissionParamKeyMap = function(self)
-  -- function num : 0_67 , upvalues : _ENV
+function SeasonMazeComponent:GetCampaignMissionParamKeyMap()
   local ComponentInfo = self:ComponentInfo()
   local nCfgId = self:GetComponetCfgId(ComponentInfo.m_campaign_id, ComponentInfo.m_component_id)
-  return {[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId}
+  return {
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId
+  }
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeComponent._CopyRoom = function(self, src, tar)
-  -- function num : 0_68
+function SeasonMazeComponent:_CopyRoom(src, tar)
 end
-
-

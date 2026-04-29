@@ -1,137 +1,87 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/notify_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("NTMonsterMoveOneFinish", INotifyBase)
 NTMonsterMoveOneFinish = NTMonsterMoveOneFinish
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-NTMonsterMoveOneFinish.Constructor = function(self, entity, passedGrids, walkPos, oldPos)
-  -- function num : 0_0
+function NTMonsterMoveOneFinish:Constructor(entity, passedGrids, walkPos, oldPos)
   self._ownerEntity = entity
   self._passedGrids = passedGrids
   self._walkPos = walkPos
   self._oldPos = oldPos
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterMoveOneFinish.GetNotifyType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function NTMonsterMoveOneFinish:GetNotifyType()
   return NotifyType.MonsterMoveOneFinish
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterMoveOneFinish.GetNotifyEntity = function(self)
-  -- function num : 0_2
+function NTMonsterMoveOneFinish:GetNotifyEntity()
   return self._ownerEntity
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterMoveOneFinish.GetCreateTrapGrids = function(self)
-  -- function num : 0_3
+function NTMonsterMoveOneFinish:GetCreateTrapGrids()
   return self._passedGrids
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterMoveOneFinish.GetWalkPos = function(self)
-  -- function num : 0_4
+function NTMonsterMoveOneFinish:GetWalkPos()
   return self._walkPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterMoveOneFinish.GetOldPos = function(self)
-  -- function num : 0_5
+function NTMonsterMoveOneFinish:GetOldPos()
   return self._oldPos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterMoveOneFinish.GetSubordinateNotify = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function NTMonsterMoveOneFinish:GetSubordinateNotify()
   return NTEntityMoveEnd:New(self._ownerEntity, self._oldPos, self._walkPos, self:GetNotifyType())
 end
 
 _class("NTMonsterIsMoving", INotifyBase)
 NTMonsterIsMoving = NTMonsterIsMoving
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-NTMonsterIsMoving.Constructor = function(self, entity, posSelf)
-  -- function num : 0_7
+function NTMonsterIsMoving:Constructor(entity, posSelf)
   self._ownerEntity = entity
   self._posSelf = posSelf
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterIsMoving.GetNotifyType = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function NTMonsterIsMoving:GetNotifyType()
   return NotifyType.MonsterIsMoving
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterIsMoving.GetNotifyEntity = function(self)
-  -- function num : 0_9
+function NTMonsterIsMoving:GetNotifyEntity()
   return self._ownerEntity
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterIsMoving.GetPos = function(self)
-  -- function num : 0_10
+function NTMonsterIsMoving:GetPos()
   return self._posSelf
 end
 
 _class("NTPlayerFirstMoveEnd", INotifyBase)
 NTPlayerFirstMoveEnd = NTPlayerFirstMoveEnd
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
 
-NTPlayerFirstMoveEnd.Constructor = function(self, entity, pos)
-  -- function num : 0_11
+function NTPlayerFirstMoveEnd:Constructor(entity, pos)
   self._ownerEntity = entity
   self._gridPos = pos
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerFirstMoveEnd.GetNotifyType = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function NTPlayerFirstMoveEnd:GetNotifyType()
   return NotifyType.PlayerFirstMoveEnd
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerFirstMoveEnd.GetNotifyEntity = function(self)
-  -- function num : 0_13
+function NTPlayerFirstMoveEnd:GetNotifyEntity()
   return self._ownerEntity
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerFirstMoveEnd.GetCreateTrapGrids = function(self)
-  -- function num : 0_14
-  return {self._gridPos}
+function NTPlayerFirstMoveEnd:GetCreateTrapGrids()
+  return {
+    self._gridPos
+  }
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerFirstMoveEnd.NeedCheckGameTurn = function(self)
-  -- function num : 0_15
+function NTPlayerFirstMoveEnd:NeedCheckGameTurn()
   return true
 end
 
 _class("NTPlayerEachMoveStart", INotifyBase)
 NTPlayerEachMoveStart = NTPlayerEachMoveStart
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
 
-NTPlayerEachMoveStart.Constructor = function(self, entity, pos, pieceType, chainIndex, isPetActiveLinkLine)
-  -- function num : 0_16
+function NTPlayerEachMoveStart:Constructor(entity, pos, pieceType, chainIndex, isPetActiveLinkLine)
   self._entity = entity
   self._pos = pos
   self._pieceType = pieceType
@@ -139,68 +89,42 @@ NTPlayerEachMoveStart.Constructor = function(self, entity, pos, pieceType, chain
   self._isPetActiveLinkLine = isPetActiveLinkLine
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveStart.GetNotifyType = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function NTPlayerEachMoveStart:GetNotifyType()
   return NotifyType.PlayerEachMoveStart
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveStart.GetPos = function(self)
-  -- function num : 0_18
+function NTPlayerEachMoveStart:GetPos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveStart.GetPosPieceType = function(self)
-  -- function num : 0_19
+function NTPlayerEachMoveStart:GetPosPieceType()
   return self._pieceType
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveStart.GetEntityID = function(self)
-  -- function num : 0_20
-  return (self._entity):GetID()
+function NTPlayerEachMoveStart:GetEntityID()
+  return self._entity:GetID()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveStart.GetNotifyEntity = function(self)
-  -- function num : 0_21
+function NTPlayerEachMoveStart:GetNotifyEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveStart.GetChainIndex = function(self)
-  -- function num : 0_22
+function NTPlayerEachMoveStart:GetChainIndex()
   return self._chainIndex
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveStart.NeedCheckGameTurn = function(self)
-  -- function num : 0_23
+function NTPlayerEachMoveStart:NeedCheckGameTurn()
   return true
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveStart.IsPetActiveLinkLine = function(self)
-  -- function num : 0_24
+function NTPlayerEachMoveStart:IsPetActiveLinkLine()
   return self._isPetActiveLinkLine
 end
 
 _class("NTPlayerEachMoveEnd", INotifyBase)
 NTPlayerEachMoveEnd = NTPlayerEachMoveEnd
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
 
-NTPlayerEachMoveEnd.Constructor = function(self, entity, posNew, pieceType, posOld, chainIndex, isPetActiveLinkLine)
-  -- function num : 0_25
+function NTPlayerEachMoveEnd:Constructor(entity, posNew, pieceType, posOld, chainIndex, isPetActiveLinkLine)
   self._entity = entity
   self._posOld = posOld
   self._posNew = posNew
@@ -209,117 +133,70 @@ NTPlayerEachMoveEnd.Constructor = function(self, entity, posNew, pieceType, posO
   self._isPetActiveLinkLine = isPetActiveLinkLine
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveEnd.GetNotifyType = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function NTPlayerEachMoveEnd:GetNotifyType()
   return NotifyType.PlayerEachMoveEnd
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveEnd.GetPos = function(self)
-  -- function num : 0_27
+function NTPlayerEachMoveEnd:GetPos()
   return self._posNew
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveEnd.GetPosNew = function(self)
-  -- function num : 0_28
+function NTPlayerEachMoveEnd:GetPosNew()
   return self._posNew
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveEnd.GetOldPos = function(self)
-  -- function num : 0_29
+function NTPlayerEachMoveEnd:GetOldPos()
   return self._posOld
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveEnd.GetPosPieceType = function(self)
-  -- function num : 0_30
+function NTPlayerEachMoveEnd:GetPosPieceType()
   return self._pieceType
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveEnd.GetEntityID = function(self)
-  -- function num : 0_31
-  return (self._entity):GetID()
+function NTPlayerEachMoveEnd:GetEntityID()
+  return self._entity:GetID()
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveEnd.GetNotifyEntity = function(self)
-  -- function num : 0_32
+function NTPlayerEachMoveEnd:GetNotifyEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveEnd.SetPieceEffectType = function(self, pieceEffectType)
-  -- function num : 0_33
+function NTPlayerEachMoveEnd:SetPieceEffectType(pieceEffectType)
   self._pieceEffectType = pieceEffectType
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveEnd.GetPieceEffectType = function(self)
-  -- function num : 0_34
+function NTPlayerEachMoveEnd:GetPieceEffectType()
   return self._pieceEffectType
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveEnd.GetChainIndex = function(self)
-  -- function num : 0_35
+function NTPlayerEachMoveEnd:GetChainIndex()
   return self._chainIndex
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveEnd.NeedCheckGameTurn = function(self)
-  -- function num : 0_36
+function NTPlayerEachMoveEnd:NeedCheckGameTurn()
   return true
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveEnd.GetSubordinateNotify = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function NTPlayerEachMoveEnd:GetSubordinateNotify()
   return NTEntityMoveEnd:New(self._entity, self._posOld, self._posNew, self:GetNotifyType())
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveEnd.GetNotifyPos = function(self)
-  -- function num : 0_38
+function NTPlayerEachMoveEnd:GetNotifyPos()
   return self._posNew
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveEnd.GetAttackPos = function(self)
-  -- function num : 0_39
+function NTPlayerEachMoveEnd:GetAttackPos()
   return self._posNew
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerEachMoveEnd.IsPetActiveLinkLine = function(self)
-  -- function num : 0_40
+function NTPlayerEachMoveEnd:IsPetActiveLinkLine()
   return self._isPetActiveLinkLine
 end
 
 _class("NTPetChainMoveBegin", INotifyBase)
 NTPetChainMoveBegin = NTPetChainMoveBegin
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
 
-NTPetChainMoveBegin.Constructor = function(self, entity, posNew, pieceType, posOld, chainIndex)
-  -- function num : 0_41
+function NTPetChainMoveBegin:Constructor(entity, posNew, pieceType, posOld, chainIndex)
   self._entity = entity
   self._posOld = posOld
   self._posNew = posNew
@@ -327,289 +204,181 @@ NTPetChainMoveBegin.Constructor = function(self, entity, posNew, pieceType, posO
   self._chainIndex = chainIndex
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPetChainMoveBegin.GetNotifyType = function(self)
-  -- function num : 0_42 , upvalues : _ENV
+function NTPetChainMoveBegin:GetNotifyType()
   return NotifyType.PetChainMoveBegin
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPetChainMoveBegin.GetPos = function(self)
-  -- function num : 0_43
+function NTPetChainMoveBegin:GetPos()
   return self._posNew
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPetChainMoveBegin.GetPosPieceType = function(self)
-  -- function num : 0_44
+function NTPetChainMoveBegin:GetPosPieceType()
   return self._pieceType
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPetChainMoveBegin.GetEntityID = function(self)
-  -- function num : 0_45
-  return (self._entity):GetID()
+function NTPetChainMoveBegin:GetEntityID()
+  return self._entity:GetID()
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPetChainMoveBegin.GetNotifyEntity = function(self)
-  -- function num : 0_46
+function NTPetChainMoveBegin:GetNotifyEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPetChainMoveBegin.SetPieceEffectType = function(self, pieceEffectType)
-  -- function num : 0_47
+function NTPetChainMoveBegin:SetPieceEffectType(pieceEffectType)
   self._pieceEffectType = pieceEffectType
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPetChainMoveBegin.GetPieceEffectType = function(self)
-  -- function num : 0_48
+function NTPetChainMoveBegin:GetPieceEffectType()
   return self._pieceEffectType
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPetChainMoveBegin.GetChainIndex = function(self)
-  -- function num : 0_49
+function NTPetChainMoveBegin:GetChainIndex()
   return self._chainIndex
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPetChainMoveBegin.NeedCheckGameTurn = function(self)
-  -- function num : 0_50
+function NTPetChainMoveBegin:NeedCheckGameTurn()
   return true
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPetChainMoveBegin.GetSubordinateNotify = function(self)
-  -- function num : 0_51 , upvalues : _ENV
+function NTPetChainMoveBegin:GetSubordinateNotify()
   return NTEntityMoveEnd:New(self._entity, self._posOld, self._posNew, self:GetNotifyType())
 end
 
 _class("NTTeamLeaderEachMoveStart", INotifyBase)
 NTTeamLeaderEachMoveStart = NTTeamLeaderEachMoveStart
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
 
-NTTeamLeaderEachMoveStart.Constructor = function(self, entity, pos, pieceType, oldPos)
-  -- function num : 0_52
+function NTTeamLeaderEachMoveStart:Constructor(entity, pos, pieceType, oldPos)
   self._entity = entity
   self._pos = pos
   self._pieceType = pieceType
   self._oldPos = oldPos
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamLeaderEachMoveStart.GetNotifyType = function(self)
-  -- function num : 0_53 , upvalues : _ENV
+function NTTeamLeaderEachMoveStart:GetNotifyType()
   return NotifyType.TeamLeaderEachMoveStart
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamLeaderEachMoveStart.GetPos = function(self)
-  -- function num : 0_54
+function NTTeamLeaderEachMoveStart:GetPos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamLeaderEachMoveStart.GetPosPieceType = function(self)
-  -- function num : 0_55
+function NTTeamLeaderEachMoveStart:GetPosPieceType()
   return self._pieceType
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamLeaderEachMoveStart.GetEntityID = function(self)
-  -- function num : 0_56
-  return (self._entity):GetID()
+function NTTeamLeaderEachMoveStart:GetEntityID()
+  return self._entity:GetID()
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamLeaderEachMoveStart.NeedCheckGameTurn = function(self)
-  -- function num : 0_57
+function NTTeamLeaderEachMoveStart:NeedCheckGameTurn()
   return true
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamLeaderEachMoveStart.GetNotifyEntity = function(self)
-  -- function num : 0_58
+function NTTeamLeaderEachMoveStart:GetNotifyEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamLeaderEachMoveStart.GetOldPos = function(self)
-  -- function num : 0_59
+function NTTeamLeaderEachMoveStart:GetOldPos()
   return self._oldPos
 end
 
 _class("NTTeamEachMoveStart", NTTeamLeaderEachMoveStart)
 NTTeamEachMoveStart = NTTeamEachMoveStart
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
 
-NTTeamEachMoveStart.GetNotifyType = function(self)
-  -- function num : 0_60 , upvalues : _ENV
+function NTTeamEachMoveStart:GetNotifyType()
   return NotifyType.TeamEachMoveStart
 end
 
 _class("NTTeamLeaderEachMoveEnd", INotifyBase)
 NTTeamLeaderEachMoveEnd = NTTeamLeaderEachMoveEnd
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
 
-NTTeamLeaderEachMoveEnd.Constructor = function(self, entity, pos, pieceType, oldPos)
-  -- function num : 0_61
+function NTTeamLeaderEachMoveEnd:Constructor(entity, pos, pieceType, oldPos)
   self._entity = entity
   self._pos = pos
   self._pieceType = pieceType
   self._oldPos = oldPos
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamLeaderEachMoveEnd.GetNotifyType = function(self)
-  -- function num : 0_62 , upvalues : _ENV
+function NTTeamLeaderEachMoveEnd:GetNotifyType()
   return NotifyType.TeamLeaderEachMoveEnd
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamLeaderEachMoveEnd.GetPos = function(self)
-  -- function num : 0_63
+function NTTeamLeaderEachMoveEnd:GetPos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamLeaderEachMoveEnd.GetPosPieceType = function(self)
-  -- function num : 0_64
+function NTTeamLeaderEachMoveEnd:GetPosPieceType()
   return self._pieceType
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamLeaderEachMoveEnd.GetEntityID = function(self)
-  -- function num : 0_65
-  return (self._entity):GetID()
+function NTTeamLeaderEachMoveEnd:GetEntityID()
+  return self._entity:GetID()
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamLeaderEachMoveEnd.GetNotifyEntity = function(self)
-  -- function num : 0_66
+function NTTeamLeaderEachMoveEnd:GetNotifyEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamLeaderEachMoveEnd.SetPieceEffectType = function(self, pieceEffectType)
-  -- function num : 0_67
+function NTTeamLeaderEachMoveEnd:SetPieceEffectType(pieceEffectType)
   self._pieceEffectType = pieceEffectType
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamLeaderEachMoveEnd.GetPieceEffectType = function(self)
-  -- function num : 0_68
+function NTTeamLeaderEachMoveEnd:GetPieceEffectType()
   return self._pieceEffectType
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamLeaderEachMoveEnd.NeedCheckGameTurn = function(self)
-  -- function num : 0_69
+function NTTeamLeaderEachMoveEnd:NeedCheckGameTurn()
   return true
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeamLeaderEachMoveEnd.GetOldPos = function(self)
-  -- function num : 0_70
+function NTTeamLeaderEachMoveEnd:GetOldPos()
   return self._oldPos
 end
 
 _class("NTTeamEachMoveEnd", NTTeamLeaderEachMoveEnd)
 NTTeamEachMoveEnd = NTTeamEachMoveEnd
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
 
-NTTeamEachMoveEnd.GetNotifyType = function(self)
-  -- function num : 0_71 , upvalues : _ENV
+function NTTeamEachMoveEnd:GetNotifyType()
   return NotifyType.TeamEachMoveEnd
 end
 
 _class("NTTeleport", INotifyBase)
 NTTeleport = NTTeleport
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
 
-NTTeleport.Constructor = function(self, entity, posOld, posNew)
-  -- function num : 0_72
+function NTTeleport:Constructor(entity, posOld, posNew)
   self._ownerEntity = entity
   self._posOld = posOld
   self._posNew = posNew
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeleport.GetNotifyType = function(self)
-  -- function num : 0_73 , upvalues : _ENV
+function NTTeleport:GetNotifyType()
   return NotifyType.Teleport
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeleport.GetNotifyEntity = function(self)
-  -- function num : 0_74
+function NTTeleport:GetNotifyEntity()
   return self._ownerEntity
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeleport.GetPosOld = function(self)
-  -- function num : 0_75
+function NTTeleport:GetPosOld()
   return self._posOld
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeleport.GetPosNew = function(self)
-  -- function num : 0_76
+function NTTeleport:GetPosNew()
   return self._posNew
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeleport.NeedCheckGameTurn = function(self)
-  -- function num : 0_77
+function NTTeleport:NeedCheckGameTurn()
   return true
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTeleport.GetSubordinateNotify = function(self)
-  -- function num : 0_78 , upvalues : _ENV
+function NTTeleport:GetSubordinateNotify()
   return NTEntityMoveEnd:New(self._ownerEntity, self._posOld, self._posNew, self:GetNotifyType())
 end
 
 _class("NTHitBackEnd", INotifyBase)
 NTHitBackEnd = NTHitBackEnd
--- DECOMPILER ERROR at PC311: Confused about usage of register: R0 in 'UnsetPending'
 
-NTHitBackEnd.Constructor = function(self, attacker, defender, posStart, posEnd, dir, realHitBackDistance)
-  -- function num : 0_79
+function NTHitBackEnd:Constructor(attacker, defender, posStart, posEnd, dir, realHitBackDistance)
   self._attacker = attacker
   self._defender = defender
   self._posStart = posStart
@@ -618,82 +387,50 @@ NTHitBackEnd.Constructor = function(self, attacker, defender, posStart, posEnd, 
   self._realHitBackDistance = realHitBackDistance
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R0 in 'UnsetPending'
-
-NTHitBackEnd.GetNotifyType = function(self)
-  -- function num : 0_80 , upvalues : _ENV
+function NTHitBackEnd:GetNotifyType()
   return NotifyType.HitBackEnd
 end
 
--- DECOMPILER ERROR at PC317: Confused about usage of register: R0 in 'UnsetPending'
-
-NTHitBackEnd.GetNotifyEntity = function(self)
-  -- function num : 0_81
+function NTHitBackEnd:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC320: Confused about usage of register: R0 in 'UnsetPending'
-
-NTHitBackEnd.GetDefender = function(self)
-  -- function num : 0_82
+function NTHitBackEnd:GetDefender()
   return self._defender
 end
 
--- DECOMPILER ERROR at PC323: Confused about usage of register: R0 in 'UnsetPending'
-
-NTHitBackEnd.GetDefenderId = function(self)
-  -- function num : 0_83
-  return (self._defender):GetID()
+function NTHitBackEnd:GetDefenderId()
+  return self._defender:GetID()
 end
 
--- DECOMPILER ERROR at PC326: Confused about usage of register: R0 in 'UnsetPending'
-
-NTHitBackEnd.GetPosStart = function(self)
-  -- function num : 0_84
+function NTHitBackEnd:GetPosStart()
   return self._posStart
 end
 
--- DECOMPILER ERROR at PC329: Confused about usage of register: R0 in 'UnsetPending'
-
-NTHitBackEnd.GetPosEnd = function(self)
-  -- function num : 0_85
+function NTHitBackEnd:GetPosEnd()
   return self._posEnd
 end
 
--- DECOMPILER ERROR at PC332: Confused about usage of register: R0 in 'UnsetPending'
-
-NTHitBackEnd.GetDistance = function(self)
-  -- function num : 0_86 , upvalues : _ENV
-  return (Vector2.Distance)(self._posStart, self._posEnd)
+function NTHitBackEnd:GetDistance()
+  return Vector2.Distance(self._posStart, self._posEnd)
 end
 
--- DECOMPILER ERROR at PC335: Confused about usage of register: R0 in 'UnsetPending'
-
-NTHitBackEnd.NeedCheckGameTurn = function(self)
-  -- function num : 0_87
+function NTHitBackEnd:NeedCheckGameTurn()
   return true
 end
 
--- DECOMPILER ERROR at PC338: Confused about usage of register: R0 in 'UnsetPending'
-
-NTHitBackEnd.GetSubordinateNotify = function(self)
-  -- function num : 0_88 , upvalues : _ENV
+function NTHitBackEnd:GetSubordinateNotify()
   return NTEntityMoveEnd:New(self._defender, self._posStart, self._posEnd, self:GetNotifyType())
 end
 
--- DECOMPILER ERROR at PC341: Confused about usage of register: R0 in 'UnsetPending'
-
-NTHitBackEnd.GetHitBackDir = function(self)
-  -- function num : 0_89
+function NTHitBackEnd:GetHitBackDir()
   return self._dir
 end
 
 _class("NTTractionEnd", INotifyBase)
 NTTractionEnd = NTTractionEnd
--- DECOMPILER ERROR at PC350: Confused about usage of register: R0 in 'UnsetPending'
 
-NTTractionEnd.Constructor = function(self, attacker, defender, posStart, posEnd, path)
-  -- function num : 0_90
+function NTTractionEnd:Constructor(attacker, defender, posStart, posEnd, path)
   self._attacker = attacker
   self._defender = defender
   self._posStart = posStart
@@ -701,595 +438,366 @@ NTTractionEnd.Constructor = function(self, attacker, defender, posStart, posEnd,
   self._path = path
 end
 
--- DECOMPILER ERROR at PC353: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTractionEnd.GetNotifyType = function(self)
-  -- function num : 0_91 , upvalues : _ENV
+function NTTractionEnd:GetNotifyType()
   return NotifyType.TractionEnd
 end
 
--- DECOMPILER ERROR at PC356: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTractionEnd.GetNotifyEntity = function(self)
-  -- function num : 0_92
+function NTTractionEnd:GetNotifyEntity()
   return self._attacker
 end
 
--- DECOMPILER ERROR at PC359: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTractionEnd.GetDefender = function(self)
-  -- function num : 0_93
+function NTTractionEnd:GetDefender()
   return self._defender
 end
 
--- DECOMPILER ERROR at PC362: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTractionEnd.GetDefenderId = function(self)
-  -- function num : 0_94
-  return (self._defender):GetID()
+function NTTractionEnd:GetDefenderId()
+  return self._defender:GetID()
 end
 
--- DECOMPILER ERROR at PC365: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTractionEnd.GetPosStart = function(self)
-  -- function num : 0_95
+function NTTractionEnd:GetPosStart()
   return self._posStart
 end
 
--- DECOMPILER ERROR at PC368: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTractionEnd.GetPosEnd = function(self)
-  -- function num : 0_96
+function NTTractionEnd:GetPosEnd()
   return self._posEnd
 end
 
--- DECOMPILER ERROR at PC371: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTractionEnd.NeedCheckGameTurn = function(self)
-  -- function num : 0_97
+function NTTractionEnd:NeedCheckGameTurn()
   return true
 end
 
--- DECOMPILER ERROR at PC374: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTractionEnd.GetSubordinateNotify = function(self)
-  -- function num : 0_98 , upvalues : _ENV
+function NTTractionEnd:GetSubordinateNotify()
   return NTEntityMoveEnd:New(self._defender, self._posStart, self._posEnd, self:GetNotifyType())
 end
 
--- DECOMPILER ERROR at PC377: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTractionEnd.GetDistance = function(self)
-  -- function num : 0_99 , upvalues : _ENV
-  return (Vector2.Distance)(self._posStart, self._posEnd)
+function NTTractionEnd:GetDistance()
+  return Vector2.Distance(self._posStart, self._posEnd)
 end
 
 _class("NTTransportEachMoveEnd", INotifyBase)
 NTTransportEachMoveEnd = NTTransportEachMoveEnd
--- DECOMPILER ERROR at PC386: Confused about usage of register: R0 in 'UnsetPending'
 
-NTTransportEachMoveEnd.Constructor = function(self, entity, posOld, posNew)
-  -- function num : 0_100
+function NTTransportEachMoveEnd:Constructor(entity, posOld, posNew)
   self._ownerEntity = entity
   self._posOld = posOld
   self._posNew = posNew
 end
 
--- DECOMPILER ERROR at PC389: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTransportEachMoveEnd.GetNotifyType = function(self)
-  -- function num : 0_101 , upvalues : _ENV
+function NTTransportEachMoveEnd:GetNotifyType()
   return NotifyType.TransportEachMoveEnd
 end
 
--- DECOMPILER ERROR at PC392: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTransportEachMoveEnd.GetSubordinateNotify = function(self)
-  -- function num : 0_102 , upvalues : _ENV
+function NTTransportEachMoveEnd:GetSubordinateNotify()
   return NTEntityMoveEnd:New(self._ownerEntity, self._posOld, self._posNew, self:GetNotifyType())
 end
 
--- DECOMPILER ERROR at PC395: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTransportEachMoveEnd.GetNotifyEntity = function(self)
-  -- function num : 0_103
+function NTTransportEachMoveEnd:GetNotifyEntity()
   return self._ownerEntity
 end
 
--- DECOMPILER ERROR at PC398: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTransportEachMoveEnd.GetPosOld = function(self)
-  -- function num : 0_104
+function NTTransportEachMoveEnd:GetPosOld()
   return self._posOld
 end
 
--- DECOMPILER ERROR at PC401: Confused about usage of register: R0 in 'UnsetPending'
-
-NTTransportEachMoveEnd.GetPosNew = function(self)
-  -- function num : 0_105
+function NTTransportEachMoveEnd:GetPosNew()
   return self._posNew
 end
 
 _class("NTDimensionTransport", INotifyBase)
 NTDimensionTransport = NTDimensionTransport
--- DECOMPILER ERROR at PC410: Confused about usage of register: R0 in 'UnsetPending'
 
-NTDimensionTransport.Constructor = function(self, entity, posOld, posNew)
-  -- function num : 0_106
+function NTDimensionTransport:Constructor(entity, posOld, posNew)
   self._ownerEntity = entity
   self._posOld = posOld
   self._posNew = posNew
 end
 
--- DECOMPILER ERROR at PC413: Confused about usage of register: R0 in 'UnsetPending'
-
-NTDimensionTransport.GetNotifyType = function(self)
-  -- function num : 0_107 , upvalues : _ENV
+function NTDimensionTransport:GetNotifyType()
   return NotifyType.DimensionTransport
 end
 
--- DECOMPILER ERROR at PC416: Confused about usage of register: R0 in 'UnsetPending'
-
-NTDimensionTransport.GetSubordinateNotify = function(self)
-  -- function num : 0_108 , upvalues : _ENV
+function NTDimensionTransport:GetSubordinateNotify()
   return NTEntityMoveEnd:New(self._ownerEntity, self._posOld, self._posNew, self:GetNotifyType())
 end
 
--- DECOMPILER ERROR at PC419: Confused about usage of register: R0 in 'UnsetPending'
-
-NTDimensionTransport.GetNotifyEntity = function(self)
-  -- function num : 0_109
+function NTDimensionTransport:GetNotifyEntity()
   return self._ownerEntity
 end
 
--- DECOMPILER ERROR at PC422: Confused about usage of register: R0 in 'UnsetPending'
-
-NTDimensionTransport.GetPosOld = function(self)
-  -- function num : 0_110
+function NTDimensionTransport:GetPosOld()
   return self._posOld
 end
 
--- DECOMPILER ERROR at PC425: Confused about usage of register: R0 in 'UnsetPending'
-
-NTDimensionTransport.GetPosNew = function(self)
-  -- function num : 0_111
+function NTDimensionTransport:GetPosNew()
   return self._posNew
 end
 
 _class("NTEntityMoveEnd", INotifyBase)
 NTEntityMoveEnd = NTEntityMoveEnd
--- DECOMPILER ERROR at PC434: Confused about usage of register: R0 in 'UnsetPending'
 
-NTEntityMoveEnd.Constructor = function(self, entity, posOld, posNew, parentNotifyType)
-  -- function num : 0_112
+function NTEntityMoveEnd:Constructor(entity, posOld, posNew, parentNotifyType)
   self._ownerEntity = entity
   self._posOld = posOld
   self._posNew = posNew
   self._parentNotifyType = parentNotifyType
 end
 
--- DECOMPILER ERROR at PC437: Confused about usage of register: R0 in 'UnsetPending'
-
-NTEntityMoveEnd.GetNotifyType = function(self)
-  -- function num : 0_113 , upvalues : _ENV
+function NTEntityMoveEnd:GetNotifyType()
   return NotifyType.EntityMoveEnd
 end
 
--- DECOMPILER ERROR at PC440: Confused about usage of register: R0 in 'UnsetPending'
-
-NTEntityMoveEnd.GetParentNotifyType = function(self)
-  -- function num : 0_114
+function NTEntityMoveEnd:GetParentNotifyType()
   return self._parentNotifyType
 end
 
--- DECOMPILER ERROR at PC443: Confused about usage of register: R0 in 'UnsetPending'
-
-NTEntityMoveEnd.GetNotifyEntity = function(self)
-  -- function num : 0_115
+function NTEntityMoveEnd:GetNotifyEntity()
   return self._ownerEntity
 end
 
--- DECOMPILER ERROR at PC446: Confused about usage of register: R0 in 'UnsetPending'
-
-NTEntityMoveEnd.GetPosOld = function(self)
-  -- function num : 0_116
+function NTEntityMoveEnd:GetPosOld()
   return self._posOld
 end
 
--- DECOMPILER ERROR at PC449: Confused about usage of register: R0 in 'UnsetPending'
-
-NTEntityMoveEnd.GetPosNew = function(self)
-  -- function num : 0_117
+function NTEntityMoveEnd:GetPosNew()
   return self._posNew
 end
 
 _class("NTPlayerMoveStart", INotifyBase)
 NTPlayerMoveStart = NTPlayerMoveStart
--- DECOMPILER ERROR at PC458: Confused about usage of register: R0 in 'UnsetPending'
 
-NTPlayerMoveStart.Constructor = function(self)
-  -- function num : 0_118
+function NTPlayerMoveStart:Constructor()
 end
 
--- DECOMPILER ERROR at PC461: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerMoveStart.GetNotifyType = function(self)
-  -- function num : 0_119 , upvalues : _ENV
+function NTPlayerMoveStart:GetNotifyType()
   return NotifyType.PlayerMoveStart
 end
 
--- DECOMPILER ERROR at PC464: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerMoveStart.SetChainCount = function(self, chainCount)
-  -- function num : 0_120
+function NTPlayerMoveStart:SetChainCount(chainCount)
   self._chainCount = chainCount
 end
 
--- DECOMPILER ERROR at PC467: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerMoveStart.GetChainCount = function(self)
-  -- function num : 0_121
+function NTPlayerMoveStart:GetChainCount()
   return self._chainCount
 end
 
--- DECOMPILER ERROR at PC470: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerMoveStart.SetChainPathType = function(self, type)
-  -- function num : 0_122
+function NTPlayerMoveStart:SetChainPathType(type)
   self._elementType = type
 end
 
--- DECOMPILER ERROR at PC473: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerMoveStart.GetChainPathType = function(self)
-  -- function num : 0_123
+function NTPlayerMoveStart:GetChainPathType()
   return self._elementType
 end
 
--- DECOMPILER ERROR at PC476: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerMoveStart.SetTeamEntity = function(self, e)
-  -- function num : 0_124
+function NTPlayerMoveStart:SetTeamEntity(e)
   self._teamEntity = e
 end
 
--- DECOMPILER ERROR at PC479: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerMoveStart.GetTeamEntity = function(self)
-  -- function num : 0_125
+function NTPlayerMoveStart:GetTeamEntity()
   return self._teamEntity
 end
 
--- DECOMPILER ERROR at PC482: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPlayerMoveStart.GetNotifyEntity = function(self)
-  -- function num : 0_126
+function NTPlayerMoveStart:GetNotifyEntity()
   return self._teamEntity
 end
 
 _class("NTSyncMoveEachMoveEnd", INotifyBase)
 NTSyncMoveEachMoveEnd = NTSyncMoveEachMoveEnd
--- DECOMPILER ERROR at PC491: Confused about usage of register: R0 in 'UnsetPending'
 
-NTSyncMoveEachMoveEnd.Constructor = function(self, entity, posNew, posOld, pathIndex)
-  -- function num : 0_127
+function NTSyncMoveEachMoveEnd:Constructor(entity, posNew, posOld, pathIndex)
   self._entity = entity
   self._posNew = posNew
   self._posOld = posOld
   self._pathIndex = pathIndex
 end
 
--- DECOMPILER ERROR at PC494: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSyncMoveEachMoveEnd.GetNotifyType = function(self)
-  -- function num : 0_128 , upvalues : _ENV
+function NTSyncMoveEachMoveEnd:GetNotifyType()
   return NotifyType.SyncMoveEachMoveEnd
 end
 
--- DECOMPILER ERROR at PC497: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSyncMoveEachMoveEnd.GetPos = function(self)
-  -- function num : 0_129
+function NTSyncMoveEachMoveEnd:GetPos()
   return self._posNew
 end
 
--- DECOMPILER ERROR at PC500: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSyncMoveEachMoveEnd.GetOldPos = function(self)
-  -- function num : 0_130
+function NTSyncMoveEachMoveEnd:GetOldPos()
   return self._posOld
 end
 
--- DECOMPILER ERROR at PC503: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSyncMoveEachMoveEnd.GetEntityID = function(self)
-  -- function num : 0_131
-  return (self._entity):GetID()
+function NTSyncMoveEachMoveEnd:GetEntityID()
+  return self._entity:GetID()
 end
 
--- DECOMPILER ERROR at PC506: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSyncMoveEachMoveEnd.GetNotifyEntity = function(self)
-  -- function num : 0_132
+function NTSyncMoveEachMoveEnd:GetNotifyEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC509: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSyncMoveEachMoveEnd.NeedCheckGameTurn = function(self)
-  -- function num : 0_133
+function NTSyncMoveEachMoveEnd:NeedCheckGameTurn()
   return true
 end
 
--- DECOMPILER ERROR at PC512: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSyncMoveEachMoveEnd.GetNotifyPos = function(self)
-  -- function num : 0_134
+function NTSyncMoveEachMoveEnd:GetNotifyPos()
   return self._posNew
 end
 
--- DECOMPILER ERROR at PC515: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSyncMoveEachMoveEnd.GetPathIndex = function(self)
-  -- function num : 0_135
+function NTSyncMoveEachMoveEnd:GetPathIndex()
   return self._pathIndex
 end
 
 _class("NTForceMovement", INotifyBase)
 NTForceMovement = NTForceMovement
--- DECOMPILER ERROR at PC524: Confused about usage of register: R0 in 'UnsetPending'
 
-NTForceMovement.Constructor = function(self, entity, posOld, posNew)
-  -- function num : 0_136
+function NTForceMovement:Constructor(entity, posOld, posNew)
   self._ownerEntity = entity
   self._posOld = posOld
   self._posNew = posNew
 end
 
--- DECOMPILER ERROR at PC527: Confused about usage of register: R0 in 'UnsetPending'
-
-NTForceMovement.GetNotifyType = function(self)
-  -- function num : 0_137 , upvalues : _ENV
+function NTForceMovement:GetNotifyType()
   return NotifyType.ForceMovement
 end
 
--- DECOMPILER ERROR at PC530: Confused about usage of register: R0 in 'UnsetPending'
-
-NTForceMovement.GetNotifyEntity = function(self)
-  -- function num : 0_138
+function NTForceMovement:GetNotifyEntity()
   return self._ownerEntity
 end
 
--- DECOMPILER ERROR at PC533: Confused about usage of register: R0 in 'UnsetPending'
-
-NTForceMovement.GetPosOld = function(self)
-  -- function num : 0_139
+function NTForceMovement:GetPosOld()
   return self._posOld
 end
 
--- DECOMPILER ERROR at PC536: Confused about usage of register: R0 in 'UnsetPending'
-
-NTForceMovement.GetPosNew = function(self)
-  -- function num : 0_140
+function NTForceMovement:GetPosNew()
   return self._posNew
 end
 
--- DECOMPILER ERROR at PC539: Confused about usage of register: R0 in 'UnsetPending'
-
-NTForceMovement.NeedCheckGameTurn = function(self)
-  -- function num : 0_141
+function NTForceMovement:NeedCheckGameTurn()
   return true
 end
 
--- DECOMPILER ERROR at PC542: Confused about usage of register: R0 in 'UnsetPending'
-
-NTForceMovement.GetSubordinateNotify = function(self)
-  -- function num : 0_142 , upvalues : _ENV
+function NTForceMovement:GetSubordinateNotify()
   return NTEntityMoveEnd:New(self._ownerEntity, self._posOld, self._posNew, self:GetNotifyType())
 end
 
 _class("NTSnakeHeadMoved", INotifyBase)
 NTSnakeHeadMoved = NTSnakeHeadMoved
--- DECOMPILER ERROR at PC551: Confused about usage of register: R0 in 'UnsetPending'
 
-NTSnakeHeadMoved.Constructor = function(self, entity, posNew, posOld)
-  -- function num : 0_143
+function NTSnakeHeadMoved:Constructor(entity, posNew, posOld)
   self._entity = entity
   self._posOld = posOld
   self._posNew = posNew
 end
 
--- DECOMPILER ERROR at PC554: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSnakeHeadMoved.GetNotifyType = function(self)
-  -- function num : 0_144 , upvalues : _ENV
+function NTSnakeHeadMoved:GetNotifyType()
   return NotifyType.SnakeHeadMoved
 end
 
--- DECOMPILER ERROR at PC557: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSnakeHeadMoved.GetPos = function(self)
-  -- function num : 0_145
+function NTSnakeHeadMoved:GetPos()
   return self._posNew
 end
 
--- DECOMPILER ERROR at PC560: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSnakeHeadMoved.GetOldPos = function(self)
-  -- function num : 0_146
+function NTSnakeHeadMoved:GetOldPos()
   return self._posOld
 end
 
--- DECOMPILER ERROR at PC563: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSnakeHeadMoved.GetEntityID = function(self)
-  -- function num : 0_147
-  return (self._entity):GetID()
+function NTSnakeHeadMoved:GetEntityID()
+  return self._entity:GetID()
 end
 
--- DECOMPILER ERROR at PC566: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSnakeHeadMoved.GetNotifyEntity = function(self)
-  -- function num : 0_148
+function NTSnakeHeadMoved:GetNotifyEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC569: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSnakeHeadMoved.GetSubordinateNotify = function(self)
-  -- function num : 0_149 , upvalues : _ENV
+function NTSnakeHeadMoved:GetSubordinateNotify()
   return NTEntityMoveEnd:New(self._entity, self._posOld, self._posNew, self:GetNotifyType())
 end
 
 _class("NTSnakeTailMoved", INotifyBase)
 NTSnakeTailMoved = NTSnakeTailMoved
--- DECOMPILER ERROR at PC578: Confused about usage of register: R0 in 'UnsetPending'
 
-NTSnakeTailMoved.Constructor = function(self, entity, posNew, posOld)
-  -- function num : 0_150
+function NTSnakeTailMoved:Constructor(entity, posNew, posOld)
   self._entity = entity
   self._posOld = posOld
   self._posNew = posNew
 end
 
--- DECOMPILER ERROR at PC581: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSnakeTailMoved.GetNotifyType = function(self)
-  -- function num : 0_151 , upvalues : _ENV
+function NTSnakeTailMoved:GetNotifyType()
   return NotifyType.SnakeTailMoved
 end
 
--- DECOMPILER ERROR at PC584: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSnakeTailMoved.GetPos = function(self)
-  -- function num : 0_152
+function NTSnakeTailMoved:GetPos()
   return self._posNew
 end
 
--- DECOMPILER ERROR at PC587: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSnakeTailMoved.GetOldPos = function(self)
-  -- function num : 0_153
+function NTSnakeTailMoved:GetOldPos()
   return self._posOld
 end
 
--- DECOMPILER ERROR at PC590: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSnakeTailMoved.GetEntityID = function(self)
-  -- function num : 0_154
-  return (self._entity):GetID()
+function NTSnakeTailMoved:GetEntityID()
+  return self._entity:GetID()
 end
 
--- DECOMPILER ERROR at PC593: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSnakeTailMoved.GetNotifyEntity = function(self)
-  -- function num : 0_155
+function NTSnakeTailMoved:GetNotifyEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC596: Confused about usage of register: R0 in 'UnsetPending'
-
-NTSnakeTailMoved.GetSubordinateNotify = function(self)
-  -- function num : 0_156 , upvalues : _ENV
+function NTSnakeTailMoved:GetSubordinateNotify()
   return NTEntityMoveEnd:New(self._entity, self._posOld, self._posNew, self:GetNotifyType())
 end
 
 _class("NTMonsterSkillMoved", INotifyBase)
 NTMonsterSkillMoved = NTMonsterSkillMoved
--- DECOMPILER ERROR at PC605: Confused about usage of register: R0 in 'UnsetPending'
 
-NTMonsterSkillMoved.Constructor = function(self, entity, posNew, posOld)
-  -- function num : 0_157
+function NTMonsterSkillMoved:Constructor(entity, posNew, posOld)
   self._entity = entity
   self._posOld = posOld
   self._posNew = posNew
 end
 
--- DECOMPILER ERROR at PC608: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterSkillMoved.GetNotifyType = function(self)
-  -- function num : 0_158 , upvalues : _ENV
+function NTMonsterSkillMoved:GetNotifyType()
   return NotifyType.MonsterSkillMoved
 end
 
--- DECOMPILER ERROR at PC611: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterSkillMoved.GetPos = function(self)
-  -- function num : 0_159
+function NTMonsterSkillMoved:GetPos()
   return self._posNew
 end
 
--- DECOMPILER ERROR at PC614: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterSkillMoved.GetOldPos = function(self)
-  -- function num : 0_160
+function NTMonsterSkillMoved:GetOldPos()
   return self._posOld
 end
 
--- DECOMPILER ERROR at PC617: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterSkillMoved.GetEntityID = function(self)
-  -- function num : 0_161
-  return (self._entity):GetID()
+function NTMonsterSkillMoved:GetEntityID()
+  return self._entity:GetID()
 end
 
--- DECOMPILER ERROR at PC620: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterSkillMoved.GetNotifyEntity = function(self)
-  -- function num : 0_162
+function NTMonsterSkillMoved:GetNotifyEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC623: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMonsterSkillMoved.GetSubordinateNotify = function(self)
-  -- function num : 0_163 , upvalues : _ENV
+function NTMonsterSkillMoved:GetSubordinateNotify()
   return NTEntityMoveEnd:New(self._entity, self._posOld, self._posNew, self:GetNotifyType())
 end
 
 _class("NTAfterPieceRefreshBeginChainSkill", INotifyBase)
 NTAfterPieceRefreshBeginChainSkill = NTAfterPieceRefreshBeginChainSkill
--- DECOMPILER ERROR at PC632: Confused about usage of register: R0 in 'UnsetPending'
 
-NTAfterPieceRefreshBeginChainSkill.Constructor = function(self, entity, chainPath)
-  -- function num : 0_164
+function NTAfterPieceRefreshBeginChainSkill:Constructor(entity, chainPath)
   self._entity = entity
   self._chainPath = chainPath
 end
 
--- DECOMPILER ERROR at PC635: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAfterPieceRefreshBeginChainSkill.GetChainPathCount = function(self)
-  -- function num : 0_165
+function NTAfterPieceRefreshBeginChainSkill:GetChainPathCount()
   return #self._chainPath
 end
 
--- DECOMPILER ERROR at PC638: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAfterPieceRefreshBeginChainSkill.GetBeginPos = function(self)
-  -- function num : 0_166
-  return (self._chainPath)[1]
+function NTAfterPieceRefreshBeginChainSkill:GetBeginPos()
+  return self._chainPath[1]
 end
 
--- DECOMPILER ERROR at PC641: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAfterPieceRefreshBeginChainSkill.GetEntityID = function(self)
-  -- function num : 0_167
-  return (self._entity):GetID()
+function NTAfterPieceRefreshBeginChainSkill:GetEntityID()
+  return self._entity:GetID()
 end
 
--- DECOMPILER ERROR at PC644: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAfterPieceRefreshBeginChainSkill.GetNotifyEntity = function(self)
-  -- function num : 0_168
+function NTAfterPieceRefreshBeginChainSkill:GetNotifyEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC647: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAfterPieceRefreshBeginChainSkill.GetNotifyType = function(self)
-  -- function num : 0_169 , upvalues : _ENV
+function NTAfterPieceRefreshBeginChainSkill:GetNotifyType()
   return NotifyType.AfterPieceRefreshBeginChainSkill
 end
-
-

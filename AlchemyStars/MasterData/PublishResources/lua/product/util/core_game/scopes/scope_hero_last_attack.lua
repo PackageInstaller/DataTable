@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_hero_last_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_HeroLastAttack", SkillScopeCalculator_Base)
 SkillScopeCalculator_HeroLastAttack = SkillScopeCalculator_HeroLastAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_HeroLastAttack.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_HeroLastAttack:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local e = casterEntity
-  local battleStatComponent = ((self._gridFilter)._world):BattleStat()
+  local battleStatComponent = self._gridFilter._world:BattleStat()
   local t = battleStatComponent:GetHeroLastAttackMonster()
   if t then
     local targetId = t[1]
@@ -20,5 +13,3 @@ SkillScopeCalculator_HeroLastAttack.CalcRange = function(self, scopeType, scopeP
     return result
   end
 end
-
-

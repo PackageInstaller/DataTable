@@ -1,66 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_effect_at_target_pos_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterEffectAtTargetPosInstruction", BaseInstruction)
 PlayCasterEffectAtTargetPosInstruction = PlayCasterEffectAtTargetPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterEffectAtTargetPosInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterEffectAtTargetPosInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._randomDir = tonumber(paramList.randomDir)
   self._bone = paramList.bone or "Hit"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterEffectAtTargetPosInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterEffectAtTargetPosInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   local targetEntity = world:GetEntityByID(targetEntityID)
   if not targetEntity then
-    (Log.fatal)("### no target, use DataSelect instruction firstly please. skillID=", skillID)
-    return 
+    Log.fatal("### no target, use DataSelect instruction firstly please. skillID=", skillID)
+    return
   end
   local targetViewCmpt = targetEntity:View()
   if targetViewCmpt ~= nil then
-    local targetHitObj = nil
+    local targetHitObj
     if self._bone == "Hit" then
       local playSkillService = world:GetService("PlaySkill")
       targetHitObj = playSkillService:GetEntityRenderHitTransform(targetEntity)
     else
-      do
-        do
-          local targetGameObject = targetViewCmpt:GetGameObject()
-          targetHitObj = (GameObjectHelper.FindChild)(targetGameObject.transform, self._bone)
-          if targetHitObj ~= nil then
-            local effectEntity = (world:GetService("Effect")):CreatePositionEffect(self._effectID, (targetHitObj.transform).position)
-            if self._randomDir then
-              local randomDir = Vector3((Mathf.Random)(), (Mathf.Random)(), (Mathf.Random)())
-              effectEntity:SetDirection(randomDir)
-            end
-          end
-        end
+      local targetGameObject = targetViewCmpt:GetGameObject()
+      targetHitObj = GameObjectHelper.FindChild(targetGameObject.transform, self._bone)
+    end
+    if targetHitObj ~= nil then
+      local effectEntity = world:GetService("Effect"):CreatePositionEffect(self._effectID, targetHitObj.transform.position)
+      if self._randomDir then
+        local randomDir = Vector3(Mathf.Random(), Mathf.Random(), Mathf.Random())
+        effectEntity:SetDirection(randomDir)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterEffectAtTargetPosInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayCasterEffectAtTargetPosInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

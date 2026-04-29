@@ -1,21 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2909101/cfg_skill_view_290910111.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName = skill01; PlayAudio,audioID = 29091015,audioType=1; "}
-}
-, 
-{2, 2, 0, 1, 1, 0, 
-{" PlaySummonTrap,trapID=70011141; "}
-}
-, 
-{3, 3, 0, 1, 1, 0, 
-{" DataSelectBuff,buffIndex=1; PlayTargetAddBuff,buffID=400080,label=doAgain; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=doAgain; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName = skill01; PlayAudio,audioID = 29091015,audioType=1; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    1,
+    0,
+    {
+      " PlaySummonTrap,trapID=70011141; "
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    1,
+    0,
+    {
+      " DataSelectBuff,buffIndex=1; PlayTargetAddBuff,buffID=400080,label=doAgain; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=doAgain; "
+    }
+  }
 }
 return config, "ID", key
-

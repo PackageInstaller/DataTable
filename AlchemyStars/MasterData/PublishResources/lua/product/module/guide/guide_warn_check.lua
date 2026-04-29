@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/guide/guide_warn_check.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuideWarnCheck", Object)
 GuideWarnCheck = GuideWarnCheck
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GuideWarnCheck.CheckMainLobby = function(self)
-  -- function num : 0_0
+function GuideWarnCheck:CheckMainLobby()
   self:CheckController("UIMainLobbyController")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideWarnCheck.CheckController = function(self, controllerName)
-  -- function num : 0_1 , upvalues : _ENV
-  local controller = ((GameGlobal.UIStateManager)()):GetController(controllerName)
+function GuideWarnCheck:CheckController(controllerName)
+  local controller = GameGlobal.UIStateManager():GetController(controllerName)
   if not controller then
-    (Log.error)("can\'t find controller " .. controllerName)
+    Log.error("can't find controller " .. controllerName)
   end
   local context = {}
   context.sum = 0
@@ -26,77 +16,58 @@ GuideWarnCheck.CheckController = function(self, controllerName)
   context.special = 0
   context.errIds = {}
   context.specailIs = {}
-  local cfgs = (Cfg.cfg_guide_warn)({})
-  for k,v in pairs(cfgs) do
+  local cfgs = Cfg.cfg_guide_warn({})
+  for k, v in pairs(cfgs) do
     if v.guideController and v.guideController == controllerName then
       context.sum = context.sum + 1
       local state = self:GetBtn(controller, v)
       if state < 0 then
         context.err = context.err + 1
-        ;
-        (table.insert)(context.errIds, v.id)
-      else
-        if state == 1 then
-          context.special = context.special + 1
-          ;
-          (table.insert)(context.specailIs, v.id)
-        end
+        table.insert(context.errIds, v.id)
+      elseif state == 1 then
+        context.special = context.special + 1
+        table.insert(context.specailIs, v.id)
       end
     end
   end
   local pass = context.sum - context.err - context.special
-  ;
-  (Log.error)("一共检查 " .. context.sum .. " 条, 通过 " .. pass .. " 条， 错误 " .. context.err .. " 条, 特殊未检出 " .. context.special .. " 条")
-  if context.err > 0 then
-    (Log.error)("错误的条目:")
-    local errMsg = (table.concat)(context.errIds, ",")
-    ;
-    (Log.error)(errMsg)
+  Log.error("一共检查 " .. context.sum .. " 条, 通过 " .. pass .. " 条， 错误 " .. context.err .. " 条, 特殊未检出 " .. context.special .. " 条")
+  if 0 < context.err then
+    Log.error("错误的条目:")
+    local errMsg = table.concat(context.errIds, ",")
+    Log.error(errMsg)
   end
-  do
-    if context.special > 0 then
-      (Log.error)("特殊未检查的条目:")
-      local msg = (table.concat)(context.specailIs, ",")
-      ;
-      (Log.error)(msg)
-    end
+  if 0 < context.special then
+    Log.error("特殊未检查的条目:")
+    local msg = table.concat(context.specailIs, ",")
+    Log.error(msg)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideWarnCheck.GetBtn = function(self, controller, btnGuideCfg)
-  -- function num : 0_2 , upvalues : _ENV
+function GuideWarnCheck:GetBtn(controller, btnGuideCfg)
   local widgets = btnGuideCfg.guideUI
   local btn = btnGuideCfg.guideArea
-  local go, parent, scrollRect, owner = nil, nil, nil, nil
+  local go, parent, scrollRect, owner
   local special = tonumber(btn)
   if special then
     return 1
+  elseif not widgets or #widgets <= 0 then
+    go = controller:GetGameObject(btn)
+    parent = controller:View():GetGameObject().transform:Find("UICanvas").transform
   else
-    if not widgets or #widgets <= 0 then
-      go = controller:GetGameObject(btn)
-      parent = ((((controller:View()):GetGameObject()).transform):Find("UICanvas")).transform
-    else
-      local deep = #widgets
-      go = controller:GetGameObjectInCustomWidget(widgets[1], btn)
-      if owner and deep > 1 then
-        for i = 2, deep do
-          -- DECOMPILER ERROR at PC48: Overwrote pending register: R8 in 'AssignReg'
-
-        end
-        if owner then
-          go = owner:GetGameObject(btn)
-        end
+    local deep = #widgets
+    go, owner = controller:GetGameObjectInCustomWidget(widgets[1], btn)
+    if owner and 1 < deep then
+      for i = 2, deep do
+        owner = owner:GetCustomWidget(widgets[i])
+      end
+      if owner then
+        go = owner:GetGameObject(btn)
       end
     end
   end
-  do
-    if go then
-      return 0
-    end
-    return -1
+  if go then
+    return 0
   end
+  return -1
 end
-
-

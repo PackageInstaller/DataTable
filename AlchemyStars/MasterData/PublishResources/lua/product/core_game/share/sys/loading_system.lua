@@ -1,34 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/loading_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LoadingSystem", MainStateSystem)
 LoadingSystem = LoadingSystem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LoadingSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LoadingSystem:_GetMainStateID()
   return GameStateID.Loading
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingSystem.Filter = function(self, world)
-  -- function num : 0_1
+function LoadingSystem:Filter(world)
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function LoadingSystem:_OnMainStateEnter(TT)
   self:_DoClearCoreGameCfg()
   self:_DoCreateNetworkEntity()
   self:_DoCreateLogicBoard()
   self:_DoParseAffixData()
   self:_DoParseTalentData()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   configService:InitConfig()
   self:_DoLogicPreLoadPetSkillConfig()
   self:_DoRenderCreateRenderBoard()
@@ -36,32 +23,25 @@ LoadingSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicCalcAndNotifyLoadingResult()
   local waitTaskIDs = {}
   local clientLoadingTaskID = self:_DoRenderLoading(TT)
-  ;
-  (table.insert)(waitTaskIDs, clientLoadingTaskID)
+  table.insert(waitTaskIDs, clientLoadingTaskID)
   self:_WaitTasksEnd(TT, waitTaskIDs)
   self:_DoRenderMatchStart(TT)
   self:_DoRenderPreloadCfg()
   self:_DoLogicMatchStart()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingSystem._DoLogicCalcAndNotifyLoadingResult = function(self)
-  -- function num : 0_3
-  local svc = (self._world):GetService("L2R")
+function LoadingSystem:_DoLogicCalcAndNotifyLoadingResult()
+  local svc = self._world:GetService("L2R")
   svc:L2RLoadingData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingSystem._DoLogicPreLoadPetSkillConfig = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local joinedPlayerInfo = ((self._world):BattleWorldEnterData()):GetLocalPlayerInfo()
-  local configService = (self._world):GetService("Config")
-  local affixService = (self._world):GetService("Affix")
-  for petIndex,petInfo in ipairs(joinedPlayerInfo.pet_list) do
+function LoadingSystem:_DoLogicPreLoadPetSkillConfig()
+  local joinedPlayerInfo = self._world:BattleWorldEnterData():GetLocalPlayerInfo()
+  local configService = self._world:GetService("Config")
+  local affixService = self._world:GetService("Affix")
+  for petIndex, petInfo in ipairs(joinedPlayerInfo.pet_list) do
     local petPstID = petInfo.pet_pstid
-    local petData = ((self._world):BattleWorldEnterData()):GetPetData(petPstID)
+    local petData = self._world:BattleWorldEnterData():GetPetData(petPstID)
     local petId = petData:GetTemplateID()
     local awaking = petData:GetPetAwakening()
     local grade = petData:GetPetGrade()
@@ -73,161 +53,109 @@ LoadingSystem._DoLogicPreLoadPetSkillConfig = function(self)
     local chainSkillIDs = petData:GetChainSkillInfo()
     if chainSkillIDs then
       for i = 1, #chainSkillIDs do
-        local configData = configService:GetSkillConfigData((chainSkillIDs[i]).Skill)
+        local configData = configService:GetSkillConfigData(chainSkillIDs[i].Skill)
         affixService:ChangePetChainCount(configData)
       end
     end
-    do
-      do
-        local activeSkillID = petData:GetPetActiveSkill()
-        if activeSkillID then
-          configService:GetSkillConfigData(activeSkillID)
-        end
-        -- DECOMPILER ERROR at PC62: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    local activeSkillID = petData:GetPetActiveSkill()
+    if activeSkillID then
+      configService:GetSkillConfigData(activeSkillID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingSystem._DoLogicLoading = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local entityService = (self._world):GetService("LogicEntity")
+function LoadingSystem:_DoLogicLoading()
+  local entityService = self._world:GetService("LogicEntity")
   entityService:GenerateBoardData()
   entityService:CreateBattleTeamLogic()
-  local battle_archive = ((self._world):GetService("Maze")):GetBattleArchive()
+  local battle_archive = self._world:GetService("Maze"):GetBattleArchive()
   local eMonsters = {}
   local eTraps = {}
-  if battle_archive and (battle_archive.completion).cond ~= CompleteConditionType.AllRefreshMonsterDead then
+  if battle_archive and battle_archive.completion.cond ~= CompleteConditionType.AllRefreshMonsterDead then
     eMonsters = entityService:CreateArchivedMonsters(battle_archive.monsters)
     eTraps = entityService:CreateArchivedTraps(battle_archive.traps)
   else
     local waveNum = 1
     eMonsters = entityService:CreateWaveMonsters(waveNum)
     eTraps = entityService:CreateWaveTraps(waveNum)
-    local configService = (self._world):GetService("Config")
+    local configService = self._world:GetService("Config")
     local levelConfigData = configService:GetLevelConfigData()
     local isMultiBoardLevel = levelConfigData:IsMultiBoardLevel()
     if isMultiBoardLevel then
       local eMonstersOtherBoard = entityService:CreateWaveMonstersMultiBoard(waveNum)
       local eTrapsOtherBoard = entityService:CreateWaveTrapsMultiBoard(waveNum)
-      ;
-      (table.appendArray)(eMonsters, eMonstersOtherBoard)
-      ;
-      (table.appendArray)(eTraps, eTrapsOtherBoard)
+      table.appendArray(eMonsters, eMonstersOtherBoard)
+      table.appendArray(eTraps, eTrapsOtherBoard)
     end
   end
-  do
-    ;
-    ((self._world):BattleStat()):SetFirstWaveMonsterIDList(eMonsters)
-    ;
-    ((self._world):BattleStat()):SetFirstWaveTrapIDList(eTraps)
-  end
+  self._world:BattleStat():SetFirstWaveMonsterIDList(eMonsters)
+  self._world:BattleStat():SetFirstWaveTrapIDList(eTraps)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingSystem._DoLogicMatchStart = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local svc = (self._world):GetService("L2R")
+function LoadingSystem:_DoLogicMatchStart()
+  local svc = self._world:GetService("L2R")
   svc:L2RBoardLogicData()
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.LoadingFinish, 1)
+  self._world:EventDispatcher():Dispatch(GameEventType.LoadingFinish, 1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingSystem._DoRenderMatchStart = function(self, TT)
-  -- function num : 0_7
+function LoadingSystem:_DoRenderMatchStart(TT)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingSystem._DoRenderLoading = function(self, TT)
-  -- function num : 0_8
+function LoadingSystem:_DoRenderLoading(TT)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingSystem._DoRenderCreateRenderBoard = function(self)
-  -- function num : 0_9
+function LoadingSystem:_DoRenderCreateRenderBoard()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingSystem._DoCreateLogicBoard = function(self)
-  -- function num : 0_10
-  local entityService = (self._world):GetService("LogicEntity")
+function LoadingSystem:_DoCreateLogicBoard()
+  local entityService = self._world:GetService("LogicEntity")
   entityService:CreateBoardEntity()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingSystem._DoCreateNetworkEntity = function(self)
-  -- function num : 0_11
-  local entityService = (self._world):GetService("LogicEntity")
+function LoadingSystem:_DoCreateNetworkEntity()
+  local entityService = self._world:GetService("LogicEntity")
   entityService:CreateNetworkEntity()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingSystem._DoParseAffixData = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local affixService = (self._world):GetService("Affix")
-  local words = ((self._world).BW_WorldInfo).wordBuffIds
+function LoadingSystem:_DoParseAffixData()
+  local affixService = self._world:GetService("Affix")
+  local words = self._world.BW_WorldInfo.wordBuffIds
   if words then
-    for _,wordID in ipairs(words) do
-      local cfg = (Cfg.cfg_word_buff)[wordID]
+    for _, wordID in ipairs(words) do
+      local cfg = Cfg.cfg_word_buff[wordID]
       if cfg and cfg.affixList then
-        (table.appendArray)((self._world)._affixList, cfg.affixList)
+        table.appendArray(self._world._affixList, cfg.affixList)
       end
     end
-    affixService:ParseAffixData((self._world)._affixList)
+    affixService:ParseAffixData(self._world._affixList)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingSystem._DoParseTalentData = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  if (self._world):MatchType() == MatchType.MT_MiniMaze then
-    local talentSvc = (self._world):GetService("Talent")
-    local createInfo = ((((self._world).BW_WorldInfo).clientCreateInfo).bloodsucker_mission_info)[1]
+function LoadingSystem:_DoParseTalentData()
+  if self._world:MatchType() == MatchType.MT_MiniMaze then
+    local talentSvc = self._world:GetService("Talent")
+    local createInfo = self._world.BW_WorldInfo.clientCreateInfo.bloodsucker_mission_info[1]
     if createInfo then
       talentSvc:ParseTalentData_MiniMaze(createInfo.skill_info, createInfo.relics)
     end
-  else
-    do
-      if (self._world):MatchType() == MatchType.MT_Campaign then
-        local talentSvc = (self._world):GetService("Talent")
-        local createInfo = ((((self._world).BW_WorldInfo).clientCreateInfo).campaign_mission_info)[1]
-        if createInfo then
-          talentSvc:ParseTalentData_Campaign(createInfo.mTalentTreeSkills)
-        end
-      end
+  elseif self._world:MatchType() == MatchType.MT_Campaign then
+    local talentSvc = self._world:GetService("Talent")
+    local createInfo = self._world.BW_WorldInfo.clientCreateInfo.campaign_mission_info[1]
+    if createInfo then
+      talentSvc:ParseTalentData_Campaign(createInfo.mTalentTreeSkills)
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingSystem._DoRenderPreloadCfg = function(self)
-  -- function num : 0_14
+function LoadingSystem:_DoRenderPreloadCfg()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingSystem._DoClearCoreGameCfg = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function LoadingSystem:_DoClearCoreGameCfg()
   if not EDITOR or not AUTO_RELOAD_GAME_CFG then
-    return 
+    return
   end
   CfgClear("cfg_core_game_reload")
-  for i,v in pairs((Cfg.cfg_core_game_reload)()) do
+  for i, v in pairs(Cfg.cfg_core_game_reload()) do
     CfgClear(v.CfgName)
   end
 end
-
-

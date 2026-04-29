@@ -1,45 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/explore/collection/ui_season_music_collection_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMusicCollectionController", UIController)
 UISeasonMusicCollectionController = UISeasonMusicCollectionController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMusicCollectionController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMusicCollectionController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMusicCollectionController:OnShow(uiParams)
   self.closeCb = uiParams[1]
   self._itemCountPerRow = 2
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
+  self._roleModule = GameGlobal.GetModule(RoleModule)
   self._pauseIndex = -1
   self._playIndex = -1
   self:InitWidget()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionController.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonMusicCollectionController:InitWidget()
   local topBtns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtns = topBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
     if self.closeCb then
-      (self.closeCb)()
+      self.closeCb()
     end
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   self.txtCollectionCount = self:GetUIComponent("UILocalizationText", "txtCollectionCount")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
   self._scrollRect = self:GetUIComponent("ScrollRect", "ScrollView")
@@ -51,166 +35,118 @@ UISeasonMusicCollectionController.InitWidget = function(self)
   self:_InitPlayControl()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionController.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMusicCollectionController:OnValue()
   self._cfgs = UISeasonExploreHelper:GetSeasonMusicCfgs()
-  self._curMainMusic = (self._roleModule):UI_GetMusic(EnumBgmType.E_Bgm_Main)
-  local defaultPlayIndex = nil
-  for i,cfg in ipairs(self._cfgs) do
+  self._curMainMusic = self._roleModule:UI_GetMusic(EnumBgmType.E_Bgm_Main)
+  local defaultPlayIndex
+  for i, cfg in ipairs(self._cfgs) do
     if cfg.ID == self._curMainMusic then
       defaultPlayIndex = i
       break
     end
   end
-  do
-    if not defaultPlayIndex then
-      defaultPlayIndex = 1
-      self._curMainMusic = 0
-    end
-    local count = #self._cfgs
-    ;
-    (self.playControlGo):SetActive(count > 0)
-    if count > 0 then
-      self:Sort()
-      self:PlayCell(defaultPlayIndex)
-      ;
-      (self.txtCollectionCount):SetText(count)
-      self._collectionCount = count
-      self._listShowItemCount = (math.ceil)(self._collectionCount / self._itemCountPerRow)
-      self:_InitSrollView()
-      self:FocusPlayingItem()
-    end
-    self:RefreshSetBtn()
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if not defaultPlayIndex then
+    defaultPlayIndex = 1
+    self._curMainMusic = 0
   end
+  local count = #self._cfgs
+  self.playControlGo:SetActive(0 < count)
+  if 0 < count then
+    self:Sort()
+    self:PlayCell(defaultPlayIndex)
+    self.txtCollectionCount:SetText(count)
+    self._collectionCount = count
+    self._listShowItemCount = math.ceil(self._collectionCount / self._itemCountPerRow)
+    self:_InitSrollView()
+    self:FocusPlayingItem()
+  end
+  self:RefreshSetBtn()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionController._InitPlayControl = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self.playControl):SetData(function()
-    -- function num : 0_4_0 , upvalues : self
+function UISeasonMusicCollectionController:_InitPlayControl()
+  self.playControl:SetData(function()
     if self._playIndex > 1 then
       self:PlayCell(self._playIndex - 1, true)
       self:FocusPlayingItem()
     end
-  end
-, function()
-    -- function num : 0_4_1 , upvalues : self
+  end, function()
     if self._playIndex < #self._cfgs then
-      local cfg = (self._cfgs)[self._playIndex + 1]
-      local isUnlock = not (self._roleModule):UI_CheckMusicLock(cfg)
+      local cfg = self._cfgs[self._playIndex + 1]
+      local isUnlock = not self._roleModule:UI_CheckMusicLock(cfg)
       if isUnlock then
         self:PlayCell(self._playIndex + 1, true)
         self:FocusPlayingItem()
       end
     end
-  end
-, function(index)
-    -- function num : 0_4_2 , upvalues : self
+  end, function(index)
     self._pauseIndex = index
-    ;
-    (self._scrollView):RefreshAllShownItem()
-  end
-, function(index)
-    -- function num : 0_4_3 , upvalues : self
+    self._scrollView:RefreshAllShownItem()
+  end, function(index)
     self._pauseIndex = -1
-    ;
-    (self._scrollView):RefreshAllShownItem()
-  end
-, function(index, cfg)
-    -- function num : 0_4_4 , upvalues : self, _ENV
+    self._scrollView:RefreshAllShownItem()
+  end, function(index, cfg)
     local id = 0
     if self._curMainMusic ~= cfg.ID then
       id = cfg.ID
     end
     self:StartTask(self.ReqChangeBgm, self, EnumBgmType.E_Bgm_Main, id)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionController.FocusPlayingItem = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local itemIndex = (math.floor)((self._playIndex - 1) / self._itemCountPerRow)
-  ;
-  (self._scrollView):MovePanelToItemIndex(itemIndex, 0)
-  ;
-  (self._scrollView):FinishSnapImmediately()
+function UISeasonMusicCollectionController:FocusPlayingItem()
+  local itemIndex = math.floor((self._playIndex - 1) / self._itemCountPerRow)
+  self._scrollView:MovePanelToItemIndex(itemIndex, 0)
+  self._scrollView:FinishSnapImmediately()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionController.ReqChangeBgm = function(self, TT, type, id)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonMusicCollectionController:ReqChangeBgm(TT, type, id)
   local lockName = "UISeasonMusicCollectionController_ReqChangeBgm"
   self:Lock(lockName)
-  local res = (self._roleModule):RequestRole_Music(TT, type, id)
+  local res = self._roleModule:RequestRole_Music(TT, type, id)
   if res:GetSucc() then
-    self._curMainMusic = (self._roleModule):UI_GetMusic(EnumBgmType.E_Bgm_Main)
+    self._curMainMusic = self._roleModule:UI_GetMusic(EnumBgmType.E_Bgm_Main)
     self:RefreshSetBtn(type)
     if type == EnumBgmType.E_Bgm_Main then
       if id == 0 then
-        (ToastManager.ShowToast)((StringTable.Get)("str_album_main_default"))
+        ToastManager.ShowToast(StringTable.Get("str_album_main_default"))
       else
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_album_main_changed"))
+        ToastManager.ShowToast(StringTable.Get("str_album_main_changed"))
       end
-    else
+    elseif type == EnumBgmType.E_Bgm_AirCraft then
     end
   else
-    if type == EnumBgmType.E_Bgm_AirCraft then
-      (ToastManager.ShowToast)("unkown error:", res:GetResult())
-    end
+    ToastManager.ShowToast("unkown error:", res:GetResult())
   end
   self:UnLock(lockName)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionController.Sort = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (table.sort)(self._cfgs, function(a, b)
-    -- function num : 0_7_0 , upvalues : self
-    local k, isUnLockA = not (self._roleModule):UI_CheckMusicLock(a), nil
+function UISeasonMusicCollectionController:Sort()
+  table.sort(self._cfgs, function(a, b)
+    local k, isUnLockA = not self._roleModule:UI_CheckMusicLock(a)
     local a1 = 0
     if isUnLockA then
       a1 = 1
     end
-    local m, isUnLockB = not (self._roleModule):UI_CheckMusicLock(b), nil
+    local m, isUnLockB = not self._roleModule:UI_CheckMusicLock(b)
     local b1 = 0
     if isUnLockB then
       b1 = 1
     end
-    if b1 >= a1 then
-      do return a1 == b1 end
-      do return a.ID < b.ID end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if a1 ~= b1 then
+      return a1 > b1
     end
-  end
-)
+    return a.ID < b.ID
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionController._InitSrollView = function(self)
-  -- function num : 0_8
-  (self._scrollView):InitListView(self._listShowItemCount, function(scrollView, index)
-    -- function num : 0_8_0 , upvalues : self
+function UISeasonMusicCollectionController:_InitSrollView()
+  self._scrollView:InitListView(self._listShowItemCount, function(scrollView, index)
     return self:InitCellList(scrollView, index)
-  end
-)
+  end)
   self._inited = true
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionController.InitCellList = function(self, scrollView, index)
-  -- function num : 0_9
+function UISeasonMusicCollectionController:InitCellList(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -224,8 +160,8 @@ UISeasonMusicCollectionController.InitCellList = function(self, scrollView, inde
   for i = 1, self._itemCountPerRow do
     local cellItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._collectionCount < itemIndex then
-      (cellItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._collectionCount then
+      cellItem:GetGameObject():SetActive(false)
     else
       self:ShowCellItem(cellItem, itemIndex)
     end
@@ -233,58 +169,40 @@ UISeasonMusicCollectionController.InitCellList = function(self, scrollView, inde
   return item
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionController.ShowCellItem = function(self, cellItem, index)
-  -- function num : 0_10
-  (cellItem:GetGameObject()):SetActive(true)
-  local cfg = (self._cfgs)[index]
+function UISeasonMusicCollectionController:ShowCellItem(cellItem, index)
+  cellItem:GetGameObject():SetActive(true)
+  local cfg = self._cfgs[index]
   if cfg ~= nil then
     cellItem:SetData(cfg, index, self._playIndex, self._pauseIndex, function(idx, isUnlock)
-    -- function num : 0_10_0 , upvalues : self
-    self:OnClickCell(idx, isUnlock)
-  end
-)
+      self:OnClickCell(idx, isUnlock)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionController.OnClickCell = function(self, index, isUnlock)
-  -- function num : 0_11
+function UISeasonMusicCollectionController:OnClickCell(index, isUnlock)
   if isUnlock then
-    local cfg = (self._cfgs)[index]
+    local cfg = self._cfgs[index]
     self:PlayCell(index, true)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionController.PlayCell = function(self, index, refreshScrollView)
-  -- function num : 0_12
+function UISeasonMusicCollectionController:PlayCell(index, refreshScrollView)
   self._pauseIndex = -1
   if self._playIndex and self._playIndex == index then
-    return 
+    return
   end
   self._playIndex = index
-  ;
-  (self.playControl):Play(self._playIndex, (self._cfgs)[self._playIndex])
+  self.playControl:Play(self._playIndex, self._cfgs[self._playIndex])
   if refreshScrollView then
-    (self._scrollView):RefreshAllShownItem()
+    self._scrollView:RefreshAllShownItem()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionController.RefreshSetBtn = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonMusicCollectionController:RefreshSetBtn()
   if self._curMainMusic == 0 then
-    (self.playControl):SetMainMusicName((StringTable.Get)("str_album_main"))
+    self.playControl:SetMainMusicName(StringTable.Get("str_album_main"))
   else
-    local cfg = (Cfg.cfg_role_music)[self._curMainMusic]
-    ;
-    (self.playControl):SetMainMusicName((StringTable.Get)(cfg.Name))
+    local cfg = Cfg.cfg_role_music[self._curMainMusic]
+    self.playControl:SetMainMusicName(StringTable.Get(cfg.Name))
   end
 end
-
-

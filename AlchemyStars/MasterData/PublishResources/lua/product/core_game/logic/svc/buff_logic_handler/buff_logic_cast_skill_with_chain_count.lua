@@ -1,74 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_cast_skill_with_chain_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicCastSkillWithChainCount", BuffLogicBase)
 BuffLogicCastSkillWithChainCount = BuffLogicCastSkillWithChainCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicCastSkillWithChainCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicCastSkillWithChainCount:Constructor(buffInstance, logicParam)
   self._chainCountMultiple = logicParam.chainCountMultiple
   self._petTempleteID = logicParam.petTempleteID
   self._skillList = logicParam.skillList
   self._useAgentSkill = logicParam.useAgentSkill or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicCastSkillWithChainCount.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicCastSkillWithChainCount:DoLogic(notify)
+  local e = self._buffInstance:Entity()
   local skillList = {}
-  for k,v in pairs(self._skillList) do
+  for k, v in pairs(self._skillList) do
     local skill = {}
     skill.chainCount = k
     skill.skill = v
-    ;
-    (table.insert)(skillList, skill)
+    table.insert(skillList, skill)
   end
-  ;
-  (table.sort)(skillList, function(e1, e2)
-    -- function num : 0_1_0
-    do return e2.chainCount < e1.chainCount end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  local petEntity = nil
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  do
-    if e:HasSummoner() then
-      local ownerPet = e:GetSummonerEntity()
-      if ownerPet:HasPet() then
-        teamEntity = (ownerPet:Pet()):GetOwnerTeamEntity()
-      end
-    end
-    local pets = (teamEntity:Team()):GetTeamPetEntities()
-    for i,e in ipairs(pets) do
-      local cPetPstID = e:PetPstID()
-      if self._petTempleteID == cPetPstID:GetTemplateID() then
-        petEntity = e
-        break
-      end
-    end
-    do
-      if not petEntity then
-        return 
-      end
-      local buffComponent = petEntity:BuffComponent()
-      buffComponent:SetBuffValue("AgentChainEntityID", e:GetID())
-      buffComponent:SetBuffValue("AgentChainCountMultiple", self._chainCountMultiple)
-      buffComponent:SetBuffValue("AgentChainSkillList", skillList)
-      if self._useAgentSkill == 1 then
-        buffComponent:SetBuffValue("AgentChainSkillUseCfgID", 1)
-      else
-        buffComponent:SetBuffValue("AgentChainSkillUseCfgID", 0)
-      end
-      local buffResult = BuffResultCastSkillWithChainCount:New(petEntity:GetID())
-      return buffResult
+  table.sort(skillList, function(e1, e2)
+    return e1.chainCount > e2.chainCount
+  end)
+  local petEntity
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  if e:HasSummoner() then
+    local ownerPet = e:GetSummonerEntity()
+    if ownerPet:HasPet() then
+      teamEntity = ownerPet:Pet():GetOwnerTeamEntity()
     end
   end
+  local pets = teamEntity:Team():GetTeamPetEntities()
+  for i, e in ipairs(pets) do
+    local cPetPstID = e:PetPstID()
+    if self._petTempleteID == cPetPstID:GetTemplateID() then
+      petEntity = e
+      break
+    end
+  end
+  if not petEntity then
+    return
+  end
+  local buffComponent = petEntity:BuffComponent()
+  buffComponent:SetBuffValue("AgentChainEntityID", e:GetID())
+  buffComponent:SetBuffValue("AgentChainCountMultiple", self._chainCountMultiple)
+  buffComponent:SetBuffValue("AgentChainSkillList", skillList)
+  if self._useAgentSkill == 1 then
+    buffComponent:SetBuffValue("AgentChainSkillUseCfgID", 1)
+  else
+    buffComponent:SetBuffValue("AgentChainSkillUseCfgID", 0)
+  end
+  local buffResult = BuffResultCastSkillWithChainCount:New(petEntity:GetID())
+  return buffResult
 end
-
-

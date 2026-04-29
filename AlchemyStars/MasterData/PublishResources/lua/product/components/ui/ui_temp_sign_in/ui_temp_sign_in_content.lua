@@ -1,179 +1,122 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_temp_sign_in/ui_temp_sign_in_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UITempSignInContent", UISideEnterCenterContentBase)
 UITempSignInContent = UITempSignInContent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UITempSignInContent.DoInit = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._matReq = (UIWidgetHelper.SetLocalizedTMPMaterial)(self, "_descTmp", "UITempSignIn_Material.mat", self._matReq)
+function UITempSignInContent:DoInit()
+  self._matReq = UIWidgetHelper.SetLocalizedTMPMaterial(self, "_descTmp", "UITempSignIn_Material.mat", self._matReq)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInContent.DoShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UITempSignInContent:DoShow()
   self:_AttachEvent()
   self._signInModule = self:GetModule(SignInModule)
-  self.result2str = {[SIGN_IN_RESULT_CODE.SIGN_DAY_NUM_ERROR] = "str_temp_sign_in_SIGN_DAY_NUM_ERROR", [SIGN_IN_RESULT_CODE.SIGN_DAY_NUM_ACCEPTED] = "str_temp_sign_in_SIGN_DAY_NUM_ACCEPTED", [SIGN_IN_RESULT_CODE.SIGN_DAY_NUM_NOT_ENOUGH] = "str_temp_sign_in_SIGN_DAY_NUM_NOT_ENOUGH"}
+  self.result2str = {
+    [SIGN_IN_RESULT_CODE.SIGN_DAY_NUM_ERROR] = "str_temp_sign_in_SIGN_DAY_NUM_ERROR",
+    [SIGN_IN_RESULT_CODE.SIGN_DAY_NUM_ACCEPTED] = "str_temp_sign_in_SIGN_DAY_NUM_ACCEPTED",
+    [SIGN_IN_RESULT_CODE.SIGN_DAY_NUM_NOT_ENOUGH] = "str_temp_sign_in_SIGN_DAY_NUM_NOT_ENOUGH"
+  }
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInContent.DoHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UITempSignInContent:DoHide()
   self:_DetachEvent()
-  ;
-  (UIWidgetHelper.ClearWidgets)(self, "itemInfo")
+  UIWidgetHelper.ClearWidgets(self, "itemInfo")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInContent.DoDestroy = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._matReq = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._matReq)
+function UITempSignInContent:DoDestroy()
+  self._matReq = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._matReq)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInContent._Refresh = function(self, notMove)
-  -- function num : 0_4 , upvalues : _ENV
-  self._currentDay = (self._signInModule):GetTotalSignInDayNum()
+function UITempSignInContent:_Refresh(notMove)
+  self._currentDay = self._signInModule:GetTotalSignInDayNum()
   self._itemDatas = self:_SetItemDatas()
   self:_SetItems()
   local maxDay = #self._itemDatas
-  ;
-  (UIWidgetHelper.SetLocalizedTMPText)(self, "_descTmp", (StringTable.Get)("str_temp_sign_in_title", maxDay))
+  UIWidgetHelper.SetLocalizedTMPText(self, "_descTmp", StringTable.Get("str_temp_sign_in_title", maxDay))
   if not notMove then
     self:_InitScrollPos()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInContent._SetItemDatas = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UITempSignInContent:_SetItemDatas()
   local tb_out = {}
-  local dayInfo, rewardInfo = (self._signInModule):GetNewPlayerSignupStatus()
-  for index,value in ipairs(dayInfo) do
+  local dayInfo, rewardInfo = self._signInModule:GetNewPlayerSignupStatus()
+  for index, value in ipairs(dayInfo) do
     local item = {}
     item.day = index
     item.got = value
     item.awardList = rewardInfo[index]
-    ;
-    (table.insert)(tb_out, item)
+    table.insert(tb_out, item)
   end
   return tb_out
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInContent._InitScrollPos = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UITempSignInContent:_InitScrollPos()
   local canGetIdx = self:_CheckCanGetIndex()
   if canGetIdx ~= 0 then
     local content = self:GetUIComponent("RectTransform", "Content")
     local height = (canGetIdx - 1) * 149
-    content.anchoredPosition = Vector2((content.anchoredPosition).x, height)
+    content.anchoredPosition = Vector2(content.anchoredPosition.x, height)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInContent._CheckCanGetIndex = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local tb = {NewPlayerLoginStatus.NPLS_UnAccept}
-  local idx = (UITempSignInEnter.CheckDayStatus)(tb)
+function UITempSignInContent:_CheckCanGetIndex()
+  local tb = {
+    NewPlayerLoginStatus.NPLS_UnAccept
+  }
+  local idx = UITempSignInEnter.CheckDayStatus(tb)
   return idx
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInContent._SetItems = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local items = (UIWidgetHelper.SpawnObjects)(self, "Content", "UITempSignInItem", #self._itemDatas - 1)
-  local lastItem = (UIWidgetHelper.SpawnObject)(self, "lastDataPool", "UITempSignInItem")
-  ;
-  (table.insert)(items, lastItem)
+function UITempSignInContent:_SetItems()
+  local items = UIWidgetHelper.SpawnObjects(self, "Content", "UITempSignInItem", #self._itemDatas - 1)
+  local lastItem = UIWidgetHelper.SpawnObject(self, "lastDataPool", "UITempSignInItem")
+  table.insert(items, lastItem)
   self._items = items
-  for i,v in ipairs(self._items) do
-    local itemData = (self._itemDatas)[i]
+  for i, v in ipairs(self._items) do
+    local itemData = self._itemDatas[i]
     local isLastDay = i == #self._items
     v:SetData(i, itemData, self._currentDay, function(idx)
-    -- function num : 0_8_0 , upvalues : _ENV, self
-    for i,v in ipairs(self._items) do
-      v:SetSelected(i == idx)
-    end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+      for i, v in ipairs(self._items) do
+        v:SetSelected(i == idx)
+      end
+    end, function(idx)
+      self:GetAwardReq(idx)
+    end, function(matid, pos)
+      UIWidgetHelper.SetAwardItemTips(self, "itemInfo", matid, pos)
+    end, isLastDay)
   end
-, function(idx)
-    -- function num : 0_8_1 , upvalues : self
-    self:GetAwardReq(idx)
-  end
-, function(matid, pos)
-    -- function num : 0_8_2 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "itemInfo", matid, pos)
-  end
-, isLastDay)
-  end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInContent.GetAwardReq = function(self, idx)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.debug)("###[UITempSignInContent] temp sign in get reward !")
+function UITempSignInContent:GetAwardReq(idx)
+  Log.debug("###[UITempSignInContent] temp sign in get reward !")
   self._getIdx = idx
   self:Lock("UITempSignInContent:GetAwardReq")
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV, idx
-    local data = (self._itemDatas)[self._getIdx]
-    local res = (self._signInModule):RequestAcceptNewPlayerReward(TT, data.day)
+    local data = self._itemDatas[self._getIdx]
+    local res = self._signInModule:RequestAcceptNewPlayerReward(TT, data.day)
     self:UnLock("UITempSignInContent:GetAwardReq")
     if res:GetSucc() then
-      (Log.debug)("###[UITempSignInContent] succ !")
+      Log.debug("###[UITempSignInContent] succ !")
       data.got = NewPlayerLoginStatus.NPLS_Accepted
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTempSignInAwardGot, data.day)
-      ;
-      ((self._items)[idx]):OnAwardGot(data)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTempSignInAwardGot, data.day)
+      self._items[idx]:OnAwardGot(data)
     else
       local result = res:GetResult()
-      ;
-      (Log.error)("###[UITempSignInItem] getOnClick fail -- result --> ", result)
-      local toastStr = (self.result2str)[result]
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)(toastStr))
+      Log.error("###[UITempSignInItem] getOnClick fail -- result --> ", result)
+      local toastStr = self.result2str[result]
+      ToastManager.ShowToast(StringTable.Get(toastStr))
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInContent._AttachEvent = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UITempSignInContent:_AttachEvent()
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInContent._DetachEvent = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UITempSignInContent:_DetachEvent()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInContent.OnUIGetItemCloseInQuest = function(self)
-  -- function num : 0_12
+function UITempSignInContent:OnUIGetItemCloseInQuest()
   self:_Refresh(true)
 end
-
-

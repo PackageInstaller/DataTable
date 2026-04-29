@@ -1,75 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_conduct_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectConductDamage_AtomData", Object)
 SkillEffectConductDamage_AtomData = SkillEffectConductDamage_AtomData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectConductDamage_AtomData.Constructor = function(self, conductIndex, damageResult)
-  -- function num : 0_0
+function SkillEffectConductDamage_AtomData:Constructor(conductIndex, damageResult)
   self._conductIndex = conductIndex
   self._damageResult = damageResult
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConductDamage_AtomData.GetDamageResult = function(self)
-  -- function num : 0_1
+function SkillEffectConductDamage_AtomData:GetDamageResult()
   return self._damageResult
 end
 
 require("skill_effect_result_base")
 _class("SkillEffectConductDamageResult", SkillEffectResultBase)
 SkillEffectConductDamageResult = SkillEffectConductDamageResult
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
 SkillEffectConductDamageResult.__EFFECT_TYPE = SkillEffectType.ConductDamage
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectConductDamageResult.Constructor = function(self, damageIndex, centerTargetID)
-  -- function num : 0_2
+function SkillEffectConductDamageResult:Constructor(damageIndex, centerTargetID)
   self._damageIndex = damageIndex
   self._centerTargetID = centerTargetID
   self._atomDataArray = {}
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConductDamageResult.GetEffectType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectConductDamageResult:GetEffectType()
   return SkillEffectType.ConductDamage
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConductDamageResult.AddAtomData = function(self, atomData)
-  -- function num : 0_4 , upvalues : _ENV
-  (table.insert)(self._atomDataArray, atomData)
+function SkillEffectConductDamageResult:AddAtomData(atomData)
+  table.insert(self._atomDataArray, atomData)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConductDamageResult.CreateAtomData = function(self, ...)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillEffectConductDamageResult:CreateAtomData(...)
   local atomData = SkillEffectConductDamage_AtomData:New(...)
-  ;
-  (table.insert)(self._atomDataArray, atomData)
+  table.insert(self._atomDataArray, atomData)
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConductDamageResult.GetAtomDataArray = function(self)
-  -- function num : 0_6
+function SkillEffectConductDamageResult:GetAtomDataArray()
   return self._atomDataArray
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConductDamageResult.GetCenterTargetID = function(self)
-  -- function num : 0_7
+function SkillEffectConductDamageResult:GetCenterTargetID()
   return self._centerTargetID
 end
-
-

@@ -1,34 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_affinity_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAffinityItem", UICustomWidget)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAffinityItem.Constructor = function(self)
-  -- function num : 0_0
+function UIAffinityItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAffinityItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIAffinityItem:OnShow(uiParams)
   self._attName = self:GetUIComponent("UILocalizationText", "attName")
   self._attValue = self:GetUIComponent("UILocalizationText", "attValue")
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAffinityItem.SetData = function(self, attInfo)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._attName).text = (StringTable.Get)(attInfo.attType)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._attValue).text = "+" .. attInfo.attValue
+function UIAffinityItem:SetData(attInfo)
+  self._attName.text = StringTable.Get(attInfo.attType)
+  self._attValue.text = "+" .. attInfo.attValue
 end
-
-

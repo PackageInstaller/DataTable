@@ -1,55 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_notice/ui_notice_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UINoticeController", UIController)
 UINoticeController = UINoticeController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UINoticeController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._tag2type = {[1] = NoticeType.System, [2] = NoticeType.Active}
+function UINoticeController:OnShow(uiParams)
+  self._tag2type = {
+    [1] = NoticeType.System,
+    [2] = NoticeType.Active
+  }
   self:_GetComponents()
-  self._loginModule = (GameGlobal.GetModule)(LoginModule)
+  self._loginModule = GameGlobal.GetModule(LoginModule)
   self._isFirst = true
-  if not uiParams[1] then
-    self._noticeType = NoticeType.System
-    self._showNoticeID = uiParams[2] or nil
-    self:_LoadData(true)
-    self:SelectNoticeType()
-  end
+  self._noticeType = uiParams[1] or NoticeType.System
+  self._showNoticeID = uiParams[2] or nil
+  self:_LoadData(true)
+  self:SelectNoticeType()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController._GetNoticeIndexByID = function(self, showNoticeID)
-  -- function num : 0_1 , upvalues : _ENV
+function UINoticeController:_GetNoticeIndexByID(showNoticeID)
   local idx = 1
   if self._noticeList and #self._noticeList > 0 then
     for i = 1, #self._noticeList do
-      if ((self._noticeList)[i]).UniqID == showNoticeID then
+      if self._noticeList[i].UniqID == showNoticeID then
         return i
       end
     end
   end
-  do
-    ;
-    (Log.fatal)("###配置的跳转公告UniqId没找到！id-->", showNoticeID)
-    return idx
-  end
+  Log.fatal("###配置的跳转公告UniqId没找到！id-->", showNoticeID)
+  return idx
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UINoticeController:OnHide()
   if self._showEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._showEvent)
+    GameGlobal.Timer():CancelEvent(self._showEvent)
     self._showEvent = nil
   end
   if self._selectTween then
-    (self._selectTween):Kill()
+    self._selectTween:Kill()
     self._selectTween = nil
   end
   self._noticeType = nil
@@ -57,14 +42,11 @@ UINoticeController.OnHide = function(self)
   self._loginModule = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController._LoadData = function(self, isInit)
-  -- function num : 0_3 , upvalues : _ENV
-  local noticeData = (self._loginModule):GetNoticeData()
+function UINoticeController:_LoadData(isInit)
+  local noticeData = self._loginModule:GetNoticeData()
   if noticeData == nil then
-    (Log.fatal)("###[UINoticeController:_LoadData] the noticeData is nil !")
-    return 
+    Log.fatal("###[UINoticeController:_LoadData] the noticeData is nil !")
+    return
   end
   self._noticeList = noticeData:GetNoticeDataWithGroup(self._noticeType)
   if #self._noticeList > 0 then
@@ -80,18 +62,12 @@ UINoticeController._LoadData = function(self, isInit)
   self:_OnValue(isInit)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController._GetComponents = function(self)
-  -- function num : 0_4
+function UINoticeController:_GetComponents()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_4_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   self._noticePool = self:GetUIComponent("UIDynamicScrollView", "noticeActivePool")
   self._info_img = self:GetUIComponent("UISelectObjectPath", "info_img")
   self._info_imgtex = self:GetUIComponent("UISelectObjectPath", "info_imgtex")
@@ -110,30 +86,20 @@ UINoticeController._GetComponents = function(self)
   self._typeAnim = self:GetUIComponent("Animation", "typeBtn")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController.SelectNoticeType = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UINoticeController:SelectNoticeType()
   if self._noticeType == NoticeType.Active then
-    (self._systemSelect):SetActive(false)
-    ;
-    (self._activeSelect):SetActive(true)
-  else
-    if self._noticeType == NoticeType.System then
-      (self._systemSelect):SetActive(true)
-      ;
-      (self._activeSelect):SetActive(false)
-    end
+    self._systemSelect:SetActive(false)
+    self._activeSelect:SetActive(true)
+  elseif self._noticeType == NoticeType.System then
+    self._systemSelect:SetActive(true)
+    self._activeSelect:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController._OnValue = function(self, isInit)
-  -- function num : 0_6
-  self._infoImg = (self._info_img):SpawnObject("UINoticeDetailImg")
-  self._infoImgTex = (self._info_imgtex):SpawnObject("UINoticeDetailImgTex")
-  self._infoTex = (self._info_tex):SpawnObject("UINoticeDetailTex")
+function UINoticeController:_OnValue(isInit)
+  self._infoImg = self._info_img:SpawnObject("UINoticeDetailImg")
+  self._infoImgTex = self._info_imgtex:SpawnObject("UINoticeDetailImgTex")
+  self._infoTex = self._info_tex:SpawnObject("UINoticeDetailTex")
   if self._isFirst then
     self:InitNoticeList()
     self._isFirst = false
@@ -144,46 +110,28 @@ UINoticeController._OnValue = function(self, isInit)
   if self._noticeIndex > 0 then
     self:_NoticeItemClick(self._noticeIndex, needTween)
   else
-    ;
-    (self._commonSelectGo):SetActive(false)
+    self._commonSelectGo:SetActive(false)
     self:HideInfoGo()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController._ShowHideUIPanel = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._systemNoticeBg):SetActive(self._noticeType == NoticeType.System)
-  ;
-  (self._activeNoticeBg):SetActive(self._noticeType == NoticeType.Active)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UINoticeController:_ShowHideUIPanel()
+  self._systemNoticeBg:SetActive(self._noticeType == NoticeType.System)
+  self._activeNoticeBg:SetActive(self._noticeType == NoticeType.Active)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController.RefreshNoticeList = function(self)
-  -- function num : 0_8
-  (self._noticePool):SetListItemCount(#self._noticeList)
-  ;
-  (self._noticePool):MovePanelToItemIndex(0, 0)
+function UINoticeController:RefreshNoticeList()
+  self._noticePool:SetListItemCount(#self._noticeList)
+  self._noticePool:MovePanelToItemIndex(0, 0)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController.InitNoticeList = function(self)
-  -- function num : 0_9
-  (self._noticePool):InitListView(#self._noticeList, function(scrollView, index)
-    -- function num : 0_9_0 , upvalues : self
+function UINoticeController:InitNoticeList()
+  self._noticePool:InitListView(#self._noticeList, function(scrollView, index)
     return self:InitNoticeListInfo(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController.InitNoticeListInfo = function(self, scrollView, index)
-  -- function num : 0_10
+function UINoticeController:InitNoticeListInfo(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -192,194 +140,136 @@ UINoticeController.InitNoticeListInfo = function(self, scrollView, index)
   item.IsInitHandlerCalled = true
   local btn = rowPool:SpawnObject("UINoticeBtnItem")
   local idx = index + 1
-  btn:SetData(idx, (self._noticeList)[idx], function(idx)
-    -- function num : 0_10_0 , upvalues : self
+  btn:SetData(idx, self._noticeList[idx], function(idx)
     self:_NoticeItemClick(idx, true)
-  end
-)
+  end)
   return item
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController.systemBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UINoticeController:systemBtnOnClick(go)
   if self._noticeType ~= NoticeType.System then
     self._noticeType = NoticeType.System
-    ;
-    (self._typeAnim):Play("uieff_Notice_ToSystem")
+    self._typeAnim:Play("uieff_Notice_ToSystem")
     self:Lock("UINoticeController:systemBtnOnClick")
-    ;
-    ((GameGlobal.Timer)()):AddEvent(270, function()
-    -- function num : 0_11_0 , upvalues : self
-    self:UnLock("UINoticeController:systemBtnOnClick")
-  end
-)
+    GameGlobal.Timer():AddEvent(270, function()
+      self:UnLock("UINoticeController:systemBtnOnClick")
+    end)
     self:SelectNoticeType()
     self._noticeIndex = 1
     self:_LoadData()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController.activeBtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
+function UINoticeController:activeBtnOnClick(go)
   if self._noticeType ~= NoticeType.Active then
     self._noticeType = NoticeType.Active
-    ;
-    (self._typeAnim):Play("uieff_Notice_ToActive")
+    self._typeAnim:Play("uieff_Notice_ToActive")
     self:Lock("UINoticeController:activeBtnOnClick")
-    ;
-    ((GameGlobal.Timer)()):AddEvent(270, function()
-    -- function num : 0_12_0 , upvalues : self
-    self:UnLock("UINoticeController:activeBtnOnClick")
-  end
-)
+    GameGlobal.Timer():AddEvent(270, function()
+      self:UnLock("UINoticeController:activeBtnOnClick")
+    end)
     self:SelectNoticeType()
     self._noticeIndex = 1
     self:_LoadData()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController._NoticeItemClick = function(self, idx, needTween)
-  -- function num : 0_13 , upvalues : _ENV
+function UINoticeController:_NoticeItemClick(idx, needTween)
   self._noticeIndex = idx
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UINoticeItemClick, self._noticeIndex, self._noticeType)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UINoticeItemClick, self._noticeIndex, self._noticeType)
   local has = false
-  local noticeInfo = nil
-  if (self._noticeList)[idx] then
+  local noticeInfo
+  if self._noticeList[idx] then
     has = true
-    noticeInfo = (self._noticeList)[idx]
+    noticeInfo = self._noticeList[idx]
   end
   if has then
     self:_ShowDetailData(noticeInfo, needTween)
   else
     self:HideInfoGo()
   end
-  ;
-  (self._commonSelectGo):SetActive(has)
+  self._commonSelectGo:SetActive(has)
   if has then
     if needTween then
       if self._selectTween then
-        (self._selectTween):Kill()
+        self._selectTween:Kill()
       end
-      self._selectTween = (self._commonSelectRect):DOAnchorPos(Vector2(0, -118 * (idx - 1)), 0.17)
+      self._selectTween = self._commonSelectRect:DOAnchorPos(Vector2(0, -118 * (idx - 1)), 0.17)
     else
-      -- DECOMPILER ERROR at PC59: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._commonSelectRect).anchoredPosition = Vector2(0, -118 * (idx - 1))
+      self._commonSelectRect.anchoredPosition = Vector2(0, -118 * (idx - 1))
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController._ShowDetailData = function(self, noticeInfo, needTween)
-  -- function num : 0_14 , upvalues : _ENV
+function UINoticeController:_ShowDetailData(noticeInfo, needTween)
   self._showNoticeInfo = noticeInfo
   if needTween then
     if self._LayoutType then
       if self._LayoutType == NoticeLayout.TextureText then
-        (self._infoImgTex):AnimFade()
-      else
-        if self._LayoutType == NoticeLayout.Texture then
-          (self._infoImg):AnimFade()
-        else
-          if self._LayoutType == NoticeLayout.Text then
-            (self._infoTex):AnimFade()
-          end
-        end
+        self._infoImgTex:AnimFade()
+      elseif self._LayoutType == NoticeLayout.Texture then
+        self._infoImg:AnimFade()
+      elseif self._LayoutType == NoticeLayout.Text then
+        self._infoTex:AnimFade()
       end
     end
     if self._showEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._showEvent)
+      GameGlobal.Timer():CancelEvent(self._showEvent)
       self._showEvent = nil
     end
     self:Lock("UINoticeController:_ShowDetailData")
-    self._showEvent = ((GameGlobal.Timer)()):AddEvent(167, function()
-    -- function num : 0_14_0 , upvalues : self
-    self:UnLock("UINoticeController:_ShowDetailData")
-    self:_OnShowDetailData(true)
-  end
-)
+    self._showEvent = GameGlobal.Timer():AddEvent(167, function()
+      self:UnLock("UINoticeController:_ShowDetailData")
+      self:_OnShowDetailData(true)
+    end)
   else
     self:_OnShowDetailData(false)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController._OnShowDetailData = function(self, needTween)
-  -- function num : 0_15 , upvalues : _ENV
-  if (self._showNoticeInfo).NoticeType == NoticeType.System then
+function UINoticeController:_OnShowDetailData(needTween)
+  if self._showNoticeInfo.NoticeType == NoticeType.System then
     self._LayoutType = NoticeLayout.Text
     self:ShowHideInfoGo(NoticeLayout.Text)
-    ;
-    (self._infoTex):SetData(self._showNoticeInfo)
+    self._infoTex:SetData(self._showNoticeInfo)
     if needTween then
-      (self._infoTex):AnimShow()
+      self._infoTex:AnimShow()
     end
   else
-    local tab = (cjson.decode)((self._showNoticeInfo).Text_NoticeContent)
+    local tab = cjson.decode(self._showNoticeInfo.Text_NoticeContent)
     if tab then
       self:ShowHideInfoGo(tab.layout)
       if tab.layout == NoticeLayout.TextureText then
         self._LayoutType = NoticeLayout.TextureText
-        ;
-        (self._infoImgTex):SetData(self._showNoticeInfo)
+        self._infoImgTex:SetData(self._showNoticeInfo)
         if needTween then
-          (self._infoImgTex):AnimShow()
+          self._infoImgTex:AnimShow()
         end
-      else
-        if tab.layout == NoticeLayout.Texture then
-          self._LayoutType = NoticeLayout.Texture
-          ;
-          (self._infoImg):SetData(self._showNoticeInfo)
-          if needTween then
-            (self._infoImg):AnimShow()
-          end
+      elseif tab.layout == NoticeLayout.Texture then
+        self._LayoutType = NoticeLayout.Texture
+        self._infoImg:SetData(self._showNoticeInfo)
+        if needTween then
+          self._infoImg:AnimShow()
         end
       end
     else
-      ;
-      (Log.fatal)("###notice json decode fail ! content --> ", (self._showNoticeInfo).Text_NoticeContent)
+      Log.fatal("###notice json decode fail ! content --> ", self._showNoticeInfo.Text_NoticeContent)
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController.ShowHideInfoGo = function(self, layout)
-  -- function num : 0_16 , upvalues : _ENV
-  (self._info_img_go):SetActive(layout == NoticeLayout.Texture)
-  ;
-  (self._info_imgtex_go):SetActive(layout == NoticeLayout.TextureText)
-  ;
-  (self._info_tex_go):SetActive(layout == NoticeLayout.Text)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function UINoticeController:ShowHideInfoGo(layout)
+  self._info_img_go:SetActive(layout == NoticeLayout.Texture)
+  self._info_imgtex_go:SetActive(layout == NoticeLayout.TextureText)
+  self._info_tex_go:SetActive(layout == NoticeLayout.Text)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController.HideInfoGo = function(self)
-  -- function num : 0_17
-  (self._info_img_go):SetActive(false)
-  ;
-  (self._info_imgtex_go):SetActive(false)
-  ;
-  (self._info_tex_go):SetActive(false)
+function UINoticeController:HideInfoGo()
+  self._info_img_go:SetActive(false)
+  self._info_imgtex_go:SetActive(false)
+  self._info_tex_go:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeController.backBtnOnClick = function(self)
-  -- function num : 0_18
+function UINoticeController:backBtnOnClick()
   self:CloseDialog()
 end
-
-

@@ -1,60 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_multiple_damage_with_buff_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_MultipleDamageWithBuffLayer", Object)
 SkillEffectCalc_MultipleDamageWithBuffLayer = SkillEffectCalc_MultipleDamageWithBuffLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_MultipleDamageWithBuffLayer.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_MultipleDamageWithBuffLayer:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MultipleDamageWithBuffLayer.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_MultipleDamageWithBuffLayer:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.appendArray)(results, result)
+      table.appendArray(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MultipleDamageWithBuffLayer._CalculateSingleTarget = function(self, skillEffectCalcParam, defenderEntityID)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_MultipleDamageWithBuffLayer:_CalculateSingleTarget(skillEffectCalcParam, defenderEntityID)
   local skillDamageParam = skillEffectCalcParam.skillEffectParam
-  local defender = (self._world):GetEntityByID(defenderEntityID)
-  local attacker = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local svc = (self._world):GetService("BuffLogic")
+  local defender = self._world:GetEntityByID(defenderEntityID)
+  local attacker = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local svc = self._world:GetService("BuffLogic")
   local layerCount = svc:GetBuffLayer(attacker, skillDamageParam:GetBuffEffectType())
   if defender == nil or layerCount == 0 then
-    (Log.notice)("CalculationForeachTarget defender is null ", defenderEntityID)
-    local skillResult = (self._skillEffectService):NewSkillDamageEffectResult(nil, -1, 0, nil, nil)
+    Log.notice("CalculationForeachTarget defender is null ", defenderEntityID)
+    local skillResult = self._skillEffectService:NewSkillDamageEffectResult(nil, -1, 0, nil, nil)
     return {skillResult}
   end
-  do
-    local attackPos = skillEffectCalcParam.attackPos
-    local gridPos = skillEffectCalcParam.gridPos
-    local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
-    local skillResultList = {}
-    for i = 1, layerCount do
-      local nTotalDamage, listDamageInfo = (self._skillEffectService):ComputeSkillDamage(attacker, attackPos, defender, gridPos, skillEffectCalcParam.skillID, skillDamageParam, SkillEffectType.Damage, damageStageIndex)
-      local skillResult = (self._skillEffectService):NewSkillDamageEffectResult(gridPos, defenderEntityID, nTotalDamage, listDamageInfo, damageStageIndex)
-      ;
-      (table.insert)(skillResultList, skillResult)
-    end
-    return skillResultList
+  local attackPos = skillEffectCalcParam.attackPos
+  local gridPos = skillEffectCalcParam.gridPos
+  local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
+  local skillResultList = {}
+  for i = 1, layerCount do
+    local nTotalDamage, listDamageInfo = self._skillEffectService:ComputeSkillDamage(attacker, attackPos, defender, gridPos, skillEffectCalcParam.skillID, skillDamageParam, SkillEffectType.Damage, damageStageIndex)
+    local skillResult = self._skillEffectService:NewSkillDamageEffectResult(gridPos, defenderEntityID, nTotalDamage, listDamageInfo, damageStageIndex)
+    table.insert(skillResultList, skillResult)
   end
+  return skillResultList
 end
-
-

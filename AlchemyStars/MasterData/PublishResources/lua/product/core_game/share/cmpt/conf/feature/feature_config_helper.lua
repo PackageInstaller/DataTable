@@ -1,64 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_config_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureConfigHelper", Object)
 FeatureConfigHelper = FeatureConfigHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureConfigHelper.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function FeatureConfigHelper:Constructor()
   self._featureConfigDic = {}
   self._featureEffectParamParser = FeatureEffectParamParser:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureConfigHelper.ClearFeatureData = function(self)
-  -- function num : 0_1
+function FeatureConfigHelper:ClearFeatureData()
   self._featureConfigDic = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureConfigHelper.GetFeatureData = function(self, featureType)
-  -- function num : 0_2 , upvalues : _ENV
+function FeatureConfigHelper:GetFeatureData(featureType)
   if featureType == nil then
-    (Log.error)("FeatureConfigHelper:GetFeatureData() featureType is nil")
-    return 
+    Log.error("FeatureConfigHelper:GetFeatureData() featureType is nil")
+    return
   end
-  if (self._featureConfigDic)[featureType] ~= nil then
-    return (self._featureConfigDic)[featureType]
+  if self._featureConfigDic[featureType] ~= nil then
+    return self._featureConfigDic[featureType]
   end
   local featureConfigData = FeatureConfigData:New(self._featureEffectParamParser)
   featureConfigData:ParseFeatureConfig(featureType)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._featureConfigDic)[featureType] = featureConfigData
+  self._featureConfigDic[featureType] = featureConfigData
   return featureConfigData
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureConfigHelper.ParseCustomFeatureList = function(self, feature_list)
-  -- function num : 0_3 , upvalues : _ENV
+function FeatureConfigHelper:ParseCustomFeatureList(feature_list)
   local effectParamList = {}
   if not feature_list then
     return effectParamList
   end
   local effectIndexList = {}
-  for k,v in pairs(feature_list) do
+  for k, v in pairs(feature_list) do
     effectIndexList[#effectIndexList + 1] = k
   end
-  ;
-  (table.sort)(effectIndexList)
-  for _,featureType in ipairs(effectIndexList) do
+  table.sort(effectIndexList)
+  for _, featureType in ipairs(effectIndexList) do
     local baseData = self:GetFeatureData(featureType)
     if baseData then
-      local baseParam = (baseData:GetFeatureEffectParam())
-      local effectParamObj = nil
+      local baseParam = baseData:GetFeatureEffectParam()
+      local effectParamObj
       if baseParam and baseParam.CloneSelf then
         effectParamObj = baseParam:CloneSelf()
         if effectParamObj then
@@ -71,5 +51,3 @@ FeatureConfigHelper.ParseCustomFeatureList = function(self, feature_list)
   end
   return effectParamList
 end
-
-

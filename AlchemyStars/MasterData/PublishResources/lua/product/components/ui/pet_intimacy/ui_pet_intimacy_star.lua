@@ -1,32 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet_intimacy/ui_pet_intimacy_star.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetIntimacyStar", UICustomWidget)
 UIPetIntimacyStar = UIPetIntimacyStar
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetIntimacyStar.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPetIntimacyStar:OnShow(uiParams)
   self._starOnyGo = self:GetGameObject("UIPetIntimacyStarOn")
   self._starBreakBackOn = self:GetGameObject("UIPetIntimacyStarBreakBackOn")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyStar.Refresh = function(self, isOn, isback)
-  -- function num : 0_1
+function UIPetIntimacyStar:Refresh(isOn, isback)
   if isback then
-    (self._starBreakBackOn):SetActive(true)
-    ;
-    (self._starOnyGo):SetActive(false)
+    self._starBreakBackOn:SetActive(true)
+    self._starOnyGo:SetActive(false)
   else
-    ;
-    (self._starBreakBackOn):SetActive(false)
-    ;
-    (self._starOnyGo):SetActive(isOn)
+    self._starBreakBackOn:SetActive(false)
+    self._starOnyGo:SetActive(isOn)
   end
 end
-
-

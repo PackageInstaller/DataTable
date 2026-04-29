@@ -1,26 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_side/ui_quest_side_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestSideAwardItem", UICustomWidget)
 UIQuestSideAwardItem = UIQuestSideAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestSideAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIQuestSideAwardItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideAwardItem.SetData = function(self, id, params, callback, hideRaycast)
-  -- function num : 0_1
+function UIQuestSideAwardItem:SetData(id, params, callback, hideRaycast)
   local sop = self:GetUIComponent("UISelectObjectPath", "pool")
   self.item = sop:SpawnObject("UIAsset")
-  ;
-  (self.item):SetItemData(params)
-  ;
-  (self.item):SetData(id)
+  self.item:SetItemData(params)
+  self.item:SetData(id)
   self.id = id
   self.callback = callback
   if hideRaycast ~= nil then
@@ -28,25 +16,19 @@ UIQuestSideAwardItem.SetData = function(self, id, params, callback, hideRaycast)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideAwardItem.HideRaycast = function(self, hide)
-  -- function num : 0_2
+function UIQuestSideAwardItem:HideRaycast(hide)
   local g = self:GetUIComponent("Graphic", "Btn")
-  if g and hide then
-    g.raycastTarget = false
-  else
-    g.raycastTarget = true
+  if g then
+    if hide then
+      g.raycastTarget = false
+    else
+      g.raycastTarget = true
+    end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSideAwardItem.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIQuestSideAwardItem:BtnOnClick(go)
   if self.callback then
-    (self.callback)(self.id, (go.transform).position)
+    self.callback(self.id, go.transform.position)
   end
 end
-
-

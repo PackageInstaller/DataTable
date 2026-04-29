@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/ui_set_change_passwd_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISetChangePasswdController", UIController)
 UISetChangePasswdController = UISetChangePasswdController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISetChangePasswdController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISetChangePasswdController:OnShow(uiParams)
   self._oldPasswordInput = self:GetUIComponent("InputField", "OldPassword")
   self._newPasswordInput = self:GetUIComponent("InputField", "NewPassword")
   self._mailInput = self:GetUIComponent("InputField", "Mail")
@@ -18,186 +11,125 @@ UISetChangePasswdController.OnShow = function(self, uiParams)
   self._isShowPasswd = false
   self:RefreshPasswdShowStatus()
   self._passwordTipsGo = self:GetGameObject("PasswordTips")
-  ;
-  (self._passwordTipsGo):SetActive(false)
+  self._passwordTipsGo:SetActive(false)
   self._cancelBtn = self:GetGameObject("CancelBtn")
   self._cancelBtnNormal = self:GetGameObject("CancelBtnNormal")
   self._cancelBtnClick = self:GetGameObject("CancelBtnClick")
   self._passwordAgainPlaceHolder = self:GetGameObject("PasswordAgainPlaceHolder")
   self._passWordText = self:GetGameObject("PassWordText")
   self._busyGo = self:GetGameObject("BusyEffect")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._cancelBtn), UIEvent.Press, function(go)
-    -- function num : 0_0_0 , upvalues : self
-    (self._cancelBtnNormal):SetActive(false)
-    ;
-    (self._cancelBtnClick):SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._cancelBtn), UIEvent.Release, function(go)
-    -- function num : 0_0_1 , upvalues : self
-    (self._cancelBtnNormal):SetActive(true)
-    ;
-    (self._cancelBtnClick):SetActive(false)
-  end
-)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._cancelBtn), UIEvent.Press, function(go)
+    self._cancelBtnNormal:SetActive(false)
+    self._cancelBtnClick:SetActive(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._cancelBtn), UIEvent.Release, function(go)
+    self._cancelBtnNormal:SetActive(true)
+    self._cancelBtnClick:SetActive(false)
+  end)
   self._nextStepBtn = self:GetGameObject("NextStepBtn")
   self._nextStepBtnNormal = self:GetGameObject("NextStepBtnNormal")
   self._nextStepBtnClick = self:GetGameObject("NextStepBtnClick")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._nextStepBtn), UIEvent.Press, function(go)
-    -- function num : 0_0_2 , upvalues : self
-    (self._nextStepBtnNormal):SetActive(false)
-    ;
-    (self._nextStepBtnClick):SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._nextStepBtn), UIEvent.Release, function(go)
-    -- function num : 0_0_3 , upvalues : self
-    (self._nextStepBtnNormal):SetActive(true)
-    ;
-    (self._nextStepBtnClick):SetActive(false)
-  end
-)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._nextStepBtn), UIEvent.Press, function(go)
+    self._nextStepBtnNormal:SetActive(false)
+    self._nextStepBtnClick:SetActive(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._nextStepBtn), UIEvent.Release, function(go)
+    self._nextStepBtnNormal:SetActive(true)
+    self._nextStepBtnClick:SetActive(false)
+  end)
   self:AddUICustomEventListener(self, UIEvent.InputFieldChanged, function()
-    -- function num : 0_0_4 , upvalues : self
-    (self._passwordAgainPlaceHolder):SetActive(true)
-    ;
-    (self._passWordText):SetActive(true)
-    ;
-    (self._passwordTipsGo):SetActive(false)
-  end
-)
-  ;
-  ((self._newPasswordAgainInput).onValueChanged):AddListener(self.OnIptValueChanged)
-  local msdkAuthorityInfo = ((GameGlobal.GameLogic)()).msdkAuthorityInfo
+    self._passwordAgainPlaceHolder:SetActive(true)
+    self._passWordText:SetActive(true)
+    self._passwordTipsGo:SetActive(false)
+  end)
+  self._newPasswordAgainInput.onValueChanged:AddListener(self.OnIptValueChanged)
+  local msdkAuthorityInfo = GameGlobal.GameLogic().msdkAuthorityInfo
   self.account = msdkAuthorityInfo.account
-  -- DECOMPILER ERROR at PC130: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._mailInput).text = self.account
+  self._mailInput.text = self.account
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetChangePasswdController.RefreshPasswdShowStatus = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._onGo):SetActive(self._isShowPasswd)
-  ;
-  (self._offGo):SetActive(not self._isShowPasswd)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
+function UISetChangePasswdController:RefreshPasswdShowStatus()
+  self._onGo:SetActive(self._isShowPasswd)
+  self._offGo:SetActive(not self._isShowPasswd)
   if self._isShowPasswd then
-    (self._newPasswordInput).contentType = (((UnityEngine.UI).InputField).ContentType).Standard
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._newPasswordAgainInput).contentType = (((UnityEngine.UI).InputField).ContentType).Standard
+    self._newPasswordInput.contentType = UnityEngine.UI.InputField.ContentType.Standard
+    self._newPasswordAgainInput.contentType = UnityEngine.UI.InputField.ContentType.Standard
   else
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._newPasswordInput).contentType = (((UnityEngine.UI).InputField).ContentType).Password
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._newPasswordAgainInput).contentType = (((UnityEngine.UI).InputField).ContentType).Password
+    self._newPasswordInput.contentType = UnityEngine.UI.InputField.ContentType.Password
+    self._newPasswordAgainInput.contentType = UnityEngine.UI.InputField.ContentType.Password
   end
-  ;
-  ((self._newPasswordInput).gameObject):SetActive(false)
-  ;
-  ((self._newPasswordInput).gameObject):SetActive(true)
-  ;
-  ((self._newPasswordAgainInput).gameObject):SetActive(false)
-  ;
-  ((self._newPasswordAgainInput).gameObject):SetActive(true)
+  self._newPasswordInput.gameObject:SetActive(false)
+  self._newPasswordInput.gameObject:SetActive(true)
+  self._newPasswordAgainInput.gameObject:SetActive(false)
+  self._newPasswordAgainInput.gameObject:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetChangePasswdController.ViewPasswordBtnOnClick = function(self)
-  -- function num : 0_2
+function UISetChangePasswdController:ViewPasswordBtnOnClick()
   self._isShowPasswd = not self._isShowPasswd
   self:RefreshPasswdShowStatus()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetChangePasswdController.CancelBtnOnClick = function(self)
-  -- function num : 0_3
+function UISetChangePasswdController:CancelBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetChangePasswdController.NextStepBtnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISetChangePasswdController:NextStepBtnOnClick()
   local mail = self.account
-  local oldPassword = (self._oldPasswordInput).text
-  local newPassword = (self._newPasswordInput).text
-  local newPasswordAgain = (self._newPasswordAgainInput).text
-  if (string.isnullorempty)(mail) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_set_change_passwd_mail_Is_null"))
-    return 
+  local oldPassword = self._oldPasswordInput.text
+  local newPassword = self._newPasswordInput.text
+  local newPasswordAgain = self._newPasswordAgainInput.text
+  if string.isnullorempty(mail) then
+    ToastManager.ShowToast(StringTable.Get("str_set_change_passwd_mail_Is_null"))
+    return
   end
   if self:CheckEmail(mail) == false then
-    (ToastManager.ShowToast)((StringTable.Get)("str_set_change_passwd_mail_format_error"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_set_change_passwd_mail_format_error"))
+    return
   end
-  if (string.isnullorempty)(oldPassword) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_set_change_passwd_error_code_password_is_null"))
-    return 
+  if string.isnullorempty(oldPassword) then
+    ToastManager.ShowToast(StringTable.Get("str_set_change_passwd_error_code_password_is_null"))
+    return
   end
-  if (string.isnullorempty)(newPassword) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_set_change_passwd_error_code_new_password_is_null"))
-    return 
+  if string.isnullorempty(newPassword) then
+    ToastManager.ShowToast(StringTable.Get("str_set_change_passwd_error_code_new_password_is_null"))
+    return
   end
-  if (string.len)(newPassword) < 8 or (string.len)(newPassword) > 20 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_login_register_or_forget_password_length_error"))
-    return 
+  if string.len(newPassword) < 8 or string.len(newPassword) > 20 then
+    ToastManager.ShowToast(StringTable.Get("str_login_register_or_forget_password_length_error"))
+    return
   end
   if self:CheckPassWordValid(newPassword) == false then
-    (ToastManager.ShowToast)((StringTable.Get)("str_set_change_passwd_error_code_pw_fomart_error"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_set_change_passwd_error_code_pw_fomart_error"))
+    return
   end
   if newPassword ~= newPasswordAgain then
-    (self._passwordTipsGo):SetActive(true)
-    ;
-    (self._passwordAgainPlaceHolder):SetActive(false)
-    ;
-    (self._passWordText):SetActive(false)
-    return 
+    self._passwordTipsGo:SetActive(true)
+    self._passwordAgainPlaceHolder:SetActive(false)
+    self._passWordText:SetActive(false)
+    return
   end
   self:Lock("UISetChangePasswdController:NextStepBtnOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.ChangePasswdCoro, self, mail, oldPassword, "", newPassword)
+  GameGlobal.TaskManager():StartTask(self.ChangePasswdCoro, self, mail, oldPassword, "", newPassword)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetChangePasswdController.ChangePasswdCoro = function(self, TT, account, oldPassword, phoneAreaCode, newPassword)
-  -- function num : 0_5 , upvalues : _ENV
-  local ret = (SDKProxy:GetInstance()):ResetPasswordWithOldPassword(TT, account, oldPassword, phoneAreaCode, newPassword)
-  if ret.RetCode == (INTL.INTLErrorCode).SUCCESS then
-    (self._busyGo):SetActive(true)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_set_change_passwd_success"))
+function UISetChangePasswdController:ChangePasswdCoro(TT, account, oldPassword, phoneAreaCode, newPassword)
+  local ret = SDKProxy:GetInstance():ResetPasswordWithOldPassword(TT, account, oldPassword, phoneAreaCode, newPassword)
+  if ret.RetCode == INTL.INTLErrorCode.SUCCESS then
+    self._busyGo:SetActive(true)
+    ToastManager.ShowToast(StringTable.Get("str_set_change_passwd_success"))
     YIELD(TT)
-    ;
-    ((GameGlobal.GameLogic)()):BackToLogin(false, LoginModule, "change password", false)
+    GameGlobal.GameLogic():BackToLogin(false, LoginModule, "change password", false)
   else
-    ;
-    (UICommonHelper:GetInstance()):HandleLoginErrorCode(ret.RetCode, ret.ThirdCode)
+    UICommonHelper:GetInstance():HandleLoginErrorCode(ret.RetCode, ret.ThirdCode)
   end
   self:UnLock("UISetChangePasswdController:NextStepBtnOnClick")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetChangePasswdController.CheckEmail = function(self, strContent)
-  -- function num : 0_6 , upvalues : _ENV
+function UISetChangePasswdController:CheckEmail(strContent)
   if not strContent then
     return false
   end
-  if (string.len)(strContent) < 3 then
+  if string.len(strContent) < 3 then
     return false
   end
   if strContent:match("[A-Za-z0-9%.%%%+%-]+@[A-Za-z0-9%.%%%+%-]+%.%w%w%w?%w?") then
@@ -207,15 +139,10 @@ UISetChangePasswdController.CheckEmail = function(self, strContent)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetChangePasswdController.CheckPassWordValid = function(self, info)
-  -- function num : 0_7 , upvalues : _ENV
-  local t = (string.match)(info, "[^%w_!%[%]%-%+%(%)@#%$%%%^&%*=\\/%?<>,:;|]")
+function UISetChangePasswdController:CheckPassWordValid(info)
+  local t = string.match(info, "[^%w_!%[%]%-%+%(%)@#%$%%%^&%*=\\/%?<>,:;|]")
   if t ~= nil then
     return false
   end
   return true
 end
-
-

@@ -1,31 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/ui_xiaolinjia_intro_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXiaoLinJiaIntroController", UIController)
 UIXiaoLinJiaIntroController = UIXiaoLinJiaIntroController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXiaoLinJiaIntroController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIXiaoLinJiaIntroController:OnShow(uiParams)
   self.anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaIntroController.CloseBtnOnClick = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIXiaoLinJiaIntroController:CloseBtnOnClick()
   self:Lock("UIXiaoLinJiaIntroController_Close")
-  ;
-  (self.anim):Play("uieffanim_UIXiaoLinJiaIntroController_out")
+  self.anim:Play("uieffanim_UIXiaoLinJiaIntroController_out")
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self
     YIELD(TT, 500)
     self:CloseDialog()
     self:UnLock("UIXiaoLinJiaIntroController_Close")
-  end
-)
+  end)
 end
-
-

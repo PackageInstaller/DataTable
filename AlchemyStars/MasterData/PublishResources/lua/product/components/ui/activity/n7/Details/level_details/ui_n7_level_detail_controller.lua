@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/Details/level_details/ui_n7_level_detail_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN7LevelDetailsController", UIController)
 UIN7LevelDetailsController = UIN7LevelDetailsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN7LevelDetailsController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_component_blackfist)()
+function UIN7LevelDetailsController:Constructor()
+  self._cfg = Cfg.cfg_component_blackfist()
   self._detailsCompInfo = nil
   self._curDayIndex = 0
   self._order_id = nil
@@ -25,28 +18,22 @@ UIN7LevelDetailsController.Constructor = function(self)
   self._teamCfg = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN7LevelDetailsController:LoadDataOnEnter(TT, res, uiParams)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self._campaignModule):GetN7BlackFightData()
-  local ret = (self.data):RequestCampaign(TT)
-  self._campaign = (self.data).activityCampaign
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
+  self.data = self._campaignModule:GetN7BlackFightData()
+  local ret = self.data:RequestCampaign(TT)
+  self._campaign = self.data.activityCampaign
   res:SetResult(ret:GetResult())
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  self._cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
-  self._detailsCompInfo = (self._campaign):GetComponentInfo(ECampaignN7ComponentID.ECAMPAIGN_N7_BLACKFIST)
+  self._cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
+  self._detailsCompInfo = self._campaign:GetComponentInfo(ECampaignN7ComponentID.ECAMPAIGN_N7_BLACKFIST)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController._GetComponent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN7LevelDetailsController:_GetComponent()
   self.firstbg = self:GetUIComponent("Image", "firstbg")
   self.firstAttribute = self:GetUIComponent("Image", "firstAttribute")
   self.secondbg = self:GetUIComponent("Image", "secondbg")
@@ -66,38 +53,36 @@ UIN7LevelDetailsController._GetComponent = function(self)
   self._txtB = self:GetUIComponent("UILocalizationText", "txtB")
   for i = 1, 5 do
     local petComponent = {}
-    petComponent = {self:GetUIComponent("Image", "firstAttribute" .. i), self:GetUIComponent("Image", "secondAttribute" .. i), self:GetUIComponent("RawImageLoader", "icon" .. i), self:GetGameObject(i - 1)}
-    ;
-    (table.insert)(self._petComponents, petComponent)
+    petComponent = {
+      self:GetUIComponent("Image", "firstAttribute" .. i),
+      self:GetUIComponent("Image", "secondAttribute" .. i),
+      self:GetUIComponent("RawImageLoader", "icon" .. i),
+      self:GetGameObject(i - 1)
+    }
+    table.insert(self._petComponents, petComponent)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController._InitUIN7Round = function(self, difficultyType)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN7LevelDetailsController:_InitUIN7Round(difficultyType)
   local day = self._curDayIndex
-  if self:_GetMaxDay() < day then
+  if day > self:_GetMaxDay() then
     day = 1
   end
   self._currentLevelMaxCont = self:_GetDifficultyTypeLecels(difficultyType, day)
   local flag = 1
-  for index,value in ipairs(self._currentLevelsCfgtab) do
+  for index, value in ipairs(self._currentLevelsCfgtab) do
     if self:_ComparisonContent(value.OrderId) then
       flag = index
     end
   end
   self:_ShowCurrentDifficulty(flag)
-  self:_ShowEnemyDetails((self._currentLevelsCfgtab)[flag])
-  self._currentLeveldate = (self._currentLevelsCfgtab)[flag]
+  self:_ShowEnemyDetails(self._currentLevelsCfgtab[flag])
+  self._currentLeveldate = self._currentLevelsCfgtab[flag]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController._GetMaxDay = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN7LevelDetailsController:_GetMaxDay()
   local max = 0
-  for key,value in pairs(self._cfg) do
+  for key, value in pairs(self._cfg) do
     if max < value.DayIndex then
       max = value.DayIndex
     end
@@ -105,233 +90,185 @@ UIN7LevelDetailsController._GetMaxDay = function(self)
   return max
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController._InitializeValue = function(self, uiParams)
-  -- function num : 0_5
+function UIN7LevelDetailsController:_InitializeValue(uiParams)
   self._currentDetails = uiParams[1]
-  self._order_id = ((self._detailsCompInfo).order_ids)[self._currentDetails]
+  self._order_id = self._detailsCompInfo.order_ids[self._currentDetails]
   if self._order_id == nil then
     self._order_id = 0
   end
-  self._curDayIndex = (self._detailsCompInfo).cur_day_index
+  self._curDayIndex = self._detailsCompInfo.cur_day_index
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController.OnShow = function(self, uiParams)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN7LevelDetailsController:OnShow(uiParams)
   self:_InitializeValue(uiParams)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.data).curDifficulty = self._currentDetails
+  self.data.curDifficulty = self._currentDetails
   self._module = self:GetModule(MissionModule)
   self._atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self:_GetComponent()
   self:_ShowTopCommonBtn()
   self:_InitUIN7Round(self._currentDetails)
   if self._currentLevelNum == self._currentLevelMaxCont then
-    (self.arrowsL):SetActive(false)
+    self.arrowsL:SetActive(false)
   end
   if self._currentLevelNum == 1 then
-    (self.arrowsR):SetActive(false)
+    self.arrowsR:SetActive(false)
   end
   self:_Showlock()
-  local difficultyList = (self.data).difficultyList
-  ;
-  (self._txtB):SetText((difficultyList[self._currentDetails]).reputaion .. "/" .. self:_GetaggreGateScore())
-  for i,v in ipairs(self._petComponents) do
-    do
-      ((UIEventTriggerListener.Get)((v[4]).gameObject)).onClick = function(go)
-    -- function num : 0_6_0 , upvalues : self, i
-    local date = self:_GetEnemyDate()
-    self:ShowDialog("UIN7EnemyDetailsController", date, i)
-  end
-
+  local difficultyList = self.data.difficultyList
+  self._txtB:SetText(difficultyList[self._currentDetails].reputaion .. "/" .. self:_GetaggreGateScore())
+  for i, v in ipairs(self._petComponents) do
+    UIEventTriggerListener.Get(v[4].gameObject).onClick = function(go)
+      local date = self:_GetEnemyDate()
+      self:ShowDialog("UIN7EnemyDetailsController", date, i)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController._Showlock = function(self)
-  -- function num : 0_7
-  (self._finish):SetActive(false)
+function UIN7LevelDetailsController:_Showlock()
+  self._finish:SetActive(false)
   if self._currentLevelNum <= self._order_id + 1 then
-    (self._lock):SetActive(false)
+    self._lock:SetActive(false)
     if self._currentLevelNum < self._order_id + 1 then
-      (self._finish):SetActive(true)
+      self._finish:SetActive(true)
     end
   else
-    ;
-    (self._lock):SetActive(true)
+    self._lock:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController._ShowTopCommonBtn = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN7LevelDetailsController:_ShowTopCommonBtn()
   local btns = self:GetUIComponent("UISelectObjectPath", "btns")
   self._backBtns = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_8_0 , upvalues : _ENV, self
-    (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIN7LevelDetailsController, function()
-      -- function num : 0_8_0_0 , upvalues : self, _ENV
-      (self._campaignModule):CampaignSwitchState(true, UIStateType.UIBlackFightMain, UIStateType.UIMain, nil, (self._campaign)._id)
-    end
-)
-  end
-)
+  self._backBtns:SetData(function()
+    CutsceneManager.ExcuteCutsceneIn(UIStateType.UIN7LevelDetailsController, function()
+      self._campaignModule:CampaignSwitchState(true, UIStateType.UIBlackFightMain, UIStateType.UIMain, nil, self._campaign._id)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController._ShowCurrentDifficulty = function(self, currentLevelNum)
-  -- function num : 0_9
+function UIN7LevelDetailsController:_ShowCurrentDifficulty(currentLevelNum)
   self._currentLevelNum = currentLevelNum
-  ;
-  (self._titletext):SetText(self._currentLevelNum .. "/" .. self._currentLevelMaxCont)
-  ;
-  (self._roundText):SetText("ROUND " .. self._currentLevelNum)
+  self._titletext:SetText(self._currentLevelNum .. "/" .. self._currentLevelMaxCont)
+  self._roundText:SetText("ROUND " .. self._currentLevelNum)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController._ShowLeader = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN7LevelDetailsController:_ShowLeader()
   local leader = self:GetUIComponent("UISelectObjectPath", "leader")
   self._leader = leader:SpawnObject("UITeamsLeader")
   local petIndo = pet_data:New()
-  petIndo.template_id = (self._teamCfg)[1]
-  petIndo.level = ((self._cfg_blackfist_hard)[1]).Lv
-  petIndo.grade = ((self._cfg_blackfist_hard)[1]).Grade
-  petIndo.awakening = ((self._cfg_blackfist_hard)[1]).Awakening
+  petIndo.template_id = self._teamCfg[1]
+  petIndo.level = self._cfg_blackfist_hard[1].Lv
+  petIndo.grade = self._cfg_blackfist_hard[1].Grade
+  petIndo.awakening = self._cfg_blackfist_hard[1].Awakening
   petIndo.affinity_level = 1
   petIndo.current_skin = 0
   local pet = Pet:New(petIndo)
-  ;
-  (self._leader):Flush(pet, true)
+  self._leader:Flush(pet, true)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController._ShowText = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (self.integralNumberText):SetText(((self._cfg_blackfist_hard)[1]).PrestigeItemNum)
-  ;
-  (self.dialogueText):SetText((StringTable.Get)(((self._cfg_blackfist_hard)[1]).Talk))
-  ;
-  (self._recommendText2):SetText((StringTable.Get)(((self._cfg_blackfist_hard)[1]).Recommend))
-  ;
-  (self._round):LoadImage("n7_box_round" .. self._currentLevelNum)
+function UIN7LevelDetailsController:_ShowText()
+  self.integralNumberText:SetText(self._cfg_blackfist_hard[1].PrestigeItemNum)
+  self.dialogueText:SetText(StringTable.Get(self._cfg_blackfist_hard[1].Talk))
+  self._recommendText2:SetText(StringTable.Get(self._cfg_blackfist_hard[1].Recommend))
+  self._round:LoadImage("n7_box_round" .. self._currentLevelNum)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController._ShowEnemyDetails = function(self, enemyDetail)
-  -- function num : 0_12 , upvalues : _ENV
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
-  local cfg_blackfist_squads = (Cfg.cfg_blackfist_squads)({SquadsID = enemyDetail.SquadsID})
-  self._cfg_blackfist_hard = (Cfg.cfg_blackfist_hard)({HardID = enemyDetail.HardID})
-  self._teamCfg = {(cfg_blackfist_squads[1]).CfgPetId1, (cfg_blackfist_squads[1]).CfgPetId2, (cfg_blackfist_squads[1]).CfgPetId3, (cfg_blackfist_squads[1]).CfgPetId4, (cfg_blackfist_squads[1]).CfgPetId5}
+function UIN7LevelDetailsController:_ShowEnemyDetails(enemyDetail)
+  local cfg_pet_element = Cfg.cfg_pet_element({})
+  local cfg_blackfist_squads = Cfg.cfg_blackfist_squads({
+    SquadsID = enemyDetail.SquadsID
+  })
+  self._cfg_blackfist_hard = Cfg.cfg_blackfist_hard({
+    HardID = enemyDetail.HardID
+  })
+  self._teamCfg = {
+    cfg_blackfist_squads[1].CfgPetId1,
+    cfg_blackfist_squads[1].CfgPetId2,
+    cfg_blackfist_squads[1].CfgPetId3,
+    cfg_blackfist_squads[1].CfgPetId4,
+    cfg_blackfist_squads[1].CfgPetId5
+  }
   self:_ShowLeader()
   local date = {}
   for i = 1, #self._teamCfg do
-    local pet = (Cfg.cfg_pet)({(self._teamCfg)[i]})
-    local petskin = ((Cfg.cfg_pet_skin)({id = (pet[1]).SkinId}))
-    local elemt1, elemt2, petskinTeamBody, staticBody, battleMe = nil, nil, nil, nil, nil
-    petskinTeamBody = (petskin[1]).TeamBody
-    staticBody = (petskin[1]).StaticBody
-    battleMe = (petskin[1]).BattleMes
-    if (pet[1]).FirstElement == 0 then
+    local pet = Cfg.cfg_pet({
+      self._teamCfg[i]
+    })
+    local petskin = Cfg.cfg_pet_skin({
+      id = pet[1].SkinId
+    })
+    local elemt1, elemt2, petskinTeamBody, staticBody, battleMe
+    petskinTeamBody = petskin[1].TeamBody
+    staticBody = petskin[1].StaticBody
+    battleMe = petskin[1].BattleMes
+    if pet[1].FirstElement == 0 then
       elemt1 = nil
     else
-      elemt1 = (self._atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[(pet[1]).FirstElement]).Icon))
-      elemt1bg = (self._atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite("spirit_xiangqing_icon23"))
+      elemt1 = self._atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[pet[1].FirstElement].Icon))
+      elemt1bg = self._atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite("spirit_xiangqing_icon23"))
     end
-    if (pet[1]).SecondElement == 0 then
+    if pet[1].SecondElement == 0 then
       elemt2 = nil
     else
-      elemt2 = (self._atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[(pet[1]).SecondElement]).Icon))
+      elemt2 = self._atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[pet[1].SecondElement].Icon))
     end
-    local tab = {elemt1 = elemt1, elemt2 = elemt2, skin = petskinTeamBody, staticBody = staticBody, battleMe = battleMe, element2NeedGrade = (pet[1]).Element2NeedGrade}
-    ;
-    (table.insert)(date, i, tab)
+    local tab = {
+      elemt1 = elemt1,
+      elemt2 = elemt2,
+      skin = petskinTeamBody,
+      staticBody = staticBody,
+      battleMe = battleMe,
+      element2NeedGrade = pet[1].Element2NeedGrade
+    }
+    table.insert(date, i, tab)
   end
   self._difficultyDate = date
   for i = 1, #self._difficultyDate do
-    self:_ShowTeammate((self._difficultyDate)[i], (self._petComponents)[i])
+    self:_ShowTeammate(self._difficultyDate[i], self._petComponents[i])
   end
   self:_ShowText()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController._ShowTeammate = function(self, date, components)
-  -- function num : 0_13
-  if date.elemt2 == nil or ((self._cfg_blackfist_hard)[1]).Grade ~= date.element2NeedGrade then
-    ((components[2]).gameObject):SetActive(false)
+function UIN7LevelDetailsController:_ShowTeammate(date, components)
+  if date.elemt2 == nil or self._cfg_blackfist_hard[1].Grade ~= date.element2NeedGrade then
+    components[2].gameObject:SetActive(false)
   else
-    ;
-    ((components[2]).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (components[2]).sprite = date.elemt2
+    components[2].gameObject:SetActive(true)
+    components[2].sprite = date.elemt2
   end
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (components[1]).sprite = date.elemt1
-  ;
-  (components[3]):LoadImage(date.skin)
+  components[1].sprite = date.elemt1
+  components[3]:LoadImage(date.skin)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController._InitDifficultyTeammateIcon = function(self)
-  -- function num : 0_14
+function UIN7LevelDetailsController:_InitDifficultyTeammateIcon()
   local teammate = self:GetUIComponent("UISelectObjectPath", "teammate")
   teammate:SpawnObjects("UIN7TeammateItem", 5)
   self._teammateTab = teammate:GetAllSpawnList()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController._GetaggreGateScore = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN7LevelDetailsController:_GetaggreGateScore()
   local num = 0
-  for k,v in pairs(self._currentLevelsCfgtab) do
-    local cfg = (Cfg.cfg_blackfist_hard)({HardID = v.HardID})
-    num = num + (cfg[1]).PrestigeItemNum
+  for k, v in pairs(self._currentLevelsCfgtab) do
+    local cfg = Cfg.cfg_blackfist_hard({
+      HardID = v.HardID
+    })
+    num = num + cfg[1].PrestigeItemNum
   end
   return num
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController._GetDifficultyTypeLecels = function(self, difficultyType, dayIndex)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN7LevelDetailsController:_GetDifficultyTypeLecels(difficultyType, dayIndex)
   local count = 0
-  for key,value in pairs(self._cfg) do
+  for key, value in pairs(self._cfg) do
     if value.Type == difficultyType and value.DayIndex == dayIndex then
       count = count + 1
-      -- DECOMPILER ERROR at PC13: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._currentLevelsCfgtab)[count] = value
+      self._currentLevelsCfgtab[count] = value
     end
   end
   return count
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController._ComparisonContent = function(self, orderId)
-  -- function num : 0_17
+function UIN7LevelDetailsController:_ComparisonContent(orderId)
   if self._order_id == 0 then
     return false
   end
@@ -341,103 +278,81 @@ UIN7LevelDetailsController._ComparisonContent = function(self, orderId)
   return false
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController._GetEnemyDate = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local date = nil
-  local len1 = (table.count)(self._difficultyDate)
-  local len2 = (table.count)(self._teamCfg)
+function UIN7LevelDetailsController:_GetEnemyDate()
+  local date
+  local len1 = table.count(self._difficultyDate)
+  local len2 = table.count(self._teamCfg)
   if len1 == len2 then
     date = {}
     for i = 1, len1 do
-      local v1 = (self._teamCfg)[i]
-      local v2 = (self._difficultyDate)[i]
+      local v1 = self._teamCfg[i]
+      local v2 = self._difficultyDate[i]
       local dt = {}
       dt.petid = v1
       dt.elemt1 = v2.elemt1
       dt.elemt2 = v2.elemt2
       dt.battleMe = v2.battleMe
-      dt.lv = ((self._cfg_blackfist_hard)[1]).Lv
-      dt.awakening = ((self._cfg_blackfist_hard)[1]).Awakening
-      dt.grade = ((self._cfg_blackfist_hard)[1]).Grade
-      dt.equip = ((self._cfg_blackfist_hard)[1]).Equip
-      ;
-      (table.insert)(date, dt)
+      dt.lv = self._cfg_blackfist_hard[1].Lv
+      dt.awakening = self._cfg_blackfist_hard[1].Awakening
+      dt.grade = self._cfg_blackfist_hard[1].Grade
+      dt.equip = self._cfg_blackfist_hard[1].Equip
+      table.insert(date, dt)
     end
   end
-  do
-    return date
-  end
+  return date
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController.btnInformationOnClick = function(self, go)
-  -- function num : 0_19
+function UIN7LevelDetailsController:btnInformationOnClick(go)
   local date = self:_GetEnemyDate()
   if date == nil then
-    return 
+    return
   end
   self:ShowDialog("UIN7EnemyDetailsController", date, 1)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController.btnFightEnterOnClick = function(self, go)
-  -- function num : 0_20 , upvalues : _ENV
+function UIN7LevelDetailsController:btnFightEnterOnClick(go)
   if self._currentLevelNum <= self._order_id + 1 then
-    local data = (self._campaignModule):GetN7BlackFightData()
-    local ctx = (self._module):TeamCtx()
-    local missionId = ((self._currentLevelsCfgtab)[self._currentLevelNum]).MissionID
+    local data = self._campaignModule:GetN7BlackFightData()
+    local ctx = self._module:TeamCtx()
+    local missionId = self._currentLevelsCfgtab[self._currentLevelNum].MissionID
     local lp = data:GetComponentBlackFight()
-    ctx:Init(TeamOpenerType.BlackFist, {missionId, lp:GetCampaignMissionComponentId(), lp:GetCampaignMissionParamKeyMap()})
+    ctx:Init(TeamOpenerType.BlackFist, {
+      missionId,
+      lp:GetCampaignMissionComponentId(),
+      lp:GetCampaignMissionParamKeyMap()
+    })
     self:Lock("DoEnterTeam")
     ctx:ShowDialogUITeams(false)
   else
-    do
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_n7_hint"))
-      ;
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N7ClickChallenge)
-    end
+    ToastManager.ShowToast(StringTable.Get("str_n7_hint"))
   end
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N7ClickChallenge)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController.arrowsLOnClick = function(self, go)
-  -- function num : 0_21
+function UIN7LevelDetailsController:arrowsLOnClick(go)
   if self._currentLevelNum == self._currentLevelMaxCont then
-    return 
+    return
   end
-  ;
-  (self.arrowsR):SetActive(true)
+  self.arrowsR:SetActive(true)
   self._currentLevelNum = self._currentLevelNum + 1
-  self:_ShowEnemyDetails((self._currentLevelsCfgtab)[self._currentLevelNum])
+  self:_ShowEnemyDetails(self._currentLevelsCfgtab[self._currentLevelNum])
   self:_ShowCurrentDifficulty(self._currentLevelNum)
   if self._currentLevelNum == self._currentLevelMaxCont then
-    (self.arrowsL):SetActive(false)
+    self.arrowsL:SetActive(false)
   end
   self:_Showlock()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7LevelDetailsController.arrowsROnClick = function(self, go)
-  -- function num : 0_22
+function UIN7LevelDetailsController:arrowsROnClick(go)
   if self._currentLevelNum == 1 then
-    return 
+    return
   end
-  ;
-  (self.arrowsL):SetActive(true)
+  self.arrowsL:SetActive(true)
   self._currentLevelNum = self._currentLevelNum - 1
-  self:_ShowEnemyDetails((self._currentLevelsCfgtab)[self._currentLevelNum])
+  self:_ShowEnemyDetails(self._currentLevelsCfgtab[self._currentLevelNum])
   self:_ShowCurrentDifficulty(self._currentLevelNum)
   if self._currentLevelNum == 1 then
-    (self.arrowsR):SetActive(false)
+    self.arrowsR:SetActive(false)
   end
   self:_Showlock()
 end
-
-

@@ -1,43 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/start.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 NetBuffer = BaseUtil.NetBuffer
--- DECOMPILER ERROR at PC4: Confused about usage of register: R0 in 'UnsetPending'
-
 BaseUtil.NetBuffer = nil
 CallResultType = BaseUtil.CallResultType
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
 BaseUtil.CallResultType = nil
 NetToken = BaseUtil.NetToken
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
 BaseUtil.NetToken = nil
 NetTokenType = BaseUtil.NetTokenType
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
 BaseUtil.NetTokenType = nil
 NetAddrInfo = BaseUtil.NetAddrInfo
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
 BaseUtil.NetAddrInfo = nil
 NetworkProtocol = BaseUtil.NetworkProtocol
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
 BaseUtil.NetworkProtocol = nil
 NetCallCenter = BaseUtil.NetCallCenter
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
 BaseUtil.NetCallCenter = nil
 NetMessage = BaseUtil.NetMessage
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
 BaseUtil.NetMessage = nil
 NetState = BaseUtil.NetState
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
 BaseUtil.NetState = nil
 require("const")
 require("switch")
@@ -75,16 +52,10 @@ require("pre_require")
 require("time_helper")
 require("component_base")
 requireall(nil)
-;
-(GameGlobal:GetInstance()):Init()
-;
-(LuaDcHelper.Init)()
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-if (HelperProxy:GetInstance()):IsDebug() and EDITOR then
+GameGlobal:GetInstance():Init()
+LuaDcHelper.Init()
+if HelperProxy:GetInstance():IsDebug() and EDITOR then
   package.cpath = package.cpath .. ";c:/Users/Administrator/.vscode/extensions/tangzx.emmylua-0.5.14/debugger/emmy/windows/x64/?.dll"
   local dbg = require("emmy_core")
-  ;
-  (dbg.tcpListen)("localhost", 9966)
+  dbg.tcpListen("localhost", 9966)
 end
-

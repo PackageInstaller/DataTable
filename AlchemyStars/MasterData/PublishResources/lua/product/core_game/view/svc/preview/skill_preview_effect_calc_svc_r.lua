@@ -1,132 +1,97 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/skill_preview_effect_calc_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPreviewEffectCalcService", Object)
 SkillPreviewEffectCalcService = SkillPreviewEffectCalcService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewEffectCalcService.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewEffectCalcService:Constructor(world)
   self._world = world
   self._skillEffectParamParser = SkillEffectParamParser:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.Initialize = function(self)
-  -- function num : 0_1
-  self._configService = (self._world):GetService("Config")
-  self._utilDataService = (self._world):GetService("UtilData")
+function SkillPreviewEffectCalcService:Initialize()
+  self._configService = self._world:GetService("Config")
+  self._utilDataService = self._world:GetService("UtilData")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService._CreateSkillEffectCalcParam = function(self, casterID, targetIDArray, effectParam, range)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPreviewEffectCalcService:_CreateSkillEffectCalcParam(casterID, targetIDArray, effectParam, range)
   local calcParam = SkillEffectCalcParam:New(casterID, targetIDArray, effectParam, 0, range)
   return calcParam
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.CreateSkillEffectParam = function(self, effectType, effectParam)
-  -- function num : 0_3
-  local param = (self._skillEffectParamParser):ParseSkillEffectParam(effectType, effectParam)
+function SkillPreviewEffectCalcService:CreateSkillEffectParam(effectType, effectParam)
+  local param = self._skillEffectParamParser:ParseSkillEffectParam(effectType, effectParam)
   return param
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.CalcConvertGridElement = function(self, casterEntity, scopeGridList, param)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillPreviewEffectCalcService:CalcConvertGridElement(casterEntity, scopeGridList, param)
   local skillConvertEffectParam = param
   local sourceArray = skillConvertEffectParam:GetSourceGridElement()
   local targetElementType = skillConvertEffectParam:GetTargetGridElement()
   local useEntityElement = false
-  local elementEntity = nil
+  local elementEntity
   if skillConvertEffectParam:IsConvertToCasterElement() then
     useEntityElement = true
     elementEntity = casterEntity
-  else
-    if skillConvertEffectParam:IsConvertToTeamLeaderElement() then
-      useEntityElement = true
-      local teamEntity = nil
-      if casterEntity:HasPet() then
-        teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-      else
-        if casterEntity:HasTeam() then
-          teamEntity = casterEntity
-        end
+  elseif skillConvertEffectParam:IsConvertToTeamLeaderElement() then
+    useEntityElement = true
+    local teamEntity
+    if casterEntity:HasPet() then
+      teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
+    elseif casterEntity:HasTeam() then
+      teamEntity = casterEntity
+    end
+    elementEntity = teamEntity:GetTeamLeaderPetEntity()
+  end
+  if useEntityElement and elementEntity and elementEntity:Element() ~= nil and elementEntity:Element():GetPrimaryType() ~= nil then
+    local tarElement = elementEntity:Element():GetPrimaryType()
+    targetElementType = tarElement
+    local newSource = {}
+    for _, elementType in ipairs(sourceArray) do
+      if targetElementType ~= elementType then
+        table.insert(newSource, elementType)
       end
-      elementEntity = teamEntity:GetTeamLeaderPetEntity()
+    end
+    sourceArray = newSource
+  end
+  local targetMaxCount = skillConvertEffectParam:GetTargetGridElementCount()
+  local ignoreBlock = skillConvertEffectParam:IsIgnoreBlock()
+  local targetGridDic = {}
+  local hasEnoughTarget = false
+  local currentTargetCount = 0
+  local env = self._world:GetPreviewEntity():PreviewEnv()
+  local skillRangePosList = {}
+  local blockedPieces = {}
+  for k, v in pairs(scopeGridList) do
+    local cantConverPos = env:IsPosBlock(v, BlockFlag.ChangeElement)
+    if ignoreBlock then
+      cantConverPos = false
+    end
+    if cantConverPos then
+      table.insert(blockedPieces, v)
+    else
+      table.insert(skillRangePosList, v)
     end
   end
-  do
-    if useEntityElement and elementEntity and elementEntity:Element() ~= nil and (elementEntity:Element()):GetPrimaryType() ~= nil then
-      local tarElement = (elementEntity:Element()):GetPrimaryType()
-      targetElementType = tarElement
-      local newSource = {}
-      for _,elementType in ipairs(sourceArray) do
-        if targetElementType ~= elementType then
-          (table.insert)(newSource, elementType)
-        end
-      end
-      sourceArray = newSource
-    end
-    do
-      local targetMaxCount = skillConvertEffectParam:GetTargetGridElementCount()
-      local ignoreBlock = skillConvertEffectParam:IsIgnoreBlock()
-      local targetGridDic = {}
-      local hasEnoughTarget = false
-      local currentTargetCount = 0
-      local env = ((self._world):GetPreviewEntity()):PreviewEnv()
-      local skillRangePosList = {}
-      local blockedPieces = {}
-      for k,v in pairs(scopeGridList) do
-        local cantConverPos = env:IsPosBlock(v, BlockFlag.ChangeElement)
-        if ignoreBlock then
-          cantConverPos = false
-        end
-        if cantConverPos then
-          (table.insert)(blockedPieces, v)
-        else
-          ;
-          (table.insert)(skillRangePosList, v)
-        end
-      end
-      for _,gridPos in ipairs(skillRangePosList) do
-        local isMatch = self:IsPreviewGridElementMatch(gridPos, sourceArray)
-        if isMatch then
-          targetGridDic[#targetGridDic + 1] = Vector2(gridPos.x, gridPos.y)
-          currentTargetCount = currentTargetCount + 1
-          if targetMaxCount <= currentTargetCount then
-            hasEnoughTarget = true
-            break
-          end
-        end
-      end
-      do
-        local skillConvertEffectResult = SkillConvertGridElementEffectResult:New(targetGridDic, targetElementType, blockedPieces)
-        return skillConvertEffectResult
+  for _, gridPos in ipairs(skillRangePosList) do
+    local isMatch = self:IsPreviewGridElementMatch(gridPos, sourceArray)
+    if isMatch then
+      targetGridDic[#targetGridDic + 1] = Vector2(gridPos.x, gridPos.y)
+      currentTargetCount = currentTargetCount + 1
+      if targetMaxCount <= currentTargetCount then
+        hasEnoughTarget = true
+        break
       end
     end
   end
+  local skillConvertEffectResult = SkillConvertGridElementEffectResult:New(targetGridDic, targetElementType, blockedPieces)
+  return skillConvertEffectResult
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.CalcHitBack = function(self, casterEntity, scopeGridList, targetID, skillPreviewContext, param)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillPreviewEffectCalcService:CalcHitBack(casterEntity, scopeGridList, targetID, skillPreviewContext, param)
   local attackerPos = skillPreviewContext:GetCasterPos()
   local attackerDir = skillPreviewContext:GetCasterDir()
   local attackerBodyArea = skillPreviewContext:GetCasterBodyArea()
   local hitBackDirType = skillPreviewContext:GetHitBackDirType()
   local ignorePlayerBlock = param:GetIgnorePlayerBlock()
-  if not hitBackDirType then
-    hitBackDirType = param:GetDirType()
-  end
+  hitBackDirType = hitBackDirType or param:GetDirType()
   local type = param:GetType()
   local hitBackDistance = param:GetDistance()
   local calcType = param:GetCalcType()
@@ -140,301 +105,245 @@ SkillPreviewEffectCalcService.CalcHitBack = function(self, casterEntity, scopeGr
     if component then
       local curPickNum = component:GetAllValidPickUpGridPosCount()
       if curPickNum ~= checkNum then
-        return 
+        return
       end
     end
   end
-  do
-    local defender = (self._world):GetEntityByID(targetID)
-    if not defender then
-      return nil
+  local defender = self._world:GetEntityByID(targetID)
+  if not defender then
+    return nil
+  end
+  if defender:HasTrapID() then
+    local trapRenderCmpt = defender:TrapRender()
+    if TrapType.BombByHitBack ~= trapRenderCmpt:GetTrapType() then
+      return
     end
-    do
-      if defender:HasTrapID() then
-        local trapRenderCmpt = defender:TrapRender()
-        if TrapType.BombByHitBack ~= trapRenderCmpt:GetTrapType() then
-          return 
-        end
-      end
-      local defenderPos = defender:GetGridPosition()
-      local defenderBodyArea = defender:BodyArea()
-      local env = ((self._world):GetPreviewEntity()):PreviewEnv()
-      if env:IsImmuneHitback(defender) then
-        return SkillHitBackEffectResult:New(targetID, defenderPos, defenderPos)
-      end
-      local utilCalcSvc = ((self._world):GetService("UtilCalc"))
-      local dir = nil
-      if hitBackDirType == HitBackDirectionType.Cross then
-        dir = (GameHelper.ComputeLogicDir)(attackerDir)
-      else
-        if hitBackDirType == HitBackDirectionType.SelectCanUseDir then
-          dir = utilCalcSvc:_CalCanUseHitBackDir(defender, hitBackDistance)
-        else
-          dir = utilCalcSvc:_CalcHitBackDir(hitBackDirType, attackerPos, defenderPos, attackerBodyArea, defenderBodyArea)
-        end
-      end
-      -- DECOMPILER ERROR at PC131: Unhandled construct in 'MakeBoolean' P1
-
-      if (dir == nil or dir == Vector2.zero) and backupDirectionPlan and backupDirectionPlan == HitBackDirectionBackupPlan.AlwaysUp then
+  end
+  local defenderPos = defender:GetGridPosition()
+  local defenderBodyArea = defender:BodyArea()
+  local env = self._world:GetPreviewEntity():PreviewEnv()
+  if env:IsImmuneHitback(defender) then
+    return SkillHitBackEffectResult:New(targetID, defenderPos, defenderPos)
+  end
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  local dir
+  if hitBackDirType == HitBackDirectionType.Cross then
+    dir = GameHelper.ComputeLogicDir(attackerDir)
+  elseif hitBackDirType == HitBackDirectionType.SelectCanUseDir then
+    dir, hitBackDistance = utilCalcSvc:_CalCanUseHitBackDir(defender, hitBackDistance)
+  else
+    dir = utilCalcSvc:_CalcHitBackDir(hitBackDirType, attackerPos, defenderPos, attackerBodyArea, defenderBodyArea)
+  end
+  if dir == nil or dir == Vector2.zero then
+    if backupDirectionPlan then
+      if backupDirectionPlan == HitBackDirectionBackupPlan.AlwaysUp then
         dir = Vector2.up
       end
-      ;
-      (Log.fatal)("击退方向计算结果错误！")
-      do return SkillHitBackEffectResult:New(targetID, defenderPos, defenderPos) end
-      if type == HitBackType.PullBack then
-        dir = -dir
-      end
-      local excludePosList = {}
-      if excludeCasterPos then
-        local casterBodyArea = attackerBodyArea:GetArea()
-        if casterBodyArea and attackerPos then
-          for i = 1, #casterBodyArea do
-            excludePosList[#excludePosList + 1] = casterBodyArea[i] + attackerPos
-          end
-        end
-      end
-      do
-        local targetPos = defenderPos:Clone()
-        local bodyArea = defenderBodyArea:GetArea()
-        for i = 1, #bodyArea do
-          excludePosList[#excludePosList + 1] = defenderPos + bodyArea[i]
-        end
-        local useCheckBlockFlag = BlockFlag.HitBack
-        do
-          if defender:HasMonsterID() then
-            local raceType = (defender:MonsterID()):GetMonsterRaceType()
-            if MonsterRaceType.Fly == raceType then
-              useCheckBlockFlag = BlockFlag.HitBackFly
-            end
-          end
-          local env = ((self._world):GetPreviewEntity()):PreviewEnv()
-          local utilData = (self._world):GetService("UtilData")
-          for i = 1, hitBackDistance do
-            local tempPos = targetPos + dir
-            local needBreak = false
-            for i = 1, #bodyArea do
-              local tempBodyPos = tempPos + bodyArea[i]
-              if not (table.icontains)(excludePosList, tempBodyPos) then
-                if not utilData:IsValidPiecePos(tempBodyPos) then
-                  needBreak = true
-                  break
-                end
-                if env:IsPosBlock(tempBodyPos, useCheckBlockFlag) or utilData:IsPosBlockWithEntityRace(tempBodyPos, useCheckBlockFlag, defender) then
-                  needBreak = true
-                  break
-                end
-                local checkTrapWallPosStart = tempBodyPos - dir
-                local trapWallBlock = utilData:CalcHitbackForTrapWallBlock(checkTrapWallPosStart, tempBodyPos, useCheckBlockFlag)
-                if trapWallBlock then
-                  needBreak = true
-                  break
-                end
-              end
-            end
-            do
-              local trapWallBlock = utilData:CalcHitbackForTrapWallBlockMultiBodyArea(tempPos, bodyArea)
-              if trapWallBlock then
-                needBreak = true
-                break
-              end
-              if not needBreak then
-                do
-                  targetPos = tempPos
-                  -- DECOMPILER ERROR at PC270: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC270: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC270: LeaveBlock: unexpected jumping out DO_STMT
-
-                end
-              end
-            end
-          end
-          local trapRenderCmpt = defender:TrapRender()
-          do
-            if trapRenderCmpt and TrapType.BombByHitBack == trapRenderCmpt:GetTrapType() then
-              local posNext = targetPos + dir
-              if utilData:IsHaveEntity(posNext, EnumTargetEntity.Pet | EnumTargetEntity.Monster) then
-                targetPos = posNext
-              end
-            end
-            if targetPos ~= defenderPos then
-              env:DelEntityBlockFlag(defender, (defender:GridLocation()):GetGridPos())
-              env:AddEntityBlockFlag(defender, targetPos)
-            end
-            local hitbackResult = SkillHitBackEffectResult:New(targetID, defenderPos, targetPos, nil, calcType, dir)
-            return hitbackResult
-          end
-        end
+    else
+      Log.fatal("击退方向计算结果错误！")
+      return SkillHitBackEffectResult:New(targetID, defenderPos, defenderPos)
+    end
+  end
+  if type == HitBackType.PullBack then
+    dir = -dir
+  end
+  local excludePosList = {}
+  if excludeCasterPos then
+    local casterBodyArea = attackerBodyArea:GetArea()
+    if casterBodyArea and attackerPos then
+      for i = 1, #casterBodyArea do
+        excludePosList[#excludePosList + 1] = casterBodyArea[i] + attackerPos
       end
     end
   end
+  local targetPos = defenderPos:Clone()
+  local bodyArea = defenderBodyArea:GetArea()
+  for i = 1, #bodyArea do
+    excludePosList[#excludePosList + 1] = defenderPos + bodyArea[i]
+  end
+  local useCheckBlockFlag = BlockFlag.HitBack
+  if defender:HasMonsterID() then
+    local raceType = defender:MonsterID():GetMonsterRaceType()
+    if MonsterRaceType.Fly == raceType then
+      useCheckBlockFlag = BlockFlag.HitBackFly
+    end
+  end
+  local env = self._world:GetPreviewEntity():PreviewEnv()
+  local utilData = self._world:GetService("UtilData")
+  for i = 1, hitBackDistance do
+    local tempPos = targetPos + dir
+    local needBreak = false
+    for i = 1, #bodyArea do
+      local tempBodyPos = tempPos + bodyArea[i]
+      if not table.icontains(excludePosList, tempBodyPos) then
+        if not utilData:IsValidPiecePos(tempBodyPos) then
+          needBreak = true
+          break
+        end
+        if env:IsPosBlock(tempBodyPos, useCheckBlockFlag) or utilData:IsPosBlockWithEntityRace(tempBodyPos, useCheckBlockFlag, defender) then
+          needBreak = true
+          break
+        end
+        local checkTrapWallPosStart = tempBodyPos - dir
+        local trapWallBlock = utilData:CalcHitbackForTrapWallBlock(checkTrapWallPosStart, tempBodyPos, useCheckBlockFlag)
+        if trapWallBlock then
+          needBreak = true
+          break
+        end
+      end
+    end
+    local trapWallBlock = utilData:CalcHitbackForTrapWallBlockMultiBodyArea(tempPos, bodyArea)
+    if trapWallBlock then
+      needBreak = true
+      break
+    end
+    if needBreak then
+      break
+    end
+    targetPos = tempPos
+  end
+  local trapRenderCmpt = defender:TrapRender()
+  if trapRenderCmpt and TrapType.BombByHitBack == trapRenderCmpt:GetTrapType() then
+    local posNext = targetPos + dir
+    if utilData:IsHaveEntity(posNext, EnumTargetEntity.Pet | EnumTargetEntity.Monster) then
+      targetPos = posNext
+    end
+  end
+  if targetPos ~= defenderPos then
+    env:DelEntityBlockFlag(defender, defender:GridLocation():GetGridPos())
+    env:AddEntityBlockFlag(defender, targetPos)
+  end
+  local hitbackResult = SkillHitBackEffectResult:New(targetID, defenderPos, targetPos, nil, calcType, dir)
+  return hitbackResult
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.CalcMultiTraction = function(self, casterEntity, skillPreviewContext, param, transContextCenter)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillPreviewEffectCalcService:CalcMultiTraction(casterEntity, skillPreviewContext, param, transContextCenter)
   local centerPos = skillPreviewContext:GetCasterPos()
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
-  do
-    if previewPickUpComponent then
-      local pickUpGridArray = previewPickUpComponent:GetAllValidPickUpGridPos()
-      centerPos = pickUpGridArray[1]
-    end
-    if transContextCenter then
-      centerPos = skillPreviewContext:GetScopeCenterPosList()
-    end
-    local scopeResult = skillPreviewContext:GetScopeResult(SkillEffectType.MultiTraction)
-    local calcParam = self:_CreateSkillEffectCalcParam(casterEntity:GetID(), {}, param, scopeResult)
-    calcParam:SetGridPos(centerPos)
-    param._finalDamageIncreateRate = nil
-    local skillEffectCalc = SkillEffectCalc_MultiTraction:New(self._world)
-    local result = skillEffectCalc:DoSkillEffectCalculator(calcParam)
-    return result
+  if previewPickUpComponent then
+    local pickUpGridArray = previewPickUpComponent:GetAllValidPickUpGridPos()
+    centerPos = pickUpGridArray[1]
   end
+  if transContextCenter then
+    centerPos = skillPreviewContext:GetScopeCenterPosList()
+  end
+  local scopeResult = skillPreviewContext:GetScopeResult(SkillEffectType.MultiTraction)
+  local calcParam = self:_CreateSkillEffectCalcParam(casterEntity:GetID(), {}, param, scopeResult)
+  calcParam:SetGridPos(centerPos)
+  param._finalDamageIncreateRate = nil
+  local skillEffectCalc = SkillEffectCalc_MultiTraction:New(self._world)
+  local result = skillEffectCalc:DoSkillEffectCalculator(calcParam)
+  return result
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.CalcSerialKiller = function(self, casterEntityID, nearestEntityIDs, skillEffectParam, skillID)
-  -- function num : 0_7 , upvalues : _ENV
-  local attacker = (self._world):GetEntityByID(casterEntityID)
+function SkillPreviewEffectCalcService:CalcSerialKiller(casterEntityID, nearestEntityIDs, skillEffectParam, skillID)
+  local attacker = self._world:GetEntityByID(casterEntityID)
   local serialScopeType = skillEffectParam:GetSerialScopeType()
   local radius = skillEffectParam:GetRadius()
   local pieceType = skillEffectParam:GetPieceType()
   local posCaster = attacker:GetGridPosition()
-  local casterBodyArea = (attacker:BodyArea()):GetArea()
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local casterBodyArea = attacker:BodyArea():GetArea()
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
-  local scopeResult = scopeCalculator:ComputeScopeRange(serialScopeType, {[1] = radius, [2] = 0}, posCaster, casterBodyArea)
+  local scopeResult = scopeCalculator:ComputeScopeRange(serialScopeType, {
+    [1] = radius,
+    [2] = 0
+  }, posCaster, casterBodyArea)
   local addPiecePosList = {}
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   if scopeResult then
     local array = scopeResult:GetAttackRange()
-    for _,v in pairs(array) do
+    for _, v in pairs(array) do
       local pt = env:GetPieceType(v)
       if pt == pieceType then
-        (table.insert)(addPiecePosList, v)
+        table.insert(addPiecePosList, v)
       end
     end
   end
-  do
-    local res = SkillSerialKillerResult:New()
-    res:SetAddPiecePosList(addPiecePosList)
-    return res
-  end
+  local res = SkillSerialKillerResult:New()
+  res:SetAddPiecePosList(addPiecePosList)
+  return res
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.CalcForceMovement = function(self, casterEntity, skillPreviewContext, skillEffectParam)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillPreviewEffectCalcService:CalcForceMovement(casterEntity, skillPreviewContext, skillEffectParam)
   local skillEffectCalc = PreviewSkillEffectCalc_ForceMovement:New(self._world)
   local result = skillEffectCalc:Calculate(casterEntity, skillPreviewContext, skillEffectParam)
   return result
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.CalcTargetFourDirForceMovementStep = function(self, targetEntity, maxStep)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillPreviewEffectCalcService:CalcTargetFourDirForceMovementStep(targetEntity, maxStep)
   local skillEffectCalc = PreviewSkillEffectCalc_ForceMovement:New(self._world)
   local result = skillEffectCalc:CalcTargetFourDirForceMovementStep(targetEntity, skillPreviewContext, skillEffectParam)
   return result
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.CalcTargetForceMovementStep = function(self, casterEntity, v2Dir, maxStep)
-  -- function num : 0_10 , upvalues : _ENV
+function SkillPreviewEffectCalcService:CalcTargetForceMovementStep(casterEntity, v2Dir, maxStep)
   local skillEffectCalc = PreviewSkillEffectCalc_ForceMovement:New(self._world)
   local result = skillEffectCalc:CalcTargetForceMovementStep(casterEntity, v2Dir, maxStep)
   return result
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.CalcTransportByRange = function(self, casterEntity, skillPreviewContext, effectParam, pickUpList)
-  -- function num : 0_11 , upvalues : _ENV
+function SkillPreviewEffectCalcService:CalcTransportByRange(casterEntity, skillPreviewContext, effectParam, pickUpList)
   local targetIDs = skillPreviewContext:GetTargetEntityIDList(SkillEffectType.TransportByRange)
   local isPickUp = effectParam:IsPickUp()
   local isTransportTarget = effectParam:IsTransportTarget()
-  local result = (SkillEffectResultTransportByRange:New())
-  local range, dirType = nil, nil
+  local result = SkillEffectResultTransportByRange:New()
+  local range, dirType
   if isPickUp then
-    local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-    range = utilScopeSvc:CalcRangeByPickUpPosList(pickUpList)
-    local utilDataSvc = (self._world):GetService("UtilData")
-    for i,v in ipairs(range) do
+    local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+    range, dirType = utilScopeSvc:CalcRangeByPickUpPosList(pickUpList)
+    local utilDataSvc = self._world:GetService("UtilData")
+    for i, v in ipairs(range) do
       local nextPos = self:GridGetNextPos(v, dirType)
       local pieceType = utilDataSvc:GetPieceType(v)
       local pieceData = TransportByRangePieceData:New(v, pieceType, nextPos)
       result:AddPieceData(pieceData)
     end
   end
-  do
-    if isTransportTarget then
-      local targetID = targetIDs[1]
-      local targetEntity = (self._world):GetEntityByID(targetID)
-      local utilDatSvc = (self._world):GetService("UtilData")
-      if targetEntity and not utilDatSvc:CheckForceMoveImmunity(targetEntity) then
-        local pos = targetEntity:GetGridPosition()
-        local bodyAreaCount = (targetEntity:BodyArea()):GetAreaCount()
-        if bodyAreaCount == 1 then
-          local nextPos = self:GetNextPos(pos, dirType)
-          local utilDataSvc = (self._world):GetService("UtilData")
-          if utilDataSvc:IsMonsterCanTel2TargetPos(targetEntity, nextPos) then
-            result:AddTargetData(targetID, pos, nextPos)
-          end
+  if isTransportTarget then
+    local targetID = targetIDs[1]
+    local targetEntity = self._world:GetEntityByID(targetID)
+    local utilDatSvc = self._world:GetService("UtilData")
+    if targetEntity and not utilDatSvc:CheckForceMoveImmunity(targetEntity) then
+      local pos = targetEntity:GetGridPosition()
+      local bodyAreaCount = targetEntity:BodyArea():GetAreaCount()
+      if bodyAreaCount == 1 then
+        local nextPos = self:GetNextPos(pos, dirType)
+        local utilDataSvc = self._world:GetService("UtilData")
+        if utilDataSvc:IsMonsterCanTel2TargetPos(targetEntity, nextPos) then
+          result:AddTargetData(targetID, pos, nextPos)
         end
       end
-    end
-    do
-      return result
     end
   end
+  return result
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService._GetNextPos = function(self, i, pos, dirType)
-  -- function num : 0_12 , upvalues : _ENV
-  local nextPos = nil
+function SkillPreviewEffectCalcService:_GetNextPos(i, pos, dirType)
+  local nextPos
   if dirType == DirectionType.Up then
     nextPos = Vector2(pos.x, pos.y + i)
-  else
-    if dirType == DirectionType.Down then
-      nextPos = Vector2(pos.x, pos.y - i)
-    else
-      if dirType == DirectionType.Left then
-        nextPos = Vector2(pos.x - i, pos.y)
-      else
-        if dirType == DirectionType.Right then
-          nextPos = Vector2(pos.x + i, pos.y)
-        end
-      end
-    end
+  elseif dirType == DirectionType.Down then
+    nextPos = Vector2(pos.x, pos.y - i)
+  elseif dirType == DirectionType.Left then
+    nextPos = Vector2(pos.x - i, pos.y)
+  elseif dirType == DirectionType.Right then
+    nextPos = Vector2(pos.x + i, pos.y)
   end
   return nextPos
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.GetNextPos = function(self, pos, dirType)
-  -- function num : 0_13 , upvalues : _ENV
-  local max = nil
-  local utilScopeCalcSvc = ((self._world):GetService("UtilScopeCalc"))
-  local nextPos = nil
+function SkillPreviewEffectCalcService:GetNextPos(pos, dirType)
+  local max
+  local utilScopeCalcSvc = self._world:GetService("UtilScopeCalc")
+  local nextPos
   if dirType == DirectionType.Up or dirType == DirectionType.Down then
     max = utilScopeCalcSvc:GetCurBoardMaxY()
-  else
-    if dirType == DirectionType.Left or dirType == DirectionType.Right then
-      max = utilScopeCalcSvc:GetCurBoardMaxX()
-    end
+  elseif dirType == DirectionType.Left or dirType == DirectionType.Right then
+    max = utilScopeCalcSvc:GetCurBoardMaxX()
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilDataSvc = self._world:GetService("UtilData")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   for i = 1, max do
     local tmpPos = self:_GetNextPos(i, pos, dirType)
     local pieceType = utilDataSvc:GetPieceType(tmpPos)
@@ -448,22 +357,17 @@ SkillPreviewEffectCalcService.GetNextPos = function(self, pos, dirType)
   return nextPos
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.GridGetNextPos = function(self, pos, dirType)
-  -- function num : 0_14 , upvalues : _ENV
-  local max = nil
-  local utilScopeCalcSvc = ((self._world):GetService("UtilScopeCalc"))
-  local nextPos = nil
+function SkillPreviewEffectCalcService:GridGetNextPos(pos, dirType)
+  local max
+  local utilScopeCalcSvc = self._world:GetService("UtilScopeCalc")
+  local nextPos
   if dirType == DirectionType.Up or dirType == DirectionType.Down then
     max = utilScopeCalcSvc:GetCurBoardMaxY()
-  else
-    if dirType == DirectionType.Left or dirType == DirectionType.Right then
-      max = utilScopeCalcSvc:GetCurBoardMaxX()
-    end
+  elseif dirType == DirectionType.Left or dirType == DirectionType.Right then
+    max = utilScopeCalcSvc:GetCurBoardMaxX()
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilDataSvc = self._world:GetService("UtilData")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   for i = 1, max do
     local tmpPos = self:_GetNextPos(i, pos, dirType)
     local pieceType = utilDataSvc:GetPieceType(tmpPos)
@@ -477,10 +381,7 @@ SkillPreviewEffectCalcService.GridGetNextPos = function(self, pos, dirType)
   return nextPos
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.CalcPickUpGridTogether = function(self, casterEntity, skillPreviewContext, effectParam, pickUpList)
-  -- function num : 0_15 , upvalues : _ENV
+function SkillPreviewEffectCalcService:CalcPickUpGridTogether(casterEntity, skillPreviewContext, effectParam, pickUpList)
   local skillRange = skillPreviewContext:GetScopeResult()
   local rangeCount = #skillRange
   local pickupPos = pickUpList[1]
@@ -492,31 +393,18 @@ SkillPreviewEffectCalcService.CalcPickUpGridTogether = function(self, casterEnti
     local gridData = gridDataList[i]
     if pieceType == gridData:GetGridType() and gridData:IsCanConvert() and i ~= replaceIndex then
       local tmpData = gridData
-      ;
-      (Log.info)("ReplaceIndex:", replaceIndex, "Type:", gridData:GetGridType(), " GridPos:", gridData:GetGridPos())
+      Log.info("ReplaceIndex:", replaceIndex, "Type:", gridData:GetGridType(), " GridPos:", gridData:GetGridPos())
       local j = replaceIndex
-      while 1 do
-        if j <= i then
-          local tmpR = self:FindCanTogetherGrid(gridDataList, j, i, 1)
-          if tmpR then
-            (Log.info)("DownToUp Index:", tmpR, "Pos:", skillRange[tmpR], " NewType:", tmpData:GetGridType())
-            local tempGridData = gridDataList[tmpR]
-            gridDataList[tmpR] = tmpData
-            tmpData = tempGridData
-            j = tmpR
-          end
-          do
-            do
-              j = j + 1
-              -- DECOMPILER ERROR at PC67: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC67: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC67: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+      while i >= j do
+        local tmpR = self:FindCanTogetherGrid(gridDataList, j, i, 1)
+        if tmpR then
+          Log.info("DownToUp Index:", tmpR, "Pos:", skillRange[tmpR], " NewType:", tmpData:GetGridType())
+          local tempGridData = gridDataList[tmpR]
+          gridDataList[tmpR] = tmpData
+          tmpData = tempGridData
+          j = tmpR
         end
+        j = j + 1
       end
       replaceIndex = replaceIndex + 1
     end
@@ -525,46 +413,31 @@ SkillPreviewEffectCalcService.CalcPickUpGridTogether = function(self, casterEnti
   for i = pickupIndex, 1, -1 do
     local gridData = gridDataList[i]
     if pieceType == gridData:GetGridType() and gridData:IsCanConvert() and i ~= replaceIndex then
-      (Log.info)("ReplaceIndex:", replaceIndex, "GridPos:", gridData:GetGridPos())
+      Log.info("ReplaceIndex:", replaceIndex, "GridPos:", gridData:GetGridPos())
       local tmpData = gridData
       local j = replaceIndex
-      while 1 do
-        if i <= j then
-          local tmpR = self:FindCanTogetherGrid(gridDataList, j, i, -1)
-          if tmpR then
-            (Log.info)("UpToDown Index:", tmpR, "Pos:", skillRange[tmpR], " NewType:", tmpData:GetGridType())
-            local tempGridData = gridDataList[tmpR]
-            gridDataList[tmpR] = tmpData
-            tmpData = tempGridData
-            j = tmpR
-          end
-          do
-            do
-              j = j - 1
-              -- DECOMPILER ERROR at PC121: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC121: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC121: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+      while i <= j do
+        local tmpR = self:FindCanTogetherGrid(gridDataList, j, i, -1)
+        if tmpR then
+          Log.info("UpToDown Index:", tmpR, "Pos:", skillRange[tmpR], " NewType:", tmpData:GetGridType())
+          local tempGridData = gridDataList[tmpR]
+          gridDataList[tmpR] = tmpData
+          tmpData = tempGridData
+          j = tmpR
         end
+        j = j - 1
       end
       replaceIndex = replaceIndex - 1
     end
   end
-  for i,pos in ipairs(skillRange) do
-    (gridDataList[i]):SetGridPos(pos)
+  for i, pos in ipairs(skillRange) do
+    gridDataList[i]:SetGridPos(pos)
   end
   local results = SkillEffectResult_PickUpGridTogether:New(gridDataList)
   return results
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.FindCanTogetherGrid = function(self, gridDataList, beginIndex, endIndex, step)
-  -- function num : 0_16
+function SkillPreviewEffectCalcService:FindCanTogetherGrid(gridDataList, beginIndex, endIndex, step)
   for i = beginIndex, endIndex, step do
     local gridData = gridDataList[i]
     if gridData:IsCanConvert() then
@@ -573,45 +446,35 @@ SkillPreviewEffectCalcService.FindCanTogetherGrid = function(self, gridDataList,
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.FindPickIndex = function(self, range, pickPos)
-  -- function num : 0_17 , upvalues : _ENV
-  for i,v in ipairs(range) do
+function SkillPreviewEffectCalcService:FindPickIndex(range, pickPos)
+  for i, v in ipairs(range) do
     if v.x == pickPos.x and v.y == pickPos.y then
       return i
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.BuildData = function(self, skillRange)
-  -- function num : 0_18 , upvalues : _ENV
+function SkillPreviewEffectCalcService:BuildData(skillRange)
   local ret = {}
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local utilDataSvc = self._world:GetService("UtilData")
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderBoardCmpt = renderBoardEntity:RenderBoard()
-  for i,pos in ipairs(skillRange) do
+  for i, pos in ipairs(skillRange) do
     local gridEntity = renderBoardCmpt:GetGridRenderEntity(pos)
-    local pieceType = (gridEntity:Piece()):GetPieceType()
+    local pieceType = gridEntity:Piece():GetPieceType()
     local canConvert = utilDataSvc:IsPosCanConvertGridElement(pos)
     if pieceType == PieceType.None then
       canConvert = false
     end
     local data = PickUpGridTogetherData:New(pieceType, pos, canConvert)
-    ;
-    (table.insert)(ret, data)
+    table.insert(ret, data)
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.IsPreviewGridElementMatch = function(self, checkPos, convertGridTypeArray)
-  -- function num : 0_19 , upvalues : _ENV
+function SkillPreviewEffectCalcService:IsPreviewGridElementMatch(checkPos, convertGridTypeArray)
   local checkPosType = self:GetPreviewGridType(checkPos)
-  for k,v in ipairs(convertGridTypeArray) do
+  for k, v in ipairs(convertGridTypeArray) do
     local curGridType = tonumber(v)
     if curGridType == checkPosType then
       return true
@@ -620,12 +483,7 @@ SkillPreviewEffectCalcService.IsPreviewGridElementMatch = function(self, checkPo
   return false
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewEffectCalcService.GetPreviewGridType = function(self, pos)
-  -- function num : 0_20
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+function SkillPreviewEffectCalcService:GetPreviewGridType(pos)
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   return env:GetPieceType(pos)
 end
-
-

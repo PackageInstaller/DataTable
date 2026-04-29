@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_effect_at_pick_up_index_grid_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayEffectAtPickUpIndexGridInstruction", BaseInstruction)
 PlayEffectAtPickUpIndexGridInstruction = PlayEffectAtPickUpIndexGridInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEffectAtPickUpIndexGridInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEffectAtPickUpIndexGridInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._pickUpIndex = tonumber(paramList.pickUpIndex)
   self._dirX = 0
@@ -22,47 +15,39 @@ PlayEffectAtPickUpIndexGridInstruction.Constructor = function(self, paramList)
   end
   self._dirOnPickup = tonumber(paramList.dirOnPickup) == 0
   self._dirUseCaster = tonumber(paramList.dirUseCaster)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAtPickUpIndexGridInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayEffectAtPickUpIndexGridInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local oriEntity = casterEntity
-  do
-    if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-      local cSuperEntity = casterEntity:SuperEntityComponent()
-      oriEntity = cSuperEntity:GetSuperEntity()
-    end
-    local world = oriEntity:GetOwnerWorld()
-    local sEffect = world:GetService("Effect")
-    local dir = Vector2(self._dirX, self._dirY)
-    local renderPickUpComponent = oriEntity:RenderPickUpComponent()
-    if not renderPickUpComponent then
-      return 
-    end
-    local pickUpGridArray = renderPickUpComponent:GetAllValidPickUpGridPos()
-    local v2PickupPos = pickUpGridArray[self._pickUpIndex]
-    if self._dirOnPickup then
-      dir = v2PickupPos - oriEntity:GetGridPosition()
-    end
-    if self._dirUseCaster == 1 then
-      dir = oriEntity:GetDirection()
-    end
-    local effectEntity = sEffect:CreateWorldPositionDirectionEffect(self._effectID, v2PickupPos, dir)
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    local cSuperEntity = casterEntity:SuperEntityComponent()
+    oriEntity = cSuperEntity:GetSuperEntity()
   end
+  local world = oriEntity:GetOwnerWorld()
+  local sEffect = world:GetService("Effect")
+  local dir = Vector2(self._dirX, self._dirY)
+  local renderPickUpComponent = oriEntity:RenderPickUpComponent()
+  if not renderPickUpComponent then
+    return
+  end
+  local pickUpGridArray = renderPickUpComponent:GetAllValidPickUpGridPos()
+  local v2PickupPos = pickUpGridArray[self._pickUpIndex]
+  if self._dirOnPickup then
+    dir = v2PickupPos - oriEntity:GetGridPosition()
+  end
+  if self._dirUseCaster == 1 then
+    dir = oriEntity:GetDirection()
+  end
+  local effectEntity = sEffect:CreateWorldPositionDirectionEffect(self._effectID, v2PickupPos, dir)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAtPickUpIndexGridInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayEffectAtPickUpIndexGridInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

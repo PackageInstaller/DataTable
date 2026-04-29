@@ -1,78 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/skill_info_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChainSkillIDSelector", Object)
 ChainSkillIDSelector = ChainSkillIDSelector
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChainSkillIDSelector.Constructor = function(self)
-  -- function num : 0_0
+function ChainSkillIDSelector:Constructor()
   self._rules = {}
   self._current = "default"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkillIDSelector.AddRule = function(self, name, value)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._rules)[name] = value
+function ChainSkillIDSelector:AddRule(name, value)
+  self._rules[name] = value
   self._current = name
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkillIDSelector.RemoveRule = function(self, name)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._rules)[name] = nil
+function ChainSkillIDSelector:RemoveRule(name)
+  self._rules[name] = nil
   self._current = "default"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkillIDSelector.GetRule = function(self, name)
-  -- function num : 0_3
-  if not name then
-    name = self._current
-  end
-  return (self._rules)[name]
+function ChainSkillIDSelector:GetRule(name)
+  name = name or self._current
+  return self._rules[name]
 end
 
 _class("ChainSkillStageInfo", Object)
 ChainSkillStageInfo = ChainSkillStageInfo
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-ChainSkillStageInfo.Constructor = function(self, chainSkillID, chainSkillStage)
-  -- function num : 0_4
+function ChainSkillStageInfo:Constructor(chainSkillID, chainSkillStage)
   self._chainSkillID = chainSkillID
   self._chainSkillStage = chainSkillStage
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkillStageInfo.GetChainSkillID = function(self)
-  -- function num : 0_5
+function ChainSkillStageInfo:GetChainSkillID()
   return self._chainSkillID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainSkillStageInfo.GetChainSkillStage = function(self)
-  -- function num : 0_6
+function ChainSkillStageInfo:GetChainSkillStage()
   return self._chainSkillStage
 end
 
 _class("SkillInfoComponent", Object)
 SkillInfoComponent = SkillInfoComponent
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillInfoComponent.Constructor = function(self, normal_skill_config_id, chain_skill_config_id, super_skill_config_id, extra_active_skill_id_list, variant_skill_info)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillInfoComponent:Constructor(normal_skill_config_id, chain_skill_config_id, super_skill_config_id, extra_active_skill_id_list, variant_skill_info)
   self._normal_skill_config_id = normal_skill_config_id
   self._active_skill_config_id = super_skill_config_id
   self._extra_active_skill_config_id_list = extra_active_skill_id_list
@@ -82,95 +50,63 @@ SkillInfoComponent.Constructor = function(self, normal_skill_config_id, chain_sk
   self._ignore_cd_update_extra_skill_index_list = {}
   self._variantActiveSkillInfo = nil
   self._chainSkillIDSelector = ChainSkillIDSelector:New()
-  ;
-  (self._chainSkillIDSelector):AddRule("default", chain_skill_config_id)
+  self._chainSkillIDSelector:AddRule("default", chain_skill_config_id)
   self._buffOverlayChainSkillStepIndexTb = nil
   self._lockedChainSkillIndex = {}
   self._variantActiveSkillInfo = variant_skill_info
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.GetNormalSkillID = function(self)
-  -- function num : 0_8
+function SkillInfoComponent:GetNormalSkillID()
   return self._normal_skill_config_id
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.SetNormalSkillID = function(self, id)
-  -- function num : 0_9
+function SkillInfoComponent:SetNormalSkillID(id)
   self._normal_skill_config_id = id
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.GetActiveSkillID = function(self)
-  -- function num : 0_10
+function SkillInfoComponent:GetActiveSkillID()
   return self._active_skill_config_id
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.SetActiveSkillID = function(self, activeSkillID)
-  -- function num : 0_11
+function SkillInfoComponent:SetActiveSkillID(activeSkillID)
   self._active_skill_config_id = activeSkillID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.GetExtraActiveSkillIDList = function(self)
-  -- function num : 0_12
+function SkillInfoComponent:GetExtraActiveSkillIDList()
   return self._extra_active_skill_config_id_list
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.SetExtraActiveSkillIDList = function(self, extraActiveSkillIDList)
-  -- function num : 0_13
+function SkillInfoComponent:SetExtraActiveSkillIDList(extraActiveSkillIDList)
   self._extra_active_skill_config_id_list = extraActiveSkillIDList
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.GetSkillIDByIndex = function(self, skillIndex)
-  -- function num : 0_14
+function SkillInfoComponent:GetSkillIDByIndex(skillIndex)
   local skillID = 0
   if skillIndex then
     if skillIndex == 1 then
       skillID = self:GetActiveSkillID()
-    else
-      if self._extra_active_skill_config_id_list then
-        local extraIndex = skillIndex - 1
-        if extraIndex > 0 and extraIndex <= #self._extra_active_skill_config_id_list then
-          skillID = (self._extra_active_skill_config_id_list)[extraIndex]
-        end
+    elseif self._extra_active_skill_config_id_list then
+      local extraIndex = skillIndex - 1
+      if 0 < extraIndex and extraIndex <= #self._extra_active_skill_config_id_list then
+        skillID = self._extra_active_skill_config_id_list[extraIndex]
       end
     end
   else
-    do
-      skillID = self:GetActiveSkillID()
-      return skillID
-    end
+    skillID = self:GetActiveSkillID()
   end
+  return skillID
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.GetChainSkillIDSelector = function(self)
-  -- function num : 0_15
+function SkillInfoComponent:GetChainSkillIDSelector()
   return self._chainSkillIDSelector
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.GetChainSkillConfigID = function(self, chain, extraChains)
-  -- function num : 0_16 , upvalues : _ENV
+function SkillInfoComponent:GetChainSkillConfigID(chain, extraChains)
   local buffOverlaySkillID, buffOverlaySkillIndex = self:_GetChainSkillConfigIDInBuffOverlay(chain)
-  if buffOverlaySkillID and buffOverlaySkillID > 0 then
+  if buffOverlaySkillID and 0 < buffOverlaySkillID then
     return buffOverlaySkillID, buffOverlaySkillIndex
   end
-  local rule = (self._chainSkillIDSelector):GetRule()
+  local rule = self._chainSkillIDSelector:GetRule()
   if rule then
     local len = #rule
     for i = len, 1, -1 do
@@ -179,80 +115,62 @@ SkillInfoComponent.GetChainSkillConfigID = function(self, chain, extraChains)
       if extraChains and extraChains[v.Skill] then
         requiredVal = requiredVal - extraChains[v.Skill]
       end
-      if requiredVal <= chain then
-        if not (table.icontains)(self._lockedChainSkillIndex, i) and self:CheckColorPaletteSkill(v.Skill) then
+      if chain >= requiredVal then
+        if not table.icontains(self._lockedChainSkillIndex, i) and self:CheckColorPaletteSkill(v.Skill) then
           return v.Skill, i
         else
-          ;
-          (Log.info)("SkillInfoComponent: chain skill index [", i, "] is locked. ")
+          Log.info("SkillInfoComponent: chain skill index [", i, "] is locked. ")
         end
       end
     end
   end
-  do
-    return 0, 0
-  end
+  return 0, 0
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent._GetChainSkillConfigIDInBuffOverlay = function(self, chain)
-  -- function num : 0_17
+function SkillInfoComponent:_GetChainSkillConfigIDInBuffOverlay(chain)
   if self._buffOverlayChainSkillStepIndexTb then
     local overlayTb = self._buffOverlayChainSkillStepIndexTb
     if overlayTb then
       local len = #overlayTb
       for i = len, 1, -1 do
         local v = overlayTb[i]
-        if v.Chain <= chain then
+        if chain >= v.Chain then
           local useIndex = v.OriChainSkillIndex
           local skillID = self:_GetOriChainSkillConfigInfoByIndex(useIndex)
-          if skillID and skillID > 0 then
+          if skillID and 0 < skillID then
             return skillID, useIndex
           end
         end
       end
     end
   end
-  do
-    return 0, 0
-  end
+  return 0, 0
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent._GetOriChainSkillConfigInfoByIndex = function(self, index)
-  -- function num : 0_18 , upvalues : _ENV
-  local rule = (self._chainSkillIDSelector):GetRule()
+function SkillInfoComponent:_GetOriChainSkillConfigInfoByIndex(index)
+  local rule = self._chainSkillIDSelector:GetRule()
   if rule then
     local len = #rule
-    if len < index then
+    if index > len then
       for i = len, 1, -1 do
-        if not (table.icontains)(self._lockedChainSkillIndex, i) then
+        if not table.icontains(self._lockedChainSkillIndex, i) then
           local v = rule[i]
           return v.Skill, v.Chain
         end
       end
     end
-    do
-      for i = 1, len do
-        local v = rule[i]
-        if i == index then
-          return v.Skill, v.Chain
-        end
-      end
-      do
-        return 0, 0
+    for i = 1, len do
+      local v = rule[i]
+      if i == index then
+        return v.Skill, v.Chain
       end
     end
   end
+  return 0, 0
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.GetChainSkillLevel = function(self, skillId)
-  -- function num : 0_19
-  local rule = (self._chainSkillIDSelector):GetRule()
+function SkillInfoComponent:GetChainSkillLevel(skillId)
+  local rule = self._chainSkillIDSelector:GetRule()
   if rule then
     local len = #rule
     for i = len, 1, -1 do
@@ -262,258 +180,161 @@ SkillInfoComponent.GetChainSkillLevel = function(self, skillId)
       end
     end
   end
-  do
-    return 0
-  end
+  return 0
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.SetPassiveSkillID = function(self, id)
-  -- function num : 0_20
+function SkillInfoComponent:SetPassiveSkillID(id)
   self._passive_skill_config_id = id
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.GetPassiveSkillID = function(self)
-  -- function num : 0_21
+function SkillInfoComponent:GetPassiveSkillID()
   return self._passive_skill_config_id
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.SetIntensifyBuffList = function(self, buffList)
-  -- function num : 0_22
+function SkillInfoComponent:SetIntensifyBuffList(buffList)
   self._intensify_buff_list = buffList
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.GetIntensifyBuffList = function(self)
-  -- function num : 0_23
+function SkillInfoComponent:GetIntensifyBuffList()
   return self._intensify_buff_list
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.SetEquipIntensifyParam = function(self, equipIntensifyParam)
-  -- function num : 0_24
+function SkillInfoComponent:SetEquipIntensifyParam(equipIntensifyParam)
   self._equipIntensifyParam = equipIntensifyParam
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.GetEquipIntensifyParam = function(self)
-  -- function num : 0_25
+function SkillInfoComponent:GetEquipIntensifyParam()
   return self._equipIntensifyParam
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.LockChainSkillIndex = function(self, index)
-  -- function num : 0_26 , upvalues : _ENV
-  if not (table.icontains)(self._lockedChainSkillIndex, index) then
-    (table.insert)(self._lockedChainSkillIndex, index)
+function SkillInfoComponent:LockChainSkillIndex(index)
+  if not table.icontains(self._lockedChainSkillIndex, index) then
+    table.insert(self._lockedChainSkillIndex, index)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.UnlockChainSkillIndex = function(self, index)
-  -- function num : 0_27 , upvalues : _ENV
-  (table.removev)(self._lockedChainSkillIndex, index)
+function SkillInfoComponent:UnlockChainSkillIndex(index)
+  table.removev(self._lockedChainSkillIndex, index)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.UnlockAllChainSkill = function(self)
-  -- function num : 0_28
+function SkillInfoComponent:UnlockAllChainSkill()
   self._lockedChainSkillIndex = {}
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.GetLockChainSkillIndex = function(self)
-  -- function num : 0_29
+function SkillInfoComponent:GetLockChainSkillIndex()
   return self._lockedChainSkillIndex
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.SetExtraSkillIgnoreCdUpdate = function(self, extraSkillIndex, bIgnore)
-  -- function num : 0_30 , upvalues : _ENV
-  if bIgnore and not (table.icontains)(self._ignore_cd_update_extra_skill_index_list, extraSkillIndex) then
-    (table.insert)(self._ignore_cd_update_extra_skill_index_list, extraSkillIndex)
+function SkillInfoComponent:SetExtraSkillIgnoreCdUpdate(extraSkillIndex, bIgnore)
+  if bIgnore then
+    if not table.icontains(self._ignore_cd_update_extra_skill_index_list, extraSkillIndex) then
+      table.insert(self._ignore_cd_update_extra_skill_index_list, extraSkillIndex)
+    end
+  else
+    table.removev(self._ignore_cd_update_extra_skill_index_list, extraSkillIndex)
   end
-  ;
-  (table.removev)(self._ignore_cd_update_extra_skill_index_list, extraSkillIndex)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.IsExtraSkillIgnoreCdUpdate = function(self, extraSkillIndex)
-  -- function num : 0_31 , upvalues : _ENV
-  if (table.icontains)(self._ignore_cd_update_extra_skill_index_list, extraSkillIndex) then
+function SkillInfoComponent:IsExtraSkillIgnoreCdUpdate(extraSkillIndex)
+  if table.icontains(self._ignore_cd_update_extra_skill_index_list, extraSkillIndex) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.BuffOverlayChainSkillByStepAndOriIndexSkill = function(self, overlayInfo)
-  -- function num : 0_32
+function SkillInfoComponent:BuffOverlayChainSkillByStepAndOriIndexSkill(overlayInfo)
   if overlayInfo then
     self._buffOverlayChainSkillStepIndexTb = overlayInfo
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.ClearBuffOverlayChainSkillInfo = function(self)
-  -- function num : 0_33
+function SkillInfoComponent:ClearBuffOverlayChainSkillInfo()
   self._buffOverlayChainSkillStepIndexTb = nil
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.GetVariantActiveSkillInfo = function(self)
-  -- function num : 0_34
+function SkillInfoComponent:GetVariantActiveSkillInfo()
   return self._variantActiveSkillInfo
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.SetVariantActiveSkillInfo = function(self, info)
-  -- function num : 0_35
+function SkillInfoComponent:SetVariantActiveSkillInfo(info)
   self._variantActiveSkillInfo = info
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.SetPassiveCountBuffIDArray = function(self, t)
-  -- function num : 0_36
+function SkillInfoComponent:SetPassiveCountBuffIDArray(t)
   self._passiveCountBuffIDArray = t
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.GetPassiveCountBuffIDArray = function(self)
-  -- function num : 0_37
-  if not self._passiveCountBuffIDArray then
-    return {}
-  end
+function SkillInfoComponent:GetPassiveCountBuffIDArray()
+  return self._passiveCountBuffIDArray or {}
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.IsBuffIDPassiveCount = function(self, id)
-  -- function num : 0_38 , upvalues : _ENV
-  return (table.icontains)(self._passiveCountBuffIDArray, id)
+function SkillInfoComponent:IsBuffIDPassiveCount(id)
+  return table.icontains(self._passiveCountBuffIDArray, id)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.SetCountActiveSkillEnergy = function(self, b)
-  -- function num : 0_39
+function SkillInfoComponent:SetCountActiveSkillEnergy(b)
   self._countActiveSkillEnergy = b
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.IsActiveSkillEnergyCount = function(self)
-  -- function num : 0_40
+function SkillInfoComponent:IsActiveSkillEnergyCount()
   return self._countActiveSkillEnergy
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.GetUnlockValidIndex = function(self, num)
-  -- function num : 0_41 , upvalues : _ENV
+function SkillInfoComponent:GetUnlockValidIndex(num)
   for i = num, 1, -1 do
-    if not (table.icontains)(self._lockedChainSkillIndex, i) then
+    if not table.icontains(self._lockedChainSkillIndex, i) then
       return i
     end
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.GetChainSkillConfigIDList = function(self, chain, extraChains)
-  -- function num : 0_42 , upvalues : _ENV
+function SkillInfoComponent:GetChainSkillConfigIDList(chain, extraChains)
   local buffOverlayList = self:_GetChainSkillConfigIDListInBuffOverlay(chain)
-  if buffOverlayList and #buffOverlayList > 0 then
+  if buffOverlayList and 0 < #buffOverlayList then
     return buffOverlayList
   end
   local retList = {}
-  local rule = (self._chainSkillIDSelector):GetRule()
-  do
-    if rule then
-      local len = #rule
-      for i = 1, len do
-        local v = rule[i]
-        local requiredVal = v.Chain
-        if extraChains and extraChains[v.Skill] then
-          requiredVal = requiredVal - extraChains[v.Skill]
-        end
-        if requiredVal <= chain then
-          if not (table.icontains)(self._lockedChainSkillIndex, i) and self:CheckColorPaletteSkill(v.Skill) then
-            local chainInfo = ChainSkillStageInfo:New(v.Skill, i)
-            ;
-            (table.insert)(retList, chainInfo)
-          else
-            do
-              local unlockIndex = self:GetUnlockValidIndex(i)
-              if unlockIndex > 0 and self:CheckColorPaletteSkill(v.Skill) then
-                local skillID = (rule[unlockIndex]).Skill
-                local chainInfo = ChainSkillStageInfo:New(skillID, i)
-                ;
-                (table.insert)(retList, chainInfo)
-              end
-              do
-                -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
+  local rule = self._chainSkillIDSelector:GetRule()
+  if rule then
+    local len = #rule
+    for i = 1, len do
+      local v = rule[i]
+      local requiredVal = v.Chain
+      if extraChains and extraChains[v.Skill] then
+        requiredVal = requiredVal - extraChains[v.Skill]
+      end
+      if chain >= requiredVal then
+        if not table.icontains(self._lockedChainSkillIndex, i) and self:CheckColorPaletteSkill(v.Skill) then
+          local chainInfo = ChainSkillStageInfo:New(v.Skill, i)
+          table.insert(retList, chainInfo)
+        else
+          local unlockIndex = self:GetUnlockValidIndex(i)
+          if 0 < unlockIndex and self:CheckColorPaletteSkill(v.Skill) then
+            local skillID = rule[unlockIndex].Skill
+            local chainInfo = ChainSkillStageInfo:New(skillID, i)
+            table.insert(retList, chainInfo)
           end
         end
       end
     end
-    return retList
   end
+  return retList
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.CheckColorPaletteSkill = function(self, skillID)
-  -- function num : 0_43 , upvalues : _ENV
-  local configService = ((self._entity)._world):GetService("Config")
+function SkillInfoComponent:CheckColorPaletteSkill(skillID)
+  local configService = self._entity._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID, self._entity)
-  do
-    if skillConfigData and skillConfigData:GetSkillTriggerType() == SkillTriggerType.ColorPalette then
-      local colorPaletteComponent = (self._entity):ColorPalette()
-      if colorPaletteComponent then
-        return colorPaletteComponent:IsSatisfy()
-      end
+  if skillConfigData and skillConfigData:GetSkillTriggerType() == SkillTriggerType.ColorPalette then
+    local colorPaletteComponent = self._entity:ColorPalette()
+    if colorPaletteComponent then
+      return colorPaletteComponent:IsSatisfy()
     end
-    return true
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent._GetChainSkillConfigIDListInBuffOverlay = function(self, chain)
-  -- function num : 0_44 , upvalues : _ENV
+function SkillInfoComponent:_GetChainSkillConfigIDListInBuffOverlay(chain)
   local retList = {}
   if self._buffOverlayChainSkillStepIndexTb then
     local overlayTb = self._buffOverlayChainSkillStepIndexTb
@@ -521,28 +342,22 @@ SkillInfoComponent._GetChainSkillConfigIDListInBuffOverlay = function(self, chai
       local len = #overlayTb
       for i = 1, len do
         local v = overlayTb[i]
-        if v.Chain <= chain then
+        if chain >= v.Chain then
           local useIndex = v.OriChainSkillIndex
           local skillID = self:_GetOriChainSkillConfigInfoListByIndex(useIndex)
-          if skillID and skillID > 0 then
+          if skillID and 0 < skillID then
             local chainInfo = ChainSkillStageInfo:New(skillID, useIndex)
-            ;
-            (table.insert)(retList, chainInfo)
+            table.insert(retList, chainInfo)
           end
         end
       end
     end
   end
-  do
-    return retList
-  end
+  return retList
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent._GetOriChainSkillConfigInfoListByIndex = function(self, index)
-  -- function num : 0_45
-  local rule = (self._chainSkillIDSelector):GetRule()
+function SkillInfoComponent:_GetOriChainSkillConfigInfoListByIndex(index)
+  local rule = self._chainSkillIDSelector:GetRule()
   if rule then
     local len = #rule
     for i = 1, len do
@@ -552,61 +367,39 @@ SkillInfoComponent._GetOriChainSkillConfigInfoListByIndex = function(self, index
       end
     end
   end
-  do
-    return 0, 0
-  end
+  return 0, 0
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillInfoComponent.GetMaxChainSkillID = function(self)
-  -- function num : 0_46
-  local rule = (self._chainSkillIDSelector):GetRule()
+function SkillInfoComponent:GetMaxChainSkillID()
+  local rule = self._chainSkillIDSelector:GetRule()
   if rule then
-    return (rule[#rule]).Skill
+    return rule[#rule].Skill
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SkillInfo = function(self)
-  -- function num : 0_47
-  return self:GetComponent((self.WEComponentsEnum).SkillInfo)
+function Entity:SkillInfo()
+  return self:GetComponent(self.WEComponentsEnum.SkillInfo)
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasSkillInfo = function(self)
-  -- function num : 0_48
-  return self:HasComponent((self.WEComponentsEnum).SkillInfo)
+function Entity:HasSkillInfo()
+  return self:HasComponent(self.WEComponentsEnum.SkillInfo)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddSkillInfo = function(self, normal_skill_config_id, chain_skill_config_id, super_skill_config_id, extra_active_skill_id_list, variant_skill_info)
-  -- function num : 0_49 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).SkillInfo
+function Entity:AddSkillInfo(normal_skill_config_id, chain_skill_config_id, super_skill_config_id, extra_active_skill_id_list, variant_skill_info)
+  local index = self.WEComponentsEnum.SkillInfo
   local component = SkillInfoComponent:New(normal_skill_config_id, chain_skill_config_id, super_skill_config_id, extra_active_skill_id_list, variant_skill_info)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceSkillInfo = function(self, normal_skill_config_id, chain_skill_config_id, super_skill_config_id, extra_active_skill_id_list, variant_skill_info)
-  -- function num : 0_50 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).SkillInfo
+function Entity:ReplaceSkillInfo(normal_skill_config_id, chain_skill_config_id, super_skill_config_id, extra_active_skill_id_list, variant_skill_info)
+  local index = self.WEComponentsEnum.SkillInfo
   local component = SkillInfoComponent:New(normal_skill_config_id, chain_skill_config_id, super_skill_config_id, extra_active_skill_id_list, variant_skill_info)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveSkillInfo = function(self)
-  -- function num : 0_51
+function Entity:RemoveSkillInfo()
   if self:HasSkillInfo() then
-    self:RemoveComponent((self.WEComponentsEnum).SkillInfo)
+    self:RemoveComponent(self.WEComponentsEnum.SkillInfo)
   end
 end
-
-

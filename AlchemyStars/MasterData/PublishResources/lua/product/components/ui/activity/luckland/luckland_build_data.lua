@@ -1,113 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/luckland_build_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LuckLandBuildData", Object)
 LuckLandBuildData = LuckLandBuildData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandBuildData.Constructor = function(self, id)
-  -- function num : 0_0 , upvalues : _ENV
+function LuckLandBuildData:Constructor(id)
   self._id = id
-  self._cfg = (Cfg.cfg_luckland_client_build)[self._id]
+  self._cfg = Cfg.cfg_luckland_client_build[self._id]
   if not self._cfg then
-    (Log.error)("cfg_luckland_client_build error.", id)
-    return 
+    Log.error("cfg_luckland_client_build error.", id)
+    return
   end
-  self._level = (self._cfg).ID % 100
+  self._level = self._cfg.ID % 100
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildData.Cfg = function(self)
-  -- function num : 0_1
+function LuckLandBuildData:Cfg()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildData.ID = function(self)
-  -- function num : 0_2
+function LuckLandBuildData:ID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildData.Type = function(self)
-  -- function num : 0_3
-  return (self._cfg).BuildType
+function LuckLandBuildData:Type()
+  return self._cfg.BuildType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildData.Icon = function(self)
-  -- function num : 0_4
-  return (self._cfg).BuildIcon
+function LuckLandBuildData:Icon()
+  return self._cfg.BuildIcon
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildData.Name = function(self)
-  -- function num : 0_5
-  return (self._cfg).BuildName
+function LuckLandBuildData:Name()
+  return self._cfg.BuildName
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildData.Desc = function(self)
-  -- function num : 0_6
-  return (self._cfg).BuildDesc
+function LuckLandBuildData:Desc()
+  return self._cfg.BuildDesc
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildData.MaxLevel = function(self)
-  -- function num : 0_7
-  return (self._cfg).MaxLevel
+function LuckLandBuildData:MaxLevel()
+  return self._cfg.MaxLevel
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildData.UpgradeCost = function(self, id)
-  -- function num : 0_8 , upvalues : _ENV
-  local cfg = (Cfg.cfg_luckland_client_build)[id]
+function LuckLandBuildData:UpgradeCost(id)
+  local cfg = Cfg.cfg_luckland_client_build[id]
   if cfg then
     return cfg.UpgradeCost
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildData.GetLevelTip = function(self, id)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg = (Cfg.cfg_luckland_client_build)[id]
+function LuckLandBuildData:GetLevelTip(id)
+  local cfg = Cfg.cfg_luckland_client_build[id]
   if cfg then
     return cfg.BuildLevelTips
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildData.GetCurLevel = function(self)
-  -- function num : 0_10
+function LuckLandBuildData:GetCurLevel()
   return self._level
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuildData.Upgrade = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function LuckLandBuildData:Upgrade()
   local nextID = self._id + 1
   local nextLevel = nextID % 100
-  if self:MaxLevel() < nextLevel then
-    return 
+  if nextLevel > self:MaxLevel() then
+    return
   end
   self._id = nextID
   self._level = nextLevel
-  self._cfg = (Cfg.cfg_luckland_client_build)[self._id]
+  self._cfg = Cfg.cfg_luckland_client_build[self._id]
 end
-
-

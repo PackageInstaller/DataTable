@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common/helper/ui_activity_custom_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityCustomConst", Object)
 UIActivityCustomConst = UIActivityCustomConst
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCustomConst.Constructor = function(self, campaignType, components)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIActivityCustomConst:Constructor(campaignType, components)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._campaignType = campaignType
   self._componentTypes = components
   self._components = {}
@@ -21,184 +14,130 @@ UIActivityCustomConst.Constructor = function(self, campaignType, components)
   self._subName = ""
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.LoadData = function(self, TT, res)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityCustomConst:LoadData(TT, res)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, (table.unpack)(self._componentTypes))
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignType, table.unpack(self._componentTypes))
   self._initSucc = false
   if res and not res:GetSucc() then
-    return 
+    return
   end
   if not self._campaign then
     res:SetSucc(false)
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
     res:SetSucc(false)
-    return 
+    return
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   local bpRes = AsyncRequestRes:New()
   bpRes:SetSucc(true)
   self._battlepassCampaign = UIActivityCampaign:New()
-  ;
-  (self._battlepassCampaign):LoadCampaignInfo(TT, bpRes, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+  self._battlepassCampaign:LoadCampaignInfo(TT, bpRes, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
   if not bpRes:GetSucc() then
-    (Log.info)("获取战斗通行证数据失败")
+    Log.info("获取战斗通行证数据失败")
   end
-  for k,v in pairs(self._componentTypes) do
-    -- DECOMPILER ERROR at PC79: Confused about usage of register: R9 in 'UnsetPending'
-
-    (self._components)[v] = (self._localProcess):GetComponent(v)
-    -- DECOMPILER ERROR at PC85: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._componentInfos)[v] = (self._localProcess):GetComponentInfo(v)
+  for k, v in pairs(self._componentTypes) do
+    self._components[v] = self._localProcess:GetComponent(v)
+    self._componentInfos[v] = self._localProcess:GetComponentInfo(v)
   end
-  local cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
-  self._name = (StringTable.Get)(cfg_campaign.CampaignName)
-  self._subName = (StringTable.Get)(cfg_campaign.CampaignSubtitle)
+  local cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
+  self._name = StringTable.Get(cfg_campaign.CampaignName)
+  self._subName = StringTable.Get(cfg_campaign.CampaignSubtitle)
   local plotIdList = cfg_campaign.FirstEnterStoryID
   self._plotId = nil
-  if plotIdList and #plotIdList > 0 then
+  if plotIdList and 0 < #plotIdList then
     self._plotId = plotIdList[1]
   end
-  local sample = (self._campaign):GetSample()
+  local sample = self._campaign:GetSample()
   if not sample then
-    return 
+    return
   end
-  local nowTime = (self._timeModule):GetServerTime() / 1000
+  local nowTime = self._timeModule:GetServerTime() / 1000
   self._activeEndTime = sample.end_time
   self._initSucc = true
-  if self._activeEndTime < nowTime then
-    (Log.error)("Time error!")
-    return 
+  if nowTime > self._activeEndTime then
+    Log.error("Time error!")
+    return
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.ForceUpdate = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityCustomConst:ForceUpdate(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.GetCampaign = function(self)
-  -- function num : 0_3
+function UIActivityCustomConst:GetCampaign()
   return self._campaign
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.GetCampaignId = function(self)
-  -- function num : 0_4
-  return (self._campaign)._id
+function UIActivityCustomConst:GetCampaignId()
+  return self._campaign._id
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.GetName = function(self)
-  -- function num : 0_5
+function UIActivityCustomConst:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.GetSubName = function(self)
-  -- function num : 0_6
+function UIActivityCustomConst:GetSubName()
   return self._subName
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.GetActiveEndTime = function(self)
-  -- function num : 0_7
+function UIActivityCustomConst:GetActiveEndTime()
   return self._activeEndTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.GetPlotId = function(self)
-  -- function num : 0_8
+function UIActivityCustomConst:GetPlotId()
   return self._plotId
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.PlayPlot = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (UIActivityHelper.PlayFirstPlot_Campaign)(self._campaign)
+function UIActivityCustomConst:PlayPlot()
+  UIActivityHelper.PlayFirstPlot_Campaign(self._campaign)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.IsActivityEnd = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityCustomConst:IsActivityEnd()
   if not self._activeEndTime then
     return true
   end
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)(self._activeEndTime - nowTime)
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(self._activeEndTime - nowTime)
   if seconds <= 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.GetComponent = function(self, componentId)
-  -- function num : 0_11
-  return (self._components)[componentId], (self._componentInfos)[componentId]
+function UIActivityCustomConst:GetComponent(componentId)
+  return self._components[componentId], self._componentInfos[componentId]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.GetComponentStatus = function(self, componentId)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityCustomConst:GetComponentStatus(componentId)
   if self:IsActivityEnd() then
     return ActivityComponentStatus.ActivityEnd, 0
   end
-  return (UIActivityCustomHelper.CheckComponentStatus)((self._components)[componentId])
+  return UIActivityCustomHelper.CheckComponentStatus(self._components[componentId])
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.IsShowComponentNew = function(self, componentId)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityCustomConst:IsShowComponentNew(componentId)
   local status, time = self:GetComponentStatus(componentId)
   if status ~= ActivityComponentStatus.Open then
     return false
   end
-  return (UIActivityCustomHelper.GetNewFlagStatus)("ACTIVITY_NEW" .. self._campaignType .. componentId)
+  return UIActivityCustomHelper.GetNewFlagStatus("ACTIVITY_NEW" .. self._campaignType .. componentId)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.ClearComponentNew = function(self, componentId)
-  -- function num : 0_14 , upvalues : _ENV
-  (UIActivityCustomHelper.SetNewFlagStatus)("ACTIVITY_NEW" .. self._campaignType .. componentId)
+function UIActivityCustomConst:ClearComponentNew(componentId)
+  UIActivityCustomHelper.SetNewFlagStatus("ACTIVITY_NEW" .. self._campaignType .. componentId)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.IsShowEntryNew = function(self, ignoreComponents)
-  -- function num : 0_15 , upvalues : _ENV
-  local enterNew = (UIActivityCustomHelper.GetNewFlagStatus)("ACTIVITY_ENTER_NEW" .. self._campaignType)
+function UIActivityCustomConst:IsShowEntryNew(ignoreComponents)
+  local enterNew = UIActivityCustomHelper.GetNewFlagStatus("ACTIVITY_ENTER_NEW" .. self._campaignType)
   if enterNew then
     return true
   end
-  for k,v in pairs(self._components) do
+  for k, v in pairs(self._components) do
     local ignore = false
     if ignoreComponents then
       for i = 1, #ignoreComponents do
@@ -208,58 +147,40 @@ UIActivityCustomConst.IsShowEntryNew = function(self, ignoreComponents)
         end
       end
     end
-    do
-      do
-        if ignore == false and self:IsShowComponentNew(k) then
-          return true
-        end
-        -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if ignore == false and self:IsShowComponentNew(k) then
+      return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.ClearEnterNew = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  (UIActivityCustomHelper.SetNewFlagStatus)("ACTIVITY_ENTER_NEW" .. self._campaignType, false)
+function UIActivityCustomConst:ClearEnterNew()
+  UIActivityCustomHelper.SetNewFlagStatus("ACTIVITY_ENTER_NEW" .. self._campaignType, false)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.IsShowComponentRed = function(self, componentId)
-  -- function num : 0_17 , upvalues : _ENV
+function UIActivityCustomConst:IsShowComponentRed(componentId)
   local status, time = self:GetComponentStatus(componentId)
   if status ~= ActivityComponentStatus.Open then
     return false
   end
-  return (self._campaign):CheckComponentRed(componentId)
+  return self._campaign:CheckComponentRed(componentId)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.IsShowBattlePassRed = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIActivityCustomConst:IsShowBattlePassRed()
   if self:IsActivityEnd() then
     return false
   end
   if self._battlepassCampaign then
-    return (UIActivityHelper.CheckCampaignSampleRedPoint)(self._battlepassCampaign)
+    return UIActivityHelper.CheckCampaignSampleRedPoint(self._battlepassCampaign)
   end
   return false
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.IsShowEntryRed = function(self, ignoreComponents)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityCustomConst:IsShowEntryRed(ignoreComponents)
   if self:IsActivityEnd() then
     return false
   end
-  for k,v in pairs(self._components) do
+  for k, v in pairs(self._components) do
     local ignore = false
     if ignoreComponents then
       for i = 1, #ignoreComponents do
@@ -269,24 +190,13 @@ UIActivityCustomConst.IsShowEntryRed = function(self, ignoreComponents)
         end
       end
     end
-    do
-      do
-        if ignore == false and self:IsShowComponentRed(k) then
-          return true
-        end
-        -- DECOMPILER ERROR at PC32: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if ignore == false and self:IsShowComponentRed(k) then
+      return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCustomConst.GetInitState = function(self)
-  -- function num : 0_20
+function UIActivityCustomConst:GetInitState()
   return self._initSucc
 end
-
-

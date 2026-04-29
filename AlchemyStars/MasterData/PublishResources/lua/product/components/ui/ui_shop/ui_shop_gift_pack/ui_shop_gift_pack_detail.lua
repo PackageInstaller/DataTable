@@ -1,31 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_gift_pack/ui_shop_gift_pack_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopGiftPackDetail", UIController)
 UIShopGiftPackDetail = UIShopGiftPackDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopGiftPackDetail.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopGiftPackDetail:Constructor()
   self.shopModule = self:GetModule(ShopModule)
-  self.clientShop = (self.shopModule):GetClientShop()
-  self._giftData = (self.clientShop):GetGiftPackShopData()
-  self._flashSaleData = (self.clientShop):GetFlashSaleShopData()
+  self.clientShop = self.shopModule:GetClientShop()
+  self._giftData = self.clientShop:GetGiftPackShopData()
+  self._flashSaleData = self.clientShop:GetFlashSaleShopData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackDetail.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopGiftPackDetail:OnShow(uiParams)
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._goTips = self:GetGameObject("tips")
   self._txtTips = self:GetUIComponent("UILocalizationText", "txtTips")
   self._imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self._goLimit = self:GetGameObject("limit")
-  ;
-  (self._goLimit):SetActive(false)
+  self._goLimit:SetActive(false)
   self._txtLimit = self:GetUIComponent("UILocalizationText", "txtLimit")
   self._imgPrice = self:GetUIComponent("Image", "imgPrice")
   self._txtPrice = self:GetUIComponent("UILocalizationText", "txtPrice")
@@ -37,142 +26,94 @@ UIShopGiftPackDetail.OnShow = function(self, uiParams)
   self._anim = self:GetUIComponent("Animation", "uiAnim")
   self._atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
   self._id = uiParams[1]
-  if not uiParams[2] then
-    self._shopMainTabType = ShopMainTabType.Gift
-    self:Flush(self._id)
-  end
+  self._shopMainTabType = uiParams[2] or ShopMainTabType.Gift
+  self:Flush(self._id)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackDetail.Flush = function(self, id)
-  -- function num : 0_2 , upvalues : _ENV
-  self._itemData = (self._giftData):GetGoodBuyId(id)
-  ;
-  (self._txtName):SetText((self._itemData):GetName())
+function UIShopGiftPackDetail:Flush(id)
+  self._itemData = self._giftData:GetGoodBuyId(id)
+  self._txtName:SetText(self._itemData:GetName())
   self:FlushTips()
-  ;
-  (self._imgIcon):LoadImage((self._itemData):GetIconDetail())
-  local str = (self._itemData):GetCountStr()
-  if (string.isnullorempty)(str) then
-    (self._goLimit):SetActive(false)
+  self._imgIcon:LoadImage(self._itemData:GetIconDetail())
+  local str = self._itemData:GetCountStr()
+  if string.isnullorempty(str) then
+    self._goLimit:SetActive(false)
   else
-    ;
-    (self._txtLimit):SetText(str)
-    ;
-    (self._goLimit):SetActive(true)
+    self._txtLimit:SetText(str)
+    self._goLimit:SetActive(true)
   end
-  if (self._itemData):IsMonthCard() and (self._itemData):HasSoldOut() then
-    local f = 0.29803921568627
-    -- DECOMPILER ERROR at PC58: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._txtPrice).color = Color(f, f, f)
-    -- DECOMPILER ERROR at PC60: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._btnBuy).interactable = false
+  if self._itemData:IsMonthCard() and self._itemData:HasSoldOut() then
+    local f = 0.2980392156862745
+    self._txtPrice.color = Color(f, f, f)
+    self._btnBuy.interactable = false
   else
-    do
-      -- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
+    self._txtPrice.color = Color.white
+    self._btnBuy.interactable = true
+  end
+  self:FlushPrice()
+  local awardsImmediately = self._itemData:GetAwardsImmediately()
+  self._sopImmediately:SpawnObjects("UIShopGiftPackGetItem", table.count(awardsImmediately))
+  local lstImmediately = self._sopImmediately:GetAllSpawnList()
+  for i, ui in ipairs(lstImmediately) do
+    ui:Flush(awardsImmediately[i])
+  end
+  local awardsDaily = self._itemData:GetAwardsDaily()
+  if awardsDaily and table.count(awardsDaily) > 0 then
+    self._goDaily:SetActive(true)
+    self._sopDaily:SpawnObjects("UIShopGiftPackGetItem", table.count(awardsDaily))
+    local lstDaily = self._sopDaily:GetAllSpawnList()
+    for i, ui in ipairs(lstDaily) do
+      ui:Flush(awardsDaily[i])
+    end
+  else
+    self._goDaily:SetActive(false)
+  end
+  if self._itemData.isWeekCard then
+    self.txtGetDaily:SetText(StringTable.Get("str_pay_gain_daily", 7))
+  else
+    self.txtGetDaily:SetText(StringTable.Get("str_pay_gain_daily", 30))
+  end
+end
 
-      ;
-      (self._txtPrice).color = Color.white
-      -- DECOMPILER ERROR at PC67: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._btnBuy).interactable = true
-      self:FlushPrice()
-      local awardsImmediately = (self._itemData):GetAwardsImmediately()
-      ;
-      (self._sopImmediately):SpawnObjects("UIShopGiftPackGetItem", (table.count)(awardsImmediately))
-      local lstImmediately = (self._sopImmediately):GetAllSpawnList()
-      for i,ui in ipairs(lstImmediately) do
-        ui:Flush(awardsImmediately[i])
-      end
-      local awardsDaily = (self._itemData):GetAwardsDaily()
-      if awardsDaily and (table.count)(awardsDaily) > 0 then
-        (self._goDaily):SetActive(true)
-        ;
-        (self._sopDaily):SpawnObjects("UIShopGiftPackGetItem", (table.count)(awardsDaily))
-        local lstDaily = (self._sopDaily):GetAllSpawnList()
-        for i,ui in ipairs(lstDaily) do
-          ui:Flush(awardsDaily[i])
-        end
-      else
-        do
-          ;
-          (self._goDaily):SetActive(false)
-          if (self._itemData).isWeekCard then
-            (self.txtGetDaily):SetText((StringTable.Get)("str_pay_gain_daily", 7))
-          else
-            ;
-            (self.txtGetDaily):SetText((StringTable.Get)("str_pay_gain_daily", 30))
-          end
-        end
-      end
+function UIShopGiftPackDetail:FlushTips()
+  if self._itemData:IsWeekCard() then
+    if self._itemData:GetBuyCount() > 0 then
+      self._txtTips:SetText(StringTable.Get("str_pay_soldout"))
+    else
+      self._txtTips:SetText(StringTable.Get("str_pay_not_buy_yet"))
+    end
+  else
+    local strCycleType = self._itemData:GetCycleTypeStr()
+    if string.isnullorempty(strCycleType) then
+      self._goTips:SetActive(false)
+    else
+      self._goTips:SetActive(true)
+      self._txtTips:SetText(strCycleType)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackDetail.FlushTips = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._itemData):IsWeekCard() then
-    if (self._itemData):GetBuyCount() > 0 then
-      (self._txtTips):SetText((StringTable.Get)("str_pay_soldout"))
-    else
-      ;
-      (self._txtTips):SetText((StringTable.Get)("str_pay_not_buy_yet"))
-    end
-  else
-    local strCycleType = (self._itemData):GetCycleTypeStr()
-    if (string.isnullorempty)(strCycleType) then
-      (self._goTips):SetActive(false)
-    else
-      ;
-      (self._goTips):SetActive(true)
-      ;
-      (self._txtTips):SetText(strCycleType)
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackDetail.FlushPrice = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local SetPrice = function()
-    -- function num : 0_4_0 , upvalues : self, _ENV
-    local itemtType = (self._itemData):GetType()
+function UIShopGiftPackDetail:FlushPrice()
+  local function SetPrice()
+    local itemtType = self._itemData:GetType()
+    
     if itemtType == GiftPackType.Currency then
-      ((self._imgPrice).gameObject):SetActive(false)
-      ;
-      (self._txtPrice):SetText((self._itemData):GetPriceWithCurrencySymbol())
+      self._imgPrice.gameObject:SetActive(false)
+      self._txtPrice:SetText(self._itemData:GetPriceWithCurrencySymbol())
+    elseif itemtType == GiftPackType.Free then
+      self._imgPrice.gameObject:SetActive(false)
+      self._txtPrice:SetText(StringTable.Get("str_pay_free"))
     else
-      if itemtType == GiftPackType.Free then
-        ((self._imgPrice).gameObject):SetActive(false)
-        ;
-        (self._txtPrice):SetText((StringTable.Get)("str_pay_free"))
-      else
-        ;
-        ((self._imgPrice).gameObject):SetActive(true)
-        -- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._imgPrice).sprite = (self._atlas):GetSprite((self._itemData):GetPriceIcon())
-        ;
-        (self._txtPrice):SetText((self._itemData):GetPrice())
-      end
+      self._imgPrice.gameObject:SetActive(true)
+      self._imgPrice.sprite = self._atlas:GetSprite(self._itemData:GetPriceIcon())
+      self._txtPrice:SetText(self._itemData:GetPrice())
     end
   end
-
-  if (self._itemData):IsWeekCard() then
-    if (self._itemData):GetBuyCount() > 0 then
-      ((self._imgPrice).gameObject):SetActive(false)
-      ;
-      (self._txtPrice):SetText((StringTable.Get)("str_pay_soldout"))
+  
+  if self._itemData:IsWeekCard() then
+    if self._itemData:GetBuyCount() > 0 then
+      self._imgPrice.gameObject:SetActive(false)
+      self._txtPrice:SetText(StringTable.Get("str_pay_soldout"))
     else
       SetPrice()
     end
@@ -181,272 +122,192 @@ UIShopGiftPackDetail.FlushPrice = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackDetail.OnHide = function(self)
-  -- function num : 0_5
+function UIShopGiftPackDetail:OnHide()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackDetail.bgOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UIShopGiftPackDetail:bgOnClick(go)
   self:Lock("UIShopGiftPackDetail:OnHide")
-  ;
-  (self._anim):Play("Uieff_UIShopGiftPackDetail_Out")
+  self._anim:Play("Uieff_UIShopGiftPackDetail_Out")
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
     YIELD(TT, 667)
     self:UnLock("UIShopGiftPackDetail:OnHide")
     self:CloseDialog()
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackDetail.btnBuyOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  if (self._itemData):IsWeekCard() and (self._itemData):GetBuyCount() > 0 then
-    return 
+function UIShopGiftPackDetail:btnBuyOnClick(go)
+  if self._itemData:IsWeekCard() and self._itemData:GetBuyCount() > 0 then
+    return
   end
-  local packType = (self._itemData):GetType()
-  if not (self._itemData):CheckDayCount() then
+  local packType = self._itemData:GetType()
+  if not self._itemData:CheckDayCount() then
     self:CloseDialog()
-    return 
+    return
   end
-  if (self._itemData):HasSoldOut() then
+  if self._itemData:HasSoldOut() then
     if packType == GiftPackType.Currency then
-      ((GameGlobal.GetUIModule)(ShopModule)):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "buy_limit_reached")
+      GameGlobal.GetUIModule(ShopModule):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "buy_limit_reached")
     end
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_pay_buy_limit_reached"))
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_pay_buy_limit_reached"))
     self:CloseDialog()
-    return 
+    return
   end
   if packType == GiftPackType.Currency then
-    local midasId = (self._itemData):GetMidasId()
-    do
-      if (string.isnullorempty)(midasId) then
-        ((GameGlobal.GetUIModule)(ShopModule)):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "midasId_is_empty")
-        ;
-        (Log.fatal)("### [Pay]midasId can\'t be empty")
-        self:CloseDialog()
-        return 
-      end
-      self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV, midasId
-    self:Lock("UIShopGiftPackDetailRequestBuyGift")
-    local ret = (self.shopModule):BuyGift(TT, (self._itemData):GetId())
-    if (ClientShop.CheckShopCode)(ret) then
-      self:CanCharge(midasId)
-    else
-      if ret == SHOP_CODE.SHOP_GOODS_SELLED_OUT then
-        (self.clientShop):SendProtocal(TT, self._shopMainTabType)
-      end
+    local midasId = self._itemData:GetMidasId()
+    if string.isnullorempty(midasId) then
+      GameGlobal.GetUIModule(ShopModule):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "midasId_is_empty")
+      Log.fatal("### [Pay]midasId can't be empty")
+      self:CloseDialog()
+      return
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopNew)
-    self:UnLock("UIShopGiftPackDetailRequestBuyGift")
-  end
-, self)
-    end
-  else
-    do
-      if packType == GiftPackType.Yaojing then
-        local price = (self._itemData):GetPrice()
-        if (self.clientShop):CheckEnoughYJ(price) then
-          self:RequestBuyGift()
-        else
-          self:CloseDialog()
-        end
-      else
-        do
-          if packType == GiftPackType.Guangpo then
-            local price = (self._itemData):GetPrice()
-            if (self.clientShop):CheckEnoughGP(price) then
-              self:RequestBuyGift()
-            else
-              self:CloseDialog()
-            end
-          else
-            do
-              if packType == GiftPackType.Item then
-                local mRole = self:GetModule(RoleModule)
-                local price = (self._itemData):GetPrice()
-                local assetId = (self._itemData):GetPriceItemId()
-                local count = mRole:GetAssetCount(assetId)
-                if price <= count then
-                  self:RequestBuyGift()
-                else
-                  ;
-                  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_pay_item_not_enough"))
-                end
-              else
-                do
-                  if packType == GiftPackType.Free then
-                    self:RequestBuyGift()
-                  else
-                    ;
-                    (Log.fatal)("### invalid GiftPackType. packType=", packType)
-                  end
-                end
-              end
-            end
-          end
-        end
+    self:StartTask(function(TT)
+      self:Lock("UIShopGiftPackDetailRequestBuyGift")
+      local ret = self.shopModule:BuyGift(TT, self._itemData:GetId())
+      if ClientShop.CheckShopCode(ret) then
+        self:CanCharge(midasId)
+      elseif ret == SHOP_CODE.SHOP_GOODS_SELLED_OUT then
+        self.clientShop:SendProtocal(TT, self._shopMainTabType)
       end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackDetail.RequestBuyGift = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
-    self:Lock("UIShopGiftPackDetailRequestBuyGift")
-    local id = (self._itemData):GetId()
-    local ret = (self.shopModule):BuyGift(TT, id)
-    do
-      if (ClientShop.CheckShopCode)(ret) then
-        local mPay = (GameGlobal.GetModule)(PayModule)
-        mPay:ShowUIShopRechargeGainWithoutYJ(self._itemData)
-      end
-      ;
-      (self.clientShop):SendProtocal(TT, self._shopMainTabType)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopNew)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopNew)
       self:UnLock("UIShopGiftPackDetailRequestBuyGift")
+    end, self)
+  elseif packType == GiftPackType.Yaojing then
+    local price = self._itemData:GetPrice()
+    if self.clientShop:CheckEnoughYJ(price) then
+      self:RequestBuyGift()
+    else
       self:CloseDialog()
     end
+  elseif packType == GiftPackType.Guangpo then
+    local price = self._itemData:GetPrice()
+    if self.clientShop:CheckEnoughGP(price) then
+      self:RequestBuyGift()
+    else
+      self:CloseDialog()
+    end
+  elseif packType == GiftPackType.Item then
+    local mRole = self:GetModule(RoleModule)
+    local price = self._itemData:GetPrice()
+    local assetId = self._itemData:GetPriceItemId()
+    local count = mRole:GetAssetCount(assetId)
+    if price <= count then
+      self:RequestBuyGift()
+    else
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_pay_item_not_enough"))
+    end
+  elseif packType == GiftPackType.Free then
+    self:RequestBuyGift()
+  else
+    Log.fatal("### invalid GiftPackType. packType=", packType)
   end
-, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
+function UIShopGiftPackDetail:RequestBuyGift()
+  self:StartTask(function(TT)
+    self:Lock("UIShopGiftPackDetailRequestBuyGift")
+    local id = self._itemData:GetId()
+    local ret = self.shopModule:BuyGift(TT, id)
+    if ClientShop.CheckShopCode(ret) then
+      local mPay = GameGlobal.GetModule(PayModule)
+      mPay:ShowUIShopRechargeGainWithoutYJ(self._itemData)
+    end
+    self.clientShop:SendProtocal(TT, self._shopMainTabType)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopNew)
+    self:UnLock("UIShopGiftPackDetailRequestBuyGift")
+    self:CloseDialog()
+  end, self)
+end
 
-UIShopGiftPackDetail.CanCharge = function(self, midasId)
-  -- function num : 0_9 , upvalues : _ENV
+function UIShopGiftPackDetail:CanCharge(midasId)
   self:Lock("UIShopGiftPackDetail_CanCharge")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.CanChargeCoro, self, midasId)
+  GameGlobal.TaskManager():StartTask(self.CanChargeCoro, self, midasId)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackDetail.CanChargeCoro = function(self, TT, midasId)
-  -- function num : 0_10 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIShopGiftPackDetail:CanChargeCoro(TT, midasId)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   if not roleModule:IsJapanZone() then
     self:StartTask(self.BuyGoodsTask, self, midasId, 1)
     self:UnLock("UIShopGiftPackDetail_CanCharge")
-    return 
+    return
   end
-  local payModule = (GameGlobal.GetModule)(PayModule)
+  local payModule = GameGlobal.GetModule(PayModule)
   if payModule:NeedSelectAge(TT) then
     self:ShowDialog("UISetAgeConfirmController")
     self:UnLock("UIShopGiftPackDetail_CanCharge")
-    return 
+    return
   end
   self:StartTask(self.BuyGoodsTask, self, midasId, 1)
   self:UnLock("UIShopGiftPackDetail_CanCharge")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackDetail.BuyGoodsTask = function(self, TT, itemId, itemCount)
-  -- function num : 0_11 , upvalues : _ENV
+function UIShopGiftPackDetail:BuyGoodsTask(TT, itemId, itemCount)
   local mPay = self:GetModule(PayModule)
   if IsAndroid() or IsUnityEditor() or IsPc() then
     if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
       local res, replyEvent = mPay:SendBuyGoodsRequest(TT, itemId, itemCount)
-      ;
-      (Log.debug)("UIDemoPayController:BuyGoodsTask IsAndroid start res ", res.m_result)
+      Log.debug("UIDemoPayController:BuyGoodsTask IsAndroid start res ", res.m_result)
       if not res:GetSucc() then
         if res.m_result == PayErrorCode.PAY_ERROR_NOT_USE_MIDAS then
-          (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_pay_direct_buy_need_open_switch"))
+          PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_pay_direct_buy_need_open_switch"))
         else
-          ;
-          (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_pay_direct_buy_fail_try_later"))
+          PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_pay_direct_buy_fail_try_later"))
         end
-      else
-        if not replyEvent then
-          (Log.debug)("UIDemoPayController:BuyGoodsTask failed no replyEvent")
-        else
-          if res.m_result == PayErrorCode.PAY_SUCC then
-            local token = replyEvent.token
-            local url = replyEvent.url_params
-            ;
-            (Log.debug)("UIDemoPayController:BuyGoodsTask success token ", token, " url ", url)
-            mPay:BuyGoodsByUrl(url, self._itemData)
-          end
-        end
+      elseif not replyEvent then
+        Log.debug("UIDemoPayController:BuyGoodsTask failed no replyEvent")
+      elseif res.m_result == PayErrorCode.PAY_SUCC then
+        local token = replyEvent.token
+        local url = replyEvent.url_params
+        Log.debug("UIDemoPayController:BuyGoodsTask success token ", token, " url ", url)
+        mPay:BuyGoodsByUrl(url, self._itemData)
       end
-    else
-      do
-        if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-          mPay:BuyGoodsByGiftPackShopItem(self._itemData, itemCount)
-        end
-        if IsIos() then
-          mPay:BuyGoodsByGiftPackShopItem(self._itemData, itemCount)
-        end
-      end
+    elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+      mPay:BuyGoodsByGiftPackShopItem(self._itemData, itemCount)
     end
+  elseif IsIos() then
+    mPay:BuyGoodsByGiftPackShopItem(self._itemData, itemCount)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopGiftPackDetail._FlushDuplicateSkinTip = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local convertID, convertCount = nil, nil
-  local cfg = (Cfg.cfg_shop_giftmarket_goods)[(self._itemData):GetId()]
+function UIShopGiftPackDetail:_FlushDuplicateSkinTip()
+  local convertID, convertCount
+  local cfg = Cfg.cfg_shop_giftmarket_goods[self._itemData:GetId()]
   if cfg.IsSkin then
-    local petSkin = nil
-    local awardsImmediately = (self._itemData):GetAwardsImmediately()
-    local petModule = (GameGlobal.GetModule)(PetModule)
-    for _,award in ipairs(awardsImmediately) do
+    local petSkin
+    local awardsImmediately = self._itemData:GetAwardsImmediately()
+    local petModule = GameGlobal.GetModule(PetModule)
+    for _, award in ipairs(awardsImmediately) do
       local id = award:GetTemplateId()
       if petModule:IsPetSkinID(id) then
         petSkin = id
         break
       end
     end
-    do
-      local obtained = false
-      obtained = not petSkin or ((GameGlobal.GetModule)(RoleModule)):GetAssetCount(petSkin) > 0
-      if obtained then
-        (Log.info)("礼包中的时装已获得:", petSkin)
-        local cfgSkin = (Cfg.cfg_pet_skin)[petSkin - RoleAssetID.RoleAssetPetSkinBegin]
-        if not cfgSkin or not cfgSkin.SkinAward then
-          (Log.error)("err:UIShopGiftPackDetail  cfgSkin.SkinAward is null ", petSkin)
-        else
-          if #cfgSkin.SkinAward ~= 1 then
-            (Log.exception)("重复时装转化配置错误,只允许转化成一种物品:", (self._itemData):GetId())
-          end
-          convertID = ((cfgSkin.SkinAward)[1])[1]
-          convertCount = ((cfgSkin.SkinAward)[1])[2]
-        end
-      end
-      if convertID and convertCount then
-        local itemName = (StringTable.Get)(((Cfg.cfg_item)[convertID]).Name)
-        local tip = (StringTable.Get)("str_pay_duplicate_skin_tip", convertCount, itemName)
-        ;
-        (self:GetGameObject("SkinTip")):SetActive(true)
-        ;
-        (self:GetUIComponent("UILocalizationText", "SkinTipText")):SetText(tip)
-        ;
-        (self._itemData):SetSkinConvertAward(NewRoleAsset(convertID, convertCount))
+    local obtained = false
+    if petSkin then
+      obtained = GameGlobal.GetModule(RoleModule):GetAssetCount(petSkin) > 0
+    end
+    if obtained then
+      Log.info("礼包中的时装已获得:", petSkin)
+      local cfgSkin = Cfg.cfg_pet_skin[petSkin - RoleAssetID.RoleAssetPetSkinBegin]
+      if not cfgSkin or not cfgSkin.SkinAward then
+        Log.error("err:UIShopGiftPackDetail  cfgSkin.SkinAward is null ", petSkin)
       else
-        (self:GetGameObject("SkinTip")):SetActive(false)
-        ;
-        (self._itemData):SetSkinConvertAward(nil)
+        if #cfgSkin.SkinAward ~= 1 then
+          Log.exception("重复时装转化配置错误,只允许转化成一种物品:", self._itemData:GetId())
+        end
+        convertID = cfgSkin.SkinAward[1][1]
+        convertCount = cfgSkin.SkinAward[1][2]
       end
-      -- DECOMPILER ERROR: 8 unprocessed JMP targets
     end
   end
+  if convertID and convertCount then
+    local itemName = StringTable.Get(Cfg.cfg_item[convertID].Name)
+    local tip = StringTable.Get("str_pay_duplicate_skin_tip", convertCount, itemName)
+    self:GetGameObject("SkinTip"):SetActive(true)
+    self:GetUIComponent("UILocalizationText", "SkinTipText"):SetText(tip)
+    self._itemData:SetSkinConvertAward(NewRoleAsset(convertID, convertCount))
+  else
+    self:GetGameObject("SkinTip"):SetActive(false)
+    self._itemData:SetSkinConvertAward(nil)
+  end
 end
-
-

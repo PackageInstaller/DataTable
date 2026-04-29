@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_surface.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftSurface", Object)
 AircraftSurface = AircraftSurface
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftSurface.Constructor = function(self, cfg, tiles)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftSurface:Constructor(cfg, tiles)
   self._width = cfg.Width
   self._height = cfg.Height
   self._id = cfg.ID
@@ -18,8 +11,8 @@ AircraftSurface.Constructor = function(self, cfg, tiles)
   local xMax, yMax = -M, -M
   local Max = math.max
   local Min = math.min
-  for x,ts in pairs(tiles) do
-    for y,_ in pairs(ts) do
+  for x, ts in pairs(tiles) do
+    for y, _ in pairs(ts) do
       xMin = Min(x, xMin)
       xMax = Max(x, xMax)
       yMin = Min(y, yMin)
@@ -28,169 +21,110 @@ AircraftSurface.Constructor = function(self, cfg, tiles)
   end
   xMin = xMin - 1
   yMin = yMin - 1
-  local width = xMax - (xMin)
-  local height = yMax - (yMin)
-  local go = (GameObjectHelper.CreateEmpty)((tostring(self._id)), nil)
+  local width = xMax - xMin
+  local height = yMax - yMin
+  local go = GameObjectHelper.CreateEmpty(tostring(self._id), nil)
   go.layer = AircraftLayer.Surface
-  -- DECOMPILER ERROR at PC67: Confused about usage of register: R13 in 'UnsetPending'
-
-  ;
-  (go.transform).position = (cfg.Position):Clone()
-  -- DECOMPILER ERROR at PC72: Confused about usage of register: R13 in 'UnsetPending'
-
-  ;
-  (go.transform).eulerAngles = (cfg.Rotation):Clone()
+  go.transform.position = cfg.Position:Clone()
+  go.transform.eulerAngles = cfg.Rotation:Clone()
   local collider = go:AddComponent(typeof(UnityEngine.BoxCollider))
   self._colliderSize = Vector3(width * GridHelper.SIZE, 0.01, height * GridHelper.SIZE)
-  self._colliderCenter = Vector3((xMin) * GridHelper.SIZE, -0.005, (yMin) * GridHelper.SIZE) + Vector3(width * GridHelper.SIZE / 2, 0, height * GridHelper.SIZE / 2)
+  self._colliderCenter = Vector3(xMin * GridHelper.SIZE, -0.005, yMin * GridHelper.SIZE) + Vector3(width * GridHelper.SIZE / 2, 0, height * GridHelper.SIZE / 2)
   collider.size = self._colliderSize
   collider.center = self._colliderCenter
   self._go = go
   self._transform = go.transform
-  self._pos = (cfg.Position):Clone()
-  self._right = ((go.transform).right):Clone()
-  self._forward = ((go.transform).forward):Clone()
-  self._up = ((go.transform).up):Clone()
-  self._rot = (go.transform).rotation
+  self._pos = cfg.Position:Clone()
+  self._right = go.transform.right:Clone()
+  self._forward = go.transform.forward:Clone()
+  self._up = go.transform.up:Clone()
+  self._rot = go.transform.rotation
   self._tiles = tiles
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.Dispose = function(self)
-  -- function num : 0_1
+function AircraftSurface:Dispose()
   if self._meshCreater then
-    (self._meshCreater):Destroy()
+    self._meshCreater:Destroy()
   end
   if self._matReq then
-    (self._matReq):Dispose()
+    self._matReq:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.ColliderSize = function(self)
-  -- function num : 0_2
+function AircraftSurface:ColliderSize()
   return self._colliderSize
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.ColliderCenter = function(self)
-  -- function num : 0_3
+function AircraftSurface:ColliderCenter()
   return self._colliderCenter
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.Width = function(self)
-  -- function num : 0_4
+function AircraftSurface:Width()
   return self._width
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.Height = function(self)
-  -- function num : 0_5
+function AircraftSurface:Height()
   return self._height
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.ID = function(self)
-  -- function num : 0_6
+function AircraftSurface:ID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.WorldPosition = function(self)
-  -- function num : 0_7
+function AircraftSurface:WorldPosition()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.WorldRotation = function(self)
-  -- function num : 0_8
+function AircraftSurface:WorldRotation()
   return self._rot
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.Right = function(self)
-  -- function num : 0_9
+function AircraftSurface:Right()
   return self._right
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.Forward = function(self)
-  -- function num : 0_10
+function AircraftSurface:Forward()
   return self._forward
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.Up = function(self)
-  -- function num : 0_11
+function AircraftSurface:Up()
   return self._up
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.WorldToLocalPosition = function(self, pos)
-  -- function num : 0_12
-  return (self._transform):InverseTransformPoint(pos)
+function AircraftSurface:WorldToLocalPosition(pos)
+  return self._transform:InverseTransformPoint(pos)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.GridType = function(self)
-  -- function num : 0_13
+function AircraftSurface:GridType()
   return self._gridType
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.Tiles = function(self)
-  -- function num : 0_14
+function AircraftSurface:Tiles()
   return self._tiles
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.Show = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function AircraftSurface:Show()
   if not self._hasMesh then
     self._hasMesh = true
-    self._matReq = (ResourceManager:GetInstance()):SyncLoadAsset("AircraftTileMat.mat", LoadType.Mat)
-    self._meshCreater = SurfaceCreater:New((self._go).transform, GridHelper.SIZE, (self._matReq).Obj)
-    for x,ts in pairs(self._tiles) do
-      for y,_ in pairs(ts) do
-        (self._meshCreater):Push(x, y)
+    self._matReq = ResourceManager:GetInstance():SyncLoadAsset("AircraftTileMat.mat", LoadType.Mat)
+    self._meshCreater = SurfaceCreater:New(self._go.transform, GridHelper.SIZE, self._matReq.Obj)
+    for x, ts in pairs(self._tiles) do
+      for y, _ in pairs(ts) do
+        self._meshCreater:Push(x, y)
       end
     end
-    ;
-    (self._meshCreater):Create()
+    self._meshCreater:Create()
   end
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.Hide = function(self)
-  -- function num : 0_16
-  (self._go):SetActive(false)
+function AircraftSurface:Hide()
+  self._go:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.CreateDragPlane = function(self, point)
-  -- function num : 0_17 , upvalues : _ENV
+function AircraftSurface:CreateDragPlane(point)
   if self._dragPlane == nil then
-    local go = (GameObjectHelper.CreateEmpty)("DragPlane", nil)
+    local go = GameObjectHelper.CreateEmpty("DragPlane", nil)
     local collider = go:AddComponent(typeof(UnityEngine.BoxCollider))
     collider.center = self._colliderCenter
     collider.size = self._colliderSize
@@ -201,37 +135,19 @@ AircraftSurface.CreateDragPlane = function(self, point)
     go.layer = AircraftLayer.DragLayer
     self._dragPlane = go
   end
-  do
-    local localPos = (self._transform):InverseTransformPoint(point)
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self._dragPlane).transform).localPosition = Vector3.zero + Vector3(0, localPos.y, 0)
-  end
+  local localPos = self._transform:InverseTransformPoint(point)
+  self._dragPlane.transform.localPosition = Vector3.zero + Vector3(0, localPos.y, 0)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.CheckDragPlane = function(self, go)
-  -- function num : 0_18
-  do return self._dragPlane == go end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftSurface:CheckDragPlane(go)
+  return self._dragPlane == go
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.CheckSurface = function(self, go)
-  -- function num : 0_19
-  do return self._go == go end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftSurface:CheckSurface(go)
+  return self._go == go
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftSurface.PlaneLocalPos = function(self, point)
-  -- function num : 0_20 , upvalues : _ENV
-  local localPos = ((self._dragPlane).transform):InverseTransformPoint(point)
-  return (GridHelper.LocalPos2GridPos)(localPos)
+function AircraftSurface:PlaneLocalPos(point)
+  local localPos = self._dragPlane.transform:InverseTransformPoint(point)
+  return GridHelper.LocalPos2GridPos(localPos)
 end
-
-

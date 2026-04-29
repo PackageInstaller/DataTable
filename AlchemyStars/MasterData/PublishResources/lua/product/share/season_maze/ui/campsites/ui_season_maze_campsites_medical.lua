@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/campsites/ui_season_maze_campsites_medical.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_season_maze_campsites_base")
 _class("UISeasonMaze_Campsites_Medical", UISeasonMaze_Campsites_Base)
 UISeasonMaze_Campsites_Medical = UISeasonMaze_Campsites_Medical
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMaze_Campsites_Medical.OnShowUI = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMaze_Campsites_Medical:OnShowUI(uiParams)
   self:InitWidget()
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Medical.OnHide = function(self)
-  -- function num : 0_1
+function UISeasonMaze_Campsites_Medical:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Medical.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonMaze_Campsites_Medical:InitWidget()
   self._txtCost = self:GetUIComponent("UILocalizationText", "txtCost")
   self._txtTimes = self:GetUIComponent("UILocalizationText", "txtTimes")
   local moneyPool = self:GetUIComponent("UISelectObjectPath", "money")
@@ -33,132 +20,94 @@ UISeasonMaze_Campsites_Medical.InitWidget = function(self)
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Medical.Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local goldCount = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
-  local hasCureTimes = (self._com):GetAttrValue(SeasonMazeAttrType.SMAT_HealthyCnt)
+function UISeasonMaze_Campsites_Medical:Refresh()
+  local goldCount = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
+  local hasCureTimes = self._com:GetAttrValue(SeasonMazeAttrType.SMAT_HealthyCnt)
   local currentTimes = hasCureTimes + 1
-  local cfg = (self._cfg_global).CureCount
+  local cfg = self._cfg_global.CureCount
   local cost = 0
-  -- DECOMPILER ERROR at PC20: Unhandled construct in 'MakeBoolean' P1
-
-  if cfg and #cfg < currentTimes then
-    cost = cfg[#cfg]
-  else
-    cost = cfg[currentTimes]
+  if cfg then
+    if currentTimes > #cfg then
+      cost = cfg[#cfg]
+    else
+      cost = cfg[currentTimes]
+    end
   end
   self._bCostEnough = true
-  ;
-  (self._txtTimes):SetText((StringTable.Get)("str_season_maze_camp_med_room_count", hasCureTimes))
+  self._txtTimes:SetText(StringTable.Get("str_season_maze_camp_med_room_count", hasCureTimes))
   if goldCount < cost then
-    (self._txtCost):SetText("<color=#fe0000>" .. cost .. "</color>")
+    self._txtCost:SetText("<color=#fe0000>" .. cost .. "</color>")
     self._bCostEnough = false
   else
-    ;
-    (self._txtCost):SetText(cost)
+    self._txtCost:SetText(cost)
   end
-  local str = (self._cfg_global).CurePercent
-  self._confirmDesc = (StringTable.Get)("str_season_maze_camp_med_heal_cost_desc", cost, str)
-  ;
-  (self._moneyTopIcon):SetData(goldCount, function()
-    -- function num : 0_3_0 , upvalues : self
+  local str = self._cfg_global.CurePercent
+  self._confirmDesc = StringTable.Get("str_season_maze_camp_med_heal_cost_desc", cost, str)
+  self._moneyTopIcon:SetData(goldCount, function()
     local itemId = 9001002
     self:ShowDialog("UITopTipsController", itemId, self._moneyTipsPos)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Medical.BtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMaze_Campsites_Medical:BtnOnClick(go)
   if not self:_HasHurtPet() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_maze_camp_med_fail_5006510"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_season_maze_camp_med_fail_5006510"))
+    return
   end
   if not self._bCostEnough then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_maze_camp_med_fail_2"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_season_maze_camp_med_fail_2"))
+    return
   end
-  ;
-  (UISeasonMazeModule.PopMsgBox)((StringTable.Get)("str_season_maze_camp_tips"), self._confirmDesc, SeasonMazeMsgBoxType.OkCancel, function()
-    -- function num : 0_4_0 , upvalues : self
+  UISeasonMazeModule.PopMsgBox(StringTable.Get("str_season_maze_camp_tips"), self._confirmDesc, SeasonMazeMsgBoxType.OkCancel, function()
     self:OnMedicalSure()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Medical._HasHurtPet = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local petInfos = (((self._com):GetComponentInfo()).m_bag_info).pet_list
+function UISeasonMaze_Campsites_Medical:_HasHurtPet()
+  local petInfos = self._com:GetComponentInfo().m_bag_info.pet_list
   if not petInfos then
-    return 
+    return
   end
-  for key,value in pairs(petInfos) do
+  for key, value in pairs(petInfos) do
     if value.cur_blood_prcent > 0 and value.cur_blood_prcent < 1 then
       return true
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Medical.CloseBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._animation):Play("uieffanim_UISeasonMaze_Campsites_Life_out")
+function UISeasonMaze_Campsites_Medical:CloseBtnOnClick(go)
+  self._animation:Play("uieffanim_UISeasonMaze_Campsites_Life_out")
   self:Lock("UISeasonMaze_Campsites_Medical_out")
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
     YIELD(TT, 500)
     self:UnLock("UISeasonMaze_Campsites_Medical_out")
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Medical.OnMedicalSure = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMaze_Campsites_Medical:OnMedicalSure()
   self:Lock("UISeasonMaze_Campsites_Medical:OnMedicalSure")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnMedicalSureReq, self)
+  GameGlobal.TaskManager():StartTask(self.OnMedicalSureReq, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Medical.OnMedicalSureReq = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonMaze_Campsites_Medical:OnMedicalSureReq(TT)
   local res = AsyncRequestRes:New()
-  ;
-  (self._com):HandleSeasonMazeCure(TT, res)
+  self._com:HandleSeasonMazeCure(TT, res)
   self:UnLock("UISeasonMaze_Campsites_Medical:OnMedicalSure")
   if res:GetSucc() then
     self:Refresh()
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_maze_camp_med_succ"))
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUISeasonMazeAttChanged, SeasonMazeAttrType.SMAT_Gold)
+    ToastManager.ShowToast(StringTable.Get("str_season_maze_camp_med_succ"))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUISeasonMazeAttChanged, SeasonMazeAttrType.SMAT_Gold)
   else
     local result = res:GetResult()
     if result == CampaignErrorType.E_COMPONENT_SEASON_MAZE_AllPetFullBlood then
-      local tips = (StringTable.Get)("str_season_maze_camp_med_fail_5006510")
-      ;
-      (ToastManager.ShowToast)(tips)
+      local tips = StringTable.Get("str_season_maze_camp_med_fail_5006510")
+      ToastManager.ShowToast(tips)
     else
-      do
-        ;
-        (Log.error)("###[UISeasonMaze_Campsites_Medical] HandleSeasonMazeCure fail! result:", result)
-        if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-          return 
-        end
+      Log.error("###[UISeasonMaze_Campsites_Medical] HandleSeasonMazeCure fail! result:", result)
+      if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+        return
       end
     end
   end
 end
-
-

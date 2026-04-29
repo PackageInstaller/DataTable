@@ -1,34 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_logic/decrease_san_by_scope_calc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DecreaseSanByScopeCalculator", Object)
 DecreaseSanByScopeCalculator = DecreaseSanByScopeCalculator
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DecreaseSanByScopeCalculator.Constructor = function(self, world)
-  -- function num : 0_0
+function DecreaseSanByScopeCalculator:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DecreaseSanByScopeCalculator.Calculate = function(self, casterEntity, skillEffectParam, finalScopeFilterParam)
-  -- function num : 0_1 , upvalues : _ENV
+function DecreaseSanByScopeCalculator:Calculate(casterEntity, skillEffectParam, finalScopeFilterParam)
   local generalCalc = GeneralEffectCalculator:New(self._world)
   local skillScopeResult = generalCalc:_CalcSkillEffectScopeResult(casterEntity, skillEffectParam, finalScopeFilterParam)
   local attackRange = skillScopeResult:GetAttackRange()
   local sanPerGrid = skillEffectParam:GetSanPerGrid()
   local decreaseSan = sanPerGrid * #attackRange
   local range = {}
-  for _,v in ipairs(attackRange) do
-    (table.insert)(range, v)
+  for _, v in ipairs(attackRange) do
+    table.insert(range, v)
   end
   local result = SkillEffectResult_DecreaseSanByScope:New(casterEntity:GetID(), range, decreaseSan)
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   skillEffectResultContainer:AddEffectResult(result)
   return {result}
 end
-
-

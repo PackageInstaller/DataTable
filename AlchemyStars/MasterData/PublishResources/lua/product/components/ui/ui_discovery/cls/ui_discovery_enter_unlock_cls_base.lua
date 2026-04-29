@@ -1,47 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/cls/ui_discovery_enter_unlock_cls_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiscoveryEnterUnlockClsBase", Object)
 UIDiscoveryEnterUnlockClsBase = UIDiscoveryEnterUnlockClsBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiscoveryEnterUnlockClsBase.Constructor = function(self, moduleID, go, tex, img)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDiscoveryEnterUnlockClsBase:Constructor(moduleID, go, tex, img)
   self._moduleId = moduleID
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
+  self._roleModule = GameGlobal.GetModule(RoleModule)
   self._go = go
   self._tex = tex
   self._img = img
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnterUnlockClsBase.IsUnlock = function(self)
-  -- function num : 0_1
-  return (self._roleModule):CheckModuleUnlock(self._moduleId)
+function UIDiscoveryEnterUnlockClsBase:IsUnlock()
+  return self._roleModule:CheckModuleUnlock(self._moduleId)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnterUnlockClsBase.GameObject = function(self)
-  -- function num : 0_2
+function UIDiscoveryEnterUnlockClsBase:GameObject()
   return self._go
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnterUnlockClsBase.Text = function(self)
-  -- function num : 0_3
+function UIDiscoveryEnterUnlockClsBase:Text()
   return self._tex
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnterUnlockClsBase.Image = function(self)
-  -- function num : 0_4
+function UIDiscoveryEnterUnlockClsBase:Image()
   return self._img
 end
-
-

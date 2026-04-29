@@ -1,89 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/loader/season_queue.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonQueue", Object)
 SeasonQueue = SeasonQueue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonQueue.Constructor = function(self)
-  -- function num : 0_0
+function SeasonQueue:Constructor()
   self._first = nil
   self._last = nil
   self._count = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonQueue.Clear = function(self)
-  -- function num : 0_1
+function SeasonQueue:Clear()
   self._first = nil
   self._last = nil
   self._count = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonQueue.Enqueue = function(self, item)
-  -- function num : 0_2
-  do
-    if self._first == nil then
-      local element = self:NewItem(item)
-      self._first = element
-      self._last = element
-      self._count = 1
-      return 
-    end
-    local last = self:NewItem(item)
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._last).next = last
-    self._last = last
-    self._count = self._count + 1
+function SeasonQueue:Enqueue(item)
+  if self._first == nil then
+    local element = self:NewItem(item)
+    self._first = element
+    self._last = element
+    self._count = 1
+    return
   end
+  local last = self:NewItem(item)
+  self._last.next = last
+  self._last = last
+  self._count = self._count + 1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonQueue.Dequeue = function(self)
-  -- function num : 0_3
+function SeasonQueue:Dequeue()
   if self._first == nil then
     return nil
   end
-  local item = (self._first).value
-  local first = (self._first).next
+  local item = self._first.value
+  local first = self._first.next
   self._first = first
   self._count = self._count - 1
   return item
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonQueue.Peek = function(self)
-  -- function num : 0_4
+function SeasonQueue:Peek()
   if self._first == nil then
     return nil
   end
-  return (self._first).value
+  return self._first.value
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonQueue.FrontToBack = function(self)
-  -- function num : 0_5
+function SeasonQueue:FrontToBack()
   if self._first == nil then
-    return 
+    return
   end
   local item = self:Dequeue()
   self:Enqueue(item)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonQueue.ForEach = function(self, func)
-  -- function num : 0_6
+function SeasonQueue:ForEach(func)
   local cur = self._first
   while cur do
     func(cur.value)
@@ -91,43 +61,29 @@ SeasonQueue.ForEach = function(self, func)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonQueue.Contains = function(self, item)
-  -- function num : 0_7
+function SeasonQueue:Contains(item)
   self:ForEach(function(val)
-    -- function num : 0_7_0 , upvalues : item
     if val == item then
       return true
     end
-  end
-)
+  end)
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonQueue.Count = function(self)
-  -- function num : 0_8
+function SeasonQueue:Count()
   return self._count
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonQueue.NewItem = function(self, val)
-  -- function num : 0_9
+function SeasonQueue:NewItem(val)
   return {next = nil, value = val}
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonQueue.RemoveFirst = function(self, func)
-  -- function num : 0_10
+function SeasonQueue:RemoveFirst(func)
   if self._first == nil then
     return false
   end
-  if func((self._first).value) then
-    self._first = (self._first).next
+  if func(self._first.value) then
+    self._first = self._first.next
     self._count = self._count - 1
     if self._count == 0 then
       self._last = nil
@@ -151,55 +107,37 @@ SeasonQueue.RemoveFirst = function(self, func)
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonQueue.PopFirst = function(self, filter)
-  -- function num : 0_11
+function SeasonQueue:PopFirst(filter)
   if self._first == nil then
-    return 
+    return
   end
-  do
-    if filter((self._first).value) then
-      local item = (self._first).value
-      self._first = (self._first).next
+  if filter(self._first.value) then
+    local item = self._first.value
+    self._first = self._first.next
+    self._count = self._count - 1
+    if self._count == 0 then
+      self._last = nil
+    end
+    return item
+  end
+  local cur = self._first
+  local next = cur.next
+  while next do
+    if filter(next.value) then
+      local item = next.value
+      cur.next = next.next
       self._count = self._count - 1
-      if self._count == 0 then
-        self._last = nil
+      if cur.next == nil then
+        self._last = cur
       end
       return item
     end
-    local cur = self._first
-    local next = cur.next
-    while 1 do
-      if next then
-        do
-          if filter(next.value) then
-            local item = next.value
-            cur.next = next.next
-            self._count = self._count - 1
-            if cur.next == nil then
-              self._last = cur
-            end
-            return item
-          end
-          cur = next
-          next = cur.next
-          -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
-    end
+    cur = next
+    next = cur.next
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonQueue.ContainsBy = function(self, filter)
-  -- function num : 0_12
+function SeasonQueue:ContainsBy(filter)
   local cur = self._first
   while cur do
     if filter(cur.value) then
@@ -209,5 +147,3 @@ SeasonQueue.ContainsBy = function(self, filter)
   end
   return false
 end
-
-

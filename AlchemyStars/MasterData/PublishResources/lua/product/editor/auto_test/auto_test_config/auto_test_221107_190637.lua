@@ -1,101 +1,173 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_config/auto_test_221107_190637.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 AutoTest_221107_190637 = {
-cases = {
-[1] = {
-[1] = {action = "WaitGameFsm", 
-args = {id = 5}
+  cases = {
+    [1] = {
+      [1] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [2] = {
+        action = "SetTeamPosition",
+        args = {name = "team", pos = 502}
+      },
+      [3] = {
+        action = "AddMonster",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 2010913,
+          name = "e1",
+          pos = 504
+        }
+      },
+      [4] = {
+        action = "AddMonster",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 2031422,
+          name = "e2",
+          pos = 207
+        }
+      },
+      [5] = {
+        action = "SetAllMonstersHP",
+        args = {value = 9999999}
+      },
+      [6] = {
+        action = "CheckEntityBuffLayer",
+        args = {
+          layer = 1,
+          layerType = 400176,
+          name = "e1",
+          trigger = 88
+        }
+      },
+      [7] = {
+        action = "CheckEntityBuffLayer",
+        args = {
+          layer = 4,
+          layerType = 400176,
+          name = "e2",
+          trigger = 88
+        }
+      },
+      [8] = {
+        action = "FakeInputChain",
+        args = {
+          chainPath = {
+            [1] = 502.0,
+            [2] = 603.0,
+            [3] = 703.0,
+            [4] = 804.0,
+            [5] = 805.0,
+            [6] = 806.0,
+            [7] = 707.0,
+            [8] = 607.0,
+            [9] = 507.0,
+            [10] = 406.0,
+            [11] = 306.0,
+            [12] = 206.0,
+            [13] = 106.0
+          },
+          pieceType = 1
+        }
+      },
+      [9] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [10] = {
+        action = "SetTeamPowerFull",
+        args = {name = "team"}
+      },
+      [11] = {
+        action = "FakeInputChain",
+        args = {
+          chainPath = {
+            [1] = 106.0,
+            [2] = 205.0,
+            [3] = 304.0,
+            [4] = 404.0
+          },
+          pieceType = 1
+        }
+      },
+      [12] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [13] = {
+        action = "CaptureFormulaAttr",
+        args = {
+          attr = "damagePercent",
+          damageIndex = 1,
+          defname = "e1",
+          key = "CalcDamage_5",
+          skillid = 3221761,
+          trigger = 102,
+          varname = "v1"
+        }
+      },
+      [14] = {
+        action = "CheckLocalValue",
+        args = {
+          target = 0.80000001192093,
+          trigger = 102,
+          varname = "v1"
+        }
+      },
+      [15] = {
+        action = "CaptureFormulaAttr",
+        args = {
+          attr = "damagePercent",
+          damageIndex = 1,
+          defname = "e2",
+          key = "CalcDamage_5",
+          skillid = 3221761,
+          trigger = 102,
+          varname = "v2"
+        }
+      },
+      [16] = {
+        action = "CheckLocalValue",
+        args = {
+          target = 3.2000000476837,
+          trigger = 102,
+          varname = "v2"
+        }
+      },
+      [17] = {
+        action = "FakeCastSkill",
+        args = {
+          name = "p1",
+          pickUpPos = {
+            [1] = 504.0
+          }
+        }
+      },
+      [18] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      name = "主动技强化：范围提高到3圈"
+    }
+  },
+  name = "贝尔塔突破2",
+  petList = {
+    [1] = {
+      awakening = 2,
+      equiplv = 1,
+      grade = 2,
+      id = 1501761,
+      level = 1,
+      name = "p1"
+    }
+  },
+  remotePet = {},
+  setup = {
+    [1] = {
+      args = {levelID = 1, matchType = 1},
+      setup = "LevelBasic"
+    }
+  }
 }
-, 
-[2] = {action = "SetTeamPosition", 
-args = {name = "team", pos = 502}
-}
-, 
-[3] = {action = "AddMonster", 
-args = {dir = 1, disableai = true, id = 2010913, name = "e1", pos = 504}
-}
-, 
-[4] = {action = "AddMonster", 
-args = {dir = 1, disableai = true, id = 2031422, name = "e2", pos = 207}
-}
-, 
-[5] = {action = "SetAllMonstersHP", 
-args = {value = 9999999}
-}
-, 
-[6] = {action = "CheckEntityBuffLayer", 
-args = {layer = 1, layerType = 400176, name = "e1", trigger = 88}
-}
-, 
-[7] = {action = "CheckEntityBuffLayer", 
-args = {layer = 4, layerType = 400176, name = "e2", trigger = 88}
-}
-, 
-[8] = {action = "FakeInputChain", 
-args = {
-chainPath = {[1] = 502, [2] = 603, [3] = 703, [4] = 804, [5] = 805, [6] = 806, [7] = 707, [8] = 607, [9] = 507, [10] = 406, [11] = 306, [12] = 206, [13] = 106}
-, pieceType = 1}
-}
-, 
-[9] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, 
-[10] = {action = "SetTeamPowerFull", 
-args = {name = "team"}
-}
-, 
-[11] = {action = "FakeInputChain", 
-args = {
-chainPath = {[1] = 106, [2] = 205, [3] = 304, [4] = 404}
-, pieceType = 1}
-}
-, 
-[12] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, 
-[13] = {action = "CaptureFormulaAttr", 
-args = {attr = "damagePercent", damageIndex = 1, defname = "e1", key = "CalcDamage_5", skillid = 3221761, trigger = 102, varname = "v1"}
-}
-, 
-[14] = {action = "CheckLocalValue", 
-args = {target = 0.80000001192093, trigger = 102, varname = "v1"}
-}
-, 
-[15] = {action = "CaptureFormulaAttr", 
-args = {attr = "damagePercent", damageIndex = 1, defname = "e2", key = "CalcDamage_5", skillid = 3221761, trigger = 102, varname = "v2"}
-}
-, 
-[16] = {action = "CheckLocalValue", 
-args = {target = 3.2000000476837, trigger = 102, varname = "v2"}
-}
-, 
-[17] = {action = "FakeCastSkill", 
-args = {name = "p1", 
-pickUpPos = {[1] = 504}
-}
-}
-, 
-[18] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, name = "主动技强化：范围提高到3圈"}
-}
-, name = "贝尔塔突破2", 
-petList = {
-[1] = {awakening = 2, equiplv = 1, grade = 2, id = 1501761, level = 1, name = "p1"}
-}
-, 
-remotePet = {}
-, 
-setup = {
-[1] = {
-args = {levelID = 1, matchType = 1}
-, setup = "LevelBasic"}
-}
-}
-

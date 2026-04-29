@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/stage/ui_season_plot_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonPlotEnter", UIController)
 UISeasonPlotEnter = UISeasonPlotEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonPlotEnter.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UISeasonPlotEnter:OnShow(uiParam)
   local titleId = uiParam[1]
   local titleName = uiParam[2]
   self._story = uiParam[3]
@@ -19,44 +12,26 @@ UISeasonPlotEnter.OnShow = function(self, uiParam)
   txtStageName:RefreshText(titleName or "")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonPlotEnter.OnHide = function(self)
-  -- function num : 0_1
+function UISeasonPlotEnter:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonPlotEnter.EnterPlot = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonPlotEnter:EnterPlot()
   if not self._story then
-    (Log.error)("### [UISeasonPlotEnter] no story")
-    return 
+    Log.error("### [UISeasonPlotEnter] no story")
+    return
   end
-  ;
-  (UISeasonHelper.PlayStoryInSeasonScence)(self._story, self._callback)
+  UISeasonHelper.PlayStoryInSeasonScence(self._story, self._callback)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonPlotEnter.ImgBGOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonPlotEnter:ImgBGOnClick(go)
   self:EnterPlot()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonPlotEnter.BtnEnterOnClick = function(self, go)
-  -- function num : 0_4
+function UISeasonPlotEnter:BtnEnterOnClick(go)
   self:EnterPlot()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonPlotEnter.BgOnClick = function(self, go)
-  -- function num : 0_5
+function UISeasonPlotEnter:BgOnClick(go)
   self:CloseDialog()
 end
-
-

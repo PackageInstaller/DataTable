@@ -1,209 +1,145 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_testfunc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandTestFunc", UICustomWidget)
 UIHomelandTestFunc = UIHomelandTestFunc
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandTestFunc._GetComponents = function(self)
-  -- function num : 0_0
+function UIHomelandTestFunc:_GetComponents()
   self._window = self:GetGameObject("TestFuncWindow")
   self._gameobj = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTestFunc.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._homelandClient = ((GameGlobal.GetUIModule)(HomelandModule)):GetClient()
-  self._mainCharacter = ((self._homelandClient):CharacterManager()):MainCharacterController()
+function UIHomelandTestFunc:OnShow(uiParams)
+  self._homelandClient = GameGlobal.GetUIModule(HomelandModule):GetClient()
+  self._mainCharacter = self._homelandClient:CharacterManager():MainCharacterController()
   self._petId = 1600061
   self:_GetComponents()
-  ;
-  (self._window):SetActive(false)
+  self._window:SetActive(false)
   self._main = UITestFuncBtnManager:New(self, "Group_Activity")
   self:_SetContent_Main(self._main)
-  ;
-  (self._main):SpawnBtns()
+  self._main:SpawnBtns()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTestFunc.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandTestFunc:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTestFunc.Switch = function(self, show)
-  -- function num : 0_3
-  (self._gameobj):SetActive(show)
+function UIHomelandTestFunc:Switch(show)
+  self._gameobj:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTestFunc.TestFuncEntryOnClick = function(self)
-  -- function num : 0_4
-  (self._window):SetActive(true)
+function UIHomelandTestFunc:TestFuncEntryOnClick()
+  self._window:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTestFunc.TestFuncWindowOnClick = function(self)
-  -- function num : 0_5
-  (self._window):SetActive(false)
+function UIHomelandTestFunc:TestFuncWindowOnClick()
+  self._window:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTestFunc._SetContent_Main = function(self, manager)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandTestFunc:_SetContent_Main(manager)
   manager:AddBtn_Toggle("活动调试开关", function()
-    -- function num : 0_6_0 , upvalues : self
     self:_GetToggleFunc_ActivityDebug()
-  end
-)
+  end)
   manager:AddBtn_Default("剧情测试", function()
-    -- function num : 0_6_1 , upvalues : _ENV, self
-    (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIHomeStoryController, function()
-      -- function num : 0_6_1_0 , upvalues : self, _ENV
+    CutsceneManager.ExcuteCutsceneIn(UIStateType.UIHomeStoryController, function()
       self:SwitchState(UIStateType.UIHomeStoryController)
-    end
-)
-  end
-)
+    end)
+  end)
   manager:AddBtn_ShowDialog("宿舍", "UIHomeDomitory")
   manager:AddBtn_ShowDialog("商店", "UIHomelandShopController")
   manager:AddBtn_ShowDialog("打造", "UIForge")
   manager:AddBtn_Default("删除秘闻缓存", function()
-    -- function num : 0_6_2 , upvalues : _ENV
-    local key = "HomeSecretMsg_" .. ((GameGlobal.GameLogic)()):GetOpenId()
-    ;
-    (LocalDB.Delete)(key)
-  end
-)
+    local key = "HomeSecretMsg_" .. GameGlobal.GameLogic():GetOpenId()
+    LocalDB.Delete(key)
+  end)
   manager:AddBtn_Default("删除家园币上限提示", function()
-    -- function num : 0_6_3 , upvalues : _ENV
-    local key = ((GameGlobal.GameLogic)()):GetOpenId() .. "_HomeReachCoinCeiling"
-    ;
-    (LocalDB.Delete)(key)
-  end
-)
-  manager:AddBtn_ShowDialog("交互效果-2", "UIHomelandTaskFinishEffect", {-2, nil, nil, nil})
-  manager:AddBtn_ShowDialog("交互效果-1", "UIHomelandTaskFinishEffect", {-1, nil, nil, nil})
+    local key = GameGlobal.GameLogic():GetOpenId() .. "_HomeReachCoinCeiling"
+    LocalDB.Delete(key)
+  end)
+  manager:AddBtn_ShowDialog("交互效果-2", "UIHomelandTaskFinishEffect", {
+    -2,
+    nil,
+    nil,
+    nil
+  })
+  manager:AddBtn_ShowDialog("交互效果-1", "UIHomelandTaskFinishEffect", {
+    -1,
+    nil,
+    nil,
+    nil
+  })
   self:_FillData_Pet(manager)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTestFunc._FillData_Pet = function(self, manager)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomelandTestFunc:_FillData_Pet(manager)
   manager:AddBtn_Default("光灵-白兰", function()
-    -- function num : 0_7_0 , upvalues : self
     self:_SetPetId(1400411)
-  end
-)
+  end)
   manager:AddBtn_Default("光灵-卡莲", function()
-    -- function num : 0_7_1 , upvalues : self
     self:_SetPetId(1600061)
-  end
-)
+  end)
   manager:AddBtn_Default("移动到光灵", function()
-    -- function num : 0_7_2 , upvalues : self
     self:_HomelandMoveToPet(self._petId)
-  end
-)
+  end)
   manager:AddBtn_Default("钓鱼比赛-河边", function()
-    -- function num : 0_7_3 , upvalues : self, _ENV
     self:_HomelandMove(self._petId)
     self:_HomelandPetChangeBehavior(self._petId, HomelandPetBehaviorType.FishingMatch)
-  end
-)
+  end)
   manager:AddBtn_Default("钓鱼比赛-钓鱼", function()
-    -- function num : 0_7_4 , upvalues : self, _ENV
-    local pet = ((self._homelandClient):PetManager()):GetPet(self._petId)
+    local pet = self._homelandClient:PetManager():GetPet(self._petId)
     if pet then
-      local type = ((pet:GetPetBehavior()):GetCurBehavior()):GetBehaviorType()
+      local type = pet:GetPetBehavior():GetCurBehavior():GetBehaviorType()
       if type == HomelandPetBehaviorType.FishingMatch then
-        ((pet:GetPetBehavior()):GetCurBehavior()):FishMatchStart(0, 1001)
+        pet:GetPetBehavior():GetCurBehavior():FishMatchStart(0, 1001)
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTestFunc._GetToggleFunc_ActivityDebug = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local click = function()
-    -- function num : 0_8_0 , upvalues : _ENV
-    local key = (UIActivityHelper.GetDebugOpenKey)()
-    if (LocalDB.HasKey)(key) then
-      (ToastManager.ShowToast)("Close")
-      ;
-      (LocalDB.Delete)(key)
+function UIHomelandTestFunc:_GetToggleFunc_ActivityDebug()
+  local function click()
+    local key = UIActivityHelper.GetDebugOpenKey()
+    
+    if LocalDB.HasKey(key) then
+      ToastManager.ShowToast("Close")
+      LocalDB.Delete(key)
     else
-      ;
-      (LocalDB.SetInt)(key, 1)
-      ;
-      (ToastManager.ShowToast)("Open")
+      LocalDB.SetInt(key, 1)
+      ToastManager.ShowToast("Open")
     end
   end
-
-  local getValue = function()
-    -- function num : 0_8_1 , upvalues : _ENV
-    local key = (UIActivityHelper.GetDebugOpenKey)()
-    local hasKey = (LocalDB.HasKey)(key)
+  
+  local function getValue()
+    local key = UIActivityHelper.GetDebugOpenKey()
+    local hasKey = LocalDB.HasKey(key)
     return hasKey
   end
-
+  
   return click, getValue
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTestFunc._SetPetId = function(self, petId)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomelandTestFunc:_SetPetId(petId)
   self._petId = petId
   local str = "设置光灵 petId = " .. petId
-  ;
-  (ToastManager.ShowToast)(str)
+  ToastManager.ShowToast(str)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTestFunc._HomelandMoveToPet = function(self, petId)
-  -- function num : 0_10 , upvalues : _ENV
-  local pet = ((self._homelandClient):PetManager()):GetPet(petId)
+function UIHomelandTestFunc:_HomelandMoveToPet(petId)
+  local pet = self._homelandClient:PetManager():GetPet(petId)
   if pet then
     local playerPos = pet:GetPosition()
-    ;
-    (self._mainCharacter):SetLocation(playerPos, Quaternion.identity)
+    self._mainCharacter:SetLocation(playerPos, Quaternion.identity)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTestFunc._HomelandMove = function(self, petId)
-  -- function num : 0_11 , upvalues : _ENV
-  local pet = ((self._homelandClient):PetManager()):GetPet(petId)
+function UIHomelandTestFunc:_HomelandMove(petId)
+  local pet = self._homelandClient:PetManager():GetPet(petId)
   if pet then
     local playerPos, petPos = Vector3(-94, -5, 103), Vector3(-95, -5, 102)
     pet:SetPosition(petPos)
     pet:ResetNavmeshPos()
-    ;
-    (self._mainCharacter):SetLocation(playerPos, Quaternion.identity)
+    self._mainCharacter:SetLocation(playerPos, Quaternion.identity)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTestFunc._HomelandPetChangeBehavior = function(self, petId, type)
-  -- function num : 0_12 , upvalues : _ENV
-  local pet = ((self._homelandClient):PetManager()):GetPet(petId)
+function UIHomelandTestFunc:_HomelandPetChangeBehavior(petId, type)
+  local pet = self._homelandClient:PetManager():GetPet(petId)
   if pet then
     if type == HomelandPetBehaviorType.FishingPrepare or type == HomelandPetBehaviorType.FishingMatch then
       pet:SetOccupied(HomelandPetOccupiedType.FishingMatch)
@@ -211,5 +147,3 @@ UIHomelandTestFunc._HomelandPetChangeBehavior = function(self, petId, type)
     pet:ChangeBehavior(type)
   end
 end
-
-

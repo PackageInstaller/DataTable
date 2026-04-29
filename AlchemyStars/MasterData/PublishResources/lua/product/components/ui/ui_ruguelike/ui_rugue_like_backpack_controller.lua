@@ -1,121 +1,89 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_ruguelike/ui_rugue_like_backpack_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIRugueLikeBackpackController", UIController)
 UIRugueLikeBackpackController = UIRugueLikeBackpackController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIRugueLikeBackpackController.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_item)({})
+function UIRugueLikeBackpackController:OnShow(uiParam)
+  self._cfg = Cfg.cfg_item({})
   if self._cfg == nil then
-    (Log.fatal)("[error] maze --> _cfg == nil !")
+    Log.fatal("[error] maze --> _cfg == nil !")
   end
   self._itemCountPerRow = 5
   self._currFilterColor = 0
   self._innerGame = uiParam[1]
   if self._innerGame then
-    local matchModule = (GameGlobal.GetModule)(MatchModule)
+    local matchModule = GameGlobal.GetModule(MatchModule)
     local enterData = matchModule:GetMatchEnterData()
     if enterData:GetMatchType() == MatchType.MT_MiniMaze then
       self._isFromMiniMaze = true
-    else
-      if enterData:GetMatchType() == MatchType.MT_PopStarPro then
-        self._isFromPopStarPro = true
-        local createInfo = enterData:GetMissionCreateInfo()
-        local relics = createInfo.relics
-        self._relicList = {}
-        for _,relicID in pairs(relics) do
-          local cfg = (Cfg.cfg_item_relic)[relicID]
-          if cfg.RelicType ~= 1 then
-            (table.insert)(self._relicList, relicID)
-          end
+    elseif enterData:GetMatchType() == MatchType.MT_PopStarPro then
+      self._isFromPopStarPro = true
+      local createInfo = enterData:GetMissionCreateInfo()
+      local relics = createInfo.relics
+      self._relicList = {}
+      for _, relicID in pairs(relics) do
+        local cfg = Cfg.cfg_item_relic[relicID]
+        if cfg.RelicType ~= 1 then
+          table.insert(self._relicList, relicID)
         end
       end
     end
-  else
-    do
-      if uiParam[2] == TeamOpenerType.AniPopStar then
-        self._isFromPopStarPro = true
-        local anipopModule = (GameGlobal.GetModule)(AnipopModule)
-        local aniPopInfo = anipopModule:GetAniPopInfo()
-        local relics = (aniPopInfo.relic_info).relics
-        self._relicList = {}
-        for _,relicID in pairs(relics) do
-          local cfg = (Cfg.cfg_item_relic)[relicID]
-          if cfg.RelicType ~= 1 then
-            (table.insert)(self._relicList, relicID)
-          end
-        end
-      end
-      do
-        if self._isFromMiniMaze then
-          self._itemInfo = self:SortItems((BattleStatHelper.GetAllMiniMazeRelic)())
-        else
-          if self._isFromPopStarPro then
-            self._itemInfo = self:SortItems(self._relicList)
-          else
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIMazeBag)
-            self._module = (GameGlobal.GetModule)(MazeModule)
-            if self._module == nil then
-              (Log.fatal)("[error] maze --> module == nil !")
-            end
-            local mazeInfo = (self._module):GetMazeInfo()
-            self._itemInfo = self:SortItems(mazeInfo.relics)
-          end
-        end
-        do
-          self._listShowRowmItemCount = (table.count)(self._itemInfo)
-          self:GetComponents()
-          self:FlushFilters()
-          self:_InitSrollView()
-        end
+  elseif uiParam[2] == TeamOpenerType.AniPopStar then
+    self._isFromPopStarPro = true
+    local anipopModule = GameGlobal.GetModule(AnipopModule)
+    local aniPopInfo = anipopModule:GetAniPopInfo()
+    local relics = aniPopInfo.relic_info.relics
+    self._relicList = {}
+    for _, relicID in pairs(relics) do
+      local cfg = Cfg.cfg_item_relic[relicID]
+      if cfg.RelicType ~= 1 then
+        table.insert(self._relicList, relicID)
       end
     end
   end
+  if self._isFromMiniMaze then
+    self._itemInfo = self:SortItems(BattleStatHelper.GetAllMiniMazeRelic())
+  elseif self._isFromPopStarPro then
+    self._itemInfo = self:SortItems(self._relicList)
+  else
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIMazeBag)
+    self._module = GameGlobal.GetModule(MazeModule)
+    if self._module == nil then
+      Log.fatal("[error] maze --> module == nil !")
+    end
+    local mazeInfo = self._module:GetMazeInfo()
+    self._itemInfo = self:SortItems(mazeInfo.relics)
+  end
+  self._listShowRowmItemCount = table.count(self._itemInfo)
+  self:GetComponents()
+  self:FlushFilters()
+  self:_InitSrollView()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackController.SortItems = function(self, items)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.sort)(items, function(a, b)
-    -- function num : 0_1_0 , upvalues : self
-    local ta = (self._cfg)[a]
-    local tb = (self._cfg)[b]
-    if ta.ID >= tb.ID then
-      do return ta.Color ~= tb.Color end
-      do return tb.Color < ta.Color end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function UIRugueLikeBackpackController:SortItems(items)
+  table.sort(items, function(a, b)
+    local ta = self._cfg[a]
+    local tb = self._cfg[b]
+    if ta.Color == tb.Color then
+      return ta.ID < tb.ID
     end
-  end
-)
+    return ta.Color > tb.Color
+  end)
   return items
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackController.GetComponents = function(self)
-  -- function num : 0_2
+function UIRugueLikeBackpackController:GetComponents()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  local helpFun = function()
-    -- function num : 0_2_0 , upvalues : self
+  
+  local function helpFun()
     self:ShowDialog("UIHelpController", "Maze")
   end
-
+  
   if self._isFromMiniMaze or self._isFromPopStarPro then
     helpFun = nil
   end
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_1 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, helpFun, nil, self._innerGame)
+  end, helpFun, nil, self._innerGame)
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._bgColor3 = self:GetGameObject("bgColor3")
   self._bgColor4 = self:GetGameObject("bgColor4")
@@ -127,29 +95,18 @@ UIRugueLikeBackpackController.GetComponents = function(self)
   self._colorTexAll = self:GetUIComponent("UILocalizationText", "colorTexAll")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackController._InitSrollView = function(self)
-  -- function num : 0_3
-  (self._scrollView):InitListView(self:GetRowCount(), function(scrollView, index)
-    -- function num : 0_3_0 , upvalues : self
+function UIRugueLikeBackpackController:_InitSrollView()
+  self._scrollView:InitListView(self:GetRowCount(), function(scrollView, index)
     return self:InitSpritListInfo(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackController.GetRowCount = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local row = (math.ceil)(self._listShowRowmItemCount / self._itemCountPerRow)
+function UIRugueLikeBackpackController:GetRowCount()
+  local row = math.ceil(self._listShowRowmItemCount / self._itemCountPerRow)
   return row
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackController.InitSpritListInfo = function(self, scrollView, index)
-  -- function num : 0_5
+function UIRugueLikeBackpackController:InitSpritListInfo(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -163,8 +120,8 @@ UIRugueLikeBackpackController.InitSpritListInfo = function(self, scrollView, ind
   for i = 1, self._itemCountPerRow do
     local heartItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._listShowRowmItemCount < itemIndex then
-      (heartItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._listShowRowmItemCount then
+      heartItem:GetGameObject():SetActive(false)
     else
       self:ShowHeartItem(heartItem, itemIndex)
     end
@@ -172,68 +129,47 @@ UIRugueLikeBackpackController.InitSpritListInfo = function(self, scrollView, ind
   return item
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackController.ShowHeartItem = function(self, item, index)
-  -- function num : 0_6
-  local cfg = (self._itemInfo)[index]
-  ;
-  (item:GetGameObject()):SetActive(true)
+function UIRugueLikeBackpackController:ShowHeartItem(item, index)
+  local cfg = self._itemInfo[index]
+  item:GetGameObject():SetActive(true)
   if cfg ~= nil then
     item:SetData(index, cfg, function(tIndex)
-    -- function num : 0_6_0 , upvalues : self, index
-    self:ShowDialog("UIRelicInfoController", (self._itemInfo)[index])
-  end
-, false, self._isFromPopStarPro, self._innerGame)
+      self:ShowDialog("UIRelicInfoController", self._itemInfo[index])
+    end, false, self._isFromPopStarPro, self._innerGame)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackController.RefrenshItems = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIRugueLikeBackpackController:RefrenshItems()
   if self._isFromMiniMaze then
-    self._itemInfo = self:SortItems((BattleStatHelper.GetAllMiniMazeRelic)())
+    self._itemInfo = self:SortItems(BattleStatHelper.GetAllMiniMazeRelic())
+  elseif self._isFromPopStarPro then
+    self._itemInfo = self:SortItems(self._relicList)
   else
-    if self._isFromPopStarPro then
-      self._itemInfo = self:SortItems(self._relicList)
-    else
-      local mazeInfo = (self._module):GetMazeInfo()
-      self._itemInfo = self:SortItems(mazeInfo.relics)
-    end
+    local mazeInfo = self._module:GetMazeInfo()
+    self._itemInfo = self:SortItems(mazeInfo.relics)
   end
-  do
-    self:FilterItems()
-    self._listShowRowmItemCount = (table.count)(self._itemInfo)
-    ;
-    (self._scrollView):SetListItemCount(self:GetRowCount())
-    ;
-    (self._scrollView):MovePanelToItemIndex(0, 0)
-  end
+  self:FilterItems()
+  self._listShowRowmItemCount = table.count(self._itemInfo)
+  self._scrollView:SetListItemCount(self:GetRowCount())
+  self._scrollView:MovePanelToItemIndex(0, 0)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackController.FilterItems = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIRugueLikeBackpackController:FilterItems()
   if self._currFilterColor == 0 then
-    return 
+    return
   end
   local tab = {}
   for i = 1, #self._itemInfo do
-    local itemid = (self._itemInfo)[i]
-    local color = ((self._cfg)[itemid]).Color
+    local itemid = self._itemInfo[i]
+    local color = self._cfg[itemid].Color
     if color == self._currFilterColor then
-      (table.insert)(tab, (self._itemInfo)[i])
+      table.insert(tab, self._itemInfo[i])
     end
   end
   self._itemInfo = tab
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackController.filter3OnClick = function(self)
-  -- function num : 0_9
+function UIRugueLikeBackpackController:filter3OnClick()
   if self._currFilterColor ~= 3 then
     self._currFilterColor = 3
     self:FlushFilters()
@@ -241,10 +177,7 @@ UIRugueLikeBackpackController.filter3OnClick = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackController.filter4OnClick = function(self)
-  -- function num : 0_10
+function UIRugueLikeBackpackController:filter4OnClick()
   if self._currFilterColor ~= 4 then
     self._currFilterColor = 4
     self:FlushFilters()
@@ -252,10 +185,7 @@ UIRugueLikeBackpackController.filter4OnClick = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackController.filter5OnClick = function(self)
-  -- function num : 0_11
+function UIRugueLikeBackpackController:filter5OnClick()
   if self._currFilterColor ~= 5 then
     self._currFilterColor = 5
     self:FlushFilters()
@@ -263,10 +193,7 @@ UIRugueLikeBackpackController.filter5OnClick = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackController.filterAllOnClick = function(self)
-  -- function num : 0_12
+function UIRugueLikeBackpackController:filterAllOnClick()
   if self._currFilterColor ~= 0 then
     self._currFilterColor = 0
     self:FlushFilters()
@@ -274,75 +201,32 @@ UIRugueLikeBackpackController.filterAllOnClick = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackController.FlushFilters = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (self._bgColor3):SetActive(false)
-  ;
-  (self._bgColor4):SetActive(false)
-  ;
-  (self._bgColor5):SetActive(false)
-  ;
-  (self._bgColorAll):SetActive(false)
+function UIRugueLikeBackpackController:FlushFilters()
+  self._bgColor3:SetActive(false)
+  self._bgColor4:SetActive(false)
+  self._bgColor5:SetActive(false)
+  self._bgColorAll:SetActive(false)
   local c = Color(1, 1, 1, 1)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._colorTex3).color = c
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._colorTex4).color = c
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._colorTex5).color = c
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._colorTexAll).color = c
-  local c_yellow = Color(0.98823529411765, 0.90980392156863, 0.007843137254902, 1)
+  self._colorTex3.color = c
+  self._colorTex4.color = c
+  self._colorTex5.color = c
+  self._colorTexAll.color = c
+  local c_yellow = Color(0.9882352941176471, 0.9098039215686274, 0.00784313725490196, 1)
   if self._currFilterColor == 0 then
-    (self._bgColorAll):SetActive(true)
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._colorTexAll).color = c_yellow
-  else
-    if self._currFilterColor == 3 then
-      (self._bgColor3):SetActive(true)
-      -- DECOMPILER ERROR at PC54: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._colorTex3).color = c_yellow
-    else
-      if self._currFilterColor == 4 then
-        (self._bgColor4):SetActive(true)
-        -- DECOMPILER ERROR at PC64: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._colorTex4).color = c_yellow
-      else
-        if self._currFilterColor == 5 then
-          (self._bgColor5):SetActive(true)
-          -- DECOMPILER ERROR at PC74: Confused about usage of register: R3 in 'UnsetPending'
-
-          ;
-          (self._colorTex5).color = c_yellow
-        end
-      end
-    end
+    self._bgColorAll:SetActive(true)
+    self._colorTexAll.color = c_yellow
+  elseif self._currFilterColor == 3 then
+    self._bgColor3:SetActive(true)
+    self._colorTex3.color = c_yellow
+  elseif self._currFilterColor == 4 then
+    self._bgColor4:SetActive(true)
+    self._colorTex4.color = c_yellow
+  elseif self._currFilterColor == 5 then
+    self._bgColor5:SetActive(true)
+    self._colorTex5.color = c_yellow
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeBackpackController.GetBtn = function(self)
-  -- function num : 0_14
-  if self.items then
-    return ((self.items)[1]):GetGameObject()
-  end
+function UIRugueLikeBackpackController:GetBtn()
+  return self.items and self.items[1]:GetGameObject()
 end
-
-

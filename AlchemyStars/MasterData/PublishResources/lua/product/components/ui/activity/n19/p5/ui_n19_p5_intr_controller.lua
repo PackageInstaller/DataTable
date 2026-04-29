@@ -1,50 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n19/p5/ui_n19_p5_intr_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN19P5IntrController", UIController)
 UIN19P5IntrController = UIN19P5IntrController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN19P5IntrController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN19P5IntrController:OnShow(uiParams)
   self.key = uiParams[1]
-  local cfg = (Cfg.cfg_activityintro)[self.key]
-  self.desc = (StringTable.Get)(cfg.Intro)
+  local cfg = Cfg.cfg_activityintro[self.key]
+  self.desc = StringTable.Get(cfg.Intro)
   self.titleImgName = cfg.Title
   self:GetComponents()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5IntrController.GetComponents = function(self)
-  -- function num : 0_1
+function UIN19P5IntrController:GetComponents()
   self.titleImg = self:GetUIComponent("RawImageLoader", "Title")
   self.descTex = self:GetUIComponent("UILocalizationText", "Content")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5IntrController.OnHide = function(self)
-  -- function num : 0_2
+function UIN19P5IntrController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5IntrController.OnValue = function(self)
-  -- function num : 0_3
-  (self.titleImg):LoadImage(self.titleImgName)
-  ;
-  (self.descTex):SetText(self.desc)
+function UIN19P5IntrController:OnValue()
+  self.titleImg:LoadImage(self.titleImgName)
+  self.descTex:SetText(self.desc)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5IntrController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIN19P5IntrController:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

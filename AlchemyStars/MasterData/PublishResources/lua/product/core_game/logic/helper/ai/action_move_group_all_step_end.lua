@@ -1,41 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_group_all_step_end.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionMoveGroupAllStepEnd", AINewNode)
 ActionMoveGroupAllStepEnd = ActionMoveGroupAllStepEnd
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveGroupAllStepEnd.OnBegin = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionMoveGroupAllStepEnd:OnBegin()
   self:GetAllGroupMonster()
   if #self._sameGroupMonsterList > 0 then
-    for i,monster in ipairs(self._sameGroupMonsterList) do
+    for i, monster in ipairs(self._sameGroupMonsterList) do
       local aiCmpt = monster:AI()
       if aiCmpt then
-        if (self.m_entityOwn):GetID() == monster:GetID() then
+        if self.m_entityOwn:GetID() == monster:GetID() then
           aiCmpt:ClearMobilityTotal()
           aiCmpt:SetMoveState(AIMoveState.MoveEnd)
           self:PrintLog("GroupID:", self:GetMonsterGroupID(), "本组移动结束 强制结束，清空本组行动力")
-        else
-          if aiCmpt:GetMobilityValid() > 1 then
-            aiCmpt:SetMobilityTotal(1)
-          end
+        elseif aiCmpt:GetMobilityValid() > 1 then
+          aiCmpt:SetMobilityTotal(1)
         end
       end
     end
   else
-    do
-      local aiCmpt = (self.m_entityOwn):AI()
-      if aiCmpt then
-        aiCmpt:ClearMobilityTotal()
-        aiCmpt:SetMoveState(AIMoveState.MoveEnd)
-        self:PrintLog(" 强制结束，清空行动力")
-      end
+    local aiCmpt = self.m_entityOwn:AI()
+    if aiCmpt then
+      aiCmpt:ClearMobilityTotal()
+      aiCmpt:SetMoveState(AIMoveState.MoveEnd)
+      self:PrintLog(" 强制结束，清空行动力")
     end
   end
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_transformation_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillTransformationParam", SkillEffectParamBase)
 SkillTransformationParam = SkillTransformationParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillTransformationParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillTransformationParam:Constructor(t)
   self._targetMonsterID = t.targetID
   self._useHpPercent = t.useHpPercent or 0
   self.m_InheritAttribute = {}
@@ -21,54 +14,30 @@ SkillTransformationParam.Constructor = function(self, t)
   self._setTargetPosByOriBodyAreaIndex = t.setTargetPosByOriBodyAreaIndex or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillTransformationParam:GetEffectType()
   return SkillEffectType.Transformation
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationParam.GetTargetMonsterID = function(self)
-  -- function num : 0_2
+function SkillTransformationParam:GetTargetMonsterID()
   return self._targetMonsterID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationParam.GetUseHpPercent = function(self)
-  -- function num : 0_3
+function SkillTransformationParam:GetUseHpPercent()
   return self._useHpPercent
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationParam.GetInheritAttribute = function(self)
-  -- function num : 0_4
+function SkillTransformationParam:GetInheritAttribute()
   return self.m_InheritAttribute
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationParam.IsUseTargetBodyArea = function(self)
-  -- function num : 0_5
-  do return self._useTargetBodyArea == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillTransformationParam:IsUseTargetBodyArea()
+  return self._useTargetBodyArea == 1
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationParam.GetInheritElement = function(self)
-  -- function num : 0_6
+function SkillTransformationParam:GetInheritElement()
   return self._inheritElement
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTransformationParam.GetSetTargetPosByOriBodyAreaIndex = function(self)
-  -- function num : 0_7
+function SkillTransformationParam:GetSetTargetPosByOriBodyAreaIndex()
   return self._setTargetPosByOriBodyAreaIndex
 end
-
-

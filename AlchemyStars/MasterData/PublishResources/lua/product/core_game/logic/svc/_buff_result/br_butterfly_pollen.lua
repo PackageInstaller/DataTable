@@ -1,43 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_butterfly_pollen.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultButterflyPollen", BuffResultBase)
 BuffResultButterflyPollen = BuffResultButterflyPollen
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultButterflyPollen.SetRecoveryDamageInfo = function(self, damageInfo)
-  -- function num : 0_0
+function BuffResultButterflyPollen:SetRecoveryDamageInfo(damageInfo)
   self._recoveryDamageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultButterflyPollen.SetPoisonDamageInfo = function(self, damageInfo)
-  -- function num : 0_1
+function BuffResultButterflyPollen:SetPoisonDamageInfo(damageInfo)
   self._poisonDamageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultButterflyPollen.GetRecoveryDamageInfo = function(self)
-  -- function num : 0_2
+function BuffResultButterflyPollen:GetRecoveryDamageInfo()
   return self._recoveryDamageInfo
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultButterflyPollen.GetPoisonDamageInfo = function(self)
-  -- function num : 0_3
+function BuffResultButterflyPollen:GetPoisonDamageInfo()
   return self._poisonDamageInfo
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultButterflyPollen.GetDamageInfo = function(self)
-  -- function num : 0_4
+function BuffResultButterflyPollen:GetDamageInfo()
   return self._poisonDamageInfo
 end
-
-

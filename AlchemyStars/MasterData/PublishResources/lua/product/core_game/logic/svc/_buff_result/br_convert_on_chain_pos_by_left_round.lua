@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_convert_on_chain_pos_by_left_round.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultConvertOnChainPosByLeftRound", BuffResultBase)
 BuffResultConvertOnChainPosByLeftRound = BuffResultConvertOnChainPosByLeftRound
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultConvertOnChainPosByLeftRound.Constructor = function(self, pos, oldPieceType, newPieceType)
-  -- function num : 0_0
+function BuffResultConvertOnChainPosByLeftRound:Constructor(pos, oldPieceType, newPieceType)
   self._gridPos = pos
   self._oldPieceType = oldPieceType
   self._newPieceType = newPieceType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultConvertOnChainPosByLeftRound.GetGridPos = function(self)
-  -- function num : 0_1
+function BuffResultConvertOnChainPosByLeftRound:GetGridPos()
   return self._gridPos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultConvertOnChainPosByLeftRound.GetOldPieceType = function(self)
-  -- function num : 0_2
+function BuffResultConvertOnChainPosByLeftRound:GetOldPieceType()
   return self._oldPieceType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultConvertOnChainPosByLeftRound.GetNewPieceType = function(self)
-  -- function num : 0_3
+function BuffResultConvertOnChainPosByLeftRound:GetNewPieceType()
   return self._newPieceType
 end
-
-

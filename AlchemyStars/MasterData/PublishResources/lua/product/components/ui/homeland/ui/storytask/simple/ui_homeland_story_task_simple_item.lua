@@ -1,37 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/storytask/simple/ui_homeland_story_task_simple_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandStoryTaskSimpleItem", UICustomWidget)
 UIHomelandStoryTaskSimpleItem = UIHomelandStoryTaskSimpleItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandStoryTaskSimpleItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandStoryTaskSimpleItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if self:CheckOpen((self._info).UnlockTime) then
-    (self._controller):SetLocalDb((self._info).ID)
+function UIHomelandStoryTaskSimpleItem:OnHide()
+  if self:CheckOpen(self._info.UnlockTime) then
+    self._controller:SetLocalDb(self._info.ID)
   end
   if self.teActivity then
-    self.teActivity = (UIActivityHelper.CancelTimerEvent)(self.teActivity)
+    self.teActivity = UIActivityHelper.CancelTimerEvent(self.teActivity)
     self.teActivity = nil
   end
   if self._coro then
-    ((GameGlobal.TaskManager)()):KillTask(self._coro)
+    GameGlobal.TaskManager():KillTask(self._coro)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandStoryTaskSimpleItem:_GetComponents()
   self._rewards = self:GetUIComponent("UISelectObjectPath", "Rewards")
   self._titleText = self:GetUIComponent("UILocalizationText", "Title")
   self._contentText = self:GetUIComponent("UILocalizationText", "Content")
@@ -48,176 +35,123 @@ UIHomelandStoryTaskSimpleItem._GetComponents = function(self)
   self:SetCustomTimeStr_Common()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleItem.SetData = function(self, info, controller)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandStoryTaskSimpleItem:SetData(info, controller)
   self._info = info
   self._controller = controller
   self:GetTaskInfo()
   self:Flush()
   if self.teActivity then
-    self.teActivity = (UIActivityHelper.CancelTimerEvent)(self.teActivity)
+    self.teActivity = UIActivityHelper.CancelTimerEvent(self.teActivity)
     self.teActivity = nil
   end
-  self.teActivity = (UIActivityHelper.StartTimerEvent)(self.teActivity, function()
-    -- function num : 0_3_0 , upvalues : self
+  self.teActivity = UIActivityHelper.StartTimerEvent(self.teActivity, function()
     self:FlushTaskCD()
-  end
-, 1000)
+  end, 1000)
   self._coro = self:StartTask(self.ShowAnim, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleItem.Flush = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local unlockTime = (self._info).UnlockTime
+function UIHomelandStoryTaskSimpleItem:Flush()
+  local unlockTime = self._info.UnlockTime
   local unlock = self:CheckOpen(unlockTime)
   if unlock then
-    local isNew = (self._controller):GetLocalDb((self._info).ID)
-    local stata = (self._controller):GetTaskState((self._info).ID)
-    ;
-    (self._new):SetActive(isNew == 0 and stata <= Enum_CMP_HomelandTaskState.EPTS_UnComplete)
+    local isNew = self._controller:GetLocalDb(self._info.ID)
+    local stata = self._controller:GetTaskState(self._info.ID)
+    self._new:SetActive(isNew == 0 and stata <= Enum_CMP_HomelandTaskState.EPTS_UnComplete)
   else
-    (self._new):SetActive(false)
+    self._new:SetActive(false)
   end
-  ;
-  (self._titleText):SetText((StringTable.Get)((self._info).Content))
+  self._titleText:SetText(StringTable.Get(self._info.Content))
   self:SetRewardItem(self._info)
   self:SetState()
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleItem.FlushTaskCD = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local unlockTime = (self._info).UnlockTime
+function UIHomelandStoryTaskSimpleItem:FlushTaskCD()
+  local unlockTime = self._info.UnlockTime
   if not self:CheckOpen(unlockTime) then
-    local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-    local servertime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-    local loginModule = (GameGlobal.GetModule)(LoginModule)
+    local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+    local servertime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+    local loginModule = GameGlobal.GetModule(LoginModule)
     local time = loginModule:GetTimeStampByTimeStr(unlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-    local timeStr = (UIActivityHelper.GetFormatTimerStr)(time - servertime, self._customStr)
-    ;
-    (self._lockText):SetText(timeStr)
+    local timeStr = UIActivityHelper.GetFormatTimerStr(time - servertime, self._customStr)
+    self._lockText:SetText(timeStr)
   else
-    do
-      self:Flush()
-      ;
-      (self._lockText):SetText("")
-      self.teActivity = (UIActivityHelper.CancelTimerEvent)(self.teActivity)
-      self.teActivity = nil
-    end
+    self:Flush()
+    self._lockText:SetText("")
+    self.teActivity = UIActivityHelper.CancelTimerEvent(self.teActivity)
+    self.teActivity = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleItem.SetState = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._state = (self._controller):GetTaskState((self._info).ID)
+function UIHomelandStoryTaskSimpleItem:SetState()
+  self._state = self._controller:GetTaskState(self._info.ID)
   local stateDtr = ""
   if self._state == Enum_CMP_HomelandTaskState.EPTS_UnComplete then
     stateDtr = "str_homeland_campainenter_itemstate"
   end
-  ;
-  (self._stateBg1):SetActive(self._state == Enum_CMP_HomelandTaskState.EPTS_UnComplete)
-  ;
-  (self._stateBg2):SetActive(self._state == Enum_CMP_HomelandTaskState.EPTS_UnHave)
-  ;
-  (self._stateBg3):SetActive(self._state == Enum_CMP_HomelandTaskState.EPTS_HaveGet or self._state == Enum_CMP_HomelandTaskState.EPTS_Unlock)
-  ;
-  (self._stateText):SetText((StringTable.Get)(stateDtr))
-  ;
-  (self._getRewardBtn):SetActive(false)
-  ;
-  (self._lockimg):SetActive(self._state == Enum_CMP_HomelandTaskState.EPTS_Unlock)
-  ;
-  (self._got):SetActive(self._state == Enum_CMP_HomelandTaskState.EPTS_HaveGet or self._state == Enum_CMP_HomelandTaskState.EPTS_UnHave)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  self._stateBg1:SetActive(self._state == Enum_CMP_HomelandTaskState.EPTS_UnComplete)
+  self._stateBg2:SetActive(self._state == Enum_CMP_HomelandTaskState.EPTS_UnHave)
+  self._stateBg3:SetActive(self._state == Enum_CMP_HomelandTaskState.EPTS_HaveGet or self._state == Enum_CMP_HomelandTaskState.EPTS_Unlock)
+  self._stateText:SetText(StringTable.Get(stateDtr))
+  self._getRewardBtn:SetActive(false)
+  self._lockimg:SetActive(self._state == Enum_CMP_HomelandTaskState.EPTS_Unlock)
+  self._got:SetActive(self._state == Enum_CMP_HomelandTaskState.EPTS_HaveGet or self._state == Enum_CMP_HomelandTaskState.EPTS_UnHave)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleItem.SetRewardItem = function(self, info)
-  -- function num : 0_7
+function UIHomelandStoryTaskSimpleItem:SetRewardItem(info)
   local rewards = info.Rewards
   local count = #rewards
   if count <= 0 then
-    return 
+    return
   end
-  ;
-  (self._rewards):SpawnObjects("UIItemHomeland", count)
-  local items = (self._rewards):GetAllSpawnList()
+  self._rewards:SpawnObjects("UIItemHomeland", count)
+  local items = self._rewards:GetAllSpawnList()
   for i = 1, #items do
     if rewards[i] then
       local rew = {}
-      rew.assetid = (rewards[i])[1]
-      rew.count = (rewards[i])[2]
-      ;
-      (items[i]):Flush(rew)
+      rew.assetid = rewards[i][1]
+      rew.count = rewards[i][2]
+      items[i]:Flush(rew)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleItem.GetTaskInfo = function(self)
-  -- function num : 0_8
-  self._holdTask = (self._info).TaskID
-  self._taskCfg = (self._controller):GetTaskItemCfg(self._holdTask)
+function UIHomelandStoryTaskSimpleItem:GetTaskInfo()
+  self._holdTask = self._info.TaskID
+  self._taskCfg = self._controller:GetTaskItemCfg(self._holdTask)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleItem.CheckOpen = function(self, beginTime, timetype)
-  -- function num : 0_9 , upvalues : _ENV
-  local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  if not timetype then
-    timetype = 0
-  end
-  if timetype ~= 0 or not Enum_DateTimeZoneType.E_ZoneType_GMT then
-    local type = Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
-  end
+function UIHomelandStoryTaskSimpleItem:CheckOpen(beginTime, timetype)
+  local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  timetype = timetype or 0
+  local type = timetype == 0 and Enum_DateTimeZoneType.E_ZoneType_GMT or Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
   local beginTime = loginModule:GetTimeStampByTimeStr(beginTime, type)
-  if beginTime <= curTime then
+  if curTime >= beginTime then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleItem.SetCustomTimeStr_Common = function(self)
-  -- function num : 0_10
-  self:SetCustomTimeStr({day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_common_less_minute"})
+function UIHomelandStoryTaskSimpleItem:SetCustomTimeStr_Common()
+  self:SetCustomTimeStr({
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_common_less_minute"
+  })
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleItem.SetCustomTimeStr = function(self, customStr)
-  -- function num : 0_11
+function UIHomelandStoryTaskSimpleItem:SetCustomTimeStr(customStr)
   self._customStr = customStr
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleItem.ShowAnim = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomelandStoryTaskSimpleItem:ShowAnim(TT)
   YIELD(TT, 48)
-  ;
-  (self._ani):Play("uieff_N19_CampainEnterItem_in")
+  self._ani:Play("uieff_N19_CampainEnterItem_in")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskSimpleItem.GetRewardBtnOnClick = function(self)
-  -- function num : 0_13
-  (self._controller):GetReward((self._info).ID)
+function UIHomelandStoryTaskSimpleItem:GetRewardBtnOnClick()
+  self._controller:GetReward(self._info.ID)
 end
-
-

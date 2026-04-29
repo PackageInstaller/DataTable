@@ -1,354 +1,989 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/res_dungeon/cfg_res_instance_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, MainType = 2, Difficulty = 3, DifficultyName = 4, UnlockCondition = 5, Name = 6, Lv = 7, MonsterList = 8, FightLevelid = 9, NeedPower = 10, MinCostPower = 11, WordBuff = 12, AwardDropId = 13, DoubleRandomAward = 14, SubType = 15, GradeLevel = 16, LvCN = 17, AwardDropItemList = 18, PassFixDropId = 19, CPassRandomAward = 20, TriggerCycleCount = 21, RewardCoin = 22}
-local common = {"str_res_instance_detail_instance_101", "str_res_instance_detail_instance_102", "str_res_instance_detail_instance_103", "str_res_instance_detail_intance_lv_1", "str_res_instance_detail_instance_104", "str_res_instance_detail_intance_lv_2", "str_res_instance_detail_instance_105", "str_res_instance_detail_intance_lv_3", "str_res_instance_detail_instance_201", "str_res_instance_detail_instance_202", "str_res_instance_detail_instance_203", "str_res_instance_detail_instance_204", "str_res_instance_detail_instance_205", "str_res_instance_detail_instance_301", "str_res_instance_detail_instance_302", "str_res_instance_detail_instance_303", "str_res_instance_detail_instance_304", "str_res_instance_detail_instance_305", 
-{3010271, 3010301}
-, 
-{3210101}
-, 
-{3220101}
-, 
-{3230101}
-, 
-{3240101}
-, 
-{3030504, 3030507, 3030502, 3030508, 3030506}
+local key = {
+  ID = 1,
+  MainType = 2,
+  Difficulty = 3,
+  DifficultyName = 4,
+  UnlockCondition = 5,
+  Name = 6,
+  Lv = 7,
+  MonsterList = 8,
+  FightLevelid = 9,
+  NeedPower = 10,
+  MinCostPower = 11,
+  WordBuff = 12,
+  AwardDropId = 13,
+  DoubleRandomAward = 14,
+  SubType = 15,
+  GradeLevel = 16,
+  LvCN = 17,
+  AwardDropItemList = 18,
+  PassFixDropId = 19,
+  CPassRandomAward = 20,
+  TriggerCycleCount = 21,
+  RewardCoin = 22
+}
+local common = {
+  "str_res_instance_detail_instance_101",
+  "str_res_instance_detail_instance_102",
+  "str_res_instance_detail_instance_103",
+  "str_res_instance_detail_intance_lv_1",
+  "str_res_instance_detail_instance_104",
+  "str_res_instance_detail_intance_lv_2",
+  "str_res_instance_detail_instance_105",
+  "str_res_instance_detail_intance_lv_3",
+  "str_res_instance_detail_instance_201",
+  "str_res_instance_detail_instance_202",
+  "str_res_instance_detail_instance_203",
+  "str_res_instance_detail_instance_204",
+  "str_res_instance_detail_instance_205",
+  "str_res_instance_detail_instance_301",
+  "str_res_instance_detail_instance_302",
+  "str_res_instance_detail_instance_303",
+  "str_res_instance_detail_instance_304",
+  "str_res_instance_detail_instance_305",
+  {3010271, 3010301},
+  {3210101},
+  {3220101},
+  {3230101},
+  {3240101},
+  {
+    3030504,
+    3030507,
+    3030502,
+    3030508,
+    3030506
+  }
 }
 local config = {
-[101] = {101, 1, 1, common[1], 1, common[1], 1, common[19], 3000101, 10, 1, 7770001, 11501, 100000, nil, 0, nil, 1011, 11500, 
-{
-[1] = {ItemID = 3000002, Count = 15000}
-}
-, 3, 
-{
-{3000002, 18600}
-}
-}
-, 
-[102] = {102, 1, 2, common[2], 2, common[2], 20, common[19], 3000102, 15, 1, 7770001, 11502, 100000, nil, 0, nil, 1021, 11500, 
-{
-[1] = {ItemID = 3000002, Count = 25000}
-}
-, 3, 
-{
-{3000002, 37200}
-}
-}
-, 
-[103] = {103, 1, 3, common[3], 3, common[3], 20, common[19], 3000103, 20, 1, 7770001, 11503, 100000, nil, 1, common[4], 1031, 11500, 
-{
-[1] = {ItemID = 3000002, Count = 35000}
-}
-, 3, 
-{
-{3000002, 55800}
-}
-}
-, 
-[104] = {104, 1, 4, common[5], 4, common[5], 1, common[19], 3000104, 25, 1, 7770001, 11504, 100000, nil, 2, common[6], 1041, 11500, 
-{
-[1] = {ItemID = 3000002, Count = 45000}
-}
-, 3, 
-{
-{3000002, 74400}
-}
-}
-, 
-[105] = {105, 1, 5, common[7], 5, common[7], 1, common[19], 3000105, 30, 1, 7770001, 11505, 100000, nil, 3, common[8], 1051, 11500, 
-{
-[1] = {ItemID = 3000002, Count = 55000}
-}
-, 3, 
-{
-{3000002, 93000}
-}
-}
-, 
-[201] = {201, 2, 1, common[9], 0, common[9], 1, common[20], 3100201, 10, 1, 7770001, 11501, 100000, 1, 0, nil, 2011, 11500, 
-{
-[1] = {ItemID = 3100005, Count = 1}
-, 
-[2] = {ItemID = 3100004, Count = 5}
-}
-}
-, 
-[202] = {202, 2, 2, common[10], 2, common[10], 20, common[20], 3100202, 15, 1, 7770001, 11502, 100000, 1, 0, nil, 2021, 11500, 
-{
-[1] = {ItemID = 3100005, Count = 2}
-, 
-[2] = {ItemID = 3100004, Count = 6}
-}
-}
-, 
-[203] = {203, 2, 3, common[11], 3, common[11], 20, common[20], 3100203, 20, 1, 7770001, 11503, 100000, 1, 1, common[4], 2031, 11500, 
-{
-[1] = {ItemID = 3100005, Count = 3}
-, 
-[2] = {ItemID = 3100004, Count = 9}
-}
-}
-, 
-[204] = {204, 2, 4, common[12], 4, common[12], 1, common[20], 3100204, 25, 1, 7770001, 11504, 100000, 1, 2, common[6], 2041, 11500, 
-{
-[1] = {ItemID = 3100005, Count = 5}
-, 
-[2] = {ItemID = 3100004, Count = 9}
-}
-}
-, 
-[205] = {205, 2, 5, common[13], 5, common[13], 1, common[20], 3100205, 30, 1, 7770001, 11505, 100000, 1, 3, common[8], 2051, 11500, 
-{
-[1] = {ItemID = 3100005, Count = 7}
-, 
-[2] = {ItemID = 3100004, Count = 10}
-}
-}
-, 
-[211] = {211, 2, 1, common[9], 0, common[9], 1, common[21], 3200201, 10, 1, 7770001, 11501, 100000, 2, 0, nil, 2111, 11500, 
-{
-[1] = {ItemID = 3100011, Count = 1}
-, 
-[2] = {ItemID = 3100010, Count = 5}
-}
-}
-, 
-[212] = {212, 2, 2, common[10], 2, common[10], 20, common[21], 3200202, 15, 1, 7770001, 11502, 100000, 2, 0, nil, 2121, 11500, 
-{
-[1] = {ItemID = 3100011, Count = 2}
-, 
-[2] = {ItemID = 3100010, Count = 6}
-}
-}
-, 
-[213] = {213, 2, 3, common[11], 3, common[11], 20, common[21], 3200203, 20, 1, 7770001, 11503, 100000, 2, 1, common[4], 2131, 11500, 
-{
-[1] = {ItemID = 3100011, Count = 3}
-, 
-[2] = {ItemID = 3100010, Count = 9}
-}
-}
-, 
-[214] = {214, 2, 4, common[12], 4, common[12], 1, common[21], 3200204, 25, 1, 7770001, 11504, 100000, 2, 2, common[6], 2141, 11500, 
-{
-[1] = {ItemID = 3100011, Count = 5}
-, 
-[2] = {ItemID = 3100010, Count = 9}
-}
-}
-, 
-[215] = {215, 2, 5, common[13], 5, common[13], 1, common[21], 3200205, 30, 1, 7770001, 11505, 100000, 2, 3, common[8], 2151, 11500, 
-{
-[1] = {ItemID = 3100011, Count = 7}
-, 
-[2] = {ItemID = 3100010, Count = 10}
-}
-}
-, 
-[221] = {221, 2, 1, common[9], 0, common[9], 1, common[22], 3300201, 10, 1, 7770001, 11501, 100000, 3, 0, nil, 2211, 11500, 
-{
-[1] = {ItemID = 3100002, Count = 1}
-, 
-[2] = {ItemID = 3100001, Count = 5}
-}
-}
-, 
-[222] = {222, 2, 2, common[10], 2, common[10], 20, common[22], 3300202, 15, 1, 7770001, 11502, 100000, 3, 0, nil, 2221, 11500, 
-{
-[1] = {ItemID = 3100002, Count = 2}
-, 
-[2] = {ItemID = 3100001, Count = 6}
-}
-}
-, 
-[223] = {223, 2, 3, common[11], 3, common[11], 20, common[22], 3300203, 20, 1, 7770001, 11503, 100000, 3, 1, common[4], 2231, 11500, 
-{
-[1] = {ItemID = 3100002, Count = 3}
-, 
-[2] = {ItemID = 3100001, Count = 9}
-}
-}
-, 
-[224] = {224, 2, 4, common[12], 4, common[12], 1, common[22], 3300204, 25, 1, 7770001, 11504, 100000, 3, 2, common[6], 2241, 11500, 
-{
-[1] = {ItemID = 3100002, Count = 5}
-, 
-[2] = {ItemID = 3100001, Count = 9}
-}
-}
-, 
-[225] = {225, 2, 5, common[13], 5, common[13], 1, common[22], 3300205, 30, 1, 7770001, 11505, 100000, 3, 3, common[8], 2251, 11500, 
-{
-[1] = {ItemID = 3100002, Count = 7}
-, 
-[2] = {ItemID = 3100001, Count = 10}
-}
-}
-, 
-[231] = {231, 2, 1, common[9], 0, common[9], 1, common[23], 3400201, 10, 1, 7770001, 11501, 100000, 4, 0, nil, 2311, 11500, 
-{
-[1] = {ItemID = 3100008, Count = 1}
-, 
-[2] = {ItemID = 3100007, Count = 5}
-}
-}
-, 
-[232] = {232, 2, 2, common[10], 2, common[10], 20, common[23], 3400202, 15, 1, 7770001, 11502, 100000, 4, 0, nil, 2321, 11500, 
-{
-[1] = {ItemID = 3100008, Count = 2}
-, 
-[2] = {ItemID = 3100007, Count = 6}
-}
-}
-, 
-[233] = {233, 2, 3, common[11], 3, common[11], 20, common[23], 3400203, 20, 1, 7770001, 11503, 100000, 4, 1, common[4], 2331, 11500, 
-{
-[1] = {ItemID = 3100008, Count = 3}
-, 
-[2] = {ItemID = 3100007, Count = 9}
-}
-}
-, 
-[234] = {234, 2, 4, common[12], 4, common[12], 1, common[23], 3400204, 25, 1, 7770001, 11504, 100000, 4, 2, common[6], 2341, 11500, 
-{
-[1] = {ItemID = 3100008, Count = 5}
-, 
-[2] = {ItemID = 3100007, Count = 9}
-}
-}
-, 
-[235] = {235, 2, 5, common[13], 5, common[13], 1, common[23], 3400205, 30, 1, 7770001, 11505, 100000, 4, 3, common[8], 2351, 11500, 
-{
-[1] = {ItemID = 3100008, Count = 7}
-, 
-[2] = {ItemID = 3100007, Count = 10}
-}
-}
-, 
-[301] = {301, 3, 1, common[14], 1, common[14], 10, 
-{3030104, 3030102, 3030103, 3030101}
-, 3000301, 10, 1, 7770001, 11501, 100000, nil, 0, nil, 3011, 11500, 
-{
-[1] = {ItemID = 3300001, Count = 25}
-}
-}
-, 
-[302] = {302, 3, 2, common[15], 2, common[15], 20, 
-{3030203, 3030201, 3030202, 3030205, 3030206}
-, 3000302, 15, 1, 7770001, 11502, 100000, nil, 0, nil, 3021, 11500, 
-{
-[1] = {ItemID = 3300002, Count = 10}
-, 
-[2] = {ItemID = 3300001, Count = 20}
-}
-}
-, 
-[303] = {303, 3, 3, common[16], 3, common[16], 20, 
-{3030304, 3030307, 3030301, 3030303, 3030305}
-, 3000303, 20, 1, 7770001, 11503, 100000, nil, 1, common[4], 3031, 11500, 
-{
-[1] = {ItemID = 3300002, Count = 15}
-, 
-[2] = {ItemID = 3300001, Count = 25}
-}
-}
-, 
-[304] = {304, 3, 4, common[17], 4, common[17], 1, 
-{3030403, 3030407, 3030401, 3030408, 3030405}
-, 3000304, 25, 1, 7770001, 11504, 100000, nil, 2, common[6], 3041, 11500, 
-{
-[1] = {ItemID = 3300003, Count = 5}
-, 
-[2] = {ItemID = 3300002, Count = 20}
-, 
-[3] = {ItemID = 3300001, Count = 15}
-}
-}
-, 
-[305] = {305, 3, 5, common[18], 5, common[18], 1, common[24], 3000305, 30, 1, 7770001, 11505, 100000, nil, 3, common[8], 3051, 11500, 
-{
-[1] = {ItemID = 3300003, Count = 10}
-, 
-[2] = {ItemID = 3300002, Count = 25}
-, 
-[3] = {ItemID = 3300001, Count = 10}
-}
-}
-, 
-[401] = {401, 4, 1, common[14], 1, "str_res_instance_detail_instance_401", 20, common[24], 3000401, 10, 1, 7770001, 11501, 100000, nil, 0, nil, 4011, 11500, 
-{
-[1] = {ItemID = 3500001, Count = 100}
-, 
-[2] = {ItemID = 3400046, Count = 4}
-, 
-[3] = {ItemID = 3400029, Count = 1}
-, 
-[4] = {ItemID = 3400028, Count = 3}
-}
-}
-, 
-[402] = {402, 4, 2, common[15], 2, "str_res_instance_detail_instance_402", 5, common[24], 3000402, 15, 1, 7770001, 11502, 100000, nil, 1, common[4], 4021, 11500, 
-{
-[1] = {ItemID = 3500001, Count = 150}
-, 
-[2] = {ItemID = 3400047, Count = 2}
-, 
-[3] = {ItemID = 3400046, Count = 3}
-, 
-[4] = {ItemID = 3400029, Count = 1}
-, 
-[5] = {ItemID = 3400028, Count = 5}
-}
-}
-, 
-[403] = {403, 4, 3, common[16], 3, "str_res_instance_detail_instance_403", 20, common[24], 3000403, 20, 1, 7770001, 11503, 100000, nil, 1, common[4], 4031, 11500, 
-{
-[1] = {ItemID = 3500001, Count = 200}
-, 
-[2] = {ItemID = 3400047, Count = 3}
-, 
-[3] = {ItemID = 3400046, Count = 3}
-, 
-[4] = {ItemID = 3400029, Count = 2}
-, 
-[5] = {ItemID = 3400028, Count = 6}
-}
-}
-, 
-[404] = {404, 4, 4, common[17], 4, "str_res_instance_detail_instance_404", 1, common[24], 3000404, 25, 1, 7770001, 11504, 100000, nil, 2, common[6], 4041, 11500, 
-{
-[1] = {ItemID = 3500001, Count = 250}
-, 
-[2] = {ItemID = 3400048, Count = 2}
-, 
-[3] = {ItemID = 3400047, Count = 2}
-, 
-[4] = {ItemID = 3400046, Count = 3}
-, 
-[5] = {ItemID = 3400029, Count = 2}
-, 
-[6] = {ItemID = 3400028, Count = 8}
-}
-}
-, 
-[405] = {405, 4, 5, common[18], 5, "str_res_instance_detail_instance_405", 1, common[24], 3000405, 30, 1, 7770001, 11505, 100000, nil, 3, common[8], 4051, 11500, 
-{
-[1] = {ItemID = 3500001, Count = 300}
-, 
-[2] = {ItemID = 3400048, Count = 3}
-, 
-[3] = {ItemID = 3400047, Count = 2}
-, 
-[4] = {ItemID = 3400046, Count = 2}
-, 
-[5] = {ItemID = 3400029, Count = 3}
-, 
-[6] = {ItemID = 3400028, Count = 10}
-}
-}
+  [101] = {
+    101,
+    1,
+    1,
+    common[1],
+    1,
+    common[1],
+    1,
+    common[19],
+    3000101,
+    10,
+    1,
+    7770001,
+    11501,
+    100000,
+    nil,
+    0,
+    nil,
+    1011,
+    11500,
+    {
+      [1] = {ItemID = 3000002, Count = 15000}
+    },
+    3,
+    {
+      {3000002, 18600}
+    }
+  },
+  [102] = {
+    102,
+    1,
+    2,
+    common[2],
+    2,
+    common[2],
+    20,
+    common[19],
+    3000102,
+    15,
+    1,
+    7770001,
+    11502,
+    100000,
+    nil,
+    0,
+    nil,
+    1021,
+    11500,
+    {
+      [1] = {ItemID = 3000002, Count = 25000}
+    },
+    3,
+    {
+      {3000002, 37200}
+    }
+  },
+  [103] = {
+    103,
+    1,
+    3,
+    common[3],
+    3,
+    common[3],
+    20,
+    common[19],
+    3000103,
+    20,
+    1,
+    7770001,
+    11503,
+    100000,
+    nil,
+    1,
+    common[4],
+    1031,
+    11500,
+    {
+      [1] = {ItemID = 3000002, Count = 35000}
+    },
+    3,
+    {
+      {3000002, 55800}
+    }
+  },
+  [104] = {
+    104,
+    1,
+    4,
+    common[5],
+    4,
+    common[5],
+    1,
+    common[19],
+    3000104,
+    25,
+    1,
+    7770001,
+    11504,
+    100000,
+    nil,
+    2,
+    common[6],
+    1041,
+    11500,
+    {
+      [1] = {ItemID = 3000002, Count = 45000}
+    },
+    3,
+    {
+      {3000002, 74400}
+    }
+  },
+  [105] = {
+    105,
+    1,
+    5,
+    common[7],
+    5,
+    common[7],
+    1,
+    common[19],
+    3000105,
+    30,
+    1,
+    7770001,
+    11505,
+    100000,
+    nil,
+    3,
+    common[8],
+    1051,
+    11500,
+    {
+      [1] = {ItemID = 3000002, Count = 55000}
+    },
+    3,
+    {
+      {3000002, 93000}
+    }
+  },
+  [201] = {
+    201,
+    2,
+    1,
+    common[9],
+    0,
+    common[9],
+    1,
+    common[20],
+    3100201,
+    10,
+    1,
+    7770001,
+    11501,
+    100000,
+    1,
+    0,
+    nil,
+    2011,
+    11500,
+    {
+      [1] = {ItemID = 3100005, Count = 1},
+      [2] = {ItemID = 3100004, Count = 5}
+    }
+  },
+  [202] = {
+    202,
+    2,
+    2,
+    common[10],
+    2,
+    common[10],
+    20,
+    common[20],
+    3100202,
+    15,
+    1,
+    7770001,
+    11502,
+    100000,
+    1,
+    0,
+    nil,
+    2021,
+    11500,
+    {
+      [1] = {ItemID = 3100005, Count = 2},
+      [2] = {ItemID = 3100004, Count = 6}
+    }
+  },
+  [203] = {
+    203,
+    2,
+    3,
+    common[11],
+    3,
+    common[11],
+    20,
+    common[20],
+    3100203,
+    20,
+    1,
+    7770001,
+    11503,
+    100000,
+    1,
+    1,
+    common[4],
+    2031,
+    11500,
+    {
+      [1] = {ItemID = 3100005, Count = 3},
+      [2] = {ItemID = 3100004, Count = 9}
+    }
+  },
+  [204] = {
+    204,
+    2,
+    4,
+    common[12],
+    4,
+    common[12],
+    1,
+    common[20],
+    3100204,
+    25,
+    1,
+    7770001,
+    11504,
+    100000,
+    1,
+    2,
+    common[6],
+    2041,
+    11500,
+    {
+      [1] = {ItemID = 3100005, Count = 5},
+      [2] = {ItemID = 3100004, Count = 9}
+    }
+  },
+  [205] = {
+    205,
+    2,
+    5,
+    common[13],
+    5,
+    common[13],
+    1,
+    common[20],
+    3100205,
+    30,
+    1,
+    7770001,
+    11505,
+    100000,
+    1,
+    3,
+    common[8],
+    2051,
+    11500,
+    {
+      [1] = {ItemID = 3100005, Count = 7},
+      [2] = {ItemID = 3100004, Count = 10}
+    }
+  },
+  [211] = {
+    211,
+    2,
+    1,
+    common[9],
+    0,
+    common[9],
+    1,
+    common[21],
+    3200201,
+    10,
+    1,
+    7770001,
+    11501,
+    100000,
+    2,
+    0,
+    nil,
+    2111,
+    11500,
+    {
+      [1] = {ItemID = 3100011, Count = 1},
+      [2] = {ItemID = 3100010, Count = 5}
+    }
+  },
+  [212] = {
+    212,
+    2,
+    2,
+    common[10],
+    2,
+    common[10],
+    20,
+    common[21],
+    3200202,
+    15,
+    1,
+    7770001,
+    11502,
+    100000,
+    2,
+    0,
+    nil,
+    2121,
+    11500,
+    {
+      [1] = {ItemID = 3100011, Count = 2},
+      [2] = {ItemID = 3100010, Count = 6}
+    }
+  },
+  [213] = {
+    213,
+    2,
+    3,
+    common[11],
+    3,
+    common[11],
+    20,
+    common[21],
+    3200203,
+    20,
+    1,
+    7770001,
+    11503,
+    100000,
+    2,
+    1,
+    common[4],
+    2131,
+    11500,
+    {
+      [1] = {ItemID = 3100011, Count = 3},
+      [2] = {ItemID = 3100010, Count = 9}
+    }
+  },
+  [214] = {
+    214,
+    2,
+    4,
+    common[12],
+    4,
+    common[12],
+    1,
+    common[21],
+    3200204,
+    25,
+    1,
+    7770001,
+    11504,
+    100000,
+    2,
+    2,
+    common[6],
+    2141,
+    11500,
+    {
+      [1] = {ItemID = 3100011, Count = 5},
+      [2] = {ItemID = 3100010, Count = 9}
+    }
+  },
+  [215] = {
+    215,
+    2,
+    5,
+    common[13],
+    5,
+    common[13],
+    1,
+    common[21],
+    3200205,
+    30,
+    1,
+    7770001,
+    11505,
+    100000,
+    2,
+    3,
+    common[8],
+    2151,
+    11500,
+    {
+      [1] = {ItemID = 3100011, Count = 7},
+      [2] = {ItemID = 3100010, Count = 10}
+    }
+  },
+  [221] = {
+    221,
+    2,
+    1,
+    common[9],
+    0,
+    common[9],
+    1,
+    common[22],
+    3300201,
+    10,
+    1,
+    7770001,
+    11501,
+    100000,
+    3,
+    0,
+    nil,
+    2211,
+    11500,
+    {
+      [1] = {ItemID = 3100002, Count = 1},
+      [2] = {ItemID = 3100001, Count = 5}
+    }
+  },
+  [222] = {
+    222,
+    2,
+    2,
+    common[10],
+    2,
+    common[10],
+    20,
+    common[22],
+    3300202,
+    15,
+    1,
+    7770001,
+    11502,
+    100000,
+    3,
+    0,
+    nil,
+    2221,
+    11500,
+    {
+      [1] = {ItemID = 3100002, Count = 2},
+      [2] = {ItemID = 3100001, Count = 6}
+    }
+  },
+  [223] = {
+    223,
+    2,
+    3,
+    common[11],
+    3,
+    common[11],
+    20,
+    common[22],
+    3300203,
+    20,
+    1,
+    7770001,
+    11503,
+    100000,
+    3,
+    1,
+    common[4],
+    2231,
+    11500,
+    {
+      [1] = {ItemID = 3100002, Count = 3},
+      [2] = {ItemID = 3100001, Count = 9}
+    }
+  },
+  [224] = {
+    224,
+    2,
+    4,
+    common[12],
+    4,
+    common[12],
+    1,
+    common[22],
+    3300204,
+    25,
+    1,
+    7770001,
+    11504,
+    100000,
+    3,
+    2,
+    common[6],
+    2241,
+    11500,
+    {
+      [1] = {ItemID = 3100002, Count = 5},
+      [2] = {ItemID = 3100001, Count = 9}
+    }
+  },
+  [225] = {
+    225,
+    2,
+    5,
+    common[13],
+    5,
+    common[13],
+    1,
+    common[22],
+    3300205,
+    30,
+    1,
+    7770001,
+    11505,
+    100000,
+    3,
+    3,
+    common[8],
+    2251,
+    11500,
+    {
+      [1] = {ItemID = 3100002, Count = 7},
+      [2] = {ItemID = 3100001, Count = 10}
+    }
+  },
+  [231] = {
+    231,
+    2,
+    1,
+    common[9],
+    0,
+    common[9],
+    1,
+    common[23],
+    3400201,
+    10,
+    1,
+    7770001,
+    11501,
+    100000,
+    4,
+    0,
+    nil,
+    2311,
+    11500,
+    {
+      [1] = {ItemID = 3100008, Count = 1},
+      [2] = {ItemID = 3100007, Count = 5}
+    }
+  },
+  [232] = {
+    232,
+    2,
+    2,
+    common[10],
+    2,
+    common[10],
+    20,
+    common[23],
+    3400202,
+    15,
+    1,
+    7770001,
+    11502,
+    100000,
+    4,
+    0,
+    nil,
+    2321,
+    11500,
+    {
+      [1] = {ItemID = 3100008, Count = 2},
+      [2] = {ItemID = 3100007, Count = 6}
+    }
+  },
+  [233] = {
+    233,
+    2,
+    3,
+    common[11],
+    3,
+    common[11],
+    20,
+    common[23],
+    3400203,
+    20,
+    1,
+    7770001,
+    11503,
+    100000,
+    4,
+    1,
+    common[4],
+    2331,
+    11500,
+    {
+      [1] = {ItemID = 3100008, Count = 3},
+      [2] = {ItemID = 3100007, Count = 9}
+    }
+  },
+  [234] = {
+    234,
+    2,
+    4,
+    common[12],
+    4,
+    common[12],
+    1,
+    common[23],
+    3400204,
+    25,
+    1,
+    7770001,
+    11504,
+    100000,
+    4,
+    2,
+    common[6],
+    2341,
+    11500,
+    {
+      [1] = {ItemID = 3100008, Count = 5},
+      [2] = {ItemID = 3100007, Count = 9}
+    }
+  },
+  [235] = {
+    235,
+    2,
+    5,
+    common[13],
+    5,
+    common[13],
+    1,
+    common[23],
+    3400205,
+    30,
+    1,
+    7770001,
+    11505,
+    100000,
+    4,
+    3,
+    common[8],
+    2351,
+    11500,
+    {
+      [1] = {ItemID = 3100008, Count = 7},
+      [2] = {ItemID = 3100007, Count = 10}
+    }
+  },
+  [301] = {
+    301,
+    3,
+    1,
+    common[14],
+    1,
+    common[14],
+    10,
+    {
+      3030104,
+      3030102,
+      3030103,
+      3030101
+    },
+    3000301,
+    10,
+    1,
+    7770001,
+    11501,
+    100000,
+    nil,
+    0,
+    nil,
+    3011,
+    11500,
+    {
+      [1] = {ItemID = 3300001, Count = 25}
+    }
+  },
+  [302] = {
+    302,
+    3,
+    2,
+    common[15],
+    2,
+    common[15],
+    20,
+    {
+      3030203,
+      3030201,
+      3030202,
+      3030205,
+      3030206
+    },
+    3000302,
+    15,
+    1,
+    7770001,
+    11502,
+    100000,
+    nil,
+    0,
+    nil,
+    3021,
+    11500,
+    {
+      [1] = {ItemID = 3300002, Count = 10},
+      [2] = {ItemID = 3300001, Count = 20}
+    }
+  },
+  [303] = {
+    303,
+    3,
+    3,
+    common[16],
+    3,
+    common[16],
+    20,
+    {
+      3030304,
+      3030307,
+      3030301,
+      3030303,
+      3030305
+    },
+    3000303,
+    20,
+    1,
+    7770001,
+    11503,
+    100000,
+    nil,
+    1,
+    common[4],
+    3031,
+    11500,
+    {
+      [1] = {ItemID = 3300002, Count = 15},
+      [2] = {ItemID = 3300001, Count = 25}
+    }
+  },
+  [304] = {
+    304,
+    3,
+    4,
+    common[17],
+    4,
+    common[17],
+    1,
+    {
+      3030403,
+      3030407,
+      3030401,
+      3030408,
+      3030405
+    },
+    3000304,
+    25,
+    1,
+    7770001,
+    11504,
+    100000,
+    nil,
+    2,
+    common[6],
+    3041,
+    11500,
+    {
+      [1] = {ItemID = 3300003, Count = 5},
+      [2] = {ItemID = 3300002, Count = 20},
+      [3] = {ItemID = 3300001, Count = 15}
+    }
+  },
+  [305] = {
+    305,
+    3,
+    5,
+    common[18],
+    5,
+    common[18],
+    1,
+    common[24],
+    3000305,
+    30,
+    1,
+    7770001,
+    11505,
+    100000,
+    nil,
+    3,
+    common[8],
+    3051,
+    11500,
+    {
+      [1] = {ItemID = 3300003, Count = 10},
+      [2] = {ItemID = 3300002, Count = 25},
+      [3] = {ItemID = 3300001, Count = 10}
+    }
+  },
+  [401] = {
+    401,
+    4,
+    1,
+    common[14],
+    1,
+    "str_res_instance_detail_instance_401",
+    20,
+    common[24],
+    3000401,
+    10,
+    1,
+    7770001,
+    11501,
+    100000,
+    nil,
+    0,
+    nil,
+    4011,
+    11500,
+    {
+      [1] = {ItemID = 3500001, Count = 100},
+      [2] = {ItemID = 3400046, Count = 4},
+      [3] = {ItemID = 3400029, Count = 1},
+      [4] = {ItemID = 3400028, Count = 3}
+    }
+  },
+  [402] = {
+    402,
+    4,
+    2,
+    common[15],
+    2,
+    "str_res_instance_detail_instance_402",
+    5,
+    common[24],
+    3000402,
+    15,
+    1,
+    7770001,
+    11502,
+    100000,
+    nil,
+    1,
+    common[4],
+    4021,
+    11500,
+    {
+      [1] = {ItemID = 3500001, Count = 150},
+      [2] = {ItemID = 3400047, Count = 2},
+      [3] = {ItemID = 3400046, Count = 3},
+      [4] = {ItemID = 3400029, Count = 1},
+      [5] = {ItemID = 3400028, Count = 5}
+    }
+  },
+  [403] = {
+    403,
+    4,
+    3,
+    common[16],
+    3,
+    "str_res_instance_detail_instance_403",
+    20,
+    common[24],
+    3000403,
+    20,
+    1,
+    7770001,
+    11503,
+    100000,
+    nil,
+    1,
+    common[4],
+    4031,
+    11500,
+    {
+      [1] = {ItemID = 3500001, Count = 200},
+      [2] = {ItemID = 3400047, Count = 3},
+      [3] = {ItemID = 3400046, Count = 3},
+      [4] = {ItemID = 3400029, Count = 2},
+      [5] = {ItemID = 3400028, Count = 6}
+    }
+  },
+  [404] = {
+    404,
+    4,
+    4,
+    common[17],
+    4,
+    "str_res_instance_detail_instance_404",
+    1,
+    common[24],
+    3000404,
+    25,
+    1,
+    7770001,
+    11504,
+    100000,
+    nil,
+    2,
+    common[6],
+    4041,
+    11500,
+    {
+      [1] = {ItemID = 3500001, Count = 250},
+      [2] = {ItemID = 3400048, Count = 2},
+      [3] = {ItemID = 3400047, Count = 2},
+      [4] = {ItemID = 3400046, Count = 3},
+      [5] = {ItemID = 3400029, Count = 2},
+      [6] = {ItemID = 3400028, Count = 8}
+    }
+  },
+  [405] = {
+    405,
+    4,
+    5,
+    common[18],
+    5,
+    "str_res_instance_detail_instance_405",
+    1,
+    common[24],
+    3000405,
+    30,
+    1,
+    7770001,
+    11505,
+    100000,
+    nil,
+    3,
+    common[8],
+    4051,
+    11500,
+    {
+      [1] = {ItemID = 3500001, Count = 300},
+      [2] = {ItemID = 3400048, Count = 3},
+      [3] = {ItemID = 3400047, Count = 2},
+      [4] = {ItemID = 3400046, Count = 2},
+      [5] = {ItemID = 3400029, Count = 3},
+      [6] = {ItemID = 3400028, Count = 10}
+    }
+  }
 }
 return config, "ID", key
-

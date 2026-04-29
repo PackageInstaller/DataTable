@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/challenges/ui_n12_challengs_task_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12ChallengsTaskItem", UICustomWidget)
 UIN12ChallengsTaskItem = UIN12ChallengsTaskItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12ChallengsTaskItem._GetComponents = function(self)
-  -- function num : 0_0
+function UIN12ChallengsTaskItem:_GetComponents()
   self._count = self:GetUIComponent("UILocalizationText", "_count")
   self._state = self:GetUIComponent("UILocalizationText", "_state")
   self._icon = self:GetUIComponent("RawImageLoader", "_icon")
@@ -19,102 +12,70 @@ UIN12ChallengsTaskItem._GetComponents = function(self)
   self._score = self:GetUIComponent("UILocalizationText", "_score")
   self._score_shade = self:GetUIComponent("UILocalizationText", "_score_shade")
   self._not_finish = self:GetGameObject("_not_finish")
-  self._animation = ((self.view).gameObject):GetComponent("Animation")
+  self._animation = self.view.gameObject:GetComponent("Animation")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengsTaskItem._SetValue = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN12ChallengsTaskItem:_SetValue(uiParams)
   self._campaign = nil
   self._date = nil
   self._bossidx = 0
   self._idx = 0
-  self._icon_gray = (Color.New)(0.51764705882353, 0.51764705882353, 0.51764705882353)
+  self._icon_gray = Color.New(0.5176470588235295, 0.5176470588235295, 0.5176470588235295)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengsTaskItem._SetShow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN12ChallengsTaskItem:_SetShow()
   if not self._date then
-    return 
+    return
   end
-  ;
-  (self._count):SetText((((self._date).rewards)[1]).count)
-  self:_SetState((self._date).status == QuestStatus.QUEST_Taken)
-  self:_SetScore((self._date).score)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._count:SetText(self._date.rewards[1].count)
+  self:_SetState(self._date.status == QuestStatus.QUEST_Taken)
+  self:_SetScore(self._date.score)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengsTaskItem._SetState = function(self, isShow)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN12ChallengsTaskItem:_SetState(isShow)
   if isShow then
-    (self._state):SetText((StringTable.Get)("str_n12_task_reach"))
-    ;
-    (UIN12ChallengesContorl.SetIconGrey)({self._icon, self._bg}, 1)
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._iconraw).color = self._icon_gray
+    self._state:SetText(StringTable.Get("str_n12_task_reach"))
+    UIN12ChallengesContorl.SetIconGrey({
+      self._icon,
+      self._bg
+    }, 1)
+    self._iconraw.color = self._icon_gray
   else
-    ;
-    (self._state):SetText((StringTable.Get)("str_n12_task_not_reach"))
-    ;
-    (UIN12ChallengesContorl.SetIconGrey)({self._icon, self._bg}, 0)
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._iconraw).color = Color.white
+    self._state:SetText(StringTable.Get("str_n12_task_not_reach"))
+    UIN12ChallengesContorl.SetIconGrey({
+      self._icon,
+      self._bg
+    }, 0)
+    self._iconraw.color = Color.white
   end
-  ;
-  (self._not_finish):SetActive(not isShow)
-  ;
-  (self._finish):SetActive(isShow)
-  ;
-  (self._finish_ok):SetActive(isShow)
-  ;
-  (self._finish):SetActive(isShow)
+  self._not_finish:SetActive(not isShow)
+  self._finish:SetActive(isShow)
+  self._finish_ok:SetActive(isShow)
+  self._finish:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengsTaskItem._SetScore = function(self, score)
-  -- function num : 0_4
-  (self._score_shade):SetText(score)
-  ;
-  (self._score):SetText(score)
+function UIN12ChallengsTaskItem:_SetScore(score)
+  self._score_shade:SetText(score)
+  self._score:SetText(score)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengsTaskItem._PlayAnimation = function(self, globalDelayTimeFunc)
-  -- function num : 0_5
-  (self._animation):Stop()
-  ;
-  (self._animation):Play("uieff_N12_Hard_ChallengesTask_In")
+function UIN12ChallengsTaskItem:_PlayAnimation(globalDelayTimeFunc)
+  self._animation:Stop()
+  self._animation:Play("uieff_N12_Hard_ChallengesTask_In")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengsTaskItem.OnShow = function(self, uiParams)
-  -- function num : 0_6
+function UIN12ChallengsTaskItem:OnShow(uiParams)
   self:_SetValue(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengsTaskItem.SetData = function(self, campaign, date, bosscfg, idx, globalDelayTimeFunc)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN12ChallengsTaskItem:SetData(campaign, date, bosscfg, idx, globalDelayTimeFunc)
   self._campaign = campaign
   self._date = date
-  self._cfg = ((Cfg.cfg_component_challenge_mission)({CampaignMissionId = bosscfg[1]}))[1]
+  self._cfg = Cfg.cfg_component_challenge_mission({
+    CampaignMissionId = bosscfg[1]
+  })[1]
   self._idx = idx
   self:_SetShow()
   self:_PlayAnimation(globalDelayTimeFunc)
 end
-
-

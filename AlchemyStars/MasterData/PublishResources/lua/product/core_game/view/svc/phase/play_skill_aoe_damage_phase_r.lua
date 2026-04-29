@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_aoe_damage_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillAOEDamagePhase", PlaySkillPhaseBase)
 PlaySkillAOEDamagePhase = PlaySkillAOEDamagePhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillAOEDamagePhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillAOEDamagePhase:PlayFlight(TT, casterEntity, phaseParam)
   local aoeDamageParam = phaseParam
   local castEffectID = aoeDamageParam:GetSkillCastEffectID()
   local intervalTime = aoeDamageParam:GetSkillAOEInterval()
@@ -17,20 +10,20 @@ PlaySkillAOEDamagePhase.PlayFlight = function(self, TT, casterEntity, phaseParam
   local hitEffectID = aoeDamageParam:GetSkillHitEffectID()
   local hitAnimName = aoeDamageParam:GetSkillHitAnimName()
   local hitTurn2Target = true
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local isFinalAttack = skillEffectResultContainer:IsFinalAttack()
   local castIndex = 1
   local damageArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   if damageArray == nil then
-    return 
+    return
   end
-  local resvc = (self._world):GetService("RenderEntity")
+  local resvc = self._world:GetService("RenderEntity")
   local castCount = #damageArray
-  for k,v in pairs(damageArray) do
+  for k, v in pairs(damageArray) do
     local damageResult = v
     local damageTargetID = damageResult:GetTargetID()
-    local damageTargetEntity = (self._world):GetEntityByID(damageTargetID)
+    local damageTargetEntity = self._world:GetEntityByID(damageTargetID)
     local damage = damageResult:GetDamageInfo(1)
     local damagePos = damageResult:GetGridPos()
     resvc:TurnToTarget(casterEntity, damageTargetEntity)
@@ -39,11 +32,8 @@ PlaySkillAOEDamagePhase.PlayFlight = function(self, TT, casterEntity, phaseParam
     if isFinalAttack == true and castIndex == castCount then
       curHitIsFinalAttack = true
     end
-    local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(damageTargetEntity)):SetHandleBeHitParam_HitAnimName(hitAnimName)):SetHandleBeHitParam_HitEffectID(hitEffectID)):SetHandleBeHitParam_DamageInfo(damage)):SetHandleBeHitParam_DamagePos(damagePos)):SetHandleBeHitParam_HitTurnTarget(hitTurn2Target)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(curHitIsFinalAttack)):SetHandleBeHitParam_SkillID(skillID)
-    ;
-    (self:SkillService()):HandleBeHit(TT, beHitParam)
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(damageTargetEntity):SetHandleBeHitParam_HitAnimName(hitAnimName):SetHandleBeHitParam_HitEffectID(hitEffectID):SetHandleBeHitParam_DamageInfo(damage):SetHandleBeHitParam_DamagePos(damagePos):SetHandleBeHitParam_HitTurnTarget(hitTurn2Target):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(curHitIsFinalAttack):SetHandleBeHitParam_SkillID(skillID)
+    self:SkillService():HandleBeHit(TT, beHitParam)
     YIELD(TT, intervalTime)
   end
 end
-
-

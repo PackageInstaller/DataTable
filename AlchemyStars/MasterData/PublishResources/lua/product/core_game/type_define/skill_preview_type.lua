@@ -1,8 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/skill_preview_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-SkillPreviewType = {SkillPreviewTypeStart = 0, Instruction = 0, Scope = 1, Tips = 2, ConvertElement = 3, ActorDamage = 4, SupportAddBuff = 6, ScopeAndTips = 9, ScopeWithCasterPos = 14, ScopeWithCasterPosAndTips = 15, TrapActiveSkill = 16, TrapDesc = 17, AddHPChainSkill = 18, ReplaceOtherSkillScopeAndTips = 19, TrapScopeAndTips = 20, ScopeSingleChainSkill = 21, ScopeSingleChainSkillInScope54 = 22, ScopeAndEffectScope = 23, ScopeAndEffectScopeAndTips = 24, ScopeAndTipsAndMoveParam = 25, ScopeSingleChainSkillWithParam = 26, ScopeCanConfig = 27, N15MonsterChessSp = 28, N15MonsterInstruction = 29, ScopeSilverGrid = 30, ScopeAndTipsAndArrowWithMoveParam = 31, SkillEffect191InChain = 32, PetTrapMoveArrow = 33, N29DrillerMoveAttack = 34, TeleportRangeAndDamageRange = 35, SupportAddBuffWithCastCheck = 36, Pet1502051Chain = 37, Crab = 38, PetChainRobotBomb = 39, MoveGroupScope = 40, SupportAddBuffWithCastCheckSan = 41, ShowSelectMonsterScopeAndTips = 42, SkillPreviewTypeEnd = 999}
+SkillPreviewType = {
+  SkillPreviewTypeStart = 0,
+  Instruction = 0,
+  Scope = 1,
+  Tips = 2,
+  ConvertElement = 3,
+  ActorDamage = 4,
+  SupportAddBuff = 6,
+  ScopeAndTips = 9,
+  ScopeWithCasterPos = 14,
+  ScopeWithCasterPosAndTips = 15,
+  TrapActiveSkill = 16,
+  TrapDesc = 17,
+  AddHPChainSkill = 18,
+  ReplaceOtherSkillScopeAndTips = 19,
+  TrapScopeAndTips = 20,
+  ScopeSingleChainSkill = 21,
+  ScopeSingleChainSkillInScope54 = 22,
+  ScopeAndEffectScope = 23,
+  ScopeAndEffectScopeAndTips = 24,
+  ScopeAndTipsAndMoveParam = 25,
+  ScopeSingleChainSkillWithParam = 26,
+  ScopeCanConfig = 27,
+  N15MonsterChessSp = 28,
+  N15MonsterInstruction = 29,
+  ScopeSilverGrid = 30,
+  ScopeAndTipsAndArrowWithMoveParam = 31,
+  SkillEffect191InChain = 32,
+  PetTrapMoveArrow = 33,
+  N29DrillerMoveAttack = 34,
+  TeleportRangeAndDamageRange = 35,
+  SupportAddBuffWithCastCheck = 36,
+  Pet1502051Chain = 37,
+  Crab = 38,
+  PetChainRobotBomb = 39,
+  MoveGroupScope = 40,
+  SupportAddBuffWithCastCheckSan = 41,
+  ShowSelectMonsterScopeAndTips = 42,
+  SkillPreviewTypeEnd = 999
+}
 _enum("SkillPreviewType", SkillPreviewType)
-

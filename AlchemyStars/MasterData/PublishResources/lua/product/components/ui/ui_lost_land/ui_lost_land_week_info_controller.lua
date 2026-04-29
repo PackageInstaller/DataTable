@@ -1,52 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_lost_land/ui_lost_land_week_info_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILostLandWeekInfoController", UIController)
 UILostLandWeekInfoController = UILostLandWeekInfoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILostLandWeekInfoController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._uiModule = (GameGlobal.GetUIModule)(LostAreaModule)
+function UILostLandWeekInfoController:OnShow(uiParams)
+  self._uiModule = GameGlobal.GetUIModule(LostAreaModule)
   self:GetComponents()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandWeekInfoController.GetComponents = function(self)
-  -- function num : 0_1
+function UILostLandWeekInfoController:GetComponents()
   self._recommendPools = self:GetUIComponent("UISelectObjectPath", "recommendPools")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandWeekInfoController.OnValue = function(self)
-  -- function num : 0_2
+function UILostLandWeekInfoController:OnValue()
   self:GetFilterData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandWeekInfoController.bgOnClick = function(self, go)
-  -- function num : 0_3
+function UILostLandWeekInfoController:bgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandWeekInfoController.GetFilterData = function(self)
-  -- function num : 0_4
-  local recommendList = (self._uiModule):GetRecommendConditionList()
-  ;
-  (self._recommendPools):SpawnObjects("UILostLandFilterItem", #recommendList)
-  local pools = (self._recommendPools):GetAllSpawnList()
+function UILostLandWeekInfoController:GetFilterData()
+  local recommendList = self._uiModule:GetRecommendConditionList()
+  self._recommendPools:SpawnObjects("UILostLandFilterItem", #recommendList)
+  local pools = self._recommendPools:GetAllSpawnList()
   for i = 1, #pools do
     local item = pools[i]
     item:SetData(recommendList[i])
   end
 end
-
-

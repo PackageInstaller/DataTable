@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/res_dungeon/resdungeon_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ResDungeonModule", GameModule)
 ResDungeonModule = ResDungeonModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ResDungeonModule.Constructor = function(self)
-  -- function num : 0_0
+function ResDungeonModule:Constructor()
   self._alreadyReturnPowerResDungeonList = {}
   self._formationInfos = {}
   self._all_instance = {}
@@ -18,177 +11,128 @@ ResDungeonModule.Constructor = function(self)
   self._clientResInstance = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.GetClientResInstance = function(self)
-  -- function num : 0_1
+function ResDungeonModule:GetClientResInstance()
   return self._clientResInstance
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.caller):RegisterPushHandler(CEventPushResDungeonData, self.HandleResDungeonAllData, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushAlreadyReturnPowerDungeon, self.HandleAlreadyReturnPowerDungeon, self)
+function ResDungeonModule:Init()
+  self.caller:RegisterPushHandler(CEventPushResDungeonData, self.HandleResDungeonAllData, self)
+  self.caller:RegisterPushHandler(CEventPushAlreadyReturnPowerDungeon, self.HandleAlreadyReturnPowerDungeon, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.HandleResDungeonAllData = function(self, msg)
-  -- function num : 0_3
+function ResDungeonModule:HandleResDungeonAllData(msg)
   self._openStatus = msg.open_status
   self._all_instance = msg.all_instance
   self._passed_instances = msg.passed_instance
   self._double_res_is_open = msg.double_res_state
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.HandleAlreadyReturnPowerDungeon = function(self, msg)
-  -- function num : 0_4 , upvalues : _ENV
-  for key,value in pairs(msg.ids) do
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._alreadyReturnPowerResDungeonList)[key] = value
+function ResDungeonModule:HandleAlreadyReturnPowerDungeon(msg)
+  for key, value in pairs(msg.ids) do
+    self._alreadyReturnPowerResDungeonList[key] = value
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.IsOpenDoubleRes = function(self)
-  -- function num : 0_5
+function ResDungeonModule:IsOpenDoubleRes()
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.SetDoubleResSwitch = function(self, TT, bIsOpen)
-  -- function num : 0_6 , upvalues : _ENV
+function ResDungeonModule:SetDoubleResSwitch(TT, bIsOpen)
   if bIsOpen == self._double_res_is_open then
     return RES_DUNGEON_CODE.RES_DUNGEON_SUCCEED
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventSetDoubleResStatus)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventSetDoubleResStatus)
   request.open_switch_on = bIsOpen
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return RES_DUNGEON_CODE.RES_DUNGEON_DOUBLE_RES_INVALID
   end
-  if (reply.msg).ret == RES_DUNGEON_CODE.RES_DUNGEON_SUCCEED then
+  if reply.msg.ret == RES_DUNGEON_CODE.RES_DUNGEON_SUCCEED then
     self._double_res_is_open = bIsOpen
   end
-  return (reply.msg).ret
+  return reply.msg.ret
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.GetOpenStatus = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyDungeonStatus)
+function ResDungeonModule:GetOpenStatus(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyDungeonStatus)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return {}
   end
-  self._openStatus = (reply.msg).open_status
-  self._double_res_is_open = (reply.msg).double_res_state
+  self._openStatus = reply.msg.open_status
+  self._double_res_is_open = reply.msg.double_res_state
   return self._openStatus
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.GetCoinInstanceData = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
+function ResDungeonModule:GetCoinInstanceData(TT)
   local instance_data = {}
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyDungeonData)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyDungeonData)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return OpenStatus.Dungeon_ReturnError, instance_data
   end
-  local open_status = ((reply.msg).open_status)[DungeonType.DungeonType_Coin]
-  instance_data = ((reply.msg).all_instance)[DungeonType.DungeonType_Coin]
+  local open_status = reply.msg.open_status[DungeonType.DungeonType_Coin]
+  instance_data = reply.msg.all_instance[DungeonType.DungeonType_Coin]
   self:HandleResDungeonAllData(reply.msg)
   return open_status, instance_data
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.GetAircraftmaterialInstanceData = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
+function ResDungeonModule:GetAircraftmaterialInstanceData(TT)
   local instance_data = {}
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyDungeonData)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyDungeonData)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return OpenStatus.Dungeon_ReturnError, instance_data
   end
-  local open_status = ((reply.msg).open_status)[DungeonType.DungeonType_AircraftMaterial]
-  instance_data = ((reply.msg).all_instance)[DungeonType.DungeonType_AircraftMaterial]
+  local open_status = reply.msg.open_status[DungeonType.DungeonType_AircraftMaterial]
+  instance_data = reply.msg.all_instance[DungeonType.DungeonType_AircraftMaterial]
   self:HandleResDungeonAllData(reply.msg)
   return open_status, instance_data
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.GetEquipInstanceData = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
+function ResDungeonModule:GetEquipInstanceData(TT)
   local instance_data = {}
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyDungeonData)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyDungeonData)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return OpenStatus.Dungeon_ReturnError, instance_data
   end
-  local open_status = ((reply.msg).open_status)[DungeonType.DungeonType_equip]
-  instance_data = ((reply.msg).all_instance)[DungeonType.DungeonType_equip]
+  local open_status = reply.msg.open_status[DungeonType.DungeonType_equip]
+  instance_data = reply.msg.all_instance[DungeonType.DungeonType_equip]
   self:HandleResDungeonAllData(reply.msg)
   return open_status, instance_data
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.GetExperienceInstanceData = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function ResDungeonModule:GetExperienceInstanceData(TT)
   local instance_data = {}
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyDungeonData)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyDungeonData)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return OpenStatus.Dungeon_ReturnError, instance_data
   end
-  local open_status = ((reply.msg).open_status)[DungeonType.DungeonType_Experience]
-  instance_data = ((reply.msg).all_instance)[DungeonType.DungeonType_Experience]
+  local open_status = reply.msg.open_status[DungeonType.DungeonType_Experience]
+  instance_data = reply.msg.all_instance[DungeonType.DungeonType_Experience]
   self:HandleResDungeonAllData(reply.msg)
   return open_status, instance_data
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.StartMatchTask = function(self, TT, instance_id, formation_id)
-  -- function num : 0_12 , upvalues : _ENV
-  local game = (GameGlobal.GetModule)(GameMatchModule)
+function ResDungeonModule:StartMatchTask(TT, instance_id, formation_id)
+  local game = GameGlobal.GetModule(GameMatchModule)
   local info = game:GetMatchCreateInfo(MatchType.MT_ResDungeon, instance_id)
   local res = game:StartMatchTask(TT, MatchType.MT_ResDungeon, formation_id, info)
   return res
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.GetInstanceDataList = function(self, mainType)
-  -- function num : 0_13
-  return (self._all_instance)[mainType]
+function ResDungeonModule:GetInstanceDataList(mainType)
+  return self._all_instance[mainType]
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.IsResDungeonUnlocked = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  do return next(self._all_instance) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function ResDungeonModule:IsResDungeonUnlocked()
+  return next(self._all_instance) ~= nil
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.IsResDungeonPassed = function(self, InstanceId)
-  -- function num : 0_15 , upvalues : _ENV
-  for _id,value in pairs(self._passed_instances) do
+function ResDungeonModule:IsResDungeonPassed(InstanceId)
+  for _id, value in pairs(self._passed_instances) do
     if InstanceId == value then
       return true
     end
@@ -196,57 +140,31 @@ ResDungeonModule.IsResDungeonPassed = function(self, InstanceId)
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.GetEntryOpenStatus = function(self, mainType)
-  -- function num : 0_16
-  return (self._openStatus)[mainType]
+function ResDungeonModule:GetEntryOpenStatus(mainType)
+  return self._openStatus[mainType]
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.SetEnterInstanceId = function(self, id)
-  -- function num : 0_17
+function ResDungeonModule:SetEnterInstanceId(id)
   self.enterInstanceId = id
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.GetEnterInstanceId = function(self)
-  -- function num : 0_18
+function ResDungeonModule:GetEnterInstanceId()
   return self.enterInstanceId
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.GetResDungeonDetail = function(self, instanceId, colorStr)
-  -- function num : 0_19 , upvalues : _ENV
-  local cfg = (Cfg.cfg_res_instance_detail)[instanceId]
+function ResDungeonModule:GetResDungeonDetail(instanceId, colorStr)
+  local cfg = Cfg.cfg_res_instance_detail[instanceId]
   local dungeonInfo = self:GetDungeonInfoByInstanceId(instanceId)
-  if not dungeonInfo or not dungeonInfo.passed_condition then
-    local condition = {}
-  end
+  local condition = dungeonInfo and dungeonInfo.passed_condition or {}
   local data = {}
   data.m_vecCondition = {}
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (data.m_vecCondition)[1] = self:ConvertCondition(condition, cfg.ThreeStarCondition1, colorStr)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (data.m_vecCondition)[2] = self:ConvertCondition(condition, cfg.ThreeStarCondition2, colorStr)
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (data.m_vecCondition)[3] = self:ConvertCondition(condition, cfg.ThreeStarCondition3, colorStr)
+  data.m_vecCondition[1] = self:ConvertCondition(condition, cfg.ThreeStarCondition1, colorStr)
+  data.m_vecCondition[2] = self:ConvertCondition(condition, cfg.ThreeStarCondition2, colorStr)
+  data.m_vecCondition[3] = self:ConvertCondition(condition, cfg.ThreeStarCondition3, colorStr)
   return data
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.ConvertCondition = function(self, vecPassCondition, nConditionID, colorStr)
-  -- function num : 0_20
+function ResDungeonModule:ConvertCondition(vecPassCondition, nConditionID, colorStr)
   local data = {}
   data.m_nID = nConditionID
   data.m_stDest = self:GetConditionDesc(nConditionID, colorStr)
@@ -254,11 +172,8 @@ ResDungeonModule.ConvertCondition = function(self, vecPassCondition, nConditionI
   return data
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.IsConditionPass = function(self, vecCondition, nConditionID)
-  -- function num : 0_21 , upvalues : _ENV
-  for _,conditionPass in pairs(vecCondition) do
+function ResDungeonModule:IsConditionPass(vecCondition, nConditionID)
+  for _, conditionPass in pairs(vecCondition) do
     if conditionPass == nConditionID then
       return true
     end
@@ -266,33 +181,24 @@ ResDungeonModule.IsConditionPass = function(self, vecCondition, nConditionID)
   return false
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.GetConditionDesc = function(self, condition_id, colorStr)
-  -- function num : 0_22 , upvalues : _ENV
+function ResDungeonModule:GetConditionDesc(condition_id, colorStr)
   local missionModule = self:GetModule(MissionModule)
   return missionModule:Get3StarConditionDesc(condition_id, colorStr)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.GetDoubleResNum = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function ResDungeonModule:GetDoubleResNum()
   local itemMd = self:GetModule(ItemModule)
   return itemMd:GetItemCount(RoleAssetID.RoleAssetDoubleRes)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.GetDungeonInfoByInstanceId = function(self, instanceId)
-  -- function num : 0_24 , upvalues : _ENV
-  local cfg = (Cfg.cfg_res_instance_detail)[instanceId]
+function ResDungeonModule:GetDungeonInfoByInstanceId(instanceId)
+  local cfg = Cfg.cfg_res_instance_detail[instanceId]
   if not cfg then
     return nil
   end
   local mainType = cfg.MainType
   local dataList = self:GetInstanceDataList(mainType)
-  for index,value in ipairs(dataList) do
+  for index, value in ipairs(dataList) do
     if value.dungeon_id == instanceId then
       return value
     end
@@ -300,20 +206,17 @@ ResDungeonModule.GetDungeonInfoByInstanceId = function(self, instanceId)
   return nil
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.Module_ConvertMatchResult = function(self, recvResult)
-  -- function num : 0_25 , upvalues : _ENV
+function ResDungeonModule:Module_ConvertMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_ResDungeon
   uiMatchResult.m_nID = recvResult.res_dungeon_id
-  local cfg = (Cfg.cfg_res_instance_detail)[recvResult.res_dungeon_id]
-  uiMatchResult.m_stShowName = (StringTable.Get)(cfg.Name)
+  local cfg = Cfg.cfg_res_instance_detail[recvResult.res_dungeon_id]
+  uiMatchResult.m_stShowName = StringTable.Get(cfg.Name)
   uiMatchResult.m_vecAwardNormal = recvResult.rewards
   local notInNormalRewarsIndex = {}
-  for i,var in ipairs(recvResult.ext_rewards) do
+  for i, var in ipairs(recvResult.ext_rewards) do
     local isAdd = false
-    for index,value in ipairs(uiMatchResult.m_vecAwardNormal) do
+    for index, value in ipairs(uiMatchResult.m_vecAwardNormal) do
       if value.assetid == var.assetid then
         value.count = value.count + var.count
         isAdd = true
@@ -323,10 +226,8 @@ ResDungeonModule.Module_ConvertMatchResult = function(self, recvResult)
       notInNormalRewarsIndex[#notInNormalRewarsIndex + 1] = i
     end
   end
-  for i,var in ipairs(notInNormalRewarsIndex) do
-    -- DECOMPILER ERROR at PC57: Confused about usage of register: R10 in 'UnsetPending'
-
-    (uiMatchResult.m_vecAwardNormal)[#uiMatchResult.m_vecAwardNormal + 1] = (recvResult.ext_rewards)[var]
+  for i, var in ipairs(notInNormalRewarsIndex) do
+    uiMatchResult.m_vecAwardNormal[#uiMatchResult.m_vecAwardNormal + 1] = recvResult.ext_rewards[var]
   end
   uiMatchResult.m_vecExtAward = recvResult.ext_rewards_no_double
   uiMatchResult.m_vecDoubleExtAward = recvResult.double_ext_rewards
@@ -335,15 +236,12 @@ ResDungeonModule.Module_ConvertMatchResult = function(self, recvResult)
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.Module_SweepConvertMatchResult = function(self, recvResult)
-  -- function num : 0_26 , upvalues : _ENV
+function ResDungeonModule:Module_SweepConvertMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_ResDungeon
   uiMatchResult.m_nID = recvResult.res_dungeon_id
-  local cfg = (Cfg.cfg_res_instance_detail)[recvResult.res_dungeon_id]
-  uiMatchResult.m_stShowName = (StringTable.Get)(cfg.Name)
+  local cfg = Cfg.cfg_res_instance_detail[recvResult.res_dungeon_id]
+  uiMatchResult.m_stShowName = StringTable.Get(cfg.Name)
   uiMatchResult.m_vecAwardNormal = recvResult.rewards
   uiMatchResult.m_coin_ext_rewards = recvResult.ext_rewards
   uiMatchResult.m_vecExtAward = recvResult.ext_rewards_no_double
@@ -354,11 +252,8 @@ ResDungeonModule.Module_SweepConvertMatchResult = function(self, recvResult)
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.AlreadyReturnedPower = function(self, id)
-  -- function num : 0_27 , upvalues : _ENV
-  for key,value in pairs(self._alreadyReturnPowerResDungeonList) do
+function ResDungeonModule:AlreadyReturnedPower(id)
+  for key, value in pairs(self._alreadyReturnPowerResDungeonList) do
     if id == value then
       return false
     end
@@ -366,31 +261,20 @@ ResDungeonModule.AlreadyReturnedPower = function(self, id)
   return true
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.SetAllData = function(self, all_data)
-  -- function num : 0_28 , upvalues : _ENV
+function ResDungeonModule:SetAllData(all_data)
   self._clientResInstance = ClientResInstance:New()
   self:HandleResDungeonAllData(all_data)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.SetAlreadyReturnedMission = function(self, id_list)
-  -- function num : 0_29
+function ResDungeonModule:SetAlreadyReturnedMission(id_list)
   self._alreadyReturnPowerResDungeonList = id_list
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-ResDungeonModule.GetTypeById = function(self, instance_id)
-  -- function num : 0_30 , upvalues : _ENV
-  local cfg_detail = (Cfg.cfg_res_instance_detail)[instance_id]
+function ResDungeonModule:GetTypeById(instance_id)
+  local cfg_detail = Cfg.cfg_res_instance_detail[instance_id]
   if cfg_detail ~= nil then
     return cfg_detail.MainType
   else
     return -1
   end
 end
-
-

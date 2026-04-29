@@ -1,114 +1,84 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_education/ui_education_up_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEducationUpBtn", UICustomWidget)
 UIEducationUpBtn = UIEducationUpBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEducationUpBtn.Constructor = function(self)
-  -- function num : 0_0
+function UIEducationUpBtn:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpBtn.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIEducationUpBtn:OnShow(uiParams)
   self:UIWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpBtn.OnHide = function(self)
-  -- function num : 0_2
+function UIEducationUpBtn:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpBtn.ButtonOnClick = function(self, go)
-  -- function num : 0_3
+function UIEducationUpBtn:ButtonOnClick(go)
   if self._clickCB ~= nil then
-    (self._clickCB)((self._element):ElementType())
+    self._clickCB(self._element:ElementType())
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpBtn.UIWidget = function(self)
-  -- function num : 0_4
+function UIEducationUpBtn:UIWidget()
   self._uiSel = self:GetUIComponent("UIView", "uiSel")
   self._uiUnsel = self:GetUIComponent("UIView", "uiUnsel")
-  self._uiRed = (self:View()):GetUIComponent("UISelectObjectPath", "uiRed")
+  self._uiRed = self:View():GetUIComponent("UISelectObjectPath", "uiRed")
   self._uiRedSpawn = nil
   self._animationSel = self:GetUIComponent("Animation", "uiSel")
   self._animationUnsel = self:GetUIComponent("Animation", "uiUnsel")
   self._redAnimation = self:GetUIComponent("Animation", "redAnimation")
-  local uiSel = {root = self._uiSel, petElement = (self._uiSel):GetUIComponent("Image", "petElement"), elementName = (self._uiSel):GetUIComponent("UILocalizedTMP", "elementName"), stageName = (self._uiSel):GetUIComponent("UILocalizationText", "stageName")}
-  local uiUnsel = {root = self._uiUnsel, petElement = (self._uiUnsel):GetUIComponent("Image", "petElement"), elementName = (self._uiUnsel):GetUIComponent("UILocalizationText", "elementName"), stageName = (self._uiUnsel):GetUIComponent("UILocalizationText", "stageName")}
+  local uiSel = {
+    root = self._uiSel,
+    petElement = self._uiSel:GetUIComponent("Image", "petElement"),
+    elementName = self._uiSel:GetUIComponent("UILocalizedTMP", "elementName"),
+    stageName = self._uiSel:GetUIComponent("UILocalizationText", "stageName")
+  }
+  local uiUnsel = {
+    root = self._uiUnsel,
+    petElement = self._uiUnsel:GetUIComponent("Image", "petElement"),
+    elementName = self._uiUnsel:GetUIComponent("UILocalizationText", "elementName"),
+    stageName = self._uiUnsel:GetUIComponent("UILocalizationText", "stageName")
+  }
   self._uiSel = uiSel
   self._uiUnsel = uiUnsel
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpBtn.SetData = function(self, element, atlasPropertySel, atlasPropertyUnsel, clickCB)
-  -- function num : 0_5
+function UIEducationUpBtn:SetData(element, atlasPropertySel, atlasPropertyUnsel, clickCB)
   self._element = element
   self._atlasPropertySel = atlasPropertySel
   self._atlasPropertyUnsel = atlasPropertyUnsel
   self._clickCB = clickCB
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpBtn.GetElementSpriteName = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIEducationUpBtn:GetElementSpriteName()
   if self._nameElementSprite == nil then
-    UIEducationUpBtn._nameElementSprite = {[ElementType.ElementType_Blue] = "enlighten_zjm_bing", [ElementType.ElementType_Red] = "enlighten_zjm_huo", [ElementType.ElementType_Green] = "enlighten_zjm_sen", [ElementType.ElementType_Yellow] = "enlighten_zjm_lei"}
+    UIEducationUpBtn._nameElementSprite = {
+      [ElementType.ElementType_Blue] = "enlighten_zjm_bing",
+      [ElementType.ElementType_Red] = "enlighten_zjm_huo",
+      [ElementType.ElementType_Green] = "enlighten_zjm_sen",
+      [ElementType.ElementType_Yellow] = "enlighten_zjm_lei"
+    }
   end
-  return (self._nameElementSprite)[(self._element):ElementType()]
+  return self._nameElementSprite[self._element:ElementType()]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpBtn.Flush = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ((self._uiSel).petElement).sprite = (self._atlasPropertySel):GetSprite(self:GetElementSpriteName())
-  ;
-  ((self._uiSel).elementName):SetText((self._element):GetName())
-  ;
-  ((self._uiSel).stageName):SetText((StringTable.Get)("str_education_stage_name", (self._element):GetCurrentStage()))
-  local cfgAttribute = (Cfg.cfg_pet_element)[(self._element):ElementType()]
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._uiUnsel).petElement).sprite = (self._atlasPropertyUnsel):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(cfgAttribute.Icon))
-  ;
-  ((self._uiUnsel).elementName):SetText((self._element):GetName())
-  ;
-  ((self._uiUnsel).stageName):SetText((StringTable.Get)("str_education_stage_name", (self._element):GetCurrentStage()))
-  local showRedDot = (self._element):HasRed()
-  ;
-  ((self._uiRed).gameObject):SetActive(showRedDot)
+function UIEducationUpBtn:Flush()
+  self._uiSel.petElement.sprite = self._atlasPropertySel:GetSprite(self:GetElementSpriteName())
+  self._uiSel.elementName:SetText(self._element:GetName())
+  self._uiSel.stageName:SetText(StringTable.Get("str_education_stage_name", self._element:GetCurrentStage()))
+  local cfgAttribute = Cfg.cfg_pet_element[self._element:ElementType()]
+  self._uiUnsel.petElement.sprite = self._atlasPropertyUnsel:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfgAttribute.Icon))
+  self._uiUnsel.elementName:SetText(self._element:GetName())
+  self._uiUnsel.stageName:SetText(StringTable.Get("str_education_stage_name", self._element:GetCurrentStage()))
+  local showRedDot = self._element:HasRed()
+  self._uiRed.gameObject:SetActive(showRedDot)
   if showRedDot and self._uiRedSpawn == nil then
-    self._uiRedSpawn = (self._uiRed):SpawnOneObject("ManualLoad0")
+    self._uiRedSpawn = self._uiRed:SpawnOneObject("ManualLoad0")
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpBtn.SetSelect = function(self, inSelect)
-  -- function num : 0_8
+function UIEducationUpBtn:SetSelect(inSelect)
   self._isSelect = inSelect
-  ;
-  (((self._uiSel).root).gameObject):SetActive(self._isSelect)
-  ;
-  (((self._uiUnsel).root).gameObject):SetActive(not self._isSelect)
+  self._uiSel.root.gameObject:SetActive(self._isSelect)
+  self._uiUnsel.root.gameObject:SetActive(not self._isSelect)
   if self._isSelect then
     self:PlayRed("uieff_UIEducationUpBtn_uired_2")
   else
@@ -116,29 +86,16 @@ UIEducationUpBtn.SetSelect = function(self, inSelect)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpBtn.PlaySel = function(self, animName)
-  -- function num : 0_9
-  (((self._uiSel).root).gameObject):SetActive(true)
-  ;
-  (self._animationSel):Play(animName)
+function UIEducationUpBtn:PlaySel(animName)
+  self._uiSel.root.gameObject:SetActive(true)
+  self._animationSel:Play(animName)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpBtn.PlayUnsel = function(self, animName)
-  -- function num : 0_10
-  (((self._uiUnsel).root).gameObject):SetActive(true)
-  ;
-  (self._animationUnsel):Play(animName)
+function UIEducationUpBtn:PlayUnsel(animName)
+  self._uiUnsel.root.gameObject:SetActive(true)
+  self._animationUnsel:Play(animName)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpBtn.PlayRed = function(self, animName)
-  -- function num : 0_11
-  (self._redAnimation):Play(animName)
+function UIEducationUpBtn:PlayRed(animName)
+  self._redAnimation:Play(animName)
 end
-
-

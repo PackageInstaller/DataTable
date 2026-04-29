@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_hud_visible_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayHUDVisibleInstruction", BaseInstruction)
 PlayHUDVisibleInstruction = PlayHUDVisibleInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayHUDVisibleInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayHUDVisibleInstruction:Constructor(paramList)
   local param = tonumber(paramList.visible)
   if param == 1 then
     self._visible = true
@@ -18,32 +11,25 @@ PlayHUDVisibleInstruction.Constructor = function(self, paramList)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayHUDVisibleInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayHUDVisibleInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   if self._visible then
     local targets = phaseContext:GetHUDTargets()
     if targets then
-      for i,e in ipairs(targets) do
+      for i, e in ipairs(targets) do
         e:SetViewVisible(true)
       end
     end
   else
-    do
-      local targets = {}
-      local group = world:GetGroup((world.BW_WEMatchers).HUD)
-      for _,e in ipairs(group:GetEntities()) do
-        e:SetViewVisible(self._visible)
-        if e:IsViewVisible() then
-          (table.insert)(targets, e)
-          e:SetViewVisible(false)
-        end
+    local targets = {}
+    local group = world:GetGroup(world.BW_WEMatchers.HUD)
+    for _, e in ipairs(group:GetEntities()) do
+      e:SetViewVisible(self._visible)
+      if e:IsViewVisible() then
+        table.insert(targets, e)
+        e:SetViewVisible(false)
       end
-      phaseContext:SetHUDTargets(targets)
     end
+    phaseContext:SetHUDTargets(targets)
   end
 end
-
-

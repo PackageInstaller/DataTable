@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_island_convert.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_IslandConvert_AtomicData", Object)
 SkillEffectResult_IslandConvert_AtomicData = SkillEffectResult_IslandConvert_AtomicData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_IslandConvert_AtomicData.Constructor = function(self, gridPos, oldPieceType, newPieceType, trapArray, groupCenterPos)
-  -- function num : 0_0
+function SkillEffectResult_IslandConvert_AtomicData:Constructor(gridPos, oldPieceType, newPieceType, trapArray, groupCenterPos)
   self._position = gridPos
   self._oldPieceType = oldPieceType
   self._targetPieceType = newPieceType
@@ -17,83 +10,52 @@ SkillEffectResult_IslandConvert_AtomicData.Constructor = function(self, gridPos,
   self._groupCenterPos = groupCenterPos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IslandConvert_AtomicData.GetPosition = function(self)
-  -- function num : 0_1
+function SkillEffectResult_IslandConvert_AtomicData:GetPosition()
   return self._position
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IslandConvert_AtomicData.GetOldPieceType = function(self)
-  -- function num : 0_2
+function SkillEffectResult_IslandConvert_AtomicData:GetOldPieceType()
   return self._oldPieceType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IslandConvert_AtomicData.GetTargetPieceType = function(self)
-  -- function num : 0_3
+function SkillEffectResult_IslandConvert_AtomicData:GetTargetPieceType()
   return self._targetPieceType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IslandConvert_AtomicData.GetDestroyedTrapArray = function(self)
-  -- function num : 0_4
+function SkillEffectResult_IslandConvert_AtomicData:GetDestroyedTrapArray()
   return self._destroyedTrapArray
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IslandConvert_AtomicData.GetGroupCenterPos = function(self)
-  -- function num : 0_5
+function SkillEffectResult_IslandConvert_AtomicData:GetGroupCenterPos()
   return self._groupCenterPos
 end
 
 _class("SkillEffectResult_IslandConvert", SkillEffectResultBase)
 SkillEffectResult_IslandConvert = SkillEffectResult_IslandConvert
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_IslandConvert.Constructor = function(self, atomicDataArray, tv2GroupCenter)
-  -- function num : 0_6
+function SkillEffectResult_IslandConvert:Constructor(atomicDataArray, tv2GroupCenter)
   self._atomicDataArray = atomicDataArray
   self._tv2GroupCenters = tv2GroupCenter
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IslandConvert.GetEffectType = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillEffectResult_IslandConvert:GetEffectType()
   return SkillEffectType.IslandConvert
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IslandConvert.GetAtomicDataArray = function(self)
-  -- function num : 0_8
+function SkillEffectResult_IslandConvert:GetAtomicDataArray()
   return self._atomicDataArray
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IslandConvert.GetGroupCenterArray = function(self)
-  -- function num : 0_9
+function SkillEffectResult_IslandConvert:GetGroupCenterArray()
   return self._tv2GroupCenters
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_IslandConvert.GetNewGridNumByType = function(self, pieceType)
-  -- function num : 0_10
+function SkillEffectResult_IslandConvert:GetNewGridNumByType(pieceType)
   local retNum = 0
   for i = 1, #self._atomicDataArray do
-    if ((self._atomicDataArray)[i])._targetPieceType == pieceType then
+    if self._atomicDataArray[i]._targetPieceType == pieceType then
       retNum = retNum + 1
     end
   end
   return retNum
 end
-
-

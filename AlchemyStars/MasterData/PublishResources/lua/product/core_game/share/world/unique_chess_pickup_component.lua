@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/world/unique_chess_pickup_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChessPickUpComponent", Object)
 ChessPickUpComponent = ChessPickUpComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChessPickUpComponent.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function ChessPickUpComponent:Constructor(world)
   self._world = world
   self._clickPos = Vector3(0, 0, 0)
   self._lastPickUpGridPos = Vector2(0, 0)
@@ -16,87 +9,51 @@ ChessPickUpComponent.Constructor = function(self, world)
   self._targetType = ChessPickUpTargetType.None
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPickUpComponent.Initialize = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.notice)("ChessPickUpComponent Initialize")
+function ChessPickUpComponent:Initialize()
+  Log.notice("ChessPickUpComponent Initialize")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPickUpComponent.SetChessClickPos = function(self, clickPos)
-  -- function num : 0_2
+function ChessPickUpComponent:SetChessClickPos(clickPos)
   self._clickPos = clickPos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPickUpComponent.GetChessClickPos = function(self)
-  -- function num : 0_3
+function ChessPickUpComponent:GetChessClickPos()
   return self._clickPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPickUpComponent.GetChessEntityID = function(self)
-  -- function num : 0_4
+function ChessPickUpComponent:GetChessEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPickUpComponent.SetChessEntityID = function(self, entityID)
-  -- function num : 0_5
+function ChessPickUpComponent:SetChessEntityID(entityID)
   self._entityID = entityID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPickUpComponent.GetChessPickUpTargetType = function(self)
-  -- function num : 0_6
+function ChessPickUpComponent:GetChessPickUpTargetType()
   return self._targetType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPickUpComponent.SetChessPickUpTargetType = function(self, type)
-  -- function num : 0_7
+function ChessPickUpComponent:SetChessPickUpTargetType(type)
   self._targetType = type
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.ChessPickUp = function(self)
-  -- function num : 0_8
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).ChessPickUp)
+function MainWorld:ChessPickUp()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.ChessPickUp)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.HasChessPickUp = function(self)
-  -- function num : 0_9
-  do return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).ChessPickUp) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorld:HasChessPickUp()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.ChessPickUp) ~= nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.AddChessPickUp = function(self, world)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).ChessPickUp
+function MainWorld:AddChessPickUp(world)
+  local index = self.BW_UniqueComponentsEnum.ChessPickUp
   local component = ChessPickUpComponent:New(self)
   component:Initialize()
   self:SetUniqueComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.RemoveChessPickUp = function(self)
-  -- function num : 0_11
+function MainWorld:RemoveChessPickUp()
   if self:HasChessPickUp() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).ChessPickUp, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.ChessPickUp, nil)
   end
 end
-
-

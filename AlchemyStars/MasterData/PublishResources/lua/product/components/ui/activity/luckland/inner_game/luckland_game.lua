@@ -1,50 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/luckland_game.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LuckLandGame", Object)
 LuckLandGame = LuckLandGame
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandGame.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LuckLandGame:Constructor()
   self._module = LuckLandModule:New()
   self._eventListener = LuckLandEventListener:New(self)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGame.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._module):Dispose()
+function LuckLandGame:Dispose()
+  self._module:Dispose()
   self._module = nil
-  ;
-  (self._eventListener):Dispose()
+  self._eventListener:Dispose()
   self._eventListener = nil
-  ;
-  (LuckLandInnerGameHelper:GetInstance()):Dispose()
+  LuckLandInnerGameHelper:GetInstance():Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGame.EnterLuckLandGame = function(self, missionID)
-  -- function num : 0_2
-  (self._module):Init(missionID)
+function LuckLandGame:EnterLuckLandGame(missionID)
+  self._module:Init(missionID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGame.EventDispatcher = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return (GameGlobal.EventDispatcher)()
+function LuckLandGame:EventDispatcher()
+  return GameGlobal.EventDispatcher()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGame.GetLuckLandModule = function(self)
-  -- function num : 0_4
+function LuckLandGame:GetLuckLandModule()
   return self._module
 end
-
-

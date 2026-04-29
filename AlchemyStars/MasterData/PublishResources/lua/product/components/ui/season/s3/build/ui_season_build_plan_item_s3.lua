@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/build/ui_season_build_plan_item_s3.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuildPlanItemS3", UICustomWidget)
 UISeasonBuildPlanItemS3 = UISeasonBuildPlanItemS3
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuildPlanItemS3.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonBuildPlanItemS3:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildPlanItemS3.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonBuildPlanItemS3:InitWidget()
   self.txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self.txtTitle2 = self:GetUIComponent("UILocalizationText", "txtTitle2")
   self.finishGo = self:GetGameObject("finish")
@@ -24,56 +14,37 @@ UISeasonBuildPlanItemS3.InitWidget = function(self)
   self.animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildPlanItemS3.SetData = function(self, levelCfg, finish, rewardClickCb)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonBuildPlanItemS3:SetData(levelCfg, finish, rewardClickCb)
   self._levelCfg = levelCfg
-  ;
-  (self.finishGo):SetActive(finish)
-  ;
-  (self.unFinishGo):SetActive(not finish)
-  local showCfg = (Cfg.cfg_season_castle_show)[levelCfg.ID]
-  do
-    if showCfg then
-      local str = (StringTable.Get)(showCfg.PlanTitle)
-      ;
-      (self.txtTitle):SetText(str)
-      ;
-      (self.txtTitle2):SetText(str)
-    end
-    local rewardList = levelCfg.Reward
-    local len = #rewardList
-    self.rewardWigets = (self.rewardsPool):SpawnObjects("UISeasonBuildRewardItemS3", len)
-    for i = 1, len do
-      local subWidget = (self.rewardWigets)[i]
-      local subRewardData = rewardList[i]
-      subWidget:SetData(subRewardData[1], subRewardData[2], rewardClickCb)
-      if finish then
-        subWidget:ShowMask(true)
-      end
+  self.finishGo:SetActive(finish)
+  self.unFinishGo:SetActive(not finish)
+  local showCfg = Cfg.cfg_season_castle_show[levelCfg.ID]
+  if showCfg then
+    local str = StringTable.Get(showCfg.PlanTitle)
+    self.txtTitle:SetText(str)
+    self.txtTitle2:SetText(str)
+  end
+  local rewardList = levelCfg.Reward
+  local len = #rewardList
+  self.rewardWigets = self.rewardsPool:SpawnObjects("UISeasonBuildRewardItemS3", len)
+  for i = 1, len do
+    local subWidget = self.rewardWigets[i]
+    local subRewardData = rewardList[i]
+    subWidget:SetData(subRewardData[1], subRewardData[2], rewardClickCb)
+    if finish then
+      subWidget:ShowMask(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildPlanItemS3.PlayEnterAni = function(self)
-  -- function num : 0_3
+function UISeasonBuildPlanItemS3:PlayEnterAni()
   self:SetVisible(true)
-  ;
-  (self.animation):Play()
+  self.animation:Play()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildPlanItemS3.SetVisible = function(self, bVisible)
-  -- function num : 0_4
+function UISeasonBuildPlanItemS3:SetVisible(bVisible)
   if not self._gameObject then
     self._gameObject = self:GetGameObject()
   end
-  ;
-  (self._gameObject):SetActive(bVisible)
+  self._gameObject:SetActive(bVisible)
 end
-
-

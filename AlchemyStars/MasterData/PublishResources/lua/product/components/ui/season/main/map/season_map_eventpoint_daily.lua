@@ -1,118 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/season_map_eventpoint_daily.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapEventPointDaily", SeasonMapEventPointBase)
 SeasonMapEventPointDaily = SeasonMapEventPointDaily
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapEventPointDaily.Constructor = function(self, owner, cfgMission, cfgEventPoint)
-  -- function num : 0_0
+function SeasonMapEventPointDaily:Constructor(owner, cfgMission, cfgEventPoint)
   self:_InitDailyPR()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointDaily.PRID = function(self)
-  -- function num : 0_1
+function SeasonMapEventPointDaily:PRID()
   return self._dailyPRID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointDaily._OnPlayEnd = function(self)
-  -- function num : 0_2
+function SeasonMapEventPointDaily:_OnPlayEnd()
   self:_RandomNextPR()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointDaily._InitDailyPR = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._componentInfo).m_daily_info and ((self._componentInfo).m_daily_info).m_save_info then
-    local serverPR = (((self._componentInfo).m_daily_info).m_save_info)[self._id]
+function SeasonMapEventPointDaily:_InitDailyPR()
+  if self._componentInfo.m_daily_info and self._componentInfo.m_daily_info.m_save_info then
+    local serverPR = self._componentInfo.m_daily_info.m_save_info[self._id]
     if serverPR then
       self._dailyPRID = serverPR
-    else
-      if (self._cfgEventPoint).PRP then
-        self:RandomPR((self._cfgEventPoint).PRP)
-      end
+    elseif self._cfgEventPoint.PRP then
+      self:RandomPR(self._cfgEventPoint.PRP)
     end
-    local cfg = (Cfg.cfg_season_map_eventpoint_pr)[self._dailyPRID]
+    local cfg = Cfg.cfg_season_map_eventpoint_pr[self._dailyPRID]
     if cfg then
-      self._position = Vector3((cfg.Position)[1], (cfg.Position)[2], (cfg.Position)[3])
-      self._rotation = (Quaternion.Euler)((cfg.Rotation)[1], (cfg.Rotation)[2], (cfg.Rotation)[3])
+      self._position = Vector3(cfg.Position[1], cfg.Position[2], cfg.Position[3])
+      self._rotation = Quaternion.Euler(cfg.Rotation[1], cfg.Rotation[2], cfg.Rotation[3])
     else
-      ;
-      (Log.error)("SeasonMapEventPointDaily:_GetInitPR error.", self._dailyPRID)
+      Log.error("SeasonMapEventPointDaily:_GetInitPR error.", self._dailyPRID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointDaily._RandomNextPR = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonMapEventPointDaily:_RandomNextPR()
   local seasonMapDaily = self._owner
-  local cfg = (Cfg.cfg_season_map_eventpoint_pr)[self._dailyPRID]
+  local cfg = Cfg.cfg_season_map_eventpoint_pr[self._dailyPRID]
   if cfg and cfg.Next then
     self:RandomPR(cfg.Next)
     seasonMapDaily:TrySyncPRIDs(function()
-    -- function num : 0_4_0 , upvalues : self, _ENV
-    self:ResetPR()
-    ;
-    (Log.debug)("SeasonMapEventPointDaily RandomNextPR Success.")
-  end
-)
+      self:ResetPR()
+      Log.debug("SeasonMapEventPointDaily RandomNextPR Success.")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointDaily.RandomPR = function(self, pool)
-  -- function num : 0_5 , upvalues : _ENV
-  if pool and #pool > 0 then
+function SeasonMapEventPointDaily:RandomPR(pool)
+  if pool and 0 < #pool then
     local mapDaily = self._owner
     local ids = mapDaily:GetAllPRIDs()
     local randomPRIDs = {}
-    for _,id in pairs(pool) do
-      if not (table.icontains)(ids, id) then
-        (table.insert)(randomPRIDs, id)
+    for _, id in pairs(pool) do
+      if not table.icontains(ids, id) then
+        table.insert(randomPRIDs, id)
       end
     end
     local count = #randomPRIDs
-    if count > 0 then
-      self._dailyPRID = randomPRIDs[(math.random)(1, count)]
+    if 0 < count then
+      self._dailyPRID = randomPRIDs[math.random(1, count)]
     else
-      ;
-      (Log.error)("SeasonMapEventPointDaily:_RandomPR error.", self._dailyPRID)
+      Log.error("SeasonMapEventPointDaily:_RandomPR error.", self._dailyPRID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointDaily.ResetPR = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = (Cfg.cfg_season_map_eventpoint_pr)[self._dailyPRID]
+function SeasonMapEventPointDaily:ResetPR()
+  local cfg = Cfg.cfg_season_map_eventpoint_pr[self._dailyPRID]
   if cfg then
-    self._position = Vector3((cfg.Position)[1], (cfg.Position)[2], (cfg.Position)[3])
-    self._rotation = (Quaternion.Euler)((cfg.Rotation)[1], (cfg.Rotation)[2], (cfg.Rotation)[3])
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._transform).position = self._position
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._transform).rotation = self._rotation
-    ;
-    ((self._seasonManger):SeasonUIManager()):Refresh()
+    self._position = Vector3(cfg.Position[1], cfg.Position[2], cfg.Position[3])
+    self._rotation = Quaternion.Euler(cfg.Rotation[1], cfg.Rotation[2], cfg.Rotation[3])
+    self._transform.position = self._position
+    self._transform.rotation = self._rotation
+    self._seasonManger:SeasonUIManager():Refresh()
     self:ReCreatCover()
-    ;
-    (Log.debug)("SeasonMapEventPointDaily ResetPR.")
+    Log.debug("SeasonMapEventPointDaily ResetPR.")
   end
 end
-
-

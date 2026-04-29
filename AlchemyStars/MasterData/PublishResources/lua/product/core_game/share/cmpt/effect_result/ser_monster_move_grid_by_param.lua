@@ -1,76 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_monster_move_grid_by_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectMonsterMoveGridByParamResult", SkillEffectResultBase)
 SkillEffectMonsterMoveGridByParamResult = SkillEffectMonsterMoveGridByParamResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectMonsterMoveGridByParamResult.Constructor = function(self, walkResultList, isDead)
-  -- function num : 0_0
+function SkillEffectMonsterMoveGridByParamResult:Constructor(walkResultList, isDead)
   self._walkResultList = walkResultList
   self._isDead = isDead
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridByParamResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectMonsterMoveGridByParamResult:GetEffectType()
   return SkillEffectType.MonsterMoveGridByParam
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridByParamResult.GetWalkResultList = function(self)
-  -- function num : 0_2
+function SkillEffectMonsterMoveGridByParamResult:GetWalkResultList()
   return self._walkResultList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridByParamResult.IsCasterDead = function(self)
-  -- function num : 0_3
+function SkillEffectMonsterMoveGridByParamResult:IsCasterDead()
   return self._isDead
 end
 
 _class("MoveGridByParamResult", MonsterWalkResult)
 MoveGridByParamResult = MoveGridByParamResult
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-MoveGridByParamResult.Constructor = function(self)
-  -- function num : 0_4
+function MoveGridByParamResult:Constructor()
   self._newPieceType = nil
   self._attackResult = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MoveGridByParamResult.SetNewGridType = function(self, pieceType)
-  -- function num : 0_5
+function MoveGridByParamResult:SetNewGridType(pieceType)
   self._newPieceType = pieceType
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MoveGridByParamResult.SetAttackResult = function(self, attackResult)
-  -- function num : 0_6
+function MoveGridByParamResult:SetAttackResult(attackResult)
   self._attackResult = attackResult
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MoveGridByParamResult.GetNewGridType = function(self)
-  -- function num : 0_7
+function MoveGridByParamResult:GetNewGridType()
   return self._newPieceType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MoveGridByParamResult.GetAttackResult = function(self)
-  -- function num : 0_8
+function MoveGridByParamResult:GetAttackResult()
   return self._attackResult
 end
-
-

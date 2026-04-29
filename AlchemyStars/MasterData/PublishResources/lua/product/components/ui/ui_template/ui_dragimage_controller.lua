@@ -1,46 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_template/ui_dragimage_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDragImageController", UIController)
 UIDragImageController = UIDragImageController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDragImageController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDragImageController:OnShow(uiParams)
   self._scrollViewHelper = H3DScrollViewHelper:New(self, "ScrollView", "UIDragImageItem", function(index, uiwidget)
-    -- function num : 0_0_0 , upvalues : self
     return self:_OnShowItem(index, uiwidget)
-  end
-)
-  ;
-  (self._scrollViewHelper):Init(20, 0, Vector2(0, 0))
-  ;
-  (self._scrollViewHelper):SetCalcScale(true)
+  end)
+  self._scrollViewHelper:Init(20, 0, Vector2(0, 0))
+  self._scrollViewHelper:SetCalcScale(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDragImageController.OnHide = function(self)
-  -- function num : 0_1
-  (self._scrollViewHelper):Dispose()
+function UIDragImageController:OnHide()
+  self._scrollViewHelper:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDragImageController._OnShowItem = function(self, index, uiwidget)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDragImageController:_OnShowItem(index, uiwidget)
   uiwidget:SetData(index)
-  ;
-  (Log.debug)("UIDragImageController:_OnShowItem", index)
+  Log.debug("UIDragImageController:_OnShowItem", index)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDragImageController.ButtonOnClick = function(self, go)
-  -- function num : 0_3
+function UIDragImageController:ButtonOnClick(go)
   self:CloseDialog()
 end
-
-

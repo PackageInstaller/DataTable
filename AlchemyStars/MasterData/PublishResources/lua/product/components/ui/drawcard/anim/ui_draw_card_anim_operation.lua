@@ -1,230 +1,166 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/anim/ui_draw_card_anim_operation.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardAnimOperation", Object)
 UIDrawCardAnimOperation = UIDrawCardAnimOperation
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardAnimOperation.Constructor = function(self, finder)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDrawCardAnimOperation:Constructor(finder)
   self._enable = false
   self._finder = finder
   self._input = MazeInputManager:New(true)
-  ;
-  (self._input):Init(3)
-  self._screenHeight = (UnityEngine.Screen).height
-  self._handle = ((self._finder):GetGameObject("Ckt_Yg")).transform
-  self._handleStartRot = ((Cfg.cfg_drawcard_value)[2]).Value
-  self._handleEndRot = ((Cfg.cfg_drawcard_value)[3]).Value
-  self._handleFinishRot = ((Cfg.cfg_drawcard_value)[4]).Value
-  self._handleFallDuaration = ((Cfg.cfg_drawcard_value)[5]).Value
-  self._handleBackDuaration = ((Cfg.cfg_drawcard_value)[6]).Value
+  self._input:Init(3)
+  self._screenHeight = UnityEngine.Screen.height
+  self._handle = self._finder:GetGameObject("Ckt_Yg").transform
+  self._handleStartRot = Cfg.cfg_drawcard_value[2].Value
+  self._handleEndRot = Cfg.cfg_drawcard_value[3].Value
+  self._handleFinishRot = Cfg.cfg_drawcard_value[4].Value
+  self._handleFallDuaration = Cfg.cfg_drawcard_value[5].Value
+  self._handleBackDuaration = Cfg.cfg_drawcard_value[6].Value
   self._operating = false
-  self._guideEft = (self._finder):GetGameObject("chouka_yindao_prefab")
-  ;
-  (self._guideEft):SetActive(false)
+  self._guideEft = self._finder:GetGameObject("chouka_yindao_prefab")
+  self._guideEft:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimOperation.Init = function(self, camera, maxStar, onEnd)
-  -- function num : 0_1 , upvalues : _ENV
-  local audio_eft = {[3] = CriAudioIDConst.Drawcard_lagan_eft_3, [4] = CriAudioIDConst.Drawcard_lagan_eft_4, [5] = CriAudioIDConst.Drawcard_lagan_eft_5, [6] = CriAudioIDConst.Drawcard_lagan_eft_6}
+function UIDrawCardAnimOperation:Init(camera, maxStar, onEnd)
+  local audio_eft = {
+    [3] = CriAudioIDConst.Drawcard_lagan_eft_3,
+    [4] = CriAudioIDConst.Drawcard_lagan_eft_4,
+    [5] = CriAudioIDConst.Drawcard_lagan_eft_5,
+    [6] = CriAudioIDConst.Drawcard_lagan_eft_6
+  }
   self._camera = camera
   self.maxStar = maxStar
   self._onEnd = onEnd
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._handle).eulerAngles = Vector3(self._handleStartRot, 0, 0)
+  self._handle.eulerAngles = Vector3(self._handleStartRot, 0, 0)
   self._handleParams = self:FormatParams(maxStar)
   self._audio_eft = audio_eft[maxStar]
   self._viewPortStart = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimOperation.FormatParams = function(self, star)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDrawCardAnimOperation:FormatParams(star)
   local cfgID = star - 2
-  local cfg = (Cfg.cfg_drawcard_handle)[cfgID]
+  local cfg = Cfg.cfg_drawcard_handle[cfgID]
   local param = {}
   param.parts = {}
   param.rates = {}
   for i = 1, #cfg.Rates do
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R9 in 'UnsetPending'
-
-    (param.parts)[i] = (cfg.Parts)[i]
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (param.rates)[i] = (cfg.Rates)[i]
+    param.parts[i] = cfg.Parts[i]
+    param.rates[i] = cfg.Rates[i]
   end
   return param
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimOperation.Enabled = function(self)
-  -- function num : 0_3
+function UIDrawCardAnimOperation:Enabled()
   return self._enable
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimOperation.SetEnable = function(self, enable)
-  -- function num : 0_4
+function UIDrawCardAnimOperation:SetEnable(enable)
   self._enable = enable
   self:FlushGuide(1000)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimOperation.Dispose = function(self)
-  -- function num : 0_5
+function UIDrawCardAnimOperation:Dispose()
   self._enable = false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimOperation.OperateFinish = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIDrawCardAnimOperation:OperateFinish()
   self._enable = false
   if self._oprateAudio then
-    (AudioHelperController.StopUISound)(self._oprateAudio)
+    AudioHelperController.StopUISound(self._oprateAudio)
     self._oprateAudio = nil
   end
-  ;
-  (AudioHelperController.StopUISound)(self._eft_audio)
-  ;
-  (AudioHelperController.StopUISound)(self._once_audio)
+  AudioHelperController.StopUISound(self._eft_audio)
+  AudioHelperController.StopUISound(self._once_audio)
   self:FlushGuide(-1)
-  ;
-  (self._onEnd)()
+  self._onEnd()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimOperation.HandleRollBack = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIDrawCardAnimOperation:HandleRollBack()
   self._enable = false
   if self._oprateAudio then
-    (AudioHelperController.StopUISound)(self._oprateAudio)
+    AudioHelperController.StopUISound(self._oprateAudio)
     self._oprateAudio = nil
   end
-  ;
-  (AudioHelperController.StopUISound)(self._eft_audio)
-  ;
-  (((self._handle):DORotate(Vector3(self._handleStartRot, 0, 0), self._handleBackDuaration)):SetEase(((DG.Tweening).Ease).OutBounce)):OnComplete(function()
-    -- function num : 0_7_0 , upvalues : self
+  AudioHelperController.StopUISound(self._eft_audio)
+  self._handle:DORotate(Vector3(self._handleStartRot, 0, 0), self._handleBackDuaration):SetEase(DG.Tweening.Ease.OutBounce):OnComplete(function()
     self._enable = true
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimOperation.Update = function(self, deltaTime)
-  -- function num : 0_8 , upvalues : _ENV
+function UIDrawCardAnimOperation:Update(deltaTime)
   if not self._enable then
-    return 
+    return
   end
-  ;
-  (self._input):Update(deltaTime)
-  local down, downPos = (self._input):GetMouseDown()
+  self._input:Update(deltaTime)
+  local down, downPos = self._input:GetMouseDown()
   if down and not self._operating then
-    local clickRay = (self._camera):ScreenPointToRay(downPos)
-    local castRes, hitInfo = ((UnityEngine.Physics).Raycast)(clickRay, nil, 1)
+    local clickRay = self._camera:ScreenPointToRay(downPos)
+    local castRes, hitInfo = UnityEngine.Physics.Raycast(clickRay, nil, 1)
     if castRes and hitInfo.transform == self._handle then
       self._operating = true
       self._viewPortStart = self:ScreenPos2ViewPortY(downPos)
       self:FlushGuide(-1)
-      self._eft_audio = (AudioHelperController.PlayRequestedUISound)(self._audio_eft)
-      self._once_audio = (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.Drawcard_lagan_once)
+      self._eft_audio = AudioHelperController.PlayRequestedUISound(self._audio_eft)
+      self._once_audio = AudioHelperController.PlayRequestedUISound(CriAudioIDConst.Drawcard_lagan_once)
     end
   end
-  do
-    if self._operating then
-      local up, upPos = (self._input):GetMouseUp()
-      if up then
-        self:HandleRollBack()
-        self:FlushGuide(1500)
-        self._operating = false
-        return 
+  if self._operating then
+    local up, upPos = self._input:GetMouseUp()
+    if up then
+      self:HandleRollBack()
+      self:FlushGuide(1500)
+      self._operating = false
+      return
+    end
+    local dragging, dragStart, dragEnd = self._input:GetDrag()
+    if dragging then
+      local deltaPixel = dragEnd.y - dragStart.y
+      local deltaViewport = deltaPixel / self._screenHeight
+      local rot = self._handle.eulerAngles:Clone()
+      local viewPortY = self:ScreenPos2ViewPortY(dragEnd)
+      local rate = self:GetDragRate(viewPortY)
+      rot.x = rot.x + deltaViewport * rate
+      if rot.x > 180 then
+        rot.x = rot.x - 360
       end
-      local dragging, dragStart, dragEnd = (self._input):GetDrag()
-      if dragging then
-        local deltaPixel = dragEnd.y - dragStart.y
-        local deltaViewport = deltaPixel / self._screenHeight
-        local rot = ((self._handle).eulerAngles):Clone()
-        local viewPortY = self:ScreenPos2ViewPortY(dragEnd)
-        local rate = self:GetDragRate(viewPortY)
-        rot.x = rot.x + deltaViewport * rate
-        if rot.x > 180 then
-          rot.x = rot.x - 360
+      rot.x = math.min(rot.x, self._handleStartRot)
+      self._handle.eulerAngles = rot
+      if math.abs(deltaPixel) > 3 then
+        if self._oprateAudio == nil then
+          self._oprateAudio = AudioHelperController.PlayRequestedUISound(CriAudioIDConst.DrawCard_lagan_new)
         end
-        rot.x = (math.min)(rot.x, self._handleStartRot)
-        -- DECOMPILER ERROR at PC104: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        (self._handle).eulerAngles = rot
-        -- DECOMPILER ERROR at PC119: Unhandled construct in 'MakeBoolean' P1
-
-        if (math.abs)(deltaPixel) > 3 and self._oprateAudio == nil then
-          self._oprateAudio = (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.DrawCard_lagan_new)
-        end
-        if self._oprateAudio then
-          (AudioHelperController.StopUISound)(self._oprateAudio)
-          self._oprateAudio = nil
-        end
-        if rot.x <= self._handleEndRot then
-          self:OperateFinish()
-        end
+      elseif self._oprateAudio then
+        AudioHelperController.StopUISound(self._oprateAudio)
+        self._oprateAudio = nil
+      end
+      if rot.x <= self._handleEndRot then
+        self:OperateFinish()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimOperation.FlushGuide = function(self, delayTime)
-  -- function num : 0_9 , upvalues : _ENV
+function UIDrawCardAnimOperation:FlushGuide(delayTime)
   if self.guideEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.guideEvent)
+    GameGlobal.Timer():CancelEvent(self.guideEvent)
     self.guideEvent = nil
   end
-  ;
-  (self._guideEft):SetActive(false)
+  self._guideEft:SetActive(false)
   if delayTime <= 0 then
-    return 
+    return
   end
-  self.guideEvent = ((GameGlobal.Timer)()):AddEvent(delayTime, function()
-    -- function num : 0_9_0 , upvalues : self
-    (self._guideEft):SetActive(true)
-  end
-)
+  self.guideEvent = GameGlobal.Timer():AddEvent(delayTime, function()
+    self._guideEft:SetActive(true)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimOperation.ScreenPos2ViewPortY = function(self, pos)
-  -- function num : 0_10
+function UIDrawCardAnimOperation:ScreenPos2ViewPortY(pos)
   return 1 - pos.y / self._screenHeight
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimOperation.GetDragRate = function(self, viewPortY)
-  -- function num : 0_11 , upvalues : _ENV
+function UIDrawCardAnimOperation:GetDragRate(viewPortY)
   viewPortY = (viewPortY - self._viewPortStart) / (1 - self._viewPortStart)
-  for idx,value in ipairs((self._handleParams).parts) do
-    if viewPortY < value then
-      return ((self._handleParams).rates)[idx]
+  for idx, value in ipairs(self._handleParams.parts) do
+    if value > viewPortY then
+      return self._handleParams.rates[idx]
     end
   end
   return 0.03
 end
-
-

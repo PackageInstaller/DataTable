@@ -1,50 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/monster/monster_behaviors/monster_behavior_chg_direction_when_attacked.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("monster_behavior_base")
 _class("MonsterBeHaviorChgDirectionWhenAttacked", MonsterBeHaviorBase)
 MonsterBeHaviorChgDirectionWhenAttacked = MonsterBeHaviorChgDirectionWhenAttacked
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterBeHaviorChgDirectionWhenAttacked.Name = function(self)
-  -- function num : 0_0
+function MonsterBeHaviorChgDirectionWhenAttacked:Name()
   return "MonsterBeHaviorChgDirectionWhenAttacked"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorChgDirectionWhenAttacked.Exec = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function MonsterBeHaviorChgDirectionWhenAttacked:Exec()
   local moveBehavior = self:GetBehavior(MonsterBeHaviorMove:Name())
   if moveBehavior then
     moveBehavior:ChgDirection()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorChgDirectionWhenAttacked.OnInit = function(self, param)
-  -- function num : 0_2
+function MonsterBeHaviorChgDirectionWhenAttacked:OnInit(param)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorChgDirectionWhenAttacked.OnShow = function(self)
-  -- function num : 0_3
+function MonsterBeHaviorChgDirectionWhenAttacked:OnShow()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorChgDirectionWhenAttacked.OnReset = function(self)
-  -- function num : 0_4
+function MonsterBeHaviorChgDirectionWhenAttacked:OnReset()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorChgDirectionWhenAttacked.OnRelease = function(self)
-  -- function num : 0_5
+function MonsterBeHaviorChgDirectionWhenAttacked:OnRelease()
 end
-
-

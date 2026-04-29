@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_splash_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectSplashDamageResult", SkillEffectResultBase)
 SkillEffectSplashDamageResult = SkillEffectSplashDamageResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectSplashDamageResult.Constructor = function(self, damageResults, splashScopeResult, stageIndex)
-  -- function num : 0_0
+function SkillEffectSplashDamageResult:Constructor(damageResults, splashScopeResult, stageIndex)
   self._damageResults = damageResults
   self._splashScopeResult = splashScopeResult
   self._stageIndex = stageIndex
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSplashDamageResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectSplashDamageResult:GetEffectType()
   return SkillEffectType.SplashDamage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSplashDamageResult.GetDamageResults = function(self)
-  -- function num : 0_2
+function SkillEffectSplashDamageResult:GetDamageResults()
   return self._damageResults
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSplashDamageResult.GetSplashScopeResult = function(self)
-  -- function num : 0_3
+function SkillEffectSplashDamageResult:GetSplashScopeResult()
   return self._splashScopeResult
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSplashDamageResult.GetDamageStageIndex = function(self)
-  -- function num : 0_4
+function SkillEffectSplashDamageResult:GetDamageStageIndex()
   return self._stageIndex
 end
-
-

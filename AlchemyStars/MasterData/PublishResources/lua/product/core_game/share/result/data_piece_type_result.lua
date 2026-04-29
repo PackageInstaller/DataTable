@@ -1,44 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_piece_type_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataPieceTypeResult", Object)
 DataPieceTypeResult = DataPieceTypeResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataPieceTypeResult.Constructor = function(self)
-  -- function num : 0_0
+function DataPieceTypeResult:Constructor()
   self._pieceTable = nil
   self._pieceTypes = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPieceTypeResult.SetPieceTypes = function(self, t)
-  -- function num : 0_1
+function DataPieceTypeResult:SetPieceTypes(t)
   self._pieceTypes = t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPieceTypeResult.GetPieceTypes = function(self)
-  -- function num : 0_2
+function DataPieceTypeResult:GetPieceTypes()
   return self._pieceTypes
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPieceTypeResult.SetPieceTable = function(self, t)
-  -- function num : 0_3
+function DataPieceTypeResult:SetPieceTable(t)
   self._pieceTable = t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPieceTypeResult.GetPieceTable = function(self)
-  -- function num : 0_4
+function DataPieceTypeResult:GetPieceTable()
   return self._pieceTable
 end
-
-

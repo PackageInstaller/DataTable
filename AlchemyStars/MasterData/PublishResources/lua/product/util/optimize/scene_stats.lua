@@ -1,38 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/optimize/scene_stats.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SceneStats", Object)
 SceneStats = SceneStats
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SceneStats.Constructor = function(self)
-  -- function num : 0_0
+function SceneStats:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SceneStats.OnGetTexturePixelPercentageDataCoroutine = function(self, TT, meshRenderers, wait)
-  -- function num : 0_1 , upvalues : _ENV
+function SceneStats:OnGetTexturePixelPercentageDataCoroutine(TT, meshRenderers, wait)
   local textureDic = {}
   local count = meshRenderers.Length
   local ret = {}
   for i = 0, count - 1 do
     local mesh = meshRenderers[i]
     local pixPercentage = self:OnGetRenderTexturePixel(mesh)
-    local materialName = (string.sub)(tostring((mesh.material).name), 1, -12)
-    local textures = (mesh.material):GetTexturePropertyNames()
+    local materialName = string.sub(tostring(mesh.material.name), 1, -12)
+    local textures = mesh.material:GetTexturePropertyNames()
     for j = 0, textures.Length - 1 do
       local curTextName = textures[j]
-      local curTexture = (mesh.material):GetTexture(curTextName)
+      local curTexture = mesh.material:GetTexture(curTextName)
       if curTexture then
         local textureName = curTexture.name
         if not textureDic[textureName] then
           textureDic[textureName] = TexturePixelPercentageData:New(textureName, materialName, mesh.material, mesh.gameObject, curTexture)
         end
         local curTexture = textureDic[textureName]
-        if not curTexture.pixPercentage or curTexture.pixPercentage < pixPercentage then
+        if not curTexture.pixPercentage or pixPercentage > curTexture.pixPercentage then
           curTexture:SetPixPercentage(pixPercentage)
           curTexture:SetObj(mesh.gameObject)
         end
@@ -40,33 +30,17 @@ SceneStats.OnGetTexturePixelPercentageDataCoroutine = function(self, TT, meshRen
     end
     if i == count - 1 then
       local tmp = self:OnSetCameraCullingMask(textureDic)
-      ;
-      (table.appendArray)(ret, tmp)
-    else
-      do
-        do
-          if wait then
-            YIELD(TT, 500)
-          end
-          -- DECOMPILER ERROR at PC80: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC80: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC80: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      table.appendArray(ret, tmp)
+    elseif wait then
+      YIELD(TT, 500)
     end
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SceneStats.OnGetTexturePixelPercentageData = function(self, mode)
-  -- function num : 0_2 , upvalues : _ENV
-  (Log.debug)("[SceneStats]")
-  local world = (GameGlobal:GetInstance()):GetMainWorld()
+function SceneStats:OnGetTexturePixelPercentageData(mode)
+  Log.debug("[SceneStats]")
+  local world = GameGlobal:GetInstance():GetMainWorld()
   local boardEntity = world:GetRenderBoardEntity()
   local renderBoardCmpt = boardEntity:RenderBoard()
   local goScene = renderBoardCmpt:GetSceneGO("SceneRoot")
@@ -74,56 +48,40 @@ SceneStats.OnGetTexturePixelPercentageData = function(self, mode)
   local csCamera = cMainCamera:Camera()
   local meshRenderers = goScene:GetComponentsInChildren(typeof(UnityEngine.MeshRenderer))
   if meshRenderers.Length > 0 then
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, meshRenderers
-    self:OnGetTexturePixelPercentageDataCoroutine(TT, meshRenderers, true)
-  end
-)
+    GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      self:OnGetTexturePixelPercentageDataCoroutine(TT, meshRenderers, true)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SceneStats.OnSetCameraCullingMask = function(self, textureDic)
-  -- function num : 0_3 , upvalues : _ENV
+function SceneStats:OnSetCameraCullingMask(textureDic)
   local textureList = {}
-  for i,v in pairs(textureDic) do
-    (table.insert)(textureList, v)
+  for i, v in pairs(textureDic) do
+    table.insert(textureList, v)
   end
-  ;
-  (table.sort)(textureList, function(a, b)
-    -- function num : 0_3_0
-    do return b.pixPercentage < a.pixPercentage end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  ;
-  (Log.debug)("[场景资源使用检测]   开始 按照使用该图片纹理的物体渲染占屏幕比例，从大到小排列")
-  local strTextureName, strPixPercentage, strSize, strMaterial, strObj = nil, nil, nil, nil, nil
+  table.sort(textureList, function(a, b)
+    return a.pixPercentage > b.pixPercentage
+  end)
+  Log.debug("[场景资源使用检测]   开始 按照使用该图片纹理的物体渲染占屏幕比例，从大到小排列")
+  local strTextureName, strPixPercentage, strSize, strMaterial, strObj
   local retList = {}
-  for _,v in ipairs(textureList) do
+  for _, v in ipairs(textureList) do
     local textureData = v
     strTextureName = textureData:GetTextureName()
-    strPixPercentage = (string.format)("%.2f", textureData:GetPixPercentage()) .. "%"
-    strSize = (textureData:GetTexture()).width .. "x" .. (textureData:GetTexture()).height
+    strPixPercentage = string.format("%.2f", textureData:GetPixPercentage()) .. "%"
+    strSize = textureData:GetTexture().width .. "x" .. textureData:GetTexture().height
     strMaterial = textureData:GetMaterialName()
-    strObj = (textureData:GetObj()).name
+    strObj = textureData:GetObj().name
     local ret = strTextureName .. "," .. strPixPercentage .. "," .. strSize .. "," .. strMaterial .. "," .. strObj
-    ;
-    (table.insert)(retList, ret)
-    ;
-    (Log.debug)("[场景资源使用检测]", "   图片纹理:", strTextureName, "   使用占比:", strPixPercentage, "   图片尺寸:", strSize, "   材质:", strMaterial, "   使用该图占比最大的物体:", strObj)
+    table.insert(retList, ret)
+    Log.debug("[场景资源使用检测]", "   图片纹理:", strTextureName, "   使用占比:", strPixPercentage, "   图片尺寸:", strSize, "   材质:", strMaterial, "   使用该图占比最大的物体:", strObj)
   end
-  ;
-  (Log.debug)("[场景资源使用检测]   结束")
+  Log.debug("[场景资源使用检测]   结束")
   return retList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SceneStats.OnGetRenderTexturePixel = function(self, mesh)
-  -- function num : 0_4 , upvalues : _ENV
-  local csTex2d = (OptimizeHelper.GetOptimizeTexture2D)(mesh.gameObject)
+function SceneStats:OnGetRenderTexturePixel(mesh)
+  local csTex2d = OptimizeHelper.GetOptimizeTexture2D(mesh.gameObject)
   local texw = csTex2d.width
   local texh = csTex2d.height
   local pixels = csTex2d:GetPixels()
@@ -132,9 +90,9 @@ SceneStats.OnGetRenderTexturePixel = function(self, mesh)
   local pixActualDraw = 0
   for y = 0, texh - 1 do
     for x = 0, texw - 1 do
-      local r = (pixels[index]).r
-      local g = (pixels[index]).g
-      local b = (pixels[index]).b
+      local r = pixels[index].r
+      local g = pixels[index].g
+      local b = pixels[index].b
       local isEmptyPix = self:IsEmptyPix(r, g, b)
       if isEmptyPix == false then
         pixTotal = pixTotal + 1
@@ -142,18 +100,11 @@ SceneStats.OnGetRenderTexturePixel = function(self, mesh)
       index = index + 1
     end
   end
-  ;
-  (OptimizeHelper.OnRenderTextureClear)()
-  local pixPercentage = (pixTotal) / pixels.Length * 100
+  OptimizeHelper.OnRenderTextureClear()
+  local pixPercentage = pixTotal / pixels.Length * 100
   return pixPercentage
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SceneStats.IsEmptyPix = function(self, r, g, b)
-  -- function num : 0_5
-  do return r < 0.001 and g <= 0.001 and b <= 0.001 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SceneStats:IsEmptyPix(r, g, b)
+  return r < 0.001 and g <= 0.001 and b <= 0.001
 end
-
-

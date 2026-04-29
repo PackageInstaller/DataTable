@@ -1,23 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/assetflow/assetflow_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("active_player", Object)
 active_player = active_player
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-active_player.Constructor = function(self)
-  -- function num : 0_0
+function active_player:Constructor()
   self.pstid = 0
   self.date = 0
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
 active_player._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"date", "int"}
+  [1] = {"pstid", "int64"},
+  [2] = {"date", "int"}
 }
-

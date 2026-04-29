@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_harm_reduction.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicHarmReduction", BuffLogicBase)
 BuffLogicHarmReduction = BuffLogicHarmReduction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicHarmReduction.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicHarmReduction:Constructor(buffInstance, logicParam)
   self._harmReduction = logicParam.harmReduction
   self._stage = logicParam.stage
   self._monsterClassIDArray = logicParam.monsterClassIDArray
@@ -17,54 +10,50 @@ BuffLogicHarmReduction.Constructor = function(self, buffInstance, logicParam)
   self._uiText = logicParam.uiText or "str_battle_harm_reduction"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicHarmReduction.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicHarmReduction:DoLogic()
+  local e = self._buffInstance:Entity()
   local layer = 0
   local lineList = {}
   local harmReduction = 0
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
     if not monsterEntity:HasDeadMark() then
-      local monsterID = (monsterEntity:MonsterID()):GetMonsterID()
+      local monsterID = monsterEntity:MonsterID():GetMonsterID()
       local monsterClassID = 0
-      local cfg = (Cfg.cfg_monster)[monsterID]
+      local cfg = Cfg.cfg_monster[monsterID]
       if cfg and cfg.ClassID then
         monsterClassID = cfg.ClassID
       end
-      if (table.intable)(self._monsterClassIDArray, monsterClassID) then
+      if table.intable(self._monsterClassIDArray, monsterClassID) then
         layer = layer + 1
       end
     end
   end
   local curStage = 1
-  if layer > 0 and layer <= #self._stage then
+  if 0 < layer and layer <= #self._stage then
     for i = 1, layer do
-      if curStage < (self._stage)[i] then
-        curStage = (self._stage)[i]
+      if curStage < self._stage[i] then
+        curStage = self._stage[i]
         local lineIndex = i + #lineList
-        ;
-        (table.insert)(lineList, lineIndex)
+        table.insert(lineList, lineIndex)
       end
     end
-    harmReduction = (self._harmReduction)[layer]
+    harmReduction = self._harmReduction[layer]
   end
   local cpt = e:Attributes()
   cpt:Modify("FinalBehitDamageParam", -harmReduction / 100)
   local oldStage = cpt:GetAttribute("BuffStageFixSkillSelectRound")
   cpt:SetSimpleAttribute("BuffStageFixSkillSelectRound", curStage)
-  local skillHolder = nil
+  local skillHolder
   local previewSkillID = 0
-  if self._previewSkill and (table.count)(self._previewSkill) > 0 then
+  if self._previewSkill and 0 < table.count(self._previewSkill) then
     if self._previewSkillHolderName == "self" then
       skillHolder = e
     else
       local skillHolderName = self._previewSkillHolderName .. e:GetID()
       local skillHolderID = e:GetSkillHolder(skillHolderName)
       if not skillHolderID then
-        local entityService = (self._world):GetService("LogicEntity")
+        local entityService = self._world:GetService("LogicEntity")
         skillHolder = entityService:CreateLogicEntity(EntityConfigIDConst.SkillHolder)
         skillHolder:SetGridPosition(e:GetGridPosition())
         e:AddSkillHolder(skillHolderName, skillHolder:GetID())
@@ -73,36 +62,26 @@ BuffLogicHarmReduction.DoLogic = function(self)
         if casterEntity:EntityType() == nil then
           casterEntity = e
         end
-        ;
-        (skillHolder:SuperEntityComponent()):SetBuffSkillHolderCasterEntityID(casterEntity:GetID())
-        skillHolder:ReplaceAlignment((e:Alignment()):GetAlignmentType())
-        skillHolder:ReplaceGameTurn((e:GameTurn()):GetGameTurn())
+        skillHolder:SuperEntityComponent():SetBuffSkillHolderCasterEntityID(casterEntity:GetID())
+        skillHolder:ReplaceAlignment(e:Alignment():GetAlignmentType())
+        skillHolder:ReplaceGameTurn(e:GameTurn():GetGameTurn())
       else
-        do
-          do
-            skillHolder = (self._world):GetEntityByID(skillHolderID)
-            skillHolder:SetGridPosition(e:GetGridPosition())
-            local skillEffectResultContainer = (skillHolder:SkillContext()):GetResultContainer()
-            local effectResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.ShowWarningArea)
-            if effectResult and oldStage ~= curStage then
-              skillEffectResultContainer:Clear()
-              previewSkillID = (self._previewSkill)[curStage]
-              if previewSkillID > 0 then
-                local skillLogicSvc = (self._world):GetService("SkillLogic")
-                skillLogicSvc:CalcSkillEffect(skillHolder, previewSkillID)
-              end
-            end
-            do
-              ;
-              (self._buffInstance):SetLayerCount(layer)
-              local buffResult = BuffResultHarmReduction:New(layer, lineList, harmReduction, previewSkillID, skillHolder, self._uiText)
-              return buffResult
-            end
-          end
-        end
+        skillHolder = self._world:GetEntityByID(skillHolderID)
+      end
+    end
+    skillHolder:SetGridPosition(e:GetGridPosition())
+    local skillEffectResultContainer = skillHolder:SkillContext():GetResultContainer()
+    local effectResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.ShowWarningArea)
+    if effectResult and oldStage ~= curStage then
+      skillEffectResultContainer:Clear()
+      previewSkillID = self._previewSkill[curStage]
+      if 0 < previewSkillID then
+        local skillLogicSvc = self._world:GetService("SkillLogic")
+        skillLogicSvc:CalcSkillEffect(skillHolder, previewSkillID)
       end
     end
   end
+  self._buffInstance:SetLayerCount(layer)
+  local buffResult = BuffResultHarmReduction:New(layer, lineList, harmReduction, previewSkillID, skillHolder, self._uiText)
+  return buffResult
 end
-
-

@@ -1,8 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/str_help_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_help_pet_zzgl = "サポート光霊：", str_help_pet_glzz = "管理", str_help_pet_wfzz = "サポートできません", str_help_pet_shui = "水", str_help_pet_huo = "火", str_help_pet_sen = "森", str_help_pet_lei = "雷", str_help_pet_xtyz = "<color=#c4c4c4>システム支援</color>", str_help_pet_hyyz = "<color=#34c5db>フレンド支援</color>", str_help_pet_zb = "装備", str_help_pet_glxx = "どのサポート光霊も1日に1回しか使用できません。", str_help_pet_sx = "更新", str_help_pet_zcs = "サポート合計回数", str_help_pet_zjqtzcs = "過去7日間の合計回数", str_help_pet_zjmyzzjl = "直近のサポート記録はありません", str_help_pet_zjqtzztj = "過去7日間のサポート記録：", str_help_pet_wdzzgl = "サポート光霊", str_help_pet_ci = "<color=#efc602>{1}</color>回", str_help_pet_error_Fail = "失敗", str_help_pet_error_Succ = "成功", str_help_pet_error_Sql = "データエラー", str_help_pet_error_DB = "データエラー", str_help_pet_error_Pet = "データエラー", str_help_pet_error_PetType = "データエラー", str_help_pet_error_ModuleLock = "未解放", str_help_pet_weizhi = "サポート光霊の位置は変更できません", str_help_pet_xzzz = "サポート光霊", str_help_pet_zjqtzzcs = "過去7日間のサポート回数", str_help_pet_glxq = "光霊詳細", str_help_pet_lglv = "装備 Lv{1}", str_help_pet_wlg = "<color=#c4c4c4>装備なし</color>", str_help_pet_wfhdjl = "サポートを使うと★3報酬を獲得できなくなります", str_help_pet_cgkwfsyzzgl = "このステージではサポート光霊を使用できません", str_help_pet_zcsx = "{1}秒後に再び更新できます", str_help_pet_zzszcg = "サポートを設定しました", str_help_pet_syzz = "（サポートを使用する）", str_help_pet_xyjfgl = "編成に味方光霊を1名以上入れてください", str_help_pet_yczxx = "{1}がすでに編成されています", str_help_pet_default_user1 = "Mikeghb65", str_help_pet_default_user2 = "Dhehonj", str_help_pet_default_user3 = "MoonShad", str_help_pet_default_user4 = "sjf55206", str_help_pet_default_user5 = "Billroken", str_help_pet_default_user6 = "Miyate", str_help_pet_default_user7 = "Broeya030", str_help_pet_default_user8 = "Eathreaye", str_help_pet_default_user9 = "YellowBB", str_help_pet_default_user10 = "Chaopen", str_help_pet_no_filter = "未選択"}
+local config = {
+  str_help_pet_zzgl = "サポート光霊：",
+  str_help_pet_glzz = "管理",
+  str_help_pet_wfzz = "サポートできません",
+  str_help_pet_shui = "水",
+  str_help_pet_huo = "火",
+  str_help_pet_sen = "森",
+  str_help_pet_lei = "雷",
+  str_help_pet_xtyz = "<color=#c4c4c4>システム支援</color>",
+  str_help_pet_hyyz = "<color=#34c5db>フレンド支援</color>",
+  str_help_pet_zb = "装備",
+  str_help_pet_glxx = "どのサポート光霊も1日に1回しか使用できません。",
+  str_help_pet_sx = "更新",
+  str_help_pet_zcs = "サポート合計回数",
+  str_help_pet_zjqtzcs = "過去7日間の合計回数",
+  str_help_pet_zjmyzzjl = "直近のサポート記録はありません",
+  str_help_pet_zjqtzztj = "過去7日間のサポート記録：",
+  str_help_pet_wdzzgl = "サポート光霊",
+  str_help_pet_ci = "<color=#efc602>{1}</color>回",
+  str_help_pet_error_Fail = "失敗",
+  str_help_pet_error_Succ = "成功",
+  str_help_pet_error_Sql = "データエラー",
+  str_help_pet_error_DB = "データエラー",
+  str_help_pet_error_Pet = "データエラー",
+  str_help_pet_error_PetType = "データエラー",
+  str_help_pet_error_ModuleLock = "未解放",
+  str_help_pet_weizhi = "サポート光霊の位置は変更できません",
+  str_help_pet_xzzz = "サポート光霊",
+  str_help_pet_zjqtzzcs = "過去7日間のサポート回数",
+  str_help_pet_glxq = "光霊詳細",
+  str_help_pet_lglv = "装備 Lv{1}",
+  str_help_pet_wlg = "<color=#c4c4c4>装備なし</color>",
+  str_help_pet_wfhdjl = "サポートを使うと★3報酬を獲得できなくなります",
+  str_help_pet_cgkwfsyzzgl = "このステージではサポート光霊を使用できません",
+  str_help_pet_zcsx = "{1}秒後に再び更新できます",
+  str_help_pet_zzszcg = "サポートを設定しました",
+  str_help_pet_syzz = "（サポートを使用する）",
+  str_help_pet_xyjfgl = "編成に味方光霊を1名以上入れてください",
+  str_help_pet_yczxx = "{1}がすでに編成されています",
+  str_help_pet_default_user1 = "Mikeghb65",
+  str_help_pet_default_user2 = "Dhehonj",
+  str_help_pet_default_user3 = "MoonShad",
+  str_help_pet_default_user4 = "sjf55206",
+  str_help_pet_default_user5 = "Billroken",
+  str_help_pet_default_user6 = "Miyate",
+  str_help_pet_default_user7 = "Broeya030",
+  str_help_pet_default_user8 = "Eathreaye",
+  str_help_pet_default_user9 = "YellowBB",
+  str_help_pet_default_user10 = "Chaopen",
+  str_help_pet_no_filter = "未選択"
+}
 return config
-

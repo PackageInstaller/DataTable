@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_norm/ui_map_node_item_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMapNodeItemBase", UICustomWidget)
 UIMapNodeItemBase = UIMapNodeItemBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMapNodeItemBase.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMapNodeItemBase:Constructor()
   self.nodeInfo = nil
   self._vec0_5 = Vector2(0.5, 0.5)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMapNodeItemBase:OnShow()
   self._atlas = self:GetAsset("UIDiscovery.spriteatlas", LoadType.SpriteAtlas)
   self._atlasNode = self:GetAsset("UIDiscoveryNode.spriteatlas", LoadType.SpriteAtlas)
   self._root = self:GetGameObject("root")
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self._tipRoot = self:GetGameObject("tipRoot")
   self.txtTip = self:GetUIComponent("UILocalizationText", "txtTip")
   self:GetUIComponentStar()
@@ -30,10 +20,7 @@ UIMapNodeItemBase.OnShow = function(self)
   self:AttachEvent(GameEventType.DiscoveryShowHideUIStage, self.Highlight)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMapNodeItemBase:OnHide()
   self.nodeInfo = nil
   self.eff = nil
   self._tipRoot = nil
@@ -41,206 +28,126 @@ UIMapNodeItemBase.OnHide = function(self)
   self:DetachEvent(GameEventType.DiscoveryShowHideUIStage, self.Highlight)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.GetUIComponentStar = function(self)
-  -- function num : 0_3
+function UIMapNodeItemBase:GetUIComponentStar()
   self.starPool = self:GetUIComponent("UISelectObjectPath", "star")
-  ;
-  (self.starPool):SpawnObjects("UIMapNodeItemStar", 3)
+  self.starPool:SpawnObjects("UIMapNodeItemStar", 3)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.GetUIComponentRoot = function(self)
-  -- function num : 0_4
+function UIMapNodeItemBase:GetUIComponentRoot()
   self.animRoot = self:GetUIComponent("Animation", "root")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.GetUIComponentEff = function(self)
-  -- function num : 0_5
+function UIMapNodeItemBase:GetUIComponentEff()
   self.eff = self:GetGameObject("eff")
   self.animEff = self:GetUIComponent("Animation", "eff")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.Init = function(self, nodeInfo, notPlayAnimation)
-  -- function num : 0_6 , upvalues : _ENV
+function UIMapNodeItemBase:Init(nodeInfo, notPlayAnimation)
   self.nodeInfo = nodeInfo
   self._notPlayAnimation = notPlayAnimation
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMax = self._vec0_5
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = self._vec0_5
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2.zero
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = (self.nodeInfo).pos
-  ;
-  (self.txtTip):SetText((self.nodeInfo).name or "")
-  ;
-  (self.eff):SetActive(false)
+  self._rectTransform.anchorMax = self._vec0_5
+  self._rectTransform.anchorMin = self._vec0_5
+  self._rectTransform.sizeDelta = Vector2.zero
+  self._rectTransform.anchoredPosition = self.nodeInfo.pos
+  self.txtTip:SetText(self.nodeInfo.name or "")
+  self.eff:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.Flush = function(self)
-  -- function num : 0_7
-  self:FlushState((self.nodeInfo).id)
+function UIMapNodeItemBase:Flush()
+  self:FlushState(self.nodeInfo.id)
   self:FlushGuide()
   self:Animation()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.FlushState = function(self, nodeId)
-  -- function num : 0_8
-  if nodeId == (self.nodeInfo).id then
-    local state = (self.nodeInfo):State()
+function UIMapNodeItemBase:FlushState(nodeId)
+  if nodeId == self.nodeInfo.id then
+    local state = self.nodeInfo:State()
     if state then
-      (self._root):SetActive(true)
+      self._root:SetActive(true)
       self:FlushStar()
     else
-      ;
-      (self._root):SetActive(false)
+      self._root:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.FlushStar = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local stage = ((self.nodeInfo).stages)[1]
-  local uiStars = (self.starPool):GetAllSpawnList()
-  for i,v in ipairs(uiStars) do
+function UIMapNodeItemBase:FlushStar()
+  local stage = self.nodeInfo.stages[1]
+  local uiStars = self.starPool:GetAllSpawnList()
+  for i, v in ipairs(uiStars) do
     local star = stage.star or 0
     v:Flush(i <= star)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.FlushGuide = function(self)
-  -- function num : 0_10
+function UIMapNodeItemBase:FlushGuide()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.btnBgOnClick = function(self)
-  -- function num : 0_11
+function UIMapNodeItemBase:btnBgOnClick()
   self:ClickItem()
   self:PlayAnimMapTrainIn()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.PlayAnimMapTrainIn = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIMapNodeItemBase:PlayAnimMapTrainIn()
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, _ENV
     local key = "UIMapNodeItemBasePlayAnimMapTrainIn"
     self:Lock(key)
-    ;
-    (self.animEff):Play("uieff_MapTrain_in")
+    self.animEff:Play("uieff_MapTrain_in")
     YIELD(TT, 500)
-    ;
-    (self.animEff):Play("uieff_MapTrain_loop")
+    self.animEff:Play("uieff_MapTrain_loop")
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.ClickItem = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryShowHideUIStage, true, (self.nodeInfo).id)
-  if (self.nodeInfo):State() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryPlayerMove, (self.nodeInfo).id)
+function UIMapNodeItemBase:ClickItem()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryShowHideUIStage, true, self.nodeInfo.id)
+  if self.nodeInfo:State() then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryPlayerMove, self.nodeInfo.id)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.Highlight = function(self, isHighlight, nodeId)
-  -- function num : 0_14
+function UIMapNodeItemBase:Highlight(isHighlight, nodeId)
   if isHighlight then
-    if nodeId == (self.nodeInfo).id then
-      (self.eff):SetActive(true)
+    if nodeId == self.nodeInfo.id then
+      self.eff:SetActive(true)
     else
-      ;
-      (self.eff):SetActive(false)
+      self.eff:SetActive(false)
     end
   else
-    ;
-    (self.eff):SetActive(false)
+    self.eff:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.Animation = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local state = (self.nodeInfo):State()
+function UIMapNodeItemBase:Animation()
+  local state = self.nodeInfo:State()
   if state then
-    if state == DiscoveryStageState.CanPlay and (self.nodeInfo):IsFirstShow() then
-      (self.nodeInfo):SaveIsFirstShow()
+    if state == DiscoveryStageState.CanPlay and self.nodeInfo:IsFirstShow() then
+      self.nodeInfo:SaveIsFirstShow()
     end
     self:PlayTipAnim()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.PlayTipAnim = function(self)
-  -- function num : 0_16
+function UIMapNodeItemBase:PlayTipAnim()
   local name = self:GetTipAnimName()
-  ;
-  (self.animRoot):Play(name)
+  self.animRoot:Play(name)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.GetTipAnimName = function(self)
-  -- function num : 0_17
+function UIMapNodeItemBase:GetTipAnimName()
   return ""
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.GetNodeInfo = function(self)
-  -- function num : 0_18
+function UIMapNodeItemBase:GetNodeInfo()
   return self.nodeInfo
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.GetRectTransform = function(self)
-  -- function num : 0_19
+function UIMapNodeItemBase:GetRectTransform()
   return self._rectTransform
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemBase.GetTip = function(self)
-  -- function num : 0_20
+function UIMapNodeItemBase:GetTip()
   if not self.nodeInfo then
-    return 
+    return
   end
   return self._tipRoot
 end
-
-

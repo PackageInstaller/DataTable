@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/level_par/level_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LevelConfigData", Object)
 LevelConfigData = LevelConfigData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LevelConfigData.Constructor = function(self, configService, world)
-  -- function num : 0_0 , upvalues : _ENV
+function LevelConfigData:Constructor(configService, world)
   self._world = world
   self._configService = configService
   self._levelResPath = "NoneConfig"
   self._levelGridGenID = 0
   self._isApplyPetSupplyPieceWeight = 0
-  self._runPosition = (self._world):GetRunningPosition()
+  self._runPosition = self._world:GetRunningPosition()
   if self._runPosition == WorldRunPostion.AtClient or self._runPosition == WorldRunPostion.Performance then
     self._levelCameraParam = LevelCameraParam:New()
   end
@@ -46,72 +39,45 @@ LevelConfigData.Constructor = function(self, configService, world)
   self._miniMazeWaveCfgArray = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData._ParseLevelRoundCount = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._world):MatchType() == MatchType.MT_Maze then
-    local mazeService = (self._world):GetService("Maze")
+function LevelConfigData:_ParseLevelRoundCount()
+  if self._world:MatchType() == MatchType.MT_Maze then
+    local mazeService = self._world:GetService("Maze")
     self._levelRoundCount = mazeService:GetLightCount()
-  else
-    do
-      if (self._world):MatchType() == MatchType.MT_Conquest then
-        local cfg = self:GetConquestConfig()
-        self._levelRoundCount = cfg.MaxRound
-      else
-        do
-          if (self._world):MatchType() == MatchType.MT_SimpleBattleField then
-            local cfg = self:GetSimpleConquestConfig()
-            self._levelRoundCount = cfg.MaxRound
-          else
-            do
-              if (self._world):MatchType(GetMatchTypeType.PopStarProNoRelic) == MatchType.MT_PopStarPro then
-                local popStarProSvc = (self._world):GetService("PopStarProLogic")
-                self._levelRoundCount = popStarProSvc:GetLeftRoundCount()
-              else
-                do
-                  do
-                    if (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
-                      local seasonMazeService = (self._world):GetService("SeasonMaze")
-                      self._levelRoundCount = seasonMazeService:GetRoundCount()
-                    end
-                    if (self._world):GetRunningPosition() ~= WorldRunPostion.Performance and (self._world):GetRunningPosition() ~= WorldRunPostion.Cutscene then
-                      local affixService = (self._world):GetService("Affix")
-                      self._levelRoundCount = affixService:ChangeLevelRound(self._levelRoundCount)
-                      local talentSvc = (self._world):GetService("Talent")
-                      self._levelRoundCount = self._levelRoundCount + talentSvc:GetAddRoundCount(self._levelID)
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif self._world:MatchType() == MatchType.MT_Conquest then
+    local cfg = self:GetConquestConfig()
+    self._levelRoundCount = cfg.MaxRound
+  elseif self._world:MatchType() == MatchType.MT_SimpleBattleField then
+    local cfg = self:GetSimpleConquestConfig()
+    self._levelRoundCount = cfg.MaxRound
+  elseif self._world:MatchType(GetMatchTypeType.PopStarProNoRelic) == MatchType.MT_PopStarPro then
+    local popStarProSvc = self._world:GetService("PopStarProLogic")
+    self._levelRoundCount = popStarProSvc:GetLeftRoundCount()
+  elseif self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
+    local seasonMazeService = self._world:GetService("SeasonMaze")
+    self._levelRoundCount = seasonMazeService:GetRoundCount()
+  end
+  if self._world:GetRunningPosition() ~= WorldRunPostion.Performance and self._world:GetRunningPosition() ~= WorldRunPostion.Cutscene then
+    local affixService = self._world:GetService("Affix")
+    self._levelRoundCount = affixService:ChangeLevelRound(self._levelRoundCount)
+    local talentSvc = self._world:GetService("Talent")
+    self._levelRoundCount = self._levelRoundCount + talentSvc:GetAddRoundCount(self._levelID)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData._ParseChangeTeamLeaderCount = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._world):GetRunningPosition() ~= WorldRunPostion.Performance then
-    local talentSvc = (self._world):GetService("Talent")
+function LevelConfigData:_ParseChangeTeamLeaderCount()
+  if self._world:GetRunningPosition() ~= WorldRunPostion.Performance then
+    local talentSvc = self._world:GetService("Talent")
     self._changeTeamLeaderCount = self._changeTeamLeaderCount + talentSvc:GetAddChangeTeamLeaderCount()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.ParseLevelConfig = function(self, levelID)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.notice)("[LevelConfigData] level id = ", levelID)
+function LevelConfigData:ParseLevelConfig(levelID)
+  Log.notice("[LevelConfigData] level id = ", levelID)
   self._levelID = levelID
-  local levelConfigData = (Cfg.cfg_level)[levelID]
+  local levelConfigData = Cfg.cfg_level[levelID]
   if not levelConfigData then
-    (Log.exception)("ParseLevelConfig not find levelID = ", levelID)
-    return 
+    Log.exception("ParseLevelConfig not find levelID = ", levelID)
+    return
   end
   self._levelRoundCount = levelConfigData.Round
   self:_ParseLevelRoundCount()
@@ -120,869 +86,593 @@ LevelConfigData.ParseLevelConfig = function(self, levelID)
   local bornRotation = levelConfigData.BornRotation
   self._levelPlayerBornRotation = Vector2(bornRotation[1], bornRotation[2])
   local remotePos = levelConfigData.EnemyBornPos
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R7 in 'UnsetPending'
-
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R6 in 'UnsetPending'
-
   if remotePos then
-    (self._remotePlayerBornPos).x = remotePos[1]
+    self._remotePlayerBornPos.x, self._remotePlayerBornPos.y = remotePos[1], remotePos[2]
   end
   local remoteRotation = levelConfigData.EnemyBornRotation
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R8 in 'UnsetPending'
-
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R7 in 'UnsetPending'
-
   if remoteRotation then
-    (self._remotePlayerBornDir).x = remoteRotation[1]
+    self._remotePlayerBornDir.x, self._remotePlayerBornDir.y = remoteRotation[1], remoteRotation[2]
   end
   self._levelGridGenID = levelConfigData.GridGenID
-  do
-    if (self._world):MatchType() == MatchType.MT_Conquest then
-      local cfg = self:GetConquestConfig()
-      self._levelGridGenID = cfg.BoardID
-    end
-    do
-      if (self._world):MatchType() == MatchType.MT_SimpleBattleField then
-        local cfg = self:GetSimpleConquestConfig()
-        self._levelGridGenID = cfg.BoardID
-      end
-      self._isApplyPetSupplyPieceWeight = levelConfigData.PetSupplyPieceWeight or 0
-      self._themeID = levelConfigData.Theme
-      if self._runPosition ~= WorldRunPostion.Cutscene then
-        (self._levelMonsterParam):ParseMonsterParam(levelConfigData)
-      end
-      self._levelCompleteConditionType = levelConfigData.CompleteConditionID
-      if not levelConfigData.CompleteConditionParams then
-        self._levelCompleteConditionParams = {}
-        if self._levelCompleteConditionType == CompleteConditionType.CombinedCompleteCondition then
-          self._combinedCompleteConditionA = levelConfigData.CombinedCompleteConditionA
-          self._combinedCompleteConditionAParam = levelConfigData.CombinedCompleteConditionParamA
-          self._combinedCompleteConditionB = levelConfigData.CombinedCompleteConditionB
-          self._combinedCompleteConditionBParam = levelConfigData.CombinedCompleteConditionParamB
-        end
-        do
-          if levelConfigData.BoardCenter ~= nil then
-            local center = Vector3((levelConfigData.BoardCenter)[1], (levelConfigData.BoardCenter)[2], (levelConfigData.BoardCenter)[3])
-            self._boardCenter = center
-          end
-          if levelConfigData.StoryTips then
-            for _,param in ipairs(levelConfigData.StoryTips) do
-              local tipsParam = LevelStoryTipsParam:New(param)
-              ;
-              (table.insert)(self._levelStoryTips, tipsParam)
-            end
-          end
-          do
-            if levelConfigData.StoryBanner then
-              for _,param in ipairs(levelConfigData.StoryBanner) do
-                local bannerParam = LevelStoryBannerParam:New(param)
-                ;
-                (table.insert)(self._levelStoryBanner, bannerParam)
-              end
-            end
-            do
-              if levelConfigData.Cutscene then
-                for _,param in ipairs(levelConfigData.Cutscene) do
-                  local cutsceneParam = LevelCutsceneParam:New(param)
-                  ;
-                  (table.insert)(self._levelCutscene, cutsceneParam)
-                end
-              end
-              do
-                if levelConfigData.WeakLine then
-                  self._levelWeakLineData = {}
-                  local showType = ((levelConfigData.WeakLine)[1]).type
-                  if showType ~= 1 or showType == 0 then
-                    local dontShowRounds = {}
-                    for i = 2, #levelConfigData.WeakLine do
-                      local data = (levelConfigData.WeakLine)[i]
-                      ;
-                      (table.insert)(dontShowRounds, data)
-                    end
-                    -- DECOMPILER ERROR at PC205: Confused about usage of register: R9 in 'UnsetPending'
-
-                    ;
-                    (self._levelWeakLineData).dontShowRounds = dontShowRounds
-                  end
-                else
-                  do
-                    self._levelWeakLineData = nil
-                    if self._runPosition == WorldRunPostion.AtClient then
-                      self:ParseCameraParam(levelConfigData.Theme)
-                      local cfgThemeData = (Cfg.cfg_theme)[levelConfigData.Theme]
-                      self._bgmID = cfgThemeData.BgmID
-                    end
-                    do
-                      self._autoFightLevelPolicy = levelConfigData.AutoFightLevelPolicy
-                      self._autoFightLevelPolicyParam = levelConfigData.AutoFightLevelPolicyParam
-                      self._changeTeamLeaderCount = levelConfigData.ChangTeamMaxCount
-                      self:_ParseChangeTeamLeaderCount()
-                      if (self._world):MatchType() == MatchType.MT_Chess then
-                        self._chessPetRefreshID = levelConfigData.ChessPetRefreshID
-                      end
-                      local affixService = (self._world):GetService("Affix")
-                      self._featureList = affixService:ReplaceReplaceFeatureModule(levelConfigData.FeatureList)
-                      if levelConfigData.GridGenID then
-                        if not (table.cloneconf)(levelConfigData.MultiBoard) then
-                          self._multiBoard = {}
-                          self._levelMonsterParamMultiBoard = {}
-                          for _,v in ipairs(self._multiBoard) do
-                            local boardIndex = v.index
-                            local levelMonsterParam = LevelMonsterParam:New(self._world)
-                            levelMonsterParam:ParseMonsterParamMultiBoard(v.monsterWave)
-                            -- DECOMPILER ERROR at PC273: Confused about usage of register: R15 in 'UnsetPending'
-
-                            ;
-                            (self._levelMonsterParamMultiBoard)[boardIndex] = levelMonsterParam
-                          end
-                          do
-                            self._outOfRoundType = levelConfigData.OutOfRoundType or 0
-                            local extraLogic = levelConfigData.ExtraLogic
-                            if extraLogic then
-                              self._ignoreProtectedTrapDead = extraLogic.IgnoreProtectedDead
-                            end
-                            self:_ParseMiniMazeWaveCfg(levelConfigData)
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+  if self._world:MatchType() == MatchType.MT_Conquest then
+    local cfg = self:GetConquestConfig()
+    self._levelGridGenID = cfg.BoardID
+  end
+  if self._world:MatchType() == MatchType.MT_SimpleBattleField then
+    local cfg = self:GetSimpleConquestConfig()
+    self._levelGridGenID = cfg.BoardID
+  end
+  self._isApplyPetSupplyPieceWeight = levelConfigData.PetSupplyPieceWeight or 0
+  self._themeID = levelConfigData.Theme
+  if self._runPosition ~= WorldRunPostion.Cutscene then
+    self._levelMonsterParam:ParseMonsterParam(levelConfigData)
+  end
+  self._levelCompleteConditionType = levelConfigData.CompleteConditionID
+  self._levelCompleteConditionParams = levelConfigData.CompleteConditionParams or {}
+  if self._levelCompleteConditionType == CompleteConditionType.CombinedCompleteCondition then
+    self._combinedCompleteConditionA = levelConfigData.CombinedCompleteConditionA
+    self._combinedCompleteConditionAParam = levelConfigData.CombinedCompleteConditionParamA
+    self._combinedCompleteConditionB = levelConfigData.CombinedCompleteConditionB
+    self._combinedCompleteConditionBParam = levelConfigData.CombinedCompleteConditionParamB
+  end
+  if levelConfigData.BoardCenter ~= nil then
+    local center = Vector3(levelConfigData.BoardCenter[1], levelConfigData.BoardCenter[2], levelConfigData.BoardCenter[3])
+    self._boardCenter = center
+  end
+  if levelConfigData.StoryTips then
+    for _, param in ipairs(levelConfigData.StoryTips) do
+      local tipsParam = LevelStoryTipsParam:New(param)
+      table.insert(self._levelStoryTips, tipsParam)
     end
   end
+  if levelConfigData.StoryBanner then
+    for _, param in ipairs(levelConfigData.StoryBanner) do
+      local bannerParam = LevelStoryBannerParam:New(param)
+      table.insert(self._levelStoryBanner, bannerParam)
+    end
+  end
+  if levelConfigData.Cutscene then
+    for _, param in ipairs(levelConfigData.Cutscene) do
+      local cutsceneParam = LevelCutsceneParam:New(param)
+      table.insert(self._levelCutscene, cutsceneParam)
+    end
+  end
+  if levelConfigData.WeakLine then
+    self._levelWeakLineData = {}
+    local showType = levelConfigData.WeakLine[1].type
+    if showType == 1 then
+    elseif showType == 0 then
+      local dontShowRounds = {}
+      for i = 2, #levelConfigData.WeakLine do
+        local data = levelConfigData.WeakLine[i]
+        table.insert(dontShowRounds, data)
+      end
+      self._levelWeakLineData.dontShowRounds = dontShowRounds
+    end
+  else
+    self._levelWeakLineData = nil
+  end
+  if self._runPosition == WorldRunPostion.AtClient then
+    self:ParseCameraParam(levelConfigData.Theme)
+    local cfgThemeData = Cfg.cfg_theme[levelConfigData.Theme]
+    self._bgmID = cfgThemeData.BgmID
+  end
+  self._autoFightLevelPolicy = levelConfigData.AutoFightLevelPolicy
+  self._autoFightLevelPolicyParam = levelConfigData.AutoFightLevelPolicyParam
+  self._changeTeamLeaderCount = levelConfigData.ChangTeamMaxCount
+  self:_ParseChangeTeamLeaderCount()
+  if self._world:MatchType() == MatchType.MT_Chess then
+    self._chessPetRefreshID = levelConfigData.ChessPetRefreshID
+  end
+  local affixService = self._world:GetService("Affix")
+  self._featureList = affixService:ReplaceReplaceFeatureModule(levelConfigData.FeatureList)
+  if levelConfigData.GridGenID then
+    self._multiBoard = table.cloneconf(levelConfigData.MultiBoard) or {}
+    self._levelMonsterParamMultiBoard = {}
+    for _, v in ipairs(self._multiBoard) do
+      local boardIndex = v.index
+      local levelMonsterParam = LevelMonsterParam:New(self._world)
+      levelMonsterParam:ParseMonsterParamMultiBoard(v.monsterWave)
+      self._levelMonsterParamMultiBoard[boardIndex] = levelMonsterParam
+    end
+  end
+  self._outOfRoundType = levelConfigData.OutOfRoundType or 0
+  local extraLogic = levelConfigData.ExtraLogic
+  if extraLogic then
+    self._ignoreProtectedTrapDead = extraLogic.IgnoreProtectedDead
+  end
+  self:_ParseMiniMazeWaveCfg(levelConfigData)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData._ParseMiniMazeWaveCfg = function(self, levelConfig)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._world):MatchType() == MatchType.MT_MiniMaze then
+function LevelConfigData:_ParseMiniMazeWaveCfg(levelConfig)
+  if self._world:MatchType() == MatchType.MT_MiniMaze then
     local monsterWaveArray = levelConfig.MonsterWave
     if monsterWaveArray then
-      for k,monsterWaveID in ipairs(monsterWaveArray) do
-        local miniMazeWaveConfig = (Cfg.cfg_mini_maze_wave)[monsterWaveID]
+      for k, monsterWaveID in ipairs(monsterWaveArray) do
+        local miniMazeWaveConfig = Cfg.cfg_mini_maze_wave[monsterWaveID]
         if miniMazeWaveConfig == nil then
-          (Log.error)("LevelMonsterParam miniMazeWaveConfig =nil", monsterWaveID)
+          Log.error("LevelMonsterParam miniMazeWaveConfig =nil", monsterWaveID)
         end
-        -- DECOMPILER ERROR at PC28: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self._miniMazeWaveCfgArray)[#self._miniMazeWaveCfgArray + 1] = miniMazeWaveConfig
+        self._miniMazeWaveCfgArray[#self._miniMazeWaveCfgArray + 1] = miniMazeWaveConfig
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.ParseCameraParam = function(self, themeID)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfgThemeData = (Cfg.cfg_theme)[themeID]
+function LevelConfigData:ParseCameraParam(themeID)
+  local cfgThemeData = Cfg.cfg_theme[themeID]
   self._levelResPath = cfgThemeData.SceneResPath
-  ;
-  (self._levelCameraParam):ParseCameraParam(cfgThemeData)
+  self._levelCameraParam:ParseCameraParam(cfgThemeData)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetFeatureList = function(self)
-  -- function num : 0_6
+function LevelConfigData:GetFeatureList()
   return self._featureList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetAutoFightLevelPolicy = function(self)
-  -- function num : 0_7
+function LevelConfigData:GetAutoFightLevelPolicy()
   return self._autoFightLevelPolicy, self._autoFightLevelPolicyParam
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelRoundCount = function(self)
-  -- function num : 0_8
+function LevelConfigData:GetLevelRoundCount()
   return self._levelRoundCount
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelWeakLineData = function(self)
-  -- function num : 0_9
+function LevelConfigData:GetLevelWeakLineData()
   return self._levelWeakLineData
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelID = function(self)
-  -- function num : 0_10
+function LevelConfigData:GetLevelID()
   return self._levelID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetPlayerBornPos = function(self)
-  -- function num : 0_11
+function LevelConfigData:GetPlayerBornPos()
   return self._levelPlayerBornPos
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.SetPlayerBornPos = function(self, pos)
-  -- function num : 0_12
+function LevelConfigData:SetPlayerBornPos(pos)
   self._levelPlayerBornPos = pos
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetRemotePlayerBornPos = function(self)
-  -- function num : 0_13
+function LevelConfigData:GetRemotePlayerBornPos()
   return self._remotePlayerBornPos
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetRemotePlayerBornRotation = function(self)
-  -- function num : 0_14
+function LevelConfigData:GetRemotePlayerBornRotation()
   return self._remotePlayerBornDir
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetPlayerBornRotation = function(self)
-  -- function num : 0_15
+function LevelConfigData:GetPlayerBornRotation()
   return self._levelPlayerBornRotation
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetBgmID = function(self)
-  -- function num : 0_16
+function LevelConfigData:GetBgmID()
   return self._bgmID
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetWaveCompleteConditionType = function(self, waveNum)
-  -- function num : 0_17
-  local affixService = (self._world):GetService("Affix")
-  local waveCount = (self._levelMonsterParam):GetMonsterWaveCount()
+function LevelConfigData:GetWaveCompleteConditionType(waveNum)
+  local affixService = self._world:GetService("Affix")
+  local waveCount = self._levelMonsterParam:GetMonsterWaveCount()
   if waveCount == waveNum then
-    return affixService:GetAffixLastWaveCompleteType((self._levelMonsterParam):GetWaveCompleteConditionType(waveNum))
+    return affixService:GetAffixLastWaveCompleteType(self._levelMonsterParam:GetWaveCompleteConditionType(waveNum))
   end
-  return (self._levelMonsterParam):GetWaveCompleteConditionType(waveNum)
+  return self._levelMonsterParam:GetWaveCompleteConditionType(waveNum)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetWaveCombinedCompleteConditionArguments = function(self, waveNum)
-  -- function num : 0_18
-  return (self._levelMonsterParam):GetWaveCombinedCompleteConditionArguments(waveNum)
+function LevelConfigData:GetWaveCombinedCompleteConditionArguments(waveNum)
+  return self._levelMonsterParam:GetWaveCombinedCompleteConditionArguments(waveNum)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetWaveCompleteConditionParam = function(self, waveNum)
-  -- function num : 0_19
-  local affixService = (self._world):GetService("Affix")
-  local waveCount = (self._levelMonsterParam):GetMonsterWaveCount()
+function LevelConfigData:GetWaveCompleteConditionParam(waveNum)
+  local affixService = self._world:GetService("Affix")
+  local waveCount = self._levelMonsterParam:GetMonsterWaveCount()
   if waveCount == waveNum then
-    return affixService:GetAffixLastWaveCompleteParam((self._levelMonsterParam):GetWaveCompleteConditionParam(waveNum))
+    return affixService:GetAffixLastWaveCompleteParam(self._levelMonsterParam:GetWaveCompleteConditionParam(waveNum))
   end
-  return (self._levelMonsterParam):GetWaveCompleteConditionParam(waveNum)
+  return self._levelMonsterParam:GetWaveCompleteConditionParam(waveNum)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetWaveCount = function(self)
-  -- function num : 0_20
-  return (self._levelMonsterParam):GetMonsterWaveCount()
+function LevelConfigData:GetWaveCount()
+  return self._levelMonsterParam:GetMonsterWaveCount()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetWaveConfig = function(self, waveNum)
-  -- function num : 0_21
-  return (self._levelMonsterParam):GetWaveConfig(waveNum)
+function LevelConfigData:GetWaveConfig(waveNum)
+  return self._levelMonsterParam:GetWaveConfig(waveNum)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetCameraParam = function(self)
-  -- function num : 0_22
+function LevelConfigData:GetCameraParam()
   return self._levelCameraParam
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelResPath = function(self)
-  -- function num : 0_23
+function LevelConfigData:GetLevelResPath()
   return self._levelResPath
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetGridGenID = function(self)
-  -- function num : 0_24
+function LevelConfigData:GetGridGenID()
   return self._levelGridGenID
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.IsApplyPetSupplyPieceWeight = function(self)
-  -- function num : 0_25
-  do return self._isApplyPetSupplyPieceWeight == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function LevelConfigData:IsApplyPetSupplyPieceWeight()
+  return self._isApplyPetSupplyPieceWeight == 1
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelWaveBeginRefreshMonsterParam = function(self, waveNum, playerPos)
-  -- function num : 0_26
-  return (self._levelMonsterParam):GetWaveBeginMonsterParam(waveNum, playerPos)
+function LevelConfigData:GetLevelWaveBeginRefreshMonsterParam(waveNum, playerPos)
+  return self._levelMonsterParam:GetWaveBeginMonsterParam(waveNum, playerPos)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelWaveInternalRefreshMonsterParam = function(self, waveNum, refreshType)
-  -- function num : 0_27
-  return (self._levelMonsterParam):GetWaveInternalRefreshMonsterParam(waveNum, refreshType)
+function LevelConfigData:GetLevelWaveInternalRefreshMonsterParam(waveNum, refreshType)
+  return self._levelMonsterParam:GetWaveInternalRefreshMonsterParam(waveNum, refreshType)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelWaveTrapIDArray = function(self, waveNum)
-  -- function num : 0_28
-  return (self._levelMonsterParam):GetWaveBeginTrapArray(waveNum)
+function LevelConfigData:GetLevelWaveTrapIDArray(waveNum)
+  return self._levelMonsterParam:GetWaveBeginTrapArray(waveNum)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelAllWaveTraps = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function LevelConfigData:GetLevelAllWaveTraps()
   local trapParamArray = {}
   local trapIDPreArray = self:GetLevelWaveTrapIDArray(0)
   if trapIDPreArray then
-    (table.appendArray)(trapParamArray, trapIDPreArray)
+    table.appendArray(trapParamArray, trapIDPreArray)
   end
   for i = 1, self:GetWaveCount() do
     local trapIDArray = self:GetLevelWaveTrapIDArray(i)
-    ;
-    (table.appendArray)(trapParamArray, trapIDArray)
+    table.appendArray(trapParamArray, trapIDArray)
   end
   return trapParamArray
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelWaveInternalRefreshData = function(self, waveNum)
-  -- function num : 0_30
-  return (self._levelMonsterParam):GetWaveInternalRefreshData(waveNum)
+function LevelConfigData:GetLevelWaveInternalRefreshData(waveNum)
+  return self._levelMonsterParam:GetWaveInternalRefreshData(waveNum)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelCompleteConditionType = function(self)
-  -- function num : 0_31
-  local affixService = (self._world):GetService("Affix")
+function LevelConfigData:GetLevelCompleteConditionType()
+  local affixService = self._world:GetService("Affix")
   return affixService:GetAffixLevelCompleteType(self._levelCompleteConditionType)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.IsCombinedCompleteCondition = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function LevelConfigData:IsCombinedCompleteCondition()
   local conditionType = self:GetLevelCompleteConditionType()
-  do return conditionType == CompleteConditionType.CombinedCompleteCondition end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return conditionType == CompleteConditionType.CombinedCompleteCondition
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetCombinedCompleteConditionArguments = function(self)
-  -- function num : 0_33
-  return {conditionA = self._combinedCompleteConditionA, conditionParamA = self._combinedCompleteConditionAParam, conditionB = self._combinedCompleteConditionB, conditionParamB = self._combinedCompleteConditionBParam}
+function LevelConfigData:GetCombinedCompleteConditionArguments()
+  return {
+    conditionA = self._combinedCompleteConditionA,
+    conditionParamA = self._combinedCompleteConditionAParam,
+    conditionB = self._combinedCompleteConditionB,
+    conditionParamB = self._combinedCompleteConditionBParam
+  }
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelCollectItem = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  local waves = (self._levelMonsterParam):GetMonsterWaveArray()
+function LevelConfigData:GetLevelCollectItem()
+  local waves = self._levelMonsterParam:GetMonsterWaveArray()
   if not waves then
-    return 
+    return
   end
   local count = 0
-  for i,v in ipairs(waves) do
+  for i, v in ipairs(waves) do
     if v:GetCompleteConditionType() == CompleteConditionType.CollectItems or v:GetCompleteConditionType() == CompleteConditionType.AllMonsterDeadOrCollectItems then
-      local param = (v:GetCompleteConditionParam())[1]
+      local param = v:GetCompleteConditionParam()[1]
       count = count + param[2]
       break
     end
   end
-  do
-    return count
-  end
+  return count
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelMonsterEscapeLimit = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  local waves = (self._levelMonsterParam):GetMonsterWaveArray()
+function LevelConfigData:GetLevelMonsterEscapeLimit()
+  local waves = self._levelMonsterParam:GetMonsterWaveArray()
   if not waves then
-    return 
+    return
   end
   local count = 0
-  for i,v in ipairs(waves) do
+  for i, v in ipairs(waves) do
     if v:GetCompleteConditionType() == CompleteConditionType.RoundCountLimitAndCheckMonsterEscape then
-      local param = (v:GetCompleteConditionParam())[1]
+      local param = v:GetCompleteConditionParam()[1]
       count = count + param[2]
     end
   end
   return count
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelCompleteConditionParamList = function(self, completeConditionType)
-  -- function num : 0_36 , upvalues : _ENV
-  local waves = (self._levelMonsterParam):GetMonsterWaveArray()
+function LevelConfigData:GetLevelCompleteConditionParamList(completeConditionType)
+  local waves = self._levelMonsterParam:GetMonsterWaveArray()
   if not waves then
-    return 
+    return
   end
   local paramList = {}
-  for i,v in ipairs(waves) do
-    local param = (v:GetCompleteConditionParam())[1]
+  for i, v in ipairs(waves) do
+    local param = v:GetCompleteConditionParam()[1]
     if completeConditionType and v:GetCompleteConditionType() == completeConditionType then
-      (table.insert)(paramList, param)
+      table.insert(paramList, param)
     else
-      ;
-      (table.insert)(paramList, param)
+      table.insert(paramList, param)
     end
   end
   return paramList
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelCompleteConditionParams = function(self)
-  -- function num : 0_37
-  local affixService = (self._world):GetService("Affix")
+function LevelConfigData:GetLevelCompleteConditionParams()
+  local affixService = self._world:GetService("Affix")
   return affixService:GetAffixLevelCompleteParam(self._levelCompleteConditionParams)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelCompleteConditionStr = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function LevelConfigData:GetLevelCompleteConditionStr()
   if self._levelCompleteConditionType ~= CompleteConditionType.CombinedCompleteCondition then
     return self:_GetSingleCompleteConditionStr(self._levelCompleteConditionType, self._levelCompleteConditionParams)
   end
-  local mode = ((self._levelCompleteConditionParams)[1])[1]
+  local mode = self._levelCompleteConditionParams[1][1]
   local args = self:GetCombinedCompleteConditionArguments()
   local strA = self:_GetSingleCompleteConditionStr(args.conditionA, args.conditionParamA)
   local strB = self:_GetSingleCompleteConditionStr(args.conditionB, args.conditionParamB)
   local str = ""
   if mode == CombinedCompleteConditionMode.And then
-    str = (StringTable.Get)("str_battle_condition_and", strA, strB)
-  else
-    if mode == CombinedCompleteConditionMode.Or then
-      str = (StringTable.Get)("str_battle_condition_or", strA, strB)
-    end
+    str = StringTable.Get("str_battle_condition_and", strA, strB)
+  elseif mode == CombinedCompleteConditionMode.Or then
+    str = StringTable.Get("str_battle_condition_or", strA, strB)
   end
   return str
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData._GetSingleCompleteConditionStr = function(self, conditionType, param)
-  -- function num : 0_39 , upvalues : _ENV
-  (Log.debug)("[level] LevelConfigData:GetLevelCompleteConditionStr", conditionType)
+function LevelConfigData:_GetSingleCompleteConditionStr(conditionType, param)
+  Log.debug("[level] LevelConfigData:GetLevelCompleteConditionStr", conditionType)
   if conditionType == CompleteConditionType.AllBossNotSurvival then
-    local strID = ((Cfg.cfg_level_complete_condition)[conditionType]).ConditionStr
-    local monsterConfigData = (self._configService):GetMonsterConfigData()
+    local strID = Cfg.cfg_level_complete_condition[conditionType].ConditionStr
+    local monsterConfigData = self._configService:GetMonsterConfigData()
     local monsterNameList = {}
-    for k,v in ipairs(param[1]) do
-      local name = (StringTable.Get)(monsterConfigData:GetMonsterName(tonumber(v)))
+    for k, v in ipairs(param[1]) do
+      local name = StringTable.Get(monsterConfigData:GetMonsterName(tonumber(v)))
       local bornType = monsterConfigData:GetMonsterBornType(tonumber(v))
       if bornType ~= MonsterBornType.AfterFury then
-        (table.insert)(monsterNameList, name)
+        table.insert(monsterNameList, name)
       end
     end
-    local ret = (StringTable.Get)(strID) .. " "
-    for _,name in ipairs(monsterNameList) do
+    local ret = StringTable.Get(strID) .. " "
+    for _, name in ipairs(monsterNameList) do
+      ret = ret .. "【" .. name .. "】 "
+    end
+    return ret
+  elseif conditionType == CompleteConditionType.AllConfigMonsterDead then
+    local strID = Cfg.cfg_level_complete_condition[conditionType].ConditionStr
+    local monsterConfigData = self._configService:GetMonsterConfigData()
+    local monsterNameList = {}
+    for k, param in ipairs(param) do
+      if type(param) == "number" then
+        local name = StringTable.Get(monsterConfigData:GetMonsterName(tonumber(param)))
+        local bornType = monsterConfigData:GetMonsterBornType(tonumber(param))
+        if bornType ~= MonsterBornType.AfterFury then
+          table.insert(monsterNameList, name)
+        end
+      elseif type(param) == "table" then
+        for i, v in ipairs(param) do
+          local monsterID = tonumber(v)
+          local name = StringTable.Get(monsterConfigData:GetMonsterName(tonumber(monsterID)))
+          local bornType = monsterConfigData:GetMonsterBornType(tonumber(monsterID))
+          if bornType ~= MonsterBornType.AfterFury then
+            table.insert(monsterNameList, name)
+          end
+        end
+      end
+    end
+    local ret = StringTable.Get(strID) .. " "
+    for _, name in ipairs(monsterNameList) do
       ret = ret .. "【" .. name .. "】 "
     end
     return ret
   else
-    do
-      if conditionType == CompleteConditionType.AllConfigMonsterDead then
-        local strID = ((Cfg.cfg_level_complete_condition)[conditionType]).ConditionStr
-        local monsterConfigData = (self._configService):GetMonsterConfigData()
-        local monsterNameList = {}
-        for k,param in ipairs(param) do
-          if type(param) == "number" then
-            local name = (StringTable.Get)(monsterConfigData:GetMonsterName(tonumber(param)))
-            local bornType = monsterConfigData:GetMonsterBornType(tonumber(param))
-            if bornType ~= MonsterBornType.AfterFury then
-              (table.insert)(monsterNameList, name)
-            end
-          else
-            do
-              if type(param) == "table" then
-                for i,v in ipairs(param) do
-                  local monsterID = tonumber(v)
-                  local name = (StringTable.Get)(monsterConfigData:GetMonsterName(tonumber(monsterID)))
-                  local bornType = monsterConfigData:GetMonsterBornType(tonumber(monsterID))
-                  if bornType ~= MonsterBornType.AfterFury then
-                    (table.insert)(monsterNameList, name)
-                  end
-                end
-              end
-              do
-                -- DECOMPILER ERROR at PC144: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC144: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC144: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
-        end
-        local ret = (StringTable.Get)(strID) .. " "
-        for _,name in ipairs(monsterNameList) do
-          ret = ret .. "【" .. name .. "】 "
-        end
-        return ret
-      else
-        do
-          local strID = ""
-          local cfgv = (Cfg.cfg_level_complete_condition)[conditionType]
-          if cfgv then
-            strID = cfgv.ConditionStr
-          else
-            ;
-            (Log.warn)("### no data in cfg_level_complete_condition. ID=", conditionType)
-          end
-          if conditionType == CompleteConditionType.CollectItems or conditionType == CompleteConditionType.AllMonsterDeadOrCollectItems then
-            local dropItemID = (param[1])[1]
-            local dropItemCount = (param[1])[2]
-            if not (param[1])[3] then
-              local collectDropType = UICollectDropType.Base
-            end
-            local retStr = (StringTable.Get)(strID, dropItemCount)
-            local collectCfg = (Cfg.cfg_level_complete_condition_collect_drop)[collectDropType]
-            if collectCfg and collectCfg.LevelConditionStr then
-              if collectCfg.DropName then
-                retStr = (StringTable.Get)(collectCfg.LevelConditionStr, dropItemCount, collectCfg.DropName)
-              else
-                retStr = (StringTable.Get)(collectCfg.LevelConditionStr, dropItemCount)
-              end
-            end
-            return retStr
-          else
-            do
-              if conditionType == CompleteConditionType.KillSpecificMonsterCount then
-                local monsterID = (param[1])[1]
-                local monsterCount = (param[1])[2]
-                local monsterConfigData = (self._configService):GetMonsterConfigData()
-                local monsterName = (StringTable.Get)(monsterConfigData:GetMonsterName(monsterID))
-                return (StringTable.Get)(strID, monsterCount, monsterName)
-              else
-                do
-                  if conditionType == CompleteConditionType.KillMoreThanPetMonster then
-                    local monsterID = (param[1])[1]
-                    local monsterConfigData = (self._configService):GetMonsterConfigData()
-                    local monsterName = (StringTable.Get)(monsterConfigData:GetMonsterName(monsterID))
-                    return (StringTable.Get)(strID, monsterName)
-                  else
-                    do
-                      if param[1] then
-                        return (StringTable.Get)(strID, (param[1])[1])
-                      else
-                        return (StringTable.Get)(strID)
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+    local strID = ""
+    local cfgv = Cfg.cfg_level_complete_condition[conditionType]
+    if cfgv then
+      strID = cfgv.ConditionStr
+    else
+      Log.warn("### no data in cfg_level_complete_condition. ID=", conditionType)
+    end
+    if conditionType == CompleteConditionType.CollectItems or conditionType == CompleteConditionType.AllMonsterDeadOrCollectItems then
+      local dropItemID = param[1][1]
+      local dropItemCount = param[1][2]
+      local collectDropType = param[1][3] or UICollectDropType.Base
+      local retStr = StringTable.Get(strID, dropItemCount)
+      local collectCfg = Cfg.cfg_level_complete_condition_collect_drop[collectDropType]
+      if collectCfg and collectCfg.LevelConditionStr then
+        if collectCfg.DropName then
+          retStr = StringTable.Get(collectCfg.LevelConditionStr, dropItemCount, collectCfg.DropName)
+        else
+          retStr = StringTable.Get(collectCfg.LevelConditionStr, dropItemCount)
         end
       end
+      return retStr
+    elseif conditionType == CompleteConditionType.KillSpecificMonsterCount then
+      local monsterID = param[1][1]
+      local monsterCount = param[1][2]
+      local monsterConfigData = self._configService:GetMonsterConfigData()
+      local monsterName = StringTable.Get(monsterConfigData:GetMonsterName(monsterID))
+      return StringTable.Get(strID, monsterCount, monsterName)
+    elseif conditionType == CompleteConditionType.KillMoreThanPetMonster then
+      local monsterID = param[1][1]
+      local monsterConfigData = self._configService:GetMonsterConfigData()
+      local monsterName = StringTable.Get(monsterConfigData:GetMonsterName(monsterID))
+      return StringTable.Get(strID, monsterName)
+    elseif param[1] then
+      return StringTable.Get(strID, param[1][1])
+    else
+      return StringTable.Get(strID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetIsBoss = function(self, waveNum)
-  -- function num : 0_40
-  return (self._levelMonsterParam):GetIsBoss(waveNum)
+function LevelConfigData:GetIsBoss(waveNum)
+  return self._levelMonsterParam:GetIsBoss(waveNum)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetBossID = function(self, waveNum)
-  -- function num : 0_41 , upvalues : _ENV
-  local id = (self._levelMonsterParam):GetBossID(waveNum)
+function LevelConfigData:GetBossID(waveNum)
+  local id = self._levelMonsterParam:GetBossID(waveNum)
   if not id then
-    (Log.fatal)("GetBossID Failed LevelID:", self._levelID, "WaveNum:", waveNum)
+    Log.fatal("GetBossID Failed LevelID:", self._levelID, "WaveNum:", waveNum)
   end
-  local affixService = (self._world):GetService("Affix")
+  local affixService = self._world:GetService("Affix")
   id = affixService:ChangeMonsterID(id, waveNum)
   return id
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetAllMonsterID = function(self)
-  -- function num : 0_42
-  return (self._levelMonsterParam):GetAllMonsterID()
+function LevelConfigData:GetAllMonsterID()
+  return self._levelMonsterParam:GetAllMonsterID()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLoadingMonsterID = function(self)
-  -- function num : 0_43
-  return (self._levelMonsterParam):GetLoadingMonsterID()
+function LevelConfigData:GetLoadingMonsterID()
+  return self._levelMonsterParam:GetLoadingMonsterID()
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetRunningMonsterID = function(self)
-  -- function num : 0_44
-  return (self._levelMonsterParam):GetRunningMonsterID()
+function LevelConfigData:GetRunningMonsterID()
+  return self._levelMonsterParam:GetRunningMonsterID()
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.HitBackParam = function(self, waveNum)
-  -- function num : 0_45
-  return (self._levelMonsterParam):HitBackParam(waveNum)
+function LevelConfigData:HitBackParam(waveNum)
+  return self._levelMonsterParam:HitBackParam(waveNum)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetBoardCenterPos = function(self, waveNum)
-  -- function num : 0_46
+function LevelConfigData:GetBoardCenterPos(waveNum)
   return self._boardCenter
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.BGMParam = function(self, waveNum)
-  -- function num : 0_47
-  return (self._levelMonsterParam):BGMParam(waveNum)
+function LevelConfigData:BGMParam(waveNum)
+  return self._levelMonsterParam:BGMParam(waveNum)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelStoryTipsParam = function(self)
-  -- function num : 0_48
+function LevelConfigData:GetLevelStoryTipsParam()
   return self._levelStoryTips
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelStoryBannerParam = function(self)
-  -- function num : 0_49
+function LevelConfigData:GetLevelStoryBannerParam()
   return self._levelStoryBanner
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelCutsceneParam = function(self)
-  -- function num : 0_50
+function LevelConfigData:GetLevelCutsceneParam()
   return self._levelCutscene
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetStoryTipsList = function(self, tipsID)
-  -- function num : 0_51 , upvalues : _ENV
-  local tipsConfig = (Cfg.cfg_level_story_tips)[tipsID]
+function LevelConfigData:GetStoryTipsList(tipsID)
+  local tipsConfig = Cfg.cfg_level_story_tips[tipsID]
   local tipsList = {}
   if not tipsConfig then
-    (Log.fatal)("tipsConfig is Nil TipsID:", tipsID)
+    Log.fatal("tipsConfig is Nil TipsID:", tipsID)
   end
-  for _,v in ipairs(tipsConfig.TipsList) do
+  for _, v in ipairs(tipsConfig.TipsList) do
     local storyTipsParam = StoryTipsParam:New(v)
-    ;
-    (table.insert)(tipsList, storyTipsParam)
+    table.insert(tipsList, storyTipsParam)
   end
   return tipsList
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetStoryBannerList = function(self, bannerID)
-  -- function num : 0_52 , upvalues : _ENV
-  local bannerConfig = (Cfg.cfg_story_banner)[bannerID]
+function LevelConfigData:GetStoryBannerList(bannerID)
+  local bannerConfig = Cfg.cfg_story_banner[bannerID]
   local bannerList = {}
   if not bannerConfig then
-    (Log.fatal)("bannerConfig is Nil BannerID:", bannerID)
+    Log.fatal("bannerConfig is Nil BannerID:", bannerID)
   end
-  for _,v in ipairs(bannerConfig.BannerList) do
+  for _, v in ipairs(bannerConfig.BannerList) do
     local bannerParam = StoryBannerParam:New(v)
-    ;
-    (table.insert)(bannerList, bannerParam)
+    table.insert(bannerList, bannerParam)
   end
   return bannerList
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.DebugCompleteCondition = function(self, nType, nParam)
-  -- function num : 0_53
+function LevelConfigData:DebugCompleteCondition(nType, nParam)
   self._levelCompleteConditionType = nType
   self._levelCompleteConditionParams = nParam
-  ;
-  (self._levelMonsterParam):DebugCompleteCondition(nType, nParam)
+  self._levelMonsterParam:DebugCompleteCondition(nType, nParam)
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetChangeTeamLeaderCount = function(self)
-  -- function num : 0_54
+function LevelConfigData:GetChangeTeamLeaderCount()
   return self._changeTeamLeaderCount
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetWaveBoard = function(self, waveNum)
-  -- function num : 0_55
-  return (self._levelMonsterParam):GetWaveBoard(waveNum)
+function LevelConfigData:GetWaveBoard(waveNum)
+  return self._levelMonsterParam:GetWaveBoard(waveNum)
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetWaveBuff = function(self, waveNum)
-  -- function num : 0_56 , upvalues : _ENV
-  local cfg = (Cfg.cfg_conquest_level_wave)({LevelID = self._levelID, WaveIndex = waveNum})
+function LevelConfigData:GetWaveBuff(waveNum)
+  local cfg = Cfg.cfg_conquest_level_wave({
+    LevelID = self._levelID,
+    WaveIndex = waveNum
+  })
   if cfg then
   end
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetSimpleConquestWaveBuff = function(self, waveNum)
-  -- function num : 0_57 , upvalues : _ENV
-  local cfg = (Cfg.cfg_simple_conquest_level_wave)({LevelID = self._levelID, WaveIndex = waveNum})
+function LevelConfigData:GetSimpleConquestWaveBuff(waveNum)
+  local cfg = Cfg.cfg_simple_conquest_level_wave({
+    LevelID = self._levelID,
+    WaveIndex = waveNum
+  })
   if cfg then
   end
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetConquestConfig = function(self)
-  -- function num : 0_58 , upvalues : _ENV
-  if (self._world):MatchType() == MatchType.MT_Conquest or (self._world):MatchType() == MatchType.MT_SimpleBattleField then
-    local conQuestInfo = ((self._world).BW_WorldInfo):GetConquestCreateInfo()
+function LevelConfigData:GetConquestConfig()
+  if self._world:MatchType() == MatchType.MT_Conquest or self._world:MatchType() == MatchType.MT_SimpleBattleField then
+    local conQuestInfo = self._world.BW_WorldInfo:GetConquestCreateInfo()
     local missionID = conQuestInfo.mission_id
     local randomIndex = conQuestInfo.random_index
-    local cfg = (Cfg.cfg_conquest_mission)({MissionID = missionID, RandomID = randomIndex})
+    local cfg = Cfg.cfg_conquest_mission({MissionID = missionID, RandomID = randomIndex})
     if not cfg then
-      (Log.fatal)("GetConquestConfig Failed missionID:", missionID, "RandomID:", randomIndex)
+      Log.fatal("GetConquestConfig Failed missionID:", missionID, "RandomID:", randomIndex)
     end
     return cfg[1]
   else
-    do
-      ;
-      (Log.fatal)("GetInvalidConfig MatchTypeInvalid MatchType:", (self._world):MatchType())
-    end
+    Log.fatal("GetInvalidConfig MatchTypeInvalid MatchType:", self._world:MatchType())
   end
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetSimpleConquestConfig = function(self)
-  -- function num : 0_59 , upvalues : _ENV
-  if (self._world):MatchType() == MatchType.MT_SimpleBattleField then
-    local simpleConquestInfo = ((self._world).BW_WorldInfo):GetSimpleConquestCreateInfo()
+function LevelConfigData:GetSimpleConquestConfig()
+  if self._world:MatchType() == MatchType.MT_SimpleBattleField then
+    local simpleConquestInfo = self._world.BW_WorldInfo:GetSimpleConquestCreateInfo()
     local missionID = simpleConquestInfo.mission_id
-    local cfg = (Cfg.cfg_simple_conquest_mission)({MissionID = missionID})
+    local cfg = Cfg.cfg_simple_conquest_mission({MissionID = missionID})
     if not cfg then
-      (Log.fatal)("GetSimpleConquestConfig Failed missionID:", missionID)
+      Log.fatal("GetSimpleConquestConfig Failed missionID:", missionID)
     end
     return cfg[1]
   else
-    do
-      ;
-      (Log.fatal)("GetInvalidConfig MatchTypeInvalid MatchType:", (self._world):MatchType())
-    end
+    Log.fatal("GetInvalidConfig MatchTypeInvalid MatchType:", self._world:MatchType())
   end
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetChessPetRefreshID = function(self)
-  -- function num : 0_60
+function LevelConfigData:GetChessPetRefreshID()
   return self._chessPetRefreshID
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.IsSpliceBoardLevel = function(self)
-  -- function num : 0_61 , upvalues : _ENV
-  local boardConfig = (Cfg.cfg_board)[self._levelGridGenID]
-  local isSpliceBoardLevel = not boardConfig.SpliceBoard or (table.count)(boardConfig.SpliceBoard) > 0
-  do return isSpliceBoardLevel end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function LevelConfigData:IsSpliceBoardLevel()
+  local boardConfig = Cfg.cfg_board[self._levelGridGenID]
+  local isSpliceBoardLevel = boardConfig.SpliceBoard and table.count(boardConfig.SpliceBoard) > 0
+  return isSpliceBoardLevel
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.IsPushBoardLevel = function(self)
-  -- function num : 0_62 , upvalues : _ENV
-  local boardConfig = (Cfg.cfg_board)[self._levelGridGenID]
-  do return not boardConfig.PushBoard or (table.count)(boardConfig.PushBoard) > 0 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function LevelConfigData:IsPushBoardLevel()
+  local boardConfig = Cfg.cfg_board[self._levelGridGenID]
+  return boardConfig.PushBoard and table.count(boardConfig.PushBoard) > 0
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetMultiBoard = function(self)
-  -- function num : 0_63
+function LevelConfigData:GetMultiBoard()
   return self._multiBoard
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.IsMultiBoardLevel = function(self)
-  -- function num : 0_64 , upvalues : _ENV
-  local isMultiBoardLevel = not self._multiBoard or (table.count)(self._multiBoard) > 0
-  do return isMultiBoardLevel end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function LevelConfigData:IsMultiBoardLevel()
+  local isMultiBoardLevel = self._multiBoard and table.count(self._multiBoard) > 0
+  return isMultiBoardLevel
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetMultiBoardInfo = function(self, boardIndex)
-  -- function num : 0_65 , upvalues : _ENV
-  local boardInfo = nil
-  for _,v in ipairs(self._multiBoard) do
+function LevelConfigData:GetMultiBoardInfo(boardIndex)
+  local boardInfo
+  for _, v in ipairs(self._multiBoard) do
     if v.index == boardIndex then
       boardInfo = v
       break
     end
   end
-  do
-    return boardInfo
-  end
+  return boardInfo
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetLevelWaveBeginRefreshMonsterParamMultiBoard = function(self, boardIndex, waveNum, playerPos)
-  -- function num : 0_66
-  local levelMonsterParam = (self._levelMonsterParamMultiBoard)[boardIndex]
+function LevelConfigData:GetLevelWaveBeginRefreshMonsterParamMultiBoard(boardIndex, waveNum, playerPos)
+  local levelMonsterParam = self._levelMonsterParamMultiBoard[boardIndex]
   if levelMonsterParam then
     local monsterRefreshParam = levelMonsterParam:GetWaveBeginMonsterParam(waveNum, playerPos)
     if monsterRefreshParam then
@@ -992,32 +682,18 @@ LevelConfigData.GetLevelWaveBeginRefreshMonsterParamMultiBoard = function(self, 
   end
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetOutOfRoundType = function(self)
-  -- function num : 0_67
+function LevelConfigData:GetOutOfRoundType()
   return self._outOfRoundType
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetWaveShowInterval = function(self, waveNum)
-  -- function num : 0_68
-  return (self._levelMonsterParam):WaveMonsterShowInterval(waveNum)
+function LevelConfigData:GetWaveShowInterval(waveNum)
+  return self._levelMonsterParam:WaveMonsterShowInterval(waveNum)
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetIgnoreProtectedTrapDead = function(self)
-  -- function num : 0_69
+function LevelConfigData:GetIgnoreProtectedTrapDead()
   return self._ignoreProtectedTrapDead
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelConfigData.GetMiniMazeWaveCfg = function(self, waveNum)
-  -- function num : 0_70
-  return (self._miniMazeWaveCfgArray)[waveNum]
+function LevelConfigData:GetMiniMazeWaveCfg(waveNum)
+  return self._miniMazeWaveCfgArray[waveNum]
 end
-
-

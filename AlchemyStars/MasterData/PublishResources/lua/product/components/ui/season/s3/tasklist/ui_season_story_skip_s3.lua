@@ -1,57 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/tasklist/ui_season_story_skip_s3.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonStorySkipS3", UIController)
 UISeasonStorySkipS3 = UISeasonStorySkipS3
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonStorySkipS3.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonStorySkipS3:OnShow(uiParams)
   self._eventID = uiParams[1]
   self._callback = uiParams[2]
   self:_GetComponents()
   self:_InitComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStorySkipS3.OnHide = function(self)
-  -- function num : 0_1
+function UISeasonStorySkipS3:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStorySkipS3._GetComponents = function(self)
-  -- function num : 0_2
+function UISeasonStorySkipS3:_GetComponents()
   self._skipTxt = self:GetUIComponent("UILocalizationText", "skipTxt")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStorySkipS3._InitComponent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_season_story_event)[self._eventID]
-  ;
-  (self._skipTxt):SetText((StringTable.Get)(cfg.SkipTxt))
+function UISeasonStorySkipS3:_InitComponent()
+  local cfg = Cfg.cfg_season_story_event[self._eventID]
+  self._skipTxt:SetText(StringTable.Get(cfg.SkipTxt))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStorySkipS3.CancelBtnOnClick = function(self)
-  -- function num : 0_4
+function UISeasonStorySkipS3:CancelBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStorySkipS3.ConfirmBtnOnClick = function(self)
-  -- function num : 0_5
+function UISeasonStorySkipS3:ConfirmBtnOnClick()
   self:CloseDialog()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
-
-

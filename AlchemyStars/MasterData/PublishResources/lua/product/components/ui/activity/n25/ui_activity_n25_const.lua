@@ -1,273 +1,191 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/ui_activity_n25_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN25Const", Object)
 UIActivityN25Const = UIActivityN25Const
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN25Const.LoadData = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  self._campaign = (UIActivityCampaign.New)()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_CUMULATIVE_LOGIN, ECampaignN25ComponentID.ECAMPAIGN_N25_FIRST_MEET, ECampaignN25ComponentID.ECAMPAIGN_N25_POWER2ITEM, ECampaignN25ComponentID.ECAMPAIGN_N25_LINE_MISSION, ECampaignN25ComponentID.ECAMPAIGN_N25_DIFFICULT_MISSION, ECampaignN25ComponentID.ECAMPAIGN_N25_SHOP, ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER, ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+function UIActivityN25Const:LoadData(TT, res)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  self._campaign = UIActivityCampaign.New()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_CUMULATIVE_LOGIN, ECampaignN25ComponentID.ECAMPAIGN_N25_FIRST_MEET, ECampaignN25ComponentID.ECAMPAIGN_N25_POWER2ITEM, ECampaignN25ComponentID.ECAMPAIGN_N25_LINE_MISSION, ECampaignN25ComponentID.ECAMPAIGN_N25_DIFFICULT_MISSION, ECampaignN25ComponentID.ECAMPAIGN_N25_SHOP, ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER, ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
   if res and not res:GetSucc() then
-    return 
+    return
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   local bpRes = AsyncRequestRes:New()
   bpRes:SetSucc(true)
   self._battlepassCampaign = UIActivityCampaign:New()
-  ;
-  (self._battlepassCampaign):LoadCampaignInfo(TT, bpRes, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+  self._battlepassCampaign:LoadCampaignInfo(TT, bpRes, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
   if not bpRes:GetSucc() then
-    (Log.info)("获取战斗通行证数据失败")
+    Log.info("获取战斗通行证数据失败")
   end
-  self._cumulativeLoginComponent = (self._localProcess):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_CUMULATIVE_LOGIN)
-  self._cumulativeLoginComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_CUMULATIVE_LOGIN)
-  self._fixTeamComponent = (self._localProcess):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_FIRST_MEET)
-  self._fixTeamCompInfo = (self._localProcess):GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_FIRST_MEET)
-  self._lineComp = (self._localProcess):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_LINE_MISSION)
-  self._lineCompInfo = (self._localProcess):GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_LINE_MISSION)
-  self._hardComp = (self._localProcess):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_DIFFICULT_MISSION)
-  self._hardCompInfo = (self._localProcess):GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_DIFFICULT_MISSION)
-  self._power2itemComponent = (self._localProcess):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_POWER2ITEM)
-  self._power2itemComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_POWER2ITEM)
-  self._exchangeComponent = (self._localProcess):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_SHOP)
-  self._exchangeComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_SHOP)
-  self._idolMiniGameComponent = (self._localProcess):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
-  self._idolMiniGameCompInfo = (self._localProcess):GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
-  self._bloodsuckerComponet = (self._localProcess):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER)
-  self._bloodsuckerComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER)
-  local cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
-  self._name = (StringTable.Get)(cfg_campaign.CampaignName)
-  self._subName = (StringTable.Get)(cfg_campaign.CampaignSubtitle)
-  local sample = (self._campaign):GetSample()
+  self._cumulativeLoginComponent = self._localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_CUMULATIVE_LOGIN)
+  self._cumulativeLoginComponentInfo = self._localProcess:GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_CUMULATIVE_LOGIN)
+  self._fixTeamComponent = self._localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_FIRST_MEET)
+  self._fixTeamCompInfo = self._localProcess:GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_FIRST_MEET)
+  self._lineComp = self._localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_LINE_MISSION)
+  self._lineCompInfo = self._localProcess:GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_LINE_MISSION)
+  self._hardComp = self._localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_DIFFICULT_MISSION)
+  self._hardCompInfo = self._localProcess:GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_DIFFICULT_MISSION)
+  self._power2itemComponent = self._localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_POWER2ITEM)
+  self._power2itemComponentInfo = self._localProcess:GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_POWER2ITEM)
+  self._exchangeComponent = self._localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_SHOP)
+  self._exchangeComponentInfo = self._localProcess:GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_SHOP)
+  self._idolMiniGameComponent = self._localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+  self._idolMiniGameCompInfo = self._localProcess:GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+  self._bloodsuckerComponet = self._localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER)
+  self._bloodsuckerComponentInfo = self._localProcess:GetComponentInfo(ECampaignN25ComponentID.ECAMPAIGN_N25_BLOODSUCKER)
+  local cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
+  self._name = StringTable.Get(cfg_campaign.CampaignName)
+  self._subName = StringTable.Get(cfg_campaign.CampaignSubtitle)
+  local sample = self._campaign:GetSample()
   if not sample then
-    return 
+    return
   end
-  local nowTime = (self._timeModule):GetServerTime() / 1000
+  local nowTime = self._timeModule:GetServerTime() / 1000
   self._activeEndTime = sample.end_time
-  local power2itemEndTime = (self._power2itemComponentInfo).m_close_time
-  if power2itemEndTime <= nowTime then
+  local power2itemEndTime = self._power2itemComponentInfo.m_close_time
+  if nowTime >= power2itemEndTime then
     self._status = 2
   else
     self._status = 1
     self._endTime = power2itemEndTime
   end
-  if self._activeEndTime < nowTime then
-    (Log.error)("Time error!")
-    return 
+  if nowTime > self._activeEndTime then
+    Log.error("Time error!")
+    return
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.ForceUpdate = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN25Const:ForceUpdate(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetCampaign = function(self)
-  -- function num : 0_2
+function UIActivityN25Const:GetCampaign()
   return self._campaign
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetCampaignId = function(self)
-  -- function num : 0_3
-  return (self._campaign)._id
+function UIActivityN25Const:GetCampaignId()
+  return self._campaign._id
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetName = function(self)
-  -- function num : 0_4
+function UIActivityN25Const:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetSubName = function(self)
-  -- function num : 0_5
+function UIActivityN25Const:GetSubName()
   return self._subName
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetActiveEndTime = function(self)
-  -- function num : 0_6
+function UIActivityN25Const:GetActiveEndTime()
   return self._activeEndTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetStatus = function(self)
-  -- function num : 0_7
+function UIActivityN25Const:GetStatus()
   return self._status
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.SetStatus = function(self, status)
-  -- function num : 0_8
+function UIActivityN25Const:SetStatus(status)
   self._status = status
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.IsActivityEnd = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityN25Const:IsActivityEnd()
   if not self._activeEndTime then
     return true
   end
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)(self._activeEndTime - nowTime)
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(self._activeEndTime - nowTime)
   if seconds <= 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetTryPetComponent = function(self)
-  -- function num : 0_10
+function UIActivityN25Const:GetTryPetComponent()
   return self._fixTeamComponent, self._fixTeamCompInfo
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetShopComponent = function(self)
-  -- function num : 0_11
+function UIActivityN25Const:GetShopComponent()
   return self._exchangeComponent, self._exchangeComponentInfo
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetLineComponent = function(self)
-  -- function num : 0_12
+function UIActivityN25Const:GetLineComponent()
   return self._lineComp, self._lineCompInfo
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetHardComponent = function(self)
-  -- function num : 0_13
+function UIActivityN25Const:GetHardComponent()
   return self._hardComp, self._hardCompInfo
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetIdolComponent = function(self)
-  -- function num : 0_14
+function UIActivityN25Const:GetIdolComponent()
   return self._idolMiniGameComponent, self._idolMiniGameCompInfo
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetBloodSuckerComponent = function(self)
-  -- function num : 0_15
+function UIActivityN25Const:GetBloodSuckerComponent()
   return self._bloodsuckerComponet, self._bloodsuckerComponentInfo
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.IsTryPetEnable = function(self)
-  -- function num : 0_16
+function UIActivityN25Const:IsTryPetEnable()
   if self:IsActivityEnd() then
     return false
   end
   if not self._fixTeamComponent then
     return false
   end
-  return (self._fixTeamComponent):ComponentIsOpen()
+  return self._fixTeamComponent:ComponentIsOpen()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.IsPower2ItemEnable = function(self)
-  -- function num : 0_17
+function UIActivityN25Const:IsPower2ItemEnable()
   if self:IsActivityEnd() then
     return false
   end
   if not self._power2itemComponent then
     return false
   end
-  return (self._power2itemComponent):ComponentIsOpen()
+  return self._power2itemComponent:ComponentIsOpen()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.IsShowEntryNew = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIActivityN25Const:IsShowEntryNew()
   if self:IsActivityEnd() then
     return false
   end
-  if not (UIActivityN25Const.GetEnterNewStatus)() and not self:CheckNewHard() and not self:CheckNewNormal() and not self:CheckGameIdolNew() then
-    local isNew = self:CheckGameBloodSuckerNew()
-  end
+  local isNew = UIActivityN25Const.GetEnterNewStatus() or self:CheckNewHard() or self:CheckNewNormal() or self:CheckGameIdolNew() or self:CheckGameBloodSuckerNew()
   return isNew
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.CheckNewNormal = function(self)
-  -- function num : 0_19
+function UIActivityN25Const:CheckNewNormal()
   return false
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.CheckNewHard = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  if not (N25Data.HasPrefs)((N25Data.GetPrefsKeyHard)()) and self._hardCompInfo and self:GetState(self._hardCompInfo) == UISummerOneEnterBtnState.Normal then
+function UIActivityN25Const:CheckNewHard()
+  if not N25Data.HasPrefs(N25Data.GetPrefsKeyHard()) and self._hardCompInfo and self:GetState(self._hardCompInfo) == UISummerOneEnterBtnState.Normal then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.CheckGameIdolNew = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  if not (N25Data.HasPrefs)((N25Data.GetPrefsKeyGameIdol)()) and self._idolMiniGameCompInfo and self:GetState(self._idolMiniGameCompInfo) == UISummerOneEnterBtnState.Normal then
+function UIActivityN25Const:CheckGameIdolNew()
+  if not N25Data.HasPrefs(N25Data.GetPrefsKeyGameIdol()) and self._idolMiniGameCompInfo and self:GetState(self._idolMiniGameCompInfo) == UISummerOneEnterBtnState.Normal then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.CheckGameBloodSuckerNew = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  if not (N25Data.HasPrefs)((N25Data.GetPrefsKeyGameBloodSucker)()) and self._bloodsuckerComponentInfo and self:GetState(self._bloodsuckerComponentInfo) == UISummerOneEnterBtnState.Normal then
+function UIActivityN25Const:CheckGameBloodSuckerNew()
+  if not N25Data.HasPrefs(N25Data.GetPrefsKeyGameBloodSucker()) and self._bloodsuckerComponentInfo and self:GetState(self._bloodsuckerComponentInfo) == UISummerOneEnterBtnState.Normal then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.IsShowEntryRed = function(self)
-  -- function num : 0_23
+function UIActivityN25Const:IsShowEntryRed()
   if self:IsActivityEnd() then
     return false
   end
@@ -292,349 +210,241 @@ UIActivityN25Const.IsShowEntryRed = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.CheckRedAward = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local red = (self._campaign):CheckComponentRed(self._localProcess, ECampaignN25ComponentID.ECAMPAIGN_N25_CUMULATIVE_LOGIN)
+function UIActivityN25Const:CheckRedAward()
+  local red = self._campaign:CheckComponentRed(self._localProcess, ECampaignN25ComponentID.ECAMPAIGN_N25_CUMULATIVE_LOGIN)
   return red
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.CheckRedTryPet = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIActivityN25Const:CheckRedTryPet()
   local state = self:GetStateTryPet()
-  do
-    if state == UISummerOneEnterBtnState.Normal then
-      local red = (self._campaign):CheckComponentRed(self._localProcess, ECampaignN25ComponentID.ECAMPAIGN_N25_FIRST_MEET)
-      return red
-    end
-    return false
+  if state == UISummerOneEnterBtnState.Normal then
+    local red = self._campaign:CheckComponentRed(self._localProcess, ECampaignN25ComponentID.ECAMPAIGN_N25_FIRST_MEET)
+    return red
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.CheckRedNormal = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIActivityN25Const:CheckRedNormal()
   local state = self:GetStateNormal()
-  do
-    if state == UISummerOneEnterBtnState.Normal then
-      local red = (self._campaign):CheckComponentRed(self._localProcess, ECampaignN25ComponentID.ECAMPAIGN_N25_LINE_MISSION)
-      return red
-    end
-    return false
+  if state == UISummerOneEnterBtnState.Normal then
+    local red = self._campaign:CheckComponentRed(self._localProcess, ECampaignN25ComponentID.ECAMPAIGN_N25_LINE_MISSION)
+    return red
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.CheckRedHard = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UIActivityN25Const:CheckRedHard()
   local state = self:GetStateHard()
-  do
-    if state == UISummerOneEnterBtnState.Normal then
-      local red = (self._campaign):CheckComponentRed(self._localProcess, ECampaignN25ComponentID.ECAMPAIGN_N25_DIFFICULT_MISSION)
-      return red
-    end
-    return false
+  if state == UISummerOneEnterBtnState.Normal then
+    local red = self._campaign:CheckComponentRed(self._localProcess, ECampaignN25ComponentID.ECAMPAIGN_N25_DIFFICULT_MISSION)
+    return red
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.CheckRedShop = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIActivityN25Const:CheckRedShop()
   local state = self:GetStateShop()
-  do
-    if state == UISummerOneEnterBtnState.Normal then
-      local red = (self._campaign):CheckComponentRed(self._localProcess, self.componentIdShop)
-      return red
-    end
-    return false
+  if state == UISummerOneEnterBtnState.Normal then
+    local red = self._campaign:CheckComponentRed(self._localProcess, self.componentIdShop)
+    return red
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.IsShowBattlePassRed = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIActivityN25Const:IsShowBattlePassRed()
   if self._battlepassCampaign then
-    return (UIActivityHelper.CheckCampaignSampleRedPoint)(self._battlepassCampaign)
+    return UIActivityHelper.CheckCampaignSampleRedPoint(self._battlepassCampaign)
   end
   return false
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.CheckGameIdolRed = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIActivityN25Const:CheckGameIdolRed()
   local state = self:GetStateGameIdol()
-  do
-    if state == UISummerOneEnterBtnState.Normal then
-      local red = (self._campaign):CheckComponentRed(self._localProcess, ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
-      return red
-    end
-    return false
+  if state == UISummerOneEnterBtnState.Normal then
+    local red = self._campaign:CheckComponentRed(self._localProcess, ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+    return red
   end
-end
-
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.CheckGameBloodSuckerRed = function(self)
-  -- function num : 0_31
   return false
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
+function UIActivityN25Const:CheckGameBloodSuckerRed()
+  return false
+end
 
-UIActivityN25Const.GetNewFlagKey = function(id)
-  -- function num : 0_32 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityN25Const.GetNewFlagKey(id)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "ACTIVITY_N25_MODULE_NEW_FLAG" .. "fk" .. id
   return key
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetNewFlagStatus = function(id)
-  -- function num : 0_33 , upvalues : _ENV
-  local key = (UIActivityN25Const.GetNewFlagKey)(id)
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+function UIActivityN25Const.GetNewFlagStatus(id)
+  local key = UIActivityN25Const.GetNewFlagKey(id)
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return true
   end
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key)
-  do return value == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key)
+  return value == 0
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.SetNewFlagStatus = function(id, status)
-  -- function num : 0_34 , upvalues : _ENV
-  local key = (UIActivityN25Const.GetNewFlagKey)(id)
+function UIActivityN25Const.SetNewFlagStatus(id, status)
+  local key = UIActivityN25Const.GetNewFlagKey(id)
   if status then
-    ((UnityEngine.PlayerPrefs).SetInt)(key, 0)
+    UnityEngine.PlayerPrefs.SetInt(key, 0)
   else
-    ;
-    ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+    UnityEngine.PlayerPrefs.SetInt(key, 1)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetEnterNewStatus = function()
-  -- function num : 0_35 , upvalues : _ENV
-  return (UIActivityN25Const.GetNewFlagStatus)("ENTRY_NEW")
+function UIActivityN25Const.GetEnterNewStatus()
+  return UIActivityN25Const.GetNewFlagStatus("ENTRY_NEW")
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.ClearEnterNewStatus = function()
-  -- function num : 0_36 , upvalues : _ENV
-  (UIActivityN25Const.SetNewFlagStatus)("ENTRY_NEW", false)
+function UIActivityN25Const.ClearEnterNewStatus()
+  UIActivityN25Const.SetNewFlagStatus("ENTRY_NEW", false)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetStateShop = function(self)
-  -- function num : 0_37
+function UIActivityN25Const:GetStateShop()
   if self._exchangeComponentInfo then
     return self:GetState(self._exchangeComponentInfo)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetStateNormal = function(self)
-  -- function num : 0_38
+function UIActivityN25Const:GetStateNormal()
   if self._lineCompInfo then
     return self:GetState(self._lineCompInfo)
   end
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetStateHard = function(self)
-  -- function num : 0_39
+function UIActivityN25Const:GetStateHard()
   if self._hardCompInfo then
     return self:GetState(self._hardCompInfo)
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetStateTryPet = function(self)
-  -- function num : 0_40
+function UIActivityN25Const:GetStateTryPet()
   if self._fixTeamCompInfo then
     return self:GetState(self._fixTeamCompInfo)
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetStateGameIdol = function(self)
-  -- function num : 0_41
+function UIActivityN25Const:GetStateGameIdol()
   if self._idolMiniGameCompInfo then
     return self:GetState(self._idolMiniGameCompInfo)
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetStateGameBloodSucker = function(self)
-  -- function num : 0_42
+function UIActivityN25Const:GetStateGameBloodSucker()
   if self._bloodsuckerComponentInfo then
     return self:GetState(self._bloodsuckerComponentInfo)
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetState = function(self, cInfo)
-  -- function num : 0_43 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+function UIActivityN25Const:GetState(cInfo)
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if nowTimestamp < cInfo.m_unlock_time then
     return UISummerOneEnterBtnState.NotOpen
+  elseif nowTimestamp > cInfo.m_close_time then
+    return UISummerOneEnterBtnState.Closed
+  elseif cInfo.m_b_unlock then
+    return UISummerOneEnterBtnState.Normal
   else
-    if cInfo.m_close_time < nowTimestamp then
-      return UISummerOneEnterBtnState.Closed
+    local cfgv = Cfg.cfg_campaign_mission[cInfo.m_need_mission_id]
+    if cfgv then
+      return UISummerOneEnterBtnState.Locked
     else
-      if cInfo.m_b_unlock then
-        return UISummerOneEnterBtnState.Normal
-      else
-        local cfgv = (Cfg.cfg_campaign_mission)[cInfo.m_need_mission_id]
-        if cfgv then
-          return UISummerOneEnterBtnState.Locked
-        else
-          return UISummerOneEnterBtnState.Normal
-        end
-      end
+      return UISummerOneEnterBtnState.Normal
     end
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetTimeString = function(seconds)
-  -- function num : 0_44 , upvalues : _ENV
+function UIActivityN25Const.GetTimeString(seconds)
   local timeStr = ""
-  local day = (math.floor)(seconds / 3600 / 24)
-  if day > 0 then
+  local day = math.floor(seconds / 3600 / 24)
+  if 0 < day then
     seconds = seconds - day * 3600 * 24
-    local hour = (math.floor)((seconds) / 3600)
-    timeStr = (StringTable.Get)("str_n25_day", day)
-    if hour > 0 then
-      timeStr = timeStr .. (StringTable.Get)("str_n25_hour", hour)
+    local hour = math.floor(seconds / 3600)
+    timeStr = StringTable.Get("str_n25_day", day)
+    if 0 < hour then
+      timeStr = timeStr .. StringTable.Get("str_n25_hour", hour)
+    end
+  elseif 60 <= seconds then
+    local hour = math.floor(seconds / 3600)
+    seconds = seconds - hour * 3600
+    if 0 < hour then
+      timeStr = StringTable.Get("str_n25_hour", hour)
+    end
+    local minus = math.floor(seconds / 60)
+    if minus then
+      timeStr = timeStr .. StringTable.Get("str_n25_minus", minus)
     end
   else
-    do
-      if seconds >= 60 then
-        local hour = (math.floor)((seconds) / 3600)
-        seconds = seconds - hour * 3600
-        if hour > 0 then
-          timeStr = (StringTable.Get)("str_n25_hour", hour)
-        end
-        local minus = (math.floor)((seconds) / 60)
-        if minus then
-          timeStr = timeStr .. (StringTable.Get)("str_n25_minus", minus)
-        end
-      else
-        do
-          timeStr = (StringTable.Get)("str_n25_less_one_minus")
-          return timeStr
-        end
-      end
-    end
+    timeStr = StringTable.Get("str_n25_less_one_minus")
   end
+  return timeStr
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetItemCountStr = function(count, preColor, countColor)
-  -- function num : 0_45 , upvalues : _ENV
+function UIActivityN25Const.GetItemCountStr(count, preColor, countColor)
   local dight = 0
   local tmpCount = count
   if tmpCount < 0 then
     tmpCount = -tmpCount
   end
-  while tmpCount > 0 do
-    tmpCount = (math.floor)(tmpCount / 10)
+  while 0 < tmpCount do
+    tmpCount = math.floor(tmpCount / 10)
     dight = dight + 1
   end
   local pre = ""
-  if count >= 0 then
-    for i = 1, 7 - (dight) do
+  if 0 <= count then
+    for i = 1, 7 - dight do
       pre = pre .. "0"
     end
   else
-    do
-      for i = 1, 7 - (dight) - 1 do
-        pre = pre .. "0"
-      end
-      do
-        if count > 0 then
-          return (string.format)("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
-        else
-          if count == 0 then
-            return (string.format)("<color=" .. preColor .. ">%s</color>", pre)
-          else
-            return (string.format)("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
-          end
-        end
-      end
+    for i = 1, 7 - dight - 1 do
+      pre = pre .. "0"
     end
+  end
+  if 0 < count then
+    return string.format("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
+  elseif count == 0 then
+    return string.format("<color=" .. preColor .. ">%s</color>", pre)
+  else
+    return string.format("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.ShowRewards = function(rewards, callback)
-  -- function num : 0_46 , upvalues : _ENV
+function UIActivityN25Const.ShowRewards(rewards, callback)
   local petIdList = {}
-  local mPet = (GameGlobal.GetModule)(PetModule)
-  for _,reward in pairs(rewards) do
+  local mPet = GameGlobal.GetModule(PetModule)
+  for _, reward in pairs(rewards) do
     if mPet:IsPetID(reward.assetid) then
-      (table.insert)(petIdList, reward)
+      table.insert(petIdList, reward)
     end
   end
-  if (table.count)(petIdList) > 0 then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIPetObtain", petIdList, function()
-    -- function num : 0_46_0 , upvalues : _ENV, rewards, callback
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", rewards, function()
-      -- function num : 0_46_0_0 , upvalues : callback
-      if callback then
-        callback()
-      end
-    end
-)
+  if table.count(petIdList) > 0 then
+    GameGlobal.UIStateManager():ShowDialog("UIPetObtain", petIdList, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      GameGlobal.UIStateManager():ShowDialog("UIGetItemController", rewards, function()
+        if callback then
+          callback()
+        end
+      end)
+    end)
+    return
   end
-)
-    return 
-  end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_46_1 , upvalues : callback
+  GameGlobal.UIStateManager():ShowDialog("UIGetItemController", rewards, function()
     if callback then
       callback()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetSpineAndBgm = function(self)
-  -- function num : 0_47 , upvalues : _ENV
-  local cfg = (Cfg.cfg_n25_const)[1]
+function UIActivityN25Const:GetSpineAndBgm()
+  local cfg = Cfg.cfg_n25_const[1]
   if self._lineCompInfo and cfg then
-    local missionModule = (GameGlobal.GetModule)(MissionModule)
-    local passInfo = (self._lineCompInfo).m_pass_mission_info
-    for _,info in pairs(passInfo) do
+    local missionModule = GameGlobal.GetModule(MissionModule)
+    local passInfo = self._lineCompInfo.m_pass_mission_info
+    for _, info in pairs(passInfo) do
       local storyId = missionModule:GetStoryByStageIdStoryType(info.mission_id, StoryTriggerType.Node)
       if storyId == cfg.StoryID then
         return cfg.Spine2, cfg.Bgm2
@@ -642,83 +452,56 @@ UIActivityN25Const.GetSpineAndBgm = function(self)
     end
     return cfg.Spine1, cfg.Bgm1
   end
-  do
-    return nil, nil
-  end
+  return nil, nil
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.CheckBloodSuckerMissionPassed = function(self, missionId)
-  -- function num : 0_48 , upvalues : _ENV
+function UIActivityN25Const:CheckBloodSuckerMissionPassed(missionId)
   if not self._bloodsuckerComponentInfo then
     return false
   end
-  if (self._bloodsuckerComponentInfo).mission_infos then
-    for index,value in pairs((self._bloodsuckerComponentInfo).mission_infos) do
-      if value.is_pass ~= 1 then
-        do
-          do return index ~= missionId end
-          -- DECOMPILER ERROR at PC22: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC22: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+  if self._bloodsuckerComponentInfo.mission_infos then
+    for index, value in pairs(self._bloodsuckerComponentInfo.mission_infos) do
+      if index == missionId then
+        return value.is_pass == 1
       end
     end
   end
-  do return false end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.CheckBloodSuckerMissionJoind = function(self, missionId)
-  -- function num : 0_49 , upvalues : _ENV
+function UIActivityN25Const:CheckBloodSuckerMissionJoind(missionId)
   if not self._bloodsuckerComponentInfo then
     return false
   end
-  if (self._bloodsuckerComponentInfo).join_mission_list then
-    for index,value in pairs((self._bloodsuckerComponentInfo).join_mission_list) do
+  if self._bloodsuckerComponentInfo.join_mission_list then
+    for index, value in pairs(self._bloodsuckerComponentInfo.join_mission_list) do
       if value == missionId then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetTaskRedPoint = function(self)
-  -- function num : 0_50 , upvalues : _ENV
-  self._questComponent = (self._localProcess):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_QUEST)
+function UIActivityN25Const:GetTaskRedPoint()
+  self._questComponent = self._localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_QUEST)
   if not self._questComponent then
     return false
   end
-  return (self._questComponent):HaveRedPoint()
+  return self._questComponent:HaveRedPoint()
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25Const.GetShowFirstTaskIndex = function(self)
-  -- function num : 0_51 , upvalues : _ENV
+function UIActivityN25Const:GetShowFirstTaskIndex()
   local firstShow = 1
   if not self._bloodsuckerComponentInfo then
     return firstShow
   end
-  if (self._bloodsuckerComponentInfo).mission_infos then
-    for index,value in pairs((self._bloodsuckerComponentInfo).mission_infos) do
+  if self._bloodsuckerComponentInfo.mission_infos then
+    for index, value in pairs(self._bloodsuckerComponentInfo.mission_infos) do
       if value.is_pass == 1 then
         firstShow = firstShow + 1
       end
     end
   end
-  do
-    return firstShow
-  end
+  return firstShow
 end
-
-

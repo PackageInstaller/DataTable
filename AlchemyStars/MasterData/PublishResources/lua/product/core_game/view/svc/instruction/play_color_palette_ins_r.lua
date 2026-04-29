@@ -1,41 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_color_palette_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayColorPaletteInstruction", BaseInstruction)
 PlayColorPaletteInstruction = PlayColorPaletteInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayColorPaletteInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayColorPaletteInstruction:Constructor(paramList)
   self._stageIndex = tonumber(paramList.stageIndex) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayColorPaletteInstruction.GetCacheResource = function(self)
-  -- function num : 0_1
+function PlayColorPaletteInstruction:GetCacheResource()
   local t = {}
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayColorPaletteInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayColorPaletteInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if not casterEntity:HasPetPstID() then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ColorPaletteCharge)
   local pieceTypes = {}
-  for _,_result in ipairs(resultArray) do
+  for _, _result in ipairs(resultArray) do
     local result = _result
     if result:GetPieceType() ~= PieceType.None then
-      (table.insert)(pieceTypes, result:GetPieceType())
+      table.insert(pieceTypes, result:GetPieceType())
     end
   end
   if not casterEntity:HasColorPaletteRender() then
@@ -44,8 +31,7 @@ PlayColorPaletteInstruction.DoInstruction = function(self, TT, casterEntity, pha
   local renderComponent = casterEntity:ColorPaletteRender()
   local isNotSatisfy = not renderComponent:IsSatisfy()
   renderComponent:AddPieceTypes(pieceTypes)
-  ;
-  (world:EventDispatcher()):Dispatch(GameEventType.ColorPaletteRefresh, (casterEntity:PetPstID()):GetPstID(), renderComponent:GetPieceTypes())
+  world:EventDispatcher():Dispatch(GameEventType.ColorPaletteRefresh, casterEntity:PetPstID():GetPstID(), renderComponent:GetPieceTypes())
   if isNotSatisfy and renderComponent:IsSatisfy() then
     self:_RefreshExtraActiveSkillReady(casterEntity)
     local playBuffSvc = world:GetService("PlayBuff")
@@ -53,21 +39,16 @@ PlayColorPaletteInstruction.DoInstruction = function(self, TT, casterEntity, pha
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayColorPaletteInstruction._RefreshExtraActiveSkillReady = function(self, entity)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayColorPaletteInstruction:_RefreshExtraActiveSkillReady(entity)
   local world = entity:GetOwnerWorld()
   local configService = world:GetService("Config")
-  local extraSkillList = (entity:SkillInfo()):GetExtraActiveSkillIDList()
+  local extraSkillList = entity:SkillInfo():GetExtraActiveSkillIDList()
   if extraSkillList then
-    for _,extraSkillID in ipairs(extraSkillList) do
+    for _, extraSkillID in ipairs(extraSkillList) do
       local extraSkillConfigData = configService:GetSkillConfigData(extraSkillID)
       if extraSkillConfigData and extraSkillConfigData:GetSkillTriggerType() == SkillTriggerType.ColorPalette then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetExtraActiveSkillGetReady, (entity:PetPstID()):GetPstID(), extraSkillID, true)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.PetExtraActiveSkillGetReady, entity:PetPstID():GetPstID(), extraSkillID, true)
       end
     end
   end
 end
-
-

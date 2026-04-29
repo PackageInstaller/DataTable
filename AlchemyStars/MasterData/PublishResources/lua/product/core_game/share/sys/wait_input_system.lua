@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/wait_input_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("WaitInputSystem", MainStateSystem)
 WaitInputSystem = WaitInputSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-WaitInputSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function WaitInputSystem:_GetMainStateID()
   return GameStateID.WaitInput
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function WaitInputSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   self:ClearPreviewChainPathData()
   self:_DoRenderStopPortalPreview(TT)
   self:_DoLogicPetClearSelectTeamPos()
@@ -36,7 +26,7 @@ WaitInputSystem._OnMainStateEnter = function(self, TT)
     self:_DoRenderPlayerBuffDelayed(TT, teamEntity)
     self:_DoRenderWaitStun(TT)
     self:_GotoNextTurn()
-    return 
+    return
   end
   self:_DoRenderGuidePlayer(TT)
   self:_DoRenderShowAuroraTime(TT)
@@ -46,97 +36,71 @@ WaitInputSystem._OnMainStateEnter = function(self, TT)
   self:_DoRenderComparePieceType(TT)
   self:_DoRenderSetPreviewTeam(teamEntity)
   self:_DoLogicUpdateMatchData(teamEntity)
-  if (self._world):GetGameTurn() == GameTurnType.LocalPlayerTurn then
+  if self._world:GetGameTurn() == GameTurnType.LocalPlayerTurn then
     self:_DoLogic_EnableHandleInput()
   else
     self:_DoRenderAutoFight(TT, teamEntity)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._GotoNextTurn = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputFinish, 5)
+function WaitInputSystem:_GotoNextTurn()
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    self._world:EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 5)
   else
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputFinish, 4)
+    self._world:EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 4)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoLogic_EnableHandleInput = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local gameFsmCmpt = (self._world):GameFSM()
+function WaitInputSystem:_DoLogic_EnableHandleInput()
+  local gameFsmCmpt = self._world:GameFSM()
   gameFsmCmpt:EnableHandleInput(true)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.BanAutoFightBtn, false)
-  ;
-  ((self._world):GetDataLogger()):AddDataLog("OnShowEnd")
-  ;
-  ((self._world):GetDataLogger()):AddDataLog("OnLinkStart")
+  self._world:EventDispatcher():Dispatch(GameEventType.BanAutoFightBtn, false)
+  self._world:GetDataLogger():AddDataLog("OnShowEnd")
+  self._world:GetDataLogger():AddDataLog("OnLinkStart")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoLogicCalc3StarProgress = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
-  local battleStatCmpt = (self._world):BattleStat()
-  if (self._world):MatchType() == MatchType.MT_Mission or (self._world):MatchType() == MatchType.MT_Campaign then
+function WaitInputSystem:_DoLogicCalc3StarProgress()
+  local configService = self._world:GetService("Config")
+  local battleStatCmpt = self._world:BattleStat()
+  if self._world:MatchType() == MatchType.MT_Mission or self._world:MatchType() == MatchType.MT_Campaign then
     local threeStarConditions = {}
-    if (self._world):MatchType() == MatchType.MT_Mission then
-      threeStarConditions = configService:GetMission3StarCondition(((self._world).BW_WorldInfo).missionID)
-    else
-      if (self._world):MatchType() == MatchType.MT_Campaign then
-        threeStarConditions = configService:GetCampaignMission3StarCondition(((self._world).BW_WorldInfo).missionID)
-      end
+    if self._world:MatchType() == MatchType.MT_Mission then
+      threeStarConditions = configService:GetMission3StarCondition(self._world.BW_WorldInfo.missionID)
+    elseif self._world:MatchType() == MatchType.MT_Campaign then
+      threeStarConditions = configService:GetCampaignMission3StarCondition(self._world.BW_WorldInfo.missionID)
     end
-    local star3CalcService = (self._world):GetService("Star3Calc")
-    for _,conditionId in ipairs(threeStarConditions) do
+    local star3CalcService = self._world:GetService("Star3Calc")
+    for _, conditionId in ipairs(threeStarConditions) do
       local ret = star3CalcService:CalcProgress(conditionId)
       battleStatCmpt:UpdateA3StarProgress(conditionId, ret)
     end
-  else
-    do
-      if (self._world):MatchType() == MatchType.MT_ExtMission then
-        local threeStarConditions = configService:GetExtMission3StarCondition(((self._world).BW_WorldInfo).ext_mission_task_id)
-        local star3CalcService = (self._world):GetService("Star3Calc")
-        for _,conditionId in ipairs(threeStarConditions) do
-          local ret = star3CalcService:CalcProgress(conditionId)
-          battleStatCmpt:UpdateA3StarProgress(conditionId, ret)
-        end
-      else
-        do
-          if (self._world):MatchType() == MatchType.MT_Season then
-            local threeStarConditions = configService:GetSeasonMission3StarCondition(((self._world).BW_WorldInfo).missionID)
-            local star3CalcService = (self._world):GetService("Star3Calc")
-            for _,conditionId in ipairs(threeStarConditions) do
-              local ret = star3CalcService:CalcProgress(conditionId)
-              battleStatCmpt:UpdateA3StarProgress(conditionId, ret)
-            end
-          end
-        end
-      end
+  elseif self._world:MatchType() == MatchType.MT_ExtMission then
+    local threeStarConditions = configService:GetExtMission3StarCondition(self._world.BW_WorldInfo.ext_mission_task_id)
+    local star3CalcService = self._world:GetService("Star3Calc")
+    for _, conditionId in ipairs(threeStarConditions) do
+      local ret = star3CalcService:CalcProgress(conditionId)
+      battleStatCmpt:UpdateA3StarProgress(conditionId, ret)
+    end
+  elseif self._world:MatchType() == MatchType.MT_Season then
+    local threeStarConditions = configService:GetSeasonMission3StarCondition(self._world.BW_WorldInfo.missionID)
+    local star3CalcService = self._world:GetService("Star3Calc")
+    for _, conditionId in ipairs(threeStarConditions) do
+      local ret = star3CalcService:CalcProgress(conditionId)
+      battleStatCmpt:UpdateA3StarProgress(conditionId, ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoLogicCalcBonusObjective = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local bonusCalcService = (self._world):GetService("BonusCalc")
-  local star3CalcService = (self._world):GetService("Star3Calc")
+function WaitInputSystem:_DoLogicCalcBonusObjective()
+  local bonusCalcService = self._world:GetService("BonusCalc")
+  local star3CalcService = self._world:GetService("Star3Calc")
   local conditionParser = ObjectiveConditionParamParser:New()
   local calcResultArray = {}
-  local conditionIDArray = ((self._world):BattleWorldEnterData()):GetBonusCondition()
-  for _,conditionID in ipairs(conditionIDArray) do
-    local conditionData = (Cfg.cfg_threestarcondition)[conditionID]
+  local conditionIDArray = self._world:BattleWorldEnterData():GetBonusCondition()
+  for _, conditionID in ipairs(conditionIDArray) do
+    local conditionData = Cfg.cfg_threestarcondition[conditionID]
     if conditionData == nil then
-      return 
+      return
     end
     local conditionType = conditionData.ConditionType
     local conditionParamArray = star3CalcService:GetConditionNumber(conditionID)
@@ -150,25 +114,19 @@ WaitInputSystem._DoLogicCalcBonusObjective = function(self)
       end
     end
   end
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:SetBonusMatchResult(calcResultArray)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoLogicRestBattleState = function(self)
-  -- function num : 0_6
-  local battleService = (self._world):GetService("Battle")
+function WaitInputSystem:_DoLogicRestBattleState()
+  local battleService = self._world:GetService("Battle")
   battleService:SetLogicComboNum(0)
   battleService:SetLogicChainNum(0)
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:IncWaitInputCount()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoLogicCheckPlayerStun = function(self, teamEntity)
-  -- function num : 0_7 , upvalues : _ENV
+function WaitInputSystem:_DoLogicCheckPlayerStun(teamEntity)
   if teamEntity == nil then
     return false
   end
@@ -177,55 +135,45 @@ WaitInputSystem._DoLogicCheckPlayerStun = function(self, teamEntity)
   return isStun
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoLogicWaitInputBuff = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  ((self._world):GetService("Trigger")):Notify(NTWaitInput:New())
+function WaitInputSystem:_DoLogicWaitInputBuff()
+  self._world:GetService("Trigger"):Notify(NTWaitInput:New())
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoL2RBoardLogicData = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local t = ((self._world):GetService("BoardLogic")):CalcPieceEntities()
-  ;
-  (((self._world):GetBoardEntity()):Board()):SetPieceEntities(t)
-  local configService = (self._world):GetService("Config")
+function WaitInputSystem:_DoL2RBoardLogicData()
+  local t = self._world:GetService("BoardLogic"):CalcPieceEntities()
+  self._world:GetBoardEntity():Board():SetPieceEntities(t)
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   local multiBoard = levelConfigData:GetMultiBoard()
-  if multiBoard and (table.count)(multiBoard) > 0 then
-    local boardMultiServiceLogic = (self._world):GetService("BoardMultiLogic")
-    local boardMultiComponent = ((self._world):GetBoardEntity()):BoardMulti()
+  if multiBoard and table.count(multiBoard) > 0 then
+    local boardMultiServiceLogic = self._world:GetService("BoardMultiLogic")
+    local boardMultiComponent = self._world:GetBoardEntity():BoardMulti()
     local entities = boardMultiServiceLogic:GetEntityGroup()
-    for i,boardInfo in ipairs(multiBoard) do
+    for i, boardInfo in ipairs(multiBoard) do
       local boardIndex = boardInfo.index
       local pieceEntities = boardMultiServiceLogic:CalcPieceEntities(entities, boardIndex)
       boardMultiComponent:SetPieceEntities(boardIndex, pieceEntities)
     end
     boardMultiServiceLogic:SaveMonsterIDCmptOnOutsideRegion()
   end
-  do
-    local boardSvc = (self._world):GetService("BoardLogic")
-    boardSvc:SaveMonsterIDCmptOffBoard()
-    local svc = (self._world):GetService("L2R")
-    svc:L2RBoardLogicData()
-  end
+  local boardSvc = self._world:GetService("BoardLogic")
+  boardSvc:SaveMonsterIDCmptOffBoard()
+  local svc = self._world:GetService("L2R")
+  svc:L2RBoardLogicData()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoLogicUpdateMatchData = function(self, teamEntity)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self._world):RunAtServer() then
-    local logic = (self._world):GetCoreGameLogic()
+function WaitInputSystem:_DoLogicUpdateMatchData(teamEntity)
+  if self._world:RunAtServer() then
+    local logic = self._world:GetCoreGameLogic()
     if logic:IsRunningAI() then
       local actorID = logic:GetActorID()
       local data = logic:GetAIData()
       update_match_state(actorID, data)
-      local battleStatCmpt = (self._world):BattleStat()
+      local battleStatCmpt = self._world:BattleStat()
       local cmd = MovePathDoneCommand:New()
-      cmd:SetChainPath({teamEntity:GetGridPosition()})
+      cmd:SetChainPath({
+        teamEntity:GetGridPosition()
+      })
       cmd:SetElementType(0)
       cmd.EntityID = 2
       cmd.RoundCount = battleStatCmpt:GetGameRoundCount()
@@ -236,118 +184,62 @@ WaitInputSystem._DoLogicUpdateMatchData = function(self, teamEntity)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoLogicPetClearSelectTeamPos = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local groupEntity = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).Team)
-  for _,e in ipairs(groupEntity) do
-    (e:Team()):ClearSelectedTeamOrderPosition()
+function WaitInputSystem:_DoLogicPetClearSelectTeamPos()
+  local groupEntity = self._world:GetGroupEntities(self._world.BW_WEMatchers.Team)
+  for _, e in ipairs(groupEntity) do
+    e:Team():ClearSelectedTeamOrderPosition()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoLogicPlayerBuffDelayed = function(self, teamEntity)
-  -- function num : 0_12
-  local buffLogicService = (self._world):GetService("BuffLogic")
+function WaitInputSystem:_DoLogicPlayerBuffDelayed(teamEntity)
+  local buffLogicService = self._world:GetService("BuffLogic")
   buffLogicService:CalcPlayerBuffDelayedTurn(teamEntity)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoRenderStopPortalPreview = function(self, TT)
-  -- function num : 0_13
+function WaitInputSystem:_DoRenderStopPortalPreview(TT)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoRenderPieceAnimation = function(self, TT)
-  -- function num : 0_14
+function WaitInputSystem:_DoRenderPieceAnimation(TT)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoRenderGuidePlayer = function(self, TT)
-  -- function num : 0_15
+function WaitInputSystem:_DoRenderGuidePlayer(TT)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoRenderWaitStun = function(self, TT)
-  -- function num : 0_16
+function WaitInputSystem:_DoRenderWaitStun(TT)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoRenderShowPlayerTurnInfo = function(self, TT, teamEntity)
-  -- function num : 0_17
+function WaitInputSystem:_DoRenderShowPlayerTurnInfo(TT, teamEntity)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoRenderShowAuroraTime = function(self, TT)
-  -- function num : 0_18
+function WaitInputSystem:_DoRenderShowAuroraTime(TT)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoRenderCameraFollowHero = function(self, TT)
-  -- function num : 0_19
+function WaitInputSystem:_DoRenderCameraFollowHero(TT)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoRenderShowPetHeadUI = function(self, TT)
-  -- function num : 0_20
+function WaitInputSystem:_DoRenderShowPetHeadUI(TT)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoRenderCompareHPLog = function(self, TT)
-  -- function num : 0_21
+function WaitInputSystem:_DoRenderCompareHPLog(TT)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoRenderResetBattleState = function(self, TT)
-  -- function num : 0_22
+function WaitInputSystem:_DoRenderResetBattleState(TT)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoRenderPlayWaitInputBuff = function(self, TT)
-  -- function num : 0_23
+function WaitInputSystem:_DoRenderPlayWaitInputBuff(TT)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoRenderComparePieceType = function(self, TT)
-  -- function num : 0_24
+function WaitInputSystem:_DoRenderComparePieceType(TT)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem.ClearPreviewChainPathData = function(self)
-  -- function num : 0_25
+function WaitInputSystem:ClearPreviewChainPathData()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoRenderAutoFight = function(self, TT, teamEntity)
-  -- function num : 0_26
+function WaitInputSystem:_DoRenderAutoFight(TT, teamEntity)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoRenderSetPreviewTeam = function(self, teamEntity)
-  -- function num : 0_27
+function WaitInputSystem:_DoRenderSetPreviewTeam(teamEntity)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInputSystem._DoRenderPlayerBuffDelayed = function(self, TT)
-  -- function num : 0_28
+function WaitInputSystem:_DoRenderPlayerBuffDelayed(TT)
 end
-
-

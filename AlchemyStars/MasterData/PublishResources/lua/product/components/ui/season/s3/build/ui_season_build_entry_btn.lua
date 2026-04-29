@@ -1,23 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/build/ui_season_build_entry_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuildEntryBtn", UICustomWidget)
 UISeasonBuildEntryBtn = UISeasonBuildEntryBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuildEntryBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonBuildEntryBtn:OnShow(uiParams)
   self:InitWidget()
-  self._seaonModule = (GameGlobal.GetModule)(SeasonModule)
-  self._context = (self._seaonModule):GetSeasonBuildContext()
+  self._seaonModule = GameGlobal.GetModule(SeasonModule)
+  self._context = self._seaonModule:GetSeasonBuildContext()
   if not self._context then
     self._context = UISeasonBuildContextS3:New()
-    ;
-    (self._context):Init()
-    ;
-    (self._seaonModule):SetSeasonBuildContext(self._context)
+    self._context:Init()
+    self._seaonModule:SetSeasonBuildContext(self._context)
   end
   self:RefreshStatus()
   self:AttachEvent(GameEventType.OnSeasonBuildLevelUp, self.RefreshStatus)
@@ -25,55 +16,36 @@ UISeasonBuildEntryBtn.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.OnSeasonTaskRefreshed, self.RefreshStatus)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildEntryBtn.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonBuildEntryBtn:OnHide()
   self:DetachEvent(GameEventType.OnSeasonBuildLevelUp, self.RefreshStatus)
   self:DetachEvent(GameEventType.OnSeasonTaskReset, self.RefreshStatus)
   self:DetachEvent(GameEventType.OnSeasonTaskRefreshed, self.RefreshStatus)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildEntryBtn.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonBuildEntryBtn:InitWidget()
   self.tip1Go = self:GetGameObject("tip1Go")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildEntryBtn.RefreshStatus = function(self)
-  -- function num : 0_3
-  local canBuild = (self._context):CanBuild()
-  ;
-  (self.tip1Go):SetActive(canBuild)
+function UISeasonBuildEntryBtn:RefreshStatus()
+  local canBuild = self._context:CanBuild()
+  self.tip1Go:SetActive(canBuild)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildEntryBtn.BtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  if not (self._seaonModule):CheckSeasonBuildOpen() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_109"))
-    return 
+function UISeasonBuildEntryBtn:BtnOnClick(go)
+  if not self._seaonModule:CheckSeasonBuildOpen() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_109"))
+    return
   end
-  local mgr = ((self._seaonModule).uiModule):SeasonManager()
-  local eventPoint = (mgr:SeasonMapManager()):GetEventPoint(8003301)
-  ;
-  ((mgr:SeasonInputManager()):GetInput()):SetClickUnLockZone(eventPoint:IsUnlock())
-  ;
-  (((mgr:SeasonInputManager()):GetInput()):GetClickEffect()):Click()
-  ;
-  ((mgr:SeasonInputManager()):GetInput()):SetCurClickEventPoint(eventPoint)
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+  local mgr = self._seaonModule.uiModule:SeasonManager()
+  local eventPoint = mgr:SeasonMapManager():GetEventPoint(8003301)
+  mgr:SeasonInputManager():GetInput():SetClickUnLockZone(eventPoint:IsUnlock())
+  mgr:SeasonInputManager():GetInput():GetClickEffect():Click()
+  mgr:SeasonInputManager():GetInput():SetCurClickEventPoint(eventPoint)
+  local guideModule = GameGlobal.GetModule(GuideModule)
   if guideModule:IsGuideDone(80030101) then
     eventPoint:AutoMoveToMe()
   else
     eventPoint:GuideMove()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.Button)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Button)
   end
 end
-
-

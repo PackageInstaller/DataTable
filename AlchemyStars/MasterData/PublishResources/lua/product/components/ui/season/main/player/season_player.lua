@@ -1,41 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/player/season_player.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonPlayer", Object)
 SeasonPlayer = SeasonPlayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonPlayer.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  local seasonID = ((self._seasonModule).uiModule):GetSeasonID()
-  self._cfgs = (Cfg.cfg_season_map_player)({SeasonID = seasonID})
+function SeasonPlayer:Constructor()
+  self._seasonModule = GameGlobal.GetModule(SeasonModule)
+  local seasonID = self._seasonModule.uiModule:GetSeasonID()
+  self._cfgs = Cfg.cfg_season_map_player({SeasonID = seasonID})
   if not self._cfgs then
-    (Log.fatal)("SeasonPlayer not cfg!")
+    Log.fatal("SeasonPlayer not cfg!")
   end
   self._navTransEndPoint = nil
   self._navTransTargetPosition = nil
   self._curWalkNavName = nil
   self._curNavAreaModelName = nil
-  local curObj = (self._seasonModule):GetCurSeasonObj()
+  local curObj = self._seasonModule:GetCurSeasonObj()
   self._componentInfo = curObj:GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
-  self._clientInfo = (self._componentInfo).m_client_info
-  self._seasonManager = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
-  self._seasonMapManager = (self._seasonManager):SeasonMapManager()
-  self._coverManager = (self._seasonManager):SeasonCoverManager()
-  self._coverByNavManager = (self._seasonManager):SeasonCoverByNavManager()
-  self._showByNavManager = (self._seasonManager):SeasonShowByNavManager()
-  self._showByNavMnager = (self._seasonManager):SeasonShowByNavManager()
-  self._zoneFlagLayer = ((self._seasonManager):SeasonSceneManager()):GetLayer(SeasonSceneLayer.ZoneFlag)
-  self._navManager = (self._seasonManager):NavManager()
-  ;
-  (self._navManager):SetPlayer(self)
-  ;
-  (self._navManager):InitOffMeshLinkData()
-  self._cameraManager = (self._seasonManager):SeasonCameraManager()
-  self._mapMaterialLayer = ((self._seasonManager):SeasonSceneManager()):GetLayer(SeasonSceneLayer.SoundMaterial)
+  self._clientInfo = self._componentInfo.m_client_info
+  self._seasonManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
+  self._seasonMapManager = self._seasonManager:SeasonMapManager()
+  self._coverManager = self._seasonManager:SeasonCoverManager()
+  self._coverByNavManager = self._seasonManager:SeasonCoverByNavManager()
+  self._showByNavManager = self._seasonManager:SeasonShowByNavManager()
+  self._showByNavMnager = self._seasonManager:SeasonShowByNavManager()
+  self._zoneFlagLayer = self._seasonManager:SeasonSceneManager():GetLayer(SeasonSceneLayer.ZoneFlag)
+  self._navManager = self._seasonManager:NavManager()
+  self._navManager:SetPlayer(self)
+  self._navManager:InitOffMeshLinkData()
+  self._cameraManager = self._seasonManager:SeasonCameraManager()
+  self._mapMaterialLayer = self._seasonManager:SeasonSceneManager():GetLayer(SeasonSceneLayer.SoundMaterial)
   self:_CreatePlayer()
   self._crossFadeTime = 0.2
   self._curModel = nil
@@ -51,449 +42,280 @@ SeasonPlayer.Constructor = function(self)
   self:_SetDefaultModel()
   self:_CheckPosition(0)
   self:CheckCover()
-  self._autoBinder = AutoEventBinder:New((GameGlobal.EventDispatcher)())
-  ;
-  (self._autoBinder):BindEvent(GameEventType.OnEventPointProgressChange, self, self._OnCheckSwitchModel)
+  self._autoBinder = AutoEventBinder:New(GameGlobal.EventDispatcher())
+  self._autoBinder:BindEvent(GameEventType.OnEventPointProgressChange, self, self._OnCheckSwitchModel)
   self._playerEffect = SeasonPlayerEffect:New()
-  ;
-  (self._playerEffect):Init(self._playerRoot)
+  self._playerEffect:Init(self._playerRoot)
   self._isDisposed = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer._CreatePlayer = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._playerRoot = (GameObjectHelper.CreateEmpty)("Player", nil)
-  self._agent = (GameObjectHelper.CreateEmpty)("Agent", nil)
-  self._agentTransform = (self._agent).transform
-  ;
-  (self._agentTransform):SetParent((self._playerRoot).transform)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._agentTransform).position = Vector3.zero
-  self._navMeshAgent = (self._agent):AddComponent(typeof((UnityEngine.AI).NavMeshAgent))
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).agentTypeID = (HelperProxy:GetInstance()):GetNavAgentID(AircraftNavAgent.Normal)
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).angularSpeed = 0
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).acceleration = 0
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).speed = 0
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).stoppingDistance = 0.1
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).autoBraking = false
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).enabled = false
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).autoTraverseOffMeshLink = false
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).radius = 0.15
+function SeasonPlayer:_CreatePlayer()
+  self._playerRoot = GameObjectHelper.CreateEmpty("Player", nil)
+  self._agent = GameObjectHelper.CreateEmpty("Agent", nil)
+  self._agentTransform = self._agent.transform
+  self._agentTransform:SetParent(self._playerRoot.transform)
+  self._agentTransform.position = Vector3.zero
+  self._navMeshAgent = self._agent:AddComponent(typeof(UnityEngine.AI.NavMeshAgent))
+  self._navMeshAgent.agentTypeID = HelperProxy:GetInstance():GetNavAgentID(AircraftNavAgent.Normal)
+  self._navMeshAgent.angularSpeed = 0
+  self._navMeshAgent.acceleration = 0
+  self._navMeshAgent.speed = 0
+  self._navMeshAgent.stoppingDistance = 0.1
+  self._navMeshAgent.autoBraking = false
+  self._navMeshAgent.enabled = false
+  self._navMeshAgent.autoTraverseOffMeshLink = false
+  self._navMeshAgent.radius = 0.15
   self:SetNavAreaMask(1)
-  self._helpAgent = ((UnityEngine.GameObject).Instantiate)(self._agent, ((self._agent).transform).parent)
-  self._navMeshHelpAgent = (self._helpAgent):GetComponent(typeof((UnityEngine.AI).NavMeshAgent))
-  -- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshHelpAgent).enabled = false
+  self._helpAgent = UnityEngine.GameObject.Instantiate(self._agent, self._agent.transform.parent)
+  self._navMeshHelpAgent = self._helpAgent:GetComponent(typeof(UnityEngine.AI.NavMeshAgent))
+  self._navMeshHelpAgent.enabled = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.SetNavAreaMask = function(self, mask)
-  -- function num : 0_2
+function SeasonPlayer:SetNavAreaMask(mask)
   self._navAreaMask = mask
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).areaMask = mask
+  self._navMeshAgent.areaMask = mask
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer._CreateModels = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,cfg in ipairs(self._cfgs) do
-    (table.insert)(self._models, SeasonPlayerModel:New(self, cfg, self._clientInfo))
+function SeasonPlayer:_CreateModels()
+  for _, cfg in ipairs(self._cfgs) do
+    table.insert(self._models, SeasonPlayerModel:New(self, cfg, self._clientInfo))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer._SetDefaultModel = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local key = tonumber((self._seasonModule):GetCurSeasonID() .. SeasonKey.Mode)
-  local curMode = ((self._clientInfo).ext)[key]
+function SeasonPlayer:_SetDefaultModel()
+  local key = tonumber(self._seasonModule:GetCurSeasonID() .. SeasonKey.Mode)
+  local curMode = self._clientInfo.ext[key]
   if curMode then
     self:SwitchModel(curMode)
   else
-    local cfg = (Cfg.cfg_season_map)[(self._seasonModule):GetCurSeasonID()]
+    local cfg = Cfg.cfg_season_map[self._seasonModule:GetCurSeasonID()]
     if cfg then
       self:SwitchModel(cfg.Mode)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.SwitchModel = function(self, mapMode)
-  -- function num : 0_5
+function SeasonPlayer:SwitchModel(mapMode)
   self:_OnSwitchModel(mapMode)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.Dispose = function(self, isExit)
-  -- function num : 0_6 , upvalues : _ENV
+function SeasonPlayer:Dispose(isExit)
   self._isDisposed = true
   if isExit then
     self:SyncPosition(true)
   end
-  ;
-  (self._playerEffect):Dispose()
-  for _,model in pairs(self._models) do
+  self._playerEffect:Dispose()
+  for _, model in pairs(self._models) do
     model:Dispose()
   end
-  ;
-  (table.clear)(self._models)
+  table.clear(self._models)
   self._curModel = nil
-  ;
-  (self._line):Dispose()
-  ;
-  (self._fixedLine):Dispose()
-  ;
-  ((UnityEngine.Object).Destroy)(self._playerRoot)
+  self._line:Dispose()
+  self._fixedLine:Dispose()
+  UnityEngine.Object.Destroy(self._playerRoot)
   self._agent = nil
   self._navMeshAgent = nil
   self._coverManager = nil
   self._line = nil
   self._fixedLine = nil
   self._express = nil
-  ;
-  (self._autoBinder):UnBindAllEvents()
+  self._autoBinder:UnBindAllEvents()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.Update = function(self, deltaTime)
-  -- function num : 0_7 , upvalues : _ENV
+function SeasonPlayer:Update(deltaTime)
   if self._isDisposed then
-    return 
+    return
   end
   if self._navTransEffPlaying then
-    return 
+    return
   end
-  if (tolua.isnull)(self._navMeshAgent) or not self._navMeshAgent then
-    return 
+  if tolua.isnull(self._navMeshAgent) or not self._navMeshAgent then
+    return
   end
-  if not (tolua.isnull)(self._navMeshHelpAgent) and self._navMeshHelpAgent and (self._navMeshHelpAgent).enabled then
-    local length = (((self._navMeshHelpAgent).path).corners).Length
-    if length >= 2 then
+  if not tolua.isnull(self._navMeshHelpAgent) and self._navMeshHelpAgent and self._navMeshHelpAgent.enabled then
+    local length = self._navMeshHelpAgent.path.corners.Length
+    if 2 <= length then
       local index = length - 1
-      local targetOnNav = Vector3(((((self._navMeshHelpAgent).path).corners)[index]).x, ((((self._navMeshHelpAgent).path).corners)[index]).y, ((((self._navMeshHelpAgent).path).corners)[index]).z)
+      local targetOnNav = Vector3(self._navMeshHelpAgent.path.corners[index].x, self._navMeshHelpAgent.path.corners[index].y, self._navMeshHelpAgent.path.corners[index].z)
       self._navTransTargetPosition = targetOnNav
-      -- DECOMPILER ERROR at PC57: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._navMeshHelpAgent).enabled = false
+      self._navMeshHelpAgent.enabled = false
       self:NavToOtherIsland()
     end
-    do
-      do
-        do return  end
-        if (self._navMeshAgent).enabled and self.findDestinationOnNav then
-          local length = (((self._navMeshAgent).path).corners).Length
-          if length >= 2 then
-            local index = length - 1
-            local targetOnNav = Vector3(((((self._navMeshAgent).path).corners)[index]).x, ((((self._navMeshAgent).path).corners)[index]).y, ((((self._navMeshAgent).path).corners)[index]).z)
-            self:SetDestinationOnNav(targetOnNav)
-          end
-          do
-            do
-              do return  end
-              if (self._navMeshAgent).enabled and not self.findDestinationOnNav then
-                if (Vector3.Distance)((self._navMeshAgent).destination, (self._agentTransform).position) <= (self._navMeshAgent).stoppingDistance then
-                  if self._navTransEndPoint then
-                    self._navTransEffPlaying = true
-                    local endPos = (self._navTransEndPoint):GetNavPosition()
-                    -- DECOMPILER ERROR at PC122: Confused about usage of register: R3 in 'UnsetPending'
-
-                    ;
-                    (self._agentTransform).position = endPos
-                    ;
-                    (self._curModel):StopFootEffect()
-                    ;
-                    (self._curModel):SetPosition(((self._agentTransform).position).x, 0, ((self._agentTransform).position).z)
-                    -- DECOMPILER ERROR at PC137: Confused about usage of register: R3 in 'UnsetPending'
-
-                    ;
-                    (self._navMeshAgent).enabled = false
-                    ;
-                    (self._fixedLine):ClearLineRender()
-                    self:_SetAgentTransDestination(self._navTransTargetPosition)
-                    ;
-                    (self._navTransStartPoint):PlayTransAni()
-                    ;
-                    (self._navTransEndPoint):PlayTransAni()
-                    ;
-                    (self._playerEffect):PlayEffectWithParent("TransEndPoint", ((self._curModel):GameObject()).transform)
-                    ;
-                    (self._curModel):PlayFootEffect()
-                    self._navTransEffPlaying = nil
-                    self._navTransEndPoint = nil
-                    self:_CheckPosition(deltaTime)
-                  else
-                    do
-                      self:Stop(true)
-                      self:_CheckPosition(deltaTime)
-                      self:_CheckPosition(deltaTime)
-                      if (self._navMeshAgent).isOnOffMeshLink then
-                        local linkName = ((self._navMeshAgent).navMeshOwner).name
-                        local cfg = (self._navManager):GetOffMeshLinkData(linkName)
-                        if not cfg then
-                          (Log.fatal)("can\'t find cfg_season_map_nav_link by name ", linkName)
-                        else
-                          local endCfg = cfg.End
-                          local pos = Vector3(endCfg[1], endCfg[2], endCfg[3])
-                          local startPos = Vector3(((self._agentTransform).position).x, 1, ((self._agentTransform).position).z)
-                          ;
-                          (self._playerEffect):PlayEffect("TransStartPoint", startPos)
-                          -- DECOMPILER ERROR at PC217: Confused about usage of register: R7 in 'UnsetPending'
-
-                          ;
-                          (self._agentTransform).position = pos
-                          ;
-                          (self._curModel):SetPosition(((self._agentTransform).position).x, 0, ((self._agentTransform).position).z)
-                          ;
-                          (self._navMeshAgent):CompleteOffMeshLink()
-                          local endPos = Vector3(((self._agentTransform).position).x, 1, ((self._agentTransform).position).z)
-                          ;
-                          (self._playerEffect):PlayEffect("TransEndPoint", endPos)
-                        end
-                      end
-                      do
-                        local length = (((self._navMeshAgent).path).corners).Length
-                        if length >= 2 then
-                          local nextPosition = Vector3(((((self._navMeshAgent).path).corners)[1]).x, ((self._agentTransform).position).y, ((((self._navMeshAgent).path).corners)[1]).z)
-                          local direction = nextPosition - (self._agentTransform).position
-                          ;
-                          (self._agentTransform):Translate(direction.normalized * (UnityEngine.Time).deltaTime * (self._navMeshAgent).speed, (UnityEngine.Space).World)
-                          local angle = (Vector3.Angle)((self._agentTransform).forward, direction)
-                          local cross = (Vector3.Cross)((self._agentTransform).forward, direction)
-                          if cross.y < 0 then
-                            angle = -angle
-                          end
-                          ;
-                          (self._agentTransform):Rotate((self._agentTransform).up, angle * (UnityEngine.Time).deltaTime * 10, (UnityEngine.Space).Self)
-                          ;
-                          (self._curModel):Rotate((self._agentTransform).up, angle * (UnityEngine.Time).deltaTime * 10, (UnityEngine.Space).Self)
-                        end
-                        do
-                          do
-                            ;
-                            (self._curModel):SetPosition(((self._agentTransform).position).x, 0, ((self._agentTransform).position).z)
-                            ;
-                            (self._line):Update(deltaTime)
-                            ;
-                            (self._curModel):Update(deltaTime)
-                            self:CheckCover(deltaTime)
-                            self:_CheckSyncPosition(deltaTime)
-                            self:_CheckExpress(deltaTime)
-                            ;
-                            (self._express):Update(deltaTime)
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+    return
+  end
+  if self._navMeshAgent.enabled and self.findDestinationOnNav then
+    local length = self._navMeshAgent.path.corners.Length
+    if 2 <= length then
+      local index = length - 1
+      local targetOnNav = Vector3(self._navMeshAgent.path.corners[index].x, self._navMeshAgent.path.corners[index].y, self._navMeshAgent.path.corners[index].z)
+      self:SetDestinationOnNav(targetOnNav)
+    end
+    return
+  end
+  if self._navMeshAgent.enabled and not self.findDestinationOnNav then
+    if Vector3.Distance(self._navMeshAgent.destination, self._agentTransform.position) <= self._navMeshAgent.stoppingDistance then
+      if self._navTransEndPoint then
+        self._navTransEffPlaying = true
+        local endPos = self._navTransEndPoint:GetNavPosition()
+        self._agentTransform.position = endPos
+        self._curModel:StopFootEffect()
+        self._curModel:SetPosition(self._agentTransform.position.x, 0, self._agentTransform.position.z)
+        self._navMeshAgent.enabled = false
+        self._fixedLine:ClearLineRender()
+        self:_SetAgentTransDestination(self._navTransTargetPosition)
+        self._navTransStartPoint:PlayTransAni()
+        self._navTransEndPoint:PlayTransAni()
+        self._playerEffect:PlayEffectWithParent("TransEndPoint", self._curModel:GameObject().transform)
+        self._curModel:PlayFootEffect()
+        self._navTransEffPlaying = nil
+        self._navTransEndPoint = nil
+        self:_CheckPosition(deltaTime)
+      else
+        self:Stop(true)
+        self:_CheckPosition(deltaTime)
+      end
+    else
+      self:_CheckPosition(deltaTime)
+      if self._navMeshAgent.isOnOffMeshLink then
+        local linkName = self._navMeshAgent.navMeshOwner.name
+        local cfg = self._navManager:GetOffMeshLinkData(linkName)
+        if not cfg then
+          Log.fatal("can't find cfg_season_map_nav_link by name ", linkName)
+        else
+          local endCfg = cfg.End
+          local pos = Vector3(endCfg[1], endCfg[2], endCfg[3])
+          local startPos = Vector3(self._agentTransform.position.x, 1, self._agentTransform.position.z)
+          self._playerEffect:PlayEffect("TransStartPoint", startPos)
+          self._agentTransform.position = pos
+          self._curModel:SetPosition(self._agentTransform.position.x, 0, self._agentTransform.position.z)
+          self._navMeshAgent:CompleteOffMeshLink()
+          local endPos = Vector3(self._agentTransform.position.x, 1, self._agentTransform.position.z)
+          self._playerEffect:PlayEffect("TransEndPoint", endPos)
         end
       end
+      local length = self._navMeshAgent.path.corners.Length
+      if 2 <= length then
+        local nextPosition = Vector3(self._navMeshAgent.path.corners[1].x, self._agentTransform.position.y, self._navMeshAgent.path.corners[1].z)
+        local direction = nextPosition - self._agentTransform.position
+        self._agentTransform:Translate(direction.normalized * UnityEngine.Time.deltaTime * self._navMeshAgent.speed, UnityEngine.Space.World)
+        local angle = Vector3.Angle(self._agentTransform.forward, direction)
+        local cross = Vector3.Cross(self._agentTransform.forward, direction)
+        if cross.y < 0 then
+          angle = -angle
+        end
+        self._agentTransform:Rotate(self._agentTransform.up, angle * UnityEngine.Time.deltaTime * 10, UnityEngine.Space.Self)
+        self._curModel:Rotate(self._agentTransform.up, angle * UnityEngine.Time.deltaTime * 10, UnityEngine.Space.Self)
+      end
+      self._curModel:SetPosition(self._agentTransform.position.x, 0, self._agentTransform.position.z)
     end
+    self._line:Update(deltaTime)
+    self._curModel:Update(deltaTime)
+    self:CheckCover(deltaTime)
+    self:_CheckSyncPosition(deltaTime)
   end
+  self:_CheckExpress(deltaTime)
+  self._express:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.IsPlayer = function(self, gameObject)
-  -- function num : 0_8
-  do return not gameObject or gameObject == (self._curModel):GameObject() end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function SeasonPlayer:IsPlayer(gameObject)
+  return gameObject and gameObject == self._curModel:GameObject()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.PlayerGameObject = function(self)
-  -- function num : 0_9
+function SeasonPlayer:PlayerGameObject()
   return self._playerRoot
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.PlayerTansform = function(self)
-  -- function num : 0_10
-  return (self._playerRoot).transform
+function SeasonPlayer:PlayerTansform()
+  return self._playerRoot.transform
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.Transform = function(self)
-  -- function num : 0_11
+function SeasonPlayer:Transform()
   return self._agentTransform
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.Position = function(self)
-  -- function num : 0_12
-  return (self._agentTransform).position
+function SeasonPlayer:Position()
+  return self._agentTransform.position
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.Rotation = function(self)
-  -- function num : 0_13
-  return (self._agentTransform).rotation
+function SeasonPlayer:Rotation()
+  return self._agentTransform.rotation
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.RealTransform = function(self)
-  -- function num : 0_14
-  return (self._curModel):Transform()
+function SeasonPlayer:RealTransform()
+  return self._curModel:Transform()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.RealPosition = function(self)
-  -- function num : 0_15
-  return (self._curModel):Position()
+function SeasonPlayer:RealPosition()
+  return self._curModel:Position()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.Cfg = function(self)
-  -- function num : 0_16
-  return (self._curModel):Cfg()
+function SeasonPlayer:Cfg()
+  return self._curModel:Cfg()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.GetLastCorners = function(self)
-  -- function num : 0_17
+function SeasonPlayer:GetLastCorners()
   if self._navTransTargetPosition and self._navTransEndPoint then
     return self._navTransTargetPosition
   end
-  local length = (((self._navMeshAgent).path).corners).Length
-  if length >= 1 then
-    return (((self._navMeshAgent).path).corners)[length - 1]
+  local length = self._navMeshAgent.path.corners.Length
+  if 1 <= length then
+    return self._navMeshAgent.path.corners[length - 1]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.CurZone = function(self)
-  -- function num : 0_18
+function SeasonPlayer:CurZone()
   return self._curZone
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.CurModule = function(self)
-  -- function num : 0_19
+function SeasonPlayer:CurModule()
   return self._curModel
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.SetDestination = function(self, destination, play_move_click_sound, moveDoneCallback)
-  -- function num : 0_20 , upvalues : _ENV
+function SeasonPlayer:SetDestination(destination, play_move_click_sound, moveDoneCallback)
   self.findDestinationOnNav = false
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).enabled = false
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._navMeshHelpAgent).enabled = false
+  self._navMeshAgent.enabled = false
+  self._navMeshHelpAgent.enabled = false
   destination.y = 1
   self._moveTimer = 0
   self._isPlayMoveVoice = false
   self._moveDoneCallback = moveDoneCallback
   self._play_move_click_sound = play_move_click_sound
-  local modlePos = (self._curModel):Position()
+  local modlePos = self._curModel:Position()
   self:PlayAnimation(SeasonPlayerAnimation.Stand)
-  ;
-  (self._line):ClearLineRender()
-  ;
-  (self._fixedLine):ClearLineRender()
+  self._line:ClearLineRender()
+  self._fixedLine:ClearLineRender()
   self._orignDestination = destination
   self._navTransEndPoint = nil
   self._navTransTargetPosition = nil
-  if (self._navMeshAgent).stoppingDistance < (Vector3.Distance)((self._navMeshAgent).destination, modlePos) then
-    local targetAtOtherIsland = nil
+  if Vector3.Distance(self._navMeshAgent.destination, modlePos) > self._navMeshAgent.stoppingDistance then
+    local targetAtOtherIsland
     if self:HasMoreIsland() then
-      local clickZoneId = ((self._seasonManager):SeasonInputManager()):GetClickZoneID()
+      local clickZoneId = self._seasonManager:SeasonInputManager():GetClickZoneID()
       local modleAtZone = self:CalCurZone()
-      ;
-      (Log.debug)("seasonplayer island clickAt zone ", clickZoneId, " modleAtZone ", modleAtZone)
+      Log.debug("seasonplayer island clickAt zone ", clickZoneId, " modleAtZone ", modleAtZone)
       if clickZoneId and modleAtZone and clickZoneId ~= modleAtZone then
         targetAtOtherIsland = true
         self:TryNavToOtherIsland(modleAtZone, clickZoneId, self._orignDestination)
       end
     end
-    do
-      if not targetAtOtherIsland then
-        self.findDestinationOnNav = true
-        -- DECOMPILER ERROR at PC71: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (self._navMeshAgent).enabled = true
-        ;
-        (self._navMeshAgent):SetDestination(destination)
-      end
+    if not targetAtOtherIsland then
+      self.findDestinationOnNav = true
+      self._navMeshAgent.enabled = true
+      self._navMeshAgent:SetDestination(destination)
     end
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.CalCurZone = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local originPos = (self._agentTransform).position
+function SeasonPlayer:CalCurZone()
+  local originPos = self._agentTransform.position
   originPos.y = originPos.y + 0.2
   local direction = Vector3(0, -1, 0)
-  local results = ((UnityEngine.Physics).RaycastAll)(originPos, direction, 1000, 1 << SeasonLayerMask.Scene)
-  if results and results.Length > 0 then
+  local results = UnityEngine.Physics.RaycastAll(originPos, direction, 1000, 1 << SeasonLayerMask.Scene)
+  if results and 0 < results.Length then
     for i = 0, results.Length - 1 do
-      local trans = (results[i]).transform
-      local contain, zoneID = (self._zoneFlagLayer):GetZoneID(trans.gameObject)
+      local trans = results[i].transform
+      local contain, zoneID = self._zoneFlagLayer:GetZoneID(trans.gameObject)
       if contain then
         return zoneID
       end
@@ -501,452 +323,317 @@ SeasonPlayer.CalCurZone = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.HasMoreIsland = function(self)
-  -- function num : 0_22
-  local seasonId = ((self._seasonModule).uiModule):GetSeasonID()
-  return (self._navManager):HasMoreAsland(seasonId)
+function SeasonPlayer:HasMoreIsland()
+  local seasonId = self._seasonModule.uiModule:GetSeasonID()
+  return self._navManager:HasMoreAsland(seasonId)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.TryNavToOtherIsland = function(self, startZone, endZone, endPos)
-  -- function num : 0_23 , upvalues : _ENV
-  local startTransPoint, endTransPoint = (self._navManager):FindOtherIslandPath(startZone, (self._agentTransform).position, endZone, endPos, self._navAreaMask)
+function SeasonPlayer:TryNavToOtherIsland(startZone, endZone, endPos)
+  local startTransPoint, endTransPoint = self._navManager:FindOtherIslandPath(startZone, self._agentTransform.position, endZone, endPos, self._navAreaMask)
   if not startTransPoint or not endTransPoint then
-    (Log.error)("SeasonPlayer:TryNavToOtherIsland 未找到传送点 startZone  ", startZone, " endZone ", endZone)
-    return 
+    Log.error("SeasonPlayer:TryNavToOtherIsland 未找到传送点 startZone  ", startZone, " endZone ", endZone)
+    return
   end
   self._navTransEndPoint = endTransPoint
   self._navTransStartPoint = startTransPoint
   self._navTransTargetPosition = endPos
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self._navMeshHelpAgent).transform).position = (self._navTransEndPoint):GetPosition()
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._navMeshHelpAgent).enabled = true
-  ;
-  (self._navMeshHelpAgent):SetDestination(self._navTransTargetPosition)
+  self._navMeshHelpAgent.transform.position = self._navTransEndPoint:GetPosition()
+  self._navMeshHelpAgent.enabled = true
+  self._navMeshHelpAgent:SetDestination(self._navTransTargetPosition)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.NavToOtherIsland = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function SeasonPlayer:NavToOtherIsland()
   self:PlayAnimation(SeasonPlayerAnimation.Move)
-  self:_SetAgentTransDestination((self._navTransStartPoint):GetNavPosition())
-  ;
-  (self._fixedLine):SetLine((self._navTransEndPoint):GetPosition(), self._navTransTargetPosition, self._navAreaMask)
+  self:_SetAgentTransDestination(self._navTransStartPoint:GetNavPosition())
+  self._fixedLine:SetLine(self._navTransEndPoint:GetPosition(), self._navTransTargetPosition, self._navAreaMask)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.SetDestinationOnNav = function(self, destination)
-  -- function num : 0_25 , upvalues : _ENV
+function SeasonPlayer:SetDestinationOnNav(destination)
   self.findDestinationOnNav = nil
   self._navTransEndPoint = nil
-  ;
-  (self._fixedLine):ClearLineRender()
-  ;
-  (self._express):Interrupt(SeasonPlayerExpressType.Moving)
+  self._fixedLine:ClearLineRender()
+  self._express:Interrupt(SeasonPlayerExpressType.Moving)
   local targetPos = Vector3(destination.x, destination.y, destination.z)
-  local originPos = (self._agentTransform).position
-  local startTransPoint, endTransPoint = (self._navManager):FindTrasnsPath(originPos, targetPos, self._navAreaMask)
+  local originPos = self._agentTransform.position
+  local startTransPoint, endTransPoint = self._navManager:FindTrasnsPath(originPos, targetPos, self._navAreaMask)
   if startTransPoint and endTransPoint then
     self._navTransEndPoint = endTransPoint
     self._navTransStartPoint = startTransPoint
     self._navTransTargetPosition = destination
     self:_SetAgentTransDestination(startTransPoint:GetNavPosition())
-    ;
-    (self._fixedLine):SetLine(endTransPoint:GetPosition(), targetPos, self._navAreaMask)
+    self._fixedLine:SetLine(endTransPoint:GetPosition(), targetPos, self._navAreaMask)
   else
     self:_SetAgentTransDestination(destination)
   end
   self:PlayAnimation(SeasonPlayerAnimation.Move)
   if self.play_move_click_sound then
-    (((self._seasonManager):SeasonAudioManager()):GetSeasonAudio()):PlaySound(SeasonCriAudio.Destination)
+    self._seasonManager:SeasonAudioManager():GetSeasonAudio():PlaySound(SeasonCriAudio.Destination)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer._SetAgentTransDestination = function(self, postion)
-  -- function num : 0_26
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._navMeshAgent).enabled = true
-  ;
-  (self._navMeshAgent):SetDestination(postion)
+function SeasonPlayer:_SetAgentTransDestination(postion)
+  self._navMeshAgent.enabled = true
+  self._navMeshAgent:SetDestination(postion)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.IsMoveing = function(self)
-  -- function num : 0_27
-  if (self._navMeshAgent).enabled then
-    return not self.findDestinationOnNav
-  end
+function SeasonPlayer:IsMoveing()
+  return self._navMeshAgent.enabled and not self.findDestinationOnNav
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.PlayAnimation = function(self, name, fadeTime)
-  -- function num : 0_28 , upvalues : _ENV
-  local animation = (self._curModel):Animation()
+function SeasonPlayer:PlayAnimation(name, fadeTime)
+  local animation = self._curModel:Animation()
   if not animation or not name then
-    return 
+    return
   end
-  if not fadeTime then
-    fadeTime = self._crossFadeTime
-  end
+  fadeTime = fadeTime or self._crossFadeTime
   local animationState = animation:get_Item(name)
   if animationState then
     animation:CrossFade(animationState.name, fadeTime)
   else
-    ;
-    (Log.error)("SeasonPlayer PlayAnimation error. not exist animation", name)
+    Log.error("SeasonPlayer PlayAnimation error. not exist animation", name)
   end
   return animationState
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.CheckCover = function(self, deltaTime)
-  -- function num : 0_29
-  (self._coverManager):OnCoverCheck((self._curModel):Position())
+function SeasonPlayer:CheckCover(deltaTime)
+  self._coverManager:OnCoverCheck(self._curModel:Position())
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.GetBoneNode = function(self, name)
-  -- function num : 0_30 , upvalues : _ENV
-  local boneTransform = (GameObjectHelper.FindChild)((self._curModel):Transform(), name)
+function SeasonPlayer:GetBoneNode(name)
+  local boneTransform = GameObjectHelper.FindChild(self._curModel:Transform(), name)
   if boneTransform then
     return boneTransform
   end
-  return (self._curModel):Transform()
+  return self._curModel:Transform()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.RotateToPosition = function(self, position, speed)
-  -- function num : 0_31 , upvalues : _ENV
-  local targetPosition = Vector3(position.x, ((self._agentTransform).position).y, position.z)
-  local direction = targetPosition - (self._agentTransform).position
-  local angle = (Vector3.Angle)((self._agentTransform).forward, direction)
-  local cross = (Vector3.Cross)((self._agentTransform).forward, direction)
+function SeasonPlayer:RotateToPosition(position, speed)
+  local targetPosition = Vector3(position.x, self._agentTransform.position.y, position.z)
+  local direction = targetPosition - self._agentTransform.position
+  local angle = Vector3.Angle(self._agentTransform.forward, direction)
+  local cross = Vector3.Cross(self._agentTransform.forward, direction)
   if cross.y < 0 then
     angle = -angle
   end
-  if not speed then
-    speed = 1
-  end
-  ;
-  (self._agentTransform):Rotate((self._agentTransform).up, angle * speed, (UnityEngine.Space).Self)
-  ;
-  (self._curModel):Rotate((self._agentTransform).up, angle * speed, (UnityEngine.Space).Self)
+  speed = speed or 1
+  self._agentTransform:Rotate(self._agentTransform.up, angle * speed, UnityEngine.Space.Self)
+  self._curModel:Rotate(self._agentTransform.up, angle * speed, UnityEngine.Space.Self)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.OnMoveStop = function(self, playExpress)
-  -- function num : 0_32
+function SeasonPlayer:OnMoveStop(playExpress)
   self._moveTimer = 0
   self._isPlayMoveVoice = false
   self:_PlayEventPointExpress(playExpress)
   if self._moveDoneCallback then
-    (self._moveDoneCallback)()
+    self._moveDoneCallback()
     self._moveDoneCallback = nil
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer._PlayEventPointExpress = function(self, playExpress)
-  -- function num : 0_33 , upvalues : _ENV
-  local seasonInput = ((self._seasonManager):SeasonInputManager()):GetInput()
+function SeasonPlayer:_PlayEventPointExpress(playExpress)
+  local seasonInput = self._seasonManager:SeasonInputManager():GetInput()
   if seasonInput then
     if playExpress then
       local curEventPoint = seasonInput:GetCurClickEventPoint()
       if curEventPoint and curEventPoint:IsShow() and curEventPoint:CheckInteractionDistance(self:RealPosition()) and curEventPoint:CheckBacktrack() then
         local isPlaying, id = curEventPoint:IsPlaying()
         if isPlaying then
-          (Log.error)("SeasonPlayer curEventPoint is playing.", curEventPoint:GetID())
-          return 
+          Log.error("SeasonPlayer curEventPoint is playing.", curEventPoint:GetID())
+          return
         end
         if self:_IsTopUI() then
-          (self._express):Stop()
+          self._express:Stop()
           self:RotateToPosition(curEventPoint:Position())
-          curEventPoint:PlayExpress(curEventPoint:CurProgress(), SeasonExpressTriggerType.Active, {curEventPoint:GroupID()})
+          curEventPoint:PlayExpress(curEventPoint:CurProgress(), SeasonExpressTriggerType.Active, {
+            curEventPoint:GroupID()
+          })
           seasonInput:SetCurClickEventPoint(nil)
         else
-          ;
-          (Log.error)("SeasonPlayer PlayEventPointExpress is not top ui.")
+          Log.error("SeasonPlayer PlayEventPointExpress is not top ui.")
         end
       end
     else
-      do
-        seasonInput:SetCurClickEventPoint(nil)
-      end
+      seasonInput:SetCurClickEventPoint(nil)
     end
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.Stop = function(self, playExpress)
-  -- function num : 0_34 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._navMeshAgent).enabled = false
+function SeasonPlayer:Stop(playExpress)
+  self._navMeshAgent.enabled = false
   self:PlayAnimation(SeasonPlayerAnimation.Stand)
   self:OnMoveStop(playExpress)
-  ;
-  (self._line):ClearLineRender()
-  ;
-  (self._fixedLine):ClearLineRender()
-  local seasonInput = ((self._seasonManager):SeasonInputManager()):GetInput()
+  self._line:ClearLineRender()
+  self._fixedLine:ClearLineRender()
+  local seasonInput = self._seasonManager:SeasonInputManager():GetInput()
   if seasonInput then
-    (seasonInput:GetClickEffect()):Stop()
+    seasonInput:GetClickEffect():Stop()
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer._CheckPosition = function(self, deltaTime)
-  -- function num : 0_35 , upvalues : _ENV
+function SeasonPlayer:_CheckPosition(deltaTime)
   local mapMaterial = SeasonMapMaterial.Default
-  local originPos = (self._agentTransform).position
+  local originPos = self._agentTransform.position
   originPos.y = originPos.y + 0.2
   local direction = Vector3(0, -1, 0)
-  local results = ((UnityEngine.Physics).RaycastAll)(originPos, direction, 1000, 1 << SeasonLayerMask.Scene)
-  if results and results.Length > 0 then
+  local results = UnityEngine.Physics.RaycastAll(originPos, direction, 1000, 1 << SeasonLayerMask.Scene)
+  if results and 0 < results.Length then
     local sortResult = {}
     for i = 0, results.Length - 1 do
-      (table.insert)(sortResult, results[i])
+      table.insert(sortResult, results[i])
     end
-    ;
-    (table.sort)(sortResult, function(a, b)
-    -- function num : 0_35_0
-    do return (b.point).y < (a.point).y end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    table.sort(sortResult, function(a, b)
+      return a.point.y > b.point.y
+    end)
     local bChecked = false
     local findSoudMat = false
     for i = 1, #sortResult do
-      local trans = (sortResult[i]).transform
-      local contain, zoneID = (self._zoneFlagLayer):GetZoneID(trans.gameObject)
+      local trans = sortResult[i].transform
+      local contain, zoneID = self._zoneFlagLayer:GetZoneID(trans.gameObject)
       if contain then
         if not bChecked then
           bChecked = true
           local name = trans.name
           if self._curWalkNavName ~= name then
-            (Log.info)("SeasonPlayer Walk NavAreaChange ", name)
+            Log.info("SeasonPlayer Walk NavAreaChange ", name)
             self:_OnNavAgentAreaChanged(name)
           end
         end
-        do
-          self._curZone = zoneID
-          local unlock = ((self._seasonManager):SeasonMapManager()):IsUnLock(zoneID)
-          do
-            do
-              if ((self._seasonManager):SeasonInputManager()):GetInput() then
-                local clickUnlock = ((self._seasonManager):SeasonInputManager()):GetClickUnLockZone()
-                if not unlock and not clickUnlock then
-                  self:Stop(false)
-                end
-              end
-              if not findSoudMat then
-                mapMaterial = (self._mapMaterialLayer):GetMapMaterial(trans.gameObject)
-              end
-              -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
+        self._curZone = zoneID
+        local unlock = self._seasonManager:SeasonMapManager():IsUnLock(zoneID)
+        if self._seasonManager:SeasonInputManager():GetInput() then
+          local clickUnlock = self._seasonManager:SeasonInputManager():GetClickUnLockZone()
+          if not unlock and not clickUnlock then
+            self:Stop(false)
           end
         end
       end
+      if not findSoudMat then
+        mapMaterial, findSoudMat = self._mapMaterialLayer:GetMapMaterial(trans.gameObject)
+      end
     end
   end
-  do
-    if self._curMapMaterial ~= mapMaterial then
-      self._curMapMaterial = mapMaterial
-    end
-    -- DECOMPILER ERROR at PC125: Overwrote pending register: R8 in 'AssignReg'
-
-    if ((self._seasonManager):SeasonAudioManager()):GetSeasonAudio() then
-      (((self._seasonManager):SeasonAudioManager()):GetSeasonAudio()):PlayStepSound(findSoudMat, deltaTime)
-    end
+  if self._curMapMaterial ~= mapMaterial then
+    self._curMapMaterial = mapMaterial
+  end
+  if self._seasonManager:SeasonAudioManager():GetSeasonAudio() then
+    self._seasonManager:SeasonAudioManager():GetSeasonAudio():PlayStepSound(self._curMapMaterial, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer._OnNavAgentAreaChanged = function(self, areaName)
-  -- function num : 0_36
+function SeasonPlayer:_OnNavAgentAreaChanged(areaName)
   self._curWalkNavName = areaName
   self:_OnCheckModelByChangeNavArea(areaName)
-  ;
-  (self._coverByNavManager):OnCoverCheck(areaName)
-  ;
-  (self._showByNavManager):OnShowCheck(areaName)
+  self._coverByNavManager:OnCoverCheck(areaName)
+  self._showByNavManager:OnShowCheck(areaName)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer._CheckSyncPosition = function(self, deltaTime)
-  -- function num : 0_37
+function SeasonPlayer:_CheckSyncPosition(deltaTime)
   self._syncPosTimer = self._syncPosTimer + deltaTime
-  if self._syncPosDuration < self._syncPosTimer then
+  if self._syncPosTimer > self._syncPosDuration then
     self._syncPosTimer = 0
     self:SyncPosition()
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.SyncPosition = function(self, isDispose)
-  -- function num : 0_38 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self._StartSyncPosition, self, isDispose)
+function SeasonPlayer:SyncPosition(isDispose)
+  GameGlobal.TaskManager():StartTask(self._StartSyncPosition, self, isDispose)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer._StartSyncPosition = function(self, TT, isDispose)
-  -- function num : 0_39 , upvalues : _ENV
+function SeasonPlayer:_StartSyncPosition(TT, isDispose)
   if self._isSyncing then
-    (Log.error)("SeasonPlayer synchronizing position.")
-    return 
+    Log.error("SeasonPlayer synchronizing position.")
+    return
   end
   local pos = self:_FormatPosition()
   pos.y = 0
   if self._lastSyncPos == pos then
-    (Log.info)("SeasonPlayer position no change.", self._lastSyncPos)
-    return 
+    Log.info("SeasonPlayer position no change.", self._lastSyncPos)
+    return
   end
   self._isSyncing = true
   if isDispose then
-    (Log.info)("SeasonPlayer sync position on season exit.", pos)
+    Log.info("SeasonPlayer sync position on season exit.", pos)
   end
-  local uiSeasonModule = (self._seasonModule).uiModule
+  local uiSeasonModule = self._seasonModule.uiModule
   if not uiSeasonModule:IsBackTrack() then
-    local req = (self._seasonModule):HandleSeasonClientDataPoint(TT, pos.x, pos.y, pos.z)
+    local req = self._seasonModule:HandleSeasonClientDataPoint(TT, pos.x, pos.y, pos.z)
     self._isSyncing = false
     self._lastSyncPos = pos
     if req:GetSucc() then
-      (Log.info)("SeasonPlayer sync position succ.", pos)
+      Log.info("SeasonPlayer sync position succ.", pos)
     end
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer._FormatPosition = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function SeasonPlayer:_FormatPosition()
   local pos = self:Position()
-  local x = (math.floor)(pos.x * 10000) / 10000
-  local y = (math.floor)(pos.y * 10000) / 10000
-  local z = (math.floor)(pos.z * 10000) / 10000
+  local x = math.floor(pos.x * 10000) / 10000
+  local y = math.floor(pos.y * 10000) / 10000
+  local z = math.floor(pos.z * 10000) / 10000
   return Vector3(x, y, z)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.ResetExpress = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  local cfg = (self._curModel):Cfg()
-  self._relaxTime = (Mathf.Random)((cfg.RelaxWaitTime)[1], (cfg.RelaxWaitTime)[2]) * 1000
+function SeasonPlayer:ResetExpress()
+  local cfg = self._curModel:Cfg()
+  self._relaxTime = Mathf.Random(cfg.RelaxWaitTime[1], cfg.RelaxWaitTime[2]) * 1000
   self._curRelaxTime = 0
-  self._movingTime = (Mathf.Random)((cfg.MovingWaitTime)[1], (cfg.MovingWaitTime)[2]) * 1000
+  self._movingTime = Mathf.Random(cfg.MovingWaitTime[1], cfg.MovingWaitTime[2]) * 1000
   self._curMoveingTime = 0
-  ;
-  (self._express):Stop()
+  self._express:Stop()
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer._CheckExpress = function(self, deltaTime)
-  -- function num : 0_42 , upvalues : _ENV
+function SeasonPlayer:_CheckExpress(deltaTime)
   if self._express then
-    if (self._express):IsPlaying() then
+    if self._express:IsPlaying() then
       self:ClearWaitTime()
-    else
-      if (self._navMeshAgent).enabled and not self.findDestinationOnNav then
-        self._curRelaxTime = 0
-        self._curMoveingTime = self._curMoveingTime + deltaTime
-        if self._movingTime <= self._curMoveingTime then
-          self._curMoveingTime = 0
-          self._movingTime = (Mathf.Random)((((self._curModel):Cfg()).MovingWaitTime)[1], (((self._curModel):Cfg()).MovingWaitTime)[2]) * 1000
-          self:TryPlayExpress(SeasonPlayerExpressType.Moving)
-        end
-      else
+    elseif self._navMeshAgent.enabled and not self.findDestinationOnNav then
+      self._curRelaxTime = 0
+      self._curMoveingTime = self._curMoveingTime + deltaTime
+      if self._curMoveingTime >= self._movingTime then
         self._curMoveingTime = 0
-        self._curRelaxTime = self._curRelaxTime + deltaTime
-        if self._relaxTime <= self._curRelaxTime then
-          self._curRelaxTime = 0
-          self._relaxTime = (Mathf.Random)((((self._curModel):Cfg()).RelaxWaitTime)[1], (((self._curModel):Cfg()).RelaxWaitTime)[2]) * 1000
-          self:TryPlayExpress(SeasonPlayerExpressType.Relax)
-        end
+        self._movingTime = Mathf.Random(self._curModel:Cfg().MovingWaitTime[1], self._curModel:Cfg().MovingWaitTime[2]) * 1000
+        self:TryPlayExpress(SeasonPlayerExpressType.Moving)
+      end
+    else
+      self._curMoveingTime = 0
+      self._curRelaxTime = self._curRelaxTime + deltaTime
+      if self._curRelaxTime >= self._relaxTime then
+        self._curRelaxTime = 0
+        self._relaxTime = Mathf.Random(self._curModel:Cfg().RelaxWaitTime[1], self._curModel:Cfg().RelaxWaitTime[2]) * 1000
+        self:TryPlayExpress(SeasonPlayerExpressType.Relax)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.TryPlayExpress = function(self, expressType)
-  -- function num : 0_43
-  if (self._seasonMapManager):EventPointPlaying() then
-    return 
+function SeasonPlayer:TryPlayExpress(expressType)
+  if self._seasonMapManager:EventPointPlaying() then
+    return
   end
   if self:_IsTopUI() then
-    (self._express):Play(expressType)
+    self._express:Play(expressType)
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer._IsTopUI = function(self)
-  -- function num : 0_44 , upvalues : _ENV
-  local ui = (UISeasonHelper.CurSeasonSceneUI)()
+function SeasonPlayer:_IsTopUI()
+  local ui = UISeasonHelper.CurSeasonSceneUI()
   if ui then
-    return ((GameGlobal.UIStateManager)()):IsTopUI(ui)
+    return GameGlobal.UIStateManager():IsTopUI(ui)
   else
-    ;
-    (self._seasonModule):CheckSeasonAndMissionCoseAndJump()
+    self._seasonModule:CheckSeasonAndMissionCoseAndJump()
     return false
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.ClearWaitTime = function(self)
-  -- function num : 0_45
+function SeasonPlayer:ClearWaitTime()
   self._curRelaxTime = 0
   self._curMoveingTime = 0
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.Transmit = function(self, position, direction)
-  -- function num : 0_46 , upvalues : _ENV
+function SeasonPlayer:Transmit(position, direction)
   self:Stop()
-  ;
-  (self._curModel):SetPosition(position.x, position.y, position.z)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._agentTransform).position = Vector3(position.x, ((self._agentTransform).position).y, position.z)
+  self._curModel:SetPosition(position.x, position.y, position.z)
+  self._agentTransform.position = Vector3(position.x, self._agentTransform.position.y, position.z)
   if direction then
     self:RotateToPosition(direction)
   end
@@ -954,146 +641,103 @@ SeasonPlayer.Transmit = function(self, position, direction)
   self:CheckCover()
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.ResetPosition = function(self)
-  -- function num : 0_47 , upvalues : _ENV
-  (self._curModel):ResetPosition()
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._agentTransform).position = Vector3(((self._curModel):Position()).x, ((self._agentTransform).position).y, ((self._curModel):Position()).z)
+function SeasonPlayer:ResetPosition()
+  self._curModel:ResetPosition()
+  self._agentTransform.position = Vector3(self._curModel:Position().x, self._agentTransform.position.y, self._curModel:Position().z)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer._OnCheckSwitchModel = function(self)
-  -- function num : 0_48
-  self:_OnSwitchModel((self._seasonMapManager):Mode())
+function SeasonPlayer:_OnCheckSwitchModel()
+  self:_OnSwitchModel(self._seasonMapManager:Mode())
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer._OnCheckModelByChangeNavArea = function(self, areaName)
-  -- function num : 0_49 , upvalues : _ENV
-  for _,model in pairs(self._models) do
-    -- DECOMPILER ERROR at PC16: Unhandled construct in 'MakeBoolean' P1
-
-    if model:CheckNavAreaModel(areaName) and self._curNavAreaModelName ~= areaName then
-      (Log.debug)("[season][player] _SwitchModel by changeNavArea ", areaName)
-      self._curNavAreaModelName = areaName
-      self:_SwitchModel(model, true)
+function SeasonPlayer:_OnCheckModelByChangeNavArea(areaName)
+  for _, model in pairs(self._models) do
+    if model:CheckNavAreaModel(areaName) then
+      if self._curNavAreaModelName ~= areaName then
+        Log.debug("[season][player] _SwitchModel by changeNavArea ", areaName)
+        self._curNavAreaModelName = areaName
+        self:_SwitchModel(model, true)
+      end
+      return
     end
-    do return  end
   end
   if self._curNavAreaModelName then
     self._curNavAreaModelName = nil
-    self:_OnSwitchModel((self._seasonMapManager):Mode(), true)
+    self:_OnSwitchModel(self._seasonMapManager:Mode(), true)
   end
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer._OnSwitchModel = function(self, mapMode, dontBreakGoing)
-  -- function num : 0_50 , upvalues : _ENV
+function SeasonPlayer:_OnSwitchModel(mapMode, dontBreakGoing)
   if self._curNavAreaModelName then
-    return 
+    return
   end
-  local nextModel, defaultModel = nil, nil
-  for _,model in pairs(self._models) do
+  local nextModel, defaultModel
+  for _, model in pairs(self._models) do
     if model:IsDefault() then
       defaultModel = model
     end
-    local r1 = model:OnCheckCondition(self._seasonModule, (self._componentInfo).m_stage_info)
-    local r2 = model:MapMode() ~= 0 and (table.icontains)(model:MapMode(), mapMode)
+    local r1 = model:OnCheckCondition(self._seasonModule, self._componentInfo.m_stage_info)
+    local r2 = model:MapMode() == 0 or table.icontains(model:MapMode(), mapMode)
     if r1 and r2 then
       nextModel = model
       break
     end
   end
-  if not nextModel then
-    nextModel = defaultModel
-  end
-  ;
-  (Log.debug)("[season][player] _SwitchModel by _OnSwitchModel ")
+  nextModel = nextModel or defaultModel
+  Log.debug("[season][player] _SwitchModel by _OnSwitchModel ")
   self:_SwitchModel(nextModel, dontBreakGoing)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer._SwitchModel = function(self, nextModel, dontBreakGoing)
-  -- function num : 0_51
+function SeasonPlayer:_SwitchModel(nextModel, dontBreakGoing)
   if not nextModel or nextModel == self._curModel then
-    return 
+    return
   end
-  local position, rotation = nil, nil
+  local position, rotation
   if self._curModel then
-    position = (self._curModel):Position()
-    rotation = (self._curModel):Rotation()
-    ;
-    (self._curModel):SetActive(false)
+    position = self._curModel:Position()
+    rotation = self._curModel:Rotation()
+    self._curModel:SetActive(false)
   else
     position = nextModel:Position()
     rotation = nextModel:Rotation()
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._agentTransform).position = nextModel:Position()
+    self._agentTransform.position = nextModel:Position()
   end
   self._curModel = nextModel
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).speed = (self._curModel):Speed()
-  ;
-  (self._curModel):SetPR(position, rotation)
-  ;
-  (self._curModel):SetActive(true)
+  self._navMeshAgent.speed = self._curModel:Speed()
+  self._curModel:SetPR(position, rotation)
+  self._curModel:SetActive(true)
   if not dontBreakGoing then
     self:Stop()
   end
   self:ResetExpress()
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.TransToTarget = function(self, position, eventId)
-  -- function num : 0_52 , upvalues : _ENV
+function SeasonPlayer:TransToTarget(position, eventId)
   if self._isDisposed then
-    return 
+    return
   end
   position.y = 1
-  local modlePos = (self._curModel):Position()
-  if (Vector3.Distance)(position, modlePos) < (self._navMeshAgent).stoppingDistance then
-    return 
+  local modlePos = self._curModel:Position()
+  if Vector3.Distance(position, modlePos) < self._navMeshAgent.stoppingDistance then
+    return
   end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UISeasonTransitionAnimations", "UISeasonTransitionAnimation_Style1", 500, 500, function()
-    -- function num : 0_52_0 , upvalues : self, position, eventId
-    ((self._cameraManager):SeasonCamera()):Focus(position)
+  GameGlobal.UIStateManager():ShowDialog("UISeasonTransitionAnimations", "UISeasonTransitionAnimation_Style1", 500, 500, function()
+    self._cameraManager:SeasonCamera():Focus(position)
     self:Transmit(position)
-    ;
-    (self._playerEffect):PlayEffectWithParent("TransEndPoint", ((self._curModel):GameObject()).transform)
+    self._playerEffect:PlayEffectWithParent("TransEndPoint", self._curModel:GameObject().transform)
     if eventId then
-      local eventPoint = (self._seasonMapManager):GetEventPoint(eventId)
+      local eventPoint = self._seasonMapManager:GetEventPoint(eventId)
       if eventPoint then
         eventPoint:PlayAnimationSeq("effanim_S4_pfb_chuansongzhu_release", "effanim_S4_pfb_chuansongzhu_idle")
       end
     end
-  end
-, function()
-    -- function num : 0_52_1
-  end
-)
+  end, function()
+  end)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayer.HandleEnter = function(self, enterParam)
-  -- function num : 0_53 , upvalues : _ENV
+function SeasonPlayer:HandleEnter(enterParam)
   if not enterParam then
-    return 
+    return
   end
   local position = enterParam.position
   local style = enterParam.style
@@ -1101,5 +745,3 @@ SeasonPlayer.HandleEnter = function(self, enterParam)
     self:Transmit(position)
   end
 end
-
-

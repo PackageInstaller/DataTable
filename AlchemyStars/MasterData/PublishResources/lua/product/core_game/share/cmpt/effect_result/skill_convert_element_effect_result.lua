@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_convert_element_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillConvertGridElementEffectResult", SkillEffectResultBase)
 SkillConvertGridElementEffectResult = SkillConvertGridElementEffectResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillConvertGridElementEffectResult.Constructor = function(self, gridArray, targetElementType, blockGridArray)
-  -- function num : 0_0
+function SkillConvertGridElementEffectResult:Constructor(gridArray, targetElementType, blockGridArray)
   self._gridArray = gridArray
   self._targetElementType = targetElementType
   self._blockGridArray = blockGridArray
@@ -18,98 +11,57 @@ SkillConvertGridElementEffectResult.Constructor = function(self, gridArray, targ
   self._saveTetrisDirType = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillConvertGridElementEffectResult:GetEffectType()
   return SkillEffectType.ConvertGridElement
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectResult.GetTargetGridArray = function(self)
-  -- function num : 0_2
+function SkillConvertGridElementEffectResult:GetTargetGridArray()
   return self._gridArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectResult.GetTargetElementType = function(self)
-  -- function num : 0_3
+function SkillConvertGridElementEffectResult:GetTargetElementType()
   return self._targetElementType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectResult.GetNewGridNumByType = function(self, pieceType)
-  -- function num : 0_4
+function SkillConvertGridElementEffectResult:GetNewGridNumByType(pieceType)
   if self._targetElementType == pieceType then
     return #self._gridArray
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectResult.GetBlockGridArray = function(self)
-  -- function num : 0_5
+function SkillConvertGridElementEffectResult:GetBlockGridArray()
   return self._blockGridArray
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectResult.SetForceConvert = function(self)
-  -- function num : 0_6
+function SkillConvertGridElementEffectResult:SetForceConvert()
   self._forceConvert = true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectResult.IsForceConvert = function(self)
-  -- function num : 0_7
+function SkillConvertGridElementEffectResult:IsForceConvert()
   return self._forceConvert
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectResult.GetNotifyBuff = function(self)
-  -- function num : 0_8
+function SkillConvertGridElementEffectResult:GetNotifyBuff()
   return self._notifyBuff
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectResult.SetNotifyBuff = function(self, notifyBuff)
-  -- function num : 0_9
+function SkillConvertGridElementEffectResult:SetNotifyBuff(notifyBuff)
   self._notifyBuff = notifyBuff
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectResult.SetSaveTetrisIndex = function(self, index)
-  -- function num : 0_10
+function SkillConvertGridElementEffectResult:SetSaveTetrisIndex(index)
   self._saveTetrisIndex = index
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectResult.GetSaveTetrisIndex = function(self)
-  -- function num : 0_11
+function SkillConvertGridElementEffectResult:GetSaveTetrisIndex()
   return self._saveTetrisIndex
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectResult.SetSaveTetrisDirType = function(self, dirType)
-  -- function num : 0_12
+function SkillConvertGridElementEffectResult:SetSaveTetrisDirType(dirType)
   self._saveTetrisDirType = dirType
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConvertGridElementEffectResult.GetSaveTetrisDirType = function(self)
-  -- function num : 0_13
+function SkillConvertGridElementEffectResult:GetSaveTetrisDirType()
   return self._saveTetrisDirType
 end
-
-

@@ -1,85 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/mirage_enter_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("MirageEnterSystem", MainStateSystem)
 MirageEnterSystem = MirageEnterSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MirageEnterSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function MirageEnterSystem:_GetMainStateID()
   return GameStateID.MirageEnter
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEnterSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.info)("MirageEnter:Begin")
+function MirageEnterSystem:_OnMainStateEnter(TT)
+  Log.info("MirageEnter:Begin")
   local initStepNum = self:_DoLogicMirageEnter()
   self:_DoRenderMirageEnterUI(TT, initStepNum)
   local traps = self:_DoLogicMirageCreateTraps()
   self:_DoRenderMirageShowTraps(TT, traps)
   local warningTraps = self:_DoLogicMirageCastTrapWarningSkill()
   self:_DoRenderMiragePlayTrapWarningSkill(TT, warningTraps)
-  ;
-  (Log.info)("MirageEnter:End")
+  Log.info("MirageEnter:End")
   self:_DoLogicSwitchMainFsmState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEnterSystem._DoLogicMirageEnter = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.BanAutoFightBtn, true)
-  local mirageSvc = (self._world):GetService("MirageLogic")
+function MirageEnterSystem:_DoLogicMirageEnter()
+  self._world:EventDispatcher():Dispatch(GameEventType.BanAutoFightBtn, true)
+  local mirageSvc = self._world:GetService("MirageLogic")
   local mirageCmpt = mirageSvc:GetMirageComponent()
   return mirageCmpt:GetRemainRoundCount()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEnterSystem._DoLogicMirageCreateTraps = function(self)
-  -- function num : 0_3
+function MirageEnterSystem:_DoLogicMirageCreateTraps()
   local eTraps = {}
-  local mirageSvc = (self._world):GetService("MirageLogic")
+  local mirageSvc = self._world:GetService("MirageLogic")
   eTraps = mirageSvc:DoMirageCreateTraps()
   return eTraps
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEnterSystem._DoLogicMirageCastTrapWarningSkill = function(self)
-  -- function num : 0_4
-  local mirageSvc = (self.world):GetService("MirageLogic")
+function MirageEnterSystem:_DoLogicMirageCastTrapWarningSkill()
+  local mirageSvc = self.world:GetService("MirageLogic")
   return mirageSvc:DoMirageCastTrapWarningSkill()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEnterSystem._DoLogicSwitchMainFsmState = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.MirageEnterFinish, 1)
+function MirageEnterSystem:_DoLogicSwitchMainFsmState()
+  self._world:EventDispatcher():Dispatch(GameEventType.MirageEnterFinish, 1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEnterSystem._DoRenderMirageEnterUI = function(self, TT, initStepNum)
-  -- function num : 0_6
+function MirageEnterSystem:_DoRenderMirageEnterUI(TT, initStepNum)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEnterSystem._DoRenderMirageShowTraps = function(self, TT, traps)
-  -- function num : 0_7
+function MirageEnterSystem:_DoRenderMirageShowTraps(TT, traps)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEnterSystem._DoRenderMiragePlayTrapWarningSkill = function(self, TT, traps)
-  -- function num : 0_8
+function MirageEnterSystem:_DoRenderMiragePlayTrapWarningSkill(TT, traps)
 end
-
-

@@ -1,54 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/entrust/common/ui_n22_entrust_msg_pop_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22EntrustMsgPopController", UIController)
 UIN22EntrustMsgPopController = UIN22EntrustMsgPopController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22EntrustMsgPopController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN22EntrustMsgPopController:OnShow(uiParams)
   local title = uiParams[1]
   local desc = uiParams[2]
   local txtExit = uiParams[3] or ""
   self._exit = uiParams[4]
   local txtConfirm = uiParams[5] or ""
   self._confirm = uiParams[6]
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_mainTitle", title)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_mainDesc", desc)
-  local showExit = not (string.isnullorempty)(txtExit)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtExitBtn", txtExit)
-  ;
-  (self:GetGameObject("ExitBtn")):SetActive(showExit)
-  local showConfirm = not (string.isnullorempty)(txtConfirm)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtConfirmBtn", txtConfirm)
-  ;
-  (self:GetGameObject("ConfirmBtn")):SetActive(showConfirm)
+  UIWidgetHelper.SetLocalizationText(self, "_mainTitle", title)
+  UIWidgetHelper.SetLocalizationText(self, "_mainDesc", desc)
+  local showExit = not string.isnullorempty(txtExit)
+  UIWidgetHelper.SetLocalizationText(self, "_txtExitBtn", txtExit)
+  self:GetGameObject("ExitBtn"):SetActive(showExit)
+  local showConfirm = not string.isnullorempty(txtConfirm)
+  UIWidgetHelper.SetLocalizationText(self, "_txtConfirmBtn", txtConfirm)
+  self:GetGameObject("ConfirmBtn"):SetActive(showConfirm)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustMsgPopController.ExitBtnOnClick = function(self, go)
-  -- function num : 0_1
+function UIN22EntrustMsgPopController:ExitBtnOnClick(go)
   self:CloseDialog()
   if self._exit then
-    (self._exit)()
+    self._exit()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustMsgPopController.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_2
+function UIN22EntrustMsgPopController:ConfirmBtnOnClick(go)
   self:CloseDialog()
   if self._confirm then
-    (self._confirm)()
+    self._confirm()
   end
 end
-
-

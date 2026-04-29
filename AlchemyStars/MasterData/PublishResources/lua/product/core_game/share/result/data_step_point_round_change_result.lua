@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_step_point_round_change_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataStepPointRoundChangeResult", Object)
 DataStepPointRoundChangeResult = DataStepPointRoundChangeResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataStepPointRoundChangeResult.Constructor = function(self, curVal, oldVal)
-  -- function num : 0_0
+function DataStepPointRoundChangeResult:Constructor(curVal, oldVal)
   self._curVal = curVal
   self._oldVal = oldVal
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataStepPointRoundChangeResult.GetCurVal = function(self)
-  -- function num : 0_1
+function DataStepPointRoundChangeResult:GetCurVal()
   return self._curVal
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataStepPointRoundChangeResult.GetOldVal = function(self)
-  -- function num : 0_2
+function DataStepPointRoundChangeResult:GetOldVal()
   return self._oldVal
 end
-
-

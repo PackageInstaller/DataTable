@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_extra_mission/ui_extra_mission_detail_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIExtraMissionDetailItem", UICustomWidget)
 UIExtraMissionDetailItem = UIExtraMissionDetailItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIExtraMissionDetailItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIExtraMissionDetailItem:OnShow(uiParams)
   self._stageList = {}
   self._pageCount = 4
   self._module = self:GetModule(ExtMissionModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionDetailItem.GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIExtraMissionDetailItem:GetComponents()
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._nameEn2 = self:GetUIComponent("UILocalizationText", "nameEn2")
   self._nameIdx = self:GetUIComponent("UILocalizationText", "nameIdx")
@@ -25,17 +15,13 @@ UIExtraMissionDetailItem.GetComponents = function(self)
   self._desc = self:GetUIComponent("UILocalizationText", "desc")
   self._pagePool = self:GetUIComponent("Transform", "pagePool")
   self._pageTab = {}
-  for i = 1, (self._pagePool).childCount do
-    local go = ((self._pagePool):GetChild(self._pageCount - i)).gameObject
-    ;
-    (table.insert)(self._pageTab, go)
+  for i = 1, self._pagePool.childCount do
+    local go = self._pagePool:GetChild(self._pageCount - i).gameObject
+    table.insert(self._pageTab, go)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionDetailItem.SetData = function(self, index, id, callback)
-  -- function num : 0_2
+function UIExtraMissionDetailItem:SetData(index, id, callback)
   self:GetComponents()
   self._index = index
   self._id = id
@@ -43,73 +29,48 @@ UIExtraMissionDetailItem.SetData = function(self, index, id, callback)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionDetailItem.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._cfg_ext = (Cfg.cfg_extra_mission)[self._id]
+function UIExtraMissionDetailItem:OnValue()
+  self._cfg_ext = Cfg.cfg_extra_mission[self._id]
   if self._cfg_ext == nil then
-    (Log.fatal)("###cfg_ext is nil ! id --> ", self._id)
+    Log.fatal("###cfg_ext is nil ! id --> ", self._id)
   end
-  local nameEn = (StringTable.Get)((self._cfg_ext).ExtMissionNameEn)
-  local name = (StringTable.Get)((self._cfg_ext).ExtMissionName)
-  local desc = (StringTable.Get)((self._cfg_ext).ExtMissionDes)
-  local idx = (StringTable.Get)((self._cfg_ext).ExtMissionIdx) .. " " .. name
-  ;
-  (self._name):SetText(name)
-  ;
-  (self._nameEn2):SetText(nameEn)
-  ;
-  (self._nameIdx):SetText(idx)
-  ;
-  (self._desc):SetText(desc)
-  local state = (self._module):UI_GetExtMissionState(self._id)
+  local nameEn = StringTable.Get(self._cfg_ext.ExtMissionNameEn)
+  local name = StringTable.Get(self._cfg_ext.ExtMissionName)
+  local desc = StringTable.Get(self._cfg_ext.ExtMissionDes)
+  local idx = StringTable.Get(self._cfg_ext.ExtMissionIdx) .. " " .. name
+  self._name:SetText(name)
+  self._nameEn2:SetText(nameEn)
+  self._nameIdx:SetText(idx)
+  self._desc:SetText(desc)
+  local state = self._module:UI_GetExtMissionState(self._id)
   if state == EnumExtMissionState.Down then
-    (self._state):SetActive(true)
+    self._state:SetActive(true)
   else
-    ;
-    (self._state):SetActive(false)
+    self._state:SetActive(false)
   end
-  local cfg_misison = (Cfg.cfg_extra_mission)({})
+  local cfg_misison = Cfg.cfg_extra_mission({})
   local iconTab = {}
-  for i,v in (HelperProxy:GetInstance()):pairsByKeys(cfg_misison) do
-    (table.insert)(iconTab, v)
+  for i, v in HelperProxy:GetInstance():pairsByKeys(cfg_misison) do
+    table.insert(iconTab, v)
   end
-  local ext_c = (table.count)(cfg_misison)
+  local ext_c = table.count(cfg_misison)
   for i = 1, self._pageCount do
     if i <= ext_c then
-      ((self._pageTab)[i]):SetActive(true)
+      self._pageTab[i]:SetActive(true)
       local idx = (i - 1 + self._index) % ext_c
       if idx == 0 then
         idx = ext_c
       end
-      local icon = (iconTab[idx]).ExtMissionSmallImg
-      ;
-      (((self._pageTab)[i]):GetComponent("RawImageLoader")):LoadImage(icon)
+      local icon = iconTab[idx].ExtMissionSmallImg
+      self._pageTab[i]:GetComponent("RawImageLoader"):LoadImage(icon)
     else
-      do
-        do
-          ;
-          ((self._pageTab)[i]):SetActive(false)
-          -- DECOMPILER ERROR at PC126: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC126: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC126: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      self._pageTab[i]:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionDetailItem.bgOnClick = function(self)
-  -- function num : 0_4
+function UIExtraMissionDetailItem:bgOnClick()
   if self._callback then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
-
-

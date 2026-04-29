@@ -1,39 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_color_palette_clear_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayColorPaletteClearInstruction", BaseInstruction)
 PlayColorPaletteClearInstruction = PlayColorPaletteClearInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayColorPaletteClearInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayColorPaletteClearInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayColorPaletteClearInstruction.GetCacheResource = function(self)
-  -- function num : 0_1
+function PlayColorPaletteClearInstruction:GetCacheResource()
   local t = {}
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayColorPaletteClearInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayColorPaletteClearInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if not casterEntity:HasPetPstID() then
-    return 
+    return
   end
   if not casterEntity:HasColorPaletteRender() then
     casterEntity:AddColorPaletteRender()
   end
   local renderComponent = casterEntity:ColorPaletteRender()
   local world = casterEntity:GetOwnerWorld()
-  ;
-  (world:EventDispatcher()):Dispatch(GameEventType.ColorPaletteRefresh, (casterEntity:PetPstID()):GetPstID(), renderComponent:GetPieceTypes())
+  world:EventDispatcher():Dispatch(GameEventType.ColorPaletteRefresh, casterEntity:PetPstID():GetPstID(), renderComponent:GetPieceTypes())
 end
-
-

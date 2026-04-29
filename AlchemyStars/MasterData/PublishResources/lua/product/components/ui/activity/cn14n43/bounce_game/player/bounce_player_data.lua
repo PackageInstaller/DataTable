@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/player/bounce_player_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BouncePlayerData", Object)
 BouncePlayerData = BouncePlayerData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BouncePlayerData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function BouncePlayerData:Constructor()
   BouncePlayerData.DebugIns = self
 end
 
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
-
 BouncePlayerData.DebugIns = nil
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
 
-BouncePlayerData.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfg = (Cfg.cfg_bounce_const)[1]
+function BouncePlayerData:Init()
+  local cfg = Cfg.cfg_bounce_const[1]
   if not cfg then
-    (Log.error)("BouncePlayerData err：can\'t find cfg_bounce_const id = 1")
-    return 
+    Log.error("BouncePlayerData err：can't find cfg_bounce_const id = 1")
+    return
   end
-  self.initPos = Vector2((cfg.BirthPos)[1], (cfg.BirthPos)[2])
+  self.initPos = Vector2(cfg.BirthPos[1], cfg.BirthPos[2])
   self.gSpeed = cfg.GSpeed
   self.baseJumpSpeed = cfg.BaseJumpSpeed
   self.accDownSpeed = cfg.AccDownSpeed
@@ -42,17 +29,11 @@ BouncePlayerData.Init = function(self)
   self:Reset()
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerData.GetInitPos = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  return Vector2((self.initPos).x, (self.initPos).y)
+function BouncePlayerData:GetInitPos()
+  return Vector2(self.initPos.x, self.initPos.y)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerData.Reset = function(self)
-  -- function num : 0_3
+function BouncePlayerData:Reset()
   self.curHp = self.initHp
   self.curSpeed = 0
   self.lastAttackMs = 0
@@ -60,55 +41,41 @@ BouncePlayerData.Reset = function(self)
   self.lastJumpMs = 0
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerData.CheckAttackCD = function(self, duration, setAttackDuration)
-  -- function num : 0_4
+function BouncePlayerData:CheckAttackCD(duration, setAttackDuration)
   local ret = false
   if self.lastAttackMs == 0 then
     ret = true
   else
-    ret = self.attckCD <= duration - self.lastAttackMs
+    ret = duration - self.lastAttackMs >= self.attckCD
   end
   if ret and setAttackDuration then
     self.lastAttackMs = duration
   end
-  do return ret end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return ret
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerData.ChecAirkAttackCD = function(self, duration, setAttackDuration)
-  -- function num : 0_5
+function BouncePlayerData:ChecAirkAttackCD(duration, setAttackDuration)
   local ret = false
   if self.lastAirAttackMs == 0 then
     ret = true
   else
-    ret = self.airAttackCD <= duration - self.lastAirAttackMs
+    ret = duration - self.lastAirAttackMs >= self.airAttackCD
   end
   if ret and setAttackDuration then
     self.lastAirAttackMs = duration
   end
-  do return ret end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return ret
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerData.ChecJumpCD = function(self, duration, setDuration)
-  -- function num : 0_6
+function BouncePlayerData:ChecJumpCD(duration, setDuration)
   local ret = false
   if self.lastJumpMs == 0 then
     ret = true
   else
-    ret = self.jumpCD <= duration - self.lastJumpMs
+    ret = duration - self.lastJumpMs >= self.jumpCD
   end
   if ret and setDuration then
     self.lastJumpMs = duration
   end
-  do return ret end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return ret
 end
-
-

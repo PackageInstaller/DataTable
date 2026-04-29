@@ -1,40 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_add_hp_by_san_change.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddHPBySanChange", BuffViewBase)
 BuffViewAddHPBySanChange = BuffViewAddHPBySanChange
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddHPBySanChange.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0 , upvalues : _ENV
-  local nt = (self._buffResult):GetLogicNotify()
-  if nt:GetCurValue() ~= notify:GetCurValue() or nt:GetOldValue() ~= notify:GetOldValue() then
-    do return not nt or not notify or nt:GetNotifyType() ~= NotifyType.SanValueChange or notify:GetNotifyType() ~= NotifyType.SanValueChange end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function BuffViewAddHPBySanChange:IsNotifyMatch(notify)
+  local nt = self._buffResult:GetLogicNotify()
+  if nt and notify and nt:GetNotifyType() == NotifyType.SanValueChange and notify:GetNotifyType() == NotifyType.SanValueChange then
+    return nt:GetCurValue() == notify:GetCurValue() and nt:GetOldValue() == notify:GetOldValue()
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddHPBySanChange.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewAddHPBySanChange:PlayView(TT)
   local entity = self._entity
-  local damageInfo = (self._buffResult):GetDamageInfo()
+  local damageInfo = self._buffResult:GetDamageInfo()
   YIELD(TT)
   local materialEntity = entity
-  if entity:HasSuperEntity() and (entity:EntityType()):IsSkillHolder() then
+  if entity:HasSuperEntity() and entity:EntityType():IsSkillHolder() then
     materialEntity = entity:GetSuperEntity()
   end
   if entity:HasTeam() then
     materialEntity = entity:GetTeamLeaderPetEntity()
   end
   if materialEntity:MaterialAnimationComponent() and damageInfo:GetDamageType() == DamageType.Recover then
-    (materialEntity:MaterialAnimationComponent()):PlayCure()
+    materialEntity:MaterialAnimationComponent():PlayCure()
   end
-  local playDamageService = (self._world):GetService("PlayDamage")
+  local playDamageService = self._world:GetService("PlayDamage")
   playDamageService:AsyncUpdateHPAndDisplayDamage(materialEntity, damageInfo)
 end
-
-

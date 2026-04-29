@@ -1,57 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_element_harm_reduce.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicElementHarmReduce", BuffLogicBase)
 BuffLogicElementHarmReduce = BuffLogicElementHarmReduce
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicElementHarmReduce.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicElementHarmReduce:Constructor(buffInstance, logicParam)
   self._element = logicParam.element
   self._rate = logicParam.rate
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicElementHarmReduce.DoLogic = function(self, notify)
-  -- function num : 0_1
-  if not (self._entity):HasMonsterID() then
-    return 
+function BuffLogicElementHarmReduce:DoLogic(notify)
+  if not self._entity:HasMonsterID() then
+    return
   end
-  local cpt = ((self._buffInstance):Entity()):Attributes()
+  local cpt = self._buffInstance:Entity():Attributes()
   if self._rate == 0 then
     cpt:SetSimpleAttribute("BuffElementImmunity", self._element)
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._buffInstance)._elementHarmReduceRate = self._rate
+    self._buffInstance._elementHarmReduceRate = self._rate
   else
-    cpt:SetSimpleAttribute("BuffElementHarmReduce", {self._element, self._rate})
+    cpt:SetSimpleAttribute("BuffElementHarmReduce", {
+      self._element,
+      self._rate
+    })
   end
 end
 
 _class("BuffLogicRemoveElementHarmReduce", BuffLogicBase)
 BuffLogicRemoveElementHarmReduce = BuffLogicRemoveElementHarmReduce
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveElementHarmReduce.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveElementHarmReduce:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveElementHarmReduce.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local cpt = ((self._buffInstance):Entity()):Attributes()
-  local rate = (self._buffInstance)._elementHarmReduceRate or 1
+function BuffLogicRemoveElementHarmReduce:DoLogic(notify)
+  local cpt = self._buffInstance:Entity():Attributes()
+  local rate = self._buffInstance._elementHarmReduceRate or 1
   if rate == 0 then
     cpt:RemoveSimpleAttribute("BuffElementImmunity")
   else
     cpt:RemoveSimpleAttribute("BuffElementHarmReduce")
   end
 end
-
-

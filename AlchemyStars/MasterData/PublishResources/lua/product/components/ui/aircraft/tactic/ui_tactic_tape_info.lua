@@ -1,289 +1,230 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/tactic/ui_tactic_tape_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITacticTapeInfo", UIController)
 UITacticTapeInfo = UITacticTapeInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITacticTapeInfo.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UITacticTapeInfo:OnShow(uiParams)
   self:InitWidget()
   self._item = uiParams[1]
   self._activityN8 = uiParams[2]
   self._module = self:GetModule(AircraftModule)
-  self._tacticRoom = (self._module):GetRoomByRoomType(AirRoomType.TacticRoom)
+  self._tacticRoom = self._module:GetRoomByRoomType(AirRoomType.TacticRoom)
   if self._activityN8 then
     self._campaign = UIActivityCampaign:New()
-    ;
-    (self._campaign):LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_N8)
+    self._campaign:LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_N8)
   end
   if self._item == nil then
     AirError("传入的卡带数据为空")
-    return 
+    return
   end
-  AirLog("打开卡带详情:", (self._item):GetTemplateID(), "，pstid:", (self._item):GetID())
-  self._cfg = (Cfg.cfg_item_cartridge)[(self._item):GetTemplateID()]
-  self._isBlackFist = (self._cfg).MatchComId == ECampaignMissionComponentId.ECampaignMissionComponentId_AircraftBlackfist or (self._cfg).MatchComId == ECampaignMissionComponentId.ECampaignMissionComponentId_SimulatorBlackfist
-  ;
-  (self.title):SetText((StringTable.Get)(((self._item):GetTemplate()).Name))
-  ;
-  (self._titleOutline):SetText((StringTable.Get)(((self._item):GetTemplate()).Name))
-  ;
-  (self.des):SetText((StringTable.Get)(((self._item):GetTemplate()).Intro))
-  ;
-  (self.icon):LoadImage(((self._item):GetTemplate()).Icon)
-  ;
-  (self._quality):SetText((self._cfg).Quality)
-  self._enemyMsg = (self.enemyMsg):SpawnObject("UIEnemyMsg")
+  AirLog("打开卡带详情:", self._item:GetTemplateID(), "，pstid:", self._item:GetID())
+  self._cfg = Cfg.cfg_item_cartridge[self._item:GetTemplateID()]
+  self._isBlackFist = self._cfg.MatchComId == ECampaignMissionComponentId.ECampaignMissionComponentId_AircraftBlackfist or self._cfg.MatchComId == ECampaignMissionComponentId.ECampaignMissionComponentId_SimulatorBlackfist
+  self.title:SetText(StringTable.Get(self._item:GetTemplate().Name))
+  self._titleOutline:SetText(StringTable.Get(self._item:GetTemplate().Name))
+  self.des:SetText(StringTable.Get(self._item:GetTemplate().Intro))
+  self.icon:LoadImage(self._item:GetTemplate().Icon)
+  self._quality:SetText(self._cfg.Quality)
+  self._enemyMsg = self.enemyMsg:SpawnObject("UIEnemyMsg")
   self._difficulty = 1
   self:refreshDiff()
-  if (self._item):IsNewOverlay() then
+  if self._item:IsNewOverlay() then
     self:StartTask(self.cancelNew, self)
   end
-  local anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+  local anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
   self._player = EZTL_Player:New()
-  self._tl = EZTL_Sequence:New({EZTL_Callback:New(function()
-    -- function num : 0_0_0 , upvalues : self
-    self:Lock("PlaySwitchDiffAnim")
-  end
-), EZTL_PlayAnimation:New(anim, "uieff_TapeInfo_Switch1"), EZTL_Callback:New(function()
-    -- function num : 0_0_1 , upvalues : self
-    self:refreshDiff()
-  end
-), EZTL_PlayAnimation:New(anim, "uieff_TapeInfo_Switch2"), EZTL_Callback:New(function()
-    -- function num : 0_0_2 , upvalues : self
-    self:UnLock("PlaySwitchDiffAnim")
-  end
-)}, "难度切换动画")
+  self._tl = EZTL_Sequence:New({
+    EZTL_Callback:New(function()
+      self:Lock("PlaySwitchDiffAnim")
+    end),
+    EZTL_PlayAnimation:New(anim, "uieff_TapeInfo_Switch1"),
+    EZTL_Callback:New(function()
+      self:refreshDiff()
+    end),
+    EZTL_PlayAnimation:New(anim, "uieff_TapeInfo_Switch2"),
+    EZTL_Callback:New(function()
+      self:UnLock("PlaySwitchDiffAnim")
+    end)
+  }, "难度切换动画")
   self:_TriggerGuide()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeInfo._TriggerGuide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UITacticTapeInfo)
+function UITacticTapeInfo:_TriggerGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UITacticTapeInfo)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeInfo.OnHide = function(self)
-  -- function num : 0_2
-  if (self._player):IsPlaying() then
-    (self._player):Stop()
+function UITacticTapeInfo:OnHide()
+  if self._player:IsPlaying() then
+    self._player:Stop()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeInfo.cancelNew = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  (self:GetModule(ItemModule)):SetItemUnnewOverlay(TT, (self._item):GetID())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftTacticTapeCancelNew, (self._item):GetID())
+function UITacticTapeInfo:cancelNew(TT)
+  self:GetModule(ItemModule):SetItemUnnewOverlay(TT, self._item:GetID())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftTacticTapeCancelNew, self._item:GetID())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeInfo.changeDiff = function(self, diff)
-  -- function num : 0_4 , upvalues : _ENV
+function UITacticTapeInfo:changeDiff(diff)
   if self._difficulty == diff then
-    return 
+    return
   end
   AirLog("切换卡带难度:", self._difficulty, "->", diff)
   if self._difficulty then
-    ((self._btns)[self._difficulty]):OnSelect(false)
+    self._btns[self._difficulty]:OnSelect(false)
   end
   self._difficulty = diff
-  ;
-  (self._player):Play(self._tl)
+  self._player:Play(self._tl)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeInfo.refreshDiff = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((self._btns)[self._difficulty]):OnSelect(true)
+function UITacticTapeInfo:refreshDiff()
+  self._btns[self._difficulty]:OnSelect(true)
   if self._isBlackFist then
-    (self._enemyInfo):SetActive(false)
-    ;
-    (self._blackFistEnemy):SetActive(true)
-    local hardCfg = (Cfg.cfg_blackfist_hard)[((self._cfg).HardProID)[self._difficulty]]
-    local squadCfg = (Cfg.cfg_blackfist_squads)[((self._cfg).SquadsID)[self._difficulty]]
+    self._enemyInfo:SetActive(false)
+    self._blackFistEnemy:SetActive(true)
+    local hardCfg = Cfg.cfg_blackfist_hard[self._cfg.HardProID[self._difficulty]]
+    local squadCfg = Cfg.cfg_blackfist_squads[self._cfg.SquadsID[self._difficulty]]
     local atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
-    ;
-    (self._blackFistEnemyInfo):SpawnObjects("UIBlackfistEnemyItem", 5)
-    local ememies = (self._blackFistEnemyInfo):GetAllSpawnList()
+    self._blackFistEnemyInfo:SpawnObjects("UIBlackfistEnemyItem", 5)
+    local ememies = self._blackFistEnemyInfo:GetAllSpawnList()
     local datas = {}
-    do
-      for i = 1, 5 do
-        local dt = {}
-        local petid = squadCfg["CfgPetId" .. i]
-        local petCfg = (Cfg.cfg_pet)[petid]
-        local skinCfg = (Cfg.cfg_pet_skin)[petCfg.SkinId]
-        dt.petid = petid
-        dt.elemt1 = atlasProperty:GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((Cfg.cfg_pet_element)[petCfg.FirstElement]).Icon))
-        if petCfg.SecondElement > 0 and petCfg.Element2NeedGrade <= hardCfg.Grade then
-          dt.elemt2 = atlasProperty:GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((Cfg.cfg_pet_element)[petCfg.SecondElement]).Icon))
-        end
-        dt.lv = hardCfg.Lv
-        dt.awakening = hardCfg.Awakening
-        dt.grade = hardCfg.Grade
-        dt.equip = hardCfg.Equip
-        dt.skin = skinCfg.TeamBody
-        dt.battleMe = skinCfg.BattleMes
-        datas[i] = dt
+    for i = 1, 5 do
+      local dt = {}
+      local petid = squadCfg["CfgPetId" .. i]
+      local petCfg = Cfg.cfg_pet[petid]
+      local skinCfg = Cfg.cfg_pet_skin[petCfg.SkinId]
+      dt.petid = petid
+      dt.elemt1 = atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(Cfg.cfg_pet_element[petCfg.FirstElement].Icon))
+      if petCfg.SecondElement > 0 and hardCfg.Grade >= petCfg.Element2NeedGrade then
+        dt.elemt2 = atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(Cfg.cfg_pet_element[petCfg.SecondElement].Icon))
       end
+      dt.lv = hardCfg.Lv
+      dt.awakening = hardCfg.Awakening
+      dt.grade = hardCfg.Grade
+      dt.equip = hardCfg.Equip
+      dt.skin = skinCfg.TeamBody
+      dt.battleMe = skinCfg.BattleMes
+      datas[i] = dt
     end
     for i = 1, 5 do
-      (ememies[i]):SetData(i, datas)
+      ememies[i]:SetData(i, datas)
     end
-    local awake = ((self._cfg).RecommendAwaken)[self._difficulty]
-    local level = ((self._cfg).RecommendLV)[self._difficulty]
-    if awake > 0 then
-      ((self._bf_awake).gameObject):SetActive(true)
-      ;
-      (self._bf_awake):SetText((StringTable.Get)("str_pet_config_common_advance") .. "<size=29>" .. awake .. "</size>")
+    local awake = self._cfg.RecommendAwaken[self._difficulty]
+    local level = self._cfg.RecommendLV[self._difficulty]
+    if 0 < awake then
+      self._bf_awake.gameObject:SetActive(true)
+      self._bf_awake:SetText(StringTable.Get("str_pet_config_common_advance") .. "<size=29>" .. awake .. "</size>")
     else
-      ;
-      ((self._bf_awake).gameObject):SetActive(false)
+      self._bf_awake.gameObject:SetActive(false)
     end
-    ;
-    (self._bf_level):SetText("Lv." .. level)
-    ;
-    (self._wordParent):SetActive(false)
+    self._bf_level:SetText("Lv." .. level)
+    self._wordParent:SetActive(false)
   else
-    do
-      ;
-      (self._enemyInfo):SetActive(true)
-      ;
-      (self._blackFistEnemy):SetActive(false)
-      local missionCfg = (Cfg.cfg_campaign_mission)[((self._cfg).MissionID)[self._difficulty]]
-      if not missionCfg then
-        (Log.exception)("cfg_campaign_mission表中找不到关卡:", ((self._cfg).MissionID)[self._difficulty], ",卡带id:", (self._cfg).ID)
-      end
-      ;
-      (self._enemyMsg):SetData(missionCfg.FightLevel)
-      local wordText = nil
-      local buff = missionCfg.BaseWordBuff
-      -- DECOMPILER ERROR at PC209: Unhandled construct in 'MakeBoolean' P1
-
-      -- DECOMPILER ERROR at PC209: Unhandled construct in 'MakeBoolean' P1
-
-      if buff and type(buff) == "table" and #buff > 0 then
-        for _,wordId in ipairs(buff) do
-          local word = (Cfg.cfg_word_buff)[wordId]
-          if not word then
-            (Log.exception)("cfg_word_buff中找不到词缀:", wordId, "，MissionID:", missionCfg.CampaignMissionId)
-          end
-          local desc = (StringTable.Get)(word.Desc)
-          if wordText then
-            wordText = wordText .. "\n" .. desc
-          else
-            wordText = desc
-          end
-        end
-      end
-      do
-        do
-          if buff > 0 then
-            local word = (Cfg.cfg_word_buff)[buff]
+    self._enemyInfo:SetActive(true)
+    self._blackFistEnemy:SetActive(false)
+    local missionCfg = Cfg.cfg_campaign_mission[self._cfg.MissionID[self._difficulty]]
+    if not missionCfg then
+      Log.exception("cfg_campaign_mission表中找不到关卡:", self._cfg.MissionID[self._difficulty], ",卡带id:", self._cfg.ID)
+    end
+    self._enemyMsg:SetData(missionCfg.FightLevel)
+    local wordText
+    local buff = missionCfg.BaseWordBuff
+    if buff then
+      if type(buff) == "table" then
+        if 0 < #buff then
+          for _, wordId in ipairs(buff) do
+            local word = Cfg.cfg_word_buff[wordId]
             if not word then
-              (Log.exception)("cfg_word_buff中找不到词缀:", buff, "，MissionID:", missionCfg.CampaignMissionId)
+              Log.exception("cfg_word_buff中找不到词缀:", wordId, "，MissionID:", missionCfg.CampaignMissionId)
             end
-            wordText = (StringTable.Get)(word.Desc)
-          end
-          if wordText then
-            (self._wordText):SetText(wordText)
-            ;
-            (self._wordParent):SetActive(true)
-          else
-            ;
-            (self._wordParent):SetActive(false)
-          end
-          local awake = ((self._cfg).RecommendAwaken)[self._difficulty]
-          do
-            local level = ((self._cfg).RecommendLV)[self._difficulty]
-            if awake > 0 then
-              ((self.awake).gameObject):SetActive(true)
-              ;
-              (self.awake):SetText((StringTable.Get)("str_pet_config_common_advance") .. "<size=29>" .. awake .. "</size>")
+            local desc = StringTable.Get(word.Desc)
+            if wordText then
+              wordText = wordText .. "\n" .. desc
             else
-              ;
-              ((self.awake).gameObject):SetActive(false)
-            end
-            ;
-            (self.level):SetText("Lv." .. level)
-            local dropItems = {}
-            local fixedDrop = (UICommonHelper:GetInstance()):GetDropByAwardType(AwardType.Pass, {PassFixDropId = ((self._cfg).PassFixDropId)[self._difficulty]}, false)
-            if not self._activityN8 then
-              local extraDrop = (self._tacticRoom):GetCartridgeExtraAwards((self._item):GetID())
-              if extraDrop then
-                (table.sort)(extraDrop, function(a, b)
-    -- function num : 0_5_0 , upvalues : _ENV
-    local cfga = (Cfg.cfg_item)[a.assetid]
-    local cfgb = (Cfg.cfg_item)[b.assetid]
-    if cfgb.Color >= cfga.Color then
-      do return cfga.Color == cfgb.Color end
-      if cfgb.BagSortIndex >= cfga.BagSortIndex then
-        do return cfga.BagSortIndex == cfgb.BagSortIndex end
-        do return cfga.ID < cfgb.ID end
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
-      end
-    end
-  end
-)
-                local tmp = {}
-                for i,item in ipairs(extraDrop) do
-                  tmp[i] = {ItemID = item.assetid, Count = item.count, Type = UIItemRandomType.TeBieDiaoLuo}
-                end
-                ;
-                (table.appendArray)(dropItems, tmp)
-              end
-            end
-            do
-              ;
-              (table.appendArray)(dropItems, fixedDrop)
-              if (self._cfg).CPassRandomAward then
-                (table.appendArray)(dropItems, ((self._cfg).CPassRandomAward)[self._difficulty])
-              end
-              ;
-              (self.awardContent):SpawnObjects("UIItem", #dropItems)
-              local items = (self.awardContent):GetAllSpawnList()
-              for i,item in ipairs(dropItems) do
-                (items[i]):SetForm(UIItemForm.Tactic, UIItemScale.Level3)
-                local cfgItem = (Cfg.cfg_item)[item.ItemID]
-                if not cfgItem then
-                  (Log.exception)("cfg_item表中找不到配置:", item.ItemID)
-                end
-                ;
-                (items[i]):SetData({text1 = item.Count, icon = cfgItem.Icon, itemId = item.ItemID, quality = cfgItem.Color, topText = (UIEnum.ItemRandomStr)(item.Type), type = item.Type})
-                ;
-                (items[i]):SetClickCallBack(function(go)
-    -- function num : 0_5_1 , upvalues : self, item
-    if self.matTipInfo == nil then
-      self.matTipInfo = (self.matTip):SpawnObject("UISelectInfo")
-    end
-    ;
-    (self.matTipInfo):SetData(item.ItemID, (go.transform).position)
-  end
-)
-              end
+              wordText = desc
             end
           end
         end
+      elseif 0 < buff then
+        local word = Cfg.cfg_word_buff[buff]
+        if not word then
+          Log.exception("cfg_word_buff中找不到词缀:", buff, "，MissionID:", missionCfg.CampaignMissionId)
+        end
+        wordText = StringTable.Get(word.Desc)
       end
     end
+    if wordText then
+      self._wordText:SetText(wordText)
+      self._wordParent:SetActive(true)
+    else
+      self._wordParent:SetActive(false)
+    end
+    local awake = self._cfg.RecommendAwaken[self._difficulty]
+    local level = self._cfg.RecommendLV[self._difficulty]
+    if 0 < awake then
+      self.awake.gameObject:SetActive(true)
+      self.awake:SetText(StringTable.Get("str_pet_config_common_advance") .. "<size=29>" .. awake .. "</size>")
+    else
+      self.awake.gameObject:SetActive(false)
+    end
+    self.level:SetText("Lv." .. level)
+  end
+  local dropItems = {}
+  local fixedDrop = UICommonHelper:GetInstance():GetDropByAwardType(AwardType.Pass, {
+    PassFixDropId = self._cfg.PassFixDropId[self._difficulty]
+  }, false)
+  if not self._activityN8 then
+    local extraDrop = self._tacticRoom:GetCartridgeExtraAwards(self._item:GetID())
+    if extraDrop then
+      table.sort(extraDrop, function(a, b)
+        local cfga = Cfg.cfg_item[a.assetid]
+        local cfgb = Cfg.cfg_item[b.assetid]
+        if cfga.Color ~= cfgb.Color then
+          return cfga.Color > cfgb.Color
+        end
+        if cfga.BagSortIndex ~= cfgb.BagSortIndex then
+          return cfga.BagSortIndex > cfgb.BagSortIndex
+        end
+        return cfga.ID < cfgb.ID
+      end)
+      local tmp = {}
+      for i, item in ipairs(extraDrop) do
+        tmp[i] = {
+          ItemID = item.assetid,
+          Count = item.count,
+          Type = UIItemRandomType.TeBieDiaoLuo
+        }
+      end
+      table.appendArray(dropItems, tmp)
+    end
+  end
+  table.appendArray(dropItems, fixedDrop)
+  if self._cfg.CPassRandomAward then
+    table.appendArray(dropItems, self._cfg.CPassRandomAward[self._difficulty])
+  end
+  self.awardContent:SpawnObjects("UIItem", #dropItems)
+  local items = self.awardContent:GetAllSpawnList()
+  for i, item in ipairs(dropItems) do
+    items[i]:SetForm(UIItemForm.Tactic, UIItemScale.Level3)
+    local cfgItem = Cfg.cfg_item[item.ItemID]
+    if not cfgItem then
+      Log.exception("cfg_item表中找不到配置:", item.ItemID)
+    end
+    items[i]:SetData({
+      text1 = item.Count,
+      icon = cfgItem.Icon,
+      itemId = item.ItemID,
+      quality = cfgItem.Color,
+      topText = UIEnum.ItemRandomStr(item.Type),
+      type = item.Type
+    })
+    items[i]:SetClickCallBack(function(go)
+      if self.matTipInfo == nil then
+        self.matTipInfo = self.matTip:SpawnObject("UISelectInfo")
+      end
+      self.matTipInfo:SetData(item.ItemID, go.transform.position)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeInfo.InitWidget = function(self)
-  -- function num : 0_6
+function UITacticTapeInfo:InitWidget()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.title = self:GetUIComponent("UILocalizationText", "title")
   self.des = self:GetUIComponent("UILocalizationText", "des")
@@ -297,11 +238,9 @@ UITacticTapeInfo.InitWidget = function(self)
   btns:SpawnObjects("UITacticDiffBtn", 3)
   self._btns = btns:GetAllSpawnList()
   for i = 1, 3 do
-    ((self._btns)[i]):SetData(i, function(diff)
-    -- function num : 0_6_0 , upvalues : self
-    self:changeDiff(diff)
-  end
-)
+    self._btns[i]:SetData(i, function(diff)
+      self:changeDiff(diff)
+    end)
   end
   self._titleOutline = self:GetUIComponent("UILocalizationText", "titleoutline")
   self._wordParent = self:GetGameObject("words")
@@ -314,148 +253,113 @@ UITacticTapeInfo.InitWidget = function(self)
   self._bf_level = self:GetUIComponent("UILocalizationText", "bf_level")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeInfo.deleteTape = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UITacticTapeInfo:deleteTape(TT)
   if self._activityN8 then
     self:deleteTapeN8(TT)
-    return 
+    return
   end
   self:Lock(self:GetName())
-  AirLog("删除卡带:", (self._item):GetTemplateID(), "，pstid:", (self._item):GetID())
-  local res = (self._module):RequestDeleteCartridge(TT, (self._item):GetID())
+  AirLog("删除卡带:", self._item:GetTemplateID(), "，pstid:", self._item:GetID())
+  local res = self._module:RequestDeleteCartridge(TT, self._item:GetID())
   self:UnLock(self:GetName())
   if res:GetSucc() then
     self:CloseDialog()
-    local room = (self._module):GetRoomByRoomType(AirRoomType.TacticRoom)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftTacticRefreshTapeList)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftTryRefreshRoomUI, room:SpaceId(), false)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshRoomUI, room:SpaceId())
+    local room = self._module:GetRoomByRoomType(AirRoomType.TacticRoom)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftTacticRefreshTapeList)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftTryRefreshRoomUI, room:SpaceId(), false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshRoomUI, room:SpaceId())
   else
-    do
-      ;
-      (ToastManager.ShowToast)((self._module):GetErrorMsg(res:GetResult()))
-    end
+    ToastManager.ShowToast(self._module:GetErrorMsg(res:GetResult()))
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeInfo.deleteTapeN8 = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
-  local component = (self._campaign):GetComponentByType(CampaignComType.E_CAMPAIGN_COM_CombatSimulator, 1)
+function UITacticTapeInfo:deleteTapeN8(TT)
+  local component = self._campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_CombatSimulator, 1)
   self:Lock(self:GetName() .. ":deleteTapeN8()")
   local res = AsyncRequestRes:New()
-  component:HandleCombatSimulatorComponentDelCartridge(TT, res, (self._item):GetID())
+  component:HandleCombatSimulatorComponentDelCartridge(TT, res, self._item:GetID())
   self:UnLock(self:GetName() .. ":deleteTapeN8()")
   if not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    self._campaign:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
   self:CloseDialog()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftTacticRefreshTapeList)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftTacticRefreshTapeList)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeInfo.playBtnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N8DefaultClick)
+function UITacticTapeInfo:playBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N8DefaultClick)
   if self._activityN8 then
     self:_FightN8()
-    return 
+    return
   end
-  local missionID = ((self._cfg).MissionID)[self._difficulty]
-  local cardPstID = (self._item):GetID()
+  local missionID = self._cfg.MissionID[self._difficulty]
+  local cardPstID = self._item:GetID()
   local hardID = self._difficulty
-  AirLog("开始战斗:", (self._item):GetTemplateID(), "，pstid:", (self._item):GetID(), "，难度:", hardID)
-  local module = (GameGlobal.GetModule)(MissionModule)
+  AirLog("开始战斗:", self._item:GetTemplateID(), "，pstid:", self._item:GetID(), "，难度:", hardID)
+  local module = GameGlobal.GetModule(MissionModule)
   local ctx = module:TeamCtx()
-  local matchComID, paramKetMap = (self._module):GetCartridgeMatchParam(hardID, cardPstID)
-  local param = {missionID, matchComID, paramKetMap}
+  local matchComID, paramKetMap = self._module:GetCartridgeMatchParam(hardID, cardPstID)
+  local param = {
+    missionID,
+    matchComID,
+    paramKetMap
+  }
   ctx:Init(TeamOpenerType.Air, param)
   self:Lock("OnplayBtnOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnplayBtnOnClick, self)
+  GameGlobal.TaskManager():StartTask(self.OnplayBtnOnClick, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeInfo.OnplayBtnOnClick = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
-  local res, teamInfo = (self._module):RequestTacticFormationInfo(TT)
+function UITacticTapeInfo:OnplayBtnOnClick(TT)
+  local res, teamInfo = self._module:RequestTacticFormationInfo(TT)
   self:UnLock("OnplayBtnOnClick")
   if res:GetSucc() then
-    local module = (GameGlobal.GetModule)(MissionModule)
+    local module = GameGlobal.GetModule(MissionModule)
     local ctx = module:TeamCtx()
     ctx:InitAirTeam(teamInfo)
     self:ShowDialog("UITeams")
   else
-    do
-      local result = res:GetResult()
-      ;
-      (Log.error)("###[UITacticTapeInfo] RequestTacticFormationInfo fail ! result --> ", result)
-      ;
-      (ToastManager.ShowToast)((self._module):GetErrorMsg(res:GetResult()))
-    end
+    local result = res:GetResult()
+    Log.error("###[UITacticTapeInfo] RequestTacticFormationInfo fail ! result --> ", result)
+    ToastManager.ShowToast(self._module:GetErrorMsg(res:GetResult()))
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeInfo._FightN8 = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local missionID = ((self._cfg).MissionID)[self._difficulty]
-  local cardPstID = (self._item):GetID()
+function UITacticTapeInfo:_FightN8()
+  local missionID = self._cfg.MissionID[self._difficulty]
+  local cardPstID = self._item:GetID()
   local hardID = self._difficulty
-  AirLog("开始N8战斗:", (self._item):GetTemplateID(), "，pstid:", (self._item):GetID(), "，难度:", hardID)
+  AirLog("开始N8战斗:", self._item:GetTemplateID(), "，pstid:", self._item:GetID(), "，难度:", hardID)
   local module = self:GetModule(MissionModule)
-  local component = (self._campaign):GetComponentByType(CampaignComType.E_CAMPAIGN_COM_CombatSimulator, 1)
+  local component = self._campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_CombatSimulator, 1)
   local ctx = module:TeamCtx()
-  ctx:Init(TeamOpenerType.Campaign, {missionID, component:GetCampaignMissionComponentId(cardPstID), component:GetCampaignMissionParamKeyMap(hardID, cardPstID)})
+  ctx:Init(TeamOpenerType.Campaign, {
+    missionID,
+    component:GetCampaignMissionComponentId(cardPstID),
+    component:GetCampaignMissionParamKeyMap(hardID, cardPstID)
+  })
   self:Lock("DoEnterTeam")
   ctx:ShowDialogUITeams()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeInfo.delBtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N8DefaultClick)
-  PopMsgBox((StringTable.Get)("str_aircraft_tactic_delete_tape_tip"), function(param)
-    -- function num : 0_12_0 , upvalues : self
+function UITacticTapeInfo:delBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N8DefaultClick)
+  PopMsgBox(StringTable.Get("str_aircraft_tactic_delete_tape_tip"), function(param)
     self:StartTask(self.deleteTape, self)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeInfo.closeBtnOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
+function UITacticTapeInfo:closeBtnOnClick(go)
   AirLog("关闭卡带详情")
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeInfo.restrainBtnOnClick = function(self)
-  -- function num : 0_14
+function UITacticTapeInfo:restrainBtnOnClick()
   self:ShowDialog("UIRestrainTips")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeInfo.GetGuideBtn = function(self)
-  -- function num : 0_15
+function UITacticTapeInfo:GetGuideBtn()
   if self._btns and #self._btns >= 2 then
-    return (((self._btns)[2]).btn).gameObject
+    return self._btns[2].btn.gameObject
   end
   return nil
 end
-
-

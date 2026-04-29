@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_change_target_attribute_based_on_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultChangeTargetAttributeBasedOnDamage", SkillEffectResultBase)
 SkillEffectResultChangeTargetAttributeBasedOnDamage = SkillEffectResultChangeTargetAttributeBasedOnDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultChangeTargetAttributeBasedOnDamage.Constructor = function(self, entityID, targetBuffSeq, targetEffectType, layer, isUnload)
-  -- function num : 0_0
+function SkillEffectResultChangeTargetAttributeBasedOnDamage:Constructor(entityID, targetBuffSeq, targetEffectType, layer, isUnload)
   self._stageIndex = 1
   self._entityID = entityID
   self._targetBuffSeq = targetBuffSeq
@@ -17,5 +10,3 @@ SkillEffectResultChangeTargetAttributeBasedOnDamage.Constructor = function(self,
   self._layer = layer
   self._isUnload = isUnload
 end
-
-

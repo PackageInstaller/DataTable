@@ -1,43 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_data_base/ui_data_base_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDataBaseController", UIController)
 UIDataBaseController = UIDataBaseController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDataBaseController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDataBaseController:OnShow(uiParams)
   local id = uiParams[1]
   self._cb = uiParams[2]
   if not id then
-    (Log.error)("###[UIDataBaseController] id is nil !")
+    Log.error("###[UIDataBaseController] id is nil !")
   end
-  ;
-  (Log.debug)("###[UIDataBaseController] id --> ", id)
-  self._module = (GameGlobal.GetModule)(AircraftModule)
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  Log.debug("###[UIDataBaseController] id --> ", id)
+  self._module = GameGlobal.GetModule(AircraftModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
   self._awardid = 0
   self._data = self:_CreateDataByID(id)
   if not self._data then
-    (Log.error)("###[UIDataBaseController] self._data is nil !")
+    Log.error("###[UIDataBaseController] self._data is nil !")
   end
   self:GetComponents()
   self:OnValue()
   self:AddListeners()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController._CreateDataByID = function(self, id)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDataBaseController:_CreateDataByID(id)
   local lock = true
-  local allPassInfo = (self._module):GetThemeList()
+  local allPassInfo = self._module:GetThemeList()
   if allPassInfo[id] then
     lock = false
   else
-    local cfg = (Cfg.cfg_tactical_db_theme)[id]
+    local cfg = Cfg.cfg_tactical_db_theme[id]
     local preids = cfg.PreThemeID
     if not preids then
       lock = false
@@ -48,36 +37,23 @@ UIDataBaseController._CreateDataByID = function(self, id)
         local preNodeData = allPassInfo[preid]
         if preNodeData then
           local pre_unlock_infos = preNodeData.unlock_info_list
-          local cfg_pre = (Cfg.cfg_tactical_db_theme)[preid]
+          local cfg_pre = Cfg.cfg_tactical_db_theme[preid]
           local pre_infos = cfg_pre.InfoIDList
           local allInfoUnLock = true
           for i = 1, #pre_infos do
             local infoid = pre_infos[i]
-            if not (table.icontains)(pre_unlock_infos, infoid) then
+            if not table.icontains(pre_unlock_infos, infoid) then
               allInfoUnLock = false
               break
             end
           end
-          do
-            do
-              do
-                if not allInfoUnLock then
-                  allNodeUnLock = false
-                  break
-                end
-                allNodeUnLock = false
-                do break end
-                -- DECOMPILER ERROR at PC54: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC54: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC54: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC54: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
+          if not allInfoUnLock then
+            allNodeUnLock = false
+            break
           end
+        else
+          allNodeUnLock = false
+          break
         end
       end
       if allNodeUnLock then
@@ -85,61 +61,42 @@ UIDataBaseController._CreateDataByID = function(self, id)
       end
     end
   end
-  do
-    local passList = {}
-    if allPassInfo[id] and (allPassInfo[id]).unlock_info_list and (table.count)((allPassInfo[id]).unlock_info_list) > 0 then
-      passList = (allPassInfo[id]).unlock_info_list
-    end
-    local got = false
-    local themeDataList = (self._module):GetThemeList()
-    do
-      if themeDataList and (table.count)(themeDataList) > 0 then
-        local themeData = themeDataList[id]
-        if themeData and themeData.rewarded then
-          got = true
-        end
-      end
-      local data = DataBaseNodeData:New(id, lock, got, passList)
-      return data
+  local passList = {}
+  if allPassInfo[id] and allPassInfo[id].unlock_info_list and table.count(allPassInfo[id].unlock_info_list) > 0 then
+    passList = allPassInfo[id].unlock_info_list
+  end
+  local got = false
+  local themeDataList = self._module:GetThemeList()
+  if themeDataList and table.count(themeDataList) > 0 then
+    local themeData = themeDataList[id]
+    if themeData and themeData.rewarded then
+      got = true
     end
   end
+  local data = DataBaseNodeData:New(id, lock, got, passList)
+  return data
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.BackBtn = function(self)
-  -- function num : 0_2
+function UIDataBaseController:BackBtn()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.OnHide = function(self)
-  -- function num : 0_3
+function UIDataBaseController:OnHide()
   if self._cb then
-    (self._cb)()
+    self._cb()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.HelpBtn = function(self)
-  -- function num : 0_4
+function UIDataBaseController:HelpBtn()
   self:ShowDialog("UIHelpController", "UIDataBase")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.GetComponents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIDataBaseController:GetComponents()
   self._ltBtn = self:GetUIComponent("UISelectObjectPath", "backBtns")
-  self._backBtns = (self._ltBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_5_0 , upvalues : self
+  self._backBtns = self._ltBtn:SpawnObject("UICommonTopButton")
+  self._backBtns:SetData(function()
     self:BackBtn()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   local sop = self:GetUIComponent("UISelectObjectPath", "menu")
   self.currencyMenu = sop:SpawnObject("UICurrencyMenu")
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
@@ -159,39 +116,26 @@ UIDataBaseController.GetComponents = function(self)
   self._tips = s:SpawnObject("UISelectInfo")
   self.atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
   self._db_atlas = self:GetAsset("UIAircraftDataBase.spriteatlas", LoadType.SpriteAtlas)
-  self._sp1 = (self._db_atlas):GetSprite("n8_database_tag1")
-  self._sp2 = (self._db_atlas):GetSprite("n8_database_tag2")
+  self._sp1 = self._db_atlas:GetSprite("n8_database_tag1")
+  self._sp2 = self._db_atlas:GetSprite("n8_database_tag2")
   self._uiItemGo = self:GetGameObject("uiitem")
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self._uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self._uiItem):SetForm(UIItemForm.Base, UIItemScale.Level1)
-  ;
-  (self._uiItem):SetClickCallBack(function()
-    -- function num : 0_5_1 , upvalues : self
+  self._uiItem:SetForm(UIItemForm.Base, UIItemScale.Level1)
+  self._uiItem:SetClickCallBack(function()
     self:awardItemOnClick()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.awardItemOnClick = function(self)
-  -- function num : 0_6
-  (self._tips):SetData(self._awardid, ((self._uiItemGo).transform).position)
+function UIDataBaseController:awardItemOnClick()
+  self._tips:SetData(self._awardid, self._uiItemGo.transform.position)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.AddListeners = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIDataBaseController:AddListeners()
   self:AttachEvent(GameEventType.ItemCountChanged, self.RefreshItemInfo)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.OnValue = function(self)
-  -- function num : 0_8
+function UIDataBaseController:OnValue()
   self:RefreshItemInfo()
   self:Icon()
   self:DataInfos()
@@ -199,102 +143,73 @@ UIDataBaseController.OnValue = function(self)
   self:Desc()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.RefreshItemInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg_value = ((Cfg.cfg_aircraft_values)[37]).StringValue
-  local s1 = (string.split)(cfg_value, "|")
+function UIDataBaseController:RefreshItemInfo()
+  local cfg_value = Cfg.cfg_aircraft_values[37].StringValue
+  local s1 = string.split(cfg_value, "|")
   local topTips = {}
-  local cfg_top_tips = (Cfg.cfg_top_tips)({})
+  local cfg_top_tips = Cfg.cfg_top_tips({})
   self._id2sprite = {}
   for i = 1, #s1 do
     local id = tonumber(s1[i])
-    ;
-    (table.insert)(topTips, id)
-    local icon = (cfg_top_tips[id]).Icon
-    local sprite = (self.atlas):GetSprite(icon)
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._id2sprite)[id] = sprite
+    table.insert(topTips, id)
+    local icon = cfg_top_tips[id].Icon
+    local sprite = self.atlas:GetSprite(icon)
+    self._id2sprite[id] = sprite
   end
-  ;
-  (self.currencyMenu):SetData(topTips, true)
+  self.currencyMenu:SetData(topTips, true)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.Icon = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local icon = (self._data):GetIcon()
-  ;
-  (self._icon):LoadImage(icon)
-  local name = (self._data):GetName()
-  ;
-  (self._name):SetText((StringTable.Get)(name))
+function UIDataBaseController:Icon()
+  local icon = self._data:GetIcon()
+  self._icon:LoadImage(icon)
+  local name = self._data:GetName()
+  self._name:SetText(StringTable.Get(name))
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.DataInfos = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  self._dataInfos = (self._data):GetDataInfos()
-  if not self._dataInfos or (table.count)(self._dataInfos) <= 0 then
-    (Log.error)("###[UIDataBaseController] dataInfos is nil or 0 !")
+function UIDataBaseController:DataInfos()
+  self._dataInfos = self._data:GetDataInfos()
+  if not self._dataInfos or table.count(self._dataInfos) <= 0 then
+    Log.error("###[UIDataBaseController] dataInfos is nil or 0 !")
   end
-  ;
-  (self._dataInfoPool):SpawnObjects("UIDataBaseInfoItem", #self._dataInfos)
-  local items = (self._dataInfoPool):GetAllSpawnList()
+  self._dataInfoPool:SpawnObjects("UIDataBaseInfoItem", #self._dataInfos)
+  local items = self._dataInfoPool:GetAllSpawnList()
   for i = 1, #items do
     local item = items[i]
-    local info = (self._dataInfos)[i]
+    local info = self._dataInfos[i]
     item:SetData(i, info, self._sp1, self._sp2, function(idx)
-    -- function num : 0_11_0 , upvalues : self
-    self:InfoClick(idx)
-  end
-)
+      self:InfoClick(idx)
+    end)
   end
   self._infoIdx = 1
-  self._info = (self._dataInfos)[self._infoIdx]
+  self._info = self._dataInfos[self._infoIdx]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.InfoClick = function(self, idx)
-  -- function num : 0_12
+function UIDataBaseController:InfoClick(idx)
   if self._infoIdx == idx then
-    return 
+    return
   end
   self._infoIdx = idx
-  self._info = (self._dataInfos)[self._infoIdx]
+  self._info = self._dataInfos[self._infoIdx]
   self:Desc(true)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.Award = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local award = (self._data):GetAward()
+function UIDataBaseController:Award()
+  local award = self._data:GetAward()
   self._awardid = award.assetid or 0
   self._awardcount = award.count or 0
-  local cfg_item = (Cfg.cfg_item)[award.assetid]
+  local cfg_item = Cfg.cfg_item[award.assetid]
   if not cfg_item then
-    (Log.error)("###[UIDataBaseController] cfg_item is nil ! id --> ", self._awardid)
+    Log.error("###[UIDataBaseController] cfg_item is nil ! id --> ", self._awardid)
   end
-  ;
-  (self._awardName):SetText((StringTable.Get)(cfg_item.Name))
-  ;
-  (self._awardTex):SetText((StringTable.Get)((self._data):GetAwardDec()))
-  local got = (self._data):AwardGot()
+  self._awardName:SetText(StringTable.Get(cfg_item.Name))
+  self._awardTex:SetText(StringTable.Get(self._data:GetAwardDec()))
+  local got = self._data:AwardGot()
   if got then
-    (self._gotAward):SetActive(true)
-    ;
-    (self._getAward):SetActive(false)
+    self._gotAward:SetActive(true)
+    self._getAward:SetActive(false)
   else
-    ;
-    (self._gotAward):SetActive(false)
-    local infos = (self._data):GetDataInfos()
+    self._gotAward:SetActive(false)
+    local infos = self._data:GetDataInfos()
     local lock = false
     for i = 1, #infos do
       local info = infos[i]
@@ -303,39 +218,32 @@ UIDataBaseController.Award = function(self)
         break
       end
     end
-    do
-      do
-        if lock then
-          (self._getAward):SetActive(false)
-        else
-          ;
-          (self._getAward):SetActive(true)
-        end
-        self:SetAwardData()
-      end
+    if lock then
+      self._getAward:SetActive(false)
+    else
+      self._getAward:SetActive(true)
     end
   end
+  self:SetAwardData()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.SetAwardData = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIDataBaseController:SetAwardData()
   local v = Award:New()
   v:InitWithCount(self._awardid, self._awardcount)
   local icon = v.icon
   local quality = v.color
   local text1 = v.count
   local itemId = v.id
-  ;
-  (self._uiItem):SetData({icon = icon, quality = quality, text1 = text1, itemId = itemId})
+  self._uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    itemId = itemId
+  })
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.DescAnim = function(self, anim)
-  -- function num : 0_15
-  local time = nil
+function UIDataBaseController:DescAnim(anim)
+  local time
   if anim then
     time = 0.2
   else
@@ -353,201 +261,127 @@ UIDataBaseController.DescAnim = function(self, anim)
   if self._infoState == 1 then
     alpha1 = 1
   end
-  ;
-  (self._descScrollView_group):DOFade(alpha3, time)
-  ;
-  (self._infoLockTips_group):DOFade(alpha1, time)
-  ;
-  (self._getInfoBtn_group):DOFade(alpha2, time)
-  ;
-  (self._conditionGo_group):DOFade(alpha2, time)
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._descScrollView_group).blocksRaycasts = self._infoState == 3
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._infoLockTips_group).blocksRaycasts = self._infoState == 1
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._getInfoBtn_group).blocksRaycasts = self._infoState == 2
-  -- DECOMPILER ERROR at PC68: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._conditionGo_group).blocksRaycasts = self._infoState == 2
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  self._descScrollView_group:DOFade(alpha3, time)
+  self._infoLockTips_group:DOFade(alpha1, time)
+  self._getInfoBtn_group:DOFade(alpha2, time)
+  self._conditionGo_group:DOFade(alpha2, time)
+  self._descScrollView_group.blocksRaycasts = self._infoState == 3
+  self._infoLockTips_group.blocksRaycasts = self._infoState == 1
+  self._getInfoBtn_group.blocksRaycasts = self._infoState == 2
+  self._conditionGo_group.blocksRaycasts = self._infoState == 2
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.Desc = function(self, anim)
-  -- function num : 0_16 , upvalues : _ENV
-  local lock = (self._data):GetLock()
-  local infoLock = (self._info):GetLock()
+function UIDataBaseController:Desc(anim)
+  local lock = self._data:GetLock()
+  local infoLock = self._info:GetLock()
   if lock then
     self._infoState = 1
+  elseif infoLock then
+    self._infoState = 2
   else
-    if infoLock then
-      self._infoState = 2
-    else
-      self._infoState = 3
-    end
+    self._infoState = 3
   end
   self:DescAnim(anim)
   if not lock then
     if infoLock then
-      local conditions = (self._info):GetConditions()
-      ;
-      (self._conditionPool):SpawnObjects("UIDataBaseConditionItem", #conditions)
-      local items = (self._conditionPool):GetAllSpawnList()
+      local conditions = self._info:GetConditions()
+      self._conditionPool:SpawnObjects("UIDataBaseConditionItem", #conditions)
+      local items = self._conditionPool:GetAllSpawnList()
       for i = 1, #items do
         local item = items[i]
         local condition = conditions[i]
-        item:SetData(i, condition, (self._id2sprite)[condition:GetID()])
+        item:SetData(i, condition, self._id2sprite[condition:GetID()])
       end
     else
-      do
-        do
-          local tex = (self._info):GetDesc()
-          ;
-          (self._descTex):SetText((StringTable.Get)(tex))
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnDataBaseInfoItemClick, self._infoIdx, anim)
-        end
-      end
+      local tex = self._info:GetDesc()
+      self._descTex:SetText(StringTable.Get(tex))
     end
   end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnDataBaseInfoItemClick, self._infoIdx, anim)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.getInfoBtnOnClick = function(self, go)
-  -- function num : 0_17 , upvalues : _ENV
-  local lock = (self._data):GetLock()
+function UIDataBaseController:getInfoBtnOnClick(go)
+  local lock = self._data:GetLock()
   if not lock then
-    local red = (self._info):GetRed()
+    local red = self._info:GetRed()
     if not red then
       local tex = "str_aircraft_tip_mat_not_enough"
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)(tex))
+      ToastManager.ShowToast(StringTable.Get(tex))
     else
-      do
-        do
-          ;
-          (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_aircraft_tactic_db_info_pop_title"), function(param)
-    -- function num : 0_17_0 , upvalues : self
-    self:OnGetInfoBtnOnClick()
-  end
-, nil, function(param)
-    -- function num : 0_17_1 , upvalues : _ENV
-    (Log.debug)("###[UIDataBaseController] getInfoBtnOnClick cancel ..")
-  end
-, nil)
-          local tex = "str_aircraft_tactic_db_info_node_lock"
-          ;
-          (ToastManager.ShowToast)((StringTable.Get)(tex))
-        end
-      end
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_aircraft_tactic_db_info_pop_title"), function(param)
+        self:OnGetInfoBtnOnClick()
+      end, nil, function(param)
+        Log.debug("###[UIDataBaseController] getInfoBtnOnClick cancel ..")
+      end, nil)
     end
+  else
+    local tex = "str_aircraft_tactic_db_info_node_lock"
+    ToastManager.ShowToast(StringTable.Get(tex))
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.OnGetInfoBtnOnClick = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIDataBaseController:OnGetInfoBtnOnClick()
   self:Lock("UIDataBaseController:getInfoBtnOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.UnLockInfo, self)
+  GameGlobal.TaskManager():StartTask(self.UnLockInfo, self)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.UnLockInfo = function(self, TT)
-  -- function num : 0_19 , upvalues : _ENV
-  local infoid = (self._info):GetID()
-  local nodeid = (self._data):GetID()
-  ;
-  (self._info):UnLock()
-  ;
-  (Log.debug)("###[UIDataBaseController] :UnLockInfo(TT) nifoid --> ", infoid, "| nodeid --> ", nodeid)
-  local res = (self._module):TacticGetInformation(TT, nodeid, infoid)
+function UIDataBaseController:UnLockInfo(TT)
+  local infoid = self._info:GetID()
+  local nodeid = self._data:GetID()
+  self._info:UnLock()
+  Log.debug("###[UIDataBaseController] :UnLockInfo(TT) nifoid --> ", infoid, "| nodeid --> ", nodeid)
+  local res = self._module:TacticGetInformation(TT, nodeid, infoid)
   self:UnLock("UIDataBaseController:getInfoBtnOnClick")
   if res:GetSucc() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_tactic_db_info_succ_tips"))
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnDataBaseInfoUnLock)
-    ;
-    (self._info):UnLock()
+    ToastManager.ShowToast(StringTable.Get("str_aircraft_tactic_db_info_succ_tips"))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnDataBaseInfoUnLock)
+    self._info:UnLock()
     self:Desc()
     self:Award()
   else
     local result = res:GetResult()
-    ;
-    (Log.error)("###[UIDataBaseController] GetUnLockInfo fail ! result --> ", result)
+    Log.error("###[UIDataBaseController] GetUnLockInfo fail ! result --> ", result)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.getAwardOnClick = function(self, go)
-  -- function num : 0_20 , upvalues : _ENV
+function UIDataBaseController:getAwardOnClick(go)
   self:Lock("UIDataBaseController:getAwardOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnGetAward, self)
+  GameGlobal.TaskManager():StartTask(self.OnGetAward, self)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController.OnGetAward = function(self, TT)
-  -- function num : 0_21 , upvalues : _ENV
-  local res = (self._module):TacticUnlockTheme(TT, (self._data):GetID())
+function UIDataBaseController:OnGetAward(TT)
+  local res = self._module:TacticUnlockTheme(TT, self._data:GetID())
   self:UnLock("UIDataBaseController:getAwardOnClick")
   if res:GetSucc() then
-    (self._data):GotAward()
+    self._data:GotAward()
     self:Award()
     local awards = {}
-    local award = (self._data):GetAward()
+    local award = self._data:GetAward()
     awards[1] = award
     self:_ShowAwards(awards)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnDataBaseInfoGetAward)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnDataBaseInfoGetAward)
   else
-    do
-      local result = res:GetResult()
-      ;
-      (Log.error)("###[UIDataBaseController] OnGetAward fail ! result --> ", result)
-    end
+    local result = res:GetResult()
+    Log.error("###[UIDataBaseController] OnGetAward fail ! result --> ", result)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseController._ShowAwards = function(self, awards)
-  -- function num : 0_22 , upvalues : _ENV
+function UIDataBaseController:_ShowAwards(awards)
   local tempPets = {}
-  if #awards > 0 then
+  if 0 < #awards then
     for i = 1, #awards do
-      local ispet = (self._petModule):IsPetID((awards[i]).assetid)
+      local ispet = self._petModule:IsPetID(awards[i].assetid)
       if ispet then
-        (table.insert)(tempPets, awards[i])
+        table.insert(tempPets, awards[i])
       end
     end
   end
-  do
-    if #tempPets > 0 then
-      self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_22_0 , upvalues : _ENV, self, awards
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
+  if 0 < #tempPets then
+    self:ShowDialog("UIPetObtain", tempPets, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      self:ShowDialog("UIGetItemController", awards)
+    end)
+  else
     self:ShowDialog("UIGetItemController", awards)
   end
-)
-    else
-      self:ShowDialog("UIGetItemController", awards)
-    end
-  end
 end
-
-

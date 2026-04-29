@@ -1,51 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_reflexive_damage_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddReflexiveDamageLayer", BuffLogicBase)
 BuffLogicAddReflexiveDamageLayer = BuffLogicAddReflexiveDamageLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddReflexiveDamageLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddReflexiveDamageLayer:Constructor(buffInstance, logicParam)
   self._addValue = logicParam.addValue
   self._maxLayer = logicParam.maxLayer
   self._notifyType = logicParam.notifyType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddReflexiveDamageLayer.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicAddReflexiveDamageLayer:DoLogic(notify)
   local notifyType = notify:GetNotifyType()
   local isMatch = false
   if self._notifyType then
-    for _,v in ipairs(self._notifyType) do
+    for _, v in ipairs(self._notifyType) do
       if v == notifyType then
         isMatch = true
         break
       end
     end
   else
-    do
-      isMatch = true
-      if not isMatch then
-        return 
-      end
-      local buffCom = (self._entity):BuffComponent()
-      local layerKey = "ReflexiveDamageLayer"
-      local layer = 0
-      layer = buffCom:GetBuffValue(layerKey) or 0
-      if self._maxLayer <= layer then
-        return 
-      end
-      layer = (layer) + 1
-      buffCom:SetBuffValue(layerKey, layer)
-      local res = BuffResultLayer:New(layer)
-      return res
-    end
+    isMatch = true
   end
+  if not isMatch then
+    return
+  end
+  local buffCom = self._entity:BuffComponent()
+  local layerKey = "ReflexiveDamageLayer"
+  local layer = 0
+  layer = buffCom:GetBuffValue(layerKey) or 0
+  if layer >= self._maxLayer then
+    return
+  end
+  layer = layer + 1
+  buffCom:SetBuffValue(layerKey, layer)
+  local res = BuffResultLayer:New(layer)
+  return res
 end
-
-

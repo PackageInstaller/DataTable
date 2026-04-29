@@ -1,56 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_effect_teleport_new_pos_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayEffectTeleportNewPosInstruction", BaseInstruction)
 PlayEffectTeleportNewPosInstruction = PlayEffectTeleportNewPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEffectTeleportNewPosInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEffectTeleportNewPosInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._stageIndex = tonumber(paramList.stageIndex) or 1
   self._useCasterDir = tonumber(paramList.useCasterDir)
   self._useTeleportDir = tonumber(paramList.useTeleportDir)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectTeleportNewPosInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayEffectTeleportNewPosInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local teleportEffectResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Teleport, self._stageIndex)
   if not teleportEffectResult then
-    return 
+    return
   end
   local oldPos = teleportEffectResult:GetPosOld()
   local newPos = teleportEffectResult:GetPosNew()
   local world = casterEntity:GetOwnerWorld()
   local sEffect = world:GetService("Effect")
   local effectEntity = sEffect:CreateWorldPositionEffect(self._effectID, newPos)
-  do
-    if self._useCasterDir == 1 then
-      local dir = (casterEntity:Location()):GetDirection()
-      effectEntity:SetDirection(dir)
-    end
-    if self._useTeleportDir == 1 then
-      local dir = newPos - oldPos
-      effectEntity:SetDirection(dir)
-    end
+  if self._useCasterDir == 1 then
+    local dir = casterEntity:Location():GetDirection()
+    effectEntity:SetDirection(dir)
+  end
+  if self._useTeleportDir == 1 then
+    local dir = newPos - oldPos
+    effectEntity:SetDirection(dir)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectTeleportNewPosInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayEffectTeleportNewPosInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_res_instance/ui_res_detail_info_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIResDetailInfoCell", UICustomWidget)
 UIResDetailInfoCell = UIResDetailInfoCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIResDetailInfoCell.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIResDetailInfoCell:OnShow()
   self.nameTxt = self:GetUIComponent("UILocalizationText", "name")
   self.levelNumTxt = self:GetUIComponent("UILocalizationText", "levelnum")
   self.levelCNTxt = self:GetUIComponent("UILocalizationText", "levelcn")
@@ -23,109 +16,86 @@ UIResDetailInfoCell.OnShow = function(self)
   self._slash = self:GetGameObject("slash")
   self._doublePowerTxt = self:GetUIComponent("UILocalizationText", "doublePower")
   self.resDungeonModule = self:GetModule(ResDungeonModule)
-  self.clientResInstance = (self.resDungeonModule):GetClientResInstance()
+  self.clientResInstance = self.resDungeonModule:GetClientResInstance()
   self.missionModule = self:GetModule(MissionModule)
   self:AttachEvent(GameEventType.ChangeResDouble, self.OnChangeResDouble)
   self._double = false
   self._doubleOffset = Vector3(-20, 0, 0)
-  self._doubleSlashPowerColor = Color(0.35686274509804, 0.35686274509804, 0.35686274509804)
+  self._doubleSlashPowerColor = Color(0.3568627450980392, 0.3568627450980392, 0.3568627450980392)
   self.enableFakeInput = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailInfoCell.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIResDetailInfoCell:OnHide()
   self:DetachEvent(GameEventType.ChangeResDouble, self.OnChangeResDouble)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailInfoCell.InitAutoFightBtnState = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIResDetailInfoCell:InitAutoFightBtnState()
   local roleMD = self:GetModule(RoleModule)
   local matchType = MatchType.MT_ResDungeon
-  local param = {((self.instanceData).cfg).ID}
+  local param = {
+    self.instanceData.cfg.ID
+  }
   local enable, msg = roleMD:GetAutoFightStatusUI(param, matchType)
   self._autoBtnEnable = enable
   self._autoBtnMsg = msg
-  ;
-  (self._autoFightRoot):SetActive(true)
-  ;
-  (self._autoFightLock):SetActive(not self._autoBtnEnable)
+  self._autoFightRoot:SetActive(true)
+  self._autoFightLock:SetActive(not self._autoBtnEnable)
   local aircraftModule = self:GetModule(AircraftModule)
   local room = aircraftModule:GetResRoom()
   local state = room and 2 or 1
   local textId = room and "str_battle_auto_fight_option_btn" or "str_common_auto_fight"
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtAutoFightBtn", (StringTable.Get)(textId))
+  UIWidgetHelper.SetLocalizationText(self, "_txtAutoFightBtn", StringTable.Get(textId))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailInfoCell.autoFightBtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIResDetailInfoCell:autoFightBtnOnClick()
   if self._autoBtnEnable then
-    local id = (self.instanceData):GetId()
-    local power = (self.instanceData):GetPower()
+    local id = self.instanceData:GetId()
+    local power = self.instanceData:GetPower()
     local unlock = true
-    local params = {matchType = MatchType.MT_ResDungeon, stageId = id, needPower = power, uuid = self.uiid, unlock = unlock, trackData = self._trackData, campParams = nil, toIndex = nil, checkFunction = nil, autoFightCallback = function(count)
-    -- function num : 0_3_0 , upvalues : self
-    self:_DoFight(count)
-  end
-}
+    local params = {
+      matchType = MatchType.MT_ResDungeon,
+      stageId = id,
+      needPower = power,
+      uuid = self.uiid,
+      unlock = unlock,
+      trackData = self._trackData,
+      campParams = nil,
+      toIndex = nil,
+      checkFunction = nil,
+      autoFightCallback = function(count)
+        self:_DoFight(count)
+      end
+    }
     self:ShowDialog("UISerialAutoFightOption", params)
   else
-    do
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)(self._autoBtnMsg))
-    end
+    ToastManager.ShowToast(StringTable.Get(self._autoBtnMsg))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailInfoCell.OnChangeResDouble = function(self, double)
-  -- function num : 0_4 , upvalues : _ENV
+function UIResDetailInfoCell:OnChangeResDouble(double)
   local power = 0
   if double then
-    power = (self.instanceData):GetPower() * 3
-    ;
-    (self._doublePowerTxt):SetText(power)
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.powerTxt).color = self._doubleSlashPowerColor
+    power = self.instanceData:GetPower() * 3
+    self._doublePowerTxt:SetText(power)
+    self.powerTxt.color = self._doubleSlashPowerColor
   else
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.powerTxt).color = Color.white
+    self.powerTxt.color = Color.white
   end
-  ;
-  ((self._doublePowerTxt).gameObject):SetActive(double)
-  ;
-  (self._slash):SetActive(double)
+  self._doublePowerTxt.gameObject:SetActive(double)
+  self._slash:SetActive(double)
   self._double = double
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailInfoCell.Refresh = function(self, instanceData, activityawards, trackData)
-  -- function num : 0_5
+function UIResDetailInfoCell:Refresh(instanceData, activityawards, trackData)
   self.instanceData = instanceData
   self.activityawards = activityawards
   self._trackData = trackData
-  self.uiid = ((self.instanceData).cfg).ID
-  ;
-  (self.powerTxt):SetText((self.instanceData):GetPower())
-  ;
-  (self.nameTxt):SetText((self.instanceData):GetName())
-  ;
-  (self.levelNumTxt):SetText((self.instanceData):GetLevelNum())
-  ;
-  (self.levelCNTxt):SetText((self.instanceData):GetLevelCN())
-  local double = (self.resDungeonModule):IsOpenDoubleRes()
+  self.uiid = self.instanceData.cfg.ID
+  self.powerTxt:SetText(self.instanceData:GetPower())
+  self.nameTxt:SetText(self.instanceData:GetName())
+  self.levelNumTxt:SetText(self.instanceData:GetLevelNum())
+  self.levelCNTxt:SetText(self.instanceData:GetLevelCN())
+  local double = self.resDungeonModule:IsOpenDoubleRes()
   self:OnChangeResDouble(double)
   self:InitRewards()
   self:CheckWarn()
@@ -133,152 +103,109 @@ UIResDetailInfoCell.Refresh = function(self, instanceData, activityawards, track
   self:InitAutoFightBtnState()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailInfoCell.btninfoOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UIResDetailInfoCell:btninfoOnClick(go)
   if not self.instanceData then
-    return 
+    return
   end
-  local enemys = (self.instanceData):GetEnemys()
+  local enemys = self.instanceData:GetEnemys()
   if not enemys then
-    (ToastManager.ShowToast)((StringTable.Get)("str_toast_manager_no_enemy_info"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_toast_manager_no_enemy_info"))
+    return
   end
-  local enemys = (UICommonHelper:GetInstance()):GetOptimalEnemys((self.instanceData):GetLevelId())
+  local enemys = UICommonHelper:GetInstance():GetOptimalEnemys(self.instanceData:GetLevelId())
   self:ShowDialog("UIEnemyTip", enemys, 1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailInfoCell.btngoOnClick = function(self, go)
-  -- function num : 0_7
+function UIResDetailInfoCell:btngoOnClick(go)
   self:_DoFight()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailInfoCell._DoFight = function(self, autoFightCount)
-  -- function num : 0_8 , upvalues : _ENV
-  local instanceId = (self.instanceData):GetId()
+function UIResDetailInfoCell:_DoFight(autoFightCount)
+  local instanceId = self.instanceData:GetId()
   if not self:IsPowerEnough() then
     self:ShowDialog("UIGetPhyPointController")
-    return 
+    return
   end
   self:SetLocalDBKey()
-  local ctx = (self.missionModule):TeamCtx()
-  local mainType = (self.clientResInstance):GetMainTypeByInstanceId(instanceId)
+  local ctx = self.missionModule:TeamCtx()
+  local mainType = self.clientResInstance:GetMainTypeByInstanceId(instanceId)
   ctx:Init(TeamOpenerType.ResInstance, mainType)
   self:ShowDialog("UITeams", function()
-    -- function num : 0_8_0 , upvalues : _ENV, autoFightCount
-    (SerialAutoFightModule.QuickSetData)(autoFightCount ~= nil, MatchType.MT_ResDungeon, autoFightCount)
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  ;
-  (self.resDungeonModule):SetEnterInstanceId(instanceId)
+    SerialAutoFightModule.QuickSetData(autoFightCount ~= nil, MatchType.MT_ResDungeon, autoFightCount)
+  end)
+  self.resDungeonModule:SetEnterInstanceId(instanceId)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailInfoCell.SetLocalDBKey = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local mainType = (self.instanceData):GetMainType()
-  local subType = (self.instanceData):GetSubType()
-  local instanceId = (self.instanceData):GetId()
-  local key = (self.clientResInstance):GetLocalDBKey(mainType, subType)
-  ;
-  (LocalDB.SetInt)(key, instanceId)
-  local subKey = (self.clientResInstance).resInstanceSubLocalDBKey
-  ;
-  (LocalDB.SetInt)(subKey, subType)
+function UIResDetailInfoCell:SetLocalDBKey()
+  local mainType = self.instanceData:GetMainType()
+  local subType = self.instanceData:GetSubType()
+  local instanceId = self.instanceData:GetId()
+  local key = self.clientResInstance:GetLocalDBKey(mainType, subType)
+  LocalDB.SetInt(key, instanceId)
+  local subKey = self.clientResInstance.resInstanceSubLocalDBKey
+  LocalDB.SetInt(subKey, subType)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailInfoCell.IsPowerEnough = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIResDetailInfoCell:IsPowerEnough()
   local roleModule = self:GetModule(RoleModule)
   local leftPower = roleModule:GetAssetCount(RoleAssetID.RoleAssetPhyPoint)
-  if (self.instanceData):GetPower() * 2 > leftPower then
-    do return not self._double end
-    do return (self.instanceData):GetPower() <= leftPower end
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  if self._double then
+    return leftPower >= self.instanceData:GetPower() * 2
+  else
+    return leftPower >= self.instanceData:GetPower()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailInfoCell.InitRewards = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIResDetailInfoCell:InitRewards()
   local rewards = {}
-  ;
-  (table.appendArray)(rewards, self.activityawards)
-  ;
-  (table.appendArray)(rewards, (self.instanceData):GetRewards())
-  local count = (table.count)(rewards)
+  table.appendArray(rewards, self.activityawards)
+  table.appendArray(rewards, self.instanceData:GetRewards())
+  local count = table.count(rewards)
   if count < 1 then
-    return 
+    return
   end
   local sop = self:GetUIComponent("UISelectObjectPath", "Content")
   sop:SpawnObjects("UIResAward", count)
   local list = sop:GetAllSpawnList()
-  for i,v in ipairs(list) do
+  for i, v in ipairs(list) do
     v:Flush(rewards[i])
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailInfoCell.CheckWarn = function(self)
-  -- function num : 0_12
-  local mainType = (self.instanceData):GetMainType()
-  local id = (self.instanceData):GetId()
-  local open = (self.instanceData):Open()
+function UIResDetailInfoCell:CheckWarn()
+  local mainType = self.instanceData:GetMainType()
+  local id = self.instanceData:GetId()
+  local open = self.instanceData:Open()
   if not open then
-    (self.warnGO):SetActive(true)
-    ;
-    (self.warnTxt):SetText((self.instanceData):GetWarn())
+    self.warnGO:SetActive(true)
+    self.warnTxt:SetText(self.instanceData:GetWarn())
   else
-    ;
-    (self.warnGO):SetActive(false)
+    self.warnGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailInfoCell.CheckBuffIcon = function(self)
-  -- function num : 0_13
-  local open = (self.instanceData):Open()
-  local isPassed = (self.resDungeonModule):IsResDungeonPassed((self.instanceData):GetId())
-  local wordBuffId = (self.instanceData):GetWorldBuffId()
-  if open and isPassed and wordBuffId and wordBuffId > 0 then
-    (self.buffInfoBtnGo):SetActive(true)
+function UIResDetailInfoCell:CheckBuffIcon()
+  local open = self.instanceData:Open()
+  local isPassed = self.resDungeonModule:IsResDungeonPassed(self.instanceData:GetId())
+  local wordBuffId = self.instanceData:GetWorldBuffId()
+  if open and isPassed and wordBuffId and 0 < wordBuffId then
+    self.buffInfoBtnGo:SetActive(true)
   else
-    ;
-    (self.buffInfoBtnGo):SetActive(false)
+    self.buffInfoBtnGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailInfoCell.BuffInfoBtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
+function UIResDetailInfoCell:BuffInfoBtnOnClick(go)
   local buffData = {}
   buffData.name = ""
   buffData.des = ""
-  local word = (Cfg.cfg_word_buff)[(self.instanceData):GetWorldBuffId()]
-  do
-    if word and word.BuffID and (word.BuffID)[1] then
-      local buff = (Cfg.cfg_buff)[(word.BuffID)[1]]
-      if buff then
-        buffData.name = (StringTable.Get)(buff.Name)
-        buffData.des = (StringTable.Get)(buff.Desc)
-      end
+  local word = Cfg.cfg_word_buff[self.instanceData:GetWorldBuffId()]
+  if word and word.BuffID and word.BuffID[1] then
+    local buff = Cfg.cfg_buff[word.BuffID[1]]
+    if buff then
+      buffData.name = StringTable.Get(buff.Name)
+      buffData.des = StringTable.Get(buff.Desc)
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowResDetailBuffInfo, buffData, ((self.buffInfoBtnGo).transform).position, Vector3(190, -30, 0))
   end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowResDetailBuffInfo, buffData, self.buffInfoBtnGo.transform.position, Vector3(190, -30, 0))
 end
-
-

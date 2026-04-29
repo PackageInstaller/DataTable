@@ -1,41 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/domitory/ui_home_domitory_indexer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeDomitoryIndexer", UICustomWidget)
 UIHomeDomitoryIndexer = UIHomeDomitoryIndexer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeDomitoryIndexer.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomeDomitoryIndexer:OnShow()
   self._image = self:GetUIComponent("Image", "UIHomeDomitoryIndexItem")
   self._layout = self:GetUIComponent("LayoutElement", "UIHomeDomitoryIndexItem")
   self.atlas = self:GetAsset("UIHomelandDomitory.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryIndexer.Select = function(self, select)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIHomeDomitoryIndexer:Select(select)
   if select then
-    (self._layout).preferredWidth = 66
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._image).sprite = (self.atlas):GetSprite("n17_dorm_zjm_di13")
+    self._layout.preferredWidth = 66
+    self._image.sprite = self.atlas:GetSprite("n17_dorm_zjm_di13")
   else
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._layout).preferredWidth = 30
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._image).sprite = (self.atlas):GetSprite("n17_dorm_zjm_di14")
+    self._layout.preferredWidth = 30
+    self._image.sprite = self.atlas:GetSprite("n17_dorm_zjm_di14")
   end
 end
-
-

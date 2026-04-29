@@ -1,39 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/StateAVGStory/n28_state_avg_story_show_evidence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N28StateAVGStoryShowEvidence", N28StateAVGStoryBase)
 N28StateAVGStoryShowEvidence = N28StateAVGStoryShowEvidence
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N28StateAVGStoryShowEvidence.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function N28StateAVGStoryShowEvidence:OnEnter(TT, ...)
   self:Init()
-  self.eventCfg = (table.unpack)({...})
-  self.manualID = ((self.eventCfg).Params)[1]
-  self.poolShowEvidence = (self.ui).poolShowEvidence
+  self.eventCfg, self.trackData, self.uiDialog = table.unpack({
+    ...
+  })
+  self.manualID = self.eventCfg.Params[1]
+  self.poolShowEvidence = self.ui.poolShowEvidence
   self:ShowHideButtonAuto(false)
   self:ShowHideButtonShowHideUI(false)
   self:ShowHideButtonNext(false)
   self:ShowHideButtonEvidenceBook(false)
   self:ShowHideShowEvidence(true)
-  self.storyManager = (self.data):StoryManager()
+  self.storyManager = self.data:StoryManager()
   self:FlushEvidence()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryShowEvidence.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (N28StateAVGStoryBase.Init)(self)
+function N28StateAVGStoryShowEvidence:Init()
+  N28StateAVGStoryBase.Init(self)
   self.defaultID = 9999
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryShowEvidence.OnExit = function(self, TT)
-  -- function num : 0_2
+function N28StateAVGStoryShowEvidence:OnExit(TT)
   self:ShowHideButtonAuto(true)
   self:ShowHideButtonShowHideUI(true)
   self:ShowHideButtonNext(true)
@@ -41,85 +30,59 @@ N28StateAVGStoryShowEvidence.OnExit = function(self, TT)
   self:ShowHideShowEvidence(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryShowEvidence.FlushEvidence = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function N28StateAVGStoryShowEvidence:FlushEvidence()
   local nodeId = self:NodeId()
-  local node = (self.data):GetNodeById(nodeId)
+  local node = self.data:GetNodeById(nodeId)
   local curEvidences = self:GetEvidenceDataInCache()
   local manualCfg = self:GetEvidenceManualCfg(self.manualID)
   self:SetShowEvienceCount(self.manualID)
   local idx = self:GetShowEvienceCount(self.manualID)
-  if #manualCfg.HintText >= idx or not #manualCfg.HintText then
-    local hint = (manualCfg.HintText)[idx]
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28AVGShowPanel)
-    local ui = (self.poolShowEvidence):SpawnObject("UIN28AVGStoryShowEvidence")
-    ui:Flush(hint, curEvidences, function(eid)
-    -- function num : 0_3_0 , upvalues : self
+  idx = idx > #manualCfg.HintText and #manualCfg.HintText or idx
+  local hint = manualCfg.HintText[idx]
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28AVGShowPanel)
+  local ui = self.poolShowEvidence:SpawnObject("UIN28AVGStoryShowEvidence")
+  ui:Flush(hint, curEvidences, function(eid)
     self:ShowEvidence(eid)
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryShowEvidence.ShowEvidence = function(self, eid)
-  -- function num : 0_4 , upvalues : _ENV
+function N28StateAVGStoryShowEvidence:ShowEvidence(eid)
   local data = self:GetSelectData(eid)
   self:SaveShowEvidence(self.manualID, eid)
-  ;
-  (self.storyManager):SetNextParagraphID(data.NextParagraphID)
+  self.storyManager:SetNextParagraphID(data.NextParagraphID)
   if data.NextNodeID and data.NextNodeID ~= self.defaultID then
     self:NextNodeId(data.NextNodeID)
   end
   local manualCfg = self:GetEvidenceManualCfg(self.manualID)
   local hasShowEff = false
-  if not manualCfg.CorrectEvidence then
-    local cfg = {}
-  end
-  for _,v in pairs(cfg) do
+  local cfg = manualCfg.CorrectEvidence or {}
+  for _, v in pairs(cfg) do
     if v == eid then
       hasShowEff = true
     end
   end
   if hasShowEff then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28AVGShowEvidence)
-    ;
-    ((self.ui).anim):Play("uieff_UIN28AVGStory_ShowEvidence_in")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
-    local key = "N28StateAVGStoryShowEvidenceEff"
-    ;
-    ((GameGlobal.UIStateManager)()):Lock(key)
-    self:ShowHideShowEvidenceEff(true)
-    YIELD(TT, 2000)
-    self:ShowHideShowEvidenceEff(false)
-    ;
-    (self.uiDialog):DoNextAVGEvent()
-    ;
-    (self.fsm):ChangeState(StateAVGStory.Play)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(key)
-  end
-, self)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28AVGShowEvidence)
+    self.ui.anim:Play("uieff_UIN28AVGStory_ShowEvidence_in")
+    GameGlobal.TaskManager():StartTask(function(TT)
+      local key = "N28StateAVGStoryShowEvidenceEff"
+      GameGlobal.UIStateManager():Lock(key)
+      self:ShowHideShowEvidenceEff(true)
+      YIELD(TT, 2000)
+      self:ShowHideShowEvidenceEff(false)
+      self.uiDialog:DoNextAVGEvent()
+      self.fsm:ChangeState(StateAVGStory.Play)
+      GameGlobal.UIStateManager():UnLock(key)
+    end, self)
   else
-    ;
-    (self.uiDialog):DoNextAVGEvent()
-    ;
-    (self.fsm):ChangeState(StateAVGStory.Play)
+    self.uiDialog:DoNextAVGEvent()
+    self.fsm:ChangeState(StateAVGStory.Play)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryShowEvidence.GetSelectData = function(self, eid)
-  -- function num : 0_5 , upvalues : _ENV
-  local defaultData = nil
-  for _,v in pairs(self.trackData) do
+function N28StateAVGStoryShowEvidence:GetSelectData(eid)
+  local defaultData
+  for _, v in pairs(self.trackData) do
     if v.EvidenceID == eid then
       return v
     end
@@ -130,39 +93,26 @@ N28StateAVGStoryShowEvidence.GetSelectData = function(self, eid)
   return defaultData
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryShowEvidence.GetEvidenceManualCfg = function(self, mid)
-  -- function num : 0_6 , upvalues : _ENV
-  local evidenceManualCfg = (Cfg.cfg_component_avg_evidence_manual)({ID = mid})
+function N28StateAVGStoryShowEvidence:GetEvidenceManualCfg(mid)
+  local evidenceManualCfg = Cfg.cfg_component_avg_evidence_manual({ID = mid})
   if evidenceManualCfg then
     return evidenceManualCfg[1]
   end
   return {}
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryShowEvidence.SaveShowEvidence = function(self, manualId, eid)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : _ENV, self, manualId, eid
+function N28StateAVGStoryShowEvidence:SaveShowEvidence(manualId, eid)
+  GameGlobal.TaskManager():StartTask(function(TT)
     local key = "N28StateAVGStoryShowEvidenceSave"
-    ;
-    ((GameGlobal.UIStateManager)()):Lock(key)
-    local com = (self.data):GetComponentAVG()
+    GameGlobal.UIStateManager():Lock(key)
+    local com = self.data:GetComponentAVG()
     local res = AsyncRequestRes:New()
     local ret = com:HandleShowEvidence(TT, res, manualId, eid)
-    if (N28AVGData.CheckCode)(res) then
-      (Log.debug)("N28StateAVGStoryShowEvidence success")
+    if N28AVGData.CheckCode(res) then
+      Log.debug("N28StateAVGStoryShowEvidence success")
     else
-      ;
-      (Log.fatal)("### HandleManualChoose failed.")
+      Log.fatal("### HandleManualChoose failed.")
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(key)
-  end
-, self)
+    GameGlobal.UIStateManager():UnLock(key)
+  end, self)
 end
-
-

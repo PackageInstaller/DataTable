@@ -1,17 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/infrastructure/stn_infrastructure_begin.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Infrastructure_Begin", CTestRobot_Base)
 Infrastructure_Begin = Infrastructure_Begin
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Infrastructure_Begin.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (self.m_pManager):OnTestRobot_Begin()
-  return ((Infrastructure_Begin.super).OnWorking)(self)
+function Infrastructure_Begin:OnWorking()
+  self.m_pManager:OnTestRobot_Begin()
+  return Infrastructure_Begin.super.OnWorking(self)
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/interact/ui_interact_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIInteractPoint", UICustomWidget)
 UIInteractPoint = UIInteractPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIInteractPoint.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIInteractPoint:OnShow(uiParams)
   self._interactBtn = self:GetUIComponent("RectTransform", "InteractBtn")
   self._btnParent = self:GetUIComponent("RectTransform", "InteractBtnParent")
   self._titleLabel = self:GetUIComponent("UILocalizationText", "Title")
@@ -17,146 +10,101 @@ UIInteractPoint.OnShow = function(self, uiParams)
   self._iconImg = self:GetUIComponent("RawImageLoader", "Icon")
   self:AttachEvent(GameEventType.RefreshInteractUI, self.RefreshRedPoint)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._AfterUILayerChanged)
-  ;
-  (self._anim):Play("ui_interact_point_anim_in")
+  self._anim:Play("ui_interact_point_anim_in")
   self._interval = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPoint.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIInteractPoint:OnHide()
   self:DetachEvent(GameEventType.RefreshInteractUI, self.RefreshRedPoint)
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPoint.ScreenPointToLocalPointInRectangle = function(self, rect, screenPoint, camera)
-  -- function num : 0_2 , upvalues : _ENV
-  local res, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(rect, screenPoint, camera, nil)
+function UIInteractPoint:ScreenPointToLocalPointInRectangle(rect, screenPoint, camera)
+  local res, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(rect, screenPoint, camera, nil)
   return pos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPoint.Refresh = function(self, interactPoint)
-  -- function num : 0_3 , upvalues : _ENV
+function UIInteractPoint:Refresh(interactPoint)
   self._interactPoint = interactPoint
   local pointType = interactPoint:GetPointType()
   if pointType == InteractPointType.PetCommunication then
-    local name = (interactPoint:GetBuild()):PetName()
-    ;
-    (self._titleLabel):SetText(name)
+    local name = interactPoint:GetBuild():PetName()
+    self._titleLabel:SetText(name)
+  elseif pointType == InteractPointType.Breed then
+    self:_RefreshBreedLand()
+  elseif pointType == InteractPointType.TaskNpc then
+    local name = interactPoint:GetBuild():GetName()
+    self._titleLabel:SetText(name)
   else
-    do
-      if pointType == InteractPointType.Breed then
-        self:_RefreshBreedLand()
-      else
-        if pointType == InteractPointType.TaskNpc then
-          local name = (interactPoint:GetBuild()):GetName()
-          ;
-          (self._titleLabel):SetText(name)
-        else
-          do
-            ;
-            (self._titleLabel):SetText(interactPoint:GetPointName())
-            ;
-            (self._redGo):SetActive((self._interactPoint):GetRedPointStatus())
-            if self._imgName ~= interactPoint:GetPointIcon() then
-              self._imgName = interactPoint:GetPointIcon()
-              ;
-              (self._iconImg):LoadImage(self._imgName)
-            end
-            if pointType == InteractPointType.Build then
-              self:RefreshForgeData()
-            end
-            self:RefreshRedPoint()
-            self:_FinishGuide()
-          end
-        end
-      end
-    end
+    self._titleLabel:SetText(interactPoint:GetPointName())
   end
+  self._redGo:SetActive(self._interactPoint:GetRedPointStatus())
+  if self._imgName ~= interactPoint:GetPointIcon() then
+    self._imgName = interactPoint:GetPointIcon()
+    self._iconImg:LoadImage(self._imgName)
+  end
+  if pointType == InteractPointType.Build then
+    self:RefreshForgeData()
+  end
+  self:RefreshRedPoint()
+  self:_FinishGuide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPoint.RefreshRedPoint = function(self)
-  -- function num : 0_4
-  (self._redGo):SetActive((self._interactPoint):GetRedPointStatus())
+function UIInteractPoint:RefreshRedPoint()
+  self._redGo:SetActive(self._interactPoint:GetRedPointStatus())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPoint.RefreshForgeData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local mHomeland = (GameGlobal.GetModule)(HomelandModule)
+function UIInteractPoint:RefreshForgeData()
+  local mHomeland = GameGlobal.GetModule(HomelandModule)
   local data = mHomeland:GetForgeData()
   data:Init(mHomeland:GetHomelandInfo())
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPoint.InteractBtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIInteractPoint:InteractBtnOnClick()
   if not self._interactPoint then
-    (Log.fatal)("can not find interact point  text:" .. (self._titleLabel).text)
-    return 
+    Log.fatal("can not find interact point  text:" .. self._titleLabel.text)
+    return
   end
-  ;
-  (self._interactPoint):Interact(self)
+  self._interactPoint:Interact(self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPoint._RefreshBreedLand = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local land = (self._interactPoint):GetBuild()
+function UIInteractPoint:_RefreshBreedLand()
+  local land = self._interactPoint:GetBuild()
   if not land then
-    return 
+    return
   end
-  local title = (self._interactPoint):GetPointName()
-  do
-    if land:InBreeding() then
-      local remainTime = land:GetRemainTime()
-      if remainTime <= 0 then
-        title = (StringTable.Get)("str_homeland_breed_reap")
-      else
-        title = (HomelandBreedTool.GetRemainTime)(remainTime)
-      end
+  local title = self._interactPoint:GetPointName()
+  if land:InBreeding() then
+    local remainTime = land:GetRemainTime()
+    if remainTime <= 0 then
+      title = StringTable.Get("str_homeland_breed_reap")
+    else
+      title = HomelandBreedTool.GetRemainTime(remainTime)
     end
-    ;
-    (self._titleLabel):SetText(title)
   end
+  self._titleLabel:SetText(title)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPoint._AfterUILayerChanged = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIInteractPoint:_AfterUILayerChanged()
   if not self._interactPoint then
-    return 
+    return
   end
-  if (self._interactPoint):GetPointType() == InteractPointType.Breed then
+  if self._interactPoint:GetPointType() == InteractPointType.Breed then
     self:_RefreshBreedLand()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPoint._FinishGuide = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+function UIInteractPoint:_FinishGuide()
+  local guideModule = GameGlobal.GetModule(GuideModule)
   if guideModule:GuideInProgress() then
     local guides = guideModule:GetCurGuides()
     if guides then
-      for _,guide in pairs(guides) do
+      for _, guide in pairs(guides) do
         local curStep = guide:GetCurStep()
         if curStep and curStep.show then
           local param = curStep:GetBtnGuideCfg()
           local interactObjID = 0
-          local interactObj = (self._interactPoint):GetBuild()
+          local interactObj = self._interactPoint:GetBuild()
           if HomelandTaskNPC:IsInstanceOfType(interactObj) then
             interactObjID = interactObj.npcID
           end
@@ -166,8 +114,8 @@ UIInteractPoint._FinishGuide = function(self)
           if HomeBuilding:IsInstanceOfType(interactObj) then
             interactObjID = interactObj:GetBuildId()
           end
-          if param and param.areaArgs and (param.areaArgs)[1] == interactObjID then
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.Button)
+          if param and param.areaArgs and param.areaArgs[1] == interactObjID then
+            GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Button)
           end
         end
       end
@@ -175,40 +123,26 @@ UIInteractPoint._FinishGuide = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPoint.GetInteractBtn = function(self)
-  -- function num : 0_10
-  return (self._interactBtn).gameObject
+function UIInteractPoint:GetInteractBtn()
+  return self._interactBtn.gameObject
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPoint.GetBuild = function(self)
-  -- function num : 0_11
-  return (self._interactPoint):GetBuild()
+function UIInteractPoint:GetBuild()
+  return self._interactPoint:GetBuild()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPoint.GetPointType = function(self)
-  -- function num : 0_12
-  return (self._interactPoint):GetPointType()
+function UIInteractPoint:GetPointType()
+  return self._interactPoint:GetPointType()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIInteractPoint.OnUpdate = function(self, ms)
-  -- function num : 0_13 , upvalues : _ENV
+function UIInteractPoint:OnUpdate(ms)
   if self._interactPoint then
     self._interval = self._interval + ms
     if self._interval >= 1000 then
-      if (self._interactPoint):GetPointType() == InteractPointType.Breed then
+      if self._interactPoint:GetPointType() == InteractPointType.Breed then
         self:_RefreshBreedLand()
       end
       self._interval = 0
     end
   end
 end
-
-

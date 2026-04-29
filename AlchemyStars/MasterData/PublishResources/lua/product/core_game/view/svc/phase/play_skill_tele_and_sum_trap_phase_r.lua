@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_tele_and_sum_trap_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillTeleportAndSummonTrapPhase", PlaySkillPhaseBase)
 PlaySkillTeleportAndSummonTrapPhase = PlaySkillTeleportAndSummonTrapPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillTeleportAndSummonTrapPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillTeleportAndSummonTrapPhase:PlayFlight(TT, casterEntity, phaseParam)
   local summonParam = phaseParam
-  local trapServiceRender = (self._world):GetService("TrapRender")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local trapServiceRender = self._world:GetService("TrapRender")
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.TeleportAndSummonTrap)
   if not resultArray then
-    (Log.fatal)("### PlaySkillTeleportAndSummonTrapPhase TeleportAndSummonTrap result nil")
-    return 
+    Log.fatal("### PlaySkillTeleportAndSummonTrapPhase TeleportAndSummonTrap result nil")
+    return
   end
   local animNameList = summonParam:GetTeleportAnimList()
   local teleportEffectID = summonParam:GetTeleportEffectID()
@@ -29,23 +22,23 @@ PlaySkillTeleportAndSummonTrapPhase.PlayFlight = function(self, TT, casterEntity
   local audioID = summonParam:GetAudioID()
   local audioType = summonParam:GetAudioType()
   local audioDelay = summonParam:GetAudioDelay()
-  local effectService = (self._world):GetService("Effect")
-  for index,result in ipairs(resultArray) do
+  local effectService = self._world:GetService("Effect")
+  for index, result in ipairs(resultArray) do
     effectService:CreatePositionEffect(teleportEffectID, teleportEffectPos)
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(self.PlayAudio, self, audioID, audioType, audioDelay, casterEntity)
+    GameGlobal.TaskManager():CoreGameStartTask(self.PlayAudio, self, audioID, audioType, audioDelay, casterEntity)
     if teleportEffectDelay ~= 0 then
       YIELD(TT, teleportEffectDelay)
     end
     casterEntity:SetPosition(result:GetTeleportPos())
-    casterEntity:SetAnimatorControllerTriggers({animNameList[index]})
+    casterEntity:SetAnimatorControllerTriggers({
+      animNameList[index]
+    })
     local trapIDList = result:GetTrapEntityIDList()
     local trapPosList = result:GetTrapPosList()
     for i = 1, #trapIDList do
       local pos = trapPosList[i]
-      local trapEntity = (self._world):GetEntityByID(trapIDList[i])
-      ;
-      ((GameGlobal.TaskManager)()):CoreGameStartTask(self.CreateTrapAndEffect, self, trapEntity, pos, gridEffectID, gridEffectDelay)
+      local trapEntity = self._world:GetEntityByID(trapIDList[i])
+      GameGlobal.TaskManager():CoreGameStartTask(self.CreateTrapAndEffect, self, trapEntity, pos, gridEffectID, gridEffectDelay)
     end
     if teleportWaitTime ~= 0 then
       YIELD(TT, teleportWaitTime)
@@ -54,12 +47,9 @@ PlaySkillTeleportAndSummonTrapPhase.PlayFlight = function(self, TT, casterEntity
   casterEntity:SetAnimatorControllerTriggers(teleportOverTriggerName)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTeleportAndSummonTrapPhase.CreateTrapAndEffect = function(self, TT, trapEntity, pos, effectID, effectDelay)
-  -- function num : 0_1 , upvalues : _ENV
-  local effectService = (self._world):GetService("Effect")
-  local trapServiceRender = (self._world):GetService("TrapRender")
+function PlaySkillTeleportAndSummonTrapPhase:CreateTrapAndEffect(TT, trapEntity, pos, effectID, effectDelay)
+  local effectService = self._world:GetService("Effect")
+  local trapServiceRender = self._world:GetService("TrapRender")
   effectService:CreateCommonGridEffect(effectID, pos, Vector2(0, 0))
   if effectDelay ~= 0 then
     YIELD(TT, effectDelay)
@@ -68,20 +58,13 @@ PlaySkillTeleportAndSummonTrapPhase.CreateTrapAndEffect = function(self, TT, tra
   trapEntity:SetPosition(Vector2(pos.x, pos.y))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTeleportAndSummonTrapPhase.PlayAudio = function(self, TT, audioID, audioType, audioDelay, casterEntity)
-  -- function num : 0_2 , upvalues : _ENV
-  if audioDelay > 0 then
+function PlaySkillTeleportAndSummonTrapPhase:PlayAudio(TT, audioID, audioType, audioDelay, casterEntity)
+  if 0 < audioDelay then
     YIELD(TT, audioDelay)
   end
   if audioType == SkillAudioType.Cast then
-    (AudioHelperController.PlayInnerGameSfx)(audioID)
-  else
-    if audioType == SkillAudioType.Voice then
-      (InnerGameHelperRender.InnerGamePlayPetVoid)(audioID, casterEntity)
-    end
+    AudioHelperController.PlayInnerGameSfx(audioID)
+  elseif audioType == SkillAudioType.Voice then
+    InnerGameHelperRender.InnerGamePlayPetVoid(audioID, casterEntity)
   end
 end
-
-

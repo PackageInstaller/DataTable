@@ -1,33 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_convert_occupied_grid_element_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_convert_element_effect_result")
 _class("SkillEffectConvertOccupiedGridElementResult", SkillConvertGridElementEffectResult)
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectConvertOccupiedGridElementResult.Constructor = function(self, convertPosList, targetElementType, summonTrapResults)
-  -- function num : 0_0
+function SkillEffectConvertOccupiedGridElementResult:Constructor(convertPosList, targetElementType, summonTrapResults)
   self._convertPosList = convertPosList
   self._targetElementType = targetElementType
-  if not summonTrapResults then
-    self._trapResults = {}
-  end
+  self._trapResults = summonTrapResults or {}
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertOccupiedGridElementResult.GetConvertPos = function(self)
-  -- function num : 0_1
+function SkillEffectConvertOccupiedGridElementResult:GetConvertPos()
   return self._convertPosList
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertOccupiedGridElementResult.GetNewGridPieceType = function(self, pos)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,data in ipairs(self._convertPosList) do
+function SkillEffectConvertOccupiedGridElementResult:GetNewGridPieceType(pos)
+  for _, data in ipairs(self._convertPosList) do
     if data.x == pos.x and data.y == pos.y then
       return self._targetElementType
     end
@@ -35,25 +20,14 @@ SkillEffectConvertOccupiedGridElementResult.GetNewGridPieceType = function(self,
   return nil
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertOccupiedGridElementResult.GetTargetElementType = function(self)
-  -- function num : 0_3
+function SkillEffectConvertOccupiedGridElementResult:GetTargetElementType()
   return self._targetElementType
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertOccupiedGridElementResult.GetEffectType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillEffectConvertOccupiedGridElementResult:GetEffectType()
   return SkillEffectType.ConvertOccupiedGridElement
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertOccupiedGridElementResult.GetTrapResults = function(self)
-  -- function num : 0_5
+function SkillEffectConvertOccupiedGridElementResult:GetTrapResults()
   return self._trapResults
 end
-
-

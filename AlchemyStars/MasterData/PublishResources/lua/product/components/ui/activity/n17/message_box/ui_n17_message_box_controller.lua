@@ -1,37 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n17/message_box/ui_n17_message_box_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN17MessageBoxController", UIController)
 UIN17MessageBoxController = UIN17MessageBoxController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN17MessageBoxController.Constructor = function(self)
-  -- function num : 0_0
+function UIN17MessageBoxController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17MessageBoxController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN17MessageBoxController:OnShow(uiParams)
   local title = uiParams[1]
   local desc = uiParams[2]
   self._callback = uiParams[3]
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_title", title)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_desc", desc)
+  UIWidgetHelper.SetLocalizationText(self, "_title", title)
+  UIWidgetHelper.SetLocalizationText(self, "_desc", desc)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17MessageBoxController.ConfirmBtnOnClick = function(self)
-  -- function num : 0_2
+function UIN17MessageBoxController:ConfirmBtnOnClick()
   self:CloseDialog()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
-
-

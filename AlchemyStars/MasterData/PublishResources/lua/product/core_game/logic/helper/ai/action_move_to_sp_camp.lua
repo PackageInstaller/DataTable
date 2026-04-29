@@ -1,28 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_to_sp_camp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMoveToSpCamp", ActionMoveBase)
 ActionMoveToSpCamp = ActionMoveToSpCamp
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveToSpCamp.FindNewTargetPos = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionMoveToSpCamp:FindNewTargetPos()
   local campType = self:GetLogicData(-1)
   if campType == nil then
-    self:PrintLog("[ActionMoveToSpCamp] Can not find campType,move failed", (self.m_entityOwn):GetID())
-    return 
+    self:PrintLog("[ActionMoveToSpCamp] Can not find campType,move failed", self.m_entityOwn:GetID())
+    return
   end
-  local posSelf = (self.m_entityOwn):GetGridPosition()
-  local aiComponent = (self.m_entityOwn):AI()
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local posSelf = self.m_entityOwn:GetGridPosition()
+  local aiComponent = self.m_entityOwn:AI()
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local skillCalculater = SkillScopeCalculator:New(utilScopeSvc)
   local fullScreenCalc = SkillScopeCalculator_FullScreen:New(skillCalculater)
-  local scopeResult = fullScreenCalc:CalcRange(SkillScopeType.FullScreen, 1, posSelf, ((self.m_entityOwn):BodyArea()):GetArea(), ((self.m_entityOwn):GetGridDirection()), nil, posSelf)
+  local scopeResult = fullScreenCalc:CalcRange(SkillScopeType.FullScreen, 1, posSelf, self.m_entityOwn:BodyArea():GetArea(), self.m_entityOwn:GetGridDirection(), nil, posSelf)
   local nWalkTotal = aiComponent:GetMobilityValid()
-  local selfBodyArea = ((self.m_entityOwn):BodyArea()):GetArea()
+  local selfBodyArea = self.m_entityOwn:BodyArea():GetArea()
   local targetSelector = SkillScopeTargetSelector:New(self._world)
   local targetIDArray = targetSelector:DoSelectSkillTarget(self.m_entityOwn, SkillTargetType.SelectMonsterCamp, scopeResult, nil, {campType})
   if #targetIDArray == 0 then
@@ -32,14 +25,14 @@ ActionMoveToSpCamp.FindNewTargetPos = function(self)
   local candidates = {}
   local lastDistance = 9999
   local targetPos = {}
-  for i,id in ipairs(targetIDArray) do
-    local entity = (self._world):GetEntityByID(id)
-    local bodyArea = (entity:BodyArea()):GetArea()
+  for i, id in ipairs(targetIDArray) do
+    local entity = self._world:GetEntityByID(id)
+    local bodyArea = entity:BodyArea():GetArea()
     local gridPos = entity:GetGridPosition()
-    for i,area in ipairs(bodyArea) do
+    for i, area in ipairs(bodyArea) do
       local posWork = gridPos + area
-      local distance = (Vector2.Distance)(posSelf, posWork)
-      if distance < lastDistance then
+      local distance = Vector2.Distance(posSelf, posWork)
+      if lastDistance > distance then
         lastDistance = distance
         targetPos = posWork
       end
@@ -47,5 +40,3 @@ ActionMoveToSpCamp.FindNewTargetPos = function(self)
   end
   return targetPos
 end
-
-

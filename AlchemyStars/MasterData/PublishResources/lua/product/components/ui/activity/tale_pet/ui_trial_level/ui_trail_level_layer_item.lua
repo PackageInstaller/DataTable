@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_trial_level/ui_trail_level_layer_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITrailLevelLayerItem", UICustomWidget)
 UITrailLevelLayerItem = UITrailLevelLayerItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITrailLevelLayerItem.OnShow = function(self)
-  -- function num : 0_0
+function UITrailLevelLayerItem:OnShow()
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._normalBg = self:GetGameObject("NormalBg")
   self._normalSelected = self:GetGameObject("NormalSelected")
@@ -18,154 +11,100 @@ UITrailLevelLayerItem.OnShow = function(self)
   self._iconImage = self:GetUIComponent("RawImage", "Icon")
   self._normalBtnTran = self:GetUIComponent("RectTransform", "NormalBtn")
   self._redGo = self:GetGameObject("Red")
-  ;
-  (self._redGo):SetActive(false)
+  self._redGo:SetActive(false)
   self._anim = self:GetUIComponent("Animation", "Anim")
   self._go = self:GetGameObject("NormalBtn")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelLayerItem.Refresh = function(self, levelLayerData, trailLevelController)
-  -- function num : 0_1 , upvalues : _ENV
+function UITrailLevelLayerItem:Refresh(levelLayerData, trailLevelController)
   self._levelLayerData = levelLayerData
   local levelDatas = levelLayerData:GetLevelDatas()
   self._trailLevelController = trailLevelController
-  ;
-  (self._nameLabel):SetText(levelLayerData:GetLayerName())
-  ;
-  (self._iconImg):LoadImage(levelLayerData:GetLayerIcon())
+  self._nameLabel:SetText(levelLayerData:GetLayerName())
+  self._iconImg:LoadImage(levelLayerData:GetLayerIcon())
   self:RefreshSelectStatus(false)
   if levelLayerData:GetLayerType() == TrailLevelLayerType.Final then
-    local talePetModule = (GameGlobal.GetModule)(TalePetModule)
+    local talePetModule = GameGlobal.GetModule(TalePetModule)
     if talePetModule:HasOpenFinalLevel() then
       local levelDatas = levelLayerData:GetLevelDatas()
       if levelDatas then
         for i = 1, #levelDatas do
           local levelData = levelDatas[1]
           if not levelData:IsComplete() then
-            (self._redGo):SetActive(true)
+            self._redGo:SetActive(true)
             break
           end
         end
       end
     else
-      do
-        -- DECOMPILER ERROR at PC58: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._nameLabel).color = Color(0.43529411764706, 0.43529411764706, 0.43529411764706, 1)
-        -- DECOMPILER ERROR at PC66: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._iconImage).color = Color(1, 1, 1, 0.5)
-      end
+      self._nameLabel.color = Color(0.43529411764705883, 0.43529411764705883, 0.43529411764705883, 1)
+      self._iconImage.color = Color(1, 1, 1, 0.5)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelLayerItem.NormalBtnOnClick = function(self)
-  -- function num : 0_2
-  (self._trailLevelController):OnLevelLayerItemSelect(self, self._levelLayerData)
+function UITrailLevelLayerItem:NormalBtnOnClick()
+  self._trailLevelController:OnLevelLayerItemSelect(self, self._levelLayerData)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelLayerItem.Select = function(self, isEnter)
-  -- function num : 0_3
+function UITrailLevelLayerItem:Select(isEnter)
   self:RefreshSelectStatus(true, isEnter)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelLayerItem.UnSelect = function(self, isEnter)
-  -- function num : 0_4
+function UITrailLevelLayerItem:UnSelect(isEnter)
   self:RefreshSelectStatus(false, isEnter)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelLayerItem.RefreshSelectStatus = function(self, isSelected, isEnter)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._levelLayerData):GetLayerType() == TrailLevelLayerType.Normal then
-    (self._normalBg):SetActive(not isSelected)
-    ;
-    (self._normalSelected):SetActive(isSelected)
-    ;
-    (self._finalBg):SetActive(false)
-    ;
-    (self._finalSelected):SetActive(false)
+function UITrailLevelLayerItem:RefreshSelectStatus(isSelected, isEnter)
+  if self._levelLayerData:GetLayerType() == TrailLevelLayerType.Normal then
+    self._normalBg:SetActive(not isSelected)
+    self._normalSelected:SetActive(isSelected)
+    self._finalBg:SetActive(false)
+    self._finalSelected:SetActive(false)
     if not isEnter then
       if isSelected then
-        (self._anim):Play("uieff_UITrailLevelLayerItem_chenge_2")
+        self._anim:Play("uieff_UITrailLevelLayerItem_chenge_2")
       else
-        ;
-        (self._anim):Play("uieff_UITrailLevelLayerItem_chenge_1")
+        self._anim:Play("uieff_UITrailLevelLayerItem_chenge_1")
       end
     end
-  else
-    if (self._levelLayerData):GetLayerType() == TrailLevelLayerType.Final then
-      (self._normalBg):SetActive(false)
-      ;
-      (self._normalSelected):SetActive(false)
-      ;
-      (self._finalBg):SetActive(not isSelected)
-      ;
-      (self._finalSelected):SetActive(isSelected)
-      if not isEnter then
-        if isSelected then
-          (self._anim):Play("uieff_UITrailLevelLayerItem_finalchenge_2")
-        else
-          ;
-          (self._anim):Play("uieff_UITrailLevelLayerItem_finalchenge_1")
-        end
-      end
-    end
-  end
-  -- DECOMPILER ERROR at PC82: Confused about usage of register: R3 in 'UnsetPending'
-
-  if isSelected then
-    (self._iconImage).color = Color(1, 1, 1, 1)
-  else
-    -- DECOMPILER ERROR at PC91: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._iconImage).color = Color(1, 1, 1, 0.8)
-  end
-end
-
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelLayerItem.PlayEnterAnim = function(self, isSelected)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._levelLayerData):GetLayerType() == TrailLevelLayerType.Normal then
-    if isSelected then
-      (self._anim):Play("uieff_UITrailLevelLayerItem_in_1")
-    else
-      ;
-      (self._anim):Play("uieff_UITrailLevelLayerItem_in_2")
-    end
-  else
-    if (self._levelLayerData):GetLayerType() == TrailLevelLayerType.Final then
+  elseif self._levelLayerData:GetLayerType() == TrailLevelLayerType.Final then
+    self._normalBg:SetActive(false)
+    self._normalSelected:SetActive(false)
+    self._finalBg:SetActive(not isSelected)
+    self._finalSelected:SetActive(isSelected)
+    if not isEnter then
       if isSelected then
-        (self._anim):Play("uieff_UITrailLevelLayerItem_finalin_1")
+        self._anim:Play("uieff_UITrailLevelLayerItem_finalchenge_2")
       else
-        ;
-        (self._anim):Play("uieff_UITrailLevelLayerItem_finalin_2")
+        self._anim:Play("uieff_UITrailLevelLayerItem_finalchenge_1")
       end
     end
   end
-  ;
-  (self._go):SetActive(true)
+  if isSelected then
+    self._iconImage.color = Color(1, 1, 1, 1)
+  else
+    self._iconImage.color = Color(1, 1, 1, 0.8)
+  end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelLayerItem.HideSelf = function(self)
-  -- function num : 0_7
-  (self._go):SetActive(false)
+function UITrailLevelLayerItem:PlayEnterAnim(isSelected)
+  if self._levelLayerData:GetLayerType() == TrailLevelLayerType.Normal then
+    if isSelected then
+      self._anim:Play("uieff_UITrailLevelLayerItem_in_1")
+    else
+      self._anim:Play("uieff_UITrailLevelLayerItem_in_2")
+    end
+  elseif self._levelLayerData:GetLayerType() == TrailLevelLayerType.Final then
+    if isSelected then
+      self._anim:Play("uieff_UITrailLevelLayerItem_finalin_1")
+    else
+      self._anim:Play("uieff_UITrailLevelLayerItem_finalin_2")
+    end
+  end
+  self._go:SetActive(true)
 end
 
-
+function UITrailLevelLayerItem:HideSelf()
+  self._go:SetActive(false)
+end

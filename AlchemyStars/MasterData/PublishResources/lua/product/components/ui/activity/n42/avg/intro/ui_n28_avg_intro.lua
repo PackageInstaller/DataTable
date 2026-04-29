@@ -1,58 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/intro/ui_n28_avg_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGIntro", UIController)
 UIN28AVGIntro = UIN28AVGIntro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGIntro.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN28AVGIntro:OnShow(uiParams)
   self.Content = self:GetUIComponent("UISelectObjectPath", "Content")
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGIntro.OnHide = function(self)
-  -- function num : 0_1
+function UIN28AVGIntro:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGIntro.Flush = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN28AVGIntro:Flush()
   local n = 0
-  while 1 do
+  while true do
     n = n + 1
-    local keyHead = (StringTable.Has)("str_avg_n28_activity_intro_head_" .. n)
+    local keyHead = StringTable.Has("str_avg_n28_activity_intro_head_" .. n)
     if not keyHead then
       n = n - 1
       break
     end
   end
-  do
-    if n <= 0 then
-      (Log.fatal)("### no [str_avg_n28_activity_intro_head_n] in str_avg")
-      return 
-    end
-    ;
-    (self.Content):SpawnObjects("UIN28AVGIntroItem", n)
-    local uis = (self.Content):GetAllSpawnList()
-    for i,ui in ipairs(uis) do
-      local head = (StringTable.Get)("str_avg_n28_activity_intro_head_" .. i)
-      local body = (StringTable.Get)("str_avg_n28_activity_intro_body_" .. i)
-      ui:Flush(head, body)
-    end
+  if n <= 0 then
+    Log.fatal("### no [str_avg_n28_activity_intro_head_n] in str_avg")
+    return
+  end
+  self.Content:SpawnObjects("UIN28AVGIntroItem", n)
+  local uis = self.Content:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
+    local head = StringTable.Get("str_avg_n28_activity_intro_head_" .. i)
+    local body = StringTable.Get("str_avg_n28_activity_intro_body_" .. i)
+    ui:Flush(head, body)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGIntro.BtnCloseOnClick = function(self, go)
-  -- function num : 0_3
+function UIN28AVGIntro:BtnCloseOnClick(go)
   self:CloseDialog()
 end
-
-

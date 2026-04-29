@@ -1,66 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n17/lottery/ui_n17_lottery_award_box_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN17LotteryAwardBoxCell", UICustomWidget)
 UIN17LotteryAwardBoxCell = UIN17LotteryAwardBoxCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN17LotteryAwardBoxCell.Constructor = function(self)
-  -- function num : 0_0
+function UIN17LotteryAwardBoxCell:Constructor()
   self.listInited = false
   self.rowCellItemNum = 3
   self.rowCellCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryAwardBoxCell.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN17LotteryAwardBoxCell:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryAwardBoxCell._GetComponents = function(self)
-  -- function num : 0_2
+function UIN17LotteryAwardBoxCell:_GetComponents()
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryAwardBoxCell.InitData = function(self, data, itemInfoCallBack, playJackpotAnim)
-  -- function num : 0_3
+function UIN17LotteryAwardBoxCell:InitData(data, itemInfoCallBack, playJackpotAnim)
   self._data = data
   self._itemInfoCallback = itemInfoCallBack
   self._playJackpotAnim = playJackpotAnim
   self:_SetDynamicList()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryAwardBoxCell._SetDynamicList = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._contentRect).anchoredPosition = Vector2(0, 0)
-  self._infos = (self._data).itemGroup
+function UIN17LotteryAwardBoxCell:_SetDynamicList()
+  self._contentRect.anchoredPosition = Vector2(0, 0)
+  self._infos = self._data.itemGroup
   if not self._dynamicListHelper then
     self._dynamicListHelper = UIActivityDynamicListHelper:New(self, self:GetUIComponent("UIDynamicScrollView", "AwardList"), "UIN17LotteryAwardRowCell", function(listItem, itemIndex)
-    -- function num : 0_4_0 , upvalues : self
-    local delayTime = 0
-    if self._playJackpotAnim then
-      delayTime = itemIndex
-    end
-    listItem:InitData(((self._data).itemGroup)[itemIndex], self._itemInfoCallback, delayTime)
-  end
-)
+      local delayTime = 0
+      if self._playJackpotAnim then
+        delayTime = itemIndex
+      end
+      listItem:InitData(self._data.itemGroup[itemIndex], self._itemInfoCallback, delayTime)
+    end)
   end
   local itemCount = #self._infos
   local itemCountPerRow = 3
-  ;
-  (self._dynamicListHelper):Refresh(itemCount, itemCountPerRow)
+  self._dynamicListHelper:Refresh(itemCount, itemCountPerRow)
 end
-
-

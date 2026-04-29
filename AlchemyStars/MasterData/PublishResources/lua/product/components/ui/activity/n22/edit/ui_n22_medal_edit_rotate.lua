@@ -1,81 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/edit/ui_n22_medal_edit_rotate.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22MedalEditRotate", UIController)
 UIN22MedalEditRotate = UIN22MedalEditRotate
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22MedalEditRotate.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.rotateAngleStep = ((Cfg.cfg_global).ui_homeland_build_rotate_step).IntValue or 10
+function UIN22MedalEditRotate:Constructor()
+  self.rotateAngleStep = Cfg.cfg_global.ui_homeland_build_rotate_step.IntValue or 10
   self.quaternion = Quaternion.identity
   self.quaternionBak = Quaternion.identity
-  self.showPosList = {Vector2(-600, 0), Vector2(600, 0), Vector2(600, 0), Vector2(-600, 0)}
+  self.showPosList = {
+    Vector2(-600, 0),
+    Vector2(600, 0),
+    Vector2(600, 0),
+    Vector2(-600, 0)
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditRotate.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN22MedalEditRotate:OnShow(uiParams)
   self.curBoardMedal = uiParams[1]
   self.ui = uiParams[2]
-  local rtBoard = (self.ui).rtBoard
+  local rtBoard = self.ui.rtBoard
   self.center = rtBoard.position
-  ;
-  (self.ui):FlushRotateTakeInButton(false)
+  self.ui:FlushRotateTakeInButton(false)
   self.anim = self:GetUIComponent("Animation", "SafeArea")
   self.circle = self:GetUIComponent("RectTransform", "circle")
   self.arrow = self:GetUIComponent("RectTransform", "arrow")
   self.goCircle = self:GetGameObject("circle")
-  local etl = (UICustomUIEventListener.Get)(self.goCircle)
+  local etl = UICustomUIEventListener.Get(self.goCircle)
   self:AddUICustomEventListener(etl, UIEvent.BeginDrag, function(ped)
-    -- function num : 0_1_0 , upvalues : _ENV
-    (Log.debug)("### BeginDrag")
-  end
-)
+    Log.debug("### BeginDrag")
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Drag, function(ped)
-    -- function num : 0_1_1 , upvalues : self
     self:CalcAngle()
     self:Rotate()
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.EndDrag, function(ped)
-    -- function num : 0_1_2 , upvalues : _ENV
-    (Log.debug)("### EndDrag")
-  end
-)
+    Log.debug("### EndDrag")
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Click, function(go)
-    -- function num : 0_1_3 , upvalues : self
     self:CalcAngle()
     self:Rotate()
-  end
-)
-  self.camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-  self.quaternion = (self.curBoardMedal):LocalRotation()
-  self.quaternionBak = (self.quaternion):Clone()
+  end)
+  self.camera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+  self.quaternion = self.curBoardMedal:LocalRotation()
+  self.quaternionBak = self.quaternion:Clone()
   self:Rotate()
   self:FlushCirclePos()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditRotate.OnHide = function(self)
-  -- function num : 0_2
-  (self.ui):FlushRotateTakeInButton(true)
-  ;
-  (self.ui):ClampBoardMedalUI((self.curBoardMedal):Id())
+function UIN22MedalEditRotate:OnHide()
+  self.ui:FlushRotateTakeInButton(true)
+  self.ui:ClampBoardMedalUI(self.curBoardMedal:Id())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditRotate.FlushCirclePos = function(self)
-  -- function num : 0_3
-  local pos = (self.curBoardMedal):Position()
+function UIN22MedalEditRotate:FlushCirclePos()
+  local pos = self.curBoardMedal:Position()
   local index = 0
-  local isRight = (self.center).x < pos.x
-  local isUp = (self.center).y < pos.y
+  local isRight = pos.x > self.center.x
+  local isUp = pos.y > self.center.y
   if isRight then
     if isUp then
       index = 1
@@ -87,107 +66,65 @@ UIN22MedalEditRotate.FlushCirclePos = function(self)
   else
     index = 3
   end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.circle).anchoredPosition = (self.showPosList)[index]
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  self.circle.anchoredPosition = self.showPosList[index]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditRotate.FlushArrow = function(self)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.arrow).localRotation = self.quaternion
+function UIN22MedalEditRotate:FlushArrow()
+  self.arrow.localRotation = self.quaternion
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditRotate.BgOnClick = function(self, go)
-  -- function num : 0_5
+function UIN22MedalEditRotate:BgOnClick(go)
   self:AnimCloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditRotate.ImgCancelOnClick = function(self, go)
-  -- function num : 0_6
-  self.quaternion = (self.quaternionBak):Clone()
+function UIN22MedalEditRotate:ImgCancelOnClick(go)
+  self.quaternion = self.quaternionBak:Clone()
   self:Rotate()
   self:AnimCloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditRotate.ImgConfirmOnClick = function(self, go)
-  -- function num : 0_7
+function UIN22MedalEditRotate:ImgConfirmOnClick(go)
   self:AnimCloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditRotate.AnimCloseDialog = function(self)
-  -- function num : 0_8
+function UIN22MedalEditRotate:AnimCloseDialog()
   self:PlayAnimOut(function()
-    -- function num : 0_8_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditRotate.PlayAnimOut = function(self, callback)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN22MedalEditRotate:PlayAnimOut(callback)
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV, callback
     local key = "uieff_UIN22MedalEditRotate_out"
     self:Lock(key)
-    ;
-    (self.anim):Play("uieff_UIN22MedalEditRotate_out")
+    self.anim:Play("uieff_UIN22MedalEditRotate_out")
     YIELD(TT, 767)
     if callback then
       callback()
     end
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditRotate.Rotate = function(self)
-  -- function num : 0_10
+function UIN22MedalEditRotate:Rotate()
   self:FlushArrow()
-  ;
-  (self.curBoardMedal):FlushRot(self.quaternion)
+  self.curBoardMedal:FlushRot(self.quaternion)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditRotate.CalcAngle = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local mousePosition = (UnityEngine.Input).mousePosition
+function UIN22MedalEditRotate:CalcAngle()
+  local mousePosition = UnityEngine.Input.mousePosition
   local screenPos = Vector2(mousePosition.x, mousePosition.y)
-  local pos = (UIHelper.ScreenPointToWorldPointInRectangle)((self.circle).parent, screenPos, self.camera)
-  local v3 = pos - (self.circle).position
-  local angle = (Vector2.Angle)(Vector2.up, Vector2(v3.x, v3.y))
+  local pos = UIHelper.ScreenPointToWorldPointInRectangle(self.circle.parent, screenPos, self.camera)
+  local v3 = pos - self.circle.position
+  local angle = Vector2.Angle(Vector2.up, Vector2(v3.x, v3.y))
   if v3.x < 0 then
     angle = 360 - angle
   end
   angle = self:FormatAngle(angle)
-  ;
-  (self.quaternion):SetEuler(0, 0, -angle)
+  self.quaternion:SetEuler(0, 0, -angle)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEditRotate.FormatAngle = function(self, angle)
-  -- function num : 0_12 , upvalues : _ENV
-  local div = (math.floor)((angle + self.rotateAngleStep * 0.5) / self.rotateAngleStep) * self.rotateAngleStep
+function UIN22MedalEditRotate:FormatAngle(angle)
+  local div = math.floor((angle + self.rotateAngleStep * 0.5) / self.rotateAngleStep) * self.rotateAngleStep
   return div
 end
-
-

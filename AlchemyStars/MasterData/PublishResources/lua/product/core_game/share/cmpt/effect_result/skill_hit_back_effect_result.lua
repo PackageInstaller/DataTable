@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_hit_back_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillHitBackEffectResult", SkillEffectResultBase)
 SkillHitBackEffectResult = SkillHitBackEffectResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillHitBackEffectResult.Constructor = function(self, targetId, startPos, targetPos, gridElementChangeTable, calcType, hitDir, colorNew)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillHitBackEffectResult:Constructor(targetId, startPos, targetPos, gridElementChangeTable, calcType, hitDir, colorNew)
   self._effectType = SkillEffectType.HitBack
   self._targetId = targetId
   self._startPos = startPos
@@ -22,153 +15,87 @@ SkillHitBackEffectResult.Constructor = function(self, targetId, startPos, target
   self._blockMonsterID = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillHitBackEffectResult:GetEffectType()
   return SkillEffectType.HitBack
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.GetStartPos = function(self)
-  -- function num : 0_2
+function SkillHitBackEffectResult:GetStartPos()
   return self._startPos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.GetGridPos = function(self)
-  -- function num : 0_3
+function SkillHitBackEffectResult:GetGridPos()
   return self._targetPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.GetPosTarget = function(self)
-  -- function num : 0_4
+function SkillHitBackEffectResult:GetPosTarget()
   return self._targetPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.GetHitDir = function(self)
-  -- function num : 0_5
+function SkillHitBackEffectResult:GetHitDir()
   return self._hitDir
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.ClearHitDir = function(self)
-  -- function num : 0_6
+function SkillHitBackEffectResult:ClearHitDir()
   self._hitDir = nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.IsHaveMoveDir = function(self)
-  -- function num : 0_7
+function SkillHitBackEffectResult:IsHaveMoveDir()
   local dirMove = self._targetPos - self._startPos
-  do return dirMove.x ~= 0 or dirMove.y ~= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return dirMove.x ~= 0 or dirMove.y ~= 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.GetGridElementChangeTable = function(self)
-  -- function num : 0_8
+function SkillHitBackEffectResult:GetGridElementChangeTable()
   return self._gridElementChangeTable
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.GetCalcType = function(self)
-  -- function num : 0_9
+function SkillHitBackEffectResult:GetCalcType()
   return self._hitbackCalcType
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.GetTargetID = function(self)
-  -- function num : 0_10
+function SkillHitBackEffectResult:GetTargetID()
   return self._targetId
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.SetTriggerTrapIds = function(self, triggerTraps)
-  -- function num : 0_11
+function SkillHitBackEffectResult:SetTriggerTrapIds(triggerTraps)
   self._triggerTraps = triggerTraps
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.GetTriggerTrapIds = function(self)
-  -- function num : 0_12
+function SkillHitBackEffectResult:GetTriggerTrapIds()
   return self._triggerTraps
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.GetColorNew = function(self)
-  -- function num : 0_13
+function SkillHitBackEffectResult:GetColorNew()
   return self._colorNew
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.GetHadPlay = function(self)
-  -- function num : 0_14
+function SkillHitBackEffectResult:GetHadPlay()
   return self._hadPlay
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.SetHadPlay = function(self, hadPlay)
-  -- function num : 0_15
+function SkillHitBackEffectResult:SetHadPlay(hadPlay)
   self._hadPlay = hadPlay
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.SetBombTrapEntityID = function(self, bombTrapEntity)
-  -- function num : 0_16
+function SkillHitBackEffectResult:SetBombTrapEntityID(bombTrapEntity)
   self._bombTrapEntityID = bombTrapEntity
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.GetBombTrapEntityID = function(self)
-  -- function num : 0_17
+function SkillHitBackEffectResult:GetBombTrapEntityID()
   return self._bombTrapEntityID
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.SetIsBlocked = function(self, isBlocked)
-  -- function num : 0_18
+function SkillHitBackEffectResult:SetIsBlocked(isBlocked)
   self._isBlocked = isBlocked
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.GetIsBlocked = function(self)
-  -- function num : 0_19
+function SkillHitBackEffectResult:GetIsBlocked()
   return self._isBlocked
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.SetBlockMonsterID = function(self, monsterID)
-  -- function num : 0_20
+function SkillHitBackEffectResult:SetBlockMonsterID(monsterID)
   self._blockMonsterID = monsterID
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillHitBackEffectResult.GetBlockMonsterID = function(self)
-  -- function num : 0_21
+function SkillHitBackEffectResult:GetBlockMonsterID()
   return self._blockMonsterID
 end
-
-

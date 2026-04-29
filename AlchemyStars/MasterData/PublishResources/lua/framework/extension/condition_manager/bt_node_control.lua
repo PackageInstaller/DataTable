@@ -1,154 +1,112 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/extension/condition_manager/bt_node_control.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SequenceNode", BehaviourNode)
 SequenceNode = SequenceNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SequenceNode.Constructor = function(self, children)
-  -- function num : 0_0 , upvalues : _ENV
-  ((SequenceNode.super).Constructor)(self, children)
+function SequenceNode:Constructor(children)
+  SequenceNode.super.Constructor(self, children)
   self.idx = 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SequenceNode.DBString = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SequenceNode:DBString()
   return tostring(self.idx)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SequenceNode.Reset = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SequenceNode:Reset()
   if self.status ~= BTState.READY then
     self.status = BTState.READY
     if self.children then
-      for idx,child in ipairs(self.children) do
+      for idx, child in ipairs(self.children) do
         child:Reset()
       end
     end
   end
-  do
-    self.idx = 1
-  end
+  self.idx = 1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SequenceNode.Visit = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SequenceNode:Visit()
   if self.status ~= BTState.RUNNING then
     self.idx = 1
   end
   local done = false
-  do
-    while self.idx <= #self.children do
-      local child = (self.children)[self.idx]
-      child:Visit()
-      if child.status == BTState.RUNNING or child.status == BTState.FAILED then
-        self.status = child.status
-        return 
-      end
-      self.idx = self.idx + 1
+  while self.idx <= #self.children do
+    local child = self.children[self.idx]
+    child:Visit()
+    if child.status == BTState.RUNNING or child.status == BTState.FAILED then
+      self.status = child.status
+      return
     end
-    self.status = BTState.SUCCESS
+    self.idx = self.idx + 1
   end
+  self.status = BTState.SUCCESS
 end
 
 _class("SelectorNode", BehaviourNode)
 SelectorNode = SelectorNode
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-SelectorNode.Constructor = function(self, children)
-  -- function num : 0_4 , upvalues : _ENV
-  ((SelectorNode.super).Constructor)(self, children)
+function SelectorNode:Constructor(children)
+  SelectorNode.super.Constructor(self, children)
   self.idx = 1
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SelectorNode.DBString = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function SelectorNode:DBString()
   return tostring(self.idx)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SelectorNode.Reset = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SelectorNode:Reset()
   if self.status ~= BTState.READY then
     self.status = BTState.READY
     if self.children then
-      for idx,child in ipairs(self.children) do
+      for idx, child in ipairs(self.children) do
         child:Reset()
       end
     end
   end
-  do
-    self.idx = 1
-  end
+  self.idx = 1
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SelectorNode.Visit = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function SelectorNode:Visit()
   if self.status ~= BTState.RUNNING then
     self.idx = 1
   end
   local done = false
-  do
-    while self.idx <= #self.children do
-      local child = (self.children)[self.idx]
-      child:Visit()
-      if child.status == BTState.RUNNING or child.status == BTState.SUCCESS then
-        self.status = child.status
-        return 
-      end
-      self.idx = self.idx + 1
+  while self.idx <= #self.children do
+    local child = self.children[self.idx]
+    child:Visit()
+    if child.status == BTState.RUNNING or child.status == BTState.SUCCESS then
+      self.status = child.status
+      return
     end
-    self.status = BTState.FAILED
+    self.idx = self.idx + 1
   end
+  self.status = BTState.FAILED
 end
 
 _class("ParallelNode", BehaviourNode)
 ParallelNode = ParallelNode
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-ParallelNode.Step = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function ParallelNode:Step()
   if self.status ~= BTState.RUNNING then
     self:Reset()
-  else
-    if self.children then
-      for k,v in ipairs(self.children) do
-        if v.status == BTState.SUCCESS and (BT.iskindof)(v, "ConditionNode") then
-          v:Reset()
-        end
+  elseif self.children then
+    for k, v in ipairs(self.children) do
+      if v.status == BTState.SUCCESS and BT.iskindof(v, "ConditionNode") then
+        v:Reset()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ParallelNode.Visit = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function ParallelNode:Visit()
   local done = true
   local any_done = false
-  for idx,child in ipairs(self.children) do
-    if (BT.iskindof)(child, "ConditionNode") or (BT.iskindof)(child, "NotDecorator") then
+  for idx, child in ipairs(self.children) do
+    if BT.iskindof(child, "ConditionNode") or BT.iskindof(child, "NotDecorator") then
       child:Reset()
     end
     if child.status ~= BTState.SUCCESS then
       child:Visit()
       if child.status == BTState.FAILED then
         self.status = BTState.FAILED
-        return 
+        return
       end
     end
     if child.status == BTState.RUNNING then
@@ -157,36 +115,24 @@ ParallelNode.Visit = function(self)
       any_done = true
     end
   end
-  do
-    if done or self.stoponanycomplete and any_done then
-      self.status = BTState.SUCCESS
-    else
-      self.status = BTState.RUNNING
-    end
+  if done or self.stoponanycomplete and any_done then
+    self.status = BTState.SUCCESS
+  else
+    self.status = BTState.RUNNING
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ParallelNode.GetSleepTime = function(self)
-  -- function num : 0_10
+function ParallelNode:GetSleepTime()
   return 0
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ParallelNode.GetTreeSleepTime = function(self)
-  -- function num : 0_11
+function ParallelNode:GetTreeSleepTime()
   return 0
 end
 
 _class("DecoratorNode", BehaviourNode)
 DecoratorNode = DecoratorNode
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
 
-DecoratorNode.Constructor = function(self, child)
-  -- function num : 0_12 , upvalues : _ENV
-  ((DecoratorNode.super).Constructor)(self, {child})
+function DecoratorNode:Constructor(child)
+  DecoratorNode.super.Constructor(self, {child})
 end
-
-

@@ -1,177 +1,118 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/find_treasure/data/ui_find_treasure_single_datas.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFindTreasureSingleData", Object)
 UIFindTreasureSingleData = UIFindTreasureSingleData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFindTreasureSingleData.Constructor = function(self, singleId, isSpecial, count)
-  -- function num : 0_0
+function UIFindTreasureSingleData:Constructor(singleId, isSpecial, count)
   self._singleId = singleId
   self._isSpecialSingle = isSpecial
   self._count = count
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureSingleData.GetSingleId = function(self)
-  -- function num : 0_1
+function UIFindTreasureSingleData:GetSingleId()
   return self._singleId
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureSingleData.IsSpecialSingle = function(self)
-  -- function num : 0_2
+function UIFindTreasureSingleData:IsSpecialSingle()
   return self._isSpecialSingle
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureSingleData.GetCount = function(self)
-  -- function num : 0_3
+function UIFindTreasureSingleData:GetCount()
   return self._count
 end
 
 _class("UIFindTreasureSingleDatas", Object)
 UIFindTreasureSingleDatas = UIFindTreasureSingleDatas
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFindTreasureSingleDatas.Constructor = function(self, singleId)
-  -- function num : 0_4 , upvalues : _ENV
+function UIFindTreasureSingleDatas:Constructor(singleId)
   self._cfg = self:GetCfg()
-  local primaryCount, seniorCount = (HomelandFindTreasureConst.GetSingleCount)()
-  local primaryId = (self._cfg).PrimaryEquipID
+  local primaryCount, seniorCount = HomelandFindTreasureConst.GetSingleCount()
+  local primaryId = self._cfg.PrimaryEquipID
   self._normalSingleData = UIFindTreasureSingleData:New(primaryId, false, primaryCount)
-  local seniorId = (self._cfg).SeniorEquipID
+  local seniorId = self._cfg.SeniorEquipID
   self._specialSingleData = UIFindTreasureSingleData:New(seniorId, true, seniorCount)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureSingleDatas.GetCfg = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  return (HomelandFindTreasureConst.GetSingleCfg)()
+function UIFindTreasureSingleDatas:GetCfg()
+  return HomelandFindTreasureConst.GetSingleCfg()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureSingleDatas.GetNormalSingleCount = function(self)
-  -- function num : 0_6
-  return (self._normalSingleData):GetCount()
+function UIFindTreasureSingleDatas:GetNormalSingleCount()
+  return self._normalSingleData:GetCount()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureSingleDatas.GetSpecialSingleCount = function(self)
-  -- function num : 0_7
-  return (self._specialSingleData):GetCount()
+function UIFindTreasureSingleDatas:GetSpecialSingleCount()
+  return self._specialSingleData:GetCount()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureSingleDatas.GetCanUseSingleData = function(self)
-  -- function num : 0_8
-  if (self._specialSingleData):GetCount() > 0 then
+function UIFindTreasureSingleDatas:GetCanUseSingleData()
+  if self._specialSingleData:GetCount() > 0 then
     return self._specialSingleData
   end
-  if (self._normalSingleData):GetCount() > 0 then
+  if 0 < self._normalSingleData:GetCount() then
     return self._normalSingleData
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureSingleDatas.GetMaxNormalSingleCount = function(self)
-  -- function num : 0_9
-  return (self._cfg).PrimaryEquipMaxNum
+function UIFindTreasureSingleDatas:GetMaxNormalSingleCount()
+  return self._cfg.PrimaryEquipMaxNum
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureSingleDatas.GetMaxSpecialSingleCount = function(self)
-  -- function num : 0_10
-  return (self._cfg).SeniorEquipMaxNum
+function UIFindTreasureSingleDatas:GetMaxSpecialSingleCount()
+  return self._cfg.SeniorEquipMaxNum
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureSingleDatas.GetNextSingleTime = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  return (HomelandFindTreasureConst.GetNextSingleTime)()
+function UIFindTreasureSingleDatas:GetNextSingleTime()
+  return HomelandFindTreasureConst.GetNextSingleTime()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureSingleDatas.IsSingleFull = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if (HomelandFindTreasureConst.IsGameActivityEnd)() then
+function UIFindTreasureSingleDatas:IsSingleFull()
+  if HomelandFindTreasureConst.IsGameActivityEnd() then
     return true
   end
-  do return self:GetMaxSpecialSingleCount() <= (self._specialSingleData):GetCount() and self:GetMaxNormalSingleCount() <= (self._normalSingleData):GetCount() end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return self._specialSingleData:GetCount() >= self:GetMaxSpecialSingleCount() and self._normalSingleData:GetCount() >= self:GetMaxNormalSingleCount()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureSingleDatas.GetSingleTimeStr = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIFindTreasureSingleDatas:GetSingleTimeStr()
   if self:IsSingleFull() then
-    return (StringTable.Get)("str_homeland_find_treasure_single_full_tips")
+    return StringTable.Get("str_homeland_find_treasure_single_full_tips")
   end
   local time, moreThanDay = self:GetNextSingleTime()
   return self:GetTimeStr(time, moreThanDay)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureSingleDatas.GetTimeStr = function(self, seconds, moreThanDay)
-  -- function num : 0_14 , upvalues : _ENV
+function UIFindTreasureSingleDatas:GetTimeStr(seconds, moreThanDay)
   if seconds < 0 then
     seconds = 0
   end
   local timeStr = ""
-  local day = (math.floor)(seconds / 3600 / 24)
+  local day = math.floor(seconds / 3600 / 24)
   local leftStr = ""
   if moreThanDay then
     leftStr = "str_homeland_find_treasure_time_tips"
   else
     leftStr = "str_homeland_find_treasure_time_oneday_tips"
   end
-  if day > 0 then
+  if 0 < day then
     seconds = seconds - day * 3600 * 24
-    local hour = (math.floor)((seconds) / 3600)
-    timeStr = (StringTable.Get)("str_homeland_find_treasure_day", day)
-    if hour > 0 then
-      timeStr = timeStr .. (StringTable.Get)("str_homeland_find_treasure_hour", hour)
+    local hour = math.floor(seconds / 3600)
+    timeStr = StringTable.Get("str_homeland_find_treasure_day", day)
+    if 0 < hour then
+      timeStr = timeStr .. StringTable.Get("str_homeland_find_treasure_hour", hour)
+    end
+  elseif 60 <= seconds then
+    local hour = math.floor(seconds / 3600)
+    seconds = seconds - hour * 3600
+    if 0 < hour then
+      timeStr = StringTable.Get("str_homeland_find_treasure_hour", hour)
+    end
+    local minus = math.floor(seconds / 60)
+    if 0 < minus then
+      timeStr = timeStr .. StringTable.Get("str_homeland_find_treasure_minus", minus)
+    elseif minus <= 0 then
+      timeStr = timeStr .. StringTable.Get("str_homeland_find_treasure_less_one_minus")
     end
   else
-    do
-      if seconds >= 60 then
-        local hour = (math.floor)((seconds) / 3600)
-        seconds = seconds - hour * 3600
-        if hour > 0 then
-          timeStr = (StringTable.Get)("str_homeland_find_treasure_hour", hour)
-        end
-        local minus = (math.floor)((seconds) / 60)
-        if minus > 0 then
-          timeStr = timeStr .. (StringTable.Get)("str_homeland_find_treasure_minus", minus)
-        else
-          if minus <= 0 then
-            timeStr = timeStr .. (StringTable.Get)("str_homeland_find_treasure_less_one_minus")
-          end
-        end
-      else
-        do
-          timeStr = (StringTable.Get)("str_homeland_find_treasure_less_one_minus")
-          return (StringTable.Get)(leftStr, timeStr)
-        end
-      end
-    end
+    timeStr = StringTable.Get("str_homeland_find_treasure_less_one_minus")
   end
+  return StringTable.Get(leftStr, timeStr)
 end
-
-

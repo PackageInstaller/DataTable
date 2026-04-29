@@ -1,139 +1,83 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/preview_convert_element_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewConvertElementComponent", Object)
 PreviewConvertElementComponent = PreviewConvertElementComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewConvertElementComponent.Constructor = function(self)
-  -- function num : 0_0
+function PreviewConvertElementComponent:Constructor()
   self._tempConvertElementDic = {}
   self._tempTransportEntityList = {}
   self._sourceTransportEntityList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewConvertElementComponent.SetTempConvertElementDic = function(self, elementDic)
-  -- function num : 0_1
+function PreviewConvertElementComponent:SetTempConvertElementDic(elementDic)
   self._tempConvertElementDic = elementDic
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewConvertElementComponent.GetTempConvertElementDic = function(self)
-  -- function num : 0_2
+function PreviewConvertElementComponent:GetTempConvertElementDic()
   return self._tempConvertElementDic
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewConvertElementComponent.AddTempConvertElement = function(self, gridPos, originalElementType)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (table.count)(self._tempConvertElementDic) == 0 then
-    (self._tempConvertElementDic)[gridPos] = originalElementType
-    return 
+function PreviewConvertElementComponent:AddTempConvertElement(gridPos, originalElementType)
+  if table.count(self._tempConvertElementDic) == 0 then
+    self._tempConvertElementDic[gridPos] = originalElementType
+    return
   end
-  for pos,v in pairs(self._tempConvertElementDic) do
+  for pos, v in pairs(self._tempConvertElementDic) do
     if pos.x == gridPos.x and pos.y == gridPos.y then
       v = originalElementType
-      return 
+      return
     end
   end
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._tempConvertElementDic)[gridPos] = originalElementType
+  self._tempConvertElementDic[gridPos] = originalElementType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewConvertElementComponent.RemoveTempConvertElement = function(self, gridPos)
-  -- function num : 0_4 , upvalues : _ENV
-  for pos,v in pairs(self._tempConvertElementDic) do
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R7 in 'UnsetPending'
-
+function PreviewConvertElementComponent:RemoveTempConvertElement(gridPos)
+  for pos, v in pairs(self._tempConvertElementDic) do
     if pos.x == gridPos.x and pos.y == gridPos.y then
-      (self._tempConvertElementDic)[pos] = nil
-      return 
+      self._tempConvertElementDic[pos] = nil
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewConvertElementComponent.ClearTempConvertElement = function(self)
-  -- function num : 0_5
+function PreviewConvertElementComponent:ClearTempConvertElement()
   self._tempConvertElementDic = {}
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewConvertElementComponent.AddPreviewTransportEntity = function(self, entity, sourceEntity)
-  -- function num : 0_6 , upvalues : _ENV
-  (table.insert)(self._tempTransportEntityList, entity:GetID())
-  ;
-  (table.insert)(self._sourceTransportEntityList, sourceEntity:GetID())
+function PreviewConvertElementComponent:AddPreviewTransportEntity(entity, sourceEntity)
+  table.insert(self._tempTransportEntityList, entity:GetID())
+  table.insert(self._sourceTransportEntityList, sourceEntity:GetID())
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewConvertElementComponent.GetPreviewTransportEntityList = function(self)
-  -- function num : 0_7
+function PreviewConvertElementComponent:GetPreviewTransportEntityList()
   return self._tempTransportEntityList, self._sourceTransportEntityList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewConvertElementComponent.ClearPreviewTransportEntity = function(self)
-  -- function num : 0_8
+function PreviewConvertElementComponent:ClearPreviewTransportEntity()
   self._tempTransportEntityList = {}
   self._sourceTransportEntityList = {}
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PreviewConvertElement = function(self)
-  -- function num : 0_9
-  return self:GetComponent((self.WEComponentsEnum).PreviewConvertElement)
+function Entity:PreviewConvertElement()
+  return self:GetComponent(self.WEComponentsEnum.PreviewConvertElement)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPreviewConvertElement = function(self)
-  -- function num : 0_10
-  return self:HasComponent((self.WEComponentsEnum).PreviewConvertElement)
+function Entity:HasPreviewConvertElement()
+  return self:HasComponent(self.WEComponentsEnum.PreviewConvertElement)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPreviewConvertElement = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewConvertElement
+function Entity:AddPreviewConvertElement()
+  local index = self.WEComponentsEnum.PreviewConvertElement
   local component = PreviewConvertElementComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePreviewConvertElement = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewConvertElement
+function Entity:ReplacePreviewConvertElement()
+  local index = self.WEComponentsEnum.PreviewConvertElement
   local component = PreviewConvertElementComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePreviewConvertElement = function(self)
-  -- function num : 0_13
+function Entity:RemovePreviewConvertElement()
   if self:HasPreviewConvertElement() then
-    self:RemoveComponent((self.WEComponentsEnum).PreviewConvertElement)
+    self:RemoveComponent(self.WEComponentsEnum.PreviewConvertElement)
   end
 end
-
-

@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_choose_main_cg_change_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChooseMainCgChangeItem", UICustomWidget)
 UIChooseMainCgChangeItem = UIChooseMainCgChangeItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChooseMainCgChangeItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChooseMainCgChangeItem:Constructor()
   self._roleModule = self:GetModule(RoleModule)
   self._assistantType = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainCgChangeItem.GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChooseMainCgChangeItem:GetComponents()
   self._scaleSlider = self:GetUIComponent("Slider", "scaleSlider")
   self._spriteImg = self:GetUIComponent("RawImageLoader", "spriteImg")
   self._bgImg = self:GetUIComponent("RawImageLoader", "bgImg")
@@ -33,320 +23,207 @@ UIChooseMainCgChangeItem.GetComponents = function(self)
   self._noSliderNode = self:GetGameObject("node_noslider")
   self._cgtxtNode = self:GetGameObject("node_cgtxt")
   self._bgtxtNode = self:GetGameObject("node_bgtxt")
-  ;
-  ((self._scaleSlider).onValueChanged):AddListener(function(value)
-    -- function num : 0_1_0 , upvalues : self
+  self._scaleSlider.onValueChanged:AddListener(function(value)
     if self._assistantType and self._scale and self._scale ~= value then
-      (self.uiOwner):_OnMainCgChangeScale(self._assistantType, value - self._scale)
+      self.uiOwner:_OnMainCgChangeScale(self._assistantType, value - self._scale)
       self._scale = value
     end
-  end
-)
+  end)
   self._sliderGo = self:GetGameObject("sliderImg")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self._scaleSlider).gameObject), UIEvent.Press, function(go)
-    -- function num : 0_1_1 , upvalues : self
-    (self.uiOwner):SetIsSliderPointerDown(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self._scaleSlider).gameObject), UIEvent.Release, function(go)
-    -- function num : 0_1_2 , upvalues : self
-    (self.uiOwner):SetIsSliderPointerDown(false)
-  end
-)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._scaleSlider.gameObject), UIEvent.Press, function(go)
+    self.uiOwner:SetIsSliderPointerDown(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._scaleSlider.gameObject), UIEvent.Release, function(go)
+    self.uiOwner:SetIsSliderPointerDown(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainCgChangeItem.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIChooseMainCgChangeItem:OnShow(uiParams)
   self:GetComponents()
   self:rolePosBtnOnClick()
   self:RefreshInfo()
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._scaleSlider).minValue = 0.5
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._scaleSlider).maxValue = 2
+  self._scaleSlider.minValue = 0.5
+  self._scaleSlider.maxValue = 2
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainCgChangeItem.RefreshInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIChooseMainCgChangeItem:RefreshInfo()
   local iconName = self:_GetSpriteIconName()
   if iconName then
-    (self._nocgNode):SetActive(false)
-    ;
-    (self._cgNode):SetActive(true)
-    ;
-    (self._spriteImg):LoadImage(iconName)
+    self._nocgNode:SetActive(false)
+    self._cgNode:SetActive(true)
+    self._spriteImg:LoadImage(iconName)
   else
-    ;
-    (self._nocgNode):SetActive(true)
-    ;
-    (self._cgNode):SetActive(false)
+    self._nocgNode:SetActive(true)
+    self._cgNode:SetActive(false)
   end
   if self._assistantType == UIChooseAssistantType.Change2Cg then
     if iconName then
-      (self._sliderNode):SetActive(true)
-      ;
-      (self._noSliderNode):SetActive(false)
+      self._sliderNode:SetActive(true)
+      self._noSliderNode:SetActive(false)
     else
-      ;
-      (self._sliderNode):SetActive(false)
-      ;
-      (self._noSliderNode):SetActive(true)
+      self._sliderNode:SetActive(false)
+      self._noSliderNode:SetActive(true)
     end
   end
   local bgName, isSmallPic = self:_GetBgIconName()
   if bgName then
     if isSmallPic then
-      (self._bgImg):LoadImage(bgName)
+      self._bgImg:LoadImage(bgName)
     else
-      ;
-      (self._bgImg2):LoadImage(bgName)
+      self._bgImg2:LoadImage(bgName)
     end
-    ;
-    (self._bgImgGo):SetActive(isSmallPic)
-    ;
-    (self._bgImgGo2):SetActive(not isSmallPic)
+    self._bgImgGo:SetActive(isSmallPic)
+    self._bgImgGo2:SetActive(not isSmallPic)
   else
-    ;
-    (Log.error)("bgName is null")
+    Log.error("bgName is null")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainCgChangeItem._GetSpriteIconName = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local petid = (self._roleModule):GetResId()
+function UIChooseMainCgChangeItem:_GetSpriteIconName()
+  local petid = self._roleModule:GetResId()
   local defaultPetID = 0
-  local grade, skin, asid = nil, nil, nil
+  local grade, skin, asid
   if not petid or petid == -1 then
-    return 
+    return
   end
   if petid ~= 0 then
     defaultPetID = petid
-    grade = ((self._roleModule).m_choose_painting).pet_grade
-    skin = ((self._roleModule).m_choose_painting).skin_id
-    asid = ((self._roleModule).m_choose_painting).board_pet
+    grade = self._roleModule.m_choose_painting.pet_grade
+    skin = self._roleModule.m_choose_painting.skin_id
+    asid = self._roleModule.m_choose_painting.board_pet
   else
-    defaultPetID = ((Cfg.cfg_global).main_default_spine_pet_id).IntValue
+    defaultPetID = Cfg.cfg_global.main_default_spine_pet_id.IntValue
     grade = 0
     skin = 0
     asid = 0
   end
-  local skinCfg = ((MatchPet.GetPetSkinCfg)(defaultPetID, grade, skin, PetSkinEffectPath.HEAD_ICON_CHANGE_ASSIST))
-  local iconName = nil
+  local skinCfg = MatchPet.GetPetSkinCfg(defaultPetID, grade, skin, PetSkinEffectPath.HEAD_ICON_CHANGE_ASSIST)
+  local iconName
   if asid and asid ~= 0 then
-    local cfg = (Cfg.cfg_only_assistant)[asid]
+    local cfg = Cfg.cfg_only_assistant[asid]
     if cfg ~= nil then
       iconName = cfg.Icon
     else
       iconName = "1500331_assistant"
-      ;
-      (Log.error)("_GetSpriteIconName is nil  id:", asid)
+      Log.error("_GetSpriteIconName is nil  id:", asid)
     end
   else
-    do
-      iconName = skinCfg.AircraftBody
-      return iconName
-    end
+    iconName = skinCfg.AircraftBody
   end
+  return iconName
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainCgChangeItem._GetBgIconName = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIChooseMainCgChangeItem:_GetBgIconName()
   local isSmallPic = true
-  local id = (self._roleModule):UI_GetMainBgID()
-  local type = ((self._roleModule).m_choose_painting).background_type
-  -- DECOMPILER ERROR at PC18: Unhandled construct in 'MakeBoolean' P3
-
-  if ((id == 0 and 2) or type == 0) then
-    local bgName = nil
-    if type == UIChooseAssistantBgType.Normal then
-      local cfg = (Cfg.cfg_main_bg)[id]
-      if not cfg then
-        return 
-      end
-      bgName = cfg.BG
-    else
-      do
-        do
-          local cfg = (Cfg.cfg_cg_book)[id]
-          if not cfg then
-            return 
-          end
-          bgName = cfg.Preview
-          if cfg.StaticPic then
-            bgName = cfg.StaticPic
-            isSmallPic = false
-          end
-          return bgName, isSmallPic
-        end
-      end
+  local id = self._roleModule:UI_GetMainBgID()
+  local type = self._roleModule.m_choose_painting.background_type
+  id = id == 0 and 2 or id
+  type = type == 0 and 1 or type
+  local bgName
+  if type == UIChooseAssistantBgType.Normal then
+    local cfg = Cfg.cfg_main_bg[id]
+    if not cfg then
+      return
+    end
+    bgName = cfg.BG
+  else
+    local cfg = Cfg.cfg_cg_book[id]
+    if not cfg then
+      return
+    end
+    bgName = cfg.Preview
+    if cfg.StaticPic then
+      bgName = cfg.StaticPic
+      isSmallPic = false
     end
   end
+  return bgName, isSmallPic
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainCgChangeItem.SetScale = function(self, uiChooseAssistantType, scale)
-  -- function num : 0_6 , upvalues : _ENV
+function UIChooseMainCgChangeItem:SetScale(uiChooseAssistantType, scale)
   if not scale then
-    return 
+    return
   end
   if uiChooseAssistantType == UIChooseAssistantType.Change2Bg then
     self._bgScale = scale
-  else
-    if uiChooseAssistantType == UIChooseAssistantType.Change2Cg then
-      self._cgScale = scale
-    end
+  elseif uiChooseAssistantType == UIChooseAssistantType.Change2Cg then
+    self._cgScale = scale
   end
   if self._assistantType == uiChooseAssistantType then
     if scale <= 0 then
-      (Log.debug)("[FX] SET scale", scale)
+      Log.debug("[FX] SET scale", scale)
       scale = 1
     end
     self._scale = scale
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R3 in 'UnsetPending'
-
-    if (self._scaleSlider).value ~= scale then
-      (self._scaleSlider).value = scale
+    if self._scaleSlider.value ~= scale then
+      self._scaleSlider.value = scale
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainCgChangeItem.SpriteBtnOnClick = function(self)
-  -- function num : 0_7
+function UIChooseMainCgChangeItem:SpriteBtnOnClick()
   self:ShowDialog("UIChooseAssistantController")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainCgChangeItem.BgBtnOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIChooseMainBgController")
+function UIChooseMainCgChangeItem:BgBtnOnClick()
+  GameGlobal.UIStateManager():ShowDialog("UIChooseMainBgController")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainCgChangeItem.SpriteBtn2OnClick = function(self)
-  -- function num : 0_9
+function UIChooseMainCgChangeItem:SpriteBtn2OnClick()
   self:SpriteBtnOnClick()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainCgChangeItem.BgBtn2OnClick = function(self)
-  -- function num : 0_10
+function UIChooseMainCgChangeItem:BgBtn2OnClick()
   self:BgBtnOnClick()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainCgChangeItem.SpriteBtn3OnClick = function(self)
-  -- function num : 0_11
+function UIChooseMainCgChangeItem:SpriteBtn3OnClick()
   self:SpriteBtnOnClick()
 end
 
-local grayColor = Color(0.23921568627451, 0.23921568627451, 0.23921568627451, 1)
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
+local grayColor = Color(0.23921568627450981, 0.23921568627450981, 0.23921568627450981, 1)
 
-UIChooseMainCgChangeItem.rolePosBtnOnClick = function(self)
-  -- function num : 0_12 , upvalues : _ENV, grayColor
+function UIChooseMainCgChangeItem:rolePosBtnOnClick()
   if self._assistantType ~= UIChooseAssistantType.Change2Cg then
     self._scale = nil
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._rolePosTxt).color = Color.white
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._bgPosTxt).color = grayColor
-    ;
-    (self._rolePosBg):SetActive(true)
-    ;
-    (self._bgPosBg):SetActive(false)
-    ;
-    (self._cgtxtNode):SetActive(true)
-    ;
-    (self._bgtxtNode):SetActive(false)
+    self._rolePosTxt.color = Color.white
+    self._bgPosTxt.color = grayColor
+    self._rolePosBg:SetActive(true)
+    self._bgPosBg:SetActive(false)
+    self._cgtxtNode:SetActive(true)
+    self._bgtxtNode:SetActive(false)
     if self:_GetSpriteIconName() then
-      (self._sliderNode):SetActive(true)
-      ;
-      (self._noSliderNode):SetActive(false)
+      self._sliderNode:SetActive(true)
+      self._noSliderNode:SetActive(false)
     else
-      ;
-      (self._sliderNode):SetActive(false)
-      ;
-      (self._noSliderNode):SetActive(true)
+      self._sliderNode:SetActive(false)
+      self._noSliderNode:SetActive(true)
     end
     self._assistantType = UIChooseAssistantType.Change2Cg
-    ;
-    (self.uiOwner):PetBtnOnClick()
-    local minScale, MaxScale = (self.uiOwner):GetMinAndMaxScale(UIChooseAssistantType.Change2Cg)
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._scaleSlider).minValue = minScale
-    -- DECOMPILER ERROR at PC64: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._scaleSlider).maxValue = MaxScale
+    self.uiOwner:PetBtnOnClick()
+    local minScale, MaxScale = self.uiOwner:GetMinAndMaxScale(UIChooseAssistantType.Change2Cg)
+    self._scaleSlider.minValue = minScale
+    self._scaleSlider.maxValue = MaxScale
     self:SetScale(UIChooseAssistantType.Change2Cg, self._cgScale)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseMainCgChangeItem.bgPosBtnOnClick = function(self)
-  -- function num : 0_13 , upvalues : _ENV, grayColor
+function UIChooseMainCgChangeItem:bgPosBtnOnClick()
   if self._assistantType ~= UIChooseAssistantType.Change2Bg then
     self._scale = nil
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._rolePosTxt).color = grayColor
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._bgPosTxt).color = Color.white
-    ;
-    (self._rolePosBg):SetActive(false)
-    ;
-    (self._bgPosBg):SetActive(true)
-    ;
-    (self._cgtxtNode):SetActive(false)
-    ;
-    (self._bgtxtNode):SetActive(true)
-    ;
-    (self._sliderNode):SetActive(true)
-    ;
-    (self._noSliderNode):SetActive(false)
+    self._rolePosTxt.color = grayColor
+    self._bgPosTxt.color = Color.white
+    self._rolePosBg:SetActive(false)
+    self._bgPosBg:SetActive(true)
+    self._cgtxtNode:SetActive(false)
+    self._bgtxtNode:SetActive(true)
+    self._sliderNode:SetActive(true)
+    self._noSliderNode:SetActive(false)
     self._assistantType = UIChooseAssistantType.Change2Bg
-    ;
-    (self.uiOwner):BgBtnOnClick()
-    local minScale, MaxScale = (self.uiOwner):GetMinAndMaxScale(UIChooseAssistantType.Change2Bg)
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._scaleSlider).minValue = minScale
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._scaleSlider).maxValue = MaxScale
+    self.uiOwner:BgBtnOnClick()
+    local minScale, MaxScale = self.uiOwner:GetMinAndMaxScale(UIChooseAssistantType.Change2Bg)
+    self._scaleSlider.minValue = minScale
+    self._scaleSlider.maxValue = MaxScale
     self:SetScale(UIChooseAssistantType.Change2Bg, self._bgScale)
   end
 end
-
-

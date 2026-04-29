@@ -1,89 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/domitory/ui_home_domitory_change_name.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeDomitoryChangeName", UIController)
 UIHomeDomitoryChangeName = UIHomeDomitoryChangeName
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeDomitoryChangeName.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomeDomitoryChangeName:OnShow(uiParams)
   self:InitWidget()
   self._roomIdx = uiParams[1]
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.roomName).text = ""
+  self.roomName.text = ""
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryChangeName.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeDomitoryChangeName:InitWidget()
   self.roomName = self:GetUIComponent("EmojiFilteredInputField", "roomName")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryChangeName.bgOnClick = function(self, go)
-  -- function num : 0_2
+function UIHomeDomitoryChangeName:bgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryChangeName.btnCancelOnClick = function(self, go)
-  -- function num : 0_3
+function UIHomeDomitoryChangeName:btnCancelOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryChangeName.btnEnsureOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomeDomitoryChangeName:btnEnsureOnClick(go)
   self:StartTask(self.change, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryChangeName.change = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
-  local str = (self.roomName).text
-  if (string.isnullorempty)(str) then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_domitory_name_illegal2"))
-    return 
+function UIHomeDomitoryChangeName:change(TT)
+  local str = self.roomName.text
+  if string.isnullorempty(str) then
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_domitory_name_illegal2"))
+    return
   end
-  local length = (HelperProxy:GetInstance()):GetCharLength(str)
-  if length > 12 then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_domitory_name_illegal1"))
-    return 
+  local length = HelperProxy:GetInstance():GetCharLength(str)
+  if 12 < length then
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_domitory_name_illegal1"))
+    return
   end
-  local res = (self:GetModule(HomelandModule)):DormitoryChangeName(TT, self._roomIdx, str)
+  local res = self:GetModule(HomelandModule):DormitoryChangeName(TT, self._roomIdx, str)
   if res:GetSucc() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeDomitoryRefreshRoom)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeDomitoryRefreshRoom)
     self:CloseDialog()
-    ;
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_domitory_name_changed"))
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_domitory_name_changed"))
   else
     local errorCode = res:GetResult()
-    ;
-    (Log.fatal)("###domitory - RequestChangeName fail ! result - ", errorCode)
+    Log.fatal("###domitory - RequestChangeName fail ! result - ", errorCode)
     if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_LIMIT then
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_LIMIT"))
+      ToastManager.ShowHomeToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_LIMIT"))
+    elseif errorCode == ROLE_RESULT_CODE.ROLE_ERROR_DIRTY_NICK then
+      ToastManager.ShowHomeToast(StringTable.Get("str_guide_ROLE_ERROR_DIRTY_NICK"))
+    elseif errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_INVALID then
+      ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_INVALID"))
     else
-      if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_DIRTY_NICK then
-        (ToastManager.ShowHomeToast)((StringTable.Get)("str_guide_ROLE_ERROR_DIRTY_NICK"))
-      else
-        if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_INVALID then
-          (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_INVALID"))
-        else
-          ;
-          (ToastManager.ShowHomeToast)(res:GetResult())
-        end
-      end
+      ToastManager.ShowHomeToast(res:GetResult())
     end
   end
 end
-
-

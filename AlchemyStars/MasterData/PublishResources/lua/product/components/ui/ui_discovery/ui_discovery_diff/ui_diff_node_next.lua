@@ -1,61 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_diff/ui_diff_node_next.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiffNodeNext", UIDiffNodeBase)
 UIDiffNodeNext = UIDiffNodeNext
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiffNodeNext.GetComponents = function(self)
-  -- function num : 0_0
+function UIDiffNodeNext:GetComponents()
   self._go = self:GetGameObject()
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self._texName = self:GetUIComponent("UILocalizationText", "txtName")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeNext.SetInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((self._node):ChapterID())
-  local chapterID = nil
-  local tips = nil
-  self._nextChapterID = (self._uiModule):GetNextChapterID(chapterID)
+function UIDiffNodeNext:SetInfo()
+  local chapterID = self._node:ChapterID()
+  local tips
+  self._nextChapterID = self._uiModule:GetNextChapterID(chapterID)
   if self._nextChapterID then
-    local cfg = (Cfg.cfg_difficulty_mission_chapter_desc)[self._nextChapterID]
+    local cfg = Cfg.cfg_difficulty_mission_chapter_desc[self._nextChapterID]
     local cName = cfg.Name
     tips = cName
   else
-    do
-      tips = "str_discovery_coming_soon"
-      ;
-      (self._texName):SetText((StringTable.Get)(tips))
-    end
+    tips = "str_discovery_coming_soon"
   end
+  self._texName:SetText(StringTable.Get(tips))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeNext.ClickItem = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDiffNodeNext:ClickItem()
   if self._nextChapterID then
     if not self:CheckNextUnLock() then
-      (ToastManager.ShowToast)((StringTable.Get)("str_discovery_next_blackbox_locktip"))
-      return 
+      ToastManager.ShowToast(StringTable.Get("str_discovery_next_blackbox_locktip"))
+      return
     end
     if self._callback then
-      (self._callback)(self._node)
+      self._callback(self._node)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeNext.CheckNextUnLock = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDiffNodeNext:CheckNextUnLock()
   if self._nextChapterID then
-    local cfg = (Cfg.cfg_difficulty_mission_chapter_desc)[self._nextChapterID]
+    local cfg = Cfg.cfg_difficulty_mission_chapter_desc[self._nextChapterID]
     if not cfg then
       return true
     end
@@ -63,14 +43,10 @@ UIDiffNodeNext.CheckNextUnLock = function(self)
       return false
     end
     if cfg and cfg.TimeUnLock then
-      local unlockTime = (UITimerHelper.GetTimeFormatByString)(cfg.TimeUnLock)
-      local unlock = (UITimerHelper.CheckTimeUnLock)(unlockTime)
+      local unlockTime = UITimerHelper.GetTimeFormatByString(cfg.TimeUnLock)
+      local unlock = UITimerHelper.CheckTimeUnLock(unlockTime)
       return unlock
     end
-    do
-      do return true end
-    end
+    return true
   end
 end
-
-

@@ -1,8 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/activity/n34/str_n34.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_n34_activity_remain_time = "イベント残り時間:{1}", str_n34_activity_survey_level_remain_time = "イベント残り時間:{1}", str_n34_activity_survey_level_lock_mission_tips = "前ステージ未解放", str_n34_activity_survey_level_lock_time_tips = "イベントが解放されていません", str_n34_activity_dispath_level_remain_time = "イベント残り時間:{1}", str_n34_activity_dispatch_level_lock_time_tips = "{1}後解放", str_n34_activity_dispatch_level_lock_mission_tips = "ステージ未開放", str_n34_day = "{1}日", str_n34_hour = "{1}時間", str_n34_minus = "{1}分", str_n34_less_one_minus = "<1分", str_n34_activity_end = "イベントは終了しました", str_n34_activity_intro_title = "イベント【日没線上の交響曲】について", str_n34_activity_intro_head_1 = "アイテム【マンパワー】の獲得方法について", str_n34_activity_intro_body_1 = "1.．イベント期間中、プリズムを消費するメインストーリーまたは資源ステージをクリアすると、一定数の【マンパワー】を獲得できます。\n2.．イベント終了の3日前より、上記ステージでは【マンパワー】を獲得できなくなります。", str_n34_activity_intro_head_2 = "アイテム 【マンパワー】の使用方法について", str_n34_activity_intro_body_2 = "1．イベント期間中、【トワイライトの謀略】で【マンパワー】を消費して同僚からの依頼を完了すると、報酬を獲得できます。\n2．【マンパワー】の獲得期間終了から3日間は【トワイライトの謀略】が開放されます。余っている【マンパワー】はお早めにご使用ください。\n3．【トワイライトの謀略】終了後、未使用の【マンパワー】は1:10の比率で白夜コインに変換されます。", str_n34_activity_intro_head_3 = "【トワイライトの謀略】について", str_n34_activity_intro_body_3 = "1．ラス大元帥はトワイライトシティの秩序を再建し始め、啓光の同僚たちの注意を引きました。同僚全員の作戦依頼を一気に完了し、同僚からそれぞれの承認報告書を手に入れましょう。\n2．【マンパワー】を消費して同僚たちの作戦依頼を完了すると、同僚たちの承認率が上がります。\n3．すべての依頼を完了すると、同僚それぞれの【報告書】を入手でき、ラス大元帥に対する同僚たちの評価が見られます。\n4．すべての同僚の【報告書】を獲得すると、啓光連邦が授与する【傑出奉仕者勲章】およびそのほか豪華報酬を獲得できます。", str_n34_activity_intro_head_4 = "【薄暮の境界へ】について", str_n34_activity_intro_body_4 = "1．暗鬼たちの企みを探るため、ラス大元帥は先遣隊をトワイライトシティ周辺の夜明けと夕暮れの境界線に派遣し、調査することにしました。\n2．情報によると、今回の任務では合計7区の疑わしいエリアを調査する必要があります。1回の調査を完了するには、一定の時間を必要とします。\n3．調査中、先遣隊は定期的に行動報告をおこないます。調査用の通信端末で進捗具合を確認できます。\n4．すべてのエリアの調査完了後、先遣隊はすぐに遠隔通信でラス大元帥に報告を行います。一緒に暗鬼の企みを暴きましょう！", str_n34_activity_login_btn = "新部隊ログイン", str_n34_main_entry_tips1 = "「トワイライトの謀略」解放", str_n34_main_entry_tips2 = "「薄暮の境界へ」解放", str_n34_activity_event_btn = "特別事件簿", str_n34_activity_main_tip = "イベント紹介"}
+local config = {
+  str_n34_activity_remain_time = "イベント残り時間:{1}",
+  str_n34_activity_survey_level_remain_time = "イベント残り時間:{1}",
+  str_n34_activity_survey_level_lock_mission_tips = "前ステージ未解放",
+  str_n34_activity_survey_level_lock_time_tips = "イベントが解放されていません",
+  str_n34_activity_dispath_level_remain_time = "イベント残り時間:{1}",
+  str_n34_activity_dispatch_level_lock_time_tips = "{1}後解放",
+  str_n34_activity_dispatch_level_lock_mission_tips = "ステージ未開放",
+  str_n34_day = "{1}日",
+  str_n34_hour = "{1}時間",
+  str_n34_minus = "{1}分",
+  str_n34_less_one_minus = "<1分",
+  str_n34_activity_end = "イベントは終了しました",
+  str_n34_activity_intro_title = "イベント【日没線上の交響曲】について",
+  str_n34_activity_intro_head_1 = "アイテム【マンパワー】の獲得方法について",
+  str_n34_activity_intro_body_1 = "1.．イベント期間中、プリズムを消費するメインストーリーまたは資源ステージをクリアすると、一定数の【マンパワー】を獲得できます。\n2.．イベント終了の3日前より、上記ステージでは【マンパワー】を獲得できなくなります。",
+  str_n34_activity_intro_head_2 = "アイテム 【マンパワー】の使用方法について",
+  str_n34_activity_intro_body_2 = "1．イベント期間中、【トワイライトの謀略】で【マンパワー】を消費して同僚からの依頼を完了すると、報酬を獲得できます。\n2．【マンパワー】の獲得期間終了から3日間は【トワイライトの謀略】が開放されます。余っている【マンパワー】はお早めにご使用ください。\n3．【トワイライトの謀略】終了後、未使用の【マンパワー】は1:10の比率で白夜コインに変換されます。",
+  str_n34_activity_intro_head_3 = "【トワイライトの謀略】について",
+  str_n34_activity_intro_body_3 = "1．ラス大元帥はトワイライトシティの秩序を再建し始め、啓光の同僚たちの注意を引きました。同僚全員の作戦依頼を一気に完了し、同僚からそれぞれの承認報告書を手に入れましょう。\n2．【マンパワー】を消費して同僚たちの作戦依頼を完了すると、同僚たちの承認率が上がります。\n3．すべての依頼を完了すると、同僚それぞれの【報告書】を入手でき、ラス大元帥に対する同僚たちの評価が見られます。\n4．すべての同僚の【報告書】を獲得すると、啓光連邦が授与する【傑出奉仕者勲章】およびそのほか豪華報酬を獲得できます。",
+  str_n34_activity_intro_head_4 = "【薄暮の境界へ】について",
+  str_n34_activity_intro_body_4 = "1．暗鬼たちの企みを探るため、ラス大元帥は先遣隊をトワイライトシティ周辺の夜明けと夕暮れの境界線に派遣し、調査することにしました。\n2．情報によると、今回の任務では合計7区の疑わしいエリアを調査する必要があります。1回の調査を完了するには、一定の時間を必要とします。\n3．調査中、先遣隊は定期的に行動報告をおこないます。調査用の通信端末で進捗具合を確認できます。\n4．すべてのエリアの調査完了後、先遣隊はすぐに遠隔通信でラス大元帥に報告を行います。一緒に暗鬼の企みを暴きましょう！",
+  str_n34_activity_login_btn = "新部隊ログイン",
+  str_n34_main_entry_tips1 = "「トワイライトの謀略」解放",
+  str_n34_main_entry_tips2 = "「薄暮の境界へ」解放",
+  str_n34_activity_event_btn = "特別事件簿",
+  str_n34_activity_main_tip = "イベント紹介"
+}
 return config
-

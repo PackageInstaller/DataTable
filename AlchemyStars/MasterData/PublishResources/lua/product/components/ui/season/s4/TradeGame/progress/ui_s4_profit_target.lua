@@ -1,23 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/progress/ui_s4_profit_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIS4ProfitStatus = {CPPS_Accepted = 1, CPPS_Completed = 2, CPPS_Taken = 3}
+local UIS4ProfitStatus = {
+  CPPS_Accepted = 1,
+  CPPS_Completed = 2,
+  CPPS_Taken = 3
+}
 _enum("UIS4ProfitStatus", UIS4ProfitStatus)
 _class("UIS4ProfitTarget", UICustomWidget)
 UIS4ProfitTarget = UIS4ProfitTarget
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIS4ProfitTarget.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIS4ProfitTarget:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIS4ProfitTarget.InitWidget = function(self)
-  -- function num : 0_1
+function UIS4ProfitTarget:InitWidget()
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self.notGet = self:GetGameObject("NotGet")
   self.canGet = self:GetGameObject("CanGet")
@@ -31,109 +25,68 @@ UIS4ProfitTarget.InitWidget = function(self)
   self.eff2 = self:GetGameObject("eff2")
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIS4ProfitTarget.SetData = function(self, i, number, status, progress, rewards, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS4ProfitTarget:SetData(i, number, status, progress, rewards, callback)
   self.id = i
   self.number = number
   self.status = status
   self.progress = progress
   self.rewards = rewards
   self._callback = callback
-  local titleStr = (StringTable.Get)("str_season_s4_trade_reward_process_title_1") .. number
-  ;
-  (self._name):SetText(titleStr)
+  local titleStr = StringTable.Get("str_season_s4_trade_reward_process_title_1") .. number
+  self._name:SetText(titleStr)
   self:SetStatus()
   self:SetAwards()
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIS4ProfitTarget.SetStatus = function(self)
-  -- function num : 0_3 , upvalues : UIS4ProfitStatus, _ENV
+function UIS4ProfitTarget:SetStatus()
   if self.status == UIS4ProfitStatus.CPPS_Accepted then
-    (self.notGet):SetActive(true)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.notGetTxt).color = Color(0.25098039215686, 0.23921568627451, 0.23529411764706, 1)
-    ;
-    (self.canGet):SetActive(false)
-    ;
-    (self.got):SetActive(false)
-  else
-    if self.status == UIS4ProfitStatus.CPPS_Completed then
-      (self.canGet):SetActive(true)
-      if (self.notGet).activeSelf then
-        (self.eff):SetActive(true)
-        ;
-        (self.eff2):SetActive(true)
-        ;
-        (self._anim):Play("uianim_UIS4ProfitTarget_receive")
-      else
-        -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self.CanGetCanvas).alpha = 1
-      end
-      ;
-      (self.notGet):SetActive(false)
-      ;
-      (self.got):SetActive(false)
+    self.notGet:SetActive(true)
+    self.notGetTxt.color = Color(0.25098039215686274, 0.23921568627450981, 0.23529411764705882, 1)
+    self.canGet:SetActive(false)
+    self.got:SetActive(false)
+  elseif self.status == UIS4ProfitStatus.CPPS_Completed then
+    self.canGet:SetActive(true)
+    if self.notGet.activeSelf then
+      self.eff:SetActive(true)
+      self.eff2:SetActive(true)
+      self._anim:Play("uianim_UIS4ProfitTarget_receive")
     else
-      if self.status == UIS4ProfitStatus.CPPS_Taken then
-        (self.notGet):SetActive(false)
-        ;
-        (self.canGet):SetActive(false)
-        ;
-        (self.got):SetActive(true)
-      end
+      self.CanGetCanvas.alpha = 1
     end
+    self.notGet:SetActive(false)
+    self.got:SetActive(false)
+  elseif self.status == UIS4ProfitStatus.CPPS_Taken then
+    self.notGet:SetActive(false)
+    self.canGet:SetActive(false)
+    self.got:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIS4ProfitTarget.CanGetOnClick = function(self, go)
-  -- function num : 0_4
+function UIS4ProfitTarget:CanGetOnClick(go)
   if self._callback then
-    (self._callback)(self.progress)
+    self._callback(self.progress)
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIS4ProfitTarget.SetAwards = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local count = (table.count)(self.rewards)
-  self.awardItems = (self.AwardsPool):SpawnObjects("UISeasonItemS4", count)
-  for i,v in ipairs(self.awardItems) do
+function UIS4ProfitTarget:SetAwards()
+  local count = table.count(self.rewards)
+  self.awardItems = self.AwardsPool:SpawnObjects("UISeasonItemS4", count)
+  for i, v in ipairs(self.awardItems) do
     v:SetRect(0.8)
     local ra = RoleAsset:New()
-    ra.assetid = ((self.rewards)[i]).assetid
-    ra.count = ((self.rewards)[i]).count
+    ra.assetid = self.rewards[i].assetid
+    ra.count = self.rewards[i].count
     v:Flush(ra)
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIS4ProfitTarget.PlayProfitAnimIn = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIS4ProfitTarget:PlayProfitAnimIn()
   local LockName = "UIS4DiaryItem_AnimIN"
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.canvas).alpha = 0
+  self.canvas.alpha = 0
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
     YIELD(TT, self.id * 60)
-    if not (tolua.isnull)(self._anim) then
-      (self._anim):Play("uianim_UIS4ProfitTarget_in")
+    if not tolua.isnull(self._anim) then
+      self._anim:Play("uianim_UIS4ProfitTarget_in")
     end
-  end
-)
+  end)
 end
-
-

@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2900601/cfg_skill_view_1001631.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName = Skill03; PlayAudio,audioID =6063,audioType=1; PlayCasterBindEffect,effectID=PARAM.effectID3; Wait,waitTime=2000; DataSelectScopeGridRange,effectType=1; DataSortScopeGridRange,sortType=8; DataSelectScopeGridRangeIndex,index=1; PlayGridRangeEffect,effectID=PARAM.effectID1,step=4,offset=0.5|0.5,label=playRangeEffect; PlayAudio,audioID =6064,audioType=1; Wait,waitTime=200; PlayGridRangeBeHit,hitAnimName=Hit,hitEffectID=PARAM.effectID2,turnToTarget=1,deathClear=0; Wait,waitTime=100; DataSelectNextScopeGridRange; Jump,condition=CheckCurrentScopeGridRangeIndexValid,goto=playRangeEffect; Wait,waitTime=2000; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName = Skill03; PlayAudio,audioID =6063,audioType=1; PlayCasterBindEffect,effectID=PARAM.effectID3; Wait,waitTime=2000; DataSelectScopeGridRange,effectType=1; DataSortScopeGridRange,sortType=8; DataSelectScopeGridRangeIndex,index=1; PlayGridRangeEffect,effectID=PARAM.effectID1,step=4,offset=0.5|0.5,label=playRangeEffect; PlayAudio,audioID =6064,audioType=1; Wait,waitTime=200; PlayGridRangeBeHit,hitAnimName=Hit,hitEffectID=PARAM.effectID2,turnToTarget=1,deathClear=0; Wait,waitTime=100; DataSelectNextScopeGridRange; Jump,condition=CheckCurrentScopeGridRangeIndexValid,goto=playRangeEffect; Wait,waitTime=2000; "
+    }
+  }
 }
 return config, "ID", key
-

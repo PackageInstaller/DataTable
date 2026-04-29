@@ -1,64 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_chain_across_monster_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChainAcrossMonster", BuffViewBase)
 BuffViewChainAcrossMonster = BuffViewChainAcrossMonster
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChainAcrossMonster.PlayView = function(self, TT, notify)
-  -- function num : 0_0
+function BuffViewChainAcrossMonster:PlayView(TT, notify)
   local result = self._buffResult
   local show = result:GetShow()
   local gridPos = result:GetPos()
   local entity = notify:GetNotifyEntity()
-  local viewParams = ((self._viewInstance):BuffConfigData()):GetViewParams()
+  local viewParams = self._viewInstance:BuffConfigData():GetViewParams()
   local moveEffectList = viewParams.moveEffect
   local moveEffectID = moveEffectList[2]
-  local gridEffectID = nil
+  local gridEffectID
   local effectHolderCmpt = entity:EffectHolder()
   if not effectHolderCmpt then
     entity:AddEffectHolder()
     effectHolderCmpt = entity:EffectHolder()
   end
-  local gameObject = ((entity:View()).ViewWrapper).GameObject
-  local rootGO = (gameObject.transform):Find("Root")
-  ;
-  (rootGO.gameObject):SetActive(show)
-  local effectService = (self._world):GetService("Effect")
+  local gameObject = entity:View().ViewWrapper.GameObject
+  local rootGO = gameObject.transform:Find("Root")
+  rootGO.gameObject:SetActive(show)
+  local effectService = self._world:GetService("Effect")
   if show then
     gridEffectID = moveEffectList[3]
-    local effect = nil
-    local effectEntityIdList = (effectHolderCmpt:GetEffectIDEntityDic())[moveEffectID]
+    local effect
+    local effectEntityIdList = effectHolderCmpt:GetEffectIDEntityDic()[moveEffectID]
     if effectEntityIdList then
-      effect = (self._world):GetEntityByID(effectEntityIdList[1])
+      effect = self._world:GetEntityByID(effectEntityIdList[1])
     end
     if effect then
-      (self._world):DestroyEntity(effect)
-      -- DECOMPILER ERROR at PC63: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      ((effectHolderCmpt:GetEffectIDEntityDic())[moveEffectID])[1] = nil
+      self._world:DestroyEntity(effect)
+      effectHolderCmpt:GetEffectIDEntityDic()[moveEffectID][1] = nil
     end
   else
-    do
-      gridEffectID = moveEffectList[1]
-      do
-        local effect = effectService:CreateEffect(moveEffectID, entity)
-        effectHolderCmpt:AttachPermanentEffect(effect:GetID())
-        if gridEffectID then
-          effectService:CreateWorldPositionEffect(gridEffectID, gridPos, true)
-        end
-      end
-    end
+    gridEffectID = moveEffectList[1]
+    local effect = effectService:CreateEffect(moveEffectID, entity)
+    effectHolderCmpt:AttachPermanentEffect(effect:GetID())
+  end
+  if gridEffectID then
+    effectService:CreateWorldPositionEffect(gridEffectID, gridPos, true)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChainAcrossMonster.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewChainAcrossMonster:IsNotifyMatch(notify)
   local notifyType = notify:GetNotifyType()
   if notifyType ~= NotifyType.PlayerEachMoveStart and notifyType ~= NotifyType.PlayerEachMoveEnd then
     return false
@@ -67,7 +49,7 @@ BuffViewChainAcrossMonster.IsNotifyMatch = function(self, notify)
   local resultNotifyType = result:GetNotifyType()
   local resultChainIndex = result:GetChainIndex()
   local resultEntityID = result:GetEntityID()
-  if resultEntityID ~= (notify:GetNotifyEntity()):GetID() then
+  if resultEntityID ~= notify:GetNotifyEntity():GetID() then
     return false
   end
   if resultNotifyType ~= notifyType then
@@ -78,5 +60,3 @@ BuffViewChainAcrossMonster.IsNotifyMatch = function(self, notify)
   end
   return true
 end
-
-

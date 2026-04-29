@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_chess_pet_finish_turn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeChessPetFinishTurn", BuffLogicBase)
 BuffLogicChangeChessPetFinishTurn = BuffLogicChangeChessPetFinishTurn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeChessPetFinishTurn.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeChessPetFinishTurn:Constructor(buffInstance, logicParam)
   self._finish = logicParam.finish == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeChessPetFinishTurn.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local chessPetCmpt = (self._entity):ChessPet()
+function BuffLogicChangeChessPetFinishTurn:DoLogic()
+  local chessPetCmpt = self._entity:ChessPet()
   chessPetCmpt:SetChessPetFinishTurn(self._finish)
-  local buffResult = BuffResultChangeChessPetFinishTurn:New((self._entity):GetID(), self._finish)
+  local buffResult = BuffResultChangeChessPetFinishTurn:New(self._entity:GetID(), self._finish)
   return buffResult
 end
-
-

@@ -1,20 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_create_destroy_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_CreateDestroyGrid", SkillEffectCalc_Base)
 SkillEffectCalc_CreateDestroyGrid = SkillEffectCalc_CreateDestroyGrid
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_CreateDestroyGrid.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_CreateDestroyGrid:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillEffectParam = skillEffectCalcParam.skillEffectParam
   local isCreate = skillEffectParam:GetIsCreate()
   local range = skillEffectCalcParam:GetSkillRange()
   local result = SkillEffectResult_CreateDestroyGrid:New(isCreate, range)
   return result
 end
-
-

@@ -1,104 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/luckland_event_listener.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("game_event_type")
 _class("LuckLandEventListener", Object)
 LuckLandEventListener = LuckLandEventListener
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandEventListener.Constructor = function(self, luckLandGame)
-  -- function num : 0_0 , upvalues : _ENV
+function LuckLandEventListener:Constructor(luckLandGame)
   self._game = luckLandGame
-  self._autoBinder = AutoEventBinder:New((self._game):EventDispatcher())
-  ;
-  (self._autoBinder):BindEvent(GameEventType.LuckLandRoundStart, self, self._RoundStart)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.LuckLandMonsterTurn, self, self._MonsterTurn)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.LuckLandRoundEnd, self, self._RoundEnd)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.LuckLandSelectCard, self, self._SelectCard)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.LuckLandSkip, self, self._Skip)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.LuckLandReDraw, self, self._ReDraw)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.LuckLandUpgrade, self, self._Upgrade)
-  ;
-  (self._autoBinder):BindEvent(GameEventType.LuckLandDeleteCard, self, self._DeleteCard)
+  self._autoBinder = AutoEventBinder:New(self._game:EventDispatcher())
+  self._autoBinder:BindEvent(GameEventType.LuckLandRoundStart, self, self._RoundStart)
+  self._autoBinder:BindEvent(GameEventType.LuckLandMonsterTurn, self, self._MonsterTurn)
+  self._autoBinder:BindEvent(GameEventType.LuckLandRoundEnd, self, self._RoundEnd)
+  self._autoBinder:BindEvent(GameEventType.LuckLandSelectCard, self, self._SelectCard)
+  self._autoBinder:BindEvent(GameEventType.LuckLandSkip, self, self._Skip)
+  self._autoBinder:BindEvent(GameEventType.LuckLandReDraw, self, self._ReDraw)
+  self._autoBinder:BindEvent(GameEventType.LuckLandUpgrade, self, self._Upgrade)
+  self._autoBinder:BindEvent(GameEventType.LuckLandDeleteCard, self, self._DeleteCard)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEventListener.Dispose = function(self)
-  -- function num : 0_1
-  (self._autoBinder):UnBindAllEvents()
+function LuckLandEventListener:Dispose()
+  self._autoBinder:UnBindAllEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEventListener._RoundStart = function(self)
-  -- function num : 0_2
-  local llModule = (self._game):GetLuckLandModule()
+function LuckLandEventListener:_RoundStart()
+  local llModule = self._game:GetLuckLandModule()
   llModule:RoundStart()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEventListener._MonsterTurn = function(self)
-  -- function num : 0_3
-  local llModule = (self._game):GetLuckLandModule()
+function LuckLandEventListener:_MonsterTurn()
+  local llModule = self._game:GetLuckLandModule()
   llModule:MonsterTurn()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEventListener._RoundEnd = function(self)
-  -- function num : 0_4
-  local llModule = (self._game):GetLuckLandModule()
+function LuckLandEventListener:_RoundEnd()
+  local llModule = self._game:GetLuckLandModule()
   llModule:RoundEnd()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEventListener._SelectCard = function(self, petTemplateID, pos)
-  -- function num : 0_5
-  local llModule = (self._game):GetLuckLandModule()
+function LuckLandEventListener:_SelectCard(petTemplateID, pos)
+  local llModule = self._game:GetLuckLandModule()
   llModule:SelectCard(petTemplateID, pos)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEventListener._Skip = function(self)
-  -- function num : 0_6
-  local llModule = (self._game):GetLuckLandModule()
+function LuckLandEventListener:_Skip()
+  local llModule = self._game:GetLuckLandModule()
   llModule:SkipSelectCard()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEventListener._ReDraw = function(self)
-  -- function num : 0_7
-  local llModule = (self._game):GetLuckLandModule()
+function LuckLandEventListener:_ReDraw()
+  local llModule = self._game:GetLuckLandModule()
   llModule:ReDrawCard()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEventListener._Upgrade = function(self, buildingID)
-  -- function num : 0_8
-  local llModule = (self._game):GetLuckLandModule()
+function LuckLandEventListener:_Upgrade(buildingID)
+  local llModule = self._game:GetLuckLandModule()
   llModule:BuildingUpgrade(buildingID)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEventListener._DeleteCard = function(self, petID)
-  -- function num : 0_9
-  local llModule = (self._game):GetLuckLandModule()
+function LuckLandEventListener:_DeleteCard(petID)
+  local llModule = self._game:GetLuckLandModule()
   llModule:DeleteCard(petID)
 end
-
-

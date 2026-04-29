@@ -1,117 +1,72 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_multi_traction_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
-TractionCenterType = {Normal = 0, PetANaTuoLi = 1, BossANaTuoLi = 2, MAX = 9}
+TractionCenterType = {
+  Normal = 0,
+  PetANaTuoLi = 1,
+  BossANaTuoLi = 2,
+  MAX = 9
+}
 _enum("TractionCenterType", TractionCenterType)
 _class("SkillEffectMultiTractionParam", SkillEffectParamBase)
 SkillEffectMultiTractionParam = SkillEffectMultiTractionParam
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectMultiTractionParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectMultiTractionParam:Constructor(t)
   self._finalDamageIncreaseRate = tonumber(t.finalDamageIncreaseRate)
   self._casterCentered = tonumber(t.casterCentered) == 1
   self._maxMoveStep = tonumber(t.maxMoveStep) or 0
-  self._forceMove = tonumber(t.forceMove) ~= 1 and false
+  self._forceMove = tonumber(t.forceMove) == 1 or false
   self._enableByPickNum = t.enableByPickNum
   self._canMoveToCenter = t.canMoveToCenter
-  if not t.tractionCenterType then
-    self._tractionCenterType = TractionCenterType.Normal
-    self._skipTractionByPickNum = t.skipTractionByPickNum
-    self._isPreview = t.isPreview
-    self._petANaTuoLiCanTractionSelf = t.petANaTuoLiCanTractionSelf
-    self._bossANaTuoLiTractionMonsterClassID = t.bossANaTuoLiTractionMonsterClassID
-    -- DECOMPILER ERROR: 5 unprocessed JMP targets
-  end
+  self._tractionCenterType = t.tractionCenterType or TractionCenterType.Normal
+  self._skipTractionByPickNum = t.skipTractionByPickNum
+  self._isPreview = t.isPreview
+  self._petANaTuoLiCanTractionSelf = t.petANaTuoLiCanTractionSelf
+  self._bossANaTuoLiTractionMonsterClassID = t.bossANaTuoLiTractionMonsterClassID
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectMultiTractionParam:GetEffectType()
   return SkillEffectType.MultiTraction
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionParam.GetFinalDamageIncreaseRate = function(self)
-  -- function num : 0_2
+function SkillEffectMultiTractionParam:GetFinalDamageIncreaseRate()
   return self._finalDamageIncreaseRate
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionParam.IsCasterCentered = function(self)
-  -- function num : 0_3
+function SkillEffectMultiTractionParam:IsCasterCentered()
   return self._casterCentered
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionParam.GetMaxMoveStep = function(self)
-  -- function num : 0_4
+function SkillEffectMultiTractionParam:GetMaxMoveStep()
   return self._maxMoveStep
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionParam.GetEnableByPickNum = function(self)
-  -- function num : 0_5
+function SkillEffectMultiTractionParam:GetEnableByPickNum()
   return self._enableByPickNum
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionParam.GetForceMove = function(self)
-  -- function num : 0_6
+function SkillEffectMultiTractionParam:GetForceMove()
   return self._forceMove
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionParam.GetCanMoveToCenter = function(self)
-  -- function num : 0_7
+function SkillEffectMultiTractionParam:GetCanMoveToCenter()
   return self._canMoveToCenter
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionParam.GetTractionCenterType = function(self)
-  -- function num : 0_8
+function SkillEffectMultiTractionParam:GetTractionCenterType()
   return self._tractionCenterType
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionParam.GetSkipTractionByPickNum = function(self)
-  -- function num : 0_9
+function SkillEffectMultiTractionParam:GetSkipTractionByPickNum()
   return self._skipTractionByPickNum
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionParam.GetIsPreview = function(self)
-  -- function num : 0_10
-  do return not self._isPreview or self._isPreview == 1 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function SkillEffectMultiTractionParam:GetIsPreview()
+  return self._isPreview and self._isPreview == 1
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionParam.GetPetANaTuoLiCanTractionSelf = function(self)
-  -- function num : 0_11
-  do return not self._petANaTuoLiCanTractionSelf or self._petANaTuoLiCanTractionSelf == 1 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function SkillEffectMultiTractionParam:GetPetANaTuoLiCanTractionSelf()
+  return self._petANaTuoLiCanTractionSelf and self._petANaTuoLiCanTractionSelf == 1
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionParam.GetBossANaTuoLiTractionMonsterClassID = function(self)
-  -- function num : 0_12
+function SkillEffectMultiTractionParam:GetBossANaTuoLiTractionMonsterClassID()
   return self._bossANaTuoLiTractionMonsterClassID
 end
-
-

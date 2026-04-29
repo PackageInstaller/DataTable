@@ -1,55 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/common/ui_asset_item_1.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAssetItem1", UICustomWidget)
 UIAssetItem1 = UIAssetItem1
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAssetItem1.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIAssetItem1:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetItem1.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAssetItem1:InitWidget()
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Stage, UIItemScale.Level3)
-  ;
-  (self.uiItem):SetClickCallBack(function(go)
-    -- function num : 0_1_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Stage, UIItemScale.Level3)
+  self.uiItem:SetClickCallBack(function(go)
     self:clickAreaOnClick(go)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetItem1.SetData = function(self, itemID, text, onClick, count)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[itemID]
+function UIAssetItem1:SetData(itemID, text, onClick, count)
+  local cfg = Cfg.cfg_item[itemID]
   self.onClick = onClick
   self._id = itemID
   local icon = cfg.Icon
   local quality = cfg.Color
   local awardText = text
-  ;
-  (self.uiItem):SetData({icon = icon, text1 = count, quality = quality, awardText = awardText, itemId = itemID})
+  self.uiItem:SetData({
+    icon = icon,
+    text1 = count,
+    quality = quality,
+    awardText = awardText,
+    itemId = itemID
+  })
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetItem1.clickAreaOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function UIAssetItem1:clickAreaOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   if self.onClick then
-    (self.onClick)(self._id, (go.transform).position)
+    self.onClick(self._id, go.transform.position)
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_trial_level/ui_trail_level_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITrailLevelRewardItem", UICustomWidget)
 UITrailLevelRewardItem = UITrailLevelRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITrailLevelRewardItem.OnShow = function(self)
-  -- function num : 0_0
+function UITrailLevelRewardItem:OnShow()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._des = self:GetUIComponent("UILocalizationText", "Des")
@@ -18,111 +11,75 @@ UITrailLevelRewardItem.OnShow = function(self)
   self._redGo = self:GetGameObject("Red")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelRewardItem.Refresh = function(self, rewardData)
-  -- function num : 0_1
+function UITrailLevelRewardItem:Refresh(rewardData)
   self._rewardData = rewardData
-  ;
-  (self._name):SetText(rewardData.name)
-  ;
-  (self._des):SetText(rewardData.des)
-  ;
-  (self._icon):LoadImage(rewardData.icon)
+  self._name:SetText(rewardData.name)
+  self._des:SetText(rewardData.des)
+  self._icon:LoadImage(rewardData.icon)
   self:RefreshButtonStatus()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelRewardItem.RefreshButtonStatus = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._hasGetGo):SetActive(false)
-  ;
-  (self._getGo):SetActive(false)
-  ;
-  (self._unCompleteGo):SetActive(false)
-  ;
-  (self._redGo):SetActive(false)
-  if (self._rewardData).status == TrailLevelRewardStatus.UnComplete then
-    (self._unCompleteGo):SetActive(true)
-    ;
-    (self._getGo):SetActive(false)
-  else
-    if (self._rewardData).status == TrailLevelRewardStatus.UnGet then
-      (self._getGo):SetActive(true)
-      ;
-      (self._redGo):SetActive(true)
-    else
-      if (self._rewardData).status == TrailLevelRewardStatus.HasGet then
-        (self._hasGetGo):SetActive(true)
-      end
-    end
+function UITrailLevelRewardItem:RefreshButtonStatus()
+  self._hasGetGo:SetActive(false)
+  self._getGo:SetActive(false)
+  self._unCompleteGo:SetActive(false)
+  self._redGo:SetActive(false)
+  if self._rewardData.status == TrailLevelRewardStatus.UnComplete then
+    self._unCompleteGo:SetActive(true)
+    self._getGo:SetActive(false)
+  elseif self._rewardData.status == TrailLevelRewardStatus.UnGet then
+    self._getGo:SetActive(true)
+    self._redGo:SetActive(true)
+  elseif self._rewardData.status == TrailLevelRewardStatus.HasGet then
+    self._hasGetGo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelRewardItem.GetBtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.GetReward, self)
+function UITrailLevelRewardItem:GetBtnOnClick()
+  GameGlobal.TaskManager():StartTask(self.GetReward, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelRewardItem.GetReward = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UITrailLevelRewardItem:GetReward(TT)
   self:Lock("UITrailLevelRewardItem_GetRewarda")
-  local talePetModule = (GameGlobal.GetModule)(TalePetModule)
-  local res = talePetModule:ApplyGetReward(TT, (self._rewardData).id)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
+  local talePetModule = GameGlobal.GetModule(TalePetModule)
+  local res = talePetModule:ApplyGetReward(TT, self._rewardData.id)
   if res:GetSucc() then
-    (self._rewardData).status = TrailLevelRewardStatus.HasGet
+    self._rewardData.status = TrailLevelRewardStatus.HasGet
     self:RefreshButtonStatus()
-    local dropId = (self._rewardData).dropId
+    local dropId = self._rewardData.dropId
     if dropId then
-      local dropDewards = (Cfg.cfg_drop)({DropID = dropId})
+      local dropDewards = Cfg.cfg_drop({DropID = dropId})
       local rewards = {}
       for i = 1, #dropDewards do
-        if (dropDewards[i]).AssetID and (dropDewards[i]).AssetID > 0 then
+        if dropDewards[i].AssetID and dropDewards[i].AssetID > 0 then
           local asset = RoleAsset:New()
-          asset.assetid = (dropDewards[i]).AssetID
-          asset.count = (dropDewards[i]).MinCount
+          asset.assetid = dropDewards[i].AssetID
+          asset.count = dropDewards[i].MinCount
           rewards[#rewards + 1] = asset
         end
       end
       self:ShowRewards(rewards)
     end
   else
-    do
-      ;
-      (Log.error)("Get Reward Error", res.m_result)
-      self:UnLock("UITrailLevelRewardItem_GetRewarda")
-    end
+    Log.error("Get Reward Error", res.m_result)
   end
+  self:UnLock("UITrailLevelRewardItem_GetRewarda")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelRewardItem.ShowRewards = function(self, rewards)
-  -- function num : 0_5 , upvalues : _ENV
+function UITrailLevelRewardItem:ShowRewards(rewards)
   local petIdList = {}
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  for _,reward in pairs(rewards) do
+  local petModule = GameGlobal.GetModule(PetModule)
+  for _, reward in pairs(rewards) do
     if petModule:IsPetID(reward.assetid) then
-      (table.insert)(petIdList, reward)
+      table.insert(petIdList, reward)
     end
   end
-  if (table.count)(petIdList) > 0 then
+  if table.count(petIdList) > 0 then
     self:ShowDialog("UIPetObtain", petIdList, function()
-    -- function num : 0_5_0 , upvalues : _ENV, self, rewards
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", rewards)
-  end
-)
-    return 
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      self:ShowDialog("UIGetItemController", rewards)
+    end)
+    return
   end
   self:ShowDialog("UIGetItemController", rewards)
 end
-
-

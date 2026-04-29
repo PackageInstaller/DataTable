@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/main/ui_homeland_movie_anonymous_pop_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandAnonymousPopController", UIController)
 UIHomelandAnonymousPopController = UIHomelandAnonymousPopController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandAnonymousPopController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_homeland_movice_expain)({})
+function UIHomelandAnonymousPopController:Constructor()
+  self._cfg = Cfg.cfg_homeland_movice_expain({})
   self._widgets = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousPopController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandAnonymousPopController:OnShow(uiParams)
   self.AnonymousId = uiParams[1]
   self:InitWidget()
   self:SetData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousPopController.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandAnonymousPopController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousPopController.InitWidget = function(self)
-  -- function num : 0_3
+function UIHomelandAnonymousPopController:InitWidget()
   self._mainTitle = self:GetUIComponent("RawImageLoader", "mainTitle")
   self._noticeText = self:GetUIComponent("UILocalizationText", "noticeText")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousPopController.SetData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._noticeText):SetText((StringTable.Get)("str_movie_letter_text_8"))
+function UIHomelandAnonymousPopController:SetData()
+  self._noticeText:SetText(StringTable.Get("str_movie_letter_text_8"))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousPopController.BGOnClick = function(self, TT)
-  -- function num : 0_5
+function UIHomelandAnonymousPopController:BGOnClick(TT)
   self:CloseDialog()
   self:ShowDialog("UIHomelandAnonymousMovieController", self.AnonymousId)
 end
-
-

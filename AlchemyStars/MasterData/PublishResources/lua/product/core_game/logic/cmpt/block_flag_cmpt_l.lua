@@ -1,63 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/block_flag_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BlockFlagComponent", Object)
 BlockFlagComponent = BlockFlagComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BlockFlagComponent.Constructor = function(self, value)
-  -- function num : 0_0
+function BlockFlagComponent:Constructor(value)
   self._blockFlag = value or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BlockFlagComponent.GetBlockFlag = function(self)
-  -- function num : 0_1
+function BlockFlagComponent:GetBlockFlag()
   return self._blockFlag
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.BlockFlag = function(self)
-  -- function num : 0_2
-  return self:GetComponent((self.WEComponentsEnum).BlockFlag)
+function Entity:BlockFlag()
+  return self:GetComponent(self.WEComponentsEnum.BlockFlag)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasBlockFlag = function(self)
-  -- function num : 0_3
-  return self:HasComponent((self.WEComponentsEnum).BlockFlag)
+function Entity:HasBlockFlag()
+  return self:HasComponent(self.WEComponentsEnum.BlockFlag)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddBlockFlag = function(self, value)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BlockFlag
+function Entity:AddBlockFlag(value)
+  local index = self.WEComponentsEnum.BlockFlag
   local component = BlockFlagComponent:New(value)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceBlockFlag = function(self, value)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BlockFlag
+function Entity:ReplaceBlockFlag(value)
+  local index = self.WEComponentsEnum.BlockFlag
   local component = BlockFlagComponent:New(value)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveBlockFlag = function(self)
-  -- function num : 0_6
+function Entity:RemoveBlockFlag()
   if self:HasBlockFlag() then
-    self:RemoveComponent((self.WEComponentsEnum).BlockFlag)
+    self:RemoveComponent(self.WEComponentsEnum.BlockFlag)
   end
 end
-
-

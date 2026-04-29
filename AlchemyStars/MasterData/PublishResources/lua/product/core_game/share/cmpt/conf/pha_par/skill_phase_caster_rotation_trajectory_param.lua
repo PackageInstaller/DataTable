@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_caster_rotation_trajectory_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseCasterRotationTrajectoryParam", SkillPhaseParamBase)
 SkillPhaseCasterRotationTrajectoryParam = SkillPhaseCasterRotationTrajectoryParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseCasterRotationTrajectoryParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseCasterRotationTrajectoryParam:Constructor(t)
   self._effectID = t.effectID
   self._fireEffectID = t.fireEffectID
   self._spawnHigh = t.spawnHigh
@@ -24,105 +17,73 @@ SkillPhaseCasterRotationTrajectoryParam.Constructor = function(self, t)
   self._cacheEffectCount = t.cacheEffectCount or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCasterRotationTrajectoryParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseCasterRotationTrajectoryParam:GetCacheTable()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, self._cacheEffectCount})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      self._cacheEffectCount
+    })
   end
-  if self._fireEffectID and self._fireEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._fireEffectID]).ResPath, self._cacheEffectCount})
+  if self._fireEffectID and 0 < self._fireEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._fireEffectID].ResPath,
+      self._cacheEffectCount
+    })
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, self._cacheEffectCount})
+  if self._hitEffectID and 0 < self._hitEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      self._cacheEffectCount
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCasterRotationTrajectoryParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseCasterRotationTrajectoryParam:GetPhaseType()
   return SkillViewPhaseType.CasterRotationTrajectory
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCasterRotationTrajectoryParam.GetEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseCasterRotationTrajectoryParam:GetEffectID()
   return self._effectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCasterRotationTrajectoryParam.GetFireEffectID = function(self)
-  -- function num : 0_4
+function SkillPhaseCasterRotationTrajectoryParam:GetFireEffectID()
   return self._fireEffectID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCasterRotationTrajectoryParam.GetSpawnHigh = function(self)
-  -- function num : 0_5
+function SkillPhaseCasterRotationTrajectoryParam:GetSpawnHigh()
   return self._spawnHigh
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCasterRotationTrajectoryParam.GetSpawnRadius = function(self)
-  -- function num : 0_6
+function SkillPhaseCasterRotationTrajectoryParam:GetSpawnRadius()
   return self._spawnRadius
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCasterRotationTrajectoryParam.GetRotationTime = function(self)
-  -- function num : 0_7
+function SkillPhaseCasterRotationTrajectoryParam:GetRotationTime()
   return self._rotationTime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCasterRotationTrajectoryParam.GetFlyOneTime = function(self)
-  -- function num : 0_8
+function SkillPhaseCasterRotationTrajectoryParam:GetFlyOneTime()
   return self._flyOneTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCasterRotationTrajectoryParam.GetdestroyBulletDelay = function(self)
-  -- function num : 0_9
+function SkillPhaseCasterRotationTrajectoryParam:GetdestroyBulletDelay()
   return self._destroyBulletDelay
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCasterRotationTrajectoryParam.GetDisableRoot = function(self)
-  -- function num : 0_10
+function SkillPhaseCasterRotationTrajectoryParam:GetDisableRoot()
   return self._disableRoot
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCasterRotationTrajectoryParam.GetTurnToTarget = function(self)
-  -- function num : 0_11
+function SkillPhaseCasterRotationTrajectoryParam:GetTurnToTarget()
   return self._turnToTarget
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCasterRotationTrajectoryParam.GetHitAnimName = function(self)
-  -- function num : 0_12
+function SkillPhaseCasterRotationTrajectoryParam:GetHitAnimName()
   return self._hitAnimName
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCasterRotationTrajectoryParam.GetHitEffectID = function(self)
-  -- function num : 0_13
+function SkillPhaseCasterRotationTrajectoryParam:GetHitEffectID()
   return self._hitEffectID
 end
-
-

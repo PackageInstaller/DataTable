@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_fly_effect_cross_to_grid_edge_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayFlyEffectCrossToGridEdgesInstruction", BaseInstruction)
 PlayFlyEffectCrossToGridEdgesInstruction = PlayFlyEffectCrossToGridEdgesInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayFlyEffectCrossToGridEdgesInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayFlyEffectCrossToGridEdgesInstruction:Constructor(paramList)
   self._waitTimeStart = tonumber(paramList.waitTimeStart)
   self._limitDistance = tonumber(paramList.limitDistance) or 1
   self._offsetX = tonumber(paramList.offsetx) or 0
@@ -31,26 +24,23 @@ PlayFlyEffectCrossToGridEdgesInstruction.Constructor = function(self, paramList)
   self._jumpPower = tonumber(paramList.jumpPower)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFlyEffectCrossToGridEdgesInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayFlyEffectCrossToGridEdgesInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local playSkillService = world:GetService("PlaySkill")
   local effectService = world:GetService("Effect")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local gridDataArray = scopeResult:GetAttackRange()
   local gridEdgePos = {}
-  local castGridPos = (casterEntity:GridLocation()).Position
+  local castGridPos = casterEntity:GridLocation().Position
   local targetGirdList, maxLength, maxGridCount = InnerGameSortGridHelperRender:SortGrid(gridDataArray, castGridPos)
   local casterEntityReal = casterEntity
-  local tran = nil
-  if casterEntityReal:HasSuperEntity() and (casterEntityReal:SuperEntityComponent()):IsUseSuperEntityView() then
-    tran = (((casterEntityReal:GetSuperEntity()):View()):GetGameObject()).transform
+  local tran
+  if casterEntityReal:HasSuperEntity() and casterEntityReal:SuperEntityComponent():IsUseSuperEntityView() then
+    tran = casterEntityReal:GetSuperEntity():View():GetGameObject().transform
   else
-    tran = ((casterEntityReal:View()):GetGameObject()).transform
+    tran = casterEntityReal:View():GetGameObject().transform
   end
   local effectStarPos = tran:TransformPoint(Vector3(self._offsetX, self._offsetY, self._offsetZ))
   if self._waitTimeStart and self._waitTimeStart > 0 then
@@ -59,36 +49,30 @@ PlayFlyEffectCrossToGridEdgesInstruction.DoInstruction = function(self, TT, cast
   local taskIDList = {}
   for dir = 1, 8 do
     local t = targetGirdList[dir]
-    if #t.gridList > 0 then
-      local nTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoCrossToGridEdges, self, effectService, world, t, castGridPos, effectStarPos)
-      ;
-      (table.insert)(taskIDList, nTaskID)
+    if 0 < #t.gridList then
+      local nTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._DoCrossToGridEdges, self, effectService, world, t, castGridPos, effectStarPos)
+      table.insert(taskIDList, nTaskID)
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFlyEffectCrossToGridEdgesInstruction._DoCrossToGridEdges = function(self, TT, effectService, world, t, castGridPos, effectStarPos)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayFlyEffectCrossToGridEdgesInstruction:_DoCrossToGridEdges(TT, effectService, world, t, castGridPos, effectStarPos)
   local gridPosStart = castGridPos
-  local gridPosEnd = (t.gridList)[#t.gridList]
+  local gridPosEnd = t.gridList[#t.gridList]
   local girdDis = (gridPosEnd - gridPosStart).magnitude
   if girdDis < self._limitDistance then
-    return 
+    return
   end
   local dir = gridPosEnd - gridPosStart
-  local effectEntity = (world:GetService("Effect")):CreatePositionEffect(self._flyEffectID, effectStarPos)
+  local effectEntity = world:GetService("Effect"):CreatePositionEffect(self._flyEffectID, effectStarPos)
   effectEntity:SetDirection(dir)
   local boardServiceRender = world:GetService("BoardRender")
   local targetPos = boardServiceRender:GridPos2RenderPos(gridPosEnd)
   targetPos.y = effectStarPos.y
-  local distance = (Vector3.Distance)(effectStarPos, targetPos)
+  local distance = Vector3.Distance(effectStarPos, targetPos)
   local flyTime = 0
   if self._flySpeed then
     flyTime = distance * self._flySpeed
@@ -97,102 +81,77 @@ PlayFlyEffectCrossToGridEdgesInstruction._DoCrossToGridEdges = function(self, TT
     YIELD(TT)
   end
   if effectEntity == nil or effectEntity:View() == nil then
-    return 
+    return
   end
-  local go = ((effectEntity:View()):GetGameObject())
-  local dotween = nil
+  local go = effectEntity:View():GetGameObject()
+  local dotween
   if self._flyTrace == FlyEffectTraceType.LineTrace then
     if flyTime == 0 and self._flyTime then
       flyTime = self._flyTime
     end
-    dotween = (go.transform):DOMove(targetPos, flyTime / 1000, false)
+    dotween = go.transform:DOMove(targetPos, flyTime / 1000.0, false)
     if self._flyEaseType then
-      local easyType = ((DG.Tweening).Ease)[self._flyEaseType]
+      local easyType = DG.Tweening.Ease[self._flyEaseType]
       dotween:SetEase(easyType)
     end
-  else
-    do
-      if self._flyTrace == FlyEffectTraceType.JumpTrace then
-        if not self._jumpPower then
-          local jumpPower = (math.sqrt)(distance)
-        end
-        if not self._flyTime then
-          do
-            dotween = (go.transform):DOJump(targetPos, jumpPower, 1, flyTime * 0.001, false)
-            -- DECOMPILER ERROR at PC125: Confused about usage of register: R18 in 'UnsetPending'
-
-            if self._flyTrace == FlyEffectTraceType.ScaleTrace then
-              (go.transform).localScale = Vector3(1, 1, distance)
-            else
-              if self._flyTrace == FlyEffectTraceType.TimeScaleTrace then
-                if self._flyTime then
-                  flyTime = self._flyTime
-                end
-                local changeScaleRoot = go
-                if self._changeScaleRoot then
-                  changeScaleRoot = (GameObjectHelper.FindChild)(go.transform, self._changeScaleRoot)
-                end
-                dotween = (changeScaleRoot.transform):DOScaleZ(distance, flyTime / 1000)
-              end
-            end
-            do
-              if dotween then
-                (dotween:SetEase(((DG.Tweening).Ease).InOutSine)):OnComplete(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV, go, world, effectEntity
-    if self._finalWaitTime and self._finalWaitTime > 0 then
-      ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-      -- function num : 0_2_0_0 , upvalues : _ENV, self, go, world, effectEntity
-      YIELD(TT, self._finalWaitTime)
-      if go then
-        go:SetActive(false)
-      end
-      world:DestroyEntity(effectEntity)
+  elseif self._flyTrace == FlyEffectTraceType.JumpTrace then
+    local jumpPower = self._jumpPower or math.sqrt(distance)
+    flyTime = self._flyTime or flyTime
+    dotween = go.transform:DOJump(targetPos, jumpPower, 1, flyTime * 0.001, false)
+  elseif self._flyTrace == FlyEffectTraceType.ScaleTrace then
+    go.transform.localScale = Vector3(1, 1, distance)
+  elseif self._flyTrace == FlyEffectTraceType.TimeScaleTrace then
+    if self._flyTime then
+      flyTime = self._flyTime
     end
-)
-    else
-      go:SetActive(false)
-      world:DestroyEntity(effectEntity)
+    local changeScaleRoot = go
+    if self._changeScaleRoot then
+      changeScaleRoot = GameObjectHelper.FindChild(go.transform, self._changeScaleRoot)
     end
+    dotween = changeScaleRoot.transform:DOScaleZ(distance, flyTime / 1000.0)
   end
-)
-              end
-              local totalWaitTime = flyTime
-              if self._finalWaitTime and self._finalWaitTime > 0 then
-                totalWaitTime = totalWaitTime + self._finalWaitTime
-              end
-              if self._isBlock == 1 then
-                YIELD(TT, totalWaitTime)
-                if not dotween then
-                  world:DestroyEntity(effectEntity)
-                end
-              else
-                ;
-                ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_1 , upvalues : _ENV, totalWaitTime, dotween, world, effectEntity
+  if dotween then
+    dotween:SetEase(DG.Tweening.Ease.InOutSine):OnComplete(function()
+      if self._finalWaitTime and self._finalWaitTime > 0 then
+        GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+          YIELD(TT, self._finalWaitTime)
+          if go then
+            go:SetActive(false)
+          end
+          world:DestroyEntity(effectEntity)
+        end)
+      else
+        go:SetActive(false)
+        world:DestroyEntity(effectEntity)
+      end
+    end)
+  end
+  local totalWaitTime = flyTime
+  if self._finalWaitTime and self._finalWaitTime > 0 then
+    totalWaitTime = totalWaitTime + self._finalWaitTime
+  end
+  if self._isBlock == 1 then
     YIELD(TT, totalWaitTime)
     if not dotween then
       world:DestroyEntity(effectEntity)
     end
-  end
-)
-              end
-            end
-          end
-        end
+  else
+    GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      YIELD(TT, totalWaitTime)
+      if not dotween then
+        world:DestroyEntity(effectEntity)
       end
-    end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFlyEffectCrossToGridEdgesInstruction.GetCacheResource = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayFlyEffectCrossToGridEdgesInstruction:GetCacheResource()
   local t = {}
   if self._flyEffectID and self._flyEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._flyEffectID]).ResPath, 8})
+    table.insert(t, {
+      Cfg.cfg_effect[self._flyEffectID].ResPath,
+      8
+    })
   end
   return t
 end
-
-

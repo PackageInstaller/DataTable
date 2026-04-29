@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/activity/ui_cn7_n36_mainlobby_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_main_lobby_main_campaign_base")
 _class("UICN7N36MainLobbyEntry", UIMainLobbyMainCampaignBase)
 UICN7N36MainLobbyEntry = UICN7N36MainLobbyEntry
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN7N36MainLobbyEntry.GetComponent = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN7N36MainLobbyEntry:GetComponent()
   self._redGo = self:GetGameObject("RedPoint")
   self._newGo = self:GetGameObject("NewFlag")
   self._tipspanel1 = self:GetGameObject("tipspanel1")
@@ -18,36 +11,24 @@ UICN7N36MainLobbyEntry.GetComponent = function(self)
   self._activityConst = UIActivityCustomConst:New(self:GetCampaignType(), self:GetComponentIds())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainLobbyEntry.RequestCampaign = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN7N36MainLobbyEntry:RequestCampaign()
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self, _ENV
     local lockName = "UICN7N36MainLobbyEntryRequestCampaign"
     self:Lock(lockName)
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    ;
-    (self._activityConst):LoadData(TT, res)
+    self._activityConst:LoadData(TT, res)
     self:RedAndNew()
     self:Flush()
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainLobbyEntry.GetCampaignType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN7N36MainLobbyEntry:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_N7
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainLobbyEntry.GetComponentIds = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN7N36MainLobbyEntry:GetComponentIds()
   local componentIds = {}
   componentIds[#componentIds + 1] = ECampaignCN7ComponentID.ECAMPAIGN_N7_LINE_MISSION
   componentIds[#componentIds + 1] = ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY
@@ -55,100 +36,69 @@ UICN7N36MainLobbyEntry.GetComponentIds = function(self)
   return componentIds
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainLobbyEntry.RefreshView = function(self)
-  -- function num : 0_4
+function UICN7N36MainLobbyEntry:RefreshView()
   self:RequestCampaign()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainLobbyEntry.BtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((UICN7N36MainLobbyEntry.super).BtnOnClick)(self)
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog(UIStateType.UICN7N36MainController)
+function UICN7N36MainLobbyEntry:BtnOnClick()
+  UICN7N36MainLobbyEntry.super.BtnOnClick(self)
+  GameGlobal.UIStateManager():ShowDialog(UIStateType.UICN7N36MainController)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainLobbyEntry.RedAndNew = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local red = (self.sampleInfo):GetStepStatus(ECampaignStep.CAMPAIGN_STEP_RED)
-  self.campaign = (self._activityConst):GetCampaign()
-  self._localProcess = (self.campaign):GetLocalProcess()
+function UICN7N36MainLobbyEntry:RedAndNew()
+  local red = self.sampleInfo:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_RED)
+  self.campaign = self._activityConst:GetCampaign()
+  self._localProcess = self.campaign:GetLocalProcess()
   local new = self:CheckNew()
   local OtherRed = self:CheckRed()
-  if not red then
-    red = OtherRed
-  end
-  ;
-  (self._newGo):SetActive(new)
-  if red then
-    (self._redGo):SetActive(not new)
-  end
+  red = red or OtherRed
+  self._newGo:SetActive(new)
+  self._redGo:SetActive(red and not new)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainLobbyEntry.CheckRed = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local shopRed = (self._localProcess):ShopRedPoint()
-  local loginRed = (self._localProcess):AccumulateLoginReddot()
-  local questHasRed = (self.campaign):CheckComponentRed(ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST)
+function UICN7N36MainLobbyEntry:CheckRed()
+  local shopRed = self._localProcess:ShopRedPoint()
+  local loginRed = self._localProcess:AccumulateLoginReddot()
+  local questHasRed = self.campaign:CheckComponentRed(ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST)
   local red = shopRed or loginRed or questHasRed
   return red
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainLobbyEntry.CheckNew = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UICN7N36MainLobbyEntry:CheckNew()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstid = roleModule:GetPstId()
   local save_key = {}
   save_key[1] = pstid .. "UICN7N36MainLobbyEntry_LineNew"
   save_key[2] = pstid .. "UICN7N36MainLobbyEntry_ShopNew"
   save_key[3] = pstid .. "UICN7N36MainLobbyEntry_GamesNew"
-  local lineOpen = (self.campaign):CheckComponentOpen(ECampaignCN7ComponentID.ECAMPAIGN_N7_LINE_MISSION)
-  local gameOpen = ((self.campaign):CheckComponentOpen(ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST))
-  local lineNew, shopNew, gameNew = nil, nil, nil
-  if (LocalDB.HasKey)(save_key[1]) then
+  local lineOpen = self.campaign:CheckComponentOpen(ECampaignCN7ComponentID.ECAMPAIGN_N7_LINE_MISSION)
+  local gameOpen = self.campaign:CheckComponentOpen(ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST)
+  local lineNew, shopNew, gameNew
+  if LocalDB.HasKey(save_key[1]) then
     lineNew = false
-  else
-    if lineOpen then
-      lineNew = true
-    end
+  elseif lineOpen then
+    lineNew = true
   end
-  if (LocalDB.HasKey)(save_key[2]) then
+  if LocalDB.HasKey(save_key[2]) then
     shopNew = false
   else
     shopNew = true
   end
-  if (LocalDB.HasKey)(save_key[3]) then
+  if LocalDB.HasKey(save_key[3]) then
     gameNew = false
-  else
-    if gameOpen then
-      gameNew = true
-    end
+  elseif gameOpen then
+    gameNew = true
   end
   return lineNew or shopNew or gameNew
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainLobbyEntry.Flush = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local status, time = nil, nil
-  status = (self._activityConst):GetComponentStatus(ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST)
+function UICN7N36MainLobbyEntry:Flush()
+  local status, time
+  status, time = self._activityConst:GetComponentStatus(ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST)
   if status == ActivityComponentStatus.Open then
-    (self._tipspanel1):SetActive(true)
-    return 
+    self._tipspanel1:SetActive(true)
+    return
   else
-    ;
-    (self._tipspanel1):SetActive(false)
+    self._tipspanel1:SetActive(false)
   end
 end
-
-

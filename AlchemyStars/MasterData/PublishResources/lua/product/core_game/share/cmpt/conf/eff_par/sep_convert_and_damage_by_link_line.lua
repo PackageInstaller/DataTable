@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_convert_and_damage_by_link_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectConvertAndDamageByLinkLineParam", SkillEffectParamBase)
 SkillEffectConvertAndDamageByLinkLineParam = SkillEffectConvertAndDamageByLinkLineParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectConvertAndDamageByLinkLineParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectConvertAndDamageByLinkLineParam:Constructor(t)
   self._convertCount = t.convertCount
   self._convertType = t.convertType
   self._percent = t.percent
@@ -18,54 +11,30 @@ SkillEffectConvertAndDamageByLinkLineParam.Constructor = function(self, t)
   self._needTeleport = t.needTeleport
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertAndDamageByLinkLineParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectConvertAndDamageByLinkLineParam:GetEffectType()
   return SkillEffectType.ConvertAndDamageByLinkLine
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertAndDamageByLinkLineParam.GetConvertCount = function(self)
-  -- function num : 0_2
+function SkillEffectConvertAndDamageByLinkLineParam:GetConvertCount()
   return self._convertCount
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertAndDamageByLinkLineParam.GetConvertType = function(self)
-  -- function num : 0_3
+function SkillEffectConvertAndDamageByLinkLineParam:GetConvertType()
   return self._convertType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertAndDamageByLinkLineParam.GetPercent = function(self)
-  -- function num : 0_4
+function SkillEffectConvertAndDamageByLinkLineParam:GetPercent()
   return self._percent
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertAndDamageByLinkLineParam.GetFormulaID = function(self)
-  -- function num : 0_5
+function SkillEffectConvertAndDamageByLinkLineParam:GetFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertAndDamageByLinkLineParam.IsCanLinkMonster = function(self)
-  -- function num : 0_6
-  do return self._canLinkMonster == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillEffectConvertAndDamageByLinkLineParam:IsCanLinkMonster()
+  return self._canLinkMonster == 1
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertAndDamageByLinkLineParam.NeedTelePort = function(self)
-  -- function num : 0_7
+function SkillEffectConvertAndDamageByLinkLineParam:NeedTelePort()
   return self._needTeleport
 end
-
-

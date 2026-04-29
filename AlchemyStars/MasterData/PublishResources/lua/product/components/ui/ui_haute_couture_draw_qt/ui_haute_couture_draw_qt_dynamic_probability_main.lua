@@ -1,37 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_qt/ui_haute_couture_draw_qt_dynamic_probability_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_haute_couture_draw_dynamic_probablity_base")
 _class("UIHauteCoutureDraw_QT_DynamicProbabilityMain", UIHauteCoutureDrawDynamicProbablityBase)
 UIHauteCoutureDraw_QT_DynamicProbabilityMain = UIHauteCoutureDraw_QT_DynamicProbabilityMain
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDraw_QT_DynamicProbabilityMain.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDraw_QT_DynamicProbabilityMain:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_DynamicProbabilityMain.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDraw_QT_DynamicProbabilityMain:OnShow(uiParams)
   self:InitWidgets()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_DynamicProbabilityMain.InitWidgets = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDraw_QT_DynamicProbabilityMain:InitWidgets()
   self:InitWidgetsBase()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_DynamicProbabilityMain.GetProbablityItemScript = function(self)
-  -- function num : 0_3
+function UIHauteCoutureDraw_QT_DynamicProbabilityMain:GetProbablityItemScript()
   return "UIHauteCoutureDraw_QT_DynamicProbabilityItem"
 end
-
-

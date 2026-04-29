@@ -1,52 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/buff/buff_head_effect_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffHeadEffectComponent", Object)
 BuffHeadEffectComponent = BuffHeadEffectComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffHeadEffectComponent.Constructor = function(self, buffViewInstance)
-  -- function num : 0_0
+function BuffHeadEffectComponent:Constructor(buffViewInstance)
   self._buffViewInstance = buffViewInstance
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffHeadEffectComponent.GetBuffViewInstance = function(self)
-  -- function num : 0_1
+function BuffHeadEffectComponent:GetBuffViewInstance()
   return self._buffViewInstance
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffHeadEffectComponent.SetBuffViewInstance = function(self, buff)
-  -- function num : 0_2
+function BuffHeadEffectComponent:SetBuffViewInstance(buff)
   self._buffViewInstance = buff
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.BuffHeadEffect = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).BuffHeadEffect)
+function Entity:BuffHeadEffect()
+  return self:GetComponent(self.WEComponentsEnum.BuffHeadEffect)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddBuffHeadEffect = function(self, buffv)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BuffHeadEffect
+function Entity:AddBuffHeadEffect(buffv)
+  local index = self.WEComponentsEnum.BuffHeadEffect
   local component = BuffHeadEffectComponent:New(buffv)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceBuffHeadEffect = function(self, buffv)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BuffHeadEffect
+function Entity:ReplaceBuffHeadEffect(buffv)
+  local index = self.WEComponentsEnum.BuffHeadEffect
   local component = self:GetComponent(index)
   if not component then
     component = BuffHeadEffectComponent:New(buffv)
@@ -56,13 +34,8 @@ Entity.ReplaceBuffHeadEffect = function(self, buffv)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveBuffHeadEffect = function(self)
-  -- function num : 0_6
+function Entity:RemoveBuffHeadEffect()
   if self:BuffHeadEffect() then
-    self:RemoveComponent((self.WEComponentsEnum).BuffHeadEffect)
+    self:RemoveComponent(self.WEComponentsEnum.BuffHeadEffect)
   end
 end
-
-

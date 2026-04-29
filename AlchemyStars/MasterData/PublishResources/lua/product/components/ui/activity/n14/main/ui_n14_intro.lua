@@ -1,35 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n14/main/ui_n14_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN14Intro", UIController)
 UIN14Intro = UIN14Intro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN14Intro.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN14Intro:OnShow(uiParams)
   self._param = uiParams[1] or "nil"
-  self._cfg = (Cfg.cfg_activityintro)[self._param]
+  self._cfg = Cfg.cfg_activityintro[self._param]
   if self._cfg == nil then
-    (Log.fatal)("###[UIActivityN11Intro] self._cfg is nil. param --> ", self._param)
+    Log.fatal("###[UIActivityN11Intro] self._cfg is nil. param --> ", self._param)
   end
-  self.anim = (self:GetGameObject()):GetComponent("Animation")
+  self.anim = self:GetGameObject():GetComponent("Animation")
   self.Content = self:GetUIComponent("UILocalizationText", "txtDesc")
   self._TitleText = self:GetUIComponent("UILocalizationText", "txtTitle")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14Intro.OnHide = function(self)
-  -- function num : 0_1
+function UIN14Intro:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14Intro.btnCloseOnClick = function(self, go)
-  -- function num : 0_2
+function UIN14Intro:btnCloseOnClick(go)
   self:CloseDialog()
 end
-
-

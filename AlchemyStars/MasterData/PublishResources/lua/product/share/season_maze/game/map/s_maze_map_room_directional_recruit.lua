@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/map/s_maze_map_room_directional_recruit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("s_maze_map_room_base")
 _class("SMazeMapRoom_DirectionalRecruit", SMazeMapRoomBase)
 SMazeMapRoom_DirectionalRecruit = SMazeMapRoom_DirectionalRecruit
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeMapRoom_DirectionalRecruit.OnTrigger = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SMazeMapRoom_DirectionalRecruit:OnTrigger()
   self:BindEvent(GameEventType.OnSeasonMazeRoomOperationFinish, self.OnTriggerComplete)
   self:ShowDialog("UISeasonMazeRoom_DirectionalRecruit", self:NodeID())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoom_DirectionalRecruit.OnTriggerComplete = function(self, petID)
-  -- function num : 0_1 , upvalues : _ENV
-  if not petID or petID > 0 then
-    self:UnBindEvent(GameEventType.OnSeasonMazeRoomOperationFinish)
-    self:Finish()
+function SMazeMapRoom_DirectionalRecruit:OnTriggerComplete(petID)
+  if not petID or 0 < petID then
   end
+  self:UnBindEvent(GameEventType.OnSeasonMazeRoomOperationFinish)
+  self:Finish()
 end
-
-

@@ -1,49 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/petinvite/ui_home_pet_invite.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePetInvite", UIController)
 UIHomePetInvite = UIHomePetInvite
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePetInvite.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function UIHomePetInvite:Constructor()
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   self._homelandClient = homeLandModule:GetClient()
-  self._inviteManager = (self._homelandClient):GetHomelandPetInviteManager()
+  self._inviteManager = self._homelandClient:GetHomelandPetInviteManager()
   self._curSelectIndex = 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIHomePetInvite:LoadDataOnEnter(TT, res, uiParams)
   self.firstIn = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIHomePetInvite:OnShow(uiParams)
   self._building = uiParams[1]
   self._inviteItemId = uiParams[2]
   self:GetComponent()
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite.OnHide = function(self)
-  -- function num : 0_3
+function UIHomePetInvite:OnHide()
   self._preSelectedInvitePoint = nil
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite.GetComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomePetInvite:GetComponent()
   self._atlas = self:GetAsset("UIHomelandInvite.spriteatlas", LoadType.SpriteAtlas)
   self._invitegroup = self:GetUIComponent("UISelectObjectPath", "groups")
   self._rectTrans = self:GetUIComponent("RectTransform", "groups")
@@ -57,8 +38,7 @@ UIHomePetInvite.GetComponent = function(self)
   self._curinvitepetcountText = self:GetUIComponent("UILocalizationText", "curinvitepetcount")
   self._buttonState = self:GetUIComponent("Image", "buttonState")
   self._inviteItemId = 1
-  ;
-  (self._inviteManager):SetOperateBuilding(self._building, self._inviteItemId)
+  self._inviteManager:SetOperateBuilding(self._building, self._inviteItemId)
   self._isinit = false
   self._uianimBoCG = self:GetUIComponent("CanvasGroup", "bottom")
   self._uianimInCG = self:GetUIComponent("CanvasGroup", "invitepar")
@@ -67,25 +47,12 @@ UIHomePetInvite.GetComponent = function(self)
   self:PlayAni()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite.RefreshUI = function(self)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._buttonState).raycastTarget = false
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._buttonState).sprite = (self._atlas):GetSprite("N17_hudong_btn02")
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (self._inviteManager):HaveChange() then
-    (self._buttonState).raycastTarget = true
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._buttonState).sprite = (self._atlas):GetSprite("N17_hudong_btn01")
+function UIHomePetInvite:RefreshUI()
+  self._buttonState.raycastTarget = false
+  self._buttonState.sprite = self._atlas:GetSprite("N17_hudong_btn02")
+  if self._inviteManager:HaveChange() then
+    self._buttonState.raycastTarget = true
+    self._buttonState.sprite = self._atlas:GetSprite("N17_hudong_btn01")
   end
   self:RefreshTitleInfo()
   self:RefreshInvitedGroup()
@@ -93,89 +60,62 @@ UIHomePetInvite.RefreshUI = function(self)
   self.firstIn = false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite.RefreshTitleInfo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item_architecture)[((self._building):GetArchitecture()).asset_id]
-  ;
-  (self._titleText):SetText((StringTable.Get)(cfg.Name))
+function UIHomePetInvite:RefreshTitleInfo()
+  local cfg = Cfg.cfg_item_architecture[self._building:GetArchitecture().asset_id]
+  self._titleText:SetText(StringTable.Get(cfg.Name))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite.RefreshInvitedGroup = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local invitedList = (self._inviteManager):GetInvitedGroup()
-  local countText = (string.format)("<color=#239bdb>%s</color><color=#737373>/%s</color>", 0, (self._building):GetInteractingPetCountMax())
-  local cfg = (self._building):GetCfg()
+function UIHomePetInvite:RefreshInvitedGroup()
+  local invitedList = self._inviteManager:GetInvitedGroup()
+  local countText = string.format("<color=#239bdb>%s</color><color=#737373>/%s</color>", 0, self._building:GetInteractingPetCountMax())
+  local cfg = self._building:GetCfg()
   local isSwimmingPool = false
   if cfg and cfg.ID == 5271001 then
     isSwimmingPool = true
   end
-  ;
-  (self._nonepet):SetActive(not isSwimmingPool)
-  ;
-  (self._nonepet2Go):SetActive(isSwimmingPool)
+  self._nonepet:SetActive(not isSwimmingPool)
+  self._nonepet2Go:SetActive(isSwimmingPool)
   if invitedList == nil or #invitedList == 0 then
-    (self._curinvitepetcountText):SetText(countText)
+    self._curinvitepetcountText:SetText(countText)
     if isSwimmingPool then
-      (self._addGo):SetActive(true)
-      ;
-      (self._invitegroup):SpawnObjects("UIHomePetInviteItem", 0)
+      self._addGo:SetActive(true)
+      self._invitegroup:SpawnObjects("UIHomePetInviteItem", 0)
     end
   else
     local spawnCount = #invitedList
-    countText = (string.format)("<color=#239bdb>%s</color><color=#737373>/%s</color>", spawnCount, (self._building):GetInteractingPetCountMax())
-    ;
-    (self._curinvitepetcountText):SetText(countText)
+    countText = string.format("<color=#239bdb>%s</color><color=#737373>/%s</color>", spawnCount, self._building:GetInteractingPetCountMax())
+    self._curinvitepetcountText:SetText(countText)
     if isSwimmingPool then
-      (self._addGo):SetActive(false)
-      -- DECOMPILER ERROR at PC83: Confused about usage of register: R6 in 'UnsetPending'
-
-      if spawnCount > 7 or not Vector2(0.5, 1) then
-        (self._rectTrans).pivot = Vector2(0, 1)
-        ;
-        (self._invitegroup):SpawnObjects("UIHomePetInviteItem", spawnCount)
-        self._inviterItems = (self._invitegroup):GetAllSpawnList()
-        for index,item in pairs(self._inviterItems) do
-          local uiNode = (self._inviterItems)[index]
-          uiNode:SetData(index, invitedList[index], self._inviteManager, self._atlas)
-        end
+      self._addGo:SetActive(false)
+      self._rectTrans.pivot = spawnCount <= 7 and Vector2(0.5, 1) or Vector2(0, 1)
+      self._invitegroup:SpawnObjects("UIHomePetInviteItem", spawnCount)
+      self._inviterItems = self._invitegroup:GetAllSpawnList()
+      for index, item in pairs(self._inviterItems) do
+        local uiNode = self._inviterItems[index]
+        uiNode:SetData(index, invitedList[index], self._inviteManager, self._atlas)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite.RefreshInvitePoint = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local allInvitePoints = (self._building):GetAllInteractPointByType(InteractPointType.PetBuilding)
+function UIHomePetInvite:RefreshInvitePoint()
+  local allInvitePoints = self._building:GetAllInteractPointByType(InteractPointType.PetBuilding)
   local count = #allInvitePoints
-  ;
-  (self._nonepet):SetActive(count > 0)
-  ;
-  (self._nonepetGroup):SpawnObjects("UIHomePetInvitePoint", count)
-  self._invitePointWidgets = (self._nonepetGroup):GetAllSpawnList()
-  for index,widget in ipairs(self._invitePointWidgets) do
-    widget:SetData(self._inviteManager, index, (allInvitePoints[index]):GetInteractObject(), function(widget)
-    -- function num : 0_8_0 , upvalues : self
-    self:_OnSelectInvitePoint(widget)
-  end
-)
+  self._nonepet:SetActive(0 < count)
+  self._nonepetGroup:SpawnObjects("UIHomePetInvitePoint", count)
+  self._invitePointWidgets = self._nonepetGroup:GetAllSpawnList()
+  for index, widget in ipairs(self._invitePointWidgets) do
+    widget:SetData(self._inviteManager, index, allInvitePoints[index]:GetInteractObject(), function(widget)
+      self:_OnSelectInvitePoint(widget)
+    end)
   end
   self:DefaultSelect()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite._OnSelectInvitePoint = function(self, widget)
-  -- function num : 0_9
+function UIHomePetInvite:_OnSelectInvitePoint(widget)
   if self._preSelectedInvitePoint ~= widget then
     if self._preSelectedInvitePoint then
-      (self._preSelectedInvitePoint):RefreshSelectImg(false)
+      self._preSelectedInvitePoint:RefreshSelectImg(false)
     end
     self._preSelectedInvitePoint = widget
     self._curSelectIndex = widget:GetIndex()
@@ -183,69 +123,56 @@ UIHomePetInvite._OnSelectInvitePoint = function(self, widget)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite.OnClickPet = function(self, pet)
-  -- function num : 0_10
-  if self._invitePointWidgets and (self._invitePointWidgets)[self._curSelectIndex] then
-    ((self._invitePointWidgets)[self._curSelectIndex]):SetPetInfo(pet)
-    ;
-    (self._inviteManager):UpdateInvitedPets(self._curSelectIndex, pet)
+function UIHomePetInvite:OnClickPet(pet)
+  if self._invitePointWidgets and self._invitePointWidgets[self._curSelectIndex] then
+    self._invitePointWidgets[self._curSelectIndex]:SetPetInfo(pet)
+    self._inviteManager:UpdateInvitedPets(self._curSelectIndex, pet)
     self:DefaultSelect()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite.OnChangeInvitePoint = function(self, index)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHomePetInvite:OnChangeInvitePoint(index)
   local ids = {}
   local validCfgs = {}
   if self._building then
-    local cfgBuilding = (self._building):GetCfg()
+    local cfgBuilding = self._building:GetCfg()
     if cfgBuilding and cfgBuilding.Interaction then
-      for _,value in pairs(cfgBuilding.Interaction) do
-        local cfgBuildingPet = (Cfg.cfg_homeland_building_pet)[value]
-        if cfgBuildingPet and cfgBuildingPet.InteractPointIndex and (table.icontains)(cfgBuildingPet.InteractPointIndex, index) then
-          (table.insert)(validCfgs, cfgBuildingPet)
-        end
-        ;
-        (table.insert)(validCfgs, cfgBuildingPet)
-      end
-    end
-  end
-  do
-    if #validCfgs <= 0 then
-      (Log.error)("该交互点没有可用的交互表现配置。", index)
-    else
-      for _,value in pairs(validCfgs) do
-        if not value.petIDs then
-          (self._inviteManager):SetInteractPointLimit(false, nil)
-          ;
-          (self._dynamicList):RefreshAllShownItem()
-          return 
-        else
-          for _,id in pairs(value.petIDs) do
-            (table.insert)(ids, id)
+      for _, value in pairs(cfgBuilding.Interaction) do
+        local cfgBuildingPet = Cfg.cfg_homeland_building_pet[value]
+        if cfgBuildingPet then
+          if cfgBuildingPet.InteractPointIndex then
+            if table.icontains(cfgBuildingPet.InteractPointIndex, index) then
+              table.insert(validCfgs, cfgBuildingPet)
+            end
+          else
+            table.insert(validCfgs, cfgBuildingPet)
           end
         end
       end
     end
-    do
-      ;
-      (self._inviteManager):SetInteractPointLimit(true, ids)
-      ;
-      (self._dynamicList):RefreshAllShownItem()
+  end
+  if #validCfgs <= 0 then
+    Log.error("该交互点没有可用的交互表现配置。", index)
+  else
+    for _, value in pairs(validCfgs) do
+      if not value.petIDs then
+        self._inviteManager:SetInteractPointLimit(false, nil)
+        self._dynamicList:RefreshAllShownItem()
+        return
+      else
+        for _, id in pairs(value.petIDs) do
+          table.insert(ids, id)
+        end
+      end
     end
   end
+  self._inviteManager:SetInteractPointLimit(true, ids)
+  self._dynamicList:RefreshAllShownItem()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite.DefaultSelect = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomePetInvite:DefaultSelect()
   if self._invitePointWidgets then
-    for _,widget in ipairs(self._invitePointWidgets) do
+    for _, widget in ipairs(self._invitePointWidgets) do
       if not widget:GetPet() then
         widget:OnSelect()
         break
@@ -254,45 +181,31 @@ UIHomePetInvite.DefaultSelect = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite.RefreshCanInvitedList = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHomePetInvite:RefreshCanInvitedList()
   self._itemCountPerRow = 10
-  self._canInviteList = (self._inviteManager):GetNearInviteEnablePetList()
+  self._canInviteList = self._inviteManager:GetNearInviteEnablePetList()
   self._dynamicListSize = #self._canInviteList
-  self._dynamicListRowSize = (math.floor)((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
+  self._dynamicListRowSize = math.floor((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
   if self._canInviteList ~= nil and #self._canInviteList > 0 then
-    (self._noneinvite):SetActive(false)
+    self._noneinvite:SetActive(false)
     if not self._isinit then
-      (self._dynamicList):InitListView(self._dynamicListRowSize, function(scrollView, index)
-    -- function num : 0_13_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
+      self._dynamicList:InitListView(self._dynamicListRowSize, function(scrollView, index)
+        return self:_SpawnListItem(scrollView, index)
+      end)
       self._isinit = true
     else
-      ;
-      (self._dynamicList):SetListItemCount((math.ceil)(#self._canInviteList / self._itemCountPerRow))
-      ;
-      (self._dynamicList):RefreshAllShownItem()
-      ;
-      (self._dynamicList):MovePanelToItemIndex(0, 0)
+      self._dynamicList:SetListItemCount(math.ceil(#self._canInviteList / self._itemCountPerRow))
+      self._dynamicList:RefreshAllShownItem()
+      self._dynamicList:MovePanelToItemIndex(0, 0)
     end
   else
-    ;
-    (self._dynamicList):SetListItemCount(0)
-    ;
-    (self._dynamicList):RefreshAllShownItem()
-    ;
-    (self._noneinvite):SetActive(true)
+    self._dynamicList:SetListItemCount(0)
+    self._dynamicList:RefreshAllShownItem()
+    self._noneinvite:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_14
+function UIHomePetInvite:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -306,104 +219,67 @@ UIHomePetInvite._SpawnListItem = function(self, scrollView, index)
   for i = 1, self._itemCountPerRow do
     local listItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._dynamicListSize < itemIndex then
-      (listItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._dynamicListSize then
+      listItem:GetGameObject():SetActive(false)
     else
-      ;
-      (listItem:GetGameObject()):SetActive(true)
+      listItem:GetGameObject():SetActive(true)
       self:_SetListItemData(listItem, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite._SetListItemData = function(self, listItem, index)
-  -- function num : 0_15
-  listItem:SetData(index, (self._canInviteList)[index], self._inviteManager, self._atlas)
+function UIHomePetInvite:_SetListItemData(listItem, index)
+  listItem:SetData(index, self._canInviteList[index], self._inviteManager, self._atlas)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite._AttachEvents = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIHomePetInvite:_AttachEvents()
   self:AttachEvent(GameEventType.OnPetInvitePreview, self.RefreshUI)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.PlayAni)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite._DetachEvents = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIHomePetInvite:_DetachEvents()
   self:DetachEvent(GameEventType.OnPetInvitePreview, self.RefreshUI)
   self:DetachEvent(GameEventType.AfterUILayerChanged, self.PlayAni)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite.BtnCloseOnClick = function(self, go)
-  -- function num : 0_18 , upvalues : _ENV
-  (self._inviteManager):ClearCache()
+function UIHomePetInvite:BtnCloseOnClick(go)
+  self._inviteManager:ClearCache()
   self.anim = self:GetUIComponent("Animation", "ani")
   self:StartTask(function(TT)
-    -- function num : 0_18_0 , upvalues : self, _ENV
     local lockName = "UIHomePetInvite:BtnInviteOnClick"
     self:Lock(lockName)
-    ;
-    (self.anim):Play("uieffanim_UIHomePetInvite_out")
+    self.anim:Play("uieffanim_UIHomePetInvite_out")
     YIELD(TT, 150)
     self:CloseDialog()
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite.BtnInviteEnableOnClick = function(self, go)
-  -- function num : 0_19
+function UIHomePetInvite:BtnInviteEnableOnClick(go)
   self:ShowDialog("UIHomePetInviteEnable", self._building, self._inviteItemId)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite.BtnInviteOnClick = function(self, go)
-  -- function num : 0_20 , upvalues : _ENV
-  if not (self._inviteManager):HaveChange() then
-    return 
+function UIHomePetInvite:BtnInviteOnClick(go)
+  if not self._inviteManager:HaveChange() then
+    return
   end
-  local tip = (self._inviteManager):CheckOnSend()
-  ;
-  (ToastManager.ShowHomeToast)((StringTable.Get)(tip))
-  ;
-  (self._inviteManager):SetInvite()
+  local tip = self._inviteManager:CheckOnSend()
+  ToastManager.ShowHomeToast(StringTable.Get(tip))
+  self._inviteManager:SetInvite()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvite.PlayAni = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._uianimBoCG).alpha = 0
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._uianimInCG).alpha = 0
+function UIHomePetInvite:PlayAni()
+  self._uianimBoCG.alpha = 0
+  self._uianimInCG.alpha = 0
   local anistr = self.firstIn and "uieffanim_UIHomePetInvite_show" or "uieffanim_UIHomePetInvite_in"
   self.anim = self:GetUIComponent("Animation", "ani")
   self:StartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : self, _ENV, anistr
     local lockName = "UIHomePetInvite:PlayAni"
     self:Lock(lockName)
     YIELD(TT)
-    ;
-    (self.anim):Play(anistr)
+    self.anim:Play(anistr)
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
-
-

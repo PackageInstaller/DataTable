@@ -1,157 +1,96 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_mission_node/ui_activity_mission_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityMissionNode", UICustomWidget)
 UIActivityMissionNode = UIActivityMissionNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityMissionNode._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityMissionNode:_GetComponents()
   self._root = self:GetGameObject("root")
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self._imgIcon = self:GetUIComponent("Image", "imgIcon")
   self._txtTip = self:GetUIComponent("UILocalizationText", "txtTip")
   self._starPool = self:GetUIComponent("UISelectObjectPath", "star")
-  ;
-  (self._starPool):SpawnObjects("UIActivityMissionNodeStar", 3)
+  self._starPool:SpawnObjects("UIActivityMissionNodeStar", 3)
   self._imgTipBg = self:GetUIComponent("Image", "imgTipBg")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNode.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityMissionNode:Constructor()
   self._nodeInfo = nil
   self._vec0_5 = Vector2(0.5, 0.5)
   self._callback = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNode.OnShow = function(self)
-  -- function num : 0_2
+function UIActivityMissionNode:OnShow()
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNode.OnHide = function(self)
-  -- function num : 0_3
+function UIActivityMissionNode:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNode.SetData = function(self, nodeInfo, callback)
-  -- function num : 0_4
+function UIActivityMissionNode:SetData(nodeInfo, callback)
   self._nodeInfo = nodeInfo
   self._callback = callback
   self:Refresh()
   self:_SetImageMatAnim()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNode.Refresh = function(self)
-  -- function num : 0_5
+function UIActivityMissionNode:Refresh()
   self:SetUIPos()
   self:SetUIName()
   self:SetUIState()
   self:SetUIStar()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNode.SetUIPos = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._rectTransform).anchorMax = self._vec0_5
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = self._vec0_5
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2(100, 100)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = (self._nodeInfo).pos
+function UIActivityMissionNode:SetUIPos()
+  self._rectTransform.anchorMax = self._vec0_5
+  self._rectTransform.anchorMin = self._vec0_5
+  self._rectTransform.sizeDelta = Vector2(100, 100)
+  self._rectTransform.anchoredPosition = self._nodeInfo.pos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNode.SetUIName = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityMissionNode:SetUIName()
   local name = ""
-  if (self._nodeInfo).name then
-    name = (StringTable.Get)((self._nodeInfo).name)
+  if self._nodeInfo.name then
+    name = StringTable.Get(self._nodeInfo.name)
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._txtTip).text = name
+  self._txtTip.text = name
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNode.SetUIStar = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local uiStars = (self._starPool):GetAllSpawnList()
-  for i,v in ipairs(uiStars) do
+function UIActivityMissionNode:SetUIStar()
+  local uiStars = self._starPool:GetAllSpawnList()
+  for i, v in ipairs(uiStars) do
     local go = v:GetGameObject()
-    local star = (self._nodeInfo).starCount or 0
+    local star = self._nodeInfo.starCount or 0
     go:SetActive(i <= star)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNode.SetUIState = function(self)
-  -- function num : 0_9
-  local state = (self._nodeInfo).state
+function UIActivityMissionNode:SetUIState()
+  local state = self._nodeInfo.state
   local show = state and true or false
-  ;
-  (self._root):SetActive(show)
+  self._root:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNode.btnOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self._nodeInfo).type == DiscoveryStageType.Plot then
-    (self._callback)((self._nodeInfo).campaignMissionId, not self._callback, self._rectTransform)
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIActivityMissionNode:btnOnClick()
+  if self._callback then
+    self._callback(self._nodeInfo.campaignMissionId, self._nodeInfo.type ~= DiscoveryStageType.Plot, self._rectTransform)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNode._SetImageMatAnim = function(self)
-  -- function num : 0_11
-  if (self._nodeInfo).isSLevel then
+function UIActivityMissionNode:_SetImageMatAnim()
+  if self._nodeInfo.isSLevel then
     self:_SetImageMatAnimSLevel()
   else
     self:_SetImageMatAnimNormal()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNode._SetImageMatAnimNormal = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local imageMat = (self._imgTipBg).materialForRendering
+function UIActivityMissionNode:_SetImageMatAnimNormal()
+  local imageMat = self._imgTipBg.materialForRendering
   if imageMat == nil then
-    return 
+    return
   end
   local var = "_DissolveFactor"
   local startVal = 1
   imageMat:SetFloat(var, startVal)
-  local seq = (((DG.Tweening).DOTween).Sequence)()
+  local seq = DG.Tweening.DOTween.Sequence()
   local delayedTimer = 0.363
   seq:AppendInterval(delayedTimer)
   local endVal = 0
@@ -160,18 +99,15 @@ UIActivityMissionNode._SetImageMatAnimNormal = function(self)
   seq:Append(tween_1)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityMissionNode._SetImageMatAnimSLevel = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local imageMat = (self._imgTipBg).materialForRendering
+function UIActivityMissionNode:_SetImageMatAnimSLevel()
+  local imageMat = self._imgTipBg.materialForRendering
   if imageMat == nil then
-    return 
+    return
   end
   local var = "_DissolveFactor"
   local startVal = 1
   imageMat:SetFloat(var, startVal)
-  local seq = (((DG.Tweening).DOTween).Sequence)()
+  local seq = DG.Tweening.DOTween.Sequence()
   local delayedTimer = 0.264
   seq:AppendInterval(delayedTimer)
   local endVal = 0
@@ -179,5 +115,3 @@ UIActivityMissionNode._SetImageMatAnimSLevel = function(self)
   local tween_1 = imageMat:DOFloat(endVal, var, duration)
   seq:Append(tween_1)
 end
-
-

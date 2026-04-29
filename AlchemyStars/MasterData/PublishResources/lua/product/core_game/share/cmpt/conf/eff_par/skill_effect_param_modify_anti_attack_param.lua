@@ -1,40 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_modify_anti_attack_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamModifyAntiAttackParam", SkillEffectParamBase)
 SkillEffectParamModifyAntiAttackParam = SkillEffectParamModifyAntiAttackParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamModifyAntiAttackParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamModifyAntiAttackParam:Constructor(t)
   self._modifyType = t.modifyType
   self._modifyParam = t.modifyParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamModifyAntiAttackParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamModifyAntiAttackParam:GetEffectType()
   return SkillEffectType.ModifyAntiAttackParam
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamModifyAntiAttackParam.GetModifyType = function(self)
-  -- function num : 0_2
+function SkillEffectParamModifyAntiAttackParam:GetModifyType()
   return self._modifyType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamModifyAntiAttackParam.GetModifyParam = function(self)
-  -- function num : 0_3
+function SkillEffectParamModifyAntiAttackParam:GetModifyParam()
   return self._modifyParam
 end
 
-local ModifyAntiAttackParamType = {WaitActiveSkillCount = 1, AntiSkillCountCurRound = 2, AntiSkillEnabled = 3, MAX = 999}
+local ModifyAntiAttackParamType = {
+  WaitActiveSkillCount = 1,
+  AntiSkillCountCurRound = 2,
+  AntiSkillEnabled = 3,
+  MAX = 999
+}
 _enum("ModifyAntiAttackParamType", ModifyAntiAttackParamType)
-

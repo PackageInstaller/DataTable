@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_trial_level/ui_trail_level_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITrailLevelItem", UICustomWidget)
 UITrailLevelItem = UITrailLevelItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITrailLevelItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UITrailLevelItem:OnShow()
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self._iconImg = self:GetUIComponent("RawImageLoader", "Icon")
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
@@ -21,63 +14,38 @@ UITrailLevelItem.OnShow = function(self)
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelItem.OnHide = function(self)
-  -- function num : 0_1
+function UITrailLevelItem:OnHide()
   self.atlasProperty = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelItem.Refresh = function(self, levelData)
-  -- function num : 0_2 , upvalues : _ENV
+function UITrailLevelItem:Refresh(levelData)
   if levelData == nil then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   self._levelData = levelData
-  ;
-  (self._iconImg):LoadImage((self._levelData):GetIcon())
-  ;
-  (self._nameLabel):SetText((self._levelData):GetName())
-  local elementIcon1 = (self._levelData):GetElementIcon1()
-  if (string.isnullorempty)(elementIcon1) then
-    (self._element1Go):SetActive(false)
+  self._iconImg:LoadImage(self._levelData:GetIcon())
+  self._nameLabel:SetText(self._levelData:GetName())
+  local elementIcon1 = self._levelData:GetElementIcon1()
+  if string.isnullorempty(elementIcon1) then
+    self._element1Go:SetActive(false)
   else
-    ;
-    (self._element1Go):SetActive(true)
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._element1Img).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(elementIcon1))
+    self._element1Go:SetActive(true)
+    self._element1Img.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(elementIcon1))
   end
-  local elementIcon2 = (self._levelData):GetElementIcon2()
-  if (string.isnullorempty)(elementIcon2) then
-    (self._element2Go):SetActive(false)
+  local elementIcon2 = self._levelData:GetElementIcon2()
+  if string.isnullorempty(elementIcon2) then
+    self._element2Go:SetActive(false)
   else
-    ;
-    (self._element2Go):SetActive(true)
-    -- DECOMPILER ERROR at PC81: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._element2Img).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(elementIcon2))
+    self._element2Go:SetActive(true)
+    self._element2Img.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(elementIcon2))
   end
-  ;
-  (self._statusGo):SetActive((self._levelData):IsComplete())
-  ;
-  (self._anim):Stop()
-  ;
-  (self._anim):Play("uieff_UITrailLevelItem_in")
+  self._statusGo:SetActive(self._levelData:IsComplete())
+  self._anim:Stop()
+  self._anim:Play("uieff_UITrailLevelItem_in")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelItem.BgOnClick = function(self)
-  -- function num : 0_3
-  self:ShowDialog("UITrailLevelDetail", (self._levelData):GetId())
+function UITrailLevelItem:BgOnClick()
+  self:ShowDialog("UITrailLevelDetail", self._levelData:GetId())
 end
-
-

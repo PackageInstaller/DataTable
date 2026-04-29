@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/fish/ui_homeland_minimap_icon_fish.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapIconFish", UIHomelandMinimapIconBase)
 UIHomelandMinimapIconFish = UIHomelandMinimapIconFish
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapIconFish.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandMinimapIconFish:OnShow(uiParams)
   self._fish = self:GetGameObject("Fish")
   self._goldFish = self:GetGameObject("GoldFish")
   self._goldPetFish = self:GetGameObject("GoldPetFish")
@@ -16,93 +9,49 @@ UIHomelandMinimapIconFish.OnShow = function(self, uiParams)
   self._selectGO = self:GetGameObject("select")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconFish.OnInitDone = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local fishCfgID = (self:GetIconData()):GetParam()
-  self.cfg = (HomelandFishingConst.GetFishingPositionCfg)(fishCfgID)
-  self.fishingPointType = (self.cfg).Type
+function UIHomelandMinimapIconFish:OnInitDone()
+  local fishCfgID = self:GetIconData():GetParam()
+  self.cfg = HomelandFishingConst.GetFishingPositionCfg(fishCfgID)
+  self.fishingPointType = self.cfg.Type
   if self.fishingPointType == HomelandFishingPointType.Normal then
-    (self._fish):SetActive(true)
-  else
-    if self.fishingPointType == HomelandFishingPointType.Gold then
-      (self._goldFish):SetActive(true)
-    else
-      if self.fishingPointType == HomelandFishingPointType.Box then
-        (self._box):SetActive(true)
-      else
-        if self.fishingPointType == HomelandFishingPointType.GoldPetFish then
-          (self._goldPetFish):SetActive(true)
-        end
-      end
-    end
+    self._fish:SetActive(true)
+  elseif self.fishingPointType == HomelandFishingPointType.Gold then
+    self._goldFish:SetActive(true)
+  elseif self.fishingPointType == HomelandFishingPointType.Box then
+    self._box:SetActive(true)
+  elseif self.fishingPointType == HomelandFishingPointType.GoldPetFish then
+    self._goldPetFish:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconFish.OnSelected = function(self)
-  -- function num : 0_2
-  (self._selectGO):SetActive(true)
+function UIHomelandMinimapIconFish:OnSelected()
+  self._selectGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconFish.OnUnSelected = function(self)
-  -- function num : 0_3
-  (self._selectGO):SetActive(false)
+function UIHomelandMinimapIconFish:OnUnSelected()
+  self._selectGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconFish.GetShowName = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandMinimapIconFish:GetShowName()
   if self.fishingPointType == HomelandFishingPointType.Normal then
-    return (StringTable.Get)("str_homeland_minimap_detail_title_fish")
-  else
-    if self.fishingPointType == HomelandFishingPointType.Gold then
-      return (StringTable.Get)("str_homeland_minimap_detail_title_goldfish")
-    else
-      if self.fishingPointType == HomelandFishingPointType.GoldPetFish then
-        return (StringTable.Get)("str_homeland_minimap_detail_title_goldpetfish")
-      else
-        if self.fishingPointType == HomelandFishingPointType.Box then
-          return (StringTable.Get)("str_homeland_minimap_detail_title_box")
-        end
-      end
-    end
+    return StringTable.Get("str_homeland_minimap_detail_title_fish")
+  elseif self.fishingPointType == HomelandFishingPointType.Gold then
+    return StringTable.Get("str_homeland_minimap_detail_title_goldfish")
+  elseif self.fishingPointType == HomelandFishingPointType.GoldPetFish then
+    return StringTable.Get("str_homeland_minimap_detail_title_goldpetfish")
+  elseif self.fishingPointType == HomelandFishingPointType.Box then
+    return StringTable.Get("str_homeland_minimap_detail_title_box")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconFish.GetAnimationName = function(self, animType)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMinimapIconFish:GetAnimationName(animType)
   if not self._animationNames then
     self._animationNames = {}
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.IN] = "UIHomelandMinimapFishIcon_in"
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.OUT] = "UIHomelandMinimapFishIcon_out"
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.SELECT] = "UIHomelandMinimapFishIcon_Selected_in"
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.UNSELECT] = "UIHomelandMinimapFishIcon_Selected_out"
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.EXPANSION] = "UIHomelandMinimapFishIcon_expansion"
+    self._animationNames[MinimapIconAnimationType.IN] = "UIHomelandMinimapFishIcon_in"
+    self._animationNames[MinimapIconAnimationType.OUT] = "UIHomelandMinimapFishIcon_out"
+    self._animationNames[MinimapIconAnimationType.SELECT] = "UIHomelandMinimapFishIcon_Selected_in"
+    self._animationNames[MinimapIconAnimationType.UNSELECT] = "UIHomelandMinimapFishIcon_Selected_out"
+    self._animationNames[MinimapIconAnimationType.EXPANSION] = "UIHomelandMinimapFishIcon_expansion"
   end
-  return (self._animationNames)[animType]
+  return self._animationNames[animType]
 end
-
-

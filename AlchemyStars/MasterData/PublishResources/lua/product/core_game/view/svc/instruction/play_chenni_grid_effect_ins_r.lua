@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_chenni_grid_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayChenNiGridEffectInstruction", BaseInstruction)
 PlayChenNiGridEffectInstruction = PlayChenNiGridEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayChenNiGridEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayChenNiGridEffectInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayChenNiGridEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayChenNiGridEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local casterPos = (casterEntity:GridLocation()):GetGridPos()
+  local casterPos = casterEntity:GridLocation():GetGridPos()
   local utilScopeSvc = world:GetService("UtilScopeCalc")
   local scopeCalc = SkillScopeCalculator:New(utilScopeSvc)
   local renderPickUpComponent = casterEntity:RenderPickUpComponent()
@@ -26,41 +16,31 @@ PlayChenNiGridEffectInstruction.DoInstruction = function(self, TT, casterEntity,
   local pickUpPos = scopeGridList[1]
   local dirType = scopeCalc:GetDirection(pickUpPos, casterPos)
   local scopeList, scopeListNEGPos = utilScopeSvc:CalcPickUpSingleLine(dirType, casterPos)
-  ;
-  (table.Vector2Append)(scopeList, scopeListNEGPos)
-  ;
-  (table.insert)(scopeList, casterPos)
+  table.Vector2Append(scopeList, scopeListNEGPos)
+  table.insert(scopeList, casterPos)
   local effectService = world:GetService("Effect")
   local centerPos = utilScopeSvc:GetGridListCenterPos(scopeList)
   local effectPos = centerPos
-  local effectDir = nil
+  local effectDir
   if dirType == HitBackDirectionType.RightDown or dirType == HitBackDirectionType.LeftUp then
     effectDir = Vector2(1, -1)
-  else
-    if dirType == HitBackDirectionType.Right or dirType == HitBackDirectionType.Left then
-      effectDir = Vector2(1, 0)
-    else
-      if dirType == HitBackDirectionType.Down or dirType == HitBackDirectionType.Up then
-        effectDir = Vector2(0, 1)
-      else
-        if dirType == HitBackDirectionType.RightUp or dirType == HitBackDirectionType.LeftDown then
-          effectDir = Vector2(1, 1)
-        end
-      end
-    end
+  elseif dirType == HitBackDirectionType.Right or dirType == HitBackDirectionType.Left then
+    effectDir = Vector2(1, 0)
+  elseif dirType == HitBackDirectionType.Down or dirType == HitBackDirectionType.Up then
+    effectDir = Vector2(0, 1)
+  elseif dirType == HitBackDirectionType.RightUp or dirType == HitBackDirectionType.LeftDown then
+    effectDir = Vector2(1, 1)
   end
   effectService:CreateWorldPositionDirectionEffect(self._effectID, effectPos, effectDir)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayChenNiGridEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayChenNiGridEffectInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 10})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      10
+    })
   end
   return t
 end
-
-

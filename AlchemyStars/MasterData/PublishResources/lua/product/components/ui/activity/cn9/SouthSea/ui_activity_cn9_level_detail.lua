@@ -1,38 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn9/SouthSea/ui_activity_cn9_level_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local CN9SouthSeaRoadType = {Normal = 1, Special = 2}
 _enum("CN9SouthSeaRoadType", CN9SouthSeaRoadType)
 _class("UIActivityCN9LevelDetail", UIController)
 UIActivityCN9LevelDetail = UIActivityCN9LevelDetail
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityCN9LevelDetail.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIActivityCN9LevelDetail:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN9LevelDetail.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityCN9LevelDetail:OnShow(uiParams)
   self._ASheepCom = uiParams[1]
   self._ASheeoComInfo = uiParams[2]
   self._id = uiParams[3]
   self._passmission = uiParams[4]
   self._refreshPoint = uiParams[5]
   self._refreshBookRed = uiParams[6]
-  self._BestScore = ((self._ASheeoComInfo).m_info).m_max_score
+  self._BestScore = self._ASheeoComInfo.m_info.m_max_score
   self:InitWidget()
   self:SetDetail()
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN9LevelDetail.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityCN9LevelDetail:InitWidget()
   self._SpecialDetail = self:GetGameObject("SpecialDetail")
   self._SpecialContent = self:GetUIComponent("UISelectObjectPath", "SpecialContent")
   self._LevelNameS = self:GetUIComponent("UILocalizationText", "LevelNameS")
@@ -45,53 +32,37 @@ UIActivityCN9LevelDetail.InitWidget = function(self)
   self._tips = s:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN9LevelDetail.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityCN9LevelDetail:OnHide()
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowTips)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN9LevelDetail.ShowTips = function(self, itemId, pos)
-  -- function num : 0_4
-  (self._tips):SetData(itemId, pos)
+function UIActivityCN9LevelDetail:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN9LevelDetail.SetDetail = function(self)
-  -- function num : 0_5 , upvalues : _ENV, CN9SouthSeaRoadType
-  self.cfg = (Cfg.cfg_component_asheep_mission)[self._id]
-  local name = (self.cfg).MissionName
-  self._MissionID = (self.cfg).MissionID
-  ;
-  (self._LevelNameS):SetText((StringTable.Get)(name))
-  ;
-  (self._LevelNameN):SetText((StringTable.Get)(name))
-  if (self.cfg).Type == CN9SouthSeaRoadType.Normal then
-    (self._NormalDetail):SetActive(true)
+function UIActivityCN9LevelDetail:SetDetail()
+  self.cfg = Cfg.cfg_component_asheep_mission[self._id]
+  local name = self.cfg.MissionName
+  self._MissionID = self.cfg.MissionID
+  self._LevelNameS:SetText(StringTable.Get(name))
+  self._LevelNameN:SetText(StringTable.Get(name))
+  if self.cfg.Type == CN9SouthSeaRoadType.Normal then
+    self._NormalDetail:SetActive(true)
     self:SetNormal()
   else
-    ;
-    (self._BestScoreTxt):SetText(self._BestScore)
-    ;
-    (self._SpecialDetail):SetActive(true)
+    self._BestScoreTxt:SetText(self._BestScore)
+    self._SpecialDetail:SetActive(true)
     self:SetSpecial()
   end
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN9LevelDetail.SetNormal = function(self)
-  -- function num : 0_6 , upvalues : _ENV, CN9SouthSeaRoadType
-  (self._NormalContent):SpawnObjects("UIACtivityCN9LevelAwardItem", 1)
-  local pass = nil
+function UIActivityCN9LevelDetail:SetNormal()
+  self._NormalContent:SpawnObjects("UIACtivityCN9LevelAwardItem", 1)
+  local pass
   if not self._passmission then
     pass = false
   else
-    for i,v in pairs(self._passmission) do
+    for i, v in pairs(self._passmission) do
       if self._MissionID == i then
         pass = true
         break
@@ -100,25 +71,19 @@ UIActivityCN9LevelDetail.SetNormal = function(self)
       end
     end
   end
-  do
-    self._NormalNodes = (self._NormalContent):GetAllSpawnList()
-    for i,v in ipairs(self._NormalNodes) do
-      v:SetData(CN9SouthSeaRoadType.Normal, self._id, pass)
-    end
+  self._NormalNodes = self._NormalContent:GetAllSpawnList()
+  for i, v in ipairs(self._NormalNodes) do
+    v:SetData(CN9SouthSeaRoadType.Normal, self._id, pass)
   end
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN9LevelDetail.SetSpecial = function(self)
-  -- function num : 0_7 , upvalues : _ENV, CN9SouthSeaRoadType
+function UIActivityCN9LevelDetail:SetSpecial()
   self.SpecialCfg = Cfg.cfg_component_asheep_mission_reward
-  ;
-  (self._SpecialContent):SpawnObjects("UIACtivityCN9LevelAwardItem", 3)
-  self._SpecialNodes = (self._SpecialContent):GetAllSpawnList()
-  for i,v in ipairs(self._SpecialNodes) do
-    local ScoreLimit = ((self.SpecialCfg)[i]).ScoreLimit
-    local get = nil
+  self._SpecialContent:SpawnObjects("UIACtivityCN9LevelAwardItem", 3)
+  self._SpecialNodes = self._SpecialContent:GetAllSpawnList()
+  for i, v in ipairs(self._SpecialNodes) do
+    local ScoreLimit = self.SpecialCfg[i].ScoreLimit
+    local get
     if ScoreLimit <= self._BestScore then
       get = true
     else
@@ -128,115 +93,81 @@ UIActivityCN9LevelDetail.SetSpecial = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN9LevelDetail.Refresh = function(self, score)
-  -- function num : 0_8 , upvalues : CN9SouthSeaRoadType, _ENV
+function UIActivityCN9LevelDetail:Refresh(score)
   if self._refreshPoint then
-    (self._refreshPoint)()
+    self._refreshPoint()
   end
-  if (self.cfg).Type == CN9SouthSeaRoadType.Normal then
-    for i,v in ipairs(self._NormalNodes) do
+  if self.cfg.Type == CN9SouthSeaRoadType.Normal then
+    for i, v in ipairs(self._NormalNodes) do
       v:SetPass(true)
     end
   else
-    do
-      if self._BestScore < score then
-        (self._BestScoreTxt):SetText(score)
+    if score > self._BestScore then
+      self._BestScoreTxt:SetText(score)
+    end
+    for i, v in ipairs(self._SpecialNodes) do
+      local ScoreLimit = self.SpecialCfg[i].ScoreLimit
+      local get
+      if score >= ScoreLimit then
+        get = true
+      else
+        get = false
       end
-      for i,v in ipairs(self._SpecialNodes) do
-        local ScoreLimit = ((self.SpecialCfg)[i]).ScoreLimit
-        local get = nil
-        if ScoreLimit <= score then
-          get = true
-        else
-          get = false
-        end
-        v:SetPass(get)
-      end
+      v:SetPass(get)
     end
   end
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN9LevelDetail.CloseBtnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityCN9LevelDetail:CloseBtnOnClick(go)
   self._Anim = self:GetUIComponent("Animation", "Anim")
   local LockName = "UIActivityCN9LevelDetail_AnimOUT"
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, LockName, _ENV
     self:Lock(LockName)
-    ;
-    (self._Anim):Play("uianim_UIActivityCN9LevelDetail_out")
+    self._Anim:Play("uianim_UIActivityCN9LevelDetail_out")
     YIELD(TT, 500)
     self:CloseDialog()
     self:UnLock(LockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN9LevelDetail.SpecialStartBtnOnClick = function(self, go)
-  -- function num : 0_10
+function UIActivityCN9LevelDetail:SpecialStartBtnOnClick(go)
   self:StartGame()
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN9LevelDetail.NormalStartBtnOnClick = function(self, go)
-  -- function num : 0_11
+function UIActivityCN9LevelDetail:NormalStartBtnOnClick(go)
   self:StartGame()
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN9LevelDetail.StartGame = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local bgmid = (AudioHelperController.GetCurrentBgm)()
+function UIActivityCN9LevelDetail:StartGame()
+  local bgmid = AudioHelperController.GetCurrentBgm()
   self:ShowDialog(UIStateType.UICN9MainGame, self._MissionID, function(id, score)
-    -- function num : 0_12_0 , upvalues : self
     self:OnFinishGame(id, score)
     self:Refresh(score)
-  end
-, bgmid)
+  end, bgmid)
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN9LevelDetail.OnFinishGame = function(self, missionId, score)
-  -- function num : 0_13
+function UIActivityCN9LevelDetail:OnFinishGame(missionId, score)
   self:StartTask(self.HandleScore, self, missionId, score)
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN9LevelDetail.HandleScore = function(self, TT, id, score)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityCN9LevelDetail:HandleScore(TT, id, score)
   local lockName = "UIActivityCN9LevelDetail:HandleScore"
   self:Lock(lockName)
   local res = AsyncRequestRes:New()
-  local ret, rewards = (self._ASheepCom):HandleCompleteASheepMission(TT, res, id, score)
+  local ret, rewards = self._ASheepCom:HandleCompleteASheepMission(TT, res, id, score)
   self:UnLock(lockName)
   if res:GetSucc() then
     self:ShowRewards(rewards)
   else
-    ;
-    (Log.error)("###[UIActivityCN9LevelDetail] HandleScore fail, result:", res:GetResult())
+    Log.error("###[UIActivityCN9LevelDetail] HandleScore fail, result:", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN9LevelDetail.ShowRewards = function(self, rewards)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityCN9LevelDetail:ShowRewards(rewards)
   if rewards then
-    (UIActivityHelper.ShowUIGetRewards)(rewards, true)
+    UIActivityHelper.ShowUIGetRewards(rewards, true)
     if self._refreshBookRed then
-      (self._refreshBookRed)()
+      self._refreshBookRed()
     end
   end
 end
-
-

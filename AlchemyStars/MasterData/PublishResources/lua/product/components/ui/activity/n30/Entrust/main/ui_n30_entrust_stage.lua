@@ -1,29 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n30/Entrust/main/ui_n30_entrust_stage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN30EntrustStage", UIController)
 UIN30EntrustStage = UIN30EntrustStage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN30EntrustStage.Constructor = function(self)
-  -- function num : 0_0
+function UIN30EntrustStage:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustStage.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIN30EntrustStage:LoadDataOnEnter(TT, res, uiParams)
   self._node = uiParams[1]
-  ;
-  ((self._node):EntrustData()):NodeRewardsData(self._node)
+  self._node:EntrustData():NodeRewardsData(self._node)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustStage.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN30EntrustStage:OnShow(uiParams)
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self._txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
   self._txtExplorValue = self:GetUIComponent("UILocalizationText", "txtExplorValue")
@@ -35,141 +21,94 @@ UIN30EntrustStage.OnShow = function(self, uiParams)
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustStage.OnHide = function(self)
-  -- function num : 0_3
+function UIN30EntrustStage:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustStage.BtnCloseOnClick = function(self, go)
-  -- function num : 0_4
+function UIN30EntrustStage:BtnCloseOnClick(go)
   self:CloseDialogAnimation()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustStage.BtnStartOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN30EntrustStage:BtnStartOnClick(go)
   self:CallUIMethod("UIN30Entrust", "OutAnimation")
   self:CloseDialogAnimation(function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
     self:SwitchState(UIStateType.UIN30EntrustLine, self._node)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustStage.Refresh = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = (self._node):GetCfg()
-  ;
-  (self._txtTitle):SetText((StringTable.Get)(cfg.StrTitle))
-  ;
-  (self._txtDesc):SetText((StringTable.Get)(cfg.StrDesc))
-  local value = (self._node):GetExplor() * 100
-  local strExplor = (string.format)("%d%%", (math.floor)(value))
-  ;
-  (self._txtExplorValue):SetText(strExplor)
-  ;
-  ((self._uiFinish).gameObject):SetActive((self._node):IsPass())
-  local rewardFinish = (self._node):GetRewardFinish()
-  local widgetFinish = (self._contentFinishReward):SpawnObjects("UIN30EntrustStageReward", #rewardFinish)
-  for k,v in pairs(rewardFinish) do
+function UIN30EntrustStage:Refresh()
+  local cfg = self._node:GetCfg()
+  self._txtTitle:SetText(StringTable.Get(cfg.StrTitle))
+  self._txtDesc:SetText(StringTable.Get(cfg.StrDesc))
+  local value = self._node:GetExplor() * 100
+  local strExplor = string.format("%d%%", math.floor(value))
+  self._txtExplorValue:SetText(strExplor)
+  self._uiFinish.gameObject:SetActive(self._node:IsPass())
+  local rewardFinish = self._node:GetRewardFinish()
+  local widgetFinish = self._contentFinishReward:SpawnObjects("UIN30EntrustStageReward", #rewardFinish)
+  for k, v in pairs(rewardFinish) do
     local ui = widgetFinish[k]
     ui:Flush(v)
   end
-  local rewardExplor = (self._node):GetRewardExplor()
-  local widgetExplor = (self._contentExplorReward):SpawnObjects("UIN30EntrustStageReward", #rewardExplor)
-  for k,v in pairs(rewardExplor) do
+  local rewardExplor = self._node:GetRewardExplor()
+  local widgetExplor = self._contentExplorReward:SpawnObjects("UIN30EntrustStageReward", #rewardExplor)
+  for k, v in pairs(rewardExplor) do
     local ui = widgetExplor[k]
     ui:Flush(v)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustStage.RewardItemInfo = function(self, reward, go)
-  -- function num : 0_7
-  local deltaPosition = (go.transform).position - ((self._safeArea).transform).position
+function UIN30EntrustStage:RewardItemInfo(reward, go)
+  local deltaPosition = go.transform.position - self._safeArea.transform.position
   self:ShowDialog("UIN30EntrustItemInfo", reward, deltaPosition)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustStage.CloseDialogAnimation = function(self, cbFinish)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN30EntrustStage:CloseDialogAnimation(cbFinish)
   local lockName = "UIN30EntrustStage:CloseDialogAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, lockName, _ENV, cbFinish
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_N30_EntrustStage_out")
+    self._animation:Play("uieff_N30_EntrustStage_out")
     YIELD(TT, 200)
     self:UnLock(lockName)
     self:CloseDialog()
     if cbFinish then
       cbFinish()
     end
-  end
-)
+  end)
 end
 
 _class("UIN30EntrustStageReward", UICustomWidget)
 UIN30EntrustStageReward = UIN30EntrustStageReward
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN30EntrustStageReward.Constructor = function(self)
-  -- function num : 0_9
+function UIN30EntrustStageReward:Constructor()
   self._reward = nil
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustStageReward.OnShow = function(self, uiParams)
-  -- function num : 0_10
+function UIN30EntrustStageReward:OnShow(uiParams)
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
   self._uiObtained = self:GetUIComponent("RectTransform", "uiObtained")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustStageReward.OnHide = function(self)
-  -- function num : 0_11
+function UIN30EntrustStageReward:OnHide()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustStageReward.ButtonOnClick = function(self, go)
-  -- function num : 0_12
+function UIN30EntrustStageReward:ButtonOnClick(go)
   local uiOwner = self:RootUIOwner()
   if uiOwner.RewardItemInfo ~= nil then
     uiOwner:RewardItemInfo(self._reward, go)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustStageReward.Flush = function(self, reward)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN30EntrustStageReward:Flush(reward)
   self._reward = reward
-  local cfgItem = (Cfg.cfg_item)[reward.assetid]
+  local cfgItem = Cfg.cfg_item[reward.assetid]
   if not cfgItem then
-    ((self._iconLoader).gameObject):SetActive(false)
+    self._iconLoader.gameObject:SetActive(false)
   else
-    ;
-    ((self._iconLoader).gameObject):SetActive(true)
-    ;
-    (self._iconLoader):LoadImage(cfgItem.Icon)
+    self._iconLoader.gameObject:SetActive(true)
+    self._iconLoader:LoadImage(cfgItem.Icon)
   end
-  local countValue = (string.format)("-%d-", reward.count)
-  ;
-  (self._txtCount):SetText(countValue)
-  ;
-  ((self._uiObtained).gameObject):SetActive(reward.received)
+  local countValue = string.format("-%d-", reward.count)
+  self._txtCount:SetText(countValue)
+  self._uiObtained.gameObject:SetActive(reward.received)
 end
-
-

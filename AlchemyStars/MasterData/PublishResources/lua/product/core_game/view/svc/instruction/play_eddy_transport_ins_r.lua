@@ -1,41 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_eddy_transport_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayEddyTransportInstruction", BaseInstruction)
 PlayEddyTransportInstruction = PlayEddyTransportInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEddyTransportInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEddyTransportInstruction:Constructor(paramList)
   self._waitTime = tonumber(paramList.waitTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEddyTransportInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayEddyTransportInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local posCaster = casterEntity:GetGridPosition()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillEffectResult = skillEffectResultContainer:GetEffectResultByPos(SkillEffectType.EddyTransport, posCaster)
-  if skillEffectResult == nil then
-    return 
+  if nil == skillEffectResult then
+    return
   end
   local nTargetID = skillEffectResult:GetTargetID()
   if nTargetID <= 0 then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local targetEntity = world:GetEntityByID(nTargetID)
   if targetEntity:HasTeam() then
     targetEntity = targetEntity:GetTeamLeaderPetEntity()
   end
-  local skillEffectResultContainer = (targetEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = targetEntity:SkillRoutine():GetResultContainer()
   local teleportEffectResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Teleport, 1)
   if not teleportEffectResult then
-    return 
+    return
   end
   local playSkillInstructionService = world:GetService("PlaySkillInstruction")
   playSkillInstructionService:Teleport(TT, targetEntity, RoleShowType.TeleportHide, true, teleportEffectResult)
@@ -43,5 +33,3 @@ PlayEddyTransportInstruction.DoInstruction = function(self, TT, casterEntity, ph
   playSkillInstructionService:Teleport(TT, targetEntity, RoleShowType.TeleportMove, true, teleportEffectResult)
   playSkillInstructionService:Teleport(TT, targetEntity, RoleShowType.TeleportShow, true, teleportEffectResult)
 end
-
-

@@ -1,45 +1,117 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/pet/cfg_client_pet_filter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Type = 2, Name = 3, Tag = 4}
+local key = {
+  ID = 1,
+  Type = 2,
+  Name = 3,
+  Tag = 4
+}
 local config = {
-{1, 1, "str_pet_filter_water_element", 1}
-, 
-{2, 2, "str_pet_filter_fire_element", 1}
-, 
-{3, 3, "str_pet_filter_sen_element", 1}
-, 
-{4, 4, "str_pet_filter_electricity_element", 1}
-, 
-{5, 2001, "str_pet_tag_job_name_color_change", 2}
-, 
-{6, 2002, "str_pet_tag_job_name_return_blood", 2}
-, 
-{7, 2003, "str_pet_tag_job_name_attack", 2}
-, 
-{8, 2004, "str_pet_tag_job_name_function", 2}
-, 
-{9, 1001, "str_pet_tag_faction_name_1", 3}
-, 
-{10, 1002, "str_pet_tag_faction_name_2", 3}
-, 
-{11, 1003, "str_pet_tag_faction_name_3", 3}
-, 
-{12, 1004, "str_pet_tag_faction_name_4", 3}
-, 
-{13, 1005, "str_pet_tag_faction_name_5", 3}
-, 
-{14, 1006, "str_pet_tag_faction_name_6", 3}
-, 
-{15, 1007, "str_pet_tag_faction_name_7", 3}
-, 
-{16, 8001, "str_pet_tag_common_equip_refine", 5}
-, 
-{17, 1009, "str_pet_tag_faction_name_9", 3}
-, 
-{18, 6, "str_tale_pet_att_none", 1}
+  {
+    1,
+    1,
+    "str_pet_filter_water_element",
+    1
+  },
+  {
+    2,
+    2,
+    "str_pet_filter_fire_element",
+    1
+  },
+  {
+    3,
+    3,
+    "str_pet_filter_sen_element",
+    1
+  },
+  {
+    4,
+    4,
+    "str_pet_filter_electricity_element",
+    1
+  },
+  {
+    5,
+    2001,
+    "str_pet_tag_job_name_color_change",
+    2
+  },
+  {
+    6,
+    2002,
+    "str_pet_tag_job_name_return_blood",
+    2
+  },
+  {
+    7,
+    2003,
+    "str_pet_tag_job_name_attack",
+    2
+  },
+  {
+    8,
+    2004,
+    "str_pet_tag_job_name_function",
+    2
+  },
+  {
+    9,
+    1001,
+    "str_pet_tag_faction_name_1",
+    3
+  },
+  {
+    10,
+    1002,
+    "str_pet_tag_faction_name_2",
+    3
+  },
+  {
+    11,
+    1003,
+    "str_pet_tag_faction_name_3",
+    3
+  },
+  {
+    12,
+    1004,
+    "str_pet_tag_faction_name_4",
+    3
+  },
+  {
+    13,
+    1005,
+    "str_pet_tag_faction_name_5",
+    3
+  },
+  {
+    14,
+    1006,
+    "str_pet_tag_faction_name_6",
+    3
+  },
+  {
+    15,
+    1007,
+    "str_pet_tag_faction_name_7",
+    3
+  },
+  {
+    16,
+    8001,
+    "str_pet_tag_common_equip_refine",
+    5
+  },
+  {
+    17,
+    1009,
+    "str_pet_tag_faction_name_9",
+    3
+  },
+  {
+    18,
+    6,
+    "str_tale_pet_att_none",
+    1
+  }
 }
 return config, "ID", key
-

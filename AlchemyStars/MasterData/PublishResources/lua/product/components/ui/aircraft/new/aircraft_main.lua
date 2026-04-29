@@ -1,19 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/aircraft_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftMain", Object)
 AircraftMain = AircraftMain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftMain.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._logoutCallback = (GameHelper:GetInstance()):CreateCallback(self.logOut, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.BeforeRelogin, self._logoutCallback)
+function AircraftMain:Constructor()
+  self._logoutCallback = GameHelper:GetInstance():CreateCallback(self.logOut, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.BeforeRelogin, self._logoutCallback)
   self._gridCfgName = "cfg_aircraft_grids"
-  AircraftGrids = (Cfg[self._gridCfgName])()
+  AircraftGrids = Cfg[self._gridCfgName]()
   self._mode = AircraftMode.Normal
   self._Initholders = {}
   self._initActions = {}
@@ -39,60 +31,37 @@ AircraftMain.Constructor = function(self)
   AirLog("AircraftMain Constructor Done")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._time = (math.ceil)(timeModule:GetServerTime())
-  ;
-  (self._inputManager):Init()
-  ;
-  (self._cameraManager):Init()
-  ;
-  (self._sceneManager):Init()
-  ;
-  (self._decorateMng):Init()
-  ;
-  (self._interactivePoolManager):Init()
-  ;
-  (self._petManager):Init()
-  ;
-  (self._randomStoryMng):Init()
-  ;
-  (self._presentMng):Init()
-  ;
-  (self._visitingMng):Init()
-  ;
-  (self._workingMng):Init()
-  ;
-  (self._clickMng):Init()
-  ;
-  (self._scheduleMng):Init()
-  ;
-  (self._socialMng):Init()
-  ;
-  (self._randomActionMng):Init()
-  ;
-  (self._wisperMng):Init()
-  ;
-  (self._elevator):Init()
-  ;
-  (self._stairs):Init()
-  ;
-  (self._naviManager):Init()
-  ;
-  (self._serializer):Init()
-  ;
-  (self._petManager):ForceShowPetAfterInit()
-  for holder,points in pairs(self._Initholders) do
-    for _,point in ipairs(points) do
+function AircraftMain:Init()
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._time = math.ceil(timeModule:GetServerTime())
+  self._inputManager:Init()
+  self._cameraManager:Init()
+  self._sceneManager:Init()
+  self._decorateMng:Init()
+  self._interactivePoolManager:Init()
+  self._petManager:Init()
+  self._randomStoryMng:Init()
+  self._presentMng:Init()
+  self._visitingMng:Init()
+  self._workingMng:Init()
+  self._clickMng:Init()
+  self._scheduleMng:Init()
+  self._socialMng:Init()
+  self._randomActionMng:Init()
+  self._wisperMng:Init()
+  self._elevator:Init()
+  self._stairs:Init()
+  self._naviManager:Init()
+  self._serializer:Init()
+  self._petManager:ForceShowPetAfterInit()
+  for holder, points in pairs(self._Initholders) do
+    for _, point in ipairs(points) do
       holder:ReleasePoint(point)
     end
   end
   self._Initholders = nil
   if self._initActions then
-    for _,action in ipairs(self._initActions) do
+    for _, action in ipairs(self._initActions) do
       local pet = action.pet
       pet:StartMainAction(action.action)
     end
@@ -101,131 +70,75 @@ AircraftMain.Init = function(self)
   AirLog("AircraftMain Init Done")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.Update = function(self, deltaTimeMS)
-  -- function num : 0_2 , upvalues : _ENV
-  self._time = (math.ceil)(self._time + deltaTimeMS)
-  ;
-  (self._inputManager):Update(deltaTimeMS)
+function AircraftMain:Update(deltaTimeMS)
+  self._time = math.ceil(self._time + deltaTimeMS)
+  self._inputManager:Update(deltaTimeMS)
   if self._mode == AircraftMode.Normal then
-    (self._cameraManager):Update(deltaTimeMS)
-    ;
-    (self._sceneManager):Update(deltaTimeMS)
-    ;
-    (self._randomStoryMng):Update(deltaTimeMS)
-    ;
-    (self._workingMng):Update(deltaTimeMS)
-    ;
-    (self._clickMng):Update(deltaTimeMS)
-    ;
-    (self._scheduleMng):Update(deltaTimeMS)
-    ;
-    (self._socialMng):Update(deltaTimeMS)
-    ;
-    (self._randomActionMng):Update(deltaTimeMS)
-    ;
-    (self._wisperMng):Update(deltaTimeMS)
-    ;
-    (self._petManager):Update(deltaTimeMS)
-    ;
-    (self._interactivePoolManager):Update(deltaTimeMS)
-    ;
-    (self._serializer):Update(deltaTimeMS)
-    ;
-    (self._elevator):Update(deltaTimeMS)
-    ;
-    (self._stairs):Update(deltaTimeMS)
-    ;
-    (self._naviManager):Update(deltaTimeMS)
-  else
-    if self._mode == AircraftMode.Decorate then
-      (self._decorateMng):Update(deltaTimeMS)
-    end
+    self._cameraManager:Update(deltaTimeMS)
+    self._sceneManager:Update(deltaTimeMS)
+    self._randomStoryMng:Update(deltaTimeMS)
+    self._workingMng:Update(deltaTimeMS)
+    self._clickMng:Update(deltaTimeMS)
+    self._scheduleMng:Update(deltaTimeMS)
+    self._socialMng:Update(deltaTimeMS)
+    self._randomActionMng:Update(deltaTimeMS)
+    self._wisperMng:Update(deltaTimeMS)
+    self._petManager:Update(deltaTimeMS)
+    self._interactivePoolManager:Update(deltaTimeMS)
+    self._serializer:Update(deltaTimeMS)
+    self._elevator:Update(deltaTimeMS)
+    self._stairs:Update(deltaTimeMS)
+    self._naviManager:Update(deltaTimeMS)
+  elseif self._mode == AircraftMode.Decorate then
+    self._decorateMng:Update(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.logOut = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function AircraftMain:logOut()
   AirLog("风船内掉线，析构逻辑")
   self:Dispose()
-  local module = (GameGlobal.GetModule)(AircraftModule)
+  local module = GameGlobal.GetModule(AircraftModule)
   module:SetClientMain(nil)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftLeaveAircraft)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftLeaveAircraft)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function AircraftMain:Dispose()
   if self._mode == AircraftMode.Normal then
-    (self._stairs):Dispose()
-    ;
-    (self._elevator):Dispose()
-    ;
-    (self._serializer):Dispose()
-    ;
-    (self._wisperMng):Dispose()
-    ;
-    (self._presentMng):Dispose()
-    ;
-    (self._visitingMng):Dispose()
-    ;
-    (self._randomActionMng):Dispose()
-    ;
-    (self._socialMng):Dispose()
-    ;
-    (self._scheduleMng):Dispose()
-    ;
-    (self._clickMng):Dispose()
-    ;
-    (self._workingMng):Dispose()
-    ;
-    (self._randomStoryMng):Dispose()
-    ;
-    (self._petManager):Dispose()
-    ;
-    (self._interactivePoolManager):Dispose()
-    ;
-    (self._decorateMng):Dispose()
-    ;
-    (self._sceneManager):Dispose()
-    ;
-    (self._cameraManager):Dispose()
-    ;
-    (self._inputManager):Dispose()
-    ;
-    (self._naviManager):Dispose()
-  else
-    if self._mode == AircraftMode.Decorate then
-      (self._serializer):Dispose()
-      ;
-      (self._scheduleMng):Dispose()
-      ;
-      (self._decorateMng):Dispose()
-      ;
-      (self._sceneManager):Dispose()
-      ;
-      (self._cameraManager):Dispose()
-      ;
-      (self._inputManager):Dispose()
-    end
+    self._stairs:Dispose()
+    self._elevator:Dispose()
+    self._serializer:Dispose()
+    self._wisperMng:Dispose()
+    self._presentMng:Dispose()
+    self._visitingMng:Dispose()
+    self._randomActionMng:Dispose()
+    self._socialMng:Dispose()
+    self._scheduleMng:Dispose()
+    self._clickMng:Dispose()
+    self._workingMng:Dispose()
+    self._randomStoryMng:Dispose()
+    self._petManager:Dispose()
+    self._interactivePoolManager:Dispose()
+    self._decorateMng:Dispose()
+    self._sceneManager:Dispose()
+    self._cameraManager:Dispose()
+    self._inputManager:Dispose()
+    self._naviManager:Dispose()
+  elseif self._mode == AircraftMode.Decorate then
+    self._serializer:Dispose()
+    self._scheduleMng:Dispose()
+    self._decorateMng:Dispose()
+    self._sceneManager:Dispose()
+    self._cameraManager:Dispose()
+    self._inputManager:Dispose()
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.BeforeRelogin, self._logoutCallback)
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.BeforeRelogin, self._logoutCallback)
   AircraftGrids = nil
   CfgClear(self._gridCfgName)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.ChangeMode = function(self, mode, param)
-  -- function num : 0_5 , upvalues : _ENV
+function AircraftMain:ChangeMode(mode, param)
   if self._mode == mode then
-    return 
+    return
   end
   if mode == AircraftMode.Normal then
     self._interactivePoolManager = AircraftInteractivePoolManager:New(self)
@@ -241,387 +154,234 @@ AircraftMain.ChangeMode = function(self, mode, param)
     self._elevator = AircraftElevator:New(self)
     self._stairs = AircraftStairs:New(self)
     self._naviManager = AircraftNaviManager:New(self)
-    ;
-    (self._interactivePoolManager):Init()
-    ;
-    (self._petManager):Init()
-    ;
-    (self._randomStoryMng):Init()
-    ;
-    (self._presentMng):Init()
-    ;
-    (self._visitingMng):Init()
-    ;
-    (self._workingMng):Init()
-    ;
-    (self._clickMng):Init()
-    ;
-    (self._scheduleMng):Reset()
-    ;
-    (self._socialMng):Init()
-    ;
-    (self._randomActionMng):Init()
-    ;
-    (self._wisperMng):Init()
-    ;
-    (self._elevator):Init()
-    ;
-    (self._stairs):Init()
-    ;
-    (self._naviManager):Init()
-    ;
-    (self._serializer):Reset()
-    ;
-    (self._scheduleMng):ReSchedule()
-    ;
-    (self._petManager):ForceShowPetAfterInit()
+    self._interactivePoolManager:Init()
+    self._petManager:Init()
+    self._randomStoryMng:Init()
+    self._presentMng:Init()
+    self._visitingMng:Init()
+    self._workingMng:Init()
+    self._clickMng:Init()
+    self._scheduleMng:Reset()
+    self._socialMng:Init()
+    self._randomActionMng:Init()
+    self._wisperMng:Init()
+    self._elevator:Init()
+    self._stairs:Init()
+    self._naviManager:Init()
+    self._serializer:Reset()
+    self._scheduleMng:ReSchedule()
+    self._petManager:ForceShowPetAfterInit()
     if self._Initholders then
-      for holder,points in pairs(self._Initholders) do
-        for _,point in ipairs(points) do
+      for holder, points in pairs(self._Initholders) do
+        for _, point in ipairs(points) do
           holder:ReleasePoint(point)
         end
       end
       self._Initholders = nil
     end
     if self._initActions then
-      for _,action in ipairs(self._initActions) do
+      for _, action in ipairs(self._initActions) do
         local pet = action.pet
         pet:StartMainAction(action.action)
       end
       self._initActions = nil
     end
-    ;
-    (self._cameraManager):Check3DUI()
-    ;
-    (self._sceneManager):OnStopDecorate()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAircraftMainUI, true)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftOnAmbientChanged)
-  else
-    if mode == AircraftMode.Decorate then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CloseSendGiftBtn)
-      ;
-      (self._stairs):Dispose()
-      ;
-      (self._elevator):Dispose()
-      ;
-      (self._workingMng):Dispose()
-      ;
-      (self._visitingMng):Dispose()
-      ;
-      (self._presentMng):Dispose()
-      ;
-      (self._wisperMng):Dispose()
-      ;
-      (self._randomActionMng):Dispose()
-      ;
-      (self._socialMng):Dispose()
-      ;
-      (self._clickMng):Dispose()
-      ;
-      (self._randomStoryMng):Dispose()
-      ;
-      (self._petManager):Dispose()
-      ;
-      (self._interactivePoolManager):Dispose()
-      ;
-      (self._naviManager):Dispose()
-      ;
-      (self._sceneManager):OnStartDecorate()
-      ;
-      (self._cameraManager):ResetFov()
-      ;
-      (self._decorateMng):Open(param)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAircraftMainUI, false)
-    end
+    self._cameraManager:Check3DUI()
+    self._sceneManager:OnStopDecorate()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAircraftMainUI, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftOnAmbientChanged)
+  elseif mode == AircraftMode.Decorate then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CloseSendGiftBtn)
+    self._stairs:Dispose()
+    self._elevator:Dispose()
+    self._workingMng:Dispose()
+    self._visitingMng:Dispose()
+    self._presentMng:Dispose()
+    self._wisperMng:Dispose()
+    self._randomActionMng:Dispose()
+    self._socialMng:Dispose()
+    self._clickMng:Dispose()
+    self._randomStoryMng:Dispose()
+    self._petManager:Dispose()
+    self._interactivePoolManager:Dispose()
+    self._naviManager:Dispose()
+    self._sceneManager:OnStartDecorate()
+    self._cameraManager:ResetFov()
+    self._decorateMng:Open(param)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAircraftMainUI, false)
   end
   self._mode = mode
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.Time = function(self)
-  -- function num : 0_6
+function AircraftMain:Time()
   return self._time
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetInitPos = function(self, holder)
-  -- function num : 0_7
+function AircraftMain:GetInitPos(holder)
   local point = holder:PopPoint()
   if self._Initholders == nil then
     self._Initholders = {}
   end
-  local t = (self._Initholders)[holder]
-  if (self._Initholders)[holder] == nil then
+  local t = self._Initholders[holder]
+  if self._Initholders[holder] == nil then
     t = {}
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._Initholders)[holder] = t
+    self._Initholders[holder] = t
   end
   t[#t + 1] = point
   return point:Pos()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.StartInitAction = function(self, pet, action, index)
-  -- function num : 0_8
+function AircraftMain:StartInitAction(pet, action, index)
   if self._initActions == nil then
     self._initActions = {}
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._initActions)[#self._initActions + 1] = {pet = pet, action = action, idx = index}
+  self._initActions[#self._initActions + 1] = {
+    pet = pet,
+    action = action,
+    idx = index
+  }
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.IsRestPet = function(self, id)
-  -- function num : 0_9
-  do return (not self:IsWorkingPet(id) and not self:IsRandomStoryPet(id) and not self:IsDispatchPet(id) and not self:IsGiftPet(id) and not self:IsVisitPet(id)) end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function AircraftMain:IsRestPet(id)
+  return not self:IsWorkingPet(id) and not self:IsRandomStoryPet(id) and not self:IsDispatchPet(id) and not self:IsGiftPet(id) and not self:IsVisitPet(id)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.ResetPet = function(self)
-  -- function num : 0_10
-  (self._scheduleMng):ReSchedule()
+function AircraftMain:ResetPet()
+  self._scheduleMng:ReSchedule()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetScheduleQueue = function(self)
-  -- function num : 0_11
-  return (self._scheduleMng):GetQueue()
+function AircraftMain:GetScheduleQueue()
+  return self._scheduleMng:GetQueue()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.SetQueueAndInit = function(self, q)
-  -- function num : 0_12
-  (self._scheduleMng):SetQueueAndInitPets(q)
+function AircraftMain:SetQueueAndInit(q)
+  self._scheduleMng:SetQueueAndInitPets(q)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetPetByTmpID = function(self, tmpID)
-  -- function num : 0_13
-  return (self._petManager):GetPet(tmpID)
+function AircraftMain:GetPetByTmpID(tmpID)
+  return self._petManager:GetPet(tmpID)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetPets = function(self, filter, includeVisitPet)
-  -- function num : 0_14
-  return (self._petManager):GetPets(filter, includeVisitPet)
+function AircraftMain:GetPets(filter, includeVisitPet)
+  return self._petManager:GetPets(filter, includeVisitPet)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetVisitPet = function(self, visitPetTemplateID)
-  -- function num : 0_15
-  return (self._petManager):GetVisitPet(visitPetTemplateID)
+function AircraftMain:GetVisitPet(visitPetTemplateID)
+  return self._petManager:GetVisitPet(visitPetTemplateID)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.DestroyPet = function(self, pet)
-  -- function num : 0_16
-  (self._petManager):RemovePet(pet:TemplateID())
+function AircraftMain:DestroyPet(pet)
+  self._petManager:RemovePet(pet:TemplateID())
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.AddPet = function(self, tmpID)
-  -- function num : 0_17
-  return (self._petManager):AddPet(tmpID)
+function AircraftMain:AddPet(tmpID)
+  return self._petManager:AddPet(tmpID)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.AddVisitPet = function(self, pet)
-  -- function num : 0_18
-  return (self._petManager):AddVisitPet(pet)
+function AircraftMain:AddVisitPet(pet)
+  return self._petManager:AddVisitPet(pet)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.RemoveRestPet = function(self, tempID)
-  -- function num : 0_19 , upvalues : _ENV
+function AircraftMain:RemoveRestPet(tempID)
   AirLog("星灵离开休闲区：", tempID)
-  local pet = (self._petManager):GetPet(tempID)
-  do
-    if pet:GetBelongArea() then
-      local room = self:GetRoomByArea(pet:GetBelongArea())
-      if room then
-        room:PetOut(tempID)
-      end
-    end
-    do
-      if pet:GetWanderingArea() then
-        local room = self:GetRoomByArea(pet:GetWanderingArea())
-        if room then
-          room:PetLeaveWandering(tempID)
-        end
-      end
-      ;
-      (self._elevator):TryRemovePet(pet)
-      ;
-      (self._petManager):RemovePet(tempID)
-      ;
-      (self._scheduleMng):Enqueue(tempID)
-      ;
-      (self._naviManager):TryRemovePet(pet)
+  local pet = self._petManager:GetPet(tempID)
+  if pet:GetBelongArea() then
+    local room = self:GetRoomByArea(pet:GetBelongArea())
+    if room then
+      room:PetOut(tempID)
     end
   end
+  if pet:GetWanderingArea() then
+    local room = self:GetRoomByArea(pet:GetWanderingArea())
+    if room then
+      room:PetLeaveWandering(tempID)
+    end
+  end
+  self._elevator:TryRemovePet(pet)
+  self._petManager:RemovePet(tempID)
+  self._scheduleMng:Enqueue(tempID)
+  self._naviManager:TryRemovePet(pet)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetPetByCollider = function(self, collider)
-  -- function num : 0_20
-  return (self._petManager):GetPetByCollider(collider)
+function AircraftMain:GetPetByCollider(collider)
+  return self._petManager:GetPetByCollider(collider)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetRoomBySpaceID = function(self, id)
-  -- function num : 0_21
-  return (self._sceneManager):GetRoomBySpaceID(id)
+function AircraftMain:GetRoomBySpaceID(id)
+  return self._sceneManager:GetRoomBySpaceID(id)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetRoomGoSpaceID = function(self, id)
-  -- function num : 0_22
-  return (self._sceneManager):GetRoomGoSpaceID(id)
+function AircraftMain:GetRoomGoSpaceID(id)
+  return self._sceneManager:GetRoomGoSpaceID(id)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetDoorBySpaceID = function(self, id)
-  -- function num : 0_23
-  return (self._sceneManager):GetDoorBySpaceID(id)
+function AircraftMain:GetDoorBySpaceID(id)
+  return self._sceneManager:GetDoorBySpaceID(id)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.SetOneRoomUIActive = function(self, spaceID, active)
-  -- function num : 0_24
-  (self._sceneManager):SetOneRoomUIActive(spaceID, active)
+function AircraftMain:SetOneRoomUIActive(spaceID, active)
+  self._sceneManager:SetOneRoomUIActive(spaceID, active)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.RefreshRestRoom = function(self, spaceID)
-  -- function num : 0_25
-  (self._sceneManager):RefreshRoom(spaceID)
+function AircraftMain:RefreshRestRoom(spaceID)
+  self._sceneManager:RefreshRoom(spaceID)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.Set3DUIActive = function(self, active)
-  -- function num : 0_26
-  (self._sceneManager):Set3DUIActive(active)
+function AircraftMain:Set3DUIActive(active)
+  self._sceneManager:Set3DUIActive(active)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.RefreshScene = function(self)
-  -- function num : 0_27
-  (self._sceneManager):RefreshSpaces()
+function AircraftMain:RefreshScene()
+  self._sceneManager:RefreshSpaces()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.RefreshRoom3DUI = function(self, spaceID)
-  -- function num : 0_28
-  (self._sceneManager):RefreshOneRoomUI(spaceID)
+function AircraftMain:RefreshRoom3DUI(spaceID)
+  self._sceneManager:RefreshOneRoomUI(spaceID)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.OnClickRoom = function(self, results)
-  -- function num : 0_29
-  (self._sceneManager):ClickSpace(results)
+function AircraftMain:OnClickRoom(results)
+  self._sceneManager:ClickSpace(results)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.OnClickPet = function(self, pet, petpoint)
-  -- function num : 0_30
-  (self._clickMng):OnClickPet(pet, petpoint)
+function AircraftMain:OnClickPet(pet, petpoint)
+  self._clickMng:OnClickPet(pet, petpoint)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetAllBoards = function(self)
-  -- function num : 0_31
-  return (self._sceneManager):GetBoards()
+function AircraftMain:GetAllBoards()
+  return self._sceneManager:GetBoards()
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetPointHolder = function(self, area)
-  -- function num : 0_32
-  return (self._sceneManager):GetPointHolderByArea(area)
+function AircraftMain:GetPointHolder(area)
+  return self._sceneManager:GetPointHolderByArea(area)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetRoomTable = function(self)
-  -- function num : 0_33
-  return (self._sceneManager):GetRoomTable()
+function AircraftMain:GetRoomTable()
+  return self._sceneManager:GetRoomTable()
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetGatherPointHolder = function(self, area)
-  -- function num : 0_34
-  return (self._sceneManager):GetGatherPointHolderByArea(area)
+function AircraftMain:GetGatherPointHolder(area)
+  return self._sceneManager:GetGatherPointHolderByArea(area)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetRandomStoryPointHolder = function(self, area)
-  -- function num : 0_35
-  return (self._sceneManager):GetRandomStoryPointHolderByArea(area)
+function AircraftMain:GetRandomStoryPointHolder(area)
+  return self._sceneManager:GetRandomStoryPointHolderByArea(area)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.EnterAreaToWandering = function(self, pet, area)
-  -- function num : 0_36
-  (self._sceneManager):PetEnterAreaWandering(pet, area)
+function AircraftMain:EnterAreaToWandering(pet, area)
+  self._sceneManager:PetEnterAreaWandering(pet, area)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.CanWanderingInArea = function(self, area)
-  -- function num : 0_37
-  return not (self._sceneManager):AreaIsFull(area)
+function AircraftMain:CanWanderingInArea(area)
+  return not self._sceneManager:AreaIsFull(area)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetAllRestRoom = function(self)
-  -- function num : 0_38
-  return (self._sceneManager):GetAllRestRoom()
+function AircraftMain:GetAllRestRoom()
+  return self._sceneManager:GetAllRestRoom()
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.AllRestRoomFull = function(self)
-  -- function num : 0_39 , upvalues : _ENV
-  local rooms = (self._sceneManager):GetAllRestRoom()
-  for _,room in ipairs(rooms) do
+function AircraftMain:AllRestRoomFull()
+  local rooms = self._sceneManager:GetAllRestRoom()
+  for _, room in ipairs(rooms) do
     if not room:IsBelongPetFull() then
       return false
     end
@@ -629,758 +389,452 @@ AircraftMain.AllRestRoomFull = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetInteractionRoot = function(self)
-  -- function num : 0_40
-  return (self._sceneManager):GetInteractionRoot()
+function AircraftMain:GetInteractionRoot()
+  return self._sceneManager:GetInteractionRoot()
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetInteractionPos = function(self)
-  -- function num : 0_41
-  return (self._sceneManager):GetInteractionPos()
+function AircraftMain:GetInteractionPos()
+  return self._sceneManager:GetInteractionPos()
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetInteractionText = function(self)
-  -- function num : 0_42
-  return (self._sceneManager):GetInteractionText()
+function AircraftMain:GetInteractionText()
+  return self._sceneManager:GetInteractionText()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetRoomByArea = function(self, area)
-  -- function num : 0_43
-  return (self._sceneManager):GetRoomByArea(area)
+function AircraftMain:GetRoomByArea(area)
+  return self._sceneManager:GetRoomByArea(area)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.LookRandomStoryCameraAnimStart = function(self, look, timeLength)
-  -- function num : 0_44
-  (self._cameraManager):LookRandomStoryCameraAnimStart(look, timeLength)
+function AircraftMain:LookRandomStoryCameraAnimStart(look, timeLength)
+  self._cameraManager:LookRandomStoryCameraAnimStart(look, timeLength)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.SelectSpace = function(self, spaceId, focus)
-  -- function num : 0_45
-  (self._sceneManager):SelectRoom(spaceId, focus)
+function AircraftMain:SelectSpace(spaceId, focus)
+  self._sceneManager:SelectRoom(spaceId, focus)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.ExitPosition = function(self)
-  -- function num : 0_46
-  return (self._sceneManager):ExitPointPos()
+function AircraftMain:ExitPosition()
+  return self._sceneManager:ExitPointPos()
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.StartWorkingAction = function(self, pet)
-  -- function num : 0_47
-  (self._workingMng):StartWorking(pet)
+function AircraftMain:StartWorkingAction(pet)
+  self._workingMng:StartWorking(pet)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.PetStartWork = function(self, petID, spaceID)
-  -- function num : 0_48 , upvalues : _ENV
+function AircraftMain:PetStartWork(petID, spaceID)
   if self:IsGiftPet(petID) then
     AirLog("星灵正在送礼，不执行入住:", petID)
-    return 
+    return
   end
   AirLog("星灵入住，星灵id：", petID, "空间id：", spaceID)
   local pet = self:GetPetByTmpID(petID)
   if pet then
-    (self._elevator):TryRemovePet(pet)
-    ;
-    (self._stairs):TryRemovePet(pet)
-    ;
-    (self._socialMng):StopSocialByPet(pet)
+    self._elevator:TryRemovePet(pet)
+    self._stairs:TryRemovePet(pet)
+    self._socialMng:StopSocialByPet(pet)
   end
-  ;
-  (self._workingMng):PetEnterSpaceToWork(petID, spaceID)
-  ;
-  (self._scheduleMng):TryRemoveInQueue(petID)
+  self._workingMng:PetEnterSpaceToWork(petID, spaceID)
+  self._scheduleMng:TryRemoveInQueue(petID)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.PetStopWork = function(self, petID, spaceID)
-  -- function num : 0_49 , upvalues : _ENV
+function AircraftMain:PetStopWork(petID, spaceID)
   if self:IsGiftPet(petID) then
     AirLog("送礼星灵，不取消入住:", petID)
-    return 
+    return
   end
   if self:IsRandomStoryPet(petID) then
-    return 
+    return
   end
   local pet = self:GetPetByTmpID(petID)
   if pet then
-    (self._socialMng):OnPetDestroy(pet)
-    ;
-    (self._elevator):TryRemovePet(pet)
-    ;
-    (self._stairs):TryRemovePet(pet)
-    ;
-    (self._naviManager):TryRemovePet(pet)
+    self._socialMng:OnPetDestroy(pet)
+    self._elevator:TryRemovePet(pet)
+    self._stairs:TryRemovePet(pet)
+    self._naviManager:TryRemovePet(pet)
   end
-  ;
-  (self._petManager):RemovePet(petID)
-  ;
-  (self._scheduleMng):Enqueue(petID)
+  self._petManager:RemovePet(petID)
+  self._scheduleMng:Enqueue(petID)
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.OnSpacePetChanged = function(self, spaceID)
-  -- function num : 0_50
-  (self._workingMng):OnSpacePetChanged(spaceID)
+function AircraftMain:OnSpacePetChanged(spaceID)
+  self._workingMng:OnSpacePetChanged(spaceID)
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.IsWorkingPet = function(self, petID)
-  -- function num : 0_51
-  local pet = (self._petManager):GetPet(petID)
-  if pet then
-    return pet:IsWorkingPet()
-  end
+function AircraftMain:IsWorkingPet(petID)
+  local pet = self._petManager:GetPet(petID)
+  return pet and pet:IsWorkingPet()
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.RandomActionForPet = function(self, pet)
-  -- function num : 0_52
-  (self._randomActionMng):RandomActionForPet(pet)
+function AircraftMain:RandomActionForPet(pet)
+  self._randomActionMng:RandomActionForPet(pet)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.RandomInitActionForPet = function(self, pet)
-  -- function num : 0_53
-  (self._randomActionMng):RandomInitActionForPet(pet)
+function AircraftMain:RandomInitActionForPet(pet)
+  self._randomActionMng:RandomInitActionForPet(pet)
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.Input = function(self)
-  -- function num : 0_54
+function AircraftMain:Input()
   return self._inputManager
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetStoryIDByPetID = function(self, petid)
-  -- function num : 0_55
-  return (self._randomStoryMng):GetStoryIDByPetID(petid)
+function AircraftMain:GetStoryIDByPetID(petid)
+  return self._randomStoryMng:GetStoryIDByPetID(petid)
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.TriggerRandomStory = function(self, storyid, rewards, affinity)
-  -- function num : 0_56
-  (self._randomStoryMng):TriggerRandomStory(storyid, rewards, affinity)
+function AircraftMain:TriggerRandomStory(storyid, rewards, affinity)
+  self._randomStoryMng:TriggerRandomStory(storyid, rewards, affinity)
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.AcceptPresent = function(self, pet)
-  -- function num : 0_57
-  (self._presentMng):AcceptPresent(pet)
+function AircraftMain:AcceptPresent(pet)
+  self._presentMng:AcceptPresent(pet)
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.AcceptVisitingPresent = function(self, pet)
-  -- function num : 0_58
-  (self._visitingMng):AcceptVisitingPresent(pet)
+function AircraftMain:AcceptVisitingPresent(pet)
+  self._visitingMng:AcceptVisitingPresent(pet)
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.OnAcceptPresentEnd = function(self, petTemplateID)
-  -- function num : 0_59
-  (self._presentMng):OnAcceptPresentEnd(petTemplateID)
+function AircraftMain:OnAcceptPresentEnd(petTemplateID)
+  self._presentMng:OnAcceptPresentEnd(petTemplateID)
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.IsRandomStoryPet = function(self, petID)
-  -- function num : 0_60 , upvalues : _ENV
-  local pet = (self._petManager):GetPet(petID)
+function AircraftMain:IsRandomStoryPet(petID)
+  local pet = self._petManager:GetPet(petID)
   if pet and (pet:GetState() == AirPetState.RandomEvent or pet:GetState() == AirPetState.RandomEventWith) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.IsGiftPet = function(self, petTemplateID)
-  -- function num : 0_61
-  local pet = (self._petManager):GetPet(petTemplateID)
-  if pet then
-    return pet:IsGiftPet()
-  end
+function AircraftMain:IsGiftPet(petTemplateID)
+  local pet = self._petManager:GetPet(petTemplateID)
+  return pet and pet:IsGiftPet()
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.HasVisitGift = function(self, petTemplateID)
-  -- function num : 0_62
-  local vPet = (self._petManager):GetVisitPet(petTemplateID)
-  if vPet then
-    return vPet:HasVisitGift()
-  end
+function AircraftMain:HasVisitGift(petTemplateID)
+  local vPet = self._petManager:GetVisitPet(petTemplateID)
+  return vPet and vPet:HasVisitGift()
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.IsVisitPet = function(self, petTemplateID)
-  -- function num : 0_63
-  local vPet = (self._petManager):GetVisitPet(petTemplateID)
-  if vPet then
-    return vPet:IsVisitPet()
-  end
+function AircraftMain:IsVisitPet(petTemplateID)
+  local vPet = self._petManager:GetVisitPet(petTemplateID)
+  return vPet and vPet:IsVisitPet()
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.StartOneRandomEvent = function(self, storyid, noMove)
-  -- function num : 0_64
-  (self._randomStoryMng):StartOneRandomEvent(storyid, noMove)
+function AircraftMain:StartOneRandomEvent(storyid, noMove)
+  self._randomStoryMng:StartOneRandomEvent(storyid, noMove)
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.RemoveOneRandomEvent = function(self, storyid)
-  -- function num : 0_65
-  (self._randomStoryMng):RemoveOneRandomEvent(storyid)
+function AircraftMain:RemoveOneRandomEvent(storyid)
+  self._randomStoryMng:RemoveOneRandomEvent(storyid)
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.OnPetFinishStory = function(self, petID, storyType, storyID)
-  -- function num : 0_66 , upvalues : _ENV
+function AircraftMain:OnPetFinishStory(petID, storyType, storyID)
   AirLog("星灵结束一个随机剧情:", petID)
   local pet = self:GetPetByTmpID(petID)
   if not pet then
-    (Log.fatal)("[AircraftMain] 星灵不在风船中，不能结束随机事件：", petID)
+    Log.fatal("[AircraftMain] 星灵不在风船中，不能结束随机事件：", petID)
   end
   if storyType == EStoryTriggerType.UnlockRoom then
-    local roomCfg = ((Cfg.cfg_aircraft_amusement_room)({StoryEventId = storyID}))[1]
-    local roomID = ((Cfg.cfg_aircraft_room)[roomCfg.ID]).NextLevelID
-    local module = (GameGlobal.GetModule)(AircraftModule)
+    local roomCfg = Cfg.cfg_aircraft_amusement_room({StoryEventId = storyID})[1]
+    local roomID = Cfg.cfg_aircraft_room[roomCfg.ID].NextLevelID
+    local module = GameGlobal.GetModule(AircraftModule)
     local room = module:GetRoomById(roomID)
     if not room then
-      (Log.exception)("[AircraftMain] 找不到解锁的房间，剧情id：", storyID, "，房间ID：", roomID)
+      Log.exception("[AircraftMain] 找不到解锁的房间，剧情id：", storyID, "，房间ID：", roomID)
     end
     local spaceID = room:SpaceId()
     AirLog("剧情解锁房间，星灵id:", petID, "，storyID：", storyID, "，roomID:", roomCfg.ID, "，下一级roomid:", roomID, "，空间id：", spaceID)
     local anim = AirAnimRoomUnlock:New(self, spaceID, nil, false)
     anim:Play()
   end
-  do
-    if pet:IsWorkingPet() then
-      AirLog("随机剧情后，星灵走回工作房间:", pet:TemplateID(), "，空间:", pet:GetSpace())
-      local action = AirActionMoveToWork:New(self, pet)
-      pet:StartMainAction(action)
-    else
-      do
-        if storyType == EStoryTriggerType.EnterAircraft then
-          AirLog("随机剧情后，星灵走向出口:", pet:TemplateID())
-          local action = AirActionMoveToLeave:New(pet, self)
-          pet:StartMainAction(action)
-        else
-          do
-            self:RandomActionForPet(pet)
-          end
-        end
-      end
-    end
+  if pet:IsWorkingPet() then
+    AirLog("随机剧情后，星灵走回工作房间:", pet:TemplateID(), "，空间:", pet:GetSpace())
+    local action = AirActionMoveToWork:New(self, pet)
+    pet:StartMainAction(action)
+  elseif storyType == EStoryTriggerType.EnterAircraft then
+    AirLog("随机剧情后，星灵走向出口:", pet:TemplateID())
+    local action = AirActionMoveToLeave:New(pet, self)
+    pet:StartMainAction(action)
+  else
+    self:RandomActionForPet(pet)
   end
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.CheckPetInRandomStory = function(self, pet)
-  -- function num : 0_67
-  (self._randomStoryMng):CheckPetInRandomStory(pet)
+function AircraftMain:CheckPetInRandomStory(pet)
+  self._randomStoryMng:CheckPetInRandomStory(pet)
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetStoryPetByNeedPet = function(self, needpet)
-  -- function num : 0_68
-  return (self._randomStoryMng):GetStoryPetByNeedPet(needpet)
+function AircraftMain:GetStoryPetByNeedPet(needpet)
+  return self._randomStoryMng:GetStoryPetByNeedPet(needpet)
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.OnPetNaviBlocked = function(self, pet, moveAction)
-  -- function num : 0_69
-  (self._naviManager):OnPetBlocked(pet, moveAction)
+function AircraftMain:OnPetNaviBlocked(pet, moveAction)
+  self._naviManager:OnPetBlocked(pet, moveAction)
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.ChangeGiftSending = function(self, state)
-  -- function num : 0_70
-  (self._clickMng):ChangeGiftSending(state)
+function AircraftMain:ChangeGiftSending(state)
+  self._clickMng:ChangeGiftSending(state)
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.AircraftOnSendGiftSuccess = function(self, lvup, love)
-  -- function num : 0_71
-  (self._clickMng):AircraftOnSendGiftSuccess(lvup, love)
+function AircraftMain:AircraftOnSendGiftSuccess(lvup, love)
+  self._clickMng:AircraftOnSendGiftSuccess(lvup, love)
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.StopInteraction = function(self)
-  -- function num : 0_72
-  (self._clickMng):StopInteraction()
+function AircraftMain:StopInteraction()
+  self._clickMng:StopInteraction()
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetMainCameraXZ = function(self)
-  -- function num : 0_73
-  local x, z = (self._cameraManager):GetPosXZ()
+function AircraftMain:GetMainCameraXZ()
+  local x, z = self._cameraManager:GetPosXZ()
   return x, z
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.ForceRemoveInteractivePets = function(self, pstidList)
-  -- function num : 0_74
-  (self._clickMng):ForceRemoveInteractivePets(pstidList)
+function AircraftMain:ForceRemoveInteractivePets(pstidList)
+  self._clickMng:ForceRemoveInteractivePets(pstidList)
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.SendGiftRandomStory = function(self, storyid)
-  -- function num : 0_75
-  (self._clickMng):SendGiftRandomStory(storyid)
+function AircraftMain:SendGiftRandomStory(storyid)
+  self._clickMng:SendGiftRandomStory(storyid)
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.TryStopBlockHandler = function(self, pet)
-  -- function num : 0_76
-  (self._naviManager):TryRemovePet(pet)
+function AircraftMain:TryStopBlockHandler(pet)
+  self._naviManager:TryRemovePet(pet)
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.FocusRoom = function(self, room, callBack, time)
-  -- function num : 0_77
-  (self._cameraManager):FocusRoom(room, callBack, time)
+function AircraftMain:FocusRoom(room, callBack, time)
+  self._cameraManager:FocusRoom(room, callBack, time)
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.FocusRoomToAnimate = function(self, room, callBack, time)
-  -- function num : 0_78
-  (self._cameraManager):AnimFocusRoom(room, callBack, time)
+function AircraftMain:FocusRoomToAnimate(room, callBack, time)
+  self._cameraManager:AnimFocusRoom(room, callBack, time)
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.FocusPet = function(self, pet, offset, callback, diyTime)
-  -- function num : 0_79
+function AircraftMain:FocusPet(pet, offset, callback, diyTime)
   if offset then
-    (self._cameraManager):FocusPet(pet:WorldPosition() + offset, callback, diyTime)
+    self._cameraManager:FocusPet(pet:WorldPosition() + offset, callback, diyTime)
   else
-    ;
-    (self._cameraManager):FocusPet(pet:WorldPosition(), callback, diyTime)
+    self._cameraManager:FocusPet(pet:WorldPosition(), callback, diyTime)
   end
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.MoveCameraToFar = function(self, callback)
-  -- function num : 0_80
-  (self._cameraManager):MoveToFarest(callback)
+function AircraftMain:MoveCameraToFar(callback)
+  self._cameraManager:MoveToFarest(callback)
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.MoveToNavMenuPos = function(self, callback, movetime)
-  -- function num : 0_81
-  (self._cameraManager):MoveToNavMenuPos(callback, movetime)
+function AircraftMain:MoveToNavMenuPos(callback, movetime)
+  self._cameraManager:MoveToNavMenuPos(callback, movetime)
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetCurrentCameraPos = function(self)
-  -- function num : 0_82
-  return (self._cameraManager):GetCurrentCameraPos()
+function AircraftMain:GetCurrentCameraPos()
+  return self._cameraManager:GetCurrentCameraPos()
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetNavMenuTargetCameraPos = function(self)
-  -- function num : 0_83
-  return (self._cameraManager):GetNavMenuTargetCameraPos()
+function AircraftMain:GetNavMenuTargetCameraPos()
+  return self._cameraManager:GetNavMenuTargetCameraPos()
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.MoveToPosNotTime = function(self, tpos, cb)
-  -- function num : 0_84
-  (self._cameraManager):MoveToPosNotTime(tpos, cb)
+function AircraftMain:MoveToPosNotTime(tpos, cb)
+  self._cameraManager:MoveToPosNotTime(tpos, cb)
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetMainCamera = function(self)
-  -- function num : 0_85
-  return (self._cameraManager):GetCamera()
+function AircraftMain:GetMainCamera()
+  return self._cameraManager:GetCamera()
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.SetCameraToNavMenuPos = function(self)
-  -- function num : 0_86
-  (self._cameraManager):SetCameraToNavMenuPos()
+function AircraftMain:SetCameraToNavMenuPos()
+  self._cameraManager:SetCameraToNavMenuPos()
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetFarPoint = function(self)
-  -- function num : 0_87
-  return (self._cameraManager):GetFarPoint()
+function AircraftMain:GetFarPoint()
+  return self._cameraManager:GetFarPoint()
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetDecorateViewPoint = function(self)
-  -- function num : 0_88
-  return (self._cameraManager):GetDecorateViewPoint()
+function AircraftMain:GetDecorateViewPoint()
+  return self._cameraManager:GetDecorateViewPoint()
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.ResetMainCamera = function(self)
-  -- function num : 0_89
-  (self._cameraManager):Reset()
+function AircraftMain:ResetMainCamera()
+  self._cameraManager:Reset()
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.CameraFocusPoint = function(self)
-  -- function num : 0_90
-  return (self._cameraManager):FocusPoint()
+function AircraftMain:CameraFocusPoint()
+  return self._cameraManager:FocusPoint()
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.SetHudCameraActive = function(self, active)
-  -- function num : 0_91
-  (self._cameraManager):SetHudCameraActive(active)
+function AircraftMain:SetHudCameraActive(active)
+  self._cameraManager:SetHudCameraActive(active)
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.NoticeSocialDecodeFinish = function(self)
-  -- function num : 0_92
+function AircraftMain:NoticeSocialDecodeFinish()
   if self._socialMng then
-    (self._socialMng):DecodeFinish()
+    self._socialMng:DecodeFinish()
   end
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.StopSocialByPet = function(self, pet)
-  -- function num : 0_93
-  (self._socialMng):StopSocialByPet(pet)
+function AircraftMain:StopSocialByPet(pet)
+  self._socialMng:StopSocialByPet(pet)
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetSocialPetGroup = function(self, pet)
-  -- function num : 0_94
-  return (self._socialMng):GetSocialGroupPets(pet)
+function AircraftMain:GetSocialPetGroup(pet)
+  return self._socialMng:GetSocialGroupPets(pet)
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GotoSpace = function(self, spaceId, focus)
-  -- function num : 0_95
-  (self._sceneManager):SelectRoom(spaceId, focus)
+function AircraftMain:GotoSpace(spaceId, focus)
+  self._sceneManager:SelectRoom(spaceId, focus)
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetBtnGuide = function(self, spaceId)
-  -- function num : 0_96
-  return (self._sceneManager):GetBtnGuide(spaceId)
+function AircraftMain:GetBtnGuide(spaceId)
+  return self._sceneManager:GetBtnGuide(spaceId)
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.SetGotoSpaceId = function(self, spaceId, param)
-  -- function num : 0_97
-  (self._sceneManager):SetGotoSpaceId(spaceId, param)
+function AircraftMain:SetGotoSpaceId(spaceId, param)
+  self._sceneManager:SetGotoSpaceId(spaceId, param)
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GuideGotoSpace = function(self, spaceId)
-  -- function num : 0_98
-  (self._sceneManager):GuideGotoSpace(spaceId)
+function AircraftMain:GuideGotoSpace(spaceId)
+  self._sceneManager:GuideGotoSpace(spaceId)
 end
 
--- DECOMPILER ERROR at PC305: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.TryBack = function(self)
-  -- function num : 0_99
-  (self._sceneManager):ClearCurrentRoom()
-  return (self._cameraManager):TryBack()
+function AircraftMain:TryBack()
+  self._sceneManager:ClearCurrentRoom()
+  return self._cameraManager:TryBack()
 end
 
--- DECOMPILER ERROR at PC308: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.ClearCurrentRoom = function(self)
-  -- function num : 0_100
-  (self._sceneManager):ClearCurrentRoom()
+function AircraftMain:ClearCurrentRoom()
+  self._sceneManager:ClearCurrentRoom()
 end
 
--- DECOMPILER ERROR at PC311: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.SetJoyStick = function(self, stick, onStart, focus, onEnd)
-  -- function num : 0_101
-  (self._cameraManager):SetJoyStick(stick, onStart, focus, onEnd)
+function AircraftMain:SetJoyStick(stick, onStart, focus, onEnd)
+  self._cameraManager:SetJoyStick(stick, onStart, focus, onEnd)
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.SetClickTexActive = function(self, active)
-  -- function num : 0_102
-  (self._interactivePoolManager):SetClickTexActive(active)
+function AircraftMain:SetClickTexActive(active)
+  self._interactivePoolManager:SetClickTexActive(active)
 end
 
--- DECOMPILER ERROR at PC317: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.DequeueTexItem = function(self)
-  -- function num : 0_103
-  return (self._interactivePoolManager):DequeueTexItem()
+function AircraftMain:DequeueTexItem()
+  return self._interactivePoolManager:DequeueTexItem()
 end
 
--- DECOMPILER ERROR at PC320: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.EnqueueTexItem = function(self, item)
-  -- function num : 0_104
-  (self._interactivePoolManager):EnqueueTexItem(item)
+function AircraftMain:EnqueueTexItem(item)
+  self._interactivePoolManager:EnqueueTexItem(item)
 end
 
--- DECOMPILER ERROR at PC323: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.Elevator = function(self)
-  -- function num : 0_105
+function AircraftMain:Elevator()
   return self._elevator
 end
 
--- DECOMPILER ERROR at PC326: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetStairTarget = function(self, floor)
-  -- function num : 0_106
-  return (self._stairs):GetMoveTarget(floor)
+function AircraftMain:GetStairTarget(floor)
+  return self._stairs:GetMoveTarget(floor)
 end
 
--- DECOMPILER ERROR at PC329: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetStairExit = function(self, floor)
-  -- function num : 0_107
-  return (self._stairs):GetStairExit(floor)
+function AircraftMain:GetStairExit(floor)
+  return self._stairs:GetStairExit(floor)
 end
 
--- DECOMPILER ERROR at PC332: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.OnPetArriveStair = function(self, pet)
-  -- function num : 0_108
-  (self._stairs):OnPetArrive(pet)
+function AircraftMain:OnPetArriveStair(pet)
+  self._stairs:OnPetArrive(pet)
 end
 
--- DECOMPILER ERROR at PC335: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetRandomStoryTriggerCount = function(self)
-  -- function num : 0_109
-  return (self._randomStoryMng):GetRandomStoryTriggerCount()
+function AircraftMain:GetRandomStoryTriggerCount()
+  return self._randomStoryMng:GetRandomStoryTriggerCount()
 end
 
--- DECOMPILER ERROR at PC338: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetRandomStoryPets = function(self)
-  -- function num : 0_110
-  return (self._randomStoryMng):GetRandomStoryPets()
+function AircraftMain:GetRandomStoryPets()
+  return self._randomStoryMng:GetRandomStoryPets()
 end
 
--- DECOMPILER ERROR at PC341: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.CheckAirNavMenuCanActive = function(self)
-  -- function num : 0_111
-  return (self._cameraManager):CheckAirNavMenuCanActive()
+function AircraftMain:CheckAirNavMenuCanActive()
+  return self._cameraManager:CheckAirNavMenuCanActive()
 end
 
--- DECOMPILER ERROR at PC344: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetFurniture = function(self, type)
-  -- function num : 0_112
-  return (self._decorateMng):GetFurnitureByType(type)
+function AircraftMain:GetFurniture(type)
+  return self._decorateMng:GetFurnitureByType(type)
 end
 
--- DECOMPILER ERROR at PC347: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetFurnitureByID = function(self, id)
-  -- function num : 0_113
-  return (self._decorateMng):GetFurnitureByID(id)
+function AircraftMain:GetFurnitureByID(id)
+  return self._decorateMng:GetFurnitureByID(id)
 end
 
--- DECOMPILER ERROR at PC350: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetFurnitureByKey = function(self, key)
-  -- function num : 0_114
-  return (self._decorateMng):GetFurnitureByKey(key)
+function AircraftMain:GetFurnitureByKey(key)
+  return self._decorateMng:GetFurnitureByKey(key)
 end
 
--- DECOMPILER ERROR at PC353: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.RefreshAreaBySpace = function(self, spaceID)
-  -- function num : 0_115
-  (self._decorateMng):RefreshArea(spaceID)
+function AircraftMain:RefreshAreaBySpace(spaceID)
+  self._decorateMng:RefreshArea(spaceID)
 end
 
--- DECOMPILER ERROR at PC356: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.RefreshAreaSurfacesBySpaceID = function(self, spaceID)
-  -- function num : 0_116
-  (self._decorateMng):RefreshAreaSurfaces(spaceID)
+function AircraftMain:RefreshAreaSurfacesBySpaceID(spaceID)
+  self._decorateMng:RefreshAreaSurfaces(spaceID)
 end
 
--- DECOMPILER ERROR at PC359: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetFurnituresBySpace = function(self, spaceID)
-  -- function num : 0_117
-  return (self._decorateMng):GetFurnitureBySpaceID(spaceID)
+function AircraftMain:GetFurnituresBySpace(spaceID)
+  return self._decorateMng:GetFurnitureBySpaceID(spaceID)
 end
 
--- DECOMPILER ERROR at PC362: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.OnFurnituresDestroy = function(self, furInsIDs)
-  -- function num : 0_118 , upvalues : _ENV
-  for _,insId in pairs(furInsIDs) do
-    do
-      (self._socialMng):StopSocialByFurniture(insId)
-      local pets = (self._petManager):GetPets(function(p)
-    -- function num : 0_118_0 , upvalues : insId
-    local pet = p
-    if pet:GetOccupyFurniture() == insId then
-      return true
-    end
-  end
-)
-      for _,pet in ipairs(pets) do
-        (self._randomActionMng):RandomActionForPet(pet)
-        ;
-        (self._naviManager):TryRemovePet(pet)
+function AircraftMain:OnFurnituresDestroy(furInsIDs)
+  for _, insId in pairs(furInsIDs) do
+    self._socialMng:StopSocialByFurniture(insId)
+    local pets = self._petManager:GetPets(function(p)
+      local pet = p
+      if pet:GetOccupyFurniture() == insId then
+        return true
       end
+    end)
+    for _, pet in ipairs(pets) do
+      self._randomActionMng:RandomActionForPet(pet)
+      self._naviManager:TryRemovePet(pet)
     end
   end
 end
 
--- DECOMPILER ERROR at PC365: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetFurnituresByArea = function(self, area)
-  -- function num : 0_119
-  return (self._decorateMng):GetFurnituresByArea(area)
+function AircraftMain:GetFurnituresByArea(area)
+  return self._decorateMng:GetFurnituresByArea(area)
 end
 
--- DECOMPILER ERROR at PC368: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.DeletePet = function(self, petID)
-  -- function num : 0_120 , upvalues : _ENV
+function AircraftMain:DeletePet(petID)
   AirLog("删除星灵：", petID)
   local pet = self:GetPetByTmpID(petID)
-  do
-    if pet then
-      local petState = pet:GetState()
-      if petState == AirPetState.RandomEvent or petState == AirPetState.RandomEventWith or pet:IsGiftPet() then
-        return 
-      end
-      ;
-      (self._elevator):TryRemovePet(pet)
-      ;
-      (self._stairs):TryRemovePet(pet)
-      ;
-      (self._socialMng):OnPetDestroy(pet)
-      ;
-      (self._naviManager):TryRemovePet(pet)
-      ;
-      (self._petManager):RemovePet(petID)
+  if pet then
+    local petState = pet:GetState()
+    if petState == AirPetState.RandomEvent or petState == AirPetState.RandomEventWith or pet:IsGiftPet() then
+      return
     end
-    ;
-    (self._scheduleMng):TryRemoveInQueue(petID)
+    self._elevator:TryRemovePet(pet)
+    self._stairs:TryRemovePet(pet)
+    self._socialMng:OnPetDestroy(pet)
+    self._naviManager:TryRemovePet(pet)
+    self._petManager:RemovePet(petID)
   end
+  self._scheduleMng:TryRemoveInQueue(petID)
 end
 
--- DECOMPILER ERROR at PC371: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.PushInQueue = function(self, id)
-  -- function num : 0_121 , upvalues : _ENV
+function AircraftMain:PushInQueue(id)
   AirLog("星灵加入队列", id)
-  ;
-  (self._scheduleMng):PushInQueue(id)
+  self._scheduleMng:PushInQueue(id)
 end
 
--- DECOMPILER ERROR at PC374: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.IsDispatchPet = function(self, id)
-  -- function num : 0_122 , upvalues : _ENV
-  local aircraftModule = (GameGlobal.GetModule)(AircraftModule)
+function AircraftMain:IsDispatchPet(id)
+  local aircraftModule = GameGlobal.GetModule(AircraftModule)
   return aircraftModule:IsPetDispatch(id)
 end
 
--- DECOMPILER ERROR at PC377: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.SetCamNearbyState = function(self, state)
-  -- function num : 0_123
-  (self._socialMng):SetCamNearbyState(state)
+function AircraftMain:SetCamNearbyState(state)
+  self._socialMng:SetCamNearbyState(state)
 end
 
--- DECOMPILER ERROR at PC380: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetCamNearbyState = function(self)
-  -- function num : 0_124
-  return (self._socialMng):GetCamNearbyState()
+function AircraftMain:GetCamNearbyState()
+  return self._socialMng:GetCamNearbyState()
 end
 
--- DECOMPILER ERROR at PC383: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.ChangeInteractiveTimeOut = function(self, timeOut)
-  -- function num : 0_125
-  (self._clickMng):ChangeInteractiveTimeOut(timeOut)
+function AircraftMain:ChangeInteractiveTimeOut(timeOut)
+  self._clickMng:ChangeInteractiveTimeOut(timeOut)
 end
 
--- DECOMPILER ERROR at PC386: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.GetRoomCanBuildForNav = function(self, spaceid)
-  -- function num : 0_126
-  return (self._sceneManager):GetRoomCanBuildForNav(spaceid)
+function AircraftMain:GetRoomCanBuildForNav(spaceid)
+  return self._sceneManager:GetRoomCanBuildForNav(spaceid)
 end
 
--- DECOMPILER ERROR at PC389: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMain.AcceptAllPresent = function(self, pets, visitPets, callback)
-  -- function num : 0_127
-  (self._visitingMng):AcceptAllPresent(pets, visitPets, callback)
+function AircraftMain:AcceptAllPresent(pets, visitPets, callback)
+  self._visitingMng:AcceptAllPresent(pets, visitPets, callback)
 end
-
-

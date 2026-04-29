@@ -1,38 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_chain_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChainDamage", BuffLogicBase)
 BuffLogicChainDamage = BuffLogicChainDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChainDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChainDamage:Constructor(buffInstance, logicParam)
   self._formulaID = logicParam.formulaID or 141
   self._playDamageText = logicParam.dontPlayDamageText or 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChainDamage.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
+function BuffLogicChainDamage:DoLogic(notify)
+  local entity = self._buffInstance:Entity()
   local entityID = entity:GetID()
-  local context = (self._buffInstance):Context()
+  local context = self._buffInstance:Context()
   if not context then
-    return 
+    return
   end
   local casterEntity = context.casterEntity
   if not casterEntity then
-    return 
+    return
   end
   local logicChainDamage = entity:LogicChainDamage()
   if not logicChainDamage then
-    return 
+    return
   end
   if not notify.GetChangeHP or not notify.GetDamageInfo then
-    return 
+    return
   end
   local damageType = notify:GetDamageType()
   local originalAttackID = notify:GetDamageSrcEntityID()
@@ -40,19 +30,22 @@ BuffLogicChainDamage.DoLogic = function(self, notify)
   local notifyDamageInfo = notify:GetDamageInfo()
   local hpAndShieldChangeValue = notifyDamageInfo:GetHpAndShieldChangeValue()
   if hpAndShieldChangeValue == 0 then
-    return 
+    return
   end
   if damageType == DamageType.Miss or damageType == DamageType.Guard then
-    return 
+    return
   end
-  local transerID = (self._entity):GetID()
-  local attacker = (self._world):GetEntityByID(attackerID)
-  if attacker and attacker:HasPetPstID() then
-    attacker = (attacker:Pet()):GetOwnerTeamEntity()
+  local transerID = self._entity:GetID()
+  local attacker = self._world:GetEntityByID(attackerID)
+  if attacker then
+    if attacker:HasPetPstID() then
+      attacker = attacker:Pet():GetOwnerTeamEntity()
+      attackerID = attacker:GetID()
+    end
+  else
+    attacker = entity
     attackerID = attacker:GetID()
   end
-  attacker = entity
-  attackerID = attacker:GetID()
   local defenderIDs = {}
   local percents = {}
   local chainList = {}
@@ -61,35 +54,34 @@ BuffLogicChainDamage.DoLogic = function(self, notify)
   else
     chainList = logicChainDamage:GetChainDamageList()
   end
-  if (table.count)(chainList) == 0 then
-    return 
+  if table.count(chainList) == 0 then
+    return
   end
-  for chainEntityID,percent in pairs(chainList) do
+  for chainEntityID, percent in pairs(chainList) do
     local isTransmit = damageType == DamageType.RealTransmit or damageType == DamageType.RecoverTransmit
     if chainEntityID ~= attackerID or not isTransmit then
-      local chainEntity = (self._world):GetEntityByID(chainEntityID)
+      local chainEntity = self._world:GetEntityByID(chainEntityID)
       if chainEntity and (not chainEntity or not chainEntity:HasDeadMark()) then
-        (table.insert)(defenderIDs, chainEntityID)
-        ;
-        (table.insert)(percents, percent)
+        table.insert(defenderIDs, chainEntityID)
+        table.insert(percents, percent)
       end
     end
   end
-  local blsvc = (self._world):GetService("BuffLogic")
-  local calcDamage = (self._world):GetService("CalcDamage")
+  local blsvc = self._world:GetService("BuffLogic")
+  local calcDamage = self._world:GetService("CalcDamage")
   local damageInfos = {}
-  for i,ID in pairs(defenderIDs) do
-    local defender = (self._world):GetEntityByID(ID)
+  for i, ID in pairs(defenderIDs) do
+    local defender = self._world:GetEntityByID(ID)
     if defender:HasPetPstID() then
-      defender = (defender:Pet()):GetOwnerTeamEntity()
+      defender = defender:Pet():GetOwnerTeamEntity()
     end
     local percent = percents[i]
-    local damageInfo = nil
+    local damageInfo
     if damageType == DamageType.Recover or damageType == DamageType.RecoverTransmit then
       local attrCmpt = defender:Attributes()
       local max_hp = attrCmpt:CalcMaxHp()
       local cur_hp = attrCmpt:GetCurrentHP()
-      local add_value = (math.floor)(hpAndShieldChangeValue * percent)
+      local add_value = math.floor(hpAndShieldChangeValue * percent)
       if max_hp < add_value + cur_hp then
         add_value = max_hp - cur_hp
       end
@@ -97,21 +89,24 @@ BuffLogicChainDamage.DoLogic = function(self, notify)
       damageInfo:SetAttackerEntityID(entity:GetID())
       calcDamage:AddTargetHP(defender:GetID(), damageInfo)
     else
-      damageInfo = blsvc:DoBuffDamage((self._buffInstance):BuffID(), entity, defender, {percent = percent, formulaID = self._formulaID, changeHp = hpAndShieldChangeValue, attackPos = notify:GetAttackPos(), damageStatisticsAttackerEntityID = originalAttackID})
+      damageInfo = blsvc:DoBuffDamage(self._buffInstance:BuffID(), entity, defender, {
+        percent = percent,
+        formulaID = self._formulaID,
+        changeHp = hpAndShieldChangeValue,
+        attackPos = notify:GetAttackPos(),
+        damageStatisticsAttackerEntityID = originalAttackID
+      })
     end
     if damageInfo then
-      (table.insert)(damageInfos, damageInfo)
+      table.insert(damageInfos, damageInfo)
     end
   end
-  if (table.count)(damageInfos) == 0 then
-    return 
+  if table.count(damageInfos) == 0 then
+    return
   end
   local buffResult = BuffResultChainDamage:New(originalAttackID, entityID, defenderIDs, damageInfos)
   buffResult:SetAttackPos(notify:GetAttackPos())
   buffResult:SetNotifyHp(notify:GetChangeHP())
   buffResult:SetPlayDamageText(self._playDamageText)
-  do return buffResult end
-  -- DECOMPILER ERROR: 11 unprocessed JMP targets
+  return buffResult
 end
-
-

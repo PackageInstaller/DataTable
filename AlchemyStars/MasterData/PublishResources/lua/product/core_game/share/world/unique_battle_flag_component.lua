@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/world/unique_battle_flag_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BattleFlagsComponent", Object)
 BattleFlagsComponent = BattleFlagsComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleFlagsComponent.Constructor = function(self, world)
-  -- function num : 0_0
+function BattleFlagsComponent:Constructor(world)
   self.flags = {}
   self._frontAndObliqueOffsetDataList = {}
   self._chessTransformationIndex = 0
@@ -20,167 +13,90 @@ BattleFlagsComponent.Constructor = function(self, world)
   self._sceneChangeTimes = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.HasFlag = function(self, flag)
-  -- function num : 0_1
-  return (self.flags)[flag]
+function BattleFlagsComponent:HasFlag(flag)
+  return self.flags[flag]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.AddFlag = function(self, flag)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.flags)[flag] = true
+function BattleFlagsComponent:AddFlag(flag)
+  self.flags[flag] = true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.RemoveFlag = function(self, flag)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.flags)[flag] = false
+function BattleFlagsComponent:RemoveFlag(flag)
+  self.flags[flag] = false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.GetFrontAndObliqueOffsetData = function(self, entityID)
-  -- function num : 0_4
-  return (self._frontAndObliqueOffsetDataList)[entityID]
+function BattleFlagsComponent:GetFrontAndObliqueOffsetData(entityID)
+  return self._frontAndObliqueOffsetDataList[entityID]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.SetFrontAndObliqueOffsetData = function(self, entityID, dir)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._frontAndObliqueOffsetDataList)[entityID] = dir
+function BattleFlagsComponent:SetFrontAndObliqueOffsetData(entityID, dir)
+  self._frontAndObliqueOffsetDataList[entityID] = dir
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.GetChessTransformationIndex = function(self)
-  -- function num : 0_6
+function BattleFlagsComponent:GetChessTransformationIndex()
   self._chessTransformationIndex = self._chessTransformationIndex + 1
   return self._chessTransformationIndex
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.GetCurrentCurseTowerIndex = function(self)
-  -- function num : 0_7
+function BattleFlagsComponent:GetCurrentCurseTowerIndex()
   return self._curseTowerIndex
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.SetCurrentCurseTowerIndex = function(self, index)
-  -- function num : 0_8
+function BattleFlagsComponent:SetCurrentCurseTowerIndex(index)
   self._curseTowerIndex = index
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.GetCurrentCurseTowerRound = function(self)
-  -- function num : 0_9
+function BattleFlagsComponent:GetCurrentCurseTowerRound()
   return self._curseRound
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.SetCurrentCurseTowerRound = function(self, round)
-  -- function num : 0_10
+function BattleFlagsComponent:SetCurrentCurseTowerRound(round)
   self._curseRound = round
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.GetSummonMeantimeLimitEntityID = function(self, trapID)
-  -- function num : 0_11
-  if not (self._summonMeantimeLimitEntityID)[trapID] then
-    return {}
-  end
+function BattleFlagsComponent:GetSummonMeantimeLimitEntityID(trapID)
+  return self._summonMeantimeLimitEntityID[trapID] or {}
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.SetSummonMeantimeLimitEntityID = function(self, trapID, entityIDList)
-  -- function num : 0_12
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._summonMeantimeLimitEntityID)[trapID] = entityIDList
+function BattleFlagsComponent:SetSummonMeantimeLimitEntityID(trapID, entityIDList)
+  self._summonMeantimeLimitEntityID[trapID] = entityIDList
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.GetSummonOnFixPosLimitIndex = function(self)
-  -- function num : 0_13
+function BattleFlagsComponent:GetSummonOnFixPosLimitIndex()
   return self._summonOnFixPosLimitIndex
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.SetSummonOnFixPosLimitIndex = function(self, index)
-  -- function num : 0_14
+function BattleFlagsComponent:SetSummonOnFixPosLimitIndex(index)
   self._summonOnFixPosLimitIndex = index
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.GetSummonOnFixPosLimitEntityID = function(self, trapID)
-  -- function num : 0_15
-  if not (self._summonOnFixPosLimitEntityIDList)[trapID] then
-    return {}
-  end
+function BattleFlagsComponent:GetSummonOnFixPosLimitEntityID(trapID)
+  return self._summonOnFixPosLimitEntityIDList[trapID] or {}
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.SetSummonOnFixPosLimitEntityID = function(self, trapID, entityIDList)
-  -- function num : 0_16
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._summonOnFixPosLimitEntityIDList)[trapID] = entityIDList
+function BattleFlagsComponent:SetSummonOnFixPosLimitEntityID(trapID, entityIDList)
+  self._summonOnFixPosLimitEntityIDList[trapID] = entityIDList
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.GetSceneChangeTimes = function(self)
-  -- function num : 0_17
+function BattleFlagsComponent:GetSceneChangeTimes()
   return self._sceneChangeTimes
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFlagsComponent.AddSceneChangeTimes = function(self, num)
-  -- function num : 0_18
+function BattleFlagsComponent:AddSceneChangeTimes(num)
   self._sceneChangeTimes = self._sceneChangeTimes + num
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.BattleFlags = function(self)
-  -- function num : 0_19
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).BattleFlags)
+function MainWorld:BattleFlags()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.BattleFlags)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.AddBattleFlags = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).BattleFlags
+function MainWorld:AddBattleFlags()
+  local index = self.BW_UniqueComponentsEnum.BattleFlags
   local com = BattleFlagsComponent:New(self)
   self:SetUniqueComponent(index, com)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.HasBattleFlag = function(self, flag)
-  -- function num : 0_21
+function MainWorld:HasBattleFlag(flag)
   local com = self:BattleFlags()
   if not com then
     return false
@@ -188,30 +104,20 @@ MainWorld.HasBattleFlag = function(self, flag)
   return com:HasFlag(flag)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.AddBattleFlag = function(self, flag)
-  -- function num : 0_22 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).BattleFlags
+function MainWorld:AddBattleFlag(flag)
+  local index = self.BW_UniqueComponentsEnum.BattleFlags
   local com = self:BattleFlags()
-  if not com then
-    com = BattleFlagsComponent:New(self)
-  end
+  com = com or BattleFlagsComponent:New(self)
   com:AddFlag(flag)
   self:SetUniqueComponent(index, com)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.RemoveBattleFlag = function(self, flag)
-  -- function num : 0_23
-  local index = (self.BW_UniqueComponentsEnum).BattleFlags
+function MainWorld:RemoveBattleFlag(flag)
+  local index = self.BW_UniqueComponentsEnum.BattleFlags
   local com = self:BattleFlags()
   if not com then
-    return 
+    return
   end
   com:RemoveFlag(flag)
   self:SetUniqueComponent(index, com)
 end
-
-

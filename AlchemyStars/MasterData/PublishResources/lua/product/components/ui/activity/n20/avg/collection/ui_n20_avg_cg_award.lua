@@ -1,52 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/collection/ui_n20_avg_cg_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20AVGCGAward", UICustomWidget)
 UIN20AVGCGAward = UIN20AVGCGAward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20AVGCGAward.OnShow = function(self)
-  -- function num : 0_0
+function UIN20AVGCGAward:OnShow()
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
   self.got = self:GetGameObject("got")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGCGAward.OnHide = function(self)
-  -- function num : 0_1
-  (self.imgIcon):DestoryLastImage()
+function UIN20AVGCGAward:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGCGAward.Flush = function(self, ra, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN20AVGCGAward:Flush(ra, callback)
   self.callback = callback
-  local cfgv = (Cfg.cfg_item)[ra.assetid]
-  ;
-  (self.imgIcon):LoadImage(cfgv.Icon)
-  ;
-  (self.txtCount):SetText(ra.count)
+  local cfgv = Cfg.cfg_item[ra.assetid]
+  self.imgIcon:LoadImage(cfgv.Icon)
+  self.txtCount:SetText(ra.count)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGCGAward.FlushGot = function(self, isShow)
-  -- function num : 0_3
-  (self.got):SetActive(isShow)
+function UIN20AVGCGAward:FlushGot(isShow)
+  self.got:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGCGAward.btnOnClick = function(self, go)
-  -- function num : 0_4
+function UIN20AVGCGAward:btnOnClick(go)
   if self.callback then
     self:callback()
   end
 end
-
-

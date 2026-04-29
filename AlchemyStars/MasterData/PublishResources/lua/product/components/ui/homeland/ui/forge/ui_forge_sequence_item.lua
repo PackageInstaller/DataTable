@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/forge/ui_forge_sequence_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIForgeSequenceItem", UICustomWidget)
 UIForgeSequenceItem = UIForgeSequenceItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIForgeSequenceItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetForgeData()
+function UIForgeSequenceItem:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetForgeData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSequenceItem.OnShow = function(self)
-  -- function num : 0_1
+function UIForgeSequenceItem:OnShow()
   self.unlock = self:GetGameObject("unlock")
   self.forging = self:GetGameObject("forging")
   self.getable = self:GetGameObject("getable")
@@ -37,259 +27,176 @@ UIForgeSequenceItem.OnShow = function(self)
   self._helpCD = self:GetGameObject("helpCD")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSequenceItem.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIcon):DestoryLastImage()
+function UIForgeSequenceItem:OnHide()
+  self.imgIcon:DestoryLastImage()
   self:CancelTimerEvent()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSequenceItem.RegisterTimeEvent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIForgeSequenceItem:RegisterTimeEvent()
   self:CancelTimerEvent()
-  self.te = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_3_0 , upvalues : self
+  self.te = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:FlushTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSequenceItem.CancelTimerEvent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIForgeSequenceItem:CancelTimerEvent()
   if self.te then
-    ((GameGlobal.Timer)()):CancelEvent(self.te)
+    GameGlobal.Timer():CancelEvent(self.te)
     self.te = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSequenceItem.Flush = function(self, index)
-  -- function num : 0_5 , upvalues : _ENV
+function UIForgeSequenceItem:Flush(index)
   self:CancelTimerEvent()
   self.index = index
-  local s = (self.data):GetForgeSequenceByIndex(index)
+  local s = self.data:GetForgeSequenceByIndex(index)
   if s.state == ForgeSequenceState.Locked then
-    (self.unlock):SetActive(false)
-    ;
-    (self.lock):SetActive(true)
-    ;
-    (self.idle):SetActive(false)
-    ;
-    (self.txtUnlockCondition):SetText((StringTable.Get)("str_homeland_skin_islock", s.unlockLevel))
+    self.unlock:SetActive(false)
+    self.lock:SetActive(true)
+    self.idle:SetActive(false)
+    self.txtUnlockCondition:SetText(StringTable.Get("str_homeland_skin_islock", s.unlockLevel))
+  elseif s.state == ForgeSequenceState.Idle then
+    self.unlock:SetActive(false)
+    self.lock:SetActive(false)
+    self.idle:SetActive(true)
   else
-    if s.state == ForgeSequenceState.Idle then
-      (self.unlock):SetActive(false)
-      ;
-      (self.lock):SetActive(false)
-      ;
-      (self.idle):SetActive(true)
-    else
-      ;
-      (self.unlock):SetActive(true)
-      ;
-      (self.lock):SetActive(false)
-      ;
-      (self.idle):SetActive(false)
-      local item = (self.data):GetForgeInfoItemById(s.forgeItemId)
-      ;
-      (self.imgIcon):LoadImage(item.icon)
-      ;
-      (self.txtName):SetText((StringTable.Get)("str_homeland_forge_detail_name", (StringTable.Get)("str_homeland_quality_" .. item.quality), item.name))
-      ;
-      (self.txtSize):SetText((item.size).x .. "*" .. (item.size).y)
-      ;
-      (self.txtLiveable):SetText(item.livableValue)
-      local curCount, placedCount = (UIForgeData.GetOwnPlaceCount)(item.id)
-      ;
-      (self.txtOwn):SetText((StringTable.Get)("str_homeland_forge_detail_own", curCount))
-      ;
-      (self.txtPlace):SetText((StringTable.Get)("str_homeland_forge_sequence_place", placedCount))
-      ;
-      (self.forgeCount):SetText("×" .. item.forgeCount)
-      ;
-      (self.forgeCountParent):SetActive(item.forgeCount > 1)
-      if s.state == ForgeSequenceState.Forging then
-        (self.forging):SetActive(true)
-        ;
-        (self.getable):SetActive(false)
-        self:RegisterTimeEvent()
-        self:FlushTime()
-        if s.helpRemainTime then
-          ((self._helpTime).gameObject):SetActive(true)
-          local hour = (math.ceil)(s.helpRemainTime / 3600)
-          if hour > 0 then
-            (self._helpTime):SetText((StringTable.Get)("str_homeland_visit_help_time", hour))
-            -- DECOMPILER ERROR at PC179: Confused about usage of register: R7 in 'UnsetPending'
-
-            ;
-            (self._helpTime).color = Color(0.27450980392157, 0.63529411764706, 0.7843137254902, 1)
-          else
-            (self._helpTime):SetText((StringTable.Get)("str_homeland_visit_help_finish"))
-            -- DECOMPILER ERROR at PC195: Confused about usage of register: R7 in 'UnsetPending'
-
-            ;
-            (self._helpTime).color = Color(0.62745098039216, 0.62352941176471, 0.62352941176471, 1)
-          end
-          if s.helpedTime > 0 then
-            (self._helpCD):SetActive(true)
-            local cdHour = (math.ceil)(s.helpedTime / 3600)
-            ;
-            (self._helpCDTime):SetText((StringTable.Get)("str_homeland_visit_helped_time", cdHour))
-          else
-            (self._helpCD):SetActive(false)
-          end
+    self.unlock:SetActive(true)
+    self.lock:SetActive(false)
+    self.idle:SetActive(false)
+    local item = self.data:GetForgeInfoItemById(s.forgeItemId)
+    self.imgIcon:LoadImage(item.icon)
+    self.txtName:SetText(StringTable.Get("str_homeland_forge_detail_name", StringTable.Get("str_homeland_quality_" .. item.quality), item.name))
+    self.txtSize:SetText(item.size.x .. "*" .. item.size.y)
+    self.txtLiveable:SetText(item.livableValue)
+    local curCount, placedCount = UIForgeData.GetOwnPlaceCount(item.id)
+    self.txtOwn:SetText(StringTable.Get("str_homeland_forge_detail_own", curCount))
+    self.txtPlace:SetText(StringTable.Get("str_homeland_forge_sequence_place", placedCount))
+    self.forgeCount:SetText("×" .. item.forgeCount)
+    self.forgeCountParent:SetActive(item.forgeCount > 1)
+    if s.state == ForgeSequenceState.Forging then
+      self.forging:SetActive(true)
+      self.getable:SetActive(false)
+      self:RegisterTimeEvent()
+      self:FlushTime()
+      if s.helpRemainTime then
+        self._helpTime.gameObject:SetActive(true)
+        local hour = math.ceil(s.helpRemainTime / 3600)
+        if 0 < hour then
+          self._helpTime:SetText(StringTable.Get("str_homeland_visit_help_time", hour))
+          self._helpTime.color = Color(0.27450980392156865, 0.6352941176470588, 0.7843137254901961, 1)
         else
-          ((self._helpTime).gameObject):SetActive(false)
-          ;
-          (self._helpCD):SetActive(false)
+          self._helpTime:SetText(StringTable.Get("str_homeland_visit_help_finish"))
+          self._helpTime.color = Color(0.6274509803921569, 0.6235294117647059, 0.6235294117647059, 1)
         end
-      elseif s.state == ForgeSequenceState.Getable then
-        (self.forging):SetActive(false)
-        ;
-        (self.getable):SetActive(true)
+        if 0 < s.helpedTime then
+          self._helpCD:SetActive(true)
+          local cdHour = math.ceil(s.helpedTime / 3600)
+          self._helpCDTime:SetText(StringTable.Get("str_homeland_visit_helped_time", cdHour))
+        else
+          self._helpCD:SetActive(false)
+        end
       else
-        (Log.fatal)("### invalid state. state=", s.state)
+        self._helpTime.gameObject:SetActive(false)
+        self._helpCD:SetActive(false)
       end
+    elseif s.state == ForgeSequenceState.Getable then
+      self.forging:SetActive(false)
+      self.getable:SetActive(true)
+    else
+      Log.fatal("### invalid state. state=", s.state)
     end
   end
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSequenceItem.FlushTime = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local s = (self.data):GetForgeSequenceByIndex(self.index)
-  if s.doneTimestamp <= (UICommonHelper.GetNowTimestamp)() then
+function UIForgeSequenceItem:FlushTime()
+  local s = self.data:GetForgeSequenceByIndex(self.index)
+  if UICommonHelper.GetNowTimestamp() >= s.doneTimestamp then
     s.state = ForgeSequenceState.Getable
     self:Flush(self.index)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeUpdateSequence)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeUpdateSequence)
   else
-    ;
-    (UIForge.FlushCDText)(self.txtCD, s.doneTimestamp, (self.data).strsWillGetable, true)
+    UIForge.FlushCDText(self.txtCD, s.doneTimestamp, self.data.strsWillGetable, true)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSequenceItem.BtnGetOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  local s = (self.data):GetForgeSequenceByIndex(self.index)
+function UIForgeSequenceItem:BtnGetOnClick(go)
+  local s = self.data:GetForgeSequenceByIndex(self.index)
   if s.state == ForgeSequenceState.Getable then
     local itemId = s.forgeItemId
-    do
-      self._curExp = ((self.mHomeland):GetHomelandInfo()).exp
-      self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV, itemId, s
-    self:Lock("HomeReqPickupItem")
-    local res, forge_list, architecture = (self.mHomeland):HandlPickUp(TT, self.index)
-    if (UIForgeData.CheckCode)(res:GetResult()) then
-      (self.data):InitSequence(forge_list)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeUpdateSequence)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeUpdateList)
-      local a = RoleAsset:New()
-      a.assetid = itemId
-      a.count = s.forgeCount
-      self:ShowDialog("UIHomeShowAwards", {a}, nil, false)
-      local deltaExp = (math.max)(0, ((self.mHomeland):GetHomelandInfo()).exp - self._curExp)
-      if deltaExp > 0 then
-        (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_forge_add_exp", deltaExp))
-      end
-      YIELD(TT, 1000)
-      local uiModule = (GameGlobal.GetUIModule)(HomelandModule)
-      uiModule:TryPopLevelUpTip()
-      self:UnLock("HomeReqPickupItem")
-    else
-      do
+    self._curExp = self.mHomeland:GetHomelandInfo().exp
+    self:StartTask(function(TT)
+      self:Lock("HomeReqPickupItem")
+      local res, forge_list, architecture = self.mHomeland:HandlPickUp(TT, self.index)
+      if UIForgeData.CheckCode(res:GetResult()) then
+        self.data:InitSequence(forge_list)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeUpdateSequence)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeUpdateList)
+        local a = RoleAsset:New()
+        a.assetid = itemId
+        a.count = s.forgeCount
+        self:ShowDialog("UIHomeShowAwards", {a}, nil, false)
+        local deltaExp = math.max(0, self.mHomeland:GetHomelandInfo().exp - self._curExp)
+        if 0 < deltaExp then
+          ToastManager.ShowHomeToast(StringTable.Get("str_homeland_forge_add_exp", deltaExp))
+        end
+        YIELD(TT, 1000)
+        local uiModule = GameGlobal.GetUIModule(HomelandModule)
+        uiModule:TryPopLevelUpTip()
+        self:UnLock("HomeReqPickupItem")
+      else
         self:UnLock("HomeReqPickupItem")
       end
-    end
-  end
-, self)
-    end
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSequenceItem.btnCancelOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  local s = (self.data):GetForgeSequenceByIndex(self.index)
-  local item = (self.data):GetForgeInfoItemById(s.forgeItemId)
-  self:ShowDialog("UIHomelandMessageBox_Items", (StringTable.Get)("str_homeland_forge_cancel"), (StringTable.Get)("str_homeland_forge_cancel_or_not", item.name), item.forgeCosts, function(param)
-    -- function num : 0_8_0 , upvalues : self, s, _ENV
+function UIForgeSequenceItem:btnCancelOnClick(go)
+  local s = self.data:GetForgeSequenceByIndex(self.index)
+  local item = self.data:GetForgeInfoItemById(s.forgeItemId)
+  self:ShowDialog("UIHomelandMessageBox_Items", StringTable.Get("str_homeland_forge_cancel"), StringTable.Get("str_homeland_forge_cancel_or_not", item.name), item.forgeCosts, function(param)
     self:StartTask(function(TT)
-      -- function num : 0_8_0_0 , upvalues : self, s, _ENV
       local key = "CancelForgeTask"
       self:Lock(key)
-      local res, forge_list, return_material = (self.mHomeland):HandleCancel(TT, s.index)
-      if (UIForgeData.CheckCode)(res:GetResult()) then
-        (self.data):InitSequence(forge_list)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeUpdateSequence)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeUpdateList)
-        ;
-        (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_forge_cancel_success"))
+      local res, forge_list, return_material = self.mHomeland:HandleCancel(TT, s.index)
+      if UIForgeData.CheckCode(res:GetResult()) then
+        self.data:InitSequence(forge_list)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeUpdateSequence)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeUpdateList)
+        ToastManager.ShowHomeToast(StringTable.Get("str_homeland_forge_cancel_success"))
       end
       self:UnLock(key)
-    end
-, self)
-  end
-)
+    end, self)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSequenceItem.btnSpeedOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  local item = (self.data):GetForgeSequenceByIndex(self.index)
-  local accItemId, accSeconds = (self.data):GetForgeAccItem()
-  self:ShowDialog("UIHomelandAccelerate", (StringTable.Get)("str_homeland_forge_acc_title"), item.doneTimestamp, accItemId, accSeconds, function(id, count)
-    -- function num : 0_9_0 , upvalues : self
+function UIForgeSequenceItem:btnSpeedOnClick(go)
+  local item = self.data:GetForgeSequenceByIndex(self.index)
+  local accItemId, accSeconds = self.data:GetForgeAccItem()
+  self:ShowDialog("UIHomelandAccelerate", StringTable.Get("str_homeland_forge_acc_title"), item.doneTimestamp, accItemId, accSeconds, function(id, count)
     self:_UseItem(id, count)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSequenceItem._UseItem = function(self, id, count)
-  -- function num : 0_10 , upvalues : _ENV
+function UIForgeSequenceItem:_UseItem(id, count)
   if count <= 0 then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, _ENV, id, count
-    local accItemId, accSeconds = (self.data):GetForgeAccItem()
+    local accItemId, accSeconds = self.data:GetForgeAccItem()
     local ra = RoleAsset:New()
     ra.assetid = id
     ra.count = count
-    local res, forge_list = (self.mHomeland):HandleAccelerate(TT, self.index, ra)
-    if (UIForgeData.CheckCode)(res:GetResult()) then
-      (self.data):InitSequence(forge_list)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeUpdateList)
-      local s = (self.data):GetForgeSequenceByIndex(self.index)
+    local res, forge_list = self.mHomeland:HandleAccelerate(TT, self.index, ra)
+    if UIForgeData.CheckCode(res:GetResult()) then
+      self.data:InitSequence(forge_list)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeUpdateList)
+      local s = self.data:GetForgeSequenceByIndex(self.index)
       if s.state == ForgeSequenceState.Getable then
-        (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_forge_acc_success_done"))
+        ToastManager.ShowHomeToast(StringTable.Get("str_homeland_forge_acc_success_done"))
       else
-        local s = (UIForge.GetTimestampStr)(count * accSeconds, (self.data).strsWillGetable)
-        ;
-        (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_forge_acc_success", s))
+        local s = UIForge.GetTimestampStr(count * accSeconds, self.data.strsWillGetable)
+        ToastManager.ShowHomeToast(StringTable.Get("str_homeland_forge_acc_success", s))
       end
     end
-  end
-, self)
+  end, self)
 end
-
-

@@ -1,106 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/active_task/main/ui_active_task_main_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UIActiveTaskMainContent", UISideEnterCenterContentBase)
 UIActiveTaskMainContent = UIActiveTaskMainContent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActiveTaskMainContent.Constructor = function(self)
-  -- function num : 0_0
+function UIActiveTaskMainContent:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent.DoInit = function(self, params)
-  -- function num : 0_1
-  if params then
-    self._campaignType = params.campaign_type
-    if not params or not params.component_ids then
-      self._componentIds = {}
-      if params then
-        self._campaignId = params.campaign_id
-        self._campaign = self._data
-      end
-    end
-  end
+function UIActiveTaskMainContent:DoInit(params)
+  self._campaignType = params and params.campaign_type
+  self._componentIds = params and params.component_ids or {}
+  self._campaignId = params and params.campaign_id
+  self._campaign = self._data
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent.DoShow = function(self, params)
-  -- function num : 0_2 , upvalues : _ENV
-  do
-    if not (self._campaign):CheckComponentOpen(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_TURNCARD) then
-      local result = (self._campaign):CheckComponentOpenClientError(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_TURNCARD)
-      ;
-      (self._campaign):CheckErrorCode(result)
-      return 
-    end
-    self._activeTaskData = ActiveTaskData:New()
-    ;
-    (self._activeTaskData):SetCampaign(self._campaign)
-    self._activeTaskCfg = (self._activeTaskData):GetActiveTaskCfg()
-    self:_GetComponent()
-    self:AddListener()
-    local isNew = (self._campaign):CheckCampaignNew()
-    if isNew then
-      self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
+function UIActiveTaskMainContent:DoShow(params)
+  if not self._campaign:CheckComponentOpen(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_TURNCARD) then
+    local result = self._campaign:CheckComponentOpenClientError(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_TURNCARD)
+    self._campaign:CheckErrorCode(result)
+    return
   end
-, self)
-    end
-    ;
-    (self._flipTab):Open()
-    self._state = EUIActiveTaskMainContentState.FLIP
-    ;
-    (self._flipSelectedObj):SetActive(true)
-    ;
-    (self._missionSelectedObj):SetActive(false)
-    ;
-    (self._intro):SetText((StringTable.Get)((self._activeTaskCfg).FilpIntro))
+  self._activeTaskData = ActiveTaskData:New()
+  self._activeTaskData:SetCampaign(self._campaign)
+  self._activeTaskCfg = self._activeTaskData:GetActiveTaskCfg()
+  self:_GetComponent()
+  self:AddListener()
+  local isNew = self._campaign:CheckCampaignNew()
+  if isNew then
+    self:StartTask(function(TT)
+      self._campaign:ClearCampaignNew(TT)
+    end, self)
   end
+  self._flipTab:Open()
+  self._state = EUIActiveTaskMainContentState.FLIP
+  self._flipSelectedObj:SetActive(true)
+  self._missionSelectedObj:SetActive(false)
+  self._intro:SetText(StringTable.Get(self._activeTaskCfg.FilpIntro))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent.DoHide = function(self)
-  -- function num : 0_3
+function UIActiveTaskMainContent:DoHide()
   self._activeTaskData = nil
   self:RemoveListener()
-  ;
-  (self._timerHolder):Dispose()
+  self._timerHolder:Dispose()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent.AddListener = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._refreshActiveTaskRedCallback = (GameHelper:GetInstance()):CreateCallback(self.CheckRed, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.RefreshActiveTaskRed, self._refreshActiveTaskRedCallback)
+function UIActiveTaskMainContent:AddListener()
+  self._refreshActiveTaskRedCallback = GameHelper:GetInstance():CreateCallback(self.CheckRed, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.RefreshActiveTaskRed, self._refreshActiveTaskRedCallback)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent.RemoveListener = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.RefreshActiveTaskRed, self._refreshActiveTaskRedCallback)
+function UIActiveTaskMainContent:RemoveListener()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.RefreshActiveTaskRed, self._refreshActiveTaskRedCallback)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent.DoDestroy = function(self)
-  -- function num : 0_6
+function UIActiveTaskMainContent:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent._GetComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActiveTaskMainContent:_GetComponent()
   self._diffTime = self:GetUIComponent("UILocalizationText", "DiffTime")
   self._flipTabContent = self:GetUIComponent("UISelectObjectPath", "flipTabContent")
   self._missionTabContent = self:GetUIComponent("UISelectObjectPath", "missionTabContent")
@@ -119,191 +73,133 @@ UIActiveTaskMainContent._GetComponent = function(self)
   self:RefreshCountdown()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent.InitComponent = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._title):LoadImage((self._activeTaskCfg).TitleImg)
-  self._flipTab = (self._flipTabContent):SpawnObject("UIActiveTaskFlipTab")
-  self._missionTab = (self._missionTabContent):SpawnObject("UIActiveTaskMissionTab")
-  ;
-  (self._flipTab):Close()
-  ;
-  (self._missionTab):Close()
-  ;
-  (self._flipTab):SetData(self._activeTaskData, self)
-  ;
-  (self._missionTab):SetData(self._activeTaskData, self)
+function UIActiveTaskMainContent:InitComponent()
+  self._title:LoadImage(self._activeTaskCfg.TitleImg)
+  self._flipTab = self._flipTabContent:SpawnObject("UIActiveTaskFlipTab")
+  self._missionTab = self._missionTabContent:SpawnObject("UIActiveTaskMissionTab")
+  self._flipTab:Close()
+  self._missionTab:Close()
+  self._flipTab:SetData(self._activeTaskData, self)
+  self._missionTab:SetData(self._activeTaskData, self)
   self:CheckRed()
-  ;
-  (self._flipBtnTxt):SetText((StringTable.Get)((self._activeTaskCfg).FlipBtnTxt))
-  ;
-  (self._missionBtnTxt):SetText((StringTable.Get)((self._activeTaskCfg).MissionBtnTxt))
+  self._flipBtnTxt:SetText(StringTable.Get(self._activeTaskCfg.FlipBtnTxt))
+  self._missionBtnTxt:SetText(StringTable.Get(self._activeTaskCfg.MissionBtnTxt))
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent.RefreshCountdown = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local closeTime = (self._activeTaskData):GetCampaignEndTime()
+function UIActiveTaskMainContent:RefreshCountdown()
+  local closeTime = self._activeTaskData:GetCampaignEndTime()
   local timerName = "CountDown"
-  local countDown = function()
-    -- function num : 0_9_0 , upvalues : _ENV, closeTime, self, timerName
-    local now = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() / 1000
-    local time = (math.ceil)(closeTime - now)
+  
+  local function countDown()
+    local now = GameGlobal.GetModule(SvrTimeModule):GetServerTime() / 1000
+    local time = math.ceil(closeTime - now)
     local timeStr = self:GetFormatTimerStr(time)
     if self._timeString ~= timeStr then
-      (self._diffTime):SetText(timeStr)
+      self._diffTime:SetText(timeStr)
       self._timeString = timeStr
     end
     if time < 0 then
-      (self._timerHolder):StopTimer(timerName)
+      self._timerHolder:StopTimer(timerName)
     end
   end
-
+  
   countDown()
-  ;
-  (self._timerHolder):StartTimerInfinite(timerName, 1000, countDown)
+  self._timerHolder:StartTimerInfinite(timerName, 1000, countDown)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent.GetFormatTimerStr = function(self, time, id)
-  -- function num : 0_10 , upvalues : _ENV
-  local default_id = {day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_error_107"}
-  if not id then
-    id = default_id
-  end
-  local timeStr = (StringTable.Get)(id.over)
+function UIActiveTaskMainContent:GetFormatTimerStr(time, id)
+  local default_id = {
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_error_107"
+  }
+  id = id or default_id
+  local timeStr = StringTable.Get(id.over)
   if time < 0 then
     return timeStr
   end
-  local day, hour, min, second = (UIActivityHelper.Time2Str)(time)
-  if day > 0 then
-    timeStr = day .. (StringTable.Get)(id.day) .. hour .. (StringTable.Get)(id.hour)
+  local day, hour, min, second = UIActivityHelper.Time2Str(time)
+  if 0 < day then
+    timeStr = day .. StringTable.Get(id.day) .. hour .. StringTable.Get(id.hour)
+  elseif 0 < hour then
+    timeStr = hour .. StringTable.Get(id.hour) .. min .. StringTable.Get(id.min)
+  elseif 0 < min then
+    timeStr = min .. StringTable.Get(id.min)
   else
-    if hour > 0 then
-      timeStr = hour .. (StringTable.Get)(id.hour) .. min .. (StringTable.Get)(id.min)
-    else
-      if min > 0 then
-        timeStr = min .. (StringTable.Get)(id.min)
-      else
-        timeStr = (StringTable.Get)(id.zero)
-      end
-    end
+    timeStr = StringTable.Get(id.zero)
   end
-  return (StringTable.Get)(self:GetTimeDownString(), timeStr)
+  return StringTable.Get(self:GetTimeDownString(), timeStr)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent.GetTimeDownString = function(self)
-  -- function num : 0_11
+function UIActiveTaskMainContent:GetTimeDownString()
   return "str_n27_level_remain_time_tips"
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent.CheckRed = function(self)
-  -- function num : 0_12
+function UIActiveTaskMainContent:CheckRed()
   local flipRed = self:_CheckFlipRed()
   local missionRed = self:_CheckMissionRed()
-  ;
-  (self._flipRedObj):SetActive(flipRed)
-  ;
-  (self._missionRedObj):SetActive(missionRed)
+  self._flipRedObj:SetActive(flipRed)
+  self._missionRedObj:SetActive(missionRed)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent._CheckFlipRed = function(self)
-  -- function num : 0_13
-  return (self._activeTaskData):CheckFlipRed()
+function UIActiveTaskMainContent:_CheckFlipRed()
+  return self._activeTaskData:CheckFlipRed()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent._CheckMissionRed = function(self)
-  -- function num : 0_14
-  return (self._activeTaskData):CheckMissionRed()
+function UIActiveTaskMainContent:_CheckMissionRed()
+  return self._activeTaskData:CheckMissionRed()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent.FlipBtnOnClick = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local isOver = (self._activeTaskData):CheckFlipIsOver()
+function UIActiveTaskMainContent:FlipBtnOnClick()
+  local isOver = self._activeTaskData:CheckFlipIsOver()
   if isOver then
-    return 
+    return
   end
   if self._state == EUIActiveTaskMainContentState.FLIP then
-    return 
+    return
   end
   self._state = EUIActiveTaskMainContentState.FLIP
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._FlipClick, self)
+  GameGlobal.TaskManager():StartTask(self._FlipClick, self)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent._FlipClick = function(self, TT)
-  -- function num : 0_16 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("UIActiveTaskMainContent_FlipClick")
-  ;
-  (self._missionTab):Close(true)
-  ;
-  (self._missionSelectedObj):SetActive(false)
-  ;
-  (self._flipSelectedObj):SetActive(true)
+function UIActiveTaskMainContent:_FlipClick(TT)
+  GameGlobal.UIStateManager():Lock("UIActiveTaskMainContent_FlipClick")
+  self._missionTab:Close(true)
+  self._missionSelectedObj:SetActive(false)
+  self._flipSelectedObj:SetActive(true)
   YIELD(TT, 333)
-  ;
-  (self._flipTab):Open()
-  ;
-  (self._intro):SetText((StringTable.Get)((self._activeTaskCfg).FilpIntro))
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("UIActiveTaskMainContent_FlipClick")
+  self._flipTab:Open()
+  self._intro:SetText(StringTable.Get(self._activeTaskCfg.FilpIntro))
+  GameGlobal.UIStateManager():UnLock("UIActiveTaskMainContent_FlipClick")
   self:CheckRed()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent.MissionBtnOnClick = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local isOver = (self._activeTaskData):CheckFlipIsOver()
+function UIActiveTaskMainContent:MissionBtnOnClick()
+  local isOver = self._activeTaskData:CheckFlipIsOver()
   if isOver then
-    return 
+    return
   end
   if self._state == EUIActiveTaskMainContentState.MISSION then
-    return 
+    return
   end
   self._state = EUIActiveTaskMainContentState.MISSION
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._MissionClick, self)
+  GameGlobal.TaskManager():StartTask(self._MissionClick, self)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMainContent._MissionClick = function(self, TT)
-  -- function num : 0_18 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("UIActiveTaskMainContent_MissionClick")
-  ;
-  (self._flipTab):Close(true)
-  ;
-  (self._flipSelectedObj):SetActive(false)
+function UIActiveTaskMainContent:_MissionClick(TT)
+  GameGlobal.UIStateManager():Lock("UIActiveTaskMainContent_MissionClick")
+  self._flipTab:Close(true)
+  self._flipSelectedObj:SetActive(false)
   YIELD(TT, 333)
-  ;
-  (self._missionTab):Open()
-  ;
-  (self._activeTaskData):CancelDailyTaskRed()
-  ;
-  (self._missionSelectedObj):SetActive(true)
-  ;
-  (self._intro):SetText((StringTable.Get)((self._activeTaskCfg).MissionIntro))
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("UIActiveTaskMainContent_MissionClick")
+  self._missionTab:Open()
+  self._activeTaskData:CancelDailyTaskRed()
+  self._missionSelectedObj:SetActive(true)
+  self._intro:SetText(StringTable.Get(self._activeTaskCfg.MissionIntro))
+  GameGlobal.UIStateManager():UnLock("UIActiveTaskMainContent_MissionClick")
   self:CheckRed()
 end
 
 local EUIActiveTaskMainContentState = {FLIP = 1, MISSION = 2}
 _enum("EUIActiveTaskMainContentState", EUIActiveTaskMainContentState)
-

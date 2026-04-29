@@ -1,55 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/aquarium/homeland_aquarium_fish_model.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandAquariumFishModel", Object)
 HomelandAquariumFishModel = HomelandAquariumFishModel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandAquariumFishModel.Constructor = function(self, buildTran, id, instanceId, buildID, buildAquarium)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandAquariumFishModel:Constructor(buildTran, id, instanceId, buildID, buildAquarium)
   self._id = id
   self._instaceId = instanceId
-  local fishCfg = (Cfg.cfg_item_homeland_fish)[id]
+  local fishCfg = Cfg.cfg_item_homeland_fish[id]
   local prefabName = fishCfg.Model .. ".prefab"
-  self._req = (ResourceManager:GetInstance()):SyncLoadAsset(prefabName, LoadType.GameObject)
+  self._req = ResourceManager:GetInstance():SyncLoadAsset(prefabName, LoadType.GameObject)
   if not self._req then
     BuildError("找不到鱼模型:" .. prefabName)
-    return 
+    return
   end
   self._buildAquarium = buildAquarium
-  local activityArea = ((Cfg.cfg_item_aquarium_area)[buildID]).ActivityArea
-  self._activityArea = {activityArea[3], activityArea[4]}
-  local birthPos = ((Cfg.cfg_item_aquarium_area)[buildID]).BirthPos
+  local activityArea = Cfg.cfg_item_aquarium_area[buildID].ActivityArea
+  self._activityArea = {
+    activityArea[3],
+    activityArea[4]
+  }
+  local birthPos = Cfg.cfg_item_aquarium_area[buildID].BirthPos
   self._birthPos = Vector3(birthPos[1], birthPos[2], birthPos[3])
   self._fishingAreaPointList = self:GetFishingAreaPolygon(buildTran)
-  self._go = (self._req).Obj
-  ;
-  (self._go):SetActive(true)
-  self._transform = ((self._req).Obj).transform
-  local root = (GameObjectHelper.FindChild)(buildTran, "FishRoot")
-  ;
-  (self._transform):SetParent(root)
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._transform).localPosition = self:CalcInitPos(buildTran)
-  -- DECOMPILER ERROR at PC78: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._transform).localRotation = Quaternion.identity
-  local scale = (fishCfg.Scaling)[1]
-  -- DECOMPILER ERROR at PC87: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self._transform).localScale = Vector3(scale, scale, scale)
+  self._go = self._req.Obj
+  self._go:SetActive(true)
+  self._transform = self._req.Obj.transform
+  local root = GameObjectHelper.FindChild(buildTran, "FishRoot")
+  self._transform:SetParent(root)
+  self._transform.localPosition = self:CalcInitPos(buildTran)
+  self._transform.localRotation = Quaternion.identity
+  local scale = fishCfg.Scaling[1]
+  self._transform.localScale = Vector3(scale, scale, scale)
   self._dir = self:CalcInitDir()
   self._moveSpeed = fishCfg.AquariumMoveSpeed / 1000
   self._idleSpeed = fishCfg.AquariumMoveSpeed / 5000
   self._speed = self._moveSpeed
   self._buildCenter = root.position
-  self._lastChangeDirTime = (GameGlobal:GetInstance()):GetCurrentTime()
+  self._lastChangeDirTime = GameGlobal:GetInstance():GetCurrentTime()
   self._targetDir = Vector3.zero
   self._changingDir = false
   self._changeDirLen = 300
@@ -57,23 +42,37 @@ HomelandAquariumFishModel.Constructor = function(self, buildTran, id, instanceId
   self._fishState = 1
   self._crashCount = 0
   self._lastCrashCollider = nil
-  self._moveStartTime = (GameGlobal:GetInstance()):GetCurrentTime()
+  self._moveStartTime = GameGlobal:GetInstance():GetCurrentTime()
   self._moveTimeRange = {10000, 20000}
-  self._moveLen = (Mathf.Random)((self._moveTimeRange)[1], (self._moveTimeRange)[2])
+  self._moveLen = Mathf.Random(self._moveTimeRange[1], self._moveTimeRange[2])
   self._moveChangeDirInternalRange = {10000, 20000}
-  local moveChangeDirInternal = (Mathf.Random)((self._moveChangeDirInternalRange)[1], (self._moveChangeDirInternalRange)[2])
+  local moveChangeDirInternal = Mathf.Random(self._moveChangeDirInternalRange[1], self._moveChangeDirInternalRange[2])
   self._moveChangeDirLenRange = {300, 500}
-  local moveChangeDirLen = (Mathf.Random)((self._moveChangeDirLenRange)[1], (self._moveChangeDirLenRange)[2])
-  self._moveChangeDirRange = {-50, 50, -10, 10, -50, 50}
+  local moveChangeDirLen = Mathf.Random(self._moveChangeDirLenRange[1], self._moveChangeDirLenRange[2])
+  self._moveChangeDirRange = {
+    -50,
+    50,
+    -10,
+    10,
+    -50,
+    50
+  }
   self._moveRefreshFrameCount = 2
   self._idleStartTime = 0
   self._idleTimeRange = {10000, 20000}
-  self._idleLen = (Mathf.Random)((self._idleTimeRange)[1], (self._idleTimeRange)[2])
+  self._idleLen = Mathf.Random(self._idleTimeRange[1], self._idleTimeRange[2])
   self._idleChangeDirInternalRange = {10000, 20000}
-  local idleChangeDirInternal = (Mathf.Random)((self._idleChangeDirInternalRange)[1], (self._idleChangeDirInternalRange)[2])
+  local idleChangeDirInternal = Mathf.Random(self._idleChangeDirInternalRange[1], self._idleChangeDirInternalRange[2])
   self._idleChangeDirLenRange = {500, 1000}
-  local idleChangeDirLen = (Mathf.Random)((self._idleChangeDirLenRange)[1], (self._idleChangeDirLenRange)[2])
-  self._idleChangeDirRange = {-50, 50, -10, 10, -50, 50}
+  local idleChangeDirLen = Mathf.Random(self._idleChangeDirLenRange[1], self._idleChangeDirLenRange[2])
+  self._idleChangeDirRange = {
+    -50,
+    50,
+    -10,
+    10,
+    -50,
+    50
+  }
   self._idleRefreshFrameCount = 5
   self._changeDirLen = moveChangeDirLen
   self._changeDirInternal = moveChangeDirInternal
@@ -83,215 +82,173 @@ HomelandAquariumFishModel.Constructor = function(self, buildTran, id, instanceId
   self._turnRoundTimeRange = {400, 600}
   self._frameCount = 0
   self._targetRefreshFrameCount = self._moveRefreshFrameCount
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1, TimerTriggerCount.Infinite, function()
-    -- function num : 0_0_0 , upvalues : self
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(1, TimerTriggerCount.Infinite, function()
     self:UpdateFish()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquariumFishModel.NotifyFishs = function(self, fishs)
-  -- function num : 0_1
+function HomelandAquariumFishModel:NotifyFishs(fishs)
   self._allFishs = fishs
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquariumFishModel.CalcInitPos = function(self, buildTran)
-  -- function num : 0_2 , upvalues : _ENV
-  local fishingAreaObj = (GameObjectHelper.FindChild)(buildTran, "BirthRoot")
+function HomelandAquariumFishModel:CalcInitPos(buildTran)
+  local fishingAreaObj = GameObjectHelper.FindChild(buildTran, "BirthRoot")
   local pointPosList = {}
   for i = 0, fishingAreaObj.childCount - 1 do
     local childTransform = fishingAreaObj:GetChild(i)
     pointPosList[#pointPosList + 1] = childTransform.localPosition
   end
   local count = #pointPosList
-  local randomIndex = (Mathf.Random)(1, count)
+  local randomIndex = Mathf.Random(1, count)
   local pointPos = pointPosList[randomIndex]
   return pointPos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquariumFishModel.CalcInitDir = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local targetDir = (Vector3((Mathf.Random)(-50, 50) / 10, 0, (Mathf.Random)(-50, 50) / 10)).normalized
+function HomelandAquariumFishModel:CalcInitDir()
+  local targetDir = Vector3(Mathf.Random(-50, 50) / 10, 0, Mathf.Random(-50, 50) / 10).normalized
   local dirX = targetDir.x
   local dirZ = targetDir.z
-  local randomDelta = (Mathf.Random)(-10, 10)
-  local xOrz = (Mathf.Random)(0, 1)
-  if xOrz > 0 then
+  local randomDelta = Mathf.Random(-10, 10)
+  local xOrz = Mathf.Random(0, 1)
+  if 0 < xOrz then
     dirX = dirX + randomDelta
   else
     dirZ = dirZ + randomDelta
   end
-  return (Vector3(dirX, 0, dirZ)).normalized
+  return Vector3(dirX, 0, dirZ).normalized
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquariumFishModel.UpdateFish = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandAquariumFishModel:UpdateFish()
   if self._tweener then
-    return 
+    return
   end
-  local aquariumIsActive = (self._buildAquarium):AquariumIsActive()
+  local aquariumIsActive = self._buildAquarium:AquariumIsActive()
   if not aquariumIsActive then
-    return 
+    return
   end
   if self._frameCount < self._targetRefreshFrameCount then
     self._frameCount = self._frameCount + 1
     self:OnMove()
-    return 
+    return
   end
   self._frameCount = 0
-  do
-    if not self._collider and self._go and self._needInitBoxCollider then
-      local skinnedMeshRender = (GameObjectHelper.FindFirstSkinedMeshRender)(self._go)
-      self._collider = (skinnedMeshRender.gameObject):AddComponent(typeof(UnityEngine.BoxCollider))
-      -- DECOMPILER ERROR at PC43: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._collider).isTrigger = true
+  if not self._collider and self._go and self._needInitBoxCollider then
+    local skinnedMeshRender = GameObjectHelper.FindFirstSkinedMeshRender(self._go)
+    self._collider = skinnedMeshRender.gameObject:AddComponent(typeof(UnityEngine.BoxCollider))
+    self._collider.isTrigger = true
+  end
+  local isTriggerCollider = false
+  self._crashActivityArea = {false, false}
+  local currentTime = GameGlobal:GetInstance():GetCurrentTime()
+  local curDelta = currentTime - self._lastColseColliderTime
+  self._priorityDir = nil
+  if curDelta > self._colseColliderTime and self._collider then
+    local onlyCalcFront = true
+    local curGetBoxPoints = self:GetBoxPoints(self._collider, onlyCalcFront)
+    local crashStone = false
+    local crashFish = false
+    local curGetBoxPointsAll = self:GetBoxPoints(self._collider)
+    for _, pos in ipairs(curGetBoxPointsAll) do
+      if pos.y < self._activityArea[1] then
+        self._crashActivityArea[1] = true
+        isTriggerCollider = true
+        break
+      end
+      if pos.y > self._activityArea[2] then
+        self._crashActivityArea[2] = true
+        isTriggerCollider = true
+        break
+      end
     end
-    local isTriggerCollider = false
-    self._crashActivityArea = {false, false}
-    local currentTime = (GameGlobal:GetInstance()):GetCurrentTime()
-    local curDelta = currentTime - self._lastColseColliderTime
-    self._priorityDir = nil
-    if self._colseColliderTime < curDelta and self._collider then
-      local onlyCalcFront = true
-      local curGetBoxPoints = self:GetBoxPoints(self._collider, onlyCalcFront)
-      local crashStone = false
-      local crashFish = false
-      local curGetBoxPointsAll = self:GetBoxPoints(self._collider)
-      for _,pos in ipairs(curGetBoxPointsAll) do
-        -- DECOMPILER ERROR at PC84: Confused about usage of register: R15 in 'UnsetPending'
-
-        if pos.y < (self._activityArea)[1] then
-          (self._crashActivityArea)[1] = true
-          isTriggerCollider = true
-          break
+    if not isTriggerCollider then
+      for i, boxCollider in ipairs(self._staticColliderList) do
+        for _, pos in ipairs(curGetBoxPoints) do
+          local inRange = false
+          local closestPoint = boxCollider:ClosestPoint(pos)
+          local dir = Vector3.Distance(closestPoint, pos)
+          if dir <= 0 then
+            inRange = true
+          end
+          if not inRange then
+            local curStaticBoxPoints = self._staticColliderVertexList[i]
+            for _, boxPos in ipairs(curStaticBoxPoints) do
+              closestPoint = self._collider:ClosestPoint(boxPos)
+              dir = Vector3.Distance(closestPoint, boxPos)
+              if dir <= 0 then
+                inRange = true
+                break
+              end
+            end
+          end
+          if inRange and self._lastCrashCollider ~= boxCollider then
+            self._priorityDir = self._transform.position - closestPoint
+            self._priorityDir.y = self._priorityDir.y + 0.1
+            isTriggerCollider = true
+            crashStone = true
+            self._lastCrashCollider = boxCollider
+            break
+          end
         end
-        -- DECOMPILER ERROR at PC93: Confused about usage of register: R15 in 'UnsetPending'
-
-        if (self._activityArea)[2] < pos.y then
-          (self._crashActivityArea)[2] = true
-          isTriggerCollider = true
+        if isTriggerCollider then
           break
         end
       end
-      do
-        if not isTriggerCollider then
-          for i,boxCollider in ipairs(self._staticColliderList) do
-            for _,pos in ipairs(curGetBoxPoints) do
-              local inRange = false
-              local closestPoint = boxCollider:ClosestPoint(pos)
-              local dir = (Vector3.Distance)(closestPoint, pos)
-              if dir <= 0 then
-                inRange = true
-              end
-              if not inRange then
-                local curStaticBoxPoints = (self._staticColliderVertexList)[i]
-                for _,boxPos in ipairs(curStaticBoxPoints) do
-                  closestPoint = (self._collider):ClosestPoint(boxPos)
-                  dir = (Vector3.Distance)(closestPoint, boxPos)
-                  if dir <= 0 then
-                    inRange = true
-                    break
-                  end
-                end
-              end
-              do
-                do
-                  if inRange and self._lastCrashCollider ~= boxCollider then
-                    self._priorityDir = (self._transform).position - closestPoint
-                    -- DECOMPILER ERROR at PC158: Confused about usage of register: R23 in 'UnsetPending'
-
-                    ;
-                    (self._priorityDir).y = (self._priorityDir).y + 0.1
-                    isTriggerCollider = true
-                    crashStone = true
-                    self._lastCrashCollider = boxCollider
-                    break
-                  end
-                  -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out DO_STMT
-
-                end
-              end
+    end
+    if self._allFishs and not isTriggerCollider then
+      for i, fish in ipairs(self._allFishs) do
+        if fish ~= self and fish._collider then
+          for _, pos in ipairs(curGetBoxPoints) do
+            local inRange = false
+            local closestPoint = fish._collider:ClosestPoint(pos)
+            local dir = Vector3.Distance(closestPoint, pos)
+            if dir <= 0 then
+              inRange = true
+            end
+            if inRange and self._lastCrashCollider ~= fish._collider then
+              local boxColliderName = fish._collider.transform.name
+              isTriggerCollider = true
+              crashFish = true
+              self._lastCrashCollider = fish._collider
+              break
             end
           end
         end
-        do
-          if (isTriggerCollider or self._allFishs) and not isTriggerCollider then
-            for i,fish in ipairs(self._allFishs) do
-              if fish ~= self and fish._collider then
-                for _,pos in ipairs(curGetBoxPoints) do
-                  local inRange = false
-                  local closestPoint = (fish._collider):ClosestPoint(pos)
-                  local dir = (Vector3.Distance)(closestPoint, pos)
-                  if dir <= 0 then
-                    inRange = true
-                  end
-                  if inRange and self._lastCrashCollider ~= fish._collider then
-                    local boxColliderName = ((fish._collider).transform).name
-                    isTriggerCollider = true
-                    crashFish = true
-                    self._lastCrashCollider = fish._collider
-                    break
-                  end
-                end
-              end
-            end
-          end
-          do
-            if not isTriggerCollider then
-              self._isTriggerCollider = isTriggerCollider
-              if not isTriggerCollider then
-                self._lastCrashCollider = nil
-                self._crashCount = 0
-              else
-                self._crashCount = self._crashCount + 1
-              end
-              self:OnMove()
-            end
-          end
+        if isTriggerCollider then
+          break
         end
       end
     end
   end
+  self._isTriggerCollider = isTriggerCollider
+  if not isTriggerCollider then
+    self._lastCrashCollider = nil
+    self._crashCount = 0
+  else
+    self._crashCount = self._crashCount + 1
+  end
+  self:OnMove()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquariumFishModel.OnMove = function(self)
-  -- function num : 0_5
+function HomelandAquariumFishModel:OnMove()
   if self._fishState == 1 then
     self:CheckMoveToIdle()
-  else
-    if self._fishState == 2 then
-      self:CheckIdleToMove()
-    end
+  elseif self._fishState == 2 then
+    self:CheckIdleToMove()
   end
   self:Move()
   self._needInitBoxCollider = true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquariumFishModel.CheckMoveToIdle = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local currentTime = (GameGlobal:GetInstance()):GetCurrentTime()
+function HomelandAquariumFishModel:CheckMoveToIdle()
+  local currentTime = GameGlobal:GetInstance():GetCurrentTime()
   local curDelta = currentTime - self._moveStartTime
-  if self._moveLen < curDelta then
+  if curDelta > self._moveLen then
     self._fishState = 2
     self._speed = self._idleSpeed
-    self._idleLen = (Mathf.Random)((self._idleTimeRange)[1], (self._idleTimeRange)[2])
+    self._idleLen = Mathf.Random(self._idleTimeRange[1], self._idleTimeRange[2])
     self._idleStartTime = currentTime
-    local idleChangeDirLen = (Mathf.Random)((self._idleChangeDirLenRange)[1], (self._idleChangeDirLenRange)[2])
-    local idleChangeDirInternal = (Mathf.Random)((self._idleChangeDirInternalRange)[1], (self._idleChangeDirInternalRange)[2])
+    local idleChangeDirLen = Mathf.Random(self._idleChangeDirLenRange[1], self._idleChangeDirLenRange[2])
+    local idleChangeDirInternal = Mathf.Random(self._idleChangeDirInternalRange[1], self._idleChangeDirInternalRange[2])
     self._changeDirLen = idleChangeDirLen
     self._changeDirInternal = idleChangeDirInternal
     self._changeDirRange = self._idleChangeDirRange
@@ -299,19 +256,16 @@ HomelandAquariumFishModel.CheckMoveToIdle = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquariumFishModel.CheckIdleToMove = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local currentTime = (GameGlobal:GetInstance()):GetCurrentTime()
+function HomelandAquariumFishModel:CheckIdleToMove()
+  local currentTime = GameGlobal:GetInstance():GetCurrentTime()
   local curDelta = currentTime - self._idleStartTime
-  if self._idleLen < curDelta then
+  if curDelta > self._idleLen then
     self._fishState = 1
     self._speed = self._moveSpeed
-    self._moveLen = (Mathf.Random)((self._moveTimeRange)[1], (self._moveTimeRange)[2])
+    self._moveLen = Mathf.Random(self._moveTimeRange[1], self._moveTimeRange[2])
     self._moveStartTime = currentTime
-    local moveChangeDirLen = (Mathf.Random)((self._moveChangeDirLenRange)[1], (self._moveChangeDirLenRange)[2])
-    local moveChangeDirInternal = (Mathf.Random)((self._moveChangeDirInternalRange)[1], (self._moveChangeDirInternalRange)[2])
+    local moveChangeDirLen = Mathf.Random(self._moveChangeDirLenRange[1], self._moveChangeDirLenRange[2])
+    local moveChangeDirInternal = Mathf.Random(self._moveChangeDirInternalRange[1], self._moveChangeDirInternalRange[2])
     self._changeDirLen = moveChangeDirLen
     self._changeDirInternal = moveChangeDirInternal
     self._changeDirRange = self._moveChangeDirRange
@@ -319,268 +273,220 @@ HomelandAquariumFishModel.CheckIdleToMove = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquariumFishModel.Move = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function HomelandAquariumFishModel:Move()
   if self._tweener then
-    return 
+    return
   end
   if self._isTriggerCollider then
     self:DoTurnRound()
   end
   if self._tweener then
-    return 
+    return
   end
   if self._changingDir then
     self:DoChangeDir()
   else
     self:RandomMoveDir()
   end
-  local nextPos = (self._transform).position + self._dir * self._speed * (UnityEngine.Time).deltaTime
+  local nextPos = self._transform.position + self._dir * self._speed * UnityEngine.Time.deltaTime
   local inFishingArea = self:IsFishInArea(nextPos, self._fishingAreaPointList)
   if inFishingArea and self._collider then
     local onlyCalcFront = true
     local curGetBoxPoints = self:GetBoxPoints(self._collider, onlyCalcFront)
-    for _,pos in ipairs(curGetBoxPoints) do
+    for _, pos in ipairs(curGetBoxPoints) do
       inFishingArea = self:IsFishInArea(pos, self._fishingAreaPointList)
+      if not inFishingArea then
+        break
+      end
     end
   end
-  do
-    if not inFishingArea or not inFishingArea then
-      local currentTime = (GameGlobal:GetInstance()):GetCurrentTime()
-      local curDelta = currentTime - self._lastColseColliderTime
-      if (self._turnRoundTimeRange)[1] < curDelta then
-        self._dir = (self._buildCenter - (self._transform).position).normalized
-        local dirX = (self._dir).x
-        local dirZ = (self._dir).z
-        local dirY = (self._dir).y
-        local randomDelta = (Mathf.Random)(-10, 10)
-        local delta = randomDelta / 10
-        local xOrz = (Mathf.Random)(0, 1)
-        if xOrz > 0 then
-          dirX = dirX + delta
-        else
-          dirZ = dirZ + delta
-        end
-        self._dir = (Vector3(dirX, 0, dirZ)).normalized
-        self._changingDir = false
-        local turnRoundTime = (Mathf.Random)((self._turnRoundTimeRange)[1], (self._turnRoundTimeRange)[2]) / 1000
-        if self._tweener then
-          (self._tweener):Kill()
-        end
-        self._tweener = nil
-        self._tweener = ((self._transform):DORotate(((Quaternion.LookRotation)(self._dir)).eulerAngles, turnRoundTime)):OnComplete(function()
-    -- function num : 0_8_0 , upvalues : self, _ENV
-    self._tweener = nil
-    self._dir = ((self._transform).forward).normalized
-    self._lastChangeDirTime = (GameGlobal:GetInstance()):GetCurrentTime()
-    self._lastColseColliderTime = (GameGlobal:GetInstance()):GetCurrentTime()
-  end
-)
+  if not inFishingArea then
+    local currentTime = GameGlobal:GetInstance():GetCurrentTime()
+    local curDelta = currentTime - self._lastColseColliderTime
+    if curDelta > self._turnRoundTimeRange[1] then
+      self._dir = (self._buildCenter - self._transform.position).normalized
+      local dirX = self._dir.x
+      local dirZ = self._dir.z
+      local dirY = self._dir.y
+      local randomDelta = Mathf.Random(-10, 10)
+      local delta = randomDelta / 10
+      local xOrz = Mathf.Random(0, 1)
+      if 0 < xOrz then
+        dirX = dirX + delta
       else
-        do
-          do
-            -- DECOMPILER ERROR at PC155: Confused about usage of register: R5 in 'UnsetPending'
-
-            if self._dir and self._dir ~= ((self._transform).forward).normalized and self._dir ~= Vector3.zero then
-              (self._transform).rotation = (Quaternion.LookRotation)(self._dir)
-            end
-            -- DECOMPILER ERROR at PC157: Confused about usage of register: R5 in 'UnsetPending'
-
-            ;
-            (self._transform).position = nextPos
-            -- DECOMPILER ERROR at PC178: Confused about usage of register: R3 in 'UnsetPending'
-
-            if self._dir and self._dir ~= ((self._transform).forward).normalized and self._dir ~= Vector3.zero then
-              (self._transform).rotation = (Quaternion.LookRotation)(self._dir)
-            end
-            -- DECOMPILER ERROR at PC180: Confused about usage of register: R3 in 'UnsetPending'
-
-            ;
-            (self._transform).position = nextPos
-            if self._collider then
-              local isTriggerCollider = false
-              local curGetBoxPointsAll = self:GetBoxPoints(self._collider)
-              for _,pos in ipairs(curGetBoxPointsAll) do
-                -- DECOMPILER ERROR at PC198: Confused about usage of register: R10 in 'UnsetPending'
-
-                if pos.y < (self._activityArea)[1] then
-                  (self._crashActivityArea)[1] = true
-                  isTriggerCollider = true
-                  break
-                end
-                -- DECOMPILER ERROR at PC207: Confused about usage of register: R10 in 'UnsetPending'
-
-                if (self._activityArea)[2] < pos.y then
-                  (self._crashActivityArea)[2] = true
-                  isTriggerCollider = true
-                  break
-                end
-              end
-              do
-                if isTriggerCollider then
-                  local onlyX = true
-                  self:DoTurnRound(onlyX)
-                end
-              end
-            end
-          end
-        end
+        dirZ = dirZ + delta
       end
+      self._dir = Vector3(dirX, 0, dirZ).normalized
+      self._changingDir = false
+      local turnRoundTime = Mathf.Random(self._turnRoundTimeRange[1], self._turnRoundTimeRange[2]) / 1000
+      if self._tweener then
+        self._tweener:Kill()
+      end
+      self._tweener = nil
+      self._tweener = self._transform:DORotate(Quaternion.LookRotation(self._dir).eulerAngles, turnRoundTime):OnComplete(function()
+        self._tweener = nil
+        self._dir = self._transform.forward.normalized
+        self._lastChangeDirTime = GameGlobal:GetInstance():GetCurrentTime()
+        self._lastColseColliderTime = GameGlobal:GetInstance():GetCurrentTime()
+      end)
+    else
+      if self._dir and self._dir ~= self._transform.forward.normalized and self._dir ~= Vector3.zero then
+        self._transform.rotation = Quaternion.LookRotation(self._dir)
+      end
+      self._transform.position = nextPos
+    end
+  else
+    if self._dir and self._dir ~= self._transform.forward.normalized and self._dir ~= Vector3.zero then
+      self._transform.rotation = Quaternion.LookRotation(self._dir)
+    end
+    self._transform.position = nextPos
+  end
+  if self._collider then
+    local isTriggerCollider = false
+    local curGetBoxPointsAll = self:GetBoxPoints(self._collider)
+    for _, pos in ipairs(curGetBoxPointsAll) do
+      if pos.y < self._activityArea[1] then
+        self._crashActivityArea[1] = true
+        isTriggerCollider = true
+        break
+      end
+      if pos.y > self._activityArea[2] then
+        self._crashActivityArea[2] = true
+        isTriggerCollider = true
+        break
+      end
+    end
+    if isTriggerCollider then
+      local onlyX = true
+      self:DoTurnRound(onlyX)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquariumFishModel.RandomMoveDir = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local currentTime = (GameGlobal:GetInstance()):GetCurrentTime()
+function HomelandAquariumFishModel:RandomMoveDir()
+  local currentTime = GameGlobal:GetInstance():GetCurrentTime()
   local curDelta = currentTime - self._lastChangeDirTime
-  if self._changeDirInternal < curDelta then
+  if curDelta > self._changeDirInternal then
     self._lastChangeDirTime = currentTime
-    local dirX = (self._dir).x
-    local dirZ = (self._dir).z
-    local dirY = (self._dir).y
-    local delataValueX = (Mathf.Random)((self._changeDirRange)[1], (self._changeDirRange)[2]) / 10
-    local delataValueY = (Mathf.Random)((self._changeDirRange)[3], (self._changeDirRange)[4]) / 10
-    local delataValueZ = (Mathf.Random)((self._changeDirRange)[5], (self._changeDirRange)[6]) / 10
+    local dirX = self._dir.x
+    local dirZ = self._dir.z
+    local dirY = self._dir.y
+    local delataValueX = Mathf.Random(self._changeDirRange[1], self._changeDirRange[2]) / 10
+    local delataValueY = Mathf.Random(self._changeDirRange[3], self._changeDirRange[4]) / 10
+    local delataValueZ = Mathf.Random(self._changeDirRange[5], self._changeDirRange[6]) / 10
     dirX = dirX + delataValueX
     dirY = dirY + delataValueY
     dirZ = dirZ + delataValueZ
-    self._targetDir = (Vector3(dirX, dirY, dirZ)).normalized
+    self._targetDir = Vector3(dirX, dirY, dirZ).normalized
     self._changingDir = true
     self._changeDirStartTime = currentTime
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquariumFishModel.DoTurnRound = function(self, onlyX)
-  -- function num : 0_10 , upvalues : _ENV
+function HomelandAquariumFishModel:DoTurnRound(onlyX)
   if self._tweener then
-    return 
+    return
   end
   self._changingDir = false
-  local newTargetAngles = Vector3(-(self._dir).x, 0, -(self._dir).z)
+  local newTargetAngles = Vector3(-self._dir.x, 0, -self._dir.z)
   if self._priorityDir then
-    newTargetAngles = (self._priorityDir).normalized
-    newTargetAngles = ((Quaternion.LookRotation)(newTargetAngles)).eulerAngles
+    newTargetAngles = self._priorityDir.normalized
+    newTargetAngles = Quaternion.LookRotation(newTargetAngles).eulerAngles
   else
-    local newTargetAnglesX = (Mathf.Random)(-50, 50) / 10
-    newTargetAnglesX = ((self._transform).localEulerAngles).x + newTargetAnglesX
+    local newTargetAnglesX = Mathf.Random(-50, 50) / 10
+    newTargetAnglesX = self._transform.localEulerAngles.x + newTargetAnglesX
     if self._crashCount >= 3 then
-      newTargetAnglesX = (Mathf.Random)(-150, -50) / 10
+      newTargetAnglesX = Mathf.Random(-150, -50) / 10
     end
-    if (self._crashActivityArea)[1] then
-      newTargetAnglesX = (Mathf.Random)(-150, -50) / 10
-    else
-      if (self._crashActivityArea)[2] then
-        newTargetAnglesX = (Mathf.Random)(50, 150) / 10
-      end
+    if self._crashActivityArea[1] then
+      newTargetAnglesX = Mathf.Random(-150, -50) / 10
+    elseif self._crashActivityArea[2] then
+      newTargetAnglesX = Mathf.Random(50, 150) / 10
     end
-    if newTargetAnglesX >= 20 then
+    if 20 <= newTargetAnglesX then
       newTargetAnglesX = 20
     end
     if newTargetAnglesX <= -20 then
       newTargetAnglesX = -20
     end
-    local newTargetAnglesY = ((self._transform).localEulerAngles).y
-    newTargetAngles = Vector3(newTargetAnglesX, newTargetAnglesY, ((self._transform).localEulerAngles).z)
+    local newTargetAnglesY = self._transform.localEulerAngles.y
+    newTargetAngles = Vector3(newTargetAnglesX, newTargetAnglesY, self._transform.localEulerAngles.z)
     if self._crashCount >= 3 and self._lastCrashCollider then
-      local dir = (((self._lastCrashCollider).transform).position - (self._transform).position).normalized
-      newTargetAngles = ((Quaternion.LookRotation)(dir)).eulerAngles
+      local dir = (self._lastCrashCollider.transform.position - self._transform.position).normalized
+      newTargetAngles = Quaternion.LookRotation(dir).eulerAngles
     end
   end
-  do
-    if onlyX then
-      newTargetAngles = Vector3(newTargetAngles.x, ((self._transform).localEulerAngles).y, ((self._transform).localEulerAngles).z)
-    end
-    local turnRoundTime = (Mathf.Random)((self._turnRoundTimeRange)[1], (self._turnRoundTimeRange)[2]) / 1000
-    if self._tweener then
-      (self._tweener):Kill()
-    end
+  if onlyX then
+    newTargetAngles = Vector3(newTargetAngles.x, self._transform.localEulerAngles.y, self._transform.localEulerAngles.z)
+  end
+  local turnRoundTime = Mathf.Random(self._turnRoundTimeRange[1], self._turnRoundTimeRange[2]) / 1000
+  if self._tweener then
+    self._tweener:Kill()
+  end
+  self._tweener = nil
+  self._tweener = self._transform:DORotate(newTargetAngles, turnRoundTime):OnComplete(function()
     self._tweener = nil
-    self._tweener = ((self._transform):DORotate(newTargetAngles, turnRoundTime)):OnComplete(function()
-    -- function num : 0_10_0 , upvalues : self, _ENV
-    self._tweener = nil
-    self._dir = ((self._transform).forward).normalized
-    self._lastChangeDirTime = (GameGlobal:GetInstance()):GetCurrentTime()
-    self._lastColseColliderTime = (GameGlobal:GetInstance()):GetCurrentTime()
-  end
-)
-  end
+    self._dir = self._transform.forward.normalized
+    self._lastChangeDirTime = GameGlobal:GetInstance():GetCurrentTime()
+    self._lastColseColliderTime = GameGlobal:GetInstance():GetCurrentTime()
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquariumFishModel.DoChangeDir = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local dotVal = (Vector3.Angle)(self._dir, self._targetDir)
+function HomelandAquariumFishModel:DoChangeDir()
+  local dotVal = Vector3.Angle(self._dir, self._targetDir)
   if dotVal < 0.01 then
     self._changingDir = false
-    return 
+    return
   end
-  local currentTime = (GameGlobal:GetInstance()):GetCurrentTime()
+  local currentTime = GameGlobal:GetInstance():GetCurrentTime()
   local curDelta = currentTime - self._changeDirStartTime
-  local dirRes = (Vector3.Slerp)(self._dir, self._targetDir, curDelta / self._changeDirLen)
+  local dirRes = Vector3.Slerp(self._dir, self._targetDir, curDelta / self._changeDirLen)
   self._dir = dirRes
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquariumFishModel.Destroy = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function HomelandAquariumFishModel:Destroy()
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
     self._tweener = nil
   end
   self._go = nil
   self._transform = nil
   if self._req then
-    (self._req):Dispose()
+    self._req:Dispose()
   end
   self._req = nil
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self._buildAquarium = nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquariumFishModel.GetFishingAreaPolygon = function(self, buildTran)
-  -- function num : 0_13 , upvalues : _ENV
-  local fishingAreaObj = (GameObjectHelper.FindChild)(buildTran.transform, "AreaRoot")
+function HomelandAquariumFishModel:GetFishingAreaPolygon(buildTran)
+  local fishingAreaObj = GameObjectHelper.FindChild(buildTran.transform, "AreaRoot")
   local areaNode = {}
   for i = 0, fishingAreaObj.childCount - 1 do
     local childTransform = fishingAreaObj:GetChild(i)
     areaNode[#areaNode + 1] = childTransform.position
   end
-  local colliderRoot = (GameObjectHelper.FindChild)(buildTran.transform, "navmesh")
+  local colliderRoot = GameObjectHelper.FindChild(buildTran.transform, "navmesh")
   self._staticColliderList = {}
   self._staticColliderVertexList = {}
   for i = 0, colliderRoot.childCount - 1 do
     local childTransform = colliderRoot:GetChild(i)
     local collider = childTransform:GetComponent(typeof(UnityEngine.BoxCollider))
     if collider then
-      (table.insert)(self._staticColliderList, collider)
+      table.insert(self._staticColliderList, collider)
       local curGetBoxPoints = self:GetBoxPoints(collider)
-      ;
-      (table.insert)(self._staticColliderVertexList, curGetBoxPoints)
+      table.insert(self._staticColliderVertexList, curGetBoxPoints)
     end
   end
   return areaNode
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquariumFishModel.IsFishInArea = function(self, fishPos, areaPointList)
-  -- function num : 0_14 , upvalues : _ENV
+function HomelandAquariumFishModel:IsFishInArea(fishPos, areaPointList)
   if not areaPointList then
-    return 
+    return
   end
   local crossNum = 0
   local areaPointCount = #areaPointList
@@ -592,40 +498,34 @@ HomelandAquariumFishModel.IsFishInArea = function(self, fishPos, areaPointList)
     end
     local v2 = areaPointList[nextIndex]
     if v2 == nil then
-      (Log.fatal)("next index :", nextIndex, " i:", i)
+      Log.fatal("next index :", nextIndex, " i:", i)
     end
-    local underZ = (v1.z <= fishPos.z and fishPos.z < v2.z) or (fishPos.z < v1.z and v2.z <= fishPos.z)
+    local underZ = v1.z <= fishPos.z and v2.z > fishPos.z or v1.z > fishPos.z and v2.z <= fishPos.z
     if underZ then
       local intersectX = v1.x + (fishPos.z - v1.z) / (v2.z - v1.z) * (v2.x - v1.x)
-      if fishPos.x < intersectX then
+      if intersectX > fishPos.x then
         crossNum = crossNum + 1
       end
     end
   end
-  if (crossNum) % 2 == 0 then
+  if crossNum % 2 == 0 then
     return false
   else
     return true
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandAquariumFishModel.GetBoxPoints = function(self, collider, front)
-  -- function num : 0_15 , upvalues : _ENV
+function HomelandAquariumFishModel:GetBoxPoints(collider, front)
   local vertices = {}
-  vertices[1] = (collider.transform):TransformPoint(collider.center + Vector3((collider.size).x, -(collider.size).y, (collider.size).z) * 0.5)
-  vertices[2] = (collider.transform):TransformPoint(collider.center + Vector3(-(collider.size).x, -(collider.size).y, (collider.size).z) * 0.5)
-  vertices[3] = (collider.transform):TransformPoint(collider.center + Vector3(-(collider.size).x, -(collider.size).y, -(collider.size).z) * 0.5)
-  vertices[4] = (collider.transform):TransformPoint(collider.center + Vector3((collider.size).x, -(collider.size).y, -(collider.size).z) * 0.5)
+  vertices[1] = collider.transform:TransformPoint(collider.center + Vector3(collider.size.x, -collider.size.y, collider.size.z) * 0.5)
+  vertices[2] = collider.transform:TransformPoint(collider.center + Vector3(-collider.size.x, -collider.size.y, collider.size.z) * 0.5)
+  vertices[3] = collider.transform:TransformPoint(collider.center + Vector3(-collider.size.x, -collider.size.y, -collider.size.z) * 0.5)
+  vertices[4] = collider.transform:TransformPoint(collider.center + Vector3(collider.size.x, -collider.size.y, -collider.size.z) * 0.5)
   if not front then
-    vertices[5] = (collider.transform):TransformPoint(collider.center + Vector3((collider.size).x, (collider.size).y, (collider.size).z) * 0.5)
-    vertices[6] = (collider.transform):TransformPoint(collider.center + Vector3(-(collider.size).x, (collider.size).y, (collider.size).z) * 0.5)
-    vertices[7] = (collider.transform):TransformPoint(collider.center + Vector3(-(collider.size).x, (collider.size).y, -(collider.size).z) * 0.5)
-    vertices[8] = (collider.transform):TransformPoint(collider.center + Vector3((collider.size).x, (collider.size).y, -(collider.size).z) * 0.5)
+    vertices[5] = collider.transform:TransformPoint(collider.center + Vector3(collider.size.x, collider.size.y, collider.size.z) * 0.5)
+    vertices[6] = collider.transform:TransformPoint(collider.center + Vector3(-collider.size.x, collider.size.y, collider.size.z) * 0.5)
+    vertices[7] = collider.transform:TransformPoint(collider.center + Vector3(-collider.size.x, collider.size.y, -collider.size.z) * 0.5)
+    vertices[8] = collider.transform:TransformPoint(collider.center + Vector3(collider.size.x, collider.size.y, -collider.size.z) * 0.5)
   end
   return vertices
 end
-
-

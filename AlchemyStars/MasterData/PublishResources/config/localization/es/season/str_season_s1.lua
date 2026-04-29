@@ -1,8 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/es/season/str_season_s1.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_season_s1_main_btn_medal = "Quédate a mi lado", str_season_s1_main_btn_collage = "Caja de colección de Eve", str_season_s1_main_btn_exchange = "Taller de Memoria", str_season_s1_main_btn_quest = "Fragmentos de memoria", str_season_s1_main_btn_go = "Entrar sueño", str_season_s1_main_btn_intro = "Información del evento", str_season_s1_main_btn_story = "Resumen", str_season_s1_main_btn_fin = "Ya recogido.", str_season_s1_main_btn_lock = "Exploración terminada", str_season_s1_main_btn_over = "Exploración terminada", str_season_s1_main_time_action = "Tiempo restante en sueño: {1}", str_season_s1_main_time_exchange = "Tiempo restante para canjear en el taller: {1}", str_season_s1_exchange_desc = "¿Te gusta mi vestido nuevo?\n¿Te gustaría ir de compras conmigo la próxima vez?", str_season_s1_exchange_detail = "Vista previa", str_season_s1_exchange_remain = "{1} Restante", str_season_s1_exchange_buy = "Comprar", str_season_s1_exchange_buy_count = "Cantidad", str_season_s1_collection = "Tesoro sin nombre", str_season_s1_cg = "Huella de recuerdos", str_season_s1_music = "Memoria sónica", str_season_s1_soldout = "Vendido", str_season_s1_quest_tab = "Sueño", str_season_s1_quest_tab_with_space = "Sueño", str_season_s1_quest_desc_1 = "Toca los fragmentos recopilados para ver los detalles.", str_season_s1_share_tip = "\"Voy a vivir,\n¡así como a los que me aman!\"", str_season_s1_backtrack_map_list_name = "Despertar en la tormenta", str_season_s1_backtrack_map_list_title = "Rediesel Wrench: Sueño de Eve", str_season_s1_backtrack_map_list_desc = "Los cálidos asentamientos en el desierto caliente, la Residencia, la Calle Tail y Red-Eye Gorge son todas partes importantes de los recuerdos de Eve."}
+local config = {
+  str_season_s1_main_btn_medal = "Quédate a mi lado",
+  str_season_s1_main_btn_collage = "Caja de colección de Eve",
+  str_season_s1_main_btn_exchange = "Taller de Memoria",
+  str_season_s1_main_btn_quest = "Fragmentos de memoria",
+  str_season_s1_main_btn_go = "Entrar sueño",
+  str_season_s1_main_btn_intro = "Información del evento",
+  str_season_s1_main_btn_story = "Resumen",
+  str_season_s1_main_btn_fin = "Ya recogido.",
+  str_season_s1_main_btn_lock = "Exploración terminada",
+  str_season_s1_main_btn_over = "Exploración terminada",
+  str_season_s1_main_time_action = "Tiempo restante en sueño: {1}",
+  str_season_s1_main_time_exchange = "Tiempo restante para canjear en el taller: {1}",
+  str_season_s1_exchange_desc = "¿Te gusta mi vestido nuevo?\n¿Te gustaría ir de compras conmigo la próxima vez?",
+  str_season_s1_exchange_detail = "Vista previa",
+  str_season_s1_exchange_remain = "{1} Restante",
+  str_season_s1_exchange_buy = "Comprar",
+  str_season_s1_exchange_buy_count = "Cantidad",
+  str_season_s1_collection = "Tesoro sin nombre",
+  str_season_s1_cg = "Huella de recuerdos",
+  str_season_s1_music = "Memoria sónica",
+  str_season_s1_soldout = "Vendido",
+  str_season_s1_quest_tab = "Sueño",
+  str_season_s1_quest_tab_with_space = "Sueño",
+  str_season_s1_quest_desc_1 = "Toca los fragmentos recopilados para ver los detalles.",
+  str_season_s1_share_tip = "\"Voy a vivir,\n¡así como a los que me aman!\"",
+  str_season_s1_backtrack_map_list_name = "Despertar en la tormenta",
+  str_season_s1_backtrack_map_list_title = "Rediesel Wrench: Sueño de Eve",
+  str_season_s1_backtrack_map_list_desc = "Los cálidos asentamientos en el desierto caliente, la Residencia, la Calle Tail y Red-Eye Gorge son todas partes importantes de los recuerdos de Eve."
+}
 return config
-

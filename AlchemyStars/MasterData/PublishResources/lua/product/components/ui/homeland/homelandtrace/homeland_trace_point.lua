@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/homelandtrace/homeland_trace_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandTracePoint", Object)
 HomelandTracePoint = HomelandTracePoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandTracePoint.Constructor = function(self, traceItem, info, Index, pet)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandTracePoint:Constructor(traceItem, info, Index, pet)
   self._traceId = traceItem:GetTraceId()
   self._traceItem = traceItem
   self._tracemanager = traceItem:GetManager()
-  self._traceManagerHelper = (self._tracemanager):GetHomelandTraceManagerHelper()
-  self._interactPointManager = (self._tracemanager):GetInteractPointManager()
+  self._traceManagerHelper = self._tracemanager:GetHomelandTraceManagerHelper()
+  self._interactPointManager = self._tracemanager:GetInteractPointManager()
   self._config = info
   self._position = info.position
   self._index = Index
@@ -22,198 +15,133 @@ HomelandTracePoint.Constructor = function(self, traceItem, info, Index, pet)
   self:Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTracePoint.Dispose = function(self)
-  -- function num : 0_1
+function HomelandTracePoint:Dispose()
   self:ClearInteractPoint()
   if self._go then
-    (self._go):Destroy()
+    self._go:Destroy()
   end
   if self._req ~= nil then
-    (self._req):Dispose()
+    self._req:Dispose()
     self._req = nil
   end
   if self._resRequest ~= nil then
-    (self._resRequest):Dispose()
+    self._resRequest:Dispose()
     self._resRequest = nil
   end
   if self._reqEffectObj ~= nil then
-    (self._reqEffectObj):Destroy()
+    self._reqEffectObj:Destroy()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTracePoint.Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._config).obj then
-    self._req = (ResourceManager:GetInstance()):SyncLoadAsset((self._config).obj, LoadType.GameObject)
+function HomelandTracePoint:Init()
+  if self._config.obj then
+    self._req = ResourceManager:GetInstance():SyncLoadAsset(self._config.obj, LoadType.GameObject)
     if not self._req then
-      (Log.error)("找不到模型:", (self._config).obj)
+      Log.error("找不到模型:", self._config.obj)
     end
-    self._go = (self._req).Obj
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    ((self._go).transform).position = self._position
-    ;
-    (self._go):SetActive(true)
-    self._transform = (self._go).transform
+    self._go = self._req.Obj
+    self._go.transform.position = self._position
+    self._go:SetActive(true)
+    self._transform = self._go.transform
   end
   if self._pet then
-    self._transform = (self._pet).transform
+    self._transform = self._pet.transform
   end
-  self._interactPoint = (self._interactPointManager):AddBuildInteractPoint(self, self._index, InteractPointType.TracePoint)
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (self._config).radius then
-    (self._interactPoint).interactDistance = (self._config).radius
+  self._interactPoint = self._interactPointManager:AddBuildInteractPoint(self, self._index, InteractPointType.TracePoint)
+  if self._config.radius then
+    self._interactPoint.interactDistance = self._config.radius
   end
   self:MiniMapEvent()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTracePoint.MiniMapEvent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapAddIcon, self._traceMinimapType, self._index, self._transform, self._config)
-  if (self._config).Minimap == 1 then
+function HomelandTracePoint:MiniMapEvent()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapAddIcon, self._traceMinimapType, self._index, self._transform, self._config)
+  if self._config.Minimap == 1 then
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTracePoint.ClearInteractPoint = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandTracePoint:ClearInteractPoint()
   if self._interactPoint then
-    (self._interactPointManager):RemoveBuildInteractPoint(self._interactPoint)
+    self._interactPointManager:RemoveBuildInteractPoint(self._interactPoint)
   end
   self._interactPoint = nil
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapRemoveIcon, self._traceMinimapType, self._index)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapRemoveIcon, self._traceMinimapType, self._index)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTracePoint.GetIndex = function(self)
-  -- function num : 0_5
+function HomelandTracePoint:GetIndex()
   return self._index
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTracePoint.GetTraceID = function(self)
-  -- function num : 0_6
+function HomelandTracePoint:GetTraceID()
   return self._traceId
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTracePoint.GetPosition = function(self)
-  -- function num : 0_7
+function HomelandTracePoint:GetPosition()
   return self._position
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTracePoint.GetRotation = function(self)
-  -- function num : 0_8
+function HomelandTracePoint:GetRotation()
   return self._rotation
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTracePoint.GetCfg = function(self)
-  -- function num : 0_9
+function HomelandTracePoint:GetCfg()
   return self._config
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTracePoint.OnTrigger = function(self, point)
-  -- function num : 0_10 , upvalues : _ENV
+function HomelandTracePoint:OnTrigger(point)
   if point:GetPointType() ~= InteractPointType.TracePoint then
-    return 
+    return
   end
   if point:GetIndex() ~= self._index then
-    return 
+    return
   end
   if self._go then
-    (self._go):SetActive(false)
+    self._go:SetActive(false)
   end
-  if (self._config).effectObj and (self._config).effectObj ~= "" then
+  if self._config.effectObj and self._config.effectObj ~= "" then
     if self._reqEffectObj == nil then
-      self._resRequest = (ResourceManager:GetInstance()):SyncLoadAsset((self._config).effectObj, LoadType.GameObject)
-      self._reqEffectObj = (self._resRequest).Obj
-      ;
-      ((self._reqEffectObj).transform):SetParent((self._transform).parent)
-      -- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      ((self._reqEffectObj).transform).position = self._position
-      ;
-      (self._reqEffectObj):SetActive(true)
+      self._resRequest = ResourceManager:GetInstance():SyncLoadAsset(self._config.effectObj, LoadType.GameObject)
+      self._reqEffectObj = self._resRequest.Obj
+      self._reqEffectObj.transform:SetParent(self._transform.parent)
+      self._reqEffectObj.transform.position = self._position
+      self._reqEffectObj:SetActive(true)
     else
-      ;
-      (self._reqEffectObj):SetActive(true)
+      self._reqEffectObj:SetActive(true)
     end
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnGetTracePoint, self._index, self._config)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnGetTracePoint, self._index, self._config)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTracePoint.OnLeave = function(self, point)
-  -- function num : 0_11 , upvalues : _ENV
+function HomelandTracePoint:OnLeave(point)
   if point:GetPointType() ~= InteractPointType.TracePoint then
-    return 
+    return
   end
   if point:GetIndex() ~= self._index then
-    return 
+    return
   end
   if self._go then
-    (self._go):SetActive(true)
+    self._go:SetActive(true)
   end
   if self._reqEffectObj ~= nil then
-    (self._reqEffectObj):SetActive(false)
+    self._reqEffectObj:SetActive(false)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnLeaveTracePoint, self._index, self._config)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnLeaveTracePoint, self._index, self._config)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTracePoint.GetInteractPosition = function(self)
-  -- function num : 0_12
+function HomelandTracePoint:GetInteractPosition()
   return self._position
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTracePoint.GetInteractRedStatus = function(self)
-  -- function num : 0_13
+function HomelandTracePoint:GetInteractRedStatus()
   return false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTracePoint.GetInteractAreaPosition = function(self)
-  -- function num : 0_14
+function HomelandTracePoint:GetInteractAreaPosition()
   return self._position
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTracePoint.EnterInteractArea = function(self)
-  -- function num : 0_15
+function HomelandTracePoint:EnterInteractArea()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTracePoint.LeaveInteractArea = function(self)
-  -- function num : 0_16
+function HomelandTracePoint:LeaveInteractArea()
 end
-
-

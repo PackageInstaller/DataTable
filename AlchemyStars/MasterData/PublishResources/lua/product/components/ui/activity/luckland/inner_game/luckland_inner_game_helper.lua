@@ -1,77 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/luckland_inner_game_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LuckLandInnerGameHelper", Singleton)
 LuckLandInnerGameHelper = LuckLandInnerGameHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandInnerGameHelper.Constructor = function(self)
-  -- function num : 0_0
+function LuckLandInnerGameHelper:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.Dispose = function(self)
-  -- function num : 0_1
+function LuckLandInnerGameHelper:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetConfigMng = function()
-  -- function num : 0_2 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetConfigMng()
   return LLConfigMng:GetInstance()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetPetConfigData = function(ID)
-  -- function num : 0_3 , upvalues : _ENV
-  return ((LuckLandInnerGameHelper.GetConfigMng)()):GetPetConfigData(ID)
+function LuckLandInnerGameHelper.GetPetConfigData(ID)
+  return LuckLandInnerGameHelper.GetConfigMng():GetPetConfigData(ID)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetMonsterConfigData = function(ID)
-  -- function num : 0_4 , upvalues : _ENV
-  return ((LuckLandInnerGameHelper.GetConfigMng)()):GetMonsterConfigData(ID)
+function LuckLandInnerGameHelper.GetMonsterConfigData(ID)
+  return LuckLandInnerGameHelper.GetConfigMng():GetMonsterConfigData(ID)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetBuildingConfigData = function(ID)
-  -- function num : 0_5 , upvalues : _ENV
-  return ((LuckLandInnerGameHelper.GetConfigMng)()):GetBuildingConfigData(ID)
+function LuckLandInnerGameHelper.GetBuildingConfigData(ID)
+  return LuckLandInnerGameHelper.GetConfigMng():GetBuildingConfigData(ID)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetLuckLandGameModule = function()
-  -- function num : 0_6 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetLuckLandGameModule()
   return GameGlobal:GetLuckLandModule()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetFightPetData = function()
-  -- function num : 0_7
+function LuckLandInnerGameHelper.GetFightPetData()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetEntityMgr = function()
-  -- function num : 0_8 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetEntityMgr()
   local module = GameGlobal:GetLuckLandModule()
   if module then
     return module:GetEntityMng()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetBackpackPetData = function()
-  -- function num : 0_9 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetBackpackPetData()
   local module = GameGlobal:GetLuckLandModule()
   if module then
     local mgr = module:GetEntityMng()
@@ -79,10 +45,7 @@ LuckLandInnerGameHelper.GetBackpackPetData = function()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetBackpackPetDataByID = function(id)
-  -- function num : 0_10 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetBackpackPetDataByID(id)
   local module = GameGlobal:GetLuckLandModule()
   if module then
     local mgr = module:GetEntityMng()
@@ -90,10 +53,7 @@ LuckLandInnerGameHelper.GetBackpackPetDataByID = function(id)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetBackpackPetsDataByTemplateID = function(templateID)
-  -- function num : 0_11 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetBackpackPetsDataByTemplateID(templateID)
   local module = GameGlobal:GetLuckLandModule()
   if module then
     local mgr = module:GetEntityMng()
@@ -101,10 +61,7 @@ LuckLandInnerGameHelper.GetBackpackPetsDataByTemplateID = function(templateID)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetFightPetsDataByTemplateID = function(templateID)
-  -- function num : 0_12 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetFightPetsDataByTemplateID(templateID)
   local module = GameGlobal:GetLuckLandModule()
   if module then
     local mgr = module:GetEntityMng()
@@ -112,10 +69,7 @@ LuckLandInnerGameHelper.GetFightPetsDataByTemplateID = function(templateID)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetFightMonsterData = function()
-  -- function num : 0_13 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetFightMonsterData()
   local module = GameGlobal:GetLuckLandModule()
   if module then
     local entityMng = module:GetEntityMng()
@@ -123,10 +77,7 @@ LuckLandInnerGameHelper.GetFightMonsterData = function()
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetNextMonster = function()
-  -- function num : 0_14 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetNextMonster()
   local module = GameGlobal:GetLuckLandModule()
   if module then
     local entityMng = module:GetEntityMng()
@@ -134,10 +85,7 @@ LuckLandInnerGameHelper.GetNextMonster = function()
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetLeftMonstersCount = function()
-  -- function num : 0_15 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetLeftMonstersCount()
   local module = GameGlobal:GetLuckLandModule()
   if module then
     local entityMng = module:GetEntityMng()
@@ -145,54 +93,33 @@ LuckLandInnerGameHelper.GetLeftMonstersCount = function()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetBuildingData = function()
-  -- function num : 0_16
+function LuckLandInnerGameHelper.GetBuildingData()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetLuckLandBaseData = function()
-  -- function num : 0_17
+function LuckLandInnerGameHelper.GetLuckLandBaseData()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetCurRoundCount = function()
-  -- function num : 0_18 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetCurRoundCount()
   local module = GameGlobal:GetLuckLandModule()
   return module:GetCurRoundCount()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetRoundRes = function()
-  -- function num : 0_19 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetRoundRes()
   local module = GameGlobal:GetLuckLandModule()
   return module:GetRoundProduction()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetCurHP = function()
-  -- function num : 0_20 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetCurHP()
   local module = GameGlobal:GetLuckLandModule()
   return module:GetCurHP()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetCurMoney = function()
-  -- function num : 0_21 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetCurMoney()
   local module = GameGlobal:GetLuckLandModule()
   return module:GetGold()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.CanCostMoney = function(money)
-  -- function num : 0_22 , upvalues : _ENV
+function LuckLandInnerGameHelper.CanCostMoney(money)
   local module = GameGlobal:GetLuckLandModule()
   if money <= module:GetGold() then
     return true
@@ -201,50 +128,32 @@ LuckLandInnerGameHelper.CanCostMoney = function(money)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.CostMoney = function(money)
-  -- function num : 0_23 , upvalues : _ENV
+function LuckLandInnerGameHelper.CostMoney(money)
   local module = GameGlobal:GetLuckLandModule()
   module:CostGold(money)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.ResetReDrawCount = function()
-  -- function num : 0_24 , upvalues : _ENV
+function LuckLandInnerGameHelper.ResetReDrawCount()
   local module = GameGlobal:GetLuckLandModule()
   module:ResetReDrawCount()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetReDrawCost = function()
-  -- function num : 0_25 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetReDrawCost()
   local module = GameGlobal:GetLuckLandModule()
   return module:GetReDrawCost()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetDeleteCardCost = function()
-  -- function num : 0_26 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetDeleteCardCost()
   local module = GameGlobal:GetLuckLandModule()
   return module:GetDeleteCardCost()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetDelCardCount = function()
-  -- function num : 0_27 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetDelCardCount()
   local module = GameGlobal:GetLuckLandModule()
   return module:GetDelCardCount()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.CheckWord = function(word)
-  -- function num : 0_28 , upvalues : _ENV
+function LuckLandInnerGameHelper.CheckWord(word)
   local module = GameGlobal:GetLuckLandModule()
   local words = module:GetWords()
   if words == nil or #words == 0 then
@@ -259,21 +168,13 @@ LuckLandInnerGameHelper.CheckWord = function(word)
   return false
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetWordIDs = function()
-  -- function num : 0_29 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetWordIDs()
   local module = GameGlobal:GetLuckLandModule()
   local words = module:GetWords()
   return words
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandInnerGameHelper.GetBuildingsData = function()
-  -- function num : 0_30 , upvalues : _ENV
+function LuckLandInnerGameHelper.GetBuildingsData()
   local module = GameGlobal:GetLuckLandModule()
   return module:GetAllBuildings()
 end
-
-

@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_throw_monster_and_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectThrowMonsterAndDamageParam", SkillEffectParamBase)
 SkillEffectThrowMonsterAndDamageParam = SkillEffectThrowMonsterAndDamageParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectThrowMonsterAndDamageParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectThrowMonsterAndDamageParam:Constructor(t)
   self._monsterClassID = t.monsterClassID
   self._basePercent = t.basePercent
   self._addPercent = t.addPercent
   self._formulaID = t.formulaID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectThrowMonsterAndDamageParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectThrowMonsterAndDamageParam:GetEffectType()
   return SkillEffectType.ThrowMonsterAndDamage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectThrowMonsterAndDamageParam.GetMonsterClassID = function(self)
-  -- function num : 0_2
+function SkillEffectThrowMonsterAndDamageParam:GetMonsterClassID()
   return self._monsterClassID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectThrowMonsterAndDamageParam.GetBasePercent = function(self)
-  -- function num : 0_3
+function SkillEffectThrowMonsterAndDamageParam:GetBasePercent()
   return self._basePercent
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectThrowMonsterAndDamageParam.GetAddPercent = function(self)
-  -- function num : 0_4
+function SkillEffectThrowMonsterAndDamageParam:GetAddPercent()
   return self._addPercent
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectThrowMonsterAndDamageParam.GetFormulaID = function(self)
-  -- function num : 0_5
+function SkillEffectThrowMonsterAndDamageParam:GetFormulaID()
   return self._formulaID
 end
-
-

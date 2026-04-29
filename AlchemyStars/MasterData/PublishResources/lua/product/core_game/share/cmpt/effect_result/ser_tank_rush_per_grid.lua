@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_tank_rush_per_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_TankRushPerGrid", SkillEffectResultBase)
 SkillEffectResult_TankRushPerGrid = SkillEffectResult_TankRushPerGrid
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_TankRushPerGrid.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectResult_TankRushPerGrid:GetEffectType()
   return SkillEffectType.TankRushPerGrid
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_TankRushPerGrid.Constructor = function(self, walkResArray, damageResultArray, hitbackResultArray, isCasterDead)
-  -- function num : 0_1
+function SkillEffectResult_TankRushPerGrid:Constructor(walkResArray, damageResultArray, hitbackResultArray, isCasterDead)
   self._walkResArray = walkResArray
   self._damageResultArray = damageResultArray
   self._hitbackResultArray = hitbackResultArray
   self._isCasterDead = isCasterDead
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_TankRushPerGrid.GetWalkResArray = function(self)
-  -- function num : 0_2
+function SkillEffectResult_TankRushPerGrid:GetWalkResArray()
   return self._walkResArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_TankRushPerGrid.GetDamageResultArray = function(self)
-  -- function num : 0_3
+function SkillEffectResult_TankRushPerGrid:GetDamageResultArray()
   return self._damageResultArray
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_TankRushPerGrid.GetHitBackResultArray = function(self)
-  -- function num : 0_4
+function SkillEffectResult_TankRushPerGrid:GetHitBackResultArray()
   return self._hitbackResultArray
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_TankRushPerGrid.IsCasterDead = function(self)
-  -- function num : 0_5
+function SkillEffectResult_TankRushPerGrid:IsCasterDead()
   return self._isCasterDead
 end
-
-

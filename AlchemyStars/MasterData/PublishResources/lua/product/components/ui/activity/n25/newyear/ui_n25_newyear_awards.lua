@@ -1,71 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/newyear/ui_n25_newyear_awards.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25NewYearAwards", UIController)
 UIN25NewYearAwards = UIN25NewYearAwards
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25NewYearAwards.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIN25NewYearAwards:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25NewYearAwards.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN25NewYearAwards:OnShow(uiParams)
   local data = uiParams[1]
   self._awards = {}
-  for _,TimeRewardInfo in pairs(data) do
-    for _,reward in pairs(TimeRewardInfo.rewards) do
-      (table.insert)(self._awards, reward)
+  for _, TimeRewardInfo in pairs(data) do
+    for _, reward in pairs(TimeRewardInfo.rewards) do
+      table.insert(self._awards, reward)
     end
   end
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25NewYearAwards._GetComponents = function(self)
-  -- function num : 0_2
+function UIN25NewYearAwards:_GetComponents()
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._itemTips = self:GetUIComponent("UISelectObjectPath", "ItemTips")
-  self._tips = (self._itemTips):SpawnObject("UIN25NewYearItemTips")
-  self._animation = ((self.view).gameObject):GetComponent("Animation")
+  self._tips = self._itemTips:SpawnObject("UIN25NewYearItemTips")
+  self._animation = self.view.gameObject:GetComponent("Animation")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25NewYearAwards._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local count = (table.count)(self._awards)
-  ;
-  (self._content):SpawnObjects("UIN25NewYearAwardItem", count)
-  local widgets = (self._content):GetAllSpawnList()
-  for index,widget in ipairs(widgets) do
-    widget:SetData((self._awards)[index], function(roleAsset, position)
-    -- function num : 0_3_0 , upvalues : self
-    self:_ShowTips(roleAsset, position)
-  end
-, true)
+function UIN25NewYearAwards:_OnValue()
+  local count = table.count(self._awards)
+  self._content:SpawnObjects("UIN25NewYearAwardItem", count)
+  local widgets = self._content:GetAllSpawnList()
+  for index, widget in ipairs(widgets) do
+    widget:SetData(self._awards[index], function(roleAsset, position)
+      self:_ShowTips(roleAsset, position)
+    end, true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25NewYearAwards.BackgroundBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIN25NewYearAwards:BackgroundBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25NewYearAwards._ShowTips = function(self, roleAsset, position)
-  -- function num : 0_5
-  (self._tips):SetData(roleAsset, position)
+function UIN25NewYearAwards:_ShowTips(roleAsset, position)
+  self._tips:SetData(roleAsset, position)
 end
-
-

@@ -1,36 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_cross_row_col_move_block.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_CrossRowColMoveBlock", SkillScopeCalculator_Base)
 SkillScopeCalculator_CrossRowColMoveBlock = SkillScopeCalculator_CrossRowColMoveBlock
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_CrossRowColMoveBlock.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_CrossRowColMoveBlock:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local size = scopeParam[1]
   local useTeleport = scopeParam[2] or 0
   local target_area_grid = {}
-  for i,p in ipairs(bodyArea) do
-    (table.insert)(target_area_grid, Vector2(centerPos.x + p.x, centerPos.y + p.y))
+  for i, p in ipairs(bodyArea) do
+    table.insert(target_area_grid, Vector2(centerPos.x + p.x, centerPos.y + p.y))
   end
-  local world = (self._gridFilter)._world
-  local blockGridTrapPosList = (self._gridFilter):GetBlockGridTrapPosList()
-  local blockMovePosList = (self._gridFilter):GetBlockMovePosList()
-  local teamLeader = (world:Player()):GetCurrentTeamEntity()
+  local world = self._gridFilter._world
+  local blockGridTrapPosList = self._gridFilter:GetBlockGridTrapPosList()
+  local blockMovePosList = self._gridFilter:GetBlockMovePosList()
+  local teamLeader = world:Player():GetCurrentTeamEntity()
   local teamPos = teamLeader:GetGridPosition()
-  ;
-  (table.removev)(blockMovePosList, teamPos)
+  table.removev(blockMovePosList, teamPos)
   local blocks = {}
-  ;
-  (table.appendArray)(blocks, blockGridTrapPosList)
-  ;
-  (table.appendArray)(blocks, blockMovePosList)
+  table.appendArray(blocks, blockGridTrapPosList)
+  table.appendArray(blocks, blockMovePosList)
   local cross_area = {}
   local wholeArea = {}
-  for i,p in ipairs(target_area_grid) do
+  for i, p in ipairs(target_area_grid) do
     local center_x = p.x
     local center_y = p.y
     local upBlocked = false
@@ -43,7 +33,7 @@ SkillScopeCalculator_CrossRowColMoveBlock.CalcRange = function(self, scopeType, 
       local leftPos = Vector2(center_x - index, center_y)
       local rightPos = Vector2(center_x + index, center_y)
       if not upBlocked then
-        if not (table.icontains)(blocks, upPos) then
+        if not table.icontains(blocks, upPos) then
           self:_InsertTargetGrid(cross_area, upPos, wholeArea)
         else
           upBlocked = true
@@ -53,7 +43,7 @@ SkillScopeCalculator_CrossRowColMoveBlock.CalcRange = function(self, scopeType, 
         self:_InsertTargetGridIntoOneArea(upPos, wholeArea)
       end
       if not downBlocked then
-        if not (table.icontains)(blocks, downPos) then
+        if not table.icontains(blocks, downPos) then
           self:_InsertTargetGrid(cross_area, downPos, wholeArea)
         else
           downBlocked = true
@@ -63,7 +53,7 @@ SkillScopeCalculator_CrossRowColMoveBlock.CalcRange = function(self, scopeType, 
         self:_InsertTargetGridIntoOneArea(downPos, wholeArea)
       end
       if not leftBlocked then
-        if not (table.icontains)(blocks, leftPos) then
+        if not table.icontains(blocks, leftPos) then
           self:_InsertTargetGrid(cross_area, leftPos, wholeArea)
         else
           leftBlocked = true
@@ -73,7 +63,7 @@ SkillScopeCalculator_CrossRowColMoveBlock.CalcRange = function(self, scopeType, 
         self:_InsertTargetGridIntoOneArea(leftPos, wholeArea)
       end
       if not rightBlocked then
-        if not (table.icontains)(blocks, rightPos) then
+        if not table.icontains(blocks, rightPos) then
           self:_InsertTargetGrid(cross_area, rightPos, wholeArea)
         else
           rightBlocked = true
@@ -84,65 +74,51 @@ SkillScopeCalculator_CrossRowColMoveBlock.CalcRange = function(self, scopeType, 
       end
     end
   end
-  ;
-  (table.insert)(cross_area, centerPos)
-  ;
-  (table.insert)(wholeArea, centerPos)
-  do
-    if useTeleport == 0 then
-      local useTeleportResult = SkillScopeResult:New(SkillScopeType.CrossRowColMoveBlock, centerPos, cross_area, wholeArea)
-      return useTeleportResult
+  table.insert(cross_area, centerPos)
+  table.insert(wholeArea, centerPos)
+  if useTeleport == 0 then
+    local useTeleportResult = SkillScopeResult:New(SkillScopeType.CrossRowColMoveBlock, centerPos, cross_area, wholeArea)
+    return useTeleportResult
+  end
+  local result
+  if table.intable(cross_area, teamPos) then
+    table.removev(cross_area, teamPos)
+    local nearestPos = centerPos
+    for _, pos in ipairs(cross_area) do
+      local lastPosToTargetPosDistance = Vector2.Distance(nearestPos, teamPos)
+      local curPosToTargetPosDistance = Vector2.Distance(pos, teamPos)
+      if lastPosToTargetPosDistance > curPosToTargetPosDistance then
+        nearestPos = pos
+      end
     end
-    local result = nil
-    if (table.intable)(cross_area, teamPos) then
-      (table.removev)(cross_area, teamPos)
-      local nearestPos = centerPos
-      for _,pos in ipairs(cross_area) do
-        local lastPosToTargetPosDistance = (Vector2.Distance)(nearestPos, teamPos)
-        local curPosToTargetPosDistance = (Vector2.Distance)(pos, teamPos)
-        if curPosToTargetPosDistance < lastPosToTargetPosDistance then
+    result = SkillScopeResult:New(SkillScopeType.CrossRowColMoveBlock, centerPos, {nearestPos}, {nearestPos})
+  else
+    local rowOrColPos
+    local targetMovePosList = {}
+    for _, pos in ipairs(cross_area) do
+      if pos.x == teamPos.x or pos.y == teamPos.y then
+        table.insert(targetMovePosList, pos)
+      end
+    end
+    local nearestPos = Vector2(99, 99)
+    if 0 < table.count(targetMovePosList) then
+      for _, pos in ipairs(targetMovePosList) do
+        local lastPosToTargetPosDistance = Vector2.Distance(nearestPos, teamPos)
+        local curPosToTargetPosDistance = Vector2.Distance(pos, teamPos)
+        if lastPosToTargetPosDistance > curPosToTargetPosDistance then
           nearestPos = pos
         end
       end
-      result = SkillScopeResult:New(SkillScopeType.CrossRowColMoveBlock, centerPos, {nearestPos}, {nearestPos})
     else
-      do
-        local rowOrColPos = nil
-        local targetMovePosList = {}
-        for _,pos in ipairs(cross_area) do
-          if pos.x == teamPos.x or pos.y == teamPos.y then
-            (table.insert)(targetMovePosList, pos)
-          end
-        end
-        local nearestPos = Vector2(99, 99)
-        if (table.count)(targetMovePosList) > 0 then
-          for _,pos in ipairs(targetMovePosList) do
-            local lastPosToTargetPosDistance = (Vector2.Distance)(nearestPos, teamPos)
-            local curPosToTargetPosDistance = (Vector2.Distance)(pos, teamPos)
-            if curPosToTargetPosDistance < lastPosToTargetPosDistance then
-              nearestPos = pos
-            end
-          end
-        else
-          do
-            for _,pos in ipairs(cross_area) do
-              local lastPosToTargetPosDistance = (Vector2.Distance)(nearestPos, teamPos)
-              local curPosToTargetPosDistance = (Vector2.Distance)(pos, teamPos)
-              if curPosToTargetPosDistance < lastPosToTargetPosDistance then
-                nearestPos = pos
-              end
-            end
-            do
-              do
-                result = SkillScopeResult:New(SkillScopeType.CrossRowColMoveBlock, centerPos, {nearestPos}, {nearestPos})
-                return result
-              end
-            end
-          end
+      for _, pos in ipairs(cross_area) do
+        local lastPosToTargetPosDistance = Vector2.Distance(nearestPos, teamPos)
+        local curPosToTargetPosDistance = Vector2.Distance(pos, teamPos)
+        if lastPosToTargetPosDistance > curPosToTargetPosDistance then
+          nearestPos = pos
         end
       end
     end
+    result = SkillScopeResult:New(SkillScopeType.CrossRowColMoveBlock, centerPos, {nearestPos}, {nearestPos})
   end
+  return result
 end
-
-

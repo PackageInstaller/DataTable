@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n16/subject/main/ui_n16_subject_normal_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN16SubjectNormalDetailController", UIController)
 UIN16SubjectNormalDetailController = UIN16SubjectNormalDetailController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN16SubjectNormalDetailController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN16SubjectNormalDetailController:OnShow(uiParams)
   self._levelData = uiParams[1]
   self._tittleLabel = self:GetUIComponent("UILocalizedTMP", "Tittle")
   self._tittleBgLabel = self:GetUIComponent("UILocalizationText", "TitleBg")
@@ -27,98 +20,100 @@ UIN16SubjectNormalDetailController.OnShow = function(self, uiParams)
   self._normalTittleLabel = self:GetUIComponent("UILocalizationText", "NormalTitle")
   self._middleTittleLabel = self:GetUIComponent("UILocalizationText", "MiddleTitle")
   self._hardTittleLabel = self:GetUIComponent("UILocalizationText", "HardTitle")
-  self._gradeSelectedArr = {[1] = self._normalSelected, [2] = self._middleSelected, [3] = self._hardSelected}
-  self._gradeCompletedArr = {[1] = self._normalComplete, [2] = self._middleComplete, [3] = self._hardComplete}
-  self._gradeBtnArr = {[1] = self._normalBtnGo, [2] = self._middleBtnGo, [3] = self._hardBtnGo}
-  self._gradeTitleArr = {[1] = self._normalTittleLabel, [2] = self._middleTittleLabel, [3] = self._hardTittleLabel}
+  self._gradeSelectedArr = {
+    [1] = self._normalSelected,
+    [2] = self._middleSelected,
+    [3] = self._hardSelected
+  }
+  self._gradeCompletedArr = {
+    [1] = self._normalComplete,
+    [2] = self._middleComplete,
+    [3] = self._hardComplete
+  }
+  self._gradeBtnArr = {
+    [1] = self._normalBtnGo,
+    [2] = self._middleBtnGo,
+    [3] = self._hardBtnGo
+  }
+  self._gradeTitleArr = {
+    [1] = self._normalTittleLabel,
+    [2] = self._middleTittleLabel,
+    [3] = self._hardTittleLabel
+  }
   local s = self:GetUIComponent("UISelectObjectPath", "itemTips")
   self._tips = s:SpawnObject("UISelectInfo")
   self._currentGrade = nil
   self:AttachEvent(GameEventType.OnN16SubjectRewardItemClicked, self.ShowTips)
-  local gradeDatas = (self._levelData):GetLevelGradeList()
-  for k,v in pairs(self._gradeBtnArr) do
+  local gradeDatas = self._levelData:GetLevelGradeList()
+  for k, v in pairs(self._gradeBtnArr) do
     v:SetActive(false)
   end
-  for k,v in pairs(self._gradeCompletedArr) do
+  for k, v in pairs(self._gradeCompletedArr) do
     v:SetActive(false)
   end
-  for k,v in pairs(self._gradeSelectedArr) do
+  for k, v in pairs(self._gradeSelectedArr) do
     v:SetActive(false)
   end
   for i = 1, #gradeDatas do
     local grade = gradeDatas[i]
-    if (self._gradeBtnArr)[grade] then
-      ((self._gradeBtnArr)[grade]):SetActive(true)
+    if self._gradeBtnArr[grade] then
+      self._gradeBtnArr[grade]:SetActive(true)
     end
-    if (self._gradeTitleArr)[grade] then
-      ((self._gradeTitleArr)[grade]):SetText((StringTable.Get)("str_activity_n16_normal_level_detail_btn_grade" .. grade))
+    if self._gradeTitleArr[grade] then
+      self._gradeTitleArr[grade]:SetText(StringTable.Get("str_activity_n16_normal_level_detail_btn_grade" .. grade))
     end
-    local gradeData = (self._levelData):GetLeveGrade(grade)
-    if gradeData and (self._gradeCompletedArr)[grade] then
-      ((self._gradeCompletedArr)[grade]):SetActive(gradeData:GetHasComplete())
+    local gradeData = self._levelData:GetLeveGrade(grade)
+    if gradeData and self._gradeCompletedArr[grade] then
+      self._gradeCompletedArr[grade]:SetActive(gradeData:GetHasComplete())
     end
   end
-  if gradeDatas and #gradeDatas > 0 then
+  if gradeDatas and 0 < #gradeDatas then
     self:SelectGrade(gradeDatas[1], true)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjectNormalDetailController.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN16SubjectNormalDetailController:OnHide()
   self._mat = nil
   self:DetachEvent(GameEventType.OnN16SubjectRewardItemClicked, self.ShowTips)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjectNormalDetailController.ShowTips = function(self, itemId, pos)
-  -- function num : 0_2
-  (self._tips):SetData(itemId, pos)
+function UIN16SubjectNormalDetailController:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjectNormalDetailController.SelectGrade = function(self, grade, isInit)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN16SubjectNormalDetailController:SelectGrade(grade, isInit)
   if self._currentGrade == grade then
-    return 
+    return
   end
   if not self._levelData then
-    return 
+    return
   end
-  local gradeData = (self._levelData):GetLeveGrade(grade)
+  local gradeData = self._levelData:GetLeveGrade(grade)
   if not gradeData then
-    return 
+    return
   end
-  local refreshUI = function()
-    -- function num : 0_3_0 , upvalues : self, grade, gradeData, _ENV
+  
+  local function refreshUI()
     self._currentGrade = grade
-    ;
-    (self._desLabel):SetText(gradeData:GetDes())
-    for k,v in pairs(self._gradeSelectedArr) do
+    self._desLabel:SetText(gradeData:GetDes())
+    for k, v in pairs(self._gradeSelectedArr) do
       v:SetActive(k == self._currentGrade)
     end
-    ;
-    (self._hasGetPanel):SetActive(gradeData:GetHasComplete())
+    self._hasGetPanel:SetActive(gradeData:GetHasComplete())
     local rewards = gradeData:GetRewards()
     self._rewardsLoader = self:GetUIComponent("UISelectObjectPath", "Rewards")
-    ;
-    (self._rewardsLoader):SpawnObjects("UIN16SubjectRewardItem", #rewards)
-    local items = (self._rewardsLoader):GetAllSpawnList()
+    self._rewardsLoader:SpawnObjects("UIN16SubjectRewardItem", #rewards)
+    local items = self._rewardsLoader:GetAllSpawnList()
     for i = 1, #items do
-      (items[i]):Refresh(rewards[i], gradeData:GetHasComplete())
+      items[i]:Refresh(rewards[i], gradeData:GetHasComplete())
     end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
   end
-
+  
   if isInit then
     refreshUI()
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_3_1 , upvalues : self, _ENV, refreshUI
     self:Lock("UIN16SubjectNormalDetailController_SelectGrade")
     local anim = self:GetUIComponent("Animation", "Anim")
     anim:Play("uieff_Subject_Switch_fade")
@@ -126,60 +121,38 @@ UIN16SubjectNormalDetailController.SelectGrade = function(self, grade, isInit)
     anim:Play("uieff_Subject_Switch")
     refreshUI()
     self:UnLock("UIN16SubjectNormalDetailController_SelectGrade")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjectNormalDetailController.NoramlBtnOnClick = function(self)
-  -- function num : 0_4
+function UIN16SubjectNormalDetailController:NoramlBtnOnClick()
   self:SelectGrade(1)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjectNormalDetailController.MiddleBtnOnClick = function(self)
-  -- function num : 0_5
+function UIN16SubjectNormalDetailController:MiddleBtnOnClick()
   self:SelectGrade(2)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjectNormalDetailController.HardBtnOnClick = function(self)
-  -- function num : 0_6
+function UIN16SubjectNormalDetailController:HardBtnOnClick()
   self:SelectGrade(3)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjectNormalDetailController.MaskOnClick = function(self)
-  -- function num : 0_7
+function UIN16SubjectNormalDetailController:MaskOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjectNormalDetailController.BtnStartTestOnClick = function(self)
-  -- function num : 0_8
-  local grade = (self._levelData):GetLeveGrade(self._currentGrade)
-  self:ShowDialog("UIN16AnswerController", grade, (self._levelData):GetLeveGrade(self._currentGrade))
+function UIN16SubjectNormalDetailController:BtnStartTestOnClick()
+  local grade = self._levelData:GetLeveGrade(self._currentGrade)
+  self:ShowDialog("UIN16AnswerController", grade, self._levelData:GetLeveGrade(self._currentGrade))
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjectNormalDetailController.SetFontMat = function(self, lable, resname)
-  -- function num : 0_9 , upvalues : _ENV
-  self._mat = (ResourceManager:GetInstance()):SyncLoadAsset(resname, LoadType.Mat)
+function UIN16SubjectNormalDetailController:SetFontMat(lable, resname)
+  self._mat = ResourceManager:GetInstance():SyncLoadAsset(resname, LoadType.Mat)
   if not self._mat then
-    return 
+    return
   end
-  local obj = (self._mat).Obj
+  local obj = self._mat.Obj
   local mat = lable.fontMaterial
   lable.fontMaterial = obj
-  ;
-  (lable.fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  lable.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
-
-

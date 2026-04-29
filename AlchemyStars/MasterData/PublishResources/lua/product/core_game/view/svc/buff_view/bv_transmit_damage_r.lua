@@ -1,65 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_transmit_damage_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewTransmitDamage", BuffViewBase)
 BuffViewTransmitDamage = BuffViewTransmitDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewTransmitDamage.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewTransmitDamage:PlayView(TT)
   local result = self._buffResult
   local targetIDList = result:GetDefenderIDs()
   local damageInfoList = result:GetDamageInfos()
   if not targetIDList or not damageInfoList then
-    return 
+    return
   end
-  if (table.count)(targetIDList) ~= (table.count)(damageInfoList) then
-    return 
+  if table.count(targetIDList) ~= table.count(damageInfoList) then
+    return
   end
-  local viewParams = ((self._viewInstance):BuffConfigData()):GetViewParams()
+  local viewParams = self._viewInstance:BuffConfigData():GetViewParams()
   local hitEffectID = 0
   if viewParams then
     hitEffectID = viewParams.HitEffectId
   end
   for i = 1, #targetIDList do
-    local targetEntity = (self._world):GetEntityByID(targetIDList[i])
+    local targetEntity = self._world:GetEntityByID(targetIDList[i])
     local damageInfo = damageInfoList[i]
     local damageType = damageInfo:GetDamageType()
     local targetDamage = damageInfo:GetDamageValue()
-    if hitEffectID > 0 then
-      local effectEntity = ((self._world):GetService("Effect")):CreateBeHitEffect(hitEffectID, targetEntity)
+    if 0 < hitEffectID then
+      local effectEntity = self._world:GetService("Effect"):CreateBeHitEffect(hitEffectID, targetEntity)
       YIELD(TT)
-      local view = (self._entity):View()
+      local view = self._entity:View()
       if view then
-        local tran = (view:GetGameObject()).transform
+        local tran = view:GetGameObject().transform
         local castPos = tran.position
-        local targetPos = (targetEntity:Location()).Position
+        local targetPos = targetEntity:Location().Position
         local dir = targetPos - castPos
-        -- DECOMPILER ERROR at PC78: Confused about usage of register: R21 in 'UnsetPending'
-
         if effectEntity:View() then
-          (((effectEntity:View()):GetGameObject()).transform).forward = dir
+          effectEntity:View():GetGameObject().transform.forward = dir
         end
       end
     end
-    do
-      damageInfo:SetShowType(DamageShowType.Single)
-      do
-        local svc = (self._world):GetService("PlayDamage")
-        svc:AsyncUpdateHPAndDisplayDamage(targetEntity, damageInfo)
-        -- DECOMPILER ERROR at PC91: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    damageInfo:SetShowType(DamageShowType.Single)
+    local svc = self._world:GetService("PlayDamage")
+    svc:AsyncUpdateHPAndDisplayDamage(targetEntity, damageInfo)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewTransmitDamage.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewTransmitDamage:IsNotifyMatch(notify)
   local result = self._buffResult
   if result:GetOriginalAttackerID() ~= notify:GetDamageSrcEntityID() then
     return false
@@ -73,5 +55,3 @@ BuffViewTransmitDamage.IsNotifyMatch = function(self, notify)
   end
   return true
 end
-
-

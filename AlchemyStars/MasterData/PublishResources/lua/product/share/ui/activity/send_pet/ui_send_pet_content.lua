@@ -1,96 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/send_pet/ui_send_pet_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UISendPetContent", UISideEnterCenterContentBase)
 UISendPetContent = UISendPetContent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISendPetContent.DoInit = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISendPetContent:DoInit()
   self:GetComponents()
   self._campaign = self._data
-  self._sample = (self._campaign):GetSample()
+  self._sample = self._campaign:GetSample()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.CreateData = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local localProcess = (self._campaign):GetLocalProcess()
+function UISendPetContent:CreateData()
+  local localProcess = self._campaign:GetLocalProcess()
   self._questCom = localProcess:GetComponent(ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_QUEST)
   self._questComInfo = localProcess:GetComponentInfo(ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_QUEST)
   self._progressInfo = localProcess:GetComponentInfo(ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_PERSON_PROCESS)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.DoShow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._campaign):CheckCampaignNew() then
+function UISendPetContent:DoShow()
+  if self._campaign:CheckCampaignNew() then
     self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
+      self._campaign:ClearCampaignNew(TT)
+    end)
   end
   self._cruProcess = 0
   self._totalProcess = 0
   self._totalWidth = 0
-  ;
-  ((UIEventTriggerListener.Get)(self._questBtn)).onDown = function(go)
-    -- function num : 0_2_1 , upvalues : self
+  UIEventTriggerListener.Get(self._questBtn).onDown = function(go)
     self:QuestBtnOnPressed()
   end
-
-  ;
-  ((UIEventTriggerListener.Get)(self._questBtn)).onUp = function(go)
-    -- function num : 0_2_2 , upvalues : self
+  UIEventTriggerListener.Get(self._questBtn).onUp = function(go)
     self:QuestBtnOnReleased()
   end
-
   self:OnRefresh()
   self:Attach()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.DoHide = function(self)
-  -- function num : 0_3
+function UISendPetContent:DoHide()
   self:Detach()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.DoDestroy = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISendPetContent:DoDestroy()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
   self:Detach()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.Attach = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISendPetContent:Attach()
   self:AttachEvent(GameEventType.OnSendPetCardQuestGet, self.OnRefresh)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.Detach = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISendPetContent:Detach()
   self:DetachEvent(GameEventType.OnSendPetCardQuestGet, self.OnRefresh)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.GetComponents = function(self)
-  -- function num : 0_7
+function UISendPetContent:GetComponents()
   self._awardPools = self:GetUIComponent("UISelectObjectPath", "progressPool")
   self._awardPools_rect = self:GetUIComponent("RectTransform", "progressPool")
   self._bigPool = self:GetUIComponent("UISelectObjectPath", "bigProgressPool")
@@ -108,10 +72,7 @@ UISendPetContent.GetComponents = function(self)
   self._questImage = self:GetUIComponent("Image", "QuestBtn")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.OnRefresh = function(self)
-  -- function num : 0_8
+function UISendPetContent:OnRefresh()
   self:CreateData()
   self:ShowAwards()
   self:ShowPets()
@@ -119,113 +80,76 @@ UISendPetContent.OnRefresh = function(self)
   self:ShowQuestRed()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.ShowQuestRed = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UISendPetContent:ShowQuestRed()
   local color = "#000000"
-  local str = (UIActivityHelper.GetColorText)(color, (StringTable.Get)("str_common_mission"))
-  ;
-  (self._questTxt):SetText(str)
-  local questList = (self._questComInfo).m_accept_cam_quest_list
-  for _,questId in pairs(questList) do
+  local str = UIActivityHelper.GetColorText(color, StringTable.Get("str_common_mission"))
+  self._questTxt:SetText(str)
+  local questList = self._questComInfo.m_accept_cam_quest_list
+  for _, questId in pairs(questList) do
     local questInfo = self:GetQuestInfo(questId)
     if questInfo.status == QuestStatus.QUEST_Completed then
-      (self._questRedGO):SetActive(true)
-      return 
+      self._questRedGO:SetActive(true)
+      return
     end
   end
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._questImage).sprite = (self:GetAsset("SendCard.spriteatlas", LoadType.SpriteAtlas)):GetSprite("cn15_glzx_btn01")
-  ;
-  (self._questRedGO):SetActive(false)
+  self._questImage.sprite = self:GetAsset("SendCard.spriteatlas", LoadType.SpriteAtlas):GetSprite("cn15_glzx_btn01")
+  self._questRedGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.GetQuestInfo = function(self, id)
-  -- function num : 0_10 , upvalues : _ENV
+function UISendPetContent:GetQuestInfo(id)
   local questModule = self:GetModule(QuestModule)
-  return (questModule:GetQuest(id)):QuestInfo()
+  return questModule:GetQuest(id):QuestInfo()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.ShowTimer = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISendPetContent:ShowTimer()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
-  self._timer = ((GameGlobal.Timer)()):AddEventTimes(0, TimerTriggerCount.Infinite, function()
-    -- function num : 0_11_0 , upvalues : self
+  self._timer = GameGlobal.Timer():AddEventTimes(0, TimerTriggerCount.Infinite, function()
     self:ShowTimeTex()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.ShowTimeTex = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local endTime = (self._sample).end_time
-  local nowTime = (math.ceil)((self._svrTimeModule):GetServerTime() * 0.001)
+function UISendPetContent:ShowTimeTex()
+  local endTime = self._sample.end_time
+  local nowTime = math.ceil(self._svrTimeModule:GetServerTime() * 0.001)
   local sec = endTime - nowTime
-  if sec >= 0 then
-    local secStr = (HelperProxy:GetInstance()):Time2Tex(sec)
-    ;
-    (self._lessTime):SetText((StringTable.Get)("str_n_plus_six_time_tips1") .. "  " .. secStr)
+  if 0 <= sec then
+    local secStr = HelperProxy:GetInstance():Time2Tex(sec)
+    self._lessTime:SetText(StringTable.Get("str_n_plus_six_time_tips1") .. "  " .. secStr)
   else
-    do
-      ;
-      (self._lessTime):SetText((StringTable.Get)("str_activity_error_107"))
-    end
+    self._lessTime:SetText(StringTable.Get("str_activity_error_107"))
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.ShowAwards = function(self)
-  -- function num : 0_13
+function UISendPetContent:ShowAwards()
   self:ShowNormalAwards()
   self:ShowBigAwards()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.ShowBigAwards = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local lastAward = nil
+function UISendPetContent:ShowBigAwards()
+  local lastAward
   local maxProgress = 0
-  for k,v in pairs((self._progressInfo).m_progress_rewards) do
-    if maxProgress < k then
+  for k, v in pairs(self._progressInfo.m_progress_rewards) do
+    if k > maxProgress then
       maxProgress = k
       lastAward = v
     end
   end
   local big = lastAward[1]
-  ;
-  (self._progressTxtAll):SetText("/" .. maxProgress)
-  self._bigAwardWidget = (self._bigPool):SpawnObject("UISendPetAward")
+  self._progressTxtAll:SetText("/" .. maxProgress)
+  self._bigAwardWidget = self._bigPool:SpawnObject("UISendPetAward")
   local state = self:GetState(maxProgress)
-  local isRed = (self._progressInfo).m_current_progress == maxProgress
-  ;
-  (self._bigAwardWidget):SetData(state, big, maxProgress, true, isRed, Vector2.zero, function()
-    -- function num : 0_14_0 , upvalues : self
+  local isRed = self._progressInfo.m_current_progress == maxProgress
+  self._bigAwardWidget:SetData(state, big, maxProgress, true, isRed, Vector2.zero, function()
     self:AwardClick()
-  end
-)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.GetState = function(self, progress)
-  -- function num : 0_15 , upvalues : _ENV
-  local cur = (self._progressInfo).m_current_progress
-  local pass = (self._progressInfo).m_received_progress
-  if (table.icontains)(pass, progress) then
+function UISendPetContent:GetState(progress)
+  local cur = self._progressInfo.m_current_progress
+  local pass = self._progressInfo.m_received_progress
+  if table.icontains(pass, progress) then
     return QuestStatus.QUEST_Taken
   end
   if progress <= cur then
@@ -234,327 +158,227 @@ UISendPetContent.GetState = function(self, progress)
   return QuestStatus.QUEST_Accepted
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.ISFirst = function(self, progress)
-  -- function num : 0_16 , upvalues : _ENV
-  local cur = (self._progressInfo).m_current_progress
-  local pass = (self._progressInfo).m_received_progress
-  if (table.icontains)(pass, progress) then
+function UISendPetContent:ISFirst(progress)
+  local cur = self._progressInfo.m_current_progress
+  local pass = self._progressInfo.m_received_progress
+  if table.icontains(pass, progress) then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.ShowNormalAwards = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local awards = (self._progressInfo).m_progress_rewards
+function UISendPetContent:ShowNormalAwards()
+  local awards = self._progressInfo.m_progress_rewards
   local showAwards = {}
   local maxProgress = 0
   local curProcess = 0
-  for k,v in pairs(awards) do
+  for k, v in pairs(awards) do
     local data = {}
-    if maxProgress < k then
+    if k > maxProgress then
       maxProgress = k
       self._totalProcess = k
     end
     data.progress = k
     data.awards = v
-    ;
-    (table.insert)(showAwards, data)
+    table.insert(showAwards, data)
   end
   self._maxProgress = maxProgress
-  ;
-  (table.sort)(showAwards, function(a, b)
-    -- function num : 0_17_0
-    do return a.progress < b.progress end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  ;
-  (table.remove)(showAwards, #showAwards)
-  ;
-  (self._awardPools):SpawnObjects("UISendPetAward", #showAwards)
+  table.sort(showAwards, function(a, b)
+    return a.progress < b.progress
+  end)
+  table.remove(showAwards, #showAwards)
+  self._awardPools:SpawnObjects("UISendPetAward", #showAwards)
   local width = 200
   local isFirst = true
   local firstPos = 0
-  local pools = (self._awardPools):GetAllSpawnList()
+  local pools = self._awardPools:GetAllSpawnList()
   for i = 1, #showAwards do
     local widget = pools[i]
-    local roleAsset = ((showAwards[i]).awards)[1]
+    local roleAsset = showAwards[i].awards[1]
     local posX = width
-    local state = self:GetState((showAwards[i]).progress)
+    local state = self:GetState(showAwards[i].progress)
     local isRed = state == QuestStatus.QUEST_Completed
-    if self:ISFirst((showAwards[i]).progress) and isFirst then
+    if self:ISFirst(showAwards[i].progress) and isFirst then
       firstPos = width
       isFirst = false
     end
     width = width + 200
-    widget:SetData(state, roleAsset, (showAwards[i]).progress, false, isRed, posX, function()
-    -- function num : 0_17_1 , upvalues : self
-    self:AwardClick()
-  end
-)
+    widget:SetData(state, roleAsset, showAwards[i].progress, false, isRed, posX, function()
+      self:AwardClick()
+    end)
   end
   if firstPos == 0 and isFirst == true then
     firstPos = width
   end
   self._totalWidth = width
-  local size = (self._awardPools_rect).sizeDelta
-  if maxProgress <= (self._progressInfo).m_current_progress then
-    (self._progressTxtNow):SetText(maxProgress)
-    -- DECOMPILER ERROR at PC107: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._progressNow_rect).sizeDelta = Vector2(width, 5)
+  local size = self._awardPools_rect.sizeDelta
+  if maxProgress <= self._progressInfo.m_current_progress then
+    self._progressTxtNow:SetText(maxProgress)
+    self._progressNow_rect.sizeDelta = Vector2(width, 5)
   else
-    (self._progressTxtNow):SetText((self._progressInfo).m_current_progress)
-    local cur = (self._progressInfo).m_current_progress / maxProgress
-    -- DECOMPILER ERROR at PC122: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._progressNow_rect).sizeDelta = Vector2(cur * (width), 5)
+    self._progressTxtNow:SetText(self._progressInfo.m_current_progress)
+    local cur = self._progressInfo.m_current_progress / maxProgress
+    self._progressNow_rect.sizeDelta = Vector2(cur * width, 5)
   end
-  -- DECOMPILER ERROR at PC128: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._progressAll_rect).sizeDelta = Vector2(width, 5)
-  -- DECOMPILER ERROR at PC134: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._awardPools_rect).sizeDelta = Vector2(width, size.y)
-  -- DECOMPILER ERROR at PC143: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._awardPools_rect).anchoredPosition = Vector2(-(firstPos - 80), ((self._awardPools_rect).anchoredPosition).y)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  self._progressAll_rect.sizeDelta = Vector2(width, 5)
+  self._awardPools_rect.sizeDelta = Vector2(width, size.y)
+  self._awardPools_rect.anchoredPosition = Vector2(-(firstPos - 80), self._awardPools_rect.anchoredPosition.y)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.GetPos = function(self, progress)
-  -- function num : 0_18
+function UISendPetContent:GetPos(progress)
   return progress
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.AwardClick = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UISendPetContent:AwardClick()
   if self:CheckActivityOver() then
-    return 
+    return
   end
   self:Lock("UISendPetContent:AwardClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnAwardClick, self)
+  GameGlobal.TaskManager():StartTask(self.OnAwardClick, self)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.OnAwardClick = function(self, TT)
-  -- function num : 0_20 , upvalues : _ENV
+function UISendPetContent:OnAwardClick(TT)
   local res = AsyncRequestRes:New()
-  local com = (self._campaign):GetComponent(ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_PERSON_PROCESS)
+  local com = self._campaign:GetComponent(ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_PERSON_PROCESS)
   local rewards = com:HandleOneKeyReceiveRewards(TT, res)
   self:UnLock("UISendPetContent:AwardClick")
   if res and res:GetSucc() then
-    (Log.debug)("###[UISendPetContent] HandleOneKeyReceiveRewards succ !")
+    Log.debug("###[UISendPetContent] HandleOneKeyReceiveRewards succ !")
     self:ShowUIGetItemController(rewards)
     self:CreateData()
     self:ShowAwards()
   else
-    ;
-    (Log.error)("###[UISendPetContent] HandleOneKeyReceiveRewards fail ! result : ", res:GetResult())
+    Log.error("###[UISendPetContent] HandleOneKeyReceiveRewards fail ! result : ", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.ShowUIGetItemController = function(self, rewards)
-  -- function num : 0_21 , upvalues : _ENV
+function UISendPetContent:ShowUIGetItemController(rewards)
   if not rewards then
-    return 
+    return
   end
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
   local tempPets = {}
-  if #rewards > 0 then
+  if 0 < #rewards then
     for i = 1, #rewards do
-      local ispet = (self._petModule):IsPetID((rewards[i]).assetid)
+      local ispet = self._petModule:IsPetID(rewards[i].assetid)
       if ispet then
-        (table.insert)(tempPets, rewards[i])
+        table.insert(tempPets, rewards[i])
       end
     end
   end
-  do
-    local cbFunc = function()
-    -- function num : 0_21_0
+  
+  local function cbFunc()
   end
-
-    if #tempPets > 0 then
-      self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_21_1 , upvalues : _ENV, self, rewards, cbFunc
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", rewards, cbFunc)
-  end
-)
-    else
+  
+  if 0 < #tempPets then
+    self:ShowDialog("UIPetObtain", tempPets, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
       self:ShowDialog("UIGetItemController", rewards, cbFunc)
-    end
+    end)
+  else
+    self:ShowDialog("UIGetItemController", rewards, cbFunc)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.ShowPets = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local awards = (self._progressInfo).m_progress_rewards
+function UISendPetContent:ShowPets()
+  local awards = self._progressInfo.m_progress_rewards
   local showAwards = {}
-  for k,v in pairs(awards) do
+  for k, v in pairs(awards) do
     local data = {}
     data.progress = k
     data.awards = v
-    ;
-    (table.insert)(showAwards, data)
+    table.insert(showAwards, data)
   end
-  ;
-  (table.sort)(showAwards, function(a, b)
-    -- function num : 0_22_0
-    do return a.progress < b.progress end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  local len = (table.count)(showAwards)
+  table.sort(showAwards, function(a, b)
+    return a.progress < b.progress
+  end)
+  local len = table.count(showAwards)
   local maxAward = showAwards[len]
-  local big = (maxAward.awards)[1]
+  local big = maxAward.awards[1]
   local itemid = big.assetid
-  local cfg_item_gift = (Cfg.cfg_item_gift)[itemid]
+  local cfg_item_gift = Cfg.cfg_item_gift[itemid]
   if cfg_item_gift then
     local itemList = cfg_item_gift.ItemList
     local pets = {}
-    for i,v in ipairs(itemList) do
+    for i, v in ipairs(itemList) do
       local id = v[1]
       pets[i] = id
     end
-    if #pets > 4 then
-      (Log.error)("###[UISendPetContent] itemList count > 4 !")
+    if 4 < #pets then
+      Log.error("###[UISendPetContent] itemList count > 4 !")
     end
-    ;
-    (self._pools):SpawnObjects("UISendPetCard", #pets)
-    local pools = (self._pools):GetAllSpawnList()
+    self._pools:SpawnObjects("UISendPetCard", #pets)
+    local pools = self._pools:GetAllSpawnList()
     for i = 1, #pets do
       local widget = pools[i]
       widget:SetData(pets[i])
     end
   else
-    do
-      ;
-      (Log.error)("###[UISendPetContent] last award cfg_item_gift is nil ! id:", itemid)
-    end
+    Log.error("###[UISendPetContent] last award cfg_item_gift is nil ! id:", itemid)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.QuestBtnOnClick = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UISendPetContent:QuestBtnOnClick()
   self:ShowDialog("UISendPetQuest", self._campaign, self._questCom, nil, function()
-    -- function num : 0_23_0 , upvalues : self, _ENV
     if self.uiOwner then
       local totalProcess = 0
-      if self._totalProcess < (self._progressInfo).m_current_progress then
+      if self._totalProcess < self._progressInfo.m_current_progress then
         totalProcess = self._totalProcess
       else
-        totalProcess = (self._progressInfo).m_current_progress
+        totalProcess = self._progressInfo.m_current_progress
       end
       if self._cruProcess ~= totalProcess then
-        local targetWidth = (self._progressInfo).m_current_progress * (self._totalWidth / self._maxProgress)
-        if self._totalWidth < targetWidth then
+        local targetWidth = self._progressInfo.m_current_progress * (self._totalWidth / self._maxProgress)
+        if targetWidth > self._totalWidth then
           targetWidth = self._totalWidth
         end
-        local firstWidth = ((self._progressNow_rect).sizeDelta).x
-        -- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._progressNow_rect).sizeDelta = Vector2(targetWidth, 5)
+        local firstWidth = self._progressNow_rect.sizeDelta.x
+        self._progressNow_rect.sizeDelta = Vector2(targetWidth, 5)
         local fillAmount = firstWidth / targetWidth
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.QuestBtnOnPressed = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._questImage).sprite = (self:GetAsset("SendCard.spriteatlas", LoadType.SpriteAtlas)):GetSprite("cn15_glzx_btn02")
+function UISendPetContent:QuestBtnOnPressed()
+  self._questImage.sprite = self:GetAsset("SendCard.spriteatlas", LoadType.SpriteAtlas):GetSprite("cn15_glzx_btn02")
   local color = "#FFFFFF"
-  local str = (UIActivityHelper.GetColorText)(color, (StringTable.Get)("str_common_mission"))
-  ;
-  (self._questTxt):SetText(str)
+  local str = UIActivityHelper.GetColorText(color, StringTable.Get("str_common_mission"))
+  self._questTxt:SetText(str)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.QuestBtnOnReleased = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._questImage).sprite = (self:GetAsset("SendCard.spriteatlas", LoadType.SpriteAtlas)):GetSprite("cn15_glzx_btn01")
+function UISendPetContent:QuestBtnOnReleased()
+  self._questImage.sprite = self:GetAsset("SendCard.spriteatlas", LoadType.SpriteAtlas):GetSprite("cn15_glzx_btn01")
   local color = "#000000"
-  local str = (UIActivityHelper.GetColorText)(color, (StringTable.Get)("str_common_mission"))
-  ;
-  (self._questTxt):SetText(str)
+  local str = UIActivityHelper.GetColorText(color, StringTable.Get("str_common_mission"))
+  self._questTxt:SetText(str)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.IntrBtnOnClick = function(self)
-  -- function num : 0_26
+function UISendPetContent:IntrBtnOnClick()
   self:ShowDialog("UIIntroLoader", "UISendPetIntro")
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.PlayAnime = function(self, fillAmount)
-  -- function num : 0_27 , upvalues : _ENV
+function UISendPetContent:PlayAnime(fillAmount)
   self:Lock("UISendPetContent:PlayAnime")
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._progressNow_Image).fillAmount = fillAmount
+  self._progressNow_Image.fillAmount = fillAmount
   local phaseTime = (1 - fillAmount) * 4
-  ;
-  ((GameGlobal.Timer)()):AddEvent(850, function()
-    -- function num : 0_27_0 , upvalues : self, phaseTime, _ENV
-    if (self._progressNow_Image).gameObject ~= nil and ((self._progressNow_Image).gameObject).activeInHierarchy then
-      ((self._progressNow_Image):DOFillAmount(1, phaseTime)):SetEase(((DG.Tweening).Ease).OutCirc)
+  GameGlobal.Timer():AddEvent(850.0, function()
+    if self._progressNow_Image.gameObject ~= nil and self._progressNow_Image.gameObject.activeInHierarchy then
+      self._progressNow_Image:DOFillAmount(1, phaseTime):SetEase(DG.Tweening.Ease.OutCirc)
     end
     self:UnLock("UISendPetContent:PlayAnime")
-  end
-)
+  end)
   self:UnLock("UISendPetContent:PlayAnime")
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetContent.CheckActivityOver = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  local curTime = (self._svrTimeModule):GetServerTime() * 0.001
-  local endTime = (self._sample).end_time
+function UISendPetContent:CheckActivityOver()
+  local curTime = self._svrTimeModule:GetServerTime() * 0.001
+  local endTime = self._sample.end_time
   if curTime < endTime then
     return false
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
     return true
   end
 end
-
-

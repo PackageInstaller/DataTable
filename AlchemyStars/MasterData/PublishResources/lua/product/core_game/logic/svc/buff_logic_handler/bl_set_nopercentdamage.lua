@@ -1,41 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_nopercentdamage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetNoPercentDamage", BuffLogicBase)
 BuffLogicSetNoPercentDamage = BuffLogicSetNoPercentDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetNoPercentDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetNoPercentDamage:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetNoPercentDamage.DoLogic = function(self)
-  -- function num : 0_1
-  local entity = (self._buffInstance):Entity()
+function BuffLogicSetNoPercentDamage:DoLogic()
+  local entity = self._buffInstance:Entity()
   local attributeCmpt = entity:Attributes()
   attributeCmpt:SetSimpleAttribute("NoPercentDamage", 1)
 end
 
 _class("BuffLogicResetNoPercentDamage", BuffLogicBase)
 BuffLogicResetNoPercentDamage = BuffLogicResetNoPercentDamage
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetNoPercentDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetNoPercentDamage:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetNoPercentDamage.DoLogic = function(self)
-  -- function num : 0_3
-  local entity = (self._buffInstance):Entity()
+function BuffLogicResetNoPercentDamage:DoLogic()
+  local entity = self._buffInstance:Entity()
   local attributeCmpt = entity:Attributes()
   attributeCmpt:SetSimpleAttribute("NoPercentDamage", 0)
 end
-
-

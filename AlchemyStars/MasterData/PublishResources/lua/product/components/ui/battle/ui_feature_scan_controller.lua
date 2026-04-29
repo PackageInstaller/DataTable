@@ -1,100 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_feature_scan_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFeatureScanController", UIController)
 UIFeatureScanController = UIFeatureScanController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFeatureScanController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIFeatureScanController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIFeatureScanController:OnShow(uiParams)
   self:InitWidget()
-  self._lastTimeSelection = (FeatureServiceHelper.FeatureScanGetCurrentSelection)()
-  self._dataActiveSkillType = (self._lastTimeSelection).skillType
-  self._dataTrapID = (self._lastTimeSelection).trapID
-  local featureData = (FeatureServiceHelper.GetFeatureData)(FeatureType.Scan)
-  ;
-  (self.activeSkill1Desc):SetText((StringTable.Get)(featureData:GetFeatureSummonTrapDescKey() or ""))
-  do
-    if self._dataActiveSkillType then
-      local skillType = (self._lastTimeSelection).skillType
-      ;
-      (self.activeSkill1Selected):SetActive(skillType == ScanFeatureActiveSkillType.SummonTrap)
-    end
-    self._scanResult = (FeatureServiceHelper.FeatureScanGetScanTrapIDList)()
-    ;
-    (self.trapListEmpty):SetActive(#self._scanResult == 0)
-    if #self._scanResult > 0 then
-      (table.sort)(self._scanResult, function(a, b)
-    -- function num : 0_1_0 , upvalues : _ENV
-    local cfgTrapScanA = (Cfg.cfg_trap_scan)[a]
-    local cfgTrapScanB = (Cfg.cfg_trap_scan)[b]
-    do return cfgTrapScanA.SortOrder < cfgTrapScanB.SortOrder end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._lastTimeSelection = FeatureServiceHelper.FeatureScanGetCurrentSelection()
+  self._dataActiveSkillType = self._lastTimeSelection.skillType
+  self._dataTrapID = self._lastTimeSelection.trapID
+  local featureData = FeatureServiceHelper.GetFeatureData(FeatureType.Scan)
+  self.activeSkill1Desc:SetText(StringTable.Get(featureData:GetFeatureSummonTrapDescKey() or ""))
+  if self._dataActiveSkillType then
+    local skillType = self._lastTimeSelection.skillType
+    self.activeSkill1Selected:SetActive(skillType == ScanFeatureActiveSkillType.SummonTrap)
   end
-)
-      ;
-      (self.trapListContent):SpawnObjects("UIFeatureScanTrapElement", #self._scanResult)
-      local spawnItems = (self.trapListContent):GetAllSpawnList()
-      for index,element in ipairs(spawnItems) do
-        local id = (self._scanResult)[index]
-        local isSelected = self._dataActiveSkillType == ScanFeatureActiveSkillType.SummonScanTrap and self._dataTrapID == id
-        element:SetData(index, id, isSelected, nil)
-        element:SetElementSelectedCallback(function(i)
-    -- function num : 0_1_1 , upvalues : self
-    self:_TrapElementSelectedCallback(i)
-  end
-)
-        if isSelected then
-          local cfgTrapScan = (Cfg.cfg_trap_scan)[self._dataTrapID]
-          ;
-          (self.trapText):SetText((StringTable.Get)(cfgTrapScan.Desc))
-        end
+  self._scanResult = FeatureServiceHelper.FeatureScanGetScanTrapIDList()
+  self.trapListEmpty:SetActive(#self._scanResult == 0)
+  if #self._scanResult > 0 then
+    table.sort(self._scanResult, function(a, b)
+      local cfgTrapScanA = Cfg.cfg_trap_scan[a]
+      local cfgTrapScanB = Cfg.cfg_trap_scan[b]
+      return cfgTrapScanA.SortOrder < cfgTrapScanB.SortOrder
+    end)
+    self.trapListContent:SpawnObjects("UIFeatureScanTrapElement", #self._scanResult)
+    local spawnItems = self.trapListContent:GetAllSpawnList()
+    for index, element in ipairs(spawnItems) do
+      local id = self._scanResult[index]
+      local isSelected = self._dataActiveSkillType == ScanFeatureActiveSkillType.SummonScanTrap and self._dataTrapID == id
+      element:SetData(index, id, isSelected, nil)
+      element:SetElementSelectedCallback(function(i)
+        self:_TrapElementSelectedCallback(i)
+      end)
+      if isSelected then
+        local cfgTrapScan = Cfg.cfg_trap_scan[self._dataTrapID]
+        self.trapText:SetText(StringTable.Get(cfgTrapScan.Desc))
       end
     end
-    -- DECOMPILER ERROR: 7 unprocessed JMP targets
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanController._TrapElementSelectedCallback = function(self, index)
-  -- function num : 0_2 , upvalues : _ENV
-  self._dataTrapID = (self._scanResult)[index]
+function UIFeatureScanController:_TrapElementSelectedCallback(index)
+  self._dataTrapID = self._scanResult[index]
   self._dataActiveSkillType = ScanFeatureActiveSkillType.SummonScanTrap
-  ;
-  (self.activeSkill1Selected):SetActive(false)
-  local spawnItems = (self.trapListContent):GetAllSpawnList()
-  for i,element in ipairs(spawnItems) do
+  self.activeSkill1Selected:SetActive(false)
+  local spawnItems = self.trapListContent:GetAllSpawnList()
+  for i, element in ipairs(spawnItems) do
     element:SetSelected(i == index)
   end
-  local cfgTrapScan = (Cfg.cfg_trap_scan)[self._dataTrapID]
-  ;
-  (self.trapText):SetText((StringTable.Get)(cfgTrapScan.Desc))
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local cfgTrapScan = Cfg.cfg_trap_scan[self._dataTrapID]
+  self.trapText:SetText(StringTable.Get(cfgTrapScan.Desc))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanController.OnHide = function(self)
-  -- function num : 0_3
+function UIFeatureScanController:OnHide()
   self._dataActiveSkillType = nil
   self._dataTrapID = nil
   self._dataForceMovementDisabled = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanController.InitWidget = function(self)
-  -- function num : 0_4
+function UIFeatureScanController:InitWidget()
   self.enableFakeInput = true
   self.commonBtnsContainer = self:GetUIComponent("UISelectObjectPath", "commonBtnsContainer")
   self.trapListContent = self:GetUIComponent("UISelectObjectPath", "trapListContent")
@@ -103,82 +68,53 @@ UIFeatureScanController.InitWidget = function(self)
   self.tachie = self:GetUIComponent("Image", "tachie")
   self.trapListEmpty = self:GetGameObject("trapListEmpty")
   self.activeSkill1Desc = self:GetUIComponent("UILocalizationText", "activeSkill1Desc")
-  ;
-  (self.activeSkill1Selected):SetActive(false)
-  self._commonBtns = (self:GetUIComponent("UISelectObjectPath", "commonBtnsContainer")):SpawnObject("UICommonTopButton")
-  ;
-  (self._commonBtns):SetData(function()
-    -- function num : 0_4_0 , upvalues : self
+  self.activeSkill1Selected:SetActive(false)
+  self._commonBtns = self:GetUIComponent("UISelectObjectPath", "commonBtnsContainer"):SpawnObject("UICommonTopButton")
+  self._commonBtns:SetData(function()
     self:SaveScanResultAndExit()
-  end
-)
-  ;
-  (self._commonBtns):HideHomeBtn()
+  end)
+  self._commonBtns:HideHomeBtn()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanController.SaveScanResultAndExit = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIFeatureScanController:SaveScanResultAndExit()
   if self._dataActiveSkillType then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ScanFeatureSaveInfo, {skillType = self._dataActiveSkillType, trapID = self._dataTrapID})
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ScanFeatureSaveInfo, {
+      skillType = self._dataActiveSkillType,
+      trapID = self._dataTrapID
+    })
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanController.ButtonActiveSkill1OnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  (self.activeSkill1Selected):SetActive(true)
-  local spawnItems = (self.trapListContent):GetAllSpawnList()
-  for i,element in ipairs(spawnItems) do
+function UIFeatureScanController:ButtonActiveSkill1OnClick(go)
+  self.activeSkill1Selected:SetActive(true)
+  local spawnItems = self.trapListContent:GetAllSpawnList()
+  for i, element in ipairs(spawnItems) do
     element:SetSelected(false)
   end
   self._dataActiveSkillType = ScanFeatureActiveSkillType.SummonTrap
-  ;
-  (self.trapText):SetText("")
+  self.trapText:SetText("")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanController.SafeAreaOnClick = function(self, go)
-  -- function num : 0_7
+function UIFeatureScanController:SafeAreaOnClick(go)
   self:SaveScanResultAndExit()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanController.EmptyOnClick = function(self, go)
-  -- function num : 0_8
+function UIFeatureScanController:EmptyOnClick(go)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanController.TrapDescOnClick = function(self, go)
-  -- function num : 0_9
+function UIFeatureScanController:TrapDescOnClick(go)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanController.TrapListOnClick = function(self, go)
-  -- function num : 0_10
+function UIFeatureScanController:TrapListOnClick(go)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanController.GuideStepGetElement1 = function(self)
-  -- function num : 0_11
-  local spawnItems = (self.trapListContent):GetAllSpawnList()
-  return (spawnItems[1]):GetGameObject()
+function UIFeatureScanController:GuideStepGetElement1()
+  local spawnItems = self.trapListContent:GetAllSpawnList()
+  return spawnItems[1]:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanController.GuideStepGetElement2 = function(self)
-  -- function num : 0_12
-  local spawnItems = (self.trapListContent):GetAllSpawnList()
-  return (spawnItems[2]):GetGameObject()
+function UIFeatureScanController:GuideStepGetElement2()
+  local spawnItems = self.trapListContent:GetAllSpawnList()
+  return spawnItems[2]:GetGameObject()
 end
-
-

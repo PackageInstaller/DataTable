@@ -1,47 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_boss_warning.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleBossWarning", UIController)
 UIBattleBossWarning = UIBattleBossWarning
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleBossWarning.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattleBossWarning:OnShow(uiParams)
   local monsterId = uiParams[1]
-  local monsterCfg = (Cfg.cfg_monster)[monsterId]
+  local monsterCfg = Cfg.cfg_monster[monsterId]
   if not monsterCfg then
-    (Log.fatal)("can not find monster config, monster id: " .. monsterId)
+    Log.fatal("can not find monster config, monster id: " .. monsterId)
     self:CloseDialog()
-    return 
+    return
   end
-  local monsterClassCfg = (Cfg.cfg_monster_class)[monsterCfg.ClassID]
+  local monsterClassCfg = Cfg.cfg_monster_class[monsterCfg.ClassID]
   if not monsterClassCfg then
-    (Log.fatal)("can not find monster class config, monster class id: " .. monsterCfg.ClassID)
+    Log.fatal("can not find monster class config, monster class id: " .. monsterCfg.ClassID)
     self:CloseDialog()
-    return 
+    return
   end
-  local monsterName = (StringTable.Get)(monsterClassCfg.Name)
-  local monsterEngName = (StringTable.Get)(monsterClassCfg.Name .. "_en")
+  local monsterName = StringTable.Get(monsterClassCfg.Name)
+  local monsterEngName = StringTable.Get(monsterClassCfg.Name .. "_en")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self.txtName1 = self:GetUIComponent("UILocalizationText", "txtName1")
   self.txtName2 = self:GetUIComponent("UILocalizationText", "txtName2")
   self.txtName3 = self:GetUIComponent("UILocalizationText", "txtName3")
   self.txtName4 = self:GetUIComponent("UILocalizationText", "txtName4")
   self.txtNameEn = self:GetUIComponent("UILocalizationText", "txtNameEn")
-  ;
-  (self.txtName):SetText(monsterName)
-  ;
-  (self.txtName1):SetText(monsterName)
-  ;
-  (self.txtName2):SetText(monsterName)
-  ;
-  (self.txtName3):SetText(monsterName)
-  ;
-  (self.txtName4):SetText(monsterName)
-  ;
-  (self.txtNameEn):SetText(monsterEngName)
+  self.txtName:SetText(monsterName)
+  self.txtName1:SetText(monsterName)
+  self.txtName2:SetText(monsterName)
+  self.txtName3:SetText(monsterName)
+  self.txtName4:SetText(monsterName)
+  self.txtNameEn:SetText(monsterEngName)
 end
-
-

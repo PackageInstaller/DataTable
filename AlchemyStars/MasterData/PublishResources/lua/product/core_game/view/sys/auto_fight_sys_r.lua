@@ -1,51 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/auto_fight_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AutoFightSystem_Render", Object)
 AutoFightSystem_Render = AutoFightSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AutoFightSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function AutoFightSystem_Render:Constructor(world)
   self._world = world
-  self.svc = (self._world):GetService("AutoFight")
+  self.svc = self._world:GetService("AutoFight")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightSystem_Render.Execute = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local utilStatSvc = (self._world):GetService("UtilData")
+function AutoFightSystem_Render:Execute()
+  local utilStatSvc = self._world:GetService("UtilData")
   if not utilStatSvc:GetStatAutoFight() then
-    return 
+    return
   end
   local isWaitInputState = self:_IsWaitInputState()
   if not isWaitInputState then
-    return 
+    return
   end
   if not isWaitInputState then
-    return 
+    return
   end
-  if (self.svc):IsRunning() then
-    return 
+  if self.svc:IsRunning() then
+    return
   end
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask((self.svc).AutoFight, self.svc, teamEntity)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  GameGlobal.TaskManager():CoreGameStartTask(self.svc.AutoFight, self.svc, teamEntity)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightSystem_Render._IsWaitInputState = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function AutoFightSystem_Render:_IsWaitInputState()
+  local utilDataSvc = self._world:GetService("UtilData")
   local gameFsmStateID = utilDataSvc:GetCurMainStateID()
   if gameFsmStateID == GameStateID.PickUpChainSkillTarget then
     return true
   end
   return utilDataSvc:GetMainStateInputEnable()
 end
-
-

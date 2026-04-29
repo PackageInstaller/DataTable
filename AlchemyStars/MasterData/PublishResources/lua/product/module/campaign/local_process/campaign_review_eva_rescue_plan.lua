@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_review_eva_rescue_plan.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignReviewEvaRescuePlan", ICampaignComponentLocalProcessBase)
 CCampaignReviewEvaRescuePlan = CCampaignReviewEvaRescuePlan
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignReviewEvaRescuePlan.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignReviewEvaRescuePlan:Constructor()
   self._lineMissionComponet = nil
   self._lineMissionCompInfo = nil
   self._treeMissionComponet = nil
@@ -18,67 +11,46 @@ CCampaignReviewEvaRescuePlan.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewEvaRescuePlan.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignReviewEvaRescuePlan:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_REVIEW_N1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewEvaRescuePlan.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignReviewEvaRescuePlan:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewEvaRescuePlan.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignReviewEvaRescuePlan:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetLineMissionComponent()
   self:_GetTreeMissionComponent()
   self:_GetPointProgressComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewEvaRescuePlan._GetPointProgressComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._pointProgressComponent = (self._campaignObj):GetComponent(ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_POINT_PROGRESS)
+function CCampaignReviewEvaRescuePlan:_GetPointProgressComponent()
+  self._pointProgressComponent = self._campaignObj:GetComponent(ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_POINT_PROGRESS)
   if not self._pointProgressComponent then
-    return 
+    return
   end
-  self._pointProgressComponentInfo = (self._pointProgressComponent):ComponentInfo()
+  self._pointProgressComponentInfo = self._pointProgressComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewEvaRescuePlan._GetLineMissionComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._lineMissionComponet = (self._campaignObj):GetComponent(ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_LINE_MISSION)
+function CCampaignReviewEvaRescuePlan:_GetLineMissionComponent()
+  self._lineMissionComponet = self._campaignObj:GetComponent(ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_LINE_MISSION)
   if not self._lineMissionComponet then
-    return 
+    return
   end
-  self._lineMissionCompInfo = (self._lineMissionComponet):ComponentInfo()
+  self._lineMissionCompInfo = self._lineMissionComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewEvaRescuePlan._GetTreeMissionComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._treeMissionComponet = (self._campaignObj):GetComponent(ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_TREE_MISSION)
+function CCampaignReviewEvaRescuePlan:_GetTreeMissionComponent()
+  self._treeMissionComponet = self._campaignObj:GetComponent(ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_TREE_MISSION)
   if not self._treeMissionComponet then
-    return 
+    return
   end
-  self._treeMissionCompInfo = (self._treeMissionComponet):ComponentInfo()
+  self._treeMissionCompInfo = self._treeMissionComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewEvaRescuePlan.GetComponent = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignReviewEvaRescuePlan:GetComponent(componentID)
   if ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_POINT_PROGRESS == componentID then
     return self._pointProgressComponent
   end
@@ -91,10 +63,7 @@ CCampaignReviewEvaRescuePlan.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewEvaRescuePlan.GetComponentInfo = function(self, componentID)
-  -- function num : 0_8 , upvalues : _ENV
+function CCampaignReviewEvaRescuePlan:GetComponentInfo(componentID)
   if ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_POINT_PROGRESS == componentID then
     return self._pointProgressComponentInfo
   end
@@ -106,5 +75,3 @@ CCampaignReviewEvaRescuePlan.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/battleaffix/ui_n12_battle_affix.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12BattleAffix", UIController)
 UIN12BattleAffix = UIN12BattleAffix
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12BattleAffix.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12BattleAffix:Constructor()
   self._campaignModule = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12BattleAffix.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN12BattleAffix:OnShow(uiParams)
   self:_GetComponent()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12BattleAffix._GetComponent = function(self)
-  -- function num : 0_2
+function UIN12BattleAffix:_GetComponent()
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._bottom = self:GetGameObject("Bottom")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
@@ -32,98 +19,73 @@ UIN12BattleAffix._GetComponent = function(self)
   self._bossImgRect = self:GetUIComponent("RectTransform", "BossImg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12BattleAffix.CloseBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIN12BattleAffix:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12BattleAffix._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local matchEnterData = (self:GetModule(MatchModule)):GetMatchEnterData()
-  local missionInfo = (matchEnterData:GetMissionCreateInfo())
-  local cfgs, bossImageResName, pwh = nil, nil, nil
+function UIN12BattleAffix:_OnValue()
+  local matchEnterData = self:GetModule(MatchModule):GetMatchEnterData()
+  local missionInfo = matchEnterData:GetMissionCreateInfo()
+  local cfgs, bossImageResName, pwh
   self._levelType = N12LevelType.Daily
   self._campaignMissionId = missionInfo.nCampaignMissionId
   if missionInfo.nMissionComId == ECampaignMissionComponentId.ECampaignMissionComponentId_DailyMission then
-    cfgs = (Cfg.cfg_component_daily_mission)({CampaignMissionId = missionInfo.nCampaignMissionId})
-  else
-    if missionInfo.nMissionComId == ECampaignMissionComponentId.ECampaignMissionComponentId_ChallengeMission then
-      cfgs = (Cfg.cfg_component_challenge_mission)({CampaignMissionId = missionInfo.nCampaignMissionId})
-      self._levelType = N12LevelType.Challenge
-    end
+    cfgs = Cfg.cfg_component_daily_mission({
+      CampaignMissionId = missionInfo.nCampaignMissionId
+    })
+  elseif missionInfo.nMissionComId == ECampaignMissionComponentId.ECampaignMissionComponentId_ChallengeMission then
+    cfgs = Cfg.cfg_component_challenge_mission({
+      CampaignMissionId = missionInfo.nCampaignMissionId
+    })
+    self._levelType = N12LevelType.Challenge
   end
-  ;
-  (self._bottom):SetActive(self._levelType == N12LevelType.Challenge)
+  self._bottom:SetActive(self._levelType == N12LevelType.Challenge)
   self._data = {}
-  if cfgs and #cfgs > 0 then
+  if cfgs and 0 < #cfgs then
     if self._levelType == N12LevelType.Daily then
-      for key,value in pairs((cfgs[1]).Affix) do
-        (table.insert)(self._data, value)
+      for key, value in pairs(cfgs[1].Affix) do
+        table.insert(self._data, value)
       end
-      bossImageResName = (cfgs[1]).MonsterIcon
-      pwh = (cfgs[1]).PositionWH2
+      bossImageResName = cfgs[1].MonsterIcon
+      pwh = cfgs[1].PositionWH2
     elseif self._levelType == N12LevelType.Challenge then
-      local localProcess = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N12)
-      local curMissionSelectedAffix = ((localProcess._challengeMissionCompInfo).m_select_affix)[self._campaignMissionId]
-      for key,value in pairs(curMissionSelectedAffix) do
-        (table.insert)(self._data, value)
+      local localProcess = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N12)
+      local curMissionSelectedAffix = localProcess._challengeMissionCompInfo.m_select_affix[self._campaignMissionId]
+      for key, value in pairs(curMissionSelectedAffix) do
+        table.insert(self._data, value)
       end
-      local score = (cfgs[1]).BaseScore
+      local score = cfgs[1].BaseScore
       for i = 1, #curMissionSelectedAffix do
-        local cfgAffix = (Cfg.cfg_component_mission_affix)[curMissionSelectedAffix[i]]
+        local cfgAffix = Cfg.cfg_component_mission_affix[curMissionSelectedAffix[i]]
         if cfgAffix then
           score = score + cfgAffix.AffixScore
         end
       end
-      ;
-      (self._score):SetText(score)
-      bossImageResName = (cfgs[1]).MonsterIcon2
-      pwh = (cfgs[1]).PositionWH
+      self._score:SetText(score)
+      bossImageResName = cfgs[1].MonsterIcon2
+      pwh = cfgs[1].PositionWH
     end
-    local cfg_campaign_mission = (Cfg.cfg_campaign_mission)[missionInfo.nCampaignMissionId]
-    ;
-    (self._name):SetText((StringTable.Get)(cfg_campaign_mission.Name))
+    local cfg_campaign_mission = Cfg.cfg_campaign_mission[missionInfo.nCampaignMissionId]
+    self._name:SetText(StringTable.Get(cfg_campaign_mission.Name))
   end
   if bossImageResName and pwh then
-    (self._bossImg):LoadImage(bossImageResName)
-    -- DECOMPILER ERROR at PC152: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._bossImgRect).anchoredPosition = Vector2(pwh[1], pwh[2])
-    -- DECOMPILER ERROR at PC158: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._bossImgRect).sizeDelta = Vector2(pwh[3], pwh[4])
+    self._bossImg:LoadImage(bossImageResName)
+    self._bossImgRect.anchoredPosition = Vector2(pwh[1], pwh[2])
+    self._bossImgRect.sizeDelta = Vector2(pwh[3], pwh[4])
   end
-  ;
-  (table.insert)(self._data, 1, {})
-  ;
-  (table.insert)(self._data, 2, {})
-  ;
-  (table.insert)(self._data, 3, {})
+  table.insert(self._data, 1, {})
+  table.insert(self._data, 2, {})
+  table.insert(self._data, 3, {})
   self:_InitDynamicScrollView()
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12BattleAffix._InitDynamicScrollView = function(self)
-  -- function num : 0_5
-  (self._scrollView):InitListView(#self._data, function(scrollview, index)
-    -- function num : 0_5_0 , upvalues : self
+function UIN12BattleAffix:_InitDynamicScrollView()
+  self._scrollView:InitListView(#self._data, function(scrollview, index)
     return self:_OnGetItemByIndex(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12BattleAffix._OnGetItemByIndex = function(self, scrollview, index)
-  -- function num : 0_6
+function UIN12BattleAffix:_OnGetItemByIndex(scrollview, index)
   if index == 0 or index == 2 then
     local item = scrollview:NewListViewItem("UIN12BattleAffixSpecialItem")
     local itemPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
@@ -138,24 +100,17 @@ UIN12BattleAffix._OnGetItemByIndex = function(self, scrollview, index)
     end
     return item
   else
-    do
-      local item = scrollview:NewListViewItem("UIN12BattleAffixItem")
-      local itemPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
-      if not item.IsInitHandlerCalled then
-        item.IsInitHandlerCalled = true
-        itemPool:SpawnObjects("UIN12BattleAffixItem", 1)
-      end
-      local ItemWidgets = itemPool:GetAllSpawnList()
-      local itemWidget = ItemWidgets[1]
-      if index ~= 1 then
-        do
-          itemWidget:SetData(self._levelType, not itemWidget, self._campaignMissionId, (self._data)[index + 1])
-          do return item end
-          -- DECOMPILER ERROR: 3 unprocessed JMP targets
-        end
-      end
+    local item = scrollview:NewListViewItem("UIN12BattleAffixItem")
+    local itemPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
+    if not item.IsInitHandlerCalled then
+      item.IsInitHandlerCalled = true
+      itemPool:SpawnObjects("UIN12BattleAffixItem", 1)
     end
+    local ItemWidgets = itemPool:GetAllSpawnList()
+    local itemWidget = ItemWidgets[1]
+    if itemWidget then
+      itemWidget:SetData(self._levelType, index == 1, self._campaignMissionId, self._data[index + 1])
+    end
+    return item
   end
 end
-
-

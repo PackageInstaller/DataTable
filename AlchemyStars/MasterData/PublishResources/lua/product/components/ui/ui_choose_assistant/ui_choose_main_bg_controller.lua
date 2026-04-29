@@ -1,65 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_choose_main_bg_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChooseMainBgController", UIController)
 UIChooseMainBgController = UIChooseMainBgController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChooseMainBgController.Constructor = function(self)
-  -- function num : 0_0
+function UIChooseMainBgController:Constructor()
   self._itemCountPerRow = 1
   self._bgTypeBtns = {}
   self._btnStatus = nil
   self._curSecondBtn = nil
   self._spawnBtnList = {}
   self._initScrollViewFlag = false
-  self._str2anim = {OnShow = "uieff_Assistant_ChangeBg_In", OnHide = "uieff_Assistant_ChangeBg_Out"}
+  self._str2anim = {
+    OnShow = "uieff_Assistant_ChangeBg_In",
+    OnHide = "uieff_Assistant_ChangeBg_Out"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChooseMainBgController:OnShow(uiParams)
   self._pivot = Vector2(0.5, 0.5)
   self._itemModule = self:GetModule(ItemModule)
   self._roleModule = self:GetModule(RoleModule)
   self._bookModule = self:GetModule(BookModule)
   self._curBGInfo = nil
-  self._currentMainBgID = (self._roleModule):UI_GetMainBgID()
-  self._currentMainBgType = ((self._roleModule).m_choose_painting).background_type
-  self._current_is_hand_operate = ((self._roleModule).m_choose_painting).is_hand_operate
-  self._current_hand_spine_index = ((self._roleModule).m_choose_painting).spine_id
-  if self._currentMainBgID ~= 0 or not 2 then
-    self._currentMainBgID = self._currentMainBgID
-    if self._currentMainBgType ~= 0 or not 1 then
-      self._currentMainBgType = self._currentMainBgType
-      if self._current_hand_spine_index ~= 0 or not 1 then
-        self._current_hand_spine_index = self._current_hand_spine_index
-        if self._currentMainBgType == UIChooseAssistantBgType.Normal and not (Cfg.cfg_main_bg)[self._currentMainBgID] then
-          self._currentMainBgID = 1
-        end
-        self:_GetComponents()
-        self:_OnValue()
-        self:_ShowCgBgUI()
-        self:ShowDialogAnim()
-        self:InitBtn()
-        local controller = ((GameGlobal.UIStateManager)()):GetController("UIChooseMainCgController")
-        if controller then
-          controller:SetCgControllerShowOrHide(false)
-        end
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnShowChangeMainCg, UIPetAndBgMoveType.Bg, true)
-      end
-    end
+  self._currentMainBgID = self._roleModule:UI_GetMainBgID()
+  self._currentMainBgType = self._roleModule.m_choose_painting.background_type
+  self._current_is_hand_operate = self._roleModule.m_choose_painting.is_hand_operate
+  self._current_hand_spine_index = self._roleModule.m_choose_painting.spine_id
+  self._currentMainBgID = self._currentMainBgID == 0 and 2 or self._currentMainBgID
+  self._currentMainBgType = self._currentMainBgType == 0 and 1 or self._currentMainBgType
+  self._current_hand_spine_index = self._current_hand_spine_index == 0 and 1 or self._current_hand_spine_index
+  if self._currentMainBgType == UIChooseAssistantBgType.Normal and not Cfg.cfg_main_bg[self._currentMainBgID] then
+    self._currentMainBgID = 1
   end
+  self:_GetComponents()
+  self:_OnValue()
+  self:_ShowCgBgUI()
+  self:ShowDialogAnim()
+  self:InitBtn()
+  local controller = GameGlobal.UIStateManager():GetController("UIChooseMainCgController")
+  if controller then
+    controller:SetCgControllerShowOrHide(false)
+  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnShowChangeMainCg, UIPetAndBgMoveType.Bg, true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIChooseMainBgController:_GetComponents()
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "scrollView")
   self._anim = self:GetUIComponent("Animation", "UIChooseMainBgController")
   self._move2 = self:GetGameObject("move2")
@@ -68,8 +51,7 @@ UIChooseMainBgController._GetComponents = function(self)
   self._tog = self:GetUIComponent("Toggle", "Toggle")
   self._viewBg = self:GetUIComponent("RectTransform", "viewBg")
   self._bgRect = self:GetUIComponent("RectTransform", "bg")
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._bgRect)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._bgRect)
   self._mulSpineGo = self:GetGameObject("mulSpine")
   self._multiSpineArrowsGo = self:GetGameObject("multiSpineArrows")
   self._autoSwithSpineGo = self:GetGameObject("autoSwithSpineBtn")
@@ -83,114 +65,72 @@ UIChooseMainBgController._GetComponents = function(self)
   btn3.data = self:GetSkinBgData()
   btn4.selectObj = self:GetGameObject("seasonSelected")
   btn4.data = self:GetSeasonBgData()
-  -- DECOMPILER ERROR at PC93: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._bgTypeBtns)[UIChooseAssistantBgType.Normal] = btn1
-  -- DECOMPILER ERROR at PC97: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._bgTypeBtns)[UIChooseAssistantBgType.Story] = btn2
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._bgTypeBtns)[UIChooseAssistantBgType.Skin] = btn3
-  -- DECOMPILER ERROR at PC105: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._bgTypeBtns)[UIChooseAssistantBgType.Season] = btn4
+  self._bgTypeBtns[UIChooseAssistantBgType.Normal] = btn1
+  self._bgTypeBtns[UIChooseAssistantBgType.Story] = btn2
+  self._bgTypeBtns[UIChooseAssistantBgType.Skin] = btn3
+  self._bgTypeBtns[UIChooseAssistantBgType.Season] = btn4
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local realWidth = (ResolutionManager.RealWidth)()
-  local realHeight = (ResolutionManager.RealHeight)()
+function UIChooseMainBgController:_OnValue()
+  local realWidth = ResolutionManager.RealWidth()
+  local realHeight = ResolutionManager.RealHeight()
   self._safeArea = Vector2(realWidth, realHeight)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.InitBtn = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIChooseMainBgController:InitBtn()
   if self._currentMainBgType == UIChooseAssistantBgType.Normal then
     self:SceneBtnOnClick()
-  else
-    if self._currentMainBgType == UIChooseAssistantBgType.Story then
-      self:StoryBtnOnClick()
-    else
-      if self._currentMainBgType == UIChooseAssistantBgType.Skin then
-        self:SkinBtnOnClick()
-      else
-        if self._currentMainBgType == UIChooseAssistantBgType.Season then
-          self:SeasonBtnOnClick()
-        end
-      end
-    end
+  elseif self._currentMainBgType == UIChooseAssistantBgType.Story then
+    self:StoryBtnOnClick()
+  elseif self._currentMainBgType == UIChooseAssistantBgType.Skin then
+    self:SkinBtnOnClick()
+  elseif self._currentMainBgType == UIChooseAssistantBgType.Season then
+    self:SeasonBtnOnClick()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.GetSceneBgData = function(self)
-  -- function num : 0_5
+function UIChooseMainBgController:GetSceneBgData()
   return self:_GetSceneData()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController._GetSceneData = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIChooseMainBgController:_GetSceneData()
   local datas = {}
-  local cfg_main_bg = (Cfg.cfg_main_bg)({})
+  local cfg_main_bg = Cfg.cfg_main_bg({})
   if cfg_main_bg and next(cfg_main_bg) then
     for i = 1, #cfg_main_bg do
       local unLock = true
       local data = {}
       data.type = UIChooseAssistantBgType.Normal
-      local itemid = (cfg_main_bg[i]).ItemID
+      local itemid = cfg_main_bg[i].ItemID
       if itemid then
         data.itemid = itemid
-        local itemcount = (self._itemModule):GetItemCount(itemid)
-      end
-      if itemcount and itemcount > 0 then
-        do
-          do
-            unLock = false
-            if unLock then
-              data.id = (cfg_main_bg[i]).ID
-              data.bg = (cfg_main_bg[i]).BG
-              data.name = (cfg_main_bg[i]).Name
-              ;
-              (table.insert)(datas, data)
-            end
-            -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        local itemcount = self._itemModule:GetItemCount(itemid)
+        if itemcount and 0 < itemcount then
+        else
+          unLock = false
         end
       end
-    end
-  end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local sortlist = datas
-  local getItemFunc = function(id)
-    -- function num : 0_6_0 , upvalues : itemModule, _ENV
-    local items = itemModule:GetItemByTempId(id)
-    if items and (table.count)(items) > 0 then
-      for key,value in pairs(items) do
-        do return value end
+      if unLock then
+        data.id = cfg_main_bg[i].ID
+        data.bg = cfg_main_bg[i].BG
+        data.name = cfg_main_bg[i].Name
+        table.insert(datas, data)
       end
     end
   end
-
-  ;
-  (table.sort)(sortlist, function(a, b)
-    -- function num : 0_6_1 , upvalues : self
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local sortlist = datas
+  
+  local function getItemFunc(id)
+    local items = itemModule:GetItemByTempId(id)
+    if items and table.count(items) > 0 then
+      for key, value in pairs(items) do
+        return value
+      end
+    end
+  end
+  
+  table.sort(sortlist, function(a, b)
     local aUsing = a.id == self._currentMainBgID and a.type == self._currentMainBgType
     local bUsing = b.id == self._currentMainBgID and b.type == self._currentMainBgType
     if aUsing or bUsing then
@@ -198,95 +138,64 @@ UIChooseMainBgController._GetSceneData = function(self)
     else
       return a.id < b.id
     end
-    -- DECOMPILER ERROR: 7 unprocessed JMP targets
-  end
-)
+  end)
   return sortlist
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.GetStoryBgData = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  return self:GetCGDataListByMulTyps({UIChooseAssistantBgType.Story})
+function UIChooseMainBgController:GetStoryBgData()
+  return self:GetCGDataListByMulTyps({
+    UIChooseAssistantBgType.Story
+  })
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.GetSkinBgData = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  return self:GetCGDataListByMulTyps({UIChooseAssistantBgType.Skin, UIChooseAssistantBgType.MultiSpineSkin})
+function UIChooseMainBgController:GetSkinBgData()
+  return self:GetCGDataListByMulTyps({
+    UIChooseAssistantBgType.Skin,
+    UIChooseAssistantBgType.MultiSpineSkin
+  })
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.GetSeasonBgData = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  return self:GetCGDataListByMulTyps({UIChooseAssistantBgType.Season})
+function UIChooseMainBgController:GetSeasonBgData()
+  return self:GetCGDataListByMulTyps({
+    UIChooseAssistantBgType.Season
+  })
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController._ShowCgBgUI = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local petid = (self._roleModule):GetResId()
+function UIChooseMainBgController:_ShowCgBgUI()
+  local petid = self._roleModule:GetResId()
   self._haveAs = true
   if petid and petid == -1 then
     self._haveAs = false
   end
-  ;
-  (self._togGo):SetActive(self._haveAs)
+  self._togGo:SetActive(self._haveAs)
   self._togValue = not self._haveAs
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._tog).isOn = self._togValue
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnMainLobbyHideAssistant, self._togValue)
-  ;
-  ((self._tog).onValueChanged):AddListener(function(value)
-    -- function num : 0_10_0 , upvalues : self
+  self._tog.isOn = self._togValue
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnMainLobbyHideAssistant, self._togValue)
+  self._tog.onValueChanged:AddListener(function(value)
     self:_OnToggleChange(value)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController._OnToggleChange = function(self, value)
-  -- function num : 0_11 , upvalues : _ENV
+function UIChooseMainBgController:_OnToggleChange(value)
   self._togValue = value
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnMainLobbyHideAssistant, self._togValue)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnMainLobbyHideAssistant, self._togValue)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController._InitScrollView = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIChooseMainBgController:_InitScrollView()
   self._spawnBtnList = {}
   if self._scrollView then
     self._initScrollViewFlag = true
-    ;
-    (self._scrollView):InitListView((table.count)(self._curBGInfo), function(scrollView, index)
-    -- function num : 0_12_0 , upvalues : self
-    return self:_InitListView(scrollView, index)
-  end
-)
+    self._scrollView:InitListView(table.count(self._curBGInfo), function(scrollView, index)
+      return self:_InitListView(scrollView, index)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController._ResetListView = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (self._scrollView):SetListItemCount((table.count)(self._curBGInfo), true)
+function UIChooseMainBgController:_ResetListView()
+  self._scrollView:SetListItemCount(table.count(self._curBGInfo), true)
   self._spawnBtnList = {}
-  ;
-  (self._scrollView):RefreshAllShownItem()
-  ;
-  (table.sort)(self._spawnBtnList, function(a, b)
-    -- function num : 0_13_0
+  self._scrollView:RefreshAllShownItem()
+  table.sort(self._spawnBtnList, function(a, b)
     local aUsing = a:GetUsing()
     local bUsing = b:GetUsing()
     local aId = a:GetID()
@@ -296,15 +205,10 @@ UIChooseMainBgController._ResetListView = function(self)
     else
       return aId < bId
     end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController._InitListView = function(self, scrollView, index)
-  -- function num : 0_14 , upvalues : _ENV
+function UIChooseMainBgController:_InitListView(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -318,38 +222,29 @@ UIChooseMainBgController._InitListView = function(self, scrollView, index)
   for i = 1, self._itemCountPerRow do
     local rowitem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if (table.count)(self._curBGInfo) < itemIndex then
-      (rowitem:GetGameObject()):SetActive(false)
+    if itemIndex > table.count(self._curBGInfo) then
+      rowitem:GetGameObject():SetActive(false)
     else
       self:_ShowItem(rowitem, itemIndex)
     end
-    ;
-    (table.insert)(self._spawnBtnList, rowitem)
+    table.insert(self._spawnBtnList, rowitem)
   end
   return item
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController._ShowItem = function(self, item, index)
-  -- function num : 0_15
-  local data = (self._curBGInfo)[index]
-  ;
-  (item:GetGameObject()):SetActive(true)
-  item:SetData(data.id, data.itemid, data.type, data == nil, ((data.id == self._currentMainBgID and data.type == self._currentMainBgType) or data.id == self._currentChooseID) and data.type == self._btnStatus, data.bg, data.name, function(id, type)
-    -- function num : 0_15_0 , upvalues : self
-    self:_ChooseOneBg(id, type)
+function UIChooseMainBgController:_ShowItem(item, index)
+  local data = self._curBGInfo[index]
+  item:GetGameObject():SetActive(true)
+  if data ~= nil then
+    item:SetData(data.id, data.itemid, data.type, data.id == self._currentMainBgID and data.type == self._currentMainBgType, data.id == self._currentChooseID and data.type == self._btnStatus, data.bg, data.name, function(id, type)
+      self:_ChooseOneBg(id, type)
+    end)
   end
-)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController._ChooseOneBg = function(self, id, type)
-  -- function num : 0_16 , upvalues : _ENV
+function UIChooseMainBgController:_ChooseOneBg(id, type)
   if self._currentChooseID == id and self._currentChooseType == type then
-    return 
+    return
   end
   self._currentChooseID = id
   self._currentChooseType = type
@@ -358,56 +253,39 @@ UIChooseMainBgController._ChooseOneBg = function(self, id, type)
   if cfg then
     self:ResetBgIndex(true)
     self:_RefreshCtrBtns()
-    return 
+    return
   end
   self:_RefreshCtrBtns()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeMainBg, self._btnStatus, self._currentChooseID, true, false, false, false, self.spineIndex)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeMainBg, self._btnStatus, self._currentChooseID, true, false, false, false, self.spineIndex)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController._RefreshCtrBtns = function(self)
-  -- function num : 0_17
+function UIChooseMainBgController:_RefreshCtrBtns()
   local cfg, arrlen = self:CheckMulSpineCg(self._currentChooseID)
   local isMultiSpine = cfg ~= nil
-  ;
-  (self._mulSpineGo):SetActive(isMultiSpine)
-  ;
-  (self._multiSpineArrowsGo):SetActive(false)
+  self._mulSpineGo:SetActive(isMultiSpine)
+  self._multiSpineArrowsGo:SetActive(false)
   if not isMultiSpine then
-    return 
+    return
   end
   self:_RefreshMultiSpinesModel()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController._RefreshMultiSpinesModel = function(self)
-  -- function num : 0_18
-  (self._manulSwitchSpineGo):SetActive(not self.bMultiSpineAuto)
-  ;
-  (self._autoSwithSpineGo):SetActive(self.bMultiSpineAuto)
-  ;
-  (self._multiSpineArrowsGo):SetActive(not self.bMultiSpineAuto)
+function UIChooseMainBgController:_RefreshMultiSpinesModel()
+  self._manulSwitchSpineGo:SetActive(not self.bMultiSpineAuto)
+  self._autoSwithSpineGo:SetActive(self.bMultiSpineAuto)
+  self._multiSpineArrowsGo:SetActive(not self.bMultiSpineAuto)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.cancelBtnOnClick = function(self, go)
-  -- function num : 0_19 , upvalues : _ENV
-  local cgtrl = ((GameGlobal.UIStateManager)()):GetController("UIChooseMainCgController")
+function UIChooseMainBgController:cancelBtnOnClick(go)
+  local cgtrl = GameGlobal.UIStateManager():GetController("UIChooseMainCgController")
   local preIndex = -1
   if cgtrl ~= nil then
     preIndex = cgtrl.curDressIndex
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnMainCgChangeSave, UIChooseAssistantType.Bg2MainLobby, UIChooseAssistantState.Cancel, -1, -1, preIndex)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnShowChangeMainCg, UIPetAndBgMoveType.None)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnMainCgChangeSave, UIChooseAssistantType.Bg2MainLobby, UIChooseAssistantState.Cancel, -1, -1, preIndex)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnShowChangeMainCg, UIPetAndBgMoveType.None)
   self:CloseDialogAnim()
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UIChooseMainCgController")
+  local controller = GameGlobal.UIStateManager():GetController("UIChooseMainCgController")
   if controller then
     controller:SetCgControllerShowOrHide(true)
     controller:SetShowAssistant()
@@ -416,59 +294,38 @@ UIChooseMainBgController.cancelBtnOnClick = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.CloseDialogAnim = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIChooseMainBgController:CloseDialogAnim()
   self:Lock("UIChooseMainBgController:CloseDialogAnim")
-  ;
-  (self._anim):Play((self._str2anim).OnHide)
+  self._anim:Play(self._str2anim.OnHide)
   self:StartTask(function(TT)
-    -- function num : 0_20_0 , upvalues : _ENV, self
     YIELD(TT, 433)
     self:UnLock("UIChooseMainBgController:CloseDialogAnim")
     self:CloseDialog()
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.ShowDialogAnim = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIChooseMainBgController:ShowDialogAnim()
   self:Lock("UIChooseMainBgController:ShowDialogAnim")
-  ;
-  (self._anim):Play((self._str2anim).OnShow)
+  self._anim:Play(self._str2anim.OnShow)
   self:StartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : _ENV, self
     YIELD(TT, 433)
     self:UnLock("UIChooseMainBgController:ShowDialogAnim")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.MoveBtnOnClick = function(self, go)
-  -- function num : 0_22 , upvalues : _ENV
+function UIChooseMainBgController:MoveBtnOnClick(go)
   if self._haveAs and self._togValue then
     self:HideAsReq(function()
-    -- function num : 0_22_0 , upvalues : self, _ENV
-    self:ShowDialog("UIChooseMainCgController", UIChooseAssistantType.Change2Bg, self._currentChooseID, self._currentChooseType)
-  end
-)
+      self:ShowDialog("UIChooseMainCgController", UIChooseAssistantType.Change2Bg, self._currentChooseID, self._currentChooseType)
+    end)
   else
     self:CloseDialogAnim()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeMainBg, self._btnStatus, self._currentChooseID, true, true, true, true, self.spineIndex)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeMainBg, self._btnStatus, self._currentChooseID, true, true, true, true, self.spineIndex)
     self:ShowDialog("UIChooseMainCgController", UIChooseAssistantType.Change2Bg, self._currentChooseID, self._currentChooseType)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.saveBtnOnClick = function(self, go)
-  -- function num : 0_23 , upvalues : _ENV
+function UIChooseMainBgController:saveBtnOnClick(go)
   local cancel = false
   if self._currentChooseID == 0 then
     cancel = true
@@ -477,170 +334,134 @@ UIChooseMainBgController.saveBtnOnClick = function(self, go)
     cancel = true
   end
   if cancel then
-    local cgtrl = ((GameGlobal.UIStateManager)()):GetController("UIChooseMainCgController")
+    local cgtrl = GameGlobal.UIStateManager():GetController("UIChooseMainCgController")
     local preIndex = -1
     if cgtrl ~= nil then
       preIndex = cgtrl.curDressIndex
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnMainCgChangeSave, UIChooseAssistantType.Bg2MainLobby, UIChooseAssistantState.Save, self._currentChooseID, self._btnStatus, preIndex)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnMainCgChangeSave, UIChooseAssistantType.Bg2MainLobby, UIChooseAssistantState.Save, self._currentChooseID, self._btnStatus, preIndex)
     self:CloseDialogAnim()
     self:SaveAsState()
   else
-    do
-      self:CloseDialogAnim()
-      ChooseAssistantHelper:SaveTmpChooseBgPaintingData(true, self._currentChooseID, self._currentChooseType)
-      local controller = ((GameGlobal.UIStateManager)()):GetController("UIChooseMainCgController")
-      if controller then
-        controller:SetCgControllerShowOrHide(true)
-        controller:SetCgShowInfo({UIChooseAssistantType.Change2Bg, self._currentChooseID, self._currentChooseType})
-      else
-        self:ShowDialog("UIChooseMainCgController", UIChooseAssistantType.Change2Bg, self._currentChooseID, self._currentChooseType)
-      end
-    end
+    self:CloseDialogAnim()
+  end
+  ChooseAssistantHelper:SaveTmpChooseBgPaintingData(true, self._currentChooseID, self._currentChooseType)
+  local controller = GameGlobal.UIStateManager():GetController("UIChooseMainCgController")
+  if controller then
+    controller:SetCgControllerShowOrHide(true)
+    controller:SetCgShowInfo({
+      UIChooseAssistantType.Change2Bg,
+      self._currentChooseID,
+      self._currentChooseType
+    })
+  else
+    self:ShowDialog("UIChooseMainCgController", UIChooseAssistantType.Change2Bg, self._currentChooseID, self._currentChooseType)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.OnSaveBtnOnClick = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeMainBg, self._btnStatus, self._currentChooseID, true, true, true, true, self.spineIndex)
+function UIChooseMainBgController:OnSaveBtnOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeMainBg, self._btnStatus, self._currentChooseID, true, true, true, true, self.spineIndex)
   self:SaveAsState()
   self:CloseDialogAnim()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.HideAsReq = function(self, callbcak)
-  -- function num : 0_25 , upvalues : _ENV
+function UIChooseMainBgController:HideAsReq(callbcak)
   self:Lock("UIChooseMainBgController:HideAsReq()")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_25_0 , upvalues : self, _ENV, callbcak
+  GameGlobal.TaskManager():StartTask(function(TT)
     local id = -1
     local grade = -1
     local skinID = -1
     local asID = -1
-    local res = (self._roleModule):RequestChoosePainting(TT, id, grade, skinID, asID)
+    local res = self._roleModule:RequestChoosePainting(TT, id, grade, skinID, asID)
     if res and res:GetSucc() then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeMainBg, self._btnStatus, self._currentChooseID, true, true, true, true, self.spineIndex)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeMainBg, self._btnStatus, self._currentChooseID, true, true, true, true, self.spineIndex)
       self:SaveAsState()
       self:CloseDialogAnim()
       if callbcak then
         callbcak()
       end
     else
-      ;
-      (ToastManager.ShowToast)("###[UIChooseMainBgController] HideAsReq fail ! result --> ", res:GetResult())
-      ;
-      (Log.error)("###[UIChooseMainBgController] HideAsReq fail ! result --> ", res:GetResult())
+      ToastManager.ShowToast("###[UIChooseMainBgController] HideAsReq fail ! result --> ", res:GetResult())
+      Log.error("###[UIChooseMainBgController] HideAsReq fail ! result --> ", res:GetResult())
     end
     self:UnLock("UIChooseMainBgController:HideAsReq()")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.SaveAsState = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIChooseMainBgController:SaveAsState()
   local value = self._togValue and 1 or 0
-  local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+  local open_id = GameGlobal.GameLogic():GetOpenId()
   local key = "MAIN_BG_AS_ACTIVE" .. open_id
-  ;
-  (LocalDB.SetInt)(key, value)
+  LocalDB.SetInt(key, value)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.GetCGDataListByMulTyps = function(self, typeArray)
-  -- function num : 0_27 , upvalues : _ENV
+function UIChooseMainBgController:GetCGDataListByMulTyps(typeArray)
   local types = {}
-  for k,subType in pairs(typeArray) do
+  for k, subType in pairs(typeArray) do
     types[subType] = true
   end
   local cgs = {}
   local bookModule = self:GetModule(BookModule)
   local storyData = bookModule:GetCGStoryData()
   if types[UIChooseAssistantBgType.Story] then
-    local bgTb = (HelperProxy:GetInstance()):pairsByKeys((storyData.TypeList)[BookCGType.Main])
-    local extBgTb = (HelperProxy:GetInstance()):pairsByKeys((storyData.TypeList)[BookCGType.Ext])
+    local bgTb = HelperProxy:GetInstance():pairsByKeys(storyData.TypeList[BookCGType.Main])
+    local extBgTb = HelperProxy:GetInstance():pairsByKeys(storyData.TypeList[BookCGType.Ext])
     cgs = self:_InsertBgList(cgs, UIChooseAssistantBgType.Story, bgTb)
     cgs = self:_InsertBgList(cgs, UIChooseAssistantBgType.Story, extBgTb)
   end
-  do
-    do
-      if types[UIChooseAssistantBgType.Skin] then
-        local bgTb = (HelperProxy:GetInstance()):pairsByKeys((storyData.TypeList)[BookCGType.Pet])
-        cgs = self:_InsertBgList(cgs, UIChooseAssistantBgType.Skin, bgTb)
+  if types[UIChooseAssistantBgType.Skin] then
+    local bgTb = HelperProxy:GetInstance():pairsByKeys(storyData.TypeList[BookCGType.Pet])
+    cgs = self:_InsertBgList(cgs, UIChooseAssistantBgType.Skin, bgTb)
+  end
+  if types[UIChooseAssistantBgType.Season] then
+    local bgTb = HelperProxy:GetInstance():pairsByKeys(storyData.TypeList[BookCGType.Season])
+    cgs = self:_InsertBgList(cgs, UIChooseAssistantBgType.Season, bgTb)
+  end
+  if types[UIChooseAssistantBgType.MultiSpineSkin] then
+    local skinCgs = bookModule:GetMultiSpinesSkinCgs()
+    if skinCgs then
+      for k, subCfg in pairs(skinCgs) do
+        local data = {}
+        data.id = subCfg.ID
+        data.bg = subCfg.Preview
+        data.name = subCfg.PreviewTitle
+        data.type = UIChooseAssistantBgType.Skin
+        table.insert(cgs, data)
       end
-      do
-        if types[UIChooseAssistantBgType.Season] then
-          local bgTb = (HelperProxy:GetInstance()):pairsByKeys((storyData.TypeList)[BookCGType.Season])
-          cgs = self:_InsertBgList(cgs, UIChooseAssistantBgType.Season, bgTb)
-        end
-        if types[UIChooseAssistantBgType.MultiSpineSkin] then
-          local skinCgs = bookModule:GetMultiSpinesSkinCgs()
-          if skinCgs then
-            for k,subCfg in pairs(skinCgs) do
-              local data = {}
-              data.id = subCfg.ID
-              data.bg = subCfg.Preview
-              data.name = subCfg.PreviewTitle
-              data.type = UIChooseAssistantBgType.Skin
-              ;
-              (table.insert)(cgs, data)
-            end
-          end
-        end
-        do
-          if not cgs or #cgs == 0 then
-            return 
-          end
-          ;
-          (table.sort)(cgs, function(a, b)
-    -- function num : 0_27_0 , upvalues : self
+    end
+  end
+  if not cgs or #cgs == 0 then
+    return
+  end
+  table.sort(cgs, function(a, b)
     local priorityA = 0
     local priorityB = 0
     if self._currentMainBgID == a.id and self._currentMainBgType == a.type then
       priorityA = priorityA + 10000
-    else
-      if self._currentMainBgID == b.id and self._currentMainBgType == b.type then
-        priorityB = priorityA + 10000
-      end
+    elseif self._currentMainBgID == b.id and self._currentMainBgType == b.type then
+      priorityB = priorityA + 10000
     end
-    if priorityB >= priorityA then
-      do return priorityA == priorityB end
-      do return a.id < b.id end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if priorityA ~= priorityB then
+      return priorityA > priorityB
     end
-  end
-)
-          return cgs
-        end
-      end
-    end
-  end
+    return a.id < b.id
+  end)
+  return cgs
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController._InsertBgList = function(self, tb, type, pairsByKeys)
-  -- function num : 0_28 , upvalues : _ENV
-  for cgId,active in pairsByKeys do
+function UIChooseMainBgController:_InsertBgList(tb, type, pairsByKeys)
+  for cgId, active in pairsByKeys, nil, nil do
     if active then
-      local cfg = (Cfg.cfg_cg_book)[cgId]
+      local cfg = Cfg.cfg_cg_book[cgId]
       if cfg.IsActive then
-        local k, isUnLock = (self._bookModule):GetSeasonStory(cfg)
+        local k, isUnLock = self._bookModule:GetSeasonStory(cfg)
         if isUnLock then
           local data = {}
           data.id = cgId
           data.bg = cfg.Preview
           data.name = cfg.PreviewTitle
           data.type = type
-          ;
-          (table.insert)(tb, data)
+          table.insert(tb, data)
         end
       end
     end
@@ -648,197 +469,141 @@ UIChooseMainBgController._InsertBgList = function(self, tb, type, pairsByKeys)
   return tb
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.SceneBtnOnClick = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIChooseMainBgController:SceneBtnOnClick()
   if self._btnStatus == UIChooseAssistantBgType.Normal then
-    return 
+    return
   end
   self:TypeBtnClick(UIChooseAssistantBgType.Normal)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.StoryBtnOnClick = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIChooseMainBgController:StoryBtnOnClick()
   if self._btnStatus == UIChooseAssistantBgType.Story then
-    return 
+    return
   end
-  local btn = (self._bgTypeBtns)[UIChooseAssistantBgType.Story]
+  local btn = self._bgTypeBtns[UIChooseAssistantBgType.Story]
   local data = btn.data
-  do
-    if not data or (table.count)(data) < 1 then
-      local tipsStr = (StringTable.Get)("str_assistant_cg_bg_tip3")
-      ;
-      (ToastManager.ShowToast)(tipsStr)
-      return 
-    end
-    self:TypeBtnClick(UIChooseAssistantBgType.Story)
+  if not data or table.count(data) < 1 then
+    local tipsStr = StringTable.Get("str_assistant_cg_bg_tip3")
+    ToastManager.ShowToast(tipsStr)
+    return
   end
+  self:TypeBtnClick(UIChooseAssistantBgType.Story)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.SkinBtnOnClick = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function UIChooseMainBgController:SkinBtnOnClick()
   if self._btnStatus == UIChooseAssistantBgType.Skin then
-    return 
+    return
   end
-  local btn = (self._bgTypeBtns)[UIChooseAssistantBgType.Skin]
+  local btn = self._bgTypeBtns[UIChooseAssistantBgType.Skin]
   local data = btn.data
-  do
-    if not data or (table.count)(data) < 1 then
-      local tipsStr = (StringTable.Get)("str_assistant_cg_bg_tip1")
-      ;
-      (ToastManager.ShowToast)(tipsStr)
-      return 
-    end
-    self:TypeBtnClick(UIChooseAssistantBgType.Skin)
+  if not data or table.count(data) < 1 then
+    local tipsStr = StringTable.Get("str_assistant_cg_bg_tip1")
+    ToastManager.ShowToast(tipsStr)
+    return
   end
+  self:TypeBtnClick(UIChooseAssistantBgType.Skin)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.SeasonBtnOnClick = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function UIChooseMainBgController:SeasonBtnOnClick()
   if self._btnStatus == UIChooseAssistantBgType.Season then
-    return 
+    return
   end
-  local btn = (self._bgTypeBtns)[UIChooseAssistantBgType.Season]
+  local btn = self._bgTypeBtns[UIChooseAssistantBgType.Season]
   local data = btn.data
-  do
-    if not data or (table.count)(data) < 1 then
-      local tipsStr = (StringTable.Get)("str_assistant_cg_bg_tip2")
-      ;
-      (ToastManager.ShowToast)(tipsStr)
-      return 
-    end
-    self:TypeBtnClick(UIChooseAssistantBgType.Season)
+  if not data or table.count(data) < 1 then
+    local tipsStr = StringTable.Get("str_assistant_cg_bg_tip2")
+    ToastManager.ShowToast(tipsStr)
+    return
   end
+  self:TypeBtnClick(UIChooseAssistantBgType.Season)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.TypeBtnClick = function(self, type)
-  -- function num : 0_33
-  local curBtn = (self._bgTypeBtns)[self._btnStatus]
+function UIChooseMainBgController:TypeBtnClick(type)
+  local curBtn = self._bgTypeBtns[self._btnStatus]
   if curBtn then
-    (curBtn.selectObj):SetActive(false)
+    curBtn.selectObj:SetActive(false)
   end
   self._btnStatus = type
-  local btn = (self._bgTypeBtns)[type]
-  ;
-  (btn.selectObj):SetActive(true)
+  local btn = self._bgTypeBtns[type]
+  btn.selectObj:SetActive(true)
   self._curBGInfo = btn.data
   if self._initScrollViewFlag then
     self:_ResetListView()
-    self._currentChooseID = ((self._curBGInfo)[1]).id
-    ;
-    ((self._spawnBtnList)[1]):bgOnClick()
+    self._currentChooseID = self._curBGInfo[1].id
+    self._spawnBtnList[1]:bgOnClick()
   else
     self:_InitScrollView()
-    self._currentChooseID = ((self._curBGInfo)[1]).id
-    ;
-    ((self._spawnBtnList)[1]):bgOnClick()
+    self._currentChooseID = self._curBGInfo[1].id
+    self._spawnBtnList[1]:bgOnClick()
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.AutoSwithSpineBtnOnClick = function(self)
-  -- function num : 0_34
+function UIChooseMainBgController:AutoSwithSpineBtnOnClick()
   self.bMultiSpineAuto = false
   self:_RefreshMultiSpinesModel()
   self:ResetBgIndex()
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.ManulSwithSpineBtnOnClick = function(self)
-  -- function num : 0_35
+function UIChooseMainBgController:ManulSwithSpineBtnOnClick()
   self.bMultiSpineAuto = true
   self:_RefreshMultiSpinesModel()
   self:ResetBgIndex()
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.ResetBgIndex = function(self, forceCheckAutho)
-  -- function num : 0_36 , upvalues : _ENV
+function UIChooseMainBgController:ResetBgIndex(forceCheckAutho)
   local cfg, num = self:CheckMulSpineCg(self._currentChooseID)
   if cfg then
-    -- DECOMPILER ERROR at PC13: Unhandled construct in 'MakeBoolean' P1
-
-    if forceCheckAutho and self._currentMainBgID == self._currentChooseID then
-      self.bMultiSpineAuto = not self._current_is_hand_operate
-    else
-      self.bMultiSpineAuto = true
+    if forceCheckAutho then
+      if self._currentMainBgID == self._currentChooseID then
+        self.bMultiSpineAuto = not self._current_is_hand_operate
+      else
+        self.bMultiSpineAuto = true
+      end
     end
     if self.bMultiSpineAuto then
       self.spineIndex = num
-    else
-      if self._currentMainBgID == self._currentChooseID then
-        self.spineIndex = self._current_hand_spine_index
-        if self.spineIndex == num then
-          self.spineIndex = 1
-        end
-      else
+    elseif self._currentMainBgID == self._currentChooseID then
+      self.spineIndex = self._current_hand_spine_index
+      if self.spineIndex == num then
         self.spineIndex = 1
       end
+    else
+      self.spineIndex = 1
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeMainBg, self._btnStatus, self._currentChooseID, true, false, false, false, self.spineIndex)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeMainBg, self._btnStatus, self._currentChooseID, true, false, false, false, self.spineIndex)
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.PreSpineBtnOnClick = function(self)
-  -- function num : 0_37
+function UIChooseMainBgController:PreSpineBtnOnClick()
   self:ChgBgIndexByStep(-1)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.NextSpineBtnOnClick = function(self)
-  -- function num : 0_38
+function UIChooseMainBgController:NextSpineBtnOnClick()
   self:ChgBgIndexByStep(1)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.ChgBgIndexByStep = function(self, step)
-  -- function num : 0_39 , upvalues : _ENV
+function UIChooseMainBgController:ChgBgIndexByStep(step)
   local cfg, arrLen = self:CheckMulSpineCg(self._currentChooseID)
   if not cfg then
-    return 
+    return
   end
   local num = arrLen - 1
-  if not self.spineIndex then
-    self.spineIndex = num <= 1 or 1
+  if 1 < num then
+    self.spineIndex = self.spineIndex or 1
     self.spineIndex = self.spineIndex + step
     if self.spineIndex <= 0 then
       self.spineIndex = num
-    else
-      if num < self.spineIndex then
-        self.spineIndex = 1
-      end
+    elseif num < self.spineIndex then
+      self.spineIndex = 1
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeMainBg, self._btnStatus, self._currentChooseID, true, false, false, false, self.spineIndex)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeMainBg, self._btnStatus, self._currentChooseID, true, false, false, false, self.spineIndex)
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseMainBgController.CheckMulSpineCg = function(self, cgId)
-  -- function num : 0_40 , upvalues : _ENV
-  local cfg = (Cfg.cfg_cg_book)[cgId]
+function UIChooseMainBgController:CheckMulSpineCg(cgId)
+  local cfg = Cfg.cfg_cg_book[cgId]
   if cfg and cfg.Type == UIChooseAssistantBgType.MultiSpineSkin and cfg.Spine then
     local num = #cfg.Spine
     return cfg, num
   end
 end
-
-

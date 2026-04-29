@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/aircraft/aircraft_room/aircraft_resource_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("aircraft_room_base")
 _class("AircraftResourceRoom", AircraftRoomBase)
 AircraftResourceRoom = AircraftResourceRoom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftResourceRoom.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._resModule = (GameGlobal.GetModule)(ResDungeonModule)
+function AircraftResourceRoom:Constructor()
+  self._resModule = GameGlobal.GetModule(ResDungeonModule)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftResourceRoom.SetClientData = function(self, client_data)
-  -- function num : 0_1
+function AircraftResourceRoom:SetClientData(client_data)
   self._room_cd = client_data[1]
   self._pet_cd = client_data[2]
   self._room_limit = client_data[3]
@@ -29,52 +19,34 @@ AircraftResourceRoom.SetClientData = function(self, client_data)
   self._total_cd = self._pet_cd + self._room_cd
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftResourceRoom.GetResourceRoomConfig = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_resource_room)[self._roomid]
+function AircraftResourceRoom:GetResourceRoomConfig()
+  local cfg = Cfg.cfg_aircraft_resource_room[self._roomid]
   return cfg
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftResourceRoom.CanCollect = function(self)
-  -- function num : 0_3
+function AircraftResourceRoom:CanCollect()
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftResourceRoom.GetResCardCount = function(self)
-  -- function num : 0_4
-  return (self._resModule):GetDoubleResNum()
+function AircraftResourceRoom:GetResCardCount()
+  return self._resModule:GetDoubleResNum()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftResourceRoom.GetResCardCD = function(self)
-  -- function num : 0_5
+function AircraftResourceRoom:GetResCardCD()
   return self._room_cd, self._pet_cd
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftResourceRoom.GetResCardLimit = function(self)
-  -- function num : 0_6
+function AircraftResourceRoom:GetResCardLimit()
   return self._room_limit, self._pet_limit
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftResourceRoom.GetResCardLeftCDTime = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  if self._total_limit <= self:GetResCardCount() then
+function AircraftResourceRoom:GetResCardLeftCDTime()
+  if self:GetResCardCount() >= self._total_limit then
     return -1
   end
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local now = timeModule:GetServerTime() / 1000
-  local start = (self._module):GetResCardCDTime()
+  local start = self._module:GetResCardCDTime()
   local left = start + self._total_cd - now
   if left <= 0 then
     left = 0
@@ -82,21 +54,15 @@ AircraftResourceRoom.GetResCardLeftCDTime = function(self)
   return left
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftResourceRoom.GetCoinDungeonLevel = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_resource_room)[self._roomid]
+function AircraftResourceRoom:GetCoinDungeonLevel()
+  local cfg = Cfg.cfg_aircraft_resource_room[self._roomid]
   return cfg.CoinDungeonLevel
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftResourceRoom.GetUpgradeInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function AircraftResourceRoom:GetUpgradeInfo()
   local room_cfg = self:GetConfig()
-  local cur_cfg = (Cfg.cfg_aircraft_resource_room)[room_cfg.ID]
-  local next_cfg = (Cfg.cfg_aircraft_resource_room)[room_cfg.NextLevelID]
+  local cur_cfg = Cfg.cfg_aircraft_resource_room[room_cfg.ID]
+  local next_cfg = Cfg.cfg_aircraft_resource_room[room_cfg.NextLevelID]
   if next_cfg == nil then
     return nil
   end
@@ -107,21 +73,31 @@ AircraftResourceRoom.GetUpgradeInfo = function(self)
   local cur_res_reward_cd = cur_cfg.ResCardCD
   local nxt_res_reward_cd = next_cfg.ResCardCD
   return {
-{AirLevelInfoTitle.ResDungeonLevel, AirRoomChangeLevelDataType.NumberInt, cur_res_dungeon_id, nxt_res_dungeon_id}
-, 
-{AirLevelInfoTitle.ResRewardCD, AirRoomChangeLevelDataType.Hour, cur_res_reward_cd, nxt_res_reward_cd}
-, 
-{AirLevelInfoTitle.ResRewardCount, AirRoomChangeLevelDataType.NumberInt, cur_res_reward_count, nxt_res_reward_count}
-}
+    {
+      AirLevelInfoTitle.ResDungeonLevel,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_res_dungeon_id,
+      nxt_res_dungeon_id
+    },
+    {
+      AirLevelInfoTitle.ResRewardCD,
+      AirRoomChangeLevelDataType.Hour,
+      cur_res_reward_cd,
+      nxt_res_reward_cd
+    },
+    {
+      AirLevelInfoTitle.ResRewardCount,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_res_reward_count,
+      nxt_res_reward_count
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftResourceRoom.GetDegradeInfo = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function AircraftResourceRoom:GetDegradeInfo()
   local room_cfg = self:GetConfig()
-  local cur_cfg = (Cfg.cfg_aircraft_resource_room)[room_cfg.ID]
-  local next_cfg = (Cfg.cfg_aircraft_resource_room)[room_cfg.PrevLevelID]
+  local cur_cfg = Cfg.cfg_aircraft_resource_room[room_cfg.ID]
+  local next_cfg = Cfg.cfg_aircraft_resource_room[room_cfg.PrevLevelID]
   if next_cfg == nil then
     return nil
   end
@@ -132,12 +108,23 @@ AircraftResourceRoom.GetDegradeInfo = function(self)
   local cur_res_reward_cd = cur_cfg.ResCardCD
   local nxt_res_reward_cd = next_cfg.ResCardCD
   return {
-{AirLevelInfoTitle.ResDungeonLevel, AirRoomChangeLevelDataType.NumberInt, cur_res_dungeon_id, nxt_res_dungeon_id}
-, 
-{AirLevelInfoTitle.ResRewardCD, AirRoomChangeLevelDataType.Hour, cur_res_reward_cd, nxt_res_reward_cd}
-, 
-{AirLevelInfoTitle.ResRewardCount, AirRoomChangeLevelDataType.NumberInt, cur_res_reward_count, nxt_res_reward_count}
-}
+    {
+      AirLevelInfoTitle.ResDungeonLevel,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_res_dungeon_id,
+      nxt_res_dungeon_id
+    },
+    {
+      AirLevelInfoTitle.ResRewardCD,
+      AirRoomChangeLevelDataType.Hour,
+      cur_res_reward_cd,
+      nxt_res_reward_cd
+    },
+    {
+      AirLevelInfoTitle.ResRewardCount,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_res_reward_count,
+      nxt_res_reward_count
+    }
+  }
 end
-
-

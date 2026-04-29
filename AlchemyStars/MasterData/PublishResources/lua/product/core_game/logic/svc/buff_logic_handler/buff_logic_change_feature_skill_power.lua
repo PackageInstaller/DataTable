@@ -1,89 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_feature_skill_power.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-EnumChangeFeatureSkillPower = {AllFeatureType = 1, SpecificFeatureType = 2, RandomPopStarSkillFeature = 3}
+EnumChangeFeatureSkillPower = {
+  AllFeatureType = 1,
+  SpecificFeatureType = 2,
+  RandomPopStarSkillFeature = 3
+}
 _enum("EnumChangeFeatureSkillPower", EnumChangeFeatureSkillPower)
 _class("BuffLogicChangeFeatureSkillPower", BuffLogicBase)
 BuffLogicChangeFeatureSkillPower = BuffLogicChangeFeatureSkillPower
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeFeatureSkillPower.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicChangeFeatureSkillPower:Constructor(buffInstance, logicParam)
   self._modifyValue = logicParam.modifyValue or 0
-  if not logicParam.modifyType then
-    self._modifyType = EnumChangeFeatureSkillPower.AllFeatureType
-    self._featureTypeList = logicParam.featureTypeList
-    self._useNotifyValue = logicParam.useNotifyValue or 0
-  end
+  self._modifyType = logicParam.modifyType or EnumChangeFeatureSkillPower.AllFeatureType
+  self._featureTypeList = logicParam.featureTypeList
+  self._useNotifyValue = logicParam.useNotifyValue or 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeFeatureSkillPower.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeFeatureSkillPower:DoLogic(notify)
   local modifyValue = self._modifyValue
   if self._useNotifyValue == 1 and notify.GetCumulativeTriggerNum then
     modifyValue = notify:GetCumulativeTriggerNum()
   end
   local featureSkillPowerStateList = {}
-  local world = (self._buffInstance):World()
-  local teamEntity = (world:Player()):GetLocalTeamEntity()
-  if (self._entity):HasTeam() then
+  local world = self._buffInstance:World()
+  local teamEntity = world:Player():GetLocalTeamEntity()
+  if self._entity:HasTeam() then
     teamEntity = self._entity
-  else
-    if (self._entity):HasPet() then
-      teamEntity = ((self._entity):Pet()):GetOwnerTeamEntity()
-    end
+  elseif self._entity:HasPet() then
+    teamEntity = self._entity:Pet():GetOwnerTeamEntity()
   end
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   if lsvcFeature then
     local featureTypeList = {}
     if self._modifyType == EnumChangeFeatureSkillPower.AllFeatureType then
       featureTypeList = lsvcFeature:GetFeatureTypeList()
-    else
-      if self._modifyType == EnumChangeFeatureSkillPower.SpecificFeatureType then
-        featureTypeList = self._featureTypeList
-      else
-        if self._modifyType == EnumChangeFeatureSkillPower.RandomPopStarSkillFeature then
-          local allPopStarFeature = {}
-          local allFeatureList = lsvcFeature:GetFeatureTypeList()
-          for index,featureType in ipairs(allFeatureList) do
-            if lsvcFeature:IsPopStarSkillFeature(featureType) then
-              (table.insert)(allPopStarFeature, featureType)
-            end
-          end
-          if #allPopStarFeature > 0 then
-            local lsvcRandom = (self._world):GetService("RandomLogic")
-            local featureIndex = 1
-            featureIndex = lsvcRandom:LogicRand(1, #allPopStarFeature)
-            ;
-            (table.insert)(featureTypeList, allPopStarFeature[featureIndex])
-          end
+    elseif self._modifyType == EnumChangeFeatureSkillPower.SpecificFeatureType then
+      featureTypeList = self._featureTypeList
+    elseif self._modifyType == EnumChangeFeatureSkillPower.RandomPopStarSkillFeature then
+      local allPopStarFeature = {}
+      local allFeatureList = lsvcFeature:GetFeatureTypeList()
+      for index, featureType in ipairs(allFeatureList) do
+        if lsvcFeature:IsPopStarSkillFeature(featureType) then
+          table.insert(allPopStarFeature, featureType)
         end
+      end
+      if 0 < #allPopStarFeature then
+        local lsvcRandom = self._world:GetService("RandomLogic")
+        local featureIndex = 1
+        featureIndex = lsvcRandom:LogicRand(1, #allPopStarFeature)
+        table.insert(featureTypeList, allPopStarFeature[featureIndex])
       end
     end
-    do
-      for _,featureType in ipairs(featureTypeList) do
-        local resultFeatureType, curPower, curReady = lsvcFeature:BuffChangeFeatureSkillPower(featureType, modifyValue)
-        if resultFeatureType then
-          local data = FeatureSkillCommonPowerData:New()
-          data.power = curPower
-          data.ready = curReady
-          data.featureType = resultFeatureType
-          ;
-          (table.insert)(featureSkillPowerStateList, data)
-        end
-      end
-      do
-        if #featureSkillPowerStateList > 0 then
-          local buffResult = BuffResultChangeFeatureSkillPower:New(featureSkillPowerStateList)
-          return buffResult
-        end
+    for _, featureType in ipairs(featureTypeList) do
+      local resultFeatureType, curPower, curReady = lsvcFeature:BuffChangeFeatureSkillPower(featureType, modifyValue)
+      if resultFeatureType then
+        local data = FeatureSkillCommonPowerData:New()
+        data.power = curPower
+        data.ready = curReady
+        data.featureType = resultFeatureType
+        table.insert(featureSkillPowerStateList, data)
       end
     end
   end
+  if 0 < #featureSkillPowerStateList then
+    local buffResult = BuffResultChangeFeatureSkillPower:New(featureSkillPowerStateList)
+    return buffResult
+  end
 end
-
-

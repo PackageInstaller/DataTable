@@ -1,29 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_change_attribute_based_on_damage_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeAttributeBasedOnDamage", BuffViewBase)
 BuffViewChangeAttributeBasedOnDamage = BuffViewChangeAttributeBasedOnDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeAttributeBasedOnDamage.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewChangeAttributeBasedOnDamage:PlayView(TT)
   local result = self._buffResult
   local damageInfo = result:GetDamageInfo()
   local entityID = result:GetEntityID()
   local ret = result:GetMaxHPResult()
   if damageInfo == nil then
-    return 
+    return
   end
-  for k,v in pairs(ret) do
-    local e = (self._world):GetEntityByID(k)
+  for k, v in pairs(ret) do
+    local e = self._world:GetEntityByID(k)
     e:ReplaceMaxHP(v)
   end
-  local entityWork = (self._world):GetEntityByID(entityID)
-  local playDamageSvc = (self._world):GetService("PlayDamage")
+  local entityWork = self._world:GetEntityByID(entityID)
+  local playDamageSvc = self._world:GetService("PlayDamage")
   playDamageSvc:UpdateTargetHPBar(TT, entityWork, damageInfo)
   playDamageSvc:DisplayDamage(TT, entityWork, damageInfo)
 end
-
-

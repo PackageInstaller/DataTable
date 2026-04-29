@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_damage_by_move_and_buff_layer_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewDamageByMoveAndBuffLayer", BuffViewBase)
 BuffViewDamageByMoveAndBuffLayer = BuffViewDamageByMoveAndBuffLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewDamageByMoveAndBuffLayer.PlayView = function(self, TT)
-  -- function num : 0_0
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function BuffViewDamageByMoveAndBuffLayer:PlayView(TT)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayDamageBuff(TT, self)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewDamageByMoveAndBuffLayer.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewDamageByMoveAndBuffLayer:IsNotifyMatch(notify)
   local result = self._buffResult
   local entity = self._entity
-  if entity:GetID() ~= (notify:GetNotifyEntity()):GetID() or result:GetWalkPos() ~= notify:GetWalkPos() then
-    do return notify:GetNotifyType() ~= NotifyType.MonsterMoveOneFinish end
-    if result:GetWalkPos() ~= notify:GetPos() then
-      do return notify:GetNotifyType() ~= NotifyType.TeamLeaderEachMoveEnd end
-      do return true end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
-    end
+  if notify:GetNotifyType() == NotifyType.MonsterMoveOneFinish then
+    return entity:GetID() == notify:GetNotifyEntity():GetID() and result:GetWalkPos() == notify:GetWalkPos()
   end
+  if notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveEnd then
+    return result:GetWalkPos() == notify:GetPos()
+  end
+  return true
 end
-
-

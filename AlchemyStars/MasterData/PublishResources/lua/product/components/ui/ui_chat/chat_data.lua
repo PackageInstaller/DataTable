@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/chat_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChatData", Object)
 ChatData = ChatData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChatData.Constructor = function(self, id, messageType, message, emojiId, isSelf, date)
-  -- function num : 0_0
+function ChatData:Constructor(id, messageType, message, emojiId, isSelf, date)
   self._id = id
   self._messageType = messageType
   self._message = message
@@ -19,81 +12,46 @@ ChatData.Constructor = function(self, id, messageType, message, emojiId, isSelf,
   self:DecodeMessage()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatData.GetId = function(self)
-  -- function num : 0_1
+function ChatData:GetId()
   return self._id
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatData.GetMessageType = function(self)
-  -- function num : 0_2
+function ChatData:GetMessageType()
   return self._messageType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatData.GetMessage = function(self)
-  -- function num : 0_3
+function ChatData:GetMessage()
   return self._message
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatData.GetEmojiId = function(self)
-  -- function num : 0_4
+function ChatData:GetEmojiId()
   return self._emojiId
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatData.GetDate = function(self)
-  -- function num : 0_5
+function ChatData:GetDate()
   return self._date
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatData.GetDateStr = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function ChatData:GetDateStr()
   return TimeToDate(self._date, "min")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatData.IsSelf = function(self)
-  -- function num : 0_7
+function ChatData:IsSelf()
   return self._isSelf
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatData.IsShowTime = function(self)
-  -- function num : 0_8
+function ChatData:IsShowTime()
   return self._isShowTime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatData.SetShowTimeStatus = function(self, status)
-  -- function num : 0_9
+function ChatData:SetShowTimeStatus(status)
   self._isShowTime = status
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatData.EncodeMessage = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  self._message = (string.gsub)(self._message, "]", "CUSTOM_RIGHT_BIG_BRACKET_BAIYEJIGUANG")
+function ChatData:EncodeMessage()
+  self._message = string.gsub(self._message, "]", "CUSTOM_RIGHT_BIG_BRACKET_BAIYEJIGUANG")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ChatData.DecodeMessage = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  self._message = (string.gsub)(self._message, "CUSTOM_RIGHT_BIG_BRACKET_BAIYEJIGUANG", "]")
+function ChatData:DecodeMessage()
+  self._message = string.gsub(self._message, "CUSTOM_RIGHT_BIG_BRACKET_BAIYEJIGUANG", "]")
 end
-
-

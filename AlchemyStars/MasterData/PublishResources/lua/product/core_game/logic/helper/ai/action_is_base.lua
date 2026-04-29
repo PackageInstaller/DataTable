@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_is_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionIsBase", AINewNode)
 ActionIsBase = ActionIsBase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionIsBase.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  if (AINewNode.IsEntityDead)(self.m_entityOwn) then
+function ActionIsBase:OnUpdate()
+  if AINewNode.IsEntityDead(self.m_entityOwn) then
     return AINewNodeStatus.Failure
   end
   return AINewNodeStatus.Failure
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionIsBase._IsBodyInSkillRange = function(self, bodyArea, skillRange)
-  -- function num : 0_1
+function ActionIsBase:_IsBodyInSkillRange(bodyArea, skillRange)
   for i = 1, #bodyArea do
     for j = 1, #skillRange do
       if bodyArea[i] == skillRange[j] then
@@ -30,17 +20,12 @@ ActionIsBase._IsBodyInSkillRange = function(self, bodyArea, skillRange)
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionIsBase._IsTargetInSkillRange = function(self, entityTarget, skillRange)
-  -- function num : 0_2 , upvalues : _ENV
-  if (AINewNode.IsEntityDead)(self.m_entityOwn) then
+function ActionIsBase:_IsTargetInSkillRange(entityTarget, skillRange)
+  if AINewNode.IsEntityDead(self.m_entityOwn) then
     return false
   end
-  local targetPos = (entityTarget:GridLocation()).Position
+  local targetPos = entityTarget:GridLocation().Position
   local bodyArea = entityTarget:GetCoverAreaList(targetPos)
   local bInSkillRange = self:_IsBodyInSkillRange(bodyArea, skillRange)
   return bInSkillRange
 end
-
-

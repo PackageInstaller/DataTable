@@ -1,63 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_summon_with_caster_attribute.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamSummonWithCasterAttribute", SkillEffectParam_SummonEverything)
 SkillEffectParamSummonWithCasterAttribute = SkillEffectParamSummonWithCasterAttribute
 local SummonWithCasterAttributeType = {HpPercent = 1, MAX = 9}
 _enum("SummonWithCasterAttributeType", SummonWithCasterAttributeType)
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillEffectParamSummonWithCasterAttribute.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : SummonWithCasterAttributeType
+function SkillEffectParamSummonWithCasterAttribute:Constructor(t)
   self._compareType = t.compareType or SummonWithCasterAttributeType.HpPercent
   self._compareParam = t.compareParam or 1
   self._compareSymbol = t.compareSymbol
   self._monsterID = t.monsterID
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamSummonWithCasterAttribute.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamSummonWithCasterAttribute:GetEffectType()
   return SkillEffectType.SummonWithCasterAttribute
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamSummonWithCasterAttribute.GetCompareType = function(self)
-  -- function num : 0_2
+function SkillEffectParamSummonWithCasterAttribute:GetCompareType()
   return self._compareType
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamSummonWithCasterAttribute.GetCompareParam = function(self)
-  -- function num : 0_3
+function SkillEffectParamSummonWithCasterAttribute:GetCompareParam()
   return self._compareParam
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamSummonWithCasterAttribute.GetCompareSymbol = function(self)
-  -- function num : 0_4
+function SkillEffectParamSummonWithCasterAttribute:GetCompareSymbol()
   return self._compareSymbol
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamSummonWithCasterAttribute.GetMonsterID = function(self)
-  -- function num : 0_5
+function SkillEffectParamSummonWithCasterAttribute:GetMonsterID()
   return self._monsterID
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamSummonWithCasterAttribute.GetInitCasterBornBuff = function(self)
-  -- function num : 0_6
+function SkillEffectParamSummonWithCasterAttribute:GetInitCasterBornBuff()
   return self._initCasterBornBuff
 end
-
-

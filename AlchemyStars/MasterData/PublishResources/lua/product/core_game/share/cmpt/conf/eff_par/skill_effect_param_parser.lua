@@ -1,850 +1,227 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_parser.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectParamParser", Object)
 SkillEffectParamParser = SkillEffectParamParser
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamParser.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParamParser:Constructor()
   self._effectParamClassDict = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.Damage] = SkillDamageEffectParam
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.HitBack] = SkillHitBackEffectParam
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ConvertGridElement] = SkillConvertGridElementEffectParam
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AddBuff] = SkillAddBuffEffectParam
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AddGridEffect] = SkillAddGridEffectParam
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.LeaveEnterBattleField] = SkillLeaveEnterBattleFieldEffectParam
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.Teleport] = SkillEffectParam_Teleport
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.Escape] = SkillEffectParam_Escape
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AbsorbPiece] = SkillAbsorbPieceEffectParam
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SummonTrap] = SkillSummonTrapEffectParam
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.Rotate] = SkillRotateEffectParam
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.PullAround] = SkillPullAroundEffectParam
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SerialKiller] = SkillSerialKillerEffectParam
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.CalEdgePos] = SkillEffectParamCalEdgePos
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.StampDamage] = SkillEffectParam_StampDamage
-  -- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.EachGridAddBuff] = SkillEffectParamEachGridAddBuff
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AddCollectDropNum] = SkillEffectParamAddCollectDropNum
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DimensionTransport] = SkillEffectParam_DimensionTransport
-  -- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AddDimensionFlag] = SkillEffectParam_AddDimensionFlag
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AddBloodOverFlow] = SkillEffectParam_AddBloodOverFlow
-  -- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.CreateDestroyGrid] = SkillEffectParam_CreateDestroyGrid
-  -- DECOMPILER ERROR at PC111: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.RandAttack] = SkillEffectParam_RandAttack
-  -- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ShowWarningArea] = SkillEffectParam_ShowWarningArea
-  -- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SummonEverything] = SkillEffectParam_SummonEverything
-  -- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AddBlood] = SkillEffectParam_AddBlood
-  -- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.EachGridAddBlood] = SkillEffectParamEachGridAddBlood
-  -- DECOMPILER ERROR at PC136: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ResetGridElement] = SkillEffectParam_ResetGridElement
-  -- DECOMPILER ERROR at PC141: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ConvertOccupiedGridElement] = SkillEffectConvertOccupiedGridElementParam
-  -- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SummonMultipleTrap] = SkillEffectSummonMultipleTrapParam
-  -- DECOMPILER ERROR at PC151: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.Transport] = SkillEffectTransportParam
-  -- DECOMPILER ERROR at PC156: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MultiTraction] = SkillEffectMultiTractionParam
-  -- DECOMPILER ERROR at PC161: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SummonOnHitbackPosition] = SkillEffectSummonOnHitbackParam
-  -- DECOMPILER ERROR at PC166: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MakePhantom] = SkillMakePhantomParam
-  -- DECOMPILER ERROR at PC171: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AbsorbPhantom] = SkillAbsorbPhantomParam
-  -- DECOMPILER ERROR at PC176: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.Transformation] = SkillTransformationParam
-  -- DECOMPILER ERROR at PC181: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SacrificeTrapsAndDamage] = SkillEffectSacrificeTrapsAndDamageParam
-  -- DECOMPILER ERROR at PC186: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AddRoundCount] = SkillEffectParamAddRound
-  -- DECOMPILER ERROR at PC191: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ResetSelectGridElement] = SkillEffectParam_ResetSelectGridElement
-  -- DECOMPILER ERROR at PC196: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ModifyBuffValue] = SkillEffectParam_ModifyBuffValue
-  -- DECOMPILER ERROR at PC201: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DamageOnTargetCount] = SkillEffectDamageOnTargetCountParam
-  -- DECOMPILER ERROR at PC206: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DestroyTrap] = SkillEffectDestroyTrapParam
-  -- DECOMPILER ERROR at PC211: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SplashDamage] = SkillEffectParamSplashDamage
-  -- DECOMPILER ERROR at PC216: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AngleFreeLineDamage] = SkillEffectParamAngleFreeDamage
-  -- DECOMPILER ERROR at PC221: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.IslandConvert] = SkillEffectParamIslandConvert
-  -- DECOMPILER ERROR at PC226: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.EnhanceOccupiedGrid] = SkillEffectParamEnhanceOccupiedGrid
-  -- DECOMPILER ERROR at PC231: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ResetSingleColorGridElement] = SkillEffectParamResetSingleColorGridElement
-  -- DECOMPILER ERROR at PC236: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.Suicide] = SkillEffectParamSuicide
-  -- DECOMPILER ERROR at PC241: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.CostCasterHP] = SkillEffectCostCasterHPParam
-  -- DECOMPILER ERROR at PC246: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ExChangeGridColor] = SkillEffectExchangeGridColorParam
-  -- DECOMPILER ERROR at PC251: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ChangeElement] = SkillEffectChangeElementParam
-  -- DECOMPILER ERROR at PC256: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.IsolateConvert] = SkillEffectParam_IsolateConvert
-  -- DECOMPILER ERROR at PC261: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.RandDamageSameHalf] = SkillEffectParamRandDamageSameHalf
-  -- DECOMPILER ERROR at PC266: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DamageBasedOnTargetAttribute] = SkillDamageBasedOnTargetAttributeEffectParam
-  -- DECOMPILER ERROR at PC271: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DamageBasedOnPickUpRect] = SkillDamageBasedOnPickUpRectEffectParam
-  -- DECOMPILER ERROR at PC276: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AddComboNum] = SkillAddComboNumEffectParam
-  -- DECOMPILER ERROR at PC281: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DeathBomb] = SkillEffectParamDeathBomb
-  -- DECOMPILER ERROR at PC286: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ConductDamage] = SkillEffectParam_ConductDamage
-  -- DECOMPILER ERROR at PC291: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AttachMonster] = SkillEffectAttachMonsterParam
-  -- DECOMPILER ERROR at PC296: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DetachMonster] = SkillEffectDetachMonsterParam
-  -- DECOMPILER ERROR at PC301: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MultipleScopesDealMultipleDamage] = SkillMultipleScopesDealMultipleDamageEffectParam
-  -- DECOMPILER ERROR at PC306: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.RotateToPickup] = SkillEffectParamRotateToPickup
-  -- DECOMPILER ERROR at PC311: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.HighFrequencyDamage] = SkillEffectParam_HighFrequencyDamage
-  -- DECOMPILER ERROR at PC316: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ForceMovement] = SkillEffectParam_ForceMovement
-  -- DECOMPILER ERROR at PC321: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ChangeBlockData] = SkillChangeBlockDataParam
-  -- DECOMPILER ERROR at PC326: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ChangeGridPrism] = SkillChangeGridPrismParam
-  -- DECOMPILER ERROR at PC331: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SchummerHitback] = SkillEffectParam_SchummerHitback
-  -- DECOMPILER ERROR at PC336: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.StickerLeave] = SkillEffectParam_StickerLeave
-  -- DECOMPILER ERROR at PC341: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.GridPurify] = SkillEffectParam_GridPurify
-  -- DECOMPILER ERROR at PC346: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DegressiveDirectionalDamage] = SkillEffectParam_DegressiveDirectionalDamage
-  -- DECOMPILER ERROR at PC351: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ConvertWithTrapRecord] = SkillEffectParamConvertWithTrapRecord
-  -- DECOMPILER ERROR at PC356: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.FrontExtendDegressiveDamage] = SkillEffectParamFrontExtendDegressiveDamage
-  -- DECOMPILER ERROR at PC361: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.TeleportAndSummonTrap] = SkillEffectParamTeleportAndSummonTrap
-  -- DECOMPILER ERROR at PC366: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MarkGridInScope] = SkillEffectParam_MarkGridInScope
-  -- DECOMPILER ERROR at PC371: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ChangeBuffLayer] = SkillEffectParamChangeBuffLayer
-  -- DECOMPILER ERROR at PC376: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SummonMeantimeLimit] = SkillEffectParamSummonMeantimeLimit
-  -- DECOMPILER ERROR at PC381: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MoveTrap] = SkillEffectParamMoveTrap
-  -- DECOMPILER ERROR at PC386: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MultipleDamageWithBuffLayer] = SkillEffectParamMultipleDamageWithBuffLayer
-  -- DECOMPILER ERROR at PC391: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DestroyMonster] = SkillEffectDestroyMonsterParam
-  -- DECOMPILER ERROR at PC396: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SealedCurse] = SkillEffectParam_SealedCurse
-  -- DECOMPILER ERROR at PC401: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DamageReflectDistance] = SkillEffectParam_DamageReflectDistance
-  -- DECOMPILER ERROR at PC406: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MonsterMoveGrid] = SkillEffectMonsterMoveGridParam
-  -- DECOMPILER ERROR at PC411: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.KillPlayer] = SkillEffectKillPlayerParam
-  -- DECOMPILER ERROR at PC416: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DamageOnTargetDistance] = SkillDamageOnTargetDistanceEffectParam
-  -- DECOMPILER ERROR at PC421: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AddBloodOverFlowForDamage] = SkillEffectParam_AddBloodOverFlowForDamage
-  -- DECOMPILER ERROR at PC426: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DamageBasedOnSectorAngle] = SkillEffectParam_DamageBasedOnSectorAngle
-  -- DECOMPILER ERROR at PC431: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SplashPreDamage] = SkillEffectParamSplashPreDamage
-  -- DECOMPILER ERROR at PC436: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.RotateByPickSector] = SkillEffectParamRotateByPickSector
-  -- DECOMPILER ERROR at PC441: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SummonOnFixPosLimit] = SkillEffectParamSummonOnFixPosLimit
-  -- DECOMPILER ERROR at PC446: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SwitchBodyPart] = SkillEffectParamSwitchBodyPart
-  -- DECOMPILER ERROR at PC451: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ChangePetTeamOrder] = SkillEffectParam_ChangePetTeamOrder
-  -- DECOMPILER ERROR at PC456: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ShufflePetTeamOrder] = SkillEffectParam_ShuffleTeamOrder
-  -- DECOMPILER ERROR at PC461: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SwapPetTeamOrder] = SkillEffectParam_SwapPetTeamOrder
-  -- DECOMPILER ERROR at PC466: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.VictoriaSuckBlood] = SkillEffectParam_VictoriaSuckBlood
-  -- DECOMPILER ERROR at PC471: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.GatherThrowDamage] = SkillEffectParam_GatherThrowDamage
-  -- DECOMPILER ERROR at PC476: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.TriggerTrap] = SkillEffectParamTriggerTrap
-  -- DECOMPILER ERROR at PC481: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AbsorbTrapsAndDamageByPickupTarget] = SkillEffectAbsorbTrapsAndDamageByPickupTargetParam
-  -- DECOMPILER ERROR at PC486: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MoveBoard] = SkillEffectParamMoveBoard
-  -- DECOMPILER ERROR at PC491: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MonsterMoveGridByMonsterElement] = SkillEffectMonsterMoveGridByElementParam
-  -- DECOMPILER ERROR at PC496: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.EachTrapAddBlood] = SkillEffectParamEachTrapAddBlood
-  -- DECOMPILER ERROR at PC501: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AddBuffByPickupTarget] = SkillEffectAddBuffByPickupTargetParam
-  -- DECOMPILER ERROR at PC506: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SwitchBodyAreaByTargetPos] = SkillEffectSwitchBodyAreaByTargetPosParam
-  -- DECOMPILER ERROR at PC511: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.RecoverFromGreyHP] = SkillEffectParam_RecoverFromGreyHP
-  -- DECOMPILER ERROR at PC516: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DecreaseSanByScope] = SkillEffectParam_DecreaseSanByScope
-  -- DECOMPILER ERROR at PC521: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SingleGridFullDamage] = SkillEffectParam_SingleGridFullDamage
-  -- DECOMPILER ERROR at PC526: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.IncreaseSan] = SkillEffectParam_IncreaseSan
-  -- DECOMPILER ERROR at PC531: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.TransferTarget] = SkillEffectTransferTargetParam
-  -- DECOMPILER ERROR at PC536: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MonsterMoveGridToSkillRangeFar] = SkillEffectMonsterMoveGridToSkillRangeFar
-  -- DECOMPILER ERROR at PC541: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MonsterMoveLongestGrid] = SkillEffectMonsterMoveLongestGridParam
-  -- DECOMPILER ERROR at PC546: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SacrificeTraps] = SkillEffectSacrificeTrapsParam
-  -- DECOMPILER ERROR at PC551: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DamageBySacrificeTraps] = SkillEffectDamageBySacrificeTrapsParam
-  -- DECOMPILER ERROR at PC556: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AlphaThrowTrap] = SkillEffectAlphaThrowTrapParam
-  -- DECOMPILER ERROR at PC561: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AlphaBlinkAttack] = SkillEffectAlphaBlinkAttackParam
-  -- DECOMPILER ERROR at PC566: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.RideOn] = SkillEffectRideOnParam
-  -- DECOMPILER ERROR at PC571: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DamageSamePosReduce] = SkillEffectParamDamageSamePosReduce
-  -- DECOMPILER ERROR at PC576: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MultiplyBuffLayer] = SkillEffectParam_MultiplyBuffLayer
-  -- DECOMPILER ERROR at PC581: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MonsterMoveGridFarthest] = SkillEffectParam_MonsterMoveGridFarthest
-  -- DECOMPILER ERROR at PC586: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.RubikCube] = SkillEffectParamRubikCube
-  -- DECOMPILER ERROR at PC591: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ChangeBodyArea] = SkillEffectParamChangeBodyArea
-  -- DECOMPILER ERROR at PC596: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.TrapSummonMonster] = SkillEffectTrapSummonMonsterParam
-  -- DECOMPILER ERROR at PC601: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DrawCard] = SkillEffectParamDrawCard
-  -- DECOMPILER ERROR at PC606: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MonsterMoveFrontAttack] = SkillEffectParamMonsterMoveFrontAttack
-  -- DECOMPILER ERROR at PC611: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.PickUpTrapAndBuffDamage] = SkillEffectParamPickUpTrapAndBuffDamage
-  -- DECOMPILER ERROR at PC616: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AddBuffByPickupBuffLayer] = SkillEffectParamAddBuffByPickupBuffLayer
-  -- DECOMPILER ERROR at PC621: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DamageTargetCanRepeat] = SkillDamageCanRepeatEffectParam
-  -- DECOMPILER ERROR at PC626: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.LevelTrapAbsortSummon] = SkillEffectParamLevelTrapAbsortSummon
-  -- DECOMPILER ERROR at PC631: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.LevelTrapUpLevel] = SkillEffectParamLevelTrapUpLevel
-  -- DECOMPILER ERROR at PC636: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.LevelTrapSummonOrUpLevel] = SkillEffectParamLevelTrapSummonOrUpLevel
-  -- DECOMPILER ERROR at PC643: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.TransportByRange] = _ENV.SkillEffectParamTransportByRange
-  -- DECOMPILER ERROR at PC650: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ModifyAntiAttackParam] = _ENV.SkillEffectParamModifyAntiAttackParam
-  -- DECOMPILER ERROR at PC657: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.RandomCountDamageSameHalf] = _ENV.SkillEffectParamRandomCountDamageSameHalf
-  -- DECOMPILER ERROR at PC664: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.PetSacrificeSuperGridTraps] = _ENV.SkillEffectPetSacrificeSuperGridTrapsParam
-  -- DECOMPILER ERROR at PC671: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.PetMinosGhostDamage] = _ENV.SkillEffectPetMinosGhostDamageParam
-  -- DECOMPILER ERROR at PC678: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.CoffinMusumeCandle] = _ENV.SkillEffectParam_CoffinMusumeCandle
-  -- DECOMPILER ERROR at PC685: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DamageAndAddBuffByHitBack] = _ENV.SkillEffectDamageAndAddBuffByHitBackParam
-  -- DECOMPILER ERROR at PC692: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.CoffinMusumeSetCandleLight] = _ENV.SkillEffectParam_CoffinMusumeSetCandleLight
-  -- DECOMPILER ERROR at PC699: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.Transposition] = _ENV.SkillEffectParamTransposition
-  -- DECOMPILER ERROR at PC706: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SummonScanTrap] = _ENV.SkillEffectParam_SummonScanTrap
-  -- DECOMPILER ERROR at PC713: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SnakeBodyMoveAndGrowth] = _ENV.SkillEffectParamSnakeBodyMoveAndGrowth
-  -- DECOMPILER ERROR at PC720: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SnakeTailMove] = _ENV.SkillEffectParamSnakeTailMove
-  -- DECOMPILER ERROR at PC727: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SnakeHeadMove] = _ENV.SkillEffectParamSnakeHeadMove
-  -- DECOMPILER ERROR at PC734: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SummonTrapByCasterPos] = _ENV.SkillEffectParamSummonTrapByCasterPos
-  -- DECOMPILER ERROR at PC741: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SummonTrapOrHealByTrapBuffLayer] = _ENV.SkillEffectParam_SummonTrapOrHealByTrapBuffLayer
-  -- DECOMPILER ERROR at PC748: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.KillTargets] = _ENV.SkillEffectParamKillTargets
-  -- DECOMPILER ERROR at PC755: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.WeikeNotify] = _ENV.SkillEffectParam_WeikeNotify
-  -- DECOMPILER ERROR at PC762: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SetMonsterOffBoard] = _ENV.SkillEffectParamSetMonsterOffBoard
-  -- DECOMPILER ERROR at PC769: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MonsterMoveGridByParam] = _ENV.SkillEffectParam_MonsterMoveGridByParam
-  -- DECOMPILER ERROR at PC776: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SplashDamageAndAddBuff] = _ENV.SkillEffectParamSplashDamageAndAddBuff
-  -- DECOMPILER ERROR at PC783: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DynamicCenterDamage] = _ENV.SkillEffectParam_DynamicCenterDamage
-  -- DECOMPILER ERROR at PC790: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.EnterMirage] = _ENV.SkillEffectEnterMirageParam
-  -- DECOMPILER ERROR at PC797: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.TrapMoveAndDamage] = _ENV.SkillEffectTrapMoveAndDamageParam
-  -- DECOMPILER ERROR at PC804: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AddMoveScopeRecordCmpt] = _ENV.SkillEffectParam_AddMoveScopeRecordCmpt
-  -- DECOMPILER ERROR at PC811: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ThrowMonsterAndDamage] = _ENV.SkillEffectThrowMonsterAndDamageParam
-  -- DECOMPILER ERROR at PC818: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DamageByBuffLayer] = _ENV.SkillEffectDamageByBuffLayerParam
-  -- DECOMPILER ERROR at PC825: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.TeleportTeamAroundAndSummonTrapLine] = _ENV.SkillEffectParamTeleportTeamAroundAndSummonTrapLine
-  -- DECOMPILER ERROR at PC832: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.TurnToTargetChangeBodyAreaAndDir] = _ENV.SkillEffectParamTurnToTargetChangeBodyAreaAndDir
-  -- DECOMPILER ERROR at PC839: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ControlMonsterMove] = _ENV.SkillEffectParamControlMonsterMove
-  -- DECOMPILER ERROR at PC846: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ConvertAndDamageByLinkLine] = _ENV.SkillEffectConvertAndDamageByLinkLineParam
-  -- DECOMPILER ERROR at PC853: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.PetTrapMove] = _ENV.SkillEffectParamPetTrapMove
-  -- DECOMPILER ERROR at PC860: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SacrificeTargetNearestTrapsAndDamage] = _ENV.SkillEffectSacrificeTargetNearestTrapsAndDamageParam
-  -- DECOMPILER ERROR at PC867: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DynamicScopeChainDamage] = _ENV.SkillEffectParam_DynamicScopeChainDamage
-  -- DECOMPILER ERROR at PC874: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.NightKingTeleportPathDamage] = _ENV.SkillEffectParamNightKingTeleportPathDamage
-  -- DECOMPILER ERROR at PC881: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.RefreshGridByBoardID] = _ENV.SkillEffectRefreshGridByBoardIDParam
-  -- DECOMPILER ERROR at PC888: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SpliceBoard] = _ENV.SkillEffectParamSpliceBoard
-  -- DECOMPILER ERROR at PC895: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DamageBySelectPieceCount] = _ENV.SkillEffectParamDamageBySelectPieceCount
-  -- DECOMPILER ERROR at PC902: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.HighFrequencyDamage2] = _ENV.SkillEffectParam_HighFrequencyDamage2
-  -- DECOMPILER ERROR at PC909: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.PopStar] = _ENV.SkillEffectPopStarParam
-  -- DECOMPILER ERROR at PC916: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SummonFourAreaMonsterOnBoardEdge] = _ENV.SkillEffectParamSummonFourAreaMonsterOnBoardEdge
-  -- DECOMPILER ERROR at PC923: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.PickUpGridTogether] = _ENV.SkillEffectParam_PickUpGridTogether
-  -- DECOMPILER ERROR at PC930: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ButterflySummon] = _ENV.SkillEffectParam_ButterflySummon
-  -- DECOMPILER ERROR at PC937: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.TankRushPerGrid] = _ENV.SkillEffectParam_TankRushPerGrid
-  -- DECOMPILER ERROR at PC944: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DamageByConvertGridCount] = _ENV.SkillEffectParamByConvertGridCount
-  -- DECOMPILER ERROR at PC951: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DamageCountByBuffLayer] = _ENV.SkillEffectDamageCountByBuffLayerParam
-  -- DECOMPILER ERROR at PC958: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DamageCountByBuffLayer2] = _ENV.SkillEffectDamageCountByBuffLayer2Param
-  -- DECOMPILER ERROR at PC965: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ControlMonsterCastHitBackTeam] = _ENV.SkillEffectParamControlMonsterCastHitBackTeam
-  -- DECOMPILER ERROR at PC972: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SummonMonster] = _ENV.SkillEffectParam_SummonMonster
-  -- DECOMPILER ERROR at PC979: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.PushBoard] = _ENV.SkillEffectPushBoardParam
-  -- DECOMPILER ERROR at PC986: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MarchForward] = _ENV.SkillEffectMarchForwardParam
-  -- DECOMPILER ERROR at PC993: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.Puzzle] = _ENV.SkillEffectPuzzleParam
-  -- DECOMPILER ERROR at PC1000: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.HitBackAndDamage] = _ENV.SkillEffectHitBackAndDamageParam
-  -- DECOMPILER ERROR at PC1007: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.TeleportAndTurnBodyArea] = _ENV.SkillEffectParam_TeleportAndTurnBodyArea
-  -- DECOMPILER ERROR at PC1014: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.FixTrapWall] = _ENV.SkillEffectParamFixTrapWall
-  -- DECOMPILER ERROR at PC1021: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SetGridMaintainColorForSupply] = _ENV.SkillEffectParamSetGridMaintainColorForSupply
-  -- DECOMPILER ERROR at PC1028: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.CreateAurasTrapByPickUp] = _ENV.SkillCreateAurasTrapByPickUpEffectParam
-  -- DECOMPILER ERROR at PC1035: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.CrabMoveAndAttack] = _ENV.SkillEffectParamCrabMoveAndAttack
-  -- DECOMPILER ERROR at PC1042: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AppointCastChain] = _ENV.SkillEffectParamAppointChain
-  -- DECOMPILER ERROR at PC1049: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.Switch2GridTrap] = _ENV.SkillEffectParamSwitch2GridTrap
-  -- DECOMPILER ERROR at PC1056: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SkillCostFeatureStepPoint] = _ENV.SkillEffectParam_SkillCostFeatureStepPoint
-  -- DECOMPILER ERROR at PC1063: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.AddMonsterWeak] = _ENV.SkillEffectParamAddMonsterWeak
-  -- DECOMPILER ERROR at PC1070: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DetonateMonsterWeak] = _ENV.SkillEffectParamDetonateMonsterWeak
-  -- DECOMPILER ERROR at PC1077: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.TransferMonsterWeak] = _ENV.SkillEffectParamTransferMonsterWeak
-  -- DECOMPILER ERROR at PC1084: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ClingySummon] = _ENV.SkillEffectParamClingySummon
-  -- DECOMPILER ERROR at PC1091: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.TeleportAndReplaceBodyArea] = _ENV.SkillEffectParam_TeleportAndReplaceBodyArea
-  -- DECOMPILER ERROR at PC1098: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.DamageAfterHitBack] = _ENV.SkillEffectParamDamageAfterHitBack
-  -- DECOMPILER ERROR at PC1105: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.PetAbsorbMaintainColorGrid] = _ENV.SkillEffectPetAbsorbMaintainColorGridParam
-  -- DECOMPILER ERROR at PC1112: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ColorPaletteCharge] = _ENV.SkillEffectParamColorPaletteCharge
-  -- DECOMPILER ERROR at PC1119: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.RobotBomb] = _ENV.SkillEffectParamRobotBomb
-  -- DECOMPILER ERROR at PC1126: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ScorpionSummon] = _ENV.SkillEffectParamScorpionSummon
-  -- DECOMPILER ERROR at PC1133: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ScorpionHitBack] = _ENV.SkillEffectParamScorpionHitBack
-  -- DECOMPILER ERROR at PC1140: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ChangeSanMax] = _ENV.SkillEffectParamChangeSanMax
-  -- DECOMPILER ERROR at PC1147: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SwapSan2TeamHp] = _ENV.SkillEffectParamSwapSan2TeamHp
-  -- DECOMPILER ERROR at PC1154: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SummonWithCasterAttribute] = _ENV.SkillEffectParamSummonWithCasterAttribute
-  -- DECOMPILER ERROR at PC1161: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.SummonTrapByTargetPos] = _ENV.SkillEffectParamSummonTrapByTargetPos
-  -- DECOMPILER ERROR at PC1168: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.MoyeMove] = _ENV.SkillEffectParamMoyeMove
-  -- DECOMPILER ERROR at PC1175: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effectParamClassDict)[SkillEffectType.ControlMonsterTeleportAndAttack] = _ENV.SkillEffectParamControlMonsterTeleportAndAttack
+  self._effectParamClassDict[SkillEffectType.Damage] = SkillDamageEffectParam
+  self._effectParamClassDict[SkillEffectType.HitBack] = SkillHitBackEffectParam
+  self._effectParamClassDict[SkillEffectType.ConvertGridElement] = SkillConvertGridElementEffectParam
+  self._effectParamClassDict[SkillEffectType.AddBuff] = SkillAddBuffEffectParam
+  self._effectParamClassDict[SkillEffectType.AddGridEffect] = SkillAddGridEffectParam
+  self._effectParamClassDict[SkillEffectType.LeaveEnterBattleField] = SkillLeaveEnterBattleFieldEffectParam
+  self._effectParamClassDict[SkillEffectType.Teleport] = SkillEffectParam_Teleport
+  self._effectParamClassDict[SkillEffectType.Escape] = SkillEffectParam_Escape
+  self._effectParamClassDict[SkillEffectType.AbsorbPiece] = SkillAbsorbPieceEffectParam
+  self._effectParamClassDict[SkillEffectType.SummonTrap] = SkillSummonTrapEffectParam
+  self._effectParamClassDict[SkillEffectType.Rotate] = SkillRotateEffectParam
+  self._effectParamClassDict[SkillEffectType.PullAround] = SkillPullAroundEffectParam
+  self._effectParamClassDict[SkillEffectType.SerialKiller] = SkillSerialKillerEffectParam
+  self._effectParamClassDict[SkillEffectType.CalEdgePos] = SkillEffectParamCalEdgePos
+  self._effectParamClassDict[SkillEffectType.StampDamage] = SkillEffectParam_StampDamage
+  self._effectParamClassDict[SkillEffectType.EachGridAddBuff] = SkillEffectParamEachGridAddBuff
+  self._effectParamClassDict[SkillEffectType.AddCollectDropNum] = SkillEffectParamAddCollectDropNum
+  self._effectParamClassDict[SkillEffectType.DimensionTransport] = SkillEffectParam_DimensionTransport
+  self._effectParamClassDict[SkillEffectType.AddDimensionFlag] = SkillEffectParam_AddDimensionFlag
+  self._effectParamClassDict[SkillEffectType.AddBloodOverFlow] = SkillEffectParam_AddBloodOverFlow
+  self._effectParamClassDict[SkillEffectType.CreateDestroyGrid] = SkillEffectParam_CreateDestroyGrid
+  self._effectParamClassDict[SkillEffectType.RandAttack] = SkillEffectParam_RandAttack
+  self._effectParamClassDict[SkillEffectType.ShowWarningArea] = SkillEffectParam_ShowWarningArea
+  self._effectParamClassDict[SkillEffectType.SummonEverything] = SkillEffectParam_SummonEverything
+  self._effectParamClassDict[SkillEffectType.AddBlood] = SkillEffectParam_AddBlood
+  self._effectParamClassDict[SkillEffectType.EachGridAddBlood] = SkillEffectParamEachGridAddBlood
+  self._effectParamClassDict[SkillEffectType.ResetGridElement] = SkillEffectParam_ResetGridElement
+  self._effectParamClassDict[SkillEffectType.ConvertOccupiedGridElement] = SkillEffectConvertOccupiedGridElementParam
+  self._effectParamClassDict[SkillEffectType.SummonMultipleTrap] = SkillEffectSummonMultipleTrapParam
+  self._effectParamClassDict[SkillEffectType.Transport] = SkillEffectTransportParam
+  self._effectParamClassDict[SkillEffectType.MultiTraction] = SkillEffectMultiTractionParam
+  self._effectParamClassDict[SkillEffectType.SummonOnHitbackPosition] = SkillEffectSummonOnHitbackParam
+  self._effectParamClassDict[SkillEffectType.MakePhantom] = SkillMakePhantomParam
+  self._effectParamClassDict[SkillEffectType.AbsorbPhantom] = SkillAbsorbPhantomParam
+  self._effectParamClassDict[SkillEffectType.Transformation] = SkillTransformationParam
+  self._effectParamClassDict[SkillEffectType.SacrificeTrapsAndDamage] = SkillEffectSacrificeTrapsAndDamageParam
+  self._effectParamClassDict[SkillEffectType.AddRoundCount] = SkillEffectParamAddRound
+  self._effectParamClassDict[SkillEffectType.ResetSelectGridElement] = SkillEffectParam_ResetSelectGridElement
+  self._effectParamClassDict[SkillEffectType.ModifyBuffValue] = SkillEffectParam_ModifyBuffValue
+  self._effectParamClassDict[SkillEffectType.DamageOnTargetCount] = SkillEffectDamageOnTargetCountParam
+  self._effectParamClassDict[SkillEffectType.DestroyTrap] = SkillEffectDestroyTrapParam
+  self._effectParamClassDict[SkillEffectType.SplashDamage] = SkillEffectParamSplashDamage
+  self._effectParamClassDict[SkillEffectType.AngleFreeLineDamage] = SkillEffectParamAngleFreeDamage
+  self._effectParamClassDict[SkillEffectType.IslandConvert] = SkillEffectParamIslandConvert
+  self._effectParamClassDict[SkillEffectType.EnhanceOccupiedGrid] = SkillEffectParamEnhanceOccupiedGrid
+  self._effectParamClassDict[SkillEffectType.ResetSingleColorGridElement] = SkillEffectParamResetSingleColorGridElement
+  self._effectParamClassDict[SkillEffectType.Suicide] = SkillEffectParamSuicide
+  self._effectParamClassDict[SkillEffectType.CostCasterHP] = SkillEffectCostCasterHPParam
+  self._effectParamClassDict[SkillEffectType.ExChangeGridColor] = SkillEffectExchangeGridColorParam
+  self._effectParamClassDict[SkillEffectType.ChangeElement] = SkillEffectChangeElementParam
+  self._effectParamClassDict[SkillEffectType.IsolateConvert] = SkillEffectParam_IsolateConvert
+  self._effectParamClassDict[SkillEffectType.RandDamageSameHalf] = SkillEffectParamRandDamageSameHalf
+  self._effectParamClassDict[SkillEffectType.DamageBasedOnTargetAttribute] = SkillDamageBasedOnTargetAttributeEffectParam
+  self._effectParamClassDict[SkillEffectType.DamageBasedOnPickUpRect] = SkillDamageBasedOnPickUpRectEffectParam
+  self._effectParamClassDict[SkillEffectType.AddComboNum] = SkillAddComboNumEffectParam
+  self._effectParamClassDict[SkillEffectType.DeathBomb] = SkillEffectParamDeathBomb
+  self._effectParamClassDict[SkillEffectType.ConductDamage] = SkillEffectParam_ConductDamage
+  self._effectParamClassDict[SkillEffectType.AttachMonster] = SkillEffectAttachMonsterParam
+  self._effectParamClassDict[SkillEffectType.DetachMonster] = SkillEffectDetachMonsterParam
+  self._effectParamClassDict[SkillEffectType.MultipleScopesDealMultipleDamage] = SkillMultipleScopesDealMultipleDamageEffectParam
+  self._effectParamClassDict[SkillEffectType.RotateToPickup] = SkillEffectParamRotateToPickup
+  self._effectParamClassDict[SkillEffectType.HighFrequencyDamage] = SkillEffectParam_HighFrequencyDamage
+  self._effectParamClassDict[SkillEffectType.ForceMovement] = SkillEffectParam_ForceMovement
+  self._effectParamClassDict[SkillEffectType.ChangeBlockData] = SkillChangeBlockDataParam
+  self._effectParamClassDict[SkillEffectType.ChangeGridPrism] = SkillChangeGridPrismParam
+  self._effectParamClassDict[SkillEffectType.SchummerHitback] = SkillEffectParam_SchummerHitback
+  self._effectParamClassDict[SkillEffectType.StickerLeave] = SkillEffectParam_StickerLeave
+  self._effectParamClassDict[SkillEffectType.GridPurify] = SkillEffectParam_GridPurify
+  self._effectParamClassDict[SkillEffectType.DegressiveDirectionalDamage] = SkillEffectParam_DegressiveDirectionalDamage
+  self._effectParamClassDict[SkillEffectType.ConvertWithTrapRecord] = SkillEffectParamConvertWithTrapRecord
+  self._effectParamClassDict[SkillEffectType.FrontExtendDegressiveDamage] = SkillEffectParamFrontExtendDegressiveDamage
+  self._effectParamClassDict[SkillEffectType.TeleportAndSummonTrap] = SkillEffectParamTeleportAndSummonTrap
+  self._effectParamClassDict[SkillEffectType.MarkGridInScope] = SkillEffectParam_MarkGridInScope
+  self._effectParamClassDict[SkillEffectType.ChangeBuffLayer] = SkillEffectParamChangeBuffLayer
+  self._effectParamClassDict[SkillEffectType.SummonMeantimeLimit] = SkillEffectParamSummonMeantimeLimit
+  self._effectParamClassDict[SkillEffectType.MoveTrap] = SkillEffectParamMoveTrap
+  self._effectParamClassDict[SkillEffectType.MultipleDamageWithBuffLayer] = SkillEffectParamMultipleDamageWithBuffLayer
+  self._effectParamClassDict[SkillEffectType.DestroyMonster] = SkillEffectDestroyMonsterParam
+  self._effectParamClassDict[SkillEffectType.SealedCurse] = SkillEffectParam_SealedCurse
+  self._effectParamClassDict[SkillEffectType.DamageReflectDistance] = SkillEffectParam_DamageReflectDistance
+  self._effectParamClassDict[SkillEffectType.MonsterMoveGrid] = SkillEffectMonsterMoveGridParam
+  self._effectParamClassDict[SkillEffectType.KillPlayer] = SkillEffectKillPlayerParam
+  self._effectParamClassDict[SkillEffectType.DamageOnTargetDistance] = SkillDamageOnTargetDistanceEffectParam
+  self._effectParamClassDict[SkillEffectType.AddBloodOverFlowForDamage] = SkillEffectParam_AddBloodOverFlowForDamage
+  self._effectParamClassDict[SkillEffectType.DamageBasedOnSectorAngle] = SkillEffectParam_DamageBasedOnSectorAngle
+  self._effectParamClassDict[SkillEffectType.SplashPreDamage] = SkillEffectParamSplashPreDamage
+  self._effectParamClassDict[SkillEffectType.RotateByPickSector] = SkillEffectParamRotateByPickSector
+  self._effectParamClassDict[SkillEffectType.SummonOnFixPosLimit] = SkillEffectParamSummonOnFixPosLimit
+  self._effectParamClassDict[SkillEffectType.SwitchBodyPart] = SkillEffectParamSwitchBodyPart
+  self._effectParamClassDict[SkillEffectType.ChangePetTeamOrder] = SkillEffectParam_ChangePetTeamOrder
+  self._effectParamClassDict[SkillEffectType.ShufflePetTeamOrder] = SkillEffectParam_ShuffleTeamOrder
+  self._effectParamClassDict[SkillEffectType.SwapPetTeamOrder] = SkillEffectParam_SwapPetTeamOrder
+  self._effectParamClassDict[SkillEffectType.VictoriaSuckBlood] = SkillEffectParam_VictoriaSuckBlood
+  self._effectParamClassDict[SkillEffectType.GatherThrowDamage] = SkillEffectParam_GatherThrowDamage
+  self._effectParamClassDict[SkillEffectType.TriggerTrap] = SkillEffectParamTriggerTrap
+  self._effectParamClassDict[SkillEffectType.AbsorbTrapsAndDamageByPickupTarget] = SkillEffectAbsorbTrapsAndDamageByPickupTargetParam
+  self._effectParamClassDict[SkillEffectType.MoveBoard] = SkillEffectParamMoveBoard
+  self._effectParamClassDict[SkillEffectType.MonsterMoveGridByMonsterElement] = SkillEffectMonsterMoveGridByElementParam
+  self._effectParamClassDict[SkillEffectType.EachTrapAddBlood] = SkillEffectParamEachTrapAddBlood
+  self._effectParamClassDict[SkillEffectType.AddBuffByPickupTarget] = SkillEffectAddBuffByPickupTargetParam
+  self._effectParamClassDict[SkillEffectType.SwitchBodyAreaByTargetPos] = SkillEffectSwitchBodyAreaByTargetPosParam
+  self._effectParamClassDict[SkillEffectType.RecoverFromGreyHP] = SkillEffectParam_RecoverFromGreyHP
+  self._effectParamClassDict[SkillEffectType.DecreaseSanByScope] = SkillEffectParam_DecreaseSanByScope
+  self._effectParamClassDict[SkillEffectType.SingleGridFullDamage] = SkillEffectParam_SingleGridFullDamage
+  self._effectParamClassDict[SkillEffectType.IncreaseSan] = SkillEffectParam_IncreaseSan
+  self._effectParamClassDict[SkillEffectType.TransferTarget] = SkillEffectTransferTargetParam
+  self._effectParamClassDict[SkillEffectType.MonsterMoveGridToSkillRangeFar] = SkillEffectMonsterMoveGridToSkillRangeFar
+  self._effectParamClassDict[SkillEffectType.MonsterMoveLongestGrid] = SkillEffectMonsterMoveLongestGridParam
+  self._effectParamClassDict[SkillEffectType.SacrificeTraps] = SkillEffectSacrificeTrapsParam
+  self._effectParamClassDict[SkillEffectType.DamageBySacrificeTraps] = SkillEffectDamageBySacrificeTrapsParam
+  self._effectParamClassDict[SkillEffectType.AlphaThrowTrap] = SkillEffectAlphaThrowTrapParam
+  self._effectParamClassDict[SkillEffectType.AlphaBlinkAttack] = SkillEffectAlphaBlinkAttackParam
+  self._effectParamClassDict[SkillEffectType.RideOn] = SkillEffectRideOnParam
+  self._effectParamClassDict[SkillEffectType.DamageSamePosReduce] = SkillEffectParamDamageSamePosReduce
+  self._effectParamClassDict[SkillEffectType.MultiplyBuffLayer] = SkillEffectParam_MultiplyBuffLayer
+  self._effectParamClassDict[SkillEffectType.MonsterMoveGridFarthest] = SkillEffectParam_MonsterMoveGridFarthest
+  self._effectParamClassDict[SkillEffectType.RubikCube] = SkillEffectParamRubikCube
+  self._effectParamClassDict[SkillEffectType.ChangeBodyArea] = SkillEffectParamChangeBodyArea
+  self._effectParamClassDict[SkillEffectType.TrapSummonMonster] = SkillEffectTrapSummonMonsterParam
+  self._effectParamClassDict[SkillEffectType.DrawCard] = SkillEffectParamDrawCard
+  self._effectParamClassDict[SkillEffectType.MonsterMoveFrontAttack] = SkillEffectParamMonsterMoveFrontAttack
+  self._effectParamClassDict[SkillEffectType.PickUpTrapAndBuffDamage] = SkillEffectParamPickUpTrapAndBuffDamage
+  self._effectParamClassDict[SkillEffectType.AddBuffByPickupBuffLayer] = SkillEffectParamAddBuffByPickupBuffLayer
+  self._effectParamClassDict[SkillEffectType.DamageTargetCanRepeat] = SkillDamageCanRepeatEffectParam
+  self._effectParamClassDict[SkillEffectType.LevelTrapAbsortSummon] = SkillEffectParamLevelTrapAbsortSummon
+  self._effectParamClassDict[SkillEffectType.LevelTrapUpLevel] = SkillEffectParamLevelTrapUpLevel
+  self._effectParamClassDict[SkillEffectType.LevelTrapSummonOrUpLevel] = SkillEffectParamLevelTrapSummonOrUpLevel
+  self._effectParamClassDict[SkillEffectType.TransportByRange] = SkillEffectParamTransportByRange
+  self._effectParamClassDict[SkillEffectType.ModifyAntiAttackParam] = SkillEffectParamModifyAntiAttackParam
+  self._effectParamClassDict[SkillEffectType.RandomCountDamageSameHalf] = SkillEffectParamRandomCountDamageSameHalf
+  self._effectParamClassDict[SkillEffectType.PetSacrificeSuperGridTraps] = SkillEffectPetSacrificeSuperGridTrapsParam
+  self._effectParamClassDict[SkillEffectType.PetMinosGhostDamage] = SkillEffectPetMinosGhostDamageParam
+  self._effectParamClassDict[SkillEffectType.CoffinMusumeCandle] = SkillEffectParam_CoffinMusumeCandle
+  self._effectParamClassDict[SkillEffectType.DamageAndAddBuffByHitBack] = SkillEffectDamageAndAddBuffByHitBackParam
+  self._effectParamClassDict[SkillEffectType.CoffinMusumeSetCandleLight] = SkillEffectParam_CoffinMusumeSetCandleLight
+  self._effectParamClassDict[SkillEffectType.Transposition] = SkillEffectParamTransposition
+  self._effectParamClassDict[SkillEffectType.SummonScanTrap] = SkillEffectParam_SummonScanTrap
+  self._effectParamClassDict[SkillEffectType.SnakeBodyMoveAndGrowth] = SkillEffectParamSnakeBodyMoveAndGrowth
+  self._effectParamClassDict[SkillEffectType.SnakeTailMove] = SkillEffectParamSnakeTailMove
+  self._effectParamClassDict[SkillEffectType.SnakeHeadMove] = SkillEffectParamSnakeHeadMove
+  self._effectParamClassDict[SkillEffectType.SummonTrapByCasterPos] = SkillEffectParamSummonTrapByCasterPos
+  self._effectParamClassDict[SkillEffectType.SummonTrapOrHealByTrapBuffLayer] = SkillEffectParam_SummonTrapOrHealByTrapBuffLayer
+  self._effectParamClassDict[SkillEffectType.KillTargets] = SkillEffectParamKillTargets
+  self._effectParamClassDict[SkillEffectType.WeikeNotify] = SkillEffectParam_WeikeNotify
+  self._effectParamClassDict[SkillEffectType.SetMonsterOffBoard] = SkillEffectParamSetMonsterOffBoard
+  self._effectParamClassDict[SkillEffectType.MonsterMoveGridByParam] = SkillEffectParam_MonsterMoveGridByParam
+  self._effectParamClassDict[SkillEffectType.SplashDamageAndAddBuff] = SkillEffectParamSplashDamageAndAddBuff
+  self._effectParamClassDict[SkillEffectType.DynamicCenterDamage] = SkillEffectParam_DynamicCenterDamage
+  self._effectParamClassDict[SkillEffectType.EnterMirage] = SkillEffectEnterMirageParam
+  self._effectParamClassDict[SkillEffectType.TrapMoveAndDamage] = SkillEffectTrapMoveAndDamageParam
+  self._effectParamClassDict[SkillEffectType.AddMoveScopeRecordCmpt] = SkillEffectParam_AddMoveScopeRecordCmpt
+  self._effectParamClassDict[SkillEffectType.ThrowMonsterAndDamage] = SkillEffectThrowMonsterAndDamageParam
+  self._effectParamClassDict[SkillEffectType.DamageByBuffLayer] = SkillEffectDamageByBuffLayerParam
+  self._effectParamClassDict[SkillEffectType.TeleportTeamAroundAndSummonTrapLine] = SkillEffectParamTeleportTeamAroundAndSummonTrapLine
+  self._effectParamClassDict[SkillEffectType.TurnToTargetChangeBodyAreaAndDir] = SkillEffectParamTurnToTargetChangeBodyAreaAndDir
+  self._effectParamClassDict[SkillEffectType.ControlMonsterMove] = SkillEffectParamControlMonsterMove
+  self._effectParamClassDict[SkillEffectType.ConvertAndDamageByLinkLine] = SkillEffectConvertAndDamageByLinkLineParam
+  self._effectParamClassDict[SkillEffectType.PetTrapMove] = SkillEffectParamPetTrapMove
+  self._effectParamClassDict[SkillEffectType.SacrificeTargetNearestTrapsAndDamage] = SkillEffectSacrificeTargetNearestTrapsAndDamageParam
+  self._effectParamClassDict[SkillEffectType.DynamicScopeChainDamage] = SkillEffectParam_DynamicScopeChainDamage
+  self._effectParamClassDict[SkillEffectType.NightKingTeleportPathDamage] = SkillEffectParamNightKingTeleportPathDamage
+  self._effectParamClassDict[SkillEffectType.RefreshGridByBoardID] = SkillEffectRefreshGridByBoardIDParam
+  self._effectParamClassDict[SkillEffectType.SpliceBoard] = SkillEffectParamSpliceBoard
+  self._effectParamClassDict[SkillEffectType.DamageBySelectPieceCount] = SkillEffectParamDamageBySelectPieceCount
+  self._effectParamClassDict[SkillEffectType.HighFrequencyDamage2] = SkillEffectParam_HighFrequencyDamage2
+  self._effectParamClassDict[SkillEffectType.PopStar] = SkillEffectPopStarParam
+  self._effectParamClassDict[SkillEffectType.SummonFourAreaMonsterOnBoardEdge] = SkillEffectParamSummonFourAreaMonsterOnBoardEdge
+  self._effectParamClassDict[SkillEffectType.PickUpGridTogether] = SkillEffectParam_PickUpGridTogether
+  self._effectParamClassDict[SkillEffectType.ButterflySummon] = SkillEffectParam_ButterflySummon
+  self._effectParamClassDict[SkillEffectType.TankRushPerGrid] = SkillEffectParam_TankRushPerGrid
+  self._effectParamClassDict[SkillEffectType.DamageByConvertGridCount] = SkillEffectParamByConvertGridCount
+  self._effectParamClassDict[SkillEffectType.DamageCountByBuffLayer] = SkillEffectDamageCountByBuffLayerParam
+  self._effectParamClassDict[SkillEffectType.DamageCountByBuffLayer2] = SkillEffectDamageCountByBuffLayer2Param
+  self._effectParamClassDict[SkillEffectType.ControlMonsterCastHitBackTeam] = SkillEffectParamControlMonsterCastHitBackTeam
+  self._effectParamClassDict[SkillEffectType.SummonMonster] = SkillEffectParam_SummonMonster
+  self._effectParamClassDict[SkillEffectType.PushBoard] = SkillEffectPushBoardParam
+  self._effectParamClassDict[SkillEffectType.MarchForward] = SkillEffectMarchForwardParam
+  self._effectParamClassDict[SkillEffectType.Puzzle] = SkillEffectPuzzleParam
+  self._effectParamClassDict[SkillEffectType.HitBackAndDamage] = SkillEffectHitBackAndDamageParam
+  self._effectParamClassDict[SkillEffectType.TeleportAndTurnBodyArea] = SkillEffectParam_TeleportAndTurnBodyArea
+  self._effectParamClassDict[SkillEffectType.FixTrapWall] = SkillEffectParamFixTrapWall
+  self._effectParamClassDict[SkillEffectType.SetGridMaintainColorForSupply] = SkillEffectParamSetGridMaintainColorForSupply
+  self._effectParamClassDict[SkillEffectType.CreateAurasTrapByPickUp] = SkillCreateAurasTrapByPickUpEffectParam
+  self._effectParamClassDict[SkillEffectType.CrabMoveAndAttack] = SkillEffectParamCrabMoveAndAttack
+  self._effectParamClassDict[SkillEffectType.AppointCastChain] = SkillEffectParamAppointChain
+  self._effectParamClassDict[SkillEffectType.Switch2GridTrap] = SkillEffectParamSwitch2GridTrap
+  self._effectParamClassDict[SkillEffectType.SkillCostFeatureStepPoint] = SkillEffectParam_SkillCostFeatureStepPoint
+  self._effectParamClassDict[SkillEffectType.AddMonsterWeak] = SkillEffectParamAddMonsterWeak
+  self._effectParamClassDict[SkillEffectType.DetonateMonsterWeak] = SkillEffectParamDetonateMonsterWeak
+  self._effectParamClassDict[SkillEffectType.TransferMonsterWeak] = SkillEffectParamTransferMonsterWeak
+  self._effectParamClassDict[SkillEffectType.ClingySummon] = SkillEffectParamClingySummon
+  self._effectParamClassDict[SkillEffectType.TeleportAndReplaceBodyArea] = SkillEffectParam_TeleportAndReplaceBodyArea
+  self._effectParamClassDict[SkillEffectType.DamageAfterHitBack] = SkillEffectParamDamageAfterHitBack
+  self._effectParamClassDict[SkillEffectType.PetAbsorbMaintainColorGrid] = SkillEffectPetAbsorbMaintainColorGridParam
+  self._effectParamClassDict[SkillEffectType.ColorPaletteCharge] = SkillEffectParamColorPaletteCharge
+  self._effectParamClassDict[SkillEffectType.RobotBomb] = SkillEffectParamRobotBomb
+  self._effectParamClassDict[SkillEffectType.ScorpionSummon] = SkillEffectParamScorpionSummon
+  self._effectParamClassDict[SkillEffectType.ScorpionHitBack] = SkillEffectParamScorpionHitBack
+  self._effectParamClassDict[SkillEffectType.ChangeSanMax] = SkillEffectParamChangeSanMax
+  self._effectParamClassDict[SkillEffectType.SwapSan2TeamHp] = SkillEffectParamSwapSan2TeamHp
+  self._effectParamClassDict[SkillEffectType.SummonWithCasterAttribute] = SkillEffectParamSummonWithCasterAttribute
+  self._effectParamClassDict[SkillEffectType.SummonTrapByTargetPos] = SkillEffectParamSummonTrapByTargetPos
+  self._effectParamClassDict[SkillEffectType.MoyeMove] = SkillEffectParamMoyeMove
+  self._effectParamClassDict[SkillEffectType.ControlMonsterTeleportAndAttack] = SkillEffectParamControlMonsterTeleportAndAttack
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamParser.ParseSkillEffectList = function(self, effect_table, petId, skillType, grade, awaking)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamParser:ParseSkillEffectList(effect_table, petId, skillType, grade, awaking)
   local effectParamList = {}
   local effectIndexList = {}
-  for k,v in pairs(effect_table) do
+  for k, v in pairs(effect_table) do
     effectIndexList[#effectIndexList + 1] = k
   end
-  ;
-  (table.sort)(effectIndexList)
-  for _,v in ipairs(effectIndexList) do
+  table.sort(effectIndexList)
+  for _, v in ipairs(effectIndexList) do
     local effectParam = effect_table[v]
     local effectType = effectParam.effectType
-    local classType = (self._effectParamClassDict)[effectType]
+    local classType = self._effectParamClassDict[effectType]
     if classType == nil then
-      (Log.exception)("ParseSkillEffectList cant find effectype ", effectType)
+      Log.exception("ParseSkillEffectList cant find effectype ", effectType)
       return effectParamList
     end
     local paramDataObj = classType:New(effectParam, petId, #effectParamList + 1, skillType, grade, awaking)
@@ -853,16 +230,11 @@ SkillEffectParamParser.ParseSkillEffectList = function(self, effect_table, petId
   return effectParamList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamParser.ParseSkillEffectParam = function(self, effectType, effectParam, petId, effectIndex, skillType, grade, awaking)
-  -- function num : 0_2 , upvalues : _ENV
-  local classType = (self._effectParamClassDict)[effectType]
+function SkillEffectParamParser:ParseSkillEffectParam(effectType, effectParam, petId, effectIndex, skillType, grade, awaking)
+  local classType = self._effectParamClassDict[effectType]
   if classType == nil then
-    (Log.error)("ParseSkillEffectParam cant find effectype ", effectType)
+    Log.error("ParseSkillEffectParam cant find effectype ", effectType)
   end
   local paramDataObj = classType:New(effectParam, petId, effectIndex, skillType, grade, awaking)
   return paramDataObj
 end
-
-

@@ -1,82 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/campainenter/ui_homeland_campainenter_container.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICampainEnterContainer", UICustomWidget)
 UICampainEnterContainer = UICampainEnterContainer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICampainEnterContainer.Constructor = function(self)
-  -- function num : 0_0
+function UICampainEnterContainer:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterContainer.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UICampainEnterContainer:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterContainer.OnHide = function(self, uiParams)
-  -- function num : 0_2
+function UICampainEnterContainer:OnHide(uiParams)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterContainer._GetComponents = function(self)
-  -- function num : 0_3
+function UICampainEnterContainer:_GetComponents()
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterContainer.SetData = function(self, datas, controller)
-  -- function num : 0_4
+function UICampainEnterContainer:SetData(datas, controller)
   self._datas = datas
   self._controller = controller
   self:_SetItems()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterContainer._SetItems = function(self)
-  -- function num : 0_5
+function UICampainEnterContainer:_SetItems()
   local count = #self._datas
   if count <= 0 then
-    return 
+    return
   end
-  ;
-  (self._content):SpawnObjects("UICampainEnterRewardItem", count)
-  local items = (self._content):GetAllSpawnList()
+  self._content:SpawnObjects("UICampainEnterRewardItem", count)
+  local items = self._content:GetAllSpawnList()
   for i = 1, #items do
-    (items[i]):SetData((self._datas)[i], self._controller)
-    ;
-    (items[i]):ShowAnim()
+    items[i]:SetData(self._datas[i], self._controller)
+    items[i]:ShowAnim()
   end
   self:StartTask(self.ShowItemCoro, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterContainer.Refresh = function(self)
-  -- function num : 0_6
-  local items = (self._content):GetAllSpawnList()
+function UICampainEnterContainer:Refresh()
+  local items = self._content:GetAllSpawnList()
   for i = 1, #items do
-    (items[i]):SetData((self._datas)[i], self._controller)
+    items[i]:SetData(self._datas[i], self._controller)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampainEnterContainer.ShowItemCoro = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UICampainEnterContainer:ShowItemCoro(TT)
   self:Lock("UICampainEnterContainer:ShowItemCoro")
-  local items = (self._content):GetAllSpawnList()
+  local items = self._content:GetAllSpawnList()
   YIELD(TT, 500)
   self:UnLock("UICampainEnterContainer:ShowItemCoro")
 end
-
-

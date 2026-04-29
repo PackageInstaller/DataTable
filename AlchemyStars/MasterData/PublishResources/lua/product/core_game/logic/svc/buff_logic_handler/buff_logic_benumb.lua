@@ -1,58 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_benumb.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetBenumb", BuffLogicBase)
 BuffLogicSetBenumb = BuffLogicSetBenumb
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetBenumb.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetBenumb:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetBenumb.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetFlag(BuffFlags.Benumb)
+function BuffLogicSetBenumb:DoLogic(notify)
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetFlag(BuffFlags.Benumb)
   if e:HasMonsterID() then
     local cAI = e:AI()
     local vmb = cAI:GetMobilityValid()
-    if vmb > 0 then
+    if 0 < vmb then
       cAI:ClearMobilityTotal()
     end
-    ;
-    (e:Attributes()):Modify("MaxMobility", 1)
+    e:Attributes():Modify("MaxMobility", 1)
   end
-  do
-    ;
-    ((self._world):GetService("Trigger")):Notify(NTBenumbed:New(e))
-    return true
-  end
+  self._world:GetService("Trigger"):Notify(NTBenumbed:New(e))
+  return true
 end
 
 _class("BuffLogicResetBenumb", BuffLogicBase)
 BuffLogicResetBenumb = BuffLogicResetBenumb
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetBenumb.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetBenumb:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetBenumb.DoLogic = function(self, notify)
-  -- function num : 0_3 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):ResetFlag(BuffFlags.Benumb)
+function BuffLogicResetBenumb:DoLogic(notify)
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():ResetFlag(BuffFlags.Benumb)
   if e:HasMonsterID() then
-    (e:Attributes()):Modify("MaxMobility", 99)
+    e:Attributes():Modify("MaxMobility", 99)
   end
   return true
 end
-
-

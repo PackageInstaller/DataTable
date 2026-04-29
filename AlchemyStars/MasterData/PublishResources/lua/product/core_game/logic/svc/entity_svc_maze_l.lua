@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/entity_svc_maze_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("entity_svc_l")
 _class("LogicEntityServiceMaze", LogicEntityService)
 LogicEntityServiceMaze = LogicEntityServiceMaze
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LogicEntityServiceMaze._InitPetAttributes = function(self, entity, petData, maxCastPower)
-  -- function num : 0_0 , upvalues : _ENV
+function LogicEntityServiceMaze:_InitPetAttributes(entity, petData, maxCastPower)
   local maxhp = petData:GetPetHealth()
   local hp = petData:GetPetCurHealth()
   local attack = petData:GetPetAttack()
@@ -38,11 +31,11 @@ LogicEntityServiceMaze._InitPetAttributes = function(self, entity, petData, maxC
   attributeComponent:Modify("MaxHP", maxhp)
   attributeComponent:Modify("AfterDamage", afterDamage)
   attributeComponent:Modify("ExElementParam", exElementParam)
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local extraActiveSkill = petData:GetPetExtraActiveSkill()
-  if extraActiveSkill and #extraActiveSkill > 0 then
+  if extraActiveSkill and 0 < #extraActiveSkill then
     local configService = self._configService
-    for index,extraSkillID in ipairs(extraActiveSkill) do
+    for index, extraSkillID in ipairs(extraActiveSkill) do
       local activeSkillConfigData = configService:GetSkillConfigData(extraSkillID)
       if activeSkillConfigData then
         local skillTriggerType = activeSkillConfigData:GetSkillTriggerType()
@@ -59,9 +52,5 @@ LogicEntityServiceMaze._InitPetAttributes = function(self, entity, petData, maxC
       end
     end
   end
-  do
-    return hp, maxhp, defense
-  end
+  return hp, maxhp, defense
 end
-
-

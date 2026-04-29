@@ -1,172 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/trap_target_selector.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TrapTargetSelector", Object)
 TrapTargetSelector = TrapTargetSelector
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TrapTargetSelector.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function TrapTargetSelector:Constructor(world)
   self._world = world
   self._selectFunc = {}
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFunc)[TrapRaceType.Team] = self._SelectTeam
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFunc)[TrapRaceType.Pet] = self._SelectPet
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFunc)[TrapRaceType.Monster] = self._SelectMonster
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFunc)[TrapRaceType.All] = self._SelectAll
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFunc)[TrapRaceType.FilterByBuff] = self._SelectByBuff
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFunc)[TrapRaceType.FriendTeam] = self._SelectFriendTeam
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFunc)[TrapRaceType.EnemyTeam] = self._SelectEnemyTeam
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFunc)[TrapRaceType.AllTeam] = self._SelectTeam
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFunc)[TrapRaceType.ChessPet] = self._SelectChessPet
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectFunc)[TrapRaceType.None] = self._None
+  self._selectFunc[TrapRaceType.Team] = self._SelectTeam
+  self._selectFunc[TrapRaceType.Pet] = self._SelectPet
+  self._selectFunc[TrapRaceType.Monster] = self._SelectMonster
+  self._selectFunc[TrapRaceType.All] = self._SelectAll
+  self._selectFunc[TrapRaceType.FilterByBuff] = self._SelectByBuff
+  self._selectFunc[TrapRaceType.FriendTeam] = self._SelectFriendTeam
+  self._selectFunc[TrapRaceType.EnemyTeam] = self._SelectEnemyTeam
+  self._selectFunc[TrapRaceType.AllTeam] = self._SelectTeam
+  self._selectFunc[TrapRaceType.ChessPet] = self._SelectChessPet
+  self._selectFunc[TrapRaceType.None] = self._None
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTargetSelector.CanSelectTarget = function(self, trap, caster)
-  -- function num : 0_1
-  local raceType = (trap:Trap()):GetTrapRaceType()
+function TrapTargetSelector:CanSelectTarget(trap, caster)
+  local raceType = trap:Trap():GetTrapRaceType()
   return self:CanSelectTargetByType(trap, caster, raceType)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTargetSelector.CanSelectTargetByType = function(self, trap, caster, raceType)
-  -- function num : 0_2 , upvalues : _ENV
+function TrapTargetSelector:CanSelectTargetByType(trap, caster, raceType)
   if not caster then
     return true
   end
-  raceType = (self._world):ReplaceTrapRaceType(raceType)
-  local func = (self._selectFunc)[raceType]
+  raceType = self._world:ReplaceTrapRaceType(raceType)
+  local func = self._selectFunc[raceType]
   if not func then
-    (Log.exception)(self._className, "invalid raceType ", raceType)
+    Log.exception(self._className, "invalid raceType ", raceType)
     return false
   end
   return func(self, trap, caster)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTargetSelector._SelectTeam = function(self, trap, target)
-  -- function num : 0_3
-  if not target:HasTeam() then
-    return target:HasPetPstID()
-  end
+function TrapTargetSelector:_SelectTeam(trap, target)
+  return target:HasTeam() or target:HasPetPstID()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTargetSelector._SelectFriendTeam = function(self, trap, target)
-  -- function num : 0_4
-  if (trap:Alignment()):GetAlignmentType() == (target:Alignment()):GetAlignmentType() then
-    if not target:HasTeam() then
-      do return target:HasPetPstID() end
-      return false
-    end
+function TrapTargetSelector:_SelectFriendTeam(trap, target)
+  if trap:Alignment():GetAlignmentType() == target:Alignment():GetAlignmentType() then
+    return target:HasTeam() or target:HasPetPstID()
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTargetSelector._SelectEnemyTeam = function(self, trap, target)
-  -- function num : 0_5
-  if (trap:Alignment()):GetAlignmentType() ~= (target:Alignment()):GetAlignmentType() then
-    if not target:HasTeam() then
-      do return target:HasPetPstID() end
-      return false
-    end
+function TrapTargetSelector:_SelectEnemyTeam(trap, target)
+  if trap:Alignment():GetAlignmentType() ~= target:Alignment():GetAlignmentType() then
+    return target:HasTeam() or target:HasPetPstID()
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTargetSelector._SelectPet = function(self, trap, target)
-  -- function num : 0_6
+function TrapTargetSelector:_SelectPet(trap, target)
   return target:HasPetPstID()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTargetSelector._SelectMonster = function(self, trap, target)
-  -- function num : 0_7
-  if target:HasMonsterID() then
-    return not target:HasDeadMark()
-  end
+function TrapTargetSelector:_SelectMonster(trap, target)
+  return target:HasMonsterID() and not target:HasDeadMark()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTargetSelector._SelectAll = function(self, trap, target)
-  -- function num : 0_8
-  if not self:_SelectTeam(trap, target) and not self:_SelectPet(trap, target) then
-    return self:_SelectMonster(trap, target)
-  end
+function TrapTargetSelector:_SelectAll(trap, target)
+  return self:_SelectTeam(trap, target) or self:_SelectPet(trap, target) or self:_SelectMonster(trap, target)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTargetSelector._SelectByBuff = function(self, trap, target)
-  -- function num : 0_9 , upvalues : _ENV
+function TrapTargetSelector:_SelectByBuff(trap, target)
   local trapCmpt = trap:Trap()
   local buffEffects = trapCmpt:GetTrapRaceParam()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local buffCpt = target:BuffComponent()
   if buffCpt then
-    for _,value in ipairs(buffEffects) do
+    for _, value in ipairs(buffEffects) do
       if buffCpt:HasBuffEffect(value) then
         return false
       end
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTargetSelector._SelectChessPet = function(self, trap, target)
-  -- function num : 0_10
+function TrapTargetSelector:_SelectChessPet(trap, target)
   return target:HasChessPet()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapTargetSelector._None = function(self)
-  -- function num : 0_11
+function TrapTargetSelector:_None()
   return false
 end
-
-

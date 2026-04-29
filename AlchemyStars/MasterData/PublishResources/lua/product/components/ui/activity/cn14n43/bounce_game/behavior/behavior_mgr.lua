@@ -1,71 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/behavior/behavior_mgr.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BehaviorMgr", Object)
 BehaviorMgr = BehaviorMgr
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BehaviorMgr.Constructor = function(self)
-  -- function num : 0_0
+function BehaviorMgr:Constructor()
   self._behaviors = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviorMgr.GetBehavior = function(self, name)
-  -- function num : 0_1
-  return (self._behaviors)[name]
+function BehaviorMgr:GetBehavior(name)
+  return self._behaviors[name]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviorMgr.AddBehavior = function(self, behavior)
-  -- function num : 0_2
+function BehaviorMgr:AddBehavior(behavior)
   local name = behavior:Name()
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._behaviors)[name] = behavior
+  self._behaviors[name] = behavior
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviorMgr.RemoveBehavior = function(self, behavior)
-  -- function num : 0_3
+function BehaviorMgr:RemoveBehavior(behavior)
   local name = behavior:Name()
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._behaviors)[name] = nil
+  self._behaviors[name] = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviorMgr.Show = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for k,v in pairs(self._behaviors) do
+function BehaviorMgr:Show()
+  for k, v in pairs(self._behaviors) do
     v:Show()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviorMgr.Reset = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  for k,v in pairs(self._behaviors) do
+function BehaviorMgr:Reset()
+  for k, v in pairs(self._behaviors) do
     v:Reset()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviorMgr.Release = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  for k,v in pairs(self._behaviors) do
+function BehaviorMgr:Release()
+  for k, v in pairs(self._behaviors) do
     v:Release()
   end
 end
-
-

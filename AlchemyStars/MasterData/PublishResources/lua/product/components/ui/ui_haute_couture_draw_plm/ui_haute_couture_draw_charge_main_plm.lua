@@ -1,80 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_plm/ui_haute_couture_draw_charge_main_plm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawChargeMainPLM", UIHauteCoutureDrawChargeBase)
 UIHauteCoutureDrawChargeMainPLM = UIHauteCoutureDrawChargeMainPLM
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawChargeMainPLM.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawChargeMainPLM:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeMainPLM.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDrawChargeMainPLM:OnShow(uiParams)
   self:InitWidgets()
   self:_OnValue()
   self:AddEventBase()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeMainPLM.InitWidgets = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHauteCoutureDrawChargeMainPLM:InitWidgets()
   self.controller = self.uiOwner
-  self._ctx = (self.controller)._ctx
+  self._ctx = self.controller._ctx
   local btns = self:GetUIComponent("UISelectObjectPath", "topbtn")
   self._backBtn = btns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
+  self._backBtn:SetData(function()
     self:StartTask(function(TT)
-      -- function num : 0_2_0_0 , upvalues : self, _ENV
-      (self._anim):Play("UIHauteCoutureDrawChargeMainGL_out")
+      self._anim:Play("UIHauteCoutureDrawChargeMainGL_out")
       YIELD(TT, 450)
-      ;
-      (self.controller):CloseDialog()
-    end
-)
-  end
-, nil, nil, false, nil, nil)
+      self.controller:CloseDialog()
+    end)
+  end, nil, nil, false, nil, nil)
   local currency = self:GetUIComponent("UISelectObjectPath", "currencyMenu")
   self._topTips = currency:SpawnObject("UINewCurrencyMenu")
-  ;
-  (self._topTips):SetData({self:GetCoinId()}, true)
-  self._seniorSkinItem = (self._topTips):GetItemByTypeId(self:GetCoinId())
+  self._topTips:SetData({
+    self:GetCoinId()
+  }, true)
+  self._seniorSkinItem = self._topTips:GetItemByTypeId(self:GetCoinId())
   self._itemPool = self:GetUIComponent("UISelectObjectPath", "Content")
   self._anim = self:GetUIComponent("Animation", "anim")
   self:RemoveEventBase()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeMainPLM._OnValue = function(self)
-  -- function num : 0_3
+function UIHauteCoutureDrawChargeMainPLM:_OnValue()
   self:_OnValueBase()
-  local itemPools = (self._itemPool):GetAllSpawnList()
+  local itemPools = self._itemPool:GetAllSpawnList()
   for i = 1, #itemPools do
     local item = itemPools[i]
     item:PlayAnimIn(i)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeMainPLM.GetCoinId = function(self)
-  -- function num : 0_4
+function UIHauteCoutureDrawChargeMainPLM:GetCoinId()
   return 3000378
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeMainPLM.GetItemImpl = function(self)
-  -- function num : 0_5
+function UIHauteCoutureDrawChargeMainPLM:GetItemImpl()
   return "UIHauteCoutureDrawChargeItemPLM"
 end
-
-

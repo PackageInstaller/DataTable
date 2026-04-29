@@ -1,67 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_escape.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResult_Escape", SkillEffectResultBase)
 SkillEffectResult_Escape = SkillEffectResult_Escape
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_Escape.Constructor = function(self, nTargetID, posGrid, disappear, addNum)
-  -- function num : 0_0
+function SkillEffectResult_Escape:Constructor(nTargetID, posGrid, disappear, addNum)
   self.m_nTargetID = nTargetID
   self.m_posGrid = posGrid
   self._disappear = disappear
   self._addNum = addNum
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Escape.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResult_Escape:GetEffectType()
   return SkillEffectType.Escape
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Escape.GetGridPos = function(self)
-  -- function num : 0_2
+function SkillEffectResult_Escape:GetGridPos()
   return self.m_posGrid
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Escape.GetTargetID = function(self)
-  -- function num : 0_3
+function SkillEffectResult_Escape:GetTargetID()
   return self.m_nTargetID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Escape.GetDisappear = function(self)
-  -- function num : 0_4
+function SkillEffectResult_Escape:GetDisappear()
   return self._disappear
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Escape.GetAddNum = function(self)
-  -- function num : 0_5
+function SkillEffectResult_Escape:GetAddNum()
   return self._addNum
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Escape.SetPosNew = function(self, posNew)
-  -- function num : 0_6
+function SkillEffectResult_Escape:SetPosNew(posNew)
   self._posNew = posNew
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Escape.GetPosNew = function(self)
-  -- function num : 0_7
+function SkillEffectResult_Escape:GetPosNew()
   return self._posNew
 end
-
-

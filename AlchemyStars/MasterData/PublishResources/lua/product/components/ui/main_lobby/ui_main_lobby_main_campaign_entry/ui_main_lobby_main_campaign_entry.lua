@@ -1,81 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_main_campaign_entry/ui_main_lobby_main_campaign_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyMainCampaignEntry", UICustomWidget)
 UIMainLobbyMainCampaignEntry = UIMainLobbyMainCampaignEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyMainCampaignEntry.Constructor = function(self)
-  -- function num : 0_0
+function UIMainLobbyMainCampaignEntry:Constructor()
   self._clsObjName = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyMainCampaignEntry.OnShow = function(self)
-  -- function num : 0_1
+function UIMainLobbyMainCampaignEntry:OnShow()
   self._entryLoader = self:GetUIComponent("UISelectObjectPath", "EntryLoader")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyMainCampaignEntry.OnHide = function(self)
-  -- function num : 0_2
+function UIMainLobbyMainCampaignEntry:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyMainCampaignEntry.SetData = function(self, latestCampObj, controller)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMainLobbyMainCampaignEntry:SetData(latestCampObj, controller)
   if latestCampObj then
     local sampleInfo = latestCampObj:GetSampleInfo()
-    local campConfig = (Cfg.cfg_campaign)[sampleInfo.id]
-    if campConfig and campConfig.EntranceIcon and (table.count)(campConfig.EntranceIcon) >= 3 then
-      local entryPrefab = (campConfig.EntranceIcon)[2]
-      local entryClass = (campConfig.EntranceIcon)[3]
+    local campConfig = Cfg.cfg_campaign[sampleInfo.id]
+    if campConfig and campConfig.EntranceIcon and table.count(campConfig.EntranceIcon) >= 3 then
+      local entryPrefab = campConfig.EntranceIcon[2]
+      local entryClass = campConfig.EntranceIcon[3]
       if entryPrefab and entryClass then
         if self._clsObjName == entryClass then
-          do
-            do
-              (self._entryLoader):ClearWidgets()
-              self._clsObjName = entryClass
-              ;
-              ((self._entryLoader).dynamicInfoOfEngine):SetObjectName(entryPrefab)
-              self._main_campaign = (self._entryLoader):SpawnObject(entryClass)
-              if not self._main_campaign then
-                (Log.fatal)("UIMainLobbyMainCampaignEntry SpawnObject is null ,entryClas = ", entryClass)
-                return 
-              end
-              if not (self._main_campaign).SetData then
-                (Log.fatal)("UIMainLobbyMainCampaignEntry , entry no SetData Method,  entryClas = ", entryClass)
-                return 
-              end
-              ;
-              (self._main_campaign):SetData(sampleInfo, controller)
-              do return true end
-              ;
-              (self._entryLoader):ClearWidgets()
-              ;
-              (Log.fatal)("###[UIMainLobbyMainCampaignEntry] 新版主界面入口，需要每个活动自己单独做，该活动配置错误，id:", sampleInfo.id)
-              ;
-              (self._entryLoader):ClearWidgets()
-              ;
-              (Log.fatal)("###[UIMainLobbyMainCampaignEntry] 当前没有主活动，这种情况基本不会出现吧。。")
-            end
-          end
+        else
+          self._entryLoader:ClearWidgets()
         end
+        self._clsObjName = entryClass
+        self._entryLoader.dynamicInfoOfEngine:SetObjectName(entryPrefab)
+        self._main_campaign = self._entryLoader:SpawnObject(entryClass)
+        if not self._main_campaign then
+          Log.fatal("UIMainLobbyMainCampaignEntry SpawnObject is null ,entryClas = ", entryClass)
+          return
+        end
+        if not self._main_campaign.SetData then
+          Log.fatal("UIMainLobbyMainCampaignEntry , entry no SetData Method,  entryClas = ", entryClass)
+          return
+        end
+        self._main_campaign:SetData(sampleInfo, controller)
+        return true
       end
     end
+    self._entryLoader:ClearWidgets()
+    Log.fatal("###[UIMainLobbyMainCampaignEntry] 新版主界面入口，需要每个活动自己单独做，该活动配置错误，id:", sampleInfo.id)
+  else
+    self._entryLoader:ClearWidgets()
+    Log.fatal("###[UIMainLobbyMainCampaignEntry] 当前没有主活动，这种情况基本不会出现吧。。")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyMainCampaignEntry.RefreshCampSampleInfo = function(self, latestCampObj, controller)
-  -- function num : 0_4
+function UIMainLobbyMainCampaignEntry:RefreshCampSampleInfo(latestCampObj, controller)
   self:SetData(latestCampObj, controller)
 end
-
-

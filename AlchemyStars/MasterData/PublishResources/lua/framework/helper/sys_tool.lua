@@ -1,64 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/helper/sys_tool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-_enum("PlayerSex", {SEX_Error = -1, SEX_Male = 0, SEX_Female = 1, SEX_Both = 2})
+_enum("PlayerSex", {
+  SEX_Error = -1,
+  SEX_Male = 0,
+  SEX_Female = 1,
+  SEX_Both = 2
+})
 require("h3dmobile_info")
 local RuntimePlatform = UnityEngine.RuntimePlatform
-GetPlatformOS = function()
-  -- function num : 0_0 , upvalues : _ENV, RuntimePlatform
+
+function GetPlatformOS()
   if PLATFORM == RuntimePlatform.Android then
     return ClientRuntimeOS.CRO_ANDROID
+  elseif PLATFORM == RuntimePlatform.IPhonePlayer or PLATFORM == RuntimePlatform.OSXPlayer then
+    return ClientRuntimeOS.CRO_IOS
+  elseif PLATFORM == RuntimePlatform.WindowsPlayer then
+    return ClientRuntimeOS.CRO_PC
   else
-    if PLATFORM == RuntimePlatform.IPhonePlayer or PLATFORM == RuntimePlatform.OSXPlayer then
-      return ClientRuntimeOS.CRO_IOS
-    else
-      if PLATFORM == RuntimePlatform.WindowsPlayer then
-        return ClientRuntimeOS.CRO_PC
-      else
-        return ClientRuntimeOS.CRO_EDITOR
-      end
-    end
+    return ClientRuntimeOS.CRO_EDITOR
   end
 end
 
-IsUnityEditor = function()
-  -- function num : 0_1 , upvalues : _ENV, RuntimePlatform
-  do return PLATFORM == RuntimePlatform.WindowsEditor or PLATFORM == RuntimePlatform.OSXEditor or PLATFORM == RuntimePlatform.LinuxEditor end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function IsUnityEditor()
+  return PLATFORM == RuntimePlatform.WindowsEditor or PLATFORM == RuntimePlatform.OSXEditor or PLATFORM == RuntimePlatform.LinuxEditor
 end
 
-GetInternetReachability = function()
-  -- function num : 0_2 , upvalues : _ENV
-  local reach_ability = (UnityEngine.Application).internetReachability
-  if reach_ability == (UnityEngine.NetworkReachability).NotReachable then
+function GetInternetReachability()
+  local reach_ability = UnityEngine.Application.internetReachability
+  if reach_ability == UnityEngine.NetworkReachability.NotReachable then
     return 0
+  elseif reach_ability == UnityEngine.NetworkReachability.ReachableViaCarrierDataNetwork then
+    return 1
   else
-    if reach_ability == (UnityEngine.NetworkReachability).ReachableViaCarrierDataNetwork then
-      return 1
-    else
-      return 2
-    end
+    return 2
   end
 end
 
-IsIos = function()
-  -- function num : 0_3 , upvalues : _ENV, RuntimePlatform
-  do return PLATFORM == RuntimePlatform.IPhonePlayer or PLATFORM == RuntimePlatform.OSXPlayer or PLATFORM == RuntimePlatform.OSXEditor end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function IsIos()
+  return PLATFORM == RuntimePlatform.IPhonePlayer or PLATFORM == RuntimePlatform.OSXPlayer or PLATFORM == RuntimePlatform.OSXEditor
 end
 
-IsAndroid = function()
-  -- function num : 0_4 , upvalues : _ENV
-  do return GetPlatformOS() == ClientRuntimeOS.CRO_ANDROID end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function IsAndroid()
+  return GetPlatformOS() == ClientRuntimeOS.CRO_ANDROID
 end
 
-IsPc = function()
-  -- function num : 0_5 , upvalues : _ENV
-  do return GetPlatformOS() == ClientRuntimeOS.CRO_PC end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function IsPc()
+  return GetPlatformOS() == ClientRuntimeOS.CRO_PC
 end
-
-

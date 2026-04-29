@@ -1,112 +1,81 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_crab_move_and_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_CrabMoveAndAttack", SkillEffectCalc_Base)
 SkillEffectCalc_CrabMoveAndAttack = SkillEffectCalc_CrabMoveAndAttack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_CrabMoveAndAttack.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_CrabMoveAndAttack:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_CrabMoveAndAttack.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_CrabMoveAndAttack:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillResults = {}
-  local stageIndex = (skillEffectCalcParam.skillEffectParam):GetSkillEffectDamageStageIndex()
+  local stageIndex = skillEffectCalcParam.skillEffectParam:GetSkillEffectDamageStageIndex()
   local skillParam = skillEffectCalcParam.skillEffectParam
   local attackDis = skillParam:GetAttackDis()
   local moveDir = skillParam:GetMoveDir()
   local moveDis = skillParam:GetMoveDis()
-  if not skillEffectCalcParam.skillRange then
-    local skillRange = {}
-  end
+  local skillRange = skillEffectCalcParam.skillRange or {}
   local stageIndex = skillParam:GetSkillEffectDamageStageIndex()
   local casterEntityID = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterEntityID)
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
   local casterPos = casterEntity:GetGridPosition()
   local casterDir = casterEntity:GetGridDirection()
-  local bodyArea = (casterEntity:BodyArea()):GetArea()
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local teamPos = (teamEntity:GetGridPosition())
-  local attackMoveStep = nil
+  local bodyArea = casterEntity:BodyArea():GetArea()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local teamPos = teamEntity:GetGridPosition()
+  local attackMoveStep
   local movePosList = {}
   local attackPosList = {}
   local targetDir = Vector2(0, 0)
   if casterDir == Vector2(0, 1) then
     targetDir = Vector2(1 * moveDir, 0)
-  else
-    if casterDir == Vector2(0, -1) then
-      targetDir = Vector2(-1 * moveDir, 0)
-    else
-      if casterDir == Vector2(1, 0) then
-        targetDir = Vector2(0, -1 * moveDir)
-      else
-        if casterDir == Vector2(-1, 0) then
-          targetDir = Vector2(0, 1 * moveDir)
-        end
-      end
-    end
+  elseif casterDir == Vector2(0, -1) then
+    targetDir = Vector2(-1 * moveDir, 0)
+  elseif casterDir == Vector2(1, 0) then
+    targetDir = Vector2(0, -1 * moveDir)
+  elseif casterDir == Vector2(-1, 0) then
+    targetDir = Vector2(0, 1 * moveDir)
   end
   for i = 0, moveDis do
     local movePos = casterPos + Vector2(targetDir.x * i, targetDir.y * i)
     local isBlock = self:IsPosBlockByArea(movePos, BlockFlag.MonsterLand, bodyArea, casterEntity)
-    if not isBlock then
-      if movePos ~= casterPos then
-        (table.insert)(movePosList, movePos)
-      end
-      if attackDis ~= 0 then
-        for _,bodyPos in ipairs(bodyArea) do
-          local curPos = movePos + bodyPos
-          for k = 1, attackDis do
-            local posWork = curPos + Vector2(casterDir.x * k, casterDir.y * k)
-            if not (table.icontains)(attackPosList, posWork) then
-              (table.insert)(attackPosList, posWork)
-            end
-            if attackMoveStep == nil and (table.intable)(attackPosList, teamPos) then
-              attackMoveStep = i
-              local effectCalcSvc = self._skillEffectService
-              local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(casterEntity, casterPos, teamEntity, teamPos, skillEffectCalcParam.skillID, skillParam, SkillEffectType.Damage, stageIndex)
-              local skillDamageEffectResult = effectCalcSvc:NewSkillDamageEffectResult(teamPos, teamEntity:GetID(), nTotalDamage, listDamageInfo, stageIndex)
-              ;
-              (table.insert)(skillResults, skillDamageEffectResult)
-            end
+    if isBlock then
+      break
+    end
+    if movePos ~= casterPos then
+      table.insert(movePosList, movePos)
+    end
+    if attackDis ~= 0 then
+      for _, bodyPos in ipairs(bodyArea) do
+        local curPos = movePos + bodyPos
+        for k = 1, attackDis do
+          local posWork = curPos + Vector2(casterDir.x * k, casterDir.y * k)
+          if not table.icontains(attackPosList, posWork) then
+            table.insert(attackPosList, posWork)
+          end
+          if attackMoveStep == nil and table.intable(attackPosList, teamPos) then
+            attackMoveStep = i
+            local effectCalcSvc = self._skillEffectService
+            local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(casterEntity, casterPos, teamEntity, teamPos, skillEffectCalcParam.skillID, skillParam, SkillEffectType.Damage, stageIndex)
+            local skillDamageEffectResult = effectCalcSvc:NewSkillDamageEffectResult(teamPos, teamEntity:GetID(), nTotalDamage, listDamageInfo, stageIndex)
+            table.insert(skillResults, skillDamageEffectResult)
           end
         end
       end
-      do
-        -- DECOMPILER ERROR at PC187: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC187: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
     end
   end
-  if (table.count)(movePosList) > 0 then
+  if 0 < table.count(movePosList) then
     local newPos = movePosList[#movePosList]
-    local utilData = (self._world):GetService("UtilData")
+    local utilData = self._world:GetService("UtilData")
     local colorOld = utilData:FindPieceElement(casterPos)
     local skillResultTeleport = SkillEffectResult_Teleport:New(casterEntityID, casterPos, colorOld, newPos, casterDir, stageIndex)
-    ;
-    (table.insert)(skillResults, skillResultTeleport)
+    table.insert(skillResults, skillResultTeleport)
   end
-  do
-    local skillEffectResultCrabMoveAndAttack = SkillEffectResultCrabMoveAndAttack:New(attackMoveStep)
-    ;
-    (table.insert)(skillResults, skillEffectResultCrabMoveAndAttack)
-    return skillResults
-  end
+  local skillEffectResultCrabMoveAndAttack = SkillEffectResultCrabMoveAndAttack:New(attackMoveStep)
+  table.insert(skillResults, skillEffectResultCrabMoveAndAttack)
+  return skillResults
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_CrabMoveAndAttack.IsPosBlockByArea = function(self, pos, blockFlag, listArea, entityExcept)
-  -- function num : 0_2
-  local utilDataSvc = (self._world):GetService("UtilData")
+function SkillEffectCalc_CrabMoveAndAttack:IsPosBlockByArea(pos, blockFlag, listArea, entityExcept)
+  local utilDataSvc = self._world:GetService("UtilData")
   local ret = false
   for i = 1, #listArea do
     local posWork = pos + listArea[i]
@@ -122,5 +91,3 @@ SkillEffectCalc_CrabMoveAndAttack.IsPosBlockByArea = function(self, pos, blockFl
   end
   return false
 end
-
-

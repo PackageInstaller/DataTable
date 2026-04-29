@@ -1,18 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_ai_state.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_is_base")
 _class("ActionCheckAIState", ActionIsBase)
 ActionCheckAIState = ActionCheckAIState
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckAIState.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local aiCmpt = (self.m_entityOwn):AI()
+function ActionCheckAIState:OnUpdate()
+  local aiCmpt = self.m_entityOwn:AI()
   local curState = aiCmpt:GetAITreeState()
   return AINewNodeStatus.Other + curState
 end
-
-

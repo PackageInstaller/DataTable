@@ -1,165 +1,108 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/hardlevel/ui_n12_hard_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12HardlLevel", UIController)
 UIN12HardlLevel = UIN12HardlLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12HardlLevel.Constructor = function(self)
-  -- function num : 0_0
+function UIN12HardlLevel:Constructor()
   self._levelCount = 5
   self._levelWidgets = {}
   self._levelData = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevel.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN12HardlLevel:LoadDataOnEnter(TT, res, uiParams)
   self._loginModule = self:GetModule(LoginModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
   self._redDotModule = self:GetModule(RedDotModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N12, ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N12, ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  self._cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
-  self._challengeMissionComponent = (self._campaign):GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
-  self._challengeMissionCompInfo = (self._challengeMissionComponent):GetComponentInfo()
+  self._cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
+  self._challengeMissionComponent = self._campaign:GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
+  self._challengeMissionCompInfo = self._challengeMissionComponent:GetComponentInfo()
   self:_FilterLevelData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevel._FilterLevelData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local missionInfos = (self._challengeMissionCompInfo).m_challenge_unlock_time
+function UIN12HardlLevel:_FilterLevelData()
+  local missionInfos = self._challengeMissionCompInfo.m_challenge_unlock_time
   local tempTable = {}
-  for key,value in pairs(missionInfos) do
-    local tempCfg = (Cfg.cfg_component_challenge_mission)({CampaignMissionId = key})
-    if not (table.icontains)(tempTable, (tempCfg[1]).LeveIndex) then
-      (table.insert)(tempTable, (tempCfg[1]).LeveIndex)
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._levelData)[(tempCfg[1]).LeveIndex] = {key, value}
+  for key, value in pairs(missionInfos) do
+    local tempCfg = Cfg.cfg_component_challenge_mission({CampaignMissionId = key})
+    if not table.icontains(tempTable, tempCfg[1].LeveIndex) then
+      table.insert(tempTable, tempCfg[1].LeveIndex)
+      self._levelData[tempCfg[1].LeveIndex] = {key, value}
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevel.OnShow = function(self, uiParams)
-  -- function num : 0_3
+function UIN12HardlLevel:OnShow(uiParams)
   self:_AttachEvent()
   self:_GetComponent()
   self:RefreshTryout()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevel._AttachEvent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN12HardlLevel:_AttachEvent()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevel._GetComponent = function(self)
-  -- function num : 0_5
+function UIN12HardlLevel:_GetComponent()
   self._backBtn = self:GetUIComponent("UISelectObjectPath", "BackBtn")
-  self._commonTopBtn = (self._backBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_5_0 , upvalues : self
+  self._commonTopBtn = self._backBtn:SpawnObject("UICommonTopButton")
+  self._commonTopBtn:SetData(function()
     self:_Close()
-  end
-)
+  end)
   for i = 1, self._levelCount do
     local levelCell = self:GetUIComponent("UISelectObjectPath", "Level" .. i)
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._levelWidgets)[i] = levelCell:SpawnObject("UIN12HardLevelCell")
-    ;
-    ((self._levelWidgets)[i]):SetData(self._campaign, i, self._levelData, ((self._challengeMissionCompInfo).m_max_score)[i])
+    self._levelWidgets[i] = levelCell:SpawnObject("UIN12HardLevelCell")
+    self._levelWidgets[i]:SetData(self._campaign, i, self._levelData, self._challengeMissionCompInfo.m_max_score[i])
   end
   self._petRedPoint = self:GetGameObject("PetRedPoint")
-  ;
-  (self._challengeMissionComponent):CloseTodayRedPoint()
+  self._challengeMissionComponent:CloseTodayRedPoint()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevel.AfterUILayerChanged = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  for key,value in pairs(self._levelWidgets) do
-    value:RefreshUIInfo(((self._challengeMissionCompInfo).m_max_score)[key])
+function UIN12HardlLevel:AfterUILayerChanged()
+  for key, value in pairs(self._levelWidgets) do
+    value:RefreshUIInfo(self._challengeMissionCompInfo.m_max_score[key])
   end
   self:_RefreshRedPoint()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevel._RefreshRedPoint = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._petRedPoint):SetActive((self._redDotModule):_RequestRedDotStatus4N12(RedDotType.RDT_N12_FIXLINEMISSION))
+function UIN12HardlLevel:_RefreshRedPoint()
+  self._petRedPoint:SetActive(self._redDotModule:_RequestRedDotStatus4N12(RedDotType.RDT_N12_FIXLINEMISSION))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevel._Close = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN12HardlLevel:_Close()
   self:SwitchState(UIStateType.UIN12MainController)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevel.ChallengeTaskBtnOnClick = function(self, go)
-  -- function num : 0_9
+function UIN12HardlLevel:ChallengeTaskBtnOnClick(go)
   self:ShowDialog("UIN12ChallengesContorl", self._levelData)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevel.RefreshTryout = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cmp = (self._campaign):GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_LEVEL_FIXTEAM)
+function UIN12HardlLevel:RefreshTryout()
+  local cmp = self._campaign:GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_LEVEL_FIXTEAM)
   local cmpInfo = cmp:GetComponentInfo()
-  if not cmpInfo.m_pass_mission_info then
-    local passInfo = {}
+  local passInfo = cmpInfo.m_pass_mission_info or {}
+  
+  function self._isTryoutLevelPass(mid)
+    return passInfo[mid] ~= nil
   end
-  self._isTryoutLevelPass = function(mid)
-    -- function num : 0_10_0 , upvalues : passInfo
-    do return passInfo[mid] ~= nil end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevel.PetBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN12HardlLevel:PetBtnOnClick(go)
   self:ShowDialog("UIActivityPetTryController", ECampaignType.CAMPAIGN_TYPE_N12, ECampaignN12ComponentID.ECAMPAIGN_N12_LEVEL_FIXTEAM, self._isTryoutLevelPass, function(missionid)
-    -- function num : 0_11_0 , upvalues : self, _ENV
     local missionModule = self:GetModule(MissionModule)
     local ctx = missionModule:TeamCtx()
-    local localProcess = (self._campaign):GetLocalProcess()
+    local localProcess = self._campaign:GetLocalProcess()
     local missionComponent = localProcess:GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_LEVEL_FIXTEAM)
-    local param = {missionid, missionComponent:GetCampaignMissionComponentId(), missionComponent:GetCampaignMissionParamKeyMap()}
+    local param = {
+      missionid,
+      missionComponent:GetCampaignMissionComponentId(),
+      missionComponent:GetCampaignMissionParamKeyMap()
+    }
     ctx:Init(TeamOpenerType.Campaign, param)
     ctx:ShowDialogUITeams(false)
-  end
-)
+  end)
 end
-
-

@@ -1,63 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_room_leveldown_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftRoomLevelDownController", UIController)
 UIAircraftRoomLevelDownController = UIAircraftRoomLevelDownController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftRoomLevelDownController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftRoomLevelDownController:OnShow(uiParams)
   self:InitWidget()
   self.roomData = uiParams[1]
-  self._spaceID = (self.roomData):SpaceId()
-  self.roomType = (self.roomData):GetRoomType()
-  self.topBarWidget = (self.topbar):SpawnObject("UIAircraftTopBarItem")
-  ;
-  (self.topBarWidget):SetData(false, nil, nil, nil, true)
-  ;
-  (self.rawImageRoomIcon):LoadImage((self.roomData):GetRoomIcon1())
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.textRoomName).text = (StringTable.Get)((self.roomData):GetRoomName())
+  self._spaceID = self.roomData:SpaceId()
+  self.roomType = self.roomData:GetRoomType()
+  self.topBarWidget = self.topbar:SpawnObject("UIAircraftTopBarItem")
+  self.topBarWidget:SetData(false, nil, nil, nil, true)
+  self.rawImageRoomIcon:LoadImage(self.roomData:GetRoomIcon1())
+  self.textRoomName.text = StringTable.Get(self.roomData:GetRoomName())
   self:SetRoomMsg()
-  self.mats = (self.roomData):GetDegradeRecycle()
-  ;
-  (self.scrollViewReturnMats):InitListView(#self.mats, function(_scrollView, _index)
-    -- function num : 0_0_0 , upvalues : self
+  self.mats = self.roomData:GetDegradeRecycle()
+  self.scrollViewReturnMats:InitListView(#self.mats, function(_scrollView, _index)
     return self:NewMatItem(_scrollView, _index)
-  end
-)
+  end)
   if #self.mats <= 4 then
-    (self:GetUIComponent("ScrollRect", "ScrollViewReturnMats")).enabled = false
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.scrollViewReturnMats).enabled = false
+    self:GetUIComponent("ScrollRect", "ScrollViewReturnMats").enabled = false
+    self.scrollViewReturnMats.enabled = false
     local rect = self:GetUIComponent("RectTransform", "MatContent")
     rect.anchorMin = Vector2(0, 0)
     rect.anchorMax = Vector2(1, 1)
     rect.offsetMin = Vector2(0, 0)
-    rect.offsetMax = ((rect.parent):GetComponent(typeof(UnityEngine.RectTransform))).sizeDelta
-    -- DECOMPILER ERROR at PC89: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.matContent).enabled = true
+    rect.offsetMax = rect.parent:GetComponent(typeof(UnityEngine.RectTransform)).sizeDelta
+    self.matContent.enabled = true
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomLevelDownController.OnHide = function(self)
-  -- function num : 0_1
+function UIAircraftRoomLevelDownController:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomLevelDownController.InitWidget = function(self)
-  -- function num : 0_2
+function UIAircraftRoomLevelDownController:InitWidget()
   self.topbar = self:GetUIComponent("UISelectObjectPath", "Topbar")
   self.rawImageRoomIcon = self:GetUIComponent("RawImageLoader", "RawImageRoomIcon")
   self.textRoomName = self:GetUIComponent("UILocalizationText", "TextRoomName")
@@ -68,101 +41,66 @@ UIAircraftRoomLevelDownController.InitWidget = function(self)
   self.matContent = self:GetUIComponent("HorizontalLayoutGroup", "MatContent")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomLevelDownController.NewMatItem = function(self, _scrollView, _index)
-  -- function num : 0_3
+function UIAircraftRoomLevelDownController:NewMatItem(_scrollView, _index)
   if _index < 0 then
     return nil
   end
   local item = _scrollView:NewListViewItem("mat")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   local mat = rowPool:SpawnObject("UIItemsWidgetSingle")
-  local matData = (self.mats)[_index + 1]
+  local matData = self.mats[_index + 1]
   local id = matData[1]
   local need = matData[2]
   mat:SetData(id, need, function(_id, pos)
-    -- function num : 0_3_0 , upvalues : self
     self:OnMatClick(_id, pos)
-  end
-)
+  end)
   return item
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomLevelDownController.OnMatClick = function(self, matId, pos)
-  -- function num : 0_4
+function UIAircraftRoomLevelDownController:OnMatClick(matId, pos)
   self:ShowDialog("UIItemGetPathController", matId)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomLevelDownController.SetRoomMsg = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local uiInfos = (UIAircraftRoomLevelUpController.HandleDataToUI)(false, self.roomData)
-  ;
-  (self.imageRoomProperties):SpawnObjects("UIAircraftLevelInfoItem", #uiInfos)
-  local items = (self.imageRoomProperties):GetAllSpawnList()
+function UIAircraftRoomLevelDownController:SetRoomMsg()
+  local uiInfos = UIAircraftRoomLevelUpController.HandleDataToUI(false, self.roomData)
+  self.imageRoomProperties:SpawnObjects("UIAircraftLevelInfoItem", #uiInfos)
+  local items = self.imageRoomProperties:GetAllSpawnList()
   for i = 1, #items do
     local msg = uiInfos[i]
-    ;
-    (items[i]):SetData(msg.title, false, msg.first, msg.second)
+    items[i]:SetData(msg.title, false, msg.first, msg.second)
   end
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.textPowerFrom).text = (math.ceil)((self.roomData):GetCurrentPower())
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.textPowerTo).text = (math.ceil)((self.roomData):GetDegradeNeedPower())
+  self.textPowerFrom.text = math.ceil(self.roomData:GetCurrentPower())
+  self.textPowerTo.text = math.ceil(self.roomData:GetDegradeNeedPower())
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomLevelDownController.ButtonCancelOnClick = function(self, go)
-  -- function num : 0_6
+function UIAircraftRoomLevelDownController:ButtonCancelOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomLevelDownController.ButtonLevelDownOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  if (self.roomData):GetRoomType() == AirRoomType.CentralRoom then
-    (ToastManager.ShowToast)((StringTable.Get)("str_toast_manager_main_room_cant_down_lv"))
-    return 
+function UIAircraftRoomLevelDownController:ButtonLevelDownOnClick(go)
+  if self.roomData:GetRoomType() == AirRoomType.CentralRoom then
+    ToastManager.ShowToast(StringTable.Get("str_toast_manager_main_room_cant_down_lv"))
+    return
   end
-  if (self.roomData):Level() <= 1 then
-    (Log.exception)("降级界面不处理拆除：", self._spaceID)
-    return 
+  if self.roomData:Level() <= 1 then
+    Log.exception("降级界面不处理拆除：", self._spaceID)
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.RequestDown, self)
+  GameGlobal.TaskManager():StartTask(self.RequestDown, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomLevelDownController.RequestDown = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
+function UIAircraftRoomLevelDownController:RequestDown(TT)
   self:Lock(self:GetName())
-  local module = ((GameGlobal.GameLogic)()):GetModule(AircraftModule)
+  local module = GameGlobal.GameLogic():GetModule(AircraftModule)
   local result = module:RequestRoomDegrade(TT, self._spaceID)
   if result:GetSucc() then
     self:CloseDialog()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshTopbar)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftSettledPetChanged)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshTopbar)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftSettledPetChanged)
     self:CloseDialog()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftPlayDoorAnim, AircraftDoorAnim.LevelDown, self._spaceID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftPlayDoorAnim, AircraftDoorAnim.LevelDown, self._spaceID)
   else
-    ;
-    (ToastManager.ShowToast)(module:GetErrorMsg(result:GetResult()))
+    ToastManager.ShowToast(module:GetErrorMsg(result:GetResult()))
   end
   self:UnLock(self:GetName())
 end
-
-

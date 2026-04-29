@@ -1,1141 +1,649 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/campaign_component_info_handlecode.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("campaign_component_info")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-ICampaignComRequest.GetHandleCode = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ICampaignComRequest:GetHandleCode()
   return ECampaignComHandle.ECCH_INVALID
 end
 
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSelectHardReq.GetHandleCode = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonMazeSelectHardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeSelectHard
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeRoundEndReq.GetHandleCode = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonMazeRoundEndReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeRoundEnd
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeRandomHandReq.GetHandleCode = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonMazeRandomHandReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeRandomHand
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeChooseHandReq.GetHandleCode = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonMazeChooseHandReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeChooseHand
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeClearingReq.GetHandleCode = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function SeasonMazeClearingReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeClearing
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeGoPointReq.GetHandleCode = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SeasonMazeGoPointReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeGoPoint
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeRoomEndReq.GetHandleCode = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function SeasonMazeRoomEndReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeRoomEnd
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeBattleReq.GetHandleCode = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function SeasonMazeBattleReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeBattle
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeEventReq.GetHandleCode = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function SeasonMazeEventReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeEvent
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeResourceReq.GetHandleCode = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function SeasonMazeResourceReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeResource
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeOreReq.GetHandleCode = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function SeasonMazeOreReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeOre
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeBoxReq.GetHandleCode = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function SeasonMazeBoxReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeBox
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeRoundReq.GetHandleCode = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function SeasonMazeRoundReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeRound
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeAltarReq.GetHandleCode = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function SeasonMazeAltarReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeAltar
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeUseOnceReq.GetHandleCode = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function SeasonMazeUseOnceReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeUseOnce
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSaveLvReq.GetHandleCode = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function SeasonMazeSaveLvReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeSaveLv
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeGetSlotReq.GetHandleCode = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function SeasonMazeGetSlotReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeGetSlot
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeOperaSlotReq.GetHandleCode = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function SeasonMazeOperaSlotReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeOperaSlot
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeGetMarketReq.GetHandleCode = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function SeasonMazeGetMarketReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeGetMarket
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeOperaMarketReq.GetHandleCode = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function SeasonMazeOperaMarketReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeOperaMarket
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeChooseRelicReq.GetHandleCode = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function SeasonMazeChooseRelicReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeChooseRelic
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeNewHandReq.GetHandleCode = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function SeasonMazeNewHandReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeNewHand
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeChangeFormationReq.GetHandleCode = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function SeasonMazeChangeFormationReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeChangeFormation
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeInitSelectReq.GetHandleCode = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function SeasonMazeInitSelectReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeInitPetSelect
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeFitAutoBeadReq.GetHandleCode = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function SeasonMazeFitAutoBeadReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeFitAutoBead
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeAutoBeadComposeReq.GetHandleCode = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function SeasonMazeAutoBeadComposeReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeComposeAutoBead
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeHealthyReq.GetHandleCode = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function SeasonMazeHealthyReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeHealthy
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeResurrectPetReq.GetHandleCode = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function SeasonMazeResurrectPetReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeResurrectPet
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePetRecruitListReq.GetHandleCode = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function SeasonMazePetRecruitListReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazePetRecruitList
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePetRecruitSelectReq.GetHandleCode = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function SeasonMazePetRecruitSelectReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazePetRecruitSelect
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePetRecruitResetReq.GetHandleCode = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function SeasonMazePetRecruitResetReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazePetRecruitReset
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSelectFullBreakPetReq.GetHandleCode = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function SeasonMazeSelectFullBreakPetReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeSelectFullBreakPet
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeClearAllBeadNewReq.GetHandleCode = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function SeasonMazeClearAllBeadNewReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeClearAllBeadNew
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-LineChangeFormationReq.GetHandleCode = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function LineChangeFormationReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleLineChangeFormationReq
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-CompleteStoryMissionReq.GetHandleCode = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function CompleteStoryMissionReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleLineMissionMsg
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-CompleteStoryTreeMissionReq.GetHandleCode = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function CompleteStoryTreeMissionReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleCompleteStoryTreeMission
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponentRefreshReq.GetHandleCode = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function CombatSimulatorComponentRefreshReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleCombatSimulatorComponentRefresh
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponentOpenGiftReq.GetHandleCode = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function CombatSimulatorComponentOpenGiftReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleCombatSimulatorComponentOpenGift
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponentDelCartridgeReq.GetHandleCode = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function CombatSimulatorComponentDelCartridgeReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleCombatSimulatorComponentDelCartridge
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-CompleteStorySummerIIMissionReq.GetHandleCode = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function CompleteStorySummerIIMissionReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleCompleteStorySummerIIMission
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-SummerIISelectAffixReq.GetHandleCode = function(self)
-  -- function num : 0_41 , upvalues : _ENV
+function SummerIISelectAffixReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSelectAffix
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-SummerIIChangeFormationReq.GetHandleCode = function(self)
-  -- function num : 0_42 , upvalues : _ENV
+function SummerIIChangeFormationReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSummerIIChangeFormationReq
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-CamQuestTakeReq.GetHandleCode = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function CamQuestTakeReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleQuestTake
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-CamOneKeyQuestTakeReq.GetHandleCode = function(self)
-  -- function num : 0_44 , upvalues : _ENV
+function CamOneKeyQuestTakeReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleOneKeyTakeAll
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-CamQuestDailyResetReq.GetHandleCode = function(self)
-  -- function num : 0_45 , upvalues : _ENV
+function CamQuestDailyResetReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleQuestDailyReset
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-DemoComponentReq.GetHandleCode = function(self)
-  -- function num : 0_46 , upvalues : _ENV
+function DemoComponentReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleDemoMsg
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessSelectReq.GetHandleCode = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function BusinessSelectReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleBusinessSelectReq
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessHarborReq.GetHandleCode = function(self)
-  -- function num : 0_48 , upvalues : _ENV
+function BusinessHarborReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleBusinessHarborReq
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessShipReq.GetHandleCode = function(self)
-  -- function num : 0_49 , upvalues : _ENV
+function BusinessShipReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleBusinessShipReq
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessHireSeamanReq.GetHandleCode = function(self)
-  -- function num : 0_50 , upvalues : _ENV
+function BusinessHireSeamanReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleBusinessHireSeamanReq
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessWorkSeamanReq.GetHandleCode = function(self)
-  -- function num : 0_51 , upvalues : _ENV
+function BusinessWorkSeamanReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleBusinessWorkSeamanReq
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessSailingReq.GetHandleCode = function(self)
-  -- function num : 0_52 , upvalues : _ENV
+function BusinessSailingReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleBusinessSailingReq
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-ExchangeItemComponentExchangeReq.GetHandleCode = function(self)
-  -- function num : 0_53 , upvalues : _ENV
+function ExchangeItemComponentExchangeReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleExchangeItemComponentExchange
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonProgressComponentReceiveRewardReq.GetHandleCode = function(self)
-  -- function num : 0_54 , upvalues : _ENV
+function PersonProgressComponentReceiveRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleReceiveReward
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonProgressComponentOneKeyReceiveRewardReq.GetHandleCode = function(self)
-  -- function num : 0_55 , upvalues : _ENV
+function PersonProgressComponentOneKeyReceiveRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandlePersonProgressOneKeyRecvRewards
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonProgressProgressReq.GetHandleCode = function(self)
-  -- function num : 0_56 , upvalues : _ENV
+function PersonProgressProgressReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandlePersonProgressProgressReq
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-CumulativeLoginComponentReceiveRewardReq.GetHandleCode = function(self)
-  -- function num : 0_57 , upvalues : _ENV
+function CumulativeLoginComponentReceiveRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleReceiveCumulativeLoginReward
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryComponentRecvRewardReq.GetHandleCode = function(self)
-  -- function num : 0_58 , upvalues : _ENV
+function StoryComponentRecvRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleRecvStoryReward
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-LotteryComponentLotteryReq.GetHandleCode = function(self)
-  -- function num : 0_59 , upvalues : _ENV
+function LotteryComponentLotteryReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleLottery
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniGameComponentMissionStoryReq.GetHandleCode = function(self)
-  -- function num : 0_60 , upvalues : _ENV
+function MiniGameComponentMissionStoryReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleStoryMsg
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniGameComponentScoreReq.GetHandleCode = function(self)
-  -- function num : 0_61 , upvalues : _ENV
+function MiniGameComponentScoreReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleScoreMsg
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniGameComponentRecvRewardReq.GetHandleCode = function(self)
-  -- function num : 0_62 , upvalues : _ENV
+function MiniGameComponentRecvRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleRecvRewardMsg
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniGameExploreComponentRandomLocationReq.GetHandleCode = function(self)
-  -- function num : 0_63 , upvalues : _ENV
+function MiniGameExploreComponentRandomLocationReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleRandomRewardPostion
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniGameExploreComponentRecvRewardReq.GetHandleCode = function(self)
-  -- function num : 0_64 , upvalues : _ENV
+function MiniGameExploreComponentRecvRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleExploredReceiveReward
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniGameExploreComponentClearNewEquipReq.GetHandleCode = function(self)
-  -- function num : 0_65 , upvalues : _ENV
+function MiniGameExploreComponentClearNewEquipReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleEnterExplored
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-LVRewardComponentReceiveRewardReq.GetHandleCode = function(self)
-  -- function num : 0_66 , upvalues : _ENV
+function LVRewardComponentReceiveRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleReceiveLVReward
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-LVRewardComponentOneKeyReceiveRewardReq.GetHandleCode = function(self)
-  -- function num : 0_67 , upvalues : _ENV
+function LVRewardComponentOneKeyReceiveRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleOneKeyReceiveReward
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-BuyGiftComponentApplyBuyReq.GetHandleCode = function(self)
-  -- function num : 0_68 , upvalues : _ENV
+function BuyGiftComponentApplyBuyReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleApplyBuyGift
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-BackComponentRecvRewardReq.GetHandleCode = function(self)
-  -- function num : 0_69 , upvalues : _ENV
+function BackComponentRecvRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleRecvBackReward
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-BattlefieldComponentDailyResetReq.GetHandleCode = function(self)
-  -- function num : 0_70 , upvalues : _ENV
+function BattlefieldComponentDailyResetReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleBattlefieldDailyReset
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildComponentBuildReq.GetHandleCode = function(self)
-  -- function num : 0_71 , upvalues : _ENV
+function BuildComponentBuildReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleBuild
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildComponentStoryReq.GetHandleCode = function(self)
-  -- function num : 0_72 , upvalues : _ENV
+function BuildComponentStoryReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleStory
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildComponentCompleteEventReq.GetHandleCode = function(self)
-  -- function num : 0_73 , upvalues : _ENV
+function BuildComponentCompleteEventReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleCompleteEvent
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-PicnicPutFoodReq.GetHandleCode = function(self)
-  -- function num : 0_74 , upvalues : _ENV
+function PicnicPutFoodReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandlePicnicPutFood
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-PicnicWatchStoryReq.GetHandleCode = function(self)
-  -- function num : 0_75 , upvalues : _ENV
+function PicnicWatchStoryReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandlePicnicStory
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-SubjectComponentRewardReq.GetHandleCode = function(self)
-  -- function num : 0_76 , upvalues : _ENV
+function SubjectComponentRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleRewardSubject
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-SubjectComponentTestScoreReq.GetHandleCode = function(self)
-  -- function num : 0_77 , upvalues : _ENV
+function SubjectComponentTestScoreReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleTestScoreSubject
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponentCompleteReq.GetHandleCode = function(self)
-  -- function num : 0_78 , upvalues : _ENV
+function EntrustComponentCompleteReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleEntrustCompleteEvent
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-EntrustComponentMoveEventReq.GetHandleCode = function(self)
-  -- function num : 0_79 , upvalues : _ENV
+function EntrustComponentMoveEventReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleMoveCompleteEvent
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeSelectAffixReq.GetHandleCode = function(self)
-  -- function num : 0_80 , upvalues : _ENV
+function ChallengeSelectAffixReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleChallengeSelectAffix
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeClearAffixReq.GetHandleCode = function(self)
-  -- function num : 0_81 , upvalues : _ENV
+function ChallengeClearAffixReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleClearAffix
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeClearNewReq.GetHandleCode = function(self)
-  -- function num : 0_82 , upvalues : _ENV
+function ChallengeClearNewReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleChallengeClearNewReq
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-SeniorSkinComponentApplyShake.GetHandleCode = function(self)
-  -- function num : 0_83 , upvalues : _ENV
+function SeniorSkinComponentApplyShake:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleApplySeniorSkinShake
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-TakeRewardReq.GetHandleCode = function(self)
-  -- function num : 0_84 , upvalues : _ENV
+function TakeRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleTakeTimeRewardReward
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgSetCurrentLocationReq.GetHandleCode = function(self)
-  -- function num : 0_85 , upvalues : _ENV
+function AvgSetCurrentLocationReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSetCurrentLocation
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgUpdateNodeDataReq.GetHandleCode = function(self)
-  -- function num : 0_86 , upvalues : _ENV
+function AvgUpdateNodeDataReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleUpdateNodeData
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgComplateEndingReq.GetHandleCode = function(self)
-  -- function num : 0_87 , upvalues : _ENV
+function AvgComplateEndingReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleComplateEnding
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgManualChooseReq.GetHandleCode = function(self)
-  -- function num : 0_88 , upvalues : _ENV
+function AvgManualChooseReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleManualChoose
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgGainEvidenceReq.GetHandleCode = function(self)
-  -- function num : 0_89 , upvalues : _ENV
+function AvgGainEvidenceReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleGainEvidence
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgShowEvidenceReq.GetHandleCode = function(self)
-  -- function num : 0_90 , upvalues : _ENV
+function AvgShowEvidenceReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleShowEvidence
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-AvgAcceptBadgeRewardReq.GetHandleCode = function(self)
-  -- function num : 0_91 , upvalues : _ENV
+function AvgAcceptBadgeRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleGetBadgeReward
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-PointProgressComponentReceiveRewardReq.GetHandleCode = function(self)
-  -- function num : 0_92 , upvalues : _ENV
+function PointProgressComponentReceiveRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandlePointReceiveReward
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-PointProgressComponentOneKeyReceiveRewardReq.GetHandleCode = function(self)
-  -- function num : 0_93 , upvalues : _ENV
+function PointProgressComponentOneKeyReceiveRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandlePointProgressOneKeyRecvRewards
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-HomlandTaskComponentGetReq.GetHandleCode = function(self)
-  -- function num : 0_94 , upvalues : _ENV
+function HomlandTaskComponentGetReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleCMPHomelandTaskGet
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeChangeFormationReq.GetHandleCode = function(self)
-  -- function num : 0_95 , upvalues : _ENV
+function ChallengeChangeFormationReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleChallengeChangeFormationReq
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-BloodsuckerComponentUpgradeTalentPointReq.GetHandleCode = function(self)
-  -- function num : 0_96 , upvalues : _ENV
+function BloodsuckerComponentUpgradeTalentPointReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleUpgradeTalentPoint
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-BloodsuckerComponentSelectSkillReq.GetHandleCode = function(self)
-  -- function num : 0_97 , upvalues : _ENV
+function BloodsuckerComponentSelectSkillReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSelectSkill
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-BloodsuckerComponentResetTalentTreeReq.GetHandleCode = function(self)
-  -- function num : 0_98 , upvalues : _ENV
+function BloodsuckerComponentResetTalentTreeReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleResetTalentTree
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R0 in 'UnsetPending'
-
-BloodsuckerComponentChangeFormationReq.GetHandleCode = function(self)
-  -- function num : 0_99 , upvalues : _ENV
+function BloodsuckerComponentChangeFormationReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleCompChangeFormation
 end
 
--- DECOMPILER ERROR at PC305: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolStartPlayReq.GetHandleCode = function(self)
-  -- function num : 0_100 , upvalues : _ENV
+function IdolStartPlayReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleIdolStartPlay
 end
 
--- DECOMPILER ERROR at PC308: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolTrainReq.GetHandleCode = function(self)
-  -- function num : 0_101 , upvalues : _ENV
+function IdolTrainReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleIdolTrain
 end
 
--- DECOMPILER ERROR at PC311: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolCompleteEventReq.GetHandleCode = function(self)
-  -- function num : 0_102 , upvalues : _ENV
+function IdolCompleteEventReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleIdolCompleteEvent
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolCompleteActivityReq.GetHandleCode = function(self)
-  -- function num : 0_103 , upvalues : _ENV
+function IdolCompleteActivityReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleIdolCompleteActivity
 end
 
--- DECOMPILER ERROR at PC317: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolGetAchieveRewardReq.GetHandleCode = function(self)
-  -- function num : 0_104 , upvalues : _ENV
+function IdolGetAchieveRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleIdolGetAchieveReward
 end
 
--- DECOMPILER ERROR at PC320: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolComplateEndingReq.GetHandleCode = function(self)
-  -- function num : 0_105 , upvalues : _ENV
+function IdolComplateEndingReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleIdolComplateEnding
 end
 
--- DECOMPILER ERROR at PC323: Confused about usage of register: R0 in 'UnsetPending'
-
-IdolConcertFailReq.GetHandleCode = function(self)
-  -- function num : 0_106 , upvalues : _ENV
+function IdolConcertFailReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleIdolConcertFail
 end
 
--- DECOMPILER ERROR at PC326: Confused about usage of register: R0 in 'UnsetPending'
-
-NewYearDinnerMakeFoodReq.GetHandleCode = function(self)
-  -- function num : 0_107 , upvalues : _ENV
+function NewYearDinnerMakeFoodReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleNewYearDinnerMakeFood
 end
 
--- DECOMPILER ERROR at PC329: Confused about usage of register: R0 in 'UnsetPending'
-
-NewYearDinnerRewardReq.GetHandleCode = function(self)
-  -- function num : 0_108 , upvalues : _ENV
+function NewYearDinnerRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleNewYearDinnerReward
 end
 
--- DECOMPILER ERROR at PC332: Confused about usage of register: R0 in 'UnsetPending'
-
-SubmitMissionInfoReq.GetHandleCode = function(self)
-  -- function num : 0_109 , upvalues : _ENV
+function SubmitMissionInfoReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSubmitMission
 end
 
--- DECOMPILER ERROR at PC335: Confused about usage of register: R0 in 'UnsetPending'
-
-PostStationMissionStoryReq.GetHandleCode = function(self)
-  -- function num : 0_110 , upvalues : _ENV
+function PostStationMissionStoryReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSubmitStory
 end
 
--- DECOMPILER ERROR at PC338: Confused about usage of register: R0 in 'UnsetPending'
-
-PostStationGetTargetRewardReq.GetHandleCode = function(self)
-  -- function num : 0_111 , upvalues : _ENV
+function PostStationGetTargetRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleGetTargetReward
 end
 
--- DECOMPILER ERROR at PC341: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleReadMiniMailReq.GetHandleCode = function(self)
-  -- function num : 0_112 , upvalues : _ENV
+function HandleReadMiniMailReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleReadMiniMail
 end
 
--- DECOMPILER ERROR at PC344: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignEventApplyChangeFormationReq.GetHandleCode = function(self)
-  -- function num : 0_113 , upvalues : _ENV
+function CCampaignEventApplyChangeFormationReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleDifficultyChangeFormation
 end
 
--- DECOMPILER ERROR at PC347: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignEventResetSubMissionRecordReq.GetHandleCode = function(self)
-  -- function num : 0_114 , upvalues : _ENV
+function CCampaignEventResetSubMissionRecordReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleDifficultyResetSubMissionRecord
 end
 
--- DECOMPILER ERROR at PC350: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceMissionSettleReq.GetHandleCode = function(self)
-  -- function num : 0_115 , upvalues : _ENV
+function BounceMissionSettleReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleBounceMissionSettle
 end
 
--- DECOMPILER ERROR at PC353: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceMissionGetRewardReq.GetHandleCode = function(self)
-  -- function num : 0_116 , upvalues : _ENV
+function BounceMissionGetRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleBounceMissionGetReward
 end
 
--- DECOMPILER ERROR at PC356: Confused about usage of register: R0 in 'UnsetPending'
-
-DetectiveSubmitItemReq.GetHandleCode = function(self)
-  -- function num : 0_117 , upvalues : _ENV
+function DetectiveSubmitItemReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleDetectiveSubmitItem
 end
 
--- DECOMPILER ERROR at PC359: Confused about usage of register: R0 in 'UnsetPending'
-
-DetectiveSubmitEndingReq.GetHandleCode = function(self)
-  -- function num : 0_118 , upvalues : _ENV
+function DetectiveSubmitEndingReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleDetectiveSubmitEnding
 end
 
--- DECOMPILER ERROR at PC362: Confused about usage of register: R0 in 'UnsetPending'
-
-DetectiveAutoSaveReq.GetHandleCode = function(self)
-  -- function num : 0_119 , upvalues : _ENV
+function DetectiveAutoSaveReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleDetectiveAutoSave
 end
 
--- DECOMPILER ERROR at PC365: Confused about usage of register: R0 in 'UnsetPending'
-
-DetectiveReadRecordPlayReq.GetHandleCode = function(self)
-  -- function num : 0_120 , upvalues : _ENV
+function DetectiveReadRecordPlayReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleDetectiveReadRecordPlay
 end
 
--- DECOMPILER ERROR at PC368: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarChangeFormationReq.GetHandleCode = function(self)
-  -- function num : 0_121 , upvalues : _ENV
+function PopStarChangeFormationReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandlePopStarChangeFormation
 end
 
--- DECOMPILER ERROR at PC371: Confused about usage of register: R0 in 'UnsetPending'
-
-TurnCardOperateReq.GetHandleCode = function(self)
-  -- function num : 0_122 , upvalues : _ENV
+function TurnCardOperateReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleTurnCardOperate
 end
 
--- DECOMPILER ERROR at PC374: Confused about usage of register: R0 in 'UnsetPending'
-
-CompleteMultiLineReq.GetHandleCode = function(self)
-  -- function num : 0_123 , upvalues : _ENV
+function CompleteMultiLineReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleMultiLineMissionSettle
 end
 
--- DECOMPILER ERROR at PC377: Confused about usage of register: R0 in 'UnsetPending'
-
-MultiLineGetRewardReq.GetHandleCode = function(self)
-  -- function num : 0_124 , upvalues : _ENV
+function MultiLineGetRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleMultiLineMissionGetReward
 end
 
--- DECOMPILER ERROR at PC380: Confused about usage of register: R0 in 'UnsetPending'
-
-MultiLineSetMarkReq.GetHandleCode = function(self)
-  -- function num : 0_125 , upvalues : _ENV
+function MultiLineSetMarkReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleMultiLineSetMark
 end
 
--- DECOMPILER ERROR at PC383: Confused about usage of register: R0 in 'UnsetPending'
-
-SmeltItemComponentReceiveRewardReq.GetHandleCode = function(self)
-  -- function num : 0_126 , upvalues : _ENV
+function SmeltItemComponentReceiveRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleReceiveSmeltItemReward
 end
 
--- DECOMPILER ERROR at PC386: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpComponentReq.GetHandleCode = function(self)
-  -- function num : 0_127 , upvalues : _ENV
+function PickUpComponentReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandlePickUpCoin
 end
 
--- DECOMPILER ERROR at PC389: Confused about usage of register: R0 in 'UnsetPending'
-
-SubmitStoryComponentReq.GetHandleCode = function(self)
-  -- function num : 0_128 , upvalues : _ENV
+function SubmitStoryComponentReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSubmitSimulationOperationStory
 end
 
--- DECOMPILER ERROR at PC392: Confused about usage of register: R0 in 'UnsetPending'
-
-UpgradeComponentReq.GetHandleCode = function(self)
-  -- function num : 0_129 , upvalues : _ENV
+function UpgradeComponentReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleUpgradeArch
 end
 
--- DECOMPILER ERROR at PC395: Confused about usage of register: R0 in 'UnsetPending'
-
-GetArchInfosComponentReq.GetHandleCode = function(self)
-  -- function num : 0_130 , upvalues : _ENV
+function GetArchInfosComponentReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleGetArchInfos
 end
 
--- DECOMPILER ERROR at PC398: Confused about usage of register: R0 in 'UnsetPending'
-
-EightPetsChangeFormationReq.GetHandleCode = function(self)
-  -- function num : 0_131 , upvalues : _ENV
+function EightPetsChangeFormationReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleEightPetsChangeFormation
 end
 
--- DECOMPILER ERROR at PC401: Confused about usage of register: R0 in 'UnsetPending'
-
-CompleteStorySeasonMissionReq.GetHandleCode = function(self)
-  -- function num : 0_132 , upvalues : _ENV
+function CompleteStorySeasonMissionReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMissionMsg
 end
 
--- DECOMPILER ERROR at PC404: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonChangeFormationReq.GetHandleCode = function(self)
-  -- function num : 0_133 , upvalues : _ENV
+function SeasonChangeFormationReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonChangeFormation
 end
 
--- DECOMPILER ERROR at PC407: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonClientDataPointReq.GetHandleCode = function(self)
-  -- function num : 0_134 , upvalues : _ENV
+function SeasonClientDataPointReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonClientDataPoint
 end
 
--- DECOMPILER ERROR at PC410: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonClientDataExtReq.GetHandleCode = function(self)
-  -- function num : 0_135 , upvalues : _ENV
+function SeasonClientDataExtReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonClientDataExt
 end
 
--- DECOMPILER ERROR at PC413: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonClientStageDataReq.GetHandleCode = function(self)
-  -- function num : 0_136 , upvalues : _ENV
+function SeasonClientStageDataReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonClientStageData
 end
 
--- DECOMPILER ERROR at PC416: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPointClientDataReq.GetHandleCode = function(self)
-  -- function num : 0_137 , upvalues : _ENV
+function SeasonPointClientDataReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonPointClientData
 end
 
--- DECOMPILER ERROR at PC419: Confused about usage of register: R0 in 'UnsetPending'
-
-RandomLotteryComponentCostReq.GetHandleCode = function(self)
-  -- function num : 0_138 , upvalues : _ENV
+function RandomLotteryComponentCostReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleReceiveRandomLotteryCost
 end
 
--- DECOMPILER ERROR at PC422: Confused about usage of register: R0 in 'UnsetPending'
-
-RandomLotteryComponentDrawReq.GetHandleCode = function(self)
-  -- function num : 0_139 , upvalues : _ENV
+function RandomLotteryComponentDrawReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleRandomLotteryComponentDraw
 end
 
--- DECOMPILER ERROR at PC425: Confused about usage of register: R0 in 'UnsetPending'
-
-RandomLotteryComponentDrawRewardReq.GetHandleCode = function(self)
-  -- function num : 0_140 , upvalues : _ENV
+function RandomLotteryComponentDrawRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleRandomLotteryComponentDrawReward
 end
 
--- DECOMPILER ERROR at PC428: Confused about usage of register: R0 in 'UnsetPending'
-
-DispatchReq.GetHandleCode = function(self)
-  -- function num : 0_141 , upvalues : _ENV
+function DispatchReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleDispatch
 end
 
--- DECOMPILER ERROR at PC431: Confused about usage of register: R0 in 'UnsetPending'
-
-GetDispatchRewardsReq.GetHandleCode = function(self)
-  -- function num : 0_142 , upvalues : _ENV
+function GetDispatchRewardsReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleGetDispatchRewards
 end
 
--- DECOMPILER ERROR at PC434: Confused about usage of register: R0 in 'UnsetPending'
-
-SurveyClientDataReq.GetHandleCode = function(self)
-  -- function num : 0_143 , upvalues : _ENV
+function SurveyClientDataReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSurveyClientDataReq
 end
 
--- DECOMPILER ERROR at PC437: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionPointDataReq.GetHandleCode = function(self)
-  -- function num : 0_144 , upvalues : _ENV
+function ActionPointDataReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleActionPointData
 end
 
--- DECOMPILER ERROR at PC440: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeLoginComponentReceiveRewardReq.GetHandleCode = function(self)
-  -- function num : 0_145 , upvalues : _ENV
+function TimeLoginComponentReceiveRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleReceiveTimeLoginReward
 end
 
--- DECOMPILER ERROR at PC443: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionTeamRecordReq.GetHandleCode = function(self)
-  -- function num : 0_146 , upvalues : _ENV
+function SeasonMissionTeamRecordReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMissionTeamRecord
 end
 
--- DECOMPILER ERROR at PC446: Confused about usage of register: R0 in 'UnsetPending'
-
-DoVoteReq.GetHandleCode = function(self)
-  -- function num : 0_147 , upvalues : _ENV
+function DoVoteReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleDoVote
 end
 
--- DECOMPILER ERROR at PC449: Confused about usage of register: R0 in 'UnsetPending'
-
-GetZonePetVoteReq.GetHandleCode = function(self)
-  -- function num : 0_148 , upvalues : _ENV
+function GetZonePetVoteReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleGetZoneInfo
 end
 
--- DECOMPILER ERROR at PC452: Confused about usage of register: R0 in 'UnsetPending'
-
-TakeCollectCardRewardReq.GetHandleCode = function(self)
-  -- function num : 0_149 , upvalues : _ENV
+function TakeCollectCardRewardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleTakeRewards
 end
 
--- DECOMPILER ERROR at PC455: Confused about usage of register: R0 in 'UnsetPending'
-
-DropCardsReq.GetHandleCode = function(self)
-  -- function num : 0_150 , upvalues : _ENV
+function DropCardsReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleDropCards
 end
 
--- DECOMPILER ERROR at PC458: Confused about usage of register: R0 in 'UnsetPending'
-
-SendCardReq.GetHandleCode = function(self)
-  -- function num : 0_151 , upvalues : _ENV
+function SendCardReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSendCard
 end
 
--- DECOMPILER ERROR at PC461: Confused about usage of register: R0 in 'UnsetPending'
-
-ClearSendCardInfoReq.GetHandleCode = function(self)
-  -- function num : 0_152 , upvalues : _ENV
+function ClearSendCardInfoReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleClearSendCardInfo
 end
 
--- DECOMPILER ERROR at PC464: Confused about usage of register: R0 in 'UnsetPending'
-
-PersonProgressComponentCollectReq.GetHandleCode = function(self)
-  -- function num : 0_153 , upvalues : _ENV
+function PersonProgressComponentCollectReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandlePersonProgressCollect
 end
 
--- DECOMPILER ERROR at PC467: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeRecruitRoomSelectPropReq.GetHandleCode = function(self)
-  -- function num : 0_154 , upvalues : _ENV
+function SeasonMazeRecruitRoomSelectPropReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeRecruitRoomSelectProp
 end
 
--- DECOMPILER ERROR at PC470: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeRecruitRoomReflushReq.GetHandleCode = function(self)
-  -- function num : 0_155 , upvalues : _ENV
+function SeasonMazeRecruitRoomReflushReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeRecruitRoomReflush
 end
 
--- DECOMPILER ERROR at PC473: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeRecruitRoomSelectReq.GetHandleCode = function(self)
-  -- function num : 0_156 , upvalues : _ENV
+function SeasonMazeRecruitRoomSelectReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeRecruitRoomSelect
 end
 
--- DECOMPILER ERROR at PC476: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeRoomTransferReq.GetHandleCode = function(self)
-  -- function num : 0_157 , upvalues : _ENV
+function SeasonMazeRoomTransferReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeRoomTransfer
 end
 
--- DECOMPILER ERROR at PC479: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeManunlBanPetReq.GetHandleCode = function(self)
-  -- function num : 0_158 , upvalues : _ENV
+function SeasonMazeManunlBanPetReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleSeasonMazeBanPet
 end
 
--- DECOMPILER ERROR at PC482: Confused about usage of register: R0 in 'UnsetPending'
-
-AlchemyComponentMakeupReq.GetHandleCode = function(self)
-  -- function num : 0_159 , upvalues : _ENV
+function AlchemyComponentMakeupReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleAlchemyMakeup
 end
 
--- DECOMPILER ERROR at PC485: Confused about usage of register: R0 in 'UnsetPending'
-
-AlchemyComponentSellReq.GetHandleCode = function(self)
-  -- function num : 0_160 , upvalues : _ENV
+function AlchemyComponentSellReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleAlchemyShopSell
 end
 
--- DECOMPILER ERROR at PC488: Confused about usage of register: R0 in 'UnsetPending'
-
-AlchemyComponentBuyReq.GetHandleCode = function(self)
-  -- function num : 0_161 , upvalues : _ENV
+function AlchemyComponentBuyReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleAlchemyShopBuy
 end
-
-

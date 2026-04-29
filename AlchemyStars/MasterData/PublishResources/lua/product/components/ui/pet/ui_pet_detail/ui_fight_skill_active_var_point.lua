@@ -1,32 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_detail/ui_fight_skill_active_var_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFightSkillActiveVarPoint", UICustomWidget)
 UIFightSkillActiveVarPoint = UIFightSkillActiveVarPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFightSkillActiveVarPoint.Constructor = function(self)
-  -- function num : 0_0
+function UIFightSkillActiveVarPoint:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillActiveVarPoint.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIFightSkillActiveVarPoint:OnShow(uiParams)
   self._off = self:GetGameObject("off")
   self._on = self:GetGameObject("on")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillActiveVarPoint.SetData = function(self, idx, curIdx)
-  -- function num : 0_2
-  (self._off):SetActive(idx ~= curIdx)
-  ;
-  (self._on):SetActive(idx == curIdx)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIFightSkillActiveVarPoint:SetData(idx, curIdx)
+  self._off:SetActive(idx ~= curIdx)
+  self._on:SetActive(idx == curIdx)
 end
-
-

@@ -1,42 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_counterspell_inst_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCounterSpellInstruction", BaseInstruction)
 PlayCounterSpellInstruction = PlayCounterSpellInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCounterSpellInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCounterSpellInstruction:Constructor(paramList)
   self._monsterCG = paramList.monsterCG
   self._waitTime = tonumber(paramList.waitTime)
   self._offsetPos = Vector2.zero
   self._offsetScale = 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCounterSpellInstruction._InitCgData = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCounterSpellInstruction:_InitCgData()
   self._offsetPos = Vector2.zero
   self._offsetScale = 1
   self._monsterCGMat = self._monsterCG .. ".mat"
-  local cfg = (Cfg.pet_cg_transform)({ResName = self._monsterCG, UIName = "UIBossCounter"})
+  local cfg = Cfg.pet_cg_transform({
+    ResName = self._monsterCG,
+    UIName = "UIBossCounter"
+  })
   if cfg then
     local v = cfg[1]
     if v then
       local scaleOri = 1
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
       if v.CGTransform then
-        (self._offsetPos).x = (v.CGTransform)[1]
-        -- DECOMPILER ERROR at PC31: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._offsetPos).y = (v.CGTransform)[2]
-        self._offsetScale = scaleOri * (v.CGTransform)[3]
+        self._offsetPos.x = v.CGTransform[1]
+        self._offsetPos.y = v.CGTransform[2]
+        self._offsetScale = scaleOri * v.CGTransform[3]
       else
         self._offsetScale = scaleOri
       end
@@ -44,16 +32,13 @@ PlayCounterSpellInstruction._InitCgData = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCounterSpellInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayCounterSpellInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self:_InitCgData()
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIBossCounter", {monsterCGMat = self._monsterCGMat, offsetPos = self._offsetPos, offsetScale = self._offsetScale})
+  GameGlobal.UIStateManager():ShowDialog("UIBossCounter", {
+    monsterCGMat = self._monsterCGMat,
+    offsetPos = self._offsetPos,
+    offsetScale = self._offsetScale
+  })
   YIELD(TT, self._waitTime)
-  ;
-  ((GameGlobal.UIStateManager)()):CloseDialog("UIBossCounter")
+  GameGlobal.UIStateManager():CloseDialog("UIBossCounter")
 end
-
-

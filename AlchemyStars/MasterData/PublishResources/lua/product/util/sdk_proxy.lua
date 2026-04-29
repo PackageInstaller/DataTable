@@ -1,263 +1,169 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/sdk_proxy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local GameVersionType = {INTL = "intl", USA = "usa", HMT = "hmt"}
+local GameVersionType = {
+  INTL = "intl",
+  USA = "usa",
+  HMT = "hmt"
+}
 _enum("GameVersionType", GameVersionType)
 _class("SDKProxy", Singleton)
 SDKProxy = SDKProxy
 local RuntimePlatform = UnityEngine.RuntimePlatform
--- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
 
-SDKProxy.GetStandardLangType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local type = (Localization.GetCurLanguage)()
+function SDKProxy:GetStandardLangType()
+  local type = Localization.GetCurLanguage()
   if LanguageType.zh == type then
     return "zh-Hans"
+  elseif LanguageType.tw == type then
+    return "zh-TW"
+  elseif LanguageType.us == type then
+    return "en"
+  elseif LanguageType.kr == type then
+    return "ko"
+  elseif LanguageType.jp == type then
+    return "ja"
+  elseif LanguageType.pt == type then
+    return "pt"
+  elseif LanguageType.es == type then
+    return "es"
+  elseif LanguageType.idn == type then
+    return "id"
+  elseif LanguageType.th == type then
+    return "th"
   else
-    if LanguageType.tw == type then
-      return "zh-TW"
-    else
-      if LanguageType.us == type then
-        return "en"
-      else
-        if LanguageType.kr == type then
-          return "ko"
-        else
-          if LanguageType.jp == type then
-            return "ja"
-          else
-            if LanguageType.pt == type then
-              return "pt"
-            else
-              if LanguageType.es == type then
-                return "es"
-              else
-                if LanguageType.idn == type then
-                  return "id"
-                else
-                  if LanguageType.th == type then
-                    return "th"
-                  else
-                    return "en"
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    return "en"
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.GetCustomerLangType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local type = (Localization.GetCurLanguage)()
+function SDKProxy:GetCustomerLangType()
+  local type = Localization.GetCurLanguage()
   if LanguageType.zh == type then
     return "zh_CN"
+  elseif LanguageType.tw == type then
+    return "zh_TW"
+  elseif LanguageType.us == type then
+    return "en"
+  elseif LanguageType.kr == type then
+    return "ko"
+  elseif LanguageType.jp == type then
+    return "ja"
+  elseif LanguageType.pt == type then
+    return "pt"
+  elseif LanguageType.es == type then
+    return "es"
+  elseif LanguageType.idn == type then
+    return "id"
+  elseif LanguageType.th == type then
+    return "th"
   else
-    if LanguageType.tw == type then
-      return "zh_TW"
-    else
-      if LanguageType.us == type then
-        return "en"
-      else
-        if LanguageType.kr == type then
-          return "ko"
-        else
-          if LanguageType.jp == type then
-            return "ja"
-          else
-            if LanguageType.pt == type then
-              return "pt"
-            else
-              if LanguageType.es == type then
-                return "es"
-              else
-                if LanguageType.idn == type then
-                  return "id"
-                else
-                  if LanguageType.th == type then
-                    return "th"
-                  else
-                    return "en"
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    return "en"
   end
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.GetIntlChannel = function(self, channelId)
-  -- function num : 0_2 , upvalues : _ENV
+function SDKProxy:GetIntlChannel(channelId)
   if channelId == MobileClientLoginChannel.MCLC_FACEBOOK then
-    return (INTL.INTLChannel).Facebook
+    return INTL.INTLChannel.Facebook
+  elseif channelId == MobileClientLoginChannel.MCLC_GOOGLE_PLAY then
+    return INTL.INTLChannel.Google
+  elseif channelId == MobileClientLoginChannel.MCLC_GUEST then
+    return INTL.INTLChannel.Guest
+  elseif channelId == MobileClientLoginChannel.MCLC_LINE then
+    return INTL.INTLChannel.Line
+  elseif channelId == MobileClientLoginChannel.MCLC_TWITTER then
+    return INTL.INTLChannel.Twitter
+  elseif channelId == MobileClientLoginChannel.MCLC_APPLE then
+    return INTL.INTLChannel.Apple
+  elseif channelId == MobileClientLoginChannel.MCLC_DMM then
+    return INTL.INTLChannel.Dmm
+  elseif channelId == EngineGameHelper.SAIchannelId() then
+    return INTL.INTLChannel.IEGPassport
   else
-    if channelId == MobileClientLoginChannel.MCLC_GOOGLE_PLAY then
-      return (INTL.INTLChannel).Google
-    else
-      if channelId == MobileClientLoginChannel.MCLC_GUEST then
-        return (INTL.INTLChannel).Guest
-      else
-        if channelId == MobileClientLoginChannel.MCLC_LINE then
-          return (INTL.INTLChannel).Line
-        else
-          if channelId == MobileClientLoginChannel.MCLC_TWITTER then
-            return (INTL.INTLChannel).Twitter
-          else
-            if channelId == MobileClientLoginChannel.MCLC_APPLE then
-              return (INTL.INTLChannel).Apple
-            else
-              if channelId == MobileClientLoginChannel.MCLC_DMM then
-                return (INTL.INTLChannel).Dmm
-              else
-                if channelId == (EngineGameHelper.SAIchannelId)() then
-                  return (INTL.INTLChannel).IEGPassport
-                else
-                  ;
-                  (Log.fatal)("[MSDK-INTL] 暂不支持该登录渠道：", channelId)
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    Log.fatal("[MSDK-INTL] 暂不支持该登录渠道：", channelId)
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.Constructor = function(self)
-  -- function num : 0_3
+function SDKProxy:Constructor()
   self.universalLinked = false
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.IsInlandSDK = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  do return H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland or H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_None end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SDKProxy:IsInlandSDK()
+  return H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland or H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_None
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.IsInternationalSDK = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  do return H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SDKProxy:IsInternationalSDK()
+  return H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.IsEDITOR = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SDKProxy:IsEDITOR()
   if EDITOR or H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_None then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.RegisterSDKModule = function(self, logic)
-  -- function num : 0_7 , upvalues : _ENV
+function SDKProxy:RegisterSDKModule(logic)
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland or H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_None then
-    logic:AddModule(LoginAuthorityModule, (logic.CallCenter):GetCallerLua("game"))
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      logic:AddModule(AuthInternationalModule, (logic.CallCenter):GetCallerLua("game"))
-    end
+    logic:AddModule(LoginAuthorityModule, logic.CallCenter:GetCallerLua("game"))
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    logic:AddModule(AuthInternationalModule, logic.CallCenter:GetCallerLua("game"))
   end
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.ClearWakeup = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function SDKProxy:ClearWakeup()
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-    ((GameGlobal.GetModule)(LoginAuthorityModule)):ClearWakeup()
+    GameGlobal.GetModule(LoginAuthorityModule):ClearWakeup()
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    Log.fatal("[SDKProxy] ClearWakeup no MS_International sdk")
   else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      (Log.fatal)("[SDKProxy] ClearWakeup no MS_International sdk")
-    else
-      ;
-      (Log.fatal)("[SDKProxy] ClearWakeup no sdk")
-    end
+    Log.fatal("[SDKProxy] ClearWakeup no sdk")
   end
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.Logout = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function SDKProxy:Logout()
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-    ((GameGlobal.GetModule)(LoginAuthorityModule)):Logout()
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International and not IsUnityEditor() then
-      ((GameGlobal.GetModule)(AuthInternationalModule)):NotifyLogout()
-    end
+    GameGlobal.GetModule(LoginAuthorityModule):Logout()
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International and not IsUnityEditor() then
+    GameGlobal.GetModule(AuthInternationalModule):NotifyLogout()
   end
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.AddUrlParam = function(self, www)
-  -- function num : 0_10 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
-  local openId = ((GameGlobal.GameLogic)()):GetOpenId() or 0
-  local userId = (((GameGlobal.GameLogic)()).msdkAuthorityInfo).user_id or 0
+function SDKProxy:AddUrlParam(www)
+  local mRole = GameGlobal.GetModule(RoleModule)
+  local openId = GameGlobal.GameLogic():GetOpenId() or 0
+  local userId = GameGlobal.GameLogic().msdkAuthorityInfo.user_id or 0
   local roleId = mRole:GetPstId() or 0
-  local roleName = (EngineGameHelper.UrlEncode)(mRole:GetName()) or ""
-  local areaId = ((GameGlobal.GameLogic)()):GetZoneID() or 0
+  local roleName = EngineGameHelper.UrlEncode(mRole:GetName()) or ""
+  local areaId = GameGlobal.GameLogic():GetZoneID() or 0
   local platId = 0
   if IsAndroid() then
     platId = 1
   end
-  local langType = (SDKProxy:GetInstance()):GetStandardLangType() or ""
+  local langType = SDKProxy:GetInstance():GetStandardLangType() or ""
   local url = www
-  local l, q = (string.find)(url, "http://")
-  local x, y = (string.find)(url, "https://")
+  local l, q = string.find(url, "http://")
+  local x, y = string.find(url, "https://")
   if l == nil and x == nil then
     url = "https://" .. url
   end
-  local a, b = (string.find)(url, "?")
+  local a, b = string.find(url, "?")
   if a == nil then
     url = url .. "?"
   else
     url = url .. "&"
   end
   url = url .. "openid=" .. openId .. "&role_id=" .. roleId .. "&role_name=" .. roleName .. "&area_id=" .. areaId .. "&zone_id=0&plat_id=" .. platId .. "&lang_type=" .. langType
-  ;
-  (Log.debug)("open url ", url)
+  Log.debug("open url ", url)
   return url
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.ToLuaReflectionEnum = function(self, enum, field)
-  -- function num : 0_11 , upvalues : _ENV
+function SDKProxy:ToLuaReflectionEnum(enum, field)
   require("tolua.reflection")
-  ;
-  (tolua.loadassembly)("Assembly-CSharp")
+  tolua.loadassembly("Assembly-CSharp")
   local reflectionTest = typeof(enum)
   if not reflectionTest then
     return nil
   end
-  local instance = (tolua.createinstance)(reflectionTest)
-  local pubfield = (tolua.getfield)(reflectionTest, field)
+  local instance = tolua.createinstance(reflectionTest)
+  local pubfield = tolua.getfield(reflectionTest, field)
   if not instance or not pubfield then
     return nil
   end
@@ -265,142 +171,90 @@ SDKProxy.ToLuaReflectionEnum = function(self, enum, field)
   return enum_value
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.OpenUrl = function(self, url, withoutParam, extraJson)
-  -- function num : 0_12 , upvalues : _ENV
+function SDKProxy:OpenUrl(url, withoutParam, extraJson)
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-    (((GCloud.MSDK).MSDKWebView).OpenUrl)(url)
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      if not withoutParam then
-        url = self:AddUrlParam(url)
-      end
-      if extraJson == nil then
-        extraJson = "{}"
-      end
-      url = ((INTL.INTLAPI).GetEncryptUrl)(url)
-      local euao = self:ToLuaReflectionEnum("INTL.INTLWebViewOrientation", "Auto")
-      ;
-      ((INTL.INTLAPI).OpenUrl)(url, euao, false, true, false, extraJson)
-    else
-      do
-        ;
-        (Log.fatal)("[SDKProxy] OpenUrl no sdk")
-        ;
-        (Log.debug)("[SDKProxy] OpenUrl:", url)
-      end
+    GCloud.MSDK.MSDKWebView.OpenUrl(url)
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    if not withoutParam then
+      url = self:AddUrlParam(url)
     end
+    if extraJson == nil then
+      extraJson = "{}"
+    end
+    url = INTL.INTLAPI.GetEncryptUrl(url)
+    local euao = self:ToLuaReflectionEnum("INTL.INTLWebViewOrientation", "Auto")
+    INTL.INTLAPI.OpenUrl(url, euao, false, true, false, extraJson)
+  else
+    Log.fatal("[SDKProxy] OpenUrl no sdk")
   end
+  Log.debug("[SDKProxy] OpenUrl:", url)
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.WebViewRetEvent = function(self, func, isAdd)
-  -- function num : 0_13 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
+function SDKProxy:WebViewRetEvent(func, isAdd)
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
     if isAdd == true then
-      ((GCloud.MSDK).MSDKWebView).WebViewRetEvent = ((GCloud.MSDK).MSDKWebView).WebViewRetEvent + func
+      GCloud.MSDK.MSDKWebView.WebViewRetEvent = GCloud.MSDK.MSDKWebView.WebViewRetEvent + func
     else
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      ((GCloud.MSDK).MSDKWebView).WebViewRetEvent = ((GCloud.MSDK).MSDKWebView).WebViewRetEvent - func
+      GCloud.MSDK.MSDKWebView.WebViewRetEvent = GCloud.MSDK.MSDKWebView.WebViewRetEvent - func
     end
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    Log.debug("[SDKProxy] WebViewRetEvent no MS_International sdk")
   else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      (Log.debug)("[SDKProxy] WebViewRetEvent no MS_International sdk")
-    else
-      ;
-      (Log.debug)("[SDKProxy] WebViewRetEvent no sdk")
-    end
+    Log.debug("[SDKProxy] WebViewRetEvent no sdk")
   end
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.NoticeRetEvent = function(self, func, isAdd)
-  -- function num : 0_14 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
+function SDKProxy:NoticeRetEvent(func, isAdd)
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
     if isAdd == true then
-      ((GCloud.MSDK).MSDKNotice).NoticeRetEvent = ((GCloud.MSDK).MSDKNotice).NoticeRetEvent + func
+      GCloud.MSDK.MSDKNotice.NoticeRetEvent = GCloud.MSDK.MSDKNotice.NoticeRetEvent + func
     else
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      ((GCloud.MSDK).MSDKNotice).NoticeRetEvent = ((GCloud.MSDK).MSDKNotice).NoticeRetEvent - func
+      GCloud.MSDK.MSDKNotice.NoticeRetEvent = GCloud.MSDK.MSDKNotice.NoticeRetEvent - func
+    end
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    if isAdd == true then
+      INTL.INTLAPI.AddNoticeResultObserver(func)
+      Log.debug("AddNoticeResultObserver MS_International sdk")
+    else
+      INTL.INTLAPI.RemoveNoticeResultObserver(func)
+      Log.debug("RemoveNoticeResultObserver MS_International sdk")
     end
   else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      if isAdd == true then
-        ((INTL.INTLAPI).AddNoticeResultObserver)(func)
-        ;
-        (Log.debug)("AddNoticeResultObserver MS_International sdk")
-      else
-        ;
-        ((INTL.INTLAPI).RemoveNoticeResultObserver)(func)
-        ;
-        (Log.debug)("RemoveNoticeResultObserver MS_International sdk")
-      end
-    else
-      ;
-      (Log.fatal)("[SDKProxy] NoticeRetEvent no sdk")
-    end
+    Log.fatal("[SDKProxy] NoticeRetEvent no sdk")
   end
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.SupportAppleId = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  if DeviceInfoHub.Platform == (UnityEngine.RuntimePlatform).IPhonePlayer and (DeviceInfoHub.OSVersion).Major >= 13 then
+function SDKProxy:SupportAppleId()
+  if DeviceInfoHub.Platform == UnityEngine.RuntimePlatform.IPhonePlayer and DeviceInfoHub.OSVersion.Major >= 13 then
     return true
   end
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.ShowBtnWX = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function SDKProxy:ShowBtnWX()
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-    do
-      if GetPlatformOS() == ClientRuntimeOS.CRO_IOS then
-        local isWXInstalled = (((GCloud.MSDK).MSDKTools).IsAppInstalled)(((GCloud.MSDK).MSDKChannel).WeChat)
-        return isWXInstalled
-      end
-      do return true end
-      if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-        return false
-      end
-      return false
+    if GetPlatformOS() == ClientRuntimeOS.CRO_IOS then
+      local isWXInstalled = GCloud.MSDK.MSDKTools.IsAppInstalled(GCloud.MSDK.MSDKChannel.WeChat)
+      return isWXInstalled
     end
-  end
-end
-
--- DECOMPILER ERROR at PC69: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.ShowBtnQQ = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
     return true
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      return false
-    end
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    return false
   end
   return false
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R2 in 'UnsetPending'
+function SDKProxy:ShowBtnQQ()
+  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
+    return true
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    return false
+  end
+  return false
+end
 
-SDKProxy.ShowBtnGuest = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function SDKProxy:ShowBtnGuest()
   local isVerify = false
-  local verifyBulletin = (EngineGameHelper.GetVerifyBulletinInfo)()
+  local verifyBulletin = EngineGameHelper.GetVerifyBulletinInfo()
   if verifyBulletin ~= nil and verifyBulletin.host ~= "" and verifyBulletin.port > 0 then
     isVerify = true
   end
@@ -409,201 +263,140 @@ SDKProxy.ShowBtnGuest = function(self)
       return true
     end
     return false
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      if (HelperProxy:GetInstance()):GetConfig("ManualSelectServer", "false") == "true" then
-        return true
-      end
-      if GetPlatformOS() == ClientRuntimeOS.CRO_IOS and isVerify == true then
-        return true
-      end
-      return false
-    end
-  end
-  return false
-end
-
--- DECOMPILER ERROR at PC75: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.ShowBtnFacebook = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-    return false
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      return false
-    end
-  end
-  return false
-end
-
--- DECOMPILER ERROR at PC78: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.ShowBtnGoogle = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-    return false
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International and DeviceInfoHub.Platform == (UnityEngine.RuntimePlatform).Android then
-      return false
-    end
-  end
-  return false
-end
-
--- DECOMPILER ERROR at PC81: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.ShowBtnApple = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-    return false
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International and self:SupportAppleId() then
-      return false
-    end
-  end
-  return false
-end
-
--- DECOMPILER ERROR at PC84: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.ShowBtnLine = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-    return false
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      return false
-    end
-  end
-  return false
-end
-
--- DECOMPILER ERROR at PC87: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.ShowBtnTwitter = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-    return false
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      return false
-    end
-  end
-  return false
-end
-
--- DECOMPILER ERROR at PC90: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.ShowBtnCusAcc = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-    return false
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    if HelperProxy:GetInstance():GetConfig("ManualSelectServer", "false") == "true" then
       return true
     end
-  end
-  return false
-end
-
--- DECOMPILER ERROR at PC93: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.ShowBtnRegCus = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-    return false
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    if GetPlatformOS() == ClientRuntimeOS.CRO_IOS and isVerify == true then
       return true
     end
+    return false
   end
   return false
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R2 in 'UnsetPending'
+function SDKProxy:ShowBtnFacebook()
+  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
+    return false
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    return false
+  end
+  return false
+end
 
-SDKProxy.InitAuthority = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function SDKProxy:ShowBtnGoogle()
+  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
+    return false
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International and DeviceInfoHub.Platform == UnityEngine.RuntimePlatform.Android then
+    return false
+  end
+  return false
+end
+
+function SDKProxy:ShowBtnApple()
+  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
+    return false
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International and self:SupportAppleId() then
+    return false
+  end
+  return false
+end
+
+function SDKProxy:ShowBtnLine()
+  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
+    return false
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    return false
+  end
+  return false
+end
+
+function SDKProxy:ShowBtnTwitter()
+  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
+    return false
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    return false
+  end
+  return false
+end
+
+function SDKProxy:ShowBtnCusAcc()
+  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
+    return false
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    return true
+  end
+  return false
+end
+
+function SDKProxy:ShowBtnRegCus()
+  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
+    return false
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    return true
+  end
+  return false
+end
+
+function SDKProxy:InitAuthority()
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland or H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_None then
-    ((GameGlobal.GetModule)(LoginAuthorityModule)):InitLoginAuthorityInfo()
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      ((GameGlobal.GetModule)(AuthInternationalModule)):SyncAuthInfoToLogin()
-    end
+    GameGlobal.GetModule(LoginAuthorityModule):InitLoginAuthorityInfo()
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    GameGlobal.GetModule(AuthInternationalModule):SyncAuthInfoToLogin()
   end
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.SetCustomAccountRetCB = function(self, retCB)
-  -- function num : 0_27 , upvalues : _ENV
-  if H3DGCloudLuaHelper.MsdkStatus ~= MSDKStatus.MS_Inland and (H3DGCloudLuaHelper.MsdkStatus ~= MSDKStatus.MS_None or H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International) then
-    ((GameGlobal.GetModule)(AuthInternationalModule)):SetCustomAccountRetCallback(retCB)
+function SDKProxy:SetCustomAccountRetCB(retCB)
+  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland or H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_None then
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    GameGlobal.GetModule(AuthInternationalModule):SetCustomAccountRetCallback(retCB)
   end
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.SetAuthRetCB = function(self, retCB)
-  -- function num : 0_28 , upvalues : _ENV
-  if H3DGCloudLuaHelper.MsdkStatus ~= MSDKStatus.MS_Inland and (H3DGCloudLuaHelper.MsdkStatus ~= MSDKStatus.MS_None or H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International) then
-    ((GameGlobal.GetModule)(AuthInternationalModule)):SetAuthRetCallback(retCB)
+function SDKProxy:SetAuthRetCB(retCB)
+  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland or H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_None then
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    GameGlobal.GetModule(AuthInternationalModule):SetAuthRetCallback(retCB)
   end
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.AutoAuthority = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function SDKProxy:AutoAuthority()
+  local loginModule = GameGlobal.GetModule(LoginModule)
   loginModule:SetLoginState(true)
   local issuc = false
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-    local authModule = (GameGlobal.GetModule)(LoginAuthorityModule)
+    local authModule = GameGlobal.GetModule(LoginAuthorityModule)
     local res, authorityResult = authModule:AutoLogin(TT)
     issuc = res:GetSucc()
-  else
-    do
-      if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-        local authModule = (GameGlobal.GetModule)(AuthInternationalModule)
-        local authRes = authModule:AutoAuth(TT)
-        issuc = authRes:IsAuthSuccess()
-      end
-      do
-        if issuc == true then
-          self:InitAuthority()
-          ;
-          (LocalDB.SetInt)(LocalDBType.FirstLoginSucc, 1)
-        end
-        loginModule:SetLoginState(false)
-        return issuc
-      end
-    end
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    local authModule = GameGlobal.GetModule(AuthInternationalModule)
+    local authRes = authModule:AutoAuth(TT)
+    issuc = authRes:IsAuthSuccess()
   end
+  if issuc == true then
+    self:InitAuthority()
+    LocalDB.SetInt(LocalDBType.FirstLoginSucc, 1)
+  end
+  loginModule:SetLoginState(false)
+  return issuc
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.LoginCallBack = function(self, authBC, logoutBC)
-  -- function num : 0_30 , upvalues : _ENV
-  if H3DGCloudLuaHelper.MsdkStatus ~= MSDKStatus.MS_Inland or H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-    local authModule = (GameGlobal.GetModule)(AuthInternationalModule)
+function SDKProxy:LoginCallBack(authBC, logoutBC)
+  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    local authModule = GameGlobal.GetModule(AuthInternationalModule)
     authModule:SetAuthRetCallback(authBC)
     authModule:SetLogoutRetCallback(logoutBC)
   end
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.Login = function(self, TT, loginChannel, customAuthInfo, noMessageBox)
-  -- function num : 0_31 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function SDKProxy:Login(TT, loginChannel, customAuthInfo, noMessageBox)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   loginModule:SetLoginState(true)
-  local tick = (os.clock)()
+  local tick = os.clock()
   local issuc = false
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland or H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_None then
-    local res, authorityResult = ((GameGlobal.GetModule)(LoginAuthorityModule)):Login(TT, loginChannel)
+    local res, authorityResult = GameGlobal.GetModule(LoginAuthorityModule):Login(TT, loginChannel)
     loginModule:SetLoginState(false)
     if res:GetSucc() then
       self:InitAuthority()
@@ -614,162 +407,113 @@ SDKProxy.Login = function(self, TT, loginChannel, customAuthInfo, noMessageBox)
         local authRes = authorityResult.retCode
         if authRes == AuthorityRetCode.ARC_FAILED_USER_CANCLE then
           if loginChannel == MobileClientLoginChannel.MCLC_WX then
-            (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, (StringTable.Get)("str_login_msdk_login_fail_title"), (StringTable.Get)("str_login_msdk_login_fail_cancle_wx_login"))
+            PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, StringTable.Get("str_login_msdk_login_fail_title"), StringTable.Get("str_login_msdk_login_fail_cancle_wx_login"))
           else
-            ;
-            (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, (StringTable.Get)("str_login_msdk_login_fail_title"), (StringTable.Get)("str_login_msdk_login_fail_cancle_qq_login"))
+            PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, StringTable.Get("str_login_msdk_login_fail_title"), StringTable.Get("str_login_msdk_login_fail_cancle_qq_login"))
           end
+        elseif authRes == AuthorityRetCode.ARC_FAILED_QQ_NOT_INSTALL then
+          PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, StringTable.Get("str_login_msdk_login_fail_title"), StringTable.Get("str_login_msdk_login_fail_qq_not_install"))
+        elseif authRes == AuthorityRetCode.ARC_FAILED_WX_NOT_INSTALL then
+          PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, StringTable.Get("str_login_msdk_login_fail_title"), StringTable.Get("str_login_msdk_login_fail_wx_not_install"))
         else
-          if authRes == AuthorityRetCode.ARC_FAILED_QQ_NOT_INSTALL then
-            (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, (StringTable.Get)("str_login_msdk_login_fail_title"), (StringTable.Get)("str_login_msdk_login_fail_qq_not_install"))
-          else
-            if authRes == AuthorityRetCode.ARC_FAILED_WX_NOT_INSTALL then
-              (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, (StringTable.Get)("str_login_msdk_login_fail_title"), (StringTable.Get)("str_login_msdk_login_fail_wx_not_install"))
+          ToastManager.ShowToast(StringTable.Get("str_login_msdk_login_fail"))
+        end
+      end
+    end
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    if not IsUnityEditor() then
+      local authRes
+      if loginChannel == EngineGameHelper.SAIchannelId() then
+        authRes = GameGlobal.GetModule(AuthInternationalModule):ManualAuthWithCustomAccount(TT, customAuthInfo)
+      else
+        authRes = GameGlobal.GetModule(AuthInternationalModule):ManualAuth(TT, loginChannel)
+      end
+      loginModule:SetLoginState(false)
+      Log.debug("SDKProxy:Login waitetime:", os.clock() - tick)
+      if authRes:IsAuthSuccess() then
+        self:InitAuthority()
+        issuc = true
+      else
+        issuc = false
+        if noMessageBox == nil then
+          if authRes.RetCode == INTL.INTLErrorCode.CANCEL then
+            if loginChannel == MobileClientLoginChannel.MCLC_FACEBOOK then
+              PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, StringTable.Get("str_login_msdk_login_fail_title"), StringTable.Get("str_login_msdk_intl_login_cancel_facebook"))
+            elseif loginChannel == MobileClientLoginChannel.MCLC_GOOGLE_PLAY then
+              PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, StringTable.Get("str_login_msdk_login_fail_title"), StringTable.Get("str_login_msdk_intl_login_cancel_google"))
             else
-              ;
-              (ToastManager.ShowToast)((StringTable.Get)("str_login_msdk_login_fail"))
+              Log.error("[SDKProxy] Login error  loginChannel:", loginChannel)
             end
+          elseif authRes.RetCode == INTL.INTLErrorCode.NEED_INSTALL_APP then
+            PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, StringTable.Get("str_login_msdk_login_fail_title"), StringTable.Get("str_login_msdk_intl_login_fail_not_install"))
+          else
+            PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, StringTable.Get("str_login_msdk_login_fail_title"), StringTable.Get("str_login_msdk_login_fail"))
+            Log.error("[SDKProxy] Login error code:", authRes.RetCode)
           end
         end
       end
-    end
-  else
-    do
-      if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-        if not IsUnityEditor() then
-          local authRes = nil
-          if loginChannel == (EngineGameHelper.SAIchannelId)() then
-            authRes = ((GameGlobal.GetModule)(AuthInternationalModule)):ManualAuthWithCustomAccount(TT, customAuthInfo)
-          else
-            authRes = ((GameGlobal.GetModule)(AuthInternationalModule)):ManualAuth(TT, loginChannel)
-          end
-          loginModule:SetLoginState(false)
-          ;
-          (Log.debug)("SDKProxy:Login waitetime:", (os.clock)() - tick)
-          if authRes:IsAuthSuccess() then
-            self:InitAuthority()
-            issuc = true
-          else
-            issuc = false
-            if noMessageBox == nil then
-              if authRes.RetCode == (INTL.INTLErrorCode).CANCEL then
-                if loginChannel == MobileClientLoginChannel.MCLC_FACEBOOK then
-                  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, (StringTable.Get)("str_login_msdk_login_fail_title"), (StringTable.Get)("str_login_msdk_intl_login_cancel_facebook"))
-                else
-                  if loginChannel == MobileClientLoginChannel.MCLC_GOOGLE_PLAY then
-                    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, (StringTable.Get)("str_login_msdk_login_fail_title"), (StringTable.Get)("str_login_msdk_intl_login_cancel_google"))
-                  else
-                    ;
-                    (Log.error)("[SDKProxy] Login error  loginChannel:", loginChannel)
-                  end
-                end
-              else
-                if authRes.RetCode == (INTL.INTLErrorCode).NEED_INSTALL_APP then
-                  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, (StringTable.Get)("str_login_msdk_login_fail_title"), (StringTable.Get)("str_login_msdk_intl_login_fail_not_install"))
-                else
-                  ;
-                  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, (StringTable.Get)("str_login_msdk_login_fail_title"), (StringTable.Get)("str_login_msdk_login_fail"))
-                  ;
-                  (Log.error)("[SDKProxy] Login error code:", authRes.RetCode)
-                end
-              end
-            end
-          end
-        else
-          do
-            issuc = true
-            if issuc then
-              (LocalDB.SetInt)(LocalDBType.FirstLoginSucc, 1)
-            end
-            loginModule:SetLoginState(false)
-            return issuc
-          end
-        end
-      end
+    else
+      issuc = true
     end
   end
+  if issuc then
+    LocalDB.SetInt(LocalDBType.FirstLoginSucc, 1)
+  end
+  loginModule:SetLoginState(false)
+  return issuc
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.ResetPasswordWithOldPassword = function(self, TT, account, oldPassword, phoneAreaCode, newPassword)
-  -- function num : 0_32 , upvalues : _ENV
+function SDKProxy:ResetPasswordWithOldPassword(TT, account, oldPassword, phoneAreaCode, newPassword)
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
     return nil
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      local authModule = (GameGlobal.GetModule)(AuthInternationalModule)
-      return authModule:ResetPasswordWithOldPassword(TT, account, oldPassword, phoneAreaCode, newPassword)
-    end
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    local authModule = GameGlobal.GetModule(AuthInternationalModule)
+    return authModule:ResetPasswordWithOldPassword(TT, account, oldPassword, phoneAreaCode, newPassword)
   end
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.ResetPasswordWithVerifyCode = function(self, TT, account, verifyCode, phoneAreaCode, newPassword, extraJson)
-  -- function num : 0_33 , upvalues : _ENV
+function SDKProxy:ResetPasswordWithVerifyCode(TT, account, verifyCode, phoneAreaCode, newPassword, extraJson)
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
     return nil
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      local authModule = (GameGlobal.GetModule)(AuthInternationalModule)
-      return authModule:ResetPasswordWithVerifyCode(TT, account, verifyCode, phoneAreaCode, newPassword, extraJson)
-    end
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    local authModule = GameGlobal.GetModule(AuthInternationalModule)
+    return authModule:ResetPasswordWithVerifyCode(TT, account, verifyCode, phoneAreaCode, newPassword, extraJson)
   end
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.IsAdult = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  return (LoginLuaHelper.IsAdult)()
+function SDKProxy:IsAdult()
+  return LoginLuaHelper.IsAdult()
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.IsEEA = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  return (LoginLuaHelper.IsEEA)()
+function SDKProxy:IsEEA()
+  return LoginLuaHelper.IsEEA()
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.CancleEEA = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  if H3DGCloudLuaHelper.MsdkStatus ~= MSDKStatus.MS_Inland or H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-    local openid = (((GameGlobal.GameLogic)()).msdkAuthorityInfo).open_id
-    ;
-    (LocalDB.SetInt)(LoginKeyName.EuAgree .. openid, 0)
-    ;
-    ((INTL.INTLAPI).ComplianceSetEUAgreeStatus)((INTL.ComplianceAgreeStatus).Deny)
+function SDKProxy:CancleEEA()
+  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    local openid = GameGlobal.GameLogic().msdkAuthorityInfo.open_id
+    LocalDB.SetInt(LoginKeyName.EuAgree .. openid, 0)
+    INTL.INTLAPI.ComplianceSetEUAgreeStatus(INTL.ComplianceAgreeStatus.Deny)
   end
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.CancelUserProto = function(self)
-  -- function num : 0_37 , upvalues : _ENV
-  (LocalDB.SetInt)(LoginKeyName.LoginUser, 0)
+function SDKProxy:CancelUserProto()
+  LocalDB.SetInt(LoginKeyName.LoginUser, 0)
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.CancelPrivacyProto = function(self)
-  -- function num : 0_38 , upvalues : _ENV
-  (LocalDB.SetInt)(LoginKeyName.LoginPrivacy, 0)
+function SDKProxy:CancelPrivacyProto()
+  LocalDB.SetInt(LoginKeyName.LoginPrivacy, 0)
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.EncodeSalt = function(self, _kf_params, _salt)
-  -- function num : 0_39 , upvalues : _ENV
+function SDKProxy:EncodeSalt(_kf_params, _salt)
   local bytes = {}
   for i = 1, #_kf_params do
-    local cur_unicode = (string.byte)(_kf_params, i) + _salt
-    if cur_unicode >= 33 and cur_unicode <= 126 then
+    local cur_unicode = string.byte(_kf_params, i) + _salt
+    if 33 <= cur_unicode and cur_unicode <= 126 then
       bytes[i] = cur_unicode
     end
-    if cur_unicode > 126 then
+    if 126 < cur_unicode then
       bytes[i] = 32 + cur_unicode - 126
     end
     if cur_unicode < 33 then
@@ -779,188 +523,136 @@ SDKProxy.EncodeSalt = function(self, _kf_params, _salt)
   return bytes
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.DecodeSalt = function(self, _bytes)
-  -- function num : 0_40 , upvalues : _ENV
+function SDKProxy:DecodeSalt(_bytes)
   local result = ""
   for i = 1, #_bytes do
-    local cur_str = (string.char)(_bytes[i])
+    local cur_str = string.char(_bytes[i])
     result = result .. cur_str
   end
   return result
 end
 
--- DECOMPILER ERROR at PC141: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.UrlEncodeSalt = function(self, s)
-  -- function num : 0_41 , upvalues : _ENV
-  s = (string.gsub)(s, "([^%w%.%- ])", function(c)
-    -- function num : 0_41_0 , upvalues : _ENV
-    return (string.format)("%%%02X", (string.byte)(c))
-  end
-)
-  return (string.gsub)(s, " ", "+")
+function SDKProxy:UrlEncodeSalt(s)
+  s = string.gsub(s, "([^%w%.%- ])", function(c)
+    return string.format("%%%02X", string.byte(c))
+  end)
+  return string.gsub(s, " ", "+")
 end
 
--- DECOMPILER ERROR at PC144: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.UrlDecodeSalt = function(self, s)
-  -- function num : 0_42 , upvalues : _ENV
-  s = (string.gsub)(s, "%%(%x%x)", function(h)
-    -- function num : 0_42_0 , upvalues : _ENV
-    return (string.char)(tonumber(h, 16))
-  end
-)
+function SDKProxy:UrlDecodeSalt(s)
+  s = string.gsub(s, "%%(%x%x)", function(h)
+    return string.char(tonumber(h, 16))
+  end)
   return s
 end
 
--- DECOMPILER ERROR at PC147: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.GetAppGameID = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function SDKProxy:GetAppGameID()
   require("tolua.reflection")
-  ;
-  (tolua.loadassembly)("Assembly-CSharp")
+  tolua.loadassembly("Assembly-CSharp")
   local type = typeof("AppConfig")
-  local instance = (tolua.createinstance)(type)
-  local gameid_property = (tolua.getproperty)(type, "GameID")
+  local instance = tolua.createinstance(type)
+  local gameid_property = tolua.getproperty(type, "GameID")
   local GameID = gameid_property:Get(instance, nil)
   return GameID
 end
 
--- DECOMPILER ERROR at PC150: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.LaunchCustomerUI = function(self, TT)
-  -- function num : 0_44 , upvalues : _ENV
+function SDKProxy:LaunchCustomerUI(TT)
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
     return nil
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      local url = "https://global.yzfchat.com/newgames/scene_product.html"
-      local rm = (GameGlobal.GetModule)(RoleModule)
-      local openid = tostring((((GameGlobal.GameLogic)()).msdkAuthorityInfo).open_id)
-      local uid = ""
-      local intl_cluster = self:GetIntlCluster()
-      local channelid = tostring((((GameGlobal.GameLogic)()).ClientInfo).m_login_source)
-      local area_id = tostring(((GameGlobal.GameLogic)()):GetZoneID())
-      local cn = ""
-      local role = self:UrlEncodeSalt(rm:GetName())
-      local kf_params = "openid=" .. openid .. "&intl_cluster=" .. intl_cluster .. "&uid=" .. uid .. "&channelid=" .. channelid .. "&area_id=" .. area_id .. "&cn=" .. cn .. "&role=" .. role
-      local tm = (os.time)()
-      local salt = tm % 10
-      if salt <= 0 then
-        salt = 1
-      else
-        if salt >= 9 then
-          salt = 8
-        end
-      end
-      local bytes = self:EncodeSalt(kf_params, salt)
-      local str = self:DecodeSalt(bytes)
-      local eStr = self:UrlEncodeSalt(str)
-      ;
-      (Log.debug)("url kf_params:", kf_params)
-      local platId = "0"
-      if IsAndroid() then
-        platId = "1"
-      else
-        if IsPc() then
-          platId = "2"
-        end
-      end
-      local appid = ""
-      if not IsPc() then
-        appid = tostring(self:GetAppGameID())
-      end
-      local roleicon = ""
-      local safe = "60"
-      local lang_type = self:GetStandardLangType()
-      local sCountry = "999"
-      local lbs = (LoginLuaHelper.GetLBSStateRegionInfo)()
-      if lbs ~= nil then
-        sCountry = lbs.Numeric
-      end
-      url = url .. "?encryption=" .. eStr .. "&kftimestamp=" .. tm .. "&scene_id=1687767413404668&platid=" .. platId .. "&appid=" .. appid .. "&roleicon=" .. roleicon .. "&safe=" .. safe .. "&lang_type=" .. lang_type .. "&sCountry=" .. sCountry
-      local exstr = "{\"notch_full_screen\":1}"
-      ;
-      (Log.debug)("url all:", url)
-      self:OpenUrl(url, true, exstr)
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    local url = "https://global.yzfchat.com/newgames/scene_product.html"
+    local rm = GameGlobal.GetModule(RoleModule)
+    local openid = tostring(GameGlobal.GameLogic().msdkAuthorityInfo.open_id)
+    local uid = ""
+    local intl_cluster = self:GetIntlCluster()
+    local channelid = tostring(GameGlobal.GameLogic().ClientInfo.m_login_source)
+    local area_id = tostring(GameGlobal.GameLogic():GetZoneID())
+    local cn = ""
+    local role = self:UrlEncodeSalt(rm:GetName())
+    local kf_params = "openid=" .. openid .. "&intl_cluster=" .. intl_cluster .. "&uid=" .. uid .. "&channelid=" .. channelid .. "&area_id=" .. area_id .. "&cn=" .. cn .. "&role=" .. role
+    local tm = os.time()
+    local salt = tm % 10
+    if salt <= 0 then
+      salt = 1
+    elseif 9 <= salt then
+      salt = 8
     end
+    local bytes = self:EncodeSalt(kf_params, salt)
+    local str = self:DecodeSalt(bytes)
+    local eStr = self:UrlEncodeSalt(str)
+    Log.debug("url kf_params:", kf_params)
+    local platId = "0"
+    if IsAndroid() then
+      platId = "1"
+    elseif IsPc() then
+      platId = "2"
+    end
+    local appid = ""
+    if not IsPc() then
+      appid = tostring(self:GetAppGameID())
+    end
+    local roleicon = ""
+    local safe = "60"
+    local lang_type = self:GetStandardLangType()
+    local sCountry = "999"
+    local lbs = LoginLuaHelper.GetLBSStateRegionInfo()
+    if lbs ~= nil then
+      sCountry = lbs.Numeric
+    end
+    url = url .. "?encryption=" .. eStr .. "&kftimestamp=" .. tm .. "&scene_id=1687767413404668&platid=" .. platId .. "&appid=" .. appid .. "&roleicon=" .. roleicon .. "&safe=" .. safe .. "&lang_type=" .. lang_type .. "&sCountry=" .. sCountry
+    local exstr = "{\"notch_full_screen\":1}"
+    Log.debug("url all:", url)
+    self:OpenUrl(url, true, exstr)
   end
 end
 
--- DECOMPILER ERROR at PC153: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.GetIntlCluster = function(self)
-  -- function num : 0_45 , upvalues : _ENV, GameVersionType
+function SDKProxy:GetIntlCluster()
   if IsUnityEditor() then
     return ""
   end
-  ;
-  ((HelperProxy:GetInstance()):GetGameVersion())
-  local gv = nil
-  local url = nil
+  local gv = HelperProxy:GetInstance():GetGameVersion()
+  local url
   if gv == GameVersionType.USA then
     url = "https://na.intlgame.com"
   else
     url = "https://sg.intlgame.com"
   end
-  return (string.trimend)((Base64.Encode)(url), "=")
+  return string.trimend(Base64.Encode(url), "=")
 end
 
--- DECOMPILER ERROR at PC156: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.LoadNoticeData = function(self, group, language, region, partition)
-  -- function num : 0_46 , upvalues : _ENV
+function SDKProxy:LoadNoticeData(group, language, region, partition)
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-    return (((GCloud.MSDK).MSDKNotice).LoadNoticeData)(group, language, region, partition)
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      if IsUnityEditor() then
-        return ""
-      end
-      ;
-      (Log.info)("[SDKProxy] LoadNoticeData MS_International sdk")
-      ;
-      (Log.info)("region : ", region, "language : ", language)
-      return ((INTL.INTLAPI).RequestNoticeData)(tostring(region), language, "{}")
+    return GCloud.MSDK.MSDKNotice.LoadNoticeData(group, language, region, partition)
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    if IsUnityEditor() then
+      return ""
     end
+    Log.info("[SDKProxy] LoadNoticeData MS_International sdk")
+    Log.info("region : ", region, "language : ", language)
+    return INTL.INTLAPI.RequestNoticeData(tostring(region), language, "{}")
   end
-  ;
-  (Log.fatal)("[SDKProxy] LoadNoticeData no sdk")
+  Log.fatal("[SDKProxy] LoadNoticeData no sdk")
   return ""
 end
 
--- DECOMPILER ERROR at PC159: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.PushLocalTest = function(self)
-  -- function num : 0_47 , upvalues : _ENV
-  (Log.error)("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++", (debug.traceback)())
+function SDKProxy:PushLocalTest()
+  Log.error("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC162: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.QueryUserInfo = function(self, TT)
-  -- function num : 0_48 , upvalues : _ENV
+function SDKProxy:QueryUserInfo(TT)
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
     return nil
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      if IsUnityEditor() then
-        return nil
-      end
-      local authModule = (GameGlobal.GetModule)(AuthInternationalModule)
-      return authModule:QueryUserInfo(TT)
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    if IsUnityEditor() then
+      return nil
     end
+    local authModule = GameGlobal.GetModule(AuthInternationalModule)
+    return authModule:QueryUserInfo(TT)
   end
 end
 
--- DECOMPILER ERROR at PC165: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.GetBindChannel = function(self, bindJson)
-  -- function num : 0_49 , upvalues : _ENV
-  local ccfg = (EngineGameHelper.ChannelConfig)()
+function SDKProxy:GetBindChannel(bindJson)
+  local ccfg = EngineGameHelper.ChannelConfig()
   if ccfg == nil then
     return nil
   end
@@ -982,7 +674,7 @@ SDKProxy.GetBindChannel = function(self, bindJson)
       uilist[MobileClientLoginChannel.MCLC_DMM] = true
     end
     if ccfg.Apple_CustomAccount == true then
-      uilist[(EngineGameHelper.SAIchannelId)()] = true
+      uilist[EngineGameHelper.SAIchannelId()] = true
     end
   else
     if ccfg.Other_Facebook == true then
@@ -1001,30 +693,24 @@ SDKProxy.GetBindChannel = function(self, bindJson)
       uilist[MobileClientLoginChannel.MCLC_DMM] = true
     end
     if ccfg.Other_CustomAccount == true then
-      uilist[(EngineGameHelper.SAIchannelId)()] = true
+      uilist[EngineGameHelper.SAIchannelId()] = true
     end
   end
-  uilist[(((GameGlobal.GameLogic)()).ClientInfo).m_login_source] = nil
-  local clist = (LoginLuaHelper.GetChannelByJson)(bindJson)
+  uilist[GameGlobal.GameLogic().ClientInfo.m_login_source] = nil
+  local clist = LoginLuaHelper.GetChannelByJson(bindJson)
   if clist.Count > 0 then
     for i = 0, clist.Count - 1 do
       local cid = clist[i]
-      ;
-      (Log.debug)("-------------------------cid", cid)
+      Log.debug("-------------------------cid", cid)
       uilist[cid] = nil
     end
   end
-  do
-    return uilist
-  end
+  return uilist
 end
 
--- DECOMPILER ERROR at PC168: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.SerializeBindJson = function(self, account, password, verCode)
-  -- function num : 0_50 , upvalues : _ENV
+function SDKProxy:SerializeBindJson(account, password, verCode)
   local val = ""
-  local accountType = ((INTL.INTLAPIUtils).GetAccountType)(account)
+  local accountType = INTL.INTLAPIUtils.GetAccountType(account)
   val = val .. "string," .. "account," .. account .. "|"
   val = val .. "int," .. "accountType," .. accountType .. "|"
   val = val .. "string," .. "phoneAreaCode," .. "|"
@@ -1035,95 +721,64 @@ SDKProxy.SerializeBindJson = function(self, account, password, verCode)
   val = val .. "int," .. "isReceiveEmail,1" .. "|"
   val = val .. "string," .. "langType," .. "|"
   val = val .. "string," .. "type,loginWithCode"
-  return (LoginLuaHelper.GetJsonString)(val)
+  return LoginLuaHelper.GetJsonString(val)
 end
 
--- DECOMPILER ERROR at PC171: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.BindChannel = function(self, TT, channel, extraJson)
-  -- function num : 0_51 , upvalues : _ENV
+function SDKProxy:BindChannel(TT, channel, extraJson)
   if channel == nil or channel == "" then
     return nil
   end
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
     return nil
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      local authModule = (GameGlobal.GetModule)(AuthInternationalModule)
-      return authModule:BindChannel(TT, channel, extraJson)
-    end
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    local authModule = GameGlobal.GetModule(AuthInternationalModule)
+    return authModule:BindChannel(TT, channel, extraJson)
   end
 end
 
--- DECOMPILER ERROR at PC174: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.ResetGuest = function(self, TT)
-  -- function num : 0_52 , upvalues : _ENV
+function SDKProxy:ResetGuest(TT)
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
     return nil
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      local authModule = (GameGlobal.GetModule)(AuthInternationalModule)
-      return authModule:ResetGuest(TT)
-    end
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    local authModule = GameGlobal.GetModule(AuthInternationalModule)
+    return authModule:ResetGuest(TT)
   end
 end
 
--- DECOMPILER ERROR at PC177: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.RequestVerifyCode = function(self, TT, account, codeType, phoneAreaCode, extraJson)
-  -- function num : 0_53 , upvalues : _ENV
+function SDKProxy:RequestVerifyCode(TT, account, codeType, phoneAreaCode, extraJson)
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
     return nil
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      local authModule = (GameGlobal.GetModule)(AuthInternationalModule)
-      return authModule:RequestVerifyCode(TT, account, codeType, phoneAreaCode, extraJson)
-    end
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    local authModule = GameGlobal.GetModule(AuthInternationalModule)
+    return authModule:RequestVerifyCode(TT, account, codeType, phoneAreaCode, extraJson)
   end
 end
 
--- DECOMPILER ERROR at PC180: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.InitInternationalTssServerInfo = function(self)
-  -- function num : 0_54 , upvalues : _ENV, GameVersionType
+function SDKProxy:InitInternationalTssServerInfo()
   local CommQuery = 18
-  local gv = (HelperProxy:GetInstance()):GetGameVersion()
+  local gv = HelperProxy:GetInstance():GetGameVersion()
   if gv == GameVersionType.INTL or gv == GameVersionType.HMT then
     local ip0 = "SetChannelBuiltinIp:0.0.0.0"
-    ;
-    (((GCloud.AnoSDK).AnoSDK).Ioctl)(CommQuery, ip0)
+    GCloud.AnoSDK.AnoSDK.Ioctl(CommQuery, ip0)
     local ip1 = "SetChannelBuiltinIp:101.32.107.201"
-    ;
-    (((GCloud.AnoSDK).AnoSDK).Ioctl)(CommQuery, ip1)
+    GCloud.AnoSDK.AnoSDK.Ioctl(CommQuery, ip1)
     local ip2 = "SetChannelBuiltinIp:101.32.107.230"
-    ;
-    (((GCloud.AnoSDK).AnoSDK).Ioctl)(CommQuery, ip2)
+    GCloud.AnoSDK.AnoSDK.Ioctl(CommQuery, ip2)
     local host = "SetChannelHost:asia.csoversea.ace.iegcom.com"
-    ;
-    (((GCloud.AnoSDK).AnoSDK).Ioctl)(CommQuery, host)
+    GCloud.AnoSDK.AnoSDK.Ioctl(CommQuery, host)
   else
-    do
-      local ip0 = "SetChannelBuiltinIp:0.0.0.0"
-      ;
-      (((GCloud.AnoSDK).AnoSDK).Ioctl)(CommQuery, ip0)
-      local ip1 = "SetChannelBuiltinIp:20.83.81.41"
-      ;
-      (((GCloud.AnoSDK).AnoSDK).Ioctl)(CommQuery, ip1)
-      local ip2 = "SetChannelBuiltinIp:20.83.81.75"
-      ;
-      (((GCloud.AnoSDK).AnoSDK).Ioctl)(CommQuery, ip2)
-      local host = "SetChannelHost:us.mtp.iegcom.com"
-      ;
-      (((GCloud.AnoSDK).AnoSDK).Ioctl)(CommQuery, host)
-    end
+    local ip0 = "SetChannelBuiltinIp:0.0.0.0"
+    GCloud.AnoSDK.AnoSDK.Ioctl(CommQuery, ip0)
+    local ip1 = "SetChannelBuiltinIp:20.83.81.41"
+    GCloud.AnoSDK.AnoSDK.Ioctl(CommQuery, ip1)
+    local ip2 = "SetChannelBuiltinIp:20.83.81.75"
+    GCloud.AnoSDK.AnoSDK.Ioctl(CommQuery, ip2)
+    local host = "SetChannelHost:us.mtp.iegcom.com"
+    GCloud.AnoSDK.AnoSDK.Ioctl(CommQuery, host)
   end
 end
 
--- DECOMPILER ERROR at PC183: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.GetUniversalLink = function(self)
-  -- function num : 0_55 , upvalues : _ENV
+function SDKProxy:GetUniversalLink()
   local paramsMap = {}
   if self.universalLinked then
     return paramsMap
@@ -1132,14 +787,14 @@ SDKProxy.GetUniversalLink = function(self)
   if APPVER130 == false then
     return paramsMap
   end
-  local links = (EngineGameHelper.GetActiveURL)()
+  local links = EngineGameHelper.GetActiveURL()
   if links ~= "" then
-    local paramIndex = (string.find)(links, "?")
+    local paramIndex = string.find(links, "?")
     if paramIndex ~= nil then
-      local params = (string.sub)(links, paramIndex + 1) .. "&"
-      for mstr in (string.gmatch)(params, "(.-)&") do
+      local params = string.sub(links, paramIndex + 1) .. "&"
+      for mstr in string.gmatch(params, "(.-)&") do
         if mstr ~= "" then
-          local key, values = (string.match)(mstr, "(%w*)=(%w*)")
+          local key, values = string.match(mstr, "(%w*)=(%w*)")
           if key ~= nil and values ~= nil then
             paramsMap[key] = values
           end
@@ -1147,83 +802,56 @@ SDKProxy.GetUniversalLink = function(self)
       end
     end
   end
-  do
-    return paramsMap
-  end
+  return paramsMap
 end
 
--- DECOMPILER ERROR at PC186: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.ClearUniversalLink = function(self)
-  -- function num : 0_56 , upvalues : _ENV
+function SDKProxy:ClearUniversalLink()
   if APPVER130 == false then
-    return 
+    return
   end
-  ;
-  (EngineGameHelper.ClearActiveURL)()
+  EngineGameHelper.ClearActiveURL()
 end
 
--- DECOMPILER ERROR at PC189: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.GetStoreChannel = function(self)
-  -- function num : 0_57 , upvalues : _ENV, RuntimePlatform
+function SDKProxy:GetStoreChannel()
   if PLATFORM == RuntimePlatform.IPhonePlayer or PLATFORM == RuntimePlatform.OSXPlayer then
     return StoreChannel.SC_APPSTORE
+  elseif PLATFORM == RuntimePlatform.WindowsPlayer then
+    return StoreChannel.SC_DMM
+  elseif APPVER1142 then
+    return INTL.INTLAPI.GetStoreChannel()
   else
-    if PLATFORM == RuntimePlatform.WindowsPlayer then
-      return StoreChannel.SC_DMM
-    else
-      if APPVER1142 then
-        return ((INTL.INTLAPI).GetStoreChannel)()
-      else
-        return StoreChannel.SC_GOOGLEPLAY
-      end
-    end
+    return StoreChannel.SC_GOOGLEPLAY
   end
 end
 
--- DECOMPILER ERROR at PC192: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.OpenAccountCenter = function(self, UIRoot)
-  -- function num : 0_58 , upvalues : _ENV
-  if H3DGCloudLuaHelper.MsdkStatus ~= MSDKStatus.MS_Inland or H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-    (Log.debug)("[SDKProxy] OpenAccountCenter")
-    ;
-    (((INTL.LevelInfinite).LevelInfinite).SetUIRoot)(UIRoot)
-    ;
-    (((INTL.LevelInfinite).LevelInfinite).OpenAccountCenter)()
+function SDKProxy:OpenAccountCenter(UIRoot)
+  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    Log.debug("[SDKProxy] OpenAccountCenter")
+    INTL.LevelInfinite.LevelInfinite.SetUIRoot(UIRoot)
+    INTL.LevelInfinite.LevelInfinite.OpenAccountCenter()
   end
 end
 
--- DECOMPILER ERROR at PC195: Confused about usage of register: R2 in 'UnsetPending'
-
-SDKProxy.SetBindRewardData = function(self)
-  -- function num : 0_59 , upvalues : _ENV
+function SDKProxy:SetBindRewardData()
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
     return nil
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      if (HelperProxy:GetInstance()):GetConfig("CloseSDKReward", "false") == "true" then
-        (Log.debug)("[SDKProxy] SetBindRewardData Close!!!!!!!!!")
-        return 
-      end
-      local openId = ((GameGlobal.GameLogic)()):GetOpenId() or 0
-      local areaId = ((GameGlobal.GameLogic)()):GetZoneID() or 0
-      local roleModule = (GameGlobal.GetModule)(RoleModule)
-      local pstId = roleModule:GetPstId()
-      local platId = 0
-      if IsAndroid() then
-        platId = 1
-      end
-      local exstr = "{\"area_id\":" .. areaId .. ",\"role_id\":\"" .. pstId .. "\"" .. ",\"openid\":\"" .. openId .. "\",\"plat_id\":" .. platId .. ",\"zone_id\":" .. areaId .. "}"
-      ;
-      (Log.debug)("[SDKProxy] SetBindRewardData:", exstr)
-      ;
-      ((INTL.INTLAPI).SetRewardExtraJson)(exstr)
-      ;
-      ((INTL.INTLAPI).SendBindReward)("110001", exstr)
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    if HelperProxy:GetInstance():GetConfig("CloseSDKReward", "false") == "true" then
+      Log.debug("[SDKProxy] SetBindRewardData Close!!!!!!!!!")
+      return
     end
+    local openId = GameGlobal.GameLogic():GetOpenId() or 0
+    local areaId = GameGlobal.GameLogic():GetZoneID() or 0
+    local roleModule = GameGlobal.GetModule(RoleModule)
+    local pstId = roleModule:GetPstId()
+    local platId = 0
+    if IsAndroid() then
+      platId = 1
+    end
+    local exstr = "{\"area_id\":" .. areaId .. ",\"role_id\":\"" .. pstId .. "\"" .. ",\"openid\":\"" .. openId .. "\",\"plat_id\":" .. platId .. ",\"zone_id\":" .. areaId .. "}"
+    Log.debug("[SDKProxy] SetBindRewardData:", exstr)
+    INTL.INTLAPI.SetRewardExtraJson(exstr)
+    INTL.INTLAPI.SendBindReward("110001", exstr)
   end
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_hide_scene_and_play_scene_eff_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayHideSceneAndPlaySceneEffInstruction", BaseInstruction)
 PlayHideSceneAndPlaySceneEffInstruction = PlayHideSceneAndPlaySceneEffInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayHideSceneAndPlaySceneEffInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayHideSceneAndPlaySceneEffInstruction:Constructor(paramList)
   self._sceneOpenEffectID = tonumber(paramList.sceneOpenEffectID)
   self._openDelayTime = tonumber(paramList.openDelayTime) or 0
   self._sceneEffectID = tonumber(paramList.sceneEffectID)
@@ -17,24 +10,24 @@ PlayHideSceneAndPlaySceneEffInstruction.Constructor = function(self, paramList)
   self._backIntensity = tonumber(paramList.backIntensity)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayHideSceneAndPlaySceneEffInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayHideSceneAndPlaySceneEffInstruction:GetCacheResource()
   local t = {}
   if self._sceneOpenEffectID and self._sceneOpenEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._sceneOpenEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._sceneOpenEffectID].ResPath,
+      1
+    })
   end
-  if self._sceneEffectID and self._sceneEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._sceneEffectID]).ResPath, 1})
+  if self._sceneEffectID and 0 < self._sceneEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._sceneEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayHideSceneAndPlaySceneEffInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayHideSceneAndPlaySceneEffInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local effectSvc = world:GetService("Effect")
   effectSvc:CreateWorldPositionEffect(self._sceneOpenEffectID, self._sceneEffPos)
@@ -49,11 +42,9 @@ PlayHideSceneAndPlaySceneEffInstruction.DoInstruction = function(self, TT, caste
   end
   local sceneEffEntity = effectSvc:CreateWorldPositionEffect(self._sceneEffectID, self._sceneEffPos)
   renderBoardCmpt:SetSceneEffectEntityID(sceneEffEntity:GetID())
-  local goRenderSetting = ((UnityEngine.GameObject).Find)("[H3DRenderSetting]")
+  local goRenderSetting = UnityEngine.GameObject.Find("[H3DRenderSetting]")
   local csRenderSetting = goRenderSetting:GetComponent("H3DRenderSetting")
   if csRenderSetting.BackIntensity then
     csRenderSetting.BackIntensity = self._backIntensity
   end
 end
-
-

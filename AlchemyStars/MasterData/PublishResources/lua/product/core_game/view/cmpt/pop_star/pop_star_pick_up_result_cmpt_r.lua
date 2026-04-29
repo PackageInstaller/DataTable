@@ -1,93 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/pop_star/pop_star_pick_up_result_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PopStarPickUpResultComponent", Object)
 PopStarPickUpResultComponent = PopStarPickUpResultComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarPickUpResultComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PopStarPickUpResultComponent:Constructor()
   self._pickUpGridPos = Vector2(0, 0)
   self._popStarConnectPieces = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpResultComponent.GetPopStarPickUpPos = function(self)
-  -- function num : 0_1
+function PopStarPickUpResultComponent:GetPopStarPickUpPos()
   return self._pickUpGridPos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpResultComponent.SetPopStarPickUpPos = function(self, pickUpGridPos)
-  -- function num : 0_2
+function PopStarPickUpResultComponent:SetPopStarPickUpPos(pickUpGridPos)
   self._pickUpGridPos = pickUpGridPos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpResultComponent.GetPopStarConnectPieces = function(self)
-  -- function num : 0_3
+function PopStarPickUpResultComponent:GetPopStarConnectPieces()
   return self._popStarConnectPieces
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpResultComponent.SetPopStarConnectPieces = function(self, pieces)
-  -- function num : 0_4
+function PopStarPickUpResultComponent:SetPopStarConnectPieces(pieces)
   self._popStarConnectPieces = pieces
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpResultComponent.ResetPopStarPickUp = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function PopStarPickUpResultComponent:ResetPopStarPickUp()
   self._pickUpGridPos = Vector2(0, 0)
   self._popStarConnectPieces = {}
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PopStarPickUpResult = function(self)
-  -- function num : 0_6
-  return self:GetComponent((self.WEComponentsEnum).PopStarPickUpResult)
+function Entity:PopStarPickUpResult()
+  return self:GetComponent(self.WEComponentsEnum.PopStarPickUpResult)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPopStarPickUpResult = function(self)
-  -- function num : 0_7
-  return self:HasComponent((self.WEComponentsEnum).PopStarPickUpResult)
+function Entity:HasPopStarPickUpResult()
+  return self:HasComponent(self.WEComponentsEnum.PopStarPickUpResult)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPopStarPickUpResult = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PopStarPickUpResult
+function Entity:AddPopStarPickUpResult()
+  local index = self.WEComponentsEnum.PopStarPickUpResult
   local component = PopStarPickUpResultComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePopStarPickUpResult = function(self)
-  -- function num : 0_9
-  local component = self:GetComponent((self.WEComponentsEnum).PopStarPickUpResult)
-  local index = (self.WEComponentsEnum).PopStarPickUpResult
+function Entity:ReplacePopStarPickUpResult()
+  local component = self:GetComponent(self.WEComponentsEnum.PopStarPickUpResult)
+  local index = self.WEComponentsEnum.PopStarPickUpResult
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePopStarPickUpResult = function(self)
-  -- function num : 0_10
+function Entity:RemovePopStarPickUpResult()
   if self:HasPopStarPickUpResult() then
-    self:RemoveComponent((self.WEComponentsEnum).PopStarPickUpResult)
+    self:RemoveComponent(self.WEComponentsEnum.PopStarPickUpResult)
   end
 end
-
-

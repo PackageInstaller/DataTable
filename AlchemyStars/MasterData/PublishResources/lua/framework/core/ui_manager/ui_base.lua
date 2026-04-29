@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBase", GameEventListener)
 UIBase = UIBase
 local TABLE_CLEAR = table.clear
 local SHALLOW_COPY = table.shallowcopy
--- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
 
-UIBase.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.debug)("[UI] UIBase:Constructor")
+function UIBase:Constructor()
+  Log.debug("[UI] UIBase:Constructor")
   self.name = nil
   self.view = nil
   self.attachedEventTypes = nil
@@ -25,10 +18,7 @@ UIBase.Constructor = function(self)
   self.type2ComponentTable = {}
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBase:Dispose()
   self.attachedEventTypes = nil
   self.autoBinder = nil
   self.key2CustomWidgetPools = nil
@@ -38,445 +28,297 @@ UIBase.Dispose = function(self)
   self.name2Gameobjects = nil
   self.type2ComponentTable = nil
   if self.resRequest then
-    (Log.fatal)("[UI] UIBase:Dispose Error, resRequest Not Dispose,", self.name)
+    Log.fatal("[UI] UIBase:Dispose Error, resRequest Not Dispose,", self.name)
   end
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.GetName = function(self)
-  -- function num : 0_2
+function UIBase:GetName()
   return self.name
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.PushAndSwitchState = function(self, uiStateType, ...)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):PushAndSwitchState(uiStateType, ...)
+function UIBase:PushAndSwitchState(uiStateType, ...)
+  GameGlobal.UIStateManager():PushAndSwitchState(uiStateType, ...)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.SwitchState = function(self, uiStateType, ...)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):SwitchState(uiStateType, ...)
+function UIBase:SwitchState(uiStateType, ...)
+  GameGlobal.UIStateManager():SwitchState(uiStateType, ...)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.PopState = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):PopState()
+function UIBase:PopState()
+  GameGlobal.UIStateManager():PopState()
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.PopStateTo = function(self, uiStateType, doSwitch, ...)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):PopStateTo(uiStateType, doSwitch, ...)
+function UIBase:PopStateTo(uiStateType, doSwitch, ...)
+  GameGlobal.UIStateManager():PopStateTo(uiStateType, doSwitch, ...)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.ShowDialog = function(self, uiName, ...)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog(uiName, ...)
+function UIBase:ShowDialog(uiName, ...)
+  GameGlobal.UIStateManager():ShowDialog(uiName, ...)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.StartTask = function(self, func, ...)
-  -- function num : 0_8 , upvalues : _ENV
+function UIBase:StartTask(func, ...)
   if type(func) ~= "function" then
-    return 
+    return
   end
-  local taskID = ((GameGlobal.TaskManager)()):StartTask(func, ...)
-  ;
-  (Log.sys)("[UI] UIBase StartTask, ID= ", taskID)
+  local taskID = GameGlobal.TaskManager():StartTask(func, ...)
+  Log.sys("[UI] UIBase StartTask, ID= ", taskID)
   return taskID
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.GetModule = function(self, proto)
-  -- function num : 0_9 , upvalues : _ENV
-  return (GameGlobal.GetModule)(proto)
+function UIBase:GetModule(proto)
+  return GameGlobal.GetModule(proto)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.GetUIModule = function(self, gameModuleProto)
-  -- function num : 0_10 , upvalues : _ENV
-  return (GameGlobal.GetUIModule)(gameModuleProto)
+function UIBase:GetUIModule(gameModuleProto)
+  return GameGlobal.GetUIModule(gameModuleProto)
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.AttachEvent = function(self, gameEventType, func)
-  -- function num : 0_11 , upvalues : _ENV
+function UIBase:AttachEvent(gameEventType, func)
   if func then
     if not self.autoBinder then
-      self.autoBinder = AutoEventBinder:New((GameGlobal.EventDispatcher)())
+      self.autoBinder = AutoEventBinder:New(GameGlobal.EventDispatcher())
     end
-    ;
-    (self.autoBinder):BindEvent(gameEventType, self, func)
+    self.autoBinder:BindEvent(gameEventType, self, func)
   else
     if not self.attachedEventTypes then
       self.attachedEventTypes = FastArray:New()
     end
-    if (self.attachedEventTypes):Contains(gameEventType) then
-      return 
+    if self.attachedEventTypes:Contains(gameEventType) then
+      return
     end
-    ;
-    (self.attachedEventTypes):PushBack(gameEventType)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddListener(gameEventType, self)
+    self.attachedEventTypes:PushBack(gameEventType)
+    GameGlobal.EventDispatcher():AddListener(gameEventType, self)
   end
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.DetachEvent = function(self, gameEventType, func)
-  -- function num : 0_12 , upvalues : _ENV
-  if func and self.autoBinder then
-    (self.autoBinder):UnBindEvent(gameEventType)
-  end
-  if self.attachedEventTypes then
-    ((GameGlobal.EventDispatcher)()):RemoveListener(gameEventType, self:GetListenerID())
-    ;
-    (self.attachedEventTypes):Remove(gameEventType)
+function UIBase:DetachEvent(gameEventType, func)
+  if func then
+    if self.autoBinder then
+      self.autoBinder:UnBindEvent(gameEventType)
+    end
+  elseif self.attachedEventTypes then
+    GameGlobal.EventDispatcher():RemoveListener(gameEventType, self:GetListenerID())
+    self.attachedEventTypes:Remove(gameEventType)
   end
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.DettachAllEvents = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIBase:DettachAllEvents()
   local attachedEventTypes = self.attachedEventTypes
   if attachedEventTypes then
     for i = 1, attachedEventTypes:Size() do
       local gameEventType = attachedEventTypes:GetAt(i)
-      ;
-      ((GameGlobal.EventDispatcher)()):RemoveListener(gameEventType, self:GetListenerID())
+      GameGlobal.EventDispatcher():RemoveListener(gameEventType, self:GetListenerID())
     end
-    ;
-    (self.attachedEventTypes):Clear()
+    self.attachedEventTypes:Clear()
   end
   if self.autoBinder then
-    (self.autoBinder):UnBindAllEvents()
+    self.autoBinder:UnBindAllEvents()
   end
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.Lock = function(self, name)
-  -- function num : 0_14 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock(name)
+function UIBase:Lock(name)
+  GameGlobal.UIStateManager():Lock(name)
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.ExpirationLock = function(self, name, lockMs)
-  -- function num : 0_15 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ExpirationLock(name, lockMs)
+function UIBase:ExpirationLock(name, lockMs)
+  GameGlobal.UIStateManager():ExpirationLock(name, lockMs)
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.UnLock = function(self, name)
-  -- function num : 0_16 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):UnLock(name)
+function UIBase:UnLock(name)
+  GameGlobal.UIStateManager():UnLock(name)
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.SetShowBusy = function(self, value)
-  -- function num : 0_17 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowBusy(value)
+function UIBase:SetShowBusy(value)
+  GameGlobal.UIStateManager():ShowBusy(value)
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.GetGameObject = function(self, name)
-  -- function num : 0_18 , upvalues : _ENV
+function UIBase:GetGameObject(name)
   if not name then
     if self.gameobject == nil then
-      self.gameobject = (self.view):GetGameObject()
+      self.gameobject = self.view:GetGameObject()
     end
     return self.gameobject
   else
-    local obj = (self.name2Gameobjects)[name]
+    local obj = self.name2Gameobjects[name]
     if obj then
       return obj
     end
     local view = self.view
-    do
-      if view then
-        local target = view:GetGameObject(name)
-        -- DECOMPILER ERROR at PC26: Confused about usage of register: R5 in 'UnsetPending'
-
-        if target then
-          (self.name2Gameobjects)[name] = target
-          return target
-        end
+    if view then
+      local target = view:GetGameObject(name)
+      if target then
+        self.name2Gameobjects[name] = target
+        return target
       end
-      ;
-      (Log.fatal)("[UI] ", self.name, " GetGameObject ->", name, "<- is Null !")
-      do return nil end
     end
+    Log.fatal("[UI] ", self.name, " GetGameObject ->", name, "<- is Null !")
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.GetUIComponent = function(self, componentTypeName, name)
-  -- function num : 0_19 , upvalues : _ENV
+function UIBase:GetUIComponent(componentTypeName, name)
   if componentTypeName == "UISelectObjectPath" then
-    local uiCustomWidgetPool = (self.key2CustomWidgetPools)[name]
+    local uiCustomWidgetPool = self.key2CustomWidgetPools[name]
     if uiCustomWidgetPool then
       return uiCustomWidgetPool
     end
     local view = self.view
-    do
-      do
-        if view then
-          local dynamicInfoOfEngine = view:GetUIComponent(componentTypeName, name)
-          if dynamicInfoOfEngine then
-            uiCustomWidgetPool = UICustomWidgetPool:New(self, dynamicInfoOfEngine)
-            -- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
-
-            ;
-            (self.key2CustomWidgetPools)[name] = uiCustomWidgetPool
-            return uiCustomWidgetPool
-          end
-        end
-        ;
-        (Log.fatal)("[UI] ", self.name, " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
-        do return nil end
-        local name2Component = (self.type2ComponentTable)[componentTypeName]
-        do
-          if name2Component then
-            local component = name2Component[name]
-            if component then
-              return component
-            end
-          end
-          local view = self.view
-          do
-            if view then
-              local target = view:GetUIComponent(componentTypeName, name)
-              -- DECOMPILER ERROR at PC59: Confused about usage of register: R6 in 'UnsetPending'
-
-              if target then
-                if name2Component == nil then
-                  (self.type2ComponentTable)[componentTypeName] = {}
-                  name2Component = (self.type2ComponentTable)[componentTypeName]
-                end
-                name2Component[name] = target
-                return target
-              end
-            end
-            ;
-            (Log.fatal)("[UI] ", self.name, " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
-            do return nil end
-          end
-        end
+    if view then
+      local dynamicInfoOfEngine = view:GetUIComponent(componentTypeName, name)
+      if dynamicInfoOfEngine then
+        uiCustomWidgetPool = UICustomWidgetPool:New(self, dynamicInfoOfEngine)
+        self.key2CustomWidgetPools[name] = uiCustomWidgetPool
+        return uiCustomWidgetPool
       end
     end
+    Log.fatal("[UI] ", self.name, " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
+    return nil
+  else
+    local name2Component = self.type2ComponentTable[componentTypeName]
+    if name2Component then
+      local component = name2Component[name]
+      if component then
+        return component
+      end
+    end
+    local view = self.view
+    if view then
+      local target = view:GetUIComponent(componentTypeName, name)
+      if target then
+        if name2Component == nil then
+          self.type2ComponentTable[componentTypeName] = {}
+          name2Component = self.type2ComponentTable[componentTypeName]
+        end
+        name2Component[name] = target
+        return target
+      end
+    end
+    Log.fatal("[UI] ", self.name, " GetUIComponent ->", componentTypeName, " ", name, "<- is Null !")
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.GetUIComponentDynamic = function(self, componentTypeName, dynamicObject)
-  -- function num : 0_20 , upvalues : _ENV
+function UIBase:GetUIComponentDynamic(componentTypeName, dynamicObject)
   local key = dynamicObject:GetInstanceID()
-  local uiCustomWidgetPool = (self.key2CustomWidgetPools)[key]
+  local uiCustomWidgetPool = self.key2CustomWidgetPools[key]
   if uiCustomWidgetPool then
     return uiCustomWidgetPool
   end
   local dynamicInfoOfEngine = dynamicObject:GetComponent(componentTypeName)
   if dynamicInfoOfEngine then
     uiCustomWidgetPool = UICustomWidgetPool:New(self, dynamicInfoOfEngine)
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.key2CustomWidgetPools)[key] = uiCustomWidgetPool
+    self.key2CustomWidgetPools[key] = uiCustomWidgetPool
     return uiCustomWidgetPool
   end
-  ;
-  (Log.fatal)("[UI] ", self.name, " GetUIComponentDynamic ->", componentTypeName, " ", key, "<- is Null !")
+  Log.fatal("[UI] ", self.name, " GetUIComponentDynamic ->", componentTypeName, " ", key, "<- is Null !")
   return nil
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.GetAsset = function(self, name, loadType)
-  -- function num : 0_21 , upvalues : _ENV
-  return (UIResourceManager.GetAsset)(name, loadType, self.name2Assets)
+function UIBase:GetAsset(name, loadType)
+  return UIResourceManager.GetAsset(name, loadType, self.name2Assets)
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.DisposeAsset = function(self, name)
-  -- function num : 0_22 , upvalues : _ENV
-  (UIResourceManager.DisposeAsset)(name, self:GetName(), self.name2Assets)
+function UIBase:DisposeAsset(name)
+  UIResourceManager.DisposeAsset(name, self:GetName(), self.name2Assets)
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.SyncGetGameObject = function(self, name)
-  -- function num : 0_23 , upvalues : _ENV
-  return (UIResourceManager.SyncGetGameObject)(name, self.go2ResRequest)
+function UIBase:SyncGetGameObject(name)
+  return UIResourceManager.SyncGetGameObject(name, self.go2ResRequest)
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.AsyncGetGameObject = function(self, TT, name)
-  -- function num : 0_24 , upvalues : _ENV
-  return (UIResourceManager.AsyncGetGameObject)(TT, name, self.go2ResRequest)
+function UIBase:AsyncGetGameObject(TT, name)
+  return UIResourceManager.AsyncGetGameObject(TT, name, self.go2ResRequest)
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.DisposeGameObject = function(self, go)
-  -- function num : 0_25 , upvalues : _ENV
-  (UIResourceManager.DisposeGameObject)(go, self.go2ResRequest)
+function UIBase:DisposeGameObject(go)
+  UIResourceManager.DisposeGameObject(go, self.go2ResRequest)
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.DisposeAllResources = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  (UIResourceManager.DisposeAllAssets)(self.name2Assets)
-  ;
-  (UIResourceManager.DisposeAllGameObjects)(self.go2ResRequest)
+function UIBase:DisposeAllResources()
+  UIResourceManager.DisposeAllAssets(self.name2Assets)
+  UIResourceManager.DisposeAllGameObjects(self.go2ResRequest)
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.CreateUI3DModule = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  return (UIHelper.CreateUI3DModule)(self.name)
+function UIBase:CreateUI3DModule()
+  return UIHelper.CreateUI3DModule(self.name)
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.InitUI3DModule = function(self, ui3DModule, modelPrefabPath, limitRotateAngle)
-  -- function num : 0_28
+function UIBase:InitUI3DModule(ui3DModule, modelPrefabPath, limitRotateAngle)
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.Show3DModule = function(self, ui3DModule, camPfbPath, maxFov, uiOperationGraphic, uibaseDepth, isCanUpDown, isCanScale, isCanRot)
-  -- function num : 0_29
-  if isCanUpDown == false then
-    isCanUpDown = not ui3DModule
+function UIBase:Show3DModule(ui3DModule, camPfbPath, maxFov, uiOperationGraphic, uibaseDepth, isCanUpDown, isCanScale, isCanRot)
+  if ui3DModule then
+    isCanUpDown = isCanUpDown ~= false
     isCanScale = isCanScale ~= false
     isCanRot = isCanRot ~= false
     ui3DModule:Show(camPfbPath, maxFov, uiOperationGraphic, uibaseDepth, isCanUpDown, isCanScale, isCanRot)
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
   end
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.Hide3DModule = function(self, ui3DModule)
-  -- function num : 0_30
+function UIBase:Hide3DModule(ui3DModule)
   if ui3DModule then
     ui3DModule:Hide()
   end
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.Dispose3DModule = function(self, ui3DModule, id)
-  -- function num : 0_31
+function UIBase:Dispose3DModule(ui3DModule, id)
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.SetName = function(self, name)
-  -- function num : 0_32
+function UIBase:SetName(name)
   self.name = name
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.Load = function(self, view, resRequest)
-  -- function num : 0_33 , upvalues : _ENV
+function UIBase:Load(view, resRequest)
   self.view = view
   self.resRequest = resRequest
   self.luaView = LuaUIView:New()
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.Show = function(self)
-  -- function num : 0_34
+function UIBase:Show()
   if self.view then
-    (self.view):SetShow(true, self)
+    self.view:SetShow(true, self)
   end
   if self.luaView then
-    (self.luaView):SetShow(true, self)
+    self.luaView:SetShow(true, self)
   end
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.Hide = function(self)
-  -- function num : 0_35
+function UIBase:Hide()
   local view = self.view
   if view then
     view:SetShow(false, nil)
   end
   if self.luaView then
-    (self.luaView):SetShow(false, nil)
+    self.luaView:SetShow(false, nil)
   end
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.UnLoad = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function UIBase:UnLoad()
   self:DettachAllEvents()
   self:DisposeCustomWidgets()
   self:DisposeAllResources()
   local resRequest = self.resRequest
   if resRequest then
-    (UIResourceManager.DisposeView)(resRequest)
+    UIResourceManager.DisposeView(resRequest)
   end
   self.resRequest = nil
   self.view = nil
-  ;
-  (self.luaView):Dispose()
+  self.luaView:Dispose()
   self.luaView = nil
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.View = function(self)
-  -- function num : 0_37
+function UIBase:View()
   return self.view
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.DisposeCustomWidgets = function(self)
-  -- function num : 0_38 , upvalues : SHALLOW_COPY, _ENV, TABLE_CLEAR
+function UIBase:DisposeCustomWidgets()
   local key2CustomWidgetPools = SHALLOW_COPY(self.key2CustomWidgetPools)
-  for _,v in pairs(key2CustomWidgetPools) do
+  for _, v in pairs(key2CustomWidgetPools) do
     v:Dispose()
   end
   TABLE_CLEAR(self.key2CustomWidgetPools)
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBase.AddUIEvent = function(self, uiEventType, widget, name)
-  -- function num : 0_39
-  (self.luaView):AddUIEvent(uiEventType, widget, name)
+function UIBase:AddUIEvent(uiEventType, widget, name)
+  self.luaView:AddUIEvent(uiEventType, widget, name)
 end
-
-

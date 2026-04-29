@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/world_boss/ui_season_maze_world_boss_ranking_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeWorldBossRankingListItem", UICustomWidget)
 UISeasonMazeWorldBossRankingListItem = UISeasonMazeWorldBossRankingListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeWorldBossRankingListItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMazeWorldBossRankingListItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossRankingListItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeWorldBossRankingListItem:InitWidget()
   self.rankImg = self:GetUIComponent("Image", "rankImg")
   self.rankText = self:GetUIComponent("UILocalizationText", "rankText")
   self.rankImgObj = self:GetGameObject("rankImg")
@@ -25,81 +15,58 @@ UISeasonMazeWorldBossRankingListItem.InitWidget = function(self)
   self.head = self:GetUIComponent("RawImageLoader", "head")
   self.frame = self:GetUIComponent("RawImageLoader", "frame")
   self.damage = self:GetUIComponent("UILocalizationText", "damage")
-  self.atlas = (self:RootUIOwner()):GetAsset("SeasonMaze.spriteatlas", LoadType.SpriteAtlas)
+  self.atlas = self:RootUIOwner():GetAsset("SeasonMaze.spriteatlas", LoadType.SpriteAtlas)
   self.rootObj = self:GetGameObject("root")
-  self.nameColor = {[1] = "a0853f", [2] = "658091", [3] = "af9175"}
+  self.nameColor = {
+    [1] = "a0853f",
+    [2] = "658091",
+    [3] = "af9175"
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossRankingListItem.SetNull = function(self)
-  -- function num : 0_2
-  (self.rootObj):SetActive(false)
+function UISeasonMazeWorldBossRankingListItem:SetNull()
+  self.rootObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossRankingListItem.SetData = function(self, rank, playerName, damage, headBgID, headIconID, frameID, isRealPlayer)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.rootObj):SetActive(true)
-  if not isRealPlayer or not playerName then
-    local name = (StringTable.Get)(playerName)
-  end
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R9 in 'UnsetPending'
-
+function UISeasonMazeWorldBossRankingListItem:SetData(rank, playerName, damage, headBgID, headIconID, frameID, isRealPlayer)
+  self.rootObj:SetActive(true)
+  local name = isRealPlayer and playerName or StringTable.Get(playerName)
   if rank <= 3 then
-    (self.rankImg).sprite = (self.atlas):GetSprite("cn15_sjmjhd_zi0" .. rank)
-    ;
-    (self.rankImgObj):SetActive(true)
-    ;
-    (self.rankTextObj):SetActive(false)
-    name = "<color=#" .. (self.nameColor)[rank] .. ">" .. name .. "</color>"
+    self.rankImg.sprite = self.atlas:GetSprite("cn15_sjmjhd_zi0" .. rank)
+    self.rankImgObj:SetActive(true)
+    self.rankTextObj:SetActive(false)
+    name = "<color=#" .. self.nameColor[rank] .. ">" .. name .. "</color>"
   else
     local str = rank .. ""
-    if rank > 100 then
+    if 100 < rank then
       str = "100+"
     end
-    ;
-    (self.rankText):SetText(str)
-    ;
-    (self.rankImgObj):SetActive(false)
-    ;
-    (self.rankTextObj):SetActive(true)
+    self.rankText:SetText(str)
+    self.rankImgObj:SetActive(false)
+    self.rankTextObj:SetActive(true)
   end
-  do
-    ;
-    (self.name):SetText(name)
-    local bgIconName, iconTag = (HelperProxy:GetInstance()):GetHeadBgName(headBgID)
-    ;
-    (self.headBg):LoadImage(bgIconName)
-    local iconName, iconTag = (HelperProxy:GetInstance()):GetHeadIconName(headIconID)
-    ;
-    (self.head):LoadImage(iconName)
-    local frameName, iconTag = (HelperProxy:GetInstance()):GetHeadFrameName(frameID)
-    ;
-    (self.frame):LoadImage(frameName)
-    local showNum, oriNum = (HelperProxy:GetInstance()):SMazeDamageUnit(damage)
-    local str = ""
-    if oriNum then
-      local len = (string.len)(damage .. "")
-      if len < 8 then
-        local holder = ""
-        for i = 1, 8 - len do
-          holder = holder .. "0"
-        end
-        str = "<color=#949598>" .. holder .. "</color>" .. damage
-      else
-        do
-          do
-            str = damage .. ""
-            str = showNum
-            ;
-            (self.damage):SetText(str)
-          end
-        end
+  self.name:SetText(name)
+  local bgIconName, iconTag = HelperProxy:GetInstance():GetHeadBgName(headBgID)
+  self.headBg:LoadImage(bgIconName)
+  local iconName, iconTag = HelperProxy:GetInstance():GetHeadIconName(headIconID)
+  self.head:LoadImage(iconName)
+  local frameName, iconTag = HelperProxy:GetInstance():GetHeadFrameName(frameID)
+  self.frame:LoadImage(frameName)
+  local showNum, oriNum = HelperProxy:GetInstance():SMazeDamageUnit(damage)
+  local str = ""
+  if oriNum then
+    local len = string.len(damage .. "")
+    if len < 8 then
+      local holder = ""
+      for i = 1, 8 - len do
+        holder = holder .. "0"
       end
+      str = "<color=#949598>" .. holder .. "</color>" .. damage
+    else
+      str = damage .. ""
     end
+  else
+    str = showNum
   end
+  self.damage:SetText(str)
 end
-
-

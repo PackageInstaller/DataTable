@@ -1,22 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_cast_skill_with_attribute_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewCastSkillWithAttribute", BuffViewBase)
 BuffViewCastSkillWithAttribute = BuffViewCastSkillWithAttribute
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewCastSkillWithAttribute.PlayView = function(self, TT, notify)
-  -- function num : 0_0
+function BuffViewCastSkillWithAttribute:PlayView(TT, notify)
   local result = self._buffResult
   local skillID = result:GetSkillID()
-  local skillHolder = (self._world):GetEntityByID(result:GetSkillHolderID())
+  local skillHolder = self._world:GetEntityByID(result:GetSkillHolderID())
   local skillResult = result:GetSkillResult()
-  ;
-  (skillHolder:SkillRoutine()):SetResultContainer(skillResult)
-  local playSkillSvc = (self._world):GetService("PlaySkill")
-  local configSvc = (self._world):GetService("Config")
+  skillHolder:SkillRoutine():SetResultContainer(skillResult)
+  local playSkillSvc = self._world:GetService("PlaySkill")
+  local configSvc = self._world:GetService("Config")
   local skillConfigData = configSvc:GetSkillConfigData(skillID, skillHolder)
   local skillPhaseArray = skillConfigData:GetSkillPhaseArray()
   playSkillSvc:_SkillRoutineTask(TT, skillHolder, skillPhaseArray, skillID)
@@ -24,21 +16,16 @@ end
 
 _class("BuffViewCastSkill_ByAction", BuffViewBase)
 BuffViewCastSkill_ByAction = BuffViewCastSkill_ByAction
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewCastSkill_ByAction.PlayView = function(self, TT, notify)
-  -- function num : 0_1
+function BuffViewCastSkill_ByAction:PlayView(TT, notify)
   local result = self._buffResult
   local skillID = result:GetSkillID()
   local entity = self._entity
   local skillResult = result:GetSkillResult()
-  ;
-  (entity:SkillRoutine()):SetResultContainer(skillResult)
-  local playSkillSvc = (self._world):GetService("PlaySkill")
-  local configSvc = (self._world):GetService("Config")
+  entity:SkillRoutine():SetResultContainer(skillResult)
+  local playSkillSvc = self._world:GetService("PlaySkill")
+  local configSvc = self._world:GetService("Config")
   local skillConfigData = configSvc:GetSkillConfigData(skillID, entity)
   local skillPhaseArray = skillConfigData:GetSkillPhaseArray()
   playSkillSvc:_SkillRoutineTask(TT, entity, skillPhaseArray, skillID)
 end
-
-

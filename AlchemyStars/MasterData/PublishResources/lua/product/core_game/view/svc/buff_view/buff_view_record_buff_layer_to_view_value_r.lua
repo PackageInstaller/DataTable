@@ -1,21 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_record_buff_layer_to_view_value_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewRecordBuffLayerToViewValue", BuffViewBase)
 BuffViewRecordBuffLayerToViewValue = BuffViewRecordBuffLayerToViewValue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRecordBuffLayerToViewValue.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewRecordBuffLayerToViewValue:PlayView(TT)
   local result = self._buffResult
   local layerType = result:GetBuffLayerType()
   local layerCount = result:GetLayerCount()
   local isRevert = result:GetIsRevert()
-  local bvcmpt = (self._entity):BuffView()
+  local bvcmpt = self._entity:BuffView()
   if not bvcmpt then
-    return 
+    return
   end
   local keyStr = "layerCount" .. tostring(layerType)
   if isRevert then
@@ -24,5 +17,3 @@ BuffViewRecordBuffLayerToViewValue.PlayView = function(self, TT)
     bvcmpt:SetBuffValue(keyStr, layerCount)
   end
 end
-
-

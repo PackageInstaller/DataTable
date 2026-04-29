@@ -1,25 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/social/i_air_matcher.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("IAirMatcher", Object)
 IAirMatcher = IAirMatcher
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-IAirMatcher.Match = function(self, pets)
-  -- function num : 0_0
+function IAirMatcher:Match(pets)
 end
 
 _class("InitAreaMatcher", IAirMatcher)
 InitAreaMatcher = InitAreaMatcher
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-InitAreaMatcher.Match = function(self, pets, airMain)
-  -- function num : 0_1 , upvalues : _ENV
+function InitAreaMatcher:Match(pets, airMain)
   local areas = {}
-  for _,pet in pairs(pets) do
-    local area = (AirHelper.GetArea)(pet, areas, airMain)
+  for _, pet in pairs(pets) do
+    local area = AirHelper.GetArea(pet, areas, airMain)
     if area then
       area:AddPet(pet:TemplateID(), pet)
     end
@@ -29,110 +20,70 @@ end
 
 _class("RelationMatcher", IAirMatcher)
 RelationMatcher = RelationMatcher
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-RelationMatcher.Match = function(self, areas)
-  -- function num : 0_2 , upvalues : _ENV
+function RelationMatcher:Match(areas)
   if not areas or #areas <= 0 then
     return {}
   end
   local newAreas = {}
-  for index,area in ipairs(areas) do
+  for index, area in ipairs(areas) do
     local pets = area:GetPets()
-    local count = (table.count)(pets)
-    if count > 1 then
+    local count = table.count(pets)
+    if 1 < count then
       local match = true
-      local closer, farAwayer = (AirHelper.GetCloserAndFarAwayer)(pets)
+      local closer, farAwayer = AirHelper.GetCloserAndFarAwayer(pets)
       if count == 2 then
-        for petTempId,farPetTempIds in pairs(farAwayer) do
-          if #farPetTempIds > 0 then
+        for petTempId, farPetTempIds in pairs(farAwayer) do
+          if 0 < #farPetTempIds then
             match = false
           end
         end
-      else
-        do
-          if count >= 3 then
-            local graph = graph:New()
-            graph:Clear()
-            local petTempIds = {}
-            for petTempId,value in pairs(pets) do
-              graph:AddVertex(petTempId)
-              ;
-              (table.insert)(petTempIds, petTempId)
-            end
-            for petTempId,closerPetTempIds in pairs(closer) do
-              for index,value in ipairs(closerPetTempIds) do
-                if not farAwayer[value] or not (table.ikey)(farAwayer[value], petTempId) then
-                  graph:AddDirectedEdge(petTempId, value)
-                end
-              end
-            end
-            for i = 1, count do
-              local list = graph:BFSTraverse(i)
-              local finalCount = #list
-              if finalCount ~= 3 then
-                if finalCount == 2 then
-                  for index,petTempId in ipairs(petTempIds) do
-                    if not (table.ikey)(list, petTempId) then
-                      area:RemovePet(petTempId)
-                    end
-                  end
-                else
-                  do
-                    if finalCount > 3 then
-                      local index = (math.random)(1, 2)
-                      local middle = (math.floor)(finalCount * 0.5)
-                      if index == 1 then
-                        for j = middle, finalCount do
-                          area:RemovePet(list[j])
-                        end
-                        break
-                      else
-                        if index == 2 then
-                          for j = 1, middle do
-                            area:RemovePet(list[j])
-                          end
-                          break
-                        end
-                      end
-                    end
-                    do
-                      -- DECOMPILER ERROR at PC149: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC149: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                      -- DECOMPILER ERROR at PC149: LeaveBlock: unexpected jumping out IF_STMT
-
-                      -- DECOMPILER ERROR at PC149: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                      -- DECOMPILER ERROR at PC149: LeaveBlock: unexpected jumping out IF_STMT
-
-                    end
-                  end
-                end
-              end
-            end
-          end
-          do
-            do
-              if match then
-                (table.insert)(newAreas, area)
-              end
-              -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_STMT
-
+      elseif 3 <= count then
+        local graph = graph:New()
+        graph:Clear()
+        local petTempIds = {}
+        for petTempId, value in pairs(pets) do
+          graph:AddVertex(petTempId)
+          table.insert(petTempIds, petTempId)
+        end
+        for petTempId, closerPetTempIds in pairs(closer) do
+          for index, value in ipairs(closerPetTempIds) do
+            if not farAwayer[value] or not table.ikey(farAwayer[value], petTempId) then
+              graph:AddDirectedEdge(petTempId, value)
             end
           end
         end
+        for i = 1, count do
+          local list = graph:BFSTraverse(i)
+          local finalCount = #list
+          if finalCount == 3 then
+            break
+          end
+          if finalCount == 2 then
+            for index, petTempId in ipairs(petTempIds) do
+              if not table.ikey(list, petTempId) then
+                area:RemovePet(petTempId)
+              end
+            end
+          elseif 3 < finalCount then
+            local index = math.random(1, 2)
+            local middle = math.floor(finalCount * 0.5)
+            if index == 1 then
+              for j = middle, finalCount do
+                area:RemovePet(list[j])
+              end
+              break
+            elseif index == 2 then
+              for j = 1, middle do
+                area:RemovePet(list[j])
+              end
+              break
+            end
+          end
+        end
+      end
+      if match then
+        table.insert(newAreas, area)
       end
     end
   end
@@ -141,104 +92,89 @@ end
 
 _class("AddLibMatcher", IAirMatcher)
 AddLibMatcher = AddLibMatcher
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-AddLibMatcher.Match = function(self, areas, main)
-  -- function num : 0_3 , upvalues : _ENV
+function AddLibMatcher:Match(areas, main)
   if not areas or #areas <= 0 then
     return {}
   end
   local newAreas = {}
-  for index,area in ipairs(areas) do
+  for index, area in ipairs(areas) do
     local matchFurniture, pets = self:MatchFurniture(area, main)
     if matchFurniture ~= nil then
       area:AddLib(AirSocialActionType.Furniture)
       area:SetFurniture(matchFurniture, pets)
-      ;
-      (table.insert)(newAreas, area)
+      table.insert(newAreas, area)
     else
       local pets = area:GetPets()
-      local count = (table.count)(pets)
+      local count = table.count(pets)
       if count == 2 then
         area:AddLib(AirSocialActionType.Gather)
         area:AddLib(AirSocialActionType.WalkTalk)
-        ;
-        (table.insert)(newAreas, area)
-      else
-        if count >= 3 then
-          area:AddLib(AirSocialActionType.Gather)
-          ;
-          (table.insert)(newAreas, area)
-        end
+        table.insert(newAreas, area)
+      elseif 3 <= count then
+        area:AddLib(AirSocialActionType.Gather)
+        table.insert(newAreas, area)
       end
     end
   end
   return newAreas
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AddLibMatcher.MatchFurniture = function(self, area, main)
-  -- function num : 0_4 , upvalues : _ENV
+function AddLibMatcher:MatchFurniture(area, main)
   local f2Pet = {}
   local pets = area:GetPets()
-  for key,pet in pairs(pets) do
+  for key, pet in pairs(pets) do
     local fs = pet:GetInteractFurnitures()
-    for index,data in ipairs(fs) do
+    for index, data in ipairs(fs) do
       local furnitureType = data[1]
       if not f2Pet[furnitureType] then
         f2Pet[furnitureType] = {}
       end
-      ;
-      (table.insert)(f2Pet[furnitureType], pet)
+      table.insert(f2Pet[furnitureType], pet)
     end
   end
   local room = area:GetRoom()
   if not room then
-    (Log.error)("AddLibMatcher:MatchFurniture why no room!!!!!!!!!!!!!")
+    Log.error("AddLibMatcher:MatchFurniture why no room!!!!!!!!!!!!!")
     return nil
   end
   local fs = main:GetFurnituresBySpace(room:SpaceID())
   local newFurnitureTypes = {}
-  for furnitureType,value in pairs(fs) do
-    if f2Pet[furnitureType] and #f2Pet[furnitureType] >= 2 then
-      (table.insert)(newFurnitureTypes, furnitureType)
+  for furnitureType, value in pairs(fs) do
+    if f2Pet[furnitureType] and 2 <= #f2Pet[furnitureType] then
+      table.insert(newFurnitureTypes, furnitureType)
     end
   end
   local filterFurnitures = {}
-  for index,furnitureType in ipairs(newFurnitureTypes) do
+  for index, furnitureType in ipairs(newFurnitureTypes) do
     local furniture = main:GetFurniture(furnitureType)
-    if furniture and furniture:AvailableCount() >= 2 then
-      (table.insert)(filterFurnitures, furniture)
+    if furniture and 2 <= furniture:AvailableCount() then
+      table.insert(filterFurnitures, furniture)
     end
   end
-  local count = (table.count)(filterFurnitures)
-  if count >= 1 then
-    local r = (math.random)(1, count)
+  local count = table.count(filterFurnitures)
+  if 1 <= count then
+    local r = math.random(1, count)
     local betterFurniture = filterFurnitures[r]
     return betterFurniture, betterFurniture and f2Pet[betterFurniture:Type()] or nil
   else
-    do
-      do return nil, nil, nil end
-    end
+    return nil, nil, nil
   end
 end
 
 _class("FilterLibMatcher", IAirMatcher)
 FilterLibMatcher = FilterLibMatcher
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-FilterLibMatcher.Match = function(self, areas)
-  -- function num : 0_5 , upvalues : _ENV
+function FilterLibMatcher:Match(areas)
   if not areas or #areas <= 0 then
     return {}
   end
-  for _,area in ipairs(areas) do
+  for _, area in ipairs(areas) do
     local libs = area:GetLibs()
-    local count = (table.count)(libs)
-    if count > 1 then
-      local r = (math.random)(1, count)
-      local keys = (table.keys)(libs)
+    local count = table.count(libs)
+    if 1 < count then
+      local r = math.random(1, count)
+      local keys = table.keys(libs)
       for index = 1, count do
         if index ~= r then
           area:RemoveLib(keys[index])
@@ -251,56 +187,35 @@ end
 
 _class("FilterLibPetMatcher", IAirMatcher)
 FilterLibPetMatcher = FilterLibPetMatcher
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
 
-FilterLibPetMatcher.Match = function(self, areas)
-  -- function num : 0_6 , upvalues : _ENV
+function FilterLibPetMatcher:Match(areas)
   if not areas or #areas <= 0 then
     return {}
   end
-  for _,area in ipairs(areas) do
+  for _, area in ipairs(areas) do
     if area:GetFurniture() then
+    else
       local pets = area:GetPets()
-      local count = (table.count)(pets)
+      local count = table.count(pets)
       if count <= 2 then
-        local targetNum = (math.random)(2, 3)
+      else
+        local targetNum = math.random(2, 3)
         local randomTime = count - targetNum
-        if randomTime > 0 then
+        if 0 < randomTime then
           local r = {}
-          while 1 do
-            local d = (math.random)(1, count)
-            if not (table.icontains)(r, d) then
-              (table.insert)(r, d)
+          while true do
+            local d = math.random(1, count)
+            if not table.icontains(r, d) then
+              table.insert(r, d)
+            end
+            if #r == randomTime then
+              break
             end
           end
-          do
-            if #r ~= randomTime then
-              local keys = (table.keys)(pets)
-              for index = 1, count do
-                if (table.icontains)(r, index) then
-                  area:RemovePet(keys[index])
-                end
-              end
-              do
-                -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
+          local keys = table.keys(pets)
+          for index = 1, count do
+            if table.icontains(r, index) then
+              area:RemovePet(keys[index])
             end
           end
         end
@@ -312,53 +227,42 @@ end
 
 _class("FilterAreaMatcher", IAirMatcher)
 FilterAreaMatcher = FilterAreaMatcher
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-FilterAreaMatcher.Match = function(self, areas)
-  -- function num : 0_7 , upvalues : _ENV
+function FilterAreaMatcher:Match(areas)
   local filterAreas = {}
   if not areas or #areas == 0 then
     return filterAreas
   end
   local count = #areas
-  if count > 2 then
-    local _idx1 = (math.random)(1, count)
+  if 2 < count then
+    local _idx1 = math.random(1, count)
     local _idx2 = -1
-    while 1 do
-      local r = (math.random)(1, count)
+    while true do
+      local r = math.random(1, count)
       if r ~= _idx1 then
         _idx2 = r
         break
       end
     end
-    do
-      do
-        ;
-        (table.insert)(filterAreas, areas[_idx1])
-        ;
-        (table.insert)(filterAreas, areas[_idx2])
-        do return filterAreas end
-        filterAreas = areas
-        return filterAreas
-      end
-    end
+    table.insert(filterAreas, areas[_idx1])
+    table.insert(filterAreas, areas[_idx2])
+    return filterAreas
+  else
+    filterAreas = areas
   end
+  return filterAreas
 end
 
 _class("InitLibMakerMatcher", IAirMatcher)
 InitLibMakerMatcher = InitLibMakerMatcher
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
 
-InitLibMakerMatcher.Match = function(self, areas)
-  -- function num : 0_8 , upvalues : _ENV
+function InitLibMakerMatcher:Match(areas)
   if not areas or #areas <= 0 then
     return {}
   end
-  for index,_area in ipairs(areas) do
+  for index, _area in ipairs(areas) do
     local area = _area
     area:InitLibMaker()
   end
   return areas
 end
-
-

@@ -1,133 +1,91 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/guide_message_box_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuidePopup", Object)
 GuidePopup = GuidePopup
 _class("GuideMessageBoxMng", Singleton)
 GuideMessageBoxMng = GuideMessageBoxMng
 local PrefabSuffix = ".prefab"
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-GuideMessageBoxMng.Constructor = function(self)
-  -- function num : 0_0
+function GuideMessageBoxMng:Constructor()
   self._uiMsgBox = nil
   self.name2MsgBox = {}
   self._guidePopup = nil
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideMessageBoxMng.Dispose = function(self)
-  -- function num : 0_1
+function GuideMessageBoxMng:Dispose()
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideMessageBoxMng.OpenGuideBox = function(self, uiMsgBoxName, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("OpenGuideBox")
-  self.params = {...}
+function GuideMessageBoxMng:OpenGuideBox(uiMsgBoxName, ...)
+  GameGlobal.UIStateManager():Lock("OpenGuideBox")
+  self.params = {
+    ...
+  }
   self._guidePopup = GuidePopup:New()
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._OpenPopup, self, uiMsgBoxName, ...)
+  GameGlobal.TaskManager():StartTask(self._OpenPopup, self, uiMsgBoxName, ...)
   return self._guidePopup
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideMessageBoxMng.IsGuideBoxShowing = function(self)
-  -- function num : 0_3
-  do return self._uiMsgBox ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function GuideMessageBoxMng:IsGuideBoxShowing()
+  return self._uiMsgBox ~= nil
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideMessageBoxMng._OpenPopup = function(self, TT, uiMsgBoxName, ...)
-  -- function num : 0_4 , upvalues : _ENV
+function GuideMessageBoxMng:_OpenPopup(TT, uiMsgBoxName, ...)
   local isCache, uiMsgBox, uiView, resRequest = self:GetUIMessageBox(TT, uiMsgBoxName)
   if not isCache then
-    ((GameGlobal.UIStateManager)()):SetGuideMessageBoxParent(uiView, uiMsgBoxName)
+    GameGlobal.UIStateManager():SetGuideMessageBoxParent(uiView, uiMsgBoxName)
     self:SetUIMessageBox(uiMsgBoxName, uiMsgBox, uiView, resRequest)
   end
-  ;
-  ((GameGlobal.UIStateManager)()):CheckMessageBoxCameraStatus(true)
-  ;
-  ((GameGlobal.UIStateManager)()):CheckMessageBoxCameraStatus(true)
+  GameGlobal.UIStateManager():CheckMessageBoxCameraStatus(true)
+  GameGlobal.UIStateManager():CheckMessageBoxCameraStatus(true)
   self._uiMsgBox = uiMsgBox
-  ;
-  (self._uiMsgBox):Alert(self, self.params)
-  ;
-  (self._uiMsgBox):SetShow(true)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("OpenGuideBox")
+  self._uiMsgBox:Alert(self, self.params)
+  self._uiMsgBox:SetShow(true)
+  GameGlobal.UIStateManager():UnLock("OpenGuideBox")
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideMessageBoxMng.ClosePopup = function(self, popup)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.debug)("[guide] GuideMessageBoxMng:ClosePopup")
+function GuideMessageBoxMng:ClosePopup(popup)
+  Log.debug("[guide] GuideMessageBoxMng:ClosePopup")
   if self._uiMsgBox ~= nil then
-    (self._uiMsgBox):ClearCallback()
+    self._uiMsgBox:ClearCallback()
     self._uiMsgBox = nil
     self._guidePopup = nil
-    ;
-    ((GameGlobal.UIStateManager)()):CheckMessageBoxCameraStatus(false)
+    GameGlobal.UIStateManager():CheckMessageBoxCameraStatus(false)
   end
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideMessageBoxMng.GetUIMessageBox = function(self, TT, uiMsgBoxName)
-  -- function num : 0_6 , upvalues : _ENV, PrefabSuffix
-  local uiMsgBox = (self.name2MsgBox)[uiMsgBoxName]
+function GuideMessageBoxMng:GetUIMessageBox(TT, uiMsgBoxName)
+  local uiMsgBox = self.name2MsgBox[uiMsgBoxName]
   if uiMsgBox then
     return true, uiMsgBox
   else
     local uiMsgBox = self:CreateUIMessageBox(uiMsgBoxName)
     if not uiMsgBox then
-      return 
+      return
     end
     uiMsgBox:SetName(uiMsgBoxName)
-    local uiView, resRequest = (UIResourceManager.GetViewAsync)(TT, uiMsgBoxName, uiMsgBoxName .. PrefabSuffix)
+    local uiView, resRequest = UIResourceManager.GetViewAsync(TT, uiMsgBoxName, uiMsgBoxName .. PrefabSuffix)
     if not uiView then
-      (Log.fatal)("[UI] PopupManager:GetUIMessageBox Error, View is Null, ", uiMsgBoxName)
-      return 
+      Log.fatal("[UI] PopupManager:GetUIMessageBox Error, View is Null, ", uiMsgBoxName)
+      return
     end
     return false, uiMsgBox, uiView, resRequest
   end
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideMessageBoxMng.SetUIMessageBox = function(self, uiMsgBoxName, uiMsgBox, uiView, resRequest)
-  -- function num : 0_7
+function GuideMessageBoxMng:SetUIMessageBox(uiMsgBoxName, uiMsgBox, uiView, resRequest)
   if uiMsgBox == nil or uiView == nil then
-    return 
+    return
   end
   uiMsgBox:Load(uiView, resRequest)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.name2MsgBox)[uiMsgBoxName] = uiMsgBox
+  self.name2MsgBox[uiMsgBoxName] = uiMsgBox
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideMessageBoxMng.CreateUIMessageBox = function(self, uiMsgBoxName)
-  -- function num : 0_8 , upvalues : _ENV
+function GuideMessageBoxMng:CreateUIMessageBox(uiMsgBoxName)
   local uiMsgBox = _createInstance(uiMsgBoxName)
   if not uiMsgBox then
-    (Log.fatal)("[UI] PopupManager:CreateUIMessageBox Error, No UIMessageBox of name = ", uiMsgBoxName)
+    Log.fatal("[UI] PopupManager:CreateUIMessageBox Error, No UIMessageBox of name = ", uiMsgBoxName)
   end
   if not uiMsgBox:IsChildOf("UIMessageBox") then
-    (Log.fatal)("[UI] PopupManager:CreateUIMessageBox Fail, ", uiMsgBoxName, " is not inherited from UIMessageBox!")
-    return 
+    Log.fatal("[UI] PopupManager:CreateUIMessageBox Fail, ", uiMsgBoxName, " is not inherited from UIMessageBox!")
+    return
   end
   return uiMsgBox
 end
-
-

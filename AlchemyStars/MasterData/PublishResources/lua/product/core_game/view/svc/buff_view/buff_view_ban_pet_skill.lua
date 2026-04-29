@@ -1,30 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_ban_pet_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewBanPetSkill", BuffViewBase)
 BuffViewBanPetSkill = BuffViewBanPetSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewBanPetSkill.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewBanPetSkill:PlayView(TT)
   local result = self._buffResult
   local banPetSkillList = result:GetBanPetSkillList()
-  local buffViewComponent = (self._entity):BuffView()
+  local buffViewComponent = self._entity:BuffView()
   buffViewComponent:SetBuffValue("BanPetSkill", banPetSkillList)
 end
 
 _class("BuffViewRemoveBanPetSkill", BuffViewBase)
 BuffViewRemoveBanPetSkill = BuffViewRemoveBanPetSkill
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRemoveBanPetSkill.PlayView = function(self, TT)
-  -- function num : 0_1
+function BuffViewRemoveBanPetSkill:PlayView(TT)
   local result = self._buffResult
   local banPetSkillList = result:GetBanPetSkillList()
-  local buffViewComponent = (self._entity):BuffView()
+  local buffViewComponent = self._entity:BuffView()
   buffViewComponent:SetBuffValue("BanPetSkill", banPetSkillList)
 end
-
-

@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_elevator_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftElevatorLine", Object)
 AircraftElevatorLine = AircraftElevatorLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftElevatorLine.Constructor = function(self, floor, main)
-  -- function num : 0_0
+function AircraftElevatorLine:Constructor(floor, main)
   self._main = main
   self._floor = floor
   self:Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftElevatorLine.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local parent = ((((UnityEngine.GameObject).Find)("Elevator")).transform):Find("Floors")
+function AircraftElevatorLine:Init()
+  local parent = UnityEngine.GameObject.Find("Elevator").transform:Find("Floors")
   local t = parent:GetChild(self._floor - 1)
   self._pos = self:_getPoint(t:Find("pos"))
   self._exit = self:_getPoint(t:Find("exit"))
@@ -34,142 +24,93 @@ AircraftElevatorLine.Init = function(self)
   self._movers = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftElevatorLine._getPoint = function(self, t)
-  -- function num : 0_2
-  return (t.position):Clone()
+function AircraftElevatorLine:_getPoint(t)
+  return t.position:Clone()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftElevatorLine.Update = function(self, deltaTimeMS)
-  -- function num : 0_3 , upvalues : _ENV
+function AircraftElevatorLine:Update(deltaTimeMS)
   if #self._movers > 0 then
-    for idx,mover in ipairs(self._movers) do
+    for idx, mover in ipairs(self._movers) do
       mover:Update(deltaTimeMS)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftElevatorLine.Dispose = function(self)
-  -- function num : 0_4
+function AircraftElevatorLine:Dispose()
   self._movers = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftElevatorLine.IsFull = function(self)
-  -- function num : 0_5
-  do return self._lineCount <= #self._movers end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftElevatorLine:IsFull()
+  return #self._movers >= self._lineCount
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftElevatorLine.OnPetArriveTarget = function(self, pet)
-  -- function num : 0_6 , upvalues : _ENV
+function AircraftElevatorLine:OnPetArriveTarget(pet)
   if self:IsFull() then
-    (Log.exception)("[AircraftElevator] 严重错误，排队点用尽，楼层：", self._floor, "，个数：", self._lineCount)
+    Log.exception("[AircraftElevator] 严重错误，排队点用尽，楼层：", self._floor, "，个数：", self._lineCount)
   end
   pet:SetState(AirPetState.WaitingElevator)
   local idx = #self._movers + 1
-  local pos = (self._linePos)[idx]
+  local pos = self._linePos[idx]
   local mover = AircraftPetWaitElevator:New(self._main, pet, idx, pos)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._movers)[idx] = mover
+  self._movers[idx] = mover
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftElevatorLine.Pos = function(self)
-  -- function num : 0_7
+function AircraftElevatorLine:Pos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftElevatorLine.Target = function(self)
-  -- function num : 0_8
+function AircraftElevatorLine:Target()
   return self._target
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftElevatorLine.Exit = function(self)
-  -- function num : 0_9
+function AircraftElevatorLine:Exit()
   return self._exit
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftElevatorLine.HasWaitingPet = function(self)
-  -- function num : 0_10
+function AircraftElevatorLine:HasWaitingPet()
   if #self._movers > 0 then
-    return ((self._movers)[1]):IsWaiting()
+    return self._movers[1]:IsWaiting()
   end
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftElevatorLine.FirstPetWaitTime = function(self)
-  -- function num : 0_11
-  local pet = ((self._movers)[1]):Pet()
+function AircraftElevatorLine:FirstPetWaitTime()
+  local pet = self._movers[1]:Pet()
   return pet:GetWaitElevatorTime()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftElevatorLine.PopPet = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local first = (self._movers)[1]
-  ;
-  (table.remove)(self._movers, 1)
+function AircraftElevatorLine:PopPet()
+  local first = self._movers[1]
+  table.remove(self._movers, 1)
   if #self._movers > 0 then
-    for idx,mover in ipairs(self._movers) do
+    for idx, mover in ipairs(self._movers) do
       local idx = mover:Index() - 1
-      local pos = (self._linePos)[idx]
+      local pos = self._linePos[idx]
       mover:ResetIndex(idx, pos)
     end
   end
-  do
-    return first:Pet()
-  end
+  return first:Pet()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftElevatorLine.OnPetRemove = function(self, pet)
-  -- function num : 0_13 , upvalues : _ENV
+function AircraftElevatorLine:OnPetRemove(pet)
   if #self._movers == 0 then
-    return 
+    return
   end
-  local target = nil
-  for idx,mover in ipairs(self._movers) do
+  local target
+  for idx, mover in ipairs(self._movers) do
     if mover:CheckPet(pet) then
       target = idx
       break
     end
   end
-  do
-    if target then
-      AirLog("删除1个等电梯的星灵:", pet:TemplateID(), "，索引:", target, "，楼层:", self._floor)
-      ;
-      (table.remove)(self._movers, target)
-      if #self._movers > 0 then
-        for i = target, #self._movers do
-          local pos = (self._linePos)[i]
-          ;
-          ((self._movers)[i]):ResetIndex(i, pos)
-        end
+  if target then
+    AirLog("删除1个等电梯的星灵:", pet:TemplateID(), "，索引:", target, "，楼层:", self._floor)
+    table.remove(self._movers, target)
+    if #self._movers > 0 then
+      for i = target, #self._movers do
+        local pos = self._linePos[i]
+        self._movers[i]:ResetIndex(i, pos)
       end
     end
   end
 end
-
-

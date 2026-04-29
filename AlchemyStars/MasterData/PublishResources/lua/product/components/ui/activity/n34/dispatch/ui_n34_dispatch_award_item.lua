@@ -1,47 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/dispatch/ui_n34_dispatch_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN34DispatchAwardItem", UICustomWidget)
 UIN34DispatchAwardItem = UIN34DispatchAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN34DispatchAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN34DispatchAwardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchAwardItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN34DispatchAwardItem:InitWidget()
   self.qualitybg = self:GetUIComponent("Image", "qualitybg")
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
   self._atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchAwardItem.SetData = function(self, AwardData)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN34DispatchAwardItem:SetData(AwardData)
   if not AwardData then
-    return 
+    return
   end
   local id = AwardData[1]
   local count = AwardData[2]
-  local cfg = (Cfg.cfg_item)[id]
+  local cfg = Cfg.cfg_item[id]
   local icon = cfg.Icon
-  ;
-  (self.imgIcon):LoadImage(icon)
+  self.imgIcon:LoadImage(icon)
   local quality = cfg.Color
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.qualitybg).sprite = (self._atlas):GetSprite("spirit_shengji_se" .. quality)
-  ;
-  (self.txtCount):SetText(count)
+  self.qualitybg.sprite = self._atlas:GetSprite("spirit_shengji_se" .. quality)
+  self.txtCount:SetText(count)
 end
-
-

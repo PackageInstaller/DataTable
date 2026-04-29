@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/idol_concert/ui_n25_idol_concert.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolConcert", UIController)
 UIN25IdolConcert = UIN25IdolConcert
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolConcert.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolConcert:Constructor()
   self.bgSpine = "n25_g_beijing_spine_idle"
   self.otherSpine = "n25_g_banwu_spine_idle"
   self.frontSpine = "n25_g_caidai_spine_idle"
@@ -18,337 +11,237 @@ UIN25IdolConcert.Constructor = function(self)
   self.spineLength = 14500
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcert.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN25IdolConcert:OnShow(uiParams)
   self.currentTurn = uiParams[1]
-  self._lastBGMResName = (AudioHelperController.GetCurrentBgm)()
-  ;
-  (AudioHelperController.PlayBGM)(CriAudioIDConst.BGMN25Idol, AudioConstValue.BGMCrossFadeTime)
+  self._lastBGMResName = AudioHelperController.GetCurrentBgm()
+  AudioHelperController.PlayBGM(CriAudioIDConst.BGMN25Idol, AudioConstValue.BGMCrossFadeTime)
   if not self.currentTurn then
-    local info = (self.component):GetComponentInfo()
+    local info = self.component:GetComponentInfo()
     local break_info = info.break_info
     self.currentTurn = break_info.round_index
   end
-  do
-    local cfgs = (Cfg.cfg_n25_concert)({Turn = self.currentTurn})
-    ;
-    (Log.debug)("###[UIN25IdolConcert] OnShow ! id --> ", self.currentTurn)
-    self.cfg = cfgs[1]
-    self:GetComponents()
-    self:OnValue()
-  end
+  local cfgs = Cfg.cfg_n25_concert({
+    Turn = self.currentTurn
+  })
+  Log.debug("###[UIN25IdolConcert] OnShow ! id --> ", self.currentTurn)
+  self.cfg = cfgs[1]
+  self:GetComponents()
+  self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcert.GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN25IdolConcert:GetComponents()
   self.spine = self:GetUIComponent("SpineLoader", "spine")
   self.bgSpineLoader = self:GetUIComponent("SpineLoader", "bgSpine")
   self.frontSpineLoader = self:GetUIComponent("SpineLoader", "frontSpine")
   self.frontSpineLoaderGo = self:GetGameObject("frontSpine")
   self.otherSpines = {}
   local otherSpine1 = self:GetUIComponent("SpineLoader", "otherSpine1")
-  ;
-  (table.insert)(self.otherSpines, otherSpine1)
+  table.insert(self.otherSpines, otherSpine1)
   local otherSpine2 = self:GetUIComponent("SpineLoader", "otherSpine2")
-  ;
-  (table.insert)(self.otherSpines, otherSpine2)
+  table.insert(self.otherSpines, otherSpine2)
   local otherSpine3 = self:GetUIComponent("SpineLoader", "otherSpine3")
-  ;
-  (table.insert)(self.otherSpines, otherSpine3)
+  table.insert(self.otherSpines, otherSpine3)
   local otherSpine4 = self:GetUIComponent("SpineLoader", "otherSpine4")
-  ;
-  (table.insert)(self.otherSpines, otherSpine4)
+  table.insert(self.otherSpines, otherSpine4)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcert.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (CutsceneManager.ExcuteCutsceneOut)()
+function UIN25IdolConcert:OnValue()
+  CutsceneManager.ExcuteCutsceneOut()
   self:Play()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcert.LoadSpine = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for key,value in pairs(self.otherSpines) do
+function UIN25IdolConcert:LoadSpine()
+  for key, value in pairs(self.otherSpines) do
     value:LoadSpine(self.otherSpine)
   end
-  ;
-  (self.bgSpineLoader):LoadSpine(self.bgSpine)
-  ;
-  (self.frontSpineLoader):LoadSpine(self.frontSpine)
-  self.spineName = (self.cfg).Spine
-  ;
-  (self.spine):LoadSpine(self.spineName)
-  if (self.spine).CurrentSkeleton then
-    self.skeleton = (self.spine).CurrentSkeleton
+  self.bgSpineLoader:LoadSpine(self.bgSpine)
+  self.frontSpineLoader:LoadSpine(self.frontSpine)
+  self.spineName = self.cfg.Spine
+  self.spine:LoadSpine(self.spineName)
+  if self.spine.CurrentSkeleton then
+    self.skeleton = self.spine.CurrentSkeleton
   else
-    self.skeleton = (self.spine).CurrentMultiSkeleton
+    self.skeleton = self.spine.CurrentMultiSkeleton
   end
   if not self.skeleton then
-    (Log.fatal)("###[UIN25IdolConcert] skeleton is nil ! name --> ", self.spineName)
+    Log.fatal("###[UIN25IdolConcert] skeleton is nil ! name --> ", self.spineName)
   end
-  if (self.bgSpineLoader).CurrentSkeleton then
-    self.bgSkeleton = (self.bgSpineLoader).CurrentSkeleton
+  if self.bgSpineLoader.CurrentSkeleton then
+    self.bgSkeleton = self.bgSpineLoader.CurrentSkeleton
   else
-    self.bgSkeleton = (self.bgSpineLoader).CurrentMultiSkeleton
+    self.bgSkeleton = self.bgSpineLoader.CurrentMultiSkeleton
   end
   if not self.bgSkeleton then
-    (Log.fatal)("###[UIN25IdolConcert] bg skeleton is nil ! name --> ", self.bgSpine)
+    Log.fatal("###[UIN25IdolConcert] bg skeleton is nil ! name --> ", self.bgSpine)
   end
-  if (self.frontSpineLoader).CurrentSkeleton then
-    self.frontSkeleton = (self.frontSpineLoader).CurrentSkeleton
+  if self.frontSpineLoader.CurrentSkeleton then
+    self.frontSkeleton = self.frontSpineLoader.CurrentSkeleton
   else
-    self.frontSkeleton = (self.frontSpineLoader).CurrentMultiSkeleton
+    self.frontSkeleton = self.frontSpineLoader.CurrentMultiSkeleton
   end
   if not self.frontSkeleton then
-    (Log.fatal)("###[UIN25IdolConcert] front skeleton is nil ! name --> ", self.frontSpine)
+    Log.fatal("###[UIN25IdolConcert] front skeleton is nil ! name --> ", self.frontSpine)
   end
   self.otherSkeletons = {}
-  for key,value in pairs(self.otherSpines) do
-    local otherSkeleton = nil
+  for key, value in pairs(self.otherSpines) do
+    local otherSkeleton
     if value.CurrentSkeleton then
       otherSkeleton = value.CurrentSkeleton
     else
       otherSkeleton = value.CurrentMultiSkeleton
     end
     if not otherSkeleton then
-      (Log.fatal)("###[UIN25IdolConcert] other skeleton is nil ! name --> ", self.otherSpine)
+      Log.fatal("###[UIN25IdolConcert] other skeleton is nil ! name --> ", self.otherSpine)
     end
-    ;
-    (table.insert)(self.otherSkeletons, otherSkeleton)
+    table.insert(self.otherSkeletons, otherSkeleton)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcert.Play = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN25IdolConcert:Play()
   self:LoadSpine()
   self:PlaySpineAnim1()
   local yieldTime = self.spineLength
-  ;
-  ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_5_0 , upvalues : _ENV, self
-    (CutsceneManager.ExcuteCutsceneIn)("UIN25Idol_Common_Switch", function()
-      -- function num : 0_5_0_0 , upvalues : self
+  GameGlobal.Timer():AddEvent(yieldTime, function()
+    CutsceneManager.ExcuteCutsceneIn("UIN25Idol_Common_Switch", function()
       self:Result()
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcert.PlaySpineAnim1 = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self.frontSpineLoaderGo):SetActive(false)
-  local yieldTime = nil
+function UIN25IdolConcert:PlaySpineAnim1()
+  self.frontSpineLoaderGo:SetActive(false)
+  local yieldTime
   local tmpTime = self:SetSpineAnimation(self.skeleton, self.spineName, self.spineAnimName1)
-  if not yieldTime then
-    yieldTime = tmpTime
-  end
+  yieldTime = yieldTime or tmpTime
   local tmpTime = self:SetSpineAnimation(self.bgSkeleton, self.bgSpine, self.spineAnimName1)
-  if not yieldTime then
-    yieldTime = tmpTime
-  end
-  for key,value in pairs(self.otherSkeletons) do
+  yieldTime = yieldTime or tmpTime
+  for key, value in pairs(self.otherSkeletons) do
     local tmpTime = self:SetSpineAnimation(value, self.otherSpine, self.spineAnimName1)
-    if not yieldTime then
-      yieldTime = tmpTime
-    end
+    yieldTime = yieldTime or tmpTime
   end
   if yieldTime then
-    (Log.debug)("###[UIN25IdolConcert] PlaySpineAnim1 name:", self.spineAnimName1, " yieldTime:", yieldTime)
-    ;
-    ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_6_0 , upvalues : self
-    self:PlaySpineAnim2()
-  end
-)
+    Log.debug("###[UIN25IdolConcert] PlaySpineAnim1 name:", self.spineAnimName1, " yieldTime:", yieldTime)
+    GameGlobal.Timer():AddEvent(yieldTime, function()
+      self:PlaySpineAnim2()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcert.PlaySpineAnim2 = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self.frontSpineLoaderGo):SetActive(true)
-  local yieldTime = nil
+function UIN25IdolConcert:PlaySpineAnim2()
+  self.frontSpineLoaderGo:SetActive(true)
+  local yieldTime
   local tmpTime = self:SetSpineAnimation(self.skeleton, self.spineName, self.spineAnimName2)
-  if not yieldTime then
-    yieldTime = tmpTime
-  end
+  yieldTime = yieldTime or tmpTime
   local tmpTime = self:SetSpineAnimation(self.bgSkeleton, self.bgSpine, self.spineAnimName2)
-  if not yieldTime then
-    yieldTime = tmpTime
-  end
+  yieldTime = yieldTime or tmpTime
   local tmpTime = self:SetSpineAnimation(self.frontSkeleton, self.frontSpine, self.spineAnimName2)
-  if not yieldTime then
-    yieldTime = tmpTime
-  end
-  for key,value in pairs(self.otherSkeletons) do
+  yieldTime = yieldTime or tmpTime
+  for key, value in pairs(self.otherSkeletons) do
     local tmpTime = self:SetSpineAnimation(value, self.otherSpine, self.spineAnimName2)
-    if not yieldTime then
-      yieldTime = tmpTime
-    end
+    yieldTime = yieldTime or tmpTime
   end
   if yieldTime then
-    (Log.debug)("###[UIN25IdolConcert] PlaySpineAnim2 name:", self.spineAnimName2, " yieldTime:", yieldTime)
+    Log.debug("###[UIN25IdolConcert] PlaySpineAnim2 name:", self.spineAnimName2, " yieldTime:", yieldTime)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcert.PlaySpineAnim3 = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self.frontSpineLoaderGo):SetActive(false)
-  local yieldTime = nil
+function UIN25IdolConcert:PlaySpineAnim3()
+  self.frontSpineLoaderGo:SetActive(false)
+  local yieldTime
   local tmpTime = self:SetSpineAnimation(self.skeleton, self.spineName, self.spineAnimName3)
-  if not yieldTime then
-    yieldTime = tmpTime
-  end
+  yieldTime = yieldTime or tmpTime
   local tmpTime = self:SetSpineAnimation(self.bgSkeleton, self.bgSpine, self.spineAnimName3)
-  if not yieldTime then
-    yieldTime = tmpTime
-  end
-  for key,value in pairs(self.otherSkeletons) do
+  yieldTime = yieldTime or tmpTime
+  for key, value in pairs(self.otherSkeletons) do
     local tmpTime = self:SetSpineAnimation(value, self.otherSpine, self.spineAnimName3)
-    if not yieldTime then
-      yieldTime = tmpTime
-    end
+    yieldTime = yieldTime or tmpTime
   end
   if yieldTime then
-    (Log.debug)("###[UIN25IdolConcert] PlaySpineAnim3 name:", self.spineAnimName3, " yieldTime:", yieldTime)
+    Log.debug("###[UIN25IdolConcert] PlaySpineAnim3 name:", self.spineAnimName3, " yieldTime:", yieldTime)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcert.SetSpineAnimation = function(self, spineSke, spinename, spineAnim)
-  -- function num : 0_9 , upvalues : _ENV
-  local entry = nil
-  local playAniSpineFunc = function()
-    -- function num : 0_9_0 , upvalues : spineSke, entry, spineAnim
+function UIN25IdolConcert:SetSpineAnimation(spineSke, spinename, spineAnim)
+  local entry
+  
+  local function playAniSpineFunc()
     spineSke:Initialize(true)
-    entry = (spineSke.AnimationState):SetAnimation(0, spineAnim, false)
+    entry = spineSke.AnimationState:SetAnimation(0, spineAnim, false)
   end
-
+  
   local succ = pcall(playAniSpineFunc)
   if not succ then
-    (Log.error)("###[UIN25IdolConcert] set spine anim fail ! spine[", spinename, "] anim[", spineAnim, "]")
-    return 
+    Log.error("###[UIN25IdolConcert] set spine anim fail ! spine[", spinename, "] anim[", spineAnim, "]")
+    return
   end
   if not entry then
-    (Log.error)("###[UIN25IdolConcert] entry is nil ! spine[", spinename, "] anim[", spineAnim, "]")
-    return 
+    Log.error("###[UIN25IdolConcert] entry is nil ! spine[", spinename, "] anim[", spineAnim, "]")
+    return
   end
   local anim = entry.Animation
   local duration = anim.Duration
-  local yieldTime = (math.floor)(duration * 1000)
+  local yieldTime = math.floor(duration * 1000)
   return yieldTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcert.Result = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (CutsceneManager.ExcuteCutsceneIn)("UIN25Idol_Common_Switch", function()
-    -- function num : 0_10_0 , upvalues : self, _ENV
+function UIN25IdolConcert:Result()
+  CutsceneManager.ExcuteCutsceneIn("UIN25Idol_Common_Switch", function()
     self:ShowDialog("UIN25IdolConcertResult", true, self.currentTurn, 0, function()
-      -- function num : 0_10_0_0 , upvalues : self, _ENV
-      local type = (self.cfg).Type
+      local type = self.cfg.Type
       if type == 1 then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.N25IdolGameNextDay, true, false)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.N25IdolGameNextDay, true, false)
       end
       self:CloseDialog()
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcert.FinishEnding = function(self, id, callback)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.OnFinishEnding, self, id, callback)
+function UIN25IdolConcert:FinishEnding(id, callback)
+  GameGlobal.TaskManager():StartTask(self.OnFinishEnding, self, id, callback)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcert.OnFinishEnding = function(self, TT, id, callback)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN25IdolConcert:OnFinishEnding(TT, id, callback)
   self:Lock("UIN25IdolConcert:OnFinishEnding")
   local res = AsyncRequestRes:New()
-  ;
-  (Log.debug)("###[UIN25IdolConcert] HandleIdolComplateEnding id :", id)
-  ;
-  (self.component):HandleIdolComplateEnding(TT, res, id)
+  Log.debug("###[UIN25IdolConcert] HandleIdolComplateEnding id :", id)
+  self.component:HandleIdolComplateEnding(TT, res, id)
   self:UnLock("UIN25IdolConcert:OnFinishEnding")
-  local succ = nil
+  local succ
   if res:GetSucc() then
     succ = true
-    ;
-    (Log.debug)("###[UIN25IdolConcert] HandleIdolComplateEnding succ !")
+    Log.debug("###[UIN25IdolConcert] HandleIdolComplateEnding succ !")
   else
     succ = false
     local result = res:GetResult()
-    ;
-    (Log.fatal)("###[UIN25IdolConcert] HandleIdolComplateEnding fail ! result:", result)
+    Log.fatal("###[UIN25IdolConcert] HandleIdolComplateEnding fail ! result:", result)
   end
-  do
-    if callback then
-      callback(succ, res)
-    end
+  if callback then
+    callback(succ, res)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcert.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_13 , upvalues : _ENV
-  self._campaign = (UIActivityCampaign.New)()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+function UIN25IdolConcert:LoadDataOnEnter(TT, res, uiParams)
+  self._campaign = UIActivityCampaign.New()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_13_0
+    self._campaign:CheckErrorCode(res.m_result, function()
+    end, function()
+      self:SwitchState(UIStateType.UIMain)
+    end)
   end
-, function()
-    -- function num : 0_13_1 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIMain)
-  end
-)
-  end
-  self.component = (self._campaign):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+  self.component = self._campaign:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcert.CheckOptionCantClick = function(self, condition)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN25IdolConcert:CheckOptionCantClick(condition)
   local conditionTab = condition
-  for key,value in pairs(condition) do
-    if not (self.component):UI_IsFinishAgreedEvent(value) then
+  for key, value in pairs(condition) do
+    if not self.component:UI_IsFinishAgreedEvent(value) then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcert.OnHide = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  (AudioHelperController.PlayBGM)(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
+function UIN25IdolConcert:OnHide()
+  AudioHelperController.PlayBGM(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
 end
-
-

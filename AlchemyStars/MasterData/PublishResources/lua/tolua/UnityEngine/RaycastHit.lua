@@ -1,16 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/UnityEngine/RaycastHit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local rawget = rawget
-local setmetatable = setmetatable
-RaycastBits = {Collider = 1, Normal = 2, Point = 4, Rigidbody = 8, Transform = 16, ALL = 31}
-local RaycastBits = RaycastBits
+local rawget = _ENV.rawget
+local setmetatable = _ENV.setmetatable
+RaycastBits = {
+  Collider = 1,
+  Normal = 2,
+  Point = 4,
+  Rigidbody = 8,
+  Transform = 16,
+  ALL = 31
+}
+local RaycastBits = _ENV.RaycastBits
 local RaycastHit = {}
-local get = (tolua.initget)(RaycastHit)
-RaycastHit.__index = function(t, k)
-  -- function num : 0_0 , upvalues : rawget, RaycastHit, get
+local get = tolua.initget(RaycastHit)
+
+function RaycastHit.__index(t, k)
   local var = rawget(RaycastHit, k)
   if var == nil then
     var = rawget(get, k)
@@ -21,15 +23,20 @@ RaycastHit.__index = function(t, k)
   return var
 end
 
-RaycastHit.New = function(collider, distance, normal, point, rigidbody, transform)
-  -- function num : 0_1 , upvalues : setmetatable, RaycastHit
-  local hit = {collider = collider, distance = distance, normal = normal, point = point, rigidbody = rigidbody, transform = transform}
+function RaycastHit.New(collider, distance, normal, point, rigidbody, transform)
+  local hit = {
+    collider = collider,
+    distance = distance,
+    normal = normal,
+    point = point,
+    rigidbody = rigidbody,
+    transform = transform
+  }
   setmetatable(hit, RaycastHit)
   return hit
 end
 
-RaycastHit.Init = function(self, collider, distance, normal, point, rigidbody, transform)
-  -- function num : 0_2
+function RaycastHit:Init(collider, distance, normal, point, rigidbody, transform)
   self.collider = collider
   self.distance = distance
   self.normal = normal
@@ -38,21 +45,20 @@ RaycastHit.Init = function(self, collider, distance, normal, point, rigidbody, t
   self.transform = transform
 end
 
-RaycastHit.Get = function(self)
-  -- function num : 0_3
+function RaycastHit:Get()
   return self.collider, self.distance, self.normal, self.point, self.rigidbody, self.transform
 end
 
-RaycastHit.Destroy = function(self)
-  -- function num : 0_4
+function RaycastHit:Destroy()
   self.collider = nil
   self.rigidbody = nil
   self.transform = nil
 end
 
-RaycastHit.GetMask = function(...)
-  -- function num : 0_5 , upvalues : RaycastBits
-  local arg = {...}
+function RaycastHit.GetMask(...)
+  local arg = {
+    ...
+  }
   local value = 0
   for i = 1, #arg do
     local n = RaycastBits[arg[i]] or 0
@@ -66,9 +72,6 @@ RaycastHit.GetMask = function(...)
   return value
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R5 in 'UnsetPending'
-
 UnityEngine.RaycastHit = RaycastHit
 setmetatable(RaycastHit, RaycastHit)
 return RaycastHit
-

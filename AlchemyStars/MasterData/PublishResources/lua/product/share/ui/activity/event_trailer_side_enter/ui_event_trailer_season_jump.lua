@@ -1,35 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/event_trailer_side_enter/ui_event_trailer_season_jump.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEventTrailerSeasonHelper", Object)
 UIEventTrailerSeasonHelper = UIEventTrailerSeasonHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEventTrailerSeasonHelper.Jump = function(jumpID)
-  -- function num : 0_0 , upvalues : _ENV
+function UIEventTrailerSeasonHelper.Jump(jumpID)
   if jumpID == UIJumpType.UI_JumpSeasonOnceMission then
-    local seasonModule = (GameGlobal.GetModule)(SeasonModule)
-    ;
-    (seasonModule:UIModule()):SetDefaultDialog("UISeasonOnceMission")
-    ;
-    ((GameGlobal.GetUIModule)(SeasonModule)):EnterCurrentSeasonMainUI()
-  else
-    do
-      if jumpID == UIJumpType.UI_JumpSeasonMap then
-        ((GameGlobal.GetUIModule)(SeasonModule)):EnterCurrentSeasonMainUI()
-      else
-        if jumpID == UIJumpType.UI_JumpSeasonMainKV then
-          (UISeasonHelper.ShowCurSeasonMainController)()
-        else
-          if jumpID == UIJumpType.UI_JumpSeasonMazeMainKV then
-            ((GameGlobal.UIStateManager)()):ShowDialog("UISeasonMazeEnterController")
-          end
-        end
-      end
-    end
+    local seasonModule = GameGlobal.GetModule(SeasonModule)
+    seasonModule:UIModule():SetDefaultDialog("UISeasonOnceMission")
+    GameGlobal.GetUIModule(SeasonModule):EnterCurrentSeasonMainUI()
+  elseif jumpID == UIJumpType.UI_JumpSeasonMap then
+    GameGlobal.GetUIModule(SeasonModule):EnterCurrentSeasonMainUI()
+  elseif jumpID == UIJumpType.UI_JumpSeasonMainKV then
+    UISeasonHelper.ShowCurSeasonMainController()
+  elseif jumpID == UIJumpType.UI_JumpSeasonMazeMainKV then
+    GameGlobal.UIStateManager():ShowDialog("UISeasonMazeEnterController")
   end
 end
-
-

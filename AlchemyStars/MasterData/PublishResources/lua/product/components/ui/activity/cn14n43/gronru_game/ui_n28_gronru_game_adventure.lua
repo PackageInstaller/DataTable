@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/gronru_game/ui_n28_gronru_game_adventure.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28GronruGameAdventure", UICustomWidget)
 UIN28GronruGameAdventure = UIN28GronruGameAdventure
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28GronruGameAdventure.Constructor = function(self)
-  -- function num : 0_0
+function UIN28GronruGameAdventure:Constructor()
   self._pageGameCnt = 0
   self._pageCommunityCnt = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventure.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN28GronruGameAdventure:OnShow(uiParams)
   self._uiPageContent = self:GetUIComponent("UISelectObjectPath", "uiPageContent")
   self._uiSteamMyGame = self:GetUIComponent("RectTransform", "uiSteamMyGame")
   self._uiSteamCommunity = self:GetUIComponent("RectTransform", "uiSteamCommunity")
@@ -24,54 +14,38 @@ UIN28GronruGameAdventure.OnShow = function(self, uiParams)
   self._uiErrorRoot = self:GetUIComponent("RectTransform", "uiError")
   self._uiForumRoot = self:GetUIComponent("RectTransform", "uiForum")
   self._uiForumContent = self:GetUIComponent("UISelectObjectPath", "uiForumContent")
-  self._redEntrance = (self:View()):GetUIComponent("UISelectObjectPath", "redEntrance")
+  self._redEntrance = self:View():GetUIComponent("UISelectObjectPath", "redEntrance")
   self._animation = self:GetUIComponent("Animation", "animation")
   self._againImage = self:GetUIComponent("RectTransform", "againImage")
-  ;
-  ((self._againImage).gameObject):SetActive(true)
+  self._againImage.gameObject:SetActive(true)
   self:CreatePagePool()
   self:CreateForumPool()
   self.CheckActivityOverFun = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventure.OnHide = function(self)
-  -- function num : 0_2
+function UIN28GronruGameAdventure:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventure.BtnEntranceOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  if self.CheckActivityOverFun ~= nil and (self.CheckActivityOverFun)() then
-    return 
+function UIN28GronruGameAdventure:BtnEntranceOnClick(go)
+  if self.CheckActivityOverFun ~= nil and self.CheckActivityOverFun() then
+    return
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BounceFolder)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BounceFolder)
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
     self:Lock("UIN28GronruGameAdventure:BtnEntranceOnClick")
-    ;
-    (self._animation):Play("UIN28GronruGameAdventureForum_btnEntrance_click")
+    self._animation:Play("UIN28GronruGameAdventureForum_btnEntrance_click")
     YIELD(TT, 367)
     self:CallUIMethod("UIN28GronruPlatform", "PlayAnimation", "UIN28GronruPlatform_out", 233, function()
-      -- function num : 0_3_0_0
-    end
-)
+    end)
     YIELD(TT, 233)
     self:UnLock("UIN28GronruGameAdventure:BtnEntranceOnClick")
     self:ShowDialog(UIStateType.UIN28GronruGameFlash)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventure.ResetCellSize = function(self, go, cellSize)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN28GronruGameAdventure:ResetCellSize(go, cellSize)
   if go == nil then
-    return 
+    return
   end
   local rt = go.transform
   rt.pivot = Vector2.one * 0.5
@@ -82,14 +56,11 @@ UIN28GronruGameAdventure.ResetCellSize = function(self, go, cellSize)
   rt.anchoredPosition = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventure.CreatePagePool = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN28GronruGameAdventure:CreatePagePool()
   self._pagePool = {}
-  local allPage = (Cfg.cfg_n28_gronru_adventure_page)({})
-  for k,v in pairs(allPage) do
-    (table.insert)(self._pagePool, v)
+  local allPage = Cfg.cfg_n28_gronru_adventure_page({})
+  for k, v in pairs(allPage) do
+    table.insert(self._pagePool, v)
     if self._defaultPage == nil and v.OpenType == UIN28GronruPlatformType.Adventure_Page_Entrance then
       self._defaultPage = v
     end
@@ -100,186 +71,138 @@ UIN28GronruGameAdventure.CreatePagePool = function(self)
       self._pageCommunityCnt = self._pageCommunityCnt + 1
     end
   end
-  ;
-  (table.sort)(self._pagePool, function(a, b)
-    -- function num : 0_5_0
-    if a.SteamType >= b.SteamType then
-      do return a.SteamType == b.SteamType end
-      do return a.ID < b.ID end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  table.sort(self._pagePool, function(a, b)
+    if a.SteamType ~= b.SteamType then
+      return a.SteamType < b.SteamType
     end
-  end
-)
+    return a.ID < b.ID
+  end)
   if self._defaultPage == nil then
-    self._defaultPage = (self._pagePool)[1]
+    self._defaultPage = self._pagePool[1]
   end
-  self._pageUiPool1 = (self._uiPageContent):SpawnObjects("UIN28GronruGameAdventurePage", self._pageGameCnt)
-  ;
-  (self._uiSteamCommunity):SetAsLastSibling()
-  self._pageUiPool2 = (self._uiPageContent):SpawnObjects("UIN28GronruGameAdventurePage", self._pageGameCnt + self._pageCommunityCnt)
+  self._pageUiPool1 = self._uiPageContent:SpawnObjects("UIN28GronruGameAdventurePage", self._pageGameCnt)
+  self._uiSteamCommunity:SetAsLastSibling()
+  self._pageUiPool2 = self._uiPageContent:SpawnObjects("UIN28GronruGameAdventurePage", self._pageGameCnt + self._pageCommunityCnt)
   for i = 1, self._pageGameCnt do
-    (table.remove)(self._pageUiPool2, 1)
+    table.remove(self._pageUiPool2, 1)
   end
-  for k,v in pairs(self._pageUiPool1) do
+  for k, v in pairs(self._pageUiPool1) do
     self:ResetCellSize(v:GetGameObject(), Vector2(540, 102))
   end
-  for k,v in pairs(self._pageUiPool2) do
+  for k, v in pairs(self._pageUiPool2) do
     self:ResetCellSize(v:GetGameObject(), Vector2(540, 102))
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventure.CreateForumPool = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN28GronruGameAdventure:CreateForumPool()
   self._forumPool = {}
-  local allForum = (Cfg.cfg_n28_gronru_adventure_forum)({})
-  for k,v in pairs(allForum) do
-    (table.insert)(self._forumPool, v)
+  local allForum = Cfg.cfg_n28_gronru_adventure_forum({})
+  for k, v in pairs(allForum) do
+    table.insert(self._forumPool, v)
   end
-  ;
-  (table.sort)(self._forumPool, function(a, b)
-    -- function num : 0_6_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._forumPool, function(a, b)
+    return a.ID < b.ID
+  end)
   local dataCount = #self._forumPool
-  self._forumUiPool = (self._uiForumContent):SpawnObjects("UIN28GronruGameAdventureForum", dataCount)
+  self._forumUiPool = self._uiForumContent:SpawnObjects("UIN28GronruGameAdventureForum", dataCount)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventure.Flush = function(self)
-  -- function num : 0_7
+function UIN28GronruGameAdventure:Flush()
   self:FlushPage()
   self:FlushForum()
   self:FlushRedEntrance()
   self:OpenPage(self._defaultPage, true, true)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventure.FlushPage = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN28GronruGameAdventure:FlushPage()
   local idGame = 1
   local idCommunity = 1
-  for k,v in pairs(self._pagePool) do
-    do
-      if v.SteamType == UIN28GronruPlatformType.Adventure_Steam_Game then
-        local ui = (self._pageUiPool1)[idGame]
-        ui:Flush(self, v)
-        idGame = idGame + 1
-      end
-      do
-        if v.SteamType == UIN28GronruPlatformType.Adventure_Steam_Community then
-          local ui = (self._pageUiPool2)[idCommunity]
-          ui:Flush(self, v)
-          idCommunity = idCommunity + 1
-        end
-        -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+  for k, v in pairs(self._pagePool) do
+    if v.SteamType == UIN28GronruPlatformType.Adventure_Steam_Game then
+      local ui = self._pageUiPool1[idGame]
+      ui:Flush(self, v)
+      idGame = idGame + 1
+    end
+    if v.SteamType == UIN28GronruPlatformType.Adventure_Steam_Community then
+      local ui = self._pageUiPool2[idCommunity]
+      ui:Flush(self, v)
+      idCommunity = idCommunity + 1
     end
   end
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : _ENV, self
     YIELD(TT)
     YIELD(TT)
-    ;
-    (((UnityEngine.UI).LayoutRebuilder).MarkLayoutForRebuild)((self._uiPageContent).transform)
-  end
-)
+    UnityEngine.UI.LayoutRebuilder.MarkLayoutForRebuild(self._uiPageContent.transform)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventure.OpenPage = function(self, cfgPage, switchPage, switchContent)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN28GronruGameAdventure:OpenPage(cfgPage, switchPage, switchContent)
   if switchPage then
     if cfgPage.OpenType == UIN28GronruPlatformType.Adventure_Page_Entrance then
-      local defaultProject = (self:RootUIOwner()):GetDefaultProject()
-      ;
-      (self:RootUIOwner()):BrowserPath(false, (StringTable.Get)(defaultProject.Name))
+      local defaultProject = self:RootUIOwner():GetDefaultProject()
+      self:RootUIOwner():BrowserPath(false, StringTable.Get(defaultProject.Name))
     else
-      do
-        ;
-        (self:RootUIOwner()):BrowserPath(false, (StringTable.Get)(cfgPage.Name))
-        for k,v in pairs(self._pageUiPool1) do
-          v:SetHighlight((v:GetCfg()).ID == cfgPage.ID)
-        end
-        for k,v in pairs(self._pageUiPool2) do
-          v:SetHighlight((v:GetCfg()).ID == cfgPage.ID)
-        end
-        if cfgPage.OpenType ~= UIN28GronruPlatformType.Adventure_Page_Error then
-          ((self._uiErrorRoot).gameObject):SetActive(not switchContent)
-          ;
-          ((self._uiEntranceRoot).gameObject):SetActive(cfgPage.OpenType == UIN28GronruPlatformType.Adventure_Page_Entrance)
-          ;
-          ((self._uiForumRoot).gameObject):SetActive(cfgPage.OpenType == UIN28GronruPlatformType.Adventure_Page_Forum)
-          ;
-          (self._animation):Play("UIN28GronruGameAdventure_uiEntrance_in")
-          -- DECOMPILER ERROR: 9 unprocessed JMP targets
-        end
-      end
+      self:RootUIOwner():BrowserPath(false, StringTable.Get(cfgPage.Name))
     end
+    for k, v in pairs(self._pageUiPool1) do
+      v:SetHighlight(v:GetCfg().ID == cfgPage.ID)
+    end
+    for k, v in pairs(self._pageUiPool2) do
+      v:SetHighlight(v:GetCfg().ID == cfgPage.ID)
+    end
+  end
+  if switchContent then
+    self._uiErrorRoot.gameObject:SetActive(cfgPage.OpenType == UIN28GronruPlatformType.Adventure_Page_Error)
+    self._uiEntranceRoot.gameObject:SetActive(cfgPage.OpenType == UIN28GronruPlatformType.Adventure_Page_Entrance)
+    self._uiForumRoot.gameObject:SetActive(cfgPage.OpenType == UIN28GronruPlatformType.Adventure_Page_Forum)
+    self._animation:Play("UIN28GronruGameAdventure_uiEntrance_in")
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventure.OpenPageAnimation = function(self, cfgPage)
-  -- function num : 0_10 , upvalues : _ENV
-  local oldHighlight, newHighlight = nil, nil
-  for k,v in pairs(self._pageUiPool1) do
+function UIN28GronruGameAdventure:OpenPageAnimation(cfgPage)
+  local oldHighlight, newHighlight
+  for k, v in pairs(self._pageUiPool1) do
     if v:IsHighlight() then
       oldHighlight = v
     end
-    if (v:GetCfg()).ID == cfgPage.ID then
+    if v:GetCfg().ID == cfgPage.ID then
       newHighlight = v
     end
   end
-  for k,v in pairs(self._pageUiPool2) do
+  for k, v in pairs(self._pageUiPool2) do
     if v:IsHighlight() then
       oldHighlight = v
     end
-    if (v:GetCfg()).ID == cfgPage.ID then
+    if v:GetCfg().ID == cfgPage.ID then
       newHighlight = v
     end
   end
   if oldHighlight ~= nil then
     oldHighlight:ShowNormalHighlight(true, true)
     oldHighlight:PlayAnimation("UIN28GronruGameAdventurePage_out", 117, function()
-    -- function num : 0_10_0 , upvalues : self, cfgPage
-    self:OpenPage(cfgPage, false, true)
-  end
-)
+      self:OpenPage(cfgPage, false, true)
+    end)
   end
   if newHighlight ~= nil then
     newHighlight:ShowNormalHighlight(true, true)
     newHighlight:PlayAnimation("UIN28GronruGameAdventurePage_in", 233, function()
-    -- function num : 0_10_1 , upvalues : self, cfgPage
-    self:OpenPage(cfgPage, true, true)
-  end
-)
+      self:OpenPage(cfgPage, true, true)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventure.FlushForum = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN28GronruGameAdventure:FlushForum()
   local x = 0
   local y = 1
   local h = 0
-  local contentWidth = ((self._uiForumRoot).rect).width
-  for k,v in pairs(self._forumPool) do
-    local ui = (self._forumUiPool)[k]
+  local contentWidth = self._uiForumRoot.rect.width
+  for k, v in pairs(self._forumPool) do
+    local ui = self._forumUiPool[k]
     ui:Flush(self, v)
     local uiSize = ui:Size()
     x = x + uiSize.x
     h = uiSize.y
-    if x < contentWidth then
+    if contentWidth > x then
       ui:SetPos(x - uiSize.x * 0.5, -(y - 0.5) * uiSize.y)
     else
       x = uiSize.x
@@ -287,47 +210,32 @@ UIN28GronruGameAdventure.FlushForum = function(self)
       ui:SetPos(x - uiSize.x * 0.5, -(y - 0.5) * uiSize.y)
     end
   end
-  local uiEngine = (self._uiForumContent):Engine()
+  local uiEngine = self._uiForumContent:Engine()
   local trEngine = uiEngine.transform
   local sizeDelta = trEngine.sizeDelta
-  trEngine.sizeDelta = Vector2(sizeDelta.x, h * (y) + 10)
+  trEngine.sizeDelta = Vector2(sizeDelta.x, h * y + 10)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventure.FlushRedEntrance = function(self)
-  -- function num : 0_12
+function UIN28GronruGameAdventure:FlushRedEntrance()
   local missionComponent = self:CallUIMethod("UIN28GronruPlatform", "GetMissionComponent")
   local showRed = missionComponent:MissionCanRecvReward()
-  ;
-  ((self._redEntrance).gameObject):SetActive(showRed)
+  self._redEntrance.gameObject:SetActive(showRed)
   if showRed then
-    (self._redEntrance):SpawnOneObject("ManualLoad0")
+    self._redEntrance:SpawnOneObject("ManualLoad0")
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventure.BtnNewsOnClick = function(self, go)
-  -- function num : 0_13
-  if self.CheckActivityOverFun ~= nil and (self.CheckActivityOverFun)() then
-    return 
+function UIN28GronruGameAdventure:BtnNewsOnClick(go)
+  if self.CheckActivityOverFun ~= nil and self.CheckActivityOverFun() then
+    return
   end
   self:ShowDialog("UIN28GronruGameForumDetails")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventure.OnForumPreview = function(self, cfg)
-  -- function num : 0_14
+function UIN28GronruGameAdventure:OnForumPreview(cfg)
   self:ShowDialog("UIN28GronruGameForumDetails", cfg)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAdventure.SetCheckActivityOverFun = function(self, fun)
-  -- function num : 0_15
+function UIN28GronruGameAdventure:SetCheckActivityOverFun(fun)
   self.CheckActivityOverFun = fun
 end
-
-

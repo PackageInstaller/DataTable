@@ -1,57 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_puzzle_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayPuzzleInstruction", BaseInstruction)
 PlayPuzzleInstruction = PlayPuzzleInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayPuzzleInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayPuzzleInstruction:Constructor(paramList)
   self._gridEffectID = tonumber(paramList.gridEffectID)
   self._convertDelayTime = tonumber(paramList.convertDelayTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPuzzleInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayPuzzleInstruction:GetCacheResource()
   local t = {}
   if self._gridEffectID and self._gridEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._gridEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._gridEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPuzzleInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayPuzzleInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local result = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Puzzle)
   if result == nil then
-    (Log.fatal)("PlayPuzzleInstruction, result is nil.")
-    return 
+    Log.fatal("PlayPuzzleInstruction, result is nil.")
+    return
   end
   local pieceSvc = world:GetService("Piece")
   local boardRSvc = world:GetService("BoardRender")
   local exchangePieceTypeList = result:GetExchangePieceTypeList()
   local exchangePiecePosList = {}
-  for _,exchangeInfo in ipairs(exchangePieceTypeList) do
+  for _, exchangeInfo in ipairs(exchangePieceTypeList) do
     local oldPos = exchangeInfo[1]
     local oldPieceType = exchangeInfo[2]
     local newPos = exchangeInfo[3]
     local newPieceType = exchangeInfo[4]
     boardRSvc:ChangeGridEntity(newPieceType, oldPos)
     boardRSvc:ChangeGridEntity(oldPieceType, newPos)
-    if not (table.icontains)(exchangePiecePosList, oldPos) then
-      (table.insert)(exchangePiecePosList, oldPos)
+    if not table.icontains(exchangePiecePosList, oldPos) then
+      table.insert(exchangePiecePosList, oldPos)
     end
-    if not (table.icontains)(exchangePiecePosList, newPos) then
-      (table.insert)(exchangePiecePosList, newPos)
+    if not table.icontains(exchangePiecePosList, newPos) then
+      table.insert(exchangePiecePosList, newPos)
     end
   end
   local convertInfo = result:GetConvertInfo()
@@ -70,9 +60,7 @@ PlayPuzzleInstruction.DoInstruction = function(self, TT, casterEntity, phaseCont
   local playBuffSvc = world:GetService("PlayBuff")
   playBuffSvc:PlayBuffView(TT, nt)
   local trapServiceRender = world:GetService("TrapRender")
-  for _,pos in ipairs(exchangePiecePosList) do
+  for _, pos in ipairs(exchangePiecePosList) do
     trapServiceRender:OnGiveBackTrapToPiece(pos)
   end
 end
-
-

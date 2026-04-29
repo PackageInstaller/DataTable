@@ -1,136 +1,89 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/res_story_affinity.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ResStoryAffinity", Object)
 ResStoryAffinity = ResStoryAffinity
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ResStoryAffinity.Constructor = function(self)
-  -- function num : 0_0
+function ResStoryAffinity:Constructor()
   self:Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ResStoryAffinity.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ResStoryAffinity:Init()
   self._Res = {}
   self._ResOption = {}
   self._ResIds = {}
-  local cfg = (Cfg.cfg_story_affinity)({})
-  for k,v in pairs(cfg) do
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R7 in 'UnsetPending'
-
-    if (self._Res)[v.StoryID] == nil then
-      (self._Res)[v.StoryID] = {}
+  local cfg = Cfg.cfg_story_affinity({})
+  for k, v in pairs(cfg) do
+    if self._Res[v.StoryID] == nil then
+      self._Res[v.StoryID] = {}
     end
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
-    if ((self._Res)[v.StoryID])[v.ParagraphID] == nil then
-      ((self._Res)[v.StoryID])[v.ParagraphID] = {}
+    if self._Res[v.StoryID][v.ParagraphID] == nil then
+      self._Res[v.StoryID][v.ParagraphID] = {}
     end
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R7 in 'UnsetPending'
-
-    if (((self._Res)[v.StoryID])[v.ParagraphID])[v.SectionID] == nil then
-      (((self._Res)[v.StoryID])[v.ParagraphID])[v.SectionID] = {}
+    if self._Res[v.StoryID][v.ParagraphID][v.SectionID] == nil then
+      self._Res[v.StoryID][v.ParagraphID][v.SectionID] = {}
     end
-    -- DECOMPILER ERROR at PC61: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((((self._Res)[v.StoryID])[v.ParagraphID])[v.SectionID])[v.OptionID] = v
-    -- DECOMPILER ERROR at PC70: Confused about usage of register: R7 in 'UnsetPending'
-
-    if (self._ResOption)[v.StoryID] == nil then
-      (self._ResOption)[v.StoryID] = {}
+    self._Res[v.StoryID][v.ParagraphID][v.SectionID][v.OptionID] = v
+    if self._ResOption[v.StoryID] == nil then
+      self._ResOption[v.StoryID] = {}
     end
-    -- DECOMPILER ERROR at PC83: Confused about usage of register: R7 in 'UnsetPending'
-
-    if ((self._ResOption)[v.StoryID])[v.ParagraphID] == nil then
-      ((self._ResOption)[v.StoryID])[v.ParagraphID] = {}
+    if self._ResOption[v.StoryID][v.ParagraphID] == nil then
+      self._ResOption[v.StoryID][v.ParagraphID] = {}
     end
-    -- DECOMPILER ERROR at PC100: Confused about usage of register: R7 in 'UnsetPending'
-
-    if (((self._ResOption)[v.StoryID])[v.ParagraphID])[v.SectionID] == nil then
-      (((self._ResOption)[v.StoryID])[v.ParagraphID])[v.SectionID] = {}
+    if self._ResOption[v.StoryID][v.ParagraphID][v.SectionID] == nil then
+      self._ResOption[v.StoryID][v.ParagraphID][v.SectionID] = {}
     end
-    -- DECOMPILER ERROR at PC109: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((((self._ResOption)[v.StoryID])[v.ParagraphID])[v.SectionID])[v.ID] = v
-    -- DECOMPILER ERROR at PC118: Confused about usage of register: R7 in 'UnsetPending'
-
-    if (self._ResIds)[v.StoryID] == nil then
-      (self._ResIds)[v.StoryID] = {}
+    self._ResOption[v.StoryID][v.ParagraphID][v.SectionID][v.ID] = v
+    if self._ResIds[v.StoryID] == nil then
+      self._ResIds[v.StoryID] = {}
     end
-    -- DECOMPILER ERROR at PC123: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self._ResIds)[v.StoryID])[v.ID] = v
+    self._ResIds[v.StoryID][v.ID] = v
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ResStoryAffinity.GetCfgID = function(self, StoryID, ParagraphID, SectionID, OptionID)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._Res)[StoryID] == nil then
-    (Log.error)("ResStoryAffinity:GetCfg StoryID error ", StoryID)
+function ResStoryAffinity:GetCfgID(StoryID, ParagraphID, SectionID, OptionID)
+  if self._Res[StoryID] == nil then
+    Log.error("ResStoryAffinity:GetCfg StoryID error ", StoryID)
     return nil
   end
-  if ((self._Res)[StoryID])[ParagraphID] == nil then
-    (Log.error)("ResStoryAffinity:GetCfg StoryID ParagraphID error ", StoryID, ParagraphID)
+  if self._Res[StoryID][ParagraphID] == nil then
+    Log.error("ResStoryAffinity:GetCfg StoryID ParagraphID error ", StoryID, ParagraphID)
     return nil
   end
-  if (((self._Res)[StoryID])[ParagraphID])[SectionID] == nil then
-    (Log.error)("ResStoryAffinity:GetCfg StoryID ParagraphID SectionID error ", StoryID, ParagraphID, SectionID)
+  if self._Res[StoryID][ParagraphID][SectionID] == nil then
+    Log.error("ResStoryAffinity:GetCfg StoryID ParagraphID SectionID error ", StoryID, ParagraphID, SectionID)
     return nil
   end
-  local cfg = ((((self._Res)[StoryID])[ParagraphID])[SectionID])[OptionID]
+  local cfg = self._Res[StoryID][ParagraphID][SectionID][OptionID]
   if cfg == nil then
-    (Log.error)("ResStoryAffinity:GetCfg StoryID ParagraphID SectionID OptionID error ", StoryID, ParagraphID, SectionID)
+    Log.error("ResStoryAffinity:GetCfg StoryID ParagraphID SectionID OptionID error ", StoryID, ParagraphID, SectionID)
     return nil
   end
   return cfg
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ResStoryAffinity.GetStoryIds = function(self, StoryID)
-  -- function num : 0_3
-  return (self._ResIds)[StoryID]
+function ResStoryAffinity:GetStoryIds(StoryID)
+  return self._ResIds[StoryID]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ResStoryAffinity.GetStoryOptionIds = function(self, StoryID, ParagraphID, SectionID)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._ResOption)[StoryID] == nil then
-    (Log.error)("ResStoryAffinity:GetStoryOptionIds StoryID error ", StoryID)
+function ResStoryAffinity:GetStoryOptionIds(StoryID, ParagraphID, SectionID)
+  if self._ResOption[StoryID] == nil then
+    Log.error("ResStoryAffinity:GetStoryOptionIds StoryID error ", StoryID)
     return nil
   end
-  if ((self._ResOption)[StoryID])[ParagraphID] == nil then
-    (Log.error)("ResStoryAffinity:GetStoryOptionIds StoryID ParagraphID error ", StoryID, ParagraphID)
+  if self._ResOption[StoryID][ParagraphID] == nil then
+    Log.error("ResStoryAffinity:GetStoryOptionIds StoryID ParagraphID error ", StoryID, ParagraphID)
     return nil
   end
-  if (((self._ResOption)[StoryID])[ParagraphID])[SectionID] == nil then
-    (Log.error)("ResStoryAffinity:GetStoryOptionIds StoryID ParagraphID SectionID error ", StoryID, ParagraphID, SectionID)
+  if self._ResOption[StoryID][ParagraphID][SectionID] == nil then
+    Log.error("ResStoryAffinity:GetStoryOptionIds StoryID ParagraphID SectionID error ", StoryID, ParagraphID, SectionID)
     return nil
   end
-  return (((self._ResOption)[StoryID])[ParagraphID])[SectionID]
+  return self._ResOption[StoryID][ParagraphID][SectionID]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ResStoryAffinity.GetStoryOptionIdsById = function(self, cfgID)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfg = (Cfg.cfg_story_affinity)[cfgID]
+function ResStoryAffinity:GetStoryOptionIdsById(cfgID)
+  local cfg = Cfg.cfg_story_affinity[cfgID]
   if cfg == nil then
-    (Log.error)("ResStoryAffinity:GetStoryOptionIdsById error ", cfgID)
+    Log.error("ResStoryAffinity:GetStoryOptionIdsById error ", cfgID)
     return nil
   end
   return self:GetStoryOptionIds(cfg.StoryID, cfg.ParagraphID, cfg.SectionID)
 end
-
-

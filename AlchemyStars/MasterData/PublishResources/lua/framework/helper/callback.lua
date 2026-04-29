@@ -1,39 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/helper/callback.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Callback", Object)
 Callback = Callback
 local unpack = table.unpack
 local maxn = table.maxn
--- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
 
-Callback.Constructor = function(self, id, func, ...)
-  -- function num : 0_0
+function Callback:Constructor(id, func, ...)
   self.id = id
   self.f = func
-  self.p = {...}
+  self.p = {
+    ...
+  }
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-Callback.GetID = function(self)
-  -- function num : 0_1
+function Callback:GetID()
   return self.id
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-Callback.Call = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV, unpack, maxn
+function Callback:Call(...)
   local func = self.f
   local params = {}
-  for k,v in ipairs(self.p) do
+  for k, v in ipairs(self.p) do
     params[#params + 1] = v
   end
-  local args = {...}
-  for k,v in ipairs(args) do
+  local args = {
+    ...
+  }
+  for k, v in ipairs(args) do
     params[#params + 1] = v
   end
   if func then
@@ -41,49 +32,38 @@ Callback.Call = function(self, ...)
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-Callback.CallHaveReturn = function(self, ...)
-  -- function num : 0_3 , upvalues : _ENV, unpack
+function Callback:CallHaveReturn(...)
   local func = self.f
   local params = {}
-  for k,v in ipairs(self.p) do
+  for k, v in ipairs(self.p) do
     params[#params + 1] = v
   end
-  local args = {...}
-  for k,v in ipairs(args) do
+  local args = {
+    ...
+  }
+  for k, v in ipairs(args) do
     params[#params + 1] = v
   end
   if func then
-    return func(unpack(params, 1, (table.maxn)(params)))
+    return func(unpack(params, 1, table.maxn(params)))
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-Callback.GetOoObject = function(self)
-  -- function num : 0_4
+function Callback:GetOoObject()
   local params = self.p
-  if params and #params > 0 then
+  if params and 0 < #params then
     return params[1]
   end
 end
 
 _class("EventCallback", Callback)
 EventCallback = EventCallback
--- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
 
-EventCallback.SetEventType = function(self, eventType)
-  -- function num : 0_5
+function EventCallback:SetEventType(eventType)
   self.eventType = eventType
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-EventCallback.GetEventType = function(self)
-  -- function num : 0_6
+function EventCallback:GetEventType()
   return self.eventType
 end
-
-

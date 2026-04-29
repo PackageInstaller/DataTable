@@ -1,67 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/player/fsm/state_bounce_player_down.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateBouncePlayerDown", StateBouncePlayerBase)
 StateBouncePlayerDown = StateBouncePlayerDown
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateBouncePlayerDown.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function StateBouncePlayerDown:OnEnter(TT, ...)
   self:Init()
   self:PlayAnim()
   if BounceDebug.ShowObjRect then
     self:ShowDebugRect()
   end
-  self.viewBehavior = (self.player):GetBehavior(BouncePlayerBeHaviorView:Name())
+  self.viewBehavior = self.player:GetBehavior(BouncePlayerBeHaviorView:Name())
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerDown.OnExit = function(self, TT)
-  -- function num : 0_1
+function StateBouncePlayerDown:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerDown.OnJump = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local duration = (self.bounceData).durationMs
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self.playerData):ChecAirkAttackCD(duration, true) then
-    (self.playerData).curSpeed = (self.playerData).airJumpSpeed
-    ;
-    (self.player):ChgPlayerState(StateBouncePlayer.JumpAttack)
+function StateBouncePlayerDown:OnJump()
+  local duration = self.bounceData.durationMs
+  if self.playerData:ChecAirkAttackCD(duration, true) then
+    self.playerData.curSpeed = self.playerData.airJumpSpeed
+    self.player:ChgPlayerState(StateBouncePlayer.JumpAttack)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerDown.OnAttack = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (self.playerData).accDownSpeed < (self.playerData).curSpeed then
-    (self.playerData).curSpeed = (self.playerData).accDownSpeed
+function StateBouncePlayerDown:OnAttack()
+  if self.playerData.curSpeed > self.playerData.accDownSpeed then
+    self.playerData.curSpeed = self.playerData.accDownSpeed
   end
-  ;
-  (self.player):ChgPlayerState(StateBouncePlayer.AccDown)
+  self.player:ChgPlayerState(StateBouncePlayer.AccDown)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerDown.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_4
-  (self.player):HandleMove(deltaTimeMS, true)
+function StateBouncePlayerDown:OnUpdate(deltaTimeMS)
+  self.player:HandleMove(deltaTimeMS, true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerDown.GetStateType = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function StateBouncePlayerDown:GetStateType()
   return StateBouncePlayer.Down
 end
-
-

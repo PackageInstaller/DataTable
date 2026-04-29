@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_play_voice.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicPlayVoice", BuffLogicBase)
 BuffLogicPlayVoice = BuffLogicPlayVoice
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicPlayVoice.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicPlayVoice:Constructor(buffInstance, logicParam)
   self._audioID = tonumber(logicParam.audioID)
   local audioType = logicParam.audioType
   if audioType == nil then
@@ -19,11 +12,9 @@ BuffLogicPlayVoice.Constructor = function(self, buffInstance, logicParam)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicPlayVoice.DoLogic = function(self)
-  -- function num : 0_1
-  return {audioType = self._audioType, audioID = self._audioID}
+function BuffLogicPlayVoice:DoLogic()
+  return {
+    audioType = self._audioType,
+    audioID = self._audioID
+  }
 end
-
-

@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_common_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillCommonParam", Object)
 SkillCommonParam = SkillCommonParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillCommonParam.Constructor = function(self, effectID, effectdelay)
-  -- function num : 0_0
+function SkillCommonParam:Constructor(effectID, effectdelay)
   self._effectID = effectID
   self._effectdelay = effectdelay
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillCommonParam.GetStartDelayTime = function(self)
-  -- function num : 0_1
+function SkillCommonParam:GetStartDelayTime()
   return self._effectdelay
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillCommonParam.GetSkillEffectID = function(self)
-  -- function num : 0_2
+function SkillCommonParam:GetSkillEffectID()
   return self._effectID
 end
-
-

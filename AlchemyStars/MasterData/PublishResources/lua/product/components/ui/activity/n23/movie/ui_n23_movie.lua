@@ -1,144 +1,98 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n23/movie/ui_n23_movie.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN23Movie", UIController)
 UIN23Movie = UIN23Movie
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN23Movie.Constructor = function(self, ui_root_transform)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN23Movie:Constructor(ui_root_transform)
   self._isInHomeland = false
   self._callback = nil
   self._atlas = self:GetAsset("UIN23.spriteatlas", LoadType.SpriteAtlas)
-  self._campaign_module = (GameGlobal.GetModule)(CampaignModule)
+  self._campaign_module = GameGlobal.GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Movie.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN23Movie:OnShow(uiParams)
   self._isInHomeland = uiParams[1]
   self._callback = uiParams[2]
   if self._isInHomeland then
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self
-    self:RemoveRed(TT)
-  end
-)
+    GameGlobal.TaskManager():StartTask(function(TT)
+      self:RemoveRed(TT)
+    end)
   end
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Movie.RemoveRed = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN23Movie:RemoveRed(TT)
   local res = AsyncRequestRes:New()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N23, ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN)
-  local component = (self._campaign):GetComponent(ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N23, ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN)
+  local component = self._campaign:GetComponent(ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN)
   component:SetPrefsComponentNew("N19TaskComp")
   component:SetDB(13)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Movie.OnHide = function(self)
-  -- function num : 0_3
+function UIN23Movie:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Movie.InitWidget = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN23Movie:InitWidget()
   self._movieContent = self:GetUIComponent("UILocalizationText", "movieContent")
   self._goBtn = self:GetUIComponent("Image", "goBtn")
   self._rewardContent = self:GetUIComponent("UISelectObjectPath", "rewardContent")
   self._typeTitle = self:GetUIComponent("UILocalizationText", "typeTitle")
   self._bottomBG = self:GetGameObject("bottomBG")
-  ;
-  (self._movieContent):SetText((StringTable.Get)("str_movie_campaign_intro"))
-  local cfg = (Cfg.cfg_global)({})
-  local rewards = (cfg.homeland_movie_task_reward).ArrayValue
-  local len = (table.count)(rewards)
+  self._movieContent:SetText(StringTable.Get("str_movie_campaign_intro"))
+  local cfg = Cfg.cfg_global({})
+  local rewards = cfg.homeland_movie_task_reward.ArrayValue
+  local len = table.count(rewards)
   local index = 1
-  self._widgets = (self._rewardContent):SpawnObjects("UIItemHomeland", len)
-  for i,v in pairs(rewards) do
+  self._widgets = self._rewardContent:SpawnObjects("UIItemHomeland", len)
+  for i, v in pairs(rewards) do
     local rew = {}
     rew.assetid = v
     rew.count = nil
-    ;
-    ((self._widgets)[index]):Flush(rew)
+    self._widgets[index]:Flush(rew)
     index = index + 1
   end
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R5 in 'UnsetPending'
-
   if self._isInHomeland then
-    (self._goBtn).sprite = (self._atlas):GetSprite("dy_kpb_btn02")
-    ;
-    (self._typeTitle):SetText((StringTable.Get)("str_movie_inhomeland"))
-    -- DECOMPILER ERROR at PC85: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._typeTitle).color = Color(0.45098039215686, 0.45098039215686, 0.45098039215686)
-    ;
-    (self._bottomBG):SetActive(true)
-    -- DECOMPILER ERROR at PC97: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._goBtn).color = Color(0.45098039215686, 0.45098039215686, 0.45098039215686, 0)
+    self._goBtn.sprite = self._atlas:GetSprite("dy_kpb_btn02")
+    self._typeTitle:SetText(StringTable.Get("str_movie_inhomeland"))
+    self._typeTitle.color = Color(0.45098039215686275, 0.45098039215686275, 0.45098039215686275)
+    self._bottomBG:SetActive(true)
+    self._goBtn.color = Color(0.45098039215686275, 0.45098039215686275, 0.45098039215686275, 0)
   else
-    ;
-    (self._bottomBG):SetActive(false)
+    self._bottomBG:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Movie.CloseBtnOnClick = function(self)
-  -- function num : 0_5
+function UIN23Movie:CloseBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Movie.CheckBtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if self._isInHomeland and self._callback then
-    (self._callback)()
+function UIN23Movie:CheckBtnOnClick()
+  if self._isInHomeland then
+    if self._callback then
+      self._callback()
+    end
+  else
+    self:ShowDialog("UIHomelandStoryTaskSimpleController", 1, ECampaignType.CAMPAIGN_TYPE_N23, ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN)
   end
-  self:ShowDialog("UIHomelandStoryTaskSimpleController", 1, ECampaignType.CAMPAIGN_TYPE_N23, ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Movie.GoBtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN23Movie:GoBtnOnClick()
   if self._isInHomeland then
-    return 
+    return
   else
     self._functionId = 34
-    local functionLockCfg = (Cfg.cfg_module_unlock)[self._functionId]
+    local functionLockCfg = Cfg.cfg_module_unlock[self._functionId]
     if not functionLockCfg then
-      (Log.debug)("don\'t have function config")
-      return 
+      Log.debug("don't have function config")
+      return
     end
-    local module = (GameGlobal.GetModule)(RoleModule)
-    do
-      if module:CheckModuleUnlock(self._functionId) == false then
-        local cfg = (Cfg.cfg_module_unlock)[self._functionId]
-        if cfg then
-          (ToastManager.ShowToast)((StringTable.Get)(cfg.Tips))
-        end
-        return 
+    local module = GameGlobal.GetModule(RoleModule)
+    if module:CheckModuleUnlock(self._functionId) == false then
+      local cfg = Cfg.cfg_module_unlock[self._functionId]
+      if cfg then
+        ToastManager.ShowToast(StringTable.Get(cfg.Tips))
       end
-      ;
-      (((GameGlobal.GetModule)(HomelandModule)):GetUIModule()):LoadHomeland()
+      return
     end
+    GameGlobal.GetModule(HomelandModule):GetUIModule():LoadHomeland()
   end
 end
-
-

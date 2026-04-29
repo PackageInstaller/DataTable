@@ -1,175 +1,423 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/role/cfg_role_bgm_lock_condition.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ConditionParam = 2, LockDesc = 3}
+local key = {
+  ID = 1,
+  ConditionParam = 2,
+  LockDesc = 3
+}
 local config = {
-{1, "2,1,4001070", "str_role_head_image_lock_condition_1"}
-, 
-{2, "2,1,4001130", "str_role_head_image_lock_condition_2"}
-, 
-{3, "700,100,0,0", "str_role_head_image_lock_condition_3"}
-, 
-{4, "302,1,8", "str_role_head_image_lock_condition_4"}
-, 
-{5, "6,1,4500012", "str_role_head_image_lock_condition_5"}
-, 
-{6, "501,3000000,3000002", "str_role_head_image_lock_condition_6"}
-, 
-{7, "800,7", "str_role_head_image_lock_condition_7"}
-, 
-{8, "1,28", "str_role_head_image_lock_condition_8"}
-, 
-{9, "1,30", "str_role_head_image_lock_condition_9"}
-, 
-{10, "314,1200501,6", "str_role_head_image_lock_condition_haogan6_1200501"}
-, 
-{11, "314,1300221,6", "str_role_head_image_lock_condition_haogan6_1300221"}
-, 
-{12, "314,1300461,6", "str_role_head_image_lock_condition_haogan6_1300461"}
-, 
-{13, "314,1300471,6", "str_role_head_image_lock_condition_haogan6_1300471"}
-, 
-{14, "314,1300491,6", "str_role_head_image_lock_condition_haogan6_1300491"}
-, 
-{15, "314,1300511,6", "str_role_head_image_lock_condition_haogan6_1300511"}
-, 
-{16, "314,1300521,6", "str_role_head_image_lock_condition_haogan6_1300521"}
-, 
-{17, "314,1300531,6", "str_role_head_image_lock_condition_haogan6_1300531"}
-, 
-{18, "314,1400071,6", "str_role_head_image_lock_condition_haogan6_1400071"}
-, 
-{19, "314,1400081,6", "str_role_head_image_lock_condition_haogan6_1400081"}
-, 
-{20, "314,1400151,6", "str_role_head_image_lock_condition_haogan6_1400151"}
-, 
-{21, "314,1400171,6", "str_role_head_image_lock_condition_haogan6_1400171"}
-, 
-{22, "314,1400321,6", "str_role_head_image_lock_condition_haogan6_1400321"}
-, 
-{23, "314,1400351,6", "str_role_head_image_lock_condition_haogan6_1400351"}
-, 
-{24, "314,1400401,6", "str_role_head_image_lock_condition_haogan6_1400401"}
-, 
-{25, "314,1400411,6", "str_role_head_image_lock_condition_haogan6_1400411"}
-, 
-{26, "314,1400441,6", "str_role_head_image_lock_condition_haogan6_1400441"}
-, 
-{27, "314,1400481,6", "str_role_head_image_lock_condition_haogan6_1400481"}
-, 
-{28, "314,1500091,6", "str_role_head_image_lock_condition_haogan6_1500091"}
-, 
-{29, "314,1500121,6", "str_role_head_image_lock_condition_haogan6_1500121"}
-, 
-{30, "314,1500131,6", "str_role_head_image_lock_condition_haogan6_1500131"}
-, 
-{31, "314,1500161,6", "str_role_head_image_lock_condition_haogan6_1500161"}
-, 
-{32, "314,1500181,6", "str_role_head_image_lock_condition_haogan6_1500181"}
-, 
-{33, "314,1500211,6", "str_role_head_image_lock_condition_haogan6_1500211"}
-, 
-{34, "314,1500241,6", "str_role_head_image_lock_condition_haogan6_1500241"}
-, 
-{35, "314,1500331,6", "str_role_head_image_lock_condition_haogan6_1500331"}
-, 
-{36, "314,1500341,6", "str_role_head_image_lock_condition_haogan6_1500341"}
-, 
-{37, "314,1500361,6", "str_role_head_image_lock_condition_haogan6_1500361"}
-, 
-{38, "314,1500371,6", "str_role_head_image_lock_condition_haogan6_1500371"}
-, 
-{39, "314,1600011,6", "str_role_head_image_lock_condition_haogan6_1600011"}
-, 
-{40, "314,1600021,6", "str_role_head_image_lock_condition_haogan6_1600021"}
-, 
-{41, "314,1600031,6", "str_role_head_image_lock_condition_haogan6_1600031"}
-, 
-{42, "314,1600041,6", "str_role_head_image_lock_condition_haogan6_1600041"}
-, 
-{43, "314,1600051,6", "str_role_head_image_lock_condition_haogan6_1600051"}
-, 
-{44, "314,1600061,6", "str_role_head_image_lock_condition_haogan6_1600061"}
-, 
-{45, "314,1600101,6", "str_role_head_image_lock_condition_haogan6_1600101"}
-, 
-{46, "314,1600111,6", "str_role_head_image_lock_condition_haogan6_1600111"}
-, 
-{47, "314,1600141,6", "str_role_head_image_lock_condition_haogan6_1600141"}
-, 
-{48, "314,1600191,6", "str_role_head_image_lock_condition_haogan6_1600191"}
-, 
-{49, "314,1600231,6", "str_role_head_image_lock_condition_haogan6_1600231"}
-, 
-{50, "314,1600251,6", "str_role_head_image_lock_condition_haogan6_1600251"}
-, 
-{51, "314,1600261,6", "str_role_head_image_lock_condition_haogan6_1600261"}
-, 
-{52, "314,1600281,6", "str_role_head_image_lock_condition_haogan6_1600281"}
-, 
-{53, "314,1600291,6", "str_role_head_image_lock_condition_haogan6_1600291"}
-, 
-{54, "314,1600301,6", "str_role_head_image_lock_condition_haogan6_1600301"}
-, 
-{55, "314,1600381,6", "str_role_head_image_lock_condition_haogan6_1600381"}
-, 
-{56, "314,1600391,6", "str_role_head_image_lock_condition_haogan6_1600391"}
-, 
-{57, "316,1001,8,1,1", "str_role_head_image_lock_condition_shili_1001"}
-, 
-{58, "316,1002,8,1,1", "str_role_head_image_lock_condition_shili_1002"}
-, 
-{59, "316,1003,8,1,1", "str_role_head_image_lock_condition_shili_1003"}
-, 
-{60, "316,1004,8,1,1", "str_role_head_image_lock_condition_shili_1004"}
-, 
-{61, "316,1005,8,1,1", "str_role_head_image_lock_condition_shili_1005"}
-, 
-{62, "316,1006,8,1,1", "str_role_head_image_lock_condition_shili_1006"}
-, 
-{63, "316,1007,8,1,1", "str_role_head_image_lock_condition_shili_1007"}
-, 
-{64, "316,1008,8,1,1", "str_role_head_image_lock_condition_shili_1008"}
-; 
-[91] = {91, "1,32", "str_role_head_image_lock_condition_91"}
-, 
-[10101] = {10101, "902,1400321,5", "str_role_head_image_lock_condition_role_10101"}
-, 
-[10102] = {10102, "907,3,1400321", "str_role_head_image_lock_condition_role_10102"}
-, 
-[10103] = {10103, "908,10202", "str_role_head_image_lock_condition_role_10103"}
-, 
-[10201] = {10201, "902,1400441,5", "str_role_head_image_lock_condition_role_10201"}
-, 
-[10202] = {10202, "907,3,1400441", "str_role_head_image_lock_condition_role_10202"}
-, 
-[10203] = {10203, "907,5,1400441", "str_role_head_image_lock_condition_role_10203"}
-, 
-[10301] = {10301, "902,1600231,5", "str_role_head_image_lock_condition_role_10301"}
-, 
-[10302] = {10302, "907,3,1600231", "str_role_head_image_lock_condition_role_10302"}
-, 
-[10303] = {10303, "908,20401", "str_role_head_image_lock_condition_role_10303"}
-, 
-[10401] = {10401, "902,1600281,5", "str_role_head_image_lock_condition_role_10401"}
-, 
-[10402] = {10402, "907,3,1600281", "str_role_head_image_lock_condition_role_10402"}
-, 
-[10403] = {10403, "907,5,1600281", "str_role_head_image_lock_condition_role_10403"}
-, 
-[10501] = {10501, "902,1600771,5", "str_role_head_image_lock_condition_role_10501"}
-, 
-[10502] = {10502, "907,3,1600771", "str_role_head_image_lock_condition_role_10502"}
-, 
-[10503] = {10503, "907,5,1600771", "str_role_head_image_lock_condition_role_10503"}
-, 
-[10601] = {10601, "902,1300461,5", "str_role_head_image_lock_condition_role_10601"}
-, 
-[10602] = {10602, "907,3,1300461", "str_role_head_image_lock_condition_role_10602"}
-, 
-[10603] = {10603, "907,5,1300461", "str_role_head_image_lock_condition_role_10603"}
+  {
+    1,
+    "2,1,4001070",
+    "str_role_head_image_lock_condition_1"
+  },
+  {
+    2,
+    "2,1,4001130",
+    "str_role_head_image_lock_condition_2"
+  },
+  {
+    3,
+    "700,100,0,0",
+    "str_role_head_image_lock_condition_3"
+  },
+  {
+    4,
+    "302,1,8",
+    "str_role_head_image_lock_condition_4"
+  },
+  {
+    5,
+    "6,1,4500012",
+    "str_role_head_image_lock_condition_5"
+  },
+  {
+    6,
+    "501,3000000,3000002",
+    "str_role_head_image_lock_condition_6"
+  },
+  {
+    7,
+    "800,7",
+    "str_role_head_image_lock_condition_7"
+  },
+  {
+    8,
+    "1,28",
+    "str_role_head_image_lock_condition_8"
+  },
+  {
+    9,
+    "1,30",
+    "str_role_head_image_lock_condition_9"
+  },
+  {
+    10,
+    "314,1200501,6",
+    "str_role_head_image_lock_condition_haogan6_1200501"
+  },
+  {
+    11,
+    "314,1300221,6",
+    "str_role_head_image_lock_condition_haogan6_1300221"
+  },
+  {
+    12,
+    "314,1300461,6",
+    "str_role_head_image_lock_condition_haogan6_1300461"
+  },
+  {
+    13,
+    "314,1300471,6",
+    "str_role_head_image_lock_condition_haogan6_1300471"
+  },
+  {
+    14,
+    "314,1300491,6",
+    "str_role_head_image_lock_condition_haogan6_1300491"
+  },
+  {
+    15,
+    "314,1300511,6",
+    "str_role_head_image_lock_condition_haogan6_1300511"
+  },
+  {
+    16,
+    "314,1300521,6",
+    "str_role_head_image_lock_condition_haogan6_1300521"
+  },
+  {
+    17,
+    "314,1300531,6",
+    "str_role_head_image_lock_condition_haogan6_1300531"
+  },
+  {
+    18,
+    "314,1400071,6",
+    "str_role_head_image_lock_condition_haogan6_1400071"
+  },
+  {
+    19,
+    "314,1400081,6",
+    "str_role_head_image_lock_condition_haogan6_1400081"
+  },
+  {
+    20,
+    "314,1400151,6",
+    "str_role_head_image_lock_condition_haogan6_1400151"
+  },
+  {
+    21,
+    "314,1400171,6",
+    "str_role_head_image_lock_condition_haogan6_1400171"
+  },
+  {
+    22,
+    "314,1400321,6",
+    "str_role_head_image_lock_condition_haogan6_1400321"
+  },
+  {
+    23,
+    "314,1400351,6",
+    "str_role_head_image_lock_condition_haogan6_1400351"
+  },
+  {
+    24,
+    "314,1400401,6",
+    "str_role_head_image_lock_condition_haogan6_1400401"
+  },
+  {
+    25,
+    "314,1400411,6",
+    "str_role_head_image_lock_condition_haogan6_1400411"
+  },
+  {
+    26,
+    "314,1400441,6",
+    "str_role_head_image_lock_condition_haogan6_1400441"
+  },
+  {
+    27,
+    "314,1400481,6",
+    "str_role_head_image_lock_condition_haogan6_1400481"
+  },
+  {
+    28,
+    "314,1500091,6",
+    "str_role_head_image_lock_condition_haogan6_1500091"
+  },
+  {
+    29,
+    "314,1500121,6",
+    "str_role_head_image_lock_condition_haogan6_1500121"
+  },
+  {
+    30,
+    "314,1500131,6",
+    "str_role_head_image_lock_condition_haogan6_1500131"
+  },
+  {
+    31,
+    "314,1500161,6",
+    "str_role_head_image_lock_condition_haogan6_1500161"
+  },
+  {
+    32,
+    "314,1500181,6",
+    "str_role_head_image_lock_condition_haogan6_1500181"
+  },
+  {
+    33,
+    "314,1500211,6",
+    "str_role_head_image_lock_condition_haogan6_1500211"
+  },
+  {
+    34,
+    "314,1500241,6",
+    "str_role_head_image_lock_condition_haogan6_1500241"
+  },
+  {
+    35,
+    "314,1500331,6",
+    "str_role_head_image_lock_condition_haogan6_1500331"
+  },
+  {
+    36,
+    "314,1500341,6",
+    "str_role_head_image_lock_condition_haogan6_1500341"
+  },
+  {
+    37,
+    "314,1500361,6",
+    "str_role_head_image_lock_condition_haogan6_1500361"
+  },
+  {
+    38,
+    "314,1500371,6",
+    "str_role_head_image_lock_condition_haogan6_1500371"
+  },
+  {
+    39,
+    "314,1600011,6",
+    "str_role_head_image_lock_condition_haogan6_1600011"
+  },
+  {
+    40,
+    "314,1600021,6",
+    "str_role_head_image_lock_condition_haogan6_1600021"
+  },
+  {
+    41,
+    "314,1600031,6",
+    "str_role_head_image_lock_condition_haogan6_1600031"
+  },
+  {
+    42,
+    "314,1600041,6",
+    "str_role_head_image_lock_condition_haogan6_1600041"
+  },
+  {
+    43,
+    "314,1600051,6",
+    "str_role_head_image_lock_condition_haogan6_1600051"
+  },
+  {
+    44,
+    "314,1600061,6",
+    "str_role_head_image_lock_condition_haogan6_1600061"
+  },
+  {
+    45,
+    "314,1600101,6",
+    "str_role_head_image_lock_condition_haogan6_1600101"
+  },
+  {
+    46,
+    "314,1600111,6",
+    "str_role_head_image_lock_condition_haogan6_1600111"
+  },
+  {
+    47,
+    "314,1600141,6",
+    "str_role_head_image_lock_condition_haogan6_1600141"
+  },
+  {
+    48,
+    "314,1600191,6",
+    "str_role_head_image_lock_condition_haogan6_1600191"
+  },
+  {
+    49,
+    "314,1600231,6",
+    "str_role_head_image_lock_condition_haogan6_1600231"
+  },
+  {
+    50,
+    "314,1600251,6",
+    "str_role_head_image_lock_condition_haogan6_1600251"
+  },
+  {
+    51,
+    "314,1600261,6",
+    "str_role_head_image_lock_condition_haogan6_1600261"
+  },
+  {
+    52,
+    "314,1600281,6",
+    "str_role_head_image_lock_condition_haogan6_1600281"
+  },
+  {
+    53,
+    "314,1600291,6",
+    "str_role_head_image_lock_condition_haogan6_1600291"
+  },
+  {
+    54,
+    "314,1600301,6",
+    "str_role_head_image_lock_condition_haogan6_1600301"
+  },
+  {
+    55,
+    "314,1600381,6",
+    "str_role_head_image_lock_condition_haogan6_1600381"
+  },
+  {
+    56,
+    "314,1600391,6",
+    "str_role_head_image_lock_condition_haogan6_1600391"
+  },
+  {
+    57,
+    "316,1001,8,1,1",
+    "str_role_head_image_lock_condition_shili_1001"
+  },
+  {
+    58,
+    "316,1002,8,1,1",
+    "str_role_head_image_lock_condition_shili_1002"
+  },
+  {
+    59,
+    "316,1003,8,1,1",
+    "str_role_head_image_lock_condition_shili_1003"
+  },
+  {
+    60,
+    "316,1004,8,1,1",
+    "str_role_head_image_lock_condition_shili_1004"
+  },
+  {
+    61,
+    "316,1005,8,1,1",
+    "str_role_head_image_lock_condition_shili_1005"
+  },
+  {
+    62,
+    "316,1006,8,1,1",
+    "str_role_head_image_lock_condition_shili_1006"
+  },
+  {
+    63,
+    "316,1007,8,1,1",
+    "str_role_head_image_lock_condition_shili_1007"
+  },
+  {
+    64,
+    "316,1008,8,1,1",
+    "str_role_head_image_lock_condition_shili_1008"
+  },
+  [91] = {
+    91,
+    "1,32",
+    "str_role_head_image_lock_condition_91"
+  },
+  [10101] = {
+    10101,
+    "902,1400321,5",
+    "str_role_head_image_lock_condition_role_10101"
+  },
+  [10102] = {
+    10102,
+    "907,3,1400321",
+    "str_role_head_image_lock_condition_role_10102"
+  },
+  [10103] = {
+    10103,
+    "908,10202",
+    "str_role_head_image_lock_condition_role_10103"
+  },
+  [10201] = {
+    10201,
+    "902,1400441,5",
+    "str_role_head_image_lock_condition_role_10201"
+  },
+  [10202] = {
+    10202,
+    "907,3,1400441",
+    "str_role_head_image_lock_condition_role_10202"
+  },
+  [10203] = {
+    10203,
+    "907,5,1400441",
+    "str_role_head_image_lock_condition_role_10203"
+  },
+  [10301] = {
+    10301,
+    "902,1600231,5",
+    "str_role_head_image_lock_condition_role_10301"
+  },
+  [10302] = {
+    10302,
+    "907,3,1600231",
+    "str_role_head_image_lock_condition_role_10302"
+  },
+  [10303] = {
+    10303,
+    "908,20401",
+    "str_role_head_image_lock_condition_role_10303"
+  },
+  [10401] = {
+    10401,
+    "902,1600281,5",
+    "str_role_head_image_lock_condition_role_10401"
+  },
+  [10402] = {
+    10402,
+    "907,3,1600281",
+    "str_role_head_image_lock_condition_role_10402"
+  },
+  [10403] = {
+    10403,
+    "907,5,1600281",
+    "str_role_head_image_lock_condition_role_10403"
+  },
+  [10501] = {
+    10501,
+    "902,1600771,5",
+    "str_role_head_image_lock_condition_role_10501"
+  },
+  [10502] = {
+    10502,
+    "907,3,1600771",
+    "str_role_head_image_lock_condition_role_10502"
+  },
+  [10503] = {
+    10503,
+    "907,5,1600771",
+    "str_role_head_image_lock_condition_role_10503"
+  },
+  [10601] = {
+    10601,
+    "902,1300461,5",
+    "str_role_head_image_lock_condition_role_10601"
+  },
+  [10602] = {
+    10602,
+    "907,3,1300461",
+    "str_role_head_image_lock_condition_role_10602"
+  },
+  [10603] = {
+    10603,
+    "907,5,1300461",
+    "str_role_head_image_lock_condition_role_10603"
+  }
 }
 return config, "ID", key
-

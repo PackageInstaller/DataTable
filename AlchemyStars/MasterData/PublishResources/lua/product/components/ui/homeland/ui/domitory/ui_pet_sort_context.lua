@@ -1,68 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/domitory/ui_pet_sort_context.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetSortContext", Object)
 UIPetSortContext = UIPetSortContext
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetSortContext.Constructor = function(self)
-  -- function num : 0_0
+function UIPetSortContext:Constructor()
   self._viceElement = false
   self._curElement = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSortContext.CurElement = function(self)
-  -- function num : 0_1
+function UIPetSortContext:CurElement()
   return self._curElement
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSortContext.SetElement = function(self, element)
-  -- function num : 0_2
+function UIPetSortContext:SetElement(element)
   self._curElement = element
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSortContext.SetViceElement = function(self, active)
-  -- function num : 0_3
+function UIPetSortContext:SetViceElement(active)
   self._viceElement = active
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSortContext.ShowViceElement = function(self)
-  -- function num : 0_4
+function UIPetSortContext:ShowViceElement()
   return self._viceElement
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
 UIPetSortContext.Instance = nil
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetSortContext.CreateInstance = function()
-  -- function num : 0_5 , upvalues : _ENV
+function UIPetSortContext.CreateInstance()
   if UIPetSortContext.Instance then
-    (Log.exception)("不可以创建多个实例")
+    Log.exception("不可以创建多个实例")
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
   UIPetSortContext.Instance = UIPetSortContext:New()
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSortContext.ClearInstance = function()
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
+function UIPetSortContext.ClearInstance()
   UIPetSortContext.Instance = nil
 end
-
-

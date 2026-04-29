@@ -1,64 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/UnityEngine/UTime.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local rawget = rawget
+local rawget = _ENV.rawget
 local uTime = UnityEngine.Time
 local gettime = tolua.gettime
-local _Time = {deltaTime = 0, fixedDeltaTime = 0, maximumDeltaTime = 0.3333333, fixedTime = 0, frameCount = 1, realtimeSinceStartup = 0, time = 0, timeScale = 1, timeSinceLevelLoad = 0, unscaledDeltaTime = 0, unscaledTime = 0}
+local _Time = {
+  deltaTime = 0,
+  fixedDeltaTime = 0,
+  maximumDeltaTime = 0.3333333,
+  fixedTime = 0,
+  frameCount = 1,
+  realtimeSinceStartup = 0,
+  time = 0,
+  timeScale = 1,
+  timeSinceLevelLoad = 0,
+  unscaledDeltaTime = 0,
+  unscaledTime = 0
+}
 local _set = {}
-_set.fixedDeltaTime = function(v)
-  -- function num : 0_0 , upvalues : _Time, uTime
+
+function _set.fixedDeltaTime(v)
   _Time.fixedDeltaTime = v
   uTime.fixedDeltaTime = v
 end
 
-_set.maximumDeltaTime = function(v)
-  -- function num : 0_1 , upvalues : _Time, uTime
+function _set.maximumDeltaTime(v)
   _Time.maximumDeltaTime = v
   uTime.maximumDeltaTime = v
 end
 
-_set.timeScale = function(v)
-  -- function num : 0_2 , upvalues : _Time, uTime
+function _set.timeScale(v)
   _Time.timeScale = v
   uTime.timeScale = v
 end
 
-_set.captureFramerate = function(v)
-  -- function num : 0_3 , upvalues : _Time, uTime
+function _set.captureFramerate(v)
   _Time.captureFramerate = v
   uTime.captureFramerate = v
 end
 
-_set.timeSinceLevelLoad = function(v)
-  -- function num : 0_4 , upvalues : _Time
+function _set.timeSinceLevelLoad(v)
   _Time.timeSinceLevelLoad = v
 end
 
-_Time.__index = function(t, k)
-  -- function num : 0_5 , upvalues : rawget, _Time, uTime
+function _Time.__index(t, k)
   local var = rawget(_Time, k)
   if var then
     return var
   end
-  return (uTime.__index)(uTime, k)
+  return uTime.__index(uTime, k)
 end
 
-_Time.__newindex = function(t, k, v)
-  -- function num : 0_6 , upvalues : rawget, _set, _ENV
+function _Time.__newindex(t, k, v)
   local func = rawget(_set, k)
   if func then
     return func(v)
   end
-  error((string.format)("Property or indexer `UnityEngine.Time.%s\' cannot be assigned to (it is read only)", k))
+  error(string.format("Property or indexer `UnityEngine.Time.%s' cannot be assigned to (it is read only)", k))
 end
 
 local Time = {}
 local counter = 1
-Time.SetDeltaTime = function(self, deltaTime, unscaledDeltaTime)
-  -- function num : 0_7 , upvalues : _Time, counter, uTime
+
+function Time:SetDeltaTime(deltaTime, unscaledDeltaTime)
   local _Time = _Time
   _Time.deltaTime = deltaTime
   _Time.unscaledDeltaTime = unscaledDeltaTime
@@ -78,32 +79,26 @@ Time.SetDeltaTime = function(self, deltaTime, unscaledDeltaTime)
   end
 end
 
-Time.SetFixedDelta = function(self, fixedDeltaTime)
-  -- function num : 0_8 , upvalues : _Time
+function Time:SetFixedDelta(fixedDeltaTime)
   _Time.deltaTime = fixedDeltaTime
   _Time.fixedDeltaTime = fixedDeltaTime
   _Time.fixedTime = _Time.fixedTime + fixedDeltaTime
 end
 
-Time.SetFrameCount = function(self)
-  -- function num : 0_9 , upvalues : _Time
+function Time:SetFrameCount()
   _Time.frameCount = _Time.frameCount + 1
 end
 
-Time.SetTimeScale = function(self, scale)
-  -- function num : 0_10 , upvalues : _Time, uTime
+function Time:SetTimeScale(scale)
   local last = _Time.timeScale
   _Time.timeScale = scale
   uTime.timeScale = scale
   return last
 end
 
-Time.GetTimestamp = function(self)
-  -- function num : 0_11 , upvalues : gettime
+function Time:GetTimestamp()
   return gettime()
 end
-
--- DECOMPILER ERROR at PC45: Confused about usage of register: R7 in 'UnsetPending'
 
 UnityEngine.Time = Time
 setmetatable(Time, _Time)
@@ -112,4 +107,3 @@ if uTime ~= nil then
   _Time.timeScale = uTime.timeScale
 end
 return Time
-

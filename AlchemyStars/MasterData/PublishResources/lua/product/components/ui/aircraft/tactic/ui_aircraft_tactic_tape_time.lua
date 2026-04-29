@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/tactic/ui_aircraft_tactic_tape_time.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftTacticTapeTime", UICustomWidget)
 UIAircraftTacticTapeTime = UIAircraftTacticTapeTime
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftTacticTapeTime.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftTacticTapeTime:OnShow(uiParams)
   self:InitWidget()
   self._airModule = self:GetModule(AircraftModule)
-  self._tacticRoom = (self._airModule):GetRoomByRoomType(AirRoomType.TacticRoom)
+  self._tacticRoom = self._airModule:GetRoomByRoomType(AirRoomType.TacticRoom)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticTapeTime.InitWidget = function(self)
-  -- function num : 0_1
+function UIAircraftTacticTapeTime:InitWidget()
   self.countdown = self:GetUIComponent("UILocalizationText", "countdown")
   self.count = self:GetUIComponent("UILocalizationText", "count")
   self.max = self:GetGameObject("max")
@@ -25,64 +15,37 @@ UIAircraftTacticTapeTime.InitWidget = function(self)
   self._progress = self:GetUIComponent("Image", "progress")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticTapeTime.SetData = function(self, tapeCount, activityN8)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftTacticTapeTime:SetData(tapeCount, activityN8)
   self._activityN8 = activityN8
-  local tapeCeiling = nil
+  local tapeCeiling
   if self._activityN8 then
     self._campaign = UIActivityCampaign:New()
-    ;
-    (self._campaign):LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_N8)
-    local component = (self._campaign):GetComponentByType(CampaignComType.E_CAMPAIGN_COM_CombatSimulator, 1)
+    self._campaign:LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_N8)
+    local component = self._campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_CombatSimulator, 1)
     tapeCeiling = component:GetCartridgeCeiling()
   else
-    do
-      tapeCeiling = (self._tacticRoom):GetCartridgeLimit()
-      ;
-      (self.count):SetText(tapeCount .. "<color=#ff3030>/</color>" .. tapeCeiling)
-      if tapeCount < tapeCeiling then
-        (self.max):SetActive(false)
-        ;
-        (self._making):SetActive(true)
-      else
-        ;
-        (self._making):SetActive(false)
-        ;
-        (self.max):SetActive(true)
-        ;
-        (self.countdown):SetText((StringTable.Get)("str_aircraft_tactic_tape_stopped"))
-        -- DECOMPILER ERROR at PC62: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._progress).fillAmount = 0
-      end
-    end
+    tapeCeiling = self._tacticRoom:GetCartridgeLimit()
   end
-end
-
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticTapeTime.Tick = function(self, time)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.countdown):SetText((HelperProxy:GetInstance()):FormatTime_2(time))
-  if self._activityN8 then
-    local component = (self._campaign):GetComponentByType(CampaignComType.E_CAMPAIGN_COM_CombatSimulator, 1)
-    local cd = component:GetCartridgeNexTickSec()
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._progress).fillAmount = 1 - time / cd
+  self.count:SetText(tapeCount .. "<color=#ff3030>/</color>" .. tapeCeiling)
+  if tapeCount < tapeCeiling then
+    self.max:SetActive(false)
+    self._making:SetActive(true)
   else
-    do
-      local cd = (self._tacticRoom):GetOneCartridgeSpeed()
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._progress).fillAmount = 1 - time / cd
-    end
+    self._making:SetActive(false)
+    self.max:SetActive(true)
+    self.countdown:SetText(StringTable.Get("str_aircraft_tactic_tape_stopped"))
+    self._progress.fillAmount = 0
   end
 end
 
-
+function UIAircraftTacticTapeTime:Tick(time)
+  self.countdown:SetText(HelperProxy:GetInstance():FormatTime_2(time))
+  if self._activityN8 then
+    local component = self._campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_CombatSimulator, 1)
+    local cd = component:GetCartridgeNexTickSec()
+    self._progress.fillAmount = 1 - time / cd
+  else
+    local cd = self._tacticRoom:GetOneCartridgeSpeed()
+    self._progress.fillAmount = 1 - time / cd
+  end
+end

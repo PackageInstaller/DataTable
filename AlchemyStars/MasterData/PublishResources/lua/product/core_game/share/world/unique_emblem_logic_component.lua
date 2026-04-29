@@ -1,54 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/world/unique_emblem_logic_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EmblemLogicComponent", Object)
 EmblemLogicComponent = EmblemLogicComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-EmblemLogicComponent.Constructor = function(self, world)
-  -- function num : 0_0
+function EmblemLogicComponent:Constructor(world)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-EmblemLogicComponent.Initialize = function(self)
-  -- function num : 0_1
+function EmblemLogicComponent:Initialize()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.EmblemLogic = function(self)
-  -- function num : 0_2
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).EmblemLogic)
+function MainWorld:EmblemLogic()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.EmblemLogic)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.HasEmblemLogic = function(self)
-  -- function num : 0_3
-  do return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).EmblemLogic) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorld:HasEmblemLogic()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.EmblemLogic) ~= nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.AddEmblemLogic = function(self, world)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).EmblemLogic
+function MainWorld:AddEmblemLogic(world)
+  local index = self.BW_UniqueComponentsEnum.EmblemLogic
   local component = EmblemLogicComponent:New(self)
   component:Initialize()
   self:SetUniqueComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.RemoveEmblemLogic = function(self)
-  -- function num : 0_5
+function MainWorld:RemoveEmblemLogic()
   if self:HasEmblemLogic() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).EmblemLogic, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.EmblemLogic, nil)
   end
 end
-
-

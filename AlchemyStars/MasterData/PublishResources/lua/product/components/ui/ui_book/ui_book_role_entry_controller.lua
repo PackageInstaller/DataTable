@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_book/ui_book_role_entry_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookRoleEntryController", UIController)
 UIBookRoleEntryController = UIBookRoleEntryController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookRoleEntryController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBookRoleEntryController:OnShow(uiParams)
   local openMainType = uiParams[1]
   local openSubType = uiParams[2]
   local topButton = self:GetUIComponent("UISelectObjectPath", "topbtn")
   self.topButtonWidget = topButton:SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.topButtonWidget:SetData(function()
     self:CloseDialog()
-  end
-)
+  end)
   self.g1 = self:GetUIComponent("UIView", "g_1")
   self.g2 = self:GetUIComponent("UIView", "g_2")
   self.g3 = self:GetUIComponent("UIView", "g_3")
@@ -29,63 +19,37 @@ UIBookRoleEntryController.OnShow = function(self, uiParams)
   self.g8 = self:GetUIComponent("UIView", "g_8")
   local atlas = self:GetAsset("UIBook.spriteatlas", LoadType.SpriteAtlas)
   self.cell1 = UIBookRoleEntryCell:New()
-  ;
-  (self.cell1):Refresh(self.g1, atlas, PetFilterType.BaiYeCheng)
+  self.cell1:Refresh(self.g1, atlas, PetFilterType.BaiYeCheng)
   self.cell2 = UIBookRoleEntryCell:New()
-  ;
-  (self.cell2):Refresh(self.g2, atlas, PetFilterType.BaiYeXiaCheng)
+  self.cell2:Refresh(self.g2, atlas, PetFilterType.BaiYeXiaCheng)
   self.cell3 = UIBookRoleEntryCell:New()
-  ;
-  (self.cell3):Refresh(self.g3, atlas, PetFilterType.QiGuang)
+  self.cell3:Refresh(self.g3, atlas, PetFilterType.QiGuang)
   self.cell4 = UIBookRoleEntryCell:New()
-  ;
-  (self.cell4):Refresh(self.g4, atlas, PetFilterType.BeiJing)
+  self.cell4:Refresh(self.g4, atlas, PetFilterType.BeiJing)
   self.cell5 = UIBookRoleEntryCell:New()
-  ;
-  (self.cell5):Refresh(self.g5, atlas, PetFilterType.HongYouBanShou)
+  self.cell5:Refresh(self.g5, atlas, PetFilterType.HongYouBanShou)
   self.cell6 = UIBookRoleEntryCell:New()
-  ;
-  (self.cell6):Refresh(self.g6, atlas, PetFilterType.TaiYangJiaoTuan)
+  self.cell6:Refresh(self.g6, atlas, PetFilterType.TaiYangJiaoTuan)
   self.cell7 = UIBookRoleEntryCell:New()
-  ;
-  (self.cell7):Refresh(self.g7, atlas, PetFilterType.YouMin)
+  self.cell7:Refresh(self.g7, atlas, PetFilterType.YouMin)
   self.cell8 = UIBookRoleEntryCell:New()
-  ;
-  (self.cell8):Refresh(self.g8, atlas, PetFilterType.RiShi)
+  self.cell8:Refresh(self.g8, atlas, PetFilterType.RiShi)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleEntryController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIBookRoleEntryController:LoadDataOnEnter(TT, res, uiParams)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleEntryController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_2
+function UIBookRoleEntryController:OnUpdate(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleEntryController.OnHide = function(self)
-  -- function num : 0_3
-  (self.cell1):OnHide()
-  ;
-  (self.cell2):OnHide()
-  ;
-  (self.cell3):OnHide()
-  ;
-  (self.cell4):OnHide()
-  ;
-  (self.cell5):OnHide()
-  ;
-  (self.cell6):OnHide()
-  ;
-  (self.cell7):OnHide()
-  ;
-  (self.cell8):OnHide()
+function UIBookRoleEntryController:OnHide()
+  self.cell1:OnHide()
+  self.cell2:OnHide()
+  self.cell3:OnHide()
+  self.cell4:OnHide()
+  self.cell5:OnHide()
+  self.cell6:OnHide()
+  self.cell7:OnHide()
+  self.cell8:OnHide()
 end
-
-

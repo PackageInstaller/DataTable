@@ -1,39 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_transport_by_range.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamTransportByRange", SkillEffectParamBase)
 SkillEffectParamTransportByRange = SkillEffectParamTransportByRange
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamTransportByRange.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamTransportByRange:Constructor(t)
   self._isPickUp = t.isPickUp or 0
   self._transportTarget = t.transportTarget or false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTransportByRange.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamTransportByRange:GetEffectType()
   return SkillEffectType.TransportByRange
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTransportByRange.IsPickUp = function(self)
-  -- function num : 0_2
+function SkillEffectParamTransportByRange:IsPickUp()
   return self._isPickUp
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTransportByRange.IsTransportTarget = function(self)
-  -- function num : 0_3
-  do return self._transportTarget == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillEffectParamTransportByRange:IsTransportTarget()
+  return self._transportTarget == 1
 end
-
-

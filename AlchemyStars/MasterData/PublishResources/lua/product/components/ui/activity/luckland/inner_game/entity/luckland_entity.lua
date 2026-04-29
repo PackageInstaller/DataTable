@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/entity/luckland_entity.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LuckLandEntity", Object)
 LuckLandEntity = LuckLandEntity
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandEntity.Constructor = function(self, gameModule)
-  -- function num : 0_0 , upvalues : _ENV
+function LuckLandEntity:Constructor(gameModule)
   self._gameModule = gameModule
-  self._configMng = (self._gameModule):GetConfigMng()
+  self._configMng = self._gameModule:GetConfigMng()
   self._resType = LuckLandCardResType.None
   self._resBase = 0
   self._resAccFix = 0
@@ -23,162 +16,99 @@ LuckLandEntity.Constructor = function(self, gameModule)
   self._buffTempValueDic = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.GetLuckLandModule = function(self)
-  -- function num : 0_1
+function LuckLandEntity:GetLuckLandModule()
   return self._gameModule
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.Initialize = function(self, ID, templateID)
-  -- function num : 0_2
+function LuckLandEntity:Initialize(ID, templateID)
   self._ID = ID
   self._templateID = templateID
   self:InitData(self._templateID)
   self:InitBuffArray()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.ID = function(self)
-  -- function num : 0_3
+function LuckLandEntity:ID()
   return self._ID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.GetTemplateID = function(self)
-  -- function num : 0_4
+function LuckLandEntity:GetTemplateID()
   return self._templateID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.SetTemplateID = function(self, tempId)
-  -- function num : 0_5
+function LuckLandEntity:SetTemplateID(tempId)
   self._templateID = tempId
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.CostCountDown = function(self)
-  -- function num : 0_6
+function LuckLandEntity:CostCountDown()
   if not self._countDown then
-    return 
+    return
   end
   self._countDown = self._countDown - 1
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.GetCountDown = function(self)
-  -- function num : 0_7
+function LuckLandEntity:GetCountDown()
   if not self._countDown then
-    return 
+    return
   end
   return self._countDown
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.ResetCountDown = function(self)
-  -- function num : 0_8
+function LuckLandEntity:ResetCountDown()
   if not self._countDown then
-    return 
+    return
   end
-  self._countDown = (self._cfg):GetCountDown()
+  self._countDown = self._cfg:GetCountDown()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.SetResType = function(self, resType)
-  -- function num : 0_9
+function LuckLandEntity:SetResType(resType)
   self._resType = resType
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.SetResBaseValue = function(self, value)
-  -- function num : 0_10
+function LuckLandEntity:SetResBaseValue(value)
   self._resBase = value
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.GetResType = function(self)
-  -- function num : 0_11
+function LuckLandEntity:GetResType()
   return self._resType
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.AddAccFixValue = function(self, val)
-  -- function num : 0_12
+function LuckLandEntity:AddAccFixValue(val)
   self._resAccFix = self._resAccFix + val
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.AddAccPerValue = function(self, val)
-  -- function num : 0_13
+function LuckLandEntity:AddAccPerValue(val)
   self._resAccPer = self._resAccPer + val
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.AddTempFixValue = function(self, val)
-  -- function num : 0_14
+function LuckLandEntity:AddTempFixValue(val)
   self._resTempFix = self._resTempFix + val
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.AddTempPerValue = function(self, val)
-  -- function num : 0_15
+function LuckLandEntity:AddTempPerValue(val)
   self._resTempPer = self._resTempPer + val
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.AddFinalTempFactorValue = function(self, val)
-  -- function num : 0_16
+function LuckLandEntity:AddFinalTempFactorValue(val)
   self._resFinalTempFactor = self._resFinalTempFactor + val
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.SetFinalTempMulValue = function(self, val)
-  -- function num : 0_17
+function LuckLandEntity:SetFinalTempMulValue(val)
   self._resFinalTempMul = val
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.SetFinalTempZero = function(self, val)
-  -- function num : 0_18
+function LuckLandEntity:SetFinalTempZero(val)
   self._resTempZero = val
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.SetTempMove = function(self, moveType)
-  -- function num : 0_19
+function LuckLandEntity:SetTempMove(moveType)
   self._tempMoveType = moveType
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.GetTempMove = function(self)
-  -- function num : 0_20
+function LuckLandEntity:GetTempMove()
   return self._tempMoveType
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.ResetTempParam = function(self)
-  -- function num : 0_21
+function LuckLandEntity:ResetTempParam()
   self._resTempFix = 0
   self._resTempPer = 0
   self._resFinalTempFactor = 0
@@ -189,117 +119,80 @@ LuckLandEntity.ResetTempParam = function(self)
   self._buffTempValueDic = {}
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.CalculateRes = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function LuckLandEntity:CalculateRes()
   if self._resType == LuckLandCardResType.None then
-    return 
+    return
   end
   if self._resTempZero then
     return 0
   end
   local val = (self._resBase + self._resAccFix) * (1 + self._resAccPer + self._resTempPer) + self._resTempFix
   val = val * (1 + self._resFinalTempFactor)
-  if self._resFinalTempMul > 0 then
+  if 0 < self._resFinalTempMul then
     val = val * self._resFinalTempMul
   end
-  return (lmathext.round)(val + LuckLandConst.Epsilon)
+  return lmathext.round(val + LuckLandConst.Epsilon)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.CalculateResBag = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function LuckLandEntity:CalculateResBag()
   if self._resType == LuckLandCardResType.None then
-    return 
+    return
   end
   if self._resTempZero then
     return 0
   end
   local val = (self._resBase + self._resAccFix) * (1 + self._resAccPer)
-  return (lmathext.round)(val + LuckLandConst.Epsilon)
+  return lmathext.round(val + LuckLandConst.Epsilon)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.AddDirectGold = function(self, gold)
-  -- function num : 0_24
+function LuckLandEntity:AddDirectGold(gold)
   if not self._gold then
     self._gold = 0
   end
   self._gold = self._gold + gold
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.SetDirectGold = function(self, gold)
-  -- function num : 0_25
+function LuckLandEntity:SetDirectGold(gold)
   self._gold = gold
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.GetDirectGold = function(self)
-  -- function num : 0_26
+function LuckLandEntity:GetDirectGold()
   if self._gold == nil then
     self._gold = 0
   end
   return self._gold
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.InitBuffArray = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  local buffIDList = (self._cfg):GetBuffIDList()
+function LuckLandEntity:InitBuffArray()
+  local buffIDList = self._cfg:GetBuffIDList()
   if not buffIDList then
-    return 
+    return
   end
-  local buffMng = (self._gameModule):GetBuffMng()
-  for _,buffID in ipairs(buffIDList) do
+  local buffMng = self._gameModule:GetBuffMng()
+  for _, buffID in ipairs(buffIDList) do
     local buff = buffMng:CreateBuff(buffID, self)
     if buff then
-      (table.insert)(self._buffArray, buff)
+      table.insert(self._buffArray, buff)
     end
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.GetBuffArray = function(self)
-  -- function num : 0_28
+function LuckLandEntity:GetBuffArray()
   return self._buffArray
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.SetTempValue = function(self, key, value)
-  -- function num : 0_29
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffTempValueDic)[key] = value
+function LuckLandEntity:SetTempValue(key, value)
+  self._buffTempValueDic[key] = value
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.GetTempValue = function(self, key)
-  -- function num : 0_30
-  return (self._buffTempValueDic)[key]
+function LuckLandEntity:GetTempValue(key)
+  return self._buffTempValueDic[key]
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.ClearTempValues = function(self)
-  -- function num : 0_31
+function LuckLandEntity:ClearTempValues()
   self._buffTempValueDic = {}
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEntity.GetEntityType = function(self)
-  -- function num : 0_32
+function LuckLandEntity:GetEntityType()
   return self._entityType
 end
-
-

@@ -1,50 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_splice_board.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamSpliceBoard", SkillEffectParamBase)
 SkillEffectParamSpliceBoard = SkillEffectParamSpliceBoard
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamSpliceBoard.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamSpliceBoard:Constructor(t)
   self._distance = t.distance or 0
-  if not t.direction then
-    self._direction = {0, 0}
-    if not t.notifyTrapList then
-      self._notifyTrapList = {}
-    end
-  end
+  self._direction = t.direction or {0, 0}
+  self._notifyTrapList = t.notifyTrapList or {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSpliceBoard.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamSpliceBoard:GetEffectType()
   return SkillEffectType.SpliceBoard
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSpliceBoard.GetDistance = function(self)
-  -- function num : 0_2
+function SkillEffectParamSpliceBoard:GetDistance()
   return self._distance
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSpliceBoard.GetDirection = function(self)
-  -- function num : 0_3
+function SkillEffectParamSpliceBoard:GetDirection()
   return self._direction
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSpliceBoard.GetNotifyTrapList = function(self)
-  -- function num : 0_4
+function SkillEffectParamSpliceBoard:GetNotifyTrapList()
   return self._notifyTrapList
 end
-
-

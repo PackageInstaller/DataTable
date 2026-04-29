@@ -1,11 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/cfg_lod.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {id = 1, normal = 2, low = 3, high = 4}
+local key = {
+  id = 1,
+  normal = 2,
+  low = 3,
+  high = 4
+}
 local config = {
-{1, "main_zjm_di26.png", "main_zjm_di26_low.png", "main_zjm_di26_high.png"}
+  {
+    1,
+    "main_zjm_di26.png",
+    "main_zjm_di26_low.png",
+    "main_zjm_di26_high.png"
+  }
 }
 return config, "id", key
-

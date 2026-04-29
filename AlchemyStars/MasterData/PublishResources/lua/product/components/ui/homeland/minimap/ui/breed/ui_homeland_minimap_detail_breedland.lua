@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/breed/ui_homeland_minimap_detail_breedland.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapDetailBreedLand", UIHomelandMinimapDetailBase)
 UIHomelandMinimapDetailBreedLand = UIHomelandMinimapDetailBreedLand
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapDetailBreedLand.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
+function UIHomelandMinimapDetailBreedLand:Constructor()
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
   self._atlas = self:GetAsset("UIHomelandMap.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBreedLand.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandMinimapDetailBreedLand:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBreedLand._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandMinimapDetailBreedLand:_GetComponents()
   self._titleText = self:GetUIComponent("UILocalizationText", "TitleText")
-  self._titleRectTransform = (((self._titleText).transform).parent):GetComponent("RectTransform")
+  self._titleRectTransform = self._titleText.transform.parent:GetComponent("RectTransform")
   self._descriptionText = self:GetUIComponent("UILocalizationText", "DescriptionText")
   self._breedIcon = self:GetUIComponent("RawImageLoader", "BreedIcon")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
@@ -35,111 +22,72 @@ UIHomelandMinimapDetailBreedLand._GetComponents = function(self)
   self._stateImgObj = self:GetGameObject("StateImg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBreedLand.CloseBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailBreedLand:CloseBtnOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBreedLand.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailBreedLand:ConfirmBtnOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBreedLand.OnInitDone = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local breedLand = (self._iconData):GetParam()
+function UIHomelandMinimapDetailBreedLand:OnInitDone()
+  local breedLand = self._iconData:GetParam()
   local itemID = breedLand:GetBuildId()
-  local cfg = (Cfg.cfg_item)[itemID]
-  ;
-  (self._titleText):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._titleRectTransform)
-  ;
-  (self._descriptionText):SetText((StringTable.Get)(cfg.Intro))
+  local cfg = Cfg.cfg_item[itemID]
+  self._titleText:SetText(StringTable.Get(cfg.Name))
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._titleRectTransform)
+  self._descriptionText:SetText(StringTable.Get(cfg.Intro))
   local curPhases = breedLand:GetCurPhases()
   local breedIcon = cfg.Icon
-  local name = (StringTable.Get)("str_homeland_minimap_freeland")
-  local state = (StringTable.Get)("str_homeland_minimap_freestate")
-  local color = (Color(0.65490196078431, 0.65882352941176, 0.65882352941176))
-  local spriteName = nil
+  local name = StringTable.Get("str_homeland_minimap_freeland")
+  local state = StringTable.Get("str_homeland_minimap_freestate")
+  local color = Color(0.6549019607843137, 0.6588235294117647, 0.6588235294117647)
+  local spriteName
   local cfgTree = breedLand:GetCurTree()
-  do
-    if cfgTree then
-      local cfgItem = (Cfg.cfg_item)[cfgTree.ID]
-      if cfgItem then
-        if curPhases > 0 and curPhases <= 2 then
-          name = (StringTable.Get)("str_homeland_exp_source_2")
-        end
-        if curPhases >= 3 then
-          name = (StringTable.Get)(cfgItem.Name)
-          breedIcon = cfgItem.Icon
-        end
+  if cfgTree then
+    local cfgItem = Cfg.cfg_item[cfgTree.ID]
+    if cfgItem then
+      if 0 < curPhases and curPhases <= 2 then
+        name = StringTable.Get("str_homeland_exp_source_2")
       end
-    end
-    do
-      if curPhases > 0 then
-        local remainTime = breedLand:GetRemainTime()
-        if remainTime > 0 then
-          color = Color(0.50196078431373, 0.73725490196078, 0.34901960784314)
-          spriteName = "n17_dt_ppdk_time"
-          state = (HomelandBreedTool.GetRemainTime)(remainTime)
-          state = (StringTable.Get)("str_homeland_minimap_remain_time", state)
-        else
-          spriteName = "n17_dt_ppdk_goux"
-          color = Color(0.98039215686275, 0.66666666666667, 0.15686274509804)
-          state = (StringTable.Get)("str_homeland_minimap_reapstate")
-        end
-      end
-      ;
-      (self._breedIcon):LoadImage(breedIcon)
-      ;
-      (self._name):SetText(name)
-      ;
-      (self._stateText):SetText(state)
-      -- DECOMPILER ERROR at PC122: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self._stateText).color = color
-      if spriteName then
-        spriteName = (self._atlas):GetSprite(spriteName)
-      end
-      -- DECOMPILER ERROR at PC131: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self._stateImg).sprite = spriteName
-      ;
-      (self._stateImgObj):SetActive(spriteName ~= nil)
-      self._titleRect = self:GetUIComponent("RectTransform", "Title")
-      do
-        if self._titleRect then
-          local titleWidth = (self._titleText).preferredWidth
-          if titleWidth > 350 then
-            titleWidth = 350
-          end
-          -- DECOMPILER ERROR at PC159: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (self._titleRect).sizeDelta = Vector2(titleWidth, ((self._titleRect).sizeDelta).y)
-        end
-        -- DECOMPILER ERROR: 3 unprocessed JMP targets
+      if 3 <= curPhases then
+        name = StringTable.Get(cfgItem.Name)
+        breedIcon = cfgItem.Icon
       end
     end
   end
+  if 0 < curPhases then
+    local remainTime = breedLand:GetRemainTime()
+    if 0 < remainTime then
+      color = Color(0.5019607843137255, 0.7372549019607844, 0.34901960784313724)
+      spriteName = "n17_dt_ppdk_time"
+      state = HomelandBreedTool.GetRemainTime(remainTime)
+      state = StringTable.Get("str_homeland_minimap_remain_time", state)
+    else
+      spriteName = "n17_dt_ppdk_goux"
+      color = Color(0.9803921568627451, 0.6666666666666666, 0.1568627450980392)
+      state = StringTable.Get("str_homeland_minimap_reapstate")
+    end
+  end
+  self._breedIcon:LoadImage(breedIcon)
+  self._name:SetText(name)
+  self._stateText:SetText(state)
+  self._stateText.color = color
+  spriteName = spriteName and self._atlas:GetSprite(spriteName)
+  self._stateImg.sprite = spriteName
+  self._stateImgObj:SetActive(spriteName ~= nil)
+  self._titleRect = self:GetUIComponent("RectTransform", "Title")
+  if self._titleRect then
+    local titleWidth = self._titleText.preferredWidth
+    if 350 < titleWidth then
+      titleWidth = 350
+    end
+    self._titleRect.sizeDelta = Vector2(titleWidth, self._titleRect.sizeDelta.y)
+  end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBreedLand.GetCloseAnimtionName = function(self)
-  -- function num : 0_6
+function UIHomelandMinimapDetailBreedLand:GetCloseAnimtionName()
   return "UIHomelandMinimapDetailBreedLand_out"
 end
-
-

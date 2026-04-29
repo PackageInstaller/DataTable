@@ -1,111 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cutscene_monster_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CutsceneMonsterComponent", Object)
 CutsceneMonsterComponent = CutsceneMonsterComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneMonsterComponent.Constructor = function(self)
-  -- function num : 0_0
+function CutsceneMonsterComponent:Constructor()
   self._name = "none"
   self._hadPlayDead = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneMonsterComponent.SetCutsceneMonsterName = function(self, name)
-  -- function num : 0_1
+function CutsceneMonsterComponent:SetCutsceneMonsterName(name)
   self._name = name
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneMonsterComponent.GetCutsceneMonsterName = function(self)
-  -- function num : 0_2
+function CutsceneMonsterComponent:GetCutsceneMonsterName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneMonsterComponent.SetLastMovePos = function(self, lastMovePos)
-  -- function num : 0_3
+function CutsceneMonsterComponent:SetLastMovePos(lastMovePos)
   self._lastMovePos = lastMovePos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneMonsterComponent.GetLastMovePos = function(self)
-  -- function num : 0_4
+function CutsceneMonsterComponent:GetLastMovePos()
   return self._lastMovePos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneMonsterComponent.SetHadPlayDead = function(self, hadPlayDead)
-  -- function num : 0_5
+function CutsceneMonsterComponent:SetHadPlayDead(hadPlayDead)
   self._hadPlayDead = hadPlayDead
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneMonsterComponent.GetHadPlayDead = function(self)
-  -- function num : 0_6
+function CutsceneMonsterComponent:GetHadPlayDead()
   return self._hadPlayDead
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneMonsterComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_7
+function CutsceneMonsterComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneMonsterComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_8
+function CutsceneMonsterComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.CutsceneMonster = function(self)
-  -- function num : 0_9
-  return self:GetComponent((self.WEComponentsEnum).CutsceneMonster)
+function Entity:CutsceneMonster()
+  return self:GetComponent(self.WEComponentsEnum.CutsceneMonster)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasCutsceneMonster = function(self)
-  -- function num : 0_10
-  return self:HasComponent((self.WEComponentsEnum).CutsceneMonster)
+function Entity:HasCutsceneMonster()
+  return self:HasComponent(self.WEComponentsEnum.CutsceneMonster)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddCutsceneMonster = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).CutsceneMonster
+function Entity:AddCutsceneMonster()
+  local index = self.WEComponentsEnum.CutsceneMonster
   local component = CutsceneMonsterComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceCutsceneMonster = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).CutsceneMonster
+function Entity:ReplaceCutsceneMonster()
+  local index = self.WEComponentsEnum.CutsceneMonster
   local component = CutsceneMonsterComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveCutsceneMonster = function(self)
-  -- function num : 0_13
+function Entity:RemoveCutsceneMonster()
   if self:HasCutsceneMonster() then
-    self:RemoveComponent((self.WEComponentsEnum).CutsceneMonster)
+    self:RemoveComponent(self.WEComponentsEnum.CutsceneMonster)
   end
 end
-
-

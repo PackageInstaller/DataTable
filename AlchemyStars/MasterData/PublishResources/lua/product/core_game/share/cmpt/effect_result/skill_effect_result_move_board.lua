@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_move_board.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultMoveBoard", SkillEffectResultBase)
 SkillEffectResultMoveBoard = SkillEffectResultMoveBoard
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultMoveBoard.Constructor = function(self, trapID, summonPosList)
-  -- function num : 0_0
+function SkillEffectResultMoveBoard:Constructor(trapID, summonPosList)
   self._convertColors = {}
   self._MoveBoardPieces = {}
   self._MoveBoardEntities = {}
@@ -19,109 +12,83 @@ SkillEffectResultMoveBoard.Constructor = function(self, trapID, summonPosList)
   self._moveBoardPiecesCutIn = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveBoard.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultMoveBoard:GetEffectType()
   return SkillEffectType.MoveBoard
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveBoard.AddMoveBoardPiece = function(self, oldPos, newPos)
-  -- function num : 0_2 , upvalues : _ENV
-  (table.insert)(self._MoveBoardPieces, {oldPos, newPos})
+function SkillEffectResultMoveBoard:AddMoveBoardPiece(oldPos, newPos)
+  table.insert(self._MoveBoardPieces, {oldPos, newPos})
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveBoard.GetMoveBoardPieceResult = function(self)
-  -- function num : 0_3
+function SkillEffectResultMoveBoard:GetMoveBoardPieceResult()
   return self._MoveBoardPieces
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveBoard.AddConvertColor = function(self, pos, oldColor, newColor)
-  -- function num : 0_4 , upvalues : _ENV
-  (table.insert)(self._convertColors, {pos, oldColor, newColor})
+function SkillEffectResultMoveBoard:AddConvertColor(pos, oldColor, newColor)
+  table.insert(self._convertColors, {
+    pos,
+    oldColor,
+    newColor
+  })
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveBoard.GetConvertColors = function(self)
-  -- function num : 0_5
+function SkillEffectResultMoveBoard:GetConvertColors()
   return self._convertColors
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveBoard.AddMoveBoardEntity = function(self, eid, oldPos, newPos)
-  -- function num : 0_6 , upvalues : _ENV
-  (table.insert)(self._MoveBoardEntities, {eid, oldPos, newPos})
+function SkillEffectResultMoveBoard:AddMoveBoardEntity(eid, oldPos, newPos)
+  table.insert(self._MoveBoardEntities, {
+    eid,
+    oldPos,
+    newPos
+  })
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveBoard.GetMoveBoardEntities = function(self)
-  -- function num : 0_7
+function SkillEffectResultMoveBoard:GetMoveBoardEntities()
   return self._MoveBoardEntities
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveBoard.AddTrapSkillResult = function(self, eid, skillResult, triggerEid)
-  -- function num : 0_8 , upvalues : _ENV
-  (table.insert)(self._trapSkillResults, {eid, skillResult, triggerEid})
+function SkillEffectResultMoveBoard:AddTrapSkillResult(eid, skillResult, triggerEid)
+  table.insert(self._trapSkillResults, {
+    eid,
+    skillResult,
+    triggerEid
+  })
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveBoard.GetTrapSkillResults = function(self)
-  -- function num : 0_9
+function SkillEffectResultMoveBoard:GetTrapSkillResults()
   return self._trapSkillResults
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveBoard.AddTrapDestroyList = function(self, entityID)
-  -- function num : 0_10 , upvalues : _ENV
-  (table.insert)(self._trapDestroyList, entityID)
+function SkillEffectResultMoveBoard:AddTrapDestroyList(entityID)
+  table.insert(self._trapDestroyList, entityID)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveBoard.GetTrapDestroyList = function(self)
-  -- function num : 0_11
+function SkillEffectResultMoveBoard:GetTrapDestroyList()
   return self._trapDestroyList
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveBoard.AddMoveBoardPrism = function(self, oldPos, newPos, prismEntityID, pieceEffectType)
-  -- function num : 0_12 , upvalues : _ENV
-  (table.insert)(self._MoveBoardPrisms, {oldPos, newPos, prismEntityID, pieceEffectType})
+function SkillEffectResultMoveBoard:AddMoveBoardPrism(oldPos, newPos, prismEntityID, pieceEffectType)
+  table.insert(self._MoveBoardPrisms, {
+    oldPos,
+    newPos,
+    prismEntityID,
+    pieceEffectType
+  })
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveBoard.GetMoveBoardPrisms = function(self)
-  -- function num : 0_13
+function SkillEffectResultMoveBoard:GetMoveBoardPrisms()
   return self._MoveBoardPrisms
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveBoard.AddMoveBoardPieceCutIn = function(self, oldPos, newPos, pieceType)
-  -- function num : 0_14 , upvalues : _ENV
-  (table.insert)(self._moveBoardPiecesCutIn, {oldPos, newPos, pieceType})
+function SkillEffectResultMoveBoard:AddMoveBoardPieceCutIn(oldPos, newPos, pieceType)
+  table.insert(self._moveBoardPiecesCutIn, {
+    oldPos,
+    newPos,
+    pieceType
+  })
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveBoard.GetMoveBoardPieceResultCutIn = function(self)
-  -- function num : 0_15
+function SkillEffectResultMoveBoard:GetMoveBoardPieceResultCutIn()
   return self._moveBoardPiecesCutIn
 end
-
-

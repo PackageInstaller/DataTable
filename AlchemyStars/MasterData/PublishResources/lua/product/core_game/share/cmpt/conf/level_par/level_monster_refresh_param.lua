@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/level_par/level_monster_refresh_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LevelMonsterRefreshParam", Object)
 LevelMonsterRefreshParam = LevelMonsterRefreshParam
 local TrapAssembleType = {Default = 0, CurseTower = 1}
 _enum("TrapAssembleType", TrapAssembleType)
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-LevelMonsterRefreshParam.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : TrapAssembleType, _ENV
+function LevelMonsterRefreshParam:Constructor(world)
   self._world = world
   self._trapArray = {}
   self._trapAssembleType = TrapAssembleType.Default
@@ -25,90 +18,55 @@ LevelMonsterRefreshParam.Constructor = function(self, world)
   self._refreshPosOptions = {}
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.GetMonsterIDArray = function(self)
-  -- function num : 0_1
+function LevelMonsterRefreshParam:GetMonsterIDArray()
   return self._monsterIDArray
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.GetMonsterRotationArray = function(self)
-  -- function num : 0_2
+function LevelMonsterRefreshParam:GetMonsterRotationArray()
   return self._monsterRotationArray
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.GetMonsterPosArray = function(self)
-  -- function num : 0_3
+function LevelMonsterRefreshParam:GetMonsterPosArray()
   return self._monsterPosArray
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.GetMonsterPosAndOffSetArray = function(self)
-  -- function num : 0_4
+function LevelMonsterRefreshParam:GetMonsterPosAndOffSetArray()
   return self._monsterPosAndOffSetArray
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.GetMonsterRefreshPosType = function(self)
-  -- function num : 0_5
+function LevelMonsterRefreshParam:GetMonsterRefreshPosType()
   return self._monsterRefreshPosType
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.GetTrapArray = function(self)
-  -- function num : 0_6
+function LevelMonsterRefreshParam:GetTrapArray()
   return self._trapArray
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.GetChessPetIDArray = function(self)
-  -- function num : 0_7
+function LevelMonsterRefreshParam:GetChessPetIDArray()
   return self._chessPetIDArray
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.GetChessPetRotationArray = function(self)
-  -- function num : 0_8
+function LevelMonsterRefreshParam:GetChessPetRotationArray()
   return self._chessPetRotationArray
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.GetChessPetPosArray = function(self)
-  -- function num : 0_9
+function LevelMonsterRefreshParam:GetChessPetPosArray()
   return self._chessPetPosArray
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.GetTrapAssembleType = function(self)
-  -- function num : 0_10
+function LevelMonsterRefreshParam:GetTrapAssembleType()
   return self._trapAssembleType
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.ParseMonsterRefreshParam = function(self, monsterRefreshConfig)
-  -- function num : 0_11 , upvalues : _ENV
+function LevelMonsterRefreshParam:ParseMonsterRefreshParam(monsterRefreshConfig)
   if (monsterRefreshConfig.MonsterIDList or monsterRefreshConfig.RandomMonsterIDList) and monsterRefreshConfig.MonsterPosition then
     self._monsterRefreshPosType = monsterRefreshConfig.MonsterRefreshType
     if self._monsterRefreshPosType == MonsterRefreshPosType.SelectFirstCanUse then
       self._monsterPosArray = self:_ParsePositionArray(monsterRefreshConfig.MonsterPosition)
+    elseif self._monsterRefreshPosType ~= MonsterRefreshPosType.PositionAndOffSet and self._monsterRefreshPosType ~= MonsterRefreshPosType.PositionTable and self._monsterRefreshPosType ~= MonsterRefreshPosType.PositionAndOffSetMultiBoard then
+      self._monsterPosArray = self:_ParsePosition(monsterRefreshConfig.MonsterPosition)
     else
-      if self._monsterRefreshPosType ~= MonsterRefreshPosType.PositionAndOffSet and self._monsterRefreshPosType ~= MonsterRefreshPosType.PositionTable and self._monsterRefreshPosType ~= MonsterRefreshPosType.PositionAndOffSetMultiBoard then
-        self._monsterPosArray = self:_ParsePosition(monsterRefreshConfig.MonsterPosition)
-      else
-        self._monsterPosAndOffSetArray = self:_ParsePositionAndOffSet(monsterRefreshConfig.MonsterPosition)
-      end
+      self._monsterPosAndOffSetArray = self:_ParsePositionAndOffSet(monsterRefreshConfig.MonsterPosition)
     end
     self._exceptionType = monsterRefreshConfig.ExceptionHandle
     if self._exceptionType == MonsterRefreshExceptionType.BackupTable then
@@ -120,58 +78,43 @@ LevelMonsterRefreshParam.ParseMonsterRefreshParam = function(self, monsterRefres
       self._monsterRotationArray = self:_ParseRotation(monsterRefreshConfig.MonsterRotation)
     end
     if monsterRefreshConfig.RandomMonsterIDList then
-      local monsterList = (table.cloneconf)(monsterRefreshConfig.RandomMonsterIDList)
-      local weightList = (table.cloneconf)(monsterRefreshConfig.RandomWeightList)
-      if not weightList then
-        weightList = self:_MakeDefaultRandomWeightList(monsterList)
-      end
+      local monsterList = table.cloneconf(monsterRefreshConfig.RandomMonsterIDList)
+      local weightList = table.cloneconf(monsterRefreshConfig.RandomWeightList)
+      weightList = weightList or self:_MakeDefaultRandomWeightList(monsterList)
       self._monsterIDArray = self:_ParseRandomMonsterID(monsterList, weightList)
     else
-      do
-        self._monsterIDArray = (table.cloneconf)(monsterRefreshConfig.MonsterIDList)
-        if monsterRefreshConfig.MonsterRefreshPosOptions then
-          for k,v in pairs(monsterRefreshConfig.MonsterRefreshPosOptions) do
-            -- DECOMPILER ERROR at PC106: Confused about usage of register: R7 in 'UnsetPending'
-
-            (self._refreshPosOptions)[k] = v
-          end
-        end
-        do
-          return self._monsterIDArray
-        end
+      self._monsterIDArray = table.cloneconf(monsterRefreshConfig.MonsterIDList)
+    end
+    if monsterRefreshConfig.MonsterRefreshPosOptions then
+      for k, v in pairs(monsterRefreshConfig.MonsterRefreshPosOptions) do
+        self._refreshPosOptions[k] = v
       end
     end
   end
+  return self._monsterIDArray
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam._MakeDefaultRandomWeightList = function(self, monsterList)
-  -- function num : 0_12 , upvalues : _ENV
+function LevelMonsterRefreshParam:_MakeDefaultRandomWeightList(monsterList)
   local weightList = {}
-  for index,value in ipairs(monsterList) do
+  for index, value in ipairs(monsterList) do
     local monsterGroup = value
     local weightGroup = {}
-    for groupIndex,monsterID in ipairs(monsterGroup) do
-      (table.insert)(weightGroup, 1)
+    for groupIndex, monsterID in ipairs(monsterGroup) do
+      table.insert(weightGroup, 1)
     end
-    ;
-    (table.insert)(weightList, weightGroup)
+    table.insert(weightList, weightGroup)
   end
   return weightList
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.ParseTrapRefreshParam = function(self, trapRefreshConfig)
-  -- function num : 0_13 , upvalues : _ENV
+function LevelMonsterRefreshParam:ParseTrapRefreshParam(trapRefreshConfig)
   if trapRefreshConfig.TrapIDList and trapRefreshConfig.TrapPosition and trapRefreshConfig.TrapRotation then
     local trapPosVec2Array = self:_ParsePositionArray(trapRefreshConfig.TrapPosition)
     local trapRotationArray = self:_ParseRotationArray(trapRefreshConfig.TrapRotation)
     local trapCheckBlock = self:_ParseCheckBlockArray(trapRefreshConfig.TrapCheckBlock)
     self._trapAssembleType = trapRefreshConfig.TrapAssembleType
     local trapIDArray = trapRefreshConfig.TrapIDList
-    for k,trapID in ipairs(trapIDArray) do
+    for k, trapID in ipairs(trapIDArray) do
       local trapTransformParam = TrapTransformParam:New(trapID)
       local trapPosition = trapPosVec2Array[k]
       local trapRotation = trapRotationArray[k]
@@ -179,30 +122,21 @@ LevelMonsterRefreshParam.ParseTrapRefreshParam = function(self, trapRefreshConfi
       trapTransformParam:SetPositionList(trapPosition)
       trapTransformParam:SetRotationList(trapRotation)
       trapTransformParam:SetTrapCheckBlock(trapCheckBlock)
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (self._trapArray)[#self._trapArray + 1] = trapTransformParam
+      self._trapArray[#self._trapArray + 1] = trapTransformParam
     end
   end
-  do return self._trapArray end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return self._trapArray
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.ParseChessPetRefreshParam = function(self, chessPetRefreshConfig)
-  -- function num : 0_14 , upvalues : _ENV
+function LevelMonsterRefreshParam:ParseChessPetRefreshParam(chessPetRefreshConfig)
   if chessPetRefreshConfig.ChessPetIDList and chessPetRefreshConfig.ChessPetPosition then
     self._monsterRefreshPosType = chessPetRefreshConfig.MonsterRefreshType
     if self._monsterRefreshPosType == MonsterRefreshPosType.SelectFirstCanUse then
       self._chessPetPosArray = self:_ParsePositionArray(chessPetRefreshConfig.ChessPetPosition)
+    elseif self._monsterRefreshPosType ~= MonsterRefreshPosType.PositionAndOffSet and self._monsterRefreshPosType ~= MonsterRefreshPosType.PositionAndOffSetMultiBoard then
+      self._chessPetPosArray = self:_ParsePosition(chessPetRefreshConfig.ChessPetPosition)
     else
-      if self._monsterRefreshPosType ~= MonsterRefreshPosType.PositionAndOffSet and self._monsterRefreshPosType ~= MonsterRefreshPosType.PositionAndOffSetMultiBoard then
-        self._chessPetPosArray = self:_ParsePosition(chessPetRefreshConfig.ChessPetPosition)
-      else
-        self._monsterPosAndOffSetArray = self:_ParsePositionAndOffSet(chessPetRefreshConfig.ChessPetPosition)
-      end
+      self._monsterPosAndOffSetArray = self:_ParsePositionAndOffSet(chessPetRefreshConfig.ChessPetPosition)
     end
     self._exceptionType = chessPetRefreshConfig.ExceptionHandle
     if self._monsterRefreshPosType == MonsterRefreshPosType.SelectFirstCanUse then
@@ -210,63 +144,50 @@ LevelMonsterRefreshParam.ParseChessPetRefreshParam = function(self, chessPetRefr
     else
       self._chessPetRotationArray = self:_ParseRotation(chessPetRefreshConfig.ChessPetRotation)
     end
-    self._chessPetIDArray = (table.cloneconf)(chessPetRefreshConfig.ChessPetIDList)
+    self._chessPetIDArray = table.cloneconf(chessPetRefreshConfig.ChessPetIDList)
   end
   return self._chessPetIDArray
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam._ParsePositionAndOffSet = function(self, posStrArray)
-  -- function num : 0_15 , upvalues : _ENV
+function LevelMonsterRefreshParam:_ParsePositionAndOffSet(posStrArray)
   local posVec2Array = {}
-  for k,posStr in ipairs(posStrArray) do
-    local posNumArray = (string.split)(posStr, ",")
+  for k, posStr in ipairs(posStrArray) do
+    local posNumArray = string.split(posStr, ",")
     if #posNumArray == 2 then
       local posVec2 = Vector2(tonumber(posNumArray[1]), tonumber(posNumArray[2]))
-      posVec2Array[#posVec2Array + 1] = {MonsterPosType.Position, posVec2}
+      posVec2Array[#posVec2Array + 1] = {
+        MonsterPosType.Position,
+        posVec2
+      }
     else
-      do
-        local appoint = posNumArray[1]
-        if appoint ~= "F" then
-          (Log.fatal)("ParsePositionAndOffSet No Find appoint word")
-        end
-        do
-          local posVec2 = Vector2(tonumber(posNumArray[2]), tonumber(posNumArray[3]))
-          posVec2Array[#posVec2Array + 1] = {MonsterPosType.OffSet, posVec2}
-          -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      local appoint = posNumArray[1]
+      if appoint ~= "F" then
+        Log.fatal("ParsePositionAndOffSet No Find appoint word")
       end
+      local posVec2 = Vector2(tonumber(posNumArray[2]), tonumber(posNumArray[3]))
+      posVec2Array[#posVec2Array + 1] = {
+        MonsterPosType.OffSet,
+        posVec2
+      }
     end
   end
   return posVec2Array
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam._ParsePosition = function(self, posStrArray)
-  -- function num : 0_16 , upvalues : _ENV
+function LevelMonsterRefreshParam:_ParsePosition(posStrArray)
   local posVec2Array = {}
-  for k,posStr in ipairs(posStrArray) do
-    local posNumArray = (string.split)(posStr, ",")
+  for k, posStr in ipairs(posStrArray) do
+    local posNumArray = string.split(posStr, ",")
     local posVec2 = Vector2(tonumber(posNumArray[1]), tonumber(posNumArray[2]))
     posVec2Array[#posVec2Array + 1] = posVec2
   end
   return posVec2Array
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam._ParsePositionArray = function(self, posStrArray)
-  -- function num : 0_17 , upvalues : _ENV
+function LevelMonsterRefreshParam:_ParsePositionArray(posStrArray)
   local posVec2Array = {}
-  for k,posStr in ipairs(posStrArray) do
-    local posNumArray = (string.split)(posStr, ",")
+  for k, posStr in ipairs(posStrArray) do
+    local posNumArray = string.split(posStr, ",")
     local count = #posNumArray
     local posArra = {}
     for i = 1, count, 2 do
@@ -278,14 +199,11 @@ LevelMonsterRefreshParam._ParsePositionArray = function(self, posStrArray)
   return posVec2Array
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam._ParseRotationArray = function(self, rotationStrArray)
-  -- function num : 0_18 , upvalues : _ENV
+function LevelMonsterRefreshParam:_ParseRotationArray(rotationStrArray)
   local posVec2Array = {}
   if rotationStrArray then
-    for k,posStr in ipairs(rotationStrArray) do
-      local posNumArray = (string.split)(posStr, ",")
+    for k, posStr in ipairs(rotationStrArray) do
+      local posNumArray = string.split(posStr, ",")
       local count = #posNumArray
       local posArra = {}
       for i = 1, count, 2 do
@@ -295,67 +213,49 @@ LevelMonsterRefreshParam._ParseRotationArray = function(self, rotationStrArray)
       posVec2Array[#posVec2Array + 1] = posArra
     end
   end
-  do
-    return posVec2Array
-  end
+  return posVec2Array
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam._ParseRotation = function(self, rotationStrArray)
-  -- function num : 0_19 , upvalues : _ENV
+function LevelMonsterRefreshParam:_ParseRotation(rotationStrArray)
   if rotationStrArray then
     local rotationArray = {}
-    for k,rotationStr in ipairs(rotationStrArray) do
-      local rotationNumArray = (string.split)(rotationStr, ",")
+    for k, rotationStr in ipairs(rotationStrArray) do
+      local rotationNumArray = string.split(rotationStr, ",")
       local monsterRotation = Vector2(tonumber(rotationNumArray[1]), tonumber(rotationNumArray[2]))
       rotationArray[#rotationArray + 1] = monsterRotation
     end
     return rotationArray
   else
-    do
-      do return nil end
-    end
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam._ParseCheckBlockArray = function(self, checkBlockStrArray)
-  -- function num : 0_20 , upvalues : _ENV
+function LevelMonsterRefreshParam:_ParseCheckBlockArray(checkBlockStrArray)
   local checkBlockArray = {}
   if checkBlockStrArray then
-    for k,str in ipairs(checkBlockStrArray) do
+    for k, str in ipairs(checkBlockStrArray) do
       local checkBlock = tonumber(str)
       checkBlockArray[#checkBlockArray + 1] = checkBlock
     end
   end
-  do
-    return checkBlockArray
-  end
+  return checkBlockArray
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.GetExceptionType = function(self)
-  -- function num : 0_21
+function LevelMonsterRefreshParam:GetExceptionType()
   return self._exceptionType
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam._ParseExceptionData = function(self, posStrArray)
-  -- function num : 0_22 , upvalues : _ENV
+function LevelMonsterRefreshParam:_ParseExceptionData(posStrArray)
   if not posStrArray then
     return {}
   end
   local posVec2Array = {}
-  for index,posStr in ipairs(posStrArray) do
-    local posNumArray = (string.split)(posStr, ",")
+  for index, posStr in ipairs(posStrArray) do
+    local posNumArray = string.split(posStr, ",")
     posVec2Array[index] = {}
     local count = #posNumArray
     local i = 1
-    while i < count do
+    while count > i do
       local x = posNumArray[i]
       local type = MonsterPosType.Position
       if x == "F" then
@@ -363,92 +263,63 @@ LevelMonsterRefreshParam._ParseExceptionData = function(self, posStrArray)
         type = MonsterPosType.OffSet
       end
       local pos = Vector2(tonumber(posNumArray[i]), tonumber(posNumArray[i + 1]))
-      local tCount = (table.count)(posVec2Array[index])
-      -- DECOMPILER ERROR at PC47: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (posVec2Array[index])[tCount + 1] = {type, pos}
+      local tCount = table.count(posVec2Array[index])
+      posVec2Array[index][tCount + 1] = {type, pos}
       i = i + 2
     end
   end
   return posVec2Array
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.GetExceptionData = function(self)
-  -- function num : 0_23
+function LevelMonsterRefreshParam:GetExceptionData()
   return self._exceptionData
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.GetRefreshPosOptions = function(self)
-  -- function num : 0_24
+function LevelMonsterRefreshParam:GetRefreshPosOptions()
   return self._refreshPosOptions
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.SetBoardIndex = function(self, boardIndex)
-  -- function num : 0_25
+function LevelMonsterRefreshParam:SetBoardIndex(boardIndex)
   self._boardIndex = boardIndex
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam.GetBoardIndex = function(self)
-  -- function num : 0_26
+function LevelMonsterRefreshParam:GetBoardIndex()
   return self._boardIndex
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam._RandomMonsterID = function(self, monsterGroup, weightGroup, randomIndex)
-  -- function num : 0_27 , upvalues : _ENV
+function LevelMonsterRefreshParam:_RandomMonsterID(monsterGroup, weightGroup, randomIndex)
   if #monsterGroup ~= #weightGroup or #monsterGroup < 1 then
-    return 
+    return
   end
   local totalWeight = 0
-  for _,w in ipairs(weightGroup) do
+  for _, w in ipairs(weightGroup) do
     totalWeight = totalWeight + w
   end
-  local rand = nil
-  local popStarPorSvc = (self._world):GetService("PopStarProLogic")
-  if popStarPorSvc and (self._world):MatchType(GetMatchTypeType.PopStarProNoRelic) == MatchType.MT_PopStarPro then
+  local rand
+  local popStarPorSvc = self._world:GetService("PopStarProLogic")
+  if popStarPorSvc and self._world:MatchType(GetMatchTypeType.PopStarProNoRelic) == MatchType.MT_PopStarPro then
     local waveRandoms = popStarPorSvc:GetWaveRandoms()
-    local index = (math.fmod)(randomIndex - 1, #waveRandoms) + 1
+    local index = math.fmod(randomIndex - 1, #waveRandoms) + 1
+    rand = waveRandoms[index]
+  elseif self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
+    local seasonMazeSvc = self._world:GetService("SeasonMaze")
+    local waveRandoms = seasonMazeSvc:GetWaveRandoms()
+    local index = math.fmod(randomIndex - 1, #waveRandoms) + 1
     rand = waveRandoms[index]
   else
-    do
-      if (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
-        local seasonMazeSvc = (self._world):GetService("SeasonMaze")
-        local waveRandoms = seasonMazeSvc:GetWaveRandoms()
-        local index = (math.fmod)(randomIndex - 1, #waveRandoms) + 1
-        rand = waveRandoms[index]
-      else
-        do
-          do
-            local randomSvc = (self._world):GetService("RandomLogic")
-            rand = randomSvc:LogicRand()
-            local curWeight = rand * (totalWeight)
-            for i,w in ipairs(weightGroup) do
-              curWeight = curWeight - w
-              if curWeight <= 0 then
-                return monsterGroup[i]
-              end
-            end
-          end
-        end
-      end
+    local randomSvc = self._world:GetService("RandomLogic")
+    rand = randomSvc:LogicRand()
+  end
+  local curWeight = rand * totalWeight
+  for i, w in ipairs(weightGroup) do
+    curWeight = curWeight - w
+    if curWeight <= 0 then
+      return monsterGroup[i]
     end
   end
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R1 in 'UnsetPending'
-
-LevelMonsterRefreshParam._ParseRandomMonsterID = function(self, monsterList, weightList)
-  -- function num : 0_28 , upvalues : _ENV
+function LevelMonsterRefreshParam:_ParseRandomMonsterID(monsterList, weightList)
   local monsterIDList = {}
   if #monsterList ~= #weightList then
     return monsterIDList
@@ -458,10 +329,8 @@ LevelMonsterRefreshParam._ParseRandomMonsterID = function(self, monsterList, wei
     local weightGroup = weightList[i]
     local monsterID = self:_RandomMonsterID(monsterGroup, weightGroup, i)
     if monsterID then
-      (table.insert)(monsterIDList, monsterID)
+      table.insert(monsterIDList, monsterID)
     end
   end
   return monsterIDList
 end
-
-

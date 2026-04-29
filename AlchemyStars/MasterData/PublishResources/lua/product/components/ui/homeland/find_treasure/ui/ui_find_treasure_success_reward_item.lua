@@ -1,45 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/find_treasure/ui/ui_find_treasure_success_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFindTreasureSuccessRewardItem", UICustomWidget)
 UIFindTreasureSuccessRewardItem = UIFindTreasureSuccessRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFindTreasureSuccessRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIFindTreasureSuccessRewardItem:OnShow(uiParams)
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
   self._countPanel = self:GetGameObject("CountPanel")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureSuccessRewardItem.Refresh = function(self, reward, clickCallback)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[reward[1]]
-  ;
-  (self._iconLoader):LoadImage(cfg.Icon)
+function UIFindTreasureSuccessRewardItem:Refresh(reward, clickCallback)
+  local cfg = Cfg.cfg_item[reward[1]]
+  self._iconLoader:LoadImage(cfg.Icon)
   if reward[2] and reward[2] > 0 then
-    (self._countPanel):SetActive(true)
-    ;
-    (self._countLabel):SetText(reward[2])
+    self._countPanel:SetActive(true)
+    self._countLabel:SetText(reward[2])
   else
-    ;
-    (self._countPanel):SetActive(false)
+    self._countPanel:SetActive(false)
   end
   self._id = reward[1]
   self._clickCallback = clickCallback
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureSuccessRewardItem.BtnOnClick = function(self, go)
-  -- function num : 0_2
+function UIFindTreasureSuccessRewardItem:BtnOnClick(go)
   if self._clickCallback then
-    (self._clickCallback)(self._id, go)
+    self._clickCallback(self._id, go)
   end
 end
-
-

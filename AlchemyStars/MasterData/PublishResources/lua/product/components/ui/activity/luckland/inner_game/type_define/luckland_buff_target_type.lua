@@ -1,8 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/type_define/luckland_buff_target_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-LuckLandBuffTargetType = {None = 0, Self = 1, TagPet = 2, TIDPet = 3, RandomPet = 4, NearestTagPet = 5, AllPet = 6, AllMonster = 7, DistancePet = 8, PosPets = 9}
+LuckLandBuffTargetType = {
+  None = 0,
+  Self = 1,
+  TagPet = 2,
+  TIDPet = 3,
+  RandomPet = 4,
+  NearestTagPet = 5,
+  AllPet = 6,
+  AllMonster = 7,
+  DistancePet = 8,
+  PosPets = 9
+}
 _enum("LuckLandBuffTargetType", LuckLandBuffTargetType)
-

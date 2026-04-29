@@ -1,34 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_pet_request_sync.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftPetRequestSync", AircraftPetRequestBase)
 AircraftPetRequestSync = AircraftPetRequestSync
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPetRequestSync.Constructor = function(self, petID, pstID, assetName, clickAnimClip)
-  -- function num : 0_0 , upvalues : _ENV
-  local req1 = (ResourceManager:GetInstance()):SyncLoadAsset(assetName, LoadType.GameObject)
+function AircraftPetRequestSync:Constructor(petID, pstID, assetName, clickAnimClip)
+  local req1 = ResourceManager:GetInstance():SyncLoadAsset(assetName, LoadType.GameObject)
   if req1 == nil then
     AirError("找不到星灵模型:", petID)
   end
-  local animName = (HelperProxy:GetInstance()):GetPetAnimatorControllerName(assetName, PetAnimatorControllerType.Aircraft)
-  local req2 = (ResourceManager:GetInstance()):SyncLoadAsset(animName, LoadType.GameObject)
+  local animName = HelperProxy:GetInstance():GetPetAnimatorControllerName(assetName, PetAnimatorControllerType.Aircraft)
+  local req2 = ResourceManager:GetInstance():SyncLoadAsset(animName, LoadType.GameObject)
   self._req1 = req1
   self._req2 = req2
   self._petGameObject = req1.Obj
-  self._petAnimation = (req2.Obj):GetComponent("Animation")
+  self._petAnimation = req2.Obj:GetComponent("Animation")
   self:makePet()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetRequestSync.Dispose = function(self)
-  -- function num : 0_1
-  (self._req1):Dispose()
-  ;
-  (self._req2):Dispose()
+function AircraftPetRequestSync:Dispose()
+  self._req1:Dispose()
+  self._req2:Dispose()
 end
-
-

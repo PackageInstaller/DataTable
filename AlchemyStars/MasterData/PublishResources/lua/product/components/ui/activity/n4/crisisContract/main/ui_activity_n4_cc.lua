@@ -1,255 +1,176 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/main/ui_activity_n4_cc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UIActivityN4CC", UISideEnterCenterContentBase)
 UIActivityN4CC = UIActivityN4CC
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN4CC.DoInit = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN4CC:DoInit()
   self._campaign = self._data
   self._context = UIActivityN4ConText:New()
-  ;
-  (self._context):SetComponent(self._campaign)
-  self.componentId = (self._context):GetComponentId()
-  self.componentInfo = (self._context):GetComponentInfo()
-  self.component = (self._context):GetComponent()
+  self._context:SetComponent(self._campaign)
+  self.componentId = self._context:GetComponentId()
+  self.componentInfo = self._context:GetComponentInfo()
+  self.component = self._context:GetComponent()
   self:_Init()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CC._Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN4CC:_Init()
   self._levelsData = {}
   self.levelNum = 4
-  local cfgs = (Cfg.cfg_component_challenge_mission)({ComponentID = self.componentId})
+  local cfgs = Cfg.cfg_component_challenge_mission({
+    ComponentID = self.componentId
+  })
   if not cfgs or #cfgs < 1 then
-    (Log.error)("UIActivityN4CC cfg_component_challenge_mission don\'t have data with ComponnetID ", self.componentId)
-    return 
+    Log.error("UIActivityN4CC cfg_component_challenge_mission don't have data with ComponnetID ", self.componentId)
+    return
   end
-  for k,cfg in pairs(cfgs) do
+  for k, cfg in pairs(cfgs) do
     local levelIndex = cfg.LeveIndex
-    local levelData = (self._levelsData)[levelIndex]
+    local levelData = self._levelsData[levelIndex]
     if not levelData then
       levelData = {}
-      -- DECOMPILER ERROR at PC32: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._levelsData)[levelIndex] = levelData
+      self._levelsData[levelIndex] = levelData
     end
     levelData[cfg.HardID] = cfg
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CC.DoShow = function(self, uiParams)
-  -- function num : 0_2
+function UIActivityN4CC:DoShow(uiParams)
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
-  ;
-  (self._spine):LoadSpine("n4cn_kv_1_spine_idle")
+    self._campaign:ClearCampaignNew(TT)
+  end)
+  self._spine:LoadSpine("n4cn_kv_1_spine_idle")
   self:RefreshLevels(true)
   self:StartCheckActivityEnd()
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CC._CheckGuide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN4CC:_CheckGuide()
   self:Lock("UIActivityN4CC")
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
     YIELD(TT, 1000)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISideEnterCenterController_N4CC)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISideEnterCenterController_N4CC)
     YIELD(TT, 33)
-    local guideModule = (GameGlobal.GetModule)(GuideModule)
+    local guideModule = GameGlobal.GetModule(GuideModule)
     if guideModule:IsGuideProcess(8114001) then
-      (self._guideLevel1BtnGo):SetActive(true)
+      self._guideLevel1BtnGo:SetActive(true)
     end
     self:UnLock("UIActivityN4CC")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CC.DoHide = function(self)
-  -- function num : 0_4
+function UIActivityN4CC:DoHide()
   self:CancelTimer()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CC.DoDestroy = function(self)
-  -- function num : 0_5
+function UIActivityN4CC:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CC.InitWidget = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN4CC:InitWidget()
   self.countCown = self:GetUIComponent("UILocalizationText", "countCown")
   self._spine = self:GetUIComponent("SpineLoader", "spine")
   self._guideLevel1BtnGo = self:GetGameObject("guideLevel1Btn")
-  ;
-  (self._guideLevel1BtnGo):SetActive(false)
+  self._guideLevel1BtnGo:SetActive(false)
   self.levels = {}
   for i = 1, self.levelNum do
     local levelPool = self:GetUIComponent("UISelectObjectPath", "level" .. i)
     local levelWidget = levelPool:SpawnObject("UIActivityN4CCLevelItem")
     levelWidget:SetVisible(false)
-    ;
-    (table.insert)(self.levels, levelWidget)
+    table.insert(self.levels, levelWidget)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CC.CancelTimer = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityN4CC:CancelTimer()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CC.RefreshLevels = function(self, playEnterAni)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN4CC:RefreshLevels(playEnterAni)
   if #self._levelsData ~= self.levelNum then
-    (Log.error)("UIActivityN4CC level num err with componentId ", self.componentId)
-    return 
+    Log.error("UIActivityN4CC level num err with componentId ", self.componentId)
+    return
   end
   for i = 1, self.levelNum do
-    local levelWidget = (self.levels)[i]
-    local data = (self._levelsData)[i]
+    local levelWidget = self.levels[i]
+    local data = self._levelsData[i]
     levelWidget:SetData(data, self._context, function(data, hasNew)
-    -- function num : 0_8_0 , upvalues : self
-    self:_HandleItemClick(data, hasNew)
-  end
-)
+      self:_HandleItemClick(data, hasNew)
+    end)
   end
   if playEnterAni then
     self:StartTask(function(TT)
-    -- function num : 0_8_1 , upvalues : self, _ENV
-    for i = 1, self.levelNum do
-      local levelWidget = (self.levels)[i]
-      levelWidget:PlayEnterAni()
-      YIELD(TT, 60)
-    end
-  end
-)
+      for i = 1, self.levelNum do
+        local levelWidget = self.levels[i]
+        levelWidget:PlayEnterAni()
+        YIELD(TT, 60)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CC._HandleItemClick = function(self, data, hasNew)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityN4CC:_HandleItemClick(data, hasNew)
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, hasNew, _ENV, data
     self:Lock("UIActivityN4CC:Level_click_ani")
     if hasNew then
       local ids = {}
-      for k,cfg in pairs(data) do
-        (table.insert)(ids, cfg.CampaignMissionId)
+      for k, cfg in pairs(data) do
+        table.insert(ids, cfg.CampaignMissionId)
       end
       local asyncRes = AsyncRequestRes:New()
-      ;
-      (self.component):HandleChallengeClearNewReq(TT, asyncRes, ids)
+      self.component:HandleChallengeClearNewReq(TT, asyncRes, ids)
     end
-    do
-      self:ShowDialog("UIActivityN4LevelEffController", data, self._context, function()
-      -- function num : 0_9_0_0 , upvalues : self, data
+    self:ShowDialog("UIActivityN4LevelEffController", data, self._context, function()
       self:ShowDialog("UIActivityN4CCLevelDetailController", data, self._context, function()
-        -- function num : 0_9_0_0_0 , upvalues : self
         self:OnDetailClose()
-      end
-)
-    end
-)
-      self:UnLock("UIActivityN4CC:Level_click_ani")
-    end
-  end
-)
+      end)
+    end)
+    self:UnLock("UIActivityN4CC:Level_click_ani")
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CC.OnDetailClose = function(self)
-  -- function num : 0_10
+function UIActivityN4CC:OnDetailClose()
   if self._activityEnd then
-    return 
+    return
   end
   self:RefreshLevels()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CC.HelpBtnOnClick = function(self, go)
-  -- function num : 0_11
+function UIActivityN4CC:HelpBtnOnClick(go)
   self:ShowDialog("UIIntroLoader", "UIN4_CC_Intro")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CC.GuideLevel1BtnOnClick = function(self, go)
-  -- function num : 0_12
-  local data = (self._levelsData)[1]
+function UIActivityN4CC:GuideLevel1BtnOnClick(go)
+  local data = self._levelsData[1]
   self:_HandleItemClick(data, true)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CC.StartCheckActivityEnd = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityN4CC:StartCheckActivityEnd()
   self._activityEnd = self:CheckAndRefreshTime()
   if not self._activityEnd then
-    self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_13_0 , upvalues : self
-    self._activityEnd = self:CheckAndRefreshTime()
-    if self._activityEnd then
-      self:CancelTimer()
-    end
-  end
-)
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+      self._activityEnd = self:CheckAndRefreshTime()
+      if self._activityEnd then
+        self:CancelTimer()
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CC.CheckAndRefreshTime = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local time = (self.componentInfo).m_close_time
-  local now = (math.floor)((self:GetModule(SvrTimeModule)):GetServerTime() / 1000)
+function UIActivityN4CC:CheckAndRefreshTime()
+  local time = self.componentInfo.m_close_time
+  local now = math.floor(self:GetModule(SvrTimeModule):GetServerTime() / 1000)
   if time < now then
-    local timeStr = (StringTable.Get)("str_activity_finished")
-    ;
-    (self.countCown):SetText(timeStr)
+    local timeStr = StringTable.Get("str_activity_finished")
+    self.countCown:SetText(timeStr)
     self._timeStr = timeStr
     return true
   else
-    do
-      local timeStr = (HelperProxy:GetInstance()):FormatTime_3(time - now)
-      if self._timeStr ~= timeStr then
-        (self.countCown):SetText((StringTable.Get)("str_crisis_contract_activity_remain_time", timeStr))
-        self._timeStr = timeStr
-      end
-      do return false end
+    local timeStr = HelperProxy:GetInstance():FormatTime_3(time - now)
+    if self._timeStr ~= timeStr then
+      self.countCown:SetText(StringTable.Get("str_crisis_contract_activity_remain_time", timeStr))
+      self._timeStr = timeStr
     end
+    return false
   end
 end
-
-

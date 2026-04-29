@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_cost_caster_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectCostCasterHPResult", SkillEffectResultBase)
 SkillEffectCostCasterHPResult = SkillEffectCostCasterHPResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCostCasterHPResult.Constructor = function(self, percent, costType, ignoreShield, leastHP)
-  -- function num : 0_0
+function SkillEffectCostCasterHPResult:Constructor(percent, costType, ignoreShield, leastHP)
   self._percent = percent
   self._costType = costType
   self._ignoreShield = ignoreShield
@@ -17,53 +10,30 @@ SkillEffectCostCasterHPResult.Constructor = function(self, percent, costType, ig
   self._leastHP = leastHP
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCostCasterHPResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCostCasterHPResult:GetEffectType()
   return SkillEffectType.CostCasterHP
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCostCasterHPResult.GetPercent = function(self)
-  -- function num : 0_2
+function SkillEffectCostCasterHPResult:GetPercent()
   return self._percent
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCostCasterHPResult.GetCostType = function(self)
-  -- function num : 0_3
+function SkillEffectCostCasterHPResult:GetCostType()
   return self._costType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCostCasterHPResult.GetIgnoreShield = function(self)
-  -- function num : 0_4
+function SkillEffectCostCasterHPResult:GetIgnoreShield()
   return self._ignoreShield
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCostCasterHPResult.GetDamageInfo = function(self)
-  -- function num : 0_5
+function SkillEffectCostCasterHPResult:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCostCasterHPResult.SetDamageInfo = function(self, damageInfo)
-  -- function num : 0_6
+function SkillEffectCostCasterHPResult:SetDamageInfo(damageInfo)
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCostCasterHPResult.GetLeastHP = function(self)
-  -- function num : 0_7
+function SkillEffectCostCasterHPResult:GetLeastHP()
   return self._leastHP
 end
-
-

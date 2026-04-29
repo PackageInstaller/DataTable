@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/social/air_lib_maker.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirLibMaker", Object)
 AirLibMaker = AirLibMaker
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirLibMaker.Constructor = function(self, socialArea, aircraftMain)
-  -- function num : 0_0
+function AirLibMaker:Constructor(socialArea, aircraftMain)
   self.m_SocialArea = socialArea
   self.m_AirMain = aircraftMain
   self.m_PointHolder = nil
@@ -17,34 +10,25 @@ AirLibMaker.Constructor = function(self, socialArea, aircraftMain)
   self.m_CurGatherCircleIdx = 0
   self.m_CloserCirclePosList = {}
   self.m_CurCloserCircleIdx = 0
-  self.m_Furniture = (self.m_SocialArea):GetFurniture()
+  self.m_Furniture = self.m_SocialArea:GetFurniture()
   self.m_FurniturePoints = {}
   self.m_FurnitureIndex = 0
   self:InitSeqMaker()
   self:InitHolder()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirLibMaker.InitSeqMaker = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (AirHelper.IsActionSeqFurniture)(self.m_Furniture) then
-    local fType = (self.m_Furniture):Type()
-    self.m_SeqMaker = AirActionSeqMaker:New((table.count)((self.m_SocialArea):GetPets()), fType)
+function AirLibMaker:InitSeqMaker()
+  if AirHelper.IsActionSeqFurniture(self.m_Furniture) then
+    local fType = self.m_Furniture:Type()
+    self.m_SeqMaker = AirActionSeqMaker:New(table.count(self.m_SocialArea:GetPets()), fType)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirLibMaker.GetSeqMaker = function(self)
-  -- function num : 0_2
+function AirLibMaker:GetSeqMaker()
   return self.m_SeqMaker
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirLibMaker.Dispose = function(self)
-  -- function num : 0_3
+function AirLibMaker:Dispose()
   self:ReleaseAllPoint()
   self.m_CenterPos = nil
   self.m_GatherCirclePosList = {}
@@ -54,98 +38,88 @@ AirLibMaker.Dispose = function(self)
   self.m_Furniture = nil
   self.m_FurnitureIndex = 0
   if self.m_SeqMaker then
-    (self.m_SeqMaker):Dispose()
+    self.m_SeqMaker:Dispose()
     self.m_SeqMaker = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirLibMaker.InitHolder = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function AirLibMaker:InitHolder()
   if self.m_Furniture then
     self.m_PointHolder = nil
   else
-    local type = (self.m_SocialArea):GetAreaType()
+    local type = self.m_SocialArea:GetAreaType()
     if type == AirSocialAreaType.Work then
-      local spaceId = (self.m_SocialArea):GetSpaceId()
-      local room = (self.m_AirMain):GetRoomBySpaceID(spaceId)
+      local spaceId = self.m_SocialArea:GetSpaceId()
+      local room = self.m_AirMain:GetRoomBySpaceID(spaceId)
       if room then
-        if (self.m_SocialArea):GetMainLibType() == AirSocialActionType.Gather then
+        if self.m_SocialArea:GetMainLibType() == AirSocialActionType.Gather then
           self.m_PointHolder = room:GetGatherPointHolder()
         else
           self.m_PointHolder = room:GetPointHolder()
         end
       end
-    else
-      do
-        if type == AirSocialAreaType.Happy then
-          local restAreaType = (self.m_SocialArea):GetRestAreaType()
-          if (self.m_SocialArea):GetMainLibType() == AirSocialActionType.Gather then
-            local pointHolder = (self.m_AirMain):GetPointHolder(restAreaType)
-            self.m_PointHolder = pointHolder
-          else
-            do
-              local pointHolder = (self.m_AirMain):GetGatherPointHolder(restAreaType)
-              self.m_PointHolder = pointHolder
-            end
-          end
-        end
+    elseif type == AirSocialAreaType.Happy then
+      local restAreaType = self.m_SocialArea:GetRestAreaType()
+      if self.m_SocialArea:GetMainLibType() == AirSocialActionType.Gather then
+        local pointHolder = self.m_AirMain:GetPointHolder(restAreaType)
+        self.m_PointHolder = pointHolder
+      else
+        local pointHolder = self.m_AirMain:GetGatherPointHolder(restAreaType)
+        self.m_PointHolder = pointHolder
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirLibMaker.InitGatherCircle = function(self, count)
-  -- function num : 0_5
+function AirLibMaker:InitGatherCircle(count)
   self.m_GatherCirclePosList = {}
   self.m_CurGatherCircleIdx = 0
   self:InitCircle(count, self.m_GatherCirclePosList, 1)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirLibMaker.InitCloserCircle = function(self, count)
-  -- function num : 0_6
+function AirLibMaker:InitCloserCircle(count)
   self.m_CloserCirclePosList = {}
   self.m_CurCloserCircleIdx = 0
   self:InitCircle(count, self.m_CloserCirclePosList, 0.5)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirLibMaker.InitCircle = function(self, count, list)
-  -- function num : 0_7 , upvalues : _ENV
+function AirLibMaker:InitCircle(count, list)
   if not self.m_CenterPos then
-    return 
+    return
   end
   if count == 3 then
-    local tbl = {0.25 * math.pi, 0.5 * math.pi, 0.75 * math.pi}
-    for index,a in ipairs(tbl) do
-      (table.insert)(list, {x = 1 * (math.cos)(a) + (self.m_CenterPos).x, y = (self.m_CenterPos).y, z = 1 * (math.sin)(a) + (self.m_CenterPos).z})
+    local tbl = {
+      0.25 * math.pi,
+      0.5 * math.pi,
+      0.75 * math.pi
+    }
+    for index, a in ipairs(tbl) do
+      table.insert(list, {
+        x = 1 * math.cos(a) + self.m_CenterPos.x,
+        y = self.m_CenterPos.y,
+        z = 1 * math.sin(a) + self.m_CenterPos.z
+      })
     end
-  else
-    do
-      if count == 2 then
-        local tbl = {0.25 * math.pi, 0.75 * math.pi}
-        for index,a in ipairs(tbl) do
-          (table.insert)(list, {x = 0.8 * (math.cos)(a) + (self.m_CenterPos).x, y = (self.m_CenterPos).y, z = 0.8 * (math.sin)(a) + (self.m_CenterPos).z})
-        end
-      end
+  elseif count == 2 then
+    local tbl = {
+      0.25 * math.pi,
+      0.75 * math.pi
+    }
+    for index, a in ipairs(tbl) do
+      table.insert(list, {
+        x = 0.8 * math.cos(a) + self.m_CenterPos.x,
+        y = self.m_CenterPos.y,
+        z = 0.8 * math.sin(a) + self.m_CenterPos.z
+      })
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirLibMaker.GetCurPos = function(self, petTempId)
-  -- function num : 0_8 , upvalues : _ENV
-  local pets = (self.m_SocialArea):GetPets()
+function AirLibMaker:GetCurPos(petTempId)
+  local pets = self.m_SocialArea:GetPets()
   local pet = pets[petTempId]
   if self.m_Furniture then
-    return ((self.m_FurniturePoints)[petTempId]):MovePoint()
+    return self.m_FurniturePoints[petTempId]:MovePoint()
   else
     if pet:GetSocialLocationIndex() then
       self.m_CurGatherCircleIdx = pet:GetSocialLocationIndex()
@@ -153,145 +127,105 @@ AirLibMaker.GetCurPos = function(self, petTempId)
       self.m_CurGatherCircleIdx = self.m_CurGatherCircleIdx + 1
       pet:SetSocialLocationIndex(self.m_CurGatherCircleIdx)
     end
-    local c = (self.m_GatherCirclePosList)[self.m_CurGatherCircleIdx]
+    local c = self.m_GatherCirclePosList[self.m_CurGatherCircleIdx]
     if c then
       local pos = Vector3(c.x, c.y, c.z)
       return pos
     else
-      do
-        do return self.m_CenterPos end
-      end
+      return self.m_CenterPos
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AirLibMaker.GetCloserPos = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function AirLibMaker:GetCloserPos()
   self.m_CurCloserCircleIdx = self.m_CurCloserCircleIdx + 1
-  local c = (self.m_CloserCirclePosList)[self.m_CurCloserCircleIdx]
+  local c = self.m_CloserCirclePosList[self.m_CurCloserCircleIdx]
   if c then
     local pos = Vector3(c.x, c.y, c.z)
     return pos
   else
-    do
-      do return self.m_CenterPos end
-    end
+    return self.m_CenterPos
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AirLibMaker.GetTargetPos = function(self)
-  -- function num : 0_10
+function AirLibMaker:GetTargetPos()
   return self.m_CenterPos
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AirLibMaker.PopPoint = function(self, count)
-  -- function num : 0_11 , upvalues : _ENV
+function AirLibMaker:PopPoint(count)
   if self.m_PointHolder then
-    local pointHolderIndex = (self.m_SocialArea):GetSocialPointHolderIndex()
+    local pointHolderIndex = self.m_SocialArea:GetSocialPointHolderIndex()
     if not pointHolderIndex then
-      local point = (self.m_PointHolder):PopPoint()
+      local point = self.m_PointHolder:PopPoint()
       local index = point:Index()
       self.m_CenterPos = point:Pos()
       self._point = point
-      ;
-      (self.m_SocialArea):SetSocialPointHolderIndex(index, true)
+      self.m_SocialArea:SetSocialPointHolderIndex(index, true)
     else
-      do
-        do
-          do
-            local point = (self.m_PointHolder):OccupyPoint(pointHolderIndex)
-            if point then
-              self.m_CenterPos = point:Pos()
-              self._point = point
-            end
-            self:InitGatherCircle(count)
-            self:InitCloserCircle(count)
-            do return self.m_CenterPos end
-            for petTempId,pet in pairs((self.m_SocialArea):GetPets()) do
-              local point = nil
-              if pet:GetSocialLocationIndex() then
-                if not (self.m_Furniture):HasPoint(pet:GetSocialLocationIndex()) then
-                  (Log.exception)("社交家具行为反序列化找家具入驻点失败，存的为", pet:GetSocialLocationIndex(), "目标家具为：", (self.m_Furniture):GetPstKey())
-                  point = (self.m_Furniture):PopPoint()
-                  AirLog("社交获取一个家具点，家具：", (self.m_Furniture):CfgID(), "，索引：", point:Index())
-                  if point then
-                    pet:SetSocialLocationIndex(point:Index())
-                  end
-                else
-                  AirLog("社交反序列化占据一个家具点，家具ID：", (self.m_Furniture):CfgID(), "，索引：", pet:GetSocialLocationIndex())
-                  point = (self.m_Furniture):OccupyPointByIndex(pet:GetSocialLocationIndex())
-                end
-              else
-                point = (self.m_Furniture):PopPoint()
-                if point then
-                  pet:SetSocialLocationIndex(point:Index())
-                end
-                AirLog("社交获取一个家具点，家具：", (self.m_Furniture):CfgID(), "，索引：", point:Index())
-              end
-              -- DECOMPILER ERROR at PC126: Confused about usage of register: R8 in 'UnsetPending'
-
-              ;
-              (self.m_FurniturePoints)[petTempId] = point
-            end
-          end
-        end
+      local point = self.m_PointHolder:OccupyPoint(pointHolderIndex)
+      if point then
+        self.m_CenterPos = point:Pos()
+        self._point = point
       end
+    end
+    self:InitGatherCircle(count)
+    self:InitCloserCircle(count)
+    return self.m_CenterPos
+  else
+    for petTempId, pet in pairs(self.m_SocialArea:GetPets()) do
+      local point
+      if pet:GetSocialLocationIndex() then
+        if not self.m_Furniture:HasPoint(pet:GetSocialLocationIndex()) then
+          Log.exception("社交家具行为反序列化找家具入驻点失败，存的为", pet:GetSocialLocationIndex(), "目标家具为：", self.m_Furniture:GetPstKey())
+          point = self.m_Furniture:PopPoint()
+          AirLog("社交获取一个家具点，家具：", self.m_Furniture:CfgID(), "，索引：", point:Index())
+          if point then
+            pet:SetSocialLocationIndex(point:Index())
+          end
+        else
+          AirLog("社交反序列化占据一个家具点，家具ID：", self.m_Furniture:CfgID(), "，索引：", pet:GetSocialLocationIndex())
+          point = self.m_Furniture:OccupyPointByIndex(pet:GetSocialLocationIndex())
+        end
+      else
+        point = self.m_Furniture:PopPoint()
+        if point then
+          pet:SetSocialLocationIndex(point:Index())
+        end
+        AirLog("社交获取一个家具点，家具：", self.m_Furniture:CfgID(), "，索引：", point:Index())
+      end
+      self.m_FurniturePoints[petTempId] = point
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AirLibMaker.ReleasePoint = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if (table.count)(self.m_FurniturePoints) > 0 then
+function AirLibMaker:ReleasePoint()
+  if table.count(self.m_FurniturePoints) > 0 then
     self:_ReleaseFurniturePoints()
   else
     if self._point then
-      (self.m_PointHolder):ReleasePoint(self._point)
+      self.m_PointHolder:ReleasePoint(self._point)
     end
-    ;
-    (self.m_SocialArea):SetSocialPointHolderIndex(nil, true)
+    self.m_SocialArea:SetSocialPointHolderIndex(nil, true)
     self._point = nil
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AirLibMaker.GetFurniturePoint = function(self, petTempID)
-  -- function num : 0_13
-  return (self.m_FurniturePoints)[petTempID]
+function AirLibMaker:GetFurniturePoint(petTempID)
+  return self.m_FurniturePoints[petTempID]
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AirLibMaker._ReleaseFurniturePoints = function(self)
-  -- function num : 0_14
+function AirLibMaker:_ReleaseFurniturePoints()
   self.m_FurniturePoints = {}
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AirLibMaker.ReleaseAllPoint = function(self)
-  -- function num : 0_15
+function AirLibMaker:ReleaseAllPoint()
   if self.m_PointHolder and self._point then
-    (self.m_PointHolder):ReleasePoint(self._point)
+    self.m_PointHolder:ReleasePoint(self._point)
   end
   self.m_PointHolder = nil
   self:_ReleaseFurniturePoints()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AirLibMaker.GetFurniture = function(self)
-  -- function num : 0_16
+function AirLibMaker:GetFurniture()
   return self.m_Furniture
 end
-
-

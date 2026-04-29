@@ -1,98 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/ge_elemental_summerII_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("elemental_run_data")
 _class("ElementalSummerIIEventRunData", TestRobotElementalRunData)
 ElementalSummerIIEventRunData = ElementalSummerIIEventRunData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ElementalSummerIIEventRunData.ParseLevelData = function(self, rawargs)
-  -- function num : 0_0 , upvalues : _ENV
-  local args = (string.split)(rawargs, ",")
+function ElementalSummerIIEventRunData:ParseLevelData(rawargs)
+  local args = string.split(rawargs, ",")
   self._missionID = tonumber(args[1])
   self._componentConfigID = tonumber(args[2])
   self:ParseConfigID()
-  if (table.count)(args) > 2 then
+  if 2 < table.count(args) then
     self._hardID = tonumber(args[3])
   end
   self._affixList = {}
-  if (table.count)(args) > 3 then
+  if table.count(args) > 3 then
     for i = 4, #args do
-      (table.insert)(self._affixList, tonumber(args[i]))
+      table.insert(self._affixList, tonumber(args[i]))
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalSummerIIEventRunData.GetEnterMatchParam = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local param = {self:GetMissionID(), ECampaignMissionComponentId.ECampaignMissionComponentId_SummerII, 
-{[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = self:GetComponentConfigID()}
-}
+function ElementalSummerIIEventRunData:GetEnterMatchParam()
+  local param = {
+    self:GetMissionID(),
+    ECampaignMissionComponentId.ECampaignMissionComponentId_SummerII,
+    {
+      [ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = self:GetComponentConfigID()
+    }
+  }
   return param
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalSummerIIEventRunData.ParseConfigID = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  self._campaignID = campaignModule:ParseCfgComponentID(self._componentConfigID)
+function ElementalSummerIIEventRunData:ParseConfigID()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  self._campaignID, self._componentID, self.componentType = campaignModule:ParseCfgComponentID(self._componentConfigID)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalSummerIIEventRunData.GetCampaignID = function(self)
-  -- function num : 0_3
+function ElementalSummerIIEventRunData:GetCampaignID()
   return self._campaignID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalSummerIIEventRunData.GetMissionID = function(self)
-  -- function num : 0_4
+function ElementalSummerIIEventRunData:GetMissionID()
   return self._missionID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalSummerIIEventRunData.GetComponentID = function(self)
-  -- function num : 0_5
+function ElementalSummerIIEventRunData:GetComponentID()
   return self._componentID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalSummerIIEventRunData.GetComponentConfigID = function(self)
-  -- function num : 0_6
+function ElementalSummerIIEventRunData:GetComponentConfigID()
   return self._componentConfigID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalSummerIIEventRunData.HaseAffix = function(self)
-  -- function num : 0_7
+function ElementalSummerIIEventRunData:HaseAffix()
   if not self._hardID then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalSummerIIEventRunData.GetHardID = function(self)
-  -- function num : 0_8
+function ElementalSummerIIEventRunData:GetHardID()
   return self._hardID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementalSummerIIEventRunData.GetAffixList = function(self)
-  -- function num : 0_9
+function ElementalSummerIIEventRunData:GetAffixList()
   return self._affixList
 end
-
-

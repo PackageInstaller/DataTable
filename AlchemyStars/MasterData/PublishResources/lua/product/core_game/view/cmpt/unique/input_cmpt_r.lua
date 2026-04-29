@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/unique/input_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("InputComponent", Object)
 InputComponent = InputComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-InputComponent.Constructor = function(self, world)
-  -- function num : 0_0
+function InputComponent:Constructor(world)
   self._world = world
   self._touchHasBegin = nil
   self._touchMoving = nil
@@ -25,123 +18,72 @@ InputComponent.Constructor = function(self, world)
   self._isPlayPreviewActiveSkill = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.Destructor = function(self)
-  -- function num : 0_1
+function InputComponent:Destructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.Initialize = function(self)
-  -- function num : 0_2
+function InputComponent:Initialize()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.GetTouchBeginPosition = function(self)
-  -- function num : 0_3
+function InputComponent:GetTouchBeginPosition()
   return self._touchBeginPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.GetTouchMovePosition = function(self)
-  -- function num : 0_4
+function InputComponent:GetTouchMovePosition()
   return self._touchMovePos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.GetTouchMovePositionArray = function(self)
-  -- function num : 0_5
+function InputComponent:GetTouchMovePositionArray()
   return self._touchMovePosArray
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.GetTouchEndPosition = function(self)
-  -- function num : 0_6
+function InputComponent:GetTouchEndPosition()
   return self._touchEndPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.GetDoubleClickPosition = function(self)
-  -- function num : 0_7
+function InputComponent:GetDoubleClickPosition()
   return self._doubleClickPos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.IsTouchMoving = function(self)
-  -- function num : 0_8
+function InputComponent:IsTouchMoving()
   return self._touchMoving
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.TouchHasBegin = function(self)
-  -- function num : 0_9
+function InputComponent:TouchHasBegin()
   return self._touchHasBegin
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.TouchEnd = function(self)
-  -- function num : 0_10
+function InputComponent:TouchEnd()
   return self._touchHasEnd
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.IsDoubleClick = function(self)
-  -- function num : 0_11
+function InputComponent:IsDoubleClick()
   return self._isDoubleClick
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.SetTouchBegin = function(self, begin)
-  -- function num : 0_12
+function InputComponent:SetTouchBegin(begin)
   self._touchHasBegin = begin
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.SetTouchMoving = function(self, moving)
-  -- function num : 0_13
+function InputComponent:SetTouchMoving(moving)
   self._touchMoving = moving
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.SetTouchBeginPosition = function(self, pos)
-  -- function num : 0_14
+function InputComponent:SetTouchBeginPosition(pos)
   self._touchBeginPos = pos
   self:SetTouchBegin(true)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.SetTouchMovePosition = function(self, pos)
-  -- function num : 0_15
+function InputComponent:SetTouchMovePosition(pos)
   self._touchMovePos = pos
   self:SetTouchMoving(true)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.SetTouchMovePositionList = function(self, posArray)
-  -- function num : 0_16
+function InputComponent:SetTouchMovePositionList(posArray)
   self._touchMovePosArray = posArray
   self:SetTouchMoving(true)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.SetTouchEndPosition = function(self, pos)
-  -- function num : 0_17
+function InputComponent:SetTouchEndPosition(pos)
   self._touchEndPos = pos
   self:SetTouchEnd(true)
   self:SetTouchBegin(false)
@@ -149,88 +91,52 @@ InputComponent.SetTouchEndPosition = function(self, pos)
   self:SetDoubleClick(false)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.SetTouchEnd = function(self, hasEnd)
-  -- function num : 0_18
+function InputComponent:SetTouchEnd(hasEnd)
   self._touchHasEnd = hasEnd
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.SetDoubleClickPos = function(self, doubleClickPos)
-  -- function num : 0_19
+function InputComponent:SetDoubleClickPos(doubleClickPos)
   self:SetDoubleClick(true)
   self._doubleClickPos = doubleClickPos
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.SetDoubleClick = function(self, dbClick)
-  -- function num : 0_20
+function InputComponent:SetDoubleClick(dbClick)
   self._isDoubleClick = dbClick
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.SetPreviewActiveSkill = function(self, isPreview)
-  -- function num : 0_21
+function InputComponent:SetPreviewActiveSkill(isPreview)
   self._isPreviewActiveSkill = isPreview
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.SetPreviewActiveSkillPlay = function(self, isPlay)
-  -- function num : 0_22
+function InputComponent:SetPreviewActiveSkillPlay(isPlay)
   self._isPlayPreviewActiveSkill = isPlay
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.IsPreviewActiveSkillPlaying = function(self)
-  -- function num : 0_23
+function InputComponent:IsPreviewActiveSkillPlaying()
   return self._isPlayPreviewActiveSkill
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-InputComponent.IsPreviewActiveSkill = function(self)
-  -- function num : 0_24
+function InputComponent:IsPreviewActiveSkill()
   return self._isPreviewActiveSkill
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.Input = function(self)
-  -- function num : 0_25
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).Input)
+function MainWorld:Input()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.Input)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.HasInput = function(self)
-  -- function num : 0_26
-  do return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).Input) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorld:HasInput()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.Input) ~= nil
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.AddInput = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).Input
+function MainWorld:AddInput()
+  local index = self.BW_UniqueComponentsEnum.Input
   local component = InputComponent:New(self)
   component:Initialize()
   self:SetUniqueComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.RemoveInput = function(self)
-  -- function num : 0_28
+function MainWorld:RemoveInput()
   if self:HasInput() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).Input, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.Input, nil)
   end
 end
-
-

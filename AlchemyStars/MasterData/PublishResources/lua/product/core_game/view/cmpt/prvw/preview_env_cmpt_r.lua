@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/preview_env_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewEnvComponent", Object)
 PreviewEnvComponent = PreviewEnvComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewEnvComponent.Constructor = function(self, world)
-  -- function num : 0_0
+function PreviewEnvComponent:Constructor(world)
   self._world = world
   self:ResetPreviewEnv()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.ResetPreviewEnv = function(self)
-  -- function num : 0_1
+function PreviewEnvComponent:ResetPreviewEnv()
   self._previewTeamID = nil
   self._piecesEffectTypeList = nil
   self._prismEntityIDs = nil
@@ -33,162 +23,109 @@ PreviewEnvComponent.ResetPreviewEnv = function(self)
   self._transportTrapPosList = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.SetConvertPlayerPosGridEffectEntityID = function(self, id)
-  -- function num : 0_2
+function PreviewEnvComponent:SetConvertPlayerPosGridEffectEntityID(id)
   self._convertPlayerPosGridEffectEntityID = id
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.GetConvertPlayerPosGridEffectEntityID = function(self)
-  -- function num : 0_3
+function PreviewEnvComponent:GetConvertPlayerPosGridEffectEntityID()
   return self._convertPlayerPosGridEffectEntityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.ClearConvertPlayerPosGridEffectEntityID = function(self)
-  -- function num : 0_4
+function PreviewEnvComponent:ClearConvertPlayerPosGridEffectEntityID()
   self._convertPlayerPosGridEffectEntityID = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.ResetPieceEntities = function(self, t)
-  -- function num : 0_5
+function PreviewEnvComponent:ResetPieceEntities(t)
   self._pieceEntities = t
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.ResetImmuneHitbacks = function(self, t)
-  -- function num : 0_6
+function PreviewEnvComponent:ResetImmuneHitbacks(t)
   self._immuneHitbacks = t
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.ResetPieceTable = function(self, t)
-  -- function num : 0_7
+function PreviewEnvComponent:ResetPieceTable(t)
   self._allPieceTable = t
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.ResetPieceTypes = function(self, t)
-  -- function num : 0_8
+function PreviewEnvComponent:ResetPieceTypes(t)
   self._pieceTypes = t
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.ResetPiecesEffectTypeList = function(self, t)
-  -- function num : 0_9
+function PreviewEnvComponent:ResetPiecesEffectTypeList(t)
   self._piecesEffectTypeList = t
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.ResetPrismEntityIDs = function(self, t)
-  -- function num : 0_10
+function PreviewEnvComponent:ResetPrismEntityIDs(t)
   self._prismEntityIDs = t
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.ResetPieceBlocks = function(self, t)
-  -- function num : 0_11
+function PreviewEnvComponent:ResetPieceBlocks(t)
   self._pieceBlocks = t
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.IsImmuneHitback = function(self, e)
-  -- function num : 0_12 , upvalues : _ENV
+function PreviewEnvComponent:IsImmuneHitback(e)
   if not self._immuneHitbacks then
     return false
   end
-  return (table.icontains)(self._immuneHitbacks, e:GetID())
+  return table.icontains(self._immuneHitbacks, e:GetID())
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.GetEntitiesAtPos = function(self, pos, filter)
-  -- function num : 0_13 , upvalues : _ENV
+function PreviewEnvComponent:GetEntitiesAtPos(pos, filter)
   if not self._pieceEntities then
     return {}
   end
-  local posIdx = (Vector2.Pos2Index)(pos)
-  local es = (self._pieceEntities)[posIdx]
+  local posIdx = Vector2.Pos2Index(pos)
+  local es = self._pieceEntities[posIdx]
   if not es then
     return {}
   end
   local ret = {}
   if filter then
-    for i,e in ipairs(es) do
+    for i, e in ipairs(es) do
       if filter(e) then
         ret[#ret + 1] = e
       end
     end
   else
-    do
-      ret = es
-      return ret
-    end
+    ret = es
   end
+  return ret
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.GetPosBlockData = function(self, pos)
-  -- function num : 0_14 , upvalues : _ENV
-  local posIdx = (Vector2.Pos2Index)(pos)
-  return (self._pieceBlocks)[posIdx]
+function PreviewEnvComponent:GetPosBlockData(pos)
+  local posIdx = Vector2.Pos2Index(pos)
+  return self._pieceBlocks[posIdx]
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.GetEntityBlockFlag = function(self, e)
-  -- function num : 0_15
+function PreviewEnvComponent:GetEntityBlockFlag(e)
   if e:HasGhost() then
-    local ownerId = (e:Ghost()):GetOwnerID()
-    local eOwner = (self._world):GetEntityByID(ownerId)
+    local ownerId = e:Ghost():GetOwnerID()
+    local eOwner = self._world:GetEntityByID(ownerId)
     if eOwner then
       return self:GetEntityBlockFlag(eOwner)
     end
   end
-  do
-    if e:HasGuideGhost() then
-      local ownerId = (e:GuideGhost()):GetOwnerID()
-      local eOwner = (self._world):GetEntityByID(ownerId)
-      if eOwner then
-        return self:GetEntityBlockFlag(eOwner)
-      end
+  if e:HasGuideGhost() then
+    local ownerId = e:GuideGhost():GetOwnerID()
+    local eOwner = self._world:GetEntityByID(ownerId)
+    if eOwner then
+      return self:GetEntityBlockFlag(eOwner)
     end
-    do
-      do
-        if e:HasPetPstID() then
-          local team = (e:Pet()):GetOwnerTeamEntity()
-          return self:GetEntityBlockFlag(team)
-        end
-        if e:HasBlockFlag() then
-          return (e:BlockFlag()):GetBlockFlag()
-        end
-      end
-    end
+  end
+  if e:HasPetPstID() then
+    local team = e:Pet():GetOwnerTeamEntity()
+    return self:GetEntityBlockFlag(team)
+  end
+  if e:HasBlockFlag() then
+    return e:BlockFlag():GetBlockFlag()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.IsPosBlock = function(self, pos, blockFlag)
-  -- function num : 0_16
+function PreviewEnvComponent:IsPosBlock(pos, blockFlag)
   if not pos then
     return false
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   if not utilData:IsValidPiecePos(pos) then
     return true
   end
@@ -196,39 +133,33 @@ PreviewEnvComponent.IsPosBlock = function(self, pos, blockFlag)
     return false
   end
   local pieceBlock = self:GetPosBlockData(pos)
-  if pieceBlock == nil then
+  if nil == pieceBlock then
     return true
   end
   return pieceBlock:CheckBlock(blockFlag)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.AddEntityBlockFlag = function(self, e, pos)
-  -- function num : 0_17 , upvalues : _ENV
+function PreviewEnvComponent:AddEntityBlockFlag(e, pos)
   if e:HasPetPstID() then
-    e = (e:Pet()):GetOwnerTeamEntity()
+    e = e:Pet():GetOwnerTeamEntity()
   end
-  local bodyArea = (e:BodyArea()):GetArea()
+  local bodyArea = e:BodyArea():GetArea()
   local blockFlag = self:GetEntityBlockFlag(e)
-  for _,area in ipairs(bodyArea) do
+  for _, area in ipairs(bodyArea) do
     local blockData = self:GetPosBlockData(pos + area)
     blockData:AddBlock(e:GetID(), blockFlag)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.DelEntityBlockFlag = function(self, e, pos)
-  -- function num : 0_18 , upvalues : _ENV
+function PreviewEnvComponent:DelEntityBlockFlag(e, pos)
   if e:HasPetPstID() then
-    e = (e:Pet()):GetOwnerTeamEntity()
+    e = e:Pet():GetOwnerTeamEntity()
   end
-  local bodyArea = (e:BodyArea()):GetArea()
-  for _,area in ipairs(bodyArea) do
+  local bodyArea = e:BodyArea():GetArea()
+  for _, area in ipairs(bodyArea) do
     local blockData = self:GetPosBlockData(pos + area)
     if not blockData then
-      (Log.error)("DelEntityBlockFlag() NOT find blockData!! pos=", pos, " area=", area)
+      Log.error("DelEntityBlockFlag() NOT find blockData!! pos=", pos, " area=", area)
     end
     if blockData then
       blockData:DelBlock(e:GetID())
@@ -236,161 +167,97 @@ PreviewEnvComponent.DelEntityBlockFlag = function(self, e, pos)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.IsPrismPiece = function(self, pos)
-  -- function num : 0_19 , upvalues : _ENV
-  local posIdx = (Vector2.Pos2Index)(pos)
-  local pieceEffectType = (self._piecesEffectTypeList)[posIdx]
+function PreviewEnvComponent:IsPrismPiece(pos)
+  local posIdx = Vector2.Pos2Index(pos)
+  local pieceEffectType = self._piecesEffectTypeList[posIdx]
   if pieceEffectType == PieceEffectType.Prism or pieceEffectType == PieceEffectType.CrossPrism then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.GetPrismEntityIDAtPos = function(self, pos)
-  -- function num : 0_20 , upvalues : _ENV
-  local posIdx = (Vector2.Pos2Index)(pos)
-  return (self._prismEntityIDs)[posIdx]
+function PreviewEnvComponent:GetPrismEntityIDAtPos(pos)
+  local posIdx = Vector2.Pos2Index(pos)
+  return self._prismEntityIDs[posIdx]
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.UnapplyPrism = function(self, prismPos)
-  -- function num : 0_21 , upvalues : _ENV
-  local posIdx = (Vector2.Pos2Index)(prismPos)
-  local changed = (self._prismChangedPieces)[posIdx]
+function PreviewEnvComponent:UnapplyPrism(prismPos)
+  local posIdx = Vector2.Pos2Index(prismPos)
+  local changed = self._prismChangedPieces[posIdx]
   if changed then
-    for posIdx,pieceType in pairs(changed) do
-      -- DECOMPILER ERROR at PC13: Confused about usage of register: R9 in 'UnsetPending'
-
-      (self._pieceTypes)[posIdx] = pieceType
+    for posIdx, pieceType in pairs(changed) do
+      self._pieceTypes[posIdx] = pieceType
     end
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._prismChangedPieces)[posIdx] = nil
+    self._prismChangedPieces[posIdx] = nil
     self:SetNeedUpdateConnectPieces(true)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.GetPrismChangedPieces = function(self, prismPos)
-  -- function num : 0_22 , upvalues : _ENV
-  local posIdx = (Vector2.Pos2Index)(prismPos)
-  return (self._prismChangedPieces)[posIdx]
+function PreviewEnvComponent:GetPrismChangedPieces(prismPos)
+  local posIdx = Vector2.Pos2Index(prismPos)
+  return self._prismChangedPieces[posIdx]
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.SetNeedUpdateConnectPieces = function(self, b)
-  -- function num : 0_23
+function PreviewEnvComponent:SetNeedUpdateConnectPieces(b)
   self._needUpdateConnectPieces = b
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.GetNeedUpdateConnectPieces = function(self)
-  -- function num : 0_24
+function PreviewEnvComponent:GetNeedUpdateConnectPieces()
   return self._needUpdateConnectPieces
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.SetPieceType = function(self, pos, pieceType)
-  -- function num : 0_25 , upvalues : _ENV
-  local posIdx = (Vector2.Pos2Index)(pos)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._pieceTypes)[posIdx] = pieceType
+function PreviewEnvComponent:SetPieceType(pos, pieceType)
+  local posIdx = Vector2.Pos2Index(pos)
+  self._pieceTypes[posIdx] = pieceType
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.GetPieceType = function(self, pos)
-  -- function num : 0_26 , upvalues : _ENV
-  local posIdx = (Vector2.Pos2Index)(pos)
-  return (self._pieceTypes)[posIdx]
+function PreviewEnvComponent:GetPieceType(pos)
+  local posIdx = Vector2.Pos2Index(pos)
+  return self._pieceTypes[posIdx]
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.GetAllPieceType = function(self)
-  -- function num : 0_27
+function PreviewEnvComponent:GetAllPieceType()
   return self._allPieceTable
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.SetMonsterClickCount = function(self, count)
-  -- function num : 0_28
+function PreviewEnvComponent:SetMonsterClickCount(count)
   self._monsterClickCount = count
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.GetMonsterClickCount = function(self)
-  -- function num : 0_29
+function PreviewEnvComponent:GetMonsterClickCount()
   return self._monsterClickCount
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.SetTransportTrapPosList = function(self, transportTrapPosList)
-  -- function num : 0_30
+function PreviewEnvComponent:SetTransportTrapPosList(transportTrapPosList)
   self._transportTrapPosList = transportTrapPosList
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewEnvComponent.GetTransportTrapPosList = function(self)
-  -- function num : 0_31
+function PreviewEnvComponent:GetTransportTrapPosList()
   return self._transportTrapPosList
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PreviewEnv = function(self)
-  -- function num : 0_32
-  return self:GetComponent((self.WEComponentsEnum).PreviewEnv)
+function Entity:PreviewEnv()
+  return self:GetComponent(self.WEComponentsEnum.PreviewEnv)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPreviewEnv = function(self)
-  -- function num : 0_33
-  return self:HasComponent((self.WEComponentsEnum).PreviewEnv)
+function Entity:HasPreviewEnv()
+  return self:HasComponent(self.WEComponentsEnum.PreviewEnv)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPreviewEnv = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewEnv
+function Entity:AddPreviewEnv()
+  local index = self.WEComponentsEnum.PreviewEnv
   local component = PreviewEnvComponent:New(self._world)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePreviewEnv = function(self)
-  -- function num : 0_35
+function Entity:RemovePreviewEnv()
   if self:HasPreviewEnv() then
-    self:RemoveComponent((self.WEComponentsEnum).PreviewEnv)
+    self:RemoveComponent(self.WEComponentsEnum.PreviewEnv)
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePreviewEnv = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewEnv
+function Entity:ReplacePreviewEnv()
+  local index = self.WEComponentsEnum.PreviewEnv
   local component = PreviewEnvComponent:New(self._world)
   self:ReplaceComponent(index, component)
 end
-
-

@@ -1,73 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_damage_percent_by_layer_mark.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeDamagePercentByLayerMark", BuffLogicBase)
 BuffLogicChangeDamagePercentByLayerMark = BuffLogicChangeDamagePercentByLayerMark
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeDamagePercentByLayerMark.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffInstance)._effectList = logicParam.effectList
+function BuffLogicChangeDamagePercentByLayerMark:Constructor(buffInstance, logicParam)
+  self._buffInstance._effectList = logicParam.effectList
   self._minValue = logicParam.minValue or 0
   self._oneLayerValue = logicParam.oneLayerValue or 0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._calcDefenderBuff = logicParam.calcDefenderBuff or 0
-  end
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._calcDefenderBuff = logicParam.calcDefenderBuff or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeDamagePercentByLayerMark.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeDamagePercentByLayerMark:DoLogic(notify)
   local casterEntity = self._entity
   if not casterEntity then
-    return 
+    return
   end
   local calcBuffTargetEntity = self._entity
   if self._calcDefenderBuff == 1 and notify.GetDefenderEntity then
     calcBuffTargetEntity = notify:GetDefenderEntity()
   end
   local changeValue = 0
-  local svc = (self._world):GetService("BuffLogic")
+  local svc = self._world:GetService("BuffLogic")
   local curMarkLayer = svc:GetBuffLayer(calcBuffTargetEntity, self._layerType)
   changeValue = self._minValue + self._oneLayerValue * curMarkLayer
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):ChangeSkillParam(casterEntity, self:GetBuffSeq(), paramType, changeValue)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:ChangeSkillParam(casterEntity, self:GetBuffSeq(), paramType, changeValue)
   end
 end
 
 _class("BuffLogicRemoveDamagePercentByLayerMark", BuffLogicBase)
 BuffLogicRemoveDamagePercentByLayerMark = BuffLogicRemoveDamagePercentByLayerMark
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveDamagePercentByLayerMark.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveDamagePercentByLayerMark:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveDamagePercentByLayerMark.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local context = (self._buffInstance):Context()
+function BuffLogicRemoveDamagePercentByLayerMark:DoLogic()
+  local context = self._buffInstance:Context()
   if not context then
-    return 
+    return
   end
   local casterEntity = context.casterEntity
   if not casterEntity then
-    return 
+    return
   end
-  if not (self._buffInstance)._effectList then
-    return 
+  if not self._buffInstance._effectList then
+    return
   end
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillParam(casterEntity, self:GetBuffSeq(), paramType)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillParam(casterEntity, self:GetBuffSeq(), paramType)
   end
   return true
 end
-
-

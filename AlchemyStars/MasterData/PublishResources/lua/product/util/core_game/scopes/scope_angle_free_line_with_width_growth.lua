@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_angle_free_line_with_width_growth.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_AngleFreeLineWithWidthGrow", SkillScopeCalculator_Base)
 SkillScopeCalculator_AngleFreeLineWithWidthGrow = SkillScopeCalculator_AngleFreeLineWithWidthGrow
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_AngleFreeLineWithWidthGrow.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
-  self._world = ((self._hub)._gridFilter)._world
+function SkillScopeCalculator_AngleFreeLineWithWidthGrow:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  self._world = self._hub._gridFilter._world
   if not self._world then
-    (Log.exception)(self._className, "AngleFreeLineWithWidthGrow无法用于没有world的环境下")
+    Log.exception(self._className, "AngleFreeLineWithWidthGrow无法用于没有world的环境下")
     return SkillScopeResult:New(SkillScopeType.AngleFreeLineWithWidthGrow, casterPos, {}, {})
   end
   local centerPosArray = centerPos
@@ -32,55 +25,42 @@ SkillScopeCalculator_AngleFreeLineWithWidthGrow.CalcRange = function(self, scope
   end
   local attackRange = self:_GetAttackRange(oriPos, desPos, bNoExtend, widthThreshold, stepRate)
   local result = SkillScopeResult:New(SkillScopeType.AngleFreeLineWithWidthGrow, centerPos, attackRange, attackRange)
-  do return result end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_AngleFreeLineWithWidthGrow._GetAttackRange = function(self, oriPos, desPos, noExtend, width, stepRate)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_AngleFreeLineWithWidthGrow:_GetAttackRange(oriPos, desPos, noExtend, width, stepRate)
   local attackRange = {}
   local dir = desPos - oriPos
   local pDirUp = Vector2(-dir.y, dir.x)
   local pDirDown = Vector2(dir.y, -dir.x)
-  dir = (Vector2.Normalize)(dir)
-  pDirUp = (Vector2.Normalize)(pDirUp)
-  pDirDown = (Vector2.Normalize)(pDirDown)
+  dir = Vector2.Normalize(dir)
+  pDirUp = Vector2.Normalize(pDirUp)
+  pDirDown = Vector2.Normalize(pDirDown)
   if not noExtend then
-    desPos = oriPos + dir * (math.sqrt)(2 * BattleConst.BoardMaxLen * BattleConst.BoardMaxLen)
+    desPos = oriPos + dir * math.sqrt(2 * BattleConst.BoardMaxLen * BattleConst.BoardMaxLen)
   end
-  local dis = (Vector2.Distance)(desPos, oriPos)
+  local dis = Vector2.Distance(desPos, oriPos)
   local oriUp = oriPos + pDirUp * width
   local oriDown = oriPos + pDirDown * width
   local desDown = desPos + pDirDown * (width + dis * stepRate)
   local desUp = desPos + pDirUp * (width + dis * stepRate)
-  local boardSvc = (self._world):GetService("BoardLogic")
+  local boardSvc = self._world:GetService("BoardLogic")
   local pieceXYMap = boardSvc:GetGridTiles()
-  for x,tableY in pairs(pieceXYMap) do
-    for y,_ in pairs(tableY) do
+  for x, tableY in pairs(pieceXYMap) do
+    for y, _ in pairs(tableY) do
       local curPos = Vector2(x, y)
       if self:IsPointInTrapezoid(curPos, oriUp, oriDown, desDown, desUp) then
-        (table.insert)(attackRange, curPos)
+        table.insert(attackRange, curPos)
       end
     end
   end
   return attackRange
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_AngleFreeLineWithWidthGrow.IsPointInTrapezoid = function(self, P, A, B, C, D)
-  -- function num : 0_2
-  local funRightOfOn = function(P, A, B)
-    -- function num : 0_2_0
-    do return (B.x - A.x) * (P.y - A.y) - (B.y - A.y) * (P.x - A.x) >= 0 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillScopeCalculator_AngleFreeLineWithWidthGrow:IsPointInTrapezoid(P, A, B, C, D)
+  local function funRightOfOn(P, A, B)
+    return (B.x - A.x) * (P.y - A.y) - (B.y - A.y) * (P.x - A.x) >= 0
   end
-
-  if funRightOfOn(P, A, B) and funRightOfOn(P, B, C) and funRightOfOn(P, C, D) then
-    return funRightOfOn(P, D, A)
-  end
+  
+  return funRightOfOn(P, A, B) and funRightOfOn(P, B, C) and funRightOfOn(P, C, D) and funRightOfOn(P, D, A)
 end
-
-

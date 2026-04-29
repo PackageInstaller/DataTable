@@ -1,104 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/unscaled_count_down_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UnscaledCountDownLogicComponent", Object)
 UnscaledCountDownLogicComponent = UnscaledCountDownLogicComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UnscaledCountDownLogicComponent.Constructor = function(self)
-  -- function num : 0_0
+function UnscaledCountDownLogicComponent:Constructor()
   self:Reset()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownLogicComponent.Reset = function(self)
-  -- function num : 0_1
+function UnscaledCountDownLogicComponent:Reset()
   self._flagID = 0
   self._isActive = false
   self._isWaitTrigger = false
   self._countDownValue = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownLogicComponent.StartCoundDown = function(self, flagID, countDownValueMs)
-  -- function num : 0_2
+function UnscaledCountDownLogicComponent:StartCoundDown(flagID, countDownValueMs)
   self._flagID = flagID
   self._countDownValue = countDownValueMs
   self._isActive = true
   self._isWaitTrigger = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownLogicComponent.GetFlagID = function(self)
-  -- function num : 0_3
+function UnscaledCountDownLogicComponent:GetFlagID()
   return self._flagID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownLogicComponent.GetIsActive = function(self)
-  -- function num : 0_4
+function UnscaledCountDownLogicComponent:GetIsActive()
   return self._isActive
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownLogicComponent.GetIsWaitTrigger = function(self)
-  -- function num : 0_5
+function UnscaledCountDownLogicComponent:GetIsWaitTrigger()
   return self._isWaitTrigger
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownLogicComponent.SetIsWaitTrigger = function(self)
-  -- function num : 0_6
+function UnscaledCountDownLogicComponent:SetIsWaitTrigger()
   self._isWaitTrigger = true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.UnscaledCountDownLogic = function(self)
-  -- function num : 0_7
-  return self:GetComponent((self.WEComponentsEnum).UnscaledCountDownLogic)
+function Entity:UnscaledCountDownLogic()
+  return self:GetComponent(self.WEComponentsEnum.UnscaledCountDownLogic)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasUnscaledCountDownLogic = function(self)
-  -- function num : 0_8
-  return self:HasComponent((self.WEComponentsEnum).UnscaledCountDownLogic)
+function Entity:HasUnscaledCountDownLogic()
+  return self:HasComponent(self.WEComponentsEnum.UnscaledCountDownLogic)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddUnscaledCountDownLogic = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).UnscaledCountDownLogic
+function Entity:AddUnscaledCountDownLogic()
+  local index = self.WEComponentsEnum.UnscaledCountDownLogic
   local component = UnscaledCountDownLogicComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceUnscaledCountDownLogic = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).UnscaledCountDownLogic
+function Entity:ReplaceUnscaledCountDownLogic()
+  local index = self.WEComponentsEnum.UnscaledCountDownLogic
   local component = UnscaledCountDownLogicComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveUnscaledCountDownLogic = function(self)
-  -- function num : 0_11
+function Entity:RemoveUnscaledCountDownLogic()
   if self:HasUnscaledCountDownLogic() then
-    self:RemoveComponent((self.WEComponentsEnum).UnscaledCountDownLogic)
+    self:RemoveComponent(self.WEComponentsEnum.UnscaledCountDownLogic)
   end
 end
-
-

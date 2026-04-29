@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_mark_grid_in_scope.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParam_MarkGridInScope", SkillEffectParamBase)
 SkillEffectParam_MarkGridInScope = SkillEffectParam_MarkGridInScope
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_MarkGridInScope.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_MarkGridInScope:Constructor(t)
   self._isClear = t.clear
   self._max = t.max
   self._series = t.series or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_MarkGridInScope.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_MarkGridInScope:GetEffectType()
   return SkillEffectType.MarkGridInScope
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_MarkGridInScope.IsClear = function(self)
-  -- function num : 0_2
+function SkillEffectParam_MarkGridInScope:IsClear()
   return self._isClear
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_MarkGridInScope.GetMaxCount = function(self)
-  -- function num : 0_3
+function SkillEffectParam_MarkGridInScope:GetMaxCount()
   return self._max
 end
-
-

@@ -1,71 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n15/main/ui_n15_main_lobby_entry_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN15MainLobbyEntry", UICustomWidget)
 UIN15MainLobbyEntry = UIN15MainLobbyEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN15MainLobbyEntry.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN15MainLobbyEntry:Constructor()
   self._campaignModule = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainLobbyEntry.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN15MainLobbyEntry:OnShow(uiParams)
   self:_InitWidget()
   self:_RefView()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainLobbyEntry._InitWidget = function(self)
-  -- function num : 0_2
+function UIN15MainLobbyEntry:_InitWidget()
   self._redPoint = self:GetGameObject("_redPoint")
   self._newFlag = self:GetGameObject("_newFlag")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainLobbyEntry._RefView = function(self)
-  -- function num : 0_3
+function UIN15MainLobbyEntry:_RefView()
   self:StartTask(self._SetState, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainLobbyEntry._SetState = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN15MainLobbyEntry:_SetState(TT)
   self:Lock("UIN15MainLobbyEntry")
   local res = AsyncRequestRes:New()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N15)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N15)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if res:GetSucc() then
-    local process = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N15)
+    local process = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N15)
     local showNew = process:GetStepStatusNew()
     local showredPoint = process:GetEntryRedDot()
-    ;
-    (self._newFlag):SetActive(showNew)
-    if showredPoint then
-      do
-        (self._redPoint):SetActive(not showNew)
-        self:UnLock("UIN15MainLobbyEntry")
-      end
-    end
+    self._newFlag:SetActive(showNew)
+    self._redPoint:SetActive(showredPoint and not showNew)
   end
+  self:UnLock("UIN15MainLobbyEntry")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15MainLobbyEntry.EntryBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN15MainLobbyEntry:EntryBtnOnClick(go)
   self:SwitchState(UIStateType.UIN15MainController)
 end
-
-

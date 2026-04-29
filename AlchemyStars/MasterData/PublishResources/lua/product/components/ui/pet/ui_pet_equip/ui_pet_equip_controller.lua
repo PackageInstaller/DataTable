@@ -1,204 +1,153 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipController", UIController)
 UIPetEquipController = UIPetEquipController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetEquipController:Constructor()
   self._petModule = self:GetModule(PetModule)
   self._atlas = self:GetAsset("UIPetEquip.spriteatlas", LoadType.SpriteAtlas)
   self:AttachEvent(GameEventType.OnEquipDataChanged, self.OnEquipDataChanged)
   self.tabCfg = {
-[1] = {name = "str_pet_equip_base"}
-, 
-[2] = {name = "str_pet_equip_refinement"}
-}
+    [1] = {
+      name = "str_pet_equip_base"
+    },
+    [2] = {
+      name = "str_pet_equip_refinement"
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipController.OnEquipDataChanged = function(self)
-  -- function num : 0_1
-  self._currentEquipLv = (self._petData):GetEquipLv()
+function UIPetEquipController:OnEquipDataChanged()
+  self._currentEquipLv = self._petData:GetEquipLv()
   self:_OnValue()
   if self.lastSelect == 1 then
-    (self._petDetail):SetData(self._petData)
+    self._petDetail:SetData(self._petData)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetEquipController:OnShow(uiParams)
   self:_GetComponents()
   self._petData = uiParams[1]
-  self._petId = (self._petData):GetTemplateID()
-  self._pstId = (self._petData):GetPstID()
-  self._currentEquipLv = (self._petData):GetEquipLv()
-  self._elem = (self._petData):GetPetFirstElement()
+  self._petId = self._petData:GetTemplateID()
+  self._pstId = self._petData:GetPstID()
+  self._currentEquipLv = self._petData:GetEquipLv()
+  self._elem = self._petData:GetPetFirstElement()
   self._equipMaxLv = 0
-  local cfg_equip = (Cfg.cfg_pet_equip)({PetID = self._petId})
-  if cfg_equip and #cfg_equip > 0 then
-    for k,v in pairs(cfg_equip) do
+  local cfg_equip = Cfg.cfg_pet_equip({
+    PetID = self._petId
+  })
+  if cfg_equip and 0 < #cfg_equip then
+    for k, v in pairs(cfg_equip) do
       local level = v.Level
-      if self._equipMaxLv < level then
+      if level > self._equipMaxLv then
         self._equipMaxLv = level
       end
     end
   else
-    do
-      ;
-      (Log.fatal)("###[UIPetEquipController] cfg_pet_equip is nil ! id --> ", self._petId)
-      self:_OnValue()
-      self:InitTabs()
-      self:ShowRefineEffect((self._petData):GetEquipRefineLv() > 0)
-      -- DECOMPILER ERROR: 1 unprocessed JMP targets
-    end
+    Log.fatal("###[UIPetEquipController] cfg_pet_equip is nil ! id --> ", self._petId)
   end
+  self:_OnValue()
+  self:InitTabs()
+  self:ShowRefineEffect(0 < self._petData:GetEquipRefineLv())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipController.InitTabs = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (UIPetEquipHelper.HasRefine)(self._petId) then
-    (self._tabGo):SetActive(true)
-    self.tabs = (self._tabs):SpawnObjects("UIPetEquipTab", 2)
-    for i,v in ipairs(self.tabs) do
-      do
-        local cfg = (self.tabCfg)[i]
-        v:SetData(cfg.name, function()
-    -- function num : 0_3_0 , upvalues : self, i
-    self:OnTabSelect(i)
-  end
-)
-        v:SetSelect(i == 1)
-      end
+function UIPetEquipController:InitTabs()
+  if UIPetEquipHelper.HasRefine(self._petId) then
+    self._tabGo:SetActive(true)
+    self.tabs = self._tabs:SpawnObjects("UIPetEquipTab", 2)
+    for i, v in ipairs(self.tabs) do
+      local cfg = self.tabCfg[i]
+      v:SetData(cfg.name, function()
+        self:OnTabSelect(i)
+      end)
+      v:SetSelect(i == 1)
     end
   else
-    (self._tabGo):SetActive(false)
+    self._tabGo:SetActive(false)
   end
   self:OnTabSelect(1, true)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipController.OnTabSelect = function(self, index, isInit)
-  -- function num : 0_4 , upvalues : _ENV
+function UIPetEquipController:OnTabSelect(index, isInit)
   if isInit then
     self.lastSelect = index
-  else
-    if self.lastSelect == index then
-      return 
-    end
+  elseif self.lastSelect == index then
+    return
   end
   if self.tabs then
     if self.lastSelect then
-      ((self.tabs)[self.lastSelect]):SetSelect(false)
+      self.tabs[self.lastSelect]:SetSelect(false)
     end
-    ;
-    ((self.tabs)[index]):SetSelect(true)
-    ;
-    ((self.tabs)[2]):SetPoint((UIPetEquipHelper.CheckRefineRed)(self._petData))
+    self.tabs[index]:SetSelect(true)
+    self.tabs[2]:SetPoint(UIPetEquipHelper.CheckRefineRed(self._petData))
   end
   self.lastSelect = index
-  if index ~= 1 then
-    (self._petDetailGo):SetActive(not isInit)
-    ;
-    (self._petRefineGo):SetActive(index == 2)
-    if index == 1 then
-      (self._petDetail):SetData(self._petData)
-    elseif index == 2 then
-      (self._petRefine):SetData(self._petData, self)
-      ;
-      ((self.tabs)[2]):SetPoint((UIPetEquipHelper.CheckRefineRed)(self._petData))
-    end
-    if not isInit then
-      self:_PlayTabSwithAnimation()
-    end
-    -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  if isInit then
+    self._petDetailGo:SetActive(index == 1)
+    self._petRefineGo:SetActive(index == 2)
+  end
+  if index == 1 then
+    self._petDetail:SetData(self._petData)
+  elseif index == 2 then
+    self._petRefine:SetData(self._petData, self)
+    self.tabs[2]:SetPoint(UIPetEquipHelper.CheckRefineRed(self._petData))
+  end
+  if not isInit then
+    self:_PlayTabSwithAnimation()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipController._PlayTabSwithAnimation = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIPetEquipController:_PlayTabSwithAnimation()
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
     local lockName = "UIPetEquipController_TabSwitch" .. self.lastSelect
     self:Lock(lockName)
     if self.lastSelect == 2 then
-      (self._petDetail):PlayAni("uieff_UIPetEquipDetailPanel_switchout")
+      self._petDetail:PlayAni("uieff_UIPetEquipDetailPanel_switchout")
       YIELD(TT, 130)
-      ;
-      (self._petDetailGo):SetActive(false)
-      ;
-      (self._petRefineGo):SetActive(true)
+      self._petDetailGo:SetActive(false)
+      self._petRefineGo:SetActive(true)
       YIELD(TT, 10)
-      ;
-      (self._petRefine):PlayTabInAni(TT)
+      self._petRefine:PlayTabInAni(TT)
       YIELD(TT, 200)
     else
-      ;
-      (self._petRefine):PlayTabOutAni(TT)
+      self._petRefine:PlayTabOutAni(TT)
       YIELD(TT, 300)
-      ;
-      (self._petRefineGo):SetActive(false)
-      ;
-      (self._petDetailGo):SetActive(true)
-      ;
-      (self._petDetail):PlayAni("uieff_UIPetEquipDetailPanel_Switchin")
+      self._petRefineGo:SetActive(false)
+      self._petDetailGo:SetActive(true)
+      self._petDetail:PlayAni("uieff_UIPetEquipDetailPanel_Switchin")
       YIELD(TT, 130)
     end
     self:UnLock(lockName)
     if self.lastSelect == 2 then
-      (self._petRefine):CheckGuide()
+      self._petRefine:CheckGuide()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipController._GetComponents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIPetEquipController:_GetComponents()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._tabs = self:GetUIComponent("UISelectObjectPath", "tabs")
   self._tabGo = self:GetGameObject("tabs")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_6_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CallUIMethod("UISpiritDetailGroupController", "RefreshEquipRed")
     self:CloseDialog()
-  end
-, function()
-    -- function num : 0_6_1 , upvalues : self
+  end, function()
     self:ShowDialog("UIHelpController", "UIPetEquipController")
-  end
-)
+  end)
   local petDetail = self:GetUIComponent("UISelectObjectPath", "petDetail")
   self._petDetailGo = self:GetGameObject("petDetail")
   self._petDetail = petDetail:SpawnObject("UIPetEquipDetailPanel")
-  ;
-  (self._petDetailGo):SetActive(false)
+  self._petDetailGo:SetActive(false)
   local petRefine = self:GetUIComponent("UISelectObjectPath", "petRefine")
   self._petRefineGo = self:GetGameObject("petRefine")
   self._petRefine = petRefine:SpawnObject("UIPetEquipRefinePanel")
-  ;
-  (self._petRefineGo):SetActive(false)
+  self._petRefineGo:SetActive(false)
   local sop = self:GetUIComponent("UISelectObjectPath", "mainmenu")
   self.currencyMenu = sop:SpawnObject("UICurrencyMenu")
-  ;
-  (self.currencyMenu):SetData({RoleAssetID.RoleAssetGold})
+  self.currencyMenu:SetData({
+    RoleAssetID.RoleAssetGold
+  })
   self.aniCamera = self:GetUIComponent("Animation", "aniCamera")
   self.aniPetEquipIn = self:GetUIComponent("Animation", "aniPetEquipIn")
   self.aniRefineEffect = self:GetUIComponent("Animation", "aniRefineEffect")
@@ -215,87 +164,55 @@ UIPetEquipController._GetComponents = function(self)
   self.bg_circlecu = self:GetGameObject("bg_circlecu")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipController._OnValue = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet_equip_view)[self._petId]
+function UIPetEquipController:_OnValue()
+  local cfg = Cfg.cfg_pet_equip_view[self._petId]
   if cfg then
     local icon = cfg.Icon
     local name = cfg.Name
-    ;
-    (self._icon):LoadImage(icon)
-    ;
-    (self._name):SetText((StringTable.Get)(name))
+    self._icon:LoadImage(icon)
+    self._name:SetText(StringTable.Get(name))
   else
-    do
-      ;
-      (Log.error)("###[UIPetEquipController]cfg is nil ! id --> ", self._petId)
-    end
+    Log.error("###[UIPetEquipController]cfg is nil ! id --> ", self._petId)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipController.OnHide = function(self)
-  -- function num : 0_8
+function UIPetEquipController:OnHide()
   self._icon = nil
   self._name = nil
   self._petId = nil
   self._currentEquipLv = nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipController.ShowRefineEffect = function(self, bShow, dontSwingIcon)
-  -- function num : 0_9
-  (self.bg_circlemaskGo):SetActive(bShow)
-  ;
-  (self.bg_circlewaiGo):SetActive(bShow)
-  ;
-  (self.circleneiGo):SetActive(bShow)
-  ;
-  (self.bglineGo):SetActive(bShow)
-  ;
-  (self.aniRotatexuGo):SetActive(bShow)
-  ;
-  (self.bg_circlecu):SetActive(bShow)
+function UIPetEquipController:ShowRefineEffect(bShow, dontSwingIcon)
+  self.bg_circlemaskGo:SetActive(bShow)
+  self.bg_circlewaiGo:SetActive(bShow)
+  self.circleneiGo:SetActive(bShow)
+  self.bglineGo:SetActive(bShow)
+  self.aniRotatexuGo:SetActive(bShow)
+  self.bg_circlecu:SetActive(bShow)
   if bShow and not dontSwingIcon then
-    (self.aniIconSwing):Play()
+    self.aniIconSwing:Play()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipController.SetTextureForIcon1 = function(self)
-  -- function num : 0_10
-  local rawImgIcon = (self.iconGo):GetComponent("RawImage")
+function UIPetEquipController:SetTextureForIcon1()
+  local rawImgIcon = self.iconGo:GetComponent("RawImage")
   local srcMainTextrue = rawImgIcon.mainTexture
-  local targetRenderer = (self.icon1Go):GetComponent("MeshRenderer")
+  local targetRenderer = self.icon1Go:GetComponent("MeshRenderer")
   if not targetRenderer then
-    return 
+    return
   end
   local targetMat = targetRenderer.sharedMaterial
   targetMat.mainTexture = srcMainTextrue
-  ;
-  (self.aniIconSwing):Stop()
+  self.aniIconSwing:Stop()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipController.ShowRefineSuccEffect = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function UIPetEquipController:ShowRefineSuccEffect(TT)
   self:SetTextureForIcon1()
   self:ShowRefineEffect(true, true)
-  ;
-  (self.aniRefineEffect):Stop()
-  ;
-  (self.aniRefineEffect):Play()
+  self.aniRefineEffect:Stop()
+  self.aniRefineEffect:Play()
   YIELD(TT, 1220)
-  ;
-  (self.aniIconSwing):Stop()
-  ;
-  (self.aniIconSwing):Play()
+  self.aniIconSwing:Stop()
+  self.aniIconSwing:Play()
 end
-
-

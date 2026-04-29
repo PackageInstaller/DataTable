@@ -1,21 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1502131/cfg_skill_view_2002131.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterBindEffect,effectID=150213103; PlayCasterAnimation,animName=AtkChain; PlayAudio,audioID = 150213102,audioType=1; Wait,waitTime=2200; Wait,waitTime=1500; "}
-}
-, 
-{2, 2, 0, 1, 1, 500, 
-{" DataSelectDamage,damageIndex = 1; PlayTargetBeHitEffect,hitEffectID=150213104,label=doAgain; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; "}
-}
-, 
-{3, 3, 0, 1, 1, 800, 
-{" DataSelectDamage,damageIndex = 1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0,label=doAgain; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterBindEffect,effectID=150213103; PlayCasterAnimation,animName=AtkChain; PlayAudio,audioID = 150213102,audioType=1; Wait,waitTime=2200; Wait,waitTime=1500; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    1,
+    500,
+    {
+      " DataSelectDamage,damageIndex = 1; PlayTargetBeHitEffect,hitEffectID=150213104,label=doAgain; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; "
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    1,
+    800,
+    {
+      " DataSelectDamage,damageIndex = 1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0,label=doAgain; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; "
+    }
+  }
 }
 return config, "ID", key
-

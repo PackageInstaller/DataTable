@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/domitory/ui_home_domitory_member.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeDomitoryMember", UICustomWidget)
 UIHomeDomitoryMember = UIHomeDomitoryMember
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeDomitoryMember.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomeDomitoryMember:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryMember.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeDomitoryMember:InitWidget()
   self.petName = self:GetUIComponent("UILocalizationText", "petName")
   self.petIcon = self:GetUIComponent("RawImageLoader", "petIcon")
   self.pet = self:GetGameObject("pet")
@@ -25,48 +15,31 @@ UIHomeDomitoryMember.InitWidget = function(self)
   self.affinityLoader = self:GetUIComponent("UISelectObjectPath", "affinity")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryMember.SetData = function(self, petpstID, idx, onClick)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomeDomitoryMember:SetData(petpstID, idx, onClick)
   self._index = idx
   self._onClick = onClick
   if petpstID and petpstID ~= 0 then
     self._isEmpty = false
-    local pet = (self:GetModule(PetModule)):GetPet(petpstID)
+    local pet = self:GetModule(PetModule):GetPet(petpstID)
     self._petID = pet:GetTemplateID()
-    local cfg = (Cfg.cfg_pet)[self._petID]
-    ;
-    (self.petName):SetText((StringTable.Get)(cfg.Name))
-    ;
-    (self._nickName):SetText((StringTable.Get)(cfg.ChinaTag))
+    local cfg = Cfg.cfg_pet[self._petID]
+    self.petName:SetText(StringTable.Get(cfg.Name))
+    self._nickName:SetText(StringTable.Get(cfg.ChinaTag))
     local icon = pet:GetPetTeamBody(PetSkinEffectPath.CARD_TEAM)
-    ;
-    (self.petIcon):LoadImage(icon)
-    ;
-    (self._logo):LoadImage(cfg.Logo)
+    self.petIcon:LoadImage(icon)
+    self._logo:LoadImage(cfg.Logo)
     if not self._affinity then
-      self._affinity = (self.affinityLoader):SpawnObject("UIHomePetAffinityItem")
+      self._affinity = self.affinityLoader:SpawnObject("UIHomePetAffinityItem")
     end
-    ;
-    (self._affinity):SetData(pet)
+    self._affinity:SetData(pet)
   else
-    do
-      self._isEmpty = true
-      self._petID = nil
-      ;
-      (self.pet):SetActive(not self._isEmpty)
-      ;
-      (self.add):SetActive(self._isEmpty)
-    end
+    self._isEmpty = true
+    self._petID = nil
   end
+  self.pet:SetActive(not self._isEmpty)
+  self.add:SetActive(self._isEmpty)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryMember.areaOnClick = function(self, go)
-  -- function num : 0_3
-  (self._onClick)(self._index)
+function UIHomeDomitoryMember:areaOnClick(go)
+  self._onClick(self._index)
 end
-
-

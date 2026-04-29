@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_activity_time_login/ui_activity_time_login_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityTimeLoginCell", UICustomWidget)
 UIActivityTimeLoginCell = UIActivityTimeLoginCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityTimeLoginCell.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityTimeLoginCell:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityTimeLoginCell:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell.SetData = function(self, campaign, component, cfg, isSelected, componentProgress, refreshCallback, selectCallback, tipsCallback)
-  -- function num : 0_2
+function UIActivityTimeLoginCell:SetData(campaign, component, cfg, isSelected, componentProgress, refreshCallback, selectCallback, tipsCallback)
   self._campaign = campaign
   self._component = component
   self._cfg = cfg
@@ -32,23 +19,17 @@ UIActivityTimeLoginCell.SetData = function(self, campaign, component, cfg, isSel
   self:_SetSelected(isSelected)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell._Refresh = function(self)
-  -- function num : 0_3
+function UIActivityTimeLoginCell:_Refresh()
   self:_SetDesc()
   self:_SetText()
   self:_SetItem()
-  local state = (self._component):GetCellState((self._cfg).ID)
+  local state = self._component:GetCellState(self._cfg.ID)
   self:_SetState(state)
   self:_SetAlpha(state)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell._SetRemainingTime = function(self, widgetName, descId, endTime, customTimeStr)
-  -- function num : 0_4 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIActivityTimeLoginCell:_SetRemainingTime(widgetName, descId, endTime, customTimeStr)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   if customTimeStr then
     obj:SetCustomTimeStr_Common_2()
   end
@@ -56,218 +37,158 @@ UIActivityTimeLoginCell._SetRemainingTime = function(self, widgetName, descId, e
   obj:SetData(endTime, nil, self._refreshCallback)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell._SetDesc = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local start = (self._cfg).StartTime
-  local close = (self._cfg).CloseTime
+function UIActivityTimeLoginCell:_SetDesc()
+  local start = self._cfg.StartTime
+  local close = self._cfg.CloseTime
   local startStr = self:_GetFormatStr(start)
   local closeStr = self:_GetFormatStr(close)
-  local str = (StringTable.Get)("str_activity_time_login_cell_desc", startStr, closeStr)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_desc", str)
+  local str = StringTable.Get("str_activity_time_login_cell_desc", startStr, closeStr)
+  UIWidgetHelper.SetLocalizationText(self, "_desc", str)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell._GetFormatStr = function(self, timeStr)
-  -- function num : 0_6 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function UIActivityTimeLoginCell:_GetFormatStr(timeStr)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local t = loginModule:GetTimeStampByTimeStr(timeStr, Enum_DateTimeZoneType.E_ZoneType_GMT)
   local d = _time(t)
-  return (StringTable.Get)("str_activity_time_login_cell_time_format", d.month, d.day)
+  return StringTable.Get("str_activity_time_login_cell_time_format", d.month, d.day)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell._SetText = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local tb = {_txt_stateCanReceive = "str_activity_common_can_get", _txt_stateReceived = "str_activity_common_state_taken_3", _txt_stateExpireShow = "str_activity_time_login_cell_expire_lock", _txt_stateExpireLock = "str_activity_time_login_cell_expire_lock", _txt_stateCan = "str_activity_time_login_cell_expire_get"}
-  for widgetName,id in pairs(tb) do
-    local str = "- " .. (StringTable.Get)(id) .. " -"
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, widgetName, str)
+function UIActivityTimeLoginCell:_SetText()
+  local tb = {
+    _txt_stateCanReceive = "str_activity_common_can_get",
+    _txt_stateReceived = "str_activity_common_state_taken_3",
+    _txt_stateExpireShow = "str_activity_time_login_cell_expire_lock",
+    _txt_stateExpireLock = "str_activity_time_login_cell_expire_lock",
+    _txt_stateCan = "str_activity_time_login_cell_expire_get"
+  }
+  for widgetName, id in pairs(tb) do
+    local str = "- " .. StringTable.Get(id) .. " -"
+    UIWidgetHelper.SetLocalizationText(self, widgetName, str)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell._SetItem = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityTimeLoginCell:_SetItem()
   local rewards = {}
-  for _,v in ipairs((self._cfg).Rewards) do
+  for _, v in ipairs(self._cfg.Rewards) do
     local roleAsset = RoleAsset:New()
     roleAsset.assetid = v[1]
     roleAsset.count = v[2]
-    ;
-    (table.insert)(rewards, roleAsset)
+    table.insert(rewards, roleAsset)
   end
-  rewards = (self._componentProgress):RemoveProgressItemInTable(rewards)
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_itemPool", "UIActivityTimeLoginCellItem", #rewards)
-  for i,v in ipairs(objs) do
+  rewards = self._componentProgress:RemoveProgressItemInTable(rewards)
+  local objs = UIWidgetHelper.SpawnObjects(self, "_itemPool", "UIActivityTimeLoginCellItem", #rewards)
+  for i, v in ipairs(objs) do
     v:SetData(rewards[i], self._tipsCallback)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell._SetState = function(self, state)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityTimeLoginCell:_SetState(state)
   local tb = {
-[ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_LOCK] = {"_state_lock"}
-, 
-[ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_CAN_RECV] = {"_state_canReceive"}
-, 
-[ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_RECVED] = {"_state_received", "_txt_stateReceived"}
-, 
-[ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_EXPIRE_SHOW] = {"_state_expireShow"}
-, 
-[ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_EXPIRE_LOCK] = {"_state_expireLock"}
-, 
-[ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_EXPIRE_CAN] = {"_state_expireCan"}
-}
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, tb)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, state)
+    [ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_LOCK] = {
+      "_state_lock"
+    },
+    [ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_CAN_RECV] = {
+      "_state_canReceive"
+    },
+    [ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_RECVED] = {
+      "_state_received",
+      "_txt_stateReceived"
+    },
+    [ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_EXPIRE_SHOW] = {
+      "_state_expireShow"
+    },
+    [ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_EXPIRE_LOCK] = {
+      "_state_expireLock"
+    },
+    [ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_EXPIRE_CAN] = {
+      "_state_expireCan"
+    }
+  }
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, tb)
+  UIWidgetHelper.SetObjGroupShow(objs, state)
   if state == ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_LOCK then
     self:_SetState_LockTime()
-  else
-    if state == ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_CAN_RECV then
-      self:_SetState_RecvTime()
-    else
-      if state == ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_EXPIRE_SHOW then
-        self:_SetState_ExpireProgress()
-      end
-    end
+  elseif state == ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_CAN_RECV then
+    self:_SetState_RecvTime()
+  elseif state == ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_EXPIRE_SHOW then
+    self:_SetState_ExpireProgress()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell._SetState_LockTime = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local start = (self._cfg).StartTime
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function UIActivityTimeLoginCell:_SetState_LockTime()
+  local start = self._cfg.StartTime
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local endTime = loginModule:GetTimeStampByTimeStr(start, Enum_DateTimeZoneType.E_ZoneType_GMT)
   self:_SetRemainingTime("_timePool", "str_activity_time_login_cell_wait_get", endTime, true)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell._SetState_RecvTime = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local start = (self._cfg).CloseTime
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function UIActivityTimeLoginCell:_SetState_RecvTime()
+  local start = self._cfg.CloseTime
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local endTime = loginModule:GetTimeStampByTimeStr(start, Enum_DateTimeZoneType.E_ZoneType_GMT)
   self:_SetRemainingTime("_timePool", "str_activity_time_login_cell_wait_get", endTime, true)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell._SetState_ExpireProgress = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local count = (self._component):GetCellPointCount((self._cfg).ID)
-  local maxCount = (self._cfg).PointCount
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txt_stateExpireShowProgress", count .. "/" .. maxCount)
+function UIActivityTimeLoginCell:_SetState_ExpireProgress()
+  local count = self._component:GetCellPointCount(self._cfg.ID)
+  local maxCount = self._cfg.PointCount
+  UIWidgetHelper.SetLocalizationText(self, "_txt_stateExpireShowProgress", count .. "/" .. maxCount)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell._SetSelected = function(self, isSelected)
-  -- function num : 0_13
-  (self:GetGameObject("_selectedFg")):SetActive(isSelected)
+function UIActivityTimeLoginCell:_SetSelected(isSelected)
+  self:GetGameObject("_selectedFg"):SetActive(isSelected)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell._SetAlpha = function(self, state)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityTimeLoginCell:_SetAlpha(state)
   local alpha = state == ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_RECVED and 0.5 or 1
   local obj = self:GetUIComponent("CanvasGroup", "_alphaGroup")
   obj.alpha = alpha
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell._OnRecvClick = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local id = (self._cfg).ID or -1
-  ;
-  (self._component):Start_HandleReceiveTimeLoginReward(id, function(res, rewards)
-    -- function num : 0_15_0 , upvalues : _ENV, id, self
+function UIActivityTimeLoginCell:_OnRecvClick()
+  local id = self._cfg.ID or -1
+  self._component:Start_HandleReceiveTimeLoginReward(id, function(res, rewards)
     if rewards == nil then
-      (Log.error)("UIActivityTimeLoginCell:_OnRecvClick() id = ", id, ", rewards = nil")
+      Log.error("UIActivityTimeLoginCell:_OnRecvClick() id = ", id, ", rewards = nil")
     end
     self:_OnReceiveRewards(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell._OnReceiveRewards = function(self, res, rewards)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityTimeLoginCell:_OnReceiveRewards(res, rewards)
   if self.view == nil then
-    return 
+    return
   end
   if res:GetSucc() then
     self:_SetState(ETimeLoginRewardStatus.E_TIME_LOGIN_REWARD_RECVED)
     local animName = "uieff_UIActivityTimeLogin_Cell_Cell_Get"
-    ;
-    (UIWidgetHelper.PlayAnimation)(self, "_anim", animName, 333, function()
-    -- function num : 0_16_0 , upvalues : rewards, self, _ENV
-    rewards = (self._componentProgress):RemoveProgressItemInTable(rewards)
-    ;
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
-  end
-)
+    UIWidgetHelper.PlayAnimation(self, "_anim", animName, 333, function()
+      rewards = self._componentProgress:RemoveProgressItemInTable(rewards)
+      UIActivityHelper.ShowUIGetRewards(rewards)
+    end)
   else
-    do
-      ;
-      (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_16_1 , upvalues : self
-    self:_Refresh()
-  end
-, function()
-    -- function num : 0_16_2
-  end
-)
-    end
+    self._campaign:CheckErrorCode(res.m_result, function()
+      self:_Refresh()
+    end, function()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell.BgOnClick = function(self, go)
-  -- function num : 0_17
+function UIActivityTimeLoginCell:BgOnClick(go)
   if self._selectCallback then
-    (self._selectCallback)()
+    self._selectCallback()
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell.CanRecvBtnOnClick = function(self, go)
-  -- function num : 0_18
+function UIActivityTimeLoginCell:CanRecvBtnOnClick(go)
   self:_OnRecvClick()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell.ExpireCanRecvBtnOnClick = function(self, go)
-  -- function num : 0_19
+function UIActivityTimeLoginCell:ExpireCanRecvBtnOnClick(go)
   self:_OnRecvClick()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCell.PlayAnimationInSequence = function(self, index)
-  -- function num : 0_20 , upvalues : _ENV
+function UIActivityTimeLoginCell:PlayAnimationInSequence(index)
   local delay = 0 + (index - 1) * 30
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_anim", "uieff_UIActivityTimeLogin_Cell_in", delay)
+  UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_anim", "uieff_UIActivityTimeLogin_Cell_in", delay)
 end
-
-

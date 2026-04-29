@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/side_enter/center/ui_side_enter_center_content_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISideEnterCenterContentBase", UICustomWidget)
 UISideEnterCenterContentBase = UISideEnterCenterContentBase
 local ESideEnterContentType = {Single = 1, Center = 2}
 _enum("ESideEnterContentType", ESideEnterContentType)
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UISideEnterCenterContentBase.OnInit = function(self, type, closeCallback, hideUICallback, data, params)
-  -- function num : 0_0
+function UISideEnterCenterContentBase:OnInit(type, closeCallback, hideUICallback, data, params)
   self._type = type
   self._closeCallback = closeCallback
   self._hideUICallback = hideUICallback
@@ -18,73 +11,44 @@ UISideEnterCenterContentBase.OnInit = function(self, type, closeCallback, hideUI
   self:DoInit(params)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UISideEnterCenterContentBase.CloseDialog = function(self, isPlayer)
-  -- function num : 0_1 , upvalues : ESideEnterContentType
+function UISideEnterCenterContentBase:CloseDialog(isPlayer)
   if isPlayer and self._type == ESideEnterContentType.Center then
-    return 
+    return
   end
   if self._closeCallback then
-    (self._closeCallback)()
+    self._closeCallback()
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UISideEnterCenterContentBase.SetCenterUIHide = function(self, hide)
-  -- function num : 0_2
+function UISideEnterCenterContentBase:SetCenterUIHide(hide)
   if self._hideUICallback then
-    (self._hideUICallback)(hide)
+    self._hideUICallback(hide)
   end
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UISideEnterCenterContentBase.IsEnableUpdate = function(self)
-  -- function num : 0_3
+function UISideEnterCenterContentBase:IsEnableUpdate()
   return self._enableUpdate
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UISideEnterCenterContentBase.EnableUpdate = function(self, enableUpdate)
-  -- function num : 0_4
+function UISideEnterCenterContentBase:EnableUpdate(enableUpdate)
   self._enableUpdate = enableUpdate
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UISideEnterCenterContentBase.DoInit = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.exception)(self._className .. "必须重写DoInit()方法:", (debug.traceback)())
+function UISideEnterCenterContentBase:DoInit()
+  Log.exception(self._className .. "必须重写DoInit()方法:", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UISideEnterCenterContentBase.DoShow = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.exception)(self._className .. "必须重写OnShow()方法:", (debug.traceback)())
+function UISideEnterCenterContentBase:DoShow()
+  Log.exception(self._className .. "必须重写OnShow()方法:", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UISideEnterCenterContentBase.DoHide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.exception)(self._className .. "必须重写OnHide()方法:", (debug.traceback)())
+function UISideEnterCenterContentBase:DoHide()
+  Log.exception(self._className .. "必须重写OnHide()方法:", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UISideEnterCenterContentBase.DoDestroy = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (Log.exception)(self._className .. "必须重写OnDestroy()方法:", (debug.traceback)())
+function UISideEnterCenterContentBase:DoDestroy()
+  Log.exception(self._className .. "必须重写OnDestroy()方法:", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UISideEnterCenterContentBase.DoUpdate = function(self, deltaTimeMS)
-  -- function num : 0_9
+function UISideEnterCenterContentBase:DoUpdate(deltaTimeMS)
 end
-
-

@@ -1,50 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/tree/ui_cn20_n49_tree_cost_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49CostItem", UICustomWidget)
 UICN20N49CostItem = UICN20N49CostItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49CostItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN20N49CostItem:OnShow()
   self:AttachEvent(GameEventType.ItemCountChanged, self.ShowTex)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49CostItem.SetData = function(self, id, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN20N49CostItem:SetData(id, callback)
   self._numberTex = self:GetUIComponent("UILocalizationText", "number")
   self._icon = self:GetUIComponent("Image", "icon")
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
   self.uiCommonAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
   self._id = id
   self._callback = callback
   self:ShowTex()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49CostItem.ShowTex = function(self)
-  -- function num : 0_2
-  local number = (self._itemModule):GetItemCount(self._id)
-  ;
-  (self._numberTex):SetText(number)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._icon).sprite = (self.uiCommonAtlas):GetSprite("toptoon_" .. self._id)
+function UICN20N49CostItem:ShowTex()
+  local number = self._itemModule:GetItemCount(self._id)
+  self._numberTex:SetText(number)
+  self._icon.sprite = self.uiCommonAtlas:GetSprite("toptoon_" .. self._id)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49CostItem.IconOnClick = function(self, go)
-  -- function num : 0_3
+function UICN20N49CostItem:IconOnClick(go)
   if self._callback then
-    (self._callback)(self._id, go)
+    self._callback(self._id, go)
   end
 end
-
-

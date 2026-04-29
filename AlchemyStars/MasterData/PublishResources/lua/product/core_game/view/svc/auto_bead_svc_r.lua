@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/auto_bead_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("AutoBeadServiceRender", BaseService)
 AutoBeadServiceRender = AutoBeadServiceRender
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AutoBeadServiceRender.Constructor = function(self, world)
-  -- function num : 0_0
+function AutoBeadServiceRender:Constructor(world)
   self.world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender.InitAutoBeadHolder = function(self, teamEntity)
-  -- function num : 0_1 , upvalues : _ENV
+function AutoBeadServiceRender:InitAutoBeadHolder(teamEntity)
   local cTeam = teamEntity:Team()
   local holderEntityID = cTeam:GetAutoBeadSkillHolderID()
-  local holderEntity = (self._world):GetEntityByID(holderEntityID)
+  local holderEntity = self._world:GetEntityByID(holderEntityID)
   if not holderEntity then
-    return 
+    return
   end
   local pos = teamEntity:GetPosition()
   local dir = teamEntity:GetDirection()
@@ -33,27 +23,19 @@ AutoBeadServiceRender.InitAutoBeadHolder = function(self, teamEntity)
   local mountOffset = Vector3(0, 0, 0)
   local ridLocationCmpt = rideEntity:Location()
   ridLocationCmpt:SetModifyLocationCallback(function(pos, dir)
-    -- function num : 0_1_0 , upvalues : self, mountEntity, rideOffset, mountOffset
     self:SetTargetLocation(pos, dir, mountEntity, rideOffset, mountOffset)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender.InitAutoBead = function(self)
-  -- function num : 0_2
+function AutoBeadServiceRender:InitAutoBead()
   self:NotifyAutoBeadPointRefreshUI()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender.SetTargetLocation = function(self, pos, dir, targetEntity, oriOffset, targetOffset)
-  -- function num : 0_3
+function AutoBeadServiceRender:SetTargetLocation(pos, dir, targetEntity, oriOffset, targetOffset)
   if not targetEntity:HasLocation() then
-    return 
+    return
   end
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local targetGridPos = boardServiceRender:BoardRenderPos2FloatGridPos_New(pos)
   targetGridPos = targetGridPos - oriOffset + targetOffset
   local targetPos = boardServiceRender:GridPosition2LocationPos(targetGridPos, targetEntity)
@@ -61,96 +43,79 @@ AutoBeadServiceRender.SetTargetLocation = function(self, pos, dir, targetEntity,
   locationCmpt:CallBackModifyLocation(targetPos, dir, targetEntity)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender.OnGridMoveToPos = function(self, e, speed, cur_pos, dest_pos, teamEntity)
-  -- function num : 0_4
+function AutoBeadServiceRender:OnGridMoveToPos(e, speed, cur_pos, dest_pos, teamEntity)
   local cTeam = teamEntity:Team()
   local holderEntityID = cTeam:GetAutoBeadSkillHolderID()
-  local holderEntity = (self._world):GetEntityByID(holderEntityID)
+  local holderEntity = self._world:GetEntityByID(holderEntityID)
   if not holderEntity then
-    return 
+    return
   end
   local leader = teamEntity:GetTeamLeaderPetEntity()
   if leader:GetID() == e:GetID() then
-    local group = (self._world):GetGroup(((self._world).BW_WEMatchers).RenderSyncMoveWithTeam)
-    local boardServiceRender = (self._world):GetService("BoardRender")
+    local group = self._world:GetGroup(self._world.BW_WEMatchers.RenderSyncMoveWithTeam)
+    local boardServiceRender = self._world:GetService("BoardRender")
     holderEntity:AddGridMove(speed, dest_pos, cur_pos)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender._DoRenderShowAutoBeadAttack = function(self, TT, teamEntity)
-  -- function num : 0_5 , upvalues : _ENV
+function AutoBeadServiceRender:_DoRenderShowAutoBeadAttack(TT, teamEntity)
   self:NotifyAutoBeadPointRefreshUI()
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local autoBeadAtkRes = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.AutoBeadAttack)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local autoBeadAtkRes = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.AutoBeadAttack)
   if not autoBeadAtkRes then
-    return 
+    return
   end
   local holderEntityID = autoBeadAtkRes:GetHolderEntityID()
   if not holderEntityID then
-    return 
+    return
   end
   local skillDataList = autoBeadAtkRes:GetHolderAutoBeadSkillDataList(holderEntityID)
   if not skillDataList then
-    return 
+    return
   end
   if #skillDataList == 0 then
-    return 
+    return
   end
-  local pieceService = (self._world):GetService("Piece")
+  local pieceService = self._world:GetService("Piece")
   local chainSkillCnt = #skillDataList
-  local holderEntity = (self._world):GetEntityByID(holderEntityID)
+  local holderEntity = self._world:GetEntityByID(holderEntityID)
   if not holderEntity then
-    return 
+    return
   end
   local teamPos = teamEntity:GetPosition()
   holderEntity:SetPosition(teamPos)
   pieceService:SetAllPieceDark()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureAutoBeadSkill, true)
-  local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._PlayAutoBeadSkillResultList, self, holderEntity, skillDataList)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureAutoBeadSkill, true)
+  local taskID = GameGlobal.TaskManager():CoreGameStartTask(self._PlayAutoBeadSkillResultList, self, holderEntity, skillDataList)
   local notCheckTimeOut = true
-  while not (TaskHelper:GetInstance()):IsTaskFinished(taskID, notCheckTimeOut) do
+  while not TaskHelper:GetInstance():IsTaskFinished(taskID, notCheckTimeOut) do
     YIELD(TT)
   end
   pieceService:RefreshPieceAnim()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureAutoBeadSkill, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureAutoBeadSkill, false)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender._PlayAutoBeadSkillResultList = function(self, TT, casterEntity, resList)
-  -- function num : 0_6 , upvalues : _ENV
+function AutoBeadServiceRender:_PlayAutoBeadSkillResultList(TT, casterEntity, resList)
   local skillCount = #resList
-  for skillIndex,v in ipairs(resList) do
-    local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoCastSkill, self, casterEntity, v, skillIndex, skillCount)
-    while not (TaskHelper:GetInstance()):IsTaskFinished(taskID) do
+  for skillIndex, v in ipairs(resList) do
+    local taskID = GameGlobal.TaskManager():CoreGameStartTask(self._DoCastSkill, self, casterEntity, v, skillIndex, skillCount)
+    while not TaskHelper:GetInstance():IsTaskFinished(taskID) do
       YIELD(TT)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender._DoCastSkill = function(self, TT, casterEntity, attackData, skillIndex, skillCount)
-  -- function num : 0_7 , upvalues : _ENV
+function AutoBeadServiceRender:_DoCastSkill(TT, casterEntity, attackData, skillIndex, skillCount)
   local playEntity = casterEntity
   local resContainer = attackData:GetResultContainer()
   local skillID = resContainer:GetSkillID()
-  local configService = (self._world):GetService("Config")
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  local playSkillService = (self._world):GetService("PlaySkill")
+  local configService = self._world:GetService("Config")
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  local playSkillService = self._world:GetService("PlaySkill")
   local skillPhaseArray = self:_GetAutoBeadSkillPhaseArray(casterEntity, skillID)
-  ;
-  (playEntity:SkillRoutine()):ClearSkillRoutine()
-  ;
-  (playEntity:SkillRoutine()):SetResultContainer(resContainer)
-  ;
-  (Log.fatal)("PlayAutoBeadSkill :", skillID)
+  playEntity:SkillRoutine():ClearSkillRoutine()
+  playEntity:SkillRoutine():SetResultContainer(resContainer)
+  Log.fatal("PlayAutoBeadSkill :", skillID)
   local playSkillTaskIDList = {}
   self:_OnResultDeadEntityAddDeadFlag(casterEntity:GetID(), skillIndex)
   local isFinalAttack = attackData:IsFinalAttack()
@@ -168,31 +133,26 @@ AutoBeadServiceRender._DoCastSkill = function(self, TT, casterEntity, attackData
   playBuffSvc:PlayBuffView(TT, nt1)
   local taskid = playSkillService:StartSkillRoutine(playEntity, skillPhaseArray, skillID)
   playSkillTaskIDList[#playSkillTaskIDList + 1] = taskid
-  while not (TaskHelper:GetInstance()):IsTaskFinished(taskid) do
+  while not TaskHelper:GetInstance():IsTaskFinished(taskid) do
     YIELD(TT)
   end
   local nt2 = NTAutoBeadSkillEachEnd:New(playEntity, skillID, autoBeadID)
   nt2:SetAutoBeadSkillIndex(autoBeadSkillIndex)
   playBuffSvc:PlayBuffView(TT, nt2)
   self:_ShowAttackMonsterDead(TT)
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(playSkillTaskIDList) do
+  while not TaskHelper:GetInstance():IsAllTaskFinished(playSkillTaskIDList) do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender._DoCastSkillxxx = function(self, TT, casterEntity, attackData, skillIndex, skillCount)
-  -- function num : 0_8 , upvalues : _ENV
+function AutoBeadServiceRender:_DoCastSkillxxx(TT, casterEntity, attackData, skillIndex, skillCount)
   local skillID = attackData:GetSkillID()
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  local playSkillService = (self._world):GetService("PlaySkill")
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  local playSkillService = self._world:GetService("PlaySkill")
   local playEntity = casterEntity
   local skillPhaseArray = self:_GetAutoBeadSkillPhaseArray(casterEntity, skillID)
-  ;
-  (playEntity:SkillRoutine()):ClearSkillRoutine()
-  ;
-  (Log.fatal)("PlayAutoBeadSkill :", skillID)
+  playEntity:SkillRoutine():ClearSkillRoutine()
+  Log.fatal("PlayAutoBeadSkill :", skillID)
   local playSkillTaskIDList = {}
   self:_OnResultDeadEntityAddDeadFlag(casterEntity:GetID(), skillIndex)
   local results = attackData:GetEffectResultDict()
@@ -208,54 +168,44 @@ AutoBeadServiceRender._DoCastSkillxxx = function(self, TT, casterEntity, attackD
   end
   resContainer:SetScopeResult(attackData:GetScopeResult())
   resContainer:SetSkillID(skillID)
-  ;
-  (playEntity:SkillRoutine()):SetResultContainer(resContainer)
+  playEntity:SkillRoutine():SetResultContainer(resContainer)
   local dir = self:GetPetForward(casterEntity)
   if dir then
     casterEntity:SetDirection(dir)
   end
   local taskid = playSkillService:StartSkillRoutine(playEntity, skillPhaseArray, skillID)
   playSkillTaskIDList[#playSkillTaskIDList + 1] = taskid
-  while not (TaskHelper:GetInstance()):IsTaskFinished(taskid) do
+  while not TaskHelper:GetInstance():IsTaskFinished(taskid) do
     YIELD(TT)
   end
   self:_ShowAttackMonsterDead(TT)
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(playSkillTaskIDList) do
+  while not TaskHelper:GetInstance():IsAllTaskFinished(playSkillTaskIDList) do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender._GetAutoBeadSkillPhaseArray = function(self, casterEntity, skillID)
-  -- function num : 0_9
-  local configService = (self._world):GetService("Config")
+function AutoBeadServiceRender:_GetAutoBeadSkillPhaseArray(casterEntity, skillID)
+  local configService = self._world:GetService("Config")
   local skinId = 1
   local skillConfigData = configService:GetSkillConfigData(skillID, casterEntity)
   local skillPhaseArray = skillConfigData:GetSkillPhaseArray(skinId)
   return skillPhaseArray
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender._OnResultDeadEntityAddDeadFlag = function(self, casterEntityID, skillIndex)
-  -- function num : 0_10 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local autoBeadAtkResCmpt = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.AutoBeadAttack)
+function AutoBeadServiceRender:_OnResultDeadEntityAddDeadFlag(casterEntityID, skillIndex)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local autoBeadAtkResCmpt = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.AutoBeadAttack)
   local deadEntityIdList = autoBeadAtkResCmpt:GetDeadEntityIDListByHolder(casterEntityID)
   local deadList = deadEntityIdList[skillIndex]
   if deadList then
-    for _,eid in ipairs(deadList) do
-      local e = (self._world):GetEntityByID(eid)
+    for _, eid in ipairs(deadList) do
+      local e = self._world:GetEntityByID(eid)
       e:AddDeadFlag()
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender._CheckFinalAttack = function(self, skillEffectResultContainer, casterEntity)
-  -- function num : 0_11 , upvalues : _ENV
+function AutoBeadServiceRender:_CheckFinalAttack(skillEffectResultContainer, casterEntity)
   local damageReslut = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   if damageReslut == nil then
     skillEffectResultContainer:SetFinalAttack(false)
@@ -268,28 +218,23 @@ AutoBeadServiceRender._CheckFinalAttack = function(self, skillEffectResultContai
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender._SortForFinalAttack = function(self, skillDamageResultArray, casterEntity)
-  -- function num : 0_12 , upvalues : _ENV
+function AutoBeadServiceRender:_SortForFinalAttack(skillDamageResultArray, casterEntity)
   if skillDamageResultArray == nil or #skillDamageResultArray <= 1 then
     return skillDamageResultArray
   end
   local count = #skillDamageResultArray
-  local CmpBodyAreafunc = function(skillDamageEffectResult1, skillDamageEffectResult2)
-    -- function num : 0_12_0 , upvalues : self
+  
+  local function CmpBodyAreafunc(skillDamageEffectResult1, skillDamageEffectResult2)
     local areaCount1 = self:_GetAreaCount(skillDamageEffectResult1)
     local areaCount2 = self:_GetAreaCount(skillDamageEffectResult2)
-    do return areaCount1 < areaCount2 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+    return areaCount1 < areaCount2
   end
-
-  ;
-  (table.sort)(skillDamageResultArray, CmpBodyAreafunc)
+  
+  table.sort(skillDamageResultArray, CmpBodyAreafunc)
   local lastSkillDamageResult = skillDamageResultArray[count]
   local maxAreaCount = self:_GetAreaCount(lastSkillDamageResult)
   local sortByAreaArray = {}
-  for _,v in ipairs(skillDamageResultArray) do
+  for _, v in ipairs(skillDamageResultArray) do
     local curAreaCount = self:_GetAreaCount(v)
     if curAreaCount == maxAreaCount then
       sortByAreaArray[#sortByAreaArray + 1] = v
@@ -299,29 +244,23 @@ AutoBeadServiceRender._SortForFinalAttack = function(self, skillDamageResultArra
   if areaArrayCount <= 1 then
     return skillDamageResultArray
   else
-    local CmpDistancefunc = function(skillDamageEffectResult1, skillDamageEffectResult2)
-    -- function num : 0_12_1 , upvalues : self, casterEntity
-    local dis1 = self:_GetDistanceToPlayer(skillDamageEffectResult1, casterEntity)
-    local dis2 = self:_GetDistanceToPlayer(skillDamageEffectResult2, casterEntity)
-    do return dis1 < dis2 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-    ;
-    (table.sort)(sortByAreaArray, CmpDistancefunc)
+    local function CmpDistancefunc(skillDamageEffectResult1, skillDamageEffectResult2)
+      local dis1 = self:_GetDistanceToPlayer(skillDamageEffectResult1, casterEntity)
+      
+      local dis2 = self:_GetDistanceToPlayer(skillDamageEffectResult2, casterEntity)
+      return dis1 < dis2
+    end
+    
+    table.sort(sortByAreaArray, CmpDistancefunc)
     local maxDistanceResult = sortByAreaArray[areaArrayCount]
-    ;
-    (table.removev)(skillDamageResultArray, maxDistanceResult)
+    table.removev(skillDamageResultArray, maxDistanceResult)
     skillDamageResultArray[#skillDamageResultArray + 1] = maxDistanceResult
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender._GetAreaCount = function(self, skillDamageResult)
-  -- function num : 0_13
+function AutoBeadServiceRender:_GetAreaCount(skillDamageResult)
   local entityID = skillDamageResult:GetTargetID()
-  local entity = (self._world):GetEntityByID(entityID)
+  local entity = self._world:GetEntityByID(entityID)
   if entity == nil then
     return 0
   end
@@ -333,167 +272,132 @@ AutoBeadServiceRender._GetAreaCount = function(self, skillDamageResult)
   return areaCount
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender._GetDistanceToPlayer = function(self, skillDamageResult, casterEntity)
-  -- function num : 0_14 , upvalues : _ENV
-  local playerPos = (casterEntity:GridLocation()).Position
+function AutoBeadServiceRender:_GetDistanceToPlayer(skillDamageResult, casterEntity)
+  local playerPos = casterEntity:GridLocation().Position
   local gridPos = skillDamageResult:GetGridPos()
-  return (Vector2.Distance)(gridPos, playerPos)
+  return Vector2.Distance(gridPos, playerPos)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender.GetPetForward = function(self, casterEntity)
-  -- function num : 0_15 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-  local casterPos = (casterEntity:GridLocation()).Position
+function AutoBeadServiceRender:GetPetForward(casterEntity)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local casterPos = casterEntity:GridLocation().Position
   local damageResultList = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
-  if not damageResultList or (table.count)(damageResultList) == 0 then
-    return 
+  if not damageResultList or table.count(damageResultList) == 0 then
+    return
   end
-  local beAttackEntityID = (damageResultList[1]):GetTargetID()
-  local targetEntity = (self._world):GetEntityByID(beAttackEntityID)
+  local beAttackEntityID = damageResultList[1]:GetTargetID()
+  local targetEntity = self._world:GetEntityByID(beAttackEntityID)
   if not targetEntity then
-    return 
+    return
   end
-  local get_index = function(c, p)
-    -- function num : 0_15_0
-    if p.x - c.x == 0 and p.y - c.y > 0 then
+  
+  local function get_index(c, p)
+    if p.x - c.x == 0 and 0 < p.y - c.y then
       return 1
     end
-    if p.x - c.x > 0 and p.y - c.y > 0 then
+    if p.x - c.x > 0 and 0 < p.y - c.y then
       return 2
     end
     if p.x - c.x > 0 and p.y - c.y == 0 then
       return 3
     end
-    if p.x - c.x > 0 and p.y - c.y < 0 then
+    if p.x - c.x > 0 and 0 > p.y - c.y then
       return 4
     end
-    if p.x - c.x == 0 and p.y - c.y < 0 then
+    if p.x - c.x == 0 and 0 > p.y - c.y then
       return 5
     end
-    if p.x - c.x < 0 and p.y - c.y < 0 then
+    if p.x - c.x < 0 and 0 > p.y - c.y then
       return 6
     end
     if p.x - c.x < 0 and p.y - c.y == 0 then
       return 7
     end
-    if p.x - c.x < 0 and p.y - c.y > 0 then
+    if p.x - c.x < 0 and 0 < p.y - c.y then
       return 8
     end
     return 1
   end
-
+  
   local damagePosList = {}
-  for i,result in ipairs(damageResultList) do
+  for i, result in ipairs(damageResultList) do
     if result:GetGridPos() then
-      (table.insert)(damagePosList, result:GetGridPos())
+      table.insert(damagePosList, result:GetGridPos())
     end
   end
-  local cmpFunc = function(damageResultPos1, damageResultPos2)
-    -- function num : 0_15_1 , upvalues : _ENV, casterPos, get_index
-    local dis1 = (Vector2.Distance)(damageResultPos1, casterPos)
-    local dis2 = (Vector2.Distance)(damageResultPos2, casterPos)
-    if get_index(casterPos, damageResultPos1) >= get_index(casterPos, damageResultPos2) then
-      do return dis1 ~= dis2 end
-      do return dis1 < dis2 end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  
+  local function cmpFunc(damageResultPos1, damageResultPos2)
+    local dis1 = Vector2.Distance(damageResultPos1, casterPos)
+    local dis2 = Vector2.Distance(damageResultPos2, casterPos)
+    if dis1 == dis2 then
+      return get_index(casterPos, damageResultPos1) < get_index(casterPos, damageResultPos2)
+    else
+      return dis1 < dis2
     end
   end
-
-  ;
-  (table.sort)(damagePosList, cmpFunc)
+  
+  table.sort(damagePosList, cmpFunc)
   local dir = damagePosList[1] - casterPos
   return dir
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender._ShowAttackMonsterDead = function(self, TT)
-  -- function num : 0_16
-  local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
+function AutoBeadServiceRender:_ShowAttackMonsterDead(TT)
+  local sMonsterShowRender = self._world:GetService("MonsterShowRender")
   sMonsterShowRender:DoAllMonsterDeadRender(TT)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender._StopFocusEffect = function(self, TT)
-  -- function num : 0_17 , upvalues : _ENV
-  ((self._world):MainCamera()):EnableDarkCamera(false)
+function AutoBeadServiceRender:_StopFocusEffect(TT)
+  self._world:MainCamera():EnableDarkCamera(false)
   local toNormalTime = BattleConst.ChainSkillToNormalTime
   local targetAlpha = 0
   local originalAlpha = BattleConst.ChainSkillDarkAlpha
-  ;
-  ((self._world):MainCamera()):EnableDarkCamera(false)
+  self._world:MainCamera():EnableDarkCamera(false)
   local lastTime = 0
-  local timeService = (self._world):GetService("Time")
+  local timeService = self._world:GetService("Time")
   local curTime = timeService:GetCurrentTimeMs()
   local startTime = curTime
   local timeLen = curTime - startTime
-  while timeLen < toNormalTime do
+  while toNormalTime > timeLen do
     local deltaTime = timeService:GetDeltaTimeMs()
     timeLen = timeLen + deltaTime
-    local percent = (timeLen) / toNormalTime
+    local percent = timeLen / toNormalTime
     local imgAlpha = originalAlpha - percent * originalAlpha
-    ;
-    ((self._world):MainCamera()):SetHudBgAlpha(imgAlpha)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.SetHeadMaskAlpha, imgAlpha)
+    self._world:MainCamera():SetHudBgAlpha(imgAlpha)
+    self._world:EventDispatcher():Dispatch(GameEventType.SetHeadMaskAlpha, imgAlpha)
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender._StartFocusEffect = function(self, TT)
-  -- function num : 0_18 , upvalues : _ENV
+function AutoBeadServiceRender:_StartFocusEffect(TT)
   local toDarkTime = BattleConst.ChainSkillToDarkTime
   local targetAlpha = BattleConst.ChainSkillDarkAlpha
-  ;
-  ((self._world):MainCamera()):EnableDarkCamera(true)
+  self._world:MainCamera():EnableDarkCamera(true)
   local lastTime = 0
-  local timeService = (self._world):GetService("Time")
+  local timeService = self._world:GetService("Time")
   local curTime = timeService:GetCurrentTimeMs()
   local startTime = curTime
   local timeLen = curTime - startTime
-  while timeLen < toDarkTime do
+  while toDarkTime > timeLen do
     local deltaTime = timeService:GetDeltaTimeMs()
     timeLen = timeLen + deltaTime
-    local percent = (timeLen) / toDarkTime
+    local percent = timeLen / toDarkTime
     local imgAlpha = percent * targetAlpha
-    ;
-    ((self._world):MainCamera()):SetHudBgAlpha(imgAlpha)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetHeadMaskAlpha, imgAlpha)
+    self._world:MainCamera():SetHudBgAlpha(imgAlpha)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SetHeadMaskAlpha, imgAlpha)
     YIELD(TT)
   end
-  do
-    local pieceService = (self._world):GetService("Piece")
-    pieceService:SetAllPieceDark()
-  end
+  local pieceService = self._world:GetService("Piece")
+  pieceService:SetAllPieceDark()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender.NotifyAutoBeadPointRefreshUI = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureAutoBeadPointRefreshUI)
+function AutoBeadServiceRender:NotifyAutoBeadPointRefreshUI()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureAutoBeadPointRefreshUI)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender.NotifyAutoBeadPointChange = function(self, curPoint, oldPoint)
-  -- function num : 0_20 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureAutoBeadPointChange, curPoint)
+function AutoBeadServiceRender:NotifyAutoBeadPointChange(curPoint, oldPoint)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureAutoBeadPointChange, curPoint)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoBeadServiceRender.NotifyAutoBeadPointToPowerChange = function(self, curPoint, oldPoint)
-  -- function num : 0_21 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureAutoBeadPointToPowerChange, curPoint)
+function AutoBeadServiceRender:NotifyAutoBeadPointToPowerChange(curPoint, oldPoint)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureAutoBeadPointToPowerChange, curPoint)
 end
-
-

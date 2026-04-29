@@ -1,33 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/activity/hard_level/ui_activity_n29_diff_level_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN29DiffLevelNode", UIActivityDiffLevelNode)
 UIActivityN29DiffLevelNode = UIActivityN29DiffLevelNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN29DiffLevelNode.OnInit = function(self)
-  -- function num : 0_0
+function UIActivityN29DiffLevelNode:OnInit()
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DiffLevelNode.PlayAnimation = function(self)
-  -- function num : 0_1
+function UIActivityN29DiffLevelNode:PlayAnimation()
   if self._anim then
-    if ((self._rectTransform).anchoredPosition).x > -180 then
-      (self._anim):Play("uieff_UIActivityN29DiffLevelNode_in03")
+    if self._rectTransform.anchoredPosition.x > -180 then
+      self._anim:Play("uieff_UIActivityN29DiffLevelNode_in03")
+    elseif self._rectTransform.anchoredPosition.x < -180 then
+      self._anim:Play("uieff_UIActivityN29DiffLevelNode_in01")
     else
-      if ((self._rectTransform).anchoredPosition).x < -180 then
-        (self._anim):Play("uieff_UIActivityN29DiffLevelNode_in01")
-      else
-        ;
-        (self._anim):Play("uieff_UIActivityN29DiffLevelNode_in02")
-      end
+      self._anim:Play("uieff_UIActivityN29DiffLevelNode_in02")
     end
   end
 end
-
-

@@ -1,16 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/UnityEngine/Color.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local rawget = rawget
-local setmetatable = setmetatable
-local type = type
-local Mathf = Mathf
+local rawget = _ENV.rawget
+local setmetatable = _ENV.setmetatable
+local type = _ENV.type
+local Mathf = _ENV.Mathf
 local Color = {_className = "Color"}
-local get = (tolua.initget)(Color)
-Color.__index = function(t, k)
-  -- function num : 0_0 , upvalues : rawget, Color, get
+local get = tolua.initget(Color)
+
+function Color.__index(t, k)
   local var = rawget(Color, k)
   if var == nil then
     var = rawget(get, k)
@@ -21,134 +16,120 @@ Color.__index = function(t, k)
   return var
 end
 
-Color.__call = function(t, r, g, b, a)
-  -- function num : 0_1 , upvalues : setmetatable, Color
-  return setmetatable({r = r or 0, g = g or 0, b = b or 0, a = a or 1}, Color)
+function Color.__call(t, r, g, b, a)
+  return setmetatable({
+    r = r or 0,
+    g = g or 0,
+    b = b or 0,
+    a = a or 1
+  }, Color)
 end
 
-Color.New = function(r, g, b, a)
-  -- function num : 0_2 , upvalues : setmetatable, Color
-  return setmetatable({r = r or 0, g = g or 0, b = b or 0, a = a or 1}, Color)
+function Color.New(r, g, b, a)
+  return setmetatable({
+    r = r or 0,
+    g = g or 0,
+    b = b or 0,
+    a = a or 1
+  }, Color)
 end
 
-Color.Set = function(self, r, g, b, a)
-  -- function num : 0_3
+function Color:Set(r, g, b, a)
   self.r = r
   self.g = g
   self.b = b
   self.a = a or 1
 end
 
-Color.Get = function(self)
-  -- function num : 0_4
+function Color:Get()
   return self.r, self.g, self.b, self.a
 end
 
-Color.Equals = function(self, other)
-  -- function num : 0_5
-  do return self.r == other.r and self.g == other.g and self.b == other.b and self.a == other.a end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Color:Equals(other)
+  return self.r == other.r and self.g == other.g and self.b == other.b and self.a == other.a
 end
 
-Color.Lerp = function(a, b, t)
-  -- function num : 0_6 , upvalues : Mathf, Color
-  t = (Mathf.Clamp01)(t)
-  return (Color.New)(a.r + t * (b.r - a.r), a.g + t * (b.g - a.g), a.b + t * (b.b - a.b), a.a + t * (b.a - a.a))
+function Color.Lerp(a, b, t)
+  t = Mathf.Clamp01(t)
+  return Color.New(a.r + t * (b.r - a.r), a.g + t * (b.g - a.g), a.b + t * (b.b - a.b), a.a + t * (b.a - a.a))
 end
 
-Color.LerpUnclamped = function(a, b, t)
-  -- function num : 0_7 , upvalues : Color
-  return (Color.New)(a.r + t * (b.r - a.r), a.g + t * (b.g - a.g), a.b + t * (b.b - a.b), a.a + t * (b.a - a.a))
+function Color.LerpUnclamped(a, b, t)
+  return Color.New(a.r + t * (b.r - a.r), a.g + t * (b.g - a.g), a.b + t * (b.b - a.b), a.a + t * (b.a - a.a))
 end
 
-Color.HSVToRGB = function(H, S, V, hdr)
-  -- function num : 0_8 , upvalues : Color, Mathf
+function Color.HSVToRGB(H, S, V, hdr)
   if hdr then
-    hdr = true
-    local white = (Color.New)(1, 1, 1, 1)
-    if S == 0 then
-      white.r = V
-      white.g = V
-      white.b = V
-      return white
-    end
-    if V == 0 then
-      white.r = 0
-      white.g = 0
-      white.b = 0
-      return white
-    end
+  end
+  hdr = true
+  local white = Color.New(1, 1, 1, 1)
+  if S == 0 then
+    white.r = V
+    white.g = V
+    white.b = V
+    return white
+  end
+  if V == 0 then
     white.r = 0
     white.g = 0
     white.b = 0
-    local num = S
-    local num2 = V
-    local f = H * 6
-    local num4 = (Mathf.Floor)(f)
-    local num5 = f - num4
-    local num6 = num2 * (1 - num)
-    local num7 = num2 * (1 - num * num5)
-    local num8 = num2 * (1 - num * (1 - num5))
-    local num9 = num4
-    local flag = num9 + 1
-    if flag == 0 then
-      white.r = num2
-      white.g = num6
-      white.b = num7
-    else
-      if flag == 1 then
-        white.r = num2
-        white.g = num8
-        white.b = num6
-      else
-        if flag == 2 then
-          white.r = num7
-          white.g = num2
-          white.b = num6
-        else
-          if flag == 3 then
-            white.r = num6
-            white.g = num2
-            white.b = num8
-          else
-            if flag == 4 then
-              white.r = num6
-              white.g = num7
-              white.b = num2
-            else
-              if flag == 5 then
-                white.r = num8
-                white.g = num6
-                white.b = num2
-              else
-                if flag == 6 then
-                  white.r = num2
-                  white.g = num6
-                  white.b = num7
-                else
-                  if flag == 7 then
-                    white.r = num2
-                    white.g = num8
-                    white.b = num6
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
-    if not hdr then
-      white.r = (Mathf.Clamp)(white.r, 0, 1)
-      white.g = (Mathf.Clamp)(white.g, 0, 1)
-      white.b = (Mathf.Clamp)(white.b, 0, 1)
-    end
     return white
   end
+  white.r = 0
+  white.g = 0
+  white.b = 0
+  local num = S
+  local num2 = V
+  local f = H * 6
+  local num4 = Mathf.Floor(f)
+  local num5 = f - num4
+  local num6 = num2 * (1 - num)
+  local num7 = num2 * (1 - num * num5)
+  local num8 = num2 * (1 - num * (1 - num5))
+  local num9 = num4
+  local flag = num9 + 1
+  if flag == 0 then
+    white.r = num2
+    white.g = num6
+    white.b = num7
+  elseif flag == 1 then
+    white.r = num2
+    white.g = num8
+    white.b = num6
+  elseif flag == 2 then
+    white.r = num7
+    white.g = num2
+    white.b = num6
+  elseif flag == 3 then
+    white.r = num6
+    white.g = num2
+    white.b = num8
+  elseif flag == 4 then
+    white.r = num6
+    white.g = num7
+    white.b = num2
+  elseif flag == 5 then
+    white.r = num8
+    white.g = num6
+    white.b = num2
+  elseif flag == 6 then
+    white.r = num2
+    white.g = num6
+    white.b = num7
+  elseif flag == 7 then
+    white.r = num2
+    white.g = num8
+    white.b = num6
+  end
+  if not hdr then
+    white.r = Mathf.Clamp(white.r, 0, 1)
+    white.g = Mathf.Clamp(white.g, 0, 1)
+    white.b = Mathf.Clamp(white.b, 0, 1)
+  end
+  return white
 end
 
-local RGBToHSVHelper = function(offset, dominantcolor, colorone, colortwo)
-  -- function num : 0_9
+local function RGBToHSVHelper(offset, dominantcolor, colorone, colortwo)
   local V = dominantcolor
   if V ~= 0 then
     local num = 0
@@ -167,144 +148,113 @@ local RGBToHSVHelper = function(offset, dominantcolor, colorone, colortwo)
       S = 0
       H = offset + (colorone - colortwo)
     end
-    H = (H) / 6
+    H = H / 6
     if H < 0 then
       H = H + 1
     end
     return H, S, V
   end
-  do
-    return 0, 0, V
-  end
+  return 0, 0, V
 end
 
-Color.RGBToHSV = function(rgbColor)
-  -- function num : 0_10 , upvalues : RGBToHSVHelper
-  if rgbColor.g < rgbColor.b and rgbColor.r < rgbColor.b then
+function Color.RGBToHSV(rgbColor)
+  if rgbColor.b > rgbColor.g and rgbColor.b > rgbColor.r then
     return RGBToHSVHelper(4, rgbColor.b, rgbColor.r, rgbColor.g)
+  elseif rgbColor.g > rgbColor.r then
+    return RGBToHSVHelper(2, rgbColor.g, rgbColor.b, rgbColor.r)
   else
-    if rgbColor.r < rgbColor.g then
-      return RGBToHSVHelper(2, rgbColor.g, rgbColor.b, rgbColor.r)
-    else
-      return RGBToHSVHelper(0, rgbColor.r, rgbColor.g, rgbColor.b)
-    end
+    return RGBToHSVHelper(0, rgbColor.r, rgbColor.g, rgbColor.b)
   end
 end
 
-Color.GrayScale = function(a)
-  -- function num : 0_11
+function Color.GrayScale(a)
   return 0.299 * a.r + 0.587 * a.g + 0.114 * a.b
 end
 
-Color.__tostring = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  return (string.format)("RGBA(%f,%f,%f,%f)", self.r or 0, self.g or 0, self.b or 0, self.a or 0)
+function Color:__tostring()
+  return string.format("RGBA(%f,%f,%f,%f)", self.r or 0, self.g or 0, self.b or 0, self.a or 0)
 end
 
-Color.__add = function(a, b)
-  -- function num : 0_13 , upvalues : Color
-  return (Color.New)(a.r + b.r, a.g + b.g, a.b + b.b, a.a + b.a)
+function Color.__add(a, b)
+  return Color.New(a.r + b.r, a.g + b.g, a.b + b.b, a.a + b.a)
 end
 
-Color.__sub = function(a, b)
-  -- function num : 0_14 , upvalues : Color
-  return (Color.New)(a.r - b.r, a.g - b.g, a.b - b.b, a.a - b.a)
+function Color.__sub(a, b)
+  return Color.New(a.r - b.r, a.g - b.g, a.b - b.b, a.a - b.a)
 end
 
-Color.__mul = function(a, b)
-  -- function num : 0_15 , upvalues : type, Color, _ENV
+function Color.__mul(a, b)
   if type(b) == "number" then
-    return (Color.New)(a.r * b, a.g * b, a.b * b, a.a * b)
-  else
-    if getmetatable(b) == Color then
-      return (Color.New)(a.r * b.r, a.g * b.g, a.b * b.b, a.a * b.a)
-    end
+    return Color.New(a.r * b, a.g * b, a.b * b, a.a * b)
+  elseif getmetatable(b) == Color then
+    return Color.New(a.r * b.r, a.g * b.g, a.b * b.b, a.a * b.a)
   end
 end
 
-Color.__div = function(a, d)
-  -- function num : 0_16 , upvalues : Color
-  return (Color.New)(a.r / d, a.g / d, a.b / d, a.a / d)
+function Color.__div(a, d)
+  return Color.New(a.r / d, a.g / d, a.b / d, a.a / d)
 end
 
-Color.__eq = function(a, b)
-  -- function num : 0_17
+function Color.__eq(a, b)
   if a._className ~= b._className then
     return false
   end
-  do return a.r == b.r and a.g == b.g and a.b == b.b and a.a == b.a end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return a.r == b.r and a.g == b.g and a.b == b.b and a.a == b.a
 end
 
-get.red = function()
-  -- function num : 0_18 , upvalues : Color
-  return (Color.New)(1, 0, 0, 1)
+function get.red()
+  return Color.New(1, 0, 0, 1)
 end
 
-get.green = function()
-  -- function num : 0_19 , upvalues : Color
-  return (Color.New)(0, 1, 0, 1)
+function get.green()
+  return Color.New(0, 1, 0, 1)
 end
 
-get.blue = function()
-  -- function num : 0_20 , upvalues : Color
-  return (Color.New)(0, 0, 1, 1)
+function get.blue()
+  return Color.New(0, 0, 1, 1)
 end
 
-get.white = function()
-  -- function num : 0_21 , upvalues : Color
-  return (Color.New)(1, 1, 1, 1)
+function get.white()
+  return Color.New(1, 1, 1, 1)
 end
 
-get.black = function()
-  -- function num : 0_22 , upvalues : Color
-  return (Color.New)(0, 0, 0, 1)
+function get.black()
+  return Color.New(0, 0, 0, 1)
 end
 
-get.yellow = function()
-  -- function num : 0_23 , upvalues : Color
-  return (Color.New)(1, 0.9215686, 0.01568628, 1)
+function get.yellow()
+  return Color.New(1, 0.9215686, 0.01568628, 1)
 end
 
-get.cyan = function()
-  -- function num : 0_24 , upvalues : Color
-  return (Color.New)(0, 1, 1, 1)
+function get.cyan()
+  return Color.New(0, 1, 1, 1)
 end
 
-get.magenta = function()
-  -- function num : 0_25 , upvalues : Color
-  return (Color.New)(1, 0, 1, 1)
+function get.magenta()
+  return Color.New(1, 0, 1, 1)
 end
 
-get.gray = function()
-  -- function num : 0_26 , upvalues : Color
-  return (Color.New)(0.5, 0.5, 0.5, 1)
+function get.gray()
+  return Color.New(0.5, 0.5, 0.5, 1)
 end
 
-get.clear = function()
-  -- function num : 0_27 , upvalues : Color
-  return (Color.New)(0, 0, 0, 0)
+function get.clear()
+  return Color.New(0, 0, 0, 0)
 end
 
-get.gamma = function(c)
-  -- function num : 0_28 , upvalues : Color, Mathf
-  return (Color.New)((Mathf.LinearToGammaSpace)(c.r), (Mathf.LinearToGammaSpace)(c.g), (Mathf.LinearToGammaSpace)(c.b), c.a)
+function get.gamma(c)
+  return Color.New(Mathf.LinearToGammaSpace(c.r), Mathf.LinearToGammaSpace(c.g), Mathf.LinearToGammaSpace(c.b), c.a)
 end
 
-get.linear = function(c)
-  -- function num : 0_29 , upvalues : Color, Mathf
-  return (Color.New)((Mathf.GammaToLinearSpace)(c.r), (Mathf.GammaToLinearSpace)(c.g), (Mathf.GammaToLinearSpace)(c.b), c.a)
+function get.linear(c)
+  return Color.New(Mathf.GammaToLinearSpace(c.r), Mathf.GammaToLinearSpace(c.g), Mathf.GammaToLinearSpace(c.b), c.a)
 end
 
-get.maxColorComponent = function(c)
-  -- function num : 0_30 , upvalues : Mathf
-  return (Mathf.Max)((Mathf.Max)(c.r, c.g), c.b)
+function get.maxColorComponent(c)
+  return Mathf.Max(Mathf.Max(c.r, c.g), c.b)
 end
 
 get.grayscale = Color.GrayScale
--- DECOMPILER ERROR at PC74: Confused about usage of register: R7 in 'UnsetPending'
-
 UnityEngine.Color = Color
 setmetatable(Color, Color)
 return Color
-

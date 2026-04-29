@@ -1,38 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/explore/main/ui_season_preview_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonPreviewController", UIController)
 UISeasonPreviewController = UISeasonPreviewController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonPreviewController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonPreviewController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonPreviewController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonPreviewController:OnShow(uiParams)
   self:InitWidget()
   self.previewId = uiParams[1]
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonPreviewController.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonPreviewController:InitWidget()
   local topBtns = self:GetUIComponent("UISelectObjectPath", "TopBtns")
   self._backBtns = topBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   self.bg = self:GetUIComponent("RawImageLoader", "bg")
   self.petImage = self:GetUIComponent("RawImageLoader", "petImage")
   self.titleBg = self:GetUIComponent("RawImageLoader", "titleBg")
@@ -42,29 +26,17 @@ UISeasonPreviewController.InitWidget = function(self)
   self.txtCountdown = self:GetUIComponent("UILocalizationText", "txtCountdown")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonPreviewController.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_season_preview)[self.previewId]
+function UISeasonPreviewController:OnValue()
+  local cfg = Cfg.cfg_season_preview[self.previewId]
   if not cfg then
-    (Log.error)("err UISeasonPreviewController can\'t cfg_season_preview find  with id = " .. self.previewId)
-    return 
+    Log.error("err UISeasonPreviewController can't cfg_season_preview find  with id = " .. self.previewId)
+    return
   end
-  ;
-  (self.bg):LoadImage(cfg.PopBg)
-  ;
-  (self.petImage):LoadImage(cfg.PopPetImg)
-  ;
-  (self.titleBg):LoadImage(cfg.PopTitleImg)
-  ;
-  (self.countdownBg):LoadImage(cfg.PopTimeImg)
-  ;
-  (self.txtTitle):SetText((StringTable.Get)(cfg.PopTitleTxt))
-  ;
-  (self.txtcontent):SetText((StringTable.Get)(cfg.PopContentTxt))
-  ;
-  (self.txtCountdown):SetText((StringTable.Get)("str_season_preview_open_time", cfg.SeasonOpenTime))
+  self.bg:LoadImage(cfg.PopBg)
+  self.petImage:LoadImage(cfg.PopPetImg)
+  self.titleBg:LoadImage(cfg.PopTitleImg)
+  self.countdownBg:LoadImage(cfg.PopTimeImg)
+  self.txtTitle:SetText(StringTable.Get(cfg.PopTitleTxt))
+  self.txtcontent:SetText(StringTable.Get(cfg.PopContentTxt))
+  self.txtCountdown:SetText(StringTable.Get("str_season_preview_open_time", cfg.SeasonOpenTime))
 end
-
-

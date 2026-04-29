@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/custom_nodes_foundation/bhv_nodes/abstract_bhv.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("custom_node")
 _class("HasBeginBhv", CustomNode)
 HasBeginBhv = HasBeginBhv
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HasBeginBhv.Constructor = function(self)
-  -- function num : 0_0
+function HasBeginBhv:Constructor()
   self.firstUpdate = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HasBeginBhv.Reset = function(self)
-  -- function num : 0_1
+function HasBeginBhv:Reset()
   self.firstUpdate = true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HasBeginBhv.Update = function(self, dt)
-  -- function num : 0_2
+function HasBeginBhv:Update(dt)
   if self.firstUpdate then
     self.firstUpdate = false
     self:OnBegin()
@@ -31,23 +18,12 @@ HasBeginBhv.Update = function(self, dt)
   self:OnUpdate(dt)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HasBeginBhv.Destroy = function(self)
-  -- function num : 0_3
+function HasBeginBhv:Destroy()
   self.firstUpdate = true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HasBeginBhv.OnBegin = function(self)
-  -- function num : 0_4
+function HasBeginBhv:OnBegin()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HasBeginBhv.OnUpdate = function(self, dt)
-  -- function num : 0_5
+function HasBeginBhv:OnUpdate(dt)
 end
-
-

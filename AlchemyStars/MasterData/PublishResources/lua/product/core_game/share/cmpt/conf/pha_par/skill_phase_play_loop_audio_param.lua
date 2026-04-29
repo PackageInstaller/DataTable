@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_play_loop_audio_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhasePlayLoopAudioParam", SkillPhaseParamBase)
 SkillPhasePlayLoopAudioParam = SkillPhasePlayLoopAudioParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhasePlayLoopAudioParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhasePlayLoopAudioParam:Constructor(t)
   self._audioID = t.audioID
   self._isPlay = t.isPlay
   if self._isPlay == nil then
@@ -17,42 +10,27 @@ SkillPhasePlayLoopAudioParam.Constructor = function(self, t)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayLoopAudioParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhasePlayLoopAudioParam:GetPhaseType()
   return SkillViewPhaseType.PlayLoopAudio
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayLoopAudioParam.GetAudioID = function(self)
-  -- function num : 0_2
+function SkillPhasePlayLoopAudioParam:GetAudioID()
   return self._audioID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayLoopAudioParam.IsPlayLoopAudio = function(self)
-  -- function num : 0_3
+function SkillPhasePlayLoopAudioParam:IsPlayLoopAudio()
   return self._isPlay
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayLoopAudioParam.GetSoundCacheTable = function(self)
-  -- function num : 0_4
+function SkillPhasePlayLoopAudioParam:GetSoundCacheTable()
   if not self._audioID or self._audioID <= 0 then
-    return 
+    return
   end
-  return {self._audioID}
+  return {
+    self._audioID
+  }
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayLoopAudioParam.GetCacheTable = function(self)
-  -- function num : 0_5
+function SkillPhasePlayLoopAudioParam:GetCacheTable()
   return {}
 end
-
-

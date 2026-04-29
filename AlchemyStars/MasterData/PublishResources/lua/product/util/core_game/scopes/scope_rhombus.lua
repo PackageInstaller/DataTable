@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_rhombus.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_Rhombus", SkillScopeCalculator_Base)
 SkillScopeCalculator_Rhombus = SkillScopeCalculator_Rhombus
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_Rhombus.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_Rhombus:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local params = scopeParam
   local size = params[1]
   local isCenterIncluded = params[2]
@@ -18,7 +11,7 @@ SkillScopeCalculator_Rhombus.CalcRange = function(self, scopeType, scopeParam, c
   local index = 1
   for i = -size, size do
     for j = -size, size do
-      if (math.abs)(i) + (math.abs)(j) <= size and (i ~= 0 or j ~= 0) then
+      if size >= math.abs(i) + math.abs(j) and (i ~= 0 or j ~= 0) then
         select_piece[index] = {i, j}
         index = index + 1
       end
@@ -27,7 +20,7 @@ SkillScopeCalculator_Rhombus.CalcRange = function(self, scopeType, scopeParam, c
   local range = {}
   local wholeArea = {}
   if centerPos then
-    for _,pos in ipairs(select_piece) do
+    for _, pos in ipairs(select_piece) do
       local tar = Vector2(centerPos.x + pos[1], centerPos.y + pos[2])
       self:_InsertTargetGrid(range, tar, wholeArea)
     end
@@ -36,18 +29,14 @@ SkillScopeCalculator_Rhombus.CalcRange = function(self, scopeType, scopeParam, c
     end
     if canMoveFlag and canMoveFlag ~= 0 then
       local newRange = {}
-      for _,pos in pairs(range) do
-        if not (self._gridFilter):IsPosBlock(pos, BlockFlag.LinkLine) then
-          (table.insert)(newRange, pos)
+      for _, pos in pairs(range) do
+        if not self._gridFilter:IsPosBlock(pos, BlockFlag.LinkLine) then
+          table.insert(newRange, pos)
         end
       end
       range = newRange
     end
   end
-  do
-    local result = SkillScopeResult:New(SkillScopeType.Rhombus, centerPos, range, wholeArea)
-    return result
-  end
+  local result = SkillScopeResult:New(SkillScopeType.Rhombus, centerPos, range, wholeArea)
+  return result
 end
-
-

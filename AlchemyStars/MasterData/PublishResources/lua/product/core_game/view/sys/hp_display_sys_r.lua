@@ -1,199 +1,140 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/hp_display_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HPDisplaySystem_Render", ReactiveSystem)
 HPDisplaySystem_Render = HPDisplaySystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HPDisplaySystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function HPDisplaySystem_Render:Constructor(world)
   self._world = world
-  self._hpGroup = world:GetGroup((world.BW_WEMatchers).HP)
+  self._hpGroup = world:GetGroup(world.BW_WEMatchers.HP)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render.TearDown = function(self)
-  -- function num : 0_1
+function HPDisplaySystem_Render:TearDown()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_2 , upvalues : _ENV
-  return Collector:New({world:GetGroup((world.BW_WEMatchers).HP)}, {"Added"})
+function HPDisplaySystem_Render:GetTrigger(world)
+  return Collector:New({
+    world:GetGroup(world.BW_WEMatchers.HP)
+  }, {"Added"})
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render.Filter = function(self, entity)
-  -- function num : 0_3
-  if entity:HasHP() then
-    return entity:HasView()
-  end
+function HPDisplaySystem_Render:Filter(entity)
+  return entity:HasHP() and entity:HasView()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_4 , upvalues : _ENV
-  self._timeService = (self._world):GetService("Time")
-  for i,e in ipairs(entities) do
+function HPDisplaySystem_Render:ExecuteEntities(entities)
+  self._timeService = self._world:GetService("Time")
+  for i, e in ipairs(entities) do
     self:_TryIntializeHPCacheComponent(e)
     self:_RefreshHpBar(e)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render._RefreshHPSlider = function(self, entity, whitehp, redhp, maxhp, greyHP)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._world):MatchType() == MatchType.MT_Chess and (entity:HasChessPet() or entity:HasMonsterID()) then
+function HPDisplaySystem_Render:_RefreshHPSlider(entity, whitehp, redhp, maxhp, greyHP)
+  if self._world:MatchType() == MatchType.MT_Chess and (entity:HasChessPet() or entity:HasMonsterID()) then
     self:_RefreshHpBar_Chess(entity, whitehp, redhp, maxhp)
-    return 
+    return
   end
   local hpCmpt = entity:HP()
   local hasBoss = entity:HasBoss()
   local buffCmpt = entity:BuffView()
-  if buffCmpt then
-    local curShowBossHP = buffCmpt:HasBuffEffect(BuffEffectType.CurShowBossHP)
-  end
+  local curShowBossHP = buffCmpt and buffCmpt:HasBuffEffect(BuffEffectType.CurShowBossHP)
   local white = hpCmpt:GetWhiteImageComponent()
   local red = hpCmpt:GetRedImageComponent()
   if hasBoss then
-    local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
-    do
-      local isVice = sMonsterShowRender:IsViceBoss(entity)
-      if isVice then
-        red.color = Color.gray
-      else
-        do
-          red.color = Color.white
-          -- DECOMPILER ERROR at PC56: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC56: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    local sMonsterShowRender = self._world:GetService("MonsterShowRender")
+    local isVice = sMonsterShowRender:IsViceBoss(entity)
+    if isVice then
+      red.color = Color.gray
+    else
+      red.color = Color.white
     end
   end
   if hpCmpt:IsMultiHPSwitch() then
     if hpCmpt._multiHPDoSeq then
-      (hpCmpt._multiHPDoSeq):Complete()
+      hpCmpt._multiHPDoSeq:Complete()
     end
-    hpCmpt._multiHPDoSeq = (((DG.Tweening).DOTween).Sequence)()
+    hpCmpt._multiHPDoSeq = DG.Tweening.DOTween.Sequence()
     local curMultiStage = hpCmpt:GetCurMultiHPStage()
     local newMultiStage = hpCmpt:GetNewMultiHPStage()
     local count = 1
     while hpCmpt._multiHPChangeCount ~= 0 do
-      (hpCmpt._multiHPDoSeq):Append(((white:DOFillAmount(0, 0.3)):OnPlay(function()
-    -- function num : 0_5_0 , upvalues : red, _ENV, count
-    red.fillAmount = 0
-    ;
-    (Log.info)("HPAnim Fill Red0  Count=", count)
-    count = count + 1
-  end
-)):OnComplete(function()
-    -- function num : 0_5_1 , upvalues : _ENV, count, red, white
-    (Log.info)("HPAnim Fill White0 Count=", count)
-    count = count + 1
-    red.fillAmount = 1
-    white.fillAmount = 1
-  end
-))
+      hpCmpt._multiHPDoSeq:Append(white:DOFillAmount(0, 0.3):OnPlay(function()
+        red.fillAmount = 0
+        Log.info("HPAnim Fill Red0  Count=", count)
+        count = count + 1
+      end):OnComplete(function()
+        Log.info("HPAnim Fill White0 Count=", count)
+        count = count + 1
+        red.fillAmount = 1
+        white.fillAmount = 1
+      end))
       hpCmpt._multiHPChangeCount = hpCmpt._multiHPChangeCount - 1
     end
     hpCmpt:SetMultiHPStage(newMultiStage)
     maxhp = hpCmpt:GetMaxHP()
     local redHpPercent, whiteHpPercent = self:_CalcHPPercent(redhp, whitehp, maxhp)
-    ;
-    (Log.fatal)("Switch RedHP=", redhp, " whiteHP=", whitehp, " maxHP=", maxhp, " RedPercent=", redHpPercent, " WhitePer=", whiteHpPercent)
-    ;
-    (hpCmpt._multiHPDoSeq):Append(((white:DOFillAmount(whiteHpPercent, 0.3)):OnPlay(function()
-    -- function num : 0_5_2 , upvalues : red, redHpPercent, _ENV, count
-    red.fillAmount = redHpPercent
-    ;
-    (Log.info)("HPAnim Fill Red  Count=", count, "P=", redHpPercent)
-    count = count + 1
-  end
-)):OnComplete(function()
-    -- function num : 0_5_3 , upvalues : red, redHpPercent, white, whiteHpPercent, _ENV, count
-    red.fillAmount = redHpPercent
-    white.fillAmount = whiteHpPercent
-    ;
-    (Log.info)("HPAnim Fill White  Count=", count, "P=", whiteHpPercent)
-    count = count + 1
-  end
-))
+    Log.fatal("Switch RedHP=", redhp, " whiteHP=", whitehp, " maxHP=", maxhp, " RedPercent=", redHpPercent, " WhitePer=", whiteHpPercent)
+    hpCmpt._multiHPDoSeq:Append(white:DOFillAmount(whiteHpPercent, 0.3):OnPlay(function()
+      red.fillAmount = redHpPercent
+      Log.info("HPAnim Fill Red  Count=", count, "P=", redHpPercent)
+      count = count + 1
+    end):OnComplete(function()
+      red.fillAmount = redHpPercent
+      white.fillAmount = whiteHpPercent
+      Log.info("HPAnim Fill White  Count=", count, "P=", whiteHpPercent)
+      count = count + 1
+    end))
     hpCmpt:SetLastRedPercent(redHpPercent)
     hpCmpt:SetLastWhitePercent(whiteHpPercent)
   else
-    do
-      local redHpPercent, whiteHpPercent = self:_CalcHPPercent(redhp, whitehp, maxhp)
-      if redhp > 0 and redHpPercent < 0.01 then
-        redHpPercent = 0.01
-      end
-      if whitehp > 0 and whiteHpPercent < 0.01 then
-        whiteHpPercent = 0.01
-      end
-      if redhp > 0 then
-        local lastRedPercent = hpCmpt:GetLastRedPercent()
-        local diff = (math.abs)(lastRedPercent - redHpPercent)
-        if diff >= 0.01 then
-          red.fillAmount = redHpPercent
-          hpCmpt:SetLastRedPercent(redHpPercent)
-        end
-        local lastWhitePercent = hpCmpt:GetLastWhitePercent()
-        local whiteDiff = (math.abs)(lastWhitePercent - whiteHpPercent)
-        if whiteDiff >= 0.01 then
-          white:DOFillAmount(whiteHpPercent, 0.3)
-          hpCmpt:SetLastWhitePercent(whiteHpPercent)
-        end
-      else
-        do
-          do
-            red.fillAmount = 0
-            hpCmpt:SetLastRedPercent(0)
-            white:DOFillAmount(0, 0.3)
-            hpCmpt:SetLastWhitePercent(0)
-            local greyHPUI = hpCmpt:GetGreyImageComponent()
-            if greyHPUI then
-              greyHPUI.fillAmount = (greyHP + redhp) / maxhp
-            end
-          end
-        end
-      end
+    local redHpPercent, whiteHpPercent = self:_CalcHPPercent(redhp, whitehp, maxhp)
+    if 0 < redhp and redHpPercent < 0.01 then
+      redHpPercent = 0.01
     end
+    if 0 < whitehp and whiteHpPercent < 0.01 then
+      whiteHpPercent = 0.01
+    end
+    if 0 < redhp then
+      local lastRedPercent = hpCmpt:GetLastRedPercent()
+      local diff = math.abs(lastRedPercent - redHpPercent)
+      if 0.01 <= diff then
+        red.fillAmount = redHpPercent
+        hpCmpt:SetLastRedPercent(redHpPercent)
+      end
+      local lastWhitePercent = hpCmpt:GetLastWhitePercent()
+      local whiteDiff = math.abs(lastWhitePercent - whiteHpPercent)
+      if 0.01 <= whiteDiff then
+        white:DOFillAmount(whiteHpPercent, 0.3)
+        hpCmpt:SetLastWhitePercent(whiteHpPercent)
+      end
+    else
+      red.fillAmount = 0
+      hpCmpt:SetLastRedPercent(0)
+      white:DOFillAmount(0, 0.3)
+      hpCmpt:SetLastWhitePercent(0)
+    end
+  end
+  local greyHPUI = hpCmpt:GetGreyImageComponent()
+  if greyHPUI then
+    greyHPUI.fillAmount = (greyHP + redhp) / maxhp
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render._CalcHPPercent = function(self, redhp, whitehp, maxhp)
-  -- function num : 0_6
+function HPDisplaySystem_Render:_CalcHPPercent(redhp, whitehp, maxhp)
   local redHpPercent = redhp / maxhp
   local whiteHpPercent = whitehp / maxhp
-  if redhp > 0 and redHpPercent < 0.01 then
+  if 0 < redhp and redHpPercent < 0.01 then
     redHpPercent = 0.01
   end
-  if whitehp > 0 and whiteHpPercent < 0.01 then
+  if 0 < whitehp and whiteHpPercent < 0.01 then
     whiteHpPercent = 0.01
   end
   return redHpPercent, whiteHpPercent
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render._RefreshHpBar_Chess = function(self, entity, whitehp, redhp, maxhp)
-  -- function num : 0_7 , upvalues : _ENV
+function HPDisplaySystem_Render:_RefreshHpBar_Chess(entity, whitehp, redhp, maxhp)
   local hpCmpt = entity:HP()
   local hasBoss = entity:HasBoss()
   local buffCmpt = entity:BuffView()
-  if buffCmpt then
-    local curShowBossHP = buffCmpt:HasBuffEffect(BuffEffectType.CurShowBossHP)
-  end
+  local curShowBossHP = buffCmpt and buffCmpt:HasBuffEffect(BuffEffectType.CurShowBossHP)
   local redHpPercent = redhp / maxhp
   local whiteHpPercent = whitehp / maxhp
   local white = hpCmpt:GetWhiteImageComponent()
@@ -209,122 +150,91 @@ HPDisplaySystem_Render._RefreshHpBar_Chess = function(self, entity, whitehp, red
   if csgoChessAttackTarget then
     local isTargeted = hpCmpt:GetChessTargetedMark()
     local isRecover = hpCmpt:GetChessRecoverMark()
-    if isTargeted then
-      do
-        csgoChessAttackTarget:SetActive(not isRecover)
-        csgoChessRecoverTarget:SetActive(not isTargeted or isRecover)
-        if redhp <= 0 then
-          (hpCmpt:GetChessHPRed1()).fillAmount = 0
-          ;
-          (hpCmpt:GetChessHPWhite1()).fillAmount = 0
-          ;
-          (hpCmpt:GetChessHPRed2()).fillAmount = 0
-          ;
-          (hpCmpt:GetChessHPWhite2()).fillAmount = 0
-        else
-          if maxhp <= BattleConst.HUDUI_ChessHPSecondBarThreshold then
-            (hpCmpt:GetChessHPRed2()).fillAmount = 0
-            ;
-            (hpCmpt:GetChessHPWhite2()).fillAmount = 0
-            local lastRedPercent = hpCmpt:GetLastRedPercent()
-            local diff = (math.abs)(lastRedPercent - redHpPercent)
-            if diff >= 0.01 then
-              hpCmpt:SetLastRedPercent(redHpPercent)
-              local red1Percent = redhp / maxhp
-              ;
-              (hpCmpt:GetChessHPRed1()).fillAmount = red1Percent
-            end
-            do
-              local lastWhitePercent = hpCmpt:GetLastWhitePercent()
-              local whiteDiff = (math.abs)(lastWhitePercent - whiteHpPercent)
-              if whiteDiff >= 0.01 then
-                hpCmpt:SetLastWhitePercent(whiteHpPercent)
-                local white1Percent = whitehp / maxhp
-                ;
-                (hpCmpt:GetChessHPWhite1()):DOFillAmount(white1Percent, 0.3)
-              end
-              do
-                local lastRedPercent = hpCmpt:GetLastRedPercent()
-                local diff = (math.abs)(lastRedPercent - redHpPercent)
-                if diff >= 0.01 then
-                  hpCmpt:SetLastRedPercent(redHpPercent)
-                  local v1 = (math.min)(BattleConst.HUDUI_ChessHPSecondBarThreshold, redhp)
-                  local percent1 = (math.max)(0, v1 / BattleConst.HUDUI_ChessHPSecondBarThreshold)
-                  local v2 = redhp - BattleConst.HUDUI_ChessHPSecondBarThreshold
-                  local percent2 = (math.max)(0, v2 / BattleConst.HUDUI_ChessHPSecondBarThreshold)
-                  ;
-                  (hpCmpt:GetChessHPRed1()).fillAmount = percent1
-                  ;
-                  (hpCmpt:GetChessHPRed2()).fillAmount = percent2
-                end
-                do
-                  local lastWhitePercent = hpCmpt:GetLastWhitePercent()
-                  local whiteDiff = (math.abs)(lastWhitePercent - whiteHpPercent)
-                  if whiteDiff >= 0.01 then
-                    hpCmpt:SetLastWhitePercent(whiteHpPercent)
-                    local v1 = (math.min)(BattleConst.HUDUI_ChessHPSecondBarThreshold, whitehp)
-                    local percent1 = (math.max)(0, v1 / BattleConst.HUDUI_ChessHPSecondBarThreshold)
-                    local v2 = whitehp - BattleConst.HUDUI_ChessHPSecondBarThreshold
-                    local percent2 = (math.max)(0, v2 / BattleConst.HUDUI_ChessHPSecondBarThreshold)
-                    ;
-                    (hpCmpt:GetChessHPWhite1()).fillAmount = percent1
-                    ;
-                    (hpCmpt:GetChessHPWhite2()).fillAmount = percent2
-                  end
-                  do
-                    if redhp > 0 and redHpPercent < 0.01 then
-                      redHpPercent = 0.01
-                    end
-                    if whitehp > 0 and whiteHpPercent < 0.01 then
-                      whiteHpPercent = 0.01
-                    end
-                    if hasBoss or curShowBossHP then
-                      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossRedHp, entity:GetID(), redHpPercent, redhp, maxhp)
-                      ;
-                      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossWhiteHp, entity:GetID(), whiteHpPercent, whitehp, maxhp)
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+    csgoChessAttackTarget:SetActive(isTargeted and not isRecover)
+    csgoChessRecoverTarget:SetActive(isTargeted and isRecover)
+  end
+  if redhp <= 0 then
+    hpCmpt:GetChessHPRed1().fillAmount = 0
+    hpCmpt:GetChessHPWhite1().fillAmount = 0
+    hpCmpt:GetChessHPRed2().fillAmount = 0
+    hpCmpt:GetChessHPWhite2().fillAmount = 0
+  elseif maxhp <= BattleConst.HUDUI_ChessHPSecondBarThreshold then
+    hpCmpt:GetChessHPRed2().fillAmount = 0
+    hpCmpt:GetChessHPWhite2().fillAmount = 0
+    local lastRedPercent = hpCmpt:GetLastRedPercent()
+    local diff = math.abs(lastRedPercent - redHpPercent)
+    if 0.01 <= diff then
+      hpCmpt:SetLastRedPercent(redHpPercent)
+      local red1Percent = redhp / maxhp
+      hpCmpt:GetChessHPRed1().fillAmount = red1Percent
     end
+    local lastWhitePercent = hpCmpt:GetLastWhitePercent()
+    local whiteDiff = math.abs(lastWhitePercent - whiteHpPercent)
+    if 0.01 <= whiteDiff then
+      hpCmpt:SetLastWhitePercent(whiteHpPercent)
+      local white1Percent = whitehp / maxhp
+      hpCmpt:GetChessHPWhite1():DOFillAmount(white1Percent, 0.3)
+    end
+  else
+    local lastRedPercent = hpCmpt:GetLastRedPercent()
+    local diff = math.abs(lastRedPercent - redHpPercent)
+    if 0.01 <= diff then
+      hpCmpt:SetLastRedPercent(redHpPercent)
+      local v1 = math.min(BattleConst.HUDUI_ChessHPSecondBarThreshold, redhp)
+      local percent1 = math.max(0, v1 / BattleConst.HUDUI_ChessHPSecondBarThreshold)
+      local v2 = redhp - BattleConst.HUDUI_ChessHPSecondBarThreshold
+      local percent2 = math.max(0, v2 / BattleConst.HUDUI_ChessHPSecondBarThreshold)
+      hpCmpt:GetChessHPRed1().fillAmount = percent1
+      hpCmpt:GetChessHPRed2().fillAmount = percent2
+    end
+    local lastWhitePercent = hpCmpt:GetLastWhitePercent()
+    local whiteDiff = math.abs(lastWhitePercent - whiteHpPercent)
+    if 0.01 <= whiteDiff then
+      hpCmpt:SetLastWhitePercent(whiteHpPercent)
+      local v1 = math.min(BattleConst.HUDUI_ChessHPSecondBarThreshold, whitehp)
+      local percent1 = math.max(0, v1 / BattleConst.HUDUI_ChessHPSecondBarThreshold)
+      local v2 = whitehp - BattleConst.HUDUI_ChessHPSecondBarThreshold
+      local percent2 = math.max(0, v2 / BattleConst.HUDUI_ChessHPSecondBarThreshold)
+      hpCmpt:GetChessHPWhite1().fillAmount = percent1
+      hpCmpt:GetChessHPWhite2().fillAmount = percent2
+    end
+  end
+  if 0 < redhp and redHpPercent < 0.01 then
+    redHpPercent = 0.01
+  end
+  if 0 < whitehp and whiteHpPercent < 0.01 then
+    whiteHpPercent = 0.01
+  end
+  if hasBoss or curShowBossHP then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossRedHp, entity:GetID(), redHpPercent, redhp, maxhp)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossWhiteHp, entity:GetID(), whiteHpPercent, whitehp, maxhp)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render._RefreshChessRedHP1 = function(self, hpCmpt, redhp, maxhp)
-  -- function num : 0_8
+function HPDisplaySystem_Render:_RefreshChessRedHP1(hpCmpt, redhp, maxhp)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render._RefreshShield = function(self, entity, whitehp, redhp, maxhp, shieldValue)
-  -- function num : 0_9 , upvalues : _ENV
+function HPDisplaySystem_Render:_RefreshShield(entity, whitehp, redhp, maxhp, shieldValue)
   local hpCmpt = entity:HP()
   local shieldImg = hpCmpt:GetShieldImageComponent()
   if shieldImg == nil then
-    return 
+    return
   end
   if shieldValue == nil or shieldValue <= 0 then
-    (shieldImg.gameObject):SetActive(false)
+    shieldImg.gameObject:SetActive(false)
     if self._lastShieldValue ~= shieldValue then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossShield, entity:GetID(), shieldValue, redhp, maxhp)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossShield, entity:GetID(), shieldValue, redhp, maxhp)
     end
-    return 
+    return
   end
-  ;
-  (shieldImg.gameObject):SetActive(true)
+  shieldImg.gameObject:SetActive(true)
   local shieldRectTransform = shieldImg.rectTransform
   local redImg = hpCmpt:GetRedImageComponent()
   local greenRectTransform = redImg.rectTransform
-  local hpMaxWidth = ((redImg.rectTransform).rect).width
-  local hpMaxHeight = ((redImg.rectTransform).rect).height
+  local hpMaxWidth = redImg.rectTransform.rect.width
+  local hpMaxHeight = redImg.rectTransform.rect.height
   local shieldPercent = shieldValue / maxhp
-  if shieldPercent > 1 then
+  if 1 < shieldPercent then
     shieldPercent = 1
   end
   local shieldWidth = shieldPercent * hpMaxWidth
@@ -332,45 +242,37 @@ HPDisplaySystem_Render._RefreshShield = function(self, entity, whitehp, redhp, m
   local hpPercent = redhp / maxhp
   local hpWidth = hpPercent * hpMaxWidth
   local hpAndShield = redhp + shieldValue
-  if hpAndShield < maxhp then
+  if maxhp > hpAndShield then
     local posX = -hpMaxWidth / 2 + hpWidth
     shieldRectTransform.localPosition = Vector3(posX, 0, 0)
   else
-    do
-      do
-        local posX = -hpMaxWidth / 2 + (hpMaxWidth - shieldWidth)
-        shieldRectTransform.localPosition = Vector3(posX, 0, 0)
-        self._lastShieldValue = shieldValue
-      end
-    end
+    local posX = -hpMaxWidth / 2 + (hpMaxWidth - shieldWidth)
+    shieldRectTransform.localPosition = Vector3(posX, 0, 0)
   end
+  self._lastShieldValue = shieldValue
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render._RefreshCurseHp = function(self, entity, whitehp, redhp, maxhp, showCurseHp, curseHpValue)
-  -- function num : 0_10 , upvalues : _ENV
+function HPDisplaySystem_Render:_RefreshCurseHp(entity, whitehp, redhp, maxhp, showCurseHp, curseHpValue)
   local hpCmpt = entity:HP()
   local curseHpImg = hpCmpt:GetCurseHpImageComponent()
   if curseHpImg == nil then
-    return 
+    return
   end
   if not showCurseHp then
-    (curseHpImg.gameObject):SetActive(false)
+    curseHpImg.gameObject:SetActive(false)
     if self._lastCurseHpValue ~= curseHpValue then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossCurseHP, entity:GetID(), showCurseHp, curseHpValue, redhp, maxhp)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossCurseHP, entity:GetID(), showCurseHp, curseHpValue, redhp, maxhp)
     end
-    return 
+    return
   end
-  ;
-  (curseHpImg.gameObject):SetActive(true)
+  curseHpImg.gameObject:SetActive(true)
   local curseHpRectTransform = curseHpImg.rectTransform
   local redImg = hpCmpt:GetRedImageComponent()
   local greenRectTransform = redImg.rectTransform
-  local hpMaxWidth = ((redImg.rectTransform).rect).width
-  local hpMaxHeight = ((redImg.rectTransform).rect).height
+  local hpMaxWidth = redImg.rectTransform.rect.width
+  local hpMaxHeight = redImg.rectTransform.rect.height
   local curseHpPercent = curseHpValue / maxhp
-  if curseHpPercent > 1 then
+  if 1 < curseHpPercent then
     curseHpPercent = 1
   end
   local curseHpWidth = curseHpPercent * hpMaxWidth
@@ -378,13 +280,10 @@ HPDisplaySystem_Render._RefreshCurseHp = function(self, entity, whitehp, redhp, 
   self._lastCurseHpValue = curseHpValue
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render._CreateHPSep = function(self, e, hpComponent)
-  -- function num : 0_11 , upvalues : _ENV
+function HPDisplaySystem_Render:_CreateHPSep(e, hpComponent)
   local sepList = hpComponent:GetHPLockSepList()
   if hpComponent:IsInitSep() or #sepList == 0 then
-    return 
+    return
   end
   local sepT = hpComponent:GetSepImageComponent()
   local sepPool = UICustomWidgetPool:New(self, sepT)
@@ -393,47 +292,36 @@ HPDisplaySystem_Render._CreateHPSep = function(self, e, hpComponent)
   hpComponent:SetSepPoolWidget(sepPool)
   hpComponent:SetInitSepState(true)
   local redImg = hpComponent:GetRedImageComponent()
-  local hpMaxWidth = ((redImg.rectTransform).rect).width
+  local hpMaxWidth = redImg.rectTransform.rect.width
   for i = 1, #sepList do
     local sepPer = sepList[i]
     local offsetX = 0
-    if sepPer >= 50 then
+    if 50 <= sepPer then
       offsetX = (sepPer - 50) * hpMaxWidth / 100
     else
       offsetX = (50 - sepPer) * hpMaxWidth / 100 * -1
     end
-    local go = (sepUIList[i]):GetGameObject()
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R16 in 'UnsetPending'
-
-    ;
-    (go.transform).localPosition = Vector3(offsetX, 0, 0)
+    local go = sepUIList[i]:GetGameObject()
+    go.transform.localPosition = Vector3(offsetX, 0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render._SetHPShieldImg = function(self, entity)
-  -- function num : 0_12 , upvalues : _ENV
+function HPDisplaySystem_Render:_SetHPShieldImg(entity)
   local hpCmpt = entity:HP()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local hpShieldType = utilDataSvc:GetEntityHPShieldType(entity:GetID())
   if hpShieldType ~= hpCmpt:GetHPShieldType() then
     hpCmpt:SetHPShieldType(hpShieldType)
     local shieldImg = hpCmpt:GetShieldImageComponent()
     if hpShieldType == HPShieldType.Lava then
-      shieldImg.sprite = (InnerGameHelperRender:GetInstance()):GetImageFromInnerUI("thread_junei_rongyan01")
-    else
-      if hpShieldType == HPShieldType.Normal then
-        shieldImg.sprite = (InnerGameHelperRender:GetInstance()):GetImageFromInnerUI("thread_junei_xuetiao5")
-      end
+      shieldImg.sprite = InnerGameHelperRender:GetInstance():GetImageFromInnerUI("thread_junei_rongyan01")
+    elseif hpShieldType == HPShieldType.Normal then
+      shieldImg.sprite = InnerGameHelperRender:GetInstance():GetImageFromInnerUI("thread_junei_xuetiao5")
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render._RefreshHpBar = function(self, e)
-  -- function num : 0_13 , upvalues : _ENV
+function HPDisplaySystem_Render:_RefreshHpBar(e)
   local hpCmpt = e:HP()
   local redhp = hpCmpt:GetRedHP()
   local whitehp = hpCmpt:GetWhiteHP()
@@ -443,11 +331,11 @@ HPDisplaySystem_Render._RefreshHpBar = function(self, e)
   local showCurseHp = hpCmpt:GetShowCurseHp()
   local curseHpValue = hpCmpt:GetCurseHpValue()
   local slider_entity_id = hpCmpt:GetHPSliderEntityID()
-  local slider_entity = (self._world):GetEntityByID(slider_entity_id)
+  local slider_entity = self._world:GetEntityByID(slider_entity_id)
   if not slider_entity then
-    return 
+    return
   end
-  local go = ((slider_entity:View()).ViewWrapper).GameObject
+  local go = slider_entity:View().ViewWrapper.GameObject
   if hpCmpt:IsShowHPSlider() then
     self:_SetHPShieldImg(e)
     self:_RefreshHPSlider(e, whitehp, redhp, maxhp, greyHP)
@@ -460,28 +348,23 @@ HPDisplaySystem_Render._RefreshHpBar = function(self, e)
   end
   local hasBoss = e:HasBoss()
   local buffCmpt = e:BuffView()
-  if buffCmpt then
-    local curShowBossHP = buffCmpt:HasBuffEffect(BuffEffectType.CurShowBossHP)
-  end
-  if (hasBoss or curShowBossHP) and (not e:MonsterID() or not (e:MonsterID()):IsWorldBoss()) then
+  local curShowBossHP = buffCmpt and buffCmpt:HasBuffEffect(BuffEffectType.CurShowBossHP)
+  if (hasBoss or curShowBossHP) and (not e:MonsterID() or not e:MonsterID():IsWorldBoss()) then
     self:_RefreshUIBossHP(e)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render._TryIntializeHPCacheComponent = function(self, e)
-  -- function num : 0_14 , upvalues : _ENV
+function HPDisplaySystem_Render:_TryIntializeHPCacheComponent(e)
   local hpCmpt = e:HP()
   if hpCmpt:GetWhiteImageComponent() then
-    return 
+    return
   end
   local sliderEntityID = hpCmpt:GetHPSliderEntityID()
-  local sliderEntity = (self._world):GetEntityByID(sliderEntityID)
+  local sliderEntity = self._world:GetEntityByID(sliderEntityID)
   if not sliderEntity then
-    return 
+    return
   end
-  local go = ((sliderEntity:View()).ViewWrapper).GameObject
+  local go = sliderEntity:View().ViewWrapper.GameObject
   local uiview = go:GetComponent("UIView")
   local whiteImgCmpt = uiview:GetUIComponent("Image", "white")
   local redImgCmpt = uiview:GetUIComponent("Image", "red")
@@ -492,33 +375,28 @@ HPDisplaySystem_Render._TryIntializeHPCacheComponent = function(self, e)
   hpCmpt:SetHPImageComponent(whiteImgCmpt, redImgCmpt, shieldImg, sepT, greyImg, curseHpImg)
   if e:HasMonsterID() then
     local monsterIDCmpt = e:MonsterID()
-    local configSvc = (self._world):GetService("Config")
+    local configSvc = self._world:GetService("Config")
     local monsterConfigData = configSvc:GetMonsterConfigData()
     local monsterID = monsterIDCmpt:GetMonsterID()
     local bossUIHPBarType = monsterConfigData:GetBossUIHPType(monsterID)
     if bossUIHPBarType == BossUIHPType.Gold then
-      shieldImg.sprite = (InnerGameHelperRender:GetInstance()):GetImageFromInnerUI("thread_junei_sg_xiaoguai1")
+      shieldImg.sprite = InnerGameHelperRender:GetInstance():GetImageFromInnerUI("thread_junei_sg_xiaoguai1")
     else
       self:_SetHPShieldImg(e)
     end
-    local utilDataSvc = (self._world):GetService("UtilData")
+    local utilDataSvc = self._world:GetService("UtilData")
     local hpShieldType = utilDataSvc:GetEntityHPShieldType(e:GetID())
     if hpShieldType == HPShieldType.Lava then
-      shieldImg.sprite = (InnerGameHelperRender:GetInstance()):GetImageFromInnerUI("thread_junei_rongyan01")
+      shieldImg.sprite = InnerGameHelperRender:GetInstance():GetImageFromInnerUI("thread_junei_rongyan01")
     end
   end
-  do
-    if (self._world):MatchType() == MatchType.MT_Chess and (e:HasChessPet() or e:HasMonsterID()) then
-      self:_TryInitializeChessHPCacheComponent(e, uiview, hpCmpt)
-      self:_InitializeHPScaleRuler(e, hpCmpt)
-    end
+  if self._world:MatchType() == MatchType.MT_Chess and (e:HasChessPet() or e:HasMonsterID()) then
+    self:_TryInitializeChessHPCacheComponent(e, uiview, hpCmpt)
+    self:_InitializeHPScaleRuler(e, hpCmpt)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render._TryInitializeChessHPCacheComponent = function(self, e, uiview, hpCmpt)
-  -- function num : 0_15 , upvalues : _ENV
+function HPDisplaySystem_Render:_TryInitializeChessHPCacheComponent(e, uiview, hpCmpt)
   local chessHP = uiview:GetGameObject("chessHP")
   local chessHPText = uiview:GetUIComponent("UILocalizationText", "chessHPText")
   local chessAttackTarget = uiview:GetGameObject("chessAttackTarget")
@@ -538,39 +416,29 @@ HPDisplaySystem_Render._TryInitializeChessHPCacheComponent = function(self, e, u
   local v2AnchoredPos = csrtBuffRoot.anchoredPosition
   v2AnchoredPos.x = v2AnchoredPos.x
   csrtBuffRoot.anchoredPosition = v2AnchoredPos
-  ;
-  (hpCmpt:GetChessHPBarGroup()):SetActive(true)
+  hpCmpt:GetChessHPBarGroup():SetActive(true)
   chessHP:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render._InitializeHPScaleRuler = function(self, e, hpCmpt)
-  -- function num : 0_16 , upvalues : _ENV
+function HPDisplaySystem_Render:_InitializeHPScaleRuler(e, hpCmpt)
   local maxHP = hpCmpt:GetMaxHP()
   local scaleRuler1 = hpCmpt:GetChessHPScaleRuler1()
-  local hpMaxWidth = (((scaleRuler1.dynamicInfoOfEngine).transform).rect).width
+  local hpMaxWidth = scaleRuler1.dynamicInfoOfEngine.transform.rect.width
   local halfHPMaxWidth = 0.5 * hpMaxWidth
   local offset = hpMaxWidth / maxHP
   if maxHP <= BattleConst.HUDUI_ChessHPSecondBarThreshold then
     local tScaleMark = scaleRuler1:SpawnObjects("UICustomWidget", maxHP - 1)
     for i = 1, #tScaleMark do
       local offsetX = i * offset - halfHPMaxWidth
-      local go = (tScaleMark[i]):GetGameObject()
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (go.transform).localPosition = Vector3(offsetX, 0, 0)
+      local go = tScaleMark[i]:GetGameObject()
+      go.transform.localPosition = Vector3(offsetX, 0, 0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render._RefreshTrapHPSep = function(self, e, hpComponent, redhp, maxhp)
-  -- function num : 0_17 , upvalues : _ENV
+function HPDisplaySystem_Render:_RefreshTrapHPSep(e, hpComponent, redhp, maxhp)
   if not hpComponent:GetShowTrapSep() then
-    return 
+    return
   end
   if not hpComponent:IsInitTrapSep() then
     local sepT = hpComponent:GetSepImageComponent()
@@ -580,41 +448,31 @@ HPDisplaySystem_Render._RefreshTrapHPSep = function(self, e, hpComponent, redhp,
     hpComponent:SetInitTrapSepState(true)
     local sepPoolList = sepPool:GetAllSpawnList()
     local redImg = hpComponent:GetRedImageComponent()
-    local hpMaxWidth = ((redImg.rectTransform).rect).width
+    local hpMaxWidth = redImg.rectTransform.rect.width
     for i = 1, maxhp - 1 do
-      local sepPer = (math.floor)(i / maxhp * 100)
+      local sepPer = math.floor(i / maxhp * 100)
       local offsetX = 0
-      if sepPer >= 50 then
+      if 50 <= sepPer then
         offsetX = (sepPer - 50) * hpMaxWidth / 100
       else
         offsetX = (50 - sepPer) * hpMaxWidth / 100 * -1
       end
-      local go = (sepPoolList[i]):GetGameObject()
-      -- DECOMPILER ERROR at PC62: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      (go.transform).localPosition = Vector3(offsetX, 0, 0)
+      local go = sepPoolList[i]:GetGameObject()
+      go.transform.localPosition = Vector3(offsetX, 0, 0)
     end
   end
-  do
-    local sepPoolWidget = hpComponent:GetSepPoolWidget()
-    if not sepPoolWidget then
-      return 
-    end
-    local sepPoolList = sepPoolWidget:GetAllSpawnList()
-    for i = 1, (table.count)(sepPoolList) do
-      local show = i < redhp
-      ;
-      ((sepPoolList[i]):GetGameObject()):SetActive(show)
-    end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local sepPoolWidget = hpComponent:GetSepPoolWidget()
+  if not sepPoolWidget then
+    return
+  end
+  local sepPoolList = sepPoolWidget:GetAllSpawnList()
+  for i = 1, table.count(sepPoolList) do
+    local show = redhp > i
+    sepPoolList[i]:GetGameObject():SetActive(show)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HPDisplaySystem_Render._RefreshUIBossHP = function(self, e)
-  -- function num : 0_18 , upvalues : _ENV
+function HPDisplaySystem_Render:_RefreshUIBossHP(e)
   local hpCmpt = e:HP()
   local redhp = hpCmpt:GetRedHP()
   local whitehp = hpCmpt:GetWhiteHP()
@@ -625,10 +483,10 @@ HPDisplaySystem_Render._RefreshUIBossHP = function(self, e)
   local curseHpValue = hpCmpt:GetCurseHpValue()
   local redHpPercent = redhp / maxhp
   local whiteHpPercent = whitehp / maxhp
-  if redhp > 0 and redHpPercent < 0.01 then
+  if 0 < redhp and redHpPercent < 0.01 then
     redHpPercent = 0.01
   end
-  if whitehp > 0 and whiteHpPercent < 0.01 then
+  if 0 < whitehp and whiteHpPercent < 0.01 then
     whiteHpPercent = 0.01
   end
   if redhp < 0 and redHpPercent < 0 then
@@ -637,21 +495,12 @@ HPDisplaySystem_Render._RefreshUIBossHP = function(self, e)
   if whitehp < 0 and whiteHpPercent < 0 then
     whiteHpPercent = 0
   end
-  ;
-  (Log.info)("HPBar Re UI Boss HP Per:", redHpPercent, "RedHP=", redhp, " whiteHP=", whitehp, " maxHP=", maxhp, " EntityID:", e:GetID())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossRedHp, e:GetID(), redHpPercent, redhp, maxhp)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossWhiteHp, e:GetID(), whiteHpPercent, whitehp, maxhp)
-  local greyVal = (e:HP()):GetGreyHP()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossGreyHP, e:GetID(), greyVal, redhp, maxhp)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossCurseHP, e:GetID(), showCurseHp, curseHpValue, redhp, maxhp)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossShield, e:GetID(), shieldValue, redhp, maxhp)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossCurseHP, e:GetID(), showCurseHp, curseHpValue, redhp, maxhp)
+  Log.info("HPBar Re UI Boss HP Per:", redHpPercent, "RedHP=", redhp, " whiteHP=", whitehp, " maxHP=", maxhp, " EntityID:", e:GetID())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossRedHp, e:GetID(), redHpPercent, redhp, maxhp)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossWhiteHp, e:GetID(), whiteHpPercent, whitehp, maxhp)
+  local greyVal = e:HP():GetGreyHP()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossGreyHP, e:GetID(), greyVal, redhp, maxhp)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossCurseHP, e:GetID(), showCurseHp, curseHpValue, redhp, maxhp)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossShield, e:GetID(), shieldValue, redhp, maxhp)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossCurseHP, e:GetID(), showCurseHp, curseHpValue, redhp, maxhp)
 end
-
-

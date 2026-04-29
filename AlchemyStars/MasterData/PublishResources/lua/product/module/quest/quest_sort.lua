@@ -1,78 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/quest/quest_sort.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-QuestSortType = {ID = 0, Status = 1, CompletedTime = 2}
-QuestSortOrder = {None = 0, Ascending = 1, Descending = 2}
+QuestSortType = {
+  ID = 0,
+  Status = 1,
+  CompletedTime = 2
+}
+QuestSortOrder = {
+  None = 0,
+  Ascending = 1,
+  Descending = 2
+}
 _class("QuestSortParam", Object)
 QuestSortParam = QuestSortParam
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
 
-QuestSortParam.Constructor = function(self, sort_type, sort_order, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function QuestSortParam:Constructor(sort_type, sort_order, ...)
   self._sort_type = sort_type
-  if not sort_order then
-    self._sort_order = QuestSortOrder.Ascending
-    self._params = {...}
-  end
+  self._sort_order = sort_order or QuestSortOrder.Ascending
+  self._params = {
+    ...
+  }
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestSortParam.GetSortValue = function(self, quest)
-  -- function num : 0_1 , upvalues : _ENV
+function QuestSortParam:GetSortValue(quest)
   if self._sort_type == QuestSortType.ID then
     return quest:ID()
-  else
-    if self._sort_type == QuestSortType.Status then
-      local st = quest:Status()
-      if st == QuestStatus.QUEST_Completed then
-        return 1
-      else
-        if st == QuestStatus.QUEST_Accepted then
-          return 2
-        else
-          if st == QuestStatus.QUEST_NotStart then
-            return 3
-          else
-            return 4
-          end
-        end
-      end
+  elseif self._sort_type == QuestSortType.Status then
+    local st = quest:Status()
+    if st == QuestStatus.QUEST_Completed then
+      return 1
+    elseif st == QuestStatus.QUEST_Accepted then
+      return 2
+    elseif st == QuestStatus.QUEST_NotStart then
+      return 3
     else
-      do
-        if self._sort_type == QuestSortType.CompletedTime then
-          return (quest:QuestInfo()).complete_time
-        end
-        return 0
-      end
+      return 4
     end
+  elseif self._sort_type == QuestSortType.CompletedTime then
+    return quest:QuestInfo().complete_time
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestSortParam.Compare = function(self, a, b)
-  -- function num : 0_2 , upvalues : _ENV
+function QuestSortParam:Compare(a, b)
   local va = self:GetSortValue(a)
   local vb = self:GetSortValue(b)
-  if va >= vb then
-    do return self._sort_order ~= QuestSortOrder.Ascending end
-    do return vb < va end
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  if self._sort_order == QuestSortOrder.Ascending then
+    return va < vb
+  else
+    return va > vb
   end
 end
 
 _class("QuestSorter", Object)
 QuestSorter = QuestSorter
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
 
-QuestSorter.Sort = function(quest_list, sort_params)
-  -- function num : 0_3 , upvalues : _ENV
+function QuestSorter.Sort(quest_list, sort_params)
   local out = quest_list
-  local sort_runner = function(runner, idx, a, b)
-    -- function num : 0_3_0 , upvalues : sort_params
+  
+  local function sort_runner(runner, idx, a, b)
     local sorter = sort_params[idx]
     if sorter == nil then
       return false
@@ -83,14 +66,9 @@ QuestSorter.Sort = function(quest_list, sort_params)
       return sorter:Compare(a, b)
     end
   end
-
-  ;
-  (table.sort)(out, function(a, b)
-    -- function num : 0_3_1 , upvalues : sort_runner
+  
+  table.sort(out, function(a, b)
     return sort_runner(sort_runner, 1, a, b)
-  end
-)
+  end)
   return out
 end
-
-

@@ -1,26 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_rect_in_double_pick.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_RectInDoublePick", SkillScopeCalculator_Base)
 SkillScopeCalculator_RectInDoublePick = SkillScopeCalculator_RectInDoublePick
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_RectInDoublePick.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_RectInDoublePick:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local param = scopeParam
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local attackRangeList = {}
   local wholeRangeList = {}
-  if #centerPos >= 2 then
+  if 2 <= #centerPos then
     local startPos = centerPos[1]
     local finalPos = centerPos[2]
-    local startX = (math.min)(startPos.x, finalPos.x)
-    local finalX = (math.max)(startPos.x, finalPos.x)
-    local startY = (math.min)(startPos.y, finalPos.y)
-    local finalY = (math.max)(startPos.y, finalPos.y)
+    local startX = math.min(startPos.x, finalPos.x)
+    local finalX = math.max(startPos.x, finalPos.x)
+    local startY = math.min(startPos.y, finalPos.y)
+    local finalY = math.max(startPos.y, finalPos.y)
     local exceptCenterPos = false
     if param and param.exceptCenterPos and param.exceptCenterPos == 1 then
       exceptCenterPos = true
@@ -28,44 +21,22 @@ SkillScopeCalculator_RectInDoublePick.CalcRange = function(self, scopeType, scop
     for curX = startX, finalX do
       for curY = startY, finalY do
         local curPos = Vector2(curX, curY)
-        -- DECOMPILER ERROR at PC63: Unhandled construct in 'MakeBoolean' P1
-
-        if exceptCenterPos and curPos ~= startPos then
-          if curPos == finalPos then
-            do
-              (table.insert)(wholeRangeList, curPos)
-              if (self._gridFilter):IsValidPiecePos(curPos) then
-                (table.insert)(attackRangeList, curPos)
-              end
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
+        if exceptCenterPos and (curPos == startPos or curPos == finalPos) then
+        else
+          table.insert(wholeRangeList, curPos)
+          if self._gridFilter:IsValidPiecePos(curPos) then
+            table.insert(attackRangeList, curPos)
           end
         end
       end
     end
-  else
-    do
-      do
-        if #centerPos == 1 and param and param.enableOnePick and param.enableOnePick == 1 then
-          local pickPos = centerPos[1]
-          ;
-          (table.insert)(wholeRangeList, pickPos)
-          if (self._gridFilter):IsValidPiecePos(pickPos) then
-            (table.insert)(attackRangeList, pickPos)
-          end
-        end
-        local result = SkillScopeResult:New(SkillScopeType.RectInDoublePick, centerPos, attackRangeList, wholeRangeList)
-        return result
-      end
+  elseif #centerPos == 1 and param and param.enableOnePick and param.enableOnePick == 1 then
+    local pickPos = centerPos[1]
+    table.insert(wholeRangeList, pickPos)
+    if self._gridFilter:IsValidPiecePos(pickPos) then
+      table.insert(attackRangeList, pickPos)
     end
   end
+  local result = SkillScopeResult:New(SkillScopeType.RectInDoublePick, centerPos, attackRangeList, wholeRangeList)
+  return result
 end
-
-

@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/base64.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Base64", Object)
 Base64 = Base64
 local b = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
--- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
 
-Base64.Encode = function(data)
-  -- function num : 0_0 , upvalues : b
+function Base64.Encode(data)
   return (data:gsub(".", function(x)
-    -- function num : 0_0_0
     local r, b = "", x:byte()
     for i = 8, 1, -1 do
       r = r .. (b % 2 ^ i - b % 2 ^ (i - 1) > 0 and "1" or "0")
     end
     return r
-  end
-) .. "0000"):gsub("%d%d%d?%d?%d?%d?", function(x)
-    -- function num : 0_0_1 , upvalues : b
+  end) .. "0000"):gsub("%d%d%d?%d?%d?%d?", function(x)
     if #x < 6 then
       return ""
     end
@@ -28,17 +18,16 @@ Base64.Encode = function(data)
       c = c + (x:sub(i, i) == "1" and 2 ^ (6 - i) or 0)
     end
     return b:sub(c + 1, c + 1)
-  end
-) .. ({"", "==", "="})[#data % 3 + 1]
+  end) .. ({
+    "",
+    "==",
+    "="
+  })[#data % 3 + 1]
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-Base64.Decode = function(data)
-  -- function num : 0_1 , upvalues : _ENV, b
-  data = (string.gsub)(data, "[^" .. b .. "=]", "")
+function Base64.Decode(data)
+  data = string.gsub(data, "[^" .. b .. "=]", "")
   return (data:gsub(".", function(x)
-    -- function num : 0_1_0 , upvalues : b
     if x == "=" then
       return ""
     end
@@ -47,9 +36,7 @@ Base64.Decode = function(data)
       r = r .. (f % 2 ^ i - f % 2 ^ (i - 1) > 0 and "1" or "0")
     end
     return r
-  end
-)):gsub("%d%d%d?%d?%d?%d?%d?%d?", function(x)
-    -- function num : 0_1_1 , upvalues : _ENV
+  end):gsub("%d%d%d?%d?%d?%d?%d?%d?", function(x)
     if #x ~= 8 then
       return ""
     end
@@ -57,9 +44,6 @@ Base64.Decode = function(data)
     for i = 1, 8 do
       c = c + (x:sub(i, i) == "1" and 2 ^ (8 - i) or 0)
     end
-    return (string.char)(c)
-  end
-)
+    return string.char(c)
+  end))
 end
-
-

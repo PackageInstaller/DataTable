@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/buff/buff_view_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewComponent", Object)
 BuffViewComponent = BuffViewComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewComponent.Constructor = function(self)
-  -- function num : 0_0
+function BuffViewComponent:Constructor()
   self._viewInstanceArray = {}
   self._viewData = {}
   self._lockIndex = 0
@@ -17,45 +10,29 @@ BuffViewComponent.Constructor = function(self)
   self._isAlwaysHPLock = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.AddBuffViewInstance = function(self, viewInstance)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.insert)(self._viewInstanceArray, viewInstance)
+function BuffViewComponent:AddBuffViewInstance(viewInstance)
+  table.insert(self._viewInstanceArray, viewInstance)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.RemoveBuffViewInstance = function(self, buffViewInstance)
-  -- function num : 0_2 , upvalues : _ENV
-  (table.removev)(self._viewInstanceArray, buffViewInstance)
-  ;
-  (Log.debug)("RemoveBuffViewInstance() entity=", (self._entity):GetID(), " buffseq=", buffViewInstance:BuffSeq())
+function BuffViewComponent:RemoveBuffViewInstance(buffViewInstance)
+  table.removev(self._viewInstanceArray, buffViewInstance)
+  Log.debug("RemoveBuffViewInstance() entity=", self._entity:GetID(), " buffseq=", buffViewInstance:BuffSeq())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.GetBuffViewInstanceArray = function(self)
-  -- function num : 0_3
+function BuffViewComponent:GetBuffViewInstanceArray()
   return self._viewInstanceArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.GetBuffViewInstance = function(self, seq)
-  -- function num : 0_4 , upvalues : _ENV
-  for i,buffView in ipairs(self._viewInstanceArray) do
+function BuffViewComponent:GetBuffViewInstance(seq)
+  for i, buffView in ipairs(self._viewInstanceArray) do
     if buffView:BuffSeq() == seq then
       return buffView
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.GetSingleBuffByBuffEffect = function(self, et)
-  -- function num : 0_5 , upvalues : _ENV
-  for i,buffView in ipairs(self._viewInstanceArray) do
+function BuffViewComponent:GetSingleBuffByBuffEffect(et)
+  for i, buffView in ipairs(self._viewInstanceArray) do
     if buffView:GetBuffEffectType() == et then
       return buffView
     end
@@ -63,11 +40,8 @@ BuffViewComponent.GetSingleBuffByBuffEffect = function(self, et)
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.HasBuffEffect = function(self, et)
-  -- function num : 0_6 , upvalues : _ENV
-  for i,buffView in ipairs(self._viewInstanceArray) do
+function BuffViewComponent:HasBuffEffect(et)
+  for i, buffView in ipairs(self._viewInstanceArray) do
     if buffView:GetBuffEffectType() == et then
       return true
     end
@@ -75,33 +49,21 @@ BuffViewComponent.HasBuffEffect = function(self, et)
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.GetHPLockIndex = function(self)
-  -- function num : 0_7
+function BuffViewComponent:GetHPLockIndex()
   return self._lockIndex
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.ResetHPLockState = function(self)
-  -- function num : 0_8
+function BuffViewComponent:ResetHPLockState()
   self._lockHpRoundIndex = 0
   self._lockIndex = 0
   self._lockGSMState = 0
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.IsAlwaysHPLock = function(self)
-  -- function num : 0_9
+function BuffViewComponent:IsAlwaysHPLock()
   return self._isAlwaysHPLock
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.AddHpLockState = function(self, roundIndex, lockIndex, lockGSMState, isAlwaysHPLock, lockHPType, unlockHPIndex)
-  -- function num : 0_10
+function BuffViewComponent:AddHpLockState(roundIndex, lockIndex, lockGSMState, isAlwaysHPLock, lockHPType, unlockHPIndex)
   self._lockHpRoundIndex = roundIndex
   self._lockIndex = lockIndex
   self._lockGSMState = lockGSMState
@@ -110,17 +72,11 @@ BuffViewComponent.AddHpLockState = function(self, roundIndex, lockIndex, lockGSM
   self._unlockIndex = unlockHPIndex
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.GetUnlockHPIndex = function(self)
-  -- function num : 0_11
+function BuffViewComponent:GetUnlockHPIndex()
   return self._unlockIndex
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.IsHPNeedUnLock = function(self, roundIndex, nowGSMState)
-  -- function num : 0_12 , upvalues : _ENV
+function BuffViewComponent:IsHPNeedUnLock(roundIndex, nowGSMState)
   if self:IsAlwaysHPLock() then
     return false
   end
@@ -139,85 +95,62 @@ BuffViewComponent.IsHPNeedUnLock = function(self, roundIndex, nowGSMState)
   return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.GetBuffViewShowList = function(self, onBlood)
-  -- function num : 0_13 , upvalues : _ENV
+function BuffViewComponent:GetBuffViewShowList(onBlood)
   local buffIDList = {}
   local showList = {}
-  for i,buffView in ipairs(self._viewInstanceArray) do
+  for i, buffView in ipairs(self._viewInstanceArray) do
     local isShowBuffIcon = self:_GetBuffShowBuffIcon(buffView, onBlood)
     local canShowBuff = self:_GetShowBuffLayer(buffView)
-    if not (table.intable)(buffIDList, buffView:BuffID()) and isShowBuffIcon and canShowBuff then
-      (table.insert)(buffIDList, buffView:BuffID())
-      ;
-      (table.insert)(showList, buffView)
+    if not table.intable(buffIDList, buffView:BuffID()) and isShowBuffIcon and canShowBuff then
+      table.insert(buffIDList, buffView:BuffID())
+      table.insert(showList, buffView)
     end
   end
   return showList
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent._GetBuffShowBuffIcon = function(self, buffView, onBlood)
-  -- function num : 0_14 , upvalues : _ENV
-  local onBloodShowLayerShield = (onBlood and true) or buffView:GetBuffEffectType() ~= BuffEffectType.LayerShield
-  local buffShowBuffIcon = (buffView:BuffConfigData()):GetBuffShowBuffIcon()
-  do return not onBloodShowLayerShield or buffShowBuffIcon end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function BuffViewComponent:_GetBuffShowBuffIcon(buffView, onBlood)
+  local onBloodShowLayerShield = onBlood and true or buffView:GetBuffEffectType() ~= BuffEffectType.LayerShield
+  local buffShowBuffIcon = buffView:BuffConfigData():GetBuffShowBuffIcon()
+  return onBloodShowLayerShield and buffShowBuffIcon
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.GetBuffTeamStateShowList = function(self, onBlood)
-  -- function num : 0_15 , upvalues : _ENV
+function BuffViewComponent:GetBuffTeamStateShowList(onBlood)
   local buffIDList = {}
   local showList = {}
-  for i,buffView in ipairs(self._viewInstanceArray) do
+  for i, buffView in ipairs(self._viewInstanceArray) do
     local isShowBuffTeamState = self:_GetBuffShowTeamState(buffView, onBlood)
     local canShowBuff = self:_GetShowBuffLayer(buffView)
-    if not (table.intable)(buffIDList, buffView:BuffID()) and isShowBuffTeamState and canShowBuff then
-      (table.insert)(buffIDList, buffView:BuffID())
-      ;
-      (table.insert)(showList, buffView)
+    if not table.intable(buffIDList, buffView:BuffID()) and isShowBuffTeamState and canShowBuff then
+      table.insert(buffIDList, buffView:BuffID())
+      table.insert(showList, buffView)
     end
   end
   return showList
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent._GetBuffShowTeamState = function(self, buffView, onBlood)
-  -- function num : 0_16 , upvalues : _ENV
-  local onBloodShowLayerShield = (onBlood and true) or buffView:GetBuffEffectType() ~= BuffEffectType.LayerShield
-  local buffShowTeamState = (buffView:BuffConfigData()):GetBuffShowTeamState()
-  do return not onBloodShowLayerShield or buffShowTeamState end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function BuffViewComponent:_GetBuffShowTeamState(buffView, onBlood)
+  local onBloodShowLayerShield = onBlood and true or buffView:GetBuffEffectType() ~= BuffEffectType.LayerShield
+  local buffShowTeamState = buffView:BuffConfigData():GetBuffShowTeamState()
+  return onBloodShowLayerShield and buffShowTeamState
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent._GetShowBuffLayer = function(self, buffView)
-  -- function num : 0_17
+function BuffViewComponent:_GetShowBuffLayer(buffView)
   local buffLayer = buffView:GetLayerCount()
   local isUnload = buffView:IsUnload()
   local hasLayer = buffView:HasLayer()
-  local isNoLayerBuff = (not hasLayer and buffView:IsShow())
-  local canShow = isNoLayerBuff or not buffLayer or buffLayer > 0
-  do return canShow end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  local isNoLayerBuff = not hasLayer and buffView:IsShow()
+  local canShow = isNoLayerBuff or buffLayer and 0 < buffLayer
+  return canShow
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.GetMaterialAnimiationArray = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function BuffViewComponent:GetMaterialAnimiationArray()
   local anims = {}
-  for i,buffv in ipairs(self._viewInstanceArray) do
+  for i, buffv in ipairs(self._viewInstanceArray) do
     local cfg = buffv:BuffConfigData()
     if buffv:IsShow() and (cfg:GetBuffType() == BuffType.DOT or cfg:GetMaterialAnimationMode() == BuffMaterialAnimationMode.Alternating) then
       local anim = cfg:GetMaterialAnimation()
-      if anim and not (table.icontains)(anims, anim) then
+      if anim and not table.icontains(anims, anim) then
         anims[#anims + 1] = anim
       end
     end
@@ -225,17 +158,14 @@ BuffViewComponent.GetMaterialAnimiationArray = function(self)
   return anims
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.GetHeadBuff = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function BuffViewComponent:GetHeadBuff()
   local min_priority = 0
-  local head_buff = nil
-  for _,buffv in ipairs(self._viewInstanceArray) do
+  local head_buff
+  for _, buffv in ipairs(self._viewInstanceArray) do
     if buffv:GetBuffType() == BuffType.Control and buffv:IsShow() then
       local cfg = buffv:BuffConfigData()
       local priority = cfg:GetBuffPriority()
-      if priority > 0 and (min_priority == 0 or priority < min_priority) then
+      if 0 < priority and (min_priority == 0 or min_priority > priority) then
         min_priority = priority
         head_buff = buffv
       end
@@ -244,27 +174,16 @@ BuffViewComponent.GetHeadBuff = function(self)
   return head_buff
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.GetBuffValue = function(self, key)
-  -- function num : 0_20
-  return (self._viewData)[key]
+function BuffViewComponent:GetBuffValue(key)
+  return self._viewData[key]
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.SetBuffValue = function(self, key, value)
-  -- function num : 0_21
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._viewData)[key] = value
+function BuffViewComponent:SetBuffValue(key, value)
+  self._viewData[key] = value
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewComponent.HasBuffByID = function(self, buffId)
-  -- function num : 0_22 , upvalues : _ENV
-  for _,v in ipairs(self._viewInstanceArray) do
+function BuffViewComponent:HasBuffByID(buffId)
+  for _, v in ipairs(self._viewInstanceArray) do
     local buffViewInstance = v
     if buffViewInstance:BuffID() == buffId then
       return true
@@ -273,28 +192,17 @@ BuffViewComponent.HasBuffByID = function(self, buffId)
   return false
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.BuffView = function(self)
-  -- function num : 0_23
-  return self:GetComponent((self.WEComponentsEnum).BuffView)
+function Entity:BuffView()
+  return self:GetComponent(self.WEComponentsEnum.BuffView)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddBuffView = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function Entity:AddBuffView()
   local component = BuffViewComponent:New()
-  self:AddComponent((self.WEComponentsEnum).BuffView, component)
+  self:AddComponent(self.WEComponentsEnum.BuffView, component)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveBuffViewInstance = function(self, buffViewInstance)
-  -- function num : 0_25
+function Entity:RemoveBuffViewInstance(buffViewInstance)
   if self:BuffView() then
-    (self:BuffView()):RemoveBuffViewInstance(buffViewInstance)
+    self:BuffView():RemoveBuffViewInstance(buffViewInstance)
   end
 end
-
-

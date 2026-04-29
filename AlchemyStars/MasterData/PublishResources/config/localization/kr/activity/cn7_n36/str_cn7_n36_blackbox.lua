@@ -1,8 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/activity/cn7_n36/str_cn7_n36_blackbox.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_cn7_n36_blackbox_title = "위험한 배달", str_cn7_n36_blackbox_intro = "아스트라 대륙에 암귀들의 활동이 증가하면서, 배달은 무척 위험한 임무가 되었습니다. 콜로서스가 다시 나타나고, 아이테르와 동료들이 활약하자, 일부 세력은 콜로서스의 비행 능력과 장거리 기동성에 주목했고, 일부 특수하면서도 위험한 물품 배달을 아이테르에게 의뢰하기 시작했습니다.", str_cn7_n36_blackbox_intro_title = "『위험한 배달』 시스템 설명", str_cn7_n36_blackbox_intro_head_1 = "『블랙박스』 모드", str_cn7_n36_blackbox_intro_body_1 = "1. 『위험한 배달』 이벤트는 『블랙박스』 모드로 이루어져 있습니다.\n2. 『블랙박스』 모드는 6개의 블랙박스 스테이지로 구성되며, 스테이지마다 2~3개의 하위 스테이지가 존재합니다.\n3. 한 블랙박스 스테이지 내 임의의 하위 스테이지를 클리어하면 다음 블랙박스 스테이지가 개방됩니다.\n4. 각 하위 스테이지는 개방 절차 없이 자유롭게 도전할 수 있습니다.\n5. 동일한 블랙박스 스테이지 내 하위 스테이지에 도전할 때는 서로 다른 오로리안을 사용해야 합니다.", str_cn7_n36_blackbox_intro_head_2 = "도전 트로피", str_cn7_n36_blackbox_intro_body_2 = "1. 블랙박스 스테이지마다 3~5개의 도전 트로피가 존재하며, 도전 트로피마다 요구하는 도전 조건이 다릅니다.\n2. 트로피 내용이 요구하는 편대 구성을 사용해 지정 수량의 스테이지를 클리어해야만 해당 트로피와 보상을 획득할 수 있습니다.\n3. 트로피 간에는 순서나 상관관계가 없으며, 각 트로피에 개별적으로 여러 차례 도전할 수 있습니다.\n4. 도전 트로피 조건을 달성하면 달성 상태가 유지되며, 이미 달성한 트로피는 스테이지 편대를 초기화해도 사라지지 않습니다.", str_cn7_n36_blackbox_intro_head_3 = "도전 편대", str_cn7_n36_blackbox_intro_body_3 = "1. 동일한 블랙박스 스테이지의 각 하위 스테이지에는 동일한 오로리안을 사용할 수 없습니다.\n2. 서로 다른 블랙박스 스테이지에서는 오로리안 중복 사용 제한이 없습니다.\n3. 하위 스테이지마다 하나의 도전 편대를 사용해 도전할 수 있습니다.\n4. 도전 편대는 초기화할 수 있으며, 편대 초기화는 획득한 도전 트로피에 영향을 주지 않습니다.", str_cn7_n36_blackbox_diff_unlock_tips = "{1} 스테이지 내 임의의 하위 스테이지 클리어 시 개방", str_cn7_n36_blackbox1_name = "EX1-천둥", str_cn7_n36_blackbox2_name = "EX2-자만", str_cn7_n36_blackbox3_name = "EX3-곤궁", str_cn7_n36_blackbox4_name = "EX4-교체", str_cn7_n36_blackbox5_name = "EX5-파괴", str_cn7_n36_blackbox6_name = "EX6-연옥", str_cn7_n36_blackbox1_sub_name_1 = "EX1-1 천둥-뇌성", str_cn7_n36_blackbox1_sub_name_2 = "EX1-2 천둥-반석", str_cn7_n36_blackbox2_sub_name_1 = "EX2-1 자만-피해", str_cn7_n36_blackbox2_sub_name_2 = "EX2-2 자만-진격", str_cn7_n36_blackbox3_sub_name_1 = "EX3-1 곤궁-위기", str_cn7_n36_blackbox3_sub_name_2 = "EX3-2 곤궁-손상", str_cn7_n36_blackbox3_sub_name_3 = "EX3-3 곤궁-방어", str_cn7_n36_blackbox4_sub_name_1 = "EX4-1 교체-회복", str_cn7_n36_blackbox4_sub_name_2 = "EX4-2 교체-피해", str_cn7_n36_blackbox5_sub_name_1 = "EX5-1 파괴-상처", str_cn7_n36_blackbox5_sub_name_2 = "EX5-2 파괴-오염", str_cn7_n36_blackbox6_sub_name_1 = "EX6-1 연옥-소환", str_cn7_n36_blackbox6_sub_name_2 = "EX6-2 연옥-생존", str_cn7_n36_blackbox6_sub_name_3 = "EX6-3 연옥-대가"}
+local config = {
+  str_cn7_n36_blackbox_title = "위험한 배달",
+  str_cn7_n36_blackbox_intro = "아스트라 대륙에 암귀들의 활동이 증가하면서, 배달은 무척 위험한 임무가 되었습니다. 콜로서스가 다시 나타나고, 아이테르와 동료들이 활약하자, 일부 세력은 콜로서스의 비행 능력과 장거리 기동성에 주목했고, 일부 특수하면서도 위험한 물품 배달을 아이테르에게 의뢰하기 시작했습니다.",
+  str_cn7_n36_blackbox_intro_title = "『위험한 배달』 시스템 설명",
+  str_cn7_n36_blackbox_intro_head_1 = "『블랙박스』 모드",
+  str_cn7_n36_blackbox_intro_body_1 = "1. 『위험한 배달』 이벤트는 『블랙박스』 모드로 이루어져 있습니다.\n2. 『블랙박스』 모드는 6개의 블랙박스 스테이지로 구성되며, 스테이지마다 2~3개의 하위 스테이지가 존재합니다.\n3. 한 블랙박스 스테이지 내 임의의 하위 스테이지를 클리어하면 다음 블랙박스 스테이지가 개방됩니다.\n4. 각 하위 스테이지는 개방 절차 없이 자유롭게 도전할 수 있습니다.\n5. 동일한 블랙박스 스테이지 내 하위 스테이지에 도전할 때는 서로 다른 오로리안을 사용해야 합니다.",
+  str_cn7_n36_blackbox_intro_head_2 = "도전 트로피",
+  str_cn7_n36_blackbox_intro_body_2 = "1. 블랙박스 스테이지마다 3~5개의 도전 트로피가 존재하며, 도전 트로피마다 요구하는 도전 조건이 다릅니다.\n2. 트로피 내용이 요구하는 편대 구성을 사용해 지정 수량의 스테이지를 클리어해야만 해당 트로피와 보상을 획득할 수 있습니다.\n3. 트로피 간에는 순서나 상관관계가 없으며, 각 트로피에 개별적으로 여러 차례 도전할 수 있습니다.\n4. 도전 트로피 조건을 달성하면 달성 상태가 유지되며, 이미 달성한 트로피는 스테이지 편대를 초기화해도 사라지지 않습니다.",
+  str_cn7_n36_blackbox_intro_head_3 = "도전 편대",
+  str_cn7_n36_blackbox_intro_body_3 = "1. 동일한 블랙박스 스테이지의 각 하위 스테이지에는 동일한 오로리안을 사용할 수 없습니다.\n2. 서로 다른 블랙박스 스테이지에서는 오로리안 중복 사용 제한이 없습니다.\n3. 하위 스테이지마다 하나의 도전 편대를 사용해 도전할 수 있습니다.\n4. 도전 편대는 초기화할 수 있으며, 편대 초기화는 획득한 도전 트로피에 영향을 주지 않습니다.",
+  str_cn7_n36_blackbox_diff_unlock_tips = "{1} 스테이지 내 임의의 하위 스테이지 클리어 시 개방",
+  str_cn7_n36_blackbox1_name = "EX1-천둥",
+  str_cn7_n36_blackbox2_name = "EX2-자만",
+  str_cn7_n36_blackbox3_name = "EX3-곤궁",
+  str_cn7_n36_blackbox4_name = "EX4-교체",
+  str_cn7_n36_blackbox5_name = "EX5-파괴",
+  str_cn7_n36_blackbox6_name = "EX6-연옥",
+  str_cn7_n36_blackbox1_sub_name_1 = "EX1-1 천둥-뇌성",
+  str_cn7_n36_blackbox1_sub_name_2 = "EX1-2 천둥-반석",
+  str_cn7_n36_blackbox2_sub_name_1 = "EX2-1 자만-피해",
+  str_cn7_n36_blackbox2_sub_name_2 = "EX2-2 자만-진격",
+  str_cn7_n36_blackbox3_sub_name_1 = "EX3-1 곤궁-위기",
+  str_cn7_n36_blackbox3_sub_name_2 = "EX3-2 곤궁-손상",
+  str_cn7_n36_blackbox3_sub_name_3 = "EX3-3 곤궁-방어",
+  str_cn7_n36_blackbox4_sub_name_1 = "EX4-1 교체-회복",
+  str_cn7_n36_blackbox4_sub_name_2 = "EX4-2 교체-피해",
+  str_cn7_n36_blackbox5_sub_name_1 = "EX5-1 파괴-상처",
+  str_cn7_n36_blackbox5_sub_name_2 = "EX5-2 파괴-오염",
+  str_cn7_n36_blackbox6_sub_name_1 = "EX6-1 연옥-소환",
+  str_cn7_n36_blackbox6_sub_name_2 = "EX6-2 연옥-생존",
+  str_cn7_n36_blackbox6_sub_name_3 = "EX6-3 연옥-대가"
+}
 return config
-

@@ -1,30 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_rs_look.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirAction_RS_Look", AirActionBase)
 AirAction_RS_Look = AirAction_RS_Look
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirAction_RS_Look.Constructor = function(self, pet, main, storyid, gotReward, gotAffinity)
-  -- function num : 0_0 , upvalues : _ENV
+function AirAction_RS_Look:Constructor(pet, main, storyid, gotReward, gotAffinity)
   self._pet = pet
-  ;
-  (Log.debug)("###[AirAction_RS_Look] 触发一个随机剧情-id-->", (self._pet):TemplateID())
+  Log.debug("###[AirAction_RS_Look] 触发一个随机剧情-id-->", self._pet:TemplateID())
   self._main = main
   self._storyid = storyid
   self._gotReward = gotReward
   self._gotAffinity = gotAffinity
-  local cfg = (Cfg.cfg_aircraft_pet_stroy_refresh)[self._storyid]
+  local cfg = Cfg.cfg_aircraft_pet_stroy_refresh[self._storyid]
   if not cfg then
-    (Log.error)("###[AirAction_RS_Look] cfg_aircraft_pet_stroy_refresh is nil ! id --> ", self._storyid)
-    return 
+    Log.error("###[AirAction_RS_Look] cfg_aircraft_pet_stroy_refresh is nil ! id --> ", self._storyid)
+    return
   end
-  local cfg_pet_story = (Cfg.cfg_pet_story)[storyid]
+  local cfg_pet_story = Cfg.cfg_pet_story[storyid]
   if not cfg_pet_story then
-    (Log.error)("###[AirAction_RS_Look] cfg_pet_story is nil ! id --> ", storyid)
-    return 
+    Log.error("###[AirAction_RS_Look] cfg_pet_story is nil ! id --> ", storyid)
+    return
   end
   self._storyEventID = cfg_pet_story.StoryID
   self._triggerType = cfg.TriggerType
@@ -34,21 +26,14 @@ AirAction_RS_Look.Constructor = function(self, pet, main, storyid, gotReward, go
   self._startTime = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Look.Start = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AirAction_RS_Look:Start()
   self._running = true
-  ;
-  (Log.debug)("###[AirAction_RS_Look] click story test --> start trigger")
+  Log.debug("###[AirAction_RS_Look] click story test --> start trigger")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Look.ReadyPlayStory = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function AirAction_RS_Look:ReadyPlayStory()
   if self._gotReward then
-    (Log.debug)("###[AirAction_RS_Look] click story test --> trigger req succ")
+    Log.debug("###[AirAction_RS_Look] click story test --> trigger req succ")
     if self._clickShowID then
       self._startTalk = true
       self:ClickShow()
@@ -56,20 +41,16 @@ AirAction_RS_Look.ReadyPlayStory = function(self)
       self:OpenStroyDialog()
     end
   else
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.OnReadyPlayStory, self)
+    GameGlobal.TaskManager():StartTask(self.OnReadyPlayStory, self)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Look.OnReadyPlayStory = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.debug)("###[AirAction_RS_Look] click story test --> trigger req")
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  local res = petModule:RequestPetViewTriggeredStory(TT, (self._pet):PstID(), self._triggerType, self._storyid)
+function AirAction_RS_Look:OnReadyPlayStory(TT)
+  Log.debug("###[AirAction_RS_Look] click story test --> trigger req")
+  local petModule = GameGlobal.GetModule(PetModule)
+  local res = petModule:RequestPetViewTriggeredStory(TT, self._pet:PstID(), self._triggerType, self._storyid)
   if res:GetSucc() then
-    (Log.debug)("###[AirAction_RS_Look]click story test --> trigger req succ")
+    Log.debug("###[AirAction_RS_Look]click story test --> trigger req succ")
     if self._clickShowID then
       self._startTalk = true
       self:ClickShow()
@@ -77,30 +58,23 @@ AirAction_RS_Look.OnReadyPlayStory = function(self, TT)
       self:OpenStroyDialog()
     end
   else
-    ;
-    (Log.error)("AirAction_RS_Look:OnReadyPlayStory-->res:GetResult()-->" .. res:GetResult())
+    Log.error("AirAction_RS_Look:OnReadyPlayStory-->res:GetResult()-->" .. res:GetResult())
     local errorMsg = petModule:GetErrorMsg(res:GetResult())
-    ;
-    (ToastManager.ShowToast)(errorMsg)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, false, "ReadyPlayStory")
-    ;
-    (Log.error)(res:GetResult())
+    ToastManager.ShowToast(errorMsg)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, false, "ReadyPlayStory")
+    Log.error(res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Look.ClickShow = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_click_action_lib)[self._clickShowID]
+function AirAction_RS_Look:ClickShow()
+  local cfg = Cfg.cfg_aircraft_click_action_lib[self._clickShowID]
   if cfg then
     local sentence = cfg.Sentence
     local bubble = cfg.Bubble
     local anim = cfg.Anim
     local audio = cfg.Audio
     local skinList = cfg.SkinID
-    local currSkinID = (self._pet):ClothSkinID()
+    local currSkinID = self._pet:ClothSkinID()
     local _playIdx = 0
     if skinList then
       for i = 1, #skinList do
@@ -111,154 +85,102 @@ AirAction_RS_Look.ClickShow = function(self)
         end
       end
     end
-    do
-      local playIdx = _playIdx + 1
-      local sentenceTex = nil
-      if sentence then
-        sentenceTex = sentence[playIdx]
-      else
-        if audio then
-          local cfg_voice = (AudioHelperController.GetCfgAudio)(audio[playIdx])
-          sentenceTex = cfg_voice.Content
-        end
-      end
-      do
-        do
-          if sentenceTex ~= nil then
-            local sentenceAction = AirActionSentence:New(self._pet, sentenceTex, self._main)
-            ;
-            (self._pet):StartSentenceAction(sentenceAction)
-          end
-          do
-            if bubble then
-              local faceAction = AirActionFace:New(self._pet, bubble[playIdx])
-              ;
-              (self._pet):StartViceAction(faceAction)
-            end
-            do
-              if anim then
-                local animationAction = AirAnimationAction:New(self._pet, anim[playIdx])
-                ;
-                (self._pet):StartViceAction(animationAction)
-              end
-              do
-                if audio then
-                  local audioModule = (GameGlobal.GetModule)(PetAudioModule)
-                  audioModule:PlayAudio(audio[playIdx])
-                end
-                ;
-                (Log.error)("###[AirAction_RS_Look]cfg_aircraft_click_action_lib is nil ! id --> ", self._clickShowID)
-              end
-            end
-          end
-        end
-      end
+    local playIdx = _playIdx + 1
+    local sentenceTex
+    if sentence then
+      sentenceTex = sentence[playIdx]
+    elseif audio then
+      local cfg_voice = AudioHelperController.GetCfgAudio(audio[playIdx])
+      sentenceTex = cfg_voice.Content
     end
+    if sentenceTex ~= nil then
+      local sentenceAction = AirActionSentence:New(self._pet, sentenceTex, self._main)
+      self._pet:StartSentenceAction(sentenceAction)
+    end
+    if bubble then
+      local faceAction = AirActionFace:New(self._pet, bubble[playIdx])
+      self._pet:StartViceAction(faceAction)
+    end
+    if anim then
+      local animationAction = AirAnimationAction:New(self._pet, anim[playIdx])
+      self._pet:StartViceAction(animationAction)
+    end
+    if audio then
+      local audioModule = GameGlobal.GetModule(PetAudioModule)
+      audioModule:PlayAudio(audio[playIdx])
+    end
+  else
+    Log.error("###[AirAction_RS_Look]cfg_aircraft_click_action_lib is nil ! id --> ", self._clickShowID)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Look.EndStoryDialog = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.debug)("###[AirAction_RS_Look] click story test --> end story")
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, true, "EndStoryDialog")
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RandomStoryStartOrEnd, false, 0)
-  ;
-  (self._main):LookRandomStoryCameraAnimStart(false, 0)
+function AirAction_RS_Look:EndStoryDialog()
+  Log.debug("###[AirAction_RS_Look] click story test --> end story")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, true, "EndStoryDialog")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.RandomStoryStartOrEnd, false, 0)
+  self._main:LookRandomStoryCameraAnimStart(false, 0)
   if self._gotReward then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, false, "EndStoryDialog")
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, false, "EndStoryDialog")
     self:OnStoryFinished(self._gotReward, self._gotAffinity)
   else
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self
-    local petModule = (GameGlobal.GetModule)(PetModule)
-    local pstid = (self._pet):PstID()
-    local res, replay = petModule:RequestPetFinishTriggeredStory(TT, pstid, self._triggerType, self._storyid)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, false, "EndStoryDialog")
-    if res:GetSucc() then
-      self:OnStoryFinished(replay.reward, replay.affinity)
-      ;
-      (Log.debug)("###[AirAction_RS_Look] story Look end")
-    else
-      ;
-      (Log.error)(res:GetResult())
-    end
-  end
-, self)
+    GameGlobal.TaskManager():StartTask(function(TT)
+      local petModule = GameGlobal.GetModule(PetModule)
+      local pstid = self._pet:PstID()
+      local res, replay = petModule:RequestPetFinishTriggeredStory(TT, pstid, self._triggerType, self._storyid)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, false, "EndStoryDialog")
+      if res:GetSucc() then
+        self:OnStoryFinished(replay.reward, replay.affinity)
+        Log.debug("###[AirAction_RS_Look] story Look end")
+      else
+        Log.error(res:GetResult())
+      end
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Look.OnStoryFinished = function(self, award, affinity)
-  -- function num : 0_6 , upvalues : _ENV
-  local tip = nil
-  if affinity and affinity > 0 then
-    local petData = ((GameGlobal.GetModule)(PetModule)):GetPetByTemplateId((self._pet):TemplateID())
+function AirAction_RS_Look:OnStoryFinished(award, affinity)
+  local tip
+  if affinity and 0 < affinity then
+    local petData = GameGlobal.GetModule(PetModule):GetPetByTemplateId(self._pet:TemplateID())
     local maxLevel = petData:GetPetAffinityMaxLevel()
     local level = petData:GetPetAffinityLevel()
     if level == self._maxLevel then
-      tip = (StringTable.Get)("str_aircraft_room_affinity_add_value_max")
+      tip = StringTable.Get("str_aircraft_room_affinity_add_value_max")
     else
-      local petName = (StringTable.Get)(petData:GetPetName())
-      tip = (string.format)((StringTable.Get)("str_aircraft_room_pet_affinity_add_value"), petName, affinity)
+      local petName = StringTable.Get(petData:GetPetName())
+      tip = string.format(StringTable.Get("str_aircraft_room_pet_affinity_add_value"), petName, affinity)
     end
   end
-  do
-    local anim = AircraftAffinityAnim:New((self._pet):GameObject(), award, tip, function()
-    -- function num : 0_6_0 , upvalues : self, _ENV
+  local anim = AircraftAffinityAnim:New(self._pet:GameObject(), award, tip, function()
     if not self._running then
-      return 
+      return
     end
-    ;
-    (Log.debug)("11关闭获得物品动画")
+    Log.debug("11关闭获得物品动画")
     self:Close()
-  end
-)
-    anim:Play()
-  end
+  end)
+  anim:Play()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Look.OpenStroyDialog = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.debug)("###[AirAction_RS_Look] click story test --> trigger and open story")
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, false, "ReadyPlayStory")
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RandomStoryStartOrEnd, true, self._startRandomStoryTimeOut)
-  ;
-  (self._main):LookRandomStoryCameraAnimStart(true, self._startRandomStoryTimeOut)
+function AirAction_RS_Look:OpenStroyDialog()
+  Log.debug("###[AirAction_RS_Look] click story test --> trigger and open story")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, false, "ReadyPlayStory")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.RandomStoryStartOrEnd, true, self._startRandomStoryTimeOut)
+  self._main:LookRandomStoryCameraAnimStart(true, self._startRandomStoryTimeOut)
   self._startRandomStory = true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Look.ShowStoryDialog = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (Log.debug)("###[AirAction_RS_Look] click story test --> show story")
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryController", self._storyEventID, function()
-    -- function num : 0_8_0 , upvalues : self
+function AirAction_RS_Look:ShowStoryDialog()
+  Log.debug("###[AirAction_RS_Look] click story test --> show story")
+  GameGlobal.UIStateManager():ShowDialog("UIStoryController", self._storyEventID, function()
     self:EndStoryDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Look.Update = function(self, deltaTimeMS)
-  -- function num : 0_9
+function AirAction_RS_Look:Update(deltaTimeMS)
   if self._running then
     if self._startTalk then
       self._startTime = self._startTime + deltaTimeMS
-      if self._afterClickTime <= self._startTime then
+      if self._startTime >= self._afterClickTime then
         self._startTalk = false
         self._startTime = 0
         self:OpenStroyDialog()
@@ -266,7 +188,7 @@ AirAction_RS_Look.Update = function(self, deltaTimeMS)
     end
     if self._startRandomStory then
       self._startTime = self._startTime + deltaTimeMS
-      if self._startRandomStoryTimeOut <= self._startTime then
+      if self._startTime >= self._startRandomStoryTimeOut then
         self._startRandomStory = false
         self._startTime = 0
         self:ShowStoryDialog()
@@ -275,26 +197,15 @@ AirAction_RS_Look.Update = function(self, deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Look.Close = function(self)
-  -- function num : 0_10
-  (self._main):RemoveOneRandomEvent(self._storyid)
+function AirAction_RS_Look:Close()
+  self._main:RemoveOneRandomEvent(self._storyid)
   self:Stop()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Look.IsOver = function(self)
-  -- function num : 0_11
+function AirAction_RS_Look:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AirAction_RS_Look.Stop = function(self)
-  -- function num : 0_12
+function AirAction_RS_Look:Stop()
   self._running = false
 end
-
-

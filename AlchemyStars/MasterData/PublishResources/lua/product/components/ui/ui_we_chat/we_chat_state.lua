@@ -1,81 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_we_chat/we_chat_state.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("fsm_state")
 _class("WeChatEmptyState", FSMState)
 WeChatEmptyState = WeChatEmptyState
 _class("WeChatNormalState", FSMState)
 WeChatNormalState = WeChatNormalState
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-WeChatNormalState.Enter = function(self, speakerId)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WeChatNormalState, speakerId)
+function WeChatNormalState:Enter(speakerId)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.WeChatNormalState, speakerId)
 end
 
 _class("WeChatReplyState", FSMState)
 WeChatReplyState = WeChatReplyState
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-WeChatReplyState.Enter = function(self, speakerId)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WeChatReplyState, speakerId)
+function WeChatReplyState:Enter(speakerId)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.WeChatReplyState, speakerId)
 end
 
 _class("WeChatVoiceState", FSMState)
 WeChatVoiceState = WeChatVoiceState
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-WeChatVoiceState.Constructor = function(self)
-  -- function num : 0_2
+function WeChatVoiceState:Constructor()
 end
 
 _class("WeChatAddAnswerState", FSMState)
 WeChatAddAnswerState = WeChatAddAnswerState
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-WeChatAddAnswerState.Enter = function(self, data)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WeChatAddAnswerState, data)
+function WeChatAddAnswerState:Enter(data)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.WeChatAddAnswerState, data)
 end
 
 _class("WeChatWaitState", FSMState)
 WeChatWaitState = WeChatWaitState
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
 
-WeChatWaitState.Enter = function(self, data, time)
-  -- function num : 0_4 , upvalues : _ENV
-  if not time then
-    time = 500
-  end
+function WeChatWaitState:Enter(data, time)
+  time = time or 500
   self.time = time
   self.data = data
-  self.startTime = (GameGlobal:GetInstance()):GetCurrentTime()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WeChatWaitState, self.data)
+  self.startTime = GameGlobal:GetInstance():GetCurrentTime()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.WeChatWaitState, self.data)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatWaitState.Excute = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local nowTime = (GameGlobal:GetInstance()):GetCurrentTime()
-  if self.time < nowTime - self.startTime then
+function WeChatWaitState:Excute()
+  local nowTime = GameGlobal:GetInstance():GetCurrentTime()
+  if nowTime - self.startTime > self.time then
     self:ChangeState(WeChatState.WaitEnd, self.data)
   end
 end
 
 _class("WeChatWaitEndState", FSMState)
 WeChatWaitEndState = WeChatWaitEndState
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-WeChatWaitEndState.Enter = function(self, data)
-  -- function num : 0_6 , upvalues : _ENV
-  (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.WeChatRecvMessage)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WeChatWaitEndState, data)
+function WeChatWaitEndState:Enter(data)
+  AudioHelperController.PlayRequestedUISound(CriAudioIDConst.WeChatRecvMessage)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.WeChatWaitEndState, data)
 end
-
-

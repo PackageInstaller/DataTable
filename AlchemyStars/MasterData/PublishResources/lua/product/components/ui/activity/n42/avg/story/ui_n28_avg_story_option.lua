@@ -1,31 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/story/ui_n28_avg_story_option.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGStoryOption", UICustomWidget)
 UIN28AVGStoryOption = UIN28AVGStoryOption
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGStoryOption.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN28AVGData()
-  self.animNames = {"uieff_UIN28AVGStoryOption_in", "uieff_UIN28AVGStoryOption_lock", "uieff_UIN28AVGStoryOption_out"}
+function UIN28AVGStoryOption:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN28AVGData()
+  self.animNames = {
+    "uieff_UIN28AVGStoryOption_in",
+    "uieff_UIN28AVGStoryOption_lock",
+    "uieff_UIN28AVGStoryOption_out"
+  }
   self.taskIdChangePos = 0
   self.taskId = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryOption.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28AVGStoryOption:OnShow()
   self.anim = self:GetUIComponent("Animation", "anim")
-  self.rt = (self:GetGameObject()):GetComponent(typeof(UnityEngine.RectTransform))
-  ;
-  (UICommonHelper:GetInstance()):RectTransformAnchor2Center(self.rt)
-  ;
-  ((self.rt).gameObject):SetActive(false)
+  self.rt = self:GetGameObject():GetComponent(typeof(UnityEngine.RectTransform))
+  UICommonHelper:GetInstance():RectTransformAnchor2Center(self.rt)
+  self.rt.gameObject:SetActive(false)
   self.normal = self:GetGameObject("normal")
   self.lock = self:GetGameObject("lock")
   self.rtNormal = self:GetUIComponent("RectTransform", "normal")
@@ -36,10 +28,7 @@ UIN28AVGStoryOption.OnShow = function(self)
   self:AttachEvent(GameEventType.AVGShowHideOptionInfluence, self.AVGShowHideOptionInfluence)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryOption.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN28AVGStoryOption:OnHide()
   self.anim = nil
   self.option = nil
   self.taskIdChangePos = 0
@@ -47,42 +36,29 @@ UIN28AVGStoryOption.OnHide = function(self)
   self:DetachEvent(GameEventType.AVGShowHideOptionInfluence, self.AVGShowHideOptionInfluence)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryOption.Flush = function(self, option, len, callback, uis)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN28AVGStoryOption:Flush(option, len, callback, uis)
   self.option = option
   self.optionLen = len
   self.callback = callback
   self._uis = uis
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R5 in 'UnsetPending'
-
   if option:IsSatisfyUnlock() then
     if option:IsSelected() then
-      (self.txtOption).color = Color(0.96078431372549, 0.36470588235294, 0.58039215686275, 1)
+      self.txtOption.color = Color(0.9607843137254902, 0.36470588235294116, 0.5803921568627451, 1)
     else
-      -- DECOMPILER ERROR at PC28: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self.txtOption).color = Color(0.36470588235294, 0.36862745098039, 0.41176470588235, 1)
+      self.txtOption.color = Color(0.36470588235294116, 0.3686274509803922, 0.4117647058823529, 1)
     end
-    ;
-    (self.txtOption):SetText(option:Content())
+    self.txtOption:SetText(option:Content())
   end
-  ;
-  (self.txtUnlockCondition):SetText(option.unlockConditionDesc)
+  self.txtUnlockCondition:SetText(option.unlockConditionDesc)
   self:PlayAnimChangePos()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryOption.BtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  if not (self.option):IsSatisfyUnlock() then
-    return 
+function UIN28AVGStoryOption:BtnOnClick(go)
+  if not self.option:IsSatisfyUnlock() then
+    return
   end
-  for i,ui in ipairs(self._uis) do
-    if i == (self.option).index then
+  for i, ui in ipairs(self._uis) do
+    if i == self.option.index then
       self:PlayAnimClick(self.callback)
     else
       ui:PlayAnimOut()
@@ -90,33 +66,17 @@ UIN28AVGStoryOption.BtnOnClick = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryOption.GetPos = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if not ((self.data).optionPos)[(self.option).index] then
-    local posTarget = Vector2.zero
-  end
+function UIN28AVGStoryOption:GetPos()
+  local posTarget = self.data.optionPos[self.option.index] or Vector2.zero
   return posTarget
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryOption.ResetRectTransform = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.rtNormal).anchoredPosition = Vector2.zero
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.rtLock).anchoredPosition = Vector2.zero
+function UIN28AVGStoryOption:ResetRectTransform()
+  self.rtNormal.anchoredPosition = Vector2.zero
+  self.rtLock.anchoredPosition = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryOption.AVGShowHideOptionInfluence = function(self, isShowInfluence, first)
-  -- function num : 0_7
+function UIN28AVGStoryOption:AVGShowHideOptionInfluence(isShowInfluence, first)
   if isShowInfluence then
     self:PlayAnimOut()
   else
@@ -124,16 +84,13 @@ UIN28AVGStoryOption.AVGShowHideOptionInfluence = function(self, isShowInfluence,
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryOption.GetState = function(self, first)
-  -- function num : 0_8
+function UIN28AVGStoryOption:GetState(first)
   if not self.option then
-    return 
+    return
   end
   local state = 0
-  if (self.option):IsSatisfyUnlock() then
-    if (self.option):HasCondition() then
+  if self.option:IsSatisfyUnlock() then
+    if self.option:HasCondition() then
       state = 2
     else
       state = 1
@@ -141,110 +98,78 @@ UIN28AVGStoryOption.GetState = function(self, first)
   else
     state = 3
   end
-  if state ~= 1 and state ~= 2 then
-    (self.normal):SetActive(not first)
-    ;
-    (self.lock):SetActive(state == 3 or state == 2)
-    do return state end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  if first then
+    self.normal:SetActive(state == 1 or state == 2)
+    self.lock:SetActive(state == 3 or state == 2)
   end
+  return state
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryOption.PlayAnimChangePos = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN28AVGStoryOption:PlayAnimChangePos()
   if self.taskIdChangePos > 0 then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskIdChangePos)
+    GameGlobal.TaskManager():KillTask(self.taskIdChangePos)
   end
   self.taskIdChangePos = self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
-    local key = "PlayAnimChangePos" .. (self.option).index
+    local key = "PlayAnimChangePos" .. self.option.index
     self:Lock(key)
     local posTarget = self:GetPos()
     local duration = 0.222
-    local delay = (self.optionLen - (self.option).index + 1) * 0.1
-    ;
-    ((self.rt).gameObject):SetActive(false)
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.rt).anchoredPosition = posTarget
+    local delay = (self.optionLen - self.option.index + 1) * 0.1
+    self.rt.gameObject:SetActive(false)
+    self.rt.anchoredPosition = posTarget
     YIELD(TT, delay * 1000)
-    ;
-    ((self.rt).gameObject):SetActive(true)
+    self.rt.gameObject:SetActive(true)
     self:AVGShowHideOptionInfluence(false, true)
     self.taskIdChangePos = 0
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryOption.PlayAnimIn = function(self, first)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN28AVGStoryOption:PlayAnimIn(first)
   if not self.anim then
-    return 
+    return
   end
   self:ResetRectTransform()
   if self.taskId > 0 then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
   end
   self.taskId = self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, first, _ENV
     self:StopAnim()
     local state = self:GetState(first)
     local animId = state == 2 and first and state or 1
-    local animName = (self.animNames)[animId]
-    ;
-    (self.anim):Play(animName)
+    local animName = self.animNames[animId]
+    self.anim:Play(animName)
     YIELD(TT, 833)
     self.taskId = 0
     if state == 2 then
-      (self.lock):SetActive(false)
+      self.lock:SetActive(false)
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryOption.PlayAnimOut = function(self)
-  -- function num : 0_11
+function UIN28AVGStoryOption:PlayAnimOut()
   if not self.anim then
-    return 
+    return
   end
   self:GetState()
   self:StopAnim()
-  ;
-  (self.anim):Play((self.animNames)[3])
+  self.anim:Play(self.animNames[3])
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryOption.StopAnim = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN28AVGStoryOption:StopAnim()
   if not self.anim then
-    return 
+    return
   end
-  for index,animName in ipairs(self.animNames) do
-    local state = (self.anim):get_Item(animName)
+  for index, animName in ipairs(self.animNames) do
+    local state = self.anim:get_Item(animName)
     if state then
       state.normalizedTime = 0
     end
   end
-  ;
-  (self.anim):Stop()
+  self.anim:Stop()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryOption.PlayAnimClick = function(self, callback)
-  -- function num : 0_13 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundStoryClick)
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "anim", "uieff_UIN28AVGStoryOption_click", 400, callback)
+function UIN28AVGStoryOption:PlayAnimClick(callback)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundStoryClick)
+  UIWidgetHelper.PlayAnimation(self, "anim", "uieff_UIN28AVGStoryOption_click", 400, callback)
 end
-
-

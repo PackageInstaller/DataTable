@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/ui_activity_n21cc_show_card_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN21CCShowCardController", UIController)
 UIActivityN21CCShowCardController = UIActivityN21CCShowCardController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN21CCShowCardController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN21CCShowCardController:OnShow(uiParams)
   local groupData = uiParams[1]
   self._activityConst = uiParams[2]
   self._item = uiParams[3]
@@ -16,33 +9,22 @@ UIActivityN21CCShowCardController.OnShow = function(self, uiParams)
   self._index = uiParams[5]
   local loader = self:GetUIComponent("UISelectObjectPath", "Loader")
   self._showItem = loader:SpawnObject("UIActivityN21CCItem")
-  ;
-  (self._showItem):Refresh(groupData, true)
+  self._showItem:Refresh(groupData, true)
   self:OpenLevelGroup(groupData)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShowCardController.OpenLevelGroup = function(self, levelGroupData)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN21CCShowCardController:OpenLevelGroup(levelGroupData)
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self, _ENV, levelGroupData
     self:Lock("UIActivityN21CCShowCardController_OpenLevelGroup")
-    ;
-    (self._item):SetStatus(false)
-    ;
-    (self._showItem):PlayEnterAnim(self._count, self._index)
+    self._item:SetStatus(false)
+    self._showItem:PlayEnterAnim(self._count, self._index)
     YIELD(TT, 1000)
     levelGroupData:ClearNewStatus()
     levelGroupData:ClearOnceRedStatus()
     self:ShowDialog("UIActivityN21CCLevelDetail", true, levelGroupData, self._activityConst)
     YIELD(TT, 200)
-    ;
-    (self._item):SetStatus(true)
+    self._item:SetStatus(true)
     self:CloseDialog()
     self:UnLock("UIActivityN21CCShowCardController_OpenLevelGroup")
-  end
-)
+  end)
 end
-
-

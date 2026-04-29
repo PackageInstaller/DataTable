@@ -1,56 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_save_pet_normal_attack_dir.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-BuffLogicSaveNormalAttackDirEnum = {Up = 1, RightTop = 2, Right = 3, RightBottom = 4, Down = 5, LeftBottom = 6, Left = 7, LeftTop = 8}
+BuffLogicSaveNormalAttackDirEnum = {
+  Up = 1,
+  RightTop = 2,
+  Right = 3,
+  RightBottom = 4,
+  Down = 5,
+  LeftBottom = 6,
+  Left = 7,
+  LeftTop = 8
+}
 _enum("BuffLogicSaveNormalAttackDirEnum", BuffLogicSaveNormalAttackDirEnum)
 require("buff_logic_base")
 _class("BuffLogicSaveNormalAttackDir", BuffLogicBase)
 BuffLogicSaveNormalAttackDir = BuffLogicSaveNormalAttackDir
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSaveNormalAttackDir.DoLogic = function(self, notify)
-  -- function num : 0_0 , upvalues : _ENV
-  if not (self._entity):HasPetPstID() then
-    return 
+function BuffLogicSaveNormalAttackDir:DoLogic(notify)
+  if not self._entity:HasPetPstID() then
+    return
   end
-  local cPetPstID = (self._entity):PetPstID()
-  local curRound = ((self._world):BattleStat()):GetGameRoundCount()
+  local cPetPstID = self._entity:PetPstID()
+  local curRound = self._world:BattleStat():GetGameRoundCount()
   local attackPos = notify:GetAttackPos()
   local damagePos = notify:GetTargetPos()
   local dir = damagePos - attackPos
   local dirNum = 0
-  if dir.x == 0 and dir.y > 0 then
+  if dir.x == 0 and 0 < dir.y then
     dirNum = BuffLogicSaveNormalAttackDirEnum.Up
-  else
-    if dir.x > 0 and dir.y > 0 then
-      dirNum = BuffLogicSaveNormalAttackDirEnum.RightTop
-    else
-      if dir.x > 0 and dir.y == 0 then
-        dirNum = BuffLogicSaveNormalAttackDirEnum.Right
-      else
-        if dir.x > 0 and dir.y < 0 then
-          dirNum = BuffLogicSaveNormalAttackDirEnum.RightBottom
-        else
-          if dir.x == 0 and dir.y < 0 then
-            dirNum = BuffLogicSaveNormalAttackDirEnum.Down
-          else
-            if dir.x < 0 and dir.y < 0 then
-              dirNum = BuffLogicSaveNormalAttackDirEnum.LeftBottom
-            else
-              if dir.x < 0 and dir.y == 0 then
-                dirNum = BuffLogicSaveNormalAttackDirEnum.Left
-              else
-                if dir.x < 0 and dir.y > 0 then
-                  dirNum = BuffLogicSaveNormalAttackDirEnum.LeftTop
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif 0 < dir.x and 0 < dir.y then
+    dirNum = BuffLogicSaveNormalAttackDirEnum.RightTop
+  elseif 0 < dir.x and dir.y == 0 then
+    dirNum = BuffLogicSaveNormalAttackDirEnum.Right
+  elseif 0 < dir.x and 0 > dir.y then
+    dirNum = BuffLogicSaveNormalAttackDirEnum.RightBottom
+  elseif dir.x == 0 and 0 > dir.y then
+    dirNum = BuffLogicSaveNormalAttackDirEnum.Down
+  elseif 0 > dir.x and 0 > dir.y then
+    dirNum = BuffLogicSaveNormalAttackDirEnum.LeftBottom
+  elseif 0 > dir.x and dir.y == 0 then
+    dirNum = BuffLogicSaveNormalAttackDirEnum.Left
+  elseif 0 > dir.x and 0 < dir.y then
+    dirNum = BuffLogicSaveNormalAttackDirEnum.LeftTop
   end
   cPetPstID:SetRoundNormalAttackDir(curRound, dirNum)
   local dirTable = cPetPstID:GetRoundNormalAttackDirTable(curRound)
@@ -63,17 +51,13 @@ end
 
 _class("BuffLogicClearPetNormalAttackDirInCurrentRound", BuffLogicBase)
 BuffLogicClearPetNormalAttackDirInCurrentRound = BuffLogicClearPetNormalAttackDirInCurrentRound
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicClearPetNormalAttackDirInCurrentRound.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  if not (self._entity):HasPetPstID() then
-    return 
+function BuffLogicClearPetNormalAttackDirInCurrentRound:DoLogic(notify)
+  if not self._entity:HasPetPstID() then
+    return
   end
-  local cPetPstID = (self._entity):PetPstID()
-  local curRound = ((self._world):BattleStat()):GetGameRoundCount()
+  local cPetPstID = self._entity:PetPstID()
+  local curRound = self._world:BattleStat():GetGameRoundCount()
   cPetPstID:ClearRoundNormalAttackDir(curRound)
   return BuffResultClearPetNormalAttackDir:New()
 end
-
-

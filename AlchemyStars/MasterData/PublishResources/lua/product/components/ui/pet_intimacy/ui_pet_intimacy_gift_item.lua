@@ -1,179 +1,140 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet_intimacy/ui_pet_intimacy_gift_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetIntimacyGiftItem", UICustomWidget)
 UIPetIntimacyGiftItem = UIPetIntimacyGiftItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetIntimacyGiftItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._maxSelectedCount = ((Cfg.cfg_global).ui_pet_up_level_mat_cast_count_max).IntValue or 99
-  self._addCountPerSecond = ((Cfg.cfg_global).pet_up_level_add_count_per_second).IntValue
+function UIPetIntimacyGiftItem:OnShow(uiParams)
+  self._maxSelectedCount = Cfg.cfg_global.ui_pet_up_level_mat_cast_count_max.IntValue or 99
+  self._addCountPerSecond = Cfg.cfg_global.pet_up_level_add_count_per_second.IntValue
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.PetFavorability)
-  ;
-  (self.uiItem):SetClickCallBack(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.PetFavorability)
+  self.uiItem:SetClickCallBack(function()
     self:OnClicked()
-  end
-)
-  ;
-  (self.uiItem):SetLongPressCallBack(function()
-    -- function num : 0_0_1 , upvalues : self
+  end)
+  self.uiItem:SetLongPressCallBack(function()
     self:OnClicked()
-    return self._giftData and ((self._giftData).giftData):GetCount() or 0
-  end
-, nil, self._addCountPerSecond, true)
-  ;
-  (self.uiItem):SetData({reduceCallBack = function()
-    -- function num : 0_0_2 , upvalues : self
-    self:MinusGiveAwayCountButtonOnClick()
-  end
-})
-  ;
-  (self.uiItem):SetReduceLongPressCallBack(self._addCountPerSecond)
+    return self._giftData and self._giftData.giftData:GetCount() or 0
+  end, nil, self._addCountPerSecond, true)
+  self.uiItem:SetData({
+    reduceCallBack = function()
+      self:MinusGiveAwayCountButtonOnClick()
+    end
+  })
+  self.uiItem:SetReduceLongPressCallBack(self._addCountPerSecond)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGiftItem.Refresh = function(self, intimacyMainController, intimacyGift, petData, giftData)
-  -- function num : 0_1
+function UIPetIntimacyGiftItem:Refresh(intimacyMainController, intimacyGift, petData, giftData)
   self._intimacyMainController = intimacyMainController
   self._intimacyGift = intimacyGift
   self._petData = petData
   self._giftData = giftData
   if self._giftData == nil then
-    (self.uiItem):SetData({showLove = false, reduceNum = 0, quality = 0, icon = "", text1 = ""})
-    ;
-    (self.uiItem):SetBtnImage(false)
-    return 
+    self.uiItem:SetData({
+      showLove = false,
+      reduceNum = 0,
+      quality = 0,
+      icon = "",
+      text1 = ""
+    })
+    self.uiItem:SetBtnImage(false)
+    return
   end
   local icon = ""
   local quality = 0
   local showLove = false
   local text1 = 0
   local reduceNum = 0
-  text1 = ((self._giftData).giftData):GetCount()
-  self._templateData = ((self._giftData).giftData):GetTemplate()
-  local itemId = (self._templateData).ID
-  quality = (self._templateData).Color
-  showLove = (self._intimacyGift):IsFavorableGift(self._giftData)
-  icon = (self._templateData).Icon
-  reduceNum = self._giftData and (self._giftData).selectedCount or 0
+  text1 = self._giftData.giftData:GetCount()
+  self._templateData = self._giftData.giftData:GetTemplate()
+  local itemId = self._templateData.ID
+  quality = self._templateData.Color
+  showLove = self._intimacyGift:IsFavorableGift(self._giftData)
+  icon = self._templateData.Icon
+  reduceNum = self._giftData and self._giftData.selectedCount or 0
   local changePos = false
   if self._reduceNum ~= reduceNum then
     self._reduceNum = reduceNum
     changePos = true
   end
   local isUp = true
-  if reduceNum > 0 then
+  if 0 < reduceNum then
     isUp = false
   end
-  ;
-  (self.uiItem):SetData({icon = icon, quality = quality, showLove = showLove, text1 = text1, reduceNum = reduceNum, itemId = itemId, changePos = changePos, isUp = isUp})
-  ;
-  (self.uiItem):SetBtnImage(true)
+  self.uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    showLove = showLove,
+    text1 = text1,
+    reduceNum = reduceNum,
+    itemId = itemId,
+    changePos = changePos,
+    isUp = isUp
+  })
+  self.uiItem:SetBtnImage(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGiftItem._RefreshSelectedStatus = function(self)
-  -- function num : 0_2
-  local reduceNum = self._giftData and (self._giftData).selectedCount or 0
+function UIPetIntimacyGiftItem:_RefreshSelectedStatus()
+  local reduceNum = self._giftData and self._giftData.selectedCount or 0
   local changePos = false
   if self._reduceNum ~= reduceNum then
     self._reduceNum = reduceNum
     changePos = true
   end
   local isUp = true
-  if reduceNum > 0 then
+  if 0 < reduceNum then
     isUp = false
   end
-  ;
-  (self.uiItem):SetData({reduceNum = reduceNum, changePos = changePos, isUp = isUp})
+  self.uiItem:SetData({
+    reduceNum = reduceNum,
+    changePos = changePos,
+    isUp = isUp
+  })
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGiftItem.OnClicked = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIPetIntimacyGiftItem:OnClicked(go)
   if self._giftData == nil then
-    return 
+    return
   end
-  local currentSelectedCount = (self._giftData).selectedCount
-  if self._maxSelectedCount <= currentSelectedCount or ((self._giftData).giftData):GetCount() <= currentSelectedCount then
-    return 
+  local currentSelectedCount = self._giftData.selectedCount
+  if currentSelectedCount >= self._maxSelectedCount or currentSelectedCount >= self._giftData.giftData:GetCount() then
+    return
   end
-  local success = (self._intimacyGift):OnItemClicked(self._giftData, true)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
+  local success = self._intimacyGift:OnItemClicked(self._giftData, true)
   if success then
-    (self._giftData).isSelected = true
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._giftData).selectedCount = (self._giftData).selectedCount + 1
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundAddUp)
+    self._giftData.isSelected = true
+    self._giftData.selectedCount = self._giftData.selectedCount + 1
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundAddUp)
     self:_RefreshSelectedStatus()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGiftItem.LongPress = function(self, go)
-  -- function num : 0_4
+function UIPetIntimacyGiftItem:LongPress(go)
   if self._giftData == nil then
-    return 
+    return
   end
-  ;
-  (self._intimacyMainController):ShowItemTips(((self._giftData).giftData):GetTemplateID(), ((self:GetGameObject()).transform).position)
+  self._intimacyMainController:ShowItemTips(self._giftData.giftData:GetTemplateID(), self:GetGameObject().transform.position)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGiftItem.LongPressUp = function(self, go)
-  -- function num : 0_5
+function UIPetIntimacyGiftItem:LongPressUp(go)
   if self._giftData == nil then
-    return 
+    return
   end
-  ;
-  (self._intimacyMainController):CloseItemTips()
+  self._intimacyMainController:CloseItemTips()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyGiftItem.MinusGiveAwayCountButtonOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UIPetIntimacyGiftItem:MinusGiveAwayCountButtonOnClick(go)
   if self._giftData == nil then
-    return 
+    return
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDecDown)
-  local currentSelectedCount = (self._giftData).selectedCount
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDecDown)
+  local currentSelectedCount = self._giftData.selectedCount
   if currentSelectedCount <= 0 then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._giftData).selectedCount = currentSelectedCount - 1
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self._giftData).selectedCount <= 0 then
-    (self._giftData).isSelected = false
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._giftData).selectedCount = 0
+  self._giftData.selectedCount = currentSelectedCount - 1
+  if self._giftData.selectedCount <= 0 then
+    self._giftData.isSelected = false
+    self._giftData.selectedCount = 0
   end
   self:_RefreshSelectedStatus()
-  ;
-  (self._intimacyGift):OnItemClicked(self._giftData, false)
+  self._intimacyGift:OnItemClicked(self._giftData, false)
 end
-
-

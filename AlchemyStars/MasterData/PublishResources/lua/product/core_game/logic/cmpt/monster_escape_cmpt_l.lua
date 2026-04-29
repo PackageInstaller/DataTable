@@ -1,63 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/monster_escape_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MonsterEscapeComponent", Object)
 MonsterEscapeComponent = MonsterEscapeComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterEscapeComponent.Constructor = function(self, bEscapeSuccess)
-  -- function num : 0_0
+function MonsterEscapeComponent:Constructor(bEscapeSuccess)
   self.m_bEscapeSuccess = bEscapeSuccess
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterEscapeComponent.IsEscapeSuccess = function(self)
-  -- function num : 0_1
+function MonsterEscapeComponent:IsEscapeSuccess()
   return self.m_bEscapeSuccess
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.MonsterEscape = function(self)
-  -- function num : 0_2
-  return self:GetComponent((self.WEComponentsEnum).MonsterEscape)
+function Entity:MonsterEscape()
+  return self:GetComponent(self.WEComponentsEnum.MonsterEscape)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasMonsterEscape = function(self)
-  -- function num : 0_3
-  return self:HasComponent((self.WEComponentsEnum).MonsterEscape)
+function Entity:HasMonsterEscape()
+  return self:HasComponent(self.WEComponentsEnum.MonsterEscape)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddMonsterEscape = function(self, bEscape)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MonsterEscape
+function Entity:AddMonsterEscape(bEscape)
+  local index = self.WEComponentsEnum.MonsterEscape
   local component = MonsterEscapeComponent:New(bEscape)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceMonsterEscape = function(self, bEscape)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MonsterEscape
+function Entity:ReplaceMonsterEscape(bEscape)
+  local index = self.WEComponentsEnum.MonsterEscape
   local component = MonsterEscapeComponent:New(bEscape)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveMonsterEscape = function(self)
-  -- function num : 0_6
+function Entity:RemoveMonsterEscape()
   if self:HasMonsterEscape() then
-    self:RemoveComponent((self.WEComponentsEnum).MonsterEscape)
+    self:RemoveComponent(self.WEComponentsEnum.MonsterEscape)
   end
 end
-
-

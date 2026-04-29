@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_pick_up_cross_and_dir_to_sector.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_PickUpCrossAndDirToSector", SkillScopeCalculator_Base)
 SkillScopeCalculator_PickUpCrossAndDirToSector = SkillScopeCalculator_PickUpCrossAndDirToSector
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_PickUpCrossAndDirToSector.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity, calcEffectFcuntion)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_PickUpCrossAndDirToSector:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity, calcEffectFcuntion)
   local maxAngle = scopeParam[1] or 45
   local attackGridPosList = {}
   local pickUpCenterPos = centerPos[1]
@@ -30,32 +23,27 @@ SkillScopeCalculator_PickUpCrossAndDirToSector.CalcRange = function(self, scopeT
   return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_PickUpCrossAndDirToSector._CalcScopeWithDirAngle = function(self, casterPos, selPos, dir, maxAngle)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_PickUpCrossAndDirToSector:_CalcScopeWithDirAngle(casterPos, selPos, dir, maxAngle)
   local addGridList = {}
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local boardService = world:GetService("BoardLogic")
   local pieceXYMap = boardService.GridTiles
   local mainDir = selPos - casterPos
-  for gridX,tableY in pairs(pieceXYMap) do
-    for gridY,_ in pairs(tableY) do
+  for gridX, tableY in pairs(pieceXYMap) do
+    for gridY, _ in pairs(tableY) do
       local gridPos = Vector2(gridX, gridY)
       local selToGrid = gridPos - selPos
       local casterToGrid = gridPos - casterPos
-      local exDirToGridAngle = (Vector2.Angle)(dir, selToGrid)
-      exDirToGridAngle = (math.floor)(exDirToGridAngle + 0.5)
+      local exDirToGridAngle = Vector2.Angle(dir, selToGrid)
+      exDirToGridAngle = math.floor(exDirToGridAngle + 0.5)
       if exDirToGridAngle <= 90 then
-        local mianDirToGridAngle = (Vector2.Angle)(mainDir, casterToGrid)
-        mianDirToGridAngle = (math.floor)(mianDirToGridAngle + 0.5)
-        if mianDirToGridAngle <= maxAngle then
-          (table.insert)(addGridList, gridPos)
+        local mianDirToGridAngle = Vector2.Angle(mainDir, casterToGrid)
+        mianDirToGridAngle = math.floor(mianDirToGridAngle + 0.5)
+        if maxAngle >= mianDirToGridAngle then
+          table.insert(addGridList, gridPos)
         end
       end
     end
   end
   return addGridList
 end
-
-

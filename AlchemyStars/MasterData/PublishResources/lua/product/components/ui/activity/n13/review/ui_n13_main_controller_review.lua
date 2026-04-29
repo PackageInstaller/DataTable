@@ -1,78 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n13/review/ui_n13_main_controller_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN13MainControllerReview", UIController)
 UIN13MainControllerReview = UIN13MainControllerReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN13MainControllerReview.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN13MainControllerReview:Constructor()
   self._loginModule = self:GetModule(LoginModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN13MainControllerReview:LoadDataOnEnter(TT, res, uiParams)
   self._campaign = UIActivityCampaign:New()
-  if (self._campaign)._type == -1 or (self._campaign)._id == -1 then
-    (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N13)
+  if self._campaign._type == -1 or self._campaign._id == -1 then
+    self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N13)
   else
-    ;
-    (self.activityCampaign):ReLoadCampaignInfo_Force(TT, res)
+    self.activityCampaign:ReLoadCampaignInfo_Force(TT, res)
   end
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  self._process = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_REVIEW_N13)
-  self._line_mission_cpt = (self._campaign):GetComponent(ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_LINE_MISSION)
-  self._build_cpt = (self._campaign):GetComponent(ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_BUILD)
-  self._line_mission_info = (self._campaign):GetComponentInfo(ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_LINE_MISSION)
-  self._build_info = (self._campaign):GetComponentInfo(ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_BUILD)
+  self._process = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_REVIEW_N13)
+  self._line_mission_cpt = self._campaign:GetComponent(ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_LINE_MISSION)
+  self._build_cpt = self._campaign:GetComponent(ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_BUILD)
+  self._line_mission_info = self._campaign:GetComponentInfo(ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_LINE_MISSION)
+  self._build_info = self._campaign:GetComponentInfo(ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_BUILD)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._battlePassCampaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._battlePassCampaign._id, nil, nil)
+    return
   end
   self._componentId = ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_BUILD
-  self._component = (self._campaign):GetComponent(self._componentId)
+  self._component = self._campaign:GetComponent(self._componentId)
   self._buildManager = UIBuildComponentManager:New(self._component)
-  self.playerID = ((GameGlobal.GameLogic)()):GetOpenId()
+  self.playerID = GameGlobal.GameLogic():GetOpenId()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN13MainControllerReview:OnShow(uiParams)
   self:_AttachEvent()
   self:_OnValue(uiParams)
   self:_GetComponent()
   self:_OnShow()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN13MainControllerReview:OnHide()
   self._isOpen = false
-  self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+  self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._AttachEvent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN13MainControllerReview:_AttachEvent()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._OnAfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._OnValue = function(self, uiParams)
-  -- function num : 0_5
+function UIN13MainControllerReview:_OnValue(uiParams)
   self._rt = uiParams[1]
   self._componentState = {}
   self._btnImg = {}
@@ -84,11 +61,8 @@ UIN13MainControllerReview._OnValue = function(self, uiParams)
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._GetComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._animation = ((self.view).gameObject):GetComponent("Animation")
+function UIN13MainControllerReview:_GetComponent()
+  self._animation = self.view.gameObject:GetComponent("Animation")
   self._sakuragari_token_i = self:GetUIComponent("UILocalizationText", "_sakuragari_token_i")
   self._sakuragari_token_ii = self:GetUIComponent("UILocalizationText", "_sakuragari_token_ii")
   self._login_state = self:GetGameObject("_login_state")
@@ -97,301 +71,195 @@ UIN13MainControllerReview._GetComponent = function(self)
   self._sakuragari_state_i = self:GetGameObject("_sakuragari_state_i")
   self._sakuragari_state_ii = self:GetGameObject("_sakuragari_state_ii")
   self._garden_lock = self:GetGameObject("_garden_lock")
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._btnImg)[ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_LINE_MISSION] = self:GetUIComponent("Image", "_normal_level")
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._reds)[ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_LINE_MISSION] = self:GetGameObject("_redPoint_level")
+  self._btnImg[ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_LINE_MISSION] = self:GetUIComponent("Image", "_normal_level")
+  self._reds[ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_LINE_MISSION] = self:GetGameObject("_redPoint_level")
   self._redsBuild = self:GetGameObject("_redPoint_sakuragar")
-  -- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._objs)["0"] = self:GetGameObject("_need_hide_i")
-  -- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._objs)["1"] = self:GetGameObject("_need_hide_ii")
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._objs)["2"] = self:GetGameObject("_need_hide_iii")
-  -- DECOMPILER ERROR at PC78: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._objs)["3"] = self:GetGameObject("_need_hide_iiii")
+  self._objs["0"] = self:GetGameObject("_need_hide_i")
+  self._objs["1"] = self:GetGameObject("_need_hide_ii")
+  self._objs["2"] = self:GetGameObject("_need_hide_iii")
+  self._objs["3"] = self:GetGameObject("_need_hide_iiii")
   self._screenCut = self:GetUIComponent("RawImage", "ScreenCut")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._OnAfterUILayerChanged = function(self)
-  -- function num : 0_7
+function UIN13MainControllerReview:_OnAfterUILayerChanged()
   self:_RefreshComponentState()
   self:_RefreshMoney()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._RefreshMoney = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN13MainControllerReview:_RefreshMoney()
   local type = EnumN13Review.B
-  local count = (UIActivityN13Helper.GetCoinItemCount)(type)
-  ;
-  (self._sakuragari_token_i):SetText((string.format)("%07d", count))
-  ;
-  (self._sakuragari_token_ii):SetText(count)
+  local count = UIActivityN13Helper.GetCoinItemCount(type)
+  self._sakuragari_token_i:SetText(string.format("%07d", count))
+  self._sakuragari_token_ii:SetText(count)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._RefreshComponentState = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  for key,value in pairs(ECampaignReviewN13ComponentID) do
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._componentState)[value] = self:_GetComponentState(value)
-  end
-  if (self._btnImg)[value] and (self._componentState)[value] then
+function UIN13MainControllerReview:_RefreshComponentState()
+  for key, value in pairs(ECampaignReviewN13ComponentID) do
+    self._componentState[value] = self:_GetComponentState(value)
+    if not self._btnImg[value] or self._componentState[value] then
+    else
+    end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._RefRemainTime = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN13MainControllerReview:_RefRemainTime()
   local str = "str_n13_active_remaining_time"
   local remainTime = 0
   local sakuragariTime = 0
-  local curtime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  local endtime = ((self._campaign):GetSample()).end_time
+  local curtime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  local endtime = self._campaign:GetSample().end_time
   remainTime = endtime - curtime
-  sakuragariTime = (self._build_info).m_close_time - curtime
+  sakuragariTime = self._build_info.m_close_time - curtime
   return remainTime
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._OnShow = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN13MainControllerReview:_OnShow()
   if self._rt then
-    (self._screenCut).texture = self._rt
-    ;
-    (self._animation):Play("uieff_n13_main_in")
+    self._screenCut.texture = self._rt
+    self._animation:Play("uieff_n13_main_in")
     self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self, _ENV
-    local lockName = "UIN13MainControllerReview:_OnShow"
-    self:Lock(lockName)
-    YIELD(TT, 600)
-    ;
-    ((self._screenCut).gameObject):SetActive(false)
-    YIELD(TT, 600)
-    ;
-    ((self._objs)["0"]):SetActive(true)
-    self:UnLock(lockName)
-  end
-)
+      local lockName = "UIN13MainControllerReview:_OnShow"
+      self:Lock(lockName)
+      YIELD(TT, 600)
+      self._screenCut.gameObject:SetActive(false)
+      YIELD(TT, 600)
+      self._objs["0"]:SetActive(true)
+      self:UnLock(lockName)
+    end)
   else
-    ;
-    ((self._screenCut).gameObject):SetActive(false)
-    ;
-    ((self._objs)["0"]):SetActive(true)
+    self._screenCut.gameObject:SetActive(false)
+    self._objs["0"]:SetActive(true)
   end
   local back_btn = self:GetUIComponent("UISelectObjectPath", "_backBtn")
   self._commonTopBtn = back_btn:SpawnObject("UICommonTopButton")
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_11_1 , upvalues : self, _ENV
+  self._commonTopBtn:SetData(function()
     self:SwitchState(UIStateType.UIActivityReview)
-  end
-, nil, nil, false, function()
-    -- function num : 0_11_2 , upvalues : self
+  end, nil, nil, false, function()
     self:_ShowBgSpine(true, "uieff_n13_main_hide")
-  end
-)
+  end)
   self:_SetTimer()
   self:_ClearNewFlag()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._GetComponentState = function(self, componentid)
-  -- function num : 0_12
-  return (self._campaign):CheckComponentOpen(componentid)
+function UIN13MainControllerReview:_GetComponentState(componentid)
+  return self._campaign:CheckComponentOpen(componentid)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._ShowBgSpine = function(self, showSpine, animationName)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN13MainControllerReview:_ShowBgSpine(showSpine, animationName)
   self._showSpine = showSpine
   if animationName then
-    (self._animation):Play(animationName)
+    self._animation:Play(animationName)
   else
-    for _,need_hide in pairs(self._objs) do
+    for _, need_hide in pairs(self._objs) do
       need_hide:SetActive(not showSpine)
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._SetTimer = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  self._timeEvent = (UIActivityHelper.StartTimerEvent)(self._timeEvent, function()
-    -- function num : 0_14_0 , upvalues : self
+function UIN13MainControllerReview:_SetTimer()
+  self._timeEvent = UIActivityHelper.StartTimerEvent(self._timeEvent, function()
     return self:_SetRemainingTimer()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._SetRemainingTimer = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN13MainControllerReview:_SetRemainingTimer()
   if not self._isOpen then
-    return 
+    return
   end
   local remaintime = self:_RefRemainTime()
   self:_RefAllState(remaintime)
   if remaintime <= 0 then
-    self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+    self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
     return true
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._RefAllState = function(self, remain_time)
-  -- function num : 0_16
+function UIN13MainControllerReview:_RefAllState(remain_time)
   self:_RefSakuragariState(remain_time)
   self:_RefLineState(remain_time)
   self:_RefRedState(remain_time)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._RefSakuragariState = function(self, remain_time)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN13MainControllerReview:_RefSakuragariState(remain_time)
   local remainTime = 0
   local startTime = 0
-  local curtime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  startTime = (self._build_info).m_unlock_time - curtime
-  remainTime = (self._build_info).m_close_time - curtime
+  local curtime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  startTime = self._build_info.m_unlock_time - curtime
+  remainTime = self._build_info.m_close_time - curtime
   if remainTime < 0 then
-    (self._sakuragari_state_i):SetActive(true)
-    ;
-    (self._sakuragari_state_ii):SetActive(false)
-    return 
+    self._sakuragari_state_i:SetActive(true)
+    self._sakuragari_state_ii:SetActive(false)
+    return
   end
-  local start = (self._build_info).m_b_unlock
-  ;
-  (self._sakuragari_state_i):SetActive(not start)
-  ;
-  (self._sakuragari_state_ii):SetActive(not start)
+  local start = self._build_info.m_b_unlock
+  self._sakuragari_state_i:SetActive(not start)
+  self._sakuragari_state_ii:SetActive(not start)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._RefLineState = function(self, remain_time)
-  -- function num : 0_18 , upvalues : _ENV
+function UIN13MainControllerReview:_RefLineState(remain_time)
   local remainTime = 0
-  local curtime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  remainTime = (self._line_mission_info).m_close_time - curtime
-  local lock = remainTime > 0
+  local curtime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  remainTime = self._line_mission_info.m_close_time - curtime
+  local lock = 0 < remainTime
   if remainTime < 0 and not lock then
-    (self._line_state_i):SetActive(true)
-    ;
-    (self._line_state_ii):SetActive(false)
-    return 
+    self._line_state_i:SetActive(true)
+    self._line_state_ii:SetActive(false)
+    return
   end
-  local start = (self._line_mission_info).m_b_unlock
-  ;
-  (self._line_state_i):SetActive(not start)
-  ;
-  (self._line_state_ii):SetActive(not start)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local start = self._line_mission_info.m_b_unlock
+  self._line_state_i:SetActive(not start)
+  self._line_state_ii:SetActive(not start)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._RefRedState = function(self, remain_time)
-  -- function num : 0_19 , upvalues : _ENV
-  local red_level = (self._campaign):CheckComponentRed(ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_LINE_MISSION)
-  ;
-  ((self._reds)[ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_LINE_MISSION]):SetActive(red_level)
-  local unlock, all = (self._buildManager):CalcBuildUnlockProgress()
-  local value = (LocalDB.GetInt)(self.playerID .. "UIN13BuildPlotControllerReviewExtOnClickTrue")
-  local red_sakuragari = (self._campaign):CheckComponentRed(ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_BUILD)
+function UIN13MainControllerReview:_RefRedState(remain_time)
+  local red_level = self._campaign:CheckComponentRed(ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_LINE_MISSION)
+  self._reds[ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_LINE_MISSION]:SetActive(red_level)
+  local unlock, all = self._buildManager:CalcBuildUnlockProgress()
+  local value = LocalDB.GetInt(self.playerID .. "UIN13BuildPlotControllerReviewExtOnClickTrue")
+  local red_sakuragari = self._campaign:CheckComponentRed(ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_BUILD)
   if red_sakuragari or unlock == all and value ~= 1 then
-    (self._redsBuild):SetActive(true)
+    self._redsBuild:SetActive(true)
   else
-    ;
-    (self._redsBuild):SetActive(false)
+    self._redsBuild:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview._ClearNewFlag = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  if not ((self._campaign):GetSample()):GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW) then
-    return 
+function UIN13MainControllerReview:_ClearNewFlag()
+  if not self._campaign:GetSample():GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW) then
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_20_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
-    ;
-    ((GameGlobal.GetModule)(CampaignModule)):CampaignClearNewFlag(TT, res, (self._campaign)._id)
+    GameGlobal.GetModule(CampaignModule):CampaignClearNewFlag(TT, res, self._campaign._id)
     if res:GetSucc() then
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview.BgBtnOnClick = function(self)
-  -- function num : 0_21
+function UIN13MainControllerReview:BgBtnOnClick()
   if self._showSpine then
     self:_ShowBgSpine(false, "uieff_n13_main_show")
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview.NormalLevelBtnOnClick = function(self, go)
-  -- function num : 0_22 , upvalues : _ENV
-  if not (self._componentState)[ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_LINE_MISSION] then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n13_activity_over"))
-    return 
+function UIN13MainControllerReview:NormalLevelBtnOnClick(go)
+  if not self._componentState[ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_LINE_MISSION] then
+    ToastManager.ShowToast(StringTable.Get("str_n13_activity_over"))
+    return
   end
-  ;
-  (self._campaignModule):CampaignSwitchState(true, UIStateType.UIN13LineMissionControllerReview, UIStateType.UIMain, nil, (self._campaign)._id)
+  self._campaignModule:CampaignSwitchState(true, UIStateType.UIN13LineMissionControllerReview, UIStateType.UIMain, nil, self._campaign._id)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13MainControllerReview.SakuragariBtnOnClick = function(self, go)
-  -- function num : 0_23 , upvalues : _ENV
-  if not (self._build_info).m_b_unlock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n13_activity_lock"))
-    return 
+function UIN13MainControllerReview:SakuragariBtnOnClick(go)
+  if not self._build_info.m_b_unlock then
+    ToastManager.ShowToast(StringTable.Get("str_n13_activity_lock"))
+    return
   end
-  if not (self._componentState)[ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_BUILD] then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n13_activity_over"))
-    return 
+  if not self._componentState[ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_BUILD] then
+    ToastManager.ShowToast(StringTable.Get("str_n13_activity_over"))
+    return
   end
-  ;
-  (UIActivityHelper.PlayFirstPlot_Component)(self._campaign, ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_BUILD, function()
-    -- function num : 0_23_0 , upvalues : self, _ENV
+  UIActivityHelper.PlayFirstPlot_Component(self._campaign, ECampaignReviewN13ComponentID.ECAMPAIGN_REVIEW_ReviewN13_BUILD, function()
     self:SwitchState(UIStateType.UIN13BuildControllerReview)
-  end
-, false)
+  end, false)
 end
-
-

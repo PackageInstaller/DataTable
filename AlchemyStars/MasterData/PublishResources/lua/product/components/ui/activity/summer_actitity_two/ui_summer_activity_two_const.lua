@@ -1,8 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/ui_summer_activity_two_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-UISummerActivityTwoConst = {EntryIcon = "toptoon_3000205", BattleResultEntryBg = "summer_jiesuan_boss", PlotReviewBg = "StoryBGshatanri"}
+UISummerActivityTwoConst = {
+  EntryIcon = "toptoon_3000205",
+  BattleResultEntryBg = "summer_jiesuan_boss",
+  PlotReviewBg = "StoryBGshatanri"
+}
 _enum("UISummerActivityTwoConst", UISummerActivityTwoConst)
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n6.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaingN6", ICampaignComponentLocalProcessBase)
 CCampaingN6 = CCampaingN6
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaingN6.Constructor = function(self)
-  -- function num : 0_0
+function CCampaingN6:Constructor()
   self._buildComponent = nil
   self._buildComponentInfo = nil
   self._questComponent = nil
@@ -24,24 +17,15 @@ CCampaingN6.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN6.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaingN6:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_HALLOWEEN
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN6.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaingN6:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN6.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaingN6:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetBuildComponent()
   self:_GetQuestComponent()
@@ -51,76 +35,55 @@ CCampaingN6.InitComponent = function(self, campaignObj)
   self:_GetStoryComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN6._GetBuildComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._buildComponent = (self._campaignObj):GetComponent(ECampaignN6ComponentID.ECAMPAIGN_N6_BUILD)
+function CCampaingN6:_GetBuildComponent()
+  self._buildComponent = self._campaignObj:GetComponent(ECampaignN6ComponentID.ECAMPAIGN_N6_BUILD)
   if not self._buildComponent then
-    return 
+    return
   end
-  self._buildComponentInfo = (self._buildComponent):ComponentInfo()
+  self._buildComponentInfo = self._buildComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN6._GetQuestComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._questComponent = (self._campaignObj):GetComponent(ECampaignN6ComponentID.ECAMPAIGN_N6_QUEST)
+function CCampaingN6:_GetQuestComponent()
+  self._questComponent = self._campaignObj:GetComponent(ECampaignN6ComponentID.ECAMPAIGN_N6_QUEST)
   if not self._questComponent then
-    return 
+    return
   end
-  self._questComponentInfo = (self._questComponent):ComponentInfo()
+  self._questComponentInfo = self._questComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN6._GetCumulativeLoginComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._cumulativeLoginComponent = (self._campaignObj):GetComponent(ECampaignN6ComponentID.ECAMPAIGN_N6_CUMULATIVE_LOGIN)
+function CCampaingN6:_GetCumulativeLoginComponent()
+  self._cumulativeLoginComponent = self._campaignObj:GetComponent(ECampaignN6ComponentID.ECAMPAIGN_N6_CUMULATIVE_LOGIN)
   if not self._cumulativeLoginComponent then
-    return 
+    return
   end
-  self._cumulativeLoginCompInfo = (self._cumulativeLoginComponent):ComponentInfo()
+  self._cumulativeLoginCompInfo = self._cumulativeLoginComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN6._GetLineMissionComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._lineMissionComponet = (self._campaignObj):GetComponent(ECampaignN6ComponentID.ECAMPAIGN_N6_LINE_MISSION)
+function CCampaingN6:_GetLineMissionComponent()
+  self._lineMissionComponet = self._campaignObj:GetComponent(ECampaignN6ComponentID.ECAMPAIGN_N6_LINE_MISSION)
   if not self._lineMissionComponet then
-    return 
+    return
   end
-  self._lineMissionCompInfo = (self._lineMissionComponet):ComponentInfo()
+  self._lineMissionCompInfo = self._lineMissionComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN6._GetFixTeamLineMissionComponent = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._lineMissionComponet1 = (self._campaignObj):GetComponent(ECampaignN6ComponentID.ECAMPAIGN_N6_LINE_MISSION_FIXTEAM)
+function CCampaingN6:_GetFixTeamLineMissionComponent()
+  self._lineMissionComponet1 = self._campaignObj:GetComponent(ECampaignN6ComponentID.ECAMPAIGN_N6_LINE_MISSION_FIXTEAM)
   if not self._lineMissionComponet1 then
-    return 
+    return
   end
-  self._lineMissionCompInfo1 = (self._lineMissionComponet1):ComponentInfo()
+  self._lineMissionCompInfo1 = self._lineMissionComponet1:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN6._GetStoryComponent = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self._storyComponent = (self._campaignObj):GetComponent(ECampaignN6ComponentID.ECAMPAIGN_N6_STORY)
+function CCampaingN6:_GetStoryComponent()
+  self._storyComponent = self._campaignObj:GetComponent(ECampaignN6ComponentID.ECAMPAIGN_N6_STORY)
   if not self._storyComponent then
-    return 
+    return
   end
-  self._storyComponentInfo = (self._storyComponent):ComponentInfo()
+  self._storyComponentInfo = self._storyComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN6.GetComponent = function(self, componentID)
-  -- function num : 0_10 , upvalues : _ENV
+function CCampaingN6:GetComponent(componentID)
   if ECampaignN6ComponentID.ECAMPAIGN_N6_BUILD == componentID then
     return self._buildComponent
   end
@@ -142,10 +105,7 @@ CCampaingN6.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN6.GetComponentInfo = function(self, componentID)
-  -- function num : 0_11 , upvalues : _ENV
+function CCampaingN6:GetComponentInfo(componentID)
   if ECampaignN6ComponentID.ECAMPAIGN_N6_BUILD == componentID then
     return self._buildComponentInfo
   end
@@ -166,5 +126,3 @@ CCampaingN6.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

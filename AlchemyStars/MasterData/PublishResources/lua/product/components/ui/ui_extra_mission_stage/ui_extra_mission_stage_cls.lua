@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_extra_mission_stage/ui_extra_mission_stage_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIExtraMissionStage", Object)
 UIExtraMissionStage = UIExtraMissionStage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIExtraMissionStage.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIExtraMissionStage:Constructor()
   self.id = 0
   self.name = ""
   self.desc = ""
@@ -23,159 +16,132 @@ UIExtraMissionStage.Constructor = function(self)
   self.awards = {}
   self.enemies = {}
   self.story = {}
-  self._extraMissionModule = (GameGlobal.GetModule)(ExtMissionModule)
+  self._extraMissionModule = GameGlobal.GetModule(ExtMissionModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStage.Init = function(self, id, idxStr, nameStr, storyList)
-  -- function num : 0_1 , upvalues : _ENV
+function UIExtraMissionStage:Init(id, idxStr, nameStr, storyList)
   self.id = id
-  self._cfg = (Cfg.cfg_extra_mission)[id]
+  self._cfg = Cfg.cfg_extra_mission[id]
   if self._cfg then
-    self.name = (StringTable.Get)((self._cfg).Name)
-    self.icon = (self._cfg).Icon
-    self.desc = (self._cfg).Desc
-    self.need_power = (self._cfg).NeedPower
-    if (self._cfg).Action == 1 then
+    self.name = StringTable.Get(self._cfg.Name)
+    self.icon = self._cfg.Icon
+    self.desc = self._cfg.Desc
+    self.need_power = self._cfg.NeedPower
+    if self._cfg.Action == 1 then
       self.action = StageActionType.Fight
     else
       self.action = StageActionType.Conversation
     end
-    local idStr = (self._cfg).ThreeStarAwardItemList
-    local starCount = (table.count)((string.split)(idStr, "|"))
-    self.awards = {idStr = (self._cfg).ThreeStarAwardItemList .. "|" .. (self._cfg).AwardItemList, countStr = (self._cfg).ThreeStarAwardItemCountList .. "|" .. (self._cfg).AwardItemCountList, starCount = starCount}
-    self.enemies = self:GetMonstersByMonsterListStr((self._cfg).MonsterList)
-    local ids = {(self._cfg).ThreeStarCondition1, (self._cfg).ThreeStarCondition2, (self._cfg).ThreeStarCondition3}
-    for i,v in ipairs(ids) do
+    local idStr = self._cfg.ThreeStarAwardItemList
+    local starCount = table.count(string.split(idStr, "|"))
+    self.awards = {
+      idStr = self._cfg.ThreeStarAwardItemList .. "|" .. self._cfg.AwardItemList,
+      countStr = self._cfg.ThreeStarAwardItemCountList .. "|" .. self._cfg.AwardItemCountList,
+      starCount = starCount
+    }
+    self.enemies = self:GetMonstersByMonsterListStr(self._cfg.MonsterList)
+    local ids = {
+      self._cfg.ThreeStarCondition1,
+      self._cfg.ThreeStarCondition2,
+      self._cfg.ThreeStarCondition3
+    }
+    for i, v in ipairs(ids) do
       local cond = ExtraMissionStageCondition:New()
       cond:Init(i, v)
-      ;
-      (table.insert)(self.three_star_condition, cond)
+      table.insert(self.three_star_condition, cond)
     end
   end
-  do
-    for i = 1, (table.count)(storyList) do
-      local story = ExtStory:New()
-      story:Init((storyList[i]).id, (storyList[i]).type)
-      ;
-      (table.insert)(self.story, story)
-    end
-    self.chapterIdxName = (StringTable.Get)(idxStr)
-    self.chapterIdxNameEn = (StringTable.Get)(idxStr .. "_en")
-    self.chapterName = (StringTable.Get)(nameStr)
+  for i = 1, table.count(storyList) do
+    local story = ExtStory:New()
+    story:Init(storyList[i].id, storyList[i].type)
+    table.insert(self.story, story)
   end
+  self.chapterIdxName = StringTable.Get(idxStr)
+  self.chapterIdxNameEn = StringTable.Get(idxStr .. "_en")
+  self.chapterName = StringTable.Get(nameStr)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStage.UpdateState = function(self, state)
-  -- function num : 0_2
+function UIExtraMissionStage:UpdateState(state)
   self.state = state
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStage.UpdateCondition = function(self, conditions)
-  -- function num : 0_3 , upvalues : _ENV
-  for i,v in ipairs(conditions) do
-    ((self.three_star_condition)[v]):FlushSatisfy(true)
+function UIExtraMissionStage:UpdateCondition(conditions)
+  for i, v in ipairs(conditions) do
+    self.three_star_condition[v]:FlushSatisfy(true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStage.GetMonstersByMonsterListStr = function(self, monstersStr)
-  -- function num : 0_4 , upvalues : _ENV
+function UIExtraMissionStage:GetMonstersByMonsterListStr(monstersStr)
   local items = {}
   local ids = {}
-  if (string.find)(monstersStr, "|") then
-    ids = (string.split)(monstersStr, "|")
+  if string.find(monstersStr, "|") then
+    ids = string.split(monstersStr, "|")
   else
     ids[1] = monstersStr
   end
   for i = 1, #ids do
-    (table.insert)(items, tonumber(ids[i]))
+    table.insert(items, tonumber(ids[i]))
   end
   return items
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionStage.GetStageMainBranchStr = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local chapterInfo = ((Cfg.cfg_mission_chapter)({MissionID = self.id}))[1]
+function UIExtraMissionStage:GetStageMainBranchStr()
+  local chapterInfo = Cfg.cfg_mission_chapter({
+    MissionID = self.id
+  })[1]
   dump(chapterInfo)
   local cnStr = ""
   local enStr = ""
-  if "### GetStageMainBranchStr " .. chapterInfo.ChapterType .. " ; " .. chapterInfo.ChapterType ~= 1 then
-    (Log.fatal)(not chapterInfo)
+  if chapterInfo then
+    Log.fatal("### GetStageMainBranchStr " .. chapterInfo.ChapterType .. " ; " .. chapterInfo.ChapterType == 1)
     if chapterInfo.ChapterType == 1 then
-      cnStr = (StringTable.Get)("str_discovery_main_chapter")
-      enStr = (StringTable.Get)("str_discovery_main_chapter_en")
+      cnStr = StringTable.Get("str_discovery_main_chapter")
+      enStr = StringTable.Get("str_discovery_main_chapter_en")
     else
-      cnStr = (StringTable.Get)("str_discovery_branch_chapter")
-      enStr = (StringTable.Get)("str_discovery_branch_chapter_en")
+      cnStr = StringTable.Get("str_discovery_branch_chapter")
+      enStr = StringTable.Get("str_discovery_branch_chapter_en")
     end
-    do return cnStr, enStr end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
   end
+  return cnStr, enStr
 end
 
 _class("ExtraMissionStageCondition", Object)
 ExtraMissionStageCondition = ExtraMissionStageCondition
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-ExtraMissionStageCondition.Constructor = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function ExtraMissionStageCondition:Constructor()
   self.id = 0
   self.content = ""
   self.satisfy = false
-  self._extraMissionModule = (GameGlobal.GetModule)(ExtMissionModule)
+  self._extraMissionModule = GameGlobal.GetModule(ExtMissionModule)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtraMissionStageCondition.Init = function(self, idx, id, desc, isSatisfy)
-  -- function num : 0_7
+function ExtraMissionStageCondition:Init(idx, id, desc, isSatisfy)
   self.id = id
   self.content = idx .. "." .. desc
   self:FlushSatisfy(isSatisfy)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtraMissionStageCondition.FlushSatisfy = function(self, isSatisfy)
-  -- function num : 0_8
+function ExtraMissionStageCondition:FlushSatisfy(isSatisfy)
   self.satisfy = isSatisfy or false
 end
 
 _class("ExtStory", Object)
 ExtStory = ExtStory
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-ExtStory.Constructor = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function ExtStory:Constructor()
   self.id = 0
   self.stageId = 0
   self.activeType = nil
   self._cfg = Cfg.cfg_extra_mission_story
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ExtStory.Init = function(self, storyID, storyType)
-  -- function num : 0_10 , upvalues : _ENV
+function ExtStory:Init(storyID, storyType)
   self.id = storyID
   if storyType == 1 then
     self.activeType = StoryTriggerType.BeforeFight
+  elseif storyType == 2 then
+    self.activeType = StoryTriggerType.AfterFight
   else
-    if storyType == 2 then
-      self.activeType = StoryTriggerType.AfterFight
-    else
-      self.activeType = StoryTriggerType.Node
-    end
+    self.activeType = StoryTriggerType.Node
   end
 end
-
-

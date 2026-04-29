@@ -1,110 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/ui/view/ui_bounce_input.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBounceInput", UICustomWidget)
 UIBounceInput = UIBounceInput
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBounceInput.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIBounceInput:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceInput.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBounceInput:InitWidget()
   self._atlas = self:GetAsset("UIN28MinigameIn.spriteatlas", LoadType.SpriteAtlas)
-  self._Input = (GameGlobal.EngineInput)()
+  self._Input = GameGlobal.EngineInput()
   local btnGO = self:GetGameObject("JumpBtn")
-  self._jumpImg = btnGO:GetComponent(typeof((UnityEngine.UI).Image))
-  local etl = (UICustomUIEventListener.Get)(btnGO)
+  self._jumpImg = btnGO:GetComponent(typeof(UnityEngine.UI.Image))
+  local etl = UICustomUIEventListener.Get(btnGO)
   self:AddUICustomEventListener(etl, UIEvent.Release, function(go)
-    -- function num : 0_1_0 , upvalues : self
     if self._jumpCall then
-      (self._jumpCall)()
+      self._jumpCall()
     end
-  end
-)
+  end)
   btnGO = self:GetGameObject("AttackBtn")
-  self._attackImg = btnGO:GetComponent(typeof((UnityEngine.UI).Image))
-  local etl = (UICustomUIEventListener.Get)(btnGO)
+  self._attackImg = btnGO:GetComponent(typeof(UnityEngine.UI.Image))
+  local etl = UICustomUIEventListener.Get(btnGO)
   self:AddUICustomEventListener(etl, UIEvent.Release, function(go)
-    -- function num : 0_1_1 , upvalues : self
     if self._attackCall then
-      (self._attackCall)()
+      self._attackCall()
     end
-  end
-)
+  end)
   self.jumpAttackBtnGo = self:GetGameObject("JumpAttackBtn")
-  self._jumpAttackImg = (self.jumpAttackBtnGo):GetComponent(typeof((UnityEngine.UI).Image))
-  local etl = (UICustomUIEventListener.Get)(self.jumpAttackBtnGo)
+  self._jumpAttackImg = self.jumpAttackBtnGo:GetComponent(typeof(UnityEngine.UI.Image))
+  local etl = UICustomUIEventListener.Get(self.jumpAttackBtnGo)
   self:AddUICustomEventListener(etl, UIEvent.Release, function(go)
-    -- function num : 0_1_2 , upvalues : self
     if self._jumpCall then
-      (self._jumpCall)()
+      self._jumpCall()
     end
-  end
-)
+  end)
   if IsPc() or IsUnityEditor() then
-    self:ChangeJumpAttackBtnActive(false)
   end
+  self:ChangeJumpAttackBtnActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceInput.Init = function(self, attackCall, jumpCall)
-  -- function num : 0_2
+function UIBounceInput:Init(attackCall, jumpCall)
   self._attackCall = attackCall
   self._jumpCall = jumpCall
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceInput.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_3
+function UIBounceInput:OnUpdate(deltaTimeMS)
   self:OnPCInputUpdate()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceInput.JumpAttackBtnOnClick = function(self)
-  -- function num : 0_4
+function UIBounceInput:JumpAttackBtnOnClick()
   if self._jumpCall then
-    (self._jumpCall)()
+    self._jumpCall()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceInput.AttackBtnOnClick = function(self)
-  -- function num : 0_5
+function UIBounceInput:AttackBtnOnClick()
   if self._attackCall then
-    (self._attackCall)()
+    self._attackCall()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceInput.OnPCInputUpdate = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIBounceInput:OnPCInputUpdate()
   if IsPc() or IsUnityEditor() then
-    if ((self._Input).GetKeyDown)((UnityEngine.KeyCode).R) and self._attackCall then
-      (self._attackCall)(true)
+    if self._Input.GetKeyDown(UnityEngine.KeyCode.R) and self._attackCall then
+      self._attackCall(true)
     end
-    if ((self._Input).GetKeyDown)((UnityEngine.KeyCode).T) and self._jumpCall then
-      (self._jumpCall)(true)
+    if self._Input.GetKeyDown(UnityEngine.KeyCode.T) and self._jumpCall then
+      self._jumpCall(true)
+    else
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBounceInput.ChangeJumpAttackBtnActive = function(self, isShow)
-  -- function num : 0_7
-  (self.jumpAttackBtnGo):SetActive(isShow)
+function UIBounceInput:ChangeJumpAttackBtnActive(isShow)
+  self.jumpAttackBtnGo:SetActive(isShow)
 end
-
-

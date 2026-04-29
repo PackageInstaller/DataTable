@@ -1,23 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/season_maze/cfg_season_maze_eventpoint_history.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, EventPointType = 2, SeasonID = 3, Status = 4}
+local key = {
+  ID = 1,
+  EventPointType = 2,
+  SeasonID = 3,
+  Status = 4
+}
 local config = {
-[8002406] = {8002406, 8, 9002, 2}
-, 
-[8002407] = {8002407, 8, 9002, 2}
-, 
-[8002408] = {8002408, 8, 9002, 3}
-, 
-[8002601] = {8002601, 8, 9002, 2}
-, 
-[8002602] = {8002602, 8, 9002, 2}
-, 
-[8002603] = {8002603, 8, 9002, 2}
-, 
-[8002604] = {8002604, 8, 9002, 2}
+  [8002406] = {
+    8002406,
+    8,
+    9002,
+    2
+  },
+  [8002407] = {
+    8002407,
+    8,
+    9002,
+    2
+  },
+  [8002408] = {
+    8002408,
+    8,
+    9002,
+    3
+  },
+  [8002601] = {
+    8002601,
+    8,
+    9002,
+    2
+  },
+  [8002602] = {
+    8002602,
+    8,
+    9002,
+    2
+  },
+  [8002603] = {
+    8002603,
+    8,
+    9002,
+    2
+  },
+  [8002604] = {
+    8002604,
+    8,
+    9002,
+    2
+  }
 }
 return config, "ID", key
-

@@ -1,71 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/prepare/prepare_stage_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PrepareStageItem", UICustomWidget)
 PrepareStageItem = PrepareStageItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PrepareStageItem.Constructor = function(self)
-  -- function num : 0_0
+function PrepareStageItem:Constructor()
   self.prePareType = nil
   self.clickCallback = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PrepareStageItem.GetPrepareType = function(self)
-  -- function num : 0_1
+function PrepareStageItem:GetPrepareType()
   return self.prePareType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PrepareStageItem.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function PrepareStageItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PrepareStageItem.InitWidget = function(self)
-  -- function num : 0_3
+function PrepareStageItem:InitWidget()
   self.name = self:GetUIComponent("UILocalizationText", "name")
   self.unSelectName = self:GetUIComponent("UILocalizationText", "unSelectName")
   self.select = self:GetGameObject("select")
   self.unSelect = self:GetGameObject("unSelect")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PrepareStageItem.SetData = function(self, name, prepareType, clickCallback)
-  -- function num : 0_4 , upvalues : _ENV
+function PrepareStageItem:SetData(name, prepareType, clickCallback)
   self.prePareType = prepareType
   self.clickCallback = clickCallback
-  local txt = (StringTable.Get)(name)
-  ;
-  (self.name):SetText(txt)
-  ;
-  (self.unSelectName):SetText(txt)
+  local txt = StringTable.Get(name)
+  self.name:SetText(txt)
+  self.unSelectName:SetText(txt)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PrepareStageItem.SetSelect = function(self, bSelect)
-  -- function num : 0_5
-  (self.select):SetActive(bSelect)
-  ;
-  (self.unSelect):SetActive(not bSelect)
+function PrepareStageItem:SetSelect(bSelect)
+  self.select:SetActive(bSelect)
+  self.unSelect:SetActive(not bSelect)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PrepareStageItem.ItemBtnOnClick = function(self, go)
-  -- function num : 0_6
+function PrepareStageItem:ItemBtnOnClick(go)
   if self.clickCallback then
-    (self.clickCallback)(self)
+    self.clickCallback(self)
   end
 end
-
-

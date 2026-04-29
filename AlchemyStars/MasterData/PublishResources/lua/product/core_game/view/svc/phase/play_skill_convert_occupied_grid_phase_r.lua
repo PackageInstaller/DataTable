@@ -1,36 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_convert_occupied_grid_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillConvertOccupiedGrid", PlaySkillPhaseBase)
 PlaySkillConvertOccupiedGrid = PlaySkillConvertOccupiedGrid
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillConvertOccupiedGrid.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillConvertOccupiedGrid:PlayFlight(TT, casterEntity, phaseParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ConvertOccupiedGridElement)
   if not resultArray then
-    return 
+    return
   end
   local gridEffectID = phaseParam:GetGridEffectID()
   local bestEffectTime = phaseParam:GetBestEffectTime()
   local taskIds = {}
-  for _,result in ipairs(resultArray) do
+  for _, result in ipairs(resultArray) do
     local gridPosArray = result:GetTargetGridArray()
     local targetGridType = result:GetTargetElementType()
-    for _,gridPos in ipairs(gridPosArray) do
-      local id = ((GameGlobal.TaskManager)()):CoreGameStartTask((self:SkillService())._SingleGridEffect, self:SkillService(), gridEffectID, gridPos, bestEffectTime, targetGridType)
+    for _, gridPos in ipairs(gridPosArray) do
+      local id = GameGlobal.TaskManager():CoreGameStartTask(self:SkillService()._SingleGridEffect, self:SkillService(), gridEffectID, gridPos, bestEffectTime, targetGridType)
       taskIds[#taskIds + 1] = id
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIds) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIds) do
+    YIELD(TT)
   end
 end
-
-

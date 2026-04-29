@@ -1,8 +1,2 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/monster_creation_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MonsterCreationServiceRender", BaseService)
 MonsterCreationServiceRender = MonsterCreationServiceRender
-

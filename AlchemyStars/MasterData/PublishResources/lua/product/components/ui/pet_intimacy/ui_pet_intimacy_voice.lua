@@ -1,104 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet_intimacy/ui_pet_intimacy_voice.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetIntimacyVoice", Object)
 UIPetIntimacyVoice = UIPetIntimacyVoice
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetIntimacyVoice.Constructor = function(self, intimacyMainController, petData)
-  -- function num : 0_0
+function UIPetIntimacyVoice:Constructor(intimacyMainController, petData)
   self._intimacyMainController = intimacyMainController
   self._petData = petData
   self._isInited = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoice.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetIntimacyVoice:Init()
   self.voiceType = {}
   self.voiceFilter = {}
   self.voiceHideFilter = {}
-  local cfg_filter_voice = (Cfg.pet_voice_file)({})
+  local cfg_filter_voice = Cfg.pet_voice_file({})
   for i = 1, #cfg_filter_voice do
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self.voiceType)[#self.voiceType + 1] = (cfg_filter_voice[i]).VoiceType
+    self.voiceType[#self.voiceType + 1] = cfg_filter_voice[i].VoiceType
   end
   for i = 1, #cfg_filter_voice do
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self.voiceFilter)[#self.voiceFilter + 1] = (cfg_filter_voice[i]).VoiceFilter
+    self.voiceFilter[#self.voiceFilter + 1] = cfg_filter_voice[i].VoiceFilter
   end
   for i = 1, #cfg_filter_voice do
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self.voiceHideFilter)[#self.voiceHideFilter + 1] = (cfg_filter_voice[i]).HideFilter
+    self.voiceHideFilter[#self.voiceHideFilter + 1] = cfg_filter_voice[i].HideFilter
   end
-  self._scrollView = (self._intimacyMainController):GetUIComponent("UIDynamicScrollView", "VoiceListScrollView")
+  self._scrollView = self._intimacyMainController:GetUIComponent("UIDynamicScrollView", "VoiceListScrollView")
   self:_InitVoiceData()
   self:_InitScrollView()
-  local pm = (GameGlobal.GetModule)(PetAudioModule)
+  local pm = GameGlobal.GetModule(PetAudioModule)
   pm:StopAll()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoice.PetDataChanged = function(self, petData)
-  -- function num : 0_2
+function UIPetIntimacyVoice:PetDataChanged(petData)
   self._petData = petData
   if self._isInited then
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoice.Refresh = function(self)
-  -- function num : 0_3
+function UIPetIntimacyVoice:Refresh()
   if self._isInited then
     self._currentPlayVoiceData = nil
     self._currentPlayVoiceItem = nil
     self._currentPlayingID = nil
     self:_InitVoiceData()
-    ;
-    (self._scrollView):ResetListView()
-    ;
-    (self._scrollView):RefreshAllShownItem()
+    self._scrollView:ResetListView()
+    self._scrollView:RefreshAllShownItem()
   else
     self:Init()
     self._isInited = true
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoice.CloseWindow = function(self)
-  -- function num : 0_4
+function UIPetIntimacyVoice:CloseWindow()
   self:StopPlayVoice()
-  ;
-  (self._intimacyMainController):StopPlayVoice()
+  self._intimacyMainController:StopPlayVoice()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoice.Destroy = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIPetIntimacyVoice:Destroy()
   self:StopPlayVoice()
   if self._voiceCount then
     for i = 1, self._voiceCount do
-      (AudioHelperController.ReleaseUIVoice)(((self._voiceDatas)[i]).resName)
+      AudioHelperController.ReleaseUIVoice(self._voiceDatas[i].resName)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoice.Update = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIPetIntimacyVoice:Update()
   if self._currentPlayVoiceData and self._currentPlayingID then
-    local isPlaying = (AudioHelperController.CheckUIVoicePlaying)(self._currentPlayingID)
+    local isPlaying = AudioHelperController.CheckUIVoicePlaying(self._currentPlayingID)
     if not isPlaying then
       self:StopPlayVoice()
       self._currentPlayingID = nil
@@ -106,31 +72,30 @@ UIPetIntimacyVoice.Update = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoice._InitVoiceData = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIPetIntimacyVoice:_InitVoiceData()
   self._currentPlayVoiceData = nil
   self._currentPlayVoiceItem = nil
   self._currentPlayingID = nil
   self._voiceDatas = {}
   local index = 1
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  local petAudioModule = (GameGlobal.GetModule)(PetAudioModule)
-  local cfgs_skin = (Cfg.cfg_pet_voice)({PetID = (self._petData):GetTemplateID()})
+  local petModule = GameGlobal.GetModule(PetModule)
+  local petAudioModule = GameGlobal.GetModule(PetAudioModule)
+  local cfgs_skin = Cfg.cfg_pet_voice({
+    PetID = self._petData:GetTemplateID()
+  })
   if cfgs_skin and next(cfgs_skin) then
     for k = 1, #cfgs_skin do
       local cfg_skin = cfgs_skin[k]
-      local voiceNameConfig = (Cfg.pet_voice_name)[1]
+      local voiceNameConfig = Cfg.pet_voice_name[1]
       for j = 1, #self.voiceType do
-        local v = (self.voiceType)[j]
+        local v = self.voiceType[j]
         if type(cfg_skin[v]) == "table" then
           local voiceDataArr = cfg_skin[v]
           if voiceDataArr then
             local showData = {}
             for i = 1, #voiceDataArr do
-              local voiceCondition = (voiceDataArr[i])[2]
-              local hideList = (self.voiceHideFilter)[j]
+              local voiceCondition = voiceDataArr[i][2]
+              local hideList = self.voiceHideFilter[j]
               local hide = false
               for ii = 1, #hideList do
                 if voiceCondition == hideList[ii] then
@@ -138,151 +103,101 @@ UIPetIntimacyVoice._InitVoiceData = function(self)
                   break
                 end
               end
-              do
-                do
-                  if not hide then
-                    showData[#showData + 1] = voiceDataArr[i]
-                  end
-                  -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out DO_STMT
-
-                end
+              if not hide then
+                showData[#showData + 1] = voiceDataArr[i]
               end
             end
             voiceDataArr = showData
             for i = 1, #voiceDataArr do
               local voiceData = {}
               voiceData.index = index
-              voiceData.voiceId = (voiceDataArr[i])[1]
+              voiceData.voiceId = voiceDataArr[i][1]
               voiceData.isPlay = false
-              voiceData.condition = (voiceDataArr[i])[2]
+              voiceData.condition = voiceDataArr[i][2]
               local unLock = true
               if voiceData.condition and voiceData.condition ~= -1 then
                 unLock = petAudioModule:IsUnLock(voiceData.condition, self._petData)
               end
               if not unLock then
                 local ignore = false
-                local ignoreList = (self.voiceFilter)[j]
-                for _,ignoreItem in pairs(ignoreList) do
+                local ignoreList = self.voiceFilter[j]
+                for _, ignoreItem in pairs(ignoreList) do
                   local ignoreCondition = ignoreItem
                   if ignoreCondition == voiceData.condition then
                     ignore = true
                     break
                   end
                 end
-                do
-                  do
-                    if ignore then
-                      unLock = true
-                    end
-                    do
-                      if voiceData.condition then
-                        local conditionCfg = (Cfg.pet_intimacy_condition)[voiceData.condition]
-                        if conditionCfg and conditionCfg.ConditionType == 1 then
-                          voiceData.isIntimacy = true
-                        end
-                      end
-                      if #voiceDataArr > 1 then
-                        voiceData.name = (StringTable.Get)(voiceNameConfig[v]) .. i
-                      else
-                        voiceData.name = (StringTable.Get)(voiceNameConfig[v])
-                      end
-                      if (voiceDataArr[i])[3] then
-                        local skinid = cfg_skin.SkinID
-                        if (Cfg.cfg_pet_skin)[skinid] ~= nil then
-                          voiceData.isSkin = true
-                          local skinUnLock = true
-                          local haveSkin = petModule:HaveSkin(skinid)
-                          if not haveSkin then
-                            skinUnLock = false
-                          end
-                          voiceData.skinUnLock = skinUnLock
-                          voiceData.skinID = skinid
-                          do
-                            local cfg_skin = (Cfg.cfg_pet_skin)[skinid]
-                            if not cfg_skin then
-                              (Log.error)("###[UIPetIntimacyVoice] cfg_skin is nil ! id --> ", skinid)
-                            else
-                              voiceData.name = (StringTable.Get)("str_affinity_only_skin", (StringTable.Get)(cfg_skin.SkinName)) .. voiceData.name
-                            end
-                            voiceData.unLock = unLock
-                            voiceData.isIntimacy = false
-                            if voiceData.name == nil then
-                              (Log.fatal)("###-->v-->", v, "|id-->", voiceData.voiceId)
-                            end
-                            local audioConfig = (AudioHelperController.GetCfgAudio)(voiceData.voiceId)
-                            voiceData.content = (HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)(audioConfig.Content))
-                            if not USEADX2AUDIO or not voiceData.voiceId then
-                              do
-                                voiceData.resName = audioConfig.ResName
-                                -- DECOMPILER ERROR at PC231: Confused about usage of register: R25 in 'UnsetPending'
-
-                                ;
-                                (self._voiceDatas)[index] = voiceData
-                                index = index + 1
-                                -- DECOMPILER ERROR at PC233: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                                -- DECOMPILER ERROR at PC233: LeaveBlock: unexpected jumping out IF_STMT
-
-                                -- DECOMPILER ERROR at PC233: LeaveBlock: unexpected jumping out DO_STMT
-
-                                -- DECOMPILER ERROR at PC233: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                                -- DECOMPILER ERROR at PC233: LeaveBlock: unexpected jumping out IF_STMT
-
-                                -- DECOMPILER ERROR at PC233: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                                -- DECOMPILER ERROR at PC233: LeaveBlock: unexpected jumping out IF_STMT
-
-                                -- DECOMPILER ERROR at PC233: LeaveBlock: unexpected jumping out DO_STMT
-
-                                -- DECOMPILER ERROR at PC233: LeaveBlock: unexpected jumping out DO_STMT
-
-                                -- DECOMPILER ERROR at PC233: LeaveBlock: unexpected jumping out DO_STMT
-
-                                -- DECOMPILER ERROR at PC233: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                                -- DECOMPILER ERROR at PC233: LeaveBlock: unexpected jumping out IF_STMT
-
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
+                if ignore then
+                  unLock = true
                 end
               end
+              if voiceData.condition then
+                local conditionCfg = Cfg.pet_intimacy_condition[voiceData.condition]
+                if conditionCfg and conditionCfg.ConditionType == 1 then
+                  voiceData.isIntimacy = true
+                end
+              end
+              if 1 < #voiceDataArr then
+                voiceData.name = StringTable.Get(voiceNameConfig[v]) .. i
+              else
+                voiceData.name = StringTable.Get(voiceNameConfig[v])
+              end
+              if voiceDataArr[i][3] then
+                local skinid = cfg_skin.SkinID
+                if Cfg.cfg_pet_skin[skinid] == nil then
+                  break
+                end
+                voiceData.isSkin = true
+                local skinUnLock = true
+                local haveSkin = petModule:HaveSkin(skinid)
+                if not haveSkin then
+                  skinUnLock = false
+                end
+                voiceData.skinUnLock = skinUnLock
+                voiceData.skinID = skinid
+                local cfg_skin = Cfg.cfg_pet_skin[skinid]
+                if not cfg_skin then
+                  Log.error("###[UIPetIntimacyVoice] cfg_skin is nil ! id --> ", skinid)
+                else
+                  voiceData.name = StringTable.Get("str_affinity_only_skin", StringTable.Get(cfg_skin.SkinName)) .. voiceData.name
+                end
+              end
+              voiceData.unLock = unLock
+              voiceData.isIntimacy = false
+              if voiceData.name == nil then
+                Log.fatal("###-->v-->", v, "|id-->", voiceData.voiceId)
+              end
+              local audioConfig = AudioHelperController.GetCfgAudio(voiceData.voiceId)
+              voiceData.content = HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get(audioConfig.Content))
+              voiceData.resName = USEADX2AUDIO and voiceData.voiceId or audioConfig.ResName
+              self._voiceDatas[index] = voiceData
+              index = index + 1
             end
           end
         end
       end
     end
   end
-  do
-    self:FilterList()
-    self._voiceCount = #self._voiceDatas
-    for i = 1, self._voiceCount do
-      (AudioHelperController.RequestUIVoice)(((self._voiceDatas)[i]).resName)
-    end
+  self:FilterList()
+  self._voiceCount = #self._voiceDatas
+  for i = 1, self._voiceCount do
+    AudioHelperController.RequestUIVoice(self._voiceDatas[i].resName)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoice.FilterList = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIPetIntimacyVoice:FilterList()
   local tmpDatas = {}
   for i = 1, #self._voiceDatas do
-    (table.insert)(tmpDatas, (self._voiceDatas)[i])
+    table.insert(tmpDatas, self._voiceDatas[i])
   end
-  ;
-  (table.clear)(self._voiceDatas)
+  table.clear(self._voiceDatas)
   for i = 1, #tmpDatas do
     local tmp = tmpDatas[i]
     local same = 0
     local removeIdx = 0
     for j = 1, #self._voiceDatas do
-      local tmp2 = (self._voiceDatas)[j]
+      local tmp2 = self._voiceDatas[j]
       if tmp2.voiceId == tmp.voiceId then
         if tmp2.unLock then
           same = 1
@@ -297,117 +212,78 @@ UIPetIntimacyVoice.FilterList = function(self)
         break
       end
     end
-    do
-      do
-        if same ~= 1 or same == 2 then
-          (table.remove)(self._voiceDatas, removeIdx)
-          ;
-          (table.insert)(self._voiceDatas, tmp)
-        else
-          ;
-          (table.insert)(self._voiceDatas, tmp)
-        end
-        -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if same == 1 then
+    elseif same == 2 then
+      table.remove(self._voiceDatas, removeIdx)
+      table.insert(self._voiceDatas, tmp)
+    else
+      table.insert(self._voiceDatas, tmp)
     end
   end
   for i = 1, #self._voiceDatas do
-    -- DECOMPILER ERROR at PC78: Confused about usage of register: R6 in 'UnsetPending'
-
-    ((self._voiceDatas)[i]).index = i
+    self._voiceDatas[i].index = i
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoice._InitScrollView = function(self)
-  -- function num : 0_9
-  (self._scrollView):InitListView(self._voiceCount, function(scrollview, index)
-    -- function num : 0_9_0 , upvalues : self
+function UIPetIntimacyVoice:_InitScrollView()
+  self._scrollView:InitListView(self._voiceCount, function(scrollview, index)
     return self:_OnGetVoiceItem(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoice._OnGetVoiceItem = function(self, scrollView, index)
-  -- function num : 0_10 , upvalues : _ENV
+function UIPetIntimacyVoice:_OnGetVoiceItem(scrollView, index)
   local item = scrollView:NewListViewItem("RowItem")
-  local rowPool = (self._intimacyMainController):GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
+  local rowPool = self._intimacyMainController:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
     item.IsInitHandlerCalled = true
     rowPool:SpawnObjects("UIPetIntimacyVoiceItem", 1)
   end
   local rowList = rowPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      if self._voiceCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      else
-        self:_RefreshVoiceItemInfo(itemWidget, itemIndex)
-      end
+  if itemWidget then
+    local itemIndex = index + 1
+    if itemIndex > self._voiceCount then
+      itemWidget:GetGameObject():SetActive(false)
+    else
+      self:_RefreshVoiceItemInfo(itemWidget, itemIndex)
     end
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
-    return item
   end
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
+  return item
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoice._RefreshVoiceItemInfo = function(self, itemWidget, index)
-  -- function num : 0_11
-  itemWidget:Refresh(self._intimacyMainController, self, self._petData, (self._voiceDatas)[index])
+function UIPetIntimacyVoice:_RefreshVoiceItemInfo(itemWidget, index)
+  itemWidget:Refresh(self._intimacyMainController, self, self._petData, self._voiceDatas[index])
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoice.PlayVoice = function(self, voiceData, voiceItem)
-  -- function num : 0_12 , upvalues : _ENV
+function UIPetIntimacyVoice:PlayVoice(voiceData, voiceItem)
   if not voiceData or not voiceItem then
-    return 
+    return
   end
   self:StopPlayVoice()
   self._currentPlayVoiceData = voiceData
   self._currentPlayVoiceItem = voiceItem
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._currentPlayVoiceData).isPlay = true
-  ;
-  (self._currentPlayVoiceItem):RefreshVoiceStatus()
-  ;
-  (self._scrollView):RefreshAllShownItem()
-  ;
-  (self._intimacyMainController):PlayVoice(voiceData.content, not voiceData.isIntimacy)
-  self._currentPlayingID = (AudioHelperController.PlayUIVoice)(voiceData.resName, false)
+  self._currentPlayVoiceData.isPlay = true
+  self._currentPlayVoiceItem:RefreshVoiceStatus()
+  self._scrollView:RefreshAllShownItem()
+  self._intimacyMainController:PlayVoice(voiceData.content, not voiceData.isIntimacy)
+  self._currentPlayingID = AudioHelperController.PlayUIVoice(voiceData.resName, false)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoice.StopPlayVoice = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIPetIntimacyVoice:StopPlayVoice()
   if self._currentPlayVoiceData then
-    (self._currentPlayVoiceData).isPlay = false
+    self._currentPlayVoiceData.isPlay = false
   end
   self._currentPlayVoiceData = nil
   if self._currentPlayVoiceItem then
-    (self._currentPlayVoiceItem):RefreshVoiceStatus()
+    self._currentPlayVoiceItem:RefreshVoiceStatus()
   end
   self._currentPlayVoiceItem = nil
   if self._currentPlayingID then
-    (AudioHelperController.StopUIVoice)(self._currentPlayingID)
+    AudioHelperController.StopUIVoice(self._currentPlayingID)
   end
   self._currentPlayingID = nil
   if self._scrollView then
-    (self._scrollView):RefreshAllShownItem()
+    self._scrollView:RefreshAllShownItem()
   end
 end
-
-

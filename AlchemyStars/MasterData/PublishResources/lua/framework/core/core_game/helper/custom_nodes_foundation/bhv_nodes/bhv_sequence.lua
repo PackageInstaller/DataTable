@@ -1,93 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/custom_nodes_foundation/bhv_nodes/bhv_sequence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
--- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomNodeConfigStatic.Check_BhvSequence = function(nodeCfg)
-  -- function num : 0_0
+function CustomNodeConfigStatic.Check_BhvSequence(nodeCfg)
   if nodeCfg.Nodes then
     return true
   end
   return false
 end
 
-;
-(CustomNodeConfigStatic.AddChecker)("BhvSequence", CustomNodeConfigStatic.Check_BhvSequence)
+CustomNodeConfigStatic.AddChecker("BhvSequence", CustomNodeConfigStatic.Check_BhvSequence)
 _class("BhvSequence", CustomNode)
 BhvSequence = BhvSequence
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BhvSequence.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BhvSequence:Constructor()
   self.mBehaviorSeq = ArrayList:New()
   self.mCurBhvIndex = 1
   self.mIsFinished = false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvSequence.InitializeNode = function(self, cfg, context)
-  -- function num : 0_2 , upvalues : _ENV
-  ((BhvSequence.super).InitializeNode)(self, cfg, context)
+function BhvSequence:InitializeNode(cfg, context)
+  BhvSequence.super.InitializeNode(self, cfg, context)
   self.mCurBhvIndex = 1
-  ;
-  (self.mBehaviorSeq):Clear()
+  self.mBehaviorSeq:Clear()
   local nodeCfgList = cfg.Nodes
   local logic = context.Logic
   for i = 1, #nodeCfgList do
     local nodeCfg = nodeCfgList[i]
     local subbhv = logic:CreateNode(nodeCfg, context)
-    if subbhv then
-      do
-        (CLHelper.Assert)(subbhv.Update)
-        subbhv:Deactivate()
-        ;
-        (self.mBehaviorSeq):PushBack(subbhv)
-        -- DECOMPILER ERROR at PC34: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC34: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
-    end
+    CLHelper.Assert(subbhv and subbhv.Update)
+    subbhv:Deactivate()
+    self.mBehaviorSeq:PushBack(subbhv)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvSequence.Activate = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((BhvSequence.super).Activate)(self)
+function BhvSequence:Activate()
+  BhvSequence.super.Activate(self)
   self:ActivateCurBhv()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvSequence.Deactivate = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((BhvSequence.super).Deactivate)(self)
+function BhvSequence:Deactivate()
+  BhvSequence.super.Deactivate(self)
   self:DeactivateCurBhv()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvSequence.Destroy = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function BhvSequence:Destroy()
   local nodes = self.mBehaviorSeq
   for i = 1, nodes:Size() do
-    (nodes:GetAt(i)):Destroy()
+    nodes:GetAt(i):Destroy()
   end
-  ;
-  (self.mBehaviorSeq):Clear()
-  ;
-  ((BhvSequence.super).Destroy)(self)
+  self.mBehaviorSeq:Clear()
+  BhvSequence.super.Destroy(self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvSequence.Reset = function(self)
-  -- function num : 0_6
+function BhvSequence:Reset()
   self.mCurBhvIndex = 1
   self.mIsFinished = false
   local nodes = self.mBehaviorSeq
@@ -97,76 +59,53 @@ BhvSequence.Reset = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvSequence.Update = function(self, dt)
-  -- function num : 0_7
+function BhvSequence:Update(dt)
   local nodes = self.mBehaviorSeq
   local nodesSize = nodes:Size()
   if nodesSize == 0 then
-    return 
+    return
   end
   for i = 1, nodesSize do
     local curIndex = self.mCurBhvIndex
-    if nodesSize >= curIndex then
-      do
-        local curBhv = nodes:GetAt(curIndex)
-        curBhv:Update(dt)
-        if curBhv.CanStop and curBhv:CanStop() == false then
-          return 
-        end
-        self:DeactivateCurBhv()
-        self.mCurBhvIndex = curIndex + 1
-        self:ActivateCurBhv()
-        -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if nodesSize < curIndex then
+      break
     end
+    local curBhv = nodes:GetAt(curIndex)
+    curBhv:Update(dt)
+    if curBhv.CanStop and curBhv:CanStop() == false then
+      return
+    end
+    self:DeactivateCurBhv()
+    self.mCurBhvIndex = curIndex + 1
+    self:ActivateCurBhv()
   end
   self.mIsFinished = true
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvSequence.CanStop = function(self)
-  -- function num : 0_8
+function BhvSequence:CanStop()
   return self.mIsFinished
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvSequence.CollectInterfaceInChildren = function(self, interfaceList, funcName)
-  -- function num : 0_9 , upvalues : _ENV
+function BhvSequence:CollectInterfaceInChildren(interfaceList, funcName)
   local nodes = self.mBehaviorSeq
   for i = 1, nodes:Size() do
     local node = nodes:GetAt(i)
-    ;
-    (CustomNodeStatic.TraverseCollectInterface)(interfaceList, funcName, node)
+    CustomNodeStatic.TraverseCollectInterface(interfaceList, funcName, node)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvSequence.ActivateCurBhv = function(self)
-  -- function num : 0_10
+function BhvSequence:ActivateCurBhv()
   local curIndex = self.mCurBhvIndex
   local nodes = self.mBehaviorSeq
-  if curIndex >= 1 and curIndex <= nodes:Size() then
-    (nodes:GetAt(curIndex)):Activate()
+  if 1 <= curIndex and curIndex <= nodes:Size() then
+    nodes:GetAt(curIndex):Activate()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvSequence.DeactivateCurBhv = function(self)
-  -- function num : 0_11
+function BhvSequence:DeactivateCurBhv()
   local curIndex = self.mCurBhvIndex
   local nodes = self.mBehaviorSeq
-  if curIndex >= 1 and curIndex <= nodes:Size() then
-    (nodes:GetAt(curIndex)):Deactivate()
+  if 1 <= curIndex and curIndex <= nodes:Size() then
+    nodes:GetAt(curIndex):Deactivate()
   end
 end
-
-

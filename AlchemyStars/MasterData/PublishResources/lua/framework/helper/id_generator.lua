@@ -1,29 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/helper/id_generator.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("IDGenerator", Object)
 IDGenerator = IDGenerator
 local _IDGeneratorType = {DEFAULT_FIRST_ID = -1000000, GAME_EVENT_LISTENER_FIRST_ID = 1}
 _enum("IDGeneratorType", _IDGeneratorType)
 IDGeneratorType = IDGeneratorType
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-IDGenerator.Constructor = function(self, first_id)
-  -- function num : 0_0 , upvalues : _ENV
-  if not first_id then
-    self.next_id = IDGeneratorType.DEFAULT_FIRST_ID
-  end
+function IDGenerator:Constructor(first_id)
+  self.next_id = first_id or IDGeneratorType.DEFAULT_FIRST_ID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-IDGenerator.GenID = function(self)
-  -- function num : 0_1
+function IDGenerator:GenID()
   local id = self.next_id
   self.next_id = self.next_id + 1
   return id
 end
-
-

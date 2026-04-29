@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_eff_param/feature_effect_param_day_night.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureEffectParamDayNight", FeatureEffectParamBase)
 FeatureEffectParamDayNight = FeatureEffectParamDayNight
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamDayNight.Constructor = function(self, t)
-  -- function num : 0_0
+function FeatureEffectParamDayNight:Constructor(t)
   if not t then
-    return 
+    return
   end
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamDayNight._RefreshData = function(self, t)
-  -- function num : 0_1
+function FeatureEffectParamDayNight:_RefreshData(t)
   if not t then
-    return 
+    return
   end
   if t.EnterState then
     self._enterState = t.EnterState
@@ -33,72 +23,44 @@ FeatureEffectParamDayNight._RefreshData = function(self, t)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamDayNight.GetFeatureType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function FeatureEffectParamDayNight:GetFeatureType()
   return FeatureType.DayNight
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamDayNight.CopyFrom = function(self, param)
-  -- function num : 0_3 , upvalues : _ENV
+function FeatureEffectParamDayNight:CopyFrom(param)
   if param then
-    for k,v in pairs(param) do
+    for k, v in pairs(param) do
       self[k] = v
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamDayNight.CloneSelf = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function FeatureEffectParamDayNight:CloneSelf()
   local param = FeatureEffectParamDayNight:New()
   param:CopyFrom(self)
   return param
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamDayNight.ReplaceByCustomCfg = function(self, t)
-  -- function num : 0_5
+function FeatureEffectParamDayNight:ReplaceByCustomCfg(t)
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamDayNight.GetEnterState = function(self)
-  -- function num : 0_6
+function FeatureEffectParamDayNight:GetEnterState()
   return self._enterState
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamDayNight.GetDayRound = function(self)
-  -- function num : 0_7
+function FeatureEffectParamDayNight:GetDayRound()
   return self._dayRound
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamDayNight.GetNightRound = function(self)
-  -- function num : 0_8
+function FeatureEffectParamDayNight:GetNightRound()
   return self._nightRound
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamDayNight.GetLastRound = function(self, state)
-  -- function num : 0_9 , upvalues : _ENV
+function FeatureEffectParamDayNight:GetLastRound(state)
   if state == FeatureDayNightState.Day then
     return self:GetDayRound()
-  else
-    if state == FeatureDayNightState.Night then
-      return self:GetNightRound()
-    end
+  elseif state == FeatureDayNightState.Night then
+    return self:GetNightRound()
   end
 end
-
-

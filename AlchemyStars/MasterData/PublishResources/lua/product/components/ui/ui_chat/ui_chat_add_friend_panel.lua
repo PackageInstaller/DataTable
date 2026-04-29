@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/ui_chat_add_friend_panel.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChatAddFriendPanel", UICustomWidget)
 UIChatAddFriendPanel = UIChatAddFriendPanel
 local UIAddFriendPanelType = {SearchFriend = 1, Request = 2}
 _enum("UIAddFriendPanelType", UIAddFriendPanelType)
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UIChatAddFriendPanel.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChatAddFriendPanel:OnShow(uiParam)
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "RequestList")
   self._requestCanvasGroup = self:GetUIComponent("CanvasGroup", "RequestList")
   self._requestPanel = self:GetGameObject("RequestPanel")
@@ -35,7 +28,7 @@ UIChatAddFriendPanel.OnShow = function(self, uiParam)
   self:AttachEvent(GameEventType.UpdateInvitationList, self._UpdateInvitationList)
   self:AttachEvent(GameEventType.UpdateFriendInvitation, self._UpdateInvitationList)
   self:AddUIEvent(UIEvent.InputFieldChanged, self._searchIdInput)
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
+  local socialModule = GameGlobal.GetModule(SocialModule)
   if not socialModule.hasSendRequestList then
     socialModule.hasSendRequestList = {}
   end
@@ -43,62 +36,50 @@ UIChatAddFriendPanel.OnShow = function(self, uiParam)
   self._nameTex = self:GetUIComponent("UILocalizationText", "UserName")
   self._idTex = self:GetUIComponent("UILocalizationText", "id")
   self._roleModule = self:GetModule(RoleModule)
-  self._playerInfo = (self._roleModule):UI_GetPlayerInfo()
-  self._userName = (self._playerInfo).m_stRoleName
-  self._roleId = (self._playerInfo).m_player_showid
-  ;
-  (self._nameTex):SetText(self._userName)
+  self._playerInfo = self._roleModule:UI_GetPlayerInfo()
+  self._userName = self._playerInfo.m_stRoleName
+  self._roleId = self._playerInfo.m_player_showid
+  self._nameTex:SetText(self._userName)
   local id = self._roleId
-  ;
-  (self._idTex):SetText((StringTable.Get)("str_player_info_id") .. id)
+  self._idTex:SetText(StringTable.Get("str_player_info_id") .. id)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel.MessageInputOnValueChanged = function(self)
-  -- function num : 0_1 , upvalues : _ENV, UIAddFriendPanelType
+function UIChatAddFriendPanel:MessageInputOnValueChanged()
   self:_RefreshClearBtnStatus()
-  if (string.isnullorempty)((self._searchIdInput).text) and (self._suggestedFriendPanel).activeInHierarchy == false then
+  if string.isnullorempty(self._searchIdInput.text) and self._suggestedFriendPanel.activeInHierarchy == false then
     self:_SwitchPanel(UIAddFriendPanelType.SearchFriend, true)
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIChatAddFriendPanel:OnHide()
   self:DetachEvent(GameEventType.UpdateInvitationList, self._UpdateInvitationList)
   self:DetachEvent(GameEventType.UpdateFriendInvitation, self._UpdateInvitationList)
   if self._cdEventHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._cdEventHandler)
+    GameGlobal.Timer():CancelEvent(self._cdEventHandler)
   end
   self._cdEventHandler = nil
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel.Init = function(self, uiChatController)
-  -- function num : 0_3 , upvalues : _ENV, UIAddFriendPanelType
+function UIChatAddFriendPanel:Init(uiChatController)
   if self._isInited == false then
     self._uiChatController = uiChatController
-    self._chatFriendManager = (self._uiChatController):GetChatFriendManager()
-    self._panelType = (self._uiChatController):GetCurrentPanelType()
-    self._searchResultItem = (self._searchResultParent):SpawnObject("UIChatFriendRequestItem")
+    self._chatFriendManager = self._uiChatController:GetChatFriendManager()
+    self._panelType = self._uiChatController:GetCurrentPanelType()
+    self._searchResultItem = self._searchResultParent:SpawnObject("UIChatFriendRequestItem")
   end
   if self._isInited == false then
     self._requestDatas = {}
     self._requestCount = #self._requestDatas
     self:_InitScrollView()
     self._suggestFriendList = {}
-    self._suggestFriendCount = (table.count)(self._suggestFriendList)
+    self._suggestFriendCount = table.count(self._suggestFriendList)
     self:_InitSuggestScrollView()
     self._isInCD = false
     self._cdTimer = 5
     self._cdEventHandler = nil
-    ;
-    (self._timeGo):SetActive(false)
+    self._timeGo:SetActive(false)
   end
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
+  local socialModule = GameGlobal.GetModule(SocialModule)
   local hasRequest = socialModule:HaveNewInvitation()
   if hasRequest then
     self:_SwitchPanel(UIAddFriendPanelType.Request)
@@ -108,289 +89,191 @@ UIChatAddFriendPanel.Init = function(self, uiChatController)
   self._isInited = true
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._RefreshClearBtnStatus = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if (string.isnullorempty)((self._searchIdInput).text) then
-    (self._clearBtnGo):SetActive(false)
+function UIChatAddFriendPanel:_RefreshClearBtnStatus()
+  if string.isnullorempty(self._searchIdInput.text) then
+    self._clearBtnGo:SetActive(false)
   else
-    ;
-    (self._clearBtnGo):SetActive(true)
+    self._clearBtnGo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._SwitchPanel = function(self, panelType, notIgnore)
-  -- function num : 0_5 , upvalues : UIAddFriendPanelType
-  (self._requestPanel):SetActive(false)
+function UIChatAddFriendPanel:_SwitchPanel(panelType, notIgnore)
+  self._requestPanel:SetActive(false)
   if not notIgnore then
-    (self._searchPanel):SetActive(false)
+    self._searchPanel:SetActive(false)
   end
-  ;
-  (self._sarchBtnOn):SetActive(false)
-  ;
-  (self._sarchLineOn):SetActive(false)
-  ;
-  (self._requestBtnOn):SetActive(false)
-  ;
-  (self._requestLineOn):SetActive(false)
-  ;
-  (self._suggestedFriendPanel):SetActive(false)
+  self._sarchBtnOn:SetActive(false)
+  self._sarchLineOn:SetActive(false)
+  self._requestBtnOn:SetActive(false)
+  self._requestLineOn:SetActive(false)
+  self._suggestedFriendPanel:SetActive(false)
   self._currentPanelType = panelType
   if panelType == UIAddFriendPanelType.SearchFriend then
     if not notIgnore then
-      (self._searchPanel):SetActive(true)
+      self._searchPanel:SetActive(true)
     end
-    ;
-    (self._sarchBtnOn):SetActive(true)
-    ;
-    (self._sarchLineOn):SetActive(true)
+    self._sarchBtnOn:SetActive(true)
+    self._sarchLineOn:SetActive(true)
     self:_ShowSuggestedFriend(true, false)
     self:_RefreshClearBtnStatus()
-  else
-    if panelType == UIAddFriendPanelType.Request then
-      (self._requestPanel):SetActive(true)
-      ;
-      (self._requestBtnOn):SetActive(true)
-      ;
-      (self._requestLineOn):SetActive(true)
-      self:_RefreshRequestPanel()
-    end
+  elseif panelType == UIAddFriendPanelType.Request then
+    self._requestPanel:SetActive(true)
+    self._requestBtnOn:SetActive(true)
+    self._requestLineOn:SetActive(true)
+    self:_RefreshRequestPanel()
   end
   self:_RefreshHaveNewFriendRequestStatus()
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._ShowSuggestedFriend = function(self, isEnter, isRefresh)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._dontSearchFriendGo):SetActive(false)
-  local go = (self._searchResultItem):GetGameObject()
+function UIChatAddFriendPanel:_ShowSuggestedFriend(isEnter, isRefresh)
+  self._dontSearchFriendGo:SetActive(false)
+  local go = self._searchResultItem:GetGameObject()
   go:SetActive(false)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._searchIdInput).text = ""
+  self._searchIdInput.text = ""
   self:Lock("_ShowSuggestedFriend")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._ShowSuggestedFriendCoro, self, isEnter, isRefresh)
+  GameGlobal.TaskManager():StartTask(self._ShowSuggestedFriendCoro, self, isEnter, isRefresh)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._ShowSuggestedFriendCoro = function(self, TT, isEnter, isRefresh)
-  -- function num : 0_7 , upvalues : _ENV
+function UIChatAddFriendPanel:_ShowSuggestedFriendCoro(TT, isEnter, isRefresh)
   if isEnter then
     self:_ResetCD()
   end
-  self._suggestFriendList = (self._chatFriendManager):GetSuggestFriendList(TT, isRefresh)
-  ;
-  (self._suggestedFriendPanel):SetActive(true)
-  self._suggestFriendCount = (table.count)(self._suggestFriendList)
-  ;
-  (self._suggestedScrollView):SetListItemCount(self._suggestFriendCount, false)
-  ;
-  (self._suggestedScrollView):RefreshAllShownItem()
-  ;
-  (self._suggestedScrollView):MovePanelToItemIndex(0, 0)
+  self._suggestFriendList = self._chatFriendManager:GetSuggestFriendList(TT, isRefresh)
+  self._suggestedFriendPanel:SetActive(true)
+  self._suggestFriendCount = table.count(self._suggestFriendList)
+  self._suggestedScrollView:SetListItemCount(self._suggestFriendCount, false)
+  self._suggestedScrollView:RefreshAllShownItem()
+  self._suggestedScrollView:MovePanelToItemIndex(0, 0)
   self:UnLock("_ShowSuggestedFriend")
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel.IsSendRequest = function(self, friendId)
-  -- function num : 0_8
+function UIChatAddFriendPanel:IsSendRequest(friendId)
   if not friendId then
     return false
   end
-  if (self._hasSendRequestList)[friendId] ~= nil then
+  if self._hasSendRequestList[friendId] ~= nil then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel.SendRequest = function(self, friendId)
-  -- function num : 0_9
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._hasSendRequestList)[friendId] = true
+function UIChatAddFriendPanel:SendRequest(friendId)
+  self._hasSendRequestList[friendId] = true
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._UpdateInvitationList = function(self, isPlayAnim)
-  -- function num : 0_10 , upvalues : UIAddFriendPanelType
+function UIChatAddFriendPanel:_UpdateInvitationList(isPlayAnim)
   self:_RefreshHaveNewFriendRequestStatus()
   if not self:_IsPanelActive() then
-    return 
+    return
   end
   if self._currentPanelType == UIAddFriendPanelType.Request then
     self:_RefreshRequestPanel(isPlayAnim)
   end
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._RefreshHaveNewFriendRequestStatus = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
-  ;
-  (self._haveNewFriendRequestGo):SetActive(socialModule:HaveNewInvitation())
+function UIChatAddFriendPanel:_RefreshHaveNewFriendRequestStatus()
+  local socialModule = GameGlobal.GetModule(SocialModule)
+  self._haveNewFriendRequestGo:SetActive(socialModule:HaveNewInvitation())
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._ShowSearchResult = function(self, friendData)
-  -- function num : 0_12
-  (self._suggestedFriendPanel):SetActive(false)
-  local go = (self._searchResultItem):GetGameObject()
+function UIChatAddFriendPanel:_ShowSearchResult(friendData)
+  self._suggestedFriendPanel:SetActive(false)
+  local go = self._searchResultItem:GetGameObject()
   if not friendData then
     go:SetActive(false)
-    ;
-    (self._dontSearchFriendGo):SetActive(true)
-    return 
+    self._dontSearchFriendGo:SetActive(true)
+    return
   end
-  ;
-  (self._dontSearchFriendGo):SetActive(false)
+  self._dontSearchFriendGo:SetActive(false)
   go:SetActive(true)
-  ;
-  (self._searchResultItem):Refresh(friendData, self._currentPanelType, self._chatFriendManager, false, self)
+  self._searchResultItem:Refresh(friendData, self._currentPanelType, self._chatFriendManager, false, self)
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._RefreshRequestPanel = function(self, isPlayAnim)
-  -- function num : 0_13 , upvalues : _ENV
-  (self._requestParentGo):SetActive(false)
-  ;
-  (self._requestEmptyParentGo):SetActive(false)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._RequestFriendInvitationList, self, isPlayAnim, function()
-    -- function num : 0_13_0 , upvalues : self, _ENV
+function UIChatAddFriendPanel:_RefreshRequestPanel(isPlayAnim)
+  self._requestParentGo:SetActive(false)
+  self._requestEmptyParentGo:SetActive(false)
+  GameGlobal.TaskManager():StartTask(self._RequestFriendInvitationList, self, isPlayAnim, function()
     if self._requestCount <= 0 then
-      (self._requestParentGo):SetActive(false)
-      ;
-      (self._requestEmptyParentGo):SetActive(true)
+      self._requestParentGo:SetActive(false)
+      self._requestEmptyParentGo:SetActive(true)
     else
-      ;
-      (self._requestParentGo):SetActive(true)
-      ;
-      (self._requestEmptyParentGo):SetActive(false)
-      ;
-      (self._scrollView):SetListItemCount(self._requestCount, false)
-      ;
-      (self._scrollView):RefreshAllShownItem()
-      local str = self._requestCount .. "/" .. (self._chatFriendManager):GetMaxAddFriendRequestCount()
-      -- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._requestCountLabel).text = (StringTable.Get)("str_chat_request_tips", str)
+      self._requestParentGo:SetActive(true)
+      self._requestEmptyParentGo:SetActive(false)
+      self._scrollView:SetListItemCount(self._requestCount, false)
+      self._scrollView:RefreshAllShownItem()
+      local str = self._requestCount .. "/" .. self._chatFriendManager:GetMaxAddFriendRequestCount()
+      self._requestCountLabel.text = StringTable.Get("str_chat_request_tips", str)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._RequestFriendInvitationList = function(self, TT, isPlayAnim, callback)
-  -- function num : 0_14 , upvalues : _ENV
+function UIChatAddFriendPanel:_RequestFriendInvitationList(TT, isPlayAnim, callback)
   self:Lock("_RequestFriendInvitationList")
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
+  local socialModule = GameGlobal.GetModule(SocialModule)
   local res, friendList = socialModule:GetFriendInvitationList(TT)
   if res:GetSucc() then
     self._requestDatas = {}
     if friendList then
-      for k,v in pairs(friendList) do
+      for k, v in pairs(friendList) do
         local simpleInfo = v.sender_info
         local createTime = v.create_time
         local hasNewMessage = false
         local chatFriendData = ChatFriendData:New(simpleInfo.pstid, simpleInfo.head, simpleInfo.head_bg, simpleInfo.frame_id, simpleInfo.level, simpleInfo.nick, hasNewMessage, simpleInfo.is_online, simpleInfo.create_time, 0, simpleInfo.last_logout_time, simpleInfo.remark_name, simpleInfo.help_pet, simpleInfo.world_boss_info, simpleInfo.homeland_info)
         chatFriendData.requestTime = createTime
-        -- DECOMPILER ERROR at PC48: Confused about usage of register: R16 in 'UnsetPending'
-
-        ;
-        (self._requestDatas)[#self._requestDatas + 1] = chatFriendData
+        self._requestDatas[#self._requestDatas + 1] = chatFriendData
       end
-      ;
-      (self._uiChatController):_UpdateHaveNewFriendRequestStatus()
+      self._uiChatController:_UpdateHaveNewFriendRequestStatus()
       self:_RefreshHaveNewFriendRequestStatus()
-      ;
-      (table.sort)(self._requestDatas, function(a, b)
-    -- function num : 0_14_0
-    local aTime = a.requestTime
-    local bTime = b.requestTime
-    if bTime >= aTime then
-      do return aTime == bTime end
-      do return b:GetFriendId() < a:GetFriendId() end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
-  end
-)
+      table.sort(self._requestDatas, function(a, b)
+        local aTime = a.requestTime
+        local bTime = b.requestTime
+        if aTime ~= bTime then
+          return aTime > bTime
+        end
+        return a:GetFriendId() > b:GetFriendId()
+      end)
     end
     self._requestCount = #self._requestDatas
   else
-    ;
-    (self._chatFriendManager):HandleErrorMsgCode(res:GetResult())
+    self._chatFriendManager:HandleErrorMsgCode(res:GetResult())
   end
   if isPlayAnim then
-    ((self._requestCanvasGroup):DOFade(0, 0.165)):OnComplete(function()
-    -- function num : 0_14_1 , upvalues : self, callback
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._requestCanvasGroup).alpha = 1
-    if callback then
-      callback()
-    end
-    self:UnLock("_RequestFriendInvitationList")
+    self._requestCanvasGroup:DOFade(0, 0.165):OnComplete(function()
+      self._requestCanvasGroup.alpha = 1
+      if callback then
+        callback()
+      end
+      self:UnLock("_RequestFriendInvitationList")
+    end)
+    return
   end
-)
-    return 
-  end
-  -- DECOMPILER ERROR at PC82: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._requestCanvasGroup).alpha = 1
+  self._requestCanvasGroup.alpha = 1
   if callback then
     callback()
   end
   self:UnLock("_RequestFriendInvitationList")
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._IsPanelActive = function(self)
-  -- function num : 0_15
+function UIChatAddFriendPanel:_IsPanelActive()
   if not self._isInited then
     return false
   end
   if not self._uiChatController then
     return false
   end
-  if self._panelType ~= (self._uiChatController):GetCurrentPanelType() then
+  if self._panelType ~= self._uiChatController:GetCurrentPanelType() then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._InitScrollView = function(self)
-  -- function num : 0_16
-  (self._scrollView):InitListView(self._requestCount, function(scrollview, index)
-    -- function num : 0_16_0 , upvalues : self
+function UIChatAddFriendPanel:_InitScrollView()
+  self._scrollView:InitListView(self._requestCount, function(scrollview, index)
     return self:_OnGetRequestItem(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._OnGetRequestItem = function(self, scrollView, index)
-  -- function num : 0_17 , upvalues : _ENV
+function UIChatAddFriendPanel:_OnGetRequestItem(scrollView, index)
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -399,43 +282,29 @@ UIChatAddFriendPanel._OnGetRequestItem = function(self, scrollView, index)
   end
   local rowList = rowPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      if self._requestCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      else
-        self:_RefreshFriendRequestItemInfo(itemWidget, itemIndex)
-      end
+  if itemWidget then
+    local itemIndex = index + 1
+    if itemIndex > self._requestCount then
+      itemWidget:GetGameObject():SetActive(false)
+    else
+      self:_RefreshFriendRequestItemInfo(itemWidget, itemIndex)
     end
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
-    return item
   end
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
+  return item
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._RefreshFriendRequestItemInfo = function(self, itemWidget, index)
-  -- function num : 0_18
-  itemWidget:Refresh((self._requestDatas)[index], self._currentPanelType, self._chatFriendManager)
+function UIChatAddFriendPanel:_RefreshFriendRequestItemInfo(itemWidget, index)
+  itemWidget:Refresh(self._requestDatas[index], self._currentPanelType, self._chatFriendManager)
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._InitSuggestScrollView = function(self)
-  -- function num : 0_19
-  (self._suggestedScrollView):InitListView(self._suggestFriendCount, function(scrollview, index)
-    -- function num : 0_19_0 , upvalues : self
+function UIChatAddFriendPanel:_InitSuggestScrollView()
+  self._suggestedScrollView:InitListView(self._suggestFriendCount, function(scrollview, index)
     return self:_OnGetSuggestFriendItem(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._OnGetSuggestFriendItem = function(self, scrollView, index)
-  -- function num : 0_20 , upvalues : _ENV
+function UIChatAddFriendPanel:_OnGetSuggestFriendItem(scrollView, index)
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -444,75 +313,55 @@ UIChatAddFriendPanel._OnGetSuggestFriendItem = function(self, scrollView, index)
   end
   local rowList = rowPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      if self._suggestFriendCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      else
-        self:_RefreshSuggestFriendItemInfo(itemWidget, itemIndex)
-        ;
-        (itemWidget:GetGameObject()):SetActive(true)
-      end
+  if itemWidget then
+    local itemIndex = index + 1
+    if itemIndex > self._suggestFriendCount then
+      itemWidget:GetGameObject():SetActive(false)
+    else
+      self:_RefreshSuggestFriendItemInfo(itemWidget, itemIndex)
+      itemWidget:GetGameObject():SetActive(true)
     end
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
-    return item
   end
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
+  return item
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._RefreshSuggestFriendItemInfo = function(self, itemWidget, index)
-  -- function num : 0_21
-  itemWidget:Refresh((self._suggestFriendList)[index], self._currentPanelType, self._chatFriendManager, true, self)
+function UIChatAddFriendPanel:_RefreshSuggestFriendItemInfo(itemWidget, index)
+  itemWidget:Refresh(self._suggestFriendList[index], self._currentPanelType, self._chatFriendManager, true, self)
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel.SearchBtnOnClick = function(self, go)
-  -- function num : 0_22 , upvalues : UIAddFriendPanelType
+function UIChatAddFriendPanel:SearchBtnOnClick(go)
   if self._currentPanelType == UIAddFriendPanelType.SearchFriend then
-    return 
+    return
   end
   self:_SwitchPanel(UIAddFriendPanelType.SearchFriend)
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel.RequestBtnOnClick = function(self, go)
-  -- function num : 0_23 , upvalues : UIAddFriendPanelType
+function UIChatAddFriendPanel:RequestBtnOnClick(go)
   if self._currentPanelType == UIAddFriendPanelType.Request then
-    return 
+    return
   end
   self:_SwitchPanel(UIAddFriendPanelType.Request)
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel.SearchFriendBtnOnClick = function(self, go)
-  -- function num : 0_24 , upvalues : _ENV
-  local friendId = (self._searchIdInput).text
+function UIChatAddFriendPanel:SearchFriendBtnOnClick(go)
+  local friendId = self._searchIdInput.text
   if friendId == nil or friendId == "" then
-    (ToastManager.ShowToast)((StringTable.Get)("str_chat_error_search_pstid_is_empty"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_chat_error_search_pstid_is_empty"))
+    return
   end
   local showId = tonumber(friendId)
-  if showId <= 0 or showId > 9223372036854775807 then
-    (self._chatFriendManager):HandleErrorMsgCode(SocialErrorCode.SOCIAL_SEARCH_PSTID_INVALID)
-    return 
+  if showId <= 0 or 9223372036854775807 < showId then
+    self._chatFriendManager:HandleErrorMsgCode(SocialErrorCode.SOCIAL_SEARCH_PSTID_INVALID)
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._SearchFriendRequest, self, showId)
+  GameGlobal.TaskManager():StartTask(self._SearchFriendRequest, self, showId)
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._SearchFriendRequest = function(self, TT, showId)
-  -- function num : 0_25 , upvalues : _ENV
+function UIChatAddFriendPanel:_SearchFriendRequest(TT, showId)
   self:Lock("_SearchFriendRequest")
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local socialModule = GameGlobal.GetModule(SocialModule)
   local idList = {}
   idList[#idList + 1] = loginModule:GetPstIdByShowId(showId)
   local res, playerInfoList = socialModule:HandleSearchPlayer(TT, idList)
@@ -523,81 +372,50 @@ UIChatAddFriendPanel._SearchFriendRequest = function(self, TT, showId)
     local friendData = ChatFriendData:New(simpleInfo.pstid, simpleInfo.head, simpleInfo.head_bg, simpleInfo.frame_id, simpleInfo.level, simpleInfo.nick, hasNewMessage, simpleInfo.is_online, simpleInfo.create_time, 0, simpleInfo.last_logout_time, simpleInfo.remark_name, simpleInfo.help_pet, simpleInfo.world_boss_info, simpleInfo.homeland_info)
     self:_ShowSearchResult(friendData)
   else
-    do
-      ;
-      (self._chatFriendManager):HandleErrorMsgCode(res:GetResult())
-      self:_ShowSearchResult(nil)
-      self:UnLock("_SearchFriendRequest")
-    end
+    self._chatFriendManager:HandleErrorMsgCode(res:GetResult())
+    self:_ShowSearchResult(nil)
   end
+  self:UnLock("_SearchFriendRequest")
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel.RefreshBtnOnClick = function(self, go)
-  -- function num : 0_26 , upvalues : _ENV
+function UIChatAddFriendPanel:RefreshBtnOnClick(go)
   if self._isInCD then
-    return 
+    return
   end
   self:_ShowSuggestedFriend(false, true)
   self._isInCD = true
   self._cdTimer = 5
-  ;
-  (self._timeGo):SetActive(true)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._timeLabel).text = "(" .. self._cdTimer .. ")"
-  self._cdEventHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, self._CDTimeDown, self)
+  self._timeGo:SetActive(true)
+  self._timeLabel.text = "(" .. self._cdTimer .. ")"
+  self._cdEventHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, self._CDTimeDown, self)
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._CDTimeDown = function(self)
-  -- function num : 0_27
+function UIChatAddFriendPanel:_CDTimeDown()
   self._cdTimer = self._cdTimer - 1
   if self._cdTimer <= 0 then
     self:_ResetCD()
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._timeLabel).text = "(" .. self._cdTimer .. ")"
+  self._timeLabel.text = "(" .. self._cdTimer .. ")"
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel._ResetCD = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  (self._timeGo):SetActive(false)
+function UIChatAddFriendPanel:_ResetCD()
+  self._timeGo:SetActive(false)
   self._isInCD = false
   if self._cdEventHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._cdEventHandler)
+    GameGlobal.Timer():CancelEvent(self._cdEventHandler)
   end
   self._cdEventHandler = nil
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel.ClearBtnOnClick = function(self, go)
-  -- function num : 0_29 , upvalues : UIAddFriendPanelType
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._searchIdInput).text = ""
-  if (self._suggestedFriendPanel).activeInHierarchy == false then
+function UIChatAddFriendPanel:ClearBtnOnClick(go)
+  self._searchIdInput.text = ""
+  if self._suggestedFriendPanel.activeInHierarchy == false then
     self:_SwitchPanel(UIAddFriendPanelType.SearchFriend)
   end
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatAddFriendPanel.IdCopyOnClick = function(self, go)
-  -- function num : 0_30 , upvalues : _ENV
+function UIChatAddFriendPanel:IdCopyOnClick(go)
   local copyid = self._roleId
-  ;
-  (HelperProxy:GetInstance()):CopyString(copyid)
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_player_info_id_copy_succ"))
+  HelperProxy:GetInstance():CopyString(copyid)
+  ToastManager.ShowToast(StringTable.Get("str_player_info_id_copy_succ"))
 end
-
-

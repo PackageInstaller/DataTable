@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/talent/line_mission/ui_season_talent_line_mission_slot_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTalentLineMissionSlotCell", UICustomWidget)
 UISeasonTalentLineMissionSlotCell = UISeasonTalentLineMissionSlotCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTalentLineMissionSlotCell.OnShow = function(self)
-  -- function num : 0_0
+function UISeasonTalentLineMissionSlotCell:OnShow()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._power = self:GetGameObject("Power")
   self._normal = self:GetGameObject("Normal")
@@ -18,71 +11,47 @@ UISeasonTalentLineMissionSlotCell.OnShow = function(self)
   self._n_empty = self:GetGameObject("N_empty")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionSlotCell.SetData = function(self, idx, cfg, rootid)
-  -- function num : 0_1
+function UISeasonTalentLineMissionSlotCell:SetData(idx, cfg, rootid)
   self.idx = idx
   self.cfg = cfg
   self.rootid = rootid
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionSlotCell.OnValue = function(self)
-  -- function num : 0_2
+function UISeasonTalentLineMissionSlotCell:OnValue()
   self:SetIcon()
   self:SetLock()
   self:SetType()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionSlotCell.SetIcon = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonTalentLineMissionSlotCell:SetIcon()
   if self.rootid and self.rootid > 0 then
-    ((self._icon).gameObject):SetActive(true)
-    local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgID, SkillTypeID = self.rootid, Level = 1})
+    self._icon.gameObject:SetActive(true)
+    local cfgs = Cfg.cfg_component_talent_tree_skill({
+      ComponentID = self.comCfgID,
+      SkillTypeID = self.rootid,
+      Level = 1
+    })
     local cfg = cfgs[1]
     local icon = cfg.Icon
     if icon then
-      (self._icon):LoadImage(icon)
+      self._icon:LoadImage(icon)
     end
-    ;
-    (self._p_empty):SetActive(false)
-    ;
-    (self._n_empty):SetActive(false)
+    self._p_empty:SetActive(false)
+    self._n_empty:SetActive(false)
   else
-    do
-      ;
-      ((self._icon).gameObject):SetActive(false)
-      ;
-      (self._p_empty):SetActive(true)
-      ;
-      (self._n_empty):SetActive(true)
-    end
+    self._icon.gameObject:SetActive(false)
+    self._p_empty:SetActive(true)
+    self._n_empty:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionSlotCell.SetLock = function(self)
-  -- function num : 0_4
-  (self._lock):SetActive(self.rootid == nil)
-  ;
-  (self._unlock):SetActive(self.rootid ~= nil)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UISeasonTalentLineMissionSlotCell:SetLock()
+  self._lock:SetActive(self.rootid == nil)
+  self._unlock:SetActive(self.rootid ~= nil)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionSlotCell.SetType = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._power):SetActive((self.cfg).TypeLimit == SeasonTalentSkillType.Power)
-  ;
-  (self._normal):SetActive((self.cfg).TypeLimit == SeasonTalentSkillType.Normal)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UISeasonTalentLineMissionSlotCell:SetType()
+  self._power:SetActive(self.cfg.TypeLimit == SeasonTalentSkillType.Power)
+  self._normal:SetActive(self.cfg.TypeLimit == SeasonTalentSkillType.Normal)
 end
-
-

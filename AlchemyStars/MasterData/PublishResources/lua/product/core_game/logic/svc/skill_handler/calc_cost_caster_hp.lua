@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_cost_caster_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalcCostCasterHP", SkillEffectCalc_Base)
 SkillEffectCalcCostCasterHP = SkillEffectCalcCostCasterHP
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalcCostCasterHP.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalcCostCasterHP:DoSkillEffectCalculator(skillEffectCalcParam)
   local effectParam = skillEffectCalcParam.skillEffectParam
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   if effectParam:GetCostType() == SkillEffectCostCasterHPType.CurHPPercent or effectParam:GetCostType() == SkillEffectCostCasterHPType.MaxHPPercent then
     local result = SkillEffectCostCasterHPResult:New(effectParam:GetCostPercent(), effectParam:GetCostType(), effectParam:GetIgnoreShield(), effectParam:GetLeastHP())
     return result
   else
-    do
-      ;
-      (Log.exception)("SkillEffectCalcCostCasterHP CostType:", effectParam:GetCostType(), "Invalid ")
-      do return nil end
-    end
+    Log.exception("SkillEffectCalcCostCasterHP CostType:", effectParam:GetCostType(), "Invalid ")
+    return nil
   end
 end
-
-

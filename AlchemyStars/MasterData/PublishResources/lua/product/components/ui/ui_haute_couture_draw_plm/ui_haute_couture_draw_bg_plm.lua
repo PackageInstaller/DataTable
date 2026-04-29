@@ -1,42 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_plm/ui_haute_couture_draw_bg_plm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawBgPLM", UICustomWidget)
 UIHauteCoutureDrawBgPLM = UIHauteCoutureDrawBgPLM
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawBgPLM.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHauteCoutureDrawBgPLM:Constructor()
   self:AttachEvent(GameEventType.UIHauteCoutureDrawBgPLMAnimOut, self.PlayOutAnim)
   self:AttachEvent(GameEventType.UIHauteCoutureDrawBgPLMAnimIn, self.PlayInAnim)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBgPLM.PlayOutAnim = function(self)
-  -- function num : 0_1
+function UIHauteCoutureDrawBgPLM:PlayOutAnim()
   self._anim = self:GetUIComponent("Animation", "anim")
-  ;
-  (self._anim):Play("uieff_UIHauteCoutureDrawBgPLM_out")
+  self._anim:Play("uieff_UIHauteCoutureDrawBgPLM_out")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBgPLM.PlayInAnim = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDrawBgPLM:PlayInAnim()
   self._anim = self:GetUIComponent("Animation", "anim")
-  ;
-  (self._anim):Play("uieff_UIHauteCoutureDrawBgPLM_in")
+  self._anim:Play("uieff_UIHauteCoutureDrawBgPLM_in")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBgPLM.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHauteCoutureDrawBgPLM:OnHide()
   self:DetachEvent(GameEventType.UIHauteCoutureDrawBgPLMAnimOut, self.PlayOutAnim)
   self:DetachEvent(GameEventType.UIHauteCoutureDrawBgPLMAnimIn, self.PlayInAnim)
 end
-
-

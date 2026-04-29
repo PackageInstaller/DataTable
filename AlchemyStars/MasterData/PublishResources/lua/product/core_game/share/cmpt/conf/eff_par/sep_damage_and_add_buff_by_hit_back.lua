@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_damage_and_add_buff_by_hit_back.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectDamageAndAddBuffByHitBackParam", SkillEffectParamBase)
 SkillEffectDamageAndAddBuffByHitBackParam = SkillEffectDamageAndAddBuffByHitBackParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectDamageAndAddBuffByHitBackParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectDamageAndAddBuffByHitBackParam:Constructor(t)
   self._percent = t.percent
   self._formulaID = t.formulaID
   self._buffID = t.buffID
   self._transmitDamage = t.transmitDamage or false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageAndAddBuffByHitBackParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectDamageAndAddBuffByHitBackParam:GetEffectType()
   return SkillEffectType.DamageAndAddBuffByHitBack
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageAndAddBuffByHitBackParam.GetPercent = function(self)
-  -- function num : 0_2
+function SkillEffectDamageAndAddBuffByHitBackParam:GetPercent()
   return self._percent
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageAndAddBuffByHitBackParam.GetFormulaID = function(self)
-  -- function num : 0_3
+function SkillEffectDamageAndAddBuffByHitBackParam:GetFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageAndAddBuffByHitBackParam.GetBuffID = function(self)
-  -- function num : 0_4
+function SkillEffectDamageAndAddBuffByHitBackParam:GetBuffID()
   return self._buffID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageAndAddBuffByHitBackParam.IsTransmitDamage = function(self)
-  -- function num : 0_5
+function SkillEffectDamageAndAddBuffByHitBackParam:IsTransmitDamage()
   return self._transmitDamage
 end
-
-

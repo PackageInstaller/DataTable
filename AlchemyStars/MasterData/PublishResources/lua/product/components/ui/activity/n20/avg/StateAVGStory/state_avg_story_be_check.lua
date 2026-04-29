@@ -1,94 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/StateAVGStory/state_avg_story_be_check.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateAVGStoryBECheck", StateAVGStoryBase)
 StateAVGStoryBECheck = StateAVGStoryBECheck
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateAVGStoryBECheck.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function StateAVGStoryBECheck:OnEnter(TT, ...)
   self:Init()
-  local auto = (table.unpack)({...})
-  self.storyManager = (self.data):StoryManager()
-  local storyId = (self.storyManager):GetCurStoryID()
-  local paragraphId = (self.storyManager):GetCurParagraphID()
-  local sectionIdx = (self.storyManager):GetCurSectionIndex()
+  local auto = table.unpack({
+    ...
+  })
+  self.storyManager = self.data:StoryManager()
+  local storyId = self.storyManager:GetCurStoryID()
+  local paragraphId = self.storyManager:GetCurParagraphID()
+  local sectionIdx = self.storyManager:GetCurSectionIndex()
   self:FlushChangeValue(storyId, paragraphId, sectionIdx)
   local dialog = self:GetDialog(storyId, paragraphId, sectionIdx)
   if dialog and dialog:IsSatisfyBE() then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIN20AVGEnding", dialog.beId)
+    GameGlobal.UIStateManager():ShowDialog("UIN20AVGEnding", dialog.beId)
   end
-  if (self.storyManager):IsEnd() then
+  if self.storyManager:IsEnd() then
     self:ChangeState(StateAVGStory.Over)
+  elseif auto then
+    self:ChangeState(StateAVGStory.Auto)
   else
-    if auto then
-      self:ChangeState(StateAVGStory.Auto)
-    else
-      self:ChangeState(StateAVGStory.Play)
-    end
+    self:ChangeState(StateAVGStory.Play)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBECheck.OnExit = function(self, TT)
-  -- function num : 0_1
+function StateAVGStoryBECheck:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBECheck.GetDialog = function(self, storyId, paragraphId, sectionIdx)
-  -- function num : 0_2
-  local node = (self.data):GetNodeByStoryId(storyId)
+function StateAVGStoryBECheck:GetDialog(storyId, paragraphId, sectionIdx)
+  local node = self.data:GetNodeByStoryId(storyId)
   local paragraph = node:GetParagraphByParagraphId(paragraphId)
   local dialog = paragraph:GetDialogBySectionIdx(sectionIdx)
   return dialog
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBECheck.FlushChangeValue = function(self, storyId, paragraphId, sectionIdx)
-  -- function num : 0_3 , upvalues : _ENV
+function StateAVGStoryBECheck:FlushChangeValue(storyId, paragraphId, sectionIdx)
   local dialog = self:GetDialog(storyId, paragraphId, sectionIdx)
   if dialog and dialog:HasValueChange() then
-    local sign = (N20AVGData.Sign)({storyId, paragraphId, sectionIdx})
-    ;
-    (self.ui):SetPassSectionId(sign, true)
-    ;
-    (self.ui):FlushData()
+    local sign = N20AVGData.Sign({
+      storyId,
+      paragraphId,
+      sectionIdx
+    })
+    self.ui:SetPassSectionId(sign, true)
+    self.ui:FlushData()
     local vc = dialog:ValueChange()
-    if not vc[1] then
-      local hpDelta = not vc or 0
+    if vc then
+      local hpDelta = vc[1] or 0
+      self.ui:PlayAnimHP(hpDelta)
     end
-    ;
-    (self.ui):PlayAnimHP(hpDelta)
   end
-  do
-    self:FlushDebugText()
-  end
+  self:FlushDebugText()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryBECheck.FlushDebugText = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function StateAVGStoryBECheck:FlushDebugText()
   if IsUnityEditor() then
-    local storyId = (self.storyManager):GetCurStoryID()
-    local paragraphId = (self.storyManager):GetCurParagraphID()
-    local sectionIdx = (self.storyManager):GetCurSectionIndex()
-    local curTime = (self.storyManager):GetCurrentTime()
-    local line1 = (string.format)("[storyId=%d] [ParagraphId=%d] [sectionIdx=%d] [curTime=%f]", storyId, paragraphId, sectionIdx, curTime)
+    local storyId = self.storyManager:GetCurStoryID()
+    local paragraphId = self.storyManager:GetCurParagraphID()
+    local sectionIdx = self.storyManager:GetCurSectionIndex()
+    local curTime = self.storyManager:GetCurrentTime()
+    local line1 = string.format("[storyId=%d] [ParagraphId=%d] [sectionIdx=%d] [curTime=%f]", storyId, paragraphId, sectionIdx, curTime)
     local line2 = "passSectionIds="
     local passSectionIds = self:PassSectionId()
-    for key,passSectionId in pairs(passSectionIds) do
+    for key, passSectionId in pairs(passSectionIds) do
       line2 = line2 .. key .. ";"
     end
     local log = line1 .. "\n" .. line2
-    ;
-    ((self.ui).txtDebug):SetText(log)
+    self.ui.txtDebug:SetText(log)
   end
 end
-
-

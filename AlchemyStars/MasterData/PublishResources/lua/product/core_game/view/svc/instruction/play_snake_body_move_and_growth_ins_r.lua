@@ -1,152 +1,101 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_snake_body_move_and_growth_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlaySnakeBodyMoveAndGrowthInstruction", BaseInstruction)
 PlaySnakeBodyMoveAndGrowthInstruction = PlaySnakeBodyMoveAndGrowthInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySnakeBodyMoveAndGrowthInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySnakeBodyMoveAndGrowthInstruction:Constructor(paramList)
   self._bodyEffectID = tonumber(paramList.bodyEffectID)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySnakeBodyMoveAndGrowthInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySnakeBodyMoveAndGrowthInstruction:GetCacheResource()
   local t = {}
-  ;
-  (table.insert)(t, {((Cfg.cfg_effect)[self._bodyEffectID]).ResPath, 1})
+  table.insert(t, {
+    Cfg.cfg_effect[self._bodyEffectID].ResPath,
+    1
+  })
   return t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySnakeBodyMoveAndGrowthInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySnakeBodyMoveAndGrowthInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
-  local playSkillInstructionSvc = (self._world):GetService("PlaySkillInstruction")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local playSkillInstructionSvc = self._world:GetService("PlaySkillInstruction")
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SnakeBodyMoveAndGrowth)
   if not resultArray then
-    return 
+    return
   end
   local result = resultArray[#resultArray]
-  do
-    if result:IsCasterDead() then
-      local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
-      sMonsterShowRender:_DoOneMonsterDead(TT, casterEntity)
-      return 
-    end
-    local bodyNewPos = result:GetBodyNewPos()
-    local bodyOldPos = result:GetBodyOldPos()
-    local newBody = result:GetNewBodyArea()
-    local oldBody = result:GetOldBodyArea()
-    local newBodyPosList = self:GetBodyPosList(newBody, bodyNewPos)
-    local oldBodyPosList = self:GetBodyPosList(oldBody, bodyOldPos)
-    local bodyEffectList = self:GetBodyEffect(casterEntity)
-    local speed = playSkillInstructionSvc:GetMoveSpeed(casterEntity)
-    do
-      for index,id in ipairs(bodyEffectList) do
-        local bodyEffectEntity = (self._world):GetEntityByID(id)
-        local effectPos = bodyEffectEntity:GetRenderGridPosition()
-        local bodyIndex = self:GetBodyIndex(effectPos, oldBodyPosList)
-        local newEffectPos = newBodyPosList[bodyIndex]
-      end
-    end
-    local headNewPos = nil
-    playSkillInstructionSvc:PlayEntityMove(TT, headNewPos, bodyOldPos, bodyNewPos, speed)
-    local dir = nil
-    -- DECOMPILER ERROR at PC91: Overwrote pending register: R20 in 'AssignReg'
-
-    casterEntity:SetDirection(headNewPos)
-    local newBodyPos = nil
-    -- DECOMPILER ERROR at PC98: Overwrote pending register: R20 in 'AssignReg'
-
-    if result:GetNewBodyPos() then
-      local effectSvc = nil
-      -- DECOMPILER ERROR at PC101: Overwrote pending register: R21 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC101: Overwrote pending register: R20 in 'AssignReg'
-
-      local entity = nil
-      -- DECOMPILER ERROR at PC106: Overwrote pending register: R21 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC107: Overwrote pending register: R21 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC108: Overwrote pending register: R21 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC109: Overwrote pending register: R21 in 'AssignReg'
-
-      local dir = ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : playSkillInstructionSvc, bodyEffectEntity, effectPos, newEffectPos, speed, index, bodyNewPos, newBodyPosList, bodyIndex
-    playSkillInstructionSvc:PlayEntityMove(TT, bodyEffectEntity, effectPos, newEffectPos, speed)
-    local lastPos = nil
-    if index == 1 then
-      lastPos = bodyNewPos
-    else
-      lastPos = newBodyPosList[bodyIndex - 1]
-    end
-    local dir = lastPos - newEffectPos
-    bodyEffectEntity:SetDirection(dir)
+  if result:IsCasterDead() then
+    local sMonsterShowRender = self._world:GetService("MonsterShowRender")
+    sMonsterShowRender:_DoOneMonsterDead(TT, casterEntity)
+    return
   end
-)
-      -- DECOMPILER ERROR at PC110: Overwrote pending register: R23 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC110: Overwrote pending register: R22 in 'AssignReg'
-
-      entity = dir
-      newBodyPos(effectSvc, entity)
-    end
+  local bodyNewPos = result:GetBodyNewPos()
+  local bodyOldPos = result:GetBodyOldPos()
+  local newBody = result:GetNewBodyArea()
+  local oldBody = result:GetOldBodyArea()
+  local newBodyPosList = self:GetBodyPosList(newBody, bodyNewPos)
+  local oldBodyPosList = self:GetBodyPosList(oldBody, bodyOldPos)
+  local bodyEffectList = self:GetBodyEffect(casterEntity)
+  local speed = playSkillInstructionSvc:GetMoveSpeed(casterEntity)
+  for index, id in ipairs(bodyEffectList) do
+    local bodyEffectEntity = self._world:GetEntityByID(id)
+    local effectPos = bodyEffectEntity:GetRenderGridPosition()
+    local bodyIndex = self:GetBodyIndex(effectPos, oldBodyPosList)
+    local newEffectPos = newBodyPosList[bodyIndex]
+    local taskID = GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      playSkillInstructionSvc:PlayEntityMove(TT, bodyEffectEntity, effectPos, newEffectPos, speed)
+      local lastPos
+      if index == 1 then
+        lastPos = bodyNewPos
+      else
+        lastPos = newBodyPosList[bodyIndex - 1]
+      end
+      local dir = lastPos - newEffectPos
+      bodyEffectEntity:SetDirection(dir)
+    end)
+  end
+  local headNewPos = result:GetHeadNewPos()
+  playSkillInstructionSvc:PlayEntityMove(TT, casterEntity, bodyOldPos, bodyNewPos, speed)
+  local dir = headNewPos - bodyNewPos
+  casterEntity:SetDirection(dir)
+  local newBodyPos = result:GetNewBodyPos()
+  if newBodyPos then
+    local effectSvc = self._world:GetService("Effect")
+    local entity = effectSvc:CreateGridEffectWithEffectHolder(self._bodyEffectID, newBodyPos, casterEntity)
+    local dir = newBodyPosList[#newBodyPosList - 1] - newBodyPos
+    entity:SetDirection(dir)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySnakeBodyMoveAndGrowthInstruction.GetBodyIndex = function(self, pos, bodyPosList)
-  -- function num : 0_3 , upvalues : _ENV
-  for i,v in ipairs(bodyPosList) do
+function PlaySnakeBodyMoveAndGrowthInstruction:GetBodyIndex(pos, bodyPosList)
+  for i, v in ipairs(bodyPosList) do
     if v.x == pos.x and v.y == pos.y then
       return i
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySnakeBodyMoveAndGrowthInstruction.GetBodyEffect = function(self, casterEntity)
-  -- function num : 0_4 , upvalues : _ENV
+function PlaySnakeBodyMoveAndGrowthInstruction:GetBodyEffect(casterEntity)
   local bodyEffectList = {}
   if casterEntity:HasEffectHolder() then
     local effectHolderCmpt = casterEntity:EffectHolder()
     local effectDictList = effectHolderCmpt:GetEffectIDEntityDic()
-    for effectID,entityIDList in pairs(effectDictList) do
+    for effectID, entityIDList in pairs(effectDictList) do
       if effectID == self._bodyEffectID then
-        for i,id in ipairs(entityIDList) do
-          (table.insert)(bodyEffectList, id)
+        for i, id in ipairs(entityIDList) do
+          table.insert(bodyEffectList, id)
         end
         break
       end
     end
   end
-  do
-    return bodyEffectList
-  end
+  return bodyEffectList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySnakeBodyMoveAndGrowthInstruction.GetBodyPosList = function(self, bodyArea, pos)
-  -- function num : 0_5 , upvalues : _ENV
+function PlaySnakeBodyMoveAndGrowthInstruction:GetBodyPosList(bodyArea, pos)
   local bodyPosList = {}
-  for i,offset in ipairs(bodyArea) do
+  for i, offset in ipairs(bodyArea) do
     local newPos = Vector2(offset.x + pos.x, pos.y + offset.y)
-    ;
-    (table.insert)(bodyPosList, newPos)
+    table.insert(bodyPosList, newPos)
   end
   return bodyPosList
 end
-
-

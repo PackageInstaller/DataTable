@@ -1,57 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/containers/fast_array.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FastArray", Object)
 FastArray = FastArray
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FastArray.Constructor = function(self)
-  -- function num : 0_0
+function FastArray:Constructor()
   self.elements = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FastArray.Empty = function(self)
-  -- function num : 0_1
-  do return #self.elements == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function FastArray:Empty()
+  return #self.elements == 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FastArray.Size = function(self)
-  -- function num : 0_2
+function FastArray:Size()
   return #self.elements
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FastArray.Clear = function(self)
-  -- function num : 0_3
+function FastArray:Clear()
   self.elements = {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FastArray.PushBack = function(self, value)
-  -- function num : 0_4
+function FastArray:PushBack(value)
   if value == nil then
-    return 
+    return
   end
   local elements = self.elements
   elements[#elements + 1] = value
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
 FastArray.Insert = FastArray.PushBack
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
 
-FastArray.PopBack = function(self)
-  -- function num : 0_5
+function FastArray:PopBack()
   local elements = self.elements
   local size = #elements
   local temp = elements[size]
@@ -59,14 +35,11 @@ FastArray.PopBack = function(self)
   return temp
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-FastArray.RemoveByIndex = function(self, index)
-  -- function num : 0_6
+function FastArray:RemoveByIndex(index)
   local elements = self.elements
   local size = #elements
-  if index < 1 or size < index then
-    return 
+  if index < 1 or index > size then
+    return
   end
   local temp = elements[index]
   elements[index] = elements[size]
@@ -74,27 +47,17 @@ FastArray.RemoveByIndex = function(self, index)
   return temp
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
 FastArray.RemoveAt = FastArray.RemoveByIndex
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
 
-FastArray.RemoveFirst = function(self, value)
-  -- function num : 0_7
+function FastArray:RemoveFirst(value)
   local index = self:Find(value, 1)
   self:RemoveAt(index)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
 FastArray.Remove = FastArray.RemoveFirst
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-FastArray.Find = function(self, value, from_index)
-  -- function num : 0_8
-  if not from_index then
-    from_index = 1
-  end
+function FastArray:Find(value, from_index)
+  from_index = from_index or 1
   local elements = self.elements
   for i = from_index, #elements do
     if elements[i] == value then
@@ -104,10 +67,7 @@ FastArray.Find = function(self, value, from_index)
   return -1
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-FastArray.Contains = function(self, value, from_index)
-  -- function num : 0_9
+function FastArray:Contains(value, from_index)
   local index = self:Find(value, from_index)
   if index == -1 then
     return false
@@ -116,21 +76,13 @@ FastArray.Contains = function(self, value, from_index)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-FastArray.GetAt = function(self, index)
-  -- function num : 0_10
-  return (self.elements)[index]
+function FastArray:GetAt(index)
+  return self.elements[index]
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-FastArray.ForEach = function(self, func)
-  -- function num : 0_11
+function FastArray:ForEach(func)
   local elements = self.elements
   for i = 1, #elements do
     func(elements[i])
   end
 end
-
-

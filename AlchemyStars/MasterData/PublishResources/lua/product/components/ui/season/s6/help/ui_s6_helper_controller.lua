@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s6/help/ui_s6_helper_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS6HelperController", UIController)
 UIS6HelperController = UIS6HelperController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS6HelperController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIS6HelperController:OnShow(uiParams)
   local tabIndex = 1
   if uiParams and uiParams[1] then
     tabIndex = tonumber(uiParams[1])
@@ -17,24 +10,15 @@ UIS6HelperController.OnShow = function(self, uiParams)
   self:AddListener()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS6HelperController.OnHide = function(self)
-  -- function num : 0_1
+function UIS6HelperController:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS6HelperController.InitWidget = function(self, tabIndex)
-  -- function num : 0_2
+function UIS6HelperController:InitWidget(tabIndex)
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   self._tabPool = self:GetUIComponent("UISelectObjectPath", "Content")
   self:_InitTabList(tabIndex)
   self:_InitBanner(tabIndex)
@@ -44,95 +28,61 @@ UIS6HelperController.InitWidget = function(self, tabIndex)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS6HelperController.AddListener = function(self)
-  -- function num : 0_3
+function UIS6HelperController:AddListener()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS6HelperController._InitBanner = function(self, tabIndex)
-  -- function num : 0_4
+function UIS6HelperController:_InitBanner(tabIndex)
   local bannerGen = self:GetUIComponent("UISelectObjectPath", "BannerRoot")
   self._bannerWidget = bannerGen:SpawnObject("UIS6HelperBanner")
-  ;
-  (self._bannerWidget):SetData(tabIndex)
+  self._bannerWidget:SetData(tabIndex)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS6HelperController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_5
+function UIS6HelperController:OnUpdate(deltaTimeMS)
   if self._bannerWidget then
-    (self._bannerWidget):OnUpdate(deltaTimeMS)
+    self._bannerWidget:OnUpdate(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS6HelperController._InitTabList = function(self, tabIndex)
-  -- function num : 0_6 , upvalues : _ENV
-  self._cfgTab = (Cfg.cfg_season_helper_tab)({SeasonID = UISeasonID.S6})
+function UIS6HelperController:_InitTabList(tabIndex)
+  self._cfgTab = Cfg.cfg_season_helper_tab({
+    SeasonID = UISeasonID.S6
+  })
   local validCfg = {}
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local now = GetSvrTimeNow()
-  for _,cfg in ipairs(self._cfgTab) do
+  for _, cfg in ipairs(self._cfgTab) do
     if cfg.OpenTime then
       local t = loginModule:GetTimeStampByTimeStr(cfg.OpenTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-      if t <= now then
+      if now >= t then
         validCfg[#validCfg + 1] = cfg
       end
     else
-      do
-        do
-          validCfg[#validCfg + 1] = cfg
-          -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      validCfg[#validCfg + 1] = cfg
     end
   end
   self._cfgTab = validCfg
-  ;
-  (table.sort)(self._cfgTab, function(a, b)
-    -- function num : 0_6_0
-    do return a.TabEnum < b.TabEnum end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._cfgTab, function(a, b)
+    return a.TabEnum < b.TabEnum
+  end)
   local tabCount = #self._cfgTab
-  ;
-  (self._tabPool):SpawnObjects("UIS6HelperTab", tabCount)
-  self._tabs = (self._tabPool):GetAllSpawnList()
-  for i,v in ipairs(self._cfgTab) do
-    ((self._tabs)[i]):SetData(v, function(tabId)
-    -- function num : 0_6_1 , upvalues : self
-    self:OnTabClick(tabId)
+  self._tabPool:SpawnObjects("UIS6HelperTab", tabCount)
+  self._tabs = self._tabPool:GetAllSpawnList()
+  for i, v in ipairs(self._cfgTab) do
+    self._tabs[i]:SetData(v, function(tabId)
+      self:OnTabClick(tabId)
+    end)
   end
-)
-  end
-  for index,tab in ipairs(self._tabs) do
+  for index, tab in ipairs(self._tabs) do
     tab:OnSelectIndex(tabIndex)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS6HelperController.OnTabClick = function(self, tabId)
-  -- function num : 0_7 , upvalues : _ENV
+function UIS6HelperController:OnTabClick(tabId)
   if self._curTab ~= tabId then
     self._curTab = tabId
-    ;
-    (self._bannerWidget):SetData(tabId)
-    for index,tab in ipairs(self._tabs) do
+    self._bannerWidget:SetData(tabId)
+    for index, tab in ipairs(self._tabs) do
       tab:OnSelectIndex(tabId)
     end
   end
 end
-
-

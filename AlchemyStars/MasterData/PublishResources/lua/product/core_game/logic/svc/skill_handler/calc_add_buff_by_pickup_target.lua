@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_add_buff_by_pickup_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_AddBuffByPickupTarget", Object)
 SkillEffectCalc_AddBuffByPickupTarget = SkillEffectCalc_AddBuffByPickupTarget
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_AddBuffByPickupTarget.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_AddBuffByPickupTarget:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_AddBuffByPickupTarget.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_AddBuffByPickupTarget:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillID = skillEffectCalcParam:GetSkillID()
   local attackRange = skillEffectCalcParam:GetSkillRange()
   local casterEntityID = skillEffectCalcParam:GetCasterEntityID()
@@ -24,68 +14,54 @@ SkillEffectCalc_AddBuffByPickupTarget.DoSkillEffectCalculator = function(self, s
   local trapIDList = param:GetTrapIDList()
   local matchPieceType = param:GetMatchPieceType()
   local pickUpPos = attackRange[1]
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+  local boardCmpt = self._world:GetBoardEntity():Board()
   local traps = boardCmpt:GetPieceEntities(pickUpPos, function(e)
-    -- function num : 0_1_0 , upvalues : casterEntityID, _ENV, trapIDList
     local isOwner = false
     if e:HasSummoner() then
-      local summonEntityID = (e:Summoner()):GetSummonerEntityID()
+      local summonEntityID = e:Summoner():GetSummonerEntityID()
       local summonEntity = e:GetSummonerEntity()
       if summonEntity and summonEntity:HasSuperEntity() and summonEntity:GetSuperEntity() then
-        summonEntityID = (summonEntity:GetSuperEntity()):GetID()
+        summonEntityID = summonEntity:GetSuperEntity():GetID()
       end
       if summonEntityID == casterEntityID then
         isOwner = true
       end
     else
-      do
-        isOwner = true
-        if isOwner and e:HasTrap() and (table.icontains)(trapIDList, (e:TrapID()):GetTrapID()) then
-          return not e:HasDeadMark()
-        end
-      end
+      isOwner = true
     end
-  end
-)
+    return isOwner and e:HasTrap() and table.icontains(trapIDList, e:TrapID():GetTrapID()) and not e:HasDeadMark()
+  end)
   local isMatchPieceType = false
   if matchPieceType then
-    local utilData = (self._world):GetService("UtilData")
+    local utilData = self._world:GetService("UtilData")
     local pieceType = utilData:FindPieceElement(pickUpPos)
     if pieceType == matchPieceType then
       isMatchPieceType = true
     end
   end
-  do
-    do
-      if #traps > 0 then
-        local pickUpTrap = traps[1]
-        if isMatchPieceType then
-          buffID = param:GetMatchPieceTypeBuffIDByTrapID((pickUpTrap:TrapID()):GetTrapID())
-        else
-          buffID = param:GetBuffIDByTrapID((pickUpTrap:TrapID()):GetTrapID())
-        end
-      end
-      local buffLogicService = (self._world):GetService("BuffLogic")
-      local triggerSvc = (self._world):GetService("Trigger")
-      local buffResult = SkillBuffEffectResult:New(casterEntityID)
-      local casterEntity = (self._world):GetEntityByID(casterEntityID)
-      local cfgNewBuff = (Cfg.cfg_buff)[buffID]
-      if cfgNewBuff then
-        local nt = NTEachAddBuffStart:New(skillID, casterEntity, casterEntity, attackRange)
-        triggerSvc:Notify(nt)
-        local buff = (buffLogicService:AddBuff(buffID, casterEntity, {casterEntity = casterEntity}))
-        local seqID = nil
-        if buff then
-          seqID = buff:BuffSeq()
-          buffResult:AddBuffResult(seqID)
-        end
-        triggerSvc:Notify(NTEachAddBuffEnd:New(skillID, casterEntity, casterEntity, attackRange, buffID, seqID))
-      end
-      do
-        return {buffResult}
-      end
+  if 0 < #traps then
+    local pickUpTrap = traps[1]
+    if isMatchPieceType then
+      buffID = param:GetMatchPieceTypeBuffIDByTrapID(pickUpTrap:TrapID():GetTrapID())
+    else
+      buffID = param:GetBuffIDByTrapID(pickUpTrap:TrapID():GetTrapID())
     end
   end
+  local buffLogicService = self._world:GetService("BuffLogic")
+  local triggerSvc = self._world:GetService("Trigger")
+  local buffResult = SkillBuffEffectResult:New(casterEntityID)
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
+  local cfgNewBuff = Cfg.cfg_buff[buffID]
+  if cfgNewBuff then
+    local nt = NTEachAddBuffStart:New(skillID, casterEntity, casterEntity, attackRange)
+    triggerSvc:Notify(nt)
+    local buff = buffLogicService:AddBuff(buffID, casterEntity, {casterEntity = casterEntity})
+    local seqID
+    if buff then
+      seqID = buff:BuffSeq()
+      buffResult:AddBuffResult(seqID)
+    end
+    triggerSvc:Notify(NTEachAddBuffEnd:New(skillID, casterEntity, casterEntity, attackRange, buffID, seqID))
+  end
+  return {buffResult}
 end
-
-

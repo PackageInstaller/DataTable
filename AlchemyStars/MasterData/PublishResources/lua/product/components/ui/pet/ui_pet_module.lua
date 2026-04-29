@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetModule", UIModule)
 UIPetModule = UIPetModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetModule.Init = function(self)
-  -- function num : 0_0
+function UIPetModule:Init()
   self._filterFirstConditionList = {}
   self._filterFirstTagConditionList = {}
   self._filterSecondTagConditionList = {}
@@ -17,16 +10,10 @@ UIPetModule.Init = function(self)
   self._curSelctPetInfo = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.Dispose = function(self)
-  -- function num : 0_1
+function UIPetModule:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.Constructor = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetModule:Constructor()
   self._filterFirstConditionList = {}
   self._filterFirstTagConditionList = {}
   self._filterSecondTagConditionList = {}
@@ -42,71 +29,41 @@ UIPetModule.Constructor = function(self)
   self:ResetSortFilterParams()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.ResetSortFilterParams = function(self)
-  -- function num : 0_3
+function UIPetModule:ResetSortFilterParams()
   self._currentSortType = 2
   self:_CreateFilterParams()
   self:_CreateSortParamsNew()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule._CreateSortParamsNew = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIPetModule:_CreateSortParamsNew()
   self._sortTypeTab = {}
   self._sortParamGetTab = {}
   self._currentSortOrder = PetSortOrder.Descending
-  ;
-  (table.insert)(self._sortParamGetTab, function()
-    -- function num : 0_4_0 , upvalues : self
+  table.insert(self._sortParamGetTab, function()
     return self:StarSortParam()
-  end
-)
-  ;
-  (table.insert)(self._sortParamGetTab, function()
-    -- function num : 0_4_1 , upvalues : self
+  end)
+  table.insert(self._sortParamGetTab, function()
     return self:LevelSortParam()
-  end
-)
-  ;
-  (table.insert)(self._sortParamGetTab, function()
-    -- function num : 0_4_2 , upvalues : self
+  end)
+  table.insert(self._sortParamGetTab, function()
     return self:ElementSortParam()
-  end
-)
-  ;
-  (table.insert)(self._sortParamGetTab, function()
-    -- function num : 0_4_3 , upvalues : self
+  end)
+  table.insert(self._sortParamGetTab, function()
     return self:AttackSortParam()
-  end
-)
-  ;
-  (table.insert)(self._sortParamGetTab, function()
-    -- function num : 0_4_4 , upvalues : self
+  end)
+  table.insert(self._sortParamGetTab, function()
     return self:DefenceSortParam()
-  end
-)
-  ;
-  (table.insert)(self._sortParamGetTab, function()
-    -- function num : 0_4_5 , upvalues : self
+  end)
+  table.insert(self._sortParamGetTab, function()
     return self:HealthSortParam()
-  end
-)
-  ;
-  (table.insert)(self._sortParamGetTab, function()
-    -- function num : 0_4_6 , upvalues : self
+  end)
+  table.insert(self._sortParamGetTab, function()
     return self:AffinitySortParam()
-  end
-)
-  self._sortTypeTab = ((self._sortParamGetTab)[self._currentSortType])()
+  end)
+  self._sortTypeTab = self._sortParamGetTab[self._currentSortType]()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.ChangeSortParamsNew = function(self, tp)
-  -- function num : 0_5 , upvalues : _ENV
+function UIPetModule:ChangeSortParamsNew(tp)
   if tp == self._currentSortType then
     if self._currentSortOrder == PetSortOrder.Ascending then
       self._currentSortOrder = PetSortOrder.Descending
@@ -124,364 +81,243 @@ UIPetModule.ChangeSortParamsNew = function(self, tp)
       self._gradeOrder = PetSortOrder.Descending
     end
   end
-  self._sortTypeTab = ((self._sortParamGetTab)[self._currentSortType])()
+  self._sortTypeTab = self._sortParamGetTab[self._currentSortType]()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetCurrentSortType = function(self)
-  -- function num : 0_6
+function UIPetModule:GetCurrentSortType()
   return self._currentSortType, self._currentSortOrder
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.LevelSortParam = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIPetModule:LevelSortParam()
   local paramTab = {}
   local PetSortParam1 = PetSortParam:New(PetSortType.Grade, self._gradeOrder)
-  ;
-  (table.insert)(paramTab, PetSortParam1)
+  table.insert(paramTab, PetSortParam1)
   local PetSortParam2 = PetSortParam:New(PetSortType.Level, self._currentSortOrder)
-  ;
-  (table.insert)(paramTab, PetSortParam2)
+  table.insert(paramTab, PetSortParam2)
   local PetSortParam3 = PetSortParam:New(PetSortType.Star, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam3)
+  table.insert(paramTab, PetSortParam3)
   local PetSortParam4 = PetSortParam:New(PetSortType.ID, PetSortOrder.Ascending)
-  ;
-  (table.insert)(paramTab, PetSortParam4)
+  table.insert(paramTab, PetSortParam4)
   return paramTab
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.StarSortParam = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIPetModule:StarSortParam()
   local paramTab = {}
   local PetSortParam1 = PetSortParam:New(PetSortType.Star, self._currentSortOrder)
-  ;
-  (table.insert)(paramTab, PetSortParam1)
+  table.insert(paramTab, PetSortParam1)
   local PetSortParam2 = PetSortParam:New(PetSortType.Grade, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam2)
+  table.insert(paramTab, PetSortParam2)
   local PetSortParam3 = PetSortParam:New(PetSortType.Level, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam3)
+  table.insert(paramTab, PetSortParam3)
   local PetSortParam4 = PetSortParam:New(PetSortType.ID, PetSortOrder.Ascending)
-  ;
-  (table.insert)(paramTab, PetSortParam4)
+  table.insert(paramTab, PetSortParam4)
   return paramTab
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.ElementSortParam = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIPetModule:ElementSortParam()
   local paramTab = {}
   local PetSortParam1 = PetSortParam:New(PetSortType.Element, self._currentSortOrder)
-  ;
-  (table.insert)(paramTab, PetSortParam1)
+  table.insert(paramTab, PetSortParam1)
   local PetSortParam2 = PetSortParam:New(PetSortType.Grade, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam2)
+  table.insert(paramTab, PetSortParam2)
   local PetSortParam3 = PetSortParam:New(PetSortType.Level, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam3)
+  table.insert(paramTab, PetSortParam3)
   local PetSortParam4 = PetSortParam:New(PetSortType.Star, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam4)
+  table.insert(paramTab, PetSortParam4)
   local PetSortParam5 = PetSortParam:New(PetSortType.ID, PetSortOrder.Ascending)
-  ;
-  (table.insert)(paramTab, PetSortParam5)
+  table.insert(paramTab, PetSortParam5)
   return paramTab
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.AttackSortParam = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIPetModule:AttackSortParam()
   local paramTab = {}
   local PetSortParam1 = PetSortParam:New(PetSortType.Attack, self._currentSortOrder)
-  ;
-  (table.insert)(paramTab, PetSortParam1)
+  table.insert(paramTab, PetSortParam1)
   local PetSortParam2 = PetSortParam:New(PetSortType.Star, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam2)
+  table.insert(paramTab, PetSortParam2)
   local PetSortParam3 = PetSortParam:New(PetSortType.Grade, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam3)
+  table.insert(paramTab, PetSortParam3)
   local PetSortParam4 = PetSortParam:New(PetSortType.Level, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam4)
+  table.insert(paramTab, PetSortParam4)
   local PetSortParam5 = PetSortParam:New(PetSortType.ID, PetSortOrder.Ascending)
-  ;
-  (table.insert)(paramTab, PetSortParam5)
+  table.insert(paramTab, PetSortParam5)
   return paramTab
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.DefenceSortParam = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIPetModule:DefenceSortParam()
   local paramTab = {}
   local PetSortParam1 = PetSortParam:New(PetSortType.Defence, self._currentSortOrder)
-  ;
-  (table.insert)(paramTab, PetSortParam1)
+  table.insert(paramTab, PetSortParam1)
   local PetSortParam2 = PetSortParam:New(PetSortType.Star, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam2)
+  table.insert(paramTab, PetSortParam2)
   local PetSortParam3 = PetSortParam:New(PetSortType.Grade, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam3)
+  table.insert(paramTab, PetSortParam3)
   local PetSortParam4 = PetSortParam:New(PetSortType.Level, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam4)
+  table.insert(paramTab, PetSortParam4)
   local PetSortParam5 = PetSortParam:New(PetSortType.ID, PetSortOrder.Ascending)
-  ;
-  (table.insert)(paramTab, PetSortParam5)
+  table.insert(paramTab, PetSortParam5)
   return paramTab
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.HealthSortParam = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIPetModule:HealthSortParam()
   local paramTab = {}
   local PetSortParam1 = PetSortParam:New(PetSortType.Health, self._currentSortOrder)
-  ;
-  (table.insert)(paramTab, PetSortParam1)
+  table.insert(paramTab, PetSortParam1)
   local PetSortParam2 = PetSortParam:New(PetSortType.Star, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam2)
+  table.insert(paramTab, PetSortParam2)
   local PetSortParam3 = PetSortParam:New(PetSortType.Grade, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam3)
+  table.insert(paramTab, PetSortParam3)
   local PetSortParam4 = PetSortParam:New(PetSortType.Level, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam4)
+  table.insert(paramTab, PetSortParam4)
   local PetSortParam5 = PetSortParam:New(PetSortType.ID, PetSortOrder.Ascending)
-  ;
-  (table.insert)(paramTab, PetSortParam5)
+  table.insert(paramTab, PetSortParam5)
   return paramTab
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.AffinitySortParam = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIPetModule:AffinitySortParam()
   local paramTab = {}
   local PetSortParam1 = PetSortParam:New(PetSortType.Affinity, self._currentSortOrder)
-  ;
-  (table.insert)(paramTab, PetSortParam1)
+  table.insert(paramTab, PetSortParam1)
   local PetSortParam2 = PetSortParam:New(PetSortType.Star, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam2)
+  table.insert(paramTab, PetSortParam2)
   local PetSortParam3 = PetSortParam:New(PetSortType.Grade, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam3)
+  table.insert(paramTab, PetSortParam3)
   local PetSortParam4 = PetSortParam:New(PetSortType.Level, PetSortOrder.Descending)
-  ;
-  (table.insert)(paramTab, PetSortParam4)
+  table.insert(paramTab, PetSortParam4)
   local PetSortParam5 = PetSortParam:New(PetSortType.ID, PetSortOrder.Ascending)
-  ;
-  (table.insert)(paramTab, PetSortParam5)
+  table.insert(paramTab, PetSortParam5)
   return paramTab
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule._CreateSortParams = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIPetModule:_CreateSortParams()
   self._sortTypeTab = {}
-  local defaultSortParam1 = ((Cfg.cfg_client_pet_sort)[1]).Type
+  local defaultSortParam1 = Cfg.cfg_client_pet_sort[1].Type
   local PetSortParam1 = PetSortParam:New(defaultSortParam1, PetSortOrder.Descending)
-  ;
-  (table.insert)(self._sortTypeTab, PetSortParam1)
+  table.insert(self._sortTypeTab, PetSortParam1)
   local PetSortParam3 = PetSortParam:New(PetSortType.ID, PetSortOrder.Ascending)
-  ;
-  (table.insert)(self._sortTypeTab, PetSortParam3)
+  table.insert(self._sortTypeTab, PetSortParam3)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule._CreateSortParamsWithoutNew = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIPetModule:_CreateSortParamsWithoutNew()
   self._sortTypeTab = {}
-  local defaultSortParam1 = ((Cfg.cfg_client_pet_sort)[1]).Type
+  local defaultSortParam1 = Cfg.cfg_client_pet_sort[1].Type
   local PetSortParam1 = PetSortParam:New(defaultSortParam1, PetSortOrder.Descending)
-  ;
-  (table.insert)(self._sortTypeTab, PetSortParam1)
+  table.insert(self._sortTypeTab, PetSortParam1)
   local PetSortParam3 = PetSortParam:New(PetSortType.ID, PetSortOrder.Ascending)
-  ;
-  (table.insert)(self._sortTypeTab, PetSortParam3)
+  table.insert(self._sortTypeTab, PetSortParam3)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule._CreateFilterParams = function(self)
-  -- function num : 0_16
+function UIPetModule:_CreateFilterParams()
   self._filterParamTab = {}
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetSortParams = function(self)
-  -- function num : 0_17
+function UIPetModule:GetSortParams()
   if self._newSort then
-    return (self._sortTypeTab)[2]
+    return self._sortTypeTab[2]
   else
-    return (self._sortTypeTab)[1]
+    return self._sortTypeTab[1]
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetFilterParams = function(self)
-  -- function num : 0_18
+function UIPetModule:GetFilterParams()
   return self._filterParamTab
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.SetSortParams = function(self, params)
-  -- function num : 0_19
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIPetModule:SetSortParams(params)
   if self._newSort then
-    ((self._sortTypeTab)[2])._sort_order = params._sort_order
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._sortTypeTab)[2])._sort_type = params._sort_type
+    self._sortTypeTab[2]._sort_order = params._sort_order
+    self._sortTypeTab[2]._sort_type = params._sort_type
   else
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._sortTypeTab)[1])._sort_order = params._sort_order
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._sortTypeTab)[1])._sort_type = params._sort_type
+    self._sortTypeTab[1]._sort_order = params._sort_order
+    self._sortTypeTab[1]._sort_type = params._sort_type
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.SetFilterParams = function(self, type, tag)
-  -- function num : 0_20 , upvalues : _ENV
+function UIPetModule:SetFilterParams(type, tag)
   for i = 1, #self._filterParamTab do
-    if ((self._filterParamTab)[i])._filter_type == type then
-      (table.remove)(self._filterParamTab, i)
-      return 
+    if self._filterParamTab[i]._filter_type == type then
+      table.remove(self._filterParamTab, i)
+      return
     end
   end
-  local filterParam = nil
+  local filterParam
   if tag then
     filterParam = PetFilterParam:New(type, tag)
   else
     filterParam = PetFilterParam:New(type)
   end
-  ;
-  (table.insert)(self._filterParamTab, filterParam)
+  table.insert(self._filterParamTab, filterParam)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule._SortPets = function(self)
-  -- function num : 0_21
-  local pets = (self._petModule):GetPets()
-  self._petSortedList = (self._petModule):_SortPets(pets, self._filterParamTab, self._sortTypeTab)
+function UIPetModule:_SortPets()
+  local pets = self._petModule:GetPets()
+  self._petSortedList = self._petModule:_SortPets(pets, self._filterParamTab, self._sortTypeTab)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.RemoveNewSortParam = function(self)
-  -- function num : 0_22
+function UIPetModule:RemoveNewSortParam()
   self._newSort = false
   self:_CreateSortParamsWithoutNew()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.AddNewSortParam = function(self)
-  -- function num : 0_23
+function UIPetModule:AddNewSortParam()
   self._newSort = false
   self:_CreateSortParams()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.SetTeamPets = function(self, pstids)
-  -- function num : 0_24 , upvalues : _ENV
+function UIPetModule:SetTeamPets(pstids)
   self._teamPets = {}
-  if pstids and (table.count)(pstids) > 0 then
+  if pstids and table.count(pstids) > 0 then
     for i = 1, #pstids do
       local pstid = pstids[i]
-      local pet = (self._petModule):GetPet(pstid)
-      ;
-      (table.insert)(self._teamPets, pet)
+      local pet = self._petModule:GetPet(pstid)
+      table.insert(self._teamPets, pet)
     end
     self._fromTeam = true
-    return 
+    return
   end
   self._fromTeam = false
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.SetTeamCustomPets = function(self, customPetDatas)
-  -- function num : 0_25 , upvalues : _ENV
+function UIPetModule:SetTeamCustomPets(customPetDatas)
   self._teamPets = {}
-  if customPetDatas and (table.count)(customPetDatas) > 0 then
+  if customPetDatas and table.count(customPetDatas) > 0 then
     for i = 1, #customPetDatas do
       local customPetData = customPetDatas[i]
-      ;
-      (table.insert)(self._teamPets, customPetData)
+      table.insert(self._teamPets, customPetData)
     end
     self._fromTeam = true
-    return 
+    return
   end
   self._fromTeam = false
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetSortedPets = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  if self._fromTeam and self._teamPets and (table.count)(self._teamPets) > 0 then
+function UIPetModule:GetSortedPets()
+  if self._fromTeam and self._teamPets and table.count(self._teamPets) > 0 then
     return self._teamPets
   end
   self:_SortPets()
   return self._petSortedList
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.ResetSortInfos = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UIPetModule:ResetSortInfos()
   self._sortTypeInfos = {}
-  local sortConfig = (Cfg.pet_sort_config)({})
-  for key,value in pairs(sortConfig) do
+  local sortConfig = Cfg.pet_sort_config({})
+  for key, value in pairs(sortConfig) do
     local pet_sort_data = pet_sort_data:New(value.SortType, value.Name, value.SortState)
-    ;
-    (table.insert)(self._sortTypeInfos, pet_sort_data)
+    table.insert(self._sortTypeInfos, pet_sort_data)
     if value.SortState > 0 then
       self._curSelctSortItemInfo = pet_sort_data
     end
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.ChangeSortDataState = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIPetModule:ChangeSortDataState()
   local sortTypeInfos = self._sortTypeInfos
   if sortTypeInfos == nil then
-    return 
+    return
   end
   local curSortInfo = self._curSelctSortItemInfo
-  for index,value in pairs(sortTypeInfos) do
+  for index, value in pairs(sortTypeInfos) do
     if value.sortType ~= curSortInfo.sortType then
       value.sortState = 0
     else
@@ -490,156 +326,107 @@ UIPetModule.ChangeSortDataState = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.SetSorDataState = function(self, sortData)
-  -- function num : 0_29 , upvalues : _ENV
+function UIPetModule:SetSorDataState(sortData)
   if sortData == nil then
-    return 
+    return
   end
   if sortData.sortState == SortState.None then
     sortData.sortState = tonumber(SortState.Up)
-  else
-    if sortData.sortState == SortState.Up then
-      sortData.sortState = tonumber(SortState.Down)
-    else
-      if sortData.sortState == SortState.Down then
-        sortData.sortState = tonumber(SortState.Up)
-      end
-    end
+  elseif sortData.sortState == SortState.Up then
+    sortData.sortState = tonumber(SortState.Down)
+  elseif sortData.sortState == SortState.Down then
+    sortData.sortState = tonumber(SortState.Up)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.RefreshSortDataState = function(self, sortInfo)
-  -- function num : 0_30
+function UIPetModule:RefreshSortDataState(sortInfo)
   if sortInfo == nil then
-    return 
+    return
   end
   self:SetSorDataState(sortInfo)
   self:SetCurSortInfo(sortInfo)
   self:ChangeSortDataState()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetPetDatasBySortType = function(self, sortInfo)
-  -- function num : 0_31
+function UIPetModule:GetPetDatasBySortType(sortInfo)
   self:RefreshSortDataState(sortInfo)
   return self:RequestPetDatas()
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.SetCurSelctPet = function(self, petInfo)
-  -- function num : 0_32
+function UIPetModule:SetCurSelctPet(petInfo)
   self._curSelctPetInfo = petInfo
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetCurSelctPet = function(self)
-  -- function num : 0_33
+function UIPetModule:GetCurSelctPet()
   return self._curSelctPetInfo
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.InitFilterElementInfos = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function UIPetModule:InitFilterElementInfos()
   self._filterElementInfos = {}
   for index = 1, 4 do
-    local cfg = (Cfg.pet_filter_element_config)[index]
+    local cfg = Cfg.pet_filter_element_config[index]
     if cfg then
       local info = {}
       info.attributeID = cfg.attributeID
       info.Name = cfg.Name
-      ;
-      (table.insert)(self._filterElementInfos, info)
+      table.insert(self._filterElementInfos, info)
     end
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetFilterElementInfoByIndex = function(self, index)
-  -- function num : 0_35
-  if (self._filterElementInfos)[index] == nil then
-    return 
+function UIPetModule:GetFilterElementInfoByIndex(index)
+  if self._filterElementInfos[index] == nil then
+    return
   end
-  return (self._filterElementInfos)[index]
+  return self._filterElementInfos[index]
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetFilterElementInfos = function(self)
-  -- function num : 0_36
+function UIPetModule:GetFilterElementInfos()
   return self._filterElementInfos
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.InitFilterTagInfos = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function UIPetModule:InitFilterTagInfos()
   self._filterFirstTagInfos = {}
   self._filterSecondTagInfos = {}
-  local configData = (Cfg.cfg_pet_tags)({})
-  for configId,cfg in pairs(configData) do
+  local configData = Cfg.cfg_pet_tags({})
+  for configId, cfg in pairs(configData) do
     if cfg then
       local info = {}
       info.tagID = cfg.ID
       info.Name = cfg.Name
       info.tagType = cfg.tagType
       if cfg.tagType == 1 then
-        (table.insert)(self._filterFirstTagInfos, info)
-      else
-        if cfg.tagType == 2 then
-          (table.insert)(self._filterSecondTagInfos, info)
-        end
+        table.insert(self._filterFirstTagInfos, info)
+      elseif cfg.tagType == 2 then
+        table.insert(self._filterSecondTagInfos, info)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetFilterTagInfoByIndex = function(self, index)
-  -- function num : 0_38
-  if (self._filterFirstTagInfos)[index] == nil then
-    return 
+function UIPetModule:GetFilterTagInfoByIndex(index)
+  if self._filterFirstTagInfos[index] == nil then
+    return
   end
-  return (self._filterFirstTagInfos)[index]
+  return self._filterFirstTagInfos[index]
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetFilterTagInfos = function(self)
-  -- function num : 0_39
+function UIPetModule:GetFilterTagInfos()
   return self._filterFirstTagInfos
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetFilterSecondTagInfoByIndex = function(self, index)
-  -- function num : 0_40
-  if (self._filterSecondTagInfos)[index] == nil then
-    return 
+function UIPetModule:GetFilterSecondTagInfoByIndex(index)
+  if self._filterSecondTagInfos[index] == nil then
+    return
   end
-  return (self._filterSecondTagInfos)[index]
+  return self._filterSecondTagInfos[index]
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetFilterrSecondTagInfos = function(self)
-  -- function num : 0_41
+function UIPetModule:GetFilterrSecondTagInfos()
   return self._filterSecondTagInfos
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.RequestPetDatas = function(self)
-  -- function num : 0_42
+function UIPetModule:RequestPetDatas()
   local tRequestPetDatas = {}
   local _curSortInfo = self._curSelctSortItemInfo
   local _filterFirstConditionList = self._filterFirstConditionList
@@ -651,17 +438,14 @@ UIPetModule.RequestPetDatas = function(self)
   requestHandleInfo.element_list = _filterFirstConditionList
   requestHandleInfo.tag_list = _filterFirstTagConditionList
   requestHandleInfo.secondeTag_list = _filterSecondTagConditionList
-  tRequestPetDatas = (self._petModule):SortPets(requestHandleInfo)
+  tRequestPetDatas = self._petModule:SortPets(requestHandleInfo)
   return self:GetAllPetPstID(tRequestPetDatas)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.RequestPetDatasAndReturnPets = function(self)
-  -- function num : 0_43 , upvalues : _ENV
-  local sortConfig = (Cfg.pet_sort_config)({})
+function UIPetModule:RequestPetDatasAndReturnPets()
+  local sortConfig = Cfg.pet_sort_config({})
   local sortInfo = {}
-  for key,value in pairs(sortConfig) do
+  for key, value in pairs(sortConfig) do
     local pet_sort_data = pet_sort_data:New(value.SortType, value.Name, value.SortState)
     if value.SortState > 0 then
       sortInfo = pet_sort_data
@@ -678,53 +462,43 @@ UIPetModule.RequestPetDatasAndReturnPets = function(self)
   requestHandleInfo.element_list = _filterFirstConditionList
   requestHandleInfo.tag_list = _filterFirstTagConditionList
   requestHandleInfo.secondeTag_list = _filterSecondTagConditionList
-  tRequestPetDatas = (self._petModule):SortPets(requestHandleInfo)
+  tRequestPetDatas = self._petModule:SortPets(requestHandleInfo)
   return self:GetAllPetPstID(tRequestPetDatas)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetAllPetPstID = function(self, tRequestPetDatas)
-  -- function num : 0_44 , upvalues : _ENV
+function UIPetModule:GetAllPetPstID(tRequestPetDatas)
   if tRequestPetDatas == nil then
-    return 
+    return
   end
   local petPstIdList = {}
-  for key,petInfo in pairs(tRequestPetDatas) do
+  for key, petInfo in pairs(tRequestPetDatas) do
     local pstID = petInfo:GetPstID()
-    ;
-    (table.insert)(petPstIdList, pstID)
+    table.insert(petPstIdList, pstID)
   end
   return petPstIdList
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.ReleaseConditionLData = function(self)
-  -- function num : 0_45
+function UIPetModule:ReleaseConditionLData()
   self._filterFirstConditionList = {}
   self._filterFirstTagConditionList = {}
   self._filterSecondTagConditionList = {}
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetCombatSKill = function(self, petInfo)
-  -- function num : 0_46 , upvalues : _ENV
+function UIPetModule:GetCombatSKill(petInfo)
   local batSkillsID = {}
   local activeSkillID = petInfo:GetPetActiveSkill()
   local activeSkillinfo = {}
   activeSkillinfo.skillList = {activeSkillID}
-  local extraSkillID_tmp = (petInfo:GetPetExtraActiveSkill())
-  local extraSkillID = nil
+  local extraSkillID_tmp = petInfo:GetPetExtraActiveSkill()
+  local extraSkillID
   if extraSkillID_tmp then
     extraSkillID = extraSkillID_tmp[1]
   end
   local extraSkillinfo = {}
   extraSkillinfo.skillList = {extraSkillID}
-  local chainSkills = (petInfo:GetPetChainSkills())
-  local chainInfo = nil
-  if chainSkills ~= nil and (table.count)(chainSkills) > 0 then
+  local chainSkills = petInfo:GetPetChainSkills()
+  local chainInfo
+  if chainSkills ~= nil and table.count(chainSkills) > 0 then
     chainInfo = {}
     chainInfo.skillList = chainSkills
   end
@@ -732,38 +506,29 @@ UIPetModule.GetCombatSKill = function(self, petInfo)
   local captaInfo = {}
   captaInfo.skillList = {captainID}
   if activeSkillID and activeSkillID ~= 0 then
-    (table.insert)(batSkillsID, activeSkillinfo)
+    table.insert(batSkillsID, activeSkillinfo)
   end
   if extraSkillID and extraSkillID ~= 0 then
-    (table.insert)(batSkillsID, extraSkillinfo)
+    table.insert(batSkillsID, extraSkillinfo)
   end
-  if chainSkills and (table.count)(chainSkills) > 0 then
-    (table.insert)(batSkillsID, chainInfo)
+  if chainSkills and table.count(chainSkills) > 0 then
+    table.insert(batSkillsID, chainInfo)
   end
   if captainID and captainID ~= 0 then
-    (table.insert)(batSkillsID, captaInfo)
+    table.insert(batSkillsID, captaInfo)
   end
   return batSkillsID
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetWorkSKillInfo = function(self, petInfo)
-  -- function num : 0_47
+function UIPetModule:GetWorkSKillInfo(petInfo)
   return petInfo:GetPetWorkSkills()
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetSkillDetailInfoBySkillType = function(self, petInfo)
-  -- function num : 0_48
+function UIPetModule:GetSkillDetailInfoBySkillType(petInfo)
   return self:GetCombatSKill(petInfo)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetSkillDetailInfoBySkillTypeHideExtra = function(self, petInfo)
-  -- function num : 0_49 , upvalues : _ENV
+function UIPetModule:GetSkillDetailInfoBySkillTypeHideExtra(petInfo)
   local skillInfos = self:GetSkillDetailInfoBySkillType(petInfo)
   local petAwake = petInfo:GetPetAwakening()
   local petGrade = petInfo:GetPetGrade()
@@ -775,11 +540,15 @@ UIPetModule.GetSkillDetailInfoBySkillTypeHideExtra = function(self, petInfo)
     local inner = true
     for j = 1, #skill_list do
       local skill_id = skill_list[j]
-      local cfgs = (Cfg.cfg_pet_skill)({PetID = petId, Grade = petGrade, Awakening = petAwake})
-      if cfgs and (table.count)(cfgs) > 0 then
+      local cfgs = Cfg.cfg_pet_skill({
+        PetID = petId,
+        Grade = petGrade,
+        Awakening = petAwake
+      })
+      if cfgs and table.count(cfgs) > 0 then
         local tmp_cfg = cfgs[1]
         local extraids = tmp_cfg.ExtraActiveSkill
-        if extraids and #extraids > 0 then
+        if extraids and 0 < #extraids then
           local extraid = extraids[1]
           if extraid == skill_id then
             local HideExtra = tmp_cfg.HideExtraSkillInPanel
@@ -793,40 +562,27 @@ UIPetModule.GetSkillDetailInfoBySkillTypeHideExtra = function(self, petInfo)
         end
       end
     end
-    do
-      do
-        if inner then
-          (table.insert)(skillInfos_ret, skill_info)
-        end
-        -- DECOMPILER ERROR at PC62: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if inner then
+      table.insert(skillInfos_ret, skill_info)
     end
   end
   return skillInfos_ret
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.RegisteredAttributeFilterType = function(self, attFilterType)
-  -- function num : 0_50 , upvalues : _ENV
+function UIPetModule:RegisteredAttributeFilterType(attFilterType)
   local isHave, index = self:ContainAttributeFilterType(attFilterType)
   if isHave == true then
-    (table.remove)(self._filterFirstConditionList, index)
+    table.remove(self._filterFirstConditionList, index)
   else
-    ;
-    (table.insert)(self._filterFirstConditionList, attFilterType)
+    table.insert(self._filterFirstConditionList, attFilterType)
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.ContainAttributeFilterType = function(self, attFilterType)
-  -- function num : 0_51 , upvalues : _ENV
+function UIPetModule:ContainAttributeFilterType(attFilterType)
   if self._filterFirstConditionList == nil then
     return false, -1
   end
-  for index,conditionType in ipairs(self._filterFirstConditionList) do
+  for index, conditionType in ipairs(self._filterFirstConditionList) do
     if conditionType == attFilterType then
       return true, index
     end
@@ -834,41 +590,28 @@ UIPetModule.ContainAttributeFilterType = function(self, attFilterType)
   return false, -1
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetAttributeFilterFirstConditionList = function(self)
-  -- function num : 0_52
+function UIPetModule:GetAttributeFilterFirstConditionList()
   return self._filterFirstConditionList
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.SetAttributeFilterFirstConditionList = function(self, filterFirstConditionList)
-  -- function num : 0_53
+function UIPetModule:SetAttributeFilterFirstConditionList(filterFirstConditionList)
   self._filterFirstConditionList = filterFirstConditionList
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.RegisteredTagFilterType = function(self, tagType)
-  -- function num : 0_54 , upvalues : _ENV
+function UIPetModule:RegisteredTagFilterType(tagType)
   local isHave, index = self:ContainTagFilterType(tagType)
   if isHave == true then
-    (table.remove)(self._filterFirstTagConditionList, index)
+    table.remove(self._filterFirstTagConditionList, index)
   else
-    ;
-    (table.insert)(self._filterFirstTagConditionList, tagType)
+    table.insert(self._filterFirstTagConditionList, tagType)
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.ContainTagFilterType = function(self, tagType)
-  -- function num : 0_55 , upvalues : _ENV
+function UIPetModule:ContainTagFilterType(tagType)
   if self._filterFirstTagConditionList == nil then
     return false, -1
   end
-  for index,conditionType in ipairs(self._filterFirstTagConditionList) do
+  for index, conditionType in ipairs(self._filterFirstTagConditionList) do
     if conditionType == tagType then
       return true, index
     end
@@ -876,41 +619,28 @@ UIPetModule.ContainTagFilterType = function(self, tagType)
   return false, -1
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetTagFilterFirstConditionList = function(self)
-  -- function num : 0_56
+function UIPetModule:GetTagFilterFirstConditionList()
   return self._filterFirstTagConditionList
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.SetTagFilterFirstConditionList = function(self, filterSecondConditionList)
-  -- function num : 0_57
+function UIPetModule:SetTagFilterFirstConditionList(filterSecondConditionList)
   self._filterFirstTagConditionList = filterSecondConditionList
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.RegisteredSecondTagFilterType = function(self, tagType)
-  -- function num : 0_58 , upvalues : _ENV
+function UIPetModule:RegisteredSecondTagFilterType(tagType)
   local isHave, index = self:ContainSecondTagFilterType(tagType)
   if isHave == true then
-    (table.remove)(self._filterSecondTagConditionList, index)
+    table.remove(self._filterSecondTagConditionList, index)
   else
-    ;
-    (table.insert)(self._filterSecondTagConditionList, tagType)
+    table.insert(self._filterSecondTagConditionList, tagType)
   end
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.ContainSecondTagFilterType = function(self, tagType)
-  -- function num : 0_59 , upvalues : _ENV
+function UIPetModule:ContainSecondTagFilterType(tagType)
   if self._filterSecondTagConditionList == nil then
     return false, -1
   end
-  for index,conditionType in ipairs(self._filterSecondTagConditionList) do
+  for index, conditionType in ipairs(self._filterSecondTagConditionList) do
     if conditionType == tagType then
       return true, index
     end
@@ -918,98 +648,69 @@ UIPetModule.ContainSecondTagFilterType = function(self, tagType)
   return false, -1
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetTagFilterSecondConditionList = function(self)
-  -- function num : 0_60
+function UIPetModule:GetTagFilterSecondConditionList()
   return self._filterSecondTagConditionList
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.SetTagFilterSecondConditionList = function(self, filterSecondConditionList)
-  -- function num : 0_61
+function UIPetModule:SetTagFilterSecondConditionList(filterSecondConditionList)
   self._filterSecondTagConditionList = filterSecondConditionList
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetAllSortInfos = function(self)
-  -- function num : 0_62
+function UIPetModule:GetAllSortInfos()
   return self._sortTypeInfos
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.SetAllSortInfos = function(self, sortInfos)
-  -- function num : 0_63
+function UIPetModule:SetAllSortInfos(sortInfos)
   self._sortTypeInfos = sortInfos
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetSortInfoByIndex = function(self, index)
-  -- function num : 0_64
+function UIPetModule:GetSortInfoByIndex(index)
   if self._sortTypeInfos == nil then
     return nil
   end
-  if (self._sortTypeInfos)[index] == nil then
+  if self._sortTypeInfos[index] == nil then
     return nil
   end
-  return (self._sortTypeInfos)[index]
+  return self._sortTypeInfos[index]
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetCurSortInfo = function(self)
-  -- function num : 0_65
+function UIPetModule:GetCurSortInfo()
   return self._curSelctSortItemInfo
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.SetCurSortInfo = function(self, sortInfo)
-  -- function num : 0_66
+function UIPetModule:SetCurSortInfo(sortInfo)
   self._curSelctSortItemInfo = sortInfo
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetDiffWithGrade = function(self, petInfo, hasBody)
-  -- function num : 0_67 , upvalues : _ENV
+function UIPetModule:GetDiffWithGrade(petInfo, hasBody)
   local change_data = {
-active = {}
-, 
-extra = {}
-, 
-chain = {}
-, 
-work = {}
-, 
-passive = {}
-, 
-body = {}
-}
+    active = {},
+    extra = {},
+    chain = {},
+    work = {},
+    passive = {},
+    body = {}
+  }
   local diff = petInfo:GetUpgradeChangeWithSkillIDNew()
   if diff == nil then
-    return 
+    return
   end
   local body = diff.body
   local tab = {}
-  if (diff.active).changeType ~= PetSkillChangeState.NoChange then
-    (table.insert)(tab, diff.active)
+  if diff.active.changeType ~= PetSkillChangeState.NoChange then
+    table.insert(tab, diff.active)
   end
-  if (diff.extra).changeType ~= PetSkillChangeState.NoChange then
-    (table.insert)(tab, diff.extra)
+  if diff.extra.changeType ~= PetSkillChangeState.NoChange then
+    table.insert(tab, diff.extra)
   end
-  if (diff.chain).changeType ~= PetSkillChangeState.NoChange then
-    (table.insert)(tab, diff.chain)
+  if diff.chain.changeType ~= PetSkillChangeState.NoChange then
+    table.insert(tab, diff.chain)
   end
-  if (diff.passive).changeType ~= PetSkillChangeState.NoChange then
-    (table.insert)(tab, diff.passive)
+  if diff.passive.changeType ~= PetSkillChangeState.NoChange then
+    table.insert(tab, diff.passive)
   end
-  if (diff.work).changeType ~= PetSkillChangeState.NoChange then
-    (table.insert)(tab, diff.work)
+  if diff.work.changeType ~= PetSkillChangeState.NoChange then
+    table.insert(tab, diff.work)
   end
   if hasBody then
     return body, tab
@@ -1018,75 +719,44 @@ body = {}
   end
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.RemoveNotShowSkill = function(self, petid, grade, awaken, skillVaryInfo)
-  -- function num : 0_68 , upvalues : _ENV
+function UIPetModule:RemoveNotShowSkill(petid, grade, awaken, skillVaryInfo)
   local _petid = petid
   local _grade = grade
   local _awaken = awaken
   local skillinfo = skillVaryInfo
   local returnSkillInfo = {}
-  local removeTab = nil
-  local cfg_pet_skill = (Cfg.cfg_pet_skill)({PetID = _petid, Grade = _grade, Awakening = _awaken})
-  if cfg_pet_skill and (table.count)(cfg_pet_skill) > 0 then
-    if (cfg_pet_skill[1]).NoShowSkillInfo then
-      removeTab = (cfg_pet_skill[1]).NoShowSkillInfo
-      if removeTab and #removeTab > 0 then
+  local removeTab
+  local cfg_pet_skill = Cfg.cfg_pet_skill({
+    PetID = _petid,
+    Grade = _grade,
+    Awakening = _awaken
+  })
+  if cfg_pet_skill and table.count(cfg_pet_skill) > 0 then
+    if cfg_pet_skill[1].NoShowSkillInfo then
+      removeTab = cfg_pet_skill[1].NoShowSkillInfo
+      if removeTab and 0 < #removeTab then
         for i = 1, #skillinfo do
           local s = skillinfo[i]
           if s.type == "passive" then
             local removeState = removeTab[1]
             if removeState ~= 0 then
-              (table.insert)(returnSkillInfo, s)
+              table.insert(returnSkillInfo, s)
             end
-          else
-            do
-              if s.type == "active" then
-                local removeState = removeTab[2]
-                if removeState ~= 0 then
-                  (table.insert)(returnSkillInfo, s)
-                end
-              else
-                do
-                  if s.type == "chain" then
-                    local removeState = removeTab[3]
-                    if removeState ~= 0 then
-                      (table.insert)(returnSkillInfo, s)
-                    end
-                  else
-                    do
-                      if s.type == "extra" then
-                        local removeState = removeTab[4]
-                        local inser = true
-                        if removeState and removeState == 1 then
-                          (table.insert)(returnSkillInfo, s)
-                        end
-                      end
-                      do
-                        -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                        -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                        -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                        -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out IF_STMT
-
-                      end
-                    end
-                  end
-                end
-              end
+          elseif s.type == "active" then
+            local removeState = removeTab[2]
+            if removeState ~= 0 then
+              table.insert(returnSkillInfo, s)
+            end
+          elseif s.type == "chain" then
+            local removeState = removeTab[3]
+            if removeState ~= 0 then
+              table.insert(returnSkillInfo, s)
+            end
+          elseif s.type == "extra" then
+            local removeState = removeTab[4]
+            local inser = true
+            if removeState and removeState == 1 then
+              table.insert(returnSkillInfo, s)
             end
           end
         end
@@ -1102,36 +772,24 @@ UIPetModule.RemoveNotShowSkill = function(self, petid, grade, awaken, skillVaryI
   return returnSkillInfo
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetModule = function(self, type)
-  -- function num : 0_69 , upvalues : _ENV
-  return (GameGlobal.GetModule)(type)
+function UIPetModule:GetModule(type)
+  return GameGlobal.GetModule(type)
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetUIModule = function(self, gameModuleProto)
-  -- function num : 0_70 , upvalues : _ENV
-  return (GameGlobal.GetUIModule)(gameModuleProto)
+function UIPetModule:GetUIModule(gameModuleProto)
+  return GameGlobal.GetUIModule(gameModuleProto)
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.StartTask = function(self, func, ...)
-  -- function num : 0_71 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(func, ...)
+function UIPetModule:StartTask(func, ...)
+  GameGlobal.TaskManager():StartTask(func, ...)
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetAttributeIconData = function(self, pstID)
-  -- function num : 0_72 , upvalues : _ENV
-  local petInfo = (self._petModule):GetPet(pstID)
+function UIPetModule:GetAttributeIconData(pstID)
+  local petInfo = self._petModule:GetPet(pstID)
   if petInfo == nil then
     return nil
   end
-  local attrIconData = nil
+  local attrIconData
   local cfgKey = ""
   local firstElement = petInfo:GetPetFirstElement()
   local secondElement = petInfo:GetPetSecondElement()
@@ -1140,221 +798,178 @@ UIPetModule.GetAttributeIconData = function(self, pstID)
     secondElement = 0
   end
   cfgKey = firstElement .. "_" .. secondElement
-  local cfg = (Cfg.pet_attr_config)[cfgKey]
+  local cfg = Cfg.pet_attr_config[cfgKey]
   if cfg then
     attrIconData = {}
-    local colorValue = (string.split)(cfg.attColor, "|")
+    local colorValue = string.split(cfg.attColor, "|")
     attrIconData.icon = cfg.icon
     attrIconData.attrIcon = cfg.attrIcon
     attrIconData.arrayColor = {}
-    for key,value in pairs(colorValue) do
-      (table.insert)(attrIconData.arrayColor, value)
+    for key, value in pairs(colorValue) do
+      table.insert(attrIconData.arrayColor, value)
     end
   end
-  do
-    return attrIconData
-  end
+  return attrIconData
 end
 
 PetSkillMainType = {fight = 0, work = 1}
 _enum("PetSkillMainType", PetSkillMainType)
-SkillSubType = {major = 1, chain = 2, captain = 3}
+SkillSubType = {
+  major = 1,
+  chain = 2,
+  captain = 3
+}
 _enum("SkillSubType", SkillSubType)
--- DECOMPILER ERROR at PC244: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetModule.GetAwakeSpriteName = function(petId, awake)
-  -- function num : 0_73 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_pet_grade)({PetID = petId})
+function UIPetModule.GetAwakeSpriteName(petId, awake)
+  local cfgs = Cfg.cfg_pet_grade({PetID = petId})
   if not cfgs or #cfgs <= 0 then
-    (Log.error)("###[UIPetModule] cfg_pet_grade is nil ! id --> ", petId)
-    return (PetAwakeSpriteName[2])[0]
+    Log.error("###[UIPetModule] cfg_pet_grade is nil ! id --> ", petId)
+    return PetAwakeSpriteName[2][0]
   end
   local max = 0
-  for _,value in pairs(cfgs) do
+  for _, value in pairs(cfgs) do
     if value.Grade == -1 then
-      do
-        max = max + 1
-        -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    else
+      max = max + 1
     end
   end
-  return (PetAwakeSpriteName[max])[awake]
+  return PetAwakeSpriteName[max][awake]
 end
 
--- DECOMPILER ERROR at PC247: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetAwakeSpriteNameByParam = function(max, awake)
-  -- function num : 0_74 , upvalues : _ENV
-  return (PetAwakeSpriteName[max])[awake]
+function UIPetModule.GetAwakeSpriteNameByParam(max, awake)
+  return PetAwakeSpriteName[max][awake]
 end
 
--- DECOMPILER ERROR at PC250: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetAwakeSpriteGlowName = function(petId, awake)
-  -- function num : 0_75 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_pet_grade)({PetID = petId})
+function UIPetModule.GetAwakeSpriteGlowName(petId, awake)
+  local cfgs = Cfg.cfg_pet_grade({PetID = petId})
   if not cfgs or #cfgs <= 0 then
-    return (PetAwakeSpriteGlowName[2])[0]
+    return PetAwakeSpriteGlowName[2][0]
   end
   local hasAwake3 = true
-  for _,value in pairs(cfgs) do
+  for _, value in pairs(cfgs) do
     if value.Grade == -1 then
       hasAwake3 = false
       break
     end
   end
-  do
-    if hasAwake3 then
-      return (PetAwakeSpriteGlowName[3])[awake]
-    end
-    return (PetAwakeSpriteGlowName[2])[awake]
+  if hasAwake3 then
+    return PetAwakeSpriteGlowName[3][awake]
   end
+  return PetAwakeSpriteGlowName[2][awake]
 end
 
--- DECOMPILER ERROR at PC253: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.JumpToPetUI = function(self, pstid, uiName)
-  -- function num : 0_76 , upvalues : _ENV
-  local list = {UIBreakController = true, UIPetEquipUpLevelController = true, UIGradeInterfaceController = true}
+function UIPetModule:JumpToPetUI(pstid, uiName)
+  local list = {
+    UIBreakController = true,
+    UIPetEquipUpLevelController = true,
+    UIGradeInterfaceController = true
+  }
   if not list[uiName] then
-    (Log.fatal)("UIPetModule:JumpToPetUI() 暂不支持前往 ", uiName, " 界面的跳转")
-    return 
+    Log.fatal("UIPetModule:JumpToPetUI() 暂不支持前往 ", uiName, " 界面的跳转")
+    return
   end
-  local pet = (self._petModule):GetPet(pstid)
+  local pet = self._petModule:GetPet(pstid)
   if not pet then
-    (Log.fatal)("UIPetModule:JumpToPetUI() 找不到对应pet pstid:", pstid)
-    return 
+    Log.fatal("UIPetModule:JumpToPetUI() 找不到对应pet pstid:", pstid)
+    return
   end
   local openDialogListInfo = OpenDialogListInfo:New()
   openDialogListInfo:AddUIInfo("UIHeartSpiritController")
   openDialogListInfo:AddUIInfo("UISpiritDetailGroupController", pet:GetTemplateID())
   if uiName == "UIBreakController" then
     openDialogListInfo:AddUIInfo(uiName, pet:GetTemplateID())
-  else
-    if uiName == "UIPetEquipUpLevelController" then
-      openDialogListInfo:AddUIInfo("UIPetEquipController", pet)
-      openDialogListInfo:AddUIInfo(uiName, pet)
-    else
-      if uiName == "UIGradeInterfaceController" then
-        openDialogListInfo:AddUIInfo(uiName, pet:GetTemplateID())
-      end
-    end
+  elseif uiName == "UIPetEquipUpLevelController" then
+    openDialogListInfo:AddUIInfo("UIPetEquipController", pet)
+    openDialogListInfo:AddUIInfo(uiName, pet)
+  elseif uiName == "UIGradeInterfaceController" then
+    openDialogListInfo:AddUIInfo(uiName, pet:GetTemplateID())
   end
-  ;
-  ((GameGlobal.UIStateManager)()):SwitchStateWithDialogList(UIStateType.UIMain, openDialogListInfo, true)
+  GameGlobal.UIStateManager():SwitchStateWithDialogList(UIStateType.UIMain, openDialogListInfo, true)
 end
 
--- DECOMPILER ERROR at PC256: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.ProcessSinglePetEnhance = function(oriPet)
-  -- function num : 0_77 , upvalues : _ENV
+function UIPetModule.ProcessSinglePetEnhance(oriPet)
   local outIsEnhanced = false
   if not oriPet then
     return oriPet, outIsEnhanced
   end
   local outPet = oriPet
-  local module = (GameGlobal.GetModule)(MissionModule)
+  local module = GameGlobal.GetModule(MissionModule)
   local ctx = module:TeamCtx()
   if ctx.teamOpenerType == TeamOpenerType.Campaign then
     local param = ctx:GetParam()
     if param then
       local missionId = param[1]
-      local missionComponentId = nil
-      do
-        if param[3] then
-          local keyMap = param[3]
-          missionComponentId = keyMap[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId]
+      local missionComponentId
+      if param[3] then
+        local keyMap = param[3]
+        missionComponentId = keyMap[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId]
+      end
+      if missionComponentId then
+        local campaignModule = GameGlobal.GetModule(CampaignModule)
+        local usePet1, isEnhanced1 = campaignModule:ProcressCampaignPetEnhance(oriPet, missionId)
+        local usePet2, isEnhanced2 = campaignModule:ProcressPetEnhance(oriPet, missionComponentId)
+        if isEnhanced2 then
+          outPet = usePet2
+          outIsEnhanced = true
+        elseif isEnhanced1 then
+          outPet = usePet1
+          outIsEnhanced = true
         end
+      end
+    end
+    return outPet, outIsEnhanced
+  elseif ctx.teamOpenerType == TeamOpenerType.Camp_Diff then
+    local param = ctx:GetParam()
+    if param then
+      local missionId = param[1]
+      local diffCpt = param[5]
+      if diffCpt then
+        local missionComponentId = diffCpt:GetComponentCfgId()
         if missionComponentId then
-          local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+          local campaignModule = GameGlobal.GetModule(CampaignModule)
           local usePet1, isEnhanced1 = campaignModule:ProcressCampaignPetEnhance(oriPet, missionId)
           local usePet2, isEnhanced2 = campaignModule:ProcressPetEnhance(oriPet, missionComponentId)
           if isEnhanced2 then
             outPet = usePet2
             outIsEnhanced = true
-          else
-            if isEnhanced1 then
-              outPet = usePet1
-              outIsEnhanced = true
-            end
-          end
-        end
-        do
-          do
-            do return outPet, outIsEnhanced end
-            if ctx.teamOpenerType == TeamOpenerType.Camp_Diff then
-              local param = ctx:GetParam()
-              if param then
-                local missionId = param[1]
-                local diffCpt = param[5]
-                if diffCpt then
-                  local missionComponentId = diffCpt:GetComponentCfgId()
-                  if missionComponentId then
-                    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-                    local usePet1, isEnhanced1 = campaignModule:ProcressCampaignPetEnhance(oriPet, missionId)
-                    local usePet2, isEnhanced2 = campaignModule:ProcressPetEnhance(oriPet, missionComponentId)
-                    if isEnhanced2 then
-                      outPet = usePet2
-                      outIsEnhanced = true
-                    else
-                      if isEnhanced1 then
-                        outPet = usePet1
-                        outIsEnhanced = true
-                      end
-                    end
-                  end
-                end
-              end
-              do
-                do
-                  do return outPet, outIsEnhanced end
-                  if ctx.teamOpenerType == TeamOpenerType.Season then
-                    local ctxParam = ctx.param
-                    if ctxParam then
-                      local missionId = ctxParam[1]
-                      local seasonModule = (GameGlobal.GetModule)(SeasonModule)
-                      local usePet, isEnhanced = seasonModule:ProcressPetEnhance(oriPet, missionId)
-                      if isEnhanced then
-                        outIsEnhanced = true
-                      end
-                      outPet = usePet
-                    end
-                    do
-                      do
-                        do return outPet, outIsEnhanced end
-                        do return oriPet, outIsEnhanced end
-                      end
-                    end
-                  end
-                end
-              end
-            end
+          elseif isEnhanced1 then
+            outPet = usePet1
+            outIsEnhanced = true
           end
         end
       end
     end
+    return outPet, outIsEnhanced
+  elseif ctx.teamOpenerType == TeamOpenerType.Season then
+    local ctxParam = ctx.param
+    if ctxParam then
+      local missionId = ctxParam[1]
+      local seasonModule = GameGlobal.GetModule(SeasonModule)
+      local usePet, isEnhanced = seasonModule:ProcressPetEnhance(oriPet, missionId)
+      if isEnhanced then
+        outIsEnhanced = true
+      end
+      outPet = usePet
+    end
+    return outPet, outIsEnhanced
+  else
+    return oriPet, outIsEnhanced
   end
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
+UIPetModule.prof2TexKey = {
+  [2001] = "str_pet_tag_job_name_color_change",
+  [2002] = "str_pet_tag_job_name_return_blood",
+  [2003] = "str_pet_tag_job_name_attack",
+  [2004] = "str_pet_tag_job_name_function"
+}
 
-UIPetModule.prof2TexKey = {[2001] = "str_pet_tag_job_name_color_change", [2002] = "str_pet_tag_job_name_return_blood", [2003] = "str_pet_tag_job_name_attack", [2004] = "str_pet_tag_job_name_function"}
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetPetProfTxtKey = function(pet)
-  -- function num : 0_78 , upvalues : _ENV
+function UIPetModule.GetPetProfTxtKey(pet)
   local prof = pet:GetProf()
-  return (UIPetModule.GetPetProfTxtKeyByProf)(prof)
+  return UIPetModule.GetPetProfTxtKeyByProf(prof)
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetModule.GetPetProfTxtKeyByProf = function(prof)
-  -- function num : 0_79 , upvalues : _ENV
-  return (UIPetModule.prof2TexKey)[prof]
+function UIPetModule.GetPetProfTxtKeyByProf(prof)
+  return UIPetModule.prof2TexKey[prof]
 end
-
-

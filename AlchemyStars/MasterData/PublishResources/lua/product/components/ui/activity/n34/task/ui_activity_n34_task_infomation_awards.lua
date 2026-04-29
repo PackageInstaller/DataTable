@@ -1,82 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/task/ui_activity_n34_task_infomation_awards.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN34TaskInfomationAwards", UIController)
 UIActivityN34TaskInfomationAwards = UIActivityN34TaskInfomationAwards
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN34TaskInfomationAwards.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIActivityN34TaskInfomationAwards:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationAwards.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN34TaskInfomationAwards:OnShow(uiParams)
   local data = uiParams[1]
   self._awards = {}
-  for _,reward in pairs(data) do
-    (table.insert)(self._awards, reward)
+  for _, reward in pairs(data) do
+    table.insert(self._awards, reward)
   end
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationAwards._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN34TaskInfomationAwards:_GetComponents()
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._itemTips = self:GetUIComponent("UISelectObjectPath", "ItemTips")
-  self._tips = (self._itemTips):SpawnObject("UIN31SecondAnniversaryItemTips")
-  self._animation = ((self.view).gameObject):GetComponent("Animation")
-  self.atc = (self:GetGameObject()):GetComponent(typeof(ATransitionComponent))
+  self._tips = self._itemTips:SpawnObject("UIN31SecondAnniversaryItemTips")
+  self._animation = self.view.gameObject:GetComponent("Animation")
+  self.atc = self:GetGameObject():GetComponent(typeof(ATransitionComponent))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationAwards._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local count = (table.count)(self._awards)
-  ;
-  (self._content):SpawnObjects("UIActivityN34TaskInfomationAwardItem", count)
-  local widgets = (self._content):GetAllSpawnList()
-  for index,widget in ipairs(widgets) do
-    widget:SetData((self._awards)[index], function(id, position)
-    -- function num : 0_3_0 , upvalues : self
-    self:_ShowTips(id, position)
+function UIActivityN34TaskInfomationAwards:_OnValue()
+  local count = table.count(self._awards)
+  self._content:SpawnObjects("UIActivityN34TaskInfomationAwardItem", count)
+  local widgets = self._content:GetAllSpawnList()
+  for index, widget in ipairs(widgets) do
+    widget:SetData(self._awards[index], function(id, position)
+      self:_ShowTips(id, position)
+    end, true)
   end
-, true)
-  end
-  ;
-  (self.atc):PlayEnterAnimation(true)
+  self.atc:PlayEnterAnimation(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationAwards.BackgroundBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN34TaskInfomationAwards:BackgroundBtnOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
     local key = "UIActivityN34TaskInfomationAwards"
     self:Lock(key)
-    ;
-    (self.atc):PlayLeaveAnimation(true)
+    self.atc:PlayLeaveAnimation(true)
     YIELD(TT, 233)
     self:CloseDialog()
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationAwards._ShowTips = function(self, id, position)
-  -- function num : 0_5
-  (self._tips):SetData(id, position)
+function UIActivityN34TaskInfomationAwards:_ShowTips(id, position)
+  self._tips:SetData(id, position)
 end
-
-

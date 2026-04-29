@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_damage_same_pos_reduce.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamDamageSamePosReduce", SkillDamageEffectParam)
 SkillEffectParamDamageSamePosReduce = SkillEffectParamDamageSamePosReduce
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamDamageSamePosReduce.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamDamageSamePosReduce:Constructor(t)
   self._finalEffectType = t.finalEffectType
   self._dampPer = t.dampPer
   self._req = t.req or 20
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamDamageSamePosReduce.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamDamageSamePosReduce:GetEffectType()
   return SkillEffectType.DamageSamePosReduce
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamDamageSamePosReduce.GetFinalEffectType = function(self)
-  -- function num : 0_2
+function SkillEffectParamDamageSamePosReduce:GetFinalEffectType()
   return self._finalEffectType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamDamageSamePosReduce.GetDampPercent = function(self)
-  -- function num : 0_3
+function SkillEffectParamDamageSamePosReduce:GetDampPercent()
   return self._dampPer
 end
-
-

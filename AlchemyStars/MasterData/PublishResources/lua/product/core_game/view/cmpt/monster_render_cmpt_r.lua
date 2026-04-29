@@ -1,67 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/monster_render_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MonsterRenderComponent", Object)
 MonsterRenderComponent = MonsterRenderComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterRenderComponent.Constructor = function(self)
-  -- function num : 0_0
+function MonsterRenderComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRenderComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_1
+function MonsterRenderComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRenderComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_2
+function MonsterRenderComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.MonsterRender = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).MonsterRender)
+function Entity:MonsterRender()
+  return self:GetComponent(self.WEComponentsEnum.MonsterRender)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasMonsterRender = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).MonsterRender)
+function Entity:HasMonsterRender()
+  return self:HasComponent(self.WEComponentsEnum.MonsterRender)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddMonsterRender = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MonsterRender
+function Entity:AddMonsterRender()
+  local index = self.WEComponentsEnum.MonsterRender
   local component = MonsterRenderComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceMonsterRender = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MonsterRender
+function Entity:ReplaceMonsterRender()
+  local index = self.WEComponentsEnum.MonsterRender
   local component = MonsterRenderComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveMonsterRender = function(self)
-  -- function num : 0_7
+function Entity:RemoveMonsterRender()
   if self:HasMonsterRender() then
-    self:RemoveComponent((self.WEComponentsEnum).MonsterRender)
+    self:RemoveComponent(self.WEComponentsEnum.MonsterRender)
   end
 end
-
-

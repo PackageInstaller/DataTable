@@ -1,27 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/player_command_preHandler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayerCommandPreHandler", IEntityCommandPreHandler)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayerCommandPreHandler.BindOwner = function(self, owner)
-  -- function num : 0_0
+function PlayerCommandPreHandler:BindOwner(owner)
   self.owner = owner
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerCommandPreHandler.UnBindOwner = function(self)
-  -- function num : 0_1
+function PlayerCommandPreHandler:UnBindOwner()
   self.owner = nil
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerCommandPreHandler.PreHandleCommand = function(self, cmd)
-  -- function num : 0_2
+function PlayerCommandPreHandler:PreHandleCommand(cmd)
 end
-
-

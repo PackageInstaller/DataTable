@@ -1,42 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_sleep.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetSleep", BuffLogicBase)
 BuffLogicSetSleep = BuffLogicSetSleep
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetSleep.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetSleep:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetSleep.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetFlag(BuffFlags.SkipTurn)
+function BuffLogicSetSleep:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetFlag(BuffFlags.SkipTurn)
   return true
 end
 
 _class("BuffLogicResetSleep", BuffLogicBase)
 BuffLogicResetSleep = BuffLogicResetSleep
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetSleep.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetSleep:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetSleep.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):ResetFlag(BuffFlags.SkipTurn)
+function BuffLogicResetSleep:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():ResetFlag(BuffFlags.SkipTurn)
   return true
 end
-
-

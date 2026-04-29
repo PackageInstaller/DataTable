@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/flea/ui_season_maze_room_fleabeadbag.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoomFleaBeadBag", UIController)
 UISeasonMazeRoomFleaBeadBag = UISeasonMazeRoomFleaBeadBag
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoomFleaBeadBag.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeRoomFleaBeadBag:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonMazeRoomFleaBeadBag:OnShow(uiParams)
   self._component = uiParams[1]
-  self._componentInfo = (self._component):GetComponentInfo()
+  self._componentInfo = self._component:GetComponentInfo()
   self._fromClickBead = uiParams[2]
   self._beadData = uiParams[3]
   self._callBack = uiParams[4]
@@ -29,14 +19,10 @@ UISeasonMazeRoomFleaBeadBag.OnShow = function(self, uiParams)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag._InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeRoomFleaBeadBag:_InitWidget()
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self.tipBtn = self:GetGameObject("TipBtn")
-  ;
-  (self.tipBtn):SetActive(false)
+  self.tipBtn:SetActive(false)
   self.beadTips = self:GetGameObject("BeadTips")
   self.tipsTitle = self:GetUIComponent("UILocalizationText", "TipsTitle")
   self.tipsDesc = self:GetUIComponent("UILocalizationText", "TipsDesc")
@@ -45,55 +31,34 @@ UISeasonMazeRoomFleaBeadBag._InitWidget = function(self)
   self:AttachEvent(GameEventType.OnSeasonMazeShowRewardsFinish, self.OnSeasonMazeShowRewardsFinish)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag._OnValue = function(self)
-  -- function num : 0_3
+function UISeasonMazeRoomFleaBeadBag:_OnValue()
   self:_BeadDataTrim()
   self:_InitDynamicScrollView()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag._BeadDataTrim = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (table.clear)(self._data)
-  for key,value in pairs((self._componentInfo).m_auto_bead_map) do
-    (table.insert)(self._data, SeasonMazeBeadData:New(key, value))
+function UISeasonMazeRoomFleaBeadBag:_BeadDataTrim()
+  table.clear(self._data)
+  for key, value in pairs(self._componentInfo.m_auto_bead_map) do
+    table.insert(self._data, SeasonMazeBeadData:New(key, value))
   end
-  ;
-  (table.sort)(self._data, function(a, b)
-    -- function num : 0_4_0
-    do return a.index < b.index end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._data, function(a, b)
+    return a.index < b.index
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag.CloseBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UISeasonMazeRoomFleaBeadBag:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag._InitDynamicScrollView = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._scrollView):InitListView((math.ceil)((table.count)(self._data) / self._perRowCount), function(scrollview, index)
-    -- function num : 0_6_0 , upvalues : self
+function UISeasonMazeRoomFleaBeadBag:_InitDynamicScrollView()
+  self._scrollView:InitListView(math.ceil(table.count(self._data) / self._perRowCount), function(scrollview, index)
     return self:_OnGetItemByIndex(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag._OnGetItemByIndex = function(self, scrollview, index)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMazeRoomFleaBeadBag:_OnGetItemByIndex(scrollview, index)
   local item = scrollview:NewListViewItem("FleaBeadRow")
-  local view = (item.gameObject):GetComponent(typeof(UIView))
+  local view = item.gameObject:GetComponent(typeof(UIView))
   local itemPool = self:GetUIComponentDynamic("UISelectObjectPath", view:GetGameObject("Beads"))
   if not item.IsInitHandlerCalled then
     item.IsInitHandlerCalled = true
@@ -106,243 +71,169 @@ UISeasonMazeRoomFleaBeadBag._OnGetItemByIndex = function(self, scrollview, index
       local index = index * self._perRowCount + i
       local data = self:_GetBeadData(index)
       itemWidget:SetData(index, data, function(uid, id, position)
-    -- function num : 0_7_0 , upvalues : self
-    self:_OnClickBead(uid, id, position)
-  end
-)
+        self:_OnClickBead(uid, id, position)
+      end)
     end
-    do
-      do
-        -- DECOMPILER ERROR at PC48: Confused about usage of register: R12 in 'UnsetPending'
-
-        if not (self._widgets)[itemWidget] then
-          (self._widgets)[itemWidget] = itemWidget
-        end
-        -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if not self._widgets[itemWidget] then
+      self._widgets[itemWidget] = itemWidget
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag._GetBeadData = function(self, index)
-  -- function num : 0_8
-  if (self._data)[index] then
-    return ((self._data)[index]).data
-  end
+function UISeasonMazeRoomFleaBeadBag:_GetBeadData(index)
+  return self._data[index] and self._data[index].data
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag._OnClickBead = function(self, uid, id, position)
-  -- function num : 0_9 , upvalues : _ENV
-  (self.tipBtn):SetActive(false)
+function UISeasonMazeRoomFleaBeadBag:_OnClickBead(uid, id, position)
+  self.tipBtn:SetActive(false)
   if self._preWidget then
-    (self._preWidget):OnSelect(false)
+    self._preWidget:OnSelect(false)
   end
   self._preWidget = self:GetWidgetByUID(uid)
   if self._preWidget then
-    (self._preWidget):OnSelect(true)
+    self._preWidget:OnSelect(true)
   end
   if self._fromClickBead then
-    local okFunc = function()
-    -- function num : 0_9_0 , upvalues : self, _ENV, uid
-    self:Lock("HandleSeasonMazeOperaMarket")
-    self:StartTask(function(TT)
-      -- function num : 0_9_0_0 , upvalues : _ENV, self, uid
-      local res = AsyncRequestRes:New()
-      ;
-      (self._component):HandleSeasonMazeOperaMarket(TT, res, (self._beadData).pstid, uid)
-      if not res:GetSucc() then
-        (Log.error)("Season maze room flea bead fail.")
+    local function okFunc()
+      self:Lock("HandleSeasonMazeOperaMarket")
+      
+      self:StartTask(function(TT)
+        local res = AsyncRequestRes:New()
+        self._component:HandleSeasonMazeOperaMarket(TT, res, self._beadData.pstid, uid)
+        if not res:GetSucc() then
+          Log.error("Season maze room flea bead fail.")
+          self:UnLock("HandleSeasonMazeOperaMarket")
+          if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+            return
+          end
+          return
+        end
         self:UnLock("HandleSeasonMazeOperaMarket")
-        if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-          return 
+        
+        function self._waitGetRewardsFinishCb()
+          self:CloseDialog()
+          if self._callBack then
+            self._callBack()
+          end
         end
-        return 
-      end
-      self:UnLock("HandleSeasonMazeOperaMarket")
-      self._waitGetRewardsFinishCb = function()
-        -- function num : 0_9_0_0_0 , upvalues : self
-        self:CloseDialog()
-        if self._callBack then
-          (self._callBack)()
-        end
-      end
-
-      local showRewards = {}
-      local beadId = ((self._beadData).roleInfo).bead_id
-      local data = SeasonMazeEffect:New()
-      data.type = SeasonMazeEffectType.SMET_Bead
-      data.id = self:_GetCfgID(uid, beadId)
-      data.value_min = 1
-      data.value_max = 1
-      ;
-      (table.insert)(showRewards, data)
-      ;
-      (SeasonMazeTool:GetInstance()):ShowUIGetRewards(showRewards)
+        
+        local showRewards = {}
+        local beadId = self._beadData.roleInfo.bead_id
+        local data = SeasonMazeEffect:New()
+        data.type = SeasonMazeEffectType.SMET_Bead
+        data.id = self:_GetCfgID(uid, beadId)
+        data.value_min = 1
+        data.value_max = 1
+        table.insert(showRewards, data)
+        SeasonMazeTool:GetInstance():ShowUIGetRewards(showRewards)
+      end)
     end
-)
-  end
-
-    local contentStr = (StringTable.Get)("str_season_maze_room_flea_tips1")
+    
+    local contentStr = StringTable.Get("str_season_maze_room_flea_tips1")
     if self:InSlot(uid) then
-      contentStr = (StringTable.Get)("str_season_maze_room_flea_tips2")
+      contentStr = StringTable.Get("str_season_maze_room_flea_tips2")
     end
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", contentStr, okFunc, nil)
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", contentStr, okFunc, nil)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag.GetWidgetByUID = function(self, uid)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonMazeRoomFleaBeadBag:GetWidgetByUID(uid)
   if self._widgets then
-    for _,widget in pairs(self._widgets) do
+    for _, widget in pairs(self._widgets) do
       if widget then
         local data = widget:Data()
-        if data and (data.bead_info).unique_id == uid then
+        if data and data.bead_info.unique_id == uid then
           return widget
         end
       end
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag.InSlot = function(self, uid)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonMazeRoomFleaBeadBag:InSlot(uid)
   if uid <= 0 then
     return false
   end
-  if self._componentInfo and (self._componentInfo).m_auto_bead_fit_list then
-    for _,_uid in pairs((self._componentInfo).m_auto_bead_fit_list) do
+  if self._componentInfo and self._componentInfo.m_auto_bead_fit_list then
+    for _, _uid in pairs(self._componentInfo.m_auto_bead_fit_list) do
       if _uid == uid then
         return true
       end
     end
   end
-  do
-    return false
-  end
-end
-
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag.IsLock = function(self, data, itemType)
-  -- function num : 0_12
   return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag.IsMark = function(self, data, itemType)
-  -- function num : 0_13
+function UISeasonMazeRoomFleaBeadBag:IsLock(data, itemType)
   return false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
+function UISeasonMazeRoomFleaBeadBag:IsMark(data, itemType)
+  return false
+end
 
-UISeasonMazeRoomFleaBeadBag.OnSeasonMazeShowRewardsFinish = function(self, flag)
-  -- function num : 0_14
+function UISeasonMazeRoomFleaBeadBag:OnSeasonMazeShowRewardsFinish(flag)
   if self._waitGetRewardsFinishCb then
-    (self._waitGetRewardsFinishCb)()
+    self._waitGetRewardsFinishCb()
     self._waitGetRewardsFinishCb = nil
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag.OnLongPress = function(self, go, data)
-  -- function num : 0_15 , upvalues : _ENV
+function UISeasonMazeRoomFleaBeadBag:OnLongPress(go, data)
   if data then
-    local cfg = (Cfg.cfg_component_season_maze_autobead)[(data.bead_info).cfg_id]
-    do
-      if cfg then
-        self:Lock("UISeasonMazeRoomFleaBeadBagTips")
-        self:StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : self, go, cfg
-    self:ShowBeadTips(TT, (go.transform).position, cfg.Name, cfg.Desc)
-    self:UnLock("UISeasonMazeRoomFleaBeadBagTips")
-  end
-)
-      end
+    local cfg = Cfg.cfg_component_season_maze_autobead[data.bead_info.cfg_id]
+    if cfg then
+      self:Lock("UISeasonMazeRoomFleaBeadBagTips")
+      self:StartTask(function(TT)
+        self:ShowBeadTips(TT, go.transform.position, cfg.Name, cfg.Desc)
+        self:UnLock("UISeasonMazeRoomFleaBeadBagTips")
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag.ShowBeadTips = function(self, TT, position, titleStr, descStr)
-  -- function num : 0_16 , upvalues : _ENV
-  (self.tipBtn):SetActive(true)
-  ;
-  (self.tipsTitle):SetText((StringTable.Get)(titleStr))
-  ;
-  (self.tipsDesc):SetText((StringTable.Get)(descStr))
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.canvasGroup).alpha = 0
+function UISeasonMazeRoomFleaBeadBag:ShowBeadTips(TT, position, titleStr, descStr)
+  self.tipBtn:SetActive(true)
+  self.tipsTitle:SetText(StringTable.Get(titleStr))
+  self.tipsDesc:SetText(StringTable.Get(descStr))
+  self.canvasGroup.alpha = 0
   YIELD(TT)
   local controllName = self:GetName()
-  local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(controllName)
-  local controller = ((GameGlobal.UIStateManager)()):GetController(controllName)
+  local camera = GameGlobal.UIStateManager():GetControllerCamera(controllName)
+  local controller = GameGlobal.UIStateManager():GetController(controllName)
   local gameObject = controller:GetGameObject()
-  local transform = (gameObject.transform):Find("UICanvas")
+  local transform = gameObject.transform:Find("UICanvas")
   local rectTransform = transform:GetComponent(typeof(UnityEngine.RectTransform))
   local point = camera:WorldToScreenPoint(position)
-  local res, position = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(rectTransform, point, camera, nil)
-  if (rectTransform.sizeDelta).x * 0.5 < position.x + ((self.tipsBgRect).sizeDelta).x then
-    position.x = (rectTransform.sizeDelta).x * 0.5 - ((self.tipsBgRect).sizeDelta).x
+  local res, position = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, point, camera, nil)
+  if position.x + self.tipsBgRect.sizeDelta.x > rectTransform.sizeDelta.x * 0.5 then
+    position.x = rectTransform.sizeDelta.x * 0.5 - self.tipsBgRect.sizeDelta.x
   end
-  if position.y + (rectTransform.sizeDelta).y * 0.5 < ((self.tipsBgRect).sizeDelta).y then
-    position.y = ((self.tipsBgRect).sizeDelta).y - (rectTransform.sizeDelta).y * 0.5
+  if position.y + rectTransform.sizeDelta.y * 0.5 < self.tipsBgRect.sizeDelta.y then
+    position.y = self.tipsBgRect.sizeDelta.y - rectTransform.sizeDelta.y * 0.5
   end
-  -- DECOMPILER ERROR at PC98: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  ((self.beadTips).transform).localPosition = position
-  -- DECOMPILER ERROR at PC100: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  (self.canvasGroup).alpha = 1
+  self.beadTips.transform.localPosition = position
+  self.canvasGroup.alpha = 1
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag.TipBtnOnClick = function(self, go)
-  -- function num : 0_17
-  (self.tipBtn):SetActive(false)
+function UISeasonMazeRoomFleaBeadBag:TipBtnOnClick(go)
+  self.tipBtn:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFleaBeadBag._GetCfgID = function(self, uid, oldCfgID)
-  -- function num : 0_18 , upvalues : _ENV
-  if (self._componentInfo).m_auto_bead_map then
-    for _,value in pairs((self._componentInfo).m_auto_bead_map) do
+function UISeasonMazeRoomFleaBeadBag:_GetCfgID(uid, oldCfgID)
+  if self._componentInfo.m_auto_bead_map then
+    for _, value in pairs(self._componentInfo.m_auto_bead_map) do
       local data = value
-      if data and (data.bead_info).unique_id == uid then
-        local rawCfgID = (data.bead_info).cfg_id
+      if data and data.bead_info.unique_id == uid then
+        local rawCfgID = data.bead_info.cfg_id
         local rawLevel = rawCfgID % 10
-        local a, b = (math.modf)(oldCfgID / 10)
+        local a, b = math.modf(oldCfgID / 10)
         local newCfgID = a * 10 + rawLevel
         return newCfgID
       end
     end
   end
-  do
-    return oldCfgID
-  end
+  return oldCfgID
 end
-
-

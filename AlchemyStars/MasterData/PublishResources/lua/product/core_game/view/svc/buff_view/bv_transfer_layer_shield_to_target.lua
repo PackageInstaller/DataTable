@@ -1,33 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_transfer_layer_shield_to_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewTransferLayerShieldToTarget", BuffViewBase)
 BuffViewTransferLayerShieldToTarget = BuffViewTransferLayerShieldToTarget
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewTransferLayerShieldToTarget.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewTransferLayerShieldToTarget:PlayView(TT)
   self._buffResult = self._buffResult
-  local casterEntity = (self._world):GetEntityByID((self._buffResult):GetCasterID())
-  local targetEntity = (self._world):GetEntityByID((self._buffResult):GetTargetID())
-  local targetNewLayer = (self._buffResult):GetTargetNewLayer()
-  local layerName = (self._viewInstance):ParseBuffLayerName(BuffEffectType.LayerShield)
-  ;
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTNotifyLayerChange:New(layerName))
-  ;
-  (casterEntity:BuffView()):SetBuffValue(layerName, 0)
-  ;
-  (self._entity):PlayMaterialAnim("common_shieldactive")
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
-  ;
-  (targetEntity:BuffView()):SetBuffValue(layerName, targetNewLayer)
-  ;
-  (self._entity):PlayMaterialAnim("common_shield")
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+  local casterEntity = self._world:GetEntityByID(self._buffResult:GetCasterID())
+  local targetEntity = self._world:GetEntityByID(self._buffResult:GetTargetID())
+  local targetNewLayer = self._buffResult:GetTargetNewLayer()
+  local layerName = self._viewInstance:ParseBuffLayerName(BuffEffectType.LayerShield)
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, NTNotifyLayerChange:New(layerName))
+  casterEntity:BuffView():SetBuffValue(layerName, 0)
+  self._entity:PlayMaterialAnim("common_shieldactive")
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
+  targetEntity:BuffView():SetBuffValue(layerName, targetNewLayer)
+  self._entity:PlayMaterialAnim("common_shield")
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
 end
-
-

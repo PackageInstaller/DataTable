@@ -1,8 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/activity/dantang/str_activity_dantang.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_activity_dantang_enter_tittle = "薫風海より来たる", str_activity_dantang_pre_enter_tittle = "薫風海より来たる（予告）", str_activity_dantang_qiandao = "薫風ログイン", str_activity_dantang_pre_des = "はるかなる大海原を越え、鳥がカイドウと出会い、異郷へたどり着く。\n輝かしい志がこの地に至り、龍州の絵巻が広げられ、薫風が訪れる。", str_activity_dantang_pre_click_to_check = "タップして確認", str_activity_dantang_pre_start = "はじまり", str_activity_dantang_pre_end = "おわり", str_activity_dantang_pre_des2 = "龍州絵巻を確認すると<color=#a14834> 限定報酬がもらえます</color>", str_activity_dantang_pre_award_des = "<color=#a83a21>「龍州」</color>は、アストラと海を隔てて向かい合う遠方の大陸である。悠久の歴史、広大な土地と豊富な資源であり、多くの人口を抱える。まったく異なる文化やさまざまな主義・思想が台頭し、激しく衝突する地であるが、幸い、龍州には「海は百川を納める」という気風があり、それぞれの主義や思想の長所を学び取ることで問題解決が模索されている。このため、近年にわかに様々な思想や人物が世に現われ、活躍している。\nそして、龍州でも進取の精神に富んだ者たちは、数万里もの大海を越え、この大陸に新しい理念を求めてやって来た。かの豪族の<color=#a83a21>郡主</color>、すなわち姫君もその一人だ。カイドウの華が咲き誇る頃、彼女の旅路は始まる…", str_activity_dantang_pre_click_to_collect = "タップで受取", str_activity_dantang_award_btn = "龍州絵巻", str_activity_dantang_intro = "1．イベント期間中、<color=#a83a21>「薫風海より来たる」</color>のステージを初めて、または★3でクリアすると、イベントステージ報酬を獲得できます。\n2．イベント終了後、<color=#a83a21>「薫風海より来たる」</color>のステージは閉鎖されます。", str_activity_dantang_collected = "受取済", str_activity_dantang_totallogin_title = "イベント期間中、累計5日ログインすると光珀と限定アイコンをゲット", str_activity_dantang_remain_time = "イベント残り時間：{1}", str_activity_dantang_mission_1001_name = "ST1-ごちそう", str_activity_dantang_mission_1002_name = "N1-占い", str_activity_dantang_mission_1003_name = "N2-疑い", str_activity_dantang_mission_1004_name = "N3-火の鳥", str_activity_dantang_mission_1005_name = "N4-真相", str_activity_dantang_mission_1007_name = "N5-甘雨", str_activity_dantang_mission_1008_name = "ST2-紅杞", str_activity_dantang_mission_1001_desc = "双閣港のレストランで、龍州の身なりをした2人の女性がアストラ大陸の第一印象を話し合っている。", str_activity_dantang_mission_1002_desc = "少し前に時間をさかのぼると、もう1人の龍州の身なりをした男性が2羽のハッカチョウを連れてレストランに入った。", str_activity_dantang_mission_1003_desc = "意識を失って倒れているオーネストの生死は不明だ。激高した人々がテンカンを取り囲み、彼のことを疑っている…", str_activity_dantang_mission_1004_desc = "タンドウは「火の鳥」という手がかりから調査を始めることにした。聞き込みを繰り返した結果、彼女は「火の鳥」を売る店を見つけた。", str_activity_dantang_mission_1005_desc = "タンドウたち2人はアイリーナという名の少女を見つけた。彼女は2人が知りたい情報を持っているようだ…", str_activity_dantang_mission_1007_desc = "真相を導き出したタンドウたちは、急いで救助に向かった。しかし、現場にはビクターしか残っておらず、テンカンの姿はなかった…", str_activity_dantang_mission_1008_desc = "数日後、タンドウはキュウ、テンカンを連れて郊外の丘に登った。彼らは草むらにはいつくばりながら何を探しているのだろうか？", str_activity_dantang_mission_1001_Abbre = "タンドウとキュウは双閣港西地区にやって来ると、とても人気のあるレストランでアストラ大陸の特徴的な料理を楽しんだ。レストランの店主は2人に厨房を見学してみないかと声をかけた。2人が席から立ち上がってすぐ、レストランの中から不穏な声が響いた。", str_activity_dantang_mission_1002_Abbre = "テンカンはレストランの客ビクターの占いをしていたが、思いがけないことに、レストランの店主オーネストが直立した姿勢のままテンカンの前で気を失って倒れた。タンドウとキュウが駆け寄り、オーネストは「火の鳥」の毒におかされていることが分かった。", str_activity_dantang_mission_1003_Abbre = "タンドウが調べた結果、テンカンに対する疑いは晴れたが、真犯人は不明のままだ。多くの困難に囲まれているが、タンドウは最後まで調べることにした。", str_activity_dantang_mission_1004_Abbre = "シェオルはタンドウに対して、彼女の代わりにある人物を見つけ出してくれれば、「火の鳥」を購入した者の情報をタンドウに明かしても構わないと伝えた。タンドウとキュウは仕方なく傭兵市場へ捜しに行った。", str_activity_dantang_mission_1005_Abbre = "アイリーナはタンドウとキュウに対して、自分はヒットマンを雇おうとしている貿易組織の首領を追いかけていると伝えた。その人物のターゲットは双閣港にある影ノ街総合商会の代表者――ビクターだった。そして、タンドウもその情報をもとに、レストランの毒物投与事件の真相を導き出した。", str_activity_dantang_mission_1007_Abbre = "タンドウたち2人の介入により、影ノ街総合商会とリン家などの合同組織が真犯人を捕まえた。そして、タンドウはついにシャドウマスター・イスタバンに会い、使者としての使命を果たした。", str_activity_dantang_mission_1008_Abbre = "タンドウは、命を取り留めたオーネストの体を回復させるため、いくつかの薬膳料理を作ることにした。3人は郊外の丘で「紅杞」という名前の薬草を見つけた。アストラ大陸に来て間もないが、タンドウはこの場所でより多くの楽しみや友情を得られるだろうと確信していた。", str_activity_dantang_login_title1 = "イベント期間中、累計5日ログインすると光珀と限定アイコンをゲット"}
+local config = {
+  str_activity_dantang_enter_tittle = "薫風海より来たる",
+  str_activity_dantang_pre_enter_tittle = "薫風海より来たる（予告）",
+  str_activity_dantang_qiandao = "薫風ログイン",
+  str_activity_dantang_pre_des = "はるかなる大海原を越え、鳥がカイドウと出会い、異郷へたどり着く。\n輝かしい志がこの地に至り、龍州の絵巻が広げられ、薫風が訪れる。",
+  str_activity_dantang_pre_click_to_check = "タップして確認",
+  str_activity_dantang_pre_start = "はじまり",
+  str_activity_dantang_pre_end = "おわり",
+  str_activity_dantang_pre_des2 = "龍州絵巻を確認すると<color=#a14834> 限定報酬がもらえます</color>",
+  str_activity_dantang_pre_award_des = "<color=#a83a21>「龍州」</color>は、アストラと海を隔てて向かい合う遠方の大陸である。悠久の歴史、広大な土地と豊富な資源であり、多くの人口を抱える。まったく異なる文化やさまざまな主義・思想が台頭し、激しく衝突する地であるが、幸い、龍州には「海は百川を納める」という気風があり、それぞれの主義や思想の長所を学び取ることで問題解決が模索されている。このため、近年にわかに様々な思想や人物が世に現われ、活躍している。\nそして、龍州でも進取の精神に富んだ者たちは、数万里もの大海を越え、この大陸に新しい理念を求めてやって来た。かの豪族の<color=#a83a21>郡主</color>、すなわち姫君もその一人だ。カイドウの華が咲き誇る頃、彼女の旅路は始まる…",
+  str_activity_dantang_pre_click_to_collect = "タップで受取",
+  str_activity_dantang_award_btn = "龍州絵巻",
+  str_activity_dantang_intro = "1．イベント期間中、<color=#a83a21>「薫風海より来たる」</color>のステージを初めて、または★3でクリアすると、イベントステージ報酬を獲得できます。\n2．イベント終了後、<color=#a83a21>「薫風海より来たる」</color>のステージは閉鎖されます。",
+  str_activity_dantang_collected = "受取済",
+  str_activity_dantang_totallogin_title = "イベント期間中、累計5日ログインすると光珀と限定アイコンをゲット",
+  str_activity_dantang_remain_time = "イベント残り時間：{1}",
+  str_activity_dantang_mission_1001_name = "ST1-ごちそう",
+  str_activity_dantang_mission_1002_name = "N1-占い",
+  str_activity_dantang_mission_1003_name = "N2-疑い",
+  str_activity_dantang_mission_1004_name = "N3-火の鳥",
+  str_activity_dantang_mission_1005_name = "N4-真相",
+  str_activity_dantang_mission_1007_name = "N5-甘雨",
+  str_activity_dantang_mission_1008_name = "ST2-紅杞",
+  str_activity_dantang_mission_1001_desc = "双閣港のレストランで、龍州の身なりをした2人の女性がアストラ大陸の第一印象を話し合っている。",
+  str_activity_dantang_mission_1002_desc = "少し前に時間をさかのぼると、もう1人の龍州の身なりをした男性が2羽のハッカチョウを連れてレストランに入った。",
+  str_activity_dantang_mission_1003_desc = "意識を失って倒れているオーネストの生死は不明だ。激高した人々がテンカンを取り囲み、彼のことを疑っている…",
+  str_activity_dantang_mission_1004_desc = "タンドウは「火の鳥」という手がかりから調査を始めることにした。聞き込みを繰り返した結果、彼女は「火の鳥」を売る店を見つけた。",
+  str_activity_dantang_mission_1005_desc = "タンドウたち2人はアイリーナという名の少女を見つけた。彼女は2人が知りたい情報を持っているようだ…",
+  str_activity_dantang_mission_1007_desc = "真相を導き出したタンドウたちは、急いで救助に向かった。しかし、現場にはビクターしか残っておらず、テンカンの姿はなかった…",
+  str_activity_dantang_mission_1008_desc = "数日後、タンドウはキュウ、テンカンを連れて郊外の丘に登った。彼らは草むらにはいつくばりながら何を探しているのだろうか？",
+  str_activity_dantang_mission_1001_Abbre = "タンドウとキュウは双閣港西地区にやって来ると、とても人気のあるレストランでアストラ大陸の特徴的な料理を楽しんだ。レストランの店主は2人に厨房を見学してみないかと声をかけた。2人が席から立ち上がってすぐ、レストランの中から不穏な声が響いた。",
+  str_activity_dantang_mission_1002_Abbre = "テンカンはレストランの客ビクターの占いをしていたが、思いがけないことに、レストランの店主オーネストが直立した姿勢のままテンカンの前で気を失って倒れた。タンドウとキュウが駆け寄り、オーネストは「火の鳥」の毒におかされていることが分かった。",
+  str_activity_dantang_mission_1003_Abbre = "タンドウが調べた結果、テンカンに対する疑いは晴れたが、真犯人は不明のままだ。多くの困難に囲まれているが、タンドウは最後まで調べることにした。",
+  str_activity_dantang_mission_1004_Abbre = "シェオルはタンドウに対して、彼女の代わりにある人物を見つけ出してくれれば、「火の鳥」を購入した者の情報をタンドウに明かしても構わないと伝えた。タンドウとキュウは仕方なく傭兵市場へ捜しに行った。",
+  str_activity_dantang_mission_1005_Abbre = "アイリーナはタンドウとキュウに対して、自分はヒットマンを雇おうとしている貿易組織の首領を追いかけていると伝えた。その人物のターゲットは双閣港にある影ノ街総合商会の代表者――ビクターだった。そして、タンドウもその情報をもとに、レストランの毒物投与事件の真相を導き出した。",
+  str_activity_dantang_mission_1007_Abbre = "タンドウたち2人の介入により、影ノ街総合商会とリン家などの合同組織が真犯人を捕まえた。そして、タンドウはついにシャドウマスター・イスタバンに会い、使者としての使命を果たした。",
+  str_activity_dantang_mission_1008_Abbre = "タンドウは、命を取り留めたオーネストの体を回復させるため、いくつかの薬膳料理を作ることにした。3人は郊外の丘で「紅杞」という名前の薬草を見つけた。アストラ大陸に来て間もないが、タンドウはこの場所でより多くの楽しみや友情を得られるだろうと確信していた。",
+  str_activity_dantang_login_title1 = "イベント期間中、累計5日ログインすると光珀と限定アイコンをゲット"
+}
 return config
-

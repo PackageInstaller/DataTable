@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/idn/activity/petenhance/str_activity_pet_enhance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_activity_pet_enhance_title = "Perbaikan Tingkatkan", str_activity_pet_enhance_tips = "Pada stage event, Aurorian berikut telah ditingkatkan:", str_activity_pet_enhance_detail_tips = "- Tingkat ≥ <color=#faba3c>Kenaikan {1} Lv.{2}</color>\n- Peralatan ≥ <color=#faba3c>Lv.{3}</color>", str_activity_pet_enhance_detail_titile = "Pratinjau Atribut Aurorian"}
+local config = {
+  str_activity_pet_enhance_title = "Perbaikan Tingkatkan",
+  str_activity_pet_enhance_tips = "Pada stage event, Aurorian berikut telah ditingkatkan:",
+  str_activity_pet_enhance_detail_tips = "- Tingkat ≥ <color=#faba3c>Kenaikan {1} Lv.{2}</color>\n- Peralatan ≥ <color=#faba3c>Lv.{3}</color>",
+  str_activity_pet_enhance_detail_titile = "Pratinjau Atribut Aurorian"
+}
 return config
-

@@ -1,68 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_tower/ui_tower_pass_award/ui_tower_pass_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITowerPassAward", UIController)
 UITowerPassAward = UITowerPassAward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITowerPassAward.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UITowerPassAward:Constructor()
   self._widgets = {}
   self._questModule = self:GetModule(QuestModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAward.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_1
+function UITowerPassAward:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAward.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UITowerPassAward:OnShow(uiParams)
   self._allQuests = uiParams[1]
   self._topIndex = uiParams[2] or 0
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAward._GetComponents = function(self)
-  -- function num : 0_3
+function UITowerPassAward:_GetComponents()
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._itemTips = self:GetUIComponent("UISelectObjectPath", "ItemTips")
-  self._tips = (self._itemTips):SpawnObject("UISelectInfo")
+  self._tips = self._itemTips:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAward._OnValue = function(self)
-  -- function num : 0_4
+function UITowerPassAward:_OnValue()
   self:_InitDynamicScrollView()
-  ;
-  (self._scrollView):MovePanelToItemIndex(self._topIndex, 0)
+  self._scrollView:MovePanelToItemIndex(self._topIndex, 0)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAward._InitDynamicScrollView = function(self)
-  -- function num : 0_5
-  (self._scrollView):InitListView(#self._allQuests, function(scrollview, index)
-    -- function num : 0_5_0 , upvalues : self
+function UITowerPassAward:_InitDynamicScrollView()
+  self._scrollView:InitListView(#self._allQuests, function(scrollview, index)
     return self:_OnGetItemByIndex(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAward._OnGetItemByIndex = function(self, scrollview, index)
-  -- function num : 0_6
+function UITowerPassAward:_OnGetItemByIndex(scrollview, index)
   local item = scrollview:NewListViewItem("UITowerPassAwardItems")
   local itemPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if not item.IsInitHandlerCalled then
@@ -71,32 +43,19 @@ UITowerPassAward._OnGetItemByIndex = function(self, scrollview, index)
   end
   local itemWidgets = itemPool:GetAllSpawnList()
   index = index + 1
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._widgets)[index] = itemWidgets[1]
-  if (self._widgets)[index] then
-    ((self._widgets)[index]):SetData((self._allQuests)[index], index, function(id, pos)
-    -- function num : 0_6_0 , upvalues : self
-    self:ShowTips(id, pos)
-  end
-)
+  self._widgets[index] = itemWidgets[1]
+  if self._widgets[index] then
+    self._widgets[index]:SetData(self._allQuests[index], index, function(id, pos)
+      self:ShowTips(id, pos)
+    end)
   end
   return item
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAward.BackgroundOnClick = function(self, go)
-  -- function num : 0_7
+function UITowerPassAward:BackgroundOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAward.ShowTips = function(self, id, pos)
-  -- function num : 0_8
-  (self._tips):SetData(id, pos)
+function UITowerPassAward:ShowTips(id, pos)
+  self._tips:SetData(id, pos)
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/p_s_param_bullet_fly_to_caster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("PlaySkillParamBulletFlyToCaster", SkillPhaseParamBase)
 PlaySkillParamBulletFlyToCaster = PlaySkillParamBulletFlyToCaster
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillParamBulletFlyToCaster.Constructor = function(self, t)
-  -- function num : 0_0
+function PlaySkillParamBulletFlyToCaster:Constructor(t)
   self.direction = t.direction
   self.bulletBornEftID = t.bulletBornEftID
   self.bornDuration = t.bornDuration
@@ -22,98 +15,69 @@ PlaySkillParamBulletFlyToCaster.Constructor = function(self, t)
   self.deathClear = t.deathClear
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillParamBulletFlyToCaster.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillParamBulletFlyToCaster:GetPhaseType()
   return SkillViewPhaseType.BulletFlyToCasterFromEdge
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillParamBulletFlyToCaster.GetCacheTable = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySkillParamBulletFlyToCaster:GetCacheTable()
   local t = {}
   if self.bulletBornEftID and self.bulletBornEftID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.bulletBornEftID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.bulletBornEftID].ResPath,
+      1
+    })
   end
-  if self.bulletEftID and self.bulletEftID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.bulletEftID]).ResPath, 1})
+  if self.bulletEftID and 0 < self.bulletEftID then
+    table.insert(t, {
+      Cfg.cfg_effect[self.bulletEftID].ResPath,
+      1
+    })
   end
-  if self.beHitEft and self.beHitEft > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.beHitEft]).ResPath, 1})
+  if self.beHitEft and 0 < self.beHitEft then
+    table.insert(t, {
+      Cfg.cfg_effect[self.beHitEft].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillParamBulletFlyToCaster.GetDirection = function(self)
-  -- function num : 0_3
+function PlaySkillParamBulletFlyToCaster:GetDirection()
   return self.direction
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillParamBulletFlyToCaster.GetBornEffect = function(self)
-  -- function num : 0_4
+function PlaySkillParamBulletFlyToCaster:GetBornEffect()
   return self.bulletBornEftID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillParamBulletFlyToCaster.GetBornDuration = function(self)
-  -- function num : 0_5
+function PlaySkillParamBulletFlyToCaster:GetBornDuration()
   return self.bornDuration
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillParamBulletFlyToCaster.GetBulletEffect = function(self)
-  -- function num : 0_6
+function PlaySkillParamBulletFlyToCaster:GetBulletEffect()
   return self.bulletEftID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillParamBulletFlyToCaster.GetBulletDuration = function(self)
-  -- function num : 0_7
+function PlaySkillParamBulletFlyToCaster:GetBulletDuration()
   return self.flyDuration
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillParamBulletFlyToCaster.GetDistanceToEdge = function(self)
-  -- function num : 0_8
+function PlaySkillParamBulletFlyToCaster:GetDistanceToEdge()
   return self.distanceToEdge
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillParamBulletFlyToCaster.GetBeHitEffect = function(self)
-  -- function num : 0_9
+function PlaySkillParamBulletFlyToCaster:GetBeHitEffect()
   return self.beHitEffect
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillParamBulletFlyToCaster.GetBeHitAnim = function(self)
-  -- function num : 0_10
+function PlaySkillParamBulletFlyToCaster:GetBeHitAnim()
   return self.beHitAnim
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillParamBulletFlyToCaster.GetTurnToTarget = function(self)
-  -- function num : 0_11
+function PlaySkillParamBulletFlyToCaster:GetTurnToTarget()
   return self.turnToTarget
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillParamBulletFlyToCaster.GetDeathClear = function(self)
-  -- function num : 0_12
+function PlaySkillParamBulletFlyToCaster:GetDeathClear()
   return self.deathClear
 end
-
-

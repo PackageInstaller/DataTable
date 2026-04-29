@@ -1,27 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_cn1/common/ui_battlepass_cn1_icon_text.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattlePassCN1IconText", UICustomWidget)
 UIBattlePassCN1IconText = UIBattlePassCN1IconText
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattlePassCN1IconText._GetComponents = function(self)
-  -- function num : 0_0
+function UIBattlePassCN1IconText:_GetComponents()
   self._iconImg = self:GetUIComponent("RawImageLoader", "icon")
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1IconText.SetData = function(self, index, url, titleId)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBattlePassCN1IconText:SetData(index, url, titleId)
   self:_GetComponents()
-  ;
-  (self._iconImg):LoadImage(url)
-  ;
-  (self._txtTitle):SetText((StringTable.Get)(titleId))
+  self._iconImg:LoadImage(url)
+  self._txtTitle:SetText(StringTable.Get(titleId))
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_add_team_leader_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultAddTeamLeaderEffect", BuffResultBase)
 BuffResultAddTeamLeaderEffect = BuffResultAddTeamLeaderEffect
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddTeamLeaderEffect.Constructor = function(self, oldTeamLeaderID, newTeamLeaderID, effectID, remove, removeAnim, removeAnimTime)
-  -- function num : 0_0
+function BuffResultAddTeamLeaderEffect:Constructor(oldTeamLeaderID, newTeamLeaderID, effectID, remove, removeAnim, removeAnimTime)
   self._oldTeamLeaderID = oldTeamLeaderID
   self._newTeamLeaderID = newTeamLeaderID
   self._effectID = effectID
@@ -18,46 +11,26 @@ BuffResultAddTeamLeaderEffect.Constructor = function(self, oldTeamLeaderID, newT
   self._removeAnimTime = removeAnimTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddTeamLeaderEffect.GetOldTeamLeaderID = function(self)
-  -- function num : 0_1
+function BuffResultAddTeamLeaderEffect:GetOldTeamLeaderID()
   return self._oldTeamLeaderID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddTeamLeaderEffect.GetNewTeamLeaderID = function(self)
-  -- function num : 0_2
+function BuffResultAddTeamLeaderEffect:GetNewTeamLeaderID()
   return self._newTeamLeaderID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddTeamLeaderEffect.GetEffectID = function(self)
-  -- function num : 0_3
+function BuffResultAddTeamLeaderEffect:GetEffectID()
   return self._effectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddTeamLeaderEffect.GetRemove = function(self)
-  -- function num : 0_4
+function BuffResultAddTeamLeaderEffect:GetRemove()
   return self._remove
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddTeamLeaderEffect.GetRemoveAnim = function(self)
-  -- function num : 0_5
+function BuffResultAddTeamLeaderEffect:GetRemoveAnim()
   return self._removeAnim
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddTeamLeaderEffect.GetRemoveAnimTime = function(self)
-  -- function num : 0_6
+function BuffResultAddTeamLeaderEffect:GetRemoveAnimTime()
   return self._removeAnimTime
 end
-
-

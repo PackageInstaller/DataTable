@@ -1,33 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_campaign_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyCampaignEnter", UICustomWidget)
 UIMainLobbyCampaignEnter = UIMainLobbyCampaignEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyCampaignEnter.Flush = function(self, controller, latestCampObj)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMainLobbyCampaignEnter:Flush(controller, latestCampObj)
   local oneBtnMode = true
   self._uiMainLobbyController = controller
   self._latestCampObj = latestCampObj
-  local sampleInfo = (self._latestCampObj):GetSampleInfo()
-  local campConfig = (Cfg.cfg_campaign)[sampleInfo.id]
-  if campConfig and campConfig.EntranceIcon and (table.count)(campConfig.EntranceIcon) >= 3 then
-    local entryPrefab = (campConfig.EntranceIcon)[2]
-    local entryClass = (campConfig.EntranceIcon)[3]
+  local sampleInfo = self._latestCampObj:GetSampleInfo()
+  local campConfig = Cfg.cfg_campaign[sampleInfo.id]
+  if campConfig and campConfig.EntranceIcon and table.count(campConfig.EntranceIcon) >= 3 then
+    local entryPrefab = campConfig.EntranceIcon[2]
+    local entryClass = campConfig.EntranceIcon[3]
     if entryPrefab and entryClass then
-      local obj = (UIWidgetHelper.SpawnObject)(self, "EntryLoader", entryClass, entryPrefab)
+      local obj = UIWidgetHelper.SpawnObject(self, "EntryLoader", entryClass, entryPrefab)
       if controller and obj.SetData_uiMainLobbyController then
         obj:SetData_uiMainLobbyController(self._uiMainLobbyController)
       end
       oneBtnMode = false
     end
   end
-  do
-    return oneBtnMode
-  end
+  return oneBtnMode
 end
-
-

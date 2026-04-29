@@ -1,134 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_camp_center/main_lobby_center_camp_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MainLobbyCenterCampData", Object)
 MainLobbyCenterCampData = MainLobbyCenterCampData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MainLobbyCenterCampData.Constructor = function(self, cfg)
-  -- function num : 0_0
+function MainLobbyCenterCampData:Constructor(cfg)
   self._cfg = cfg
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterCampData.GetCfgID = function(self)
-  -- function num : 0_1
-  return (self._cfg).ID
+function MainLobbyCenterCampData:GetCfgID()
+  return self._cfg.ID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterCampData.LoadData = function(self, TT)
-  -- function num : 0_2
+function MainLobbyCenterCampData:LoadData(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterCampData.CheckOpen = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local btnKey = (self._cfg).BtnKey
-  local cfg = (Cfg.cfg_main_side_enter_btn)[btnKey]
+function MainLobbyCenterCampData:CheckOpen()
+  local btnKey = self._cfg.BtnKey
+  local cfg = Cfg.cfg_main_side_enter_btn[btnKey]
   local checkType = cfg.CheckType
   local succ = true
   if checkType and next(checkType) then
-    for key,value in pairs(checkType) do
+    for key, value in pairs(checkType) do
       if value == "Sample" then
         local campType = cfg.CampaignType
         local campID = cfg.CampaignId
-        succ = (MainLobbyCenterData.Sample)(campType, campID)
-      else
-        do
-          if value == "FixedTime" then
-            local beginTime = cfg.BeginTime
-            local endTime = cfg.EndTime
-            succ = (MainLobbyCenterData.FixedTime)(beginTime, endTime)
-          else
-            do
-              if value == "ServerTime" then
-                local beginTime = cfg.BeginTime
-                local endTime = cfg.EndTime
-                succ = (MainLobbyCenterData.ServerTime)(beginTime, endTime)
-              else
-                do
-                  if value == "SampleHide" then
-                    local campType = cfg.CampaignType
-                    local campID = cfg.CampaignId
-                    succ = (MainLobbyCenterData.SampleHide)(campType, campID)
-                  else
-                    do
-                      if value == "Channel" then
-                        local campType = cfg.CampaignType
-                        local campID = cfg.CampaignId
-                        succ = (MainLobbyCenterData.Channel)(campType, campID)
-                      else
-                        do
-                          if value == "Author" then
-                            local campType = cfg.CampaignType
-                            local campID = cfg.CampaignId
-                            succ = (MainLobbyCenterData.Author)(campType, campID)
-                          end
-                          do
-                            -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out DO_STMT
-
-                            -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                            -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_STMT
-
-                            -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out DO_STMT
-
-                            -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                            -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_STMT
-
-                            -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out DO_STMT
-
-                            -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                            -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_STMT
-
-                            -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out DO_STMT
-
-                            -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                            -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_STMT
-
-                            -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out DO_STMT
-
-                            -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                            -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_STMT
-
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+        succ = MainLobbyCenterData.Sample(campType, campID)
+      elseif value == "FixedTime" then
+        local beginTime = cfg.BeginTime
+        local endTime = cfg.EndTime
+        succ = MainLobbyCenterData.FixedTime(beginTime, endTime)
+      elseif value == "ServerTime" then
+        local beginTime = cfg.BeginTime
+        local endTime = cfg.EndTime
+        succ = MainLobbyCenterData.ServerTime(beginTime, endTime)
+      elseif value == "SampleHide" then
+        local campType = cfg.CampaignType
+        local campID = cfg.CampaignId
+        succ = MainLobbyCenterData.SampleHide(campType, campID)
+      elseif value == "Channel" then
+        local campType = cfg.CampaignType
+        local campID = cfg.CampaignId
+        succ = MainLobbyCenterData.Channel(campType, campID)
+      elseif value == "Author" then
+        local campType = cfg.CampaignType
+        local campID = cfg.CampaignId
+        succ = MainLobbyCenterData.Author(campType, campID)
+      end
+      if not succ then
+        break
       end
     end
   end
-  if succ then
-    return succ
-  end
+  return succ
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterCampData.CheckRed = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local btnKey = (self._cfg).BtnKey
-  local cfg = (Cfg.cfg_main_side_enter_btn)[btnKey]
+function MainLobbyCenterCampData:CheckRed()
+  local btnKey = self._cfg.BtnKey
+  local cfg = Cfg.cfg_main_side_enter_btn[btnKey]
   local campType = cfg.CampaignType
   local campID = cfg.CampaignId
-  local campModule = ((GameGlobal.GetModule)(CampaignModule))
-  local sampleInfo = nil
+  local campModule = GameGlobal.GetModule(CampaignModule)
+  local sampleInfo
   if campID then
     sampleInfo = campModule:GetReviewCampaignSampleByCampaignId(campID)
   else
@@ -137,20 +67,17 @@ MainLobbyCenterCampData.CheckRed = function(self)
   return sampleInfo and sampleInfo:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD) and 1 or 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyCenterCampData.CheckNew = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local btnKey = (self._cfg).BtnKey
-  local cfg = (Cfg.cfg_main_side_enter_btn)[btnKey]
+function MainLobbyCenterCampData:CheckNew()
+  local btnKey = self._cfg.BtnKey
+  local cfg = Cfg.cfg_main_side_enter_btn[btnKey]
   local campType = cfg.CampaignType
-  local notNew = (UIActivityHelper.CheckCampaignSampleNewPoint_Nonuse)(campType)
+  local notNew = UIActivityHelper.CheckCampaignSampleNewPoint_Nonuse(campType)
   if notNew then
     return 0
   end
   local campID = cfg.CampaignId
-  local campModule = ((GameGlobal.GetModule)(CampaignModule))
-  local sampleInfo = nil
+  local campModule = GameGlobal.GetModule(CampaignModule)
+  local sampleInfo
   if campID then
     sampleInfo = campModule:GetReviewCampaignSampleByCampaignId(campID)
   else
@@ -158,5 +85,3 @@ MainLobbyCenterCampData.CheckNew = function(self)
   end
   return sampleInfo and sampleInfo:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW) and 1 or 0
 end
-
-

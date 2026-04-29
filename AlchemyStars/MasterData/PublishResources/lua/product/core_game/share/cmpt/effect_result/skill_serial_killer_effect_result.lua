@@ -1,50 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_serial_killer_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillSerialKillerResult", SkillEffectResultBase)
 SkillSerialKillerResult = SkillSerialKillerResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillSerialKillerResult.Constructor = function(self)
-  -- function num : 0_0
+function SkillSerialKillerResult:Constructor()
   self._killedArray = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSerialKillerResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillSerialKillerResult:GetEffectType()
   return SkillEffectType.SerialKiller
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSerialKillerResult.AddOneKilled = function(self, damageReult)
-  -- function num : 0_2 , upvalues : _ENV
-  (table.insert)(self._killedArray, damageReult)
+function SkillSerialKillerResult:AddOneKilled(damageReult)
+  table.insert(self._killedArray, damageReult)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSerialKillerResult.GetKilledArray = function(self)
-  -- function num : 0_3
+function SkillSerialKillerResult:GetKilledArray()
   return self._killedArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSerialKillerResult.GetAddPiecePosList = function(self)
-  -- function num : 0_4
+function SkillSerialKillerResult:GetAddPiecePosList()
   return self._addPiecePosList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSerialKillerResult.SetAddPiecePosList = function(self, addPiecePosList)
-  -- function num : 0_5
+function SkillSerialKillerResult:SetAddPiecePosList(addPiecePosList)
   self._addPiecePosList = addPiecePosList
 end
-
-

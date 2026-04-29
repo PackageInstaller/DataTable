@@ -1,37 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/activity/sakura/cfg_sakura_shoprewards.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, SpecialRewards = 2, Rewards = 3, Last = 4}
+local key = {
+  ID = 1,
+  SpecialRewards = 2,
+  Rewards = 3,
+  Last = 4
+}
 local config = {
-{1, 
-{
-{3000001, 1}
-}
-, 
-{
-{3000002, 10}
-, 
-{3000003, 10}
-, 
-{3000004, 12}
-}
-, false}
-, 
-{2, 
-{
-{3000010, 1}
-, 
-{3000011, 2}
-}
-, 
-{
-{3000012, 10}
-, 
-{3000013, 100}
-}
-, true}
+  {
+    1,
+    {
+      {3000001, 1}
+    },
+    {
+      {3000002, 10},
+      {3000003, 10},
+      {3000004, 12}
+    },
+    false
+  },
+  {
+    2,
+    {
+      {3000010, 1},
+      {3000011, 2}
+    },
+    {
+      {3000012, 10},
+      {3000013, 100}
+    },
+    true
+  }
 }
 return config, "ID", key
-

@@ -1,19 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_shop/data/d_campaigin_shop_item_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DCampaignShopItemBase", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-DCampaignShopItemBase.Constructor = function(self, goodsInfo)
-  -- function num : 0_0
+function DCampaignShopItemBase:Constructor(goodsInfo)
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignShopItemBase.Refresh = function(self, goodsInfo, exchangeCmpt)
-  -- function num : 0_1
+function DCampaignShopItemBase:Refresh(goodsInfo, exchangeCmpt)
   self.goodsId = goodsInfo.m_id
   self.isSpecial = goodsInfo.m_is_special
   self.exchangeLimitCount = goodsInfo.m_exchange_limit_count
@@ -22,35 +12,20 @@ DCampaignShopItemBase.Refresh = function(self, goodsInfo, exchangeCmpt)
   self.costItemId = goodsInfo.m_cost_item_id
   self.unlockCostItems = goodsInfo.m_unlock_cost_item
   self.rewardInfo = {}
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.rewardInfo).assetid = (goodsInfo.m_reward).assetid
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.rewardInfo).count = (goodsInfo.m_reward).count
+  self.rewardInfo.assetid = goodsInfo.m_reward.assetid
+  self.rewardInfo.count = goodsInfo.m_reward.count
   self.exchangeCmpt = exchangeCmpt
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignShopItemBase.GetGoodsId = function(self)
-  -- function num : 0_2
+function DCampaignShopItemBase:GetGoodsId()
   return self.goodsId
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignShopItemBase.GetIsSpecial = function(self)
-  -- function num : 0_3
+function DCampaignShopItemBase:GetIsSpecial()
   return self.isSpecial
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignShopItemBase.GetRemainCount = function(self)
-  -- function num : 0_4
+function DCampaignShopItemBase:GetRemainCount()
   if self.exchangeLimitCount ~= -1 then
     return self.remainNum
   else
@@ -58,99 +33,58 @@ DCampaignShopItemBase.GetRemainCount = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignShopItemBase.GetCostItemId = function(self)
-  -- function num : 0_5
+function DCampaignShopItemBase:GetCostItemId()
   return self.costItemId
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignShopItemBase.GetRemainTotalCount = function(self)
-  -- function num : 0_6
+function DCampaignShopItemBase:GetRemainTotalCount()
   return 1
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignShopItemBase.ShowRemain = function(self)
-  -- function num : 0_7
-  do return self.exchangeLimitCount > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function DCampaignShopItemBase:ShowRemain()
+  return self.exchangeLimitCount > 0
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignShopItemBase.GetItemId = function(self)
-  -- function num : 0_8
-  return (self.rewardInfo).assetid
+function DCampaignShopItemBase:GetItemId()
+  return self.rewardInfo.assetid
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignShopItemBase.IsPet = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function DCampaignShopItemBase:IsPet()
   local itemId = self:GetItemId()
-  do return (Cfg.cfg_pet)[itemId] ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return Cfg.cfg_pet[itemId] ~= nil
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignShopItemBase.GetItemCount = function(self)
-  -- function num : 0_10
-  return (self.rewardInfo).count
+function DCampaignShopItemBase:GetItemCount()
+  return self.rewardInfo.count
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignShopItemBase.GetSaleType = function(self)
-  -- function num : 0_11
+function DCampaignShopItemBase:GetSaleType()
   return self.costItemId
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignShopItemBase.GetSalePrice = function(self)
-  -- function num : 0_12
+function DCampaignShopItemBase:GetSalePrice()
   return self.costCount
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignShopItemBase.GetSaleTag = function(self)
-  -- function num : 0_13
+function DCampaignShopItemBase:GetSaleTag()
   return 0
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignShopItemBase.ShowSaleTag = function(self)
-  -- function num : 0_14
+function DCampaignShopItemBase:ShowSaleTag()
   return false
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignShopItemBase.IsUnLimit = function(self)
-  -- function num : 0_15
-  do return self.exchangeLimitCount <= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function DCampaignShopItemBase:IsUnLimit()
+  return self.exchangeLimitCount <= 0
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-DCampaignShopItemBase.UnlockItems = function(self)
-  -- function num : 0_16
+function DCampaignShopItemBase:UnlockItems()
   return self.unlockCostItems
 end
 
 _class("DCampaignShopItemGroup", Object)
--- DECOMPILER ERROR at PC61: Confused about usage of register: R0 in 'UnsetPending'
 
-DCampaignShopItemGroup.Constructor = function(self)
-  -- function num : 0_17
+function DCampaignShopItemGroup:Constructor()
   self._campaignId = 0
   self._unlockTime = 0
   self._showTime = 0
@@ -159,5 +93,3 @@ DCampaignShopItemGroup.Constructor = function(self)
   self._isUnlock = false
   self._isClose = false
 end
-
-

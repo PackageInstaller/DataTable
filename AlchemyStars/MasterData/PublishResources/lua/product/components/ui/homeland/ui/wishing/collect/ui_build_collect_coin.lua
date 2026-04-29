@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/wishing/collect/ui_build_collect_coin.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBuildCollectCoin", UIController)
 UIBuildCollectCoin = UIBuildCollectCoin
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildCollectCoin.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBuildCollectCoin:LoadDataOnEnter(TT, res, uiParams)
   self._coinDatas = UIBuildCollectCoinDatas:New()
   self._collectCoinRewards = UIBuildCollectCoinRewardDatas:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoin.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBuildCollectCoin:OnShow(uiParams)
   self._collectCountLabel = self:GetUIComponent("UILocalizationText", "CollectCount")
   self._coinNameLabel = self:GetUIComponent("UILocalizationText", "CoinName")
   self._getWayLabel = self:GetUIComponent("UILocalizationText", "GetWay")
@@ -29,56 +19,38 @@ UIBuildCollectCoin.OnShow = function(self, uiParams)
   self._rewardPanel = self:GetGameObject("RewardPanel")
   self._rewardDesLabel = self:GetUIComponent("UILocalizationText", "RewardDes")
   self:RefreshUI()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetInteractPointUIStatus, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetInteractPointUIStatus, false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoin.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshInteractUI)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetInteractPointUIStatus, true)
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function UIBuildCollectCoin:OnHide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshInteractUI)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetInteractPointUIStatus, true)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
   if not homelandClient then
-    return 
+    return
   end
-  local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+  local characterController = homelandClient:CharacterManager():MainCharacterController()
   characterController:SetForbiddenMove(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoin.RefershData = function(self)
-  -- function num : 0_3
-  (self._coinDatas):Refresh()
-  ;
-  (self._collectCoinRewards):Refresh()
+function UIBuildCollectCoin:RefershData()
+  self._coinDatas:Refresh()
+  self._collectCoinRewards:Refresh()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoin.GetCollectCoinRewards = function(self)
-  -- function num : 0_4
+function UIBuildCollectCoin:GetCollectCoinRewards()
   return self._collectCoinRewards
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoin.ShowItemTips = function(self, id, go)
-  -- function num : 0_5
+function UIBuildCollectCoin:ShowItemTips(id, go)
   self:ShowDialog("UIItemTipsHomeland", id, go)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoin.SetStatus = function(self, active)
-  -- function num : 0_6
+function UIBuildCollectCoin:SetStatus(active)
   local go = self:GetGameObject()
   local tran = go.transform
-  local bg = ((tran.parent).parent):Find("BGMaskCanvas")
+  local bg = tran.parent.parent:Find("BGMaskCanvas")
   if bg then
     local bgGo = bg.gameObject
     local canvas = bgGo:GetComponent("Canvas")
@@ -86,131 +58,85 @@ UIBuildCollectCoin.SetStatus = function(self, active)
     local raycaster = bgGo:GetComponent("GraphicRaycaster")
     raycaster.enabled = active
   end
-  do
-    go:SetActive(active)
-  end
+  go:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoin.RefreshUI = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._collectCountLabel):SetText((HomelandWishingConst.GetCollectCoinCounts)())
+function UIBuildCollectCoin:RefreshUI()
+  self._collectCountLabel:SetText(HomelandWishingConst.GetCollectCoinCounts())
   self:RefreshCoinList()
   self:RefreshCoinInfo()
   self:RefreshRewardTask()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoin.RefreshCoinInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIBuildCollectCoin:RefreshCoinInfo()
   if not self._currentSelectCoinData then
-    (self._coinNameLabel):SetText((HomelandWishingConst.GetDefaultCoinfName)())
-    ;
-    (self._getWayLabel):SetText((HomelandWishingConst.GetDefaultCoinGetWay)())
-    ;
-    (self._coinDesLabel):SetText((HomelandWishingConst.GetDefaultCoinDes)())
-    ;
-    (self._coinIconLoader):LoadImage((HomelandWishingConst.GetDefaultCoinIcon)())
-    ;
-    (self._getWayIconLoader):LoadImage((HomelandWishingConst.GetDefaultCoinGetWayIcon)())
+    self._coinNameLabel:SetText(HomelandWishingConst.GetDefaultCoinfName())
+    self._getWayLabel:SetText(HomelandWishingConst.GetDefaultCoinGetWay())
+    self._coinDesLabel:SetText(HomelandWishingConst.GetDefaultCoinDes())
+    self._coinIconLoader:LoadImage(HomelandWishingConst.GetDefaultCoinIcon())
+    self._getWayIconLoader:LoadImage(HomelandWishingConst.GetDefaultCoinGetWayIcon())
   else
-    ;
-    (self._coinNameLabel):SetText((self._currentSelectCoinData):GetName())
-    ;
-    (self._getWayLabel):SetText((self._currentSelectCoinData):GetGetWay())
-    ;
-    (self._coinDesLabel):SetText((self._currentSelectCoinData):GetDes())
-    ;
-    (self._coinIconLoader):LoadImage((self._currentSelectCoinData):GetIcon())
-    ;
-    (self._getWayIconLoader):LoadImage((self._currentSelectCoinData):GetGetWayIcon())
+    self._coinNameLabel:SetText(self._currentSelectCoinData:GetName())
+    self._getWayLabel:SetText(self._currentSelectCoinData:GetGetWay())
+    self._coinDesLabel:SetText(self._currentSelectCoinData:GetDes())
+    self._coinIconLoader:LoadImage(self._currentSelectCoinData:GetIcon())
+    self._getWayIconLoader:LoadImage(self._currentSelectCoinData:GetGetWayIcon())
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoin.RefreshCoinList = function(self)
-  -- function num : 0_9
-  local coinDatas = (self._coinDatas):GetCollectCoinDatas()
+function UIBuildCollectCoin:RefreshCoinList()
+  local coinDatas = self._coinDatas:GetCollectCoinDatas()
   local count = #coinDatas
-  ;
-  (self._coinLoader):SpawnObjects("UIBuildCollectCoinItem", count)
-  local items = (self._coinLoader):GetAllSpawnList()
+  self._coinLoader:SpawnObjects("UIBuildCollectCoinItem", count)
+  local items = self._coinLoader:GetAllSpawnList()
   for i = 1, count do
-    (items[i]):Refresh(self, coinDatas[i])
+    items[i]:Refresh(self, coinDatas[i])
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoin.RefreshRewardTask = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local currentTask = (self._collectCoinRewards):GetCurrentTask()
+function UIBuildCollectCoin:RefreshRewardTask()
+  local currentTask = self._collectCoinRewards:GetCurrentTask()
   if not currentTask then
-    (self._rewardPanel):SetActive(false)
-    return 
+    self._rewardPanel:SetActive(false)
+    return
   end
-  ;
-  (self._rewardPanel):SetActive(true)
-  ;
-  (self._rewardDesLabel):SetText((StringTable.Get)("str_homeland_collect_coin_reward_des", currentTask:GetWishingCoinCount()))
+  self._rewardPanel:SetActive(true)
+  self._rewardDesLabel:SetText(StringTable.Get("str_homeland_collect_coin_reward_des", currentTask:GetWishingCoinCount()))
   local rewards = currentTask:GetRewards()
   local count = #rewards
-  ;
-  (self._rewardLoader):SpawnObjects("UIBuildCollectRewardItem", count)
-  local items = (self._rewardLoader):GetAllSpawnList()
+  self._rewardLoader:SpawnObjects("UIBuildCollectRewardItem", count)
+  local items = self._rewardLoader:GetAllSpawnList()
   for i = 1, count do
-    (items[i]):Refresh(rewards[i], function(id, go)
-    -- function num : 0_10_0 , upvalues : self
-    self:ShowItemTips(id, go)
-  end
-)
+    items[i]:Refresh(rewards[i], function(id, go)
+      self:ShowItemTips(id, go)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoin.GetCurrentSelectCoinData = function(self)
-  -- function num : 0_11
+function UIBuildCollectCoin:GetCurrentSelectCoinData()
   return self._currentSelectCoinData
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoin.SelectItem = function(self, currentItem)
-  -- function num : 0_12
+function UIBuildCollectCoin:SelectItem(currentItem)
   if currentItem:GetCoinData() == self._currentSelectCoinData then
-    return 
+    return
   end
-  local items = (self._coinLoader):GetAllSpawnList()
+  local items = self._coinLoader:GetAllSpawnList()
   for i = 1, #items do
-    (items[i]):SetSelectStatus(false)
+    items[i]:SetSelectStatus(false)
   end
   currentItem:SetSelectStatus(true)
   self._currentSelectCoinData = currentItem:GetCoinData()
   self:RefreshCoinInfo()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoin.BtnReturnOnClick = function(self, go)
-  -- function num : 0_13
+function UIBuildCollectCoin:BtnReturnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoin.BtnInfoOnClick = function(self, go)
-  -- function num : 0_14
+function UIBuildCollectCoin:BtnInfoOnClick(go)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildCollectCoin.BtnViewRewardOnClick = function(self, go)
-  -- function num : 0_15
+function UIBuildCollectCoin:BtnViewRewardOnClick(go)
   self:ShowDialog("UIBuildCollectCoinTask", self._collectCoinRewards)
 end
-
-

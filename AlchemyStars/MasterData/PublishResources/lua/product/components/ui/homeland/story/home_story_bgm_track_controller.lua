@@ -1,83 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/story/home_story_bgm_track_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeStoryBgmTrackController", Object)
 HomeStoryBgmTrackController = HomeStoryBgmTrackController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeStoryBgmTrackController.Constructor = function(self, storyManager)
-  -- function num : 0_0
+function HomeStoryBgmTrackController:Constructor(storyManager)
   self._storyManager = storyManager
   self._currentTrackData = nil
   self._keyframeDone = {}
   self._bgmFadeTime = 0.5
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryBgmTrackController.SectionStart = function(self, trackData)
-  -- function num : 0_1
+function HomeStoryBgmTrackController:SectionStart(trackData)
   self._currentTrackData = trackData
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryBgmTrackController.SectionEnd = function(self)
-  -- function num : 0_2
+function HomeStoryBgmTrackController:SectionEnd()
   self._currentTrackData = nil
   self._keyframeDone = {}
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryBgmTrackController.Update = function(self, time)
-  -- function num : 0_3 , upvalues : _ENV
+function HomeStoryBgmTrackController:Update(time)
   if not self._currentTrackData then
     return true
   end
-  for index,keyframe in ipairs((self._currentTrackData).KeyFrames) do
-    if not (self._keyframeDone)[keyframe] and keyframe.Time < time then
+  for index, keyframe in ipairs(self._currentTrackData.KeyFrames) do
+    if not self._keyframeDone[keyframe] and time > keyframe.Time then
       if keyframe.StartBgm ~= nil then
-        if not keyframe.FadeTime then
-          (self._storyManager):PlayBgm(keyframe.StartBgm, self._bgmFadeTime)
-          if keyframe.StopBgm ~= nil then
-            if not keyframe.FadeTime then
-              do
-                (AudioHelperController.StopBGM)(self._bgmFadeTime)
-                -- DECOMPILER ERROR at PC39: Confused about usage of register: R7 in 'UnsetPending'
-
-                ;
-                (self._keyframeDone)[keyframe] = true
-                -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
-        end
+        self._storyManager:PlayBgm(keyframe.StartBgm, keyframe.FadeTime or self._bgmFadeTime)
       end
+      if keyframe.StopBgm ~= nil then
+        AudioHelperController.StopBGM(keyframe.FadeTime or self._bgmFadeTime)
+      end
+      self._keyframeDone[keyframe] = true
     end
   end
   return true
 end
-
-

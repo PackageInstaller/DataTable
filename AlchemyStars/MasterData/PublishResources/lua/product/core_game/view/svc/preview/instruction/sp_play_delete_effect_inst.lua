@@ -1,49 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_delete_effect_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayDeleteEffectInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayDeleteEffectInstruction = SkillPreviewPlayDeleteEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayDeleteEffectInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayDeleteEffectInstruction:Constructor(params)
   self._effectID = tonumber(params.EffectID)
   self._isPet1702361 = tonumber(params.isPet1702361)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayDeleteEffectInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayDeleteEffectInstruction:DoInstruction(TT, casterEntity, previewContext)
   local playEntity = casterEntity
-  do
-    if self._isPet1702361 == 1 then
-      local sPreviewSkill = (previewContext:GetWorld()):GetService("PreviewActiveSkill")
-      playEntity = sPreviewSkill:GetPet1702361Entity(casterEntity, previewContext)
-    end
-    local world = previewContext:GetWorld()
-    local holderCmp = playEntity:EffectHolder()
-    if not holderCmp then
-      return 
-    end
-    local effectID = self._effectID
-    local idDic = holderCmp:GetEffectIDEntityDic()
-    local entityList = idDic[effectID]
-    if entityList then
-      for _,entityID in pairs(entityList) do
-        if entityID then
-          local entity = world:GetEntityByID(entityID)
-          if entity then
-            world:DestroyEntity(entity)
-          end
+  if self._isPet1702361 == 1 then
+    local sPreviewSkill = previewContext:GetWorld():GetService("PreviewActiveSkill")
+    playEntity = sPreviewSkill:GetPet1702361Entity(casterEntity, previewContext)
+  end
+  local world = previewContext:GetWorld()
+  local holderCmp = playEntity:EffectHolder()
+  if not holderCmp then
+    return
+  end
+  local effectID = self._effectID
+  local idDic = holderCmp:GetEffectIDEntityDic()
+  local entityList = idDic[effectID]
+  if entityList then
+    for _, entityID in pairs(entityList) do
+      if entityID then
+        local entity = world:GetEntityByID(entityID)
+        if entity then
+          world:DestroyEntity(entity)
         end
       end
-      idDic[effectID] = nil
     end
+    idDic[effectID] = nil
   end
 end
-
-

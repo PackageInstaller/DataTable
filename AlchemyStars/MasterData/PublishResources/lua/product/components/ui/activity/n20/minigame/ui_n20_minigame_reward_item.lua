@@ -1,38 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/minigame/ui_n20_minigame_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20MiniGameRewardItem", UICustomWidget)
 UIN20MiniGameRewardItem = UIN20MiniGameRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20MiniGameRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN20MiniGameRewardItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameRewardItem._GetComponents = function(self)
-  -- function num : 0_1
+function UIN20MiniGameRewardItem:_GetComponents()
   self._uiItem = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self._lock = self:GetGameObject("Lock")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameRewardItem.SetData = function(self, data, scoretype, missioninfo, callback)
-  -- function num : 0_2 , upvalues : _ENV
-  self._item = (self._uiItem):SpawnObject("UIItem")
-  ;
-  (self._item):SetForm(UIItemForm.Base, UIItemScale.Level3)
-  ;
-  (self._item):SetClickCallBack(function(go)
-    -- function num : 0_2_0 , upvalues : self
+function UIN20MiniGameRewardItem:SetData(data, scoretype, missioninfo, callback)
+  self._item = self._uiItem:SpawnObject("UIItem")
+  self._item:SetForm(UIItemForm.Base, UIItemScale.Level3)
+  self._item:SetClickCallBack(function(go)
     self:ShowTips(go)
-  end
-)
+  end)
   self._itemid = data[1]
   self._itemCount = data[2]
   self._missionInfo = missioninfo
@@ -41,40 +24,31 @@ UIN20MiniGameRewardItem.SetData = function(self, data, scoretype, missioninfo, c
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameRewardItem._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[self._itemid]
+function UIN20MiniGameRewardItem:_OnValue()
+  local cfg = Cfg.cfg_item[self._itemid]
   if cfg == nil then
-    (Log.fatal)("cfg_item is nil." .. self._itemid)
+    Log.fatal("cfg_item is nil." .. self._itemid)
   end
   local icon = cfg.Icon
   local quality = cfg.Color
   local text1 = self._itemCount
-  ;
-  (self._item):SetData({icon = icon, quality = quality, text1 = text1, itemId = self._itemid})
+  self._item:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    itemId = self._itemid
+  })
   self:RefreshUIInfo(self._missionInfo)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameRewardItem.RefreshUIInfo = function(self, missioninfo)
-  -- function num : 0_4
+function UIN20MiniGameRewardItem:RefreshUIInfo(missioninfo)
   self._missionInfo = missioninfo
-  local state = (self._missionInfo).reward_mask & self._scoreType ~= 0 and self._scoreType <= (self._missionInfo).mission_grade
-  ;
-  (self._lock):SetActive(state)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local state = self._missionInfo.reward_mask & self._scoreType ~= 0 and self._missionInfo.mission_grade >= self._scoreType
+  self._lock:SetActive(state)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameRewardItem.ShowTips = function(self, go)
-  -- function num : 0_5
+function UIN20MiniGameRewardItem:ShowTips(go)
   if self._callback then
-    (self._callback)(self._itemid, (go.transform).position)
+    self._callback(self._itemid, go.transform.position)
   end
 end
-
-

@@ -1,51 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/monster/monster_behaviors/monster_behavior_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("monster_behavior_base")
 _class("MonsterBeHaviorAttack", MonsterBeHaviorBase)
 MonsterBeHaviorAttack = MonsterBeHaviorAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterBeHaviorAttack.Name = function(self)
-  -- function num : 0_0
+function MonsterBeHaviorAttack:Name()
   return "MonsterBeHaviorAttack"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorAttack.OnInit = function(self, param)
-  -- function num : 0_1
+function MonsterBeHaviorAttack:OnInit(param)
   self.attack = param.Attack
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorAttack.Exec = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function MonsterBeHaviorAttack:Exec()
   local behaviorDestory = self:GetBehavior(MonsterBeHaviorDestroyAfterAttack:Name())
   if behaviorDestory then
     behaviorDestory:Exec()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorAttack.OnShow = function(self)
-  -- function num : 0_3
+function MonsterBeHaviorAttack:OnShow()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorAttack.OnReset = function(self)
-  -- function num : 0_4
+function MonsterBeHaviorAttack:OnReset()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorAttack.OnRelease = function(self)
-  -- function num : 0_5
+function MonsterBeHaviorAttack:OnRelease()
 end
-
-

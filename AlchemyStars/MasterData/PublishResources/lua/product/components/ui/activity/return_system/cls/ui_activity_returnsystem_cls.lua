@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/cls/ui_activity_returnsystem_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ActivityReturnSystemLoginAward", Object)
 ActivityReturnSystemLoginAward = ActivityReturnSystemLoginAward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ActivityReturnSystemLoginAward.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActivityReturnSystemLoginAward:Constructor()
   self.day = 0
   self.petId = 0
   self.petIcon = ""
@@ -19,26 +12,18 @@ ActivityReturnSystemLoginAward.Constructor = function(self)
   self.awards = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityReturnSystemLoginAward.InitPetInfo = function(self, petId)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfgv = (Cfg.cfg_pet)[petId]
+function ActivityReturnSystemLoginAward:InitPetInfo(petId)
+  local cfgv = Cfg.cfg_pet[petId]
   if not cfgv then
-    (Log.fatal)("### no pet in cfg_pet.petId=", petId)
-    return 
+    Log.fatal("### no pet in cfg_pet.petId=", petId)
+    return
   end
-  self.petIcon = (HelperProxy:GetInstance()):GetPetTeamBody(petId, 0, cfgv.SkinId, PetSkinEffectPath.CARD_TEAM)
-  self.petName = (StringTable.Get)(cfgv.Name)
-  self.petGreeting = (StringTable.Get)("str_return_system_award_hello_" .. petId)
-  self.petAwardName = (StringTable.Get)("str_return_system_award_from_" .. petId)
+  self.petIcon = HelperProxy:GetInstance():GetPetTeamBody(petId, 0, cfgv.SkinId, PetSkinEffectPath.CARD_TEAM)
+  self.petName = StringTable.Get(cfgv.Name)
+  self.petGreeting = StringTable.Get("str_return_system_award_hello_" .. petId)
+  self.petAwardName = StringTable.Get("str_return_system_award_from_" .. petId)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActivityReturnSystemLoginAward.SetStatus = function(self, status)
-  -- function num : 0_2
+function ActivityReturnSystemLoginAward:SetStatus(status)
   self.status = status
 end
-
-

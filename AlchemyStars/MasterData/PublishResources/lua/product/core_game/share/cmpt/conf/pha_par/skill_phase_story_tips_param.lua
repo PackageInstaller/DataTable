@@ -1,45 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_story_tips_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseStoryTipsParam", SkillPhaseParamBase)
 SkillPhaseStoryTipsParam = SkillPhaseStoryTipsParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseStoryTipsParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseStoryTipsParam:Constructor(t)
   self._prob = t.prob
   self._tipsList = t.tipsList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseStoryTipsParam.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhaseStoryTipsParam:GetCacheTable()
   return nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseStoryTipsParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseStoryTipsParam:GetPhaseType()
   return SkillViewPhaseType.StoryTips
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseStoryTipsParam.GetProb = function(self)
-  -- function num : 0_3
+function SkillPhaseStoryTipsParam:GetProb()
   return self._prob
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseStoryTipsParam.GetTipsList = function(self)
-  -- function num : 0_4
+function SkillPhaseStoryTipsParam:GetTipsList()
   return self._tipsList
 end
-
-

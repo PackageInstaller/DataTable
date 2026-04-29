@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/common/stn_common_random.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Common_Random", CTestRobot_Base)
 Common_Random = Common_Random
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Common_Random.Constructor = function(self, pManager, nMin, nMax)
-  -- function num : 0_0
+function Common_Random:Constructor(pManager, nMin, nMax)
   self.m_nRangeMin = nMin
   self.m_nRangeMax = nMax
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Common_Random.OnWorking = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.m_pReturnData = (math.random)(self.m_nRangeMin, self.m_nRangeMax)
-  return ((Infrastructure_Begin.super).OnWorking)(self)
+function Common_Random:OnWorking()
+  self.m_pReturnData = math.random(self.m_nRangeMin, self.m_nRangeMax)
+  return Infrastructure_Begin.super.OnWorking(self)
 end
-
-

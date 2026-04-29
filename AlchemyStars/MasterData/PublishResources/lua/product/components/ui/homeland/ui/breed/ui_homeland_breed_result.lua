@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/breed/ui_homeland_breed_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBreedResult", UIController)
 UIHomelandBreedResult = UIHomelandBreedResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBreedResult.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandBreedResult:Constructor()
   self._items = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedResult.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandBreedResult:OnShow(uiParams)
   self._mainSeedData = uiParams[1]
   self._mutationSeedData = uiParams[2]
   self._itemDatas = uiParams[3]
@@ -25,10 +15,7 @@ UIHomelandBreedResult.OnShow = function(self, uiParams)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedResult._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandBreedResult:_GetComponents()
   self._title = self:GetUIComponent("UILocalizationText", "Title")
   self._mainSeedItem = self:GetUIComponent("UISelectObjectPath", "MainSeedItem")
   self._mutationSeedItem = self:GetUIComponent("UISelectObjectPath", "MutationSeedItem")
@@ -49,99 +36,69 @@ UIHomelandBreedResult._GetComponents = function(self)
   self._bg = self:GetUIComponent("RawImageLoader", "BgRawImage")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedResult.CloseBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIHomelandBreedResult:CloseBtnOnClick(go)
   self:CloseDialog()
   if self._callBack then
-    (self._callBack)()
+    self._callBack()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedResult._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandBreedResult:_OnValue()
   if self._breedUIType == HomelandBreedUIType.StateChg then
-    (self._bg):LoadImage("n17_plant_di36")
-    ;
-    (self._style2):SetActive(true)
-    ;
-    (self._style3):SetActive(false)
+    self._bg:LoadImage("n17_plant_di36")
+    self._style2:SetActive(true)
+    self._style3:SetActive(false)
     self:_SetSeedInfo(self._originSeedItem, self._originSeedName, self._mainSeedData, Vector2(0, 0), Vector2(250, 250))
-    local stateChgDesc = (StringTable.Get)((self._mainSeedData).Name)
-    ;
-    (self._originSeedDesc):SetText(stateChgDesc)
+    local stateChgDesc = StringTable.Get(self._mainSeedData.Name)
+    self._originSeedDesc:SetText(stateChgDesc)
   else
-    do
-      ;
-      (self._bg):LoadImage("n17_plant_di11")
-      ;
-      (self._style2):SetActive(false)
-      ;
-      (self._style3):SetActive(true)
-      self:_SetSeedInfo(self._mainSeedItem, self._mainSeedName, self._mainSeedData, Vector2(0, 0), Vector2(250, 250))
-      self:_SetSeedInfo(self._mutationSeedItem, self._mutationSeedName, self._mutationSeedData, Vector2(0, 0), Vector2(250, 250))
-      local mainDescription = (StringTable.Get)((self._mainSeedData).Name)
-      do
-        local mutationDescription = (StringTable.Get)((self._mutationSeedData).Name)
-        ;
-        (self._mainDescription):SetText(mainDescription)
-        ;
-        (self._mutationDescription):SetText(mutationDescription)
-        if self._itemDatas and #self._itemDatas > 0 then
-          local cfg = nil
-          if ((self._itemDatas)[1]).exp then
-            cfg = (Cfg.cfg_item)[((self._itemDatas)[2]).assetid]
-          else
-            cfg = (Cfg.cfg_item)[((self._itemDatas)[1]).assetid]
-          end
-          if self._breedUIType == HomelandBreedUIType.StateChg then
-            self:_SetSeedInfo(self._resultTreeItem, self._resultTreeName, cfg, Vector2(0, 0), Vector2(400, 400))
-          else
-            self:_SetSeedInfo(self._resultSeedItem, self._resultSeedName, cfg, Vector2(0, 0), Vector2(400, 400))
-          end
-          local count = #self._itemDatas
-          ;
-          (self._content):SpawnObjects("UIItemHomeland", count)
-          self._items = (self._content):GetAllSpawnList()
-          for i = 1, count do
-            ((self._items)[i]):Flush((self._itemDatas)[i])
-          end
-          self:_SetTitle(self._mainSeedData, cfg)
-        end
-      end
+    self._bg:LoadImage("n17_plant_di11")
+    self._style2:SetActive(false)
+    self._style3:SetActive(true)
+    self:_SetSeedInfo(self._mainSeedItem, self._mainSeedName, self._mainSeedData, Vector2(0, 0), Vector2(250, 250))
+    self:_SetSeedInfo(self._mutationSeedItem, self._mutationSeedName, self._mutationSeedData, Vector2(0, 0), Vector2(250, 250))
+    local mainDescription = StringTable.Get(self._mainSeedData.Name)
+    local mutationDescription = StringTable.Get(self._mutationSeedData.Name)
+    self._mainDescription:SetText(mainDescription)
+    self._mutationDescription:SetText(mutationDescription)
+  end
+  if self._itemDatas and 0 < #self._itemDatas then
+    local cfg
+    if self._itemDatas[1].exp then
+      cfg = Cfg.cfg_item[self._itemDatas[2].assetid]
+    else
+      cfg = Cfg.cfg_item[self._itemDatas[1].assetid]
     end
+    if self._breedUIType == HomelandBreedUIType.StateChg then
+      self:_SetSeedInfo(self._resultTreeItem, self._resultTreeName, cfg, Vector2(0, 0), Vector2(400, 400))
+    else
+      self:_SetSeedInfo(self._resultSeedItem, self._resultSeedName, cfg, Vector2(0, 0), Vector2(400, 400))
+    end
+    local count = #self._itemDatas
+    self._content:SpawnObjects("UIItemHomeland", count)
+    self._items = self._content:GetAllSpawnList()
+    for i = 1, count do
+      self._items[i]:Flush(self._itemDatas[i])
+    end
+    self:_SetTitle(self._mainSeedData, cfg)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedResult._SetSeedInfo = function(self, seed, name, data, backgroundSize, iconSize)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandBreedResult:_SetSeedInfo(seed, name, data, backgroundSize, iconSize)
   local widget = seed:SpawnObject("UIHomelandBreedItem")
   widget:SetData(data, backgroundSize, iconSize)
-  name:SetText((StringTable.Get)(data.Name))
+  name:SetText(StringTable.Get(data.Name))
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedResult._SetTitle = function(self, mainSeed, ResultSeed)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandBreedResult:_SetTitle(mainSeed, ResultSeed)
   local str = "str_homeland_breed_success"
   if self._breedUIType ~= HomelandBreedUIType.StateChg then
-    local cfgSeed = (Cfg.cfg_item_tree_seed)[mainSeed.ID]
-    local cfgTreeAttribute = (Cfg.cfg_item_tree_attribute)[cfgSeed.TreeId]
-    local cfgResultTreeAttribute = (Cfg.cfg_item_tree_attribute)[ResultSeed.ID]
-    if cfgTreeAttribute.Rarity < cfgResultTreeAttribute.Rarity then
+    local cfgSeed = Cfg.cfg_item_tree_seed[mainSeed.ID]
+    local cfgTreeAttribute = Cfg.cfg_item_tree_attribute[cfgSeed.TreeId]
+    local cfgResultTreeAttribute = Cfg.cfg_item_tree_attribute[ResultSeed.ID]
+    if cfgResultTreeAttribute.Rarity > cfgTreeAttribute.Rarity then
       str = "str_homeland_breed_upgrade_success"
     end
   end
-  do
-    ;
-    (self._title):SetText((StringTable.Get)(str))
-  end
+  self._title:SetText(StringTable.Get(str))
 end
-
-

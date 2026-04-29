@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/ui_season_transition_animations.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTransitionAnimations", UIController)
 UISeasonTransitionAnimations = UISeasonTransitionAnimations
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTransitionAnimations.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonTransitionAnimations:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTransitionAnimations.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonTransitionAnimations:OnShow(uiParams)
   self:InitWidget()
   local aniName = uiParams[1]
   local firstWaitMS = uiParams[2]
@@ -23,8 +13,7 @@ UISeasonTransitionAnimations.OnShow = function(self, uiParams)
   local firstCb = uiParams[4]
   local secondCb = uiParams[5]
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self, aniName, _ENV, firstWaitMS, firstCb, secondWaitWs, secondCb
-    (self.animation):Play(aniName)
+    self.animation:Play(aniName)
     YIELD(TT, firstWaitMS)
     if firstCb then
       firstCb()
@@ -34,15 +23,9 @@ UISeasonTransitionAnimations.OnShow = function(self, uiParams)
       secondCb()
     end
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTransitionAnimations.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonTransitionAnimations:InitWidget()
   self.animation = self:GetUIComponent("Animation", "animation")
 end
-
-

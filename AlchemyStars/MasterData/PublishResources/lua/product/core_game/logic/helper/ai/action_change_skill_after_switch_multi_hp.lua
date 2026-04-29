@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_change_skill_after_switch_multi_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionChangeSkillAfterSwitchMultiHP", AINewNode)
 ActionChangeSkillAfterSwitchMultiHP = ActionChangeSkillAfterSwitchMultiHP
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionChangeSkillAfterSwitchMultiHP.Constructor = function(self)
-  -- function num : 0_0
+function ActionChangeSkillAfterSwitchMultiHP:Constructor()
   self._hasTrigger = false
   self.skillID = self:GetLogicData(-1)
   self._blockRound = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionChangeSkillAfterSwitchMultiHP.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionChangeSkillAfterSwitchMultiHP:OnUpdate()
   if self._hasTrigger then
     return AINewNodeStatus.Failure
   end
-  local monsterIDComponent = (self.m_entityOwn):MonsterID()
-  local battleCmpt = (self._world):BattleStat()
+  local monsterIDComponent = self.m_entityOwn:MonsterID()
+  local battleCmpt = self._world:BattleStat()
   local curRound = battleCmpt:GetLevelTotalRoundCount()
-  for _,multiHPSwitchRound in ipairs(monsterIDComponent._multiHPSwitchRound) do
-    if curRound - multiHPSwitchRound >= 1 then
+  for _, multiHPSwitchRound in ipairs(monsterIDComponent._multiHPSwitchRound) do
+    if 1 <= curRound - multiHPSwitchRound then
       self._hasTrigger = true
       return AINewNodeStatus.Success
     else
@@ -35,5 +25,3 @@ ActionChangeSkillAfterSwitchMultiHP.OnUpdate = function(self)
   end
   return AINewNodeStatus.Failure
 end
-
-

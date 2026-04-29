@@ -1,67 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_atk_to_def_by_san.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAtkToDefBySan", BuffLogicBase)
 BuffLogicAtkToDefBySan = BuffLogicAtkToDefBySan
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAtkToDefBySan.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAtkToDefBySan:Constructor(buffInstance, logicParam)
   self._maxAtkPercent = logicParam.maxAtkPercent or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAtkToDefBySan.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicAtkToDefBySan:DoLogic()
   local e = self._entity
   if not e:HasMonsterID() then
-    return 
+    return
   end
   local buffCmpt = e:BuffComponent()
   if buffCmpt == nil then
-    return 
+    return
   end
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   if not lsvcFeature:HasFeatureType(FeatureType.Sanity) then
-    return 
+    return
   end
-  local monsterID = (e:MonsterID()):GetMonsterID()
-  local cfgService = (self._world):GetService("Config")
+  local monsterID = e:MonsterID():GetMonsterID()
+  local cfgService = self._world:GetService("Config")
   local monsterConfigData = cfgService:GetMonsterConfigData()
   local baseAtk = monsterConfigData:GetMonsterAttack(monsterID)
   local baseDef = monsterConfigData:GetMonsterDefense(monsterID)
-  local maxTransAtk = (math.floor)(baseAtk * tonumber(self._maxAtkPercent))
+  local maxTransAtk = math.floor(baseAtk * tonumber(self._maxAtkPercent))
   local sanVal = lsvcFeature:GetSanValue()
   local maxSanValue = lsvcFeature:GetSanMaxValue()
   if maxSanValue == 0 then
-    return 
+    return
   end
   local sanRate = sanVal / maxSanValue
-  local transVal = (math.floor)(maxTransAtk * sanRate)
-  local newAtk = (math.max)(baseAtk - transVal, 0)
+  local transVal = math.floor(maxTransAtk * sanRate)
+  local newAtk = math.max(baseAtk - transVal, 0)
   local newDef = baseDef + transVal
-  ;
-  (self._buffLogicService):ChangeBaseAttack(e, self:GetBuffSeq(), ModifyBaseAttackType.Attack, newAtk)
-  ;
-  (self._buffLogicService):ChangeBaseDefence(e, self:GetBuffSeq(), ModifyBaseDefenceType.Defense, newDef)
-  ;
-  (Log.info)("BuffLogicAtkToDefBySan MonsterID:", monsterID, " transVal:", transVal, " newAtk:", newAtk, " newDef:", newDef)
+  self._buffLogicService:ChangeBaseAttack(e, self:GetBuffSeq(), ModifyBaseAttackType.Attack, newAtk)
+  self._buffLogicService:ChangeBaseDefence(e, self:GetBuffSeq(), ModifyBaseDefenceType.Defense, newDef)
+  Log.info("BuffLogicAtkToDefBySan MonsterID:", monsterID, " transVal:", transVal, " newAtk:", newAtk, " newDef:", newDef)
   return true
 end
 
 _class("BuffLogicUndoAtkToDefBySan", BuffLogicBase)
 BuffLogicUndoAtkToDefBySan = BuffLogicUndoAtkToDefBySan
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoAtkToDefBySan.DoLogic = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local buffLogicService = (self._world):GetService("BuffLogic")
+function BuffLogicUndoAtkToDefBySan:DoLogic()
+  local buffLogicService = self._world:GetService("BuffLogic")
   local buffSeqID = self:GetBuffSeq()
   buffLogicService:RemoveBaseAttack(self._entity, buffSeqID, ModifyBaseAttackType.Attack)
   buffLogicService:RemoveBaseDefence(self._entity, buffSeqID, ModifyBaseDefenceType.Defense)
 end
-
-

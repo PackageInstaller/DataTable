@@ -1,63 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/trap_id_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TrapIDComponent", Object)
 TrapIDComponent = TrapIDComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TrapIDComponent.Constructor = function(self, trapID)
-  -- function num : 0_0
+function TrapIDComponent:Constructor(trapID)
   self._trapID = trapID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapIDComponent.GetTrapID = function(self)
-  -- function num : 0_1
+function TrapIDComponent:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.TrapID = function(self)
-  -- function num : 0_2
-  return self:GetComponent((self.WEComponentsEnum).TrapID)
+function Entity:TrapID()
+  return self:GetComponent(self.WEComponentsEnum.TrapID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasTrapID = function(self)
-  -- function num : 0_3
-  return self:HasComponent((self.WEComponentsEnum).TrapID)
+function Entity:HasTrapID()
+  return self:HasComponent(self.WEComponentsEnum.TrapID)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddTrapID = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).TrapID
+function Entity:AddTrapID()
+  local index = self.WEComponentsEnum.TrapID
   local component = TrapIDComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceTrapID = function(self, trapID)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).TrapID
+function Entity:ReplaceTrapID(trapID)
+  local index = self.WEComponentsEnum.TrapID
   local component = TrapIDComponent:New(trapID)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveTrapID = function(self)
-  -- function num : 0_6
+function Entity:RemoveTrapID()
   if self:HasTrapID() then
-    self:RemoveComponent((self.WEComponentsEnum).TrapID)
+    self:RemoveComponent(self.WEComponentsEnum.TrapID)
   end
 end
-
-

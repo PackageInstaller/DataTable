@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/anim/ui_draw_card_view_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardViewData", Object)
 UIDrawCardViewData = UIDrawCardViewData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardViewData.Constructor = function(self, cards, duplicateTag, type, poolID, fixed_reward)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDrawCardViewData:Constructor(cards, duplicateTag, type, poolID, fixed_reward)
   self._cards = cards
   self._shakeType = type
   self._poolID = poolID
@@ -19,28 +12,23 @@ UIDrawCardViewData.Constructor = function(self, cards, duplicateTag, type, poolI
   local items = {}
   local star = 0
   local maxStarId = 0
-  local module = (GameGlobal.GetModule)(PetModule)
+  local module = GameGlobal.GetModule(PetModule)
   if self._shakeType == ShakeType.SHAKE_MULTIPLE then
-    for idx,value in ipairs(cards) do
-      local cfg = (Cfg.cfg_pet)[value.assetid]
+    for idx, value in ipairs(cards) do
+      local cfg = Cfg.cfg_pet[value.assetid]
       if star < cfg.Star then
         star = cfg.Star
         maxStarId = value.assetid
       end
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R16 in 'UnsetPending'
-
-      ;
-      (self._star)[idx] = cfg.Star
+      self._star[idx] = cfg.Star
       local isDuplicate = duplicateTag[idx] == PET_RESULT_CODE.PET_ADD_EXP_ONLY
       if isDuplicate then
         for i = 1, #cfg.ExchangeItem do
-          local val = (string.split)((cfg.ExchangeItem)[i], ",")
+          local val = string.split(cfg.ExchangeItem[i], ",")
           local id = tonumber(val[1])
           local count = tonumber(val[2])
-          -- DECOMPILER ERROR at PC71: Confused about usage of register: R24 in 'UnsetPending'
-
           if items[id] then
-            (items[id]).count = (items[id]).count + count
+            items[id].count = items[id].count + count
           else
             local asset = RoleAsset:New()
             asset.assetid = id
@@ -48,19 +36,19 @@ UIDrawCardViewData.Constructor = function(self, cards, duplicateTag, type, poolI
             items[id] = asset
           end
         end
-        local coinCfg = (Cfg.cfg_pet_coin)({PetID = value.assetid})
-        if coinCfg and #coinCfg > 0 then
+        local coinCfg = Cfg.cfg_pet_coin({
+          PetID = value.assetid
+        })
+        if coinCfg and 0 < #coinCfg then
           coinCfg = coinCfg[1]
           local pet = module:GetPetByTemplateId(value.assetid)
           local times = pet:RepeatGetTimes()
           if coinCfg.CoinRewardCount then
-            times = (math.min)(times, #coinCfg.CoinRewardCount)
+            times = math.min(times, #coinCfg.CoinRewardCount)
             local id = coinCfg.CoinID
-            local count = (coinCfg.CoinRewardCount)[times]
-            -- DECOMPILER ERROR at PC117: Confused about usage of register: R22 in 'UnsetPending'
-
+            local count = coinCfg.CoinRewardCount[times]
             if items[id] then
-              (items[id]).count = (items[id]).count + count
+              items[id].count = items[id].count + count
             else
               local asset = RoleAsset:New()
               asset.assetid = id
@@ -70,116 +58,71 @@ UIDrawCardViewData.Constructor = function(self, cards, duplicateTag, type, poolI
           end
         end
       end
-      -- DECOMPILER ERROR at PC127: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      (self._petNewTab)[idx] = not isDuplicate
-      ;
-      (Log.fatal)("多抽结果：" .. "[" .. idx .. "]:id->", value.assetid .. "，" .. cfg.Star .. "星" .. "，新获得：", not isDuplicate)
+      self._petNewTab[idx] = not isDuplicate
+      Log.fatal("多抽结果：" .. "[" .. idx .. "]:id->", value.assetid .. "，" .. cfg.Star .. "星" .. "，新获得：", not isDuplicate)
     end
     local idx = 1
-    for key,value in pairs(items) do
-      -- DECOMPILER ERROR at PC151: Confused about usage of register: R16 in 'UnsetPending'
-
-      (self._items)[idx] = value
+    for key, value in pairs(items) do
+      self._items[idx] = value
       idx = idx + 1
     end
   else
-    local cfg = (Cfg.cfg_pet)[(cards[1]).assetid]
+    local cfg = Cfg.cfg_pet[cards[1].assetid]
     star = cfg.Star
-    maxStarId = (cards[1]).assetid
+    maxStarId = cards[1].assetid
     local isDuplicate = duplicateTag[1] == PET_RESULT_CODE.PET_ADD_EXP_ONLY
-    -- DECOMPILER ERROR at PC173: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._petNewTab)[1] = not isDuplicate
-    ;
-    (Log.fatal)("单抽结果：" .. "[" .. 1 .. "]:id->", cfg.ID .. "，" .. star .. "星" .. "，新获得：", not isDuplicate)
-    -- DECOMPILER ERROR at PC190: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._star)[1] = star
+    self._petNewTab[1] = not isDuplicate
+    Log.fatal("单抽结果：" .. "[" .. 1 .. "]:id->", cfg.ID .. "，" .. star .. "星" .. "，新获得：", not isDuplicate)
+    self._star[1] = star
   end
-  do
-    if self._fixedReward and (self._fixedReward)[1] then
-      local asset = {}
-      asset.assetid = ((self._fixedReward)[1]).assetid
-      asset.count = ((self._fixedReward)[1]).count
-      asset.heartstone = true
-      ;
-      (table.insert)(self._items, 1, asset)
-    end
-    self._maxStar = star
-    self.maxStarId = maxStarId
-    -- DECOMPILER ERROR: 11 unprocessed JMP targets
+  if self._fixedReward and self._fixedReward[1] then
+    local asset = {}
+    asset.assetid = self._fixedReward[1].assetid
+    asset.count = self._fixedReward[1].count
+    asset.heartstone = true
+    table.insert(self._items, 1, asset)
   end
+  self._maxStar = star
+  self.maxStarId = maxStarId
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardViewData.GetShakeType = function(self)
-  -- function num : 0_1
+function UIDrawCardViewData:GetShakeType()
   return self._shakeType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardViewData.GetCards = function(self)
-  -- function num : 0_2
+function UIDrawCardViewData:GetCards()
   return self._cards
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardViewData.GetItems = function(self)
-  -- function num : 0_3
+function UIDrawCardViewData:GetItems()
   return self._items
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardViewData.GetPoolID = function(self)
-  -- function num : 0_4
+function UIDrawCardViewData:GetPoolID()
   return self._poolID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardViewData.GetMaxStar = function(self)
-  -- function num : 0_5
+function UIDrawCardViewData:GetMaxStar()
   return self._maxStar
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardViewData.GetMaxStarId = function(self)
-  -- function num : 0_6
+function UIDrawCardViewData:GetMaxStarId()
   return self.maxStarId
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardViewData.IsNewPet = function(self, idx)
-  -- function num : 0_7
-  return (self._petNewTab)[idx]
+function UIDrawCardViewData:IsNewPet(idx)
+  return self._petNewTab[idx]
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardViewData.GetUnskipCards = function(self, start)
-  -- function num : 0_8
-  if not start then
-    start = 1
-  end
+function UIDrawCardViewData:GetUnskipCards(start)
+  start = start or 1
   local t = {}
   for i = start, #self._cards do
     local isNew = self:IsNewPet(i)
-    local star = (self._star)[i]
-    if star > 4 and isNew then
-      t[#t + 1] = (self._cards)[i]
+    local star = self._star[i]
+    if 4 < star and isNew then
+      t[#t + 1] = self._cards[i]
     end
   end
   return t
 end
-
-

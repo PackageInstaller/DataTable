@@ -1,41 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/common_line_mission/ui_common_line_mission_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICommonLineMissionIntro", UIController)
 UICommonLineMissionIntro = UICommonLineMissionIntro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICommonLineMissionIntro.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICommonLineMissionIntro:OnShow(uiParams)
   self.campaignID = uiParams[1]
   self:InitWidget()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionIntro.InitWidget = function(self)
-  -- function num : 0_1
+function UICommonLineMissionIntro:InitWidget()
   self._title = self:GetUIComponent("UILocalizationText", "Title")
   self._content = self:GetUIComponent("UILocalizationText", "Content")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionIntro._OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._title):SetText((StringTable.Get)("str_activity_story_intro_title_" .. self.campaignID))
-  ;
-  (self._content):SetText((StringTable.Get)("str_activity_story_intro_content_" .. self.campaignID))
+function UICommonLineMissionIntro:_OnValue()
+  self._title:SetText(StringTable.Get("str_activity_story_intro_title_" .. self.campaignID))
+  self._content:SetText(StringTable.Get("str_activity_story_intro_content_" .. self.campaignID))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionIntro.BtnCloseOnClick = function(self, go)
-  -- function num : 0_3
+function UICommonLineMissionIntro:BtnCloseOnClick(go)
   self:CloseDialog()
 end
-
-

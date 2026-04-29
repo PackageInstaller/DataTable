@@ -1,8 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/es/story/charastory/str_charastory_tuoer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {ui_story_31330401_1_dialog_content = "¿Por qué estás tan sin aliento, PlayerName? ¡Debes estar realmente emocionado por probar mi comida!", ui_story_31330401_2_dialog_content = "Eso era de esperarse. Después de todo, fui yo quien lo hizo y nadie más podría siquiera intentar replicarlo.", ui_story_31330401_3_dialog_content = "Tienes razón, no creo que nadie pueda replicar lo impactante que es esto.", ui_story_31330401_4_dialog_content = "Estoy realmente contento de que hayas podido regresar y todo, pero ¿podrías dejar de investigar platos extraños por un tiempo, por favor?", ui_story_31330401_5_dialog_content = "Ya he recibido muchas quejas de otras personas.", ui_story_31330401_6_dialog_content = "¡Vice! ¿Qué sucedió, Vice?! ¿Qué pasa?!", ui_story_31330401_7_dialog_content = "A-Apúrate... Dile a PlayerName que... evacúe el Coloso... E-Este es mi último deseo...", ui_story_31330401_8_dialog_content = "¿Qué pasa con este gas extraño? ¿Estamos bajo ataque de Eclipsite?!", ui_story_31330401_9_dialog_content = "N-No son Eclipsites... Es Tohru, ella... ella está cocinando algo terrible... ¡C-Corre por tu vida!", ui_story_31330401_10_dialog_content = "¿Por qué te fuiste, señorita Vice? ¡Ven a probar mi Eclipsite frito y araña de arena, es increíble!", ui_story_31330401_11_dialog_content = "Vice desarrolló una aversión psicológica hacia los Eclipsites después de eso.", ui_story_31330401_12_dialog_content = "E-Eso fue solo un accidente! Relájate, te prometo que no usé Eclipsites para hacer comida esta vez!", ui_story_31330401_13_dialog_content = "Entonces dime, ¿qué hiciste esta vez?", ui_story_31330401_14_dialog_content = "¡Un plato fusión con muchos sabores diferentes y desafiantes!", ui_story_31330401_15_dialog_content = "Estoy acabado... Ya tengo un mal presentimiento sobre esto.", ui_story_31330401_16_dialog_content = "Comencé recolectando algunas especias de Illumina.", ui_story_31330401_17_dialog_content = "¿Eh? Eso en realidad suena bastante normal.", ui_story_31330401_18_dialog_content = "Luego, viajé a Longzhou para recoger personalmente algunos pimientos picantes frescos.", ui_story_31330401_19_dialog_content = "Ya veo, ¿entonces es un plato de Longzhou? ¡Estoy empezando a emocionarme por esto!", ui_story_31330401_20_dialog_content = "Después vino el plato estrella. ¡Busqué por todo el Desierto de Rediesel durante mucho tiempo y finalmente encontré esto: un lagarto del desierto altamente venenoso!", ui_story_31330401_21_dialog_content = "jaja?", ui_story_31330401_22_dialog_content = "Después de agregar algunas frutas de mi mundo natal, ¡mi plato de lagarto picante con frutas finalmente estaba completo!", ui_story_31330401_23_dialog_content = "<color=#e8d9bb>Flotando dentro de la espesa sopa roja hay un lagarto que no parece estar completamente muerto. Un plato verdaderamente aterrador e indignante.</color>", ui_story_31330401_24_dialog_content = "Tohru... ¿No podrías simplemente hacer comida normal?", ui_story_31330401_25_dialog_content = "¡La comida normal no es suficiente! Si hago eso... podría no ser capaz de expresar adecuadamente mi gratitud...", ui_story_31330401_26_dialog_content = "No he olvidado cuánto nos ayudaste en ese entonces. Por eso quiero... quiero hacerte un plato que nadie más podría hacer.", ui_story_31330401_27_dialog_content = "Entonces... ¿lo comerás?", ui_story_31330401_28_option_content = "Por supuesto que sí", ui_story_31330401_29_dialog_content = "Puedo decir que trabajaste muy duro en esto.", ui_story_31330401_30_dialog_content = "Aunque se ve un poco aterrador, aún planeo comerlo.", ui_story_31330401_31_option_content = "Es un poco, eh...", ui_story_31330401_32_dialog_content = "... Entiendo. Lo siento mucho por esto... Lo tiraré de inmediato.", ui_story_31330401_33_dialog_content = "¡Pero aún planeo comerlo!", ui_story_31330401_34_dialog_content = "Después de todo, lo hiciste solo para mí, ¿verdad? ¡Es el único plato de su tipo en el mundo!", ui_story_31330401_35_dialog_content = "¡PlayerName!", ui_story_31330401_36_dialog_content = "(¡Velen por mí, mi gente! ¡Bendíganme con el valor para superar este desafío!)", ui_story_31330401_37_dialog_content = "...", ui_story_31330401_38_dialog_content = "<size=50>¡Mmm—!</size> ¡Espera, en realidad está bastante bueno!", ui_story_31330401_39_dialog_content = "¡Te lo dije! No olvides que soy la mejor sirvienta del mundo. ¡Jamás podría hacer algo que sepa mal!", ui_story_31330401_40_dialog_content = "(Tomar ingredientes normales y convertirlos en algo aterrador como esto... Supongo que eso también es una habilidad especial por sí misma.)", ui_story_31330401_41_dialog_content = "¡Muy bien! ¡Hora de seguir explorando los ingredientes de este mundo! ¿Qué debería cocinar la próxima vez?!", ui_story_31330401_42_dialog_content = "M-Tal vez solo algo de cocina casera sencilla?"}
+local config = {
+  ui_story_31330401_1_dialog_content = "¿Por qué estás tan sin aliento, PlayerName? ¡Debes estar realmente emocionado por probar mi comida!",
+  ui_story_31330401_2_dialog_content = "Eso era de esperarse. Después de todo, fui yo quien lo hizo y nadie más podría siquiera intentar replicarlo.",
+  ui_story_31330401_3_dialog_content = "Tienes razón, no creo que nadie pueda replicar lo impactante que es esto.",
+  ui_story_31330401_4_dialog_content = "Estoy realmente contento de que hayas podido regresar y todo, pero ¿podrías dejar de investigar platos extraños por un tiempo, por favor?",
+  ui_story_31330401_5_dialog_content = "Ya he recibido muchas quejas de otras personas.",
+  ui_story_31330401_6_dialog_content = "¡Vice! ¿Qué sucedió, Vice?! ¿Qué pasa?!",
+  ui_story_31330401_7_dialog_content = "A-Apúrate... Dile a PlayerName que... evacúe el Coloso... E-Este es mi último deseo...",
+  ui_story_31330401_8_dialog_content = "¿Qué pasa con este gas extraño? ¿Estamos bajo ataque de Eclipsite?!",
+  ui_story_31330401_9_dialog_content = "N-No son Eclipsites... Es Tohru, ella... ella está cocinando algo terrible... ¡C-Corre por tu vida!",
+  ui_story_31330401_10_dialog_content = "¿Por qué te fuiste, señorita Vice? ¡Ven a probar mi Eclipsite frito y araña de arena, es increíble!",
+  ui_story_31330401_11_dialog_content = "Vice desarrolló una aversión psicológica hacia los Eclipsites después de eso.",
+  ui_story_31330401_12_dialog_content = "E-Eso fue solo un accidente! Relájate, te prometo que no usé Eclipsites para hacer comida esta vez!",
+  ui_story_31330401_13_dialog_content = "Entonces dime, ¿qué hiciste esta vez?",
+  ui_story_31330401_14_dialog_content = "¡Un plato fusión con muchos sabores diferentes y desafiantes!",
+  ui_story_31330401_15_dialog_content = "Estoy acabado... Ya tengo un mal presentimiento sobre esto.",
+  ui_story_31330401_16_dialog_content = "Comencé recolectando algunas especias de Illumina.",
+  ui_story_31330401_17_dialog_content = "¿Eh? Eso en realidad suena bastante normal.",
+  ui_story_31330401_18_dialog_content = "Luego, viajé a Longzhou para recoger personalmente algunos pimientos picantes frescos.",
+  ui_story_31330401_19_dialog_content = "Ya veo, ¿entonces es un plato de Longzhou? ¡Estoy empezando a emocionarme por esto!",
+  ui_story_31330401_20_dialog_content = "Después vino el plato estrella. ¡Busqué por todo el Desierto de Rediesel durante mucho tiempo y finalmente encontré esto: un lagarto del desierto altamente venenoso!",
+  ui_story_31330401_21_dialog_content = "jaja?",
+  ui_story_31330401_22_dialog_content = "Después de agregar algunas frutas de mi mundo natal, ¡mi plato de lagarto picante con frutas finalmente estaba completo!",
+  ui_story_31330401_23_dialog_content = "<color=#e8d9bb>Flotando dentro de la espesa sopa roja hay un lagarto que no parece estar completamente muerto. Un plato verdaderamente aterrador e indignante.</color>",
+  ui_story_31330401_24_dialog_content = "Tohru... ¿No podrías simplemente hacer comida normal?",
+  ui_story_31330401_25_dialog_content = "¡La comida normal no es suficiente! Si hago eso... podría no ser capaz de expresar adecuadamente mi gratitud...",
+  ui_story_31330401_26_dialog_content = "No he olvidado cuánto nos ayudaste en ese entonces. Por eso quiero... quiero hacerte un plato que nadie más podría hacer.",
+  ui_story_31330401_27_dialog_content = "Entonces... ¿lo comerás?",
+  ui_story_31330401_28_option_content = "Por supuesto que sí",
+  ui_story_31330401_29_dialog_content = "Puedo decir que trabajaste muy duro en esto.",
+  ui_story_31330401_30_dialog_content = "Aunque se ve un poco aterrador, aún planeo comerlo.",
+  ui_story_31330401_31_option_content = "Es un poco, eh...",
+  ui_story_31330401_32_dialog_content = "... Entiendo. Lo siento mucho por esto... Lo tiraré de inmediato.",
+  ui_story_31330401_33_dialog_content = "¡Pero aún planeo comerlo!",
+  ui_story_31330401_34_dialog_content = "Después de todo, lo hiciste solo para mí, ¿verdad? ¡Es el único plato de su tipo en el mundo!",
+  ui_story_31330401_35_dialog_content = "¡PlayerName!",
+  ui_story_31330401_36_dialog_content = "(¡Velen por mí, mi gente! ¡Bendíganme con el valor para superar este desafío!)",
+  ui_story_31330401_37_dialog_content = "...",
+  ui_story_31330401_38_dialog_content = "<size=50>¡Mmm—!</size> ¡Espera, en realidad está bastante bueno!",
+  ui_story_31330401_39_dialog_content = "¡Te lo dije! No olvides que soy la mejor sirvienta del mundo. ¡Jamás podría hacer algo que sepa mal!",
+  ui_story_31330401_40_dialog_content = "(Tomar ingredientes normales y convertirlos en algo aterrador como esto... Supongo que eso también es una habilidad especial por sí misma.)",
+  ui_story_31330401_41_dialog_content = "¡Muy bien! ¡Hora de seguir explorando los ingredientes de este mundo! ¿Qué debería cocinar la próxima vez?!",
+  ui_story_31330401_42_dialog_content = "M-Tal vez solo algo de cocina casera sencilla?"
+}
 return config
-

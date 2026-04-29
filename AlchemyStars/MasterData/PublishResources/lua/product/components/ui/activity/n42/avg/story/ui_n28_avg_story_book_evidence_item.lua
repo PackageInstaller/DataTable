@@ -1,77 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/story/ui_n28_avg_story_book_evidence_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGStoryBookEvidenceItem", UICustomWidget)
 UIN28AVGStoryBookEvidenceItem = UIN28AVGStoryBookEvidenceItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGStoryBookEvidenceItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN28AVGStoryBookEvidenceItem:OnShow()
   self._selectObj = self:GetGameObject("select")
   self._anim = self:GetUIComponent("Animation", "anim")
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self:AttachEvent(GameEventType.AVGSelectBookEvidenceItem, self.OnSelect)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryBookEvidenceItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28AVGStoryBookEvidenceItem:OnHide()
   self:DetachEvent(GameEventType.AVGSelectBookEvidenceItem, self.OnSelect)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryBookEvidenceItem.SetData = function(self, evidenceID)
-  -- function num : 0_2
+function UIN28AVGStoryBookEvidenceItem:SetData(evidenceID)
   self._id = evidenceID
   local cfg = self:GetEvidenceCfg(evidenceID)
-  ;
-  (self._icon):LoadImage(cfg.EvidenceIcon)
+  self._icon:LoadImage(cfg.EvidenceIcon)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryBookEvidenceItem.GetEvidenceCfg = function(self, eid)
-  -- function num : 0_3 , upvalues : _ENV
-  local evidenceCfg = (Cfg.cfg_component_avg_evidence)({ID = eid})
+function UIN28AVGStoryBookEvidenceItem:GetEvidenceCfg(eid)
+  local evidenceCfg = Cfg.cfg_component_avg_evidence({ID = eid})
   if evidenceCfg then
     return evidenceCfg[1]
   end
   return {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryBookEvidenceItem.BtnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AVGSelectBookEvidenceItem, self._id)
+function UIN28AVGStoryBookEvidenceItem:BtnOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AVGSelectBookEvidenceItem, self._id)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryBookEvidenceItem.OnSelect = function(self, selectID)
-  -- function num : 0_5 , upvalues : _ENV
-  if selectID == self._id and not (self._selectObj).activeSelf then
-    (self._selectObj):SetActive(true)
-    ;
-    (self._anim):Play("uieff_UIN28AVGStoryBookEvidenceItem_select_in")
-  end
-  if (self._selectObj).activeSelf then
-    (self._anim):Play("uieff_UIN28AVGStoryBookEvidenceItem_select_out")
+function UIN28AVGStoryBookEvidenceItem:OnSelect(selectID)
+  if selectID == self._id then
+    if not self._selectObj.activeSelf then
+      self._selectObj:SetActive(true)
+      self._anim:Play("uieff_UIN28AVGStoryBookEvidenceItem_select_in")
+    end
+  elseif self._selectObj.activeSelf then
+    self._anim:Play("uieff_UIN28AVGStoryBookEvidenceItem_select_out")
     self:Lock("UIN28AVGStoryBookEvidenceItem_OnSelect")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self
-    YIELD(TT, 300)
-    ;
-    (self._selectObj):SetActive(false)
-    self:UnLock("UIN28AVGStoryBookEvidenceItem_OnSelect")
-  end
-, self)
+    GameGlobal.TaskManager():StartTask(function(TT)
+      YIELD(TT, 300)
+      self._selectObj:SetActive(false)
+      self:UnLock("UIN28AVGStoryBookEvidenceItem_OnSelect")
+    end, self)
   end
 end
-
-

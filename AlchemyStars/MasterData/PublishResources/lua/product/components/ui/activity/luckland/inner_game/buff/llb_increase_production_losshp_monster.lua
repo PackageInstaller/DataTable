@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_increase_production_losshp_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("llb_logic_base")
 _class("LLBuffLogicIncreaseProductionLossHpMonster", LLBuffLogicBase)
 LLBuffLogicIncreaseProductionLossHpMonster = LLBuffLogicIncreaseProductionLossHpMonster
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicIncreaseProductionLossHpMonster.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicIncreaseProductionLossHpMonster:Constructor(buffObj, logicParam)
   self._coefficient = logicParam.coefficient
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicIncreaseProductionLossHpMonster.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function LLBuffLogicIncreaseProductionLossHpMonster:DoLogic(notify)
   local notifyEntity = notify:GetNotifyEntity()
   local lossHpPercent = 0
   if notifyEntity:GetEntityType() == LuckLandEntityType.Monster then
@@ -27,27 +17,21 @@ LLBuffLogicIncreaseProductionLossHpMonster.DoLogic = function(self, notify)
     local lossHpPercent = lossHp / maxHp
     lossHpPercent = lossHpPercent * self._coefficient
   end
-  do
-    local targets = (self._buffObj):GetTargets()
-    for _,target in ipairs(targets) do
-      self:DoLogicSingle(target, lossHpPercent)
-    end
+  local targets = self._buffObj:GetTargets()
+  for _, target in ipairs(targets) do
+    self:DoLogicSingle(target, lossHpPercent)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicIncreaseProductionLossHpMonster.DoLogicSingle = function(self, target, tempPercent)
-  -- function num : 0_2 , upvalues : _ENV
-  if target:GetEntityType() == LuckLandEntityType.Pet and target:HasDeleteFlag() then
-    return 
-  end
-  if target:GetEntityType() == LuckLandEntityType.Monster and target:IsDead() then
-    return 
+function LLBuffLogicIncreaseProductionLossHpMonster:DoLogicSingle(target, tempPercent)
+  if target:GetEntityType() == LuckLandEntityType.Pet then
+    if target:HasDeleteFlag() then
+      return
+    end
+  elseif target:GetEntityType() == LuckLandEntityType.Monster and target:IsDead() then
+    return
   end
   if self._incType == LuckLandIncType.Temp then
     target:AddTempPerValue(tempPercent)
   end
 end
-
-

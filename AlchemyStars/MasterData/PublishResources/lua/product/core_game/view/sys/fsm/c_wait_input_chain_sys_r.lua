@@ -1,66 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_wait_input_chain_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("wait_input_chain_system")
 _class("ClientWaitInputChainSystem_Render", WaitInputChainSystem)
 ClientWaitInputChainSystem_Render = ClientWaitInputChainSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientWaitInputChainSystem_Render._DoRenderPieceAnimation = function(self, TT)
-  -- function num : 0_0
-  local piece_service = (self._world):GetService("Piece")
+function ClientWaitInputChainSystem_Render:_DoRenderPieceAnimation(TT)
+  local piece_service = self._world:GetService("Piece")
   if piece_service then
     piece_service:RefreshPieceAnim()
     piece_service:RefreshMonsterAreaOutLine(TT)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaitInputChainSystem_Render._ShowUI = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideUIPreviewChain, true)
+function ClientWaitInputChainSystem_Render:_ShowUI(TT)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideUIPreviewChain, true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaitInputChainSystem_Render._PlayPreview = function(self, TT, teamEntity)
-  -- function num : 0_2 , upvalues : _ENV
-  local sPreviewSkill = (self._world):GetService("PreviewActiveSkill")
-  local sPreviewActiveSkill = (self._world):GetService("PreviewActiveSkill")
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+function ClientWaitInputChainSystem_Render:_PlayPreview(TT, teamEntity)
+  local sPreviewSkill = self._world:GetService("PreviewActiveSkill")
+  local sPreviewActiveSkill = self._world:GetService("PreviewActiveSkill")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   sPreviewSkill:StartPreviewFocusEffect()
   local casterEntity = teamEntity:GetTeamLeaderPetEntity()
   local skillPreviewParamInstruction = SkillPreviewParamInstruction:New({})
   local instructionSet = skillPreviewParamInstruction:_ParseInstructionSet(BattleConst.DimensionPreviewInstructionSetIdPrepare)
   if instructionSet then
     local previewContext = SkillPreviewContext:New(self._world, casterEntity)
-    local scopeParam = SkillPreviewScopeParam:New({TargetType = SkillTargetType.Monster, ScopeType = SkillScopeType.FullScreen, ScopeCenterType = SkillScopeCenterType.CasterPos, OnlyCanMove = false})
+    local scopeParam = SkillPreviewScopeParam:New({
+      TargetType = SkillTargetType.Monster,
+      ScopeType = SkillScopeType.FullScreen,
+      ScopeCenterType = SkillScopeCenterType.CasterPos,
+      OnlyCanMove = false
+    })
     scopeParam:SetScopeParamData(0)
     local scopeResult = utilScopeSvc:CalcScopeResult(scopeParam, casterEntity)
     previewContext:SetScopeResult(scopeResult:GetAttackRange())
     local targetIDList = utilScopeSvc:SelectSkillTarget(casterEntity, SkillTargetType.Monster, scopeResult)
     previewContext:SetTargetEntityIDList(targetIDList)
     sPreviewActiveSkill:DoPreviewInstruction(TT, instructionSet, casterEntity, previewContext)
-    ;
-    (Log.debug)(self._className, "instruction set fin: BattleConst.DimensionPreviewInstructionSetIdPrepare == ", BattleConst.DimensionPreviewInstructionSetIdPrepare)
+    Log.debug(self._className, "instruction set fin: BattleConst.DimensionPreviewInstructionSetIdPrepare == ", BattleConst.DimensionPreviewInstructionSetIdPrepare)
   else
-    do
-      ;
-      (Log.error)(self._className, "Cannot parse instruction set: BattleConst.DimensionPreviewInstructionSetIdPrepare == ", BattleConst.DimensionPreviewInstructionSetIdPrepare)
-    end
+    Log.error(self._className, "Cannot parse instruction set: BattleConst.DimensionPreviewInstructionSetIdPrepare == ", BattleConst.DimensionPreviewInstructionSetIdPrepare)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaitInputChainSystem_Render._DoRenderBeforePickUp = function(self)
-  -- function num : 0_3
-  local previewEntity = (self._world):GetPreviewEntity()
+function ClientWaitInputChainSystem_Render:_DoRenderBeforePickUp()
+  local previewEntity = self._world:GetPreviewEntity()
   local prvwCmpt = previewEntity:PreviewChainSkill()
   prvwCmpt:SetPickUpTargetEnalbe(true)
 end
-
-

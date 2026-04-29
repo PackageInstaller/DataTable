@@ -1,28 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_find_obj_play_anim_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("cutscene_base_ins_r")
 _class("CutsceneFindObjPlayAnimationInstruction", CutsceneBaseInstruction)
 CutsceneFindObjPlayAnimationInstruction = CutsceneFindObjPlayAnimationInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneFindObjPlayAnimationInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function CutsceneFindObjPlayAnimationInstruction:Constructor(paramList)
   self._gameObjectName = paramList.gameObjectName
   self._animName = paramList.anim
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneFindObjPlayAnimationInstruction.DoInstruction = function(self, TT, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local targetGameObject = ((UnityEngine.GameObject).Find)(self._gameObjectName)
+function CutsceneFindObjPlayAnimationInstruction:DoInstruction(TT, phaseContext)
+  local targetGameObject = UnityEngine.GameObject.Find(self._gameObjectName)
   if targetGameObject then
-    local anim = (targetGameObject.gameObject):GetComponent("Animation")
+    local anim = targetGameObject.gameObject:GetComponent("Animation")
     anim:Play(self._animName)
   end
 end
-
-

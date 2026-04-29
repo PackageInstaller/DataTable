@@ -1,29 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s8/main/ui_season_main_level_list_item_s8.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMainLevelListItemS8", UICustomWidget)
 UISeasonMainLevelListItemS8 = UISeasonMainLevelListItemS8
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMainLevelListItemS8.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMainLevelListItemS8:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListItemS8.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMainLevelListItemS8:InitWidget()
   self.title_has_produce = self:GetUIComponent("UILocalizationText", "title_has_produce")
   self.title_story = self:GetUIComponent("UILocalizationText", "title_story")
   self.title_no_produce = self:GetUIComponent("UILocalizationText", "title_no_produce")
   self.star = self:GetGameObject("star")
-  self._stars = {self:GetGameObject("star1"), self:GetGameObject("star2"), self:GetGameObject("star3")}
+  self._stars = {
+    self:GetGameObject("star1"),
+    self:GetGameObject("star2"),
+    self:GetGameObject("star3")
+  }
   self.item = self:GetUIComponent("UISelectObjectPath", "item")
   self._lockTip = self:GetGameObject("LockTip")
-  self._anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+  self._anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
   self._root = self:GetGameObject("Root")
   self._bg = self:GetUIComponent("Image", "Root")
   self._lockImage = self:GetUIComponent("Image", "LockTip")
@@ -33,45 +27,36 @@ UISeasonMainLevelListItemS8.InitWidget = function(self)
   self._finishTipGo = self:GetGameObject("finishTip")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListItemS8.SetData = function(self, data, onClick)
-  -- function num : 0_2
+function UISeasonMainLevelListItemS8:SetData(data, onClick)
   self._data = data
   self._onClick = onClick
-  ;
-  (self._lockTip):SetActive(not (self._data):IsUnlock())
+  self._lockTip:SetActive(not self._data:IsUnlock())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListItemS8.RefreshByDiff = function(self, curDiff)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMainLevelListItemS8:RefreshByDiff(curDiff)
   self._curDiff = curDiff
-  local levelCfg = (self._data):GetMissionCfgByDiff(self._curDiff)
+  local levelCfg = self._data:GetMissionCfgByDiff(self._curDiff)
   local isStoryLevel = levelCfg.Type == SeasonEventPointType.MainStory
   local isHasProduceLevel = false
-  isHasProduceLevel = isStoryLevel or not levelCfg.ThreeStarCondition3 or levelCfg.ThreeStarCondition3 > 0
-  ;
-  (self._storyGo):SetActive(isStoryLevel)
-  ;
-  (self._fight_produceGo):SetActive((not isStoryLevel and isHasProduceLevel))
-  ;
-  (self._fight_no_produce):SetActive((not isStoryLevel and not isHasProduceLevel))
-  ;
-  (self._finishTipGo):SetActive(false)
+  if not isStoryLevel then
+    isHasProduceLevel = levelCfg.ThreeStarCondition3 and levelCfg.ThreeStarCondition3 > 0
+  end
+  self._storyGo:SetActive(isStoryLevel)
+  self._fight_produceGo:SetActive(not isStoryLevel and isHasProduceLevel)
+  self._fight_no_produce:SetActive(not isStoryLevel and not isHasProduceLevel)
+  self._finishTipGo:SetActive(false)
   if isHasProduceLevel then
-    local star = (self._data):GetStarByDiff(self._curDiff)
+    local star = self._data:GetStarByDiff(self._curDiff)
     for i = 1, 3 do
-      ((self._stars)[i]):SetActive(i <= star)
+      self._stars[i]:SetActive(i <= star)
     end
-    local awards = (self._data):GetAwardsByDiff(self._curDiff)
+    local awards = self._data:GetAwardsByDiff(self._curDiff)
     local tmp = {}
     for i = 1, #awards do
       tmp[#awards - i + 1] = awards[i]
     end
     awards = tmp
-    local items = (self.item):SpawnObjects("UISeasonMainLevelListAssetS8", #awards)
+    local items = self.item:SpawnObjects("UISeasonMainLevelListAssetS8", #awards)
     for i = 1, #awards do
       local item = items[i]
       local award = awards[i]
@@ -80,70 +65,42 @@ UISeasonMainLevelListItemS8.RefreshByDiff = function(self, curDiff)
       item:SetData(id, count)
     end
   else
-    local isPass = (self._data):IsPassDiff(self._curDiff)
-    ;
-    (self._finishTipGo):SetActive(isPass)
+    local isPass = self._data:IsPassDiff(self._curDiff)
+    self._finishTipGo:SetActive(isPass)
   end
-  local txtName = (StringTable.Get)(levelCfg.Name)
-  ;
-  (self.title_has_produce):SetText(txtName)
-  ;
-  (self.title_story):SetText(txtName)
-  ;
-  (self.title_no_produce):SetText(txtName)
+  local txtName = StringTable.Get(levelCfg.Name)
+  self.title_has_produce:SetText(txtName)
+  self.title_story:SetText(txtName)
+  self.title_no_produce:SetText(txtName)
   local atlas = self:GetAsset("UIS8Scene.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC138: Confused about usage of register: R7 in 'UnsetPending'
-
   if isStoryLevel then
-    (self._bg).sprite = atlas:GetSprite("s8_gqlb_di03")
+    self._bg.sprite = atlas:GetSprite("s8_gqlb_di03")
   else
-    -- DECOMPILER ERROR at PC144: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._bg).sprite = atlas:GetSprite("s8_gqlb_di04")
+    self._bg.sprite = atlas:GetSprite("s8_gqlb_di04")
   end
-  -- DECOMPILER ERROR: 12 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListItemS8.PrepareAnim = function(self)
-  -- function num : 0_4
-  (self._root):SetActive(false)
+function UISeasonMainLevelListItemS8:PrepareAnim()
+  self._root:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListItemS8.PlayEnterAnim = function(self)
-  -- function num : 0_5
-  (self._root):SetActive(true)
-  ;
-  (self._anim):Play("uieff_UISeasonMainLevelListItemS3_in")
+function UISeasonMainLevelListItemS8:PlayEnterAnim()
+  self._root:SetActive(true)
+  self._anim:Play("uieff_UISeasonMainLevelListItemS3_in")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListItemS8.PlaySwitchAnim = function(self)
-  -- function num : 0_6
-  (self._root):SetActive(true)
+function UISeasonMainLevelListItemS8:PlaySwitchAnim()
+  self._root:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListItemS8.PlayOutAnim = function(self)
-  -- function num : 0_7
-  (self._anim):Play("uieff_UISeasonMainLevelListItemS2_out")
+function UISeasonMainLevelListItemS8:PlayOutAnim()
+  self._anim:Play("uieff_UISeasonMainLevelListItemS2_out")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListItemS8.RootOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  local seasonManager = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
+function UISeasonMainLevelListItemS8:RootOnClick(go)
+  local seasonManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
   if seasonManager:LockUI() then
-    return 
+    return
   end
-  ;
-  (self._onClick)(self._data)
+  self._onClick(self._data)
 end
-
-

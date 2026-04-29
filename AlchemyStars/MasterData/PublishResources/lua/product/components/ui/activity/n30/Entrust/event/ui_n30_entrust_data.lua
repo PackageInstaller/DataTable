@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n30/Entrust/event/ui_n30_entrust_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N30EntrustData", Object)
 N30EntrustData = N30EntrustData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N30EntrustData.Constructor = function(self, component)
-  -- function num : 0_0
+function N30EntrustData:Constructor(component)
   self._component = component
   self._datas = {}
   self._dbViewedNode = {}
@@ -17,96 +10,62 @@ N30EntrustData.Constructor = function(self, component)
   self:ViewPlotLoadDB()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.GetModule = function(self, gameModuleProto)
-  -- function num : 0_1 , upvalues : _ENV
-  return (GameGlobal.GetModule)(gameModuleProto)
+function N30EntrustData:GetModule(gameModuleProto)
+  return GameGlobal.GetModule(gameModuleProto)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.GetDBNewNodeKey = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function N30EntrustData:GetDBNewNodeKey()
   local key = "N30EntrustData::NewNode"
   local roleModule = self:GetModule(RoleModule)
   return roleModule:GetPstId() .. key
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.NewNodeLoadDB = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function N30EntrustData:NewNodeLoadDB()
   local key = self:GetDBNewNodeKey()
-  local content = (LocalDB.GetString)(key, "")
-  local fnString = (string.format)("return {%s}", content)
+  local content = LocalDB.GetString(key, "")
+  local fnString = string.format("return {%s}", content)
   local fnTable = load(fnString)
   local dbData = fnTable()
-  for k,v in pairs(dbData) do
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R11 in 'UnsetPending'
-
-    (self._dbViewedNode)[v] = v
+  for k, v in pairs(dbData) do
+    self._dbViewedNode[v] = v
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.NewNodeSaveDB = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function N30EntrustData:NewNodeSaveDB()
   local content = ""
-  for k,v in pairs(self._dbViewedNode) do
-    content = content .. (string.format)("%d, ", v)
+  for k, v in pairs(self._dbViewedNode) do
+    content = content .. string.format("%d, ", v)
   end
   local key = self:GetDBNewNodeKey()
-  ;
-  (LocalDB.SetString)(key, content)
+  LocalDB.SetString(key, content)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.ViewNode = function(self, viewedNodeId)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._dbViewedNode)[viewedNodeId] = viewedNodeId
+function N30EntrustData:ViewNode(viewedNodeId)
+  self._dbViewedNode[viewedNodeId] = viewedNodeId
   self:NewNodeSaveDB()
   local node = self:GetNodeData(viewedNodeId)
   node._isNew = false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.GetDBViewPlotKey = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function N30EntrustData:GetDBViewPlotKey()
   local key = "N30EntrustData::ViewPlot"
   local roleModule = self:GetModule(RoleModule)
   return roleModule:GetPstId() .. key
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.ViewPlotLoadDB = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function N30EntrustData:ViewPlotLoadDB()
   local key = self:GetDBViewPlotKey()
-  local content = (LocalDB.GetInt)(key, 0)
+  local content = LocalDB.GetInt(key, 0)
   self._dbViewedPlot = content == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.ViewPlotSaveDB = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function N30EntrustData:ViewPlotSaveDB()
   local content = self._dbViewedPlot and 1 or 0
   local key = self:GetDBViewPlotKey()
-  ;
-  (LocalDB.SetInt)(key, content)
+  LocalDB.SetInt(key, content)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.ViewPlot = function(self, viewedPlot)
-  -- function num : 0_9
+function N30EntrustData:ViewPlot(viewedPlot)
   if viewedPlot ~= nil then
     self._dbViewedPlot = viewedPlot
     self:ViewPlotSaveDB()
@@ -114,50 +73,40 @@ N30EntrustData.ViewPlot = function(self, viewedPlot)
   return self._dbViewedPlot
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.ClearDB = function(self)
-  -- function num : 0_10
+function N30EntrustData:ClearDB()
   self._dbViewedNode = {}
   self._dbViewedPlot = false
   self:NewNodeSaveDB()
   self:ViewPlotSaveDB()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.GetAllEntrust = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local allEntrust = (Cfg.cfg_component_entrust)({ComponentID = (self._component):GetComponentCfgId()})
+function N30EntrustData:GetAllEntrust()
+  local allEntrust = Cfg.cfg_component_entrust({
+    ComponentID = self._component:GetComponentCfgId()
+  })
   local lookup = {}
   local theNext = {}
-  for k,v in pairs(allEntrust) do
+  for k, v in pairs(allEntrust) do
     lookup[v.ID] = v
     theNext[v.PreID] = v
   end
   local dataNodes = {}
   local curNode = theNext[0]
   while curNode ~= nil do
-    (table.insert)(dataNodes, curNode)
+    table.insert(dataNodes, curNode)
     curNode = theNext[curNode.ID]
   end
   return dataNodes
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.RefreshClientData = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function N30EntrustData:RefreshClientData()
   local allEntrust = self:GetAllEntrust()
-  for _,v in pairs(allEntrust) do
+  for _, v in pairs(allEntrust) do
     local key = v.ID
-    local node = (self._datas)[key]
+    local node = self._datas[key]
     if node == nil then
       node = N30EntrustNodeData:New(self, v)
-      -- DECOMPILER ERROR at PC18: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._datas)[key] = node
+      self._datas[key] = node
       self:NodePreEvents(node)
       self:NodeReachable(node)
       self:NodeSequence(node)
@@ -166,22 +115,19 @@ N30EntrustData.RefreshClientData = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.NodePreEvents = function(self, node)
-  -- function num : 0_13 , upvalues : _ENV
+function N30EntrustData:NodePreEvents(node)
   local preLinks = node._preLinks
   local preEvents = node._preEvents
   local lineIds = {}
-  if (node._cfg).LineID ~= nil then
-    lineIds = (node._cfg).LineID
+  if node._cfg.LineID ~= nil then
+    lineIds = node._cfg.LineID
   end
   local eventIds = {}
-  if (node._cfg).EventID ~= nil then
-    eventIds = (node._cfg).EventID
+  if node._cfg.EventID ~= nil then
+    eventIds = node._cfg.EventID
   end
   local cacheLine = Cfg.cfg_campaign_entrust_line
-  for k,v in pairs(lineIds) do
+  for k, v in pairs(lineIds) do
     local cfg = cacheLine[v]
     local preDic = preLinks[cfg.RightEventID]
     if preDic == nil then
@@ -191,7 +137,7 @@ N30EntrustData.NodePreEvents = function(self, node)
     preDic[cfg.LeftEventID] = cfg.LeftEventID
   end
   local cacheEvent = Cfg.cfg_campaign_entrust_event
-  for k,v in pairs(eventIds) do
+  for k, v in pairs(eventIds) do
     local cfg = cacheEvent[v]
     if cfg.LockedPointID ~= nil then
       local preDic = preEvents[v]
@@ -204,17 +150,14 @@ N30EntrustData.NodePreEvents = function(self, node)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.NodeReachable = function(self, node)
-  -- function num : 0_14 , upvalues : _ENV
+function N30EntrustData:NodeReachable(node)
   local reachable = node._reachable
   local lineIds = {}
-  if (node._cfg).LineID ~= nil then
-    lineIds = (node._cfg).LineID
+  if node._cfg.LineID ~= nil then
+    lineIds = node._cfg.LineID
   end
   local cacheLine = Cfg.cfg_campaign_entrust_line
-  for k,v in pairs(lineIds) do
+  for k, v in pairs(lineIds) do
     local cfg = cacheLine[v]
     local dic = reachable[cfg.LeftEventID]
     if dic == nil then
@@ -231,36 +174,31 @@ N30EntrustData.NodeReachable = function(self, node)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.NodeSequence = function(self, node)
-  -- function num : 0_15 , upvalues : _ENV
+function N30EntrustData:NodeSequence(node)
   local sequence = node._sequence
   local lineIds = {}
-  if (node._cfg).LineID ~= nil then
-    lineIds = (node._cfg).LineID
+  if node._cfg.LineID ~= nil then
+    lineIds = node._cfg.LineID
   end
   local eventIds = {}
-  if (node._cfg).EventID ~= nil then
-    eventIds = (node._cfg).EventID
+  if node._cfg.EventID ~= nil then
+    eventIds = node._cfg.EventID
   end
   local cacheLine = Cfg.cfg_campaign_entrust_line
   local cacheEvent = Cfg.cfg_campaign_entrust_event
   local start = {}
   local trans = {}
-  for k,v in pairs(eventIds) do
+  for k, v in pairs(eventIds) do
     local cfg = cacheEvent[v]
     if cfg.EventType == EntrustEventType.EntrustEventType_Start then
-      (table.insert)(start, cfg.EventID)
-    else
-      if cfg.EventType == EntrustEventType.EntrustEventType_Transfer then
-        trans[cfg.EventID] = cfg.TargetID
-        trans[cfg.TargetID] = cfg.EventID
-      end
+      table.insert(start, cfg.EventID)
+    elseif cfg.EventType == EntrustEventType.EntrustEventType_Transfer then
+      trans[cfg.EventID] = cfg.TargetID
+      trans[cfg.TargetID] = cfg.EventID
     end
   end
   local lookupE2L = {}
-  for k,v in pairs(lineIds) do
+  for k, v in pairs(lineIds) do
     local cfg = cacheLine[v]
     local dic = lookupE2L[cfg.LeftEventID]
     if dic == nil then
@@ -270,20 +208,19 @@ N30EntrustData.NodeSequence = function(self, node)
     dic[cfg.LineID] = cfg
   end
   local newUnique = {}
-  while #start > 0 do
+  while 0 < #start do
     local newStart = {}
     local list = {}
-    for k,v in pairs(start) do
+    for k, v in pairs(start) do
       local dic = lookupE2L[v]
       if dic == nil then
         dic = {}
       end
-      for dk,dv in pairs(dic) do
-        (table.insert)(list, dv)
+      for dk, dv in pairs(dic) do
+        table.insert(list, dv)
         if newUnique[dv.RightEventID] == nil then
           newUnique[dv.RightEventID] = dv.RightEventID
-          ;
-          (table.insert)(newStart, dv.RightEventID)
+          table.insert(newStart, dv.RightEventID)
         end
       end
       dic = {}
@@ -293,145 +230,126 @@ N30EntrustData.NodeSequence = function(self, node)
       if dic == nil then
         dic = {}
       end
-      for dk,dv in pairs(dic) do
-        (table.insert)(list, dv)
+      for dk, dv in pairs(dic) do
+        table.insert(list, dv)
         if newUnique[dv.RightEventID] == nil then
           newUnique[dv.RightEventID] = dv.RightEventID
-          ;
-          (table.insert)(newStart, dv.RightEventID)
+          table.insert(newStart, dv.RightEventID)
         end
       end
     end
-    if #list > 0 then
-      (table.insert)(sequence, list)
+    if 0 < #list then
+      table.insert(sequence, list)
     end
     start = newStart
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.NodeNormalData = function(self, node)
-  -- function num : 0_16 , upvalues : _ENV
-  local nodeId = (node._cfg).ID
-  local componentInfo = (self._component):GetComponentInfo()
+function N30EntrustData:NodeNormalData(node)
+  local nodeId = node._cfg.ID
+  local componentInfo = self._component:GetComponentInfo()
   local cacheEvent = Cfg.cfg_campaign_entrust_event
   node._rewarded_events = {}
-  if (componentInfo.rewarded_events)[nodeId] ~= nil then
-    local list = (componentInfo.rewarded_events)[nodeId]
-    for k,v in pairs(list) do
-      -- DECOMPILER ERROR at PC20: Confused about usage of register: R11 in 'UnsetPending'
-
-      (node._rewarded_events)[v] = v
+  if componentInfo.rewarded_events[nodeId] ~= nil then
+    local list = componentInfo.rewarded_events[nodeId]
+    for k, v in pairs(list) do
+      node._rewarded_events[v] = v
     end
   end
-  do
-    node._isNew = (self._dbViewedNode)[nodeId] == nil
-    if node._isNew then
-      for k,v in pairs(node._rewarded_events) do
-        local cfgEvent = cacheEvent[v]
-        if cfgEvent.EventType ~= EntrustEventType.EntrustEventType_Start then
-          self:ViewNode(nodeId)
-          break
-        end
-      end
-    end
-    local preID = (node._cfg).PreID
-    local preNode = (self._datas)[preID]
-    if preNode == nil then
-      node._isLocked = false
-    else
-      node._isLocked = not preNode._isPass
-    end
-    local eventIds = {}
-    if (node._cfg).EventID ~= nil then
-      eventIds = (node._cfg).EventID
-    end
-    node._isPass = true
-    for k,v in pairs(eventIds) do
+  node._isNew = self._dbViewedNode[nodeId] == nil
+  if node._isNew then
+    for k, v in pairs(node._rewarded_events) do
       local cfgEvent = cacheEvent[v]
-      if cfgEvent.EventType == EntrustEventType.EntrustEventType_End and (node._rewarded_events)[v] == nil then
-        node._isPass = false
+      if cfgEvent.EventType ~= EntrustEventType.EntrustEventType_Start then
+        self:ViewNode(nodeId)
         break
       end
     end
-    node._totalEvents = 0
-    node._completeEvents = 0
-    for k,v in pairs(eventIds) do
-      local cfgEvent = cacheEvent[v]
-      if cfgEvent.EventType ~= EntrustEventType.EntrustEventType_Start then
-        node._totalEvents = node._totalEvents + 1
-      end
+  end
+  local preID = node._cfg.PreID
+  local preNode = self._datas[preID]
+  if preNode == nil then
+    node._isLocked = false
+  else
+    node._isLocked = not preNode._isPass
+  end
+  local eventIds = {}
+  if node._cfg.EventID ~= nil then
+    eventIds = node._cfg.EventID
+  end
+  node._isPass = true
+  for k, v in pairs(eventIds) do
+    local cfgEvent = cacheEvent[v]
+    if cfgEvent.EventType == EntrustEventType.EntrustEventType_End and node._rewarded_events[v] == nil then
+      node._isPass = false
+      break
     end
-    for k,v in pairs(node._rewarded_events) do
-      local cfgEvent = cacheEvent[v]
-      if cfgEvent.EventType ~= EntrustEventType.EntrustEventType_Start then
-        node._completeEvents = node._completeEvents + 1
-      end
+  end
+  node._totalEvents = 0
+  node._completeEvents = 0
+  for k, v in pairs(eventIds) do
+    local cfgEvent = cacheEvent[v]
+    if cfgEvent.EventType ~= EntrustEventType.EntrustEventType_Start then
+      node._totalEvents = node._totalEvents + 1
     end
-    -- DECOMPILER ERROR: 10 unprocessed JMP targets
+  end
+  for k, v in pairs(node._rewarded_events) do
+    local cfgEvent = cacheEvent[v]
+    if cfgEvent.EventType ~= EntrustEventType.EntrustEventType_Start then
+      node._completeEvents = node._completeEvents + 1
+    end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.NodeRewardsData = function(self, node)
-  -- function num : 0_17 , upvalues : _ENV
+function N30EntrustData:NodeRewardsData(node)
   if node._rewardFinish == nil then
     node._rewardFinish = {}
     node._rewardExplor = {}
     local eventIds = {}
-    if (node._cfg).EventID ~= nil then
-      eventIds = (node._cfg).EventID
+    if node._cfg.EventID ~= nil then
+      eventIds = node._cfg.EventID
     end
     local cacheEvent = Cfg.cfg_campaign_entrust_event
-    for k,v in pairs(eventIds) do
-      local rewardList = nil
+    for k, v in pairs(eventIds) do
+      local rewardList
       local cfg = cacheEvent[v]
       if cfg.EventType == EntrustEventType.EntrustEventType_End then
         rewardList = node._rewardFinish
-      else
-        if cfg.EventType == EntrustEventType.EntrustEventType_Box then
-          rewardList = node._rewardExplor
-        end
+      elseif cfg.EventType == EntrustEventType.EntrustEventType_Box then
+        rewardList = node._rewardExplor
       end
       if rewardList ~= nil then
         local list = self:EventRewardList(cfg)
-        for rk,rv in pairs(list) do
-          (table.insert)(rewardList, rv)
+        for rk, rv in pairs(list) do
+          table.insert(rewardList, rv)
         end
       end
     end
   end
-  do
-    self:NodeNormalizedRewards(node, node._rewardFinish)
-    self:NodeNormalizedRewards(node, node._rewardExplor)
-  end
+  self:NodeNormalizedRewards(node, node._rewardFinish)
+  self:NodeNormalizedRewards(node, node._rewardExplor)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.NodeDetailsData = function(self, node)
-  -- function num : 0_18 , upvalues : _ENV
+function N30EntrustData:NodeDetailsData(node)
   local eventIds = {}
-  if (node._cfg).EventID ~= nil then
-    eventIds = (node._cfg).EventID
+  if node._cfg.EventID ~= nil then
+    eventIds = node._cfg.EventID
   end
   local lineIds = {}
-  if (node._cfg).LineID ~= nil then
-    lineIds = (node._cfg).LineID
+  if node._cfg.LineID ~= nil then
+    lineIds = node._cfg.LineID
   end
   local cacheEvent = Cfg.cfg_campaign_entrust_event
   local cacheLine = Cfg.cfg_campaign_entrust_line
   node._totalBox = 0
   node._completeBox = 0
-  for k,v in pairs(eventIds) do
+  for k, v in pairs(eventIds) do
     local cfgEvent = cacheEvent[v]
     if cfgEvent.EventType == EntrustEventType.EntrustEventType_Box then
       node._totalBox = node._totalBox + 1
     end
   end
-  for k,v in pairs(node._rewarded_events) do
+  for k, v in pairs(node._rewarded_events) do
     local cfgEvent = cacheEvent[v]
     if cfgEvent.EventType == EntrustEventType.EntrustEventType_Box then
       node._completeBox = node._completeBox + 1
@@ -439,158 +357,112 @@ N30EntrustData.NodeDetailsData = function(self, node)
   end
   if node._dicEvents == nil then
     node._dicEvents = {}
-    for k,v in pairs(eventIds) do
+    for k, v in pairs(eventIds) do
       local cfgEvent = cacheEvent[v]
       local event = N30EntrustEvent:CreateEvent(node, cfgEvent)
-      -- DECOMPILER ERROR at PC66: Confused about usage of register: R13 in 'UnsetPending'
-
-      ;
-      (node._dicEvents)[v] = event
+      node._dicEvents[v] = event
     end
   end
-  do
-    for k,v in pairs(node._dicEvents) do
-      v._isVisible = false
-      v._isLocked = false
-      v._isPass = false
-      local eventId = v:ID()
-      local preDic = (node._preLinks)[eventId]
-      if (node._rewarded_events)[k] ~= nil then
+  for k, v in pairs(node._dicEvents) do
+    v._isVisible = false
+    v._isLocked = false
+    v._isPass = false
+    local eventId = v:ID()
+    local preDic = node._preLinks[eventId]
+    if node._rewarded_events[k] ~= nil then
+      v._isVisible = true
+    elseif preDic == nil then
+      if v:EventType() == EntrustEventType.EntrustEventType_Start then
         v._isVisible = true
-      else
-        -- DECOMPILER ERROR at PC94: Unhandled construct in 'MakeBoolean' P1
-
-        if preDic == nil and v:EventType() == EntrustEventType.EntrustEventType_Start then
-          v._isVisible = true
-        end
       end
-      for vk,vv in pairs(preDic) do
-        if (node._rewarded_events)[vv] ~= nil then
+    else
+      for vk, vv in pairs(preDic) do
+        if node._rewarded_events[vv] ~= nil then
           v._isVisible = true
           break
         end
       end
-      do
-        local preDic = (node._preEvents)[eventId]
-        if preDic == nil then
-          v._isLocked = false
-        else
-          for vk,vv in pairs(preDic) do
-            if (node._rewarded_events)[vv] == nil then
-              v._isLocked = true
-              break
-            end
-          end
-        end
-        do
-          do
-            v._isPass = (node._rewarded_events)[eventId] ~= nil
-            -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC133: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
+    end
+    local preDic = node._preEvents[eventId]
+    if preDic == nil then
+      v._isLocked = false
+    else
+      for vk, vv in pairs(preDic) do
+        if node._rewarded_events[vv] == nil then
+          v._isLocked = true
+          break
         end
       end
     end
-    if node._dicLines == nil then
-      node._dicLines = {}
-      for k,v in pairs(lineIds) do
-        local cfgLine = cacheLine[v]
-        local line = N30EntrustLine:CreateLine(node, cfgLine)
-        -- DECOMPILER ERROR at PC151: Confused about usage of register: R13 in 'UnsetPending'
-
-        ;
-        (node._dicLines)[v] = line
-      end
+    v._isPass = node._rewarded_events[eventId] ~= nil
+  end
+  if node._dicLines == nil then
+    node._dicLines = {}
+    for k, v in pairs(lineIds) do
+      local cfgLine = cacheLine[v]
+      local line = N30EntrustLine:CreateLine(node, cfgLine)
+      node._dicLines[v] = line
     end
-    for k,v in pairs(node._dicLines) do
-      v._isVisible = false
-      local cfgLine = v:Cfg()
-      v._isVisible = (node._rewarded_events)[cfgLine.LeftEventID] ~= nil
-    end
-    -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  end
+  for k, v in pairs(node._dicLines) do
+    v._isVisible = false
+    local cfgLine = v:Cfg()
+    v._isVisible = node._rewarded_events[cfgLine.LeftEventID] ~= nil
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.EventRewardList = function(self, cfgEvent)
-  -- function num : 0_19 , upvalues : _ENV
+function N30EntrustData:EventRewardList(cfgEvent)
   local rewardList = {}
   if cfgEvent.RewardList ~= nil then
-    for rk,rv in pairs(cfgEvent.RewardList) do
+    for rk, rv in pairs(cfgEvent.RewardList) do
       local reward = RoleAsset:New()
       reward.assetid = rv[1]
       reward.count = rv[2]
       reward.eventid = cfgEvent.EventID
       reward.received = false
-      ;
-      (table.insert)(rewardList, reward)
+      table.insert(rewardList, reward)
     end
   end
-  do
-    return rewardList
-  end
+  return rewardList
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.NodeNormalizedRewards = function(self, node, rewards)
-  -- function num : 0_20 , upvalues : _ENV
+function N30EntrustData:NodeNormalizedRewards(node, rewards)
   local rewarded_events = node._rewarded_events
-  for k,v in pairs(rewards) do
+  for k, v in pairs(rewards) do
     v.received = rewarded_events[v.eventid] ~= nil
   end
-  ;
-  (table.sort)(rewards, function(a, b)
-    -- function num : 0_20_0
+  table.sort(rewards, function(a, b)
     if not a.received and b.received then
       return true
+    elseif a.received and not b.received then
+      return false
     else
-      if a.received and not b.received then
-        return false
-      else
-        return a.assetid < b.assetid
-      end
+      return a.assetid < b.assetid
     end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+    return false
+  end)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.EntrustComponent = function(self)
-  -- function num : 0_21
+function N30EntrustData:EntrustComponent()
   return self._component
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.EntrustComponentInfo = function(self)
-  -- function num : 0_22
-  return (self._component):GetComponentInfo()
+function N30EntrustData:EntrustComponentInfo()
+  return self._component:GetComponentInfo()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.GetNodeData = function(self, nodeKey)
-  -- function num : 0_23
-  return (self._datas)[nodeKey]
+function N30EntrustData:GetNodeData(nodeKey)
+  return self._datas[nodeKey]
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustData.HasNew = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function N30EntrustData:HasNew()
   if self._datas == nil then
     return false
   end
-  for k,v in pairs(self._datas) do
-    if (v:IsLocked() and not v:IsTimeLocked()) or v:IsNew() then
+  for k, v in pairs(self._datas) do
+    if v:IsLocked() then
+    elseif v:IsTimeLocked() then
+    elseif v:IsNew() then
       return true
     end
   end
@@ -599,10 +471,8 @@ end
 
 _class("N30EntrustNodeData", Object)
 N30EntrustNodeData = N30EntrustNodeData
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
 
-N30EntrustNodeData.Constructor = function(self, parent, cfg)
-  -- function num : 0_25
+function N30EntrustNodeData:Constructor(parent, cfg)
   self._parent = parent
   self._cfg = cfg
   self._preLinks = {}
@@ -623,19 +493,13 @@ N30EntrustNodeData.Constructor = function(self, parent, cfg)
   self._dicLines = nil
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.IsLocked = function(self)
-  -- function num : 0_26
+function N30EntrustNodeData:IsLocked()
   return self._isLocked
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.IsTimeLocked = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+function N30EntrustNodeData:IsTimeLocked()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local openTime = self:GetOpenTime()
   if curTime < openTime then
     return true, openTime - curTime
@@ -643,166 +507,98 @@ N30EntrustNodeData.IsTimeLocked = function(self)
   return false, nil
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.IsLocked_TestCase = function(self)
-  -- function num : 0_28
+function N30EntrustNodeData:IsLocked_TestCase()
   return false
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.IsTimeLocked_TestCase = function(self)
-  -- function num : 0_29
+function N30EntrustNodeData:IsTimeLocked_TestCase()
   return false, nil
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.IsNew = function(self)
-  -- function num : 0_30
+function N30EntrustNodeData:IsNew()
   if self._isLocked then
     return false
   end
   return self._isNew
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.IsPass = function(self)
-  -- function num : 0_31
+function N30EntrustNodeData:IsPass()
   return self._isPass
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.GetOpenTime = function(self)
-  -- function num : 0_32
-  local component = (self._parent):EntrustComponent()
+function N30EntrustNodeData:GetOpenTime()
+  local component = self._parent:EntrustComponent()
   local componentInfo = component:GetComponentInfo()
-  return (componentInfo.open_time)[(self._cfg).ID]
+  return componentInfo.open_time[self._cfg.ID]
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.GetExplor = function(self)
-  -- function num : 0_33
+function N30EntrustNodeData:GetExplor()
   if self._totalEvents == nil or self._totalEvents == 0 then
     return 0
   end
   return self._completeEvents / self._totalEvents
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.ID = function(self)
-  -- function num : 0_34
-  return (self._cfg).ID
+function N30EntrustNodeData:ID()
+  return self._cfg.ID
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.GetCfg = function(self)
-  -- function num : 0_35
+function N30EntrustNodeData:GetCfg()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.GetRewardedEvents = function(self)
-  -- function num : 0_36
+function N30EntrustNodeData:GetRewardedEvents()
   return self._rewarded_events
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.EntrustData = function(self)
-  -- function num : 0_37
+function N30EntrustNodeData:EntrustData()
   return self._parent
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.GetPreLinks = function(self)
-  -- function num : 0_38
+function N30EntrustNodeData:GetPreLinks()
   return self._preLinks
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.GetPreEvents = function(self)
-  -- function num : 0_39
+function N30EntrustNodeData:GetPreEvents()
   return self._preEvents
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.GetReachable = function(self)
-  -- function num : 0_40
+function N30EntrustNodeData:GetReachable()
   return self._reachable
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.GetSequence = function(self)
-  -- function num : 0_41
+function N30EntrustNodeData:GetSequence()
   return self._sequence
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.GetRewardFinish = function(self)
-  -- function num : 0_42
+function N30EntrustNodeData:GetRewardFinish()
   return self._rewardFinish
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.GetRewardExplor = function(self)
-  -- function num : 0_43
+function N30EntrustNodeData:GetRewardExplor()
   return self._rewardExplor
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.GetTotalBox = function(self)
-  -- function num : 0_44
+function N30EntrustNodeData:GetTotalBox()
   return self._totalBox
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.GetCompleteBox = function(self)
-  -- function num : 0_45
+function N30EntrustNodeData:GetCompleteBox()
   return self._completeBox
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.GetAllEvents = function(self)
-  -- function num : 0_46
+function N30EntrustNodeData:GetAllEvents()
   return self._dicEvents
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.GetAllLines = function(self)
-  -- function num : 0_47
+function N30EntrustNodeData:GetAllLines()
   return self._dicLines
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.GetEvent = function(self, idEvent)
-  -- function num : 0_48
-  return (self._dicEvents)[idEvent]
+function N30EntrustNodeData:GetEvent(idEvent)
+  return self._dicEvents[idEvent]
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-N30EntrustNodeData.GetLine = function(self, idLine)
-  -- function num : 0_49
-  return (self._dicLines)[idLine]
+function N30EntrustNodeData:GetLine(idLine)
+  return self._dicLines[idLine]
 end
-
-

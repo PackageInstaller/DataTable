@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_behaviour.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionBehaviour", AirActionBase)
 AirActionBehaviour = AirActionBehaviour
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionBehaviour.Constructor = function(self, fur, pet, cfgID, duration, isInit)
-  -- function num : 0_0 , upvalues : _ENV
+function AirActionBehaviour:Constructor(fur, pet, cfgID, duration, isInit)
   self._furniture = fur
   self._pet = pet
   self._duration = duration
-  local cfg = (Cfg.cfg_aircraft_pet_action)[cfgID]
+  local cfg = Cfg.cfg_aircraft_pet_action[cfgID]
   if not cfg then
-    (Log.exception)("[Behaviour] 找不到行为ID：", cfgID)
+    Log.exception("[Behaviour] 找不到行为ID：", cfgID)
   end
   self._state = AirPetFurState.None
   self._fadeInTl = nil
@@ -24,153 +17,119 @@ AirActionBehaviour.Constructor = function(self, fur, pet, cfgID, duration, isIni
   self._fadeInEndTime = 0
   self._fadeOutStartTime = duration
   if self:_petHasExtraAnim(cfg) then
-    local req = (ResourceManager:GetInstance()):SyncLoadAsset((self._pet):SkinID() .. "_aircraft_extra.prefab", LoadType.GameObject)
+    local req = ResourceManager:GetInstance():SyncLoadAsset(self._pet:SkinID() .. "_aircraft_extra.prefab", LoadType.GameObject)
     if req == nil then
-      (Log.exception)("[Behaviour] 找不到星灵特殊动作prefab，配置id:", cfg.ID, "，星灵id:", (self._pet):SkinID())
+      Log.exception("[Behaviour] 找不到星灵特殊动作prefab，配置id:", cfg.ID, "，星灵id:", self._pet:SkinID())
     end
     local go = req.Obj
     local anim = go:GetComponent(typeof(UnityEngine.Animation))
     self._extraReq = req
-    ;
-    (self._pet):SetExtraAnim(anim)
+    self._pet:SetExtraAnim(anim)
   end
-  do
-    if (self._furniture):HasExtraAnim() then
-      local req = (ResourceManager:GetInstance()):SyncLoadAsset((self._furniture):CfgID() .. "_" .. (self._pet):SkinID() .. ".prefab", LoadType.GameObject)
-      if req == nil then
-        (Log.exception)("[Behaviour] 家具有特殊动作但找不到对应prefab，配置id:", cfg.ID, "，目标名称:", (self._furniture):CfgID() .. "_" .. (self._pet):SkinID() .. ".prefab")
-      end
-      local go = req.Obj
-      local anim = go:GetComponent(typeof(UnityEngine.Animation))
-      self._furExtraAnim = anim
-      self._furExtraReq = req
-      if anim == nil then
-        (Log.exception)("家具额外动作没有Animation组件:", (self._furniture):CfgID() .. "_" .. (self._pet):SkinID())
-      end
-      if (self._furniture):Animation() == nil then
-        (Log.exception)("家具没有Animation组件:", (self._furniture):CfgID())
-      end
-      ;
-      (HelperProxy:GetInstance()):AddAnimTo(anim, (self._furniture):Animation())
+  if self._furniture:HasExtraAnim() then
+    local req = ResourceManager:GetInstance():SyncLoadAsset(self._furniture:CfgID() .. "_" .. self._pet:SkinID() .. ".prefab", LoadType.GameObject)
+    if req == nil then
+      Log.exception("[Behaviour] 家具有特殊动作但找不到对应prefab，配置id:", cfg.ID, "，目标名称:", self._furniture:CfgID() .. "_" .. self._pet:SkinID() .. ".prefab")
     end
-    do
-      local fadeIn = cfg.In
-      local loop = cfg.Loop
-      local fadeOut = cfg.Out
-      if not fadeIn and not loop and not fadeOut then
-        (Log.exception)("[Behaviour] 找不到可播放的动画：", cfgID)
-      end
-      do
-        if fadeIn then
-          local fadeInItem = self:_getItemByWeight(fadeIn)
-          self._fadeInEndTime = fadeInItem.dur
-          self._fadeInTl = AirPetFurTimeline:New(fur, pet, fadeInItem, 0)
-        end
-        do
-          if fadeOut then
-            local fadeOutItem = self:_getItemByWeight(fadeOut)
-            self._fadeOutStartTime = duration - fadeOutItem.dur
-            self._fadeOutTl = AirPetFurTimeline:New(fur, pet, fadeOutItem, self._fadeOutStartTime)
-          end
-          if loop then
-            self._loopCfg = loop
-          end
-          self._isInit = isInit
-        end
-      end
+    local go = req.Obj
+    local anim = go:GetComponent(typeof(UnityEngine.Animation))
+    self._furExtraAnim = anim
+    self._furExtraReq = req
+    if anim == nil then
+      Log.exception("家具额外动作没有Animation组件:", self._furniture:CfgID() .. "_" .. self._pet:SkinID())
     end
+    if self._furniture:Animation() == nil then
+      Log.exception("家具没有Animation组件:", self._furniture:CfgID())
+    end
+    HelperProxy:GetInstance():AddAnimTo(anim, self._furniture:Animation())
   end
+  local fadeIn = cfg.In
+  local loop = cfg.Loop
+  local fadeOut = cfg.Out
+  if not fadeIn and not loop and not fadeOut then
+    Log.exception("[Behaviour] 找不到可播放的动画：", cfgID)
+  end
+  if fadeIn then
+    local fadeInItem = self:_getItemByWeight(fadeIn)
+    self._fadeInEndTime = fadeInItem.dur
+    self._fadeInTl = AirPetFurTimeline:New(fur, pet, fadeInItem, 0)
+  end
+  if fadeOut then
+    local fadeOutItem = self:_getItemByWeight(fadeOut)
+    self._fadeOutStartTime = duration - fadeOutItem.dur
+    self._fadeOutTl = AirPetFurTimeline:New(fur, pet, fadeOutItem, self._fadeOutStartTime)
+  end
+  if loop then
+    self._loopCfg = loop
+  end
+  self._isInit = isInit
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBehaviour._petHasExtraAnim = function(self, cfg)
-  -- function num : 0_1 , upvalues : _ENV
+function AirActionBehaviour:_petHasExtraAnim(cfg)
   if cfg.fadeIn then
-    for _,c in pairs(cfg.fadeIn) do
+    for _, c in pairs(cfg.fadeIn) do
       if self:_isExtro(c.pAnim) then
         return true
       end
     end
   end
-  do
-    if cfg.Loop then
-      for _,c in pairs(cfg.Loop) do
-        if self:_isExtro(c.pAnim) then
-          return true
-        end
-      end
-    end
-    do
-      if cfg.fadeOut then
-        for _,c in pairs(cfg.fadeOut) do
-          if self:_isExtro(c.pAnim) then
-            return true
-          end
-        end
-      end
-      do
-        return false
+  if cfg.Loop then
+    for _, c in pairs(cfg.Loop) do
+      if self:_isExtro(c.pAnim) then
+        return true
       end
     end
   end
+  if cfg.fadeOut then
+    for _, c in pairs(cfg.fadeOut) do
+      if self:_isExtro(c.pAnim) then
+        return true
+      end
+    end
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBehaviour._furHasExtraAnim = function(self, cfg)
-  -- function num : 0_2 , upvalues : _ENV
+function AirActionBehaviour:_furHasExtraAnim(cfg)
   if cfg.fadeIn then
-    for _,c in pairs(cfg.fadeIn) do
+    for _, c in pairs(cfg.fadeIn) do
       if c.fAnim then
         return true
       end
     end
   end
-  do
-    if cfg.Loop then
-      for _,c in pairs(cfg.Loop) do
-        if c.fAnim then
-          return true
-        end
-      end
-    end
-    do
-      if cfg.fadeOut then
-        for _,c in pairs(cfg.fadeOut) do
-          if c.fAnim then
-            return true
-          end
-        end
-      end
-      do
-        return false
+  if cfg.Loop then
+    for _, c in pairs(cfg.Loop) do
+      if c.fAnim then
+        return true
       end
     end
   end
+  if cfg.fadeOut then
+    for _, c in pairs(cfg.fadeOut) do
+      if c.fAnim then
+        return true
+      end
+    end
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBehaviour._isExtro = function(self, name)
-  -- function num : 0_3 , upvalues : _ENV
+function AirActionBehaviour:_isExtro(name)
   if name and (name == AirPetAnimName.Stand or name == AirPetAnimName.Walk or name == AirPetAnimName.Click or name == AirPetAnimName.Sit) then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBehaviour._getItemByWeight = function(self, t)
-  -- function num : 0_4 , upvalues : _ENV
+function AirActionBehaviour:_getItemByWeight(t)
   local total = 0
-  for _,item in ipairs(t) do
+  for _, item in ipairs(t) do
     total = total + item.weight
   end
-  local r = (math.random)(1, total)
+  local r = math.random(1, total)
   local temp = 0
-  for _,item in ipairs(t) do
+  for _, item in ipairs(t) do
     temp = temp + item.weight
     if r <= temp then
       return item
@@ -178,127 +137,99 @@ AirActionBehaviour._getItemByWeight = function(self, t)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBehaviour._startLoopTl = function(self, startTime)
-  -- function num : 0_5 , upvalues : _ENV
+function AirActionBehaviour:_startLoopTl(startTime)
   if self._loopCfg then
     local cfg = self:_getItemByWeight(self._loopCfg)
     self._loopTl = AirPetFurTimeline:New(self._furniture, self._pet, cfg, startTime, self._isInit)
-    ;
-    (self._loopTl):Start()
+    self._loopTl:Start()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBehaviour.Start = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function AirActionBehaviour:Start()
   self._curTime = 0
   self._index = 1
   self._running = true
   if self._fadeInTl then
-    (self._fadeInTl):Start()
+    self._fadeInTl:Start()
   end
   self._state = AirPetFurState.FadeIn
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBehaviour.Update = function(self, deltaTimeMS)
-  -- function num : 0_7 , upvalues : _ENV
+function AirActionBehaviour:Update(deltaTimeMS)
   if self._running then
     self._curTime = self._curTime + deltaTimeMS
-    if self._duration <= self._curTime then
+    if self._curTime >= self._duration then
       self._running = false
       self:Stop()
-    else
-      -- DECOMPILER ERROR at PC28: Unhandled construct in 'MakeBoolean' P1
-
-      if self._state == AirPetFurState.FadeIn and self._fadeInEndTime < self._curTime then
+    elseif self._state == AirPetFurState.FadeIn then
+      if self._curTime > self._fadeInEndTime then
         if self._fadeInTl then
-          (self._fadeInTl):Dispose()
+          self._fadeInTl:Dispose()
         end
         self:_startLoopTl(self._fadeInEndTime)
         self._state = AirPetFurState.Idle
       end
-    end
-  end
-  if self._state == AirPetFurState.Idle then
-    if self._fadeOutStartTime < self._curTime then
-      if self._loopTl then
-        (self._loopTl):Dispose()
-      end
-      if self._fadeOutTl then
-        (self._fadeOutTl):Start()
-      end
-      self._state = AirPetFurState.FadeOut
-    else
-      -- DECOMPILER ERROR at PC73: Unhandled construct in 'MakeBoolean' P1
-
-      if self._loopTl and (self._loopTl):EndTime() < self._curTime then
-        local startTime = (self._loopTl):EndTime()
-        ;
-        (self._loopTl):Dispose()
-        self:_startLoopTl(startTime)
-      end
-    end
-    do
-      self._state = AirPetFurState.FadeOut
-      -- DECOMPILER ERROR at PC98: Unhandled construct in 'MakeBoolean' P1
-
-      if self._state == AirPetFurState.FadeOut and self._duration < self._curTime then
+    elseif self._state == AirPetFurState.Idle then
+      if self._curTime > self._fadeOutStartTime then
+        if self._loopTl then
+          self._loopTl:Dispose()
+        end
         if self._fadeOutTl then
-          (self._fadeOutTl):Dispose()
+          self._fadeOutTl:Start()
+        end
+        self._state = AirPetFurState.FadeOut
+      elseif self._loopTl then
+        if self._curTime > self._loopTl:EndTime() then
+          local startTime = self._loopTl:EndTime()
+          self._loopTl:Dispose()
+          self:_startLoopTl(startTime)
+        end
+      else
+        self._state = AirPetFurState.FadeOut
+      end
+    elseif self._state == AirPetFurState.FadeOut then
+      if self._curTime > self._duration then
+        if self._fadeOutTl then
+          self._fadeOutTl:Dispose()
         end
         self._state = AirPetFurState.None
       end
-      if self._state == AirPetFurState.None then
-      end
+    elseif self._state == AirPetFurState.None then
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBehaviour.IsOver = function(self)
-  -- function num : 0_8
+function AirActionBehaviour:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBehaviour.Stop = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function AirActionBehaviour:Stop()
   if self._running then
     self._running = false
-    if self._state == AirPetFurState.FadeIn and self._fadeInTl then
-      (self._fadeInTl):Dispose()
+    if self._state == AirPetFurState.FadeIn then
+      if self._fadeInTl then
+        self._fadeInTl:Dispose()
+      end
+    elseif self._state == AirPetFurState.Idle then
+      if self._loopTl then
+        self._loopTl:Dispose()
+      end
+    elseif self._state == AirPetFurState.FadeOut and self._fadeOutTl then
+      self._fadeOutTl:Dispose()
     end
-  end
-  if self._state == AirPetFurState.Idle and self._loopTl then
-    (self._loopTl):Dispose()
-  end
-  if self._state == AirPetFurState.FadeOut and self._fadeOutTl then
-    (self._fadeOutTl):Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBehaviour.Dispose = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function AirActionBehaviour:Dispose()
   if self._extraReq then
-    (self._pet):SetExtraAnim(nil)
+    self._pet:SetExtraAnim(nil)
     self._pet = nil
-    ;
-    (self._extraReq):Dispose()
+    self._extraReq:Dispose()
     self._extraReq = nil
   end
   if self._furExtraReq then
-    (HelperProxy:GetInstance()):RemoveAnimTo(self._furExtraAnim, (self._furniture):Animation())
-    ;
-    (self._furExtraReq):Dispose()
+    HelperProxy:GetInstance():RemoveAnimTo(self._furExtraAnim, self._furniture:Animation())
+    self._furExtraReq:Dispose()
     self._furExtraReq = nil
     self._furExtraAnim = nil
   end
@@ -306,10 +237,8 @@ end
 
 _class("AirPetFurTimeline", Object)
 AirPetFurTimeline = AirPetFurTimeline
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-AirPetFurTimeline.Constructor = function(self, fur, pet, cfg, startTime, isSerializedAction)
-  -- function num : 0_11
+function AirPetFurTimeline:Constructor(fur, pet, cfg, startTime, isSerializedAction)
   self._fur = fur
   self._pet = pet
   self._petAnim = cfg.pAnim
@@ -326,34 +255,27 @@ AirPetFurTimeline.Constructor = function(self, fur, pet, cfg, startTime, isSeria
   self._isInit = isSerializedAction
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AirPetFurTimeline.Start = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function AirPetFurTimeline:Start()
   local disposed = false
   local reqs = {}
   if self._petAnim then
     if self._petAnim == "Sit" then
       if self._isInit then
-        (self._pet):Anim_CrossFade(AirPetAnimName.Sit, 0)
+        self._pet:Anim_CrossFade(AirPetAnimName.Sit, 0)
       else
-        ;
-        (self._pet):Anim_Sit()
+        self._pet:Anim_Sit()
       end
+    elseif self._isInit then
+      self._pet:Anim_CrossFade(self._petAnim, 0)
     else
-      if self._isInit then
-        (self._pet):Anim_CrossFade(self._petAnim, 0)
-      else
-        ;
-        (self._pet):Anim_CrossFade(self._petAnim)
-      end
+      self._pet:Anim_CrossFade(self._petAnim)
     end
   end
-  local loadEff = function(name, parent)
-    -- function num : 0_12_0 , upvalues : _ENV, reqs
-    local req = (ResourceManager:GetInstance()):SyncLoadAsset(name .. ".prefab", LoadType.GameObject)
+  
+  local function loadEff(name, parent)
+    local req = ResourceManager:GetInstance():SyncLoadAsset(name .. ".prefab", LoadType.GameObject)
     if not req then
-      (Log.exception)("[Behaviour] 找不到特效资源：", name)
+      Log.exception("[Behaviour] 找不到特效资源：", name)
     end
     local go = req.Obj
     local t = go.transform
@@ -363,15 +285,14 @@ AirPetFurTimeline.Start = function(self)
     reqs[#reqs + 1] = req
     return go
   end
-
-  local loadEffOnHolder = function(name, parent)
-    -- function num : 0_12_1 , upvalues : _ENV, reqs
+  
+  local function loadEffOnHolder(name, parent)
     if not parent then
-      return 
+      return
     end
-    local req = (ResourceManager:GetInstance()):SyncLoadAsset(name .. ".prefab", LoadType.GameObject)
+    local req = ResourceManager:GetInstance():SyncLoadAsset(name .. ".prefab", LoadType.GameObject)
     if not req then
-      (Log.exception)("[Behaviour] 找不到特效资源：", name)
+      Log.exception("[Behaviour] 找不到特效资源：", name)
     end
     local go = req.Obj
     local t = go.transform
@@ -382,63 +303,50 @@ AirPetFurTimeline.Start = function(self)
     reqs[#reqs + 1] = req
     return go
   end
-
+  
   if self._petEff then
-    local go = nil
+    local go
     if self._holder then
-      local parent = (GameObjectHelper.FindChild)((self._pet):Transform(), self._holder)
+      local parent = GameObjectHelper.FindChild(self._pet:Transform(), self._holder)
       if parent then
         go = loadEffOnHolder(self._petEff, parent)
       else
-        go = loadEff(self._petEff, (self._pet):Transform())
+        go = loadEff(self._petEff, self._pet:Transform())
       end
     else
-      do
-        do
-          go = loadEff(self._petEff, (self._pet):Transform())
-          ;
-          (GameObjectHelper.SetGameObjectLayer)(go, AircraftLayer.Pet)
-          if self._furAnim then
-            (self._fur):Anim_Play(self._furAnim)
-          end
-          if self._furEff then
-            if not (self._fur):EffectSlot() then
-              (Log.exception)("[Behaviour] 家具没有特效挂点：", (self._fur):CfgID())
-            end
-            loadEff(self._furEff, (self._fur):EffectSlot())
-          end
-          self._reqs = reqs
-        end
-      end
+      go = loadEff(self._petEff, self._pet:Transform())
     end
+    GameObjectHelper.SetGameObjectLayer(go, AircraftLayer.Pet)
   end
+  if self._furAnim then
+    self._fur:Anim_Play(self._furAnim)
+  end
+  if self._furEff then
+    if not self._fur:EffectSlot() then
+      Log.exception("[Behaviour] 家具没有特效挂点：", self._fur:CfgID())
+    end
+    loadEff(self._furEff, self._fur:EffectSlot())
+  end
+  self._reqs = reqs
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AirPetFurTimeline.EndTime = function(self)
-  -- function num : 0_13
+function AirPetFurTimeline:EndTime()
   return self._endTime
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AirPetFurTimeline.Dispose = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function AirPetFurTimeline:Dispose()
   if self.disposed then
-    (Log.exception)("该片段已被析构", (debug.traceback)())
-    return 
+    Log.exception("该片段已被析构", debug.traceback())
+    return
   end
   if self._petAnim then
-    (self._pet):Anim_Stop()
+    self._pet:Anim_Stop()
   end
   if self._furAnim then
-    (self._fur):Anim_Stop()
+    self._fur:Anim_Stop()
   end
   self.disposed = true
-  for _,req in ipairs(self._reqs) do
+  for _, req in ipairs(self._reqs) do
     req:Dispose()
   end
 end
-
-

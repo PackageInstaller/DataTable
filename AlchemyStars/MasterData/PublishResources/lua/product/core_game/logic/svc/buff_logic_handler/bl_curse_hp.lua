@@ -1,45 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_curse_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicEnableCurseHPCharge", BuffLogicBase)
 BuffLogicEnableCurseHPCharge = BuffLogicEnableCurseHPCharge
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicEnableCurseHPCharge.DoLogic = function(self, _)
-  -- function num : 0_0
+function BuffLogicEnableCurseHPCharge:DoLogic(_)
   local e = self:GetEntity()
   if e:HasSuperEntity() then
     e = e:GetSuperEntity()
   end
-  do
-    if e:HasMonsterID() then
-      local monsterIDCmpt = e:MonsterID()
-      if monsterIDCmpt:IsWorldBoss() then
-        return 
-      end
+  if e:HasMonsterID() then
+    local monsterIDCmpt = e:MonsterID()
+    if monsterIDCmpt:IsWorldBoss() then
+      return
     end
-    local cBuff = e:BuffComponent()
-    if cBuff:IsCurseHPEnabled() then
-      return 
-    end
-    cBuff:SetCurseHPEnable(true)
-    local casterEntity = (self._buffInstance):Context() and ((self._buffInstance):Context()).casterEntity or nil
-    if casterEntity then
-      cBuff:SetCurseHPSourceEntityID(casterEntity:GetID())
-    end
-    return {}
   end
+  local cBuff = e:BuffComponent()
+  if cBuff:IsCurseHPEnabled() then
+    return
+  end
+  cBuff:SetCurseHPEnable(true)
+  local casterEntity = self._buffInstance:Context() and self._buffInstance:Context().casterEntity or nil
+  if casterEntity then
+    cBuff:SetCurseHPSourceEntityID(casterEntity:GetID())
+  end
+  return {}
 end
 
 _class("BuffLogicDisableCurseHPCharge", BuffLogicBase)
 BuffLogicDisableCurseHPCharge = BuffLogicDisableCurseHPCharge
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDisableCurseHPCharge.DoLogic = function(self, _)
-  -- function num : 0_1
+function BuffLogicDisableCurseHPCharge:DoLogic(_)
   local e = self:GetEntity()
   if e:HasSuperEntity() then
     e = e:GetSuperEntity()
@@ -50,14 +39,17 @@ BuffLogicDisableCurseHPCharge.DoLogic = function(self, _)
   return {}
 end
 
-local ChargeCurseHpPercentSourceType = {CasterMaxHP = 1, OwnerMaxHP = 2, CasterAttack = 3, OwnerAttack = 4}
+local ChargeCurseHpPercentSourceType = {
+  CasterMaxHP = 1,
+  OwnerMaxHP = 2,
+  CasterAttack = 3,
+  OwnerAttack = 4
+}
 _enum("ChargeCurseHpPercentSourceType", ChargeCurseHpPercentSourceType)
 _class("BuffLogicChargeCurseHP", BuffLogicBase)
 BuffLogicChargeCurseHP = BuffLogicChargeCurseHP
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChargeCurseHP.Constructor = function(self, _, logicParam)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffLogicChargeCurseHP:Constructor(_, logicParam)
   self._basePercent = logicParam.basePercent
   self._basePercentSourceType = logicParam.basePercentSourceType
   self._extraPercent = logicParam.extraPercent
@@ -68,101 +60,85 @@ BuffLogicChargeCurseHP.Constructor = function(self, _, logicParam)
   if logicParam.showDamage and logicParam.showDamage == 1 then
     self._showDamage = true
   end
-  if not logicParam.showDamageElementType then
-    self._showDamageElementType = ElementType.ElementType_None
-  end
+  self._showDamageElementType = logicParam.showDamageElementType or ElementType.ElementType_None
 end
 
 local BuffLogicChargeCurseHPTag = "BuffLogicChargeCurseHP: "
--- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
 
-BuffLogicChargeCurseHP.DoLogic = function(self, notify)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffLogicChargeCurseHP:DoLogic(notify)
   local entity = self:GetEntity()
   if entity:HasSuperEntity() then
     entity = entity:GetSuperEntity()
   end
-  do
-    if entity:HasMonsterID() then
-      local monsterIDCmpt = entity:MonsterID()
-      if monsterIDCmpt:IsWorldBoss() then
-        return 
-      end
-    end
-    local buffResultEntity = entity
-    do
-      if entity:HasPet() then
-        local eTeam = (entity:Pet()):GetOwnerTeamEntity()
-        entity = eTeam
-        buffResultEntity = eTeam
-      end
-      local casterEntity = ((self._buffInstance):Context()).casterEntity
-      local basePercentParamValue = 0
-      local extraPercentParamValue = 0
-      local extraMinPercentParamValue = 0
-      local baseValue = 0
-      local extraValue = 0
-      local extraMinValue = 0
-      basePercentParamValue = self:_CalcSourceParamValue(self._basePercentSourceType, entity, casterEntity)
-      extraPercentParamValue = self:_CalcSourceParamValue(self._extraPercentSourceType, entity, casterEntity)
-      extraMinPercentParamValue = self:_CalcSourceParamValue(self._extraMinPercentSourceType, entity, casterEntity)
-      if self._basePercent then
-        baseValue = (math.ceil)(basePercentParamValue * tonumber(self._basePercent))
-      end
-      if self._extraPercent then
-        extraValue = (math.ceil)(extraPercentParamValue * tonumber(self._extraPercent))
-      end
-      if self._extraMinPercent then
-        extraMinValue = (math.ceil)(extraMinPercentParamValue * tonumber(self._extraMinPercent))
-      end
-      if extraValue < extraMinValue then
-        extraValue = extraMinValue
-      end
-      local val = baseValue + extraValue
-      local currentVal = (self._buffLogicService):ChangeCurseHP(buffResultEntity, val)
-      local result = BuffResultChargeCurseHP:New(buffResultEntity:GetID(), currentVal, val, self._showDamage, self._showDamageElementType)
-      return result
+  if entity:HasMonsterID() then
+    local monsterIDCmpt = entity:MonsterID()
+    if monsterIDCmpt:IsWorldBoss() then
+      return
     end
   end
+  local buffResultEntity = entity
+  if entity:HasPet() then
+    local eTeam = entity:Pet():GetOwnerTeamEntity()
+    entity = eTeam
+    buffResultEntity = eTeam
+  end
+  local casterEntity = self._buffInstance:Context().casterEntity
+  local basePercentParamValue = 0
+  local extraPercentParamValue = 0
+  local extraMinPercentParamValue = 0
+  local baseValue = 0
+  local extraValue = 0
+  local extraMinValue = 0
+  basePercentParamValue = self:_CalcSourceParamValue(self._basePercentSourceType, entity, casterEntity)
+  extraPercentParamValue = self:_CalcSourceParamValue(self._extraPercentSourceType, entity, casterEntity)
+  extraMinPercentParamValue = self:_CalcSourceParamValue(self._extraMinPercentSourceType, entity, casterEntity)
+  if self._basePercent then
+    baseValue = math.ceil(basePercentParamValue * tonumber(self._basePercent))
+  end
+  if self._extraPercent then
+    extraValue = math.ceil(extraPercentParamValue * tonumber(self._extraPercent))
+  end
+  if self._extraMinPercent then
+    extraMinValue = math.ceil(extraMinPercentParamValue * tonumber(self._extraMinPercent))
+  end
+  if extraValue < extraMinValue then
+    extraValue = extraMinValue
+  end
+  local val = baseValue + extraValue
+  local currentVal = self._buffLogicService:ChangeCurseHP(buffResultEntity, val)
+  local result = BuffResultChargeCurseHP:New(buffResultEntity:GetID(), currentVal, val, self._showDamage, self._showDamageElementType)
+  return result
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-BuffLogicChargeCurseHP._CalcSourceParamValue = function(self, sourceType, ownerEntity, casterEntity)
-  -- function num : 0_4 , upvalues : ChargeCurseHpPercentSourceType
+function BuffLogicChargeCurseHP:_CalcSourceParamValue(sourceType, ownerEntity, casterEntity)
   local value = 0
-  -- DECOMPILER ERROR at PC12: Unhandled construct in 'MakeBoolean' P1
-
-  if sourceType and sourceType == ChargeCurseHpPercentSourceType.CasterMaxHP and casterEntity then
-    value = (casterEntity:Attributes()):CalcMaxHp()
-  end
-  if sourceType == ChargeCurseHpPercentSourceType.OwnerMaxHP then
-    value = (ownerEntity:Attributes()):CalcMaxHp()
-  else
-    if sourceType == ChargeCurseHpPercentSourceType.CasterAttack and casterEntity then
-      value = (casterEntity:Attributes()):GetAttack()
+  if sourceType then
+    if sourceType == ChargeCurseHpPercentSourceType.CasterMaxHP then
+      if casterEntity then
+        value = casterEntity:Attributes():CalcMaxHp()
+      end
+    elseif sourceType == ChargeCurseHpPercentSourceType.OwnerMaxHP then
+      value = ownerEntity:Attributes():CalcMaxHp()
+    elseif sourceType == ChargeCurseHpPercentSourceType.CasterAttack then
+      if casterEntity then
+        value = casterEntity:Attributes():GetAttack()
+      end
+    elseif sourceType == ChargeCurseHpPercentSourceType.OwnerAttack then
+      value = ownerEntity:Attributes():GetAttack()
     end
-  end
-  if sourceType == ChargeCurseHpPercentSourceType.OwnerAttack then
-    value = (ownerEntity:Attributes()):GetAttack()
   end
   return value
 end
 
 _class("BuffLogicSetTransDamageToCurseHp", BuffLogicBase)
 BuffLogicSetTransDamageToCurseHp = BuffLogicSetTransDamageToCurseHp
--- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
 
-BuffLogicSetTransDamageToCurseHp.Constructor = function(self, _, logicParam)
-  -- function num : 0_5 , upvalues : _ENV
+function BuffLogicSetTransDamageToCurseHp:Constructor(_, logicParam)
   self._set = logicParam.isSet or 1
   self._transPercent = tonumber(logicParam.transPercent)
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-BuffLogicSetTransDamageToCurseHp.DoLogic = function(self, _)
-  -- function num : 0_6
+function BuffLogicSetTransDamageToCurseHp:DoLogic(_)
   local e = self:GetEntity()
   if e:HasSuperEntity() then
     e = e:GetSuperEntity()
@@ -177,5 +153,3 @@ BuffLogicSetTransDamageToCurseHp.DoLogic = function(self, _)
     end
   end
 end
-
-

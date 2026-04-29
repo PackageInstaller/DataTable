@@ -1,40 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/talent/line_mission/ui_season_talent_line_mission_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTalentLineMissionLine", UICustomWidget)
 UISeasonTalentLineMissionLine = UISeasonTalentLineMissionLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTalentLineMissionLine.OnShow = function(self)
-  -- function num : 0_0
+function UISeasonTalentLineMissionLine:OnShow()
   self._rect = self:GetUIComponent("RectTransform", "shape")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionLine.Flush = function(self, from, to)
-  -- function num : 0_1 , upvalues : _ENV
-  (self:GetGameObject()):SetActive(from ~= nil)
+function UISeasonTalentLineMissionLine:Flush(from, to)
+  self:GetGameObject():SetActive(from ~= nil)
   if from == nil then
-    return 
+    return
   end
-  local dis = (Vector2.Distance)(from, to)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = Vector2(dis, ((self._rect).sizeDelta).y)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = from
+  local dis = Vector2.Distance(from, to)
+  self._rect.sizeDelta = Vector2(dis, self._rect.sizeDelta.y)
+  self._rect.anchoredPosition = from
   local v = to - from
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect).localRotation = (Quaternion.FromToRotation)(Vector3.right, Vector3(v.x, v.y, 0))
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._rect.localRotation = Quaternion.FromToRotation(Vector3.right, Vector3(v.x, v.y, 0))
 end
-
-

@@ -1,44 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/battleaffix/ui_n12_battle_affix_special_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12BattleAffixSpecialItem", UICustomWidget)
 UIN12BattleAffixSpecialItem = UIN12BattleAffixSpecialItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12BattleAffixSpecialItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN12BattleAffixSpecialItem:OnShow(uiParams)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12BattleAffixSpecialItem._GetComponent = function(self)
-  -- function num : 0_1
+function UIN12BattleAffixSpecialItem:_GetComponent()
   self._text = self:GetUIComponent("UILocalizationText", "Text")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12BattleAffixSpecialItem.SetData = function(self, levelType, index)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN12BattleAffixSpecialItem:SetData(levelType, index)
   local str = ""
   if index == 0 then
-    str = (StringTable.Get)("str_n12_challenge_diff")
+    str = StringTable.Get("str_n12_challenge_diff")
     if levelType == N12LevelType.Challenge then
-      str = str .. (StringTable.Get)("str_n12_challenge_diff_desc")
+      str = str .. StringTable.Get("str_n12_challenge_diff_desc")
     end
-  else
-    if index == 2 then
-      str = (StringTable.Get)("str_n12_affix_effect")
-      if levelType == N12LevelType.Challenge then
-        str = str .. (StringTable.Get)("str_n12_affix_effect_desc")
-      end
+  elseif index == 2 then
+    str = StringTable.Get("str_n12_affix_effect")
+    if levelType == N12LevelType.Challenge then
+      str = str .. StringTable.Get("str_n12_affix_effect_desc")
     end
   end
-  ;
-  (self._text):SetText(str)
+  self._text:SetText(str)
 end
-
-

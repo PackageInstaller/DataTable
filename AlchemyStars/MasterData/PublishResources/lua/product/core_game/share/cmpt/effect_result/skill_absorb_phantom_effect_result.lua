@@ -1,59 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_absorb_phantom_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillAbsorbPhantomEffectResult", SkillEffectResultBase)
 SkillAbsorbPhantomEffectResult = SkillAbsorbPhantomEffectResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillAbsorbPhantomEffectResult.Constructor = function(self, target, hp)
-  -- function num : 0_0
+function SkillAbsorbPhantomEffectResult:Constructor(target, hp)
   self._targetEntityID = target
   self._recoverHP = hp
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAbsorbPhantomEffectResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillAbsorbPhantomEffectResult:GetEffectType()
   return SkillEffectType.AbsorbPhantom
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAbsorbPhantomEffectResult.GetTargetEntityID = function(self)
-  -- function num : 0_2
+function SkillAbsorbPhantomEffectResult:GetTargetEntityID()
   return self._targetEntityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAbsorbPhantomEffectResult.GetRecoverHP = function(self)
-  -- function num : 0_3
+function SkillAbsorbPhantomEffectResult:GetRecoverHP()
   return self._recoverHP
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAbsorbPhantomEffectResult.SetRecoverHP = function(self, hp)
-  -- function num : 0_4
+function SkillAbsorbPhantomEffectResult:SetRecoverHP(hp)
   self._recoverHP = hp
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAbsorbPhantomEffectResult.SetDamageInfo = function(self, damageInfo)
-  -- function num : 0_5
+function SkillAbsorbPhantomEffectResult:SetDamageInfo(damageInfo)
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAbsorbPhantomEffectResult.GetDamageInfo = function(self)
-  -- function num : 0_6
+function SkillAbsorbPhantomEffectResult:GetDamageInfo()
   return self._damageInfo
 end
-
-

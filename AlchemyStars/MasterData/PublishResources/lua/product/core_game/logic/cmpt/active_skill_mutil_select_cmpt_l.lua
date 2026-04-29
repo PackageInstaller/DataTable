@@ -1,91 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/active_skill_mutil_select_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ActiveSkillMutilSelectGridComponent", Object)
 ActiveSkillMutilSelectGridComponent = ActiveSkillMutilSelectGridComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ActiveSkillMutilSelectGridComponent.Constructor = function(self, gridposArray, directGridPosArray)
-  -- function num : 0_0
+function ActiveSkillMutilSelectGridComponent:Constructor(gridposArray, directGridPosArray)
   self._gridPosArray = gridposArray
   self._directGridPosArray = directGridPosArray
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillMutilSelectGridComponent.Clear = function(self)
-  -- function num : 0_1
+function ActiveSkillMutilSelectGridComponent:Clear()
   self._gridPosArray = {}
   self._directGridPosArray = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillMutilSelectGridComponent.GetGridPosArray = function(self)
-  -- function num : 0_2
+function ActiveSkillMutilSelectGridComponent:GetGridPosArray()
   return self._gridPosArray
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillMutilSelectGridComponent.GetDirectGridPosArray = function(self)
-  -- function num : 0_3
+function ActiveSkillMutilSelectGridComponent:GetDirectGridPosArray()
   return self._directGridPosArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillMutilSelectGridComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_4
+function ActiveSkillMutilSelectGridComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActiveSkillMutilSelectGridComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_5
+function ActiveSkillMutilSelectGridComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ActiveSkillMutilSelectGridComponent = function(self)
-  -- function num : 0_6
-  return self:GetComponent((self.WEComponentsEnum).ActiveSkillMutilSelectGrid)
+function Entity:ActiveSkillMutilSelectGridComponent()
+  return self:GetComponent(self.WEComponentsEnum.ActiveSkillMutilSelectGrid)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasActiveSkillMutilSelectGridComponent = function(self)
-  -- function num : 0_7
-  return self:HasComponent((self.WEComponentsEnum).ActiveSkillMutilSelectGrid)
+function Entity:HasActiveSkillMutilSelectGridComponent()
+  return self:HasComponent(self.WEComponentsEnum.ActiveSkillMutilSelectGrid)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddActiveSkillMutilSelectGridComponent = function(self, gridposArray, directGridPosArray)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ActiveSkillMutilSelectGrid
+function Entity:AddActiveSkillMutilSelectGridComponent(gridposArray, directGridPosArray)
+  local index = self.WEComponentsEnum.ActiveSkillMutilSelectGrid
   local component = ActiveSkillMutilSelectGridComponent:New(gridposArray, directGridPosArray)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceActiveSkillSelectGrid = function(self, gridposArray, directGridPosArray)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ActiveSkillMutilSelectGrid
+function Entity:ReplaceActiveSkillSelectGrid(gridposArray, directGridPosArray)
+  local index = self.WEComponentsEnum.ActiveSkillMutilSelectGrid
   local component = ActiveSkillMutilSelectGridComponent:New(gridposArray, directGridPosArray)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveActiveSkillSelectGrid = function(self)
-  -- function num : 0_10
+function Entity:RemoveActiveSkillSelectGrid()
   if self:HasActiveSkillMutilSelectGridComponent() then
-    self:RemoveComponent((self.WEComponentsEnum).ActiveSkillMutilSelectGrid)
+    self:RemoveComponent(self.WEComponentsEnum.ActiveSkillMutilSelectGrid)
   end
 end
-
-

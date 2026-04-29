@@ -1,42 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/task/ui_activity_n34_task_infomation_reward_preview_tip.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN34TaskInfomationRewardPreviewTip", UIController)
 UIActivityN34TaskInfomationRewardPreviewTip = UIActivityN34TaskInfomationRewardPreviewTip
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN34TaskInfomationRewardPreviewTip.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIActivityN34TaskInfomationRewardPreviewTip:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreviewTip.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN34TaskInfomationRewardPreviewTip:OnShow(uiParams)
   self:InitWidget()
   local cfg = uiParams[1]
-  ;
-  (self.petName):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self.content):SetText((StringTable.Get)(cfg.Des))
+  self.petName:SetText(StringTable.Get(cfg.Name))
+  self.content:SetText(StringTable.Get(cfg.Des))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreviewTip.InitWidget = function(self)
-  -- function num : 0_2
+function UIActivityN34TaskInfomationRewardPreviewTip:InitWidget()
   self.petName = self:GetUIComponent("UILocalizationText", "PetName")
   self.content = self:GetUIComponent("UILocalizationText", "Content")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationRewardPreviewTip.CloseOnClick = function(self, go)
-  -- function num : 0_3
+function UIActivityN34TaskInfomationRewardPreviewTip:CloseOnClick(go)
   self:CloseDialog()
 end
-
-

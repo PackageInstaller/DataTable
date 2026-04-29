@@ -1,68 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/ui_world_boss_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossTeam", UICustomWidget)
 UIWorldBossTeam = UIWorldBossTeam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossTeam.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWorldBossTeam:Constructor()
   self._atlas = self:GetAsset("UIWorldBoss.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossTeam.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIWorldBossTeam:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossTeam._GetComponents = function(self)
-  -- function num : 0_2
+function UIWorldBossTeam:_GetComponents()
   self._selectObj = self:GetGameObject("selectObj")
   self._indexText = self:GetUIComponent("UILocalizationText", "Index")
   self._lock = self:GetGameObject("Lock")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossTeam.SetData = function(self, index, dan, callBack)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWorldBossTeam:SetData(index, dan, callBack)
   self._index = index
   self._dan = dan
   self._callBack = callBack
-  ;
-  (self._indexText):SetText((StringTable.Get)("str_world_boss_team_number", self._index))
+  self._indexText:SetText(StringTable.Get("str_world_boss_team_number", self._index))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossTeam.Refresh = function(self, curDan)
-  -- function num : 0_4 , upvalues : _ENV
-  self._curDanLevel = (UIWorldBossHelper.GetCurDanLevel)(curDan)
-  ;
-  (self._lock):SetActive(self._curDanLevel < self._dan)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIWorldBossTeam:Refresh(curDan)
+  self._curDanLevel = UIWorldBossHelper.GetCurDanLevel(curDan)
+  self._lock:SetActive(self._curDanLevel < self._dan)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossTeam.BtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIWorldBossTeam:BtnOnClick(go)
   if self._callBack then
-    (self._callBack)(self._index, self._dan)
+    self._callBack(self._index, self._dan)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossTeam.SetSelectMark = function(self, isSelect)
-  -- function num : 0_6
-  (self._selectObj):SetActive(isSelect)
+function UIWorldBossTeam:SetSelectMark(isSelect)
+  self._selectObj:SetActive(isSelect)
 end
-
-

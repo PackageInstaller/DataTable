@@ -1,11 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_globalboss_progress_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, Rounds = 3, ProgressValue = 4}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  Rounds = 3,
+  ProgressValue = 4
+}
 local config = {
-{1, 107602607, 1, 1}
+  {
+    1,
+    107602607,
+    1,
+    1
+  }
 }
 return config, "ID", key
-

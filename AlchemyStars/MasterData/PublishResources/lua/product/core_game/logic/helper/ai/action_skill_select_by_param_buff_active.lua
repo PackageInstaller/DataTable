@@ -1,60 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_skill_select_by_param_buff_active.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionSkillSelectByParamBuffActive", AINewNode)
 ActionSkillSelectByParamBuffActive = ActionSkillSelectByParamBuffActive
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSkillSelectByParamBuffActive.Constructor = function(self)
-  -- function num : 0_0
+function ActionSkillSelectByParamBuffActive:Constructor()
   self._skillID = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByParamBuffActive.InitializeNode = function(self, cfg, context, parentNode, configData)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionSkillSelectByParamBuffActive.super).InitializeNode)(self, cfg, context, parentNode, configData)
-  local checkBuffCount = (table.count)(configData)
+function ActionSkillSelectByParamBuffActive:InitializeNode(cfg, context, parentNode, configData)
+  ActionSkillSelectByParamBuffActive.super.InitializeNode(self, cfg, context, parentNode, configData)
+  local checkBuffCount = table.count(configData)
   self._buffIDList = {}
   for i = 1, checkBuffCount do
-    (table.insert)(self._buffIDList, configData[i])
+    table.insert(self._buffIDList, configData[i])
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByParamBuffActive.Update = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionSkillSelectByParamBuffActive:Update()
   self:_CalcSkillID()
   return AINewNodeStatus.Success
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByParamBuffActive.GetActionSkillID = function(self)
-  -- function num : 0_3
+function ActionSkillSelectByParamBuffActive:GetActionSkillID()
   self:_CalcSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByParamBuffActive._CalcSkillID = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function ActionSkillSelectByParamBuffActive:_CalcSkillID()
   local vecSkillLists = self:GetConfigSkillList()
-  local buffCmp = (self.m_entityOwn):BuffComponent()
-  for index,buffID in ipairs(self._buffIDList) do
+  local buffCmp = self.m_entityOwn:BuffComponent()
+  for index, buffID in ipairs(self._buffIDList) do
     local buffInstance = buffCmp:GetBuffById(buffID)
     if buffInstance and not buffInstance:IsUnload() then
-      self._skillID = (vecSkillLists[1])[index]
-      return 
+      self._skillID = vecSkillLists[1][index]
+      return
     end
   end
-  self._skillID = (vecSkillLists[1])[1]
+  self._skillID = vecSkillLists[1][1]
 end
-
-

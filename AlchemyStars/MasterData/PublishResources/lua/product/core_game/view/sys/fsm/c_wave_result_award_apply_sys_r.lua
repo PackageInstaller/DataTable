@@ -1,29 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_wave_result_award_apply_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("wave_result_award_apply_system")
 _class("ClientWaveResultAwardApplySystem_Render", WaveResultAwardApplySystem)
 ClientWaveResultAwardApplySystem_Render = ClientWaveResultAwardApplySystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientWaveResultAwardApplySystem_Render._DoRenderApplyRelic = function(self, TT, applyRelicID, relicBuffs, switchState)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.debug)("[MiniMaze] _DoRenderApplyRelic applyRelicID: ", applyRelicID)
+function ClientWaveResultAwardApplySystem_Render:_DoRenderApplyRelic(TT, applyRelicID, relicBuffs, switchState)
+  Log.debug("[MiniMaze] _DoRenderApplyRelic applyRelicID: ", applyRelicID)
   local data = DataAddRelicResult:New(applyRelicID, relicBuffs, switchState)
-  local svc = (self._world):GetService("PlayBuff")
+  local svc = self._world:GetService("PlayBuff")
   svc:PlayBuffSeqs(TT, data:GetBuffSeqList())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaveResultAwardApplySystem_Render._DoRenderAddPartner = function(self, TT, applyPartnerID, petInfo, matchPet, petRes, hp, maxHP)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.debug)("[MiniMaze] _DoRenderApplyRelic _DoRenderAddPartner: ", applyPartnerID)
-  local renderPartnerService = (self._world):GetService("PartnerRender")
+function ClientWaveResultAwardApplySystem_Render:_DoRenderAddPartner(TT, applyPartnerID, petInfo, matchPet, petRes, hp, maxHP)
+  Log.debug("[MiniMaze] _DoRenderApplyRelic _DoRenderAddPartner: ", applyPartnerID)
+  local renderPartnerService = self._world:GetService("PartnerRender")
   local data = DataAddPartnerResult:New(applyPartnerID, petInfo, matchPet, petRes, hp, maxHP)
   renderPartnerService:AddPartnerRender(TT, data)
 end
-
-

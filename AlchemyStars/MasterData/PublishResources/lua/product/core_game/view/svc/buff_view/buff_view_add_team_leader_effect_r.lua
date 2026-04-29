@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_add_team_leader_effect_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddTeamLeaderEffect", BuffViewBase)
 BuffViewAddTeamLeaderEffect = BuffViewAddTeamLeaderEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddTeamLeaderEffect.PlayView = function(self, TT, notify)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewAddTeamLeaderEffect:PlayView(TT, notify)
   local result = self._buffResult
   local oldTeamLeaderID = result:GetOldTeamLeaderID()
   local newTeamLeaderID = result:GetNewTeamLeaderID()
@@ -16,117 +9,91 @@ BuffViewAddTeamLeaderEffect.PlayView = function(self, TT, notify)
   local isRemove = result:GetRemove()
   local removeAnim = result:GetRemoveAnim()
   local removeAnimTime = result:GetRemoveAnimTime()
-  local oldTeamLeader = (self._world):GetEntityByID(oldTeamLeaderID)
-  local newTeamLeader = (self._world):GetEntityByID(newTeamLeaderID)
-  local effectService = (self._world):GetService("Effect")
+  local oldTeamLeader = self._world:GetEntityByID(oldTeamLeaderID)
+  local newTeamLeader = self._world:GetEntityByID(newTeamLeaderID)
+  local effectService = self._world:GetService("Effect")
   local effectHolderCmpt = newTeamLeader:EffectHolder()
   if not effectHolderCmpt then
     newTeamLeader:AddEffectHolder()
     effectHolderCmpt = newTeamLeader:EffectHolder()
   end
   if isRemove == 1 then
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : effectHolderCmpt, effectID, self, _ENV, removeAnim, removeAnimTime
-    local effect = nil
-    local effectEntityIdList = (effectHolderCmpt:GetEffectIDEntityDic())[effectID]
-    if effectEntityIdList then
-      effect = (self._world):GetEntityByID(effectEntityIdList[1])
-    end
-    if not effect then
-      return 
-    end
-    local go = (effect:View()):GetGameObject()
-    local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
-    if go and anim and anim.clip and removeAnim then
-      anim:Play(removeAnim)
-      if removeAnimTime then
-        YIELD(TT, removeAnimTime)
+    GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      local effect
+      local effectEntityIdList = effectHolderCmpt:GetEffectIDEntityDic()[effectID]
+      if effectEntityIdList then
+        effect = self._world:GetEntityByID(effectEntityIdList[1])
       end
-    end
-    if go and go ~= null and anim and anim ~= null then
-      (self._world):DestroyEntity(effect)
-      -- DECOMPILER ERROR at PC65: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      ((effectHolderCmpt:GetEffectIDEntityDic())[effectID])[1] = nil
-    end
-  end
-)
+      if not effect then
+        return
+      end
+      local go = effect:View():GetGameObject()
+      local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
+      if go and anim and anim.clip and removeAnim then
+        anim:Play(removeAnim)
+        if removeAnimTime then
+          YIELD(TT, removeAnimTime)
+        end
+      end
+      if go and go ~= null and anim and anim ~= null then
+        self._world:DestroyEntity(effect)
+        effectHolderCmpt:GetEffectIDEntityDic()[effectID][1] = nil
+      end
+    end)
   else
     if notify and notify:GetNotifyType() == NotifyType.ChainSkillTurnStart then
-      local team = (newTeamLeader:Pet()):GetOwnerTeamEntity()
-      local petList = (team:Team()):GetTeamPetEntities()
-      for i,entity in ipairs(petList) do
+      local team = newTeamLeader:Pet():GetOwnerTeamEntity()
+      local petList = team:Team():GetTeamPetEntities()
+      for i, entity in ipairs(petList) do
         if entity:GetID() ~= newTeamLeaderID then
           self:RemoveOldTeamLeaderEffect(entity, effectID)
         end
       end
     end
-    do
-      do
-        if oldTeamLeader then
-          local oldTeamLeader = notify:GetOldTeamLeader()
-          self:RemoveOldTeamLeaderEffect(oldTeamLeader, effectID)
-        end
-        local effectEntityIdList = (effectHolderCmpt:GetEffectIDEntityDic())[effectID]
-        local effect = nil
-        if effectEntityIdList then
-          effect = (self._world):GetEntityByID(effectEntityIdList[1])
-        end
-        if effect then
-          local go = (effect:View()):GetGameObject()
-          local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
-          if anim:IsPlaying(removeAnim) then
-            (go.gameObject):SetActive(false)
-            ;
-            (self._world):DestroyEntity(effect)
-            -- DECOMPILER ERROR at PC120: Confused about usage of register: R18 in 'UnsetPending'
-
-            ;
-            ((effectHolderCmpt:GetEffectIDEntityDic())[effectID])[1] = nil
-            effect = nil
-          end
-        end
-        do
-          if not effect then
-            effect = effectService:CreateEffect(effectID, newTeamLeader)
-            effectHolderCmpt:AttachPermanentEffect(effect:GetID())
-          end
-        end
+    if oldTeamLeader then
+      local oldTeamLeader = notify:GetOldTeamLeader()
+      self:RemoveOldTeamLeaderEffect(oldTeamLeader, effectID)
+    end
+    local effectEntityIdList = effectHolderCmpt:GetEffectIDEntityDic()[effectID]
+    local effect
+    if effectEntityIdList then
+      effect = self._world:GetEntityByID(effectEntityIdList[1])
+    end
+    if effect then
+      local go = effect:View():GetGameObject()
+      local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
+      if anim:IsPlaying(removeAnim) then
+        go.gameObject:SetActive(false)
+        self._world:DestroyEntity(effect)
+        effectHolderCmpt:GetEffectIDEntityDic()[effectID][1] = nil
+        effect = nil
       end
+    end
+    if not effect then
+      effect = effectService:CreateEffect(effectID, newTeamLeader)
+      effectHolderCmpt:AttachPermanentEffect(effect:GetID())
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddTeamLeaderEffect.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewAddTeamLeaderEffect:IsNotifyMatch(notify)
   local result = self._buffResult
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddTeamLeaderEffect.RemoveOldTeamLeaderEffect = function(self, oldTeamLeader, effectID)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffViewAddTeamLeaderEffect:RemoveOldTeamLeaderEffect(oldTeamLeader, effectID)
   local oldTeamLeaderEffectHolderCmpt = oldTeamLeader:EffectHolder()
   if not oldTeamLeaderEffectHolderCmpt then
-    (Log.warn)("BuffViewAddTeamLeaderEffect: old team leader has no EffectHolderComponent. ")
-    return 
+    Log.warn("BuffViewAddTeamLeaderEffect: old team leader has no EffectHolderComponent. ")
+    return
   end
-  local effect = nil
-  local oldTeamLeaderEffectEntityIdList = (oldTeamLeaderEffectHolderCmpt:GetEffectIDEntityDic())[effectID]
+  local effect
+  local oldTeamLeaderEffectEntityIdList = oldTeamLeaderEffectHolderCmpt:GetEffectIDEntityDic()[effectID]
   if oldTeamLeaderEffectEntityIdList then
-    effect = (self._world):GetEntityByID(oldTeamLeaderEffectEntityIdList[1])
+    effect = self._world:GetEntityByID(oldTeamLeaderEffectEntityIdList[1])
   end
   if effect then
-    (self._world):DestroyEntity(effect)
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((oldTeamLeaderEffectHolderCmpt:GetEffectIDEntityDic())[effectID])[1] = nil
+    self._world:DestroyEntity(effect)
+    oldTeamLeaderEffectHolderCmpt:GetEffectIDEntityDic()[effectID][1] = nil
   end
 end
-
-

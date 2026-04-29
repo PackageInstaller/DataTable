@@ -1,119 +1,220 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_config/auto_test_108.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 AutoTest_108 = {
-cases = {
-[1] = {
-[1] = {action = "WaitGameFsm", 
-args = {id = 5}
+  cases = {
+    [1] = {
+      [1] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [2] = {
+        action = "SetTeamPosition",
+        args = {name = "team", pos = 502}
+      },
+      [3] = {
+        action = "AddMonster",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 5100111,
+          name = "e1",
+          pos = 204
+        }
+      },
+      [4] = {
+        action = "AddMonster",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 5100111,
+          name = "e2",
+          pos = 304
+        }
+      },
+      [5] = {
+        action = "CheckEntityChangeHP",
+        args = {
+          compare = "==",
+          name = "e1",
+          trigger = 28
+        }
+      },
+      [6] = {
+        action = "CheckEntityChangeHP",
+        args = {
+          compare = ">",
+          name = "e2",
+          trigger = 28
+        }
+      },
+      [7] = {
+        action = "FakeInputChain",
+        args = {
+          chainPath = {
+            [1] = 502.0,
+            [2] = 501.0,
+            [3] = 401.0,
+            [4] = 301.0,
+            [5] = 302.0
+          },
+          pieceType = 1
+        }
+      },
+      [8] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      name = "1阶段连锁：连线4格，对菱形12格成伤害"
+    },
+    [2] = {
+      [1] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [2] = {
+        action = "AddMonster",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 5100111,
+          name = "e3",
+          pos = 105
+        }
+      },
+      [3] = {
+        action = "AddMonster",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 5100111,
+          name = "e4",
+          pos = 206
+        }
+      },
+      [4] = {
+        action = "CheckEntityChangeHP",
+        args = {
+          compare = "==",
+          name = "e3",
+          trigger = 28
+        }
+      },
+      [5] = {
+        action = "CheckEntityChangeHP",
+        args = {
+          compare = ">",
+          name = "e4",
+          trigger = 28
+        }
+      },
+      [6] = {
+        action = "FakeInputChain",
+        args = {
+          chainPath = {
+            [1] = 302.0,
+            [2] = 303.0,
+            [3] = 403.0,
+            [4] = 404.0,
+            [5] = 405.0,
+            [6] = 406.0,
+            [7] = 506.0,
+            [8] = 507.0,
+            [9] = 407.0,
+            [10] = 408.0
+          },
+          pieceType = 1
+        }
+      },
+      [7] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      name = "2阶段连锁：连线9格，对米字16格造成伤害"
+    },
+    [3] = {
+      [1] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [2] = {
+        action = "AddMonster",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 5100111,
+          name = "e5",
+          pos = 207
+        }
+      },
+      [3] = {
+        action = "AddMonster",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 5100111,
+          name = "e6",
+          pos = 903
+        }
+      },
+      [4] = {
+        action = "CheckEntityChangeHP",
+        args = {
+          compare = ">",
+          name = "e5",
+          trigger = 28
+        }
+      },
+      [5] = {
+        action = "CheckEntityChangeHP",
+        args = {
+          compare = "==",
+          name = "e6",
+          trigger = 28
+        }
+      },
+      [6] = {
+        action = "FakeInputChain",
+        args = {
+          chainPath = {
+            [1] = 408.0,
+            [2] = 508.0,
+            [3] = 608.0,
+            [4] = 708.0,
+            [5] = 707.0,
+            [6] = 607.0,
+            [7] = 706.0,
+            [8] = 606.0,
+            [9] = 605.0,
+            [10] = 705.0,
+            [11] = 805.0,
+            [12] = 804.0,
+            [13] = 703.0,
+            [14] = 702.0
+          },
+          pieceType = 1
+        }
+      },
+      [7] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      name = "3阶段连锁：连线13格，对米字最大造成伤害"
+    }
+  },
+  name = "浮士德连锁技",
+  petList = {
+    [1] = {
+      affinity = 1,
+      awakening = 0,
+      equiplv = 1,
+      grade = 0,
+      id = 1500091,
+      level = 1,
+      name = "p1"
+    }
+  },
+  setup = {
+    [1] = {
+      args = {levelID = 1, matchType = 1},
+      setup = "LevelBasic"
+    }
+  }
 }
-, 
-[2] = {action = "SetTeamPosition", 
-args = {name = "team", pos = 502}
-}
-, 
-[3] = {action = "AddMonster", 
-args = {dir = 1, disableai = true, id = 5100111, name = "e1", pos = 204}
-}
-, 
-[4] = {action = "AddMonster", 
-args = {dir = 1, disableai = true, id = 5100111, name = "e2", pos = 304}
-}
-, 
-[5] = {action = "CheckEntityChangeHP", 
-args = {compare = "==", name = "e1", trigger = 28}
-}
-, 
-[6] = {action = "CheckEntityChangeHP", 
-args = {compare = ">", name = "e2", trigger = 28}
-}
-, 
-[7] = {action = "FakeInputChain", 
-args = {
-chainPath = {[1] = 502, [2] = 501, [3] = 401, [4] = 301, [5] = 302}
-, pieceType = 1}
-}
-, 
-[8] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, name = "1阶段连锁：连线4格，对菱形12格成伤害"}
-, 
-[2] = {
-[1] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, 
-[2] = {action = "AddMonster", 
-args = {dir = 1, disableai = true, id = 5100111, name = "e3", pos = 105}
-}
-, 
-[3] = {action = "AddMonster", 
-args = {dir = 1, disableai = true, id = 5100111, name = "e4", pos = 206}
-}
-, 
-[4] = {action = "CheckEntityChangeHP", 
-args = {compare = "==", name = "e3", trigger = 28}
-}
-, 
-[5] = {action = "CheckEntityChangeHP", 
-args = {compare = ">", name = "e4", trigger = 28}
-}
-, 
-[6] = {action = "FakeInputChain", 
-args = {
-chainPath = {[1] = 302, [2] = 303, [3] = 403, [4] = 404, [5] = 405, [6] = 406, [7] = 506, [8] = 507, [9] = 407, [10] = 408}
-, pieceType = 1}
-}
-, 
-[7] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, name = "2阶段连锁：连线9格，对米字16格造成伤害"}
-, 
-[3] = {
-[1] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, 
-[2] = {action = "AddMonster", 
-args = {dir = 1, disableai = true, id = 5100111, name = "e5", pos = 207}
-}
-, 
-[3] = {action = "AddMonster", 
-args = {dir = 1, disableai = true, id = 5100111, name = "e6", pos = 903}
-}
-, 
-[4] = {action = "CheckEntityChangeHP", 
-args = {compare = ">", name = "e5", trigger = 28}
-}
-, 
-[5] = {action = "CheckEntityChangeHP", 
-args = {compare = "==", name = "e6", trigger = 28}
-}
-, 
-[6] = {action = "FakeInputChain", 
-args = {
-chainPath = {[1] = 408, [2] = 508, [3] = 608, [4] = 708, [5] = 707, [6] = 607, [7] = 706, [8] = 606, [9] = 605, [10] = 705, [11] = 805, [12] = 804, [13] = 703, [14] = 702}
-, pieceType = 1}
-}
-, 
-[7] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, name = "3阶段连锁：连线13格，对米字最大造成伤害"}
-}
-, name = "浮士德连锁技", 
-petList = {
-[1] = {affinity = 1, awakening = 0, equiplv = 1, grade = 0, id = 1500091, level = 1, name = "p1"}
-}
-, 
-setup = {
-[1] = {
-args = {levelID = 1, matchType = 1}
-, setup = "LevelBasic"}
-}
-}
-

@@ -1,68 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/post/main/ui_n27_minigame_rewarditem.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27MiniGameRewardItem", UICustomWidget)
 UIN27MiniGameRewardItem = UIN27MiniGameRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27MiniGameRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN27MiniGameRewardItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameRewardItem._GetComponents = function(self)
-  -- function num : 0_1
+function UIN27MiniGameRewardItem:_GetComponents()
   self._uiItem = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self._lock = self:GetGameObject("Lock")
-  ;
-  (self._lock):SetActive(false)
+  self._lock:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameRewardItem.SetData = function(self, data, missioninfo)
-  -- function num : 0_2
-  self._item = (self._uiItem):SpawnObject("UIItemHomeland")
+function UIN27MiniGameRewardItem:SetData(data, missioninfo)
+  self._item = self._uiItem:SpawnObject("UIItemHomeland")
   self._itemid = data[1]
   self._itemCount = data[2]
   self._missionInfo = missioninfo
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameRewardItem._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[self._itemid]
+function UIN27MiniGameRewardItem:_OnValue()
+  local cfg = Cfg.cfg_item[self._itemid]
   if cfg == nil then
-    (Log.fatal)("cfg_item is nil." .. self._itemid)
+    Log.fatal("cfg_item is nil." .. self._itemid)
   end
   local rew = {}
   rew.assetid = self._itemid
   rew.count = self._itemCount
-  ;
-  (self._item):Flush(rew)
-  ;
-  ((self._item).first):SetActive(false)
+  self._item:Flush(rew)
+  self._item.first:SetActive(false)
   self:RefreshUIInfo(self._missionInfo)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameRewardItem.RefreshUIInfo = function(self, missioninfo)
-  -- function num : 0_4
+function UIN27MiniGameRewardItem:RefreshUIInfo(missioninfo)
   self._missionInfo = missioninfo
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameRewardItem.ShowTips = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN27MinigameRewardItemClicked, self._itemid, (go.transform).position)
+function UIN27MiniGameRewardItem:ShowTips(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN27MinigameRewardItemClicked, self._itemid, go.transform.position)
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_pet_request_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftPetRequestBase", Object)
 AircraftPetRequestBase = AircraftPetRequestBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPetRequestBase.Constructor = function(self, petID, pstID, assetName, clickAnimClip)
-  -- function num : 0_0
+function AircraftPetRequestBase:Constructor(petID, pstID, assetName, clickAnimClip)
   self._petID = petID
   self._pstID = pstID
   self._assetName = assetName
@@ -17,57 +10,43 @@ AircraftPetRequestBase.Constructor = function(self, petID, pstID, assetName, cli
   self._petAnimation = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetRequestBase.PetGameObject = function(self)
-  -- function num : 0_1
+function AircraftPetRequestBase:PetGameObject()
   return self._petGameObject
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetRequestBase.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function AircraftPetRequestBase:Dispose()
   AirError("子类需要重写该方法")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetRequestBase.ClickAnimClip = function(self)
-  -- function num : 0_3
+function AircraftPetRequestBase:ClickAnimClip()
   return self._clickAnimClip
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetRequestBase.makePet = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function AircraftPetRequestBase:makePet()
   local anim = self._petAnimation
   if anim == nil then
-    (Log.fatal)("找不到Animation组件，加载pet模型失败：", self._assetName)
-    return 
+    Log.fatal("找不到Animation组件，加载pet模型失败：", self._assetName)
+    return
   end
   if anim.clip == nil then
-    (Log.exception)("星灵没有默认的Stand动作：", self._assetName)
-    return 
+    Log.exception("星灵没有默认的Stand动作：", self._assetName)
+    return
   end
   local petGo = self._petGameObject
-  local root = ((petGo.transform):Find("Root")).gameObject
+  local root = petGo.transform:Find("Root").gameObject
   local animator = root:GetComponent(typeof(UnityEngine.Animator))
   if animator then
-    ((UnityEngine.Object).Destroy)(animator)
+    UnityEngine.Object.Destroy(animator)
   end
   local petAnim = root:AddComponent(typeof(UnityEngine.Animation))
-  local clips = (HelperProxy:GetInstance()):GetAllAnimationClip(anim)
+  local clips = HelperProxy:GetInstance():GetAllAnimationClip(anim)
   for i = 0, clips.Length - 1 do
     local clip = clips[i]
     if clip == nil then
-      (Log.exception)("星灵动作为空:", self._assetName, "，索引：", i)
+      Log.exception("星灵动作为空:", self._assetName, "，索引：", i)
     else
       petAnim:AddClip(clip, clip.name)
     end
   end
   petAnim.clip = anim.clip
 end
-
-

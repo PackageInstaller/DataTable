@@ -1,95 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/partner_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PartnerServiceRender", BaseService)
 PartnerServiceRender = PartnerServiceRender
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PartnerServiceRender.Dispose = function(self)
-  -- function num : 0_0
+function PartnerServiceRender:Dispose()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PartnerServiceRender.AddMiddleEnterPetRender = function(self, TT, petRes)
-  -- function num : 0_1 , upvalues : _ENV
+function PartnerServiceRender:AddMiddleEnterPetRender(TT, petRes)
   local creationRes = petRes
   local resPath = creationRes:GetPetCreationRes()
   local logicEntityID = creationRes:GetPetCreationLogicEntityID()
-  local petEntity = (self._world):GetEntityByID(logicEntityID)
+  local petEntity = self._world:GetEntityByID(logicEntityID)
   petEntity:ReplaceAsset(NativeUnityPrefabAsset:New(resPath, false))
-  local id = (string.gsub)(resPath, ".prefab", "")
-  ;
-  (petEntity:PetPstID()):SetResID(tonumber(id))
-  local teamEntity = (petEntity:Pet()):GetOwnerTeamEntity()
+  local id = string.gsub(resPath, ".prefab", "")
+  petEntity:PetPstID():SetResID(tonumber(id))
+  local teamEntity = petEntity:Pet():GetOwnerTeamEntity()
   if teamEntity then
-    local teamPos = (teamEntity:Location()).Position
-    local teamDir = (teamEntity:Location()).Direction
+    local teamPos = teamEntity:Location().Position
+    local teamDir = teamEntity:Location().Direction
     petEntity:SetLocation(teamPos, teamDir)
   end
-  do
-    self:_InitRenderAttributes(petEntity, creationRes)
-  end
+  self:_InitRenderAttributes(petEntity, creationRes)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PartnerServiceRender._InitRenderAttributes = function(self, entity, creationRes)
-  -- function num : 0_2
+function PartnerServiceRender:_InitRenderAttributes(entity, creationRes)
   local hp = creationRes:GetPetCreation_CurHp()
   local maxHP = creationRes:GetPetCreation_MaxHp()
   entity:ReplaceRedAndMaxHP(hp, maxHP)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PartnerServiceRender.AddPartnerRender = function(self, TT, dataAddPartnerResult)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.debug)("[MiniMaze] PartnerServiceRender:AddPartnerRender ")
-  ;
-  (Log.debug)("[MiniMaze] PartnerServiceRender:AddPartnerRender task begin")
+function PartnerServiceRender:AddPartnerRender(TT, dataAddPartnerResult)
+  Log.debug("[MiniMaze] PartnerServiceRender:AddPartnerRender ")
+  Log.debug("[MiniMaze] PartnerServiceRender:AddPartnerRender task begin")
   self:CachePartner(TT, dataAddPartnerResult:GetMatchPet())
-  ;
-  (Log.debug)("[MiniMaze] PartnerServiceRender:AddPartnerRender task after CachePartner")
+  Log.debug("[MiniMaze] PartnerServiceRender:AddPartnerRender task after CachePartner")
   self:AddMiddleEnterPetRender(TT, dataAddPartnerResult:GetPetRes())
-  ;
-  (Log.debug)("[MiniMaze] PartnerServiceRender:AddPartnerRender task after AddMiddleEnterPetRender")
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  Log.debug("[MiniMaze] PartnerServiceRender:AddPartnerRender task after AddMiddleEnterPetRender")
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   teamEntity:ReplaceRedAndMaxHP(dataAddPartnerResult:GetHP(), dataAddPartnerResult:GetMaxHP())
   local hpCmpt = teamEntity:HP()
-  ;
-  (Log.debug)("[MiniMaze] PartnerServiceRender:AddPartnerRender task before AddNewBattlePet")
-  ;
-  (GameGlobal:EventDispatcher()):Dispatch(GameEventType.AddNewBattlePet, dataAddPartnerResult:GetPetInfo(), dataAddPartnerResult:GetMatchPet())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TeamHPChange, {isLocalTeam = true, currentHP = hpCmpt:GetRedHP(), maxHP = hpCmpt:GetMaxHP(), hitpoint = hpCmpt:GetWhiteHP(), shield = hpCmpt:GetShieldValue(), entityID = teamEntity:GetID(), showCurseHp = hpCmpt:GetShowCurseHp(), curseHpVal = hpCmpt:GetCurseHpValue()})
-  ;
-  (Log.debug)("[MiniMaze] PartnerServiceRender:AddPartnerRender task before WaveResultAwardFinish")
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  ;
-  (Log.debug)("[MiniMaze] PartnerServiceRender:AddPartnerRender task before PlayAutoAddBuff")
+  Log.debug("[MiniMaze] PartnerServiceRender:AddPartnerRender task before AddNewBattlePet")
+  GameGlobal:EventDispatcher():Dispatch(GameEventType.AddNewBattlePet, dataAddPartnerResult:GetPetInfo(), dataAddPartnerResult:GetMatchPet())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TeamHPChange, {
+    isLocalTeam = true,
+    currentHP = hpCmpt:GetRedHP(),
+    maxHP = hpCmpt:GetMaxHP(),
+    hitpoint = hpCmpt:GetWhiteHP(),
+    shield = hpCmpt:GetShieldValue(),
+    entityID = teamEntity:GetID(),
+    showCurseHp = hpCmpt:GetShowCurseHp(),
+    curseHpVal = hpCmpt:GetCurseHpValue()
+  })
+  Log.debug("[MiniMaze] PartnerServiceRender:AddPartnerRender task before WaveResultAwardFinish")
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  Log.debug("[MiniMaze] PartnerServiceRender:AddPartnerRender task before PlayAutoAddBuff")
   playBuffSvc:PlayAutoAddBuff()
-  local featureRender = (self._world):GetService("FeatureRender")
+  local featureRender = self._world:GetService("FeatureRender")
   if featureRender then
-    (Log.debug)("[MiniMaze] PartnerServiceRender:AddPartnerRender task before _InitUIFeatureList")
+    Log.debug("[MiniMaze] PartnerServiceRender:AddPartnerRender task before _InitUIFeatureList")
     featureRender:_InitUIFeatureList(TT)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PartnerServiceRender.CachePartner = function(self, TT, partnerMatchPet)
-  -- function num : 0_4 , upvalues : _ENV
-  local respool = ((self._world).BW_Services).ResourcesPool
-  local loadingSvc = (self._world):GetService("Loading")
+function PartnerServiceRender:CachePartner(TT, partnerMatchPet)
+  local respool = self._world.BW_Services.ResourcesPool
+  local loadingSvc = self._world:GetService("Loading")
   local partnerMatchPetDataList = {partnerMatchPet}
   local restable = loadingSvc:_GetCacheTable_ByPetData(partnerMatchPetDataList)
-  for k,v in pairs(restable) do
+  for k, v in pairs(restable) do
     local resname = v[1]
     local count = v[2]
-    if (string.endwith)(resname, ".mat") then
+    if string.endwith(resname, ".mat") then
       respool:CacheMaterial(resname, count)
     else
       respool:Cache(resname, count)
@@ -97,5 +76,3 @@ PartnerServiceRender.CachePartner = function(self, TT, partnerMatchPet)
   end
   YIELD(TT)
 end
-
-

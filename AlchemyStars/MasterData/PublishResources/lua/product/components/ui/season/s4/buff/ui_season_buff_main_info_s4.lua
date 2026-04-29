@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/buff/ui_season_buff_main_info_s4.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuffMainInfoS4", UIController)
 UISeasonBuffMainInfoS4 = UISeasonBuffMainInfoS4
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuffMainInfoS4.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonBuffMainInfoS4:OnShow(uiParams)
   self._offset = self:GetUIComponent("RectTransform", "offset")
   self.levelText = self:GetUIComponent("UILocalizationText", "Lv")
   self.fullAreaGo = self:GetGameObject("FullArea")
@@ -18,11 +11,9 @@ UISeasonBuffMainInfoS4.OnShow = function(self, uiParams)
   self.contentTitle = self:GetUIComponent("UILocalizationText", "ContentTitle")
   self.progressCellsGen = self:GetUIComponent("UISelectObjectPath", "ProgressCells")
   self.nextBtnGo = self:GetGameObject("NextBtn")
-  ;
-  (self.nextBtnGo):SetActive(true)
+  self.nextBtnGo:SetActive(true)
   self.prevBtnGo = self:GetGameObject("PrevBtn")
-  ;
-  (self.prevBtnGo):SetActive(false)
+  self.prevBtnGo:SetActive(false)
   self._sr = self:GetUIComponent("ScrollRect", "ContentScroll")
   self.componentID = uiParams[1]
   self._curLevel = uiParams[2]
@@ -34,93 +25,60 @@ UISeasonBuffMainInfoS4.OnShow = function(self, uiParams)
   self:RefreshContent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffMainInfoS4.InitInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self.levelText):SetText((StringTable.Get)("str_season_buff_level", tostring(self._curLevel)))
-  ;
-  (self.fullAreaGo):SetActive(self._isMaxLevel)
-  ;
-  (self.progressCellsGo):SetActive(not self._isMaxLevel)
-  ;
-  (self.nextBtnGo):SetActive(not self._isMaxLevel)
-  self._progressCells = (self.progressCellsGen):SpawnObject("UISeasonBuffProgressCellsS4")
-  ;
-  (self._progressCells):SetData(self._curProgress, self._curMaxProgress)
+function UISeasonBuffMainInfoS4:InitInfo()
+  self.levelText:SetText(StringTable.Get("str_season_buff_level", tostring(self._curLevel)))
+  self.fullAreaGo:SetActive(self._isMaxLevel)
+  self.progressCellsGo:SetActive(not self._isMaxLevel)
+  self.nextBtnGo:SetActive(not self._isMaxLevel)
+  self._progressCells = self.progressCellsGen:SpawnObject("UISeasonBuffProgressCellsS4")
+  self._progressCells:SetData(self._curProgress, self._curMaxProgress)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffMainInfoS4.RefreshContent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.titleText):SetText((StringTable.Get)((UISeasonHelper.CurSeasonBuffTitleInBattle)()))
+function UISeasonBuffMainInfoS4:RefreshContent()
+  self.titleText:SetText(StringTable.Get(UISeasonHelper.CurSeasonBuffTitleInBattle()))
   if self._curShowContentLevel == self._curLevel then
-    (self.contentTitle):SetText((StringTable.Get)("str_season_buff_detail_title_current"))
+    self.contentTitle:SetText(StringTable.Get("str_season_buff_detail_title_current"))
   else
-    ;
-    (self.contentTitle):SetText((StringTable.Get)("str_season_buff_detail_title_next"))
+    self.contentTitle:SetText(StringTable.Get("str_season_buff_detail_title_next"))
   end
-  local cfgGroup = (Cfg.cfg_component_season_wordbuff)({ComponentID = self.componentID, Lv = self._curShowContentLevel})
-  if cfgGroup and #cfgGroup > 0 then
+  local cfgGroup = Cfg.cfg_component_season_wordbuff({
+    ComponentID = self.componentID,
+    Lv = self._curShowContentLevel
+  })
+  if cfgGroup and 0 < #cfgGroup then
     local cfg = cfgGroup[1]
     local desc = cfg.Desc
-    ;
-    (self.contentText):SetText((StringTable.Get)(desc))
+    self.contentText:SetText(StringTable.Get(desc))
   else
-    do
-      ;
-      (self.contentText):SetText("")
-      -- DECOMPILER ERROR at PC59: Confused about usage of register: R2 in 'UnsetPending'
-
-      if self._sr then
-        (self._sr).verticalNormalizedPosition = 0
-      end
-    end
+    self.contentText:SetText("")
+  end
+  if self._sr then
+    self._sr.verticalNormalizedPosition = 0
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffMainInfoS4.BgOnClick = function(self)
-  -- function num : 0_3
+function UISeasonBuffMainInfoS4:BgOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffMainInfoS4.CloseBtnOnClick = function(self)
-  -- function num : 0_4
+function UISeasonBuffMainInfoS4:CloseBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffMainInfoS4.NextBtnOnClick = function(self)
-  -- function num : 0_5
-  (self.nextBtnGo):SetActive(false)
-  ;
-  (self.prevBtnGo):SetActive(true)
+function UISeasonBuffMainInfoS4:NextBtnOnClick()
+  self.nextBtnGo:SetActive(false)
+  self.prevBtnGo:SetActive(true)
   self._curShowContentLevel = self._curShowContentLevel + 1
   self:RefreshContent()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffMainInfoS4.PrevBtnOnClick = function(self)
-  -- function num : 0_6
-  (self.nextBtnGo):SetActive(true)
-  ;
-  (self.prevBtnGo):SetActive(false)
+function UISeasonBuffMainInfoS4:PrevBtnOnClick()
+  self.nextBtnGo:SetActive(true)
+  self.prevBtnGo:SetActive(false)
   self._curShowContentLevel = self._curShowContentLevel - 1
   self:RefreshContent()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffMainInfoS4.HelpOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UISeasonBuffMainTipsS4")
+function UISeasonBuffMainInfoS4:HelpOnClick()
+  GameGlobal.UIStateManager():ShowDialog("UISeasonBuffMainTipsS4")
 end
-
-

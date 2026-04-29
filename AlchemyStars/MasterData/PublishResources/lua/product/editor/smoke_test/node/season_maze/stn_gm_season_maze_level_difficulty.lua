@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/season_maze/stn_gm_season_maze_level_difficulty.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("GM_SeasonMazeLevelDifficulty", Common_AsyncBase)
 GM_SeasonMazeLevelDifficulty = GM_SeasonMazeLevelDifficulty
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GM_SeasonMazeLevelDifficulty.Constructor = function(self, _manager, level)
-  -- function num : 0_0
+function GM_SeasonMazeLevelDifficulty:Constructor(_manager, level)
   self._level = level
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GM_SeasonMazeLevelDifficulty.TaskFunc = function(self, TT, status)
-  -- function num : 0_1
-  local runData = (self._manager):GetMissionRunData()
+function GM_SeasonMazeLevelDifficulty:TaskFunc(TT, status)
+  local runData = self._manager:GetMissionRunData()
   local componentID = runData:GetComponentConfigID()
-  ;
-  (self._manager):AsyncGM_SeasonMazeLevelDifficulty(TT, status, componentID, self._level)
+  self._manager:AsyncGM_SeasonMazeLevelDifficulty(TT, status, componentID, self._level)
 end
-
-

@@ -1,590 +1,413 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_notice/notice_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("NoticeData", Object)
 NoticeData = NoticeData
 local NoticeType = {System = 1003, Active = 1004}
 _enum("NoticeType", NoticeType)
-local NoticeLayout = {TextureText = 1, Texture = 2, Text = 3}
+local NoticeLayout = {
+  TextureText = 1,
+  Texture = 2,
+  Text = 3
+}
 _enum("NoticeLayout", NoticeLayout)
 local logKey = "###[公告Log] "
--- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
 
-NoticeData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV, NoticeType
-  (Log.debug)("[notice] ### NoticeData:Constructor")
+function NoticeData:Constructor()
+  Log.debug("[notice] ### NoticeData:Constructor")
   self.m_reqid = -1
   self._firstLogin = false
   self._keyAppendValueSystem = "SystemNotice"
   self._keyAppendValueActive = "ActiveNotice"
   self.m_group = "afterEnter"
-  self.m_language = (SDKProxy:GetInstance()):GetStandardLangType()
+  self.m_language = SDKProxy:GetInstance():GetStandardLangType()
   self.m_region = "392"
   if EDITOR then
     self.m_region = "392"
   else
-    self.m_region = (((GameGlobal.GameLogic)()).msdkAuthorityInfo).state_numeric
-    ;
-    (Log.debug)("###[NoticeData] 正常获取国家")
+    self.m_region = GameGlobal.GameLogic().msdkAuthorityInfo.state_numeric
+    Log.debug("###[NoticeData] 正常获取国家")
   end
   if self.m_region then
-    (Log.debug)("###[NoticeData] 获取国家 --> ", self.m_region)
+    Log.debug("###[NoticeData] 获取国家 --> ", self.m_region)
   else
     self.m_region = "392"
   end
-  ;
-  (Log.debug)("###[NoticeData] 获取国家结果 --> ", self.m_region)
+  Log.debug("###[NoticeData] 获取国家结果 --> ", self.m_region)
   self.m_partition = 0
   if EDITOR then
     self.m_partition = 0
   else
-    self.m_partition = ((GameGlobal.GameLogic)()):GetZoneID()
-    ;
-    (Log.debug)("###[NoticeData] 正常获取")
+    self.m_partition = GameGlobal.GameLogic():GetZoneID()
+    Log.debug("###[NoticeData] 正常获取")
   end
   if self.m_partition then
-    (Log.debug)("###[NoticeData] 获取大区 --> ", self.m_partition)
+    Log.debug("###[NoticeData] 获取大区 --> ", self.m_partition)
   else
     self.m_partition = 81
   end
-  ;
-  (Log.debug)("###[NoticeData] 获取大区结果 --> ", self.m_partition)
+  Log.debug("###[NoticeData] 获取大区结果 --> ", self.m_partition)
   local platformNum = GetPlatformOS()
   self._thisPlatform = self:PlatformNumber2String(platformNum)
-  ;
-  (Log.debug)("###[NoticeData] get platform succ ! platform --> ", self._thisPlatform)
+  Log.debug("###[NoticeData] get platform succ ! platform --> ", self._thisPlatform)
   self.m_extraJson = ""
   self:DebugLog("国家：", self.m_region)
   self:DebugLog("语言：", self.m_language)
   self:DebugLog("大区：", self.m_partition)
   self:DebugLog("平台：", self._thisPlatform)
-  self.onNoticeRetEvent = function(ret)
-    -- function num : 0_0_0 , upvalues : _ENV, self
-    if (SDKProxy:GetInstance()):IsInlandSDK() then
+  
+  function self.onNoticeRetEvent(ret)
+    if SDKProxy:GetInstance():IsInlandSDK() then
       self:OnInlandNoticeRetEvent(ret)
     else
       self:OnOverSeaNoticeRetEvent(ret)
     end
   end
-
-  ;
-  (SDKProxy:GetInstance()):NoticeRetEvent(self.onNoticeRetEvent, true)
+  
+  SDKProxy:GetInstance():NoticeRetEvent(self.onNoticeRetEvent, true)
   self._deltaTime = 300000
   self._noticeDic = {}
-  -- DECOMPILER ERROR at PC120: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._noticeDic)[NoticeType.System] = {}
-  -- DECOMPILER ERROR at PC124: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._noticeDic)[NoticeType.Active] = {}
+  self._noticeDic[NoticeType.System] = {}
+  self._noticeDic[NoticeType.Active] = {}
   self._noticeNewDic = {}
-  -- DECOMPILER ERROR at PC129: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._noticeNewDic)[NoticeType.System] = false
-  -- DECOMPILER ERROR at PC132: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._noticeNewDic)[NoticeType.Active] = false
+  self._noticeNewDic[NoticeType.System] = false
+  self._noticeNewDic[NoticeType.Active] = false
   self._noticeCountDic = {}
-  -- DECOMPILER ERROR at PC137: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._noticeCountDic)[NoticeType.System] = 0
-  -- DECOMPILER ERROR at PC140: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._noticeCountDic)[NoticeType.Active] = 0
+  self._noticeCountDic[NoticeType.System] = 0
+  self._noticeCountDic[NoticeType.Active] = 0
   self._StartGetNoticeNextEvent = nil
-  ;
-  ((GameGlobal.Timer)()):AddEvent(10, self.StartGetNoticeNext, self)
+  GameGlobal.Timer():AddEvent(10, self.StartGetNoticeNext, self)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData.DebugLog = function(self, log, ...)
-  -- function num : 0_1 , upvalues : _ENV, logKey
-  (Log.debug)(logKey, log, ...)
+function NoticeData:DebugLog(log, ...)
+  Log.debug(logKey, log, ...)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData.StartGetNoticeNext = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function NoticeData:StartGetNoticeNext()
   self._StartGetNoticeNextEvent = nil
   self:RequestNoticeData()
-  self._requestEventLoop = ((GameGlobal.Timer)()):AddEventTimes(self._deltaTime, TimerTriggerCount.Infinite, function()
-    -- function num : 0_2_0 , upvalues : self
+  self._requestEventLoop = GameGlobal.Timer():AddEventTimes(self._deltaTime, TimerTriggerCount.Infinite, function()
     self:RequestNoticeData()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData.ChangeFirstLogin = function(self)
-  -- function num : 0_3
+function NoticeData:ChangeFirstLogin()
   self._firstLogin = true
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData.CancelNoticeNew = function(self, noticeid, type)
-  -- function num : 0_4 , upvalues : _ENV
+function NoticeData:CancelNoticeNew(noticeid, type)
   self:SetNoticeNew(noticeid, type, true)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnNoticeDataCheckNew)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnNoticeDataCheckNew)
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData.RequestNoticeData = function(self)
-  -- function num : 0_5
+function NoticeData:RequestNoticeData()
   self:_LoadNotice()
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData._LoadNotice = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.debug)("[notice] ### start request notice data")
+function NoticeData:_LoadNotice()
+  Log.debug("[notice] ### start request notice data")
   if EDITOR then
     self.m_reqid = "27780-735C25EE-C506-43A2-A2DB-548C6D48D8FE-1596594433-18"
-    ;
-    (SDKProxy:GetInstance()):LoadNoticeData(self.m_group, self.m_language, self.m_region, self.m_partition)
+    SDKProxy:GetInstance():LoadNoticeData(self.m_group, self.m_language, self.m_region, self.m_partition)
   else
-    self.m_reqid = (SDKProxy:GetInstance()):LoadNoticeData(self.m_group, self.m_language, self.m_region, self.m_partition)
+    self.m_reqid = SDKProxy:GetInstance():LoadNoticeData(self.m_group, self.m_language, self.m_region, self.m_partition)
   end
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData.RequestNoticeDataWithGroup = function(self, group, callback)
-  -- function num : 0_7 , upvalues : _ENV
+function NoticeData:RequestNoticeDataWithGroup(group, callback)
   self._callback = callback
-  ;
-  (Log.fatal)("###[self.m_region]", self.m_region)
+  Log.fatal("###[self.m_region]", self.m_region)
   if EDITOR then
     self.m_reqid_cb = "27780-735C25EE-C506-43A2-A2DB-548C6D48D8FE-1596594433-17"
-    ;
-    (SDKProxy:GetInstance()):LoadNoticeData(group, self.m_language, self.m_region, self.m_partition)
+    SDKProxy:GetInstance():LoadNoticeData(group, self.m_language, self.m_region, self.m_partition)
   else
-    self.m_reqid_cb = (SDKProxy:GetInstance()):LoadNoticeData(group, self.m_language, self.m_region, self.m_partition)
+    self.m_reqid_cb = SDKProxy:GetInstance():LoadNoticeData(group, self.m_language, self.m_region, self.m_partition)
   end
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData.OnInlandNoticeRetEvent = function(self, ret)
-  -- function num : 0_8 , upvalues : _ENV, NoticeType
+function NoticeData:OnInlandNoticeRetEvent(ret)
   if ret == nil then
     self:DebugLog("MSDKNoticeRet是空的")
-    return 
+    return
   end
   if ret.ReqID == self.m_reqid then
-    (Log.debug)("[notice] ### request notice data finish")
-    if (ret.NoticeInfoList).Count > 0 then
+    Log.debug("[notice] ### request notice data finish")
+    if ret.NoticeInfoList.Count > 0 then
       self._noticeDic = {}
-      -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._noticeDic)[NoticeType.System] = {}
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._noticeDic)[NoticeType.Active] = {}
+      self._noticeDic[NoticeType.System] = {}
+      self._noticeDic[NoticeType.Active] = {}
       local systemList_temp = {}
       local activeList_temp = {}
-      for i = 0, (ret.NoticeInfoList).Count - 1 do
-        local noticeInfo = self:MaskNotice2NoticeCls((ret.NoticeInfoList)[i])
+      for i = 0, ret.NoticeInfoList.Count - 1 do
+        local noticeInfo = self:MaskNotice2NoticeCls(ret.NoticeInfoList[i])
         if noticeInfo then
           if noticeInfo.NoticeType == NoticeType.Active then
-            (table.insert)(activeList_temp, noticeInfo)
+            table.insert(activeList_temp, noticeInfo)
           else
-            ;
-            (table.insert)(systemList_temp, noticeInfo)
+            table.insert(systemList_temp, noticeInfo)
           end
         end
       end
-      local systemCount = (table.count)(systemList_temp)
-      local activeCount = (table.count)(activeList_temp)
-      -- DECOMPILER ERROR at PC68: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._noticeCountDic)[NoticeType.System] = systemCount
-      -- DECOMPILER ERROR at PC71: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._noticeCountDic)[NoticeType.Active] = activeCount
-      if (table.count)(systemList_temp) > 0 then
-        (table.sort)(systemList_temp, function(a, b)
-    -- function num : 0_8_0
-    do return b.Order < a.Order end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+      local systemCount = table.count(systemList_temp)
+      local activeCount = table.count(activeList_temp)
+      self._noticeCountDic[NoticeType.System] = systemCount
+      self._noticeCountDic[NoticeType.Active] = activeCount
+      if 0 < table.count(systemList_temp) then
+        table.sort(systemList_temp, function(a, b)
+          return a.Order > b.Order
+        end)
       end
-      if (table.count)(activeList_temp) > 0 then
-        (table.sort)(activeList_temp, function(a, b)
-    -- function num : 0_8_1
-    do return b.Order < a.Order end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+      if 0 < table.count(activeList_temp) then
+        table.sort(activeList_temp, function(a, b)
+          return a.Order > b.Order
+        end)
       end
       for i = 1, #activeList_temp do
-        (table.insert)((self._noticeDic)[NoticeType.Active], activeList_temp[i])
+        table.insert(self._noticeDic[NoticeType.Active], activeList_temp[i])
       end
       for i = 1, #systemList_temp do
-        (table.insert)((self._noticeDic)[NoticeType.System], systemList_temp[i])
+        table.insert(self._noticeDic[NoticeType.System], systemList_temp[i])
       end
-      -- DECOMPILER ERROR at PC120: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._noticeNewDic)[NoticeType.Active] = false
-      for i = 1, #(self._noticeDic)[NoticeType.Active] do
-        -- DECOMPILER ERROR at PC140: Confused about usage of register: R10 in 'UnsetPending'
-
-        if self:CheckNoticeNew((((self._noticeDic)[NoticeType.Active])[i]).NoticeId, NoticeType.Active) then
-          (self._noticeNewDic)[NoticeType.Active] = true
+      self._noticeNewDic[NoticeType.Active] = false
+      for i = 1, #self._noticeDic[NoticeType.Active] do
+        if self:CheckNoticeNew(self._noticeDic[NoticeType.Active][i].NoticeId, NoticeType.Active) then
+          self._noticeNewDic[NoticeType.Active] = true
           break
         end
       end
-      do
-        -- DECOMPILER ERROR at PC145: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (self._noticeNewDic)[NoticeType.System] = false
-        for i = 1, #(self._noticeDic)[NoticeType.System] do
-          -- DECOMPILER ERROR at PC165: Confused about usage of register: R10 in 'UnsetPending'
-
-          if self:CheckNoticeNew((((self._noticeDic)[NoticeType.System])[i]).NoticeId, NoticeType.System) then
-            (self._noticeNewDic)[NoticeType.System] = true
-            break
-          end
-        end
-        do
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnNoticeDataCheckNew)
-          if ret.ReqID == self.m_reqid_cb and self._callback then
-            local noticeTab = {}
-            if (ret.NoticeInfoList).Count > 0 then
-              for i = 0, (ret.NoticeInfoList).Count - 1 do
-                local noticeInfo = self:MaskNotice2NoticeCls((ret.NoticeInfoList)[i])
-                ;
-                (table.insert)(noticeTab, noticeInfo)
-              end
-            end
-            do
-              ;
-              (self._callback)(noticeTab)
-              self._callback = nil
-            end
-          end
+      self._noticeNewDic[NoticeType.System] = false
+      for i = 1, #self._noticeDic[NoticeType.System] do
+        if self:CheckNoticeNew(self._noticeDic[NoticeType.System][i].NoticeId, NoticeType.System) then
+          self._noticeNewDic[NoticeType.System] = true
+          break
         end
       end
     end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnNoticeDataCheckNew)
+  elseif ret.ReqID == self.m_reqid_cb and self._callback then
+    local noticeTab = {}
+    if ret.NoticeInfoList.Count > 0 then
+      for i = 0, ret.NoticeInfoList.Count - 1 do
+        local noticeInfo = self:MaskNotice2NoticeCls(ret.NoticeInfoList[i])
+        table.insert(noticeTab, noticeInfo)
+      end
+    end
+    self._callback(noticeTab)
+    self._callback = nil
   end
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData.MaskNotice2NoticeCls = function(self, noticeInfo)
-  -- function num : 0_9 , upvalues : _ENV
+function NoticeData:MaskNotice2NoticeCls(noticeInfo)
   local noticeCls = UINoticeCls:New()
   noticeCls.NoticeId = noticeInfo.NoticeId
   noticeCls.NoticeGroup = noticeInfo.NoticeGroup
   noticeCls.NoticeType = noticeInfo.NoticeType
   noticeCls.Order = noticeInfo.Order
-  noticeCls.Text_NoticeTitle = (noticeInfo.TextInfo).NoticeTitle
-  noticeCls.Text_NoticeContent = (noticeInfo.TextInfo).NoticeContent
+  noticeCls.Text_NoticeTitle = noticeInfo.TextInfo.NoticeTitle
+  noticeCls.Text_NoticeContent = noticeInfo.TextInfo.NoticeContent
   if not self._thisPlatform then
-    (Log.error)("###[NoticeData] get platform fail !")
+    Log.error("###[NoticeData] get platform fail !")
     return nil
   end
-  local json = (cjson.decode)(noticeInfo.ExtraJson)
+  local json = cjson.decode(noticeInfo.ExtraJson)
   if json then
     noticeCls.UniqID = json.UniqID
     local platform = json.platform
     if not platform then
-      (Log.debug)("###[NoticeData] notice platform is nil !")
+      Log.debug("###[NoticeData] notice platform is nil !")
       if self._thisPlatform ~= NoticeClientPlatform.Mobile then
         self:DebugLog("公告没配平台而且当前不是手机平台,NoticeId[", noticeCls.NoticeId, "]")
         return nil
       end
     else
-      ;
-      (Log.debug)("###[NoticeData] notice platform is --> ", platform)
-    end
-    if platform ~= NoticeClientPlatform.All or self._thisPlatform ~= platform then
-      self:DebugLog("公告没有通过平台筛选,NoticeId[", noticeCls.NoticeId, "]")
-      return nil
-    end
-  else
-    do
-      if self._thisPlatform ~= NoticeClientPlatform.Mobile then
-        self:DebugLog("公告没配平台而且当前不是手机平台,NoticeId[", noticeCls.NoticeId, "]")
+      Log.debug("###[NoticeData] notice platform is --> ", platform)
+      if platform == NoticeClientPlatform.All then
+      elseif self._thisPlatform ~= platform then
+        self:DebugLog("公告没有通过平台筛选,NoticeId[", noticeCls.NoticeId, "]")
         return nil
       end
-      return noticeCls
     end
+  elseif self._thisPlatform ~= NoticeClientPlatform.Mobile then
+    self:DebugLog("公告没配平台而且当前不是手机平台,NoticeId[", noticeCls.NoticeId, "]")
+    return nil
   end
+  return noticeCls
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData.PlatformNumber2String = function(self, num)
-  -- function num : 0_10 , upvalues : _ENV
+function NoticeData:PlatformNumber2String(num)
   if num == ClientRuntimeOS.CRO_ANDROID then
     return NoticeClientPlatform.Mobile
-  else
-    if num == ClientRuntimeOS.CRO_IOS then
-      return NoticeClientPlatform.Mobile
-    else
-      if num == ClientRuntimeOS.CRO_PC then
-        return NoticeClientPlatform.Pc
-      end
-    end
+  elseif num == ClientRuntimeOS.CRO_IOS then
+    return NoticeClientPlatform.Mobile
+  elseif num == ClientRuntimeOS.CRO_PC then
+    return NoticeClientPlatform.Pc
   end
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData._ConvertINTLNoticeInfo2NoticeCls = function(self, INTL_noticeInfo)
-  -- function num : 0_11 , upvalues : _ENV
+function NoticeData:_ConvertINTLNoticeInfo2NoticeCls(INTL_noticeInfo)
   local UINoticeCls = UINoticeCls:New()
-  if (INTL_noticeInfo.ContentList).Count <= 0 then
-    return 
+  if INTL_noticeInfo.ContentList.Count <= 0 then
+    return
   end
   local areaListStr = INTL_noticeInfo.AreaList
-  ;
-  (Log.debug)("###[NoticeData] INTL_noticeInfo.AreaList --> ", INTL_noticeInfo.AreaList)
-  local areajson = (cjson.decode)(areaListStr)
-  if areajson and (table.count)(areajson) > 0 then
-    (Log.debug)("###[NoticeData] 配置了大区id,数量-->", (table.count)(areajson))
+  Log.debug("###[NoticeData] INTL_noticeInfo.AreaList --> ", INTL_noticeInfo.AreaList)
+  local areajson = cjson.decode(areaListStr)
+  if areajson and 0 < table.count(areajson) then
+    Log.debug("###[NoticeData] 配置了大区id,数量-->", table.count(areajson))
     local inAreaList = false
     local h3dAreaStr = tostring(self.m_partition)
-    for key,value in pairs(areajson) do
-      (Log.debug)("###[NoticeData] 大区匹配 intl.area：", value, " -- h3d.area", h3dAreaStr)
+    for key, value in pairs(areajson) do
+      Log.debug("###[NoticeData] 大区匹配 intl.area：", value, " -- h3d.area", h3dAreaStr)
       if value == h3dAreaStr then
-        (Log.debug)("###[NoticeData] 大区匹配成功")
+        Log.debug("###[NoticeData] 大区匹配成功")
         inAreaList = true
         break
       end
     end
-    do
-      do
-        if not inAreaList then
-          (Log.debug)("###[NoticeData] 大区匹配失败")
-          self:DebugLog("大区匹配失败,NoticeId[", INTL_noticeInfo.NoticeId, "]")
-          return nil
-        end
-        ;
-        (Log.debug)("###[NoticeData] 没有配置大区")
-        local curContent = (INTL_noticeInfo.ContentList)[0]
-        UINoticeCls.NoticeId = INTL_noticeInfo.NoticeId
-        local jsonTable = (cjson.decode)(INTL_noticeInfo.ExtraData)
-        if jsonTable == nil then
-          (Log.error)("###[NoticeData] notice jsonTable is nil ! id --> ", INTL_noticeInfo.NoticeId)
-          if self._thisPlatform ~= NoticeClientPlatform.Mobile then
-            self:DebugLog("公告没配平台而且当前不是手机平台,NoticeId[", INTL_noticeInfo.NoticeId, "]")
-            return nil
-          end
-        else
-          local platform = jsonTable.platform
-          if not self._thisPlatform then
-            (Log.error)("###[NoticeData] get platform fail !")
-            self:DebugLog("当前平台获取失败")
-            return nil
-          end
-          if not platform then
-            (Log.debug)("###[NoticeData] notice platform is nil !")
-            if self._thisPlatform ~= NoticeClientPlatform.Mobile then
-              self:DebugLog("公告没配平台而且当前不是手机平台,NoticeId[", INTL_noticeInfo.NoticeId, "]")
-              return nil
-            end
-          else
-            ;
-            (Log.debug)("###[NoticeData] notice platform is --> ", platform)
-          end
-        end
-        do
-          if platform ~= NoticeClientPlatform.All or self._thisPlatform ~= platform then
-            self:DebugLog("公告没有通过平台筛选,NoticeId[", INTL_noticeInfo.NoticeId, "]")
-            return nil
-          end
-          UINoticeCls.Text_NoticeTitle = curContent.Title
-          UINoticeCls.Text_NoticeContent = curContent.Content
-          UINoticeCls.NoticeGroup = jsonTable.noticeGroup
-          UINoticeCls.NoticeType = tonumber(jsonTable.noticeType)
-          UINoticeCls.Order = tonumber(jsonTable.order)
-          UINoticeCls.UniqID = tonumber(jsonTable.uniqID)
-          return UINoticeCls
-        end
+    if not inAreaList then
+      Log.debug("###[NoticeData] 大区匹配失败")
+      self:DebugLog("大区匹配失败,NoticeId[", INTL_noticeInfo.NoticeId, "]")
+      return nil
+    end
+  else
+    Log.debug("###[NoticeData] 没有配置大区")
+  end
+  local curContent = INTL_noticeInfo.ContentList[0]
+  UINoticeCls.NoticeId = INTL_noticeInfo.NoticeId
+  local jsonTable = cjson.decode(INTL_noticeInfo.ExtraData)
+  if jsonTable == nil then
+    Log.error("###[NoticeData] notice jsonTable is nil ! id --> ", INTL_noticeInfo.NoticeId)
+    if self._thisPlatform ~= NoticeClientPlatform.Mobile then
+      self:DebugLog("公告没配平台而且当前不是手机平台,NoticeId[", INTL_noticeInfo.NoticeId, "]")
+      return nil
+    end
+  else
+    local platform = jsonTable.platform
+    if not self._thisPlatform then
+      Log.error("###[NoticeData] get platform fail !")
+      self:DebugLog("当前平台获取失败")
+      return nil
+    end
+    if not platform then
+      Log.debug("###[NoticeData] notice platform is nil !")
+      if self._thisPlatform ~= NoticeClientPlatform.Mobile then
+        self:DebugLog("公告没配平台而且当前不是手机平台,NoticeId[", INTL_noticeInfo.NoticeId, "]")
+        return nil
+      end
+    else
+      Log.debug("###[NoticeData] notice platform is --> ", platform)
+      if platform == NoticeClientPlatform.All then
+      elseif self._thisPlatform ~= platform then
+        self:DebugLog("公告没有通过平台筛选,NoticeId[", INTL_noticeInfo.NoticeId, "]")
+        return nil
       end
     end
   end
+  UINoticeCls.Text_NoticeTitle = curContent.Title
+  UINoticeCls.Text_NoticeContent = curContent.Content
+  UINoticeCls.NoticeGroup = jsonTable.noticeGroup
+  UINoticeCls.NoticeType = tonumber(jsonTable.noticeType)
+  UINoticeCls.Order = tonumber(jsonTable.order)
+  UINoticeCls.UniqID = tonumber(jsonTable.uniqID)
+  return UINoticeCls
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData.OnOverSeaNoticeRetEvent = function(self, ret)
-  -- function num : 0_12 , upvalues : _ENV, NoticeType
+function NoticeData:OnOverSeaNoticeRetEvent(ret)
   if ret == nil then
-    (Log.debug)("[notice] ### ret is nil !")
-    return 
+    Log.debug("[notice] ### ret is nil !")
+    return
   else
-    ;
-    (Log.debug)("[notice] ### ret is not nil ! ")
-    ;
-    (Log.debug)("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    ;
-    (Log.debug)(ret)
-    ;
-    (Log.debug)(ret.SeqID)
+    Log.debug("[notice] ### ret is not nil ! ")
+    Log.debug("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    Log.debug(ret)
+    Log.debug(ret.SeqID)
   end
   if ret.SeqID == self.m_reqid then
-    (Log.debug)("[notice] ### On Oversea request notice data finish")
-    if (ret.NoticeInfoList).Count > 0 then
-      (Log.debug)("[notice] ### ret ~= nil and ret.NoticeInfoList.Count - ", (ret.NoticeInfoList).Count)
+    Log.debug("[notice] ### On Oversea request notice data finish")
+    if ret.NoticeInfoList.Count > 0 then
+      Log.debug("[notice] ### ret ~= nil and ret.NoticeInfoList.Count - ", ret.NoticeInfoList.Count)
       self._noticeDic = {}
-      -- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._noticeDic)[NoticeType.System] = {}
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._noticeDic)[NoticeType.Active] = {}
+      self._noticeDic[NoticeType.System] = {}
+      self._noticeDic[NoticeType.Active] = {}
       local systemList_temp = {}
       local activeList_temp = {}
-      for i = 0, (ret.NoticeInfoList).Count - 1 do
-        local tempNoticeInfo = (ret.NoticeInfoList)[i]
+      for i = 0, ret.NoticeInfoList.Count - 1 do
+        local tempNoticeInfo = ret.NoticeInfoList[i]
         local noticeInfo = self:_ConvertINTLNoticeInfo2NoticeCls(tempNoticeInfo)
         if noticeInfo then
           if noticeInfo.NoticeType == NoticeType.Active then
-            (Log.debug)("noticeInfo.NoticeType == NoticeType.Active")
-            ;
-            (table.insert)(activeList_temp, noticeInfo)
-          else
-            if noticeInfo.NoticeType == NoticeType.System then
-              (Log.debug)("noticeInfo.NoticeType == NoticeType.System")
-              ;
-              (table.insert)(systemList_temp, noticeInfo)
-            end
+            Log.debug("noticeInfo.NoticeType == NoticeType.Active")
+            table.insert(activeList_temp, noticeInfo)
+          elseif noticeInfo.NoticeType == NoticeType.System then
+            Log.debug("noticeInfo.NoticeType == NoticeType.System")
+            table.insert(systemList_temp, noticeInfo)
           end
         end
       end
-      local systemCount = (table.count)(systemList_temp)
-      local activeCount = (table.count)(activeList_temp)
-      -- DECOMPILER ERROR at PC105: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._noticeCountDic)[NoticeType.System] = systemCount
-      -- DECOMPILER ERROR at PC108: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._noticeCountDic)[NoticeType.Active] = activeCount
-      ;
-      (Log.debug)("activeList_temp size(): ", activeCount)
-      ;
-      (Log.debug)("systemList_temp size(): ", systemCount)
-      if (table.count)(systemList_temp) > 0 then
-        (table.sort)(systemList_temp, function(a, b)
-    -- function num : 0_12_0
-    do return b.Order < a.Order end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+      local systemCount = table.count(systemList_temp)
+      local activeCount = table.count(activeList_temp)
+      self._noticeCountDic[NoticeType.System] = systemCount
+      self._noticeCountDic[NoticeType.Active] = activeCount
+      Log.debug("activeList_temp size(): ", activeCount)
+      Log.debug("systemList_temp size(): ", systemCount)
+      if 0 < table.count(systemList_temp) then
+        table.sort(systemList_temp, function(a, b)
+          return a.Order > b.Order
+        end)
       end
-      if (table.count)(activeList_temp) > 0 then
-        (table.sort)(activeList_temp, function(a, b)
-    -- function num : 0_12_1
-    do return b.Order < a.Order end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+      if 0 < table.count(activeList_temp) then
+        table.sort(activeList_temp, function(a, b)
+          return a.Order > b.Order
+        end)
       end
       for i = 1, #activeList_temp do
-        (table.insert)((self._noticeDic)[NoticeType.Active], activeList_temp[i])
+        table.insert(self._noticeDic[NoticeType.Active], activeList_temp[i])
       end
       for i = 1, #systemList_temp do
-        (table.insert)((self._noticeDic)[NoticeType.System], systemList_temp[i])
+        table.insert(self._noticeDic[NoticeType.System], systemList_temp[i])
       end
-      -- DECOMPILER ERROR at PC167: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._noticeNewDic)[NoticeType.Active] = false
-      for i = 1, #(self._noticeDic)[NoticeType.Active] do
-        -- DECOMPILER ERROR at PC187: Confused about usage of register: R10 in 'UnsetPending'
-
-        if self:CheckNoticeNew((((self._noticeDic)[NoticeType.Active])[i]).NoticeId, NoticeType.Active) then
-          (self._noticeNewDic)[NoticeType.Active] = true
+      self._noticeNewDic[NoticeType.Active] = false
+      for i = 1, #self._noticeDic[NoticeType.Active] do
+        if self:CheckNoticeNew(self._noticeDic[NoticeType.Active][i].NoticeId, NoticeType.Active) then
+          self._noticeNewDic[NoticeType.Active] = true
           break
         end
       end
-      do
-        -- DECOMPILER ERROR at PC192: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (self._noticeNewDic)[NoticeType.System] = false
-        for i = 1, #(self._noticeDic)[NoticeType.System] do
-          -- DECOMPILER ERROR at PC212: Confused about usage of register: R10 in 'UnsetPending'
-
-          if self:CheckNoticeNew((((self._noticeDic)[NoticeType.System])[i]).NoticeId, NoticeType.System) then
-            (self._noticeNewDic)[NoticeType.System] = true
-            break
-          end
-        end
-        do
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnNoticeDataCheckNew)
-          if ret.SeqID == self.m_reqid_cb and self._callback then
-            local noticeTab = {}
-            if (ret.NoticeInfoList).Count > 0 then
-              for i = 0, (ret.NoticeInfoList).Count - 1 do
-                local noticeInfo = self:_ConvertINTLNoticeInfo2MSDK((ret.NoticeInfoList)[i])
-                ;
-                (table.insert)(noticeTab, noticeInfo)
-              end
-            end
-            do
-              ;
-              (self._callback)(noticeTab)
-              self._callback = nil
-            end
-          end
+      self._noticeNewDic[NoticeType.System] = false
+      for i = 1, #self._noticeDic[NoticeType.System] do
+        if self:CheckNoticeNew(self._noticeDic[NoticeType.System][i].NoticeId, NoticeType.System) then
+          self._noticeNewDic[NoticeType.System] = true
+          break
         end
       end
     end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnNoticeDataCheckNew)
+  elseif ret.SeqID == self.m_reqid_cb and self._callback then
+    local noticeTab = {}
+    if ret.NoticeInfoList.Count > 0 then
+      for i = 0, ret.NoticeInfoList.Count - 1 do
+        local noticeInfo = self:_ConvertINTLNoticeInfo2MSDK(ret.NoticeInfoList[i])
+        table.insert(noticeTab, noticeInfo)
+      end
+    end
+    self._callback(noticeTab)
+    self._callback = nil
   end
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData.SetNoticeNew = function(self, noticeid, type, insertOrRemove)
-  -- function num : 0_13 , upvalues : _ENV, NoticeType
-  local openIds = ((GameGlobal.GameLogic)()):GetOpenId()
+function NoticeData:SetNoticeNew(noticeid, type, insertOrRemove)
+  local openIds = GameGlobal.GameLogic():GetOpenId()
   local appendValue = ""
   if type == NoticeType.Active then
     appendValue = self._keyAppendValueActive
-  else
-    if type == NoticeType.System then
-      appendValue = self._keyAppendValueSystem
-    end
+  elseif type == NoticeType.System then
+    appendValue = self._keyAppendValueSystem
   end
   local openid = ""
   if openIds ~= nil then
     openid = openIds
   end
   local key = openid .. appendValue
-  local value = nil
-  if ((UnityEngine.PlayerPrefs).HasKey)(key) then
-    value = ((UnityEngine.PlayerPrefs).GetString)(key)
+  local value
+  if UnityEngine.PlayerPrefs.HasKey(key) then
+    value = UnityEngine.PlayerPrefs.GetString(key)
   end
   if insertOrRemove then
     if value then
@@ -592,114 +415,84 @@ NoticeData.SetNoticeNew = function(self, noticeid, type, insertOrRemove)
     else
       value = tostring(noticeid)
     end
-    ;
-    ((UnityEngine.PlayerPrefs).SetString)(key, value)
-  else
-    if value then
-      local idtab = (string.split)(value, "|")
-      for i = 1, (table.count)(idtab) do
-        local id1 = idtab[i]
-        if id1 == noticeid then
-          (table.remove)(idtab, i)
-          local idstr = ""
-          for j = 1, (table.count)(idtab) do
-            local id2 = idtab[j]
-            if j ~= (table.count)(idtab) then
-              idstr = idstr .. idtab[j] .. "|"
-            else
-              idstr = idstr .. idtab[j]
-            end
+    UnityEngine.PlayerPrefs.SetString(key, value)
+  elseif value then
+    local idtab = string.split(value, "|")
+    for i = 1, table.count(idtab) do
+      local id1 = idtab[i]
+      if id1 == noticeid then
+        table.remove(idtab, i)
+        local idstr = ""
+        for j = 1, table.count(idtab) do
+          local id2 = idtab[j]
+          if j ~= table.count(idtab) then
+            idstr = idstr .. idtab[j] .. "|"
+          else
+            idstr = idstr .. idtab[j]
           end
-          ;
-          ((UnityEngine.PlayerPrefs).SetString)(key, idstr)
-          return 
         end
+        UnityEngine.PlayerPrefs.SetString(key, idstr)
+        return
       end
     end
   end
-  do
-    -- DECOMPILER ERROR at PC111: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._noticeNewDic)[type] = false
-    for i = 1, #(self._noticeDic)[type] do
-      -- DECOMPILER ERROR at PC128: Confused about usage of register: R13 in 'UnsetPending'
-
-      if self:CheckNoticeNew((((self._noticeDic)[type])[i]).NoticeId, type) then
-        (self._noticeNewDic)[type] = true
-        break
-      end
+  self._noticeNewDic[type] = false
+  for i = 1, #self._noticeDic[type] do
+    if self:CheckNoticeNew(self._noticeDic[type][i].NoticeId, type) then
+      self._noticeNewDic[type] = true
+      break
     end
   end
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData.CheckNoticeNew = function(self, noticeid, type)
-  -- function num : 0_14 , upvalues : _ENV, NoticeType
-  local openIds = ((GameGlobal.GameLogic)()):GetOpenId()
+function NoticeData:CheckNoticeNew(noticeid, type)
+  local openIds = GameGlobal.GameLogic():GetOpenId()
   local appendValue = ""
   if type == NoticeType.Active then
     appendValue = self._keyAppendValueActive
-  else
-    if type == NoticeType.System then
-      appendValue = self._keyAppendValueSystem
-    end
+  elseif type == NoticeType.System then
+    appendValue = self._keyAppendValueSystem
   end
   local openid = ""
   if openIds ~= nil then
     openid = openIds
   end
   local key = openid .. appendValue
-  local value = nil
-  if ((UnityEngine.PlayerPrefs).HasKey)(key) then
-    value = ((UnityEngine.PlayerPrefs).GetString)(key)
+  local value
+  if UnityEngine.PlayerPrefs.HasKey(key) then
+    value = UnityEngine.PlayerPrefs.GetString(key)
+  else
   end
   if value then
-    local idtab = (string.split)(value, "|")
-    for i = 1, (table.count)(idtab) do
+    local idtab = string.split(value, "|")
+    for i = 1, table.count(idtab) do
       local id = tonumber(idtab[i])
       if id == noticeid then
         return false
       end
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData.GetNoticeDataWithGroup = function(self, type)
-  -- function num : 0_15
-  return (self._noticeDic)[type]
+function NoticeData:GetNoticeDataWithGroup(type)
+  return self._noticeDic[type]
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData.GetNoticeNewStateWithGroup = function(self, type)
-  -- function num : 0_16
-  if (self._noticeNewDic)[type] ~= nil then
-    return (self._noticeNewDic)[type]
+function NoticeData:GetNoticeNewStateWithGroup(type)
+  if self._noticeNewDic[type] ~= nil then
+    return self._noticeNewDic[type]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData.GetNoticeCountStateWithGroup = function(self, type)
-  -- function num : 0_17
-  return (self._noticeCountDic)[type]
+function NoticeData:GetNoticeCountStateWithGroup(type)
+  return self._noticeCountDic[type]
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R3 in 'UnsetPending'
-
-NoticeData.Dispose = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  (Log.debug)("[notice] ### NoticeData:Dispose")
-  ;
-  (SDKProxy:GetInstance()):NoticeRetEvent(self.onNoticeRetEvent, false)
+function NoticeData:Dispose()
+  Log.debug("[notice] ### NoticeData:Dispose")
+  SDKProxy:GetInstance():NoticeRetEvent(self.onNoticeRetEvent, false)
   self.m_ret = nil
   self.m_reqid = nil
   self.m_group = nil
@@ -708,11 +501,11 @@ NoticeData.Dispose = function(self)
   self.m_partition = nil
   self.m_extraJson = nil
   if self._StartGetNoticeNextEvent ~= nil then
-    ((GameGlobal.Timer)()):CancelEvent(self._StartGetNoticeNextEvent)
+    GameGlobal.Timer():CancelEvent(self._StartGetNoticeNextEvent)
     self._StartGetNoticeNextEvent = nil
   end
   if self._requestEventLoop ~= nil then
-    ((GameGlobal.Timer)()):CancelEvent(self._requestEventLoop)
+    GameGlobal.Timer():CancelEvent(self._requestEventLoop)
     self._requestEventLoop = nil
   end
   self.onNoticeRetEvent = nil
@@ -720,10 +513,8 @@ end
 
 _class("UINoticeCls", Object)
 UINoticeCls = UINoticeCls
--- DECOMPILER ERROR at PC87: Confused about usage of register: R3 in 'UnsetPending'
 
-UINoticeCls.Constructor = function(self)
-  -- function num : 0_19
+function UINoticeCls:Constructor()
   self.NoticeId = 0
   self.NoticeGroup = ""
   self.NoticeType = 0
@@ -733,6 +524,9 @@ UINoticeCls.Constructor = function(self)
   self.UniqID = 0
 end
 
-local NoticeClientPlatform = {All = "all", Mobile = "mobile", Pc = "pc"}
+local NoticeClientPlatform = {
+  All = "all",
+  Mobile = "mobile",
+  Pc = "pc"
+}
 _enum("NoticeClientPlatform", NoticeClientPlatform)
-

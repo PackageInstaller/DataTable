@@ -1,30 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/stub/stub_fly_effect_caster_to_target_ins.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 if not SMOKE_TEST_ENABLED then
-  return 
+  return
 end
-;
-(Log.warn)("TestRobotModule: PlayFlyEffectCasterToTargetInstruction stub!")
+Log.warn("TestRobotModule: PlayFlyEffectCasterToTargetInstruction stub!")
 local ctor = PlayFlyEffectCasterToTargetInstruction.Constructor
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
 
-PlayFlyEffectCasterToTargetInstruction.Constructor = function(self, ...)
-  -- function num : 0_0 , upvalues : ctor, _ENV
+function PlayFlyEffectCasterToTargetInstruction:Constructor(...)
   ctor(self, ...)
   if not self._flyEffectID then
-    return 
+    return
   end
-  if not (Cfg.cfg_effect)[self._flyEffectID] then
-    return 
+  if not Cfg.cfg_effect[self._flyEffectID] then
+    return
   end
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  if ((Cfg.cfg_effect)[self._flyEffectID]).Duration ~= -1 then
-    ((Cfg.cfg_effect)[self._flyEffectID]).Duration = -1
+  if Cfg.cfg_effect[self._flyEffectID].Duration ~= -1 then
+    Cfg.cfg_effect[self._flyEffectID].Duration = -1
   end
 end
-
-

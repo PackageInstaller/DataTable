@@ -1,36 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/event_trailer_side_enter/ui_event_trailer_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEventTrailerItem", UICustomWidget)
 UIEventTrailerItem = UIEventTrailerItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEventTrailerItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIEventTrailerItem:Constructor()
   self._statue = EEventTrailerBtnStatue.NoWatch
-  local pstID = ((GameGlobal.GetModule)(RoleModule)):GetPstId()
+  local pstID = GameGlobal.GetModule(RoleModule):GetPstId()
   self._newKey = "UIEventTrailerItem_New" .. pstID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEventTrailerItem.OnShow = function(self)
-  -- function num : 0_1
+function UIEventTrailerItem:OnShow()
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEventTrailerItem.OnHide = function(self)
-  -- function num : 0_2
+function UIEventTrailerItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEventTrailerItem.GetComponents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIEventTrailerItem:GetComponents()
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self._title2 = self:GetUIComponent("UILocalizationText", "title2")
   self._time1 = self:GetUIComponent("UILocalizationText", "time1")
@@ -40,165 +24,103 @@ UIEventTrailerItem.GetComponents = function(self)
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "anim")
   self._rootRect = self:GetUIComponent("RectTransform", "root")
   self._goBtnGroup = {}
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._goBtnGroup)[EEventTrailerBtnStatue.NoWatch] = self:GetGameObject("GoBtn1")
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._goBtnGroup)[EEventTrailerBtnStatue.Watch] = self:GetGameObject("GoBtn2")
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._goBtnGroup)[EEventTrailerBtnStatue.Go] = self:GetGameObject("GoBtn3")
-  -- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._goBtnGroup)[EEventTrailerBtnStatue.End] = self:GetGameObject("GoBtn4")
+  self._goBtnGroup[EEventTrailerBtnStatue.NoWatch] = self:GetGameObject("GoBtn1")
+  self._goBtnGroup[EEventTrailerBtnStatue.Watch] = self:GetGameObject("GoBtn2")
+  self._goBtnGroup[EEventTrailerBtnStatue.Go] = self:GetGameObject("GoBtn3")
+  self._goBtnGroup[EEventTrailerBtnStatue.End] = self:GetGameObject("GoBtn4")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEventTrailerItem.SetData = function(self, data)
-  -- function num : 0_4 , upvalues : _ENV
+function UIEventTrailerItem:SetData(data)
   self._data = data
-  self._cfg = (self._data).cfg
-  self._statue = (self._data).statue
-  self._newKey = self._newKey .. (self._cfg).ID
-  ;
-  (self._txtTitle):SetText((StringTable.Get)((self._cfg).Title))
-  ;
-  (self._title2):SetText((StringTable.Get)((self._cfg).Name))
-  ;
-  (self._time1):SetText(TimeToDate4((self._data).startTime, "day"))
-  ;
-  (self._time2):SetText(TimeToDate4((self._data).endTime, "day"))
-  for _,v in pairs(self._goBtnGroup) do
+  self._cfg = self._data.cfg
+  self._statue = self._data.statue
+  self._newKey = self._newKey .. self._cfg.ID
+  self._txtTitle:SetText(StringTable.Get(self._cfg.Title))
+  self._title2:SetText(StringTable.Get(self._cfg.Name))
+  self._time1:SetText(TimeToDate4(self._data.startTime, "day"))
+  self._time2:SetText(TimeToDate4(self._data.endTime, "day"))
+  for _, v in pairs(self._goBtnGroup) do
     v:SetActive(false)
   end
-  ;
-  ((self._goBtnGroup)[self._statue]):SetActive(true)
-  ;
-  (self._newObj):SetActive((LocalDB.GetInt)(self._newKey, 0) == 0 and self._statue == EEventTrailerBtnStatue.Go)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._goBtnGroup[self._statue]:SetActive(true)
+  self._newObj:SetActive(LocalDB.GetInt(self._newKey, 0) == 0 and self._statue == EEventTrailerBtnStatue.Go)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEventTrailerItem.GoBtn2OnClick = function(self)
-  -- function num : 0_5
+function UIEventTrailerItem:GoBtn2OnClick()
   self:ShowDialog("UIEventTrailerInfoController", self._data)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEventTrailerItem.ClearNew = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if (LocalDB.GetInt)(self._newKey, 0) == 0 and self._statue == EEventTrailerBtnStatue.Go then
-    (LocalDB.SetInt)(self._newKey, 1)
+function UIEventTrailerItem:ClearNew()
+  if LocalDB.GetInt(self._newKey, 0) == 0 and self._statue == EEventTrailerBtnStatue.Go then
+    LocalDB.SetInt(self._newKey, 1)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEventTrailerItem.GoBtn3OnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  if (self._cfg).CampaignType == EEventTrailerType.Campaign then
+function UIEventTrailerItem:GoBtn3OnClick()
+  if self._cfg.CampaignType == EEventTrailerType.Campaign then
     local campaignModule = self:GetModule(CampaignModule)
-    local campaign = ((campaignModule.m_campaign_manager).m_campaign_dict)[(self._cfg).CampaignID]
+    local campaign = campaignModule.m_campaign_manager.m_campaign_dict[self._cfg.CampaignID]
     if not campaign then
-      local campaignCfg = (Cfg.cfg_campaign)[(self._cfg).CampaignID]
-      local missionCfg = (Cfg.cfg_mission)[campaignCfg.NeedMissionID]
-      local missionName = (StringTable.Get)(missionCfg.Name)
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_event_trailer_locked_tips_1", missionName))
-      return 
+      local campaignCfg = Cfg.cfg_campaign[self._cfg.CampaignID]
+      local missionCfg = Cfg.cfg_mission[campaignCfg.NeedMissionID]
+      local missionName = StringTable.Get(missionCfg.Name)
+      ToastManager.ShowToast(StringTable.Get("str_event_trailer_locked_tips_1", missionName))
+      return
     end
-    do
-      local key = (math.floor)((self._cfg).ComponentID - (math.floor)((self._cfg).ComponentID / 100) * 100)
-      local componentInfo = ((campaign.m_component_dict)[key]):GetComponentInfo()
-      if not componentInfo.m_b_unlock then
-        if componentInfo.m_unlock_items and (table.count)(componentInfo.m_unlock_items) > 0 then
-          local itemCfg = (Cfg.cfg_item)[(componentInfo.m_unlock_items)[1]]
-          local itemName = (StringTable.Get)(itemCfg.Name)
-          ;
-          (ToastManager.ShowToast)((StringTable.Get)("str_event_trailer_locked_tips_2", itemName))
-        else
-          do
-            if componentInfo.m_need_mission_id then
-              local missionName = ""
-              if componentInfo.m_need_mission_type == MatchType.MT_Season then
-                local missionCfg = (Cfg.cfg_season_mission)[componentInfo.m_need_mission_id]
-                missionName = (StringTable.Get)(missionCfg.Name)
-              else
-                do
-                  do
-                    do
-                      do
-                        if componentInfo.m_need_mission_type == MatchType.MT_Campaign then
-                          local missionCfg = (Cfg.cfg_campaign_mission)[componentInfo.m_need_mission_id]
-                          missionName = (StringTable.Get)(missionCfg.Name)
-                        end
-                        ;
-                        (ToastManager.ShowToast)((StringTable.Get)("str_event_trailer_locked_tips_1", missionName))
-                        do return  end
-                        local uiJumpModule = (GameGlobal.GetUIModule)(QuestModule)
-                        local jumpID = (self._cfg).JumpID
-                        if jumpID then
-                          local jumpParam = (self._cfg).JumpParams
-                          uiJumpModule:SetJumpUIData(jumpID, jumpParam)
-                          uiJumpModule:Jump()
-                        else
-                          do
-                            if (self._cfg).SeasonJumpID then
-                              (UIEventTrailerSeasonHelper.Jump)((self._cfg).SeasonJumpID)
-                            else
-                              local campConfig = (Cfg.cfg_campaign)[(self._cfg).CampaignID]
-                              local campType = campConfig.CampaignType
-                              local param = {campaign_type = campType}
-                              ;
-                              ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OpenContentByCampaignType, param)
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+    local key = math.floor(self._cfg.ComponentID - math.floor(self._cfg.ComponentID / 100) * 100)
+    local componentInfo = campaign.m_component_dict[key]:GetComponentInfo()
+    if not componentInfo.m_b_unlock then
+      if componentInfo.m_unlock_items and table.count(componentInfo.m_unlock_items) > 0 then
+        local itemCfg = Cfg.cfg_item[componentInfo.m_unlock_items[1]]
+        local itemName = StringTable.Get(itemCfg.Name)
+        ToastManager.ShowToast(StringTable.Get("str_event_trailer_locked_tips_2", itemName))
+      elseif componentInfo.m_need_mission_id then
+        local missionName = ""
+        if componentInfo.m_need_mission_type == MatchType.MT_Season then
+          local missionCfg = Cfg.cfg_season_mission[componentInfo.m_need_mission_id]
+          missionName = StringTable.Get(missionCfg.Name)
+        elseif componentInfo.m_need_mission_type == MatchType.MT_Campaign then
+          local missionCfg = Cfg.cfg_campaign_mission[componentInfo.m_need_mission_id]
+          missionName = StringTable.Get(missionCfg.Name)
         end
+        ToastManager.ShowToast(StringTable.Get("str_event_trailer_locked_tips_1", missionName))
       end
+      return
     end
+  end
+  local uiJumpModule = GameGlobal.GetUIModule(QuestModule)
+  local jumpID = self._cfg.JumpID
+  if jumpID then
+    local jumpParam = self._cfg.JumpParams
+    uiJumpModule:SetJumpUIData(jumpID, jumpParam)
+    uiJumpModule:Jump()
+  elseif self._cfg.SeasonJumpID then
+    UIEventTrailerSeasonHelper.Jump(self._cfg.SeasonJumpID)
+  else
+    local campConfig = Cfg.cfg_campaign[self._cfg.CampaignID]
+    local campType = campConfig.CampaignType
+    local param = {campaign_type = campType}
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OpenContentByCampaignType, param)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEventTrailerItem.PlayInAnim = function(self, index)
-  -- function num : 0_8 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._canvasGroup).alpha = 0
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rootRect).anchoredPosition = Vector2(160.3658, 0)
+function UIEventTrailerItem:PlayInAnim(index)
+  self._canvasGroup.alpha = 0
+  self._rootRect.anchoredPosition = Vector2(160.3658, 0)
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : index, _ENV, self
     local yieldTime = (index - 1) * 48
     YIELD(TT, yieldTime)
-    if (tolua.isnull)(self._anim) then
-      return 
+    if tolua.isnull(self._anim) then
+      return
     end
-    ;
-    (self._anim):Play("uianim_UIEventTrailerItem_in")
-  end
-)
+    self._anim:Play("uianim_UIEventTrailerItem_in")
+  end)
 end
 
-local EEventTrailerBtnStatue = {NoWatch = 1, Watch = 2, Go = 3, End = 4}
+local EEventTrailerBtnStatue = {
+  NoWatch = 1,
+  Watch = 2,
+  Go = 3,
+  End = 4
+}
 _enum("EEventTrailerBtnStatue", EEventTrailerBtnStatue)
-

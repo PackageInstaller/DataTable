@@ -1,414 +1,292 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/homelandpet_behavior_swimming_pool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_behavior_base")
 _class("HomelandPetBehaviorSwimmingPool", HomelandPetBehaviorBase)
 HomelandPetBehaviorSwimmingPool = HomelandPetBehaviorSwimmingPool
-local HomelandPetSwimStage = {Coming = 1, Entering = 2, Swimming = 3, Leaving = 4, Exiting = 5, Finish = 6}
+local HomelandPetSwimStage = {
+  Coming = 1,
+  Entering = 2,
+  Swimming = 3,
+  Leaving = 4,
+  Exiting = 5,
+  Finish = 6
+}
 _enum("HomelandPetSwimStage", HomelandPetSwimStage)
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
 
-HomelandPetBehaviorSwimmingPool.Constructor = function(self, behaviorType, pet)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomelandPetBehaviorSwimmingPool.super).Constructor)(self, behaviorType, pet)
-  self._buildManager = (self._homelandClient):BuildManager()
-  self._petManager = (self._homelandClient):PetManager()
-  self._homelandPetManager = (self._homelandClient):PetManager()
+function HomelandPetBehaviorSwimmingPool:Constructor(behaviorType, pet)
+  HomelandPetBehaviorSwimmingPool.super.Constructor(self, behaviorType, pet)
+  self._buildManager = self._homelandClient:BuildManager()
+  self._petManager = self._homelandClient:PetManager()
+  self._homelandPetManager = self._homelandClient:PetManager()
   self._moveComponent = self:GetComponent(HomelandPetComponentType.Move)
   self._swimComponent = self:GetComponent(HomelandPetComponentType.Swim)
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
   self._pet = pet
-  self._navMeshAgent = (self._pet):GetNavMeshAgent()
+  self._navMeshAgent = self._pet:GetNavMeshAgent()
   self._floatEffectName = "eff_yyc_yy_shuihua01.prefab"
   self._swimEffectName = "eff_yyc_yy_shuihua02.prefab"
   self._floatEffect = nil
   self._swimEffect = nil
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetBehaviorSwimmingPool.Enter = function(self)
-  -- function num : 0_1 , upvalues : _ENV, HomelandPetSwimStage
-  ((HomelandPetBehaviorSwimmingPool.super).Enter)(self)
+function HomelandPetBehaviorSwimmingPool:Enter()
+  HomelandPetBehaviorSwimmingPool.super.Enter(self)
   if self._params ~= nil then
     self._buildingset = true
   else
     self._buildingset = false
   end
-  local buildings = (self._buildManager):GetBuildingsFilter(function(building)
-    -- function num : 0_1_0 , upvalues : self
+  local buildings = self._buildManager:GetBuildingsFilter(function(building)
     return self:BuildingFilter(building)
-  end
-)
-  local buildingCount = (table.count)(buildings)
+  end)
+  local buildingCount = table.count(buildings)
   if buildingCount <= 0 then
-    ((self._pet):GetPetBehavior()):RandomBehavior()
-    return 
+    self._pet:GetPetBehavior():RandomBehavior()
+    return
   end
-  if not self._needChangeSkinID then
-    local petSkinID = (self._pet):SkinID()
-  end
-  local cfgSwimmingPoolPet = (Cfg.cfg_homeland_swimming_pool_pet)[petSkinID]
+  local petSkinID = self._needChangeSkinID or self._pet:SkinID()
+  local cfgSwimmingPoolPet = Cfg.cfg_homeland_swimming_pool_pet[petSkinID]
   self._cfgSwimmingPoolPet = cfgSwimmingPoolPet
   if not cfgSwimmingPoolPet then
-    return 
+    return
   end
-  local building = buildings[(math.random)(1, buildingCount)]
+  local building = buildings[math.random(1, buildingCount)]
   self._building = building
-  self._freePath = (self._building):GetPathPos()
+  self._freePath, self._insidePos, self._outsidePos = self._building:GetPathPos()
   if not self._freePath then
-    ((self._pet):GetPetBehavior()):RandomBehavior()
-    return 
+    self._pet:GetPetBehavior():RandomBehavior()
+    return
   end
-  ;
-  (self._moveComponent):SetTarget(R8_PC50)
+  self._moveComponent:SetTarget(self._outsidePos)
   self._stage = HomelandPetSwimStage.Coming
-  self._waterLineHeight = (self._building):GetSwimmingPoolWaterHeight()
-  -- DECOMPILER ERROR at PC80: Overwrote pending register: R8 in 'AssignReg'
-
-  if (self._pet):GetMotionType() == HomelandPetMotionType.Swim then
-    self:OnChangeSwimStage(R8_PC50)
+  self._waterLineHeight = self._building:GetSwimmingPoolWaterHeight()
+  if self._pet:GetMotionType() == HomelandPetMotionType.Swim then
+    self:OnChangeSwimStage(HomelandPetSwimStage.Swimming)
   end
   self._nextBehavior = nil
   self._nextBehaviorArgs = nil
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetBehaviorSwimmingPool.OnChangeSwimStage = function(self, stage)
-  -- function num : 0_2 , upvalues : HomelandPetSwimStage, _ENV
+function HomelandPetBehaviorSwimmingPool:OnChangeSwimStage(stage)
   if not self._building then
-    return 
+    return
   end
   self._stage = stage
   if self._stage == HomelandPetSwimStage.Leaving then
-    (self._swimComponent):Exit()
+    self._swimComponent:Exit()
     if not self._freePath then
-      self._freePath = (self._building):GetPathPos()
+      self._freePath, self._insidePos, self._outsidePos = self._building:GetPathPos()
     end
-    ;
-    (self._moveComponent):Stop()
-    ;
-    (self._moveComponent):Resting()
-    ;
-    (self._moveComponent):SetTarget(R4_PC18)
-  else
-    if self._stage == HomelandPetSwimStage.Swimming then
-      self._startSwimTime = (GameGlobal:GetInstance()):GetCurrentTime()
-      local swimDurationTime = (self._cfgBehaviorLib).InteractLoopTime
-      self._finishSwimTime = self._startSwimTime + swimDurationTime
-      -- DECOMPILER ERROR at PC48: Overwrote pending register: R4 in 'AssignReg'
-
-      ;
-      (self._moveComponent):Stop()
-      -- DECOMPILER ERROR at PC51: Overwrote pending register: R4 in 'AssignReg'
-
-      ;
-      (self._moveComponent):Resting()
-      -- DECOMPILER ERROR at PC54: Overwrote pending register: R4 in 'AssignReg'
-
-      ;
-      (self._moveComponent):SetTarget((self._pet):GetPosition())
-      -- DECOMPILER ERROR at PC60: Overwrote pending register: R4 in 'AssignReg'
-
-      ;
-      (self._swimComponent):Play(self._building)
-    else
-      do
-        if self._stage == HomelandPetSwimStage.Finish then
-          self:OnFinishDoSomething()
-        end
-      end
-    end
+    self._moveComponent:Stop()
+    self._moveComponent:Resting()
+    self._moveComponent:SetTarget(self._insidePos)
+  elseif self._stage == HomelandPetSwimStage.Swimming then
+    self._startSwimTime = GameGlobal:GetInstance():GetCurrentTime()
+    local swimDurationTime = self._cfgBehaviorLib.InteractLoopTime
+    self._finishSwimTime = self._startSwimTime + swimDurationTime
+    self._moveComponent:Stop()
+    self._moveComponent:Resting()
+    self._moveComponent:SetTarget(self._pet:GetPosition())
+    self._swimComponent:Play(self._building)
+  elseif self._stage == HomelandPetSwimStage.Finish then
+    self:OnFinishDoSomething()
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetBehaviorSwimmingPool.IsInSwimmingPool = function(self)
-  -- function num : 0_3 , upvalues : HomelandPetSwimStage
-  do return self._stage ~= HomelandPetSwimStage.Coming and self._stage ~= HomelandPetSwimStage.Finish end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandPetBehaviorSwimmingPool:IsInSwimmingPool()
+  return self._stage ~= HomelandPetSwimStage.Coming and self._stage ~= HomelandPetSwimStage.Finish
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetBehaviorSwimmingPool.Update = function(self, dms)
-  -- function num : 0_4 , upvalues : _ENV, HomelandPetSwimStage
-  ((HomelandPetBehaviorSwimmingPool.super).Update)(self, dms)
-  if not self._building or (self._building):IsDelete() then
+function HomelandPetBehaviorSwimmingPool:Update(dms)
+  HomelandPetBehaviorSwimmingPool.super.Update(self, dms)
+  if not self._building or self._building:IsDelete() then
     self:OnChangeSwimStage(HomelandPetSwimStage.Finish)
-    return 
+    return
   end
-  do
-    -- DECOMPILER ERROR at PC35: Unhandled construct in 'MakeBoolean' P1
-
-    if self._stage == HomelandPetSwimStage.Coming and (self._moveComponent).state == HomelandPetComponentState.Success then
-      local distance = (Vector3.Distance)((self._pet):GetPosition(), self._outsidePos)
-      if distance > 1 then
-        (self._moveComponent):Stop()
-        ;
-        (self._moveComponent):Resting()
-        ;
-        (self._moveComponent):SetTarget(self._outsidePos)
-        return 
+  if self._stage == HomelandPetSwimStage.Coming then
+    if self._moveComponent.state == HomelandPetComponentState.Success then
+      local distance = Vector3.Distance(self._pet:GetPosition(), self._outsidePos)
+      if 1 < distance then
+        self._moveComponent:Stop()
+        self._moveComponent:Resting()
+        self._moveComponent:SetTarget(self._outsidePos)
+        return
       end
-      if (self._building):GetSwimmingPoolIsFull() then
-        ((self._pet):GetPetBehavior()):RandomBehavior()
-        return 
+      if self._building:GetSwimmingPoolIsFull() then
+        self._pet:GetPetBehavior():RandomBehavior()
+        return
       end
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetBehaviorInteractingFurniture, true, self._pet, self._building, self._buildingset)
-      ;
-      (self._building):AddSwimmingPet(self._pet)
-      ;
-      (self._pet):SetInteractingBuilding(self._building)
-      ;
-      (self._moveComponent):Stop()
-      ;
-      (self._moveComponent):Resting()
-      ;
-      (self._moveComponent):SetTarget(self._insidePos)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetBehaviorInteractingFurniture, true, self._pet, self._building, self._buildingset)
+      self._building:AddSwimmingPet(self._pet)
+      self._pet:SetInteractingBuilding(self._building)
+      self._moveComponent:Stop()
+      self._moveComponent:Resting()
+      self._moveComponent:SetTarget(self._insidePos)
       self._stage = HomelandPetSwimStage.Entering
-      -- DECOMPILER ERROR at PC91: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._navMeshAgent).areaMask = 5
+      self._navMeshAgent.areaMask = 5
       if self._needChangeSkinID then
-        (self._pet):SetPoolAndOldSkin(self._building, (self._pet):SkinID(), (self._pet):ClothSkinID())
+        self._pet:SetPoolAndOldSkin(self._building, self._pet:SkinID(), self._pet:ClothSkinID())
         self:ChangePetSkin(self._needChangeSkinID, self._needChangeClothSkinID)
       end
-      ;
-      (self._pet):LoadExtraAnimation()
-      self._animation = (self._pet):GetAnimation()
+      self._pet:LoadExtraAnimation()
+      self._animation = self._pet:GetAnimation()
     end
-    if self._stage == HomelandPetSwimStage.Entering then
-      self:CheckPetMotionType()
-      if (self._moveComponent).state == HomelandPetComponentState.Success then
-        self._stage = HomelandPetSwimStage.Swimming
-        self._startSwimTime = (GameGlobal:GetInstance()):GetCurrentTime()
-        local swimDurationTime = (self._cfgBehaviorLib).InteractLoopTime
-        self._finishSwimTime = self._startSwimTime + swimDurationTime
-        -- DECOMPILER ERROR at PC143: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._navMeshAgent).areaMask = 4
-        if self._freePath then
-          (self._building):GiveBackPath(self._freePath)
-          self._freePath = nil
-        end
-        self:ShowFloatEffect(true)
-        ;
-        (self._swimComponent):Play(self._building)
+  elseif self._stage == HomelandPetSwimStage.Entering then
+    self:CheckPetMotionType()
+    if self._moveComponent.state == HomelandPetComponentState.Success then
+      self._stage = HomelandPetSwimStage.Swimming
+      self._startSwimTime = GameGlobal:GetInstance():GetCurrentTime()
+      local swimDurationTime = self._cfgBehaviorLib.InteractLoopTime
+      self._finishSwimTime = self._startSwimTime + swimDurationTime
+      self._navMeshAgent.areaMask = 4
+      if self._freePath then
+        self._building:GiveBackPath(self._freePath)
+        self._freePath = nil
       end
-    else
-      do
-        if self._stage == HomelandPetSwimStage.Swimming then
-          self:CheckPetMotionType()
-          local curTime = (GameGlobal:GetInstance()):GetCurrentTime()
-          if self._finishSwimTime < curTime then
-            (self._swimComponent):Exit()
-            if not self._freePath then
-              self._freePath = (self._building):GetPathPos()
-            end
-            ;
-            (self._moveComponent):Stop()
-            ;
-            (self._moveComponent):Resting()
-            ;
-            (self._moveComponent):SetTarget(self._insidePos)
-            self._stage = HomelandPetSwimStage.Leaving
-          end
-        else
-          do
-            if self._stage == HomelandPetSwimStage.Leaving then
-              self:CheckPetMotionType()
-              if (self._moveComponent).state == HomelandPetComponentState.Success then
-                self._stage = HomelandPetSwimStage.Exiting
-                ;
-                (self._moveComponent):Stop()
-                ;
-                (self._moveComponent):Resting()
-                ;
-                (self._moveComponent):SetTarget(self._outsidePos)
-                -- DECOMPILER ERROR at PC224: Confused about usage of register: R2 in 'UnsetPending'
-
-                ;
-                (self._navMeshAgent).areaMask = 5
-              end
-            else
-              if self._stage == HomelandPetSwimStage.Exiting then
-                self:CheckPetMotionType()
-                if (self._moveComponent).state == HomelandPetComponentState.Success then
-                  self._stage = HomelandPetSwimStage.Finish
-                end
-              else
-                if self._stage == HomelandPetSwimStage.Finish then
-                  self:OnFinishDoSomething()
-                end
-              end
-            end
-          end
-        end
-      end
+      self:ShowFloatEffect(true)
+      self._swimComponent:Play(self._building)
     end
+  elseif self._stage == HomelandPetSwimStage.Swimming then
+    self:CheckPetMotionType()
+    local curTime = GameGlobal:GetInstance():GetCurrentTime()
+    if curTime > self._finishSwimTime then
+      self._swimComponent:Exit()
+      if not self._freePath then
+        self._freePath, self._insidePos, self._outsidePos = self._building:GetPathPos()
+      end
+      self._moveComponent:Stop()
+      self._moveComponent:Resting()
+      self._moveComponent:SetTarget(self._insidePos)
+      self._stage = HomelandPetSwimStage.Leaving
+    end
+  elseif self._stage == HomelandPetSwimStage.Leaving then
+    self:CheckPetMotionType()
+    if self._moveComponent.state == HomelandPetComponentState.Success then
+      self._stage = HomelandPetSwimStage.Exiting
+      self._moveComponent:Stop()
+      self._moveComponent:Resting()
+      self._moveComponent:SetTarget(self._outsidePos)
+      self._navMeshAgent.areaMask = 5
+    end
+  elseif self._stage == HomelandPetSwimStage.Exiting then
+    self:CheckPetMotionType()
+    if self._moveComponent.state == HomelandPetComponentState.Success then
+      self._stage = HomelandPetSwimStage.Finish
+    end
+  elseif self._stage == HomelandPetSwimStage.Finish then
+    self:OnFinishDoSomething()
   end
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetBehaviorSwimmingPool.OnFinishDoSomething = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandPetBehaviorSwimmingPool:OnFinishDoSomething()
   self._buildingset = false
   if not self._building then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetBehaviorInteractingFurniture, false, self._pet, self._building, self._buildingset)
-  ;
-  (self._building):RemovSwimmingPet(self._pet)
-  ;
-  (self._pet):SetInteractingBuilding(nil)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetBehaviorInteractingFurniture, false, self._pet, self._building, self._buildingset)
+  self._building:RemovSwimmingPet(self._pet)
+  self._pet:SetInteractingBuilding(nil)
   if self._freePath then
-    (self._building):GiveBackPath(self._freePath)
+    self._building:GiveBackPath(self._freePath)
     self._freePath = nil
   end
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).areaMask = 1
+  self._navMeshAgent.areaMask = 1
   if self._moveComponent then
-    (self._moveComponent):Stop()
-    ;
-    (self._moveComponent):Resting()
+    self._moveComponent:Stop()
+    self._moveComponent:Resting()
   end
   if self._swimComponent then
-    (self._swimComponent):Exit()
+    self._swimComponent:Exit()
   end
-  ;
-  (self._pet):SetMotionType(HomelandPetMotionType.None)
-  -- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (((self._pet)._petTransform).localPosition).y ~= 0 then
-    ((self._pet)._petTransform).localPosition = Vector3(0, 0, 0)
+  self._pet:SetMotionType(HomelandPetMotionType.None)
+  if self._pet._petTransform.localPosition.y ~= 0 then
+    self._pet._petTransform.localPosition = Vector3(0, 0, 0)
   end
   if self._animation then
-    (self._animation):CrossFade(HomelandPetAnimName.Stand)
+    self._animation:CrossFade(HomelandPetAnimName.Stand)
   end
   if self._floatEffect then
-    (self._floatEffect):SetActive(false)
+    self._floatEffect:SetActive(false)
   end
   if self._swimEffect then
-    (self._swimEffect):SetActive(false)
+    self._swimEffect:SetActive(false)
   end
   self._building = nil
   if self._nextBehavior then
-    if (self._nextBehaviorArgs):IsMaxInteractable() then
-      ((self._pet):GetPetBehavior()):RandomBehavior()
-      return 
+    if self._nextBehaviorArgs:IsMaxInteractable() then
+      self._pet:GetPetBehavior():RandomBehavior()
+      return
     end
-    local behaviourMgr = (self._pet):GetPetBehavior()
+    local behaviourMgr = self._pet:GetPetBehavior()
     behaviourMgr:OnChangeToNextBehavior(self._nextBehavior, self._nextBehaviorArgs)
     self._nextBehavior = nil
     self._nextBehaviorArgs = nil
   else
-    do
-      ;
-      ((self._pet):GetPetBehavior()):RandomBehavior()
-    end
+    self._pet:GetPetBehavior():RandomBehavior()
   end
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetBehaviorSwimmingPool.Exit = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((HomelandPetBehaviorSwimmingPool.super).Exit)(self)
+function HomelandPetBehaviorSwimmingPool:Exit()
+  HomelandPetBehaviorSwimmingPool.super.Exit(self)
   if self._freePath then
-    (self._building):GiveBackPath(self._freePath)
+    self._building:GiveBackPath(self._freePath)
     self._freePath = nil
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetBehaviorInteractingFurniture, false, self._pet, self._building, self._buildingset)
-  ;
-  (self._pet):SetInteractingBuilding(nil)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetBehaviorInteractingFurniture, false, self._pet, self._building, self._buildingset)
+  self._pet:SetInteractingBuilding(nil)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetBehaviorSwimmingPool.BeInvitedToNextBehavior = function(self, nextBehavior, args)
-  -- function num : 0_7 , upvalues : HomelandPetSwimStage
+function HomelandPetBehaviorSwimmingPool:BeInvitedToNextBehavior(nextBehavior, args)
   self._nextBehavior = nextBehavior
   self._nextBehaviorArgs = args
   if self._stage == HomelandPetSwimStage.Coming then
     self:OnChangeSwimStage(HomelandPetSwimStage.Finish)
+  elseif self._stage >= HomelandPetSwimStage.Leaving then
   else
-  end
-  if HomelandPetSwimStage.Leaving <= self._stage then
     self:OnChangeSwimStage(HomelandPetSwimStage.Leaving)
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetBehaviorSwimmingPool.CheckPetMotionType = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function HomelandPetBehaviorSwimmingPool:CheckPetMotionType()
   if not self._animation then
-    self._animation = (self._pet):GetAnimation()
+    self._animation = self._pet:GetAnimation()
   end
-  local petTransform = (self._pet)._petTransform
-  local motionType = (self._pet):GetMotionType()
-  local offsetPosY = ((self._pet):GetPosition()).y + (self._cfgSwimmingPoolPet).ChestHeight - self._waterLineHeight
+  local petTransform = self._pet._petTransform
+  local motionType = self._pet:GetMotionType()
+  local offsetPosY = self._pet:GetPosition().y + self._cfgSwimmingPoolPet.ChestHeight - self._waterLineHeight
   if motionType == HomelandPetMotionType.None then
     if offsetPosY <= 0 then
-      (self._pet):SetMotionType(HomelandPetMotionType.Swim)
-      if (self._animation):IsPlaying(HomelandPetAnimName.Stand) then
-        (self._animation):CrossFade(HomelandPetAnimName.Float)
-      else
-        if (self._animation):IsPlaying(HomelandPetAnimName.Walk) then
-          (self._animation):CrossFade(HomelandPetAnimName.Swim)
-        else
-          if (self._animation):IsPlaying(HomelandPetAnimName.Run) then
-            (self._animation):CrossFade(HomelandPetAnimName.FastSwim)
-          end
-        end
+      self._pet:SetMotionType(HomelandPetMotionType.Swim)
+      if self._animation:IsPlaying(HomelandPetAnimName.Stand) then
+        self._animation:CrossFade(HomelandPetAnimName.Float)
+      elseif self._animation:IsPlaying(HomelandPetAnimName.Walk) then
+        self._animation:CrossFade(HomelandPetAnimName.Swim)
+      elseif self._animation:IsPlaying(HomelandPetAnimName.Run) then
+        self._animation:CrossFade(HomelandPetAnimName.FastSwim)
       end
     end
-    if (petTransform.localPosition).y ~= 0 then
+    if petTransform.localPosition.y ~= 0 then
       petTransform.localPosition = Vector3(0, 0, 0)
     end
-  else
-    if motionType == HomelandPetMotionType.Swim then
-      if offsetPosY > 0 then
-        (self._pet):SetMotionType(HomelandPetMotionType.None)
-        if (self._animation):IsPlaying(HomelandPetAnimName.Float) then
-          (self._animation):CrossFade(HomelandPetAnimName.Stand)
-        else
-          if (self._animation):IsPlaying(HomelandPetAnimName.Swim) then
-            (self._animation):CrossFade(HomelandPetAnimName.Walk)
-          else
-            if (self._animation):IsPlaying(HomelandPetAnimName.FastSwim) then
-              (self._animation):CrossFade(HomelandPetAnimName.Run)
-            end
-          end
-        end
-        self:ShowFloatEffect(false)
-        self:ShowSwimEffect(false)
+  elseif motionType == HomelandPetMotionType.Swim then
+    if 0 < offsetPosY then
+      self._pet:SetMotionType(HomelandPetMotionType.None)
+      if self._animation:IsPlaying(HomelandPetAnimName.Float) then
+        self._animation:CrossFade(HomelandPetAnimName.Stand)
+      elseif self._animation:IsPlaying(HomelandPetAnimName.Swim) then
+        self._animation:CrossFade(HomelandPetAnimName.Walk)
+      elseif self._animation:IsPlaying(HomelandPetAnimName.FastSwim) then
+        self._animation:CrossFade(HomelandPetAnimName.Run)
       end
-      if (petTransform.localPosition).y ~= -offsetPosY then
-        petTransform.localPosition = Vector3(0, -offsetPosY, 0)
-      end
+      self:ShowFloatEffect(false)
+      self:ShowSwimEffect(false)
+    end
+    if petTransform.localPosition.y ~= -offsetPosY then
+      petTransform.localPosition = Vector3(0, -offsetPosY, 0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetBehaviorSwimmingPool.BuildingFilter = function(self, building, noCheckfull)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfgSwimmingPool = (Cfg.cfg_homeland_swimming_pool)[building:GetBuildId()]
+function HomelandPetBehaviorSwimmingPool:BuildingFilter(building, noCheckfull)
+  local cfgSwimmingPool = Cfg.cfg_homeland_swimming_pool[building:GetBuildId()]
   if not cfgSwimmingPool then
     return false
   end
@@ -421,7 +299,7 @@ HomelandPetBehaviorSwimmingPool.BuildingFilter = function(self, building, noChec
   if not petIsInSwimmingPool and swimmingPoolIsFull and not noCheckfull then
     return false
   end
-  if cfgSwimmingPool.Range < (Vector3.Distance)((self._pet):GetPosition(), building:Pos()) then
+  if Vector3.Distance(self._pet:GetPosition(), building:Pos()) > cfgSwimmingPool.Range then
     return false
   end
   self._needChangeSkinID = nil
@@ -431,117 +309,90 @@ HomelandPetBehaviorSwimmingPool.BuildingFilter = function(self, building, noChec
   else
     local canSwimSkinIds = {}
     local canSwimClothSkinIds = {}
-    local skinsStateData = (self._petModule):GetPetSkinsData((self._pet):TemplateID())
+    local skinsStateData = self._petModule:GetPetSkinsData(self._pet:TemplateID())
     if skinsStateData then
       local obtainedSkinInfo = skinsStateData.skin_info
       if obtainedSkinInfo then
-        for _,skinInfo in pairs(obtainedSkinInfo) do
+        for _, skinInfo in pairs(obtainedSkinInfo) do
           if skinInfo then
-            local skinPetCfg = (Cfg.cfg_pet_skin)({id = skinInfo.skin_id})
-            local skinIDStr = (string.gsub)((skinPetCfg[1]).Prefab, ".prefab", "")
+            local skinPetCfg = Cfg.cfg_pet_skin({
+              id = skinInfo.skin_id
+            })
+            local skinIDStr = string.gsub(skinPetCfg[1].Prefab, ".prefab", "")
             local skinID = tonumber(skinIDStr)
-            if (table.icontains)(cfgSwimmingPool.PetSkinIDs, skinID) then
-              (table.insert)(canSwimSkinIds, skinID)
-              ;
-              (table.insert)(canSwimClothSkinIds, skinInfo.skin_id)
+            if table.icontains(cfgSwimmingPool.PetSkinIDs, skinID) then
+              table.insert(canSwimSkinIds, skinID)
+              table.insert(canSwimClothSkinIds, skinInfo.skin_id)
             end
           end
         end
       end
     end
-    do
-      if (table.count)(canSwimSkinIds) > 0 then
-        if (table.icontains)(canSwimSkinIds, (self._pet):SkinID()) then
-          do
-            do
-              local swimwearIndex = (math.random)(1, #canSwimSkinIds)
-              self._needChangeSkinID = canSwimSkinIds[swimwearIndex]
-              self._needChangeClothSkinID = canSwimClothSkinIds[swimwearIndex]
-              unRestraint = true
-              return unRestraint
-            end
-          end
-        end
+    if table.count(canSwimSkinIds) > 0 then
+      if table.icontains(canSwimSkinIds, self._pet:SkinID()) then
+      else
+        local swimwearIndex = math.random(1, #canSwimSkinIds)
+        self._needChangeSkinID = canSwimSkinIds[swimwearIndex]
+        self._needChangeClothSkinID = canSwimClothSkinIds[swimwearIndex]
       end
+      unRestraint = true
     end
   end
+  return unRestraint
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetBehaviorSwimmingPool.ShowFloatEffect = function(self, visible)
-  -- function num : 0_10 , upvalues : _ENV
+function HomelandPetBehaviorSwimmingPool:ShowFloatEffect(visible)
   if not self._floatEffect then
-    self._floatEffectResRequest = (ResourceManager:GetInstance()):SyncLoadAsset(self._floatEffectName, LoadType.GameObject)
+    self._floatEffectResRequest = ResourceManager:GetInstance():SyncLoadAsset(self._floatEffectName, LoadType.GameObject)
     if self._floatEffectResRequest then
-      self._floatEffect = (self._floatEffectResRequest).Obj
-      local tran = (self._floatEffect).transform
-      tran.parent = (self._pet):AgentTransform()
-      local offsetPosY = (self._cfgSwimmingPool).WaterHeight - ((self._pet):GetPosition()).y
+      self._floatEffect = self._floatEffectResRequest.Obj
+      local tran = self._floatEffect.transform
+      tran.parent = self._pet:AgentTransform()
+      local offsetPosY = self._cfgSwimmingPool.WaterHeight - self._pet:GetPosition().y
       tran.localPosition = Vector3(0, offsetPosY, 0)
       tran.localRotation = Quaternion.identity
     end
   end
-  do
-    if not self._floatEffect then
-      return 
-    end
-    ;
-    (self._floatEffect):SetActive(visible)
+  if not self._floatEffect then
+    return
   end
+  self._floatEffect:SetActive(visible)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetBehaviorSwimmingPool.ShowSwimEffect = function(self, visible)
-  -- function num : 0_11 , upvalues : _ENV
+function HomelandPetBehaviorSwimmingPool:ShowSwimEffect(visible)
   if not self._swimEffect then
-    self._swimEffectResRequest = (ResourceManager:GetInstance()):SyncLoadAsset(self._swimEffectName, LoadType.GameObject)
+    self._swimEffectResRequest = ResourceManager:GetInstance():SyncLoadAsset(self._swimEffectName, LoadType.GameObject)
     if self._swimEffectResRequest then
-      self._swimEffect = (self._swimEffectResRequest).Obj
-      ;
-      (self._swimEffect):SetActive(true)
-      local tran = (self._swimEffect).transform
-      tran.parent = (self._pet):AgentTransform()
-      local offsetPosY = (self._cfgSwimmingPool).WaterHeight - ((self._pet):GetPosition()).y
+      self._swimEffect = self._swimEffectResRequest.Obj
+      self._swimEffect:SetActive(true)
+      local tran = self._swimEffect.transform
+      tran.parent = self._pet:AgentTransform()
+      local offsetPosY = self._cfgSwimmingPool.WaterHeight - self._pet:GetPosition().y
       tran.localPosition = Vector3(0, offsetPosY, 0)
       tran.localRotation = Quaternion.identity
     end
   end
-  do
-    if not self._swimEffect then
-      return 
-    end
-    ;
-    (self._swimEffect):SetActive(visible)
+  if not self._swimEffect then
+    return
   end
+  self._swimEffect:SetActive(visible)
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetBehaviorSwimmingPool.ChangePetSkin = function(self, SkinID, ClothSkinID)
-  -- function num : 0_12 , upvalues : _ENV
-  if (self._pet)._miniMapVisible then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapRemoveIcon, HomelandMapIconType.Pet, ((self._pet)._data):TmpID())
+function HomelandPetBehaviorSwimmingPool:ChangePetSkin(SkinID, ClothSkinID)
+  if self._pet._miniMapVisible then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapRemoveIcon, HomelandMapIconType.Pet, self._pet._data:TmpID())
   end
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset((self._cfgSwimmingPoolPet).ChangeSkinEffectName, LoadType.GameObject)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(self._cfgSwimmingPoolPet.ChangeSkinEffectName, LoadType.GameObject)
   if req then
-    (req.Obj):SetActive(true)
-    local tran = (req.Obj).transform
-    tran.position = ((self._pet):AgentTransform()).position
+    req.Obj:SetActive(true)
+    local tran = req.Obj.transform
+    tran.position = self._pet:AgentTransform().position
     tran.localRotation = Quaternion.identity
   end
-  do
-    ;
-    (self._homelandPetManager):ChangePetSkin(self._pet, SkinID, ClothSkinID)
-    if (self._pet)._miniMapVisible then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapAddIcon, HomelandMapIconType.Pet, ((self._pet)._data):TmpID(), (self._pet)._petAgentTransform, self._pet)
-    end
-    ;
-    (self._pet):PlayMaterialAnim("eff_yyc_hz_switch_glow")
-    ;
-    (self._pet):ReloadBehaviorComponent()
+  self._homelandPetManager:ChangePetSkin(self._pet, SkinID, ClothSkinID)
+  if self._pet._miniMapVisible then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapAddIcon, HomelandMapIconType.Pet, self._pet._data:TmpID(), self._pet._petAgentTransform, self._pet)
   end
+  self._pet:PlayMaterialAnim("eff_yyc_hz_switch_glow")
+  self._pet:ReloadBehaviorComponent()
 end
-
-

@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_pet_legend_power_with_chain_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangePetLegendPowerWithChainCount", BuffLogicBase)
 BuffLogicChangePetLegendPowerWithChainCount = BuffLogicChangePetLegendPowerWithChainCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangePetLegendPowerWithChainCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangePetLegendPowerWithChainCount:Constructor(buffInstance, logicParam)
   self._addOneValueNeedChainCount = logicParam.addOneValueNeedChainCount or 1
   self._maxValue = logicParam.maxValue or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangePetLegendPowerWithChainCount.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local petEntity = (self._buffInstance):Entity()
+function BuffLogicChangePetLegendPowerWithChainCount:DoLogic(notify)
+  local petEntity = self._buffInstance:Entity()
   if not petEntity then
-    return 
+    return
   end
   local petPowerStateList = {}
   self:_OnChangePetPower(notify, petEntity, petPowerStateList)
@@ -27,77 +17,49 @@ BuffLogicChangePetLegendPowerWithChainCount.DoLogic = function(self, notify)
   return buffResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangePetLegendPowerWithChainCount._OnChangePetPower = function(self, notify, petEntity, petPowerStateList)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffLogicChangePetLegendPowerWithChainCount:_OnChangePetPower(notify, petEntity, petPowerStateList)
   local petPstIDComponent = petEntity:PetPstID()
   local petPstID = petPstIDComponent:GetPstID()
   local curAttributeCmpt = petEntity:Attributes()
   local curLegendPower = curAttributeCmpt:GetAttribute("LegendPower")
-  local addValue = (math.floor)(notify:GetChainCount() / self._addOneValueNeedChainCount)
+  local addValue = math.floor(notify:GetChainCount() / self._addOneValueNeedChainCount)
   local newPower = curLegendPower + addValue
   if newPower < 0 then
     newPower = 0
   end
-  if self._maxValue ~= 0 and self._maxValue < newPower then
+  if self._maxValue ~= 0 and newPower > self._maxValue then
     newPower = self._maxValue
   end
   local ready = false
-  local activeSkillID = (petEntity:SkillInfo()):GetActiveSkillID()
-  local configService = (self._world):GetService("Config")
+  local activeSkillID = petEntity:SkillInfo():GetActiveSkillID()
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(activeSkillID)
-  local blsvc = (self._world):GetService("BuffLogic")
+  local blsvc = self._world:GetService("BuffLogic")
   local requireNTPowerReady = false
-  if skillConfigData:GetSkillTriggerParam() <= newPower then
+  if newPower >= skillConfigData:GetSkillTriggerParam() then
     blsvc:ChangePetActiveSkillReady(petEntity, 1)
     ready = true
     local notify = NTPowerReady:New(petEntity)
-    ;
-    ((self._world):GetService("Trigger")):Notify(notify)
+    self._world:GetService("Trigger"):Notify(notify)
     requireNTPowerReady = true
   else
-    do
-      blsvc:ChangePetActiveSkillReady(petEntity, 0)
-      ready = false
-      if BattleConst.LegendPowerMax < newPower then
-        newPower = BattleConst.LegendPowerMax
-      end
-      curAttributeCmpt:Modify("LegendPower", newPower)
-      local previouslyReady = skillConfigData:GetSkillTriggerParam() <= curLegendPower
-      if not petPowerStateList[petPstID] then
-        petPowerStateList[petPstID] = {}
-      end
-      -- DECOMPILER ERROR at PC95: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      (petPowerStateList[petPstID]).petEntityID = petEntity:GetID()
-      -- DECOMPILER ERROR at PC97: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      (petPowerStateList[petPstID]).petPstID = petPstID
-      -- DECOMPILER ERROR at PC99: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      (petPowerStateList[petPstID]).power = newPower
-      -- DECOMPILER ERROR at PC101: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      (petPowerStateList[petPstID]).ready = ready
-      -- DECOMPILER ERROR at PC103: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      (petPowerStateList[petPstID]).previouslyReady = previouslyReady
-      -- DECOMPILER ERROR at PC105: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      (petPowerStateList[petPstID]).requireNTPowerReady = requireNTPowerReady
-      ;
-      (Log.debug)("BuffLogicChangePetLegendPowerWithChainCount pet entity=", petEntity:GetID(), " power=", newPower, " ready=", ready)
-      do return true end
-      -- DECOMPILER ERROR: 2 unprocessed JMP targets
-    end
+    blsvc:ChangePetActiveSkillReady(petEntity, 0)
+    ready = false
   end
+  if newPower > BattleConst.LegendPowerMax then
+    newPower = BattleConst.LegendPowerMax
+  end
+  curAttributeCmpt:Modify("LegendPower", newPower)
+  local previouslyReady = curLegendPower >= skillConfigData:GetSkillTriggerParam()
+  if not petPowerStateList[petPstID] then
+    petPowerStateList[petPstID] = {}
+  end
+  petPowerStateList[petPstID].petEntityID = petEntity:GetID()
+  petPowerStateList[petPstID].petPstID = petPstID
+  petPowerStateList[petPstID].power = newPower
+  petPowerStateList[petPstID].ready = ready
+  petPowerStateList[petPstID].previouslyReady = previouslyReady
+  petPowerStateList[petPstID].requireNTPowerReady = requireNTPowerReady
+  Log.debug("BuffLogicChangePetLegendPowerWithChainCount pet entity=", petEntity:GetID(), " power=", newPower, " ready=", ready)
+  return true
 end
-
-

@@ -1,175 +1,112 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n8/person_progress/ui_activity_n8_person_progress_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN8PersonProgressController", UIController)
 UIActivityN8PersonProgressController = UIActivityN8PersonProgressController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN8PersonProgressController.InitWidget = function(self)
-  -- function num : 0_0
+function UIActivityN8PersonProgressController:InitWidget()
   self._mainBg = self:GetUIComponent("RawImageLoader", "_mainBg")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_0_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-)
+  end)
   self._claimAllBtn = self:GetUIComponent("Button", "claimAllBtn")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN8PersonProgressController:LoadDataOnEnter(TT, res, uiParams)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N8, ECampaignN8ComponentID.ECAMPAIGN_N8_CUMULATIVE_LOGIN, ECampaignN8ComponentID.ECAMPAIGN_N8_LINE_MISSION, ECampaignN8ComponentID.ECAMPAIGN_N8_LINE_MISSION_FIXTEAM, ECampaignN8ComponentID.ECAMPAIGN_N8_PERSON_PROGRESS, ECampaignN8ComponentID.ECAMPAIGN_N8_COMBAT_SIMULATOR)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N8, ECampaignN8ComponentID.ECAMPAIGN_N8_CUMULATIVE_LOGIN, ECampaignN8ComponentID.ECAMPAIGN_N8_LINE_MISSION, ECampaignN8ComponentID.ECAMPAIGN_N8_LINE_MISSION_FIXTEAM, ECampaignN8ComponentID.ECAMPAIGN_N8_PERSON_PROGRESS, ECampaignN8ComponentID.ECAMPAIGN_N8_COMBAT_SIMULATOR)
   local componentId = ECampaignN8ComponentID.ECAMPAIGN_N8_PERSON_PROGRESS
-  if not (self._campaign):CheckComponentOpen(componentId) then
-    if not (self._campaign):CheckComponentOpenClientError(componentId) then
-      res.m_result = res.m_result
-      ;
-      (self._campaign):ShowErrorToast(res.m_result, true)
-      do return  end
-      if res and not res:GetSucc() then
-        (self._campaign):CheckErrorCode(res.m_result, nil, nil)
-      end
-    end
+  if not self._campaign:CheckComponentOpen(componentId) then
+    res.m_result = self._campaign:CheckComponentOpenClientError(componentId) or res.m_result
+    self._campaign:ShowErrorToast(res.m_result, true)
+    return
+  end
+  if res and not res:GetSucc() then
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIActivityN8PersonProgressController:OnShow(uiParams)
   self._isOpen = true
   self:_AttachEvents()
   self:InitWidget()
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController.OnHide = function(self)
-  -- function num : 0_3
+function UIActivityN8PersonProgressController:OnHide()
   self:_DetachEvents()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController.Destroy = function(self)
-  -- function num : 0_4
+function UIActivityN8PersonProgressController:Destroy()
   if self._EMIMatResRequest then
     self._EMIMat = nil
-    ;
-    (self._EMIMatResRequest):Dispose()
+    self._EMIMatResRequest:Dispose()
     self._EMIMatResRequest = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController._Refresh = function(self)
-  -- function num : 0_5
+function UIActivityN8PersonProgressController:_Refresh()
   self:_SetClaimAllBtn()
   self:_SetIconText()
   self:_SetDynamicList(true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController._SetClaimAllBtn = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local component = (self._campaign):GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._claimAllBtn).interactable = component:HasCanGetReward()
+function UIActivityN8PersonProgressController:_SetClaimAllBtn()
+  local component = self._campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
+  self._claimAllBtn.interactable = component:HasCanGetReward()
   self:_SetLocalizedTMPMaterial("titleText", "N8Material_02.mat")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController._SetLocalizedTMPMaterial = function(self, widgetName, matName)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityN8PersonProgressController:_SetLocalizedTMPMaterial(widgetName, matName)
   self._localizedTMP = self:GetUIComponent("UILocalizedTMP", widgetName)
-  self._EMIMatResRequest = (ResourceManager:GetInstance()):SyncLoadAsset(matName, LoadType.Mat)
-  self._EMIMat = (self._EMIMatResRequest).Obj
-  local mat = (self._localizedTMP).fontMaterial
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._localizedTMP).fontMaterial = self._EMIMat
-  ;
-  ((self._localizedTMP).fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  self._EMIMatResRequest = ResourceManager:GetInstance():SyncLoadAsset(matName, LoadType.Mat)
+  self._EMIMat = self._EMIMatResRequest.Obj
+  local mat = self._localizedTMP.fontMaterial
+  self._localizedTMP.fontMaterial = self._EMIMat
+  self._localizedTMP.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController._SetIconText = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local component = (self._campaign):GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
+function UIActivityN8PersonProgressController:_SetIconText()
+  local component = self._campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
   local icon = self:GetUIComponent("RawImageLoader", "icon")
   icon:LoadImage(component:GetItemIcon())
   local txt = self:GetUIComponent("UILocalizationText", "txtNum")
   txt:SetText(component:GetCurrentProgress())
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController._SetDynamicListData = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local component = (self._campaign):GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
+function UIActivityN8PersonProgressController:_SetDynamicListData()
+  local component = self._campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
   local progress = component:GetProgressList()
   self._dynamicListInfo = progress
   component:SortProgressListByCampaignPersonProgressStatus(self._dynamicListInfo)
-  self._dynamicListSize = (table.count)(self._dynamicListInfo)
+  self._dynamicListSize = table.count(self._dynamicListInfo)
   self._itemCountPerRow = 1
-  self._dynamicListRowSize = (math.floor)((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
+  self._dynamicListRowSize = math.floor((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController._SetDynamicList = function(self, resetPos, noAnim)
-  -- function num : 0_10
+function UIActivityN8PersonProgressController:_SetDynamicList(resetPos, noAnim)
   self:_SetDynamicListData()
   if not self._isDynamicInited then
     self._isDynamicInited = true
     self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "dynamicList")
-    ;
-    (self._dynamicList):InitListView(self._dynamicListRowSize, function(scrollView, index)
-    -- function num : 0_10_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
+    self._dynamicList:InitListView(self._dynamicListRowSize, function(scrollView, index)
+      return self:_SpawnListItem(scrollView, index)
+    end)
   else
     self:_RefreshList(self._dynamicListRowSize, self._dynamicList, resetPos)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController._RefreshList = function(self, count, list, resetPos)
-  -- function num : 0_11
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIActivityN8PersonProgressController:_RefreshList(count, list, resetPos)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
   if not resetPos then
-    ((list.ScrollRect).content).localPosition = contentPos
+    list.ScrollRect.content.localPosition = contentPos
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_12
+function UIActivityN8PersonProgressController:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -183,113 +120,73 @@ UIActivityN8PersonProgressController._SpawnListItem = function(self, scrollView,
   for i = 1, self._itemCountPerRow do
     local listItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._dynamicListSize < itemIndex then
-      (listItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._dynamicListSize then
+      listItem:GetGameObject():SetActive(false)
     else
-      ;
-      (listItem:GetGameObject()):SetActive(true)
+      listItem:GetGameObject():SetActive(true)
       self:_SetListItemData(listItem, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController._SetListItemData = function(self, listItem, index)
-  -- function num : 0_13 , upvalues : _ENV
-  local progress = (self._dynamicListInfo)[index]
+function UIActivityN8PersonProgressController:_SetListItemData(listItem, index)
+  local progress = self._dynamicListInfo[index]
   listItem:SetData(self._campaign, progress, function(v)
-    -- function num : 0_13_0 , upvalues : self
     self:ListItemOnClick(v)
-  end
-, function(matid, pos)
-    -- function num : 0_13_1 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityQuestAwardItemClick, matid, pos)
-  end
-)
+  end, function(matid, pos)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityQuestAwardItemClick, matid, pos)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController.ListItemOnClick = function(self, progress)
-  -- function num : 0_14 , upvalues : _ENV
-  local component = (self._campaign):GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
+function UIActivityN8PersonProgressController:ListItemOnClick(progress)
+  local component = self._campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
   component:Start_HandleReceiveReward(progress, function(res, rewards)
-    -- function num : 0_14_0 , upvalues : self
     self:_OnReceiveRewards(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController.ClaimAllBtnOnClick = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local component = (self._campaign):GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
-  if (self._claimAllBtn).interactable then
+function UIActivityN8PersonProgressController:ClaimAllBtnOnClick()
+  local component = self._campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
+  if self._claimAllBtn.interactable then
     component:Start_HandleOneKeyReceiveRewards(function(res, rewards)
-    -- function num : 0_15_0 , upvalues : self
-    self:_OnReceiveRewards(res, rewards)
-  end
-)
+      self:_OnReceiveRewards(res, rewards)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController._OnReceiveRewards = function(self, res, rewards)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityN8PersonProgressController:_OnReceiveRewards(res, rewards)
   if self.view == nil then
-    return 
+    return
   end
   if res:GetSucc() then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
+    UIActivityHelper.ShowUIGetRewards(rewards)
     self:_Refresh()
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_16_0 , upvalues : self
-    self:_Refresh()
-  end
-, function()
-    -- function num : 0_16_1 , upvalues : self
-    self:CloseDialog()
-  end
-)
+    self._campaign:CheckErrorCode(res.m_result, function()
+      self:_Refresh()
+    end, function()
+      self:CloseDialog()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController._AttachEvents = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIActivityN8PersonProgressController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.ActivityQuestAwardItemClick, self._OnActivityQuestAwardItemClick)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController._DetachEvents = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIActivityN8PersonProgressController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController._CheckActivityClose = function(self, id)
-  -- function num : 0_19 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityN8PersonProgressController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressController._OnActivityQuestAwardItemClick = function(self, matid, pos)
-  -- function num : 0_20 , upvalues : _ENV
-  (UIWidgetHelper.SetAwardItemTips)(self, "itemInfoPool", matid, pos)
+function UIActivityN8PersonProgressController:_OnActivityQuestAwardItemClick(matid, pos)
+  UIWidgetHelper.SetAwardItemTips(self, "itemInfoPool", matid, pos)
 end
-
-

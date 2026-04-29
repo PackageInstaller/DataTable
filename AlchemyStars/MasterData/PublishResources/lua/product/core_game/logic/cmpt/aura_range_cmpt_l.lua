@@ -1,28 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/aura_range_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AuraRangeComponent", Object)
 AuraRangeComponent = AuraRangeComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AuraRangeComponent.Constructor = function(self)
-  -- function num : 0_0
+function AuraRangeComponent:Constructor()
   self._auraGroupRangeDic = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AuraRangeComponent.AddRange = function(self, groupID, range)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self._auraGroupRangeDic)[groupID] == nil then
-    (self._auraGroupRangeDic)[groupID] = {}
+function AuraRangeComponent:AddRange(groupID, range)
+  if self._auraGroupRangeDic[groupID] == nil then
+    self._auraGroupRangeDic[groupID] = {}
   end
-  local auraRange = (self._auraGroupRangeDic)[groupID]
-  for _,pos in ipairs(range) do
+  local auraRange = self._auraGroupRangeDic[groupID]
+  for _, pos in ipairs(range) do
     local count = auraRange[pos:Pos2Index()]
     if not count then
       count = 1
@@ -33,19 +21,14 @@ AuraRangeComponent.AddRange = function(self, groupID, range)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AuraRangeComponent.RemoveRange = function(self, groupID, range)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._auraGroupRangeDic)[groupID] == nil then
-    return 
+function AuraRangeComponent:RemoveRange(groupID, range)
+  if self._auraGroupRangeDic[groupID] == nil then
+    return
   end
-  local auraRange = (self._auraGroupRangeDic)[groupID]
-  for _,pos in ipairs(range) do
+  local auraRange = self._auraGroupRangeDic[groupID]
+  for _, pos in ipairs(range) do
     local count = auraRange[pos:Pos2Index()]
-    if count then
-      count = count - 1
-    end
+    count = count and count - 1
     if count == 0 then
       auraRange[pos:Pos2Index()] = nil
     else
@@ -54,14 +37,11 @@ AuraRangeComponent.RemoveRange = function(self, groupID, range)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AuraRangeComponent.GetAuraSuperposedCount = function(self, groupID, gridPos)
-  -- function num : 0_3
-  if (self._auraGroupRangeDic)[groupID] == nil then
+function AuraRangeComponent:GetAuraSuperposedCount(groupID, gridPos)
+  if self._auraGroupRangeDic[groupID] == nil then
     return nil
   end
-  local auraRange = (self._auraGroupRangeDic)[groupID]
+  local auraRange = self._auraGroupRangeDic[groupID]
   local count = auraRange[gridPos:Pos2Index()]
   if not count then
     return nil
@@ -69,45 +49,28 @@ AuraRangeComponent.GetAuraSuperposedCount = function(self, groupID, gridPos)
   return count
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AuraRange = function(self)
-  -- function num : 0_4
-  return self:GetComponent((self.WEComponentsEnum).AuraRange)
+function Entity:AuraRange()
+  return self:GetComponent(self.WEComponentsEnum.AuraRange)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasAuraRange = function(self)
-  -- function num : 0_5
-  return self:HasComponent((self.WEComponentsEnum).AuraRange)
+function Entity:HasAuraRange()
+  return self:HasComponent(self.WEComponentsEnum.AuraRange)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddAuraRange = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).AuraRange
+function Entity:AddAuraRange()
+  local index = self.WEComponentsEnum.AuraRange
   local component = AuraRangeComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceAuraRange = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).AuraRange
+function Entity:ReplaceAuraRange()
+  local index = self.WEComponentsEnum.AuraRange
   local component = AuraRangeComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveAuraRange = function(self)
-  -- function num : 0_8
+function Entity:RemoveAuraRange()
   if self:HasAuraRange() then
-    self:RemoveComponent((self.WEComponentsEnum).AuraRange)
+    self:RemoveComponent(self.WEComponentsEnum.AuraRange)
   end
 end
-
-

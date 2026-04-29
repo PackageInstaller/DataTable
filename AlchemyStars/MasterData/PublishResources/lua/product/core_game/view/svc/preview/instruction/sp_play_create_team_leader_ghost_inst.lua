@@ -1,41 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_create_team_leader_ghost_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayCreateTeamLeaderGhostInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayCreateTeamLeaderGhostInstruction = SkillPreviewPlayCreateTeamLeaderGhostInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayCreateTeamLeaderGhostInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayCreateTeamLeaderGhostInstruction:Constructor(params)
   self._type = params.Type
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayCreateTeamLeaderGhostInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayCreateTeamLeaderGhostInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
-  local teamEntity = (world:Player()):GetPreviewTeamEntity()
+  local teamEntity = world:Player():GetPreviewTeamEntity()
   if casterEntity:HasPet() then
-    teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
+    teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
   end
   local teamLeaderEntity = teamEntity:GetTeamLeaderPetEntity()
   local entitySvc = world:GetService("RenderEntity")
   if self._type == "Scope" then
     local scopeList = previewContext:GetScopeResult()
-    for _,pos in pairs(scopeList) do
+    for _, pos in pairs(scopeList) do
       entitySvc:CreateGhost(pos, teamLeaderEntity, "AtkUltPreview")
     end
-  else
-    do
-      if self._type == "PickUp" then
-        entitySvc:CreateGhost(previewContext:GetPickUpPos(), teamLeaderEntity, "AtkUltPreview")
-      end
-    end
+  elseif self._type == "PickUp" then
+    entitySvc:CreateGhost(previewContext:GetPickUpPos(), teamLeaderEntity, "AtkUltPreview")
   end
 end
-
-

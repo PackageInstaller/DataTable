@@ -1,66 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_display_add_hp_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayDisplayAddHPInstruction", BaseInstruction)
 PlayDisplayAddHPInstruction = PlayDisplayAddHPInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayDisplayAddHPInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayDisplayAddHPInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDisplayAddHPInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayDisplayAddHPInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local totalValue = 0
   local addHpDamageInfo = DamageInfo:New(0, DamageType.Recover)
   local eachGridAddBloodResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.EachGridAddBlood)
   if eachGridAddBloodResultArray then
-    for k,v in pairs(eachGridAddBloodResultArray) do
+    for k, v in pairs(eachGridAddBloodResultArray) do
       totalValue = totalValue + v:GetAddValue()
       addHpDamageInfo:MergeDamageInfo(v:GetDamageInfo())
     end
   end
-  do
-    local eachTrapAddBloodResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.EachTrapAddBlood)
-    if eachTrapAddBloodResultArray then
-      for k,v in pairs(eachTrapAddBloodResultArray) do
-        totalValue = totalValue + v:GetAddValue()
-        addHpDamageInfo:MergeDamageInfo(v:GetDamageInfo())
-      end
-    end
-    do
-      local addBloodResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddBlood)
-      if addBloodResultArray then
-        for k,v in pairs(addBloodResultArray) do
-          totalValue = totalValue + v:GetAddValue()
-          addHpDamageInfo:MergeDamageInfo(v:GetDamageInfo())
-        end
-      end
-      do
-        if eachGridAddBloodResultArray == nil and addBloodResultArray == nil and eachTrapAddBloodResultArray == nil then
-          return 
-        end
-        if casterEntity:HasPetPstID() then
-          casterEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-        end
-        do
-          if casterEntity:EntityType() and (casterEntity:EntityType()):IsPetShadow() then
-            local teamEntity = (world:Player()):GetLocalTeamEntity()
-            casterEntity = teamEntity
-          end
-          local playDamageService = world:GetService("PlayDamage")
-          playDamageService:AsyncUpdateHPAndDisplayDamage(casterEntity, addHpDamageInfo)
-        end
-      end
+  local eachTrapAddBloodResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.EachTrapAddBlood)
+  if eachTrapAddBloodResultArray then
+    for k, v in pairs(eachTrapAddBloodResultArray) do
+      totalValue = totalValue + v:GetAddValue()
+      addHpDamageInfo:MergeDamageInfo(v:GetDamageInfo())
     end
   end
+  local addBloodResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddBlood)
+  if addBloodResultArray then
+    for k, v in pairs(addBloodResultArray) do
+      totalValue = totalValue + v:GetAddValue()
+      addHpDamageInfo:MergeDamageInfo(v:GetDamageInfo())
+    end
+  end
+  if eachGridAddBloodResultArray == nil and addBloodResultArray == nil and eachTrapAddBloodResultArray == nil then
+    return
+  end
+  if casterEntity:HasPetPstID() then
+    casterEntity = casterEntity:Pet():GetOwnerTeamEntity()
+  end
+  if casterEntity:EntityType() and casterEntity:EntityType():IsPetShadow() then
+    local teamEntity = world:Player():GetLocalTeamEntity()
+    casterEntity = teamEntity
+  end
+  local playDamageService = world:GetService("PlayDamage")
+  playDamageService:AsyncUpdateHPAndDisplayDamage(casterEntity, addHpDamageInfo)
 end
-
-

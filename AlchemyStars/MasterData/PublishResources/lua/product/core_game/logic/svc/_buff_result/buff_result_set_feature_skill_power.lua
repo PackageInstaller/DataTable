@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_set_feature_skill_power.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultSetFeatureSkillPower", BuffResultBase)
 BuffResultSetFeatureSkillPower = BuffResultSetFeatureSkillPower
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultSetFeatureSkillPower.Constructor = function(self, commonPowerData)
-  -- function num : 0_0
+function BuffResultSetFeatureSkillPower:Constructor(commonPowerData)
   self._commonPowerData = commonPowerData
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetFeatureSkillPower.GetFeatureSkillCommonPowerData = function(self)
-  -- function num : 0_1
+function BuffResultSetFeatureSkillPower:GetFeatureSkillCommonPowerData()
   return self._commonPowerData
 end
-
-

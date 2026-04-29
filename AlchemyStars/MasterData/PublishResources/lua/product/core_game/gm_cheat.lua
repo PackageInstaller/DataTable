@@ -1,565 +1,410 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/gm_cheat.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_world")
 _class("GMCheat", Object)
 GMCheat = GMCheat
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GMCheat.Constructor = function(self, world)
-  -- function num : 0_0
+function GMCheat:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatHeroMaxHP = function(self)
-  -- function num : 0_1
-  local e = ((self._world):Player()):GetLocalTeamEntity()
+function GMCheat:BattleCheatHeroMaxHP()
+  local e = self._world:Player():GetLocalTeamEntity()
   local maxhp = 9999999
-  ;
-  (e:Attributes()):Modify("MaxHP", maxhp)
-  ;
-  (e:Attributes()):Modify("HP", maxhp)
-  if (self._world):RunAtClient() then
+  e:Attributes():Modify("MaxHP", maxhp)
+  e:Attributes():Modify("HP", maxhp)
+  if self._world:RunAtClient() then
     e:ReplaceRedAndMaxHP(maxhp, maxhp)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatTeamPowerFull = function(self, teamEntity)
-  -- function num : 0_2 , upvalues : _ENV
-  if not teamEntity then
-    teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  end
-  local teamMembers = (teamEntity:Team()):GetTeamPetEntities()
-  local buffLogicService = (self._world):GetService("BuffLogic")
-  local playBuffService = (self._world):GetService("PlayBuff")
-  local configService = (self._world):GetService("Config")
-  local utilData = (self._world):GetService("UtilData")
-  for _,e in ipairs(teamMembers) do
+function GMCheat:BattleCheatTeamPowerFull(teamEntity)
+  teamEntity = teamEntity or self._world:Player():GetLocalTeamEntity()
+  local teamMembers = teamEntity:Team():GetTeamPetEntities()
+  local buffLogicService = self._world:GetService("BuffLogic")
+  local playBuffService = self._world:GetService("PlayBuff")
+  local configService = self._world:GetService("Config")
+  local utilData = self._world:GetService("UtilData")
+  for _, e in ipairs(teamMembers) do
     local petPstIDComponent = e:PetPstID()
     local petPstID = petPstIDComponent:GetPstID()
-    local activeSkillID = (e:SkillInfo()):GetActiveSkillID()
+    local activeSkillID = e:SkillInfo():GetActiveSkillID()
     local skillConfigData = configService:GetSkillConfigData(activeSkillID)
     if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
-      local curLegendPower = (e:Attributes()):GetAttribute("LegendPower")
+      local curLegendPower = e:Attributes():GetAttribute("LegendPower")
       local newLegendPower = curLegendPower + 10
-      if BattleConst.LegendPowerMax < newLegendPower then
+      if newLegendPower > BattleConst.LegendPowerMax then
         newLegendPower = BattleConst.LegendPowerMax
       end
-      ;
-      (e:Attributes()):Modify("LegendPower", newLegendPower)
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.PetLegendPowerChange, petPstID, newLegendPower)
+      e:Attributes():Modify("LegendPower", newLegendPower)
+      self._world:EventDispatcher():Dispatch(GameEventType.PetLegendPowerChange, petPstID, newLegendPower)
+    elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.AlchemyEnergy then
+      local curAlchemyPower = e:Attributes():GetAttribute("AlchemyPower")
+      local newAlchemyPower = curAlchemyPower + 10
+      if newAlchemyPower > BattleConst.AlchemyPowerMax then
+        newAlchemyPower = BattleConst.AlchemyPowerMax
+      end
+      e:Attributes():Modify("AlchemyPower", newAlchemyPower)
+      self._world:EventDispatcher():Dispatch(GameEventType.PetAlchemyPowerChange, petPstID, newAlchemyPower, true, false, nil)
+    elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.BuffLayer then
+      local costLayer = skillConfigData:GetSkillTriggerParam()
+      local extraParam = skillConfigData:GetSkillTriggerExtraParam()
+      local buffEffectType = extraParam.buffEffectType
+      local blsvc = self._world:GetService("BuffLogic")
+      local currentVal = blsvc:GetBuffLayer(e, buffEffectType)
+      blsvc:SetBuffLayer(e, buffEffectType, costLayer, true)
+      self._world:EventDispatcher():Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, true)
+    elseif skillConfigData:GetSkillTriggerType() == SkillTriggerType.ColorPalette then
+      local colorPaletteComponent = e:ColorPalette()
+      local pieceTypes = {}
+      for _, pieceType in pairs(PieceType) do
+        if pieceType > PieceType.None then
+          table.insert(pieceTypes, pieceType)
+        end
+      end
+      colorPaletteComponent:AddPieceTypes(pieceTypes)
+      self._world:EventDispatcher():Dispatch(GameEventType.ColorPaletteRefresh, petPstID, colorPaletteComponent:GetPieceTypes())
     else
-      do
-        if skillConfigData:GetSkillTriggerType() == SkillTriggerType.AlchemyEnergy then
-          local curAlchemyPower = (e:Attributes()):GetAttribute("AlchemyPower")
-          local newAlchemyPower = curAlchemyPower + 10
-          if BattleConst.AlchemyPowerMax < newAlchemyPower then
-            newAlchemyPower = BattleConst.AlchemyPowerMax
-          end
-          ;
-          (e:Attributes()):Modify("AlchemyPower", newAlchemyPower)
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.PetAlchemyPowerChange, petPstID, newAlchemyPower, true, false, nil)
-        else
-          do
-            if skillConfigData:GetSkillTriggerType() == SkillTriggerType.BuffLayer then
-              local costLayer = skillConfigData:GetSkillTriggerParam()
-              local extraParam = skillConfigData:GetSkillTriggerExtraParam()
-              local buffEffectType = extraParam.buffEffectType
-              local blsvc = (self._world):GetService("BuffLogic")
-              local currentVal = blsvc:GetBuffLayer(e, buffEffectType)
-              blsvc:SetBuffLayer(e, buffEffectType, costLayer, true)
-              ;
-              ((self._world):EventDispatcher()):Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, true)
-            else
-              do
-                if skillConfigData:GetSkillTriggerType() == SkillTriggerType.ColorPalette then
-                  local colorPaletteComponent = e:ColorPalette()
-                  local pieceTypes = {}
-                  for _,pieceType in pairs(PieceType) do
-                    if PieceType.None < pieceType then
-                      (table.insert)(pieceTypes, pieceType)
-                    end
-                  end
-                  colorPaletteComponent:AddPieceTypes(pieceTypes)
-                  ;
-                  ((self._world):EventDispatcher()):Dispatch(GameEventType.ColorPaletteRefresh, petPstID, colorPaletteComponent:GetPieceTypes())
-                else
-                  do
-                    ;
-                    (e:Attributes()):Modify("Power", 0)
-                    ;
-                    ((self._world):EventDispatcher()):Dispatch(GameEventType.PetPowerChange, petPstID, 0)
-                    ;
-                    (e:Attributes()):Modify("Ready", 1)
-                    ;
-                    ((self._world):EventDispatcher()):Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, true, false)
-                    do
-                      local extraSkillList = (e:SkillInfo()):GetExtraActiveSkillIDList()
-                      if extraSkillList then
-                        for _,extraSkillID in ipairs(extraSkillList) do
-                          local extraSkillConfigData = configService:GetSkillConfigData(extraSkillID)
-                          if extraSkillConfigData then
-                            if extraSkillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
-                              local curLegendPower = (e:Attributes()):GetAttribute("LegendPower")
-                              local newLegendPower = curLegendPower + 10
-                              if BattleConst.LegendPowerMax < newLegendPower then
-                                newLegendPower = BattleConst.LegendPowerMax
-                              end
-                              ;
-                              (e:Attributes()):Modify("LegendPower", newLegendPower)
-                              ;
-                              ((self._world):EventDispatcher()):Dispatch(GameEventType.PetLegendPowerChange, petPstID, newLegendPower)
-                            else
-                              do
-                                do
-                                  utilData:SetPetPowerAttr(e, 0, extraSkillID)
-                                  ;
-                                  ((self._world):EventDispatcher()):Dispatch(GameEventType.PetExtraPowerChange, petPstID, extraSkillID, 0, true)
-                                  utilData:SetPetSkillReadyAttr(e, 1, extraSkillID)
-                                  ;
-                                  ((self._world):EventDispatcher()):Dispatch(GameEventType.PetExtraActiveSkillGetReady, petPstID, extraSkillID, true, false)
-                                  -- DECOMPILER ERROR at PC299: LeaveBlock: unexpected jumping out DO_STMT
-
-                                  -- DECOMPILER ERROR at PC299: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                                  -- DECOMPILER ERROR at PC299: LeaveBlock: unexpected jumping out IF_STMT
-
-                                  -- DECOMPILER ERROR at PC299: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                                  -- DECOMPILER ERROR at PC299: LeaveBlock: unexpected jumping out IF_STMT
-
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                      -- DECOMPILER ERROR at PC301: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC301: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                      -- DECOMPILER ERROR at PC301: LeaveBlock: unexpected jumping out IF_STMT
-
-                      -- DECOMPILER ERROR at PC301: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC301: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                      -- DECOMPILER ERROR at PC301: LeaveBlock: unexpected jumping out IF_STMT
-
-                      -- DECOMPILER ERROR at PC301: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC301: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                      -- DECOMPILER ERROR at PC301: LeaveBlock: unexpected jumping out IF_STMT
-
-                      -- DECOMPILER ERROR at PC301: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC301: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                      -- DECOMPILER ERROR at PC301: LeaveBlock: unexpected jumping out IF_STMT
-
-                    end
-                  end
-                end
-              end
+      e:Attributes():Modify("Power", 0)
+      self._world:EventDispatcher():Dispatch(GameEventType.PetPowerChange, petPstID, 0)
+    end
+    e:Attributes():Modify("Ready", 1)
+    self._world:EventDispatcher():Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, true, false)
+    local extraSkillList = e:SkillInfo():GetExtraActiveSkillIDList()
+    if extraSkillList then
+      for _, extraSkillID in ipairs(extraSkillList) do
+        local extraSkillConfigData = configService:GetSkillConfigData(extraSkillID)
+        if extraSkillConfigData then
+          if extraSkillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
+            local curLegendPower = e:Attributes():GetAttribute("LegendPower")
+            local newLegendPower = curLegendPower + 10
+            if newLegendPower > BattleConst.LegendPowerMax then
+              newLegendPower = BattleConst.LegendPowerMax
             end
+            e:Attributes():Modify("LegendPower", newLegendPower)
+            self._world:EventDispatcher():Dispatch(GameEventType.PetLegendPowerChange, petPstID, newLegendPower)
+          else
+            utilData:SetPetPowerAttr(e, 0, extraSkillID)
+            self._world:EventDispatcher():Dispatch(GameEventType.PetExtraPowerChange, petPstID, extraSkillID, 0, true)
           end
+          utilData:SetPetSkillReadyAttr(e, 1, extraSkillID)
+          self._world:EventDispatcher():Dispatch(GameEventType.PetExtraActiveSkillGetReady, petPstID, extraSkillID, true, false)
         end
       end
     end
   end
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   if lsvcFeature then
     self:_BattleCheatFeatureSkillFull(lsvcFeature, FeatureType.PersonaSkill)
     self:_BattleCheatFeatureSkillFull(lsvcFeature, FeatureType.MasterSkill)
     self:_BattleCheatFeatureSkillFull(lsvcFeature, FeatureType.MasterSkillRecover)
     self:_BattleCheatFeatureSkillFull(lsvcFeature, FeatureType.MasterSkillTeleport)
-    local skillFeatureTypes = {FeatureType.PersonaSkill, FeatureType.MasterSkill, FeatureType.MasterSkillRecover, FeatureType.MasterSkillTeleport, FeatureType.TalentSkill1, FeatureType.TalentSkill2, FeatureType.TalentSkill3, FeatureType.TalentSkill4, FeatureType.TalentSkill5}
-    for index,featureType in ipairs(skillFeatureTypes) do
+    local skillFeatureTypes = {
+      FeatureType.PersonaSkill,
+      FeatureType.MasterSkill,
+      FeatureType.MasterSkillRecover,
+      FeatureType.MasterSkillTeleport,
+      FeatureType.TalentSkill1,
+      FeatureType.TalentSkill2,
+      FeatureType.TalentSkill3,
+      FeatureType.TalentSkill4,
+      FeatureType.TalentSkill5
+    }
+    for index, featureType in ipairs(skillFeatureTypes) do
       self:_BattleCheatFeatureSkillFull(lsvcFeature, featureType)
     end
   end
-  do
-    if playBuffService and (self._world):RunAtClient() then
-      (TaskManager:GetInstance()):CoreGameStartTask(playBuffService.PlayAutoAddBuff, playBuffService)
-    end
+  if playBuffService and self._world:RunAtClient() then
+    TaskManager:GetInstance():CoreGameStartTask(playBuffService.PlayAutoAddBuff, playBuffService)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat._BattleCheatFeatureSkillFull = function(self, lsvcFeature, featureType)
-  -- function num : 0_3 , upvalues : _ENV
+function GMCheat:_BattleCheatFeatureSkillFull(lsvcFeature, featureType)
   if lsvcFeature and lsvcFeature:HasFeatureType(featureType) then
     lsvcFeature:SetFeatureSkillCurPower(featureType, 0, 1)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.PersonaPowerChange, featureType, 0, 1)
+    self._world:EventDispatcher():Dispatch(GameEventType.PersonaPowerChange, featureType, 0, 1)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatMonsterInvincible = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local _group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+function GMCheat:BattleCheatMonsterInvincible()
+  local _group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local cheatHp = 9999999
-  for _,e in ipairs(_group:GetEntities()) do
-    (e:Attributes()):Modify("HP", cheatHp)
-    ;
-    (e:Attributes()):Modify("MaxHP", cheatHp)
-    if (self._world):RunAtClient() then
+  for _, e in ipairs(_group:GetEntities()) do
+    e:Attributes():Modify("HP", cheatHp)
+    e:Attributes():Modify("MaxHP", cheatHp)
+    if self._world:RunAtClient() then
       e:ReplaceRedAndMaxHP(cheatHp, cheatHp)
     end
   end
-  ;
-  (Log.fatal)("使用作弊按钮怪满血！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！")
+  Log.fatal("使用作弊按钮怪满血！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatAttackMax = function(self, nMaxAttack)
-  -- function num : 0_5 , upvalues : _ENV
-  local teamMembers = ((((self._world):Player()):GetLocalTeamEntity()):Team()):GetTeamPetEntities()
-  for _,e in ipairs(teamMembers) do
-    (e:Attributes()):Modify("Attack", nMaxAttack, 99999)
+function GMCheat:BattleCheatAttackMax(nMaxAttack)
+  local teamMembers = self._world:Player():GetLocalTeamEntity():Team():GetTeamPetEntities()
+  for _, e in ipairs(teamMembers) do
+    e:Attributes():Modify("Attack", nMaxAttack, 99999)
   end
-  ;
-  (Log.fatal)("使用作弊按钮人满攻击！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！")
+  Log.fatal("使用作弊按钮人满攻击！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatAddPet = function(self, createInfo)
-  -- function num : 0_6 , upvalues : _ENV
+function GMCheat:BattleCheatAddPet(createInfo)
   local mainWorld = self._world
   local lsvcPartner = mainWorld:GetService("PartnerLogic")
   local petEntity, petInfo, matchPet, petRes, hp, maxHP = lsvcPartner:CreateMiddleEnterPet(createInfo)
   if not petEntity then
-    return 
+    return
   end
-  local svc = (self._world):GetService("L2R")
+  local svc = self._world:GetService("L2R")
   local fakePartnerID = 1
   svc:L2RAddPartnerData(fakePartnerID, petInfo, matchPet, petRes, hp, maxHP)
-  ;
-  (Log.fatal)("使用作弊按钮加光灵！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！")
+  Log.fatal("使用作弊按钮加光灵！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatGetRight = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local teamMembers = ((((self._world):Player()):GetLocalTeamEntity()):Team()):GetTeamPetEntities()
-  for _,e in ipairs(teamMembers) do
-    (e:Attributes()):RemoveModify("Attack", 99999)
+function GMCheat:BattleCheatGetRight()
+  local teamMembers = self._world:Player():GetLocalTeamEntity():Team():GetTeamPetEntities()
+  for _, e in ipairs(teamMembers) do
+    e:Attributes():RemoveModify("Attack", 99999)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleKillMonsters = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  do
-    if (self._world):MatchType() == MatchType.MT_BlackFist then
-      local teamEntity = ((self._world):Player()):GetRemoteTeamEntity()
-      ;
-      (teamEntity:Attributes()):Modify("HP", 0)
-      teamEntity:AddTeamDeadMark()
-    end
-    local sMonsterShowLogic = (self._world):GetService("MonsterShowLogic")
-    local monster_group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-    local monster_entities = monster_group:GetEntities()
-    for _,v in pairs(monster_entities) do
-      (v:Attributes()):Modify("HP", 0)
-      sMonsterShowLogic:AddMonsterDeadMark(v)
-      if (self._world):RunAtClient() then
-        v:ReplaceRedHPAndWhitHP(0)
-        v:AddDeadFlag()
-      end
-    end
-    sMonsterShowLogic:DoAllMonsterDeadLogic()
-    ;
-    (Log.fatal)("使用作弊按钮杀死全部怪物！！！！！！！！！！")
-    if (self._world):RunAtServer() then
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputFinish, 5)
-    else
-      ;
-      (TaskManager:GetInstance()):CoreGameStartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
-    local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
-    sMonsterShowRender:DoAllMonsterDeadRender(TT)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputFinish, 5)
+function GMCheat:BattleKillMonsters()
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    local teamEntity = self._world:Player():GetRemoteTeamEntity()
+    teamEntity:Attributes():Modify("HP", 0)
+    teamEntity:AddTeamDeadMark()
   end
-)
+  local sMonsterShowLogic = self._world:GetService("MonsterShowLogic")
+  local monster_group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  local monster_entities = monster_group:GetEntities()
+  for _, v in pairs(monster_entities) do
+    v:Attributes():Modify("HP", 0)
+    sMonsterShowLogic:AddMonsterDeadMark(v)
+    if self._world:RunAtClient() then
+      v:ReplaceRedHPAndWhitHP(0)
+      v:AddDeadFlag()
     end
+  end
+  sMonsterShowLogic:DoAllMonsterDeadLogic()
+  Log.fatal("使用作弊按钮杀死全部怪物！！！！！！！！！！")
+  if self._world:RunAtServer() then
+    self._world:EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 5)
+  else
+    TaskManager:GetInstance():CoreGameStartTask(function(TT)
+      local sMonsterShowRender = self._world:GetService("MonsterShowRender")
+      sMonsterShowRender:DoAllMonsterDeadRender(TT)
+      self._world:EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 5)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatAddBuffHero = function(self, buffID)
-  -- function num : 0_9 , upvalues : _ENV
-  local buffLogicService = (self._world):GetService("BuffLogic")
-  local team = ((self._world):Player()):GetLocalTeamEntity()
+function GMCheat:BattleCheatAddBuffHero(buffID)
+  local buffLogicService = self._world:GetService("BuffLogic")
+  local team = self._world:Player():GetLocalTeamEntity()
   local buff = buffLogicService:AddBuff(buffID, team)
-  local player = (self._world):GetService("PlayBuff")
-  if player and buff and (self._world):RunAtClient() then
-    (TaskManager:GetInstance()):CoreGameStartTask(player.PlayAutoAddBuff, player)
+  local player = self._world:GetService("PlayBuff")
+  if player and buff and self._world:RunAtClient() then
+    TaskManager:GetInstance():CoreGameStartTask(player.PlayAutoAddBuff, player)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatAddBuffAllMonsters = function(self, buffID)
-  -- function num : 0_10 , upvalues : _ENV
-  local buffLogicService = (self._world):GetService("BuffLogic")
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for i,e in ipairs(group:GetEntities()) do
+function GMCheat:BattleCheatAddBuffAllMonsters(buffID)
+  local buffLogicService = self._world:GetService("BuffLogic")
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for i, e in ipairs(group:GetEntities()) do
     local buff = buffLogicService:AddBuff(buffID, e)
-    local player = (self._world):GetService("PlayBuff")
-    if player and buff and (self._world):RunAtClient() then
-      (TaskManager:GetInstance()):CoreGameStartTask(player.PlayAutoAddBuff, player)
+    local player = self._world:GetService("PlayBuff")
+    if player and buff and self._world:RunAtClient() then
+      TaskManager:GetInstance():CoreGameStartTask(player.PlayAutoAddBuff, player)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatRemoveBuffHero = function(self, buffID)
-  -- function num : 0_11 , upvalues : _ENV
-  local svc = (self._world):GetService("BuffLogic")
-  local hero = ((self._world):Player()):GetLocalTeamEntity()
+function GMCheat:BattleCheatRemoveBuffHero(buffID)
+  local svc = self._world:GetService("BuffLogic")
+  local hero = self._world:Player():GetLocalTeamEntity()
   local buffComponent = hero:BuffComponent()
-  local player = (self._world):GetService("PlayBuff")
+  local player = self._world:GetService("PlayBuff")
   local buffArray = buffComponent:GetBuffArray()
   if buffArray then
     local notify = NTBuffUnload:New()
-    for i,buff in ipairs(buffArray) do
+    for i, buff in ipairs(buffArray) do
       if buff:BuffID() == buffID then
         buff:Unload(notify)
-        if (self._world):RunAtClient() then
-          (TaskManager:GetInstance()):CoreGameStartTask(player.PlayBuffView, player, notify)
+        if self._world:RunAtClient() then
+          TaskManager:GetInstance():CoreGameStartTask(player.PlayBuffView, player, notify)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatChangeAllMonstersHPPercent = function(self, hpPercent)
-  -- function num : 0_12 , upvalues : _ENV
-  if not hpPercent then
-    hpPercent = 100
-  end
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    local teamEntity = ((self._world):Player()):GetRemoteTeamEntity()
+function GMCheat:BattleCheatChangeAllMonstersHPPercent(hpPercent)
+  hpPercent = hpPercent or 100
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    local teamEntity = self._world:Player():GetRemoteTeamEntity()
     local attributeCmpt = teamEntity:Attributes()
     local maxHp = attributeCmpt:CalcMaxHp()
-    local newHP = (math.floor)(maxHp * hpPercent / 100)
-    ;
-    (teamEntity:Attributes()):Modify("HP", newHP)
-    if (self._world):RunAtClient() then
+    local newHP = math.floor(maxHp * hpPercent / 100)
+    teamEntity:Attributes():Modify("HP", newHP)
+    if self._world:RunAtClient() then
       teamEntity:ReplaceRedHPAndWhitHP(newHP)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossRedHp, teamEntity:GetID(), hpPercent / 100, newHP, maxHp)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossWhiteHp, teamEntity:GetID(), hpPercent / 100, newHP, maxHp)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossRedHp, teamEntity:GetID(), hpPercent / 100, newHP, maxHp)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossWhiteHp, teamEntity:GetID(), hpPercent / 100, newHP, maxHp)
     end
-    return 
+    return
   end
-  do
-    local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-    for _,e in ipairs(group:GetEntities()) do
-      local attributeCmpt = e:Attributes()
-      if attributeCmpt then
-        local maxHP = attributeCmpt:CalcMaxHp()
-        local newHP = (math.floor)(maxHP * hpPercent / 100)
-        ;
-        (e:Attributes()):Modify("HP", newHP)
-        if (self._world):RunAtClient() then
-          e:ReplaceRedHPAndWhitHP(newHP)
-        end
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(group:GetEntities()) do
+    local attributeCmpt = e:Attributes()
+    if attributeCmpt then
+      local maxHP = attributeCmpt:CalcMaxHp()
+      local newHP = math.floor(maxHP * hpPercent / 100)
+      e:Attributes():Modify("HP", newHP)
+      if self._world:RunAtClient() then
+        e:ReplaceRedHPAndWhitHP(newHP)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatCreateMonster = function(self, id, pos, dir)
-  -- function num : 0_13 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function GMCheat:BattleCheatCreateMonster(id, pos, dir)
+  local configService = self._world:GetService("Config")
   local monsterConfigData = configService:GetMonsterConfigData()
   local temp = monsterConfigData:GetMonsterObject(id)
   if not temp then
-    (Log.fatal)("MonsterID Invalid ID:", id)
-    return 
+    Log.fatal("MonsterID Invalid ID:", id)
+    return
   end
-  local logic = (self._world):GetService("MonsterCreationLogic")
-  local render = (self._world):GetService("MonsterShowRender")
+  local logic = self._world:GetService("MonsterCreationLogic")
+  local render = self._world:GetService("MonsterShowRender")
   local monsterTransformParam = MonsterTransformParam:New(id)
   monsterTransformParam:SetPosition(pos)
   monsterTransformParam:SetForward(dir)
   monsterTransformParam:SetRotation(dir)
   local monsterEntity, _ = logic:CreateMonster(monsterTransformParam)
-  if (self._world):RunAtClient() then
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(render.ShowSummonMonster, render, monsterEntity, monsterTransformParam)
+  if self._world:RunAtClient() then
+    GameGlobal.TaskManager():CoreGameStartTask(render.ShowSummonMonster, render, monsterEntity, monsterTransformParam)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatCreateTrap = function(self, id, pos, dir)
-  -- function num : 0_14 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function GMCheat:BattleCheatCreateTrap(id, pos, dir)
+  local configService = self._world:GetService("Config")
   local trapConfigData = configService:GetTrapConfigData()
   local trapData = trapConfigData:GetTrapData(id)
   if not trapData then
-    (Log.fatal)("TrapID Invalid ID:", id)
-    return 
+    Log.fatal("TrapID Invalid ID:", id)
+    return
   end
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
-  local trapServiceRender = (self._world):GetService("TrapRender")
+  local trapServiceLogic = self._world:GetService("TrapLogic")
+  local trapServiceRender = self._world:GetService("TrapRender")
   local trap = trapServiceLogic:CreateTrap(id, pos, dir, false)
-  if (self._world):RunAtClient() then
-    local svc = (self._world):GetService("L2R")
+  if self._world:RunAtClient() then
+    local svc = self._world:GetService("L2R")
     svc:L2RBoardLogicData()
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(trapServiceRender.ShowTraps, trapServiceRender, {trap})
+    GameGlobal.TaskManager():CoreGameStartTask(trapServiceRender.ShowTraps, trapServiceRender, {trap})
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatSetBoardPiece = function(self, pieceType)
-  -- function num : 0_15 , upvalues : _ENV
-  if not pieceType then
-    pieceType = 1
-  end
-  local component = ((self._world):GetBoardEntity()):Board()
-  local boardService = (self._world):GetService("BoardLogic")
+function GMCheat:BattleCheatSetBoardPiece(pieceType)
+  pieceType = pieceType or 1
+  local component = self._world:GetBoardEntity():Board()
+  local boardService = self._world:GetService("BoardLogic")
   local pieceTable = component:ClonePieceTable()
-  local boardRenderSvc = (self._world):GetService("BoardRender")
-  for x,col in pairs(pieceTable) do
-    for y,v in pairs(col) do
+  local boardRenderSvc = self._world:GetService("BoardRender")
+  for x, col in pairs(pieceTable) do
+    for y, v in pairs(col) do
       local grid = Vector2(x, y)
       if boardService:GetCanConvertGridElement(grid) and v ~= PieceType.None then
         boardService:SetPieceTypeLogic(pieceType, grid)
       end
     end
   end
-  for x,col in pairs(pieceTable) do
-    for y,v in pairs(col) do
+  for x, col in pairs(pieceTable) do
+    for y, v in pairs(col) do
       local grid = Vector2(x, y)
       if boardRenderSvc and boardService:GetCanConvertGridElement(grid) and v ~= PieceType.None then
         boardRenderSvc:ReCreateGridEntity(pieceType, grid, false, true)
       end
     end
   end
-  local svc = (self._world):GetService("L2R")
+  local svc = self._world:GetService("L2R")
   svc:L2RBoardLogicData()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatSetOnePiece = function(self, pos, pieceType)
-  -- function num : 0_16
+function GMCheat:BattleCheatSetOnePiece(pos, pieceType)
   if not pos then
-    return 
+    return
   end
-  if not pieceType then
-    pieceType = 1
-  end
-  local component = ((self._world):GetBoardEntity()):Board()
-  local boardService = (self._world):GetService("BoardLogic")
+  pieceType = pieceType or 1
+  local component = self._world:GetBoardEntity():Board()
+  local boardService = self._world:GetService("BoardLogic")
   local pieceTable = component:ClonePieceTable()
-  local boardRenderSvc = (self._world):GetService("BoardRender")
+  local boardRenderSvc = self._world:GetService("BoardRender")
   if boardService:GetCanConvertGridElement(pos) then
     boardService:SetPieceTypeLogic(pieceType, pos)
   end
   if boardRenderSvc then
     boardRenderSvc:ReCreateGridEntity(pieceType, pos, false, true)
   end
-  local svc = (self._world):GetService("L2R")
+  local svc = self._world:GetService("L2R")
   svc:L2RBoardLogicData()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatSetEveryPiece = function(self, pieceTypeArray)
-  -- function num : 0_17 , upvalues : _ENV
+function GMCheat:BattleCheatSetEveryPiece(pieceTypeArray)
   if not pieceTypeArray then
-    return 
+    return
   end
-  local component = ((self._world):GetBoardEntity()):Board()
-  local boardService = (self._world):GetService("BoardLogic")
+  local component = self._world:GetBoardEntity():Board()
+  local boardService = self._world:GetService("BoardLogic")
   local pieceTable = component:ClonePieceTable()
-  local boardRenderSvc = (self._world):GetService("BoardRender")
-  for x,col in pairs(pieceTable) do
-    for y,v in pairs(col) do
+  local boardRenderSvc = self._world:GetService("BoardRender")
+  for x, col in pairs(pieceTable) do
+    for y, v in pairs(col) do
       local grid = Vector2(x, y)
       if boardService:GetCanConvertGridElement(grid) and v ~= PieceType.None then
-        boardService:SetPieceTypeLogic((pieceTypeArray[x])[y], grid)
+        boardService:SetPieceTypeLogic(pieceTypeArray[x][y], grid)
       end
     end
   end
-  for x,col in pairs(pieceTable) do
-    for y,v in pairs(col) do
+  for x, col in pairs(pieceTable) do
+    for y, v in pairs(col) do
       local grid = Vector2(x, y)
       if boardRenderSvc and v ~= PieceType.None then
-        boardRenderSvc:ReCreateGridEntity((pieceTypeArray[x])[y], grid, false, true)
+        boardRenderSvc:ReCreateGridEntity(pieceTypeArray[x][y], grid, false, true)
       end
     end
   end
-  local svc = (self._world):GetService("L2R")
+  local svc = self._world:GetService("L2R")
   svc:L2RBoardLogicData()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatChangePetHPPercent = function(self, hpPercent)
-  -- function num : 0_18 , upvalues : _ENV
-  if not hpPercent then
-    hpPercent = 100
-  end
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+function GMCheat:BattleCheatChangePetHPPercent(hpPercent)
+  hpPercent = hpPercent or 100
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local attributeCmpt = teamEntity:Attributes()
   local maxHp = attributeCmpt:CalcMaxHp()
-  local newHP = (math.floor)(maxHp * hpPercent / 100)
-  ;
-  (teamEntity:Attributes()):Modify("HP", newHP)
-  if (self._world):RunAtClient() then
+  local newHP = math.floor(maxHp * hpPercent / 100)
+  teamEntity:Attributes():Modify("HP", newHP)
+  if self._world:RunAtClient() then
     teamEntity:ReplaceRedHPAndWhitHP(newHP)
     local hpCmpt = teamEntity:HP()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TeamHPChange, {isLocalTeam = true, currentHP = hpCmpt:GetRedHP(), maxHP = hpCmpt:GetMaxHP(), hitpoint = hpCmpt:GetWhiteHP(), shield = hpCmpt:GetShieldValue(), entityID = teamEntity:GetID(), showCurseHp = hpCmpt:GetShowCurseHp(), curseHpVal = hpCmpt:GetCurseHpValue()})
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.TeamHPChange, {
+      isLocalTeam = true,
+      currentHP = hpCmpt:GetRedHP(),
+      maxHP = hpCmpt:GetMaxHP(),
+      hitpoint = hpCmpt:GetWhiteHP(),
+      shield = hpCmpt:GetShieldValue(),
+      entityID = teamEntity:GetID(),
+      showCurseHp = hpCmpt:GetShowCurseHp(),
+      curseHpVal = hpCmpt:GetCurseHpValue()
+    })
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatSetAutoFightComplex = function(self, complex)
-  -- function num : 0_19 , upvalues : _ENV
+function GMCheat:BattleCheatSetAutoFightComplex(complex)
   local idx = BattleConst.AutoFightMoveEnhanced and 2 or 1
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (BattleConst.AutoFightPathComplexity)[idx] = complex
+  BattleConst.AutoFightPathComplexity[idx] = complex
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-GMCheat.BattleCheatSetSanVal = function(self, val)
-  -- function num : 0_20
+function GMCheat:BattleCheatSetSanVal(val)
   local mainWorld = self._world
   local lsvcFeature = mainWorld:GetService("FeatureLogic")
   local old = lsvcFeature:GetSanValue()
@@ -570,5 +415,3 @@ GMCheat.BattleCheatSetSanVal = function(self, val)
     rsvcFeature:NotifySanValueChange(val, old, delta)
   end
 end
-
-

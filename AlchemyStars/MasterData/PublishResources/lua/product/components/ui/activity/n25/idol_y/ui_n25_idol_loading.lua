@@ -1,80 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/ui_n25_idol_loading.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolLoading", UIController)
 UIN25IdolLoading = UIN25IdolLoading
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolLoading.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25IdolLoading:Constructor()
   self._countArchive = 5
-  self._id2type = {IdolProcessType.IdolProcessType_First, IdolProcessType.IdolProcessType_Second, IdolProcessType.IdolProcessType_Third, IdolProcessType.IdolProcessType_Forth, IdolProcessType.IdolProcessType_Fifth}
+  self._id2type = {
+    IdolProcessType.IdolProcessType_First,
+    IdolProcessType.IdolProcessType_Second,
+    IdolProcessType.IdolProcessType_Third,
+    IdolProcessType.IdolProcessType_Forth,
+    IdolProcessType.IdolProcessType_Fifth
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLoading.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIN25IdolLoading:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N25)
-  self._idolComponent = (self._localProcess):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+  self._idolComponent = self._localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLoading.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN25IdolLoading:OnShow(uiParams)
   self._arContentPath = self:GetUIComponent("UISelectObjectPath", "arContent")
-  self._arContentPool = (self._arContentPath):SpawnObjects("UIN25IdolArchiveFixed", self._countArchive)
+  self._arContentPool = self._arContentPath:SpawnObjects("UIN25IdolArchiveFixed", self._countArchive)
   self._animation = self:GetUIComponent("Animation", "animation")
   self:FlushArchive()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLoading.OnHide = function(self)
-  -- function num : 0_3
+function UIN25IdolLoading:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLoading.FlushArchive = function(self)
-  -- function num : 0_4
-  local idolInfo = (self._idolComponent):GetComponentInfo()
+function UIN25IdolLoading:FlushArchive()
+  local idolInfo = self._idolComponent:GetComponentInfo()
   local processInfo = idolInfo.process_info
   if processInfo == nil then
     processInfo = {}
   end
   for i = 1, self._countArchive do
-    local ui = (self._arContentPool)[i]
-    ui:Flush(self, (self._id2type)[i], processInfo[(self._id2type)[i]])
+    local ui = self._arContentPool[i]
+    ui:Flush(self, self._id2type[i], processInfo[self._id2type[i]])
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLoading.BtnCloseOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN25IdolLoading:BtnCloseOnClick(go)
   local lockName = "UIN25IdolLoading:_backAnim"
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UIN25IdolLoading_out")
+    self._animation:Play("uieff_UIN25IdolLoading_out")
     YIELD(TT, 333)
     self:UnLock(lockName)
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolLoading.IdolComponent = function(self)
-  -- function num : 0_6
+function UIN25IdolLoading:IdolComponent()
   return self._idolComponent
 end
-
-

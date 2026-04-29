@@ -1,48 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/date/main/ui_activity_n33_date_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33DateMainController", UIController)
 UIActivityN33DateMainController = UIActivityN33DateMainController
 local ARCH_LEVEL_MIN_CONST = 1
 local ARCH_LEVEL_MAX_CONST = 4
 local COIN_MAX_CONST = 9999999
--- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
 
-UIActivityN33DateMainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN33DateMainController:LoadDataOnEnter(TT, res, uiParams)
   self._firstStoryID = 50570001
   self._finalStoryID = 50570002
   local campaign = UIActivityCampaign:New()
   campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N33, ECampaignN33ComponentID.ECAMPAIGN_N33_SIMULATION_OPERATION)
   if res and not res:GetSucc() then
-    return 
+    return
   end
   if not campaign then
     res:SetSucc(false)
-    return 
+    return
   end
   local localProcess = campaign:GetLocalProcess()
   if not localProcess then
     res:SetSucc(false)
-    return 
+    return
   end
   local compInfo = campaign:GetComponentInfo(ECampaignN33ComponentID.ECAMPAIGN_N33_SIMULATION_OPERATION)
-  if (table.count)(compInfo.arch_infos) == 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n33_date_unlock"))
+  if table.count(compInfo.arch_infos) == 0 then
+    ToastManager.ShowToast(StringTable.Get("str_n33_date_unlock"))
     res:SetSucc(false)
-    return 
+    return
   end
   campaign:ReLoadCampaignInfo_Force(TT, res)
   self._activityConst = UIActivityN33DateData:New(campaign)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  (UIActivityCustomHelper.SetNewFlagStatus)("ACTIVITY_NEW" .. ECampaignType.CAMPAIGN_TYPE_N33 .. ECampaignN33ComponentID.ECAMPAIGN_N33_SIMULATION_OPERATION)
+function UIActivityN33DateMainController:OnShow(uiParams)
+  UIActivityCustomHelper.SetNewFlagStatus("ACTIVITY_NEW" .. ECampaignType.CAMPAIGN_TYPE_N33 .. ECampaignN33ComponentID.ECAMPAIGN_N33_SIMULATION_OPERATION)
   self:AddEventListener()
   self:_GetComponent()
   self:_Init()
@@ -50,12 +40,9 @@ UIActivityN33DateMainController.OnShow = function(self, uiParams)
   self.openUI = true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController._GetComponent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN33DateMainController:_GetComponent()
   self.moneyBg = self:GetGameObject("moneyBg")
-  self.bgNodeTransform = (self:GetGameObject("bgNode")):GetComponent(typeof(UnityEngine.RectTransform))
+  self.bgNodeTransform = self:GetGameObject("bgNode"):GetComponent(typeof(UnityEngine.RectTransform))
   self._archNodePool = self:GetUIComponent("UISelectObjectPath", "BuildingNode")
   self._petNode = self:GetUIComponent("UISelectObjectPath", "petNode")
   self._moneyNum = self:GetUIComponent("UILocalizationText", "moneyNum")
@@ -64,65 +51,51 @@ UIActivityN33DateMainController._GetComponent = function(self)
   self._petTransform = self:GetUIComponent("Transform", "BuildingNode")
   self._maskTransform = self:GetUIComponent("Transform", "selectMask")
   self._moneyIcon = self:GetUIComponent("RawImageLoader", "moneyIcon")
-  self._anim = (self:GetGameObject()):GetComponent("Animation")
+  self._anim = self:GetGameObject():GetComponent("Animation")
   self.tipsText = self:GetUIComponent("UILocalizationText", "tipsText")
-  self.centerTransform = (self:GetGameObject("center")):GetComponent(typeof(UnityEngine.RectTransform))
+  self.centerTransform = self:GetGameObject("center"):GetComponent(typeof(UnityEngine.RectTransform))
   self._selectMaskObj = self:GetGameObject("selectMask")
   local filterContent = self:GetUIComponent("UISelectObjectPath", "filter")
   self._filter = filterContent:SpawnObject("UIActivityN33DateMainFilter")
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    if (self._activityConst):CheckSimulationOperationIsOver() then
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+  self._backBtn:SetData(function()
+    if self._activityConst:CheckSimulationOperationIsOver() then
+      ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
       self:SwitchState(UIStateType.UIActivityN33MainController)
-      return 
+      return
     end
     self:SwitchState(UIStateType.UIActivityN33MainController)
-  end
-, function()
-    -- function num : 0_2_1 , upvalues : self, _ENV
-    if (self._activityConst):CheckSimulationOperationIsOver() then
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+  end, function()
+    if self._activityConst:CheckSimulationOperationIsOver() then
+      ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
       self:SwitchState(UIStateType.UIActivityN33MainController)
-      return 
+      return
     end
     self:ShowDialog("UIIntroLoader", "UIN33DateIntro")
-  end
-, nil, false, nil)
+  end, nil, false, nil)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController._Init = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if not (UIActivityN33DateHelper.CheckFirstStoryIsPlay)() then
+function UIActivityN33DateMainController:_Init()
+  if not UIActivityN33DateHelper.CheckFirstStoryIsPlay() then
     self:ShowDialog("UIStoryController", self._firstStoryID, function()
-    -- function num : 0_3_0 , upvalues : _ENV
-    (UIActivityN33DateHelper.CancelFirstStoryPlay)()
-  end
-)
+      UIActivityN33DateHelper.CancelFirstStoryPlay()
+    end)
   end
   self.isAllArchFullLv = self:GetIsAllArchFullLv()
   self:PlayArchFullLvStory()
   self.allArchConfig = ComponentSimulationOperationConfig:New()
-  self._currentTimeEvent = ((GameGlobal.Timer)()):AddEventTimes(60000, TimerTriggerCount.Infinite, self.OnOneSecondUpdate, self)
+  self._currentTimeEvent = GameGlobal.Timer():AddEventTimes(60000, TimerTriggerCount.Infinite, self.OnOneSecondUpdate, self)
   self.focusScaleNum = 1.5
   self.focusTagPos = Vector2(-282, 41)
   self.focusTime = 1
   self:CreateAllArchItems()
   self:RefreshCoinData()
   self:CreateAllPetItems()
-  ;
-  (self.tipsText):SetText((StringTable.Get)("str_n33_date_tips_1"))
+  self.tipsText:SetText(StringTable.Get("str_n33_date_tips_1"))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.AddEventListener = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN33DateMainController:AddEventListener()
   self:AttachEvent(GameEventType.OnInviteEventEnd, self.OnInviteEventEnd)
   self:AttachEvent(GameEventType.OnN33PickUpCoin, self._OnN33PickUpCoin)
   self:AttachEvent(GameEventType.OnN33UpgradeArch, self._OnN33UpgradeArch)
@@ -132,329 +105,224 @@ UIActivityN33DateMainController.AddEventListener = function(self)
   self:AttachEvent(GameEventType.OnN33UpgradeRewardOver, self.OnOnN33UpgradeRewardOver)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.OnInviteEventEnd = function(self)
-  -- function num : 0_5
+function UIActivityN33DateMainController:OnInviteEventEnd()
   self:CheckGuide()
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.RefreshCoinData = function(self)
-  -- function num : 0_6 , upvalues : _ENV, COIN_MAX_CONST
-  (self._moneyIcon):LoadImage("icon_item_3000328")
-  ;
-  (self.moneyBg):SetActive(not self.isAllArchFullLv)
+function UIActivityN33DateMainController:RefreshCoinData()
+  self._moneyIcon:LoadImage("icon_item_3000328")
+  self.moneyBg:SetActive(not self.isAllArchFullLv)
   if self.isAllArchFullLv then
-    return 
+    return
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local coinCount = itemModule:GetItemCount(RoleAssetID.RoleAssetSimulationOperationCoin)
-  if COIN_MAX_CONST < coinCount then
+  if coinCount > COIN_MAX_CONST then
     coinCount = COIN_MAX_CONST .. "+"
   end
-  ;
-  (self._moneyNum):SetText(tostring(coinCount))
+  self._moneyNum:SetText(tostring(coinCount))
   local rateSum = 0
-  local archInfos = (self._activityConst):GetArchInfos()
-  for key,v in pairs(archInfos) do
-    local archCfg = (self.allArchConfig):GetBuildingAllLvInfo(v.arch_id)
+  local archInfos = self._activityConst:GetArchInfos()
+  for key, v in pairs(archInfos) do
+    local archCfg = self.allArchConfig:GetBuildingAllLvInfo(v.arch_id)
     local currArchCfg = archCfg[v.level]
     rateSum = rateSum + currArchCfg.Rate
   end
-  ;
-  (self._outputNum):SetText((StringTable.Get)("str_n33_date_arch_info_key9", (rateSum) * 60))
+  self._outputNum:SetText(StringTable.Get("str_n33_date_arch_info_key9", rateSum * 60))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.CreateAllArchItems = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local archInfos = (self._activityConst):GetArchInfos()
-  local count = (table.count)(archInfos)
-  ;
-  (self._archNodePool):SpawnObjects("UIActivityN33BuildingItem", count)
-  local nodes = (self._archNodePool):GetAllSpawnList()
+function UIActivityN33DateMainController:CreateAllArchItems()
+  local archInfos = self._activityConst:GetArchInfos()
+  local count = table.count(archInfos)
+  self._archNodePool:SpawnObjects("UIActivityN33BuildingItem", count)
+  local nodes = self._archNodePool:GetAllSpawnList()
   for i = 1, #nodes do
-    (nodes[i]):SetVisible(false)
+    nodes[i]:SetVisible(false)
   end
   self.archItemPool = {}
   local index = 1
-  for k,v in pairs(archInfos) do
+  for k, v in pairs(archInfos) do
     if v.arch_id == 5011002 then
-      local archCfg = (self.allArchConfig):GetBuildingAllLvInfo(v.arch_id)
+      local archCfg = self.allArchConfig:GetBuildingAllLvInfo(v.arch_id)
       self:CreateArchItem(nodes[index], v.arch_id, archInfos, archCfg)
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self.archItemPool)[index] = nodes[index]
+      self.archItemPool[index] = nodes[index]
       index = index + 1
     end
   end
-  for k,v in pairs(archInfos) do
+  for k, v in pairs(archInfos) do
     if v.arch_id ~= 5011002 then
-      local archCfg = (self.allArchConfig):GetBuildingAllLvInfo(v.arch_id)
+      local archCfg = self.allArchConfig:GetBuildingAllLvInfo(v.arch_id)
       self:CreateArchItem(nodes[index], v.arch_id, archInfos, archCfg)
-      -- DECOMPILER ERROR at PC69: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self.archItemPool)[index] = nodes[index]
+      self.archItemPool[index] = nodes[index]
       index = index + 1
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.RefreshArchItem = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local archInfos = (self._activityConst):GetArchInfos()
-  for key,v in pairs(self.archItemPool) do
+function UIActivityN33DateMainController:RefreshArchItem()
+  local archInfos = self._activityConst:GetArchInfos()
+  for key, v in pairs(self.archItemPool) do
     v:RefreshData(archInfos, self.isAllArchFullLv)
   end
   self:RefreshCoinData()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.CreateArchItem = function(self, uiNode, archID, serverData, archCfg)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityN33DateMainController:CreateArchItem(uiNode, archID, serverData, archCfg)
   uiNode:SetData(archID, serverData, archCfg, self.isAllArchFullLv, self._activityConst)
   if self._type ~= UIActivityN33DateMainFilterType.Pet then
     uiNode:PlayAnim(true)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController._OnDateFilterClick = function(self, type)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityN33DateMainController:_OnDateFilterClick(type)
   if type == UIActivityN33DateMainFilterType.All then
-    (self._buildTransform):SetSiblingIndex(1)
-    ;
-    (self._petTransform):SetSiblingIndex(0)
-    ;
-    (self._maskTransform):SetSiblingIndex(2)
-    ;
-    (self._selectMaskObj):SetActive(false)
+    self._buildTransform:SetSiblingIndex(1)
+    self._petTransform:SetSiblingIndex(0)
+    self._maskTransform:SetSiblingIndex(2)
+    self._selectMaskObj:SetActive(false)
     self:PlayArchAnim(ArchAnimType.TypeIn)
-  else
-    if type == UIActivityN33DateMainFilterType.Build then
-      (self._buildTransform):SetSiblingIndex(0)
-      ;
-      (self._petTransform):SetSiblingIndex(2)
-      ;
-      (self._maskTransform):SetSiblingIndex(1)
-      ;
-      (self._selectMaskObj):SetActive(true)
-      self:PlayArchAnim(ArchAnimType.TypeIn)
-    else
-      if type == UIActivityN33DateMainFilterType.Pet then
-        (self._buildTransform):SetSiblingIndex(2)
-        ;
-        (self._petTransform):SetSiblingIndex(0)
-        ;
-        (self._maskTransform):SetSiblingIndex(1)
-        ;
-        (self._selectMaskObj):SetActive(true)
-        self:PlayArchAnim(ArchAnimType.TypeOut)
-      end
-    end
+  elseif type == UIActivityN33DateMainFilterType.Build then
+    self._buildTransform:SetSiblingIndex(0)
+    self._petTransform:SetSiblingIndex(2)
+    self._maskTransform:SetSiblingIndex(1)
+    self._selectMaskObj:SetActive(true)
+    self:PlayArchAnim(ArchAnimType.TypeIn)
+  elseif type == UIActivityN33DateMainFilterType.Pet then
+    self._buildTransform:SetSiblingIndex(2)
+    self._petTransform:SetSiblingIndex(0)
+    self._maskTransform:SetSiblingIndex(1)
+    self._selectMaskObj:SetActive(true)
+    self:PlayArchAnim(ArchAnimType.TypeOut)
   end
   self._type = type
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.CreateAllPetItems = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local list = (self._activityConst):GetMapShowPetList()
-  self._petPoints = (self._petNode):SpawnObjects("UIActivityN33DateMainPetItem", (table.count)(list))
-  for i,v in pairs(self._petPoints) do
+function UIActivityN33DateMainController:CreateAllPetItems()
+  local list = self._activityConst:GetMapShowPetList()
+  self._petPoints = self._petNode:SpawnObjects("UIActivityN33DateMainPetItem", table.count(list))
+  for i, v in pairs(self._petPoints) do
     v:SetData(list[i], self._activityConst, function(item)
-    -- function num : 0_11_0 , upvalues : self
-    local cfg = item:GetConfig()
-    self:ShowDialog("UIActivityN33DatePetController", cfg, self._activityConst)
-  end
-)
+      local cfg = item:GetConfig()
+      self:ShowDialog("UIActivityN33DatePetController", cfg, self._activityConst)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController._Close = function(self, TT, cb)
-  -- function num : 0_12
+function UIActivityN33DateMainController:_Close(TT, cb)
   if cb then
     cb()
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.LineLevelBtnOnClick = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  if (self._activityConst):CheckSimulationOperationIsOver() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+function UIActivityN33DateMainController:LineLevelBtnOnClick()
+  if self._activityConst:CheckSimulationOperationIsOver() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIActivityN33MainController)
-    return 
+    return
   end
   self:StartTask(self._Close, self, function()
-    -- function num : 0_13_0 , upvalues : self
     self:ShowDialog("UIActivityN33LevelController", 1, true)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.ManualBtnOnClick = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  if (self._activityConst):CheckSimulationOperationIsOver() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+function UIActivityN33DateMainController:ManualBtnOnClick()
+  if self._activityConst:CheckSimulationOperationIsOver() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIActivityN33MainController)
-    return 
+    return
   end
   self:ShowDialog("UIActivityN33DateManualController", self._activityConst)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.StoryBtnOnClick = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  if (self._activityConst):CheckSimulationOperationIsOver() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+function UIActivityN33DateMainController:StoryBtnOnClick()
+  if self._activityConst:CheckSimulationOperationIsOver() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIActivityN33MainController)
-    return 
+    return
   end
   self:ShowDialog("UIStoryController", self._firstStoryID, function()
-    -- function num : 0_15_0
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController._PlayEndStory = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityN33DateMainController:_PlayEndStory()
   self:ShowDialog("UIStoryController", self._finalStoryID, function()
-    -- function num : 0_16_0 , upvalues : self, _ENV
     self:StartTask(function(TT)
-      -- function num : 0_16_0_0 , upvalues : self, _ENV
-      local comp = (self._activityConst):GetComponent()
+      local comp = self._activityConst:GetComponent()
       local res = AsyncRequestRes:New()
       local ret, rewards = comp:HandleSubmitSimulationOperationStory(TT, res, 0, self._finalStoryID, true)
       if res:GetSucc() then
-        (Log.fatal)("最终剧情完成失败")
+      else
+        Log.fatal("最终剧情完成失败")
       end
-    end
-, self)
-  end
-)
+    end, self)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.OnOnN33UpgradeRewardOver = function(self)
-  -- function num : 0_17
+function UIActivityN33DateMainController:OnOnN33UpgradeRewardOver()
   self:PlayArchFullLvStory()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.OnOneSecondUpdate = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIActivityN33DateMainController:OnOneSecondUpdate()
   if not self.openUI then
-    return 
+    return
   end
   if self.oneSecondUpdateTask then
-    ((GameGlobal.TaskManager)()):KillTask(self.oneSecondUpdateTask)
+    GameGlobal.TaskManager():KillTask(self.oneSecondUpdateTask)
     self.oneSecondUpdateTask = nil
   end
   self.oneSecondUpdateTask = self:StartTask(function(TT)
-    -- function num : 0_18_0 , upvalues : self
-    (self._activityConst):OneSecondUpdate_GetArchInfos(TT, function()
-      -- function num : 0_18_0_0 , upvalues : self
+    self._activityConst:OneSecondUpdate_GetArchInfos(TT, function()
       if self.openUI then
         self:RefreshArchItem()
         self:CheckGuide()
       end
-    end
-)
+    end)
     self.oneSecondUpdateTask = nil
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController._OnN33FocusTag = function(self, focusTagPos)
-  -- function num : 0_19
+function UIActivityN33DateMainController:_OnN33FocusTag(focusTagPos)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController._OnN33PickUpCoin = function(self, archID)
-  -- function num : 0_20
+function UIActivityN33DateMainController:_OnN33PickUpCoin(archID)
   self:StartTask(function(TT)
-    -- function num : 0_20_0 , upvalues : self, archID
-    (self._activityConst):OneSecondUpdate_PickUpCoin(TT, archID, function()
-      -- function num : 0_20_0_0 , upvalues : self
-      (self._anim):Play("uieffanim_UIActivityN33DateMainController_gather")
+    self._activityConst:OneSecondUpdate_PickUpCoin(TT, archID, function()
+      self._anim:Play("uieffanim_UIActivityN33DateMainController_gather")
       self:RefreshArchItem()
-    end
-)
-  end
-, self)
+    end)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController._OnN33UpgradeArch = function(self, archID)
-  -- function num : 0_21 , upvalues : _ENV
+function UIActivityN33DateMainController:_OnN33UpgradeArch(archID)
   self:StartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : self, archID, _ENV
-    (self._activityConst):OneSecondUpdate_UpgradeArch(TT, archID, function(rewards)
-      -- function num : 0_21_0_0 , upvalues : self, _ENV, archID
+    self._activityConst:OneSecondUpdate_UpgradeArch(TT, archID, function(rewards)
       self.isAllArchFullLv = self:GetIsAllArchFullLv()
       self:RefreshArchItem()
       self:CreateAllPetItems()
-      local archInfos = (self._activityConst):GetArchInfos()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN33RefArchUI, archInfos)
+      local archInfos = self._activityConst:GetArchInfos()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN33RefArchUI, archInfos)
       self:ShowUpgradeArchReward(archID, rewards)
-      ;
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N15RaffleSucc)
-    end
-)
-  end
-, self)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N15RaffleSucc)
+    end)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.ShowUpgradeArchReward = function(self, archID, rewards)
-  -- function num : 0_22 , upvalues : ARCH_LEVEL_MIN_CONST, _ENV
-  local archInfos = (self._activityConst):GetArchInfos()
+function UIActivityN33DateMainController:ShowUpgradeArchReward(archID, rewards)
+  local archInfos = self._activityConst:GetArchInfos()
   local currArchLv = ARCH_LEVEL_MIN_CONST
-  for key,info in pairs(archInfos) do
+  for key, info in pairs(archInfos) do
     if info.arch_id == archID then
       currArchLv = info.level
       break
     end
   end
-  do
-    self:ShowDialog(UIStateType.UIActivityN33ArchUpgradeReward, archID, currArchLv, rewards, self._activityConst)
-  end
+  self:ShowDialog(UIStateType.UIActivityN33ArchUpgradeReward, archID, currArchLv, rewards, self._activityConst)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.GetIsAllArchFullLv = function(self)
-  -- function num : 0_23 , upvalues : _ENV, ARCH_LEVEL_MAX_CONST
-  local archInfos = (self._activityConst):GetArchInfos()
-  for key,info in pairs(archInfos) do
+function UIActivityN33DateMainController:GetIsAllArchFullLv()
+  local archInfos = self._activityConst:GetArchInfos()
+  for key, info in pairs(archInfos) do
     if info.level < ARCH_LEVEL_MAX_CONST then
       return false
     end
@@ -462,74 +330,54 @@ UIActivityN33DateMainController.GetIsAllArchFullLv = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.PlayHideAnim = function(self, callback)
-  -- function num : 0_24 , upvalues : _ENV
+function UIActivityN33DateMainController:PlayHideAnim(callback)
   self:StartTask(function(TT)
-    -- function num : 0_24_0 , upvalues : _ENV, self, callback
-    for key,v in pairs(self.archItemPool) do
+    for key, v in pairs(self.archItemPool) do
       v:PlayAnim(false)
     end
     YIELD(TT, 400)
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.PlayArchAnim = function(self, animType)
-  -- function num : 0_25 , upvalues : _ENV
+function UIActivityN33DateMainController:PlayArchAnim(animType)
   if not self.archItemPool then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_25_0 , upvalues : animType, _ENV, self
     if animType == ArchAnimType.TypeIn or animType == ArchAnimType.TypeOut then
-      for key,v in pairs(self.archItemPool) do
+      for key, v in pairs(self.archItemPool) do
         v:PlayAnim_InfoBubble(animType == ArchAnimType.TypeIn and true or false)
       end
-    else
-      do
-        if animType == ArchAnimType.TypeOutIn then
-          for key,v in pairs(self.archItemPool) do
-            v:PlayAnim_InfoBubble(false)
-          end
-          YIELD(TT, 400)
-          for key,v in pairs(self.archItemPool) do
-            v:PlayAnim_InfoBubble(true)
-          end
-        end
+    elseif animType == ArchAnimType.TypeOutIn then
+      for key, v in pairs(self.archItemPool) do
+        v:PlayAnim_InfoBubble(false)
+      end
+      YIELD(TT, 400)
+      for key, v in pairs(self.archItemPool) do
+        v:PlayAnim_InfoBubble(true)
       end
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.PlayArchFullLvStory = function(self)
-  -- function num : 0_26
+function UIActivityN33DateMainController:PlayArchFullLvStory()
   local isAllArchFullLv = self:GetIsAllArchFullLv()
   if not isAllArchFullLv then
-    return 
+    return
   end
-  if (self._activityConst):GetIsPlayFinalStory() then
-    return 
+  if self._activityConst:GetIsPlayFinalStory() then
+    return
   end
   self:_PlayEndStory()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.OnHide = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UIActivityN33DateMainController:OnHide()
   self.openUI = false
   if self._currentTimeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._currentTimeEvent)
+    GameGlobal.Timer():CancelEvent(self._currentTimeEvent)
     self._currentTimeEvent = nil
   end
   self:DetachEvent(GameEventType.OnN33PickUpCoin, self._OnN33PickUpCoin)
@@ -538,110 +386,73 @@ UIActivityN33DateMainController.OnHide = function(self)
   self:DetachEvent(GameEventType.OnN33ForceRefMapArch, self.OnOneSecondUpdate)
   self:DetachEvent(GameEventType.OnN33UpgradeRewardOver, self.OnOnN33UpgradeRewardOver)
   if self.oneSecondUpdateTask then
-    ((GameGlobal.TaskManager)()):KillTask(self.oneSecondUpdateTask)
+    GameGlobal.TaskManager():KillTask(self.oneSecondUpdateTask)
     self.oneSecondUpdateTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController._PlayInAnim = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIActivityN33DateMainController:_PlayInAnim()
   self:StartTask(function(TT)
-    -- function num : 0_28_0 , upvalues : self, _ENV
     self:Lock("uieffanim_UIActivityN33DateMainController_in")
-    ;
-    (self._anim):Play("uieffanim_UIActivityN33DateMainController_in")
+    self._anim:Play("uieffanim_UIActivityN33DateMainController_in")
     YIELD(TT, 1000)
     self:UnLock("uieffanim_UIActivityN33DateMainController_in")
     self:CheckGuide()
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.CheckGuide = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+function UIActivityN33DateMainController:CheckGuide()
+  local guideModule = GameGlobal.GetModule(GuideModule)
   if not guideModule:IsGuideDone(123002) then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN33DateMainController1)
-  else
-    if not guideModule:IsGuideDone(123006) then
-      (self._filter):FilterAll()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN33DateMainController2)
-    else
-      if not guideModule:IsGuideDone(123008) then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN33DateMainController3)
-      end
-    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN33DateMainController1)
+  elseif not guideModule:IsGuideDone(123006) then
+    self._filter:FilterAll()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN33DateMainController2)
+  elseif not guideModule:IsGuideDone(123008) then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN33DateMainController3)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.GetFirstDialogBtn = function(self)
-  -- function num : 0_30
-  local nodes = (self._archNodePool):GetAllSpawnList()
+function UIActivityN33DateMainController:GetFirstDialogBtn()
+  local nodes = self._archNodePool:GetAllSpawnList()
   local node = nodes[1]
   return node:GetReceiveCoinBtn()
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.GetSecondDialogBtn = function(self)
-  -- function num : 0_31
-  local nodes = (self._archNodePool):GetAllSpawnList()
+function UIActivityN33DateMainController:GetSecondDialogBtn()
+  local nodes = self._archNodePool:GetAllSpawnList()
   local node = nodes[2]
   return node:GetReceiveCoinBtn()
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.GetThirdDialogBtn = function(self)
-  -- function num : 0_32
-  local nodes = (self._archNodePool):GetAllSpawnList()
+function UIActivityN33DateMainController:GetThirdDialogBtn()
+  local nodes = self._archNodePool:GetAllSpawnList()
   local node = nodes[3]
   return node:GetReceiveCoinBtn()
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.GetFourthDialogBtn = function(self)
-  -- function num : 0_33
-  local nodes = (self._archNodePool):GetAllSpawnList()
+function UIActivityN33DateMainController:GetFourthDialogBtn()
+  local nodes = self._archNodePool:GetAllSpawnList()
   local node = nodes[4]
   return node:GetReceiveCoinBtn()
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.GetFifthDialogBtn = function(self)
-  -- function num : 0_34
-  local nodes = (self._archNodePool):GetAllSpawnList()
+function UIActivityN33DateMainController:GetFifthDialogBtn()
+  local nodes = self._archNodePool:GetAllSpawnList()
   local node = nodes[4]
   return node:GetOpenInfoBtn()
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.GetSixthDialogBtn = function(self)
-  -- function num : 0_35
-  local helpBtn = ((self._backBtn).view):GetGameObject("ButtonHelp")
+function UIActivityN33DateMainController:GetSixthDialogBtn()
+  local helpBtn = self._backBtn.view:GetGameObject("ButtonHelp")
   return helpBtn
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R3 in 'UnsetPending'
-
-UIActivityN33DateMainController.GetSeventhDialogBtn = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  local nodes = (self._petNode):GetAllSpawnList()
-  for _,v in pairs(nodes) do
+function UIActivityN33DateMainController:GetSeventhDialogBtn()
+  local nodes = self._petNode:GetAllSpawnList()
+  for _, v in pairs(nodes) do
     if v:CheckID(1602061) then
-      return (v.view):GetGameObject("petIcon")
+      return v.view:GetGameObject("petIcon")
     end
   end
 end
-
-

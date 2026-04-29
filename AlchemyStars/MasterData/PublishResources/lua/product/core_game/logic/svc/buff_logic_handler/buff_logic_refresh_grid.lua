@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_refresh_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicRefreshGrid", BuffLogicBase)
 BuffLogicRefreshGrid = BuffLogicRefreshGrid
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRefreshGrid.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicRefreshGrid:Constructor(buffInstance, logicParam)
   self._count = logicParam.count
   self._target = logicParam.target
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRefreshGrid.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  local world = (self._buffInstance):World()
+function BuffLogicRefreshGrid:DoLogic()
+  local e = self._buffInstance:Entity()
+  local world = self._buffInstance:World()
   local boardService = world:GetService("BoardLogic")
-  local randomSvc = (self._world):GetService("RandomLogic")
+  local randomSvc = self._world:GetService("RandomLogic")
   local petPos = e:GetGridPosition()
   local utilData = world:GetService("UtilData")
   local gridList = {}
@@ -28,35 +18,29 @@ BuffLogicRefreshGrid.DoLogic = function(self)
     for y = -1, 1 do
       local pos = Vector2(x + petPos.x, y + petPos.y)
       if utilData:IsValidPiecePos(pos) and pos ~= petPos then
-        (table.insert)(gridList, pos)
+        table.insert(gridList, pos)
       end
     end
   end
   local refreshList = self:_GetRandomList(gridList, randomSvc)
-  for _,pos in ipairs(refreshList) do
+  for _, pos in ipairs(refreshList) do
     boardService:SetPieceTypeLogic(self._target, pos)
   end
   local buffResult = BuffResultRefreshGrid:New(refreshList, self._target)
   return buffResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRefreshGrid._GetRandomList = function(self, list, randomSvc)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffLogicRefreshGrid:_GetRandomList(list, randomSvc)
   local hadRefreshList = {}
   for i = 1, 100 do
     local randomIndex = randomSvc:LogicRand(1, #list)
     local randomPos = list[randomIndex]
-    if not (table.intable)(hadRefreshList, randomPos) then
-      (table.insert)(hadRefreshList, randomPos)
+    if not table.intable(hadRefreshList, randomPos) then
+      table.insert(hadRefreshList, randomPos)
+    end
+    if #hadRefreshList == self._count then
+      break
     end
   end
-  do
-    if #hadRefreshList ~= self._count then
-      return hadRefreshList
-    end
-  end
+  return hadRefreshList
 end
-
-

@@ -1,39 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/random_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("random")
 _class("RandomServiceLogic", BaseService)
 RandomServiceLogic = RandomServiceLogic
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-RandomServiceLogic.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
-  self._logicRandor = lcg((world.BW_WorldInfo).world_seed)
+function RandomServiceLogic:Constructor(world)
+  self._logicRandor = lcg(world.BW_WorldInfo.world_seed)
   self._logicRandCount = 0
-  self._boardLogicRandor = lcg((world.BW_WorldInfo).boardSeed)
+  self._boardLogicRandor = lcg(world.BW_WorldInfo.boardSeed)
   self._boardLogicRandCount = 0
   self._world = world
   self._useBoardSeed = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RandomServiceLogic.Initialize = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function RandomServiceLogic:Initialize()
   if self:GetMatchType(GetMatchTypeType.WorldBossBattle) == MatchType.MT_WorldBoss then
     self._useBoardSeed = true
   end
-  if ((self._world).BW_WorldInfo).world_seed ~= ((self._world).BW_WorldInfo).boardSeed then
+  if self._world.BW_WorldInfo.world_seed ~= self._world.BW_WorldInfo.boardSeed then
     self._useBoardSeed = true
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RandomServiceLogic.BoardLogicRandSelectByMatchType = function(self, m, n)
-  -- function num : 0_2
+function RandomServiceLogic:BoardLogicRandSelectByMatchType(m, n)
   if self._useBoardSeed then
     return self:BoardLogicRand(m, n)
   else
@@ -41,108 +28,89 @@ RandomServiceLogic.BoardLogicRandSelectByMatchType = function(self, m, n)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RandomServiceLogic.BoardLogicRand = function(self, m, n)
-  -- function num : 0_3 , upvalues : _ENV
+function RandomServiceLogic:BoardLogicRand(m, n)
   if EDITOR and CHECK_RENDER_ACCESS_LOGIC then
-    local debugInfo = (debug.getinfo)(2, "S")
+    local debugInfo = debug.getinfo(2, "S")
     local filePath = debugInfo.short_src
-    local renderIndex = (string.find)(filePath, "_r.lua")
+    local renderIndex = string.find(filePath, "_r.lua")
     if renderIndex ~= nil then
-      (Log.exception)("render file :", filePath, " call BoardLogicRand() ", (Log.traceback)())
+      Log.exception("render file :", filePath, " call BoardLogicRand() ", Log.traceback())
       return nil
     end
   end
-  do
-    local randomNum = -1
-    if m == nil and n == nil then
-      randomNum = (self._boardLogicRandor):random()
-    else
-      randomNum = self:Rounding((self._boardLogicRandor):random(m, n))
-    end
-    self._boardLogicRandCount = self._boardLogicRandCount + 1
-    if (self._world):GetRunningPosition() ~= WorldRunPostion.Performance then
-      ((self._world):GetSyncLogger()):Trace({key = "BoardLogicRand", randCount = self._boardLogicRandCount, randValue = randomNum})
-    end
-    return randomNum
+  local randomNum = -1
+  if m == nil and n == nil then
+    randomNum = self._boardLogicRandor:random()
+  else
+    randomNum = self:Rounding(self._boardLogicRandor:random(m, n))
   end
+  self._boardLogicRandCount = self._boardLogicRandCount + 1
+  if self._world:GetRunningPosition() ~= WorldRunPostion.Performance then
+    self._world:GetSyncLogger():Trace({
+      key = "BoardLogicRand",
+      randCount = self._boardLogicRandCount,
+      randValue = randomNum
+    })
+  end
+  return randomNum
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RandomServiceLogic.LogicRand = function(self, m, n)
-  -- function num : 0_4 , upvalues : _ENV
+function RandomServiceLogic:LogicRand(m, n)
   if EDITOR and CHECK_RENDER_ACCESS_LOGIC then
-    local debugInfo = (debug.getinfo)(2, "S")
+    local debugInfo = debug.getinfo(2, "S")
     local filePath = debugInfo.short_src
-    local renderIndex = (string.find)(filePath, "_r.lua")
+    local renderIndex = string.find(filePath, "_r.lua")
     if renderIndex ~= nil then
-      (Log.exception)("render file :", filePath, " call LogicRand() ", (Log.traceback)())
+      Log.exception("render file :", filePath, " call LogicRand() ", Log.traceback())
       return nil
     end
   end
-  do
-    local randomNum = -1
-    if m == nil and n == nil then
-      randomNum = (self._logicRandor):random()
-    else
-      randomNum = self:Rounding((self._logicRandor):random(m, n))
-    end
-    self._logicRandCount = self._logicRandCount + 1
-    if (self._world):GetRunningPosition() ~= WorldRunPostion.Performance then
-      ((self._world):GetSyncLogger()):Trace({key = "LogicRand", randCount = self._logicRandCount, randValue = randomNum})
-    end
-    return randomNum
+  local randomNum = -1
+  if m == nil and n == nil then
+    randomNum = self._logicRandor:random()
+  else
+    randomNum = self:Rounding(self._logicRandor:random(m, n))
   end
+  self._logicRandCount = self._logicRandCount + 1
+  if self._world:GetRunningPosition() ~= WorldRunPostion.Performance then
+    self._world:GetSyncLogger():Trace({
+      key = "LogicRand",
+      randCount = self._logicRandCount,
+      randValue = randomNum
+    })
+  end
+  return randomNum
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RandomServiceLogic.Rounding = function(self, value)
-  -- function num : 0_5 , upvalues : _ENV
-  local f = (math.floor)(value)
+function RandomServiceLogic:Rounding(value)
+  local f = math.floor(value)
   if f == value then
     return f
   else
-    return (math.floor)(value + 0.5)
+    return math.floor(value + 0.5)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RandomServiceLogic.Shuffle = function(self, t)
-  -- function num : 0_6
+function RandomServiceLogic:Shuffle(t)
   for i = 1, #t do
     local n = self:LogicRand(1, #t)
-    t[i] = t[n]
+    t[i], t[n] = t[n], t[i]
   end
   return t
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RandomServiceLogic.ShuffleUseBoardRand = function(self, t)
-  -- function num : 0_7
+function RandomServiceLogic:ShuffleUseBoardRand(t)
   for i = 1, #t do
     local n = self:BoardLogicRand(1, #t)
-    t[i] = t[n]
+    t[i], t[n] = t[n], t[i]
   end
   return t
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-RandomServiceLogic.GetUseBoardSeed = function(self)
-  -- function num : 0_8
+function RandomServiceLogic:GetUseBoardSeed()
   return self._useBoardSeed
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-RandomServiceLogic.SetUseBoardSeed = function(self, use)
-  -- function num : 0_9
+function RandomServiceLogic:SetUseBoardSeed(use)
   self._useBoardSeed = use
 end
-
-

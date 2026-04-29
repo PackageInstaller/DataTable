@@ -1,30 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_info_condition_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleInfoConditionItem", UICustomWidget)
 UIBattleInfoConditionItem = UIBattleInfoConditionItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleInfoConditionItem.OnShow = function(self)
-  -- function num : 0_0
+function UIBattleInfoConditionItem:OnShow()
   self._txtCond = self:GetUIComponent("UILocalizationText", "ConditionText")
   self._goStarGrey = self:GetGameObject("imgStarGrey")
   self._goStar = self:GetGameObject("imgStar")
-  ;
-  (self._goStar):SetActive(false)
+  self._goStar:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleInfoConditionItem.Flush = function(self, str, showStar)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._txtCond).text = str
-  ;
-  (self._goStar):SetActive(showStar)
+function UIBattleInfoConditionItem:Flush(str, showStar)
+  self._txtCond.text = str
+  self._goStar:SetActive(showStar)
 end
-
-

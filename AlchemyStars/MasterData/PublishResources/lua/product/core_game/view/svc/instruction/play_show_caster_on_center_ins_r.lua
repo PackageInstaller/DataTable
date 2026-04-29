@@ -1,22 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_show_caster_on_center_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayShowCasterOnCenterInstruction", BaseInstruction)
 PlayShowCasterOnCenterInstruction = PlayShowCasterOnCenterInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayShowCasterOnCenterInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayShowCasterOnCenterInstruction:Constructor(paramList)
   self._reset = paramList.reset ~= nil
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayShowCasterOnCenterInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayShowCasterOnCenterInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local utilDataSvc = world:GetService("UtilData")
   local baseCenterPos = utilDataSvc:GetCurBoardCenterPos()
@@ -24,5 +13,3 @@ PlayShowCasterOnCenterInstruction.DoInstruction = function(self, TT, casterEntit
   casterEntity:SetPosition(targetGridPos)
   YIELD(TT)
 end
-
-

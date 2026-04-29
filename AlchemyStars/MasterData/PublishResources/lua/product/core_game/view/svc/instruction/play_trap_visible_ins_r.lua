@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_trap_visible_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTrapVisibleInstruction", BaseInstruction)
 PlayTrapVisibleInstruction = PlayTrapVisibleInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTrapVisibleInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTrapVisibleInstruction:Constructor(paramList)
   local param = tonumber(paramList.visible)
   if param == 1 then
     self._visible = true
@@ -18,38 +11,23 @@ PlayTrapVisibleInstruction.Constructor = function(self, paramList)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrapVisibleInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTrapVisibleInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local group = world:GetGroup((world.BW_WEMatchers).Trap)
-  for _,e in ipairs(group:GetEntities()) do
+  local group = world:GetGroup(world.BW_WEMatchers.Trap)
+  for _, e in ipairs(group:GetEntities()) do
     local trapRenderCmpt = e:TrapRender()
     if trapRenderCmpt and not trapRenderCmpt:GetHadPlayDestroy() then
       local location = e:Location()
       if location then
         local gridWorldPos = e:GetPosition()
         local offsetY = self._visible and 0 or 1000
-        local gridWorldNew = (Vector3.New)(gridWorldPos.x, offsetY, gridWorldPos.z)
+        local gridWorldNew = Vector3.New(gridWorldPos.x, offsetY, gridWorldPos.z)
         e:SetPosition(gridWorldNew)
       end
-      do
-        do
-          local cTrapRoundInfo = e:TrapRoundInfoRender()
-          if cTrapRoundInfo then
-            cTrapRoundInfo:SetIsShow(self._visible)
-          end
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      local cTrapRoundInfo = e:TrapRoundInfoRender()
+      if cTrapRoundInfo then
+        cTrapRoundInfo:SetIsShow(self._visible)
       end
     end
   end
 end
-
-

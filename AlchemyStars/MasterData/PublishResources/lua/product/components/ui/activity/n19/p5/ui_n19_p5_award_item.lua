@@ -1,22 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n19/p5/ui_n19_p5_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN19P5AwardItem", UICustomWidget)
 UIN19P5AwardItem = UIN19P5AwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN19P5AwardItem.OnShow = function(self)
-  -- function num : 0_0
-  self.color2color = {[1] = "n19p5_choujiang_pin01", [2] = "n19p5_choujiang_pin02", [3] = "n19p5_choujiang_pin03", [4] = "n19p5_choujiang_pin04", [5] = "n19p5_choujiang_pin05", [6] = "n19p5_choujiang_pin06"}
+function UIN19P5AwardItem:OnShow()
+  self.color2color = {
+    [1] = "n19p5_choujiang_pin01",
+    [2] = "n19p5_choujiang_pin02",
+    [3] = "n19p5_choujiang_pin03",
+    [4] = "n19p5_choujiang_pin04",
+    [5] = "n19p5_choujiang_pin05",
+    [6] = "n19p5_choujiang_pin06"
+  }
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5AwardItem.GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN19P5AwardItem:GetComponents()
   self.Color = self:GetUIComponent("Image", "color")
   self.LessTex = self:GetUIComponent("UILocalizationText", "timeTex")
   self.ItemCount = self:GetUIComponent("UILocalizationText", "countTex")
@@ -26,121 +23,78 @@ UIN19P5AwardItem.GetComponents = function(self)
   self.MaskImg = self:GetUIComponent("Image", "mask")
   self.Icon = self:GetUIComponent("RawImageLoader", "icon")
   self._iconRect = self:GetUIComponent("RectTransform", "icon")
-  self._iconRectDefaultSize = (self._iconRect).sizeDelta
+  self._iconRectDefaultSize = self._iconRect.sizeDelta
   self.atlas = self:GetAsset("UIN19P5.spriteatlas", LoadType.SpriteAtlas)
   self.Mask = self:GetGameObject("mask")
   self.hide = self:GetGameObject("hide")
   self.pos = self:GetUIComponent("RectTransform", "pos")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5AwardItem.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local id = (self.award).m_item_id
-  local cfg = (Cfg.cfg_item)[id]
+function UIN19P5AwardItem:OnValue()
+  local id = self.award.m_item_id
+  local cfg = Cfg.cfg_item[id]
   if not cfg then
-    (Log.error)("###[UIN19P5AwardItem] cfg is nil ! id --> ", id)
+    Log.error("###[UIN19P5AwardItem] cfg is nil ! id --> ", id)
   end
-  local color = (self.color2color)[cfg.Color]
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.Color).sprite = (self.atlas):GetSprite(color)
+  local color = self.color2color[cfg.Color]
+  self.Color.sprite = self.atlas:GetSprite(color)
   local icon = cfg.Icon
-  ;
-  (self.Icon):LoadImage(icon)
+  self.Icon:LoadImage(icon)
   self:SetIcon()
   if self.hideCount then
-    (self.hide):SetActive(false)
+    self.hide:SetActive(false)
     local bgSprite = "n19p5_choujiang_di16"
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.BgImg).sprite = (self.atlas):GetSprite(bgSprite)
+    self.BgImg.sprite = self.atlas:GetSprite(bgSprite)
   else
-    do
-      ;
-      (self.hide):SetActive(true)
-      local lessTime = (self.award).m_lottery_count
-      if lessTime < 0 then
-        lessTime = 0
-      end
-      ;
-      (self.LessTex):SetText(lessTime)
-      ;
-      (self.Mask):SetActive(lessTime == 0)
-      local count = (self.award).m_count
-      ;
-      (self.ItemCount):SetText(count)
-      do
-        local bgSprite, maskSprite = nil, nil
-        if (self.award).m_is_big_reward then
-          (self.BigImg):SetActive(true)
-          bgSprite = "n19p5_choujiang_di14"
-          maskSprite = "n19p5_choujiang_di17"
-        elseif (self.award).m_reward_type == ECampaignLRType.E_CLRT_rare then
-          (self.BigImg):SetActive(false)
-          bgSprite = "n19p5_choujiang_di15"
-          maskSprite = "n19p5_choujiang_di18"
-        else
-          (self.BigImg):SetActive(false)
-          bgSprite = "n19p5_choujiang_di16"
-          maskSprite = "n19p5_choujiang_di19"
-        end
-        -- DECOMPILER ERROR at PC105: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self.MaskImg).sprite = (self.atlas):GetSprite(maskSprite)
-        -- DECOMPILER ERROR at PC111: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self.BgImg).sprite = (self.atlas):GetSprite(bgSprite)
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
-      end
+    self.hide:SetActive(true)
+    local lessTime = self.award.m_lottery_count
+    if lessTime < 0 then
+      lessTime = 0
     end
+    self.LessTex:SetText(lessTime)
+    self.Mask:SetActive(lessTime == 0)
+    local count = self.award.m_count
+    self.ItemCount:SetText(count)
+    local bgSprite, maskSprite
+    if self.award.m_is_big_reward then
+      self.BigImg:SetActive(true)
+      bgSprite = "n19p5_choujiang_di14"
+      maskSprite = "n19p5_choujiang_di17"
+    elseif self.award.m_reward_type == ECampaignLRType.E_CLRT_rare then
+      self.BigImg:SetActive(false)
+      bgSprite = "n19p5_choujiang_di15"
+      maskSprite = "n19p5_choujiang_di18"
+    else
+      self.BigImg:SetActive(false)
+      bgSprite = "n19p5_choujiang_di16"
+      maskSprite = "n19p5_choujiang_di19"
+    end
+    self.MaskImg.sprite = self.atlas:GetSprite(maskSprite)
+    self.BgImg.sprite = self.atlas:GetSprite(bgSprite)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5AwardItem.SetIcon = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN19P5AwardItem:SetIcon()
   local isHead = false
-  if (self.award).m_item_id >= 3750000 and (self.award).m_item_id <= 3759999 then
+  if self.award.m_item_id >= 3750000 and self.award.m_item_id <= 3759999 then
     isHead = true
   end
   if isHead then
     local whRate = 1
-    if (self.award).m_item_id >= 3751000 and (self.award).m_item_id <= 3751999 then
-      whRate = 0.84210526315789
-    else
-      if (self.award).m_item_id >= 3752000 and (self.award).m_item_id <= 3752999 then
-        whRate = 0.63888888888889
-      else
-        if (self.award).m_item_id >= 3753000 and (self.award).m_item_id <= 3753999 then
-          whRate = 0.63888888888889
-        end
-      end
+    if self.award.m_item_id >= 3751000 and self.award.m_item_id <= 3751999 then
+      whRate = 0.8421052631578947
+    elseif self.award.m_item_id >= 3752000 and self.award.m_item_id <= 3752999 then
+      whRate = 0.6388888888888888
+    elseif self.award.m_item_id >= 3753000 and self.award.m_item_id <= 3753999 then
+      whRate = 0.6388888888888888
     end
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._iconRect).sizeDelta = Vector2(((self._iconRect).sizeDelta).x, ((self._iconRect).sizeDelta).x * whRate)
+    self._iconRect.sizeDelta = Vector2(self._iconRect.sizeDelta.x, self._iconRect.sizeDelta.x * whRate)
   else
-    do
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._iconRect).sizeDelta = self._iconRectDefaultSize
-    end
+    self._iconRect.sizeDelta = self._iconRectDefaultSize
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5AwardItem.SetData = function(self, award, callback, hideCount, anim)
-  -- function num : 0_4
+function UIN19P5AwardItem:SetData(award, callback, hideCount, anim)
   self.award = award
   self.callback = callback
   self.hideCount = hideCount
@@ -149,47 +103,29 @@ UIN19P5AwardItem.SetData = function(self, award, callback, hideCount, anim)
   self:Anim()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5AwardItem.Anim = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN19P5AwardItem:Anim()
   if self.anim then
     local posx = 2500
-    do
-      local duration = 0.12
-      -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.pos).anchoredPosition = Vector2(posx, 0)
-      local yieldTime = self.anim * 1000
-      if self.event then
-        ((GameGlobal.Timer)()):CancelEvent(self.event)
-      end
-      self.event = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_5_0 , upvalues : self, duration
-    (self.pos):DOAnchorPosX(0, duration)
-  end
-)
+    local duration = 0.12
+    self.pos.anchoredPosition = Vector2(posx, 0)
+    local yieldTime = self.anim * 1000
+    if self.event then
+      GameGlobal.Timer():CancelEvent(self.event)
     end
+    self.event = GameGlobal.Timer():AddEvent(yieldTime, function()
+      self.pos:DOAnchorPosX(0, duration)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5AwardItem.OnHide = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN19P5AwardItem:OnHide()
   if self.event then
-    ((GameGlobal.Timer)()):CancelEvent(self.event)
+    GameGlobal.Timer():CancelEvent(self.event)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5AwardItem.BgOnClick = function(self, go)
-  -- function num : 0_7
+function UIN19P5AwardItem:BgOnClick(go)
   if self.callback then
-    (self.callback)(self.award)
+    self.callback(self.award)
   end
 end
-
-

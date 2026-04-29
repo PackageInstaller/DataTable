@@ -1,60 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_chess_end_round_message_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChessEndRoundMessageBox", UIMessageBox)
 UIChessEndRoundMessageBox = UIChessEndRoundMessageBox
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChessEndRoundMessageBox.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChessEndRoundMessageBox:OnShow()
   self._blurMaskObject = self:GetGameObject("BlurMask")
   self._blurMask = self:GetUIComponent("H3DUIBlurHelper", "BlurMask")
-  ;
-  (self._blurMaskObject):SetActive(true)
-  local camera = ((GameGlobal.UIStateManager)()):GetMessageBoxCamera()
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._blurMask).OwnerCamera = camera
-  ;
-  (self._blurMask):RefreshBlurTexture()
+  self._blurMaskObject:SetActive(true)
+  local camera = GameGlobal.UIStateManager():GetMessageBoxCamera()
+  self._blurMask.OwnerCamera = camera
+  self._blurMask:RefreshBlurTexture()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChessEndRoundMessageBox.ClearCallback = function(self)
-  -- function num : 0_1
+function UIChessEndRoundMessageBox:ClearCallback()
   self._okCallback = nil
   self._cancelCallback = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChessEndRoundMessageBox.Alert = function(self, popup, params)
-  -- function num : 0_2
-  (self._blurMask):RefreshBlurTexture()
+function UIChessEndRoundMessageBox:Alert(popup, params)
+  self._blurMask:RefreshBlurTexture()
   self._okCallback = self:GetCallBack(popup, params[1])
   self._cancelCallback = self:GetCallBack(popup, params[2])
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChessEndRoundMessageBox.ButtonOKOnClick = function(self)
-  -- function num : 0_3
+function UIChessEndRoundMessageBox:ButtonOKOnClick()
   if self._okCallback then
-    (self._okCallback)()
+    self._okCallback()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChessEndRoundMessageBox.ButtonCancelOnClick = function(self)
-  -- function num : 0_4
+function UIChessEndRoundMessageBox:ButtonCancelOnClick()
   if self._cancelCallback then
-    (self._cancelCallback)()
+    self._cancelCallback()
   end
 end
-
-

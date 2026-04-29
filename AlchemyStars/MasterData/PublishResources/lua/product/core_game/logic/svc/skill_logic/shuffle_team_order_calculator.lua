@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_logic/shuffle_team_order_calculator.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ShuffleTeamOrderCalculator", Object)
 ShuffleTeamOrderCalculator = ShuffleTeamOrderCalculator
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ShuffleTeamOrderCalculator.Constructor = function(self, world)
-  -- function num : 0_0
+function ShuffleTeamOrderCalculator:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ShuffleTeamOrderCalculator.Calculate = function(self, casterEntity, effectParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+function ShuffleTeamOrderCalculator:Calculate(casterEntity, effectParam)
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local targetIDs = scopeResult:GetTargetIDs()
-  for _,entityID in ipairs(targetIDs) do
-    local entity = (self._world):GetEntityByID(entityID)
+  for _, entityID in ipairs(targetIDs) do
+    local entity = self._world:GetEntityByID(entityID)
     local result = self:_CalculateTeam(casterEntity, effectParam, entity)
     if result then
       skillEffectResultContainer:AddEffectResult(result)
@@ -29,77 +19,62 @@ ShuffleTeamOrderCalculator.Calculate = function(self, casterEntity, effectParam)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ShuffleTeamOrderCalculator._CalculateTeam = function(self, casterEntity, effectParam, teamEntity)
-  -- function num : 0_2 , upvalues : _ENV
+function ShuffleTeamOrderCalculator:_CalculateTeam(casterEntity, effectParam, teamEntity)
   if not teamEntity:HasTeam() then
-    return 
+    return
   end
-  local oldLeaderPstID = ((((teamEntity:Team()):GetTeamLeaderEntity()):PetPstID()):GetPstID())
-  local newLeaderPstID = nil
+  local oldLeaderPstID = teamEntity:Team():GetTeamLeaderEntity():PetPstID():GetPstID()
+  local newLeaderPstID
   local tOldTeamOrder = {}
-  for k,v in ipairs((teamEntity:Team()):GetTeamOrder()) do
+  for k, v in ipairs(teamEntity:Team():GetTeamOrder()) do
     tOldTeamOrder[k] = v
   end
-  local svcBattle = (self._world):GetService("Battle")
+  local svcBattle = self._world:GetService("Battle")
   local candidate = svcBattle:GetFirstLeaderCandidate(teamEntity)
   if candidate then
-    newLeaderPstID = (candidate:PetPstID()):GetPstID()
+    newLeaderPstID = candidate:PetPstID():GetPstID()
     svcBattle:ChangeLocalTeamLeader(newLeaderPstID)
   end
   local tTeamOrder = {}
-  for k,v in ipairs((teamEntity:Team()):GetTeamOrder()) do
+  for k, v in ipairs(teamEntity:Team():GetTeamOrder()) do
     tTeamOrder[k] = v
   end
   local nNonShuffledLeaderPstID = tTeamOrder[1]
   local cTeam = teamEntity:Team()
   local cfgShufflePos = effectParam:GetShufflePos()
   local shuffleData = {}
-  local helpPstID = nil
-  for _,pos in ipairs(cfgShufflePos) do
+  local helpPstID
+  for _, pos in ipairs(cfgShufflePos) do
     if tTeamOrder[pos] then
       local pstID = tTeamOrder[pos]
       local e = cTeam:GetPetEntityByPetPstID(pstID)
-      if not (e:PetPstID()):IsHelpPet() then
-        (table.insert)(shuffleData, pstID)
+      if not e:PetPstID():IsHelpPet() then
+        table.insert(shuffleData, pstID)
       else
         helpPstID = pstID
       end
     end
   end
-  local randomLSvc = (self._world):GetService("RandomLogic")
+  local randomLSvc = self._world:GetService("RandomLogic")
   local shuffledPstIDs = {}
-  do
-    while #shuffleData > 0 do
-      local index = randomLSvc:LogicRand(1, #shuffleData)
-      ;
-      (table.insert)(shuffledPstIDs, (table.remove)(shuffleData, index))
-    end
-    local tNewTeamOrder = {}
-    for orderIndex,pstID in ipairs(tTeamOrder) do
-      if not (table.icontains)(cfgShufflePos, R25_PC117) then
-        (table.insert)(tNewTeamOrder, R25_PC117)
-      else
-        -- DECOMPILER ERROR at PC129: Overwrote pending register: R25 in 'AssignReg'
-
-        -- DECOMPILER ERROR at PC130: Overwrote pending register: R25 in 'AssignReg'
-
-        ;
-        (table.insert)(tNewTeamOrder, R25_PC117(shuffledPstIDs))
-      end
-    end
-    if helpPstID then
-      (table.insert)(tNewTeamOrder, helpPstID)
-    end
-    local cTeam = teamEntity:Team()
-    cTeam:SetTeamOrder(tNewTeamOrder)
-    ;
-    ((self._world):GetService("Trigger")):Notify(NTTeamOrderChange:New(teamEntity, tOldTeamOrder, tNewTeamOrder))
-    local result = SkillEffectResult_ShuffleTeamOrder:New(teamEntity:GetID(), oldLeaderPstID, newLeaderPstID, tOldTeamOrder, tNewTeamOrder)
-    ;
-    ((casterEntity:SkillContext()):GetResultContainer()):AddEffectResult(result)
+  while 0 < #shuffleData do
+    local index = randomLSvc:LogicRand(1, #shuffleData)
+    table.insert(shuffledPstIDs, table.remove(shuffleData, index))
   end
+  local tNewTeamOrder = {}
+  for orderIndex, pstID in ipairs(tTeamOrder) do
+    if not table.icontains(cfgShufflePos, orderIndex) then
+      table.insert(tNewTeamOrder, pstID)
+    else
+      table.insert(tNewTeamOrder, table.remove(shuffledPstIDs))
+    end
+  end
+  if helpPstID then
+    table.insert(tNewTeamOrder, helpPstID)
+  end
+  local cTeam = teamEntity:Team()
+  cTeam:SetTeamOrder(tNewTeamOrder)
+  self._world:GetService("Trigger"):Notify(NTTeamOrderChange:New(teamEntity, tOldTeamOrder, tNewTeamOrder))
+  local result = SkillEffectResult_ShuffleTeamOrder:New(teamEntity:GetID(), oldLeaderPstID, newLeaderPstID, tOldTeamOrder, tNewTeamOrder)
+  casterEntity:SkillContext():GetResultContainer():AddEffectResult(result)
 end
-
-

@@ -1,43 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/common/stn_common_wait_run_data_task_end.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Common_WaitRunDataTaskEnd", CTestRobot_Base)
 Common_WaitRunDataTaskEnd = Common_WaitRunDataTaskEnd
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Common_WaitRunDataTaskEnd.Constructor = function(self, pManger, timeout)
-  -- function num : 0_0
+function Common_WaitRunDataTaskEnd:Constructor(pManger, timeout)
   if timeout then
     self._maxTimeoutMS = timeout * 0.001
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Common_WaitRunDataTaskEnd.OnBegin = function(self, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  self._waitStart = (os.clock)()
-  return ((Common_WaitRunDataTaskEnd.super).OnBegin)(self, ...)
+function Common_WaitRunDataTaskEnd:OnBegin(...)
+  self._waitStart = os.clock()
+  return Common_WaitRunDataTaskEnd.super.OnBegin(self, ...)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Common_WaitRunDataTaskEnd.OnWorking = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function Common_WaitRunDataTaskEnd:OnWorking()
+  local runData = self.m_pManager:GetMissionRunData()
   local taskIDList = runData:GetRunTaskIDList()
-  local isFinish = (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList)
-  -- DECOMPILER ERROR at PC23: Unhandled construct in 'MakeBoolean' P3
-
-  local isTimeout = (self._maxTimeoutMS and self._maxTimeoutMS < (os.clock)() - self._waitStart)
+  local isFinish = TaskHelper:GetInstance():IsAllTaskFinished(taskIDList)
+  local isTimeout = self._maxTimeoutMS and os.clock() - self._waitStart > self._maxTimeoutMS or false
   if not isFinish and not isTimeout then
     return false
   end
-  do return ((Common_WaitRunDataTaskEnd.super).OnWorking)(self) end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return Common_WaitRunDataTaskEnd.super.OnWorking(self)
 end
-
-

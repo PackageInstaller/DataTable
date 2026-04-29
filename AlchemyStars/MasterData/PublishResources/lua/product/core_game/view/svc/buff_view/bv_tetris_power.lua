@@ -1,34 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_tetris_power.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewTetrisChangePower", BuffViewBase)
 BuffViewTetrisChangePower = BuffViewTetrisChangePower
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewTetrisChangePower.PlayView = function(self, TT, notify, trace)
-  -- function num : 0_0
-  local featureSvcR = (self._world):GetService("FeatureRender")
-  featureSvcR:NotifyTetrisPower(TT, (self._buffResult):GetNewPower())
+function BuffViewTetrisChangePower:PlayView(TT, notify, trace)
+  local featureSvcR = self._world:GetService("FeatureRender")
+  featureSvcR:NotifyTetrisPower(TT, self._buffResult:GetNewPower())
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewTetrisChangePower.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewTetrisChangePower:IsNotifyMatch(notify)
   if notify and (notify:GetNotifyType() == NotifyType.EntityMoveEnd or notify:GetNotifyType() == NotifyType.PlayerEachMoveEnd) then
     local n = notify
     local ntPosNew = n:GetPosNew()
-    local resPosNew = (self._buffResult):GetNewPos()
+    local resPosNew = self._buffResult:GetNewPos()
     if ntPosNew and resPosNew and ntPosNew == resPosNew then
       return true
     end
     return false
   end
-  do
-    return true
-  end
+  return true
 end
-
-

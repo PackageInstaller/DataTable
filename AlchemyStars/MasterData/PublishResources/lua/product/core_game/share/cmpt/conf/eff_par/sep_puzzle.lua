@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_puzzle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectPuzzleParam", SkillEffectParamBase)
 SkillEffectPuzzleParam = SkillEffectPuzzleParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectPuzzleParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectPuzzleParam:Constructor(t)
   self._convertPieceType = t.convertPieceType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPuzzleParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectPuzzleParam:GetEffectType()
   return SkillEffectType.Puzzle
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPuzzleParam.GetConvertPieceType = function(self)
-  -- function num : 0_2
+function SkillEffectPuzzleParam:GetConvertPieceType()
   return self._convertPieceType
 end
-
-

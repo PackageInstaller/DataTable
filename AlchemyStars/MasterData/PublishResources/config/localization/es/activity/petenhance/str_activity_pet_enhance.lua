@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/es/activity/petenhance/str_activity_pet_enhance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_activity_pet_enhance_title = "Correcciones de actualización", str_activity_pet_enhance_tips = "En las etapas del evento, se han mejorado los siguientes Aurorianos:", str_activity_pet_enhance_detail_tips = "- Nivel ≥ <color=#faba3c>Ascensión {1} Nv.{2}</color>\n- Equipamiento ≥ <color=#faba3c>Nv.{3}</color>", str_activity_pet_enhance_detail_titile = "Vista previa de los atributos de Aurorian"}
+local config = {
+  str_activity_pet_enhance_title = "Correcciones de actualización",
+  str_activity_pet_enhance_tips = "En las etapas del evento, se han mejorado los siguientes Aurorianos:",
+  str_activity_pet_enhance_detail_tips = "- Nivel ≥ <color=#faba3c>Ascensión {1} Nv.{2}</color>\n- Equipamiento ≥ <color=#faba3c>Nv.{3}</color>",
+  str_activity_pet_enhance_detail_titile = "Vista previa de los atributos de Aurorian"
+}
 return config
-

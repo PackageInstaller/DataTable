@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_reset_grid_element.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParam_ResetGridElement", SkillEffectParamBase)
 SkillEffectParam_ResetGridElement = SkillEffectParam_ResetGridElement
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_ResetGridElement.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_ResetGridElement:Constructor(t)
   self._element = t.element
   self._percent = t.percent
   self._convertGray = t.convertGray
@@ -19,126 +12,77 @@ SkillEffectParam_ResetGridElement.Constructor = function(self, t)
     self._flushTrap = t.flushTrap
   end
   self._ignoreBlock = t.ignoreBlock
-  if not t.protectElementType then
-    local protectElementArray = {}
-  end
+  local protectElementArray = t.protectElementType or {}
   self._protectElementType = {}
-  for _,pieceType in ipairs(protectElementArray) do
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self._protectElementType)[pieceType] = true
+  for _, pieceType in ipairs(protectElementArray) do
+    self._protectElementType[pieceType] = true
   end
-  do
-    if not t.excludeTrapIDList then
-      self._excludeTrapIDList = {}
-      self._excludeRangColor = t.excludeRangeColor or false
-      if not t.targetGridTypeList then
-        self._targetGridTypeList = {1, 2, 3, 4}
-        self._resetTrapId = t.resetTrapId
-        self._targetElement = t.targetElement
-        self._targetElementProb = t.targetElementProb
-        self._ignoreLockSeed = t.ignoreLockSeed or false
-      end
-    end
-  end
+  self._excludeTrapIDList = t.excludeTrapIDList or {}
+  self._excludeRangColor = t.excludeRangeColor or false
+  self._targetGridTypeList = t.targetGridTypeList or {
+    1,
+    2,
+    3,
+    4
+  }
+  self._resetTrapId = t.resetTrapId
+  self._targetElement = t.targetElement
+  self._targetElementProb = t.targetElementProb
+  self._ignoreLockSeed = t.ignoreLockSeed or false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ResetGridElement.GetResetTrapId = function(self)
-  -- function num : 0_1
+function SkillEffectParam_ResetGridElement:GetResetTrapId()
   return self._resetTrapId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ResetGridElement.GetTargetElement = function(self)
-  -- function num : 0_2
+function SkillEffectParam_ResetGridElement:GetTargetElement()
   return self._targetElement
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ResetGridElement.GetTargetElementProb = function(self)
-  -- function num : 0_3
+function SkillEffectParam_ResetGridElement:GetTargetElementProb()
   return self._targetElementProb
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ResetGridElement.GetEffectType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillEffectParam_ResetGridElement:GetEffectType()
   return SkillEffectType.ResetGridElement
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ResetGridElement.GetElement = function(self)
-  -- function num : 0_5
+function SkillEffectParam_ResetGridElement:GetElement()
   return self._element
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ResetGridElement.GetPercent = function(self)
-  -- function num : 0_6
+function SkillEffectParam_ResetGridElement:GetPercent()
   return self._percent
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ResetGridElement.GetConvertGray = function(self)
-  -- function num : 0_7
+function SkillEffectParam_ResetGridElement:GetConvertGray()
   return self._convertGray
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ResetGridElement.GetCanFlushTrap = function(self)
-  -- function num : 0_8
+function SkillEffectParam_ResetGridElement:GetCanFlushTrap()
   return self._flushTrap
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ResetGridElement.GetProtectElementType = function(self)
-  -- function num : 0_9
+function SkillEffectParam_ResetGridElement:GetProtectElementType()
   return self._protectElementType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ResetGridElement.GetExcludeTrapIDList = function(self)
-  -- function num : 0_10
+function SkillEffectParam_ResetGridElement:GetExcludeTrapIDList()
   return self._excludeTrapIDList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ResetGridElement.GetExcludeRangeColor = function(self)
-  -- function num : 0_11
+function SkillEffectParam_ResetGridElement:GetExcludeRangeColor()
   return self._excludeRangColor
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ResetGridElement.GetTargetGridTypeList = function(self)
-  -- function num : 0_12
+function SkillEffectParam_ResetGridElement:GetTargetGridTypeList()
   return self._targetGridTypeList
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ResetGridElement.GetIgnoreBlock = function(self)
-  -- function num : 0_13
+function SkillEffectParam_ResetGridElement:GetIgnoreBlock()
   return self._ignoreBlock
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ResetGridElement.GetIgnoreLockSeed = function(self)
-  -- function num : 0_14
+function SkillEffectParam_ResetGridElement:GetIgnoreLockSeed()
   return self._ignoreLockSeed
 end
-
-

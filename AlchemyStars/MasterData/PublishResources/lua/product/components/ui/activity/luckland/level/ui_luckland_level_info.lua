@@ -1,43 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/level/ui_luckland_level_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandLevelInfo", UIController)
 UILuckLandLevelInfo = UILuckLandLevelInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandLevelInfo.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UILuckLandLevelInfo:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelInfo.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UILuckLandLevelInfo:OnShow(uiParams)
   self._cfg = uiParams[1]
   self._clientCfg = uiParams[2]
   self._component = uiParams[3]
-  self._componentInfo = (self._component):GetComponentInfo()
-  ;
-  (LuckLandData:GetInstance()):Init((self._clientCfg).ID, (self._cfg).ThreeCondDesc, self._component, self._componentInfo)
+  self._componentInfo = self._component:GetComponentInfo()
+  LuckLandData:GetInstance():Init(self._clientCfg.ID, self._cfg.ThreeCondDesc, self._component, self._componentInfo)
   self:_InitWidget()
   self:_OnValue()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelInfo.AfterUILayerChanged = function(self)
-  -- function num : 0_2
+function UILuckLandLevelInfo:AfterUILayerChanged()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelInfo._InitWidget = function(self)
-  -- function num : 0_3
+function UILuckLandLevelInfo:_InitWidget()
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._desc = self:GetUIComponent("UILocalizationText", "Desc")
   self._bestScore = self:GetUIComponent("UILocalizationText", "BestScore")
@@ -50,179 +33,131 @@ UILuckLandLevelInfo._InitWidget = function(self)
   self._animation = self:GetUIComponent("Animation", "Animation")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelInfo._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._name):SetText((StringTable.Get)((self._clientCfg).Name))
-  ;
-  (self._desc):SetText((StringTable.Get)((self._clientCfg).Desc))
+function UILuckLandLevelInfo:_OnValue()
+  self._name:SetText(StringTable.Get(self._clientCfg.Name))
+  self._desc:SetText(StringTable.Get(self._clientCfg.Desc))
   local bestScore = 0
-  local passInfo = ((self._componentInfo).m_pass_mission_info)[(self._clientCfg).ID]
+  local passInfo = self._componentInfo.m_pass_mission_info[self._clientCfg.ID]
   if passInfo then
     bestScore = passInfo.record_score
   end
   if bestScore <= 0 then
-    (self._bestScoreBgGO):SetActive(false)
+    self._bestScoreBgGO:SetActive(false)
   end
-  ;
-  (self._bestScore):SetText((StringTable.Get)("str_luckland_levelinfo_bestscore", bestScore))
+  self._bestScore:SetText(StringTable.Get("str_luckland_levelinfo_bestscore", bestScore))
   self:_CreateWords()
   self:_CreateConditions()
   self:_CreateRewards()
-  ;
-  (self._rankBtnGO):SetActive((self._cfg).Type == LuckLandMissionType.LuckLandMissionType_Rank)
-  ;
-  (self._introBgGO):SetActive(false)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._rankBtnGO:SetActive(self._cfg.Type == LuckLandMissionType.LuckLandMissionType_Rank)
+  self._introBgGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelInfo.CloseOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UILuckLandLevelInfo:CloseOnClick(go)
   self:Lock("UILuckLandLevelInfo")
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    (self._animation):Play("uieff_UILuckLandLevelInfo_out")
+    self._animation:Play("uieff_UILuckLandLevelInfo_out")
     YIELD(TT, 333)
     self:CloseDialog()
     self:UnLock("UILuckLandLevelInfo")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelInfo.CardsBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  ((LuckLandData:GetInstance()):CurCardDatas()):Reset(true)
+function UILuckLandLevelInfo:CardsBtnOnClick(go)
+  LuckLandData:GetInstance():CurCardDatas():Reset(true)
   self:ShowDialog("UILuckLandCardBag", false)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelInfo.BuildingsBtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  ((LuckLandData:GetInstance()):CurBuildingDatas()):Reset()
+function UILuckLandLevelInfo:BuildingsBtnOnClick(go)
+  LuckLandData:GetInstance():CurBuildingDatas():Reset()
   self:ShowDialog("UILuckLandBuildings")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelInfo.RankBtnOnClick = function(self, go)
-  -- function num : 0_8
-  self:ShowDialog("UILuckLandRank", self._component, (self._clientCfg).ID)
+function UILuckLandLevelInfo:RankBtnOnClick(go)
+  self:ShowDialog("UILuckLandRank", self._component, self._clientCfg.ID)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelInfo.ChallengeBtnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  ((LuckLandData:GetInstance()):CurCardDatas()):Reset(false)
-  ;
-  ((LuckLandData:GetInstance()):CurBuildingDatas()):Reset()
-  self:ShowDialog("UILuckLandMainGameController", (self._clientCfg).ID)
+function UILuckLandLevelInfo:ChallengeBtnOnClick(go)
+  LuckLandData:GetInstance():CurCardDatas():Reset(false)
+  LuckLandData:GetInstance():CurBuildingDatas():Reset()
+  self:ShowDialog("UILuckLandMainGameController", self._clientCfg.ID)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelInfo._CreateWords = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self._clientCfg).AffixList then
-    local count = (table.count)((self._clientCfg).AffixList)
-    if count > 0 then
-      self._wordWidgets = (UIWidgetHelper.SpawnObjects)(self, "WordList", "UILuckLandWordItem", count)
-      for key,wordWidget in ipairs(self._wordWidgets) do
-        wordWidget:SetData(key, ((self._clientCfg).AffixList)[key])
+function UILuckLandLevelInfo:_CreateWords()
+  if self._clientCfg.AffixList then
+    local count = table.count(self._clientCfg.AffixList)
+    if 0 < count then
+      self._wordWidgets = UIWidgetHelper.SpawnObjects(self, "WordList", "UILuckLandWordItem", count)
+      for key, wordWidget in ipairs(self._wordWidgets) do
+        wordWidget:SetData(key, self._clientCfg.AffixList[key])
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelInfo._CreateConditions = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  if (self._cfg).ThreeCondDesc then
-    local count = (table.count)((self._cfg).ThreeCondDesc)
-    if count > 0 then
-      self._conditionWidgets = (UIWidgetHelper.SpawnObjects)(self, "ConditionList", "UILuckLandConditionItem", count)
-      for key,conditionWidget in ipairs(self._conditionWidgets) do
-        conditionWidget:SetData(key, ((self._cfg).ThreeCondDesc)[key], ((self._componentInfo).m_pass_mission_info)[(self._clientCfg).ID])
+function UILuckLandLevelInfo:_CreateConditions()
+  if self._cfg.ThreeCondDesc then
+    local count = table.count(self._cfg.ThreeCondDesc)
+    if 0 < count then
+      self._conditionWidgets = UIWidgetHelper.SpawnObjects(self, "ConditionList", "UILuckLandConditionItem", count)
+      for key, conditionWidget in ipairs(self._conditionWidgets) do
+        conditionWidget:SetData(key, self._cfg.ThreeCondDesc[key], self._componentInfo.m_pass_mission_info[self._clientCfg.ID])
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelInfo._CreateRewards = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if (self._cfg).Rewards or (self._cfg).ThreeRewards then
+function UILuckLandLevelInfo:_CreateRewards()
+  if self._cfg.Rewards or self._cfg.ThreeRewards then
     local count = 0
-    local isPass = ((self._componentInfo).m_pass_mission_info)[(self._clientCfg).ID] ~= nil
-    if (self._cfg).Rewards and not isPass then
-      count = (table.count)((self._cfg).Rewards)
+    local isPass = self._componentInfo.m_pass_mission_info[self._clientCfg.ID] ~= nil
+    if self._cfg.Rewards and not isPass then
+      count = table.count(self._cfg.Rewards)
     end
     local threePass = false
-    do
-      if isPass then
-        local passInfo = ((self._componentInfo).m_pass_mission_info)[(self._clientCfg).ID]
-        if passInfo.star >= 7 then
-          threePass = true
+    if isPass then
+      local passInfo = self._componentInfo.m_pass_mission_info[self._clientCfg.ID]
+      if passInfo.star >= 7 then
+        threePass = true
+      end
+    end
+    if self._cfg.ThreeRewards and not threePass then
+      count = count + table.count(self._cfg.ThreeRewards)
+    end
+    if 0 < count then
+      self._rewardWidgets = UIWidgetHelper.SpawnObjects(self, "RewardList", "UILuckLandRewardItem", count)
+      local rewards = {}
+      if self._cfg.Rewards and not isPass then
+        for i = 1, #self._cfg.Rewards do
+          local data = {}
+          data.assetid = self._cfg.Rewards[i][1]
+          data.count = self._cfg.Rewards[i][2]
+          data.type = StageAwardType.First
+          rewards[#rewards + 1] = data
         end
       end
-      if (self._cfg).ThreeRewards and not threePass then
-        count = count + (table.count)((self._cfg).ThreeRewards)
-      end
-      if count > 0 then
-        self._rewardWidgets = (UIWidgetHelper.SpawnObjects)(self, "RewardList", "UILuckLandRewardItem", count)
-        local rewards = {}
-        if (self._cfg).Rewards and not isPass then
-          for i = 1, #(self._cfg).Rewards do
-            local data = {}
-            data.assetid = (((self._cfg).Rewards)[i])[1]
-            data.count = (((self._cfg).Rewards)[i])[2]
-            data.type = StageAwardType.First
-            rewards[#rewards + 1] = data
-          end
-        end
-        if (self._cfg).ThreeRewards and not threePass then
-          for i = 1, #(self._cfg).ThreeRewards do
-            local data = {}
-            data.assetid = (((self._cfg).ThreeRewards)[i])[1]
-            data.count = (((self._cfg).ThreeRewards)[i])[2]
-            data.type = StageAwardType.Star
-            rewards[#rewards + 1] = data
-          end
-        end
-        for key,rewardWidget in ipairs(self._rewardWidgets) do
-          rewardWidget:SetData(rewards[key], function(id, pos)
-    -- function num : 0_12_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "ItemTips", id, pos)
-  end
-)
+      if self._cfg.ThreeRewards and not threePass then
+        for i = 1, #self._cfg.ThreeRewards do
+          local data = {}
+          data.assetid = self._cfg.ThreeRewards[i][1]
+          data.count = self._cfg.ThreeRewards[i][2]
+          data.type = StageAwardType.Star
+          rewards[#rewards + 1] = data
         end
       end
-      -- DECOMPILER ERROR: 8 unprocessed JMP targets
+      for key, rewardWidget in ipairs(self._rewardWidgets) do
+        rewardWidget:SetData(rewards[key], function(id, pos)
+          UIWidgetHelper.SetAwardItemTips(self, "ItemTips", id, pos)
+        end)
+      end
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelInfo.IntroBtnOnClick = function(self, go)
-  -- function num : 0_13
-  (self._introBgGO):SetActive(true)
+function UILuckLandLevelInfo:IntroBtnOnClick(go)
+  self._introBgGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelInfo.IntroBgOnClick = function(self, go)
-  -- function num : 0_14
-  (self._introBgGO):SetActive(false)
+function UILuckLandLevelInfo:IntroBgOnClick(go)
+  self._introBgGO:SetActive(false)
 end
-
-

@@ -1,67 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/time_speed_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TimeSpeedSystemRender_Render", ReactiveSystem)
 TimeSpeedSystemRender_Render = TimeSpeedSystemRender_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TimeSpeedSystemRender_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function TimeSpeedSystemRender_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeSpeedSystemRender_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).PreviewChainPath)}, {"AddedOrRemoved"})
+function TimeSpeedSystemRender_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.PreviewChainPath)
+  }, {
+    "AddedOrRemoved"
+  })
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeSpeedSystemRender_Render.Filter = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._world):GetGameTurn() == GameTurnType.RemotePlayerTurn then
+function TimeSpeedSystemRender_Render:Filter(entity)
+  if self._world:GetGameTurn() == GameTurnType.RemotePlayerTurn then
     return false
   end
-  local utilStatSvc = (self._world):GetService("UtilData")
+  local utilStatSvc = self._world:GetService("UtilData")
   return not utilStatSvc:GetStatAutoFight()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeSpeedSystemRender_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3 , upvalues : _ENV
-  local e = ((self._world):Player()):GetLocalTeamEntity()
+function TimeSpeedSystemRender_Render:ExecuteEntities(entities)
+  local e = self._world:Player():GetLocalTeamEntity()
   if not e then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BattleTimeSpeed, true)
-    return 
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.BattleTimeSpeed, true)
+    return
   end
-  local previewEntity = (self._world):GetPreviewEntity()
+  local previewEntity = self._world:GetPreviewEntity()
   local previewChainPathCmpt = previewEntity:PreviewChainPath()
   local chainPath = previewChainPathCmpt:GetPreviewChainPath()
   if not chainPath then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BattleTimeSpeed, true)
-    return 
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.BattleTimeSpeed, true)
+    return
   end
-  if #chainPath > 0 then
-    local utilDataSvc = (self._world):GetService("UtilData")
+  if 0 < #chainPath then
+    local utilDataSvc = self._world:GetService("UtilData")
     local curMainStateID = utilDataSvc:GetCurMainStateID()
     if curMainStateID == GameStateID.WaitInput then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BattleTimeSpeed, false, true)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.BattleTimeSpeed, false, true)
     else
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BattleTimeSpeed, false)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.BattleTimeSpeed, false)
     end
   else
-    do
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BattleTimeSpeed, true)
-    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.BattleTimeSpeed, true)
   end
 end
-
-

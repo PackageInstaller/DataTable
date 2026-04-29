@@ -1,51 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/Chess/ui_activity_chess_map_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN15ChessMapLine", UICustomWidget)
 UIN15ChessMapLine = UIN15ChessMapLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN15ChessMapLine.OnShow = function(self)
-  -- function num : 0_0
+function UIN15ChessMapLine:OnShow()
   self._lineRect = self:GetUIComponent("RectTransform", "UIN15ChessMapLine")
   self._rect = self:GetUIComponent("RectTransform", "shape")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15ChessMapLine.Flush = function(self, from, to)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._lineRect).anchorMax = Vector2(0.5, 0)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._lineRect).anchorMin = Vector2(0.5, 0)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._lineRect).pivot = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._lineRect).sizeDelta = Vector2.zero
-  local dis = (Vector2.Distance)(from, to)
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = Vector2(dis, ((self._rect).sizeDelta).y)
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = from
+function UIN15ChessMapLine:Flush(from, to)
+  self._lineRect.anchorMax = Vector2(0.5, 0)
+  self._lineRect.anchorMin = Vector2(0.5, 0)
+  self._lineRect.pivot = Vector2(0, 0.5)
+  self._lineRect.sizeDelta = Vector2.zero
+  local dis = Vector2.Distance(from, to)
+  self._rect.sizeDelta = Vector2(dis, self._rect.sizeDelta.y)
+  self._rect.anchoredPosition = from
   local v = to - from
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect).localRotation = (Quaternion.FromToRotation)(Vector3.right, Vector3(v.x, v.y, 0))
+  self._rect.localRotation = Quaternion.FromToRotation(Vector3.right, Vector3(v.x, v.y, 0))
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/side_enter/cls/ui_side_enter_item_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISideEnterItem_Base", UICustomWidget)
 UISideEnterItem_Base = UISideEnterItem_Base
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterItem_Base.SetMainInfo = function(self, mainCfg, btnCfg, clickCallback, setShowCallback, setNewRedCallback)
-  -- function num : 0_0
+function UISideEnterItem_Base:SetMainInfo(mainCfg, btnCfg, clickCallback, setShowCallback, setNewRedCallback)
   self._mainCfg = mainCfg
   self._btnCfg = btnCfg
   self._clickCallback = clickCallback
@@ -16,101 +9,61 @@ UISideEnterItem_Base.SetMainInfo = function(self, mainCfg, btnCfg, clickCallback
   self._setNewRedCallback = setNewRedCallback
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Base.OnSideEnterLoad = function(self, TT)
-  -- function num : 0_1
-  if self:_CheckOpen(TT) then
-    local isOpen = self:_BtnCheckFunc(TT)
-  end
+function UISideEnterItem_Base:OnSideEnterLoad(TT)
+  local isOpen = self:_CheckOpen(TT) and self:_BtnCheckFunc(TT)
   if isOpen then
-    (self._setShowCallback)(true)
+    self._setShowCallback(true)
     self:_CheckPoint()
     self:DoShow()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Base._BtnCheckFunc = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  local isOpen = (UISideEnterBtnConst.CheckOpen)(TT, self._btnCfg)
+function UISideEnterItem_Base:_BtnCheckFunc(TT)
+  local isOpen = UISideEnterBtnConst.CheckOpen(TT, self._btnCfg)
   return isOpen
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Base._CheckOpen = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.exception)(self._className .. "必须重写 _CheckOpen() 方法:", (debug.traceback)())
+function UISideEnterItem_Base:_CheckOpen(TT)
+  Log.exception(self._className .. "必须重写 _CheckOpen() 方法:", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Base.GetSideEnterRawImage = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.exception)(self._className .. "必须重写 GetSideEnterRawImage() 方法:", (debug.traceback)())
+function UISideEnterItem_Base:GetSideEnterRawImage()
+  Log.exception(self._className .. "必须重写 GetSideEnterRawImage() 方法:", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Base.DoShow = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.exception)(self._className .. "必须重写 DoShow() 方法:", (debug.traceback)())
+function UISideEnterItem_Base:DoShow()
+  Log.exception(self._className .. "必须重写 DoShow() 方法:", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Base._CalcNew = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.exception)(self._className .. "必须重写 _CalcNew() 方法:", (debug.traceback)())
+function UISideEnterItem_Base:_CalcNew()
+  Log.exception(self._className .. "必须重写 _CalcNew() 方法:", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Base._CalcRed = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.exception)(self._className .. "必须重写 _CalcRed() 方法:", (debug.traceback)())
+function UISideEnterItem_Base:_CalcRed()
+  Log.exception(self._className .. "必须重写 _CalcRed() 方法:", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Base._CalcHot = function(self)
-  -- function num : 0_8
-  return (self._mainCfg).Hot
+function UISideEnterItem_Base:_CalcHot()
+  return self._mainCfg.Hot
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Base._CheckPoint = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UISideEnterItem_Base:_CheckPoint()
   if not self.view then
-    return 
+    return
   end
   local new = self:_CalcNew()
   local red = self:_CalcRed()
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, new, red, "new", "red")
+  UIWidgetHelper.SetNewAndReds(self, new, red, "new", "red")
   local hotCfg = self:_CalcHot()
-  if (new ~= 0 and new ~= false) or hotCfg ~= true then
-    do
-      local hot = hotCfg == nil
-      ;
-      (self:GetGameObject("hot")):SetActive(hot)
-      ;
-      (self._setNewRedCallback)(new, red)
-      -- DECOMPILER ERROR: 2 unprocessed JMP targets
-    end
+  if hotCfg ~= nil then
+    local hot = (new == 0 or new == false) and hotCfg == true
+    self:GetGameObject("hot"):SetActive(hot)
   end
+  self._setNewRedCallback(new, red)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Base.BtnOnClick = function(self, go)
-  -- function num : 0_10
+function UISideEnterItem_Base:BtnOnClick(go)
   if self._clickCallback ~= nil then
-    (self._clickCallback)()
+    self._clickCallback()
   end
 end
-
-

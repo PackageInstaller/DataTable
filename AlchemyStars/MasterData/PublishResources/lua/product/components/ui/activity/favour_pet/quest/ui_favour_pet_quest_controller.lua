@@ -1,303 +1,203 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/favour_pet/quest/ui_favour_pet_quest_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFavourPetQuestController", UIController)
 UIFavourPetQuestController = UIFavourPetQuestController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFavourPetQuestController._SetCurComponent = function(self, index)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cmptId = (UIFavourPetHelper.Component_Quest)(self._campaign, index)
+function UIFavourPetQuestController:_SetCurComponent(index)
+  self._cmptId, self._component, self._componentInfo = UIFavourPetHelper.Component_Quest(self._campaign, index)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIFavourPetQuestController:LoadDataOnEnter(TT, res, uiParams)
   local campaignType = ECampaignType.CAMPAIGN_TYPE_INLAND_VOTE
   local componentIds = {}
-  self._campaign = (UIActivityHelper.LoadDataOnEnter)(TT, res, campaignType, componentIds)
+  self._campaign = UIActivityHelper.LoadDataOnEnter(TT, res, campaignType, componentIds)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  self._tipsCallback = function(matid, pos)
-    -- function num : 0_2_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
+function UIFavourPetQuestController:OnShow(uiParams)
+  function self._tipsCallback(matid, pos)
+    UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
   end
-
+  
   self:_SetTabBtns()
   self:_SetTabSelect(1)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController.OnHide = function(self)
-  -- function num : 0_3
+function UIFavourPetQuestController:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController.Refresh_ByParams = function(self, params)
-  -- function num : 0_4
+function UIFavourPetQuestController:Refresh_ByParams(params)
   if not self.view then
-    return 
+    return
   end
-  if not params then
-    params = {}
-  end
+  params = params or {}
   self:_SetRedPoint()
   self:_CheckQuestDailyReset()
   self:_SetCoin()
   self:_SetDynamicList()
   if params.resetPos and self._dynamicListHelper then
-    (self._dynamicListHelper):MovePanelToItemIndex(0, 0)
+    self._dynamicListHelper:MovePanelToItemIndex(0, 0)
   end
   if params.anim_ListItem then
     self:_DynamicListPlayAnimation()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController._SetCoin = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local component = (self._campaign):GetComponent(ECampaignVoteComponentID.ECAMPAIGN_VOTE)
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_coin", "UIFavourPetCoin")
+function UIFavourPetQuestController:_SetCoin()
+  local component = self._campaign:GetComponent(ECampaignVoteComponentID.ECAMPAIGN_VOTE)
+  local obj = UIWidgetHelper.SpawnObject(self, "_coin", "UIFavourPetCoin")
   obj:SetData(component, self._tipsCallback)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController._CheckQuestDailyReset = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local nextTime = (self._component):GetEarliestEndTimeInDailyQuest()
+function UIFavourPetQuestController:_CheckQuestDailyReset()
+  local nextTime = self._component:GetEarliestEndTimeInDailyQuest()
   self:_SetRemainingTime("_time", nextTime, function(first)
-    -- function num : 0_6_0 , upvalues : _ENV, nextTime, self
     local logStr = "UIFavourPetQuestController:_CheckQuestDailyReset() "
-    ;
-    (Log.info)(logStr, "Timer stop in ", nextTime)
+    Log.info(logStr, "Timer stop in ", nextTime)
     if first then
-      (Log.info)(logStr, "Timer stop by first tick")
-      return 
+      Log.info(logStr, "Timer stop by first tick")
+      return
     end
     self:StartTask(function(TT)
-      -- function num : 0_6_0_0 , upvalues : _ENV, self
       local res = AsyncRequestRes:New()
-      ;
-      (self._component):HandleCamQuestDailyReset(TT, res)
+      self._component:HandleCamQuestDailyReset(TT, res)
       if res:GetSucc() then
-        (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+        self._campaign:ReLoadCampaignInfo_Force(TT, res)
       end
       self:Refresh_ByParams({resetPos = true, anim_ListItem = true})
-    end
-, self)
-  end
-)
+    end, self)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController._SetRemainingTime = function(self, widgetName, endTime, stopCallback)
-  -- function num : 0_7 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIFavourPetQuestController:_SetRemainingTime(widgetName, endTime, stopCallback)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   local isShow = endTime ~= nil or endTime ~= 0
-  ;
-  (obj:GetGameObject()):SetActive(isShow)
+  obj:GetGameObject():SetActive(isShow)
   if not isShow then
-    return 
+    return
   end
   obj:SetAdvanceText("str_favour_pet_quest_time")
   obj:SetCustomTimeStr_Common_2()
   obj:SetData(endTime, nil, stopCallback)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController._SetTabBtns = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local title = {"str_favour_pet_quest_tab_btn_1", "str_favour_pet_quest_tab_btn_2"}
-  self._tabBtns = (UIWidgetHelper.SpawnObjects)(self, "_tabBtns", "UIActivityCommonTextTabBtn", #title)
-  for i,v in ipairs(self._tabBtns) do
+function UIFavourPetQuestController:_SetTabBtns()
+  local title = {
+    "str_favour_pet_quest_tab_btn_1",
+    "str_favour_pet_quest_tab_btn_2"
+  }
+  self._tabBtns = UIWidgetHelper.SpawnObjects(self, "_tabBtns", "UIActivityCommonTextTabBtn", #title)
+  for i, v in ipairs(self._tabBtns) do
     v:SetData(i, {
-indexWidgets = {}
-, 
-onoffWidgets = {
-{"OnBtn"}
-, 
-{"OffBtn"}
-}
-, 
-lockWidgets = {
-{}
-, 
-{}
-}
-, 
-titleWidgets = {"txtTitle"}
-, titleText = (StringTable.Get)(title[i]), callback = function(index, isOffBtnClick)
-    -- function num : 0_8_0 , upvalues : self
-    if isOffBtnClick then
-      self:_SetTabSelect(index)
-    end
-  end
-, lockCallback = nil})
+      indexWidgets = {},
+      onoffWidgets = {
+        {"OnBtn"},
+        {"OffBtn"}
+      },
+      lockWidgets = {
+        {},
+        {}
+      },
+      titleWidgets = {"txtTitle"},
+      titleText = StringTable.Get(title[i]),
+      callback = function(index, isOffBtnClick)
+        if isOffBtnClick then
+          self:_SetTabSelect(index)
+        end
+      end,
+      lockCallback = nil
+    })
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController._SetTabSelect = function(self, index)
-  -- function num : 0_9 , upvalues : _ENV
+function UIFavourPetQuestController:_SetTabSelect(index)
   self._tabIndex = index
-  for i,v in ipairs(self._tabBtns) do
+  for i, v in ipairs(self._tabBtns) do
     v:SetSelected(i == index)
   end
   self:_SetCurComponent(self._tabIndex)
   self:Refresh_ByParams({resetPos = true, anim_ListItem = true})
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController._SetRedPoint = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for i,v in ipairs(self._tabBtns) do
-    local id = (UIFavourPetHelper.ComponentId_Quest)(i)
-    local isShow = (self._campaign):CheckComponentRed(id)
-    ;
-    (v:GetGameObject("red")):SetActive(isShow)
+function UIFavourPetQuestController:_SetRedPoint()
+  for i, v in ipairs(self._tabBtns) do
+    local id = UIFavourPetHelper.ComponentId_Quest(i)
+    local isShow = self._campaign:CheckComponentRed(id)
+    v:GetGameObject("red"):SetActive(isShow)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController._SetDynamicListData = function(self)
-  -- function num : 0_11
-  self._dynamicListInfo = (self._component):GetQuestInfo()
-  self._questStatus = (self._component):GetCampaignQuestStatus(self._dynamicListInfo)
-  ;
-  (self._component):SortQuestInfoByDaily(self._dynamicListInfo)
-  ;
-  (self._component):SortQuestInfoByCampaignQuestStatus(self._dynamicListInfo)
+function UIFavourPetQuestController:_SetDynamicListData()
+  self._dynamicListInfo = self._component:GetQuestInfo()
+  self._questStatus = self._component:GetCampaignQuestStatus(self._dynamicListInfo)
+  self._component:SortQuestInfoByDaily(self._dynamicListInfo)
+  self._component:SortQuestInfoByCampaignQuestStatus(self._dynamicListInfo)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController._SetDynamicList = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIFavourPetQuestController:_SetDynamicList()
   self:_SetDynamicListData()
   if not self._dynamicListHelper then
     self._dynamicListHelper = UIActivityDynamicListHelper:New(self, self:GetUIComponent("UIDynamicScrollView", "_dynamicList"), "UIFavourPetQuestCell", function(listItem, itemIndex)
-    -- function num : 0_12_0 , upvalues : self
-    self:_SetCellData(listItem, itemIndex)
-  end
-)
+      self:_SetCellData(listItem, itemIndex)
+    end)
   end
   local itemCount = #self._dynamicListInfo
   local itemCountPerRow = 1
-  ;
-  (self._dynamicListHelper):Refresh(itemCount, itemCountPerRow)
+  self._dynamicListHelper:Refresh(itemCount, itemCountPerRow)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController._SetCellData = function(self, listItem, index, rightItem)
-  -- function num : 0_13
-  local quest = (self._dynamicListInfo)[index]
-  local status = (self._questStatus)[quest]
+function UIFavourPetQuestController:_SetCellData(listItem, index, rightItem)
+  local quest = self._dynamicListInfo[index]
+  local status = self._questStatus[quest]
   if quest ~= nil then
     listItem:SetData(index, self._campaign, quest, status, function(questInfo)
-    -- function num : 0_13_0 , upvalues : self
-    (self._component):Start_HandleQuestTake(questInfo.quest_id, function(res, rewards)
-      -- function num : 0_13_0_0 , upvalues : self
-      self:_OnGetRewards(res, rewards)
-    end
-)
-  end
-, self._tipsCallback)
+      self._component:Start_HandleQuestTake(questInfo.quest_id, function(res, rewards)
+        self:_OnGetRewards(res, rewards)
+      end)
+    end, self._tipsCallback)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController._DynamicListPlayAnimation = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local tb = (self._dynamicListHelper):GetVisibleItem()
-  for _,v in ipairs(tb) do
-    (v.item):PlayAnimationInSequence(v.index)
+function UIFavourPetQuestController:_DynamicListPlayAnimation()
+  local tb = self._dynamicListHelper:GetVisibleItem()
+  for _, v in ipairs(tb) do
+    v.item:PlayAnimationInSequence(v.index)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController._OnGetRewards = function(self, res, rewards)
-  -- function num : 0_15 , upvalues : _ENV
+function UIFavourPetQuestController:_OnGetRewards(res, rewards)
   if res:GetSucc() then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
+    UIActivityHelper.ShowUIGetRewards(rewards)
     self:Refresh_ByParams({resetPos = true, anim_ListItem = true})
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_15_0 , upvalues : self
-    self:Refresh_ByParams({resetPos = true, anim_ListItem = true})
-  end
-, function()
-    -- function num : 0_15_1 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIMain)
-  end
-)
+    self._campaign:CheckErrorCode(res.m_result, function()
+      self:Refresh_ByParams({resetPos = true, anim_ListItem = true})
+    end, function()
+      self:SwitchState(UIStateType.UIMain)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_16
+function UIFavourPetQuestController:CloseBtnOnClick(go)
   self:_CloseWithAnim()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController._CloseWithAnim = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIFavourPetQuestController:_CloseWithAnim()
   local animName, duration = "uieff_UIFavourPetQuestController_out", 167
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", animName, duration, function()
-    -- function num : 0_17_0 , upvalues : self
+  UIWidgetHelper.PlayAnimation(self, "_anim", animName, duration, function()
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController._AttachEvents = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIFavourPetQuestController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController._DetachEvents = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIFavourPetQuestController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetQuestController._CheckActivityClose = function(self, id)
-  -- function num : 0_20
-  if self._campaign and (self._campaign)._id == id then
+function UIFavourPetQuestController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:CloseDialog()
   end
 end
-
-

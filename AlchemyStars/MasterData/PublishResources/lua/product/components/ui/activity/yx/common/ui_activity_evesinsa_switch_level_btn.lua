@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/common/ui_activity_evesinsa_switch_level_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityEveSinsaSwitchLevelBtn", UICustomWidget)
 UIActivityEveSinsaSwitchLevelBtn = UIActivityEveSinsaSwitchLevelBtn
 local EActivityEveSinsaLevelBtnType = {EType_A = 1, EType_B = 2}
 _enum("EActivityEveSinsaLevelBtnType", EActivityEveSinsaLevelBtnType)
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityEveSinsaSwitchLevelBtn._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityEveSinsaSwitchLevelBtn:_GetComponents()
   self._lockObj = self:GetGameObject("_lock")
   self._normalObj = self:GetGameObject("_normal")
   self._remainingText = self:GetUIComponent("UILocalizationText", "_remainingText")
@@ -20,236 +13,179 @@ UIActivityEveSinsaSwitchLevelBtn._GetComponents = function(self)
   self._redPoint = self:GetGameObject("redPoint")
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn.OnShow = function(self)
-  -- function num : 0_1
+function UIActivityEveSinsaSwitchLevelBtn:OnShow()
   self._isOpen = true
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityEveSinsaSwitchLevelBtn:OnHide()
   self._isOpen = false
-  self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
-  self._timeEventForClose = (UIActivityHelper.CancelTimerEvent)(self._timeEventForClose)
+  self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
+  self._timeEventForClose = UIActivityHelper.CancelTimerEvent(self._timeEventForClose)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn.SetData = function(self, campaign, type, isMain)
-  -- function num : 0_3 , upvalues : _ENV, EActivityEveSinsaLevelBtnType
+function UIActivityEveSinsaSwitchLevelBtn:SetData(campaign, type, isMain)
   self._campaign = campaign
   self._type = type
   self._isMain = isMain
-  self._phase = (UIActivityEveSinsaHelper.CheckTimePhase)(self._campaign)
-  ;
-  (self._lockObj):SetActive(self._type == EActivityEveSinsaLevelBtnType.EType_B)
-  ;
-  (self._normalObj):SetActive(self._type == EActivityEveSinsaLevelBtnType.EType_A)
+  self._phase = UIActivityEveSinsaHelper.CheckTimePhase(self._campaign)
+  self._lockObj:SetActive(self._type == EActivityEveSinsaLevelBtnType.EType_B)
+  self._normalObj:SetActive(self._type == EActivityEveSinsaLevelBtnType.EType_A)
   self:_SetTitle()
   if self._phase == EActivityEveSinsaTimePhase.EPhase_Shop then
-    (self._lockObj):SetActive(false)
-    ;
-    (self._normalObj):SetActive(true)
+    self._lockObj:SetActive(false)
+    self._normalObj:SetActive(true)
   else
     self:_SetTimer()
     self:_SetTimerForClose()
   end
   self:_CheckNewFlagRedPoint()
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn._CheckNewFlagRedPoint = function(self)
-  -- function num : 0_4 , upvalues : _ENV, EActivityEveSinsaLevelBtnType
+function UIActivityEveSinsaSwitchLevelBtn:_CheckNewFlagRedPoint()
   local campaignModule = self:GetModule(CampaignModule)
   local data = campaignModule:GetEveSinsaNewFlagRedPoint()
   if self._type == EActivityEveSinsaLevelBtnType.EType_A then
     local showNew = data:P1SStageUnLockNew()
-    ;
-    (self._newFlag):SetActive(showNew)
-    if not data:PetStageRedPoint() then
-      local showRedPoint = data:ActionPointRedPoint()
-    end
-    if showRedPoint then
-      do
-        (self._redPoint):SetActive(not showNew)
-        if self._type == EActivityEveSinsaLevelBtnType.EType_B then
-          (self._newFlag):SetActive(data:P2StageUnLockNew())
-          ;
-          (self._redPoint):SetActive(false)
-        end
-      end
-    end
+    self._newFlag:SetActive(showNew)
+    local showRedPoint = data:PetStageRedPoint() or data:ActionPointRedPoint()
+    self._redPoint:SetActive(showRedPoint and not showNew)
+  elseif self._type == EActivityEveSinsaLevelBtnType.EType_B then
+    self._newFlag:SetActive(data:P2StageUnLockNew())
+    self._redPoint:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn._SetTitle = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local type2id = {"str_activity_evesinsa_main_levelabtn", "str_activity_evesinsa_main_levelbbtn"}
+function UIActivityEveSinsaSwitchLevelBtn:_SetTitle()
+  local type2id = {
+    "str_activity_evesinsa_main_levelabtn",
+    "str_activity_evesinsa_main_levelbbtn"
+  }
   local id = type2id[self._type]
-  ;
-  (self._titleText):SetText((StringTable.Get)(id))
+  self._titleText:SetText(StringTable.Get(id))
   if self._title2Text then
-    local phase2id = {"str_activity_evesinsa_main_actionsecond", "str_activity_evesinsa_main_actionsecond", "str_activity_error_107"}
+    local phase2id = {
+      "str_activity_evesinsa_main_actionsecond",
+      "str_activity_evesinsa_main_actionsecond",
+      "str_activity_error_107"
+    }
     id = phase2id[self._phase]
-    ;
-    (self._title2Text):SetText((StringTable.Get)(id))
+    self._title2Text:SetText(StringTable.Get(id))
   end
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn._SetTimer = function(self)
-  -- function num : 0_6 , upvalues : EActivityEveSinsaLevelBtnType, _ENV
+function UIActivityEveSinsaSwitchLevelBtn:_SetTimer()
   if self._type == EActivityEveSinsaLevelBtnType.EType_B then
-    self._timeEvent = (UIActivityHelper.StartTimerEvent)(self._timeEvent, function()
-    -- function num : 0_6_0 , upvalues : self
-    return self:_SetRemainingTimer()
-  end
-)
+    self._timeEvent = UIActivityHelper.StartTimerEvent(self._timeEvent, function()
+      return self:_SetRemainingTimer()
+    end)
   else
-    self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+    self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
   end
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn._SetTimerForClose = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._timeEventForClose = (UIActivityHelper.StartTimerEvent)(self._timeEventForClose, function()
-    -- function num : 0_7_0 , upvalues : self, _ENV
+function UIActivityEveSinsaSwitchLevelBtn:_SetTimerForClose()
+  self._timeEventForClose = UIActivityHelper.StartTimerEvent(self._timeEventForClose, function()
     if self._isOpen then
       local svrTimeModule = self:GetModule(SvrTimeModule)
-      local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-      local endTime = (UIActivityEveSinsaHelper.GetPhaseEndTime)(self._campaign, EActivityEveSinsaTimePhase.EPhase_Tree)
+      local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+      local endTime = UIActivityEveSinsaHelper.GetPhaseEndTime(self._campaign, EActivityEveSinsaTimePhase.EPhase_Tree)
       local stamp = endTime - curTime
       if stamp < 0 then
-        self._phase = (UIActivityEveSinsaHelper.CheckTimePhase)(self._campaign)
+        self._phase = UIActivityEveSinsaHelper.CheckTimePhase(self._campaign)
         self:_SetTitle()
         self:_CheckNewFlagRedPoint()
-        self._timeEventForClose = (UIActivityHelper.CancelTimerEvent)(self._timeEventForClose)
+        self._timeEventForClose = UIActivityHelper.CancelTimerEvent(self._timeEventForClose)
         return true
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn._SetRemainingTimer = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityEveSinsaSwitchLevelBtn:_SetRemainingTimer()
   if self._isOpen then
     local uiText = self._remainingText
     local formatStr = "<color=#%s>%s</color>"
-    do
-      if self._isMain then
-        local extra = (StringTable.Get)("str_activity_evesinsa_shop_group_unlock_time")
-        formatStr = "<color=#%s>" .. extra .. " %s</color>"
-      end
-      local colorStr = "DECE00"
-      local svrTimeModule = self:GetModule(SvrTimeModule)
-      local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-      local endTime = (UIActivityEveSinsaHelper.GetPhaseEndTime)(self._campaign, EActivityEveSinsaTimePhase.EPhase_Line)
-      local stamp = endTime - curTime
-      local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp)
-      local showStr = (string.format)(formatStr, colorStr, timeStr)
-      uiText:SetText(showStr)
-      if stamp <= 0 then
-        self:_CheckUnlockLevel()
-        self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
-        return true
-      end
+    if self._isMain then
+      local extra = StringTable.Get("str_activity_evesinsa_shop_group_unlock_time")
+      formatStr = "<color=#%s>" .. extra .. " %s</color>"
+    end
+    local colorStr = "DECE00"
+    local svrTimeModule = self:GetModule(SvrTimeModule)
+    local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+    local endTime = UIActivityEveSinsaHelper.GetPhaseEndTime(self._campaign, EActivityEveSinsaTimePhase.EPhase_Line)
+    local stamp = endTime - curTime
+    local timeStr = UIActivityHelper.GetFormatTimerStr(stamp)
+    local showStr = string.format(formatStr, colorStr, timeStr)
+    uiText:SetText(showStr)
+    if stamp <= 0 then
+      self:_CheckUnlockLevel()
+      self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
+      return true
     end
   end
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn._CheckUnlockLevel = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local componet = (self._campaign):GetComponent(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_TREE_MISSION)
+function UIActivityEveSinsaSwitchLevelBtn:_CheckUnlockLevel()
+  local componet = self._campaign:GetComponent(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_TREE_MISSION)
   if componet:ComponentIsUnLock() then
-    (self._lockObj):SetActive(false)
-    ;
-    (self._normalObj):SetActive(true)
+    self._lockObj:SetActive(false)
+    self._normalObj:SetActive(true)
   else
     local uiText = self._remainingText
     local formatStr = "<color=#%s>%s</color>"
     local colorStr = "DECE00"
     local strId = "str_activity_evesinsa_main_lockbtn_level"
-    local showStr = (string.format)(formatStr, colorStr, (StringTable.Get)(strId))
+    local showStr = string.format(formatStr, colorStr, StringTable.Get(strId))
     uiText:SetText(showStr)
   end
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn.btnOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV, EActivityEveSinsaLevelBtnType
-  (Log.info)("UIActivityEveSinsaSwitchLevelBtn:btnOnClick")
-  self._phase = (UIActivityEveSinsaHelper.CheckTimePhase)(self._campaign)
+function UIActivityEveSinsaSwitchLevelBtn:btnOnClick()
+  Log.info("UIActivityEveSinsaSwitchLevelBtn:btnOnClick")
+  self._phase = UIActivityEveSinsaHelper.CheckTimePhase(self._campaign)
   if self._type == EActivityEveSinsaLevelBtnType.EType_B and self._phase == EActivityEveSinsaTimePhase.EPhase_Tree then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.GoHome)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.GoHome)
     self:_SetFirstPlot()
   else
     self:_OpenDialog()
   end
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn._SetFirstPlot = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityEveSinsaSwitchLevelBtn:_SetFirstPlot()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
-  local keyStr = (string.format)("UIActivityEveSinsa_LevelBtn_Plot_%s_%s", (self._campaign)._id, pstId)
-  if (LocalDB.HasKey)(keyStr) then
-    (Log.info)("UIActivityEveSinsaSwitchLevelBtn:_SetFirstPlot() keyStr = ", keyStr)
+  local keyStr = string.format("UIActivityEveSinsa_LevelBtn_Plot_%s_%s", self._campaign._id, pstId)
+  if LocalDB.HasKey(keyStr) then
+    Log.info("UIActivityEveSinsaSwitchLevelBtn:_SetFirstPlot() keyStr = ", keyStr)
     self:_OpenDialog()
-    return 
+    return
   end
-  ;
-  (LocalDB.SetInt)(keyStr, 1)
+  LocalDB.SetInt(keyStr, 1)
   local storyID = 0
-  local cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
+  local cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
   if cfg_campaign then
-    storyID = (cfg_campaign.FirstEnterStoryID)[2]
+    storyID = cfg_campaign.FirstEnterStoryID[2]
   end
   if storyID ~= 0 then
     self:ShowDialog("UIStoryController", storyID, function()
-    -- function num : 0_11_0 , upvalues : self
-    self:StartTask(function(TT)
-      -- function num : 0_11_0_0 , upvalues : self
-      self:_OpenDialog()
-    end
-, self)
-  end
-)
+      self:StartTask(function(TT)
+        self:_OpenDialog()
+      end, self)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityEveSinsaSwitchLevelBtn._OpenDialog = function(self)
-  -- function num : 0_12 , upvalues : EActivityEveSinsaLevelBtnType, _ENV
+function UIActivityEveSinsaSwitchLevelBtn:_OpenDialog()
   if self._type == EActivityEveSinsaLevelBtnType.EType_A then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.WindPlace)
-  else
-    if self._type == EActivityEveSinsaLevelBtnType.EType_B then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.GoHome)
-    end
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.WindPlace)
+  elseif self._type == EActivityEveSinsaLevelBtnType.EType_B then
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.GoHome)
   end
-  local type2show = {"UIActivityEveSinsaLevelAController", "UIActivityEveSinsaLevelBController"}
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  campaignModule:CampaignSwitchState(true, type2show[self._type], UIStateType.UIMain, nil, (self._campaign)._id)
+  local type2show = {
+    "UIActivityEveSinsaLevelAController",
+    "UIActivityEveSinsaLevelBController"
+  }
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  campaignModule:CampaignSwitchState(true, type2show[self._type], UIStateType.UIMain, nil, self._campaign._id)
 end
-
-

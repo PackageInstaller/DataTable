@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_daily/ui_quest_daily_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestDailyItem", UICustomWidget)
 UIQuestDailyItem = UIQuestDailyItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestDailyItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIQuestDailyItem:OnShow(uiParams)
   self.rootAnim = self:GetUIComponent("Animation", "UIQuestDailyItem")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "UIQuestDailyItem")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = false
+  self._canvasGroup.blocksRaycasts = false
   self._itemCountPerRow = 1
   self._isFirst = true
   self.needMoveIndex = false
@@ -26,179 +16,140 @@ UIQuestDailyItem.OnShow = function(self, uiParams)
   self:AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.UIQuestDailyReset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self:ShowDialog("UIRugueLikeResetMsgBoxController", (StringTable.Get)("str_quest_base_daily_reset_tips"))
+function UIQuestDailyItem:UIQuestDailyReset()
+  self:ShowDialog("UIRugueLikeResetMsgBoxController", StringTable.Get("str_quest_base_daily_reset_tips"))
   self:ShowActivityTitle()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.RefreshDailyQuestList = function(self)
-  -- function num : 0_2
+function UIQuestDailyItem:RefreshDailyQuestList()
   self:RefrenshList()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.SetData = function(self, type)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._canvasGroup).blocksRaycasts = true
+function UIQuestDailyItem:SetData(type)
+  self._canvasGroup.blocksRaycasts = true
   self._isOpen = true
   self:_GetComponents()
   self._type = type
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   if self._questModule == nil then
-    (Log.fatal)("[quest] error --> questModule is nil !")
-    return 
+    Log.fatal("[quest] error --> questModule is nil !")
+    return
   end
   self._questList = self:_GetTaskList()
-  self._taskCount = (table.count)(self._questList)
+  self._taskCount = table.count(self._questList)
   self:_OnValue()
-  ;
-  (self.rootAnim):Play("uieff_UIQuestController_dailyTypePool_in")
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 1
+  self.rootAnim:Play("uieff_UIQuestController_dailyTypePool_in")
+  self._canvasGroup.alpha = 1
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem._GetTaskList = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local taskList = (self._questModule):GetQuestByQuestType(self._type)
+function UIQuestDailyItem:_GetTaskList()
+  local taskList = self._questModule:GetQuestByQuestType(self._type)
   local taskListT = {}
   for i = 1, #taskList do
-    local quest = (taskList[i]):QuestInfo()
+    local quest = taskList[i]:QuestInfo()
     if quest.status ~= QuestStatus.QUEST_NotStart then
-      (table.insert)(taskListT, taskList[i])
+      table.insert(taskListT, taskList[i])
     end
   end
   return taskListT
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.RefrenshList = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIQuestDailyItem:RefrenshList()
   self._questList = self:_GetTaskList()
-  self._taskCount = (table.count)(self._questList)
-  local contentPos = (((self._list).ScrollRect).content).localPosition
-  ;
-  (self._list):SetListItemCount(self._taskCount)
-  ;
-  (self._list):MovePanelToItemIndex(0, 0)
-  ;
-  (self._list):ResetListView()
+  self._taskCount = table.count(self._questList)
+  local contentPos = self._list.ScrollRect.content.localPosition
+  self._list:SetListItemCount(self._taskCount)
+  self._list:MovePanelToItemIndex(0, 0)
+  self._list:ResetListView()
   self:StartTask(self.RefrenshListAndPlay, self)
-  if not ((self._list).gameObject).activeInHierarchy then
+  if not self._list.gameObject.activeInHierarchy then
     self.needMoveIndex = true
     if self.taskRefreshMove then
-      (TaskManager:GetInstance()):KillTask(self.taskRefreshMove)
+      TaskManager:GetInstance():KillTask(self.taskRefreshMove)
       self.taskRefreshMove = nil
     end
-    self.taskRefreshMove = (TaskManager:GetInstance()):StartStoppableTask(self.TaskRefreshMoveIndex, self)
+    self.taskRefreshMove = TaskManager:GetInstance():StartStoppableTask(self.TaskRefreshMoveIndex, self)
   end
   self:_ShowActivePoint()
   self:DailyQuestTimeRefresh()
   self:ShowWeekAwards()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.RefrenshListAndPlay = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  if not ((self._list).gameObject).activeInHierarchy then
+function UIQuestDailyItem:RefrenshListAndPlay(TT)
+  if not self._list.gameObject.activeInHierarchy then
     self:UnLock("UIQuestDailyItem:RefrenshListAndPlay")
-    return 
+    return
   end
   self:Lock("UIQuestDailyItem:RefrenshListAndPlay")
   local yieldTime = 0
   local questCount = #self._questList
-  if questCount > 5 then
+  if 5 < questCount then
     questCount = 5
   end
   for i = 1, questCount do
-    local quest = ((self._questList)[i]):QuestInfo()
+    local quest = self._questList[i]:QuestInfo()
     for j = 1, #self.items do
-      local item = (self.items)[j]
-      do
-        if quest.quest_id == (item._quest).quest_id then
-          yieldTime = (i - 1) * 50
-          item:InitAnim()
-          ;
-          ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_6_0 , upvalues : self, item
-    if ((self._list).gameObject).activeInHierarchy then
-      item:PlayAnim()
-    end
-  end
-)
-        end
+      local item = self.items[j]
+      if quest.quest_id == item._quest.quest_id then
+        yieldTime = (i - 1) * 50
+        item:InitAnim()
+        GameGlobal.Timer():AddEvent(yieldTime, function()
+          if self._list.gameObject.activeInHierarchy then
+            item:PlayAnim()
+          end
+        end)
       end
     end
   end
   YIELD(TT, yieldTime)
   local totalTime = questCount * 50
-  ;
-  ((GameGlobal.Timer)()):AddEvent(totalTime, function()
-    -- function num : 0_6_1 , upvalues : self
+  GameGlobal.Timer():AddEvent(totalTime, function()
     self:UnLock("UIQuestDailyItem:RefrenshListAndPlay")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.TaskRefreshMoveIndex = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
-  while not ((self._list).gameObject).activeInHierarchy do
+function UIQuestDailyItem:TaskRefreshMoveIndex(TT)
+  while not self._list.gameObject.activeInHierarchy do
     YIELD(TT)
   end
   self:Lock("TaskRefreshMoveIndex")
   while self.needMoveIndex do
     YIELD(TT)
-    if self._list == nil or (self._list).gameObject == nil then
+    if self._list == nil or self._list.gameObject == nil then
       self.taskRefreshMove = nil
       self:UnLock("TaskRefreshMoveIndex")
-      return 
+      return
     end
-    if ((self._list).gameObject).activeInHierarchy then
+    if self._list.gameObject.activeInHierarchy then
       self.needMoveIndex = false
     end
   end
-  ;
-  (self._list):MovePanelToItemIndex(0, 0)
+  self._list:MovePanelToItemIndex(0, 0)
   self.taskRefreshMove = nil
   for j = 1, #self.items do
-    local item = (self.items)[j]
-    if ((self._list).gameObject).activeInHierarchy then
-      (Log.debug)("[FX] 重置隐藏后的动画状态!")
+    local item = self.items[j]
+    if self._list.gameObject.activeInHierarchy then
+      Log.debug("[FX] 重置隐藏后的动画状态!")
     end
   end
   self:UnLock("TaskRefreshMoveIndex")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.RefrenshActivePoint = function(self)
-  -- function num : 0_8
+function UIQuestDailyItem:RefrenshActivePoint()
   self:_ShowActivePoint()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.GetFillAmount = function(self, val)
-  -- function num : 0_9 , upvalues : _ENV
-  local cst = {0.099, 0.327, 0.554, 0.782, 1}
-  local idx = (math.modf)(val / 20)
-  if #cst <= idx then
+function UIQuestDailyItem:GetFillAmount(val)
+  local cst = {
+    0.099,
+    0.327,
+    0.554,
+    0.782,
+    1
+  }
+  local idx = math.modf(val / 20)
+  if idx >= #cst then
     return 1
   end
   local rate = cst[idx] or 0
@@ -209,221 +160,147 @@ UIQuestDailyItem.GetFillAmount = function(self, val)
   return ret
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem._ShowActivePoint = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  self._activePoint = (self._questModule):GetDailyQuestVigorous()
-  ;
-  (Log.debug)("###[UIQuestDailyItem] _ShowActivePoint --> ", self._activePoint)
-  self._cfg_vigorous_reward = (Cfg.cfg_vigorous_reward)({})
+function UIQuestDailyItem:_ShowActivePoint()
+  self._activePoint = self._questModule:GetDailyQuestVigorous()
+  Log.debug("###[UIQuestDailyItem] _ShowActivePoint --> ", self._activePoint)
+  self._cfg_vigorous_reward = Cfg.cfg_vigorous_reward({})
   if self._cfg_vigorous_reward == nil then
-    (Log.fatal)("[quest] error --> _cfg_vigorous_reward is nil ! name --> cfg_vigorous_reward")
-    return 
+    Log.fatal("[quest] error --> _cfg_vigorous_reward is nil ! name --> cfg_vigorous_reward")
+    return
   end
   self:Lock("_ShowActivePoint")
-  local count = (table.count)(self._cfg_vigorous_reward)
-  local upper = ((self._cfg_vigorous_reward)[count]).VigPoint
+  local count = table.count(self._cfg_vigorous_reward)
+  local upper = self._cfg_vigorous_reward[count].VigPoint
   local rate = self._activePoint / upper
-  if rate > 1 then
+  if 1 < rate then
     rate = 1
   end
-  ;
-  (self._activePointValue):SetText("<size=80>" .. self._activePoint .. "</size>")
+  self._activePointValue:SetText("<size=80>" .. self._activePoint .. "</size>")
   if self._curPoint ~= rate then
     local phase1Rate = 0.85
-    do
-      local phase1Time = 0.5
-      local phase2Time = 1.25
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._activePointImg).fillAmount = 0
-      local phase1 = rate * phase1Rate
-      ;
-      (self._activePointImg):DOFillAmount(phase1, phase1Time)
-      ;
-      ((GameGlobal.Timer)()):AddEvent(phase1Time * 1000, function()
-    -- function num : 0_10_0 , upvalues : self, rate, phase2Time, _ENV
-    if (self._activePointImg).gameObject ~= nil and ((self._activePointImg).gameObject).activeInHierarchy then
-      ((self._activePointImg):DOFillAmount(rate, phase2Time)):SetEase(((DG.Tweening).Ease).OutCirc)
-    end
-    self:UnLock("_ShowActivePoint")
-  end
-)
-      local initX = ((self._activeImgLeftAnchor).anchoredPosition).x
-      local maxX = ((self._activeImgRightAnchor).anchoredPosition).x
-      local curX = initX + (maxX - initX) * self._curPoint
-      local tarX = initX + (maxX - initX) * rate
-      local tarXPhase1 = initX + (maxX - initX) * rate * phase1Rate
-      ;
-      ((self._effObj).transform):DOAnchorPosX(curX, 0)
-      ;
-      (self._effObj):SetActive(false)
-      if rate ~= 0 then
-        (self._effObj):SetActive(true)
-        ;
-        ((self._effObj).transform):DOAnchorPosX(tarXPhase1, phase1Time)
-        ;
-        ((GameGlobal.Timer)()):AddEvent(phase1Time * 1000, function()
-    -- function num : 0_10_1 , upvalues : self, tarX, phase2Time, _ENV
-    if self._effObj ~= nil and (self._effObj).activeInHierarchy then
-      (((self._effObj).transform):DOAnchorPosX(tarX, phase2Time)):SetEase(((DG.Tweening).Ease).OutCirc)
-    end
-    self:UnLock("_ShowActivePoint")
-  end
-)
-      else
-        self:UnLock("_ShowActivePoint")
+    local phase1Time = 0.5
+    local phase2Time = 1.25
+    self._activePointImg.fillAmount = 0
+    local phase1 = rate * phase1Rate
+    self._activePointImg:DOFillAmount(phase1, phase1Time)
+    GameGlobal.Timer():AddEvent(phase1Time * 1000, function()
+      if self._activePointImg.gameObject ~= nil and self._activePointImg.gameObject.activeInHierarchy then
+        self._activePointImg:DOFillAmount(rate, phase2Time):SetEase(DG.Tweening.Ease.OutCirc)
       end
-      self._curPoint = rate
-    end
-  else
-    do
-      -- DECOMPILER ERROR at PC119: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._activePointImg).fillAmount = rate
       self:UnLock("_ShowActivePoint")
-      local huoValue = upper * rate
-      local highLightIndex = 0
-      for i = 1, count do
-        local point = (self._cfg_vigorous_reward)[i]
-        if point.VigPoint <= huoValue then
-          highLightIndex = i
+    end)
+    local initX = self._activeImgLeftAnchor.anchoredPosition.x
+    local maxX = self._activeImgRightAnchor.anchoredPosition.x
+    local curX = initX + (maxX - initX) * self._curPoint
+    local tarX = initX + (maxX - initX) * rate
+    local tarXPhase1 = initX + (maxX - initX) * rate * phase1Rate
+    self._effObj.transform:DOAnchorPosX(curX, 0)
+    self._effObj:SetActive(false)
+    if rate ~= 0 then
+      self._effObj:SetActive(true)
+      self._effObj.transform:DOAnchorPosX(tarXPhase1, phase1Time)
+      GameGlobal.Timer():AddEvent(phase1Time * 1000, function()
+        if self._effObj ~= nil and self._effObj.activeInHierarchy then
+          self._effObj.transform:DOAnchorPosX(tarX, phase2Time):SetEase(DG.Tweening.Ease.OutCirc)
         end
-      end
-      local width = ((self._activePointPoolRect).sizeDelta).x
-      ;
-      (self._activePointPool):SpawnObjects("UIQuestDailyActivePointItem", count)
-      local aps = (self._activePointPool):GetAllSpawnList()
-      for i = 1, count do
-        local high = false
-        if i == highLightIndex then
-          high = true
-        end
-        local _posX = ((self._cfg_vigorous_reward)[i]).VigPoint / upper * width
-        ;
-        (aps[i]):SetData(i, self._cfg_vigorous_reward, self._activePoint, _posX, function(idx)
-    -- function num : 0_10_2 , upvalues : self
-    self:ActivePointItemClick(idx)
-  end
-, function(items, pos)
-    -- function num : 0_10_3 , upvalues : self, _ENV
-    (self._awardPool):SpawnObjects("UIQuestSideAwardItem", #items)
-    local pools = (self._awardPool):GetAllSpawnList()
-    self.rewadItems = {}
-    for i = 1, #items do
-      local award = pools[i]
-      -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self.rewadItems)[i] = award
-    end
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-    if #items == 2 then
-      (self._checkAwadeImage).sprite = (self._atlas):GetSprite("task_daily_jianglidi1")
-      -- DECOMPILER ERROR at PC32: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._checkAwadeRectTf).sizeDelta = Vector2(360, 216)
-      -- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._awardPoolRect).anchoredPosition = Vector2(-58.5, -25.1)
-      pos = pos + Vector2(-126, 176)
+        self:UnLock("_ShowActivePoint")
+      end)
     else
-      -- DECOMPILER ERROR at PC53: Confused about usage of register: R3 in 'UnsetPending'
-
-      if #items == 3 then
-        (self._checkAwadeImage).sprite = (self._atlas):GetSprite("task_daily_jianglidi2")
-        -- DECOMPILER ERROR at PC59: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._checkAwadeRectTf).sizeDelta = Vector2(528, 215)
-        -- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._awardPoolRect).anchoredPosition = Vector2(-136.5, -25.1)
+      self:UnLock("_ShowActivePoint")
+    end
+    self._curPoint = rate
+  else
+    self._activePointImg.fillAmount = rate
+    self:UnLock("_ShowActivePoint")
+  end
+  local huoValue = upper * rate
+  local highLightIndex = 0
+  for i = 1, count do
+    local point = self._cfg_vigorous_reward[i]
+    if huoValue >= point.VigPoint then
+      highLightIndex = i
+    end
+  end
+  local width = self._activePointPoolRect.sizeDelta.x
+  self._activePointPool:SpawnObjects("UIQuestDailyActivePointItem", count)
+  local aps = self._activePointPool:GetAllSpawnList()
+  for i = 1, count do
+    local high = false
+    if i == highLightIndex then
+      high = true
+    end
+    local _posX = self._cfg_vigorous_reward[i].VigPoint / upper * width
+    aps[i]:SetData(i, self._cfg_vigorous_reward, self._activePoint, _posX, function(idx)
+      self:ActivePointItemClick(idx)
+    end, function(items, pos)
+      self._awardPool:SpawnObjects("UIQuestSideAwardItem", #items)
+      local pools = self._awardPool:GetAllSpawnList()
+      self.rewadItems = {}
+      for i = 1, #items do
+        local award = pools[i]
+        self.rewadItems[i] = award
+      end
+      if #items == 2 then
+        self._checkAwadeImage.sprite = self._atlas:GetSprite("task_daily_jianglidi1")
+        self._checkAwadeRectTf.sizeDelta = Vector2(360, 216)
+        self._awardPoolRect.anchoredPosition = Vector2(-58.5, -25.1)
+        pos = pos + Vector2(-126, 176)
+      elseif #items == 3 then
+        self._checkAwadeImage.sprite = self._atlas:GetSprite("task_daily_jianglidi2")
+        self._checkAwadeRectTf.sizeDelta = Vector2(528, 215)
+        self._awardPoolRect.anchoredPosition = Vector2(-136.5, -25.1)
         pos = pos + Vector2(-213, 176)
       end
-    end
-    ;
-    (self._checkAwade):SetActive(true)
-    -- DECOMPILER ERROR at PC76: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._checkAwadeRectTf).anchoredPosition = pos
-    for i = 1, #items do
-      local rew = (self.rewadItems)[i]
-      local id = (items[i]).assetid
-      local cfg_item = (Cfg.cfg_item)[id]
-      local params = {}
-      params.quality = cfg_item.Color
-      params.icon = cfg_item.Icon
-      params.text = (items[i]).count
-      rew:SetData(id, params, function(matid, pos)
-      -- function num : 0_10_3_0 , upvalues : _ENV
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.QuestAwardItemClick, matid, pos)
-    end
-)
-    end
-  end
-, high)
+      self._checkAwade:SetActive(true)
+      self._checkAwadeRectTf.anchoredPosition = pos
+      for i = 1, #items do
+        local rew = self.rewadItems[i]
+        local id = items[i].assetid
+        local cfg_item = Cfg.cfg_item[id]
+        local params = {}
+        params.quality = cfg_item.Color
+        params.icon = cfg_item.Icon
+        params.text = items[i].count
+        rew:SetData(id, params, function(matid, pos)
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.QuestAwardItemClick, matid, pos)
+        end)
       end
-    end
+    end, high)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.ActivePointItemClick = function(self, idx)
-  -- function num : 0_11
+function UIQuestDailyItem:ActivePointItemClick(idx)
   self:Lock("UIQuestGet")
   self:StartTask(self.OnActivePointItemClick, self, -1)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.OnActivePointItemClick = function(self, TT, idx)
-  -- function num : 0_12 , upvalues : _ENV
-  local res, msg = (self._questModule):TakeVigReward(TT, idx)
+function UIQuestDailyItem:OnActivePointItemClick(TT, idx)
+  local res, msg = self._questModule:TakeVigReward(TT, idx)
   self:UnLock("UIQuestGet")
   if self.uiOwner == nil then
-    return 
+    return
   end
   if res:GetSucc() then
     local rewards = msg.rewards
     self:ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_12_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, self._dispatchTypeActive)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.QuestUpdate)
-  end
-)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, self._dispatchTypeActive)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.QuestUpdate)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.DailyQuestTimeRefresh = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIQuestDailyItem:DailyQuestTimeRefresh()
   self._timeStrColor = "ffe701"
   self:ShowSurTime()
   self:OpenSurSecond()
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._tips)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._tips)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.CalSurSecond = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIQuestDailyItem:CalSurSecond()
   if self._svrTimeModule == nil then
     self._svrTimeModule = self:GetModule(SvrTimeModule)
   end
-  local svrTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+  local svrTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   if self._questModule == nil then
     self._questModule = self:GetModule(QuestModule)
   end
@@ -432,26 +309,23 @@ UIQuestDailyItem.CalSurSecond = function(self)
   self._surSecond = resetTime - svrTime
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.Second2TimeStr = function(self, second)
-  -- function num : 0_15 , upvalues : _ENV
-  local sec = (math.floor)(second % 60)
-  local min = (math.floor)(second / 60 % 60)
-  local hour = ((math.floor)(second / 60 / 60))
-  local secStr = nil
+function UIQuestDailyItem:Second2TimeStr(second)
+  local sec = math.floor(second % 60)
+  local min = math.floor(second / 60 % 60)
+  local hour = math.floor(second / 60 / 60)
+  local secStr
   if sec < 10 then
     secStr = "0" .. sec
   else
     secStr = sec
   end
-  local minStr = nil
+  local minStr
   if min < 10 then
     minStr = "0" .. min
   else
     minStr = min
   end
-  local hourStr = nil
+  local hourStr
   if hour < 10 then
     hourStr = "0" .. hour
   else
@@ -461,90 +335,63 @@ UIQuestDailyItem.Second2TimeStr = function(self, second)
   return str
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.OpenSurSecond = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIQuestDailyItem:OpenSurSecond()
   if self._surTimeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._surTimeEvent)
+    GameGlobal.Timer():CancelEvent(self._surTimeEvent)
     self._surTimeEvent = nil
   end
-  self._surTimeEvent = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_16_0 , upvalues : self
+  self._surTimeEvent = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:ShowSurTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.ShowSurTime = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local svrTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  local resetTime = (self._questModule):GetQuestDailyRefreshTime(svrTime)
+function UIQuestDailyItem:ShowSurTime()
+  local svrTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  local resetTime = self._questModule:GetQuestDailyRefreshTime(svrTime)
   local timeStamp = resetTime - svrTime
-  if timeStamp > 0 then
+  if 0 < timeStamp then
     local timeStr = self:Second2TimeStr(timeStamp)
     local showStr = "<color=#" .. self._timeStrColor .. ">" .. timeStr .. "</color>"
-    ;
-    (self._refreshTipTex):SetText((string.format)((StringTable.Get)("str_quest_base_daily_refresh_tip"), showStr))
+    self._refreshTipTex:SetText(string.format(StringTable.Get("str_quest_base_daily_refresh_tip"), showStr))
+  else
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.Time2Day = function(self, unixTime)
-  -- function num : 0_18 , upvalues : _ENV
+function UIQuestDailyItem:Time2Day(unixTime)
   local tb = {}
-  tb.year = tonumber((os.date)("%Y", unixTime))
-  tb.month = tonumber((os.date)("%m", unixTime))
-  tb.day = tonumber((os.date)("%d", unixTime))
-  tb.hour = tonumber((os.date)("%H", unixTime))
-  tb.minute = tonumber((os.date)("%M", unixTime))
-  tb.second = tonumber((os.date)("%S", unixTime))
+  tb.year = tonumber(os.date("%Y", unixTime))
+  tb.month = tonumber(os.date("%m", unixTime))
+  tb.day = tonumber(os.date("%d", unixTime))
+  tb.hour = tonumber(os.date("%H", unixTime))
+  tb.minute = tonumber(os.date("%M", unixTime))
+  tb.second = tonumber(os.date("%S", unixTime))
   return tb
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.OnClose = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIQuestDailyItem:OnClose()
   self._isOpen = false
-  ;
-  (self.rootAnim):Stop()
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 0
+  self.rootAnim:Stop()
+  self._canvasGroup.alpha = 0
   if self._surTimeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._surTimeEvent)
+    GameGlobal.Timer():CancelEvent(self._surTimeEvent)
     self._surTimeEvent = nil
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = false
+  self._canvasGroup.blocksRaycasts = false
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.OnHide = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIQuestDailyItem:OnHide()
   if self.taskRefreshMove then
-    (TaskManager:GetInstance()):KillTask(self.taskRefreshMove)
+    TaskManager:GetInstance():KillTask(self.taskRefreshMove)
     self.taskRefreshMove = nil
   end
   if self._surTimeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._surTimeEvent)
+    GameGlobal.Timer():CancelEvent(self._surTimeEvent)
     self._surTimeEvent = nil
   end
   self:RemoveEvents()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem._GetComponents = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIQuestDailyItem:_GetComponents()
   self._list = self:GetUIComponent("UIDynamicScrollView", "taskList")
   self._activePointPool = self:GetUIComponent("UISelectObjectPath", "activePoint")
   self._activePointPoolRect = self:GetUIComponent("RectTransform", "activePoint")
@@ -555,15 +402,13 @@ UIQuestDailyItem._GetComponents = function(self)
   self._weekAwards = self:GetUIComponent("Image", "WeekAwards")
   self._weekAwardsTex = self:GetUIComponent("UILocalizationText", "weekAwardsTex")
   self._weekAwardRoot = self:GetGameObject("weekAwardRoot")
-  self._atlas = (self:RootUIOwner()):GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
+  self._atlas = self:RootUIOwner():GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
   self._checkAwade = self:GetGameObject("CheckAwade")
-  ;
-  (self._checkAwade):SetActive(false)
+  self._checkAwade:SetActive(false)
   self._checkAwadeRectTf = self:GetUIComponent("RectTransform", "CheckAwadeRt")
   self._checkAwadeImage = self:GetUIComponent("Image", "CheckAwadeRt")
   self._effObj = self:GetGameObject("eff")
-  ;
-  (self._effObj):SetActive(false)
+  self._effObj:SetActive(false)
   self._activeImgLeftAnchor = self:GetUIComponent("RectTransform", "activeImgLeftAnchor")
   self._activeImgRightAnchor = self:GetUIComponent("RectTransform", "activeImgRightAnchor")
   self._awardPool = self:GetUIComponent("UISelectObjectPath", "awardPool")
@@ -572,16 +417,11 @@ UIQuestDailyItem._GetComponents = function(self)
   self.items = {}
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem._OnValue = function(self)
-  -- function num : 0_22
+function UIQuestDailyItem:_OnValue()
   if self._isFirst then
-    (self._list):InitListView(self._taskCount, function(scrollView, index)
-    -- function num : 0_22_0 , upvalues : self
-    return self:_InitDailyTaskList(scrollView, index)
-  end
-)
+    self._list:InitListView(self._taskCount, function(scrollView, index)
+      return self:_InitDailyTaskList(scrollView, index)
+    end)
     self._isFirst = false
     self:_ShowActivePoint()
     self:DailyQuestTimeRefresh()
@@ -594,107 +434,74 @@ UIQuestDailyItem._OnValue = function(self)
   self:ShowWeekAwards()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.ShowWeekAwards = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local weekQuestList = (self._questModule):GetQuestByQuestType(QuestType.QT_Week)
-  if weekQuestList and #weekQuestList > 0 then
-    (self._weekAwardRoot):SetActive(true)
+function UIQuestDailyItem:ShowWeekAwards()
+  local weekQuestList = self._questModule:GetQuestByQuestType(QuestType.QT_Week)
+  if weekQuestList and 0 < #weekQuestList then
+    self._weekAwardRoot:SetActive(true)
     self._weekQuest = weekQuestList[1]
-    ;
-    (Log.debug)("###[UIQuestDailyItem] ShowWeekAwards get quest succ !")
-    self._weekQuestInfo = (self._weekQuest):QuestInfo()
-    local weekActiveVal = (self._weekQuestInfo).cur_progress
-    local weekActiveGetVal = (self._weekQuestInfo).total_progress
-    self._weekAwardStatus = (self._weekQuestInfo).status
-    ;
-    (Log.debug)("###[UIQuestDailyItem] ShowWeekAwards _weekAwardStatus:", self._weekAwardStatus)
-    local sprite = nil
+    Log.debug("###[UIQuestDailyItem] ShowWeekAwards get quest succ !")
+    self._weekQuestInfo = self._weekQuest:QuestInfo()
+    local weekActiveVal = self._weekQuestInfo.cur_progress
+    local weekActiveGetVal = self._weekQuestInfo.total_progress
+    self._weekAwardStatus = self._weekQuestInfo.status
+    Log.debug("###[UIQuestDailyItem] ShowWeekAwards _weekAwardStatus:", self._weekAwardStatus)
+    local sprite
     if self._weekAwardStatus == QuestStatus.QUEST_Taken then
       sprite = "task_week_icon3"
+    elseif self._weekAwardStatus == QuestStatus.QUEST_Completed then
+      sprite = "task_week_icon2"
     else
-      if self._weekAwardStatus == QuestStatus.QUEST_Completed then
-        sprite = "task_week_icon2"
-      else
-        sprite = "task_week_icon1"
-      end
+      sprite = "task_week_icon1"
     end
-    ;
-    (self._weekAwardsTex):SetText("<size=40>" .. weekActiveVal .. "</size>\n/" .. weekActiveGetVal)
-    -- DECOMPILER ERROR at PC65: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._weekAwards).sprite = (self._atlas):GetSprite(sprite)
+    self._weekAwardsTex:SetText("<size=40>" .. weekActiveVal .. [[
+</size>
+/]] .. weekActiveGetVal)
+    self._weekAwards.sprite = self._atlas:GetSprite(sprite)
   else
-    do
-      ;
-      (Log.fatal)("###[UIQuestDailyItem] 没有获取到周任务，查看任务配置")
-      ;
-      (self._weekAwardRoot):SetActive(false)
-    end
+    Log.fatal("###[UIQuestDailyItem] 没有获取到周任务，查看任务配置")
+    self._weekAwardRoot:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.WeekAwardsOnClick = function(self, go)
-  -- function num : 0_24 , upvalues : _ENV
-  (Log.debug)("###[UIQuestDailyItem] WeekAwardsOnClick !")
+function UIQuestDailyItem:WeekAwardsOnClick(go)
+  Log.debug("###[UIQuestDailyItem] WeekAwardsOnClick !")
   if self._weekAwardStatus == QuestStatus.QUEST_Completed then
-    self:GetQuestItemAward((self._weekQuestInfo).quest_id)
+    self:GetQuestItemAward(self._weekQuestInfo.quest_id)
+  elseif self._weekAwardStatus == QuestStatus.QUEST_Taken then
+    local tips = StringTable.Get("str_quest_base_dayli_tips_awards_got")
+    ToastManager.ShowToast(tips)
   else
-    if self._weekAwardStatus == QuestStatus.QUEST_Taken then
-      local tips = (StringTable.Get)("str_quest_base_dayli_tips_awards_got")
-      ;
-      (ToastManager.ShowToast)(tips)
-    else
-      do
-        local awards = (self._weekQuestInfo).rewards
-        local total = (self._weekQuestInfo).total_progress
-        local endTime = (self._questModule):GetWeekRefreshTime()
-        self:ShowDialog("UIQuestDailyWeekAwards", awards, endTime, total)
-      end
-    end
+    local awards = self._weekQuestInfo.rewards
+    local total = self._weekQuestInfo.total_progress
+    local endTime = self._questModule:GetWeekRefreshTime()
+    self:ShowDialog("UIQuestDailyWeekAwards", awards, endTime, total)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.CheckAwadeBtnOnClick = function(self, go)
-  -- function num : 0_25
-  (self._checkAwade):SetActive(false)
+function UIQuestDailyItem:CheckAwadeBtnOnClick(go)
+  self._checkAwade:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.ShowActivityTitle = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIQuestDailyItem:ShowActivityTitle()
   local isOpen = false
-  local cfg = (Cfg.cfg_quest_daily_extra_activity)[1]
+  local cfg = Cfg.cfg_quest_daily_extra_activity[1]
   if not cfg then
-    (Log.fatal)("###[UIQuestDailyItem] cfg is nil ! id --> ", 1)
+    Log.fatal("###[UIQuestDailyItem] cfg is nil ! id --> ", 1)
   else
-    local loginModule = (GameGlobal.GetModule)(LoginModule)
-    local svrTime = (self._svrTimeModule):GetServerTime() * 0.001
+    local loginModule = GameGlobal.GetModule(LoginModule)
+    local svrTime = self._svrTimeModule:GetServerTime() * 0.001
     local startTimeStr = cfg.StartTime
     local endTimeStr = cfg.EndTime
     local openTime = loginModule:GetTimeStampByTimeStr(startTimeStr, Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone)
     local closeTime = loginModule:GetTimeStampByTimeStr(endTimeStr, Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone)
-    if openTime <= svrTime and svrTime < closeTime then
+    if svrTime >= openTime and svrTime < closeTime then
       isOpen = true
     end
   end
-  do
-    ;
-    (self._activityTitle):SetActive(isOpen)
-  end
+  self._activityTitle:SetActive(isOpen)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem._InitDailyTaskList = function(self, scrollView, index)
-  -- function num : 0_27
+function UIQuestDailyItem:_InitDailyTaskList(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -711,140 +518,98 @@ UIQuestDailyItem._InitDailyTaskList = function(self, scrollView, index)
     self:_ShowDailyItem(heartItem, itemIndex)
     local has = false
     for i = 0, #self.items do
-      local item = (self.items)[i]
+      local item = self.items[i]
       if item == heartItem then
         has = true
       end
     end
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R13 in 'UnsetPending'
-
     if not has then
-      (self.items)[#self.items + 1] = heartItem
+      self.items[#self.items + 1] = heartItem
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem._ShowDailyItem = function(self, heartItem, index)
-  -- function num : 0_28 , upvalues : _ENV
+function UIQuestDailyItem:_ShowDailyItem(heartItem, index)
   if index == 1 then
     if not self.guideItems then
       self.guideItems = {}
     end
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.guideItems)[1] = heartItem
-  else
-    if index == 2 then
-      if not self.guideItems then
-        self.guideItems = {}
-      end
-      -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.guideItems)[2] = heartItem
+    self.guideItems[1] = heartItem
+  elseif index == 2 then
+    if not self.guideItems then
+      self.guideItems = {}
     end
+    self.guideItems[2] = heartItem
   end
-  local quest = (self._questList)[index]
-  ;
-  (heartItem:GetGameObject()):SetActive(true)
+  local quest = self._questList[index]
+  heartItem:GetGameObject():SetActive(true)
   if quest ~= nil then
     heartItem:SetData(index, quest, function(questInfo)
-    -- function num : 0_28_0 , upvalues : self
-    self:QuestItemClick(questInfo)
-  end
-, function(matid, pos)
-    -- function num : 0_28_1 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.QuestAwardItemClick, matid, pos)
-  end
-)
+      self:QuestItemClick(questInfo)
+    end, function(matid, pos)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.QuestAwardItemClick, matid, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.QuestItemClick = function(self, questInfo)
-  -- function num : 0_29 , upvalues : _ENV
+function UIQuestDailyItem:QuestItemClick(questInfo)
   if questInfo.status <= QuestStatus.QUEST_Accepted then
-    local jumpModule = (self._questModule).uiModule
+    local jumpModule = self._questModule.uiModule
     if jumpModule == nil then
-      (Log.fatal)("[quest] error --> uiModule is nil ! --> jumpModule")
-      return 
+      Log.fatal("[quest] error --> uiModule is nil ! --> jumpModule")
+      return
     end
     local fromParam = {}
-    ;
-    (table.insert)(fromParam, QuestType.QT_Daily)
+    table.insert(fromParam, QuestType.QT_Daily)
     jumpModule:SetFromUIData(FromUIType.NormalUI, "UIQuestController", UIStateType.UIMain, fromParam)
     local jumpType = questInfo.JumpID
     local jumpParams = questInfo.JumpParam
     jumpModule:SetJumpUIData(jumpType, jumpParams)
     jumpModule:Jump()
-  else
-    do
-      if questInfo.status == QuestStatus.QUEST_Completed then
-        self:getAllBtnOnClick()
-      end
-    end
+  elseif questInfo.status == QuestStatus.QUEST_Completed then
+    self:getAllBtnOnClick()
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.GetQuestItemAward = function(self, id)
-  -- function num : 0_30 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
+function UIQuestDailyItem:GetQuestItemAward(id)
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
   self:Lock("UIQuestGet")
   self:StartTask(self._GetQuestItemAwardReq, self, id)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem._GetQuestItemAwardReq = function(self, TT, id)
-  -- function num : 0_31 , upvalues : _ENV
-  local res, msg = (self._questModule):TakeQuestReward(TT, id)
+function UIQuestDailyItem:_GetQuestItemAwardReq(TT, id)
+  local res, msg = self._questModule:TakeQuestReward(TT, id)
   self:UnLock("UIQuestGet")
   if self.uiOwner == nil then
-    return 
+    return
   end
   if res:GetSucc() then
     local tempPets = {}
     local pets = msg.rewards
     self._tempMsgRewards = msg.rewards
-    if #pets > 0 then
+    if 0 < #pets then
       for i = 1, #pets do
-        local ispet = ((GameGlobal.GetModule)(PetModule)):IsPetID((pets[i]).assetid)
+        local ispet = GameGlobal.GetModule(PetModule):IsPetID(pets[i].assetid)
         if ispet then
-          (table.insert)(tempPets, pets[i])
+          table.insert(tempPets, pets[i])
         end
       end
     end
-    do
-      if #tempPets > 0 then
-        self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_31_0 , upvalues : _ENV, self
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIPetObtainCloseInQuest, self._dispatchTypeQuest)
-  end
-)
-      else
-        self:ShowDialog("UIGetItemController", msg.rewards, function()
-    -- function num : 0_31_1 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, self._dispatchTypeQuest)
-  end
-)
-      end
+    if 0 < #tempPets then
+      self:ShowDialog("UIPetObtain", tempPets, function()
+        GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIPetObtainCloseInQuest, self._dispatchTypeQuest)
+      end)
+    else
+      self:ShowDialog("UIGetItemController", msg.rewards, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, self._dispatchTypeQuest)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.AttachEvents = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function UIQuestDailyItem:AttachEvents()
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:AttachEvent(GameEventType.OnUIPetObtainCloseInQuest, self.OnUIPetObtainCloseInQuest)
   self:AttachEvent(GameEventType.UIQuestDailyReset, self.UIQuestDailyReset)
@@ -852,10 +617,7 @@ UIQuestDailyItem.AttachEvents = function(self)
   self:AttachEvent(GameEventType.OnWeekRewardChanged, self.ShowWeekAwards)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.RemoveEvents = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function UIQuestDailyItem:RemoveEvents()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:DetachEvent(GameEventType.OnUIPetObtainCloseInQuest, self.OnUIPetObtainCloseInQuest)
   self:DetachEvent(GameEventType.UIQuestDailyReset, self.UIQuestDailyReset)
@@ -863,62 +625,39 @@ UIQuestDailyItem.RemoveEvents = function(self)
   self:DetachEvent(GameEventType.OnWeekRewardChanged, self.ShowWeekAwards)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.UIQuestDailyVigorous = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  (Log.debug)("###[UIQuestDailyItem] UIQuestDailyVigorous!")
+function UIQuestDailyItem:UIQuestDailyVigorous()
+  Log.debug("###[UIQuestDailyItem] UIQuestDailyVigorous!")
   self:_ShowActivePoint()
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_35
+function UIQuestDailyItem:OnUIGetItemCloseInQuest(type)
   if self._isOpen then
     if type == self._dispatchTypeQuest then
       self:RefrenshList()
-    else
-      if type == self._dispatchTypeActive then
-        self:RefrenshActivePoint()
-      else
-        if type == self._dispatchTypeAll then
-          self:RefrenshList()
-        end
-      end
+    elseif type == self._dispatchTypeActive then
+      self:RefrenshActivePoint()
+    elseif type == self._dispatchTypeAll then
+      self:RefrenshList()
     end
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.OnUIPetObtainCloseInQuest = function(self, type)
-  -- function num : 0_36 , upvalues : _ENV
+function UIQuestDailyItem:OnUIPetObtainCloseInQuest(type)
   if self._isOpen then
     if type == self._dispatchTypeQuest then
       self:ShowDialog("UIGetItemController", self._tempMsgRewards, function()
-    -- function num : 0_36_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, self._dispatchTypeQuest)
-  end
-)
-    else
-      if type == self._dispatchTypeAll then
-        self:ShowDialog("UIGetItemController", self._tempMsgRewards, function()
-    -- function num : 0_36_1 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, self._dispatchTypeAll)
-  end
-)
-      end
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, self._dispatchTypeQuest)
+      end)
+    elseif type == self._dispatchTypeAll then
+      self:ShowDialog("UIGetItemController", self._tempMsgRewards, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, self._dispatchTypeAll)
+      end)
     end
-    ;
-    (self._list):MovePanelToItemIndex(0, 0)
+    self._list:MovePanelToItemIndex(0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.getAllBtnOnClick = function(self)
-  -- function num : 0_37
+function UIQuestDailyItem:getAllBtnOnClick()
   local canClick = self:_CheckCanOneKeyReward()
   if canClick then
     self:Lock("UIQuestGet")
@@ -926,95 +665,70 @@ UIQuestDailyItem.getAllBtnOnClick = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem._CheckCanOneKeyReward = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function UIQuestDailyItem:_CheckCanOneKeyReward()
   local canClick = false
-  for key,value in pairs(self._questList) do
+  for key, value in pairs(self._questList) do
     local questInfo = value
-    if (questInfo:QuestInfo()).status == QuestStatus.QUEST_Completed then
+    if questInfo:QuestInfo().status == QuestStatus.QUEST_Completed then
       canClick = true
       break
     end
   end
-  do
-    if not canClick then
-      local aps = (self._activePointPool):GetAllSpawnList()
-      for i = 1, (table.count)(aps) do
-        local canGetActive = (aps[i]):GetActiveState()
-        if canGetActive then
-          canClick = true
-          break
-        end
-      end
-    end
-    do
-      if not canClick and self._weekQuest and self._weekAwardStatus == QuestStatus.QUEST_Completed then
+  if not canClick then
+    local aps = self._activePointPool:GetAllSpawnList()
+    for i = 1, table.count(aps) do
+      local canGetActive = aps[i]:GetActiveState()
+      if canGetActive then
         canClick = true
+        break
       end
-      return canClick
     end
   end
+  if not canClick and self._weekQuest and self._weekAwardStatus == QuestStatus.QUEST_Completed then
+    canClick = true
+  end
+  return canClick
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.OngetAllBtnOnClick = function(self, TT)
-  -- function num : 0_39 , upvalues : _ENV
-  local res, msg = (self._questModule):TakeOneKeyReward(TT, self._type)
+function UIQuestDailyItem:OngetAllBtnOnClick(TT)
+  local res, msg = self._questModule:TakeOneKeyReward(TT, self._type)
   self:UnLock("UIQuestGet")
   if self.uiOwner == nil then
-    return 
+    return
   end
   if res:GetSucc() then
     local tempPets = {}
     local pets = msg.rewards
     self._tempMsgRewards = msg.rewards
-    if #pets > 0 then
+    if 0 < #pets then
       for i = 1, #pets do
-        local ispet = ((GameGlobal.GetModule)(PetModule)):IsPetID((pets[i]).assetid)
+        local ispet = GameGlobal.GetModule(PetModule):IsPetID(pets[i].assetid)
         if ispet then
-          (table.insert)(tempPets, pets[i])
+          table.insert(tempPets, pets[i])
         end
       end
     end
-    do
-      if #tempPets > 0 then
-        self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_39_0 , upvalues : _ENV, self
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIPetObtainCloseInQuest, self._dispatchTypeAll)
-  end
-)
-      else
-        if (table.count)(msg.rewards) > 0 then
-          self:ShowDialog("UIGetItemController", msg.rewards, function()
-    -- function num : 0_39_1 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, self._dispatchTypeAll)
-  end
-)
-        else
-          local tips = (StringTable.Get)("str_physicalpower_error_phy_add_full")
-          ;
-          (ToastManager.ShowToast)(tips)
-        end
-      end
+    if 0 < #tempPets then
+      self:ShowDialog("UIPetObtain", tempPets, function()
+        GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIPetObtainCloseInQuest, self._dispatchTypeAll)
+      end)
+    elseif 0 < table.count(msg.rewards) then
+      self:ShowDialog("UIGetItemController", msg.rewards, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, self._dispatchTypeAll)
+      end)
+    else
+      local tips = StringTable.Get("str_physicalpower_error_phy_add_full")
+      ToastManager.ShowToast(tips)
     end
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyItem.GetGuideItemBtn = function(self, index)
-  -- function num : 0_40
+function UIQuestDailyItem:GetGuideItemBtn(index)
   if self.guideItems then
-    local item = (self.guideItems)[index]
+    local item = self.guideItems[index]
     if item then
       return item:GetBtnObj()
     end
   end
 end
-
-

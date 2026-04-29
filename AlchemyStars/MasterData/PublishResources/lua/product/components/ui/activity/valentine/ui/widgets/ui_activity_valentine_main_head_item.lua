@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/valentine/ui/widgets/ui_activity_valentine_main_head_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityValentineMainHeadItem", UICustomWidget)
 UIActivityValentineMainHeadItem = UIActivityValentineMainHeadItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityValentineMainHeadItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityValentineMainHeadItem:Constructor()
   self._unSelectSize = Vector2(225, 135)
   self._selectSize = Vector2(250, 150)
   self._isLock = true
   self._timer = 0.2
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainHeadItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityValentineMainHeadItem:OnShow(uiParams)
   self._atlas = self:GetAsset("Valentine.spriteatlas", LoadType.SpriteAtlas)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainHeadItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIActivityValentineMainHeadItem:_GetComponents()
   self._headImg = self:GetUIComponent("RawImageLoader", "headImg")
   self._selectObj = self:GetGameObject("select")
   self._lockObj = self:GetGameObject("lock")
@@ -38,128 +25,80 @@ UIActivityValentineMainHeadItem._GetComponents = function(self)
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainHeadItem.SetData = function(self, cfg, isLock, callback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityValentineMainHeadItem:SetData(cfg, isLock, callback)
   self._cfg = cfg
   self._callback = callback
-  ;
-  (self._headImg):LoadImage((self._cfg).HeadImg_b)
+  self._headImg:LoadImage(self._cfg.HeadImg_b)
   self._isLock = isLock
-  ;
-  (self._redObj):SetActive(false)
-  ;
-  (self._doneObj):SetActive(false)
+  self._redObj:SetActive(false)
+  self._doneObj:SetActive(false)
   if isLock then
-    (self._lockObj):SetActive(true)
+    self._lockObj:SetActive(true)
   else
-    ;
-    (self._lockObj):SetActive(false)
+    self._lockObj:SetActive(false)
     local status = self:GetSendTaskStatus()
     if status == QuestStatus.QUEST_Taken then
-      (self._doneObj):SetActive(true)
-    else
-      if status == QuestStatus.QUEST_Completed then
-        (self._redObj):SetActive(true)
-      end
+      self._doneObj:SetActive(true)
+    elseif status == QuestStatus.QUEST_Completed then
+      self._redObj:SetActive(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainHeadItem.GetIsLock = function(self)
-  -- function num : 0_4
+function UIActivityValentineMainHeadItem:GetIsLock()
   return self._isLock
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainHeadItem.SetSelecte = function(self, isSelected)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._bgImg).sprite = (self._atlas):GetSprite("N27_qrj_di08")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._lockImg).sprite = (self._atlas):GetSprite("N27_qrj_mask04")
-  ;
-  (self._headImg):LoadImage((self._cfg).HeadImg_b)
+function UIActivityValentineMainHeadItem:SetSelecte(isSelected)
+  self._bgImg.sprite = self._atlas:GetSprite("N27_qrj_di08")
+  self._lockImg.sprite = self._atlas:GetSprite("N27_qrj_mask04")
+  self._headImg:LoadImage(self._cfg.HeadImg_b)
   if isSelected then
-    (self._layoutElement):DOPreferredSize(self._selectSize, self._timer, false)
+    self._layoutElement:DOPreferredSize(self._selectSize, self._timer, false)
   else
-    ;
-    (self._layoutElement):DOPreferredSize(self._unSelectSize, self._timer, false)
+    self._layoutElement:DOPreferredSize(self._unSelectSize, self._timer, false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainHeadItem._SetScaleAnim = function(self, TT, isSelected)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityValentineMainHeadItem:_SetScaleAnim(TT, isSelected)
   self:Lock("UIActivityValentineMainHeadItem")
   if isSelected then
-    (self._anim):Play("uieff_UIActivityValentineMainHeadItem_big")
+    self._anim:Play("uieff_UIActivityValentineMainHeadItem_big")
   else
-    ;
-    (self._anim):Play("uieff_UIActivityValentineMainHeadItem_small")
+    self._anim:Play("uieff_UIActivityValentineMainHeadItem_small")
   end
   YIELD(TT, 50)
   self:UnLock("UIActivityValentineMainHeadItem")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainHeadItem.GetCfg = function(self)
-  -- function num : 0_7
+function UIActivityValentineMainHeadItem:GetCfg()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainHeadItem.GetSendTaskId = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local taskGroupId = (self._cfg).TaskGroupID
-  local taskId = (((Cfg.cfg_valentine_task_group)[taskGroupId]).TaskIDGroup)[4]
+function UIActivityValentineMainHeadItem:GetSendTaskId()
+  local taskGroupId = self._cfg.TaskGroupID
+  local taskId = Cfg.cfg_valentine_task_group[taskGroupId].TaskIDGroup[4]
   return taskId
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainHeadItem.SetHeadFinish = function(self)
-  -- function num : 0_9
-  (self._doneObj):SetActive(true)
-  ;
-  (self._redObj):SetActive(false)
+function UIActivityValentineMainHeadItem:SetHeadFinish()
+  self._doneObj:SetActive(true)
+  self._redObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainHeadItem.SetHeadUnLock = function(self)
-  -- function num : 0_10
-  (self._lockObj):SetActive(false)
+function UIActivityValentineMainHeadItem:SetHeadUnLock()
+  self._lockObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainHeadItem.HeadBtnOnClick = function(self, noAnim)
-  -- function num : 0_11
+function UIActivityValentineMainHeadItem:HeadBtnOnClick(noAnim)
   self:SetSelecte(true, noAnim)
-  ;
-  (self._callback)(self)
+  self._callback(self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainHeadItem.GetSendTaskStatus = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityValentineMainHeadItem:GetSendTaskStatus()
   local taskId = self:GetSendTaskId()
-  local questModule = (GameGlobal.GetModule)(QuestModule)
+  local questModule = GameGlobal.GetModule(QuestModule)
   local task = questModule:GetQuest(taskId)
   local status = task:Status()
   return status
 end
-
-

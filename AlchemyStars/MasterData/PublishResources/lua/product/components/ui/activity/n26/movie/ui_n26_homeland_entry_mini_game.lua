@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n26/movie/ui_n26_homeland_entry_mini_game.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN26HomelandEntryMiniGame", Object)
 UIN26HomelandEntryMiniGame = UIN26HomelandEntryMiniGame
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN26HomelandEntryMiniGame.Constructor = function(self, campaign)
-  -- function num : 0_0
+function UIN26HomelandEntryMiniGame:Constructor(campaign)
   self._campaign = campaign
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HomelandEntryMiniGame.GetNew = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN26HomelandEntryMiniGame:GetNew()
   self._movieDataHelper = MovieDataHelper:New()
-  local type = (self._movieDataHelper):ShowOrNot()
+  local type = self._movieDataHelper:ShowOrNot()
   return type
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HomelandEntryMiniGame.GetRedCount = function(self)
-  -- function num : 0_2
+function UIN26HomelandEntryMiniGame:GetRedCount()
   return 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HomelandEntryMiniGame.OpenUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIN26Movie", true)
+function UIN26HomelandEntryMiniGame:OpenUI()
+  GameGlobal.UIStateManager():ShowDialog("UIN26Movie", true)
 end
-
-

@@ -1,61 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_education/ui_education_up_preview.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEducationUpPreview", UIController)
 UIEducationUpPreview = UIEducationUpPreview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEducationUpPreview.Constructor = function(self)
-  -- function num : 0_0
+function UIEducationUpPreview:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpPreview.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIEducationUpPreview:LoadDataOnEnter(TT, res, uiParams)
   self._btnParent = uiParams[1]
   self._element = uiParams[2]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpPreview.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIEducationUpPreview:OnShow(uiParams)
   self:UIWidget()
-  ;
-  (self._btnParent):SetActive(false)
+  self._btnParent:SetActive(false)
   self:Flush()
   self:FlushHeight()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpPreview.OnHide = function(self)
-  -- function num : 0_3
+function UIEducationUpPreview:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpPreview.BtnAnywhereOnClick = function(self, go)
-  -- function num : 0_4
-  (self._btnParent):SetActive(true)
+function UIEducationUpPreview:BtnAnywhereOnClick(go)
+  self._btnParent:SetActive(true)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpPreview.BtnCloseOnClick = function(self, go)
-  -- function num : 0_5
-  (self._btnParent):SetActive(true)
+function UIEducationUpPreview:BtnCloseOnClick(go)
+  self._btnParent:SetActive(true)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpPreview.UIWidget = function(self)
-  -- function num : 0_6
+function UIEducationUpPreview:UIWidget()
   self._uiUpgrade = self:GetUIComponent("RectTransform", "uiUpgrade")
   self._stageCur = self:GetUIComponent("UILocalizationText", "stageCur")
   self._stageNxt = self:GetUIComponent("UILocalizationText", "stageNxt")
@@ -64,84 +38,60 @@ UIEducationUpPreview.UIWidget = function(self)
   self._svUpgrade2 = self:GetUIComponent("RectTransform", "svUpgrade2")
   self._levelCur = self:GetUIComponent("UILocalizationText", "levelCur")
   self._levelNxt = self:GetUIComponent("UILocalizationText", "levelNxt")
-  self._conditions = {self:GetUIComponent("UILocalizationText", "txtCondition1"), self:GetUIComponent("UILocalizationText", "txtCondition2"), self:GetUIComponent("UILocalizationText", "txtCondition3")}
+  self._conditions = {
+    self:GetUIComponent("UILocalizationText", "txtCondition1"),
+    self:GetUIComponent("UILocalizationText", "txtCondition2"),
+    self:GetUIComponent("UILocalizationText", "txtCondition3")
+  }
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpPreview.Flush = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local currentStage = (self._element):GetCurrentStage()
-  ;
-  (self._stageCur):SetText((StringTable.Get)("str_education_stage_name", currentStage))
-  ;
-  (self._stageNxt):SetText((StringTable.Get)("str_education_stage_name", currentStage + 1))
-  local curDataLevel = (self._element):GetCurrentDataLevel()
+function UIEducationUpPreview:Flush()
+  local currentStage = self._element:GetCurrentStage()
+  self._stageCur:SetText(StringTable.Get("str_education_stage_name", currentStage))
+  self._stageNxt:SetText(StringTable.Get("str_education_stage_name", currentStage + 1))
+  local curDataLevel = self._element:GetCurrentDataLevel()
   local nxtDataLevel = curDataLevel
-  local luaIndex = (self._element):GetCurrentLuaIndex()
-  local levelCount = (self._element):GetDataLevelCount()
+  local luaIndex = self._element:GetCurrentLuaIndex()
+  local levelCount = self._element:GetDataLevelCount()
   for i = luaIndex + 1, levelCount do
-    local dataLevel = (self._element):GetDataLevel(i)
+    local dataLevel = self._element:GetDataLevel(i)
     if currentStage < dataLevel:GetStage() then
       nxtDataLevel = dataLevel
       break
     end
   end
-  do
-    local nxtPropertyRestraint = (nxtDataLevel:GetCfg()).PropertyRestraint
-    local curPropertyRestraint = (curDataLevel:GetCfg()).PropertyRestraint
-    local nxtMainSkillDamage = (nxtDataLevel:GetCfg()).MainSkillDamage
-    local curMainSkillDamage = (curDataLevel:GetCfg()).MainSkillDamage
-    ;
-    ((self._levelCur).gameObject):SetActive(false)
-    ;
-    ((self._levelNxt).gameObject):SetActive(false)
-    ;
-    ((self._txtUpgrade).gameObject):SetActive(false)
-    ;
-    ((self._svUpgrade2).gameObject):SetActive(false)
-    if nxtPropertyRestraint - curPropertyRestraint > 0 then
-      ((self._levelCur).gameObject):SetActive(true)
-      ;
-      ((self._levelNxt).gameObject):SetActive(true)
-      ;
-      ((self._txtUpgrade).gameObject):SetActive(true)
-      ;
-      (self._txtUpgrade):SetText((StringTable.Get)("str_education_preview_restrain", (self._element):GetElementName()))
-      ;
-      (self._levelCur):SetText((string.format)("+%.1f%%", curPropertyRestraint))
-      ;
-      (self._levelNxt):SetText((string.format)("+%.1f%%", nxtPropertyRestraint))
-    else
-      if nxtMainSkillDamage - curMainSkillDamage > 0 then
-        ((self._levelCur).gameObject):SetActive(true)
-        ;
-        ((self._levelNxt).gameObject):SetActive(true)
-        ;
-        ((self._txtUpgrade).gameObject):SetActive(true)
-        ;
-        (self._txtUpgrade):SetText((StringTable.Get)("str_education_preview_positive_skill", (self._element):GetElementName()))
-        ;
-        (self._levelCur):SetText((string.format)("+%.1f%%", curMainSkillDamage))
-        ;
-        (self._levelNxt):SetText((string.format)("+%.1f%%", nxtMainSkillDamage))
-      else
-        ;
-        ((self._svUpgrade2).gameObject):SetActive(true)
-        ;
-        (self._txtUpgrade2):SetText((StringTable.Get)("str_education_up_cell_rate", (self._element):GetElementName()))
-      end
-    end
-    self:FlushCondition(self._conditions, nxtDataLevel)
+  local nxtPropertyRestraint = nxtDataLevel:GetCfg().PropertyRestraint
+  local curPropertyRestraint = curDataLevel:GetCfg().PropertyRestraint
+  local nxtMainSkillDamage = nxtDataLevel:GetCfg().MainSkillDamage
+  local curMainSkillDamage = curDataLevel:GetCfg().MainSkillDamage
+  self._levelCur.gameObject:SetActive(false)
+  self._levelNxt.gameObject:SetActive(false)
+  self._txtUpgrade.gameObject:SetActive(false)
+  self._svUpgrade2.gameObject:SetActive(false)
+  if 0 < nxtPropertyRestraint - curPropertyRestraint then
+    self._levelCur.gameObject:SetActive(true)
+    self._levelNxt.gameObject:SetActive(true)
+    self._txtUpgrade.gameObject:SetActive(true)
+    self._txtUpgrade:SetText(StringTable.Get("str_education_preview_restrain", self._element:GetElementName()))
+    self._levelCur:SetText(string.format("+%.1f%%", curPropertyRestraint))
+    self._levelNxt:SetText(string.format("+%.1f%%", nxtPropertyRestraint))
+  elseif 0 < nxtMainSkillDamage - curMainSkillDamage then
+    self._levelCur.gameObject:SetActive(true)
+    self._levelNxt.gameObject:SetActive(true)
+    self._txtUpgrade.gameObject:SetActive(true)
+    self._txtUpgrade:SetText(StringTable.Get("str_education_preview_positive_skill", self._element:GetElementName()))
+    self._levelCur:SetText(string.format("+%.1f%%", curMainSkillDamage))
+    self._levelNxt:SetText(string.format("+%.1f%%", nxtMainSkillDamage))
+  else
+    self._svUpgrade2.gameObject:SetActive(true)
+    self._txtUpgrade2:SetText(StringTable.Get("str_education_up_cell_rate", self._element:GetElementName()))
   end
+  self:FlushCondition(self._conditions, nxtDataLevel)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpPreview.FlushCondition = function(self, conditions, dataLevel, hideMetCondition, inClrMet, inClrUnmet)
-  -- function num : 0_8 , upvalues : _ENV
-  local clrMet = Color(1, 0.74117647058824, 0.12549019607843, 1)
-  local clrUnmet = Color(1, 1, 1, 1)
+function UIEducationUpPreview:FlushCondition(conditions, dataLevel, hideMetCondition, inClrMet, inClrUnmet)
+  local clrMet = Color(1.0, 0.7411764705882353, 0.12549019607843137, 1)
+  local clrUnmet = Color(1.0, 1.0, 1.0, 1)
   if inClrMet ~= nil then
     clrMet = inClrMet
   end
@@ -149,88 +99,55 @@ UIEducationUpPreview.FlushCondition = function(self, conditions, dataLevel, hide
     clrUnmet = inClrUnmet
   end
   local lstData = dataLevel:GetCondition()
-  for k,v in pairs(conditions) do
+  for k, v in pairs(conditions) do
     local data = lstData[k]
     if data == nil then
-      (v.gameObject):SetActive(false)
+      v.gameObject:SetActive(false)
+    elseif hideMetCondition and data:IsMet() then
+      v.gameObject:SetActive(false)
     else
-      if hideMetCondition and data:IsMet() then
-        (v.gameObject):SetActive(false)
+      v.gameObject:SetActive(true)
+      local imgLock = self:GetChildComponent(v, "RectTransform", "imgLock")
+      local imgPass = self:GetChildComponent(v, "RectTransform", "imgPass")
+      if imgLock ~= nil then
+        imgLock.gameObject:SetActive(not data:IsMet())
+      end
+      if imgPass ~= nil then
+        imgPass.gameObject:SetActive(data:IsMet())
+      end
+      local value
+      if data:IsMet() then
+        v.color = clrMet
+        value = string.format("%d/%d", data:GetCompleted(), data:GetQuantity())
       else
-        ;
-        (v.gameObject):SetActive(true)
-        local imgLock = self:GetChildComponent(v, "RectTransform", "imgLock")
-        local imgPass = self:GetChildComponent(v, "RectTransform", "imgPass")
-        if imgLock ~= nil then
-          (imgLock.gameObject):SetActive(not data:IsMet())
-        end
-        if imgPass ~= nil then
-          (imgPass.gameObject):SetActive(data:IsMet())
-        end
-        local value = nil
-        if data:IsMet() then
-          v.color = clrMet
-          value = (string.format)("%d/%d", data:GetCompleted(), data:GetQuantity())
+        v.color = clrUnmet
+        value = string.format("<color=#F73636>%d</color>/%d", data:GetCompleted(), data:GetQuantity())
+      end
+      if data:Type() == ConditionType.CT_TowerType then
+        local towerType = data:GetTowerType()
+        if towerType == ElementType.ElementType_None then
+          v:SetText(StringTable.Get("str_education_upstage_condition_tower", data:GetTowerLevel(), value))
         else
-          v.color = clrUnmet
-          value = (string.format)("<color=#F73636>%d</color>/%d", data:GetCompleted(), data:GetQuantity())
+          local elementName = UIEducationData:GetPetElementName(towerType)
+          v:SetText(StringTable.Get("str_education_upstage_condition_tower2", elementName, data:GetTowerLevel(), value))
         end
-        if data:Type() == ConditionType.CT_TowerType then
-          local towerType = data:GetTowerType()
-          if towerType == ElementType.ElementType_None then
-            v:SetText((StringTable.Get)("str_education_upstage_condition_tower", data:GetTowerLevel(), value))
-          else
-            local elementName = UIEducationData:GetPetElementName(towerType)
-            v:SetText((StringTable.Get)("str_education_upstage_condition_tower2", elementName, data:GetTowerLevel(), value))
-          end
-        else
-          do
-            if data:Type() == ConditionType.CT_PetGradeY then
-              v:SetText((StringTable.Get)("str_education_upstage_condition_awaken", data:GetQuantity(), data:GetGradeLevel(), value))
-            else
-              if data:Type() == ConditionType.CT_PetYElementZLevel then
-                local elementName = UIEducationData:GetPetElementName(data:GetElementType())
-                v:SetText((StringTable.Get)("str_education_upstage_condition_grade", data:GetQuantity(), data:GetLimitGrade(), elementName, value))
-              end
-            end
-            do
-              -- DECOMPILER ERROR at PC176: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC176: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC176: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC176: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC176: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC176: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC176: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
+      elseif data:Type() == ConditionType.CT_PetGradeY then
+        v:SetText(StringTable.Get("str_education_upstage_condition_awaken", data:GetQuantity(), data:GetGradeLevel(), value))
+      elseif data:Type() == ConditionType.CT_PetYElementZLevel then
+        local elementName = UIEducationData:GetPetElementName(data:GetElementType())
+        v:SetText(StringTable.Get("str_education_upstage_condition_grade", data:GetQuantity(), data:GetLimitGrade(), elementName, value))
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUpPreview.FlushHeight = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIEducationUpPreview:FlushHeight()
   local preferredHeight = 0
-  for k,v in pairs(self._conditions) do
-    if (v.gameObject).activeSelf then
+  for k, v in pairs(self._conditions) do
+    if v.gameObject.activeSelf then
       preferredHeight = preferredHeight + v.preferredHeight
     end
   end
-  preferredHeight = (math.max)(200, preferredHeight + 100)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._uiUpgrade).sizeDelta = Vector2(((self._uiUpgrade).sizeDelta).x, preferredHeight)
+  preferredHeight = math.max(200, preferredHeight + 100)
+  self._uiUpgrade.sizeDelta = Vector2(self._uiUpgrade.sizeDelta.x, preferredHeight)
 end
-
-

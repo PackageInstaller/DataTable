@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/award/ui_season_show_awards_item_s3.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonShowAwardsItemS3", UICustomWidget)
 UISeasonShowAwardsItemS3 = UISeasonShowAwardsItemS3
 local maxNumCount = 5
--- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
 
-UISeasonShowAwardsItemS3.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonShowAwardsItemS3:OnShow(uiParams)
   self._rect = self:GetUIComponent("RectTransform", "rect")
   self._anim = self:GetUIComponent("Animation", "rect")
   self._eff = self:GetGameObject("Effect")
@@ -21,70 +14,45 @@ UISeasonShowAwardsItemS3.OnShow = function(self, uiParams)
   self.uiItem = sop:SpawnObject("UISeasonItemS3")
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-UISeasonShowAwardsItemS3.SetData = function(self, itemInfo, index, clickCallback, nameColor, tweenIdx, beforeTime)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._eff):SetActive(false)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._itemAlpha).alpha = 0
+function UISeasonShowAwardsItemS3:SetData(itemInfo, index, clickCallback, nameColor, tweenIdx, beforeTime)
+  self._eff:SetActive(false)
+  self._itemAlpha.alpha = 0
   self._index = index
   self._templateData = itemInfo
-  self._item_id = (self._templateData).item_id
-  do
-    if tweenIdx then
-      local tweenTime = beforeTime + (tweenIdx - 1) * 100
-      if self._tweenEvent then
-        ((GameGlobal.Timer)()):CancelEvent(self._tweenEvent)
-        self._tweenEvent = nil
-      end
-      self._tweenEvent = ((GameGlobal.Timer)()):AddEvent(tweenTime, function()
-    -- function num : 0_1_0 , upvalues : self
-    self:_PlayAnim()
-  end
-)
+  self._item_id = self._templateData.item_id
+  if tweenIdx then
+    local tweenTime = beforeTime + (tweenIdx - 1) * 100
+    if self._tweenEvent then
+      GameGlobal.Timer():CancelEvent(self._tweenEvent)
+      self._tweenEvent = nil
     end
-    self._itemCount = (self._templateData).item_count
-    local ra = RoleAsset:New()
-    ra.assetid = self._item_id
-    ra.count = self._itemCount
-    ;
-    (self.uiItem):Flush(ra)
+    self._tweenEvent = GameGlobal.Timer():AddEvent(tweenTime, function()
+      self:_PlayAnim()
+    end)
   end
+  self._itemCount = self._templateData.item_count
+  local ra = RoleAsset:New()
+  ra.assetid = self._item_id
+  ra.count = self._itemCount
+  self.uiItem:Flush(ra)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-UISeasonShowAwardsItemS3._PlayAnim = function(self)
-  -- function num : 0_2
-  (self._anim):Play("uieff_UIGetItemControllerItem")
+function UISeasonShowAwardsItemS3:_PlayAnim()
+  self._anim:Play("uieff_UIGetItemControllerItem")
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UISeasonShowAwardsItemS3.GetIndex = function(self)
-  -- function num : 0_3
+function UISeasonShowAwardsItemS3:GetIndex()
   return self._index
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UISeasonShowAwardsItemS3.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonShowAwardsItemS3:OnHide()
   if self._tweenEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._tweenEvent)
+    GameGlobal.Timer():CancelEvent(self._tweenEvent)
     self._tweenEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UISeasonShowAwardsItemS3.FormatItemCount = function(self, count)
-  -- function num : 0_5 , upvalues : _ENV
-  local tex = (HelperProxy:GetInstance()):FormatItemCount(count)
+function UISeasonShowAwardsItemS3:FormatItemCount(count)
+  local tex = HelperProxy:GetInstance():FormatItemCount(count)
   return tex
 end
-
-

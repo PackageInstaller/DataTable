@@ -1,70 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_fltt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignFLTT", ICampaignComponentLocalProcessBase)
 CCampaignFLTT = CCampaignFLTT
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignFLTT.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignFLTT:Constructor()
   self._lineMissionComponent = nil
   self._lineMissionComponentInfo = nil
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignFLTT.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignFLTT:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_FLTT
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignFLTT.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignFLTT:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignFLTT.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignFLTT:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetLineMissionComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignFLTT._GetLineMissionComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._lineMissionComponent = (self._campaignObj):GetComponent(ECampaignFLTTComponentID.ECAMPAIGN_FLTT_LINE_MISSION)
+function CCampaignFLTT:_GetLineMissionComponent()
+  self._lineMissionComponent = self._campaignObj:GetComponent(ECampaignFLTTComponentID.ECAMPAIGN_FLTT_LINE_MISSION)
   if not self._lineMissionComponent then
-    return 
+    return
   end
-  self._lineMissionComponentInfo = (self._lineMissionComponent):ComponentInfo()
+  self._lineMissionComponentInfo = self._lineMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignFLTT.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CCampaignFLTT:GetComponent(componentID)
   if ECampaignFLTTComponentID.ECAMPAIGN_FLTT_LINE_MISSION == componentID then
     return self._lineMissionComponent
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignFLTT.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignFLTT:GetComponentInfo(componentID)
   if ECampaignFLTTComponentID.ECAMPAIGN_FLTT_LINE_MISSION == componentID then
     return self._lineMissionComponentInfo
   end
   return nil
 end
-
-

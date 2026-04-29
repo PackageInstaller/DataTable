@@ -1,54 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/review/ui_xh1_summer1_process_item_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXH1Summer1ProcessItemReview", UICustomWidget)
 UIXH1Summer1ProcessItemReview = UIXH1Summer1ProcessItemReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXH1Summer1ProcessItemReview.OnShow = function(self)
-  -- function num : 0_0
+function UIXH1Summer1ProcessItemReview:OnShow()
   self._hasGet = self:GetGameObject("HasGet")
   self._lastCanGet = self:GetGameObject("LastCanGet")
   self._unComplete = self:GetGameObject("UnComplete")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Summer1ProcessItemReview.SetData = function(self, summer, data)
-  -- function num : 0_1
+function UIXH1Summer1ProcessItemReview:SetData(summer, data)
   self._summer = summer
   self._data = data
-  ;
-  (self._hasGet):SetActive(false)
-  ;
-  (self._lastCanGet):SetActive(false)
-  ;
-  (self._unComplete):SetActive(false)
-  if (self._data).status == 1 then
-    (self._hasGet):SetActive(true)
-  else
-    if (self._data).status == 2 then
-      (self._lastCanGet):SetActive(true)
-    else
-      if (self._data).status == 3 then
-        (self._unComplete):SetActive(true)
-      end
-    end
+  self._hasGet:SetActive(false)
+  self._lastCanGet:SetActive(false)
+  self._unComplete:SetActive(false)
+  if self._data.status == 1 then
+    self._hasGet:SetActive(true)
+  elseif self._data.status == 2 then
+    self._lastCanGet:SetActive(true)
+  elseif self._data.status == 3 then
+    self._unComplete:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Summer1ProcessItemReview.CanGetOnClick = function(self)
-  -- function num : 0_2
+function UIXH1Summer1ProcessItemReview:CanGetOnClick()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1Summer1ProcessItemReview.LastCanGetOnClick = function(self)
-  -- function num : 0_3
+function UIXH1Summer1ProcessItemReview:LastCanGetOnClick()
 end
-
-

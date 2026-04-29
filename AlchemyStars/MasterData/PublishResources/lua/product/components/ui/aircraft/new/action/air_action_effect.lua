@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionEffect", AirActionBase)
 AirActionEffect = AirActionEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionEffect.Constructor = function(self, pet, effName, slotType, offset, duration)
-  -- function num : 0_0 , upvalues : _ENV
+function AirActionEffect:Constructor(pet, effName, slotType, offset, duration)
   self._pet = pet
   self._effName = effName
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset(effName, LoadType.GameObject)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(effName, LoadType.GameObject)
   self._req = req
   self._effect = req.Obj
-  self._transform = (req.Obj).transform
+  self._transform = req.Obj.transform
   self._duration = duration
   if duration then
     self._timer = 0
@@ -24,71 +17,49 @@ AirActionEffect.Constructor = function(self, pet, effName, slotType, offset, dur
   if not self._offset then
     self._offset = Vector3.zero
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
   if self._slotType == AircraftPetSlotType.None then
-    (self._transform).position = self._offset
+    self._transform.position = self._offset
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionEffect.Start = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AirActionEffect:Start()
   self._running = true
-  ;
-  (self._effect):SetActive(true)
-  local collider = (self._effect):GetComponentInChildren(typeof(UnityEngine.BoxCollider))
+  self._effect:SetActive(true)
+  local collider = self._effect:GetComponentInChildren(typeof(UnityEngine.BoxCollider))
   if collider then
-    AirLog("特效包含碰撞器，设置给星灵:", self._effName, (self._pet):PetName())
-    ;
-    (self._pet):SetEffectCollider(collider)
+    AirLog("特效包含碰撞器，设置给星灵:", self._effName, self._pet:PetName())
+    self._pet:SetEffectCollider(collider)
     self._hasCollider = true
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionEffect.Stop = function(self)
-  -- function num : 0_2
+function AirActionEffect:Stop()
   if self._running then
     self._running = false
   end
   self:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionEffect.Dispose = function(self)
-  -- function num : 0_3
-  (self._req):Dispose()
+function AirActionEffect:Dispose()
+  self._req:Dispose()
   self._req = nil
   self._effect = nil
   self._transform = nil
   if self._hasCollider then
-    (self._pet):SetEffectCollider(nil)
+    self._pet:SetEffectCollider(nil)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionEffect.Update = function(self, dt)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
+function AirActionEffect:Update(dt)
   if self._running then
     if self._slotType == AircraftPetSlotType.Root then
-      (self._transform).position = (self._pet):WorldPosition() + self._offset
-    else
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-      if self._slotType == AircraftPetSlotType.Head then
-        (self._transform).position = (self._pet):HeadPos() + self._offset
-      end
+      self._transform.position = self._pet:WorldPosition() + self._offset
+    elseif self._slotType == AircraftPetSlotType.Head then
+      self._transform.position = self._pet:HeadPos() + self._offset
     end
     if self._duration then
       self._timer = self._timer + dt
-      if self._duration < self._timer then
+      if self._timer > self._duration then
         self._running = false
         self:Stop()
       end
@@ -96,18 +67,10 @@ AirActionEffect.Update = function(self, dt)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionEffect.IsOver = function(self)
-  -- function num : 0_5
+function AirActionEffect:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionEffect.GetGameObject = function(self)
-  -- function num : 0_6
+function AirActionEffect:GetGameObject()
   return self._effect
 end
-
-

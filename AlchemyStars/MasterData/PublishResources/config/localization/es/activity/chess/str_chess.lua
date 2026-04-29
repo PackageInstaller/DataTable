@@ -1,8 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/es/activity/chess/str_chess.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_chess_title = "Chocar y quemar", str_chess_content = "¡Haz que se estrellen y se quemen!\nEste juego se desarrolló originalmente para ayudar a los jóvenes RW Aurorians a comprender mejor a sus enemigos y obtener ventajas en la batalla controlando Eclipsites y familiarizándose con sus movimientos. Sin embargo, pronto se convirtió en un juego popular en todo el desierto de Rediesel. Con el tiempo, la limitación de este juego se ha roto.", str_chess_remain_time = "<color= #c3b7ac>El evento termina en {1}</color>", str_chess_side_title = "Chocar y quemar", str_chess_intro = "I. En Crash & Burn, los eclipses se controlan para enfrentarse a los aurorianos en una batalla simulada.\nII. El desafío falla si todos nuestros Eclipsites son derrotados o si no quedan rondas. Nuestros Eclipsites deben cumplir las condiciones de victoria del escenario para ganar.\ntercero Un Aurorian solo puede moverse en fichas de su elemento. Cualquier mosaico que haya atravesado un Aurorian no se actualizará.\nIV. Los eclipses tienen diferentes características. Ajusta tus tácticas de combate en consecuencia para jugar con sus ventajas.", str_chess_1_name = "N1 - Situación similar", str_chess_2_name = "N2 - Estancamiento", str_chess_3_name = "N3 - Tierra Muerta", str_chess_4_name = "N4 - Frontline", str_chess_5_name = "N5 - Escapar", str_chess_6_name = "N6 - Escudo roto", str_chess_7_name = "N7 - Lucha a muerte", str_chess_8_name = "N8 - Barrera", str_chess_9_name = "N9 - Oponente poderoso", str_chess_1_desc = "Escenas similares, enemigos similares... Perdura en el corazón es una premonición de que la próxima batalla puede ser muy diferente...", str_chess_2_desc = "En realidad, esto es solo el comienzo. Es natural que se produzca un punto muerto. No le temas ni actúes impulsivamente. Acostúmbrate a esta forma de pelear.", str_chess_3_desc = "¡Cargar! ¡Golpéalos! ¡Haz todo lo que puedas para que esos desagradables villanos caigan en la trampa mortal, y la victoria será nuestra!", str_chess_4_desc = "¡Realmente tienen caballos y pueden saltar! ¡Ten cuidado!", str_chess_5_desc = "No todas las batallas terminan con la derrota del oponente. A veces, retirarse es una forma de victoria.", str_chess_6_desc = "Solo confían en sus sólidas armaduras y escudos. ¡Podremos asaltarlos una vez que rompamos sus defensas!", str_chess_7_desc = "La clave de la victoria es la velocidad, la velocidad y la velocidad. Es importante, así que lo dije tres veces.", str_chess_8_desc = "La fuerza bruta es inútil contra escudos sólidos y barreras Lumina. Lo que necesitas es tu ingenio.", str_chess_9_desc = "El líder del enemigo es demasiado fuerte. ¿Cómo encontrar el secreto para ganar?", str_chess_1_desc_long = "Escenas similares, enemigos similares... Perdura en el corazón es una premonición de que la próxima batalla puede ser muy diferente...", str_chess_2_desc_long = "En realidad, esto es solo el comienzo. Es natural que se produzca un punto muerto. No le temas ni actúes impulsivamente. Acostúmbrate a esta forma de pelear.", str_chess_3_desc_long = "¡Cargar! ¡Golpéalos! ¡Haz todo lo que puedas para que esos desagradables villanos caigan en la trampa mortal, y la victoria será nuestra!", str_chess_4_desc_long = "¡Realmente tienen caballos y pueden saltar! ¡Ten cuidado!", str_chess_5_desc_long = "No todas las batallas terminan con la derrota del oponente. A veces, retirarse es una forma de victoria.", str_chess_6_desc_long = "Solo confían en sus sólidas armaduras y escudos. ¡Podremos asaltarlos una vez que rompamos sus defensas!", str_chess_7_desc_long = "La clave de la victoria es la velocidad, la velocidad y la velocidad. Es importante, así que lo dije tres veces.", str_chess_8_desc_long = "La fuerza bruta es inútil contra escudos sólidos y barreras Lumina. Lo que necesitas es tu ingenio.", str_chess_9_desc_long = "El líder del enemigo es demasiado fuerte. ¿Cómo encontrar el secreto para ganar?"}
+local config = {
+  str_chess_title = "Chocar y quemar",
+  str_chess_content = "¡Haz que se estrellen y se quemen!\nEste juego se desarrolló originalmente para ayudar a los jóvenes RW Aurorians a comprender mejor a sus enemigos y obtener ventajas en la batalla controlando Eclipsites y familiarizándose con sus movimientos. Sin embargo, pronto se convirtió en un juego popular en todo el desierto de Rediesel. Con el tiempo, la limitación de este juego se ha roto.",
+  str_chess_remain_time = "<color= #c3b7ac>El evento termina en {1}</color>",
+  str_chess_side_title = "Chocar y quemar",
+  str_chess_intro = "I. En Crash & Burn, los eclipses se controlan para enfrentarse a los aurorianos en una batalla simulada.\nII. El desafío falla si todos nuestros Eclipsites son derrotados o si no quedan rondas. Nuestros Eclipsites deben cumplir las condiciones de victoria del escenario para ganar.\ntercero Un Aurorian solo puede moverse en fichas de su elemento. Cualquier mosaico que haya atravesado un Aurorian no se actualizará.\nIV. Los eclipses tienen diferentes características. Ajusta tus tácticas de combate en consecuencia para jugar con sus ventajas.",
+  str_chess_1_name = "N1 - Situación similar",
+  str_chess_2_name = "N2 - Estancamiento",
+  str_chess_3_name = "N3 - Tierra Muerta",
+  str_chess_4_name = "N4 - Frontline",
+  str_chess_5_name = "N5 - Escapar",
+  str_chess_6_name = "N6 - Escudo roto",
+  str_chess_7_name = "N7 - Lucha a muerte",
+  str_chess_8_name = "N8 - Barrera",
+  str_chess_9_name = "N9 - Oponente poderoso",
+  str_chess_1_desc = "Escenas similares, enemigos similares... Perdura en el corazón es una premonición de que la próxima batalla puede ser muy diferente...",
+  str_chess_2_desc = "En realidad, esto es solo el comienzo. Es natural que se produzca un punto muerto. No le temas ni actúes impulsivamente. Acostúmbrate a esta forma de pelear.",
+  str_chess_3_desc = "¡Cargar! ¡Golpéalos! ¡Haz todo lo que puedas para que esos desagradables villanos caigan en la trampa mortal, y la victoria será nuestra!",
+  str_chess_4_desc = "¡Realmente tienen caballos y pueden saltar! ¡Ten cuidado!",
+  str_chess_5_desc = "No todas las batallas terminan con la derrota del oponente. A veces, retirarse es una forma de victoria.",
+  str_chess_6_desc = "Solo confían en sus sólidas armaduras y escudos. ¡Podremos asaltarlos una vez que rompamos sus defensas!",
+  str_chess_7_desc = "La clave de la victoria es la velocidad, la velocidad y la velocidad. Es importante, así que lo dije tres veces.",
+  str_chess_8_desc = "La fuerza bruta es inútil contra escudos sólidos y barreras Lumina. Lo que necesitas es tu ingenio.",
+  str_chess_9_desc = "El líder del enemigo es demasiado fuerte. ¿Cómo encontrar el secreto para ganar?",
+  str_chess_1_desc_long = "Escenas similares, enemigos similares... Perdura en el corazón es una premonición de que la próxima batalla puede ser muy diferente...",
+  str_chess_2_desc_long = "En realidad, esto es solo el comienzo. Es natural que se produzca un punto muerto. No le temas ni actúes impulsivamente. Acostúmbrate a esta forma de pelear.",
+  str_chess_3_desc_long = "¡Cargar! ¡Golpéalos! ¡Haz todo lo que puedas para que esos desagradables villanos caigan en la trampa mortal, y la victoria será nuestra!",
+  str_chess_4_desc_long = "¡Realmente tienen caballos y pueden saltar! ¡Ten cuidado!",
+  str_chess_5_desc_long = "No todas las batallas terminan con la derrota del oponente. A veces, retirarse es una forma de victoria.",
+  str_chess_6_desc_long = "Solo confían en sus sólidas armaduras y escudos. ¡Podremos asaltarlos una vez que rompamos sus defensas!",
+  str_chess_7_desc_long = "La clave de la victoria es la velocidad, la velocidad y la velocidad. Es importante, así que lo dije tres veces.",
+  str_chess_8_desc_long = "La fuerza bruta es inútil contra escudos sólidos y barreras Lumina. Lo que necesitas es tu ingenio.",
+  str_chess_9_desc_long = "El líder del enemigo es demasiado fuerte. ¿Cómo encontrar el secreto para ganar?"
+}
 return config
-

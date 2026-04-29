@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_butterfly_pollen.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicButterflyPollen", BuffLogicBase)
 BuffLogicButterflyPollen = BuffLogicButterflyPollen
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicButterflyPollen.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicButterflyPollen:Constructor(buffInstance, logicParam)
   self._layerType = tonumber(logicParam.layerType)
   self._damagePercent = logicParam.damagePercent
   self._monsterDamageIncreaseMinValue = logicParam.monsterDamageIncreaseMinValue or 0
@@ -20,116 +13,100 @@ BuffLogicButterflyPollen.Constructor = function(self, buffInstance, logicParam)
   self._monsterAddHPValue = logicParam.monsterAddHPValue or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicButterflyPollen.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicButterflyPollen:DoLogic(notify)
   local e = self._entity
-  local layer = (self._buffLogicService):GetBuffLayer(e, self._layerType)
+  local layer = self._buffLogicService:GetBuffLayer(e, self._layerType)
   if layer <= 0 then
-    return 
+    return
   end
   local result = BuffResultButterflyPollen:New()
   if e:HasMonsterID() then
-    if self._monsterDamageIncreaseMinValue > 0 or self._monsterDamageIncreaseOneLayerValue > 0 then
-      local svc = (self._world):GetService("BuffLogic")
+    if 0 < self._monsterDamageIncreaseMinValue or 0 < self._monsterDamageIncreaseOneLayerValue then
+      local svc = self._world:GetService("BuffLogic")
       local changeVal = self._monsterDamageIncreaseMinValue + self._monsterDamageIncreaseOneLayerValue * layer
       local seq = self:GetBuffSeq()
-      ;
-      (self._buffLogicService):RemoveSkillIncrease(e, seq, ModifySkillIncreaseParamType.MonsterDamage)
-      ;
-      (self._buffLogicService):ChangeSkillIncrease(e, seq, ModifySkillIncreaseParamType.MonsterDamage, changeVal)
+      self._buffLogicService:RemoveSkillIncrease(e, seq, ModifySkillIncreaseParamType.MonsterDamage)
+      self._buffLogicService:ChangeSkillIncrease(e, seq, ModifySkillIncreaseParamType.MonsterDamage, changeVal)
     end
-    do
-      if self._monsterAddHPMulValue > 0 or self._monsterAddHPValue > 0 then
-        local cAttr = e:Attributes()
-        local maxHP = cAttr:CalcMaxHp()
-        local rate = cAttr:GetAttribute("AddBloodRate") or 0
-        local val = (math.floor)((maxHP * self._monsterAddHPMulValue + self._monsterAddHPValue) * (1 + rate))
-        if val >= 0 then
-          ((self._world):GetMatchLogger()):BeginBuff((self._entity):GetID(), (self._buffInstance):BuffID())
-          local logger = (self._world):GetMatchLogger()
-          logger:AddBloodLog((self._entity):GetID(), {key = "ButterflyPollen", desc = "BUFF加血 攻击者[attacker] 被击者[defender] 加血量[blood] 回血系数[rate] 回血比例[mulValue] 回血加值[addValue]", attacker = (self._entity):GetID(), defender = (self._entity):GetID(), blood = val, rate = rate, mulValue = self._mulValue, addValue = self._addValue})
-          ;
-          ((self._world):GetMatchLogger()):EndBuff((self._entity):GetID())
-          local calcDamage = (self._world):GetService("CalcDamage")
-          local damageInfo = DamageInfo:New(val, DamageType.Recover)
-          damageInfo:SetHPShield((e:BuffComponent()):GetBuffValue("HPShield"))
-          calcDamage:AddTargetHP(e:GetID(), damageInfo)
-          result:SetRecoveryDamageInfo(damageInfo)
-        end
+    if 0 < self._monsterAddHPMulValue or 0 < self._monsterAddHPValue then
+      local cAttr = e:Attributes()
+      local maxHP = cAttr:CalcMaxHp()
+      local rate = cAttr:GetAttribute("AddBloodRate") or 0
+      local val = math.floor((maxHP * self._monsterAddHPMulValue + self._monsterAddHPValue) * (1 + rate))
+      if 0 <= val then
+        self._world:GetMatchLogger():BeginBuff(self._entity:GetID(), self._buffInstance:BuffID())
+        local logger = self._world:GetMatchLogger()
+        logger:AddBloodLog(self._entity:GetID(), {
+          key = "ButterflyPollen",
+          desc = "BUFF加血 攻击者[attacker] 被击者[defender] 加血量[blood] 回血系数[rate] 回血比例[mulValue] 回血加值[addValue]",
+          attacker = self._entity:GetID(),
+          defender = self._entity:GetID(),
+          blood = val,
+          rate = rate,
+          mulValue = self._mulValue,
+          addValue = self._addValue
+        })
+        self._world:GetMatchLogger():EndBuff(self._entity:GetID())
+        local calcDamage = self._world:GetService("CalcDamage")
+        local damageInfo = DamageInfo:New(val, DamageType.Recover)
+        damageInfo:SetHPShield(e:BuffComponent():GetBuffValue("HPShield"))
+        calcDamage:AddTargetHP(e:GetID(), damageInfo)
+        result:SetRecoveryDamageInfo(damageInfo)
       end
-      do
-        if e:HasTeam() then
-          local attrCmpt = e:Attributes()
-          local maxHp = attrCmpt:CalcMaxHp()
-          if maxHp <= 0 then
-            return 
-          end
-          local casterEntity = self:GetCasterEntity()
-          if casterEntity:EntityType() == nil then
-            casterEntity = e
-          end
-          local blsvc = (self._world):GetService("BuffLogic")
-          ;
-          (Log.debug)("Buff AddPoison, beforeCalcDmg,entityID: ", e:GetID())
-          local damageInfo = blsvc:DoBuffDamage((self._buffInstance):BuffID(), casterEntity, e, {percent = self._damagePercent, layer = layer, formulaID = 15})
-          if damageInfo:GetDamageType() == DamageType.Real then
-            damageInfo:SetDamageType(DamageType.Poison)
-          end
-          result:SetPoisonDamageInfo(damageInfo)
-          if self._petDamageIncreaseMinValue > 0 or self._petDamageIncreaseOneLayerValue > 0 then
-            local changeVal = self._petDamageIncreaseMinValue + self._petDamageIncreaseOneLayerValue * layer
-            local seq = self:GetBuffSeq()
-            local cTeam = e:Team()
-            for _,pet in ipairs(cTeam:GetTeamPetEntities()) do
-              (self._buffLogicService):RemoveSkillIncrease(pet, seq, ModifySkillIncreaseParamType.NormalSkill)
-              ;
-              (self._buffLogicService):RemoveSkillIncrease(pet, seq, ModifySkillIncreaseParamType.ChainSkill)
-              ;
-              (self._buffLogicService):RemoveSkillIncrease(pet, seq, ModifySkillIncreaseParamType.ActiveSkill)
-              ;
-              (self._buffLogicService):ChangeSkillIncrease(pet, seq, ModifySkillIncreaseParamType.NormalSkill, changeVal)
-              ;
-              (self._buffLogicService):ChangeSkillIncrease(pet, seq, ModifySkillIncreaseParamType.ChainSkill, changeVal)
-              ;
-              (self._buffLogicService):ChangeSkillIncrease(pet, seq, ModifySkillIncreaseParamType.ActiveSkill, changeVal)
-            end
-          end
-        end
-        do
-          return result
-        end
+    end
+  elseif e:HasTeam() then
+    local attrCmpt = e:Attributes()
+    local maxHp = attrCmpt:CalcMaxHp()
+    if maxHp <= 0 then
+      return
+    end
+    local casterEntity = self:GetCasterEntity()
+    if casterEntity:EntityType() == nil then
+      casterEntity = e
+    end
+    local blsvc = self._world:GetService("BuffLogic")
+    Log.debug("Buff AddPoison, beforeCalcDmg,entityID: ", e:GetID())
+    local damageInfo = blsvc:DoBuffDamage(self._buffInstance:BuffID(), casterEntity, e, {
+      percent = self._damagePercent,
+      layer = layer,
+      formulaID = 15
+    })
+    if damageInfo:GetDamageType() == DamageType.Real then
+      damageInfo:SetDamageType(DamageType.Poison)
+    end
+    result:SetPoisonDamageInfo(damageInfo)
+    if 0 < self._petDamageIncreaseMinValue or 0 < self._petDamageIncreaseOneLayerValue then
+      local changeVal = self._petDamageIncreaseMinValue + self._petDamageIncreaseOneLayerValue * layer
+      local seq = self:GetBuffSeq()
+      local cTeam = e:Team()
+      for _, pet in ipairs(cTeam:GetTeamPetEntities()) do
+        self._buffLogicService:RemoveSkillIncrease(pet, seq, ModifySkillIncreaseParamType.NormalSkill)
+        self._buffLogicService:RemoveSkillIncrease(pet, seq, ModifySkillIncreaseParamType.ChainSkill)
+        self._buffLogicService:RemoveSkillIncrease(pet, seq, ModifySkillIncreaseParamType.ActiveSkill)
+        self._buffLogicService:ChangeSkillIncrease(pet, seq, ModifySkillIncreaseParamType.NormalSkill, changeVal)
+        self._buffLogicService:ChangeSkillIncrease(pet, seq, ModifySkillIncreaseParamType.ChainSkill, changeVal)
+        self._buffLogicService:ChangeSkillIncrease(pet, seq, ModifySkillIncreaseParamType.ActiveSkill, changeVal)
       end
     end
   end
+  return result
 end
 
 _class("BuffLogicRevertButterflyPollen", BuffLogicBase)
 BuffLogicRevertButterflyPollen = BuffLogicRevertButterflyPollen
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRevertButterflyPollen.DoLogic = function(self, notify)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffLogicRevertButterflyPollen:DoLogic(notify)
   local e = self._entity
   local seq = self:GetBuffSeq()
   if e:HasMonsterID() then
-    (self._buffLogicService):RemoveSkillIncrease(e, seq, ModifySkillIncreaseParamType.MonsterDamage)
-  else
-    if e:HasTeam() then
-      local cTeam = e:Team()
-      for _,pet in ipairs(cTeam:GetTeamPetEntities()) do
-        (self._buffLogicService):RemoveSkillIncrease(pet, seq, ModifySkillIncreaseParamType.NormalSkill)
-        ;
-        (self._buffLogicService):RemoveSkillIncrease(pet, seq, ModifySkillIncreaseParamType.ChainSkill)
-        ;
-        (self._buffLogicService):RemoveSkillIncrease(pet, seq, ModifySkillIncreaseParamType.ActiveSkill)
-      end
+    self._buffLogicService:RemoveSkillIncrease(e, seq, ModifySkillIncreaseParamType.MonsterDamage)
+  elseif e:HasTeam() then
+    local cTeam = e:Team()
+    for _, pet in ipairs(cTeam:GetTeamPetEntities()) do
+      self._buffLogicService:RemoveSkillIncrease(pet, seq, ModifySkillIncreaseParamType.NormalSkill)
+      self._buffLogicService:RemoveSkillIncrease(pet, seq, ModifySkillIncreaseParamType.ChainSkill)
+      self._buffLogicService:RemoveSkillIncrease(pet, seq, ModifySkillIncreaseParamType.ActiveSkill)
     end
   end
-  do
-    return true
-  end
+  return true
 end
-
-

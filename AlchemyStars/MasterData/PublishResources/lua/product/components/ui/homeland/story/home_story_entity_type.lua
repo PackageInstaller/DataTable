@@ -1,10 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/story/home_story_entity_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-HomeStoryEntityType = {Invalid = 0, Dialog = 1, Spine = 2, Picture = 3, Effect = 4, Sound = 5, SpineSlice = 6, Text = 7, PostProcessing = 8, Model = 9, CameraVC = 10}
+HomeStoryEntityType = {
+  Invalid = 0,
+  Dialog = 1,
+  Spine = 2,
+  Picture = 3,
+  Effect = 4,
+  Sound = 5,
+  SpineSlice = 6,
+  Text = 7,
+  PostProcessing = 8,
+  Model = 9,
+  CameraVC = 10
+}
 _enum("HomeStoryEntityType", HomeStoryEntityType)
 CameraVCSubType = {Normal = 0, Cart = 1}
 _enum("CameraVCSubType", CameraVCSubType)
-

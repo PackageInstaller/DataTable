@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/common_line_mission/ui_common_line_mission_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICommonLineMissionMain", UISideEnterCenterContentBase)
 UICommonLineMissionMain = UICommonLineMissionMain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICommonLineMissionMain.DoInit = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICommonLineMissionMain:DoInit()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaign = self._data
   self._animHide = nil
@@ -16,40 +9,26 @@ UICommonLineMissionMain.DoInit = function(self)
   self._lineMissionUI = "UICommonLineMission"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.DoShow = function(self, uiParams)
-  -- function num : 0_1
-  if (self._campaign):CheckCampaignNew() then
+function UICommonLineMissionMain:DoShow(uiParams)
+  if self._campaign:CheckCampaignNew() then
     self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-, self)
+      self._campaign:ClearCampaignNew(TT)
+    end, self)
   end
   self:GetComponents()
   self:AddListener()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.AddListener = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICommonLineMissionMain:AddListener()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._OnAfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain._OnAfterUILayerChanged = function(self)
-  -- function num : 0_3
+function UICommonLineMissionMain:_OnAfterUILayerChanged()
   self:Red()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.GetComponents = function(self)
-  -- function num : 0_4
+function UICommonLineMissionMain:GetComponents()
   self.timeStr = self:GetUIComponent("UILocalizationText", "timeStr")
   self.timeStr2 = self:GetUIComponent("UILocalizationText", "timeStr2")
   self.ShowBtn = self:GetGameObject("ShowBtn")
@@ -61,329 +40,239 @@ UICommonLineMissionMain.GetComponents = function(self)
   self._hideRoot = self:GetGameObject("HideRoot")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.DoHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UICommonLineMissionMain:DoHide()
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._OnAfterUILayerChanged)
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
   if self.animEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.animEvent)
+    GameGlobal.Timer():CancelEvent(self.animEvent)
     self.animEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.DoDestroy = function(self)
-  -- function num : 0_6
+function UICommonLineMissionMain:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.OnValue = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UICommonLineMissionMain:OnValue()
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
-  self._timerEvent = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_7_0 , upvalues : self
+  self._timerEvent = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:SetTimerTex()
-  end
-)
+  end)
   self:SetTimerTex()
   self:Award()
   self:Red()
-  if ((GameGlobal.GetModule)(ShareModule)):CanShare() and self:CheckShareBtnActive() then
-    self:AttachEvent(GameEventType.OnFocusAfterShareBack, self.OnShareResult)
-  end
-  ;
-  (self.shareBtn):SetActive(false)
-  if not IsInland then
-    (self.reuse):SetActive(true)
+  if GameGlobal.GetModule(ShareModule):CanShare() then
+    if self:CheckShareBtnActive() then
+      self:AttachEvent(GameEventType.OnFocusAfterShareBack, self.OnShareResult)
+    end
   else
-    ;
-    (self.reuse):SetActive(false)
+    self.shareBtn:SetActive(false)
+  end
+  if not IsInland then
+    self.reuse:SetActive(true)
+  else
+    self.reuse:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.CheckShareBtnActive = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local storyInfo = (self._campaign):GetComponentInfo(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_SHARED)
-  local storyid = (self:GetShareStoryID())
-  -- DECOMPILER ERROR at PC7: Overwrote pending register: R3 in 'AssignReg'
-
-  local dataActive = .end
-  if storyInfo.m_recieved_reward_story and (table.count)(storyInfo.m_recieved_reward_story) > 0 then
-    dataActive = not (table.icontains)(storyInfo.m_recieved_reward_story, storyid)
+function UICommonLineMissionMain:CheckShareBtnActive()
+  local storyInfo = self._campaign:GetComponentInfo(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_SHARED)
+  local storyid = self:GetShareStoryID()
+  local dataActive
+  if storyInfo.m_recieved_reward_story and table.count(storyInfo.m_recieved_reward_story) > 0 then
+    dataActive = not table.icontains(storyInfo.m_recieved_reward_story, storyid)
   else
-    local storyReward = ((Cfg.cfg_campaign_story)[storyid]).RewardList
+    local storyReward = Cfg.cfg_campaign_story[storyid].RewardList
     dataActive = storyReward
   end
-  do
-    if dataActive then
-      self._shareActive = ((GameGlobal.GetModule)(ShareModule)):CanShare()
-      local goShareTip = self:GetGameObject("shareTip")
-      if goShareTip ~= nil then
-        goShareTip:SetActive(self._shareActive)
-      end
-      return self._shareActive
-    end
+  self._shareActive = dataActive and GameGlobal.GetModule(ShareModule):CanShare()
+  local goShareTip = self:GetGameObject("shareTip")
+  if goShareTip ~= nil then
+    goShareTip:SetActive(self._shareActive)
   end
+  return self._shareActive
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.GetShareStoryID = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local comcfgid = ((self._campaign):GetComponent(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_SHARED)):GetComponentCfgId()
-  local cfg = (Cfg.cfg_component_story)[comcfgid]
+function UICommonLineMissionMain:GetShareStoryID()
+  local comcfgid = self._campaign:GetComponent(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_SHARED):GetComponentCfgId()
+  local cfg = Cfg.cfg_component_story[comcfgid]
   if not cfg then
-    (Log.error)("###[UIShareWidget] cfg is nil ! id --> ", comcfgid)
-    return 
+    Log.error("###[UIShareWidget] cfg is nil ! id --> ", comcfgid)
+    return
   end
   local storyList = cfg.StoryID
   if not storyList or not next(storyList) then
-    (Log.error)("###[UIShareWidget] storyList is nil !")
-    return 
+    Log.error("###[UIShareWidget] storyList is nil !")
+    return
   end
   return storyList[1]
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.SetTimerTex = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  ((self._campaign):GetSample())
-  local sample = nil
-  local sec = nil
+function UICommonLineMissionMain:SetTimerTex()
+  local sample = self._campaign:GetSample()
+  local sec
   if not sample then
     sec = 0
   else
-    sec = sample.end_time - (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+    sec = sample.end_time - math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   end
-  local strShow = nil
+  local strShow
   if sec <= 0 then
     sec = 0
     if self._timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._timerEvent = nil
     end
-    strShow = (StringTable.Get)("str_activity_finished")
+    strShow = StringTable.Get("str_activity_finished")
   else
-    local timeStr = (HelperProxy:GetInstance()):Time2Tex(sec)
+    local timeStr = HelperProxy:GetInstance():Time2Tex(sec)
     local titleStr = "str_n22_activity_linemission_lasttime"
-    strShow = (StringTable.Get)(titleStr) .. ":" .. timeStr
+    strShow = StringTable.Get(titleStr) .. ":" .. timeStr
   end
-  do
-    ;
-    (self.timeStr):SetText(strShow)
-    if self.timeStr2 then
-      (self.timeStr2):SetText(strShow)
-    end
+  self.timeStr:SetText(strShow)
+  if self.timeStr2 then
+    self.timeStr2:SetText(strShow)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.HideBtnOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UICommonLineMissionMain:HideBtnOnClick()
   if self:CheckCampaignClose() then
-    return 
+    return
   end
-  ;
-  (self.ShowBtn):SetActive(true)
+  self.ShowBtn:SetActive(true)
   if self._animHide and self._animShow then
     self:Lock("UICommonLineMissionMainAnim")
     if self.uiAnim then
-      (self.uiAnim):Play(self._animHide)
+      self.uiAnim:Play(self._animHide)
     end
     if self.animEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self.animEvent)
+      GameGlobal.Timer():CancelEvent(self.animEvent)
     end
-    self.animEvent = ((GameGlobal.Timer)()):AddEvent(333, function()
-    -- function num : 0_11_0 , upvalues : self
-    self:UnLock("UICommonLineMissionMainAnim")
-  end
-)
-    ;
-    (self:RootUIOwner()):HideEntry(true)
+    self.animEvent = GameGlobal.Timer():AddEvent(333, function()
+      self:UnLock("UICommonLineMissionMainAnim")
+    end)
+    self:RootUIOwner():HideEntry(true)
   else
-    ;
-    (self._hideRoot):SetActive(false)
-    ;
-    (self:RootUIOwner()):HideEntry()
+    self._hideRoot:SetActive(false)
+    self:RootUIOwner():HideEntry()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.ShareBtnOnClick = function(self)
-  -- function num : 0_12
+function UICommonLineMissionMain:ShareBtnOnClick()
   if self:CheckCampaignClose() then
-    return 
+    return
   end
   self:HideBtnOnClick()
   self:ShowDialog("UICommonLineMissionMainShare", function()
-    -- function num : 0_12_0 , upvalues : self
     self:CheckShareBtnActive()
     self:ShowBtnOnClick()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.Award = function(self)
-  -- function num : 0_13
-  local awardsEntry = (self.awards):SpawnObject("UICommonLineMissionAwardsEntry")
+function UICommonLineMissionMain:Award()
+  local awardsEntry = self.awards:SpawnObject("UICommonLineMissionAwardsEntry")
   awardsEntry:SetData(self._campaign, function()
-    -- function num : 0_13_0 , upvalues : self
     if self:CheckCampaignClose() then
       return true
     else
       return false
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.Red = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local redLine = (not (UIActivityHelper.HasCmptRedViewed)((UICommonLineMissionConst.LineMissionDBID)()) and (self._campaign):CheckComponentRed(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_MISSION))
-  ;
-  (self.LineMissionRed):SetActive(redLine)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UICommonLineMissionMain:Red()
+  local redLine = not UIActivityHelper.HasCmptRedViewed(UICommonLineMissionConst.LineMissionDBID()) and self._campaign:CheckComponentRed(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_MISSION)
+  self.LineMissionRed:SetActive(redLine)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.ShowBtnOnClick = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  (self.ShowBtn):SetActive(false)
+function UICommonLineMissionMain:ShowBtnOnClick()
+  self.ShowBtn:SetActive(false)
   if self._animHide and self._animShow then
     self:Lock("UICommonLineMissionMainAnim")
     if self.uiAnim then
-      (self.uiAnim):Play(self._animShow)
+      self.uiAnim:Play(self._animShow)
     end
     if self.animEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self.animEvent)
+      GameGlobal.Timer():CancelEvent(self.animEvent)
     end
-    self.animEvent = ((GameGlobal.Timer)()):AddEvent(633, function()
-    -- function num : 0_15_0 , upvalues : self
-    self:UnLock("UICommonLineMissionMainAnim")
-  end
-)
-    ;
-    (self:RootUIOwner()):ShowEntry(true)
+    self.animEvent = GameGlobal.Timer():AddEvent(633, function()
+      self:UnLock("UICommonLineMissionMainAnim")
+    end)
+    self:RootUIOwner():ShowEntry(true)
   else
-    ;
-    (self._hideRoot):SetActive(true)
-    ;
-    (self:RootUIOwner()):ShowEntry()
+    self._hideRoot:SetActive(true)
+    self:RootUIOwner():ShowEntry()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.IntrBtnOnClick = function(self)
-  -- function num : 0_16
+function UICommonLineMissionMain:IntrBtnOnClick()
   if self:CheckCampaignClose() then
-    return 
+    return
   end
-  self:ShowDialog("UICommonLineMissionIntro", (self._campaign):GetCampaignID())
+  self:ShowDialog("UICommonLineMissionIntro", self._campaign:GetCampaignID())
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.LineMissionBtnOnClick = function(self)
-  -- function num : 0_17
+function UICommonLineMissionMain:LineMissionBtnOnClick()
   if self:CheckCampaignClose() then
-    return 
+    return
   end
   self:ShowDialog(self._lineMissionUI, self._campaign)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.CheckCampaignClose = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  if not (self._campaign):CheckCampaignOpen() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_109"))
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
+function UICommonLineMissionMain:CheckCampaignClose()
+  if not self._campaign:CheckCampaignOpen() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_109"))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.OnShareResult = function(self, RetCode)
-  -- function num : 0_19 , upvalues : _ENV
-  (Log.debug)("###[UICommonLineMissionMain] OnShareResult RetCode:", RetCode)
+function UICommonLineMissionMain:OnShareResult(RetCode)
+  Log.debug("###[UICommonLineMissionMain] OnShareResult RetCode:", RetCode)
   if not self._shareActive then
-    (Log.debug)("###[UICommonLineMissionMain] 已经领奖")
-    return 
+    Log.debug("###[UICommonLineMissionMain] 已经领奖")
+    return
   end
-  ;
-  (Log.debug)("###[UICommonLineMissionMain] 开始领奖表现")
+  Log.debug("###[UICommonLineMissionMain] 开始领奖表现")
   local storyid = self:GetShareStoryID()
   self:FinishStory(storyid)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.FinishStory = function(self, id)
-  -- function num : 0_20 , upvalues : _ENV
+function UICommonLineMissionMain:FinishStory(id)
   self:Lock("UICommonLineMissionMain:OnFinishStory")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnFinishStory, self, id)
+  GameGlobal.TaskManager():StartTask(self.OnFinishStory, self, id)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.OnFinishStory = function(self, TT, storyid)
-  -- function num : 0_21 , upvalues : _ENV
+function UICommonLineMissionMain:OnFinishStory(TT, storyid)
   local res = AsyncRequestRes:New()
-  local storyCom = (self._campaign):GetComponent(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_SHARED)
+  local storyCom = self._campaign:GetComponent(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_SHARED)
   local rewards = storyCom:HandleStoryTake(TT, res, storyid)
   self:UnLock("UICommonLineMissionMain:OnFinishStory")
   self._rewards = nil
   if res:GetSucc() then
-    (Log.error)("###[UICommonLineMissionMain] OnFinishStory succ")
+    Log.error("###[UICommonLineMissionMain] OnFinishStory succ")
     self:ShowRewards(rewards)
   else
-    ;
-    (Log.error)("###[UICommonLineMissionMain] OnFinishStory fail, result:", res:GetResult(), " storyid:", storyid)
+    Log.error("###[UICommonLineMissionMain] OnFinishStory fail, result:", res:GetResult(), " storyid:", storyid)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMain.ShowRewards = function(self, rewards)
-  -- function num : 0_22 , upvalues : _ENV
+function UICommonLineMissionMain:ShowRewards(rewards)
   if not rewards then
-    (Log.debug)("###[UICampaignCenterDanTang] rewards is nil !")
-    return 
+    Log.debug("###[UICampaignCenterDanTang] rewards is nil !")
+    return
   end
   if self.view == nil then
-    return 
+    return
   end
   self:ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_22_0 , upvalues : self
     self:CheckShareBtnActive()
-  end
-)
+  end)
 end
-
-

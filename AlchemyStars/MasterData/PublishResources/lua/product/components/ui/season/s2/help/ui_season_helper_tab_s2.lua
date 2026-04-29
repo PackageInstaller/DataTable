@@ -1,72 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s2/help/ui_season_helper_tab_s2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonHelperTabS2", UICustomWidget)
 UISeasonHelperTabS2 = UISeasonHelperTabS2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonHelperTabS2.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonHelperTabS2:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperTabS2.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonHelperTabS2:InitWidget()
   self._tabNameText = self:GetUIComponent("UILocalizationText", "TabName")
   self._selectedGo = self:GetGameObject("SelectedImg")
-  ;
-  (self._selectedGo):SetActive(false)
+  self._selectedGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperTabS2.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonHelperTabS2:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperTabS2.TabBtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function UISeasonHelperTabS2:TabBtnOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   if self._callback then
-    (self._callback)(self._tabId)
+    self._callback(self._tabId)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperTabS2.SetData = function(self, tabCfg, callback)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonHelperTabS2:SetData(tabCfg, callback)
   self._tabCfg = tabCfg
-  self._tabId = (self._tabCfg).TabEnum
+  self._tabId = self._tabCfg.TabEnum
   self._callback = callback
-  ;
-  (self._tabNameText):SetText((StringTable.Get)((self._tabCfg).Title))
+  self._tabNameText:SetText(StringTable.Get(self._tabCfg.Title))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonHelperTabS2.OnSelectIndex = function(self, tabId)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonHelperTabS2:OnSelectIndex(tabId)
   if self._tabId == tabId then
-    (self._selectedGo):SetActive(true)
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._tabNameText).color = Color(0.769, 0.576, 0.208, 1)
+    self._selectedGo:SetActive(true)
+    self._tabNameText.color = Color(0.769, 0.576, 0.208, 1)
   else
-    ;
-    (self._selectedGo):SetActive(false)
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._tabNameText).color = Color(0.541, 0.416, 0.282, 1)
+    self._selectedGo:SetActive(false)
+    self._tabNameText.color = Color(0.541, 0.416, 0.282, 1)
   end
 end
-
-

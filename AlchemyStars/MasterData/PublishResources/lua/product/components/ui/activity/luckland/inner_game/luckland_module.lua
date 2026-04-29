@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/luckland_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LuckLandModule", Object)
 LuckLandModule = LuckLandModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LuckLandModule:Constructor()
   self._configMng = LLConfigMng:New()
   self._entityMng = LLEntityMng:New()
   self._buffMng = LLBuffMng:New()
@@ -30,73 +23,48 @@ LuckLandModule.Constructor = function(self)
   self._roundRecover = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.Dispose = function(self)
-  -- function num : 0_1
-  (self._configMng):Dispose()
+function LuckLandModule:Dispose()
+  self._configMng:Dispose()
   self._configMng = nil
-  ;
-  (self._entityMng):Dispose()
+  self._entityMng:Dispose()
   self._entityMng = nil
-  ;
-  (self._buffMng):Dispose()
+  self._buffMng:Dispose()
   self._buffMng = nil
-  ;
-  (self._triggerMng):Dispose()
+  self._triggerMng:Dispose()
   self._triggerMng = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.Init = function(self, missionID)
-  -- function num : 0_2
-  (self._configMng):Init(missionID)
-  ;
-  (self._entityMng):Init(self)
-  local levelCfgData = (self._configMng):GetLevelConfigData()
-  self._maxHP = levelCfgData:GetInitMaxHP() + (self._entityMng):GetBuildingMaxHPIncrease()
+function LuckLandModule:Init(missionID)
+  self._configMng:Init(missionID)
+  self._entityMng:Init(self)
+  local levelCfgData = self._configMng:GetLevelConfigData()
+  self._maxHP = levelCfgData:GetInitMaxHP() + self._entityMng:GetBuildingMaxHPIncrease()
   self._curHP = self._maxHP
   self._gold = levelCfgData:GetInitGold()
   self._gameRound = levelCfgData:GetLevelRoundCount()
   self._curRound = 1
-  self._posCount = (self._entityMng):GetPosCount()
-  self._posList = (self._entityMng):GetPosList()
+  self._posCount = self._entityMng:GetPosCount()
+  self._posList = self._entityMng:GetPosList()
   self._affixList = levelCfgData:GetAffixList()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.GetConfigMng = function(self)
-  -- function num : 0_3
+function LuckLandModule:GetConfigMng()
   return self._configMng
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.GetEntityMng = function(self)
-  -- function num : 0_4
+function LuckLandModule:GetEntityMng()
   return self._entityMng
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.GetBuffMng = function(self)
-  -- function num : 0_5
+function LuckLandModule:GetBuffMng()
   return self._buffMng
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.GetTriggerMng = function(self)
-  -- function num : 0_6
+function LuckLandModule:GetTriggerMng()
   return self._triggerMng
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.RoundStart = function(self)
-  -- function num : 0_7
+function LuckLandModule:RoundStart()
   self._curRound = self._curRound + 1
   self:ClearTmpData()
   local petIDs = self:GenFightPets()
@@ -106,122 +74,93 @@ LuckLandModule.RoundStart = function(self)
   self:OnProduct()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.MonsterTurn = function(self)
-  -- function num : 0_8
+function LuckLandModule:MonsterTurn()
   self:DoMonsterLogic()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.RoundEnd = function(self)
-  -- function num : 0_9
+function LuckLandModule:RoundEnd()
   self:DrawCard()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.ClearTmpData = function(self)
-  -- function num : 0_10
+function LuckLandModule:ClearTmpData()
   self._roundGold = 0
   self._roundAtk = 0
   self._roundRecover = 0
-  ;
-  (self._entityMng):DestroyEntity()
-  ;
-  (self._entityMng):ClearEntityTmpData()
+  self._entityMng:DestroyEntity()
+  self._entityMng:ClearEntityTmpData()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.GenFightPets = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local backpackPets = (self._entityMng):GetBackpackPets()
+function LuckLandModule:GenFightPets()
+  local backpackPets = self._entityMng:GetBackpackPets()
   local petIDList = {}
-  for _,pet in ipairs(backpackPets) do
-    (table.insert)(petIDList, pet:ID())
+  for _, pet in ipairs(backpackPets) do
+    table.insert(petIDList, pet:ID())
   end
-  self._posCount = (self._entityMng):GetPosCount()
-  self._posList = (self._entityMng):GetPosList()
+  self._posCount = self._entityMng:GetPosCount()
+  self._posList = self._entityMng:GetPosList()
   local randomIDResult = {}
   for i = 1, self._posCount do
-    if #petIDList > 0 then
-      local randVal = (math.random)(1, #petIDList)
+    if 0 < #petIDList then
+      local randVal = math.random(1, #petIDList)
       local randID = petIDList[randVal]
       randomIDResult[#randomIDResult + 1] = randID
-      ;
-      (table.removev)(petIDList, randID)
+      table.removev(petIDList, randID)
     end
   end
   return randomIDResult
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.InitFightPets = function(self, petIDs)
-  -- function num : 0_12 , upvalues : _ENV
-  (self._entityMng):ClearFightPets()
-  for index,petID in ipairs(petIDs) do
-    local pet = (self._entityMng):GetPetByID(petID)
+function LuckLandModule:InitFightPets(petIDs)
+  self._entityMng:ClearFightPets()
+  for index, petID in ipairs(petIDs) do
+    local pet = self._entityMng:GetPetByID(petID)
     pet:SetGenIndex(index)
-    ;
-    (self._entityMng):AddFightPet(pet)
-    ;
-    (self._triggerMng):Notify(LLNTPetEnter:New(pet))
+    self._entityMng:AddFightPet(pet)
+    self._triggerMng:Notify(LLNTPetEnter:New(pet))
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.DoPetLogic = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function LuckLandModule:DoPetLogic()
   local entityArray = {}
-  ;
-  (table.appendArray)(entityArray, (self._entityMng):GetFightPets())
-  ;
-  (table.appendArray)(entityArray, (self._entityMng):GetBuildings())
-  ;
-  (table.appendArray)(entityArray, (self._entityMng):GetFightMonsters())
-  for _,entity in ipairs(entityArray) do
-    (self._triggerMng):Notify(LLNTPetTurnStart:New(entity))
+  table.appendArray(entityArray, self._entityMng:GetFightPets())
+  table.appendArray(entityArray, self._entityMng:GetBuildings())
+  table.appendArray(entityArray, self._entityMng:GetFightMonsters())
+  for _, entity in ipairs(entityArray) do
+    self._triggerMng:Notify(LLNTPetTurnStart:New(entity))
   end
-  for _,entity in ipairs(entityArray) do
-    (self._triggerMng):Notify(LLNTPetTurn:New(entity))
+  for _, entity in ipairs(entityArray) do
+    self._triggerMng:Notify(LLNTPetTurn:New(entity))
   end
-  for _,entity in ipairs(entityArray) do
-    (self._triggerMng):Notify(LLNTPetTurnEnd:New(entity))
+  for _, entity in ipairs(entityArray) do
+    self._triggerMng:Notify(LLNTPetTurnEnd:New(entity))
   end
-  local fightPets = (self._entityMng):GetFightPets()
-  for _,pet in ipairs(fightPets) do
+  local fightPets = self._entityMng:GetFightPets()
+  for _, pet in ipairs(fightPets) do
     if not pet:HasDeleteFlag() then
       pet:CostCountDown()
       if pet:GetCountDown() == 0 then
-        (self._triggerMng):Notify(LLNTCountDown:New(pet))
+        self._triggerMng:Notify(LLNTCountDown:New(pet))
         pet:ResetCountDown()
       end
     end
   end
-  local backpackPets = (self._entityMng):GetBackpackPets()
+  local backpackPets = self._entityMng:GetBackpackPets()
   local ids = {}
-  for _,pet in ipairs(backpackPets) do
-    (table.insert)(ids, pet:ID())
+  for _, pet in ipairs(backpackPets) do
+    table.insert(ids, pet:ID())
   end
-  for _,id in ipairs(ids) do
-    local pet = (self._entityMng):GetPetByID(id)
+  for _, id in ipairs(ids) do
+    local pet = self._entityMng:GetPetByID(id)
     if pet and not pet:IsFight() then
-      (self._triggerMng):Notify(LLNTBackpackTurn:New(pet))
+      self._triggerMng:Notify(LLNTBackpackTurn:New(pet))
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.GetAllBuildings = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function LuckLandModule:GetAllBuildings()
   local buildList = {}
-  local buildings = (self._entityMng):GetBuildings()
-  for _,entity in ipairs(buildings) do
+  local buildings = self._entityMng:GetBuildings()
+  for _, entity in ipairs(buildings) do
     local id = entity:GetTemplateID()
     local level = id % 100
     buildList[id] = level
@@ -229,43 +168,31 @@ LuckLandModule.GetAllBuildings = function(self)
   return buildList
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.DoBuildingLogic = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local buildings = (self._entityMng):GetBuildings()
-  for _,entity in ipairs(buildings) do
-    (self._triggerMng):Notify(LLNTBuildingTurn:New(entity))
+function LuckLandModule:DoBuildingLogic()
+  local buildings = self._entityMng:GetBuildings()
+  for _, entity in ipairs(buildings) do
+    self._triggerMng:Notify(LLNTBuildingTurn:New(entity))
   end
-  for _,entity in ipairs(buildings) do
+  for _, entity in ipairs(buildings) do
     entity:CostCountDown()
     if entity:GetCountDown() == 0 then
-      (self._triggerMng):Notify(LLNTCountDown:New(entity))
+      self._triggerMng:Notify(LLNTCountDown:New(entity))
       entity:ResetCountDown()
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.OnProduct = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function LuckLandModule:OnProduct()
   local prodEntityArray = {}
-  ;
-  (table.appendArray)(prodEntityArray, (self._entityMng):GetFightPets())
-  ;
-  (table.appendArray)(prodEntityArray, (self._entityMng):GetBuildings())
-  for _,entity in ipairs(prodEntityArray) do
+  table.appendArray(prodEntityArray, self._entityMng:GetFightPets())
+  table.appendArray(prodEntityArray, self._entityMng:GetBuildings())
+  for _, entity in ipairs(prodEntityArray) do
     if entity:GetResType() == LuckLandCardResType.Money then
       self._roundGold = self._roundGold + entity:CalculateRes()
-    else
-      if entity:GetResType() == LuckLandCardResType.HP then
-        self._roundRecover = self._roundRecover + entity:CalculateRes()
-      else
-        if entity:GetResType() == LuckLandCardResType.Attack then
-          self._roundAtk = self._roundAtk + entity:CalculateRes()
-        end
-      end
+    elseif entity:GetResType() == LuckLandCardResType.HP then
+      self._roundRecover = self._roundRecover + entity:CalculateRes()
+    elseif entity:GetResType() == LuckLandCardResType.Attack then
+      self._roundAtk = self._roundAtk + entity:CalculateRes()
     end
     self._roundGold = self._roundGold + entity:GetDirectGold()
   end
@@ -274,59 +201,39 @@ LuckLandModule.OnProduct = function(self)
   self._atk = self._roundAtk
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.DoPetAttack = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local fightPets = (self._entityMng):GetFightPets()
-  local monsters = (self._entityMng):GetFightMonsters()
-  for _,monster in ipairs(monsters) do
+function LuckLandModule:DoPetAttack()
+  local fightPets = self._entityMng:GetFightPets()
+  local monsters = self._entityMng:GetFightMonsters()
+  for _, monster in ipairs(monsters) do
     if not monster:IsDead() then
       local curHP = monster:GetCurHP()
       local subValue = curHP - self._atk
       if subValue < 0 then
         monster:SetCurHP(0)
         monster:SetDead(true)
-        self._atk = (math.abs)(subValue)
-        for _,pet in ipairs(fightPets) do
+        self._atk = math.abs(subValue)
+        for _, pet in ipairs(fightPets) do
           if not pet:HasDeleteFlag() then
-            (self._triggerMng):Notify(LLNTDefeatMonster:New(pet, monster))
+            self._triggerMng:Notify(LLNTDefeatMonster:New(pet, monster))
           end
         end
       else
-        do
-          do
-            monster:SetCurHP(subValue)
-            do break end
-            -- DECOMPILER ERROR at PC54: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC54: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC54: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC54: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC54: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        monster:SetCurHP(subValue)
+        break
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.DoMonsterLogic = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local monsters = (self._entityMng):GetFightMonsters()
-  for _,entity in ipairs(monsters) do
-    (self._triggerMng):Notify(LLNTMonsterTurnStart:New(entity))
+function LuckLandModule:DoMonsterLogic()
+  local monsters = self._entityMng:GetFightMonsters()
+  for _, entity in ipairs(monsters) do
+    self._triggerMng:Notify(LLNTMonsterTurnStart:New(entity))
   end
-  for _,entity in ipairs(monsters) do
-    (self._triggerMng):Notify(LLNTMonsterTurn:New(entity))
+  for _, entity in ipairs(monsters) do
+    self._triggerMng:Notify(LLNTMonsterTurn:New(entity))
   end
-  for _,monster in ipairs(monsters) do
+  for _, monster in ipairs(monsters) do
     if not monster:IsDead() then
       if monster:GetDemandRound() > 0 then
         monster:DecreaseDemandRound()
@@ -336,114 +243,66 @@ LuckLandModule.DoMonsterLogic = function(self)
           monster:DecreaseDemandMoney(money)
           monster:SetDead(true)
           self._gold = self._gold - money
-          local nextMonster = (self._entityMng):GetNextMonsters()
-          ;
-          (self._entityMng):SetFightMonsters({monster, nextMonster}, self._curRound)
+          local nextMonster = self._entityMng:GetNextMonsters()
+          self._entityMng:SetFightMonsters({monster, nextMonster}, self._curRound)
         else
-          do
-            do
-              monster:DecreaseDemandMoney(self._gold)
-              self._gold = 0
-              self:ReduceHP(1)
-              -- DECOMPILER ERROR at PC77: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC77: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC77: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC77: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC77: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC77: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC77: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+          monster:DecreaseDemandMoney(self._gold)
+          self._gold = 0
+          self:ReduceHP(1)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.DrawCard = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function LuckLandModule:DrawCard()
   if not self._isRunning then
-    return 
+    return
   end
-  ;
-  (table.clear)(self._drawCardResult)
-  local buildDataLevel = (LuckLandData:GetInstance()):CurBuildingDatas()
+  table.clear(self._drawCardResult)
+  local buildDataLevel = LuckLandData:GetInstance():CurBuildingDatas()
   if buildDataLevel then
     self._drawCardResult = buildDataLevel:DrawCards()
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.IsGoldEnough = function(self, costVal)
-  -- function num : 0_20
-  do return costVal <= self._gold end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function LuckLandModule:IsGoldEnough(costVal)
+  return costVal <= self._gold
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.AddGold = function(self, addVal)
-  -- function num : 0_21
+function LuckLandModule:AddGold(addVal)
   self._gold = self._gold + addVal
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.CostGold = function(self, val)
-  -- function num : 0_22 , upvalues : _ENV
-  if self._gold < val then
-    (Log.fatal)("[LuckLand] Gold is not enough, gold = ", self._gold, ", cost = ", val)
+function LuckLandModule:CostGold(val)
+  if val > self._gold then
+    Log.fatal("[LuckLand] Gold is not enough, gold = ", self._gold, ", cost = ", val)
     return false
   end
   self._gold = self._gold - val
   return true
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.GetGold = function(self)
-  -- function num : 0_23
+function LuckLandModule:GetGold()
   return self._gold
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.GetCurHP = function(self)
-  -- function num : 0_24
+function LuckLandModule:GetCurHP()
   return self._curHP, self._maxHP
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.AddMaxHp = function(self, addVal)
-  -- function num : 0_25
+function LuckLandModule:AddMaxHp(addVal)
   self._maxHP = self._maxHP + addVal
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.AddHP = function(self, addVal)
-  -- function num : 0_26
+function LuckLandModule:AddHP(addVal)
   self._curHP = self._curHP + addVal
-  if self._maxHP < self._curHP then
+  if self._curHP > self._maxHP then
     self._curHP = self._maxHP
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.ReduceHP = function(self, val)
-  -- function num : 0_27
+function LuckLandModule:ReduceHP(val)
   self._curHP = self._curHP - val
   if self._curHP < 0 then
     self._curHP = 0
@@ -452,12 +311,9 @@ LuckLandModule.ReduceHP = function(self, val)
   return self._curHP
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.CheckHasExtraDrawCard = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  local buildings = (self._entityMng):GetBuildings()
-  for _,building in ipairs(buildings) do
+function LuckLandModule:CheckHasExtraDrawCard()
+  local buildings = self._entityMng:GetBuildings()
+  for _, building in ipairs(buildings) do
     if building:GetTempValue(LuckLandConst.BVK_ExtraDrawCard) then
       return true
     end
@@ -465,11 +321,8 @@ LuckLandModule.CheckHasExtraDrawCard = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.SelectCard = function(self, petTemplateID, pos)
-  -- function num : 0_29
-  (self._entityMng):SelectCard(petTemplateID, pos)
+function LuckLandModule:SelectCard(petTemplateID, pos)
+  self._entityMng:SelectCard(petTemplateID, pos)
   if self:CheckHasExtraDrawCard() then
     self:DrawCard()
   else
@@ -477,10 +330,7 @@ LuckLandModule.SelectCard = function(self, petTemplateID, pos)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.SkipSelectCard = function(self)
-  -- function num : 0_30
+function LuckLandModule:SkipSelectCard()
   if self:CheckHasExtraDrawCard() then
     self:DrawCard()
   else
@@ -488,26 +338,17 @@ LuckLandModule.SkipSelectCard = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.ResetReDrawCount = function(self)
-  -- function num : 0_31
+function LuckLandModule:ResetReDrawCount()
   self._reDrawCount = 0
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.GetReDrawCost = function(self)
-  -- function num : 0_32
+function LuckLandModule:GetReDrawCost()
   local reDrawCount = self._reDrawCount + 1
   local roundCount = self._curRound
-  return (self._configMng):GetReDrawCost(reDrawCount, roundCount)
+  return self._configMng:GetReDrawCost(reDrawCount, roundCount)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.ReDrawCard = function(self)
-  -- function num : 0_33
+function LuckLandModule:ReDrawCard()
   local reDrawCost = self:GetReDrawCost()
   if reDrawCost and self:CostGold(reDrawCost) then
     self._reDrawCount = self._reDrawCount + 1
@@ -515,182 +356,139 @@ LuckLandModule.ReDrawCard = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.BuildingUpgrade = function(self, buildingID)
-  -- function num : 0_34 , upvalues : _ENV
-  local building = (self._entityMng):GetBuildingByID(buildingID)
+function LuckLandModule:BuildingUpgrade(buildingID)
+  local building = self._entityMng:GetBuildingByID(buildingID)
   local costVal = building:GetUpgradeCost()
   if self:CostGold(costVal) then
-    (self._entityMng):BuildingUpgrade(building)
-    ;
-    (self._triggerMng):Notify(LLNTBuildingUpgrade:New(building))
-    local fightPets = (self._entityMng):GetFightPets()
-    for _,pet in ipairs(fightPets) do
+    self._entityMng:BuildingUpgrade(building)
+    self._triggerMng:Notify(LLNTBuildingUpgrade:New(building))
+    local fightPets = self._entityMng:GetFightPets()
+    for _, pet in ipairs(fightPets) do
       if not pet:HasDeleteFlag() then
-        (self._triggerMng):Notify(LLNTBuildingUpgrade:New(pet))
+        self._triggerMng:Notify(LLNTBuildingUpgrade:New(pet))
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.BuildingUpgradeDrawCard = function(self, buildtype)
-  -- function num : 0_35 , upvalues : _ENV
+function LuckLandModule:BuildingUpgradeDrawCard(buildtype)
   if buildtype == LuckLandBuildingType.Main then
     self:DrawCard()
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.GetDelCardCount = function(self)
-  -- function num : 0_36
+function LuckLandModule:GetDelCardCount()
   return self._delCardCount
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.GetDeleteCardCost = function(self)
-  -- function num : 0_37
+function LuckLandModule:GetDeleteCardCost()
   local delCount = self._delCardCount + 1
-  return (self._configMng):GetDeleteCardCost(delCount)
+  return self._configMng:GetDeleteCardCost(delCount)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.DeleteCard = function(self, petID)
-  -- function num : 0_38
+function LuckLandModule:DeleteCard(petID)
   local delCost = self:GetDeleteCardCost()
   if delCost and self:CostGold(delCost) then
     self._delCardCount = self._delCardCount + 1
-    ;
-    (self._entityMng):DeleteCard(petID)
+    self._entityMng:DeleteCard(petID)
   end
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.GetDrawCardResult = function(self)
-  -- function num : 0_39
+function LuckLandModule:GetDrawCardResult()
   return self._drawCardResult
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.GetRoundProduction = function(self)
-  -- function num : 0_40
+function LuckLandModule:GetRoundProduction()
   return self._roundGold, self._roundAtk, self._roundRecover
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.GetCurRoundCount = function(self)
-  -- function num : 0_41
+function LuckLandModule:GetCurRoundCount()
   return self._curRound, self._gameRound
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.PosList = function(self)
-  -- function num : 0_42
+function LuckLandModule:PosList()
   return self._posList
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.GetWords = function(self)
-  -- function num : 0_43
+function LuckLandModule:GetWords()
   return self._affixList
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule.RandomCards = function(self, poolList, count)
-  -- function num : 0_44 , upvalues : _ENV
+function LuckLandModule:RandomCards(poolList, count)
   local resultIDs = {}
   local totalWight = 0
   local wightArray = {}
-  for _,cardPoolID in pairs(poolList) do
-    local cardPoolCfg = (Cfg.cfg_luckland_client_card_pool)[cardPoolID]
+  for _, cardPoolID in pairs(poolList) do
+    local cardPoolCfg = Cfg.cfg_luckland_client_card_pool[cardPoolID]
     if cardPoolCfg then
       local t = {}
-      t.wight = {totalWight, totalWight + cardPoolCfg.Wight}
+      t.wight = {
+        totalWight,
+        totalWight + cardPoolCfg.Wight
+      }
       t.cards = cardPoolCfg.Cards
-      ;
-      (table.insert)(wightArray, t)
+      table.insert(wightArray, t)
       totalWight = totalWight + cardPoolCfg.Wight
     end
   end
   for i = 1, count do
-    local cards = nil
-    local randomWight = (math.random)(1, totalWight)
+    local cards
+    local randomWight = math.random(1, totalWight)
     for j = 1, #wightArray do
-      if ((wightArray[j]).wight)[1] < randomWight and randomWight <= ((wightArray[j]).wight)[2] then
-        cards = (wightArray[j]).cards
+      if randomWight > wightArray[j].wight[1] and randomWight <= wightArray[j].wight[2] then
+        cards = wightArray[j].cards
         break
       end
     end
-    do
-      if cards then
-        local tempCards = {}
-        local curCardDatas = (LuckLandData:GetInstance()):CurCardDatas()
-        for _,id in pairs(cards) do
-          local cfg = (Cfg.cfg_luckland_client_card)[id]
-          if cfg and cfg.IsUnique and cfg.IsUnique == 1 and curCardDatas and not curCardDatas:ContainPet(id) then
-            (table.insert)(tempCards, id)
+    if cards then
+      local tempCards = {}
+      local curCardDatas = LuckLandData:GetInstance():CurCardDatas()
+      for _, id in pairs(cards) do
+        local cfg = Cfg.cfg_luckland_client_card[id]
+        if cfg then
+          if cfg.IsUnique and cfg.IsUnique == 1 then
+            if curCardDatas and not curCardDatas:ContainPet(id) then
+              table.insert(tempCards, id)
+            end
+          else
+            table.insert(tempCards, id)
           end
-          ;
-          (table.insert)(tempCards, id)
         end
-        ;
-        (table.insert)(resultIDs, self:_DrawCardInPool(tempCards, resultIDs, count))
       end
-      do
-        -- DECOMPILER ERROR at PC110: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+      table.insert(resultIDs, self:_DrawCardInPool(tempCards, resultIDs, count))
     end
   end
   local tempTable = {}
-  for _,cardID in pairs(resultIDs) do
-    (table.insert)(tempTable, UILuckLandCardData:New(nil, cardID))
+  for _, cardID in pairs(resultIDs) do
+    table.insert(tempTable, UILuckLandCardData:New(nil, cardID))
   end
   return tempTable
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandModule._DrawCardInPool = function(self, IDs, filterIDs, count)
-  -- function num : 0_45 , upvalues : _ENV
-  if #IDs < count then
-    (Log.fatal)("Insufficient card pool")
+function LuckLandModule:_DrawCardInPool(IDs, filterIDs, count)
+  if count > #IDs then
+    Log.fatal("Insufficient card pool")
   end
-  local contain = function(id)
-    -- function num : 0_45_0 , upvalues : filterIDs, _ENV
+  
+  local function contain(id)
     if filterIDs then
-      for _,filterID in pairs(filterIDs) do
+      for _, filterID in pairs(filterIDs) do
         if filterID == id then
           return true
         end
       end
     end
-    do
-      return false
-    end
+    return false
   end
-
+  
   local t = {}
-  for _,ID in pairs(IDs) do
+  for _, ID in pairs(IDs) do
     if not contain(ID) then
-      (table.insert)(t, ID)
+      table.insert(t, ID)
     end
   end
-  if #t >= 1 then
-    return t[(math.random)(1, #t)]
+  if 1 <= #t then
+    return t[math.random(1, #t)]
   end
   return nil
 end
-
-

@@ -1,88 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n30/Entrust/event/ui_n30_entrust_event_imperfect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local e = require("ui_n30_entrust_event")
 e:Class("N30EntrustEventImperfect", N30EntrustEvent, EntrustEventType.EntrustEventType_Invalid)
--- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
 
-N30EntrustEventImperfect.Constructor = function(self)
-  -- function num : 0_0
+function N30EntrustEventImperfect:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventImperfect.DebugName = function(self)
-  -- function num : 0_1
+function N30EntrustEventImperfect:DebugName()
   return "Imperfect"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventImperfect.GetWidgetName = function(self)
-  -- function num : 0_2
+function N30EntrustEventImperfect:GetWidgetName()
   return "UIN30EntrustEventImperfect"
 end
 
 _class("UIN30EntrustEventImperfect", UIN30EntrustEventWidget)
 UIN30EntrustEventImperfect = UIN30EntrustEventImperfect
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN30EntrustEventImperfect.Constructor = function(self)
-  -- function num : 0_3
+function UIN30EntrustEventImperfect:Constructor()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventImperfect.ShowClose = function(self)
-  -- function num : 0_4
+function UIN30EntrustEventImperfect:ShowClose()
   return true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventImperfect.GetTitle = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  return (StringTable.Get)("str_n30_entrust_finish_title")
+function UIN30EntrustEventImperfect:GetTitle()
+  return StringTable.Get("str_n30_entrust_finish_title")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventImperfect.OnShow = function(self, uiParams)
-  -- function num : 0_6
+function UIN30EntrustEventImperfect:OnShow(uiParams)
   self._txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventImperfect.OnHide = function(self)
-  -- function num : 0_7
+function UIN30EntrustEventImperfect:OnHide()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventImperfect.BtnExitOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN30EntrustEventImperfect:BtnExitOnClick(go)
   self:SwitchState(UIStateType.UIN30Entrust)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventImperfect.BtnConfirmOnClick = function(self, go)
-  -- function num : 0_9
-  (self:RootUIOwner()):CloseDialogAnimation()
+function UIN30EntrustEventImperfect:BtnConfirmOnClick(go)
+  self:RootUIOwner():CloseDialogAnimation()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventImperfect.Refresh = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local node = (self._event):Node()
+function UIN30EntrustEventImperfect:Refresh()
+  local node = self._event:Node()
   local value = node:GetExplor() * 100
-  local strExplor = (string.format)("<color=#f9f16e>%d%%%%</color>", (math.floor)(value))
-  ;
-  (self._txtDesc):SetText((StringTable.Get)("str_n30_entrust_finish_popup", strExplor))
+  local strExplor = string.format("<color=#f9f16e>%d%%%%</color>", math.floor(value))
+  self._txtDesc:SetText(StringTable.Get("str_n30_entrust_finish_popup", strExplor))
 end
-
-

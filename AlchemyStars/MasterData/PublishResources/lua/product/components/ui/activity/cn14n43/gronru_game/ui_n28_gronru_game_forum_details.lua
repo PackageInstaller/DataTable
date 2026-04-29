@@ -1,27 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/gronru_game/ui_n28_gronru_game_forum_details.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28GronruGameForumDetails", UIController)
 UIN28GronruGameForumDetails = UIN28GronruGameForumDetails
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28GronruGameForumDetails.Constructor = function(self)
-  -- function num : 0_0
+function UIN28GronruGameForumDetails:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameForumDetails.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIN28GronruGameForumDetails:LoadDataOnEnter(TT, res, uiParams)
   self._cfg = uiParams[1]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameForumDetails.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN28GronruGameForumDetails:OnShow(uiParams)
   self._uiAgree = self:GetUIComponent("Image", "uiAgree")
   self._uiDisagreee = self:GetUIComponent("Image", "uiDisagreee")
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
@@ -39,68 +26,40 @@ UIN28GronruGameForumDetails.OnShow = function(self, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameForumDetails.OnHide = function(self)
-  -- function num : 0_3
+function UIN28GronruGameForumDetails:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameForumDetails.BtnCloseOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BounceFolder)
+function UIN28GronruGameForumDetails:BtnCloseOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BounceFolder)
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
     self:Lock("UIN28GronruGameForumDetails:BtnCloseOnClick")
-    ;
-    (self._animation):Play("UIN28GronruGameForumDetails_out")
+    self._animation:Play("UIN28GronruGameForumDetails_out")
     YIELD(TT, 167)
     self:UnLock("UIN28GronruGameForumDetails:BtnCloseOnClick")
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameForumDetails.FlushNews = function(self)
-  -- function num : 0_5
-  ((self._uiAgree).gameObject):SetActive(false)
-  ;
-  ((self._uiDisagreee).gameObject):SetActive(false)
+function UIN28GronruGameForumDetails:FlushNews()
+  self._uiAgree.gameObject:SetActive(false)
+  self._uiDisagreee.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameForumDetails.FlushForum = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((self._uiAgree).gameObject):SetActive((self._cfg).CommentType == UIN28GronruPlatformType.Forum_Comment_Agree)
-  ;
-  ((self._uiDisagreee).gameObject):SetActive((self._cfg).CommentType == UIN28GronruPlatformType.Forum_Comment_Disagree)
-  if (self._cfg).CommentType == UIN28GronruPlatformType.Forum_Comment_Agree then
-    (self._txtTitle):SetText((StringTable.Get)("str_n28_gronru_uiaf_agree"))
+function UIN28GronruGameForumDetails:FlushForum()
+  self._uiAgree.gameObject:SetActive(self._cfg.CommentType == UIN28GronruPlatformType.Forum_Comment_Agree)
+  self._uiDisagreee.gameObject:SetActive(self._cfg.CommentType == UIN28GronruPlatformType.Forum_Comment_Disagree)
+  if self._cfg.CommentType == UIN28GronruPlatformType.Forum_Comment_Agree then
+    self._txtTitle:SetText(StringTable.Get("str_n28_gronru_uiaf_agree"))
   else
-    (self._txtTitle):SetText((StringTable.Get)("str_n28_gronru_uiaf_disagreee"))
+    self._txtTitle:SetText(StringTable.Get("str_n28_gronru_uiaf_disagreee"))
   end
-  local value = (StringTable.Get)((self._cfg).Publisher)
-  ;
-  (self._txtPublisher):SetText((StringTable.Get)("str_n28_gronru_uia_forum_publisher") .. value)
+  local value = StringTable.Get(self._cfg.Publisher)
+  self._txtPublisher:SetText(StringTable.Get("str_n28_gronru_uia_forum_publisher") .. value)
   local atlas = self:CallUIMethod("UIN28GronruPlatform", "GetSpriteAtlas")
-  -- DECOMPILER ERROR at PC68: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._imgIcon).sprite = atlas:GetSprite((self._cfg).Head)
-  local value = (StringTable.Get)((self._cfg).GameDuration)
-  ;
-  (self._txtTimeTotal):SetText((StringTable.Get)("str_n28_gronru_uia_game_time_hour", value))
-  ;
-  (self._txtTimePublish):SetText((StringTable.Get)((self._cfg).TimePublish))
-  ;
-  ((self._txtContentTitle).gameObject):SetActive(false)
-  ;
-  (self._txtContentDesc):SetText((StringTable.Get)((self._cfg).Desc))
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  self._imgIcon.sprite = atlas:GetSprite(self._cfg.Head)
+  local value = StringTable.Get(self._cfg.GameDuration)
+  self._txtTimeTotal:SetText(StringTable.Get("str_n28_gronru_uia_game_time_hour", value))
+  self._txtTimePublish:SetText(StringTable.Get(self._cfg.TimePublish))
+  self._txtContentTitle.gameObject:SetActive(false)
+  self._txtContentDesc:SetText(StringTable.Get(self._cfg.Desc))
 end
-
-

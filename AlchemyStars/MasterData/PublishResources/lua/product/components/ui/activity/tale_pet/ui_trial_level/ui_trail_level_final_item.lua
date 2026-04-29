@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_trial_level/ui_trail_level_final_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITrailLevelFinalItem", UICustomWidget)
 UITrailLevelFinalItem = UITrailLevelFinalItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITrailLevelFinalItem.OnShow = function(self)
-  -- function num : 0_0
+function UITrailLevelFinalItem:OnShow()
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._nameBgLabel = self:GetUIComponent("UILocalizationText", "NameBg")
   self._bossBgLabel = self:GetUIComponent("UILocalizationText", "BossBg")
@@ -18,56 +11,38 @@ UITrailLevelFinalItem.OnShow = function(self)
   self._redGo = self:GetGameObject("Red")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelFinalItem.Refresh = function(self, levelData)
-  -- function num : 0_1 , upvalues : _ENV
+function UITrailLevelFinalItem:Refresh(levelData)
   if levelData == nil then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   self._levelData = levelData
-  ;
-  (self._nameLabel):SetText((self._levelData):GetName())
-  ;
-  (self._nameBgLabel):SetText((self._levelData):GetName())
-  self._levelId = (self._levelData):GetId()
-  local cfg = (Cfg.cfg_tale_stage)[self._levelId]
-  ;
-  (self._bossLabel):SetText((StringTable.Get)(cfg.MonsterName))
-  ;
-  (self._bossBgLabel):SetText((StringTable.Get)(cfg.MonsterName))
-  ;
-  (self._statusGo):SetActive(false)
-  ;
-  (self._redGo):SetActive(false)
-  if not self:IsLock() or (self._levelData):IsComplete() then
-    (self._statusGo):SetActive(true)
-  else
-    ;
-    (self._redGo):SetActive(true)
-  end
-end
-
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelFinalItem.BgOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+  self._nameLabel:SetText(self._levelData:GetName())
+  self._nameBgLabel:SetText(self._levelData:GetName())
+  self._levelId = self._levelData:GetId()
+  local cfg = Cfg.cfg_tale_stage[self._levelId]
+  self._bossLabel:SetText(StringTable.Get(cfg.MonsterName))
+  self._bossBgLabel:SetText(StringTable.Get(cfg.MonsterName))
+  self._statusGo:SetActive(false)
+  self._redGo:SetActive(false)
   if self:IsLock() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_tale_pet_trail_level_level_un_open"))
-    return 
+  elseif self._levelData:IsComplete() then
+    self._statusGo:SetActive(true)
+  else
+    self._redGo:SetActive(true)
   end
-  self:ShowDialog("UITrailLevelDetail", (self._levelData):GetId())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
+function UITrailLevelFinalItem:BgOnClick()
+  if self:IsLock() then
+    ToastManager.ShowToast(StringTable.Get("str_tale_pet_trail_level_level_un_open"))
+    return
+  end
+  self:ShowDialog("UITrailLevelDetail", self._levelData:GetId())
+end
 
-UITrailLevelFinalItem.IsLock = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local talePetModule = (GameGlobal.GetModule)(TalePetModule)
+function UITrailLevelFinalItem:IsLock()
+  local talePetModule = GameGlobal.GetModule(TalePetModule)
   return not talePetModule:HasOpenFinalLevel()
 end
-
-

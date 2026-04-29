@@ -1,30 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_add_hp_by_layer_mark_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddHPByLayerMark", BuffViewBase)
 BuffViewAddHPByLayerMark = BuffViewAddHPByLayerMark
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddHPByLayerMark.Constructor = function(self)
-  -- function num : 0_0
+function BuffViewAddHPByLayerMark:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddHPByLayerMark.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewAddHPByLayerMark:PlayView(TT)
   local res = self._buffResult
   local damageInfo = res:GetDamageInfo()
-  local entity = (self._world):GetEntityByID(res:GetEntityID())
+  local entity = self._world:GetEntityByID(res:GetEntityID())
   YIELD(TT)
   local materialAnimationComponent = entity:MaterialAnimationComponent()
   if materialAnimationComponent then
     materialAnimationComponent:PlayCure()
   end
-  local playDamageService = (self._world):GetService("PlayDamage")
+  local playDamageService = self._world:GetService("PlayDamage")
   playDamageService:AsyncUpdateHPAndDisplayDamage(entity, damageInfo)
 end
-
-

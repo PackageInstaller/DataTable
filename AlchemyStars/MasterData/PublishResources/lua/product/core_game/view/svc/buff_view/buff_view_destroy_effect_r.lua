@@ -1,58 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_destroy_effect_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewDestroyEffect", BuffViewBase)
 BuffViewDestroyEffect = BuffViewDestroyEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewDestroyEffect.PlayView = function(self, TT, notify)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewDestroyEffect:PlayView(TT, notify)
   local result = self._buffResult
   local gameObjectName = result:GetObjName()
   local waitTime = result:GetWaitTime()
-  local targetGameObject = ((UnityEngine.GameObject).Find)(gameObjectName)
+  local targetGameObject = UnityEngine.GameObject.Find(gameObjectName)
   if not targetGameObject then
-    return 
+    return
   end
-  if waitTime and waitTime > 0 then
+  if waitTime and 0 < waitTime then
     local fadeComponent = targetGameObject:AddComponent(typeof(FadeComponent))
-    do
-      fadeComponent.Alpha = 1
-      local mathService = (self._world):GetService("Math")
-      local tmpDuration = waitTime
-      ;
-      ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : fadeComponent, tmpDuration, _ENV, waitTime, mathService, targetGameObject
-    while fadeComponent.Alpha > 0 do
-      tmpDuration = tmpDuration - (UnityEngine.Time).deltaTime
-      local tran = tmpDuration / waitTime
-      tran = mathService:ClampValue(tran, 0, 1)
-      fadeComponent.Alpha = tran
-      YIELD(TT)
-    end
-    do
-      if targetGameObject then
-        ((UnityEngine.Object).Destroy)(targetGameObject)
+    fadeComponent.Alpha = 1
+    local mathService = self._world:GetService("Math")
+    local tmpDuration = waitTime
+    GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      while fadeComponent.Alpha > 0 do
+        tmpDuration = tmpDuration - UnityEngine.Time.deltaTime
+        local tran = tmpDuration / waitTime
+        tran = mathService:ClampValue(tran, 0, 1)
+        fadeComponent.Alpha = tran
+        YIELD(TT)
       end
-    end
-  end
-)
-    end
+      if targetGameObject then
+        UnityEngine.Object.Destroy(targetGameObject)
+      end
+    end)
   else
-    do
-      ;
-      ((UnityEngine.Object).Destroy)(targetGameObject)
-    end
+    UnityEngine.Object.Destroy(targetGameObject)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewDestroyEffect.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewDestroyEffect:IsNotifyMatch(notify)
   return true
 end
-
-

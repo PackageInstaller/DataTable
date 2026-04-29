@@ -1,112 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/medal_wall/ui_homeland_medal_wall.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMedalWall", UIController)
 UIHomelandMedalWall = UIHomelandMedalWall
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMedalWall.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  self._uiHomelandModule = (self._homelandModule):GetUIModule()
-  self._homelandClient = (self._uiHomelandModule):GetClient()
-  self._isVisit = (self._homelandClient):IsVisit()
+function UIHomelandMedalWall:OnShow(uiParams)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
+  self._uiHomelandModule = self._homelandModule:GetUIModule()
+  self._homelandClient = self._uiHomelandModule:GetClient()
+  self._isVisit = self._homelandClient:IsVisit()
   self._btnEdit = self:GetGameObject("BtnEdit")
-  ;
-  (self._btnEdit):SetActive(not self._isVisit)
+  self._btnEdit:SetActive(not self._isVisit)
   self._mobileMedalWallControlGO = self:GetGameObject("MobileMedalWallControl")
   self._mobileMedalWallConWidgetPool = self:GetUIComponent("UISelectObjectPath", "MobileMedalWallControl")
   self:Init()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetInteractPointUIStatus, false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.EnterFindTreasure)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideHomelandAllUI, false)
-  local characterController = ((self._homelandClient):CharacterManager()):MainCharacterController()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetInteractPointUIStatus, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.EnterFindTreasure)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideHomelandAllUI, false)
+  local characterController = self._homelandClient:CharacterManager():MainCharacterController()
   characterController:ShowHideCharacter(false)
-  local petMng = (self._homelandClient):PetManager()
+  local petMng = self._homelandClient:PetManager()
   petMng:SetPetsVisible(false)
-  local homelandMainController = ((GameGlobal.UIStateManager)()):GetController("UIHomelandMain")
+  local homelandMainController = GameGlobal.UIStateManager():GetController("UIHomelandMain")
   if homelandMainController then
     homelandMainController:SetMinimapStatus(false)
   end
   local cameraTransform = uiParams[1]
-  ;
-  ((self._homelandClient):InputManager()):ChangeMedalWallController(true, cameraTransform)
-  ;
-  ((self._homelandClient):CameraManager()):SetMedalWallCameraActive(true)
+  self._homelandClient:InputManager():ChangeMedalWallController(true, cameraTransform)
+  self._homelandClient:CameraManager():SetMedalWallCameraActive(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMedalWall.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._mobileMedalWallControlGO):SetActive(true)
-  self._uiWidgetMedalWallCtrl = (self._mobileMedalWallConWidgetPool):SpawnObject("UIWidgetHomelandMedalWallController")
-  self._blackMask = (((((self:GetGameObject()).transform).parent).parent):Find("BGMaskCanvas/black_mask")):GetComponent(typeof((UnityEngine.UI).Image))
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._blackMask).raycastTarget = false
+function UIHomelandMedalWall:Init()
+  self._mobileMedalWallControlGO:SetActive(true)
+  self._uiWidgetMedalWallCtrl = self._mobileMedalWallConWidgetPool:SpawnObject("UIWidgetHomelandMedalWallController")
+  self._blackMask = self:GetGameObject().transform.parent.parent:Find("BGMaskCanvas/black_mask"):GetComponent(typeof(UnityEngine.UI.Image))
+  self._blackMask.raycastTarget = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMedalWall.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function UIHomelandMedalWall:OnHide()
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
   if not homelandClient then
-    return 
+    return
   end
   local cameraMgr = homelandClient:CameraManager()
   local medalWallCameraController = cameraMgr:MedalWallCameraController()
   medalWallCameraController:ResetInitPos(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV, homelandClient, cameraMgr
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._blackMask).raycastTarget = true
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideHomelandAllUI, true)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshInteractUI)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetInteractPointUIStatus, true)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ExitFindTreasure)
-    ;
-    (homelandClient:InputManager()):ChangeMedalWallController(false)
+    self._blackMask.raycastTarget = true
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideHomelandAllUI, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshInteractUI)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SetInteractPointUIStatus, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ExitFindTreasure)
+    homelandClient:InputManager():ChangeMedalWallController(false)
     cameraMgr:SetMedalWallCameraActive(false)
     local followCameraController = cameraMgr:FollowCameraController()
     followCameraController:LeaveFocusUseAngles()
-    local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+    local characterController = homelandClient:CharacterManager():MainCharacterController()
     characterController:ShowHideCharacter(true)
     characterController:SetForbiddenMove(false)
     local petMng = homelandClient:PetManager()
     petMng:SetPetsVisible(true)
-    local homelandMainController = ((GameGlobal.UIStateManager)()):GetController("UIHomelandMain")
+    local homelandMainController = GameGlobal.UIStateManager():GetController("UIHomelandMain")
     if homelandMainController then
       homelandMainController:SetMinimapStatus(true)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMedalWall.BtnCloseOnClick = function(self, go)
-  -- function num : 0_3
+function UIHomelandMedalWall:BtnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMedalWall.BtnEditOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomelandMedalWall:BtnEditOnClick(go)
   self:ShowDialog("UIN22MedalEdit", true)
 end
-
-

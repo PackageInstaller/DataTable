@@ -1,23 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/hardlevel/ui_n12_hard_level_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12HardlLevelInfo", UIController)
 UIN12HardlLevelInfo = UIN12HardlLevelInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12HardlLevelInfo.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12HardlLevelInfo:Constructor()
   self._loginModule = self:GetModule(LoginModule)
   self._missionModule = self:GetModule(MissionModule)
   self._campaignModule = self:GetModule(CampaignModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
-  self._curLevelIndex = (N12ToolFunctions.GetLocalDBInt)(N12OperationRecordKey.HardLevelIndex, 1)
+  self._curLevelIndex = N12ToolFunctions.GetLocalDBInt(N12OperationRecordKey.HardLevelIndex, 1)
   local key = self._curLevelIndex .. N12OperationRecordKey.HardLevelType
-  self._curLevelType = (N12ToolFunctions.GetLocalDBInt)(key, HardLevelType.Easy)
+  self._curLevelType = N12ToolFunctions.GetLocalDBInt(key, HardLevelType.Easy)
   self._atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
-  self._element_cfg = (Cfg.cfg_pet_element)({})
+  self._element_cfg = Cfg.cfg_pet_element({})
   self._cfgs_boss = nil
   self._selectedAffixes = {}
   self._curScore = 0
@@ -28,251 +21,139 @@ UIN12HardlLevelInfo.Constructor = function(self)
   self._animationInstanceIDs = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN12HardlLevelInfo:LoadDataOnEnter(TT, res, uiParams)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N12, ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N12, ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  self._cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
-  self._localProcess = (self._campaign):GetLocalProcess()
-  self._challengeMissionComponent = (self._campaign):GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
-  self._challengeMissionCompInfo = (self._challengeMissionComponent):GetComponentInfo()
+  self._cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
+  self._localProcess = self._campaign:GetLocalProcess()
+  self._challengeMissionComponent = self._campaign:GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
+  self._challengeMissionCompInfo = self._challengeMissionComponent:GetComponentInfo()
   self:_FilterLevelData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._FilterLevelData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local missionInfos = (self._challengeMissionCompInfo).m_challenge_unlock_time
+function UIN12HardlLevelInfo:_FilterLevelData()
+  local missionInfos = self._challengeMissionCompInfo.m_challenge_unlock_time
   local tempTable = {}
-  for key,value in pairs(missionInfos) do
-    local tempCfg = (Cfg.cfg_component_challenge_mission)({CampaignMissionId = key})
-    if not (table.icontains)(tempTable, (tempCfg[1]).LeveIndex) then
-      (table.insert)(tempTable, (tempCfg[1]).LeveIndex)
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._levelData)[(tempCfg[1]).LeveIndex] = {key, value}
+  for key, value in pairs(missionInfos) do
+    local tempCfg = Cfg.cfg_component_challenge_mission({CampaignMissionId = key})
+    if not table.icontains(tempTable, tempCfg[1].LeveIndex) then
+      table.insert(tempTable, tempCfg[1].LeveIndex)
+      self._levelData[tempCfg[1].LeveIndex] = {key, value}
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.OnShow = function(self, uiParams)
-  -- function num : 0_3
-  self._maxScore = ((self._challengeMissionCompInfo).m_max_score)[self._curLevelIndex]
+function UIN12HardlLevelInfo:OnShow(uiParams)
+  self._maxScore = self._challengeMissionCompInfo.m_max_score[self._curLevelIndex]
   self:_GetComponent()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._GetComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN12HardlLevelInfo:_GetComponent()
   self._backBtn = self:GetUIComponent("UISelectObjectPath", "BackBtn")
-  self._commonTopBtn = (self._backBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_4_0 , upvalues : self
+  self._commonTopBtn = self._backBtn:SpawnObject("UICommonTopButton")
+  self._commonTopBtn:SetData(function()
     self:_Close()
-  end
-)
+  end)
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._menu = self:GetGameObject("Menu")
   self._menuMask = self:GetGameObject("MenuMask")
   self._levelTypeBtn = {}
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtn)[HardLevelType.Easy] = self:GetGameObject("EasyBtn")
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtn)[HardLevelType.Normal] = self:GetGameObject("NormalBtn")
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtn)[HardLevelType.Hard] = self:GetGameObject("HardBtn")
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtn)[HardLevelType.Nightmare] = self:GetGameObject("NightmareBtn")
-  -- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtn)[HardLevelType.Hell] = self:GetGameObject("HellBtn")
+  self._levelTypeBtn[HardLevelType.Easy] = self:GetGameObject("EasyBtn")
+  self._levelTypeBtn[HardLevelType.Normal] = self:GetGameObject("NormalBtn")
+  self._levelTypeBtn[HardLevelType.Hard] = self:GetGameObject("HardBtn")
+  self._levelTypeBtn[HardLevelType.Nightmare] = self:GetGameObject("NightmareBtn")
+  self._levelTypeBtn[HardLevelType.Hell] = self:GetGameObject("HellBtn")
   self._levelTypeBtnText = {}
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtnText)[HardLevelType.Easy] = self:GetUIComponent("UILocalizationText", "EasyBtnText")
-  -- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtnText)[HardLevelType.Normal] = self:GetUIComponent("UILocalizationText", "NormalBtnText")
-  -- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtnText)[HardLevelType.Hard] = self:GetUIComponent("UILocalizationText", "HardBtnText")
-  -- DECOMPILER ERROR at PC97: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtnText)[HardLevelType.Nightmare] = self:GetUIComponent("UILocalizationText", "NightmareBtnText")
-  -- DECOMPILER ERROR at PC105: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtnText)[HardLevelType.Hell] = self:GetUIComponent("UILocalizationText", "HellBtnText")
+  self._levelTypeBtnText[HardLevelType.Easy] = self:GetUIComponent("UILocalizationText", "EasyBtnText")
+  self._levelTypeBtnText[HardLevelType.Normal] = self:GetUIComponent("UILocalizationText", "NormalBtnText")
+  self._levelTypeBtnText[HardLevelType.Hard] = self:GetUIComponent("UILocalizationText", "HardBtnText")
+  self._levelTypeBtnText[HardLevelType.Nightmare] = self:GetUIComponent("UILocalizationText", "NightmareBtnText")
+  self._levelTypeBtnText[HardLevelType.Hell] = self:GetUIComponent("UILocalizationText", "HellBtnText")
   self._levelTypeBaseScoreText = {}
-  -- DECOMPILER ERROR at PC115: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBaseScoreText)[HardLevelType.Easy] = self:GetUIComponent("UILocalizationText", "EasyBaseScore")
-  -- DECOMPILER ERROR at PC123: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBaseScoreText)[HardLevelType.Normal] = self:GetUIComponent("UILocalizationText", "NormalBaseScore")
-  -- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBaseScoreText)[HardLevelType.Hard] = self:GetUIComponent("UILocalizationText", "HardBaseScore")
-  -- DECOMPILER ERROR at PC139: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBaseScoreText)[HardLevelType.Nightmare] = self:GetUIComponent("UILocalizationText", "NightmareBaseScore")
-  -- DECOMPILER ERROR at PC147: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBaseScoreText)[HardLevelType.Hell] = self:GetUIComponent("UILocalizationText", "HellBaseScore")
+  self._levelTypeBaseScoreText[HardLevelType.Easy] = self:GetUIComponent("UILocalizationText", "EasyBaseScore")
+  self._levelTypeBaseScoreText[HardLevelType.Normal] = self:GetUIComponent("UILocalizationText", "NormalBaseScore")
+  self._levelTypeBaseScoreText[HardLevelType.Hard] = self:GetUIComponent("UILocalizationText", "HardBaseScore")
+  self._levelTypeBaseScoreText[HardLevelType.Nightmare] = self:GetUIComponent("UILocalizationText", "NightmareBaseScore")
+  self._levelTypeBaseScoreText[HardLevelType.Hell] = self:GetUIComponent("UILocalizationText", "HellBaseScore")
   self._levelTypeBtnLock = {}
-  -- DECOMPILER ERROR at PC156: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtnLock)[HardLevelType.Easy] = self:GetGameObject("EasyLock")
-  -- DECOMPILER ERROR at PC163: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtnLock)[HardLevelType.Normal] = self:GetGameObject("NormalLock")
-  -- DECOMPILER ERROR at PC170: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtnLock)[HardLevelType.Hard] = self:GetGameObject("HardLock")
-  -- DECOMPILER ERROR at PC177: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtnLock)[HardLevelType.Nightmare] = self:GetGameObject("NightmareLock")
-  -- DECOMPILER ERROR at PC184: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtnLock)[HardLevelType.Hell] = self:GetGameObject("HellLock")
+  self._levelTypeBtnLock[HardLevelType.Easy] = self:GetGameObject("EasyLock")
+  self._levelTypeBtnLock[HardLevelType.Normal] = self:GetGameObject("NormalLock")
+  self._levelTypeBtnLock[HardLevelType.Hard] = self:GetGameObject("HardLock")
+  self._levelTypeBtnLock[HardLevelType.Nightmare] = self:GetGameObject("NightmareLock")
+  self._levelTypeBtnLock[HardLevelType.Hell] = self:GetGameObject("HellLock")
   self._curBtnText = self:GetUIComponent("UILocalizationText", "CurBtnText")
   self._curBtnScoreText = self:GetUIComponent("UILocalizationText", "CurBtnScoreText")
   self._element = {}
-  -- DECOMPILER ERROR at PC202: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._element)[1] = self:GetUIComponent("Image", "Element1")
-  -- DECOMPILER ERROR at PC208: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._element)[2] = self:GetUIComponent("Image", "Element2")
+  self._element[1] = self:GetUIComponent("Image", "Element1")
+  self._element[2] = self:GetUIComponent("Image", "Element2")
   self._elementObj = {}
-  -- DECOMPILER ERROR at PC215: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._elementObj)[1] = self:GetGameObject("Element1")
-  -- DECOMPILER ERROR at PC220: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._elementObj)[2] = self:GetGameObject("Element2")
+  self._elementObj[1] = self:GetGameObject("Element1")
+  self._elementObj[2] = self:GetGameObject("Element2")
   self._bossName = self:GetUIComponent("UILocalizationText", "BossName")
   self._recommendInfoText = self:GetUIComponent("UILocalizationText", "RecommendInfoText")
   self._bossImg = self:GetUIComponent("RawImageLoader", "BossImg")
   self._curScoreText = self:GetUIComponent("UILocalizationText", "CurScore")
   self._maxScoreText = self:GetUIComponent("UILocalizationText", "MaxScore")
   self._menuMaskImg = self:GetUIComponent("RectTransform", "MenuMaskImg")
-  -- DECOMPILER ERROR at PC253: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scrollView).mOnDragingAction = function()
-    -- function num : 0_4_1 , upvalues : self
+  
+  function self._scrollView.mOnDragingAction()
     self._playItemAnimation = false
   end
-
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._OnValue = function(self)
-  -- function num : 0_5
+function UIN12HardlLevelInfo:_OnValue()
   self:_RefreshUnlockInfo()
   self:_RefreshUIInfo(self._curLevelType)
   self:_InitDynamicScrollView()
   self:_CheckChallengeTaskRewards()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._CheckChallengeTaskRewards = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN12HardlLevelInfo:_CheckChallengeTaskRewards()
   local key = N12OperationRecordKey.ShowChallengeTaskRewards .. self._curLevelIndex
-  if (N12ToolFunctions.GetLocalDBInt)(key, 0) > 0 then
-    (N12ToolFunctions.SetLocalDBInt)(key, 0)
+  if 0 < N12ToolFunctions.GetLocalDBInt(key, 0) then
+    N12ToolFunctions.SetLocalDBInt(key, 0)
     self:Lock("N12CheckChallengeTaskRewards")
     self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
-    YIELD(TT, 500)
-    self:_ShowChallengeTaskRewards()
-    self:UnLock("N12CheckChallengeTaskRewards")
-  end
-)
+      YIELD(TT, 500)
+      self:_ShowChallengeTaskRewards()
+      self:UnLock("N12CheckChallengeTaskRewards")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._ShowChallengeTaskRewards = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local oldMaxScore = (N12ToolFunctions.GetLocalDBInt)(N12OperationRecordKey.OldMaxScore, 0)
-  local newMaxScore = (N12ToolFunctions.GetLocalDBInt)(N12OperationRecordKey.NewMaxScore, 0)
+function UIN12HardlLevelInfo:_ShowChallengeTaskRewards()
+  local oldMaxScore = N12ToolFunctions.GetLocalDBInt(N12OperationRecordKey.OldMaxScore, 0)
+  local newMaxScore = N12ToolFunctions.GetLocalDBInt(N12OperationRecordKey.NewMaxScore, 0)
   local rewards = {}
   local totalCount = 0
   if oldMaxScore < newMaxScore then
-    local hardLevelIndex = (N12ToolFunctions.GetLocalDBInt)(N12OperationRecordKey.HardLevelIndex, 1)
-    local cfg = (Cfg.cfg_n12_challenges_task)[hardLevelIndex]
+    local hardLevelIndex = N12ToolFunctions.GetLocalDBInt(N12OperationRecordKey.HardLevelIndex, 1)
+    local cfg = Cfg.cfg_n12_challenges_task[hardLevelIndex]
     if cfg then
-      for key,value in pairs(cfg.Score) do
-        if oldMaxScore < value[1] and value[1] <= newMaxScore then
-          totalCount = totalCount + ((cfg.Rewards)[key])[2]
+      for key, value in pairs(cfg.Score) do
+        if oldMaxScore < value[1] and newMaxScore >= value[1] then
+          totalCount = totalCount + cfg.Rewards[key][2]
         end
       end
     end
   end
-  do
-    if totalCount > 0 then
-      (table.insert)(rewards, totalCount)
-    end
-    if #rewards > 0 then
-      self:ShowDialog("UIN12ChallengeTaskReward", rewards)
-    end
+  if 0 < totalCount then
+    table.insert(rewards, totalCount)
+  end
+  if 0 < #rewards then
+    self:ShowDialog("UIN12ChallengeTaskReward", rewards)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._RefreshUnlockInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local str = (LocalDB.GetString)("N12ChallengeLevelIndexes" .. (self._loginModule):GetRoleShowID())
-  local indexes = (string.split)(str, ",")
+function UIN12HardlLevelInfo:_RefreshUnlockInfo()
+  local str = LocalDB.GetString("N12ChallengeLevelIndexes" .. self._loginModule:GetRoleShowID())
+  local indexes = string.split(str, ",")
   local recorded = false
   for i = 1, #indexes do
     if indexes[i] == tostring(self._curLevelIndex) then
@@ -282,372 +163,266 @@ UIN12HardlLevelInfo._RefreshUnlockInfo = function(self)
   if not recorded then
     str = str .. self._curLevelIndex .. ","
   end
-  ;
-  (LocalDB.SetString)("N12ChallengeLevelIndexes" .. (self._loginModule):GetRoleShowID(), str)
+  LocalDB.SetString("N12ChallengeLevelIndexes" .. self._loginModule:GetRoleShowID(), str)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._RefreshUIInfo = function(self, levelType)
-  -- function num : 0_9 , upvalues : _ENV
-  local missions = (Cfg.cfg_component_challenge_mission)({LeveIndex = self._curLevelIndex, HardID = levelType})
+function UIN12HardlLevelInfo:_RefreshUIInfo(levelType)
+  local missions = Cfg.cfg_component_challenge_mission({
+    LeveIndex = self._curLevelIndex,
+    HardID = levelType
+  })
   if not missions then
-    (Log.error)("cfg_component_challenge_mission dont not exist." .. self._curLevelIndex .. " " .. levelType)
-    return 
+    Log.error("cfg_component_challenge_mission dont not exist." .. self._curLevelIndex .. " " .. levelType)
+    return
   end
   self:_GetDifficultyCount()
   self:_FiltrateAffix()
   self._curChallengeMissionCfg = missions[1]
-  self._allAffixes = (self._curChallengeMissionCfg).Affix
-  local cfg_campaign_mission = (Cfg.cfg_campaign_mission)[(self._curChallengeMissionCfg).CampaignMissionId]
+  self._allAffixes = self._curChallengeMissionCfg.Affix
+  local cfg_campaign_mission = Cfg.cfg_campaign_mission[self._curChallengeMissionCfg.CampaignMissionId]
   if cfg_campaign_mission then
-    (self._bossName):SetText((StringTable.Get)(cfg_campaign_mission.Name))
+    self._bossName:SetText(StringTable.Get(cfg_campaign_mission.Name))
   end
-  ;
-  (self._recommendInfoText):SetText((StringTable.Get)("str_n12_recommend_info", (self._curChallengeMissionCfg).RecommendAwaken, (self._curChallengeMissionCfg).RecommendLV))
-  ;
-  (self._bossImg):LoadImage((self._curChallengeMissionCfg).MonsterIcon)
-  self._cfgs_boss = (N12ToolFunctions.GetBossCfgs)((self._curChallengeMissionCfg).CampaignMissionId)
+  self._recommendInfoText:SetText(StringTable.Get("str_n12_recommend_info", self._curChallengeMissionCfg.RecommendAwaken, self._curChallengeMissionCfg.RecommendLV))
+  self._bossImg:LoadImage(self._curChallengeMissionCfg.MonsterIcon)
+  self._cfgs_boss = N12ToolFunctions.GetBossCfgs(self._curChallengeMissionCfg.CampaignMissionId)
   if self._cfgs_boss then
     local elementType = {}
     for i = 1, #self._cfgs_boss do
-      if not (table.icontains)(elementType, ((self._cfgs_boss)[i]).ElementType) then
-        (table.insert)(elementType, ((self._cfgs_boss)[i]).ElementType)
+      if not table.icontains(elementType, self._cfgs_boss[i].ElementType) then
+        table.insert(elementType, self._cfgs_boss[i].ElementType)
       end
     end
-    -- DECOMPILER ERROR at PC105: Confused about usage of register: R5 in 'UnsetPending'
-
     if #elementType == 1 then
-      ((self._element)[2]).sprite = (self._atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(ElementIcon[elementType[1]]))
-      ;
-      ((self._elementObj)[2]):SetActive(true)
-      ;
-      ((self._elementObj)[1]):SetActive(false)
+      self._element[2].sprite = self._atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(ElementIcon[elementType[1]]))
+      self._elementObj[2]:SetActive(true)
+      self._elementObj[1]:SetActive(false)
+    elseif #elementType == 2 then
+      self._element[1].sprite = self._atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(ElementIcon[elementType[1]]))
+      self._elementObj[1]:SetActive(true)
+      self._element[2].sprite = self._atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(ElementIcon[elementType[2]]))
+      self._elementObj[2]:SetActive(true)
     else
-      -- DECOMPILER ERROR at PC133: Confused about usage of register: R5 in 'UnsetPending'
-
-      if #elementType == 2 then
-        ((self._element)[1]).sprite = (self._atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(ElementIcon[elementType[1]]))
-        ;
-        ((self._elementObj)[1]):SetActive(true)
-        -- DECOMPILER ERROR at PC152: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        ((self._element)[2]).sprite = (self._atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(ElementIcon[elementType[2]]))
-        ;
-        ((self._elementObj)[2]):SetActive(true)
-      else
-        ;
-        ((self._elementObj)[1]):SetActive(false)
-        ;
-        ((self._elementObj)[2]):SetActive(false)
-      end
+      self._elementObj[1]:SetActive(false)
+      self._elementObj[2]:SetActive(false)
     end
   else
-    do
-      for i = 1, #self._element do
-        ((self._elementObj)[i]):SetActive(false)
-      end
-      do
-        ;
-        (self._curBtnText):SetText((StringTable.Get)(HardLevelTypeText[self._curLevelType]))
-        ;
-        (self._curBtnScoreText):SetText((self._curChallengeMissionCfg).BaseScore)
-        self:_CalcAffixScore()
-        ;
-        (self._maxScoreText):SetText(self._maxScore)
-        -- DECOMPILER ERROR at PC208: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._menuMaskImg).sizeDelta = Vector2(506, 55 + self._difficultyCount * 75)
-      end
+    for i = 1, #self._element do
+      self._elementObj[i]:SetActive(false)
     end
   end
+  self._curBtnText:SetText(StringTable.Get(HardLevelTypeText[self._curLevelType]))
+  self._curBtnScoreText:SetText(self._curChallengeMissionCfg.BaseScore)
+  self:_CalcAffixScore()
+  self._maxScoreText:SetText(self._maxScore)
+  self._menuMaskImg.sizeDelta = Vector2(506, 55 + self._difficultyCount * 75)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._GetDifficultyCount = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local missions = (Cfg.cfg_component_challenge_mission)({LeveIndex = self._curLevelIndex})
-  self._difficultyCount = (table.count)(missions)
+function UIN12HardlLevelInfo:_GetDifficultyCount()
+  local missions = Cfg.cfg_component_challenge_mission({
+    LeveIndex = self._curLevelIndex
+  })
+  self._difficultyCount = table.count(missions)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._FiltrateAffix = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN12HardlLevelInfo:_FiltrateAffix()
   self._haveRecord = false
   self._selectedAffixes = {}
-  for key,value in pairs((self._challengeMissionCompInfo).m_select_affix) do
-    local temps = (Cfg.cfg_component_challenge_mission)({LeveIndex = self._curLevelIndex, CampaignMissionId = key, HardID = self._curLevelType})
-    if temps and #temps >= 1 then
+  for key, value in pairs(self._challengeMissionCompInfo.m_select_affix) do
+    local temps = Cfg.cfg_component_challenge_mission({
+      LeveIndex = self._curLevelIndex,
+      CampaignMissionId = key,
+      HardID = self._curLevelType
+    })
+    if temps and 1 <= #temps then
       if value then
         for i = 1, #value do
-          (table.insert)(self._selectedAffixes, value[i])
+          table.insert(self._selectedAffixes, value[i])
         end
       end
-      do
-        do
-          self._haveRecord = #self._selectedAffixes > 0
-          do break end
-          -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      self._haveRecord = #self._selectedAffixes > 0
+      break
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._InitDynamicScrollView = function(self)
-  -- function num : 0_12
-  (self._scrollView):InitListView(#self._allAffixes, function(scrollview, index)
-    -- function num : 0_12_0 , upvalues : self
+function UIN12HardlLevelInfo:_InitDynamicScrollView()
+  self._scrollView:InitListView(#self._allAffixes, function(scrollview, index)
     return self:_OnGetItemByIndex(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._OnGetItemByIndex = function(self, scrollview, index)
-  -- function num : 0_13 , upvalues : _ENV
-  local affixs = (self._allAffixes)[index + 1]
+function UIN12HardlLevelInfo:_OnGetItemByIndex(scrollview, index)
+  local affixs = self._allAffixes[index + 1]
   local affixArrayType = #affixs <= 1
-  local firstAffixCfg = (Cfg.cfg_component_mission_affix)[affixs[1]]
+  local firstAffixCfg = Cfg.cfg_component_mission_affix[affixs[1]]
   local affixType = firstAffixCfg.UnLockScore == nil or firstAffixCfg.UnLockScore <= 0
-  local itemTemplate = (HardLevelInfoItemType[affixArrayType])[affixType]
+  local itemTemplate = HardLevelInfoItemType[affixArrayType][affixType]
   local item = scrollview:NewListViewItem(itemTemplate)
   local itemPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
-  do
-    if not affixArrayType then
-      local count = #affixs
-      -- DECOMPILER ERROR at PC43: Confused about usage of register: R11 in 'UnsetPending'
-
-      if affixType then
-        (item.CachedRectTransform).sizeDelta = Vector2(1241, 89 * count + (count + 1) * 10)
-      else
-        -- DECOMPILER ERROR at PC55: Confused about usage of register: R11 in 'UnsetPending'
-
-        (item.CachedRectTransform).sizeDelta = Vector2(1241, 180 + 89 * (count - 1) + (count + 1) * 10)
-      end
+  if not affixArrayType then
+    local count = #affixs
+    if affixType then
+      item.CachedRectTransform.sizeDelta = Vector2(1241, 89 * count + (count + 1) * 10)
+    else
+      item.CachedRectTransform.sizeDelta = Vector2(1241, 180 + 89 * (count - 1) + (count + 1) * 10)
     end
-    if not item.IsInitHandlerCalled then
-      item.IsInitHandlerCalled = true
-      itemPool:SpawnObjects(itemTemplate, 1)
-    end
-    local itemWidgets = itemPool:GetAllSpawnList()
-    local itemWidget = itemWidgets[1]
-    if itemWidget then
-      itemWidget:SetData(function(deltaTime, instanceID)
-    -- function num : 0_13_0 , upvalues : self
-    return self:_GlobalDelayTimeFunc(deltaTime, instanceID)
   end
-, affixs, function(affixId, select)
-    -- function num : 0_13_1 , upvalues : self
-    self:_SelectAffixCallBack(affixId, select)
+  if not item.IsInitHandlerCalled then
+    item.IsInitHandlerCalled = true
+    itemPool:SpawnObjects(itemTemplate, 1)
   end
-)
-    end
-    do return item end
-    -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  local itemWidgets = itemPool:GetAllSpawnList()
+  local itemWidget = itemWidgets[1]
+  if itemWidget then
+    itemWidget:SetData(function(deltaTime, instanceID)
+      return self:_GlobalDelayTimeFunc(deltaTime, instanceID)
+    end, affixs, function(affixId, select)
+      self:_SelectAffixCallBack(affixId, select)
+    end)
   end
+  return item
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._GlobalDelayTimeFunc = function(self, deltaTime, instanceID)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN12HardlLevelInfo:_GlobalDelayTimeFunc(deltaTime, instanceID)
   if not self._playItemAnimation then
     return -1
   end
-  if (table.icontains)(self._animationInstanceIDs, instanceID) then
+  if table.icontains(self._animationInstanceIDs, instanceID) then
     return -1
   end
-  ;
-  (table.insert)(self._animationInstanceIDs, instanceID)
+  table.insert(self._animationInstanceIDs, instanceID)
   local delayTime = self._globalDelayTime
   self._globalDelayTime = self._globalDelayTime + deltaTime
   return delayTime
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._SelectAffixCallBack = function(self, affixId, select)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN12HardlLevelInfo:_SelectAffixCallBack(affixId, select)
   if select then
-    (table.insert)(self._selectedAffixes, affixId)
+    table.insert(self._selectedAffixes, affixId)
   else
-    ;
-    (table.removev)(self._selectedAffixes, affixId)
+    table.removev(self._selectedAffixes, affixId)
   end
   if not select then
     self:_AffixAutoCancel()
   end
   self:_CalcAffixScore()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnAffixScoreChange)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnAffixScoreChange)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._AffixAutoCancel = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN12HardlLevelInfo:_AffixAutoCancel()
   if #self._selectedAffixes <= 0 then
-    return 
+    return
   end
-  ;
-  (table.sort)(self._selectedAffixes, function(a, b)
-    -- function num : 0_16_0 , upvalues : _ENV
-    local cfga = (Cfg.cfg_component_mission_affix)[a]
-    local cfgb = (Cfg.cfg_component_mission_affix)[b]
-    do return cfga.UnLockScore < cfgb.UnLockScore end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._selectedAffixes, function(a, b)
+    local cfga = Cfg.cfg_component_mission_affix[a]
+    local cfgb = Cfg.cfg_component_mission_affix[b]
+    return cfga.UnLockScore < cfgb.UnLockScore
+  end)
   local tempAffixIDs = {}
   for i = 1, #self._selectedAffixes do
-    local affixCfg = (Cfg.cfg_component_mission_affix)[(self._selectedAffixes)[i]]
-    if affixCfg.UnLockScore > 0 then
+    local affixCfg = Cfg.cfg_component_mission_affix[self._selectedAffixes[i]]
+    if 0 < affixCfg.UnLockScore then
       local tempCurScore = self:GetCurBaseScore()
       for j = 1, #self._selectedAffixes do
-        if (self._selectedAffixes)[j] ~= (self._selectedAffixes)[i] then
-          local cfg = (Cfg.cfg_component_mission_affix)[(self._selectedAffixes)[j]]
-          if cfg and (cfg.UnLockScore <= 0 or cfg.UnLockScore >= affixCfg.UnLockScore or not (table.icontains)(tempAffixIDs, (self._selectedAffixes)[j])) then
+        if self._selectedAffixes[j] ~= self._selectedAffixes[i] then
+          local cfg = Cfg.cfg_component_mission_affix[self._selectedAffixes[j]]
+          if cfg and (0 >= cfg.UnLockScore or cfg.UnLockScore < affixCfg.UnLockScore and not table.icontains(tempAffixIDs, self._selectedAffixes[j])) then
             tempCurScore = tempCurScore + cfg.AffixScore
           end
         end
       end
       if tempCurScore < affixCfg.UnLockScore then
-        (table.insert)(tempAffixIDs, (self._selectedAffixes)[i])
+        table.insert(tempAffixIDs, self._selectedAffixes[i])
       end
     end
   end
-  if #tempAffixIDs > 0 then
+  if 0 < #tempAffixIDs then
     for i = 1, #tempAffixIDs do
-      (table.removev)(self._selectedAffixes, tempAffixIDs[i])
+      table.removev(self._selectedAffixes, tempAffixIDs[i])
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._SyncSelectedAffixes = function(self, callBack)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN12HardlLevelInfo:_SyncSelectedAffixes(callBack)
   self:Lock("UIN12HardlLevelInfoSelectAffix")
   self:StartTask(function(TT)
-    -- function num : 0_17_0 , upvalues : _ENV, self, callBack
     local request = AsyncRequestRes:New()
-    request = (self._challengeMissionComponent):HandleSelectAffix(TT, request, (self._curChallengeMissionCfg).CampaignMissionId, self._selectedAffixes)
-    if request:GetSucc() and callBack then
-      callBack()
+    request = self._challengeMissionComponent:HandleSelectAffix(TT, request, self._curChallengeMissionCfg.CampaignMissionId, self._selectedAffixes)
+    if request:GetSucc() then
+      if callBack then
+        callBack()
+      end
+    else
+      self._campaignModule:CheckErrorCode(request.m_result, self._campaign._id)
     end
-    ;
-    (self._campaignModule):CheckErrorCode(request.m_result, (self._campaign)._id)
     self:UnLock("UIN12HardlLevelInfoSelectAffix")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._CalcAffixScore = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  self._curScore = (self._curChallengeMissionCfg).BaseScore
+function UIN12HardlLevelInfo:_CalcAffixScore()
+  self._curScore = self._curChallengeMissionCfg.BaseScore
   for i = 1, #self._selectedAffixes do
-    local cfg = (Cfg.cfg_component_mission_affix)[(self._selectedAffixes)[i]]
+    local cfg = Cfg.cfg_component_mission_affix[self._selectedAffixes[i]]
     if cfg then
       self._curScore = self._curScore + cfg.AffixScore
     end
   end
-  ;
-  (self._curScoreText):SetText(self._curScore)
+  self._curScoreText:SetText(self._curScore)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.GetSelectedAffixes = function(self)
-  -- function num : 0_19
+function UIN12HardlLevelInfo:GetSelectedAffixes()
   return self._selectedAffixes
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.GetCurScore = function(self)
-  -- function num : 0_20
+function UIN12HardlLevelInfo:GetCurScore()
   return self._curScore
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.GetCurBaseScore = function(self)
-  -- function num : 0_21
-  return (self._curChallengeMissionCfg).BaseScore
+function UIN12HardlLevelInfo:GetCurBaseScore()
+  return self._curChallengeMissionCfg.BaseScore
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._Close = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIN12HardlLevelInfo:_Close()
   self:SwitchState(UIStateType.UIN12HardlLevel)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.OnHide = function(self)
-  -- function num : 0_23
+function UIN12HardlLevelInfo:OnHide()
   self:_SyncSelectedAffixes()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.ChallengeTaskBtnOnClick = function(self, go)
-  -- function num : 0_24
+function UIN12HardlLevelInfo:ChallengeTaskBtnOnClick(go)
   self:ShowDialog("UIN12ChallengesContorl", self._levelData)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.BattleBtnOnClick = function(self, go)
-  -- function num : 0_25 , upvalues : _ENV
+function UIN12HardlLevelInfo:BattleBtnOnClick(go)
   self:_SyncSelectedAffixes(function()
-    -- function num : 0_25_0 , upvalues : self, _ENV
-    (self._localProcess):SetCurScore(self._curScore)
-    local ctx = (self._missionModule):TeamCtx()
-    local param = {(self._curChallengeMissionCfg).CampaignMissionId, (self._challengeMissionComponent):GetCampaignMissionComponentId(), (self._challengeMissionComponent):GetCampaignMissionParamKeyMap()}
+    self._localProcess:SetCurScore(self._curScore)
+    local ctx = self._missionModule:TeamCtx()
+    local param = {
+      self._curChallengeMissionCfg.CampaignMissionId,
+      self._challengeMissionComponent:GetCampaignMissionComponentId(),
+      self._challengeMissionComponent:GetCampaignMissionParamKeyMap()
+    }
     ctx:Init(TeamOpenerType.Campaign, param)
     ctx:ShowDialogUITeams()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.ClearBtnOnClick = function(self, go)
-  -- function num : 0_26 , upvalues : _ENV
+function UIN12HardlLevelInfo:ClearBtnOnClick(go)
   if self._haveRecord then
     self:Lock("UIN12HardlLevelInfoClearAffix")
     self:StartTask(function(TT)
-    -- function num : 0_26_0 , upvalues : _ENV, self
-    local request = AsyncRequestRes:New()
-    request = (self._challengeMissionComponent):HandleClearAffix(TT, request, (self._curChallengeMissionCfg).CampaignMissionId)
-    if request:GetSucc() then
-      self:_RefreshUIInfo(self._curLevelType)
-      self:_RefreshScrollView(false)
-    else
-      ;
-      (self._campaignModule):CheckErrorCode(request.m_result, (self._campaign)._id)
-    end
-    self:UnLock("UIN12HardlLevelInfoClearAffix")
-  end
-, self)
+      local request = AsyncRequestRes:New()
+      request = self._challengeMissionComponent:HandleClearAffix(TT, request, self._curChallengeMissionCfg.CampaignMissionId)
+      if request:GetSucc() then
+        self:_RefreshUIInfo(self._curLevelType)
+        self:_RefreshScrollView(false)
+      else
+        self._campaignModule:CheckErrorCode(request.m_result, self._campaign._id)
+      end
+      self:UnLock("UIN12HardlLevelInfoClearAffix")
+    end, self)
   else
     self._selectedAffixes = {}
     self:_RefreshUIInfo(self._curLevelType)
@@ -655,157 +430,107 @@ UIN12HardlLevelInfo.ClearBtnOnClick = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.MenuMaskOnClick = function(self, go)
-  -- function num : 0_27
+function UIN12HardlLevelInfo:MenuMaskOnClick(go)
   self:_SyncSelectedAffixes(function()
-    -- function num : 0_27_0 , upvalues : self
     self:_ShowMenu(self._curLevelType)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.CurBtnOnClick = function(self, go)
-  -- function num : 0_28
+function UIN12HardlLevelInfo:CurBtnOnClick(go)
   self:_SyncSelectedAffixes(function()
-    -- function num : 0_28_0 , upvalues : self
     self:_ShowMenu(self._curLevelType)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.EasyBtnOnClick = function(self, go)
-  -- function num : 0_29 , upvalues : _ENV
+function UIN12HardlLevelInfo:EasyBtnOnClick(go)
   self:_SelectLevelType(HardLevelType.Easy)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.NormalBtnOnClick = function(self, go)
-  -- function num : 0_30 , upvalues : _ENV
+function UIN12HardlLevelInfo:NormalBtnOnClick(go)
   self:_SelectLevelType(HardLevelType.Normal)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.HardBtnOnClick = function(self, go)
-  -- function num : 0_31 , upvalues : _ENV
+function UIN12HardlLevelInfo:HardBtnOnClick(go)
   self:_SelectLevelType(HardLevelType.Hard)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.NightmareBtnOnClick = function(self, go)
-  -- function num : 0_32 , upvalues : _ENV
+function UIN12HardlLevelInfo:NightmareBtnOnClick(go)
   self:_SelectLevelType(HardLevelType.Nightmare)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.HellBtnOnClick = function(self, go)
-  -- function num : 0_33 , upvalues : _ENV
+function UIN12HardlLevelInfo:HellBtnOnClick(go)
   self:_SelectLevelType(HardLevelType.Hell)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._SelectLevelType = function(self, levelType)
-  -- function num : 0_34 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_component_challenge_mission)({LeveIndex = self._curLevelIndex, HardID = levelType})
-  if self._maxScore < (missionCfg[1]).UnlockScore then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n12_hard_unlock_score", (missionCfg[1]).UnlockScore))
-    return 
+function UIN12HardlLevelInfo:_SelectLevelType(levelType)
+  local missionCfg = Cfg.cfg_component_challenge_mission({
+    LeveIndex = self._curLevelIndex,
+    HardID = levelType
+  })
+  if missionCfg[1].UnlockScore > self._maxScore then
+    ToastManager.ShowToast(StringTable.Get("str_n12_hard_unlock_score", missionCfg[1].UnlockScore))
+    return
   end
   self:_ShowMenu(levelType)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._ShowMenu = function(self, levelType)
-  -- function num : 0_35 , upvalues : _ENV
-  (self._menu):SetActive(not (self._menu).activeSelf)
-  ;
-  (self._menuMask):SetActive((self._menu).activeSelf)
-  if (self._menu).activeSelf then
-    for key,value in pairs(HardLevelType) do
+function UIN12HardlLevelInfo:_ShowMenu(levelType)
+  self._menu:SetActive(not self._menu.activeSelf)
+  self._menuMask:SetActive(self._menu.activeSelf)
+  if self._menu.activeSelf then
+    for key, value in pairs(HardLevelType) do
       local color = Color.white
       if value == self._curLevelType then
-        color = Color(1, 0.74901960784314, 0.07843137254902)
+        color = Color(1.0, 0.7490196078431373, 0.0784313725490196)
       end
-      local missionCfg = (Cfg.cfg_component_challenge_mission)({LeveIndex = self._curLevelIndex, HardID = value})
+      local missionCfg = Cfg.cfg_component_challenge_mission({
+        LeveIndex = self._curLevelIndex,
+        HardID = value
+      })
       local baseScore = ""
-      if (missionCfg[1]).UnlockScore <= self._maxScore then
-        baseScore = (missionCfg[1]).BaseScore
+      if missionCfg[1].UnlockScore <= self._maxScore then
+        baseScore = missionCfg[1].BaseScore
       end
-      -- DECOMPILER ERROR at PC47: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      ((self._levelTypeBtnText)[value]).color = color
-      ;
-      ((self._levelTypeBaseScoreText)[value]):SetText(baseScore)
-      -- DECOMPILER ERROR at PC55: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      ((self._levelTypeBaseScoreText)[value]).color = color
-      ;
-      ((self._levelTypeBtnLock)[value]):SetActive(self._maxScore < (missionCfg[1]).UnlockScore)
-      ;
-      ((self._levelTypeBtn)[value]):SetActive(value <= self._difficultyCount)
+      self._levelTypeBtnText[value].color = color
+      self._levelTypeBaseScoreText[value]:SetText(baseScore)
+      self._levelTypeBaseScoreText[value].color = color
+      self._levelTypeBtnLock[value]:SetActive(missionCfg[1].UnlockScore > self._maxScore)
+      self._levelTypeBtn[value]:SetActive(value <= self._difficultyCount)
     end
   end
   if self._curLevelType == levelType then
-    return 
+    return
   end
   self._curLevelType = levelType
   local key = self._curLevelIndex .. N12OperationRecordKey.HardLevelType
-  ;
-  (N12ToolFunctions.SetLocalDBInt)(key, self._curLevelType)
+  N12ToolFunctions.SetLocalDBInt(key, self._curLevelType)
   self:_RefreshUIInfo(self._curLevelType)
   self:_RefreshScrollView(true)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo._RefreshScrollView = function(self, move)
-  -- function num : 0_36
-  (self._scrollView):SetListItemCount(#self._allAffixes)
+function UIN12HardlLevelInfo:_RefreshScrollView(move)
+  self._scrollView:SetListItemCount(#self._allAffixes)
   if move then
     self._playItemAnimation = true
     self._globalDelayTime = 0
     self._animationInstanceIDs = {}
-    ;
-    (self._scrollView):MovePanelToItemIndex(0, 0)
+    self._scrollView:MovePanelToItemIndex(0, 0)
   else
     self._playItemAnimation = false
-    ;
-    (self._scrollView):RefreshAllShownItem()
+    self._scrollView:RefreshAllShownItem()
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.RestrainBtnOnClick = function(self, go)
-  -- function num : 0_37
+function UIN12HardlLevelInfo:RestrainBtnOnClick(go)
   self:ShowDialog("UIRestrainTips")
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12HardlLevelInfo.BossInfoBtnOnClick = function(self, go)
-  -- function num : 0_38 , upvalues : _ENV
+function UIN12HardlLevelInfo:BossInfoBtnOnClick(go)
   if self._cfgs_boss then
     local ids = {}
     for i = 1, #self._cfgs_boss do
-      (table.insert)(ids, ((self._cfgs_boss)[i]).ID)
+      table.insert(ids, self._cfgs_boss[i].ID)
     end
     self:ShowDialog("UIEnemyTip", ids)
   end
 end
-
-

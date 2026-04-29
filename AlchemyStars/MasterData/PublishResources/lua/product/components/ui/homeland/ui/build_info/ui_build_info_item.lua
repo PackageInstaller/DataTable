@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/build_info/ui_build_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBuildInfoItem", UICustomWidget)
 UIBuildInfoItem = UIBuildInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildInfoItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
+function UIBuildInfoItem:OnShow(uiParams)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
   self._selectedGo = self:GetGameObject("Selected")
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
@@ -18,163 +11,105 @@ UIBuildInfoItem.OnShow = function(self, uiParams)
   self._btnUseingGo = self:GetGameObject("BtnUseing")
   self._btnUnGetGo = self:GetGameObject("BtnUnGet")
   self._btnUnGetImg = self:GetUIComponent("RawImage", "BtnUnGet")
-  self._EMIMat = (UnityEngine.Material):New((self._btnUnGetImg).material)
-  local texture = ((self._btnUnGetImg).material).mainTexture
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._btnUnGetImg).material = self._EMIMat
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._btnUnGetImg).material).mainTexture = texture
-  ;
-  ((self._btnUnGetImg).material):SetFloat("_LuminosityAmount", 1)
-  ;
-  (self._btnUnGetGo):SetActive(false)
-  ;
-  (self._btnUnGetGo):SetActive(true)
+  self._EMIMat = UnityEngine.Material:New(self._btnUnGetImg.material)
+  local texture = self._btnUnGetImg.material.mainTexture
+  self._btnUnGetImg.material = self._EMIMat
+  self._btnUnGetImg.material.mainTexture = texture
+  self._btnUnGetImg.material:SetFloat("_LuminosityAmount", 1)
+  self._btnUnGetGo:SetActive(false)
+  self._btnUnGetGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildInfoItem.OnHide = function(self)
-  -- function num : 0_1
+function UIBuildInfoItem:OnHide()
   self._EMIMat = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildInfoItem.GetSkinId = function(self)
-  -- function num : 0_2
+function UIBuildInfoItem:GetSkinId()
   return self._skinId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildInfoItem.Refresh = function(self, buildInfo, build, skinId)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBuildInfoItem:Refresh(buildInfo, build, skinId)
   self._skinId = skinId
   self._build = build
-  self._buildId = (self._build):GetBuildId()
-  self._buildPstId = (self._build):GetBuildPstId()
+  self._buildId = self._build:GetBuildId()
+  self._buildPstId = self._build:GetBuildPstId()
   self._buildInfo = buildInfo
-  self._hasSkin = (self._homelandModule):HasBuildSkin(self._skinId)
-  local cfg = (Cfg.cfg_item_architecture_skin)[self._skinId]
-  ;
-  (self._selectedGo):SetActive(false)
-  ;
-  (self._iconLoader):LoadImage(cfg.SkinIcon)
-  ;
-  (self._nameLabel):SetText((StringTable.Get)(cfg.SkinName))
+  self._hasSkin = self._homelandModule:HasBuildSkin(self._skinId)
+  local cfg = Cfg.cfg_item_architecture_skin[self._skinId]
+  self._selectedGo:SetActive(false)
+  self._iconLoader:LoadImage(cfg.SkinIcon)
+  self._nameLabel:SetText(StringTable.Get(cfg.SkinName))
   self:RefreshRedStatus()
   self:RefreshBtnStatus()
   self._level = cfg.Level
-  self._useConditionDes = (StringTable.Get)(cfg.UseCondition)
+  self._useConditionDes = StringTable.Get(cfg.UseCondition)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildInfoItem.RefreshRedStatus = function(self)
-  -- function num : 0_4
+function UIBuildInfoItem:RefreshRedStatus()
   if self._hasSkin then
-    (self._redGo):SetActive((self._homelandModule):HasSkinRedPointBySkinId(self._skinId))
+    self._redGo:SetActive(self._homelandModule:HasSkinRedPointBySkinId(self._skinId))
   else
-    ;
-    (self._redGo):SetActive(false)
+    self._redGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildInfoItem.RefreshBtnStatus = function(self)
-  -- function num : 0_5
-  (self._btnUnGetGo):SetActive(false)
-  ;
-  (self._btnUseingGo):SetActive(false)
-  ;
-  (self._btnUseGo):SetActive(false)
-  local currentSkinId = (self._homelandModule):GetCurrentBuildSkin(self._buildId, self._buildPstId)
+function UIBuildInfoItem:RefreshBtnStatus()
+  self._btnUnGetGo:SetActive(false)
+  self._btnUseingGo:SetActive(false)
+  self._btnUseGo:SetActive(false)
+  local currentSkinId = self._homelandModule:GetCurrentBuildSkin(self._buildId, self._buildPstId)
   if self._hasSkin then
     if currentSkinId == self._skinId then
-      (self._btnUseingGo):SetActive(true)
+      self._btnUseingGo:SetActive(true)
     else
-      ;
-      (self._btnUseGo):SetActive(true)
+      self._btnUseGo:SetActive(true)
     end
   else
-    ;
-    (self._btnUnGetGo):SetActive(true)
+    self._btnUnGetGo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildInfoItem.SetSelectStatus = function(self, status)
-  -- function num : 0_6
-  (self._selectedGo):SetActive(status)
+function UIBuildInfoItem:SetSelectStatus(status)
+  self._selectedGo:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildInfoItem.SetRedNewStatus = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local redStatus = (self._homelandModule):HasSkinRedPointBySkinId(self._skinId)
+function UIBuildInfoItem:SetRedNewStatus()
+  local redStatus = self._homelandModule:HasSkinRedPointBySkinId(self._skinId)
   if redStatus then
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self
-    (self._homelandModule):SetSkinRedPointStatus(TT, self._skinId)
-  end
-)
+    GameGlobal.TaskManager():StartTask(function(TT)
+      self._homelandModule:SetSkinRedPointStatus(TT, self._skinId)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildInfoItem.BtnOnClick = function(self)
-  -- function num : 0_8
+function UIBuildInfoItem:BtnOnClick()
   self:SetRedNewStatus()
-  ;
-  (self._redGo):SetActive(false)
-  ;
-  (self._buildInfo):SelectItem(self)
+  self._redGo:SetActive(false)
+  self._buildInfo:SelectItem(self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildInfoItem.BtnUseOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.UseSkinCoro, self)
+function UIBuildInfoItem:BtnUseOnClick()
+  GameGlobal.TaskManager():StartTask(self.UseSkinCoro, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildInfoItem.UseSkinCoro = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
-  local homeLandLevel = (self._homelandModule):GetHomelandLevel()
+function UIBuildInfoItem:UseSkinCoro(TT)
+  local homeLandLevel = self._homelandModule:GetHomelandLevel()
   if homeLandLevel < self._level then
-    (ToastManager.ShowToast)(self._useConditionDes)
-    return 
+    ToastManager.ShowToast(self._useConditionDes)
+    return
   end
   self:Lock("UIBuildInfoItem_UseSkinCoro")
-  local ret = (self._homelandModule):SetCurrentBuildSkin(TT, self._buildPstId, self._skinId)
+  local ret = self._homelandModule:SetCurrentBuildSkin(TT, self._buildPstId, self._skinId)
   if ret:GetSucc() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ResetOneBuilding, (self._build):GetBuildPstId(), true)
-    ;
-    (self._buildInfo):Refresh()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ResetOneBuilding, self._build:GetBuildPstId(), true)
+    self._buildInfo:Refresh()
     self:BtnOnClick()
   else
-    ;
-    (Log.error)("change build skin failed ", ret:GetResult())
+    Log.error("change build skin failed ", ret:GetResult())
   end
   self:UnLock("UIBuildInfoItem_UseSkinCoro")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildInfoItem.BtnUnGetOnClick = function(self)
-  -- function num : 0_11
+function UIBuildInfoItem:BtnUnGetOnClick()
   self:ShowDialog("UIBuildSkinTips", self._skinId)
 end
-
-

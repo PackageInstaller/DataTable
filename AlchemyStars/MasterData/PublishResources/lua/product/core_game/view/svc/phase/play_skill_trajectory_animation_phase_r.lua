@@ -1,73 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_trajectory_animation_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillTrajectoryAnimationPhase", PlaySkillPhaseBase)
 PlaySkillTrajectoryAnimationPhase = PlaySkillTrajectoryAnimationPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillTrajectoryAnimationPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillTrajectoryAnimationPhase:PlayFlight(TT, casterEntity, phaseParam)
   local trajectoryParam = phaseParam
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-  local castPos = (casterEntity:Location()).Position
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local castPos = casterEntity:Location().Position
   local absorbResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.AbsorbPiece)
   if not absorbResult then
-    return 
+    return
   end
   local absorbPieceList = absorbResult:GetAbsorbPieceList()
   if not absorbPieceList or #absorbPieceList == 0 then
-    return 
+    return
   end
-  local effectService = (self._world):GetService("Effect")
+  local effectService = self._world:GetService("Effect")
   local gridEffectID = trajectoryParam:GetGridEffectID()
   local effectEntityList = {}
-  for k,v in pairs(absorbPieceList) do
+  for k, v in pairs(absorbPieceList) do
     local renderPos = boardServiceRender:GridPos2RenderPos(v)
     local effectEntity = effectService:CreatePositionEffect(gridEffectID, renderPos)
-    ;
-    (table.insert)(effectEntityList, {entity = effectEntity, position = renderPos})
+    table.insert(effectEntityList, {entity = effectEntity, position = renderPos})
   end
   local ballHigh = trajectoryParam:GetBallHigh()
   YIELD(TT)
   local flyTime = trajectoryParam:GetUpTime()
-  for k,v in pairs(effectEntityList) do
-    local view = (v.entity):View()
+  for k, v in pairs(effectEntityList) do
+    local view = v.entity:View()
     local go = view:GetGameObject()
     self:_CalcTrajectory(v.entity, go, flyTime, casterEntity, ballHigh, trajectoryParam)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTrajectoryAnimationPhase._CalcTrajectory = function(self, effectEntity, go, flyTime, casterEntity, ballHigh, phaseParam)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillTrajectoryAnimationPhase:_CalcTrajectory(effectEntity, go, flyTime, casterEntity, ballHigh, phaseParam)
   local transform = go.transform
-  ;
-  (transform:DOMoveY(ballHigh, flyTime / 1000)):OnComplete(function()
-    -- function num : 0_1_0 , upvalues : _ENV, self, effectEntity, casterEntity, phaseParam
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(self._BallFly, self, effectEntity, casterEntity, phaseParam)
-  end
-)
+  transform:DOMoveY(ballHigh, flyTime / 1000):OnComplete(function()
+    GameGlobal.TaskManager():CoreGameStartTask(self._BallFly, self, effectEntity, casterEntity, phaseParam)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTrajectoryAnimationPhase._BallFly = function(self, TT, effectEntity, casterEntity, phaseParam)
-  -- function num : 0_2 , upvalues : _ENV
-  local effectService = (self._world):GetService("Effect")
+function PlaySkillTrajectoryAnimationPhase:_BallFly(TT, effectEntity, casterEntity, phaseParam)
+  local effectService = self._world:GetService("Effect")
   local effectBallID = phaseParam:GetGridEffectID()
-  local config = (Cfg.cfg_effect)[effectBallID]
-  local casterTranform = ((casterEntity:View()):GetGameObject()).transform
-  local bindTf = (GameObjectHelper.FindChild)(((casterEntity:View()):GetGameObject()).transform, config.BindPos)
+  local config = Cfg.cfg_effect[effectBallID]
+  local casterTranform = casterEntity:View():GetGameObject().transform
+  local bindTf = GameObjectHelper.FindChild(casterEntity:View():GetGameObject().transform, config.BindPos)
   local destPoint = bindTf.position
   destPoint.y = phaseParam:GetBallHigh()
-  local effectTransFrom = ((effectEntity:View()):GetGameObject()).transform
+  local effectTransFrom = effectEntity:View():GetGameObject().transform
   local ballPos = effectTransFrom.position
-  local distance = (Vector3.Distance)(ballPos, destPoint)
+  local distance = Vector3.Distance(ballPos, destPoint)
   local flyTime = 2000
   local a = distance
   local b = phaseParam:GetFlyRadius()
@@ -77,65 +60,43 @@ PlaySkillTrajectoryAnimationPhase._BallFly = function(self, TT, effectEntity, ca
   local pointList = {}
   local i = 1
   local ballPoint = effectTransFrom.position
-  while 1 do
-    if phaseParam:GetHideDistance() < (Vector3.Distance)(ballPoint, destPoint) then
-      local x = (a + b * t) * (Mathf.Cos)(t)
-      local y = (a + b * t) * (Mathf.Sin)(t)
-      t = t + i * s
-      b = b - i * s
-      local deltaPos = Vector3(x, 0, y)
-      ballPoint = destPoint + deltaPos
-      if maxPoint >= i then
-        do
-          (table.insert)(pointList, ballPoint)
-          i = i + 1
-          -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  while Vector3.Distance(ballPoint, destPoint) > phaseParam:GetHideDistance() do
+    local x = (a + b * t) * Mathf.Cos(t)
+    local y = (a + b * t) * Mathf.Sin(t)
+    t = t + i * s
+    b = b - i * s
+    local deltaPos = Vector3(x, 0, y)
+    ballPoint = destPoint + deltaPos
+    if maxPoint < i then
+      break
     end
+    table.insert(pointList, ballPoint)
+    i = i + 1
   end
-  ;
-  (table.insert)(pointList, destPoint)
-  local beginTime = (self._timeService):GetCurrentTimeMs()
-  while 1 do
-    if phaseParam:GetHideDistance() < (Vector3.Distance)(effectTransFrom.position, destPoint) then
-      local now = (self._timeService):GetCurrentTimeMs()
-      local deltaTime = now - beginTime
-      deltaTime = (math.floor)(deltaTime)
-      -- DECOMPILER ERROR at PC126: Unhandled construct in 'MakeBoolean' P1
-
-      if deltaTime < #pointList and deltaTime ~= 0 then
+  table.insert(pointList, destPoint)
+  local beginTime = self._timeService:GetCurrentTimeMs()
+  while Vector3.Distance(effectTransFrom.position, destPoint) > phaseParam:GetHideDistance() do
+    local now = self._timeService:GetCurrentTimeMs()
+    local deltaTime = now - beginTime
+    deltaTime = math.floor(deltaTime)
+    if deltaTime < #pointList then
+      if deltaTime ~= 0 then
         effectTransFrom.position = pointList[deltaTime]
       end
+    else
       effectTransFrom.position = pointList[#pointList]
+      break
     end
-    do break end
     YIELD(TT)
   end
-  do
-    ;
-    ((effectEntity:View()):GetGameObject()):SetActive(false)
-    ;
-    (self._world):DestroyEntity(effectEntity)
-  end
+  effectEntity:View():GetGameObject():SetActive(false)
+  self._world:DestroyEntity(effectEntity)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTrajectoryAnimationPhase._GetRadian = function(self, from, to)
-  -- function num : 0_3 , upvalues : _ENV
+function PlaySkillTrajectoryAnimationPhase:_GetRadian(from, to)
   local subVector = from - to
   local deltaAngle = 0
-  local radian = (Mathf.Atan)(subVector.z, subVector.x)
+  local radian = Mathf.Atan(subVector.z, subVector.x)
   local angle = radian * Mathf.Rad2Deg
   return radian
 end
-
-

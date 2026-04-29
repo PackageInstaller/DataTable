@@ -1,136 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/loader/season_map_eventpoint_loader.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapEventPointLoader", Object)
 SeasonMapEventPointLoader = SeasonMapEventPointLoader
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapEventPointLoader.Constructor = function(self, loadType)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMapEventPointLoader:Constructor(loadType)
   self._queue = SeasonQueue:New()
   self._eventpoints = {}
   self._loadMode = loadType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointLoader.LoadResource = function(self, eventpoint)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonMapEventPointLoader:LoadResource(eventpoint)
   local id = eventpoint:GetID()
-  if (self._eventpoints)[id] then
-    return 
+  if self._eventpoints[id] then
+    return
   end
   if self._loadMode == SeasonEventPointLoadType.Sync then
-    (self._queue):Enqueue(SeasonMapEventPointRequestSync:New(id, eventpoint:GetResName()))
-  else
-    if self._loadMode == SeasonEventPointLoadType.Async then
-      (self._queue):Enqueue(SeasonMapEventPointRequestAsync:New(id, eventpoint:GetResName()))
-    end
+    self._queue:Enqueue(SeasonMapEventPointRequestSync:New(id, eventpoint:GetResName()))
+  elseif self._loadMode == SeasonEventPointLoadType.Async then
+    self._queue:Enqueue(SeasonMapEventPointRequestAsync:New(id, eventpoint:GetResName()))
   end
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._eventpoints)[id] = eventpoint
+  self._eventpoints[id] = eventpoint
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointLoader.InterruptAsyncLoad = function(self, eventpoint)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._queue):ForEach(function(r)
-    -- function num : 0_2_0 , upvalues : eventpoint, _ENV
+function SeasonMapEventPointLoader:InterruptAsyncLoad(eventpoint)
+  self._queue:ForEach(function(r)
     local req = r
     if req:ID() == eventpoint:GetID() then
       if req:State() == SeasonEventPointLoadState.Wait then
         req:Close()
-      else
-        if req:State() == SeasonEventPointLoadState.Loading then
-          req:Dispose()
-        end
+      elseif req:State() == SeasonEventPointLoadState.Loading then
+        req:Dispose()
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointLoader.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._queue):ForEach(function(r)
-    -- function num : 0_3_0
+function SeasonMapEventPointLoader:Dispose()
+  self._queue:ForEach(function(r)
     local req = r
     req:Close()
-  end
-)
-  ;
-  (self._queue):Clear()
-  ;
-  (table.clear)(self._eventpoints)
+  end)
+  self._queue:Clear()
+  table.clear(self._eventpoints)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointLoader.Update = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._queue):Count() <= 0 then
-    return 
+function SeasonMapEventPointLoader:Update()
+  if self._queue:Count() <= 0 then
+    return
   end
   if self._loadMode == SeasonEventPointLoadType.Sync then
-    (self._queue):ForEach(function(req)
-    -- function num : 0_4_0 , upvalues : self
-    local request = req
-    request:Load()
-    local id = request:ID()
-    local eventpoint = (self._eventpoints)[id]
-    eventpoint:OnShow(request)
-  end
-)
-    ;
-    (self._queue):Clear()
-  else
-    if self._loadMode == SeasonEventPointLoadType.Async then
-      self:_LoadPer()
-    end
+    self._queue:ForEach(function(req)
+      local request = req
+      request:Load()
+      local id = request:ID()
+      local eventpoint = self._eventpoints[id]
+      eventpoint:OnShow(request)
+    end)
+    self._queue:Clear()
+  elseif self._loadMode == SeasonEventPointLoadType.Async then
+    self:_LoadPer()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointLoader._LoadPer = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local req = (self._queue):Peek()
+function SeasonMapEventPointLoader:_LoadPer()
+  local req = self._queue:Peek()
   if req:State() == SeasonEventPointLoadState.Wait then
     req:Load()
-    return 
+    return
   end
   if req:State() == SeasonEventPointLoadState.Loading then
-    return 
+    return
   end
   if req:State() == SeasonEventPointLoadState.Finish then
     local id = req:ID()
-    local eventpoint = (self._eventpoints)[id]
+    local eventpoint = self._eventpoints[id]
     eventpoint:OnShow(req)
-    ;
-    (self._queue):Dequeue()
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._eventpoints)[id] = nil
-    return 
+    self._queue:Dequeue()
+    self._eventpoints[id] = nil
+    return
   end
-  do
-    if req:State() == SeasonEventPointLoadState.Closed then
-      (self._queue):Dequeue()
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._eventpoints)[req:ID()] = nil
-      return 
-    end
+  if req:State() == SeasonEventPointLoadState.Closed then
+    self._queue:Dequeue()
+    self._eventpoints[req:ID()] = nil
+    return
   end
 end
-
-

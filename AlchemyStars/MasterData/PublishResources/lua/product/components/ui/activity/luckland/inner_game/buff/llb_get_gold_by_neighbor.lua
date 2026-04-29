@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_get_gold_by_neighbor.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("llb_logic_base")
 _class("LLBuffLogicGetGoldByNeighbor", LLBuffLogicBase)
 LLBuffLogicGetGoldByNeighbor = LLBuffLogicGetGoldByNeighbor
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicGetGoldByNeighbor.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicGetGoldByNeighbor:Constructor(buffObj, logicParam)
   self._multiple = logicParam.multiple
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicGetGoldByNeighbor.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function LLBuffLogicGetGoldByNeighbor:DoLogic(notify)
   local notifyEntity = notify:GetNotifyEntity()
   local maxRes = 0
   if notifyEntity:GetEntityType() == LuckLandEntityType.Pet then
     local petEntity = notifyEntity
-    local pos = (petEntity:GetPos())
-    local leftPet, rightPet = nil, nil
-    local entityMgr = (LuckLandInnerGameHelper.GetEntityMgr)()
+    local pos = petEntity:GetPos()
+    local leftPet, rightPet
+    local entityMgr = LuckLandInnerGameHelper.GetEntityMgr()
     local fightPets = entityMgr:GetFightPets()
     if fightPets then
-      for _,pet in ipairs(fightPets) do
+      for _, pet in ipairs(fightPets) do
         if pet:GetPos() == pos - 1 then
           leftPet = pet
         end
@@ -35,37 +25,29 @@ LLBuffLogicGetGoldByNeighbor.DoLogic = function(self, notify)
         end
       end
     end
-    do
-      if leftPet then
-        maxRes = leftPet:CalculateRes()
-      end
-      do
-        if rightPet then
-          local resValue = rightPet:CalculateRes()
-          if maxRes < resValue then
-            maxRes = resValue
-          end
-        end
-        local targets = (self._buffObj):GetTargets()
-        for _,target in ipairs(targets) do
-          self:DoLogicSingle(target, maxRes * self._multiple)
-        end
+    if leftPet then
+      maxRes = leftPet:CalculateRes()
+    end
+    if rightPet then
+      local resValue = rightPet:CalculateRes()
+      if maxRes < resValue then
+        maxRes = resValue
       end
     end
   end
+  local targets = self._buffObj:GetTargets()
+  for _, target in ipairs(targets) do
+    self:DoLogicSingle(target, maxRes * self._multiple)
+  end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicGetGoldByNeighbor.DoLogicSingle = function(self, target, gold)
-  -- function num : 0_2 , upvalues : _ENV
-  if target:GetEntityType() == LuckLandEntityType.Pet and target:HasDeleteFlag() then
-    return 
-  end
-  if target:GetEntityType() == LuckLandEntityType.Monster and target:IsDead() then
-    return 
+function LLBuffLogicGetGoldByNeighbor:DoLogicSingle(target, gold)
+  if target:GetEntityType() == LuckLandEntityType.Pet then
+    if target:HasDeleteFlag() then
+      return
+    end
+  elseif target:GetEntityType() == LuckLandEntityType.Monster and target:IsDead() then
+    return
   end
   target:AddDirectGold(gold)
 end
-
-

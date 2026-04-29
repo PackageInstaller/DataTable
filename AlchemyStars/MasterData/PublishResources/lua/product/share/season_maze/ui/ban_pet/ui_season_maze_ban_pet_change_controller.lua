@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/ban_pet/ui_season_maze_ban_pet_change_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeBanPetChangeController", UIController)
 UISeasonMazeBanPetChangeController = UISeasonMazeBanPetChangeController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeBanPetChangeController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeBanPetChangeController:Constructor()
   self._itemCountPerRow = 6
   self._listShowItemCount = 0
   self._firstIn = true
@@ -16,23 +9,23 @@ UISeasonMazeBanPetChangeController.Constructor = function(self)
   self.items = {}
   self._dicItems = {}
   self._atlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
-  self._elementSortTypeOrder = {[1] = PetSortType.WaterFirst, [2] = PetSortType.FireFirst, [3] = PetSortType.SenFirst, [4] = PetSortType.ElectricityFirst, [5] = PetSortType.NoneElementFirst}
+  self._elementSortTypeOrder = {
+    [1] = PetSortType.WaterFirst,
+    [2] = PetSortType.FireFirst,
+    [3] = PetSortType.SenFirst,
+    [4] = PetSortType.ElectricityFirst,
+    [5] = PetSortType.NoneElementFirst
+  }
   self._sortFilterActiveStatus = false
   self._currentElementSortTypeOrder = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeBanPetChangeController:GetComponents()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseUITeamsMemberSelect()
-  end
-, nil)
+  end, nil)
   self._sortBtns = self:GetUIComponent("UISelectObjectPath", "sortBtns")
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._scrollRect = self:GetUIComponent("ScrollRect", "ScrollView")
@@ -41,39 +34,26 @@ UISeasonMazeBanPetChangeController.GetComponents = function(self)
   self._seasonTipsText = self:GetUIComponent("UILocalizationText", "SeasonTipsText")
   self._seasonGo = self:GetGameObject("Season")
   self._root = self:GetGameObject("root")
-  ;
-  (self._emptyDataTip):SetActive(false)
+  self._emptyDataTip:SetActive(false)
   self._sortFilterLoader = self:GetUIComponent("UISelectObjectPath", "sortFilter")
   self._clearFilterBtn = self:GetGameObject("clearFilterBtn")
-  ;
-  (self._clearFilterBtn):SetActive(false)
+  self._clearFilterBtn:SetActive(false)
   self._clearFilterBtnTrans = self:GetUIComponent("RectTransform", "clearFilterBtn")
   self._topRightTrans = self:GetUIComponent("RectTransform", "TopRightAnchor")
   self._rtFastTeam = self:GetUIComponent("RectTransform", "FastTeam")
   self._cancelBtn = self:GetGameObject("CancelBtn")
   self._cancelBtnIcon = self:GetUIComponent("Image", "CancelBtn")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._cancelBtn), UIEvent.Press, function()
-    -- function num : 0_1_1 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._cancelBtnIcon).color = Color(1, 1, 1, 0.5)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._cancelBtn), UIEvent.Press, function()
+    self._cancelBtnIcon.color = Color(1.0, 1.0, 1.0, 0.5)
     self:CancelBtnOnPress()
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._cancelBtn), UIEvent.Release, function()
-    -- function num : 0_1_2 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._cancelBtnIcon).color = Color(1, 1, 1, 1)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._cancelBtn), UIEvent.Release, function()
+    self._cancelBtnIcon.color = Color(1.0, 1.0, 1.0, 1)
     self:CancelBtnOnRelease()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.OnValue = function(self)
-  -- function num : 0_2
+function UISeasonMazeBanPetChangeController:OnValue()
   self:SetClearBtnStatus()
   self:InitTopBtns()
   self:CalcPetScrollViewCount()
@@ -82,13 +62,10 @@ UISeasonMazeBanPetChangeController.OnValue = function(self)
   self:FastTeamLayout()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.FastTeamLayout = function(self)
-  -- function num : 0_3
-  ((self._rtFastTeam).gameObject):SetActive(self._isFastSelect)
+function UISeasonMazeBanPetChangeController:FastTeamLayout()
+  self._rtFastTeam.gameObject:SetActive(self._isFastSelect)
   if self._isFastSelect then
-    local transform = (self._scrollRect).transform
+    local transform = self._scrollRect.transform
     local offsetMin = transform.offsetMin
     local offsetMax = transform.offsetMax
     local anchoredPosition = transform.anchoredPosition
@@ -97,7 +74,7 @@ UISeasonMazeBanPetChangeController.FastTeamLayout = function(self)
     transform.anchoredPosition = anchoredPosition
     transform.offsetMin = offsetMin
     transform.offsetMax = offsetMax
-    local transform = ((self._scrollRect).verticalScrollbar).transform
+    local transform = self._scrollRect.verticalScrollbar.transform
     local offsetMin = transform.offsetMin
     local offsetMax = transform.offsetMax
     local anchoredPosition = transform.anchoredPosition
@@ -109,138 +86,116 @@ UISeasonMazeBanPetChangeController.FastTeamLayout = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.NormalBranch = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeBanPetChangeController:NormalBranch()
   self._sortType = PetSortType.Level
   self._sortOrder = PetSortOrder.Descending
   self._add = false
   if self._isFastSelect then
     self._add = true
-  else
-    if self._openList then
-      self._add = true
-      if self._openPet then
-        self._add = false
-      end
+  elseif self._openList then
+    self._add = true
+    if self._openPet then
+      self._add = false
     end
   end
   local sortFilterCfg = UISortFilterCfg.SeasonMazeBanPet
   self._filterParams = {}
   local sortCfg = {}
-  for idx,value in ipairs(sortFilterCfg.Sort) do
-    sortCfg[idx] = (Cfg.cfg_client_pet_sort)[value]
+  for idx, value in ipairs(sortFilterCfg.Sort) do
+    sortCfg[idx] = Cfg.cfg_client_pet_sort[value]
   end
   local filterCfg = {}
-  for tag,filters in pairs(sortFilterCfg.Filter) do
+  for tag, filters in pairs(sortFilterCfg.Filter) do
     local cfgs = {}
-    for idx,value in ipairs(filters) do
-      cfgs[idx] = (Cfg.cfg_client_pet_filter)[value]
+    for idx, value in ipairs(filters) do
+      cfgs[idx] = Cfg.cfg_client_pet_filter[value]
     end
     filterCfg[tag] = cfgs
   end
   self._sortCfg = sortCfg
   self._filterCfg = filterCfg
-  local sortParams = (PetDefaulSort[self._sortType])[self._sortOrder]
+  local sortParams = PetDefaulSort[self._sortType][self._sortOrder]
   sortParams = {}
   do
-    local tempParams = (PetDefaulSort[self._sortType])[self._sortOrder]
+    local tempParams = PetDefaulSort[self._sortType][self._sortOrder]
     for i = 1, #tempParams do
       local param = tempParams[i]
       sortParams[i] = param
     end
-    ;
-    (table.insert)(sortParams, 1, PetSortParam:New(PetSortType.SMazeDispatch, PetSortOrder.Descending))
-    ;
-    (table.insert)(sortParams, 1, PetSortParam:New(PetSortType.SMazeDie, PetSortOrder.Descending))
-    self:SetElementSortDefaultParam()
-    if (self._petModule)._sortParam ~= nil then
-      sortParams = (self._petModule)._sortParam
+    table.insert(sortParams, 1, PetSortParam:New(PetSortType.SMazeDispatch, PetSortOrder.Descending))
+    table.insert(sortParams, 1, PetSortParam:New(PetSortType.SMazeDie, PetSortOrder.Descending))
+  end
+  self:SetElementSortDefaultParam()
+  if self._petModule._sortParam ~= nil then
+    sortParams = self._petModule._sortParam
+  end
+  local savedMemID = self._pstidTab
+  local savedSortParams = sortParams
+  if self._isFastSelect then
+    sortParams = {}
+    table.insert(sortParams, PetSortParam:New(PetSortType.FastTeam, PetSortOrder.Descending))
+    local rotateBanSortParam = PetSortParam:New(PetSortType.SMazeRotateBan, PetSortOrder.Descending)
+    rotateBanSortParam:SetParams(self._rotateBanCfgList)
+    table.insert(sortParams, rotateBanSortParam)
+    for i = 1, #savedSortParams do
+      table.insert(sortParams, savedSortParams[i])
     end
-    local savedMemID = self._pstidTab
-    local savedSortParams = sortParams
-    if self._isFastSelect then
-      sortParams = {}
-      ;
-      (table.insert)(sortParams, PetSortParam:New(PetSortType.FastTeam, PetSortOrder.Descending))
-      local rotateBanSortParam = PetSortParam:New(PetSortType.SMazeRotateBan, PetSortOrder.Descending)
-      rotateBanSortParam:SetParams(self._rotateBanCfgList)
-      ;
-      (table.insert)(sortParams, rotateBanSortParam)
-      for i = 1, #savedSortParams do
-        (table.insert)(sortParams, savedSortParams[i])
-      end
-      local teamLookup = self:FastSelectMemID(savedMemID)
-      ;
-      (sortParams[1]):SetParams(teamLookup)
+    local teamLookup = self:FastSelectMemID(savedMemID)
+    sortParams[1]:SetParams(teamLookup)
+  else
+    sortParams = {}
+    local rotateBanSortParam = PetSortParam:New(PetSortType.SMazeRotateBan, PetSortOrder.Descending)
+    rotateBanSortParam:SetParams(self._rotateBanCfgList)
+    table.insert(sortParams, rotateBanSortParam)
+    for i = 1, #savedSortParams do
+      table.insert(sortParams, savedSortParams[i])
+    end
+  end
+  self._pets = self._petModule:_SortPets(self._allPets, self._filterParams, sortParams, self._petModule.PetSortChooseSecondAttribute)
+  self._pstidTab = {}
+  if not self._add then
+    local tabItem = {}
+    if self._openPet then
+      tabItem.pstid = self._openPet:GetPstID()
     else
-      do
-        sortParams = {}
-        local rotateBanSortParam = PetSortParam:New(PetSortType.SMazeRotateBan, PetSortOrder.Descending)
-        rotateBanSortParam:SetParams(self._rotateBanCfgList)
-        ;
-        (table.insert)(sortParams, rotateBanSortParam)
-        for i = 1, #savedSortParams do
-          (table.insert)(sortParams, savedSortParams[i])
-        end
-        do
-          self._pets = (self._petModule):_SortPets(self._allPets, self._filterParams, sortParams, (self._petModule).PetSortChooseSecondAttribute)
-          self._pstidTab = {}
-          do
-            if not self._add then
-              local tabItem = {}
-              if self._openPet then
-                tabItem.pstid = (self._openPet):GetPstID()
-              else
-                tabItem.pstid = 0
-              end
-              tabItem.del = true
-              ;
-              (table.insert)(self._pstidTab, tabItem)
-            end
-            local teamLookup = {}
-            if self._openList then
-              teamLookup = {}
-              if self._openPet then
-                teamLookup[(self._openPet):GetPstID()] = (self._openPet):GetPstID()
-              end
-            end
-            if self._isFastSelect then
-              teamLookup = {}
-            end
-            for i = 1, #self._pets do
-              local pet = (self._pets)[i]
-              local pstid = pet:GetPstID()
-              if teamLookup[pstid] == nil then
-                local tabItem = {}
-                tabItem.pstid = pstid
-                tabItem.del = false
-                ;
-                (table.insert)(self._pstidTab, tabItem)
-              end
-            end
-            if self._isFastSelect then
-              self:FastSelectMemID(savedMemID)
-            end
-          end
-        end
-      end
+      tabItem.pstid = 0
     end
+    tabItem.del = true
+    table.insert(self._pstidTab, tabItem)
+  end
+  local teamLookup = {}
+  if self._openList then
+    teamLookup = {}
+    if self._openPet then
+      teamLookup[self._openPet:GetPstID()] = self._openPet:GetPstID()
+    end
+  end
+  if self._isFastSelect then
+    teamLookup = {}
+  end
+  for i = 1, #self._pets do
+    local pet = self._pets[i]
+    local pstid = pet:GetPstID()
+    if teamLookup[pstid] == nil then
+      local tabItem = {}
+      tabItem.pstid = pstid
+      tabItem.del = false
+      table.insert(self._pstidTab, tabItem)
+    end
+  end
+  if self._isFastSelect then
+    self:FastSelectMemID(savedMemID)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.OnShow = function(self, uiParams)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMazeBanPetChangeController:OnShow(uiParams)
   self._petModule = self:GetModule(PetModule)
   self._uiSeasonMazeModule = self:GetUIModule(SeasonMazeModule)
   self._openList = uiParams[1]
   if self._openList then
     self._allPets = self._openList
   else
-    self._allPets = (self._uiSeasonMazeModule):GetSeasonMazePets()
+    self._allPets = self._uiSeasonMazeModule:GetSeasonMazePets()
   end
   self._clickCb = uiParams[2]
   self._openPet = uiParams[3]
@@ -251,9 +206,7 @@ UISeasonMazeBanPetChangeController.OnShow = function(self, uiParams)
   self._rotateBanCfgList = uiParams[8]
   self._primaryFastList = {}
   for i = 1, self._fastSelectCellCount do
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._primaryFastList)[i] = 0
+    self._primaryFastList[i] = 0
   end
   self:GetComponents()
   self:NormalBranch()
@@ -261,55 +214,37 @@ UISeasonMazeBanPetChangeController.OnShow = function(self, uiParams)
   self:AttacEvents()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.AttacEvents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonMazeBanPetChangeController:AttacEvents()
   self:AttachEvent(GameEventType.PetUpLevelEvent, self.RefrenshPetList)
   self:AttachEvent(GameEventType.PetUpGradeEvent, self.RefrenshPetList)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.InitTopBtns = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMazeBanPetChangeController:InitTopBtns()
   self:SetClearBtnStatus()
   self._currSortIndex = 0
-  if (self._petModule).PetSortElementIndex ~= 0 then
-    self._currentElementSortTypeOrder = (self._petModule).PetSortElementIndex
+  if self._petModule.PetSortElementIndex ~= 0 then
+    self._currentElementSortTypeOrder = self._petModule.PetSortElementIndex
   end
-  ;
-  (self._sortBtns):SpawnObjects("UITopSortBtnItem", self._btnCount)
-  self._sortBtnsPool = (self._sortBtns):GetAllSpawnList()
+  self._sortBtns:SpawnObjects("UITopSortBtnItem", self._btnCount)
+  self._sortBtnsPool = self._sortBtns:GetAllSpawnList()
   for i = 1, self._btnCount do
-    ((self._sortBtnsPool)[i]):SetData(i, (self._sortCfg)[i], self._sortType, self._sortOrder, function(idx)
-    -- function num : 0_7_0 , upvalues : self
-    self:ChangeSortParams(idx)
+    self._sortBtnsPool[i]:SetData(i, self._sortCfg[i], self._sortType, self._sortOrder, function(idx)
+      self:ChangeSortParams(idx)
+    end, self._currentElementSortTypeOrder)
   end
-, self._currentElementSortTypeOrder)
-  end
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._topRightTrans)
-  local topBtnsWidth = ((self._topRightTrans).rect).width
-  local targetPos = Vector2(-topBtnsWidth - 100, (((self._clearFilterBtn).transform).localPosition).y)
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._clearFilterBtn).transform).localPosition = targetPos
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._topRightTrans)
+  local topBtnsWidth = self._topRightTrans.rect.width
+  local targetPos = Vector2(-topBtnsWidth - 100, self._clearFilterBtn.transform.localPosition.y)
+  self._clearFilterBtn.transform.localPosition = targetPos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.ChangeSortParams = function(self, idx)
-  -- function num : 0_8 , upvalues : _ENV
-  local tp = ((self._sortCfg)[idx]).Type
+function UISeasonMazeBanPetChangeController:ChangeSortParams(idx)
+  local tp = self._sortCfg[idx].Type
   if self._sortType == tp then
     if self._sortOrder == PetSortOrder.Ascending then
       self._sortOrder = PetSortOrder.Descending
-    else
-      if self._sortOrder == PetSortOrder.Descending then
-        self._sortOrder = PetSortOrder.Ascending
-      end
+    elseif self._sortOrder == PetSortOrder.Descending then
+      self._sortOrder = PetSortOrder.Ascending
     end
   else
     self._sortType = tp
@@ -319,39 +254,25 @@ UISeasonMazeBanPetChangeController.ChangeSortParams = function(self, idx)
   self:RefrenshPetList()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.FlushTopBtnState = function(self)
-  -- function num : 0_9
+function UISeasonMazeBanPetChangeController:FlushTopBtnState()
   for i = 1, self._btnCount do
-    ((self._sortBtnsPool)[i]):Flush(self._sortType, self._sortOrder, (self._petModule).PetSortElementIndex)
+    self._sortBtnsPool[i]:Flush(self._sortType, self._sortOrder, self._petModule.PetSortElementIndex)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController._InitSrollView = function(self)
-  -- function num : 0_10
-  (self._scrollView):InitListView(self._listShowItemCount, function(scrollView, index)
-    -- function num : 0_10_0 , upvalues : self
+function UISeasonMazeBanPetChangeController:_InitSrollView()
+  self._scrollView:InitListView(self._listShowItemCount, function(scrollView, index)
     return self:InitSpritListInfo(scrollView, index)
-  end
-, self:GetScrollViewParam())
+  end, self:GetScrollViewParam())
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.GetScrollViewParam = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonMazeBanPetChangeController:GetScrollViewParam()
   local param = UIDynamicScrollViewInitParam:New()
   param.mItemDefaultWithPaddingSize = 333
   return param
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.InitSpritListInfo = function(self, scrollView, index)
-  -- function num : 0_12
+function UISeasonMazeBanPetChangeController:InitSpritListInfo(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -365,8 +286,8 @@ UISeasonMazeBanPetChangeController.InitSpritListInfo = function(self, scrollView
   for i = 1, self._itemCountPerRow do
     local heartItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._petCount < itemIndex then
-      (heartItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._petCount then
+      heartItem:GetGameObject():SetActive(false)
     else
       self:ShowHeartItem(heartItem, itemIndex)
     end
@@ -374,10 +295,7 @@ UISeasonMazeBanPetChangeController.InitSpritListInfo = function(self, scrollView
   return item
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.IsBinderPet = function(self, pstid_old, pstid_new)
-  -- function num : 0_13
+function UISeasonMazeBanPetChangeController:IsBinderPet(pstid_old, pstid_new)
   do return false end
   if pstid_old and pstid_new then
     local pet_old = self:GetPetByPstID(pstid_old)
@@ -388,24 +306,21 @@ UISeasonMazeBanPetChangeController.IsBinderPet = function(self, pstid_old, pstid
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.CheckBinderID = function(self, tida, tidb)
-  -- function num : 0_14 , upvalues : _ENV
+function UISeasonMazeBanPetChangeController:CheckBinderID(tida, tidb)
   if tida == tidb then
     return true
   end
-  local cfg = (Cfg.cfg_pet)({})
+  local cfg = Cfg.cfg_pet({})
   if cfg then
     local cfga = cfg[tida]
     local cfgb = cfg[tidb]
     if not cfga then
-      (Log.error)("###[UISeasonMazeBanPetChangeController] cfga is nil ! id --> ", tida)
-      return 
+      Log.error("###[UISeasonMazeBanPetChangeController] cfga is nil ! id --> ", tida)
+      return
     end
     if not cfgb then
-      (Log.error)("###[UISeasonMazeBanPetChangeController] cfgb is nil ! id --> ", tidb)
-      return 
+      Log.error("###[UISeasonMazeBanPetChangeController] cfgb is nil ! id --> ", tidb)
+      return
     end
     if cfga.BinderPetID and cfgb.BinderPetID and cfga.BinderPetID == cfgb.BinderPetID then
       return true
@@ -413,273 +328,194 @@ UISeasonMazeBanPetChangeController.CheckBinderID = function(self, tida, tidb)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.NormalShowHeartLongPress = function(self, pstid, btnListener)
-  -- function num : 0_15
+function UISeasonMazeBanPetChangeController:NormalShowHeartLongPress(pstid, btnListener)
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.OnRootActiveChange = function(self, flag)
-  -- function num : 0_16 , upvalues : _ENV
+function UISeasonMazeBanPetChangeController:OnRootActiveChange(flag)
   if flag then
-    for k,v in pairs(self._dicItems) do
-      if (v:GetGameObject()).activeSelf then
+    for k, v in pairs(self._dicItems) do
+      if v:GetGameObject().activeSelf then
         v:RevertButton()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.ShowHeartItem = function(self, heartItem, index)
-  -- function num : 0_17 , upvalues : _ENV
-  local tabItem = (self._pstidTab)[index]
+function UISeasonMazeBanPetChangeController:ShowHeartItem(heartItem, index)
+  local tabItem = self._pstidTab[index]
   local showRotateBan = false
-  if self._rotateBanCfgList and tabItem and (table.icontains)(self._rotateBanCfgList, tabItem.pstid) then
+  if self._rotateBanCfgList and tabItem and table.icontains(self._rotateBanCfgList, tabItem.pstid) then
     showRotateBan = true
   end
-  ;
-  (heartItem:GetGameObject()):SetActive(true)
-  ;
-  (table.insert)(self.items, heartItem)
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._dicItems)[(heartItem:GetGameObject()):GetInstanceID()] = heartItem
+  heartItem:GetGameObject():SetActive(true)
+  table.insert(self.items, heartItem)
+  self._dicItems[heartItem:GetGameObject():GetInstanceID()] = heartItem
   local teamType = TeamOpenerType.SeasonMaze
   local fastClickItem = heartItem
   heartItem:SetData(tabItem, function(pstid, del, helppetstate, slot)
-    -- function num : 0_17_0 , upvalues : self, fastClickItem
     if self._isFastSelect then
       self:FastSelectHeartClick(fastClickItem, pstid, del, helppetstate, slot)
-    else
-      if self._clickCb then
-        (self._clickCb)(pstid, del)
-        self:CloseDialog()
-      end
+    elseif self._clickCb then
+      self._clickCb(pstid, del)
+      self:CloseDialog()
     end
-  end
-, function(pstid, btnListener)
-    -- function num : 0_17_1 , upvalues : self
+  end, function(pstid, btnListener)
     return self:NormalShowHeartLongPress(pstid, btnListener)
-  end
-, self._scrollRect, self._firstIn, teamType, 1, function(pstid)
-    -- function num : 0_17_2 , upvalues : self
+  end, self._scrollRect, self._firstIn, teamType, 1, function(pstid)
     return self:GetPetByPstID(pstid)
-  end
-, nil, self._isFastSelect, showRotateBan)
+  end, nil, self._isFastSelect, showRotateBan)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.GetPetByPstID = function(self, pstid)
-  -- function num : 0_18
-  return (self._noFilterPets)[pstid]
+function UISeasonMazeBanPetChangeController:GetPetByPstID(pstid)
+  return self._noFilterPets[pstid]
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController._OnChangeTeam = function(self, pets)
-  -- function num : 0_19
+function UISeasonMazeBanPetChangeController:_OnChangeTeam(pets)
   if self._clickCb then
-    (self._clickCb)(pets)
+    self._clickCb(pets)
   end
   self:CloseUITeamsMemberSelect()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.CloseUITeamsMemberSelect = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UISeasonMazeBanPetChangeController:CloseUITeamsMemberSelect()
   self:CloseDialog()
   if self._isBinderData then
-    local namea = (StringTable.Get)((self._isBinderData).peta)
-    local nameb = (StringTable.Get)((self._isBinderData).petb)
-    local tips = (StringTable.Get)("str_team_change_binder_toast_tips", nameb, namea)
-    ;
-    (ToastManager.ShowToast)(tips)
+    local namea = StringTable.Get(self._isBinderData.peta)
+    local nameb = StringTable.Get(self._isBinderData.petb)
+    local tips = StringTable.Get("str_team_change_binder_toast_tips", nameb, namea)
+    ToastManager.ShowToast(tips)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.CalcPetScrollViewCount = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  self._petCount = (table.count)(self._pstidTab)
-  self._listShowItemCount = (math.ceil)(self._petCount / self._itemCountPerRow)
+function UISeasonMazeBanPetChangeController:CalcPetScrollViewCount()
+  self._petCount = table.count(self._pstidTab)
+  self._listShowItemCount = math.ceil(self._petCount / self._itemCountPerRow)
   self:CheckEmptyTip()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.CheckEmptyTip = function(self)
-  -- function num : 0_22
+function UISeasonMazeBanPetChangeController:CheckEmptyTip()
   if self._petCount <= 0 then
-    (self._emptyDataTip):SetActive(true)
+    self._emptyDataTip:SetActive(true)
   else
-    ;
-    (self._emptyDataTip):SetActive(false)
+    self._emptyDataTip:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.RefrenshPetList_NormalBranch = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UISeasonMazeBanPetChangeController:RefrenshPetList_NormalBranch()
   local sortParams = {}
-  local tempParams = (PetDefaulSort[self._sortType])[self._sortOrder]
+  local tempParams = PetDefaulSort[self._sortType][self._sortOrder]
   sortParams = {}
   do
-    local tempParams = (PetDefaulSort[self._sortType])[self._sortOrder]
+    local tempParams = PetDefaulSort[self._sortType][self._sortOrder]
     for i = 1, #tempParams do
       local param = tempParams[i]
       sortParams[i] = param
     end
-    ;
-    (table.insert)(sortParams, 1, PetSortParam:New(PetSortType.SMazeDispatch, PetSortOrder.Descending))
-    ;
-    (table.insert)(sortParams, 1, PetSortParam:New(PetSortType.SMazeDie, PetSortOrder.Descending))
-    sortParams = tempParams
-    if self._sortType == PetSortType.Element then
-      if not self._currentElementSortTypeOrder or not (self._elementSortTypeOrder)[self._currentElementSortTypeOrder] or not PetDefaulSort[(self._elementSortTypeOrder)[self._currentElementSortTypeOrder]] or not (PetDefaulSort[(self._elementSortTypeOrder)[self._currentElementSortTypeOrder]])[PetSortOrder.Descending] then
-        (Log.error)("卡牌列表刷新失败:", self._currentElementSortTypeOrder)
-      end
-      local tempParams = (PetDefaulSort[(self._elementSortTypeOrder)[self._currentElementSortTypeOrder]])[PetSortOrder.Descending]
-      sortParams = {}
-      for i = 1, #tempParams do
-        local param = tempParams[i]
-        sortParams[i] = param
-      end
-      ;
-      (table.insert)(sortParams, 1, PetSortParam:New(PetSortType.SMazeDispatch, PetSortOrder.Descending))
-      ;
-      (table.insert)(sortParams, 1, PetSortParam:New(PetSortType.SMazeDie, PetSortOrder.Descending))
+    table.insert(sortParams, 1, PetSortParam:New(PetSortType.SMazeDispatch, PetSortOrder.Descending))
+    table.insert(sortParams, 1, PetSortParam:New(PetSortType.SMazeDie, PetSortOrder.Descending))
+  end
+  goto lbl_47
+  sortParams = tempParams
+  ::lbl_47::
+  if self._sortType == PetSortType.Element then
+    if not (self._currentElementSortTypeOrder and self._elementSortTypeOrder[self._currentElementSortTypeOrder] and PetDefaulSort[self._elementSortTypeOrder[self._currentElementSortTypeOrder]]) or not PetDefaulSort[self._elementSortTypeOrder[self._currentElementSortTypeOrder]][PetSortOrder.Descending] then
+      Log.error("卡牌列表刷新失败:", self._currentElementSortTypeOrder)
     end
-    do
-      local savedMemID = self._pstidTab
-      local savedSortParams = sortParams
-      if self._isFastSelect then
-        sortParams = {}
-        ;
-        (table.insert)(sortParams, PetSortParam:New(PetSortType.FastTeam, PetSortOrder.Descending))
-        local rotateBanSortParam = PetSortParam:New(PetSortType.SMazeRotateBan, PetSortOrder.Descending)
-        rotateBanSortParam:SetParams(self._rotateBanCfgList)
-        ;
-        (table.insert)(sortParams, rotateBanSortParam)
-        for i = 1, #savedSortParams do
-          (table.insert)(sortParams, savedSortParams[i])
-        end
-        local teamLookup = self:FastSelectMemID(savedMemID)
-        ;
-        (sortParams[1]):SetParams(teamLookup)
-      else
-        do
-          sortParams = {}
-          local rotateBanSortParam = PetSortParam:New(PetSortType.SMazeRotateBan, PetSortOrder.Descending)
-          rotateBanSortParam:SetParams(self._rotateBanCfgList)
-          ;
-          (table.insert)(sortParams, rotateBanSortParam)
-          for i = 1, #savedSortParams do
-            (table.insert)(sortParams, savedSortParams[i])
-          end
-          do
-            self._pets = (self._petModule):_SortPets(self._allPets, self._filterParams, sortParams, (self._petModule).PetSortChooseSecondAttribute)
-            ;
-            (self._petModule):SavePetSortInfo(self._filterParams, self._sortOrder, self._sortType, savedSortParams)
-            self._pstidTab = {}
-            do
-              if not self._add then
-                local tabItem = {}
-                if self._openPet then
-                  tabItem.pstid = (self._openPet):GetPstID()
-                else
-                  tabItem.pstid = 0
-                end
-                tabItem.del = true
-                ;
-                (table.insert)(self._pstidTab, tabItem)
-              end
-              local teamLookup = {}
-              if self._openList then
-                teamLookup = {}
-                if self._openPet then
-                  teamLookup[(self._openPet):GetPstID()] = (self._openPet):GetPstID()
-                end
-              end
-              if self._isFastSelect then
-                teamLookup = {}
-              end
-              for i = 1, #self._pets do
-                local pet = (self._pets)[i]
-                local pstid = pet:GetPstID()
-                if teamLookup[pstid] == nil then
-                  local tabItem = {}
-                  tabItem.pstid = pstid
-                  tabItem.del = false
-                  ;
-                  (table.insert)(self._pstidTab, tabItem)
-                end
-              end
-              if self._isFastSelect then
-                self:FastSelectMemID(savedMemID)
-              end
-            end
-          end
-        end
-      end
+    local tempParams = PetDefaulSort[self._elementSortTypeOrder[self._currentElementSortTypeOrder]][PetSortOrder.Descending]
+    sortParams = {}
+    for i = 1, #tempParams do
+      local param = tempParams[i]
+      sortParams[i] = param
     end
+    table.insert(sortParams, 1, PetSortParam:New(PetSortType.SMazeDispatch, PetSortOrder.Descending))
+    table.insert(sortParams, 1, PetSortParam:New(PetSortType.SMazeDie, PetSortOrder.Descending))
+  end
+  local savedMemID = self._pstidTab
+  local savedSortParams = sortParams
+  if self._isFastSelect then
+    sortParams = {}
+    table.insert(sortParams, PetSortParam:New(PetSortType.FastTeam, PetSortOrder.Descending))
+    local rotateBanSortParam = PetSortParam:New(PetSortType.SMazeRotateBan, PetSortOrder.Descending)
+    rotateBanSortParam:SetParams(self._rotateBanCfgList)
+    table.insert(sortParams, rotateBanSortParam)
+    for i = 1, #savedSortParams do
+      table.insert(sortParams, savedSortParams[i])
+    end
+    local teamLookup = self:FastSelectMemID(savedMemID)
+    sortParams[1]:SetParams(teamLookup)
+  else
+    sortParams = {}
+    local rotateBanSortParam = PetSortParam:New(PetSortType.SMazeRotateBan, PetSortOrder.Descending)
+    rotateBanSortParam:SetParams(self._rotateBanCfgList)
+    table.insert(sortParams, rotateBanSortParam)
+    for i = 1, #savedSortParams do
+      table.insert(sortParams, savedSortParams[i])
+    end
+  end
+  self._pets = self._petModule:_SortPets(self._allPets, self._filterParams, sortParams, self._petModule.PetSortChooseSecondAttribute)
+  self._petModule:SavePetSortInfo(self._filterParams, self._sortOrder, self._sortType, savedSortParams)
+  self._pstidTab = {}
+  if not self._add then
+    local tabItem = {}
+    if self._openPet then
+      tabItem.pstid = self._openPet:GetPstID()
+    else
+      tabItem.pstid = 0
+    end
+    tabItem.del = true
+    table.insert(self._pstidTab, tabItem)
+  end
+  local teamLookup = {}
+  if self._openList then
+    teamLookup = {}
+    if self._openPet then
+      teamLookup[self._openPet:GetPstID()] = self._openPet:GetPstID()
+    end
+  end
+  if self._isFastSelect then
+    teamLookup = {}
+  end
+  for i = 1, #self._pets do
+    local pet = self._pets[i]
+    local pstid = pet:GetPstID()
+    if teamLookup[pstid] == nil then
+      local tabItem = {}
+      tabItem.pstid = pstid
+      tabItem.del = false
+      table.insert(self._pstidTab, tabItem)
+    end
+  end
+  if self._isFastSelect then
+    self:FastSelectMemID(savedMemID)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.RefrenshPetList = function(self)
-  -- function num : 0_24
-  self._currentElementSortTypeOrder = (self._petModule).PetSortElementIndex
+function UISeasonMazeBanPetChangeController:RefrenshPetList()
+  self._currentElementSortTypeOrder = self._petModule.PetSortElementIndex
   self:RefrenshPetList_NormalBranch()
   self:CalcPetScrollViewCount()
   self.items = {}
-  ;
-  (self._scrollView):SetListItemCount(self._listShowItemCount)
-  ;
-  (self._scrollView):MovePanelToItemIndex(0, 0)
+  self._scrollView:SetListItemCount(self._listShowItemCount)
+  self._scrollView:MovePanelToItemIndex(0, 0)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.BtnFiltrateOnClick = function(self, go)
-  -- function num : 0_25
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._curSortStateIcon).sprite = (self._atlas):GetSprite("spirit_jiantou_b_2_frame")
+function UISeasonMazeBanPetChangeController:BtnFiltrateOnClick(go)
+  self._curSortStateIcon.sprite = self._atlas:GetSprite("spirit_jiantou_b_2_frame")
   self._sortFilterActiveStatus = true
   if self._sortFilter == nil then
-    self._sortFilter = (self._sortFilterLoader):SpawnObject("UISortFilterItem")
+    self._sortFilter = self._sortFilterLoader:SpawnObject("UISortFilterItem")
   end
-  ;
-  (self._sortFilter):SetData(self._sortType, self._sortOrder, self._filterParams, self._sortCfg, self._filterCfg, function(sortType, sortOrder, filterParams)
-    -- function num : 0_25_0 , upvalues : self
+  self._sortFilter:SetData(self._sortType, self._sortOrder, self._filterParams, self._sortCfg, self._filterCfg, function(sortType, sortOrder, filterParams)
     self:OnSortFilterChanged(sortType, sortOrder, filterParams)
-  end
-, function()
-    -- function num : 0_25_1 , upvalues : self
+  end, function()
     self:CloseFiterCallBack()
-  end
-)
-  ;
-  (self._clearFilterBtn):SetActive(true)
-  ;
-  ((self._sortFilter):GetGameObject()):SetActive(true)
+  end)
+  self._clearFilterBtn:SetActive(true)
+  self._sortFilter:GetGameObject():SetActive(true)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.OnSortFilterChanged = function(self, sortType, sortOrder, filterParams)
-  -- function num : 0_26
+function UISeasonMazeBanPetChangeController:OnSortFilterChanged(sortType, sortOrder, filterParams)
   self._sortType = sortType
   self._sortOrder = sortOrder
   self._filterParams = filterParams
@@ -687,50 +523,35 @@ UISeasonMazeBanPetChangeController.OnSortFilterChanged = function(self, sortType
   self:RefrenshPetList()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.CloseFiterCallBack = function(self)
-  -- function num : 0_27
+function UISeasonMazeBanPetChangeController:CloseFiterCallBack()
   self._sortFilterActiveStatus = false
   self:SetClearBtnStatus()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.GetPetItem = function(self, petTempId)
-  -- function num : 0_28 , upvalues : _ENV
-  for index,value in ipairs(self.items) do
-    if (value.pet):GetTemplateID() == petTempId then
+function UISeasonMazeBanPetChangeController:GetPetItem(petTempId)
+  for index, value in ipairs(self.items) do
+    if value.pet:GetTemplateID() == petTempId then
       return value:GetGameObject("btn")
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.GetPetItemHP = function(self, _index)
-  -- function num : 0_29 , upvalues : _ENV
-  for index,value in ipairs(self.items) do
+function UISeasonMazeBanPetChangeController:GetPetItemHP(_index)
+  for index, value in ipairs(self.items) do
     if index == _index then
-      return (value.heartItem):GetGameObject("hpbg")
+      return value.heartItem:GetGameObject("hpbg")
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.GetScroll = function(self)
-  -- function num : 0_30
+function UISeasonMazeBanPetChangeController:GetScroll()
   return self._scrollRect
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.GetHelpPetItem = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  for _,value in ipairs(self.items) do
+function UISeasonMazeBanPetChangeController:GetHelpPetItem()
+  for _, value in ipairs(self.items) do
     if value:GetHelpPetState() then
       return value:GetGameObject("btn")
     end
@@ -738,103 +559,68 @@ UISeasonMazeBanPetChangeController.GetHelpPetItem = function(self)
   return nil
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.SelectTeamItem = function(self, nIndex)
-  -- function num : 0_32
-  local uiTeamItem = (self.items)[nIndex]
-  if uiTeamItem == nil then
-    return 
+function UISeasonMazeBanPetChangeController:SelectTeamItem(nIndex)
+  local uiTeamItem = self.items[nIndex]
+  if nil == uiTeamItem then
+    return
   end
   uiTeamItem:bgOnClick()
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.OnHide = function(self)
-  -- function num : 0_33
+function UISeasonMazeBanPetChangeController:OnHide()
   if self._petModule then
-    (self._petModule):ClearAllPetSortInfo()
+    self._petModule:ClearAllPetSortInfo()
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.ClearFilterBtnOnClick = function(self)
-  -- function num : 0_34
+function UISeasonMazeBanPetChangeController:ClearFilterBtnOnClick()
   if self._sortFilterActiveStatus == false then
-    (self._clearFilterBtn):SetActive(false)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._curSortStateIcon).sprite = (self._atlas):GetSprite("spirit_jiantou_b_1_frame")
+    self._clearFilterBtn:SetActive(false)
+    self._curSortStateIcon.sprite = self._atlas:GetSprite("spirit_jiantou_b_1_frame")
   end
-  ;
-  (self._petModule):ClearPetSortFilterInfo()
+  self._petModule:ClearPetSortFilterInfo()
   self:NormalBranch()
   self:FlushTopBtnState()
   self:RefrenshPetList()
   if self._sortFilter then
-    (self._sortFilter):ClearFilters()
+    self._sortFilter:ClearFilters()
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.SetClearBtnStatus = function(self)
-  -- function num : 0_35
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  if not (self._petModule):CheckHasCachePetSortInfo(false) then
-    (self._curSortStateIcon).sprite = (self._atlas):GetSprite("spirit_jiantou_b_1_frame")
-    ;
-    (self._clearFilterBtn):SetActive(false)
+function UISeasonMazeBanPetChangeController:SetClearBtnStatus()
+  if not self._petModule:CheckHasCachePetSortInfo(false) then
+    self._curSortStateIcon.sprite = self._atlas:GetSprite("spirit_jiantou_b_1_frame")
+    self._clearFilterBtn:SetActive(false)
   else
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._curSortStateIcon).sprite = (self._atlas):GetSprite("spirit_jiantou_b_2_frame")
-    ;
-    (self._clearFilterBtn):SetActive(true)
+    self._curSortStateIcon.sprite = self._atlas:GetSprite("spirit_jiantou_b_2_frame")
+    self._clearFilterBtn:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.SetElementSortDefaultParam = function(self)
-  -- function num : 0_36
-  if (self._petModule).PetSortType ~= nil then
-    self._sortType = (self._petModule).PetSortType
+function UISeasonMazeBanPetChangeController:SetElementSortDefaultParam()
+  if self._petModule.PetSortType ~= nil then
+    self._sortType = self._petModule.PetSortType
   end
-  if (self._petModule).PetSortOrder ~= nil then
-    self._sortOrder = (self._petModule).PetSortOrder
+  if self._petModule.PetSortOrder ~= nil then
+    self._sortOrder = self._petModule.PetSortOrder
   end
-  if (self._petModule).PetSortFilter ~= nil then
-    self._filterParams = (self._petModule).PetSortFilter
+  if self._petModule.PetSortFilter ~= nil then
+    self._filterParams = self._petModule.PetSortFilter
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.GetTeamOrPrimaryPets = function(self)
-  -- function num : 0_37
+function UISeasonMazeBanPetChangeController:GetTeamOrPrimaryPets()
   return self._primaryMap
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.GetPstidTab = function(self)
-  -- function num : 0_38
+function UISeasonMazeBanPetChangeController:GetPstidTab()
   if self._pstidTab == nil then
     self._pstidTab = {}
   end
   return self._pstidTab
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.FastSelectMemID = function(self, savedMemID)
-  -- function num : 0_39 , upvalues : _ENV
+function UISeasonMazeBanPetChangeController:FastSelectMemID(savedMemID)
   if self._pstidTab == nil then
     self._pstidTab = {}
   end
@@ -842,149 +628,120 @@ UISeasonMazeBanPetChangeController.FastSelectMemID = function(self, savedMemID)
   local outotFilter = {}
   if savedMemID == nil then
     for i = 1, self._fastSelectCellCount do
-      local pstid = (self._primaryMap)[i]
+      local pstid = self._primaryMap[i]
       teamLookup[pstid] = i
       if pstid ~= 0 then
-        local tabItem = {pstid = pstid, del = false, memId = i}
-        ;
-        (table.insert)(outotFilter, tabItem)
+        local tabItem = {
+          pstid = pstid,
+          del = false,
+          memId = i
+        }
+        table.insert(outotFilter, tabItem)
       end
     end
   else
-    do
-      for k,v in pairs(savedMemID) do
-        teamLookup[v.pstid] = v.memId
-        if v.memId ~= nil then
-          (table.insert)(outotFilter, v)
-        end
-      end
-      do
-        for k,v in pairs(self._allPets) do
-          local pstid = v:GetPstID()
-          local memId = teamLookup[pstid]
-          v:SetFastTeamMemID(memId)
-        end
-        local filterLookup = {}
-        for k,v in pairs(self._pstidTab) do
-          v.memId = teamLookup[v.pstid]
-          filterLookup[v.pstid] = v.pstid
-        end
-        local insertID = 1
-        for k,v in pairs(outotFilter) do
-          if filterLookup[v.pstid] == nil then
-            (table.insert)(self._pstidTab, insertID, v)
-            insertID = insertID + 1
-          end
-        end
-        return teamLookup
+    for k, v in pairs(savedMemID) do
+      teamLookup[v.pstid] = v.memId
+      if v.memId ~= nil then
+        table.insert(outotFilter, v)
       end
     end
   end
+  for k, v in pairs(self._allPets) do
+    local pstid = v:GetPstID()
+    local memId = teamLookup[pstid]
+    v:SetFastTeamMemID(memId)
+  end
+  local filterLookup = {}
+  for k, v in pairs(self._pstidTab) do
+    v.memId = teamLookup[v.pstid]
+    filterLookup[v.pstid] = v.pstid
+  end
+  local insertID = 1
+  for k, v in pairs(outotFilter) do
+    if filterLookup[v.pstid] == nil then
+      table.insert(self._pstidTab, insertID, v)
+      insertID = insertID + 1
+    end
+  end
+  return teamLookup
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.FastSelectHeartClick = function(self, fastClickItem, pstid, del, helppetstate, slot)
-  -- function num : 0_40 , upvalues : _ENV
+function UISeasonMazeBanPetChangeController:FastSelectHeartClick(fastClickItem, pstid, del, helppetstate, slot)
   local tabItem = fastClickItem:GetTabItem()
   local savedmemId = tabItem.memId
   if fastClickItem:IsBinderPet() then
     tabItem.memId = tabItem.memId
+  elseif tabItem.memId ~= nil then
+    tabItem.memId = nil
   else
-    if tabItem.memId ~= nil then
-      tabItem.memId = nil
-    else
-      local teamLookup = {}
-      for k,v in pairs(self._pstidTab) do
-        if v.memId ~= nil then
-          teamLookup[v.memId] = v.memId
-        end
+    local teamLookup = {}
+    for k, v in pairs(self._pstidTab) do
+      if v.memId ~= nil then
+        teamLookup[v.memId] = v.memId
       end
-      local memId = nil
-      for i = 1, self._fastSelectCellCount do
-        if teamLookup[i] == nil then
-          memId = i
-          break
-        end
+    end
+    local memId
+    for i = 1, self._fastSelectCellCount do
+      if teamLookup[i] == nil then
+        memId = i
+        break
       end
-      do
-        do
-          tabItem.memId = memId
-          if savedmemId ~= tabItem.memId then
-            for k,v in pairs(self._dicItems) do
-              if (v:GetGameObject()).activeSelf then
-                v:FastTeamChanged()
-              end
-            end
-            local playVoice = false
-            if tabItem.memId ~= nil and playVoice then
-              local pet = self:GetPetByPstID(pstid)
-              local petResId = 0
-              if pet then
-                petResId = pet:GetTemplateID()
-              end
-              ;
-              ((GameGlobal.GetModule)(PetAudioModule)):PlayPetAudio("Formation", petResId)
-            end
-          end
-        end
+    end
+    tabItem.memId = memId
+  end
+  if savedmemId ~= tabItem.memId then
+    for k, v in pairs(self._dicItems) do
+      if v:GetGameObject().activeSelf then
+        v:FastTeamChanged()
       end
+    end
+    local playVoice = false
+    if tabItem.memId ~= nil and playVoice then
+      local pet = self:GetPetByPstID(pstid)
+      local petResId = 0
+      if pet then
+        petResId = pet:GetTemplateID()
+      end
+      GameGlobal.GetModule(PetAudioModule):PlayPetAudio("Formation", petResId)
     end
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.BtnFastConfirmOnClick = function(self, go)
-  -- function num : 0_41 , upvalues : _ENV
+function UISeasonMazeBanPetChangeController:BtnFastConfirmOnClick(go)
   self._primaryFastList = {}
   for i = 1, self._fastSelectCellCount do
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._primaryFastList)[i] = 0
+    self._primaryFastList[i] = 0
   end
-  for k,v in pairs(self._pstidTab) do
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R7 in 'UnsetPending'
-
+  for k, v in pairs(self._pstidTab) do
     if v.memId ~= nil then
-      (self._primaryFastList)[v.memId] = v.pstid
+      self._primaryFastList[v.memId] = v.pstid
     end
   end
   if self._clickCb then
-    (self._clickCb)(self._primaryFastList)
+    self._clickCb(self._primaryFastList)
   end
   self:CloseUITeamsMemberSelect()
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.CancelBtnOnclick = function(self)
-  -- function num : 0_42
-  return 
+function UISeasonMazeBanPetChangeController:CancelBtnOnclick()
+  return
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.CancelBtnOnPress = function(self, go)
-  -- function num : 0_43 , upvalues : _ENV
-  for k,v in pairs(self._pstidTab) do
+function UISeasonMazeBanPetChangeController:CancelBtnOnPress(go)
+  for k, v in pairs(self._pstidTab) do
     if v.memId ~= nil then
       v.memId = nil
     end
   end
-  for k,v in pairs(self._dicItems) do
-    if (v:GetGameObject()).activeSelf then
+  for k, v in pairs(self._dicItems) do
+    if v:GetGameObject().activeSelf then
       v:FastTeamChanged()
     end
   end
   self:Lock("UISeasonMazeBanPetChangeController")
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetChangeController.CancelBtnOnRelease = function(self, go)
-  -- function num : 0_44
+function UISeasonMazeBanPetChangeController:CancelBtnOnRelease(go)
   self:UnLock("UISeasonMazeBanPetChangeController")
 end
-
-

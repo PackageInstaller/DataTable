@@ -1,104 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/story/ui_story_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStoryModule", UIModule)
 UIStoryModule = UIStoryModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIStoryModule.Dispose = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIStoryModule:Dispose()
   self._type = UIPlotFromType.None
   self._level_id = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryModule.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIStoryModule:Constructor()
   self._uiParams = {}
   self._type = UIPlotFromType.None
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryModule.SetType = function(self, type)
-  -- function num : 0_2
+function UIStoryModule:SetType(type)
   self._type = type
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryModule.SetLevelID = function(self, levelid)
-  -- function num : 0_3 , upvalues : _ENV
+function UIStoryModule:SetLevelID(levelid)
   local tmpid = levelid or "nil"
-  ;
-  (Log.debug)("###[UIStoryModule] 设置levelid --> ", tmpid)
+  Log.debug("###[UIStoryModule] 设置levelid --> ", tmpid)
   self._level_id = levelid
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryModule.GetLevelID = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIStoryModule:GetLevelID()
   local levelid = self._level_id
   local tmpid = levelid or "nil"
-  ;
-  (Log.debug)("###[UIStoryModule] 获取levelid --> ", tmpid)
+  Log.debug("###[UIStoryModule] 获取levelid --> ", tmpid)
   return levelid
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryModule.GetType = function(self)
-  -- function num : 0_5
+function UIStoryModule:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryModule.SetUiParams = function(self, uiParams)
-  -- function num : 0_6
+function UIStoryModule:SetUiParams(uiParams)
   self._uiParams = uiParams
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryModule.ResetType = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIStoryModule:ResetType()
   self._type = UIPlotFromType.None
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryModule.ResetLevelID = function(self)
-  -- function num : 0_8
+function UIStoryModule:ResetLevelID()
   self._level_id = nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryModule.Goto3DStory = function(self)
-  -- function num : 0_9
+function UIStoryModule:Goto3DStory()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryModule.BackFrom3DStory = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if self._uiParams and (table.count)(self._uiParams) > 0 then
-    (Log.debug)("###[UIStoryModule] 有数据切到了剧情界面")
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIPlot, (table.unpack)(self._uiParams))
+function UIStoryModule:BackFrom3DStory()
+  if self._uiParams and table.count(self._uiParams) > 0 then
+    Log.debug("###[UIStoryModule] 有数据切到了剧情界面")
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIPlot, table.unpack(self._uiParams))
   else
-    ;
-    (Log.debug)("###[UIStoryModule] 没有数据切到了主界面")
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
+    Log.debug("###[UIStoryModule] 没有数据切到了主界面")
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
   end
 end
 
-local UIPlotFromType = {None = 0, Mission = 1, ExtMission = 2, Book = 3, Quest = 4, Other = 99}
+local UIPlotFromType = {
+  None = 0,
+  Mission = 1,
+  ExtMission = 2,
+  Book = 3,
+  Quest = 4,
+  Other = 99
+}
 _enum("UIPlotFromType", UIPlotFromType)
-

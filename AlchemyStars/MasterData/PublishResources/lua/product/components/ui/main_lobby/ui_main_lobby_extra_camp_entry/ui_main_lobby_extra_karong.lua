@@ -1,27 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_extra_camp_entry/ui_main_lobby_extra_karong.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_main_lobby_extra_base")
 _class("UIMainLobbyExtraKaRong", UIMainLobbyExtraBase)
 UIMainLobbyExtraKaRong = UIMainLobbyExtraKaRong
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyExtraKaRong.OnShow = function(self)
-  -- function num : 0_0
+function UIMainLobbyExtraKaRong:OnShow()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraKaRong.OnHide = function(self)
-  -- function num : 0_1
+function UIMainLobbyExtraKaRong:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraKaRong.RefreshView = function(self)
-  -- function num : 0_2
+function UIMainLobbyExtraKaRong:RefreshView()
 end
-
-

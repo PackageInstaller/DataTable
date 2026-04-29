@@ -1,8 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/effect_direction_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-EffectDirectionType = {None = 0, Up = 1, Right = 2, Down = 3, Left = 4, UpDown = 5, LeftRight = 6, EightDir = 7, RightUp = 8, RightDown = 9, LeftDown = 10, LeftUp = 11, Cross = 12}
+EffectDirectionType = {
+  None = 0,
+  Up = 1,
+  Right = 2,
+  Down = 3,
+  Left = 4,
+  UpDown = 5,
+  LeftRight = 6,
+  EightDir = 7,
+  RightUp = 8,
+  RightDown = 9,
+  LeftDown = 10,
+  LeftUp = 11,
+  Cross = 12
+}
 _enum("EffectDirectionType", EffectDirectionType)
-

@@ -1,58 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_dmg_param_single_type_skill_by_occupied.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetDmgParamSingleTypeSkillByOccupied", BuffLogicBase)
 BuffLogicSetDmgParamSingleTypeSkillByOccupied = BuffLogicSetDmgParamSingleTypeSkillByOccupied
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetDmgParamSingleTypeSkillByOccupied.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetDmgParamSingleTypeSkillByOccupied:Constructor(buffInstance, logicParam)
   self._gridNumToParamDic = logicParam.gridNumToParamDic
   self._defaultParam = logicParam.defaultParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetDmgParamSingleTypeSkillByOccupied.DoLogic = function(self)
-  -- function num : 0_1
+function BuffLogicSetDmgParamSingleTypeSkillByOccupied:DoLogic()
   local dmgParam = self._defaultParam
   if self._gridNumToParamDic then
     local holdEntity = self:GetEntity()
-    local gridNum = (holdEntity:BodyArea()):GetAreaCount()
-    if (self._gridNumToParamDic)[gridNum] then
-      dmgParam = (self._gridNumToParamDic)[gridNum]
+    local gridNum = holdEntity:BodyArea():GetAreaCount()
+    if self._gridNumToParamDic[gridNum] then
+      dmgParam = self._gridNumToParamDic[gridNum]
     end
   end
-  do
-    if dmgParam then
-      (self._buffLogicService):ChangeDmgParamSingleTypeSkill(self:GetEntity(), self:GetBuffSeq(), dmgParam)
-    end
+  if dmgParam then
+    self._buffLogicService:ChangeDmgParamSingleTypeSkill(self:GetEntity(), self:GetBuffSeq(), dmgParam)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetDmgParamSingleTypeSkillByOccupied.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicSetDmgParamSingleTypeSkillByOccupied:DoOverlap(logicParam)
   return self:DoLogic()
 end
 
 _class("BuffLogicResetDmgParamSingleTypeSkill", BuffLogicBase)
 BuffLogicResetDmgParamSingleTypeSkill = BuffLogicResetDmgParamSingleTypeSkill
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetDmgParamSingleTypeSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicResetDmgParamSingleTypeSkill:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetDmgParamSingleTypeSkill.DoLogic = function(self)
-  -- function num : 0_4
-  (self._buffLogicService):RemoveDmgParamSingleTypeSkill(self:GetEntity(), self:GetBuffSeq())
+function BuffLogicResetDmgParamSingleTypeSkill:DoLogic()
+  self._buffLogicService:RemoveDmgParamSingleTypeSkill(self:GetEntity(), self:GetBuffSeq())
 end
-
-

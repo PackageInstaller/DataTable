@@ -1,37 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_remove_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseRemoveEffectParam", SkillPhaseParamBase)
 SkillPhaseRemoveEffectParam = SkillPhaseRemoveEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseRemoveEffectParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseRemoveEffectParam:Constructor(t)
   self._effectIDList = t.effectIDList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRemoveEffectParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseRemoveEffectParam:GetPhaseType()
   return SkillViewPhaseType.RemoveEffect
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRemoveEffectParam.GetCacheTable = function(self)
-  -- function num : 0_2
+function SkillPhaseRemoveEffectParam:GetCacheTable()
   return {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRemoveEffectParam.GetEffectIDList = function(self)
-  -- function num : 0_3
+function SkillPhaseRemoveEffectParam:GetEffectIDList()
   return self._effectIDList
 end
-
-

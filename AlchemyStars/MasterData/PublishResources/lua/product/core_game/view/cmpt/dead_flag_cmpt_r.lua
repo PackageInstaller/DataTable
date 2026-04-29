@@ -1,68 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/dead_flag_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DeadFlagComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-DeadFlagComponent.Constructor = function(self)
-  -- function num : 0_0
+function DeadFlagComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-DeadFlagComponent.SetDeadDrop = function(self, deadDrop)
-  -- function num : 0_1
+function DeadFlagComponent:SetDeadDrop(deadDrop)
   self._deadDrop = deadDrop
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-DeadFlagComponent.GetDeadDrop = function(self)
-  -- function num : 0_2
+function DeadFlagComponent:GetDeadDrop()
   return self._deadDrop
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.DeadFlag = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).DeadFlag)
+function Entity:DeadFlag()
+  return self:GetComponent(self.WEComponentsEnum.DeadFlag)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasDeadFlag = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).DeadFlag)
+function Entity:HasDeadFlag()
+  return self:HasComponent(self.WEComponentsEnum.DeadFlag)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddDeadFlag = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).DeadFlag
+function Entity:AddDeadFlag()
+  local index = self.WEComponentsEnum.DeadFlag
   local component = DeadFlagComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceDeadFlag = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).DeadFlag
+function Entity:ReplaceDeadFlag()
+  local index = self.WEComponentsEnum.DeadFlag
   local component = DeadFlagComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveDeadFlag = function(self)
-  -- function num : 0_7
+function Entity:RemoveDeadFlag()
   if self:HasDeadFlag() then
-    self:RemoveComponent((self.WEComponentsEnum).DeadFlag)
+    self:RemoveComponent(self.WEComponentsEnum.DeadFlag)
   end
 end
-
-

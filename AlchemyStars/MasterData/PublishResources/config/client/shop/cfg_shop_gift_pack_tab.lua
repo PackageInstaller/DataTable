@@ -1,17 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/shop/cfg_shop_gift_pack_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, Name = 2}
 local config = {
-{1, "str_shop_giftmarket_tab_name1"}
-; 
-[101] = {101, "str_shop_giftmarket_tab_name2"}
-, 
-[201] = {201, "str_shop_giftmarket_tab_name3"}
-, 
-[301] = {301, "str_shop_giftmarket_tab_name4"}
+  {
+    1,
+    "str_shop_giftmarket_tab_name1"
+  },
+  [101] = {
+    101,
+    "str_shop_giftmarket_tab_name2"
+  },
+  [201] = {
+    201,
+    "str_shop_giftmarket_tab_name3"
+  },
+  [301] = {
+    301,
+    "str_shop_giftmarket_tab_name4"
+  }
 }
 return config, "ID", key
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/world/unique_pickup_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PickUpComponent", Object)
 PickUpComponent = PickUpComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpComponent.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpComponent:Constructor(world)
   self._world = world
   self._clickPos = Vector3(0, 0, 0)
   self._lastPickUpGridPos = Vector2(0, 0)
@@ -18,67 +11,40 @@ PickUpComponent.Constructor = function(self, world)
   self._entityID = -1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpComponent.Initialize = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.notice)("PickUpComponent Initialize")
+function PickUpComponent:Initialize()
+  Log.notice("PickUpComponent Initialize")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpComponent.SetClickPos = function(self, clickPos)
-  -- function num : 0_2
+function PickUpComponent:SetClickPos(clickPos)
   self._clickPos = clickPos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpComponent.GetClickPos = function(self)
-  -- function num : 0_3
+function PickUpComponent:GetClickPos()
   return self._clickPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpComponent.SetCurActiveSkillInfo = function(self, activeSkillID, petPstID)
-  -- function num : 0_4
+function PickUpComponent:SetCurActiveSkillInfo(activeSkillID, petPstID)
   self._activeSkillID = activeSkillID
   self._petPstID = petPstID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpComponent.GetCurActiveSkillID = function(self)
-  -- function num : 0_5
+function PickUpComponent:GetCurActiveSkillID()
   return self._activeSkillID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpComponent.GetCurActiveSkillPetPstID = function(self)
-  -- function num : 0_6
+function PickUpComponent:GetCurActiveSkillPetPstID()
   return self._petPstID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpComponent.GetEntityID = function(self)
-  -- function num : 0_7
+function PickUpComponent:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpComponent.SetEntityID = function(self, entityID)
-  -- function num : 0_8
+function PickUpComponent:SetEntityID(entityID)
   self._entityID = entityID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpComponent.ResetPickUpData = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function PickUpComponent:ResetPickUpData()
   self._clickPos = Vector3(0, 0, 0)
   self._lastPickUpGridPos = Vector2(0, 0)
   self._curPickUpGridPos = Vector2(0, 0)
@@ -87,38 +53,23 @@ PickUpComponent.ResetPickUpData = function(self)
   self._entityID = -1
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.PickUp = function(self)
-  -- function num : 0_10
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).PickUp)
+function MainWorld:PickUp()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.PickUp)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.HasPickUp = function(self)
-  -- function num : 0_11
-  do return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).PickUp) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorld:HasPickUp()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.PickUp) ~= nil
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.AddPickUp = function(self, world)
-  -- function num : 0_12 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).PickUp
+function MainWorld:AddPickUp(world)
+  local index = self.BW_UniqueComponentsEnum.PickUp
   local component = PickUpComponent:New(self)
   component:Initialize()
   self:SetUniqueComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.RemovePickUp = function(self)
-  -- function num : 0_13
+function MainWorld:RemovePickUp()
   if self:HasPickUp() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).PickUp, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.PickUp, nil)
   end
 end
-
-

@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/custom_nodes_foundation/custom_nodes_foundation_lookup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("abstract_bhv")
 require("abstract_bhv_finite_time")
 require("bhv_finite_time_sequence")
@@ -11,4 +6,3 @@ require("bhv_delay")
 require("bhv_sequence")
 require("fsm_node")
 require("fsm_state_node")
-

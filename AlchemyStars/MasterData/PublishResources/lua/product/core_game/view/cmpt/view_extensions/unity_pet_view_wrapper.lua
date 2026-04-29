@@ -1,38 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/view_extensions/unity_pet_view_wrapper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("view_wrapper")
 _class("UnityPetViewWrapper", IViewWrapper)
 UnityPetViewWrapper = UnityPetViewWrapper
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UnityPetViewWrapper.Constructor = function(self, resource_service, petRes, ancRes)
-  -- function num : 0_0 , upvalues : _ENV
+function UnityPetViewWrapper:Constructor(resource_service, petRes, ancRes)
   self.ViewType = "UnityPet"
   self.ResRequests = {petRes, ancRes}
   self.GameObject = petRes.Obj
-  self.Transform = (petRes.Obj).transform
-  local animatorController = ((ancRes.Obj):GetComponent(typeof(UnityEngine.Animator))).runtimeAnimatorController
+  self.Transform = petRes.Obj.transform
+  local animatorController = ancRes.Obj:GetComponent(typeof(UnityEngine.Animator)).runtimeAnimatorController
   if animatorController == nil then
-    (Log.error)("[ani] getAnimatorController Error", petRes.m_Name, ancRes.m_Name)
+    Log.error("[ani] getAnimatorController Error", petRes.m_Name, ancRes.m_Name)
   end
-  local u3dAnimatorCmpt = (self.GameObject):GetComponentInChildren(typeof(UnityEngine.Animator))
+  local u3dAnimatorCmpt = self.GameObject:GetComponentInChildren(typeof(UnityEngine.Animator))
   if u3dAnimatorCmpt == nil then
-    (Log.error)("[ani] Root has no animator ", petRes.m_Name, ancRes.m_Name)
+    Log.error("[ani] Root has no animator ", petRes.m_Name, ancRes.m_Name)
   end
   u3dAnimatorCmpt.runtimeAnimatorController = animatorController
-  ;
-  (ancRes.Obj):SetActive(false)
+  ancRes.Obj:SetActive(false)
   self._ResService = resource_service
   self._childTrans = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UnityPetViewWrapper.SyncTransform = function(self, pos, dir, scale)
-  -- function num : 0_1 , upvalues : _ENV
+function UnityPetViewWrapper:SyncTransform(pos, dir, scale)
   local tf = self.Transform
   tf.position = pos
   if dir ~= Vector3(0, 0, 0) then
@@ -41,39 +30,23 @@ UnityPetViewWrapper.SyncTransform = function(self, pos, dir, scale)
   tf.localScale = scale
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UnityPetViewWrapper.SetVisible = function(self, active)
-  -- function num : 0_2
-  (self.GameObject):SetActive(active)
+function UnityPetViewWrapper:SetVisible(active)
+  self.GameObject:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UnityPetViewWrapper.ViewDispose = function(self)
-  -- function num : 0_3
-  (self._ResService):DestroyView(self)
+function UnityPetViewWrapper:ViewDispose()
+  self._ResService:DestroyView(self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UnityPetViewWrapper.FindChild = function(self, name)
-  -- function num : 0_4 , upvalues : _ENV
+function UnityPetViewWrapper:FindChild(name)
   local tran = self.Transform
   if not tran then
-    (Log.fatal)("### no Transform in UnityViewWrapper")
+    Log.fatal("### no Transform in UnityViewWrapper")
     return nil
   end
-  do
-    if not (self._childTrans)[name] then
-      local tranChild = (GameObjectHelper.FindChild)(tran, name)
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._childTrans)[name] = tranChild
-    end
-    return (self._childTrans)[name]
+  if not self._childTrans[name] then
+    local tranChild = GameObjectHelper.FindChild(tran, name)
+    self._childTrans[name] = tranChild
   end
+  return self._childTrans[name]
 end
-
-

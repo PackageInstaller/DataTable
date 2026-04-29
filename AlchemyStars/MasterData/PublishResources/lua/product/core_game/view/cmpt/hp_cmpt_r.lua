@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/hp_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HPComponent", Object)
 HPComponent = HPComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HPComponent.Constructor = function(self, redhp, whitehp, maxhp, offset)
-  -- function num : 0_0 , upvalues : _ENV
+function HPComponent:Constructor(redhp, whitehp, maxhp, offset)
   self._redhp = redhp
   self._whitehp = whitehp
   self._maxhp = maxhp
@@ -60,10 +53,7 @@ HPComponent.Constructor = function(self, redhp, whitehp, maxhp, offset)
   self._hpShieldType = HPShieldType.Normal
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.Dispose = function(self)
-  -- function num : 0_1
+function HPComponent:Dispose()
   self:WidgetPoolCleanup()
   self._whiteImageCmpt = nil
   self._redImageCmpt = nil
@@ -75,370 +65,226 @@ HPComponent.Dispose = function(self)
   self._ui_csgoChessAttackTarget = nil
   self._ui_csgoChessRecoverTarget = nil
   if self._ui_widgetPoolChessHPScaleRuler1 then
-    (self._ui_widgetPoolChessHPScaleRuler1):Dispose()
+    self._ui_widgetPoolChessHPScaleRuler1:Dispose()
   end
   if self._ui_widgetPoolChessHPScaleRuler2 then
-    (self._ui_widgetPoolChessHPScaleRuler2):Dispose()
+    self._ui_widgetPoolChessHPScaleRuler2:Dispose()
   end
   self._lockPos = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.WidgetPoolCleanup = function(self)
-  -- function num : 0_2
+function HPComponent:WidgetPoolCleanup()
   if self._sepPoolWidget ~= nil then
-    (self._sepPoolWidget):Dispose()
+    self._sepPoolWidget:Dispose()
     self._sepPoolWidget = nil
   end
   if self._uiHpBuffInfoWidget then
-    (self._uiHpBuffInfoWidget):Dispose()
+    self._uiHpBuffInfoWidget:Dispose()
     self._uiHpBuffInfoWidget = nil
   end
   if self._uiTrapSkillInfoWidget then
-    (self._uiTrapSkillInfoWidget):Dispose()
+    self._uiTrapSkillInfoWidget:Dispose()
     self._uiTrapSkillInfoWidget = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.IsShowHPSlider = function(self)
-  -- function num : 0_3
-  if self._isShowHPSlider then
-    return not self._isHPBarTempHide
-  end
+function HPComponent:IsShowHPSlider()
+  return self._isShowHPSlider and not self._isHPBarTempHide
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetHPBarTempHide = function(self, hide)
-  -- function num : 0_4
+function HPComponent:SetHPBarTempHide(hide)
   self._isHPBarTempHide = hide
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.IsHPBarTempHide = function(self)
-  -- function num : 0_5
+function HPComponent:IsHPBarTempHide()
   return self._isHPBarTempHide
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetShowHPSliderState = function(self, state)
-  -- function num : 0_6
+function HPComponent:SetShowHPSliderState(state)
   self._isShowHPSlider = state
   if state and self._slider_entity_id > 0 then
     self:SetHPPosDirty(true)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetSepPoolWidget = function(self, sepPool)
-  -- function num : 0_7
+function HPComponent:SetSepPoolWidget(sepPool)
   self._sepPoolWidget = sepPool
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetSepPoolWidget = function(self)
-  -- function num : 0_8
+function HPComponent:GetSepPoolWidget()
   return self._sepPoolWidget
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.IsInitSep = function(self)
-  -- function num : 0_9
+function HPComponent:IsInitSep()
   return self._initSep
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetInitSepState = function(self, state)
-  -- function num : 0_10
+function HPComponent:SetInitSepState(state)
   self._initSep = state
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetHPLockSepList = function(self, hpLockSepList)
-  -- function num : 0_11
+function HPComponent:SetHPLockSepList(hpLockSepList)
   self._hpLockSepList = hpLockSepList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetHPLockSepList = function(self)
-  -- function num : 0_12
+function HPComponent:GetHPLockSepList()
   return self._hpLockSepList
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.InitHPLockSepList = function(self, hpSepList)
-  -- function num : 0_13 , upvalues : _ENV
+function HPComponent:InitHPLockSepList(hpSepList)
   if hpSepList then
     self._hpLockSepList = {}
-    for i,v in ipairs(hpSepList) do
-      (table.insert)(self._hpLockSepList, v.hpPercent)
+    for i, v in ipairs(hpSepList) do
+      table.insert(self._hpLockSepList, v.hpPercent)
     end
-    ;
-    (table.sort)(self._hpLockSepList, table.ACS)
+    table.sort(self._hpLockSepList, table.ACS)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.AddHPLockUnlockedIndex = function(self, hpLockUnlockedIndex)
-  -- function num : 0_14 , upvalues : _ENV
-  (table.insert)(self._hpLockUnlockedIndexList, hpLockUnlockedIndex)
+function HPComponent:AddHPLockUnlockedIndex(hpLockUnlockedIndex)
+  table.insert(self._hpLockUnlockedIndexList, hpLockUnlockedIndex)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetHPLockUnlockedIndexList = function(self, hpLockUnlockedIndexList)
-  -- function num : 0_15
+function HPComponent:SetHPLockUnlockedIndexList(hpLockUnlockedIndexList)
   self._hpLockUnlockedIndexList = hpLockUnlockedIndexList
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetHPLockUnlockedIndexList = function(self)
-  -- function num : 0_16
+function HPComponent:GetHPLockUnlockedIndexList()
   return self._hpLockUnlockedIndexList
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetShowTrapSep = function(self)
-  -- function num : 0_17
+function HPComponent:GetShowTrapSep()
   return self._showTrapSep
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetShowTrapSep = function(self, state)
-  -- function num : 0_18
+function HPComponent:SetShowTrapSep(state)
   self._showTrapSep = state
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.IsInitTrapSep = function(self)
-  -- function num : 0_19
+function HPComponent:IsInitTrapSep()
   return self._initTrapSep
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetInitTrapSepState = function(self, state)
-  -- function num : 0_20
+function HPComponent:SetInitTrapSepState(state)
   self._initTrapSep = state
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.InitHP = function(self, maxHP)
-  -- function num : 0_21
+function HPComponent:InitHP(maxHP)
   self._redhp = maxHP
   self._whitehp = maxHP
   self._maxhp = maxHP
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetRedHP = function(self)
-  -- function num : 0_22
+function HPComponent:GetRedHP()
   return self._redhp
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetRedHP = function(self, new_red_hp)
-  -- function num : 0_23 , upvalues : _ENV
-  self._redhp = (math.floor)(new_red_hp)
+function HPComponent:SetRedHP(new_red_hp)
+  self._redhp = math.floor(new_red_hp)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetWhiteHP = function(self, new_red_hp)
-  -- function num : 0_24 , upvalues : _ENV
-  self._whitehp = (math.floor)(new_red_hp)
+function HPComponent:SetWhiteHP(new_red_hp)
+  self._whitehp = math.floor(new_red_hp)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetWhiteHP = function(self)
-  -- function num : 0_25
+function HPComponent:GetWhiteHP()
   return self._whitehp
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetGreyHP = function(self, val)
-  -- function num : 0_26
+function HPComponent:SetGreyHP(val)
   self._greyHP = val
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetGreyHP = function(self)
-  -- function num : 0_27
+function HPComponent:GetGreyHP()
   return self._greyHP
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetMaxHP = function(self)
-  -- function num : 0_28
+function HPComponent:GetMaxHP()
   return self._maxhp
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetMaxHP = function(self, maxhp)
-  -- function num : 0_29
+function HPComponent:SetMaxHP(maxhp)
   self._maxhp = maxhp
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetHPOffset = function(self)
-  -- function num : 0_30
+function HPComponent:GetHPOffset()
   return self._hp_offset
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetHPOffset = function(self, heightOffset)
-  -- function num : 0_31 , upvalues : _ENV
+function HPComponent:SetHPOffset(heightOffset)
   self._hp_offset = Vector3(0, heightOffset, 0)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetHPSliderEntityID = function(self)
-  -- function num : 0_32
+function HPComponent:GetHPSliderEntityID()
   return self._slider_entity_id
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetHPSliderEntityID = function(self, slider_entity_id)
-  -- function num : 0_33
+function HPComponent:SetHPSliderEntityID(slider_entity_id)
   self._slider_entity_id = slider_entity_id
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetShieldValue = function(self, shieldVal)
-  -- function num : 0_34
+function HPComponent:SetShieldValue(shieldVal)
   self._shield = shieldVal
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetShieldValue = function(self)
-  -- function num : 0_35
+function HPComponent:GetShieldValue()
   return self._shield
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetShowCurseHp = function(self, set)
-  -- function num : 0_36
+function HPComponent:SetShowCurseHp(set)
   self._isShowCurseHp = set
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetShowCurseHp = function(self)
-  -- function num : 0_37
+function HPComponent:GetShowCurseHp()
   return self._isShowCurseHp
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetCurseHpValue = function(self, shieldVal)
-  -- function num : 0_38
+function HPComponent:SetCurseHpValue(shieldVal)
   self._curseHp = shieldVal
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetCurseHpValue = function(self)
-  -- function num : 0_39
+function HPComponent:GetCurseHpValue()
   return self._curseHp
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetHPPosDirty = function(self, dirty, useTeamView)
-  -- function num : 0_40
+function HPComponent:SetHPPosDirty(dirty, useTeamView)
   self._posDirty = dirty
   if useTeamView ~= nil then
     self._useTeamView = useTeamView
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.ResetUseTeamViewState = function(self)
-  -- function num : 0_41
+function HPComponent:ResetUseTeamViewState()
   self._useTeamView = true
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.IsUseTeamView = function(self)
-  -- function num : 0_42
+function HPComponent:IsUseTeamView()
   return self._useTeamView
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.IsHPPosDirty = function(self)
-  -- function num : 0_43
+function HPComponent:IsHPPosDirty()
   return self._posDirty
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.ResetHP = function(self, curHP, maxHP)
-  -- function num : 0_44
+function HPComponent:ResetHP(curHP, maxHP)
   self._maxhp = maxHP
   self:SetRedHP(curHP)
   self:SetWhiteHP(self._redhp)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetUIHpBuffInfoWidget = function(self, ui)
-  -- function num : 0_45
+function HPComponent:SetUIHpBuffInfoWidget(ui)
   self._uiHpBuffInfoWidget = ui
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetUIHpBuffInfoWidget = function(self)
-  -- function num : 0_46
+function HPComponent:GetUIHpBuffInfoWidget()
   return self._uiHpBuffInfoWidget
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetUITrapSkillInfoWidget = function(self, ui)
-  -- function num : 0_47
+function HPComponent:SetUITrapSkillInfoWidget(ui)
   self._uiTrapSkillInfoWidget = ui
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetHPImageComponent = function(self, white, red, shield, sep, grey, curseHp)
-  -- function num : 0_48
+function HPComponent:SetHPImageComponent(white, red, shield, sep, grey, curseHp)
   self._whiteImageCmpt = white
   self._redImageCmpt = red
   self._shieldImageCmpt = shield
@@ -447,650 +293,417 @@ HPComponent.SetHPImageComponent = function(self, white, red, shield, sep, grey, 
   self._curseHpImageCmpt = curseHp
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetChessUIComponent = function(self, csgoChessHP, csTextChessHP, csgoChessAttackTarget, csgoChessRecoverTarget)
-  -- function num : 0_49
+function HPComponent:SetChessUIComponent(csgoChessHP, csTextChessHP, csgoChessAttackTarget, csgoChessRecoverTarget)
   self._ui_csgoChessHP = csgoChessHP
   self._ui_csTextChessHP = csTextChessHP
   self._ui_csgoChessAttackTarget = csgoChessAttackTarget
   self._ui_csgoChessRecoverTarget = csgoChessRecoverTarget
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetChessHPBarGroup = function(self, v)
-  -- function num : 0_50
+function HPComponent:SetChessHPBarGroup(v)
   self._ui_csgoChessHPBarGroup = v
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetChessHPWhite1 = function(self, v)
-  -- function num : 0_51
+function HPComponent:SetChessHPWhite1(v)
   self._ui_csImageChessHPWhite1 = v
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetChessHPRed1 = function(self, v)
-  -- function num : 0_52
+function HPComponent:SetChessHPRed1(v)
   self._ui_csgoChessHPRed1 = v
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetChessHPScaleRuler1 = function(self, v)
-  -- function num : 0_53
+function HPComponent:SetChessHPScaleRuler1(v)
   self._ui_widgetPoolChessHPScaleRuler1 = v
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetChessHPWhite2 = function(self, v)
-  -- function num : 0_54
+function HPComponent:SetChessHPWhite2(v)
   self._ui_csImageChessHPWhite2 = v
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetChessHPRed2 = function(self, v)
-  -- function num : 0_55
+function HPComponent:SetChessHPRed2(v)
   self._ui_csgoChessHPRed2 = v
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetChessHPScaleRuler2 = function(self, v)
-  -- function num : 0_56
+function HPComponent:SetChessHPScaleRuler2(v)
   self._ui_widgetPoolChessHPScaleRuler2 = v
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetChessHPBarGroup = function(self)
-  -- function num : 0_57
+function HPComponent:GetChessHPBarGroup()
   return self._ui_csgoChessHPBarGroup
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetChessHPWhite1 = function(self)
-  -- function num : 0_58
+function HPComponent:GetChessHPWhite1()
   return self._ui_csImageChessHPWhite1
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetChessHPRed1 = function(self)
-  -- function num : 0_59
+function HPComponent:GetChessHPRed1()
   return self._ui_csgoChessHPRed1
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetChessHPScaleRuler1 = function(self)
-  -- function num : 0_60
+function HPComponent:GetChessHPScaleRuler1()
   return self._ui_widgetPoolChessHPScaleRuler1
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetChessHPWhite2 = function(self)
-  -- function num : 0_61
+function HPComponent:GetChessHPWhite2()
   return self._ui_csImageChessHPWhite2
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetChessHPRed2 = function(self)
-  -- function num : 0_62
+function HPComponent:GetChessHPRed2()
   return self._ui_csgoChessHPRed2
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetChessHPScaleRuler2 = function(self)
-  -- function num : 0_63
+function HPComponent:GetChessHPScaleRuler2()
   return self._ui_widgetPoolChessHPScaleRuler2
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetUICSGOChessHP = function(self)
-  -- function num : 0_64 , upvalues : _ENV
+function HPComponent:GetUICSGOChessHP()
   if not self._ui_csgoChessHP or tostring(self._ui_csgoChessHP) == "null" then
-    return 
+    return
   end
   return self._ui_csgoChessHP
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetUICSTextChessHP = function(self)
-  -- function num : 0_65 , upvalues : _ENV
+function HPComponent:GetUICSTextChessHP()
   if not self._ui_csTextChessHP or tostring(self._ui_csTextChessHP) == "null" then
-    return 
+    return
   end
   return self._ui_csTextChessHP
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetUICSGOChessAttackTarget = function(self)
-  -- function num : 0_66 , upvalues : _ENV
+function HPComponent:GetUICSGOChessAttackTarget()
   if not self._ui_csgoChessAttackTarget or tostring(self._ui_csgoChessAttackTarget) == "null" then
-    return 
+    return
   end
   return self._ui_csgoChessAttackTarget
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetUICSGOChessRecoverTarget = function(self)
-  -- function num : 0_67 , upvalues : _ENV
+function HPComponent:GetUICSGOChessRecoverTarget()
   if not self._ui_csgoChessRecoverTarget or tostring(self._ui_csgoChessRecoverTarget) == "null" then
-    return 
+    return
   end
   return self._ui_csgoChessRecoverTarget
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetLastRedPercent = function(self, percent)
-  -- function num : 0_68
+function HPComponent:SetLastRedPercent(percent)
   self._lastRedPercent = percent
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetLastWhitePercent = function(self, percent)
-  -- function num : 0_69
+function HPComponent:SetLastWhitePercent(percent)
   self._lastWhitePercent = percent
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetWhiteImageComponent = function(self)
-  -- function num : 0_70
+function HPComponent:GetWhiteImageComponent()
   return self._whiteImageCmpt
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetRedImageComponent = function(self)
-  -- function num : 0_71
+function HPComponent:GetRedImageComponent()
   return self._redImageCmpt
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetShieldImageComponent = function(self)
-  -- function num : 0_72
+function HPComponent:GetShieldImageComponent()
   return self._shieldImageCmpt
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetCurseHpImageComponent = function(self)
-  -- function num : 0_73
+function HPComponent:GetCurseHpImageComponent()
   return self._curseHpImageCmpt
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetSepImageComponent = function(self)
-  -- function num : 0_74
+function HPComponent:GetSepImageComponent()
   return self._sepImageCmpt
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetGreyImageComponent = function(self)
-  -- function num : 0_75
+function HPComponent:GetGreyImageComponent()
   return self._greyImageCmpt
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetLastRedPercent = function(self)
-  -- function num : 0_76
+function HPComponent:GetLastRedPercent()
   return self._lastRedPercent
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetLastWhitePercent = function(self)
-  -- function num : 0_77
+function HPComponent:GetLastWhitePercent()
   return self._lastWhitePercent
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetWorldBossState = function(self, state)
-  -- function num : 0_78
+function HPComponent:SetWorldBossState(state)
   self._isWorldBoss = state
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.IsWorldBoss = function(self)
-  -- function num : 0_79
+function HPComponent:IsWorldBoss()
   return self._isWorldBoss
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.IsInitWorldBoss = function(self)
-  -- function num : 0_80
+function HPComponent:IsInitWorldBoss()
   return self._isWorldBossInit
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.InitWorldBossHPData = function(self, stageData, imageData)
-  -- function num : 0_81 , upvalues : _ENV
+function HPComponent:InitWorldBossHPData(stageData, imageData)
   if self._isWorldBossInit then
-    return 
+    return
   end
-  for stageIndex,v in ipairs(stageData) do
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self._initWorldBossStageHPData)[stageIndex] = v.hp
+  for stageIndex, v in ipairs(stageData) do
+    self._initWorldBossStageHPData[stageIndex] = v.hp
   end
   self._worldBossHPImage = imageData
   self._curStage = 1
-  self._curStageHP = (self._initWorldBossStageHPData)[self._curStage]
+  self._curStageHP = self._initWorldBossStageHPData[self._curStage]
   self._isWorldBossInit = true
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetCurStageImage = function(self)
-  -- function num : 0_82 , upvalues : _ENV
-  local count = (table.count)(self._worldBossHPImage)
+function HPComponent:GetCurStageImage()
+  local count = table.count(self._worldBossHPImage)
   local index = (self._totalStage - 1) % count + 1
-  local id = (self._worldBossHPImage)[index]
-  return (self._worldBossHPImage)[index]
+  local id = self._worldBossHPImage[index]
+  return self._worldBossHPImage[index]
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetNextStageImage = function(self)
-  -- function num : 0_83 , upvalues : _ENV
-  local count = (table.count)(self._worldBossHPImage)
+function HPComponent:GetNextStageImage()
+  local count = table.count(self._worldBossHPImage)
   local index = self._totalStage % count + 1
-  local id = (self._worldBossHPImage)[index]
-  return (self._worldBossHPImage)[index]
+  local id = self._worldBossHPImage[index]
+  return self._worldBossHPImage[index]
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetPreStageImage = function(self)
-  -- function num : 0_84 , upvalues : _ENV
-  ((table.count)(self._worldBossHPImage))
-  local count = nil
-  local index = nil
+function HPComponent:GetPreStageImage()
+  local count = table.count(self._worldBossHPImage)
+  local index
   if self._totalStage == 1 then
     index = count
   else
     index = (self._totalStage - 2) % count + 1
   end
-  local id = (self._worldBossHPImage)[index]
-  return (self._worldBossHPImage)[index]
+  local id = self._worldBossHPImage[index]
+  return self._worldBossHPImage[index]
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SwitchStage = function(self)
-  -- function num : 0_85 , upvalues : _ENV
-  if self._curStage ~= (table.count)(self._initWorldBossStageHPData) then
+function HPComponent:SwitchStage()
+  if self._curStage ~= table.count(self._initWorldBossStageHPData) then
     self._curStage = self._curStage + 1
   end
   self._totalStage = self._totalStage + 1
-  self._curStageHP = (self._initWorldBossStageHPData)[self._curStage]
+  self._curStageHP = self._initWorldBossStageHPData[self._curStage]
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetCurStageHPPercent = function(self)
-  -- function num : 0_86
-  local initCurStageHP = (self._initWorldBossStageHPData)[self._curStage]
+function HPComponent:GetCurStageHPPercent()
+  local initCurStageHP = self._initWorldBossStageHPData[self._curStage]
   local percent = self._curStageHP / initCurStageHP
   return percent
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetCurStageHP = function(self)
-  -- function num : 0_87
+function HPComponent:GetCurStageHP()
   return self._curStageHP
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetStageHP = function(self, hp)
-  -- function num : 0_88
+function HPComponent:SetStageHP(hp)
   self._curStageHP = hp
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetCurStage = function(self)
-  -- function num : 0_89
+function HPComponent:GetCurStage()
   return self._curStage
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.IsInitMultiHP = function(self)
-  -- function num : 0_90
+function HPComponent:IsInitMultiHP()
   return self._isMultiHPInit
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetInitMultiHPState = function(self, state)
-  -- function num : 0_91
+function HPComponent:SetInitMultiHPState(state)
   self._isMultiHPInit = state
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.IsMultiHP = function(self)
-  -- function num : 0_92
+function HPComponent:IsMultiHP()
   return self._isMultiHP
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetMultiHPState = function(self, state)
-  -- function num : 0_93
+function HPComponent:SetMultiHPState(state)
   self._isMultiHP = state
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.InitMultiHPData = function(self, hpData)
-  -- function num : 0_94 , upvalues : _ENV
+function HPComponent:InitMultiHPData(hpData)
   if self._isMultiHPInit then
-    return 
+    return
   end
   self._isMultiHPInit = true
   self:SetMultiHPState(true)
-  for _,v in ipairs(hpData) do
-    (table.insert)(self._initMultiHPData, v)
+  for _, v in ipairs(hpData) do
+    table.insert(self._initMultiHPData, v)
   end
   self._curMultiHPStage = 1
   self._newMultiHPStage = 1
-  self._curMultiHP = (self._initMultiHPData)[self._curMultiHPStage]
+  self._curMultiHP = self._initMultiHPData[self._curMultiHPStage]
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetNewMultiHPStage = function(self)
-  -- function num : 0_95
+function HPComponent:GetNewMultiHPStage()
   return self._newMultiHPStage
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.IsMultiHPSwitch = function(self)
-  -- function num : 0_96
+function HPComponent:IsMultiHPSwitch()
   return self._isSwitchMultiHP
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.HasNextMultiStageHPData = function(self)
-  -- function num : 0_97 , upvalues : _ENV
-  do return self._curMultiHPStage < (table.count)(self._initMultiHPData) end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HPComponent:HasNextMultiStageHPData()
+  return self._curMultiHPStage < table.count(self._initMultiHPData)
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetMultiHPStage = function(self, stage)
-  -- function num : 0_98
+function HPComponent:SetMultiHPStage(stage)
   self._curMultiHPStage = stage
-  self._curMultiHP = (self._initMultiHPData)[self._curMultiHPStage]
+  self._curMultiHP = self._initMultiHPData[self._curMultiHPStage]
   self._maxhp = self._curMultiHP
 end
 
--- DECOMPILER ERROR at PC305: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SwitchMultiHPStage = function(self, newStage, redHp)
-  -- function num : 0_99 , upvalues : _ENV
+function HPComponent:SwitchMultiHPStage(newStage, redHp)
   self._newMultiHPStage = newStage
   self:SetRedHP(redHp)
   self:SetWhiteHP(redHp)
-  ;
-  (Log.info)("SwitchMultiHPStage RedHP=", redHp, " newStage=", newStage)
+  Log.info("SwitchMultiHPStage RedHP=", redHp, " newStage=", newStage)
 end
 
--- DECOMPILER ERROR at PC308: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetNextMultiStageHPData = function(self, curHP)
-  -- function num : 0_100 , upvalues : _ENV
+function HPComponent:GetNextMultiStageHPData(curHP)
   self._multiHPChangeCount = 0
-  while curHP <= 0 and self._curMultiHPStage < (table.count)(self._initMultiHPData) do
+  while curHP <= 0 and self._curMultiHPStage < table.count(self._initMultiHPData) do
     self._curMultiHPStage = self._curMultiHPStage + 1
-    local newHP = (self._initMultiHPData)[self._curMultiHPStage]
+    local newHP = self._initMultiHPData[self._curMultiHPStage]
     curHP = curHP + newHP
     self._multiHPChangeCount = self._multiHPChangeCount + 1
   end
-  do
-    return (self._initMultiHPData)[self._curMultiHPStage], curHP, self._curMultiHPStage, self._multiHPChangeCount
-  end
+  return self._initMultiHPData[self._curMultiHPStage], curHP, self._curMultiHPStage, self._multiHPChangeCount
 end
 
--- DECOMPILER ERROR at PC311: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetCurMultiHPStage = function(self)
-  -- function num : 0_101
+function HPComponent:GetCurMultiHPStage()
   return self._curMultiHPStage
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetSwitchMultiHPState = function(self, state)
-  -- function num : 0_102
+function HPComponent:SetSwitchMultiHPState(state)
   self._isSwitchMultiHP = state
 end
 
--- DECOMPILER ERROR at PC317: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetChessTargetedMark = function(self, isMarked, isRecover)
-  -- function num : 0_103
+function HPComponent:SetChessTargetedMark(isMarked, isRecover)
   self._isChessMarked = isMarked
   self._isChessRecoverMarked = isRecover
 end
 
--- DECOMPILER ERROR at PC320: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetChessTargetedMark = function(self)
-  -- function num : 0_104
+function HPComponent:GetChessTargetedMark()
   return self._isChessMarked
 end
 
--- DECOMPILER ERROR at PC323: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetChessRecoverMark = function(self)
-  -- function num : 0_105
+function HPComponent:GetChessRecoverMark()
   return self._isChessRecoverMarked
 end
 
--- DECOMPILER ERROR at PC326: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetLockPos = function(self, b)
-  -- function num : 0_106
+function HPComponent:SetLockPos(b)
   self._lockPos = b
 end
 
--- DECOMPILER ERROR at PC329: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.IsPosLocked = function(self)
-  -- function num : 0_107
+function HPComponent:IsPosLocked()
   return self._lockPos
 end
 
--- DECOMPILER ERROR at PC332: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.GetHPShieldType = function(self)
-  -- function num : 0_108
+function HPComponent:GetHPShieldType()
   return self._hpShieldType
 end
 
--- DECOMPILER ERROR at PC335: Confused about usage of register: R0 in 'UnsetPending'
-
-HPComponent.SetHPShieldType = function(self, type)
-  -- function num : 0_109
+function HPComponent:SetHPShieldType(type)
   self._hpShieldType = type
 end
 
--- DECOMPILER ERROR at PC338: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HP = function(self)
-  -- function num : 0_110
-  return self:GetComponent((self.WEComponentsEnum).HP)
+function Entity:HP()
+  return self:GetComponent(self.WEComponentsEnum.HP)
 end
 
--- DECOMPILER ERROR at PC341: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasHP = function(self)
-  -- function num : 0_111
-  return self:HasComponent((self.WEComponentsEnum).HP)
+function Entity:HasHP()
+  return self:HasComponent(self.WEComponentsEnum.HP)
 end
 
--- DECOMPILER ERROR at PC344: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddHP = function(self, redhp, whitehp, maxhp, offset)
-  -- function num : 0_112 , upvalues : _ENV
-  self:AddComponent((self.WEComponentsEnum).HP, HPComponent:New(redhp, whitehp, maxhp, offset))
+function Entity:AddHP(redhp, whitehp, maxhp, offset)
+  self:AddComponent(self.WEComponentsEnum.HP, HPComponent:New(redhp, whitehp, maxhp, offset))
 end
 
--- DECOMPILER ERROR at PC347: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetRedHP = function(self)
-  -- function num : 0_113
+function Entity:GetRedHP()
   local hp = self:HP()
-  if hp == nil then
+  if nil == hp then
     return -1
   end
   return hp:GetRedHP()
 end
 
--- DECOMPILER ERROR at PC350: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetWhiteHP = function(self)
-  -- function num : 0_114
+function Entity:GetWhiteHP()
   local hp = self:HP()
-  if hp == nil then
+  if nil == hp then
     return -1
   end
   return hp:GetWhiteHP()
 end
 
--- DECOMPILER ERROR at PC353: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRedHP = function(self, redhp)
-  -- function num : 0_115
+function Entity:ReplaceRedHP(redhp)
   local hp = self:HP()
   hp:SetRedHP(redhp)
-  self:ReplaceComponent((self.WEComponentsEnum).HP, self:HP())
+  self:ReplaceComponent(self.WEComponentsEnum.HP, self:HP())
 end
 
--- DECOMPILER ERROR at PC356: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRedHPAndWhitHP = function(self, redhp)
-  -- function num : 0_116
+function Entity:ReplaceRedHPAndWhitHP(redhp)
   local hp = self:HP()
   hp:SetRedHP(redhp)
   hp:SetWhiteHP(redhp)
-  self:ReplaceComponent((self.WEComponentsEnum).HP, self:HP())
+  self:ReplaceComponent(self.WEComponentsEnum.HP, self:HP())
 end
 
--- DECOMPILER ERROR at PC359: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceMultiHPSwitchStage = function(self, newMultiHPStage, redHP)
-  -- function num : 0_117
+function Entity:ReplaceMultiHPSwitchStage(newMultiHPStage, redHP)
   local hp = self:HP()
   hp:SwitchMultiHPStage(newMultiHPStage, redHP)
   hp:SetSwitchMultiHPState(true)
-  self:ReplaceComponent((self.WEComponentsEnum).HP, self:HP())
+  self:ReplaceComponent(self.WEComponentsEnum.HP, self:HP())
 end
 
--- DECOMPILER ERROR at PC362: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRedAndMaxHP = function(self, curHP, maxHP)
-  -- function num : 0_118
+function Entity:ReplaceRedAndMaxHP(curHP, maxHP)
   local hp = self:HP()
   hp:ResetHP(curHP, maxHP)
-  self:ReplaceComponent((self.WEComponentsEnum).HP, self:HP())
+  self:ReplaceComponent(self.WEComponentsEnum.HP, self:HP())
 end
 
--- DECOMPILER ERROR at PC365: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceMaxHP = function(self, maxHp)
-  -- function num : 0_119
+function Entity:ReplaceMaxHP(maxHp)
   local hp = self:HP()
   hp:SetMaxHP(maxHp)
-  self:ReplaceComponent((self.WEComponentsEnum).HP, self:HP())
+  self:ReplaceComponent(self.WEComponentsEnum.HP, self:HP())
 end
 
--- DECOMPILER ERROR at PC368: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceInitHPLockSepList = function(self, hpSepList)
-  -- function num : 0_120
+function Entity:ReplaceInitHPLockSepList(hpSepList)
   local hp = self:HP()
   hp:InitHPLockSepList(hpSepList)
-  self:ReplaceComponent((self.WEComponentsEnum).HP, self:HP())
+  self:ReplaceComponent(self.WEComponentsEnum.HP, self:HP())
 end
 
--- DECOMPILER ERROR at PC371: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceHPComponent = function(self)
-  -- function num : 0_121
-  self:ReplaceComponent((self.WEComponentsEnum).HP, self:HP())
+function Entity:ReplaceHPComponent()
+  self:ReplaceComponent(self.WEComponentsEnum.HP, self:HP())
 end
 
--- DECOMPILER ERROR at PC374: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceChessTargetedMark = function(self, isMarked, isRecover)
-  -- function num : 0_122
+function Entity:ReplaceChessTargetedMark(isMarked, isRecover)
   local hp = self:HP()
   hp:SetChessTargetedMark(isMarked, isRecover)
-  self:ReplaceComponent((self.WEComponentsEnum).HP, self:HP())
+  self:ReplaceComponent(self.WEComponentsEnum.HP, self:HP())
 end
 
--- DECOMPILER ERROR at PC377: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceGreyHP = function(self, v)
-  -- function num : 0_123
-  if not v then
-    v = 0
-  end
-  ;
-  (self:HP()):SetGreyHP(v)
-  self:ReplaceComponent((self.WEComponentsEnum).HP, self:HP())
+function Entity:ReplaceGreyHP(v)
+  v = v or 0
+  self:HP():SetGreyHP(v)
+  self:ReplaceComponent(self.WEComponentsEnum.HP, self:HP())
 end
 
--- DECOMPILER ERROR at PC380: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.TriggerHPUpdate = function(self)
-  -- function num : 0_124
-  self:ReplaceComponent((self.WEComponentsEnum).HP, self:HP())
+function Entity:TriggerHPUpdate()
+  self:ReplaceComponent(self.WEComponentsEnum.HP, self:HP())
 end
 
 _class("HPLockSep", Object)
 HPLockSep = HPLockSep
--- DECOMPILER ERROR at PC389: Confused about usage of register: R0 in 'UnsetPending'
 
-HPLockSep.Constructor = function(self)
-  -- function num : 0_125
+function HPLockSep:Constructor()
   self._lockPercent = 0
 end
 
-local HPBarType = {NormalMonster = 1, EliteMonster = 2, Trap = 3, Boss = 4, EliteBoss = 5, BlackFist = 6, ChessPet = 7}
+local HPBarType = {
+  NormalMonster = 1,
+  EliteMonster = 2,
+  Trap = 3,
+  Boss = 4,
+  EliteBoss = 5,
+  BlackFist = 6,
+  ChessPet = 7
+}
 _enum("HPBarType", HPBarType)
-

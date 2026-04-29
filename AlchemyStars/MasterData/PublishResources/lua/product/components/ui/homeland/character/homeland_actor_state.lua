@@ -1,98 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/character/homeland_actor_state.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandActorState", Object)
 HomelandActorState = HomelandActorState
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandActorState.Constructor = function(self, fsm)
-  -- function num : 0_0
+function HomelandActorState:Constructor(fsm)
   self._fsm = fsm
   self._mcc = fsm:GetMainCharacterController()
   self._handlerMap = {}
   self:RegisterEventHandler()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorState.RegisterEventHandler = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._handlerMap)[HomelandActorStateEventType.Move] = self.HandleEventMove
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._handlerMap)[HomelandActorStateEventType.Dash] = self.HandleEventDash
+function HomelandActorState:RegisterEventHandler()
+  self._handlerMap[HomelandActorStateEventType.Move] = self.HandleEventMove
+  self._handlerMap[HomelandActorStateEventType.Dash] = self.HandleEventDash
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorState.Dispose = function(self)
-  -- function num : 0_2
+function HomelandActorState:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorState.GetType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandActorState:GetType()
   return HomelandActorStateType.NotDefined
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorState.Enter = function(self)
-  -- function num : 0_4
+function HomelandActorState:Enter()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorState.Exit = function(self)
-  -- function num : 0_5
+function HomelandActorState:Exit()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorState.Update = function(self, deltaTimeMS)
-  -- function num : 0_6
+function HomelandActorState:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorState.HandleEvent = function(self, eventType, ...)
-  -- function num : 0_7 , upvalues : _ENV
-  local handler = (self._handlerMap)[eventType]
+function HomelandActorState:HandleEvent(eventType, ...)
+  local handler = self._handlerMap[eventType]
   if handler then
     handler(self, ...)
   else
-    ;
-    (Log.fatal)("[HomelandActorState] handler missing:" .. tostring(eventType))
+    Log.fatal("[HomelandActorState] handler missing:" .. tostring(eventType))
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorState.HandleEventDash = function(self, callback)
-  -- function num : 0_8 , upvalues : _ENV
-  if (self._mcc):IsForbiddenMove() then
-    return 
+function HomelandActorState:HandleEventDash(callback)
+  if self._mcc:IsForbiddenMove() then
+    return
   end
-  ;
-  (self._fsm):SwitchState(HomelandActorStateType.Dash, callback)
+  self._fsm:SwitchState(HomelandActorStateType.Dash, callback)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorState.HandleEventMove = function(self, movement, moveState, deltaTimeMS)
-  -- function num : 0_9 , upvalues : _ENV
+function HomelandActorState:HandleEventMove(movement, moveState, deltaTimeMS)
   if moveState == HomelandCharMoveType.Idle then
-    (self._fsm):SwitchState(HomelandActorStateType.Idle)
+    self._fsm:SwitchState(HomelandActorStateType.Idle)
   else
-    ;
-    (self._fsm):SwitchState(HomelandActorStateType.Run, movement, moveState, deltaTimeMS)
+    self._fsm:SwitchState(HomelandActorStateType.Run, movement, moveState, deltaTimeMS)
   end
 end
-
-

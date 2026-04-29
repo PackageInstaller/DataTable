@@ -1,68 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_draw_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_DrawCard", Object)
 SkillEffectCalc_DrawCard = SkillEffectCalc_DrawCard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_DrawCard.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_DrawCard:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DrawCard.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_DrawCard:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillEffectParam = skillEffectCalcParam.skillEffectParam
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   if not lsvcFeature:HasFeatureType(FeatureType.Card) then
-    return 
+    return
   end
   if not lsvcFeature:CanAddCard() then
-    return 
+    return
   end
-  local cardType = nil
+  local cardType
   local fixedCard = lsvcFeature:GetNextDrawFixedCard()
   if fixedCard then
     cardType = fixedCard
   else
-    local weightTb = {5, 5, 5}
-    local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-    do
-      if teamEntity then
-        local teamEntityID = teamEntity:GetID()
-        weightTb = lsvcFeature:GetRandomDrawCardWeight(teamEntityID)
-      end
-      if not weightTb then
-        weightTb = {5, 5, 5}
-      end
-      local totalWeight = 0
-      for weightCard,weight in ipairs(weightTb) do
-        totalWeight = totalWeight + weight
-      end
-      local randomSvc = (self._world):GetService("RandomLogic")
-      local randNum = randomSvc:LogicRand(1, totalWeight)
-      local sumWeight = 0
-      local findCardType = FeatureCardType.A
-      for weightCard,weight in ipairs(weightTb) do
-        sumWeight = sumWeight + weight
-        if randNum <= sumWeight then
-          findCardType = weightCard
-          break
-        end
-      end
-      do
-        do
-          cardType = findCardType
-          local result = SkillEffectResultDrawCard:New(cardType)
-          return result
-        end
+    local weightTb = {
+      5,
+      5,
+      5
+    }
+    local teamEntity = self._world:Player():GetCurrentTeamEntity()
+    if teamEntity then
+      local teamEntityID = teamEntity:GetID()
+      weightTb = lsvcFeature:GetRandomDrawCardWeight(teamEntityID)
+    end
+    weightTb = weightTb or {
+      5,
+      5,
+      5
+    }
+    local totalWeight = 0
+    for weightCard, weight in ipairs(weightTb) do
+      totalWeight = totalWeight + weight
+    end
+    local randomSvc = self._world:GetService("RandomLogic")
+    local randNum = randomSvc:LogicRand(1, totalWeight)
+    local sumWeight = 0
+    local findCardType = FeatureCardType.A
+    for weightCard, weight in ipairs(weightTb) do
+      sumWeight = sumWeight + weight
+      if randNum <= sumWeight then
+        findCardType = weightCard
+        break
       end
     end
+    cardType = findCardType
   end
+  local result = SkillEffectResultDrawCard:New(cardType)
+  return result
 end
-
-

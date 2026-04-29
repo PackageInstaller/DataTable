@@ -1,144 +1,128 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_space_door.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("cri_audio_help_controller")
 AircraftDoorCfg = {
-[1] = {name = "fc_door_white.prefab", scaleY = 1, audioId = CriAudioIDConst.AircraftStoneDoorBUDC}
-, 
-[2] = {name = "fc_door_black.prefab", scaleY = 1, audioId = CriAudioIDConst.AircraftStoneDoorBUDC}
-, 
-[3] = {name = "fc_door_gray.prefab", scaleY = 1, audioId = CriAudioIDConst.AircraftStoneDoorBUDC}
-, 
-[4] = {name = "fc_door_nys.prefab", scaleY = 10, audioId = CriAudioIDConst.AircraftAirDoorBUDC}
+  [1] = {
+    name = "fc_door_white.prefab",
+    scaleY = 1,
+    audioId = CriAudioIDConst.AircraftStoneDoorBUDC
+  },
+  [2] = {
+    name = "fc_door_black.prefab",
+    scaleY = 1,
+    audioId = CriAudioIDConst.AircraftStoneDoorBUDC
+  },
+  [3] = {
+    name = "fc_door_gray.prefab",
+    scaleY = 1,
+    audioId = CriAudioIDConst.AircraftStoneDoorBUDC
+  },
+  [4] = {
+    name = "fc_door_nys.prefab",
+    scaleY = 10,
+    audioId = CriAudioIDConst.AircraftAirDoorBUDC
+  }
 }
-local MaskLayer = {[1] = 1, [2] = 2, [3] = 3, [4] = 4, [5] = 5, [6] = 6, [7] = 6, [8] = 8, [9] = 9, [10] = 10, [11] = 11, [12] = 11, [13] = 13, [14] = 14, [15] = 15, [16] = 16}
+local MaskLayer = {
+  [1] = 1,
+  [2] = 2,
+  [3] = 3,
+  [4] = 4,
+  [5] = 5,
+  [6] = 6,
+  [7] = 6,
+  [8] = 8,
+  [9] = 9,
+  [10] = 10,
+  [11] = 11,
+  [12] = 11,
+  [13] = 13,
+  [14] = 14,
+  [15] = 15,
+  [16] = 16
+}
 _class("AircraftSpaceDoor", Object)
 AircraftSpaceDoor = AircraftSpaceDoor
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
 
-AircraftSpaceDoor.Constructor = function(self, spaceId, parentTrans)
-  -- function num : 0_0 , upvalues : _ENV, MaskLayer
+function AircraftSpaceDoor:Constructor(spaceId, parentTrans)
   self.spaceId = spaceId
-  local aircraftModule = (GameGlobal.GetModule)(AircraftModule)
-  local cfg = (Cfg.cfg_aircraft_space)[spaceId]
+  local aircraftModule = GameGlobal.GetModule(AircraftModule)
+  local cfg = Cfg.cfg_aircraft_space[spaceId]
   local type = cfg.Mat
   local uiCfg = AircraftDoorCfg[type]
   if not uiCfg then
-    (Log.exception)("[AircraftDoor] 找不到门配置：", type)
+    Log.exception("[AircraftDoor] 找不到门配置：", type)
   end
   local prefab = uiCfg.name
   local scaleY = uiCfg.scaleY
   self.audioId = uiCfg.audioId
-  ;
-  (AudioHelperController.RequestUISoundSync)(self.audioId)
-  self.doorRequest = (ResourceManager:GetInstance()):SyncLoadAsset(prefab, LoadType.GameObject)
-  self.doorGO = (self.doorRequest).Obj
-  ;
-  ((self.doorGO).transform):SetParent(parentTrans, false)
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  ((self.doorGO).transform).localPosition = Vector3.zero
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  ((self.doorGO).transform).localEulerAngles = Vector3.zero
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  ((self.doorGO).transform).localScale = Vector3.one
-  local doorAniTrans = ((self.doorGO).transform):GetChild(0)
-  local doorMaskTrans = ((self.doorGO).transform):GetChild(1)
+  AudioHelperController.RequestUISoundSync(self.audioId)
+  self.doorRequest = ResourceManager:GetInstance():SyncLoadAsset(prefab, LoadType.GameObject)
+  self.doorGO = self.doorRequest.Obj
+  self.doorGO.transform:SetParent(parentTrans, false)
+  self.doorGO.transform.localPosition = Vector3.zero
+  self.doorGO.transform.localEulerAngles = Vector3.zero
+  self.doorGO.transform.localScale = Vector3.one
+  local doorAniTrans = self.doorGO.transform:GetChild(0)
+  local doorMaskTrans = self.doorGO.transform:GetChild(1)
   self.ac = doorAniTrans:GetComponent("Animator")
   if not cfg.Size then
-    (Log.exception)("找不到门尺寸配置：", spaceId)
+    Log.exception("找不到门尺寸配置：", spaceId)
   end
-  doorMaskTrans.localScale = Vector3((cfg.Size)[1], scaleY, (cfg.Size)[2])
+  doorMaskTrans.localScale = Vector3(cfg.Size[1], scaleY, cfg.Size[2])
   self:SetDoorMat(doorAniTrans)
   local doorMaskMesh = doorMaskTrans:GetComponent(typeof(UnityEngine.MeshRenderer))
-  local _mpb = (UnityEngine.MaterialPropertyBlock):New()
-  ;
-  (doorMaskMesh.material):SetInt("_StencilRef", MaskLayer[self.spaceId])
+  local _mpb = UnityEngine.MaterialPropertyBlock:New()
+  doorMaskMesh.material:SetInt("_StencilRef", MaskLayer[self.spaceId])
   doorMaskMesh:SetPropertyBlock(_mpb)
   local roomData = aircraftModule:GetRoom(self.spaceId)
   if roomData then
-    (self.doorGO):SetActive(false)
+    self.doorGO:SetActive(false)
   else
-    ;
-    (self.doorGO):SetActive(true)
+    self.doorGO:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftSpaceDoor.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AircraftSpaceDoor:Dispose()
   if self.doorRequest then
-    (self.doorRequest):Dispose()
+    self.doorRequest:Dispose()
   end
-  ;
-  (AudioHelperController.ReleaseUISoundById)(self.audioId)
+  AudioHelperController.ReleaseUISoundById(self.audioId)
   self.doorRequest = nil
   self.doorGO = nil
   self.ac = nil
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftSpaceDoor.SetDoorMat = function(self, doorAniTrans, mat)
-  -- function num : 0_2 , upvalues : _ENV, MaskLayer
+function AircraftSpaceDoor:SetDoorMat(doorAniTrans, mat)
   local components = doorAniTrans:GetComponentsInChildren(typeof(UnityEngine.SkinnedMeshRenderer))
   if components.Length > 0 then
     for i = 0, components.Length - 1 do
       local skinnedMesh = components[i]
-      ;
-      (skinnedMesh.material):SetInt("_StencilRef", MaskLayer[self.spaceId])
+      skinnedMesh.material:SetInt("_StencilRef", MaskLayer[self.spaceId])
     end
   else
-    do
-      local components2 = doorAniTrans:GetComponentsInChildren(typeof(UnityEngine.MeshRenderer))
-      if components2.Length > 0 then
-        for i = 0, components2.Length - 1 do
-          local mesh = components2[i]
-          ;
-          (mesh.material):SetInt("_StencilRef", MaskLayer[self.spaceId])
-        end
+    local components2 = doorAniTrans:GetComponentsInChildren(typeof(UnityEngine.MeshRenderer))
+    if components2.Length > 0 then
+      for i = 0, components2.Length - 1 do
+        local mesh = components2[i]
+        mesh.material:SetInt("_StencilRef", MaskLayer[self.spaceId])
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftSpaceDoor.Open = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.doorGO):SetActive(true)
-  ;
-  (self.ac):CrossFade("open", 0)
-  ;
-  (AudioHelperController.PlayRequestedUISound)(self.audioId)
+function AircraftSpaceDoor:Open()
+  self.doorGO:SetActive(true)
+  self.ac:CrossFade("open", 0)
+  AudioHelperController.PlayRequestedUISound(self.audioId)
   return 3000
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftSpaceDoor.Close = function(self)
-  -- function num : 0_4
-  (self.doorGO):SetActive(true)
-  ;
-  (self.ac):CrossFade("close", 0)
+function AircraftSpaceDoor:Close()
+  self.doorGO:SetActive(true)
+  self.ac:CrossFade("close", 0)
   return 3000
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-AircraftSpaceDoor.AnimStop = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self.doorGO):SetActive(false)
-  ;
-  (AudioHelperController.StopUIVoice)(self.audioId, 0)
+function AircraftSpaceDoor:AnimStop()
+  self.doorGO:SetActive(false)
+  AudioHelperController.StopUIVoice(self.audioId, 0)
 end
-
-

@@ -1,102 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n37/exchange/ui_n37_exchange_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN37ExchangeCell", UICustomWidget)
 UIN37ExchangeCell = UIN37ExchangeCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN37ExchangeCell.SetData = function(self, bigItemData, smallItemData, component, tipsCallback)
-  -- function num : 0_0
+function UIN37ExchangeCell:SetData(bigItemData, smallItemData, component, tipsCallback)
   self._bigItemData = bigItemData
   self._smallItemData = smallItemData
   self._component = component
   self._tipsCallback = tipsCallback
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37ExchangeCell.SetShow = function(self, cellIdx)
-  -- function num : 0_1
-  (self:GetGameObject()):SetActive(true)
+function UIN37ExchangeCell:SetShow(cellIdx)
+  self:GetGameObject():SetActive(true)
   self._index = cellIdx
   local bigData, smallData = self:_GetCurData(cellIdx, self._bigItemData, self._smallItemData)
   self:_SetList(bigData, smallData)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37ExchangeCell.SetHide = function(self)
-  -- function num : 0_2
-  (self:GetGameObject()):SetActive(false)
+function UIN37ExchangeCell:SetHide()
+  self:GetGameObject():SetActive(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37ExchangeCell._GetCurData = function(self, cellIdx, bigItemData, smallItemData)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN37ExchangeCell:_GetCurData(cellIdx, bigItemData, smallItemData)
   local totalCount = 8
   local startIdx = (cellIdx - 1) * totalCount + 1
   local big = {}
   local small = {}
   local count = 0
   local len_big = #bigItemData
-  for i,v in ipairs(bigItemData) do
-    if startIdx <= i * 2 and count < totalCount then
-      (table.insert)(big, v)
+  for i, v in ipairs(bigItemData) do
+    if startIdx <= i * 2 and totalCount > count then
+      table.insert(big, v)
       count = count + 2
     end
   end
-  for i,v in ipairs(smallItemData) do
-    if startIdx <= i + len_big * 2 and count < totalCount then
-      (table.insert)(small, v)
+  for i, v in ipairs(smallItemData) do
+    if startIdx <= i + len_big * 2 and totalCount > count then
+      table.insert(small, v)
       count = count + 1
     end
   end
   return big, small
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37ExchangeCell._SetList = function(self, bigItemData, smallItemData)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN37ExchangeCell:_SetList(bigItemData, smallItemData)
   local className = "UIN37ExchangeItem"
-  local bigItems = (UIWidgetHelper.SpawnObjects)(self, "_bigItems", className, #bigItemData)
-  local smallItems = (UIWidgetHelper.SpawnObjects)(self, "_smallItems", className, #smallItemData)
+  local bigItems = UIWidgetHelper.SpawnObjects(self, "_bigItems", className, #bigItemData)
+  local smallItems = UIWidgetHelper.SpawnObjects(self, "_smallItems", className, #smallItemData)
   local data = {}
-  ;
-  (table.appendArray)(data, bigItemData)
-  ;
-  (table.appendArray)(data, smallItemData)
+  table.appendArray(data, bigItemData)
+  table.appendArray(data, smallItemData)
   local objs = {}
-  ;
-  (table.appendArray)(objs, bigItems)
-  ;
-  (table.appendArray)(objs, smallItems)
-  for i,v in ipairs(objs) do
+  table.appendArray(objs, bigItems)
+  table.appendArray(objs, smallItems)
+  for i, v in ipairs(objs) do
     local smallIdx = i - #bigItems
-    local isShowBg = smallIdx > 0 and smallIdx % 2 == 1
+    local isShowBg = 0 < smallIdx and smallIdx % 2 == 1
     v:SetData(i, data[i], self._component, self._tipsCallback, isShowBg)
   end
   self:_PlayAnim(bigItems, smallItems)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37ExchangeCell._PlayAnim = function(self, bigItems, smallItems)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN37ExchangeCell:_PlayAnim(bigItems, smallItems)
   local wait = 110
   local index = 0
-  for _,v in ipairs(bigItems) do
+  for _, v in ipairs(bigItems) do
     index = index + 1
     v:PlayAnimationInSequence(index, "Big", wait)
   end
-  for _,v in ipairs(smallItems) do
+  for _, v in ipairs(smallItems) do
     index = index + 0.5
-    v:PlayAnimationInSequence((math.ceil)(index), "Small", wait)
+    v:PlayAnimationInSequence(math.ceil(index), "Small", wait)
   end
 end
-
-

@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/stage/ui_season_maze_room_stage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoomStage", UIController)
 UISeasonMazeRoomStage = UISeasonMazeRoomStage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoomStage.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UISeasonMazeRoomStage:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomStage._GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeRoomStage:_GetComponents()
   self.enemy_activity_tree = self:GetUIComponent("UISelectObjectPath", "enemy_activity_tree")
   local tipsPool = self:GetUIComponent("UISelectObjectPath", "tips")
   self._tips = tipsPool:SpawnObject("UISelectInfo")
@@ -33,318 +23,252 @@ UISeasonMazeRoomStage._GetComponents = function(self)
   self:AttachEvent(GameEventType.ShowItemTips, self.ShowTips)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomStage.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeRoomStage:OnShow(uiParams)
   self:_GetComponents()
-  self.seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self.seasonMazeObj = (self.seasonMazeModule):CurSeasonObj()
-  self.component = (self.seasonMazeObj):GetMazeComponent()
-  self.cmptInfo = (self.seasonMazeObj):GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-  self.cmptId = ((self.seasonMazeObj):GetMazeComponent()):GetComponentCfgId()
+  self.seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self.seasonMazeObj = self.seasonMazeModule:CurSeasonObj()
+  self.component = self.seasonMazeObj:GetMazeComponent()
+  self.cmptInfo = self.seasonMazeObj:GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+  self.cmptId = self.seasonMazeObj:GetMazeComponent():GetComponentCfgId()
   self.nodeID = 0
   if uiParams then
     self.nodeID = uiParams[1]
-    self.roomInfo = ((self.cmptInfo).rooms)[self.nodeID]
+    self.roomInfo = self.cmptInfo.rooms[self.nodeID]
   end
-  self.isBoss = (self.cmptInfo).cur_state == SeasonMazeActionState.SMAS_BossBattle
-  ;
-  (self.normalRoot):SetActive(not self.isBoss)
-  ;
-  (self.bossRoot):SetActive(self.isBoss)
-  ;
-  (self.autoFightBtn):SetActive(not self.isBoss)
-  local hardLevel = (self.cmptInfo).hard
-  local bossInfos = (self.cmptInfo).boss_info
+  self.isBoss = self.cmptInfo.cur_state == SeasonMazeActionState.SMAS_BossBattle
+  self.normalRoot:SetActive(not self.isBoss)
+  self.bossRoot:SetActive(self.isBoss)
+  self.autoFightBtn:SetActive(not self.isBoss)
+  local hardLevel = self.cmptInfo.hard
+  local bossInfos = self.cmptInfo.boss_info
   local bossIndex = 1
-  for i = 0, (table.count)(bossInfos) - 1 do
+  for i = 0, table.count(bossInfos) - 1 do
     local info = bossInfos[i]
-    if info.do_cnt == -1 then
-      do
-        bossIndex = bossIndex + 1
-        -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if info.do_cnt ~= -1 then
+      break
     end
+    bossIndex = bossIndex + 1
   end
   self.seasonMazeCfg = self:GetSeasonMazeCfg(hardLevel)
   self.curBoosInfo = bossInfos[bossIndex - 1]
-  self._bossFailed = (self.curBoosInfo).do_cnt > 0
+  self._bossFailed = 0 < self.curBoosInfo.do_cnt
   if self.isBoss and self._bossFailed then
-    (self._fightAgainCost):SetActive(true)
-    local need = ((Cfg.cfg_component_season_maze_global)[self.cmptId]).BossMS
-    local have = ((self.component):GetAttrValue(SeasonMazeAttrType.SMAT_Ms))
-    local text = nil
-    if have <= need then
+    self._fightAgainCost:SetActive(true)
+    local need = Cfg.cfg_component_season_maze_global[self.cmptId].BossMS
+    local have = self.component:GetAttrValue(SeasonMazeAttrType.SMAT_Ms)
+    local text
+    if need >= have then
       text = "<color=#ff0000>" .. need .. "</color>/" .. have
       self._msEnough = false
     else
       text = need .. "/" .. have
       self._msEnough = true
     end
-    ;
-    (self._fightAgainText):SetText(text)
+    self._fightAgainText:SetText(text)
   else
-    (self._fightAgainCost):SetActive(false)
+    self._fightAgainCost:SetActive(false)
   end
   local titleStr = "str_season_maze_room_name_battle"
   local descStr = "str_season_maze_room_name_battle_desc"
   if self.isBoss then
-    if bossIndex == (table.count)(bossInfos) then
+    if bossIndex == table.count(bossInfos) then
       titleStr = "str_season_maze_room_name_ultboss"
       descStr = "str_season_maze_room_name_ultboss_desc"
     else
       titleStr = "str_season_maze_room_name_boss"
       descStr = "str_season_maze_room_name_boss_desc"
     end
-    ;
-    (self._bossTilte):SetText((StringTable.Get)(titleStr))
+    self._bossTilte:SetText(StringTable.Get(titleStr))
   else
-    (self._normalTitle):SetText((StringTable.Get)(titleStr))
+    self._normalTitle:SetText(StringTable.Get(titleStr))
   end
-  ;
-  (self._desc):SetText((StringTable.Get)(descStr))
+  self._desc:SetText(StringTable.Get(descStr))
   self:InitRewards(bossIndex)
   self:InitMissionInfo()
   self:ShowLeaveBtn()
   if self.isBoss then
     self:Lock("UISeasonMazeRoomStage_EnterAni")
     self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, self
-    YIELD(TT, 500)
-    self:UnLock("UISeasonMazeRoomStage_EnterAni")
-    self:_CheckGuide()
+      YIELD(TT, 500)
+      self:UnLock("UISeasonMazeRoomStage_EnterAni")
+      self:_CheckGuide()
+    end)
   end
-)
-  end
-  -- DECOMPILER ERROR: 12 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomStage._CheckGuide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UISeasonMazeRoomStage)
+function UISeasonMazeRoomStage:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UISeasonMazeRoomStage)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomStage.ShowLeaveBtn = function(self)
-  -- function num : 0_4
+function UISeasonMazeRoomStage:ShowLeaveBtn()
   local leave = self:GetUIComponent("UISelectObjectPath", "UISMazeRoomLeaveBtn")
   local btn = leave:SpawnObject("UISMazeRoomLeaveBtn")
   btn:SetData(function()
-    -- function num : 0_4_0 , upvalues : self
     self:OnlyHideUI()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomStage.OnlyHideUI = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((self.seasonMazeModule):UIModule()):SetTempRoom(self:GetName())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTempCloseRoom, true)
+function UISeasonMazeRoomStage:OnlyHideUI()
+  self.seasonMazeModule:UIModule():SetTempRoom(self:GetName())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTempCloseRoom, true)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomStage.GetSeasonMazeCfg = function(self, hardLevel)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_season_maze)({ComponentID = self.cmptId})
-  if cfgs and (table.count)(cfgs) > 0 then
-    for _,v in pairs(cfgs) do
+function UISeasonMazeRoomStage:GetSeasonMazeCfg(hardLevel)
+  local cfgs = Cfg.cfg_component_season_maze({
+    ComponentID = self.cmptId
+  })
+  if cfgs and table.count(cfgs) > 0 then
+    for _, v in pairs(cfgs) do
       if v.Hard == hardLevel then
         return v
       end
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomStage.InitMsShow = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local fightSweep = (self.component):GetAttrValue(SeasonMazeAttrType.SMAT_Fight_Sweep)
+function UISeasonMazeRoomStage:InitMsShow()
+  local fightSweep = self.component:GetAttrValue(SeasonMazeAttrType.SMAT_Fight_Sweep)
   if fightSweep ~= 1 then
-    (self.autoFightBtn):SetActive(false)
-    return 
+    self.autoFightBtn:SetActive(false)
+    return
   end
-  self.curMs = (self.component):GetAttrValue(SeasonMazeAttrType.SMAT_Ms)
-  ;
-  (self.autoMS):SetText(self.curMs .. "/" .. (self.missionCfg).AutoMS)
+  self.curMs = self.component:GetAttrValue(SeasonMazeAttrType.SMAT_Ms)
+  self.autoMS:SetText(self.curMs .. "/" .. self.missionCfg.AutoMS)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomStage.InitRewards = function(self, bossIndex)
-  -- function num : 0_8 , upvalues : _ENV
-  local rewardID = nil
-  if self.isBoss and (self.seasonMazeCfg).BossReward then
-    rewardID = ((self.seasonMazeCfg).BossReward)[bossIndex]
-  end
-  if (self.seasonMazeCfg).CommonReward then
-    rewardID = ((self.seasonMazeCfg).CommonReward)[bossIndex]
+function UISeasonMazeRoomStage:InitRewards(bossIndex)
+  local rewardID
+  if self.isBoss then
+    if self.seasonMazeCfg.BossReward then
+      rewardID = self.seasonMazeCfg.BossReward[bossIndex]
+    end
+  elseif self.seasonMazeCfg.CommonReward then
+    rewardID = self.seasonMazeCfg.CommonReward[bossIndex]
   end
   if not rewardID or rewardID == 0 then
-    return 
+    return
   end
-  local rewardCfg = (Cfg.cfg_component_season_maze_mission_reward)[rewardID]
+  local rewardCfg = Cfg.cfg_component_season_maze_mission_reward[rewardID]
   local rewardList = {}
-  for _,id in ipairs(rewardCfg.EffectIDs) do
-    (SeasonMazeTool:GetInstance()):GetEffectObject(id, rewardList)
+  for _, id in ipairs(rewardCfg.EffectIDs) do
+    SeasonMazeTool:GetInstance():GetEffectObject(id, rewardList)
   end
-  ;
-  (self.rewardPool):SpawnObjects("UISeasonMazeItem", #rewardList)
-  local spwanList = (self.rewardPool):GetAllSpawnList()
+  self.rewardPool:SpawnObjects("UISeasonMazeItem", #rewardList)
+  local spwanList = self.rewardPool:GetAllSpawnList()
   for i = 1, #rewardList do
     local effect = rewardList[i]
-    ;
-    (spwanList[i]):SetData(effect, self._tips, 0.8)
+    spwanList[i]:SetData(effect, self._tips, 0.8)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomStage.InitMissionInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local enemyMsg = (self.enemy_activity_tree):SpawnObject("UIEnemyMsg")
+function UISeasonMazeRoomStage:InitMissionInfo()
+  local enemyMsg = self.enemy_activity_tree:SpawnObject("UIEnemyMsg")
   self.missionId = nil
   self.wordIdList = nil
-  local waveRandoms = nil
+  local waveRandoms
   if self.isBoss then
-    self.missionId = (self.curBoosInfo).cfg_id
-    self.wordIdList = (self.curBoosInfo).word_ids
-    waveRandoms = (table.cloneconf)((self.curBoosInfo).wave_randoms)
+    self.missionId = self.curBoosInfo.cfg_id
+    self.wordIdList = self.curBoosInfo.word_ids
+    waveRandoms = table.cloneconf(self.curBoosInfo.wave_randoms)
   else
-    self.missionId = (self.roomInfo).cfg_id
-    self.wordIdList = (self.roomInfo).word_ids
-    waveRandoms = (table.cloneconf)((self.roomInfo).wave_randoms)
+    self.missionId = self.roomInfo.cfg_id
+    self.wordIdList = self.roomInfo.word_ids
+    waveRandoms = table.cloneconf(self.roomInfo.wave_randoms)
   end
-  local cfgs = (Cfg.cfg_season_maze_mission)({SeasonMazeMissionId = self.missionId})
-  if cfgs and #cfgs > 0 then
+  local cfgs = Cfg.cfg_season_maze_mission({
+    SeasonMazeMissionId = self.missionId
+  })
+  if cfgs and 0 < #cfgs then
     self.missionCfg = cfgs[1]
-    local level = (self.missionCfg).FightLevel
+    local level = self.missionCfg.FightLevel
     if self.isBoss then
       enemyMsg:SetData(level)
     else
-      local enemyIds = ((GameGlobal.GetModule)(SeasonMazeModule)):GetLevelMonsterList(level, waveRandoms)
+      local enemyIds = GameGlobal.GetModule(SeasonMazeModule):GetLevelMonsterList(level, waveRandoms)
       if next(enemyIds) then
         enemyMsg:SetData(nil, enemyIds)
       end
     end
-    do
-      do
-        self:InitMsShow()
-        ;
-        (Log.exception)("Cfg.cfg_season_maze_mission got a nil id -->", self.missionId)
-        local str = ""
-        for i = 1, #self.wordIdList do
-          local v = (self.wordIdList)[i]
-          local cfg_word = (Cfg.cfg_word_buff)[v]
-          if cfg_word and not cfg_word.HideUIType then
-            local name = (StringTable.Get)((cfg_word.Word)[1])
-            local desc = (StringTable.Get)(cfg_word.Desc)
-            str = str .. "【" .. name .. "】" .. "\n" .. desc
-            if i ~= #self.wordIdList then
-              str = str .. "\n"
-            end
-          end
-        end
-        ;
-        (self._specialDesc):SetText(str)
+    self:InitMsShow()
+  else
+    Log.exception("Cfg.cfg_season_maze_mission got a nil id -->", self.missionId)
+  end
+  local str = ""
+  for i = 1, #self.wordIdList do
+    local v = self.wordIdList[i]
+    local cfg_word = Cfg.cfg_word_buff[v]
+    if cfg_word and not cfg_word.HideUIType then
+      local name = StringTable.Get(cfg_word.Word[1])
+      local desc = StringTable.Get(cfg_word.Desc)
+      str = str .. "【" .. name .. "】" .. "\n" .. desc
+      if i ~= #self.wordIdList then
+        str = str .. "\n"
       end
     end
   end
+  self._specialDesc:SetText(str)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomStage.AutoFightBtnOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if self.curMs < (self.missionCfg).AutoMS then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_maze_ms_insufficient"))
-    return 
+function UISeasonMazeRoomStage:AutoFightBtnOnClick()
+  if self.curMs < self.missionCfg.AutoMS then
+    ToastManager.ShowToast(StringTable.Get("str_season_maze_ms_insufficient"))
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnReqAutoFight, self)
+  GameGlobal.TaskManager():StartTask(self.OnReqAutoFight, self)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomStage.OnReqAutoFight = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonMazeRoomStage:OnReqAutoFight(TT)
   local res = AsyncRequestRes:New()
   self:Lock("UISeasonMazeRoomStage:OnReqAutoFight")
-  self._response = (self.component):HandleSeasonMazeBattle(TT, res)
+  self._response = self.component:HandleSeasonMazeBattle(TT, res)
   self:UnLock("UISeasonMazeRoomStage:OnReqAutoFight")
   if res and res:GetSucc() then
     self:CloseDialog()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUISeasonMazeAttChanged, SeasonMazeAttrType.SMAT_Ms)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonMazeRoomOperationFinish, (self._response).reward)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUISeasonMazeAttChanged, SeasonMazeAttrType.SMAT_Ms)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonMazeRoomOperationFinish, self._response.reward)
   else
     local result = res:GetResult()
-    ;
-    (Log.error)("###[UISeasonMazeRoomStage] HandleSeasonMazeBattle fail ! result : ", result)
-    if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-      return 
+    Log.error("###[UISeasonMazeRoomStage] HandleSeasonMazeBattle fail ! result : ", result)
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomStage.BtnFightOnClick = function(self)
-  -- function num : 0_12
+function UISeasonMazeRoomStage:BtnFightOnClick()
   self:_DoFight()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomStage._DoFight = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonMazeRoomStage:_DoFight()
   if self.isBoss and self._bossFailed and not self._msEnough then
-    local title = (StringTable.Get)("str_season_maze_boss_attack_tip_1")
-    ;
-    (UISeasonMazeModule.PopMsgBox)("", title, SeasonMazeMsgBoxType.Ok, function()
-    -- function num : 0_13_0 , upvalues : self
-    self:ShowDialog("UISeasonMazeCompleteResult")
-  end
-, nil, function()
-    -- function num : 0_13_1
-  end
-, nil)
-    return 
+    local title = StringTable.Get("str_season_maze_boss_attack_tip_1")
+    UISeasonMazeModule.PopMsgBox("", title, SeasonMazeMsgBoxType.Ok, function()
+      self:ShowDialog("UISeasonMazeCompleteResult")
+    end, nil, function()
+    end, nil)
+    return
   else
-    do
-      self:_Fight()
-    end
+    self:_Fight()
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomStage._Fight = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIStageClick", {"btnFightOnClick"}, true)
+function UISeasonMazeRoomStage:_Fight()
+  GameGlobal.UAReportForceGuideEvent("UIStageClick", {
+    "btnFightOnClick"
+  }, true)
   local missionModule = self:GetModule(MissionModule)
   local ctx = missionModule:TeamCtx()
-  ctx:InitSeasonMazeTeam((self.cmptInfo).m_formation_list)
-  local cpt = (((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()):GetMazeComponent()
+  ctx:InitSeasonMazeTeam(self.cmptInfo.m_formation_list)
+  local cpt = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj():GetMazeComponent()
   local params = cpt:GetCampaignMissionParamKeyMap()
-  ctx:Init(TeamOpenerType.SeasonMaze, {self.nodeID, self.missionId, ECampaignMissionComponentId.ECampaignMissionComponentId_SeasonMaze, params, false})
+  ctx:Init(TeamOpenerType.SeasonMaze, {
+    self.nodeID,
+    self.missionId,
+    ECampaignMissionComponentId.ECampaignMissionComponentId_SeasonMaze,
+    params,
+    false
+  })
   ctx:ShowDialogUITeams()
 end
-
-

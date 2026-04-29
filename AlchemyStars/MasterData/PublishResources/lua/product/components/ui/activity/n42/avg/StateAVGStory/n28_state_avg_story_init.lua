@@ -1,47 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/StateAVGStory/n28_state_avg_story_init.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N28StateAVGStoryInit", N28StateAVGStoryBase)
 N28StateAVGStoryInit = N28StateAVGStoryInit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N28StateAVGStoryInit.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function N28StateAVGStoryInit:OnEnter(TT, ...)
   self.key = "N28StateAVGStoryInitOnEnter"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(self.key)
+  GameGlobal.UIStateManager():Lock(self.key)
   self:Init()
   self:InitStoryManager()
-  ;
-  (self.data):InitNodes()
+  self.data:InitNodes()
   self:ClearPassSectionIds()
   self:InitEvidenceBookShowStatus()
   self:ClearShowEvienceCount()
   self:CopyEvidenceDataInCache()
-  ;
-  (self.ui):ClearSelectedOptionIds()
+  self.ui:ClearSelectedOptionIds()
   local nodeId = self:NodeId()
-  local node = (self.data):GetNodeById(nodeId)
+  local node = self.data:GetNodeById(nodeId)
   self:NextNodeId(node.defaultNextId)
   self:HandleSetCurrentLocation(TT, node.id, function()
-    -- function num : 0_0_0 , upvalues : self, _ENV
-    (self.fsm):ChangeState(N28StateAVGStory.Play)
-  end
-, function()
-    -- function num : 0_0_1 , upvalues : _ENV, self
-    ((GameGlobal.UIStateManager)()):UnLock(self.key)
-  end
-)
+    self.fsm:ChangeState(N28StateAVGStory.Play)
+  end, function()
+    GameGlobal.UIStateManager():UnLock(self.key)
+  end)
   AVGLog("------------Story start------------", nodeId, node.storyId)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryInit.OnExit = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):UnLock(self.key)
+function N28StateAVGStoryInit:OnExit(TT)
+  GameGlobal.UIStateManager():UnLock(self.key)
 end
-
-

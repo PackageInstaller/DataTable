@@ -1,63 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_promotion_pool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardPromotionPool", UICustomWidget)
 UIDrawCardPromotionPool = UIDrawCardPromotionPool
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardPromotionPool.OnShow = function(self)
-  -- function num : 0_0
+function UIDrawCardPromotionPool:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPromotionPool.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDrawCardPromotionPool:OnHide()
   if self.timer then
-    ((GameGlobal.Timer)()):CancelEvent(self.timer)
+    GameGlobal.Timer():CancelEvent(self.timer)
     self.timer = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPromotionPool.SetData = function(self, data)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDrawCardPromotionPool:SetData(data)
   self.poolData = data
-  if (self.poolData).close_type ~= PrizePoolType.PROMOTION_POOL then
-    (Log.fatal)("[DrawCard] pool type is not promotion: ", (self.poolData).close_type)
-    return 
+  if self.poolData.close_type ~= PrizePoolType.PROMOTION_POOL then
+    Log.fatal("[DrawCard] pool type is not promotion: ", self.poolData.close_type)
+    return
   end
   local timeModule = self:GetModule(SvrTimeModule)
-  local now = (math.floor)(timeModule:GetServerTime())
-  local deltaTime = (self.poolData).extend_data * 1000 - now
-  if deltaTime > 0 and deltaTime < 86400000 then
-    self.timer = ((GameGlobal.Timer)()):AddEvent(deltaTime, function()
-    -- function num : 0_2_0 , upvalues : self
-    self.timer = nil
-    self:StartTask(self.UpdatePoolData, self)
-  end
-)
+  local now = math.floor(timeModule:GetServerTime())
+  local deltaTime = self.poolData.extend_data * 1000 - now
+  if 0 < deltaTime and deltaTime < 86400000 then
+    self.timer = GameGlobal.Timer():AddEvent(deltaTime, function()
+      self.timer = nil
+      self:StartTask(self.UpdatePoolData, self)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardPromotionPool.UpdatePoolData = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(GambleModule)
+function UIDrawCardPromotionPool:UpdatePoolData(TT)
+  local module = GameGlobal.GetModule(GambleModule)
   local ack = module:ApplyAllPoolInfo(TT)
   if ack:GetSucc() then
-    (Log.notice)("[DrawCard] promotion time up, refresh pools")
+    Log.notice("[DrawCard] promotion time up, refresh pools")
     self:SwitchState(UIStateType.UIDrawCard)
   else
-    ;
-    (Log.notice)("[DrawCard] promotion time up, refresh pools failed")
-    ;
-    (ToastManager.ShowToast)(module:GetReasonByErrorCode(ack:GetResult()))
+    Log.notice("[DrawCard] promotion time up, refresh pools failed")
+    ToastManager.ShowToast(module:GetReasonByErrorCode(ack:GetResult()))
   end
 end
-
-

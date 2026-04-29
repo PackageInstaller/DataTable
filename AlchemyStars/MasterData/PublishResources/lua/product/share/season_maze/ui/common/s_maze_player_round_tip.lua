@@ -1,67 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/common/s_maze_player_round_tip.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoundTip", UICustomWidget)
 UISeasonMazeRoundTip = UISeasonMazeRoundTip
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoundTip.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeRoundTip:OnShow()
   self._root = self:GetGameObject("Root")
   self._transform = self:GetUIComponent("RectTransform", "Root")
   self._text = self:GetUIComponent("UILocalizationText", "count")
-  self._rect = (self._transform).parent
+  self._rect = self._transform.parent
   self._offset = Vector2(0, 20)
-  self._uiCam = ((GameGlobal.UIStateManager)()):GetControllerCamera((self.uiOwner):GetName())
+  self._uiCam = GameGlobal.UIStateManager():GetControllerCamera(self.uiOwner:GetName())
   self:DoHide()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoundTip.OnHide = function(self)
-  -- function num : 0_1
+function UISeasonMazeRoundTip:OnHide()
   self:DoHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoundTip.UpdatePos = function(self, playerPos)
-  -- function num : 0_2 , upvalues : _ENV
-  local point = (self._mainCam):WorldToScreenPoint(playerPos)
-  local res, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(self._rect, point, self._uiCam, nil)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._transform).anchoredPosition = pos + self._offset
+function UISeasonMazeRoundTip:UpdatePos(playerPos)
+  local point = self._mainCam:WorldToScreenPoint(playerPos)
+  local res, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self._rect, point, self._uiCam, nil)
+  self._transform.anchoredPosition = pos + self._offset
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoundTip.ChangeRound = function(self, round)
-  -- function num : 0_3
-  (self._text):SetText(round)
+function UISeasonMazeRoundTip:ChangeRound(round)
+  self._text:SetText(round)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoundTip.DoShow = function(self, mainCam, playerPos, count)
-  -- function num : 0_4
+function UISeasonMazeRoundTip:DoShow(mainCam, playerPos, count)
   self._mainCam = mainCam
   self:UpdatePos(playerPos)
   self:ChangeRound(count)
-  ;
-  (self._root):SetActive(true)
+  self._root:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoundTip.DoHide = function(self)
-  -- function num : 0_5
+function UISeasonMazeRoundTip:DoHide()
   self._mainCam = nil
-  ;
-  (self._root):SetActive(false)
+  self._root:SetActive(false)
 end
-
-

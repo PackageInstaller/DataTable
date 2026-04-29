@@ -1,206 +1,81 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/skill_view_condition_helper_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillViewConditionHelper", Object)
 SkillViewConditionHelper = SkillViewConditionHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillViewConditionHelper.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillViewConditionHelper:Constructor(world)
   self._world = world
   self._conditionDic = {}
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckDamageIndexValid = self.CheckDamageIndexValid
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckDamageInfoIndexValid = self.CheckDamageInfoIndexValid
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckDamageIndex2Valid = self.CheckDamageIndex2Valid
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckBuffIndexValid = self.CheckBuffIndexValid
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckIsLastDamage = self.CheckIsLastDamage
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckPickUpIndexValid = self.CheckPickUpIndexValid
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckCurrentScopeGridRangeIndexValid = self.CheckCurrentScopeGridRangeIndexValid
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckAbsortPieceCountLessThan = self.CheckAbsortPieceCountLessThan
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckAbsortPieceCountMoreThan = self.CheckAbsortPieceCountMoreThan
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckTrue = self.CheckTrue
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckBuffRefreshValid = self._CheckBuffRefreshValid
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckSummonThingValid = self._CheckSummonThingValid
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckTargetCountInScope = self._CheckTargetCountInScope
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckEffectResultIndex = self._CheckEffectResultIndex
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckEffectMultiResultIndex = self._CheckEffectMultiResultIndex
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckContainCurrentScopeGrid = self._CheckContainCurrentScopeGrid
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).IsAddBloodValueGreaterThan = self._IsAddBloodValueGreaterThan
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckMiyaPhase2 = self.CheckMiyaPhase2
-  -- DECOMPILER ERROR at PC59: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckDamageIndexLast = self.CheckDamageIndexLast
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckTargetIsCanMove = self._CheckTargetIsCanMove
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckDamageSkillResultTargetCount = self.CheckDamageSkillResultTargetCount
-  -- DECOMPILER ERROR at PC68: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckCasterHasBuff = self.CheckCasterHasBuff
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckDeadTarget = self.CheckDeadTarget
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckHasTeleport = self._CheckHasTeleport
-  -- DECOMPILER ERROR at PC77: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckOnAbyss = self._CheckOnAbyss
-  -- DECOMPILER ERROR at PC80: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckCurScopeRangeOnCrossLine = self._CheckCurScopeRangeOnCrossLine
-  -- DECOMPILER ERROR at PC83: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckSummonOnFixPosValid = self._CheckSummonOnFixPosValid
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckIsFirstP5PetInTeam = self._CheckIsFirstP5PetInTeam
-  -- DECOMPILER ERROR at PC89: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckIsAllWeak = self._CheckIsAllWeak
-  -- DECOMPILER ERROR at PC92: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckTrapOpenStateChangeByResult = self._CheckTrapOpenStateChangeByResult
-  -- DECOMPILER ERROR at PC95: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckTrapSummonMonsterByResult = self._CheckTrapSummonMonster
-  -- DECOMPILER ERROR at PC98: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckTrapOpenStateChange = self._CheckTrapOpenStateChange
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckCasterIsDead = self._CheckCasterIsDead
-  -- DECOMPILER ERROR at PC104: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckHasRotate = self._CheckHasRotate
-  -- DECOMPILER ERROR at PC107: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckCurrentRoundCount = self._CheckCurrentRoundCount
-  -- DECOMPILER ERROR at PC110: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._conditionDic).CheckTargetHPAndSceneState = self._CheckTargetHPAndSceneState
+  self._conditionDic.CheckDamageIndexValid = self.CheckDamageIndexValid
+  self._conditionDic.CheckDamageInfoIndexValid = self.CheckDamageInfoIndexValid
+  self._conditionDic.CheckDamageIndex2Valid = self.CheckDamageIndex2Valid
+  self._conditionDic.CheckBuffIndexValid = self.CheckBuffIndexValid
+  self._conditionDic.CheckIsLastDamage = self.CheckIsLastDamage
+  self._conditionDic.CheckPickUpIndexValid = self.CheckPickUpIndexValid
+  self._conditionDic.CheckCurrentScopeGridRangeIndexValid = self.CheckCurrentScopeGridRangeIndexValid
+  self._conditionDic.CheckAbsortPieceCountLessThan = self.CheckAbsortPieceCountLessThan
+  self._conditionDic.CheckAbsortPieceCountMoreThan = self.CheckAbsortPieceCountMoreThan
+  self._conditionDic.CheckTrue = self.CheckTrue
+  self._conditionDic.CheckBuffRefreshValid = self._CheckBuffRefreshValid
+  self._conditionDic.CheckSummonThingValid = self._CheckSummonThingValid
+  self._conditionDic.CheckTargetCountInScope = self._CheckTargetCountInScope
+  self._conditionDic.CheckEffectResultIndex = self._CheckEffectResultIndex
+  self._conditionDic.CheckEffectMultiResultIndex = self._CheckEffectMultiResultIndex
+  self._conditionDic.CheckContainCurrentScopeGrid = self._CheckContainCurrentScopeGrid
+  self._conditionDic.IsAddBloodValueGreaterThan = self._IsAddBloodValueGreaterThan
+  self._conditionDic.CheckMiyaPhase2 = self.CheckMiyaPhase2
+  self._conditionDic.CheckDamageIndexLast = self.CheckDamageIndexLast
+  self._conditionDic.CheckTargetIsCanMove = self._CheckTargetIsCanMove
+  self._conditionDic.CheckDamageSkillResultTargetCount = self.CheckDamageSkillResultTargetCount
+  self._conditionDic.CheckCasterHasBuff = self.CheckCasterHasBuff
+  self._conditionDic.CheckDeadTarget = self.CheckDeadTarget
+  self._conditionDic.CheckHasTeleport = self._CheckHasTeleport
+  self._conditionDic.CheckOnAbyss = self._CheckOnAbyss
+  self._conditionDic.CheckCurScopeRangeOnCrossLine = self._CheckCurScopeRangeOnCrossLine
+  self._conditionDic.CheckSummonOnFixPosValid = self._CheckSummonOnFixPosValid
+  self._conditionDic.CheckIsFirstP5PetInTeam = self._CheckIsFirstP5PetInTeam
+  self._conditionDic.CheckIsAllWeak = self._CheckIsAllWeak
+  self._conditionDic.CheckTrapOpenStateChangeByResult = self._CheckTrapOpenStateChangeByResult
+  self._conditionDic.CheckTrapSummonMonsterByResult = self._CheckTrapSummonMonster
+  self._conditionDic.CheckTrapOpenStateChange = self._CheckTrapOpenStateChange
+  self._conditionDic.CheckCasterIsDead = self._CheckCasterIsDead
+  self._conditionDic.CheckHasRotate = self._CheckHasRotate
+  self._conditionDic.CheckCurrentRoundCount = self._CheckCurrentRoundCount
+  self._conditionDic.CheckTargetHPAndSceneState = self._CheckTargetHPAndSceneState
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckCondition = function(self, conditionName, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local conditionFunc = (self._conditionDic)[conditionName]
+function SkillViewConditionHelper:CheckCondition(conditionName, casterEntity, phaseContext, conditionParam)
+  local conditionFunc = self._conditionDic[conditionName]
   if conditionFunc then
     return conditionFunc(self, casterEntity, phaseContext, conditionParam)
   else
-    ;
-    (Log.fatal)("Can not find condition function:", conditionName)
+    Log.fatal("Can not find condition function:", conditionName)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckDamageIndexValid = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_2 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function SkillViewConditionHelper:CheckDamageIndexValid(casterEntity, phaseContext, conditionParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageStageIndex = phaseContext:GetCurDamageResultStageIndex()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, damageStageIndex)
   if not damageResultArray or #damageResultArray == 0 then
     return false
   end
-  if (damageResultArray[1])._targetID == -1 then
+  if damageResultArray[1]._targetID == -1 then
     return false
   end
   local damageIndex = phaseContext:GetCurDamageResultIndex()
-  if damageIndex > 0 and damageIndex <= #damageResultArray then
+  if 0 < damageIndex and damageIndex <= #damageResultArray then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckDamageInfoIndexValid = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_3 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function SkillViewConditionHelper:CheckDamageInfoIndexValid(casterEntity, phaseContext, conditionParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageStageIndex = phaseContext:GetCurDamageResultStageIndex()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, damageStageIndex)
   if not damageResultArray then
     return false
   end
-  if (damageResultArray[1])._targetID == -1 then
+  if damageResultArray[1]._targetID == -1 then
     return false
   end
   local damageIndex = phaseContext:GetCurDamageResultIndex()
@@ -216,18 +91,15 @@ SkillViewConditionHelper.CheckDamageInfoIndexValid = function(self, casterEntity
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckDamageIndex2Valid = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_4 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function SkillViewConditionHelper:CheckDamageIndex2Valid(casterEntity, phaseContext, conditionParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageStageIndex = phaseContext:GetCurDamageResultStageIndex()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, damageStageIndex)
   if not damageResultArray then
     return false
   end
   local damageIndex = phaseContext:GetCurDamageIndex()
-  for i,damageResult in ipairs(damageResultArray) do
+  for i, damageResult in ipairs(damageResultArray) do
     if damageResult:GetDamageIndex() == damageIndex then
       local damageInfoIndex = phaseContext:GetCurDamageInfoIndex()
       local damageInfo = damageResult:GetDamageInfo(damageInfoIndex)
@@ -239,39 +111,30 @@ SkillViewConditionHelper.CheckDamageIndex2Valid = function(self, casterEntity, p
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckBuffIndexValid = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_5 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function SkillViewConditionHelper:CheckBuffIndexValid(casterEntity, phaseContext, conditionParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddBuff)
   if not damageResultArray then
     return false
   end
   local damageIndex = phaseContext:GetCurBuffResultIndex()
-  if damageIndex > 0 and damageIndex <= #damageResultArray then
+  if 0 < damageIndex and damageIndex <= #damageResultArray then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckIsLastDamage = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_6 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function SkillViewConditionHelper:CheckIsLastDamage(casterEntity, phaseContext, conditionParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   local damageIndex = phaseContext:GetCurDamageResultIndex()
-  if damageIndex > 0 and damageIndex < #damageResultArray then
+  if 0 < damageIndex and damageIndex < #damageResultArray then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckCurrentScopeGridRangeIndexValid = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_7
+function SkillViewConditionHelper:CheckCurrentScopeGridRangeIndexValid(casterEntity, phaseContext, conditionParam)
   local scopeGridRange = phaseContext:GetScopeGridRange()
   if not scopeGridRange then
     return false
@@ -287,91 +150,72 @@ SkillViewConditionHelper.CheckCurrentScopeGridRangeIndexValid = function(self, c
   return true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckAbsortPieceCountLessThan = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillViewConditionHelper:CheckAbsortPieceCountLessThan(casterEntity, phaseContext, conditionParam)
   local count = 0
   if conditionParam then
     count = tonumber(conditionParam)
   end
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local absorbResult = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AbsorbPiece)
   local absorbCount = 0
   if absorbResult then
-    for _,v in pairs(absorbResult) do
+    for _, v in pairs(absorbResult) do
       local list = v:GetAbsorbPieceList()
       if list then
-        for _,p in pairs(list) do
+        for _, p in pairs(list) do
           absorbCount = absorbCount + 1
         end
       end
     end
   end
-  do
-    if absorbCount < count then
-      return true
-    end
-    return false
-  end
-end
-
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckAbsortPieceCountMoreThan = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_9 , upvalues : _ENV
-  local count = 0
-  if conditionParam then
-    count = tonumber(conditionParam)
-  end
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-  local absorbResult = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AbsorbPiece)
-  local absorbCount = 0
-  if absorbResult then
-    for _,v in pairs(absorbResult) do
-      local list = v:GetAbsorbPieceList()
-      if list then
-        for _,p in pairs(list) do
-          absorbCount = absorbCount + 1
-        end
-      end
-    end
-  end
-  do
-    if count < absorbCount then
-      return true
-    end
-    return false
-  end
-end
-
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckTrue = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_10
-  return true
-end
-
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckBuffRefreshValid = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_11 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-  local ResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ModifyBuffValue)
-  local damageIndex = phaseContext:GetCurBuffResultIndex()
-  if damageIndex > 0 and damageIndex <= #ResultArray then
+  if count > absorbCount then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
+function SkillViewConditionHelper:CheckAbsortPieceCountMoreThan(casterEntity, phaseContext, conditionParam)
+  local count = 0
+  if conditionParam then
+    count = tonumber(conditionParam)
+  end
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local absorbResult = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AbsorbPiece)
+  local absorbCount = 0
+  if absorbResult then
+    for _, v in pairs(absorbResult) do
+      local list = v:GetAbsorbPieceList()
+      if list then
+        for _, p in pairs(list) do
+          absorbCount = absorbCount + 1
+        end
+      end
+    end
+  end
+  if count < absorbCount then
+    return true
+  end
+  return false
+end
 
-SkillViewConditionHelper._CheckSummonThingValid = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_12 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function SkillViewConditionHelper:CheckTrue(casterEntity, phaseContext, conditionParam)
+  return true
+end
+
+function SkillViewConditionHelper:_CheckBuffRefreshValid(casterEntity, phaseContext, conditionParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local ResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ModifyBuffValue)
+  local damageIndex = phaseContext:GetCurBuffResultIndex()
+  if 0 < damageIndex and damageIndex <= #ResultArray then
+    return true
+  end
+  return false
+end
+
+function SkillViewConditionHelper:_CheckSummonThingValid(casterEntity, phaseContext, conditionParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   if skillEffectResultContainer == nil then
-    (Log.fatal)("_CheckSummonThingValid skillEffectResultContainer is nil")
+    Log.fatal("_CheckSummonThingValid skillEffectResultContainer is nil")
     return false
   end
   local summonEverythingResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SummonEverything)
@@ -385,41 +229,37 @@ SkillViewConditionHelper._CheckSummonThingValid = function(self, casterEntity, p
   return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckTargetCountInScope = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_13 , upvalues : _ENV
+function SkillViewConditionHelper:_CheckTargetCountInScope(casterEntity, phaseContext, conditionParam)
   local count = tonumber(conditionParam) or 0
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   if not scopeResult then
     return false
   end
   local targetIDs = scopeResult:GetTargetIDs()
-  do return count == #targetIDs end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return count == #targetIDs
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckEffectResultIndex = function(self, casterEntity, phaseContext, rawParam)
-  -- function num : 0_14 , upvalues : _ENV
+function SkillViewConditionHelper:_CheckEffectResultIndex(casterEntity, phaseContext, rawParam)
   assert(type(rawParam) == "string", "Jump: CheckEffectResultIndex需要配置参数")
-  local splitParam = (string.split)(rawParam, "|")
-  local conditionParam = {effectType = splitParam[1], isTargetRequired = splitParam[2]}
+  local splitParam = string.split(rawParam, "|")
+  local conditionParam = {
+    effectType = splitParam[1],
+    isTargetRequired = splitParam[2]
+  }
   local effectType = tonumber(conditionParam.effectType)
   assert(effectType, "Jump: CheckEffectResultIndex需要配置effectType")
   local isTargetRequired = conditionParam.isTargetRequired == "true"
   local resultEffectType = effectType
   local overrideEffectType = SkillEffectResultTypeOverride[effectType]
   if overrideEffectType then
-    (Log.notice)(self._className, "override effectType for results: ", effectType, "=>", overrideEffectType)
+    Log.notice(self._className, "override effectType for results: ", effectType, "=>", overrideEffectType)
     resultEffectType = overrideEffectType
   end
-  local routineCmpt = (casterEntity:SkillRoutine()):GetResultContainer()
+  local routineCmpt = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = routineCmpt:GetEffectResultsAsArray(resultEffectType)
   if not resultArray then
-    (Log.warn)(self._className, "No results for type", effectType, "=>", overrideEffectType)
+    Log.warn(self._className, "No results for type", effectType, "=>", overrideEffectType)
     return false
   end
   local index = phaseContext:GetCurResultIndexByType(effectType)
@@ -428,70 +268,50 @@ SkillViewConditionHelper._CheckEffectResultIndex = function(self, casterEntity, 
     return false
   end
   if isTargetRequired and result:GetTargetID() == -1 then
-    (Log.notice)(self._className, "Index ", index, "is invalid. ")
+    Log.notice(self._className, "Index ", index, "is invalid. ")
     return false
   end
-  do return true end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  return true
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckEffectMultiResultIndex = function(self, casterEntity, phaseContext, rawParam)
-  -- function num : 0_15 , upvalues : _ENV
+function SkillViewConditionHelper:_CheckEffectMultiResultIndex(casterEntity, phaseContext, rawParam)
   assert(type(rawParam) == "string", "Jump: _CheckEffectMultiResultIndex需要配置参数")
-  local splitParam = (string.split)(rawParam, "|")
-  local routineCmpt = (casterEntity:SkillRoutine()):GetResultContainer()
+  local splitParam = string.split(rawParam, "|")
+  local routineCmpt = casterEntity:SkillRoutine():GetResultContainer()
   local hasResultCount = 0
-  for _,value in ipairs(splitParam) do
+  for _, value in ipairs(splitParam) do
     local effectType = tonumber(value)
     local resultArray = routineCmpt:GetEffectResultsAsArray(effectType)
     if resultArray then
-      for _,result in ipairs(resultArray) do
-        if result then
-          if effectType == SkillEffectType.Damage and result:GetTargetID() == -1 then
-            do
-              hasResultCount = hasResultCount + 1
-              do break end
-              -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+      for _, result in ipairs(resultArray) do
+        if not result or effectType == SkillEffectType.Damage and result:GetTargetID() == -1 then
+        else
+          hasResultCount = hasResultCount + 1
+          break
         end
       end
     end
   end
-  do return hasResultCount > 0 end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  return 0 < hasResultCount
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckContainCurrentScopeGrid = function(self, casterEntity, phaseContext, rawParam)
-  -- function num : 0_16 , upvalues : _ENV
-  local arrStr = (string.split)(rawParam, "|")
+function SkillViewConditionHelper:_CheckContainCurrentScopeGrid(casterEntity, phaseContext, rawParam)
+  local arrStr = string.split(rawParam, "|")
   local posList = {}
-  for _,str in ipairs(arrStr) do
-    local arrStrPos = (string.split)(str, "_")
+  for _, str in ipairs(arrStr) do
+    local arrStrPos = string.split(str, "_")
     local v = Vector2(tonumber(arrStrPos[1]), tonumber(arrStrPos[2])) + casterEntity:GetGridPosition()
-    ;
-    (table.insert)(posList, v)
+    table.insert(posList, v)
   end
   local scopeGridRange = phaseContext:GetScopeGridRange()
   local curScopeGridRangeIndex = phaseContext:GetCurScopeGridRangeIndex()
   local gridList = scopeGridRange[curScopeGridRangeIndex]
-  for _,range in pairs(scopeGridRange) do
+  for _, range in pairs(scopeGridRange) do
     if range then
       local posList2 = range[curScopeGridRangeIndex]
       if posList2 then
-        for _,pos2 in ipairs(posList2) do
-          if (table.icontains)(posList, pos2) then
+        for _, pos2 in ipairs(posList2) do
+          if table.icontains(posList, pos2) then
             return true
           end
         end
@@ -501,231 +321,177 @@ SkillViewConditionHelper._CheckContainCurrentScopeGrid = function(self, casterEn
   return false
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._IsAddBloodValueGreaterThan = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_17 , upvalues : _ENV
+function SkillViewConditionHelper:_IsAddBloodValueGreaterThan(casterEntity, phaseContext, conditionParam)
   local valCompare = 0
   if conditionParam then
     valCompare = tonumber(conditionParam)
   end
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local addHpResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddBlood)
   if addHpResultArray then
-    for _,result in ipairs(addHpResultArray) do
+    for _, result in ipairs(addHpResultArray) do
       local addValue = result:GetAddValue()
       if valCompare < addValue then
         return true
       end
     end
   end
-  do
-    local eachTrapAddBloodResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.EachTrapAddBlood)
-    if eachTrapAddBloodResultArray then
-      for _,result in ipairs(eachTrapAddBloodResultArray) do
-        local addValue = result:GetAddValue()
-        if valCompare < addValue then
-          return true
-        end
+  local eachTrapAddBloodResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.EachTrapAddBlood)
+  if eachTrapAddBloodResultArray then
+    for _, result in ipairs(eachTrapAddBloodResultArray) do
+      local addValue = result:GetAddValue()
+      if valCompare < addValue then
+        return true
       end
     end
-    do
-      return false
-    end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckSoul = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_18
+function SkillViewConditionHelper:CheckSoul(casterEntity, phaseContext, conditionParam)
   local buffView = casterEntity:BuffView()
   local soulCount = buffView:GetBuffValue("SoulCount") or 0
-  do return soulCount > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 0 < soulCount
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckMonsterDeath = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_19 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function SkillViewConditionHelper:CheckMonsterDeath(casterEntity, phaseContext, conditionParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local results = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.RandAttack)
   local cnt = results:GetListDeadCount()
-  do return cnt > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 0 < cnt
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckMonsterAlive = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_20 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function SkillViewConditionHelper:CheckMonsterAlive(casterEntity, phaseContext, conditionParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local results = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.RandAttack)
   local cnt = results:GetListAliveCount()
-  do return cnt > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 0 < cnt
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckMiyaPhase2 = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_21
-  if self:CheckSoul(casterEntity, phaseContext, conditionParam) then
-    return self:CheckMonsterAlive(casterEntity, phaseContext, conditionParam)
-  end
+function SkillViewConditionHelper:CheckMiyaPhase2(casterEntity, phaseContext, conditionParam)
+  return self:CheckSoul(casterEntity, phaseContext, conditionParam) and self:CheckMonsterAlive(casterEntity, phaseContext, conditionParam)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckDamageIndexLast = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_22 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function SkillViewConditionHelper:CheckDamageIndexLast(casterEntity, phaseContext, conditionParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageStageIndex = phaseContext:GetCurDamageResultStageIndex()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, damageStageIndex)
   if not damageResultArray or #damageResultArray == 0 then
     return false
   end
-  if (damageResultArray[1])._targetID == -1 then
+  if damageResultArray[1]._targetID == -1 then
     return false
   end
   local damageIndex = phaseContext:GetCurDamageResultIndex()
-  if damageIndex > 0 and damageIndex == #damageResultArray - 1 then
+  if 0 < damageIndex and damageIndex == #damageResultArray - 1 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckTargetIsCanMove = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_23
+function SkillViewConditionHelper:_CheckTargetIsCanMove(casterEntity, phaseContext, conditionParam)
   local targetEntityID = phaseContext:GetCurTargetEntityID()
-  local targetEntity = (self._world):GetEntityByID(targetEntityID)
+  local targetEntity = self._world:GetEntityByID(targetEntityID)
   if not targetEntity then
     return false
   end
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   local bodyAreaCmpt = targetEntity:BodyArea()
-  do return not env:IsImmuneHitback(targetEntity) and #bodyAreaCmpt:GetArea() == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return not env:IsImmuneHitback(targetEntity) and #bodyAreaCmpt:GetArea() == 1
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckDamageSkillResultTargetCount = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_24 , upvalues : _ENV
-  local splitParam = (string.split)(conditionParam, "|")
+function SkillViewConditionHelper:CheckDamageSkillResultTargetCount(casterEntity, phaseContext, conditionParam)
+  local splitParam = string.split(conditionParam, "|")
   local cmpType = tonumber(splitParam[1])
   local count = tonumber(splitParam[2])
-  if not tonumber(splitParam[3]) then
-    local skillEffectType = SkillEffectType.Damage
-  end
+  local skillEffectType = tonumber(splitParam[3]) or SkillEffectType.Damage
   local targetEntityIDsList = {}
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageStageIndex = phaseContext:GetCurDamageResultStageIndex()
   if skillEffectType == SkillEffectType.Damage then
     local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, damageStageIndex)
     if not damageResultArray or #damageResultArray == 0 then
       return false
     end
-    for _,v in ipairs(damageResultArray) do
+    for _, v in ipairs(damageResultArray) do
       local damageResult = v
       local targetEntityID = damageResult:GetTargetID()
-      local targetEntity = (self._world):GetEntityByID(targetEntityID)
-      if targetEntity and not targetEntity:HasTrapID() and not (table.intable)(targetEntityIDsList, targetEntityID) then
-        (table.insert)(targetEntityIDsList, targetEntityID)
+      local targetEntity = self._world:GetEntityByID(targetEntityID)
+      if targetEntity and not targetEntity:HasTrapID() and not table.intable(targetEntityIDsList, targetEntityID) then
+        table.insert(targetEntityIDsList, targetEntityID)
       end
     end
-  else
-    do
-      if skillEffectType == SkillEffectType.AddBuff then
-        local buffResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddBuff, damageStageIndex)
-        if not buffResultArray or #buffResultArray == 0 then
-          return false
-        end
-        for _,v in ipairs(buffResultArray) do
-          local buffResult = v
-          local targetEntityID = buffResult:GetEntityID()
-          local targetEntity = (self._world):GetEntityByID(targetEntityID)
-          if targetEntity and not (table.intable)(targetEntityIDsList, targetEntityID) then
-            (table.insert)(targetEntityIDsList, targetEntityID)
-          end
-        end
-      end
-      do
-        local isMatch = (Algorithm.CmpByOperator)(#targetEntityIDsList, count, cmpType)
-        return isMatch
+  elseif skillEffectType == SkillEffectType.AddBuff then
+    local buffResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddBuff, damageStageIndex)
+    if not buffResultArray or #buffResultArray == 0 then
+      return false
+    end
+    for _, v in ipairs(buffResultArray) do
+      local buffResult = v
+      local targetEntityID = buffResult:GetEntityID()
+      local targetEntity = self._world:GetEntityByID(targetEntityID)
+      if targetEntity and not table.intable(targetEntityIDsList, targetEntityID) then
+        table.insert(targetEntityIDsList, targetEntityID)
       end
     end
   end
+  local isMatch = Algorithm.CmpByOperator(#targetEntityIDsList, count, cmpType)
+  return isMatch
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckCasterHasBuff = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_25 , upvalues : _ENV
-  local splitParam = (string.split)(conditionParam, "|")
+function SkillViewConditionHelper:CheckCasterHasBuff(casterEntity, phaseContext, conditionParam)
+  local splitParam = string.split(conditionParam, "|")
   local targetBuffEffectType = tonumber(splitParam[1])
   local targetBuffCount = tonumber(splitParam[2])
   local curBuffCount = 0
   local buffViewComponent = casterEntity:BuffView()
   if buffViewComponent then
     local viewIns = buffViewComponent:GetBuffViewInstanceArray()
-    for _,inst in ipairs(viewIns) do
+    for _, inst in ipairs(viewIns) do
       local buffEffectType = inst:GetBuffEffectType()
       if targetBuffEffectType == buffEffectType then
         curBuffCount = curBuffCount + 1
       end
     end
   end
-  do
-    local isMatch = targetBuffCount == curBuffCount
-    do return isMatch end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
+  local isMatch = targetBuffCount == curBuffCount
+  return isMatch
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper.CheckDeadTarget = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_26 , upvalues : _ENV
+function SkillViewConditionHelper:CheckDeadTarget(casterEntity, phaseContext, conditionParam)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageStageIndex = phaseContext:GetCurDamageResultStageIndex()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, damageStageIndex)
   if not damageResultArray or #damageResultArray == 0 then
     return false
   end
   local targetEntityList = {}
-  for _,v in ipairs(damageResultArray) do
+  for _, v in ipairs(damageResultArray) do
     local damageResult = v
     local targetEntityID = damageResult:GetTargetID()
     local targetEntity = world:GetEntityByID(targetEntityID)
-    if targetEntity and not (table.intable)(targetEntityList, targetEntity) then
-      (table.insert)(targetEntityList, targetEntity)
+    if targetEntity and not table.intable(targetEntityList, targetEntity) then
+      table.insert(targetEntityList, targetEntity)
     end
   end
   local deadMonsterIDList = {}
-  for _,entity in ipairs(targetEntityList) do
+  for _, entity in ipairs(targetEntityList) do
     local view = entity:View()
-    local renderCurHP = (entity:HP()):GetRedHP()
+    local renderCurHP = entity:HP():GetRedHP()
     if view and renderCurHP == 0 then
-      (table.insert)(deadMonsterIDList, entity:GetID())
+      table.insert(deadMonsterIDList, entity:GetID())
     end
   end
   local damageIndex = phaseContext:GetCurDamageResultIndex()
-  if damageIndex > 0 and damageIndex <= #deadMonsterIDList then
+  if 0 < damageIndex and damageIndex <= #deadMonsterIDList then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckHasTeleport = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_27 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function SkillViewConditionHelper:_CheckHasTeleport(casterEntity, phaseContext, conditionParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageStageIndex = phaseContext:GetCurDamageResultStageIndex()
   local teleportEffectResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Teleport, damageStageIndex)
   local hasTeleport = 0
@@ -744,35 +510,24 @@ SkillViewConditionHelper._CheckHasTeleport = function(self, casterEntity, phaseC
   else
     result = hasMove
   end
-  do return result end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return result
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckOnAbyss = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_28 , upvalues : _ENV
+function SkillViewConditionHelper:_CheckOnAbyss(casterEntity, phaseContext, conditionParam)
   local pos = casterEntity:GetGridPosition()
   local world = casterEntity:GetOwnerWorld()
-  local env = (world:GetPreviewEntity()):PreviewEnv()
+  local env = world:GetPreviewEntity():PreviewEnv()
   local es = env:GetEntitiesAtPos(pos, function(e)
-    -- function num : 0_28_0 , upvalues : _ENV
-    do return not e:TrapRender() or (e:TrapRender()):GetTrapType() == TrapType.TerrainAbyss end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-)
-  local onAbyss = #es > 0
+    return e:TrapRender() and e:TrapRender():GetTrapType() == TrapType.TerrainAbyss
+  end)
+  local onAbyss = 0 < #es
   if tonumber(conditionParam) == 1 then
     return onAbyss
   end
-  do return not onAbyss end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return not onAbyss
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckCurScopeRangeOnCrossLine = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_29 , upvalues : _ENV
+function SkillViewConditionHelper:_CheckCurScopeRangeOnCrossLine(casterEntity, phaseContext, conditionParam)
   local scopeGridRange = phaseContext:GetScopeGridRange()
   local curScopeGridRangeIndex = phaseContext:GetCurScopeGridRangeIndex()
   local curRange = scopeGridRange[curScopeGridRangeIndex]
@@ -788,28 +543,26 @@ SkillViewConditionHelper._CheckCurScopeRangeOnCrossLine = function(self, casterE
   end
   local xIsLine = true
   local yIsLine = true
-  local lastX = (gridList[1]).x
-  local lastY = (gridList[1]).y
-  for index,value in ipairs(gridList) do
+  local lastX = gridList[1].x
+  local lastY = gridList[1].y
+  for index, value in ipairs(gridList) do
     if xIsLine and lastX ~= value.x then
       xIsLine = false
     end
     if yIsLine and lastY ~= value.y then
       yIsLine = false
     end
+    if not (xIsLine or yIsLine) then
+      break
+    end
   end
-  do
-    return (xIsLine or yIsLine) and xIsLine or yIsLine
-  end
+  return xIsLine or yIsLine
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckSummonOnFixPosValid = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_30 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function SkillViewConditionHelper:_CheckSummonOnFixPosValid(casterEntity, phaseContext, conditionParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   if skillEffectResultContainer == nil then
-    (Log.fatal)("_CheckSummonOnFixPosValid skillEffectResultContainer is nil")
+    Log.fatal("_CheckSummonOnFixPosValid skillEffectResultContainer is nil")
     return false
   end
   local summonResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SummonOnFixPosLimit)
@@ -825,22 +578,19 @@ SkillViewConditionHelper._CheckSummonOnFixPosValid = function(self, casterEntity
   return false
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckIsFirstP5PetInTeam = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_31 , upvalues : _ENV
+function SkillViewConditionHelper:_CheckIsFirstP5PetInTeam(casterEntity, phaseContext, conditionParam)
   local checkPetID = 0
   if conditionParam then
     checkPetID = tonumber(conditionParam)
   end
-  if checkPetID > 0 then
-    local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  if 0 < checkPetID then
+    local teamEntity = self._world:Player():GetCurrentTeamEntity()
     if teamEntity then
       local teamCmpt = teamEntity:Team()
       local teamOrder = teamCmpt:GetTeamOrder()
-      for order,petPstID in ipairs(teamOrder) do
+      for order, petPstID in ipairs(teamOrder) do
         local petEntity = teamCmpt:GetPetEntityByPetPstID(petPstID)
-        local matchPet = (petEntity:MatchPet()):GetMatchPet()
+        local matchPet = petEntity:MatchPet():GetMatchPet()
         local petFeatureList = matchPet:GetFeatureList()
         if petFeatureList then
           local petFeatures = petFeatureList.feature
@@ -855,16 +605,11 @@ SkillViewConditionHelper._CheckIsFirstP5PetInTeam = function(self, casterEntity,
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckIsAllWeak = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_32
-  local utilDataSvc = (self._world):GetService("UtilData")
+function SkillViewConditionHelper:_CheckIsAllWeak(casterEntity, phaseContext, conditionParam)
+  local utilDataSvc = self._world:GetService("UtilData")
   local allWeak = utilDataSvc:GetEntityAttributeByName(casterEntity, "AllEnemyWeak") or 0
   if allWeak == 1 then
     return true
@@ -872,12 +617,9 @@ SkillViewConditionHelper._CheckIsAllWeak = function(self, casterEntity, phaseCon
   return false
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckTrapOpenStateChangeByResult = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_33 , upvalues : _ENV
+function SkillViewConditionHelper:_CheckTrapOpenStateChangeByResult(casterEntity, phaseContext, conditionParam)
   local checkState = tonumber(conditionParam)
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.TrapSummonMonster)
   if not resultArray or not casterEntity:HasTrapRender() then
     return false
@@ -895,12 +637,9 @@ SkillViewConditionHelper._CheckTrapOpenStateChangeByResult = function(self, cast
   return false
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckTrapSummonMonster = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_34 , upvalues : _ENV
+function SkillViewConditionHelper:_CheckTrapSummonMonster(casterEntity, phaseContext, conditionParam)
   local checkState = tonumber(conditionParam)
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.TrapSummonMonster)
   if not resultArray or not casterEntity:HasTrapRender() then
     return false
@@ -909,18 +648,13 @@ SkillViewConditionHelper._CheckTrapSummonMonster = function(self, casterEntity, 
   local entityID = result:GetSummonEntityID()
   if checkState == 1 and entityID ~= nil then
     return true
-  else
-    if checkState == 0 and entityID == nil then
-      return true
-    end
+  elseif checkState == 0 and entityID == nil then
+    return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckTrapOpenStateChange = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_35 , upvalues : _ENV
+function SkillViewConditionHelper:_CheckTrapOpenStateChange(casterEntity, phaseContext, conditionParam)
   local checkState = tonumber(conditionParam)
   local renderAttrCmpt = casterEntity:RenderAttributes()
   if renderAttrCmpt:GetAttribute("OpenState") and renderAttrCmpt:GetAttribute("OpenState") == checkState then
@@ -929,51 +663,38 @@ SkillViewConditionHelper._CheckTrapOpenStateChange = function(self, casterEntity
   return false
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckCasterIsDead = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_36
-  local utilDataSvc = (self._world):GetService("UtilData")
+function SkillViewConditionHelper:_CheckCasterIsDead(casterEntity, phaseContext, conditionParam)
+  local utilDataSvc = self._world:GetService("UtilData")
   return utilDataSvc:IsEntityLogicDead(casterEntity)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckHasRotate = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_37 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function SkillViewConditionHelper:_CheckHasRotate(casterEntity, phaseContext, conditionParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageStageIndex = phaseContext:GetCurDamageResultStageIndex()
   local skillRotateEffectResult = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Rotate)
-  if skillRotateEffectResult and (table.count)(skillRotateEffectResult) > 0 then
+  if skillRotateEffectResult and table.count(skillRotateEffectResult) > 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckCurrentRoundCount = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_38 , upvalues : _ENV
+function SkillViewConditionHelper:_CheckCurrentRoundCount(casterEntity, phaseContext, conditionParam)
   assert(type(conditionParam) == "string", "Jump: _CheckCurrentRoundCount需要配置参数")
-  local splitParam = (string.split)(conditionParam, "|")
+  local splitParam = string.split(conditionParam, "|")
   local roundList = {}
-  for _,value in ipairs(splitParam) do
+  for _, value in ipairs(splitParam) do
     roundList[#roundList + 1] = tonumber(value)
   end
-  local curRoundCount = (BattleStatHelper.GetLevelTotalRoundCount)()
-  if (table.icontains)(roundList, curRoundCount) then
+  local curRoundCount = BattleStatHelper.GetLevelTotalRoundCount()
+  if table.icontains(roundList, curRoundCount) then
     return true
   end
-  do return false end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillViewConditionHelper._CheckTargetHPAndSceneState = function(self, casterEntity, phaseContext, conditionParam)
-  -- function num : 0_39 , upvalues : _ENV
+function SkillViewConditionHelper:_CheckTargetHPAndSceneState(casterEntity, phaseContext, conditionParam)
   assert(type(conditionParam) == "string", "Jump: _CheckTargetHPAndSceneState需要配置参数")
-  local splitParam = (string.split)(conditionParam, "|")
+  local splitParam = string.split(conditionParam, "|")
   local sceneState = tonumber(splitParam[1])
   local trapID = tonumber(splitParam[2])
   local trapHPPercent = tonumber(splitParam[3])
@@ -982,14 +703,11 @@ SkillViewConditionHelper._CheckTargetHPAndSceneState = function(self, casterEnti
   if curSceneState ~= sceneState then
     return false
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local curHPPercent = utilDataSvc:GetTrapHPPercentByTrapID(trapID)
   if trapHPPercent < curHPPercent then
     return false
   end
   buffView:SetBuffValue(BattleConst.N34BossSceneState, curSceneState + 1)
-  do return true end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return true
 end
-
-

@@ -1,20 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_can_convert_element_range.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_CanConvertElementRange", SkillScopeCalculator_Base)
 SkillScopeCalculator_CanConvertElementRange = SkillScopeCalculator_CanConvertElementRange
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_CanConvertElementRange.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = (self._gridFilter)._world
+function SkillScopeCalculator_CanConvertElementRange:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  local world = self._gridFilter._world
   local utilScopeSvc = world:GetService("UtilScopeCalc")
   local cross_area = utilScopeSvc:GetFullScreenCanChangeElementRange()
   local result = SkillScopeResult:New(SkillScopeType.CanConvertElementRange, centerPos, cross_area, cross_area)
   return result
 end
-
-

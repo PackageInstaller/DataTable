@@ -1,31 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/serial_auto_fight/ui_serial_auto_fight_sweep_result_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISerialAutoFightSweepResultItem", UICustomWidget)
 UISerialAutoFightSweepResultItem = UISerialAutoFightSweepResultItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISerialAutoFightSweepResultItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISerialAutoFightSweepResultItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultItem.SetStyleUI = function(self, styleName)
-  -- function num : 0_1 , upvalues : _ENV
+function UISerialAutoFightSweepResultItem:SetStyleUI(styleName)
   self._styleName = styleName
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "line03", self, "_line")
-  ;
-  (UISerialAutoFightStyleHelper.FitStyle_Widget)(self._styleName, "titleColor", self, "_txtTitle")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "line03", self, "_line")
+  UISerialAutoFightStyleHelper.FitStyle_Widget(self._styleName, "titleColor", self, "_txtTitle")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultItem.SetData = function(self, total, index, rewards, svRect, tipsCallback)
-  -- function num : 0_2
+function UISerialAutoFightSweepResultItem:SetData(total, index, rewards, svRect, tipsCallback)
   self._total = total
   self._index = index
   self._rewards = rewards
@@ -35,54 +20,37 @@ UISerialAutoFightSweepResultItem.SetData = function(self, total, index, rewards,
   self:_SetRewards(rewards)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultItem._SetTitle = function(self, index)
-  -- function num : 0_3 , upvalues : _ENV
-  local str = (UIActivityHelper.FormatNumber_PreZero)(2, index) .. "."
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtTitle", str)
+function UISerialAutoFightSweepResultItem:_SetTitle(index)
+  local str = UIActivityHelper.FormatNumber_PreZero(2, index) .. "."
+  UIWidgetHelper.SetLocalizationText(self, "_txtTitle", str)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultItem._SetRewards = function(self, rewards)
-  -- function num : 0_4 , upvalues : _ENV
+function UISerialAutoFightSweepResultItem:_SetRewards(rewards)
   local className = "UISerialAutoFightSweepResultItem2"
-  do
-    if self._styleName == "season" then
-      local sop = self:GetUIComponent("UISelectObjectPath", "Content")
-      ;
-      (sop:Engine()):SetObjectName("UISerialAutoFightSweepResult_Item2_S1.prefab")
-      className = "UISerialAutoFightSweepResultItem2S1"
-    end
-    local objs = (UIWidgetHelper.SpawnObjects)(self, "Content", className, #rewards)
-    for i,v in ipairs(objs) do
-      v:SetData((rewards[i]).type, (rewards[i]).roleAsset, self._svRect, self._tipsCallback)
-    end
-    self._objs = objs
-    local trans = self:GetUIComponent("RectTransform", "Content")
-    trans.anchoredPosition = Vector2(0, (trans.anchoredPosition).y)
+  if self._styleName == "season" then
+    local sop = self:GetUIComponent("UISelectObjectPath", "Content")
+    sop:Engine():SetObjectName("UISerialAutoFightSweepResult_Item2_S1.prefab")
+    className = "UISerialAutoFightSweepResultItem2S1"
   end
+  local objs = UIWidgetHelper.SpawnObjects(self, "Content", className, #rewards)
+  for i, v in ipairs(objs) do
+    v:SetData(rewards[i].type, rewards[i].roleAsset, self._svRect, self._tipsCallback)
+  end
+  self._objs = objs
+  local trans = self:GetUIComponent("RectTransform", "Content")
+  trans.anchoredPosition = Vector2(0, trans.anchoredPosition.y)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISerialAutoFightSweepResultItem.PlayAnimationIn = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISerialAutoFightSweepResultItem:PlayAnimationIn()
   local isPlay = self._total == self._index
   local animName = "uieff_UISerialAutoFightSweepResult_Item_in"
-  ;
-  (UIWidgetHelper.SetAnimationReset)(self, "_anim", animName)
+  UIWidgetHelper.SetAnimationReset(self, "_anim", animName)
   if isPlay then
-    (UIWidgetHelper.SetAnimationPlay)(self, "_anim", animName)
+    UIWidgetHelper.SetAnimationPlay(self, "_anim", animName)
   end
   if isPlay then
-    for i,v in ipairs(self._objs) do
+    for i, v in ipairs(self._objs) do
       v:PlayAnimationInSequence(i)
     end
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
-
-

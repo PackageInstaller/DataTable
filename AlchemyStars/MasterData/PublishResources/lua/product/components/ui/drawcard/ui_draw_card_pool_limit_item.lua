@@ -1,51 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_pool_limit_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawcardPoolLimitItem", UICustomWidget)
 UIDrawcardPoolLimitItem = UIDrawcardPoolLimitItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawcardPoolLimitItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIDrawcardPoolLimitItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawcardPoolLimitItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIDrawcardPoolLimitItem:InitWidget()
   self.root = self:GetUIComponent("Transform", "root")
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawcardPoolLimitItem.SetData = function(self, cfg)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDrawcardPoolLimitItem:SetData(cfg)
   if cfg then
     local icon = cfg.icon
-    local pos = Vector2((cfg.pos)[1], (cfg.pos)[2])
-    local size = Vector2((cfg.size)[1], (cfg.size)[2])
-    ;
-    (self.icon):LoadImage(icon)
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.root).anchoredPosition = pos
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.root).sizeDelta = size
-    ;
-    ((self.root).gameObject):SetActive(true)
+    local pos = Vector2(cfg.pos[1], cfg.pos[2])
+    local size = Vector2(cfg.size[1], cfg.size[2])
+    self.icon:LoadImage(icon)
+    self.root.anchoredPosition = pos
+    self.root.sizeDelta = size
+    self.root.gameObject:SetActive(true)
   else
-    do
-      ;
-      ((self.root).gameObject):SetActive(false)
-    end
+    self.root.gameObject:SetActive(false)
   end
 end
-
-

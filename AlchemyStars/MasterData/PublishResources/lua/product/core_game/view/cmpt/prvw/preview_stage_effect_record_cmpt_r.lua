@@ -1,77 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/preview_stage_effect_record_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewStageEffectRecordComponent", Object)
 PreviewStageEffectRecordComponent = PreviewStageEffectRecordComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewStageEffectRecordComponent.Constructor = function(self)
-  -- function num : 0_0
+function PreviewStageEffectRecordComponent:Constructor()
   self._previewStageEffectEntityIDList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewStageEffectRecordComponent.AddPreviewStageEffectEntityID = function(self, entityID)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.insert)(self._previewStageEffectEntityIDList, entityID)
+function PreviewStageEffectRecordComponent:AddPreviewStageEffectEntityID(entityID)
+  table.insert(self._previewStageEffectEntityIDList, entityID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewStageEffectRecordComponent.GetPreviewStageEffectEntityIDList = function(self)
-  -- function num : 0_2
+function PreviewStageEffectRecordComponent:GetPreviewStageEffectEntityIDList()
   return self._previewStageEffectEntityIDList
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewStageEffectRecordComponent.ClearPreviewStageEffectEntityIDList = function(self)
-  -- function num : 0_3
+function PreviewStageEffectRecordComponent:ClearPreviewStageEffectEntityIDList()
   self._previewStageEffectEntityIDList = {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PreviewStageEffectRecord = function(self)
-  -- function num : 0_4
-  return self:GetComponent((self.WEComponentsEnum).PreviewStageEffectRecord)
+function Entity:PreviewStageEffectRecord()
+  return self:GetComponent(self.WEComponentsEnum.PreviewStageEffectRecord)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPreviewStageEffectRecord = function(self)
-  -- function num : 0_5
-  return self:HasComponent((self.WEComponentsEnum).PreviewStageEffectRecord)
+function Entity:HasPreviewStageEffectRecord()
+  return self:HasComponent(self.WEComponentsEnum.PreviewStageEffectRecord)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPreviewStageEffectRecord = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewStageEffectRecord
+function Entity:AddPreviewStageEffectRecord()
+  local index = self.WEComponentsEnum.PreviewStageEffectRecord
   local component = PreviewStageEffectRecordComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePreviewStageEffectRecord = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewStageEffectRecord
+function Entity:ReplacePreviewStageEffectRecord()
+  local index = self.WEComponentsEnum.PreviewStageEffectRecord
   local component = PreviewStageEffectRecordComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePreviewStageEffectRecord = function(self)
-  -- function num : 0_8
+function Entity:RemovePreviewStageEffectRecord()
   if self:HasPreviewActiveSkill() then
-    self:RemoveComponent((self.WEComponentsEnum).PreviewStageEffectRecord)
+    self:RemoveComponent(self.WEComponentsEnum.PreviewStageEffectRecord)
   end
 end
-
-

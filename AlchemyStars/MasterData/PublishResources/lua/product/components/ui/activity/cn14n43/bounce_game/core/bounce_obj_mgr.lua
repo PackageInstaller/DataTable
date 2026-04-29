@@ -1,180 +1,123 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/core/bounce_obj_mgr.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("bounce_player")
 _class("BounceObjMgr", Object)
 BounceObjMgr = BounceObjMgr
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BounceObjMgr.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function BounceObjMgr:Constructor()
   self.player = nil
   self.playerCamp = {}
   self.monsterCamp = {}
   self.monsterPool = nil
   self.coreController = nil
   self._tempDeleteMonster = {}
-  self.guideModule = (GameGlobal.GetModule)(GuideModule)
+  self.guideModule = GameGlobal.GetModule(GuideModule)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceObjMgr.Init = function(self, coreController)
-  -- function num : 0_1
+function BounceObjMgr:Init(coreController)
   self.coreController = coreController
   self.monsterPool = coreController:GetMonsterPool()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceObjMgr.InitPlayer = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function BounceObjMgr:InitPlayer()
   self.player = BouncePlayer:New()
-  local parentRt = (self.coreController):GetObjectsRoot()
-  local palyerPrefabName = (self.coreController):GetPlayerPrefabName()
-  ;
-  (self.player):Init(self.coreController, palyerPrefabName, parentRt)
+  local parentRt = self.coreController:GetObjectsRoot()
+  local palyerPrefabName = self.coreController:GetPlayerPrefabName()
+  self.player:Init(self.coreController, palyerPrefabName, parentRt)
   self:SetPlayerVisbile(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceObjMgr.AddMonster = function(self, monster)
-  -- function num : 0_3 , upvalues : _ENV
+function BounceObjMgr:AddMonster(monster)
   local pstId = monster.pstID
-  if (self.monsterCamp)[pstId] then
-    (Log.fatal)("BounceObjMgr err: duplicated monsterPstID " .. pstId)
+  if self.monsterCamp[pstId] then
+    Log.fatal("BounceObjMgr err: duplicated monsterPstID " .. pstId)
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.monsterCamp)[pstId] = monster
+  self.monsterCamp[pstId] = monster
   monster:Show()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceObjMgr.RemoveMonster = function(self, monster)
-  -- function num : 0_4
+function BounceObjMgr:RemoveMonster(monster)
   local pstId = monster.pstID
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self.monsterCamp)[pstId] then
-    (self.monsterCamp)[pstId] = nil
-  else
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    if (self.playerCamp)[pstId] then
-      (self.playerCamp)[pstId] = nil
-    end
+  if self.monsterCamp[pstId] then
+    self.monsterCamp[pstId] = nil
+  elseif self.playerCamp[pstId] then
+    self.playerCamp[pstId] = nil
   end
-  ;
-  (self.monsterPool):Recyle(monster)
+  self.monsterPool:Recyle(monster)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceObjMgr.ChgMonsterCampToPlayer = function(self, monster)
-  -- function num : 0_5
+function BounceObjMgr:ChgMonsterCampToPlayer(monster)
   local pstId = monster.pstID
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self.monsterCamp)[pstId] then
-    (self.monsterCamp)[pstId] = nil
+  if self.monsterCamp[pstId] then
+    self.monsterCamp[pstId] = nil
   end
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.playerCamp)[pstId] = monster
+  self.playerCamp[pstId] = monster
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceObjMgr.Reset = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function BounceObjMgr:Reset()
   self:ClearMonsters()
-  ;
-  (self.player):Reset()
-  ;
-  (self.player):ChgPlayerState(StateBouncePlayer.Init)
+  self.player:Reset()
+  self.player:ChgPlayerState(StateBouncePlayer.Init)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceObjMgr.SetPlayerVisbile = function(self, bVisible)
-  -- function num : 0_7
-  (self.player):SetVisible(bVisible)
+function BounceObjMgr:SetPlayerVisbile(bVisible)
+  self.player:SetVisible(bVisible)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceObjMgr.ClearMonsters = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  for k,v in pairs(self.playerCamp) do
-    (self.monsterPool):Recyle(v)
+function BounceObjMgr:ClearMonsters()
+  for k, v in pairs(self.playerCamp) do
+    self.monsterPool:Recyle(v)
   end
-  ;
-  (table.clear)(self.playerCamp)
-  for k,v in pairs(self.monsterCamp) do
-    (self.monsterPool):Recyle(v)
+  table.clear(self.playerCamp)
+  for k, v in pairs(self.monsterCamp) do
+    self.monsterPool:Recyle(v)
   end
-  ;
-  (table.clear)(self.monsterCamp)
-  ;
-  (table.clear)(self._tempDeleteMonster)
+  table.clear(self.monsterCamp)
+  table.clear(self._tempDeleteMonster)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceObjMgr.OnUpdate = function(self, deltaMS)
-  -- function num : 0_9 , upvalues : _ENV
-  (self.player):OnUpdate(deltaMS)
-  for k,v in pairs(self.playerCamp) do
+function BounceObjMgr:OnUpdate(deltaMS)
+  self.player:OnUpdate(deltaMS)
+  for k, v in pairs(self.playerCamp) do
     if v:OnUpdate(deltaMS) then
-      (table.insert)(self._tempDeleteMonster, v)
+      table.insert(self._tempDeleteMonster, v)
     end
   end
-  for k,v in pairs(self.monsterCamp) do
+  for k, v in pairs(self.monsterCamp) do
     if v:OnUpdate(deltaMS) then
-      (table.insert)(self._tempDeleteMonster, v)
+      table.insert(self._tempDeleteMonster, v)
     end
   end
-  for k,v in pairs(self._tempDeleteMonster) do
+  for k, v in pairs(self._tempDeleteMonster) do
     self:RemoveMonster(v)
   end
-  ;
-  (table.clear)(self._tempDeleteMonster)
-  if ((self.coreController).bounceData).isOvering then
-    return 
+  table.clear(self._tempDeleteMonster)
+  if self.coreController.bounceData.isOvering then
+    return
   end
-  if (self.player).state ~= BounceObjState.Alive then
-    return 
+  if self.player.state ~= BounceObjState.Alive then
+    return
   end
-  if ((self.coreController).bounceData).isGuiding then
+  if self.coreController.bounceData.isGuiding then
     self:Guide_CheckMonsterPosition()
   end
-  local baseRect, weaponRect = (self.player):GetRect()
+  local baseRect, weaponRect = self.player:GetRect()
   if not baseRect then
-    return 
+    return
   end
-  local isPlayerDown = (self.player):IsDown()
-  for k,v in pairs(self.monsterCamp) do
+  local isPlayerDown = self.player:IsDown()
+  for k, v in pairs(self.monsterCamp) do
     if v.state == BounceObjState.Alive or v.state == BounceObjState.Transformation then
       local monsterRect = v:GetRect()
       if monsterRect then
-        local hurtBehavior = (v:GetBehavior(MonsterBeHaviorHurt:Name()))
-        local weaponOverlapsMonster = nil
+        local hurtBehavior = v:GetBehavior(MonsterBeHaviorHurt:Name())
+        local weaponOverlapsMonster
         if weaponRect and weaponRect:Overlaps(monsterRect) then
           if hurtBehavior then
-            hurtBehavior:Exec(((self.player).playerData).ap)
+            hurtBehavior:Exec(self.player.playerData.ap)
             if isPlayerDown then
               self:OnHurtMonsterWhenDown()
             end
             weaponOverlapsMonster = true
-            ;
-            (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BounceJump)
+            AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BounceJump)
           else
             local chgCampBehavior = v:GetBehavior(MonsterBeHaviorChgCampWhenAttacked:Name())
             if chgCampBehavior then
@@ -188,168 +131,113 @@ BounceObjMgr.OnUpdate = function(self, deltaMS)
             end
           end
         end
-        do
-          if not weaponOverlapsMonster and baseRect:Overlaps(monsterRect) then
-            local attakBehavior = v:GetBehavior(MonsterBeHaviorAttack:Name())
-            if not hurtBehavior then
-              (self.player):OnHurt((v.monsterData).ap)
-              if attakBehavior then
-                attakBehavior:Exec()
-              end
-            else
-              if not attakBehavior then
-                hurtBehavior:Exec(((self.player).playerData).ap)
-                if isPlayerDown then
-                  self:OnHurtMonsterWhenDown()
-                end
-              else
-                if (v.monsterData).underPlayer then
-                  hurtBehavior:Exec(((self.player).playerData).ap)
-                  if isPlayerDown then
-                    self:OnHurtMonsterWhenDown()
-                  end
-                else
-                  ;
-                  (self.player):OnHurt((v.monsterData).ap)
-                  if attakBehavior then
-                    attakBehavior:Exec()
-                  end
-                end
-              end
+        if not weaponOverlapsMonster and baseRect:Overlaps(monsterRect) then
+          local attakBehavior = v:GetBehavior(MonsterBeHaviorAttack:Name())
+          if not hurtBehavior then
+            self.player:OnHurt(v.monsterData.ap)
+            if attakBehavior then
+              attakBehavior:Exec()
             end
-            -- DECOMPILER ERROR at PC207: Confused about usage of register: R14 in 'UnsetPending'
-
-            ;
-            (v.monsterData).underPlayer = false
+          elseif not attakBehavior then
+            hurtBehavior:Exec(self.player.playerData.ap)
+            if isPlayerDown then
+              self:OnHurtMonsterWhenDown()
+            end
+          elseif v.monsterData.underPlayer then
+            hurtBehavior:Exec(self.player.playerData.ap)
+            if isPlayerDown then
+              self:OnHurtMonsterWhenDown()
+            end
           else
-            do
-              do
-                self:UpdateMonsterPosState(v, monsterRect, baseRect, isPlayerDown)
-                -- DECOMPILER ERROR at PC215: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC215: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC215: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC215: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC215: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC215: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC215: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC215: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
+            self.player:OnHurt(v.monsterData.ap)
+            if attakBehavior then
+              attakBehavior:Exec()
             end
           end
+          v.monsterData.underPlayer = false
+        else
+          self:UpdateMonsterPosState(v, monsterRect, baseRect, isPlayerDown)
         end
       end
     end
   end
-  if (self.player).state ~= BounceObjState.Alive then
-    return 
+  if self.player.state ~= BounceObjState.Alive then
+    return
   end
-  for kb,bullet in pairs(self.playerCamp) do
-    if bullet.state == BounceObjState.Alive then
-      local bulletRect = bullet:GetRect()
-      if bullet then
-        for k,v in pairs(self.monsterCamp) do
-          if v.state == BounceObjState.Alive then
-            local hurtBehavior = v:GetBehavior(MonsterBeHaviorHurt:Name())
-            if hurtBehavior then
-              local monsterRect = v:GetRect()
-              if monsterRect and bulletRect:Overlaps(monsterRect) then
-                self:CheckBulletAttackMonsterGuide(v)
-                hurtBehavior:Exec(1)
-                local bulletAttackBehavior = bullet:GetBehavior(MonsterBeHaviorAttack:Name())
-                if bulletAttackBehavior then
-                  bulletAttackBehavior:Exec()
-                end
-                break
-              end
+  for kb, bullet in pairs(self.playerCamp) do
+    if bullet.state ~= BounceObjState.Alive then
+      break
+    end
+    local bulletRect = bullet:GetRect()
+    if not bullet then
+      break
+    end
+    for k, v in pairs(self.monsterCamp) do
+      if v.state == BounceObjState.Alive then
+        local hurtBehavior = v:GetBehavior(MonsterBeHaviorHurt:Name())
+        if hurtBehavior then
+          local monsterRect = v:GetRect()
+          if monsterRect and bulletRect:Overlaps(monsterRect) then
+            self:CheckBulletAttackMonsterGuide(v)
+            hurtBehavior:Exec(1)
+            local bulletAttackBehavior = bullet:GetBehavior(MonsterBeHaviorAttack:Name())
+            if bulletAttackBehavior then
+              bulletAttackBehavior:Exec()
             end
+            break
           end
-        end
-        do
-          -- DECOMPILER ERROR at PC280: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC280: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC280: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC280: LeaveBlock: unexpected jumping out IF_STMT
-
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceObjMgr.UpdateMonsterPosState = function(self, monster, monsterRect, playerRect, playerIsDown)
-  -- function num : 0_10
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R5 in 'UnsetPending'
-
-  (monster.monsterData).underPlayer = false
+function BounceObjMgr:UpdateMonsterPosState(monster, monsterRect, playerRect, playerIsDown)
+  monster.monsterData.underPlayer = false
   if playerIsDown then
     local cPlayer = playerRect.center
     local cMonster = monsterRect.center
-    if cPlayer.y < cMonster.y then
-      return 
+    if cMonster.y > cPlayer.y then
+      return
     end
     if monsterRect.xMax < playerRect.xMin then
-      return 
+      return
     end
-    if playerRect.xMax < monsterRect.xMin then
-      return 
+    if monsterRect.xMin > playerRect.xMax then
+      return
     end
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (monster.monsterData).underPlayer = true
+    monster.monsterData.underPlayer = true
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceObjMgr.OnHurtMonsterWhenDown = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (self.player):OnHurtMonsterWhenDown()
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BoucneStomp)
+function BounceObjMgr:OnHurtMonsterWhenDown()
+  self.player:OnHurtMonsterWhenDown()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BoucneStomp)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceObjMgr.Guide_CheckMonsterPosition = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if ((self.coreController).bounceData).isGuiding and (GuideHelper.IsUIGuideShow)() then
-    return 
+function BounceObjMgr:Guide_CheckMonsterPosition()
+  if self.coreController.bounceData.isGuiding and GuideHelper.IsUIGuideShow() then
+    return
   end
-  local posKeys = nil
-  if ((self.coreController).bounceData).guidingId == BounceConst.GuideFirst then
-    posKeys = (self.coreController).firstGuideStepPositionKeys
+  local posKeys
+  if self.coreController.bounceData.guidingId == BounceConst.GuideFirst then
+    posKeys = self.coreController.firstGuideStepPositionKeys
+  elseif self.coreController.bounceData.guidingId == BounceConst.GuideSecond then
+    posKeys = self.coreController.secondGuideStepPositionKeys
   else
-    if ((self.coreController).bounceData).guidingId == BounceConst.GuideSecond then
-      posKeys = (self.coreController).secondGuideStepPositionKeys
-    else
-      return 
-    end
+    return
   end
-  for i,posKey in ipairs(posKeys) do
-    local rt = (self.coreController):GetGuideRt(posKey)
+  for i, posKey in ipairs(posKeys) do
+    local rt = self.coreController:GetGuideRt(posKey)
     if rt then
       local bounceRect = BounceRect:New(rt.anchoredPosition, rt.sizeDelta)
-      for _,subMonster in pairs(self.monsterCamp) do
+      for _, subMonster in pairs(self.monsterCamp) do
         local monsterRect = subMonster:GetBounceRect()
         if monsterRect then
           local p1 = monsterRect:GetMin()
           local p2 = monsterRect:GetMax()
           if bounceRect:Contains(p1) and bounceRect:Contains(p2) then
-            (self.coreController):OnTrigerGuideStep(posKey)
+            self.coreController:OnTrigerGuideStep(posKey)
           end
         end
       end
@@ -357,27 +245,16 @@ BounceObjMgr.Guide_CheckMonsterPosition = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceObjMgr.CheckBulletAttackMonsterGuide = function(self, monster)
-  -- function num : 0_13 , upvalues : _ENV
-  if ((self.coreController).bounceData).levelId == 6 and not (self.guideModule):IsGuideDone(BounceConst.GuideBoss3) then
+function BounceObjMgr:CheckBulletAttackMonsterGuide(monster)
+  if self.coreController.bounceData.levelId == 6 and not self.guideModule:IsGuideDone(BounceConst.GuideBoss3) then
     local pos = monster:GetPosition()
     if not pos then
-      return 
+      return
     end
-    ;
-    (self.coreController):SetGuidePosition(BounceConst.GuideBoss3_BulletPosKey1, pos)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIBounceMainControllerBoss3)
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self.coreController).bounceData).guidingId = BounceConst.GuideBoss3
-    local isGuiding = (self.guideModule):IsGuideProcess(BounceConst.GuideBoss3)
-    ;
-    ((self.coreController).bounceData):SetIsGuiding(isGuiding)
+    self.coreController:SetGuidePosition(BounceConst.GuideBoss3_BulletPosKey1, pos)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIBounceMainControllerBoss3)
+    self.coreController.bounceData.guidingId = BounceConst.GuideBoss3
+    local isGuiding = self.guideModule:IsGuideProcess(BounceConst.GuideBoss3)
+    self.coreController.bounceData:SetIsGuiding(isGuiding)
   end
 end
-
-

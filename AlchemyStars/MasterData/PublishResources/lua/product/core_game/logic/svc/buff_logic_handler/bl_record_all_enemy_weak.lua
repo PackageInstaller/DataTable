@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_record_all_enemy_weak.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicRecordAllEnemyWeak", BuffLogicBase)
 BuffLogicRecordAllEnemyWeak = BuffLogicRecordAllEnemyWeak
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRecordAllEnemyWeak.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicRecordAllEnemyWeak:Constructor(buffInstance, logicParam)
   self._weakBuffEffect = logicParam.weakBuffEffect or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRecordAllEnemyWeak.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicRecordAllEnemyWeak:DoLogic(notify)
   local allEnemyWeak = true
   local hasEnemy = false
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    local enemyTeam = ((self._world):Player()):GetCurrentEnemyTeamEntity()
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    local enemyTeam = self._world:Player():GetCurrentEnemyTeamEntity()
     if not enemyTeam:HasDeadMark() then
       local enemyBuffCmpt = enemyTeam:BuffComponent()
       if enemyBuffCmpt then
@@ -30,29 +20,25 @@ BuffLogicRecordAllEnemyWeak.DoLogic = function(self, notify)
       end
     end
   else
-    do
-      local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-      for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
-        if not monsterEntity:HasDeadMark() then
-          local enemyBuffCmpt = monsterEntity:BuffComponent()
-          if enemyBuffCmpt then
-            hasEnemy = true
-            if not enemyBuffCmpt:HasBuffEffect(self._weakBuffEffect) then
-              allEnemyWeak = false
-              break
-            end
+    local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+    for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
+      if not monsterEntity:HasDeadMark() then
+        local enemyBuffCmpt = monsterEntity:BuffComponent()
+        if enemyBuffCmpt then
+          hasEnemy = true
+          if not enemyBuffCmpt:HasBuffEffect(self._weakBuffEffect) then
+            allEnemyWeak = false
+            break
           end
         end
       end
-      do
-        if not hasEnemy then
-          allEnemyWeak = false
-        end
-        local attributeCmpt = (self._entity):Attributes()
-        attributeCmpt:SetSimpleAttribute("AllEnemyWeak", not attributeCmpt or (allEnemyWeak and 1) or 0)
-      end
     end
   end
+  if not hasEnemy then
+    allEnemyWeak = false
+  end
+  local attributeCmpt = self._entity:Attributes()
+  if attributeCmpt then
+    attributeCmpt:SetSimpleAttribute("AllEnemyWeak", allEnemyWeak and 1 or 0)
+  end
 end
-
-

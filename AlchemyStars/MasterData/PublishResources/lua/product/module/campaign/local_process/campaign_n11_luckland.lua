@@ -1,97 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n11_luckland.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignN11LuckLand", ICampaignComponentLocalProcessBase)
 CCampaignN11LuckLand = CCampaignN11LuckLand
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignN11LuckLand.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignN11LuckLand:Constructor()
   self._lucklandMissionComponent = nil
   self._lucklandMissionComponentInfo = nil
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN11LuckLand.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignN11LuckLand:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_LUCKLAND
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN11LuckLand.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignN11LuckLand:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN11LuckLand.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignN11LuckLand:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetLuckLandComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN11LuckLand._GetLuckLandComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._lucklandMissionComponent = (self._campaignObj):GetComponent(ECampaignN11CenterComponentID.ECAMPAIGN_N11_LUCK_LAND)
+function CCampaignN11LuckLand:_GetLuckLandComponent()
+  self._lucklandMissionComponent = self._campaignObj:GetComponent(ECampaignN11CenterComponentID.ECAMPAIGN_N11_LUCK_LAND)
   if not self._lucklandMissionComponent then
-    return 
+    return
   end
-  self._lucklandMissionComponentInfo = (self._lucklandMissionComponent):ComponentInfo()
+  self._lucklandMissionComponentInfo = self._lucklandMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN11LuckLand.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CCampaignN11LuckLand:GetComponent(componentID)
   if ECampaignN11CenterComponentID.ECAMPAIGN_N11_LUCK_LAND == componentID then
     return self._lucklandMissionComponent
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN11LuckLand.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignN11LuckLand:GetComponentInfo(componentID)
   if ECampaignN11CenterComponentID.ECAMPAIGN_N11_LUCK_LAND == componentID then
     return self._lucklandMissionComponentInfo
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN11LuckLand.GetEntryNew = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignN11LuckLand:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_LUCKLAND)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN11LuckLand.GetEntryRedDot = function(self)
-  -- function num : 0_8
+function CCampaignN11LuckLand:GetEntryRedDot()
   return self:LuckLandMissionReddot()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN11LuckLand.LuckLandMissionReddot = function(self)
-  -- function num : 0_9
-  if self._lucklandMissionComponent then
-    return (self._lucklandMissionComponent):HaveRedPoint()
-  end
+function CCampaignN11LuckLand:LuckLandMissionReddot()
+  return self._lucklandMissionComponent and self._lucklandMissionComponent:HaveRedPoint()
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/dantang/ui_select_info_dantang.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISelectInfoDantang", UICustomWidget)
 UISelectInfoDantang = UISelectInfoDantang
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISelectInfoDantang.OnShow = function(self)
-  -- function num : 0_0
+function UISelectInfoDantang:OnShow()
   self._showName = self:GetUIComponent("UILocalizationText", "txt_item_name")
   self._showDes = self:GetUIComponent("UILocalizationText", "txt_item_simple_desc")
   self._showCount = self:GetUIComponent("UILocalizationText", "txt_item_own_count")
@@ -16,44 +9,29 @@ UISelectInfoDantang.OnShow = function(self)
   self._showItem = sop:SpawnObject("UIItemDanTang")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfoDantang.SetData = function(self, item_id)
-  -- function num : 0_1 , upvalues : _ENV
-  local itemConfig = (Cfg.cfg_item)[item_id]
+function UISelectInfoDantang:SetData(item_id)
+  local itemConfig = Cfg.cfg_item[item_id]
   if not itemConfig then
-    return 
+    return
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   if not itemModule then
-    return 
+    return
   end
-  ;
-  (self._showName):SetText((StringTable.Get)(itemConfig.Name))
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  self._showName:SetText(StringTable.Get(itemConfig.Name))
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local c = roleModule:GetAssetCount(item_id)
-  ;
-  (self._showCount):SetText((StringTable.Get)("str_item_public_owned") .. self:_FormatItemCount(c))
-  ;
-  (self._showDes):SetText((StringTable.Get)(itemConfig.Intro))
+  self._showCount:SetText(StringTable.Get("str_item_public_owned") .. self:_FormatItemCount(c))
+  self._showDes:SetText(StringTable.Get(itemConfig.Intro))
   local icon = itemConfig.Icon
   local quality = itemConfig.Color
   local itemId = itemConfig.ID
-  ;
-  (self._showItem):Flush((NewRoleAsset(itemId, "")), nil, true)
+  self._showItem:Flush(NewRoleAsset(itemId, ""), nil, true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfoDantang.OnHide = function(self)
-  -- function num : 0_2
+function UISelectInfoDantang:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfoDantang._FormatItemCount = function(self, itemCount)
-  -- function num : 0_3 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):FormatItemCount(itemCount)
+function UISelectInfoDantang:_FormatItemCount(itemCount)
+  return HelperProxy:GetInstance():FormatItemCount(itemCount)
 end
-
-

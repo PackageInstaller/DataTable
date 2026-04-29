@@ -1,8 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/grid_touch_state_id.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 GridTouchStateID = GridTouchStateID
-_enum("GridTouchStateID", {Invalid = 0, BeginDrag = 1, Drag = 2, EndDrag = 3, DoubleClick = 4, PLLBeginDrag = 5, PLLDrag = 6, PLLEndDrag = 7})
-
+_enum("GridTouchStateID", {
+  Invalid = 0,
+  BeginDrag = 1,
+  Drag = 2,
+  EndDrag = 3,
+  DoubleClick = 4,
+  PLLBeginDrag = 5,
+  PLLDrag = 6,
+  PLLEndDrag = 7
+})

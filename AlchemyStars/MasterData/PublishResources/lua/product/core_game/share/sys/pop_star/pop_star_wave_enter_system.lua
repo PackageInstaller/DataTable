@@ -1,29 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/pop_star/pop_star_wave_enter_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("PopStarWaveEnterSystem", MainStateSystem)
 PopStarWaveEnterSystem = PopStarWaveEnterSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarWaveEnterSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PopStarWaveEnterSystem:_GetMainStateID()
   return GameStateID.PopStarWaveEnter
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function PopStarWaveEnterSystem:_OnMainStateEnter(TT)
   self:_DoLogicInitWaveBattleState()
   self:_DoRenderWaveInfo(TT)
   local spawnTraps = self:_DoLogicCreateWaveTraps()
   local showTrapsTaskID = self:_DoRenderShowWaveTraps(TT, spawnTraps)
   local waitTaskIDList = {}
   if showTrapsTaskID ~= nil then
-    (table.insert)(waitTaskIDList, showTrapsTaskID)
+    table.insert(waitTaskIDList, showTrapsTaskID)
   end
   self:_WaitTasksEnd(TT, waitTaskIDList)
   self:_DoLogicCalcPreMove()
@@ -35,102 +25,61 @@ PopStarWaveEnterSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicSwitchFsmState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem._DoLogicInitWaveBattleState = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function PopStarWaveEnterSystem:_DoLogicInitWaveBattleState()
+  local battleStatCmpt = self._world:BattleStat()
   local waveNum = battleStatCmpt:GetCurWaveIndex()
   local levelRoundCount = battleStatCmpt:GetLevelLeftRoundCount()
   battleStatCmpt:InitCurWaveRound(levelRoundCount)
   battleStatCmpt:InitCurWaveAllMonsterDeadTimes()
-  local battleSvc = (self._world):GetService("Battle")
+  local battleSvc = self._world:GetService("Battle")
   local isExit = battleSvc:IsCurWaveExit()
   local exitPos = battleSvc:CurWaveExitPos()
   local data = DataWaveEnterResult:New(waveNum, isExit, exitPos)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, data)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, data)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem._DoLogicCreateWaveTraps = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PopStarWaveEnterSystem:_DoLogicCreateWaveTraps()
   local eTraps = {}
-  local trapIDList = ((self._world):BattleStat()):GetFirstWaveTrapIDList()
-  for _,id in ipairs(trapIDList) do
-    local entity = (self._world):GetEntityByID(id)
-    ;
-    (table.insert)(eTraps, entity)
+  local trapIDList = self._world:BattleStat():GetFirstWaveTrapIDList()
+  for _, id in ipairs(trapIDList) do
+    local entity = self._world:GetEntityByID(id)
+    table.insert(eTraps, entity)
   end
   return eTraps
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem._DoLogicCalcPreMove = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local aiService = (self.world):GetService("AI")
+function PopStarWaveEnterSystem:_DoLogicCalcPreMove()
+  local aiService = self.world:GetService("AI")
   aiService:RunAiLogic_WaitEnd(AILogicPeriodType.Prev)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem._DoLogicGameStart = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function PopStarWaveEnterSystem:_DoLogicGameStart()
   local gameStartBuffs = {}
-  ;
-  ((self._world):GetService("Battle")):InitWordBuff(gameStartBuffs)
-  ;
-  ((self._world):GetService("Battle")):InitTalePetBuff(gameStartBuffs)
-  ;
-  ((self._world):GetService("Affix")):InitAffixBuff(gameStartBuffs)
-  ;
-  ((self._world):GetService("Trigger")):Notify(NTGameStart:New())
+  self._world:GetService("Battle"):InitWordBuff(gameStartBuffs)
+  self._world:GetService("Battle"):InitTalePetBuff(gameStartBuffs)
+  self._world:GetService("Affix"):InitAffixBuff(gameStartBuffs)
+  self._world:GetService("Trigger"):Notify(NTGameStart:New())
   return gameStartBuffs
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem._DoLogicSwitchFsmState = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.PopStarWaveEnterFinish, 1)
+function PopStarWaveEnterSystem:_DoLogicSwitchFsmState()
+  self._world:EventDispatcher():Dispatch(GameEventType.PopStarWaveEnterFinish, 1)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem._DoRenderWaveInfo = function(self, TT)
-  -- function num : 0_7
+function PopStarWaveEnterSystem:_DoRenderWaveInfo(TT)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem._DoRenderShowWaveTraps = function(self, TT, spawnTraps)
-  -- function num : 0_8
+function PopStarWaveEnterSystem:_DoRenderShowWaveTraps(TT, spawnTraps)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem._DoRenderPlayPreMove = function(self, TT)
-  -- function num : 0_9
+function PopStarWaveEnterSystem:_DoRenderPlayPreMove(TT)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem._DoRenderShowUIBattleStart = function(self, TT)
-  -- function num : 0_10
+function PopStarWaveEnterSystem:_DoRenderShowUIBattleStart(TT)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem._DoRenderAutoAddBuff = function(self, TT, buffSeqList)
-  -- function num : 0_11
+function PopStarWaveEnterSystem:_DoRenderAutoAddBuff(TT, buffSeqList)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveEnterSystem._DoRenderDestroyBattleEnterResource = function(self, TT)
-  -- function num : 0_12
+function PopStarWaveEnterSystem:_DoRenderDestroyBattleEnterResource(TT)
 end
-
-

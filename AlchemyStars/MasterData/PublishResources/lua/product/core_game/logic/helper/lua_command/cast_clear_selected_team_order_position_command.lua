@@ -1,53 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/cast_clear_selected_team_order_position_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CastClearSelectedTeamOrderPositionCommand", IEntityCommand)
 CastClearSelectedTeamOrderPositionCommand = CastClearSelectedTeamOrderPositionCommand
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 CastClearSelectedTeamOrderPositionCommand.CommandType = "CastClearSelectedTeamOrderPosition"
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
 
-CastClearSelectedTeamOrderPositionCommand.Constructor = function(self)
-  -- function num : 0_0
+function CastClearSelectedTeamOrderPositionCommand:Constructor()
   self._targetPos = -1
   self._casterPstID = -1
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-CastClearSelectedTeamOrderPositionCommand.GetCommandType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CastClearSelectedTeamOrderPositionCommand:GetCommandType()
   return CastClearSelectedTeamOrderPositionCommand.CommandType
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-CastClearSelectedTeamOrderPositionCommand.GetExecStateID = function(self)
-  -- function num : 0_2
+function CastClearSelectedTeamOrderPositionCommand:GetExecStateID()
   return 0
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-CastClearSelectedTeamOrderPositionCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function CastClearSelectedTeamOrderPositionCommand:IsExecExcluded()
   return 0
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-CastClearSelectedTeamOrderPositionCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function CastClearSelectedTeamOrderPositionCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-CastClearSelectedTeamOrderPositionCommand.ToNetMessage = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function CastClearSelectedTeamOrderPositionCommand:ToNetMessage()
   local msg = CEventCastClearSelectedTeamOrderPositionCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -59,10 +35,7 @@ CastClearSelectedTeamOrderPositionCommand.ToNetMessage = function(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-CastClearSelectedTeamOrderPositionCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_6
+function CastClearSelectedTeamOrderPositionCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
@@ -72,20 +45,12 @@ CastClearSelectedTeamOrderPositionCommand.FromNetMessage = function(self, msg)
   self._casterPstID = msg.casterPstID
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-CastClearSelectedTeamOrderPositionCommand.GetCasterPstID = function(self)
-  -- function num : 0_7
+function CastClearSelectedTeamOrderPositionCommand:GetCasterPstID()
   return self._casterPstID
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-CastClearSelectedTeamOrderPositionCommand.GenerateCommand = function(teamEntityID, casterPetPstID)
-  -- function num : 0_8 , upvalues : _ENV
+function CastClearSelectedTeamOrderPositionCommand.GenerateCommand(teamEntityID, casterPetPstID)
   local cmd = CastClearSelectedTeamOrderPositionCommand:New()
   cmd._casterPstID = casterPetPstID
   return cmd
 end
-
-

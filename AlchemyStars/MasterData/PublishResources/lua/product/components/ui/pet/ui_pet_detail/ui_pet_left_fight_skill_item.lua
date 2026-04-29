@@ -1,58 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_detail/ui_pet_left_fight_skill_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetLeftSkillItem", UICustomWidget)
 UIPetLeftSkillItem = UIPetLeftSkillItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetLeftSkillItem.Constructor = function(self)
-  -- function num : 0_0
+function UIPetLeftSkillItem:Constructor()
   self._skillInfo = nil
   self._index = 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetLeftSkillItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIPetLeftSkillItem:OnShow(uiParams)
   self._skillIconRawImageLoader = self:GetUIComponent("RawImageLoader", "skillIcon")
   self._skillName = self:GetUIComponent("UILocalizationText", "skillName")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetLeftSkillItem.SetData = function(self, skillInfo)
-  -- function num : 0_2
+function UIPetLeftSkillItem:SetData(skillInfo)
   self._skillInfo = skillInfo
   self:SetText()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetLeftSkillItem.SetText = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = nil
-  cfg = BattleSkillCfg(((self._skillInfo).skillList)[1])
+function UIPetLeftSkillItem:SetText()
+  local cfg
+  cfg = BattleSkillCfg(self._skillInfo.skillList[1])
   if cfg then
     local skillTypeStr = ""
     if cfg.Type == PetSkillType.SkillType_ChainSkill then
       skillTypeStr = "str_pet_config_left_skill_chain"
-    else
-      if cfg.Type == PetSkillType.SkillType_Active then
-        skillTypeStr = "str_pet_config_left_skill_major"
-      else
-        if cfg.Type == PetSkillType.SkillType_Passive then
-          skillTypeStr = "str_pet_config_equip_short"
-        end
-      end
+    elseif cfg.Type == PetSkillType.SkillType_Active then
+      skillTypeStr = "str_pet_config_left_skill_major"
+    elseif cfg.Type == PetSkillType.SkillType_Passive then
+      skillTypeStr = "str_pet_config_equip_short"
     end
-    ;
-    (self._skillName):SetText((StringTable.Get)(skillTypeStr))
-    ;
-    (self._skillIconRawImageLoader):LoadImage(cfg.GoldIcon)
+    self._skillName:SetText(StringTable.Get(skillTypeStr))
+    self._skillIconRawImageLoader:LoadImage(cfg.GoldIcon)
   end
 end
-
-

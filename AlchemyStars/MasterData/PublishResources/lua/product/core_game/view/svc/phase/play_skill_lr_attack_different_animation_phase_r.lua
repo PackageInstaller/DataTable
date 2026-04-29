@@ -1,55 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_lr_attack_different_animation_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillLRAttackDifferentAnimationPhase", PlaySkillPhaseBase)
 PlaySkillLRAttackDifferentAnimationPhase = PlaySkillLRAttackDifferentAnimationPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillLRAttackDifferentAnimationPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillLRAttackDifferentAnimationPhase:PlayFlight(TT, casterEntity, phaseParam)
   local audioTaskIDArray = self:_PlayLRAttackAudio(phaseParam)
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageResultAll = skillEffectResultContainer:GetEffectResultByArrayAll(SkillEffectType.Damage)
   if not damageResultAll then
-    return 
+    return
   end
-  local beAttackEntityID = (damageResultAll[1]):GetTargetID()
-  local targetEntity = (self._world):GetEntityByID(beAttackEntityID)
+  local beAttackEntityID = damageResultAll[1]:GetTargetID()
+  local targetEntity = self._world:GetEntityByID(beAttackEntityID)
   if not targetEntity then
-    return 
+    return
   end
-  local resvc = (self._world):GetService("RenderEntity")
+  local resvc = self._world:GetService("RenderEntity")
   resvc:AttackTurn(casterEntity, targetEntity)
-  local effectService = ((self._world):GetService("Effect"))
-  local attackAnimName = nil
-  local boardServiceRender = ((self._world):GetService("BoardRender"))
-  local attEffPos = nil
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+  local effectService = self._world:GetService("Effect")
+  local attackAnimName
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local attEffPos
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   local frontPos = utilCalcSvc:GetFrontPieces(casterEntity)
   local armBlurEffId = 0
   local blurDelay = 0
   local hitPointDelay = phaseParam:GetHitPointDelay()
   local hitEffectID = phaseParam:GetHitEffectID()
   local overDelay = phaseParam:GetOverDelay()
-  if boardServiceRender:IsLeftOrRight(casterEntity, targetEntity) < 0 then
+  if 0 > boardServiceRender:IsLeftOrRight(casterEntity, targetEntity) then
     attackAnimName = phaseParam:GetLAnimationName()
     attEffPos = frontPos[1]
     armBlurEffId = phaseParam:GetLBlurEffectID()
-    blurDelay = (phaseParam:GetBlurDelay())[1]
-    hitPointDelay = (phaseParam:GetHitPointDelay())[1]
-    hitEffectID = (phaseParam:GetHitEffectID())[1]
-    overDelay = (phaseParam:GetOverDelay())[1]
+    blurDelay = phaseParam:GetBlurDelay()[1]
+    hitPointDelay = phaseParam:GetHitPointDelay()[1]
+    hitEffectID = phaseParam:GetHitEffectID()[1]
+    overDelay = phaseParam:GetOverDelay()[1]
   else
     attackAnimName = phaseParam:GetRAnimationName()
     attEffPos = frontPos[2]
     armBlurEffId = phaseParam:GetRBlurEffectID()
-    blurDelay = (phaseParam:GetBlurDelay())[2]
-    hitPointDelay = (phaseParam:GetHitPointDelay())[2]
-    hitEffectID = (phaseParam:GetHitEffectID())[2]
-    overDelay = (phaseParam:GetOverDelay())[2]
+    blurDelay = phaseParam:GetBlurDelay()[2]
+    hitPointDelay = phaseParam:GetHitPointDelay()[2]
+    hitEffectID = phaseParam:GetHitEffectID()[2]
+    overDelay = phaseParam:GetOverDelay()[2]
   end
   casterEntity:SetAnimatorControllerTriggers({attackAnimName})
   if blurDelay then
@@ -58,71 +51,56 @@ PlaySkillLRAttackDifferentAnimationPhase.PlayFlight = function(self, TT, casterE
   if armBlurEffId then
     effectService:CreateEffect(armBlurEffId, casterEntity)
   end
-  local deltaTimeMS = (self._timeService):GetCurrentTimeMs()
-  if hitPointDelay > 0 then
+  local deltaTimeMS = self._timeService:GetCurrentTimeMs()
+  if 0 < hitPointDelay then
     YIELD(TT, hitPointDelay)
   end
   if targetEntity ~= nil then
     local hitAnimName = phaseParam:GetHitAnimation()
     local skillID = skillEffectResultContainer:GetSkillID()
-    local skillService = (self._world):GetService("PlaySkill")
+    local skillService = self._world:GetService("PlaySkill")
     local taskIDs = {}
     for i = 1, #damageResultAll do
       local damageResult = damageResultAll[i]
       local castDamage = damageResult:GetDamageInfo(1)
       local damagePos = damageResult:GetGridPos()
       local beAttackEntityID = damageResult:GetTargetID()
-      local targetEntity = (self._world):GetEntityByID(beAttackEntityID)
-      local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(hitAnimName)):SetHandleBeHitParam_HitEffectID(hitEffectID)):SetHandleBeHitParam_DamageInfo(castDamage)):SetHandleBeHitParam_DamagePos(damagePos)):SetHandleBeHitParam_HitTurnTarget(TurnToTargetType.None)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(false)):SetHandleBeHitParam_SkillID(skillID)
-      local nTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(skillService.HandleBeHit, skillService, beHitParam)
-      if nTaskID > 0 then
+      local targetEntity = self._world:GetEntityByID(beAttackEntityID)
+      local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(hitAnimName):SetHandleBeHitParam_HitEffectID(hitEffectID):SetHandleBeHitParam_DamageInfo(castDamage):SetHandleBeHitParam_DamagePos(damagePos):SetHandleBeHitParam_HitTurnTarget(TurnToTargetType.None):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(false):SetHandleBeHitParam_SkillID(skillID)
+      local nTaskID = GameGlobal.TaskManager():CoreGameStartTask(skillService.HandleBeHit, skillService, beHitParam)
+      if 0 < nTaskID then
         taskIDs[#taskIDs + 1] = nTaskID
       end
     end
-    do
-      do
-        while (table.count)(taskIDs) > 0 and not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDs) do
-          YIELD(TT)
-        end
-        while not (TaskHelper:GetInstance()):IsAllTaskFinished(audioTaskIDArray) do
-          YIELD(TT)
-        end
+    if 0 < table.count(taskIDs) then
+      while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDs) do
+        YIELD(TT)
       end
     end
   end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(audioTaskIDArray) do
+    YIELD(TT)
+  end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillLRAttackDifferentAnimationPhase._PlayLRAttackAudio = function(self, phaseParam)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillLRAttackDifferentAnimationPhase:_PlayLRAttackAudio(phaseParam)
   local audioTaskArray = {}
   local leftAudioID = phaseParam:GetLeftAudioID()
   local leftAudioDelay = phaseParam:GetLeftAudioDelay()
   local rightAudioID = phaseParam:GetRightAudioID()
   local rightAudioDelay = phaseParam:GetRightAudioDelay()
-  do
-    if leftAudioID ~= nil and leftAudioID > 0 then
-      local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._PlayAttackAudio, self, leftAudioID, leftAudioDelay)
-      audioTaskArray[#audioTaskArray + 1] = taskID
-    end
-    do
-      if rightAudioID ~= nil and rightAudioID > 0 then
-        local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._PlayAttackAudio, self, rightAudioID, rightAudioDelay)
-        audioTaskArray[#audioTaskArray + 1] = taskID
-      end
-      return audioTaskArray
-    end
+  if leftAudioID ~= nil and 0 < leftAudioID then
+    local taskID = GameGlobal.TaskManager():CoreGameStartTask(self._PlayAttackAudio, self, leftAudioID, leftAudioDelay)
+    audioTaskArray[#audioTaskArray + 1] = taskID
   end
+  if rightAudioID ~= nil and 0 < rightAudioID then
+    local taskID = GameGlobal.TaskManager():CoreGameStartTask(self._PlayAttackAudio, self, rightAudioID, rightAudioDelay)
+    audioTaskArray[#audioTaskArray + 1] = taskID
+  end
+  return audioTaskArray
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillLRAttackDifferentAnimationPhase._PlayAttackAudio = function(self, TT, audioID, audioDelay)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySkillLRAttackDifferentAnimationPhase:_PlayAttackAudio(TT, audioID, audioDelay)
   YIELD(TT, audioDelay)
-  ;
-  (AudioHelperController.PlayInnerGameSfx)(audioID)
+  AudioHelperController.PlayInnerGameSfx(audioID)
 end
-
-

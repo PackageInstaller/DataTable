@@ -1,32 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/bead/ui_season_maze_bead_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeBeadTips", UICustomWidget)
 UISeasonMazeBeadTips = UISeasonMazeBeadTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeBeadTips.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMazeBeadTips:OnShow(uiParams)
   self:_InitWidget()
   self:_RegisterFuncs()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips._InitWidget = function(self)
-  -- function num : 0_1
-  self._gameObject = (self.view):GetGameObject()
+function UISeasonMazeBeadTips:_InitWidget()
+  self._gameObject = self.view:GetGameObject()
   self._root = self:GetGameObject("Root")
   self._rootRectTransform = self:GetUIComponent("RectTransform", "Root")
-  self._rootTransform = (self._root).transform
+  self._rootTransform = self._root.transform
   self.name = self:GetUIComponent("UILocalizationText", "Name")
   self._star = {}
   for i = 1, 3 do
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self._star)[i] = self:GetGameObject("Star" .. i)
+    self._star[i] = self:GetGameObject("Star" .. i)
   end
   self.type = self:GetUIComponent("UILocalizationText", "Type")
   self.tag = self:GetUIComponent("UILocalizationText", "Tag")
@@ -34,387 +22,278 @@ UISeasonMazeBeadTips._InitWidget = function(self)
   self._attGO = {}
   self._attText = {}
   for i = 1, 8 do
-    -- DECOMPILER ERROR at PC64: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self._attGO)[i] = self:GetGameObject("Att" .. i)
-    -- DECOMPILER ERROR at PC72: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._attText)[i] = self:GetUIComponent("UILocalizationText", "Att" .. i)
+    self._attGO[i] = self:GetGameObject("Att" .. i)
+    self._attText[i] = self:GetUIComponent("UILocalizationText", "Att" .. i)
   end
   self._funcBtn = self:GetGameObject("FuncBtn")
   self._funcBtnText = self:GetUIComponent("UILocalizationText", "FuncBtnText")
-  ;
-  (self._gameObject):SetActive(false)
+  self._gameObject:SetActive(false)
   self._closeBtnGo = self:GetGameObject("CloseBtn")
   self._bgRect = self:GetUIComponent("RectTransform", "Bg")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "Root")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips.SetData = function(self, uid, id, position, btnType, callBack)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeBeadTips:SetData(uid, id, position, btnType, callBack)
   self._uid = uid
   self._id = id
   self._position = position
-  if not btnType then
-    self._btnType = SeasonMazeBeadTipsBtnType.None
-    self._callBack = callBack
-    self:Lock("UISeasonMazeBeadTips")
-    self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self
+  self._btnType = btnType or SeasonMazeBeadTipsBtnType.None
+  self._callBack = callBack
+  self:Lock("UISeasonMazeBeadTips")
+  self:StartTask(function(TT)
     self:_OnValue(TT)
     self:UnLock("UISeasonMazeBeadTips")
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips._OnValue = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._gameObject):SetActive(true)
+function UISeasonMazeBeadTips:_OnValue(TT)
+  self._gameObject:SetActive(true)
   self:_SetFuncBtn()
-  self._cfg = (Cfg.cfg_component_season_maze_autobead)[self._id]
-  ;
-  (self.name):SetText((StringTable.Get)((self._cfg).Name))
-  for key,star in ipairs(self._star) do
-    star:SetActive(key < (self._cfg).Lv)
+  self._cfg = Cfg.cfg_component_season_maze_autobead[self._id]
+  self.name:SetText(StringTable.Get(self._cfg.Name))
+  for key, star in ipairs(self._star) do
+    star:SetActive(key < self._cfg.Lv)
   end
-  ;
-  (self.type):SetText((StringTable.Get)(self:GetTypeStr((self._cfg).Type)))
+  self.type:SetText(StringTable.Get(self:GetTypeStr(self._cfg.Type)))
   local tagStr = ""
-  if (self._cfg).Tag_c then
-    for key,value in ipairs((self._cfg).Tag_c) do
-      if key < #(self._cfg).Tag_c then
-        tagStr = tagStr .. (StringTable.Get)(value) .. "、"
+  if self._cfg.Tag_c then
+    for key, value in ipairs(self._cfg.Tag_c) do
+      if key < #self._cfg.Tag_c then
+        tagStr = tagStr .. StringTable.Get(value) .. "、"
       else
-        tagStr = tagStr .. (StringTable.Get)(value)
+        tagStr = tagStr .. StringTable.Get(value)
       end
     end
   end
-  ;
-  (self.tag):SetText(tagStr)
-  ;
-  (self.desc):SetText((StringTable.Get)((self._cfg).Desc))
+  self.tag:SetText(tagStr)
+  self.desc:SetText(StringTable.Get(self._cfg.Desc))
   local attStr = self:GetAttStr()
-  for index,value in ipairs(self._attText) do
+  for index, value in ipairs(self._attText) do
     if attStr[index] then
       value:SetText(attStr[index])
     end
-    ;
-    ((self._attGO)[index]):SetActive(attStr[index] ~= nil)
+    self._attGO[index]:SetActive(attStr[index] ~= nil)
   end
   if self._position then
     self:_AdaptivePosition(TT, self._position)
   end
-  -- DECOMPILER ERROR: 9 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips._AdaptivePosition = function(self, TT, position)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._canvasGroup).alpha = 0
+function UISeasonMazeBeadTips:_AdaptivePosition(TT, position)
+  self._canvasGroup.alpha = 0
   YIELD(TT)
-  local controllName = (self.uiOwner):GetName()
-  local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(controllName)
-  local controller = ((GameGlobal.UIStateManager)()):GetController(controllName)
+  local controllName = self.uiOwner:GetName()
+  local camera = GameGlobal.UIStateManager():GetControllerCamera(controllName)
+  local controller = GameGlobal.UIStateManager():GetController(controllName)
   local gameObject = controller:GetGameObject()
-  local transform = (gameObject.transform):Find("UICanvas")
+  local transform = gameObject.transform:Find("UICanvas")
   local rectTransform = transform:GetComponent(typeof(UnityEngine.RectTransform))
   local point = camera:WorldToScreenPoint(position)
-  local res, position = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(rectTransform, point, camera, nil)
-  if (rectTransform.sizeDelta).x * 0.5 < position.x + ((self._bgRect).sizeDelta).x then
-    position.x = (rectTransform.sizeDelta).x * 0.5 - ((self._bgRect).sizeDelta).x
+  local res, position = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, point, camera, nil)
+  if position.x + self._bgRect.sizeDelta.x > rectTransform.sizeDelta.x * 0.5 then
+    position.x = rectTransform.sizeDelta.x * 0.5 - self._bgRect.sizeDelta.x
   end
-  if position.y + (rectTransform.sizeDelta).y * 0.5 < ((self._bgRect).sizeDelta).y then
-    position.y = ((self._bgRect).sizeDelta).y - (rectTransform.sizeDelta).y * 0.5
+  if position.y + rectTransform.sizeDelta.y * 0.5 < self._bgRect.sizeDelta.y then
+    position.y = self._bgRect.sizeDelta.y - rectTransform.sizeDelta.y * 0.5
   end
-  -- DECOMPILER ERROR at PC80: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self._rootTransform).localPosition = position
-  -- DECOMPILER ERROR at PC82: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 1
+  self._rootTransform.localPosition = position
+  self._canvasGroup.alpha = 1
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips.FuncBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UISeasonMazeBeadTips:FuncBtnOnClick(go)
   if self._callBack then
-    (self._callBack)(self._uid)
+    self._callBack(self._uid)
     self:CloseBtnOnClick()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips.CloseBtnOnClick = function(self, go)
-  -- function num : 0_6
-  (self._gameObject):SetActive(false)
+function UISeasonMazeBeadTips:CloseBtnOnClick(go)
+  self._gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips.GetTypeStr = function(self, beadType)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMazeBeadTips:GetTypeStr(beadType)
   if beadType == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Skill then
     return "str_season_maze_bead_type"
-  else
-    if beadType == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Strong then
-      return "str_season_maze_bead_type1"
-    else
-      if beadType == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Energy then
-        return "str_season_maze_bead_type2"
-      end
-    end
+  elseif beadType == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Strong then
+    return "str_season_maze_bead_type1"
+  elseif beadType == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Energy then
+    return "str_season_maze_bead_type2"
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips._RegisterFuncs = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonMazeBeadTips:_RegisterFuncs()
   self._funcs = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._funcs)[SeasonMazeBeadAttType.Hurt] = self._DefaultFunc
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._funcs)[SeasonMazeBeadAttType.Energy] = self._EnergyFunc
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._funcs)[SeasonMazeBeadAttType.EnergyRevise] = self._EnergyRevise
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._funcs)[SeasonMazeBeadAttType.Hit] = self._HitFunc
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._funcs)[SeasonMazeBeadAttType.Crit] = self._DefaultFunc
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._funcs)[SeasonMazeBeadAttType.CritHurt] = self._CritHurtFunc
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._funcs)[SeasonMazeBeadAttType.Combo] = self._DefaultFunc
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._funcs)[SeasonMazeBeadAttType.HurtFload] = self._DefaultFunc
+  self._funcs[SeasonMazeBeadAttType.Hurt] = self._DefaultFunc
+  self._funcs[SeasonMazeBeadAttType.Energy] = self._EnergyFunc
+  self._funcs[SeasonMazeBeadAttType.EnergyRevise] = self._EnergyRevise
+  self._funcs[SeasonMazeBeadAttType.Hit] = self._HitFunc
+  self._funcs[SeasonMazeBeadAttType.Crit] = self._DefaultFunc
+  self._funcs[SeasonMazeBeadAttType.CritHurt] = self._CritHurtFunc
+  self._funcs[SeasonMazeBeadAttType.Combo] = self._DefaultFunc
+  self._funcs[SeasonMazeBeadAttType.HurtFload] = self._DefaultFunc
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips.GetAttStr = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonMazeBeadTips:GetAttStr()
   self._attStr = {}
   local data = self:GetBeadInfo(self._uid)
   self._fixValues = nil
   if data then
     self._fixValues = data.incr_value
   end
-  self:GetAttValueStr(SeasonMazeBeadAttType.Hurt, (self._cfg).Hurt, "str_season_maze_bead_att_str", false)
-  self:GetAttValueStr(SeasonMazeBeadAttType.Energy, (self._cfg).Energy, "str_season_maze_bead_att_str1", false)
-  self:GetAttValueStr(SeasonMazeBeadAttType.EnergyRevise, (self._cfg).EnergyRevise, "str_season_maze_bead_att_str2", true)
-  self:GetAttValueStr(SeasonMazeBeadAttType.Hit, (self._cfg).HitRate, "str_season_maze_bead_att_str3", true)
-  self:GetAttValueStr(SeasonMazeBeadAttType.Crit, (self._cfg).CritChance, "str_season_maze_bead_att_str4", true)
-  self:GetAttValueStr(SeasonMazeBeadAttType.CritHurt, (self._cfg).CritHurt, "str_season_maze_bead_att_str5", true)
-  self:GetAttValueStr(SeasonMazeBeadAttType.Combo, (self._cfg).ComboRate, "str_season_maze_bead_att_str6", true)
-  self:GetAttValueStr(SeasonMazeBeadAttType.HurtFload, (self._cfg).HurtFloat, "str_season_maze_bead_att_str7", true)
+  self:GetAttValueStr(SeasonMazeBeadAttType.Hurt, self._cfg.Hurt, "str_season_maze_bead_att_str", false)
+  self:GetAttValueStr(SeasonMazeBeadAttType.Energy, self._cfg.Energy, "str_season_maze_bead_att_str1", false)
+  self:GetAttValueStr(SeasonMazeBeadAttType.EnergyRevise, self._cfg.EnergyRevise, "str_season_maze_bead_att_str2", true)
+  self:GetAttValueStr(SeasonMazeBeadAttType.Hit, self._cfg.HitRate, "str_season_maze_bead_att_str3", true)
+  self:GetAttValueStr(SeasonMazeBeadAttType.Crit, self._cfg.CritChance, "str_season_maze_bead_att_str4", true)
+  self:GetAttValueStr(SeasonMazeBeadAttType.CritHurt, self._cfg.CritHurt, "str_season_maze_bead_att_str5", true)
+  self:GetAttValueStr(SeasonMazeBeadAttType.Combo, self._cfg.ComboRate, "str_season_maze_bead_att_str6", true)
+  self:GetAttValueStr(SeasonMazeBeadAttType.HurtFload, self._cfg.HurtFloat, "str_season_maze_bead_att_str7", true)
   return self._attStr
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips.GetFixValue = function(self, values, beadAttType)
-  -- function num : 0_10
+function UISeasonMazeBeadTips:GetFixValue(values, beadAttType)
   if values and beadAttType and values[beadAttType] then
     return values[beadAttType]
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips.GetAttValueStr = function(self, beadAttType, cfgValue, cfgStr, isPercent)
-  -- function num : 0_11
-  local func = (self._funcs)[beadAttType]
-  if not func then
-    func = self._DefaultFunc
-  end
+function UISeasonMazeBeadTips:GetAttValueStr(beadAttType, cfgValue, cfgStr, isPercent)
+  local func = self._funcs[beadAttType]
+  func = func or self._DefaultFunc
   func(self, beadAttType, cfgValue, cfgStr, isPercent)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips._DefaultFunc = function(self, beadAttType, cfgValue, cfgStr, isPercent)
-  -- function num : 0_12 , upvalues : _ENV
-  local fixValue = (self:GetFixValue(self._fixValues, beadAttType))
-  local valueStr = nil
-  if fixValue > 0 then
+function UISeasonMazeBeadTips:_DefaultFunc(beadAttType, cfgValue, cfgStr, isPercent)
+  local fixValue = self:GetFixValue(self._fixValues, beadAttType)
+  local valueStr
+  if 0 < fixValue then
     valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Green, self:_ToPercent(isPercent, cfgValue + fixValue))
-  else
-    if fixValue < 0 then
-      valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Red, self:_ToPercent(isPercent, cfgValue + fixValue))
-    else
-      if cfgValue ~= 0 then
-        valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Black, self:_ToPercent(isPercent, cfgValue + fixValue))
-      end
-    end
-  end
-  if valueStr then
-    (table.insert)(self._attStr, (StringTable.Get)(cfgStr, valueStr))
-  end
-end
-
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips._EnergyFunc = function(self, beadAttType, cfgValue, cfgStr, isPercent)
-  -- function num : 0_13 , upvalues : _ENV
-  local fixValue = (self:GetFixValue(self._fixValues, beadAttType))
-  local valueStr = nil
-  if fixValue > 0 then
+  elseif fixValue < 0 then
     valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Red, self:_ToPercent(isPercent, cfgValue + fixValue))
-  else
-    if fixValue < 0 then
-      valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Green, self:_ToPercent(isPercent, cfgValue + fixValue))
-    else
-      if cfgValue ~= 0 then
-        valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Black, self:_ToPercent(isPercent, cfgValue + fixValue))
-      end
-    end
+  elseif cfgValue ~= 0 then
+    valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Black, self:_ToPercent(isPercent, cfgValue + fixValue))
   end
   if valueStr then
-    (table.insert)(self._attStr, (StringTable.Get)(cfgStr, valueStr))
+    table.insert(self._attStr, StringTable.Get(cfgStr, valueStr))
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips._EnergyRevise = function(self, beadAttType, cfgValue, cfgStr, isPercent)
-  -- function num : 0_14 , upvalues : _ENV
-  local fixValue = (self:GetFixValue(self._fixValues, beadAttType))
-  local valueStr = nil
-  local finalValue = cfgValue + fixValue
-  if fixValue > 0 then
-    valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Green, self:_ToPercent(isPercent, finalValue))
-  else
-    if fixValue < 0 then
-      valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Red, self:_ToPercent(isPercent, finalValue))
-    else
-      if cfgValue ~= 0 then
-        valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Black, self:_ToPercent(isPercent, finalValue))
-      end
-    end
+function UISeasonMazeBeadTips:_EnergyFunc(beadAttType, cfgValue, cfgStr, isPercent)
+  local fixValue = self:GetFixValue(self._fixValues, beadAttType)
+  local valueStr
+  if 0 < fixValue then
+    valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Red, self:_ToPercent(isPercent, cfgValue + fixValue))
+  elseif fixValue < 0 then
+    valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Green, self:_ToPercent(isPercent, cfgValue + fixValue))
+  elseif cfgValue ~= 0 then
+    valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Black, self:_ToPercent(isPercent, cfgValue + fixValue))
   end
   if valueStr then
-    if finalValue > 0 then
+    table.insert(self._attStr, StringTable.Get(cfgStr, valueStr))
+  end
+end
+
+function UISeasonMazeBeadTips:_EnergyRevise(beadAttType, cfgValue, cfgStr, isPercent)
+  local fixValue = self:GetFixValue(self._fixValues, beadAttType)
+  local valueStr
+  local finalValue = cfgValue + fixValue
+  if 0 < fixValue then
+    valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Green, self:_ToPercent(isPercent, finalValue))
+  elseif fixValue < 0 then
+    valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Red, self:_ToPercent(isPercent, finalValue))
+  elseif cfgValue ~= 0 then
+    valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Black, self:_ToPercent(isPercent, finalValue))
+  end
+  if valueStr then
+    if 0 < finalValue then
       valueStr = "+" .. valueStr
     end
-    ;
-    (table.insert)(self._attStr, (StringTable.Get)(cfgStr, valueStr))
+    table.insert(self._attStr, StringTable.Get(cfgStr, valueStr))
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips._HitFunc = function(self, beadAttType, cfgValue, cfgStr, isPercent)
-  -- function num : 0_15 , upvalues : _ENV
-  local fixValue = (self:GetFixValue(self._fixValues, beadAttType))
-  local valueStr = nil
+function UISeasonMazeBeadTips:_HitFunc(beadAttType, cfgValue, cfgStr, isPercent)
+  local fixValue = self:GetFixValue(self._fixValues, beadAttType)
+  local valueStr
   local finalValue = cfgValue + fixValue
   finalValue = finalValue - 1000
   if finalValue ~= 0 then
-    if fixValue > 0 then
+    if 0 < fixValue then
       valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Green, self:_ToPercent(isPercent, finalValue))
+    elseif fixValue < 0 then
+      valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Red, self:_ToPercent(isPercent, finalValue))
     else
-      if fixValue < 0 then
-        valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Red, self:_ToPercent(isPercent, finalValue))
-      else
-        valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Black, self:_ToPercent(isPercent, finalValue))
-      end
+      valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Black, self:_ToPercent(isPercent, finalValue))
     end
   end
   if valueStr then
-    if finalValue > 0 then
+    if 0 < finalValue then
       valueStr = "+" .. valueStr
     end
-    ;
-    (table.insert)(self._attStr, (StringTable.Get)(cfgStr, valueStr))
+    table.insert(self._attStr, StringTable.Get(cfgStr, valueStr))
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips._CritHurtFunc = function(self, beadAttType, cfgValue, cfgStr, isPercent)
-  -- function num : 0_16 , upvalues : _ENV
-  local fixValue = (self:GetFixValue(self._fixValues, beadAttType))
-  local valueStr = nil
+function UISeasonMazeBeadTips:_CritHurtFunc(beadAttType, cfgValue, cfgStr, isPercent)
+  local fixValue = self:GetFixValue(self._fixValues, beadAttType)
+  local valueStr
   local finalValue = cfgValue + fixValue
   finalValue = finalValue - 1500
   if finalValue ~= 0 then
-    if fixValue > 0 then
+    if 0 < fixValue then
       valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Green, self:_ToPercent(isPercent, finalValue))
+    elseif fixValue < 0 then
+      valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Red, self:_ToPercent(isPercent, finalValue))
     else
-      if fixValue < 0 then
-        valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Red, self:_ToPercent(isPercent, finalValue))
-      else
-        valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Black, self:_ToPercent(isPercent, finalValue))
-      end
+      valueStr = self:_ToColorStr(SeasonMazeBeadTipsColorType.Black, self:_ToPercent(isPercent, finalValue))
     end
   end
   if valueStr then
-    if finalValue > 0 then
+    if 0 < finalValue then
       valueStr = "+" .. valueStr
     end
-    ;
-    (table.insert)(self._attStr, (StringTable.Get)(cfgStr, valueStr))
+    table.insert(self._attStr, StringTable.Get(cfgStr, valueStr))
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips._ToPercent = function(self, isPercent, value)
-  -- function num : 0_17 , upvalues : _ENV
+function UISeasonMazeBeadTips:_ToPercent(isPercent, value)
   if isPercent then
-    local x, y = (math.modf)((math.floor)(value * 0.1))
+    local x, y = math.modf(math.floor(value * 0.1))
     return x .. "%%"
   else
-    do
-      local x, y = (math.modf)((math.floor)(value))
-      do return tostring(x) end
-    end
+    local x, y = math.modf(math.floor(value))
+    return tostring(x)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips._ToColorStr = function(self, colorType, str)
-  -- function num : 0_18 , upvalues : _ENV
+function UISeasonMazeBeadTips:_ToColorStr(colorType, str)
   if str then
     if colorType == SeasonMazeBeadTipsColorType.Red then
-      return (string.format)("<color=#ef5151>%s</color>", str)
-    else
-      if colorType == SeasonMazeBeadTipsColorType.Green then
-        return (string.format)("<color=#56c49b>%s</color>", str)
-      else
-        if colorType == SeasonMazeBeadTipsColorType.Black then
-          return (string.format)("<color=#1c1c1c>%s</color>", str)
+      return string.format("<color=#ef5151>%s</color>", str)
+    elseif colorType == SeasonMazeBeadTipsColorType.Green then
+      return string.format("<color=#56c49b>%s</color>", str)
+    elseif colorType == SeasonMazeBeadTipsColorType.Black then
+      return string.format("<color=#1c1c1c>%s</color>", str)
+    end
+  end
+  return nil
+end
+
+function UISeasonMazeBeadTips:SetCloseBtnVisble(bVisible)
+  self._closeBtnGo:SetActive(bVisible)
+end
+
+function UISeasonMazeBeadTips:GetBeadInfo(uid)
+  local seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  local seasonMazeObj = seasonMazeModule:CurSeasonObj()
+  if seasonMazeObj then
+    local component = seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+    local componentInfo = component:GetComponentInfo()
+    if componentInfo and componentInfo.m_auto_bead_map then
+      for _, value in pairs(componentInfo.m_auto_bead_map) do
+        if value.bead_info and value.bead_info.unique_id == uid then
+          return value
         end
       end
     end
@@ -422,50 +301,15 @@ UISeasonMazeBeadTips._ToColorStr = function(self, colorType, str)
   return nil
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips.SetCloseBtnVisble = function(self, bVisible)
-  -- function num : 0_19
-  (self._closeBtnGo):SetActive(bVisible)
-end
-
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips.GetBeadInfo = function(self, uid)
-  -- function num : 0_20 , upvalues : _ENV
-  local seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  local seasonMazeObj = seasonMazeModule:CurSeasonObj()
-  if seasonMazeObj then
-    local component = seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-    local componentInfo = component:GetComponentInfo()
-    if componentInfo and componentInfo.m_auto_bead_map then
-      for _,value in pairs(componentInfo.m_auto_bead_map) do
-        if value.bead_info and (value.bead_info).unique_id == uid then
-          return value
-        end
-      end
-    end
-  end
-  do
-    return nil
-  end
-end
-
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadTips._SetFuncBtn = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  (self._funcBtn):SetActive(self._btnType ~= SeasonMazeBeadTipsBtnType.None)
+function UISeasonMazeBeadTips:_SetFuncBtn()
+  self._funcBtn:SetActive(self._btnType ~= SeasonMazeBeadTipsBtnType.None)
   if self._btnType == SeasonMazeBeadTipsBtnType.Demount then
-    (self._funcBtnText):SetText((StringTable.Get)("str_season_maze_bead_demount"))
+    self._funcBtnText:SetText(StringTable.Get("str_season_maze_bead_demount"))
   elseif self._btnType == SeasonMazeBeadTipsBtnType.Equiped then
-    (self._funcBtnText):SetText((StringTable.Get)("str_season_maze_bead_equiped"))
+    self._funcBtnText:SetText(StringTable.Get("str_season_maze_bead_equiped"))
   elseif self._btnType == SeasonMazeBeadTipsBtnType.RemoveSynthesis then
-    (self._funcBtnText):SetText((StringTable.Get)("str_season_maze_bead_removesynthesis"))
+    self._funcBtnText:SetText(StringTable.Get("str_season_maze_bead_removesynthesis"))
   elseif self._btnType == SeasonMazeBeadTipsBtnType.AddSynthesis then
-    (self._funcBtnText):SetText((StringTable.Get)("str_season_maze_bead_addsynthesis"))
+    self._funcBtnText:SetText(StringTable.Get("str_season_maze_bead_addsynthesis"))
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
-
-

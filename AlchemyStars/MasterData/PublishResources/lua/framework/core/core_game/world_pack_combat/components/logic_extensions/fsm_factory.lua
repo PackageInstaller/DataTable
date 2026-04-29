@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_combat/components/logic_extensions/fsm_factory.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FSMFactory", Singleton)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-FSMFactory.Constructor = function(self)
-  -- function num : 0_0
+function FSMFactory:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMFactory.SetConfig = function(self, config)
-  -- function num : 0_1
+function FSMFactory:SetConfig(config)
   self._configMng = config
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMFactory.CreateFSM = function(self, genInfo)
-  -- function num : 0_2 , upvalues : _ENV
+function FSMFactory:CreateFSM(genInfo)
   local cfgID = genInfo.ConfigID
-  local config = (self._configMng)[cfgID]
+  local config = self._configMng[cfgID]
   if not config then
-    (Log.fatal)("CreateLogic Cant Find Config : id = " .. cfgID)
+    Log.fatal("CreateLogic Cant Find Config : id = " .. cfgID)
     return nil
   end
   local logic = CustomLogic:New()
@@ -36,11 +23,6 @@ FSMFactory.CreateFSM = function(self, genInfo)
   return logic
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMFactory.DestroyFSM = function(self, logic)
-  -- function num : 0_3
+function FSMFactory:DestroyFSM(logic)
   logic:Destroy()
 end
-
-

@@ -1,73 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_boss_counter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBossCounter", UIController)
 UIBossCounter = UIBossCounter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBossCounter.OnShow = function(self, arg)
-  -- function num : 0_0
+function UIBossCounter:OnShow(arg)
   local uiParams = arg[1]
   if not self:SenityCheck(uiParams) then
-    return 
+    return
   end
   self:SyncLoadAllAsset(uiParams)
   self._monsterCG = self:GetUIComponent("RawImage", "role")
   self:Refresh(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossCounter.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBossCounter:Dispose()
   if self._cgMatReq then
-    (self._cgMatReq):Dispose()
+    self._cgMatReq:Dispose()
     self._cgMatReq = nil
   end
   self._monsterCG = nil
-  ;
-  ((UIBossCounter.super).Dispose)(self)
+  UIBossCounter.super.Dispose(self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossCounter.SenityCheck = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBossCounter:SenityCheck(uiParams)
   local resmgr = ResourceManager:GetInstance()
   if not resmgr:HasResource(uiParams.monsterCGMat) then
-    (Log.fatal)(self._className, "invalid petCG: ", tostring(uiParams.monsterCGMat))
+    Log.fatal(self._className, "invalid petCG: ", tostring(uiParams.monsterCGMat))
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossCounter.SyncLoadAllAsset = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBossCounter:SyncLoadAllAsset(uiParams)
   local resmgr = ResourceManager:GetInstance()
   self._cgMatReq = resmgr:SyncLoadAsset(uiParams.monsterCGMat, LoadType.Mat)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossCounter.Refresh = function(self, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  if self._monsterCG and self._cgMatReq and (self._cgMatReq).Obj then
-    (self._monsterCG).material = (self._cgMatReq).Obj
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._monsterCG).transform).localPosition = Vector3((uiParams.offsetPos).x, (uiParams.offsetPos).y, 0)
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._monsterCG).transform).localScale = Vector3(uiParams.offsetScale, uiParams.offsetScale, 1)
+function UIBossCounter:Refresh(uiParams)
+  if self._monsterCG and self._cgMatReq and self._cgMatReq.Obj then
+    self._monsterCG.material = self._cgMatReq.Obj
+    self._monsterCG.transform.localPosition = Vector3(uiParams.offsetPos.x, uiParams.offsetPos.y, 0)
+    self._monsterCG.transform.localScale = Vector3(uiParams.offsetScale, uiParams.offsetScale, 1)
   end
 end
-
-

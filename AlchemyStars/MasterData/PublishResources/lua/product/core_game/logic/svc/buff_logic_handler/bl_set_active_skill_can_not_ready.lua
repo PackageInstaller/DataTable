@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_active_skill_can_not_ready.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetActiveSkillCanNotReady", BuffLogicBase)
 BuffLogicSetActiveSkillCanNotReady = BuffLogicSetActiveSkillCanNotReady
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetActiveSkillCanNotReady.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetActiveSkillCanNotReady:Constructor(buffInstance, logicParam)
   self._extraSkillID = logicParam.extraSkillID
   self._reasonTips = logicParam.reasonTips
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetActiveSkillCanNotReady.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  local blsvc = (self._world):GetService("BuffLogic")
+function BuffLogicSetActiveSkillCanNotReady:DoLogic()
+  local e = self._buffInstance:Entity()
+  local blsvc = self._world:GetService("BuffLogic")
   if self._extraSkillID then
     blsvc:ChangePetActiveSkillReady(e, 0, self._extraSkillID)
     blsvc:BuffSetPetExtraActiveSkillCanNotReady(e, self._extraSkillID, true, self._reasonTips)
@@ -27,71 +17,55 @@ BuffLogicSetActiveSkillCanNotReady.DoLogic = function(self)
     blsvc:ChangePetActiveSkillReady(e, 0)
     blsvc:BuffSetPetActiveSkillCanNotReady(e, true, self._reasonTips)
   end
-  return BuffResultSetActiveSkillCanNotReady:New((self._buffInstance):BuffSeq(), true, false, self._extraSkillID)
+  return BuffResultSetActiveSkillCanNotReady:New(self._buffInstance:BuffSeq(), true, false, self._extraSkillID)
 end
 
 _class("BuffLogicResetActiveSkillCanNotReady", BuffLogicBase)
 BuffLogicResetActiveSkillCanNotReady = BuffLogicResetActiveSkillCanNotReady
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetActiveSkillCanNotReady.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetActiveSkillCanNotReady:Constructor(buffInstance, logicParam)
   self._extraSkillID = logicParam.extraSkillID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetActiveSkillCanNotReady.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  local utilData = (self._world):GetService("UtilData")
-  local blsvc = (self._world):GetService("BuffLogic")
+function BuffLogicResetActiveSkillCanNotReady:DoLogic()
+  local e = self._buffInstance:Entity()
+  local utilData = self._world:GetService("UtilData")
+  local blsvc = self._world:GetService("BuffLogic")
   if self._extraSkillID then
     blsvc:BuffSetPetExtraActiveSkillCanNotReady(e, self._extraSkillID, false)
   else
     blsvc:BuffSetPetActiveSkillCanNotReady(e, false)
   end
   local shouldReady = false
-  local localSkillID = (e:SkillInfo()):GetActiveSkillID()
+  local localSkillID = e:SkillInfo():GetActiveSkillID()
   if not localSkillID then
     local petPstIDComponent = e:PetPstID()
     local petPstID = petPstIDComponent:GetPstID()
-    local petData = (self._world):GetPetData(petPstID)
+    local petData = self._world:GetPetData(petPstID)
     localSkillID = petData:GetPetActiveSkill()
   end
-  do
-    if self._extraSkillID then
-      localSkillID = self._extraSkillID
+  if self._extraSkillID then
+    localSkillID = self._extraSkillID
+  end
+  local configService = self._world:GetService("Config")
+  local skillConfigData = configService:GetSkillConfigData(localSkillID)
+  local attributesComponent = e:Attributes()
+  if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
+    local currentPower = attributesComponent:GetAttribute("LegendPower")
+    local minCost = blsvc:CalcMinCostByExtraParam(e, localSkillID)
+    if currentPower >= minCost then
+      shouldReady = true
     end
-    local configService = (self._world):GetService("Config")
-    local skillConfigData = configService:GetSkillConfigData(localSkillID)
-    local attributesComponent = e:Attributes()
-    if skillConfigData:GetSkillTriggerType() == SkillTriggerType.LegendEnergy then
-      local currentPower = attributesComponent:GetAttribute("LegendPower")
-      local minCost = blsvc:CalcMinCostByExtraParam(e, localSkillID)
-      if minCost <= currentPower then
-        shouldReady = true
-      end
-    else
-      do
-        do
-          local currentPower = utilData:GetPetPowerAttr(e, localSkillID)
-          if currentPower <= 0 then
-            shouldReady = true
-          end
-          local ready = 0
-          do
-            if shouldReady then
-              local blsvc = (self._world):GetService("BuffLogic")
-              ready = blsvc:ChangePetActiveSkillReady(e, 1, localSkillID)
-            end
-            do return BuffResultSetActiveSkillCanNotReady:New((self._buffInstance):BuffSeq(), false, ready == 1, self._extraSkillID) end
-            -- DECOMPILER ERROR: 1 unprocessed JMP targets
-          end
-        end
-      end
+  else
+    local currentPower = utilData:GetPetPowerAttr(e, localSkillID)
+    if currentPower <= 0 then
+      shouldReady = true
     end
   end
+  local ready = 0
+  if shouldReady then
+    local blsvc = self._world:GetService("BuffLogic")
+    ready = blsvc:ChangePetActiveSkillReady(e, 1, localSkillID)
+  end
+  return BuffResultSetActiveSkillCanNotReady:New(self._buffInstance:BuffSeq(), false, ready == 1, self._extraSkillID)
 end
-
-

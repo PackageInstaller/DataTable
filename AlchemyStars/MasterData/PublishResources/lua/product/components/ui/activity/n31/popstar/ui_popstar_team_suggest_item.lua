@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/popstar/ui_popstar_team_suggest_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPopStarTeamSuggestItem", UICustomWidget)
 UIPopStarTeamSuggestItem = UIPopStarTeamSuggestItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPopStarTeamSuggestItem.OnShow = function(self)
-  -- function num : 0_0
+function UIPopStarTeamSuggestItem:OnShow()
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._btnUse = self:GetGameObject("BtnUse")
   self._btnUsed = self:GetGameObject("BtnUsed")
@@ -16,50 +9,33 @@ UIPopStarTeamSuggestItem.OnShow = function(self)
   self._go = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeamSuggestItem.SetData = function(self, data, levelData, petClick, useCallback)
-  -- function num : 0_1
+function UIPopStarTeamSuggestItem:SetData(data, levelData, petClick, useCallback)
   self._data = data
   self._levelData = levelData
   self._useCallback = useCallback
-  local isused = (self._data):IsSame((self._levelData):GetTeam())
-  ;
-  (self._btnUse):SetActive(not isused)
-  ;
-  (self._btnUsed):SetActive(isused)
-  ;
-  (self._nameLabel):SetText((self._data):GetName())
-  local team = (self._data):GetTeam()
-  ;
-  (self._petLoader):SpawnObjects("UIPopStarPetItem", #team)
-  local list = (self._petLoader):GetAllSpawnList()
+  local isused = self._data:IsSame(self._levelData:GetTeam())
+  self._btnUse:SetActive(not isused)
+  self._btnUsed:SetActive(isused)
+  self._nameLabel:SetText(self._data:GetName())
+  local team = self._data:GetTeam()
+  self._petLoader:SpawnObjects("UIPopStarPetItem", #team)
+  local list = self._petLoader:GetAllSpawnList()
   for i = 1, #list do
     local item = list[i]
     item:SetData(team[i], 1, function(id, pos)
-    -- function num : 0_1_0 , upvalues : petClick
-    if petClick then
-      petClick(id, pos)
-    end
-  end
-)
+      if petClick then
+        petClick(id, pos)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeamSuggestItem.SetActive = function(self, status)
-  -- function num : 0_2
-  (self._go):SetActive(status)
+function UIPopStarTeamSuggestItem:SetActive(status)
+  self._go:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarTeamSuggestItem.BtnUseOnClick = function(self)
-  -- function num : 0_3
+function UIPopStarTeamSuggestItem:BtnUseOnClick()
   if self._useCallback then
-    (self._useCallback)(self._data)
+    self._useCallback(self._data)
   end
 end
-
-

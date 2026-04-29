@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/skill_preview_context.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPreviewContext", Object)
 SkillPreviewContext = SkillPreviewContext
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewContext.Constructor = function(self, world, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewContext:Constructor(world, casterEntity)
   self._world = world
   self._casterEntity = casterEntity
   self._scopeResult = nil
@@ -17,8 +10,8 @@ SkillPreviewContext.Constructor = function(self, world, casterEntity)
   self._effectList = {}
   self._targetEntityIDList = {}
   self._hitBackDirType = nil
-  self._casterDir = (casterEntity:GridLocation()).Direction
-  self._casterPos = (casterEntity:GridLocation()).Position
+  self._casterDir = casterEntity:GridLocation().Direction
+  self._casterPos = casterEntity:GridLocation().Position
   self._casterBodyArea = casterEntity:BodyArea()
   self._ignorePlayerBlock = false
   self._previewIndex = 0
@@ -31,229 +24,136 @@ SkillPreviewContext.Constructor = function(self, world, casterEntity)
   self._activeSkillID = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.SetEffectList = function(self, effectList)
-  -- function num : 0_1
+function SkillPreviewContext:SetEffectList(effectList)
   self._effectList = effectList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.GetEffect = function(self, previewEffectType)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPreviewContext:GetEffect(previewEffectType)
   local retResultList = {}
-  for k,v in pairs(self._effectList) do
+  for k, v in pairs(self._effectList) do
     if v.effectType == previewEffectType then
       return v
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.GetEffectsByType = function(self, previewEffectType)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillPreviewContext:GetEffectsByType(previewEffectType)
   local retResultList = {}
-  for k,v in ipairs(self._effectList) do
+  for k, v in ipairs(self._effectList) do
     if v.effectType == previewEffectType then
-      (table.insert)(retResultList, v)
+      table.insert(retResultList, v)
     end
   end
   return retResultList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.IsNeedBreak = function(self)
-  -- function num : 0_4
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+function SkillPreviewContext:IsNeedBreak()
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   local nowPreviewIndex = previewActiveSkillService:GetPreviewIndex()
-  do return self._needBreak or nowPreviewIndex ~= self:_GetPreviewIndex() end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return self._needBreak or nowPreviewIndex ~= self:_GetPreviewIndex()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.SetBreakState = function(self, needBreak)
-  -- function num : 0_5
+function SkillPreviewContext:SetBreakState(needBreak)
   self._needBreak = needBreak
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.SetScopeResult = function(self, scopeResult)
-  -- function num : 0_6
+function SkillPreviewContext:SetScopeResult(scopeResult)
   self._scopeResult = scopeResult
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.GetScopeResult = function(self, effectType)
-  -- function num : 0_7
+function SkillPreviewContext:GetScopeResult(effectType)
   return self._scopeResult
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.SetEffectParam = function(self, effectType, effectParam)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._effectParamList)[effectType] = effectParam
+function SkillPreviewContext:SetEffectParam(effectType, effectParam)
+  self._effectParamList[effectType] = effectParam
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.GetEffectParam = function(self, effectType)
-  -- function num : 0_9
-  return (self._effectParamList)[effectType]
+function SkillPreviewContext:GetEffectParam(effectType)
+  return self._effectParamList[effectType]
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.SetTargetEntityIDList = function(self, list)
-  -- function num : 0_10
+function SkillPreviewContext:SetTargetEntityIDList(list)
   self._targetEntityIDList = list
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.GetTargetEntityIDList = function(self, effectType)
-  -- function num : 0_11
+function SkillPreviewContext:GetTargetEntityIDList(effectType)
   return self._targetEntityIDList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.GetWorld = function(self)
-  -- function num : 0_12
+function SkillPreviewContext:GetWorld()
   return self._world
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.SetCasterDir = function(self, dir)
-  -- function num : 0_13
+function SkillPreviewContext:SetCasterDir(dir)
   self._casterDir = dir
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.GetCasterDir = function(self)
-  -- function num : 0_14
+function SkillPreviewContext:GetCasterDir()
   return self._casterDir
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.SetCasterPos = function(self, pos)
-  -- function num : 0_15
+function SkillPreviewContext:SetCasterPos(pos)
   self._casterPos = pos
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.GetCasterPos = function(self)
-  -- function num : 0_16
+function SkillPreviewContext:GetCasterPos()
   return self._casterPos
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.IsIgnorePlayerBlock = function(self)
-  -- function num : 0_17
+function SkillPreviewContext:IsIgnorePlayerBlock()
   return self._ignorePlayerBlock
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.SetIgnorePlayerBlockState = function(self, state)
-  -- function num : 0_18
+function SkillPreviewContext:SetIgnorePlayerBlockState(state)
   self._ignorePlayerBlock = state
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.GetCasterBodyArea = function(self)
-  -- function num : 0_19
+function SkillPreviewContext:GetCasterBodyArea()
   return self._casterBodyArea
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.GetHitBackDirType = function(self)
-  -- function num : 0_20
+function SkillPreviewContext:GetHitBackDirType()
   return self._hitBackDirType
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.SetHitBackDirType = function(self, dirType)
-  -- function num : 0_21
+function SkillPreviewContext:SetHitBackDirType(dirType)
   self._hitBackDirType = dirType
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.SetPreviewIndex = function(self, index)
-  -- function num : 0_22
+function SkillPreviewContext:SetPreviewIndex(index)
   self._previewIndex = index
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext._GetPreviewIndex = function(self)
-  -- function num : 0_23
+function SkillPreviewContext:_GetPreviewIndex()
   return self._previewIndex
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.SetPickUpPos = function(self, pos)
-  -- function num : 0_24
+function SkillPreviewContext:SetPickUpPos(pos)
   self._pickUpPos = pos
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.GetPickUpPos = function(self)
-  -- function num : 0_25
+function SkillPreviewContext:GetPickUpPos()
   return self._pickUpPos
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.SetScopeType = function(self, scopeType)
-  -- function num : 0_26
+function SkillPreviewContext:SetScopeType(scopeType)
   self._scopeType = scopeType
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.GetScopeType = function(self)
-  -- function num : 0_27
+function SkillPreviewContext:GetScopeType()
   return self._scopeType
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.SetConfigData = function(self, configData)
-  -- function num : 0_28
+function SkillPreviewContext:SetConfigData(configData)
   self._configData = configData
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.GetConfigData = function(self)
-  -- function num : 0_29
+function SkillPreviewContext:GetConfigData()
   return self._configData
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.SetScopeCenterPos = function(self, posList)
-  -- function num : 0_30
+function SkillPreviewContext:SetScopeCenterPos(posList)
   if posList._className then
     self._scopeCenterPosList = {posList}
   else
@@ -261,25 +161,14 @@ SkillPreviewContext.SetScopeCenterPos = function(self, posList)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.GetScopeCenterPosList = function(self)
-  -- function num : 0_31
+function SkillPreviewContext:GetScopeCenterPosList()
   return self._scopeCenterPosList
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.SetPreviewActiveSkillID = function(self, skillID)
-  -- function num : 0_32
+function SkillPreviewContext:SetPreviewActiveSkillID(skillID)
   self._activeSkillID = skillID
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewContext.GetPreviewActiveSkillID = function(self)
-  -- function num : 0_33
+function SkillPreviewContext:GetPreviewActiveSkillID()
   return self._activeSkillID
 end
-
-

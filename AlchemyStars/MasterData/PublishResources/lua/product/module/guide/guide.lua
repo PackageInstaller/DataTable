@@ -1,13 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/guide/guide.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Guide", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-Guide.Constructor = function(self, manager, data)
-  -- function num : 0_0
+function Guide:Constructor(manager, data)
   self.manager = manager
   self.data = data
   self.done = false
@@ -15,151 +8,95 @@ Guide.Constructor = function(self, manager, data)
   self.act = 0
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function Guide:Init()
   if self.inited then
-    return 
+    return
   end
-  local steps = (Cfg.cfg_guide)({guide = (self.data).guide})
+  local steps = Cfg.cfg_guide({
+    guide = self.data.guide
+  })
   if not steps then
-    (self.manager):GuideError((self.data).guide)
-    return 
+    self.manager:GuideError(self.data.guide)
+    return
   end
-  do
-    if steps and #steps <= 0 then
-      local str = "新手引导配置异常 cfg_guide->guideId:" .. (self.data).id .. "没有步骤"
-      ;
-      (ToastManager.ShowToast)(str)
-      return 
-    end
-    ;
-    (table.sort)(steps, (table.asc)("step"))
-    local allSteps = {}
-    for i = 1, #steps do
-      if i ~= #steps then
-        do
-          local step = GuideStep:New(self, steps[i], not self:_CheckPlatform(steps[i]))
-          ;
-          (table.insert)(allSteps, step)
-          if not self.backStep and step:IsBack() then
-            self.backStep = i
-          end
-          -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+  if steps and #steps <= 0 then
+    local str = "新手引导配置异常 cfg_guide->guideId:" .. self.data.id .. "没有步骤"
+    ToastManager.ShowToast(str)
+    return
+  end
+  table.sort(steps, table.asc("step"))
+  local allSteps = {}
+  for i = 1, #steps do
+    if self:_CheckPlatform(steps[i]) then
+      local step = GuideStep:New(self, steps[i], i == #steps)
+      table.insert(allSteps, step)
+      if not self.backStep and step:IsBack() then
+        self.backStep = i
       end
     end
-    self.allSteps = allSteps
-    self.currStep = nil
-    self.lockScreen = steps and (steps[1]).lockScreen or false
-    self.inited = true
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
   end
+  self.allSteps = allSteps
+  self.currStep = nil
+  self.lockScreen = steps and steps[1].lockScreen or false
+  self.inited = true
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.SetData = function(self, data)
-  -- function num : 0_2
+function Guide:SetData(data)
   self.data = data
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.SetYieldTT = function(self, TT)
-  -- function num : 0_3
+function Guide:SetYieldTT(TT)
   self.TT = TT
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.GetYieldTT = function(self)
-  -- function num : 0_4
+function Guide:GetYieldTT()
   return self.TT
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.CallYieldCallBack = function(self)
-  -- function num : 0_5
+function Guide:CallYieldCallBack()
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.GetID = function(self)
-  -- function num : 0_6
-  return (self.data).guide
+function Guide:GetID()
+  return self.data.guide
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.IsLockScreen = function(self)
-  -- function num : 0_7
-  if self.currStep then
-    return (self.currStep):IsLockScreen()
-  end
+function Guide:IsLockScreen()
+  return self.currStep and self.currStep:IsLockScreen()
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.SetCount = function(self, count)
-  -- function num : 0_8 , upvalues : _ENV
+function Guide:SetCount(count)
   self.count = count
-  ;
-  (Log.debug)("[guide] set guide ", (self.data).guide, " count: ", count)
+  Log.debug("[guide] set guide ", self.data.guide, " count: ", count)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.GetCount = function(self)
-  -- function num : 0_9
+function Guide:GetCount()
   return self.count
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.GetTotalCount = function(self)
-  -- function num : 0_10
-  return (self.data).count or 1
+function Guide:GetTotalCount()
+  return self.data.count or 1
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.IsAct = function(self)
-  -- function num : 0_11
-  do return self.act > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Guide:IsAct()
+  return self.act > 0
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.IsDone = function(self)
-  -- function num : 0_12
+function Guide:IsDone()
   return self.done
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.NoAct = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function Guide:NoAct()
   if self:CheckGuide() then
-    return 
+    return
   end
-  self.act = (os.time)()
+  self.act = os.time()
   self.done = false
   return true
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.Done = function(self, remain)
-  -- function num : 0_14
+function Guide:Done(remain)
   if self.done then
-    return 
+    return
   end
   self.done = true
   self.act = 0
@@ -169,39 +106,28 @@ Guide.Done = function(self, remain)
   end
   if not remain then
     for i = 1, #self.allSteps do
-      ((self.allSteps)[i]):Clear()
+      self.allSteps[i]:Clear()
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.Clear = function(self, isDispose)
-  -- function num : 0_15
+function Guide:Clear(isDispose)
   if not self.inited then
-    return 
+    return
   end
   self.act = 0
   self.count = 0
   for i = 1, #self.allSteps do
-    ((self.allSteps)[i]):Clear(isDispose)
+    self.allSteps[i]:Clear(isDispose)
   end
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.Complete = function(self, remain)
-  -- function num : 0_16
-  (self.manager):DoneGuide((self.data).guide, true, remain)
+function Guide:Complete(remain)
+  self.manager:DoneGuide(self.data.guide, true, remain)
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.CheckGuide = function(self)
-  -- function num : 0_17
+function Guide:CheckGuide()
   if self.act and self.act > 0 then
     return true
   end
@@ -213,11 +139,8 @@ Guide.CheckGuide = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.CheckShow = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local UI = (GameGlobal.UIStateManager)()
+function Guide:CheckShow()
+  local UI = GameGlobal.UIStateManager()
   if UI:IsShow("UnLockUI") then
     return false
   end
@@ -230,98 +153,78 @@ Guide.CheckShow = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.Show = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function Guide:Show()
   if not self.inited then
     self:Init()
   end
   local allSteps = self.allSteps
   local length = #allSteps
-  local step = nil
+  local step
   for i = self.backStep or 1, length do
     local s = allSteps[i]
-    if s:HasTargetGuide() and not s:IsDone() and s:CanShow() then
-      step = s
+    if s:HasTargetGuide() then
+      if not s:IsDone() and s:CanShow() then
+        step = s
+      end
+      break
+    elseif not s:IsDone() then
+      if s:CanShow() then
+        step = s
+      end
+      break
     end
-    do break end
-    if not s:IsDone() and s:CanShow() then
-      step = s
-    end
-    do break end
   end
-  do
-    if self.currStep == nil or self.currStep ~= step then
-      if self.currStep then
-        (self.currStep):Hide()
-      end
-      self.currStep = step
-      if self.currStep then
-        local l_data = (self.currStep):GetGuidData()
-        if l_data then
-          (GameGlobal.UAReportForceGuideEvent)("GuideStepStart", {l_data.guide, l_data.step})
-        end
-      end
+  if self.currStep == nil or self.currStep ~= step then
+    if self.currStep then
+      self.currStep:Hide()
     end
-    do
-      if self.currStep then
-        (self.currStep):Show()
-        if GuideDebug.Enable then
-          local debugData = (self.currStep):GetGuidData()
-          ;
-          (GuideDebug.LogGuide)(debugData.guide)
-          ;
-          (GuideDebug.LogStep)(debugData.step)
-        end
+    self.currStep = step
+    if self.currStep then
+      local l_data = self.currStep:GetGuidData()
+      if l_data then
+        GameGlobal.UAReportForceGuideEvent("GuideStepStart", {
+          l_data.guide,
+          l_data.step
+        })
       end
     end
   end
-end
-
--- DECOMPILER ERROR at PC66: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.Hide = function(self)
-  -- function num : 0_20
   if self.currStep then
-    (self.currStep):Hide()
+    self.currStep:Show()
+    if GuideDebug.Enable then
+      local debugData = self.currStep:GetGuidData()
+      GuideDebug.LogGuide(debugData.guide)
+      GuideDebug.LogStep(debugData.step)
+    end
   end
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R0 in 'UnsetPending'
+function Guide:Hide()
+  if self.currStep then
+    self.currStep:Hide()
+  end
+end
 
-Guide.SetIsCoreGameGuide = function(self, is)
-  -- function num : 0_21
+function Guide:SetIsCoreGameGuide(is)
   self.isCoreGameGuide = is
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.IsCoreGameGuide = function(self)
-  -- function num : 0_22
+function Guide:IsCoreGameGuide()
   return self.isCoreGameGuide
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide.GetCurStep = function(self)
-  -- function num : 0_23
+function Guide:GetCurStep()
   return self.currStep
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R0 in 'UnsetPending'
-
-Guide._CheckPlatform = function(self, cfg)
-  -- function num : 0_24 , upvalues : _ENV
+function Guide:_CheckPlatform(cfg)
   if not cfg.platform then
     return true
   end
-  for _,value in pairs(cfg.platform) do
+  for _, value in pairs(cfg.platform) do
     if value == PLATFORM:ToInt() then
       return true
     end
   end
   return false
 end
-
-

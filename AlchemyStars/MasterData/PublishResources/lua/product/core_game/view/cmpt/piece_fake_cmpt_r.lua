@@ -1,183 +1,97 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/piece_fake_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PieceFakeComponent", Object)
 PieceFakeComponent = PieceFakeComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PieceFakeComponent.Constructor = function(self, pieceType, entity)
-  -- function num : 0_0 , upvalues : _ENV
-  if not pieceType then
-    self._pieceType = PieceType.None
-    if not pieceType then
-      self._pieceEffectType = PieceEffectType.Normal
-      self._hasInitAsset = false
-      self._piecePrefabObjList = {}
-      self._piecePrefabEntityList = {}
-      self._entity = entity
-      self._curBaseLayerObj = nil
-      self._curAnimation = "Normal"
-    end
-  end
+function PieceFakeComponent:Constructor(pieceType, entity)
+  self._pieceType = pieceType or PieceType.None
+  self._pieceEffectType = pieceType or PieceEffectType.Normal
+  self._hasInitAsset = false
+  self._piecePrefabObjList = {}
+  self._piecePrefabEntityList = {}
+  self._entity = entity
+  self._curBaseLayerObj = nil
+  self._curAnimation = "Normal"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.HasInitAsset = function(self)
-  -- function num : 0_1
+function PieceFakeComponent:HasInitAsset()
   return self._hasInitAsset
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.SetInitAsset = function(self)
-  -- function num : 0_2
+function PieceFakeComponent:SetInitAsset()
   self._hasInitAsset = true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.GetPieceType = function(self)
-  -- function num : 0_3
+function PieceFakeComponent:GetPieceType()
   return self._pieceType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.SetPieceType = function(self, pieceType)
-  -- function num : 0_4
+function PieceFakeComponent:SetPieceType(pieceType)
   self._pieceType = pieceType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.GetRenderPieceEffectType = function(self)
-  -- function num : 0_5
+function PieceFakeComponent:GetRenderPieceEffectType()
   return self._pieceEffectType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.SetRenderPieceEffectType = function(self, pieceEffectType)
-  -- function num : 0_6
+function PieceFakeComponent:SetRenderPieceEffectType(pieceEffectType)
   self._pieceEffectType = pieceEffectType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.GetPieceAnimName = function(self)
-  -- function num : 0_7
+function PieceFakeComponent:GetPieceAnimName()
   return self._curAnimation
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.SetPieceAnimName = function(self, animation)
-  -- function num : 0_8
+function PieceFakeComponent:SetPieceAnimName(animation)
   self._curAnimation = animation
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.GetEntity = function(self)
-  -- function num : 0_9
+function PieceFakeComponent:GetEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.GetBaseLayerObj = function(self)
-  -- function num : 0_10
+function PieceFakeComponent:GetBaseLayerObj()
   return self._curBaseLayerObj
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.SetBaseLayerObj = function(self, obj)
-  -- function num : 0_11
+function PieceFakeComponent:SetBaseLayerObj(obj)
   self._curBaseLayerObj = obj
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.GetPiecePrefabObj = function(self, name)
-  -- function num : 0_12
-  return (self._piecePrefabObjList)[name]
+function PieceFakeComponent:GetPiecePrefabObj(name)
+  return self._piecePrefabObjList[name]
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.GetPiecePrefabEntityList = function(self)
-  -- function num : 0_13
+function PieceFakeComponent:GetPiecePrefabEntityList()
   return self._piecePrefabEntityList
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.SetPiecePrefabObj = function(self, layerName, name, obj, gridPrefabEntity)
-  -- function num : 0_14 , upvalues : _ENV
+function PieceFakeComponent:SetPiecePrefabObj(layerName, name, obj, gridPrefabEntity)
   self:_OnCheckInitPieceLayerData()
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._piecePrefabObjList)[name] = obj
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._piecePrefabEntityList)[name] = gridPrefabEntity
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (obj.transform).parent = self:OnGetLayerTransform(layerName)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (obj.transform).localPosition = Vector3(0, 0, 0)
+  self._piecePrefabObjList[name] = obj
+  self._piecePrefabEntityList[name] = gridPrefabEntity
+  obj.transform.parent = self:OnGetLayerTransform(layerName)
+  obj.transform.localPosition = Vector3(0, 0, 0)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent._OnCheckInitPieceLayerData = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function PieceFakeComponent:_OnCheckInitPieceLayerData()
   if self._pieceLayerDataList then
-    return 
+    return
   end
   self._pieceLayerDataList = {}
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pieceLayerDataList).BaseLayer = PieceLayerData:New("BaseLayer", self._entity)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pieceLayerDataList).TagLayer = PieceLayerData:New("TagLayer", self._entity)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pieceLayerDataList).ExtraLayer = PieceLayerData:New("ExtraLayer", self._entity)
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pieceLayerDataList).EffectLayer = PieceLayerData:New("EffectLayer", self._entity)
+  self._pieceLayerDataList.BaseLayer = PieceLayerData:New("BaseLayer", self._entity)
+  self._pieceLayerDataList.TagLayer = PieceLayerData:New("TagLayer", self._entity)
+  self._pieceLayerDataList.ExtraLayer = PieceLayerData:New("ExtraLayer", self._entity)
+  self._pieceLayerDataList.EffectLayer = PieceLayerData:New("EffectLayer", self._entity)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.OnGetPieceLayerData = function(self, layerName)
-  -- function num : 0_16
+function PieceFakeComponent:OnGetPieceLayerData(layerName)
   if not self._pieceLayerDataList then
     return nil
   end
-  local pieceLayerData = (self._pieceLayerDataList)[layerName]
+  local pieceLayerData = self._pieceLayerDataList[layerName]
   return pieceLayerData
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.OnGetLayerTransform = function(self, layerName)
-  -- function num : 0_17
+function PieceFakeComponent:OnGetLayerTransform(layerName)
   local pieceLayerData = self:OnGetPieceLayerData(layerName)
   if not pieceLayerData then
     return nil
@@ -185,10 +99,7 @@ PieceFakeComponent.OnGetLayerTransform = function(self, layerName)
   return pieceLayerData:OnGetPieceLayerDataTransform()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.OnGetLayerPrefabName = function(self, layerName)
-  -- function num : 0_18
+function PieceFakeComponent:OnGetLayerPrefabName(layerName)
   local pieceLayerData = self:OnGetPieceLayerData(layerName)
   if not pieceLayerData then
     return nil
@@ -196,10 +107,7 @@ PieceFakeComponent.OnGetLayerPrefabName = function(self, layerName)
   return pieceLayerData:OnGetPieceLayerDataPrefabName()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.OnGetLayerPrefabObj = function(self, layerName)
-  -- function num : 0_19
+function PieceFakeComponent:OnGetLayerPrefabObj(layerName)
   local pieceLayerData = self:OnGetPieceLayerData(layerName)
   if not pieceLayerData then
     return nil
@@ -207,10 +115,7 @@ PieceFakeComponent.OnGetLayerPrefabObj = function(self, layerName)
   return pieceLayerData:OnGetPieceLayerDataPrefabObj()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.OnSetLayerPrefab = function(self, layerName, prefabName, prefabObj)
-  -- function num : 0_20
+function PieceFakeComponent:OnSetLayerPrefab(layerName, prefabName, prefabObj)
   local pieceLayerData = self:OnGetPieceLayerData(layerName)
   pieceLayerData:OnSetPieceLayerDataPrefab(prefabName, prefabObj)
   if layerName == "BaseLayer" then
@@ -218,75 +123,47 @@ PieceFakeComponent.OnSetLayerPrefab = function(self, layerName, prefabName, pref
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.OnSetLayerPrefabName = function(self, layerName, prefabName)
-  -- function num : 0_21
+function PieceFakeComponent:OnSetLayerPrefabName(layerName, prefabName)
   local pieceLayerData = self:OnGetPieceLayerData(layerName)
   pieceLayerData:OnSetPieceLayerDataPrefabName(prefabName, prefabName)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.GetDoTweenMaterialDarkness = function(self)
-  -- function num : 0_22
+function PieceFakeComponent:GetDoTweenMaterialDarkness()
   return self._doTweenMaterialDarkness
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceFakeComponent.SetDoTweenMaterialDarkness = function(self, doTween)
-  -- function num : 0_23
+function PieceFakeComponent:SetDoTweenMaterialDarkness(doTween)
   self._doTweenMaterialDarkness = doTween
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PieceFake = function(self)
-  -- function num : 0_24
-  return self:GetComponent((self.WEComponentsEnum).PieceFake)
+function Entity:PieceFake()
+  return self:GetComponent(self.WEComponentsEnum.PieceFake)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPieceFake = function(self)
-  -- function num : 0_25
-  return self:HasComponent((self.WEComponentsEnum).PieceFake)
+function Entity:HasPieceFake()
+  return self:HasComponent(self.WEComponentsEnum.PieceFake)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPieceFake = function(self, pieceType)
-  -- function num : 0_26 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PieceFake
+function Entity:AddPieceFake(pieceType)
+  local index = self.WEComponentsEnum.PieceFake
   local component = PieceFakeComponent:New(pieceType, self)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePieceFake = function(self, pieceType)
-  -- function num : 0_27 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PieceFake
+function Entity:ReplacePieceFake(pieceType)
+  local index = self.WEComponentsEnum.PieceFake
   if self:HasPieceFake() then
     local cmpt = self:PieceFake()
     cmpt:SetPieceType(pieceType)
     self:ReplaceComponent(index, cmpt)
   else
-    do
-      local component = PieceFakeComponent:New(pieceType, self)
-      self:ReplaceComponent(index, component)
-    end
+    local component = PieceFakeComponent:New(pieceType, self)
+    self:ReplaceComponent(index, component)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePieceFake = function(self)
-  -- function num : 0_28
+function Entity:RemovePieceFake()
   if self:HasPieceFake() then
-    self:RemoveComponent((self.WEComponentsEnum).PieceFake)
+    self:RemoveComponent(self.WEComponentsEnum.PieceFake)
   end
 end
-
-

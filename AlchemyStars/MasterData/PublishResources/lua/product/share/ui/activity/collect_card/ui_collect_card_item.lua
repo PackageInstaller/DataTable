@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/collect_card/ui_collect_card_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICollectCardItem", UICustomWidget)
 UICollectCardItem = UICollectCardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICollectCardItem.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UICollectCardItem:OnShow(uiParam)
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._icon2 = self:GetUIComponent("RawImageLoader", "Icon2")
   self._got = self:GetGameObject("got")
@@ -19,111 +12,73 @@ UICollectCardItem.OnShow = function(self, uiParam)
   self._root = self:GetUIComponent("CanvasGroup", "root")
   self._RedGo = self:GetGameObject("eff")
   self._GetBtn = self:GetGameObject("GetBtn")
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICollectCardItem:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardItem.SetData = function(self, idx, cfg, haveCount, allCount, status, callback, getCb, inited)
-  -- function num : 0_2 , upvalues : _ENV
+function UICollectCardItem:SetData(idx, cfg, haveCount, allCount, status, callback, getCb, inited)
   self._idx = idx
   self._callback = callback
   self._getCb = getCb
   self._cfg = cfg
-  local icon = (self._cfg).Icon
-  ;
-  (self._icon):LoadImage(icon)
-  local icon2 = (self._cfg).IconGray
-  ;
-  (self._icon2):LoadImage(icon2)
-  local awards = (self._cfg).Rewards
-  ;
-  (self._pool):SpawnObjects("UICollectCardAward", #awards)
-  local pools = (self._pool):GetAllSpawnList()
+  local icon = self._cfg.Icon
+  self._icon:LoadImage(icon)
+  local icon2 = self._cfg.IconGray
+  self._icon2:LoadImage(icon2)
+  local awards = self._cfg.Rewards
+  self._pool:SpawnObjects("UICollectCardAward", #awards)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #awards do
-    local awardid = (awards[i])[1]
-    local awardcount = (awards[i])[2]
+    local awardid = awards[i][1]
+    local awardcount = awards[i][2]
     local item = pools[i]
     item:SetData(awardid, awardcount, function(id, pos)
-    -- function num : 0_2_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCampaignCenterShowItemTips, id, pos)
-  end
-)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCampaignCenterShowItemTips, id, pos)
+    end)
   end
   local haveCount = haveCount
-  ;
-  (self._number):SetText(haveCount .. "/" .. allCount)
-  local cfgName = (self._cfg).Name
-  ;
-  (self._nameTex):SetText((StringTable.Get)(cfgName))
-  ;
-  (self._got):SetActive(status == QuestStatus.QUEST_Taken)
-  ;
-  (self._RedGo):SetActive(status == QuestStatus.QUEST_Completed)
-  ;
-  (self._GetBtn):SetActive(status == QuestStatus.QUEST_Completed)
+  self._number:SetText(haveCount .. "/" .. allCount)
+  local cfgName = self._cfg.Name
+  self._nameTex:SetText(StringTable.Get(cfgName))
+  self._got:SetActive(status == QuestStatus.QUEST_Taken)
+  self._RedGo:SetActive(status == QuestStatus.QUEST_Completed)
+  self._GetBtn:SetActive(status == QuestStatus.QUEST_Completed)
   self:PlayAnim(inited)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardItem.PlayAnim = function(self, inited)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
+function UICollectCardItem:PlayAnim(inited)
   if inited then
-    (self._root).alpha = 1
-    return 
+    self._root.alpha = 1
+    return
   end
   local yieldTime = (self._idx - 1) * 66
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  if yieldTime > 0 then
-    (self._root).alpha = 0
+  if 0 < yieldTime then
+    self._root.alpha = 0
     if self._timer then
-      ((GameGlobal.Timer)()):CancelEvent(self._timer)
+      GameGlobal.Timer():CancelEvent(self._timer)
     end
-    self._timer = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_3_0 , upvalues : self
-    (self._anim):Play("uieff_UICollectCardItem_in")
-  end
-)
+    self._timer = GameGlobal.Timer():AddEvent(yieldTime, function()
+      self._anim:Play("uieff_UICollectCardItem_in")
+    end)
   else
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._root).alpha = 0
-    ;
-    (self._anim):Play("uieff_UICollectCardItem_in")
+    self._root.alpha = 0
+    self._anim:Play("uieff_UICollectCardItem_in")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardItem.IconOnClick = function(self, go)
-  -- function num : 0_4
+function UICollectCardItem:IconOnClick(go)
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardItem.GetBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UICollectCardItem:GetBtnOnClick(go)
   if self._getCb then
-    (self._getCb)(self._idx)
+    self._getCb(self._idx)
   end
 end
-
-

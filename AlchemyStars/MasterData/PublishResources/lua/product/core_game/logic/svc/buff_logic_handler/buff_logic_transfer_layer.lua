@@ -1,55 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_transfer_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicTransferBuffLayer", BuffLogicBase)
 BuffLogicTransferBuffLayer = BuffLogicTransferBuffLayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicTransferBuffLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._percent = logicParam.percent or 1
-  end
+function BuffLogicTransferBuffLayer:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._percent = logicParam.percent or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicTransferBuffLayer.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local curLayer = (self._buffLogicService):GetBuffLayer(self._entity, self._layerType)
+function BuffLogicTransferBuffLayer:DoLogic(notify)
+  local curLayer = self._buffLogicService:GetBuffLayer(self._entity, self._layerType)
   if curLayer <= 0 then
-    return 
+    return
   end
-  local transferLayer = (math.floor)(curLayer * self._percent)
+  local transferLayer = math.floor(curLayer * self._percent)
   if transferLayer == 0 then
-    return 
+    return
   end
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
-  local tarSelector = (self._world):GetSkillScopeTargetSelector()
-  local utilSvc = (self._world):GetService("UtilData")
+  local tarSelector = self._world:GetSkillScopeTargetSelector()
+  local utilSvc = self._world:GetService("UtilData")
   local posList = utilSvc:GetCloneBoardGridPos()
   local skillScopeResult = SkillScopeResult:New(SkillScopeType.None, self._entity, posList, posList)
   local nearstTargetIDs = tarSelector:DoSelectSkillTarget(self._entity, SkillTargetType.NearestMonster, skillScopeResult)
   if #nearstTargetIDs < 1 then
-    return 
+    return
   end
   local targetID = nearstTargetIDs[1]
-  local targetEntity = (self._world):GetEntityByID(targetID)
+  local targetEntity = self._world:GetEntityByID(targetID)
   if targetEntity == nil then
-    return 
+    return
   end
-  local newLayer, buffinst = (self._buffLogicService):AddBuffLayer(targetEntity, self._layerType, transferLayer)
+  local newLayer, buffinst = self._buffLogicService:AddBuffLayer(targetEntity, self._layerType, transferLayer)
   if not buffinst then
-    return 
+    return
   end
   local buffResult = BuffResultLayer:New(newLayer, buffinst:BuffSeq(), transferLayer, self._layerType)
   buffResult:SetEntityID(targetID)
   return buffResult
 end
-
-

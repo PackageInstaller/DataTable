@@ -1,16 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/goldberg_event/stn_ge_upate_progress.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("GoldbergEvent_UpdateProgress", CTestRobot_Base)
 GoldbergEvent_UpdateProgress = GoldbergEvent_UpdateProgress
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GoldbergEvent_UpdateProgress.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  return ((GoldbergEvent_UpdateProgress.super).OnWorking)(self)
+function GoldbergEvent_UpdateProgress:OnWorking()
+  return GoldbergEvent_UpdateProgress.super.OnWorking(self)
 end
-
-

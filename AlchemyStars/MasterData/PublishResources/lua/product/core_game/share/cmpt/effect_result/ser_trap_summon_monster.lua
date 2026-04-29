@@ -1,75 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_trap_summon_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectTrapSummonMonsterResult", SkillEffectResultBase)
 SkillEffectTrapSummonMonsterResult = SkillEffectTrapSummonMonsterResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectTrapSummonMonsterResult.Constructor = function(self, summonEntityID, trapOpenStateChange, trapOpenState)
-  -- function num : 0_0
+function SkillEffectTrapSummonMonsterResult:Constructor(summonEntityID, trapOpenStateChange, trapOpenState)
   self._summonEntityID = summonEntityID
   self._trapOpenStateChange = trapOpenStateChange or false
   self._trapOpenState = trapOpenState
   self._monsterTransformParam = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapSummonMonsterResult.SetMonsterTransformParam = function(self, param)
-  -- function num : 0_1
+function SkillEffectTrapSummonMonsterResult:SetMonsterTransformParam(param)
   self._monsterTransformParam = param
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapSummonMonsterResult.GetMonsterTransformParam = function(self)
-  -- function num : 0_2
+function SkillEffectTrapSummonMonsterResult:GetMonsterTransformParam()
   return self._monsterTransformParam
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapSummonMonsterResult.GetEffectType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectTrapSummonMonsterResult:GetEffectType()
   return SkillEffectType.TrapSummonMonster
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapSummonMonsterResult.GetSummonEntityID = function(self)
-  -- function num : 0_4
+function SkillEffectTrapSummonMonsterResult:GetSummonEntityID()
   return self._summonEntityID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapSummonMonsterResult.GetTrapOpenStateChange = function(self)
-  -- function num : 0_5
+function SkillEffectTrapSummonMonsterResult:GetTrapOpenStateChange()
   return self._trapOpenStateChange
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapSummonMonsterResult.SetTrapOpenStateChange = function(self, change)
-  -- function num : 0_6
+function SkillEffectTrapSummonMonsterResult:SetTrapOpenStateChange(change)
   self._trapOpenStateChange = true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapSummonMonsterResult.SetTrapOpenState = function(self, state)
-  -- function num : 0_7
+function SkillEffectTrapSummonMonsterResult:SetTrapOpenState(state)
   self._trapOpenState = state
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapSummonMonsterResult.GetTrapOpenState = function(self)
-  -- function num : 0_8
+function SkillEffectTrapSummonMonsterResult:GetTrapOpenState()
   return self._trapOpenState
 end
-
-

@@ -1,29 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_monster_absorb.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetMonsterAbsorb", BuffLogicBase)
 BuffLogicSetMonsterAbsorb = BuffLogicSetMonsterAbsorb
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetMonsterAbsorb.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.changeValueList then
-    self._changeValueList = {}
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not logicParam.effectList then
-      (self._buffInstance)._effectList = {}
-      self._additionValue = logicParam.additionValue or 0
-    end
-  end
+function BuffLogicSetMonsterAbsorb:Constructor(buffInstance, logicParam)
+  self._changeValueList = logicParam.changeValueList or {}
+  self._buffInstance._effectList = logicParam.effectList or {}
+  self._additionValue = logicParam.additionValue or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetMonsterAbsorb.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicSetMonsterAbsorb:DoLogic()
   local addValue = 0
   local ownerEntity = self:GetEntity()
   local attributesComponent = ownerEntity:Attributes()
@@ -32,32 +16,22 @@ BuffLogicSetMonsterAbsorb.DoLogic = function(self)
     local maxHP = attributesComponent:CalcMaxHp()
     addValue = self._additionValue * (1 - curHP / maxHP)
   end
-  do
-    for k,paramType in ipairs((self._buffInstance)._effectList) do
-      local newValue = (self._changeValueList)[k] or -1
-      newValue = newValue + addValue
-      ;
-      (self._buffLogicService):ChangeMonsterSkillAbsorb(self._entity, self:GetBuffSeq(), paramType, newValue)
-    end
+  for k, paramType in ipairs(self._buffInstance._effectList) do
+    local newValue = self._changeValueList[k] or -1
+    newValue = newValue + addValue
+    self._buffLogicService:ChangeMonsterSkillAbsorb(self._entity, self:GetBuffSeq(), paramType, newValue)
   end
 end
 
 _class("BuffLogicRemoveMonsterAbsorb", BuffLogicBase)
 BuffLogicRemoveMonsterAbsorb = BuffLogicRemoveMonsterAbsorb
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveMonsterAbsorb.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveMonsterAbsorb:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveMonsterAbsorb.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  for k,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveMonsterSkillAbsorb(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicRemoveMonsterAbsorb:DoLogic()
+  local e = self._buffInstance:Entity()
+  for k, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveMonsterSkillAbsorb(self._entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

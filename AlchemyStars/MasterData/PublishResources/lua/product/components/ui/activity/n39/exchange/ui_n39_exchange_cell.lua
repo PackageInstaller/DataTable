@@ -1,30 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n39/exchange/ui_n39_exchange_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN39ExchangeCell", UICustomWidget)
 UIN39ExchangeCell = UIN39ExchangeCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN39ExchangeCell.OnShow = function(self)
-  -- function num : 0_0
+function UIN39ExchangeCell:OnShow()
   self.itemCountPerRow = 1
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._inited = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeCell._OnShowItem = function(self, scrollview, index)
-  -- function num : 0_1
+function UIN39ExchangeCell:_OnShowItem(scrollview, index)
   if index < 0 then
     return nil
   end
   local count = 1
   local idx = index * self.itemCountPerRow + 1
-  local data = (self._itemList)[idx]
-  local itemName = nil
+  local data = self._itemList[idx]
+  local itemName
   if data.sin then
     count = 1
     itemName = "itemSpecial"
@@ -41,7 +31,7 @@ UIN39ExchangeCell._OnShowItem = function(self, scrollview, index)
   local rowList = pool:GetAllSpawnList()
   for i = 1, count do
     local widget = rowList[i]
-    local singleData = (data.list)[i]
+    local singleData = data.list[i]
     if singleData then
       widget:Enable(true)
       self:_RefreshTtemInfo(widget, singleData, idx)
@@ -52,42 +42,27 @@ UIN39ExchangeCell._OnShowItem = function(self, scrollview, index)
   return item
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeCell._RefreshTtemInfo = function(self, itemWidget, data, idx)
-  -- function num : 0_2
+function UIN39ExchangeCell:_RefreshTtemInfo(itemWidget, data, idx)
   itemWidget:SetData(data, self._component, self._tipsCallback, idx, not self._inited)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeCell.SetData = function(self, itemList, component, tipsCallback)
-  -- function num : 0_3
+function UIN39ExchangeCell:SetData(itemList, component, tipsCallback)
   self._itemList = itemList
   self._component = component
   self._tipsCallback = tipsCallback
   self:ShowViewList()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeCell.ShowViewList = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN39ExchangeCell:ShowViewList()
   if self._inited then
-    (self._scrollView):SetListItemCount((table.count)(self._itemList))
-    ;
-    (self._scrollView):RefreshAllShownItem()
+    self._scrollView:SetListItemCount(table.count(self._itemList))
+    self._scrollView:RefreshAllShownItem()
   else
-    ;
-    (self._scrollView):InitListView((table.count)(self._itemList), function(scrollview, index)
-    -- function num : 0_4_0 , upvalues : self
-    return self:_OnShowItem(scrollview, index)
-  end
-)
+    self._scrollView:InitListView(table.count(self._itemList), function(scrollview, index)
+      return self:_OnShowItem(scrollview, index)
+    end)
   end
   if not self._inited then
     self._inited = true
   end
 end
-
-

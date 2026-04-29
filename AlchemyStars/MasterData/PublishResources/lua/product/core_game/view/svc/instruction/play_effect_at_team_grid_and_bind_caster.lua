@@ -1,37 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_effect_at_team_grid_and_bind_caster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayEffectAtTeamGridAndBindCasterInstruction", BaseInstruction)
 PlayEffectAtTeamGridAndBindCasterInstruction = PlayEffectAtTeamGridAndBindCasterInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEffectAtTeamGridAndBindCasterInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEffectAtTeamGridAndBindCasterInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._bindCaster = tonumber(paramList.bindCaster) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAtTeamGridAndBindCasterInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayEffectAtTeamGridAndBindCasterInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAtTeamGridAndBindCasterInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2
+function PlayEffectAtTeamGridAndBindCasterInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
-  local teamEntity = (world:Player()):GetCurrentTeamEntity()
+  local teamEntity = world:Player():GetCurrentTeamEntity()
   local gridPos = teamEntity:GetGridPosition()
   if self._bindCaster == 1 then
     effectService:CreateGridEffectWithEffectHolder(self._effectID, gridPos, casterEntity)
@@ -39,5 +29,3 @@ PlayEffectAtTeamGridAndBindCasterInstruction.DoInstruction = function(self, TT, 
     effectService:CreateWorldPositionEffect(self._effectID, gridPos)
   end
 end
-
-

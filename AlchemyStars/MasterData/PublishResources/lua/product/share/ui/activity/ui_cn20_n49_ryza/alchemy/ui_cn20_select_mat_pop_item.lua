@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/alchemy/ui_cn20_select_mat_pop_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20SelectMatPopItem", UICustomWidget)
 UICN20SelectMatPopItem = UICN20SelectMatPopItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20SelectMatPopItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN20SelectMatPopItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20SelectMatPopItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN20SelectMatPopItem:InitWidget()
   self.bg = self:GetUIComponent("Image", "bg")
   self.pool = self:GetUIComponent("UISelectObjectPath", "Pool")
   self.root = self:GetGameObject("root")
@@ -28,14 +18,10 @@ UICN20SelectMatPopItem.InitWidget = function(self)
   self.itemRect = self:GetUIComponent("RectTransform", "Item")
   self._atlas = self:GetAsset("UICN20N49.spriteatlas", LoadType.SpriteAtlas)
   self.guideItemGo = self:GetGameObject("guideItem")
-  ;
-  (self.guideItemGo):SetActive(false)
+  self.guideItemGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20SelectMatPopItem.SetData = function(self, itemid, num, ringIndex, ringItem, ringPos, selectCB, cancleCB)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN20SelectMatPopItem:SetData(itemid, num, ringIndex, ringItem, ringPos, selectCB, cancleCB)
   self.selectCB = selectCB
   self.cancleCB = cancleCB
   self.ringIndex = ringIndex
@@ -43,134 +29,84 @@ UICN20SelectMatPopItem.SetData = function(self, itemid, num, ringIndex, ringItem
   self.ringItem = ringItem
   self.ringPos = ringPos
   self:SetPopActive(true)
-  self.cb = function()
-    -- function num : 0_2_0 , upvalues : self
+  
+  function self.cb()
     self:SetPopActive(false)
-    ;
-    (self.selectCB)(self.ringItem, self.itemid, self.ringIndex)
+    self.selectCB(self.ringItem, self.itemid, self.ringIndex)
   end
-
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.ringPos).y = (self.ringPos).y - 250
-  local screenHeight = (UnityEngine.Screen).height
+  
+  self.ringPos.y = self.ringPos.y - 250
+  local screenHeight = UnityEngine.Screen.height
   local maxHeight = screenHeight / 2 - 350
   local minHeight = -(screenHeight / 2 - 150)
   local defaultPos = Vector2(0, 250)
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R12 in 'UnsetPending'
-
-  if (self.ringPos).y < minHeight then
-    (self.ringPos).y = (self.ringPos).y + 500
+  if minHeight > self.ringPos.y then
+    self.ringPos.y = self.ringPos.y + 500
     defaultPos = Vector2(0, -250)
   end
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self.rootRect).anchoredPosition = self.ringPos
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self.itemRect).anchoredPosition = defaultPos
-  local itemCfg = (Cfg.cfg_item)[itemid]
+  self.rootRect.anchoredPosition = self.ringPos
+  self.itemRect.anchoredPosition = defaultPos
+  local itemCfg = Cfg.cfg_item[itemid]
   if not itemCfg then
-    (Log.error)("itemCfg IS NIL", itemid)
-    return 
+    Log.error("itemCfg IS NIL", itemid)
+    return
   end
   self._cfg_item = itemCfg
-  local matCfg = (Cfg.cfg_component_alchemy_material)[itemid]
+  local matCfg = Cfg.cfg_component_alchemy_material[itemid]
   if matCfg == nil then
-    (Log.error)("alchemyCfg matCfg IS nil", itemid)
-    return 
+    Log.error("alchemyCfg matCfg IS nil", itemid)
+    return
   end
   self.matCfg = matCfg
-  -- DECOMPILER ERROR at PC80: Confused about usage of register: R14 in 'UnsetPending'
-
-  if (self.matCfg).Property == 1 then
-    (self.matIcon).sprite = (self._atlas):GetSprite("cn20_ljjm_ljsx02")
-  else
-    -- DECOMPILER ERROR at PC91: Confused about usage of register: R14 in 'UnsetPending'
-
-    if (self.matCfg).Property == 2 then
-      (self.matIcon).sprite = (self._atlas):GetSprite("cn20_ljjm_ljsx01")
-    else
-      -- DECOMPILER ERROR at PC102: Confused about usage of register: R14 in 'UnsetPending'
-
-      if (self.matCfg).Property == 3 then
-        (self.matIcon).sprite = (self._atlas):GetSprite("cn20_ljjm_ljsx03")
-      else
-        -- DECOMPILER ERROR at PC113: Confused about usage of register: R14 in 'UnsetPending'
-
-        if (self.matCfg).Property == 4 then
-          (self.matIcon).sprite = (self._atlas):GetSprite("cn20_ljjm_ljsx04")
-        end
-      end
-    end
+  if self.matCfg.Property == 1 then
+    self.matIcon.sprite = self._atlas:GetSprite("cn20_ljjm_ljsx02")
+  elseif self.matCfg.Property == 2 then
+    self.matIcon.sprite = self._atlas:GetSprite("cn20_ljjm_ljsx01")
+  elseif self.matCfg.Property == 3 then
+    self.matIcon.sprite = self._atlas:GetSprite("cn20_ljjm_ljsx03")
+  elseif self.matCfg.Property == 4 then
+    self.matIcon.sprite = self._atlas:GetSprite("cn20_ljjm_ljsx04")
   end
-  ;
-  (self.matCountText):SetText("" .. (self.matCfg).PropertyVal)
-  if (self.matCfg).PropertyVal == 1 then
-    ((self.lock1).gameObject):SetActive(false)
-    ;
-    ((self.lock2).gameObject):SetActive(true)
-    ;
-    ((self.lock3).gameObject):SetActive(true)
-  else
-    if (self.matCfg).PropertyVal == 2 then
-      ((self.lock1).gameObject):SetActive(false)
-      ;
-      ((self.lock2).gameObject):SetActive(false)
-      ;
-      ((self.lock3).gameObject):SetActive(true)
-    else
-      if (self.matCfg).PropertyVal == 3 then
-        ((self.lock1).gameObject):SetActive(false)
-        ;
-        ((self.lock2).gameObject):SetActive(false)
-        ;
-        ((self.lock3).gameObject):SetActive(false)
-      end
-    end
+  self.matCountText:SetText("" .. self.matCfg.PropertyVal)
+  if self.matCfg.PropertyVal == 1 then
+    self.lock1.gameObject:SetActive(false)
+    self.lock2.gameObject:SetActive(true)
+    self.lock3.gameObject:SetActive(true)
+  elseif self.matCfg.PropertyVal == 2 then
+    self.lock1.gameObject:SetActive(false)
+    self.lock2.gameObject:SetActive(false)
+    self.lock3.gameObject:SetActive(true)
+  elseif self.matCfg.PropertyVal == 3 then
+    self.lock1.gameObject:SetActive(false)
+    self.lock2.gameObject:SetActive(false)
+    self.lock3.gameObject:SetActive(false)
   end
-  if num > 20 then
+  if 20 < num then
     num = 20
   end
-  self.ALLItem = (self.pool):SpawnObjects("UICN20SelectMatItem", num)
+  self.ALLItem = self.pool:SpawnObjects("UICN20SelectMatItem", num)
   for i = 1, num do
-    local item = (self.ALLItem)[i]
+    local item = self.ALLItem[i]
     item:SetData(itemid, self.cb)
   end
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+  local guideModule = GameGlobal.GetModule(GuideModule)
   if guideModule:IsGuideProcess(2004911) then
-    (self.guideItemGo):SetActive(true)
+    self.guideItemGo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20SelectMatPopItem.SetPopActive = function(self, active)
-  -- function num : 0_3
-  (self.root):SetActive(active)
+function UICN20SelectMatPopItem:SetPopActive(active)
+  self.root:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20SelectMatPopItem.clickbgOnClick = function(self, go)
-  -- function num : 0_4
+function UICN20SelectMatPopItem:clickbgOnClick(go)
   if self.cancleCB then
-    (self.cancleCB)(self.ringItem)
+    self.cancleCB(self.ringItem)
   end
-  ;
-  (self.root):SetActive(false)
+  self.root:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20SelectMatPopItem.GuideItemOnClick = function(self)
-  -- function num : 0_5
-  ((self.ALLItem)[1]):BgOnClick()
-  ;
-  (self.guideItemGo):SetActive(false)
+function UICN20SelectMatPopItem:GuideItemOnClick()
+  self.ALLItem[1]:BgOnClick()
+  self.guideItemGo:SetActive(false)
 end
-
-

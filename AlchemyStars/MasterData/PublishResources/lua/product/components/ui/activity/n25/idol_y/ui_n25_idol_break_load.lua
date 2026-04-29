@@ -1,80 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/ui_n25_idol_break_load.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolBreakLoad", UIController)
 UIN25IdolBreakLoad = UIN25IdolBreakLoad
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolBreakLoad.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolBreakLoad:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolBreakLoad.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIN25IdolBreakLoad:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N25)
-  self._idolComponent = (self._localProcess):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+  self._idolComponent = self._localProcess:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolBreakLoad.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN25IdolBreakLoad:OnShow(uiParams)
   self._archivePreviewPath = self:GetUIComponent("UISelectObjectPath", "archivePreview")
-  self._archivePreview = (self._archivePreviewPath):SpawnObject("UIN25IdolArchiveBreak")
+  self._archivePreview = self._archivePreviewPath:SpawnObject("UIN25IdolArchiveBreak")
   self._animation = self:GetUIComponent("Animation", "animation")
-  local idolInfo = (self._idolComponent):GetComponentInfo()
+  local idolInfo = self._idolComponent:GetComponentInfo()
   local breakInfo = idolInfo.break_info
-  ;
-  (self._archivePreview):Flush(breakInfo)
+  self._archivePreview:Flush(breakInfo)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolBreakLoad.OnHide = function(self)
-  -- function num : 0_3
+function UIN25IdolBreakLoad:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolBreakLoad.BtnCloseOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN25IdolBreakLoad:BtnCloseOnClick(go)
   local lockName = "UIN25IdolBreakLoad:_backAnim"
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UIN25IdolBreakLoad_out")
+    self._animation:Play("uieff_UIN25IdolBreakLoad_out")
     YIELD(TT, 333)
     self:UnLock(lockName)
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolBreakLoad.BtnNewGameOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  (PopupManager.Alert)("UIN25IdolMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_n25_idol_y_break_new_game_second_confirm"), function(param)
-    -- function num : 0_5_0 , upvalues : self, _ENV
+function UIN25IdolBreakLoad:BtnNewGameOnClick(go)
+  PopupManager.Alert("UIN25IdolMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_n25_idol_y_break_new_game_second_confirm"), function(param)
     self:DispatchEvent(GameEventType.N25IdolStartPlayGame, IdolStartType.IdolStartType_New)
-  end
-, nil, function(param)
-    -- function num : 0_5_1
-  end
-, nil)
+  end, nil, function(param)
+  end, nil)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolBreakLoad.BtnContinueGameOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN25IdolBreakLoad:BtnContinueGameOnClick(go)
   self:DispatchEvent(GameEventType.N25IdolStartPlayGame, IdolStartType.IdolStartType_Break)
 end
-
-

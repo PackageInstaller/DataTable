@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/spawn_piece_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("SpawnPieceServiceRender", BaseService)
 SpawnPieceServiceRender = SpawnPieceServiceRender
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SpawnPieceServiceRender.Constructor = function(self, world)
-  -- function num : 0_0
+function SpawnPieceServiceRender:Constructor(world)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnPieceServiceRender.PlayBoardShow = function(self, TT, waveBoard)
-  -- function num : 0_1 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function SpawnPieceServiceRender:PlayBoardShow(TT, waveBoard)
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   local isMultiBoardLevel = levelConfigData:IsMultiBoardLevel()
   local isSpliceBoardLevel = levelConfigData:IsSpliceBoardLevel()
@@ -24,243 +14,173 @@ SpawnPieceServiceRender.PlayBoardShow = function(self, TT, waveBoard)
   if not waveBoard then
     self:_OnClipBoard(TT)
   end
-  local spreadTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : isMultiBoardLevel, self, isSpliceBoardLevel, isPushBoardLevel, waveBoard
+  local spreadTaskID = GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     if isMultiBoardLevel then
       self:_PlayPieceSpreadEffectNoAnim(TT)
       self:_PlayMultiPieceSpreadEffect(TT)
+    elseif isSpliceBoardLevel then
+      self:_PlayPieceSpreadEffectNoAnim(TT)
+      self:_PlayPieceFakeSpreadEffectNoAnim(TT)
+    elseif isPushBoardLevel then
+      self:_PlayPieceSpreadEffectNoAnim(TT)
+      self:_PlayPushBoardPieceFakeSpreadEffectNoAnim(TT)
     else
-      if isSpliceBoardLevel then
-        self:_PlayPieceSpreadEffectNoAnim(TT)
-        self:_PlayPieceFakeSpreadEffectNoAnim(TT)
-      else
-        if isPushBoardLevel then
-          self:_PlayPieceSpreadEffectNoAnim(TT)
-          self:_PlayPushBoardPieceFakeSpreadEffectNoAnim(TT)
-        else
-          self:_PlayBoardLineEffect(TT)
-          self:_PlayPieceSpreadEffect(TT, waveBoard)
-        end
-      end
+      self:_PlayBoardLineEffect(TT)
+      self:_PlayPieceSpreadEffect(TT, waveBoard)
     end
-  end
-)
-  while not (TaskHelper:GetInstance()):IsTaskFinished(spreadTaskID) do
+  end)
+  while not TaskHelper:GetInstance():IsTaskFinished(spreadTaskID) do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnPieceServiceRender._OnClipBoard = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function SpawnPieceServiceRender:_OnClipBoard(TT)
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   local gridGenID = levelConfigData:GetGridGenID()
-  local boardConfig = (Cfg.cfg_board)[gridGenID]
+  local boardConfig = Cfg.cfg_board[gridGenID]
   if boardConfig.CellClip then
-    ((UnityEngine.Shader).EnableKeyword)("_CELL_CLIP")
-    local H3DGZ_ClipParam = ((UnityEngine.Shader).PropertyToID)("_H3DGZ_ClipParams")
-    local clipParam = Vector4((boardConfig.CellClip)[1], (boardConfig.CellClip)[2] * -1, (boardConfig.CellClip)[3], (boardConfig.CellClip)[4] * -1)
-    ;
-    ((UnityEngine.Shader).SetGlobalVector)(H3DGZ_ClipParam, clipParam)
+    UnityEngine.Shader.EnableKeyword("_CELL_CLIP")
+    local H3DGZ_ClipParam = UnityEngine.Shader.PropertyToID("_H3DGZ_ClipParams")
+    local clipParam = Vector4(boardConfig.CellClip[1], boardConfig.CellClip[2] * -1, boardConfig.CellClip[3], boardConfig.CellClip[4] * -1)
+    UnityEngine.Shader.SetGlobalVector(H3DGZ_ClipParam, clipParam)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnPieceServiceRender._PlayBoardLineEffect = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  local sEffect = (self._world):GetService("Effect")
-  local utilDataSvc = (self._world):GetService("UtilData")
+function SpawnPieceServiceRender:_PlayBoardLineEffect(TT)
+  local sEffect = self._world:GetService("Effect")
+  local utilDataSvc = self._world:GetService("UtilData")
   local posCenter = utilDataSvc:GetBoardCenterPos()
   sEffect:CreateWorldPositionEffect(GameResourceConst.EffBoardShowLine, posCenter, true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnPieceServiceRender._PlayPieceSpreadEffect = function(self, TT, waveBoard)
-  -- function num : 0_4 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+function SpawnPieceServiceRender:_PlayPieceSpreadEffect(TT, waveBoard)
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local posCenter = Vector2(4, 2)
-  do
-    if teamEntity then
-      local teamLeader = teamEntity:GetTeamLeaderPetEntity()
-      posCenter = boardServiceRender:GetRealEntityGridPos(teamLeader)
+  if teamEntity then
+    local teamLeader = teamEntity:GetTeamLeaderPetEntity()
+    posCenter = boardServiceRender:GetRealEntityGridPos(teamLeader)
+  end
+  local internal = 0.1
+  local utilDataSvc = self._world:GetService("UtilData")
+  local posList = utilDataSvc:GetCloneBoardGridPos()
+  if posList == nil then
+    return
+  end
+  local arrPos = {}
+  for _, pos in ipairs(posList) do
+    local dis = Vector2.Distance(posCenter, pos)
+    dis = math.floor(dis + 0.4) + 1
+    if not arrPos[dis] then
+      arrPos[dis] = {}
     end
-    local internal = 0.1
-    local utilDataSvc = (self._world):GetService("UtilData")
-    local posList = utilDataSvc:GetCloneBoardGridPos()
-    if posList == nil then
-      return 
-    end
-    local arrPos = {}
-    for _,pos in ipairs(posList) do
-      local dis = (Vector2.Distance)(posCenter, pos)
-      dis = (math.floor)(dis + 0.4) + 1
-      if not arrPos[dis] then
-        arrPos[dis] = {}
-      end
-      ;
-      (table.insert)(arrPos[dis], pos)
-    end
-    local sEffect = (self._world):GetService("Effect")
-    local pieceSvc = (self._world):GetService("Piece")
-    local tConvertInfo = {}
-    local taskIDList = {}
-    for dis,arrDis in pairs(arrPos) do
-      local randomSortArr = self:_Shuffle(arrDis)
-      for _,pos in ipairs(randomSortArr) do
-        local ePiece = pieceSvc:FindPieceEntity(pos)
-        if ePiece then
-          local internal = 0
-          if dis > 1 then
-            internal = (math.random)((BattleConst.BoardShowPieceRandomRange).min, (BattleConst.BoardShowPieceRandomRange).max)
-          end
-          local pieceType = nil
-          local playBirth = false
-          if waveBoard and waveBoard[pos.x] and (waveBoard[pos.x])[pos.y] then
-            pieceType = (waveBoard[pos.x])[pos.y]
-            ePiece = boardServiceRender:ReCreateGridEntity(pieceType, pos)
-            local oldColor = utilDataSvc:FindPieceElement(pos)
-            local convertInfo = NTGridConvert_ConvertInfo:New(pos, oldColor, pieceType)
-            ;
-            (table.insert)(tConvertInfo, convertInfo)
-            playBirth = true
-          else
-            do
-              if not waveBoard then
-                playBirth = true
-              end
-              if playBirth then
-                local go = (ePiece:View()):GetGameObject()
-                local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._PlayBirthAnimation, self, go, internal, pos)
-                taskIDList[#taskIDList + 1] = taskID
-              end
-              do
-                -- DECOMPILER ERROR at PC158: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC158: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC158: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC158: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC158: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
+    table.insert(arrPos[dis], pos)
+  end
+  local sEffect = self._world:GetService("Effect")
+  local pieceSvc = self._world:GetService("Piece")
+  local tConvertInfo = {}
+  local taskIDList = {}
+  for dis, arrDis in pairs(arrPos) do
+    local randomSortArr = self:_Shuffle(arrDis)
+    for _, pos in ipairs(randomSortArr) do
+      local ePiece = pieceSvc:FindPieceEntity(pos)
+      if ePiece then
+        local internal = 0
+        if 1 < dis then
+          internal = math.random(BattleConst.BoardShowPieceRandomRange.min, BattleConst.BoardShowPieceRandomRange.max)
         end
-      end
-      YIELD(TT, BattleConst.BoardShowPieceGroupInternal)
-    end
-    do
-      while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
-        YIELD(TT)
-      end
-      if waveBoard then
-        local svcPlayBuff = (self._world):GetService("PlayBuff")
-        if #tConvertInfo > 0 then
-          local renderBoardEntity = (self._world):GetRenderBoardEntity()
-          local notify = NTGridConvert:New(renderBoardEntity, tConvertInfo)
-          notify.__attackPosMatchRequired = true
-          svcPlayBuff:PlayBuffView(TT, notify)
+        local pieceType
+        local playBirth = false
+        if waveBoard and waveBoard[pos.x] and waveBoard[pos.x][pos.y] then
+          pieceType = waveBoard[pos.x][pos.y]
+          ePiece = boardServiceRender:ReCreateGridEntity(pieceType, pos)
+          local oldColor = utilDataSvc:FindPieceElement(pos)
+          local convertInfo = NTGridConvert_ConvertInfo:New(pos, oldColor, pieceType)
+          table.insert(tConvertInfo, convertInfo)
+          playBirth = true
+        elseif not waveBoard then
+          playBirth = true
         end
-      else
-        do
-          self:_PlayBrillantGridLine()
+        if playBirth then
+          local go = ePiece:View():GetGameObject()
+          local taskID = GameGlobal.TaskManager():CoreGameStartTask(self._PlayBirthAnimation, self, go, internal, pos)
+          taskIDList[#taskIDList + 1] = taskID
         end
       end
     end
+    YIELD(TT, BattleConst.BoardShowPieceGroupInternal)
+  end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
+    YIELD(TT)
+  end
+  if waveBoard then
+    local svcPlayBuff = self._world:GetService("PlayBuff")
+    if 0 < #tConvertInfo then
+      local renderBoardEntity = self._world:GetRenderBoardEntity()
+      local notify = NTGridConvert:New(renderBoardEntity, tConvertInfo)
+      notify.__attackPosMatchRequired = true
+      svcPlayBuff:PlayBuffView(TT, notify)
+    end
+  else
+    self:_PlayBrillantGridLine()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnPieceServiceRender._PlayBirthNoAnimation = function(self, TT, go)
-  -- function num : 0_5
-  local curPos = (go.transform).position
+function SpawnPieceServiceRender:_PlayBirthNoAnimation(TT, go)
+  local curPos = go.transform.position
   curPos.y = 0
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (go.transform).position = curPos
+  go.transform.position = curPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnPieceServiceRender._PlayBirthAnimation = function(self, TT, go, internal, pos)
-  -- function num : 0_6 , upvalues : _ENV
+function SpawnPieceServiceRender:_PlayBirthAnimation(TT, go, internal, pos)
   YIELD(TT, internal)
   self:_PlayBirthNoAnimation(TT, go)
-  local pieceSvc = (self._world):GetService("Piece")
+  local pieceSvc = self._world:GetService("Piece")
   pieceSvc:SetPieceAnimBirth(pos)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnPieceServiceRender._Shuffle = function(self, t)
-  -- function num : 0_7 , upvalues : _ENV
+function SpawnPieceServiceRender:_Shuffle(t)
   if type(t) ~= "table" then
-    return 
+    return
   end
   local tab = {}
   local index = 1
-  do
-    while #t ~= 0 do
-      local n = (math.random)(0, #t)
-      if t[n] ~= nil then
-        tab[index] = t[n]
-        ;
-        (table.remove)(t, n)
-        index = index + 1
-      end
+  while #t ~= 0 do
+    local n = math.random(0, #t)
+    if t[n] ~= nil then
+      tab[index] = t[n]
+      table.remove(t, n)
+      index = index + 1
     end
-    return tab
   end
+  return tab
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnPieceServiceRender._PlayBrillantGridLine = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function SpawnPieceServiceRender:_PlayBrillantGridLine()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderBoardCmpt = renderBoardEntity:RenderBoard()
   local brillantLineObj = renderBoardCmpt:GetBrillantGridObj()
   local lineExtendParam = renderBoardCmpt:GetBrillantGridLineExtendParam()
   if brillantLineObj == nil then
-    return 
+    return
   end
   brillantLineObj:SetActive(true)
-  local pieceSvc = (self._world):GetService("Piece")
+  local pieceSvc = self._world:GetService("Piece")
   pieceSvc:SetHasGridLineWithBoardMode(true)
-  local levelID = ((self._world).BW_WorldInfo).level_id
-  local levelConfig = (Cfg.cfg_level)[levelID]
+  local levelID = self._world.BW_WorldInfo.level_id
+  local levelConfig = Cfg.cfg_level[levelID]
   local themeID = levelConfig.Theme
-  local cfgThemeData = (Cfg.cfg_theme)[themeID]
+  local cfgThemeData = Cfg.cfg_theme[themeID]
   local lineParam = cfgThemeData.BrillantWhiteLineParam
-  if not lineParam or not lineParam.WidthMin then
-    local widthMin = BattleConst.Wangge_WidthMin
-  end
-  if not lineParam or not lineParam.WidthMax then
-    local widthMax = BattleConst.Wangge_WidthMax
-  end
-  if not lineParam or not lineParam.GlobalWidth then
-    local globalWidth = BattleConst.Wangge_GlobalWidth
-  end
-  if not lineParam or not lineParam.HeightMin then
-    local heightMin = BattleConst.Wangge_HeightMin
-  end
-  if not lineParam or not lineParam.HeightMax then
-    local heightMax = BattleConst.Wangge_HeightMax
-  end
-  if not lineParam or not lineParam.GlobalHeight then
-    local globalHeight = BattleConst.Wangge_GlobalHeight
-  end
-  local renderTransform = (GameObjectHelper.FindChild)(brillantLineObj.transform, "gezi_wangge")
-  local meshRenderCmpt = (renderTransform.gameObject):GetComponent(typeof(UnityEngine.MeshRenderer))
+  local widthMin = lineParam and lineParam.WidthMin or BattleConst.Wangge_WidthMin
+  local widthMax = lineParam and lineParam.WidthMax or BattleConst.Wangge_WidthMax
+  local globalWidth = lineParam and lineParam.GlobalWidth or BattleConst.Wangge_GlobalWidth
+  local heightMin = lineParam and lineParam.HeightMin or BattleConst.Wangge_HeightMin
+  local heightMax = lineParam and lineParam.HeightMax or BattleConst.Wangge_HeightMax
+  local globalHeight = lineParam and lineParam.GlobalHeight or BattleConst.Wangge_GlobalHeight
+  local renderTransform = GameObjectHelper.FindChild(brillantLineObj.transform, "gezi_wangge")
+  local meshRenderCmpt = renderTransform.gameObject:GetComponent(typeof(UnityEngine.MeshRenderer))
   local wanggeMaterial = meshRenderCmpt.material
   wanggeMaterial:SetFloat("_WidthMin", widthMin)
   wanggeMaterial:SetFloat("_WidthMax", widthMax)
@@ -270,157 +190,113 @@ SpawnPieceServiceRender._PlayBrillantGridLine = function(self)
   wanggeMaterial:SetFloat("_GlobalHeight", globalHeight)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnPieceServiceRender.InitializeCellRender = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function SpawnPieceServiceRender:InitializeCellRender()
   local piecePosList = {}
-  local boardRenderService = (self._world):GetService("BoardRender")
-  local utilData = (self._world):GetService("UtilData")
+  local boardRenderService = self._world:GetService("BoardRender")
+  local utilData = self._world:GetService("UtilData")
   local gridEntityData = utilData:GetReplicaGridEntityData()
   if gridEntityData then
-    for pos,pieceType in pairs(gridEntityData) do
-      if pos.x > 9 or pos.y > 9 then
+    for pos, pieceType in pairs(gridEntityData) do
+      if pos.x > 9 or 9 < pos.y then
         local renderPos = boardRenderService:GridPos2RenderPos(pos)
-        ;
-        (table.insert)(piecePosList, renderPos)
+        table.insert(piecePosList, renderPos)
       else
-        do
-          do
-            local renderPos = boardRenderService:GridPos2RenderPos(pos)
-            ;
-            (table.insert)(piecePosList, renderPos)
-            -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        local renderPos = boardRenderService:GridPos2RenderPos(pos)
+        table.insert(piecePosList, renderPos)
       end
     end
   end
-  ;
-  (CellRenderManager.DrawRangeImmediate)(piecePosList)
+  CellRenderManager.DrawRangeImmediate(piecePosList)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnPieceServiceRender._PlayPieceSpreadEffectNoAnim = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function SpawnPieceServiceRender:_PlayPieceSpreadEffectNoAnim(TT)
+  local utilDataSvc = self._world:GetService("UtilData")
   local posList = utilDataSvc:GetCloneBoardGridPos()
   if posList == nil then
-    return 
+    return
   end
-  local pieceSvc = (self._world):GetService("Piece")
+  local pieceSvc = self._world:GetService("Piece")
   pieceSvc:SetHasGridLineWithBoardMode(false)
   local taskIDList = {}
-  for _,pos in ipairs(posList) do
+  for _, pos in ipairs(posList) do
     local ePiece = pieceSvc:FindPieceEntity(pos)
     if ePiece then
-      local go = (ePiece:View()):GetGameObject()
-      local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._PlayBirthNoAnimation, self, go)
+      local go = ePiece:View():GetGameObject()
+      local taskID = GameGlobal.TaskManager():CoreGameStartTask(self._PlayBirthNoAnimation, self, go)
       taskIDList[#taskIDList + 1] = taskID
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnPieceServiceRender._PlayPieceFakeSpreadEffectNoAnim = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function SpawnPieceServiceRender:_PlayPieceFakeSpreadEffectNoAnim(TT)
+  local utilDataSvc = self._world:GetService("UtilData")
   local posList = utilDataSvc:GetCloneBoardSpliceGridPos()
-  if posList == nil or (table.count)(posList) == 0 then
-    return 
+  if posList == nil or table.count(posList) == 0 then
+    return
   end
-  local pieceSvc = (self._world):GetService("Piece")
+  local pieceSvc = self._world:GetService("Piece")
   local taskIDList = {}
-  for _,pos in ipairs(posList) do
+  for _, pos in ipairs(posList) do
     local ePiece = pieceSvc:FindPieceFakeEntity(pos)
     if ePiece then
-      local go = (ePiece:View()):GetGameObject()
-      local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._PlayBirthNoAnimation, self, go)
+      local go = ePiece:View():GetGameObject()
+      local taskID = GameGlobal.TaskManager():CoreGameStartTask(self._PlayBirthNoAnimation, self, go)
       taskIDList[#taskIDList + 1] = taskID
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnPieceServiceRender._PlayMultiPieceSpreadEffect = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function SpawnPieceServiceRender:_PlayMultiPieceSpreadEffect(TT)
+  local utilDataSvc = self._world:GetService("UtilData")
   local multiBoardPieceList = utilDataSvc:GetCloneMultiBoardGridPos()
   if multiBoardPieceList == nil then
-    return 
+    return
   end
-  local pieceSvc = (self._world):GetService("PieceMulti")
+  local pieceSvc = self._world:GetService("PieceMulti")
   local taskIDList = {}
-  for boardIndex,posList in pairs(multiBoardPieceList) do
-    for _,pos in ipairs(posList) do
+  for boardIndex, posList in pairs(multiBoardPieceList) do
+    for _, pos in ipairs(posList) do
       local ePiece = pieceSvc:FindPieceEntity(boardIndex, pos)
-      local go = (ePiece:View()):GetGameObject()
+      local go = ePiece:View():GetGameObject()
       ePiece:SetDirection(Vector3(0, 0, 0))
-      local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._PlayMultiBoardShow, self, go)
+      local taskID = GameGlobal.TaskManager():CoreGameStartTask(self._PlayMultiBoardShow, self, go)
       taskIDList[#taskIDList + 1] = taskID
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnPieceServiceRender._PlayMultiBoardShow = function(self, TT, go)
-  -- function num : 0_13 , upvalues : _ENV
-  local tran = (GameObjectHelper.FindChild)(go.transform, "gezi")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (go.transform).localEulerAngles = Vector3(0, 0, 0)
+function SpawnPieceServiceRender:_PlayMultiBoardShow(TT, go)
+  local tran = GameObjectHelper.FindChild(go.transform, "gezi")
+  go.transform.localEulerAngles = Vector3(0, 0, 0)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnPieceServiceRender._PlayPushBoardPieceFakeSpreadEffectNoAnim = function(self, TT)
-  -- function num : 0_14 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function SpawnPieceServiceRender:_PlayPushBoardPieceFakeSpreadEffectNoAnim(TT)
+  local utilDataSvc = self._world:GetService("UtilData")
   local posList = utilDataSvc:GetCloneBoardPushGridPos()
-  if posList == nil or (table.count)(posList) == 0 then
-    return 
+  if posList == nil or table.count(posList) == 0 then
+    return
   end
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local cmpt = renderBoardEntity:RenderBoardPush()
   local taskIDList = {}
-  for _,pos in ipairs(posList) do
+  for _, pos in ipairs(posList) do
     local ePiece = cmpt:GetGridRenderEntity(pos)
     if ePiece then
-      local go = (ePiece:View()):GetGameObject()
-      local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._PlayBirthNoAnimation, self, go)
+      local go = ePiece:View():GetGameObject()
+      local taskID = GameGlobal.TaskManager():CoreGameStartTask(self._PlayBirthNoAnimation, self, go)
       taskIDList[#taskIDList + 1] = taskID
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
+    YIELD(TT)
   end
 end
-
-

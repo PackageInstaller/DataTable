@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_cross_edges_by_center_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_CrossEdgesByCenterPos", SkillScopeCalculator_Base)
 SkillScopeCalculator_CrossEdgesByCenterPos = SkillScopeCalculator_CrossEdgesByCenterPos
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_CrossEdgesByCenterPos.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = (self._gridFilter)._world
+function SkillScopeCalculator_CrossEdgesByCenterPos:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  local world = self._gridFilter._world
   local boardSvc = world:GetService("BoardLogic")
   local x = centerPos.x
   local y = centerPos.y
@@ -19,17 +12,11 @@ SkillScopeCalculator_CrossEdgesByCenterPos.CalcRange = function(self, scopeType,
   local left = boardSvc:GetMinXOfRowY(y)
   local right = boardSvc:GetMaxXOfRowY(y)
   local wholeRange = {}
-  ;
-  (table.insert)(wholeRange, Vector2(x, up))
-  ;
-  (table.insert)(wholeRange, Vector2(x, down))
-  ;
-  (table.insert)(wholeRange, Vector2(left, y))
-  ;
-  (table.insert)(wholeRange, Vector2(right, y))
-  local attackRange = (table.unique)(wholeRange)
+  table.insert(wholeRange, Vector2(x, up))
+  table.insert(wholeRange, Vector2(x, down))
+  table.insert(wholeRange, Vector2(left, y))
+  table.insert(wholeRange, Vector2(right, y))
+  local attackRange = table.unique(wholeRange)
   local result = SkillScopeResult:New(SkillScopeType.CrossEdgesByCenterPos, centerPos, attackRange, wholeRange)
   return result
 end
-
-

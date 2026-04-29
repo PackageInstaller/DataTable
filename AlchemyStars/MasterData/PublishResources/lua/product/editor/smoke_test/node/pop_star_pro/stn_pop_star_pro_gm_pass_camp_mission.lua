@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/pop_star_pro/stn_pop_star_pro_gm_pass_camp_mission.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("PopStarPro_GM_PassCampMission", Common_AsyncBase)
 PopStarPro_GM_PassCampMission = PopStarPro_GM_PassCampMission
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarPro_GM_PassCampMission.Constructor = function(self, _manager)
-  -- function num : 0_0
+function PopStarPro_GM_PassCampMission:Constructor(_manager)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPro_GM_PassCampMission.TaskFunc = function(self, TT, status)
-  -- function num : 0_1 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function PopStarPro_GM_PassCampMission:TaskFunc(TT, status)
+  local runData = self.m_pManager:GetMissionRunData()
   local missionID = 0
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local res = AsyncRequestRes:New()
   campaignModule:GetCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_INLAND_N7_LINE_POPSTAR)
   local localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_INLAND_N7_LINE_POPSTAR)
   local popStarMissionComponent = localProcess:GetComponent(ECampaignN7CenterComponentID.ECAMPAIGN_N7_POPSTAR_LINE_POPSTAR_MISSION)
   if not popStarMissionComponent then
-    return 
+    return
   end
   local componentID = popStarMissionComponent:GetCampaignMissionComponentId()
   local paramKeyMap = popStarMissionComponent:GetCampaignMissionParamKeyMap()
-  ;
-  (self._manager):AsyncGM_PassCampMission(TT, status, componentID, paramKeyMap[1], missionID)
+  self._manager:AsyncGM_PassCampMission(TT, status, componentID, paramKeyMap[1], missionID)
 end
-
-

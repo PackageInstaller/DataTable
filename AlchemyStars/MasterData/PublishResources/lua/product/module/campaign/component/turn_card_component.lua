@@ -1,107 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/turn_card_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("TurnCardComponent", ICampaignComponent)
 TurnCardComponent = TurnCardComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-TurnCardComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function TurnCardComponent:Constructor()
   self.m_component_info = TurnCardComponentInfo:New()
   self.unturned_matrix = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TurnCardComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function TurnCardComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = TurnCardComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TurnCardComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function TurnCardComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TurnCardComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function TurnCardComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_TURNCARD
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TurnCardComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function TurnCardComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TurnCardComponent.HandleTurnCardOperate = function(self, TT, asyncRes, turn_card_id, cell_index)
-  -- function num : 0_5 , upvalues : _ENV
+function TurnCardComponent:HandleTurnCardOperate(TT, asyncRes, turn_card_id, cell_index)
   local request = TurnCardOperateReq:New()
   request.turn_card_id = turn_card_id
   request.index = cell_index
   local response = TurnCardOperateRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][TurnCardComponent] HandleTurnCardOperate ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][TurnCardComponent] HandleTurnCardOperate ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R8 in 'UnsetPending'
-
-  if (self.unturned_matrix)[turn_card_id] ~= nil then
-    ((self.unturned_matrix)[turn_card_id])[cell_index] = nil
+  if self.unturned_matrix[turn_card_id] ~= nil then
+    self.unturned_matrix[turn_card_id][cell_index] = nil
   end
   asyncRes:SetSucc(true)
   return response.reward
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TurnCardComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_6 , upvalues : _ENV
+function TurnCardComponent:CampaignComponentPushNotify(notify_data)
   if TurnCardComponentNotifyType.TurnCardComponentNotifyType_InfoChanged == notify_data.m_notify_type then
     local ev = NotifyTurnCardComponentInfoChanged:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
-      (self.m_component_info).m_matrix = ev.m_matrix
-      for key,value in pairs((self.m_component_info).m_matrix) do
-        -- DECOMPILER ERROR at PC27: Confused about usage of register: R9 in 'UnsetPending'
-
-        (self.unturned_matrix)[key] = self:UnturnedCell(value)
+      self.m_component_info.m_matrix = ev.m_matrix
+      for key, value in pairs(self.m_component_info.m_matrix) do
+        self.unturned_matrix[key] = self:UnturnedCell(value)
       end
     else
-      do
-        ;
-        (Log.error)("[CampaignCom][TurnCardComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
-      end
+      Log.error("[CampaignCom][TurnCardComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TurnCardComponent.IsLackItem = function(self, cost_item)
-  -- function num : 0_7 , upvalues : _ENV
+function TurnCardComponent:IsLackItem(cost_item)
   local lack_item = false
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
-  for _,cost_roleasset in pairs(cost_item) do
+  local roleModule = GameGlobal.GetModule(RoleModule)
+  for _, cost_roleasset in pairs(cost_item) do
     local left_item = roleModule:GetAssetCount(cost_roleasset[1])
     if left_item < cost_roleasset[2] then
       lack_item = true
@@ -111,13 +73,10 @@ TurnCardComponent.IsLackItem = function(self, cost_item)
   return lack_item
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TurnCardComponent.UnturnedCell = function(self, matrix_item_list)
-  -- function num : 0_8 , upvalues : _ENV
+function TurnCardComponent:UnturnedCell(matrix_item_list)
   local unturned_cell_index = {}
-  for _,each_item in pairs(matrix_item_list.m_matrix_item) do
-    for cell_index,is_turn in pairs(each_item.m_is_turn) do
+  for _, each_item in pairs(matrix_item_list.m_matrix_item) do
+    for cell_index, is_turn in pairs(each_item.m_is_turn) do
       if is_turn == false then
         unturned_cell_index[cell_index] = cell_index
       end
@@ -125,5 +84,3 @@ TurnCardComponent.UnturnedCell = function(self, matrix_item_list)
   end
   return unturned_cell_index
 end
-
-

@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn6/hard/ui_activity_cn6_n35_diff_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_activity_diff_level")
 _class("UIActivityCN6N35DiffLevel", UIActivityDiffLevel)
 UIActivityCN6N35DiffLevel = UIActivityCN6N35DiffLevel
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCN6N35DiffLevel.GetTimeDownString = function(self)
-  -- function num : 0_0
+function UIActivityCN6N35DiffLevel:GetTimeDownString()
   return "str_cn6&n35_activity_hard_level_remain_time"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN6N35DiffLevel.NodePlayAnimationInterval = function(self, TT)
-  -- function num : 0_1
+function UIActivityCN6N35DiffLevel:NodePlayAnimationInterval(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN6N35DiffLevel.GetLevelNodeName = function(self)
-  -- function num : 0_2
+function UIActivityCN6N35DiffLevel:GetLevelNodeName()
   return "UIActivityCN6N35DiffLevelNode"
 end
-
-

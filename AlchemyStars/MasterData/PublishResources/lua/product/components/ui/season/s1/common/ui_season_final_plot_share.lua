@@ -1,153 +1,103 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s1/common/ui_season_final_plot_share.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonFinalPlotShare", UIController)
 UISeasonFinalPlotShare = UISeasonFinalPlotShare
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonFinalPlotShare.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonFinalPlotShare:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotShare.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonFinalPlotShare:OnShow(uiParams)
   self:InitWidget()
   local seasonID = uiParams[1]
   self._cpt = uiParams[2]
   self._onFinish = uiParams[3]
-  local cfg = (Cfg.cfg_season_campaign_client)[seasonID]
+  local cfg = Cfg.cfg_season_campaign_client[seasonID]
   self._storyID = cfg.FinalStoryShareStoryID
   local cg = cfg.FinalStoryCg
   local sourceCg = cfg.FinalStorySourceCg
-  local cfg = (Cfg.cfg_campaign_story)[self._storyID]
-  local asset = (cfg.RewardList)[1]
-  ;
-  (self.cg):LoadImage(cg)
-  ;
-  (self.sourceCg):LoadImage(sourceCg)
-  local btn = (self._shareBtn):SpawnObject("UISeasonShareBtn")
+  local cfg = Cfg.cfg_campaign_story[self._storyID]
+  local asset = cfg.RewardList[1]
+  self.cg:LoadImage(cg)
+  self.sourceCg:LoadImage(sourceCg)
+  local btn = self._shareBtn:SpawnObject("UISeasonShareBtn")
   btn:SetData(asset[2], function()
-    -- function num : 0_1_0 , upvalues : self
     self:_ShareBtnOnClick()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotShare.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonFinalPlotShare:InitWidget()
   self.cg = self:GetUIComponent("RawImageLoader", "Cg")
   self.sourceCg = self:GetUIComponent("RawImageLoader", "SourceCg")
   self._shareBtn = self:GetUIComponent("UISelectObjectPath", "ShareBtn")
-  self._anim = (self:GetGameObject()):GetComponent("Animation")
+  self._anim = self:GetGameObject():GetComponent("Animation")
   self._root = self:GetGameObject("root")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotShare._ShareBtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self:GetModule(SeasonModule)):CheckSeasonClose_ShowClientError() then
-    return 
+function UISeasonFinalPlotShare:_ShareBtnOnClick()
+  if self:GetModule(SeasonModule):CheckSeasonClose_ShowClientError() then
+    return
   end
   self:Lock("UISeasonFinalPlotShare")
   self:AttachEvent(GameEventType.OnFocusAfterShareBack, self._OnShareFinish)
-  ;
-  ((self.sourceCg).gameObject):SetActive(true)
-  ;
-  (self._root):SetActive(false)
+  self.sourceCg.gameObject:SetActive(true)
+  self._root:SetActive(false)
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
     YIELD(TT)
     YIELD(TT)
     self:ShowDialog("UIShare", self:GetName(), ShareAnchorType.BottomRight, function()
-      -- function num : 0_3_0_0 , upvalues : self
-      ((self.sourceCg).gameObject):SetActive(false)
-      ;
-      (self._root):SetActive(true)
-    end
-, nil, nil, nil, ShareSceneType.Common, nil, nil)
+      self.sourceCg.gameObject:SetActive(false)
+      self._root:SetActive(true)
+    end, nil, nil, nil, ShareSceneType.Common, nil, nil)
     self:UnLock("UISeasonFinalPlotShare")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotShare._OnShareFinish = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonFinalPlotShare:_OnShareFinish()
   self:DetachEvent(GameEventType.OnFocusAfterShareBack, self._OnShareFinish)
-  if not (self._cpt):IsStoryReceived(self._storyID) then
+  if not self._cpt:IsStoryReceived(self._storyID) then
     self:StartTask(self._ReqCompleteStory, self)
   else
-    ;
-    (Log.error)("分享奖励已经领过了")
+    Log.error("分享奖励已经领过了")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotShare._ReqCompleteStory = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonFinalPlotShare:_ReqCompleteStory(TT)
   local res = AsyncRequestRes:New()
   self:Lock("RequestCollectFinalPlotShareCgAward")
-  local assets = (self._cpt):HandleStoryTake(TT, res, self._storyID)
+  local assets = self._cpt:HandleStoryTake(TT, res, self._storyID)
   self:UnLock("RequestCollectFinalPlotShareCgAward")
   if res:GetSucc() then
     self:_CloseDialogWithAnim(function()
-    -- function num : 0_5_0 , upvalues : _ENV, assets, self
-    (UISeasonHelper.ShowUIGetRewards)(assets)
-    ;
-    (self._onFinish)()
-    self:DispatchEvent(GameEventType.OnSeasonShareCgFinished)
-  end
-)
+      UISeasonHelper.ShowUIGetRewards(assets)
+      self._onFinish()
+      self:DispatchEvent(GameEventType.OnSeasonShareCgFinished)
+    end)
   else
-    ;
-    (Log.error)("分享奖励领取错误:", res:GetResult())
+    Log.error("分享奖励领取错误:", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotShare.CloseOnClick = function(self, go)
-  -- function num : 0_6
+function UISeasonFinalPlotShare:CloseOnClick(go)
   self:_CloseDialogWithAnim(function()
-    -- function num : 0_6_0 , upvalues : self
-    (self._onFinish)()
-  end
-)
+    self._onFinish()
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonFinalPlotShare._CloseDialogWithAnim = function(self, callback)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonFinalPlotShare:_CloseDialogWithAnim(callback)
   if self._anim then
     self:Lock("UISeasonFinalPlotShare:CloseDialogWithAnim")
     if self._anim then
-      (self._anim):Play("uianim_UISeasonFinalPlotShare_out")
+      self._anim:Play("uianim_UISeasonFinalPlotShare_out")
     end
     self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : _ENV, self, callback
-    YIELD(TT, 500)
-    self:UnLock("UISeasonFinalPlotShare:CloseDialogWithAnim")
-    if not self.view then
-      return 
-    end
-    self:CloseDialog()
-    if callback then
-      callback()
-    end
-  end
-, self)
+      YIELD(TT, 500)
+      self:UnLock("UISeasonFinalPlotShare:CloseDialogWithAnim")
+      if not self.view then
+        return
+      end
+      self:CloseDialog()
+      if callback then
+        callback()
+      end
+    end, self)
   end
 end
-
-

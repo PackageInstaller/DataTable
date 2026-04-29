@@ -1,30 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n37/line_mission/ui_n37_line_mission_map_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN37LineMissionMapLine", UICustomWidget)
 UIN37LineMissionMapLine = UIN37LineMissionMapLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN37LineMissionMapLine.Flush = function(self, from, to)
-  -- function num : 0_0 , upvalues : _ENV
-  local type = from.y < to.y and 1 or 2
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-[1] = {"line1"}
-, 
-[2] = {"line2"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, type)
+function UIN37LineMissionMapLine:Flush(from, to)
+  local type = to.y > from.y and 1 or 2
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    [1] = {"line1"},
+    [2] = {"line2"}
+  })
+  UIWidgetHelper.SetObjGroupShow(objs, type)
   local trans = self:GetUIComponent("RectTransform", "root")
   trans.anchorMax = Vector2(0, 0.5)
   trans.anchorMin = Vector2(0, 0.5)
   local anchoredPosition = (from + to) * 0.5
   trans.anchoredPosition = anchoredPosition
-  local x = (math.abs)(from.x - to.x)
-  local y = (math.abs)(from.y - to.y)
+  local x = math.abs(from.x - to.x)
+  local y = math.abs(from.y - to.y)
   trans.sizeDelta = Vector2(x, y)
 end
-
-

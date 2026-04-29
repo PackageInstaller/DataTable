@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/backpack/ui_season_maze_bag_pet_state_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeBagPetStateItem", UICustomWidget)
 UISeasonMazeBagPetStateItem = UISeasonMazeBagPetStateItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeBagPetStateItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeBagPetStateItem:OnShow(uiParams)
   self:InitWidget()
   self._module = self:GetModule(MissionModule)
-  self._ctx = (self._module):TeamCtx()
-  self.team = (self._ctx):GetSeasonMazeTeam()
+  self._ctx = self._module:TeamCtx()
+  self.team = self._ctx:GetSeasonMazeTeam()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBagPetStateItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeBagPetStateItem:InitWidget()
   self.root = self:GetGameObject("root")
   self.info = self:GetUIComponent("UISelectObjectPath", "info")
   self.noinfo = self:GetGameObject("noinfo")
@@ -38,126 +28,83 @@ UISeasonMazeBagPetStateItem.InitWidget = function(self)
   self.eightFightDisable = self:GetGameObject("eightFightDisable")
   self.eightFightDisableTxt = self:GetUIComponent("UILocalizationText", "eightFightDisableTxt")
   self.fastTeamObj = self:GetGameObject("fastTeam")
-  ;
-  (self.fastTeamObj):SetActive(false)
+  self.fastTeamObj:SetActive(false)
   self.memberIDTxt = self:GetUIComponent("UILocalizationText", "memberID")
   self.dispatch = self:GetGameObject("dispatch")
   self.dispatchText = self:GetUIComponent("UILocalizationText", "dispatchText")
   self.anim = self:GetUIComponent("Animation", "anim")
-  ;
-  ((self.anim).gameObject):SetActive(false)
+  self.anim.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBagPetStateItem.SetData = function(self, config, clickCB, realbool, firstIn, teamOpenerType, petSkinEffectPath, index)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeBagPetStateItem:SetData(config, clickCB, realbool, firstIn, teamOpenerType, petSkinEffectPath, index)
   self._hide = nil
-  local heart = (self.info):SpawnObject("UIHeartItem")
+  local heart = self.info:SpawnObject("UIHeartItem")
   self.heartItem = heart
   self.clickCB = clickCB
   self.config = config
-  ;
-  (self.heartItem):SetData(self.config, function(id)
-    -- function num : 0_2_0 , upvalues : self
-    (self.clickCB)(id)
-  end
-, false, false, teamOpenerType, petSkinEffectPath, false, false, true)
-  ;
-  (self.fastTeamObj):SetActive(false)
-  if #(self.team).list > 0 then
-    local tmpTeam = (((self.team).list)[1]):Clone()
+  self.heartItem:SetData(self.config, function(id)
+    self.clickCB(id)
+  end, false, false, teamOpenerType, petSkinEffectPath, false, false, true)
+  self.fastTeamObj:SetActive(false)
+  if #self.team.list > 0 then
+    local tmpTeam = self.team.list[1]:Clone()
     local pets = tmpTeam:GetPets()
     for i = 1, #pets do
       local pet = pets[i]
       if pet == config:GetPstID() then
-        (self.fastTeamObj):SetActive(true)
-        ;
-        (self.memberIDTxt):SetText("" .. i)
+        self.fastTeamObj:SetActive(true)
+        self.memberIDTxt:SetText("" .. i)
       end
     end
   end
-  do
-    local module = (GameGlobal.GetModule)(SeasonMazeModule)
+  local module = GameGlobal.GetModule(SeasonMazeModule)
+  local dispatch = module:GetPetDispatchData(config:GetTemplateID())
+  if dispatch then
+    self.dispatch:SetActive(true)
     local dispatch = module:GetPetDispatchData(config:GetTemplateID())
     if dispatch then
-      (self.dispatch):SetActive(true)
-      local dispatch = module:GetPetDispatchData(config:GetTemplateID())
-      if dispatch then
-        (self.dispatchText):SetText(dispatch.residue_round)
-      else
-        ;
-        (Log.exception)("pet has dispatched but has no server data")
-      end
+      self.dispatchText:SetText(dispatch.residue_round)
     else
-      do
-        ;
-        (self.dispatch):SetActive(false)
-        if index then
-          local delta = (math.ceil)(index / 5)
-          delta = delta * 50
-          if delta == 0 then
-            ((self.anim).gameObject):SetActive(true)
-          else
-            local timerEvent = ((GameGlobal.Timer)()):AddEventTimes(delta, TimerTriggerCount.Once, function()
-    -- function num : 0_2_1 , upvalues : self
-    if not self._hide then
-      ((self.anim).gameObject):SetActive(true)
-      ;
-      (self.anim):Play("uieffanim_UISeasonMazeBagPetStateItem_in")
+      Log.exception("pet has dispatched but has no server data")
     end
+  else
+    self.dispatch:SetActive(false)
   end
-)
-          end
-        else
-          do
-            ;
-            ((self.anim).gameObject):SetActive(true)
-          end
+  if index then
+    local delta = math.ceil(index / 5)
+    delta = delta * 50
+    if delta == 0 then
+      self.anim.gameObject:SetActive(true)
+    else
+      local timerEvent = GameGlobal.Timer():AddEventTimes(delta, TimerTriggerCount.Once, function()
+        if not self._hide then
+          self.anim.gameObject:SetActive(true)
+          self.anim:Play("uieffanim_UISeasonMazeBagPetStateItem_in")
         end
-      end
+      end)
     end
+  else
+    self.anim.gameObject:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBagPetStateItem.SetInVisible = function(self)
-  -- function num : 0_3
+function UISeasonMazeBagPetStateItem:SetInVisible()
   self._hide = true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBagPetStateItem.PlayFadeInAnim = function(self)
-  -- function num : 0_4
+function UISeasonMazeBagPetStateItem:PlayFadeInAnim()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBagPetStateItem.ResetInAnim = function(self)
-  -- function num : 0_5
+function UISeasonMazeBagPetStateItem:ResetInAnim()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBagPetStateItem.ShowRedPoint = function(self)
-  -- function num : 0_6
+function UISeasonMazeBagPetStateItem:ShowRedPoint()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBagPetStateItem.BgOnClick = function(self, go)
-  -- function num : 0_7
-  local id = (self.config):GetPstID()
-  ;
-  (self.clickCB)(id)
+function UISeasonMazeBagPetStateItem:BgOnClick(go)
+  local id = self.config:GetPstID()
+  self.clickCB(id)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBagPetStateItem.RecommendBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UISeasonMazeBagPetStateItem:RecommendBtnOnClick(go)
 end
-
-

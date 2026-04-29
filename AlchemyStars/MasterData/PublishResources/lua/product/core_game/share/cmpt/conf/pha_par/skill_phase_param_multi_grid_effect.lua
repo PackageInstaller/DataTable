@@ -1,91 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_multi_grid_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseParamMultiGridEffect", SkillPhaseParamBase)
 SkillPhaseParamMultiGridEffect = SkillPhaseParamMultiGridEffect
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseParamMultiGridEffect.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseParamMultiGridEffect:Constructor(t)
   self._gridEff = t.gridEff
-  self._hitAnim = (t.hit).anim
-  self._hitEff = (t.hit).eff
+  self._hitAnim = t.hit.anim
+  self._hitEff = t.hit.eff
   self._interval = t.interval
   self._random = t.random
   self._expectionGrid = {}
   if t.expectionGrid then
-    for i,v in ipairs(t.expectionGrid) do
+    for i, v in ipairs(t.expectionGrid) do
       local pos = Vector2(v[1], v[2])
-      ;
-      (table.insert)(self._expectionGrid, pos)
+      table.insert(self._expectionGrid, pos)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamMultiGridEffect.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseParamMultiGridEffect:GetCacheTable()
   local t = {}
   if self._gridEff and self._gridEff > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._gridEff]).ResPath, 1}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._gridEff].ResPath,
+      1
+    }
   end
-  if self._hitEff and self._hitEff > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._hitEff]).ResPath, 1}
+  if self._hitEff and 0 < self._hitEff then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._hitEff].ResPath,
+      1
+    }
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamMultiGridEffect.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseParamMultiGridEffect:GetPhaseType()
   return SkillViewPhaseType.MultiGridEffect
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamMultiGridEffect.GetGridEff = function(self)
-  -- function num : 0_3
+function SkillPhaseParamMultiGridEffect:GetGridEff()
   return self._gridEff
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamMultiGridEffect.GetHitAnim = function(self)
-  -- function num : 0_4
+function SkillPhaseParamMultiGridEffect:GetHitAnim()
   return self._hitAnim
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamMultiGridEffect.GetHitEff = function(self)
-  -- function num : 0_5
+function SkillPhaseParamMultiGridEffect:GetHitEff()
   return self._hitEff
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamMultiGridEffect.GetInterval = function(self)
-  -- function num : 0_6
+function SkillPhaseParamMultiGridEffect:GetInterval()
   return self._interval
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamMultiGridEffect.GetRandom = function(self)
-  -- function num : 0_7
+function SkillPhaseParamMultiGridEffect:GetRandom()
   return self._random
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamMultiGridEffect.GetExpectionGrid = function(self)
-  -- function num : 0_8
+function SkillPhaseParamMultiGridEffect:GetExpectionGrid()
   return self._expectionGrid
 end
-
-

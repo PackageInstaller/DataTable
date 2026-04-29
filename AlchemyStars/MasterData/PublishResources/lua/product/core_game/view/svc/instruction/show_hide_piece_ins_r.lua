@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/show_hide_piece_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("ShowHidePieceInstruction", BaseInstruction)
 ShowHidePieceInstruction = ShowHidePieceInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ShowHidePieceInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function ShowHidePieceInstruction:Constructor(paramList)
   local str = paramList.isShow or "0"
   self._isShow = tonumber(str) > 0
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ShowHidePieceInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function ShowHidePieceInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
-  local pieceSvc = (self._world):GetService("Piece")
-  local bodyArea = (casterEntity:BodyArea()):GetArea()
+  local pieceSvc = self._world:GetService("Piece")
+  local bodyArea = casterEntity:BodyArea():GetArea()
   local cGridLocation = casterEntity:GridLocation()
   local pos = cGridLocation.Position
-  local len = (table.count)(bodyArea)
+  local len = table.count(bodyArea)
   for i = 1, len do
     local truePos = bodyArea[i] + pos
     local ePiece = pieceSvc:FindPieceEntity(truePos)
     ePiece:SetViewVisible(self._isShow)
   end
 end
-
-

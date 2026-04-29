@@ -1,17 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/n29/detective/cfg_n29_detective_search_point_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, BG = 2}
 local config = {
-[9] = {9, "n29_ts_sushe"}
-, 
-[10] = {10, "n29_ts_yuanzi"}
-, 
-[11] = {11, "n29_ts_wutai"}
-, 
-[12] = {12, "n29_ts_xiaozhangshi"}
+  [9] = {
+    9,
+    "n29_ts_sushe"
+  },
+  [10] = {
+    10,
+    "n29_ts_yuanzi"
+  },
+  [11] = {
+    11,
+    "n29_ts_wutai"
+  },
+  [12] = {
+    12,
+    "n29_ts_xiaozhangshi"
+  }
 }
 return config, "ID", key
-

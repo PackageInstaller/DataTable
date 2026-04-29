@@ -1,22 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_peacock_chain_hit_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayPeacockChainHitInstruction", BaseInstruction)
 PlayPeacockChainHitInstruction = PlayPeacockChainHitInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayPeacockChainHitInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayPeacockChainHitInstruction:Constructor(paramList)
   self._casterEffectID = tonumber(paramList.casterEffectID)
   self._characterEffectSlots = {}
-  local characterSlots = (string.split)(paramList.characterSlots, "|")
-  for _,slot in ipairs(characterSlots) do
-    local v = (string.split)(slot, "/")
-    ;
-    (table.insert)(self._characterEffectSlots, (Vector3.New)(tonumber(v[1]), tonumber(v[2]), tonumber(v[3])))
+  local characterSlots = string.split(paramList.characterSlots, "|")
+  for _, slot in ipairs(characterSlots) do
+    local v = string.split(slot, "/")
+    table.insert(self._characterEffectSlots, Vector3.New(tonumber(v[1]), tonumber(v[2]), tonumber(v[3])))
   end
   self._hitPosTrailEffectID = tonumber(paramList.hitPosTrailEffectID)
   self._trailDelay = tonumber(paramList.trailDelay)
@@ -27,31 +19,25 @@ PlayPeacockChainHitInstruction.Constructor = function(self, paramList)
   self._hitDelay = tonumber(paramList.hitDelay)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPeacockChainHitInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  (TaskManager:GetInstance()):CoreGameStartTask(self.TaskFunc, self, casterEntity, phaseContext)
+function PlayPeacockChainHitInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  TaskManager:GetInstance():CoreGameStartTask(self.TaskFunc, self, casterEntity, phaseContext)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPeacockChainHitInstruction.TaskFunc = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
-  local container = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayPeacockChainHitInstruction:TaskFunc(TT, casterEntity, phaseContext)
+  local container = casterEntity:SkillRoutine():GetResultContainer()
   local curDamageResultStageIndex = phaseContext:GetCurDamageResultStageIndex()
   local curDamageIndex = phaseContext:GetCurDamageResultIndex()
   local damageResultArray = container:GetEffectResultsAsArray(SkillEffectType.Damage, curDamageResultStageIndex)
   local damageResult = damageResultArray[curDamageIndex]
-  local slot = (self._characterEffectSlots)[curDamageIndex]
-  local csTransform = ((casterEntity:View()):GetGameObject()).transform
+  local slot = self._characterEffectSlots[curDamageIndex]
+  local csTransform = casterEntity:View():GetGameObject().transform
   local v3CasterEffect = csTransform:TransformPoint(slot)
   local world = casterEntity:GetOwnerWorld()
   local fxsvc = world:GetService("Effect")
   local fxCaster = fxsvc:CreatePositionEffect(self._casterEffectID, v3CasterEffect)
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   if targetEntityID == nil or targetEntityID < 0 then
-    return 
+    return
   end
   local targetEntity = world:GetEntityByID(targetEntityID)
   local curDamageInfoIndex = phaseContext:GetCurDamageInfoIndex()
@@ -69,25 +55,29 @@ PlayPeacockChainHitInstruction.TaskFunc = function(self, TT, casterEntity, phase
   fxTargetPosTrail:SetDirection(v3Dir)
   YIELD(TT, self._hitDelay)
   local fxTargetPosGrid = fxsvc:CreateWorldPositionEffect(self._hitGridEffectID, v2HitPos)
-  local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(self._hitAnimName)):SetHandleBeHitParam_HitEffectID(0)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(v2HitPos)):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget)):SetHandleBeHitParam_DeathClear(self._deathClear)):SetHandleBeHitParam_IsFinalHit(playFinalAttack)):SetHandleBeHitParam_SkillID(skillID)
+  local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(self._hitAnimName):SetHandleBeHitParam_HitEffectID(0):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(v2HitPos):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget):SetHandleBeHitParam_DeathClear(self._deathClear):SetHandleBeHitParam_IsFinalHit(playFinalAttack):SetHandleBeHitParam_SkillID(skillID)
   playSkillService:HandleBeHit(TT, beHitParam)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPeacockChainHitInstruction.GetCacheResource = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayPeacockChainHitInstruction:GetCacheResource()
   local t = {}
   if self._casterEffectID and self._casterEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._casterEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._casterEffectID].ResPath,
+      1
+    })
   end
-  if self._hitPosTrailEffectID and self._hitPosTrailEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitPosTrailEffectID]).ResPath, 1})
+  if self._hitPosTrailEffectID and 0 < self._hitPosTrailEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitPosTrailEffectID].ResPath,
+      1
+    })
   end
-  if self._hitGridEffectID and self._hitGridEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitGridEffectID]).ResPath, 1})
+  if self._hitGridEffectID and 0 < self._hitGridEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitGridEffectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

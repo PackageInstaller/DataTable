@@ -1,43 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_caster_active_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayCasterActiveInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayCasterActiveInstruction = SkillPreviewPlayCasterActiveInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayCasterActiveInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayCasterActiveInstruction:Constructor(params)
   self._enable = params.Enable
   self._syncHP = params.SyncHP
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayCasterActiveInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1
+function SkillPreviewPlayCasterActiveInstruction:DoInstruction(TT, casterEntity, previewContext)
   if self._enable == "false" then
-    ((casterEntity:View()):GetGameObject()):SetActive(false)
+    casterEntity:View():GetGameObject():SetActive(false)
   end
   if self._enable == "true" then
-    ((casterEntity:View()):GetGameObject()):SetActive(true)
+    casterEntity:View():GetGameObject():SetActive(true)
   end
   if self._syncHP then
-    local world = (casterEntity:GetOwnerWorld())
-    local teamEntity = nil
+    local world = casterEntity:GetOwnerWorld()
+    local teamEntity
     if casterEntity:HasPet() then
-      teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
+      teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
     end
     local hpComponent = teamEntity:HP()
     if not hpComponent then
-      return 
+      return
     end
     local sliderEntityId = hpComponent:GetHPSliderEntityID()
     local sliderEntity = world:GetEntityByID(sliderEntityId)
     if not sliderEntity then
-      return 
+      return
     end
     local isHide = self._enable == "false"
     hpComponent:SetHPBarTempHide(isHide)
@@ -46,7 +36,4 @@ SkillPreviewPlayCasterActiveInstruction.DoInstruction = function(self, TT, caste
       teamEntity:ReplaceHPComponent()
     end
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
-
-

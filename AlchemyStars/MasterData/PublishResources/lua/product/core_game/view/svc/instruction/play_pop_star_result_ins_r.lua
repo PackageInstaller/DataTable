@@ -1,43 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_pop_star_result_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayPopStarResultInstruction", BaseInstruction)
 PlayPopStarResultInstruction = PlayPopStarResultInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayPopStarResultInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayPopStarResultInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPopStarResultInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayPopStarResultInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local resultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local resultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local result = resultContainer:GetEffectResultByArray(SkillEffectType.PopStar)
   if not result then
-    return 
+    return
   end
   local popRes = result:GetDataPopStarResult()
   local pieceService = world:GetService("Piece")
-  for _,v in ipairs(popRes:GetDelSet()) do
+  for _, v in ipairs(popRes:GetDelSet()) do
     pieceService:SetPieceAnimMoveDone(v.pos)
   end
   if world:MatchType() == MatchType.MT_PopStar then
     local popStarRSvc = world:GetService("PopStarRender")
     popStarRSvc:PlayPopStarResult(TT, popRes, true)
-  else
-    do
-      if world:MatchType() == MatchType.MT_PopStarPro then
-        local popStarRSvc = world:GetService("PopStarProRender")
-        popStarRSvc:PlayPopStarResult(TT, popRes)
-      end
-    end
+  elseif world:MatchType() == MatchType.MT_PopStarPro then
+    local popStarRSvc = world:GetService("PopStarProRender")
+    popStarRSvc:PlayPopStarResult(TT, popRes)
   end
 end
-
-

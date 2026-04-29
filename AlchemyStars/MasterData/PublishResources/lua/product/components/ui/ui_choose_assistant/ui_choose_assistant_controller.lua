@@ -1,128 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_choose_assistant_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChooseAssistantController", UIController)
 UIChooseAssistantController = UIChooseAssistantController
-local AssistantCutType = {Star13 = 1, Star4 = 2, Star5 = 3, Star6 = 4, StarAll = 5}
+local AssistantCutType = {
+  Star13 = 1,
+  Star4 = 2,
+  Star5 = 3,
+  Star6 = 4,
+  StarAll = 5
+}
 _enum("AssistantCutType", AssistantCutType)
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-UIChooseAssistantController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV, AssistantCutType
+function UIChooseAssistantController:Constructor()
   self._itemCountPerRow = 3
   self._petModule = self:GetModule(PetModule)
   self._roleModule = self:GetModule(RoleModule)
   self._filterType = AssistantCutType.StarAll
-  self._allPets = (self._petModule):GetPets()
+  self._allPets = self._petModule:GetPets()
   self._firstIn = true
-  local isShowQuestUI = ((GameGlobal.UIStateManager)()):IsShow("UIQuestController")
+  local isShowQuestUI = GameGlobal.UIStateManager():IsShow("UIQuestController")
   if isShowQuestUI then
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIQuestController")
+    GameGlobal.UIStateManager():CloseDialog("UIQuestController")
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.CreateSortParamAll = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChooseAssistantController:CreateSortParamAll()
   local sortTypeAll = {}
   local PetSortParam1 = PetSortParam:New(PetSortType.Star, PetSortOrder.Descending)
-  ;
-  (table.insert)(sortTypeAll, PetSortParam1)
+  table.insert(sortTypeAll, PetSortParam1)
   local PetSortParam3 = PetSortParam:New(PetSortType.ID, PetSortOrder.Ascending)
-  ;
-  (table.insert)(sortTypeAll, PetSortParam3)
+  table.insert(sortTypeAll, PetSortParam3)
   return sortTypeAll
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.CreateSortParamOther = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIChooseAssistantController:CreateSortParamOther()
   local sortTypeOther = {}
   local PetSortParam2 = PetSortParam:New(PetSortType.ID, PetSortOrder.Ascending)
-  ;
-  (table.insert)(sortTypeOther, PetSortParam2)
+  table.insert(sortTypeOther, PetSortParam2)
   return sortTypeOther
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.CreateFilterParam = function(self)
-  -- function num : 0_3
+function UIChooseAssistantController:CreateFilterParam()
   local filterParam = {}
   return filterParam
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.CreatePetChangeCgTable = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIChooseAssistantController:CreatePetChangeCgTable()
   self._pet2grade = {}
   self._petExtraSkin = {}
-  local pets = (self._petModule):GetPets()
-  local cfg_pet = (Cfg.cfg_pet)({})
-  for key,value in pairs(pets) do
+  local pets = self._petModule:GetPets()
+  local cfg_pet = Cfg.cfg_pet({})
+  for key, value in pairs(pets) do
     local pet = value
     local petid = pet:GetTemplateID()
     local pet_cfg = cfg_pet[petid]
-    local pet_cg = (HelperProxy:GetInstance()):GetPetStaticBody(petid, 0, 0, PetSkinEffectPath.NO_EFFECT)
-    local pet_cfg_grade = (Cfg.cfg_pet_grade)({PetID = petid})
+    local pet_cg = HelperProxy:GetInstance():GetPetStaticBody(petid, 0, 0, PetSkinEffectPath.NO_EFFECT)
+    local pet_cfg_grade = Cfg.cfg_pet_grade({PetID = petid})
     for j = 1, #pet_cfg_grade do
       local pet_grade_data = pet_cfg_grade[j]
-      local gradeCg = (HelperProxy:GetInstance()):GetPetStaticBody(petid, pet_grade_data.Grade, 0, PetSkinEffectPath.NO_EFFECT)
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R19 in 'UnsetPending'
-
+      local gradeCg = HelperProxy:GetInstance():GetPetStaticBody(petid, pet_grade_data.Grade, 0, PetSkinEffectPath.NO_EFFECT)
       if gradeCg ~= pet_cg and j <= pet:GetPetGrade() then
-        (self._pet2grade)[petid] = j
+        self._pet2grade[petid] = j
         break
       end
     end
-    do
-      local extraSkin = {}
-      do
-        local skinData = (self._petModule):GetPetSkinsData(petid)
-        if skinData then
-          for _,skinInfo in ipairs(skinData.skin_info) do
-            local pet_skin_cfg = (Cfg.cfg_pet_skin)[skinInfo.skin_id]
-            if pet_skin_cfg then
-              local unlockType = (pet_skin_cfg.UnlockType)[1]
-            end
-            if unlockType ~= 1 then
-              if unlockType == 2 then
-                do
-                  (table.insert)(extraSkin, skinInfo.skin_id)
-                  -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
-            end
+    local extraSkin = {}
+    local skinData = self._petModule:GetPetSkinsData(petid)
+    if skinData then
+      for _, skinInfo in ipairs(skinData.skin_info) do
+        local pet_skin_cfg = Cfg.cfg_pet_skin[skinInfo.skin_id]
+        if pet_skin_cfg then
+          local unlockType = pet_skin_cfg.UnlockType[1]
+          if unlockType == 1 or unlockType == 2 then
+          else
+            table.insert(extraSkin, skinInfo.skin_id)
           end
         end
-        -- DECOMPILER ERROR at PC94: Confused about usage of register: R15 in 'UnsetPending'
-
-        if #extraSkin > 0 then
-          (self._petExtraSkin)[petid] = extraSkin
-        end
-        -- DECOMPILER ERROR at PC95: LeaveBlock: unexpected jumping out DO_STMT
-
       end
+    end
+    if 0 < #extraSkin then
+      self._petExtraSkin[petid] = extraSkin
     end
   end
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.OnShow = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIChooseAssistantController:OnShow()
   self:_InitSkinState()
   self:CreatePetChangeCgTable()
   self:_GetComponents()
@@ -131,17 +91,14 @@ UIChooseAssistantController.OnShow = function(self)
   self:_OnValue()
   self:ShowInfo()
   self:_refreshPetSkinList()
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UIChooseMainCgController")
+  local controller = GameGlobal.UIStateManager():GetController("UIChooseMainCgController")
   if controller then
     controller:SetCgControllerShowOrHide(false)
   end
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController._InitSkinState = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local flagValue = (self._roleModule):GetExtFlag(CharExtFlag.CEFT_MAIN_UI_SHOW_SPINE)
+function UIChooseAssistantController:_InitSkinState()
+  local flagValue = self._roleModule:GetExtFlag(CharExtFlag.CEFT_MAIN_UI_SHOW_SPINE)
   if flagValue then
     self._cgState = DynamicAndStaticState.Static
   else
@@ -149,66 +106,55 @@ UIChooseAssistantController._InitSkinState = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.ShowCurrentAssistant = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local petid = ((self._roleModule).m_choose_painting).pet_template_id
-  local defaultPetID, grade, skin, asid = nil, nil, nil, nil
+function UIChooseAssistantController:ShowCurrentAssistant()
+  local petid = self._roleModule.m_choose_painting.pet_template_id
+  local defaultPetID, grade, skin, asid
   if petid and petid ~= 0 then
-    (Log.debug)("###[UIChooseAssistantController]petid -- " .. petid)
+    Log.debug("###[UIChooseAssistantController]petid -- " .. petid)
     defaultPetID = petid
-    grade = ((self._roleModule).m_choose_painting).pet_grade
-    skin = ((self._roleModule).m_choose_painting).skin_id
-    asid = ((self._roleModule).m_choose_painting).board_pet
+    grade = self._roleModule.m_choose_painting.pet_grade
+    skin = self._roleModule.m_choose_painting.skin_id
+    asid = self._roleModule.m_choose_painting.board_pet
     if asid == 3400050 then
       asid = 10015
     end
   else
-    defaultPetID = ((Cfg.cfg_global).main_default_spine_pet_id).IntValue
+    defaultPetID = Cfg.cfg_global.main_default_spine_pet_id.IntValue
     grade = 0
     skin = 0
     asid = 0
   end
   if asid and asid ~= 0 then
-    (self._staticDynamicBtns):SetActive(false)
-    local cfg = (Cfg.cfg_only_assistant)[asid]
+    self._staticDynamicBtns:SetActive(false)
+    local cfg = Cfg.cfg_only_assistant[asid]
     if not cfg then
-      (Log.error)("###[UIChooseAssistantController] cfg is nil ! id --> ", asid)
+      Log.error("###[UIChooseAssistantController] cfg is nil ! id --> ", asid)
     else
-      ;
-      (self._staticDynamicBtns):SetActive(true)
+      self._staticDynamicBtns:SetActive(true)
     end
   else
-    do
-      ;
-      (self._staticDynamicBtns):SetActive(true)
-      local size = ((Cfg.cfg_global).ui_interface_common_size).ArrayValue
-      local cgRect = (self:GetGameObject("cg")):GetComponent("RectTransform")
-      cgRect.sizeDelta = Vector2(size[1], size[2])
-      ;
-      (Log.debug)("###[UIChooseAssistantController]defaultPetID -- " .. defaultPetID)
-      self._currID = defaultPetID
-      self._currGrade = grade
-      self._currSkinId = skin
-      self._currAsId = asid
-      self._selectID = self._currID
-      self._selectGrade = self._currGrade
-      self._selectSkinId = self._currSkinId
-      self._selectAsId = self._currAsId
-    end
+    self._staticDynamicBtns:SetActive(true)
   end
+  local size = Cfg.cfg_global.ui_interface_common_size.ArrayValue
+  local cgRect = self:GetGameObject("cg"):GetComponent("RectTransform")
+  cgRect.sizeDelta = Vector2(size[1], size[2])
+  Log.debug("###[UIChooseAssistantController]defaultPetID -- " .. defaultPetID)
+  self._currID = defaultPetID
+  self._currGrade = grade
+  self._currSkinId = skin
+  self._currAsId = asid
+  self._selectID = self._currID
+  self._selectGrade = self._currGrade
+  self._selectSkinId = self._currSkinId
+  self._selectAsId = self._currAsId
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.SortAndFilterPets = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIChooseAssistantController:SortAndFilterPets()
+  self._itemModule = GameGlobal.GetModule(ItemModule)
   local onlyAs = {}
-  local cfg_only_assistant = (Cfg.cfg_only_assistant)({})
-  if cfg_only_assistant and (table.count)(cfg_only_assistant) > 0 then
-    for key,value in pairs(cfg_only_assistant) do
+  local cfg_only_assistant = Cfg.cfg_only_assistant({})
+  if cfg_only_assistant and table.count(cfg_only_assistant) > 0 then
+    for key, value in pairs(cfg_only_assistant) do
       local petid = value.PetID
       local itemid = value.ID
       local needItem = value.NeedItem
@@ -216,184 +162,130 @@ UIChooseAssistantController.SortAndFilterPets = function(self)
       local unlock = false
       local unlockItem = false
       if needItem then
-        local count = (self._itemModule):GetItemCount(itemid)
-        if count > 0 then
+        local count = self._itemModule:GetItemCount(itemid)
+        if 0 < count then
           unlockItem = true
         end
       else
-        do
-          do
-            local pet = (self._petModule):GetPetByTemplateId(petid)
-            if pet then
-              unlockItem = true
-            end
-            local unlockSkin = false
-            if needSkin then
-              local haveSkin = (self._petModule):HaveSkin(needSkin)
-              if haveSkin then
-                unlockSkin = true
-              end
-            else
-              do
-                do
-                  unlockSkin = true
-                  if unlockSkin and unlockItem then
-                    unlock = true
-                  end
-                  if unlock then
-                    if not onlyAs[petid] then
-                      onlyAs[petid] = {}
-                    end
-                    ;
-                    (table.insert)(onlyAs[petid], value)
-                  end
-                  -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
-            end
-          end
+        local pet = self._petModule:GetPetByTemplateId(petid)
+        if pet then
+          unlockItem = true
         end
       end
-    end
-  end
-  if onlyAs and (table.count)(onlyAs) > 0 then
-    for key,cgList in pairs(onlyAs) do
-      (table.sort)(cgList, function(a, b)
-    -- function num : 0_8_0
-    do return a.Order < b.Order end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-    end
-  end
-  do
-    local onlyAsWithPet = {}
-    local onlyAsWithoutPet = {}
-    for key,value in pairs(onlyAs) do
-      local cfgList = value
-      local petid = key
-      local pet = (self._petModule):GetPetByTemplateId(petid)
-      if pet then
-        onlyAsWithPet[petid] = cfgList
+      local unlockSkin = false
+      if needSkin then
+        local haveSkin = self._petModule:HaveSkin(needSkin)
+        if haveSkin then
+          unlockSkin = true
+        end
       else
-        onlyAsWithoutPet[petid] = cfgList
+        unlockSkin = true
       end
-    end
-    local sortPets = {}
-    for key,value in pairs(self._allPets) do
-      local pet = value
-      ;
-      (table.insert)(sortPets, pet)
-    end
-    for key,value in pairs(onlyAsWithoutPet) do
-      local petid = key
-      local tempData = pet_data:New()
-      tempData.template_id = petid
-      tempData.current_skin = 0
-      local pet = Pet:New(tempData)
-      tempData.grade = 0
-      tempData.level = 1
-      tempData.awakening = 1
-      tempData.equip_lv = 1
-      pet:SetData(tempData)
-      ;
-      (table.insert)(sortPets, pet)
-    end
-    self._pets = {}
-    if self._sortItemWidget then
-      self._pets = (self._sortItemWidget)._pets
-    end
-    if self._selectID and self._selectID ~= -1 then
-      local firstPet = (self._petModule):GetPetByTemplateId(self._selectID)
-      if not firstPet then
-        (Log.error)("###[UIChooseAssistantController] firstPet is nil ! id --> ", self._selectID)
+      if unlockSkin and unlockItem then
+        unlock = true
       end
-      for i = 1, #self._pets do
-        local petid = ((self._pets)[i]):GetTemplateID()
-        if petid == self._selectID then
-          (table.remove)(self._pets, i)
-          break
+      if unlock then
+        if not onlyAs[petid] then
+          onlyAs[petid] = {}
         end
-      end
-      do
-        do
-          ;
-          (table.insert)(self._pets, 1, firstPet)
-          self._showPets = {}
-          for i = 1, #self._pets do
-            local pet = (self._pets)[i]
-            local petid = (pet:GetTemplateID())
-            local withPet = nil
-            if onlyAsWithoutPet[petid] then
-              withPet = false
-            else
-              withPet = true
-            end
-            local data = choose_assistant_ui_data_pet:New(petid, 0, 0, 0, withPet)
-            ;
-            (table.insert)(self._showPets, data)
-            if data.withPet then
-              local baseSkinData = choose_assistant_ui_data_skin:New(petid, 0, 0, 0)
-              data:AppendSkinData(baseSkinData)
-              do
-                if (self._pet2grade)[petid] then
-                  local gradeSkinData = choose_assistant_ui_data_skin:New(petid, (self._pet2grade)[petid], 0, 0)
-                  data:AppendSkinData(gradeSkinData)
-                end
-                if (self._petExtraSkin)[petid] then
-                  for _,skinId in ipairs((self._petExtraSkin)[petid]) do
-                    local extraSkinData = choose_assistant_ui_data_skin:New(petid, 0, skinId, 0)
-                    data:AppendSkinData(extraSkinData)
-                  end
-                end
-                do
-                  local asList = onlyAs[petid]
-                  if asList then
-                    for i = 1, #asList do
-                      local extraAsData = choose_assistant_ui_data_skin:New(petid, 0, 0, (asList[i]).ID)
-                      data:AppendAsData(extraAsData)
-                    end
-                  end
-                  do
-                    -- DECOMPILER ERROR at PC304: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC304: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC304: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC304: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
-              end
-            end
-          end
-          local data = choose_assistant_ui_data_pet:New(-1, -1, -1, -1, true)
-          ;
-          (table.insert)(self._showPets, 1, data)
-        end
+        table.insert(onlyAs[petid], value)
       end
     end
   end
+  if onlyAs and table.count(onlyAs) > 0 then
+    for key, cgList in pairs(onlyAs) do
+      table.sort(cgList, function(a, b)
+        return a.Order < b.Order
+      end)
+    end
+  end
+  local onlyAsWithPet = {}
+  local onlyAsWithoutPet = {}
+  for key, value in pairs(onlyAs) do
+    local cfgList = value
+    local petid = key
+    local pet = self._petModule:GetPetByTemplateId(petid)
+    if pet then
+      onlyAsWithPet[petid] = cfgList
+    else
+      onlyAsWithoutPet[petid] = cfgList
+    end
+  end
+  local sortPets = {}
+  for key, value in pairs(self._allPets) do
+    local pet = value
+    table.insert(sortPets, pet)
+  end
+  for key, value in pairs(onlyAsWithoutPet) do
+    local petid = key
+    local tempData = pet_data:New()
+    tempData.template_id = petid
+    tempData.current_skin = 0
+    local pet = Pet:New(tempData)
+    tempData.grade = 0
+    tempData.level = 1
+    tempData.awakening = 1
+    tempData.equip_lv = 1
+    pet:SetData(tempData)
+    table.insert(sortPets, pet)
+  end
+  self._pets = {}
+  if self._sortItemWidget then
+    self._pets = self._sortItemWidget._pets
+  end
+  if self._selectID and self._selectID ~= -1 then
+    local firstPet = self._petModule:GetPetByTemplateId(self._selectID)
+    if not firstPet then
+      Log.error("###[UIChooseAssistantController] firstPet is nil ! id --> ", self._selectID)
+    end
+    for i = 1, #self._pets do
+      local petid = self._pets[i]:GetTemplateID()
+      if petid == self._selectID then
+        table.remove(self._pets, i)
+        break
+      end
+    end
+    table.insert(self._pets, 1, firstPet)
+  end
+  self._showPets = {}
+  for i = 1, #self._pets do
+    local pet = self._pets[i]
+    local petid = pet:GetTemplateID()
+    local withPet
+    if onlyAsWithoutPet[petid] then
+      withPet = false
+    else
+      withPet = true
+    end
+    local data = choose_assistant_ui_data_pet:New(petid, 0, 0, 0, withPet)
+    table.insert(self._showPets, data)
+    if data.withPet then
+      local baseSkinData = choose_assistant_ui_data_skin:New(petid, 0, 0, 0)
+      data:AppendSkinData(baseSkinData)
+      if self._pet2grade[petid] then
+        local gradeSkinData = choose_assistant_ui_data_skin:New(petid, self._pet2grade[petid], 0, 0)
+        data:AppendSkinData(gradeSkinData)
+      end
+      if self._petExtraSkin[petid] then
+        for _, skinId in ipairs(self._petExtraSkin[petid]) do
+          local extraSkinData = choose_assistant_ui_data_skin:New(petid, 0, skinId, 0)
+          data:AppendSkinData(extraSkinData)
+        end
+      end
+    end
+    local asList = onlyAs[petid]
+    if asList then
+      for i = 1, #asList do
+        local extraAsData = choose_assistant_ui_data_skin:New(petid, 0, 0, asList[i].ID)
+        data:AppendAsData(extraAsData)
+      end
+    end
+  end
+  local data = choose_assistant_ui_data_pet:New(-1, -1, -1, -1, true)
+  table.insert(self._showPets, 1, data)
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController._GetComponents = function(self)
-  -- function num : 0_9
+function UIChooseAssistantController:_GetComponents()
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "scrollView")
   self._cg = self:GetUIComponent("RawImageLoader", "cg")
   self._cgGo = self:GetGameObject("cg")
@@ -403,12 +295,9 @@ UIChooseAssistantController._GetComponents = function(self)
   self._name = self:GetUIComponent("UILocalizationText", "name")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_9_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, nil)
+  end, nil)
   self._star13Tex = self:GetUIComponent("UILocalizationText", "star13tex")
   self._star4Tex = self:GetUIComponent("UILocalizationText", "star4tex")
   self._star5Tex = self:GetUIComponent("UILocalizationText", "star5tex")
@@ -426,7 +315,7 @@ UIChooseAssistantController._GetComponents = function(self)
   self._currAssistentTex = self:GetUIComponent("UILocalizationText", "currAssistentTex")
   self._selectSkinAreaGen = self:GetUIComponent("UISelectObjectPath", "SelectSkinArea")
   if self._selectSkinAreaGen then
-    self._selectSkinListWidget = (self._selectSkinAreaGen):SpawnObject("UIChooseAssistantNewPetSkinList")
+    self._selectSkinListWidget = self._selectSkinAreaGen:SpawnObject("UIChooseAssistantNewPetSkinList")
   end
   self._go = self:GetGameObject()
   self._viewBg = self:GetUIComponent("RectTransform", "viewBg")
@@ -443,70 +332,50 @@ UIChooseAssistantController._GetComponents = function(self)
   self._changePetPosAndScaleRoot = self:GetUIComponent("RectTransform", "posAndScale")
   self._sortItem = self:GetUIComponent("UISelectObjectPath", "sortItem")
   if self._sortItem then
-    self._sortItemWidget = (self._sortItem):SpawnObject("UIChooseSpiritSortItem")
+    self._sortItemWidget = self._sortItem:SpawnObject("UIChooseSpiritSortItem")
   end
   self._saveAndCancelObj = self:GetGameObject("saveAndCancelBtn")
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.SetSaveAndCancelObj = function(self, boo)
-  -- function num : 0_10
+function UIChooseAssistantController:SetSaveAndCancelObj(boo)
   if self._saveAndCancelObj then
-    (self._saveAndCancelObj):SetActive(true)
+    self._saveAndCancelObj:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController._OnValue = function(self)
-  -- function num : 0_11
+function UIChooseAssistantController:_OnValue()
   self:SortAndFilterPets()
   self:CalcCount()
   if self._listShowItemCount <= 0 then
-    ((self._scrollView).gameObject):SetActive(false)
-    return 
+    self._scrollView.gameObject:SetActive(false)
+    return
   else
-    ;
-    ((self._scrollView).gameObject):SetActive(true)
+    self._scrollView.gameObject:SetActive(true)
   end
   if self._firstIn then
     self._firstIn = false
     self:_InitScrollView()
   else
-    ;
-    (self._scrollView):SetListItemCount(self._listShowItemCount)
-    ;
-    (self._scrollView):MovePanelToItemIndex(0, 0)
+    self._scrollView:SetListItemCount(self._listShowItemCount)
+    self._scrollView:MovePanelToItemIndex(0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController._InitScrollView = function(self)
-  -- function num : 0_12
+function UIChooseAssistantController:_InitScrollView()
   if self._scrollView then
-    (self._scrollView):InitListView(self._listShowItemCount, function(scrollView, index)
-    -- function num : 0_12_0 , upvalues : self
-    return self:_InitListView(scrollView, index)
-  end
-)
+    self._scrollView:InitListView(self._listShowItemCount, function(scrollView, index)
+      return self:_InitListView(scrollView, index)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.CalcCount = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  self._petCount = (table.count)(self._showPets)
-  self._listShowItemCount = (math.ceil)(self._petCount / self._itemCountPerRow)
+function UIChooseAssistantController:CalcCount()
+  self._petCount = table.count(self._showPets)
+  self._listShowItemCount = math.ceil(self._petCount / self._itemCountPerRow)
   self._listShowItemCount = self._listShowItemCount and self._listShowItemCount or 0
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController._InitListView = function(self, scrollView, index)
-  -- function num : 0_14
+function UIChooseAssistantController:_InitListView(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -520,8 +389,8 @@ UIChooseAssistantController._InitListView = function(self, scrollView, index)
   for i = 1, self._itemCountPerRow do
     local heartItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._petCount < itemIndex then
-      (heartItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._petCount then
+      heartItem:GetGameObject():SetActive(false)
     else
       self:ShowHeartItem(heartItem, itemIndex)
     end
@@ -529,34 +398,23 @@ UIChooseAssistantController._InitListView = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.ShowHeartItem = function(self, heartItem, index)
-  -- function num : 0_15
-  local pet = (self._showPets)[index]
-  ;
-  (heartItem:GetGameObject()):SetActive(true)
+function UIChooseAssistantController:ShowHeartItem(heartItem, index)
+  local pet = self._showPets[index]
+  heartItem:GetGameObject():SetActive(true)
   if pet ~= nil then
     heartItem:SetData(pet, self._currID, self._currGrade, self._currSkinId, self._currAsId, self._selectID, self._selectGrade, self._selectSkinId, self._selectAsId, function(petid, grade, skinId, asId)
-    -- function num : 0_15_0 , upvalues : self
-    self._selectID = petid
-    self._selectGrade = grade
-    self._selectSkinId = skinId
-    self._selectAsId = asId
-    self:_refreshPetSkinList()
-  end
-, function(petid, grade, skinId, asId)
-    -- function num : 0_15_1 , upvalues : self
-    return self:GetHeadIconByIdAndGrade(petid, grade, skinId, asId)
-  end
-)
+      self._selectID = petid
+      self._selectGrade = grade
+      self._selectSkinId = skinId
+      self._selectAsId = asId
+      self:_refreshPetSkinList()
+    end, function(petid, grade, skinId, asId)
+      return self:GetHeadIconByIdAndGrade(petid, grade, skinId, asId)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.GetHeadIconByIdAndGrade = function(self, petid, grade, skinId, asId)
-  -- function num : 0_16 , upvalues : _ENV
+function UIChooseAssistantController:GetHeadIconByIdAndGrade(petid, grade, skinId, asId)
   local _petid = petid
   local _grade = grade
   local _skinId = skinId
@@ -564,386 +422,249 @@ UIChooseAssistantController.GetHeadIconByIdAndGrade = function(self, petid, grad
   if _asId and _asId ~= 0 then
     _skinId = 0
   end
-  local icon = (HelperProxy:GetInstance()):GetPetHead(_petid, _grade, _skinId, PetSkinEffectPath.HEAD_ICON_CHANGE_ASSIST)
+  local icon = HelperProxy:GetInstance():GetPetHead(_petid, _grade, _skinId, PetSkinEffectPath.HEAD_ICON_CHANGE_ASSIST)
   return icon
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.ChangeCutType = function(self, cutType)
-  -- function num : 0_17
+function UIChooseAssistantController:ChangeCutType(cutType)
   self._filterType = cutType
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.ShowInfo = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIChooseAssistantController:ShowInfo()
   if self._selectID == -1 then
-    return 
+    return
   end
   local petid = self._selectID
   local grade = self._selectGrade
   local skinId = self._selectSkinId
   local asId = self._selectAsId
   if self._dcgHandle then
-    (self._dcgHandle):DestroyCurrentCG()
+    self._dcgHandle:DestroyCurrentCG()
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnAssistantPetItemClick, self._selectID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnAssistantPetItemClick, self._selectID)
   local isSpecialCg = false
-  local cgName, logo, name, spineName = nil, nil, nil, nil
+  local cgName, logo, name, spineName
   if asId and asId ~= 0 then
-    (self._staticDynamicBtns):SetActive(false)
-    local cfg = (Cfg.cfg_only_assistant)[asId]
+    self._staticDynamicBtns:SetActive(false)
+    local cfg = Cfg.cfg_only_assistant[asId]
     if not cfg then
-      (Log.error)("###[UIChooseAssistantController] cfg is nil ! id --> ", asId)
+      Log.error("###[UIChooseAssistantController] cfg is nil ! id --> ", asId)
     else
-      ;
-      (self._staticDynamicBtns):SetActive(true)
+      self._staticDynamicBtns:SetActive(true)
     end
     cgName = cfg.CG
     spineName = cfg.Spine
     if not cgName then
-      (Log.error)("###[UIChooseAssistantController] cgName is nil ! id --> ", asId)
+      Log.error("###[UIChooseAssistantController] cgName is nil ! id --> ", asId)
     end
-    local cfg_pet = (Cfg.cfg_pet)[petid]
+    local cfg_pet = Cfg.cfg_pet[petid]
     if not cfg_pet then
-      (Log.error)("###[UIChooseAssistantController] cfg_pet is nil ! id --> ", petid)
+      Log.error("###[UIChooseAssistantController] cfg_pet is nil ! id --> ", petid)
     end
     name = cfg_pet.Name
     logo = cfg_pet.Logo
   else
-    do
-      ;
-      (self._staticDynamicBtns):SetActive(true)
-      self:_InitSkinState()
-      self:ChangeDynamicAndStatic(self._cgState)
-      isSpecialCg = true
-      cgName = (HelperProxy:GetInstance()):GetMainLobbyStaticBody(petid, grade, skinId, PetSkinEffectPath.BODY_CHANGE_ASSIST)
-      if not cgName then
-        isSpecialCg = false
-        cgName = (HelperProxy:GetInstance()):GetPetStaticBody(petid, grade, skinId, PetSkinEffectPath.BODY_CHANGE_ASSIST)
-      end
-      spineName = (HelperProxy:GetInstance()):GetPetSpine(petid, grade, skinId, PetSkinEffectPath.BODY_CHANGE_ASSIST)
-      do
-        local pet = (self._petModule):GetPetByTemplateId(petid)
-        logo = pet:GetPetLogo()
-        name = pet:GetPetName()
-        ;
-        ((self._cg).gameObject):SetActive(not isSpecialCg)
-        ;
-        ((self._specialCg).gameObject):SetActive(isSpecialCg)
-        if isSpecialCg then
-          local size = Vector2(2539, 1439)
-          if skinId then
-            local cfg_skin = (Cfg.cfg_pet_skin)[skinId]
-            if cfg_skin then
-              local mainSize = cfg_skin.MainLobbySize
-              if mainSize then
-                size = Vector2(mainSize[1], mainSize[2])
-              end
-              spineName = cfg_skin.MainLobbySpine
-            end
-          end
-          do
-            do
-              local _rect = ((self._specialCg).gameObject):GetComponent(typeof(UnityEngine.RectTransform))
-              _rect.sizeDelta = size
-              _rect.localScale = Vector3(1, 1, 1)
-              ;
-              (self._specialCg):LoadImage(cgName)
-              -- DECOMPILER ERROR at PC182: Confused about usage of register: R12 in 'UnsetPending'
-
-              ;
-              (self._changePetPosAndScaleRoot).localScale = Vector3(1, 1, 1)
-              ;
-              (self._cg):LoadImage(cgName)
-              -- DECOMPILER ERROR at PC194: Confused about usage of register: R10 in 'UnsetPending'
-
-              ;
-              (self._changePetPosAndScaleRoot).localScale = Vector3(0.5, 0.5, 1)
-              if self._dcgHandle then
-                (self._dcgHandle):ChangeDynamicCGSync(spineName)
-              else
-                self._dcgHandle = (DynamicCG.SyncLoad)(spineName, self._spine)
-              end
-              ;
-              (UICG.SetTransform)((self._cg).transform, self:GetName(), cgName)
-              ;
-              (UICG.SetTransform)((self._spine).transform, self:GetName(), spineName)
-              local cfg_pet = nil
-              if grade > 0 then
-                cfg_pet = ((Cfg.cfg_pet_grade)({PetID = self._selectID, Grade = grade}))[1]
-              else
-                cfg_pet = (Cfg.cfg_pet)[self._selectID]
-              end
-              local dynamicSpineAnim = nil
-              do
-                if cfg_pet and asId and asId ~= 0 then
-                  local cfg_as = (Cfg.cfg_only_assistant)[asId]
-                  if cfg_as then
-                    dynamicSpineAnim = cfg_as.SpineAnim
-                  end
-                end
-                if dynamicSpineAnim then
-                  local tryFunc = function()
-    -- function num : 0_18_0 , upvalues : self, dynamicSpineAnim
-    if self._dcgHandle then
-      (self._dcgHandle):InitializeSpine()
-      ;
-      (self._dcgHandle):SetAnimation(0, dynamicSpineAnim, true)
-      ;
-      (self._dcgHandle):SetAnimMixTime(0)
-      ;
-      (self._dcgHandle):Update(0)
+    self._staticDynamicBtns:SetActive(true)
+    self:_InitSkinState()
+    self:ChangeDynamicAndStatic(self._cgState)
+    isSpecialCg = true
+    cgName = HelperProxy:GetInstance():GetMainLobbyStaticBody(petid, grade, skinId, PetSkinEffectPath.BODY_CHANGE_ASSIST)
+    if not cgName then
+      isSpecialCg = false
+      cgName = HelperProxy:GetInstance():GetPetStaticBody(petid, grade, skinId, PetSkinEffectPath.BODY_CHANGE_ASSIST)
     end
+    spineName = HelperProxy:GetInstance():GetPetSpine(petid, grade, skinId, PetSkinEffectPath.BODY_CHANGE_ASSIST)
+    local pet = self._petModule:GetPetByTemplateId(petid)
+    logo = pet:GetPetLogo()
+    name = pet:GetPetName()
   end
-
-                  local succ = pcall(tryFunc)
-                  if not succ then
-                    (Log.error)("###[UIChooseAssistantController] set _dynamicSpineAnim fail ! anim:", dynamicSpineAnim)
-                  end
-                end
-                do
-                  ;
-                  (self._logo):LoadImage(logo)
-                  ;
-                  (self._name):SetText((StringTable.Get)(name))
-                  local isCurrPet = nil
-                  if self._currAsId ~= asId then
-                    isCurrPet = not asId or asId == 0
-                    isCurrPet = self._currID == petid and self._currGrade == grade and self._currSkinId == skinId
-                    if isCurrPet then
-                      (self._currAssistentTex):SetText((StringTable.Get)("str_assistant_current_assistant"))
-                    else
-                      (self._currAssistentTex):SetText((StringTable.Get)("str_assistant_preview_assistant"))
-                    end
-                    -- DECOMPILER ERROR: 7 unprocessed JMP targets
-                  end
-                end
-              end
-            end
-          end
+  self._cg.gameObject:SetActive(not isSpecialCg)
+  self._specialCg.gameObject:SetActive(isSpecialCg)
+  if isSpecialCg then
+    local size = Vector2(2539, 1439)
+    if skinId then
+      local cfg_skin = Cfg.cfg_pet_skin[skinId]
+      if cfg_skin then
+        local mainSize = cfg_skin.MainLobbySize
+        if mainSize then
+          size = Vector2(mainSize[1], mainSize[2])
         end
+        spineName = cfg_skin.MainLobbySpine
       end
     end
-  end
-end
-
--- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.ChangeChooseState = function(self, type)
-  -- function num : 0_19 , upvalues : _ENV, AssistantCutType
-  local c = Color(1, 1, 1, 1)
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._star13Tex).color = c
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._star4Tex).color = c
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._star5Tex).color = c
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._star6Tex).color = c
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._starAllTex).color = c
-  ;
-  (self._star13Img):SetActive(false)
-  ;
-  (self._star4Img):SetActive(false)
-  ;
-  (self._star5Img):SetActive(false)
-  ;
-  (self._star6Img):SetActive(false)
-  ;
-  (self._starAllImg):SetActive(false)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._star13star).color = c
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._star4star).color = c
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._star5star).color = c
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._star6star).color = c
-  local c_yellow = Color(1, 0.9921568627451, 0, 1)
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R4 in 'UnsetPending'
-
-  if type == AssistantCutType.Star13 then
-    (self._star13Tex).color = c_yellow
-    ;
-    (self._star13Img):SetActive(true)
-    -- DECOMPILER ERROR at PC60: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._star13star).color = c_yellow
+    local _rect = self._specialCg.gameObject:GetComponent(typeof(UnityEngine.RectTransform))
+    _rect.sizeDelta = size
+    _rect.localScale = Vector3(1, 1, 1)
+    self._specialCg:LoadImage(cgName)
+    self._changePetPosAndScaleRoot.localScale = Vector3(1, 1, 1)
   else
-    -- DECOMPILER ERROR at PC66: Confused about usage of register: R4 in 'UnsetPending'
-
-    if type == AssistantCutType.Star4 then
-      (self._star4Tex).color = c_yellow
-      ;
-      (self._star4Img):SetActive(true)
-      -- DECOMPILER ERROR at PC72: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._star4star).color = c_yellow
-    else
-      -- DECOMPILER ERROR at PC78: Confused about usage of register: R4 in 'UnsetPending'
-
-      if type == AssistantCutType.Star5 then
-        (self._star5Tex).color = c_yellow
-        ;
-        (self._star5Img):SetActive(true)
-        -- DECOMPILER ERROR at PC84: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._star5star).color = c_yellow
-      else
-        -- DECOMPILER ERROR at PC90: Confused about usage of register: R4 in 'UnsetPending'
-
-        if type == AssistantCutType.Star6 then
-          (self._star6Tex).color = c_yellow
-          ;
-          (self._star6Img):SetActive(true)
-          -- DECOMPILER ERROR at PC96: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self._star6star).color = c_yellow
-        else
-          -- DECOMPILER ERROR at PC102: Confused about usage of register: R4 in 'UnsetPending'
-
-          if type == AssistantCutType.StarAll then
-            (self._starAllTex).color = c_yellow
-            ;
-            (self._starAllImg):SetActive(true)
-          end
-        end
+    self._cg:LoadImage(cgName)
+    self._changePetPosAndScaleRoot.localScale = Vector3(0.5, 0.5, 1)
+  end
+  if self._dcgHandle then
+    self._dcgHandle:ChangeDynamicCGSync(spineName)
+  else
+    self._dcgHandle = DynamicCG.SyncLoad(spineName, self._spine)
+  end
+  UICG.SetTransform(self._cg.transform, self:GetName(), cgName)
+  UICG.SetTransform(self._spine.transform, self:GetName(), spineName)
+  local cfg_pet
+  if 0 < grade then
+    cfg_pet = Cfg.cfg_pet_grade({
+      PetID = self._selectID,
+      Grade = grade
+    })[1]
+  else
+    cfg_pet = Cfg.cfg_pet[self._selectID]
+  end
+  local dynamicSpineAnim
+  if cfg_pet and asId and asId ~= 0 then
+    local cfg_as = Cfg.cfg_only_assistant[asId]
+    if cfg_as then
+      dynamicSpineAnim = cfg_as.SpineAnim
+    end
+  end
+  if dynamicSpineAnim then
+    local function tryFunc()
+      if self._dcgHandle then
+        self._dcgHandle:InitializeSpine()
+        
+        self._dcgHandle:SetAnimation(0, dynamicSpineAnim, true)
+        self._dcgHandle:SetAnimMixTime(0)
+        self._dcgHandle:Update(0)
       end
     end
+    
+    local succ = pcall(tryFunc)
+    if not succ then
+      Log.error("###[UIChooseAssistantController] set _dynamicSpineAnim fail ! anim:", dynamicSpineAnim)
+    end
+  end
+  self._logo:LoadImage(logo)
+  self._name:SetText(StringTable.Get(name))
+  local isCurrPet
+  if asId and asId ~= 0 then
+    isCurrPet = self._currAsId == asId
+  else
+    isCurrPet = self._currID == petid and self._currGrade == grade and self._currSkinId == skinId
+  end
+  if isCurrPet then
+    self._currAssistentTex:SetText(StringTable.Get("str_assistant_current_assistant"))
+  else
+    self._currAssistentTex:SetText(StringTable.Get("str_assistant_preview_assistant"))
   end
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R1 in 'UnsetPending'
+function UIChooseAssistantController:ChangeChooseState(type)
+  local c = Color(1, 1, 1, 1)
+  self._star13Tex.color = c
+  self._star4Tex.color = c
+  self._star5Tex.color = c
+  self._star6Tex.color = c
+  self._starAllTex.color = c
+  self._star13Img:SetActive(false)
+  self._star4Img:SetActive(false)
+  self._star5Img:SetActive(false)
+  self._star6Img:SetActive(false)
+  self._starAllImg:SetActive(false)
+  self._star13star.color = c
+  self._star4star.color = c
+  self._star5star.color = c
+  self._star6star.color = c
+  local c_yellow = Color(1, 0.9921568627450981, 0, 1)
+  if type == AssistantCutType.Star13 then
+    self._star13Tex.color = c_yellow
+    self._star13Img:SetActive(true)
+    self._star13star.color = c_yellow
+  elseif type == AssistantCutType.Star4 then
+    self._star4Tex.color = c_yellow
+    self._star4Img:SetActive(true)
+    self._star4star.color = c_yellow
+  elseif type == AssistantCutType.Star5 then
+    self._star5Tex.color = c_yellow
+    self._star5Img:SetActive(true)
+    self._star5star.color = c_yellow
+  elseif type == AssistantCutType.Star6 then
+    self._star6Tex.color = c_yellow
+    self._star6Img:SetActive(true)
+    self._star6star.color = c_yellow
+  elseif type == AssistantCutType.StarAll then
+    self._starAllTex.color = c_yellow
+    self._starAllImg:SetActive(true)
+  end
+end
 
-UIChooseAssistantController.star13OnClick = function(self)
-  -- function num : 0_20 , upvalues : AssistantCutType, _ENV
+function UIChooseAssistantController:star13OnClick()
   if self._filterType ~= AssistantCutType.Star13 then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
     self:ChangeCutType(AssistantCutType.Star13)
     self:ChangeChooseState(AssistantCutType.Star13)
   end
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.star4OnClick = function(self)
-  -- function num : 0_21 , upvalues : AssistantCutType, _ENV
+function UIChooseAssistantController:star4OnClick()
   if self._filterType ~= AssistantCutType.Star4 then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
     self:ChangeCutType(AssistantCutType.Star4)
     self:ChangeChooseState(AssistantCutType.Star4)
   end
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.star5OnClick = function(self)
-  -- function num : 0_22 , upvalues : AssistantCutType, _ENV
+function UIChooseAssistantController:star5OnClick()
   if self._filterType ~= AssistantCutType.Star5 then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
     self:ChangeCutType(AssistantCutType.Star5)
     self:ChangeChooseState(AssistantCutType.Star5)
   end
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.star6OnClick = function(self)
-  -- function num : 0_23 , upvalues : AssistantCutType, _ENV
+function UIChooseAssistantController:star6OnClick()
   if self._filterType ~= AssistantCutType.Star6 then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
     self:ChangeCutType(AssistantCutType.Star6)
     self:ChangeChooseState(AssistantCutType.Star6)
   end
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.starallOnClick = function(self)
-  -- function num : 0_24 , upvalues : AssistantCutType, _ENV
+function UIChooseAssistantController:starallOnClick()
   if self._filterType ~= AssistantCutType.StarAll then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
     self:ChangeCutType(AssistantCutType.StarAll)
     self:ChangeChooseState(AssistantCutType.StarAll)
   end
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.sskinBtnOnClick = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  (ToastManager.ShowToast)((StringTable.Get)("str_pet_config_function_no_open"))
+function UIChooseAssistantController:sskinBtnOnClick()
+  ToastManager.ShowToast(StringTable.Get("str_pet_config_function_no_open"))
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.PosBtnOnClick = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local isShowQuestUI = ((GameGlobal.UIStateManager)()):IsShow("UIQuestController")
+function UIChooseAssistantController:PosBtnOnClick()
+  local isShowQuestUI = GameGlobal.UIStateManager():IsShow("UIQuestController")
   if isShowQuestUI then
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIQuestController")
+    GameGlobal.UIStateManager():CloseDialog("UIQuestController")
   end
   self:CloseDialog()
-  local mainController = ((GameGlobal.UIStateManager)()):GetController("UIMainLobbyController")
+  local mainController = GameGlobal.UIStateManager():GetController("UIMainLobbyController")
   local id, type = mainController:GetBgIDAndType()
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIChooseMainCgController", UIChooseAssistantType.Change2Cg, id, type)
+  GameGlobal.UIStateManager():ShowDialog("UIChooseMainCgController", UIChooseAssistantType.Change2Cg, id, type)
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.BgBtnOnClick = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UIChooseAssistantController:BgBtnOnClick()
   self:CloseDialog()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnShowChangeMainCg, UIPetAndBgMoveType.Bg, true)
-  local isShowQuestUI = ((GameGlobal.UIStateManager)()):IsShow("UIQuestController")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnShowChangeMainCg, UIPetAndBgMoveType.Bg, true)
+  local isShowQuestUI = GameGlobal.UIStateManager():IsShow("UIQuestController")
   if isShowQuestUI then
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIQuestController")
+    GameGlobal.UIStateManager():CloseDialog("UIQuestController")
   end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIChooseMainBgController")
+  GameGlobal.UIStateManager():ShowDialog("UIChooseMainBgController")
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.changeBtnOnClick = function(self)
-  -- function num : 0_28
+function UIChooseAssistantController:changeBtnOnClick()
   self:Lock("UIChooseAssistantController:changeBtnOnClick")
   self:StartTask(self.ChangeRequest, self)
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.ChangeRequest = function(self, TT)
-  -- function num : 0_29 , upvalues : _ENV
+function UIChooseAssistantController:ChangeRequest(TT)
   local id = self._selectID
   local grade = self._selectGrade
   local skinID = self._selectSkinId
@@ -953,52 +674,39 @@ UIChooseAssistantController.ChangeRequest = function(self, TT)
     skinID = -1
     asID = -1
   else
-    local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+    local open_id = GameGlobal.GameLogic():GetOpenId()
     local key = "MAIN_BG_AS_ACTIVE" .. open_id
-    ;
-    (LocalDB.SetInt)(key, 0)
+    LocalDB.SetInt(key, 0)
   end
-  do
-    local res = (self._roleModule):RequestChoosePainting(TT, id, grade, skinID, asID)
-    self:UnLock("UIChooseAssistantController:changeBtnOnClick")
-    if res:GetSucc() then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnAssistantChanged, true)
-      self:CloseDialog()
-    else
-      ;
-      (Log.debug)("###UIChooseAssistantController id-->", id, "|grade-->", grade, "|skin-->", skinID, "|as-->", asID)
-      ;
-      (Log.fatal)("###UIChooseAssistantController -- change assistent res error ! result --> ", res:GetResult())
-    end
+  local res = self._roleModule:RequestChoosePainting(TT, id, grade, skinID, asID)
+  self:UnLock("UIChooseAssistantController:changeBtnOnClick")
+  if res:GetSucc() then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnAssistantChanged, true)
+    self:CloseDialog()
+  else
+    Log.debug("###UIChooseAssistantController id-->", id, "|grade-->", grade, "|skin-->", skinID, "|as-->", asID)
+    Log.fatal("###UIChooseAssistantController -- change assistent res error ! result --> ", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController._refreshPetSkinList = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIChooseAssistantController:_refreshPetSkinList()
   local petId = self._selectID
-  ;
-  (self._cgGo):SetActive(petId ~= -1)
-  ;
-  (self._logoGo):SetActive(petId ~= -1)
-  ;
-  (self._staticDynamicBtns):SetActive(petId ~= -1)
-  ;
-  ((self._changePetPosAndScaleRoot).gameObject):SetActive(petId ~= -1)
+  self._cgGo:SetActive(petId ~= -1)
+  self._logoGo:SetActive(petId ~= -1)
+  self._staticDynamicBtns:SetActive(petId ~= -1)
+  self._changePetPosAndScaleRoot.gameObject:SetActive(petId ~= -1)
   if petId == -1 then
-    (self._name):SetText((StringTable.Get)("str_assistant_current_pet_null"))
+    self._name:SetText(StringTable.Get("str_assistant_current_pet_null"))
     if self._currID == petId then
-      (self._currAssistentTex):SetText((StringTable.Get)("str_assistant_current_assistant"))
+      self._currAssistentTex:SetText(StringTable.Get("str_assistant_current_assistant"))
     else
-      (self._currAssistentTex):SetText((StringTable.Get)("str_assistant_preview_assistant"))
+      self._currAssistentTex:SetText(StringTable.Get("str_assistant_preview_assistant"))
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnAssistantPetItemClick, self._selectID)
-    return 
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnAssistantPetItemClick, self._selectID)
+    return
   end
-  local curPetData = nil
-  for index,petData in ipairs(self._showPets) do
+  local curPetData
+  for index, petData in ipairs(self._showPets) do
     if petData.petid == petId then
       curPetData = petData
       break
@@ -1006,73 +714,56 @@ UIChooseAssistantController._refreshPetSkinList = function(self)
   end
   if self._selectSkinListWidget then
     if not self._skilListSetted then
-      (self._selectSkinListWidget):SetRefreshUiCallBack(function(petid, grade, skinId, asId)
-    -- function num : 0_30_0 , upvalues : self
-    self._selectID = petid
-    self._selectGrade = grade
-    self._selectSkinId = skinId
-    self._selectAsId = asId
-    self:ShowInfo()
-  end
-)
-      ;
-      (self._selectSkinListWidget):SetCheckIsCurSkinCallBack(function(petid, grade, skinId, asId)
-    -- function num : 0_30_1 , upvalues : self
-    local isCur = nil
-    -- DECOMPILER ERROR at PC14: Unhandled construct in 'MakeBoolean' P1
-
-    if ((self._currAsId and self._currAsId ~= 0) or not asId or asId ~= 0) and asId == self._currAsId then
-      isCur = true
-    end
-    isCur = petid == self._currID and grade == self._currGrade and skinId == self._currSkinId
-    do return isCur end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-)
+      self._selectSkinListWidget:SetRefreshUiCallBack(function(petid, grade, skinId, asId)
+        self._selectID = petid
+        self._selectGrade = grade
+        self._selectSkinId = skinId
+        self._selectAsId = asId
+        self:ShowInfo()
+      end)
+      self._selectSkinListWidget:SetCheckIsCurSkinCallBack(function(petid, grade, skinId, asId)
+        local isCur
+        if self._currAsId and self._currAsId ~= 0 or asId and asId ~= 0 then
+          if asId == self._currAsId then
+            isCur = true
+          end
+        else
+          isCur = petid == self._currID and grade == self._currGrade and skinId == self._currSkinId
+        end
+        return isCur
+      end)
       self._skilListSetted = true
     end
     if curPetData then
-      (self._selectSkinListWidget):RefreshData(curPetData)
+      self._selectSkinListWidget:RefreshData(curPetData)
     end
   end
-  -- DECOMPILER ERROR: 11 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_31
+function UIChooseAssistantController:OnUpdate(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.StaticDynamicBtnsOnClick = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function UIChooseAssistantController:StaticDynamicBtnsOnClick()
   if self._cgState == DynamicAndStaticState.Static then
     self._cgState = DynamicAndStaticState.Dynamic
-    ;
-    (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_Dynamic"}, true)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSlideDynamic)
+    GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+      "Click_Dynamic"
+    }, true)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSlideDynamic)
   else
     self._cgState = DynamicAndStaticState.Static
-    ;
-    (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_Static"}, true)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSlide)
+    GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+      "Click_Static"
+    }, true)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSlide)
   end
   self:ChangeDynamicAndStatic(self._cgState)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._OnGetExtData, self, self._cgState)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SwitchSkinStaticOrDynamic, self._cgState)
+  GameGlobal.TaskManager():StartTask(self._OnGetExtData, self, self._cgState)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SwitchSkinStaticOrDynamic, self._cgState)
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController._OnGetExtData = function(self, TT, state)
-  -- function num : 0_33 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIChooseAssistantController:_OnGetExtData(TT, state)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local flagValue = false
   if state == DynamicAndStaticState.Static then
     flagValue = true
@@ -1082,54 +773,30 @@ UIChooseAssistantController._OnGetExtData = function(self, TT, state)
   roleModule:SetExtFlag(TT, CharExtFlag.CEFT_MAIN_UI_SHOW_SPINE, flagValue)
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.ChangeDynamicAndStatic = function(self, state)
-  -- function num : 0_34 , upvalues : _ENV
+function UIChooseAssistantController:ChangeDynamicAndStatic(state)
   if self._dsTween then
-    (self._dsTween):Kill()
+    self._dsTween:Kill()
   end
   if state == DynamicAndStaticState.Dynamic then
-    local pos = (self._dynamicRect).anchoredPosition
-    self._dsTween = ((self._staticAndDynamicImg):DOAnchorPos(pos, 0.3)):SetEase(((DG.Tweening).Ease).InOutCubic)
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._dynamicText).color = Color.black
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._staticText).color = Color(0.38823529411765, 0.38823529411765, 0.38823529411765, 1)
-    ;
-    (self._CgObj):SetActive(false)
-    ;
-    (self._spineObj):SetActive(true)
+    local pos = self._dynamicRect.anchoredPosition
+    self._dsTween = self._staticAndDynamicImg:DOAnchorPos(pos, 0.3):SetEase(DG.Tweening.Ease.InOutCubic)
+    self._dynamicText.color = Color.black
+    self._staticText.color = Color(0.38823529411764707, 0.38823529411764707, 0.38823529411764707, 1)
+    self._CgObj:SetActive(false)
+    self._spineObj:SetActive(true)
   else
-    do
-      local pos = (self._staticRect).anchoredPosition
-      self._dsTween = ((self._staticAndDynamicImg):DOAnchorPos(pos, 0.3)):SetEase(((DG.Tweening).Ease).InOutCubic)
-      -- DECOMPILER ERROR at PC62: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._staticText).color = Color.black
-      -- DECOMPILER ERROR at PC70: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._dynamicText).color = Color(0.38823529411765, 0.38823529411765, 0.38823529411765, 1)
-      ;
-      (self._CgObj):SetActive(true)
-      ;
-      (self._spineObj):SetActive(false)
-    end
+    local pos = self._staticRect.anchoredPosition
+    self._dsTween = self._staticAndDynamicImg:DOAnchorPos(pos, 0.3):SetEase(DG.Tweening.Ease.InOutCubic)
+    self._staticText.color = Color.black
+    self._dynamicText.color = Color(0.38823529411764707, 0.38823529411764707, 0.38823529411764707, 1)
+    self._CgObj:SetActive(true)
+    self._spineObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.cancelBtnOnClick = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function UIChooseAssistantController:cancelBtnOnClick()
   self:CloseDialog()
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UIChooseMainCgController")
+  local controller = GameGlobal.UIStateManager():GetController("UIChooseMainCgController")
   if controller then
     controller:SetCgControllerShowOrHide(true)
   else
@@ -1137,23 +804,25 @@ UIChooseAssistantController.cancelBtnOnClick = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChooseAssistantController.saveBtnOnClick = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function UIChooseAssistantController:saveBtnOnClick()
   local id = self._selectID
   local grade = self._selectGrade
   local skinID = self._selectSkinId
   local asID = self._selectAsId
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UIChooseMainCgController")
-  if id ~= ((self._roleModule).m_choose_painting).pet_template_id or grade ~= ((self._roleModule).m_choose_painting).pet_grade or skinID ~= ((self._roleModule).m_choose_painting).skin_id or asID ~= ((self._roleModule).m_choose_painting).board_pet then
+  local controller = GameGlobal.UIStateManager():GetController("UIChooseMainCgController")
+  if id ~= self._roleModule.m_choose_painting.pet_template_id or grade ~= self._roleModule.m_choose_painting.pet_grade or skinID ~= self._roleModule.m_choose_painting.skin_id or asID ~= self._roleModule.m_choose_painting.board_pet then
     ChooseAssistantHelper:SaveTmpChooseCgPaintingData(true, id, grade, skinID, asID)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnAssistantChanged, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnAssistantChanged, true)
     self:CloseDialog()
     if controller then
       controller:SetCgControllerShowOrHide(true)
-      controller:SetCgShowInfo({UIChooseAssistantType.Change2Cg, id, grade, skinID, asID})
+      controller:SetCgShowInfo({
+        UIChooseAssistantType.Change2Cg,
+        id,
+        grade,
+        skinID,
+        asID
+      })
     else
       self:ShowDialog("UIChooseMainCgController", UIChooseAssistantType.Change2Cg, id, grade, skinID, asID)
     end
@@ -1166,5 +835,3 @@ UIChooseAssistantController.saveBtnOnClick = function(self)
     end
   end
 end
-
-

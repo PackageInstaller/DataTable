@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/tip/ui_activity_return_tip_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemTipController", UIController)
 UIActivityReturnSystemTipController = UIActivityReturnSystemTipController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemTipController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._campaign = (UIActivityReturnSystemHelper.LoadDataOnEnter)(TT, res)
+function UIActivityReturnSystemTipController:LoadDataOnEnter(TT, res, uiParams)
+  self._campaign = UIActivityReturnSystemHelper.LoadDataOnEnter(TT, res)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTipController.OnShow = function(self)
-  -- function num : 0_1
+function UIActivityReturnSystemTipController:OnShow()
   self._timeText = self:GetUIComponent("UILocalizationText", "TimeText")
   self:SetTime()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTipController.SetTime = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local component = (UIActivityReturnSystemHelper.GetComponentByTabName)(self._campaign, "shop", 2)
+function UIActivityReturnSystemTipController:SetTime()
+  local component = UIActivityReturnSystemHelper.GetComponentByTabName(self._campaign, "shop", 2)
   local power2ItemInfo = component:GetComponentInfo()
   local time = power2ItemInfo.m_close_time
   local endTime = time
@@ -32,29 +19,24 @@ UIActivityReturnSystemTipController.SetTime = function(self)
   self:_SetRemainingTime("remainingTimePool", descId, endTime)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTipController._SetRemainingTime = function(self, widgetName, descId, endTime)
-  -- function num : 0_3
+function UIActivityReturnSystemTipController:_SetRemainingTime(widgetName, descId, endTime)
   local sop = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = sop:SpawnObject("UIActivityCommonRemainingTime")
-  obj:SetCustomTimeStr({day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_common_less_minute"})
+  obj:SetCustomTimeStr({
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_common_less_minute"
+  })
   obj:SetExtraRollingText()
   obj:SetAdvanceText(descId)
   obj:SetData(endTime, nil, nil)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTipController.OnHide = function(self)
-  -- function num : 0_4
+function UIActivityReturnSystemTipController:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTipController.BGOnClick = function(self)
-  -- function num : 0_5
+function UIActivityReturnSystemTipController:BGOnClick()
   self:CloseDialog()
 end
-
-

@@ -1,16 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_extra_mission_stage/ui_ext_puzzle_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIExtPuzzleItem", UICustomWidget)
 UIExtPuzzleItem = UIExtPuzzleItem
-local posTab = {[1] = Vector2(-450, 201), [2] = Vector2(-112, 201), [3] = Vector2(250, 201), [4] = Vector2(-450, -65), [5] = Vector2(-112, -65), [6] = Vector2(250, -65)}
-local sizeTab = {[1] = Vector2(338, 266), [2] = Vector2(363, 266), [3] = Vector2(358, 266), [4] = Vector2(338, 258), [5] = Vector2(363, 258), [6] = Vector2(358, 266)}
--- DECOMPILER ERROR at PC70: Confused about usage of register: R2 in 'UnsetPending'
+local posTab = {
+  [1] = Vector2(-450, 201),
+  [2] = Vector2(-112, 201),
+  [3] = Vector2(250, 201),
+  [4] = Vector2(-450, -65),
+  [5] = Vector2(-112, -65),
+  [6] = Vector2(250, -65)
+}
+local sizeTab = {
+  [1] = Vector2(338, 266),
+  [2] = Vector2(363, 266),
+  [3] = Vector2(358, 266),
+  [4] = Vector2(338, 258),
+  [5] = Vector2(363, 258),
+  [6] = Vector2(358, 266)
+}
 
-UIExtPuzzleItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIExtPuzzleItem:OnShow()
   self._module = self:GetModule(ExtMissionModule)
   self._atlas = self:GetAsset("UIExtraMissionStage.spriteatlas", LoadType.SpriteAtlas)
   self._black = self:GetUIComponent("Image", "black")
@@ -24,130 +31,84 @@ UIExtPuzzleItem.OnShow = function(self)
   self._bg = self:GetUIComponent("RectTransform", "bg")
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R2 in 'UnsetPending'
-
-UIExtPuzzleItem.SetData = function(self, idx, extid, extidx, stageid, stageidx, callback)
-  -- function num : 0_1 , upvalues : posTab, _ENV, sizeTab
+function UIExtPuzzleItem:SetData(idx, extid, extidx, stageid, stageidx, callback)
   self._index = idx
   self._extid = extid
   self._stageid = stageid
   self._callback = callback
   self._extIdx = extidx
   self._stageIdx = stageidx
-  ;
-  (self._nameTex):SetText(self._extIdx .. "-" .. self._index)
+  self._nameTex:SetText(self._extIdx .. "-" .. self._index)
   local posT = posTab[self._index]
   local x = posT.x
   local y = posT.y
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._idx).anchoredPosition = Vector2(x, y)
+  self._idx.anchoredPosition = Vector2(x, y)
   local sizeT = sizeTab[self._index]
   local w = sizeT.x
   local h = sizeT.y
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R13 in 'UnsetPending'
-
-  ;
-  (self._bg).sizeDelta = Vector2(w, h)
+  self._bg.sizeDelta = Vector2(w, h)
   self:GetStars()
   self:LoadPic()
   self:Select(self._index == self._stageIdx)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R2 in 'UnsetPending'
-
-UIExtPuzzleItem.LoadPic = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._black).sprite = (self._atlas):GetSprite("outbound_fanwai_shadow" .. self._index)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._select).sprite = (self._atlas):GetSprite("outbound_fanwai_xuan" .. self._index)
-  local cfg_ext = (Cfg.cfg_extra_mission)[self._extid]
+function UIExtPuzzleItem:LoadPic()
+  self._black.sprite = self._atlas:GetSprite("outbound_fanwai_shadow" .. self._index)
+  self._select.sprite = self._atlas:GetSprite("outbound_fanwai_xuan" .. self._index)
+  local cfg_ext = Cfg.cfg_extra_mission[self._extid]
   if cfg_ext then
     if self._state ~= EnumExtMissionState.Disable then
-      ((self._cucoloris).gameObject):SetActive(false)
-      local cg = (cfg_ext.StageTextureListColor)[self._index]
-      ;
-      (self._cg):LoadImage(cg)
+      self._cucoloris.gameObject:SetActive(false)
+      local cg = cfg_ext.StageTextureListColor[self._index]
+      self._cg:LoadImage(cg)
     else
-      do
-        ;
-        ((self._cg).gameObject):SetActive(false)
-        local cucoloris = (cfg_ext.StageTextureListCucoloris)[self._index]
-        ;
-        (self._cucoloris):LoadImage(cucoloris)
-      end
+      self._cg.gameObject:SetActive(false)
+      local cucoloris = cfg_ext.StageTextureListCucoloris[self._index]
+      self._cucoloris:LoadImage(cucoloris)
     end
   end
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R2 in 'UnsetPending'
-
-UIExtPuzzleItem.GetStars = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local stars = (self._module):UI_GetExtTaskState(self._extid, self._stageid)
+function UIExtPuzzleItem:GetStars()
+  local stars = self._module:UI_GetExtTaskState(self._extid, self._stageid)
   if stars < 0 then
     self._state = EnumExtMissionState.Disable
-  else
-    if stars == 0 then
-      local isFirstFail = (self._module):UI_IsFirstFail(self._extid, self._stageid)
-      if isFirstFail then
-        self._state = EnumExtMissionState.New
-      else
-        self._state = EnumExtMissionState.Open
-      end
+  elseif stars == 0 then
+    local isFirstFail = self._module:UI_IsFirstFail(self._extid, self._stageid)
+    if isFirstFail then
+      self._state = EnumExtMissionState.New
     else
-      do
-        if stars > 0 then
-          self._state = EnumExtMissionState.Down
-        end
-        if self._state == EnumExtMissionState.New then
-          (self._new):SetActive(true)
-          ;
-          ((self._stars).gameObject):SetActive(false)
-        else
-          ;
-          (self._new):SetActive(false)
-          ;
-          ((self._stars).gameObject):SetActive(true)
-          for i = 1, 3 do
-            local img = (((self._stars):GetChild(i)).gameObject):GetComponent("Image")
-            if i <= stars then
-              img.sprite = (self._atlas):GetSprite("outbound_fanwai_icon5")
-            else
-              img.sprite = (self._atlas):GetSprite("outbound_fanwai_icon6")
-            end
-            img:SetNativeSize()
-          end
-        end
-      end
+      self._state = EnumExtMissionState.Open
     end
+  elseif 0 < stars then
+    self._state = EnumExtMissionState.Down
   end
-end
-
--- DECOMPILER ERROR at PC82: Confused about usage of register: R2 in 'UnsetPending'
-
-UIExtPuzzleItem.bgOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  if self._state == EnumExtMissionState.Disable then
-    (ToastManager.ShowToast)((StringTable.Get)("str_extra_mission_error_task_lock"))
+  if self._state == EnumExtMissionState.New then
+    self._new:SetActive(true)
+    self._stars.gameObject:SetActive(false)
   else
-    if self._callback then
-      (self._callback)(self._index)
+    self._new:SetActive(false)
+    self._stars.gameObject:SetActive(true)
+    for i = 1, 3 do
+      local img = self._stars:GetChild(i).gameObject:GetComponent("Image")
+      if stars >= i then
+        img.sprite = self._atlas:GetSprite("outbound_fanwai_icon5")
+      else
+        img.sprite = self._atlas:GetSprite("outbound_fanwai_icon6")
+      end
+      img:SetNativeSize()
     end
   end
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R2 in 'UnsetPending'
-
-UIExtPuzzleItem.Select = function(self, select)
-  -- function num : 0_5
-  ((self._select).gameObject):SetActive(select)
+function UIExtPuzzleItem:bgOnClick(go)
+  if self._state == EnumExtMissionState.Disable then
+    ToastManager.ShowToast(StringTable.Get("str_extra_mission_error_task_lock"))
+  elseif self._callback then
+    self._callback(self._index)
+  end
 end
 
-
+function UIExtPuzzleItem:Select(select)
+  self._select.gameObject:SetActive(select)
+end

@@ -1,221 +1,158 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/trap_auras_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("reactive_system")
 _class("TrapAurasSystem_Render", ReactiveSystem)
 TrapAurasSystem_Render = TrapAurasSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-TrapAurasSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function TrapAurasSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapAurasSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).TrapAurasOutline)
-  local c = Collector:New({group}, {"AddedOrRemoved"})
+function TrapAurasSystem_Render:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.TrapAurasOutline)
+  local c = Collector:New({group}, {
+    "AddedOrRemoved"
+  })
   return c
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapAurasSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
-  if entity:HasTrapRender() then
-    return (entity:TrapRender()):HasAurasGroupID()
-  end
+function TrapAurasSystem_Render:Filter(entity)
+  return entity:HasTrapRender() and entity:TrapRender():HasAurasGroupID()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapAurasSystem_Render.ExecuteEntities = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local entities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).TrapAurasOutline)
+function TrapAurasSystem_Render:ExecuteEntities()
+  local entities = self._world:GetGroupEntities(self._world.BW_WEMatchers.TrapAurasOutline)
   if not entities then
-    return 
+    return
   end
   local groupEntityList = {}
-  for i,e in ipairs(entities) do
+  for i, e in ipairs(entities) do
     local trapRenderComponent = e:TrapRender()
     local groupID = trapRenderComponent:GetAurasGroupID()
     if not groupEntityList[groupID] then
       groupEntityList[groupID] = {}
     end
-    ;
-    (table.insert)(groupEntityList[groupID], e)
+    table.insert(groupEntityList[groupID], e)
   end
-  for groupID,entityList in pairs(groupEntityList) do
+  for groupID, entityList in pairs(groupEntityList) do
     self:PlayGroupAuras(entityList)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapAurasSystem_Render.PlayGroupAuras = function(self, groupEntityList)
-  -- function num : 0_4 , upvalues : _ENV
+function TrapAurasSystem_Render:PlayGroupAuras(groupEntityList)
   local totalRange = {}
   local entity2RangeList = {}
-  local groupEffect, birthAnim, deadAnim, birthDelay, deadDelay, loopAnim, radius = nil, nil, nil, nil, nil, nil, nil
-  local configService = (self._world):GetService("Config")
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local entityPoolService = (self._world):GetService("EntityPool")
+  local groupEffect, birthAnim, deadAnim, birthDelay, deadDelay, loopAnim, radius
+  local configService = self._world:GetService("Config")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local entityPoolService = self._world:GetService("EntityPool")
   local birthEntityList = {}
   local deadEntityList = {}
   local destroyEntityList = {}
-  for _,entity in ipairs(groupEntityList) do
+  for _, entity in ipairs(groupEntityList) do
     local trapRenderComponent = entity:TrapRender()
     local effect = trapRenderComponent:GetAurasEffect()
-    if not groupEffect then
-      groupEffect = effect
-    end
+    groupEffect = groupEffect or effect
     local myRadius = trapRenderComponent:GetAurasRadius()
-    if not radius then
-      radius = myRadius
-    end
+    radius = radius or myRadius
     if trapRenderComponent:GetAurasStatus() == TrapAurasState.Close then
       local dead = trapRenderComponent:GetAurasDeathAnim()
       local delay = trapRenderComponent:GetAurasBirthDelay()
-      if not deadAnim then
-        deadAnim = dead
-      end
-      if not deadDelay then
-        deadDelay = delay
-      end
+      deadAnim = deadAnim or dead
+      deadDelay = deadDelay or delay
       if groupEffect ~= effect or deadAnim ~= dead or deadDelay ~= delay then
-        (Log.exception)("Trap Auras Effect Invalid")
+        Log.exception("Trap Auras Effect Invalid")
       end
       local aurasEntityList = trapRenderComponent:GetAllAurasEntity()
-      for i,id in ipairs(aurasEntityList) do
-        local aurasEntity = (self._world):GetEntityByID(id)
+      for i, id in ipairs(aurasEntityList) do
+        local aurasEntity = self._world:GetEntityByID(id)
         if not trapRenderComponent:IsAurasFinish() then
-          (table.insert)(deadEntityList, aurasEntity)
+          table.insert(deadEntityList, aurasEntity)
         end
       end
-    else
-      do
-        if trapRenderComponent:GetAurasStatus() == TrapAurasState.Open then
-          local birth = trapRenderComponent:GetAurasBirthAnim()
-          local loop = trapRenderComponent:GetAurasLoopAnim()
-          local delay = trapRenderComponent:GetAurasBirthDelay()
-          if not birthAnim then
-            birthAnim = birth
-          end
-          if not birthDelay then
-            birthDelay = delay
-          end
-          if not loopAnim then
-            loopAnim = loop
-          end
-          if groupEffect ~= effect or birthAnim ~= birth or birthDelay ~= delay or loopAnim ~= loop then
-            (Log.exception)("Trap Auras Effect Invalid")
-          end
-          local skillID = trapRenderComponent:GetAurasRangeSkillID()
-          local skillConfigData = configService:GetSkillConfigData(skillID)
-          local casterPos = entity:GetGridPosition()
-          local scapeResult = utilScopeSvc:CalcSkillScope(skillConfigData, casterPos, entity)
-          local range = scapeResult:GetAttackRange()
-          for i,pos in ipairs(range) do
-            if not (table.Vector2Include)(totalRange, pos) then
-              (table.insert)(totalRange, pos)
-            end
-          end
-          entity2RangeList[entity:GetID()] = range
-          local aurasEntityList = trapRenderComponent:GetAllAurasEntity()
-          for i,id in ipairs(aurasEntityList) do
-            local aurasEntity = (self._world):GetEntityByID(id)
-            ;
-            (table.insert)(destroyEntityList, aurasEntity)
-          end
+    elseif trapRenderComponent:GetAurasStatus() == TrapAurasState.Open then
+      local birth = trapRenderComponent:GetAurasBirthAnim()
+      local loop = trapRenderComponent:GetAurasLoopAnim()
+      local delay = trapRenderComponent:GetAurasBirthDelay()
+      birthAnim = birthAnim or birth
+      birthDelay = birthDelay or delay
+      loopAnim = loopAnim or loop
+      if groupEffect ~= effect or birthAnim ~= birth or birthDelay ~= delay or loopAnim ~= loop then
+        Log.exception("Trap Auras Effect Invalid")
+      end
+      local skillID = trapRenderComponent:GetAurasRangeSkillID()
+      local skillConfigData = configService:GetSkillConfigData(skillID)
+      local casterPos = entity:GetGridPosition()
+      local scapeResult = utilScopeSvc:CalcSkillScope(skillConfigData, casterPos, entity)
+      local range = scapeResult:GetAttackRange()
+      for i, pos in ipairs(range) do
+        if not table.Vector2Include(totalRange, pos) then
+          table.insert(totalRange, pos)
         end
-        do
-          do
-            trapRenderComponent:ClearAurasEntity()
-            -- DECOMPILER ERROR at PC169: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC169: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC169: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC169: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+      end
+      entity2RangeList[entity:GetID()] = range
+      local aurasEntityList = trapRenderComponent:GetAllAurasEntity()
+      for i, id in ipairs(aurasEntityList) do
+        local aurasEntity = self._world:GetEntityByID(id)
+        table.insert(destroyEntityList, aurasEntity)
       end
     end
+    trapRenderComponent:ClearAurasEntity()
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.PlayDead, self, deadEntityList, deadAnim, deadDelay)
-  local renderEntitySvcR = (self._world):GetService("RenderEntity")
+  GameGlobal.TaskManager():StartTask(self.PlayDead, self, deadEntityList, deadAnim, deadDelay)
+  local renderEntitySvcR = self._world:GetService("RenderEntity")
   local outlineEntityList = renderEntitySvcR:CreateAreaOutlineEntity(totalRange, EntityConfigIDRender.TrapAurasArea, groupEffect, nil, nil, radius)
-  for i,aurasEntity in ipairs(destroyEntityList) do
+  for i, aurasEntity in ipairs(destroyEntityList) do
     entityPoolService:DestroyCacheEntity(aurasEntity, EntityConfigIDRender.TrapAurasArea)
   end
-  for i,outlineEntity in ipairs(outlineEntityList) do
+  for i, outlineEntity in ipairs(outlineEntityList) do
     local sourcePos = renderEntitySvcR:GetOutlineSourcePos(outlineEntity, radius)
-    for entityID,range in pairs(entity2RangeList) do
-      if (table.Vector2Include)(range, sourcePos) then
-        local entity = (self._world):GetEntityByID(entityID)
+    for entityID, range in pairs(entity2RangeList) do
+      if table.Vector2Include(range, sourcePos) then
+        local entity = self._world:GetEntityByID(entityID)
         local trapRenderComponent = entity:TrapRender()
         trapRenderComponent:AddMyAurasEntity(outlineEntity:GetID())
         if trapRenderComponent:GetAurasStatus() == TrapAurasState.Open and not trapRenderComponent:IsAurasFinish() then
-          (table.insert)(birthEntityList, outlineEntity)
+          table.insert(birthEntityList, outlineEntity)
         end
         break
       end
     end
   end
-  for _,entity in ipairs(groupEntityList) do
+  for _, entity in ipairs(groupEntityList) do
     local trapRenderComponent = entity:TrapRender()
     trapRenderComponent:SetAurasFinish()
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.PlayBirth, self, birthEntityList, birthAnim, birthDelay, loopAnim)
+  GameGlobal.TaskManager():StartTask(self.PlayBirth, self, birthEntityList, birthAnim, birthDelay, loopAnim)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapAurasSystem_Render.PlayBirth = function(self, TT, entityList, birthAnim, delay, loopAnim)
-  -- function num : 0_5 , upvalues : _ENV
+function TrapAurasSystem_Render:PlayBirth(TT, entityList, birthAnim, delay, loopAnim)
   if not entityList or #entityList == 0 or not birthAnim then
-    return 
+    return
   end
-  local renderBattle = (self._world):GetService("RenderBattle")
-  for i,entity in ipairs(entityList) do
+  local renderBattle = self._world:GetService("RenderBattle")
+  for i, entity in ipairs(entityList) do
     renderBattle:PlayAnimation(entity, {birthAnim})
   end
   YIELD(TT, delay)
-  for i,entity in ipairs(entityList) do
+  for i, entity in ipairs(entityList) do
     renderBattle:PlayAnimation(entity, {loopAnim})
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapAurasSystem_Render.PlayDead = function(self, TT, entityList, deadAnim, deadDelay)
-  -- function num : 0_6 , upvalues : _ENV
+function TrapAurasSystem_Render:PlayDead(TT, entityList, deadAnim, deadDelay)
   if not entityList or #entityList == 0 then
-    return 
+    return
   end
-  local renderBattle = (self._world):GetService("RenderBattle")
+  local renderBattle = self._world:GetService("RenderBattle")
   if deadAnim then
-    for i,entity in ipairs(entityList) do
+    for i, entity in ipairs(entityList) do
       renderBattle:PlayAnimation(entity, {deadAnim})
     end
   end
-  do
-    if deadDelay then
-      YIELD(TT, deadDelay)
-    end
-    local entityPoolService = (self._world):GetService("EntityPool")
-    for i,entity in ipairs(entityList) do
-      entityPoolService:DestroyCacheEntity(entity, EntityConfigIDRender.TrapAurasArea)
-    end
+  if deadDelay then
+    YIELD(TT, deadDelay)
+  end
+  local entityPoolService = self._world:GetService("EntityPool")
+  for i, entity in ipairs(entityList) do
+    entityPoolService:DestroyCacheEntity(entity, EntityConfigIDRender.TrapAurasArea)
   end
 end
-
-

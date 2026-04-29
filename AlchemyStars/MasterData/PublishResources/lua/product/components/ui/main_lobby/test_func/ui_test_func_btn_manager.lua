@@ -1,91 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/test_func/ui_test_func_btn_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITestFuncBtnManager", Object)
 UITestFuncBtnManager = UITestFuncBtnManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITestFuncBtnManager.Constructor = function(self, uiView, btnPool, subpagePool)
-  -- function num : 0_0
+function UITestFuncBtnManager:Constructor(uiView, btnPool, subpagePool)
   self._uiView = uiView
   self._btnPool = btnPool
   self._subpagePool = subpagePool
   self._data = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncBtnManager.SpawnBtns = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local objs = (UIWidgetHelper.SpawnObjects)(self._uiView, self._btnPool, "UITestFuncBtn", #self._data)
-  for i,v in ipairs(objs) do
-    v:SetData((self._data)[i])
+function UITestFuncBtnManager:SpawnBtns()
+  local objs = UIWidgetHelper.SpawnObjects(self._uiView, self._btnPool, "UITestFuncBtn", #self._data)
+  for i, v in ipairs(objs) do
+    v:SetData(self._data[i])
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncBtnManager.AddBtn_Default = function(self, title, callback)
-  -- function num : 0_2 , upvalues : _ENV
-  (table.insert)(self._data, {title = title, callback = callback})
+function UITestFuncBtnManager:AddBtn_Default(title, callback)
+  table.insert(self._data, {title = title, callback = callback})
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncBtnManager.AddBtn_Toggle = function(self, title, callback, toggleValueCallback)
-  -- function num : 0_3 , upvalues : _ENV
-  (table.insert)(self._data, {title = title, callback = callback, toggleValueCallback = toggleValueCallback})
+function UITestFuncBtnManager:AddBtn_Toggle(title, callback, toggleValueCallback)
+  table.insert(self._data, {
+    title = title,
+    callback = callback,
+    toggleValueCallback = toggleValueCallback
+  })
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncBtnManager.AddBtn_ShowDialog = function(self, title, uiName, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
-  local callback = function()
-    -- function num : 0_4_0 , upvalues : uiParams, _ENV, uiName
+function UITestFuncBtnManager:AddBtn_ShowDialog(title, uiName, uiParams)
+  local function callback()
     if uiParams and type(uiParams) == "table" then
-      ((GameGlobal.UIStateManager)()):ShowDialog(uiName, (table.unpack)(uiParams))
+      GameGlobal.UIStateManager():ShowDialog(uiName, table.unpack(uiParams))
     else
-      ;
-      ((GameGlobal.UIStateManager)()):ShowDialog(uiName, uiParams)
+      GameGlobal.UIStateManager():ShowDialog(uiName, uiParams)
     end
   end
-
+  
   self:AddBtn_Default(title, callback)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncBtnManager.AddBtn_SwitchState = function(self, title, state, uiParams)
-  -- function num : 0_5 , upvalues : _ENV
-  local callback = function()
-    -- function num : 0_5_0 , upvalues : uiParams, _ENV, state
+function UITestFuncBtnManager:AddBtn_SwitchState(title, state, uiParams)
+  local function callback()
     if uiParams and type(uiParams) == "table" then
-      ((GameGlobal.UIStateManager)()):SwitchState(state, (table.unpack)(uiParams))
+      GameGlobal.UIStateManager():SwitchState(state, table.unpack(uiParams))
     else
-      ;
-      ((GameGlobal.UIStateManager)()):SwitchState(state, uiParams)
+      GameGlobal.UIStateManager():SwitchState(state, uiParams)
     end
   end
-
+  
   self:AddBtn_Default(title, callback)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncBtnManager.AddBtn_SubPage = function(self, title, className, prefabName)
-  -- function num : 0_6 , upvalues : _ENV
-  local callback = function()
-    -- function num : 0_6_0 , upvalues : _ENV, self, className, prefabName
-    (UIWidgetHelper.ClearWidgets)(self._uiView, self._subpagePool)
-    local obj = (UIWidgetHelper.SpawnObject)(self._uiView, self._subpagePool, className, prefabName)
-    ;
-    (obj:GetGameObject()):SetActive(true)
+function UITestFuncBtnManager:AddBtn_SubPage(title, className, prefabName)
+  local function callback()
+    UIWidgetHelper.ClearWidgets(self._uiView, self._subpagePool)
+    
+    local obj = UIWidgetHelper.SpawnObject(self._uiView, self._subpagePool, className, prefabName)
+    obj:GetGameObject():SetActive(true)
   end
-
+  
   self:AddBtn_Default(title, callback)
 end
-
-

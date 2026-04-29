@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_add_grid_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseAddGridEffectParam", SkillPhaseParamBase)
 SkillPhaseAddGridEffectParam = SkillPhaseAddGridEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseAddGridEffectParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
-  local param1Array = (string.split)(t.paramArray, ",")
+function SkillPhaseAddGridEffectParam:Constructor(t)
+  local param1Array = string.split(t.paramArray, ",")
   local castEffectIDArray = {}
-  for k,idStr in ipairs(param1Array) do
+  for k, idStr in ipairs(param1Array) do
     local effectID = tonumber(idStr)
     castEffectIDArray[#castEffectIDArray + 1] = effectID
   end
@@ -21,43 +14,29 @@ SkillPhaseAddGridEffectParam.Constructor = function(self, t)
   self._gridEffectDelayTime = t.gridEffectDelayTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAddGridEffectParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseAddGridEffectParam:GetCacheTable()
   local t = {}
-  for i,id in ipairs(self._castEffectIDArray) do
-    (table.insert)(t, {((Cfg.cfg_effect)[id]).ResPath, 1})
+  for i, id in ipairs(self._castEffectIDArray) do
+    table.insert(t, {
+      Cfg.cfg_effect[id].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAddGridEffectParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseAddGridEffectParam:GetPhaseType()
   return SkillViewPhaseType.AddGridEffect
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAddGridEffectParam.GetEffectIDArray = function(self)
-  -- function num : 0_3
+function SkillPhaseAddGridEffectParam:GetEffectIDArray()
   return self._castEffectIDArray
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAddGridEffectParam.GetLastTime = function(self)
-  -- function num : 0_4
+function SkillPhaseAddGridEffectParam:GetLastTime()
   return self._lastTime
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAddGridEffectParam.GetGridEffectDelayTime = function(self)
-  -- function num : 0_5
+function SkillPhaseAddGridEffectParam:GetGridEffectDelayTime()
   return self._gridEffectDelayTime
 end
-
-

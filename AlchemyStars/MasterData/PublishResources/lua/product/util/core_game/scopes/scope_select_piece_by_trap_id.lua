@@ -1,35 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_select_piece_by_trap_id.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_SelectPieceByTrapID", SkillScopeCalculator_Base)
 SkillScopeCalculator_SelectPieceByTrapID = SkillScopeCalculator_SelectPieceByTrapID
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_SelectPieceByTrapID.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_SelectPieceByTrapID:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   if not scopeParam then
-    (Log.fatal)("### scopeParam is nil. centerPos=", centerPos)
-    return 
+    Log.fatal("### scopeParam is nil. centerPos=", centerPos)
+    return
   end
-  local world = (self._gridFilter)._world
-  local trapGroup = world:GetGroup((world.BW_WEMatchers).Trap)
+  local world = self._gridFilter._world
+  local trapGroup = world:GetGroup(world.BW_WEMatchers.Trap)
   local tEntityTrap = trapGroup:GetEntities()
   local tPosTrap = {}
-  for _,eTrap in ipairs(tEntityTrap) do
-    if (table.icontains)(scopeParam, (eTrap:Trap()):GetTrapID()) and not eTrap:HasDeadMark() then
+  for _, eTrap in ipairs(tEntityTrap) do
+    if table.icontains(scopeParam, eTrap:Trap():GetTrapID()) and not eTrap:HasDeadMark() then
       local v2GridLocation = eTrap:GetGridPosition()
       local cBodyArea = eTrap:BodyArea()
       local tv2RelativeBody = cBodyArea:GetArea()
-      for _,v2Relative in ipairs(tv2RelativeBody) do
-        (table.insert)(tPosTrap, v2Relative + v2GridLocation)
+      for _, v2Relative in ipairs(tv2RelativeBody) do
+        table.insert(tPosTrap, v2Relative + v2GridLocation)
       end
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.SelectPieceByTrapID, centerPos, tPosTrap, tPosTrap)
   return result
 end
-
-

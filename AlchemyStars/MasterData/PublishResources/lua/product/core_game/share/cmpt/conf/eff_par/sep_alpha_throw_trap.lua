@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_alpha_throw_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectAlphaThrowTrapParam", SkillEffectParamBase)
 SkillEffectAlphaThrowTrapParam = SkillEffectAlphaThrowTrapParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectAlphaThrowTrapParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectAlphaThrowTrapParam:Constructor(t)
   self._trapID = t.trapID
   self._monsterClassID = t.monsterClassID
   self._basePercent = t.basePercent
@@ -18,53 +11,30 @@ SkillEffectAlphaThrowTrapParam.Constructor = function(self, t)
   self._buffID = t.buffID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaThrowTrapParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectAlphaThrowTrapParam:GetEffectType()
   return SkillEffectType.AlphaThrowTrap
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaThrowTrapParam.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectAlphaThrowTrapParam:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaThrowTrapParam.GetMonsterClassID = function(self)
-  -- function num : 0_3
+function SkillEffectAlphaThrowTrapParam:GetMonsterClassID()
   return self._monsterClassID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaThrowTrapParam.GetBasePercent = function(self)
-  -- function num : 0_4
+function SkillEffectAlphaThrowTrapParam:GetBasePercent()
   return self._basePercent
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaThrowTrapParam.GetAfterPercent = function(self)
-  -- function num : 0_5
+function SkillEffectAlphaThrowTrapParam:GetAfterPercent()
   return self._afterPercent
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaThrowTrapParam.GetFormulaID = function(self)
-  -- function num : 0_6
+function SkillEffectAlphaThrowTrapParam:GetFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaThrowTrapParam.GetBuffID = function(self)
-  -- function num : 0_7
+function SkillEffectAlphaThrowTrapParam:GetBuffID()
   return self._buffID
 end
-
-

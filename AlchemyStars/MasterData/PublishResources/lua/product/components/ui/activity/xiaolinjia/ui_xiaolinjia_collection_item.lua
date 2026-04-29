@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/ui_xiaolinjia_collection_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXiaoLinJiaCollectionItem", UICustomWidget)
 UIXiaoLinJiaCollectionItem = UIXiaoLinJiaCollectionItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXiaoLinJiaCollectionItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self.atlas = (self:RootUIOwner()):GetAsset("XiaoLinJia.spriteatlas", LoadType.SpriteAtlas)
+function UIXiaoLinJiaCollectionItem:OnShow(uiParams)
+  self.atlas = self:RootUIOwner():GetAsset("XiaoLinJia.spriteatlas", LoadType.SpriteAtlas)
   self.icon = self:GetUIComponent("Image", "icon")
   self.unlockBG = self:GetGameObject("unlockBG")
   self.lockBG = self:GetGameObject("lockBG")
@@ -19,78 +12,51 @@ UIXiaoLinJiaCollectionItem.OnShow = function(self, uiParams)
   self.hasRed = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaCollectionItem.SetData = function(self, cfg, uiController)
-  -- function num : 0_1 , upvalues : _ENV
+function UIXiaoLinJiaCollectionItem:SetData(cfg, uiController)
   self.cfg = cfg
   self.uiController = uiController
-  self.itemId = (self.cfg).ItemID
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
-  local items = (self.itemModule):GetItemByTempId(self.itemId)
-  for _,v in pairs(items) do
+  self.itemId = self.cfg.ItemID
+  self.itemModule = GameGlobal.GetModule(ItemModule)
+  local items = self.itemModule:GetItemByTempId(self.itemId)
+  for _, v in pairs(items) do
     self.item = v
   end
   if self.item then
-    if (self.item):IsNewOverlay() then
+    if self.item:IsNewOverlay() then
       self.hasRed = true
-      ;
-      (self.red):SetActive(true)
+      self.red:SetActive(true)
     end
     self.isLock = false
   else
     self.isLock = true
   end
-  ;
-  (self.unlockBG):SetActive(not self.isLock)
-  ;
-  (self.lockBG):SetActive(self.isLock)
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.icon).sprite = (self.atlas):GetSprite((self.cfg).Icon)
+  self.unlockBG:SetActive(not self.isLock)
+  self.lockBG:SetActive(self.isLock)
+  self.icon.sprite = self.atlas:GetSprite(self.cfg.Icon)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaCollectionItem.SetUnNew = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIXiaoLinJiaCollectionItem:SetUnNew()
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    local pstID = (self.item):GetID()
-    ;
-    (self.itemModule):SetItemUnnewOverlay(TT, pstID)
-    ;
-    (self.itemModule):SetItemUnnew(TT, pstID)
-    ;
-    (self.red):SetActive(false)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnXiaoLinJiaMainPanelRefresh, true)
-  end
-)
+    local pstID = self.item:GetID()
+    self.itemModule:SetItemUnnewOverlay(TT, pstID)
+    self.itemModule:SetItemUnnew(TT, pstID)
+    self.red:SetActive(false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnXiaoLinJiaMainPanelRefresh, true)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaCollectionItem.BtnOnClick = function(self)
-  -- function num : 0_3
+function UIXiaoLinJiaCollectionItem:BtnOnClick()
   if self.hasRed then
     self:SetUnNew()
   end
-  ;
-  (self.uiController):OnSelectCollection((self.cfg).ID, self.isLock)
+  self.uiController:OnSelectCollection(self.cfg.ID, self.isLock)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaCollectionItem.OnSelect = function(self, last, current)
-  -- function num : 0_4
-  if last == (self.cfg).ID then
-    (self.anim):Play("uieff_UIXiaoLinJiaCollectionItem_unselect")
+function UIXiaoLinJiaCollectionItem:OnSelect(last, current)
+  if last == self.cfg.ID then
+    self.anim:Play("uieff_UIXiaoLinJiaCollectionItem_unselect")
   end
-  if current == (self.cfg).ID then
-    (self.anim):Play("uieff_UIXiaoLinJiaCollectionItem_select")
+  if current == self.cfg.ID then
+    self.anim:Play("uieff_UIXiaoLinJiaCollectionItem_select")
   end
 end
-
-

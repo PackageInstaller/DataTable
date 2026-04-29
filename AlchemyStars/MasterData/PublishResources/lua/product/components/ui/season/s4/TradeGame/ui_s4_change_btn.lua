@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/ui_s4_change_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4ChangeBtn", UICustomWidget)
 UIS4ChangeBtn = UIS4ChangeBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4ChangeBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIS4ChangeBtn:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ChangeBtn.InitWidget = function(self)
-  -- function num : 0_1
+function UIS4ChangeBtn:InitWidget()
   self.lockObj = self:GetGameObject("Lock")
   self.choseObj = self:GetGameObject("Chose")
   self.txt = self:GetUIComponent("UILocalizationText", "txt")
@@ -23,65 +13,42 @@ UIS4ChangeBtn.InitWidget = function(self)
   self.number = self:GetUIComponent("UILocalizationText", "Number")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ChangeBtn.SetData = function(self, id, harborId, unlock, btnClickCB)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS4ChangeBtn:SetData(id, harborId, unlock, btnClickCB)
   self.id = id
   self.harborId = harborId
   self.unlock = unlock
   self.CallBack = btnClickCB
   self:InitData()
-  ;
-  (self.lockObj):SetActive(not unlock)
+  self.lockObj:SetActive(not unlock)
   self.lockTips = "str_season_s4_trade_harbor_lock_tip_" .. id
   local titleKey = "str_season_s4_trade_harbor_" .. id
-  local titleStr = (StringTable.Get)(titleKey)
-  ;
-  (self.txt):SetText(titleStr)
+  local titleStr = StringTable.Get(titleKey)
+  self.txt:SetText(titleStr)
   if id == 1 then
-    (self.harborName):SetText("A")
-    ;
-    (self.number):SetText("01")
-  else
-    if id == 2 then
-      (self.harborName):SetText("B")
-      ;
-      (self.number):SetText("02")
-    else
-      if id == 3 then
-        (self.harborName):SetText("C")
-        ;
-        (self.number):SetText("03")
-      end
-    end
+    self.harborName:SetText("A")
+    self.number:SetText("01")
+  elseif id == 2 then
+    self.harborName:SetText("B")
+    self.number:SetText("02")
+  elseif id == 3 then
+    self.harborName:SetText("C")
+    self.number:SetText("03")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ChangeBtn.InitData = function(self)
-  -- function num : 0_3
+function UIS4ChangeBtn:InitData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ChangeBtn.OnChose = function(self, State)
-  -- function num : 0_4
-  (self.choseObj):SetActive(State)
+function UIS4ChangeBtn:OnChose(State)
+  self.choseObj:SetActive(State)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ChangeBtn.BtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIS4ChangeBtn:BtnOnClick(go)
   if not self.unlock then
-    (ToastManager.ShowToast)((StringTable.Get)(self.lockTips))
-    return 
+    ToastManager.ShowToast(StringTable.Get(self.lockTips))
+    return
   end
   if self.CallBack then
-    (self.CallBack)(self.harborId)
+    self.CallBack(self.harborId)
   end
 end
-
-

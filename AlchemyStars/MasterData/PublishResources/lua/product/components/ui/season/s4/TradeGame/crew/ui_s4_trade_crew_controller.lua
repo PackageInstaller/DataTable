@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/crew/ui_s4_trade_crew_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeCrewController", UIController)
 UIS4TradeCrewController = UIS4TradeCrewController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeCrewController.Constructor = function(self)
-  -- function num : 0_0
+function UIS4TradeCrewController:Constructor()
   self._tabType = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIS4TradeCrewController:OnShow(uiParams)
   self._tradeData = uiParams[1]
   self._selectID = uiParams[2]
   self:_GetComponents()
@@ -24,10 +14,7 @@ UIS4TradeCrewController.OnShow = function(self, uiParams)
   self:SwitchTab(UIS4TradeCrewTabType.Control)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewController._GetComponents = function(self)
-  -- function num : 0_2
+function UIS4TradeCrewController:_GetComponents()
   self._crewControlSpawner = self:GetUIComponent("UISelectObjectPath", "crewControlSpawner")
   self._crewPurchaseSpawner = self:GetUIComponent("UISelectObjectPath", "crewPurchaseSpawner")
   self._select1Txt = self:GetUIComponent("UILocalizationText", "select1Txt")
@@ -39,118 +26,66 @@ UIS4TradeCrewController._GetComponents = function(self)
   self._crewPurchaseSpawnerObj = self:GetGameObject("crewPurchaseSpawner")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewController._InitComponents = function(self)
-  -- function num : 0_3
-  self._crewControlTab = (self._crewControlSpawner):SpawnObject("UIS4TradeCrewControlTab")
-  self._crewPurchaseTab = (self._crewPurchaseSpawner):SpawnObject("UIS4TradeCrewPurchaseTab")
-  ;
-  (self._crewControlTab):SetData(self._tradeData, self._selectID)
-  ;
-  (self._crewPurchaseTab):SetData(self._tradeData, self._selectID)
+function UIS4TradeCrewController:_InitComponents()
+  self._crewControlTab = self._crewControlSpawner:SpawnObject("UIS4TradeCrewControlTab")
+  self._crewPurchaseTab = self._crewPurchaseSpawner:SpawnObject("UIS4TradeCrewPurchaseTab")
+  self._crewControlTab:SetData(self._tradeData, self._selectID)
+  self._crewPurchaseTab:SetData(self._tradeData, self._selectID)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewController._AttachEvents = function(self)
-  -- function num : 0_4
+function UIS4TradeCrewController:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewController._Close = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIS4TradeCrewController:_Close()
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
     self:Lock("uieff_UIS4TradeCrewController_out")
-    ;
-    (self._anim):Play("uieff_UIS4TradeCrewController_out")
+    self._anim:Play("uieff_UIS4TradeCrewController_out")
     YIELD(TT, 334)
     self:UnLock("uieff_UIS4TradeCrewController_out")
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewController.SwitchTab = function(self, tabType)
-  -- function num : 0_6 , upvalues : _ENV
+function UIS4TradeCrewController:SwitchTab(tabType)
   if self._tabType == tabType then
-    return 
+    return
   end
   self._tabType = tabType
   if tabType == UIS4TradeCrewTabType.Control then
-    (self._select1Obj):SetActive(true)
-    ;
-    (self._select2Obj):SetActive(false)
-    ;
-    (self._crewControlSpawnerObj):SetActive(true)
-    ;
-    (self._crewPurchaseSpawnerObj):SetActive(false)
-    ;
-    (self._crewControlTab):PlayInAnim()
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._select1Txt).color = Color(0.34509803921569, 0.27843137254902, 0.23137254901961)
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._select2Txt).color = Color(0.56862745098039, 0.53333333333333, 0.48235294117647)
+    self._select1Obj:SetActive(true)
+    self._select2Obj:SetActive(false)
+    self._crewControlSpawnerObj:SetActive(true)
+    self._crewPurchaseSpawnerObj:SetActive(false)
+    self._crewControlTab:PlayInAnim()
+    self._select1Txt.color = Color(0.34509803921568627, 0.2784313725490196, 0.23137254901960785)
+    self._select2Txt.color = Color(0.5686274509803921, 0.5333333333333333, 0.4823529411764706)
   else
-    ;
-    (self._select1Obj):SetActive(false)
-    ;
-    (self._select2Obj):SetActive(true)
-    ;
-    (self._crewControlSpawnerObj):SetActive(false)
-    ;
-    (self._crewPurchaseSpawnerObj):SetActive(true)
-    -- DECOMPILER ERROR at PC65: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._select1Txt).color = Color(0.56862745098039, 0.53333333333333, 0.48235294117647)
-    -- DECOMPILER ERROR at PC72: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._select2Txt).color = Color(0.34509803921569, 0.27843137254902, 0.23137254901961)
-    ;
-    (self._crewPurchaseTab):SetInit()
-    ;
-    (self._crewPurchaseTab):PlayInAnim()
+    self._select1Obj:SetActive(false)
+    self._select2Obj:SetActive(true)
+    self._crewControlSpawnerObj:SetActive(false)
+    self._crewPurchaseSpawnerObj:SetActive(true)
+    self._select1Txt.color = Color(0.5686274509803921, 0.5333333333333333, 0.4823529411764706)
+    self._select2Txt.color = Color(0.34509803921568627, 0.2784313725490196, 0.23137254901960785)
+    self._crewPurchaseTab:SetInit()
+    self._crewPurchaseTab:PlayInAnim()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewController.CloseBtnOnClick = function(self)
-  -- function num : 0_7
+function UIS4TradeCrewController:CloseBtnOnClick()
   self:_Close()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewController.EmptyBtnOnClick = function(self)
-  -- function num : 0_8
+function UIS4TradeCrewController:EmptyBtnOnClick()
   self:_Close()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewController.Select1BtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIS4TradeCrewController:Select1BtnOnClick()
   self:SwitchTab(UIS4TradeCrewTabType.Control)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewController.Select2BtnOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIS4TradeCrewController:Select2BtnOnClick()
   self:SwitchTab(UIS4TradeCrewTabType.Purchase)
 end
 
 local UIS4TradeCrewTabType = {Control = 1, Purchase = 2}
 _enum("UIS4TradeCrewTabType", UIS4TradeCrewTabType)
-

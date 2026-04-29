@@ -1,77 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/normallevel/ui_n12_normal_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12NormalLevel", UIController)
 UIN12NormalLevel = UIN12NormalLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12NormalLevel.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12NormalLevel:Constructor()
   self._missionModule = self:GetModule(MissionModule)
   self._loginModule = self:GetModule(LoginModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
-  self._curLevelType = (N12ToolFunctions.GetLocalDBInt)(N12OperationRecordKey.NormalLevelType, 1)
+  self._curLevelType = N12ToolFunctions.GetLocalDBInt(N12OperationRecordKey.NormalLevelType, 1)
   self._atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
-  self._element_cfg = (Cfg.cfg_pet_element)({})
+  self._element_cfg = Cfg.cfg_pet_element({})
   self._cfgs_boss = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN12NormalLevel:LoadDataOnEnter(TT, res, uiParams)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N12, ECampaignN12ComponentID.ECAMPAIGN_N12_DAILY_MISSION)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N12, ECampaignN12ComponentID.ECAMPAIGN_N12_DAILY_MISSION)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  self._cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
-  self._dailyMissionComponent = (self._campaign):GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_DAILY_MISSION)
-  self._dailyMissionComponentInfo = (self._dailyMissionComponent):GetComponentInfo()
-  local unlockTime = (self._dailyMissionComponentInfo).m_unlock_time
-  local closeTime = (self._dailyMissionComponentInfo).m_close_time
-  local curTime = (self._svrTimeModule):GetServerTime() * 0.001
-  if curTime < unlockTime then
+  self._cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
+  self._dailyMissionComponent = self._campaign:GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_DAILY_MISSION)
+  self._dailyMissionComponentInfo = self._dailyMissionComponent:GetComponentInfo()
+  local unlockTime = self._dailyMissionComponentInfo.m_unlock_time
+  local closeTime = self._dailyMissionComponentInfo.m_close_time
+  local curTime = self._svrTimeModule:GetServerTime() * 0.001
+  if unlockTime > curTime then
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
-    ;
-    (self._campaignModule):ShowErrorToast(res.m_result, true)
-    return 
+    self._campaignModule:ShowErrorToast(res.m_result, true)
+    return
   end
   if closeTime < curTime then
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
-    ;
-    (self._campaignModule):ShowErrorToast(res.m_result, true)
-    return 
+    self._campaignModule:ShowErrorToast(res.m_result, true)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN12NormalLevel:OnShow(uiParams)
   self:_GetComponent()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel._GetComponent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN12NormalLevel:_GetComponent()
   self._backBtn = self:GetUIComponent("UISelectObjectPath", "BackBtn")
-  self._commonTopBtn = (self._backBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_3_0 , upvalues : self
+  self._commonTopBtn = self._backBtn:SpawnObject("UICommonTopButton")
+  self._commonTopBtn:SetData(function()
     self:_Close()
-  end
-)
+  end)
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._bossName = self:GetUIComponent("UILocalizationText", "BossName")
   self._resetTime = self:GetUIComponent("UILocalizationText", "ResetTime")
@@ -82,191 +59,105 @@ UIN12NormalLevel._GetComponent = function(self)
   self._bossImg = self:GetUIComponent("RawImageLoader", "BossImg")
   self._bossImgRect = self:GetUIComponent("RectTransform", "BossImg")
   self._element = {}
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._element)[1] = self:GetUIComponent("Image", "Element1")
-  -- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._element)[2] = self:GetUIComponent("Image", "Element2")
+  self._element[1] = self:GetUIComponent("Image", "Element1")
+  self._element[2] = self:GetUIComponent("Image", "Element2")
   self._elementObj = {}
-  -- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._elementObj)[1] = self:GetGameObject("Element1")
-  -- DECOMPILER ERROR at PC84: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._elementObj)[2] = self:GetGameObject("Element2")
+  self._elementObj[1] = self:GetGameObject("Element1")
+  self._elementObj[2] = self:GetGameObject("Element2")
   self._levelTypeBtnMark = {}
-  -- DECOMPILER ERROR at PC93: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtnMark)[NormalLevelType.Easy] = self:GetGameObject("EasyBtnMark")
-  -- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtnMark)[NormalLevelType.Normal] = self:GetGameObject("NormalBtnMark")
-  -- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtnMark)[NormalLevelType.Hard] = self:GetGameObject("HardBtnMark")
+  self._levelTypeBtnMark[NormalLevelType.Easy] = self:GetGameObject("EasyBtnMark")
+  self._levelTypeBtnMark[NormalLevelType.Normal] = self:GetGameObject("NormalBtnMark")
+  self._levelTypeBtnMark[NormalLevelType.Hard] = self:GetGameObject("HardBtnMark")
   self._levelTypeBtnText = {}
-  -- DECOMPILER ERROR at PC117: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtnText)[NormalLevelType.Easy] = self:GetUIComponent("UILocalizationText", "EasyBtnText")
-  -- DECOMPILER ERROR at PC125: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtnText)[NormalLevelType.Normal] = self:GetUIComponent("UILocalizationText", "NormalBtnText")
-  -- DECOMPILER ERROR at PC133: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelTypeBtnText)[NormalLevelType.Hard] = self:GetUIComponent("UILocalizationText", "HardBtnText")
+  self._levelTypeBtnText[NormalLevelType.Easy] = self:GetUIComponent("UILocalizationText", "EasyBtnText")
+  self._levelTypeBtnText[NormalLevelType.Normal] = self:GetUIComponent("UILocalizationText", "NormalBtnText")
+  self._levelTypeBtnText[NormalLevelType.Hard] = self:GetUIComponent("UILocalizationText", "HardBtnText")
   self._passRewardunLimit = self:GetGameObject("PassRewardunLimit")
   self._passRewardLimit = self:GetGameObject("PassRewardLimit")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel._OnValue = function(self)
-  -- function num : 0_4
+function UIN12NormalLevel:_OnValue()
   self:_RefreshUIInfo(self._curLevelType)
   self:_InitDynamicScrollView()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel._RefreshUIInfo = function(self, levelType)
-  -- function num : 0_5 , upvalues : _ENV
-  local levelIndex = (self._dailyMissionComponentInfo).m_cur_day_index
-  local campaignMissionId = ((self._dailyMissionComponentInfo).m_daily_mission)[levelType]
-  local tempDailyMissionCfgs = (Cfg.cfg_component_daily_mission)({LeveIndex = levelIndex, CampaignMissionId = campaignMissionId})
+function UIN12NormalLevel:_RefreshUIInfo(levelType)
+  local levelIndex = self._dailyMissionComponentInfo.m_cur_day_index
+  local campaignMissionId = self._dailyMissionComponentInfo.m_daily_mission[levelType]
+  local tempDailyMissionCfgs = Cfg.cfg_component_daily_mission({LeveIndex = levelIndex, CampaignMissionId = campaignMissionId})
   if not tempDailyMissionCfgs then
-    (Log.error)("cfg_component_daily_mission error! " .. levelIndex .. " " .. campaignMissionId)
-    return 
+    Log.error("cfg_component_daily_mission error! " .. levelIndex .. " " .. campaignMissionId)
+    return
   end
   self._curDailyMissionCfg = tempDailyMissionCfgs[1]
   if not self._curDailyMissionCfg then
-    (Log.error)("cfg_component_daily_mission dont not exist." .. levelIndex .. " " .. campaignMissionId)
-    return 
+    Log.error("cfg_component_daily_mission dont not exist." .. levelIndex .. " " .. campaignMissionId)
+    return
   end
-  self._affix = (self._curDailyMissionCfg).Affix
-  local cfg_campaign_mission = (Cfg.cfg_campaign_mission)[campaignMissionId]
+  self._affix = self._curDailyMissionCfg.Affix
+  local cfg_campaign_mission = Cfg.cfg_campaign_mission[campaignMissionId]
   if cfg_campaign_mission then
-    (self._bossName):SetText((StringTable.Get)(cfg_campaign_mission.Name))
+    self._bossName:SetText(StringTable.Get(cfg_campaign_mission.Name))
   end
-  ;
-  (self._recommendInfoText):SetText((StringTable.Get)("str_n12_recommend_info", (self._curDailyMissionCfg).RecommendAwaken, (self._curDailyMissionCfg).RecommendLV))
-  ;
-  (self._bossImg):LoadImage((self._curDailyMissionCfg).MonsterIcon)
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._bossImgRect).anchoredPosition = Vector2(((self._curDailyMissionCfg).PositionWH)[1], ((self._curDailyMissionCfg).PositionWH)[2])
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._bossImgRect).sizeDelta = Vector2(((self._curDailyMissionCfg).PositionWH)[3], ((self._curDailyMissionCfg).PositionWH)[4])
-  self._cfgs_boss = (N12ToolFunctions.GetBossCfgs)((self._curDailyMissionCfg).CampaignMissionId)
+  self._recommendInfoText:SetText(StringTable.Get("str_n12_recommend_info", self._curDailyMissionCfg.RecommendAwaken, self._curDailyMissionCfg.RecommendLV))
+  self._bossImg:LoadImage(self._curDailyMissionCfg.MonsterIcon)
+  self._bossImgRect.anchoredPosition = Vector2(self._curDailyMissionCfg.PositionWH[1], self._curDailyMissionCfg.PositionWH[2])
+  self._bossImgRect.sizeDelta = Vector2(self._curDailyMissionCfg.PositionWH[3], self._curDailyMissionCfg.PositionWH[4])
+  self._cfgs_boss = N12ToolFunctions.GetBossCfgs(self._curDailyMissionCfg.CampaignMissionId)
   if self._cfgs_boss then
     local elementType = {}
     for i = 1, #self._cfgs_boss do
-      if not (table.icontains)(elementType, ((self._cfgs_boss)[i]).ElementType) then
-        (table.insert)(elementType, ((self._cfgs_boss)[i]).ElementType)
+      if not table.icontains(elementType, self._cfgs_boss[i].ElementType) then
+        table.insert(elementType, self._cfgs_boss[i].ElementType)
       end
     end
-    -- DECOMPILER ERROR at PC135: Confused about usage of register: R7 in 'UnsetPending'
-
     if #elementType == 1 then
-      ((self._element)[2]).sprite = (self._atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(ElementIcon[elementType[1]]))
-      ;
-      ((self._elementObj)[2]):SetActive(true)
-      ;
-      ((self._elementObj)[1]):SetActive(false)
+      self._element[2].sprite = self._atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(ElementIcon[elementType[1]]))
+      self._elementObj[2]:SetActive(true)
+      self._elementObj[1]:SetActive(false)
+    elseif #elementType == 2 then
+      self._element[1].sprite = self._atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(ElementIcon[elementType[1]]))
+      self._elementObj[1]:SetActive(true)
+      self._element[2].sprite = self._atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(ElementIcon[elementType[2]]))
+      self._elementObj[2]:SetActive(true)
     else
-      -- DECOMPILER ERROR at PC163: Confused about usage of register: R7 in 'UnsetPending'
-
-      if #elementType == 2 then
-        ((self._element)[1]).sprite = (self._atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(ElementIcon[elementType[1]]))
-        ;
-        ((self._elementObj)[1]):SetActive(true)
-        -- DECOMPILER ERROR at PC182: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        ((self._element)[2]).sprite = (self._atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(ElementIcon[elementType[2]]))
-        ;
-        ((self._elementObj)[2]):SetActive(true)
-      else
-        ;
-        ((self._elementObj)[1]):SetActive(false)
-        ;
-        ((self._elementObj)[2]):SetActive(false)
-      end
+      self._elementObj[1]:SetActive(false)
+      self._elementObj[2]:SetActive(false)
     end
   else
-    do
-      for i = 1, #self._element do
-        ((self._elementObj)[i]):SetActive(false)
-      end
-      do
-        local curtime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-        local remainTime = (self._dailyMissionComponentInfo).m_daily_mission_reset_time - curtime
-        ;
-        (self._resetTime):SetText((StringTable.Get)("str_n12_normal_level_reset_time", (N12ToolFunctions.GetRemainTime)(remainTime)))
-        ;
-        (self._passReward):SetText((self._curDailyMissionCfg).AwardScore)
-        ;
-        (self._challengeUpperLimit):SetText((self._dailyMissionComponentInfo).m_total_score .. "/" .. (self._dailyMissionComponentInfo).m_score_limit)
-        ;
-        (self._passRewardunLimit):SetActive((self._dailyMissionComponentInfo).m_total_score < (self._dailyMissionComponentInfo).m_score_limit)
-        ;
-        (self._passRewardLimit):SetActive((self._dailyMissionComponentInfo).m_score_limit <= (self._dailyMissionComponentInfo).m_total_score)
-        self:_RefreshDiffBtn(levelType)
-        ;
-        (N12ToolFunctions.SetLocalDBInt)("N12NormalLevelCurDay", (self._dailyMissionComponentInfo).m_cur_day_index)
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
+    for i = 1, #self._element do
+      self._elementObj[i]:SetActive(false)
     end
   end
+  local curtime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  local remainTime = self._dailyMissionComponentInfo.m_daily_mission_reset_time - curtime
+  self._resetTime:SetText(StringTable.Get("str_n12_normal_level_reset_time", N12ToolFunctions.GetRemainTime(remainTime)))
+  self._passReward:SetText(self._curDailyMissionCfg.AwardScore)
+  self._challengeUpperLimit:SetText(self._dailyMissionComponentInfo.m_total_score .. "/" .. self._dailyMissionComponentInfo.m_score_limit)
+  self._passRewardunLimit:SetActive(self._dailyMissionComponentInfo.m_total_score < self._dailyMissionComponentInfo.m_score_limit)
+  self._passRewardLimit:SetActive(self._dailyMissionComponentInfo.m_total_score >= self._dailyMissionComponentInfo.m_score_limit)
+  self:_RefreshDiffBtn(levelType)
+  N12ToolFunctions.SetLocalDBInt("N12NormalLevelCurDay", self._dailyMissionComponentInfo.m_cur_day_index)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel._RefreshDiffBtn = function(self, levelType)
-  -- function num : 0_6 , upvalues : _ENV
-  for key,value in pairs(NormalLevelType) do
-    local color = Color(0.65098039215686, 0.62745098039216, 0.61960784313725)
+function UIN12NormalLevel:_RefreshDiffBtn(levelType)
+  for key, value in pairs(NormalLevelType) do
+    local color = Color(0.6509803921568628, 0.6274509803921569, 0.6196078431372549)
     if value == levelType then
       color = Color.black
     end
-    ;
-    ((self._levelTypeBtnMark)[value]):SetActive(value == levelType)
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((self._levelTypeBtnText)[value]).color = color
+    self._levelTypeBtnMark[value]:SetActive(value == levelType)
+    self._levelTypeBtnText[value].color = color
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel._InitDynamicScrollView = function(self)
-  -- function num : 0_7
-  (self._scrollView):InitListView(#self._affix, function(scrollview, index)
-    -- function num : 0_7_0 , upvalues : self
+function UIN12NormalLevel:_InitDynamicScrollView()
+  self._scrollView:InitListView(#self._affix, function(scrollview, index)
     return self:_OnGetItemByIndex(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel._OnGetItemByIndex = function(self, scrollview, index)
-  -- function num : 0_8
+function UIN12NormalLevel:_OnGetItemByIndex(scrollview, index)
   local item = scrollview:NewListViewItem("Item")
   local itemPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if not item.IsInitHandlerCalled then
@@ -276,90 +167,63 @@ UIN12NormalLevel._OnGetItemByIndex = function(self, scrollview, index)
   local ItemWidgets = itemPool:GetAllSpawnList()
   local itemWidget = ItemWidgets[1]
   if itemWidget then
-    itemWidget:SetData((self._affix)[index + 1], index)
+    itemWidget:SetData(self._affix[index + 1], index)
   end
   return item
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel._Close = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN12NormalLevel:_Close()
   self:SwitchState(UIStateType.UIN12MainController)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel.EasyBtnOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN12NormalLevel:EasyBtnOnClick(go)
   self:_SelectLevel(go, NormalLevelType.Easy)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel.NormalBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN12NormalLevel:NormalBtnOnClick(go)
   self:_SelectLevel(go, NormalLevelType.Normal)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel.HardBtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN12NormalLevel:HardBtnOnClick(go)
   self:_SelectLevel(go, NormalLevelType.Hard)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel._SelectLevel = function(self, go, levelType)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN12NormalLevel:_SelectLevel(go, levelType)
   if self._curLevelType == levelType then
-    return 
+    return
   end
   self._curLevelType = levelType
-  ;
-  (N12ToolFunctions.SetLocalDBInt)(N12OperationRecordKey.NormalLevelType, self._curLevelType)
+  N12ToolFunctions.SetLocalDBInt(N12OperationRecordKey.NormalLevelType, self._curLevelType)
   self:_RefreshUIInfo(self._curLevelType)
   self:_RefreshScrollView()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel._RefreshScrollView = function(self)
-  -- function num : 0_14
-  (self._scrollView):SetListItemCount(#self._affix)
-  ;
-  (self._scrollView):MovePanelToItemIndex(0, 0)
+function UIN12NormalLevel:_RefreshScrollView()
+  self._scrollView:SetListItemCount(#self._affix)
+  self._scrollView:MovePanelToItemIndex(0, 0)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel.BattleBtnOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  local ctx = (self._missionModule):TeamCtx()
-  local param = {((self._dailyMissionComponentInfo).m_daily_mission)[self._curLevelType], (self._dailyMissionComponent):GetCampaignMissionComponentId(), (self._dailyMissionComponent):GetCampaignMissionParamKeyMap()}
+function UIN12NormalLevel:BattleBtnOnClick(go)
+  local ctx = self._missionModule:TeamCtx()
+  local param = {
+    self._dailyMissionComponentInfo.m_daily_mission[self._curLevelType],
+    self._dailyMissionComponent:GetCampaignMissionComponentId(),
+    self._dailyMissionComponent:GetCampaignMissionParamKeyMap()
+  }
   ctx:Init(TeamOpenerType.Campaign, param)
   ctx:ShowDialogUITeams()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel.RestrainBtnOnClick = function(self, go)
-  -- function num : 0_16
+function UIN12NormalLevel:RestrainBtnOnClick(go)
   self:ShowDialog("UIRestrainTips")
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12NormalLevel.BossInfoBtnOnClick = function(self, go)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN12NormalLevel:BossInfoBtnOnClick(go)
   if self._cfgs_boss then
     local ids = {}
     for i = 1, #self._cfgs_boss do
-      (table.insert)(ids, ((self._cfgs_boss)[i]).ID)
+      table.insert(ids, self._cfgs_boss[i].ID)
     end
     self:ShowDialog("UIEnemyTip", ids)
   end
 end
-
-

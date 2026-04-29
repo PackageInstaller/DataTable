@@ -1,31 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/fishing_rare/homeland_rare_fishting.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandRareFishing", Object)
 HomelandRareFishing = HomelandRareFishing
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 HomelandRareFishing.Fishing_Chat = 1
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
 HomelandRareFishing.Fishing_Submit = 2
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
 HomelandRareFishing.Fishing_Fishing = 3
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
 HomelandRareFishing.Fishing_Limit = 4
 local FishType = {RAREFISH = 1, FATFISH = 2}
 _enum("FishType", FishType)
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
 
-HomelandRareFishing.Constructor = function(self, rareId, homelandFishing)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandRareFishing:Constructor(rareId, homelandFishing)
   self._rareId = rareId
   self._homelandFishing = homelandFishing
-  local rareCfgs = (Cfg.cfg_homeland_rare_clue)({})
+  local rareCfgs = Cfg.cfg_homeland_rare_clue({})
   self._rareCfg = rareCfgs[rareId]
   self._curState = self.Fishing_Chat
   self._fishingPosition = 0
@@ -33,30 +18,25 @@ HomelandRareFishing.Constructor = function(self, rareId, homelandFishing)
   self:RefreshCurrentState()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.RefreshCurrentState = function(self)
-  -- function num : 0_1 , upvalues : _ENV, FishType
-  local homeModule = (GameGlobal.GetModule)(HomelandModule)
-  local allFishingClue = (homeModule:GetAllRareFishingClue())
-  -- DECOMPILER ERROR at PC6: Overwrote pending register: R3 in 'AssignReg'
-
-  local fishingClue = .end
-  local type = (self._rareCfg).type
-  local rareCfgs = (Cfg.cfg_homeland_rare_clue)({})
+function HomelandRareFishing:RefreshCurrentState()
+  local homeModule = GameGlobal.GetModule(HomelandModule)
+  local allFishingClue = homeModule:GetAllRareFishingClue()
+  local fishingClue
+  local type = self._rareCfg.type
+  local rareCfgs = Cfg.cfg_homeland_rare_clue({})
   local fatFishCluePosition = {}
-  local clintPetId = (rareCfgs[self._rareId]).PetID
+  local clintPetId = rareCfgs[self._rareId].PetID
   if allFishingClue ~= nil then
     fishingClue = allFishingClue[self._rareId]
     if type == FishType.FATFISH then
       self._fishingPosition = 0
-      for k,v in pairs(allFishingClue) do
-        local severPetId = (rareCfgs[k]).PetID
+      for k, v in pairs(allFishingClue) do
+        local severPetId = rareCfgs[k].PetID
         if severPetId == clintPetId then
-          (table.insert)(fatFishCluePosition, v)
+          table.insert(fatFishCluePosition, v)
         end
       end
-      for _,v in ipairs(fatFishCluePosition) do
+      for _, v in ipairs(fatFishCluePosition) do
         if v.rare_fishing_position ~= 0 then
           self._fishingPosition = v.rare_fishing_position
           break
@@ -64,95 +44,68 @@ HomelandRareFishing.RefreshCurrentState = function(self)
       end
     end
   end
-  do
-    if allFishingClue == nil then
-      self._fishingPosition = 0
+  if allFishingClue == nil then
+    self._fishingPosition = 0
+  end
+  if type == FishType.FATFISH and self._fishingPosition == 0 then
+    if self._curState == HomelandRareFishing.Fishing_Fishing then
+      self._curState = self.Fishing_Chat
     end
-    if type == FishType.FATFISH and self._fishingPosition == 0 then
+    return
+  end
+  if type == FishType.RAREFISH then
+    if fishingClue == nil then
       if self._curState == HomelandRareFishing.Fishing_Fishing then
         self._curState = self.Fishing_Chat
       end
-      return 
+      return
     end
-    if type == FishType.RAREFISH then
-      if fishingClue == nil then
-        if self._curState == HomelandRareFishing.Fishing_Fishing then
-          self._curState = self.Fishing_Chat
-        end
-        return 
-      end
-      self._fishingPosition = fishingClue.rare_fishing_position
-      self._submitTimes = fishingClue.today_submit_times
-    end
-    if self._fishingPosition ~= 0 then
-      self._curState = self.Fishing_Fishing
-    else
-      if self._curState == self.Fishing_Submit then
-        self._curState = self.Fishing_Submit
-      else
-        if self._curState == self.Fishing_Limit then
-          self._curState = self.Fishing_Limit
-        else
-          if (self._rareCfg).SubmitTimesEvetyDay == nil then
-            self._curState = self.Fishing_Chat
-          else
-            if (self._rareCfg).SubmitTimesEvetyDay == 0 then
-              self._curState = self.Fishing_Chat
-            else
-              if (self._rareCfg).SubmitTimesEvetyDay <= self._submitTimes then
-                self._curState = self.Fishing_Limit
-              else
-                self._curState = self.Fishing_Chat
-              end
-            end
-          end
-        end
-      end
-    end
+    self._fishingPosition = fishingClue.rare_fishing_position
+    self._submitTimes = fishingClue.today_submit_times
+  end
+  if self._fishingPosition ~= 0 then
+    self._curState = self.Fishing_Fishing
+  elseif self._curState == self.Fishing_Submit then
+    self._curState = self.Fishing_Submit
+  elseif self._curState == self.Fishing_Limit then
+    self._curState = self.Fishing_Limit
+  elseif self._rareCfg.SubmitTimesEvetyDay == nil then
+    self._curState = self.Fishing_Chat
+  elseif self._rareCfg.SubmitTimesEvetyDay == 0 then
+    self._curState = self.Fishing_Chat
+  elseif self._submitTimes >= self._rareCfg.SubmitTimesEvetyDay then
+    self._curState = self.Fishing_Limit
+  else
+    self._curState = self.Fishing_Chat
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.GetRareID = function(self)
-  -- function num : 0_2
+function HomelandRareFishing:GetRareID()
   return self._rareId
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.GetRareCfg = function(self)
-  -- function num : 0_3
+function HomelandRareFishing:GetRareCfg()
   return self._rareCfg
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.GetCurrentState = function(self)
-  -- function num : 0_4
+function HomelandRareFishing:GetCurrentState()
   return self._curState
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.GetInteractTitle = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local chatId = (self._rareCfg).ChatID
+function HomelandRareFishing:GetInteractTitle()
+  local chatId = self._rareCfg.ChatID
   if chatId == nil then
     return "请配置对话id"
   end
   if self._curState == self.Fishing_Submit then
     return self:GetSubmitTitle()
   else
-    return (StringTable.Get)((self:GetChatCfg(chatId)).Title)
+    return StringTable.Get(self:GetChatCfg(chatId).Title)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.GetInteractIcon = function(self)
-  -- function num : 0_6
-  local chatId = (self._rareCfg).ChatID
+function HomelandRareFishing:GetInteractIcon()
+  local chatId = self._rareCfg.ChatID
   if chatId == nil then
     return nil
   end
@@ -160,169 +113,116 @@ HomelandRareFishing.GetInteractIcon = function(self)
   return cfg.Icon
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.GetSubmitTitle = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local title = (StringTable.Get)("str_homeland_pet_interact_submit")
+function HomelandRareFishing:GetSubmitTitle()
+  local title = StringTable.Get("str_homeland_pet_interact_submit")
   local submitId = self:SubmitAssetId()
   local submitCount = self:SubmitAssetCount()
-  local itemName = (StringTable.Get)(((Cfg.cfg_item)[submitId]).Name)
-  local haveCount = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(submitId)
-  haveCount = (math.min)(haveCount, submitCount)
-  local submitTitle = (string.format)(title, itemName, haveCount, submitCount)
+  local itemName = StringTable.Get(Cfg.cfg_item[submitId].Name)
+  local haveCount = GameGlobal.GetModule(ItemModule):GetItemCount(submitId)
+  haveCount = math.min(haveCount, submitCount)
+  local submitTitle = string.format(title, itemName, haveCount, submitCount)
   return submitTitle
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.GetFishIdTitle = function(self, talkid, txt, _chatword)
-  -- function num : 0_8 , upvalues : _ENV
+function HomelandRareFishing:GetFishIdTitle(talkid, txt, _chatword)
   local rareCfgs = Cfg.cfg_homeland_rare_clue
   local data = rareCfgs({TalkId = talkid})
   if data == nil then
     return txt, 2, 1, nil
   else
-    for k,v in pairs(data) do
+    for k, v in pairs(data) do
       local petFishClue = v.ID
       if v.SubmitAssetForPosition == nil then
         self.submitId = 0
         self.submitCount = 0
       else
-        self.submitId = (v.SubmitAssetForPosition)[1]
-        self.submitCount = (v.SubmitAssetForPosition)[2]
+        self.submitId = v.SubmitAssetForPosition[1]
+        self.submitCount = v.SubmitAssetForPosition[2]
       end
       local petFishTask = v.Task
       if petFishTask ~= nil then
         if self.submitId == 0 then
           local haveCount = 2
           self.submitCount = 1
-          local submitTitle = (StringTable.Get)(_chatword, haveCount)
+          local submitTitle = StringTable.Get(_chatword, haveCount)
           return submitTitle, haveCount, self.submitCount, petFishClue
         else
-          do
-            local haveCount = (UIHomelandShopHelper.GetItemCount_ForSale)(self.submitId)
-            if haveCount < 0 then
-              haveCount = 0
-            end
-            do
-              local submitTitle = (StringTable.Get)(_chatword, haveCount)
-              do return submitTitle, haveCount, self.submitCount, petFishClue end
-              local itemName = (StringTable.Get)(((Cfg.cfg_item)[self.submitId]).Name)
-              local haveCount = 2
-              local submitTitle = (StringTable.Get)(_chatword, haveCount)
-              do
-                local HaveCount = haveCount
-                do return submitTitle, HaveCount, self.submitCount, nil end
-                -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
+          local haveCount = UIHomelandShopHelper.GetItemCount_ForSale(self.submitId)
+          if haveCount < 0 then
+            haveCount = 0
           end
+          local submitTitle = StringTable.Get(_chatword, haveCount)
+          return submitTitle, haveCount, self.submitCount, petFishClue
         end
+      else
+        local itemName = StringTable.Get(Cfg.cfg_item[self.submitId].Name)
+        local haveCount = 2
+        local submitTitle = StringTable.Get(_chatword, haveCount)
+        local HaveCount = haveCount
+        return submitTitle, HaveCount, self.submitCount, nil
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.GetChatCfg = function(self, chatid)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg_chat = (Cfg.cfg_home_pet_chat)[chatid]
+function HomelandRareFishing:GetChatCfg(chatid)
+  local cfg_chat = Cfg.cfg_home_pet_chat[chatid]
   if not cfg_chat then
-    (Log.error)("###[UIHomePetInteract] cfg_chat is nil ! id --> ", chatid)
+    Log.error("###[UIHomePetInteract] cfg_chat is nil ! id --> ", chatid)
   end
   return cfg_chat
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.SubmitAssetId = function(self)
-  -- function num : 0_10
-  return ((self._rareCfg).SubmitAssetForPosition)[1]
+function HomelandRareFishing:SubmitAssetId()
+  return self._rareCfg.SubmitAssetForPosition[1]
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.SubmitAssetCount = function(self)
-  -- function num : 0_11
-  return ((self._rareCfg).SubmitAssetForPosition)[2]
+function HomelandRareFishing:SubmitAssetCount()
+  return self._rareCfg.SubmitAssetForPosition[2]
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.FinishClueChat = function(self)
-  -- function num : 0_12
+function HomelandRareFishing:FinishClueChat()
   self._curState = self.Fishing_Submit
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.FinishSubmitAsset = function(self)
-  -- function num : 0_13
+function HomelandRareFishing:FinishSubmitAsset()
   self._curState = self.Fishing_Fishing
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.OnSubmitAssetClick = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.FishingSubmitAssetTask, self)
+function HomelandRareFishing:OnSubmitAssetClick()
+  GameGlobal.TaskManager():StartTask(self.FishingSubmitAssetTask, self)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.FishingSubmitAssetTask = function(self, TT)
-  -- function num : 0_15 , upvalues : _ENV
-  local homeModule = (GameGlobal.GetModule)(HomelandModule)
+function HomelandRareFishing:FishingSubmitAssetTask(TT)
+  local homeModule = GameGlobal.GetModule(HomelandModule)
   local result = homeModule:ApplyHomelandRefreshRarePosition(TT, self._rareId)
   if result:GetSucc() then
-    local param = {(StringTable.Get)("str_homeland_appear_rare_fishing_tips")}
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIHomeEventTips, UIHomeEventTipsType.Tex, param)
+    local param = {
+      StringTable.Get("str_homeland_appear_rare_fishing_tips")
+    }
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIHomeEventTips, UIHomeEventTipsType.Tex, param)
     self:RefreshCurrentState()
-    ;
-    (self._homelandFishing):RefreshFishingPosition()
+    self._homelandFishing:RefreshFishingPosition()
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.PetFishingSubmitAsset = function(self, petFishClue)
-  -- function num : 0_16 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.PetFishingSubmitAssetTask, self, petFishClue)
+function HomelandRareFishing:PetFishingSubmitAsset(petFishClue)
+  GameGlobal.TaskManager():StartTask(self.PetFishingSubmitAssetTask, self, petFishClue)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandRareFishing.PetFishingSubmitAssetTask = function(self, TT, petFishClue)
-  -- function num : 0_17 , upvalues : _ENV
-  local homeModule = (GameGlobal.GetModule)(HomelandModule)
+function HomelandRareFishing:PetFishingSubmitAssetTask(TT, petFishClue)
+  local homeModule = GameGlobal.GetModule(HomelandModule)
   local result, asset = homeModule:ApplyHomelandRefreshRarePosition(TT, petFishClue)
-  ;
-  (Log.fatal)(result)
+  Log.fatal(result)
   if result:GetSucc() then
-    local param = {(StringTable.Get)("str_homeland_appear_rare_fishing_tips")}
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIHomeEventTips, UIHomeEventTipsType.Tex, param)
+    local param = {
+      StringTable.Get("str_homeland_appear_rare_fishing_tips")
+    }
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIHomeEventTips, UIHomeEventTipsType.Tex, param)
     self:RefreshCurrentState()
-    ;
-    (self._homelandFishing):RefreshFishingPosition()
-    if #asset > 0 then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIHomeShowAwards", asset, nil, false, nil)
+    self._homelandFishing:RefreshFishingPosition()
+    if 0 < #asset then
+      GameGlobal.UIStateManager():ShowDialog("UIHomeShowAwards", asset, nil, false, nil)
     end
   end
 end
-
-

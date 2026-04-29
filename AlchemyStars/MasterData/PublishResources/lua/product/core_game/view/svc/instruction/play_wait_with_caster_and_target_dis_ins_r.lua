@@ -1,34 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_wait_with_caster_and_target_dis_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayWaitWithCasterAndTargetDisInstruction", BaseInstruction)
 PlayWaitWithCasterAndTargetDisInstruction = PlayWaitWithCasterAndTargetDisInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayWaitWithCasterAndTargetDisInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayWaitWithCasterAndTargetDisInstruction:Constructor(paramList)
   self._baseTime = tonumber(paramList.baseTime) or 0
   self._oneGridTime = tonumber(paramList.oneGridTime) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayWaitWithCasterAndTargetDisInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayWaitWithCasterAndTargetDisInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   if targetEntityID == nil or targetEntityID < 0 then
-    return 
+    return
   end
   local targetEntity = world:GetEntityByID(targetEntityID)
   local posCaster = casterEntity:GetRenderGridPosition()
   local posTarget = targetEntity:GetRenderGridPosition()
-  local dis = (Vector2.Distance)(posCaster, posTarget)
+  local dis = Vector2.Distance(posCaster, posTarget)
   local waitTime = self._baseTime + dis * self._oneGridTime
   YIELD(TT, waitTime)
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/level/ui_activity_n5_line_mission_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN5LineMissionManager", Object)
 UIActivityN5LineMissionManager = UIActivityN5LineMissionManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN5LineMissionManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._missionModule = (GameGlobal.GetModule)(MissionModule)
+function UIActivityN5LineMissionManager:Constructor()
+  self._missionModule = GameGlobal.GetModule(MissionModule)
   self._componentInfo = nil
   self.nodes = {}
   self.lines = {}
@@ -20,48 +13,30 @@ UIActivityN5LineMissionManager.Constructor = function(self)
   self.totalWidth = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5LineMissionManager.GetNodes = function(self)
-  -- function num : 0_1
+function UIActivityN5LineMissionManager:GetNodes()
   return self.nodes
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5LineMissionManager.GetLines = function(self)
-  -- function num : 0_2
+function UIActivityN5LineMissionManager:GetLines()
   return self.lines
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5LineMissionManager.GetTotalWidth = function(self)
-  -- function num : 0_3
+function UIActivityN5LineMissionManager:GetTotalWidth()
   return self.totalWidth
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5LineMissionManager.GetScrollPos = function(self, missionId)
-  -- function num : 0_4
-  if (self._lineCfg)[missionId] then
-    return ((self._lineCfg)[missionId]).ScrollPos
+function UIActivityN5LineMissionManager:GetScrollPos(missionId)
+  if self._lineCfg[missionId] then
+    return self._lineCfg[missionId].ScrollPos
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5LineMissionManager.GetLineExtraConfig = function(self)
-  -- function num : 0_5
+function UIActivityN5LineMissionManager:GetLineExtraConfig()
   return self._lineExtraCfg
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5LineMissionManager.Init = function(self, componentInfo, componentId)
-  -- function num : 0_6
+function UIActivityN5LineMissionManager:Init(componentInfo, componentId)
   self._componentInfo = componentInfo
   self:_MakeLineExtraConfig(componentId)
   self:_MakeLineConfig(componentId)
@@ -69,22 +44,16 @@ UIActivityN5LineMissionManager.Init = function(self, componentInfo, componentId)
   self:Update()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5LineMissionManager.Update = function(self)
-  -- function num : 0_7
+function UIActivityN5LineMissionManager:Update()
   self:_UpdateMissionState(self._unlockCfg)
   self:_UpdateNodePos(self._lineCfg, self._missionState)
   self:_FillData_Nodes(self._lineCfg, self._missionState)
   self:_FillData_Lines(self.nodes, self._unlockCfg)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5LineMissionManager._MakeLineExtraConfig = function(self, componentId)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN5LineMissionManager:_MakeLineExtraConfig(componentId)
   local newConfig = {}
-  local config = (Cfg.cfg_component_line_mission_extra)({ComponentID = componentId})
+  local config = Cfg.cfg_component_line_mission_extra({ComponentID = componentId})
   if not config then
     newConfig._NodeWidthLeft = 330
     newConfig._NodeWidthRight = 330
@@ -92,37 +61,29 @@ UIActivityN5LineMissionManager._MakeLineExtraConfig = function(self, componentId
     newConfig._MarginRight = 300
     newConfig._Scale = 1.3
   else
-    for _,v in pairs(config) do
+    for _, v in pairs(config) do
       newConfig._NodeWidthLeft = v.NodeWidthLeft or 0
       newConfig._NodeWidthRight = v.NodeWidthRight or 0
       newConfig._MarginLeft = v.MarginLeft or 0
       newConfig._MarginRight = v.MarginRight or 0
-      newConfig._Scale = v.Scale or 1
+      newConfig._Scale = v.Scale or 1.0
     end
   end
-  do
-    self._lineExtraCfg = newConfig
-  end
+  self._lineExtraCfg = newConfig
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5LineMissionManager._MakeLineConfig = function(self, componentId)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityN5LineMissionManager:_MakeLineConfig(componentId)
   local newConfig = {}
-  local config = (Cfg.cfg_component_line_mission)({ComponentID = componentId})
-  for _,v in ipairs(config) do
+  local config = Cfg.cfg_component_line_mission({ComponentID = componentId})
+  for _, v in ipairs(config) do
     newConfig[v.CampaignMissionId] = v
   end
   self._lineCfg = newConfig
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5LineMissionManager._MakeUnlockConfig = function(self, lineMission)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityN5LineMissionManager:_MakeUnlockConfig(lineMission)
   local newConfig = {}
-  for _,v in pairs(lineMission) do
+  for _, v in pairs(lineMission) do
     local prev = v.NeedMissionId
     if not newConfig[prev] then
       newConfig[prev] = {}
@@ -131,19 +92,15 @@ UIActivityN5LineMissionManager._MakeUnlockConfig = function(self, lineMission)
     if not newConfig[curr] then
       newConfig[curr] = {}
     end
-    ;
-    (table.insert)(newConfig[prev], curr)
+    table.insert(newConfig[prev], curr)
   end
   self._unlockCfg = newConfig
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5LineMissionManager._UpdateMissionState = function(self, unlockMission)
-  -- function num : 0_11 , upvalues : _ENV
-  local missionClear = (self._componentInfo).m_pass_mission_info
+function UIActivityN5LineMissionManager:_UpdateMissionState(unlockMission)
+  local missionClear = self._componentInfo.m_pass_mission_info
   local newConfig = {}
-  for k,v in pairs(unlockMission) do
+  for k, v in pairs(unlockMission) do
     if k == 0 or missionClear[k] then
       if k ~= 0 then
         if not newConfig[k] then
@@ -151,39 +108,15 @@ UIActivityN5LineMissionManager._UpdateMissionState = function(self, unlockMissio
         end
         local count = 0
         local tb = {}
-        count = (self._missionModule):ParseStarInfo((missionClear[k]).star)
-        -- DECOMPILER ERROR at PC31: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (newConfig[k]).State = DiscoveryStageState.Nomal
-        -- DECOMPILER ERROR at PC33: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (newConfig[k]).StarCount = count
+        count, tb = self._missionModule:ParseStarInfo(missionClear[k].star)
+        newConfig[k].State = DiscoveryStageState.Nomal
+        newConfig[k].StarCount = count
       end
-      do
-        -- DECOMPILER ERROR at PC35: Overwrote pending register: R10 in 'AssignReg'
-
-        for _,vv in ipairs(tb) do
-          if not newConfig[vv] then
-            newConfig[vv] = {}
-            -- DECOMPILER ERROR at PC46: Confused about usage of register: R14 in 'UnsetPending'
-
-            ;
-            (newConfig[vv]).State = DiscoveryStageState.CanPlay
-            -- DECOMPILER ERROR at PC48: Confused about usage of register: R14 in 'UnsetPending'
-
-            ;
-            (newConfig[vv]).StarCount = 0
-          end
-        end
-        do
-          -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_STMT
-
+      for _, vv in ipairs(v) do
+        if not newConfig[vv] then
+          newConfig[vv] = {}
+          newConfig[vv].State = DiscoveryStageState.CanPlay
+          newConfig[vv].StarCount = 0
         end
       end
     end
@@ -191,73 +124,63 @@ UIActivityN5LineMissionManager._UpdateMissionState = function(self, unlockMissio
   self._missionState = newConfig
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5LineMissionManager._UpdateNodePos = function(self, lineMission, missionState)
-  -- function num : 0_12 , upvalues : _ENV
-  local minPosX, maxPosX = nil, nil
-  for k,v in pairs(lineMission) do
+function UIActivityN5LineMissionManager:_UpdateNodePos(lineMission, missionState)
+  local minPosX, maxPosX
+  for k, v in pairs(lineMission) do
     if missionState[k] then
       if not minPosX or not maxPosX then
-        minPosX = v.MapPosX
+        minPosX, maxPosX = v.MapPosX, v.MapPosX
       end
-      minPosX = (math.min)(minPosX, v.MapPosX)
-      -- DECOMPILER ERROR at PC26: Overwrote pending register: R4 in 'AssignReg'
-
+      minPosX = math.min(minPosX, v.MapPosX)
+      maxPosX = math.max(maxPosX, v.MapPosX)
     end
   end
-  do
-    if not minPosX or not maxPosX then
-      return 
-    end
-    local marginLeft = (self._lineExtraCfg)._MarginLeft + (self._lineExtraCfg)._NodeWidthLeft
-    local marginRight = (self._lineExtraCfg)._MarginRight + (self._lineExtraCfg)._NodeWidthRight
-    local allNodeWidth = maxPosX - minPosX
-    local totalWidth = allNodeWidth + marginLeft + marginRight
-    local firstNodePosX = marginLeft - totalWidth / 2
-    for k,v in pairs(lineMission) do
-      v.PosX = v.MapPosX - minPosX + firstNodePosX
-      v.PosY = v.MapPosY
-      v.ScrollPos = Vector2(-(v.PosX + totalWidth / 2), 0)
-    end
-    self.totalWidth = totalWidth
+  if not minPosX or not maxPosX then
+    return
   end
+  local marginLeft = self._lineExtraCfg._MarginLeft + self._lineExtraCfg._NodeWidthLeft
+  local marginRight = self._lineExtraCfg._MarginRight + self._lineExtraCfg._NodeWidthRight
+  local allNodeWidth = maxPosX - minPosX
+  local totalWidth = allNodeWidth + marginLeft + marginRight
+  local firstNodePosX = marginLeft - totalWidth / 2
+  for k, v in pairs(lineMission) do
+    v.PosX = v.MapPosX - minPosX + firstNodePosX
+    v.PosY = v.MapPosY
+    v.ScrollPos = Vector2(-(v.PosX + totalWidth / 2), 0)
+  end
+  self.totalWidth = totalWidth
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5LineMissionManager._FillData_Nodes = function(self, lineMission, missionState)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityN5LineMissionManager:_FillData_Nodes(lineMission, missionState)
   local newConfig = {}
-  local config = (Cfg.cfg_campaign_mission)({})
-  for _,v in pairs(config) do
+  local config = Cfg.cfg_campaign_mission({})
+  for _, v in pairs(config) do
     local id = v.CampaignMissionId
     if lineMission[id] then
-      local state = nil
+      local state
       local starCount = 0
       if missionState[id] then
-        state = (missionState[id]).State
-        starCount = (missionState[id]).StarCount
+        state = missionState[id].State
+        starCount = missionState[id].StarCount
       end
       local newNode = UIActivityMissionNodeInfo:New()
-      newNode:Init(id, (lineMission[id]).PosX, (lineMission[id]).PosY, v.Name, v.Title, v.Type, (lineMission[id]).WayPointType == 4, state, starCount)
+      newNode:Init(id, lineMission[id].PosX, lineMission[id].PosY, v.Name, v.Title, v.Type, lineMission[id].WayPointType == 4, state, starCount)
       newConfig[id] = newNode
     end
   end
   self.nodes = newConfig
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5LineMissionManager._FillData_Lines = function(self, campaignMission, unlockMission)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityN5LineMissionManager:_FillData_Lines(campaignMission, unlockMission)
   local newConfig = {}
-  for k,v in pairs(unlockMission) do
-    if k ~= 0 and not (campaignMission[k]).isSLevel then
-      for _,vv in ipairs(v) do
-        if not (campaignMission[vv]).isSLevel then
-          (table.insert)(newConfig, {campaignMission[k], campaignMission[vv]})
+  for k, v in pairs(unlockMission) do
+    if k ~= 0 and not campaignMission[k].isSLevel then
+      for _, vv in ipairs(v) do
+        if not campaignMission[vv].isSLevel then
+          table.insert(newConfig, {
+            campaignMission[k],
+            campaignMission[vv]
+          })
         end
       end
     end
@@ -265,30 +188,23 @@ UIActivityN5LineMissionManager._FillData_Lines = function(self, campaignMission,
   self.lines = newConfig
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5LineMissionManager.GetScrollSpliter = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityN5LineMissionManager:GetScrollSpliter()
   local posxs = {}
-  for _,v in pairs(self.nodes) do
-    posxs[#posxs + 1] = (v.pos).x
+  for _, v in pairs(self.nodes) do
+    posxs[#posxs + 1] = v.pos.x
   end
-  ;
-  (table.sort)(posxs)
+  table.sort(posxs)
   return posxs[5], posxs[6], posxs[10], posxs[11]
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN5LineMissionManager.GetScrollSpliterVec = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityN5LineMissionManager:GetScrollSpliterVec()
   local posxs = {}
-  for _,v in pairs(self.nodes) do
-    posxs[#posxs + 1] = (v.pos).x
+  for _, v in pairs(self.nodes) do
+    posxs[#posxs + 1] = v.pos.x
   end
-  ;
-  (table.sort)(posxs)
-  return {posxs[11], posxs[12]}
+  table.sort(posxs)
+  return {
+    posxs[11],
+    posxs[12]
+  }
 end
-
-

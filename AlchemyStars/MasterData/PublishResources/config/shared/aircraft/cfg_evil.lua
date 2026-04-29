@@ -1,34 +1,204 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/aircraft/cfg_evil.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Name = 2, Body = 3, Spine = 4, Prefab = 5, Star = 6, Element = 7, HP = 8, Tags = 9, TraceUseFirefly = 10, CaptureUseFirefly = 11, CaptureMoodCost = 12, PurifyMoodCost = 13, PurifyTime = 14, ShowDrops = 15, DropID = 16, LevelID = 17}
-local common = {"eval8888", "body8888", "spine8888", "model8888", "none", 
-{
-{2, 100}
-, 
-{10001, 10}
+local key = {
+  ID = 1,
+  Name = 2,
+  Body = 3,
+  Spine = 4,
+  Prefab = 5,
+  Star = 6,
+  Element = 7,
+  HP = 8,
+  Tags = 9,
+  TraceUseFirefly = 10,
+  CaptureUseFirefly = 11,
+  CaptureMoodCost = 12,
+  PurifyMoodCost = 13,
+  PurifyTime = 14,
+  ShowDrops = 15,
+  DropID = 16,
+  LevelID = 17
 }
+local common = {
+  "eval8888",
+  "body8888",
+  "spine8888",
+  "model8888",
+  "none",
+  {
+    {2, 100},
+    {10001, 10}
+  }
 }
 local config = {
-[9100001] = {9100001, common[1], common[2], common[3], common[4], 1, 1, 2000, common[5], 10, 10, 10, 10, 100, common[6], 1111, 90}
-, 
-[9200002] = {9200002, common[1], common[2], common[3], common[4], 1, 1, 2000, common[5], 10, 10, 10, 10, 100, common[6], 1111, 90}
-, 
-[9300003] = {9300003, common[1], common[2], common[3], common[4], 1, 1, 2000, common[5], 10, 10, 10, 10, 100, common[6], 1111, 90}
-, 
-[9400004] = {9400004, common[1], common[2], common[3], common[4], 1, 1, 2000, common[5], 10, 10, 10, 10, 100, common[6], 1111, 90}
-, 
-[9500005] = {9500005, common[1], common[2], common[3], common[4], 1, 1, 2000, common[5], 10, 10, 10, 10, 100, common[6], 1111, 90}
-, 
-[9600006] = {9600006, common[1], common[2], common[3], common[4], 1, 1, 2000, common[5], 10, 10, 10, 10, 100, common[6], 1111, 90}
-, 
-[9600007] = {9600007, common[1], common[2], common[3], common[4], 1, 1, 2000, common[5], 10, 10, 10, 10, 100, common[6], 1111, 90}
-, 
-[9600008] = {9600008, common[1], common[2], common[3], common[4], 1, 1, 2000, common[5], 10, 10, 10, 10, 100, common[6], 1111, 90}
-, 
-[9600009] = {9600009, common[1], common[2], common[3], common[4], 1, 1, 2000, common[5], 10, 10, 10, 10, 100, common[6], 1111, 90}
+  [9100001] = {
+    9100001,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    1,
+    1,
+    2000,
+    common[5],
+    10,
+    10,
+    10,
+    10,
+    100,
+    common[6],
+    1111,
+    90
+  },
+  [9200002] = {
+    9200002,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    1,
+    1,
+    2000,
+    common[5],
+    10,
+    10,
+    10,
+    10,
+    100,
+    common[6],
+    1111,
+    90
+  },
+  [9300003] = {
+    9300003,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    1,
+    1,
+    2000,
+    common[5],
+    10,
+    10,
+    10,
+    10,
+    100,
+    common[6],
+    1111,
+    90
+  },
+  [9400004] = {
+    9400004,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    1,
+    1,
+    2000,
+    common[5],
+    10,
+    10,
+    10,
+    10,
+    100,
+    common[6],
+    1111,
+    90
+  },
+  [9500005] = {
+    9500005,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    1,
+    1,
+    2000,
+    common[5],
+    10,
+    10,
+    10,
+    10,
+    100,
+    common[6],
+    1111,
+    90
+  },
+  [9600006] = {
+    9600006,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    1,
+    1,
+    2000,
+    common[5],
+    10,
+    10,
+    10,
+    10,
+    100,
+    common[6],
+    1111,
+    90
+  },
+  [9600007] = {
+    9600007,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    1,
+    1,
+    2000,
+    common[5],
+    10,
+    10,
+    10,
+    10,
+    100,
+    common[6],
+    1111,
+    90
+  },
+  [9600008] = {
+    9600008,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    1,
+    1,
+    2000,
+    common[5],
+    10,
+    10,
+    10,
+    10,
+    100,
+    common[6],
+    1111,
+    90
+  },
+  [9600009] = {
+    9600009,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    1,
+    1,
+    2000,
+    common[5],
+    10,
+    10,
+    10,
+    10,
+    100,
+    common[6],
+    1111,
+    90
+  }
 }
 return config, "ID", key
-

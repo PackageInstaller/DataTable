@@ -1,52 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/camera/season_camera_pc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonCameraPc", SeasonCameraBase)
 SeasonCameraPc = SeasonCameraPc
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonCameraPc.Constructor = function(self, seasonID)
-  -- function num : 0_0
-  self._cameraSizeChangeSpeed_PC = (self._cameraSeasonCfg).CameraSizeChangeSpeed_PC
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._camera).orthographicSize = self._cameraSize
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
+function SeasonCameraPc:Constructor(seasonID)
+  self._cameraSizeChangeSpeed_PC = self._cameraSeasonCfg.CameraSizeChangeSpeed_PC
+  self._camera.orthographicSize = self._cameraSize
   if self._rtCamera then
-    (self._rtCamera).orthographicSize = self._cameraSize
+    self._rtCamera.orthographicSize = self._cameraSize
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCameraPc.Update = function(self, deltaTime, inputMode)
-  -- function num : 0_1 , upvalues : _ENV
-  ((SeasonCameraPc.super).Update)(self, deltaTime)
-  if (((UnityEngine.EventSystems).EventSystem).current):IsPointerOverGameObject() then
-    return 
+function SeasonCameraPc:Update(deltaTime, inputMode)
+  SeasonCameraPc.super.Update(self, deltaTime)
+  if UnityEngine.EventSystems.EventSystem.current:IsPointerOverGameObject() then
+    return
   end
   if self._cameraTransform and inputMode == SeasonInputMode.Input then
-    if ((self._input).GetMouseButtonDown)(0) then
-      self._startPosition = (self._input).mousePosition
-      self._cameraOriginPosition = (self._cameraTransform).position
+    if self._input.GetMouseButtonDown(0) then
+      self._startPosition = self._input.mousePosition
+      self._cameraOriginPosition = self._cameraTransform.position
       self._draging = false
       self._inputPhase = SeasonInputPhase.Down
     end
-    if ((self._input).GetMouseButton)(0) and self._inputPhase == SeasonInputPhase.Down and self._cameraOriginPosition then
-      self._endPosition = (self._input).mousePosition
+    if self._input.GetMouseButton(0) and self._inputPhase == SeasonInputPhase.Down and self._cameraOriginPosition then
+      self._endPosition = self._input.mousePosition
       self._deltaPosition = self._endPosition - self._startPosition
-      self._draging = self._dragValue <= (self._deltaPosition).magnitude
+      self._draging = self._deltaPosition.magnitude >= self._dragValue
       if self._draging or self._mode == SeasonCameraMode.Drag then
         self:SwitchMode(SeasonCameraMode.Drag)
-        local dir = (self._camera):ScreenToWorldPoint(self._endPosition) - (self._camera):ScreenToWorldPoint(self._startPosition)
+        local dir = self._camera:ScreenToWorldPoint(self._endPosition) - self._camera:ScreenToWorldPoint(self._startPosition)
         self._targetPosition = self._cameraOriginPosition - dir
       end
     end
-    if ((self._input).GetMouseButtonUp)(0) then
+    if self._input.GetMouseButtonUp(0) then
       self._inputPhase = SeasonInputPhase.Up
     end
     if self._mode == SeasonCameraMode.Drag and self._targetPosition then
@@ -54,18 +39,12 @@ SeasonCameraPc.Update = function(self, deltaTime, inputMode)
     end
     self:_UpdateCameraSize()
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCameraPc._UpdateCameraSize = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local mouseWheel = ((self._input).GetAxis)("Mouse ScrollWheel")
+function SeasonCameraPc:_UpdateCameraSize()
+  local mouseWheel = self._input.GetAxis("Mouse ScrollWheel")
   if mouseWheel ~= 0 then
-    local targetSize = (self._camera).orthographicSize - mouseWheel * self._cameraSizeChangeSpeed_PC
-    self._cameraSize = (Mathf.Clamp)(targetSize, self._cameraSizeMin, self._cameraSizeMax)
+    local targetSize = self._camera.orthographicSize - mouseWheel * self._cameraSizeChangeSpeed_PC
+    self._cameraSize = Mathf.Clamp(targetSize, self._cameraSizeMin, self._cameraSizeMax)
   end
 end
-
-

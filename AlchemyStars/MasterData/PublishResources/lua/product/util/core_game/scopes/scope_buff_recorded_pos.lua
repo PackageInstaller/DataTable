@@ -1,45 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_buff_recorded_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_BuffValueRecordedPos", SkillScopeCalculator_Base)
 SkillScopeCalculator_BuffValueRecordedPos = SkillScopeCalculator_BuffValueRecordedPos
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_BuffValueRecordedPos.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_BuffValueRecordedPos:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local scopeList = {}
   if casterEntity then
-    local recordBuffCmpt = nil
-    do
-      if casterEntity:HasSuperEntity() then
-        local superEntity = casterEntity:GetSuperEntity()
-        if superEntity then
-          recordBuffCmpt = superEntity:BuffComponent()
-        end
+    local recordBuffCmpt
+    if casterEntity:HasSuperEntity() then
+      local superEntity = casterEntity:GetSuperEntity()
+      if superEntity then
+        recordBuffCmpt = superEntity:BuffComponent()
       end
-      if not recordBuffCmpt then
-        recordBuffCmpt = casterEntity:BuffComponent()
-      end
-      local key = scopeParam.buffKey or "buff_recorded_pos"
-      if recordBuffCmpt then
-        local keyX = key .. "_x"
-        local keyY = key .. "_y"
-        local posX = tonumber(recordBuffCmpt:GetBuffValue(keyX))
-        local posY = tonumber(recordBuffCmpt:GetBuffValue(keyY))
-        if posX and posY then
-          local pos = Vector2(posX, posY)
-          scopeList = {pos}
-        end
-      end
-      do
-        local result = SkillScopeResult:New(SkillScopeType.BuffValueRecordedPos, centerPos, scopeList, scopeList)
-        return result
+    end
+    recordBuffCmpt = recordBuffCmpt or casterEntity:BuffComponent()
+    local key = scopeParam.buffKey or "buff_recorded_pos"
+    if recordBuffCmpt then
+      local keyX = key .. "_x"
+      local keyY = key .. "_y"
+      local posX = tonumber(recordBuffCmpt:GetBuffValue(keyX))
+      local posY = tonumber(recordBuffCmpt:GetBuffValue(keyY))
+      if posX and posY then
+        local pos = Vector2(posX, posY)
+        scopeList = {pos}
       end
     end
   end
+  local result = SkillScopeResult:New(SkillScopeType.BuffValueRecordedPos, centerPos, scopeList, scopeList)
+  return result
 end
-
-

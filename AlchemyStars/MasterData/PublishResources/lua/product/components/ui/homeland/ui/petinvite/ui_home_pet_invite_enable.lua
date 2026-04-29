@@ -1,85 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/petinvite/ui_home_pet_invite_enable.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePetInviteEnable", UIController)
 UIHomePetInviteEnable = UIHomePetInviteEnable
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePetInviteEnable.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIHomePetInviteEnable:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteEnable.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomePetInviteEnable:OnShow(uiParams)
   self._building = uiParams[1]
-  self._buildId = (self._building):GetBuildId()
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+  self._buildId = self._building:GetBuildId()
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   self._homelandClient = homeLandModule:GetClient()
-  self._inviteManager = (self._homelandClient):GetHomelandPetInviteManager()
+  self._inviteManager = self._homelandClient:GetHomelandPetInviteManager()
   self:GetComponent()
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteEnable.OnHide = function(self)
-  -- function num : 0_2
+function UIHomePetInviteEnable:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteEnable.RefreshUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomePetInviteEnable:RefreshUI()
   if self._building ~= nil then
-    local cfg = (Cfg.cfg_item_architecture)[((self._building):GetArchitecture()).asset_id]
-    ;
-    (self._titleText):SetText((StringTable.Get)(cfg.Name))
+    local cfg = Cfg.cfg_item_architecture[self._building:GetArchitecture().asset_id]
+    self._titleText:SetText(StringTable.Get(cfg.Name))
     self:RefreshCanInvitedList()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteEnable.GetComponent = function(self)
-  -- function num : 0_4
+function UIHomePetInviteEnable:GetComponent()
   self._titleText = self:GetUIComponent("UILocalizationText", "titleText")
   self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "caninvitepar")
   self._all = self:GetGameObject("all")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteEnable.RefreshCanInvitedList = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomePetInviteEnable:RefreshCanInvitedList()
   self._itemCountPerRow = 2
-  self._invitEnableList = (self._inviteManager):GetInteractEnablePetList(self._building)
+  self._invitEnableList = self._inviteManager:GetInteractEnablePetList(self._building)
   if self._invitEnableList ~= nil and #self._invitEnableList > 0 then
     self._dynamicListSize = #self._invitEnableList
-    self._dynamicListRowSize = (math.floor)((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
-    ;
-    (self._all):SetActive(false)
-    ;
-    (self._dynamicList):InitListView(self._dynamicListRowSize, function(scrollView, index)
-    -- function num : 0_5_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
-    ;
-    (self._dynamicList):MovePanelToItemIndex(0, 0)
+    self._dynamicListRowSize = math.floor((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
+    self._all:SetActive(false)
+    self._dynamicList:InitListView(self._dynamicListRowSize, function(scrollView, index)
+      return self:_SpawnListItem(scrollView, index)
+    end)
+    self._dynamicList:MovePanelToItemIndex(0, 0)
   else
-    ;
-    (self._all):SetActive(true)
+    self._all:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteEnable._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_6
+function UIHomePetInviteEnable:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -93,39 +61,25 @@ UIHomePetInviteEnable._SpawnListItem = function(self, scrollView, index)
   for i = 1, self._itemCountPerRow do
     local listItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._dynamicListSize < itemIndex then
-      (listItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._dynamicListSize then
+      listItem:GetGameObject():SetActive(false)
     else
-      ;
-      (listItem:GetGameObject()):SetActive(true)
+      listItem:GetGameObject():SetActive(true)
       self:_SetListItemData(listItem, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteEnable.BtnCloseOnClick = function(self, go)
-  -- function num : 0_7
+function UIHomePetInviteEnable:BtnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteEnable._SetListItemData = function(self, listItem, index)
-  -- function num : 0_8
-  listItem:SetData(index, (self._invitEnableList)[index], self._inviteManager, function(idx)
-    -- function num : 0_8_0 , upvalues : self
+function UIHomePetInviteEnable:_SetListItemData(listItem, index)
+  listItem:SetData(index, self._invitEnableList[index], self._inviteManager, function(idx)
     self:ListItemOnClick(idx)
-  end
-, self._atlas)
+  end, self._atlas)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteEnable.ListItemOnClick = function(self, index)
-  -- function num : 0_9
+function UIHomePetInviteEnable:ListItemOnClick(index)
 end
-
-

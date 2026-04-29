@@ -1,74 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/anipop/anipop_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AnipopModule", GameModule)
 AnipopModule = AnipopModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AnipopModule.Constructor = function(self)
-  -- function num : 0_0
+function AnipopModule:Constructor()
   self._anipopInfo = nil
   self.end_time = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.GetAniPopInfo = function(self)
-  -- function num : 0_1
+function AnipopModule:GetAniPopInfo()
   return self._anipopInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.SetAnipopInfo = function(self, _info)
-  -- function num : 0_2
+function AnipopModule:SetAnipopInfo(_info)
   self._anipopInfo = _info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.SetAnipopRoundInfo = function(self, _info)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._anipopInfo).round_info = _info
+function AnipopModule:SetAnipopRoundInfo(_info)
+  self._anipopInfo.round_info = _info
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.Init = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self.caller):RegisterPushHandler(CEventNotifyAnipopInfo, self.HandleAnipopInfoChange, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventNotifyAnipopRoundInfo, self.HandleAnipopRoundInfoChange, self)
+function AnipopModule:Init()
+  self.caller:RegisterPushHandler(CEventNotifyAnipopInfo, self.HandleAnipopInfoChange, self)
+  self.caller:RegisterPushHandler(CEventNotifyAnipopRoundInfo, self.HandleAnipopRoundInfoChange, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.HandleAnipopInfoChange = function(self, msg)
-  -- function num : 0_5
+function AnipopModule:HandleAnipopInfoChange(msg)
   self:SetAnipopInfo(msg.data)
   self.end_time = msg.end_time
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.HandleAnipopRoundInfoChange = function(self, msg)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._anipopInfo).relic_info = msg.relic_info
+function AnipopModule:HandleAnipopRoundInfoChange(msg)
+  self._anipopInfo.relic_info = msg.relic_info
   self:SetAnipopRoundInfo(msg.data)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.RequestAnipopInfo = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function AnipopModule:RequestAnipopInfo(TT)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestAnipopInfo)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestAnipopInfo)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     res:SetSucc(false)
@@ -80,11 +47,8 @@ AnipopModule.RequestAnipopInfo = function(self, TT)
   return res, replyEvent
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.SelectHard = function(self, TT, hard_id)
-  -- function num : 0_8 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(AnipopSelectHardReq)
+function AnipopModule:SelectHard(TT, hard_id)
+  local request = NetMessageFactory:GetInstance():CreateMessage(AnipopSelectHardReq)
   request.hard_id = hard_id
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -95,19 +59,14 @@ AnipopModule.SelectHard = function(self, TT, hard_id)
   res:SetSucc(true)
   local replyEvent = reply.msg
   res:SetResult(replyEvent.ret)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.ret == 0 then
-    (self._anipopInfo).round_info = replyEvent.round_info
+    self._anipopInfo.round_info = replyEvent.round_info
   end
   return res
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.UpdateAnipopFormationInfo = function(self, TT, formation_id, formation_name, pet_list)
-  -- function num : 0_9 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyChangeAnipopFormationReq)
+function AnipopModule:UpdateAnipopFormationInfo(TT, formation_id, formation_name, pet_list)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyChangeAnipopFormationReq)
   request.m_formation_id = formation_id
   request.m_formation_name = formation_name
   request.m_formation_pet_list = pet_list
@@ -126,11 +85,8 @@ AnipopModule.UpdateAnipopFormationInfo = function(self, TT, formation_id, format
   return res, replyEvent.m_formation_info
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.Balance = function(self, TT, hard_id)
-  -- function num : 0_10 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestAnipopBalance)
+function AnipopModule:Balance(TT, hard_id)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestAnipopBalance)
   request.hard_id = hard_id
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -144,11 +100,8 @@ AnipopModule.Balance = function(self, TT, hard_id)
   return res, replyEvent.round_info
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.GetReward = function(self, TT, req_id)
-  -- function num : 0_11 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(AnipopRewardReq)
+function AnipopModule:GetReward(TT, req_id)
+  local request = NetMessageFactory:GetInstance():CreateMessage(AnipopRewardReq)
   request.req_id = req_id
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -159,36 +112,23 @@ AnipopModule.GetReward = function(self, TT, req_id)
   res:SetSucc(true)
   local replyEvent = reply.msg
   res:SetResult(replyEvent.ret)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.ret == 0 then
-    (self._anipopInfo).week_info = replyEvent.week_info
+    self._anipopInfo.week_info = replyEvent.week_info
   end
   return res, replyEvent.rewards
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule._SetFormationInfos = function(self, formation_info)
-  -- function num : 0_12
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._anipopInfo).formation_info = formation_info
+function AnipopModule:_SetFormationInfos(formation_info)
+  self._anipopInfo.formation_info = formation_info
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.GetFormationInfo = function(self)
-  -- function num : 0_13
-  return (self._anipopInfo).formation_info
+function AnipopModule:GetFormationInfo()
+  return self._anipopInfo.formation_info
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.RequestSelectRelic = function(self, TT, relicid)
-  -- function num : 0_14 , upvalues : _ENV
+function AnipopModule:RequestSelectRelic(TT, relicid)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestAnipopSelectRelic)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestAnipopSelectRelic)
   request.relic_id = relicid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -199,20 +139,15 @@ AnipopModule.RequestSelectRelic = function(self, TT, relicid)
   res:SetSucc(true)
   local replyEvent = reply.msg
   res:SetResult(replyEvent.m_ret)
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.m_ret == 0 then
-    (self._anipopInfo).relic_info = replyEvent.relic_info
+    self._anipopInfo.relic_info = replyEvent.relic_info
   end
   return res, replyEvent.relics
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.AnipopConvertRelic = function(self, TT)
-  -- function num : 0_15 , upvalues : _ENV
+function AnipopModule:AnipopConvertRelic(TT)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(AnipopConvertRelicReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(AnipopConvertRelicReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     res:SetSucc(false)
@@ -222,20 +157,15 @@ AnipopModule.AnipopConvertRelic = function(self, TT)
   res:SetSucc(true)
   local replyEvent = reply.msg
   res:SetResult(replyEvent.ret)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R6 in 'UnsetPending'
-
   if replyEvent.ret == 0 then
-    (self._anipopInfo).relic_info = replyEvent.relic_info
+    self._anipopInfo.relic_info = replyEvent.relic_info
   end
   return res, replyEvent.relics
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.AnipopUseRelic = function(self, TT, relic_id)
-  -- function num : 0_16 , upvalues : _ENV
+function AnipopModule:AnipopUseRelic(TT, relic_id)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(AnipopUseRelicReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(AnipopUseRelicReq)
   request.relic_id = relic_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -246,20 +176,15 @@ AnipopModule.AnipopUseRelic = function(self, TT, relic_id)
   res:SetSucc(true)
   local replyEvent = reply.msg
   res:SetResult(replyEvent.ret)
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.ret == 0 then
-    (self._anipopInfo).relic_info = replyEvent.relic_info
+    self._anipopInfo.relic_info = replyEvent.relic_info
   end
   return res, replyEvent.relics
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.AnipopChangeSkill = function(self, TT, skill_relic_id)
-  -- function num : 0_17 , upvalues : _ENV
+function AnipopModule:AnipopChangeSkill(TT, skill_relic_id)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(AnipopChangeSkillReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(AnipopChangeSkillReq)
   request.skill_relic_id = skill_relic_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -270,114 +195,82 @@ AnipopModule.AnipopChangeSkill = function(self, TT, skill_relic_id)
   res:SetSucc(true)
   local replyEvent = reply.msg
   res:SetResult(replyEvent.ret)
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.ret == 0 then
-    (self._anipopInfo).relic_info = replyEvent.relic_info
+    self._anipopInfo.relic_info = replyEvent.relic_info
   end
   return res
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.SingleMatch = function(self, mission_index, teamid)
-  -- function num : 0_18 , upvalues : _ENV
-  local game = (GameGlobal.GetModule)(GameMatchModule)
+function AnipopModule:SingleMatch(mission_index, teamid)
+  local game = GameGlobal.GetModule(GameMatchModule)
   local info = AnipopMissionCreateInfo:New()
   info.mission_index = mission_index
   game:StartMatch(MatchType.MT_PopStarPro, teamid, info)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.GetLevelMonsterList = function(self, missionIndex)
-  -- function num : 0_19 , upvalues : _ENV
-  local curRoundInfo = (self._anipopInfo).round_info
-  local levelInfo = (curRoundInfo.level_list)[missionIndex]
+function AnipopModule:GetLevelMonsterList(missionIndex)
+  local curRoundInfo = self._anipopInfo.round_info
+  local levelInfo = curRoundInfo.level_list[missionIndex]
   local levelID = 0
-  local missionCfg = (Cfg.cfg_anipop_fight_level)[levelInfo.level_id]
+  local missionCfg = Cfg.cfg_anipop_fight_level[levelInfo.level_id]
   if missionCfg then
     levelID = missionCfg.LevelID
   end
   local waveRandoms = levelInfo.wave_randoms
-  local cfg = (Cfg.cfg_level)[levelID]
+  local cfg = Cfg.cfg_level[levelID]
   if cfg == nil then
-    (Log.exception)("找不到关卡：", levelID)
+    Log.exception("找不到关卡：", levelID)
   end
   local waveArr = cfg.MonsterWave
   local ret = {}
-  for i,wave in ipairs(waveArr) do
-    local wavecfg = (Cfg.cfg_monster_wave)[wave]
-    local refreshcfg = (Cfg.cfg_refresh)[wavecfg.WaveBeginRefreshID]
+  for i, wave in ipairs(waveArr) do
+    local wavecfg = Cfg.cfg_monster_wave[wave]
+    local refreshcfg = Cfg.cfg_refresh[wavecfg.WaveBeginRefreshID]
     local monsterWeight = refreshcfg.MonsterWeight
     local monsterRIds = refreshcfg.MonsterRefreshIDList
     local totalw = 0
-    for _,w in ipairs(monsterWeight) do
+    for _, w in ipairs(monsterWeight) do
       totalw = totalw + w
     end
     local monsterRefreshId = 0
-    local ww = waveRandoms[2 * i - 1] * (totalw)
-    for j,w in ipairs(monsterWeight) do
+    local ww = waveRandoms[2 * i - 1] * totalw
+    for j, w in ipairs(monsterWeight) do
       ww = ww - w
       if ww <= 0 then
         monsterRefreshId = monsterRIds[j]
         break
       end
     end
-    do
-      local monsters = nil
-      local refreshMonsterCfg = (Cfg.cfg_refresh_monster)[monsterRefreshId]
-      if refreshMonsterCfg.RandomMonsterIDList then
-        local monsterList = (table.cloneconf)(refreshMonsterCfg.RandomMonsterIDList)
-        local weightList = (table.cloneconf)(refreshMonsterCfg.RandomWeightList)
-        if not weightList then
-          weightList = self:_MakeDefaultRandomWeightList(monsterList)
-        end
-        monsters = self:_ParseRandomMonsterID(monsterList, weightList, waveRandoms)
-      else
-        do
-          do
-            monsters = (table.cloneconf)(refreshMonsterCfg.MonsterIDList)
-            ;
-            (table.appendArray)(ret, monsters)
-            -- DECOMPILER ERROR at PC100: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC100: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC100: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC100: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
-      end
+    local monsters
+    local refreshMonsterCfg = Cfg.cfg_refresh_monster[monsterRefreshId]
+    if refreshMonsterCfg.RandomMonsterIDList then
+      local monsterList = table.cloneconf(refreshMonsterCfg.RandomMonsterIDList)
+      local weightList = table.cloneconf(refreshMonsterCfg.RandomWeightList)
+      weightList = weightList or self:_MakeDefaultRandomWeightList(monsterList)
+      monsters = self:_ParseRandomMonsterID(monsterList, weightList, waveRandoms)
+    else
+      monsters = table.cloneconf(refreshMonsterCfg.MonsterIDList)
     end
+    table.appendArray(ret, monsters)
   end
-  ret = (table.unique)(ret)
+  ret = table.unique(ret)
   return ret
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule._MakeDefaultRandomWeightList = function(self, monsterList)
-  -- function num : 0_20 , upvalues : _ENV
+function AnipopModule:_MakeDefaultRandomWeightList(monsterList)
   local weightList = {}
-  for index,value in ipairs(monsterList) do
+  for index, value in ipairs(monsterList) do
     local monsterGroup = value
     local weightGroup = {}
-    for groupIndex,monsterID in ipairs(monsterGroup) do
-      (table.insert)(weightGroup, 1)
+    for groupIndex, monsterID in ipairs(monsterGroup) do
+      table.insert(weightGroup, 1)
     end
-    ;
-    (table.insert)(weightList, weightGroup)
+    table.insert(weightList, weightGroup)
   end
   return weightList
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule._ParseRandomMonsterID = function(self, monsterList, weightList, waveRandoms)
-  -- function num : 0_21 , upvalues : _ENV
+function AnipopModule:_ParseRandomMonsterID(monsterList, weightList, waveRandoms)
   local monsterIDList = {}
   if #monsterList ~= #weightList then
     return monsterIDList
@@ -386,16 +279,16 @@ AnipopModule._ParseRandomMonsterID = function(self, monsterList, weightList, wav
     local monsterGroup = monsterList[i]
     local weightGroup = weightList[i]
     local totalWeight = 0
-    for _,w in ipairs(weightGroup) do
+    for _, w in ipairs(weightGroup) do
       totalWeight = totalWeight + w
     end
-    local index = (math.fmod)(i - 1, #waveRandoms) + 1
+    local index = math.fmod(i - 1, #waveRandoms) + 1
     local rand = waveRandoms[index]
-    local curWeight = rand * (totalWeight)
-    for i,w in ipairs(weightGroup) do
+    local curWeight = rand * totalWeight
+    for i, w in ipairs(weightGroup) do
       curWeight = curWeight - w
       if curWeight <= 0 then
-        (table.insert)(monsterIDList, monsterGroup[i])
+        table.insert(monsterIDList, monsterGroup[i])
         break
       end
     end
@@ -403,24 +296,18 @@ AnipopModule._ParseRandomMonsterID = function(self, monsterList, weightList, wav
   return monsterIDList
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.GetPetPower = function(self, pet_pstid)
-  -- function num : 0_22
+function AnipopModule:GetPetPower(pet_pstid)
   local max = self:_GetPetPowerLimit(pet_pstid)
-  local roundInfo = (self._anipopInfo).round_info
-  local l_pet_info = (roundInfo.pet_info)[pet_pstid]
+  local roundInfo = self._anipopInfo.round_info
+  local l_pet_info = roundInfo.pet_info[pet_pstid]
   if l_pet_info then
     return l_pet_info.power, max
   end
   return -1, max
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule._GetPetPowerLimit = function(self, pet_pstid)
-  -- function num : 0_23 , upvalues : _ENV
-  local petMd = ((GameGlobal:GetInstance()).GetModule)(PetModule)
+function AnipopModule:_GetPetPowerLimit(pet_pstid)
+  local petMd = GameGlobal:GetInstance().GetModule(PetModule)
   local pet = petMd:GetPet(pet_pstid)
   if not pet then
     return 0
@@ -430,11 +317,8 @@ AnipopModule._GetPetPowerLimit = function(self, pet_pstid)
   return cfg.TriggerParam
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AnipopModule.GetCalPetADH = function(self, pet_pst_id)
-  -- function num : 0_24 , upvalues : _ENV
-  local l_pet_module = ((GameGlobal.GameLogic)()):GetModule(PetModule)
+function AnipopModule:GetCalPetADH(pet_pst_id)
+  local l_pet_module = GameGlobal.GameLogic():GetModule(PetModule)
   if l_pet_module == nil then
     return -1, -1, -1
   end
@@ -446,7 +330,7 @@ AnipopModule.GetCalPetADH = function(self, pet_pst_id)
   if l_pet_template_id == nil or l_pet_template_id <= 0 then
     return -1, -1, -1
   end
-  local l_cfg_maze_pet_info = (Cfg.cfg_maze_pet_info)[l_pet_template_id]
+  local l_cfg_maze_pet_info = Cfg.cfg_maze_pet_info[l_pet_template_id]
   if l_cfg_maze_pet_info == nil then
     return -1, -1, -1
   end
@@ -456,24 +340,22 @@ AnipopModule.GetCalPetADH = function(self, pet_pst_id)
     return -1, -1, -1
   end
   local attack_base = l_cfg_maze_pet_info.Attack
-  local ak1 = ((((self._anipopInfo).relic_info).relic_attrs).attack_mul)[0] or 0
-  local ak2 = ((((self._anipopInfo).relic_info).relic_attrs).attack_mul)[l_elem] or 0
-  local ak3 = ((((self._anipopInfo).relic_info).relic_attrs).attack_mul)[l_job] or 0
+  local ak1 = self._anipopInfo.relic_info.relic_attrs.attack_mul[0] or 0
+  local ak2 = self._anipopInfo.relic_info.relic_attrs.attack_mul[l_elem] or 0
+  local ak3 = self._anipopInfo.relic_info.relic_attrs.attack_mul[l_job] or 0
   local attack_mul = ak1 + ak2 + ak3
   local defense_base = l_cfg_maze_pet_info.Defence
-  local df1 = ((((self._anipopInfo).relic_info).relic_attrs).defense_mul)[0] or 0
-  local df2 = ((((self._anipopInfo).relic_info).relic_attrs).defense_mul)[l_elem] or 0
-  local df3 = ((((self._anipopInfo).relic_info).relic_attrs).defense_mul)[l_job] or 0
+  local df1 = self._anipopInfo.relic_info.relic_attrs.defense_mul[0] or 0
+  local df2 = self._anipopInfo.relic_info.relic_attrs.defense_mul[l_elem] or 0
+  local df3 = self._anipopInfo.relic_info.relic_attrs.defense_mul[l_job] or 0
   local defense_mul = df1 + df2 + df3
   local max_hp_base = l_cfg_maze_pet_info.Health
-  local hp1 = ((((self._anipopInfo).relic_info).relic_attrs).maxhp_mul)[0] or 0
-  local hp2 = ((((self._anipopInfo).relic_info).relic_attrs).maxhp_mul)[l_elem] or 0
-  local hp3 = ((((self._anipopInfo).relic_info).relic_attrs).maxhp_mul)[l_job] or 0
+  local hp1 = self._anipopInfo.relic_info.relic_attrs.maxhp_mul[0] or 0
+  local hp2 = self._anipopInfo.relic_info.relic_attrs.maxhp_mul[l_elem] or 0
+  local hp3 = self._anipopInfo.relic_info.relic_attrs.maxhp_mul[l_job] or 0
   local max_hp_mul = hp1 + hp2 + hp3
-  local attack = (math.floor)(attack_base * (1 + attack_mul))
-  local defense = (math.floor)(defense_base * (1 + defense_mul))
-  local max_hp = (math.floor)(max_hp_base * (1 + max_hp_mul))
+  local attack = math.floor(attack_base * (1 + attack_mul))
+  local defense = math.floor(defense_base * (1 + defense_mul))
+  local max_hp = math.floor(max_hp_base * (1 + max_hp_mul))
   return attack, defense, max_hp
 end
-
-

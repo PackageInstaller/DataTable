@@ -1,97 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/smelt_item_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SmeltItemComponent", ICampaignComponent)
 SmeltItemComponent = SmeltItemComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SmeltItemComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SmeltItemComponent:Constructor()
   self._componentInfo = SmeltItemComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SmeltItemComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SmeltItemComponent:ComponentInfo()
   if not self._componentInfo then
     self._componentInfo = SmeltItemComponentInfo:New()
   end
   return self._componentInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SmeltItemComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function SmeltItemComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SmeltItemComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SmeltItemComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_SMELT_ITEM
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SmeltItemComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self._componentInfo)
+function SmeltItemComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self._componentInfo)
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SmeltItemComponent.GetCurList = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function SmeltItemComponent:GetCurList()
   local componentId = self:GetComponentCfgId()
-  local cfgV = (Cfg.cfg_component_smelt_item)({ComponentID = componentId})
+  local cfgV = Cfg.cfg_component_smelt_item({ComponentID = componentId})
   if cfgV == nil then
-    (Log.exception)("cfg_component_smelt_item 中找不到组件ID:", componentId)
+    Log.exception("cfg_component_smelt_item 中找不到组件ID:", componentId)
     return nil
   end
   if self._componentInfo == nil then
     return nil
   end
   local idlist = {}
-  for ck,cfg in pairs(cfgV) do
-    -- DECOMPILER ERROR at PC48: Unhandled construct in 'MakeBoolean' P1
-
-    -- DECOMPILER ERROR at PC48: Unhandled construct in 'MakeBoolean' P1
-
-    if ((self._componentInfo).m_info)[cfg.ID] == nil and cfg.LockID ~= nil and cfg.LockID ~= 0 and ((self._componentInfo).m_info)[cfg.LockID] ~= nil then
-      (table.insert)(idlist, cfg.ID)
+  for ck, cfg in pairs(cfgV) do
+    if self._componentInfo.m_info[cfg.ID] == nil then
+      if cfg.LockID ~= nil and cfg.LockID ~= 0 then
+        if self._componentInfo.m_info[cfg.LockID] ~= nil then
+          table.insert(idlist, cfg.ID)
+        end
+      else
+        table.insert(idlist, cfg.ID)
+      end
     end
-    ;
-    (table.insert)(idlist, cfg.ID)
   end
   return idlist
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SmeltItemComponent.HandleReceiveSmeltItemReward = function(self, TT, asyncRes, cfgID)
-  -- function num : 0_6 , upvalues : _ENV
+function SmeltItemComponent:HandleReceiveSmeltItemReward(TT, asyncRes, cfgID)
   local request = SmeltItemComponentReceiveRewardReq:New()
   request.m_cfg_id = cfgID
   local response = SmeltItemComponentReceiveRewardRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R7 in 'UnsetPending'
-
-  if response ~= nil and (table.count)(response.m_info) > 0 then
-    (self._componentInfo).m_info = response.m_info
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  if response ~= nil and table.count(response.m_info) > 0 then
+    self._componentInfo.m_info = response.m_info
   end
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][SmeltItemComponent] HandleReceiveSmeltItemReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SmeltItemComponent] HandleReceiveSmeltItemReward ret:", asyncRes.m_result)
     return nil
   end
   return response
 end
-
-

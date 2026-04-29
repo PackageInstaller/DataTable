@@ -1,71 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/graph/line/ui_n20_avg_graph_line_curve.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20AVGGraphLineCurve", UICustomWidget)
 UIN20AVGGraphLineCurve = UIN20AVGGraphLineCurve
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20AVGGraphLineCurve.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN20AVGData()
-  self.quats = {[1] = (Quaternion.Euler)(0, 0, 0), [2] = (Quaternion.Euler)(0, 0, 90), [3] = (Quaternion.Euler)(0, 0, 180), [4] = (Quaternion.Euler)(0, 0, -90)}
+function UIN20AVGGraphLineCurve:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN20AVGData()
+  self.quats = {
+    [1] = Quaternion.Euler(0, 0, 0),
+    [2] = Quaternion.Euler(0, 0, 90),
+    [3] = Quaternion.Euler(0, 0, 180),
+    [4] = Quaternion.Euler(0, 0, -90)
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphLineCurve.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.rt = (self:GetGameObject()):GetComponent(typeof(UnityEngine.RectTransform))
-  ;
-  (UICommonHelper:GetInstance()):RectTransformAnchor2Left(self.rt)
+function UIN20AVGGraphLineCurve:OnShow()
+  self.rt = self:GetGameObject():GetComponent(typeof(UnityEngine.RectTransform))
+  UICommonHelper:GetInstance():RectTransformAnchor2Left(self.rt)
   self.dot = self:GetGameObject("dot")
   self.solid = self:GetGameObject("solid")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphLineCurve.OnHide = function(self)
-  -- function num : 0_2
+function UIN20AVGGraphLineCurve:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphLineCurve.Flush = function(self, posPrev, pos, posNext, isDot)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R5 in 'UnsetPending'
-
-  (self.rt).anchoredPosition = pos
-  local quat = nil
-  if posPrev.x < posNext.x and posPrev.y < posNext.y then
-    if posPrev.y < pos.y and pos.x < posNext.x then
-      quat = (self.quats)[1]
+function UIN20AVGGraphLineCurve:Flush(posPrev, pos, posNext, isDot)
+  self.rt.anchoredPosition = pos
+  local quat
+  if posNext.x > posPrev.x and posNext.y > posPrev.y then
+    if pos.y > posPrev.y and pos.x < posNext.x then
+      quat = self.quats[1]
     else
-      quat = (self.quats)[3]
+      quat = self.quats[3]
     end
+  elseif pos.y > posNext.y and pos.x > posPrev.x then
+    quat = self.quats[4]
   else
-    if posNext.y < pos.y and posPrev.x < pos.x then
-      quat = (self.quats)[4]
-    else
-      quat = (self.quats)[2]
-    end
+    quat = self.quats[2]
   end
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.rt).localRotation = quat
+  self.rt.localRotation = quat
   if isDot then
-    (self.dot):SetActive(true)
-    ;
-    (self.solid):SetActive(false)
+    self.dot:SetActive(true)
+    self.solid:SetActive(false)
   else
-    ;
-    (self.dot):SetActive(false)
-    ;
-    (self.solid):SetActive(true)
+    self.dot:SetActive(false)
+    self.solid:SetActive(true)
   end
 end
-
-

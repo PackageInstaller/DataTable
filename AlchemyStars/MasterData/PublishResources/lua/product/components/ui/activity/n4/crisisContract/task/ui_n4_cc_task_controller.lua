@@ -1,71 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/task/ui_n4_cc_task_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN4CCTaskController", UIController)
 UIN4CCTaskController = UIN4CCTaskController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN4CCTaskController._PlayAnim = function(self, type, callback)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN4CCTaskController:_PlayAnim(type, callback)
   local tb = {
-["in"] = {animName = "uianim_UIN4CCTaskController_in", duration = 500}
-, 
-out = {animName = "uianim_UIN4CCTaskController_out", duration = 500}
-}
+    ["in"] = {
+      animName = "uianim_UIN4CCTaskController_in",
+      duration = 500
+    },
+    out = {
+      animName = "uianim_UIN4CCTaskController_out",
+      duration = 500
+    }
+  }
   local info = tb[type]
   if info then
-    (UIWidgetHelper.PlayAnimation)(self, "_anim", (tb[type]).animName, (tb[type]).duration, callback)
-  else
-    if callback then
-      callback()
-    end
+    UIWidgetHelper.PlayAnimation(self, "_anim", tb[type].animName, tb[type].duration, callback)
+  elseif callback then
+    callback()
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskController._PlayAnim_Cells = function(self, type, callback)
-  -- function num : 0_1 , upvalues : _ENV
-  for i,v in ipairs(self._cells) do
+function UIN4CCTaskController:_PlayAnim_Cells(type, callback)
+  for i, v in ipairs(self._cells) do
     if type == "in" then
       v:PlayAnimationInSequence(i)
-    else
-      if type == "out" then
-        v:PlayAnimOut(callback)
-      end
+    elseif type == "out" then
+      v:PlayAnimOut(callback)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_2
-  if uiParams then
-    local context = uiParams[1]
-  end
+function UIN4CCTaskController:LoadDataOnEnter(TT, res, uiParams)
+  local context = uiParams and uiParams[1]
   if context == nil then
     res:SetSucc(false)
-    return 
+    return
   end
-  if not uiParams or not uiParams[2] then
-    self._questIds = {}
-    self._campaign = context._campaign
-    self._component = context._taskComponent
-  end
+  self._questIds = uiParams and uiParams[2] or {}
+  self._campaign = context._campaign
+  self._component = context._taskComponent
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
-  self._tipsCallback = function(matid, pos)
-    -- function num : 0_3_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
+function UIN4CCTaskController:OnShow(uiParams)
+  function self._tipsCallback(matid, pos)
+    UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
   end
-
+  
   self._closeCb = uiParams[3]
   self:_PlayAnim("in")
   self:_Refresh()
@@ -73,126 +53,83 @@ UIN4CCTaskController.OnShow = function(self, uiParams)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskController.OnHide = function(self)
-  -- function num : 0_4
+function UIN4CCTaskController:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskController._Refresh = function(self)
-  -- function num : 0_5
+function UIN4CCTaskController:_Refresh()
   self:_SetCellList()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskController._SetCellListData = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN4CCTaskController:_SetCellListData()
   local tb = {}
-  for _,v in ipairs(self._questIds) do
-    local quest = (self._component):GetQuestInfoById(v)
-    ;
-    (table.insert)(tb, quest)
+  for _, v in ipairs(self._questIds) do
+    local quest = self._component:GetQuestInfoById(v)
+    table.insert(tb, quest)
   end
   self._cellDatas = tb
-  self._questStatus = (self._component):GetCampaignQuestStatus(self._cellDatas)
+  self._questStatus = self._component:GetCampaignQuestStatus(self._cellDatas)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskController._SetCellList = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN4CCTaskController:_SetCellList()
   self:_SetCellListData()
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "Content", "UIN4CCTaskCell", #self._cellDatas)
-  for i,v in ipairs(objs) do
-    local quest = (self._cellDatas)[i]
-    local state = (self._questStatus)[quest]
+  local objs = UIWidgetHelper.SpawnObjects(self, "Content", "UIN4CCTaskCell", #self._cellDatas)
+  for i, v in ipairs(objs) do
+    local quest = self._cellDatas[i]
+    local state = self._questStatus[quest]
     v:SetData(i, self._component, quest, state, function(questInfo)
-    -- function num : 0_7_0 , upvalues : self
-    self:_ClaimOneBtn(questInfo)
-  end
-, self._tipsCallback)
+      self:_ClaimOneBtn(questInfo)
+    end, self._tipsCallback)
   end
   self._cells = objs
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskController._ClaimOneBtn = function(self, questInfo)
-  -- function num : 0_8
-  self._claimItems = {questInfo.quest_id}
-  ;
-  (self._component):Start_HandleQuestTake(questInfo.quest_id, function(res, rewards)
-    -- function num : 0_8_0 , upvalues : self
+function UIN4CCTaskController:_ClaimOneBtn(questInfo)
+  self._claimItems = {
+    questInfo.quest_id
+  }
+  self._component:Start_HandleQuestTake(questInfo.quest_id, function(res, rewards)
     self:_OnRecvRewards(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskController._OnRecvRewards = function(self, res, rewards)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN4CCTaskController:_OnRecvRewards(res, rewards)
   if not self.view then
-    return 
+    return
   end
   if res and res:GetSucc() then
-    (UISeasonHelper.ShowUIGetRewards)(rewards)
+    UISeasonHelper.ShowUIGetRewards(rewards)
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result, self._seasonId, function()
-    -- function num : 0_9_0 , upvalues : self
-    self:_Refresh()
-  end
-, function()
-    -- function num : 0_9_1 , upvalues : self
-    self:CloseDialog()
-  end
-)
+    self._campaign:CheckErrorCode(res.m_result, self._seasonId, function()
+      self:_Refresh()
+    end, function()
+      self:CloseDialog()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_10
+function UIN4CCTaskController:CloseBtnOnClick(go)
   self:_PlayAnim_Cells("out")
   self:_PlayAnim("out", function()
-    -- function num : 0_10_0 , upvalues : self
     if self._closeCb then
-      (self._closeCb)()
+      self._closeCb()
     end
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskController._AttachEvents = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN4CCTaskController:_AttachEvents()
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self._Refresh)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskController._DetachEvents = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN4CCTaskController:_DetachEvents()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self._Refresh)
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskController._CheckActivityClose = function(self, id)
-  -- function num : 0_13
-  if self._campaign and (self._campaign)._id == id then
+function UIN4CCTaskController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:CloseDialog()
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/battleend/ui_eliminate_choose_card_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateChooseCardController", UIController)
 UIEliminateChooseCardController = UIEliminateChooseCardController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateChooseCardController.Constructor = function(self)
-  -- function num : 0_0
+function UIEliminateChooseCardController:Constructor()
   self._count = 3
   self._cardIndex = 0
   self._timeOut = false
@@ -20,66 +13,50 @@ UIEliminateChooseCardController.Constructor = function(self)
   self._rerollID = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseCardController.OnShow = function(self, uiParam)
-  -- function num : 0_1 , upvalues : _ENV
-  self._anipopModule = (GameGlobal.GetModule)(AnipopModule)
+function UIEliminateChooseCardController:OnShow(uiParam)
+  self._anipopModule = GameGlobal.GetModule(AnipopModule)
   self._atlas = self:GetAsset("UIEliminate.spriteatlas", LoadType.SpriteAtlas)
   self._itemModule = self:GetModule(ItemModule)
-  self._cfg_item = (Cfg.cfg_item)({})
+  self._cfg_item = Cfg.cfg_item({})
   self._levelIndex = uiParam[1]
   self._isInGame = uiParam[3]
   if uiParam[2] then
     self._timeOut = true
-    for index,relic in ipairs(uiParam[2]) do
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R7 in 'UnsetPending'
-
+    for index, relic in ipairs(uiParam[2]) do
       if relic.id then
-        (self._relicTab)[index] = relic.id
+        self._relicTab[index] = relic.id
       else
-        -- DECOMPILER ERROR at PC41: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self._relicTab)[index] = relic.assetid
+        self._relicTab[index] = relic.assetid
       end
     end
   else
-    do
-      local gameMatchModule = self:GetModule(GameMatchModule)
-      local matchResult = UI_MatchResult:New()
-      matchResult = gameMatchModule:GetMachResult()
-      local tempRelics = matchResult.m_ext_star_rewards
-      for i = 1, (table.count)(tempRelics) do
-        -- DECOMPILER ERROR at PC65: Confused about usage of register: R9 in 'UnsetPending'
-
-        (self._relicTab)[i] = (tempRelics[i]).assetid
-      end
-      do
-        self:GetComponents()
-        self:InitComponent()
-        self:SetRefreshTime()
-        local funcModule = (self:GetModule(RoleModule)).uiModule
-        funcModule:LockAchievementFinishPanel(false)
-      end
+    local gameMatchModule = self:GetModule(GameMatchModule)
+    local matchResult = UI_MatchResult:New()
+    matchResult = gameMatchModule:GetMachResult()
+    local tempRelics = matchResult.m_ext_star_rewards
+    for i = 1, table.count(tempRelics) do
+      self._relicTab[i] = tempRelics[i].assetid
     end
   end
+  self:GetComponents()
+  self:InitComponent()
+  self:SetRefreshTime()
+  local funcModule = self:GetModule(RoleModule).uiModule
+  funcModule:LockAchievementFinishPanel(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseCardController.OnHide = function(self)
-  -- function num : 0_2
+function UIEliminateChooseCardController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseCardController.GetComponents = function(self)
-  -- function num : 0_3
+function UIEliminateChooseCardController:GetComponents()
   local pos1 = self:GetUIComponent("RectTransform", "pos1")
   local pos2 = self:GetUIComponent("RectTransform", "pos2")
   local pos3 = self:GetUIComponent("RectTransform", "pos3")
-  self._posTab = {pos1, pos2, pos3}
+  self._posTab = {
+    pos1,
+    pos2,
+    pos3
+  }
   self._itemPool = self:GetUIComponent("UISelectObjectPath", "itemPool")
   self._randomTime = self:GetUIComponent("UILocalizationText", "randomTime")
   self._chooseBtn = self:GetUIComponent("Image", "chooseBtn")
@@ -88,153 +65,103 @@ UIEliminateChooseCardController.GetComponents = function(self)
   self._chooseBtnTxt = self:GetUIComponent("UILocalizationText", "chooseBtnTxt")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseCardController.InitComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIEliminateChooseCardController:InitComponent()
   self._cardIndex = 0
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._chooseBtn).sprite = (self._atlas):GetSprite("qdhl_new_icon07")
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._chooseBtnTxt).color = Color(0.30980392156863, 0.24705882352941, 0.043137254901961)
-  ;
-  (self._itemPool):SpawnObjects("UIEliminateChooseCardItem", self._count)
-  self._itemTab = (self._itemPool):GetAllSpawnList()
+  self._chooseBtn.sprite = self._atlas:GetSprite("qdhl_new_icon07")
+  self._chooseBtnTxt.color = Color(0.30980392156862746, 0.24705882352941178, 0.043137254901960784)
+  self._itemPool:SpawnObjects("UIEliminateChooseCardItem", self._count)
+  self._itemTab = self._itemPool:GetAllSpawnList()
   for i = 1, self._count do
-    ((self._itemTab)[i]):SetData(i, (self._relicTab)[i], ((self._posTab)[i]).position, function(index)
-    -- function num : 0_4_0 , upvalues : self
-    self:CardClick(index)
-  end
-, function(index)
-    -- function num : 0_4_1 , upvalues : self
-    self:ChooseClick(index)
-  end
-)
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    ((((self._itemTab)[i])._card).gameObject).name = i - 1
+    self._itemTab[i]:SetData(i, self._relicTab[i], self._posTab[i].position, function(index)
+      self:CardClick(index)
+    end, function(index)
+      self:ChooseClick(index)
+    end)
+    self._itemTab[i]._card.gameObject.name = i - 1
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseCardController.CardClick = function(self, index)
-  -- function num : 0_5 , upvalues : _ENV
+function UIEliminateChooseCardController:CardClick(index)
   if self._cardIndex == index then
-    return 
+    return
   end
   self._cardIndex = index
   for i = 1, self._count do
     if i == self._cardIndex then
-      ((self._itemTab)[i]):CancelOrSelect(true)
+      self._itemTab[i]:CancelOrSelect(true)
     else
-      ;
-      ((self._itemTab)[i]):CancelOrSelect(false)
+      self._itemTab[i]:CancelOrSelect(false)
     end
   end
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._chooseBtn).sprite = (self._atlas):GetSprite("map_gezi4_frame")
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._chooseBtnTxt).color = Color(0.5921568627451, 0.46666666666667, 0)
+  self._chooseBtn.sprite = self._atlas:GetSprite("map_gezi4_frame")
+  self._chooseBtnTxt.color = Color(0.592156862745098, 0.4666666666666667, 0)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseCardController.ChooseBtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIEliminateChooseCardController:ChooseBtnOnClick()
   if self._cardIndex ~= 0 then
-    ((GameGlobal.TaskManager)()):StartTask(self._ChooseCallback, self)
+    GameGlobal.TaskManager():StartTask(self._ChooseCallback, self)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseCardController._ChooseCallback = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UIEliminateChooseCardController:_ChooseCallback(TT)
   self:Lock("UIRugueLikeChooseCardControllerchooseBtnOnClick")
-  local res, relics = (self._anipopModule):RequestSelectRelic(TT, (self._relicTab)[self._cardIndex])
+  local res, relics = self._anipopModule:RequestSelectRelic(TT, self._relicTab[self._cardIndex])
   self:UnLock("UIRugueLikeChooseCardControllerchooseBtnOnClick")
   if res:GetSucc() then
-    if relics and (table.count)(relics) > 0 then
+    if relics and table.count(relics) > 0 then
       self._relicTab = {}
-      for index,relic in ipairs(relics) do
-        -- DECOMPILER ERROR at PC36: Confused about usage of register: R9 in 'UnsetPending'
-
+      for index, relic in ipairs(relics) do
         if relic.id then
-          (self._relicTab)[index] = relic.id
+          self._relicTab[index] = relic.id
         else
-          -- DECOMPILER ERROR at PC40: Confused about usage of register: R9 in 'UnsetPending'
-
-          ;
-          (self._relicTab)[index] = relic.assetid
+          self._relicTab[index] = relic.assetid
         end
       end
       self:InitComponent()
       self:SetRefreshTime()
       self:Lock("UIEliminateChooseCardController:RandomBtnOnClick")
-      ;
-      (self._anim):Play("uieff_ChooseCard_In")
+      self._anim:Play("uieff_ChooseCard_In")
       YIELD(TT, 1534)
       self:UnLock("UIEliminateChooseCardController:RandomBtnOnClick")
+    elseif self._timeOut == false then
+      self:ShowDialog("UIEliminateBattleResultController", true, self._levelIndex)
     else
-      if self._timeOut == false then
+      local anipopModule = GameGlobal.GetModule(AnipopModule)
+      local anipopInfo = anipopModule:GetAniPopInfo()
+      local roundInfo = anipopInfo.round_info
+      local levelInfo = roundInfo.level_list[roundInfo.mission_index]
+      if self._isInGame then
         self:ShowDialog("UIEliminateBattleResultController", true, self._levelIndex)
+      elseif not anipopInfo or not levelInfo then
+        GameGlobal.UIStateManager():SwitchState(UIStateType.UIEliminateController)
+        ToastManager.ShowToast(StringTable.Get("str_pet_config_pet_error_faild19"))
       else
-        local anipopModule = (GameGlobal.GetModule)(AnipopModule)
-        local anipopInfo = anipopModule:GetAniPopInfo()
-        local roundInfo = anipopInfo.round_info
-        local levelInfo = (roundInfo.level_list)[roundInfo.mission_index]
-        if self._isInGame then
-          self:ShowDialog("UIEliminateBattleResultController", true, self._levelIndex)
-        else
-          if not anipopInfo or not levelInfo then
-            ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIEliminateController)
-            ;
-            (ToastManager.ShowToast)((StringTable.Get)("str_pet_config_pet_error_faild19"))
-          else
-            self:SwitchState(UIStateType.UIEliminateLevelController)
-          end
-        end
+        self:SwitchState(UIStateType.UIEliminateLevelController)
       end
     end
   else
-    do
-      local result = res:GetResult()
-      ;
-      (Log.error)("###[UIEliminateChooseCardController] RequestSelectRelic fail ! result --> ", result)
-      self:SwitchState(UIStateType.UIEliminateController)
-    end
+    local result = res:GetResult()
+    Log.error("###[UIEliminateChooseCardController] RequestSelectRelic fail ! result --> ", result)
+    self:SwitchState(UIStateType.UIEliminateController)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseCardController.SetRefreshTime = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIEliminateChooseCardController:SetRefreshTime()
   self._rerollID = 0
-  local anipopInfo = (self._anipopModule):GetAniPopInfo()
+  local anipopInfo = self._anipopModule:GetAniPopInfo()
   local relicInfo = anipopInfo.relic_info
   local relicBag = relicInfo.relics
   local relicCounters = relicInfo.relic_counters
   self._resetItemCfgs = {}
-  for _,relicID in pairs(relicBag) do
-    local cfg = (Cfg.cfg_item_relic)[relicID]
+  for _, relicID in pairs(relicBag) do
+    local cfg = Cfg.cfg_item_relic[relicID]
     if cfg.OutGameEffectType == AnipopRelicOutGameEffectType.AnipopRandAgain then
-      (table.insert)(self._resetItemCfgs, cfg)
+      table.insert(self._resetItemCfgs, cfg)
     end
   end
   local totalCfgTime = 0
   local leftTime = 0
-  for _,cfg in pairs(self._resetItemCfgs) do
+  for _, cfg in pairs(self._resetItemCfgs) do
     local itemUseTime = relicCounters[cfg.ID] or 0
     local itemLeftTime = cfg.OutGameTriggerCount - itemUseTime
     totalCfgTime = totalCfgTime + cfg.OutGameTriggerCount
@@ -242,69 +169,50 @@ UIEliminateChooseCardController.SetRefreshTime = function(self)
       self._allLeftTime = itemLeftTime + self._allLeftTime
     end
     leftTime = leftTime + itemLeftTime
-    if itemLeftTime > 0 and self._rerollID == 0 then
+    if 0 < itemLeftTime and self._rerollID == 0 then
       self._rerollID = cfg.ID
     end
   end
   if leftTime == 0 then
-    (self._randomBtnObj):SetActive(false)
+    self._randomBtnObj:SetActive(false)
   else
-    ;
-    (self._randomBtnObj):SetActive(true)
+    self._randomBtnObj:SetActive(true)
     local tempTxt = leftTime .. "/" .. self._allLeftTime
-    if self._allLeftTime < leftTime then
+    if leftTime > self._allLeftTime then
       tempTxt = leftTime .. "/" .. totalCfgTime
     end
-    local leftTxt = (StringTable.Get)("str_eliminate_random_left", tempTxt)
-    ;
-    (self._randomTime):SetText(leftTxt)
+    local leftTxt = StringTable.Get("str_eliminate_random_left", tempTxt)
+    self._randomTime:SetText(leftTxt)
   end
-  do
-    self._init = true
-  end
+  self._init = true
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseCardController.RandomBtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIEliminateChooseCardController:RandomBtnOnClick()
   if self._rerollID ~= 0 then
     self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : _ENV, self
-    local res = AsyncRequestRes:New()
-    local relicTab = {}
-    res = (self._anipopModule):AnipopUseRelic(TT, self._rerollID)
-    if res:GetSucc() then
-      self._relicTab = {}
-      for index,relic in ipairs(relicTab) do
-        -- DECOMPILER ERROR at PC26: Confused about usage of register: R8 in 'UnsetPending'
-
-        if relic.id then
-          (self._relicTab)[index] = relic.id
-        else
-          -- DECOMPILER ERROR at PC30: Confused about usage of register: R8 in 'UnsetPending'
-
-          ;
-          (self._relicTab)[index] = relic.assetid
+      local res = AsyncRequestRes:New()
+      local relicTab = {}
+      res, relicTab = self._anipopModule:AnipopUseRelic(TT, self._rerollID)
+      if res:GetSucc() then
+        self._relicTab = {}
+        for index, relic in ipairs(relicTab) do
+          if relic.id then
+            self._relicTab[index] = relic.id
+          else
+            self._relicTab[index] = relic.assetid
+          end
         end
+        self:InitComponent()
+        self:SetRefreshTime()
+        self:Lock("UIEliminateChooseCardController:RandomBtnOnClick")
+        self._anim:Play("uieff_ChooseCard_In")
+        YIELD(TT, 1534)
+        self:UnLock("UIEliminateChooseCardController:RandomBtnOnClick")
+      else
+        Log.fatal("重随失败：", res:GetResult())
       end
-      self:InitComponent()
-      self:SetRefreshTime()
-      self:Lock("UIEliminateChooseCardController:RandomBtnOnClick")
-      ;
-      (self._anim):Play("uieff_ChooseCard_In")
-      YIELD(TT, 1534)
-      self:UnLock("UIEliminateChooseCardController:RandomBtnOnClick")
-    else
-      ;
-      (Log.fatal)("重随失败：", res:GetResult())
-    end
-  end
-)
+    end)
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_eliminate_sweep_notime_tip"))
+    ToastManager.ShowToast(StringTable.Get("str_eliminate_sweep_notime_tip"))
   end
 end
-
-

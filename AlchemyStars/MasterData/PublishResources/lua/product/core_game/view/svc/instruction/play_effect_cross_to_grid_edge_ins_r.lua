@@ -1,52 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_effect_cross_to_grid_edge_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayEffectCrossToGridEdgesInstruction", BaseInstruction)
 PlayEffectCrossToGridEdgesInstruction = PlayEffectCrossToGridEdgesInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEffectCrossToGridEdgesInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEffectCrossToGridEdgesInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._waitTimeStart = tonumber(paramList.waitTimeStart)
   self._waitTimeEnd = tonumber(paramList.waitTimeEnd)
   self._limitDistance = tonumber(paramList.limitDistance) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectCrossToGridEdgesInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayEffectCrossToGridEdgesInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local playSkillService = world:GetService("PlaySkill")
   local effectService = world:GetService("Effect")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local gridDataArray = scopeResult:GetAttackRange()
   local gridEdgePos = {}
-  local castPos = (casterEntity:GridLocation()).Position
+  local castPos = casterEntity:GridLocation().Position
   local targetGirdList, _, maxGridCount = InnerGameSortGridHelperRender:SortGrid(gridDataArray, castPos)
   for dir = 1, 8 do
     local t = targetGirdList[dir]
     if #t.gridList > 0 then
-      local nTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoCrossToGridEdges, self, effectService, world, t)
+      local nTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._DoCrossToGridEdges, self, effectService, world, t)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectCrossToGridEdgesInstruction._DoCrossToGridEdges = function(self, TT, effectService, world, t)
-  -- function num : 0_2 , upvalues : _ENV
-  local gridPosStart = (t.gridList)[1]
-  local gridPosEnd = (t.gridList)[#t.gridList]
+function PlayEffectCrossToGridEdgesInstruction:_DoCrossToGridEdges(TT, effectService, world, t)
+  local gridPosStart = t.gridList[1]
+  local gridPosEnd = t.gridList[#t.gridList]
   local distance = (gridPosEnd - gridPosStart).magnitude
   if distance < self._limitDistance then
-    return 
+    return
   end
   local entityEffect = effectService:CreateWorldPositionDirectionEffect(self._effectID, gridPosStart, t.direction)
   YIELD(TT, self._waitTimeStart)
@@ -55,15 +42,13 @@ PlayEffectCrossToGridEdgesInstruction._DoCrossToGridEdges = function(self, TT, e
   world:DestroyEntity(entityEffect)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectCrossToGridEdgesInstruction.GetCacheResource = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayEffectCrossToGridEdgesInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

@@ -1,45 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_summon_scan_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SummonScanTrap", SkillEffectCalc_Base)
 SkillEffectCalc_SummonScanTrap = SkillEffectCalc_SummonScanTrap
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SummonScanTrap.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
-  local cLogicFeature = ((self._world):GetBoardEntity()):LogicFeature()
+function SkillEffectCalc_SummonScanTrap:DoSkillEffectCalculator(skillEffectCalcParam)
+  local cLogicFeature = self._world:GetBoardEntity():LogicFeature()
   local trapID = cLogicFeature:GetScanTrapID()
   if not trapID or trapID == 0 then
-    return 
+    return
   end
-  local cfgTrapScan = (Cfg.cfg_trap_scan)[trapID]
+  local cfgTrapScan = Cfg.cfg_trap_scan[trapID]
   if not cfgTrapScan then
-    (Log.exception)("SummonScanTrap: invalid trap id: ", tostring(trapID))
-    return 
+    Log.exception("SummonScanTrap: invalid trap id: ", tostring(trapID))
+    return
   end
   local results = {}
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
-  for _,gridPos in ipairs(skillEffectCalcParam:GetSkillRange()) do
+  local trapServiceLogic = self._world:GetService("TrapLogic")
+  for _, gridPos in ipairs(skillEffectCalcParam:GetSkillRange()) do
     if trapServiceLogic:CanSummonTrapOnPos(gridPos, trapID, BlockFlag.None) then
       local result = self:_DoSummonProcess(trapID, gridPos, skillEffectCalcParam)
       if result then
-        (table.insert)(results, result)
+        table.insert(results, result)
       end
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonScanTrap._DoSummonProcess = function(self, trapID, gridPos, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfgTrapScan = (Cfg.cfg_trap_scan)[trapID]
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function SkillEffectCalc_SummonScanTrap:_DoSummonProcess(trapID, gridPos, skillEffectCalcParam)
+  local cfgTrapScan = Cfg.cfg_trap_scan[trapID]
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   local casterEntityID = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterEntityID)
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
   local skillID = skillEffectCalcParam:GetSkillID()
   local tDestroyTrapInfo = {}
   local tAddBuffResults = {}
@@ -49,107 +39,81 @@ SkillEffectCalc_SummonScanTrap._DoSummonProcess = function(self, trapID, gridPos
   local summonResult = SkillSummonTrapEffectResult:New(trapID, gridPos)
   local trapEntity = trapServiceLogic:CreateTrap(trapID, gridPos, Vector2(0, 1), true, nil, casterEntity)
   if not trapEntity then
-    return 
+    return
   end
-  if (table.icontains)(BattleConst.AkexiyaScanTrap_MeantimeLimitID, trapID) then
-    local cBattleFlag = (self._world):BattleFlags()
+  if table.icontains(BattleConst.AkexiyaScanTrap_MeantimeLimitID, trapID) then
+    local cBattleFlag = self._world:BattleFlags()
     local t = cBattleFlag:GetSummonMeantimeLimitEntityID(trapID)
-    ;
-    (table.insert)(t, trapEntity:GetID())
+    table.insert(t, trapEntity:GetID())
     cBattleFlag:SetSummonMeantimeLimitEntityID(trapID, t)
   end
-  do
-    local petTemplateID = cfgTrapScan.PetID
-    if petTemplateID then
-      local eLocalTeam = ((self._world):Player()):GetLocalTeamEntity()
-      local cTeam = eLocalTeam:Team()
-      local petEntities = cTeam:GetTeamPetEntities()
-      for _,e in ipairs(petEntities) do
-        local tid = (e:PetPstID()):GetTemplateID()
-        if tid == petTemplateID then
-          local attack = (e:Attributes()):GetAttack()
-          ;
-          (trapEntity:BuffComponent()):SetBuffValue("GuestAttack", attack)
-        end
-      end
-    end
-    do
-      if cfgTrapScan.Buff and #cfgTrapScan.Buff > 0 then
-        local addBuffCalc = SkillEffectCalc_AddBuff:New(self._world)
-        for _,buffID in ipairs(cfgTrapScan.Buff) do
-          local addBuffParam = SkillAddBuffEffectParam:New({prob = 1, buffID = buffID})
-          local addBuffResult = addBuffCalc:DoSkillEffectCalculator(SkillEffectCalcParam:New(casterEntity:GetID(), {trapEntity:GetID()}, addBuffParam, skillID, {gridPos}, gridPos, gridPos))
-          if addBuffResult then
-            (table.appendArray)(tAddBuffResults, addBuffResult)
-          end
-        end
-      end
-      do
-        local result = SkillEffectResult_SummonScanTrap:New(trapEntity:GetID(), tDestroyTrapInfo, tAddBuffResults)
-        return result
+  local petTemplateID = cfgTrapScan.PetID
+  if petTemplateID then
+    local eLocalTeam = self._world:Player():GetLocalTeamEntity()
+    local cTeam = eLocalTeam:Team()
+    local petEntities = cTeam:GetTeamPetEntities()
+    for _, e in ipairs(petEntities) do
+      local tid = e:PetPstID():GetTemplateID()
+      if tid == petTemplateID then
+        local attack = e:Attributes():GetAttack()
+        trapEntity:BuffComponent():SetBuffValue("GuestAttack", attack)
       end
     end
   end
+  if cfgTrapScan.Buff and 0 < #cfgTrapScan.Buff then
+    local addBuffCalc = SkillEffectCalc_AddBuff:New(self._world)
+    for _, buffID in ipairs(cfgTrapScan.Buff) do
+      local addBuffParam = SkillAddBuffEffectParam:New({prob = 1, buffID = buffID})
+      local addBuffResult = addBuffCalc:DoSkillEffectCalculator(SkillEffectCalcParam:New(casterEntity:GetID(), {
+        trapEntity:GetID()
+      }, addBuffParam, skillID, {gridPos}, gridPos, gridPos))
+      if addBuffResult then
+        table.appendArray(tAddBuffResults, addBuffResult)
+      end
+    end
+  end
+  local result = SkillEffectResult_SummonScanTrap:New(trapEntity:GetID(), tDestroyTrapInfo, tAddBuffResults)
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonScanTrap.DestroyTrapOutOfLimit = function(self, cfgTrapScan, casterEntity, count)
-  -- function num : 0_2 , upvalues : _ENV
-  if not count then
-    count = 1
-  end
+function SkillEffectCalc_SummonScanTrap:DestroyTrapOutOfLimit(cfgTrapScan, casterEntity, count)
+  count = count or 1
   local trapID = cfgTrapScan.ID
   local trapEntities = {}
-  local globalTrapEntities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).Trap)
-  for _,e in ipairs(globalTrapEntities) do
-    if not e:HasDeadMark() and (e:TrapID()):GetTrapID() == trapID then
-      (table.insert)(trapEntities, e)
+  local globalTrapEntities = self._world:GetGroupEntities(self._world.BW_WEMatchers.Trap)
+  for _, e in ipairs(globalTrapEntities) do
+    if not e:HasDeadMark() and e:TrapID():GetTrapID() == trapID then
+      table.insert(trapEntities, e)
     end
   end
   if #trapEntities + count < cfgTrapScan.GlobalMaxCount then
     return {}
   end
-  ;
-  (table.sort)(trapEntities, function(a, b)
-    -- function num : 0_2_0
-    do return a:GetID() < b:GetID() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
-  local skillLogicSvc = (self._world):GetService("SkillLogic")
+  table.sort(trapEntities, function(a, b)
+    return a:GetID() < b:GetID()
+  end)
+  local trapServiceLogic = self._world:GetService("TrapLogic")
+  local skillLogicSvc = self._world:GetService("SkillLogic")
   local r = {}
   for i = 1, count do
-    if #trapEntities ~= 0 then
-      local e = (table.remove)(trapEntities, 1)
-      local info = {entityID = e:GetID()}
-      local cTrap = e:Trap()
-      local skillID = cTrap:GetDisappearSkillID()
-      if skillID and skillID > 0 then
-        skillLogicSvc:CalcSkillEffect(e, skillID)
-        local skillResultContainer = (e:SkillContext()):GetResultContainer()
-        info.replacingSkillContainer = skillResultContainer
-        info.skillID = skillID
-      end
-      do
-        do
-          ;
-          (e:Attributes()):Modify("HP", 0)
-          trapServiceLogic:AddTrapDeadMark(e)
-          ;
-          (table.insert)(r, info)
-          -- DECOMPILER ERROR at PC101: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC101: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC101: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    if #trapEntities == 0 then
+      break
     end
+    local e = table.remove(trapEntities, 1)
+    local info = {
+      entityID = e:GetID()
+    }
+    local cTrap = e:Trap()
+    local skillID = cTrap:GetDisappearSkillID()
+    if skillID and 0 < skillID then
+      skillLogicSvc:CalcSkillEffect(e, skillID)
+      local skillResultContainer = e:SkillContext():GetResultContainer()
+      info.replacingSkillContainer = skillResultContainer
+      info.skillID = skillID
+    end
+    e:Attributes():Modify("HP", 0)
+    trapServiceLogic:AddTrapDeadMark(e)
+    table.insert(r, info)
   end
   return r
 end
-
-

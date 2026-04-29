@@ -1,48 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/map/s_maze_map_room_transport.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("s_maze_map_room_base")
 _class("SMazeMapRoom_Transport", SMazeMapRoomBase)
 SMazeMapRoom_Transport = SMazeMapRoom_Transport
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeMapRoom_Transport.OnTrigger = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.debug)("SMazeMapRoom_Transport 到达传递点房间 : ", self:NodeID())
-  if not (self:Node()):TransRoomTargetID() then
+function SMazeMapRoom_Transport:OnTrigger()
+  Log.debug("SMazeMapRoom_Transport 到达传递点房间 : ", self:NodeID())
+  if not self:Node():TransRoomTargetID() then
     self:Finish()
-    return 
+    return
   end
   local node = self:Node()
-  self._seasonMazeMgr = ((GameGlobal.GetUIModule)(SeasonMazeModule)):SeasonMazeManager()
-  local cpt = (self._seasonMazeMgr):GetMazeComponent()
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV, cpt, self
+  self._seasonMazeMgr = GameGlobal.GetUIModule(SeasonMazeModule):SeasonMazeManager()
+  local cpt = self._seasonMazeMgr:GetMazeComponent()
+  GameGlobal.TaskManager():StartTask(function(TT)
     local res = AsyncRequestRes:New()
-    ;
-    ((GameGlobal.UIStateManager)()):Lock("SMazeMapRoom_Transport:HandleSeasonMazeRoomTransfer")
-    cpt:HandleSeasonMazeRoomTransfer(TT, res, (self:Node()):TransRoomTargetID())
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("SMazeMapRoom_Transport:HandleSeasonMazeRoomTransfer")
+    GameGlobal.UIStateManager():Lock("SMazeMapRoom_Transport:HandleSeasonMazeRoomTransfer")
+    cpt:HandleSeasonMazeRoomTransfer(TT, res, self:Node():TransRoomTargetID())
+    GameGlobal.UIStateManager():UnLock("SMazeMapRoom_Transport:HandleSeasonMazeRoomTransfer")
     if not res:GetSucc() then
-      (Log.error)("HandleSeasonMazeRoomTransfer 消息失败:", res:GetResult())
-      if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-        return 
+      Log.error("HandleSeasonMazeRoomTransfer 消息失败:", res:GetResult())
+      if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+        return
       end
-      return 
+      return
     end
     self:Finish()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoom_Transport.OnTriggerComplete = function(self)
-  -- function num : 0_1
+function SMazeMapRoom_Transport:OnTriggerComplete()
 end
-
-

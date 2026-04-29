@@ -1,26 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn17n46/fishing_game/ui_cn17_n46_fishing_game_way_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN17N46FishingGameWayPoint", UICustomWidget)
 UICN17N46FishingGameWayPoint = UICN17N46FishingGameWayPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN17N46FishingGameWayPoint.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._ziImg = {[ScoreType.B] = "B", [ScoreType.A] = "A", [ScoreType.S] = "S"}
-  self._normalColor = Color(1, 0.97254901960784, 0.84313725490196)
-  self._lockColor = Color(0.53333333333333, 0.53333333333333, 0.90588235294118)
-  self._normalFishColor = Color(1, 1, 1)
-  self._lockFishColor = Color(0.53333333333333, 0.53333333333333, 0.53333333333333)
+function UICN17N46FishingGameWayPoint:OnShow(uiParams)
+  self._ziImg = {
+    [ScoreType.B] = "B",
+    [ScoreType.A] = "A",
+    [ScoreType.S] = "S"
+  }
+  self._normalColor = Color(1.0, 0.9725490196078431, 0.8431372549019608)
+  self._lockColor = Color(0.5333333333333333, 0.5333333333333333, 0.9058823529411765)
+  self._normalFishColor = Color(1.0, 1.0, 1.0)
+  self._lockFishColor = Color(0.5333333333333333, 0.5333333333333333, 0.5333333333333333)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameWayPoint._GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN17N46FishingGameWayPoint:_GetComponents()
   self._di = self:GetGameObject("di")
   self._diRectTf = self:GetUIComponent("RectTransform", "di")
   self._diImg = self:GetUIComponent("Image", "di")
@@ -34,15 +28,12 @@ UICN17N46FishingGameWayPoint._GetComponents = function(self)
   self._redPoint = self:GetGameObject("RedPoint")
   self._btn = self:GetGameObject("Image")
   self._atlas = self:GetAsset("UIN14FishingGame.spriteatlas", LoadType.SpriteAtlas)
-  self._animation = ((self.view).gameObject):GetComponent("Animation")
+  self._animation = self.view.gameObject:GetComponent("Animation")
   self._downLine = self:GetGameObject("DownLine")
   self._upLline = self:GetGameObject("UpLline")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameWayPoint.SetData = function(self, stagecontroller, index, cfg, miss_info, servertime, callback, showNew, isCurrent, missionLock, maxIndex, campaign, lockCB)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN17N46FishingGameWayPoint:SetData(stagecontroller, index, cfg, miss_info, servertime, callback, showNew, isCurrent, missionLock, maxIndex, campaign, lockCB)
   self._stageController = stagecontroller
   self._index = index
   self._cfg = cfg
@@ -57,155 +48,85 @@ UICN17N46FishingGameWayPoint.SetData = function(self, stagecontroller, index, cf
   self._clicked = false
   self._campaign = campaign
   self._lockCB = lockCB
-  local pos = (self._diRectTf).anchoredPosition
+  local pos = self._diRectTf.anchoredPosition
   if self._index % 2 == 0 then
     pos.x = 240
-    ;
-    (self._downLine):SetActive(false)
+    self._downLine:SetActive(false)
   else
     pos.x = -240
-    ;
-    (self._upLline):SetActive(false)
+    self._upLline:SetActive(false)
   end
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  (self._diRectTf).anchoredPosition = pos
+  self._diRectTf.anchoredPosition = pos
   if index == maxIndex then
-    (self._downLine):SetActive(false)
-    ;
-    (self._upLline):SetActive(false)
+    self._downLine:SetActive(false)
+    self._upLline:SetActive(false)
   end
   self.isRank = false
-  local campcfg = ((Cfg.cfg_campaign_component)({CampaignID = (self._campaign)._id}))[1]
-  local subKey = (campcfg.RankSubKey)[1]
-  if subKey == (self._cfg).ID then
+  local campcfg = Cfg.cfg_campaign_component({
+    CampaignID = self._campaign._id
+  })[1]
+  local subKey = campcfg.RankSubKey[1]
+  if subKey == self._cfg.ID then
     self.isRank = true
   end
   if self.isRank then
-    (self._downLine):SetActive(false)
-    ;
-    (self._upLline):SetActive(false)
+    self._downLine:SetActive(false)
+    self._upLline:SetActive(false)
     pos.x = 50
-    -- DECOMPILER ERROR at PC73: Confused about usage of register: R16 in 'UnsetPending'
-
-    ;
-    (self._diRectTf).anchoredPosition = pos
+    self._diRectTf.anchoredPosition = pos
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameWayPoint._SetUIInfo = function(self)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._yu).sprite = (self._atlas):GetSprite((self._cfg).Bg)
-  self:RefreshRedpointStateZi((self._miss_info).mission_info)
+function UICN17N46FishingGameWayPoint:_SetUIInfo()
+  self._yu.sprite = self._atlas:GetSprite(self._cfg.Bg)
+  self:RefreshRedpointStateZi(self._miss_info.mission_info)
   self:RefreshUnLockState(self._serverTime, self._missionLock)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameWayPoint.RefreshUnLockState = function(self, servertime, missionLock)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN17N46FishingGameWayPoint:RefreshUnLockState(servertime, missionLock)
   self._serverTime = servertime
   self._missionLock = missionLock
-  self._canClick = ((self._miss_info).unlock_time <= self._serverTime and not self._missionLock)
-  if self._serverTime < (self._miss_info).unlock_time then
-    (self._btn):SetActive(true)
-    ;
-    (self._name):SetText((self._stageController):_GetRemainTime((self._miss_info).unlock_time - self._serverTime))
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._nameBg).sprite = (self._atlas):GetSprite("n14_fish_bg_name_lock")
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._name).color = self._lockColor
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._yu).color = self._lockFishColor
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._diImg).color = self._lockFishColor
-    ;
-    (self._lock):SetActive(true)
+  self._canClick = self._miss_info.unlock_time <= self._serverTime and not self._missionLock
+  if self._miss_info.unlock_time > self._serverTime then
+    self._btn:SetActive(true)
+    self._name:SetText(self._stageController:_GetRemainTime(self._miss_info.unlock_time - self._serverTime))
+    self._nameBg.sprite = self._atlas:GetSprite("n14_fish_bg_name_lock")
+    self._name.color = self._lockColor
+    self._yu.color = self._lockFishColor
+    self._diImg.color = self._lockFishColor
+    self._lock:SetActive(true)
   elseif self._missionLock then
-    (self._btn):SetActive(true)
-    ;
-    (self._name):SetText((StringTable.Get)("str_fishing_game_lock_title"))
-    -- DECOMPILER ERROR at PC71: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._nameBg).sprite = (self._atlas):GetSprite("n14_fish_bg_name_lock")
-    -- DECOMPILER ERROR at PC74: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._name).color = self._lockColor
-    -- DECOMPILER ERROR at PC77: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._yu).color = self._lockFishColor
-    -- DECOMPILER ERROR at PC80: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._diImg).color = self._lockFishColor
-    ;
-    (self._lock):SetActive(true)
+    self._btn:SetActive(true)
+    self._name:SetText(StringTable.Get("str_fishing_game_lock_title"))
+    self._nameBg.sprite = self._atlas:GetSprite("n14_fish_bg_name_lock")
+    self._name.color = self._lockColor
+    self._yu.color = self._lockFishColor
+    self._diImg.color = self._lockFishColor
+    self._lock:SetActive(true)
   else
-    (self._btn):SetActive(false)
-    ;
-    (self._name):SetText((StringTable.Get)((self._cfg).Title))
-    -- DECOMPILER ERROR at PC103: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._nameBg).sprite = (self._atlas):GetSprite("n14_fish_bg_name")
-    -- DECOMPILER ERROR at PC106: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._name).color = self._normalColor
-    -- DECOMPILER ERROR at PC109: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._yu).color = self._normalFishColor
-    -- DECOMPILER ERROR at PC112: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._diImg).color = self._normalFishColor
-    ;
-    (self._lock):SetActive(false)
+    self._btn:SetActive(false)
+    self._name:SetText(StringTable.Get(self._cfg.Title))
+    self._nameBg.sprite = self._atlas:GetSprite("n14_fish_bg_name")
+    self._name.color = self._normalColor
+    self._yu.color = self._normalFishColor
+    self._diImg.color = self._normalFishColor
+    self._lock:SetActive(false)
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameWayPoint.RefreshRedpointStateZi = function(self, miss_info)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN17N46FishingGameWayPoint:RefreshRedpointStateZi(miss_info)
   local showredpoint = self:_CheckRedpoint(miss_info)
-  ;
-  (self._redPoint):SetActive(showredpoint)
-  if ScoreType.B <= miss_info.mission_grade then
-    (self._ziBg):SetActive(true)
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._zi).text = (self._ziImg)[miss_info.mission_grade]
+  self._redPoint:SetActive(showredpoint)
+  if miss_info.mission_grade >= ScoreType.B then
+    self._ziBg:SetActive(true)
+    self._zi.text = self._ziImg[miss_info.mission_grade]
   else
-    ;
-    (self._ziBg):SetActive(false)
+    self._ziBg:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameWayPoint._CheckRedpoint = function(self, miss_info)
-  -- function num : 0_6 , upvalues : _ENV
-  for key,value in pairs(ScoreType) do
+function UICN17N46FishingGameWayPoint:_CheckRedpoint(miss_info)
+  for key, value in pairs(ScoreType) do
     if value <= miss_info.mission_grade and miss_info.reward_mask & value == 0 then
       return true
     end
@@ -213,88 +134,53 @@ UICN17N46FishingGameWayPoint._CheckRedpoint = function(self, miss_info)
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameWayPoint.BtnOnClick = function(self, go)
-  -- function num : 0_7
+function UICN17N46FishingGameWayPoint:BtnOnClick(go)
   if not self._canClick then
-    return 
+    return
   end
   if self._showNew then
     self._showNew = false
   end
-  ;
-  (self._animation):Play("uieff_N14_Fishing_Way_Click")
-  ;
-  (self._callBack)(self._index)
+  self._animation:Play("uieff_N14_Fishing_Way_Click")
+  self._callBack(self._index)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameWayPoint.RefreshClickStatus = function(self, clickIndex)
-  -- function num : 0_8
+function UICN17N46FishingGameWayPoint:RefreshClickStatus(clickIndex)
   if self._index == clickIndex then
     self._clicked = true
   else
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-    if self._serverTime < (self._miss_info).unlock_time or self._missionLock then
-      (self._diImg).sprite = (self._atlas):GetSprite("n14_fish_bg_guanqia_2")
+    if self._miss_info.unlock_time > self._serverTime or self._missionLock then
+      self._diImg.sprite = self._atlas:GetSprite("n14_fish_bg_guanqia_2")
+    elseif self._miss_info.mission_info.max_score > 0 then
+      self._diImg.sprite = self._atlas:GetSprite("n14_fish_bg_guanqia_1")
     else
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-      if ((self._miss_info).mission_info).max_score > 0 then
-        (self._diImg).sprite = (self._atlas):GetSprite("n14_fish_bg_guanqia_1")
-      else
-        -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-        ;
-        (self._diImg).sprite = (self._atlas):GetSprite("n14_fish_bg_guanqia_2")
-      end
+      self._diImg.sprite = self._atlas:GetSprite("n14_fish_bg_guanqia_2")
     end
     if self._clicked then
-      (self._animation):Play("uieff_N14_Fishing_Way_Click_back")
+      self._animation:Play("uieff_N14_Fishing_Way_Click_back")
       self._clicked = false
     end
   end
-  ;
-  ((self._diImg2).gameObject):SetActive(self._index == clickIndex)
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._diImg2).enabled = self._index == clickIndex
-  ;
-  (self._diImg):SetNativeSize()
-  ;
-  (self._diImg2):SetNativeSize()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._diImg2.gameObject:SetActive(self._index == clickIndex)
+  self._diImg2.enabled = self._index == clickIndex
+  self._diImg:SetNativeSize()
+  self._diImg2:SetNativeSize()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameWayPoint.LockOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UICN17N46FishingGameWayPoint:LockOnClick(go)
   if self._lockCB then
-    (self._lockCB)()
+    self._lockCB()
   end
-  do
-    if self._serverTime < (self._miss_info).unlock_time then
-      local str = (self._stageController):_GetRemainTime((self._miss_info).unlock_time - self._serverTime)
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_fishing_cn17_lock_time", str))
-      return 
-    end
-    if self._missionLock then
-      (ToastManager.ShowToast)((StringTable.Get)("str_fishing_cn17_lock_mission"))
-    end
+  if self._miss_info.unlock_time > self._serverTime then
+    local str = self._stageController:_GetRemainTime(self._miss_info.unlock_time - self._serverTime)
+    ToastManager.ShowToast(StringTable.Get("str_fishing_cn17_lock_time", str))
+    return
+  end
+  if self._missionLock then
+    ToastManager.ShowToast(StringTable.Get("str_fishing_cn17_lock_mission"))
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameWayPoint.RefreshData = function(self, data)
-  -- function num : 0_10
+function UICN17N46FishingGameWayPoint:RefreshData(data)
   self._miss_info = data
 end
-
-

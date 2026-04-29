@@ -1,97 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_camp_center/luckland_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_lobby_center_camp_data")
 _class("LuckLandEnter", MainLobbyCenterCampData)
 LuckLandEnter = LuckLandEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandEnter.LoadData = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function LuckLandEnter:LoadData(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_LUCKLAND, ECampaignN11CenterComponentID.ECAMPAIGN_N11_LUCK_LAND)
-  local localProcess = (self._campaign):GetLocalProcess()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_LUCKLAND, ECampaignN11CenterComponentID.ECAMPAIGN_N11_LUCK_LAND)
+  local localProcess = self._campaign:GetLocalProcess()
   self._component = localProcess:GetComponent(ECampaignN11CenterComponentID.ECAMPAIGN_N11_LUCK_LAND)
   self._componentInfo = localProcess:GetComponentInfo(ECampaignN11CenterComponentID.ECAMPAIGN_N11_LUCK_LAND)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEnter.CheckNew = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  return (UIActivityHelper.CheckCampaignSampleNewPoint)(self._campaign) and 1 or 0
+function LuckLandEnter:CheckNew()
+  return UIActivityHelper.CheckCampaignSampleNewPoint(self._campaign) and 1 or 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEnter.CheckRed = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function LuckLandEnter:CheckRed()
   if not self._component then
     return 0
   end
   self._lineDatas = {}
-  local cfgs = (Cfg.cfg_component_luck_land)({ComponentID = (self._component):GetComponentCfgId()})
+  local cfgs = Cfg.cfg_component_luck_land({
+    ComponentID = self._component:GetComponentCfgId()
+  })
   if cfgs then
-    for _,cfg in pairs(cfgs) do
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R7 in 'UnsetPending'
-
-      if not (self._lineDatas)[cfg.Line] then
-        (self._lineDatas)[cfg.Line] = {}
+    for _, cfg in pairs(cfgs) do
+      if not self._lineDatas[cfg.Line] then
+        self._lineDatas[cfg.Line] = {}
       end
-      ;
-      (table.insert)((self._lineDatas)[cfg.Line], cfg)
+      table.insert(self._lineDatas[cfg.Line], cfg)
     end
   end
-  do
-    for _,lineDatas in pairs(self._lineDatas) do
-      (table.sort)(lineDatas, function(a, b)
-    -- function num : 0_2_0
-    do return a.MissionID < b.MissionID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  for _, lineDatas in pairs(self._lineDatas) do
+    table.sort(lineDatas, function(a, b)
+      return a.MissionID < b.MissionID
+    end)
   end
-)
+  for i = 1, #self._lineDatas do
+    local r1 = self:IsUnlock(self._lineDatas[i][1])
+    local r2 = 0 >= LocalDB.GetInt("LuckLandLevel_Unlock_Line_" .. GameGlobal.GetModule(RoleModule):GetPstId() .. i, 0)
+    if r1 and r2 then
+      return 1
     end
-    for i = 1, #self._lineDatas do
-      local r1 = self:IsUnlock(((self._lineDatas)[i])[1])
-      local r2 = (LocalDB.GetInt)("LuckLandLevel_Unlock_Line_" .. ((GameGlobal.GetModule)(RoleModule)):GetPstId() .. i, 0) <= 0
-      if r1 and r2 then
-        return 1
-      end
-    end
-    do return 0 end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEnter.IsUnlock = function(self, cfg)
-  -- function num : 0_3
+function LuckLandEnter:IsUnlock(cfg)
   local preMissionUnlock = false
   local timeUnlock = false
-  if cfg.NeedMissionId > 0 and ((self._componentInfo).m_pass_mission_info)[cfg.NeedMissionId] == nil then
-    preMissionUnlock = not cfg
+  if cfg then
+    preMissionUnlock = cfg.NeedMissionId <= 0 or self._componentInfo.m_pass_mission_info[cfg.NeedMissionId] ~= nil
     timeUnlock = self:_IsUnlock(cfg.UnlockTime)
-    do return not preMissionUnlock or timeUnlock end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
   end
+  return preMissionUnlock and timeUnlock
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandEnter._IsUnlock = function(self, UnlockTime)
-  -- function num : 0_4 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function LuckLandEnter:_IsUnlock(UnlockTime)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   local unlockTime = loginModule:GetTimeStampByTimeStr(UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
   local curTime = svrTimeModule:GetServerTime() * 0.001
-  do return unlockTime <= curTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return unlockTime <= curTime
 end
-
-

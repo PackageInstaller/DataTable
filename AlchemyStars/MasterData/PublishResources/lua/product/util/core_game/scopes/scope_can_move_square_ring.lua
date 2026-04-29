@@ -1,35 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_can_move_square_ring.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_CanMoveSquareRing", SkillScopeCalculator_Base)
 SkillScopeCalculator_CanMoveSquareRing = SkillScopeCalculator_CanMoveSquareRing
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_CanMoveSquareRing.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local invalidPos = nil
-  local world = (self._gridFilter)._world
-  do
-    if world and world:MatchType() == MatchType.MT_BlackFist and casterEntity:HasPet() then
-      local enemy = (((casterEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
-      invalidPos = enemy:GetGridPosition()
-    end
-    local ringCount = scopeParam[1]
-    local listTotalData = (ComputeScopeRange.ComputeRange_SquareRing)(casterPos, #bodyArea, ringCount)
-    local listAttackData = {}
-    for key,value in pairs(listTotalData) do
-      local isValidGrid = not (self._gridFilter):IsPosBlock(value, BlockFlag.LinkLine) and value ~= invalidPos
-      if isValidGrid == true then
-        listAttackData[#listAttackData + 1] = value
-      end
-    end
-    local result = SkillScopeResult:New(SkillScopeType.CanMoveSquareRing, casterPos, listAttackData, listTotalData)
-    do return result end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function SkillScopeCalculator_CanMoveSquareRing:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local invalidPos
+  local world = self._gridFilter._world
+  if world and world:MatchType() == MatchType.MT_BlackFist and casterEntity:HasPet() then
+    local enemy = casterEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
+    invalidPos = enemy:GetGridPosition()
   end
+  local ringCount = scopeParam[1]
+  local listTotalData = ComputeScopeRange.ComputeRange_SquareRing(casterPos, #bodyArea, ringCount)
+  local listAttackData = {}
+  for key, value in pairs(listTotalData) do
+    local isValidGrid = not self._gridFilter:IsPosBlock(value, BlockFlag.LinkLine) and value ~= invalidPos
+    if isValidGrid == true then
+      listAttackData[#listAttackData + 1] = value
+    end
+  end
+  local result = SkillScopeResult:New(SkillScopeType.CanMoveSquareRing, casterPos, listAttackData, listTotalData)
+  return result
 end
-
-

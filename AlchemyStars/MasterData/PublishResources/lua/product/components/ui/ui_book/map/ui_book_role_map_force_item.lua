@@ -1,57 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_book/map/ui_book_role_map_force_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookRoleMapForceItem", UICustomWidget)
 UIBookRoleMapForceItem = UIBookRoleMapForceItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookRoleMapForceItem.Constructor = function(self)
-  -- function num : 0_0
+function UIBookRoleMapForceItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapForceItem.OnShow = function(self)
-  -- function num : 0_1
+function UIBookRoleMapForceItem:OnShow()
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapForceItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIBookRoleMapForceItem:_GetComponents()
   self._icon = self:GetUIComponent("Image", "Icon")
   self._owner = self:RootUIOwner()
-  self._altas = (self._owner).altas
+  self._altas = self._owner.altas
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapForceItem.SetData = function(self, cfg, callback)
-  -- function num : 0_3
+function UIBookRoleMapForceItem:SetData(cfg, callback)
   self._cfg = cfg
   self._callback = callback
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapForceItem._InitComponents = function(self)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._icon).sprite = (self._altas):GetSprite((self._cfg).ForceIcon)
+function UIBookRoleMapForceItem:_InitComponents()
+  self._icon.sprite = self._altas:GetSprite(self._cfg.ForceIcon)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapForceItem.BtnOnClick = function(self)
-  -- function num : 0_5
+function UIBookRoleMapForceItem:BtnOnClick()
   if self._callback then
-    (self._callback)(self._cfg)
+    self._callback(self._cfg)
   end
 end
-
-

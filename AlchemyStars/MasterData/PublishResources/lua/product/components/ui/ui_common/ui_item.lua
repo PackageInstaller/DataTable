@@ -1,124 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_common/ui_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_item_node")
 _class("UIItem", UICustomWidget)
 UIItem = UIItem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIItem:Constructor()
   self._longTrigger = false
   self._perSecondCout = 2
   self._perNextSecondCout = 5
   self._uiCommonAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
-  self._transform = (self:GetGameObject()).transform
+function UIItem:OnShow(uiParams)
+  self._transform = self:GetGameObject().transform
   self:_InitNodes()
   self._chooseGO = self:GetGameObject("choose")
   self:Select(false)
   self._btnGO = self:GetGameObject("btn")
   self._btnImage = self:GetUIComponent("Image", "btn")
-  self._anim = ((self:GetGameObject()).transform):GetComponent("Animation")
+  self._anim = self:GetGameObject().transform:GetComponent("Animation")
   self:SetBtnImage(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItem._InitNodes = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIItem:_InitNodes()
   self._nodes = {}
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Normal] = UIItemNormalNode:New(self:GetUIComponent("UIView", "g_normal"), self)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Exp] = UIItemExpNode:New(self:GetUIComponent("UIView", "g_exp"), self)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Res] = UIItemResNode:New(self:GetUIComponent("UIView", "g_res"), self)
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Reduce] = UIItemReduceNode:New(self:GetUIComponent("UIView", "g_reduce"), self)
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Love] = UIItemLoveNode:New(self:GetUIComponent("UIView", "g_love"), self)
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Award] = UIItemAwardNode:New(self:GetUIComponent("UIView", "g_award"), self)
-  -- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Result] = UIItemResultNode:New(self:GetUIComponent("UIView", "g_result"), self)
-  -- DECOMPILER ERROR at PC97: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.TopAward] = UIItemTopAwardNode:New(self:GetUIComponent("UIView", "g_topaward"), self)
-  -- DECOMPILER ERROR at PC109: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Activity] = UIItemActivityNode:New(self:GetUIComponent("UIView", "g_activity"), self)
-  -- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.ReturnHelp] = UIItemReturnHelpNode:New(self:GetUIComponent("UIView", "g_returnHelp"), self)
-  -- DECOMPILER ERROR at PC133: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.Toggle] = UIItemPackBackNode:New(self:GetUIComponent("UIView", "g_backpack"), self)
-  -- DECOMPILER ERROR at PC145: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.ItemUseCount] = PetLevelUpFastNode:New(self:GetUIComponent("UIView", "g_usecount"), self)
+  self._nodes[UIItemNode.Normal] = UIItemNormalNode:New(self:GetUIComponent("UIView", "g_normal"), self)
+  self._nodes[UIItemNode.Exp] = UIItemExpNode:New(self:GetUIComponent("UIView", "g_exp"), self)
+  self._nodes[UIItemNode.Res] = UIItemResNode:New(self:GetUIComponent("UIView", "g_res"), self)
+  self._nodes[UIItemNode.Reduce] = UIItemReduceNode:New(self:GetUIComponent("UIView", "g_reduce"), self)
+  self._nodes[UIItemNode.Love] = UIItemLoveNode:New(self:GetUIComponent("UIView", "g_love"), self)
+  self._nodes[UIItemNode.Award] = UIItemAwardNode:New(self:GetUIComponent("UIView", "g_award"), self)
+  self._nodes[UIItemNode.Result] = UIItemResultNode:New(self:GetUIComponent("UIView", "g_result"), self)
+  self._nodes[UIItemNode.TopAward] = UIItemTopAwardNode:New(self:GetUIComponent("UIView", "g_topaward"), self)
+  self._nodes[UIItemNode.Activity] = UIItemActivityNode:New(self:GetUIComponent("UIView", "g_activity"), self)
+  self._nodes[UIItemNode.ReturnHelp] = UIItemReturnHelpNode:New(self:GetUIComponent("UIView", "g_returnHelp"), self)
+  self._nodes[UIItemNode.Toggle] = UIItemPackBackNode:New(self:GetUIComponent("UIView", "g_backpack"), self)
+  self._nodes[UIItemNode.ItemUseCount] = PetLevelUpFastNode:New(self:GetUIComponent("UIView", "g_usecount"), self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItem.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIItem:OnHide()
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
   end
   self._longTrigger = false
-  for uiItemNode,node in pairs(self._nodes) do
+  for uiItemNode, node in pairs(self._nodes) do
     node:Hide()
   end
   self._nodes = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItem.PlayAni = function(self, aniName)
-  -- function num : 0_4
-  (self._anim):Play(aniName)
+function UIItem:PlayAni(aniName)
+  self._anim:Play(aniName)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItem.SetForm = function(self, type, scale, dontPlayAni)
-  -- function num : 0_5 , upvalues : _ENV
+function UIItem:SetForm(type, scale, dontPlayAni)
   self._uiItemForm = type
   self._curNodes = {}
   local customer = UIItemCustomer[self._uiItemForm]
-  for uiItemNode,node in pairs(self._nodes) do
-    local i = (table.ikey)(customer, uiItemNode)
-    if i and i > 0 then
+  for uiItemNode, node in pairs(self._nodes) do
+    local i = table.ikey(customer, uiItemNode)
+    if i and 0 < i then
       node:Enable(true)
-      ;
-      (table.insert)(self._curNodes, node)
+      table.insert(self._curNodes, node)
     else
       node:Enable(false)
     end
@@ -129,116 +70,78 @@ UIItem.SetForm = function(self, type, scale, dontPlayAni)
   self:SetScale(scale)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItem.EnableNode = function(self, nodeId, isEnable)
-  -- function num : 0_6
-  local node = (self._nodes)[nodeId]
+function UIItem:EnableNode(nodeId, isEnable)
+  local node = self._nodes[nodeId]
   if node ~= nil then
     node:Enable(isEnable)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItem.SetData = function(self, params)
-  -- function num : 0_7 , upvalues : _ENV
+function UIItem:SetData(params)
   if not self._uiItemData then
     self._uiItemData = UIItemData:New()
   end
-  ;
-  (self._uiItemData):SetParams(params)
-  for _,node in pairs(self._curNodes) do
+  self._uiItemData:SetParams(params)
+  for _, node in pairs(self._curNodes) do
     node:Show(self._uiItemData, self._uiItemForm)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItem.ShowNodes = function(self, uiItemNode, enable)
-  -- function num : 0_8
-  if (self._nodes)[uiItemNode] then
-    ((self._nodes)[uiItemNode]):Enable(enable)
+function UIItem:ShowNodes(uiItemNode, enable)
+  if self._nodes[uiItemNode] then
+    self._nodes[uiItemNode]:Enable(enable)
   end
 end
 
 local middleScaleCls = {UIStage = true, UIExtraMissionStageController = true}
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
 
-UIItem.SetScale = function(self, scale)
-  -- function num : 0_9 , upvalues : _ENV
-  if not scale then
-    scale = 1
-  end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIItem:SetScale(scale)
+  scale = scale or 1
   if self._transform then
-    (self._transform).localScale = Vector3(scale, scale, scale)
+    self._transform.localScale = Vector3(scale, scale, scale)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItem.Select = function(self, select, noAnim)
-  -- function num : 0_10 , upvalues : _ENV
+function UIItem:Select(select, noAnim)
   if self._chooseGO then
-    (self._chooseGO):SetActive(select)
+    self._chooseGO:SetActive(select)
     if select then
       if noAnim then
-        return 
+        return
       end
       if self._tweener then
-        (self._tweener):Kill(true)
+        self._tweener:Kill(true)
       end
-      self._tweener = (self._transform):DOPunchScale(Vector3(0.1, 0.1, 0.1), 0.2)
+      self._tweener = self._transform:DOPunchScale(Vector3(0.1, 0.1, 0.1), 0.2)
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItem.SetClickCallBack = function(self, callBack, param)
-  -- function num : 0_11 , upvalues : _ENV
+function UIItem:SetClickCallBack(callBack, param)
   self._clickCallBack = callBack
   self._param = param
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnGO), UIEvent.Click, function(go)
-    -- function num : 0_11_0 , upvalues : self
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnGO), UIEvent.Click, function(go)
     if self._longTrigger == false then
       self:btnOnClick(go)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItem.btnOnClick = function(self, go)
-  -- function num : 0_12
+function UIItem:btnOnClick(go)
   if self._clickCallBack then
-    (self._clickCallBack)(go)
+    self._clickCallBack(go)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItem.SetBtnImage = function(self, bImage)
-  -- function num : 0_13
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIItem:SetBtnImage(bImage)
   if bImage then
-    (self._btnImage).sprite = (self._uiCommonAtlas):GetSprite("spirit_dikuang10_frame")
+    self._btnImage.sprite = self._uiCommonAtlas:GetSprite("spirit_dikuang10_frame")
   else
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._btnImage).sprite = (self._uiCommonAtlas):GetSprite("spirit_dikuang1_frame")
+    self._btnImage.sprite = self._uiCommonAtlas:GetSprite("spirit_dikuang1_frame")
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItem.SetLongPressCallBack = function(self, longPressCallBack, longPressUpCallBack, pressTime, update)
-  -- function num : 0_14
+function UIItem:SetLongPressCallBack(longPressCallBack, longPressUpCallBack, pressTime, update)
   self._longPressCallBack = longPressCallBack
   self._longPressUpCallBack = longPressUpCallBack
   self._pressTimeConst = pressTime
@@ -247,78 +150,59 @@ UIItem.SetLongPressCallBack = function(self, longPressCallBack, longPressUpCallB
   self:InitLongPress()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItem.SetReduceLongPressCallBack = function(self, sec)
-  -- function num : 0_15 , upvalues : _ENV
-  if (self._nodes)[UIItemNode.Reduce] then
-    ((self._nodes)[UIItemNode.Reduce]):SetReduceLongPressCallBack(sec)
+function UIItem:SetReduceLongPressCallBack(sec)
+  if self._nodes[UIItemNode.Reduce] then
+    self._nodes[UIItemNode.Reduce]:SetReduceLongPressCallBack(sec)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItem.InitLongPress = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnGO), UIEvent.Press, function(go)
-    -- function num : 0_16_0 , upvalues : self, _ENV
+function UIItem:InitLongPress()
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnGO), UIEvent.Press, function(go)
     if self._timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._timerEvent = nil
     end
     self:LongEvent()
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnGO), UIEvent.Unhovered, function(go)
-    -- function num : 0_16_1 , upvalues : self, _ENV
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnGO), UIEvent.Unhovered, function(go)
     if self._timerEvent then
       self._startTime = nil
       self._lastTime = nil
       self._addTime = nil
-      ;
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._pressTime = self._pressTimeConst
       self._longTrigger = false
       self._timerEvent = nil
     end
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnGO), UIEvent.Release, function(go)
-    -- function num : 0_16_2 , upvalues : self, _ENV
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnGO), UIEvent.Release, function(go)
     if self._timerEvent then
       self._startTime = nil
       self._lastTime = nil
       self._addTime = nil
-      ;
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._pressTime = self._pressTimeConst
       self._longTrigger = false
       if self._longPressUpCallBack then
-        (self._longPressUpCallBack)()
+        self._longPressUpCallBack()
       end
       self._timerEvent = nil
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItem.LongEvent = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local gradeLv = (HelperProxy:GetInstance()):GetLongEventGrade()
+function UIItem:LongEvent()
+  local gradeLv = HelperProxy:GetInstance():GetLongEventGrade()
   if gradeLv then
     self._timerEvent = self:LongEventUpLv(gradeLv)
   else
-    self._timerEvent = ((GameGlobal.Timer)()):AddEvent(self._pressTime, function()
-    -- function num : 0_17_0 , upvalues : _ENV, self
-    if (GuideHelper.IsUIGuideShow)() then
-      return 
-    end
-    self._longTrigger = true
-    do
+    self._timerEvent = GameGlobal.Timer():AddEvent(self._pressTime, function()
+      if GuideHelper.IsUIGuideShow() then
+        return
+      end
+      self._longTrigger = true
       if self._longPressCallBack then
-        local count = (self._longPressCallBack)()
+        local count = self._longPressCallBack()
         if count then
           self:Calculate(count)
         end
@@ -326,33 +210,29 @@ UIItem.LongEvent = function(self)
       if self._update then
         self:LongEvent()
       end
-    end
-  end
-)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItem.LongEventUpLv = function(self, gradeLv)
-  -- function num : 0_18 , upvalues : _ENV
-  local cfg = (Cfg.cfg_up_lv_long_press)[gradeLv]
+function UIItem:LongEventUpLv(gradeLv)
+  local cfg = Cfg.cfg_up_lv_long_press[gradeLv]
   if not cfg then
-    (Log.fatal)("###[UIItem] LongEventUpLv cfg is nil ! grade:", gradeLv)
+    Log.fatal("###[UIItem] LongEventUpLv cfg is nil ! grade:", gradeLv)
   end
   local arr = cfg.Value
   local datas = {}
   for i = 1, #arr do
-    local time = (arr[i])[1]
-    local count = (arr[i])[2]
-    local data = {time = time * 1000, count = count}
-    ;
-    (table.insert)(datas, data)
+    local time = arr[i][1]
+    local count = arr[i][2]
+    local data = {
+      time = time * 1000,
+      count = count
+    }
+    table.insert(datas, data)
   end
-  local timer = ((GameGlobal.Timer)()):AddEventTimes(1, TimerTriggerCount.Infinite, function()
-    -- function num : 0_18_0 , upvalues : _ENV, self, datas
-    if (GuideHelper.IsUIGuideShow)() then
-      return 
+  local timer = GameGlobal.Timer():AddEventTimes(1, TimerTriggerCount.Infinite, function()
+    if GuideHelper.IsUIGuideShow() then
+      return
     end
     self._longTrigger = true
     if self._update then
@@ -362,46 +242,38 @@ UIItem.LongEventUpLv = function(self, gradeLv)
       if not self._addTime then
         self._addTime = 0
       end
-      self._nextTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime()
+      self._nextTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime()
       if not self._lastTime then
         self._lastTime = self._nextTime
       end
       for i = 1, #datas do
         local data = datas[i]
         local time = data.time
-        if self._startTime < time then
+        if time > self._startTime then
           local count = data.count
           self._addVal = 1000 / count
           break
         end
       end
-      do
-        do
-          if self._addVal <= self._addTime then
-            local cbTimes = (math.modf)(self._addTime / self._addVal)
-            for j = 1, cbTimes do
-              (self._longPressCallBack)()
-            end
-            self._addTime = 0
-          end
-          local gapTime = self._nextTime - self._lastTime
-          self._startTime = self._startTime + gapTime
-          self._addTime = self._addTime + gapTime
-          self._lastTime = self._nextTime
+      if self._addTime >= self._addVal then
+        local cbTimes = math.modf(self._addTime / self._addVal)
+        for j = 1, cbTimes do
+          self._longPressCallBack()
         end
+        self._addTime = 0
       end
+      local gapTime = self._nextTime - self._lastTime
+      self._startTime = self._startTime + gapTime
+      self._addTime = self._addTime + gapTime
+      self._lastTime = self._nextTime
     end
-  end
-)
+  end)
   return timer
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItem.Calculate = function(self, count)
-  -- function num : 0_19 , upvalues : _ENV
-  local presse_count = ((Cfg.cfg_global).pet_up_level_presse_count).IntValue
-  local next_presse_count = ((Cfg.cfg_global).pet_up_level_next_presse_count).IntValue
+function UIItem:Calculate(count)
+  local presse_count = Cfg.cfg_global.pet_up_level_presse_count.IntValue
+  local next_presse_count = Cfg.cfg_global.pet_up_level_next_presse_count.IntValue
   local real_presse_count = count
   if presse_count <= real_presse_count then
     self._pressTime = self._pressTimeConst / self._perSecondCout
@@ -411,53 +283,33 @@ UIItem.Calculate = function(self, count)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItem.GetBtn = function(self)
-  -- function num : 0_20
+function UIItem:GetBtn()
   return self._btnGO
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItem.SetToggleGroup = function(self, group)
-  -- function num : 0_21 , upvalues : _ENV
+function UIItem:SetToggleGroup(group)
   self._toggleGroup = group
-  if (self._nodes)[UIItemNode.Toggle] then
-    ((self._nodes)[UIItemNode.Toggle]):SetToggleGroup(self._toggleGroup)
+  if self._nodes[UIItemNode.Toggle] then
+    self._nodes[UIItemNode.Toggle]:SetToggleGroup(self._toggleGroup)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItem.SetToggleOnValueChangedCallBack = function(self, onValueChangedCallBack)
-  -- function num : 0_22 , upvalues : _ENV
-  if (self._nodes)[UIItemNode.Toggle] then
-    ((self._nodes)[UIItemNode.Toggle]):SetToggleOnValueChangedCallBack(onValueChangedCallBack)
+function UIItem:SetToggleOnValueChangedCallBack(onValueChangedCallBack)
+  if self._nodes[UIItemNode.Toggle] then
+    self._nodes[UIItemNode.Toggle]:SetToggleOnValueChangedCallBack(onValueChangedCallBack)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItem.SetToggleValue = function(self, isOn)
-  -- function num : 0_23 , upvalues : _ENV
-  if (self._nodes)[UIItemNode.Toggle] then
-    ((self._nodes)[UIItemNode.Toggle]):SetToggleValue(isOn)
+function UIItem:SetToggleValue(isOn)
+  if self._nodes[UIItemNode.Toggle] then
+    self._nodes[UIItemNode.Toggle]:SetToggleValue(isOn)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItem.GetItemData = function(self)
-  -- function num : 0_24
+function UIItem:GetItemData()
   return self._uiItemData
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItem.ClearItemData = function(self)
-  -- function num : 0_25
+function UIItem:ClearItemData()
   self._uiItemData = nil
 end
-
-

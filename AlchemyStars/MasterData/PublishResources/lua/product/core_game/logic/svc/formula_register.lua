@@ -1,394 +1,100 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/formula_register.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("formula_svc_base_l")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-FormulaService.Register = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function FormulaService:Register()
   self._formulaList = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.NormalAttack] = self.CalcDamage_1
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.MonsterAttack] = self.CalcDamage_2
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.TrapReal] = self.CalcDamage_3
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.ChainAttack] = self.CalcDamage_4
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.ActiveAttack] = self.CalcDamage_5
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_6] = self.CalcDamage_6
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_7] = self.CalcDamage_7
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_8] = self.CalcDamage_8
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_9] = self.CalcDamage_9
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_10] = self.CalcDamage_10
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_11] = self.CalcDamage_11
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.BloodDamage] = self.CalcDamage_13
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.BurnDamage] = self.CalcDamage_14
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.PoisonDamage] = self.CalcDamage_15
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.ExplodeDamage] = self.CalcDamage_16
-  -- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.DeadDamage] = self.CalcDamage_17
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_18] = self.CalcDamage_18
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_19] = self.CalcDamage_19
-  -- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_100] = self.CalcDamage_100
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_101] = self.CalcDamage_101
-  -- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_102] = self.CalcDamage_102
-  -- DECOMPILER ERROR at PC111: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_103] = self.CalcDamage_103
-  -- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_104] = self.CalcDamage_104
-  -- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_105] = self.CalcDamage_105
-  -- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_106] = self.CalcDamage_106
-  -- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_107] = self.CalcDamage_107
-  -- DECOMPILER ERROR at PC136: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_108] = self.CalcDamage_108
-  -- DECOMPILER ERROR at PC141: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_109] = self.CalcDamage_109
-  -- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_110] = self.CalcDamage_110
-  -- DECOMPILER ERROR at PC151: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_111] = self.CalcDamage_111
-  -- DECOMPILER ERROR at PC156: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_112] = self.CalcDamage_112
-  -- DECOMPILER ERROR at PC161: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_113] = self.CalcDamage_113
-  -- DECOMPILER ERROR at PC166: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_114] = self.CalcDamage_114
-  -- DECOMPILER ERROR at PC171: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_115] = self.CalcDamage_115
-  -- DECOMPILER ERROR at PC176: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_116] = self.CalcDamage_116
-  -- DECOMPILER ERROR at PC181: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_117] = self.CalcDamage_117
-  -- DECOMPILER ERROR at PC186: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_118] = self.CalcDamage_118
-  -- DECOMPILER ERROR at PC191: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_119] = self.CalcDamage_119
-  -- DECOMPILER ERROR at PC196: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_120] = self.CalcDamage_120
-  -- DECOMPILER ERROR at PC201: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_121] = self.CalcDamage_121
-  -- DECOMPILER ERROR at PC206: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_122] = self.CalcDamage_122
-  -- DECOMPILER ERROR at PC211: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_123] = self.CalcDamage_123
-  -- DECOMPILER ERROR at PC216: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_124] = self.CalcDamage_124
-  -- DECOMPILER ERROR at PC221: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_125] = self.CalcDamage_125
-  -- DECOMPILER ERROR at PC226: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_126] = self.CalcDamage_126
-  -- DECOMPILER ERROR at PC231: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_127] = self.CalcDamage_127
-  -- DECOMPILER ERROR at PC236: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_128] = self.CalcDamage_128
-  -- DECOMPILER ERROR at PC241: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_129] = self.CalcDamage_129
-  -- DECOMPILER ERROR at PC246: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_130] = self.CalcDamage_130
-  -- DECOMPILER ERROR at PC251: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_131] = self.CalcDamage_131
-  -- DECOMPILER ERROR at PC256: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_132] = self.CalcDamage_132
-  -- DECOMPILER ERROR at PC261: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_133] = self.CalcDamage_133
-  -- DECOMPILER ERROR at PC266: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_134] = self.CalcDamage_134
-  -- DECOMPILER ERROR at PC271: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_135] = self.CalcDamage_135
-  -- DECOMPILER ERROR at PC276: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_136] = self.CalcDamage_136
-  -- DECOMPILER ERROR at PC281: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_137] = self.CalcDamage_137
-  -- DECOMPILER ERROR at PC286: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_138] = self.CalcDamage_138
-  -- DECOMPILER ERROR at PC291: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_139] = self.CalcDamage_139
-  -- DECOMPILER ERROR at PC296: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalcDamage_140] = self.CalcDamage_140
-  -- DECOMPILER ERROR at PC301: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.RealTransmitDamage] = self.CalcDamage_141
-  -- DECOMPILER ERROR at PC306: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.PoisonByAttackDamage] = self.CalcDamage_PoisonByAttack
-  -- DECOMPILER ERROR at PC311: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.AkxyCasterLayerToDamage] = self.CalcDamage_AkxyCasterLayerToDamage
-  -- DECOMPILER ERROR at PC316: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.WeikeCompanionNormalAttack] = self.CalcDamage_WeikeCompanionNormalAttack
-  -- DECOMPILER ERROR at PC321: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.AbsoluteRemainHP] = self.CalcDamage_AbsoluteRemainHP
-  -- DECOMPILER ERROR at PC326: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.RealDamageByLoseHP] = self.CalcDamage_RealDamageByLoseHP
-  -- DECOMPILER ERROR at PC331: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.AntiSetNoPercentDamage] = self.CalcDamage_AntiSetNoPercentDamage
-  -- DECOMPILER ERROR at PC336: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.AntiSetNoPercentDamageMaxHPPercent] = self.CalcDamage_AntiSetNoPercentDamageMaxHPPercent
-  -- DECOMPILER ERROR at PC341: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.ActiveAttackNoAbsorb] = self.CalcDamage_ActiveAttackNoAbsorb
-  -- DECOMPILER ERROR at PC346: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.Formula11AntiSetNoPercentDamage] = self.CalcDamage_Formula11AntiSetNoPercentDamage
-  -- DECOMPILER ERROR at PC351: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.Formula105NoSkillParam] = self.CalcDamage_Formula105NoSkillParam
-  -- DECOMPILER ERROR at PC356: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.Formula147NoSkillParam] = self.CalcDamage_Formula147NoSkillParam
-  -- DECOMPILER ERROR at PC361: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.Formula148NoSkillParam] = self.CalcDamage_Formula148NoSkillParam
-  -- DECOMPILER ERROR at PC366: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.Formula9AddElementParam] = self.CalcDamage_Formula9AddElementParam
-  -- DECOMPILER ERROR at PC371: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.RealDamageByAddBlood] = self.CalcDamage_RealDamageByAddBlood
-  -- DECOMPILER ERROR at PC376: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.Monster2003301SacrificeDamage] = self.CalcDamage_Monster2003301SacrificeDamage
-  -- DECOMPILER ERROR at PC381: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.TeamCurHpRealDamage] = self.CalcDamage_TeamCurHpRealDamage
-  -- DECOMPILER ERROR at PC386: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.Formula4UseChainCount] = self.CalcDamage_Formula4UseChainCount
-  -- DECOMPILER ERROR at PC391: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.Formula105SimpleParam] = self.CalcDamage_Formula105SimpleParam
-  -- DECOMPILER ERROR at PC396: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.RebeccaPoisonRealDamage] = self.CalcDamage_RebeccaPoisonRealDamage
-  -- DECOMPILER ERROR at PC401: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.MonsterAttackAndTargetHpPercent] = self.CalcDamage_MonsterAttackAndTargetHpPercent
-  -- DECOMPILER ERROR at PC406: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.NormalAttackUseTeamAverageAttack] = self.CalcDamage_NormalAttackUseTeamAverageAttack
-  -- DECOMPILER ERROR at PC411: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.TeamCurHpPercentRealDamage] = self.CalcDamage_TeamCurHpPercentRealDamage
-  -- DECOMPILER ERROR at PC416: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CampSkillAttack] = self.CalcDamage_CampSkillAttack
-  -- DECOMPILER ERROR at PC421: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.BloodDamageSP] = self.CalcDamage_13SP
-  -- DECOMPILER ERROR at PC426: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.BurnDamageSP] = self.CalcDamage_14SP
-  -- DECOMPILER ERROR at PC431: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.PoisonDamageSP] = self.CalcDamage_15SP
-  -- DECOMPILER ERROR at PC436: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.FixedDamage] = self.CalcDamage_FixedDamage
-  -- DECOMPILER ERROR at PC441: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.AutoBeadSkillDamage] = self.CalcDamage_AutoBeadSkillDamage
-  -- DECOMPILER ERROR at PC446: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.AutoBeadSkillDamageSP] = self.CalcDamage_AutoBeadSkillDamageSP
-  -- DECOMPILER ERROR at PC451: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.LossHPDamagePer] = self.CalcDamage_LossDamagePercent
-  -- DECOMPILER ERROR at PC456: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.RebeccaPoisonNormalDamage] = self.CalcDamage_RebeccaPoisonNormalDamage
-  -- DECOMPILER ERROR at PC461: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.BleedDamagePlus] = self.CalcDamage_BleedDamagePlus
-  -- DECOMPILER ERROR at PC466: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.LossHp2RealDamage] = self.CalcDamage_LossHp2RealDamage
-  -- DECOMPILER ERROR at PC471: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.UseTeamAverageAttackCostBuffLayerPct] = self.CalcDamage_UseTeamAverageAttackCostBuffLayerPct
-  -- DECOMPILER ERROR at PC476: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._formulaList)[FormulaNumberType.CalDmgByDistance] = self.CalcDamage_CalDmgByDistance
+  self._formulaList[FormulaNumberType.NormalAttack] = self.CalcDamage_1
+  self._formulaList[FormulaNumberType.MonsterAttack] = self.CalcDamage_2
+  self._formulaList[FormulaNumberType.TrapReal] = self.CalcDamage_3
+  self._formulaList[FormulaNumberType.ChainAttack] = self.CalcDamage_4
+  self._formulaList[FormulaNumberType.ActiveAttack] = self.CalcDamage_5
+  self._formulaList[FormulaNumberType.CalcDamage_6] = self.CalcDamage_6
+  self._formulaList[FormulaNumberType.CalcDamage_7] = self.CalcDamage_7
+  self._formulaList[FormulaNumberType.CalcDamage_8] = self.CalcDamage_8
+  self._formulaList[FormulaNumberType.CalcDamage_9] = self.CalcDamage_9
+  self._formulaList[FormulaNumberType.CalcDamage_10] = self.CalcDamage_10
+  self._formulaList[FormulaNumberType.CalcDamage_11] = self.CalcDamage_11
+  self._formulaList[FormulaNumberType.BloodDamage] = self.CalcDamage_13
+  self._formulaList[FormulaNumberType.BurnDamage] = self.CalcDamage_14
+  self._formulaList[FormulaNumberType.PoisonDamage] = self.CalcDamage_15
+  self._formulaList[FormulaNumberType.ExplodeDamage] = self.CalcDamage_16
+  self._formulaList[FormulaNumberType.DeadDamage] = self.CalcDamage_17
+  self._formulaList[FormulaNumberType.CalcDamage_18] = self.CalcDamage_18
+  self._formulaList[FormulaNumberType.CalcDamage_19] = self.CalcDamage_19
+  self._formulaList[FormulaNumberType.CalcDamage_100] = self.CalcDamage_100
+  self._formulaList[FormulaNumberType.CalcDamage_101] = self.CalcDamage_101
+  self._formulaList[FormulaNumberType.CalcDamage_102] = self.CalcDamage_102
+  self._formulaList[FormulaNumberType.CalcDamage_103] = self.CalcDamage_103
+  self._formulaList[FormulaNumberType.CalcDamage_104] = self.CalcDamage_104
+  self._formulaList[FormulaNumberType.CalcDamage_105] = self.CalcDamage_105
+  self._formulaList[FormulaNumberType.CalcDamage_106] = self.CalcDamage_106
+  self._formulaList[FormulaNumberType.CalcDamage_107] = self.CalcDamage_107
+  self._formulaList[FormulaNumberType.CalcDamage_108] = self.CalcDamage_108
+  self._formulaList[FormulaNumberType.CalcDamage_109] = self.CalcDamage_109
+  self._formulaList[FormulaNumberType.CalcDamage_110] = self.CalcDamage_110
+  self._formulaList[FormulaNumberType.CalcDamage_111] = self.CalcDamage_111
+  self._formulaList[FormulaNumberType.CalcDamage_112] = self.CalcDamage_112
+  self._formulaList[FormulaNumberType.CalcDamage_113] = self.CalcDamage_113
+  self._formulaList[FormulaNumberType.CalcDamage_114] = self.CalcDamage_114
+  self._formulaList[FormulaNumberType.CalcDamage_115] = self.CalcDamage_115
+  self._formulaList[FormulaNumberType.CalcDamage_116] = self.CalcDamage_116
+  self._formulaList[FormulaNumberType.CalcDamage_117] = self.CalcDamage_117
+  self._formulaList[FormulaNumberType.CalcDamage_118] = self.CalcDamage_118
+  self._formulaList[FormulaNumberType.CalcDamage_119] = self.CalcDamage_119
+  self._formulaList[FormulaNumberType.CalcDamage_120] = self.CalcDamage_120
+  self._formulaList[FormulaNumberType.CalcDamage_121] = self.CalcDamage_121
+  self._formulaList[FormulaNumberType.CalcDamage_122] = self.CalcDamage_122
+  self._formulaList[FormulaNumberType.CalcDamage_123] = self.CalcDamage_123
+  self._formulaList[FormulaNumberType.CalcDamage_124] = self.CalcDamage_124
+  self._formulaList[FormulaNumberType.CalcDamage_125] = self.CalcDamage_125
+  self._formulaList[FormulaNumberType.CalcDamage_126] = self.CalcDamage_126
+  self._formulaList[FormulaNumberType.CalcDamage_127] = self.CalcDamage_127
+  self._formulaList[FormulaNumberType.CalcDamage_128] = self.CalcDamage_128
+  self._formulaList[FormulaNumberType.CalcDamage_129] = self.CalcDamage_129
+  self._formulaList[FormulaNumberType.CalcDamage_130] = self.CalcDamage_130
+  self._formulaList[FormulaNumberType.CalcDamage_131] = self.CalcDamage_131
+  self._formulaList[FormulaNumberType.CalcDamage_132] = self.CalcDamage_132
+  self._formulaList[FormulaNumberType.CalcDamage_133] = self.CalcDamage_133
+  self._formulaList[FormulaNumberType.CalcDamage_134] = self.CalcDamage_134
+  self._formulaList[FormulaNumberType.CalcDamage_135] = self.CalcDamage_135
+  self._formulaList[FormulaNumberType.CalcDamage_136] = self.CalcDamage_136
+  self._formulaList[FormulaNumberType.CalcDamage_137] = self.CalcDamage_137
+  self._formulaList[FormulaNumberType.CalcDamage_138] = self.CalcDamage_138
+  self._formulaList[FormulaNumberType.CalcDamage_139] = self.CalcDamage_139
+  self._formulaList[FormulaNumberType.CalcDamage_140] = self.CalcDamage_140
+  self._formulaList[FormulaNumberType.RealTransmitDamage] = self.CalcDamage_141
+  self._formulaList[FormulaNumberType.PoisonByAttackDamage] = self.CalcDamage_PoisonByAttack
+  self._formulaList[FormulaNumberType.AkxyCasterLayerToDamage] = self.CalcDamage_AkxyCasterLayerToDamage
+  self._formulaList[FormulaNumberType.WeikeCompanionNormalAttack] = self.CalcDamage_WeikeCompanionNormalAttack
+  self._formulaList[FormulaNumberType.AbsoluteRemainHP] = self.CalcDamage_AbsoluteRemainHP
+  self._formulaList[FormulaNumberType.RealDamageByLoseHP] = self.CalcDamage_RealDamageByLoseHP
+  self._formulaList[FormulaNumberType.AntiSetNoPercentDamage] = self.CalcDamage_AntiSetNoPercentDamage
+  self._formulaList[FormulaNumberType.AntiSetNoPercentDamageMaxHPPercent] = self.CalcDamage_AntiSetNoPercentDamageMaxHPPercent
+  self._formulaList[FormulaNumberType.ActiveAttackNoAbsorb] = self.CalcDamage_ActiveAttackNoAbsorb
+  self._formulaList[FormulaNumberType.Formula11AntiSetNoPercentDamage] = self.CalcDamage_Formula11AntiSetNoPercentDamage
+  self._formulaList[FormulaNumberType.Formula105NoSkillParam] = self.CalcDamage_Formula105NoSkillParam
+  self._formulaList[FormulaNumberType.Formula147NoSkillParam] = self.CalcDamage_Formula147NoSkillParam
+  self._formulaList[FormulaNumberType.Formula148NoSkillParam] = self.CalcDamage_Formula148NoSkillParam
+  self._formulaList[FormulaNumberType.Formula9AddElementParam] = self.CalcDamage_Formula9AddElementParam
+  self._formulaList[FormulaNumberType.RealDamageByAddBlood] = self.CalcDamage_RealDamageByAddBlood
+  self._formulaList[FormulaNumberType.Monster2003301SacrificeDamage] = self.CalcDamage_Monster2003301SacrificeDamage
+  self._formulaList[FormulaNumberType.TeamCurHpRealDamage] = self.CalcDamage_TeamCurHpRealDamage
+  self._formulaList[FormulaNumberType.Formula4UseChainCount] = self.CalcDamage_Formula4UseChainCount
+  self._formulaList[FormulaNumberType.Formula105SimpleParam] = self.CalcDamage_Formula105SimpleParam
+  self._formulaList[FormulaNumberType.RebeccaPoisonRealDamage] = self.CalcDamage_RebeccaPoisonRealDamage
+  self._formulaList[FormulaNumberType.MonsterAttackAndTargetHpPercent] = self.CalcDamage_MonsterAttackAndTargetHpPercent
+  self._formulaList[FormulaNumberType.NormalAttackUseTeamAverageAttack] = self.CalcDamage_NormalAttackUseTeamAverageAttack
+  self._formulaList[FormulaNumberType.TeamCurHpPercentRealDamage] = self.CalcDamage_TeamCurHpPercentRealDamage
+  self._formulaList[FormulaNumberType.CampSkillAttack] = self.CalcDamage_CampSkillAttack
+  self._formulaList[FormulaNumberType.BloodDamageSP] = self.CalcDamage_13SP
+  self._formulaList[FormulaNumberType.BurnDamageSP] = self.CalcDamage_14SP
+  self._formulaList[FormulaNumberType.PoisonDamageSP] = self.CalcDamage_15SP
+  self._formulaList[FormulaNumberType.FixedDamage] = self.CalcDamage_FixedDamage
+  self._formulaList[FormulaNumberType.AutoBeadSkillDamage] = self.CalcDamage_AutoBeadSkillDamage
+  self._formulaList[FormulaNumberType.AutoBeadSkillDamageSP] = self.CalcDamage_AutoBeadSkillDamageSP
+  self._formulaList[FormulaNumberType.LossHPDamagePer] = self.CalcDamage_LossDamagePercent
+  self._formulaList[FormulaNumberType.RebeccaPoisonNormalDamage] = self.CalcDamage_RebeccaPoisonNormalDamage
+  self._formulaList[FormulaNumberType.BleedDamagePlus] = self.CalcDamage_BleedDamagePlus
+  self._formulaList[FormulaNumberType.LossHp2RealDamage] = self.CalcDamage_LossHp2RealDamage
+  self._formulaList[FormulaNumberType.UseTeamAverageAttackCostBuffLayerPct] = self.CalcDamage_UseTeamAverageAttackCostBuffLayerPct
+  self._formulaList[FormulaNumberType.CalDmgByDistance] = self.CalcDamage_CalDmgByDistance
 end
-
-

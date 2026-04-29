@@ -1,110 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/move_fsm_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MoveFSMComponent", Object)
 MoveFSMComponent = MoveFSMComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MoveFSMComponent.Constructor = function(self, fsmID, actorID)
-  -- function num : 0_0 , upvalues : _ENV
+function MoveFSMComponent:Constructor(fsmID, actorID)
   self._fsmID = tonumber(fsmID)
   self._moveFSMGenInfo = GameFSMGenInfo:New()
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._moveFSMGenInfo).CustomLogicConfigTable = ConfigData_PlayerActionFSM
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._moveFSMGenInfo).CustomLogicConfigID = self._fsmID
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._moveFSMGenInfo).EntityID = actorID
+  self._moveFSMGenInfo.CustomLogicConfigTable = ConfigData_PlayerActionFSM
+  self._moveFSMGenInfo.CustomLogicConfigID = self._fsmID
+  self._moveFSMGenInfo.EntityID = actorID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MoveFSMComponent.Dispose = function(self)
-  -- function num : 0_1
+function MoveFSMComponent:Dispose()
   if self._fsmImp then
-    (self._fsmImp):Destroy()
+    self._fsmImp:Destroy()
     self._fsmImp = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MoveFSMComponent.Initialize = function(self, world)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._moveFSMGenInfo).World = world
-  self._fsmImp = (CustomLogicFactory.Static_CreateLogic)(self._moveFSMGenInfo)
+function MoveFSMComponent:Initialize(world)
+  self._moveFSMGenInfo.World = world
+  self._fsmImp = CustomLogicFactory.Static_CreateLogic(self._moveFSMGenInfo)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MoveFSMComponent.Update = function(self, deltaTimeMS)
-  -- function num : 0_3
-  return (self._fsmImp):Update(deltaTimeMS)
+function MoveFSMComponent:Update(deltaTimeMS)
+  return self._fsmImp:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MoveFSMComponent.GetMoveFSMCurStateID = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function MoveFSMComponent:GetMoveFSMCurStateID()
   if self._fsmImp == nil then
     return PlayerActionStateID.Idle
   end
-  local fsmNode = (((self._fsmImp).nodes).elements)[1]
+  local fsmNode = self._fsmImp.nodes.elements[1]
   local stateID = fsmNode:CurrentStateID()
   return stateID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.MoveFSM = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).MoveFSM)
+function Entity:MoveFSM()
+  return self:GetComponent(self.WEComponentsEnum.MoveFSM)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasMoveFSM = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).MoveFSM)
+function Entity:HasMoveFSM()
+  return self:HasComponent(self.WEComponentsEnum.MoveFSM)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddMoveFSM = function(self, fsmID, actorID)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MoveFSM
+function Entity:AddMoveFSM(fsmID, actorID)
+  local index = self.WEComponentsEnum.MoveFSM
   local component = MoveFSMComponent:New(fsmID, actorID)
   local world = self:GetOwnerWorld()
   component:Initialize(world)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceMoveFSM = function(self, fsmID, actorID)
-  -- function num : 0_8
-  local index = (self.WEComponentsEnum).MoveFSM
+function Entity:ReplaceMoveFSM(fsmID, actorID)
+  local index = self.WEComponentsEnum.MoveFSM
   local component = self:MoveFSM()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveMoveFSM = function(self)
-  -- function num : 0_9
+function Entity:RemoveMoveFSM()
   if self:HasMoveFSM() then
-    self:RemoveComponent((self.WEComponentsEnum).MoveFSM)
+    self:RemoveComponent(self.WEComponentsEnum.MoveFSM)
   end
 end
-
-

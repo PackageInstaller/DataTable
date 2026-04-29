@@ -1,45 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/bag/ui_activity_n29_detective_bag_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN29DetectiveBagController", UIController)
 UIActivityN29DetectiveBagController = UIActivityN29DetectiveBagController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN29DetectiveBagController.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityN29DetectiveBagController:Constructor()
   self._isShowClueTab = false
   self._pieceTab = nil
   self._clueTab = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveBagController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIActivityN29DetectiveBagController:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveBagController.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIActivityN29DetectiveBagController:OnShow(uiParams)
   self._isShowClueTab = uiParams[1]
   self._compInfo = uiParams[2]
   self._onlyClue = uiParams[3]
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveBagController.OnHide = function(self)
-  -- function num : 0_3
+function UIActivityN29DetectiveBagController:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveBagController._GetComponent = function(self)
-  -- function num : 0_4
+function UIActivityN29DetectiveBagController:_GetComponent()
   self._pieceContent = self:GetUIComponent("UISelectObjectPath", "piece")
   self._clueContent = self:GetUIComponent("UISelectObjectPath", "clue")
   self._clueMaskObj = self:GetGameObject("clueMask")
@@ -48,103 +29,68 @@ UIActivityN29DetectiveBagController._GetComponent = function(self)
   self._clueBtnObj = self:GetGameObject("ClueBtn")
   self._anim = self:GetUIComponent("Animation", "anim")
   if self._isShowClueTab then
-    self._clueTab = (self._clueContent):SpawnObject("UIActivityN29DetectiveClueTab")
-    ;
-    (self._clueTab):SetData(self._compInfo)
-    ;
-    (self._clueTab):SetActive(true)
-    ;
-    (self._pieceMaskObj):SetActive(true)
+    self._clueTab = self._clueContent:SpawnObject("UIActivityN29DetectiveClueTab")
+    self._clueTab:SetData(self._compInfo)
+    self._clueTab:SetActive(true)
+    self._pieceMaskObj:SetActive(true)
   else
-    self._pieceTab = (self._pieceContent):SpawnObject("UIActivityN29DetectivePieceTab")
-    ;
-    (self._pieceTab):SetData(self._compInfo)
-    ;
-    (self._pieceTab):SetActive(true)
-    ;
-    (self._clueMaskObj):SetActive(true)
+    self._pieceTab = self._pieceContent:SpawnObject("UIActivityN29DetectivePieceTab")
+    self._pieceTab:SetData(self._compInfo)
+    self._pieceTab:SetActive(true)
+    self._clueMaskObj:SetActive(true)
   end
   if self._onlyClue then
-    (self._pieceBtnObj):SetActive(false)
-    ;
-    (self._clueBtnObj):SetActive(false)
+    self._pieceBtnObj:SetActive(false)
+    self._clueBtnObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveBagController.Close = function(self)
-  -- function num : 0_5
+function UIActivityN29DetectiveBagController:Close()
   self:StartTask(self._Close, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveBagController._Close = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._anim):Play("uieff_UIActivityN29DetectiveBagController_out")
+function UIActivityN29DetectiveBagController:_Close(TT)
+  self._anim:Play("uieff_UIActivityN29DetectiveBagController_out")
   YIELD(TT, 200)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveBagController.ClueBtnOnClick = function(self)
-  -- function num : 0_7
+function UIActivityN29DetectiveBagController:ClueBtnOnClick()
   if self._isShowClueTab then
-    return 
+    return
   end
   self._isShowClueTab = true
   self:StartTask(self._ClueBtnOnClick, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveBagController._ClueBtnOnClick = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._pieceTab):SetActive(false, true)
-  ;
-  (self._clueMaskObj):SetActive(false)
+function UIActivityN29DetectiveBagController:_ClueBtnOnClick(TT)
+  self._pieceTab:SetActive(false, true)
+  self._clueMaskObj:SetActive(false)
   YIELD(TT, 200)
   if not self._clueTab then
-    self._clueTab = (self._clueContent):SpawnObject("UIActivityN29DetectiveClueTab")
-    ;
-    (self._clueTab):SetData(self._compInfo)
+    self._clueTab = self._clueContent:SpawnObject("UIActivityN29DetectiveClueTab")
+    self._clueTab:SetData(self._compInfo)
   end
-  ;
-  (self._clueTab):SetActive(true)
-  ;
-  (self._pieceMaskObj):SetActive(true)
+  self._clueTab:SetActive(true)
+  self._pieceMaskObj:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveBagController.PieceBtnOnClick = function(self)
-  -- function num : 0_9
+function UIActivityN29DetectiveBagController:PieceBtnOnClick()
   if not self._isShowClueTab then
-    return 
+    return
   end
   self._isShowClueTab = false
   self:StartTask(self._PieceBtnOnClick, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveBagController._PieceBtnOnClick = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._clueTab):SetActive(false, true)
-  ;
-  (self._pieceMaskObj):SetActive(false)
+function UIActivityN29DetectiveBagController:_PieceBtnOnClick(TT)
+  self._clueTab:SetActive(false, true)
+  self._pieceMaskObj:SetActive(false)
   YIELD(TT, 200)
   if not self._pieceTab then
-    self._pieceTab = (self._pieceContent):SpawnObject("UIActivityN29DetectivePieceTab")
-    ;
-    (self._pieceTab):SetData(self._compInfo)
+    self._pieceTab = self._pieceContent:SpawnObject("UIActivityN29DetectivePieceTab")
+    self._pieceTab:SetData(self._compInfo)
   end
-  ;
-  (self._pieceTab):SetActive(true)
-  ;
-  (self._clueMaskObj):SetActive(true)
+  self._pieceTab:SetActive(true)
+  self._clueMaskObj:SetActive(true)
 end
-
-

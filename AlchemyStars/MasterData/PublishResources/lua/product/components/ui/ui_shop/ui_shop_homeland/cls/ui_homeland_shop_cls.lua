@@ -1,95 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_homeland/cls/ui_homeland_shop_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandShopData", Object)
 HomelandShopData = HomelandShopData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandShopData.Constructor = function(self)
-  -- function num : 0_0
+function HomelandShopData:Constructor()
   self.allGoods = {}
   self.goodsSet = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopData.UpdateByServerData = function(self, marketType, marketInfo, cfgs, remainRefreshTime, needInit)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandShopData:UpdateByServerData(marketType, marketInfo, cfgs, remainRefreshTime, needInit)
   if not marketInfo then
-    (Log.fatal)("HomelandShopData marketInfo is nil.")
-    return 
+    Log.fatal("HomelandShopData marketInfo is nil.")
+    return
   end
   if needInit then
     self.allGoods = {}
     self.goodsSet = {}
   end
-  for _,goodsInfo in pairs(marketInfo.goods) do
+  for _, goodsInfo in pairs(marketInfo.goods) do
     local cfgServer = cfgs[goodsInfo.goods_id]
-    local cfgClient = nil
+    local cfgClient
     if marketType == MarketType.Shop_Furniture then
-      cfgClient = (Cfg.cfg_shop_furniture_goods)[goodsInfo.goods_id]
-    else
-      if marketType == MarketType.Shop_Furniture_Precious then
-        cfgClient = (Cfg.cfg_shop_furniture_precious_goods)[goodsInfo.goods_id]
-      end
+      cfgClient = Cfg.cfg_shop_furniture_goods[goodsInfo.goods_id]
+    elseif marketType == MarketType.Shop_Furniture_Precious then
+      cfgClient = Cfg.cfg_shop_furniture_precious_goods[goodsInfo.goods_id]
     end
     if cfgServer and cfgClient then
       local shopItem = HomelandShopItem:New(marketType, cfgClient, goodsInfo)
-      -- DECOMPILER ERROR at PC53: Confused about usage of register: R14 in 'UnsetPending'
-
-      if not (self.goodsSet)[marketType] then
-        (self.goodsSet)[marketType] = {}
+      if not self.goodsSet[marketType] then
+        self.goodsSet[marketType] = {}
       end
-      -- DECOMPILER ERROR at PC64: Confused about usage of register: R14 in 'UnsetPending'
-
-      if not ((self.goodsSet)[marketType])[cfgClient.FurnitureType] then
-        ((self.goodsSet)[marketType])[cfgClient.FurnitureType] = {}
+      if not self.goodsSet[marketType][cfgClient.FurnitureType] then
+        self.goodsSet[marketType][cfgClient.FurnitureType] = {}
       end
-      -- DECOMPILER ERROR at PC79: Confused about usage of register: R14 in 'UnsetPending'
-
-      if not (((self.goodsSet)[marketType])[cfgClient.FurnitureType])[cfgClient.BelongShopId] then
-        (((self.goodsSet)[marketType])[cfgClient.FurnitureType])[cfgClient.BelongShopId] = {}
+      if not self.goodsSet[marketType][cfgClient.FurnitureType][cfgClient.BelongShopId] then
+        self.goodsSet[marketType][cfgClient.FurnitureType][cfgClient.BelongShopId] = {}
       end
-      ;
-      (table.insert)((((self.goodsSet)[marketType])[cfgClient.FurnitureType])[cfgClient.BelongShopId], shopItem)
-      ;
-      (table.insert)(self.allGoods, shopItem)
+      table.insert(self.goodsSet[marketType][cfgClient.FurnitureType][cfgClient.BelongShopId], shopItem)
+      table.insert(self.allGoods, shopItem)
     else
-      do
-        do
-          ;
-          (Log.fatal)("HomelandShopData Not Exist. marketType, id, ", marketType, goodsInfo.goods_id)
-          -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      Log.fatal("HomelandShopData Not Exist. marketType, id, ", marketType, goodsInfo.goods_id)
     end
   end
   self.remainRefreshTime = remainRefreshTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopData.GetGoodsByGoodsId = function(self, id)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,goods in ipairs(self.allGoods) do
+function HomelandShopData:GetGoodsByGoodsId(id)
+  for _, goods in ipairs(self.allGoods) do
     if goods.goodsID == id then
       return goods
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopData.IsEmpty = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,goods in ipairs(self.allGoods) do
+function HomelandShopData:IsEmpty()
+  for _, goods in ipairs(self.allGoods) do
     if not goods:OutOfDate() then
       return false
     end
@@ -99,180 +62,125 @@ end
 
 _class("HomelandShopItem", Object)
 HomelandShopItem = HomelandShopItem
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandShopItem.Constructor = function(self, marketType, cfgClient, goodsInfo)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandShopItem:Constructor(marketType, cfgClient, goodsInfo)
   self.marketType = marketType
   self.cfg = cfgClient
-  self.itemCfg = (Cfg.cfg_item)[(self.cfg).ItemId]
+  self.itemCfg = Cfg.cfg_item[self.cfg.ItemId]
   if not self.itemCfg then
-    (Log.fatal)("HomelandShopData cfg_item not exist. id = ", (self.cfg).ItemId)
+    Log.fatal("HomelandShopData cfg_item not exist. id = ", self.cfg.ItemId)
   end
-  self.itemID = (self.itemCfg).ID
-  self.goodsID = (self.cfg).ID
-  self.goodsCount = (self.cfg).ItemCount
-  self.saleNum = (self.cfg).SaleNum
+  self.itemID = self.itemCfg.ID
+  self.goodsID = self.cfg.ID
+  self.goodsCount = self.cfg.ItemCount
+  self.saleNum = self.cfg.SaleNum
   self.selledCount = goodsInfo.selled_num
-  self.isSpecial = (self.cfg).IsSpecial
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._loginModule = (GameGlobal.GetModule)(LoginModule)
-  self.beginTime = (self._loginModule):GetTimeStampByTimeStr((self.cfg).ShowBeginTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  self.endTime = (self._loginModule):GetTimeStampByTimeStr((self.cfg).ShowEndTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+  self.isSpecial = self.cfg.IsSpecial
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._loginModule = GameGlobal.GetModule(LoginModule)
+  self.beginTime = self._loginModule:GetTimeStampByTimeStr(self.cfg.ShowBeginTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+  self.endTime = self._loginModule:GetTimeStampByTimeStr(self.cfg.ShowEndTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
   self.discountStartTime = 0
-  if (self.cfg).DiscountStartDate then
-    self.discountStartTime = (self._loginModule):GetTimeStampByTimeStr((self.cfg).DiscountStartDate, Enum_DateTimeZoneType.E_ZoneType_GMT)
+  if self.cfg.DiscountStartDate then
+    self.discountStartTime = self._loginModule:GetTimeStampByTimeStr(self.cfg.DiscountStartDate, Enum_DateTimeZoneType.E_ZoneType_GMT)
   end
   self.discountDeadTime = 0
-  if (self.cfg).DiscountDeadDate then
-    self.discountDeadTime = (self._loginModule):GetTimeStampByTimeStr((self.cfg).DiscountDeadDate, Enum_DateTimeZoneType.E_ZoneType_GMT)
+  if self.cfg.DiscountDeadDate then
+    self.discountDeadTime = self._loginModule:GetTimeStampByTimeStr(self.cfg.DiscountDeadDate, Enum_DateTimeZoneType.E_ZoneType_GMT)
   end
   self.sequenceID = cfgClient.SequenceId
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItem.IsPet = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  do return (Cfg.cfg_pet)[self.itemID] ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandShopItem:IsPet()
+  return Cfg.cfg_pet[self.itemID] ~= nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItem.GetItemId = function(self)
-  -- function num : 0_6
+function HomelandShopItem:GetItemId()
   return self.itemID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItem.GetSaleType = function(self)
-  -- function num : 0_7
-  return (self.cfg).SaleType
+function HomelandShopItem:GetSaleType()
+  return self.cfg.SaleType
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItem.GetSalePrice = function(self)
-  -- function num : 0_8
+function HomelandShopItem:GetSalePrice()
   if self:IsDiscount() then
-    return (self.cfg).NewPrice
+    return self.cfg.NewPrice
   else
-    return (self.cfg).RawPrice
+    return self.cfg.RawPrice
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItem.GetItemCount = function(self)
-  -- function num : 0_9
+function HomelandShopItem:GetItemCount()
   return self.goodsCount
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItem.IsUnLimit = function(self)
-  -- function num : 0_10
-  do return self.saleNum == 888888888 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandShopItem:IsUnLimit()
+  return self.saleNum == 888888888
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItem.GetGoodId = function(self)
-  -- function num : 0_11
+function HomelandShopItem:GetGoodId()
   return self.goodsID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItem.GetRemainCount = function(self)
-  -- function num : 0_12
+function HomelandShopItem:GetRemainCount()
   if self:IsSelling() then
     return self.saleNum - self.selledCount
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItem.IsSelling = function(self)
-  -- function num : 0_13
-  local curTime = (self._svrTimeModule):GetServerTime() * 0.001
-  do return self.beginTime <= curTime and curTime < self.endTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandShopItem:IsSelling()
+  local curTime = self._svrTimeModule:GetServerTime() * 0.001
+  return curTime >= self.beginTime and curTime < self.endTime
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItem.IsDiscount = function(self)
-  -- function num : 0_14
+function HomelandShopItem:IsDiscount()
   if not self:IsSelling() then
     return false
   end
-  if (self.cfg).RawPrice == (self.cfg).NewPrice then
+  if self.cfg.RawPrice == self.cfg.NewPrice then
     return false
   end
-  local curTime = (self._svrTimeModule):GetServerTime() * 0.001
-  do return self.discountStartTime <= curTime and curTime < self.discountDeadTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local curTime = self._svrTimeModule:GetServerTime() * 0.001
+  return curTime >= self.discountStartTime and curTime < self.discountDeadTime
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItem.IsSellOut = function(self)
-  -- function num : 0_15
-  do return not self:IsSelling() or self.saleNum <= self.selledCount end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function HomelandShopItem:IsSellOut()
+  return self:IsSelling() and self.selledCount >= self.saleNum
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItem.OutOfDate = function(self)
-  -- function num : 0_16
-  local curTime = (self._svrTimeModule):GetServerTime() * 0.001
-  do return curTime < self.beginTime or self.endTime < curTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandShopItem:OutOfDate()
+  local curTime = self._svrTimeModule:GetServerTime() * 0.001
+  return curTime < self.beginTime or curTime > self.endTime
 end
 
 _class("HomelandShopItemSet", Object)
 HomelandShopItemSet = HomelandShopItemSet
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandShopItemSet.Constructor = function(self, shopType, shopID, goods)
-  -- function num : 0_17 , upvalues : _ENV
+function HomelandShopItemSet:Constructor(shopType, shopID, goods)
   self.shopType = shopType
   self.shopID = shopID
   self.goods = goods
   self.cfg = nil
   self.sequenceID = 0
-  local cfg = (Cfg.cfg_shop_furniture_goods_ext)({ShopId = shopID})
+  local cfg = Cfg.cfg_shop_furniture_goods_ext({ShopId = shopID})
   if cfg then
     self.cfg = cfg[1]
-    self.sequenceID = (cfg[1]).SequenceId
+    self.sequenceID = cfg[1].SequenceId
   else
-    ;
-    (Log.fatal)("HomelandShopData cfg_shop_furniture_goods_ext not exist. ShopID = ", shopID)
+    Log.fatal("HomelandShopData cfg_shop_furniture_goods_ext not exist. ShopID = ", shopID)
   end
   self:Sort(self.goods)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItemSet.IsDiscount = function(self)
-  -- function num : 0_18
-  if self.cfg then
-    return (self.cfg).IsPromotion
-  end
+function HomelandShopItemSet:IsDiscount()
+  return self.cfg and self.cfg.IsPromotion
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItemSet.GetAllGoodsCount = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function HomelandShopItemSet:GetAllGoodsCount()
   local totalCount = 0
-  for _,goods in pairs(self.goods) do
+  for _, goods in pairs(self.goods) do
     if goods:IsSelling() then
       totalCount = totalCount + goods.goodsCount
     end
@@ -280,48 +188,32 @@ HomelandShopItemSet.GetAllGoodsCount = function(self)
   return totalCount
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItemSet.GetSelledCount = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function HomelandShopItemSet:GetSelledCount()
   local selledCount = 0
   if self.goods then
-    for _,goods in pairs(self.goods) do
+    for _, goods in pairs(self.goods) do
       if goods:IsSelling() then
         selledCount = selledCount + goods.selledCount
       end
     end
   end
-  do
-    return selledCount
-  end
+  return selledCount
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItemSet.UpdateGoods = function(self, goods)
-  -- function num : 0_21 , upvalues : _ENV
-  for key,value in pairs(self.goods) do
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R7 in 'UnsetPending'
-
+function HomelandShopItemSet:UpdateGoods(goods)
+  for key, value in pairs(self.goods) do
     if value.goodsID == goods.goodsID then
-      (self.goods)[key] = goods
+      self.goods[key] = goods
       break
     end
   end
-  do
-    if goods:IsSellOut() then
-      self:Sort(self.goods)
-    end
+  if goods:IsSellOut() then
+    self:Sort(self.goods)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandShopItemSet.Sort = function(self, goods)
-  -- function num : 0_22 , upvalues : _ENV
-  (table.sort)(goods, function(a, b)
-    -- function num : 0_22_0
+function HomelandShopItemSet:Sort(goods)
+  table.sort(goods, function(a, b)
     local a1 = 0
     local b1 = 0
     if a:IsSellOut() then
@@ -330,13 +222,9 @@ HomelandShopItemSet.Sort = function(self, goods)
     if b:IsSellOut() then
       b1 = 1
     end
-    if a1 >= b1 then
-      do return a1 == b1 end
-      do return a.sequenceID < b.sequenceID end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if a1 ~= b1 then
+      return a1 < b1
     end
-  end
-)
+    return a.sequenceID < b.sequenceID
+  end)
 end
-
-

@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_detail/ui_active_var_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActiveVarInfo", UIController)
 UIActiveVarInfo = UIActiveVarInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActiveVarInfo.Constructor = function(self)
-  -- function num : 0_0
+function UIActiveVarInfo:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveVarInfo.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActiveVarInfo:OnShow(uiParams)
   local posSource = uiParams[1]
   local forceTipsStr = uiParams[2]
   local pos = posSource + Vector3(0, 5, 0)
@@ -23,19 +13,13 @@ UIActiveVarInfo.OnShow = function(self, uiParams)
   self._text = self:GetUIComponent("UILocalizationText", "txt")
   if self._text then
     if forceTipsStr then
-      (self._text):SetText((StringTable.Get)(forceTipsStr))
+      self._text:SetText(StringTable.Get(forceTipsStr))
     else
-      ;
-      (self._text):SetText((StringTable.Get)("str_battle_bianti_info"))
+      self._text:SetText(StringTable.Get("str_battle_bianti_info"))
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveVarInfo.BgOnClick = function(self, go)
-  -- function num : 0_2
+function UIActiveVarInfo:BgOnClick(go)
   self:CloseDialog()
 end
-
-

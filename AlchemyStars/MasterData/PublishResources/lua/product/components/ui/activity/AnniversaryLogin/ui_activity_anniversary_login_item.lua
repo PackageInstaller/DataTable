@@ -1,61 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/AnniversaryLogin/ui_activity_anniversary_login_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityAnniversaryLoginItem", UICustomWidget)
 UIActivityAnniversaryLoginItem = UIActivityAnniversaryLoginItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityAnniversaryLoginItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityAnniversaryLoginItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginItem.OnHide = function(self, stamp)
-  -- function num : 0_1
+function UIActivityAnniversaryLoginItem:OnHide(stamp)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginItem.SetData = function(self, roleAsset, state, tipsCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityAnniversaryLoginItem:SetData(roleAsset, state, tipsCallback)
   self._roleAsset = roleAsset
   self._tipsCallback = tipsCallback
   local itemId = roleAsset.assetid
   local itemCount = roleAsset.count
-  ;
-  (UIWidgetHelper.SetItemIcon)(self, itemId, "_icon")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_text", itemCount)
+  UIWidgetHelper.SetItemIcon(self, itemId, "_icon")
+  UIWidgetHelper.SetLocalizationText(self, "_text", itemCount)
   self:_SetState(state)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginItem._SetState = function(self, state)
-  -- function num : 0_3 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-[ETimeRewardRewardStatus.E_TIME_REWARD_UNKNOW] = {}
-, 
-[ETimeRewardRewardStatus.E_TIME_REWARD_CAN_RECV] = {"state_Completed"}
-, 
-[ETimeRewardRewardStatus.E_TIME_REWARD_RECVED] = {"state_Taken"}
-, 
-[ETimeRewardRewardStatus.E_TIME_REWARD_LOCK] = {"state_NotStart"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UIActivityAnniversaryLoginItem:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    [ETimeRewardRewardStatus.E_TIME_REWARD_UNKNOW] = {},
+    [ETimeRewardRewardStatus.E_TIME_REWARD_CAN_RECV] = {
+      "state_Completed"
+    },
+    [ETimeRewardRewardStatus.E_TIME_REWARD_RECVED] = {
+      "state_Taken"
+    },
+    [ETimeRewardRewardStatus.E_TIME_REWARD_LOCK] = {
+      "state_NotStart"
+    }
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginItem.BtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIActivityAnniversaryLoginItem:BtnOnClick(go)
   if self._tipsCallback then
-    (self._tipsCallback)((self._roleAsset).assetid, (go.transform).position)
+    self._tipsCallback(self._roleAsset.assetid, go.transform.position)
   end
 end
-
-

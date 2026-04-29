@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_gather_throw_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectGatherThrowDamageResult", SkillEffectResultBase)
 SkillEffectGatherThrowDamageResult = SkillEffectGatherThrowDamageResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectGatherThrowDamageResult.Constructor = function(self, targetID, monterIDS, teleportResultArray, damageResultArray, teleportKillMonster)
-  -- function num : 0_0
+function SkillEffectGatherThrowDamageResult:Constructor(targetID, monterIDS, teleportResultArray, damageResultArray, teleportKillMonster)
   self._targetID = targetID
   self._monsterIDS = monterIDS
   self._teleportResultArray = teleportResultArray
@@ -17,46 +10,26 @@ SkillEffectGatherThrowDamageResult.Constructor = function(self, targetID, monter
   self._teleportKillMonster = teleportKillMonster
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectGatherThrowDamageResult.GetTargetID = function(self)
-  -- function num : 0_1
+function SkillEffectGatherThrowDamageResult:GetTargetID()
   return self._targetID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectGatherThrowDamageResult.GetMonsterIDArray = function(self)
-  -- function num : 0_2
+function SkillEffectGatherThrowDamageResult:GetMonsterIDArray()
   return self._monsterIDS
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectGatherThrowDamageResult.GetTeleportResultArray = function(self)
-  -- function num : 0_3
+function SkillEffectGatherThrowDamageResult:GetTeleportResultArray()
   return self._teleportResultArray
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectGatherThrowDamageResult.GetDamageResultArray = function(self)
-  -- function num : 0_4
+function SkillEffectGatherThrowDamageResult:GetDamageResultArray()
   return self._damageResultArray
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectGatherThrowDamageResult.GetTeleportKillMonster = function(self)
-  -- function num : 0_5
+function SkillEffectGatherThrowDamageResult:GetTeleportKillMonster()
   return self._teleportKillMonster
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectGatherThrowDamageResult.GetEffectType = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillEffectGatherThrowDamageResult:GetEffectType()
   return SkillEffectType.GatherThrowDamage
 end
-
-

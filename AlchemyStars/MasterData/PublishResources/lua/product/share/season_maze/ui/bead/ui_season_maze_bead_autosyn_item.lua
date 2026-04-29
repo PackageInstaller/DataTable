@@ -1,83 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/bead/ui_season_maze_bead_autosyn_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeBeadAutoSynItem", UICustomWidget)
 UISeasonMazeBeadAutoSynItem = UISeasonMazeBeadAutoSynItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeBeadAutoSynItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMazeBeadAutoSynItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSynItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeBeadAutoSynItem:InitWidget()
   self._choiceMark = self:GetUIComponent("Image", "ChoiceMark")
   self._beads = {}
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._beads)[1] = self:GetUIComponent("UISelectObjectPath", "B1")
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._beads)[2] = self:GetUIComponent("UISelectObjectPath", "B2")
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._beads)[3] = self:GetUIComponent("UISelectObjectPath", "B3")
+  self._beads[1] = self:GetUIComponent("UISelectObjectPath", "B1")
+  self._beads[2] = self:GetUIComponent("UISelectObjectPath", "B2")
+  self._beads[3] = self:GetUIComponent("UISelectObjectPath", "B3")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSynItem.SetData = function(self, index, data, tipsCallBack, choiceCallBack, preViewFunc)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeBeadAutoSynItem:SetData(index, data, tipsCallBack, choiceCallBack, preViewFunc)
   self._index = index
   self._data = data
   self._tipsCallBack = tipsCallBack
   self._choiceCallBack = choiceCallBack
   self._widgets = {}
-  for index,value in ipairs(self._beads) do
+  for index, value in ipairs(self._beads) do
     local widget = value:SpawnObject("UISeasonMazeBeadItem")
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._widgets)[index] = widget
+    self._widgets[index] = widget
     if index < 3 then
-      widget:SetData(index, (data.beadData)[index], function(uid, id, position)
-    -- function num : 0_2_0 , upvalues : self
-    (self._tipsCallBack)(uid, id, position)
-  end
-, SeasonMazeBeadItemType.SynthesisList)
+      widget:SetData(index, data.beadData[index], function(uid, id, position)
+        self._tipsCallBack(uid, id, position)
+      end, SeasonMazeBeadItemType.SynthesisList)
     end
   end
-  preViewFunc((self._widgets)[3], SeasonMazeBeadData:New(0, ((self._widgets)[1]):Data()), SeasonMazeBeadData:New(0, ((self._widgets)[2]):Data()))
+  preViewFunc(self._widgets[3], SeasonMazeBeadData:New(0, self._widgets[1]:Data()), SeasonMazeBeadData:New(0, self._widgets[2]:Data()))
   self:OnChoice()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSynItem.ChoiceOnClick = function(self, go)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._data).choice = not (self._data).choice
+function UISeasonMazeBeadAutoSynItem:ChoiceOnClick(go)
+  self._data.choice = not self._data.choice
   self:OnChoice()
-  ;
-  (self._choiceCallBack)()
+  self._choiceCallBack()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSynItem.OnChoice = function(self)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._choiceMark).enabled = (self._data).choice
+function UISeasonMazeBeadAutoSynItem:OnChoice()
+  self._choiceMark.enabled = self._data.choice
 end
-
-

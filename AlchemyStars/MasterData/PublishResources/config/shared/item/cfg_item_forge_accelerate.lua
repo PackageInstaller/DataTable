@@ -1,11 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/item/cfg_item_forge_accelerate.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, Time = 2}
 local config = {
-[5000001] = {5000001, 3600}
+  [5000001] = {5000001, 3600}
 }
 return config, "ID", key
-

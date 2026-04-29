@@ -1,96 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/svr_time/timer_event.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TimerEvent_Base", Object)
 TimerEvent_Base = TimerEvent_Base
-local TimerRunState = {Wait = 0, Called = 1, End = 2}
+local TimerRunState = {
+  Wait = 0,
+  Called = 1,
+  End = 2
+}
 _enum("TimerRunState", TimerRunState)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-TimerEvent_Base.LessComparer = function(a, b)
-  -- function num : 0_0
+function TimerEvent_Base.LessComparer(a, b)
   if a.tmNextStep < b.tmNextStep then
     return 1
+  elseif a.tmNextStep > b.tmNextStep then
+    return -1
   else
-    if b.tmNextStep < a.tmNextStep then
-      return -1
-    else
-      local nTempID = a.nTimeID - b.nTimeID
-      return nTempID
-    end
+    local nTempID = a.nTimeID - b.nTimeID
+    return nTempID
   end
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-TimerEvent_Base.Constructor = function(self, nTimeID, tmStart)
-  -- function num : 0_1
+function TimerEvent_Base:Constructor(nTimeID, tmStart)
   self.nTimeID = nTimeID
   self.tmStart = tmStart
   self.tmNextStep = tmStart
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-TimerEvent_Base.GetTimeID = function(self)
-  -- function num : 0_2
+function TimerEvent_Base:GetTimeID()
   return self.nTimeID
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-TimerEvent_Base.AutoUpdate = function(self, tmNowMs)
-  -- function num : 0_3
+function TimerEvent_Base:AutoUpdate(tmNowMs)
   return 0
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-TimerEvent_Base._CreateCallBack = function(self, hObject, cbFunction, ...)
-  -- function num : 0_4 , upvalues : _ENV
-  if cbFunction == nil then
+function TimerEvent_Base:_CreateCallBack(hObject, cbFunction, ...)
+  if nil == cbFunction then
     return nil
   end
-  local cbEvent = nil
-  if hObject == nil then
-    cbEvent = (GameHelper:GetInstance()):CreateCallback(cbFunction, ...)
+  local cbEvent
+  if nil == hObject then
+    cbEvent = GameHelper:GetInstance():CreateCallback(cbFunction, ...)
   else
-    cbEvent = (GameHelper:GetInstance()):CreateCallback(cbFunction, hObject, ...)
+    cbEvent = GameHelper:GetInstance():CreateCallback(cbFunction, hObject, ...)
   end
   return cbEvent
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-TimerEvent_Base._CallEvent = function(self, cbEvent, ...)
-  -- function num : 0_5
+function TimerEvent_Base:_CallEvent(cbEvent, ...)
   if cbEvent then
     cbEvent:Call(...)
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-TimerEvent_Base._GetStepCount = function(self, tmNow, nStepLong)
-  -- function num : 0_6 , upvalues : _ENV
+function TimerEvent_Base:_GetStepCount(tmNow, nStepLong)
   local nTotalLong = tmNow - self.tmNextStep
   if nTotalLong < 0 or nStepLong <= 0 then
     return 0
   end
-  if nTotalLong == 0 then
+  if 0 == nTotalLong then
     return 1
   end
-  return (math.ceil)(nTotalLong / nStepLong)
+  return math.ceil(nTotalLong / nStepLong)
 end
 
 _class("TimerEvent_Loop", TimerEvent_Base)
 TimerEvent_Loop = TimerEvent_Loop
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
 
-TimerEvent_Loop.Constructor = function(self, nTimeID, tmStart, nStepLong, funcStep, ...)
-  -- function num : 0_7
+function TimerEvent_Loop:Constructor(nTimeID, tmStart, nStepLong, funcStep, ...)
   self.nTimeID = nTimeID
   self.tmStart = tmStart
   if nStepLong <= 0 then
@@ -102,15 +77,12 @@ TimerEvent_Loop.Constructor = function(self, nTimeID, tmStart, nStepLong, funcSt
   self.cbEvent_Work = self:_CreateCallBack(nil, funcStep, ...)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-TimerEvent_Loop.AutoUpdate = function(self, tmNowMs)
-  -- function num : 0_8
+function TimerEvent_Loop:AutoUpdate(tmNowMs)
   if tmNowMs < self.tmNextStep then
     return 0
   end
   local nStepCount = self:_GetStepCount(tmNowMs, self.nStepLong)
-  if nStepCount > 0 then
+  if 0 < nStepCount then
     self:_CallEvent(self.cbEvent_Work, self.nTimeID, tmNowMs, nStepCount)
     self.tmNextStep = self.tmNextStep + self.nStepLong * nStepCount
   end
@@ -119,10 +91,8 @@ end
 
 _class("TimerEvent_Once", TimerEvent_Base)
 TimerEvent_Once = TimerEvent_Once
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
 
-TimerEvent_Once.Constructor = function(self, nTimeID, tmStart, tmEnd, funcEnd, ...)
-  -- function num : 0_9
+function TimerEvent_Once:Constructor(nTimeID, tmStart, tmEnd, funcEnd, ...)
   self.nTimeID = nTimeID
   self.tmStart = tmStart
   self.tmNextStep = tmEnd
@@ -130,10 +100,7 @@ TimerEvent_Once.Constructor = function(self, nTimeID, tmStart, tmEnd, funcEnd, .
   self.cbEvent_Work = self:_CreateCallBack(nil, funcEnd, ...)
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-TimerEvent_Once.AutoUpdate = function(self, tmNowMs)
-  -- function num : 0_10
+function TimerEvent_Once:AutoUpdate(tmNowMs)
   if tmNowMs < self.tmNextStep then
     return 0
   end
@@ -144,28 +111,23 @@ end
 
 _class("TimerEvent_LoopEnd", TimerEvent_Base)
 TimerEvent_LoopEnd = TimerEvent_LoopEnd
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
 
-TimerEvent_LoopEnd.Constructor = function(self, nTimeID, tmStart, nStepLong, tmEnd, objectStep, funcStep, objectEnd, funcEnd, ...)
-  -- function num : 0_11
+function TimerEvent_LoopEnd:Constructor(nTimeID, tmStart, nStepLong, tmEnd, objectStep, funcStep, objectEnd, funcEnd, ...)
   self.nTimeID = nTimeID
   self.tmStart = tmStart
   if nStepLong < 0 then
     nStepLong = tmEnd - tmStart
   end
   self.nStepLong = nStepLong
-  self.tmNextStep = tmStart + (nStepLong)
+  self.tmNextStep = tmStart + nStepLong
   self.tmEnd = tmEnd
   self.nCountCall = 0
   self.cbEvent_Work = self:_CreateCallBack(objectStep, funcStep, ...)
   self.cbEvent_End = self:_CreateCallBack(objectEnd, funcEnd, ...)
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-TimerEvent_LoopEnd.AutoUpdate = function(self, tmNowMs)
-  -- function num : 0_12 , upvalues : TimerRunState
-  if self.tmEnd <= tmNowMs then
+function TimerEvent_LoopEnd:AutoUpdate(tmNowMs)
+  if tmNowMs >= self.tmEnd then
     self.nCountCall = self.nCountCall + 1
     self:_CallEvent(self.cbEvent_End, self.nTimeID, tmNowMs, 1)
     return TimerRunState.End
@@ -174,11 +136,9 @@ TimerEvent_LoopEnd.AutoUpdate = function(self, tmNowMs)
     return TimerRunState.Wait
   end
   local nStepCount = self:_GetStepCount(tmNowMs, self.nStepLong)
-  if nStepCount > 0 then
+  if 0 < nStepCount then
     self:_CallEvent(self.cbEvent_Work, self.nTimeID, tmNowMs, nStepCount)
     self.tmNextStep = self.tmNextStep + self.nStepLong * nStepCount
   end
   return TimerRunState.Called
 end
-
-

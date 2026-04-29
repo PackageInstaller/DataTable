@@ -1,57 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/graph/ui_n28_avg_graph.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGGraph", UIController)
 UIN28AVGGraph = UIN28AVGGraph
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGGraph.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN28AVGData()
+function UIN28AVGGraph:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN28AVGData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraph.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIN28AVGGraph:LoadDataOnEnter(TT, res, uiParams)
   self:HandleUpdateFstNodeDataIfFstIn(TT, res)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraph.HandleUpdateFstNodeDataIfFstIn = function(self, TT, res)
-  -- function num : 0_2 , upvalues : _ENV
-  local nodeId = (self.data):FirstNodeId()
-  local avgStoryMissionInfo = (self.data):GetServerNodeDataByNodeId(nodeId)
+function UIN28AVGGraph:HandleUpdateFstNodeDataIfFstIn(TT, res)
+  local nodeId = self.data:FirstNodeId()
+  local avgStoryMissionInfo = self.data:GetServerNodeDataByNodeId(nodeId)
   if avgStoryMissionInfo then
-    return 
+    return
   end
-  local node = (self.data):GetNodeById(nodeId)
+  local node = self.data:GetNodeById(nodeId)
   avgStoryMissionInfo = AVGStoryMissionInfo:New()
   avgStoryMissionInfo.mission_id = nodeId
   avgStoryMissionInfo.end_formation_info = AVGStoryFormationInfo:New()
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R8 in 'UnsetPending'
-
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R7 in 'UnsetPending'
-
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (avgStoryMissionInfo.end_formation_info).leader_hp = node:StartData()
-  local com = (self.data):GetComponentAVG()
-  local ret = com:HandleUpdateNodeData(TT, res, R11_PC28, 0)
-  if (N28AVGData.CheckCode)(res) then
+  avgStoryMissionInfo.end_formation_info.leader_hp, avgStoryMissionInfo.end_formation_info.teammate_affinity, avgStoryMissionInfo.end_formation_info.evidence = node:StartData()
+  local com = self.data:GetComponentAVG()
+  local ret = com:HandleUpdateNodeData(TT, res, avgStoryMissionInfo, 0)
+  if N28AVGData.CheckCode(res) then
+  else
     res:SetSucc(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraph.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN28AVGGraph:OnShow(uiParams)
   self.isFromStory = uiParams[1] or false
   self.endId = uiParams[2] or 0
   self.nodeId = uiParams[3] or 101
@@ -64,54 +42,34 @@ UIN28AVGGraph.OnShow = function(self, uiParams)
   local poolLeader = self:GetUIComponent("UISelectObjectPath", "leader")
   self.leader = poolLeader:SpawnObject("UIN28AVGActor")
   self.poolPartners = self:GetUIComponent("UISelectObjectPath", "partners")
-  ;
-  (self.data):Update()
+  self.data:Update()
   self:Flush()
-  self.fsm = (StateMachineManager:GetInstance()):CreateStateMachine("StateAVGGraph", StateAVGGraph)
-  ;
-  (self.fsm):SetData(self)
-  ;
-  (self.fsm):Init(StateAVGGraph.Init)
+  self.fsm = StateMachineManager:GetInstance():CreateStateMachine("StateAVGGraph", StateAVGGraph)
+  self.fsm:SetData(self)
+  self.fsm:Init(StateAVGGraph.Init)
   local targetNodeId = 0
   local hideNode = self:GetHideNewNode()
   if hideNode then
     targetNodeId = hideNode.id
     local ui = self:GetWidgetHdie(targetNodeId)
     if ui then
-      (ui.new):SetActive(false)
-      ;
-      (ui.lock):SetActive(true)
+      ui.new:SetActive(false)
+      ui.lock:SetActive(true)
     end
+  elseif self.endId > 0 then
+    targetNodeId = self.nodeId
   else
-    do
-      if self.endId > 0 then
-        targetNodeId = self.nodeId
-      else
-        local curNode = (self.data):CurNode()
-        targetNodeId = curNode.id
-      end
-      do
-        -- DECOMPILER ERROR at PC112: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self.rtContent).anchoredPosition = Vector2.zero
-        ;
-        (self.fsm):ChangeState(StateAVGGraph.Focus, targetNodeId)
-      end
-    end
+    local curNode = self.data:CurNode()
+    targetNodeId = curNode.id
   end
+  self.rtContent.anchoredPosition = Vector2.zero
+  self.fsm:ChangeState(StateAVGGraph.Focus, targetNodeId)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraph.OnHide = function(self)
-  -- function num : 0_4
+function UIN28AVGGraph:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraph.Flush = function(self)
-  -- function num : 0_5
+function UIN28AVGGraph:Flush()
   self:FlushContentSize()
   self:FlushTxtCurPos()
   self:FlushGraph()
@@ -119,24 +77,19 @@ UIN28AVGGraph.Flush = function(self)
   self:FlushActors()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraph.FlushContentSize = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN28AVGGraph:FlushContentSize()
   local size = Vector2.zero
   local minX, minY = 9999, 9999
   local maxX, maxY = -9999, -9999
-  for id,node in pairs((self.data).dictStoryNode) do
-    if node:IsHide() then
-      local isVisibleHideNode = node:IsSatisfyVisible()
-    end
+  for id, node in pairs(self.data.dictStoryNode) do
+    local isVisibleHideNode = node:IsHide() and node:IsSatisfyVisible()
     local isVisibleNode = node:State()
     if isVisibleHideNode or isVisibleNode then
       local pos = node.pos
-      if pos.x < minX then
+      if minX > pos.x then
         minX = pos.x
       end
-      if pos.y < minY then
+      if minY > pos.y then
         minY = pos.y
       end
       if maxX < pos.x then
@@ -150,136 +103,100 @@ UIN28AVGGraph.FlushContentSize = function(self)
   local expandX, expandY = 800, 600
   size.x = maxX - minX + expandX
   size.y = maxY - minY + expandY
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.rtContent).sizeDelta = size
+  self.rtContent.sizeDelta = size
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraph.FlushTxtCurPos = function(self)
-  -- function num : 0_7
+function UIN28AVGGraph:FlushTxtCurPos()
   if self.endId > 0 then
-    local nodeEnd = (self.data):GetNodeById(self.nodeId)
-    ;
-    (self.txtCurPos):SetText(nodeEnd.title)
-    ;
-    (self.txtCurPos1):SetText(nodeEnd.title)
+    local nodeEnd = self.data:GetNodeById(self.nodeId)
+    self.txtCurPos:SetText(nodeEnd.title)
+    self.txtCurPos1:SetText(nodeEnd.title)
   else
-    do
-      local node = (self.data):CurNode()
-      ;
-      (self.txtCurPos):SetText(node.title)
-      ;
-      (self.txtCurPos1):SetText(node.title)
-    end
+    local node = self.data:CurNode()
+    self.txtCurPos:SetText(node.title)
+    self.txtCurPos1:SetText(node.title)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraph.FlushGraph = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local len = (table.count)((self.data).dictStoryNode)
-  ;
-  (self.poolContent):SpawnObjects("UIN28AVGGraphNodePool", len)
-  local uis = (self.poolContent):GetAllSpawnList()
+function UIN28AVGGraph:FlushGraph()
+  local len = table.count(self.data.dictStoryNode)
+  self.poolContent:SpawnObjects("UIN28AVGGraphNodePool", len)
+  local uis = self.poolContent:GetAllSpawnList()
   local i = 1
-  for id,node in pairs((self.data).dictStoryNode) do
+  for id, node in pairs(self.data.dictStoryNode) do
     local ui = uis[i]
     ui:Flush(id, self.endId, self.nodeId)
     i = i + 1
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraph.FlushLines = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local len = (table.count)((self.data).lines)
-  ;
-  (self.poolLines):SpawnObjects("UIN28AVGGraphLine", len)
-  local uis = (self.poolLines):GetAllSpawnList()
+function UIN28AVGGraph:FlushLines()
+  local len = table.count(self.data.lines)
+  self.poolLines:SpawnObjects("UIN28AVGGraphLine", len)
+  local uis = self.poolLines:GetAllSpawnList()
   local i = 1
-  for id,line in pairs((self.data).lines) do
+  for id, line in pairs(self.data.lines) do
     local ui = uis[i]
     ui:Flush(line)
     i = i + 1
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraph.FlushActors = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN28AVGGraph:FlushActors()
   local hp, strategies = 0, {}
   if self.isFromStory then
-    hp = (self.data):CalcCurData()
+    hp, strategies = self.data:CalcCurData()
   else
-    local node = (self.data):CurNode()
-    -- DECOMPILER ERROR at PC16: Overwrote pending register: R2 in 'AssignReg'
-
-    hp = node:StartData()
+    local node = self.data:CurNode()
+    hp, strategies = node:StartData()
   end
-  do
-    ;
-    (self.leader):Flush(0, hp)
-    local len = (table.count)((self.data).actorPartners)
-    ;
-    (self.poolPartners):SpawnObjects("UIN28AVGActor", len)
-    local uis = (self.poolPartners):GetAllSpawnList()
-    for i,ui in ipairs(uis) do
-      ui:Flush(i, strategies[i] or 0)
-    end
+  self.leader:Flush(0, hp)
+  local len = table.count(self.data.actorPartners)
+  self.poolPartners:SpawnObjects("UIN28AVGActor", len)
+  local uis = self.poolPartners:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
+    ui:Flush(i, strategies[i] or 0)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraph.GetHideNewNode = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local targetNode = nil
-  for id,node in pairs((self.data).dictStoryNode) do
-    -- DECOMPILER ERROR at PC24: Unhandled construct in 'MakeBoolean' P1
-
-    if node:IsHide() and node:IsSatisfyVisible() and node:IsHideNew() and targetNode and targetNode.id < node.id then
-      targetNode = node
+function UIN28AVGGraph:GetHideNewNode()
+  local targetNode
+  for id, node in pairs(self.data.dictStoryNode) do
+    if node:IsHide() and node:IsSatisfyVisible() and node:IsHideNew() then
+      if targetNode then
+        if targetNode.id < node.id then
+          targetNode = node
+        end
+      else
+        targetNode = node
+      end
     end
-    targetNode = node
   end
   return targetNode
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraph.BtnExitOnClick = function(self, go)
-  -- function num : 0_12
+function UIN28AVGGraph:BtnExitOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraph.BtnLocateOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  local targetNode = (self.data):CurNode()
-  ;
-  (self.fsm):ChangeState(StateAVGGraph.Focus, targetNode.id)
+function UIN28AVGGraph:BtnLocateOnClick(go)
+  local targetNode = self.data:CurNode()
+  self.fsm:ChangeState(StateAVGGraph.Focus, targetNode.id)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraph.GetWidgetHdie = function(self, hideNodeId)
-  -- function num : 0_14 , upvalues : _ENV
-  local uis = (self.poolContent):GetAllSpawnList()
-  for id,ui in pairs(uis) do
+function UIN28AVGGraph:GetWidgetHdie(hideNodeId)
+  local uis = self.poolContent:GetAllSpawnList()
+  for id, ui in pairs(uis) do
     local uiHide = ui:GetWidgetHide()
-    if uiHide and (uiHide.node).id == hideNodeId then
+    if uiHide and uiHide.node.id == hideNodeId then
       return uiHide
     end
   end
 end
 
-local StateAVGGraph = {Init = 0, Focus = 1, HideNodeUnlock = 2}
+local StateAVGGraph = {
+  Init = 0,
+  Focus = 1,
+  HideNodeUnlock = 2
+}
 _enum("StateAVGGraph", StateAVGGraph)
-

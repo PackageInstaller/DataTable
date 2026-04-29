@@ -1,46 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw/ui_haute_couture_draw_dynamic_probablity_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawDynamicProbablityController", UIController)
 UIHauteCoutureDrawDynamicProbablityController = UIHauteCoutureDrawDynamicProbablityController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawDynamicProbablityController.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawDynamicProbablityController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDynamicProbablityController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDrawDynamicProbablityController:OnShow(uiParams)
   self._prizes = uiParams[1]
   self._cmpInfo = uiParams[2]
   self._cmpID = uiParams[3]
-  if not uiParams[4] then
-    self._replaceIdxs = {}
-    self._drawTimes = (self._cmpInfo).shake_num
-    self._gotPrizeIds = (self._cmpInfo).shake_win_ids
-    self._title = self:GetUIComponent("UILocalizationText", "title")
-    self._content = self:GetUIComponent("UISelectObjectPath", "Content")
-    self._text2 = self:GetUIComponent("RectTransform", "text2")
-    self:OnValue()
-  end
+  self._replaceIdxs = uiParams[4] or {}
+  self._drawTimes = self._cmpInfo.shake_num
+  self._gotPrizeIds = self._cmpInfo.shake_win_ids
+  self._title = self:GetUIComponent("UILocalizationText", "title")
+  self._content = self:GetUIComponent("UISelectObjectPath", "Content")
+  self._text2 = self:GetUIComponent("RectTransform", "text2")
+  self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDynamicProbablityController.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local items = (self._content):SpawnObjects("UIHauteCoutureDrawProbabilityItem", #self._prizes)
+function UIHauteCoutureDrawDynamicProbablityController:OnValue()
+  local items = self._content:SpawnObjects("UIHauteCoutureDrawProbabilityItem", #self._prizes)
   local allRate = 0
   local allRateTab = {}
-  for idx,v in ipairs(self._prizes) do
-    if not (table.icontains)(self._gotPrizeIds, v.ID) and self:FilterDrawTimes(v) then
+  for idx, v in ipairs(self._prizes) do
+    if not table.icontains(self._gotPrizeIds, v.ID) and self:FilterDrawTimes(v) then
       local rate = 0
       rate = self:CalculateProbablity(v.ID)
-      rate = (math.floor)(rate * 100) / 100
+      rate = math.floor(rate * 100) / 100
       allRate = allRate + rate
       allRateTab[v.ID] = rate
     end
@@ -51,7 +36,7 @@ UIHauteCoutureDrawDynamicProbablityController.OnValue = function(self)
     local max = 0
     local theOne = -1
     for i = 1, #self._prizes do
-      local id = ((self._prizes)[i]).ID
+      local id = self._prizes[i].ID
       if allRateTab[id] then
         local rate = allRateTab[id]
         if max <= rate then
@@ -61,54 +46,39 @@ UIHauteCoutureDrawDynamicProbablityController.OnValue = function(self)
       end
     end
     if allRateTab[theOne] then
-      allRateTab[theOne] = allRateTab[theOne] - (deltaRate)
+      allRateTab[theOne] = allRateTab[theOne] - deltaRate
     end
   end
-  do
-    for k,v in ipairs(self._prizes) do
-      (items[k]):SetData(v, self._drawTimes, (table.icontains)(self._gotPrizeIds, v.ID), allRateTab[v.ID], (table.icontains)(self._replaceIdxs, k))
-    end
-    ;
-    (self._text2):SetAsLastSibling()
+  for k, v in ipairs(self._prizes) do
+    items[k]:SetData(v, self._drawTimes, table.icontains(self._gotPrizeIds, v.ID), allRateTab[v.ID], table.icontains(self._replaceIdxs, k))
   end
+  self._text2:SetAsLastSibling()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDynamicProbablityController.maskOnClick = function(self)
-  -- function num : 0_3
+function UIHauteCoutureDrawDynamicProbablityController:maskOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDynamicProbablityController.CalculateProbablity = function(self, id)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHauteCoutureDrawDynamicProbablityController:CalculateProbablity(id)
   local totalWeight = 0
-  local cfgs = (Cfg.cfg_component_senior_skin_weight)({ComponentID = self._cmpID})
-  for _,cfg in pairs(cfgs) do
-    if not (table.icontains)(self._gotPrizeIds, cfg.ID) and self:FilterDrawTimes(cfg) then
+  local cfgs = Cfg.cfg_component_senior_skin_weight({
+    ComponentID = self._cmpID
+  })
+  for _, cfg in pairs(cfgs) do
+    if not table.icontains(self._gotPrizeIds, cfg.ID) and self:FilterDrawTimes(cfg) then
       totalWeight = totalWeight + cfg.Weight
     end
   end
-  return ((Cfg.cfg_component_senior_skin_weight)[id]).Weight / (totalWeight) * 100
+  return Cfg.cfg_component_senior_skin_weight[id].Weight / totalWeight * 100
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDynamicProbablityController.FilterDrawTimes = function(self, v)
-  -- function num : 0_5
+function UIHauteCoutureDrawDynamicProbablityController:FilterDrawTimes(v)
   if v.RareLevel and self._drawTimes < v.RareLevel - 1 then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDynamicProbablityController.closeOnClick = function(self)
-  -- function num : 0_6
+function UIHauteCoutureDrawDynamicProbablityController:closeOnClick()
   self:CloseDialog()
 end
-
-

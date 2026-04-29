@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/main/ui_homeland_anonymous_movie_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandAnonymousMovieItem", UICustomWidget)
 UIHomelandAnonymousMovieItem = UIHomelandAnonymousMovieItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandAnonymousMovieItem.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandAnonymousMovieItem:Constructor()
   self._assestData = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandAnonymousMovieItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieItem.InitWidget = function(self)
-  -- function num : 0_2
+function UIHomelandAnonymousMovieItem:InitWidget()
   self._assest = self:GetUIComponent("RawImageLoader", "assest")
   self._received = self:GetUIComponent("Image", "received")
   self.anim = self:GetUIComponent("Animation", "received")
@@ -30,41 +17,25 @@ UIHomelandAnonymousMovieItem.InitWidget = function(self)
   self._countText = self:GetUIComponent("UILocalizationText", "countText")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieItem.SetData = function(self, data, received)
-  -- function num : 0_3
+function UIHomelandAnonymousMovieItem:SetData(data, received)
   self._assestData = data
   self:InitData()
   self:SetReceived(received)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieItem.SetReceived = function(self, isShow)
-  -- function num : 0_4
-  (self._receivedObj):SetActive(isShow)
+function UIHomelandAnonymousMovieItem:SetReceived(isShow)
+  self._receivedObj:SetActive(isShow)
   if isShow then
-    (self.anim):Play("uieff_N26_UIHomelandAnonymousMovieItem_received")
+    self.anim:Play("uieff_N26_UIHomelandAnonymousMovieItem_received")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieItem.RewardOnClick = function(self, go)
-  -- function num : 0_5
-  self:ShowDialog("UIItemTipsHomeland", (self._assestData)[1], go)
+function UIHomelandAnonymousMovieItem:RewardOnClick(go)
+  self:ShowDialog("UIItemTipsHomeland", self._assestData[1], go)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAnonymousMovieItem.InitData = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local itemcfg = (Cfg.cfg_item)[(self._assestData)[1]]
-  ;
-  (self._assest):LoadImage(itemcfg.Icon)
-  ;
-  (self._countText):SetText((self._assestData)[2])
+function UIHomelandAnonymousMovieItem:InitData()
+  local itemcfg = Cfg.cfg_item[self._assestData[1]]
+  self._assest:LoadImage(itemcfg.Icon)
+  self._countText:SetText(self._assestData[2])
 end
-
-

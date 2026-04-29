@@ -1,66 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/string_table/attrsys.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AttrSys", Singleton)
 AttrSys = AttrSys
 local toint = math.tointeger
--- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
 
-AttrSys.GetFormatNum = function(num)
-  -- function num : 0_0 , upvalues : _ENV, toint
+function AttrSys.GetFormatNum(num)
   local num0 = num / 1000000000
   local num1 = num / 100000000
   local num2 = num / 100000
   local num3 = num / 10000
   local s = num
-  if num0 >= 1 then
-    s = (StringTable.Get)("str_common_hundreds_of_millions_of", toint(num1))
-  else
-    if num1 >= 1 then
-      if num - num1 * 100000000 >= 10000000 then
-        s = (StringTable.Get)("str_common_hundreds_of_millions_of", (string.format)("%0.1f", num1))
-      else
-        s = (StringTable.Get)("str_common_hundreds_of_millions_of", toint(num1))
-      end
+  if 1 <= num0 then
+    s = StringTable.Get("str_common_hundreds_of_millions_of", toint(num1))
+  elseif 1 <= num1 then
+    if num - num1 * 100000000 >= 10000000 then
+      s = StringTable.Get("str_common_hundreds_of_millions_of", string.format("%0.1f", num1))
     else
-      if num2 >= 1 then
-        s = (StringTable.Get)("str_common_tens_of_thousands_of", toint(num3))
-      else
-        if num3 >= 1 then
-          if num - (math.floor)(num3) * 10000 >= 1000 then
-            s = (StringTable.Get)("str_common_tens_of_thousands_of", (string.format)("%0.1f", num3))
-          else
-            s = (StringTable.Get)("str_common_tens_of_thousands_of", toint(num3))
-          end
-        else
-          s = toint(num)
-        end
-      end
+      s = StringTable.Get("str_common_hundreds_of_millions_of", toint(num1))
     end
+  elseif 1 <= num2 then
+    s = StringTable.Get("str_common_tens_of_thousands_of", toint(num3))
+  elseif 1 <= num3 then
+    if num - math.floor(num3) * 10000 >= 1000 then
+      s = StringTable.Get("str_common_tens_of_thousands_of", string.format("%0.1f", num3))
+    else
+      s = StringTable.Get("str_common_tens_of_thousands_of", toint(num3))
+    end
+  else
+    s = toint(num)
   end
   return s
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-AttrSys.FillForcenum = function()
-  -- function num : 0_1
+function AttrSys.FillForcenum()
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-AttrSys.GetLanguage = function()
-  -- function num : 0_2 , upvalues : _ENV
-  return (Localization.GetCurLanguage)()
+function AttrSys.GetLanguage()
+  return Localization.GetCurLanguage()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-AttrSys.GetLanguages = function()
-  -- function num : 0_3 , upvalues : _ENV
-  return (Localization.GetLanguages)()
+function AttrSys.GetLanguages()
+  return Localization.GetLanguages()
 end
-
-

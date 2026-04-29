@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_add_extra_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultAddExtraLayer", BuffResultBase)
 BuffResultAddExtraLayer = BuffResultAddExtraLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddExtraLayer.Constructor = function(self, e, layerType, extraLayer, finalLayer, targetBuffSeq, oldBuffLayer)
-  -- function num : 0_0
+function BuffResultAddExtraLayer:Constructor(e, layerType, extraLayer, finalLayer, targetBuffSeq, oldBuffLayer)
   self._entity = e
   self._layerType = layerType
   self._extraLayer = extraLayer
@@ -17,61 +10,35 @@ BuffResultAddExtraLayer.Constructor = function(self, e, layerType, extraLayer, f
   self._oldBuffLayer = oldBuffLayer
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddExtraLayer.GetOldBuffLayer = function(self)
-  -- function num : 0_1
+function BuffResultAddExtraLayer:GetOldBuffLayer()
   return self._oldBuffLayer
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddExtraLayer.GetFinalLayer = function(self)
-  -- function num : 0_2
+function BuffResultAddExtraLayer:GetFinalLayer()
   return self._finalLayer
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddExtraLayer.GetTargetBuffSeq = function(self)
-  -- function num : 0_3
+function BuffResultAddExtraLayer:GetTargetBuffSeq()
   return self._targetBuffSeq
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddExtraLayer.GetAddLayer = function(self)
-  -- function num : 0_4
+function BuffResultAddExtraLayer:GetAddLayer()
   return self._extraLayer
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddExtraLayer.GetLayerType = function(self)
-  -- function num : 0_5
+function BuffResultAddExtraLayer:GetLayerType()
   return self._layerType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddExtraLayer.GetEntity = function(self)
-  -- function num : 0_6
+function BuffResultAddExtraLayer:GetEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddExtraLayer.SaveNotifyData = function(self, notify)
-  -- function num : 0_7
+function BuffResultAddExtraLayer:SaveNotifyData(notify)
   self._notify__layer = notify:GetLayer()
   self._notify__totalCount = notify:GetTotalCount()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddExtraLayer.GetNotifyOldTotalLayer = function(self)
-  -- function num : 0_8
+function BuffResultAddExtraLayer:GetNotifyOldTotalLayer()
   return self._notify__totalCount
 end
-
-

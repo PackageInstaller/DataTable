@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/ui_world_boss_dan_detail_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossDanDetailController", UIController)
 UIWorldBossDanDetailController = UIWorldBossDanDetailController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossDanDetailController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWorldBossDanDetailController:Constructor()
   self._loginModule = self:GetModule(LoginModule)
   self._roleModule = self:GetModule(RoleModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
@@ -18,13 +11,10 @@ UIWorldBossDanDetailController.Constructor = function(self)
   self._dicDanWidget = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWorldBossDanDetailController:LoadDataOnEnter(TT, res)
   self._worldBossModule = self:GetModule(WorldBossModule)
-  self._worldBossData = (self._worldBossModule).m_world_boss_data
-  local result = (self._worldBossModule):ReqGetDanInfo(TT)
+  self._worldBossData = self._worldBossModule.m_world_boss_data
+  local result = self._worldBossModule:ReqGetDanInfo(TT)
   if result:GetSucc() then
     res:SetSucc(true)
   else
@@ -32,116 +22,105 @@ UIWorldBossDanDetailController.LoadDataOnEnter = function(self, TT, res)
   end
   local curRequest = false
   local preRequest = false
-  curRequest = (self._worldBossModule):NeedRequestRank()
+  curRequest, preRequest = self._worldBossModule:NeedRequestRank()
   if curRequest then
-    (self._worldBossModule):GetWorldBossRankTopN(TT, true)
+    self._worldBossModule:GetWorldBossRankTopN(TT, true)
   end
   if preRequest then
-    (self._worldBossModule):GetWorldBossRankTopN(TT, false)
+    self._worldBossModule:GetWorldBossRankTopN(TT, false)
   end
   self:CurRanking()
   self:PreRanking()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWorldBossDanDetailController:OnShow(uiParams)
   self._missionId = uiParams[1]
   self._callBack = uiParams[2]
   self._hideCallBack = uiParams[3]
   self._isEliminate = uiParams[4] or false
-  ;
-  (self._hideCallBack)()
+  self._hideCallBack()
   self:CalClientDanRank()
   self:InitWidget()
   self:_RefreshUi(true)
   self:AttachEvent(GameEventType.UIQuestWorldBossRest, self.OnUIQuestWorldBossRest)
   self:Lock("UIWorldBossDanDetailController_OnShow")
-  local te = ((GameGlobal.Timer)()):AddEvent(600, function()
-    -- function num : 0_2_0 , upvalues : self
+  local te = GameGlobal.Timer():AddEvent(600, function()
     self:UnLock("UIWorldBossDanDetailController_OnShow")
-  end
-)
-  ;
-  (table.insert)(self._timeEvents, te)
+  end)
+  table.insert(self._timeEvents, te)
   self:OnShowSheet(self._idSheet)
   self:DanInAnimation()
   self:FlushCurRanking()
   self:FlushPreRanking()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.CalClientDanRank = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWorldBossDanDetailController:CalClientDanRank()
   self._danInfo = DanInfo:New()
-  for key,value in pairs((self._worldBossModule).m_dan_info) do
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._danInfo)[key] = value
+  for key, value in pairs(self._worldBossModule.m_dan_info) do
+    self._danInfo[key] = value
   end
   self._useClientCal = true
-  do
-    if self._useClientCal then
-      local rankList = (self._worldBossModule).m_rank_damage_list
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
-      -- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._danInfo).cur_dan = (UIActivityHelper.CalClientDan)(rankList, ((self._worldBossModule).m_dan_info).cur_dan, ((self._worldBossModule).m_dan_info).my_rank, (self._danInfo).promote_one, ((self._worldBossModule).m_dan_info).total_damage, (self._worldBossData).boss_mission_id)
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-      if (self._danInfo).my_rank == 1 then
-        (self._danInfo).rank_first_damage = (self._danInfo).total_damage
-      end
+  if self._useClientCal then
+    local rankList = self._worldBossModule.m_rank_damage_list
+    self._danInfo.cur_dan, self._danInfo.my_rank, self._danInfo.promote_one = UIActivityHelper.CalClientDan(rankList, self._worldBossModule.m_dan_info.cur_dan, self._worldBossModule.m_dan_info.my_rank, self._danInfo.promote_one, self._worldBossModule.m_dan_info.total_damage, self._worldBossData.boss_mission_id)
+    if self._danInfo.my_rank == 1 then
+      self._danInfo.rank_first_damage = self._danInfo.total_damage
     end
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-    if self._curRankingSelf ~= nil and (self._curRankingSelf).damage == (self._danInfo).total_damage then
-      (self._danInfo).my_rank = (self._curRankingSelf).luaIndex
-    end
+  end
+  if self._curRankingSelf ~= nil and self._curRankingSelf.damage == self._danInfo.total_damage then
+    self._danInfo.my_rank = self._curRankingSelf.luaIndex
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.Test = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local list = {15, 14, 14, 14, 10, 9, 8, 7, 6, 5, 3, 2, 1}
-  local checkScore = {16, 15, 14, 13, 10, 7, 5, 4, 3, 1, 0}
-  local rank, score = nil, nil
-  for index,value in ipairs(checkScore) do
+function UIWorldBossDanDetailController:Test()
+  local list = {
+    15,
+    14,
+    14,
+    14,
+    10,
+    9,
+    8,
+    7,
+    6,
+    5,
+    3,
+    2,
+    1
+  }
+  local checkScore = {
+    16,
+    15,
+    14,
+    13,
+    10,
+    7,
+    5,
+    4,
+    3,
+    1,
+    0
+  }
+  local rank, score
+  for index, value in ipairs(checkScore) do
     score = value
-    rank = (UIWorldBossHelper.CheckCurRank)(list, score)
-    ;
-    (Log.debug)("UIWorldBossHelper.CheckCurRank score:", score, " rank:", rank)
+    rank = UIWorldBossHelper.CheckCurRank(list, score)
+    Log.debug("UIWorldBossHelper.CheckCurRank score:", score, " rank:", rank)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.InitWidget = function(self)
-  -- function num : 0_5
+function UIWorldBossDanDetailController:InitWidget()
   self._backBtn = self:GetUIComponent("UISelectObjectPath", "BackBtn")
-  self._backBtns = (self._backBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_5_0 , upvalues : self
+  self._backBtns = self._backBtn:SpawnObject("UICommonTopButton")
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, function()
-    -- function num : 0_5_1 , upvalues : self
+  end, function()
     if self._isEliminate then
       self:ShowDialog("UIHelpController", "UIWorldBossController_Eliminate")
     else
       self:ShowDialog("UIHelpController", "UIWorldBossController")
     end
-  end
-)
+  end)
   self._uianim = self:GetGameObject("uianim")
   self._myDanInfoArea = self:GetGameObject("MyDanInfoArea")
   self._myDanInfoBg = self:GetUIComponent("RawImageLoader", "MyDanInfoBg")
@@ -184,7 +163,7 @@ UIWorldBossDanDetailController.InitWidget = function(self)
   local s = self:GetUIComponent("UISelectObjectPath", "ItemInfo")
   self._tips = s:SpawnObject("UISelectInfo")
   self._condiTips = self:GetUIComponent("UISelectObjectPath", "CondiTips")
-  self._condiTipsInfo = (self._condiTips):SpawnObject("UIWorldBossDanDetailTipsContext")
+  self._condiTipsInfo = self._condiTips:SpawnObject("UIWorldBossDanDetailTipsContext")
   self._useBadgeAnim = false
   if self._useBadgeAnim then
     self:_InitWidgetBadgeAnim()
@@ -200,35 +179,44 @@ UIWorldBossDanDetailController.InitWidget = function(self)
   self._idCur = 2
   self._idPre = 3
   self._tglSheet = {
-[self._idDan] = {tgl = self._tglDan, txtUncheck = self:GetChildComponent(self._tglDan, "UILocalizationText", "txtUncheck"), txtChecked = self:GetChildComponent(self._tglDan, "UILocalizationText", "txtChecked"), 
-content = {self._uiDanRoot}
-}
-, 
-[self._idCur] = {tgl = self._tglCur, txtUncheck = self:GetChildComponent(self._tglCur, "UILocalizationText", "txtUncheck"), txtChecked = self:GetChildComponent(self._tglCur, "UILocalizationText", "txtChecked"), 
-content = {self._uiCurRoot}
-}
-, 
-[self._idPre] = {tgl = self._tglPre, txtUncheck = self:GetChildComponent(self._tglPre, "UILocalizationText", "txtUncheck"), txtChecked = self:GetChildComponent(self._tglPre, "UILocalizationText", "txtChecked"), 
-content = {self._uiPreRoot}
-}
-}
+    [self._idDan] = {
+      tgl = self._tglDan,
+      txtUncheck = self:GetChildComponent(self._tglDan, "UILocalizationText", "txtUncheck"),
+      txtChecked = self:GetChildComponent(self._tglDan, "UILocalizationText", "txtChecked"),
+      content = {
+        self._uiDanRoot
+      }
+    },
+    [self._idCur] = {
+      tgl = self._tglCur,
+      txtUncheck = self:GetChildComponent(self._tglCur, "UILocalizationText", "txtUncheck"),
+      txtChecked = self:GetChildComponent(self._tglCur, "UILocalizationText", "txtChecked"),
+      content = {
+        self._uiCurRoot
+      }
+    },
+    [self._idPre] = {
+      tgl = self._tglPre,
+      txtUncheck = self:GetChildComponent(self._tglPre, "UILocalizationText", "txtUncheck"),
+      txtChecked = self:GetChildComponent(self._tglPre, "UILocalizationText", "txtChecked"),
+      content = {
+        self._uiPreRoot
+      }
+    }
+  }
   self._idSheet = self._idDan
   self._uiCurRoot = self:GetUIComponent("UISelectObjectPath", "uiCurRoot")
   self._uiPreRoot = self:GetUIComponent("UISelectObjectPath", "uiPreRoot")
-  self._widgetCurRanking = (self._uiCurRoot):SpawnObject("UIWorldBossRanking")
-  self._widgetPreRanking = (self._uiPreRoot):SpawnObject("UIWorldBossRanking")
+  self._widgetCurRanking = self._uiCurRoot:SpawnObject("UIWorldBossRanking")
+  self._widgetPreRanking = self._uiPreRoot:SpawnObject("UIWorldBossRanking")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController._InitWidgetBadgeAnim = function(self)
-  -- function num : 0_6
+function UIWorldBossDanDetailController:_InitWidgetBadgeAnim()
   self._anim = self:GetUIComponent("Animation", "UIWorldBossDanDetailController")
   self._rankTextFomAnim = self:GetUIComponent("UILocalizationText", "RankText")
   self._lastDanText = self:GetUIComponent("UILocalizationText", "LastDanText")
   self._lastDanTextGo = self:GetGameObject("LastDanText")
-  ;
-  (self._lastDanTextGo):SetActive(false)
+  self._lastDanTextGo:SetActive(false)
   self._curDanAreaGoForAnim = self:GetGameObject("curItem")
   self._lastDanAreaGoForAnim = self:GetGameObject("LastItem")
   self._curBadgeIconBase = self:GetUIComponent("RawImageLoader", "CurDanIcon")
@@ -248,210 +236,139 @@ UIWorldBossDanDetailController._InitWidgetBadgeAnim = function(self)
   self._lastBadgeIconFrontTextBack = self:GetUIComponent("UILocalizationText", "LastDanIconFrontTextBack")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController._FillCurBadge = function(self, danId, rankLevel)
-  -- function num : 0_7 , upvalues : _ENV
-  if (UIWorldBossHelper.IsNoDan)(danId, rankLevel) then
-    (self._curBadgeIconBase):LoadImage("1601191_logo")
-    ;
-    (self._curBadgeIconBaseGo):SetActive(false)
-    ;
-    (self._curBadgeIconFrontGo):SetActive(false)
-    return 
+function UIWorldBossDanDetailController:_FillCurBadge(danId, rankLevel)
+  if UIWorldBossHelper.IsNoDan(danId, rankLevel) then
+    self._curBadgeIconBase:LoadImage("1601191_logo")
+    self._curBadgeIconBaseGo:SetActive(false)
+    self._curBadgeIconFrontGo:SetActive(false)
+    return
   end
-  local badgeBase = (UIWorldBossHelper.GetDanBadgeBase)(danId, rankLevel)
+  local badgeBase = UIWorldBossHelper.GetDanBadgeBase(danId, rankLevel)
   if badgeBase then
-    (self._curBadgeIconBaseGo):SetActive(true)
-    ;
-    (self._curBadgeIconBase):LoadImage(badgeBase)
-    ;
-    ((self._curBadgeIconBaseForAnimMr).sharedMaterial):SetTexture("_MainTex", ((self._curBadgeIconBaseImg).material).mainTexture)
-    ;
-    ((self._curBadgeMaskMr).sharedMaterial):SetTexture("_MainTex", ((self._curBadgeIconBaseImg).material).mainTexture)
-    if rankLevel > 0 then
-      (self._curBadgeIconFrontGo):SetActive(true)
-      ;
-      (self._curBadgeIconFrontText):SetText(tostring(rankLevel))
+    self._curBadgeIconBaseGo:SetActive(true)
+    self._curBadgeIconBase:LoadImage(badgeBase)
+    self._curBadgeIconBaseForAnimMr.sharedMaterial:SetTexture("_MainTex", self._curBadgeIconBaseImg.material.mainTexture)
+    self._curBadgeMaskMr.sharedMaterial:SetTexture("_MainTex", self._curBadgeIconBaseImg.material.mainTexture)
+    if 0 < rankLevel then
+      self._curBadgeIconFrontGo:SetActive(true)
+      self._curBadgeIconFrontText:SetText(tostring(rankLevel))
       if self._curBadgeIconFrontTextBack then
-        (self._curBadgeIconFrontTextBack):SetText(tostring(rankLevel))
+        self._curBadgeIconFrontTextBack:SetText(tostring(rankLevel))
       end
     else
-      ;
-      (self._curBadgeIconFrontGo):SetActive(false)
+      self._curBadgeIconFrontGo:SetActive(false)
     end
-    local bPlus = (UIWorldBossHelper.IsPlusDan)(danId, rankLevel)
-    ;
-    (self._curBadgePlusIconGo):SetActive(bPlus)
+    local bPlus = UIWorldBossHelper.IsPlusDan(danId, rankLevel)
+    self._curBadgePlusIconGo:SetActive(bPlus)
   end
-  do
-    local danName = (UIWorldBossHelper.GetDanName)((self._danInfo).cur_dan, (self._danInfo).my_rank)
-    if danName then
-      (self._myDanText):SetText((StringTable.Get)(danName))
-    end
+  local danName = UIWorldBossHelper.GetDanName(self._danInfo.cur_dan, self._danInfo.my_rank)
+  if danName then
+    self._myDanText:SetText(StringTable.Get(danName))
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController._FillLastBadge = function(self, danId, rankLevel)
-  -- function num : 0_8 , upvalues : _ENV
-  if (UIWorldBossHelper.IsNoDan)(danId, rankLevel) then
-    (self._lastBadgeIconBase):LoadImage("1601191_logo")
-    ;
-    (self._lastBadgeIconBaseGo):SetActive(false)
-    ;
-    (self._lastBadgeIconFrontGo):SetActive(false)
-    return 
+function UIWorldBossDanDetailController:_FillLastBadge(danId, rankLevel)
+  if UIWorldBossHelper.IsNoDan(danId, rankLevel) then
+    self._lastBadgeIconBase:LoadImage("1601191_logo")
+    self._lastBadgeIconBaseGo:SetActive(false)
+    self._lastBadgeIconFrontGo:SetActive(false)
+    return
   end
-  local badgeBase = (UIWorldBossHelper.GetDanBadgeBase)(danId, rankLevel)
+  local badgeBase = UIWorldBossHelper.GetDanBadgeBase(danId, rankLevel)
   if badgeBase then
-    (self._lastBadgeIconBaseGo):SetActive(true)
-    ;
-    (self._lastBadgeIconBase):LoadImage(badgeBase)
-    if rankLevel > 0 then
-      (self._lastBadgeIconFrontGo):SetActive(true)
-      ;
-      (self._lastBadgeIconFrontText):SetText(tostring(rankLevel))
+    self._lastBadgeIconBaseGo:SetActive(true)
+    self._lastBadgeIconBase:LoadImage(badgeBase)
+    if 0 < rankLevel then
+      self._lastBadgeIconFrontGo:SetActive(true)
+      self._lastBadgeIconFrontText:SetText(tostring(rankLevel))
       if self._lastBadgeIconFrontTextBack then
-        (self._lastBadgeIconFrontTextBack):SetText(tostring(rankLevel))
+        self._lastBadgeIconFrontTextBack:SetText(tostring(rankLevel))
       end
     else
-      ;
-      (self._lastBadgeIconFrontGo):SetActive(false)
+      self._lastBadgeIconFrontGo:SetActive(false)
     end
-    local bPlus = (UIWorldBossHelper.IsPlusDan)(danId, rankLevel)
-    ;
-    (self._lastBadgePlusIconGo):SetActive(bPlus)
+    local bPlus = UIWorldBossHelper.IsPlusDan(danId, rankLevel)
+    self._lastBadgePlusIconGo:SetActive(bPlus)
   end
-  do
-    local danName = (UIWorldBossHelper.GetDanName)(danId, rankLevel)
-    if danName then
-      (self._lastDanText):SetText((StringTable.Get)(danName))
-    end
+  local danName = UIWorldBossHelper.GetDanName(danId, rankLevel)
+  if danName then
+    self._lastDanText:SetText(StringTable.Get(danName))
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController._CheckDoBadgeAnim = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if self._oldRank > 0 and self._newRank > 0 then
+function UIWorldBossDanDetailController:_CheckDoBadgeAnim()
+  if self._oldRank > 0 and 0 < self._newRank then
     if self._oldRank <= self._newRank then
       self:_FillCurBadge(self._newDan, self._newRank)
     else
       self:_FillLastBadge(self._oldDan, self._oldRank)
       self:_FillCurBadge(self._oldDan, self._oldRank)
-      ;
-      (self._anim):Play("uieff_WorldBoss_Dan_NewRank")
-      local te = ((GameGlobal.Timer)()):AddEvent(1, function()
-    -- function num : 0_9_0 , upvalues : self
-    self:_FillCurBadge(self._newDan, self._newRank)
-  end
-)
-      ;
-      (self._rankTextFomAnim):SetText(self._oldRank)
-      local te1 = ((GameGlobal.Timer)()):AddEvent(1155, function()
-    -- function num : 0_9_1 , upvalues : _ENV, self
-    local duration = 0.8
-    ;
-    (DoTweenHelper.DoUpdateInt)(self._oldRank, self._newRank + 1, duration, function(val)
-      -- function num : 0_9_1_0 , upvalues : _ENV, self
-      local rank = (math.floor)(val)
-      ;
-      (self._rankTextFomAnim):SetText(rank)
+      self._anim:Play("uieff_WorldBoss_Dan_NewRank")
+      local te = GameGlobal.Timer():AddEvent(1, function()
+        self:_FillCurBadge(self._newDan, self._newRank)
+      end)
+      self._rankTextFomAnim:SetText(self._oldRank)
+      local te1 = GameGlobal.Timer():AddEvent(1155, function()
+        local duration = 0.8
+        DoTweenHelper.DoUpdateInt(self._oldRank, self._newRank + 1, duration, function(val)
+          local rank = math.floor(val)
+          self._rankTextFomAnim:SetText(rank)
+        end)
+      end)
+      local te1 = GameGlobal.Timer():AddEvent(2055, function()
+        self._rankTextFomAnim:SetText(self._newRank)
+      end)
     end
-)
-  end
-)
-      local te1 = ((GameGlobal.Timer)()):AddEvent(2055, function()
-    -- function num : 0_9_2 , upvalues : self
-    (self._rankTextFomAnim):SetText(self._newRank)
-  end
-)
-    end
-  else
-    do
-      if self._oldDan ~= self._newDan then
-        if self._oldRank == 0 and self._newRank == 0 then
-          if self._oldDan == 0 then
-            self:_FillCurBadge(self._newDan, self._newRank)
-          else
-            if (UIWorldBossHelper.IsNormalTopDan)(self._newDan, self._newRank) then
-              self:_FillLastBadge(self._oldDan, self._oldRank)
-              self:_FillCurBadge(self._oldDan, self._oldRank)
-              ;
-              (self._anim):Play("uieff_WorldBoss_Dan_NewDan")
-              local te = ((GameGlobal.Timer)()):AddEvent(1, function()
-    -- function num : 0_9_3 , upvalues : self
-    self:_FillCurBadge(self._newDan, self._newRank)
-  end
-)
-            else
-              do
-                self:_FillLastBadge(self._oldDan, self._oldRank)
-                self:_FillCurBadge(self._oldDan, self._oldRank)
-                ;
-                (self._anim):Play("uieff_WorldBoss_Dan_NewDan_Y")
-                do
-                  local te = ((GameGlobal.Timer)()):AddEvent(1, function()
-    -- function num : 0_9_4 , upvalues : self
-    self:_FillCurBadge(self._newDan, self._newRank)
-  end
-)
-                  if self._newRank > 0 then
-                    self:_FillLastBadge(self._oldDan, self._oldRank)
-                    self:_FillCurBadge(self._oldDan, self._oldRank)
-                    ;
-                    (self._anim):Play("uieff_WorldBoss_Dan_NewDan")
-                    local te = ((GameGlobal.Timer)()):AddEvent(1, function()
-    -- function num : 0_9_5 , upvalues : self, _ENV
-    self:_FillCurBadge(self._newDan, self._newRank)
-    local tmpRank = 0
-    ;
-    (self._curBadgeIconFrontText):SetText(tostring(tmpRank))
-    if self._curBadgeIconFrontTextBack then
-      (self._curBadgeIconFrontTextBack):SetText(tostring(tmpRank))
-    end
-  end
-)
-                    local te1 = ((GameGlobal.Timer)()):AddEvent(3000, function()
-    -- function num : 0_9_6 , upvalues : _ENV, self
-    local duration = 0.66
-    ;
-    (DoTweenHelper.DoUpdateInt)(0, self._newRank, duration, function(val)
-      -- function num : 0_9_6_0 , upvalues : _ENV, self
-      local rank = (math.floor)(val)
-      ;
-      (self._curBadgeIconFrontText):SetText(tostring(rank))
-      if self._curBadgeIconFrontTextBack then
-        (self._curBadgeIconFrontTextBack):SetText(tostring(rank))
+  elseif self._oldDan ~= self._newDan then
+    if self._oldRank == 0 and self._newRank == 0 then
+      if self._oldDan == 0 then
+        self:_FillCurBadge(self._newDan, self._newRank)
+      elseif UIWorldBossHelper.IsNormalTopDan(self._newDan, self._newRank) then
+        self:_FillLastBadge(self._oldDan, self._oldRank)
+        self:_FillCurBadge(self._oldDan, self._oldRank)
+        self._anim:Play("uieff_WorldBoss_Dan_NewDan")
+        local te = GameGlobal.Timer():AddEvent(1, function()
+          self:_FillCurBadge(self._newDan, self._newRank)
+        end)
+      else
+        self:_FillLastBadge(self._oldDan, self._oldRank)
+        self:_FillCurBadge(self._oldDan, self._oldRank)
+        self._anim:Play("uieff_WorldBoss_Dan_NewDan_Y")
+        local te = GameGlobal.Timer():AddEvent(1, function()
+          self:_FillCurBadge(self._newDan, self._newRank)
+        end)
       end
-    end
-)
-  end
-)
-                  else
-                    do
-                      self:_FillCurBadge(self._newDan, self._newRank)
-                      if (UIWorldBossHelper.IsNormalTopDan)(self._newDan, self._newRank) then
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+    elseif 0 < self._newRank then
+      self:_FillLastBadge(self._oldDan, self._oldRank)
+      self:_FillCurBadge(self._oldDan, self._oldRank)
+      self._anim:Play("uieff_WorldBoss_Dan_NewDan")
+      local te = GameGlobal.Timer():AddEvent(1, function()
+        self:_FillCurBadge(self._newDan, self._newRank)
+        local tmpRank = 0
+        self._curBadgeIconFrontText:SetText(tostring(tmpRank))
+        if self._curBadgeIconFrontTextBack then
+          self._curBadgeIconFrontTextBack:SetText(tostring(tmpRank))
         end
-      end
+      end)
+      local te1 = GameGlobal.Timer():AddEvent(3000, function()
+        local duration = 0.66
+        DoTweenHelper.DoUpdateInt(0, self._newRank, duration, function(val)
+          local rank = math.floor(val)
+          self._curBadgeIconFrontText:SetText(tostring(rank))
+          if self._curBadgeIconFrontTextBack then
+            self._curBadgeIconFrontTextBack:SetText(tostring(rank))
+          end
+        end)
+      end)
+    else
+      self:_FillCurBadge(self._newDan, self._newRank)
     end
+  end
+  if UIWorldBossHelper.IsNormalTopDan(self._newDan, self._newRank) then
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.RemainingTimeOnClick = function(self)
-  -- function num : 0_10
+function UIWorldBossDanDetailController:RemainingTimeOnClick()
   if self._useBadgeAnim then
     self._oldDan = 14
     self._oldRank = 90
@@ -461,83 +378,57 @@ UIWorldBossDanDetailController.RemainingTimeOnClick = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_11
+function UIWorldBossDanDetailController:OnUpdate(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController._RefreshRemainTime = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIWorldBossDanDetailController:_RefreshRemainTime()
   if self._worldBossData then
-    local remainTime = (self._worldBossData).end_time - (self._svrTimeModule):GetServerTime() * 0.001
-    if remainTime < 0 and (self._worldBossData).boss_mission_id > 0 then
+    local remainTime = self._worldBossData.end_time - self._svrTimeModule:GetServerTime() * 0.001
+    if remainTime < 0 and 0 < self._worldBossData.boss_mission_id then
       self._danResulting = true
     else
       self._danResulting = false
     end
     if self._danResulting then
-      (self._remainingTime):SetText((StringTable.Get)("str_world_boss_dan_resulting"))
+      self._remainingTime:SetText(StringTable.Get("str_world_boss_dan_resulting"))
     else
-      ;
-      (self._remainingTime):SetText((StringTable.Get)("str_world_boss_remainingtime", self:_GetRemainTime(remainTime)))
+      self._remainingTime:SetText(StringTable.Get("str_world_boss_remainingtime", self:_GetRemainTime(remainTime)))
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController._GetRemainTime = function(self, time)
-  -- function num : 0_13 , upvalues : _ENV
-  local day, hour, minute = nil, nil, nil
-  day = (math.floor)(time / 86400)
-  hour = (math.floor)(time / 3600) % 24
-  minute = (math.floor)(time / 60) % 60
+function UIWorldBossDanDetailController:_GetRemainTime(time)
+  local day, hour, minute
+  day = math.floor(time / 86400)
+  hour = math.floor(time / 3600) % 24
+  minute = math.floor(time / 60) % 60
   local timestring = ""
-  if day > 0 then
-    timestring = day .. (StringTable.Get)("str_activity_common_day") .. hour .. (StringTable.Get)("str_activity_common_hour")
+  if 0 < day then
+    timestring = day .. StringTable.Get("str_activity_common_day") .. hour .. StringTable.Get("str_activity_common_hour")
+  elseif 0 < hour then
+    timestring = hour .. StringTable.Get("str_activity_common_hour") .. minute .. StringTable.Get("str_activity_common_minute")
+  elseif 0 < minute then
+    timestring = minute .. StringTable.Get("str_activity_common_minute")
   else
-    if hour > 0 then
-      timestring = hour .. (StringTable.Get)("str_activity_common_hour") .. minute .. (StringTable.Get)("str_activity_common_minute")
-    else
-      if minute > 0 then
-        timestring = minute .. (StringTable.Get)("str_activity_common_minute")
-      else
-        timestring = (StringTable.Get)("str_activity_common_less_minute")
-      end
-    end
+    timestring = StringTable.Get("str_activity_common_less_minute")
   end
-  return (string.format)((StringTable.Get)("str_activity_common_over"), "<color=#FFFFFF>" .. timestring .. "</color>")
+  return string.format(StringTable.Get("str_activity_common_over"), "<color=#FFFFFF>" .. timestring .. "</color>")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.ShowItemInfo = function(self, matid, pos)
-  -- function num : 0_14
-  (self._tips):SetData(matid, pos)
+function UIWorldBossDanDetailController:ShowItemInfo(matid, pos)
+  self._tips:SetData(matid, pos)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController._InitDanListUi = function(self)
-  -- function num : 0_15
+function UIWorldBossDanDetailController:_InitDanListUi()
   if not self._danListUiData then
-    return 
+    return
   end
-  ;
-  (self._danListScroll):InitListView(#self._danListUiData, function(scrollview, index)
-    -- function num : 0_15_0 , upvalues : self
+  self._danListScroll:InitListView(#self._danListUiData, function(scrollview, index)
     return self:_OnGetDanDetailCell(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController._OnGetDanDetailCell = function(self, scrollview, index)
-  -- function num : 0_16
+function UIWorldBossDanDetailController:_OnGetDanDetailCell(scrollview, index)
   local item = scrollview:NewListViewItem("RowItem")
   local cellPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -546,370 +437,267 @@ UIWorldBossDanDetailController._OnGetDanDetailCell = function(self, scrollview, 
   end
   local rowList = cellPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      itemWidget:SetData((self._danListUiData)[itemIndex], function(matid, pos)
-    -- function num : 0_16_0 , upvalues : self
-    self:ShowItemInfo(matid, pos)
+  if itemWidget then
+    local itemIndex = index + 1
+    itemWidget:SetData(self._danListUiData[itemIndex], function(matid, pos)
+      self:ShowItemInfo(matid, pos)
+    end, function(go, str)
+      self:ShowTopConditionTips(go, str)
+    end)
+    itemWidget:SetIndex(itemIndex)
+    self._dicDanWidget[item:GetInstanceID()] = itemWidget
   end
-, function(go, str)
-    -- function num : 0_16_1 , upvalues : self
-    self:ShowTopConditionTips(go, str)
-  end
-)
-      itemWidget:SetIndex(itemIndex)
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._dicDanWidget)[item:GetInstanceID()] = itemWidget
-    end
-    return item
-  end
+  return item
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController._RefreshUi = function(self, bInit)
-  -- function num : 0_17
+function UIWorldBossDanDetailController:_RefreshUi(bInit)
   self:_MakeUiData(bInit)
   self:_RefreshUiMyDanArea(bInit)
   self:_RefreshUiDanListArea(bInit)
   self:_RefreshRemainTime()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController._MakeUiData = function(self, bInit)
-  -- function num : 0_18 , upvalues : _ENV
+function UIWorldBossDanDetailController:_MakeUiData(bInit)
   self._danListUiData = {}
-  local normalCfgGroup = (Cfg.cfg_world_boss_dan)({MissionID = self._missionId, RankLevel = 0})
-  local legendCfg = (UIWorldBossHelper.GetUiLegendDanCfg)(self._missionId)
-  for index,value in ipairs(normalCfgGroup) do
+  local normalCfgGroup = Cfg.cfg_world_boss_dan({
+    MissionID = self._missionId,
+    RankLevel = 0
+  })
+  local legendCfg = UIWorldBossHelper.GetUiLegendDanCfg(self._missionId)
+  for index, value in ipairs(normalCfgGroup) do
     local uiData = DUIWorldBossDanDetailCell:New(value, self._danInfo)
-    ;
-    (table.insert)(self._danListUiData, uiData)
+    table.insert(self._danListUiData, uiData)
   end
   local uiData = DUIWorldBossDanDetailCell:New(legendCfg, self._danInfo)
-  ;
-  (table.insert)(self._danListUiData, uiData)
-  ;
-  (UIWorldBossHelper.SortDanDetailUIData)(self._danListUiData)
+  table.insert(self._danListUiData, uiData)
+  UIWorldBossHelper.SortDanDetailUIData(self._danListUiData)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController._RefreshUiMyDanArea = function(self, bInit)
-  -- function num : 0_19 , upvalues : _ENV
-  local bNoDan = (UIWorldBossHelper.IsNoDan)((self._danInfo).cur_dan, (self._danInfo).my_rank)
-  ;
-  (self._myDanBadgeAreaGo):SetActive(not bNoDan)
+function UIWorldBossDanDetailController:_RefreshUiMyDanArea(bInit)
+  local bNoDan = UIWorldBossHelper.IsNoDan(self._danInfo.cur_dan, self._danInfo.my_rank)
+  self._myDanBadgeAreaGo:SetActive(not bNoDan)
   if not bNoDan then
     if self._useBadgeAnim then
-      self:_FillCurBadge((self._danInfo).cur_dan, (self._danInfo).my_rank)
-      ;
-      (self._curDanAreaGoForAnim):SetActive(true)
+      self:_FillCurBadge(self._danInfo.cur_dan, self._danInfo.my_rank)
+      self._curDanAreaGoForAnim:SetActive(true)
     else
-      ;
-      (UIWorldBossHelper.InitDanBadge)(self._myDanBadgeArea, self._myDanBadgeAreaGo, self._myDanBadgeAreaRect, (self._danInfo).cur_dan, (self._danInfo).my_rank)
+      UIWorldBossHelper.InitDanBadge(self._myDanBadgeArea, self._myDanBadgeAreaGo, self._myDanBadgeAreaRect, self._danInfo.cur_dan, self._danInfo.my_rank)
     end
   end
-  local danName = (UIWorldBossHelper.GetDanName)((self._danInfo).cur_dan, (self._danInfo).my_rank)
+  local danName = UIWorldBossHelper.GetDanName(self._danInfo.cur_dan, self._danInfo.my_rank)
   if danName then
-    (self._myDanText):SetText((StringTable.Get)(danName))
+    self._myDanText:SetText(StringTable.Get(danName))
   end
   local showAnim = false
   if bInit and showAnim then
-    local te = ((GameGlobal.Timer)()):AddEvent(1, function()
-    -- function num : 0_19_0 , upvalues : _ENV, self
-    local duration = 0.5
-    ;
-    (DoTweenHelper.DoUpdateInt)(0, (self._danInfo).total_damage, duration, function(val)
-      -- function num : 0_19_0_0 , upvalues : _ENV, self
-      local tmpDamage = (math.floor)(val)
-      ;
-      (self._myDanCurTopScoreNum):SetText(self:_FormatCurMaxDamageNumStr(tmpDamage))
-    end
-)
-  end
-)
-    ;
-    (table.insert)(self._timeEvents, te)
+    local te = GameGlobal.Timer():AddEvent(1, function()
+      local duration = 0.5
+      DoTweenHelper.DoUpdateInt(0, self._danInfo.total_damage, duration, function(val)
+        local tmpDamage = math.floor(val)
+        self._myDanCurTopScoreNum:SetText(self:_FormatCurMaxDamageNumStr(tmpDamage))
+      end)
+    end)
+    table.insert(self._timeEvents, te)
   else
-    do
-      ;
-      (self._myDanCurTopScoreNum):SetText(self:_FormatCurMaxDamageNumStr((self._danInfo).total_damage))
-      self:_SetToNextDanArea(bInit)
-      self:_SetLastDanArea(bInit)
-      self:_SetLastDanPlayerInfo(bInit)
-    end
+    self._myDanCurTopScoreNum:SetText(self:_FormatCurMaxDamageNumStr(self._danInfo.total_damage))
   end
+  self:_SetToNextDanArea(bInit)
+  self:_SetLastDanArea(bInit)
+  self:_SetLastDanPlayerInfo(bInit)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController._RefreshUiDanListArea = function(self, bInit)
-  -- function num : 0_20
+function UIWorldBossDanDetailController:_RefreshUiDanListArea(bInit)
   if bInit then
     self:_InitDanListUi()
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController._SetToNextDanArea = function(self, bInit)
-  -- function num : 0_21 , upvalues : _ENV
-  (self._myDanToNextArea):SetActive(true)
-  local danToNextTitleStr, danToNextInfoStr = nil, nil
+function UIWorldBossDanDetailController:_SetToNextDanArea(bInit)
+  self._myDanToNextArea:SetActive(true)
+  local danToNextTitleStr, danToNextInfoStr
   local bDamageNum = false
   local tarDamageNum = 0
-  if (self._danInfo).my_rank > 0 then
-    if (self._danInfo).my_rank == 1 then
-      (self._myDanToNextArea):SetActive(false)
+  if 0 < self._danInfo.my_rank then
+    if self._danInfo.my_rank == 1 then
+      self._myDanToNextArea:SetActive(false)
     else
-      local nextRank = (self._danInfo).my_rank - 1
-      danToNextTitleStr = (StringTable.Get)("str_world_boss_dan_detail_next_legend_score", nextRank)
-      if (self._danInfo).promote_one == 0 then
-        danToNextInfoStr = (StringTable.Get)("str_world_boss_calculating")
+      local nextRank = self._danInfo.my_rank - 1
+      danToNextTitleStr = StringTable.Get("str_world_boss_dan_detail_next_legend_score", nextRank)
+      if self._danInfo.promote_one == 0 then
+        danToNextInfoStr = StringTable.Get("str_world_boss_calculating")
       else
-        danToNextInfoStr = self:_FormatToNextDamageNumStr((self._danInfo).promote_one)
+        danToNextInfoStr = self:_FormatToNextDamageNumStr(self._danInfo.promote_one)
         bDamageNum = true
-        tarDamageNum = (self._danInfo).promote_one
+        tarDamageNum = self._danInfo.promote_one
       end
+    end
+  elseif UIWorldBossHelper.IsNormalTopDan(self._danInfo.cur_dan, self._danInfo.my_rank) then
+    danToNextTitleStr = StringTable.Get("str_world_boss_dan_detail_up_condition")
+    if self._danInfo.promote_one == 0 then
+      danToNextInfoStr = StringTable.Get("str_world_boss_calculating")
+    else
+      danToNextInfoStr = self:_FormatToNextDamageNumStr(self._danInfo.promote_one)
+      bDamageNum = true
+      tarDamageNum = self._danInfo.promote_one
     end
   else
-    do
-      if (UIWorldBossHelper.IsNormalTopDan)((self._danInfo).cur_dan, (self._danInfo).my_rank) then
-        danToNextTitleStr = (StringTable.Get)("str_world_boss_dan_detail_up_condition")
-        if (self._danInfo).promote_one == 0 then
-          danToNextInfoStr = (StringTable.Get)("str_world_boss_calculating")
-        else
-          danToNextInfoStr = self:_FormatToNextDamageNumStr((self._danInfo).promote_one)
-          bDamageNum = true
-          tarDamageNum = (self._danInfo).promote_one
-        end
-      else
-        local nextDan = nil
-        if (UIWorldBossHelper.IsNoDan)((self._danInfo).cur_dan, (self._danInfo).my_rank) then
-          nextDan = (UIWorldBossHelper.GetUiMinDanId)(self._missionId)
-        else
-          nextDan = (self._danInfo).cur_dan + 1
-        end
-        local tmpRankLevel = 0
-        local nextNeedDamage = (UIWorldBossHelper.GetDanNeedDamage)(nextDan, tmpRankLevel)
-        local nextDanName = ((UIWorldBossHelper.GetDanName)(nextDan, tmpRankLevel))
-        local nextDanNameStr = nil
-        if nextDanName then
-          nextDanNameStr = (StringTable.Get)(nextDanName)
-          danToNextTitleStr = (StringTable.Get)("str_world_boss_dan_detail_up_condition", nextDanNameStr)
-          danToNextInfoStr = self:_FormatToNextDamageNumStr(nextNeedDamage)
-          if nextNeedDamage then
-            bDamageNum = true
-            tarDamageNum = tonumber(nextNeedDamage)
-          end
-        end
-        danToNextTitleStr = (StringTable.Get)("str_world_boss_dan_detail_up_condition", nextDanNameStr)
-        danToNextInfoStr = self:_FormatToNextDamageNumStr(nextNeedDamage)
-      end
-      do
-        if danToNextTitleStr then
-          (self._myDanToNextTitle):SetText(danToNextTitleStr)
-        end
-        if danToNextInfoStr then
-          local showAnim = false
-          if bInit and showAnim and bDamageNum then
-            local te = ((GameGlobal.Timer)()):AddEvent(1, function()
-    -- function num : 0_21_0 , upvalues : _ENV, tarDamageNum, self
-    local duration = 0.5
-    ;
-    (DoTweenHelper.DoUpdateInt)(0, tarDamageNum, duration, function(val)
-      -- function num : 0_21_0_0 , upvalues : _ENV, self
-      local tmpDamage = (math.floor)(val)
-      ;
-      (self._myDanToNextScoreNum):SetText(self:_FormatToNextDamageNumStr(tmpDamage))
-    end
-)
-  end
-)
-            ;
-            (table.insert)(self._timeEvents, te)
-          else
-            do
-              ;
-              (self._myDanToNextScoreNum):SetText(danToNextInfoStr)
-            end
-          end
-        end
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController._FormatCurMaxDamageNumStr = function(self, num)
-  -- function num : 0_22 , upvalues : _ENV
-  local preZero = (UIActivityHelper.GetZeroStrFrontNum)(7, num)
-  local fmtStr = (string.format)("<color=#edcc8b>%s</color><color=#edcc8b>%s</color>", preZero, tostring(num))
-  return fmtStr
-end
-
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController._FormatToNextDamageNumStr = function(self, num)
-  -- function num : 0_23 , upvalues : _ENV
-  local preZero = (UIActivityHelper.GetZeroStrFrontNum)(7, num)
-  local fmtStr = (string.format)("<color=#edcc8b>%s</color><color=#edcc8b>%s</color>", preZero, tostring(num))
-  return fmtStr
-end
-
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController._SetLastDanArea = function(self, bInit)
-  -- function num : 0_24 , upvalues : _ENV
-  self._lastDan = (self._roleModule):GetWorldBossRecordDan()
-  self._lastDanRank = (self._roleModule):GetWorldBossRecordRank()
-  local bIsNoDan = (UIWorldBossHelper.IsNoDan)(self._lastDan, self._lastDanRank)
-  ;
-  (self._myLastDanDetailAreaGo):SetActive(not bIsNoDan)
-  ;
-  (self._myLastDanNoDanAreaGo):SetActive(bIsNoDan)
-  do
-    if not bIsNoDan then
-      local head_dan_badge = (UIWorldBossHelper.InitDanBadge)(self._myLastDanBadgeArea, self._myLastDanBadgeAreaGo, self._myLastDanBadgeAreaRect, self._lastDan, self._lastDanRank)
-      head_dan_badge:RankLevelTransform(Vector2(104, -160), 1.4)
-    end
-    local lastDanString = nil
-    if bIsNoDan then
-      lastDanString = (StringTable.Get)("str_world_boss_dan_detail_no_last_dan")
+    local nextDan
+    if UIWorldBossHelper.IsNoDan(self._danInfo.cur_dan, self._danInfo.my_rank) then
+      nextDan = UIWorldBossHelper.GetUiMinDanId(self._missionId)
     else
-      if self._lastDanRank > 0 then
-        local lastDanName = (UIWorldBossHelper.GetDanName)(self._lastDan, self._lastDanRank)
-        if lastDanName then
-          lastDanString = (StringTable.Get)("str_world_boss_dan_detail_last_dan_info_1", (StringTable.Get)(lastDanName), self._lastDanRank)
-        end
-      else
-        do
-          do
-            local lastDanName = (UIWorldBossHelper.GetDanName)(self._lastDan, self._lastDanRank)
-            if lastDanName then
-              lastDanString = (StringTable.Get)(lastDanName)
-            end
-            if lastDanString then
-              (self._myLastDanInfoText):SetText(lastDanString)
-            end
-            local lastDanHeadTips = nil
-            local bSetShowBadge = (self._roleModule):GetBadgeSwitch()
-            if (UIWorldBossHelper.IsNoDan)(self._lastDan, self._lastDanRank) or not bSetShowBadge then
-              lastDanHeadTips = (StringTable.Get)("str_world_boss_dan_detail_last_dan_tips_2")
-            else
-              lastDanHeadTips = (StringTable.Get)("str_world_boss_dan_detail_last_dan_tips_1")
-            end
-            if lastDanHeadTips then
-              (self._myLastDanHeadTipsText):SetText(lastDanHeadTips)
-            end
-            local playerInfo = (self._roleModule):UI_GetPlayerInfo()
-            local headIcon = playerInfo.m_nHeadImageID
-            local cfg_header = (Cfg.cfg_role_head_image)[headIcon]
-            if cfg_header then
-              (self._head_icon):LoadImage(cfg_header.Icon)
-              ;
-              (HelperProxy:GetInstance()):GetHeadIconSizeWithTag(self._head_icon_rect, cfg_header.Tag)
-            else
-              ;
-              (Log.fatal)("###UIWorldBossDanDetailController - cfg_header is nil ! id - ", headIcon)
-            end
-            local headFrame = playerInfo.m_nHeadFrameID
-            if not headFrame or headFrame == 0 then
-              headFrame = (HelperProxy:GetInstance()):GetHeadFrameDefaultID()
-            end
-            local cfg_head_frame = (Cfg.cfg_role_head_frame)[headFrame]
-            ;
-            (self._head_frame):LoadImage(cfg_head_frame.Icon)
-            ;
-            (HelperProxy:GetInstance()):GetHeadBgSizeWithTag(self._head_bg_rect)
-            ;
-            (HelperProxy:GetInstance()):GetHeadBgMaskSizeWithTag(self._head_bg_mask_rect)
-            ;
-            (HelperProxy:GetInstance()):GetHeadFrameSizeWithTag(self._head_frame_rect)
-            ;
-            (HelperProxy:GetInstance()):GetHeadRootSizeWithTag(self._head_root_rect, RoleHeadFrameSizeType.Size5)
-            local headBg = playerInfo.m_nHeadColorID
-            local cfg_head_bg = (Cfg.cfg_player_head_bg)[headBg]
-            if not cfg_head_bg then
-              cfg_head_bg = (Cfg.cfg_player_head_bg)[1]
-            end
-            ;
-            (self._head_bg):LoadImage(cfg_head_bg.Icon)
-            ;
-            (UIWorldBossHelper.InitSelfDanBadgeSimple)(self._headDanBadgeGen, self._headDanBadgeGenGo, self._headDanBadgeGenRect)
-          end
-        end
+      nextDan = self._danInfo.cur_dan + 1
+    end
+    local tmpRankLevel = 0
+    local nextNeedDamage = UIWorldBossHelper.GetDanNeedDamage(nextDan, tmpRankLevel)
+    local nextDanName = UIWorldBossHelper.GetDanName(nextDan, tmpRankLevel)
+    local nextDanNameStr
+    if nextDanName then
+      nextDanNameStr = StringTable.Get(nextDanName)
+      danToNextTitleStr = StringTable.Get("str_world_boss_dan_detail_up_condition", nextDanNameStr)
+      danToNextInfoStr = self:_FormatToNextDamageNumStr(nextNeedDamage)
+      if nextNeedDamage then
+        bDamageNum = true
+        tarDamageNum = tonumber(nextNeedDamage)
       end
+    end
+    danToNextTitleStr = StringTable.Get("str_world_boss_dan_detail_up_condition", nextDanNameStr)
+    danToNextInfoStr = self:_FormatToNextDamageNumStr(nextNeedDamage)
+  end
+  if danToNextTitleStr then
+    self._myDanToNextTitle:SetText(danToNextTitleStr)
+  end
+  if danToNextInfoStr then
+    local showAnim = false
+    if bInit and showAnim and bDamageNum then
+      local te = GameGlobal.Timer():AddEvent(1, function()
+        local duration = 0.5
+        DoTweenHelper.DoUpdateInt(0, tarDamageNum, duration, function(val)
+          local tmpDamage = math.floor(val)
+          self._myDanToNextScoreNum:SetText(self:_FormatToNextDamageNumStr(tmpDamage))
+        end)
+      end)
+      table.insert(self._timeEvents, te)
+    else
+      self._myDanToNextScoreNum:SetText(danToNextInfoStr)
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
+function UIWorldBossDanDetailController:_FormatCurMaxDamageNumStr(num)
+  local preZero = UIActivityHelper.GetZeroStrFrontNum(7, num)
+  local fmtStr = string.format("<color=#edcc8b>%s</color><color=#edcc8b>%s</color>", preZero, tostring(num))
+  return fmtStr
+end
 
-UIWorldBossDanDetailController._SetLastDanPlayerInfo = function(self, bInit)
-  -- function num : 0_25 , upvalues : _ENV
-  local len = (HelperProxy:GetInstance()):GetCharLength((self._roleModule):GetName())
+function UIWorldBossDanDetailController:_FormatToNextDamageNumStr(num)
+  local preZero = UIActivityHelper.GetZeroStrFrontNum(7, num)
+  local fmtStr = string.format("<color=#edcc8b>%s</color><color=#edcc8b>%s</color>", preZero, tostring(num))
+  return fmtStr
+end
+
+function UIWorldBossDanDetailController:_SetLastDanArea(bInit)
+  self._lastDan = self._roleModule:GetWorldBossRecordDan()
+  self._lastDanRank = self._roleModule:GetWorldBossRecordRank()
+  local bIsNoDan = UIWorldBossHelper.IsNoDan(self._lastDan, self._lastDanRank)
+  self._myLastDanDetailAreaGo:SetActive(not bIsNoDan)
+  self._myLastDanNoDanAreaGo:SetActive(bIsNoDan)
+  if not bIsNoDan then
+    local head_dan_badge = UIWorldBossHelper.InitDanBadge(self._myLastDanBadgeArea, self._myLastDanBadgeAreaGo, self._myLastDanBadgeAreaRect, self._lastDan, self._lastDanRank)
+    head_dan_badge:RankLevelTransform(Vector2(104, -160), 1.4)
+  end
+  local lastDanString
+  if bIsNoDan then
+    lastDanString = StringTable.Get("str_world_boss_dan_detail_no_last_dan")
+  elseif self._lastDanRank > 0 then
+    local lastDanName = UIWorldBossHelper.GetDanName(self._lastDan, self._lastDanRank)
+    if lastDanName then
+      lastDanString = StringTable.Get("str_world_boss_dan_detail_last_dan_info_1", StringTable.Get(lastDanName), self._lastDanRank)
+    end
+  else
+    local lastDanName = UIWorldBossHelper.GetDanName(self._lastDan, self._lastDanRank)
+    if lastDanName then
+      lastDanString = StringTable.Get(lastDanName)
+    end
+  end
+  if lastDanString then
+    self._myLastDanInfoText:SetText(lastDanString)
+  end
+  local lastDanHeadTips
+  local bSetShowBadge = self._roleModule:GetBadgeSwitch()
+  if UIWorldBossHelper.IsNoDan(self._lastDan, self._lastDanRank) or not bSetShowBadge then
+    lastDanHeadTips = StringTable.Get("str_world_boss_dan_detail_last_dan_tips_2")
+  else
+    lastDanHeadTips = StringTable.Get("str_world_boss_dan_detail_last_dan_tips_1")
+  end
+  if lastDanHeadTips then
+    self._myLastDanHeadTipsText:SetText(lastDanHeadTips)
+  end
+  local playerInfo = self._roleModule:UI_GetPlayerInfo()
+  local headIcon = playerInfo.m_nHeadImageID
+  local cfg_header = Cfg.cfg_role_head_image[headIcon]
+  if cfg_header then
+    self._head_icon:LoadImage(cfg_header.Icon)
+    HelperProxy:GetInstance():GetHeadIconSizeWithTag(self._head_icon_rect, cfg_header.Tag)
+  else
+    Log.fatal("###UIWorldBossDanDetailController - cfg_header is nil ! id - ", headIcon)
+  end
+  local headFrame = playerInfo.m_nHeadFrameID
+  if not headFrame or headFrame == 0 then
+    headFrame = HelperProxy:GetInstance():GetHeadFrameDefaultID()
+  end
+  local cfg_head_frame = Cfg.cfg_role_head_frame[headFrame]
+  self._head_frame:LoadImage(cfg_head_frame.Icon)
+  HelperProxy:GetInstance():GetHeadBgSizeWithTag(self._head_bg_rect)
+  HelperProxy:GetInstance():GetHeadBgMaskSizeWithTag(self._head_bg_mask_rect)
+  HelperProxy:GetInstance():GetHeadFrameSizeWithTag(self._head_frame_rect)
+  HelperProxy:GetInstance():GetHeadRootSizeWithTag(self._head_root_rect, RoleHeadFrameSizeType.Size5)
+  local headBg = playerInfo.m_nHeadColorID
+  local cfg_head_bg = Cfg.cfg_player_head_bg[headBg]
+  cfg_head_bg = cfg_head_bg or Cfg.cfg_player_head_bg[1]
+  self._head_bg:LoadImage(cfg_head_bg.Icon)
+  UIWorldBossHelper.InitSelfDanBadgeSimple(self._headDanBadgeGen, self._headDanBadgeGenGo, self._headDanBadgeGenRect)
+end
+
+function UIWorldBossDanDetailController:_SetLastDanPlayerInfo(bInit)
+  local len = HelperProxy:GetInstance():GetCharLength(self._roleModule:GetName())
   local size = 32
-  if len > 10 then
+  if 10 < len then
     size = 31
   else
     size = 40
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._playerNameText).fontSize = size
-  ;
-  (self._playerNameText):SetText((self._roleModule):GetName())
-  ;
-  (self._playerIDText):SetText("ID:" .. (self._loginModule):GetRoleShowID())
+  self._playerNameText.fontSize = size
+  self._playerNameText:SetText(self._roleModule:GetName())
+  self._playerIDText:SetText("ID:" .. self._loginModule:GetRoleShowID())
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.OnHide = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  self:CallUIMethod("UIWorldBossController", "_FillCurBadge", (self._danInfo).cur_dan, (self._danInfo).my_rank)
+function UIWorldBossDanDetailController:OnHide()
+  self:CallUIMethod("UIWorldBossController", "_FillCurBadge", self._danInfo.cur_dan, self._danInfo.my_rank)
   if self._callBack then
-    (self._callBack)(self._missionId, (self._danInfo).cur_dan, (self._danInfo).my_rank)
+    self._callBack(self._missionId, self._danInfo.cur_dan, self._danInfo.my_rank)
   end
-  for key,value in pairs(self._timeEvents) do
-    ((GameGlobal.Timer)()):CancelEvent(value)
+  for key, value in pairs(self._timeEvents) do
+    GameGlobal.Timer():CancelEvent(value)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.ShowTopConditionTips = function(self, go, str)
-  -- function num : 0_27
-  (self._condiTipsInfo):SetData(str, go)
+function UIWorldBossDanDetailController:ShowTopConditionTips(go, str)
+  self._condiTipsInfo:SetData(str, go)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.GetChildComponent = function(self, parent, componentTypeName, name)
-  -- function num : 0_28
-  local child = (parent.transform):Find(name)
+function UIWorldBossDanDetailController:GetChildComponent(parent, componentTypeName, name)
+  local child = parent.transform:Find(name)
   if child == nil then
     return nil
   end
   return child:GetComponent(componentTypeName)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.CurRanking = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIWorldBossDanDetailController:CurRanking()
   self._curRanking = {}
   self._curRankingSelf = nil
-  local selfPstid = (self._roleModule):GetPstId()
-  local modRanking = (self._worldBossModule).m_cur_rank_topN
+  local selfPstid = self._roleModule:GetPstId()
+  local modRanking = self._worldBossModule.m_cur_rank_topN
   if modRanking ~= nil then
     modRanking = modRanking.infos
   else
@@ -918,7 +706,7 @@ UIWorldBossDanDetailController.CurRanking = function(self)
   if modRanking == nil then
     modRanking = {}
   end
-  for k,v in pairs(modRanking) do
+  for k, v in pairs(modRanking) do
     local item = RankShowSimpleOne:New()
     item.pstid = v.pstid
     item.head = v.head
@@ -926,161 +714,84 @@ UIWorldBossDanDetailController.CurRanking = function(self)
     item.frame_id = v.frame_id
     item.damage = v.damage
     item.nick = v.nick
-    ;
-    (table.insert)(self._curRanking, item)
+    table.insert(self._curRanking, item)
     if selfPstid == v.pstid then
       self._curRankingSelf = item
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._curRankingSelf).luaIndex = k
+      self._curRankingSelf.luaIndex = k
     end
   end
-  local rankList = (self._worldBossModule).m_rank_damage_list
+  local rankList = self._worldBossModule.m_rank_damage_list
   local tmp_promote = 0
-  local curDan = (self._worldBossData).cur_dan
-  local curRank = (self._worldBossData).rank
-  local max_total_damage = (self._worldBossData).max_total_damage
-  local boss_mission_id = (self._worldBossData).boss_mission_id
-  local topN = (self._worldBossModule).rank_max_show
-  curDan = (UIActivityHelper.CalClientDan)(rankList, curDan, curRank, tmp_promote, max_total_damage, boss_mission_id)
-  local bIsNoDan = (UIWorldBossHelper.IsNoDan)(curDan, curRank)
-  if curRank > 0 and not bIsNoDan then
-    local playerInfo = (self._roleModule):UI_GetPlayerInfo()
+  local curDan = self._worldBossData.cur_dan
+  local curRank = self._worldBossData.rank
+  local max_total_damage = self._worldBossData.max_total_damage
+  local boss_mission_id = self._worldBossData.boss_mission_id
+  local topN = self._worldBossModule.rank_max_show
+  curDan, curRank = UIActivityHelper.CalClientDan(rankList, curDan, curRank, tmp_promote, max_total_damage, boss_mission_id)
+  local bIsNoDan = UIWorldBossHelper.IsNoDan(curDan, curRank)
+  if 0 < curRank and not bIsNoDan then
+    local playerInfo = self._roleModule:UI_GetPlayerInfo()
     local headIcon = playerInfo.m_nHeadImageID
     local headBg = playerInfo.m_nHeadColorID
     local HeadFrame = playerInfo.m_nHeadFrameID
-    -- DECOMPILER ERROR at PC92: Confused about usage of register: R15 in 'UnsetPending'
-
     if self._curRankingSelf ~= nil then
-      (self._curRankingSelf).damage = max_total_damage
+      self._curRankingSelf.damage = max_total_damage
     else
       self._curRankingSelf = RankShowSimpleOne:New()
-      -- DECOMPILER ERROR at PC99: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (self._curRankingSelf).pstid = selfPstid
-      -- DECOMPILER ERROR at PC101: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (self._curRankingSelf).head = headIcon
-      -- DECOMPILER ERROR at PC103: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (self._curRankingSelf).head_bg = headBg
-      -- DECOMPILER ERROR at PC105: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (self._curRankingSelf).frame_id = HeadFrame
-      -- DECOMPILER ERROR at PC107: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (self._curRankingSelf).damage = max_total_damage
-      -- DECOMPILER ERROR at PC112: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (self._curRankingSelf).nick = (self._roleModule):GetName()
-      ;
-      (table.insert)(self._curRanking, self._curRankingSelf)
+      self._curRankingSelf.pstid = selfPstid
+      self._curRankingSelf.head = headIcon
+      self._curRankingSelf.head_bg = headBg
+      self._curRankingSelf.frame_id = HeadFrame
+      self._curRankingSelf.damage = max_total_damage
+      self._curRankingSelf.nick = self._roleModule:GetName()
+      table.insert(self._curRanking, self._curRankingSelf)
     end
-    ;
-    (table.sort)(self._curRanking, function(a, b)
-    -- function num : 0_29_0
-    do return b.damage < a.damage end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    table.sort(self._curRanking, function(a, b)
+      return a.damage > b.damage
+    end)
     local count = #self._curRanking
     for i = topN + 1, count do
-      -- DECOMPILER ERROR at PC130: Confused about usage of register: R20 in 'UnsetPending'
-
-      (self._curRanking)[i] = nil
+      self._curRanking[i] = nil
     end
     self._curRankingSelf = nil
-    for k,v in pairs(self._curRanking) do
+    for k, v in pairs(self._curRanking) do
       if selfPstid == v.pstid then
         self._curRankingSelf = v
-        -- DECOMPILER ERROR at PC142: Confused about usage of register: R21 in 'UnsetPending'
-
-        ;
-        (self._curRankingSelf).luaIndex = k
+        self._curRankingSelf.luaIndex = k
         break
       end
     end
-    do
-      do
-        if self._curRankingSelf == nil then
-          self._curRankingSelf = RankShowSimpleOne:New()
-          -- DECOMPILER ERROR at PC154: Confused about usage of register: R16 in 'UnsetPending'
-
-          ;
-          (self._curRankingSelf).pstid = selfPstid
-          -- DECOMPILER ERROR at PC156: Confused about usage of register: R16 in 'UnsetPending'
-
-          ;
-          (self._curRankingSelf).head = headIcon
-          -- DECOMPILER ERROR at PC158: Confused about usage of register: R16 in 'UnsetPending'
-
-          ;
-          (self._curRankingSelf).head_bg = headBg
-          -- DECOMPILER ERROR at PC160: Confused about usage of register: R16 in 'UnsetPending'
-
-          ;
-          (self._curRankingSelf).frame_id = HeadFrame
-          -- DECOMPILER ERROR at PC162: Confused about usage of register: R16 in 'UnsetPending'
-
-          ;
-          (self._curRankingSelf).damage = max_total_damage
-          -- DECOMPILER ERROR at PC167: Confused about usage of register: R16 in 'UnsetPending'
-
-          ;
-          (self._curRankingSelf).nick = (self._roleModule):GetName()
-          -- DECOMPILER ERROR at PC169: Confused about usage of register: R16 in 'UnsetPending'
-
-          ;
-          (self._curRankingSelf).luaIndex = curRank
-        end
-        for i = topN + 1, #self._curRanking do
-          local data = (self._curRanking)[topN + 1]
-          ;
-          (table.remove)(self._curRanking, topN + 1)
-          -- DECOMPILER ERROR at PC187: Confused about usage of register: R16 in 'UnsetPending'
-
-          if self._curRankingSelf == data then
-            (self._curRankingSelf).luaIndex = curRank
-          end
-        end
-        if self._curRankingSelf ~= nil then
-          local playerInfo = (self._roleModule):UI_GetPlayerInfo()
-          -- DECOMPILER ERROR at PC197: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (self._curRankingSelf).head = playerInfo.m_nHeadImageID
-          -- DECOMPILER ERROR at PC200: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (self._curRankingSelf).head_bg = playerInfo.m_nHeadColorID
-          -- DECOMPILER ERROR at PC203: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (self._curRankingSelf).frame_id = playerInfo.m_nHeadFrameID
-          -- DECOMPILER ERROR at PC208: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (self._curRankingSelf).nick = (self._roleModule):GetName()
-        end
-      end
+    if self._curRankingSelf == nil then
+      self._curRankingSelf = RankShowSimpleOne:New()
+      self._curRankingSelf.pstid = selfPstid
+      self._curRankingSelf.head = headIcon
+      self._curRankingSelf.head_bg = headBg
+      self._curRankingSelf.frame_id = HeadFrame
+      self._curRankingSelf.damage = max_total_damage
+      self._curRankingSelf.nick = self._roleModule:GetName()
+      self._curRankingSelf.luaIndex = curRank
     end
+  end
+  for i = topN + 1, #self._curRanking do
+    local data = self._curRanking[topN + 1]
+    table.remove(self._curRanking, topN + 1)
+    if self._curRankingSelf == data then
+      self._curRankingSelf.luaIndex = curRank
+    end
+  end
+  if self._curRankingSelf ~= nil then
+    local playerInfo = self._roleModule:UI_GetPlayerInfo()
+    self._curRankingSelf.head = playerInfo.m_nHeadImageID
+    self._curRankingSelf.head_bg = playerInfo.m_nHeadColorID
+    self._curRankingSelf.frame_id = playerInfo.m_nHeadFrameID
+    self._curRankingSelf.nick = self._roleModule:GetName()
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.PreRanking = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  self._preRanking = (self._worldBossModule).m_last_rank_topN
+function UIWorldBossDanDetailController:PreRanking()
+  self._preRanking = self._worldBossModule.m_last_rank_topN
   if self._preRanking ~= nil then
-    self._preRanking = (self._preRanking).infos
+    self._preRanking = self._preRanking.infos
   else
     self._preRanking = nil
   end
@@ -1088,194 +799,112 @@ UIWorldBossDanDetailController.PreRanking = function(self)
     self._preRanking = {}
   end
   self._preRankingSelf = nil
-  local selfPstid = (self._roleModule):GetPstId()
-  for k,v in pairs(self._preRanking) do
+  local selfPstid = self._roleModule:GetPstId()
+  for k, v in pairs(self._preRanking) do
     if selfPstid == v.pstid then
       self._preRankingSelf = v
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._preRankingSelf).luaIndex = k
+      self._preRankingSelf.luaIndex = k
       break
     end
   end
-  do
-    local lastDanRank = (self._roleModule):GetWorldBossRecordRank()
-    if lastDanRank > 0 and self._preRankingSelf == nil then
-      local playerInfo = (self._roleModule):UI_GetPlayerInfo()
-      local headIcon = playerInfo.m_nHeadImageID
-      local headBg = playerInfo.m_nHeadColorID
-      local HeadFrame = playerInfo.m_nHeadFrameID
-      self._preRankingSelf = RankShowSimpleOne:New()
-      -- DECOMPILER ERROR at PC52: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._preRankingSelf).pstid = selfPstid
-      -- DECOMPILER ERROR at PC54: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._preRankingSelf).head = headIcon
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._preRankingSelf).head_bg = headBg
-      -- DECOMPILER ERROR at PC58: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._preRankingSelf).frame_id = HeadFrame
-      -- DECOMPILER ERROR at PC63: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._preRankingSelf).damage = (self._roleModule):GetWorldBossRecordDamage()
-      -- DECOMPILER ERROR at PC68: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._preRankingSelf).nick = (self._roleModule):GetName()
-      -- DECOMPILER ERROR at PC70: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._preRankingSelf).luaIndex = lastDanRank
-    end
-    do
-      if self._preRankingSelf ~= nil then
-        local playerInfo = (self._roleModule):UI_GetPlayerInfo()
-        -- DECOMPILER ERROR at PC79: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._preRankingSelf).head = playerInfo.m_nHeadImageID
-        -- DECOMPILER ERROR at PC82: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._preRankingSelf).head_bg = playerInfo.m_nHeadColorID
-        -- DECOMPILER ERROR at PC85: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._preRankingSelf).frame_id = playerInfo.m_nHeadFrameID
-        -- DECOMPILER ERROR at PC90: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._preRankingSelf).nick = (self._roleModule):GetName()
-      end
-    end
+  local lastDanRank = self._roleModule:GetWorldBossRecordRank()
+  if 0 < lastDanRank and self._preRankingSelf == nil then
+    local playerInfo = self._roleModule:UI_GetPlayerInfo()
+    local headIcon = playerInfo.m_nHeadImageID
+    local headBg = playerInfo.m_nHeadColorID
+    local HeadFrame = playerInfo.m_nHeadFrameID
+    self._preRankingSelf = RankShowSimpleOne:New()
+    self._preRankingSelf.pstid = selfPstid
+    self._preRankingSelf.head = headIcon
+    self._preRankingSelf.head_bg = headBg
+    self._preRankingSelf.frame_id = HeadFrame
+    self._preRankingSelf.damage = self._roleModule:GetWorldBossRecordDamage()
+    self._preRankingSelf.nick = self._roleModule:GetName()
+    self._preRankingSelf.luaIndex = lastDanRank
+  end
+  if self._preRankingSelf ~= nil then
+    local playerInfo = self._roleModule:UI_GetPlayerInfo()
+    self._preRankingSelf.head = playerInfo.m_nHeadImageID
+    self._preRankingSelf.head_bg = playerInfo.m_nHeadColorID
+    self._preRankingSelf.frame_id = playerInfo.m_nHeadFrameID
+    self._preRankingSelf.nick = self._roleModule:GetName()
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.OnShowSheet = function(self, sheetKey)
-  -- function num : 0_31 , upvalues : _ENV
+function UIWorldBossDanDetailController:OnShowSheet(sheetKey)
   self._idSheet = sheetKey
-  local displaySheet = (self._tglSheet)[sheetKey]
+  local displaySheet = self._tglSheet[sheetKey]
   if displaySheet == nil then
-    return 
+    return
   end
-  for k,v in pairs(self._tglSheet) do
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R8 in 'UnsetPending'
-
-    (v.tgl).isOn = false
+  for k, v in pairs(self._tglSheet) do
+    v.tgl.isOn = false
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (displaySheet.tgl).isOn = true
-  for k,v in pairs(self._tglSheet) do
-    ((v.txtUncheck).gameObject):SetActive(not (v.tgl).isOn)
-    ;
-    ((v.txtChecked).gameObject):SetActive((v.tgl).isOn)
-    for k,tr in pairs(v.content) do
-      (tr.gameObject):SetActive((v.tgl).isOn)
+  displaySheet.tgl.isOn = true
+  for k, v in pairs(self._tglSheet) do
+    v.txtUncheck.gameObject:SetActive(not v.tgl.isOn)
+    v.txtChecked.gameObject:SetActive(v.tgl.isOn)
+    for k, tr in pairs(v.content) do
+      tr.gameObject:SetActive(v.tgl.isOn)
     end
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.DanInAnimation = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function UIWorldBossDanDetailController:DanInAnimation()
   local sortList = {}
-  for k,v in pairs(self._dicDanWidget) do
-    if (v:GetGameObject()).activeSelf then
-      (table.insert)(sortList, v)
+  for k, v in pairs(self._dicDanWidget) do
+    if v:GetGameObject().activeSelf then
+      table.insert(sortList, v)
     end
   end
-  ;
-  (table.sort)(sortList, function(a, b)
-    -- function num : 0_32_0
-    do return a:GetIndex() < b:GetIndex() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(sortList, function(a, b)
+    return a:GetIndex() < b:GetIndex()
+  end)
   local lockName = "UIWorldBossDanDetailController:DanInAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_32_1 , upvalues : self, lockName, _ENV, sortList
     self:Lock(lockName)
-    for k,v in pairs(sortList) do
-      (v:GetGameObject()):SetActive(false)
+    for k, v in pairs(sortList) do
+      v:GetGameObject():SetActive(false)
     end
-    for k,v in pairs(sortList) do
-      (v:GetGameObject()):SetActive(true)
+    for k, v in pairs(sortList) do
+      v:GetGameObject():SetActive(true)
       v:PlayAnimation("UIWorldBossDanDetailListItem_in")
       YIELD(TT, 30)
     end
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.TglDanOnClick = function(self, go)
-  -- function num : 0_33
+function UIWorldBossDanDetailController:TglDanOnClick(go)
   self:OnShowSheet(self._idDan)
   self:DanInAnimation()
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.TglCurOnClick = function(self, go)
-  -- function num : 0_34
+function UIWorldBossDanDetailController:TglCurOnClick(go)
   self:OnShowSheet(self._idCur)
-  ;
-  (self._widgetCurRanking):InAnimation()
+  self._widgetCurRanking:InAnimation()
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.TglPreOnClick = function(self, go)
-  -- function num : 0_35
+function UIWorldBossDanDetailController:TglPreOnClick(go)
   self:OnShowSheet(self._idPre)
-  ;
-  (self._widgetPreRanking):InAnimation()
+  self._widgetPreRanking:InAnimation()
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.FlushCurRanking = function(self)
-  -- function num : 0_36
-  (self._widgetCurRanking):Flush(self._curRanking, self._curRankingSelf, true)
+function UIWorldBossDanDetailController:FlushCurRanking()
+  self._widgetCurRanking:Flush(self._curRanking, self._curRankingSelf, true)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.FlushPreRanking = function(self)
-  -- function num : 0_37 , upvalues : _ENV
-  local idMission = (self._worldBossData).boss_mission_id
-  local cfg_mission = (Cfg.cfg_world_boss_mission)[idMission]
+function UIWorldBossDanDetailController:FlushPreRanking()
+  local idMission = self._worldBossData.boss_mission_id
+  local cfg_mission = Cfg.cfg_world_boss_mission[idMission]
   if cfg_mission.HidePreRanking then
-    ((self._tglPre).gameObject):SetActive(false)
+    self._tglPre.gameObject:SetActive(false)
   else
-    ;
-    ((self._tglPre).gameObject):SetActive(true)
-    ;
-    (self._widgetPreRanking):Flush(self._preRanking, self._preRankingSelf, false)
+    self._tglPre.gameObject:SetActive(true)
+    self._widgetPreRanking:Flush(self._preRanking, self._preRankingSelf, false)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailController.OnUIQuestWorldBossRest = function(self)
-  -- function num : 0_38
+function UIWorldBossDanDetailController:OnUIQuestWorldBossRest()
   self:CloseDialog()
 end
-
-

@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_reset_single_color_grid_ele.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamResetSingleColorGridElement", SkillEffectParamBase)
 SkillEffectParamResetSingleColorGridElement = SkillEffectParamResetSingleColorGridElement
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamResetSingleColorGridElement.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamResetSingleColorGridElement:Constructor(t)
   self._targetGridTypeList = t.targetGridTypeList
   self._excludeTrapIDList = t.excludeTrapIDList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamResetSingleColorGridElement.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamResetSingleColorGridElement:GetEffectType()
   return SkillEffectType.ResetSingleColorGridElement
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamResetSingleColorGridElement.GetTargetGridTypeList = function(self)
-  -- function num : 0_2
+function SkillEffectParamResetSingleColorGridElement:GetTargetGridTypeList()
   return self._targetGridTypeList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamResetSingleColorGridElement.GetExcludeTrapIDList = function(self)
-  -- function num : 0_3
+function SkillEffectParamResetSingleColorGridElement:GetExcludeTrapIDList()
   return self._excludeTrapIDList
 end
-
-

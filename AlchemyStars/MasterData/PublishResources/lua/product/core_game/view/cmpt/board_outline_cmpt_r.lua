@@ -1,58 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/board_outline_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BoardOutlineComponent", Object)
 BoardOutlineComponent = BoardOutlineComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BoardOutlineComponent.Constructor = function(self, turn)
-  -- function num : 0_0
+function BoardOutlineComponent:Constructor(turn)
   self._isPlayerTurn = turn
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardOutlineComponent.IsPlayerTurn = function(self)
-  -- function num : 0_1
+function BoardOutlineComponent:IsPlayerTurn()
   return self._isPlayerTurn
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardOutlineComponent.SetTurn = function(self, turn)
-  -- function num : 0_2
+function BoardOutlineComponent:SetTurn(turn)
   self._isPlayerTurn = turn
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.BoardOutline = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).BoardOutline)
+function Entity:BoardOutline()
+  return self:GetComponent(self.WEComponentsEnum.BoardOutline)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddBoardOutline = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BoardOutline
+function Entity:AddBoardOutline()
+  local index = self.WEComponentsEnum.BoardOutline
   local component = BoardOutlineComponent:New(true)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceBoardOutline = function(self, turn)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BoardOutline
-  local component = self:GetComponent((self.WEComponentsEnum).BoardOutline)
-  if not component then
-    component = BoardOutlineComponent:New(turn)
-  end
+function Entity:ReplaceBoardOutline(turn)
+  local index = self.WEComponentsEnum.BoardOutline
+  local component = self:GetComponent(self.WEComponentsEnum.BoardOutline)
+  component = component or BoardOutlineComponent:New(turn)
   component:SetTurn(turn)
   self:ReplaceComponent(index, component)
 end
-
-

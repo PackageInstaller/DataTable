@@ -1,79 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/tactic/ui_aircraft_tactic_switch.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftTacticSwitch", UIController)
 UIAircraftTacticSwitch = UIAircraftTacticSwitch
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftTacticSwitch.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftTacticSwitch:OnShow(uiParams)
   self._pstid = uiParams[1]
   self._cb = uiParams[2]
-  self._event = ((GameGlobal.Timer)()):AddEvent(7000, function()
-    -- function num : 0_0_0 , upvalues : self
+  self._event = GameGlobal.Timer():AddEvent(7000, function()
     if self._cb then
-      (self._cb)()
+      self._cb()
       self._cb = nil
     end
-  end
-)
+  end)
   self:InitWidget()
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N8TapePlay)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N8TapePlay)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticSwitch.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAircraftTacticSwitch:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
   if self._req then
-    (self._req):Dispose()
+    self._req:Dispose()
     self._req = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticSwitch.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftTacticSwitch:InitWidget()
   self._anim = self:GetUIComponent("Animation", "UIAircraftTacticSwitch")
   self._icon = self:GetUIComponent("RawImage", "Tape")
   self._quality = self:GetUIComponent("UILocalizationText", "quality")
-  local item = ((GameGlobal.GetModule)(ItemModule)):FindItem(self._pstid)
+  local item = GameGlobal.GetModule(ItemModule):FindItem(self._pstid)
   local cardid = item:GetTemplateID()
-  local cfg = (Cfg.cfg_item)[cardid]
+  local cfg = Cfg.cfg_item[cardid]
   if not cfg then
-    (Log.error)("###[UIAircraftTacticSwitch] cfg is nil ! id --> ", cardid)
+    Log.error("###[UIAircraftTacticSwitch] cfg is nil ! id --> ", cardid)
   end
-  local cfg_item_cartridge = (Cfg.cfg_item_cartridge)[cardid]
-  ;
-  (self._quality):SetText(cfg_item_cartridge.Quality)
+  local cfg_item_cartridge = Cfg.cfg_item_cartridge[cardid]
+  self._quality:SetText(cfg_item_cartridge.Quality)
   local icon = cfg.Icon
-  self._req = (ResourceManager:GetInstance()):SyncLoadAsset(icon .. ".mat", LoadType.Mat)
+  self._req = ResourceManager:GetInstance():SyncLoadAsset(icon .. ".mat", LoadType.Mat)
   if self._req then
-    local obj = (self._req).Obj
+    local obj = self._req.Obj
     local mainTexture = obj.mainTexture
-    local matericon = (self._icon).material
+    local matericon = self._icon.material
     matericon.mainTexture = mainTexture
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticSwitch.bgOnClick = function(self, go)
-  -- function num : 0_3
+function UIAircraftTacticSwitch:bgOnClick(go)
   if self._cb then
-    (self._cb)()
+    self._cb()
     self._cb = nil
   end
-  local state = (self._anim):get_Item("uieff_AircraftTactic_Switch")
+  local state = self._anim:get_Item("uieff_AircraftTactic_Switch")
   state.normalizedTime = 1
 end
-
-

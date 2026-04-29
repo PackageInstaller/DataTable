@@ -1,77 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_splice_board.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SpliceBoard", Object)
 SkillEffectCalc_SpliceBoard = SkillEffectCalc_SpliceBoard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SpliceBoard.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SpliceBoard:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SpliceBoard.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+function SkillEffectCalc_SpliceBoard:DoSkillEffectCalculator(skillEffectCalcParam)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   local skillEffectParam = skillEffectCalcParam.skillEffectParam
   local distance = skillEffectParam:GetDistance()
   local directionParam = skillEffectParam:GetDirection()
   local direction = Vector2(directionParam[1], directionParam[2])
   local notifyTrapList = skillEffectParam:GetNotifyTrapList()
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local teamPos = teamEntity:GetGridPosition()
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local round = battleStatCmpt:GetLevelTotalRoundCount()
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local boardComponent = boardEntity:Board()
   local boardSpliceComponent = boardEntity:BoardSplice()
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local utilScope = (self._world):GetService("UtilScopeCalc")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local utilDataSvc = self._world:GetService("UtilData")
+  local utilScope = self._world:GetService("UtilScopeCalc")
   local boardGridPos = utilDataSvc:GetCloneBoardGridPos()
   local boardSpliceGridPos = utilDataSvc:GetCloneBoardSpliceGridPos()
   local result = SkillEffectResultSpliceBoard:New()
-  if distance > 0 then
-    local filter = function(e)
-    -- function num : 0_1_0
-    if (e:HasTeam() or e:HasMonsterID() or e:HasTrapID()) and not e:HasDeadMark() then
-      return true
+  if 0 < distance then
+    local function filter(e)
+      if (e:HasTeam() or e:HasMonsterID() or e:HasTrapID()) and not e:HasDeadMark() then
+        return true
+      end
+      return false
     end
-    return false
-  end
-
+    
     local pieceTable = {}
-    for _,pos in ipairs(boardSpliceGridPos) do
-      if (table.icontains)(boardGridPos, pos) then
-        (table.removev)(boardGridPos, pos)
+    for _, pos in ipairs(boardSpliceGridPos) do
+      if table.icontains(boardGridPos, pos) then
+        table.removev(boardGridPos, pos)
       end
     end
-    ;
-    (table.sort)(boardGridPos, function(a, b)
-    -- function num : 0_1_1 , upvalues : direction
-    if b.x >= a.x then
-      do return direction.x ~= 1 end
-      if a.x >= b.x then
-        do return direction.x ~= -1 end
-        if b.y >= a.y then
-          do return direction.y ~= 1 end
-          if a.y >= b.y then
-            do return direction.y ~= -1 end
-            -- DECOMPILER ERROR: 8 unprocessed JMP targets
-          end
-        end
+    table.sort(boardGridPos, function(a, b)
+      if direction.x == 1 then
+        return a.x > b.x
+      elseif direction.x == -1 then
+        return a.x < b.x
+      elseif direction.y == 1 then
+        return a.y > b.y
+      elseif direction.y == -1 then
+        return a.y < b.y
       end
-    end
-  end
-)
-    for _,pos in ipairs(boardGridPos) do
+    end)
+    for _, pos in ipairs(boardGridPos) do
       local entityList = boardComponent:GetPieceEntities(pos, filter)
       local posNew = pos + Vector2(direction.x * distance, direction.y * distance)
-      for i,e in ipairs(entityList) do
+      for i, e in ipairs(entityList) do
         result:AddMoveEntity(e:GetID(), pos, posNew)
       end
       local isPieceEffect = boardComponent:IsSpecialPieceEffect(pos)
@@ -86,66 +68,34 @@ SkillEffectCalc_SpliceBoard.DoSkillEffectCalculator = function(self, skillEffect
         if data then
           local min = data.min
           local max = data.max
-          if pos.x >= min + 2 then
-            do
-              isRemoveGrid = direction.x <= 0
-              isRemoveGrid = max - 2 < pos.x
-              if direction.y ~= 0 then
-                local data = utilScope:GetMinMaxGridYByGridX(pos.x)
-                if data then
-                  local min = data.min
-                  local max = data.max
-                  if pos.y >= min + 2 then
-                    do
-                      isRemoveGrid = direction.y <= 0
-                      isRemoveGrid = max - 2 < pos.y
-                      do
-                        local pieceType = boardComponent:GetPieceType(pos)
-                        if not pieceTable[posNew.x] then
-                          pieceTable[posNew.x] = {}
-                        end
-                        -- DECOMPILER ERROR at PC198: Confused about usage of register: R35 in 'UnsetPending'
-
-                        ;
-                        (pieceTable[posNew.x])[posNew.y] = {x = posNew.x, y = posNew.y, color = pieceType}
-                        result:AddConvertColor(pos, posNew, pieceType, isAddGrid, isRemoveGrid)
-                        -- DECOMPILER ERROR at PC206: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC206: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC206: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC206: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC206: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC206: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC206: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC206: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC206: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC206: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC206: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC206: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC206: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC206: LeaveBlock: unexpected jumping out IF_STMT
-
-                      end
-                    end
-                  end
-                end
-              end
-            end
+          if 0 < direction.x then
+            isRemoveGrid = pos.x < min + 2
+          else
+            isRemoveGrid = pos.x > max - 2
+          end
+        end
+      elseif direction.y ~= 0 then
+        local data = utilScope:GetMinMaxGridYByGridX(pos.x)
+        if data then
+          local min = data.min
+          local max = data.max
+          if 0 < direction.y then
+            isRemoveGrid = pos.y < min + 2
+          else
+            isRemoveGrid = pos.y > max - 2
           end
         end
       end
+      local pieceType = boardComponent:GetPieceType(pos)
+      if not pieceTable[posNew.x] then
+        pieceTable[posNew.x] = {}
+      end
+      pieceTable[posNew.x][posNew.y] = {
+        x = posNew.x,
+        y = posNew.y,
+        color = pieceType
+      }
+      result:AddConvertColor(pos, posNew, pieceType, isAddGrid, isRemoveGrid)
     end
     result:SetPieceTable(pieceTable)
   end
@@ -156,19 +106,18 @@ SkillEffectCalc_SpliceBoard.DoSkillEffectCalculator = function(self, skillEffect
   local boardSpliceGridPosList = utilDataSvc:GetCloneBoardSpliceGridPos()
   local isAddGridPosList = {}
   local isRemoveGridPosList = {}
-  for _,pos in ipairs(boardSpliceGridPosList) do
+  for _, pos in ipairs(boardSpliceGridPosList) do
     local pieceType = boardSpliceComponent:GetPieceType(pos)
     local isPieceEffect = boardSpliceComponent:IsSpecialPieceEffect(pos)
     local pieceEffectType = boardSpliceComponent:GetBoardPieceEffectType(pos)
     local isAddGrid = false
     local isRemoveGrid = false
-    -- DECOMPILER ERROR at PC252: Unhandled construct in 'MakeBoolean' P1
-
-    if direction == Vector2(0, 0) and pos.x <= boardLineCount + 1 and pos.y > 3 then
-      isAddGrid = true
-    end
-    if direction == Vector2(1, 0) then
-      if maxX - 2 <= pos.x and pos.y > 3 then
+    if direction == Vector2(0, 0) then
+      if pos.x <= boardLineCount + 1 and pos.y > 3 then
+        isAddGrid = true
+      end
+    elseif direction == Vector2(1, 0) then
+      if pos.x >= maxX - 2 and pos.y > 3 then
         isAddGrid = true
       end
       if pos.x <= 3 and pos.y > 3 then
@@ -178,18 +127,18 @@ SkillEffectCalc_SpliceBoard.DoSkillEffectCalculator = function(self, skillEffect
       if pos.x > 3 and pos.y <= 3 then
         isAddGrid = true
       end
-      if pos.x > 3 and maxY - 2 <= pos.y then
+      if pos.x > 3 and pos.y >= maxY - 2 then
         isRemoveGrid = true
       end
     elseif direction == Vector2(-1, 0) then
       if pos.x <= 3 and pos.y < maxY - 2 then
         isAddGrid = true
       end
-      if maxX - 2 <= pos.x and pos.y < maxY - 2 then
+      if pos.x >= maxX - 2 and pos.y < maxY - 2 then
         isRemoveGrid = true
       end
     elseif direction == Vector2(0, 1) then
-      if pos.x < maxX - 2 and maxY - 2 <= pos.y then
+      if pos.x < maxX - 2 and pos.y >= maxY - 2 then
         isAddGrid = true
       end
       if pos.x < maxX - 2 and pos.y <= 3 then
@@ -197,10 +146,10 @@ SkillEffectCalc_SpliceBoard.DoSkillEffectCalculator = function(self, skillEffect
       end
     end
     if isAddGrid then
-      (table.insert)(isAddGridPosList, pos)
+      table.insert(isAddGridPosList, pos)
     end
     if isRemoveGrid then
-      (table.insert)(isRemoveGridPosList, pos)
+      table.insert(isRemoveGridPosList, pos)
       pieceType = boardComponent:GetPieceType(pos)
       isPieceEffect = boardComponent:IsSpecialPieceEffect(pos)
       pieceEffectType = boardComponent:GetBoardPieceEffectType(pos)
@@ -213,28 +162,25 @@ SkillEffectCalc_SpliceBoard.DoSkillEffectCalculator = function(self, skillEffect
     end
   end
   local destroyTrapList = {}
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for i,e in ipairs(trapGroup:GetEntities()) do
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for i, e in ipairs(trapGroup:GetEntities()) do
     if not e:HasDeadMark() then
       local pos = e:GetGridPosition()
       local trapCmp = e:Trap()
       local trapID = trapCmp:GetTrapID()
-      if (table.icontains)(notifyTrapList, trapID) then
-        if (table.icontains)(isRemoveGridPosList, pos) then
+      if table.icontains(notifyTrapList, trapID) then
+        if table.icontains(isRemoveGridPosList, pos) then
           result:SetNotifyStartTrapEntityID(e:GetID())
         end
-        if (table.icontains)(isAddGridPosList, pos) then
+        if table.icontains(isAddGridPosList, pos) then
           result:SetNotifyEndTrapEntityID(e:GetID())
         end
       end
-      if (table.icontains)(isRemoveGridPosList, pos) and trapCmp:GetCanStayBoardSplice() ~= 1 then
-        (table.insert)(destroyTrapList, e:GetID())
+      if table.icontains(isRemoveGridPosList, pos) and trapCmp:GetCanStayBoardSplice() ~= 1 then
+        table.insert(destroyTrapList, e:GetID())
       end
     end
   end
   result:SetDestroyTrapList(destroyTrapList)
-  do return result end
-  -- DECOMPILER ERROR: 28 unprocessed JMP targets
+  return result
 end
-
-

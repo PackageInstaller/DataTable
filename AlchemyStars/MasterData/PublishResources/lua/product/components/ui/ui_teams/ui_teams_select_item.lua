@@ -1,209 +1,132 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_teams/ui_teams_select_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITeamsSelectItem", UICustomWidget)
 UITeamsSelectItem = UITeamsSelectItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITeamsSelectItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UITeamsSelectItem:OnShow()
   self._module = self:GetModule(MissionModule)
-  self.ctx = (self._module):TeamCtx()
+  self.ctx = self._module:TeamCtx()
   self._tgl = self:GetUIComponent("Toggle", "tgl")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._artFont = self:GetUIComponent("ArtFont", "txtName")
   self._btnModify = self:GetGameObject("btnModify")
-  self._atlas = (self:RootUIOwner()):GetAsset("UITeams.spriteatlas", LoadType.SpriteAtlas)
+  self._atlas = self:RootUIOwner():GetAsset("UITeams.spriteatlas", LoadType.SpriteAtlas)
   self:AttachEvent(GameEventType.TeamToggleIsOnChanged, self.FlushSth)
-  self._etl = (UICustomUIEventListener.Get)((self._tgl).gameObject)
-  self._modEtl = (UICustomUIEventListener.Get)(self._btnModify)
+  self._etl = UICustomUIEventListener.Get(self._tgl.gameObject)
+  self._modEtl = UICustomUIEventListener.Get(self._btnModify)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamsSelectItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UITeamsSelectItem:OnHide()
   self:DetachEvent(GameEventType.TeamToggleIsOnChanged, self.FlushSth)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamsSelectItem.Init = function(self, id, uiCtl, tglGroup, scrollRect)
-  -- function num : 0_2
+function UITeamsSelectItem:Init(id, uiCtl, tglGroup, scrollRect)
   self._id = id
   self._uiCtrl = uiCtl
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._tgl).group = tglGroup
+  self._tgl.group = tglGroup
   self._scrollRect = scrollRect
-  local teamid = (self.ctx):GetCurrTeamId()
+  local teamid = self.ctx:GetCurrTeamId()
   self:FlushTglIsOn(self._id == teamid)
   self:FlushSth()
   self:FlushName(self._id)
   self:RegUIEventTriggerListener()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamsSelectItem.FlushName = function(self, teamId)
-  -- function num : 0_3 , upvalues : _ENV
+function UITeamsSelectItem:FlushName(teamId)
   if not self._txtName then
-    return 
+    return
   end
-  local teams = (self.ctx):Teams()
+  local teams = self.ctx:Teams()
   local team = teams:Get(teamId)
   if team then
     local name = team.name
-    if not name or (string.len)(name) == 0 then
-      name = (StringTable.Get)("str_discovery_formation_" .. teamId)
+    if not name or string.len(name) == 0 then
+      name = StringTable.Get("str_discovery_formation_" .. teamId)
     end
-    ;
-    (self._txtName):SetText(name)
+    self._txtName:SetText(name)
   else
-    do
-      ;
-      (Log.error)("### team is nil. teamId = ", teamId)
-    end
+    Log.error("### team is nil. teamId = ", teamId)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamsSelectItem.SetFontMat = function(self, lable, resname)
-  -- function num : 0_4 , upvalues : _ENV
-  local res = (ResourceManager:GetInstance()):SyncLoadAsset(resname, LoadType.Mat)
+function UITeamsSelectItem:SetFontMat(lable, resname)
+  local res = ResourceManager:GetInstance():SyncLoadAsset(resname, LoadType.Mat)
   if not res then
-    return 
+    return
   end
   local obj = res.Obj
   local mat = lable.fontMaterial
   lable.fontMaterial = obj
-  ;
-  (lable.fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  lable.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamsSelectItem.OnValueChange = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if self._id ~= (self.ctx):GetCurrTeamId() then
+function UITeamsSelectItem:OnValueChange()
+  if self._id ~= self.ctx:GetCurrTeamId() then
     local hpm = self:GetModule(HelpPetModule)
     hpm:UI_ClearHelpPet()
-    ;
-    ((GameGlobal.GetModule)(PetModule)):ClearAllPetSortInfo()
-    ;
-    (self._uiCtrl):FlushTeam(self._id)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TeamToggleIsOnChanged)
+    GameGlobal.GetModule(PetModule):ClearAllPetSortInfo()
+    self._uiCtrl:FlushTeam(self._id)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.TeamToggleIsOnChanged)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamsSelectItem.FlushTglIsOn = function(self, isOn)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._tgl).isOn = isOn
+function UITeamsSelectItem:FlushTglIsOn(isOn)
+  self._tgl.isOn = isOn
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamsSelectItem.FlushSth = function(self)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (self._tgl).isOn then
-    (self._artFont).enabled = true
+function UITeamsSelectItem:FlushSth()
+  if self._tgl.isOn then
+    self._artFont.enabled = true
   else
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._artFont).enabled = false
+    self._artFont.enabled = false
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamsSelectItem.btnModifyOnClick = function(self, go)
-  -- function num : 0_8
+function UITeamsSelectItem:btnModifyOnClick(go)
   self:ShowDialog("UITeamsNameModify", self._id)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamsSelectItem.GetId = function(self)
-  -- function num : 0_9
+function UITeamsSelectItem:GetId()
   return self._id
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamsSelectItem.RegUIEventTriggerListener = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UITeamsSelectItem:RegUIEventTriggerListener()
   if self._scrollRect then
     self:AddUICustomEventListener(self._etl, UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_10_0 , upvalues : self
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-    (self._tgl).enabled = false
-    if self._scrollRect then
-      (self._scrollRect):OnBeginDrag(eventData)
-    end
-  end
-)
+      self._tgl.enabled = false
+      if self._scrollRect then
+        self._scrollRect:OnBeginDrag(eventData)
+      end
+    end)
     self:AddUICustomEventListener(self._etl, UIEvent.Drag, function(eventData)
-    -- function num : 0_10_1 , upvalues : self
-    if self._scrollRect then
-      (self._scrollRect):OnDrag(eventData)
-    end
-  end
-)
+      if self._scrollRect then
+        self._scrollRect:OnDrag(eventData)
+      end
+    end)
     self:AddUICustomEventListener(self._etl, UIEvent.EndDrag, function(eventData)
-    -- function num : 0_10_2 , upvalues : self
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-    (self._tgl).enabled = true
-    if self._scrollRect then
-      (self._scrollRect):OnEndDrag(eventData)
-    end
-  end
-)
+      self._tgl.enabled = true
+      if self._scrollRect then
+        self._scrollRect:OnEndDrag(eventData)
+      end
+    end)
     self:AddUICustomEventListener(self._modEtl, UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_10_3 , upvalues : self
-    if self._scrollRect then
-      (self._scrollRect):OnBeginDrag(eventData)
-    end
-  end
-)
+      if self._scrollRect then
+        self._scrollRect:OnBeginDrag(eventData)
+      end
+    end)
     self:AddUICustomEventListener(self._modEtl, UIEvent.Drag, function(eventData)
-    -- function num : 0_10_4 , upvalues : self
-    if self._scrollRect then
-      (self._scrollRect):OnDrag(eventData)
-    end
-  end
-)
+      if self._scrollRect then
+        self._scrollRect:OnDrag(eventData)
+      end
+    end)
     self:AddUICustomEventListener(self._modEtl, UIEvent.EndDrag, function(eventData)
-    -- function num : 0_10_5 , upvalues : self
-    if self._scrollRect then
-      (self._scrollRect):OnEndDrag(eventData)
-    end
-  end
-)
-    ;
-    ((self._tgl).onValueChanged):AddListener(function(value)
-    -- function num : 0_10_6 , upvalues : _ENV, self
-    if value then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
-      self:OnValueChange()
-    end
-  end
-)
+      if self._scrollRect then
+        self._scrollRect:OnEndDrag(eventData)
+      end
+    end)
+    self._tgl.onValueChanged:AddListener(function(value)
+      if value then
+        AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
+        self:OnValueChange()
+      end
+    end)
   end
 end
-
-

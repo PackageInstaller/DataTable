@@ -1,48 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/ui_review_download_tip.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIReviewDownloadTip", UIController)
 UIReviewDownloadTip = UIReviewDownloadTip
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIReviewDownloadTip.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIReviewDownloadTip:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewDownloadTip.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIReviewDownloadTip:OnShow(uiParams)
   self:InitWidget()
   self._data = uiParams[1]
-  ;
-  (self.size):SetText((StringTable.Get)("str_review_download_tip_size", (string.format)("%.2f", (self._data):DownloadPackageSize() / 1024 / 1024)))
+  self.size:SetText(StringTable.Get("str_review_download_tip_size", string.format("%.2f", self._data:DownloadPackageSize() / 1024 / 1024)))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewDownloadTip.InitWidget = function(self)
-  -- function num : 0_2
+function UIReviewDownloadTip:InitWidget()
   self.size = self:GetUIComponent("UILocalizationText", "size")
   self.title = self:GetUIComponent("UILocalizationText", "title")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewDownloadTip.CancelOnClick = function(self, go)
-  -- function num : 0_3
+function UIReviewDownloadTip:CancelOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewDownloadTip.ConfirmOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIReviewOnDownloadStart, (self._data):ActivityID())
+function UIReviewDownloadTip:ConfirmOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIReviewOnDownloadStart, self._data:ActivityID())
   self:CloseDialog()
 end
-
-

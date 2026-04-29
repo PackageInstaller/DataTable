@@ -1,56 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_enter_build/ui_aircraft_enter_build_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftEnterBuildController", UIController)
 UIAircraftEnterBuildController = UIAircraftEnterBuildController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftEnterBuildController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftEnterBuildController:OnShow(uiParams)
   self.items = {}
   self._buildData = uiParams[1]
   self._pstid = uiParams[2]
   self._oriPstid = uiParams[2]
   self._index = uiParams[3]
-  self._spaceID = (self._buildData):SpaceId()
+  self._spaceID = self._buildData:SpaceId()
   self._uiAircraftEnterBuildAtlas = self:GetAsset("UIAircraftEnterBuild.spriteatlas", LoadType.SpriteAtlas)
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_0_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, nil, function()
-    -- function num : 0_0_1 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftLeaveAircraft)
-    ;
-    ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Aircraft_Exit, "UI")
-  end
-)
+  end, nil, function()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftLeaveAircraft)
+    GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Aircraft_Exit, "UI")
+  end)
   self:InitComponents()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAircraftEnterBuildController:Constructor()
   self._showCount = 16
-  self._pet_module = (GameGlobal.GetModule)(PetModule)
+  self._pet_module = GameGlobal.GetModule(PetModule)
   self._itemTable = {}
-  self._aircraft_module = (GameGlobal.GetModule)(AircraftModule)
+  self._aircraft_module = GameGlobal.GetModule(AircraftModule)
   self._countPerCol = 2
   self._upSortBtnCount = 2
   self._currentPetRoom = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.Dispose = function(self)
-  -- function num : 0_2
+function UIAircraftEnterBuildController:Dispose()
   self._itemTable = nil
   self.countDownTime = 0
   self._pet_module = nil
@@ -66,17 +47,11 @@ UIAircraftEnterBuildController.Dispose = function(self)
   self._RightDown = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.OnHide = function(self)
-  -- function num : 0_3
+function UIAircraftEnterBuildController:OnHide()
   self._backBtns = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.InitComponents = function(self)
-  -- function num : 0_4
+function UIAircraftEnterBuildController:InitComponents()
   self._imgPetBig = self:GetUIComponent("RawImageLoader", "imgPetBig")
   self._rawPetBigGo = self:GetGameObject("imgPetBig")
   self._SkillInfo = self:GetGameObject("Info")
@@ -99,322 +74,221 @@ UIAircraftEnterBuildController.InitComponents = function(self)
   self._roomName = self:GetUIComponent("UILocalizationText", "TextTitle")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.GetFilterParams = function(self)
-  -- function num : 0_5
+function UIAircraftEnterBuildController:GetFilterParams()
   local filterParamTab = {}
   return filterParamTab
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.ChangeFilterParams = function(self, index)
-  -- function num : 0_6 , upvalues : _ENV
+function UIAircraftEnterBuildController:ChangeFilterParams(index)
   for i = 1, #self._filter_params do
-    if ((self._filter_params)[i])._filter_type == ((Cfg.cfg_aircraft_pet_filter_element_config)[index]).attributeID then
-      (table.remove)(self._filter_params, i)
-      return 
+    if self._filter_params[i]._filter_type == Cfg.cfg_aircraft_pet_filter_element_config[index].attributeID then
+      table.remove(self._filter_params, i)
+      return
     end
   end
-  local filterParam = PetFilterParam:New(((Cfg.cfg_aircraft_pet_filter_element_config)[index]).attributeID, ((Cfg.cfg_aircraft_pet_filter_element_config)[index]).Tag)
-  ;
-  (table.insert)(self._filter_params, filterParam)
+  local filterParam = PetFilterParam:New(Cfg.cfg_aircraft_pet_filter_element_config[index].attributeID, Cfg.cfg_aircraft_pet_filter_element_config[index].Tag)
+  table.insert(self._filter_params, filterParam)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.GetSortParams = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIAircraftEnterBuildController:GetSortParams()
   local sortTypeTab = {}
   local PetSortParam1 = PetSortParam:New(PetSortType.InRoom, PetSortOrder.Ascending, self._buildData)
-  ;
-  (table.insert)(sortTypeTab, PetSortParam1)
+  table.insert(sortTypeTab, PetSortParam1)
   local PetSortParam2 = PetSortParam:New(PetSortType.InOtherRoom, PetSortOrder.Descending, self._buildData)
-  ;
-  (table.insert)(sortTypeTab, PetSortParam2)
-  local PetSortParam3 = PetSortParam:New(PetSortType.WorkState, PetSortOrder.Ascending, (self._buildData):GetRoomType())
-  ;
-  (table.insert)(sortTypeTab, PetSortParam3)
-  local PetSortParam4 = PetSortParam:New(((Cfg.cfg_aircraft_pet_sort_element_config)[1]).attributeID, PetSortOrder.Descending)
-  ;
-  (table.insert)(sortTypeTab, PetSortParam4)
+  table.insert(sortTypeTab, PetSortParam2)
+  local PetSortParam3 = PetSortParam:New(PetSortType.WorkState, PetSortOrder.Ascending, self._buildData:GetRoomType())
+  table.insert(sortTypeTab, PetSortParam3)
+  local PetSortParam4 = PetSortParam:New(Cfg.cfg_aircraft_pet_sort_element_config[1].attributeID, PetSortOrder.Descending)
+  table.insert(sortTypeTab, PetSortParam4)
   local PetSortParam5 = PetSortParam:New(PetSortType.ID, PetSortOrder.Descending)
-  ;
-  (table.insert)(sortTypeTab, PetSortParam5)
+  table.insert(sortTypeTab, PetSortParam5)
   return sortTypeTab
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.ChangeSortParams = function(self, index)
-  -- function num : 0_8 , upvalues : _ENV
+function UIAircraftEnterBuildController:ChangeSortParams(index)
   self._sortIndex = index
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  if ((self._sort_params)[4])._sort_type == ((Cfg.cfg_aircraft_pet_sort_element_config)[index]).attributeID then
-    if ((self._sort_params)[4])._sort_order == PetSortOrder.Ascending then
-      ((self._sort_params)[4])._sort_order = PetSortOrder.Descending
+  if self._sort_params[4]._sort_type == Cfg.cfg_aircraft_pet_sort_element_config[index].attributeID then
+    if self._sort_params[4]._sort_order == PetSortOrder.Ascending then
+      self._sort_params[4]._sort_order = PetSortOrder.Descending
     else
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      ((self._sort_params)[4])._sort_order = PetSortOrder.Ascending
+      self._sort_params[4]._sort_order = PetSortOrder.Ascending
     end
   else
-    local PetSortParam3 = PetSortParam:New(((Cfg.cfg_aircraft_pet_sort_element_config)[index]).attributeID, PetSortOrder.Descending)
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._sort_params)[4] = PetSortParam3
+    local PetSortParam3 = PetSortParam:New(Cfg.cfg_aircraft_pet_sort_element_config[index].attributeID, PetSortOrder.Descending)
+    self._sort_params[4] = PetSortParam3
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.OnValue = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._roomName):SetText((StringTable.Get)((self._buildData):GetRoomName()))
-  ;
-  (self._roomLv):SetText((self._buildData):Level() .. "/<color=#ff6100>" .. (self._buildData):MaxLevel() .. "</color>")
-  ;
-  (self._sortPanel):SetActive(false)
+function UIAircraftEnterBuildController:OnValue()
+  self._roomName:SetText(StringTable.Get(self._buildData:GetRoomName()))
+  self._roomLv:SetText(self._buildData:Level() .. "/<color=#ff6100>" .. self._buildData:MaxLevel() .. "</color>")
+  self._sortPanel:SetActive(false)
   self._sortIndex = 1
   local tempIndex = 1
-  local pets = (self._pet_module):GetPets()
+  local pets = self._pet_module:GetPets()
   local p = {}
-  for _,pet in pairs(pets) do
+  for _, pet in pairs(pets) do
     p[#p + 1] = pet
   end
   self._allPets = p
   self._filter_params = self:GetFilterParams()
   self._sort_params = self:GetSortParams()
-  self._petList = (self._pet_module):_SortPets(self._allPets, self._filter_params, self._sort_params)
+  self._petList = self._pet_module:_SortPets(self._allPets, self._filter_params, self._sort_params)
   self:InitUpSortBtns()
   self:_SortPanelSpawnBtns()
-  if (table.count)(self._petList) <= 0 then
-    (self._noPet):SetActive(true)
-    ;
-    (self._RightDown):SetActive(false)
-    ;
-    (self._Down):SetActive(false)
-    ;
-    (self._LeftDown):SetActive(false)
-    ;
-    (self._room):SetActive(false)
+  if table.count(self._petList) <= 0 then
+    self._noPet:SetActive(true)
+    self._RightDown:SetActive(false)
+    self._Down:SetActive(false)
+    self._LeftDown:SetActive(false)
+    self._room:SetActive(false)
   else
-    ;
-    (self._noPet):SetActive(false)
-    ;
-    (self._RightDown):SetActive(true)
-    ;
-    (self._Down):SetActive(true)
-    ;
-    (self._LeftDown):SetActive(true)
-    ;
-    (self._room):SetActive(true)
+    self._noPet:SetActive(false)
+    self._RightDown:SetActive(true)
+    self._Down:SetActive(true)
+    self._LeftDown:SetActive(true)
+    self._room:SetActive(true)
   end
   if self._pstid ~= 0 then
-    local pet = nil
+    local pet
     local idx = 0
     for i = 1, #self._petList do
-      local pstid = ((self._petList)[i]):GetPstID()
+      local pstid = self._petList[i]:GetPstID()
       if pstid == self._pstid then
-        pet = (self._petList)[i]
+        pet = self._petList[i]
         idx = i
       end
     end
     if idx ~= 0 then
-      (table.remove)(self._petList, idx)
+      table.remove(self._petList, idx)
     else
-      pet = (self._pet_module):GetPet(self._pstid)
+      pet = self._pet_module:GetPet(self._pstid)
     end
-    ;
-    (table.insert)(self._petList, 1, pet)
+    table.insert(self._petList, 1, pet)
   end
-  do
-    self._currentPetItemIndex = 0
-    if self._pstid ~= 0 then
-      self._currentPetItemIndex = 1
-    end
-    self:_InitSrollView()
+  self._currentPetItemIndex = 0
+  if self._pstid ~= 0 then
+    self._currentPetItemIndex = 1
   end
+  self:_InitSrollView()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.InitUpSortBtns = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._upSortBtnPath):SpawnObjects("UIAircraftEnterUpSortBtnPrefab", self._upSortBtnCount)
-  self._upSortBtnPool = (self._upSortBtnPath):GetAllSpawnList()
-  local cfg_sort = (Cfg.cfg_aircraft_pet_sort_element_config)({})
+function UIAircraftEnterBuildController:InitUpSortBtns()
+  self._upSortBtnPath:SpawnObjects("UIAircraftEnterUpSortBtnPrefab", self._upSortBtnCount)
+  self._upSortBtnPool = self._upSortBtnPath:GetAllSpawnList()
+  local cfg_sort = Cfg.cfg_aircraft_pet_sort_element_config({})
   if cfg_sort then
     for i = 1, self._upSortBtnCount do
-      ((self._upSortBtnPool)[i]):SetData(i, (cfg_sort[i]).attributeID, (cfg_sort[i]).Name, (self._sort_params)[4], function(index, sortType)
-    -- function num : 0_10_0 , upvalues : self
-    self:ChangeAircraftSortType(index, sortType)
-  end
-)
+      self._upSortBtnPool[i]:SetData(i, cfg_sort[i].attributeID, cfg_sort[i].Name, self._sort_params[4], function(index, sortType)
+        self:ChangeAircraftSortType(index, sortType)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.RefrenshListView = function(self)
-  -- function num : 0_11
+function UIAircraftEnterBuildController:RefrenshListView()
   self._currentPetItemIndex = 0
   self:_Flush()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController._Flush = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  self._petList = (self._pet_module):_SortPets(self._allPets, self._filter_params, self._sort_params)
+function UIAircraftEnterBuildController:_Flush()
+  self._petList = self._pet_module:_SortPets(self._allPets, self._filter_params, self._sort_params)
   if self._pstid ~= 0 then
-    local pet = nil
+    local pet
     local idx = 0
     for i = 1, #self._petList do
-      local pstid = ((self._petList)[i]):GetPstID()
+      local pstid = self._petList[i]:GetPstID()
       if pstid == self._pstid then
-        pet = (self._petList)[i]
+        pet = self._petList[i]
         idx = i
       end
     end
     if idx ~= 0 then
-      (table.remove)(self._petList, idx)
+      table.remove(self._petList, idx)
     else
-      pet = (self._pet_module):GetPet(self._pstid)
+      pet = self._pet_module:GetPet(self._pstid)
     end
-    ;
-    (table.insert)(self._petList, 1, pet)
+    table.insert(self._petList, 1, pet)
   end
-  do
-    local len = (table.count)(self._petList)
-    if len <= 0 then
-      (self._noPet):SetActive(true)
-      ;
-      (self._RightDown):SetActive(false)
-    else
-      ;
-      (self._noPet):SetActive(false)
-      ;
-      (self._RightDown):SetActive(true)
-    end
-    ;
-    (self._scrollView):SetListItemCount(self:_CalcTotalRow(len))
-    ;
-    (self._scrollView):MovePanelToItemIndex(0, 0)
-    if self._pstid ~= 0 then
-      local skillState = {}
-      local pet = (self._petList)[1]
-      local grade = pet:GetPetGrade()
-      local tab = pet:PetGradeNewSkill()
-      for i = 1, (table.count)(tab) do
-        skillState[i] = {}
-        -- DECOMPILER ERROR at PC103: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (skillState[i]).ID = (tab[i]).NewSkill
-        -- DECOMPILER ERROR at PC107: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (skillState[i]).grade = (tab[i]).Grade
-        -- DECOMPILER ERROR at PC113: Confused about usage of register: R10 in 'UnsetPending'
-
-        if grade < (tab[i]).Grade then
-          (skillState[i]).isLock = true
-        else
-          -- DECOMPILER ERROR at PC116: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (skillState[i]).isLock = false
-        end
-      end
-      local pet = (self._petList)[1]
-      self:_ShowPetInfo(pet, skillState)
-    else
-      do
-        ;
-        (self._rawPetBigGo):SetActive(false)
+  local len = table.count(self._petList)
+  if len <= 0 then
+    self._noPet:SetActive(true)
+    self._RightDown:SetActive(false)
+  else
+    self._noPet:SetActive(false)
+    self._RightDown:SetActive(true)
+  end
+  self._scrollView:SetListItemCount(self:_CalcTotalRow(len))
+  self._scrollView:MovePanelToItemIndex(0, 0)
+  if self._pstid ~= 0 then
+    local skillState = {}
+    local pet = self._petList[1]
+    local grade = pet:GetPetGrade()
+    local tab = pet:PetGradeNewSkill()
+    for i = 1, table.count(tab) do
+      skillState[i] = {}
+      skillState[i].ID = tab[i].NewSkill
+      skillState[i].grade = tab[i].Grade
+      if grade < tab[i].Grade then
+        skillState[i].isLock = true
+      else
+        skillState[i].isLock = false
       end
     end
+    local pet = self._petList[1]
+    self:_ShowPetInfo(pet, skillState)
+  else
+    self._rawPetBigGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.ChangeSortState = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIAircraftEnterBuildController:ChangeSortState()
   if self._currentSortBtnIndex ~= 0 then
-    if self._upSortBtnPool and (table.count)(self._upSortBtnPool) > 0 then
-      ((self._upSortBtnPool)[self._currentSortBtnIndex]):CancelActive()
+    if self._upSortBtnPool and 0 < table.count(self._upSortBtnPool) then
+      self._upSortBtnPool[self._currentSortBtnIndex]:CancelActive()
     end
-    if self._sortPools and (table.count)(self._sortPools) > 0 then
-      ((self._sortPools)[self._currentSortBtnIndex]):CancelActive()
+    if self._sortPools and 0 < table.count(self._sortPools) then
+      self._sortPools[self._currentSortBtnIndex]:CancelActive()
     end
   end
-  self._currentSortBtnIndex = (self._sortCls)._sortType
-  if self._upSortBtnPool and (table.count)(self._upSortBtnPool) > 0 then
-    ((self._upSortBtnPool)[self._currentSortBtnIndex]):SelectActive((self._sortCls)._sortOrder)
+  self._currentSortBtnIndex = self._sortCls._sortType
+  if self._upSortBtnPool and 0 < table.count(self._upSortBtnPool) then
+    self._upSortBtnPool[self._currentSortBtnIndex]:SelectActive(self._sortCls._sortOrder)
   end
-  if self._sortPools and (table.count)(self._sortPools) > 0 then
-    ((self._sortPools)[self._currentSortBtnIndex]):SelectActive((self._sortCls)._sortOrder)
+  if self._sortPools and 0 < table.count(self._sortPools) then
+    self._sortPools[self._currentSortBtnIndex]:SelectActive(self._sortCls._sortOrder)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController._InitSrollView = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIAircraftEnterBuildController:_InitSrollView()
   if self._scrollView then
-    (self._scrollView):InitListView(self:_CalcTotalRow((table.count)(self._petList)), function(scrollView, index)
-    -- function num : 0_14_0 , upvalues : self
-    return self:_InitListView(scrollView, index)
-  end
-)
+    self._scrollView:InitListView(self:_CalcTotalRow(table.count(self._petList)), function(scrollView, index)
+      return self:_InitListView(scrollView, index)
+    end)
   end
   if self._pstid ~= 0 then
     local skillState = {}
-    local pet = (self._petList)[1]
+    local pet = self._petList[1]
     local grade = pet:GetPetGrade()
     local tab = pet:PetGradeNewSkill()
-    for i = 1, (table.count)(tab) do
+    for i = 1, table.count(tab) do
       skillState[i] = {}
-      -- DECOMPILER ERROR at PC35: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (skillState[i]).ID = (tab[i]).NewSkill
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (skillState[i]).grade = (tab[i]).Grade
-      -- DECOMPILER ERROR at PC45: Confused about usage of register: R9 in 'UnsetPending'
-
-      if grade < (tab[i]).Grade then
-        (skillState[i]).isLock = true
+      skillState[i].ID = tab[i].NewSkill
+      skillState[i].grade = tab[i].Grade
+      if grade < tab[i].Grade then
+        skillState[i].isLock = true
       else
-        -- DECOMPILER ERROR at PC48: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (skillState[i]).isLock = false
+        skillState[i].isLock = false
       end
     end
-    local pet = (self._petList)[1]
+    local pet = self._petList[1]
     self:_ShowPetInfo(pet, skillState)
   else
-    do
-      ;
-      (self._rawPetBigGo):SetActive(false)
-    end
+    self._rawPetBigGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController._InitListView = function(self, scrollView, index)
-  -- function num : 0_15 , upvalues : _ENV
+function UIAircraftEnterBuildController:_InitListView(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -422,39 +296,31 @@ UIAircraftEnterBuildController._InitListView = function(self, scrollView, index)
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   rowPool:SpawnObjects("UIAircraftEnterBuildPetPrefab", self._countPerCol)
   local cols = rowPool:GetAllSpawnList()
-  ;
-  (table.insert)(self.items, cols[1])
+  table.insert(self.items, cols[1])
   for i = 1, self._countPerCol do
     local idx = index * self._countPerCol + i
-    if (table.count)(self._petList) < idx then
-      ((cols[i]):GetGameObject()):SetActive(false)
+    if idx > table.count(self._petList) then
+      cols[i]:GetGameObject():SetActive(false)
     else
-      ;
-      ((cols[i]):GetGameObject()):SetActive(true)
-      local pstid = ((self._petList)[idx]):GetPstID()
-      local petCls = (self._petList)[idx]
-      local room = ((self._petList)[idx]):GetPetAirRoom()
-      local sprite_xing_1 = (self._uiAircraftEnterBuildAtlas):GetSprite("spirit_xing3_frame")
-      local sprite_xing_2 = (self._uiAircraftEnterBuildAtlas):GetSprite("spirit_xing2_frame")
-      local sprite_xing_3 = (self._uiAircraftEnterBuildAtlas):GetSprite("spirit_xiangqing_icon28")
-      ;
-      (cols[i]):SetData(idx, sprite_xing_1, sprite_xing_2, sprite_xing_3, petCls, function(index, pstid, skillState, spPet)
-    -- function num : 0_15_0 , upvalues : self
-    self:OnItemSelect(index, pstid, skillState, spPet)
-  end
-, room, self._pstid, self._spaceID, (self._buildData):GetRoomType())
+      cols[i]:GetGameObject():SetActive(true)
+      local pstid = self._petList[idx]:GetPstID()
+      local petCls = self._petList[idx]
+      local room = self._petList[idx]:GetPetAirRoom()
+      local sprite_xing_1 = self._uiAircraftEnterBuildAtlas:GetSprite("spirit_xing3_frame")
+      local sprite_xing_2 = self._uiAircraftEnterBuildAtlas:GetSprite("spirit_xing2_frame")
+      local sprite_xing_3 = self._uiAircraftEnterBuildAtlas:GetSprite("spirit_xiangqing_icon28")
+      cols[i]:SetData(idx, sprite_xing_1, sprite_xing_2, sprite_xing_3, petCls, function(index, pstid, skillState, spPet)
+        self:OnItemSelect(index, pstid, skillState, spPet)
+      end, room, self._pstid, self._spaceID, self._buildData:GetRoomType())
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.GetSpPet = function(self, pstid)
-  -- function num : 0_16
-  local pet = (self._pet_module):GetPet(pstid)
+function UIAircraftEnterBuildController:GetSpPet(pstid)
+  local pet = self._pet_module:GetPet(pstid)
   for i = 1, #self._petList do
-    local tpet = (self._petList)[i]
+    local tpet = self._petList[i]
     local tpetid = tpet:GetTemplateID()
     local isBinderPet = pet:IsBinderPet(tpetid)
     if isBinderPet then
@@ -464,131 +330,92 @@ UIAircraftEnterBuildController.GetSpPet = function(self, pstid)
   return nil
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController._SortPanelSpawnBtns = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local cfg_sort = (Cfg.cfg_aircraft_pet_sort_element_config)({})
+function UIAircraftEnterBuildController:_SortPanelSpawnBtns()
+  local cfg_sort = Cfg.cfg_aircraft_pet_sort_element_config({})
   if cfg_sort then
-    (self._sortBtnPool):SpawnObjects("UIAircraftEnterSortBtnPrefab", (table.count)(cfg_sort))
+    self._sortBtnPool:SpawnObjects("UIAircraftEnterSortBtnPrefab", table.count(cfg_sort))
     self._sortPools = {}
-    self._sortPools = (self._sortBtnPool):GetAllSpawnList()
-    for i = 1, (table.count)(self._sortPools) do
-      local sortType = (cfg_sort[i]).attributeID
+    self._sortPools = self._sortBtnPool:GetAllSpawnList()
+    for i = 1, table.count(self._sortPools) do
+      local sortType = cfg_sort[i].attributeID
       local sortOrder = AircraftEnterSortOrder.UpToDown
-      ;
-      ((self._sortPools)[i]):SetData(i, sortType, (cfg_sort[i]).Name, (self._sort_params)[4], function(index, sortType)
-    -- function num : 0_17_0 , upvalues : self
-    self:ChangeAircraftSortType(index, sortType)
-  end
-)
+      self._sortPools[i]:SetData(i, sortType, cfg_sort[i].Name, self._sort_params[4], function(index, sortType)
+        self:ChangeAircraftSortType(index, sortType)
+      end)
     end
   end
-  do
-    local cfg_choose = (Cfg.cfg_aircraft_pet_filter_element_config)({})
-    if cfg_choose then
-      (self._chooseBtnPool):SpawnObjects("UIAircraftEnterChooseBtnPrefab", (table.count)(cfg_choose))
-      local pools = (self._chooseBtnPool):GetAllSpawnList()
-      for i = 1, (table.count)(pools) do
-        local chooseType = (cfg_choose[i]).attributeID
-        ;
-        (pools[i]):SetData(R11_PC77, chooseType, (cfg_choose[i]).Name, self._filter_params, function(index, chooseType)
-    -- function num : 0_17_1 , upvalues : self
-    self:ChangeAircraftChooseType(index, chooseType)
-  end
-)
-      end
+  local cfg_choose = Cfg.cfg_aircraft_pet_filter_element_config({})
+  if cfg_choose then
+    self._chooseBtnPool:SpawnObjects("UIAircraftEnterChooseBtnPrefab", table.count(cfg_choose))
+    local pools = self._chooseBtnPool:GetAllSpawnList()
+    for i = 1, table.count(pools) do
+      local chooseType = cfg_choose[i].attributeID
+      pools[i]:SetData(i, chooseType, cfg_choose[i].Name, self._filter_params, function(index, chooseType)
+        self:ChangeAircraftChooseType(index, chooseType)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.ChangeAircraftSortType = function(self, index, sortType)
-  -- function num : 0_18 , upvalues : _ENV
+function UIAircraftEnterBuildController:ChangeAircraftSortType(index, sortType)
   self:ChangeSortParams(index)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftEnterBuildChangeSort, (self._sort_params)[4])
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftEnterBuildChangeSort, self._sort_params[4])
   self:RefrenshListView()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.ChangeAircraftChooseType = function(self, index, chooseType)
-  -- function num : 0_19 , upvalues : _ENV
+function UIAircraftEnterBuildController:ChangeAircraftChooseType(index, chooseType)
   self:ChangeFilterParams(index)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftEnterBuildChangeFilter, self._filter_params)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftEnterBuildChangeFilter, self._filter_params)
   self:RefrenshListView()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController._ShowPetInfo = function(self, itemData, skillState)
-  -- function num : 0_20 , upvalues : _ENV
+function UIAircraftEnterBuildController:_ShowPetInfo(itemData, skillState)
   if itemData == nil then
     self._pstid = 0
-    ;
-    (self._rawPetBigGo):SetActive(false)
-    ;
-    (self._SkillInfo):SetActive(false)
-    return 
+    self._rawPetBigGo:SetActive(false)
+    self._SkillInfo:SetActive(false)
+    return
   end
   self._pstid = itemData:GetPstID()
-  ;
-  (self._rawPetBigGo):SetActive(true)
-  ;
-  (self._SkillInfo):SetActive(true)
-  ;
-  (self._selectPetName):SetText((StringTable.Get)(itemData:GetPetName()))
-  ;
-  (self._selectPetNameEn):SetText((StringTable.Get)(itemData:GetPetEnglishName()))
-  ;
-  (self._logo):LoadImage(itemData:GetPetLogo())
+  self._rawPetBigGo:SetActive(true)
+  self._SkillInfo:SetActive(true)
+  self._selectPetName:SetText(StringTable.Get(itemData:GetPetName()))
+  self._selectPetNameEn:SetText(StringTable.Get(itemData:GetPetEnglishName()))
+  self._logo:LoadImage(itemData:GetPetLogo())
   local bodyName = itemData:GetPetStaticBody(PetSkinEffectPath.BODY_INTO_AIRCRAFT)
-  local size = ((Cfg.cfg_global).ui_interface_common_size).ArrayValue
-  ;
-  ((self._imgPetBig):GetComponent("RectTransform")).sizeDelta = Vector2(size[1], size[2])
-  ;
-  (self._imgPetBig):LoadImage(bodyName)
-  ;
-  (UICG.SetTransform)((self._imgPetBig).transform, self:GetName(), bodyName)
+  local size = Cfg.cfg_global.ui_interface_common_size.ArrayValue
+  self._imgPetBig:GetComponent("RectTransform").sizeDelta = Vector2(size[1], size[2])
+  self._imgPetBig:LoadImage(bodyName)
+  UICG.SetTransform(self._imgPetBig.transform, self:GetName(), bodyName)
   local _skillState = skillState
-  local skillCount = (table.count)(_skillState)
-  ;
-  (self._workSkillPool):SpawnObjects("UIAircraftWorkSkillPrefab", skillCount)
-  local pools = (self._workSkillPool):GetAllSpawnList()
+  local skillCount = table.count(_skillState)
+  self._workSkillPool:SpawnObjects("UIAircraftWorkSkillPrefab", skillCount)
+  local pools = self._workSkillPool:GetAllSpawnList()
   for i = 1, skillCount do
-    (pools[i]):SetData(i, _skillState[i], (self._buildData):GetRoomType())
+    pools[i]:SetData(i, _skillState[i], self._buildData:GetRoomType())
   end
   self._petInfoSkillContent = self:GetUIComponent("RectTransform", "petInfoSkillContent")
-  -- DECOMPILER ERROR at PC111: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._petInfoSkillContent).anchoredPosition = Vector2(((self._petInfoSkillContent).anchoredPosition).x, 0)
+  self._petInfoSkillContent.anchoredPosition = Vector2(self._petInfoSkillContent.anchoredPosition.x, 0)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.GetTimeStr = function(self, speed, value)
-  -- function num : 0_21 , upvalues : _ENV
-  local second = (math.modf)(value * 3600)
-  local hour = ((math.modf)(second / 3600))
-  local hourStr = nil
+function UIAircraftEnterBuildController:GetTimeStr(speed, value)
+  local second = math.modf(value * 3600)
+  local hour = math.modf(second / 3600)
+  local hourStr
   if hour < 10 then
     hourStr = "0" .. hour
   else
     hourStr = hour .. ""
   end
-  local min = ((math.modf)((second - hour * 3600) / 60))
-  local minStr = nil
+  local min = math.modf((second - hour * 3600) / 60)
+  local minStr
   if min < 10 then
     minStr = "0" .. min
   else
     minStr = min .. ""
   end
   local sec = second % 60
-  local secStr = nil
+  local secStr
   if sec < 10 then
     secStr = "0" .. sec
   else
@@ -598,10 +425,7 @@ UIAircraftEnterBuildController.GetTimeStr = function(self, speed, value)
   return timeStr
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.OnItemSelect = function(self, index, pet, skillState, spPet)
-  -- function num : 0_22 , upvalues : _ENV
+function UIAircraftEnterBuildController:OnItemSelect(index, pet, skillState, spPet)
   self._currentSpPet = spPet
   local pstid = pet:GetPstID()
   if pstid == self._pstid then
@@ -611,14 +435,10 @@ UIAircraftEnterBuildController.OnItemSelect = function(self, index, pet, skillSt
     self._pstid = pstid
     self:_ShowPetInfo(pet, skillState)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftEnterClearPetList, self._pstid)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftEnterClearPetList, self._pstid)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.btnSureOnClick = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIAircraftEnterBuildController:btnSureOnClick()
   local same = true
   if self._pstid == self._oriPstid then
     same = true
@@ -626,106 +446,69 @@ UIAircraftEnterBuildController.btnSureOnClick = function(self)
     same = false
   end
   if same == false and self._pstid ~= 0 then
-    local list = (self._buildData):GetPetsId()
+    local list = self._buildData:GetPetsId()
     for i = 1, #list do
       if self._pstid == list[i] then
-        (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_the_same_pet_enter_room"))
-        return 
+        ToastManager.ShowToast(StringTable.Get("str_aircraft_the_same_pet_enter_room"))
+        return
       end
     end
   end
-  do
-    if same == false then
-      self:Lock("UIAircraftEnterBuildController:OnBtnSureOnClick")
-      local spSpaceID = 0
-      local spPetIdx = 0
-      if self._currentSpPet then
-        local room = (self._aircraft_module):GetPetAirRoom(self._currentSpPet)
-        spSpaceID = room:SpaceId()
-        local petids = room:GetPetsId()
-        for idx,petpstid in ipairs(petids) do
-          if petpstid == (self._currentSpPet):GetPstID() then
-            spPetIdx = 
-            break
-          end
-        end
-      end
-      do
-        do
-          ;
-          ((GameGlobal.TaskManager)()):StartTask(self.OnBtnSureOnClick, self, (self._buildData):SpaceId(), self._index, self._pstid, spSpaceID, spPetIdx)
-          self:CloseDialog()
+  if same == false then
+    self:Lock("UIAircraftEnterBuildController:OnBtnSureOnClick")
+    local spSpaceID = 0
+    local spPetIdx = 0
+    if self._currentSpPet then
+      local room = self._aircraft_module:GetPetAirRoom(self._currentSpPet)
+      spSpaceID = room:SpaceId()
+      local petids = room:GetPetsId()
+      for idx, petpstid in ipairs(petids) do
+        if petpstid == self._currentSpPet:GetPstID() then
+          spPetIdx = idx
+          break
         end
       end
     end
+    GameGlobal.TaskManager():StartTask(self.OnBtnSureOnClick, self, self._buildData:SpaceId(), self._index, self._pstid, spSpaceID, spPetIdx)
+  else
+    self:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.OnBtnSureOnClick = function(self, TT, spaceid, idx, pstid, spSpaceID, spPetIdx)
-  -- function num : 0_24 , upvalues : _ENV
-  local res = (self._aircraft_module):RequestCheckInOnePet(TT, spaceid, idx, pstid, spSpaceID, spPetIdx)
+function UIAircraftEnterBuildController:OnBtnSureOnClick(TT, spaceid, idx, pstid, spSpaceID, spPetIdx)
+  local res = self._aircraft_module:RequestCheckInOnePet(TT, spaceid, idx, pstid, spSpaceID, spPetIdx)
   self:UnLock("UIAircraftEnterBuildController:OnBtnSureOnClick")
   if res:GetSucc() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftSettledPetChanged)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshNavMenuData)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftSettledPetChanged)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshNavMenuData)
     self:CloseDialog()
   else
-    ;
-    (ToastManager.ShowToast)((self._aircraft_module):GetErrorMsg(res:GetResult()))
+    ToastManager.ShowToast(self._aircraft_module:GetErrorMsg(res:GetResult()))
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.btnCancelOnClick = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIAircraftEnterBuildController:btnCancelOnClick()
   self:_ShowPetInfo(nil, nil)
   self._pstid = 0
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftEnterClearPetList, self._pstid)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftEnterClearPetList, self._pstid)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.btnFiltrateOnClick = function(self)
-  -- function num : 0_26
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._btnFiltrateImg).sprite = (self._uiAircraftEnterBuildAtlas):GetSprite("spirit_jiantou_b_2_frame")
-  ;
-  (self._sortPanel):SetActive(true)
+function UIAircraftEnterBuildController:btnFiltrateOnClick()
+  self._btnFiltrateImg.sprite = self._uiAircraftEnterBuildAtlas:GetSprite("spirit_jiantou_b_2_frame")
+  self._sortPanel:SetActive(true)
   self._sortPools = nil
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController._CalcTotalRow = function(self, totalCount)
-  -- function num : 0_27 , upvalues : _ENV
-  local col = (math.ceil)(totalCount / self._countPerCol)
+function UIAircraftEnterBuildController:_CalcTotalRow(totalCount)
+  local col = math.ceil(totalCount / self._countPerCol)
   return col
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.sortPanelOnClick = function(self)
-  -- function num : 0_28
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._btnFiltrateImg).sprite = (self._uiAircraftEnterBuildAtlas):GetSprite("spirit_jiantou_b_1_frame")
-  ;
-  (self._sortPanel):SetActive(false)
+function UIAircraftEnterBuildController:sortPanelOnClick()
+  self._btnFiltrateImg.sprite = self._uiAircraftEnterBuildAtlas:GetSprite("spirit_jiantou_b_1_frame")
+  self._sortPanel:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildController.GetPetPrefabCell = function(self, index)
-  -- function num : 0_29
-  if self.items and (self.items)[index] then
-    return ((self.items)[index]):GetGameObject("imgBgBlack")
-  end
+function UIAircraftEnterBuildController:GetPetPrefabCell(index)
+  return self.items and self.items[index] and self.items[index]:GetGameObject("imgBgBlack")
 end
-
-

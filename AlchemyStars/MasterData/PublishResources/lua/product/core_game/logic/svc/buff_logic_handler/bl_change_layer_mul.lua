@@ -1,44 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_layer_mul.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeLayerMul", BuffLogicBase)
 BuffLogicChangeLayerMul = BuffLogicChangeLayerMul
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeLayerMul.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeLayerMul:Constructor(buffInstance, logicParam)
   self._layerMul = logicParam.layerMul or 1
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not logicParam.layerType then
-    (self._buffInstance)._layerType = (self._buffInstance):GetBuffEffectType()
-  end
+  self._buffInstance._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeLayerMul.DoLogic = function(self)
-  -- function num : 0_1
-  local buffLogicSvc = (self._world):GetService("BuffLogic")
-  buffLogicSvc:SetBuffLayerMul(self._entity, (self._buffInstance)._layerType, self._layerMul)
+function BuffLogicChangeLayerMul:DoLogic()
+  local buffLogicSvc = self._world:GetService("BuffLogic")
+  buffLogicSvc:SetBuffLayerMul(self._entity, self._buffInstance._layerType, self._layerMul)
 end
 
 _class("BuffLogicRemoveChangeLayerMul", BuffLogicBase)
 BuffLogicRemoveChangeLayerMul = BuffLogicRemoveChangeLayerMul
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveChangeLayerMul.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveChangeLayerMul:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveChangeLayerMul.DoLogic = function(self)
-  -- function num : 0_3
-  local buffLogicSvc = (self._world):GetService("BuffLogic")
-  buffLogicSvc:SetBuffLayerMul(self._entity, (self._buffInstance)._layerType, 1)
+function BuffLogicRemoveChangeLayerMul:DoLogic()
+  local buffLogicSvc = self._world:GetService("BuffLogic")
+  buffLogicSvc:SetBuffLayerMul(self._entity, self._buffInstance._layerType, 1)
 end
-
-

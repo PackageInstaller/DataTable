@@ -1,47 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_camera_change_fov_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCameraChangeFovInstruction", BaseInstruction)
 PlayCameraChangeFovInstruction = PlayCameraChangeFovInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCameraChangeFovInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCameraChangeFovInstruction:Constructor(paramList)
   self._time = tonumber(paramList.time)
   self._fov = tonumber(paramList.fov)
   self._block = tonumber(paramList.block) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCameraChangeFovInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCameraChangeFovInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local mainCamera = (world:MainCamera()):Camera()
+  local mainCamera = world:MainCamera():Camera()
   local cameraTran = mainCamera.transform
   local curFieldOfView = mainCamera.fieldOfView
-  local startTime = (GameGlobal:GetInstance()):GetCurrentTime()
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(0, TimerTriggerCount.Infinite, function()
-    -- function num : 0_1_0 , upvalues : _ENV, startTime, self, curFieldOfView, mainCamera
-    local curTime = (GameGlobal:GetInstance()):GetCurrentTime()
+  local startTime = GameGlobal:GetInstance():GetCurrentTime()
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(0, TimerTriggerCount.Infinite, function()
+    local curTime = GameGlobal:GetInstance():GetCurrentTime()
     local percent = (curTime - startTime) / self._time
-    if self._time <= curTime - startTime then
+    if curTime - startTime >= self._time then
       percent = 1
       if self._timerHandler then
-        ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+        GameGlobal.Timer():CancelEvent(self._timerHandler)
         self._timerHandler = nil
       end
     end
-    local fov = (((DG.Tweening).DOVirtual).EasedValue)(curFieldOfView, self._fov, percent, ((DG.Tweening).Ease).Linear)
+    local fov = DG.Tweening.DOVirtual.EasedValue(curFieldOfView, self._fov, percent, DG.Tweening.Ease.Linear)
     mainCamera.fieldOfView = fov
-  end
-)
+  end)
   if self._block == 1 then
     YIELD(TT, self._time)
   end
 end
-
-

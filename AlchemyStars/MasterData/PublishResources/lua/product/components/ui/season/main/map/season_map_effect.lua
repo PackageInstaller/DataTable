@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/season_map_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapEffect", Object)
 SeasonMapEffect = SeasonMapEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapEffect.OnInit = function(self, seasonID, bBacktrack, seasonComponnetID, compInfo)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMapEffect:OnInit(seasonID, bBacktrack, seasonComponnetID, compInfo)
   self._seasonID = seasonID
   self._seasonComponentID = seasonComponnetID
   self._compInfo = compInfo
@@ -16,88 +9,68 @@ SeasonMapEffect.OnInit = function(self, seasonID, bBacktrack, seasonComponnetID,
   self._effObjects = {}
   self._effRenderers = {}
   self._defaultEffectName = nil
-  local cfg = (Cfg.cfg_season_map)[seasonID]
+  local cfg = Cfg.cfg_season_map[seasonID]
   if cfg.DefaultSceneEffect then
-    self._defaultEffectName = (cfg.DefaultSceneEffect)[1]
+    self._defaultEffectName = cfg.DefaultSceneEffect[1]
   end
   if not self._defaultEffectName then
-    return 
+    return
   end
   if bBacktrack then
-    return 
+    return
   end
-  local cfgs = (Cfg.cfg_component_season)({ComponentID = self._componentID})
-  for k,v in pairs(cfgs) do
+  local cfgs = Cfg.cfg_component_season({
+    ComponentID = self._componentID
+  })
+  for k, v in pairs(cfgs) do
     local missionId = v.MissionID
-    local cfgMission = (Cfg.cfg_season_mission)[missionId]
+    local cfgMission = Cfg.cfg_season_mission[missionId]
     if self:_CheckValid(cfgMission) then
-      local cfgEventPoint = (Cfg.cfg_season_map_eventpoint)[missionId]
-      local mapEffect = nil
+      local cfgEventPoint = Cfg.cfg_season_map_eventpoint[missionId]
+      local mapEffect
       for progress = SeasonEventPointProgress.SEPP_Begin + 1, SeasonEventPointProgress.SEPP_End - 1 do
         local effNames = cfgEventPoint["SceneEffect" .. progress]
         if effNames then
-          if not mapEffect then
-            mapEffect = {}
-          end
+          mapEffect = mapEffect or {}
           mapEffect[progress] = effNames[1]
         end
       end
       if mapEffect then
         mapEffect.missionId = missionId
-        ;
-        (table.insert)(self._mapEffectCfgs, mapEffect)
+        table.insert(self._mapEffectCfgs, mapEffect)
       end
     end
   end
-  ;
-  (table.sort)(self._mapEffectCfgs, function(a, b)
-    -- function num : 0_0_0
-    do return a.missionId < b.missionId end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  local root = (GameObjectHelper.Find)("SceneRoot/AtmosphericEffect")
+  table.sort(self._mapEffectCfgs, function(a, b)
+    return a.missionId < b.missionId
+  end)
+  local root = GameObjectHelper.Find("SceneRoot/AtmosphericEffect")
   if root then
     local rootTrans = root.transform
     local childCount = rootTrans.childCount
     for i = 0, childCount - 1 do
       local subTrans = rootTrans:GetChild(i)
-      -- DECOMPILER ERROR at PC103: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (self._effObjects)[subTrans.name] = subTrans.gameObject
-      local renderers = (subTrans.gameObject):GetComponentsInChildren(typeof(UnityEngine.Renderer))
+      self._effObjects[subTrans.name] = subTrans.gameObject
+      local renderers = subTrans.gameObject:GetComponentsInChildren(typeof(UnityEngine.Renderer))
       local rendererList = {}
-      if renderers.Length > 0 then
+      if 0 < renderers.Length then
         for k = 0, renderers.Length - 1 do
-          (table.insert)(rendererList, renderers[k])
+          table.insert(rendererList, renderers[k])
         end
       end
-      do
-        do
-          -- DECOMPILER ERROR at PC128: Confused about usage of register: R17 in 'UnsetPending'
-
-          ;
-          (self._effRenderers)[subTrans.name] = rendererList
-          -- DECOMPILER ERROR at PC129: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
+      self._effRenderers[subTrans.name] = rendererList
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEffect._CheckValid = function(self, cfgMission)
-  -- function num : 0_1
+function SeasonMapEffect:_CheckValid(cfgMission)
   if not cfgMission then
     return false
   end
   if not cfgMission.Mode then
     return false
   end
-  if #cfgMission.Mode ~= 1 or (cfgMission.Mode)[1] ~= 1 then
+  if #cfgMission.Mode ~= 1 or cfgMission.Mode[1] ~= 1 then
     return false
   end
   if cfgMission.Type == 1 or cfgMission.Type == 3 then
@@ -106,140 +79,97 @@ SeasonMapEffect._CheckValid = function(self, cfgMission)
   return false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEffect.Dispose = function(self)
-  -- function num : 0_2
+function SeasonMapEffect:Dispose()
   self._mapEffectCfgs = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEffect.OnRefreshMapEffect = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonMapEffect:OnRefreshMapEffect()
   if not self._defaultEffectName then
-    return 
+    return
   end
-  local stageInfo = (self._compInfo).m_stage_info
-  local showEffectName = nil
+  local stageInfo = self._compInfo.m_stage_info
+  local showEffectName
   local len = #self._mapEffectCfgs
   for i = len, 1, -1 do
-    local effCfg = (self._mapEffectCfgs)[i]
+    local effCfg = self._mapEffectCfgs[i]
     local missionId = effCfg.missionId
     local progress = stageInfo[missionId]
     if progress then
       showEffectName = effCfg[progress]
-      ;
-      (Log.debug)("season map 前景特效 missionId " .. missionId .. "  progress .. " .. progress .. "  effName ", showEffectName)
+      Log.debug("season map 前景特效 missionId " .. missionId .. "  progress .. " .. progress .. "  effName ", showEffectName)
       break
     end
   end
-  do
-    if not showEffectName then
-      showEffectName = self._defaultEffectName
+  showEffectName = showEffectName or self._defaultEffectName
+  local lastShowEffect = self:GetCurEffect()
+  for effName, effGo in pairs(self._effObjects) do
+    if effName == showEffectName then
+      self:_ShowEffect(effName, showEffectName ~= lastShowEffect)
+    else
+      self:_HideEffect(effName, showEffectName == lastShowEffect)
     end
-    local lastShowEffect = self:GetCurEffect()
-    for effName,effGo in pairs(self._effObjects) do
-      if showEffectName == lastShowEffect then
-        do
-          self:_ShowEffect(effName, effName ~= showEffectName)
-          self:_HideEffect(effName, showEffectName == lastShowEffect)
-          -- DECOMPILER ERROR at PC58: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC58: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
-    end
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEffect._ShowEffect = function(self, effName, withAni)
-  -- function num : 0_4 , upvalues : _ENV
-  local go = (self._effObjects)[effName]
-  local renderers = (self._effRenderers)[effName]
+function SeasonMapEffect:_ShowEffect(effName, withAni)
+  local go = self._effObjects[effName]
+  local renderers = self._effRenderers[effName]
   if go then
     go:SetActive(true)
   end
   if renderers then
-    for k,r in pairs(renderers) do
+    for k, r in pairs(renderers) do
       if r.material then
         if withAni then
-          (r.material):DOFloat(1, "AlphaValue", 1)
+          r.material:DOFloat(1, "AlphaValue", 1)
         else
-          ;
-          (r.material):SetFloat("AlphaValue", 1)
+          r.material:SetFloat("AlphaValue", 1)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEffect._HideEffect = function(self, effName, withAni)
-  -- function num : 0_5 , upvalues : _ENV
-  local renderers = (self._effRenderers)[effName]
+function SeasonMapEffect:_HideEffect(effName, withAni)
+  local renderers = self._effRenderers[effName]
   if renderers then
-    for k,r in pairs(renderers) do
+    for k, r in pairs(renderers) do
       if r.material then
         if withAni then
-          (r.material):DOFloat(0, "AlphaValue", 1)
+          r.material:DOFloat(0, "AlphaValue", 1)
         else
-          ;
-          (r.material):SetFloat("AlphaValue", 0)
+          r.material:SetFloat("AlphaValue", 0)
         end
       end
     end
   end
-  do
-    local go = (self._effObjects)[effName]
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, go, self
+  local go = self._effObjects[effName]
+  GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(1000)
     if go and self._mapEffectCfgs then
       go:SetActive(false)
     end
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEffect.GetEffKey = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function SeasonMapEffect:GetEffKey()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. self._seasonID .. "season_map_effect"
   return key
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEffect.GetCurEffect = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self:GetEffKey())
-  local key = nil
-  local effName = nil
-  if ((UnityEngine.PlayerPrefs).HasKey)(key) then
-    effName = ((UnityEngine.PlayerPrefs).GetString)(key)
+function SeasonMapEffect:GetCurEffect()
+  local key = self:GetEffKey()
+  local effName
+  if UnityEngine.PlayerPrefs.HasKey(key) then
+    effName = UnityEngine.PlayerPrefs.GetString(key)
   else
     effName = self._defaultEffectName
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEffect.SetCurEffect = function(self, effName)
-  -- function num : 0_8 , upvalues : _ENV
+function SeasonMapEffect:SetCurEffect(effName)
   local key = self:GetEffKey()
-  ;
-  ((UnityEngine.PlayerPrefs).SetString)(key, effName)
+  UnityEngine.PlayerPrefs.SetString(key, effName)
 end
-
-

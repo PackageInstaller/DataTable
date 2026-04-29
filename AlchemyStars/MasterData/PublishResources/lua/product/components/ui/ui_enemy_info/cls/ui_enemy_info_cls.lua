@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_enemy_info/cls/ui_enemy_info_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Enemy", Object)
 Enemy = Enemy
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Enemy.Constructor = function(self)
-  -- function num : 0_0
+function Enemy:Constructor()
   self.id = 0
   self.alias = ""
   self.aliasEn = ""
@@ -25,58 +18,60 @@ Enemy.Constructor = function(self)
   self.isBoss = false
   self.isElite = false
   self.eliteDesc = ""
-  self._elementMap = {[1] = "bing_color", [2] = "huo_color", [3] = "sen_color", [4] = "lei_color"}
+  self._elementMap = {
+    [1] = "bing_color",
+    [2] = "huo_color",
+    [3] = "sen_color",
+    [4] = "lei_color"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Enemy.Init = function(self, id)
-  -- function num : 0_1 , upvalues : _ENV
+function Enemy:Init(id)
   self.id = id
-  local monsterConfig = (Cfg.cfg_monster)[id]
+  local monsterConfig = Cfg.cfg_monster[id]
   if not monsterConfig then
-    (Log.fatal)("cfg_monster " .. id .. " not exist.")
-    return 
+    Log.fatal("cfg_monster " .. id .. " not exist.")
+    return
   end
-  local monsterClassConfig = (Cfg.cfg_monster_class)[monsterConfig.ClassID]
+  local monsterClassConfig = Cfg.cfg_monster_class[monsterConfig.ClassID]
   if not monsterClassConfig then
-    (Log.fatal)("cfg_monster_class " .. monsterConfig.ClassID .. " not exist.")
-    return 
+    Log.fatal("cfg_monster_class " .. monsterConfig.ClassID .. " not exist.")
+    return
   end
-  self.alias = (StringTable.Get)(monsterClassConfig.Alias)
-  self.aliasEn = (StringTable.Get)(monsterClassConfig.Alias .. "_en")
-  self.name = (StringTable.Get)(monsterClassConfig.Name)
-  self.nameEn = (StringTable.Get)(monsterClassConfig.Name .. "_en")
-  self.desc = (StringTable.Get)(monsterClassConfig.Desc)
+  self.alias = StringTable.Get(monsterClassConfig.Alias)
+  self.aliasEn = StringTable.Get(monsterClassConfig.Alias .. "_en")
+  self.name = StringTable.Get(monsterClassConfig.Name)
+  self.nameEn = StringTable.Get(monsterClassConfig.Name .. "_en")
+  self.desc = StringTable.Get(monsterClassConfig.Desc)
   self.area = #monsterClassConfig.Area
   self.step = monsterClassConfig.Step
-  self.power = (StringTable.Get)(monsterClassConfig.Ability)
+  self.power = StringTable.Get(monsterClassConfig.Ability)
   self.canMove = monsterClassConfig.CanMove
   self.icon = monsterClassConfig.CardResPath
   self.head = monsterClassConfig.HeadIcon
   self.staticBody = monsterClassConfig.StaticBody
   local nElementType = monsterConfig.ElementType
   local elementType = "str_discovery_enemy_element_" .. nElementType
-  local val = (StringTable.Get)(elementType)
-  self.prop = {name = val, icon = (self._elementMap)[nElementType]}
+  local val = StringTable.Get(elementType)
+  self.prop = {
+    name = val,
+    icon = self._elementMap[nElementType]
+  }
   self.isBoss = monsterClassConfig.MonsterType == 2
-  if monsterConfig.EliteID and (table.count)(monsterConfig.EliteID) then
+  if monsterConfig.EliteID and table.count(monsterConfig.EliteID) then
     self.isElite = true
-    local len = (table.count)(monsterConfig.EliteID)
-    local strElite = (StringTable.Get)("str_discovery_enemy_elite")
-    for i,v in ipairs(monsterConfig.EliteID) do
-      local cfgElite = (Cfg.cfg_monster_elite)[v]
+    local len = table.count(monsterConfig.EliteID)
+    local strElite = StringTable.Get("str_discovery_enemy_elite")
+    for i, v in ipairs(monsterConfig.EliteID) do
+      local cfgElite = Cfg.cfg_monster_elite[v]
       if cfgElite then
-        self.eliteDesc = self.eliteDesc .. strElite .. (StringTable.Get)("str_discovery_enemy_bracket", (StringTable.Get)(cfgElite.Name)) .. (StringTable.Get)(cfgElite.Desc)
+        self.eliteDesc = self.eliteDesc .. strElite .. StringTable.Get("str_discovery_enemy_bracket", StringTable.Get(cfgElite.Name)) .. StringTable.Get(cfgElite.Desc)
         if i < len then
           self.eliteDesc = self.eliteDesc .. "\n"
         end
       else
-        (Log.warn)("### no elite in cfg_monster_elite. ", v)
+        Log.warn("### no elite in cfg_monster_elite. ", v)
       end
     end
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
-
-

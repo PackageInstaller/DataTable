@@ -1,32 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_change_body_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamChangeBodyArea", SkillEffectParamBase)
 SkillEffectParamChangeBodyArea = SkillEffectParamChangeBodyArea
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamChangeBodyArea.Constructor = function(self, t)
-  -- function num : 0_0
-  if not t.bodyArea then
-    self._bodyArea = {}
-  end
+function SkillEffectParamChangeBodyArea:Constructor(t)
+  self._bodyArea = t.bodyArea or {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeBodyArea.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamChangeBodyArea:GetEffectType()
   return SkillEffectType.ChangeBodyArea
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeBodyArea.GetBodyArea = function(self)
-  -- function num : 0_2
+function SkillEffectParamChangeBodyArea:GetBodyArea()
   return self._bodyArea
 end
-
-

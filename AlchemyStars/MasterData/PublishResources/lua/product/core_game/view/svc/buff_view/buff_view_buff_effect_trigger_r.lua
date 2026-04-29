@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_buff_effect_trigger_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewBuffEffectTrigger", BuffViewBase)
 BuffViewBuffEffectTrigger = BuffViewBuffEffectTrigger
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewBuffEffectTrigger.Constructor = function(self)
-  -- function num : 0_0
+function BuffViewBuffEffectTrigger:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewBuffEffectTrigger.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewBuffEffectTrigger:PlayView(TT)
   local result = self._buffResult
   if result:GetSuccess() then
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTNotifyTriggerBuff:New(self._entity))
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, NTNotifyTriggerBuff:New(self._entity))
   end
   local count = result:GetBuffCount()
-  if not count then
-    count = 0
-  end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAccumulateNum, ((self._entity):PetPstID()):GetPstID(), count)
+  count = count or 0
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAccumulateNum, self._entity:PetPstID():GetPstID(), count)
 end
-
-

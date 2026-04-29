@@ -1,63 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_backpack/ui_backpack_box_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBackPackBoxItem", UICustomWidget)
 UIBackPackBoxItem = UIBackPackBoxItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBackPackBoxItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBackPackBoxItem:OnShow(uiParams)
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base)
-  ;
-  (self.uiItem):SetClickCallBack(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Base)
+  self.uiItem:SetClickCallBack(function()
     self:itemOnClick()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBoxItem.OnHide = function(self)
-  -- function num : 0_1
+function UIBackPackBoxItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBoxItem.Flush = function(self, itemInfo, index, count, clickCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBackPackBoxItem:Flush(itemInfo, index, count, clickCallback)
   if not itemInfo then
-    return 
+    return
   end
   self._clickCallback = clickCallback
-  ;
-  (self.uiItem):SetData({icon = itemInfo:GetIcon(), quality = itemInfo:GetColor(), text1 = (HelperProxy:GetInstance()):FormatItemCount(itemInfo:GetCount() * count), itemId = itemInfo:GetTplId(), showNew = false})
-  ;
-  (self.uiItem):SetBtnImage(true)
+  self.uiItem:SetData({
+    icon = itemInfo:GetIcon(),
+    quality = itemInfo:GetColor(),
+    text1 = HelperProxy:GetInstance():FormatItemCount(itemInfo:GetCount() * count),
+    itemId = itemInfo:GetTplId(),
+    showNew = false
+  })
+  self.uiItem:SetBtnImage(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBoxItem.FlushEmpty = function(self)
-  -- function num : 0_3
-  (self.uiItem):SetData({text1 = "", icon = "", quality = 0, showNew = false})
-  ;
-  (self.uiItem):SetBtnImage(false)
+function UIBackPackBoxItem:FlushEmpty()
+  self.uiItem:SetData({
+    text1 = "",
+    icon = "",
+    quality = 0,
+    showNew = false
+  })
+  self.uiItem:SetBtnImage(false)
   self._clickCallback = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBoxItem.itemOnClick = function(self)
-  -- function num : 0_4
+function UIBackPackBoxItem:itemOnClick()
   if self._clickCallback then
-    (self._clickCallback)()
+    self._clickCallback()
   end
 end
-
-

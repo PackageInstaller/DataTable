@@ -1,36 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_ban_pet_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-EnumBanPetSkill = {Normal = 1, Chain = 2, Active = 3, MAX = 9}
+EnumBanPetSkill = {
+  Normal = 1,
+  Chain = 2,
+  Active = 3,
+  MAX = 9
+}
 _enum("EnumBanPetSkill", EnumBanPetSkill)
 _class("BuffLogicBanPetSkill", BuffLogicBase)
 BuffLogicBanPetSkill = BuffLogicBanPetSkill
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicBanPetSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffInstance)._effectList = logicParam.effectList
+function BuffLogicBanPetSkill:Constructor(buffInstance, logicParam)
+  self._buffInstance._effectList = logicParam.effectList
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBanPetSkill.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicBanPetSkill:DoLogic()
+  local e = self._buffInstance:Entity()
   if not e:HasPetPstID() then
-    return 
+    return
   end
   local buffCmpt = e:BuffComponent()
-  if not buffCmpt:GetBuffValue("BanPetSkill") then
-    local banPetSkillList = {}
-  end
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    if not (table.icontains)(banPetSkillList, paramType) then
-      (table.insert)(banPetSkillList, paramType)
+  local banPetSkillList = buffCmpt:GetBuffValue("BanPetSkill") or {}
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    if not table.icontains(banPetSkillList, paramType) then
+      table.insert(banPetSkillList, paramType)
     end
   end
   buffCmpt:SetBuffValue("BanPetSkill", banPetSkillList)
@@ -40,30 +31,21 @@ end
 
 _class("BuffLogicRemoveBanPetSkill", BuffLogicBase)
 BuffLogicRemoveBanPetSkill = BuffLogicRemoveBanPetSkill
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveBanPetSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveBanPetSkill:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveBanPetSkill.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffLogicRemoveBanPetSkill:DoLogic()
   local e = self._entity
   if not e:HasPetPstID() then
-    return 
+    return
   end
   local buffCmpt = e:BuffComponent()
-  if not buffCmpt:GetBuffValue("BanPetSkill") then
-    local banPetSkillList = {}
-  end
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (table.removev)(banPetSkillList, paramType)
+  local banPetSkillList = buffCmpt:GetBuffValue("BanPetSkill") or {}
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    table.removev(banPetSkillList, paramType)
   end
   buffCmpt:SetBuffValue("BanPetSkill", banPetSkillList)
   local buffResult = BuffResultRemoveBanPetSkill:New(banPetSkillList)
   return buffResult
 end
-
-

@@ -1,33 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_all_grid_purify_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayAllGridPurifyInstruction", BaseInstruction)
 PlayAllGridPurifyInstruction = PlayAllGridPurifyInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAllGridPurifyInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayAllGridPurifyInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local container = (casterEntity:SkillRoutine()):GetResultContainer()
+  local container = casterEntity:SkillRoutine():GetResultContainer()
   local results = container:GetEffectResultsAsArray(SkillEffectType.GridPurify)
   if not results or #results == 0 then
-    return 
+    return
   end
   local traps = {}
-  for _,result in ipairs(results) do
+  for _, result in ipairs(results) do
     local ids = result:GetPurifiedTrapIDs()
-    for __,id in ipairs(ids) do
+    for __, id in ipairs(ids) do
       local e = world:GetEntityByID(id)
       if e then
-        (table.insert)(traps, e)
+        table.insert(traps, e)
       end
     end
   end
   local trapServiceRender = world:GetService("TrapRender")
   trapServiceRender:PlayTrapDieSkill(TT, traps, true)
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_select_scope_grid_range_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DataSelectScopeGridRangeInstruction", BaseInstruction)
 DataSelectScopeGridRangeInstruction = DataSelectScopeGridRangeInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSelectScopeGridRangeInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function DataSelectScopeGridRangeInstruction:Constructor(paramList)
   if paramList.effectType then
     self._effectType = tonumber(paramList.effectType)
   end
@@ -19,71 +12,55 @@ DataSelectScopeGridRangeInstruction.Constructor = function(self, paramList)
   self._noPhaseEnd = paramList.noPhaseEnd
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectScopeGridRangeInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = ((casterEntity:SkillRoutine()):GetResultContainer())
-  local resultArray = nil
+function DataSelectScopeGridRangeInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local resultArray
   if self._effectType then
     resultArray = skillEffectResultContainer:GetEffectResultsAsArray(self._effectType, self._damageInfoIndex)
   else
     resultArray = {}
     local resultDic = skillEffectResultContainer:GetEffectResultDict()
-    for _,v in pairs(resultDic) do
+    for _, v in pairs(resultDic) do
       local arr = v.array
       for i = 1, #arr do
-        (table.insert)(resultArray, arr[i])
+        table.insert(resultArray, arr[i])
       end
     end
   end
-  do
-    if self._noPhaseEnd or not InstructionConst.PhaseEnd then
-      do return resultArray ~= nil and (table.count)(resultArray) > 0 or nil end
-      local gridList = {}
-      local specialScopeResultList = {}
-      for _,result in pairs(resultArray) do
-        local scopeResult = result:GetSkillEffectScopeResult()
-        if scopeResult then
-          local array = scopeResult:GetAttackRange()
-          for _,v in pairs(array) do
-            if not self:_IsContainPos(gridList, v) then
-              (table.insert)(gridList, v)
-            end
-          end
-        end
-        do
-          do
-            if result.GetSpecialScopeResultList then
-              local specialScopeResult = result:GetSpecialScopeResultList()
-              if specialScopeResult and (table.count)(specialScopeResult) > 0 and not (table.icontains)(specialScopeResultList, specialScopeResult[1]) then
-                (table.appendArray)(specialScopeResultList, specialScopeResult)
-              end
-            end
-            -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
+  if resultArray == nil or table.count(resultArray) <= 0 then
+    return not self._noPhaseEnd and InstructionConst.PhaseEnd or nil
+  end
+  local gridList = {}
+  local specialScopeResultList = {}
+  for _, result in pairs(resultArray) do
+    local scopeResult = result:GetSkillEffectScopeResult()
+    if scopeResult then
+      local array = scopeResult:GetAttackRange()
+      for _, v in pairs(array) do
+        if not self:_IsContainPos(gridList, v) then
+          table.insert(gridList, v)
         end
       end
-      if self._noPhaseEnd or not InstructionConst.PhaseEnd then
-        do return (table.count)(gridList) > 0 or nil end
-        phaseContext:SetScopeGridList(gridList)
-        phaseContext:SetSpecialScopeResultList(specialScopeResultList)
+    end
+    if result.GetSpecialScopeResultList then
+      local specialScopeResult = result:GetSpecialScopeResultList()
+      if specialScopeResult and table.count(specialScopeResult) > 0 and not table.icontains(specialScopeResultList, specialScopeResult[1]) then
+        table.appendArray(specialScopeResultList, specialScopeResult)
       end
     end
   end
+  if table.count(gridList) <= 0 then
+    return not self._noPhaseEnd and InstructionConst.PhaseEnd or nil
+  end
+  phaseContext:SetScopeGridList(gridList)
+  phaseContext:SetSpecialScopeResultList(specialScopeResultList)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectScopeGridRangeInstruction._IsContainPos = function(self, posArr, pos)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,p in pairs(posArr) do
+function DataSelectScopeGridRangeInstruction:_IsContainPos(posArr, pos)
+  for _, p in pairs(posArr) do
     if pos.x == p.x and pos.y == p.y then
       return true
     end
   end
   return false
 end
-
-

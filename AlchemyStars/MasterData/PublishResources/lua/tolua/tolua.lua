@@ -1,17 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/tolua.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 if jit then
   if jit.opt then
-    ((jit.opt).start)(3)
+    jit.opt.start(3)
   end
-  print("ver" .. jit.version_num .. " jit: ", (jit.status)())
-  print((string.format)("os: %s, arch: %s", jit.os, jit.arch))
+  print("ver" .. jit.version_num .. " jit: ", jit.status())
+  print(string.format("os: %s, arch: %s", jit.os, jit.arch))
 end
 if DebugServerIp then
-  ((require("mobdebug")).start)(DebugServerIp)
+  require("mobdebug").start(DebugServerIp)
 end
 require("functions")
 Mathf = require("umathf")
@@ -32,4 +27,3 @@ utf8 = require("utf8")
 require("typeof")
 require("valuetype")
 require("bindingflags")
-

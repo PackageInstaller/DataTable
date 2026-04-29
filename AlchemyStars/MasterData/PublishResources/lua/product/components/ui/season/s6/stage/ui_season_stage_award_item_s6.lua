@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s6/stage/ui_season_stage_award_item_s6.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonStageAwardItemS6", UICustomWidget)
 UISeasonStageAwardItemS6 = UISeasonStageAwardItemS6
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonStageAwardItemS6.OnShow = function(self)
-  -- function num : 0_0
+function UISeasonStageAwardItemS6:OnShow()
   self._trans = self:GetGameObject()
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonStageAwardItemS6:GetComponents()
   self._trans = self:GetGameObject()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._iconRawImg = self:GetUIComponent("RawImage", "icon")
   self._iconRect = self:GetUIComponent("RectTransform", "icon")
-  self._iconRectDefaultSize = Vector2(((self._iconRect).sizeDelta).x, ((self._iconRect).sizeDelta).y)
+  self._iconRectDefaultSize = Vector2(self._iconRect.sizeDelta.x, self._iconRect.sizeDelta.y)
   self._iconGO = self:GetGameObject("icon")
   self._quality = self:GetUIComponent("Image", "quality")
   self._qualityRect = self:GetUIComponent("RectTransform", "quality")
@@ -41,12 +31,9 @@ UISeasonStageAwardItemS6.GetComponents = function(self)
   self._typeImg = self:GetUIComponent("Image", "typeImg")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.Flush = function(self, v, levelDiff)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonStageAwardItemS6:Flush(v, levelDiff)
   if not v then
-    return 
+    return
   end
   self._v = v
   local icon = v.icon
@@ -55,312 +42,199 @@ UISeasonStageAwardItemS6.Flush = function(self, v, levelDiff)
   local strKey = ""
   local textColor = Color(0.878, 0.961, 1, 1)
   self._activityText = ""
-  self._topTextStr = (UIEnum.ItemRandomStr)(v.randomType)
+  self._topTextStr = UIEnum.ItemRandomStr(v.randomType)
   local awardType = v.type
   local itemId = v.id
   if awardType == StageAwardType.First then
     strKey = "str_season_first_award"
-    textColor = Color(0.47058823529412, 0.60392156862745, 0.72156862745098, 1)
+    textColor = Color(0.47058823529411764, 0.6039215686274509, 0.7215686274509804, 1)
+  elseif awardType == StageAwardType.Star then
+    strKey = "str_season_3star_award"
+    textColor = Color(0.8588235294117647, 0.6078431372549019, 0.42745098039215684, 1)
+  elseif awardType == StageAwardType.Activity then
+    strKey = "str_season_activity_award"
+    self._activityText = StringTable.Get("str_item_xianshi")
+    textColor = Color(0.7215686274509804, 0.6862745098039216, 0.6274509803921569, 1)
+  elseif awardType == StageAwardType.HasGen then
+    strKey = "str_season_already_collect"
   else
-    if awardType == StageAwardType.Star then
-      strKey = "str_season_3star_award"
-      textColor = Color(0.85882352941176, 0.6078431372549, 0.42745098039216, 1)
-    else
-      if awardType == StageAwardType.Activity then
-        strKey = "str_season_activity_award"
-        self._activityText = (StringTable.Get)("str_item_xianshi")
-        textColor = Color(0.72156862745098, 0.68627450980392, 0.62745098039216, 1)
-      else
-        if awardType == StageAwardType.HasGen then
-          strKey = "str_season_already_collect"
-        else
-          strKey = "str_season_normal_award"
-          textColor = Color(0.72156862745098, 0.68627450980392, 0.62745098039216, 1)
-        end
-      end
-    end
+    strKey = "str_season_normal_award"
+    textColor = Color(0.7215686274509804, 0.6862745098039216, 0.6274509803921569, 1)
   end
   self:SetText1(text1)
   self:SetQuality(quality)
   self:SetIcon(icon, itemId)
-  self:SetAwardText((StringTable.Get)(strKey), textColor)
+  self:SetAwardText(StringTable.Get(strKey), textColor)
   self:SetTopAward()
   self:SetAct()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.SetIcon = function(self, name, itemId)
-  -- function num : 0_3 , upvalues : _ENV
-  if not (string.isnullorempty)(name) then
+function UISeasonStageAwardItemS6:SetIcon(name, itemId)
+  if not string.isnullorempty(name) then
     self:ShowIcon(true, itemId)
-    ;
-    (self._icon):LoadImage(name)
+    self._icon:LoadImage(name)
     local isHead = false
-    if itemId >= 3750000 and itemId <= 3759999 then
+    if 3750000 <= itemId and itemId <= 3759999 then
       isHead = true
     end
     if isHead then
       local whRate = 1
-      if itemId >= 3751000 and itemId <= 3751999 then
-        whRate = 0.84210526315789
-      else
-        if itemId >= 3752000 and itemId <= 3752999 then
-          whRate = 0.63888888888889
-        else
-          if itemId >= 3753000 and itemId <= 3753999 then
-            whRate = 0.63888888888889
-          end
-        end
+      if 3751000 <= itemId and itemId <= 3751999 then
+        whRate = 0.8421052631578947
+      elseif 3752000 <= itemId and itemId <= 3752999 then
+        whRate = 0.6388888888888888
+      elseif 3753000 <= itemId and itemId <= 3753999 then
+        whRate = 0.6388888888888888
       end
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._iconRect).sizeDelta = Vector2(((self._iconRect).sizeDelta).x, ((self._iconRect).sizeDelta).x * whRate)
+      self._iconRect.sizeDelta = Vector2(self._iconRect.sizeDelta.x, self._iconRect.sizeDelta.x * whRate)
     else
-      do
-        do
-          -- DECOMPILER ERROR at PC54: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self._iconRect).sizeDelta = self._iconRectDefaultSize
-          self:ShowIcon(false)
-        end
-      end
+      self._iconRect.sizeDelta = self._iconRectDefaultSize
     end
+  else
+    self:ShowIcon(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.ShowIcon = function(self, show, itemId)
-  -- function num : 0_4
-  (self._iconGO):SetActive(show)
+function UISeasonStageAwardItemS6:ShowIcon(show, itemId)
+  self._iconGO:SetActive(show)
   self:SetIconOffset(itemId)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.SetIconOffset = function(self, itemId)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
+function UISeasonStageAwardItemS6:SetIconOffset(itemId)
   if self:_IsPet(itemId) then
-    (self._iconRect).anchoredPosition = Vector2(-2, 15)
+    self._iconRect.anchoredPosition = Vector2(-2, 15)
   else
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._iconRect).anchoredPosition = Vector2(-2, 15)
+    self._iconRect.anchoredPosition = Vector2(-2, 15)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6._IsPet = function(self, id)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet)({ID = id})
+function UISeasonStageAwardItemS6:_IsPet(id)
+  local cfg = Cfg.cfg_pet({ID = id})
   return cfg and true or false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.SetQuality = function(self, quality)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonStageAwardItemS6:SetQuality(quality)
   if quality <= 0 then
     quality = 1
   end
   local qualityName = "exp_s6_map_daoju_pinji0" .. tostring(quality)
   if qualityName ~= "" then
     self:ShowQuality(true)
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._quality).sprite = (self.atlas):GetSprite(qualityName)
+    self._quality.sprite = self.atlas:GetSprite(qualityName)
   else
     self:ShowQuality(false)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.ShowQuality = function(self, show)
-  -- function num : 0_8
-  (self._qualityGO):SetActive(show)
+function UISeasonStageAwardItemS6:ShowQuality(show)
+  self._qualityGO:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.SetText1 = function(self, text, showNumber)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonStageAwardItemS6:SetText1(text, showNumber)
   if text ~= nil then
     local show = false
     if type(text) == "number" then
       local num = text
-      if num <= 0 then
-        do
-          do
-            show = showNumber
-            show = show
-            ;
-            (self._text1):SetText((HelperProxy:GetInstance()):FormatItemCount(num))
-            if type(text) == "string" then
-              show = not (string.isnullorempty)(text)
-              ;
-              (self._text1):SetText(text)
-            end
-            self:ShowText1(show)
-            self:ShowText1(false)
-            -- DECOMPILER ERROR: 6 unprocessed JMP targets
-          end
-        end
-      end
+      show = 0 < num or showNumber
+      self._text1:SetText(HelperProxy:GetInstance():FormatItemCount(num))
+    elseif type(text) == "string" then
+      show = not string.isnullorempty(text)
+      self._text1:SetText(text)
     end
+    self:ShowText1(show)
+  else
+    self:ShowText1(false)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.ShowText1 = function(self, show)
-  -- function num : 0_10
-  (self._text1GO):SetActive(show)
+function UISeasonStageAwardItemS6:ShowText1(show)
+  self._text1GO:SetActive(show)
   self:SetOffset(show)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.SetOffset = function(self, showText1)
-  -- function num : 0_11
+function UISeasonStageAwardItemS6:SetOffset(showText1)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.SetAwardText = function(self, awardText, color)
-  -- function num : 0_12
-  (self._awardTxt):SetText(awardText)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._awardTxt).color = color
+function UISeasonStageAwardItemS6:SetAwardText(awardText, color)
+  self._awardTxt:SetText(awardText)
+  self._awardTxt.color = color
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.SetTypeBg = function(self, typeBgName)
-  -- function num : 0_13
+function UISeasonStageAwardItemS6:SetTypeBg(typeBgName)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.SetTypeMainBg = function(self, typeBgName)
-  -- function num : 0_14
+function UISeasonStageAwardItemS6:SetTypeMainBg(typeBgName)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.SetTopAward = function(self)
-  -- function num : 0_15
+function UISeasonStageAwardItemS6:SetTopAward()
   self:SetTopText(self._topTextStr)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.SetTopText = function(self, text)
-  -- function num : 0_16 , upvalues : _ENV
-  if not (string.isnullorempty)(text) then
+function UISeasonStageAwardItemS6:SetTopText(text)
+  if not string.isnullorempty(text) then
     self:ShowTopText(true)
-    ;
-    (self._topText):SetText(text)
+    self._topText:SetText(text)
   else
     self:ShowTopText(false)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.ShowTopText = function(self, show)
-  -- function num : 0_17
-  (self._topGo):SetActive(show)
+function UISeasonStageAwardItemS6:ShowTopText(show)
+  self._topGo:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.SetAct = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  if not (string.isnullorempty)(self._activityText) then
+function UISeasonStageAwardItemS6:SetAct()
+  if not string.isnullorempty(self._activityText) then
     self:ShowText(true)
-    ;
-    (self._actText):SetText(self._activityText)
+    self._actText:SetText(self._activityText)
   else
     self:ShowText(false)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.ShowText = function(self, show)
-  -- function num : 0_19
-  (self._actGo):SetActive(show)
+function UISeasonStageAwardItemS6:ShowText(show)
+  self._actGo:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.BtnOnClick = function(self, go)
-  -- function num : 0_20 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function UISeasonStageAwardItemS6:BtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   if self._v then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowItemTips, (self._v).id, ((self._trans).transform).position)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowItemTips, self._v.id, self._trans.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.PlayAnim = function(self, totalDelay)
-  -- function num : 0_21 , upvalues : _ENV
+function UISeasonStageAwardItemS6:PlayAnim(totalDelay)
   local curAnimDelay = 0
   if totalDelay then
     curAnimDelay = totalDelay
   end
   if self._animTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._animTimer)
+    GameGlobal.Timer():CancelEvent(self._animTimer)
     self._animTimer = nil
   end
-  self._animTimer = ((GameGlobal.Timer)()):AddEvent(curAnimDelay, function()
-    -- function num : 0_21_0 , upvalues : self
+  self._animTimer = GameGlobal.Timer():AddEvent(curAnimDelay, function()
     self:_PlayInAnim()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6._PlayInAnim = function(self)
-  -- function num : 0_22
+function UISeasonStageAwardItemS6:_PlayInAnim()
   if self._anim then
-    (self._anim):Play("uieff_UISeasonAwardItem_3Star_in")
+    self._anim:Play("uieff_UISeasonAwardItem_3Star_in")
     if self._rootGo then
-      (self._rootGo):SetActive(true)
+      self._rootGo:SetActive(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.OnHide = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UISeasonStageAwardItemS6:OnHide()
   if self._animTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._animTimer)
+    GameGlobal.Timer():CancelEvent(self._animTimer)
     self._animTimer = nil
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageAwardItemS6.SetWaitAnim = function(self)
-  -- function num : 0_24
+function UISeasonStageAwardItemS6:SetWaitAnim()
   if self._rootGo then
-    (self._rootGo):SetActive(false)
+    self._rootGo:SetActive(false)
   end
 end
-
-

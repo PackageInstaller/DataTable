@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/postgame/ui_cn7_n36_post_game_closing_tips_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN7N36PostGameClosingTipsController", UIController)
 UICN7N36PostGameClosingTipsController = UICN7N36PostGameClosingTipsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN7N36PostGameClosingTipsController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UICN7N36PostGameClosingTipsController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostGameClosingTipsController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UICN7N36PostGameClosingTipsController:OnShow(uiParams)
   self.txt = uiParams[1]
   self.CancelCB = uiParams[2]
   self.ConfirmCB = uiParams[3]
@@ -23,69 +13,46 @@ UICN7N36PostGameClosingTipsController.OnShow = function(self, uiParams)
   self:ShowDetail()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostGameClosingTipsController.InitWidget = function(self)
-  -- function num : 0_2
+function UICN7N36PostGameClosingTipsController:InitWidget()
   self._tips = self:GetUIComponent("UILocalizationText", "tips")
   self.anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostGameClosingTipsController.ShowDetail = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._tips):SetText(self.txt)
+function UICN7N36PostGameClosingTipsController:ShowDetail()
+  self._tips:SetText(self.txt)
   local lockName = "UICN7N36PostGameClosingTipsController_AnimIN"
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self.anim):Play("uieff_UICN7N36PostGameClosingTipsController_in")
+    self.anim:Play("uieff_UICN7N36PostGameClosingTipsController_in")
     YIELD(TT, 500)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostGameClosingTipsController.CancelBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN7N36PostGameClosingTipsController:CancelBtnOnClick(go)
   local lockName = "UICN7N36PostGameClosingTipsController_AnimOUT"
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self.anim):Play("uieff_UICN7N36PostGameClosingTipsController_out")
+    self.anim:Play("uieff_UICN7N36PostGameClosingTipsController_out")
     YIELD(TT, 200)
     self:UnLock(lockName)
     self:CloseDialog()
     if self.CancelCB then
-      (self.CancelCB)()
+      self.CancelCB()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostGameClosingTipsController.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN7N36PostGameClosingTipsController:ConfirmBtnOnClick(go)
   local lockName = "UICN7N36PostGameClosingTipsController_AnimOUT"
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self.anim):Play("uieff_UICN7N36PostGameClosingTipsController_out")
+    self.anim:Play("uieff_UICN7N36PostGameClosingTipsController_out")
     YIELD(TT, 200)
     self:UnLock(lockName)
     self:CloseDialog()
     if self.ConfirmCB then
-      (self.ConfirmCB)()
+      self.ConfirmCB()
     end
-  end
-)
+  end)
 end
-
-

@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_achieve_finish/achievement_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("singleton")
 _class("AchievementManager", Singleton)
 AchievementManager = AchievementManager
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AchievementManager.Init = function(self, uiroot)
-  -- function num : 0_0 , upvalues : _ENV
-  self._go = ((uiroot.transform):Find("UICameras/depth_high/UI/UIQuestAchievementFinish")).gameObject
+function AchievementManager:Init(uiroot)
+  self._go = uiroot.transform:Find("UICameras/depth_high/UI/UIQuestAchievementFinish").gameObject
   self._maxCount = 2
-  self._closeTime = ((Cfg.cfg_global).ui_achievement_finish_controller_close_time).IntValue or 1000
-  self._gapsTime = ((Cfg.cfg_global).ui_achievement_finish_controller_gaps_time).IntValue or 500
+  self._closeTime = Cfg.cfg_global.ui_achievement_finish_controller_close_time.IntValue or 1000
+  self._gapsTime = Cfg.cfg_global.ui_achievement_finish_controller_gaps_time.IntValue or 500
   self._moveY = 450
   self._tweenTimeUp = 0.5
   self._tweenTimeDown = 0.25
@@ -27,86 +20,59 @@ AchievementManager.Init = function(self, uiroot)
   self._medalMsgQueue = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManager.FnishAchievement = function(self, msgss)
-  -- function num : 0_1
+function AchievementManager:FnishAchievement(msgss)
   self:_GetMsg(msgss)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManager.FnishMedal = function(self, msgss)
-  -- function num : 0_2
+function AchievementManager:FnishMedal(msgss)
   self:_GetMedalMsg(msgss)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManager._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local item1go = (((self._go).transform):Find("SafeArea/Down/pools/item1")).gameObject
-  local item2go = (((self._go).transform):Find("SafeArea/Down/pools/item2")).gameObject
-  local medal1go = (((self._go).transform):Find("SafeArea/Down/pools/medalItem1")).gameObject
-  local medal2go = (((self._go).transform):Find("SafeArea/Down/pools/medalItem2")).gameObject
+function AchievementManager:_OnValue()
+  local item1go = self._go.transform:Find("SafeArea/Down/pools/item1").gameObject
+  local item2go = self._go.transform:Find("SafeArea/Down/pools/item2").gameObject
+  local medal1go = self._go.transform:Find("SafeArea/Down/pools/medalItem1").gameObject
+  local medal2go = self._go.transform:Find("SafeArea/Down/pools/medalItem2").gameObject
   self._item1 = AchievementManagerItem:New()
-  ;
-  (self._item1):SetGameObject(item1go)
+  self._item1:SetGameObject(item1go)
   self._item2 = AchievementManagerItem:New()
-  ;
-  (self._item2):SetGameObject(item2go)
+  self._item2:SetGameObject(item2go)
   self._medalItem1 = MedalManagerItem:New()
-  ;
-  (self._medalItem1):SetGameObject(medal1go)
+  self._medalItem1:SetGameObject(medal1go)
   self._medalItem2 = MedalManagerItem:New()
-  ;
-  (self._medalItem2):SetGameObject(medal2go)
-  self._item1rect = (self._item1):GetRectTransform()
-  self._item2rect = (self._item2):GetRectTransform()
-  self._medalitem1rect = (self._medalItem1):GetRectTransform()
-  self._medalitem2rect = (self._medalItem2):GetRectTransform()
+  self._medalItem2:SetGameObject(medal2go)
+  self._item1rect = self._item1:GetRectTransform()
+  self._item2rect = self._item2:GetRectTransform()
+  self._medalitem1rect = self._medalItem1:GetRectTransform()
+  self._medalitem2rect = self._medalItem2:GetRectTransform()
   self._state = PopState.Close
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManager._GetMsg = function(self, msgss)
-  -- function num : 0_4 , upvalues : _ENV
-  if msgss == nil or (table.count)(msgss) <= 0 then
-    return 
+function AchievementManager:_GetMsg(msgss)
+  if msgss == nil or table.count(msgss) <= 0 then
+    return
   end
-  ;
-  (Log.debug)("###[AchievementManager]消息数量", #msgss)
+  Log.debug("###[AchievementManager]消息数量", #msgss)
   for i = 1, #msgss do
-    (table.insert)(self._msgQueue, msgss[i])
+    table.insert(self._msgQueue, msgss[i])
   end
-  ;
-  (Log.debug)("###[AchievementManager]当前队列数量", #self._msgQueue)
-  ;
-  ((GameGlobal.Timer)()):AddEvent(self.waitTime, function()
-    -- function num : 0_4_0 , upvalues : self, _ENV
+  Log.debug("###[AchievementManager]当前队列数量", #self._msgQueue)
+  GameGlobal.Timer():AddEvent(self.waitTime, function()
     if self.popType == PopType.Achieve and self._state == PopState.Close then
       self._state = PopState.Open
       self.popType = PopType.Achieve
       self:_OpenMsg()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManager._GetMedalMsg = function(self, msgss)
-  -- function num : 0_5 , upvalues : _ENV
+function AchievementManager:_GetMedalMsg(msgss)
   if msgss == nil then
-    return 
+    return
   end
-  ;
-  (Log.debug)("###[AchievementManager]获得勋章消息ID", msgss)
-  ;
-  (table.insert)(self._medalMsgQueue, msgss)
-  ;
-  (Log.debug)("###[AchievementManager]当前队列数量", #self._medalMsgQueue)
+  Log.debug("###[AchievementManager]获得勋章消息ID", msgss)
+  table.insert(self._medalMsgQueue, msgss)
+  Log.debug("###[AchievementManager]当前队列数量", #self._medalMsgQueue)
   if self._state == PopState.Close then
     self._state = PopState.Open
     self.popType = PopType.Medal
@@ -114,35 +80,29 @@ AchievementManager._GetMedalMsg = function(self, msgss)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManager._OpenMsg = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.debug)("###[AchievementManager]打开消息")
+function AchievementManager:_OpenMsg()
+  Log.debug("###[AchievementManager]打开消息")
   local item = self._item2
   local rect = self._item2rect
-  local questModule = (GameGlobal.GetModule)(QuestModule)
-  local quest = questModule:GetQuest((self._msgQueue)[1])
+  local questModule = GameGlobal.GetModule(QuestModule)
+  local quest = questModule:GetQuest(self._msgQueue[1])
   local queue = self._msgQueue
   if self.popType == PopType.Medal then
     item = self._medalItem2
     rect = self._medalitem2rect
-    quest = (self._medalMsgQueue)[1]
+    quest = self._medalMsgQueue[1]
     queue = self._medalMsgQueue
     item:SetData(quest)
   else
     item:SetData(quest:QuestInfo())
   end
-  ;
-  (table.remove)(queue, 1)
+  table.remove(queue, 1)
   item:ReplyTween()
-  self._tweener2 = (rect:DOAnchorPosY(self._moveY, self._tweenTimeUp)):OnComplete(function()
-    -- function num : 0_6_0 , upvalues : _ENV, queue, item, self
-    (Log.debug)("###[AchievementManager]检查了消息数量", #queue)
+  self._tweener2 = rect:DOAnchorPosY(self._moveY, self._tweenTimeUp):OnComplete(function()
+    Log.debug("###[AchievementManager]检查了消息数量", #queue)
     item:DoTween()
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundPopWindow)
-    if #queue > 0 then
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundPopWindow)
+    if 0 < #queue then
       self._hasNextOne = true
       self._waitTime = self._gapsTime
     else
@@ -150,23 +110,17 @@ AchievementManager._OpenMsg = function(self)
       self._waitTime = self._closeTime
     end
     if self._event then
-      ((GameGlobal.Timer)()):CancelEvent(self._event)
+      GameGlobal.Timer():CancelEvent(self._event)
     end
-    self._event = ((GameGlobal.Timer)()):AddEvent(self._waitTime, function()
-      -- function num : 0_6_0_0 , upvalues : self
+    self._event = GameGlobal.Timer():AddEvent(self._waitTime, function()
       self:_ClosePanel()
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManager.Dispose = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function AchievementManager:Dispose()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
   self._item2rect = nil
@@ -177,10 +131,8 @@ AchievementManager.Dispose = function(self)
   self._item2 = nil
   self._medalItem1 = nil
   self._medalItem2 = nil
-  ;
-  (table.clear)(self._msgQueue)
-  ;
-  (table.clear)(self._medalMsgQueue)
+  table.clear(self._msgQueue)
+  table.clear(self._medalMsgQueue)
   self._msgQueue = nil
   self._medalMsgQueue = nil
   self._hasNextOne = nil
@@ -195,10 +147,7 @@ AchievementManager.Dispose = function(self)
   self._tweenTimeDown = nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManager._ClosePanel = function(self)
-  -- function num : 0_8
+function AchievementManager:_ClosePanel()
   if self._hasNextOne then
     self:_CloseAndPop()
   else
@@ -206,13 +155,10 @@ AchievementManager._ClosePanel = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManager._CloseAndPop = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function AchievementManager:_CloseAndPop()
   self:_ChangeIndex(isAchievement)
-  local questModule = (GameGlobal.GetModule)(QuestModule)
-  local quest = questModule:GetQuest((self._msgQueue)[1])
+  local questModule = GameGlobal.GetModule(QuestModule)
+  local quest = questModule:GetQuest(self._msgQueue[1])
   local queue = self._msgQueue
   local item = self._item2
   local rect1 = self._item1rect
@@ -222,38 +168,32 @@ AchievementManager._CloseAndPop = function(self)
     item = self._medalItem2
     rect1 = self._medalitem1rect
     rect2 = self._medalitem2rect
-    quest = (self._medalMsgQueue)[1]
+    quest = self._medalMsgQueue[1]
     if not quest then
-      (Log.fatal)("###[AchievementManager] 掉线，清空弹出数据")
-      ;
-      (table.clear)(self._medalMsgQueue)
+      Log.fatal("###[AchievementManager] 掉线，清空弹出数据")
+      table.clear(self._medalMsgQueue)
       self._hasNextOne = false
       self:_ClosePanel()
-      return 
+      return
     end
     item:SetData(quest)
   else
     if not quest then
-      (Log.fatal)("###[AchievementManager] 掉线，清空弹出数据")
-      ;
-      (table.clear)(self._msgQueue)
+      Log.fatal("###[AchievementManager] 掉线，清空弹出数据")
+      table.clear(self._msgQueue)
       self._hasNextOne = false
       self:_ClosePanel()
-      return 
+      return
     end
     item:SetData(quest:QuestInfo())
   end
-  ;
-  (table.remove)(queue, 1)
+  table.remove(queue, 1)
   item:ReplyTween()
   rect1:DOAnchorPosY(0, self._tweenTimeDown)
-  ;
-  (rect2:DOAnchorPosY(self._moveY, self._tweenTimeUp)):OnComplete(function()
-    -- function num : 0_9_0 , upvalues : item, _ENV, queue, self
+  rect2:DOAnchorPosY(self._moveY, self._tweenTimeUp):OnComplete(function()
     item:DoTween()
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundPopWindow)
-    if #queue > 0 then
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundPopWindow)
+    if 0 < #queue then
       self._hasNextOne = true
       self._waitTime = self._gapsTime
     else
@@ -261,21 +201,15 @@ AchievementManager._CloseAndPop = function(self)
       self._waitTime = self._closeTime
     end
     if self._event then
-      ((GameGlobal.Timer)()):CancelEvent(self._event)
+      GameGlobal.Timer():CancelEvent(self._event)
     end
-    self._event = ((GameGlobal.Timer)()):AddEvent(self._waitTime, function()
-      -- function num : 0_9_0_0 , upvalues : self
+    self._event = GameGlobal.Timer():AddEvent(self._waitTime, function()
       self:_ClosePanel()
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManager._CloseMsg = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function AchievementManager:_CloseMsg()
   self:_ChangeIndex()
   local rect = self._item1rect
   local queue = self._msgQueue
@@ -283,28 +217,21 @@ AchievementManager._CloseMsg = function(self)
     rect = self._medalitem1rect
     queue = self._medalMsgQueue
   end
-  ;
-  (rect:DOAnchorPosY(0, self._tweenTimeDown)):OnComplete(function()
-    -- function num : 0_10_0 , upvalues : queue, self, _ENV
-    if #queue > 0 then
+  rect:DOAnchorPosY(0, self._tweenTimeDown):OnComplete(function()
+    if 0 < #queue then
       self:_OpenMsg()
     else
-      ;
-      (Log.debug)("###[AchievementManager]关闭")
+      Log.debug("###[AchievementManager]关闭")
       self:_CloseDialog()
-      if self.popType == PopType.Medal and #self._msgQueue > 0 then
+      if self.popType == PopType.Medal and 0 < #self._msgQueue then
         self.popType = PopType.Achieve
         self:_OpenMsg()
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManager._CloseDialog = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function AchievementManager:_CloseDialog()
   self._hasNextOne = false
   self._state = PopState.Close
   local item1 = self._item1
@@ -317,12 +244,9 @@ AchievementManager._CloseDialog = function(self)
   item2:OnHide()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AchievementManager._ChangeIndex = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function AchievementManager:_ChangeIndex()
   if self.popType == PopType.Medal then
-    (self._medalitem2rect):SetAsFirstSibling()
+    self._medalitem2rect:SetAsFirstSibling()
     local item = self._medalItem1
     self._medalItem1 = self._medalItem2
     self._medalItem2 = item
@@ -330,16 +254,13 @@ AchievementManager._ChangeIndex = function(self)
     self._medalitem1rect = self._medalitem2rect
     self._medalitem2rect = rt
   else
-    do
-      ;
-      (self._item2rect):SetAsFirstSibling()
-      local item = self._item1
-      self._item1 = self._item2
-      self._item2 = item
-      local rt = self._item1rect
-      self._item1rect = self._item2rect
-      self._item2rect = rt
-    end
+    self._item2rect:SetAsFirstSibling()
+    local item = self._item1
+    self._item1 = self._item2
+    self._item2 = item
+    local rt = self._item1rect
+    self._item1rect = self._item2rect
+    self._item2rect = rt
   end
 end
 
@@ -347,4 +268,3 @@ local PopState = {Close = 1, Open = 2}
 _enum("PopState", PopState)
 local PopType = {Achieve = 1, Medal = 2}
 _enum("PopType", PopType)
-

@@ -1,61 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/ui_review_progress_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIReviewProgressAward", UICustomWidget)
 UIReviewProgressAward = UIReviewProgressAward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIReviewProgressAward.SetData = function(self, idx, curIndex, progress, curProgress, hadReceive)
-  -- function num : 0_0 , upvalues : _ENV
+function UIReviewProgressAward:SetData(idx, curIndex, progress, curProgress, hadReceive)
   self.root = self:GetUIComponent("RectTransform", "root")
-  local parent = ((self.root).parent):GetComponent(typeof(UnityEngine.RectTransform))
-  local width = (parent.rect).width
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.root).anchoredPosition = Vector2(width * progress / 100, 0)
+  local parent = self.root.parent:GetComponent(typeof(UnityEngine.RectTransform))
+  local width = parent.rect.width
+  self.root.anchoredPosition = Vector2(width * progress / 100, 0)
   local state = 1
   if curIndex == -1 then
     state = 3
-  else
-    if progress <= curProgress then
-      if hadReceive then
-        state = 3
-      else
-        state = 2
-      end
+  elseif progress <= curProgress then
+    if hadReceive then
+      state = 3
     else
-      state = 1
+      state = 2
     end
+  else
+    state = 1
   end
   self:_SetState(state)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewProgressAward._SetState = function(self, state)
-  -- function num : 0_1 , upvalues : _ENV
+function UIReviewProgressAward:_SetState(state)
   local widgetNameGroup = {
-{"icon_cantCollected"}
-, 
-{"icon_canCollected"}
-, 
-{"icon_collected"}
-}
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, widgetNameGroup)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, state)
+    {
+      "icon_cantCollected"
+    },
+    {
+      "icon_canCollected"
+    },
+    {
+      "icon_collected"
+    }
+  }
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, widgetNameGroup)
+  UIWidgetHelper.SetObjGroupShow(objs, state)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewProgressAward.PlayEnterAni = function(self, index)
-  -- function num : 0_2 , upvalues : _ENV
+function UIReviewProgressAward:PlayEnterAni(index)
   local delay = 400 + (index - 1) * 50
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", nil, "uieffanim_UIReviewProgressAward_in", delay)
+  UIWidgetHelper.PlayAnimationInSequence(self, "_anim", nil, "uieffanim_UIReviewProgressAward_in", delay)
 end
-
-

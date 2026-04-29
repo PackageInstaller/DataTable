@@ -1,26 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/ui_world_boss_diff_select_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossDiffSelectController", UIController)
 UIWorldBossDiffSelectController = UIWorldBossDiffSelectController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossDiffSelectController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIWorldBossDiffSelectController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDiffSelectController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIWorldBossDiffSelectController:OnShow(uiParams)
   self.diffCfg = {
-[1] = {name = "str_world_boss_normal", bg = "gfworld_xz_di01"}
-, 
-[2] = {name = "str_world_boss_hard", bg = "gfworld_xz_di02"}
-}
+    [1] = {
+      name = "str_world_boss_normal",
+      bg = "gfworld_xz_di01"
+    },
+    [2] = {
+      name = "str_world_boss_hard",
+      bg = "gfworld_xz_di02"
+    }
+  }
   self.bossMissionId = uiParams[1]
   self.conformCallback = uiParams[2]
   self.lastSelectIndex = -1
@@ -28,101 +23,72 @@ UIWorldBossDiffSelectController.OnShow = function(self, uiParams)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDiffSelectController.InitWidget = function(self)
-  -- function num : 0_2
+function UIWorldBossDiffSelectController:InitWidget()
   self.contentPool = self:GetUIComponent("UISelectObjectPath", "content")
   self.animaiton = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDiffSelectController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg_world_boss_mission = (Cfg.cfg_world_boss_mission)[self.bossMissionId]
+function UIWorldBossDiffSelectController:_OnValue()
+  local cfg_world_boss_mission = Cfg.cfg_world_boss_mission[self.bossMissionId]
   if not cfg_world_boss_mission then
-    (Log.error)("err UIWorldBossDiffSelectController cfg_world_boss_mission can\'t find with id = " .. self.bossMissionId)
+    Log.error("err UIWorldBossDiffSelectController cfg_world_boss_mission can't find with id = " .. self.bossMissionId)
     self:CloseDialog()
-    return 
+    return
   end
   local levels = cfg_world_boss_mission.FightLevel
   local levelDesces = cfg_world_boss_mission.LevelDesc
   local len = #levels
-  if #self.diffCfg < len then
+  if len > #self.diffCfg then
     len = #self.diffCfg
   end
-  local items = (self.contentPool):SpawnObjects("UIWorldBossDiffcultyItem", len)
+  local items = self.contentPool:SpawnObjects("UIWorldBossDiffcultyItem", len)
   self._items = items
   for i = 1, len do
-    local cfg = (self.diffCfg)[i]
+    local cfg = self.diffCfg[i]
     local item = items[i]
     if i == 1 then
       self:SetSelect(item, 1)
     end
     item:SetData(i, cfg, levelDesces[i], function(selectItem, index)
-    -- function num : 0_3_0 , upvalues : self
-    self:SetSelect(selectItem, index)
-  end
-)
+      self:SetSelect(selectItem, index)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDiffSelectController.SetSelect = function(self, item, index)
-  -- function num : 0_4
+function UIWorldBossDiffSelectController:SetSelect(item, index)
   if self.lastSelectIndex == index then
-    return 
+    return
   end
   if self.lastSelectItem then
-    (self.lastSelectItem):SetSelect(false)
+    self.lastSelectItem:SetSelect(false)
   end
   self.lastSelectIndex = index
   self.lastSelectItem = item
-  ;
-  (self.lastSelectItem):SetSelect(true)
+  self.lastSelectItem:SetSelect(true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDiffSelectController.ConformBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIWorldBossDiffSelectController:ConformBtnOnClick(go)
   self:CloseDialog()
   if self.conformCallback then
-    (self.conformCallback)(self.lastSelectIndex)
+    self.conformCallback(self.lastSelectIndex)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDiffSelectController.CancelBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIWorldBossDiffSelectController:CancelBtnOnClick(go)
   self:CloseWithAnimation()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDiffSelectController.BgRootOnClick = function(self, go)
-  -- function num : 0_7
+function UIWorldBossDiffSelectController:BgRootOnClick(go)
   self:CloseWithAnimation()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDiffSelectController.CloseWithAnimation = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIWorldBossDiffSelectController:CloseWithAnimation()
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
     local key = "UIWorldBossDiffSelectController_Close"
     self:Lock(key)
-    ;
-    (self.animaiton):Play("UIWorldBossDiffSelectController_out")
+    self.animaiton:Play("UIWorldBossDiffSelectController_out")
     YIELD(TT, 500)
     self:UnLock(key)
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

@@ -1,45 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/petinvite/ui_home_pet_invite_item_near.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePetInviteItemNear", UICustomWidget)
 UIHomePetInviteItemNear = UIHomePetInviteItemNear
-local PetInviteItemState = {Allow = 1, OutRange = 2, EventNeed = 3}
+local PetInviteItemState = {
+  Allow = 1,
+  OutRange = 2,
+  EventNeed = 3
+}
 _enum("PetInviteItemState", PetInviteItemState)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIHomePetInviteItemNear.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIHomePetInviteItemNear:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomePetInviteItemNear.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomePetInviteItemNear:OnShow(uiParams)
   self:GetComponent()
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomePetInviteItemNear.OnHide = function(self)
-  -- function num : 0_2
+function UIHomePetInviteItemNear:OnHide()
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomePetInviteItemNear.GetComponent = function(self)
-  -- function num : 0_3
+function UIHomePetInviteItemNear:GetComponent()
   self._state = self:GetUIComponent("Image", "state")
   self._remove = self:GetGameObject("remove")
   self._headimg = self:GetUIComponent("RawImageLoader", "head")
   self._maskimg = self:GetGameObject("mask")
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomePetInviteItemNear.SetData = function(self, index, data, inviteManager, atlas)
-  -- function num : 0_4 , upvalues : PetInviteItemState
+function UIHomePetInviteItemNear:SetData(index, data, inviteManager, atlas)
   self._index = index
   self._pet = data
   self._inviteManager = inviteManager
@@ -48,60 +33,42 @@ UIHomePetInviteItemNear.SetData = function(self, index, data, inviteManager, atl
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomePetInviteItemNear.RefreshUI = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomePetInviteItemNear:RefreshUI()
   local sp = "N17_hudong_icon02"
-  if (self._inviteManager):CheckIsBusy(self._pet) then
+  if self._inviteManager:CheckIsBusy(self._pet) then
     sp = "N17_hudong_icon04"
   end
-  if not (self._inviteManager):CheckIsNear(self._pet) then
+  if not self._inviteManager:CheckIsNear(self._pet) then
     sp = "N17_hudong_icon03"
   end
-  local petId = nil
-  if (self._pet)._clothSkinID ~= nil then
-    local headicon = (Cfg.cfg_pet_skin)[(self._pet)._clothSkinID]
+  local petId
+  if self._pet._clothSkinID ~= nil then
+    local headicon = Cfg.cfg_pet_skin[self._pet._clothSkinID]
     petId = headicon.Head
   else
-    do
-      petId = "head1_" .. (self._pet)._tmpID
-      ;
-      (self._headimg):LoadImage(petId)
-      -- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._state).sprite = (self._atlas):GetSprite(sp)
-      local toofar = (self._inviteManager):CheckIsNear(self._pet)
-      self._canInteract = (self._inviteManager):CheckCurInteractPoint(self._pet)
-      ;
-      (self._maskimg):SetActive(toofar and not self._canInteract)
-      -- DECOMPILER ERROR: 2 unprocessed JMP targets
-    end
+    petId = "head1_" .. self._pet._tmpID
   end
+  self._headimg:LoadImage(petId)
+  self._state.sprite = self._atlas:GetSprite(sp)
+  local toofar = self._inviteManager:CheckIsNear(self._pet)
+  self._canInteract = self._inviteManager:CheckCurInteractPoint(self._pet)
+  self._maskimg:SetActive(not toofar or not self._canInteract)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomePetInviteItemNear.AddOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if not (self._inviteManager):CheckIsNear(self._pet) then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_invite_toofar"))
-    return 
+function UIHomePetInviteItemNear:AddOnClick()
+  if not self._inviteManager:CheckIsNear(self._pet) then
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_invite_toofar"))
+    return
   end
-  if (self._inviteManager):CheckIsBusy(self._pet) then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_invite_busy"))
-    return 
+  if self._inviteManager:CheckIsBusy(self._pet) then
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_invite_busy"))
+    return
   end
   if not self._canInteract then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_invite_point_invalid"))
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_invite_point_invalid"))
+    return
   end
   local pet = self._pet
-  ;
-  (self.uiOwner):OnClickPet(pet)
-  ;
-  (self._inviteManager):InviteEnterListPreview(pet, true)
+  self.uiOwner:OnClickPet(pet)
+  self._inviteManager:InviteEnterListPreview(pet, true)
 end
-
-

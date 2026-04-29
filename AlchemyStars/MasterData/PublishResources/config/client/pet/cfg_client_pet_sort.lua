@@ -1,28 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/pet/cfg_client_pet_sort.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Type = 2, Name = 3}
-local common = {"str_pet_config_btn_level", "str_pet_config_config_health"}
+local key = {
+  ID = 1,
+  Type = 2,
+  Name = 3
+}
+local common = {
+  "str_pet_config_btn_level",
+  "str_pet_config_config_health"
+}
 local config = {
-{1, 1, "str_pet_config_btn_rare_degree"}
-, 
-{2, 2, common[1]}
-, 
-{3, 3, "str_pet_config_btn_element"}
-, 
-{4, 7, "str_pet_config_btn_intimacy"}
-, 
-{5, 4, "str_pet_config_btn_attack"}
-, 
-{6, 5, "str_pet_config_btn_defense"}
-, 
-{7, 6, common[2]}
-; 
-[15] = {15, 15, common[2]}
-, 
-[16] = {16, 16, common[1]}
+  {
+    1,
+    1,
+    "str_pet_config_btn_rare_degree"
+  },
+  {
+    2,
+    2,
+    common[1]
+  },
+  {
+    3,
+    3,
+    "str_pet_config_btn_element"
+  },
+  {
+    4,
+    7,
+    "str_pet_config_btn_intimacy"
+  },
+  {
+    5,
+    4,
+    "str_pet_config_btn_attack"
+  },
+  {
+    6,
+    5,
+    "str_pet_config_btn_defense"
+  },
+  {
+    7,
+    6,
+    common[2]
+  },
+  [15] = {
+    15,
+    15,
+    common[2]
+  },
+  [16] = {
+    16,
+    16,
+    common[1]
+  }
 }
 return config, "ID", key
-

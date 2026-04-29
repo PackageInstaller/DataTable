@@ -1,38 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_add_hp_rate_by_target_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddHPRateByTargetHP", BuffLogicBase)
 BuffLogicAddHPRateByTargetHP = BuffLogicAddHPRateByTargetHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddHPRateByTargetHP.Constructor = function(self, buffinstance, logicparam)
-  -- function num : 0_0
+function BuffLogicAddHPRateByTargetHP:Constructor(buffinstance, logicparam)
   self._rate = logicparam.rate
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddHPRateByTargetHP.DoLogic = function(self, notify)
-  -- function num : 0_1
-  (self._buffComponent):SetBuffValue("AddHPRateByTargetHP", self._rate)
+function BuffLogicAddHPRateByTargetHP:DoLogic(notify)
+  self._buffComponent:SetBuffValue("AddHPRateByTargetHP", self._rate)
 end
 
 _class("BuffLogicRemoveHPRateByTargetHP", BuffLogicBase)
 BuffLogicRemoveHPRateByTargetHP = BuffLogicRemoveHPRateByTargetHP
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveHPRateByTargetHP.Constructor = function(self, buffinstance, logicparam)
-  -- function num : 0_2
+function BuffLogicRemoveHPRateByTargetHP:Constructor(buffinstance, logicparam)
   self._rate = logicparam.rate
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveHPRateByTargetHP.DoLogic = function(self, notify)
-  -- function num : 0_3
-  (self._buffComponent):SetBuffValue("AddHPRateByTargetHP", 1)
+function BuffLogicRemoveHPRateByTargetHP:DoLogic(notify)
+  self._buffComponent:SetBuffValue("AddHPRateByTargetHP", 1)
 end
-
-

@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_change_attribute_based_on_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultChangeAttributeBasedOnDamage", BuffResultBase)
 BuffResultChangeAttributeBasedOnDamage = BuffResultChangeAttributeBasedOnDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeAttributeBasedOnDamage.Constructor = function(self, entityID, damageInfo, maxHPResult)
-  -- function num : 0_0
+function BuffResultChangeAttributeBasedOnDamage:Constructor(entityID, damageInfo, maxHPResult)
   self._entityID = entityID
   self._damageInfo = damageInfo
   self._maxHPResult = maxHPResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttributeBasedOnDamage.GetEntityID = function(self)
-  -- function num : 0_1
+function BuffResultChangeAttributeBasedOnDamage:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttributeBasedOnDamage.GetDamageInfo = function(self)
-  -- function num : 0_2
+function BuffResultChangeAttributeBasedOnDamage:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAttributeBasedOnDamage.GetMaxHPResult = function(self)
-  -- function num : 0_3
+function BuffResultChangeAttributeBasedOnDamage:GetMaxHPResult()
   return self._maxHPResult
 end
-
-

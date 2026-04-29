@@ -1,55 +1,111 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_common/ui_item_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-UIItemForm = {Base = 1, PetLevelUp = 2, PetGrade = 3, PetFavorability = 4, ResInstance = 5, Stage = 6, Result = 7, Tower = 8, Tactic = 9, BackPack = 10, PetLevelUpFast = 11, N33Lottery = 12}
+UIItemForm = {
+  Base = 1,
+  PetLevelUp = 2,
+  PetGrade = 3,
+  PetFavorability = 4,
+  ResInstance = 5,
+  Stage = 6,
+  Result = 7,
+  Tower = 8,
+  Tactic = 9,
+  BackPack = 10,
+  PetLevelUpFast = 11,
+  N33Lottery = 12
+}
 _enum("UIItemForm", UIItemForm)
-local UIItemNode = {Normal = 1, Exp = 2, Res = 3, Reduce = 4, Love = 5, Award = 6, Result = 7, TopAward = 8, Activity = 9, ReturnHelp = 10, Toggle = 11, ItemUseCount = 12, N33Lottery = 13}
+local UIItemNode = {
+  Normal = 1,
+  Exp = 2,
+  Res = 3,
+  Reduce = 4,
+  Love = 5,
+  Award = 6,
+  Result = 7,
+  TopAward = 8,
+  Activity = 9,
+  ReturnHelp = 10,
+  Toggle = 11,
+  ItemUseCount = 12,
+  N33Lottery = 13
+}
 _enum("UIItemNode", UIItemNode)
 local UIItemCustomer = {
-[UIItemForm.Base] = {UIItemNode.Normal, UIItemNode.Activity}
-, 
-[UIItemForm.PetLevelUp] = {UIItemNode.Normal, UIItemNode.Exp, UIItemNode.Reduce}
-, 
-[UIItemForm.PetGrade] = {
-{UIItemNode.Normal, UIItemNode.Level}
-}
-, 
-[UIItemForm.PetFavorability] = {UIItemNode.Normal, UIItemNode.Love, UIItemNode.Reduce}
-, 
-[UIItemForm.ResInstance] = {UIItemNode.Normal, UIItemNode.Award, UIItemNode.Res, UIItemNode.Activity}
-, 
-[UIItemForm.Stage] = {UIItemNode.Normal, UIItemNode.Award, UIItemNode.TopAward, UIItemNode.Activity}
-, 
-[UIItemForm.Result] = {UIItemNode.Normal, UIItemNode.Result, UIItemNode.Activity, UIItemNode.ReturnHelp}
-, 
-[UIItemForm.Tower] = {UIItemNode.Normal, UIItemNode.Award}
-, 
-[UIItemForm.Tactic] = {UIItemNode.Normal, UIItemNode.TopAward}
-, 
-[UIItemForm.BackPack] = {UIItemNode.Normal, UIItemNode.Activity, UIItemNode.Toggle}
-, 
-[UIItemForm.PetLevelUpFast] = {UIItemNode.Normal, UIItemNode.Exp, UIItemNode.ItemUseCount}
-, 
-[UIItemForm.N33Lottery] = {UIItemNode.N33Lottery}
+  [UIItemForm.Base] = {
+    UIItemNode.Normal,
+    UIItemNode.Activity
+  },
+  [UIItemForm.PetLevelUp] = {
+    UIItemNode.Normal,
+    UIItemNode.Exp,
+    UIItemNode.Reduce
+  },
+  [UIItemForm.PetGrade] = {
+    {
+      UIItemNode.Normal,
+      UIItemNode.Level
+    }
+  },
+  [UIItemForm.PetFavorability] = {
+    UIItemNode.Normal,
+    UIItemNode.Love,
+    UIItemNode.Reduce
+  },
+  [UIItemForm.ResInstance] = {
+    UIItemNode.Normal,
+    UIItemNode.Award,
+    UIItemNode.Res,
+    UIItemNode.Activity
+  },
+  [UIItemForm.Stage] = {
+    UIItemNode.Normal,
+    UIItemNode.Award,
+    UIItemNode.TopAward,
+    UIItemNode.Activity
+  },
+  [UIItemForm.Result] = {
+    UIItemNode.Normal,
+    UIItemNode.Result,
+    UIItemNode.Activity,
+    UIItemNode.ReturnHelp
+  },
+  [UIItemForm.Tower] = {
+    UIItemNode.Normal,
+    UIItemNode.Award
+  },
+  [UIItemForm.Tactic] = {
+    UIItemNode.Normal,
+    UIItemNode.TopAward
+  },
+  [UIItemForm.BackPack] = {
+    UIItemNode.Normal,
+    UIItemNode.Activity,
+    UIItemNode.Toggle
+  },
+  [UIItemForm.PetLevelUpFast] = {
+    UIItemNode.Normal,
+    UIItemNode.Exp,
+    UIItemNode.ItemUseCount
+  },
+  [UIItemForm.N33Lottery] = {
+    UIItemNode.N33Lottery
+  }
 }
 _enum("UIItemCustomer", UIItemCustomer)
-local UIItemScale = {Level1 = 1, Level2 = 0.9, Level3 = 0.8, Level4 = 0.7}
+local UIItemScale = {
+  Level1 = 1,
+  Level2 = 0.9,
+  Level3 = 0.8,
+  Level4 = 0.7
+}
 _enum("UIItemScale", UIItemScale)
 _class("UIItemData", Object)
 UIItemData = UIItemData
--- DECOMPILER ERROR at PC153: Confused about usage of register: R3 in 'UnsetPending'
 
-UIItemData.Constructor = function(self)
-  -- function num : 0_0
+function UIItemData:Constructor()
   self:Reset()
 end
 
--- DECOMPILER ERROR at PC156: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemData.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIItemData:Reset()
   self.text1 = nil
   self.showNumber = false
   self.text2 = nil
@@ -79,20 +135,14 @@ UIItemData.Reset = function(self)
   self.useNum = 0
 end
 
--- DECOMPILER ERROR at PC159: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemData.SetParams = function(self, params)
-  -- function num : 0_2 , upvalues : _ENV
-  for varName,value in pairs(params) do
+function UIItemData:SetParams(params)
+  for varName, value in pairs(params) do
     self[varName] = value
   end
   self:CorrectParams()
 end
 
--- DECOMPILER ERROR at PC162: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemData.CorrectParams = function(self)
-  -- function num : 0_3
+function UIItemData:CorrectParams()
   if self.level >= 0 then
     self.icon = ""
   end
@@ -100,98 +150,72 @@ end
 
 _class("UIItemNodeBase", Object)
 UIItemNodeBase = UIItemNodeBase
--- DECOMPILER ERROR at PC171: Confused about usage of register: R3 in 'UnsetPending'
 
-UIItemNodeBase.Constructor = function(self, uiView, owner)
-  -- function num : 0_4 , upvalues : _ENV
+function UIItemNodeBase:Constructor(uiView, owner)
   self._uiView = uiView
   self._owner = owner
-  self._transform = (self._uiView).transform
+  self._transform = self._uiView.transform
   self._uiItemData = nil
   self._uicustomEventListener = UICustomUIEventListener:New()
   self:OnInit()
 end
 
--- DECOMPILER ERROR at PC174: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNodeBase.OnInit = function(self)
-  -- function num : 0_5
+function UIItemNodeBase:OnInit()
 end
 
--- DECOMPILER ERROR at PC177: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNodeBase.Show = function(self, uiItemData, itemForm)
-  -- function num : 0_6
+function UIItemNodeBase:Show(uiItemData, itemForm)
   self._uiItemData = uiItemData
   self._itemForm = itemForm
   self:Enable(true)
   self:OnShow()
 end
 
--- DECOMPILER ERROR at PC180: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNodeBase.OnShow = function(self)
-  -- function num : 0_7
+function UIItemNodeBase:OnShow()
 end
 
--- DECOMPILER ERROR at PC183: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNodeBase.Hide = function(self, enable)
-  -- function num : 0_8
+function UIItemNodeBase:Hide(enable)
   self:Enable(false)
   self:OnHide()
-  ;
-  (self._uicustomEventListener):Dispose()
+  self._uicustomEventListener:Dispose()
 end
 
--- DECOMPILER ERROR at PC186: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNodeBase.OnHide = function(self)
-  -- function num : 0_9
+function UIItemNodeBase:OnHide()
 end
 
--- DECOMPILER ERROR at PC189: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNodeBase.Enable = function(self, enable)
-  -- function num : 0_10
+function UIItemNodeBase:Enable(enable)
   if self._transform then
-    ((self._transform).gameObject):SetActive(enable)
+    self._transform.gameObject:SetActive(enable)
   end
 end
 
 _class("UIItemNormalNode", UIItemNodeBase)
 UIItemNormalNode = UIItemNormalNode
--- DECOMPILER ERROR at PC198: Confused about usage of register: R3 in 'UnsetPending'
 
-UIItemNormalNode.OnInit = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  self._icon = (self._uiView):GetUIComponent("RawImageLoader", "icon")
-  self._iconRawImg = (self._uiView):GetUIComponent("RawImage", "icon")
-  self._iconRect = (self._uiView):GetUIComponent("RectTransform", "icon")
-  self._iconRectDefaultSize = Vector2(((self._iconRect).sizeDelta).x, ((self._iconRect).sizeDelta).y)
-  self._iconGO = (self._uiView):GetGameObject("icon")
-  self._quality = (self._uiView):GetUIComponent("Image", "quality")
-  self._qualityRect = (self._uiView):GetUIComponent("RectTransform", "quality")
-  self._qualityGO = (self._uiView):GetGameObject("quality")
-  self._text1 = (self._uiView):GetUIComponent("UILocalizationText", "txt1")
-  self._text1GO = (self._uiView):GetGameObject("txt1")
-  self._text2 = (self._uiView):GetUIComponent("UILocalizationText", "txt2")
-  self._text2GO = (self._uiView):GetGameObject("txt2")
-  self._text1BgGO = (self._uiView):GetGameObject("diban")
-  self._levelGO = (self._uiView):GetGameObject("g_level")
-  self._levelTxt = (self._uiView):GetUIComponent("UILocalizationText", "et_levelnum")
-  self._desPanel = (self._uiView):GetGameObject("despanel")
-  self._desLabel = (self._uiView):GetUIComponent("UILocalizationText", "des")
-  self._newGO = (self._uiView):GetGameObject("new")
-  self._uiCommonAtlas = (self._owner):GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
-  self._affinityGO = (self._uiView):GetGameObject("affinity")
-  self._heartstone = (self._uiView):GetGameObject("heartstone")
+function UIItemNormalNode:OnInit()
+  self._icon = self._uiView:GetUIComponent("RawImageLoader", "icon")
+  self._iconRawImg = self._uiView:GetUIComponent("RawImage", "icon")
+  self._iconRect = self._uiView:GetUIComponent("RectTransform", "icon")
+  self._iconRectDefaultSize = Vector2(self._iconRect.sizeDelta.x, self._iconRect.sizeDelta.y)
+  self._iconGO = self._uiView:GetGameObject("icon")
+  self._quality = self._uiView:GetUIComponent("Image", "quality")
+  self._qualityRect = self._uiView:GetUIComponent("RectTransform", "quality")
+  self._qualityGO = self._uiView:GetGameObject("quality")
+  self._text1 = self._uiView:GetUIComponent("UILocalizationText", "txt1")
+  self._text1GO = self._uiView:GetGameObject("txt1")
+  self._text2 = self._uiView:GetUIComponent("UILocalizationText", "txt2")
+  self._text2GO = self._uiView:GetGameObject("txt2")
+  self._text1BgGO = self._uiView:GetGameObject("diban")
+  self._levelGO = self._uiView:GetGameObject("g_level")
+  self._levelTxt = self._uiView:GetUIComponent("UILocalizationText", "et_levelnum")
+  self._desPanel = self._uiView:GetGameObject("despanel")
+  self._desLabel = self._uiView:GetUIComponent("UILocalizationText", "des")
+  self._newGO = self._uiView:GetGameObject("new")
+  self._uiCommonAtlas = self._owner:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
+  self._affinityGO = self._uiView:GetGameObject("affinity")
+  self._heartstone = self._uiView:GetGameObject("heartstone")
 end
 
--- DECOMPILER ERROR at PC201: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.OnShow = function(self)
-  -- function num : 0_12
+function UIItemNormalNode:OnShow()
   local uiItemData = self._uiItemData
   self:SetText1(uiItemData.text1, uiItemData.showNumber)
   self:SetText2(uiItemData.text2)
@@ -202,664 +226,452 @@ UIItemNormalNode.OnShow = function(self)
   self:SetLevel(uiItemData.level)
   self:ShowNew(uiItemData.showNew)
   if uiItemData.des then
-    (self._desPanel):SetActive(true)
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._desLabel).text = uiItemData.des
+    self._desPanel:SetActive(true)
+    self._desLabel.text = uiItemData.des
   else
-    ;
-    (self._desPanel):SetActive(false)
+    self._desPanel:SetActive(false)
   end
   if uiItemData.showAffinity then
     self:ShowAffinityGO(true)
   else
     self:ShowAffinityGO(false)
   end
-  if uiItemData.showHeartStone ~= true then
-    (self._heartstone):SetActive(not self._heartstone)
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if self._heartstone then
+    self._heartstone:SetActive(uiItemData.showHeartStone == true)
   end
 end
 
--- DECOMPILER ERROR at PC204: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.ShowText1 = function(self, show)
-  -- function num : 0_13
-  (self._text1GO):SetActive(show)
-  ;
-  (self._text1BgGO):SetActive(show)
+function UIItemNormalNode:ShowText1(show)
+  self._text1GO:SetActive(show)
+  self._text1BgGO:SetActive(show)
   self:SetOffset(show)
 end
 
--- DECOMPILER ERROR at PC207: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.SetText1 = function(self, text, showNumber)
-  -- function num : 0_14 , upvalues : _ENV
+function UIItemNormalNode:SetText1(text, showNumber)
   if text ~= nil then
     local show = false
     if type(text) == "number" then
       local num = text
-      if num <= 0 then
-        do
-          do
-            show = showNumber
-            show = show
-            ;
-            (self._text1):SetText((HelperProxy:GetInstance()):FormatItemCount(num))
-            if type(text) == "string" then
-              show = not (string.isnullorempty)(text)
-              ;
-              (self._text1):SetText(text)
-            end
-            self:ShowText1(show)
-            self:ShowText1(false)
-            -- DECOMPILER ERROR: 6 unprocessed JMP targets
-          end
-        end
-      end
+      show = 0 < num or showNumber
+      self._text1:SetText(HelperProxy:GetInstance():FormatItemCount(num))
+    elseif type(text) == "string" then
+      show = not string.isnullorempty(text)
+      self._text1:SetText(text)
     end
+    self:ShowText1(show)
+  else
+    self:ShowText1(false)
   end
 end
 
--- DECOMPILER ERROR at PC210: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.ShowText2 = function(self, show)
-  -- function num : 0_15
-  (self._text2GO):SetActive(show)
+function UIItemNormalNode:ShowText2(show)
+  self._text2GO:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC213: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.SetText2 = function(self, text)
-  -- function num : 0_16 , upvalues : _ENV
-  if (string.isnullorempty)(text) then
+function UIItemNormalNode:SetText2(text)
+  if string.isnullorempty(text) then
     self:ShowText2(false)
   else
     self:ShowText2(true)
-    ;
-    (self._text2):SetText(text)
+    self._text2:SetText(text)
   end
 end
 
--- DECOMPILER ERROR at PC216: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.ShowAffinityGO = function(self, show)
-  -- function num : 0_17
-  (self._affinityGO):SetActive(show)
+function UIItemNormalNode:ShowAffinityGO(show)
+  self._affinityGO:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC219: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.SetText2Color = function(self, color)
-  -- function num : 0_18
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIItemNormalNode:SetText2Color(color)
   if color then
-    (self._text2).color = color
+    self._text2.color = color
   end
 end
 
--- DECOMPILER ERROR at PC222: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.ShowQuality = function(self, show)
-  -- function num : 0_19
-  (self._qualityGO):SetActive(show)
+function UIItemNormalNode:ShowQuality(show)
+  self._qualityGO:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC225: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.SetQuality = function(self, quality)
-  -- function num : 0_20 , upvalues : _ENV
+function UIItemNormalNode:SetQuality(quality)
   if quality <= 0 then
     self:ShowQuality(false)
-    return 
+    return
   end
-  local qualityName = (UIEnum.ItemColorFrame)(quality)
+  local qualityName = UIEnum.ItemColorFrame(quality)
   if qualityName ~= "" then
     self:ShowQuality(true)
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._quality).sprite = (self._uiCommonAtlas):GetSprite(qualityName)
+    self._quality.sprite = self._uiCommonAtlas:GetSprite(qualityName)
   else
     self:ShowQuality(false)
   end
 end
 
--- DECOMPILER ERROR at PC228: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.ShowIcon = function(self, show, itemId)
-  -- function num : 0_21
-  (self._iconGO):SetActive(show)
+function UIItemNormalNode:ShowIcon(show, itemId)
+  self._iconGO:SetActive(show)
   self:SetIconOffset(itemId)
 end
 
--- DECOMPILER ERROR at PC231: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.SetIcon = function(self, name, itemId)
-  -- function num : 0_22 , upvalues : _ENV
-  if not (string.isnullorempty)(name) then
+function UIItemNormalNode:SetIcon(name, itemId)
+  if not string.isnullorempty(name) then
     self:ShowIcon(true, itemId)
-    ;
-    (self._icon):LoadImage(name)
+    self._icon:LoadImage(name)
     local isHead = false
-    if itemId >= 3750000 and itemId <= 3759999 then
+    if 3750000 <= itemId and itemId <= 3759999 then
       isHead = true
     end
     if isHead then
       local whRate = 1
-      if itemId >= 3751000 and itemId <= 3751999 then
-        whRate = 0.84210526315789
-      else
-        if itemId >= 3752000 and itemId <= 3752999 then
-          whRate = 0.63888888888889
-        else
-          if itemId >= 3753000 and itemId <= 3753999 then
-            whRate = 0.63888888888889
-          end
-        end
+      if 3751000 <= itemId and itemId <= 3751999 then
+        whRate = 0.8421052631578947
+      elseif 3752000 <= itemId and itemId <= 3752999 then
+        whRate = 0.6388888888888888
+      elseif 3753000 <= itemId and itemId <= 3753999 then
+        whRate = 0.6388888888888888
       end
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._iconRect).sizeDelta = Vector2(((self._iconRect).sizeDelta).x, ((self._iconRect).sizeDelta).x * whRate)
+      self._iconRect.sizeDelta = Vector2(self._iconRect.sizeDelta.x, self._iconRect.sizeDelta.x * whRate)
     else
-      do
-        do
-          -- DECOMPILER ERROR at PC54: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self._iconRect).sizeDelta = self._iconRectDefaultSize
-          self:ShowIcon(false)
-        end
-      end
+      self._iconRect.sizeDelta = self._iconRectDefaultSize
     end
+  else
+    self:ShowIcon(false)
   end
 end
 
--- DECOMPILER ERROR at PC234: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.SetIconGrey = function(self, name, gray)
-  -- function num : 0_23 , upvalues : _ENV
-  if (string.isnullorempty)(name) or gray == -1 then
-    return 
+function UIItemNormalNode:SetIconGrey(name, gray)
+  if string.isnullorempty(name) or gray == -1 then
+    return
   end
   if not self._EMIMat then
-    self._EMIMat = (UnityEngine.Material):New((self._iconRawImg).material)
+    self._EMIMat = UnityEngine.Material:New(self._iconRawImg.material)
   end
-  local texture = ((self._iconRawImg).material).mainTexture
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._iconRawImg).material = self._EMIMat
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._iconRawImg).material).mainTexture = texture
+  local texture = self._iconRawImg.material.mainTexture
+  self._iconRawImg.material = self._EMIMat
+  self._iconRawImg.material.mainTexture = texture
   if gray == 1 then
-    ((self._iconRawImg).material):SetFloat("_LuminosityAmount", 1)
+    self._iconRawImg.material:SetFloat("_LuminosityAmount", 1)
   else
-    ;
-    ((self._iconRawImg).material):SetFloat("_LuminosityAmount", 0)
+    self._iconRawImg.material:SetFloat("_LuminosityAmount", 0)
   end
-  ;
-  (self._iconGO):SetActive(false)
-  ;
-  (self._iconGO):SetActive(true)
+  self._iconGO:SetActive(false)
+  self._iconGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC237: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode._IsPet = function(self, id)
-  -- function num : 0_24 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet)({ID = id})
+function UIItemNormalNode:_IsPet(id)
+  local cfg = Cfg.cfg_pet({ID = id})
   return cfg and true or false
 end
 
--- DECOMPILER ERROR at PC240: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.SetOffset = function(self, showText1)
-  -- function num : 0_25 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIItemNormalNode:SetOffset(showText1)
   if showText1 then
-    (self._qualityRect).anchoredPosition = Vector2(0, 0)
+    self._qualityRect.anchoredPosition = Vector2(0, 0)
   else
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._qualityRect).anchoredPosition = Vector2(0, -20)
+    self._qualityRect.anchoredPosition = Vector2(0, -20)
   end
 end
 
--- DECOMPILER ERROR at PC243: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.SetIconOffset = function(self, itemId)
-  -- function num : 0_26 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIItemNormalNode:SetIconOffset(itemId)
   if self:_IsPet(itemId) then
-    (self._iconRect).anchoredPosition = Vector2(0, 0)
+    self._iconRect.anchoredPosition = Vector2(0, 0)
   else
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._iconRect).anchoredPosition = Vector2(0, 5)
+    self._iconRect.anchoredPosition = Vector2(0, 5)
   end
 end
 
--- DECOMPILER ERROR at PC246: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.ShowLevel = function(self, show)
-  -- function num : 0_27
-  (self._levelGO):SetActive(show)
+function UIItemNormalNode:ShowLevel(show)
+  self._levelGO:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC249: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.SetLevel = function(self, level)
-  -- function num : 0_28
+function UIItemNormalNode:SetLevel(level)
   if level < 0 then
     self:ShowLevel(false)
   else
     self:ShowLevel(true)
-    ;
-    (self._levelTxt):SetText(level)
+    self._levelTxt:SetText(level)
   end
 end
 
--- DECOMPILER ERROR at PC252: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemNormalNode.ShowNew = function(self, showNew)
-  -- function num : 0_29
-  (self._newGO):SetActive(showNew)
+function UIItemNormalNode:ShowNew(showNew)
+  self._newGO:SetActive(showNew)
 end
 
 _class("UIItemExpNode", UIItemNodeBase)
 UIItemExpNode = UIItemExpNode
--- DECOMPILER ERROR at PC261: Confused about usage of register: R3 in 'UnsetPending'
 
-UIItemExpNode.OnInit = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIItemExpNode:OnInit()
   self._upPos = Vector2(-51, 58)
   self._downPos = Vector2(-51, 4.5)
   self._tweener = nil
-  self._rect = (self._uiView):GetUIComponent("RectTransform", "g_exp")
-  self._expTxt = (self._uiView):GetUIComponent("UILocalizationText", "exp")
+  self._rect = self._uiView:GetUIComponent("RectTransform", "g_exp")
+  self._expTxt = self._uiView:GetUIComponent("UILocalizationText", "exp")
 end
 
--- DECOMPILER ERROR at PC264: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemExpNode.ChangePos = function(self, changePos, isUp)
-  -- function num : 0_31
+function UIItemExpNode:ChangePos(changePos, isUp)
   if not changePos then
-    return 
+    return
   end
-  local targetPos = nil
+  local targetPos
   if isUp then
     targetPos = self._upPos
   else
     targetPos = self._downPos
   end
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
   end
-  self._tweener = (self._rect):DOAnchorPos(targetPos, 0.2)
+  self._tweener = self._rect:DOAnchorPos(targetPos, 0.2)
 end
 
--- DECOMPILER ERROR at PC267: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemExpNode.OnShow = function(self)
-  -- function num : 0_32
+function UIItemExpNode:OnShow()
   local uiItemData = self._uiItemData
   self:SetExpNum(uiItemData.exp)
   self:ChangePos(uiItemData.changePos, uiItemData.isUp)
 end
 
--- DECOMPILER ERROR at PC270: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemExpNode.OnHide = function(self)
-  -- function num : 0_33
+function UIItemExpNode:OnHide()
 end
 
--- DECOMPILER ERROR at PC273: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemExpNode.ShowExp = function(self, show)
-  -- function num : 0_34
+function UIItemExpNode:ShowExp(show)
   self:Enable(show)
 end
 
--- DECOMPILER ERROR at PC276: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemExpNode.SetExpNum = function(self, text)
-  -- function num : 0_35 , upvalues : _ENV
-  if (string.isnullorempty)(text) then
+function UIItemExpNode:SetExpNum(text)
+  if string.isnullorempty(text) then
     self:ShowExp(false)
   else
     self:ShowExp(true)
-    ;
-    (self._expTxt):SetText(text)
+    self._expTxt:SetText(text)
   end
 end
 
 _class("UIItemResNode", UIItemNodeBase)
 UIItemResNode = UIItemResNode
--- DECOMPILER ERROR at PC285: Confused about usage of register: R3 in 'UnsetPending'
 
-UIItemResNode.OnInit = function(self)
-  -- function num : 0_36
+function UIItemResNode:OnInit()
 end
 
--- DECOMPILER ERROR at PC288: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemResNode.OnShow = function(self)
-  -- function num : 0_37
+function UIItemResNode:OnShow()
   local uiItemData = self._uiItemData
   self:ShowRes(uiItemData.showRes)
 end
 
--- DECOMPILER ERROR at PC291: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemResNode.ShowRes = function(self, show)
-  -- function num : 0_38
+function UIItemResNode:ShowRes(show)
   self:Enable(show)
 end
 
 _class("UIItemReduceNode", UIItemNodeBase)
 UIItemReduceNode = UIItemReduceNode
--- DECOMPILER ERROR at PC300: Confused about usage of register: R3 in 'UnsetPending'
 
-UIItemReduceNode.OnInit = function(self)
-  -- function num : 0_39 , upvalues : _ENV
-  self._reduceNum = (self._uiView):GetUIComponent("UILocalizationText", "reducenum")
-  self._reduceNumBtn = (self._uiView):GetGameObject("g_reduce_btn")
-  ;
-  (self._uicustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self._reduceNumBtn), UIEvent.Click, function(go)
-    -- function num : 0_39_0 , upvalues : self
-    local clickCallBack = (self._uiItemData).reduceCallBack
+function UIItemReduceNode:OnInit()
+  self._reduceNum = self._uiView:GetUIComponent("UILocalizationText", "reducenum")
+  self._reduceNumBtn = self._uiView:GetGameObject("g_reduce_btn")
+  self._uicustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._reduceNumBtn), UIEvent.Click, function(go)
+    local clickCallBack = self._uiItemData.reduceCallBack
     if clickCallBack then
       clickCallBack()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC303: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemReduceNode.SetReduceLongPressCallBack = function(self, sec)
-  -- function num : 0_40 , upvalues : _ENV
+function UIItemReduceNode:SetReduceLongPressCallBack(sec)
   self._reducePressTime = sec
   self._longTrigger = false
-  ;
-  (self._uicustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self._reduceNumBtn), UIEvent.Press, function(go)
-    -- function num : 0_40_0 , upvalues : _ENV, self
-    if (GuideHelper.IsUIGuideShow)() then
-      return 
+  self._uicustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._reduceNumBtn), UIEvent.Press, function(go)
+    if GuideHelper.IsUIGuideShow() then
+      return
     end
     if not self._reduceTimerEvent then
       self._longTrigger = true
-      self._reduceTimerEvent = ((GameGlobal.Timer)()):AddEventTimes(self._reducePressTime, TimerTriggerCount.Infinite, function()
-      -- function num : 0_40_0_0 , upvalues : self
-      local clickCallBack = (self._uiItemData).reduceCallBack
-      if clickCallBack then
-        clickCallBack()
-      end
+      self._reduceTimerEvent = GameGlobal.Timer():AddEventTimes(self._reducePressTime, TimerTriggerCount.Infinite, function()
+        local clickCallBack = self._uiItemData.reduceCallBack
+        if clickCallBack then
+          clickCallBack()
+        end
+      end)
     end
-)
-    end
-  end
-)
-  ;
-  (self._uicustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self._reduceNumBtn), UIEvent.Unhovered, function(go)
-    -- function num : 0_40_1 , upvalues : self, _ENV
+  end)
+  self._uicustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._reduceNumBtn), UIEvent.Unhovered, function(go)
     self._longTrigger = false
     if self._reduceTimerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._reduceTimerEvent)
+      GameGlobal.Timer():CancelEvent(self._reduceTimerEvent)
       self._reduceTimerEvent = nil
     end
-  end
-)
-  ;
-  (self._uicustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self._reduceNumBtn), UIEvent.Release, function(go)
-    -- function num : 0_40_2 , upvalues : self, _ENV
+  end)
+  self._uicustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._reduceNumBtn), UIEvent.Release, function(go)
     self._longTrigger = false
     if self._reduceTimerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._reduceTimerEvent)
+      GameGlobal.Timer():CancelEvent(self._reduceTimerEvent)
       self._reduceTimerEvent = nil
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC306: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemReduceNode.OnShow = function(self)
-  -- function num : 0_41
+function UIItemReduceNode:OnShow()
   local uiItemData = self._uiItemData
   self:SetReduceNum(uiItemData.reduceNum)
 end
 
--- DECOMPILER ERROR at PC309: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemReduceNode.ShowReduce = function(self, show)
-  -- function num : 0_42
+function UIItemReduceNode:ShowReduce(show)
   self:Enable(show)
 end
 
--- DECOMPILER ERROR at PC312: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemReduceNode.SetReduceNum = function(self, count)
-  -- function num : 0_43 , upvalues : _ENV
+function UIItemReduceNode:SetReduceNum(count)
   if not count or count <= 0 then
     self:ShowReduce(false)
-    ;
-    (self._owner):Select(false)
+    self._owner:Select(false)
     if self._longTrigger then
       self._longTrigger = false
       if self._reduceTimerEvent then
-        ((GameGlobal.Timer)()):CancelEvent(self._reduceTimerEvent)
+        GameGlobal.Timer():CancelEvent(self._reduceTimerEvent)
         self._reduceTimerEvent = nil
       end
     end
   else
     self:ShowReduce(true)
-    ;
-    (self._owner):Select(true)
-    ;
-    (self._reduceNum):SetText(count)
+    self._owner:Select(true)
+    self._reduceNum:SetText(count)
   end
 end
 
 _class("UIItemLoveNode", UIItemNodeBase)
 UIItemLoveNode = UIItemLoveNode
--- DECOMPILER ERROR at PC321: Confused about usage of register: R3 in 'UnsetPending'
 
-UIItemLoveNode.OnInit = function(self)
-  -- function num : 0_44 , upvalues : _ENV
+function UIItemLoveNode:OnInit()
   self._upPos = Vector2(-62, 72)
   self._downPos = Vector2(-62, 8)
-  self._rect = (self._uiView):GetUIComponent("RectTransform", "love")
+  self._rect = self._uiView:GetUIComponent("RectTransform", "love")
 end
 
--- DECOMPILER ERROR at PC324: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemLoveNode.OnShow = function(self)
-  -- function num : 0_45
+function UIItemLoveNode:OnShow()
   local uiItemData = self._uiItemData
   self:ShowLove(uiItemData.showLove)
   self:ChangePos(uiItemData.changePos, uiItemData.isUp)
 end
 
--- DECOMPILER ERROR at PC327: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemLoveNode.ChangePos = function(self, changePos, isUp)
-  -- function num : 0_46
+function UIItemLoveNode:ChangePos(changePos, isUp)
   if not changePos then
-    return 
+    return
   end
-  local targetPos = nil
+  local targetPos
   if isUp then
     targetPos = self._upPos
   else
     targetPos = self._downPos
   end
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
   end
-  self._tweener = (self._rect):DOAnchorPos(targetPos, 0.2)
+  self._tweener = self._rect:DOAnchorPos(targetPos, 0.2)
 end
 
--- DECOMPILER ERROR at PC330: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemLoveNode.OnHide = function(self)
-  -- function num : 0_47
+function UIItemLoveNode:OnHide()
 end
 
--- DECOMPILER ERROR at PC333: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemLoveNode.ShowLove = function(self, show)
-  -- function num : 0_48
+function UIItemLoveNode:ShowLove(show)
   self._isLoveShow = show
   self:Enable(show)
 end
 
 _class("UIItemAwardNode", UIItemNodeBase)
 UIItemAwardNode = UIItemAwardNode
--- DECOMPILER ERROR at PC342: Confused about usage of register: R3 in 'UnsetPending'
 
-UIItemAwardNode.OnInit = function(self)
-  -- function num : 0_49
-  self._awardTxt = (self._uiView):GetUIComponent("UILocalizationText", "txt3Star")
-  self._gawardObj = (self._uiView):GetGameObject("g_award")
+function UIItemAwardNode:OnInit()
+  self._awardTxt = self._uiView:GetUIComponent("UILocalizationText", "txt3Star")
+  self._gawardObj = self._uiView:GetGameObject("g_award")
 end
 
--- DECOMPILER ERROR at PC345: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemAwardNode.OnShow = function(self)
-  -- function num : 0_50 , upvalues : _ENV
+function UIItemAwardNode:OnShow()
   local uiItemData = self._uiItemData
-  if (string.isnullorempty)(uiItemData.awardText) then
-    (self._gawardObj):SetActive(false)
+  if string.isnullorempty(uiItemData.awardText) then
+    self._gawardObj:SetActive(false)
   end
   self:SetAwardText(uiItemData.awardText)
 end
 
--- DECOMPILER ERROR at PC348: Confused about usage of register: R3 in 'UnsetPending'
-
-UIItemAwardNode.SetAwardText = function(self, awardText)
-  -- function num : 0_51
-  (self._awardTxt):SetText(awardText)
+function UIItemAwardNode:SetAwardText(awardText)
+  self._awardTxt:SetText(awardText)
 end
 
 _class("UIItemResultNode", UIItemNodeBase)
 UIItemResultNode = UIItemResultNode
-local UIItemResultType = {None = 0, Result = 1, ThreeStar = 2, First = 3, Ext = 4, Normal = 5, DoubleExt = 6, ResCoinExt = 7}
+local UIItemResultType = {
+  None = 0,
+  Result = 1,
+  ThreeStar = 2,
+  First = 3,
+  Ext = 4,
+  Normal = 5,
+  DoubleExt = 6,
+  ResCoinExt = 7
+}
 _enum("UIItemResultType", UIItemResultType)
--- DECOMPILER ERROR at PC370: Confused about usage of register: R4 in 'UnsetPending'
 
-UIItemResultNode.OnInit = function(self)
-  -- function num : 0_52
-  self._resultGO = (self._uiView):GetGameObject("ReturnPrism")
-  self._threeStarGO = (self._uiView):GetGameObject("ThreeStar")
-  self._firstPassGO = (self._uiView):GetGameObject("FirstPass")
-  self._extraRewardGO = (self._uiView):GetGameObject("extrareward")
-  self._resultTxt = (self._uiView):GetUIComponent("UILocalizationText", "ReturnTxt")
-  self._normalGO = (self._uiView):GetGameObject("normal")
-  self._normalTxt = (self._uiView):GetUIComponent("UILocalizationText", "normalTxt")
-  self._doubleExtRewardGO = (self._uiView):GetGameObject("doubleExtReward")
-  self._resCoinExtRewardGO = (self._uiView):GetGameObject("resCoinExtReward")
+function UIItemResultNode:OnInit()
+  self._resultGO = self._uiView:GetGameObject("ReturnPrism")
+  self._threeStarGO = self._uiView:GetGameObject("ThreeStar")
+  self._firstPassGO = self._uiView:GetGameObject("FirstPass")
+  self._extraRewardGO = self._uiView:GetGameObject("extrareward")
+  self._resultTxt = self._uiView:GetUIComponent("UILocalizationText", "ReturnTxt")
+  self._normalGO = self._uiView:GetGameObject("normal")
+  self._normalTxt = self._uiView:GetUIComponent("UILocalizationText", "normalTxt")
+  self._doubleExtRewardGO = self._uiView:GetGameObject("doubleExtReward")
+  self._resCoinExtRewardGO = self._uiView:GetGameObject("resCoinExtReward")
 end
 
--- DECOMPILER ERROR at PC373: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemResultNode.OnShow = function(self)
-  -- function num : 0_53
+function UIItemResultNode:OnShow()
   local uiItemData = self._uiItemData
   self:ShowResult(uiItemData.resultType)
   self:SetResultText(uiItemData.resultType, uiItemData.resultText)
   self:SetNormalText(uiItemData.resultType, uiItemData.normalText)
 end
 
--- DECOMPILER ERROR at PC376: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemResultNode.ShowResult = function(self, resultType)
-  -- function num : 0_54 , upvalues : UIItemResultType
-  (self._resultGO):SetActive(resultType == UIItemResultType.Result)
-  ;
-  (self._threeStarGO):SetActive(resultType == UIItemResultType.ThreeStar)
-  ;
-  (self._firstPassGO):SetActive(resultType == UIItemResultType.First)
-  ;
-  (self._extraRewardGO):SetActive(resultType == UIItemResultType.Ext)
-  ;
-  (self._normalGO):SetActive(resultType == UIItemResultType.Normal)
-  ;
-  (self._doubleExtRewardGO):SetActive(resultType == UIItemResultType.DoubleExt)
-  ;
-  (self._resCoinExtRewardGO):SetActive(resultType == UIItemResultType.ResCoinExt)
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
+function UIItemResultNode:ShowResult(resultType)
+  self._resultGO:SetActive(resultType == UIItemResultType.Result)
+  self._threeStarGO:SetActive(resultType == UIItemResultType.ThreeStar)
+  self._firstPassGO:SetActive(resultType == UIItemResultType.First)
+  self._extraRewardGO:SetActive(resultType == UIItemResultType.Ext)
+  self._normalGO:SetActive(resultType == UIItemResultType.Normal)
+  self._doubleExtRewardGO:SetActive(resultType == UIItemResultType.DoubleExt)
+  self._resCoinExtRewardGO:SetActive(resultType == UIItemResultType.ResCoinExt)
 end
 
--- DECOMPILER ERROR at PC379: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemResultNode.SetResultText = function(self, resultType, text)
-  -- function num : 0_55 , upvalues : UIItemResultType
+function UIItemResultNode:SetResultText(resultType, text)
   if resultType == UIItemResultType.Result then
-    (self._resultTxt):SetText(text)
+    self._resultTxt:SetText(text)
   end
 end
 
--- DECOMPILER ERROR at PC382: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemResultNode.SetNormalText = function(self, resultType, text)
-  -- function num : 0_56 , upvalues : UIItemResultType
+function UIItemResultNode:SetNormalText(resultType, text)
   if resultType == UIItemResultType.Normal then
-    (self._normalTxt):SetText(text)
+    self._normalTxt:SetText(text)
   end
 end
 
 _class("UIItemTopAwardNode", UIItemNodeBase)
 UIItemTopAwardNode = UIItemTopAwardNode
--- DECOMPILER ERROR at PC391: Confused about usage of register: R4 in 'UnsetPending'
 
-UIItemTopAwardNode.OnInit = function(self)
-  -- function num : 0_57
-  self._topText = (self._uiView):GetUIComponent("UILocalizationText", "text")
-  self._specailDrop = (self._uiView):GetGameObject("specailDrop")
+function UIItemTopAwardNode:OnInit()
+  self._topText = self._uiView:GetUIComponent("UILocalizationText", "text")
+  self._specailDrop = self._uiView:GetGameObject("specailDrop")
 end
 
--- DECOMPILER ERROR at PC394: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemTopAwardNode.OnShow = function(self)
-  -- function num : 0_58 , upvalues : _ENV
+function UIItemTopAwardNode:OnShow()
   local uiItemData = self._uiItemData
   if uiItemData.type == UIItemRandomType.TeBieDiaoLuo then
-    ((self._topText).gameObject):SetActive(false)
-    ;
-    (self._specailDrop):SetActive(true)
+    self._topText.gameObject:SetActive(false)
+    self._specailDrop:SetActive(true)
   else
     self:SetTopText(uiItemData.topText)
-    ;
-    (self._specailDrop):SetActive(false)
+    self._specailDrop:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC397: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemTopAwardNode.ShowTopText = function(self, show)
-  -- function num : 0_59
+function UIItemTopAwardNode:ShowTopText(show)
   self:Enable(show)
 end
 
--- DECOMPILER ERROR at PC400: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemTopAwardNode.SetTopText = function(self, text)
-  -- function num : 0_60 , upvalues : _ENV
-  if not (string.isnullorempty)(text) then
+function UIItemTopAwardNode:SetTopText(text)
+  if not string.isnullorempty(text) then
     self:ShowTopText(true)
-    ;
-    (self._topText):SetText(text)
+    self._topText:SetText(text)
   else
     self:ShowTopText(false)
   end
@@ -867,101 +679,64 @@ end
 
 _class("UIItemActivityNode", UIItemNodeBase)
 UIItemActivityNode = UIItemActivityNode
--- DECOMPILER ERROR at PC409: Confused about usage of register: R4 in 'UnsetPending'
 
-UIItemActivityNode.OnInit = function(self)
-  -- function num : 0_61
-  self._imgbg = (self._uiView):GetUIComponent("Image", "imgbg")
-  self._text = (self._uiView):GetUIComponent("UILocalizationText", "text")
-  self._imgbgRect = (self._uiView):GetUIComponent("RectTransform", "imgbg")
+function UIItemActivityNode:OnInit()
+  self._imgbg = self._uiView:GetUIComponent("Image", "imgbg")
+  self._text = self._uiView:GetUIComponent("UILocalizationText", "text")
+  self._imgbgRect = self._uiView:GetUIComponent("RectTransform", "imgbg")
 end
 
--- DECOMPILER ERROR at PC412: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemActivityNode.OnShow = function(self)
-  -- function num : 0_62
+function UIItemActivityNode:OnShow()
   local uiItemData = self._uiItemData
   self:SetText(uiItemData.activityText)
 end
 
--- DECOMPILER ERROR at PC415: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemActivityNode.ShowText = function(self, show)
-  -- function num : 0_63
+function UIItemActivityNode:ShowText(show)
   self:Enable(show)
 end
 
--- DECOMPILER ERROR at PC418: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemActivityNode.SetText = function(self, text)
-  -- function num : 0_64 , upvalues : _ENV
-  if not (string.isnullorempty)(text) then
+function UIItemActivityNode:SetText(text)
+  if not string.isnullorempty(text) then
     self:ShowText(true)
     self:_SetOffset()
-    ;
-    (self._text):SetText(text)
+    self._text:SetText(text)
   else
     self:ShowText(false)
   end
 end
 
--- DECOMPILER ERROR at PC421: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemActivityNode._SetOffset = function(self)
-  -- function num : 0_65 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIItemActivityNode:_SetOffset()
   if self._itemForm == UIItemForm.Stage then
-    (self._imgbgRect).anchoredPosition = Vector2(-77.13, -42.7)
-  else
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-    if self._itemForm == UIItemForm.ResInstance then
-      (self._imgbgRect).anchoredPosition = Vector2(-77.13, -62.55)
-    else
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-      if self._itemForm == UIItemForm.Result or self._itemForm == UIItemForm.Base then
-        (self._imgbgRect).anchoredPosition = Vector2(-85.12, 70.1)
-      end
-    end
+    self._imgbgRect.anchoredPosition = Vector2(-77.13, -42.7)
+  elseif self._itemForm == UIItemForm.ResInstance then
+    self._imgbgRect.anchoredPosition = Vector2(-77.13, -62.55)
+  elseif self._itemForm == UIItemForm.Result or self._itemForm == UIItemForm.Base then
+    self._imgbgRect.anchoredPosition = Vector2(-85.12, 70.1)
   end
 end
 
 _class("UIItemReturnHelpNode", UIItemNodeBase)
 UIItemReturnHelpNode = UIItemReturnHelpNode
--- DECOMPILER ERROR at PC430: Confused about usage of register: R4 in 'UnsetPending'
 
-UIItemReturnHelpNode.OnInit = function(self)
-  -- function num : 0_66
-  self._imgbg = (self._uiView):GetUIComponent("Image", "imgbg")
-  self._text = (self._uiView):GetUIComponent("UILocalizationText", "text")
-  self._imgbgRect = (self._uiView):GetUIComponent("RectTransform", "imgbg")
+function UIItemReturnHelpNode:OnInit()
+  self._imgbg = self._uiView:GetUIComponent("Image", "imgbg")
+  self._text = self._uiView:GetUIComponent("UILocalizationText", "text")
+  self._imgbgRect = self._uiView:GetUIComponent("RectTransform", "imgbg")
 end
 
--- DECOMPILER ERROR at PC433: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemReturnHelpNode.OnShow = function(self)
-  -- function num : 0_67
+function UIItemReturnHelpNode:OnShow()
   local uiItemData = self._uiItemData
   self:SetText(uiItemData.returnHelpText)
 end
 
--- DECOMPILER ERROR at PC436: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemReturnHelpNode.ShowText = function(self, show)
-  -- function num : 0_68
+function UIItemReturnHelpNode:ShowText(show)
   self:Enable(show)
 end
 
--- DECOMPILER ERROR at PC439: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemReturnHelpNode.SetText = function(self, text)
-  -- function num : 0_69 , upvalues : _ENV
-  if not (string.isnullorempty)(text) then
+function UIItemReturnHelpNode:SetText(text)
+  if not string.isnullorempty(text) then
     self:ShowText(true)
-    ;
-    (self._text):SetText(text)
+    self._text:SetText(text)
   else
     self:ShowText(false)
   end
@@ -969,111 +744,72 @@ end
 
 _class("UIItemPackBackNode", UIItemNodeBase)
 UIItemPackBackNode = UIItemPackBackNode
--- DECOMPILER ERROR at PC448: Confused about usage of register: R4 in 'UnsetPending'
 
-UIItemPackBackNode.OnInit = function(self)
-  -- function num : 0_70
-  self._toggle = (self._uiView):GetUIComponent("Toggle", "toggle")
-  self._toggleGo = (self._uiView):GetGameObject("toggle")
-  self._toggleBg = (self._uiView):GetGameObject("toggleBg")
-  self._toggleChoose = (self._uiView):GetGameObject("choose")
-  self.OnToggleValueChanged = function(isOn)
-    -- function num : 0_70_0 , upvalues : self
+function UIItemPackBackNode:OnInit()
+  self._toggle = self._uiView:GetUIComponent("Toggle", "toggle")
+  self._toggleGo = self._uiView:GetGameObject("toggle")
+  self._toggleBg = self._uiView:GetGameObject("toggleBg")
+  self._toggleChoose = self._uiView:GetGameObject("choose")
+  
+  function self.OnToggleValueChanged(isOn)
     if self._onValueChangedCallBack then
-      (self._onValueChangedCallBack)(isOn)
+      self._onValueChangedCallBack(isOn)
     end
     if self._toggleChoose then
-      (self._toggleChoose):SetActive(isOn)
+      self._toggleChoose:SetActive(isOn)
     end
   end
-
-  ;
-  ((self._toggle).onValueChanged):AddListener(self.OnToggleValueChanged)
+  
+  self._toggle.onValueChanged:AddListener(self.OnToggleValueChanged)
 end
 
--- DECOMPILER ERROR at PC451: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemPackBackNode.OnShow = function(self)
-  -- function num : 0_71
-  local hanveItem = (self._uiItemData).itemId ~= 0
-  ;
-  (self._toggleGo):SetActive(hanveItem)
-  ;
-  (self._toggleBg):SetActive(true)
+function UIItemPackBackNode:OnShow()
+  local hanveItem = self._uiItemData.itemId ~= 0
+  self._toggleGo:SetActive(hanveItem)
+  self._toggleBg:SetActive(true)
   if self._toggleChoose then
-    (self._toggleChoose):SetActive(false)
+    self._toggleChoose:SetActive(false)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC454: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemPackBackNode.ShowText = function(self, show)
-  -- function num : 0_72
+function UIItemPackBackNode:ShowText(show)
 end
 
--- DECOMPILER ERROR at PC457: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemPackBackNode.SetToggleGroup = function(self, group)
-  -- function num : 0_73
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._toggle).group = group
+function UIItemPackBackNode:SetToggleGroup(group)
+  self._toggle.group = group
 end
 
--- DECOMPILER ERROR at PC460: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemPackBackNode.SetToggleOnValueChangedCallBack = function(self, onValueChangedCallBack)
-  -- function num : 0_74
+function UIItemPackBackNode:SetToggleOnValueChangedCallBack(onValueChangedCallBack)
   self._onValueChangedCallBack = onValueChangedCallBack
 end
 
--- DECOMPILER ERROR at PC463: Confused about usage of register: R4 in 'UnsetPending'
-
-UIItemPackBackNode.SetToggleValue = function(self, isOn)
-  -- function num : 0_75
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._toggle).isOn = isOn
+function UIItemPackBackNode:SetToggleValue(isOn)
+  self._toggle.isOn = isOn
   if self._toggleChoose then
-    (self._toggleChoose):SetActive(isOn)
+    self._toggleChoose:SetActive(isOn)
   end
 end
 
 _class("PetLevelUpFastNode", UIItemNodeBase)
 PetLevelUpFastNode = PetLevelUpFastNode
--- DECOMPILER ERROR at PC472: Confused about usage of register: R4 in 'UnsetPending'
 
-PetLevelUpFastNode.OnInit = function(self)
-  -- function num : 0_76
-  self._go = (self._uiView):GetGameObject("go")
-  self._usenum = (self._uiView):GetUIComponent("UILocalizationText", "usenum")
+function PetLevelUpFastNode:OnInit()
+  self._go = self._uiView:GetGameObject("go")
+  self._usenum = self._uiView:GetUIComponent("UILocalizationText", "usenum")
 end
 
--- DECOMPILER ERROR at PC475: Confused about usage of register: R4 in 'UnsetPending'
-
-PetLevelUpFastNode.OnShow = function(self)
-  -- function num : 0_77
+function PetLevelUpFastNode:OnShow()
   local uiItemData = self._uiItemData
   self:SetItemUseNum(uiItemData.useNum)
 end
 
--- DECOMPILER ERROR at PC478: Confused about usage of register: R4 in 'UnsetPending'
-
-PetLevelUpFastNode.SetItemUseNum = function(self, count)
-  -- function num : 0_78
+function PetLevelUpFastNode:SetItemUseNum(count)
   if not count or count <= 0 then
-    (self._go):SetActive(false)
-    ;
-    (self._owner):Select(false)
+    self._go:SetActive(false)
+    self._owner:Select(false)
   else
-    ;
-    (self._go):SetActive(true)
-    ;
-    (self._owner):Select(true)
-    ;
-    (self._usenum):SetText(count)
+    self._go:SetActive(true)
+    self._owner:Select(true)
+    self._usenum:SetText(count)
   end
 end
-
-

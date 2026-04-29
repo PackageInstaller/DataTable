@@ -1,36 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_team_hud_visible_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTeamHUDVisibleInstruction", BaseInstruction)
 PlayTeamHUDVisibleInstruction = PlayTeamHUDVisibleInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTeamHUDVisibleInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTeamHUDVisibleInstruction:Constructor(paramList)
   self._visible = tonumber(paramList.visible)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTeamHUDVisibleInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayTeamHUDVisibleInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local teamEntity = (world:Player()):GetCurrentTeamEntity()
+  local teamEntity = world:Player():GetCurrentTeamEntity()
   local hpComponent = teamEntity:HP()
   if not hpComponent then
-    return 
+    return
   end
   local sliderEntityId = hpComponent:GetHPSliderEntityID()
   local sliderEntity = world:GetEntityByID(sliderEntityId)
   if not sliderEntity then
-    return 
+    return
   end
   hpComponent:SetHPBarTempHide(self._visible == 0)
   hpComponent:SetHPPosDirty(true)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
-
-

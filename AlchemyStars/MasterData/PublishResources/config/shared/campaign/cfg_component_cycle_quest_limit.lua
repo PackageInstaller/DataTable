@@ -1,11 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_cycle_quest_limit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, RewardItemID = 3, StartLimitCount = 4, LimitStepEveryDay = 5, MaxLimitCount = 6}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  RewardItemID = 3,
+  StartLimitCount = 4,
+  LimitStepEveryDay = 5,
+  MaxLimitCount = 6
+}
 local config = {
-{1, 105910401, 3000246, 200, 200, 3800}
+  {
+    1,
+    105910401,
+    3000246,
+    200,
+    200,
+    3800
+  }
 }
 return config, "ID", key
-

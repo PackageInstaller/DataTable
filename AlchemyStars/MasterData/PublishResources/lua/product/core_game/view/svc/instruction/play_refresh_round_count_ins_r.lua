@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_refresh_round_count_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayRefreshRoundCountInstruction", BaseInstruction)
 PlayRefreshRoundCountInstruction = PlayRefreshRoundCountInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayRefreshRoundCountInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayRefreshRoundCountInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayRefreshRoundCountInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayRefreshRoundCountInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local utilDataSvc = world:GetService("UtilData")
   local roundCount = utilDataSvc:GetLightCount()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateRoundCount, roundCount)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateRoundCount, roundCount)
 end
-
-

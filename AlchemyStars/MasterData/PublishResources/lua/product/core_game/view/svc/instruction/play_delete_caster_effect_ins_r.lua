@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_delete_caster_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayDeleteCasterEffectInstruction", BaseInstruction)
 PlayDeleteCasterEffectInstruction = PlayDeleteCasterEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayDeleteCasterEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayDeleteCasterEffectInstruction:Constructor(paramList)
   local str = paramList.effectIDList
-  local tmpStrIDList = (string.split)(str, "|")
+  local tmpStrIDList = string.split(str, "|")
   self._deleteEffectID = {}
-  for i,strID in ipairs(tmpStrIDList) do
-    (table.insert)(self._deleteEffectID, tonumber(strID))
+  for i, strID in ipairs(tmpStrIDList) do
+    table.insert(self._deleteEffectID, tonumber(strID))
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDeleteCasterEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayDeleteCasterEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
   if casterEntity:HasEffectHolder() then
     local effectHolderCmpt = casterEntity:EffectHolder()
@@ -32,25 +22,20 @@ PlayDeleteCasterEffectInstruction.DoInstruction = function(self, TT, casterEntit
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDeleteCasterEffectInstruction.DeleteEffect = function(self, effectList)
-  -- function num : 0_2 , upvalues : _ENV
-  for effectID,entityIDList in pairs(effectList) do
-    if (table.icontains)(self._deleteEffectID, effectID) then
-      for i,entityID in ipairs(entityIDList) do
-        local entity = (self._world):GetEntityByID(entityID)
+function PlayDeleteCasterEffectInstruction:DeleteEffect(effectList)
+  for effectID, entityIDList in pairs(effectList) do
+    if table.icontains(self._deleteEffectID, effectID) then
+      for i, entityID in ipairs(entityIDList) do
+        local entity = self._world:GetEntityByID(entityID)
         if entity then
-          (self._world):DestroyEntity(entity)
+          self._world:DestroyEntity(entity)
         end
       end
     end
   end
-  for effectID,entityIDList in pairs(effectList) do
-    if (table.icontains)(self._deleteEffectID, effectID) then
+  for effectID, entityIDList in pairs(effectList) do
+    if table.icontains(self._deleteEffectID, effectID) then
       entityIDList = {}
     end
   end
 end
-
-

@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/ai_node_new.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("custom_node")
 require("ai_sort_by_distance")
 _class("AINewNode", CustomNode)
 AINewNode = AINewNode
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-AINewNode.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function AINewNode:Constructor()
   self.m_stActionLogType = nil
   self.Status = AINewNodeStatus.Ready
   self.m_entityOwn = nil
@@ -23,54 +16,33 @@ AINewNode.Constructor = function(self)
   self._treeID = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AINewNode:Reset()
   self.Status = AINewNodeStatus.Ready
   self.m_logicData = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.SetLogicData = function(self, logicData)
-  -- function num : 0_2
+function AINewNode:SetLogicData(logicData)
   self.m_logicData = logicData
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.SetConfigData = function(self, configData)
-  -- function num : 0_3
+function AINewNode:SetConfigData(configData)
   self.m_configData = configData
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetConfigData = function(self)
-  -- function num : 0_4
+function AINewNode:GetConfigData()
   return self.m_configData
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.SetTreeID = function(self, treeID)
-  -- function num : 0_5
+function AINewNode:SetTreeID(treeID)
   self._treeID = treeID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetTreeID = function(self)
-  -- function num : 0_6
+function AINewNode:GetTreeID()
   return self._treeID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.InitializeNode = function(self, cfg, context, logicOwn, configData)
-  -- function num : 0_7 , upvalues : _ENV
-  ((AINewNode.super).InitializeNode)(self, cfg, context)
+function AINewNode:InitializeNode(cfg, context, logicOwn, configData)
+  AINewNode.super.InitializeNode(self, cfg, context)
   local genInfo = context.GenInfo
   self.m_entityOwn = genInfo.OwnerEntity
   self.m_logicOwn = logicOwn
@@ -81,77 +53,54 @@ AINewNode.InitializeNode = function(self, cfg, context, logicOwn, configData)
   self._genInfo = genInfo
   self.m_stActionLogType = "[" .. cfg.Type .. "]"
   if not self.CustomLogicID and not self.m_logicOwn and EDITOR then
-    (Log.exception)("No AIConfigData Trace:", (Log.traceback)())
+    Log.exception("No AIConfigData Trace:", Log.traceback())
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetConfigAIID = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function AINewNode:GetConfigAIID()
   if self.CustomLogicID then
     return self.CustomLogicID
+  elseif self.m_logicOwn then
+    return self.m_logicOwn.CustomLogicID
   else
-    if self.m_logicOwn then
-      return (self.m_logicOwn).CustomLogicID
-    else
-      ;
-      (Log.fatal)("No AIConfigIDData")
-    end
+    Log.fatal("No AIConfigIDData")
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetParallelID = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function AINewNode:GetParallelID()
   if self.CustomLogicID then
     return self._parallelID
+  elseif self.m_logicOwn then
+    return self.m_logicOwn._parallelID
   else
-    if self.m_logicOwn then
-      return (self.m_logicOwn)._parallelID
-    else
-      ;
-      (Log.fatal)("No AIConfigIDData")
-    end
+    Log.fatal("No AIConfigIDData")
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetMyOwnEntityID = function(self)
-  -- function num : 0_10
-  return (self.m_entityOwn):GetID()
+function AINewNode:GetMyOwnEntityID()
+  return self.m_entityOwn:GetID()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetMyOwnEntity = function(self)
-  -- function num : 0_11
+function AINewNode:GetMyOwnEntity()
   return self.m_entityOwn
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.SetInitialize = function(self, world, entityOwn)
-  -- function num : 0_12
+function AINewNode:SetInitialize(world, entityOwn)
   self._world = world
   self.m_entityOwn = entityOwn
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.SetSkillList = function(self, newSkillList)
-  -- function num : 0_13
-  (self._genInfo):SetSkillList(newSkillList)
+function AINewNode:SetSkillList(newSkillList)
+  self._genInfo:SetSkillList(newSkillList)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.Update = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function AINewNode:Update()
   if self:IsActive() then
-    ((self._world):GetSyncLogger()):Trace({key = "AINodeUpdate", AINode = self._className, status = GetEnumKey("AINewNodeStatus", self.Status)})
+    self._world:GetSyncLogger():Trace({
+      key = "AINodeUpdate",
+      AINode = self._className,
+      status = GetEnumKey("AINewNodeStatus", self.Status)
+    })
     if self.Status == AINewNodeStatus.Ready then
       self:OnBegin()
       self.Status = AINewNodeStatus.Running
@@ -165,251 +114,180 @@ AINewNode.Update = function(self)
   return self.Status
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.OnBegin = function(self)
-  -- function num : 0_15
+function AINewNode:OnBegin()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.OnUpdate = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function AINewNode:OnUpdate()
   return AINewNodeStatus.Success
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.OnEnd = function(self)
-  -- function num : 0_17
+function AINewNode:OnEnd()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.IsEnableStart = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function AINewNode:IsEnableStart()
   if self.Status == AINewNodeStatus.Ready or self.Status == AINewNodeStatus.Running then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.IsRunning = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function AINewNode:IsRunning()
   if self.Status == AINewNodeStatus.Running then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.IsReady = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function AINewNode:IsReady()
   if self.Status == AINewNodeStatus.Ready then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.IsSuccess = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function AINewNode:IsSuccess()
   if self.Status == AINewNodeStatus.Success then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetStatues = function(self)
-  -- function num : 0_22
+function AINewNode:GetStatues()
   return self.Status
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetActionSkillIDEx = function(self, preview)
-  -- function num : 0_23 , upvalues : _ENV
+function AINewNode:GetActionSkillIDEx(preview)
   if preview then
     return self:GetActionSkillID()
   end
-  do
-    if not self:GetNormalSkillID() then
-      local skillID = not ((self.m_entityOwn):BuffComponent()):HasFlag(BuffFlags.Benumb) or 0
-    end
+  if self.m_entityOwn:BuffComponent():HasFlag(BuffFlags.Benumb) then
+    local skillID = self:GetNormalSkillID() or 0
     self:PrintLog("自行为树选取技能<麻痹Buff不放技能>，技能ID = ", skillID)
-    do return skillID end
-    return self:GetActionSkillID()
+    return skillID
   end
+  return self:GetActionSkillID()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetActionSkillID = function(self, nIndex)
-  -- function num : 0_24
+function AINewNode:GetActionSkillID(nIndex)
   return self:GetLogicData(nIndex or 1)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetAILogicID = function(self)
-  -- function num : 0_25
-  local nLogicID = self.CustomLogicID or (self.m_logicOwn).CustomLogicID or 0
+function AINewNode:GetAILogicID()
+  local nLogicID = self.CustomLogicID or self.m_logicOwn.CustomLogicID or 0
   return nLogicID
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetStrSwitchType = function(self, switchType)
-  -- function num : 0_26 , upvalues : _ENV
+function AINewNode:GetStrSwitchType(switchType)
   if switchType == AINewNodeStatus.Ready then
     return "Ready"
+  elseif switchType == AINewNodeStatus.Running then
+    return "Running"
+  elseif switchType == AINewNodeStatus.Success then
+    return "Success", 1
+  elseif switchType == AINewNodeStatus.Failure then
+    return "Failure", 2
+  elseif switchType > AINewNodeStatus.Other then
+    return "Other :" .. switchType, switchType
   else
-    if switchType == AINewNodeStatus.Running then
-      return "Running"
-    else
-      if switchType == AINewNodeStatus.Success then
-        return "Success", 1
-      else
-        if switchType == AINewNodeStatus.Failure then
-          return "Failure", 2
-        else
-          if AINewNodeStatus.Other < switchType then
-            return "Other :" .. switchType, switchType
-          else
-            ;
-            (Log.fatal)("Invalid SwitchType :", switchType, "Trace:", (Log.traceback)())
-          end
-        end
-      end
-    end
+    Log.fatal("Invalid SwitchType :", switchType, "Trace:", Log.traceback())
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.AddDebugStream = function(self, monsterID, entityID, round, runCount, aiConfigID, aiTreeID, slotID)
-  -- function num : 0_27 , upvalues : _ENV
+function AINewNode:AddDebugStream(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, slotID)
   if not self._aiDebugModule then
-    self._aiDebugModule = (GameGlobal.GetModule)(AIDebugModule)
+    self._aiDebugModule = GameGlobal.GetModule(AIDebugModule)
   end
   if not self._aiLogger then
-    self._aiLogger = (self._world):GetAILogger()
+    self._aiLogger = self._world:GetAILogger()
   end
   if EDITOR then
-    (self._aiDebugModule):AddAIDebugStreamInfo(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, slotID)
+    self._aiDebugModule:AddAIDebugStreamInfo(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, slotID)
   end
-  ;
-  (self._aiLogger):AddAIStreamLog(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, slotID)
+  self._aiLogger:AddAIStreamLog(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, slotID)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.AddDebugInfo = function(self, monsterID, entityID, round, runCount, aiConfigID, aiTreeID, info)
-  -- function num : 0_28 , upvalues : _ENV
+function AINewNode:AddDebugInfo(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, info)
   if not self._aiDebugModule then
-    self._aiDebugModule = (GameGlobal.GetModule)(AIDebugModule)
+    self._aiDebugModule = GameGlobal.GetModule(AIDebugModule)
   end
   if not self._aiLogger then
-    self._aiLogger = (self._world):GetAILogger()
+    self._aiLogger = self._world:GetAILogger()
   end
   if EDITOR then
-    (self._aiDebugModule):AddAIDebugRunInfo(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, info)
+    self._aiDebugModule:AddAIDebugRunInfo(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, info)
   end
-  ;
-  (self._aiLogger):AddAIDebugInfoLog(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, info)
+  self._aiLogger:AddAIDebugInfoLog(monsterID, entityID, round, runCount, aiConfigID, aiTreeID, info)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.PrintActionSwitchLog = function(self, curAction, curTreeID, nextAction, nextTreeID, switchType, nextIsEnd)
-  -- function num : 0_29 , upvalues : _ENV
+function AINewNode:PrintActionSwitchLog(curAction, curTreeID, nextAction, nextTreeID, switchType, nextIsEnd)
   if EDITOR then
-    if not (self:GetMyOwnEntity()):HasMonsterID() then
-      return 
+    if not self:GetMyOwnEntity():HasMonsterID() then
+      return
     end
     if not self._aiDebugModule then
-      self._aiDebugModule = (GameGlobal.GetModule)(AIDebugModule)
-      self._aiLogger = (self._world):GetAILogger()
+      self._aiDebugModule = GameGlobal.GetModule(AIDebugModule)
+      self._aiLogger = self._world:GetAILogger()
     end
     local entityID = curAction:GetMyOwnEntityID()
     local aiConfigID = curAction:GetConfigAIID()
     local curActionType = curAction:GetStrActionType()
     local nextActionInfo = ""
     local switchType, slotID = self:GetStrSwitchType(switchType)
-    local aiComponent = (self:GetMyOwnEntity()):AI()
+    local aiComponent = self:GetMyOwnEntity():AI()
     local runCount = aiComponent:GetAIRoundRunCount(self:GetConfigAIID())
-    local round = ((self._world):BattleStat()):GetLevelTotalRoundCount()
+    local round = self._world:BattleStat():GetLevelTotalRoundCount()
     local monsterID = 0
-    if (self:GetMyOwnEntity()):HasMonsterID() then
-      monsterID = ((self:GetMyOwnEntity()):MonsterID()):GetMonsterID()
-    else
-      if (self:GetMyOwnEntity()):HasTrapID() then
-        monsterID = ((self:GetMyOwnEntity()):TrapID()):GetTrapID()
-      end
+    if self:GetMyOwnEntity():HasMonsterID() then
+      monsterID = self:GetMyOwnEntity():MonsterID():GetMonsterID()
+    elseif self:GetMyOwnEntity():HasTrapID() then
+      monsterID = self:GetMyOwnEntity():TrapID():GetTrapID()
     end
-    local entityID = (self:GetMyOwnEntity()):GetID()
+    local entityID = self:GetMyOwnEntity():GetID()
     self:AddDebugStream(monsterID, entityID, round, runCount, aiConfigID, curTreeID, slotID)
-    do
-      if nextAction then
-        local nextActionType = nextAction:GetStrActionType()
-        nextActionInfo = " NextActionTreeID:" .. nextTreeID .. " NexActionType:" .. nextActionType
-      end
-      local aiComponent = (self:GetMyOwnEntity()):AI()
-      local runCount = aiComponent:GetAIRoundRunCount(self:GetConfigAIID())
-      ;
-      (Log.debug)("[AI] SwitchNode AIConfigID:", aiConfigID, " RunCount:", runCount, " CurTreeID:", curTreeID, " CurActionType:", curActionType, " SwitchType:", switchType, nextActionInfo)
+    if nextAction then
+      local nextActionType = nextAction:GetStrActionType()
+      nextActionInfo = " NextActionTreeID:" .. nextTreeID .. " NexActionType:" .. nextActionType
     end
+    local aiComponent = self:GetMyOwnEntity():AI()
+    local runCount = aiComponent:GetAIRoundRunCount(self:GetConfigAIID())
+    Log.debug("[AI] SwitchNode AIConfigID:", aiConfigID, " RunCount:", runCount, " CurTreeID:", curTreeID, " CurActionType:", curActionType, " SwitchType:", switchType, nextActionInfo)
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetStrActionType = function(self)
-  -- function num : 0_30
+function AINewNode:GetStrActionType()
   return self.m_stActionLogType
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.PrintDebugLog = function(self, ...)
-  -- function num : 0_31 , upvalues : _ENV
-  if self._world and (self._world):IsDevelopEnv() and EDITOR then
-    local aiComponent = (self:GetMyOwnEntity()):AI()
+function AINewNode:PrintDebugLog(...)
+  if self._world and self._world:IsDevelopEnv() and EDITOR then
+    local aiComponent = self:GetMyOwnEntity():AI()
     local runCount = aiComponent:GetAIRoundRunCount(self:GetConfigAIID())
-    local round = ((self._world):BattleStat()):GetLevelTotalRoundCount()
+    local round = self._world:BattleStat():GetLevelTotalRoundCount()
     local monsterID = 0
-    if (self:GetMyOwnEntity()):HasMonsterID() then
-      monsterID = ((self:GetMyOwnEntity()):MonsterID()):GetMonsterID()
-    else
-      if (self:GetMyOwnEntity()):HasTrapID() then
-        monsterID = ((self:GetMyOwnEntity()):TrapID()):GetTrapID()
-      end
+    if self:GetMyOwnEntity():HasMonsterID() then
+      monsterID = self:GetMyOwnEntity():MonsterID():GetMonsterID()
+    elseif self:GetMyOwnEntity():HasTrapID() then
+      monsterID = self:GetMyOwnEntity():TrapID():GetTrapID()
     end
-    local entityID = (self:GetMyOwnEntity()):GetID()
+    local entityID = self:GetMyOwnEntity():GetID()
     local aiConfigID = self:GetConfigAIID()
     local treeID = self:GetTreeID()
-    local info = (string.args2str)({...}, " ")
+    local info = string.args2str({
+      ...
+    }, " ")
     self:AddDebugInfo(monsterID, entityID, round, runCount, aiConfigID, treeID, info)
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.PrintLog = function(self, ...)
-  -- function num : 0_32 , upvalues : _ENV
-  if self._world and (self._world):IsDevelopEnv() then
-    local aiComponent = (self:GetMyOwnEntity()):AI()
+function AINewNode:PrintLog(...)
+  if self._world and self._world:IsDevelopEnv() then
+    local aiComponent = self:GetMyOwnEntity():AI()
     local roundCount = aiComponent:GetAIRoundRunCount(self:GetConfigAIID())
-    ;
-    (Log.debug)("[AI] AIConfigID:", self:GetConfigAIID(), " RunCount:", roundCount, " TreeID:", self:GetTreeID(), " EntityID=", (self.m_entityOwn):GetID(), " Action=", self.m_stActionLogType, " ", ...)
+    Log.debug("[AI] AIConfigID:", self:GetConfigAIID(), " RunCount:", roundCount, " TreeID:", self:GetTreeID(), " EntityID=", self.m_entityOwn:GetID(), " Action=", self.m_stActionLogType, " ", ...)
     if _G.ENABLE_DETAIL_MATCH_LOG then
-      local info = (string.args2str)({...}, " ")
+      local info = string.args2str({
+        ...
+      }, " ")
       local aiId = self:GetConfigAIID()
       local aiIdStr = ""
       if aiId then
@@ -420,20 +298,18 @@ AINewNode.PrintLog = function(self, ...)
       if treeId then
         treeIdStr = tostring(treeId)
       end
-      local logStr = (string.format)("[AI] AIConfigID:%s RunCount:%d TreeID:%s EntityID=%d Action=%s %s", aiIdStr, roundCount, treeIdStr, (self.m_entityOwn):GetID(), self.m_stActionLogType, info)
-      ;
-      ((self._world):GetDetailMatchLogger()):SimpleLog(logStr)
+      local logStr = string.format("[AI] AIConfigID:%s RunCount:%d TreeID:%s EntityID=%d Action=%s %s", aiIdStr, roundCount, treeIdStr, self.m_entityOwn:GetID(), self.m_stActionLogType, info)
+      self._world:GetDetailMatchLogger():SimpleLog(logStr)
     end
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.PrintLog2 = function(self, ...)
-  -- function num : 0_33 , upvalues : _ENV
-  (Log.debug)("[AI] AIConfigID:", self:GetConfigAIID(), " TreeID:", self:GetTreeID(), " EntityID=", (self.m_entityOwn):GetID(), " Action=", self.m_stActionLogType, " ", ...)
+function AINewNode:PrintLog2(...)
+  Log.debug("[AI] AIConfigID:", self:GetConfigAIID(), " TreeID:", self:GetTreeID(), " EntityID=", self.m_entityOwn:GetID(), " Action=", self.m_stActionLogType, " ", ...)
   if _G.ENABLE_DETAIL_MATCH_LOG then
-    local info = (string.args2str)({...}, " ")
+    local info = string.args2str({
+      ...
+    }, " ")
     local aiId = self:GetConfigAIID()
     local aiIdStr = ""
     if aiId then
@@ -444,176 +320,122 @@ AINewNode.PrintLog2 = function(self, ...)
     if treeId then
       treeIdStr = tostring(treeId)
     end
-    local logStr = (string.format)("[AI] AIConfigID:%s TreeID:%s EntityID=%d Action=%s %s", aiIdStr, treeIdStr, (self.m_entityOwn):GetID(), self.m_stActionLogType, info)
-    ;
-    ((self._world):GetDetailMatchLogger()):SimpleLog(logStr)
+    local logStr = string.format("[AI] AIConfigID:%s TreeID:%s EntityID=%d Action=%s %s", aiIdStr, treeIdStr, self.m_entityOwn:GetID(), self.m_stActionLogType, info)
+    self._world:GetDetailMatchLogger():SimpleLog(logStr)
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode._MakePosString = function(self, posWork)
-  -- function num : 0_34 , upvalues : _ENV
-  return (GameHelper.MakePosString)(posWork)
+function AINewNode:_MakePosString(posWork)
+  return GameHelper.MakePosString(posWork)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetSelfPos = function(self)
-  -- function num : 0_35
+function AINewNode:GetSelfPos()
   local entityOwn = self.m_entityOwn
-  if entityOwn == nil then
+  if nil == entityOwn then
     return nil
   end
   return entityOwn:GetGridPosition()
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.IsEntityDead = function(entityWork)
-  -- function num : 0_36
+function AINewNode.IsEntityDead(entityWork)
   if entityWork and entityWork:HasDeadMark() then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetLogicNodeRoot = function(self)
-  -- function num : 0_37
-  if self.m_entityOwn == nil then
+function AINewNode:GetLogicNodeRoot()
+  if nil == self.m_entityOwn then
     return nil
   end
-  local aiComponent = (self.m_entityOwn):AI()
-  if aiComponent == nil then
+  local aiComponent = self.m_entityOwn:AI()
+  if nil == aiComponent then
     return nil
   end
   return aiComponent:GetRootLogic()
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode._GetLogicData = function(self, logicData, nIndex)
-  -- function num : 0_38 , upvalues : _ENV
+function AINewNode:_GetLogicData(logicData, nIndex)
   if type(logicData) == "number" then
     return logicData
-  else
-    if type(logicData) == "nil" then
-      return nil
-    else
-      if type(logicData) == "table" then
-        return logicData[nIndex]
-      else
-        if type(logicData) == "function" then
-          return logicData(nIndex)
-        end
-      end
-    end
+  elseif type(logicData) == "nil" then
+    return nil
+  elseif type(logicData) == "table" then
+    return logicData[nIndex]
+  elseif type(logicData) == "function" then
+    return logicData(nIndex)
   end
   return logicData
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetLogicData = function(self, nIndex)
-  -- function num : 0_39 , upvalues : _ENV
+function AINewNode:GetLogicData(nIndex)
   if nIndex and type(nIndex) == "string" then
     return self:_GetLogicData(self.m_configData, nIndex)
   end
-  if not nIndex then
-    nIndex = 0
-  end
-  if self.m_logicData == nil or nIndex < 0 then
+  nIndex = nIndex or 0
+  if nil == self.m_logicData or nIndex < 0 then
     return self:_GetLogicData(self.m_configData, -nIndex)
   end
   return self:_GetLogicData(self.m_logicData, nIndex)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetAiComponent = function(self)
-  -- function num : 0_40
-  return (self.m_entityOwn):AI()
+function AINewNode:GetAiComponent()
+  return self.m_entityOwn:AI()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetRuntimeData = function(self, key)
-  -- function num : 0_41
+function AINewNode:GetRuntimeData(key)
   local aiComponent = self:GetAiComponent()
-  if aiComponent == nil then
+  if nil == aiComponent then
     return nil
   end
   return aiComponent:GetRuntimeData(key)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.SetRuntimeData = function(self, key, value)
-  -- function num : 0_42
+function AINewNode:SetRuntimeData(key, value)
   if self:GetAiComponent() then
-    ((self.m_entityOwn):AI()):SetRuntimeData(key, value)
+    self.m_entityOwn:AI():SetRuntimeData(key, value)
   else
     self:PrintLog("在还没有AI Component时 设置了runtimeData!")
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode._GetConfigSkillList = function(self, monsterID)
-  -- function num : 0_43
-  local listSkill = nil
-  if monsterID > 0 then
-    local configService = (self._world):GetService("Config")
+function AINewNode:_GetConfigSkillList(monsterID)
+  local listSkill
+  if 0 < monsterID then
+    local configService = self._world:GetService("Config")
     local monsterConfig = configService:GetMonsterConfigData()
     listSkill = monsterConfig:GetMonsterSkillIDs(monsterID)
   end
-  do
-    return listSkill
-  end
+  return listSkill
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetConfigSkillList = function(self)
-  -- function num : 0_44 , upvalues : _ENV
-  local skills = (self._genInfo):GetSkillList()
-  if skills == nil or #skills <= 0 then
-    local nConfigType = (self._genInfo):GetGenInfoType()
+function AINewNode:GetConfigSkillList()
+  local skills = self._genInfo:GetSkillList()
+  if nil == skills or #skills <= 0 then
+    local nConfigType = self._genInfo:GetGenInfoType()
     if EnumAIGenInfo.Monster == nConfigType then
-      local cMonsterID = (self.m_entityOwn):MonsterID()
+      local cMonsterID = self.m_entityOwn:MonsterID()
       if cMonsterID then
         skills = self:_GetConfigSkillList(cMonsterID:GetMonsterID())
       end
     else
-      do
-        do
-          skills = (self._genInfo):GetSkillList()
-          return skills
-        end
-      end
+      skills = self._genInfo:GetSkillList()
     end
   end
+  return skills
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetConfigSkillID = function(self, nIndexX, nIndexY)
-  -- function num : 0_45
+function AINewNode:GetConfigSkillID(nIndexX, nIndexY)
   local vecSkillList = self:GetConfigSkillList()
-  return (vecSkillList[nIndexX])[nIndexY]
+  return vecSkillList[nIndexX][nIndexY]
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetNormalSkillID = function(self)
-  -- function num : 0_46 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function AINewNode:GetNormalSkillID()
+  local configService = self._world:GetService("Config")
   local vecSkillList = self:GetConfigSkillList()
-  for i,vec in ipairs(vecSkillList) do
+  for i, vec in ipairs(vecSkillList) do
     if type(vec) == "table" then
-      for j,skillID in ipairs(vec) do
+      for j, skillID in ipairs(vec) do
         local cfg = configService:GetSkillConfigData(skillID)
         local skillType = cfg:GetSkillType()
         if skillType == SkillType.Normal then
@@ -621,70 +443,48 @@ AINewNode.GetNormalSkillID = function(self)
         end
       end
     else
-      do
-        local skillID = vec
-        local cfg = configService:GetSkillConfigData(skillID)
-        do
-          local skillType = cfg:GetSkillType()
-          if skillType == SkillType.Normal then
-            return skillID
-          end
-          -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      local skillID = vec
+      local cfg = configService:GetSkillConfigData(skillID)
+      local skillType = cfg:GetSkillType()
+      if skillType == SkillType.Normal then
+        return skillID
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetGameRountNow = function(self)
-  -- function num : 0_47
-  local battleStatCmpt = (self._world):BattleStat()
+function AINewNode:GetGameRountNow()
+  local battleStatCmpt = self._world:BattleStat()
   local round = battleStatCmpt:GetCurWaveTotalRoundCount()
   return round
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetWaveIndexNow = function(self)
-  -- function num : 0_48
-  local battleStatCmpt = (self._world):BattleStat()
+function AINewNode:GetWaveIndexNow()
+  local battleStatCmpt = self._world:BattleStat()
   local waveIndex = battleStatCmpt:GetCurWaveIndex()
   return waveIndex
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.IsPosAccessible = function(self, pos)
-  -- function num : 0_49 , upvalues : _ENV
-  if (self.m_entityOwn):HasBodyArea() == false then
+function AINewNode:IsPosAccessible(pos)
+  if false == self.m_entityOwn:HasBodyArea() then
     return true
   end
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  local monsterIDCmpt = (self.m_entityOwn):MonsterID()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local monsterIDCmpt = self.m_entityOwn:MonsterID()
   local nMonsterBlockData = monsterIDCmpt:GetMonsterBlockData()
   local coverList = self:GetCoverAreaList(pos)
-  local coverListSelf = self:GetCoverAreaList((self.m_entityOwn):GetGridPosition())
+  local coverListSelf = self:GetCoverAreaList(self.m_entityOwn:GetGridPosition())
   for i = 1, #coverList do
     local posWork = coverList[i]
-    if not (table.icontains)(coverListSelf, posWork) and boardServiceLogic:IsPosBlock(posWork, nMonsterBlockData) then
+    if not table.icontains(coverListSelf, posWork) and boardServiceLogic:IsPosBlock(posWork, nMonsterBlockData) then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.FindPosValid = function(self, planPosList, defPos)
-  -- function num : 0_50
-  if planPosList == nil or planPosList:Size() <= 0 then
+function AINewNode:FindPosValid(planPosList, defPos)
+  if nil == planPosList or planPosList:Size() <= 0 then
     return defPos
   end
   local posSelf = defPos
@@ -693,21 +493,16 @@ AINewNode.FindPosValid = function(self, planPosList, defPos)
   for i = 1, nPosCount do
     local posWork = planPosList:GetAt(i)
     local bAccessible = self:IsPosAccessible(posWork.data)
-    if bAccessible == true then
+    if true == bAccessible then
       posReturn = posWork.data
       break
     end
   end
-  do
-    return posReturn
-  end
+  return posReturn
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.FindPosValidAndConnected = function(self, planPosList, posTarget, posDefault)
-  -- function num : 0_51
-  if planPosList == nil then
+function AINewNode:FindPosValidAndConnected(planPosList, posTarget, posDefault)
+  if nil == planPosList then
     return posDefault
   end
   local posReturn = posDefault
@@ -715,142 +510,107 @@ AINewNode.FindPosValidAndConnected = function(self, planPosList, posTarget, posD
   for i = 1, nPosCount do
     local posWork = planPosList:GetAt(i)
     local bAccessible = self:IsPosAccessible(posWork.data)
-    if bAccessible == true and self:IsPosConnected(posTarget, posWork.data) then
+    if true == bAccessible and self:IsPosConnected(posTarget, posWork.data) then
       posReturn = posWork.data
       break
     end
   end
-  do
-    return posReturn
-  end
+  return posReturn
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetCoverAreaList = function(self, pos)
-  -- function num : 0_52
+function AINewNode:GetCoverAreaList(pos)
   local posList = {}
   if self.m_entityOwn then
-    posList = (self.m_entityOwn):GetCoverAreaList(pos, self:GetFakeBodyArea())
+    posList = self.m_entityOwn:GetCoverAreaList(pos, self:GetFakeBodyArea())
   end
   return posList
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetAreaList = function(self, casterEntity)
-  -- function num : 0_53
+function AINewNode:GetAreaList(casterEntity)
   local fakeBodyArea = self:GetFakeBodyArea()
   if fakeBodyArea then
     return fakeBodyArea
   end
-  local selfBodyArea = (casterEntity:BodyArea()):GetArea()
+  local selfBodyArea = casterEntity:BodyArea():GetArea()
   return selfBodyArea
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetFakeBodyArea = function(self)
-  -- function num : 0_54
+function AINewNode:GetFakeBodyArea()
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.IsHaveObstacle = function(self, posStart, posEnd)
-  -- function num : 0_55 , upvalues : _ENV
+function AINewNode:IsHaveObstacle(posStart, posEnd)
   local direct = posEnd - posStart
-  local nMax = (math.max)((math.abs)(direct.x), (math.abs)(direct.y))
-  if nMax == 0 then
+  local nMax = math.max(math.abs(direct.x), math.abs(direct.y))
+  if 0 == nMax then
     return false
   end
   direct.x = direct.x / nMax
   direct.y = direct.y / nMax
   local posWork = posStart + direct
-  local posLogic = (Vector2.New)((math.floor)(posWork.x), (math.floor)(posWork.y))
+  local posLogic = Vector2.New(math.floor(posWork.x), math.floor(posWork.y))
   while posLogic ~= posEnd do
-    if self:IsPosAccessible(posLogic) == false then
+    if false == self:IsPosAccessible(posLogic) then
       return true
     end
     posWork = posWork + direct
-    posLogic.x = (math.floor)(posWork.x)
-    posLogic.y = (math.floor)(posWork.y)
+    posLogic.x = math.floor(posWork.x)
+    posLogic.y = math.floor(posWork.y)
   end
   return false
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.IsPosConnected = function(self, posStart, posEnd)
-  -- function num : 0_56
+function AINewNode:IsPosConnected(posStart, posEnd)
   local bHaveObstacle = self:IsHaveObstacle(posStart, posEnd)
-  do return bHaveObstacle == false end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return false == bHaveObstacle
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.ComputeWalkRange = function(self, centerPos, nWalkStep, bFilter)
-  -- function num : 0_57 , upvalues : _ENV
-  if not bFilter then
-    bFilter = false
-  end
-  local cbFilter = nil
+function AINewNode:ComputeWalkRange(centerPos, nWalkStep, bFilter)
+  bFilter = bFilter or false
+  local cbFilter
   if bFilter then
     cbFilter = Callback:New(1, self.IsPosAccessible, self)
   end
-  return (ComputeScopeRange.ComputeRange_WalkMathPos)(centerPos, 1, nWalkStep, cbFilter)
+  return ComputeScopeRange.ComputeRange_WalkMathPos(centerPos, 1, nWalkStep, cbFilter)
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.IsTargetInRange = function(self, casterEntity, targetType, targetTypeParam, scopeCenterType, scopeType, scopeParam)
-  -- function num : 0_58
-  local dir = (casterEntity:GridLocation()).Direction
-  local casterBodyArea = (casterEntity:BodyArea()):GetArea()
+function AINewNode:IsTargetInRange(casterEntity, targetType, targetTypeParam, scopeCenterType, scopeType, scopeParam)
+  local dir = casterEntity:GridLocation().Direction
+  local casterBodyArea = casterEntity:BodyArea():GetArea()
   local casterPos = casterEntity:GetGridPosition()
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local skillCalc = utilScopeSvc:GetSkillScopeCalc()
-  local centerPos, bodyArea = (skillCalc._gridFilter):CalcCenterPosAndBodyArea(scopeCenterType, casterPos, casterBodyArea, scopeParam)
+  local centerPos, bodyArea = skillCalc._gridFilter:CalcCenterPosAndBodyArea(scopeCenterType, casterPos, casterBodyArea, scopeParam)
   local result = skillCalc:ComputeScopeRange(scopeType, scopeParam, centerPos, bodyArea, dir, targetType, casterPos, casterEntity)
   local targetEntityIDArray = utilScopeSvc:SelectSkillTarget(self.m_entityOwn, targetType, result, nil, targetTypeParam)
-  do return #targetEntityIDArray > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 0 < #targetEntityIDArray
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode._CalculateSkillScope = function(self, skillID, centerPos, dir, bodyAreaList, entityCaster)
-  -- function num : 0_59 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function AINewNode:_CalculateSkillScope(skillID, centerPos, dir, bodyAreaList, entityCaster)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local skillCalculater = utilScopeSvc:GetSkillScopeCalc()
-  if not dir then
-    dir = Vector2(0, 1)
-  end
+  dir = dir or Vector2(0, 1)
   local skillResult = skillCalculater:CalcSkillScope(skillConfigData, centerPos, dir, bodyAreaList, entityCaster)
   return skillResult
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.SkillRangeIsBlock = function(self, nSkillID, BlockFlag)
-  -- function num : 0_60 , upvalues : _ENV
+function AINewNode:SkillRangeIsBlock(nSkillID, BlockFlag)
   local entityCaster = self.m_entityOwn
   local aiComponent = entityCaster:AI()
-  if aiComponent == nil then
+  if nil == aiComponent then
     return false
   end
   local selfPos = entityCaster:GetGridPosition()
-  local dir = (entityCaster:GridLocation()).Direction
-  local selfBodyArea = (entityCaster:BodyArea()):GetArea()
+  local dir = entityCaster:GridLocation().Direction
+  local selfBodyArea = entityCaster:BodyArea():GetArea()
   local skillResult = self:_CalculateSkillScope(nSkillID, selfPos, dir, selfBodyArea, entityCaster)
   if not skillResult then
     return true
   end
   local range = skillResult:GetWholeGridRange()
-  local boardSvc = (self._world):GetService("BoardLogic")
-  for _,pos in ipairs(range) do
+  local boardSvc = self._world:GetService("BoardLogic")
+  for _, pos in ipairs(range) do
     if boardSvc:IsPosBlock(pos, BlockFlag) then
       return true
     end
@@ -858,43 +618,33 @@ AINewNode.SkillRangeIsBlock = function(self, nSkillID, BlockFlag)
   return false
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.IsSkillTargetInSkillRange = function(self, nSkillID)
-  -- function num : 0_61
+function AINewNode:IsSkillTargetInSkillRange(nSkillID)
   local entityCaster = self.m_entityOwn
   local aiComponent = entityCaster:AI()
-  if aiComponent == nil then
+  if nil == aiComponent then
     return false
   end
   local selfPos = entityCaster:GetGridPosition()
-  local dir = (entityCaster:GridLocation()).Direction
+  local dir = entityCaster:GridLocation().Direction
   local selfBodyArea = self:GetAreaList(entityCaster)
   local targetIDList = self:GetSkillTargetList(nSkillID, selfPos, dir, selfBodyArea, entityCaster)
-  do return #targetIDList > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 0 < #targetIDList
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetSkillTargetList = function(self, skillID, centerPos, dir, bodyAreaList, entityCaster)
-  -- function num : 0_62
+function AINewNode:GetSkillTargetList(skillID, centerPos, dir, bodyAreaList, entityCaster)
   local skillResult = self:_CalculateSkillScope(skillID, centerPos, dir, bodyAreaList, entityCaster)
   if not skillResult then
     return {}
   end
-  local configService = (self._world):GetService("Config")
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local configService = self._world:GetService("Config")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local skillConfigData = configService:GetSkillConfigData(skillID)
   local targetType = skillConfigData:GetSkillTargetType()
   local targetEntityIDArray = utilScopeSvc:SelectSkillTarget(self.m_entityOwn, targetType, skillResult, skillID)
   return targetEntityIDArray
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.CalculateSkillRange = function(self, skillID, centerPos, dir, bodyAreaList)
-  -- function num : 0_63 , upvalues : _ENV
+function AINewNode:CalculateSkillRange(skillID, centerPos, dir, bodyAreaList)
   local skillResult = self:_CalculateSkillScope(skillID, centerPos, dir, bodyAreaList)
   if not skillResult then
     return {}
@@ -903,24 +653,21 @@ AINewNode.CalculateSkillRange = function(self, skillID, centerPos, dir, bodyArea
   local listReturn = {}
   for i = 1, #skillRange do
     local posWork = skillRange[i]
-    if (table.icontains)(listReturn, posWork) == false then
-      (table.insert)(listReturn, posWork)
+    if false == table.icontains(listReturn, posWork) then
+      table.insert(listReturn, posWork)
     end
   end
   return listReturn
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.IsEntityInSkillRange = function(self, nSkillID, entityTarget)
-  -- function num : 0_64 , upvalues : _ENV
+function AINewNode:IsEntityInSkillRange(nSkillID, entityTarget)
   local entityCaster = self.m_entityOwn
   local aiComponent = entityCaster:AI()
-  if aiComponent == nil then
+  if nil == aiComponent then
     return false
   end
   local selfPos = entityCaster:GetGridPosition()
-  local dir = (entityCaster:GridLocation()).Direction
+  local dir = entityCaster:GridLocation().Direction
   local selfBodyArea = self:GetAreaList(entityCaster)
   local skillRangeData = self:CalculateSkillRange(nSkillID, selfPos, dir, selfBodyArea)
   if not entityTarget or #skillRangeData == 0 then
@@ -928,11 +675,11 @@ AINewNode.IsEntityInSkillRange = function(self, nSkillID, entityTarget)
     return false
   end
   local bSuccess = self:_IsTargetInSkillRange(entityTarget, skillRangeData)
-  if bSuccess == true then
+  if true == bSuccess then
     self:PrintLog("skillID = ", nSkillID, ", 技能范围内<可以攻击>")
     return true
   else
-    local configService = (self._world):GetService("Config")
+    local configService = self._world:GetService("Config")
     local skillConfigData = configService:GetSkillConfigData(nSkillID)
     if SkillTargetType.Monster == skillConfigData:GetSkillTargetType() then
       self:PrintLog("skillID = ", nSkillID, ", 同组范围<可以攻击>")
@@ -941,77 +688,53 @@ AINewNode.IsEntityInSkillRange = function(self, nSkillID, entityTarget)
     self:PrintLog("skillID = ", nSkillID, ", 技能范围外<不能攻击>")
     return false
   end
-  do
-    self:PrintLog("skillID = ", nSkillID, ", 技能范围外<不能攻击>")
-    return false
-  end
+  self:PrintLog("skillID = ", nSkillID, ", 技能范围外<不能攻击>")
+  return false
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.InsertSortedArray = function(sortedArray, centerPos, workPos, nIndex)
-  -- function num : 0_65 , upvalues : _ENV
+function AINewNode.InsertSortedArray(sortedArray, centerPos, workPos, nIndex)
   local posData = AiSortByDistance:New(centerPos, workPos, nIndex)
   sortedArray:Insert(posData)
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.InsertSortedArrayDisAndDir = function(sortedArray, centerPos, workPos, curPos, nIndex)
-  -- function num : 0_66 , upvalues : _ENV
+function AINewNode.InsertSortedArrayDisAndDir(sortedArray, centerPos, workPos, curPos, nIndex)
   local posData = AiSortByDistanceAndDir:New(centerPos, workPos, curPos, nIndex)
   sortedArray:Insert(posData)
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode._IsOneLine = function(self, posA, posB, posC, bCheckPath)
-  -- function num : 0_67 , upvalues : _ENV
-  local bOneLine = (GameHelper.IsPointOneLine)(posA, posB, posC)
+function AINewNode:_IsOneLine(posA, posB, posC, bCheckPath)
+  local bOneLine = GameHelper.IsPointOneLine(posA, posB, posC)
   return bOneLine
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.CheckHitBlockPath = function(world, posStart, posEnd)
-  -- function num : 0_68 , upvalues : _ENV
+function AINewNode.CheckHitBlockPath(world, posStart, posEnd)
   local bBlockPath = false
   local utilSvc = world:GetService("UtilData")
   local boardServiceLogic = world:GetService("BoardLogic")
-  local posDir = (GameHelper.ComputeLogicDir)(posEnd - posStart)
+  local posDir = GameHelper.ComputeLogicDir(posEnd - posStart)
   local posWork = posStart + posDir
-  do
-    while posWork ~= posEnd do
-      local listEntityBomb = utilSvc:GetTrapsAtPos(posWork)
-      if (table.count)(listEntityBomb) > 0 and boardServiceLogic:IsPosBlock(posWork, BlockFlag.HitBack) then
-        bBlockPath = true
-        break
-      end
-      posWork = posWork + posDir
+  while posWork ~= posEnd do
+    local listEntityBomb = utilSvc:GetTrapsAtPos(posWork)
+    if table.count(listEntityBomb) > 0 and boardServiceLogic:IsPosBlock(posWork, BlockFlag.HitBack) then
+      bBlockPath = true
+      break
     end
-    return bBlockPath
+    posWork = posWork + posDir
   end
+  return bBlockPath
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode._IsCanHitBombToPlayer = function(self, posMonster, posBomb, posPlayer, bCheckPath)
-  -- function num : 0_69 , upvalues : _ENV
-  local bOneLine = (GameHelper.IsPointOneLine)(posMonster, posBomb, posPlayer)
-  if bCheckPath == nil then
+function AINewNode:_IsCanHitBombToPlayer(posMonster, posBomb, posPlayer, bCheckPath)
+  local bOneLine = GameHelper.IsPointOneLine(posMonster, posBomb, posPlayer)
+  if nil == bCheckPath then
     return bOneLine
   end
-  if bOneLine then
-    bOneLine = not (AINewNode.CheckHitBlockPath)(self._world, posBomb, posPlayer)
-  end
+  bOneLine = bOneLine and not AINewNode.CheckHitBlockPath(self._world, posBomb, posPlayer)
   return bOneLine
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode._IsAllAIMoveDone = function(self)
-  -- function num : 0_70 , upvalues : _ENV
-  local aiSchSvc = (self._world):GetService("AIScheduler")
+function AINewNode:_IsAllAIMoveDone()
+  local aiSchSvc = self._world:GetService("AIScheduler")
   local aiList = aiSchSvc:GetAIList()
   self:PrintLog("_IsAllAIMoveDone() aiList count=", aiList:Size())
   for i = 1, aiList:Size() do
@@ -1031,38 +754,25 @@ AINewNode._IsAllAIMoveDone = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetLogicSkillID = function(self)
-  -- function num : 0_71
+function AINewNode:GetLogicSkillID()
   local skillIndexX, skillIndexY = self:GetLogicData(-1), self:GetLogicData(-2)
   if skillIndexY then
     local nSkillID = self:GetConfigSkillID(skillIndexX, skillIndexY)
     return nSkillID
   else
-    do
-      do return skillIndexX end
-    end
+    return skillIndexX
   end
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetMonsterGroupID = function(self)
-  -- function num : 0_72
-  local monsterIDCmpt = (self.m_entityOwn):MonsterID()
+function AINewNode:GetMonsterGroupID()
+  local monsterIDCmpt = self.m_entityOwn:MonsterID()
   local monsterMoveGroupID = monsterIDCmpt:GetMoveGroupID()
   return monsterMoveGroupID
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-AINewNode.GetAllGroupMonster = function(self)
-  -- function num : 0_73
-  local monsterIDCmpt = (self.m_entityOwn):MonsterID()
+function AINewNode:GetAllGroupMonster()
+  local monsterIDCmpt = self.m_entityOwn:MonsterID()
   local monsterMoveGroupID = monsterIDCmpt:GetMoveGroupID()
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   self._sameGroupMonsterList = utilCalcSvc:FindMonsterByMoveGroupID(monsterMoveGroupID)
 end
-
-

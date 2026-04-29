@@ -1,41 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_bleed_increase.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetBleedIncrease", BuffLogicBase)
 BuffLogicSetBleedIncrease = BuffLogicSetBleedIncrease
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetBleedIncrease.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetBleedIncrease:Constructor(buffInstance, logicParam)
   self._addValue = logicParam.addValue or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetBleedIncrease.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("BleedIncrease", 1 + self._addValue)
+function BuffLogicSetBleedIncrease:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("BleedIncrease", 1 + self._addValue)
 end
 
 _class("BuffLogicResetBleedIncrease", BuffLogicBase)
 BuffLogicResetBleedIncrease = BuffLogicResetBleedIncrease
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetBleedIncrease.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetBleedIncrease:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetBleedIncrease.DoLogic = function(self)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("BleedIncrease", 1)
+function BuffLogicResetBleedIncrease:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("BleedIncrease", 1)
 end
-
-

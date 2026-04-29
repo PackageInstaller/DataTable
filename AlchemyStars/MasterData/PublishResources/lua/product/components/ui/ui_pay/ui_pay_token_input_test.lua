@@ -1,54 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pay/ui_pay_token_input_test.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPayTokenInputTest", UIController)
 UIPayTokenInputTest = UIPayTokenInputTest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPayTokenInputTest.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPayTokenInputTest:OnShow(uiParams)
   self._viewerIdInput = self:GetUIComponent("EmojiFilteredInputField", "viewerIdInputName")
   self._tokenInputName = self:GetUIComponent("EmojiFilteredInputField", "tokenInputName")
-  self.viewerId = (LocalDB.GetString)("ui_pay_viewerId_test")
-  self.token = (LocalDB.GetString)("ui_pay_token_test")
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._tokenInputName).text = self.token
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._viewerIdInput).text = self.viewerId
+  self.viewerId = LocalDB.GetString("ui_pay_viewerId_test")
+  self.token = LocalDB.GetString("ui_pay_token_test")
+  self._tokenInputName.text = self.token
+  self._viewerIdInput.text = self.viewerId
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPayTokenInputTest.bgOnClick = function(self, go)
-  -- function num : 0_1
+function UIPayTokenInputTest:bgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPayTokenInputTest.btnCancelOnClick = function(self, go)
-  -- function num : 0_2
+function UIPayTokenInputTest:btnCancelOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPayTokenInputTest.btnEnsureOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  (LocalDB.SetString)("ui_pay_token_test", (self._tokenInputName).text)
-  ;
-  (LocalDB.SetString)("ui_pay_viewerId_test", (self._viewerIdInput).text)
-  self.viewerId = (self._viewerIdInput).text
-  self.token = (self._tokenInputName).text
+function UIPayTokenInputTest:btnEnsureOnClick(go)
+  LocalDB.SetString("ui_pay_token_test", self._tokenInputName.text)
+  LocalDB.SetString("ui_pay_viewerId_test", self._viewerIdInput.text)
+  self.viewerId = self._viewerIdInput.text
+  self.token = self._tokenInputName.text
   local payM = self:GetModule(PayModule)
   payM:SetDmmParam(self.viewerId, self.token)
   self:CloseDialog()
 end
-
-

@@ -1,47 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/map/historyEventpoint/s_maze_map_history_eventpoint.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeMapHistoryEventpoint", Object)
 SMazeMapHistoryEventpoint = SMazeMapHistoryEventpoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeMapHistoryEventpoint.Constructor = function(self, cfg, root)
-  -- function num : 0_0 , upvalues : _ENV
+function SMazeMapHistoryEventpoint:Constructor(cfg, root)
   self._resReqs = {}
   self._cfg = cfg
-  self._cfgEventPoint = (Cfg.cfg_season_map_eventpoint)[cfg.ID]
+  self._cfgEventPoint = Cfg.cfg_season_map_eventpoint[cfg.ID]
   if not self._cfgEventPoint then
-    (Log.error)("SMazeMapHistoryEventpoint cfg_season_map_eventpoint 无法找到ID ", cfg.ID)
-    return 
+    Log.error("SMazeMapHistoryEventpoint cfg_season_map_eventpoint 无法找到ID ", cfg.ID)
+    return
   end
   self:_InitPR()
-  self._status = (self._cfg).Status
-  local modelName = ((self._cfgEventPoint).ModelRes)[self._status]
+  self._status = self._cfg.Status
+  local modelName = self._cfgEventPoint.ModelRes[self._status]
   if not modelName then
-    (Log.error)("SMazeMapHistoryEventpoint cfg_season_map_eventpoint modelName is null , id = " .. (self._cfg).ID .. "  status = " .. self._status)
-    return 
+    Log.error("SMazeMapHistoryEventpoint cfg_season_map_eventpoint modelName is null , id = " .. self._cfg.ID .. "  status = " .. self._status)
+    return
   end
   local go = self:_LoadPrefab(modelName)
   self._transform = go.transform
   self._animation = go:GetComponent(typeof(UnityEngine.Animation))
   if root then
-    (self._transform):SetParent(root.transform)
+    self._transform:SetParent(root.transform)
   end
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._transform).position = Vector3((self._position).x, (self._position).y, (self._position).z)
-  -- DECOMPILER ERROR at PC68: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._transform).rotation = self._rotation
-  -- DECOMPILER ERROR at PC78: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._transform).localScale = Vector3((self._cfgEventPoint).Scale, (self._cfgEventPoint).Scale, (self._cfgEventPoint).Scale)
-  local animationEffect = (self._cfgEventPoint)["AnimationEffect" .. self._status]
+  self._transform.position = Vector3(self._position.x, self._position.y, self._position.z)
+  self._transform.rotation = self._rotation
+  self._transform.localScale = Vector3(self._cfgEventPoint.Scale, self._cfgEventPoint.Scale, self._cfgEventPoint.Scale)
+  local animationEffect = self._cfgEventPoint["AnimationEffect" .. self._status]
   if animationEffect then
     local anim = animationEffect.anim
     local holder = animationEffect.holder
@@ -51,42 +35,29 @@ SMazeMapHistoryEventpoint.Constructor = function(self, cfg, root)
       local bone = self:GetBoneNode(holder)
       local effectGO = self:_LoadPrefab(effectName)
       effectGO:SetActive(true)
-      ;
-      (effectGO.transform):SetParent(bone)
-      -- DECOMPILER ERROR at PC110: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (effectGO.transform).localPosition = Vector3.zero
-      -- DECOMPILER ERROR at PC118: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (effectGO.transform).localRotation = (Quaternion.Euler)(0, 0, 0)
+      effectGO.transform:SetParent(bone)
+      effectGO.transform.localPosition = Vector3.zero
+      effectGO.transform.localRotation = Quaternion.Euler(0, 0, 0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapHistoryEventpoint._InitPR = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SMazeMapHistoryEventpoint:_InitPR()
   self._position = Vector3.zero
-  self._rotation = (Quaternion.Euler)(0, 0, 0)
-  if (self._cfgEventPoint).Position then
-    self._position = Vector3(((self._cfgEventPoint).Position)[1], ((self._cfgEventPoint).Position)[2], ((self._cfgEventPoint).Position)[3])
+  self._rotation = Quaternion.Euler(0, 0, 0)
+  if self._cfgEventPoint.Position then
+    self._position = Vector3(self._cfgEventPoint.Position[1], self._cfgEventPoint.Position[2], self._cfgEventPoint.Position[3])
   end
-  if (self._cfgEventPoint).Rotation then
-    self._rotation = (Quaternion.Euler)(((self._cfgEventPoint).Rotation)[1], ((self._cfgEventPoint).Rotation)[2], ((self._cfgEventPoint).Rotation)[3])
+  if self._cfgEventPoint.Rotation then
+    self._rotation = Quaternion.Euler(self._cfgEventPoint.Rotation[1], self._cfgEventPoint.Rotation[2], self._cfgEventPoint.Rotation[3])
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapHistoryEventpoint.GetBoneNode = function(self, boneName)
-  -- function num : 0_2 , upvalues : _ENV
+function SMazeMapHistoryEventpoint:GetBoneNode(boneName)
   if not boneName then
     return self._transform
   else
-    local boneTransform = (GameObjectHelper.FindChild)(self._transform, boneName)
+    local boneTransform = GameObjectHelper.FindChild(self._transform, boneName)
     if boneTransform then
       return boneTransform
     end
@@ -94,42 +65,28 @@ SMazeMapHistoryEventpoint.GetBoneNode = function(self, boneName)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapHistoryEventpoint.PlayAnimation = function(self, name)
-  -- function num : 0_3 , upvalues : _ENV
+function SMazeMapHistoryEventpoint:PlayAnimation(name)
   if not self._animation or not name then
-    return 
+    return
   end
-  local animationState = (self._animation):get_Item(name)
+  local animationState = self._animation:get_Item(name)
   if animationState then
-    (Log.info)("SMazeMapHistoryEventpointMgr animation ", self._id, " aniName = ", name)
-    ;
-    (self._animation):Play(animationState.name)
+    Log.info("SMazeMapHistoryEventpointMgr animation ", self._id, " aniName = ", name)
+    self._animation:Play(animationState.name)
   end
   return animationState
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapHistoryEventpoint.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for key,req in pairs(self._resReqs) do
+function SMazeMapHistoryEventpoint:Dispose()
+  for key, req in pairs(self._resReqs) do
     req:Dispose()
   end
   self._resReqs = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapHistoryEventpoint._LoadPrefab = function(self, name)
-  -- function num : 0_5 , upvalues : _ENV
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset(name, LoadType.GameObject)
-  ;
-  (req.Obj):SetActive(true)
-  ;
-  (table.insert)(self._resReqs, req)
+function SMazeMapHistoryEventpoint:_LoadPrefab(name)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(name, LoadType.GameObject)
+  req.Obj:SetActive(true)
+  table.insert(self._resReqs, req)
   return req.Obj
 end
-
-

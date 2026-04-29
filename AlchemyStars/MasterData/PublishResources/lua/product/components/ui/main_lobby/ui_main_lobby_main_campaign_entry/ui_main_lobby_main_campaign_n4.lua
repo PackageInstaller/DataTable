@@ -1,51 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_main_campaign_entry/ui_main_lobby_main_campaign_n4.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_main_lobby_main_campaign_base")
 _class("UIMainLobbyMainCampaignN4", UIMainLobbyMainCampaignBase)
 UIMainLobbyMainCampaignN4 = UIMainLobbyMainCampaignN4
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyMainCampaignN4.GetComponent = function(self)
-  -- function num : 0_0
+function UIMainLobbyMainCampaignN4:GetComponent()
   self._redGo = self:GetGameObject("RedPoint")
   self._newGo = self:GetGameObject("NewFlag")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyMainCampaignN4.RefreshView = function(self)
-  -- function num : 0_1
+function UIMainLobbyMainCampaignN4:RefreshView()
   self:RedAndNew()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyMainCampaignN4.BtnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((UIMainLobbyMainCampaignN4.super).BtnOnClick)(self)
-  ;
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UISummer2)
+function UIMainLobbyMainCampaignN4:BtnOnClick()
+  UIMainLobbyMainCampaignN4.super.BtnOnClick(self)
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UISummer2)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyMainCampaignN4.RedAndNew = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local new = (self.sampleInfo):GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  local red = (self.sampleInfo):GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD)
-  local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+function UIMainLobbyMainCampaignN4:RedAndNew()
+  local new = self.sampleInfo:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
+  local red = self.sampleInfo:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD)
+  local open_id = GameGlobal.GameLogic():GetOpenId()
   local save_key = open_id .. "UISummerActivityTwoMainController_LineRed"
-  if not new then
-    new = not (LocalDB.HasKey)(save_key)
-  end
-  ;
-  (self._newGo):SetActive(new)
-  if red then
-    (self._redGo):SetActive(not new)
-  end
+  new = new or not LocalDB.HasKey(save_key)
+  self._newGo:SetActive(new)
+  self._redGo:SetActive(red and not new)
 end
-
-

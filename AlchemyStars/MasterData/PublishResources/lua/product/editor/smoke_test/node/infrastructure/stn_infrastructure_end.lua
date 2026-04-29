@@ -1,40 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/infrastructure/stn_infrastructure_end.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Infrastructure_End", CTestRobot_Base)
 Infrastructure_End = Infrastructure_End
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Infrastructure_End.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
-  ;
-  (WorkWXPoster.SendInfo)("测试结束")
-  ;
-  (self.m_pManager):PrintLog(self._className, "测试结束")
-  ;
-  (self.m_pManager):WriteProgressEnd()
-  ;
-  (self.m_pManager):OnTestRobot_End()
-  return ((Infrastructure_End.super).OnWorking)(self)
+function Infrastructure_End:OnWorking()
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
+  WorkWXPoster.SendInfo("测试结束")
+  self.m_pManager:PrintLog(self._className, "测试结束")
+  self.m_pManager:WriteProgressEnd()
+  self.m_pManager:OnTestRobot_End()
+  return Infrastructure_End.super.OnWorking(self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Infrastructure_End.OnEnd = function(self, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  local nReturn = ((Infrastructure_End.super).OnEnd)(self, ...)
+function Infrastructure_End:OnEnd(...)
+  local nReturn = Infrastructure_End.super.OnEnd(self, ...)
   if self.m_pActionTree then
-    local listScanID = (self.m_pActionTree):GetScanActionID()
-    local nTreeID = (self.m_pActionTree):GetTreeID()
-    self:PrintLog("ScanPath TreeID = ", nTreeID, ", Path = [", (table.concat)(listScanID, ","), "]")
+    local listScanID = self.m_pActionTree:GetScanActionID()
+    local nTreeID = self.m_pActionTree:GetTreeID()
+    self:PrintLog("ScanPath TreeID = ", nTreeID, ", Path = [", table.concat(listScanID, ","), "]")
   end
-  do
-    return nReturn
-  end
+  return nReturn
 end
-
-

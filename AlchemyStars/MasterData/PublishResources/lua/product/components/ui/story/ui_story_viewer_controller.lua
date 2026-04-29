@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/story/ui_story_viewer_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStoryViewerController", UIController)
 UIStoryViewerController = UIStoryViewerController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIStoryViewerController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIStoryViewerController:OnShow(uiParams)
   self._storyIDTxt = self:GetUIComponent("Text", "Text")
   self._dropDown = self:GetUIComponent("Dropdown", "Dropdown")
   self._chapSecGO = self:GetGameObject("ChapSec")
@@ -16,83 +9,56 @@ UIStoryViewerController.OnShow = function(self, uiParams)
   self._chapTxt = self:GetUIComponent("Text", "ChapText")
   self._secTxt = self:GetUIComponent("Text", "SecText")
   self._stringKeyTxt = self:GetUIComponent("InputField", "StrKeyText")
-  self._dropDownCallback = function(idx)
-    -- function num : 0_0_0 , upvalues : self
+  
+  function self._dropDownCallback(idx)
     self:OnDropDownChanged(idx)
   end
-
-  ;
-  ((self._dropDown).onValueChanged):AddListener(self._dropDownCallback)
-  ;
-  (AudioHelperController.StopBGM)(1)
+  
+  self._dropDown.onValueChanged:AddListener(self._dropDownCallback)
+  AudioHelperController.StopBGM(1)
   self:AttachEvent(GameEventType.UIShowEnd, self.OnUIShowEnd)
   self._idx = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryViewerController.OnHide = function(self)
-  -- function num : 0_1
-  ((self._dropDown).onValueChanged):RemoveListener(self._dropDownCallback)
+function UIStoryViewerController:OnHide()
+  self._dropDown.onValueChanged:RemoveListener(self._dropDownCallback)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryViewerController.EnterStoryBtnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local idStr = (self._storyIDTxt).text
+function UIStoryViewerController:EnterStoryBtnOnClick()
+  local idStr = self._storyIDTxt.text
   local idNumber = tonumber(idStr)
   if idNumber then
-    ((GameGlobal.GetModule)(StoryModule)):StartStory(idNumber, nil)
+    GameGlobal.GetModule(StoryModule):StartStory(idNumber, nil)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryViewerController.ExitBtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIStoryViewerController:ExitBtnOnClick()
   self:SwitchState(UIStateType.UIMain)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryViewerController.OnDropDownChanged = function(self, idx)
-  -- function num : 0_4
+function UIStoryViewerController:OnDropDownChanged(idx)
   self._idx = idx
-  ;
-  (self._chapSecGO):SetActive(idx == 1)
-  ;
-  (self._stringKeyGO):SetActive(idx == 2)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._chapSecGO:SetActive(idx == 1)
+  self._stringKeyGO:SetActive(idx == 2)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryViewerController.OnUIShowEnd = function(self, uiName)
-  -- function num : 0_5 , upvalues : _ENV
+function UIStoryViewerController:OnUIShowEnd(uiName)
   if uiName == "UIStoryController" and self._idx ~= 0 then
-    local storyController = (self:Manager()):GetController("UIStoryController")
+    local storyController = self:Manager():GetController("UIStoryController")
     local storyManager = storyController._storyManager
     if self._idx == 1 then
-      local chap = tonumber((self._chapTxt).text)
-      local sec = tonumber((self._secTxt).text)
+      local chap = tonumber(self._chapTxt.text)
+      local sec = tonumber(self._secTxt.text)
       if chap and sec then
         storyManager:_Seek(chap, sec)
       end
-    else
-      do
-        if self._idx == 2 then
-          local chap, sec = storyManager:_FindDialogParagraphSection((self._stringKeyTxt).text)
-          if chap and sec then
-            storyManager:_Seek(chap, sec)
-          else
-            ;
-            (ToastManager.ShowToast)("未找到包含指定文本key的章节")
-          end
-        end
+    elseif self._idx == 2 then
+      local chap, sec = storyManager:_FindDialogParagraphSection(self._stringKeyTxt.text)
+      if chap and sec then
+        storyManager:_Seek(chap, sec)
+      else
+        ToastManager.ShowToast("未找到包含指定文本key的章节")
       end
     end
   end
 end
-
-

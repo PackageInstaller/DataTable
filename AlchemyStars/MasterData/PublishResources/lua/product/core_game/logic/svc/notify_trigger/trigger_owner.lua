@@ -1,44 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/notify_trigger/trigger_owner.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ITriggerOwner", Object)
 ITriggerOwner = ITriggerOwner
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ITriggerOwner.OnTrigger = function(self)
-  -- function num : 0_0
+function ITriggerOwner:OnTrigger()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ITriggerOwner.GetOwnerEntity = function(self)
-  -- function num : 0_1
+function ITriggerOwner:GetOwnerEntity()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ITriggerOwner.GetWorld = function(self)
-  -- function num : 0_2
+function ITriggerOwner:GetWorld()
 end
 
 _class("TriggerCallbackOwner", ITriggerOwner)
 TriggerCallbackOwner = TriggerCallbackOwner
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-TriggerCallbackOwner.Constructor = function(self, obj, callback, ...)
-  -- function num : 0_3
+function TriggerCallbackOwner:Constructor(obj, callback, ...)
   self._obj = obj
   self._callback = callback
-  self._params = {...}
+  self._params = {
+    ...
+  }
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TriggerCallbackOwner.OnTrigger = function(self, notify)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._callback)(self._obj, notify, (table.unpack)(self._params))
+function TriggerCallbackOwner:OnTrigger(notify)
+  self._callback(self._obj, notify, table.unpack(self._params))
 end
-
-

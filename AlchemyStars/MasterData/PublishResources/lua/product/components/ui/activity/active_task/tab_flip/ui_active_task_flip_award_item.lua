@@ -1,46 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/active_task/tab_flip/ui_active_task_flip_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActiveTaskFlipAwardItem", UICustomWidget)
 UIActiveTaskFlipAwardItem = UIActiveTaskFlipAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActiveTaskFlipAwardItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActiveTaskFlipAwardItem:OnShow()
   self._atlas = self:GetAsset("ActiveTask.spriteatlas", LoadType.SpriteAtlas)
   self:AddListener()
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipAwardItem.OnHide = function(self)
-  -- function num : 0_1
+function UIActiveTaskFlipAwardItem:OnHide()
   self:RemoveListener()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipAwardItem.AddListener = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._onFlipMaskCallback = (GameHelper:GetInstance()):CreateCallback(self.OnFlipMask, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnFlipMask, self._onFlipMaskCallback)
+function UIActiveTaskFlipAwardItem:AddListener()
+  self._onFlipMaskCallback = GameHelper:GetInstance():CreateCallback(self.OnFlipMask, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnFlipMask, self._onFlipMaskCallback)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipAwardItem.RemoveListener = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnFlipMask, self._onFlipMaskCallback)
+function UIActiveTaskFlipAwardItem:RemoveListener()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnFlipMask, self._onFlipMaskCallback)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipAwardItem._GetComponent = function(self)
-  -- function num : 0_4
+function UIActiveTaskFlipAwardItem:_GetComponent()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._isGetImg = self:GetUIComponent("Image", "isGet")
   self._isGetObj = self:GetGameObject("isGet")
@@ -49,10 +29,7 @@ UIActiveTaskFlipAwardItem._GetComponent = function(self)
   self._anim = self:GetUIComponent("Animation", "rect")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipAwardItem.SetData = function(self, data, gridSize)
-  -- function num : 0_5
+function UIActiveTaskFlipAwardItem:SetData(data, gridSize)
   self._id = data.id
   self._index = data.index
   self._isGet = data.isGet
@@ -61,107 +38,55 @@ UIActiveTaskFlipAwardItem.SetData = function(self, data, gridSize)
   self:InitComponent()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipAwardItem.InitComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_turn_card_item)[self._id]
-  ;
-  (self._icon):LoadImage(cfg.ItemEntireIcon)
+function UIActiveTaskFlipAwardItem:InitComponent()
+  local cfg = Cfg.cfg_component_turn_card_item[self._id]
+  self._icon:LoadImage(cfg.ItemEntireIcon)
   self:SetGetState(self._isGet)
-  local height = (self._gridSize).y
-  local width = (self._gridSize).x
+  local height = self._gridSize.y
+  local width = self._gridSize.x
   if cfg.RewardLevel == 1 then
-    height = (self._gridSize).y * 2
-    width = (self._gridSize).x * 2
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._isGetImg).sprite = (self._atlas):GetSprite("N32_hywf_mask01")
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._imgRect).localScale = Vector3(1, 1, 1)
-  else
-    if cfg.RewardLevel == 2 then
-      width = (self._gridSize).x * 2
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._isGetImg).sprite = (self._atlas):GetSprite("N32_hywf_mask03")
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._imgRect).localScale = Vector3(0.7, 0.7, 0.7)
-    else
-      -- DECOMPILER ERROR at PC66: Confused about usage of register: R4 in 'UnsetPending'
-
-      if cfg.RewardLevel == 3 then
-        (self._isGetImg).sprite = (self._atlas):GetSprite("N32_hywf_mask04")
-        -- DECOMPILER ERROR at PC73: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._imgRect).localScale = Vector3(0.7, 0.7, 0.7)
-      end
-    end
+    height = self._gridSize.y * 2
+    width = self._gridSize.x * 2
+    self._isGetImg.sprite = self._atlas:GetSprite("N32_hywf_mask01")
+    self._imgRect.localScale = Vector3(1, 1, 1)
+  elseif cfg.RewardLevel == 2 then
+    width = self._gridSize.x * 2
+    self._isGetImg.sprite = self._atlas:GetSprite("N32_hywf_mask03")
+    self._imgRect.localScale = Vector3(0.7, 0.7, 0.7)
+  elseif cfg.RewardLevel == 3 then
+    self._isGetImg.sprite = self._atlas:GetSprite("N32_hywf_mask04")
+    self._imgRect.localScale = Vector3(0.7, 0.7, 0.7)
   end
-  -- DECOMPILER ERROR at PC79: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMax = Vector2(0, 1)
-  -- DECOMPILER ERROR at PC85: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMin = Vector2(0, 1)
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = Vector2(width, height)
-  local row = (math.floor)(self._index / 10)
+  self._rect.anchorMax = Vector2(0, 1)
+  self._rect.anchorMin = Vector2(0, 1)
+  self._rect.sizeDelta = Vector2(width, height)
+  local row = math.floor(self._index / 10)
   local arrange = -(self._index % 10)
-  -- DECOMPILER ERROR at PC109: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = Vector2(row * (self._gridSize).x, arrange * (self._gridSize).y)
+  self._rect.anchoredPosition = Vector2(row * self._gridSize.x, arrange * self._gridSize.y)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipAwardItem.OnFlipMask = function(self, index)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._maskList)[index] ~= nil then
-    (self._maskList)[index] = true
+function UIActiveTaskFlipAwardItem:OnFlipMask(index)
+  if self._maskList[index] ~= nil then
+    self._maskList[index] = true
   else
-    return 
+    return
   end
   local isAllFliped = true
-  for _,v in pairs(self._maskList) do
-    if isAllFliped then
-      isAllFliped = v
-    end
+  for _, v in pairs(self._maskList) do
+    isAllFliped = isAllFliped and v
   end
   self._isGet = isAllFliped
   self:SetGetState(isAllFliped, true)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipAwardItem.SetGetState = function(self, isGet, anim)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._isGetObj):SetActive(isGet)
+function UIActiveTaskFlipAwardItem:SetGetState(isGet, anim)
+  self._isGetObj:SetActive(isGet)
   if anim and isGet then
     self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
-    self:Lock("UIActiveTaskFlipAwardItem_SetGetState")
-    ;
-    (self._anim):Play("uieff_UIActiveTaskFilpAwardItem_getting")
-    YIELD(TT, 420)
-    self:UnLock("UIActiveTaskFlipAwardItem_SetGetState")
-  end
-, self)
+      self:Lock("UIActiveTaskFlipAwardItem_SetGetState")
+      self._anim:Play("uieff_UIActiveTaskFilpAwardItem_getting")
+      YIELD(TT, 420)
+      self:UnLock("UIActiveTaskFlipAwardItem_SetGetState")
+    end, self)
   end
 end
-
-

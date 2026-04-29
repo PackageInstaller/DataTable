@@ -1,65 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_camp_center/collect_card_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_lobby_center_camp_data")
 _class("CollectCardEnter", MainLobbyCenterCampData)
 CollectCardEnter = CollectCardEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CollectCardEnter.LoadData = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  if (UICollectCardContent.CheckLocalDB_Enter_WebView)() then
-    return 
+function CollectCardEnter:LoadData(TT)
+  if UICollectCardContent.CheckLocalDB_Enter_WebView() then
+    return
   end
   if self:CheckComIsOpen() then
-    return 
+    return
   end
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_COLLECT_CARD, ECampaignCollectCardComponentID.COLLECT_CARD, ECampaignCollectCardComponentID.QUEST)
-  local localProcess = (self._campaign):GetLocalProcess()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_COLLECT_CARD, ECampaignCollectCardComponentID.COLLECT_CARD, ECampaignCollectCardComponentID.QUEST)
+  local localProcess = self._campaign:GetLocalProcess()
   self._cardCom = localProcess:GetComponent(ECampaignCollectCardComponentID.COLLECT_CARD)
   self._cardComInfo = localProcess:GetComponentInfo(ECampaignCollectCardComponentID.COLLECT_CARD)
   if self._cardCom then
-    self._cardCfgID = (self._cardCom):GetComponentCfgId()
+    self._cardCfgID = self._cardCom:GetComponentCfgId()
   end
   self._questCom = localProcess:GetComponent(ECampaignCollectCardComponentID.QUEST)
   self._questComInfo = localProcess:GetComponentInfo(ECampaignCollectCardComponentID.QUEST)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CollectCardEnter.CheckComIsOpen = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local btnKey = (self._cfg).BtnKey
-  local cfg = (Cfg.cfg_main_side_enter_btn)[btnKey]
+function CollectCardEnter:CheckComIsOpen()
+  local btnKey = self._cfg.BtnKey
+  local cfg = Cfg.cfg_main_side_enter_btn[btnKey]
   local campType = cfg.CampaignType
   local campID = cfg.CampaignId
-  local campModule = ((GameGlobal.GetModule)(CampaignModule))
-  local sampleInfo = nil
+  local campModule = GameGlobal.GetModule(CampaignModule)
+  local sampleInfo
   if campID then
     sampleInfo = campModule:GetReviewCampaignSampleByCampaignId(campID)
   else
     sampleInfo = campModule:GetSampleByType(campType)
   end
   local questComOpen = false
-  questComOpen = not self._questCom or not sampleInfo or sampleInfo.m_is_component_open >> ECampaignCollectCardComponentID.QUEST & 1 == 1
+  if self._questCom and sampleInfo then
+    questComOpen = sampleInfo.m_is_component_open >> ECampaignCollectCardComponentID.QUEST & 1 == 1
+  end
   if questComOpen then
     return true
   end
-  do return false end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CollectCardEnter.CheckRed = function(self)
-  -- function num : 0_2
-  local baseRed = ((self.super).CheckRed)(self)
+function CollectCardEnter:CheckRed()
+  local baseRed = self.super.CheckRed(self)
   local redPlatform = self:CheckPlatformRed()
   if baseRed == 1 or redPlatform == 1 then
     return 1
@@ -67,11 +54,8 @@ CollectCardEnter.CheckRed = function(self)
   return 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CollectCardEnter.CheckPlatformRed = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (UICollectCardContent.CheckLocalDB_Enter_WebView)() then
+function CollectCardEnter:CheckPlatformRed()
+  if UICollectCardContent.CheckLocalDB_Enter_WebView() then
     return 0
   end
   if self:CheckComIsOpen() then
@@ -80,21 +64,19 @@ CollectCardEnter.CheckPlatformRed = function(self)
   if not self._cardCom then
     return 0
   end
-  local cards = (self._cardComInfo).card
-  local cfgs = (Cfg.cfg_component_collect_card_reward)({ComponentID = self._cardCfgID, RewardType = 2})
+  local cards = self._cardComInfo.card
+  local cfgs = Cfg.cfg_component_collect_card_reward({
+    ComponentID = self._cardCfgID,
+    RewardType = 2
+  })
   local cfg = cfgs[1]
   local cardList = cfg.CardList
   local isAllCollected = true
-  for key,value in pairs(cardList) do
+  for key, value in pairs(cardList) do
     if cards[value] then
-      do
-        isAllCollected = false
-        do break end
-        -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    else
+      isAllCollected = false
+      break
     end
   end
   if isAllCollected then
@@ -102,5 +84,3 @@ CollectCardEnter.CheckPlatformRed = function(self)
   end
   return 0
 end
-
-

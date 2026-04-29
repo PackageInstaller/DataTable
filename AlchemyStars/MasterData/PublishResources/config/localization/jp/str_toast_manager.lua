@@ -1,8 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/str_toast_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_toast_manager_module_not_open = "機能未解放", str_toast_manager_module_now_not_open = "現在未解放", str_toast_manager_not_open = "未解放", str_toast_manager_now_not_open = "現在未解放", str_toast_manager_module_not_dispark = "未解放", str_toast_manager_test_time_module_now_not_open = "テスト段階のため、この機能は解放されません", str_toast_manager_module_is_not_open = "未解放", str_toast_manager_passage_not_open = "通路未解放", str_toast_manager_space_not_open = "空間未解放", str_toast_manager_test_time_module_not_open = "テストバージョンではこの機能は解放されていません", str_toast_manager_not_finish_plot_cant_review = "クリアされていないストーリーは再生できません", str_toast_manager_main_room_cant_down_lv = "ブリッジのレベルは下げられません", str_toast_manager_star_power_is_not_enough = "光力が不足しています。光力貯蔵室を解放またはレベルアップしてください", str_toast_manager_aircraft_passage = "通路", str_toast_manager_evil_spirits_in_purification = "暗鬼浄化中", str_toast_manager_evil_spirits_in_purification_complete = "暗鬼浄化完了", str_toast_manager_unlock_new_files = "新ファイル解放", str_toast_manager_there_is_no_open_prize_pool = "解放されている召集がありません", str_toast_manager_no_recharge_interface = "チャージ画面がありません", str_toast_manager_the_input_user_id_is_null = "【ログイン】アカウントが入力されていません。端末IDでログインします", str_toast_manager_please_check_the_user_files = "下記の<color=#ffbb00>ユーザー利用規約とプライバシーポリシー</color>に同意するをチェックすると、ゲームをスタートできます。", str_toast_manager_no_enemy_info = "敵の情報がありません", str_toast_manager_res_controller_open_unusual = "資源ステージ開始状態エラー：", str_toast_manager_time_limited_TAB_closed = "期間限定ページは終了しました", str_toast_manager_function_not_open_yet = "未解放", str_toast_manager_function_not_open_yet_en = "THIS FUNCTION IS NOT OPEN YET"}
+local config = {
+  str_toast_manager_module_not_open = "機能未解放",
+  str_toast_manager_module_now_not_open = "現在未解放",
+  str_toast_manager_not_open = "未解放",
+  str_toast_manager_now_not_open = "現在未解放",
+  str_toast_manager_module_not_dispark = "未解放",
+  str_toast_manager_test_time_module_now_not_open = "テスト段階のため、この機能は解放されません",
+  str_toast_manager_module_is_not_open = "未解放",
+  str_toast_manager_passage_not_open = "通路未解放",
+  str_toast_manager_space_not_open = "空間未解放",
+  str_toast_manager_test_time_module_not_open = "テストバージョンではこの機能は解放されていません",
+  str_toast_manager_not_finish_plot_cant_review = "クリアされていないストーリーは再生できません",
+  str_toast_manager_main_room_cant_down_lv = "ブリッジのレベルは下げられません",
+  str_toast_manager_star_power_is_not_enough = "光力が不足しています。光力貯蔵室を解放またはレベルアップしてください",
+  str_toast_manager_aircraft_passage = "通路",
+  str_toast_manager_evil_spirits_in_purification = "暗鬼浄化中",
+  str_toast_manager_evil_spirits_in_purification_complete = "暗鬼浄化完了",
+  str_toast_manager_unlock_new_files = "新ファイル解放",
+  str_toast_manager_there_is_no_open_prize_pool = "解放されている召集がありません",
+  str_toast_manager_no_recharge_interface = "チャージ画面がありません",
+  str_toast_manager_the_input_user_id_is_null = "【ログイン】アカウントが入力されていません。端末IDでログインします",
+  str_toast_manager_please_check_the_user_files = "下記の<color=#ffbb00>ユーザー利用規約とプライバシーポリシー</color>に同意するをチェックすると、ゲームをスタートできます。",
+  str_toast_manager_no_enemy_info = "敵の情報がありません",
+  str_toast_manager_res_controller_open_unusual = "資源ステージ開始状態エラー：",
+  str_toast_manager_time_limited_TAB_closed = "期間限定ページは終了しました",
+  str_toast_manager_function_not_open_yet = "未解放",
+  str_toast_manager_function_not_open_yet_en = "THIS FUNCTION IS NOT OPEN YET"
+}
 return config
-

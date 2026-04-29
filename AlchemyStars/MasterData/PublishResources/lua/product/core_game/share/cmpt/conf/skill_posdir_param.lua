@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/skill_posdir_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPosDirParam", Object)
 SkillPosDirParam = SkillPosDirParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPosDirParam.Constructor = function(self, pos, dir)
-  -- function num : 0_0
+function SkillPosDirParam:Constructor(pos, dir)
   if pos ~= nil and pos.x ~= nil and pos.y ~= nil then
     self._pos = pos
   end
@@ -17,26 +10,18 @@ SkillPosDirParam.Constructor = function(self, pos, dir)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPosDirParam.GetPos = function(self)
-  -- function num : 0_1
+function SkillPosDirParam:GetPos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPosDirParam.GetDir = function(self)
-  -- function num : 0_2
+function SkillPosDirParam:GetDir()
   return self._dir
 end
 
 _class("SkillPhaseData", Object)
 SkillPhaseData = SkillPhaseData
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseData.Constructor = function(self, posdirParam, delaytype, delayphase, delayms, skillPhaseParam)
-  -- function num : 0_3
+function SkillPhaseData:Constructor(posdirParam, delaytype, delayphase, delayms, skillPhaseParam)
   self._posdirParam = posdirParam
   self._skillPhaseParam = skillPhaseParam
   self._delayType = delaytype
@@ -44,49 +29,30 @@ SkillPhaseData.Constructor = function(self, posdirParam, delaytype, delayphase, 
   self._delayFromPhase = delayphase
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseData.GetPhaseParam = function(self)
-  -- function num : 0_4
+function SkillPhaseData:GetPhaseParam()
   return self._skillPhaseParam
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseData.GetPosDirParam = function(self)
-  -- function num : 0_5
+function SkillPhaseData:GetPosDirParam()
   return self._posdirParam
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseData.GetDelayType = function(self)
-  -- function num : 0_6
+function SkillPhaseData:GetDelayType()
   return self._delayType
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseData.GetDelayMS = function(self)
-  -- function num : 0_7
+function SkillPhaseData:GetDelayMS()
   return self._delayMS
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseData.GetDelayFromPhase = function(self)
-  -- function num : 0_8
+function SkillPhaseData:GetDelayFromPhase()
   return self._delayFromPhase
 end
 
 _class("SkillPhaseTaskRunData", Object)
 SkillPhaseTaskRunData = SkillPhaseTaskRunData
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseTaskRunData.Constructor = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self.StartTick = (GameGlobal:GetInstance()):GetCurrentTime()
+function SkillPhaseTaskRunData:Constructor()
+  self.StartTick = GameGlobal:GetInstance():GetCurrentTime()
   self.EndTick = 0
 end
-
-

@@ -1,25 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/collection/ui_n28_avg_badge_progress_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGBadgeProgressItem", UICustomWidget)
 UIN28AVGBadgeProgressItem = UIN28AVGBadgeProgressItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGBadgeProgressItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN28AVGData()
+function UIN28AVGBadgeProgressItem:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN28AVGData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGBadgeProgressItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.rt = (self:GetGameObject()):GetComponent(typeof(UnityEngine.RectTransform))
-  ;
-  (UICommonHelper:GetInstance()):RectTransformAnchor2Left(self.rt)
+function UIN28AVGBadgeProgressItem:OnShow()
+  self.rt = self:GetGameObject():GetComponent(typeof(UnityEngine.RectTransform))
+  UICommonHelper:GetInstance():RectTransformAnchor2Left(self.rt)
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
   self.btnImage = self:GetUIComponent("Image", "btn")
@@ -28,78 +17,43 @@ UIN28AVGBadgeProgressItem.OnShow = function(self)
   self.canGet = self:GetGameObject("canGet")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGBadgeProgressItem.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIcon):DestoryLastImage()
+function UIN28AVGBadgeProgressItem:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGBadgeProgressItem.Flush = function(self, id, callback)
-  -- function num : 0_3
+function UIN28AVGBadgeProgressItem:Flush(id, callback)
   self.callback = callback
-  self.badgeStage = (self.data):GetBadgeStageById(id)
-  ;
-  (self.imgIcon):LoadImage((self.badgeStage):AwardIcon())
-  ;
-  (self.txtCount):SetText((self.badgeStage):AwardCount())
+  self.badgeStage = self.data:GetBadgeStageById(id)
+  self.imgIcon:LoadImage(self.badgeStage:AwardIcon())
+  self.txtCount:SetText(self.badgeStage:AwardCount())
   self:FlushState()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGBadgeProgressItem.FlushPos = function(self, pos)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.rt).anchoredPosition = pos
+function UIN28AVGBadgeProgressItem:FlushPos(pos)
+  self.rt.anchoredPosition = pos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGBadgeProgressItem.FlushState = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local state = (self.badgeStage):State()
+function UIN28AVGBadgeProgressItem:FlushState()
+  local state = self.badgeStage:State()
   if state then
     if state == N28AVGAwardState.CanGet then
-      (self.got):SetActive(false)
-      ;
-      (self.canGet):SetActive(true)
-      -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.btnImage).sprite = (self.atlas):GetSprite("N28_avg_sc_di04")
+      self.got:SetActive(false)
+      self.canGet:SetActive(true)
+      self.btnImage.sprite = self.atlas:GetSprite("N28_avg_sc_di04")
     else
-      ;
-      (self.got):SetActive(true)
-      ;
-      (self.canGet):SetActive(false)
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.btnImage).sprite = (self.atlas):GetSprite("N28_avg_sc_di04")
+      self.got:SetActive(true)
+      self.canGet:SetActive(false)
+      self.btnImage.sprite = self.atlas:GetSprite("N28_avg_sc_di04")
     end
   else
-    ;
-    (self.got):SetActive(false)
-    ;
-    (self.canGet):SetActive(false)
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.btnImage).sprite = (self.atlas):GetSprite("N28_avg_sc_di05")
+    self.got:SetActive(false)
+    self.canGet:SetActive(false)
+    self.btnImage.sprite = self.atlas:GetSprite("N28_avg_sc_di05")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGBadgeProgressItem.BtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIN28AVGBadgeProgressItem:BtnOnClick(go)
   if self.callback then
     self:callback()
   end
 end
-
-

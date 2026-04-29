@@ -1,8 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/shared_cmpt_register.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-SharedComponentsRegister = ComponentsLookup:New({"SharedStartIndex", "EntityType", "Element", "MonsterID", "PetPstID", "Pet", "TrapID", "Boss", "BodyArea", "BlockFlag", "MatchPet", "AttackArea", "SuperEntity", "Alignment", "GameTurn", "Summoner", "DeadMark", "PetDeadMark", "TeamDeadMark", "ActiveSkillPickUp", "Team", "GridLocation", "SkillInfo", "AIRecorder", "DropAsset", "AppearTriggerTrap", "Ride", "ChessPet", "OutsideRegion", "TrapExtendSkillScope", "OffBoardMonster", "Mirage", "TotalSharedCount"})
-SharedUniqueComponentsRegister = ComponentsLookup:New({"SharedUniqueStartIndex", "Player", "BattleEnterData", "TotalSharedUniqueComponents"})
-
+SharedComponentsRegister = ComponentsLookup:New({
+  "SharedStartIndex",
+  "EntityType",
+  "Element",
+  "MonsterID",
+  "PetPstID",
+  "Pet",
+  "TrapID",
+  "Boss",
+  "BodyArea",
+  "BlockFlag",
+  "MatchPet",
+  "AttackArea",
+  "SuperEntity",
+  "Alignment",
+  "GameTurn",
+  "Summoner",
+  "DeadMark",
+  "PetDeadMark",
+  "TeamDeadMark",
+  "ActiveSkillPickUp",
+  "Team",
+  "GridLocation",
+  "SkillInfo",
+  "AIRecorder",
+  "DropAsset",
+  "AppearTriggerTrap",
+  "Ride",
+  "ChessPet",
+  "OutsideRegion",
+  "TrapExtendSkillScope",
+  "OffBoardMonster",
+  "Mirage",
+  "TotalSharedCount"
+})
+SharedUniqueComponentsRegister = ComponentsLookup:New({
+  "SharedUniqueStartIndex",
+  "Player",
+  "BattleEnterData",
+  "TotalSharedUniqueComponents"
+})

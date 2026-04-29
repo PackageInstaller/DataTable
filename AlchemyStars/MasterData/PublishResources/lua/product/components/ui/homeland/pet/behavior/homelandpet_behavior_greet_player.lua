@@ -1,58 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/homelandpet_behavior_greet_player.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_behavior_base")
 _class("HomelandPetBehaviorGreetPlayer", HomelandPetBehaviorBase)
 HomelandPetBehaviorGreetPlayer = HomelandPetBehaviorGreetPlayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetBehaviorGreetPlayer.Constructor = function(self, behaviorType, pet)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandPetBehaviorGreetPlayer:Constructor(behaviorType, pet)
   self._animationComponent = self:GetComponent(HomelandPetComponentType.Animation)
   self._bubbleComponent = self:GetComponent(HomelandPetComponentType.Bubble)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorGreetPlayer.Enter = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((HomelandPetBehaviorGreetPlayer.super).Enter)(self)
-  if (self._pet):GetMotionType() == HomelandPetMotionType.Swim then
-    (self._animationComponent):Play(HomelandPetAnimName.Float)
+function HomelandPetBehaviorGreetPlayer:Enter()
+  HomelandPetBehaviorGreetPlayer.super.Enter(self)
+  if self._pet:GetMotionType() == HomelandPetMotionType.Swim then
+    self._animationComponent:Play(HomelandPetAnimName.Float)
   else
-    ;
-    (self._animationComponent):Play(HomelandPetAnimName.Greet)
+    self._animationComponent:Play(HomelandPetAnimName.Greet)
   end
-  ;
-  (self._bubbleComponent):Show()
+  self._bubbleComponent:Show()
   self._rotateTime = 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorGreetPlayer.Update = function(self, dms)
-  -- function num : 0_2 , upvalues : _ENV
-  ((HomelandPetBehaviorGreetPlayer.super).Update)(self, dms)
+function HomelandPetBehaviorGreetPlayer:Update(dms)
+  HomelandPetBehaviorGreetPlayer.super.Update(self, dms)
   self._rotateTime = self._rotateTime + dms
-  if (self._cfgBehaviorLib).RotateTime * 1000 < self._rotateTime then
-    return 
+  if self._rotateTime > self._cfgBehaviorLib.RotateTime * 1000 then
+    return
   end
-  local target = (((self._homelandClient):CharacterManager()):MainCharacterController()):Position()
-  local from = (self._pet):GetPosition()
+  local target = self._homelandClient:CharacterManager():MainCharacterController():Position()
+  local from = self._pet:GetPosition()
   local dir = target - from
   dir.y = 0
-  local rot = (Quaternion.LookRotation)(dir, Vector3.up)
-  ;
-  (self._pet):SetRotation(rot)
+  local rot = Quaternion.LookRotation(dir, Vector3.up)
+  self._pet:SetRotation(rot)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorGreetPlayer.HideBubble = function(self)
-  -- function num : 0_3
-  (self._bubbleComponent):Hide()
+function HomelandPetBehaviorGreetPlayer:HideBubble()
+  self._bubbleComponent:Hide()
 end
-
-

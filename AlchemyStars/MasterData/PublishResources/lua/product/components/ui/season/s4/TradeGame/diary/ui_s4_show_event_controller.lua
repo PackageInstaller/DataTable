@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/diary/ui_s4_show_event_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4ShowEventController", UIController)
 UIS4ShowEventController = UIS4ShowEventController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4ShowEventController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIS4ShowEventController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ShowEventController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIS4ShowEventController:OnShow(uiParams)
   self.id = uiParams[1]
   self.isHarborEvent = uiParams[2]
   self.turnNUmber = uiParams[3]
@@ -23,19 +13,14 @@ UIS4ShowEventController.OnShow = function(self, uiParams)
   self:InitData()
   self:PlayShowEventAnimIn()
   if self.turnNUmber then
-    (self._turnObj):SetActive(true)
-    ;
-    (self._turnNumberTxt):SetText(self.turnNUmber)
+    self._turnObj:SetActive(true)
+    self._turnNumberTxt:SetText(self.turnNUmber)
   else
-    ;
-    (self._turnObj):SetActive(false)
+    self._turnObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ShowEventController.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS4ShowEventController:InitWidget()
   self.title = self:GetUIComponent("UILocalizationText", "Title")
   self.eventName = self:GetUIComponent("UILocalizationText", "EventName")
   self.eventIntro = self:GetUIComponent("UILocalizationText", "EventIntro")
@@ -46,13 +31,10 @@ UIS4ShowEventController.InitWidget = function(self)
   self._anim = self:GetUIComponent("Animation", "_anim")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ShowEventController.InitData = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  local globalCfg = (Cfg.cfg_component_business_global)({})
-  local eventCfg = ((Cfg.cfg_component_business_event)({}))
-  local EventName, EventIcon, EventIntro, title, key, LoadCfg = nil, nil, nil, nil, nil, nil
+function UIS4ShowEventController:InitData(go)
+  local globalCfg = Cfg.cfg_component_business_global({})
+  local eventCfg = Cfg.cfg_component_business_event({})
+  local EventName, EventIcon, EventIntro, title, key, LoadCfg
   if self.isHarborEvent then
     key = self.id
     title = "str_season_s4_trade_harbor_event"
@@ -62,50 +44,32 @@ UIS4ShowEventController.InitData = function(self, go)
     title = "str_season_s4_trade_sea_event"
     LoadCfg = eventCfg
   end
-  EventName = (LoadCfg[key]).EventName
-  EventIcon = (LoadCfg[key]).EventIcon
-  EventIntro = (LoadCfg[key]).EventIntro
-  ;
-  (self.title):SetText((StringTable.Get)(title))
-  ;
-  (self.eventName):SetText((StringTable.Get)(EventName))
-  ;
-  (self.eventIntro):SetText((StringTable.Get)(EventIntro))
-  ;
-  (self.icon):LoadImage(EventIcon)
+  EventName = LoadCfg[key].EventName
+  EventIcon = LoadCfg[key].EventIcon
+  EventIntro = LoadCfg[key].EventIntro
+  self.title:SetText(StringTable.Get(title))
+  self.eventName:SetText(StringTable.Get(EventName))
+  self.eventIntro:SetText(StringTable.Get(EventIntro))
+  self.icon:LoadImage(EventIcon)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ShowEventController.EnsureBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIS4ShowEventController:EnsureBtnOnClick(go)
   local LockName = "UIS4ShowEventController_AnimOut"
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, LockName, _ENV
     self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_UIS4ShowEventController_out")
+    self._anim:Play("uianim_UIS4ShowEventController_out")
     YIELD(TT, 300)
     self:UnLock(LockName)
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4ShowEventController.PlayShowEventAnimIn = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIS4ShowEventController:PlayShowEventAnimIn()
   local LockName = "UIS4ShowEventController_AnimIN"
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, LockName, _ENV
     self:Lock(LockName)
-    ;
-    (self._anim):Play("uianim_UIS4ShowEventController_in")
+    self._anim:Play("uianim_UIS4ShowEventController_in")
     YIELD(TT, 200)
     self:UnLock(LockName)
-  end
-)
+  end)
 end
-
-

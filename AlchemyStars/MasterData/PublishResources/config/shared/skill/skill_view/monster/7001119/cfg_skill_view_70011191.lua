@@ -1,17 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/7001119/cfg_skill_view_70011191.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 88, 1, 0, 0, 
-{casterAnimName = "Skill01", castEffectID = 3411, monsterEndHeight = 0, monsterFlyTotalTime = 500, 
-monsterFlyToPos = {5, 8}
-, monsterMinScale = 0.3, bowlderStartDelay = 0, 
-bowlderStartPos = {0, 0.45, 3}
-, bowlderJumpHeight = 1, bowlderTrajectoryID = 3412, bowlderEndHeight = 0.5, bowlderFlyTotalTime = 500, stealthDuration = 550, hitAnim = "Hit", hitEffectID = 3410}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    88,
+    1,
+    0,
+    0,
+    {
+      casterAnimName = "Skill01",
+      castEffectID = 3411,
+      monsterEndHeight = 0,
+      monsterFlyTotalTime = 500,
+      monsterFlyToPos = {5, 8},
+      monsterMinScale = 0.3,
+      bowlderStartDelay = 0,
+      bowlderStartPos = {
+        0,
+        0.45,
+        3
+      },
+      bowlderJumpHeight = 1,
+      bowlderTrajectoryID = 3412,
+      bowlderEndHeight = 0.5,
+      bowlderFlyTotalTime = 500,
+      stealthDuration = 550,
+      hitAnim = "Hit",
+      hitEffectID = 3410
+    }
+  }
 }
 return config, "ID", key
-

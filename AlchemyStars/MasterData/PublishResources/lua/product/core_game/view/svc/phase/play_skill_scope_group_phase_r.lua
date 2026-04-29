@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_scope_group_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillPhaseScopeGroup", PlaySkillPhaseBase)
 PlaySkillPhaseScopeGroup = PlaySkillPhaseScopeGroup
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillPhaseScopeGroup.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillPhaseScopeGroup:PlayFlight(TT, casterEntity, phaseParam)
   local gridEffectID = phaseParam:GetGridEffectID()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
-  local effService = (self._world):GetService("Effect")
+  local effService = self._world:GetService("Effect")
   self._damageResultsByPos = {}
   local resultsArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   self:_ParseResultsArray(resultsArray)
@@ -22,54 +15,43 @@ PlaySkillPhaseScopeGroup.PlayFlight = function(self, TT, casterEntity, phasePara
   local groupDelay = phaseParam:GetGroupAtkDelay()
   local hitAnimationName = phaseParam:GetHitAnimation()
   local hitEffectID = phaseParam:GetHitEffectID()
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  for _,posList in ipairs(gridDataArray) do
+  local boardServiceRender = self._world:GetService("BoardRender")
+  for _, posList in ipairs(gridDataArray) do
     local centerPos = boardServiceRender:GetPosListCenter(posList)
     effService:CreateWorldPositionEffect(gridEffectID, centerPos, true)
-    for _,pos in ipairs(posList) do
+    for _, pos in ipairs(posList) do
       local damageResult = self:_GetDamageResult(pos)
       if damageResult then
         self:_ShowDamage(damageResult, skillEffectResultContainer, hitAnimationName, hitEffectID, casterEntity, pos, phaseParam:HitTurnToTarget(), skillID)
       end
     end
-    if groupDelay > 0 then
+    if 0 < groupDelay then
       YIELD(TT, groupDelay)
     end
   end
   local finishDelayTime = phaseParam:GetFinishDelayTime()
-  if finishDelayTime > 0 then
+  if 0 < finishDelayTime then
     YIELD(TT, phaseParam:GetFinishDelayTime())
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeGroup._ShowDamage = function(self, damageResult, skillEffectResultContainer, hitAnimName, hitEffectID, casterEntity, gridPos, hitTurnToTarget, skillID)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillPhaseScopeGroup:_ShowDamage(damageResult, skillEffectResultContainer, hitAnimName, hitEffectID, casterEntity, gridPos, hitTurnToTarget, skillID)
   local targetEntityID = damageResult:GetTargetID()
-  local targetEntity = (self._world):GetEntityByID(targetEntityID)
+  local targetEntity = self._world:GetEntityByID(targetEntityID)
   if targetEntity ~= nil then
     local skillService = self:SkillService()
-    do
-      local targetDamage = damageResult:GetDamageInfo(1)
-      local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(hitAnimName)):SetHandleBeHitParam_HitEffectID(hitEffectID)):SetHandleBeHitParam_DamageInfo(targetDamage)):SetHandleBeHitParam_DamagePos(gridPos)):SetHandleBeHitParam_HitTurnTarget(hitTurnToTarget)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(skillEffectResultContainer:IsFinalAttack())):SetHandleBeHitParam_SkillID(skillID)
-      ;
-      ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : skillService, beHitParam
-    skillService:HandleBeHit(TT, beHitParam)
-  end
-)
-    end
+    local targetDamage = damageResult:GetDamageInfo(1)
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(hitAnimName):SetHandleBeHitParam_HitEffectID(hitEffectID):SetHandleBeHitParam_DamageInfo(targetDamage):SetHandleBeHitParam_DamagePos(gridPos):SetHandleBeHitParam_HitTurnTarget(hitTurnToTarget):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(skillEffectResultContainer:IsFinalAttack()):SetHandleBeHitParam_SkillID(skillID)
+    GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      skillService:HandleBeHit(TT, beHitParam)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeGroup._GetDamageResult = function(self, pos)
-  -- function num : 0_2 , upvalues : _ENV
-  for p,v in pairs(self._damageResultsByPos) do
+function PlaySkillPhaseScopeGroup:_GetDamageResult(pos)
+  for p, v in pairs(self._damageResultsByPos) do
     if p == pos and v.Index <= #v.DamageResults then
-      local damageResult = (v.DamageResults)[v.Index]
+      local damageResult = v.DamageResults[v.Index]
       v.Index = v.Index + 1
       return damageResult
     end
@@ -77,28 +59,21 @@ PlaySkillPhaseScopeGroup._GetDamageResult = function(self, pos)
   return nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeGroup._ParseResultsArray = function(self, resultsArray)
-  -- function num : 0_3 , upvalues : _ENV
+function PlaySkillPhaseScopeGroup:_ParseResultsArray(resultsArray)
   if not resultsArray then
-    (Log.fatal)("11111111")
-    return 
+    Log.fatal("11111111")
+    return
   end
-  for _,result in ipairs(resultsArray) do
+  for _, result in ipairs(resultsArray) do
     local pos = result:GetGridPos()
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R8 in 'UnsetPending'
-
     if pos then
-      if not (self._damageResultsByPos)[pos] then
-        (self._damageResultsByPos)[pos] = {Index = 1, 
-DamageResults = {}
-}
+      if not self._damageResultsByPos[pos] then
+        self._damageResultsByPos[pos] = {
+          Index = 1,
+          DamageResults = {}
+        }
       end
-      ;
-      (table.insert)(((self._damageResultsByPos)[pos]).DamageResults, result)
+      table.insert(self._damageResultsByPos[pos].DamageResults, result)
     end
   end
 end
-
-

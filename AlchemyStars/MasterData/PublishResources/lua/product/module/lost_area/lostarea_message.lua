@@ -1,54 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/lost_area/lostarea_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local lostareaMessageDef = {CLSID_CEventLostAreaRedDotReq = 36000, CLSID_CEventLostAreaRedDotReqReply = 36001, CLSID_CEventLostAreadifficultyStatusReq = 36002, CLSID_CEventLostAreadifficultyStatusReply = 36003, CLSID_CeventLostAreaUnlockOnedifficultyReq = 36004, CLSID_CEventLostAreaUnlockOnedifficultyReply = 36005, CLSID_CeventLostAreaGetdifficultyMissionReq = 36006, CLSID_CeventLostAreaGetdifficultyMissionReply = 36007, CLSID_CeventLostAreaChooseWeekDifficultyReq = 36008, CLSID_CeventLostAreaChooseWeekDifficultyReply = 36009}
-;
-(table.append)(MessageDef, lostareaMessageDef)
+local lostareaMessageDef = {
+  CLSID_CEventLostAreaRedDotReq = 36000,
+  CLSID_CEventLostAreaRedDotReqReply = 36001,
+  CLSID_CEventLostAreadifficultyStatusReq = 36002,
+  CLSID_CEventLostAreadifficultyStatusReply = 36003,
+  CLSID_CeventLostAreaUnlockOnedifficultyReq = 36004,
+  CLSID_CEventLostAreaUnlockOnedifficultyReply = 36005,
+  CLSID_CeventLostAreaGetdifficultyMissionReq = 36006,
+  CLSID_CeventLostAreaGetdifficultyMissionReply = 36007,
+  CLSID_CeventLostAreaChooseWeekDifficultyReq = 36008,
+  CLSID_CeventLostAreaChooseWeekDifficultyReply = 36009
+}
+table.append(MessageDef, lostareaMessageDef)
 _class("CEventLostAreaRedDotReq", CCallRequestEvent)
 CEventLostAreaRedDotReq = CEventLostAreaRedDotReq
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventLostAreaRedDotReq.Constructor = function(self)
-  -- function num : 0_0
+function CEventLostAreaRedDotReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventLostAreaRedDotReq._proto = {}
 _class("CEventLostAreaRedDotReqReply", CCallReplyEvent)
 CEventLostAreaRedDotReqReply = CEventLostAreaRedDotReqReply
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventLostAreaRedDotReqReply.Constructor = function(self)
-  -- function num : 0_1
+function CEventLostAreaRedDotReqReply:Constructor()
   self.show = false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventLostAreaRedDotReqReply._proto = {
-[1] = {"show", "bool"}
+  [1] = {"show", "bool"}
 }
 _class("CEventLostAreadifficultyStatusReq", CCallRequestEvent)
 CEventLostAreadifficultyStatusReq = CEventLostAreadifficultyStatusReq
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventLostAreadifficultyStatusReq.Constructor = function(self)
-  -- function num : 0_2
+function CEventLostAreadifficultyStatusReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventLostAreadifficultyStatusReq._proto = {}
 _class("CEventLostAreadifficultyStatusReply", CCallReplyEvent)
 CEventLostAreadifficultyStatusReply = CEventLostAreadifficultyStatusReply
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventLostAreadifficultyStatusReply.Constructor = function(self)
-  -- function num : 0_3
+function CEventLostAreadifficultyStatusReply:Constructor()
   self.ret = 0
   self.next_refresh_time = 0
   self.status = {}
@@ -56,110 +47,97 @@ CEventLostAreadifficultyStatusReply.Constructor = function(self)
   self.area_level_group_cfg = {}
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventLostAreadifficultyStatusReply._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"next_refresh_time", "time"}
-, 
-[3] = {"status", "map<int,int>"}
-, 
-[4] = {"area_design_cfg", "map<int,LostAreaDesignConfig>"}
-, 
-[5] = {"area_level_group_cfg", "map<int,LostAreaLevelGroupConfig>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "next_refresh_time",
+    "time"
+  },
+  [3] = {
+    "status",
+    "map<int,int>"
+  },
+  [4] = {
+    "area_design_cfg",
+    "map<int,LostAreaDesignConfig>"
+  },
+  [5] = {
+    "area_level_group_cfg",
+    "map<int,LostAreaLevelGroupConfig>"
+  }
 }
 _class("CeventLostAreaUnlockOnedifficultyReq", CCallRequestEvent)
 CeventLostAreaUnlockOnedifficultyReq = CeventLostAreaUnlockOnedifficultyReq
--- DECOMPILER ERROR at PC105: Confused about usage of register: R1 in 'UnsetPending'
 
-CeventLostAreaUnlockOnedifficultyReq.Constructor = function(self)
-  -- function num : 0_4
+function CeventLostAreaUnlockOnedifficultyReq:Constructor()
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
 CeventLostAreaUnlockOnedifficultyReq._proto = {
-[1] = {"id", "int"}
+  [1] = {"id", "int"}
 }
 _class("CEventLostAreaUnlockOnedifficultyReply", CCallReplyEvent)
 CEventLostAreaUnlockOnedifficultyReply = CEventLostAreaUnlockOnedifficultyReply
--- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventLostAreaUnlockOnedifficultyReply.Constructor = function(self)
-  -- function num : 0_5
+function CEventLostAreaUnlockOnedifficultyReply:Constructor()
   self.ret = 0
   self.status = {}
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventLostAreaUnlockOnedifficultyReply._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"status", "map<int,int>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "status",
+    "map<int,int>"
+  }
 }
 _class("CeventLostAreaGetdifficultyMissionReq", CCallRequestEvent)
 CeventLostAreaGetdifficultyMissionReq = CeventLostAreaGetdifficultyMissionReq
--- DECOMPILER ERROR at PC144: Confused about usage of register: R1 in 'UnsetPending'
 
-CeventLostAreaGetdifficultyMissionReq.Constructor = function(self)
-  -- function num : 0_6
+function CeventLostAreaGetdifficultyMissionReq:Constructor()
   self.ID = 0
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R1 in 'UnsetPending'
-
 CeventLostAreaGetdifficultyMissionReq._proto = {
-[1] = {"ID", "int"}
+  [1] = {"ID", "int"}
 }
 _class("CeventLostAreaGetdifficultyMissionReply", CCallReplyEvent)
 CeventLostAreaGetdifficultyMissionReply = CeventLostAreaGetdifficultyMissionReply
--- DECOMPILER ERROR at PC161: Confused about usage of register: R1 in 'UnsetPending'
 
-CeventLostAreaGetdifficultyMissionReply.Constructor = function(self)
-  -- function num : 0_7
+function CeventLostAreaGetdifficultyMissionReply:Constructor()
   self.ret = 0
   self.difficult_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC174: Confused about usage of register: R1 in 'UnsetPending'
-
 CeventLostAreaGetdifficultyMissionReply._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"difficult_mission_info", "map<int,MissionInfo>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "difficult_mission_info",
+    "map<int,MissionInfo>"
+  }
 }
 _class("CeventLostAreaChooseWeekDifficultyReq", CCallRequestEvent)
 CeventLostAreaChooseWeekDifficultyReq = CeventLostAreaChooseWeekDifficultyReq
--- DECOMPILER ERROR at PC183: Confused about usage of register: R1 in 'UnsetPending'
 
-CeventLostAreaChooseWeekDifficultyReq.Constructor = function(self)
-  -- function num : 0_8
+function CeventLostAreaChooseWeekDifficultyReq:Constructor()
   self.design_id = 0
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R1 in 'UnsetPending'
-
 CeventLostAreaChooseWeekDifficultyReq._proto = {
-[1] = {"design_id", "int"}
+  [1] = {"design_id", "int"}
 }
 _class("CeventLostAreaChooseWeekDifficultyReply", CCallReplyEvent)
 CeventLostAreaChooseWeekDifficultyReply = CeventLostAreaChooseWeekDifficultyReply
--- DECOMPILER ERROR at PC200: Confused about usage of register: R1 in 'UnsetPending'
 
-CeventLostAreaChooseWeekDifficultyReply.Constructor = function(self)
-  -- function num : 0_9
+function CeventLostAreaChooseWeekDifficultyReply:Constructor()
   self.ret = 0
   self.difficult_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC213: Confused about usage of register: R1 in 'UnsetPending'
-
 CeventLostAreaChooseWeekDifficultyReply._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"difficult_mission_info", "map<int,MissionInfo>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "difficult_mission_info",
+    "map<int,MissionInfo>"
+  }
 }
-

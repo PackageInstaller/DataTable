@@ -1,71 +1,168 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_config/auto_test_220120_072320.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 AutoTest_220120_072320 = {
-cases = {
-[1] = {
-[1] = {action = "WaitGameFsm", 
-args = {id = 5}
+  cases = {
+    [1] = {
+      [1] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [2] = {
+        action = "SetTeamPosition",
+        args = {name = "team", pos = 502}
+      },
+      [3] = {
+        action = "SetEntityHP",
+        args = {hp = 999999, name = "team"}
+      },
+      [4] = {
+        action = "AddMonster",
+        args = {
+          dir = 5,
+          disableai = false,
+          id = 4040212,
+          name = "e1",
+          pos = 504
+        }
+      },
+      [5] = {
+        action = "CheckEntityPos",
+        args = {
+          name = "e1",
+          pos = 509,
+          trigger = 88
+        }
+      },
+      [6] = {
+        action = "CheckSkillRange",
+        args = {
+          range = {
+            [1] = 103.0,
+            [2] = 104.0,
+            [3] = 105.0,
+            [4] = 106.0,
+            [5] = 107.0,
+            [6] = 202.0,
+            [7] = 203.0,
+            [8] = 204.0,
+            [9] = 205.0,
+            [10] = 206.0,
+            [11] = 207.0,
+            [12] = 208.0,
+            [13] = 301.0,
+            [14] = 302.0,
+            [15] = 303.0,
+            [16] = 304.0,
+            [17] = 305.0,
+            [18] = 306.0,
+            [19] = 307.0,
+            [20] = 308.0,
+            [21] = 309.0,
+            [22] = 401.0,
+            [23] = 402.0,
+            [24] = 403.0,
+            [25] = 404.0,
+            [26] = 405.0,
+            [27] = 406.0,
+            [28] = 407.0,
+            [29] = 408.0,
+            [30] = 409.0,
+            [31] = 501.0,
+            [32] = 502.0,
+            [33] = 503.0,
+            [34] = 504.0,
+            [35] = 505.0,
+            [36] = 506.0,
+            [37] = 507.0,
+            [38] = 508.0,
+            [39] = 509.0,
+            [40] = 601.0,
+            [41] = 602.0,
+            [42] = 603.0,
+            [43] = 604.0,
+            [44] = 605.0,
+            [45] = 606.0,
+            [46] = 607.0,
+            [47] = 608.0,
+            [48] = 609.0,
+            [49] = 701.0,
+            [50] = 702.0,
+            [51] = 703.0,
+            [52] = 704.0,
+            [53] = 705.0,
+            [54] = 706.0,
+            [55] = 707.0,
+            [56] = 708.0,
+            [57] = 709.0,
+            [58] = 802.0,
+            [59] = 803.0,
+            [60] = 804.0,
+            [61] = 805.0,
+            [62] = 806.0,
+            [63] = 807.0,
+            [64] = 808.0,
+            [65] = 903.0,
+            [66] = 904.0,
+            [67] = 905.0,
+            [68] = 906.0,
+            [69] = 907.0
+          },
+          skillid = 20005612,
+          trigger = 102
+        }
+      },
+      [7] = {
+        action = "FakeInputDoubleClick",
+        args = {}
+      },
+      [8] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [9] = {
+        action = "CheckEntityPos",
+        args = {
+          name = "e1",
+          pos = 501,
+          trigger = 88
+        }
+      },
+      [10] = {
+        action = "FakeInputChain",
+        args = {
+          chainPath = {
+            [1] = 502.0,
+            [2] = 503.0,
+            [3] = 504.0,
+            [4] = 505.0,
+            [5] = 506.0,
+            [6] = 507.0,
+            [7] = 508.0
+          },
+          pieceType = 1
+        }
+      },
+      [11] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      name = "新测试用例"
+    }
+  },
+  name = "闪烁怪闪现",
+  petList = {
+    [1] = {
+      awakening = 0,
+      equiplv = 1,
+      grade = 0,
+      id = 1400071,
+      level = 1,
+      name = "p1"
+    }
+  },
+  remotePet = {},
+  setup = {
+    [1] = {
+      args = {levelID = 1, matchType = 1},
+      setup = "LevelBasic"
+    }
+  }
 }
-, 
-[2] = {action = "SetTeamPosition", 
-args = {name = "team", pos = 502}
-}
-, 
-[3] = {action = "SetEntityHP", 
-args = {hp = 999999, name = "team"}
-}
-, 
-[4] = {action = "AddMonster", 
-args = {dir = 5, disableai = false, id = 4040212, name = "e1", pos = 504}
-}
-, 
-[5] = {action = "CheckEntityPos", 
-args = {name = "e1", pos = 509, trigger = 88}
-}
-, 
-[6] = {action = "CheckSkillRange", 
-args = {
-range = {[1] = 103, [2] = 104, [3] = 105, [4] = 106, [5] = 107, [6] = 202, [7] = 203, [8] = 204, [9] = 205, [10] = 206, [11] = 207, [12] = 208, [13] = 301, [14] = 302, [15] = 303, [16] = 304, [17] = 305, [18] = 306, [19] = 307, [20] = 308, [21] = 309, [22] = 401, [23] = 402, [24] = 403, [25] = 404, [26] = 405, [27] = 406, [28] = 407, [29] = 408, [30] = 409, [31] = 501, [32] = 502, [33] = 503, [34] = 504, [35] = 505, [36] = 506, [37] = 507, [38] = 508, [39] = 509, [40] = 601, [41] = 602, [42] = 603, [43] = 604, [44] = 605, [45] = 606, [46] = 607, [47] = 608, [48] = 609, [49] = 701, [50] = 702, [51] = 703, [52] = 704, [53] = 705, [54] = 706, [55] = 707, [56] = 708, [57] = 709, [58] = 802, [59] = 803, [60] = 804, [61] = 805, [62] = 806, [63] = 807, [64] = 808, [65] = 903, [66] = 904, [67] = 905, [68] = 906, [69] = 907}
-, skillid = 20005612, trigger = 102}
-}
-, 
-[7] = {action = "FakeInputDoubleClick", 
-args = {}
-}
-, 
-[8] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, 
-[9] = {action = "CheckEntityPos", 
-args = {name = "e1", pos = 501, trigger = 88}
-}
-, 
-[10] = {action = "FakeInputChain", 
-args = {
-chainPath = {[1] = 502, [2] = 503, [3] = 504, [4] = 505, [5] = 506, [6] = 507, [7] = 508}
-, pieceType = 1}
-}
-, 
-[11] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, name = "新测试用例"}
-}
-, name = "闪烁怪闪现", 
-petList = {
-[1] = {awakening = 0, equiplv = 1, grade = 0, id = 1400071, level = 1, name = "p1"}
-}
-, 
-remotePet = {}
-, 
-setup = {
-[1] = {
-args = {levelID = 1, matchType = 1}
-, setup = "LevelBasic"}
-}
-}
-

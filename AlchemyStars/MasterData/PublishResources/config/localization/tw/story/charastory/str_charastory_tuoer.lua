@@ -1,8 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/story/charastory/str_charastory_tuoer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {ui_story_31330401_1_dialog_content = "PlayerName，你怎麼氣喘吁吁的？看來你很期待我的料理呢～", ui_story_31330401_2_dialog_content = "不過這也難怪，畢竟這是我親手做的料理，天底下絕對沒人模仿得來。", ui_story_31330401_3_dialog_content = "從驚嚇程度上來說，確實沒人能模仿。", ui_story_31330401_4_dialog_content = "妳再回來我真的很高興，但妳那奇怪的料理研究能不能稍微暫停一下？", ui_story_31330401_5_dialog_content = "我已經收到不少人投訴了。", ui_story_31330401_6_dialog_content = "發生什麼事了？薇絲？薇絲妳怎麼了？", ui_story_31330401_7_dialog_content = "快……快通知PlayerName，馬上……馬上逃離臨空者號……這、這是我最後的心願……", ui_story_31330401_8_dialog_content = "這詭異的氣體是怎麼回事？難道是暗鬼發動的進攻嗎？", ui_story_31330401_9_dialog_content = "不是暗鬼……是、是是朵露小姐……她……她做了新的暗黑料理……快、快逃！", ui_story_31330401_10_dialog_content = "薇絲小姐，妳怎麼跑了呀？快來吃吃看我做的「暗鬼爆炒沙漠蜘蛛」，一定很好吃唷。", ui_story_31330401_11_dialog_content = "在那之後，薇絲就越來越抗拒暗鬼了。", ui_story_31330401_12_dialog_content = "那那、那次只是意外！放心吧，我這次沒有抓暗鬼來入菜。", ui_story_31330401_13_dialog_content = "那妳說說，妳這次做了什麼？", ui_story_31330401_14_dialog_content = "異鄉結合，挑戰不同的風味。", ui_story_31330401_15_dialog_content = "完了……我突然有種不好的預感。", ui_story_31330401_16_dialog_content = "首先，我採用的是啟光聯邦生產的辛香料。", ui_story_31330401_17_dialog_content = "嗯？竟然正常起來了。", ui_story_31330401_18_dialog_content = "其次，我又去龍洲挑選了上好的辣椒。", ui_story_31330401_19_dialog_content = "原來如此，是龍洲的菜餚嗎？突然有點期待了。", ui_story_31330401_20_dialog_content = "接著才是重頭戲！我好不容易才在紅油沙漠抓到的，劇毒沙漠蜥蜴！", ui_story_31330401_21_dialog_content = "啊？", ui_story_31330401_22_dialog_content = "再搭配我原本世界裡的水果，一道辣炒蜥蜴水果拼盤就完成了！", ui_story_31330401_23_dialog_content = "<color=#e8d9bb>濃稠的紅色湯汁，再加上彷彿還沒死透的蜥蜴，主打的就是一個恐怖和尖叫。</color>", ui_story_31330401_24_dialog_content = "朵露小姐……妳就不能做點普通的料理嗎？", ui_story_31330401_25_dialog_content = "怎麼可以普通！那樣的話，我就無法好好傳達對PlayerName的謝意了……", ui_story_31330401_26_dialog_content = "妳當時幫助了我們，這份情誼我還記得。所以我才想……做一道從來沒人做過的料理。", ui_story_31330401_27_dialog_content = "PlayerName，這道料理……你會吃吧？", ui_story_31330401_28_option_content = "當然了", ui_story_31330401_29_dialog_content = "看得出來，朵露小姐真的很努力了。", ui_story_31330401_30_dialog_content = "雖然這道料理看起來有點恐怖，但我還是會吃。", ui_story_31330401_31_option_content = "這個有點……", ui_story_31330401_32_dialog_content = "……是嗎。真是不好意思……我馬上拿去倒掉。", ui_story_31330401_33_dialog_content = "但是，我還是會吃的。", ui_story_31330401_34_dialog_content = "畢竟，這是朵露小姐為我做的料理，絕無僅有。", ui_story_31330401_35_dialog_content = "PlayerName！", ui_story_31330401_36_dialog_content = "（我的同胞們，請保佑我！賜予我能戰勝一切的勇氣吧！）", ui_story_31330401_37_dialog_content = "……", ui_story_31330401_38_dialog_content = "<size=50>唔唔唔——！</size>嗯？味道居然還不錯？", ui_story_31330401_39_dialog_content = "我就說嘛～我可是天下第一的女僕。我做的料理怎麼可能會難吃呢。", ui_story_31330401_40_dialog_content = "（能把好吃的料理做成「暗黑」料理，這或許也算是一種特殊天賦吧。）", ui_story_31330401_41_dialog_content = "好——我要繼續鑽研這個世界的料理了！接下來要做什麼呢？！", ui_story_31330401_42_dialog_content = "家常菜就可以了。"}
+local config = {
+  ui_story_31330401_1_dialog_content = "PlayerName，你怎麼氣喘吁吁的？看來你很期待我的料理呢～",
+  ui_story_31330401_2_dialog_content = "不過這也難怪，畢竟這是我親手做的料理，天底下絕對沒人模仿得來。",
+  ui_story_31330401_3_dialog_content = "從驚嚇程度上來說，確實沒人能模仿。",
+  ui_story_31330401_4_dialog_content = "妳再回來我真的很高興，但妳那奇怪的料理研究能不能稍微暫停一下？",
+  ui_story_31330401_5_dialog_content = "我已經收到不少人投訴了。",
+  ui_story_31330401_6_dialog_content = "發生什麼事了？薇絲？薇絲妳怎麼了？",
+  ui_story_31330401_7_dialog_content = "快……快通知PlayerName，馬上……馬上逃離臨空者號……這、這是我最後的心願……",
+  ui_story_31330401_8_dialog_content = "這詭異的氣體是怎麼回事？難道是暗鬼發動的進攻嗎？",
+  ui_story_31330401_9_dialog_content = "不是暗鬼……是、是是朵露小姐……她……她做了新的暗黑料理……快、快逃！",
+  ui_story_31330401_10_dialog_content = "薇絲小姐，妳怎麼跑了呀？快來吃吃看我做的「暗鬼爆炒沙漠蜘蛛」，一定很好吃唷。",
+  ui_story_31330401_11_dialog_content = "在那之後，薇絲就越來越抗拒暗鬼了。",
+  ui_story_31330401_12_dialog_content = "那那、那次只是意外！放心吧，我這次沒有抓暗鬼來入菜。",
+  ui_story_31330401_13_dialog_content = "那妳說說，妳這次做了什麼？",
+  ui_story_31330401_14_dialog_content = "異鄉結合，挑戰不同的風味。",
+  ui_story_31330401_15_dialog_content = "完了……我突然有種不好的預感。",
+  ui_story_31330401_16_dialog_content = "首先，我採用的是啟光聯邦生產的辛香料。",
+  ui_story_31330401_17_dialog_content = "嗯？竟然正常起來了。",
+  ui_story_31330401_18_dialog_content = "其次，我又去龍洲挑選了上好的辣椒。",
+  ui_story_31330401_19_dialog_content = "原來如此，是龍洲的菜餚嗎？突然有點期待了。",
+  ui_story_31330401_20_dialog_content = "接著才是重頭戲！我好不容易才在紅油沙漠抓到的，劇毒沙漠蜥蜴！",
+  ui_story_31330401_21_dialog_content = "啊？",
+  ui_story_31330401_22_dialog_content = "再搭配我原本世界裡的水果，一道辣炒蜥蜴水果拼盤就完成了！",
+  ui_story_31330401_23_dialog_content = "<color=#e8d9bb>濃稠的紅色湯汁，再加上彷彿還沒死透的蜥蜴，主打的就是一個恐怖和尖叫。</color>",
+  ui_story_31330401_24_dialog_content = "朵露小姐……妳就不能做點普通的料理嗎？",
+  ui_story_31330401_25_dialog_content = "怎麼可以普通！那樣的話，我就無法好好傳達對PlayerName的謝意了……",
+  ui_story_31330401_26_dialog_content = "妳當時幫助了我們，這份情誼我還記得。所以我才想……做一道從來沒人做過的料理。",
+  ui_story_31330401_27_dialog_content = "PlayerName，這道料理……你會吃吧？",
+  ui_story_31330401_28_option_content = "當然了",
+  ui_story_31330401_29_dialog_content = "看得出來，朵露小姐真的很努力了。",
+  ui_story_31330401_30_dialog_content = "雖然這道料理看起來有點恐怖，但我還是會吃。",
+  ui_story_31330401_31_option_content = "這個有點……",
+  ui_story_31330401_32_dialog_content = "……是嗎。真是不好意思……我馬上拿去倒掉。",
+  ui_story_31330401_33_dialog_content = "但是，我還是會吃的。",
+  ui_story_31330401_34_dialog_content = "畢竟，這是朵露小姐為我做的料理，絕無僅有。",
+  ui_story_31330401_35_dialog_content = "PlayerName！",
+  ui_story_31330401_36_dialog_content = "（我的同胞們，請保佑我！賜予我能戰勝一切的勇氣吧！）",
+  ui_story_31330401_37_dialog_content = "……",
+  ui_story_31330401_38_dialog_content = "<size=50>唔唔唔——！</size>嗯？味道居然還不錯？",
+  ui_story_31330401_39_dialog_content = "我就說嘛～我可是天下第一的女僕。我做的料理怎麼可能會難吃呢。",
+  ui_story_31330401_40_dialog_content = "（能把好吃的料理做成「暗黑」料理，這或許也算是一種特殊天賦吧。）",
+  ui_story_31330401_41_dialog_content = "好——我要繼續鑽研這個世界的料理了！接下來要做什麼呢？！",
+  ui_story_31330401_42_dialog_content = "家常菜就可以了。"
+}
 return config
-

@@ -1,155 +1,113 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/visit/ui_home_storehouse.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeStorehouse", UIController)
 UIHomeStorehouse = UIHomeStorehouse
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeStorehouse.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomeStorehouse:OnShow(uiParams)
   self:InitWidget()
   self._module = self:GetModule(HomelandModule)
   self._maxCount = 10
-  self._gifts = (self.content):SpawnObjects("UIHomeVisitGiftItem", self._maxCount)
-  self._onRemoveGift = function(idx)
-    -- function num : 0_0_0 , upvalues : self
+  self._gifts = self.content:SpawnObjects("UIHomeVisitGiftItem", self._maxCount)
+  
+  function self._onRemoveGift(idx)
     self:StartTask(self._Remove, self, idx)
   end
-
-  self._onClickGift = function(idx, go)
-    -- function num : 0_0_1 , upvalues : self
-    if (self._giftData)[idx] then
-      local id = ((self._giftData)[idx]).assetid
+  
+  function self._onClickGift(idx, go)
+    if self._giftData[idx] then
+      local id = self._giftData[idx].assetid
       self:ShowDialog("UIItemTipsHomeland", id, go)
     else
-      do
-        self._curAddIdx = idx
-        self:ShowOperator()
-      end
+      self._curAddIdx = idx
+      self:ShowOperator()
     end
   end
-
+  
   self:_RefreshList()
   self:AttachEvent(GameEventType.UIHomeVisitAddGift, self._OnAddGift)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouse.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeStorehouse:InitWidget()
   self.content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._helpTip = self:GetUIComponent("UISelectObjectPath", "UIHomeCommonTips")
   self:ShowHelpTip()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouse.ShowOperator = function(self)
-  -- function num : 0_2
+function UIHomeStorehouse:ShowOperator()
   self:ShowDialog("UIHomeGiftSelector")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouse._RefreshList = function(self)
-  -- function num : 0_3
-  local gifts = (((self._module):GetHomelandInfo()).visit_int_info).item_map
+function UIHomeStorehouse:_RefreshList()
+  local gifts = self._module:GetHomelandInfo().visit_int_info.item_map
   self._giftData = {}
   for i = 1, self._maxCount do
     local data = gifts[i - 1]
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R7 in 'UnsetPending'
-
     if self:_GiftExist(data) then
-      (self._giftData)[i] = data
+      self._giftData[i] = data
     end
   end
   for i = 1, self._maxCount do
-    ((self._gifts)[i]):SetData(i, (self._giftData)[i], self._onRemoveGift, self._onClickGift)
+    self._gifts[i]:SetData(i, self._giftData[i], self._onRemoveGift, self._onClickGift)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouse._GiftExist = function(self, gift)
-  -- function num : 0_4
+function UIHomeStorehouse:_GiftExist(gift)
   if gift == nil or gift.count == nil then
     return false
   end
-  do return gift.count > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return gift.count > 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouse._OnAddGift = function(self, id, count)
-  -- function num : 0_5
+function UIHomeStorehouse:_OnAddGift(id, count)
   self:StartTask(self._Add, self, id, count)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouse._Remove = function(self, TT, idx)
-  -- function num : 0_6 , upvalues : _ENV
-  local data = (self._giftData)[idx]
+function UIHomeStorehouse:_Remove(TT, idx)
+  local data = self._giftData[idx]
   if not data then
-    (Log.exception)("该位置为空，不能移除")
-    return 
+    Log.exception("该位置为空，不能移除")
+    return
   end
   local item = RoleAsset:New()
   item.assetid = data.assetid
   item.count = 0
   idx = idx - 1
   self:Lock("UIHomeStorehouse_remove")
-  local res, _ = (self._module):HomelandMoveItemReq(TT, idx, item)
+  local res, _ = self._module:HomelandMoveItemReq(TT, idx, item)
   self:UnLock("UIHomeStorehouse_remove")
   if not res:GetSucc() then
-    (ToastManager.ShowHomeToast)((self._module):GetVisitErrorMsg(res:GetResult()))
-    return 
+    ToastManager.ShowHomeToast(self._module:GetVisitErrorMsg(res:GetResult()))
+    return
   end
   self:_RefreshList()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouse._Add = function(self, TT, id, count)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomeStorehouse:_Add(TT, id, count)
   if not self._curAddIdx then
-    (Log.exception)("当前没有选中槽位，不能添加")
-    return 
+    Log.exception("当前没有选中槽位，不能添加")
+    return
   end
-  if self:_GiftExist((self._giftData)[self._curAddIdx]) then
-    (Log.exception)("该位置有礼物不能添加:", self._curAddIdx)
-    return 
+  if self:_GiftExist(self._giftData[self._curAddIdx]) then
+    Log.exception("该位置有礼物不能添加:", self._curAddIdx)
+    return
   end
   local item = RoleAsset:New()
   item.assetid = id
   item.count = count
   local idx = self._curAddIdx - 1
   self:Lock("UIHomeStorehouse_add")
-  local res, _ = (self._module):HomelandMoveItemReq(TT, idx, item)
+  local res, _ = self._module:HomelandMoveItemReq(TT, idx, item)
   self:UnLock("UIHomeStorehouse_add")
   if not res:GetSucc() then
-    (ToastManager.ShowHomeToast)((self._module):GetVisitErrorMsg(res:GetResult()))
-    return 
+    ToastManager.ShowHomeToast(self._module:GetVisitErrorMsg(res:GetResult()))
+    return
   end
   self:_RefreshList()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouse.CloseBtnOnClick = function(self)
-  -- function num : 0_8
+function UIHomeStorehouse:CloseBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouse.ShowHelpTip = function(self)
-  -- function num : 0_9
-  local tip = (self._helpTip):SpawnObject("UIHomelandCommonHelp")
+function UIHomeStorehouse:ShowHelpTip()
+  local tip = self._helpTip:SpawnObject("UIHomelandCommonHelp")
   tip:SetData("UIHomeStorehouse")
 end
-
-

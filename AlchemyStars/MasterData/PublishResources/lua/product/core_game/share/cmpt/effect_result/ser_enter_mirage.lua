@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_enter_mirage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectEnterMirageResult", SkillEffectResultBase)
 SkillEffectEnterMirageResult = SkillEffectEnterMirageResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectEnterMirageResult.Constructor = function(self)
-  -- function num : 0_0
+function SkillEffectEnterMirageResult:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectEnterMirageResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectEnterMirageResult:GetEffectType()
   return SkillEffectType.EnterMirage
 end
-
-

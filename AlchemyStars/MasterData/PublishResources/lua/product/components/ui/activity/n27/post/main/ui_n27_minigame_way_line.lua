@@ -1,50 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/post/main/ui_n27_minigame_way_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27MiniGameWayLine", UICustomWidget)
 UIN27MiniGameWayLine = UIN27MiniGameWayLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27MiniGameWayLine.OnShow = function(self, uiParams)
-  -- function num : 0_0
-  self._lineImg = {[true] = "n27_poststation_line1", [false] = "n27_poststation_line2"}
+function UIN27MiniGameWayLine:OnShow(uiParams)
+  self._lineImg = {
+    [true] = "n27_poststation_line1",
+    [false] = "n27_poststation_line2"
+  }
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayLine._GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN27MiniGameWayLine:_GetComponents()
   self._line = self:GetUIComponent("RectTransform", "Line")
   self._atlas = self:GetAsset("UIN27PostStation.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayLine.SetData = function(self, state)
-  -- function num : 0_2
+function UIN27MiniGameWayLine:SetData(state)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MiniGameWayLine.Flush = function(self, from, to)
-  -- function num : 0_3 , upvalues : _ENV
-  local dis = (Vector2.Distance)(from, to)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._line).sizeDelta = Vector2(dis, ((self._line).sizeDelta).y)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._line).anchoredPosition = Vector2((from.x + to.x) / 2, (from.y + to.y) / 2)
+function UIN27MiniGameWayLine:Flush(from, to)
+  local dis = Vector2.Distance(from, to)
+  self._line.sizeDelta = Vector2(dis, self._line.sizeDelta.y)
+  self._line.anchoredPosition = Vector2((from.x + to.x) / 2, (from.y + to.y) / 2)
   local v = to - from
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._line).localRotation = (Quaternion.FromToRotation)(Vector3.right, Vector3(v.x, v.y, 0))
+  self._line.localRotation = Quaternion.FromToRotation(Vector3.right, Vector3(v.x, v.y, 0))
 end
-
-

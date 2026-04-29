@@ -1,8 +1,2 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_direct_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_direct_line_blocked")
 SkillScopeCalculator_DirectLine = SkillScopeCalculator_DirectLineBlocked
-

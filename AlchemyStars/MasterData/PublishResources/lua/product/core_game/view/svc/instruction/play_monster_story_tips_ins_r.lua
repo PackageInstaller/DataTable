@@ -1,45 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_monster_story_tips_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayMonsterStoryTipsInstruction", BaseInstruction)
 PlayMonsterStoryTipsInstruction = PlayMonsterStoryTipsInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayMonsterStoryTipsInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayMonsterStoryTipsInstruction:Constructor(paramList)
   self._prob = tonumber(paramList.prob)
   self._storyList = {}
   local paramStr = paramList.tipsList
-  local stringLen = (string.len)(paramStr)
-  local tipsStr = (string.sub)(paramStr, 2, stringLen - 1)
-  local splitStrArray = (string.split)(tipsStr, ",")
-  for k,v in ipairs(splitStrArray) do
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R11 in 'UnsetPending'
-
-    (self._storyList)[#self._storyList + 1] = tonumber(v)
+  local stringLen = string.len(paramStr)
+  local tipsStr = string.sub(paramStr, 2, stringLen - 1)
+  local splitStrArray = string.split(tipsStr, ",")
+  for k, v in ipairs(splitStrArray) do
+    self._storyList[#self._storyList + 1] = tonumber(v)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMonsterStoryTipsInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayMonsterStoryTipsInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local rand = (Mathf.Random)(1, 100)
+  local rand = Mathf.Random(1, 100)
   if rand <= self._prob then
-    local index = (Mathf.Random)(1, #self._storyList)
+    local index = Mathf.Random(1, #self._storyList)
     local innerStoryService = world:GetService("InnerStory")
     if casterEntity:MonsterID() then
-      innerStoryService:DoMonsterStoryTips((casterEntity:MonsterID()):GetMonsterID(), casterEntity:GetID(), (self._storyList)[index])
-    else
-      if casterEntity:TrapRender() then
-        innerStoryService:DoTrapStoryTips((casterEntity:TrapRender()):GetTrapID(), casterEntity, (self._storyList)[index])
-      end
+      innerStoryService:DoMonsterStoryTips(casterEntity:MonsterID():GetMonsterID(), casterEntity:GetID(), self._storyList[index])
+    elseif casterEntity:TrapRender() then
+      innerStoryService:DoTrapStoryTips(casterEntity:TrapRender():GetTrapID(), casterEntity, self._storyList[index])
     end
   end
 end
-
-

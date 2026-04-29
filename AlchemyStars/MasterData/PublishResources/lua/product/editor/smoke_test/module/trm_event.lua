@@ -1,28 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/module/trm_event.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("test_robot_module")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotModule.SubscribeGameEvent = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function TestRobotModule:SubscribeGameEvent()
   if self.__autoBinder then
-    (self.__autoBinder):Dispose()
+    self.__autoBinder:Dispose()
   end
-  self.__autoBinder = AutoEventBinder:New((GameGlobal.EventDispatcher)())
-  ;
-  (self.__autoBinder):BindEvent(GameEventType.ConnectReset, self, self._OnConnectReset)
+  self.__autoBinder = AutoEventBinder:New(GameGlobal.EventDispatcher())
+  self.__autoBinder:BindEvent(GameEventType.ConnectReset, self, self._OnConnectReset)
 end
 
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule._OnConnectReset = function(self, reason)
-  -- function num : 0_1 , upvalues : _ENV
-  local t = {(StringTable.Get)("str_login_ask_login_connect_timeout_text"), tostring(reason)}
-  ;
-  (WorkWXPoster.SendError)((table.concat)(t, "："))
+function TestRobotModule:_OnConnectReset(reason)
+  local t = {
+    StringTable.Get("str_login_ask_login_connect_timeout_text"),
+    tostring(reason)
+  }
+  WorkWXPoster.SendError(table.concat(t, "："))
 end
-
-

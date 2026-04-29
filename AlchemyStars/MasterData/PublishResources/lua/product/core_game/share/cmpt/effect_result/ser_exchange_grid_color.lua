@@ -1,60 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_exchange_grid_color.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectExchangeGridColorResult", SkillEffectResultBase)
 SkillEffectExchangeGridColorResult = SkillEffectExchangeGridColorResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectExchangeGridColorResult.Constructor = function(self, newGridList, summonTrapList)
-  -- function num : 0_0
+function SkillEffectExchangeGridColorResult:Constructor(newGridList, summonTrapList)
   self._newGridList = newGridList
   self._summonTrapList = summonTrapList
   self._trapIDList = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectExchangeGridColorResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectExchangeGridColorResult:GetEffectType()
   return SkillEffectType.ExChangeGridColor
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectExchangeGridColorResult.GetNewGridList = function(self)
-  -- function num : 0_2
+function SkillEffectExchangeGridColorResult:GetNewGridList()
   return self._newGridList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectExchangeGridColorResult.GetSummonTrapList = function(self)
-  -- function num : 0_3
+function SkillEffectExchangeGridColorResult:GetSummonTrapList()
   return self._summonTrapList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectExchangeGridColorResult.SetTrapIDList = function(self, trapIDList)
-  -- function num : 0_4
+function SkillEffectExchangeGridColorResult:SetTrapIDList(trapIDList)
   self._trapIDList = trapIDList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectExchangeGridColorResult.GetTrapIDList = function(self)
-  -- function num : 0_5
+function SkillEffectExchangeGridColorResult:GetTrapIDList()
   return self._trapIDList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectExchangeGridColorResult.FindGridData = function(self, pos)
-  -- function num : 0_6 , upvalues : _ENV
-  for k,v in pairs(self._newGridList) do
+function SkillEffectExchangeGridColorResult:FindGridData(pos)
+  for k, v in pairs(self._newGridList) do
     if k.x == pos.x and k.y == pos.y then
       return v
     end
@@ -62,16 +37,11 @@ SkillEffectExchangeGridColorResult.FindGridData = function(self, pos)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectExchangeGridColorResult.GetSummonTrapEntityID = function(self, pos)
-  -- function num : 0_7 , upvalues : _ENV
-  for k,v in pairs(self._trapIDList) do
+function SkillEffectExchangeGridColorResult:GetSummonTrapEntityID(pos)
+  for k, v in pairs(self._trapIDList) do
     if k.x == pos.x and k.y == pos.y then
       return v
     end
   end
   return nil
 end
-
-

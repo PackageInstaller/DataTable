@@ -1,18 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_to_board_center.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMoveToBoardCenter", ActionMoveBase)
 ActionMoveToBoardCenter = ActionMoveToBoardCenter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveToBoardCenter.FindNewTargetPos = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local x = tonumber((self.m_configData)[1]) or 5
-  local y = tonumber((self.m_configData)[2]) or 5
-  return (Vector2.New)(x, y)
+function ActionMoveToBoardCenter:FindNewTargetPos()
+  local x = tonumber(self.m_configData[1]) or 5
+  local y = tonumber(self.m_configData[2]) or 5
+  return Vector2.New(x, y)
 end
-
-

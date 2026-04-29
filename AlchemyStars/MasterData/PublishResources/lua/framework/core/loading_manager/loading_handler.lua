@@ -1,99 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/loading_manager/loading_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LoadingHandler", Object)
 LoadingHandler = LoadingHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LoadingHandler.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LoadingHandler:Constructor()
   self.sceneResReq = nil
   self.loadingID = nil
-  self.cfg = (Cfg.cfg_system_loading)({loadingHandlerName = self._className})
+  self.cfg = Cfg.cfg_system_loading({
+    loadingHandlerName = self._className
+  })
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingHandler.SetProgressBar = function(self, progressBar)
-  -- function num : 0_1
+function LoadingHandler:SetProgressBar(progressBar)
   self._progressBar = progressBar
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingHandler.PreLoadBeforeLoadLevel = function(self, TT, ...)
-  -- function num : 0_2
+function LoadingHandler:PreLoadBeforeLoadLevel(TT, ...)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingHandler.LoadLevel = function(self, TT, levelName)
-  -- function num : 0_3 , upvalues : _ENV
-  if (string.equal_with_ignorecase)((UIHelper.GetActiveSceneName)(), levelName) then
-    (Log.debug)("[Loading] LoadingHandler:LoadLevel, this level is already active ,", levelName)
-    return 
+function LoadingHandler:LoadLevel(TT, levelName)
+  if string.equal_with_ignorecase(UIHelper.GetActiveSceneName(), levelName) then
+    Log.debug("[Loading] LoadingHandler:LoadLevel, this level is already active ,", levelName)
+    return
   end
-  ;
-  (Log.debug)("[Loading] LoadingHandler:LoadLevel, ", levelName)
-  self.sceneResReq = ((GameGlobal.GameLogic)()):LoadScene(TT, levelName)
+  Log.debug("[Loading] LoadingHandler:LoadLevel, ", levelName)
+  self.sceneResReq = GameGlobal.GameLogic():LoadScene(TT, levelName)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_4
+function LoadingHandler:PreLoadAfterLoadLevel(TT, ...)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingHandler.LoadingFinish = function(self, ...)
-  -- function num : 0_5
+function LoadingHandler:LoadingFinish(...)
   self:OnLoadingFinish(...)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingHandler.OnLoadingFinish = function(self)
-  -- function num : 0_6
+function LoadingHandler:OnLoadingFinish()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingHandler.SetLoadingProgress = function(self, progress)
-  -- function num : 0_7
+function LoadingHandler:SetLoadingProgress(progress)
   if self._progressBar then
-    (self._progressBar):SetProgress(progress)
+    self._progressBar:SetProgress(progress)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingHandler.LoadingType = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function LoadingHandler:LoadingType()
   return LoadingType.STATICPIC
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingHandler.LoadingID = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if self.cfg then
-    local loadingIds = ((self.cfg)[1]).loadingIds
-  end
+function LoadingHandler:LoadingID()
+  local loadingIds = self.cfg and self.cfg[1].loadingIds
   if loadingIds then
-    return ((GameGlobal.LoadingManager)()):FilterAndRandomLoadingID(loadingIds)
+    return GameGlobal.LoadingManager():FilterAndRandomLoadingID(loadingIds)
   else
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingHandler.NeedSwitchState = function(self)
-  -- function num : 0_10
+function LoadingHandler:NeedSwitchState()
   return false
 end
-
-

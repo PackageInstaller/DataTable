@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_battle_pass.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("campaign_component_local_process_base")
 _class("CCampaignBattlePass", ICampaignComponentLocalProcessBase)
 CCampaignBattlePass = CCampaignBattlePass
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignBattlePass.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignBattlePass:Constructor()
   self._lvRewardComponent = nil
   self._lvRewardCompInfo = nil
   self._camQuestComponet1 = nil
@@ -23,24 +16,15 @@ CCampaignBattlePass.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignBattlePass.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignBattlePass:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_BATTLEPASS
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignBattlePass.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignBattlePass:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignBattlePass.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignBattlePass:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetLVRewardComponent()
   self:_GetCamQuestComponent1()
@@ -49,65 +33,47 @@ CCampaignBattlePass.InitComponent = function(self, campaignObj)
   self:_GetBuyGiftComponent()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignBattlePass._GetLVRewardComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._lvRewardComponent = (self._campaignObj):GetComponent(ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD)
+function CCampaignBattlePass:_GetLVRewardComponent()
+  self._lvRewardComponent = self._campaignObj:GetComponent(ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD)
   if not self._lvRewardComponent then
-    return 
+    return
   end
-  self._lvRewardCompInfo = (self._lvRewardComponent):ComponentInfo()
+  self._lvRewardCompInfo = self._lvRewardComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignBattlePass._GetCamQuestComponent1 = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._camQuestComponet1 = (self._campaignObj):GetComponent(ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1)
+function CCampaignBattlePass:_GetCamQuestComponent1()
+  self._camQuestComponet1 = self._campaignObj:GetComponent(ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1)
   if not self._camQuestComponet1 then
-    return 
+    return
   end
-  self._camQuestComponetInfo1 = (self._camQuestComponet1):ComponentInfo()
+  self._camQuestComponetInfo1 = self._camQuestComponet1:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignBattlePass._GetCamQuestComponent2 = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._camQuestComponet2 = (self._campaignObj):GetComponent(ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2)
+function CCampaignBattlePass:_GetCamQuestComponent2()
+  self._camQuestComponet2 = self._campaignObj:GetComponent(ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2)
   if not self._camQuestComponet2 then
-    return 
+    return
   end
-  self._camQuestComponetInfo2 = (self._camQuestComponet2):ComponentInfo()
+  self._camQuestComponetInfo2 = self._camQuestComponet2:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignBattlePass._GetCamQuestComponent3 = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._camQuestComponet3 = (self._campaignObj):GetComponent(ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3)
+function CCampaignBattlePass:_GetCamQuestComponent3()
+  self._camQuestComponet3 = self._campaignObj:GetComponent(ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3)
   if not self._camQuestComponet3 then
-    return 
+    return
   end
-  self._camQuestComponetInfo3 = (self._camQuestComponet3):ComponentInfo()
+  self._camQuestComponetInfo3 = self._camQuestComponet3:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignBattlePass._GetBuyGiftComponent = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._buyGiftComponent = (self._campaignObj):GetComponent(ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT)
+function CCampaignBattlePass:_GetBuyGiftComponent()
+  self._buyGiftComponent = self._campaignObj:GetComponent(ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT)
   if not self._buyGiftComponent then
-    return 
+    return
   end
-  self._buyGiftComponentInfo = (self._buyGiftComponent):ComponentInfo()
+  self._buyGiftComponentInfo = self._buyGiftComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignBattlePass.GetComponent = function(self, componentID)
-  -- function num : 0_9 , upvalues : _ENV
+function CCampaignBattlePass:GetComponent(componentID)
   if ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD == componentID then
     return self._lvRewardComponent
   end
@@ -126,10 +92,7 @@ CCampaignBattlePass.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignBattlePass.GetComponentInfo = function(self, componentID)
-  -- function num : 0_10 , upvalues : _ENV
+function CCampaignBattlePass:GetComponentInfo(componentID)
   if ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD == componentID then
     return self._lvRewardCompInfo
   end
@@ -147,5 +110,3 @@ CCampaignBattlePass.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

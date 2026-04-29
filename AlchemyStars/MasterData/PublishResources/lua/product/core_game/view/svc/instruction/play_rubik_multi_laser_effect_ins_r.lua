@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_rubik_multi_laser_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayRubikMultiLaserEffectInstruction", BaseInstruction)
 PlayRubikMultiLaserEffectInstruction = PlayRubikMultiLaserEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayRubikMultiLaserEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayRubikMultiLaserEffectInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayRubikMultiLaserEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayRubikMultiLaserEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local attackRange = scopeResult:GetAttackRange()
   local rangLengthList = {}
-  for _,pos in pairs(attackRange) do
+  for _, pos in pairs(attackRange) do
     if not rangLengthList[pos.x] then
       rangLengthList[pos.x] = 0.5
     end
@@ -37,27 +27,21 @@ PlayRubikMultiLaserEffectInstruction.DoInstruction = function(self, TT, casterEn
   for i = 1, 7 do
     local workPos = effectPos + Vector3(i - 1, 0, 0)
     local effect = effectService:CreateWorldPositionEffect(self._effectID, workPos)
-    local effectObject = (effect:View()):GetGameObject()
-    -- DECOMPILER ERROR at PC63: Confused about usage of register: R18 in 'UnsetPending'
-
-    ;
-    (effectObject.transform).localEulerAngles = Vector3(0, 180, 0)
+    local effectObject = effect:View():GetGameObject()
+    effectObject.transform.localEulerAngles = Vector3(0, 180, 0)
     local length = rangLengthList[i] or 0
-    local laser = (GameObjectHelper.FindChild)(effectObject.transform, "mesh_jiguang")
-    ;
-    (laser.transform):DOScale(Vector3(1, 1, length), 0)
+    local laser = GameObjectHelper.FindChild(effectObject.transform, "mesh_jiguang")
+    laser.transform:DOScale(Vector3(1, 1, length), 0)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayRubikMultiLaserEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayRubikMultiLaserEffectInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 7})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      7
+    })
   end
   return t
 end
-
-

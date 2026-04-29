@@ -1,28 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/maze/cfg_maze_layer_positions.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {Layer = 1, BornPos = 2, BossPos = 3, SceneLength = 4, SceneWidth = 5}
+local key = {
+  Layer = 1,
+  BornPos = 2,
+  BossPos = 3,
+  SceneLength = 4,
+  SceneWidth = 5
+}
 local common = {
-{-40, -3}
-, 
-{-10, -3}
-, 
-{-5, -3}
+  {-40, -3},
+  {-10, -3},
+  {-5, -3}
 }
 local config = {
-{1, common[1], common[2], 25, 12}
-, 
-{2, common[1], common[2], 25, 12}
-, 
-{3, common[1], common[3], 30, 12}
-, 
-{4, common[1], common[3], 30, 12}
-, 
-{5, common[1], 
-{0, -3}
-, 35, 12}
+  {
+    1,
+    common[1],
+    common[2],
+    25,
+    12
+  },
+  {
+    2,
+    common[1],
+    common[2],
+    25,
+    12
+  },
+  {
+    3,
+    common[1],
+    common[3],
+    30,
+    12
+  },
+  {
+    4,
+    common[1],
+    common[3],
+    30,
+    12
+  },
+  {
+    5,
+    common[1],
+    {0, -3},
+    35,
+    12
+  }
 }
 return config, "Layer", key
-

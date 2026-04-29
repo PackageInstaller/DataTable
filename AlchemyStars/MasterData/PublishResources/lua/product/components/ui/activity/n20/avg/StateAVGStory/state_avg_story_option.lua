@@ -1,129 +1,87 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/StateAVGStory/state_avg_story_option.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateAVGStoryOption", StateAVGStoryBase)
 StateAVGStoryOption = StateAVGStoryOption
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateAVGStoryOption.OnEnter = function(self, TT, ...)
-  -- function num : 0_0
+function StateAVGStoryOption:OnEnter(TT, ...)
   self:Init()
-  self.poolOptions = (self.ui).poolOptions
-  self.poolInfluence = (self.ui).poolInfluence
+  self.poolOptions = self.ui.poolOptions
+  self.poolInfluence = self.ui.poolInfluence
   self:ShowHideOption(true)
   self:ShowHideButtonAuto(false)
   self:ShowHideButtonShowHideUI(false)
   self:ShowHideButtonNext(false)
-  self.storyManager = (self.data):StoryManager()
-  local storyId = (self.storyManager):GetCurStoryID()
-  local paragraphId = (self.storyManager):GetCurParagraphID()
-  local sectionIdx = (self.storyManager):GetCurSectionIndex()
+  self.storyManager = self.data:StoryManager()
+  local storyId = self.storyManager:GetCurStoryID()
+  local paragraphId = self.storyManager:GetCurParagraphID()
+  local sectionIdx = self.storyManager:GetCurSectionIndex()
   self:FlushOptions(storyId, paragraphId, sectionIdx)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryOption.OnExit = function(self, TT)
-  -- function num : 0_1
+function StateAVGStoryOption:OnExit(TT)
   self:ShowHideOption(false)
   self:ShowHideButtonAuto(true)
   self:ShowHideButtonShowHideUI(true)
   self:ShowHideButtonNext(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryOption.FlushOptions = function(self, storyId, paragraphId, sectionIdx)
-  -- function num : 0_2 , upvalues : _ENV
-  local node = (self.data):GetNodeByStoryId(storyId)
+function StateAVGStoryOption:FlushOptions(storyId, paragraphId, sectionIdx)
+  local node = self.data:GetNodeByStoryId(storyId)
   local paragraph = node:GetParagraphByParagraphId(paragraphId)
   local dialog = paragraph:GetDialogBySectionIdx(sectionIdx)
   local options = dialog:GetVisibleOptions()
-  if not options or (table.count)(options) <= 0 then
+  if not options or table.count(options) <= 0 then
     AVGLog("Not exist visible options. [storyId = " .. storyId .. "] [paragraphId = " .. paragraphId .. "] [sectionIdx=" .. sectionIdx .. "]")
-    ;
-    (self.fsm):ChangeState(StateAVGStory.Play)
-    return 
+    self.fsm:ChangeState(StateAVGStory.Play)
+    return
   end
-  local len = (table.count)(options)
-  ;
-  (self.poolOptions):SpawnObjects("UIN20AVGStoryOption", len)
-  local uis = (self.poolOptions):GetAllSpawnList()
-  for i,option in ipairs(options) do
-    do
-      local ui = uis[i]
-      ui:Flush(option, function()
-    -- function num : 0_2_0 , upvalues : _ENV, self, option
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-      -- function num : 0_2_0_0 , upvalues : _ENV, self, option
-      (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.SoundStoryClick)
-      local key = "StateAVGStoryOptionChooseOption"
-      ;
-      ((GameGlobal.UIStateManager)()):Lock(key)
-      local com = (self.data):GetComponentAVG()
-      local res = AsyncRequestRes:New()
-      local ret = com:HandleManualChoose(TT, res, option.id)
-      if (N20AVGData.CheckCode)(res) then
-        local nextParagraphId = option:NextParagraphId()
-        ;
-        (self.storyManager):SetNextParagraphID(nextParagraphId)
-        self:NextNodeId(option.nextNodeId)
-        self:DialogEnd(option.paragraphId, option.sectionIdx)
-        local playerName = ((GameGlobal.GetModule)(RoleModule)):GetName()
-        ;
-        (self.storyManager):AddDialogRecord(playerName, option:Content(), 1, true)
-        ;
-        (self.ui):SetSelectedOptionId(option.id, true)
-        ;
-        (self.fsm):ChangeState(StateAVGStory.Play)
-      else
-        do
-          ;
-          (Log.fatal)("### HandleManualChoose failed. ", option.storyId, option.paragraphId, option.sectionIdx, option.index)
-          ;
-          ((GameGlobal.UIStateManager)()):UnLock(key)
+  local len = table.count(options)
+  self.poolOptions:SpawnObjects("UIN20AVGStoryOption", len)
+  local uis = self.poolOptions:GetAllSpawnList()
+  for i, option in ipairs(options) do
+    local ui = uis[i]
+    ui:Flush(option, function()
+      GameGlobal.TaskManager():StartTask(function(TT)
+        AudioHelperController.PlayRequestedUISound(CriAudioIDConst.SoundStoryClick)
+        local key = "StateAVGStoryOptionChooseOption"
+        GameGlobal.UIStateManager():Lock(key)
+        local com = self.data:GetComponentAVG()
+        local res = AsyncRequestRes:New()
+        local ret = com:HandleManualChoose(TT, res, option.id)
+        if N20AVGData.CheckCode(res) then
+          local nextParagraphId = option:NextParagraphId()
+          self.storyManager:SetNextParagraphID(nextParagraphId)
+          self:NextNodeId(option.nextNodeId)
+          self:DialogEnd(option.paragraphId, option.sectionIdx)
+          local playerName = GameGlobal.GetModule(RoleModule):GetName()
+          self.storyManager:AddDialogRecord(playerName, option:Content(), 1, true)
+          self.ui:SetSelectedOptionId(option.id, true)
+          self.fsm:ChangeState(StateAVGStory.Play)
+        else
+          Log.fatal("### HandleManualChoose failed. ", option.storyId, option.paragraphId, option.sectionIdx, option.index)
         end
-      end
-    end
-, self)
-  end
-, uis)
-    end
+        GameGlobal.UIStateManager():UnLock(key)
+      end, self)
+    end, uis)
   end
   self:FlushInfluence(options)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryOption.FlushInfluence = function(self, options)
-  -- function num : 0_3
-  self.influence = (self.poolInfluence):SpawnObject("UIN20AVGStoryInfluence")
-  ;
-  (self.influence):Flush(options)
+function StateAVGStoryOption:FlushInfluence(options)
+  self.influence = self.poolInfluence:SpawnObject("UIN20AVGStoryInfluence")
+  self.influence:Flush(options)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryOption.DialogEnd = function(self, paragraphId, sectionIdx)
-  -- function num : 0_4
+function StateAVGStoryOption:DialogEnd(paragraphId, sectionIdx)
   local storyEntity = self:GetStoryDialogEntity(paragraphId, sectionIdx)
   if storyEntity then
     storyEntity:_DialogEnd()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryOption.GetStoryDialogEntity = function(self, paragraphId, sectionIdx)
-  -- function num : 0_5
-  local node = (self.data):CurNode()
+function StateAVGStoryOption:GetStoryDialogEntity(paragraphId, sectionIdx)
+  local node = self.data:CurNode()
   local paragraph = node:GetParagraphByParagraphId(paragraphId)
   local dialog = paragraph:GetDialogBySectionIdx(sectionIdx)
   local entityId = dialog.refEntityId
-  local storyEntity = ((self.storyManager)._storyEntityList)[entityId]
+  local storyEntity = self.storyManager._storyEntityList[entityId]
   return storyEntity
 end
-
-

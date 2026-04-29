@@ -1,39 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_show_caster_on_pick_up_grid_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayShowCasterOnPickUpGridInstruction", BaseInstruction)
 PlayShowCasterOnPickUpGridInstruction = PlayShowCasterOnPickUpGridInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayShowCasterOnPickUpGridInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayShowCasterOnPickUpGridInstruction:Constructor(paramList)
   self._pickUpIndex = tonumber(paramList.pickUpIndex) or 1
   self._reset = paramList.reset ~= nil
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayShowCasterOnPickUpGridInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayShowCasterOnPickUpGridInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local oriEntity = casterEntity
-  do
-    if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-      local cSuperEntity = casterEntity:SuperEntityComponent()
-      oriEntity = cSuperEntity:GetSuperEntity()
-    end
-    local renderPickUpComponent = oriEntity:RenderPickUpComponent()
-    if not renderPickUpComponent then
-      return 
-    end
-    local pickUpGridArray = renderPickUpComponent:GetAllValidPickUpGridPos()
-    local pickUpPos = pickUpGridArray[self._pickUpIndex]
-    local targetGridPos = self._reset and oriEntity:GetGridPosition() or pickUpPos
-    oriEntity:SetPosition(targetGridPos)
-    YIELD(TT)
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    local cSuperEntity = casterEntity:SuperEntityComponent()
+    oriEntity = cSuperEntity:GetSuperEntity()
   end
+  local renderPickUpComponent = oriEntity:RenderPickUpComponent()
+  if not renderPickUpComponent then
+    return
+  end
+  local pickUpGridArray = renderPickUpComponent:GetAllValidPickUpGridPos()
+  local pickUpPos = pickUpGridArray[self._pickUpIndex]
+  local targetGridPos = self._reset and oriEntity:GetGridPosition() or pickUpPos
+  oriEntity:SetPosition(targetGridPos)
+  YIELD(TT)
 end
-
-

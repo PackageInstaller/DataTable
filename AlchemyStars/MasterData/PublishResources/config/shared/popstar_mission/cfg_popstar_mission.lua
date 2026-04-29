@@ -1,40 +1,180 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/popstar_mission/cfg_popstar_mission.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {MissionID = 1, LevelID = 2, NeedPower = 3, WordBuff = 4, ThreeStarCondition1 = 5, ThreeStarCondition2 = 6, ThreeStarCondition3 = 7, IgnoreThreeStar = 8, EnableSerialAutoFight = 9, EnableAutoFight = 10, ThreeStarDropId = 11, DetailIcon = 12, NeedAP = 13, BaseWordBuff = 14, FirstDropId = 15, PassFixDropId = 16, Name = 17, Desc = 18, TrapRefreshID = 19, PropRefreshIDList = 20, ChallengeIndexScoreList = 21}
-local common = {"N31_gjtx_photo01"}
-local config = {
-[5319001] = {5319001, 5319001, 0, 0, 88, 89, 90, 0, 0, 0, 10310013, common[1], nil, nil, 10310019, 41000, "str_n31_popstar_name_1", "str_n31_popstar_desc_1"}
-, 
-[5319002] = {5319002, 5319002, 0, 0, 88, 91, 94, 0, 0, 0, 10310014, common[1], nil, 
-{5319002}
-, 10310020, 41000, "str_n31_popstar_name_2", "str_n31_popstar_desc_2"}
-, 
-[5319003] = {5319003, 5319003, 0, 0, 89, 94, 98, 0, 0, 0, 10310015, common[1], nil, 
-{5319003}
-, 10310021, 41000, "str_n31_popstar_name_3", "str_n31_popstar_desc_3"}
-, 
-[5319004] = {5319004, 5319004, 0, 0, 89, 94, 98, 0, 0, 0, 10310016, common[1], nil, 
-{5319004}
-, 10310022, 41000, "str_n31_popstar_name_4", "str_n31_popstar_desc_4"}
-, 
-[5319005] = {5319005, 5319006, 0, 0, 89, 94, 98, 0, 0, 0, 10310017, common[1], nil, 
-{5319005}
-, 10310023, 41000, "str_n31_popstar_name_5", "str_n31_popstar_desc_6"}
-, 
-[5319006] = {5319006, 5319005, 0, 0, 89, 94, 98, 0, 0, 0, 10310018, common[1], nil, 
-{5319006}
-, 10310024, 41000, "str_n31_popstar_name_6", "str_n31_popstar_desc_5", 5319006}
-, 
-[5319007] = {5319007, 5319007, 0, 0, 1, 43, 72, 0, 0, 0, 41000, common[1], nil, 
-{53190111}
-, 41000, 41000, "str_n31_popstar_name_7", "str_n31_popstar_desc_7", nil, 
-{5319001}
-, 
-{30, 80, 150, 250, 400, 999}
+local key = {
+  MissionID = 1,
+  LevelID = 2,
+  NeedPower = 3,
+  WordBuff = 4,
+  ThreeStarCondition1 = 5,
+  ThreeStarCondition2 = 6,
+  ThreeStarCondition3 = 7,
+  IgnoreThreeStar = 8,
+  EnableSerialAutoFight = 9,
+  EnableAutoFight = 10,
+  ThreeStarDropId = 11,
+  DetailIcon = 12,
+  NeedAP = 13,
+  BaseWordBuff = 14,
+  FirstDropId = 15,
+  PassFixDropId = 16,
+  Name = 17,
+  Desc = 18,
+  TrapRefreshID = 19,
+  PropRefreshIDList = 20,
+  ChallengeIndexScoreList = 21
 }
+local common = {
+  "N31_gjtx_photo01"
+}
+local config = {
+  [5319001] = {
+    5319001,
+    5319001,
+    0,
+    0,
+    88,
+    89,
+    90,
+    0,
+    0,
+    0,
+    10310013,
+    common[1],
+    nil,
+    nil,
+    10310019,
+    41000,
+    "str_n31_popstar_name_1",
+    "str_n31_popstar_desc_1"
+  },
+  [5319002] = {
+    5319002,
+    5319002,
+    0,
+    0,
+    88,
+    91,
+    94,
+    0,
+    0,
+    0,
+    10310014,
+    common[1],
+    nil,
+    {5319002},
+    10310020,
+    41000,
+    "str_n31_popstar_name_2",
+    "str_n31_popstar_desc_2"
+  },
+  [5319003] = {
+    5319003,
+    5319003,
+    0,
+    0,
+    89,
+    94,
+    98,
+    0,
+    0,
+    0,
+    10310015,
+    common[1],
+    nil,
+    {5319003},
+    10310021,
+    41000,
+    "str_n31_popstar_name_3",
+    "str_n31_popstar_desc_3"
+  },
+  [5319004] = {
+    5319004,
+    5319004,
+    0,
+    0,
+    89,
+    94,
+    98,
+    0,
+    0,
+    0,
+    10310016,
+    common[1],
+    nil,
+    {5319004},
+    10310022,
+    41000,
+    "str_n31_popstar_name_4",
+    "str_n31_popstar_desc_4"
+  },
+  [5319005] = {
+    5319005,
+    5319006,
+    0,
+    0,
+    89,
+    94,
+    98,
+    0,
+    0,
+    0,
+    10310017,
+    common[1],
+    nil,
+    {5319005},
+    10310023,
+    41000,
+    "str_n31_popstar_name_5",
+    "str_n31_popstar_desc_6"
+  },
+  [5319006] = {
+    5319006,
+    5319005,
+    0,
+    0,
+    89,
+    94,
+    98,
+    0,
+    0,
+    0,
+    10310018,
+    common[1],
+    nil,
+    {5319006},
+    10310024,
+    41000,
+    "str_n31_popstar_name_6",
+    "str_n31_popstar_desc_5",
+    5319006
+  },
+  [5319007] = {
+    5319007,
+    5319007,
+    0,
+    0,
+    1,
+    43,
+    72,
+    0,
+    0,
+    0,
+    41000,
+    common[1],
+    nil,
+    {53190111},
+    41000,
+    41000,
+    "str_n31_popstar_name_7",
+    "str_n31_popstar_desc_7",
+    nil,
+    {5319001},
+    {
+      30,
+      80,
+      150,
+      250,
+      400,
+      999
+    }
+  }
 }
 return config, "MissionID", key
-

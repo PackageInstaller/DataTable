@@ -1,50 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_tetris_cost_power.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicTetrisChangeCostPower", BuffLogicBase)
 BuffLogicTetrisChangeCostPower = BuffLogicTetrisChangeCostPower
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicTetrisChangeCostPower.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicTetrisChangeCostPower:Constructor(buffInstance, logicParam)
   self._costPower = logicParam.costPower
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicTetrisChangeCostPower.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local featureSvcL = (self._world):GetService("FeatureLogic")
+function BuffLogicTetrisChangeCostPower:DoLogic(notify)
+  local featureSvcL = self._world:GetService("FeatureLogic")
   local curCostPower = featureSvcL:GetTetrisPower()
   local newCostPower = self._costPower + curCostPower
   if newCostPower < 0 then
     newCostPower = 0
   end
-  ;
-  (Log.fatal)("BuffLogicTetrisChangeCostPower curCostPower:", curCostPower, "ChangePower:", self._costPower, "newCostPower:", newCostPower)
+  Log.fatal("BuffLogicTetrisChangeCostPower curCostPower:", curCostPower, "ChangePower:", self._costPower, "newCostPower:", newCostPower)
   featureSvcL:SetTetrisCostPower(newCostPower)
 end
 
 _class("BuffLogicTetrisSetCostPower", BuffLogicBase)
 BuffLogicTetrisSetCostPower = BuffLogicTetrisSetCostPower
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicTetrisSetCostPower.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicTetrisSetCostPower:Constructor(buffInstance, logicParam)
   self._costPower = logicParam.costPower
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicTetrisSetCostPower.DoLogic = function(self, notify)
-  -- function num : 0_3 , upvalues : _ENV
-  local featureSvcL = (self._world):GetService("FeatureLogic")
+function BuffLogicTetrisSetCostPower:DoLogic(notify)
+  local featureSvcL = self._world:GetService("FeatureLogic")
   featureSvcL:SetTetrisCostPower(self._costPower)
-  ;
-  (Log.fatal)("BuffLogicTetrisSetCostPower SetCostPower:", self._costPower)
+  Log.fatal("BuffLogicTetrisSetCostPower SetCostPower:", self._costPower)
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n19_p5.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignN19P5", ICampaignComponentLocalProcessBase)
 CCampaignN19P5 = CCampaignN19P5
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignN19P5.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignN19P5:Constructor()
   self._shopComponent = nil
   self._shopCompInfo = nil
   self._cumulativeLoginComponent = nil
@@ -22,24 +15,15 @@ CCampaignN19P5.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19P5.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignN19P5:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N19_P5
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19P5.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignN19P5:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19P5.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignN19P5:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetShopComponent()
   self:_GetCumulativeLoginComponent()
@@ -48,65 +32,47 @@ CCampaignN19P5.InitComponent = function(self, campaignObj)
   self:_GetPower2itemShopComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19P5._GetShopComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._shopComponent = (self._campaignObj):GetComponent(ECampaignN19P5ComponentID.SHOP)
+function CCampaignN19P5:_GetShopComponent()
+  self._shopComponent = self._campaignObj:GetComponent(ECampaignN19P5ComponentID.SHOP)
   if not self._shopComponent then
-    return 
+    return
   end
-  self._shopCompInfo = (self._shopComponent):ComponentInfo()
+  self._shopCompInfo = self._shopComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19P5._GetCumulativeLoginComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._cumulativeLoginComponent = (self._campaignObj):GetComponent(ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
+function CCampaignN19P5:_GetCumulativeLoginComponent()
+  self._cumulativeLoginComponent = self._campaignObj:GetComponent(ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
   if not self._cumulativeLoginComponent then
-    return 
+    return
   end
-  self._cumulativeLoginCompInfo = (self._cumulativeLoginComponent):ComponentInfo()
+  self._cumulativeLoginCompInfo = self._cumulativeLoginComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19P5._GetFixTeamComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._fixTeamComponent = (self._campaignObj):GetComponent(ECampaignN19P5ComponentID.LEVEL)
+function CCampaignN19P5:_GetFixTeamComponent()
+  self._fixTeamComponent = self._campaignObj:GetComponent(ECampaignN19P5ComponentID.LEVEL)
   if not self._fixTeamComponent then
-    return 
+    return
   end
-  self._fixTeamCompInfo = (self._fixTeamComponent):ComponentInfo()
+  self._fixTeamCompInfo = self._fixTeamComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19P5._GetPower2itemComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._power2itemComponent = (self._campaignObj):GetComponent(ECampaignN19P5ComponentID.POWER2ITEM)
+function CCampaignN19P5:_GetPower2itemComponent()
+  self._power2itemComponent = self._campaignObj:GetComponent(ECampaignN19P5ComponentID.POWER2ITEM)
   if not self._power2itemComponent then
-    return 
+    return
   end
-  self._power2itemComponentInfo = (self._power2itemComponent):ComponentInfo()
+  self._power2itemComponentInfo = self._power2itemComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19P5._GetPower2itemShopComponent = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._powerShopComponent = (self._campaignObj):GetComponent(ECampaignN19P5ComponentID.POWER_SHOP)
+function CCampaignN19P5:_GetPower2itemShopComponent()
+  self._powerShopComponent = self._campaignObj:GetComponent(ECampaignN19P5ComponentID.POWER_SHOP)
   if not self._powerShopComponent then
-    return 
+    return
   end
-  self._powerShopCompInfo = (self._powerShopComponent):ComponentInfo()
+  self._powerShopCompInfo = self._powerShopComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19P5.GetComponent = function(self, componentID)
-  -- function num : 0_9 , upvalues : _ENV
+function CCampaignN19P5:GetComponent(componentID)
   if ECampaignN19P5ComponentID.SHOP == componentID then
     return self._shopComponent
   end
@@ -125,10 +91,7 @@ CCampaignN19P5.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19P5.GetComponentInfo = function(self, componentID)
-  -- function num : 0_10 , upvalues : _ENV
+function CCampaignN19P5:GetComponentInfo(componentID)
   if ECampaignN19P5ComponentID.SHOP == componentID then
     return self._shopCompInfo
   end
@@ -147,26 +110,21 @@ CCampaignN19P5.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19P5.PetStageRedPoint = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  if not self._fixTeamComponent or not self._fixTeamCompInfo or not (self._fixTeamComponent):ComponentIsOpen() then
+function CCampaignN19P5:PetStageRedPoint()
+  if not (self._fixTeamComponent and self._fixTeamCompInfo) or not self._fixTeamComponent:ComponentIsOpen() then
     return false
   end
-  local cfgs = (Cfg.cfg_campaign_pet_try)({CampaignId = ECampaignType.CAMPAIGN_TYPE_N19_P5})
+  local cfgs = Cfg.cfg_campaign_pet_try({
+    CampaignId = ECampaignType.CAMPAIGN_TYPE_N19_P5
+  })
   local lock = false
   if cfgs then
-    for key,value in pairs(cfgs) do
-      if not (self._fixTeamComponent):IsPassCamMissionID(value.CampaignMissionId) then
+    for key, value in pairs(cfgs) do
+      if not self._fixTeamComponent:IsPassCamMissionID(value.CampaignMissionId) then
         lock = true
         break
       end
     end
   end
-  do
-    return not (self._fixTeamCompInfo).m_b_unlock or lock
-  end
+  return self._fixTeamCompInfo.m_b_unlock and lock
 end
-
-

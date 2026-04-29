@@ -1,126 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/time_login_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TimeLoginComponent", ICampaignComponent)
 TimeLoginComponent = TimeLoginComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TimeLoginComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function TimeLoginComponent:Constructor()
   self._componentInfo = TimeLoginComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeLoginComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function TimeLoginComponent:ComponentInfo()
   if not self._componentInfo then
     self._componentInfo = TimeLoginComponentInfo:New()
   end
   return self._componentInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeLoginComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function TimeLoginComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeLoginComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function TimeLoginComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_TIME_LOGIN
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeLoginComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self._componentInfo)
+function TimeLoginComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self._componentInfo)
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeLoginComponent.HandleReceiveTimeLoginReward = function(self, TT, asyncRes, cfgID)
-  -- function num : 0_5 , upvalues : _ENV
+function TimeLoginComponent:HandleReceiveTimeLoginReward(TT, asyncRes, cfgID)
   local request = TimeLoginComponentReceiveRewardReq:New()
   request.m_cfg_id = cfgID
   local response = TimeLoginComponentReceiveRewardRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R7 in 'UnsetPending'
-
-  if response ~= nil and (table.count)(response.m_info) > 0 then
-    (self._componentInfo).m_info = response.m_info
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  if response ~= nil and table.count(response.m_info) > 0 then
+    self._componentInfo.m_info = response.m_info
   end
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][TimeLoginComponent] HandleReceiveTimeLoginReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][TimeLoginComponent] HandleReceiveTimeLoginReward ret:", asyncRes.m_result)
     return nil
   end
   return response.m_rewards
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeLoginComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_6 , upvalues : _ENV
+function TimeLoginComponent:CampaignComponentPushNotify(notify_data)
   if TimeLoginComponentNotifyType.TimeLoginComponentNotify_Changed == notify_data.m_notify_type then
     local ev = NotifyPointTimeLoginComponentChanged:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
-      (self._componentInfo).m_count = ev.m_count
-      -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._componentInfo).m_info = ev.m_info
+      self._componentInfo.m_count = ev.m_count
+      self._componentInfo.m_info = ev.m_info
     else
-      ;
-      (Log.error)("[CampaignCom][TimeLoginComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][TimeLoginComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeLoginComponent.Start_HandleReceiveTimeLoginReward = function(self, cfgID, callback)
-  -- function num : 0_7 , upvalues : _ENV
+function TimeLoginComponent:Start_HandleReceiveTimeLoginReward(cfgID, callback)
   local lockName = "Start_HandleReceiveTimeLoginReward"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : _ENV, self, cfgID, lockName, callback
+  GameGlobal.UIStateManager():Lock(lockName)
+  TaskManager:GetInstance():StartTask(function(TT)
     local res = AsyncRequestRes:New()
     local rewards = self:HandleReceiveTimeLoginReward(TT, res, cfgID)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
+    GameGlobal.UIStateManager():UnLock(lockName)
     callback(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeLoginComponent.GetCellState = function(self, cfgID)
-  -- function num : 0_8
+function TimeLoginComponent:GetCellState(cfgID)
   local info = self:GetComponentInfo()
-  return (info.m_info)[cfgID]
+  return info.m_info[cfgID]
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeLoginComponent.GetCellPointCount = function(self)
-  -- function num : 0_9
+function TimeLoginComponent:GetCellPointCount()
   local info = self:GetComponentInfo()
   return info.m_count
 end
-
-

@@ -1,68 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/input/season_maze_input_mobile.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeInputMobile", SeasonMazeInputBase)
 SeasonMazeInputMobile = SeasonMazeInputMobile
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeInputMobile.Constructor = function(self, onClick)
-  -- function num : 0_0
+function SeasonMazeInputMobile:Constructor(onClick)
   self._onClick = onClick
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeInputMobile.Dispose = function(self)
-  -- function num : 0_1
+function SeasonMazeInputMobile:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeInputMobile.Update = function(self, deltaTime)
-  -- function num : 0_2 , upvalues : _ENV
-  ((SeasonMazeInputMobile.super).Update)(self, deltaTime)
-  if (self._input).touchCount > 0 then
-    local t0 = ((self._input).GetTouch)(0)
+function SeasonMazeInputMobile:Update(deltaTime)
+  SeasonMazeInputMobile.super.Update(self, deltaTime)
+  if self._input.touchCount > 0 then
+    local t0 = self._input.GetTouch(0)
     if t0 then
-      if (((UnityEngine.EventSystems).EventSystem).current):IsPointerOverGameObject(t0.fingerId) then
-        return 
+      if UnityEngine.EventSystems.EventSystem.current:IsPointerOverGameObject(t0.fingerId) then
+        return
       end
       if not self._player then
-        return 
+        return
       end
       if t0.phase == TouchPhase.Began then
-        self._clickDownTime = (UnityEngine.Time).time
+        self._clickDownTime = UnityEngine.Time.time
       end
       if t0.phase == TouchPhase.Ended or t0.phase == TouchPhase.Canceled then
-        if (self._seasonCamera):IsDraging() then
-          return 
+        if self._seasonCamera:IsDraging() then
+          return
         end
-        if (UnityEngine.Time).time - self._clickDownTime <= self._clickTime then
-          local ray = (self._camera):ScreenPointToRay(Vector3((t0.position).x, (t0.position).y, 0))
-          local results = ((UnityEngine.Physics).RaycastAll)(ray, 1000, 1 << SMazeSceneLayer.Arrow | 1 << SMazeSceneLayer.Room)
-          if results and results.Length > 0 then
+        if UnityEngine.Time.time - self._clickDownTime <= self._clickTime then
+          local ray = self._camera:ScreenPointToRay(Vector3(t0.position.x, t0.position.y, 0))
+          local results = UnityEngine.Physics.RaycastAll(ray, 1000, 1 << SMazeSceneLayer.Arrow | 1 << SMazeSceneLayer.Room)
+          if results and 0 < results.Length then
             self._curClickEventPoint = nil
             self._clickPositionInUnlockZone = false
             local sortedResults = {}
             for i = 0, results.Length - 1 do
-              (table.insert)(sortedResults, results[i])
+              table.insert(sortedResults, results[i])
             end
-            ;
-            (table.sort)(sortedResults, function(a, b)
-    -- function num : 0_2_0
-    do return a.distance < b.distance end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-            ;
-            (self._onClick)(sortedResults)
+            table.sort(sortedResults, function(a, b)
+              return a.distance < b.distance
+            end)
+            self._onClick(sortedResults)
           end
         end
       end
     end
   end
 end
-
-

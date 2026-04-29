@@ -1,31 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_num_lock_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultNumLockHP", BuffResultBase)
 BuffResultNumLockHP = BuffResultNumLockHP
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultNumLockHP.Constructor = function(self, entityID, num)
-  -- function num : 0_0
+function BuffResultNumLockHP:Constructor(entityID, num)
   self._entityID = entityID
   self._num = num
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultNumLockHP.GetEntityID = function(self)
-  -- function num : 0_1
+function BuffResultNumLockHP:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultNumLockHP.GetNumLockHP = function(self)
-  -- function num : 0_2
+function BuffResultNumLockHP:GetNumLockHP()
   return self._num
 end
-
-

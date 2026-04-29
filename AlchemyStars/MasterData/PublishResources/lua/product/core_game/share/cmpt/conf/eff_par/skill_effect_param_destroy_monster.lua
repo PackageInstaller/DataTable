@@ -1,55 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_destroy_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectDestroyMonsterParam", SkillEffectParamBase)
 SkillEffectDestroyMonsterParam = SkillEffectDestroyMonsterParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectDestroyMonsterParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
-  if not t.destroyType then
-    self._destroyType = SkillEffectDestroyMonsterType.Self
-    self._monsterClassIdDic = {}
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-    if type(t.monsterClassID) == "number" then
-      (self._monsterClassIdDic)[t.monsterClassID] = true
-    else
-      if type(t.monsterClassID) == "table" then
-        for _,id in ipairs(t.monsterClassID) do
-          -- DECOMPILER ERROR at PC27: Confused about usage of register: R7 in 'UnsetPending'
-
-          (self._monsterClassIdDic)[id] = true
-        end
-      end
+function SkillEffectDestroyMonsterParam:Constructor(t)
+  self._destroyType = t.destroyType or SkillEffectDestroyMonsterType.Self
+  self._monsterClassIdDic = {}
+  if type(t.monsterClassID) == "number" then
+    self._monsterClassIdDic[t.monsterClassID] = true
+  elseif type(t.monsterClassID) == "table" then
+    for _, id in ipairs(t.monsterClassID) do
+      self._monsterClassIdDic[id] = true
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyMonsterParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectDestroyMonsterParam:GetEffectType()
   return SkillEffectType.DestroyMonster
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyMonsterParam.GetDestroyType = function(self)
-  -- function num : 0_2
+function SkillEffectDestroyMonsterParam:GetDestroyType()
   return self._destroyType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyMonsterParam.GetMonsterClassIdDic = function(self)
-  -- function num : 0_3
+function SkillEffectDestroyMonsterParam:GetMonsterClassIdDic()
   return self._monsterClassIdDic
 end
 
-local SkillEffectDestroyMonsterType = {Self = 1, MySummonMonster = 2, InRangeSpecificClass = 3, TargetMonster = 4}
+local SkillEffectDestroyMonsterType = {
+  Self = 1,
+  MySummonMonster = 2,
+  InRangeSpecificClass = 3,
+  TargetMonster = 4
+}
 _enum("SkillEffectDestroyMonsterType", SkillEffectDestroyMonsterType)
-

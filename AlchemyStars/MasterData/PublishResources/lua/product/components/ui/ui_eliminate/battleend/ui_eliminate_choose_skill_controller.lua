@@ -1,134 +1,87 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/battleend/ui_eliminate_choose_skill_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateChooseSkillController", UIController)
 UIEliminateChooseSkillController = UIEliminateChooseSkillController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateChooseSkillController.Constructor = function(self)
-  -- function num : 0_0
+function UIEliminateChooseSkillController:Constructor()
   self._selectItem = nil
   self._skillRewards = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseSkillController.OnShow = function(self, uiParam)
-  -- function num : 0_1 , upvalues : _ENV
-  self._anipopModule = (GameGlobal.GetModule)(AnipopModule)
+function UIEliminateChooseSkillController:OnShow(uiParam)
+  self._anipopModule = GameGlobal.GetModule(AnipopModule)
   self._levelIndex = uiParam[1]
   self._isInGame = uiParam[3]
   if uiParam[2] then
-    for index,relic in ipairs(uiParam[2]) do
-      -- DECOMPILER ERROR at PC21: Confused about usage of register: R7 in 'UnsetPending'
-
+    for index, relic in ipairs(uiParam[2]) do
       if relic.id then
-        (self._skillRewards)[index] = relic.id
+        self._skillRewards[index] = relic.id
       else
-        -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self._skillRewards)[index] = relic.assetid
+        self._skillRewards[index] = relic.assetid
       end
     end
   else
-    do
-      local gameMatchModule = self:GetModule(GameMatchModule)
-      local matchResult = UI_MatchResult:New()
-      matchResult = gameMatchModule:GetMachResult()
-      local tempRelics = matchResult.m_ext_skill_rewards
-      for i = 1, (table.count)(tempRelics) do
-        -- DECOMPILER ERROR at PC49: Confused about usage of register: R9 in 'UnsetPending'
-
-        (self._skillRewards)[i] = (tempRelics[i]).assetid
-      end
-      do
-        self:GetComponents()
-        self:InitComponent()
-        local funcModule = (self:GetModule(RoleModule)).uiModule
-        funcModule:LockAchievementFinishPanel(false)
-      end
+    local gameMatchModule = self:GetModule(GameMatchModule)
+    local matchResult = UI_MatchResult:New()
+    matchResult = gameMatchModule:GetMachResult()
+    local tempRelics = matchResult.m_ext_skill_rewards
+    for i = 1, table.count(tempRelics) do
+      self._skillRewards[i] = tempRelics[i].assetid
     end
   end
+  self:GetComponents()
+  self:InitComponent()
+  local funcModule = self:GetModule(RoleModule).uiModule
+  funcModule:LockAchievementFinishPanel(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseSkillController.OnHide = function(self)
-  -- function num : 0_2
+function UIEliminateChooseSkillController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseSkillController.GetComponents = function(self)
-  -- function num : 0_3
+function UIEliminateChooseSkillController:GetComponents()
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseSkillController.InitComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._itemList = (self._pool):SpawnObjects("UIEliminateSkillItem", (table.count)(self._skillRewards))
-  for i,item in pairs(self._itemList) do
-    item:SetData((self._skillRewards)[i], i, function(item)
-    -- function num : 0_4_0 , upvalues : self
-    if item == self._selectItem then
-      return 
-    end
-    if self._selectItem then
-      (self._selectItem):SetSelect(false)
-    end
-    self._selectItem = item
-  end
-, function(item)
-    -- function num : 0_4_1 , upvalues : self, _ENV
-    self:StartTask(function(TT)
-      -- function num : 0_4_1_0 , upvalues : item, self, _ENV
-      local itemID = item:GetID()
-      local res, relics = (self._anipopModule):RequestSelectRelic(TT, itemID)
-      if res:GetSucc() then
-        self:Out(relics)
-      else
-        self:SwitchState(UIStateType.UIEliminateLevelController)
-        ;
-        (Log.fatal)("选择模块技能失败：", res:GetResult())
+function UIEliminateChooseSkillController:InitComponent()
+  self._itemList = self._pool:SpawnObjects("UIEliminateSkillItem", table.count(self._skillRewards))
+  for i, item in pairs(self._itemList) do
+    item:SetData(self._skillRewards[i], i, function(item)
+      if item == self._selectItem then
+        return
       end
-    end
-)
-  end
-)
+      if self._selectItem then
+        self._selectItem:SetSelect(false)
+      end
+      self._selectItem = item
+    end, function(item)
+      self:StartTask(function(TT)
+        local itemID = item:GetID()
+        local res, relics = self._anipopModule:RequestSelectRelic(TT, itemID)
+        if res:GetSucc() then
+          self:Out(relics)
+        else
+          self:SwitchState(UIStateType.UIEliminateLevelController)
+          Log.fatal("选择模块技能失败：", res:GetResult())
+        end
+      end)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseSkillController.OutBtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIEliminateChooseSkillController:OutBtnOnClick()
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    local res, relics = (self._anipopModule):AnipopConvertRelic(TT)
+    local res, relics = self._anipopModule:AnipopConvertRelic(TT)
     if res:GetSucc() then
       self:Out(relics)
     else
-      ;
-      (Log.fatal)("切换至选启迪装具失败！:", res:GetResult())
+      Log.fatal("切换至选启迪装具失败！:", res:GetResult())
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseSkillController.Out = function(self, relics)
-  -- function num : 0_6 , upvalues : _ENV
+function UIEliminateChooseSkillController:Out(relics)
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV, relics
-    (self._anim):Play("uieff_UIEliminateChooseSkillController_out")
-    for _,item in pairs(self._itemList) do
+    self._anim:Play("uieff_UIEliminateChooseSkillController_out")
+    for _, item in pairs(self._itemList) do
       item:PlayOutAnim()
     end
     YIELD(TT, 500)
@@ -138,46 +91,32 @@ UIEliminateChooseSkillController.Out = function(self, relics)
     else
       self:SwitchState(UIStateType.UIEliminateLevelController)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseSkillController.ChooseBtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIEliminateChooseSkillController:ChooseBtnOnClick()
   if self._selectItem then
-    (self._selectItem):ChooseItem()
+    self._selectItem:ChooseItem()
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_eliminate_skill_unchoose_tip"))
+    ToastManager.ShowToast(StringTable.Get("str_eliminate_skill_unchoose_tip"))
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateChooseSkillController.TestFakeSelect = function(self, index)
-  -- function num : 0_8 , upvalues : _ENV
+function UIEliminateChooseSkillController:TestFakeSelect(index)
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : _ENV, index, self
-    (Log.fatal)("选择模块技能，index：", index)
-    local itemID = (self._skillRewards)[index]
+    Log.fatal("选择模块技能，index：", index)
+    local itemID = self._skillRewards[index]
     if not itemID then
       self:SwitchState(UIStateType.UIMain)
-      ;
-      (Log.fatal)("选择模块技能失败，index：", index)
-      return 
+      Log.fatal("选择模块技能失败，index：", index)
+      return
     end
-    local res = (self._anipopModule):RequestSelectRelic(TT, itemID)
+    local res = self._anipopModule:RequestSelectRelic(TT, itemID)
     if res:GetSucc() then
       self:SwitchState(UIStateType.UIMain)
     else
       self:SwitchState(UIStateType.UIMain)
-      ;
-      (Log.fatal)("选择模块技能失败：", res:GetResult())
+      Log.fatal("选择模块技能失败：", res:GetResult())
     end
-  end
-)
+  end)
 end
-
-

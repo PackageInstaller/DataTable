@@ -1,13 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_bloodsucker_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, TalentPointId = 3, TalentExpId = 4}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  TalentPointId = 3,
+  TalentExpId = 4
+}
 local config = {
-{1, 107602607, 3000290, 3000289}
-, 
-{2, 121202607, 3000290, 3000289}
+  {
+    1,
+    107602607,
+    3000290,
+    3000289
+  },
+  {
+    2,
+    121202607,
+    3000290,
+    3000289
+  }
 }
 return config, "ID", key
-

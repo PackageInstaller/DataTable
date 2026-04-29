@@ -1,45 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_leave_enter_battle_field_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillLeaveEnterBattleFieldResult", SkillEffectResultBase)
 SkillLeaveEnterBattleFieldResult = SkillLeaveEnterBattleFieldResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillLeaveEnterBattleFieldResult.Constructor = function(self, isLeave, pos, dir)
-  -- function num : 0_0
+function SkillLeaveEnterBattleFieldResult:Constructor(isLeave, pos, dir)
   self._leave = isLeave
   self._pos = pos
   self._dir = dir
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillLeaveEnterBattleFieldResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillLeaveEnterBattleFieldResult:GetEffectType()
   return SkillEffectType.LeaveEnterBattleField
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillLeaveEnterBattleFieldResult.IsLeave = function(self)
-  -- function num : 0_2
+function SkillLeaveEnterBattleFieldResult:IsLeave()
   return self._leave
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillLeaveEnterBattleFieldResult.EnterPos = function(self)
-  -- function num : 0_3
+function SkillLeaveEnterBattleFieldResult:EnterPos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillLeaveEnterBattleFieldResult.EnterDir = function(self)
-  -- function num : 0_4
+function SkillLeaveEnterBattleFieldResult:EnterDir()
   return self._dir
 end
-
-

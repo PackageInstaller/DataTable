@@ -1,263 +1,168 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/notify_extends2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("NTMultiHPSwitch", INotifyBase)
 NTMultiHPSwitch = NTMultiHPSwitch
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-NTMultiHPSwitch.Constructor = function(self, curMultiHPStage)
-  -- function num : 0_0
+function NTMultiHPSwitch:Constructor(curMultiHPStage)
   self._curMultiHPStage = curMultiHPStage
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMultiHPSwitch.GetNotifyType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function NTMultiHPSwitch:GetNotifyType()
   return NotifyType.MultiHPSwitch
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-NTMultiHPSwitch.GetMultiHPStage = function(self)
-  -- function num : 0_2
+function NTMultiHPSwitch:GetMultiHPStage()
   return self._curMultiHPStage
 end
 
 _class("NTRoundResultStart", INotifyBase)
 NTRoundResultStart = NTRoundResultStart
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-NTRoundResultStart.Constructor = function(self, team)
-  -- function num : 0_3
+function NTRoundResultStart:Constructor(team)
   self._teamEntity = team
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-NTRoundResultStart.GetNotifyType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function NTRoundResultStart:GetNotifyType()
   return NotifyType.RoundResultStart
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-NTRoundResultStart.GetNotifyEntity = function(self)
-  -- function num : 0_5
+function NTRoundResultStart:GetNotifyEntity()
   return self._teamEntity
 end
 
 _class("NTFeatureStepPointMoveCost", INotifyBase)
 NTFeatureStepPointMoveCost = NTFeatureStepPointMoveCost
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
 
-NTFeatureStepPointMoveCost.Constructor = function(self, teamEntity, curVal, oldVal, costVal)
-  -- function num : 0_6
+function NTFeatureStepPointMoveCost:Constructor(teamEntity, curVal, oldVal, costVal)
   self._teamEntity = teamEntity
   self._curVal = curVal
   self._oldVal = oldVal
   self._costVal = costVal
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-NTFeatureStepPointMoveCost.GetNotifyType = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function NTFeatureStepPointMoveCost:GetNotifyType()
   return NotifyType.FeatureStepPointMoveCost
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-NTFeatureStepPointMoveCost.GetNotifyEntity = function(self)
-  -- function num : 0_8
+function NTFeatureStepPointMoveCost:GetNotifyEntity()
   return self._teamEntity
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-NTFeatureStepPointMoveCost.GetCurVal = function(self)
-  -- function num : 0_9
+function NTFeatureStepPointMoveCost:GetCurVal()
   return self._curVal
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-NTFeatureStepPointMoveCost.GetOldVal = function(self)
-  -- function num : 0_10
+function NTFeatureStepPointMoveCost:GetOldVal()
   return self._oldVal
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-NTFeatureStepPointMoveCost.GetCostVal = function(self)
-  -- function num : 0_11
+function NTFeatureStepPointMoveCost:GetCostVal()
   return self._costVal
 end
 
 _class("NTFeatureShopCoinCountChange", INotifyBase)
 NTFeatureShopCoinCountChange = NTFeatureShopCoinCountChange
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
 
-NTFeatureShopCoinCountChange.Constructor = function(self, curCoinCount, oriCoinCount)
-  -- function num : 0_12
+function NTFeatureShopCoinCountChange:Constructor(curCoinCount, oriCoinCount)
   self._curCoinCount = curCoinCount
   self._oriCoinCount = oriCoinCount
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-NTFeatureShopCoinCountChange.GetNotifyType = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function NTFeatureShopCoinCountChange:GetNotifyType()
   return NotifyType.FeatureShopCoinCountChange
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-NTRoundResultStart.GetCurCoinCount = function(self)
-  -- function num : 0_14
+function NTRoundResultStart:GetCurCoinCount()
   return self._curCoinCount
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-NTRoundResultStart.GetOriCoinCount = function(self)
-  -- function num : 0_15
+function NTRoundResultStart:GetOriCoinCount()
   return self._oriCoinCount
 end
 
 _class("NTFeatureStepPointSkillCost", INotifyBase)
 NTFeatureStepPointSkillCost = NTFeatureStepPointSkillCost
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
 
-NTFeatureStepPointSkillCost.Constructor = function(self, teamEntity, curVal, oldVal, costVal)
-  -- function num : 0_16
+function NTFeatureStepPointSkillCost:Constructor(teamEntity, curVal, oldVal, costVal)
   self._teamEntity = teamEntity
   self._curVal = curVal
   self._oldVal = oldVal
   self._costVal = costVal
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-NTFeatureStepPointSkillCost.GetNotifyType = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function NTFeatureStepPointSkillCost:GetNotifyType()
   return NotifyType.FeatureStepPointSkillCost
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-NTFeatureStepPointSkillCost.GetNotifyEntity = function(self)
-  -- function num : 0_18
+function NTFeatureStepPointSkillCost:GetNotifyEntity()
   return self._teamEntity
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-NTFeatureStepPointSkillCost.GetCurVal = function(self)
-  -- function num : 0_19
+function NTFeatureStepPointSkillCost:GetCurVal()
   return self._curVal
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-NTFeatureStepPointSkillCost.GetOldVal = function(self)
-  -- function num : 0_20
+function NTFeatureStepPointSkillCost:GetOldVal()
   return self._oldVal
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-NTFeatureStepPointSkillCost.GetCostVal = function(self)
-  -- function num : 0_21
+function NTFeatureStepPointSkillCost:GetCostVal()
   return self._costVal
 end
 
 _class("NTPopStarProAddFeatureEnergy", INotifyBase)
 NTPopStarProAddFeatureEnergy = NTPopStarProAddFeatureEnergy
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
 
-NTPopStarProAddFeatureEnergy.Constructor = function(self)
-  -- function num : 0_22
+function NTPopStarProAddFeatureEnergy:Constructor()
   self._addNum = 0
   self._cumulativeTriggerNum = 0
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPopStarProAddFeatureEnergy.GetNotifyType = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function NTPopStarProAddFeatureEnergy:GetNotifyType()
   return NotifyType.PopStarProAddFeatureEnergy
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPopStarProAddFeatureEnergy.SetAddNum = function(self, num)
-  -- function num : 0_24
+function NTPopStarProAddFeatureEnergy:SetAddNum(num)
   self._addNum = num
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPopStarProAddFeatureEnergy.GetAddNum = function(self)
-  -- function num : 0_25
+function NTPopStarProAddFeatureEnergy:GetAddNum()
   return self._addNum
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPopStarProAddFeatureEnergy.SetCumulativeTriggerNum = function(self, num)
-  -- function num : 0_26
+function NTPopStarProAddFeatureEnergy:SetCumulativeTriggerNum(num)
   self._cumulativeTriggerNum = num
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-NTPopStarProAddFeatureEnergy.GetCumulativeTriggerNum = function(self)
-  -- function num : 0_27
+function NTPopStarProAddFeatureEnergy:GetCumulativeTriggerNum()
   return self._cumulativeTriggerNum
 end
 
 _class("NTGridConvertSubordinate", INotifyBase)
 NTGridConvertSubordinate = NTGridConvertSubordinate
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
 
-NTGridConvertSubordinate.Constructor = function(self, entity, convertInfoArray)
-  -- function num : 0_28 , upvalues : _ENV
+function NTGridConvertSubordinate:Constructor(entity, convertInfoArray)
   self._entity = entity
   self._convertInfoArray = convertInfoArray
   self._convertScope = {}
   if convertInfoArray then
-    for _,convertInfo in ipairs(convertInfoArray) do
+    for _, convertInfo in ipairs(convertInfoArray) do
       local pos = convertInfo:GetPos()
-      ;
-      (table.insert)(self._convertScope, pos)
+      table.insert(self._convertScope, pos)
     end
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-NTGridConvertSubordinate.GetNotifyType = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function NTGridConvertSubordinate:GetNotifyType()
   return NotifyType.GridConvertSubordinate
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-NTGridConvertSubordinate.GetNotifyEntity = function(self)
-  -- function num : 0_30
-  if self._entity and (self._entity):HasSuperEntity() and ((self._entity):EntityType()):IsSkillHolder() then
-    return (self._entity):GetSuperEntity()
+function NTGridConvertSubordinate:GetNotifyEntity()
+  if self._entity and self._entity:HasSuperEntity() and self._entity:EntityType():IsSkillHolder() then
+    return self._entity:GetSuperEntity()
   end
   return self._entity
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-NTGridConvertSubordinate.GetConvertScope = function(self)
-  -- function num : 0_31
+function NTGridConvertSubordinate:GetConvertScope()
   if #self._convertScope > 0 then
     return self._convertScope
   end
@@ -265,104 +170,69 @@ end
 
 _class("NTBeforePetActiveSkillClearPower", INotifyBase)
 NTBeforePetActiveSkillClearPower = NTBeforePetActiveSkillClearPower
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
 
-NTBeforePetActiveSkillClearPower.Constructor = function(self, entity, skillID)
-  -- function num : 0_32
+function NTBeforePetActiveSkillClearPower:Constructor(entity, skillID)
   self._entity = entity
   self._skillID = skillID
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBeforePetActiveSkillClearPower.GetNotifyType = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function NTBeforePetActiveSkillClearPower:GetNotifyType()
   return NotifyType.BeforePetActiveSkillClearPower
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBeforePetActiveSkillClearPower.GetNotifyEntity = function(self)
-  -- function num : 0_34
+function NTBeforePetActiveSkillClearPower:GetNotifyEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBeforePetActiveSkillClearPower.GetSkillID = function(self)
-  -- function num : 0_35
+function NTBeforePetActiveSkillClearPower:GetSkillID()
   return self._skillID
 end
 
 _class("NTBodyAreaChange", INotifyBase)
 NTBodyAreaChange = NTBodyAreaChange
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
 
-NTBodyAreaChange.Constructor = function(self, entity)
-  -- function num : 0_36
+function NTBodyAreaChange:Constructor(entity)
   self._entity = entity
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBodyAreaChange.GetNotifyType = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function NTBodyAreaChange:GetNotifyType()
   return NotifyType.BodyAreaChange
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBodyAreaChange.GetNotifyEntity = function(self)
-  -- function num : 0_38
+function NTBodyAreaChange:GetNotifyEntity()
   return self._entity
 end
 
 _class("NTAfterPetSkillDamage", INotifyBase)
 NTAfterPetSkillDamage = NTAfterPetSkillDamage
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
 
-NTAfterPetSkillDamage.Constructor = function(self, petEntity, skillId)
-  -- function num : 0_39
+function NTAfterPetSkillDamage:Constructor(petEntity, skillId)
   self._petEntity = petEntity
   self._skillId = skillId
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAfterPetSkillDamage.GetNotifyType = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function NTAfterPetSkillDamage:GetNotifyType()
   return NotifyType.AfterPetSkillDamage
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAfterPetSkillDamage.GetNotifyEntity = function(self)
-  -- function num : 0_41
+function NTAfterPetSkillDamage:GetNotifyEntity()
   return self._petEntity
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-NTAfterPetSkillDamage.GetSkillID = function(self)
-  -- function num : 0_42
+function NTAfterPetSkillDamage:GetSkillID()
   return self._skillId
 end
 
 _class("NTBeforePetAbsorbMainColorGrid", INotifyBase)
 NTBeforePetAbsorbMainColorGrid = NTBeforePetAbsorbMainColorGrid
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
 
-NTBeforePetAbsorbMainColorGrid.Constructor = function(self, trapEntity, triggerEntity)
-  -- function num : 0_43
+function NTBeforePetAbsorbMainColorGrid:Constructor(trapEntity, triggerEntity)
   self._trapEntity = trapEntity
   self._triggerEntity = triggerEntity
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBeforePetAbsorbMainColorGrid.GetTrapID = function(self)
-  -- function num : 0_44
-  local trapCmpt = (self._trapEntity):Trap()
+function NTBeforePetAbsorbMainColorGrid:GetTrapID()
+  local trapCmpt = self._trapEntity:Trap()
   if not trapCmpt then
     return nil
   end
@@ -370,186 +240,117 @@ NTBeforePetAbsorbMainColorGrid.GetTrapID = function(self)
   return trapID
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBeforePetAbsorbMainColorGrid.GetNotifyType = function(self)
-  -- function num : 0_45 , upvalues : _ENV
+function NTBeforePetAbsorbMainColorGrid:GetNotifyType()
   return NotifyType.BeforePetAbsorbMainColorGrid
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBeforePetAbsorbMainColorGrid.GetNotifyEntity = function(self)
-  -- function num : 0_46
+function NTBeforePetAbsorbMainColorGrid:GetNotifyEntity()
   return self._trapEntity
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBeforePetAbsorbMainColorGrid.GetTriggerEntity = function(self)
-  -- function num : 0_47
+function NTBeforePetAbsorbMainColorGrid:GetTriggerEntity()
   return self._triggerEntity
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBeforePetAbsorbMainColorGrid.GetNotifyPos = function(self)
-  -- function num : 0_48
-  return (self._trapEntity):GetGridPosition()
+function NTBeforePetAbsorbMainColorGrid:GetNotifyPos()
+  return self._trapEntity:GetGridPosition()
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-NTBeforePetAbsorbMainColorGrid.GetPos = function(self)
-  -- function num : 0_49
-  return (self._trapEntity):GetGridPosition()
+function NTBeforePetAbsorbMainColorGrid:GetPos()
+  return self._trapEntity:GetGridPosition()
 end
 
 _class("NTColorPaletteChargeComplete", INotifyBase)
 NTColorPaletteChargeComplete = NTColorPaletteChargeComplete
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
 
-NTColorPaletteChargeComplete.Constructor = function(self, notifyEntity, pieceTypes)
-  -- function num : 0_50
+function NTColorPaletteChargeComplete:Constructor(notifyEntity, pieceTypes)
   self._notifyEntity = notifyEntity
   self._pieceTypes = pieceTypes
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-NTColorPaletteChargeComplete.GetNotifyEntity = function(self)
-  -- function num : 0_51
+function NTColorPaletteChargeComplete:GetNotifyEntity()
   return self._notifyEntity
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-NTColorPaletteChargeComplete.GetNotifyType = function(self)
-  -- function num : 0_52 , upvalues : _ENV
+function NTColorPaletteChargeComplete:GetNotifyType()
   return NotifyType.ColorPaletteChargeComplete
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-NTColorPaletteChargeComplete.GetPieceTypes = function(self)
-  -- function num : 0_53
+function NTColorPaletteChargeComplete:GetPieceTypes()
   return self._pieceTypes
 end
 
 _class("NTRandomTetrisEnd", INotifyBase)
 NTRandomTetrisEnd = NTRandomTetrisEnd
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
 
-NTRandomTetrisEnd.Constructor = function(self, notifyEntity, tetrisIndex, tetrisType)
-  -- function num : 0_54
+function NTRandomTetrisEnd:Constructor(notifyEntity, tetrisIndex, tetrisType)
   self._notifyEntity = notifyEntity
   self._tetrisIndex = tetrisIndex
   self._tetrisType = tetrisType
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-NTRandomTetrisEnd.GetTetrisIndex = function(self)
-  -- function num : 0_55
+function NTRandomTetrisEnd:GetTetrisIndex()
   return self._tetrisIndex
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-NTRandomTetrisEnd.GetTetrisType = function(self)
-  -- function num : 0_56
+function NTRandomTetrisEnd:GetTetrisType()
   return self._tetrisType
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-NTRandomTetrisEnd.GetNotifyEntity = function(self)
-  -- function num : 0_57
+function NTRandomTetrisEnd:GetNotifyEntity()
   return self._notifyEntity
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-NTRandomTetrisEnd.GetNotifyType = function(self)
-  -- function num : 0_58 , upvalues : _ENV
+function NTRandomTetrisEnd:GetNotifyType()
   return NotifyType.RandomTetrisEnd
 end
 
 _class("NTScorpionSummonEnd", INotifyBase)
 NTScorpionSummonEnd = NTScorpionSummonEnd
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
 
-NTScorpionSummonEnd.Constructor = function(self, groupID)
-  -- function num : 0_59
+function NTScorpionSummonEnd:Constructor(groupID)
   self._moveGroupID = groupID
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-NTScorpionSummonEnd.GetGroupID = function(self)
-  -- function num : 0_60
+function NTScorpionSummonEnd:GetGroupID()
   return self._moveGroupID
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-NTScorpionSummonEnd.GetNotifyType = function(self)
-  -- function num : 0_61 , upvalues : _ENV
+function NTScorpionSummonEnd:GetNotifyType()
   return NotifyType.ScorpionSummonEnd
 end
 
 _class("NTChainAttackFinish", INotifyBase)
 NTChainAttackFinish = NTChainAttackFinish
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
 
-NTChainAttackFinish.Constructor = function(self, team)
-  -- function num : 0_62
+function NTChainAttackFinish:Constructor(team)
   self._teamEntity = team
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainAttackFinish.GetNotifyType = function(self)
-  -- function num : 0_63 , upvalues : _ENV
+function NTChainAttackFinish:GetNotifyType()
   return NotifyType.ChainAttackFinish
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-NTChainAttackFinish.GetNotifyEntity = function(self)
-  -- function num : 0_64
+function NTChainAttackFinish:GetNotifyEntity()
   return self._teamEntity
 end
 
 _class("NTActiveSkillLinkLineChainAttackFinish", INotifyBase)
 NTActiveSkillLinkLineChainAttackFinish = NTActiveSkillLinkLineChainAttackFinish
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
 
-NTActiveSkillLinkLineChainAttackFinish.Constructor = function(self, casterEntity, casterPos)
-  -- function num : 0_65
+function NTActiveSkillLinkLineChainAttackFinish:Constructor(casterEntity, casterPos)
   self._casterEntity = casterEntity
   self._casterPos = casterPos
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillLinkLineChainAttackFinish.GetNotifyPos = function(self)
-  -- function num : 0_66
+function NTActiveSkillLinkLineChainAttackFinish:GetNotifyPos()
   return self._casterPos
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillLinkLineChainAttackFinish.GetNotifyType = function(self)
-  -- function num : 0_67 , upvalues : _ENV
+function NTActiveSkillLinkLineChainAttackFinish:GetNotifyType()
   return NotifyType.ActiveSkillLinkLineChainAttackFinish
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R0 in 'UnsetPending'
-
-NTActiveSkillLinkLineChainAttackFinish.GetNotifyEntity = function(self)
-  -- function num : 0_68
+function NTActiveSkillLinkLineChainAttackFinish:GetNotifyEntity()
   return self._casterEntity
 end
-
-

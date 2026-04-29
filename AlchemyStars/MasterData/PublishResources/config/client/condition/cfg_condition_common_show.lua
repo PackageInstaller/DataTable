@@ -1,17 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/condition/cfg_condition_common_show.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {CondID = 1, Show = 2}
 local config = {
-[312] = {312, "str_condition_312"}
-, 
-[313] = {313, "str_condition_313"}
-, 
-[314] = {314, "str_condition_314"}
-, 
-[318] = {318, "str_condition_318"}
+  [312] = {
+    312,
+    "str_condition_312"
+  },
+  [313] = {
+    313,
+    "str_condition_313"
+  },
+  [314] = {
+    314,
+    "str_condition_314"
+  },
+  [318] = {
+    318,
+    "str_condition_318"
+  }
 }
 return config, "CondID", key
-

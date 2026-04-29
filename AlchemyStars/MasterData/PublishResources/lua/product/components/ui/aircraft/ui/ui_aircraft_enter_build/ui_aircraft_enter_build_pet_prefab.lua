@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_enter_build/ui_aircraft_enter_build_pet_prefab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftEnterBuildPetPrefab", UICustomWidget)
 UIAircraftEnterBuildPetPrefab = UIAircraftEnterBuildPetPrefab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftEnterBuildPetPrefab.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftEnterBuildPetPrefab:OnShow(uiParams)
   self._multi = self:GetGameObject("multi")
   self._drawIcon = self:GetUIComponent("RawImageLoader", "drawIcon")
   self._nameText = self:GetUIComponent("UILocalizationText", "name")
@@ -25,38 +18,25 @@ UIAircraftEnterBuildPetPrefab.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.AircraftEnterClearPetList, self.AircraftEnterClearPetList)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildPetPrefab.AircraftEnterClearPetList = function(self, pstid)
-  -- function num : 0_1
-  (self._multi):SetActive(pstid == self._pstid)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIAircraftEnterBuildPetPrefab:AircraftEnterClearPetList(pstid)
+  self._multi:SetActive(pstid == self._pstid)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildPetPrefab.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftEnterBuildPetPrefab:OnValue()
   self:GetWorkState()
-  ;
-  (self._drawIcon):LoadImage((self._pet):GetPetAircraftBody(PetSkinEffectPath.BODY_INTO_AIRCRAFT_AIRBODY))
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._element).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[(self._pet):GetPetFirstElement()]).Icon))
-  ;
-  (self._nameText):SetText((StringTable.Get)((self._pet):GetPetName()))
-  local petStar = (self._pet):GetPetStar()
-  local petAwake = (self._pet):GetPetAwakening()
-  local petAwakeLock = (self._pet):GetAwakeMatch()
-  ;
-  (self._stars):SpawnObjects("UIAircraftEnterBuildStarItem", petStar)
-  local stars = (self._stars):GetAllSpawnList()
+  self._drawIcon:LoadImage(self._pet:GetPetAircraftBody(PetSkinEffectPath.BODY_INTO_AIRCRAFT_AIRBODY))
+  local cfg_pet_element = Cfg.cfg_pet_element({})
+  self._element.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[self._pet:GetPetFirstElement()].Icon))
+  self._nameText:SetText(StringTable.Get(self._pet:GetPetName()))
+  local petStar = self._pet:GetPetStar()
+  local petAwake = self._pet:GetPetAwakening()
+  local petAwakeLock = self._pet:GetAwakeMatch()
+  self._stars:SpawnObjects("UIAircraftEnterBuildStarItem", petStar)
+  local stars = self._stars:GetAllSpawnList()
   for i = 1, #stars do
-    local sprite = nil
+    local sprite
     if i <= petAwake then
-      if petAwakeLock < i then
+      if i > petAwakeLock then
         sprite = self._sprite_xing_3
       else
         sprite = self._sprite_xing_1
@@ -64,56 +44,39 @@ UIAircraftEnterBuildPetPrefab.OnValue = function(self)
     else
       sprite = self._sprite_xing_2
     end
-    ;
-    (stars[i]):SetData(sprite)
+    stars[i]:SetData(sprite)
   end
-  local len = (table.count)(self._skillState)
-  ;
-  (self._skills):SpawnObjects("UIAircraftPetWorkSkillPrefab", len)
-  local pools = (self._skills):GetAllSpawnList()
+  local len = table.count(self._skillState)
+  self._skills:SpawnObjects("UIAircraftPetWorkSkillPrefab", len)
+  local pools = self._skills:GetAllSpawnList()
   for i = 1, len do
-    (pools[i]):SetData(i, (self._skillState)[i], self._currentRoomType)
+    pools[i]:SetData(i, self._skillState[i], self._currentRoomType)
   end
   self:AircraftEnterClearPetList(self._currid)
   self:Sp()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildPetPrefab.Sp = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIAircraftEnterBuildPetPrefab:Sp()
   if self._spPet then
-    (self._sp):SetActive(true)
-    local tex = (StringTable.Get)("str_aircraft_sp_enter_tex", (StringTable.Get)((self._spPet):GetPetName()))
-    ;
-    (self._spTex):RefreshText(tex)
+    self._sp:SetActive(true)
+    local tex = StringTable.Get("str_aircraft_sp_enter_tex", StringTable.Get(self._spPet:GetPetName()))
+    self._spTex:RefreshText(tex)
   else
-    do
-      ;
-      (self._sp):SetActive(false)
-    end
+    self._sp:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildPetPrefab.GetWorkState = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIAircraftEnterBuildPetPrefab:GetWorkState()
   if not self._room then
-    (self._roomTypeGo):SetActive(false)
+    self._roomTypeGo:SetActive(false)
   else
-    ;
-    (self._roomTypeGo):SetActive(true)
-    local roomtype = (self._room):GetRoomType()
-    ;
-    (self._roomTypeText):SetText((StringTable.Get)((self._room):GetRoomName()))
+    self._roomTypeGo:SetActive(true)
+    local roomtype = self._room:GetRoomType()
+    self._roomTypeText:SetText(StringTable.Get(self._room:GetRoomName()))
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildPetPrefab.SetData = function(self, index, spirit_xing_1, spirit_xing_2, spirit_xing_3, petInfo, callback, room, currid, spaceid, currentRoomType)
-  -- function num : 0_5 , upvalues : _ENV
+function UIAircraftEnterBuildPetPrefab:SetData(index, spirit_xing_1, spirit_xing_2, spirit_xing_3, petInfo, callback, room, currid, spaceid, currentRoomType)
   self._index = index
   self._sprite_xing_1 = spirit_xing_1
   self._sprite_xing_2 = spirit_xing_2
@@ -127,45 +90,26 @@ UIAircraftEnterBuildPetPrefab.SetData = function(self, index, spirit_xing_1, spi
   self._pstid = petInfo:GetPstID()
   self._spPet = self:GetSpPet(self._pstid)
   self._skillState = {}
-  self._grade = (self._pet):GetPetGrade()
-  local tab = (self._pet):PetGradeNewSkill()
-  for i = 1, (table.count)(tab) do
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R16 in 'UnsetPending'
-
-    (self._skillState)[i] = {}
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R16 in 'UnsetPending'
-
-    ;
-    ((self._skillState)[i]).ID = (tab[i]).NewSkill
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R16 in 'UnsetPending'
-
-    ;
-    ((self._skillState)[i]).grade = (tab[i]).Grade
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R16 in 'UnsetPending'
-
-    if self._grade < (tab[i]).Grade then
-      ((self._skillState)[i]).isLock = true
+  self._grade = self._pet:GetPetGrade()
+  local tab = self._pet:PetGradeNewSkill()
+  for i = 1, table.count(tab) do
+    self._skillState[i] = {}
+    self._skillState[i].ID = tab[i].NewSkill
+    self._skillState[i].grade = tab[i].Grade
+    if tab[i].Grade > self._grade then
+      self._skillState[i].isLock = true
     else
-      -- DECOMPILER ERROR at PC57: Confused about usage of register: R16 in 'UnsetPending'
-
-      ;
-      ((self._skillState)[i]).isLock = false
+      self._skillState[i].isLock = false
     end
   end
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildPetPrefab.Constructor = function(self)
-  -- function num : 0_6
+function UIAircraftEnterBuildPetPrefab:Constructor()
   self._spaceid = 0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildPetPrefab.OnHide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIAircraftEnterBuildPetPrefab:OnHide()
   self:DetachEvent(GameEventType.AircraftEnterClearPetList, self.AircraftEnterClearPetList)
   self._spaceid = 0
   self._skillState = nil
@@ -183,59 +127,44 @@ UIAircraftEnterBuildPetPrefab.OnHide = function(self)
   self._stars = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildPetPrefab.itemOnClick = function(self)
-  -- function num : 0_8
+function UIAircraftEnterBuildPetPrefab:itemOnClick()
   if self._callback then
-    (self._callback)(self._index, self._pet, self._skillState, self._spPet)
+    self._callback(self._index, self._pet, self._skillState, self._spPet)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildPetPrefab.ShowIdxStr = function(self, idx)
-  -- function num : 0_9
+function UIAircraftEnterBuildPetPrefab:ShowIdxStr(idx)
   if idx == 0 then
-    (self._multi):SetActive(false)
+    self._multi:SetActive(false)
   else
-    ;
-    (self._multi):SetActive(true)
+    self._multi:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildPetPrefab.GetSpPet = function(self, pstid)
-  -- function num : 0_10 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(PetModule)
+function UIAircraftEnterBuildPetPrefab:GetSpPet(pstid)
+  local module = GameGlobal.GetModule(PetModule)
   local pet = module:GetPet(pstid)
   if not pet then
     return nil
   end
   local bindPet = module:GetBindPet(pet:GetTemplateID())
-  do
-    if bindPet then
-      local room = ((GameGlobal.GetModule)(AircraftModule)):GetPetAirRoom(bindPet)
-      if room then
-        return bindPet
-      end
+  if bindPet then
+    local room = GameGlobal.GetModule(AircraftModule):GetPetAirRoom(bindPet)
+    if room then
+      return bindPet
     end
-    return nil
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterBuildPetPrefab._IsPetSettled = function(self, tmpID)
-  -- function num : 0_11 , upvalues : _ENV
-  local spaces = (Cfg.cfg_aircraft_space)({})
+function UIAircraftEnterBuildPetPrefab:_IsPetSettled(tmpID)
+  local spaces = Cfg.cfg_aircraft_space({})
   for i = 1, #spaces do
     local roomData = airModule:GetRoom(i)
     if roomData then
       local settlePets = roomData:GetPets()
-      if settlePets and #settlePets > 0 then
-        for _,settlePet in ipairs(settlePets) do
+      if settlePets and 0 < #settlePets then
+        for _, settlePet in ipairs(settlePets) do
           if settlePet:GetTemplateID() == tmpID then
             return true
           end
@@ -244,5 +173,3 @@ UIAircraftEnterBuildPetPrefab._IsPetSettled = function(self, tmpID)
     end
   end
 end
-
-

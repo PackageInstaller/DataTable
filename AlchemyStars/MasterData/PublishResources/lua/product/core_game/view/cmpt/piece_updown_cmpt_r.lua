@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/piece_updown_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PieceUpdownComponent", Object)
 PieceUpdownComponent = PieceUpdownComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PieceUpdownComponent.Constructor = function(self, pos, isDown)
-  -- function num : 0_0
+function PieceUpdownComponent:Constructor(pos, isDown)
   self._pos = pos
   self._isDown = isDown
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceUpdownComponent.GetPos = function(self)
-  -- function num : 0_1
+function PieceUpdownComponent:GetPos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceUpdownComponent.IsDown = function(self)
-  -- function num : 0_2
+function PieceUpdownComponent:IsDown()
   return self._isDown
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PieceUpdown = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).PieceUpdown)
+function Entity:PieceUpdown()
+  return self:GetComponent(self.WEComponentsEnum.PieceUpdown)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePieceUpdown = function(self, pos, isDown)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PieceUpdown
+function Entity:ReplacePieceUpdown(pos, isDown)
+  local index = self.WEComponentsEnum.PieceUpdown
   local component = PieceUpdownComponent:New(pos, isDown)
   self:ReplaceComponent(index, component)
 end
-
-

@@ -1,21 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/StateAVGGraph/state_avg_graph_init.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateAVGGraphInit", StateAVGGraphBase)
 StateAVGGraphInit = StateAVGGraphInit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateAVGGraphInit.OnEnter = function(self, TT, ...)
-  -- function num : 0_0
+function StateAVGGraphInit:OnEnter(TT, ...)
   self:Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGGraphInit.OnExit = function(self, TT)
-  -- function num : 0_1
+function StateAVGGraphInit:OnExit(TT)
 end
-
-

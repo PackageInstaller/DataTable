@@ -1,41 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/tasklist/ui_s3_task_list_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_season_task_list_content")
 _class("UIS3TaskListContent", UISeasonTaskListContent)
 UIS3TaskListContent = UIS3TaskListContent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS3TaskListContent._GetAnimInfo = function(self, key)
-  -- function num : 0_0
+function UIS3TaskListContent:_GetAnimInfo(key)
   local tb = {
-TabBtnIn = {animName = "uieffanim_UIS3TaskListContent_TabBtn_in", duration = 500}
-, 
-QuestFin = {animName = "uieffanim_UIS2TaskListContent_fin", duration = 333}
-}
-  return (tb[key]).animName, (tb[key]).duration
+    TabBtnIn = {
+      animName = "uieffanim_UIS3TaskListContent_TabBtn_in",
+      duration = 500
+    },
+    QuestFin = {
+      animName = "uieffanim_UIS2TaskListContent_fin",
+      duration = 333
+    }
+  }
+  return tb[key].animName, tb[key].duration
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3TaskListContent._GetRewardInfo = function(self)
-  -- function num : 0_1
+function UIS3TaskListContent:_GetRewardInfo()
   return "UISeasonItemS3", "UIS3TaskListContent_Item.prefab"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3TaskListContent._GetStrIdInfo = function(self, key, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  local tb = {intro_name = "str_season_s3_task_list_intro_name", intro_job = "str_season_s3_task_list_intro_job", intro_desc = "str_season_s3_task_list_intro_desc", title_task = "str_season_s3_task_list_title_task", title_reward = "str_season_s3_task_list_title_reward", progress = "str_season_s3_task_list_progress", tab_lock = "str_season_s3_task_list_tab_lock", page = "str_season_s3_task_list_page"}
+function UIS3TaskListContent:_GetStrIdInfo(key, ...)
+  local tb = {
+    intro_name = "str_season_s3_task_list_intro_name",
+    intro_job = "str_season_s3_task_list_intro_job",
+    intro_desc = "str_season_s3_task_list_intro_desc",
+    title_task = "str_season_s3_task_list_title_task",
+    title_reward = "str_season_s3_task_list_title_reward",
+    progress = "str_season_s3_task_list_progress",
+    tab_lock = "str_season_s3_task_list_tab_lock",
+    page = "str_season_s3_task_list_page"
+  }
   local strId = tb[key]
-  if (string.isnullorempty)(strId) then
+  if string.isnullorempty(strId) then
     return ""
   end
-  local text = (StringTable.Get)(strId, ...)
+  local text = StringTable.Get(strId, ...)
   return text
 end
-
-

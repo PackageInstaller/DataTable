@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_pet_trap_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultPetTrapMove", SkillEffectResultBase)
 SkillEffectResultPetTrapMove = SkillEffectResultPetTrapMove
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultPetTrapMove.Constructor = function(self, casterEntityID, posOld, posNew, dirNew, moveType)
-  -- function num : 0_0
+function SkillEffectResultPetTrapMove:Constructor(casterEntityID, posOld, posNew, dirNew, moveType)
   self._casterEntityID = casterEntityID
   self._posOld = posOld
   self._posNew = posNew
@@ -17,76 +10,42 @@ SkillEffectResultPetTrapMove.Constructor = function(self, casterEntityID, posOld
   self._moveType = moveType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetTrapMove.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultPetTrapMove:GetEffectType()
   return SkillEffectType.PetTrapMove
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetTrapMove.GetEntityID = function(self)
-  -- function num : 0_2
+function SkillEffectResultPetTrapMove:GetEntityID()
   return self._casterEntityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetTrapMove.GetPosOld = function(self)
-  -- function num : 0_3
-  return (self._posOld):Clone()
+function SkillEffectResultPetTrapMove:GetPosOld()
+  return self._posOld:Clone()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetTrapMove.GetPosNew = function(self)
-  -- function num : 0_4
-  return (self._posNew):Clone()
+function SkillEffectResultPetTrapMove:GetPosNew()
+  return self._posNew:Clone()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetTrapMove.GetDirNew = function(self)
-  -- function num : 0_5
+function SkillEffectResultPetTrapMove:GetDirNew()
   return self._dirNew
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetTrapMove.GetMoveType = function(self)
-  -- function num : 0_6
+function SkillEffectResultPetTrapMove:GetMoveType()
   return self._moveType
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetTrapMove.GetTriggerTrapIDList = function(self)
-  -- function num : 0_7
+function SkillEffectResultPetTrapMove:GetTriggerTrapIDList()
   return self._triggerTrapIDList
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetTrapMove.SetTriggerTrapList = function(self, idList)
-  -- function num : 0_8
+function SkillEffectResultPetTrapMove:SetTriggerTrapList(idList)
   self._triggerTrapIDList = idList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetTrapMove.GetPreviewRange = function(self)
-  -- function num : 0_9
-  if not self._previewRange then
-    return {}
-  end
+function SkillEffectResultPetTrapMove:GetPreviewRange()
+  return self._previewRange or {}
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetTrapMove.SetPreviewRange = function(self, previewRange)
-  -- function num : 0_10
+function SkillEffectResultPetTrapMove:SetPreviewRange(previewRange)
   self._previewRange = previewRange
 end
-
-

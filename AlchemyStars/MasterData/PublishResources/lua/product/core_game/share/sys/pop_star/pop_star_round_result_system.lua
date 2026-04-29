@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/pop_star/pop_star_round_result_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("PopStarRoundResultSystem", MainStateSystem)
 PopStarRoundResultSystem = PopStarRoundResultSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarRoundResultSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PopStarRoundResultSystem:_GetMainStateID()
   return GameStateID.PopStarRoundResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundResultSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function PopStarRoundResultSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   if self:_IsBattleEnd() then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.PopStarRoundResultFinish, 2)
-    return 
+    self._world:EventDispatcher():Dispatch(GameEventType.PopStarRoundResultFinish, 2)
+    return
   end
   self:_DoLogicTrapRoundResult()
   self:_DoRenderTrapAction(TT)
@@ -35,90 +25,55 @@ PopStarRoundResultSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicSwitchState(teamEntity)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundResultSystem._DoLogicTrapRoundResult = function(self)
-  -- function num : 0_2
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function PopStarRoundResultSystem:_DoLogicTrapRoundResult()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   trapServiceLogic:TrapActionRoundResult()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundResultSystem._DoLogicCalcTrapState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function PopStarRoundResultSystem:_DoLogicCalcTrapState()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   return trapServiceLogic:CalcTrapState(TrapDestroyType.DestroyAtRoundResult)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundResultSystem._DoLogicNotifyRoundTurnEnd = function(self, teamEntity)
-  -- function num : 0_4 , upvalues : _ENV
-  local triggerSvc = (self._world):GetService("Trigger")
+function PopStarRoundResultSystem:_DoLogicNotifyRoundTurnEnd(teamEntity)
+  local triggerSvc = self._world:GetService("Trigger")
   triggerSvc:Notify(NTRoundTurnEnd:New(teamEntity))
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundResultSystem._DoLogicUpdateBattleState = function(self, teamEntity)
-  -- function num : 0_5
-  local buffService = (self._world):GetService("BuffLogic")
+function PopStarRoundResultSystem:_DoLogicUpdateBattleState(teamEntity)
+  local buffService = self._world:GetService("BuffLogic")
   if buffService:DoGuideLockRoundCount(teamEntity) then
-    ((self._world):BattleStat()):MoveToNextRound(0)
+    self._world:BattleStat():MoveToNextRound(0)
   else
-    ;
-    ((self._world):BattleStat()):MoveToNextRound()
+    self._world:BattleStat():MoveToNextRound()
   end
-  ;
-  ((self._world):GetDataLogger()):AddDataLog("OnRoundEnd")
+  self._world:GetDataLogger():AddDataLog("OnRoundEnd")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundResultSystem._ClearShareSkillResult = function(self)
-  -- function num : 0_6
-  local boardEntity = (self._world):GetBoardEntity()
+function PopStarRoundResultSystem:_ClearShareSkillResult()
+  local boardEntity = self._world:GetBoardEntity()
   boardEntity:ReplaceShareSkillResult()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundResultSystem._DoLogicSwitchState = function(self, teamEntity)
-  -- function num : 0_7 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function PopStarRoundResultSystem:_DoLogicSwitchState(teamEntity)
+  local battleStatCmpt = self._world:BattleStat()
   local leftRoundCount = battleStatCmpt:GetCurWaveRound()
-  local battleService = (self._world):GetService("Battle")
+  local battleService = self._world:GetService("Battle")
   if battleService:IsWavePreEnd(teamEntity) or leftRoundCount == 0 then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.PopStarRoundResultFinish, 2)
+    self._world:EventDispatcher():Dispatch(GameEventType.PopStarRoundResultFinish, 2)
   else
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.PopStarRoundResultFinish, 1)
+    self._world:EventDispatcher():Dispatch(GameEventType.PopStarRoundResultFinish, 1)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundResultSystem._DoRenderTrapAction = function(self, TT)
-  -- function num : 0_8
+function PopStarRoundResultSystem:_DoRenderTrapAction(TT)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundResultSystem._DoRenderTrapState = function(self, TT, traps)
-  -- function num : 0_9
+function PopStarRoundResultSystem:_DoRenderTrapState(TT, traps)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundResultSystem._DoRenderNotifyRoundTurnEnd = function(self, TT)
-  -- function num : 0_10
+function PopStarRoundResultSystem:_DoRenderNotifyRoundTurnEnd(TT)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundResultSystem._DoRenderShowRoundEnd = function(self, TT, isBattleEnd)
-  -- function num : 0_11
+function PopStarRoundResultSystem:_DoRenderShowRoundEnd(TT, isBattleEnd)
 end
-
-

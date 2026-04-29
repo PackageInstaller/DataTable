@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common/hard_level/ui_activity_diff_level_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityDiffLevelNode", UICustomWidget)
 UIActivityDiffLevelNode = UIActivityDiffLevelNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityDiffLevelNode.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityDiffLevelNode:OnShow(uiParams)
   self:InitWidget()
   self:OnInit()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelNode.InitWidget = function(self)
-  -- function num : 0_1
+function UIActivityDiffLevelNode:InitWidget()
   self._go = self:GetGameObject()
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self.name = self:GetUIComponent("UILocalizationText", "Name")
   self._lock = self:GetGameObject("Lock")
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
@@ -31,104 +21,62 @@ UIActivityDiffLevelNode.InitWidget = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelNode.SetData = function(self, data, cb)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityDiffLevelNode:SetData(data, cb)
   self._data = data
   self._onClick = cb
-  ;
-  (self._go):SetActive(true)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMax = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2.zero
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = (self._data):GetPosition()
-  ;
-  (self.name):SetText((self._data):GetNodeName())
-  if (self._data):IsOpen() then
-    (self._lock):SetActive(false)
+  self._go:SetActive(true)
+  self._rectTransform.anchorMax = Vector2(0.5, 0.5)
+  self._rectTransform.anchorMin = Vector2(0.5, 0.5)
+  self._rectTransform.sizeDelta = Vector2.zero
+  self._rectTransform.anchoredPosition = self._data:GetPosition()
+  self.name:SetText(self._data:GetNodeName())
+  if self._data:IsOpen() then
+    self._lock:SetActive(false)
     if self._cup then
-      (self._cup):SetActive(true)
+      self._cup:SetActive(true)
     end
     self:RefreshCupInfo()
-    ;
-    (self._iconLoader):LoadImage((self._data):GetOpenIcon())
+    self._iconLoader:LoadImage(self._data:GetOpenIcon())
   else
-    ;
-    (self._lock):SetActive(true)
+    self._lock:SetActive(true)
     if self._cup then
-      (self._cup):SetActive(false)
+      self._cup:SetActive(false)
     end
-    ;
-    (self._iconLoader):LoadImage((self._data):GetOpenIcon())
-    ;
-    (self._unLockTips):SetText((self._data):GetLockTips())
+    self._iconLoader:LoadImage(self._data:GetOpenIcon())
+    self._unLockTips:SetText(self._data:GetLockTips())
     if self._unLockTips1 then
-      (self._unLockTips1):SetText((self._data):GetLockTips())
+      self._unLockTips1:SetText(self._data:GetLockTips())
     end
   end
   self:OnRefresh()
   self:PlayAnimation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelNode.BtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  if not (self._data):IsOpen() then
-    (ToastManager.ShowToast)((self._data):GetLockTips())
-    return 
+function UIActivityDiffLevelNode:BtnOnClick(go)
+  if not self._data:IsOpen() then
+    ToastManager.ShowToast(self._data:GetLockTips())
+    return
   end
-  ;
-  (self._onClick)(self._data)
+  self._onClick(self._data)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelNode.SetVisible = function(self, status)
-  -- function num : 0_4
-  (self._go):SetActive(status)
+function UIActivityDiffLevelNode:SetVisible(status)
+  self._go:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelNode.OnInit = function(self)
-  -- function num : 0_5
+function UIActivityDiffLevelNode:OnInit()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelNode.RefreshCupInfo = function(self)
-  -- function num : 0_6
-  local cupDatas = (self._data):GetCupDatas()
-  local completCount = (self._data):GetCompleteCupCount()
+function UIActivityDiffLevelNode:RefreshCupInfo()
+  local cupDatas = self._data:GetCupDatas()
+  local completCount = self._data:GetCompleteCupCount()
   if self._cupNum then
-    (self._cupNum):SetText(completCount .. "/" .. #cupDatas)
+    self._cupNum:SetText(completCount .. "/" .. #cupDatas)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelNode.OnRefresh = function(self)
-  -- function num : 0_7
+function UIActivityDiffLevelNode:OnRefresh()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelNode.PlayAnimation = function(self)
-  -- function num : 0_8
+function UIActivityDiffLevelNode:PlayAnimation()
 end
-
-

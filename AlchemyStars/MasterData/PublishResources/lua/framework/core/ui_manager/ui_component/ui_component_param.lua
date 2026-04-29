@@ -1,8 +1,2 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_component/ui_component_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local UIComponentParamType = {KeepVoice = 1}
 _enum("UIComponentParamType", UIComponentParamType)
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pet_lingen.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_PetLingEn", PickUpPolicy_Base)
 PickUpPolicy_PetLingEn = PickUpPolicy_PetLingEn
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_PetLingEn.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpPolicy_PetLingEn:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
@@ -19,38 +12,29 @@ PickUpPolicy_PetLingEn.CalcAutoFightPickUpPolicy = function(self, calcParam)
   local layerType = policyParam.layerType
   local cfgLayerCount = policyParam.layerCountDamageOrBuff
   local cfgCanCastLayerCount = policyParam.layerCountDamage
-  local svc = (self._world):GetService("BuffLogic")
+  local svc = self._world:GetService("BuffLogic")
   local curLayerCount = svc:GetBuffLayer(petEntity, layerType)
-  if cfgLayerCount and curLayerCount < cfgLayerCount then
-    pickPosList[1] = (petEntity:GetGridPosition()):Clone()
+  if cfgLayerCount and cfgLayerCount > curLayerCount then
+    pickPosList[1] = petEntity:GetGridPosition():Clone()
     attackPosList = pickPosList
     targetIdList[1] = petEntity:GetID()
     return pickPosList, attackPosList, targetIdList
   end
-  if cfgCanCastLayerCount and curLayerCount < cfgCanCastLayerCount then
+  if cfgCanCastLayerCount and cfgCanCastLayerCount > curLayerCount then
     return pickPosList, attackPosList, targetIdList
   end
   local validPosIdxList, validPosList = self:_CalcPickUpValidGridList(petEntity, activeSkillID)
   local validResults = self:_CalcValidResultByPickUpType_PickUpPolicy(petEntity, activeSkillID, validPosList)
-  if #validResults > 0 then
-    (table.sort)(validResults, function(a, b)
-    -- function num : 0_0_0
-    do return #b[2] < #a[2] end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  if 0 < #validResults then
+    table.sort(validResults, function(a, b)
+      return #a[2] > #b[2]
+    end)
     local t = validResults[1]
     if t then
       pickPosList[1] = t[1]
-      ;
-      (table.appendArray)(targetIdList, t[2])
-      ;
-      (table.appendArray)(attackPosList, t[3])
+      table.appendArray(targetIdList, t[2])
+      table.appendArray(attackPosList, t[3])
     end
   end
-  do
-    return pickPosList, attackPosList, targetIdList
-  end
+  return pickPosList, attackPosList, targetIdList
 end
-
-

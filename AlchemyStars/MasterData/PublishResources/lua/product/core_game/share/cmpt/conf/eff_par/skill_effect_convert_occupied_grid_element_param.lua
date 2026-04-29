@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_convert_occupied_grid_element_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectConvertOccupiedGridElementParam", SkillEffectParamBase)
 SkillEffectConvertOccupiedGridElementParam = SkillEffectConvertOccupiedGridElementParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectConvertOccupiedGridElementParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectConvertOccupiedGridElementParam:Constructor(t)
   self.targetGridElement = t.targetGridElement
   self.maxPosPerTarget = t.maxPosPerTarget
   self.priorityTarget = t.priorityTarget
   self.trapID = t.trapID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertOccupiedGridElementParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectConvertOccupiedGridElementParam:GetEffectType()
   return SkillEffectType.ConvertOccupiedGridElement
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertOccupiedGridElementParam.GetTargetGridElement = function(self)
-  -- function num : 0_2
+function SkillEffectConvertOccupiedGridElementParam:GetTargetGridElement()
   return self.targetGridElement
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertOccupiedGridElementParam.GetMaxPosPerTarget = function(self)
-  -- function num : 0_3
+function SkillEffectConvertOccupiedGridElementParam:GetMaxPosPerTarget()
   return self.maxPosPerTarget
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertOccupiedGridElementParam.GetPriorityTarget = function(self)
-  -- function num : 0_4
+function SkillEffectConvertOccupiedGridElementParam:GetPriorityTarget()
   return self.priorityTarget
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertOccupiedGridElementParam.GetTrapID = function(self)
-  -- function num : 0_5
+function SkillEffectConvertOccupiedGridElementParam:GetTrapID()
   return self.trapID
 end
-
-

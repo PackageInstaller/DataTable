@@ -1,55 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_damage_by_buff_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 require("skill_damage_effect_param")
 _class("SkillEffectDamageByBuffLayerParam", SkillDamageEffectParam)
 SkillEffectDamageByBuffLayerParam = SkillEffectDamageByBuffLayerParam
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectDamageByBuffLayerParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectDamageByBuffLayerParam:Constructor(t)
   self._maxAddPercent = t.maxAddPercent
   self._buffEffectType = t.buffEffectType
   self._maxLayerCount = t.maxLayerCount
   self._power = t.power or 1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageByBuffLayerParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectDamageByBuffLayerParam:GetEffectType()
   return SkillEffectType.DamageByBuffLayer
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageByBuffLayerParam.GetMaxAddPercent = function(self)
-  -- function num : 0_2
+function SkillEffectDamageByBuffLayerParam:GetMaxAddPercent()
   return self._maxAddPercent
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageByBuffLayerParam.GetAddPercentBuffEffectType = function(self)
-  -- function num : 0_3
+function SkillEffectDamageByBuffLayerParam:GetAddPercentBuffEffectType()
   return self._buffEffectType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageByBuffLayerParam.GetMaxLayerCount = function(self)
-  -- function num : 0_4
+function SkillEffectDamageByBuffLayerParam:GetMaxLayerCount()
   return self._maxLayerCount
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageByBuffLayerParam.GetDamagePower = function(self)
-  -- function num : 0_5
+function SkillEffectDamageByBuffLayerParam:GetDamagePower()
   return self._power
 end
-
-

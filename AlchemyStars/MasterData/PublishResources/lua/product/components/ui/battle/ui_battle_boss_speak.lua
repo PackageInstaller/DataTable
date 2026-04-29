@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_boss_speak.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleBossSpeak", UICustomWidget)
 UIBattleBossSpeak = UIBattleBossSpeak
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleBossSpeak.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIBattleBossSpeak:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleBossSpeak.InitWidget = function(self)
-  -- function num : 0_1
+function UIBattleBossSpeak:InitWidget()
   self._bossSpeakGO = self:GetGameObject("UIBattleBossSpeak")
   self._imgBossCard = self:GetUIComponent("RawImageLoader", "BossCardImage")
   self._txtBossName = self:GetUIComponent("UILocalizationText", "txtBossName")
@@ -23,27 +13,16 @@ UIBattleBossSpeak.InitWidget = function(self)
   self._animation = self:GetUIComponent("Animation", "UIBattleBossSpeak")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleBossSpeak.UIShowBossSpeak = function(self, animNames, imageRes, strName, strSpeak)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._bossSpeakGO):SetActive(true)
-  ;
-  (self._imgBossCard):LoadImage(imageRes)
-  ;
-  (self._txtBossName):SetText((StringTable.Get)(strName))
-  ;
-  (self._txtBossSpeak):SetText((StringTable.Get)(strSpeak))
+function UIBattleBossSpeak:UIShowBossSpeak(animNames, imageRes, strName, strSpeak)
+  self._bossSpeakGO:SetActive(true)
+  self._imgBossCard:LoadImage(imageRes)
+  self._txtBossName:SetText(StringTable.Get(strName))
+  self._txtBossSpeak:SetText(StringTable.Get(strSpeak))
   for i = 1, #animNames do
-    (self._animation):PlayQueued(animNames[i])
+    self._animation:PlayQueued(animNames[i])
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleBossSpeak.PlayOutAnimation = function(self, animName)
-  -- function num : 0_3
-  (self._animation):Play(animName)
+function UIBattleBossSpeak:PlayOutAnimation(animName)
+  self._animation:Play(animName)
 end
-
-

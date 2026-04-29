@@ -1,50 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_render_teleport_to_team_pos_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterRenderTeleportToTeamPosInstruction", BaseInstruction)
 PlayCasterRenderTeleportToTeamPosInstruction = PlayCasterRenderTeleportToTeamPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterRenderTeleportToTeamPosInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
-  if not tonumber(paramList.dirType) then
-    self._dirType = DirectionType.Down
-  end
+function PlayCasterRenderTeleportToTeamPosInstruction:Constructor(paramList)
+  self._dirType = tonumber(paramList.dirType) or DirectionType.Down
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterRenderTeleportToTeamPosInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayCasterRenderTeleportToTeamPosInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local teamEntity = (world:Player()):GetCurrentTeamEntity()
+  local teamEntity = world:Player():GetCurrentTeamEntity()
   local teamRenderGridPositionV2 = teamEntity:GetRenderGridPosition()
   local dirV2 = self:GetDirByDirType(self._dirType)
   casterEntity:SetLocation(teamRenderGridPositionV2, dirV2)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterRenderTeleportToTeamPosInstruction.GetDirByDirType = function(self, dirType)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayCasterRenderTeleportToTeamPosInstruction:GetDirByDirType(dirType)
   if dirType == DirectionType.Up then
     return Vector2(0, 1)
-  else
-    if dirType == DirectionType.Down then
-      return Vector2(0, -1)
-    else
-      if dirType == DirectionType.Left then
-        return Vector2(-1, 0)
-      else
-        if dirType == DirectionType.Right then
-          return Vector2(1, 0)
-        end
-      end
-    end
+  elseif dirType == DirectionType.Down then
+    return Vector2(0, -1)
+  elseif dirType == DirectionType.Left then
+    return Vector2(-1, 0)
+  elseif dirType == DirectionType.Right then
+    return Vector2(1, 0)
   end
 end
-
-

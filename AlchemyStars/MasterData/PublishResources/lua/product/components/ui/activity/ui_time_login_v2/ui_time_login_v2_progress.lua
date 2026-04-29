@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_time_login_v2/ui_time_login_v2_progress.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITimeLoginV2Progress", UICustomWidget)
 UITimeLoginV2Progress = UITimeLoginV2Progress
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITimeLoginV2Progress.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UITimeLoginV2Progress:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimeLoginV2Progress.OnHide = function(self)
-  -- function num : 0_1
+function UITimeLoginV2Progress:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimeLoginV2Progress.SetData = function(self, campaign, component, refreshCallback, tipsCallback)
-  -- function num : 0_2
+function UITimeLoginV2Progress:SetData(campaign, component, refreshCallback, tipsCallback)
   self._campaign = campaign
   self._component = component
   self._refreshCallback = refreshCallback
@@ -28,101 +15,68 @@ UITimeLoginV2Progress.SetData = function(self, campaign, component, refreshCallb
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimeLoginV2Progress._Refresh = function(self)
-  -- function num : 0_3
+function UITimeLoginV2Progress:_Refresh()
   self:_SetProtressCur()
   self:_SetProtressImg()
   self:_SetItem()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimeLoginV2Progress._SetProtressCur = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cur = (self._component):GetCurrentProgress()
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtProgressCur", cur)
+function UITimeLoginV2Progress:_SetProtressCur()
+  local cur = self._component:GetCurrentProgress()
+  UIWidgetHelper.SetLocalizationText(self, "_txtProgressCur", cur)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimeLoginV2Progress._SetProtressImg = function(self)
-  -- function num : 0_5
+function UITimeLoginV2Progress:_SetProtressImg()
   local uiRate = {
-{0, 0.12}
-, 
-{0.32, 0.55}
-, 
-{0.75, 1}
-}
-  local rate = (self._component):CalcProtressRate_Multi(uiRate)
+    {0, 0.12},
+    {0.32, 0.55},
+    {0.75, 1}
+  }
+  local rate = self._component:CalcProtressRate_Multi(uiRate)
   local img = self:GetUIComponent("Image", "_imgFill")
   img.fillAmount = rate
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimeLoginV2Progress._SetItem = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UITimeLoginV2Progress:_SetItem()
   local rewards = {}
-  local prgList = (self._component):GetProgressList()
-  for _,v in ipairs(prgList) do
-    do
-      local roleAssets = (self._component):GetProgressRewards(v)
-      if not roleAssets or not roleAssets[1] then
-        local roleAsset = RoleAsset:New()
-      end
-      ;
-      (table.insert)(rewards, roleAsset)
-    end
+  local prgList = self._component:GetProgressList()
+  for _, v in ipairs(prgList) do
+    local roleAssets = self._component:GetProgressRewards(v)
+    local roleAsset = roleAssets and roleAssets[1] or RoleAsset:New()
+    table.insert(rewards, roleAsset)
   end
-  local tb = {"_item_1", "_item_2", "_item_3"}
-  for i,widgetName in ipairs(tb) do
+  local tb = {
+    "_item_1",
+    "_item_2",
+    "_item_3"
+  }
+  for i, widgetName in ipairs(tb) do
     local reward = rewards[i]
     local progress = prgList[i]
-    local state = (self._component):CheckItemStatus(progress)
-    local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UITimeLoginV2ProgressItem")
+    local state = self._component:CheckItemStatus(progress)
+    local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UITimeLoginV2ProgressItem")
     obj:SetData(reward, progress, state, function()
-    -- function num : 0_6_0 , upvalues : self, prgList, i
-    self:_OnRecvClick(prgList[i])
-  end
-, self._tipsCallback)
+      self:_OnRecvClick(prgList[i])
+    end, self._tipsCallback)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimeLoginV2Progress._OnRecvClick = function(self, progress)
-  -- function num : 0_7
-  (self._component):Start_HandleReceiveReward(progress, function(res, rewards)
-    -- function num : 0_7_0 , upvalues : self
+function UITimeLoginV2Progress:_OnRecvClick(progress)
+  self._component:Start_HandleReceiveReward(progress, function(res, rewards)
     self:_OnReceiveRewards(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITimeLoginV2Progress._OnReceiveRewards = function(self, res, rewards)
-  -- function num : 0_8 , upvalues : _ENV
+function UITimeLoginV2Progress:_OnReceiveRewards(res, rewards)
   if self.view == nil then
-    return 
+    return
   end
   if res:GetSucc() then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
+    UIActivityHelper.ShowUIGetRewards(rewards)
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_8_0 , upvalues : self
-    self:_Refresh()
-  end
-, function()
-    -- function num : 0_8_1
-  end
-)
+    self._campaign:CheckErrorCode(res.m_result, function()
+      self:_Refresh()
+    end, function()
+    end)
   end
 end
-
-

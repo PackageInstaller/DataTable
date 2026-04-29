@@ -1,33 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_monster_anim_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("cutscene_base_ins_r")
 _class("CutsceneMonsterAnimationInstruction", CutsceneBaseInstruction)
 CutsceneMonsterAnimationInstruction = CutsceneMonsterAnimationInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneMonsterAnimationInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function CutsceneMonsterAnimationInstruction:Constructor(paramList)
   self._animName = paramList.anim
   self._name = paramList.name
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneMonsterAnimationInstruction.DoInstruction = function(self, TT, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function CutsceneMonsterAnimationInstruction:DoInstruction(TT, phaseContext)
   local world = phaseContext:GetCutsceneWorld()
   local cutsceneServiceRender = world:GetService("Cutscene")
-  for i,entity in ipairs(cutsceneServiceRender:GetCutsceneMonsterGroupEntity()) do
+  for i, entity in ipairs(cutsceneServiceRender:GetCutsceneMonsterGroupEntity()) do
     local cutsceneMonsterComponent = entity:CutsceneMonster()
     if cutsceneMonsterComponent:GetCutsceneMonsterName() == self._name then
-      entity:SetAnimatorControllerTriggers({self._animName})
+      entity:SetAnimatorControllerTriggers({
+        self._animName
+      })
     end
   end
-  ;
-  (Log.fatal)("剧情指令，播放动作")
+  Log.fatal("剧情指令，播放动作")
 end
-
-

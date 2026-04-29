@@ -1,77 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/dispatchtask/ui_dispatch_giveup_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDispatchGiveUpController", UIController)
 UIDispatchGiveUpController = UIDispatchGiveUpController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDispatchGiveUpController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIDispatchGiveUpController:OnShow(uiParams)
   self._dispatchDetailItem = uiParams[1]
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchGiveUpController.LeftButtonOnClick = function(self, go)
-  -- function num : 0_1
+function UIDispatchGiveUpController:LeftButtonOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchGiveUpController.RightButtonOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self._GiveUpTask, self)
+function UIDispatchGiveUpController:RightButtonOnClick(go)
+  GameGlobal.TaskManager():StartTask(self._GiveUpTask, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchGiveUpController._GiveUpTask = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDispatchGiveUpController:_GiveUpTask(TT)
   self:Lock("UIDispatchGiveUpController_GiveUpTask")
-  local siteInfo = (self._dispatchDetailItem):GetSiteInfo()
+  local siteInfo = self._dispatchDetailItem:GetSiteInfo()
   local teamMembers = siteInfo.teamMember
   local templateIds = {}
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   if teamMembers then
     for i = 1, #teamMembers do
       local pet = petModule:GetPet(teamMembers[i])
       templateIds[#templateIds + 1] = pet:GetTemplateID()
     end
   end
-  do
-    local aircraftModule = (GameGlobal.GetModule)(AircraftModule)
-    local res, replay = aircraftModule:HandleCEventDispatchCancelTask(TT, (self._dispatchDetailItem):GetSiteId())
-    if res:GetSucc() then
-      aircraftModule:HandleCEventDispatchSite(TT)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateDispatchTaskItemInfo)
-      self:PushPets(templateIds)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateDispatchTaskSiteInfo)
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_dispatch_room_give_up_task_success"))
-      self:CloseDialog()
-    else
-      ;
-      (ToastManager.ShowToast)(aircraftModule:GetErrorMsg(res:GetResult()))
-    end
-    self:UnLock("UIDispatchGiveUpController_GiveUpTask")
+  local aircraftModule = GameGlobal.GetModule(AircraftModule)
+  local res, replay = aircraftModule:HandleCEventDispatchCancelTask(TT, self._dispatchDetailItem:GetSiteId())
+  if res:GetSucc() then
+    aircraftModule:HandleCEventDispatchSite(TT)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateDispatchTaskItemInfo)
+    self:PushPets(templateIds)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateDispatchTaskSiteInfo)
+    ToastManager.ShowToast(StringTable.Get("str_dispatch_room_give_up_task_success"))
+    self:CloseDialog()
+  else
+    ToastManager.ShowToast(aircraftModule:GetErrorMsg(res:GetResult()))
   end
+  self:UnLock("UIDispatchGiveUpController_GiveUpTask")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchGiveUpController.PushPets = function(self, templateIds)
-  -- function num : 0_4 , upvalues : _ENV
+function UIDispatchGiveUpController:PushPets(templateIds)
   if not templateIds then
-    return 
+    return
   end
   for i = 1, #templateIds do
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftPushPetQueue, templateIds[i])
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftPushPetQueue, templateIds[i])
   end
 end
-
-

@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_change_auto_bead_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultChangeAutoBeadPoint", BuffResultBase)
 BuffResultChangeAutoBeadPoint = BuffResultChangeAutoBeadPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeAutoBeadPoint.Constructor = function(self, curVal, oldVal)
-  -- function num : 0_0
+function BuffResultChangeAutoBeadPoint:Constructor(curVal, oldVal)
   self._curPoint = curVal
   self._oldPoint = oldVal
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAutoBeadPoint.GetCurAutoBeadPoint = function(self)
-  -- function num : 0_1
+function BuffResultChangeAutoBeadPoint:GetCurAutoBeadPoint()
   return self._curPoint
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAutoBeadPoint.GetOldAutoBeadPoint = function(self)
-  -- function num : 0_2
+function BuffResultChangeAutoBeadPoint:GetOldAutoBeadPoint()
   return self._oldPoint
 end
-
-

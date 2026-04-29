@@ -1,33 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_effect_offset_scope_center_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayEffectOffsetScopeCenterInstruction", BaseInstruction)
 PlayEffectOffsetScopeCenterInstruction = PlayEffectOffsetScopeCenterInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEffectOffsetScopeCenterInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEffectOffsetScopeCenterInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   local strOffset = paramList.offset
   if strOffset then
-    local arr = (string.split)(strOffset, "|")
+    local arr = string.split(strOffset, "|")
     self._offset = Vector2(tonumber(arr[1]), tonumber(arr[2]))
   else
-    do
-      self._offset = Vector2.zero
-    end
+    self._offset = Vector2.zero
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectOffsetScopeCenterInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-  local gridRange = (skillEffectResultContainer:GetScopeResult()):GetWholeGridRange()
+function PlayEffectOffsetScopeCenterInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local gridRange = skillEffectResultContainer:GetScopeResult():GetWholeGridRange()
   if not gridRange then
     return InstructionConst.PhaseEnd
   end
@@ -37,18 +25,15 @@ PlayEffectOffsetScopeCenterInstruction.DoInstruction = function(self, TT, caster
   effectService:CreateWorldPositionEffect(self._effectID, posCenter + self._offset)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectOffsetScopeCenterInstruction.GetScopeCenterPos = function(self, gridList)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayEffectOffsetScopeCenterInstruction:GetScopeCenterPos(gridList)
   if gridList then
     local minX, maxX = 999, 0
     local minY, maxY = 999, 0
-    for _,pos in ipairs(gridList) do
-      if pos.x < minX then
+    for _, pos in ipairs(gridList) do
+      if minX > pos.x then
         minX = pos.x
       end
-      if pos.y < minY then
+      if minY > pos.y then
         minY = pos.y
       end
       if maxX < pos.x then
@@ -61,20 +46,16 @@ PlayEffectOffsetScopeCenterInstruction.GetScopeCenterPos = function(self, gridLi
     local p = Vector2((maxX + minX) * 0.5, (maxY + minY) * 0.5)
     return p
   end
-  do
-    return Vector2.zero
-  end
+  return Vector2.zero
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectOffsetScopeCenterInstruction.GetCacheResource = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayEffectOffsetScopeCenterInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

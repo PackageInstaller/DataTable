@@ -1,58 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/common/ui_currency_menu_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICurrencyMenu_Shop", UICustomWidget)
 UICurrencyMenu_Shop = UICurrencyMenu_Shop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICurrencyMenu_Shop.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICurrencyMenu_Shop:Constructor()
   self.SortCurrencyId = {}
-  local count = (table.count)((Cfg.cfg_top_tips)({}))
-  for id,cfg in pairs((Cfg.cfg_top_tips)({})) do
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self.SortCurrencyId)[id] = cfg.Sort
+  local count = table.count(Cfg.cfg_top_tips({}))
+  for id, cfg in pairs(Cfg.cfg_top_tips({})) do
+    self.SortCurrencyId[id] = cfg.Sort
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu_Shop.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICurrencyMenu_Shop:OnShow()
   self:AttachEvent(GameEventType.ShowHideTSFBtn, self.ShowHideTSFBtn)
   self._topTips = self:GetUIComponent("UISelectObjectPath", "toptips")
-  self._topTipsInfo = (self._topTips):SpawnObject("UITopTipsContext")
+  self._topTipsInfo = self._topTips:SpawnObject("UITopTipsContext")
   self._panel = self:GetUIComponent("UISelectObjectPath", "panel")
   self._btnZJJSF = self:GetUIComponent("Button", "BtnZJJSF")
   self._btnTSF = self:GetUIComponent("Button", "BtnTSF")
-  ;
-  ((self._btnZJJSF).gameObject):SetActive(false)
-  ;
-  ((self._btnTSF).gameObject):SetActive(false)
+  self._btnZJJSF.gameObject:SetActive(false)
+  self._btnTSF.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu_Shop.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICurrencyMenu_Shop:OnHide()
   self:DetachEvent(GameEventType.ShowHideTSFBtn, self.ShowHideTSFBtn)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu_Shop.GetItems = function(self)
-  -- function num : 0_3
+function UICurrencyMenu_Shop:GetItems()
   return self.items
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu_Shop.GetItemByTypeId = function(self, typeId)
-  -- function num : 0_4 , upvalues : _ENV
-  for index,item in ipairs(self.items) do
+function UICurrencyMenu_Shop:GetItemByTypeId(typeId)
+  for index, item in ipairs(self.items) do
     if item:GetTypeId() == typeId then
       return item
     end
@@ -60,74 +37,50 @@ UICurrencyMenu_Shop.GetItemByTypeId = function(self, typeId)
   return nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu_Shop.SetData = function(self, typeIds, hideAddBtn, notSort)
-  -- function num : 0_5 , upvalues : _ENV
+function UICurrencyMenu_Shop:SetData(typeIds, hideAddBtn, notSort)
   if not typeIds then
-    return 
+    return
   end
   if notSort then
-    (table.sort)(typeIds, function(a, b)
-    -- function num : 0_5_0 , upvalues : self
-    do return (self.SortCurrencyId)[b] < (self.SortCurrencyId)[a] end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  else
+    table.sort(typeIds, function(a, b)
+      return self.SortCurrencyId[a] > self.SortCurrencyId[b]
+    end)
   end
-)
-    local count = #typeIds
-    ;
-    (self._panel):SpawnObjects("UICurrencyItem_Shop", count)
-    self.items = (self._panel):GetAllSpawnList()
-    local index = 1
-    for key,item in pairs(self.items) do
-      local roleAssetId = typeIds[index]
-      item:SetData(roleAssetId, function(id, go)
-    -- function num : 0_5_1 , upvalues : self
-    (self._topTipsInfo):SetData(id, go)
-  end
-, hideAddBtn)
-      if roleAssetId == RoleAssetID.RoleAssetPhyPoint then
-        item:SetAddCallBack(function()
-    -- function num : 0_5_2 , upvalues : self
-    self:ShowDialog("UIGetPhyPointController")
-  end
-)
-      end
-      index = index + 1
+  local count = #typeIds
+  self._panel:SpawnObjects("UICurrencyItem_Shop", count)
+  self.items = self._panel:GetAllSpawnList()
+  local index = 1
+  for key, item in pairs(self.items) do
+    local roleAssetId = typeIds[index]
+    item:SetData(roleAssetId, function(id, go)
+      self._topTipsInfo:SetData(id, go)
+    end, hideAddBtn)
+    if roleAssetId == RoleAssetID.RoleAssetPhyPoint then
+      item:SetAddCallBack(function()
+        self:ShowDialog("UIGetPhyPointController")
+      end)
     end
+    index = index + 1
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu_Shop.ShowHideTSFBtn = function(self, isShow)
-  -- function num : 0_6 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UICurrencyMenu_Shop:ShowHideTSFBtn(isShow)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local isJapanZone = roleModule:IsJapanZone()
   if isJapanZone then
-    ((self._btnZJJSF).gameObject):SetActive(isShow)
-    ;
-    ((self._btnTSF).gameObject):SetActive(isShow)
+    self._btnZJJSF.gameObject:SetActive(isShow)
+    self._btnTSF.gameObject:SetActive(isShow)
   else
-    ;
-    ((self._btnZJJSF).gameObject):SetActive(false)
-    ;
-    ((self._btnTSF).gameObject):SetActive(false)
+    self._btnZJJSF.gameObject:SetActive(false)
+    self._btnTSF.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu_Shop.BtnZJJSFOnClick = function(self)
-  -- function num : 0_7
+function UICurrencyMenu_Shop:BtnZJJSFOnClick()
   self:ShowDialog("UIPayLawContentController", 2)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICurrencyMenu_Shop.BtnTSFOnClick = function(self)
-  -- function num : 0_8
+function UICurrencyMenu_Shop:BtnTSFOnClick()
   self:ShowDialog("UIPayLawContentController", 1)
 end
-
-

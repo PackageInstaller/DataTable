@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_record_current_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicRecordCurrentPos", BuffLogicBase)
 BuffLogicRecordCurrentPos = BuffLogicRecordCurrentPos
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRecordCurrentPos.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicRecordCurrentPos:Constructor(buffInstance, logicParam)
   self._key = logicParam.key or "buff_recorded_pos"
   self._value = logicParam.value
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRecordCurrentPos.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local buffComponent = (self._entity):BuffComponent()
+function BuffLogicRecordCurrentPos:DoLogic(notify)
+  local buffComponent = self._entity:BuffComponent()
   if not buffComponent then
-    return 
+    return
   end
-  local curPos = (self._entity):GetGridPosition()
+  local curPos = self._entity:GetGridPosition()
   if curPos then
     local keyX = self._key .. "_x"
     buffComponent:SetBuffValue(keyX, curPos.x)
@@ -29,5 +19,3 @@ BuffLogicRecordCurrentPos.DoLogic = function(self, notify)
     buffComponent:SetBuffValue(keyX, curPos.y)
   end
 end
-
-

@@ -1,44 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/plot/ui_summer_activity_two_plot_detail_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoPlotDetailController", UIController)
 UISummerActivityTwoPlotDetailController = UISummerActivityTwoPlotDetailController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoPlotDetailController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISummerActivityTwoPlotDetailController:LoadDataOnEnter(TT, res, uiParams)
   local _campaignTypeId = uiParams[1]
   local _componentTypeId = uiParams[2]
   self._campaignModule = self:GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, _campaignTypeId, _componentTypeId)
+  self._campaign:LoadCampaignInfo(TT, res, _campaignTypeId, _componentTypeId)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    ;
-    (Log.error)("###[UISummerActivityTwoPlotDetailController] res and not res:GetSucc() !")
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    Log.error("###[UISummerActivityTwoPlotDetailController] res and not res:GetSucc() !")
+    return
   end
-  self._story_component = ((self._campaign):GetLocalProcess())._storyComponent
-  self._story_componentinfo = ((self._campaign):GetLocalProcess())._storyComponentInfo
-  self._componentID = (self._story_component):GetComponetCfgId((self._campaign)._id, (self._story_componentinfo).m_component_id)
+  self._story_component = self._campaign:GetLocalProcess()._storyComponent
+  self._story_componentinfo = self._campaign:GetLocalProcess()._storyComponentInfo
+  self._componentID = self._story_component:GetComponetCfgId(self._campaign._id, self._story_componentinfo.m_component_id)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISummerActivityTwoPlotDetailController:OnShow(uiParams)
   self._itemCountPerRow = 1
   self._idx = 0
   self._missionCount = 1
-  self._animClips = {[1] = "uieff_Summer2_Detail_In", [2] = "uieff_Summer2_Detail_Out"}
+  self._animClips = {
+    [1] = "uieff_Summer2_Detail_In",
+    [2] = "uieff_Summer2_Detail_Out"
+  }
   self:_GetComponents()
   self._currentStoryId = uiParams[3] or nil
   if not self._componentID then
-    (Log.error)("###[UISummerActivityTwoPlotDetailController] self._componentID is nil !")
-    return 
+    Log.error("###[UISummerActivityTwoPlotDetailController] self._componentID is nil !")
+    return
   end
   self:CreateData()
   if self._idx == 0 then
@@ -48,29 +39,20 @@ UISummerActivityTwoPlotDetailController.OnShow = function(self, uiParams)
   self:PlayAnim()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController.PlayAnim = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISummerActivityTwoPlotDetailController:PlayAnim()
   if self._anim then
     self:Lock("self._anim:Play1")
-    ;
-    ((GameGlobal.Timer)()):AddEvent(667, function()
-    -- function num : 0_2_0 , upvalues : self
-    self:UnLock("self._anim:Play1")
-  end
-)
+    GameGlobal.Timer():AddEvent(667, function()
+      self:UnLock("self._anim:Play1")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController.CreateData = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg_component_story = (Cfg.cfg_component_story)[self._componentID]
+function UISummerActivityTwoPlotDetailController:CreateData()
+  local cfg_component_story = Cfg.cfg_component_story[self._componentID]
   if not cfg_component_story then
-    (Log.error)("###[UISummerActivityTwoPlotDetailController] cfg_component_story is nil ! id --> ", self._componentID)
-    return 
+    Log.error("###[UISummerActivityTwoPlotDetailController] cfg_component_story is nil ! id --> ", self._componentID)
+    return
   end
   self._plotData = {}
   local storyIDList = cfg_component_story.StoryID
@@ -81,10 +63,10 @@ UISummerActivityTwoPlotDetailController.CreateData = function(self)
     if self._currentStoryId and self._idx == 0 and storyid == self._currentStoryId then
       self._idx = i
     end
-    local cfg_campaign_story = (Cfg.cfg_campaign_story)[storyid]
+    local cfg_campaign_story = Cfg.cfg_campaign_story[storyid]
     if not cfg_campaign_story then
-      (Log.error)("###[UISummerActivityTwoPlotDetailController] cfg_campaign_story is nil ! id --> ", storyid)
-      return 
+      Log.error("###[UISummerActivityTwoPlotDetailController] cfg_campaign_story is nil ! id --> ", storyid)
+      return
     end
     data.storyid = storyid
     data.title = cfg_campaign_story.Title
@@ -102,73 +84,56 @@ UISummerActivityTwoPlotDetailController.CreateData = function(self)
         if idx_get == false then
           self._idx = i
         end
-        local recv_list = (self._story_component):GetAlreadyReceivedStoryIdList()
-        local got = (table.icontains)(recv_list, storyid)
+        local recv_list = self._story_component:GetAlreadyReceivedStoryIdList()
+        local got = table.icontains(recv_list, storyid)
         red = not got
         if red then
           idx_get = true
         end
       end
     end
-    do
-      do
-        data.red = red
-        ;
-        (table.insert)(self._plotData, data)
-        -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    data.red = red
+    table.insert(self._plotData, data)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController.CheckBeforePlot = function(self, storyid)
-  -- function num : 0_4 , upvalues : _ENV
+function UISummerActivityTwoPlotDetailController:CheckBeforePlot(storyid)
   local unlock = false
-  local condition = nil
-  local cfg_campaign_story = (Cfg.cfg_campaign_story)[storyid]
-  local lockStoryID = nil
+  local condition
+  local cfg_campaign_story = Cfg.cfg_campaign_story[storyid]
+  local lockStoryID
   if cfg_campaign_story.PreStoryID then
     lockStoryID = cfg_campaign_story.PreStoryID
-    local recv_list = (self._story_component):GetAlreadyReceivedStoryIdList()
-    if (table.icontains)(recv_list, cfg_campaign_story.PreStoryID) then
+    local recv_list = self._story_component:GetAlreadyReceivedStoryIdList()
+    if table.icontains(recv_list, cfg_campaign_story.PreStoryID) then
       unlock = true
     end
   else
-    do
-      unlock = true
-      do
-        if unlock == false then
-          local storyName = (Cfg.cfg_campaign_story)[lockStoryID]
-          if not storyName then
-            (Log.error)("###[UISummerActivityTwoPlotDetailController] cfg_campaign_story is nil ! id --> ", lockStoryID)
-          end
-          condition = (StringTable.Get)("str_summer_activity_two_plot_unlock_plot_condition", (StringTable.Get)(storyName.Title))
-        end
-        return unlock, condition
-      end
-    end
+    unlock = true
   end
+  if unlock == false then
+    local storyName = Cfg.cfg_campaign_story[lockStoryID]
+    if not storyName then
+      Log.error("###[UISummerActivityTwoPlotDetailController] cfg_campaign_story is nil ! id --> ", lockStoryID)
+    end
+    condition = StringTable.Get("str_summer_activity_two_plot_unlock_plot_condition", StringTable.Get(storyName.Title))
+  end
+  return unlock, condition
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController.CheckMissionCondition = function(self, storyid)
-  -- function num : 0_5 , upvalues : _ENV
+function UISummerActivityTwoPlotDetailController:CheckMissionCondition(storyid)
   local unlock = true
   local lockData = {}
-  local cfg_campaign_story = (Cfg.cfg_campaign_story)[storyid]
+  local cfg_campaign_story = Cfg.cfg_campaign_story[storyid]
   if not cfg_campaign_story then
-    (Log.error)("###[UISummerActivityTwoPlotDetailController] cfg_campaign_story is nil ! id --> ", storyid)
+    Log.error("###[UISummerActivityTwoPlotDetailController] cfg_campaign_story is nil ! id --> ", storyid)
   end
   if cfg_campaign_story and cfg_campaign_story.ComponentID then
-    local com = (self._campaignModule):GetComponentByComponentId(cfg_campaign_story.ComponentID)
+    local com = self._campaignModule:GetComponentByComponentId(cfg_campaign_story.ComponentID)
     if com then
       local missionList = {}
       for i = 1, #cfg_campaign_story.NeedMissionList do
-        local missionid = (cfg_campaign_story.NeedMissionList)[i]
+        local missionid = cfg_campaign_story.NeedMissionList[i]
         local pass = com:IsPassCamMissionID(missionid)
         if not pass and unlock then
           unlock = false
@@ -176,37 +141,25 @@ UISummerActivityTwoPlotDetailController.CheckMissionCondition = function(self, s
         local missionData = {}
         missionData.missionid = missionid
         missionData.pass = pass
-        ;
-        (table.insert)(lockData, missionData)
+        table.insert(lockData, missionData)
       end
     else
-      do
-        unlock = false
-        for i = 1, #cfg_campaign_story.NeedMissionList do
-          local missionData = {}
-          missionData.missionid = (cfg_campaign_story.NeedMissionList)[i]
-          missionData.pass = false
-          ;
-          (table.insert)(lockData, missionData)
-        end
-        do
-          return unlock, lockData
-        end
+      unlock = false
+      for i = 1, #cfg_campaign_story.NeedMissionList do
+        local missionData = {}
+        missionData.missionid = cfg_campaign_story.NeedMissionList[i]
+        missionData.pass = false
+        table.insert(lockData, missionData)
       end
     end
   end
+  return unlock, lockData
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController.OnHide = function(self)
-  -- function num : 0_6
+function UISummerActivityTwoPlotDetailController:OnHide()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController._GetComponents = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISummerActivityTwoPlotDetailController:_GetComponents()
   self._anim = self:GetUIComponent("Animation", "UISummerActivityTwoPlotDetailController")
   self._plotTitle = self:GetUIComponent("UILocalizationText", "plotTitle")
   self._plotDesc = self:GetUIComponent("UILocalizationText", "plotDesc")
@@ -214,125 +167,84 @@ UISummerActivityTwoPlotDetailController._GetComponents = function(self)
   self._plotList = self:GetUIComponent("UIDynamicScrollView", "plotList")
   self._plotCg = self:GetUIComponent("RawImageLoader", "plotCg")
   self._itemInfo = self:GetUIComponent("UISelectObjectPath", "itemInfo")
-  self._selectInfo = (self._itemInfo):SpawnObject("UISelectInfo")
+  self._selectInfo = self._itemInfo:SpawnObject("UISelectInfo")
   self._openBtnGo = self:GetGameObject("openBtn")
   self._lockMissionGo = self:GetGameObject("lockMission")
   self._missionPool = self:GetUIComponent("UISelectObjectPath", "missionPool")
-  ;
-  (self._missionPool):SpawnObjects("UISummerTwoPlotLockMissionItem", self._missionCount)
+  self._missionPool:SpawnObjects("UISummerTwoPlotLockMissionItem", self._missionCount)
   self._gotGo = self:GetGameObject("got")
   self._red = self:GetGameObject("red")
   self._openBtnClick = self:GetGameObject("openBtnClick")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._openBtnGo), UIEvent.Press, function(go)
-    -- function num : 0_7_0 , upvalues : self
-    (self._openBtnClick):SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._openBtnGo), UIEvent.Release, function(go)
-    -- function num : 0_7_1 , upvalues : self
-    (self._openBtnClick):SetActive(false)
-  end
-)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._openBtnGo), UIEvent.Press, function(go)
+    self._openBtnClick:SetActive(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._openBtnGo), UIEvent.Release, function(go)
+    self._openBtnClick:SetActive(false)
+  end)
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtn")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_7_2 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     if self._anim then
       self:Lock("self._anim:Play2")
-      ;
-      ((GameGlobal.Timer)()):AddEvent(500, function()
-      -- function num : 0_7_2_0 , upvalues : self
-      self:UnLock("self._anim:Play2")
-      self:CloseDialog()
-    end
-)
-      ;
-      (self._anim):Play((self._animClips)[2])
+      GameGlobal.Timer():AddEvent(500, function()
+        self:UnLock("self._anim:Play2")
+        self:CloseDialog()
+      end)
+      self._anim:Play(self._animClips[2])
     else
       self:CloseDialog()
     end
-  end
-, nil, nil, true)
+  end, nil, nil, true)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController._OnValue = function(self)
-  -- function num : 0_8
+function UISummerActivityTwoPlotDetailController:_OnValue()
   self:_InitPlotList()
   self:_ShowPlotInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController._ShowPlotInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UISummerActivityTwoPlotDetailController:_ShowPlotInfo()
   self:_InitAwardPool()
   local got = self:CheckStoryGotAwards(self._idx)
-  ;
-  (self._gotGo):SetActive(got)
-  local title = ((self._plotData)[self._idx]).title
-  ;
-  (self._plotTitle):SetText((StringTable.Get)(title))
-  local desc = ((self._plotData)[self._idx]).desc
-  ;
-  (self._plotDesc):SetText((StringTable.Get)(desc))
+  self._gotGo:SetActive(got)
+  local title = self._plotData[self._idx].title
+  self._plotTitle:SetText(StringTable.Get(title))
+  local desc = self._plotData[self._idx].desc
+  self._plotDesc:SetText(StringTable.Get(desc))
   self:SetMissionPassData()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController.SetMissionPassData = function(self)
-  -- function num : 0_10
-  local unlock, lockData = self:CheckMissionCondition(((self._plotData)[self._idx]).storyid)
-  ;
-  (self._openBtnGo):SetActive(unlock)
-  do
-    if unlock then
-      local got = self:CheckStoryGotAwards(self._idx)
-      ;
-      (self._red):SetActive(not got)
-    end
-    ;
-    (self._lockMissionGo):SetActive(not unlock)
-    if not unlock then
-      local pools = (self._missionPool):GetAllSpawnList()
-      for i = 1, #pools do
-        local missionData = lockData[i]
-        if missionData then
-          (pools[i]):SetData(i, missionData)
-          ;
-          (pools[i]):SetActive(true)
-        else
-          ;
-          (pools[i]):SetActive(false)
-        end
+function UISummerActivityTwoPlotDetailController:SetMissionPassData()
+  local unlock, lockData = self:CheckMissionCondition(self._plotData[self._idx].storyid)
+  self._openBtnGo:SetActive(unlock)
+  if unlock then
+    local got = self:CheckStoryGotAwards(self._idx)
+    self._red:SetActive(not got)
+  end
+  self._lockMissionGo:SetActive(not unlock)
+  if not unlock then
+    local pools = self._missionPool:GetAllSpawnList()
+    for i = 1, #pools do
+      local missionData = lockData[i]
+      if missionData then
+        pools[i]:SetData(i, missionData)
+        pools[i]:SetActive(true)
+      else
+        pools[i]:SetActive(false)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController._InitPlotList = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISummerActivityTwoPlotDetailController:_InitPlotList()
   self._plotCount = #self._plotData
-  ;
-  (self._plotList):InitListView(self._plotCount, function(scrollView, index)
-    -- function num : 0_11_0 , upvalues : self
+  self._plotList:InitListView(self._plotCount, function(scrollView, index)
     return self:_InitListView(scrollView, index)
-  end
-)
-  local moveIdx = (math.max)(self._idx - 1, 0)
-  ;
-  (self._plotList):MovePanelToItemIndex(moveIdx, 0)
+  end)
+  local moveIdx = math.max(self._idx - 1, 0)
+  self._plotList:MovePanelToItemIndex(moveIdx, 0)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController._InitListView = function(self, scrollView, index)
-  -- function num : 0_12
+function UISummerActivityTwoPlotDetailController:_InitListView(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -351,159 +263,106 @@ UISummerActivityTwoPlotDetailController._InitListView = function(self, scrollVie
   return item
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController._ShowItem = function(self, heartItem, index)
-  -- function num : 0_13
+function UISummerActivityTwoPlotDetailController:_ShowItem(heartItem, index)
   if heartItem ~= nil then
-    (heartItem:GetGameObject()):SetActive(true)
-    heartItem:SetData(index, self._idx, (self._plotData)[index], function(idx)
-    -- function num : 0_13_0 , upvalues : self
-    self:_PlotItemClick(idx)
-  end
-)
+    heartItem:GetGameObject():SetActive(true)
+    heartItem:SetData(index, self._idx, self._plotData[index], function(idx)
+      self:_PlotItemClick(idx)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController._PlotItemClick = function(self, idx)
-  -- function num : 0_14 , upvalues : _ENV
+function UISummerActivityTwoPlotDetailController:_PlotItemClick(idx)
   if self._idx == idx then
-    return 
+    return
   end
-  local unlcok = ((self._plotData)[idx]).unlock
+  local unlcok = self._plotData[idx].unlock
   if not unlcok then
-    (ToastManager.ShowToast)((StringTable.Get)("str_summer_activity_two_plot_lock"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_summer_activity_two_plot_lock"))
+    return
   end
   self._idx = idx
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSummerActivityPlotSelect, self._idx)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSummerActivityPlotSelect, self._idx)
   self:_ShowPlotInfo()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController.GetPlotAward = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UISummerActivityTwoPlotDetailController:GetPlotAward()
   if not self:CheckStoryGotAwards(self._idx) then
     self:Lock("UISummerActivityTwoPlotDetailController:GetPlotAward")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.OnGetPlotAward, self)
+    GameGlobal.TaskManager():StartTask(self.OnGetPlotAward, self)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController.OnGetPlotAward = function(self, TT)
-  -- function num : 0_16 , upvalues : _ENV
+function UISummerActivityTwoPlotDetailController:OnGetPlotAward(TT)
   local request = AsyncRequestRes:New()
-  local rewards = (self._story_component):HandleStoryTake(TT, request, ((self._plotData)[self._idx]).storyid)
+  local rewards = self._story_component:HandleStoryTake(TT, request, self._plotData[self._idx].storyid)
   self:UnLock("UISummerActivityTwoPlotDetailController:GetPlotAward")
   if request:GetSucc() then
     self:ShowDialog("UIGetItemController", rewards)
     self:RefreshValue()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SummerTwoPlotRed)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SummerTwoPlotRed)
   else
-    ;
-    (self._campaignModule):CheckErrorCode(request.m_result, (self._campaign)._id, function()
-    -- function num : 0_16_0 , upvalues : self
-    self:RefreshValue()
-  end
-, function()
-    -- function num : 0_16_1 , upvalues : self
-    self:CloseDialog()
-  end
-)
+    self._campaignModule:CheckErrorCode(request.m_result, self._campaign._id, function()
+      self:RefreshValue()
+    end, function()
+      self:CloseDialog()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController.RefreshValue = function(self)
-  -- function num : 0_17
+function UISummerActivityTwoPlotDetailController:RefreshValue()
   self:CreateData()
   self:RefreshList()
   self:_ShowPlotInfo()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController.RefreshList = function(self)
-  -- function num : 0_18
-  local contentPos = (((self._plotList).ScrollRect).content).localPosition
-  ;
-  (self._plotList):SetListItemCount(#self._plotData)
-  ;
-  (self._plotList):MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (((self._plotList).ScrollRect).content).localPosition = contentPos
+function UISummerActivityTwoPlotDetailController:RefreshList()
+  local contentPos = self._plotList.ScrollRect.content.localPosition
+  self._plotList:SetListItemCount(#self._plotData)
+  self._plotList:MovePanelToItemIndex(0, 0)
+  self._plotList.ScrollRect.content.localPosition = contentPos
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController.openBtnOnClick = function(self)
-  -- function num : 0_19
-  local storyid = ((self._plotData)[self._idx]).storyid
+function UISummerActivityTwoPlotDetailController:openBtnOnClick()
+  local storyid = self._plotData[self._idx].storyid
   self:ShowDialog("UIStoryController", storyid, function()
-    -- function num : 0_19_0 , upvalues : self
     self:GetPlotAward()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController.CheckStoryGotAwards = function(self, idx)
-  -- function num : 0_20 , upvalues : _ENV
-  local recv_list = (self._story_component):GetAlreadyReceivedStoryIdList()
-  return (table.icontains)(recv_list, ((self._plotData)[idx]).storyid)
+function UISummerActivityTwoPlotDetailController:CheckStoryGotAwards(idx)
+  local recv_list = self._story_component:GetAlreadyReceivedStoryIdList()
+  return table.icontains(recv_list, self._plotData[idx].storyid)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController._InitAwardPool = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local awardList = ((self._plotData)[self._idx]).awardList
-  ;
-  (self._awardPool):SpawnObjects("UISummerActivityTwoPlotDetailAwardItem", #awardList)
-  local awardPool = (self._awardPool):GetAllSpawnList()
+function UISummerActivityTwoPlotDetailController:_InitAwardPool()
+  local awardList = self._plotData[self._idx].awardList
+  self._awardPool:SpawnObjects("UISummerActivityTwoPlotDetailAwardItem", #awardList)
+  local awardPool = self._awardPool:GetAllSpawnList()
   for i = 1, #awardList do
     local item = awardPool[i]
-    local dataID = (awardList[i])[1]
-    local dataCount = (awardList[i])[2]
+    local dataID = awardList[i][1]
+    local dataCount = awardList[i][2]
     local roleAsset = RoleAsset:New()
     roleAsset.assetid = dataID
     roleAsset.count = dataCount
     item:SetData(i, roleAsset, function(id, pos)
-    -- function num : 0_21_0 , upvalues : self
-    self:_ClickAwardItem(id, pos)
-  end
-)
+      self:_ClickAwardItem(id, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController._ClickAwardItem = function(self, id, pos)
-  -- function num : 0_22
-  (self._selectInfo):SetData(id, pos)
+function UISummerActivityTwoPlotDetailController:_ClickAwardItem(id, pos)
+  self._selectInfo:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController.RedTotal = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UISummerActivityTwoPlotDetailController:RedTotal()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   if not campaignModule then
     return false
   end
   local isCmptOpened = false
-  local sampleInfo = (campaignModule.m_campaign_manager):GetSampleByType(ECampaignType.CAMPAIGN_TYPE_EVERESCUEPLAN)
+  local sampleInfo = campaignModule.m_campaign_manager:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_EVERESCUEPLAN)
   if not sampleInfo then
     return false
   end
@@ -513,18 +372,13 @@ UISummerActivityTwoPlotDetailController.RedTotal = function(self)
   if not isCmptOpened then
     return false
   end
-  local complateFlag = (sampleInfo.m_extend_info)[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_CUMULATIVE_LOGIN_COMPLATE]
+  local complateFlag = sampleInfo.m_extend_info[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_CUMULATIVE_LOGIN_COMPLATE]
   if complateFlag and complateFlag == 1 then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoPlotDetailController.RedPlot = function(self)
-  -- function num : 0_24
+function UISummerActivityTwoPlotDetailController:RedPlot()
   return true
 end
-
-

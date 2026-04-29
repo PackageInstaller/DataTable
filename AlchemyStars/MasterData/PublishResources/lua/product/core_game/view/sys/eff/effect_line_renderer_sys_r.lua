@@ -1,52 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/eff/effect_line_renderer_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EffectLineRendererSystem_Render", Object)
 EffectLineRendererSystem_Render = EffectLineRendererSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-EffectLineRendererSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function EffectLineRendererSystem_Render:Constructor(world)
   self._world = world
-  self._group = world:GetGroup((world.BW_WEMatchers).EffectLineRenderer)
+  self._group = world:GetGroup(world.BW_WEMatchers.EffectLineRenderer)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererSystem_Render.Filter = function(self, entity)
-  -- function num : 0_1
+function EffectLineRendererSystem_Render:Filter(entity)
   return entity:HasEffectLineRenderer()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererSystem_Render.Execute = function(self)
-  -- function num : 0_2
-  self:ExecuteEntities((self._group):GetEntities())
+function EffectLineRendererSystem_Render:Execute()
+  self:ExecuteEntities(self._group:GetEntities())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function EffectLineRendererSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     self:_OnRefreshLineRenderer(entities[i])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectLineRendererSystem_Render._OnRefreshLineRenderer = function(self, entity)
-  -- function num : 0_4 , upvalues : _ENV
+function EffectLineRendererSystem_Render:_OnRefreshLineRenderer(entity)
   if not entity:IsViewVisible() then
-    return 
+    return
   end
   local effectLineRenderer = entity:EffectLineRenderer()
   local isShow = effectLineRenderer:GetEffectLineRendererIsShow()
   if not isShow then
-    return 
+    return
   end
   local curRootList = effectLineRenderer:GetEffectLineRendererCurrent()
   local targetRootList = effectLineRenderer:GetEffectLineRendererTarget()
@@ -55,22 +36,22 @@ EffectLineRendererSystem_Render._OnRefreshLineRenderer = function(self, entity)
   local ignoreEntityViewRootPos = effectLineRenderer:GetIgnoreEntityViewRootPos()
   local targetRootOff = effectLineRenderer:GetTargetRootOff()
   local currentRootOff = effectLineRenderer:GetCurrentRootOff()
-  if (table.count)(renderersList) == 0 or (table.count)(entityViewRootList) == 0 then
-    return 
+  if table.count(renderersList) == 0 or table.count(entityViewRootList) == 0 then
+    return
   end
-  for i = 1, (table.count)(renderersList) do
+  for i = 1, table.count(renderersList) do
     local curRoot = curRootList[i]
     local targetRoot = targetRootList[i]
     local entityViewRoot = entityViewRootList[i]
     local renderers = renderersList[i]
-    if (tolua.isnull)(curRoot) or (tolua.isnull)(targetRoot) or (tolua.isnull)(entityViewRoot) or (tolua.isnull)(renderers) then
-      return 
+    if tolua.isnull(curRoot) or tolua.isnull(targetRoot) or tolua.isnull(entityViewRoot) or tolua.isnull(renderers) then
+      return
     end
     local change = effectLineRenderer:OnCheckEffectPos(entity:GetID(), curRoot.position, targetRoot.position, entityViewRoot.position)
     if not change then
-      return 
+      return
     end
-    local currentPos, targetPos = nil, nil
+    local currentPos, targetPos
     if ignoreEntityViewRootPos then
       currentPos = curRoot.position
       targetPos = targetRoot.position
@@ -93,5 +74,3 @@ EffectLineRendererSystem_Render._OnRefreshLineRenderer = function(self, entity)
     end
   end
 end
-
-

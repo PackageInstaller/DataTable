@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/crazy_mode_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CrazyModeComponent", Object)
 CrazyModeComponent = CrazyModeComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CrazyModeComponent.Constructor = function(self)
-  -- function num : 0_0
+function CrazyModeComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.CrazyMode = function(self)
-  -- function num : 0_1
-  return self:GetComponent((self.WEComponentsEnum).CrazyMode)
+function Entity:CrazyMode()
+  return self:GetComponent(self.WEComponentsEnum.CrazyMode)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasCrazyMode = function(self)
-  -- function num : 0_2
-  return self:HasComponent((self.WEComponentsEnum).CrazyMode)
+function Entity:HasCrazyMode()
+  return self:HasComponent(self.WEComponentsEnum.CrazyMode)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceCrazyMode = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).CrazyMode
+function Entity:ReplaceCrazyMode()
+  local index = self.WEComponentsEnum.CrazyMode
   local component = CrazyModeComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveCrazyMode = function(self)
-  -- function num : 0_4
+function Entity:RemoveCrazyMode()
   if self:HasCrazyMode() then
-    self:RemoveComponent((self.WEComponentsEnum).CrazyMode)
+    self:RemoveComponent(self.WEComponentsEnum.CrazyMode)
   end
 end
-
-

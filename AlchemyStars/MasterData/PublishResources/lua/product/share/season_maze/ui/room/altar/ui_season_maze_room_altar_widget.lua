@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/altar/ui_season_maze_room_altar_widget.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoom_AltarWidget", UICustomWidget)
 UISeasonMazeRoom_AltarWidget = UISeasonMazeRoom_AltarWidget
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoom_AltarWidget.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMazeRoom_AltarWidget:InitWidget()
   self._cardPool = self:GetUIComponent("UISelectObjectPath", "cardPool")
   self._DelBtn = self:GetGameObject("DelBtn")
   self._ResetBtn = self:GetGameObject("ResetBtn")
@@ -16,73 +9,45 @@ UISeasonMazeRoom_AltarWidget.InitWidget = function(self)
   self._ResetPrice = self:GetUIComponent("UILocalizationText", "ResetPrice")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_AltarWidget.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeRoom_AltarWidget:OnShow(uiParams)
   self:InitWidget()
   self:AttachEvent(GameEventType.OnSeasonMazeAltarStateChange, self.ChanegState)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_AltarWidget.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonMazeRoom_AltarWidget:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_AltarWidget.CardAnim = function(self, animName)
-  -- function num : 0_3
+function UISeasonMazeRoom_AltarWidget:CardAnim(animName)
   if self._cardWidget and animName then
-    (self._cardWidget):PlayAnim(animName)
+    self._cardWidget:PlayAnim(animName)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_AltarWidget.SetData = function(self, idx, card, deletePrice, resetPrice, callback)
-  -- function num : 0_4
+function UISeasonMazeRoom_AltarWidget:SetData(idx, card, deletePrice, resetPrice, callback)
   self._callback = callback
   self._idx = idx
   self._card = card
   self._deletePrice = deletePrice
   self._resetPrice = resetPrice
-  ;
-  (self._DelPrice):SetText(self._deletePrice)
-  ;
-  (self._ResetPrice):SetText(self._resetPrice)
-  self._cardWidget = (self._cardPool):SpawnObject("UISeasonMazeCardItem")
-  ;
-  (self._cardWidget):SetData(1, self._card)
+  self._DelPrice:SetText(self._deletePrice)
+  self._ResetPrice:SetText(self._resetPrice)
+  self._cardWidget = self._cardPool:SpawnObject("UISeasonMazeCardItem")
+  self._cardWidget:SetData(1, self._card)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_AltarWidget.ChanegState = function(self, state)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._DelBtn):SetActive(state == UISeasonMazeAltarType.Delete)
-  ;
-  (self._ResetBtn):SetActive(state == UISeasonMazeAltarType.Reset)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UISeasonMazeRoom_AltarWidget:ChanegState(state)
+  self._DelBtn:SetActive(state == UISeasonMazeAltarType.Delete)
+  self._ResetBtn:SetActive(state == UISeasonMazeAltarType.Reset)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_AltarWidget.ResetBtnOnClick = function(self)
-  -- function num : 0_6
+function UISeasonMazeRoom_AltarWidget:ResetBtnOnClick()
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_AltarWidget.DelBtnOnClick = function(self)
-  -- function num : 0_7
+function UISeasonMazeRoom_AltarWidget:DelBtnOnClick()
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
-
-

@@ -1,48 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s7/awards/ui_season_result_multi_award_list_s7.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonResultMultiAwardListS7", UICustomWidget)
 UISeasonResultMultiAwardListS7 = UISeasonResultMultiAwardListS7
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonResultMultiAwardListS7.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonResultMultiAwardListS7:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonResultMultiAwardListS7.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonResultMultiAwardListS7:InitWidget()
   self._seasonAwardGen = self:GetUIComponent("UISelectObjectPath", "Content")
   self._sr = self:GetUIComponent("ScrollRect", "ScrollView")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonResultMultiAwardListS7.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonResultMultiAwardListS7:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonResultMultiAwardListS7.SetData = function(self, matchRes, seasonMissionInfo)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonResultMultiAwardListS7:SetData(matchRes, seasonMissionInfo)
   local firstDiff = UISeasonLevelDiff.Hard
   local secondDiff = UISeasonLevelDiff.Normal
   local missionId = seasonMissionInfo.mission_id
   local secondMissionId = 0
   if missionId then
-    local useMissionCfg = (Cfg.cfg_season_mission)[missionId]
+    local useMissionCfg = Cfg.cfg_season_mission[missionId]
     if useMissionCfg then
       firstDiff = useMissionCfg.OrderID
-      local secondMissionCfg = nil
+      local secondMissionCfg
       local missionGroupId = useMissionCfg.GroupID
-      local missionGroupCfgs = (Cfg.cfg_season_mission)({GroupID = missionGroupId})
-      if #missionGroupCfgs > 0 then
-        for index,value in ipairs(missionGroupCfgs) do
+      local missionGroupCfgs = Cfg.cfg_season_mission({GroupID = missionGroupId})
+      if 0 < #missionGroupCfgs then
+        for index, value in ipairs(missionGroupCfgs) do
           if value.OrderID ~= useMissionCfg.OrderID then
             secondMissionCfg = value
             secondMissionId = value.ID
@@ -53,130 +37,105 @@ UISeasonResultMultiAwardListS7.SetData = function(self, matchRes, seasonMissionI
       end
     end
   end
-  do
-    local normalRewards = matchRes.m_vecAwardNormal
-    local starRewards = matchRes.m_vecAwardPerfect
-    local firstPassRawrds = matchRes.m_vecFirstPassAward
-    if not (matchRes.m_ext_star_rewards)[secondMissionId] then
-      local extStarRewards = {}
-    end
-    if not (matchRes.m_ext_first_rewards)[secondMissionId] then
-      local extFirstPassRewards = {}
-    end
-    local activityRewards = matchRes.m_activity_rewards
-    local extReward = matchRes.m_vecExtAward
-    local doubleExtReward = matchRes.m_vecDoubleExtAward
-    if not matchRes.m_back_rewards then
-      local backRewards = {}
-    end
-    local recommendReward = {}
-    local collectionList = {}
-    normalRewards = self:ProcessCollectionItem(normalRewards, collectionList)
-    starRewards = self:ProcessCollectionItem(starRewards, collectionList)
-    firstPassRawrds = self:ProcessCollectionItem(firstPassRawrds, collectionList)
-    extStarRewards = self:ProcessCollectionItem(extStarRewards, collectionList)
-    extFirstPassRewards = self:ProcessCollectionItem(extFirstPassRewards, collectionList)
-    local itemModule = (GameGlobal.GetModule)(ItemModule)
-    if #recommendReward > 1 then
-      itemModule:BattleResultSortAsset(recommendReward)
-    end
-    if #doubleExtReward > 1 then
-      itemModule:BattleResultSortAsset(doubleExtReward)
-    end
-    if #starRewards > 1 then
-      itemModule:BattleResultSortAsset(starRewards)
-    end
-    if #extStarRewards > 1 then
-      itemModule:BattleResultSortAsset(extStarRewards)
-    end
-    if #firstPassRawrds > 1 then
-      itemModule:BattleResultSortAsset(firstPassRawrds)
-    end
-    if #extFirstPassRewards > 1 then
-      itemModule:BattleResultSortAsset(extFirstPassRewards)
-    end
-    if #normalRewards > 1 then
-      self:BattleNormalResultSortAsset(normalRewards)
-    end
-    if #extReward > 1 then
-      itemModule:BattleResultSortAsset(extReward)
-    end
-    if #backRewards > 1 then
-      itemModule:BattleResultSortAsset(backRewards)
-    end
-    local multiAwardList = {}
-    local firstList = {}
-    local firstCellCount = #starRewards + #firstPassRawrds + #normalRewards
-    firstList.levelDiff = firstDiff
-    firstList.cellCount = firstCellCount
-    firstList.starRewards = starRewards
-    firstList.firstPassRawrds = firstPassRawrds
-    firstList.normalRewards = normalRewards
-    ;
-    (table.insert)(multiAwardList, firstList)
-    if #extStarRewards > 0 or #extFirstPassRewards > 0 then
-      local secondList = {}
-      local secondCellCount = #extStarRewards + #extFirstPassRewards
-      secondList.levelDiff = secondDiff
-      secondList.cellCount = secondCellCount
-      secondList.extStarRewards = extStarRewards
-      secondList.extFirstPassRewards = extFirstPassRewards
-      ;
-      (table.insert)(multiAwardList, secondList)
-    end
-    do
-      self._multiAwardList = multiAwardList
-      local count = #self._multiAwardList
-      ;
-      (self._seasonAwardGen):SpawnObjects("UISeasonResultSingleAwardListS7", count)
-      local list = (self._seasonAwardGen):GetAllSpawnList()
-      for i,v in ipairs(list) do
-        v:SetData((self._multiAwardList)[i])
-      end
-      self:ResetScrollPos()
-      if collectionList and #collectionList > 0 then
-        local seasonModule = self:GetModule(SeasonModule)
-        if seasonModule then
-          for index,value in ipairs(collectionList) do
-            seasonModule:AppendWaitShowCollectionRewards(value)
-          end
-        end
+  local normalRewards = matchRes.m_vecAwardNormal
+  local starRewards = matchRes.m_vecAwardPerfect
+  local firstPassRawrds = matchRes.m_vecFirstPassAward
+  local extStarRewards = matchRes.m_ext_star_rewards[secondMissionId] or {}
+  local extFirstPassRewards = matchRes.m_ext_first_rewards[secondMissionId] or {}
+  local activityRewards = matchRes.m_activity_rewards
+  local extReward = matchRes.m_vecExtAward
+  local doubleExtReward = matchRes.m_vecDoubleExtAward
+  local backRewards = matchRes.m_back_rewards or {}
+  local recommendReward = {}
+  local collectionList = {}
+  normalRewards = self:ProcessCollectionItem(normalRewards, collectionList)
+  starRewards = self:ProcessCollectionItem(starRewards, collectionList)
+  firstPassRawrds = self:ProcessCollectionItem(firstPassRawrds, collectionList)
+  extStarRewards = self:ProcessCollectionItem(extStarRewards, collectionList)
+  extFirstPassRewards = self:ProcessCollectionItem(extFirstPassRewards, collectionList)
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  if 1 < #recommendReward then
+    itemModule:BattleResultSortAsset(recommendReward)
+  end
+  if 1 < #doubleExtReward then
+    itemModule:BattleResultSortAsset(doubleExtReward)
+  end
+  if 1 < #starRewards then
+    itemModule:BattleResultSortAsset(starRewards)
+  end
+  if 1 < #extStarRewards then
+    itemModule:BattleResultSortAsset(extStarRewards)
+  end
+  if 1 < #firstPassRawrds then
+    itemModule:BattleResultSortAsset(firstPassRawrds)
+  end
+  if 1 < #extFirstPassRewards then
+    itemModule:BattleResultSortAsset(extFirstPassRewards)
+  end
+  if 1 < #normalRewards then
+    self:BattleNormalResultSortAsset(normalRewards)
+  end
+  if 1 < #extReward then
+    itemModule:BattleResultSortAsset(extReward)
+  end
+  if 1 < #backRewards then
+    itemModule:BattleResultSortAsset(backRewards)
+  end
+  local multiAwardList = {}
+  local firstList = {}
+  local firstCellCount = #starRewards + #firstPassRawrds + #normalRewards
+  firstList.levelDiff = firstDiff
+  firstList.cellCount = firstCellCount
+  firstList.starRewards = starRewards
+  firstList.firstPassRawrds = firstPassRawrds
+  firstList.normalRewards = normalRewards
+  table.insert(multiAwardList, firstList)
+  if 0 < #extStarRewards or 0 < #extFirstPassRewards then
+    local secondList = {}
+    local secondCellCount = #extStarRewards + #extFirstPassRewards
+    secondList.levelDiff = secondDiff
+    secondList.cellCount = secondCellCount
+    secondList.extStarRewards = extStarRewards
+    secondList.extFirstPassRewards = extFirstPassRewards
+    table.insert(multiAwardList, secondList)
+  end
+  self._multiAwardList = multiAwardList
+  local count = #self._multiAwardList
+  self._seasonAwardGen:SpawnObjects("UISeasonResultSingleAwardListS7", count)
+  local list = self._seasonAwardGen:GetAllSpawnList()
+  for i, v in ipairs(list) do
+    v:SetData(self._multiAwardList[i])
+  end
+  self:ResetScrollPos()
+  if collectionList and 0 < #collectionList then
+    local seasonModule = self:GetModule(SeasonModule)
+    if seasonModule then
+      for index, value in ipairs(collectionList) do
+        seasonModule:AppendWaitShowCollectionRewards(value)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonResultMultiAwardListS7.ProcessCollectionItem = function(self, awardList, collectionList)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonResultMultiAwardListS7:ProcessCollectionItem(awardList, collectionList)
   local retList = {}
   for i = 1, #awardList do
     local roleAsset = awardList[i]
-    local isCollection = (UISeasonHelper.IsSeasonCollectionItem)(roleAsset.assetid)
+    local isCollection = UISeasonHelper.IsSeasonCollectionItem(roleAsset.assetid)
     if isCollection then
-      (table.insert)(collectionList, roleAsset)
+      table.insert(collectionList, roleAsset)
     else
-      ;
-      (table.insert)(retList, roleAsset)
+      table.insert(retList, roleAsset)
     end
   end
   return retList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonResultMultiAwardListS7.ResetScrollPos = function(self)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._sr).horizontalNormalizedPosition = 0
+function UISeasonResultMultiAwardListS7:ResetScrollPos()
+  self._sr.horizontalNormalizedPosition = 0
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonResultMultiAwardListS7._GetItemCount = function(self, vecItem)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonResultMultiAwardListS7:_GetItemCount(vecItem)
   local nItemCount = 0
   if vecItem then
     for i = 1, #vecItem do
@@ -186,66 +145,49 @@ UISeasonResultMultiAwardListS7._GetItemCount = function(self, vecItem)
       end
     end
   end
-  do
-    return nItemCount
-  end
+  return nItemCount
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonResultMultiAwardListS7.BattleNormalResultSortAsset = function(self, assets)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonResultMultiAwardListS7:BattleNormalResultSortAsset(assets)
   local dataList = self:GetPassAward()
-  ;
-  (table.sort)(assets, function(a, b)
-    -- function num : 0_7_0 , upvalues : _ENV, self, dataList
-    local ta = (Cfg.cfg_item)[a.assetid]
-    local tb = (Cfg.cfg_item)[b.assetid]
+  table.sort(assets, function(a, b)
+    local ta = Cfg.cfg_item[a.assetid]
+    local tb = Cfg.cfg_item[b.assetid]
     if ta == nil then
-      (Log.error)(" Cfg.cfg_item cant find assetid ", a.assetid)
+      Log.error(" Cfg.cfg_item cant find assetid ", a.assetid)
     end
     if tb == nil then
-      (Log.error)(" Cfg.cfg_item cant find assetid ", b.assetid)
+      Log.error(" Cfg.cfg_item cant find assetid ", b.assetid)
     end
     local aNormal = self:HasItem(dataList, ta.ID)
     local bNormal = self:HasItem(dataList, tb.ID)
-    if ta.Color == tb.Color then
-      if ta.ID >= tb.ID then
-        do return aNormal ~= bNormal end
-        do return tb.Color < ta.Color end
-        do return bNormal < aNormal end
-        -- DECOMPILER ERROR: 6 unprocessed JMP targets
+    if aNormal == bNormal then
+      if ta.Color == tb.Color then
+        return ta.ID < tb.ID
+      else
+        return ta.Color > tb.Color
       end
+    else
+      return aNormal > bNormal
     end
-  end
-)
+  end)
   return assets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonResultMultiAwardListS7.GetPassAward = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local awardHeadType, cfgId = nil, nil
-  return (UICommonHelper:GetInstance()):GetPassAward(awardHeadType, cfgId)
+function UISeasonResultMultiAwardListS7:GetPassAward()
+  local awardHeadType, cfgId
+  return UICommonHelper:GetInstance():GetPassAward(awardHeadType, cfgId)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonResultMultiAwardListS7.HasItem = function(self, dataList, itemId)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonResultMultiAwardListS7:HasItem(dataList, itemId)
   local isNormal = 0
   if dataList then
-    for i,v in ipairs(dataList) do
+    for i, v in ipairs(dataList) do
       if v.ItemID == itemId then
         isNormal = 1
         break
       end
     end
   end
-  do
-    return isNormal
-  end
+  return isNormal
 end
-
-

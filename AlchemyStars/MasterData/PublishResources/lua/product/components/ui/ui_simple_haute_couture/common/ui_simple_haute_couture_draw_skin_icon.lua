@@ -1,63 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_simple_haute_couture/common/ui_simple_haute_couture_draw_skin_icon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISimpleHauteCoutureDrawSkinIcon", UICustomWidget)
 UISimpleHauteCoutureDrawSkinIcon = UISimpleHauteCoutureDrawSkinIcon
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimpleHauteCoutureDrawSkinIcon.Constructor = function(self)
-  -- function num : 0_0
+function UISimpleHauteCoutureDrawSkinIcon:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawSkinIcon.OnShow = function(self)
-  -- function num : 0_1
+function UISimpleHauteCoutureDrawSkinIcon:OnShow()
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawSkinIcon._GetComponents = function(self)
-  -- function num : 0_2
+function UISimpleHauteCoutureDrawSkinIcon:_GetComponents()
   self._skinName = self:GetUIComponent("UILocalizationText", "skinName")
   self._getMaskObj = self:GetGameObject("GetMask")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawSkinIcon.SetData = function(self, skinID, callback)
-  -- function num : 0_3
+function UISimpleHauteCoutureDrawSkinIcon:SetData(skinID, callback)
   self._skinID = skinID
   self._callback = callback
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawSkinIcon.SetSkinGet = function(self, isGet)
-  -- function num : 0_4
-  (self._getMaskObj):SetActive(isGet)
+function UISimpleHauteCoutureDrawSkinIcon:SetSkinGet(isGet)
+  self._getMaskObj:SetActive(isGet)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawSkinIcon._InitComponents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local skinCfg = (Cfg.cfg_pet_skin)[self._skinID]
-  ;
-  (self._skinName):SetText((StringTable.Get)(skinCfg.SkinName))
+function UISimpleHauteCoutureDrawSkinIcon:_InitComponents()
+  local skinCfg = Cfg.cfg_pet_skin[self._skinID]
+  self._skinName:SetText(StringTable.Get(skinCfg.SkinName))
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawSkinIcon.SkinBtnOnClick = function(self)
-  -- function num : 0_6
+function UISimpleHauteCoutureDrawSkinIcon:SkinBtnOnClick()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/backtrack/ui_season_backtrack_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBackTrackItem", UICustomWidget)
 UISeasonBackTrackItem = UISeasonBackTrackItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBackTrackItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonBackTrackItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrackItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonBackTrackItem:InitWidget()
   self._bg = self:GetUIComponent("Image", "Bg")
   self._head = self:GetUIComponent("Image", "Head")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
@@ -25,64 +15,35 @@ UISeasonBackTrackItem.InitWidget = function(self)
   self._animation = self:GetUIComponent("Animation", "Animation")
   self._enterAnimation = self:GetUIComponent("Animation", "enterAnimation")
   self._roogGo = self:GetGameObject("rootGo")
-  ;
-  (self._roogGo):SetActive(false)
+  self._roogGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrackItem.SetData = function(self, seasonID, atlas, index, cfg, callBack, signFunc)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonBackTrackItem:SetData(seasonID, atlas, index, cfg, callBack, signFunc)
   self._atlas = atlas
   self._index = index
   self._cfg = cfg
   self._callBack = callBack
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._head).sprite = (self._atlas):GetSprite((self._cfg).Head)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._name).text = (StringTable.Get)((self._cfg).Name)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._name1).text = (StringTable.Get)((self._cfg).Name)
-  ;
-  (self._signGO):SetActive(signFunc((self._cfg).ID))
-  ;
-  (self._cursorGO):SetActive(seasonID == (self._cfg).ID)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._head.sprite = self._atlas:GetSprite(self._cfg.Head)
+  self._name.text = StringTable.Get(self._cfg.Name)
+  self._name1.text = StringTable.Get(self._cfg.Name)
+  self._signGO:SetActive(signFunc(self._cfg.ID))
+  self._cursorGO:SetActive(seasonID == self._cfg.ID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrackItem.PlayEngerAni = function(self)
-  -- function num : 0_3
-  (self._roogGo):SetActive(true)
-  ;
-  (self._enterAnimation):Play("uianim_UISeasonBackTrackItem_in")
+function UISeasonBackTrackItem:PlayEngerAni()
+  self._roogGo:SetActive(true)
+  self._enterAnimation:Play("uianim_UISeasonBackTrackItem_in")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrackItem.BgOnClick = function(self, go)
-  -- function num : 0_4
-  (self._callBack)(self._index)
+function UISeasonBackTrackItem:BgOnClick(go)
+  self._callBack(self._index)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackTrackItem.OnSelect = function(self, selected)
-  -- function num : 0_5
-  (self._animation):Stop()
+function UISeasonBackTrackItem:OnSelect(selected)
+  self._animation:Stop()
   if selected then
-    (self._animation):Play("uieff_UISeasonBackTrackItem_select")
+    self._animation:Play("uieff_UISeasonBackTrackItem_select")
   else
-    ;
-    (self._animation):Play("uieff_UISeasonBackTrackItem_unselect")
+    self._animation:Play("uieff_UISeasonBackTrackItem_unselect")
   end
 end
-
-

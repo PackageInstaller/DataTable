@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_player_info/ui_head_unlock_condition_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHeadUnLockConditionItem", UICustomWidget)
 UIHeadUnLockConditionItem = UIHeadUnLockConditionItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHeadUnLockConditionItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHeadUnLockConditionItem:OnShow(uiParams)
   self._atlas = self:GetAsset("UIPlayerInfo.spriteatlas", LoadType.SpriteAtlas)
   self._moveSizeUpper = 0
   self._tweenGapsTime = 0
@@ -16,132 +9,85 @@ UIHeadUnLockConditionItem.OnShow = function(self, uiParams)
   self._tweenMoveSpeed = 20
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadUnLockConditionItem.SetData = function(self, info)
-  -- function num : 0_1
+function UIHeadUnLockConditionItem:SetData(info)
   self._conditionDesc = info.m_stDesc
   self._lock = not info.m_bPass
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadUnLockConditionItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHeadUnLockConditionItem:OnHide()
   if self._moveEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._moveEvent)
+    GameGlobal.Timer():CancelEvent(self._moveEvent)
     self._moveEvent = nil
   end
   if self._tweenEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._tweenEvent)
+    GameGlobal.Timer():CancelEvent(self._tweenEvent)
     self._tweenEvent = nil
   end
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
     self._tweener = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadUnLockConditionItem._GetComponents = function(self)
-  -- function num : 0_3
+function UIHeadUnLockConditionItem:_GetComponents()
   self._conditionTex = self:GetUIComponent("UILocalizationText", "conditionDesc")
   self._conditionTexRect = self:GetUIComponent("RectTransform", "conditionDesc")
   self._contentSizeFilter = self:GetUIComponent("ContentSizeFitter", "conditionDesc")
   local texmask = self:GetUIComponent("RectTransform", "texMask")
-  self._moveSizeUpper = (texmask.sizeDelta).x
+  self._moveSizeUpper = texmask.sizeDelta.x
   self._lockImg = self:GetUIComponent("Image", "pass")
   self._bg = self:GetUIComponent("Image", "bg")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadUnLockConditionItem.MoveTexTween = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._conditionTexRect).anchoredPosition = Vector2(0, ((self._conditionTexRect).anchoredPosition).y)
-  self._tweenEvent = ((GameGlobal.Timer)()):AddEvent(self._tweenWaitTime, function()
-    -- function num : 0_4_0 , upvalues : self
+function UIHeadUnLockConditionItem:MoveTexTween()
+  self._conditionTexRect.anchoredPosition = Vector2(0, self._conditionTexRect.anchoredPosition.y)
+  self._tweenEvent = GameGlobal.Timer():AddEvent(self._tweenWaitTime, function()
     self:MoveTex()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadUnLockConditionItem.MoveTex = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHeadUnLockConditionItem:MoveTex()
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
   end
-  self._tweener = ((self._conditionTexRect):DOAnchorPosX(self._movePosX, self._tweenMoveTime)):SetEase(((DG.Tweening).Ease).Linear)
+  self._tweener = self._conditionTexRect:DOAnchorPosX(self._movePosX, self._tweenMoveTime):SetEase(DG.Tweening.Ease.Linear)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadUnLockConditionItem._OnValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._conditionTex):SetText((StringTable.Get)(self._conditionDesc))
-  ;
-  (self._contentSizeFilter):SetLayoutHorizontal()
-  self._texSize = ((self._conditionTexRect).sizeDelta).x
+function UIHeadUnLockConditionItem:_OnValue()
+  self._conditionTex:SetText(StringTable.Get(self._conditionDesc))
+  self._contentSizeFilter:SetLayoutHorizontal()
+  self._texSize = self._conditionTexRect.sizeDelta.x
   self._movePosX = self._moveSizeUpper - self._texSize
-  self._tweenMoveTime = (math.abs)(self._movePosX) / self._tweenMoveSpeed
+  self._tweenMoveTime = math.abs(self._movePosX) / self._tweenMoveSpeed
   self._tweenGapsTime = self._tweenWaitTime * 2 + self._tweenMoveTime * 1000
   if self._moveEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._moveEvent)
+    GameGlobal.Timer():CancelEvent(self._moveEvent)
     self._moveEvent = nil
   end
   if self._tweenEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._tweenEvent)
+    GameGlobal.Timer():CancelEvent(self._tweenEvent)
     self._tweenEvent = nil
   end
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
   end
-  if self._moveSizeUpper < self._texSize then
+  if self._texSize > self._moveSizeUpper then
     self:MoveTexTween()
-    self._moveEvent = ((GameGlobal.Timer)()):AddEventTimes(self._tweenGapsTime, TimerTriggerCount.Infinite, function()
-    -- function num : 0_6_0 , upvalues : self
-    self:MoveTexTween()
-  end
-)
+    self._moveEvent = GameGlobal.Timer():AddEventTimes(self._tweenGapsTime, TimerTriggerCount.Infinite, function()
+      self:MoveTexTween()
+    end)
   else
-    -- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._conditionTexRect).anchoredPosition = Vector2(0, ((self._conditionTexRect).anchoredPosition).y)
+    self._conditionTexRect.anchoredPosition = Vector2(0, self._conditionTexRect.anchoredPosition.y)
   end
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
   if self._lock then
-    (self._conditionTex).color = Color(1, 1, 1)
-    -- DECOMPILER ERROR at PC97: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._lockImg).sprite = (self._atlas):GetSprite("info_qiming_icon8")
-    -- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._bg).sprite = (self._atlas):GetSprite("info_qiming_di15")
+    self._conditionTex.color = Color(1, 1, 1)
+    self._lockImg.sprite = self._atlas:GetSprite("info_qiming_icon8")
+    self._bg.sprite = self._atlas:GetSprite("info_qiming_di15")
   else
-    -- DECOMPILER ERROR at PC111: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._conditionTex).color = Color(0.63921568627451, 0.63921568627451, 0.63921568627451)
-    -- DECOMPILER ERROR at PC117: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._lockImg).sprite = (self._atlas):GetSprite("info_qiming_icon9")
-    -- DECOMPILER ERROR at PC123: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._bg).sprite = (self._atlas):GetSprite("info_qiming_di16")
+    self._conditionTex.color = Color(0.6392156862745098, 0.6392156862745098, 0.6392156862745098)
+    self._lockImg.sprite = self._atlas:GetSprite("info_qiming_icon9")
+    self._bg.sprite = self._atlas:GetSprite("info_qiming_di16")
   end
 end
-
-

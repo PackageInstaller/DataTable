@@ -1,61 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/level/ui_season_main_level_list_asset.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMainLevelListAsset", UICustomWidget)
 UISeasonMainLevelListAsset = UISeasonMainLevelListAsset
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMainLevelListAsset.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMainLevelListAsset:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListAsset.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMainLevelListAsset:InitWidget()
   self.icon = self:GetUIComponent("Image", "icon")
   self.count = self:GetUIComponent("UILocalizationText", "count")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListAsset.SetData = function(self, id, count)
-  -- function num : 0_2 , upvalues : _ENV
-  local zeros = nil
-  if count > 99999 then
-    (Log.exception)("奖励数量不可超过5位:", count)
-  else
-    if count < 10000 and count > 999 then
-      zeros = "0"
-    else
-      if count < 1000 and count > 99 then
-        zeros = "00"
-      else
-        if count < 100 and count > 9 then
-          zeros = "000"
-        else
-          if count < 10 and count > 0 then
-            zeros = "0000"
-          end
-        end
-      end
-    end
+function UISeasonMainLevelListAsset:SetData(id, count)
+  local zeros
+  if 99999 < count then
+    Log.exception("奖励数量不可超过5位:", count)
+  elseif count < 10000 and 999 < count then
+    zeros = "0"
+  elseif count < 1000 and 99 < count then
+    zeros = "00"
+  elseif count < 100 and 9 < count then
+    zeros = "000"
+  elseif count < 10 and 0 < count then
+    zeros = "0000"
   end
-  if (string.isnullorempty)(zeros) then
-    (self.count):SetText(count)
+  if string.isnullorempty(zeros) then
+    self.count:SetText(count)
   else
-    ;
-    (self.count):SetText("<color=#51504e>" .. zeros .. "</color>" .. count)
+    self.count:SetText("<color=#51504e>" .. zeros .. "</color>" .. count)
   end
-  local cfg = (Cfg.cfg_top_tips)[id]
+  local cfg = Cfg.cfg_top_tips[id]
   local atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC63: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.icon).sprite = atlas:GetSprite(cfg.Icon)
+  self.icon.sprite = atlas:GetSprite(cfg.Icon)
 end
-
-

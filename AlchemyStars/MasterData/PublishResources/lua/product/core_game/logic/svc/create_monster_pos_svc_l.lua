@@ -1,150 +1,86 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/create_monster_pos_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CreateMonsterPosService", Object)
 CreateMonsterPosService = CreateMonsterPosService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CreateMonsterPosService.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function CreateMonsterPosService:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
+  self._configService = self._world:GetService("Config")
   self._monsterRefreshFunc = {}
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterRefreshPosType.Position] = self._PositionRefresh
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterRefreshPosType.Random] = self._RandomRefresh
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterRefreshPosType.PositionTable] = self._PositionRandomRefresh
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterRefreshPosType.PositionHitBack] = self._PositionHitBackRefresh
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterRefreshPosType.PositionAndOffSet] = self._PositionAndOffSet
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterRefreshPosType.SelectFirstCanUse] = self._SelectFirstCanUsePos
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterRefreshPosType.PlayerCentered] = self._PlayerCentered
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterRefreshPosType.MonsterCentered] = self._MonsterCentered
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterRefreshPosType.PositionAndOffSetMultiBoard] = self._PositionAndOffSetMultiBoard
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshFunc)[MonsterRefreshPosType.PositionOnExtraBoard] = self._PositionOnExtraBoard
+  self._monsterRefreshFunc[MonsterRefreshPosType.Position] = self._PositionRefresh
+  self._monsterRefreshFunc[MonsterRefreshPosType.Random] = self._RandomRefresh
+  self._monsterRefreshFunc[MonsterRefreshPosType.PositionTable] = self._PositionRandomRefresh
+  self._monsterRefreshFunc[MonsterRefreshPosType.PositionHitBack] = self._PositionHitBackRefresh
+  self._monsterRefreshFunc[MonsterRefreshPosType.PositionAndOffSet] = self._PositionAndOffSet
+  self._monsterRefreshFunc[MonsterRefreshPosType.SelectFirstCanUse] = self._SelectFirstCanUsePos
+  self._monsterRefreshFunc[MonsterRefreshPosType.PlayerCentered] = self._PlayerCentered
+  self._monsterRefreshFunc[MonsterRefreshPosType.MonsterCentered] = self._MonsterCentered
+  self._monsterRefreshFunc[MonsterRefreshPosType.PositionAndOffSetMultiBoard] = self._PositionAndOffSetMultiBoard
+  self._monsterRefreshFunc[MonsterRefreshPosType.PositionOnExtraBoard] = self._PositionOnExtraBoard
   self._monsterRefreshExceptionFunc = {}
-  -- DECOMPILER ERROR at PC64: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshExceptionFunc)[MonsterRefreshExceptionType.Random] = self._ExceptionRandom
-  -- DECOMPILER ERROR at PC69: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshExceptionFunc)[MonsterRefreshExceptionType.ValidRing] = self._ExceptionValidRing
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshExceptionFunc)[MonsterRefreshExceptionType.BackupTable] = self._ExceptionBackupTable
-  -- DECOMPILER ERROR at PC79: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._monsterRefreshExceptionFunc)[MonsterRefreshExceptionType.ValidRingNoRandom] = self._ExceptionValidRingNoRandom
+  self._monsterRefreshExceptionFunc[MonsterRefreshExceptionType.Random] = self._ExceptionRandom
+  self._monsterRefreshExceptionFunc[MonsterRefreshExceptionType.ValidRing] = self._ExceptionValidRing
+  self._monsterRefreshExceptionFunc[MonsterRefreshExceptionType.BackupTable] = self._ExceptionBackupTable
+  self._monsterRefreshExceptionFunc[MonsterRefreshExceptionType.ValidRingNoRandom] = self._ExceptionValidRingNoRandom
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService.GetMonsterRefreshPos = function(self, refreshPosType, monsterRefreshParam)
-  -- function num : 0_1
-  local pFunc = (self._monsterRefreshFunc)[refreshPosType]
+function CreateMonsterPosService:GetMonsterRefreshPos(refreshPosType, monsterRefreshParam)
+  local pFunc = self._monsterRefreshFunc[refreshPosType]
   if not pFunc then
     return {}
   end
   return pFunc(self, monsterRefreshParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._PositionRefresh = function(self, monsterRefreshParam)
-  -- function num : 0_2 , upvalues : _ENV
+function CreateMonsterPosService:_PositionRefresh(monsterRefreshParam)
   local cfgService = self._configService
   local monsterConfigData = cfgService:GetMonsterConfigData()
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local monsterArray = {}
   local monsterIDArray = monsterRefreshParam:GetMonsterIDArray()
   local monsterPosArray = monsterRefreshParam:GetMonsterPosArray()
   local monsterRotationArray = monsterRefreshParam:GetMonsterRotationArray()
   local createMonsterAreaList = {}
-  for i,monsterID in ipairs(monsterIDArray) do
+  for i, monsterID in ipairs(monsterIDArray) do
     self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] MonsterID:", monsterID)
     local bodyAreaPosition = {}
     local monsterTransformParam = MonsterTransformParam:New(monsterID)
     local monsterRaceType = monsterConfigData:GetMonsterRaceType(monsterID)
-    if #monsterPosArray >= i then
-      local monsterPosition = monsterPosArray[i]
-      do
-        local areaArray = monsterConfigData:GetMonsterArea(monsterID)
-        for _,p in ipairs(areaArray) do
-          (table.insert)(bodyAreaPosition, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
-        end
-        if self:CheckPositionCanPlaceMonster(bodyAreaPosition, createMonsterAreaList, monsterRaceType) then
-          for k,areaPos in ipairs(bodyAreaPosition) do
-            (table.insert)(createMonsterAreaList, areaPos)
-          end
-          monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
-          self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
-        else
-          ;
-          (Log.fatal)("[[CreateMonsterPos] MonsterID:", monsterID, "Pos Invalid")
-        end
-        -- DECOMPILER ERROR at PC99: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC99: LeaveBlock: unexpected jumping out IF_STMT
-
+    if i > #monsterPosArray then
+      break
+    end
+    local monsterPosition = monsterPosArray[i]
+    local areaArray = monsterConfigData:GetMonsterArea(monsterID)
+    for _, p in ipairs(areaArray) do
+      table.insert(bodyAreaPosition, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
+    end
+    if self:CheckPositionCanPlaceMonster(bodyAreaPosition, createMonsterAreaList, monsterRaceType) then
+      for k, areaPos in ipairs(bodyAreaPosition) do
+        table.insert(createMonsterAreaList, areaPos)
       end
+      monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
+      self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
+    else
+      Log.fatal("[[CreateMonsterPos] MonsterID:", monsterID, "Pos Invalid")
     end
   end
   return monsterArray
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._RandomRefresh = function(self, monsterRefreshParam)
-  -- function num : 0_3 , upvalues : _ENV
+function CreateMonsterPosService:_RandomRefresh(monsterRefreshParam)
   local cfgService = self._configService
   local monsterConfigData = cfgService:GetMonsterConfigData()
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local monsterArray = {}
   local monsterIDArray = monsterRefreshParam:GetMonsterIDArray()
   local monsterBodyPosArray = {}
   local trapArray = monsterRefreshParam:GetTrapArray()
-  for k,v in ipairs(trapArray) do
+  for k, v in ipairs(trapArray) do
     local posList = v:GetPositionList()
     for i = 1, #posList do
-      (table.insert)(monsterBodyPosArray, posList[i])
+      table.insert(monsterBodyPosArray, posList[i])
     end
   end
   local monsterRotationArray = monsterRefreshParam:GetMonsterRotationArray()
-  for i,monsterID in ipairs(monsterIDArray) do
+  for i, monsterID in ipairs(monsterIDArray) do
     self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] MonsterID:", monsterID)
     local monsterTransformParam = MonsterTransformParam:New(monsterID)
     local areaArray = monsterConfigData:GetMonsterArea(monsterID)
@@ -152,61 +88,51 @@ CreateMonsterPosService._RandomRefresh = function(self, monsterRefreshParam)
     local monsterPosition = boardServiceLogic:GetRandomPiecePos(areaArray, monsterBodyPosArray, monsterRaceType)
     if monsterPosition then
       monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
-      for k,p in ipairs(areaArray) do
-        (table.insert)(monsterBodyPosArray, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
+      for k, p in ipairs(areaArray) do
+        table.insert(monsterBodyPosArray, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
       end
       self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
     else
-      ;
-      (Log.fatal)("No Valid PiecePos in board ID", monsterID)
+      Log.fatal("No Valid PiecePos in board ID", monsterID)
     end
   end
   return monsterArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._MonsterPosAndOffsetArray2MonsterPos = function(self, monsterPosAndOffSetArray)
-  -- function num : 0_4 , upvalues : _ENV
+function CreateMonsterPosService:_MonsterPosAndOffsetArray2MonsterPos(monsterPosAndOffSetArray)
   local playPos = self:_GetPlayerPos()
   local ret = {}
-  for i,v in ipairs(monsterPosAndOffSetArray) do
-    local monsterPosition = nil
+  for i, v in ipairs(monsterPosAndOffSetArray) do
+    local monsterPosition
     local monsterPosType = v[1]
     if monsterPosType == MonsterPosType.Position then
       monsterPosition = v[2]
-    else
-      if monsterPosType == MonsterPosType.OffSet then
-        monsterPosition = playPos + v[2]
-      end
+    elseif monsterPosType == MonsterPosType.OffSet then
+      monsterPosition = playPos + v[2]
     end
-    ;
-    (table.insert)(ret, monsterPosition)
+    table.insert(ret, monsterPosition)
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._PositionRandomRefresh = function(self, monsterRefreshParam)
-  -- function num : 0_5 , upvalues : _ENV
+function CreateMonsterPosService:_PositionRandomRefresh(monsterRefreshParam)
   local cfgService = self._configService
   local monsterConfigData = cfgService:GetMonsterConfigData()
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local monsterArray = {}
   local monsterIDArray = monsterRefreshParam:GetMonsterIDArray()
   local monsterBodyPosArray = {}
   local trapArray = monsterRefreshParam:GetTrapArray()
-  for k,v in ipairs(trapArray) do
+  for k, v in ipairs(trapArray) do
     local posList = v:GetPositionList()
     for i = 1, #posList do
-      (table.insert)(monsterBodyPosArray, posList[i])
+      table.insert(monsterBodyPosArray, posList[i])
     end
   end
   local monsterPosAndOffSetArray = monsterRefreshParam:GetMonsterPosAndOffSetArray()
   local monsterRotationArray = monsterRefreshParam:GetMonsterRotationArray()
   local monsterPosArray = self:_MonsterPosAndOffsetArray2MonsterPos(monsterPosAndOffSetArray)
-  for i,monsterID in ipairs(monsterIDArray) do
+  for i, monsterID in ipairs(monsterIDArray) do
     local monsterRaceType = monsterConfigData:GetMonsterRaceType(monsterID)
     self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] MonsterID:", monsterID)
     local monsterTransformParam = MonsterTransformParam:New(monsterID)
@@ -214,57 +140,42 @@ CreateMonsterPosService._PositionRandomRefresh = function(self, monsterRefreshPa
     local monsterPosition = boardServiceLogic:CreateMonsterGetValidPos(monsterPosArray, areaArray, monsterBodyPosArray, monsterRaceType)
     if monsterPosition then
       monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
-      for k,p in ipairs(areaArray) do
-        (table.insert)(monsterBodyPosArray, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
+      for k, p in ipairs(areaArray) do
+        table.insert(monsterBodyPosArray, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
       end
       self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
-    else
-      if monsterRefreshParam:GetExceptionType() ~= MonsterRefreshExceptionType.None then
-        monsterPosition = self:_DoException(monsterRefreshParam:GetExceptionType(), areaArray, monsterBodyPosArray, monsterRaceType)
-        if monsterPosition then
-          monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
-          for k,p in ipairs(areaArray) do
-            (table.insert)(monsterBodyPosArray, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
-          end
-          self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] UseDoException Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
-        else
-          ;
-          (Log.fatal)("No Valid PiecePos in board After DoException")
+    elseif monsterRefreshParam:GetExceptionType() ~= MonsterRefreshExceptionType.None then
+      monsterPosition = self:_DoException(monsterRefreshParam:GetExceptionType(), areaArray, monsterBodyPosArray, monsterRaceType)
+      if monsterPosition then
+        monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
+        for k, p in ipairs(areaArray) do
+          table.insert(monsterBodyPosArray, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
         end
+        self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] UseDoException Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
       else
-        ;
-        (Log.fatal)("No Valid PiecePos in board No DoException")
+        Log.fatal("No Valid PiecePos in board After DoException")
       end
+    else
+      Log.fatal("No Valid PiecePos in board No DoException")
     end
   end
   return monsterArray
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._DoException = function(self, exceptionType, areaArray, monsterBodyPosArray, monsterRaceType, index, invalidPos, exceptionData)
-  -- function num : 0_6 , upvalues : _ENV
-  if not exceptionType then
-    exceptionType = MonsterRefreshExceptionType.Random
-  end
-  return ((self._monsterRefreshExceptionFunc)[exceptionType])(self, areaArray, monsterBodyPosArray, monsterRaceType, index, invalidPos, exceptionData)
+function CreateMonsterPosService:_DoException(exceptionType, areaArray, monsterBodyPosArray, monsterRaceType, index, invalidPos, exceptionData)
+  exceptionType = exceptionType or MonsterRefreshExceptionType.Random
+  return self._monsterRefreshExceptionFunc[exceptionType](self, areaArray, monsterBodyPosArray, monsterRaceType, index, invalidPos, exceptionData)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._ExceptionRandom = function(self, areaArray, monsterBodyPosArray, monsterRaceType)
-  -- function num : 0_7
-  local boardService = (self._world):GetService("BoardLogic")
+function CreateMonsterPosService:_ExceptionRandom(areaArray, monsterBodyPosArray, monsterRaceType)
+  local boardService = self._world:GetService("BoardLogic")
   return boardService:GetRandomPiecePos(areaArray, monsterBodyPosArray, monsterRaceType)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._ExceptionValidRing = function(self, areaArray, monsterBodyPosArray, monsterRaceType, index, invalidPos)
-  -- function num : 0_8 , upvalues : _ENV
-  local boardService = (self._world):GetService("BoardLogic")
+function CreateMonsterPosService:_ExceptionValidRing(areaArray, monsterBodyPosArray, monsterRaceType, index, invalidPos)
+  local boardService = self._world:GetService("BoardLogic")
   for i = 1, 10 do
-    local ringList = (ComputeScopeRange.ComputeRange_SquareRing)(invalidPos, #areaArray, i)
+    local ringList = ComputeScopeRange.ComputeRange_SquareRing(invalidPos, #areaArray, i)
     local retPos = boardService:_GetValidPos(ringList, areaArray, monsterBodyPosArray, monsterRaceType)
     if retPos then
       return retPos
@@ -272,11 +183,8 @@ CreateMonsterPosService._ExceptionValidRing = function(self, areaArray, monsterB
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._ExceptionBackupTable = function(self, areaArray, monsterBodyPosArray, monsterRaceType, index, invalidPos, exceptionData)
-  -- function num : 0_9
-  local boardService = (self._world):GetService("BoardLogic")
+function CreateMonsterPosService:_ExceptionBackupTable(areaArray, monsterBodyPosArray, monsterRaceType, index, invalidPos, exceptionData)
+  local boardService = self._world:GetService("BoardLogic")
   local posArray = exceptionData[index]
   local monsterPosArray = self:_MonsterPosAndOffsetArray2MonsterPos(posArray)
   local retPos = boardService:_GetValidPos(monsterPosArray, areaArray, monsterBodyPosArray, monsterRaceType)
@@ -286,13 +194,10 @@ CreateMonsterPosService._ExceptionBackupTable = function(self, areaArray, monste
   return retPos
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._ExceptionValidRingNoRandom = function(self, areaArray, monsterBodyPosArray, monsterRaceType, index, invalidPos)
-  -- function num : 0_10 , upvalues : _ENV
-  local boardService = (self._world):GetService("BoardLogic")
+function CreateMonsterPosService:_ExceptionValidRingNoRandom(areaArray, monsterBodyPosArray, monsterRaceType, index, invalidPos)
+  local boardService = self._world:GetService("BoardLogic")
   for i = 1, 10 do
-    local ringList = (ComputeScopeRange.ComputeRange_SquareRing)(invalidPos, #areaArray, i)
+    local ringList = ComputeScopeRange.ComputeRange_SquareRing(invalidPos, #areaArray, i)
     local retPos = boardService:_GetValidPos(ringList, areaArray, monsterBodyPosArray, monsterRaceType, true)
     if retPos then
       return retPos
@@ -300,28 +205,25 @@ CreateMonsterPosService._ExceptionValidRingNoRandom = function(self, areaArray, 
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._PositionHitBackRefresh = function(self, monsterRefreshParam)
-  -- function num : 0_11 , upvalues : _ENV
+function CreateMonsterPosService:_PositionHitBackRefresh(monsterRefreshParam)
   local cfgService = self._configService
   local monsterConfigData = cfgService:GetMonsterConfigData()
-  local boardService = (self._world):GetService("BoardLogic")
+  local boardService = self._world:GetService("BoardLogic")
   local monsterArray = {}
   local monsterIDArray = monsterRefreshParam:GetMonsterIDArray()
   local monsterPosArray = monsterRefreshParam:GetMonsterPosArray()
   local monsterRotationArray = monsterRefreshParam:GetMonsterRotationArray()
   local createMonsterAreaList = {}
-  for i,monsterID in ipairs(monsterIDArray) do
+  for i, monsterID in ipairs(monsterIDArray) do
     local bodyAreaPosition = {}
     local monsterTransformParam = MonsterTransformParam:New(monsterID)
     local monsterPosition = monsterPosArray[i]
     local areaArray = monsterConfigData:GetMonsterArea(monsterID)
-    for _,p in ipairs(areaArray) do
-      (table.insert)(bodyAreaPosition, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
+    for _, p in ipairs(areaArray) do
+      table.insert(bodyAreaPosition, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
     end
-    for k,areaPos in ipairs(bodyAreaPosition) do
-      (table.insert)(createMonsterAreaList, areaPos)
+    for k, areaPos in ipairs(bodyAreaPosition) do
+      table.insert(createMonsterAreaList, areaPos)
     end
     monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
     self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
@@ -329,257 +231,205 @@ CreateMonsterPosService._PositionHitBackRefresh = function(self, monsterRefreshP
   return monsterArray
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._GetMonsterForward = function(self, forwardArray, index, monsterPos, monsterID)
-  -- function num : 0_12 , upvalues : _ENV
+function CreateMonsterPosService:_GetMonsterForward(forwardArray, index, monsterPos, monsterID)
   local cfgService = self._configService
   local monsterConfigData = cfgService:GetMonsterConfigData()
   local canTurn = monsterConfigData:CanTurn(monsterID)
   if forwardArray and index <= #forwardArray then
     return forwardArray[index]
+  elseif canTurn then
+    local playerPos = self:_GetPlayerPos()
+    return playerPos - monsterPos
   else
-    if canTurn then
-      local playerPos = self:_GetPlayerPos()
-      return playerPos - monsterPos
-    else
-      do
-        do return Vector2(0, -1) end
-      end
-    end
+    return Vector2(0, -1)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._PositionAndOffSet = function(self, monsterRefreshParam)
-  -- function num : 0_13 , upvalues : _ENV
+function CreateMonsterPosService:_PositionAndOffSet(monsterRefreshParam)
   local cfgService = self._configService
   local monsterConfigData = cfgService:GetMonsterConfigData()
-  local boardService = (self._world):GetService("BoardLogic")
+  local boardService = self._world:GetService("BoardLogic")
   local monsterArray = {}
   local monsterIDArray = monsterRefreshParam:GetMonsterIDArray()
   local monsterPosAndOffSetArray = monsterRefreshParam:GetMonsterPosAndOffSetArray()
   local monsterRotationArray = monsterRefreshParam:GetMonsterRotationArray()
   local exceptionData = monsterRefreshParam:GetExceptionData()
   local createMonsterAreaList = {}
-  for i,monsterID in ipairs(monsterIDArray) do
+  for i, monsterID in ipairs(monsterIDArray) do
     self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] MonsterID:", monsterID)
     local monsterRaceType = monsterConfigData:GetMonsterRaceType(monsterID)
     local bodyAreaPosition = {}
     local monsterTransformParam = MonsterTransformParam:New(monsterID)
     local monsterPosition = Vector2(0, 0)
-    local monsterPosType = (monsterPosAndOffSetArray[i])[1]
+    local monsterPosType = monsterPosAndOffSetArray[i][1]
     if monsterPosType == MonsterPosType.Position then
-      monsterPosition = (monsterPosAndOffSetArray[i])[2]
-    else
-      if monsterPosType == MonsterPosType.OffSet then
-        local playPos = self:_GetPlayerPos()
-        monsterPosition = playPos + (monsterPosAndOffSetArray[i])[2]
-      end
+      monsterPosition = monsterPosAndOffSetArray[i][2]
+    elseif monsterPosType == MonsterPosType.OffSet then
+      local playPos = self:_GetPlayerPos()
+      monsterPosition = playPos + monsterPosAndOffSetArray[i][2]
     end
-    do
-      do
-        local areaArray = monsterConfigData:GetMonsterArea(monsterID)
-        for _,p in ipairs(areaArray) do
-          (table.insert)(bodyAreaPosition, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
-        end
-        if self:CheckPositionCanPlaceMonster(bodyAreaPosition, createMonsterAreaList, monsterRaceType) then
-          for k,areaPos in ipairs(bodyAreaPosition) do
-            (table.insert)(createMonsterAreaList, areaPos)
-          end
-          monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
-          self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
-        else
-          if monsterRefreshParam:GetExceptionType() ~= MonsterRefreshExceptionType.None then
-            monsterPosition = self:_DoException(monsterRefreshParam:GetExceptionType(), areaArray, createMonsterAreaList, monsterRaceType, i, monsterPosition, exceptionData)
-            if monsterPosition then
-              monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
-              for k,p in ipairs(areaArray) do
-                (table.insert)(createMonsterAreaList, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
-              end
-              self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] UseDoException Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
-            else
-              ;
-              (Log.fatal)("No Valid PiecePos in board After DoException")
-            end
-          else
-            ;
-            (Log.fatal)("No Valid PiecePos in board No DoException")
-          end
-          ;
-          (Log.fatal)("[[CreateMonsterPos] MonsterID:", monsterID, "Pos Invalid")
-        end
-        -- DECOMPILER ERROR at PC184: LeaveBlock: unexpected jumping out DO_STMT
-
+    local areaArray = monsterConfigData:GetMonsterArea(monsterID)
+    for _, p in ipairs(areaArray) do
+      table.insert(bodyAreaPosition, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
+    end
+    if self:CheckPositionCanPlaceMonster(bodyAreaPosition, createMonsterAreaList, monsterRaceType) then
+      for k, areaPos in ipairs(bodyAreaPosition) do
+        table.insert(createMonsterAreaList, areaPos)
       end
+      monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
+      self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
+    else
+      if monsterRefreshParam:GetExceptionType() ~= MonsterRefreshExceptionType.None then
+        monsterPosition = self:_DoException(monsterRefreshParam:GetExceptionType(), areaArray, createMonsterAreaList, monsterRaceType, i, monsterPosition, exceptionData)
+        if monsterPosition then
+          monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
+          for k, p in ipairs(areaArray) do
+            table.insert(createMonsterAreaList, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
+          end
+          self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] UseDoException Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
+        else
+          Log.fatal("No Valid PiecePos in board After DoException")
+        end
+      else
+        Log.fatal("No Valid PiecePos in board No DoException")
+      end
+      Log.fatal("[[CreateMonsterPos] MonsterID:", monsterID, "Pos Invalid")
     end
   end
   return monsterArray
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._FillMonsterTransformParam = function(self, monsterRotationArray, index, monsterPosition, monsterID, monsterTransformParam)
-  -- function num : 0_14
+function CreateMonsterPosService:_FillMonsterTransformParam(monsterRotationArray, index, monsterPosition, monsterID, monsterTransformParam)
   local monsterForward = self:_GetMonsterForward(monsterRotationArray, index, monsterPosition, monsterID)
   monsterTransformParam:SetForward(monsterForward)
   monsterTransformParam:SetPosition(monsterPosition)
   return monsterTransformParam
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._GetPlayerPos = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local boardEntity = (self._world):GetBoardEntity()
+function CreateMonsterPosService:_GetPlayerPos()
+  local boardEntity = self._world:GetBoardEntity()
   local playerPos = Vector2(0, 0)
-  if boardEntity and (self._world):GetRunningPosition() ~= WorldRunPostion.Performance then
-    local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  if boardEntity and self._world:GetRunningPosition() ~= WorldRunPostion.Performance then
+    local teamEntity = self._world:Player():GetLocalTeamEntity()
     if teamEntity then
-      playerPos = (teamEntity:GridLocation()):GetGridPos()
+      playerPos = teamEntity:GridLocation():GetGridPos()
     end
   else
-    do
-      do
-        local levelConfigData = (self._configService):GetLevelConfigData()
-        playerPos = levelConfigData:GetPlayerBornPos()
-        return playerPos
-      end
-    end
+    local levelConfigData = self._configService:GetLevelConfigData()
+    playerPos = levelConfigData:GetPlayerBornPos()
   end
+  return playerPos
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._SelectFirstCanUsePos = function(self, monsterRefreshParam)
-  -- function num : 0_16 , upvalues : _ENV
+function CreateMonsterPosService:_SelectFirstCanUsePos(monsterRefreshParam)
   local cfgService = self._configService
   local monsterConfigData = cfgService:GetMonsterConfigData()
-  local boardService = (self._world):GetService("BoardLogic")
+  local boardService = self._world:GetService("BoardLogic")
   local monsterArray = {}
   local monsterIDArray = monsterRefreshParam:GetMonsterIDArray()
   local monsterPosArray = monsterRefreshParam:GetMonsterPosArray()
   local monsterRotationArray = monsterRefreshParam:GetMonsterRotationArray()
   local createMonsterAreaList = {}
-  for i,monsterID in ipairs(monsterIDArray) do
+  for i, monsterID in ipairs(monsterIDArray) do
     self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] MonsterID:", monsterID)
     local monsterTransformParam = MonsterTransformParam:New(monsterID)
     local monsterRaceType = monsterConfigData:GetMonsterRaceType(monsterID)
-    if #monsterPosArray >= i then
-      local monsterPosList = monsterPosArray[i]
-      local monsterRotationList = monsterRotationArray[i]
-      local areaArray = monsterConfigData:GetMonsterArea(monsterID)
-      for j = 1, #monsterPosList do
-        local bodyAreaPosition = {}
-        local monsterPosition = monsterPosList[j]
-        for _,p in ipairs(areaArray) do
-          (table.insert)(bodyAreaPosition, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
-        end
-        if self:CheckPositionCanPlaceMonster(bodyAreaPosition, createMonsterAreaList, monsterRaceType) then
-          for k,areaPos in ipairs(bodyAreaPosition) do
-            (table.insert)(createMonsterAreaList, areaPos)
-          end
-          monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationList, j, monsterPosition, monsterID, monsterTransformParam)
-          self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
-          break
-        end
+    if i > #monsterPosArray then
+      break
+    end
+    local monsterPosList = monsterPosArray[i]
+    local monsterRotationList = monsterRotationArray[i]
+    local areaArray = monsterConfigData:GetMonsterArea(monsterID)
+    for j = 1, #monsterPosList do
+      local bodyAreaPosition = {}
+      local monsterPosition = monsterPosList[j]
+      for _, p in ipairs(areaArray) do
+        table.insert(bodyAreaPosition, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
       end
-      do
-        -- DECOMPILER ERROR at PC100: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC100: LeaveBlock: unexpected jumping out IF_STMT
-
+      if self:CheckPositionCanPlaceMonster(bodyAreaPosition, createMonsterAreaList, monsterRaceType) then
+        for k, areaPos in ipairs(bodyAreaPosition) do
+          table.insert(createMonsterAreaList, areaPos)
+        end
+        monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationList, j, monsterPosition, monsterID, monsterTransformParam)
+        self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
+        break
       end
     end
   end
   return monsterArray
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._PlayerCentered = function(self, monsterRefreshParam)
-  -- function num : 0_17 , upvalues : _ENV
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    (Log.exception)("cfg_refresh_monster.MonsterRefreshType=8不适用于黑拳赛")
+function CreateMonsterPosService:_PlayerCentered(monsterRefreshParam)
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    Log.exception("cfg_refresh_monster.MonsterRefreshType=8不适用于黑拳赛")
     return {}
   end
   local options = monsterRefreshParam:GetRefreshPosOptions()
   local preferRadius = options.preferRadius
-  local ePlayerTeam = ((self._world):Player()):GetLocalTeamEntity()
+  local ePlayerTeam = self._world:Player():GetLocalTeamEntity()
   local computer = CreateMonsterPosTargetCenteredUnit:New(self._world)
   computer:InitGridList(ePlayerTeam:GetGridPosition(), BlockFlag.MonsterLand & BlockFlag.MonsterFly)
-  local monsterConfigData = ((self._world):GetService("Config")):GetMonsterConfigData()
+  local monsterConfigData = self._world:GetService("Config"):GetMonsterConfigData()
   local monsterRotationArray = monsterRefreshParam:GetMonsterRotationArray()
   local tMonsterTransformParam = {}
   local monsterIDArray = monsterRefreshParam:GetMonsterIDArray()
-  for index,id in ipairs(monsterIDArray) do
+  for index, id in ipairs(monsterIDArray) do
     local cfgMonsterClass = monsterConfigData:GetMonsterClass(id)
     local area = cfgMonsterClass.Area
     local explainedArea = monsterConfigData:ExplainMonsterArea(area)
-    if cfgMonsterClass.RaceType ~= MonsterRaceType.Fly or not BlockFlag.MonsterFly then
-      local blockFlag = BlockFlag.MonsterLand
-    end
+    local blockFlag = cfgMonsterClass.RaceType == MonsterRaceType.Fly and BlockFlag.MonsterFly or BlockFlag.MonsterLand
     local v2SummonPos = computer:GetPosByBlockFlag(blockFlag, preferRadius, explainedArea)
     if v2SummonPos then
       local genParam = MonsterTransformParam:New(id)
       self:_FillMonsterTransformParam(monsterRotationArray, index, v2SummonPos, id, genParam)
-      ;
-      (table.insert)(tMonsterTransformParam, genParam)
+      table.insert(tMonsterTransformParam, genParam)
       computer:RemovePosFromCache(v2SummonPos, explainedArea)
     end
   end
   return tMonsterTransformParam
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._MonsterCentered = function(self, monsterRefreshParam)
-  -- function num : 0_18 , upvalues : _ENV
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    (Log.exception)("cfg_refresh_monster.MonsterRefreshType=9不适用于黑拳赛")
+function CreateMonsterPosService:_MonsterCentered(monsterRefreshParam)
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    Log.exception("cfg_refresh_monster.MonsterRefreshType=9不适用于黑拳赛")
     return {}
   end
   local options = monsterRefreshParam:GetRefreshPosOptions()
   local preferRadius = options.preferRadius
   local centerMonsterID = options.centerMonsterID
   local tv2Center = {}
-  for _,e in ipairs((self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterID)) do
+  for _, e in ipairs(self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterID)) do
     local cMonsterID = e:MonsterID()
     local monsterID = cMonsterID:GetMonsterID()
     if monsterID == centerMonsterID then
-      (table.insert)(tv2Center, e:GetGridPosition())
+      table.insert(tv2Center, e:GetGridPosition())
     end
   end
   local tMonsterTransformParam = {}
   local tv2Possessed = {}
-  for _,v2 in ipairs(tv2Center) do
+  for _, v2 in ipairs(tv2Center) do
     local computer = CreateMonsterPosTargetCenteredUnit:New(self._world)
     computer:InitGridList(v2, BlockFlag.MonsterLand & BlockFlag.MonsterFly)
-    for _,v2Possessed in ipairs(tv2Possessed) do
+    for _, v2Possessed in ipairs(tv2Possessed) do
       computer:RemovePosFromCache(v2Possessed)
     end
-    local monsterConfigData = ((self._world):GetService("Config")):GetMonsterConfigData()
+    local monsterConfigData = self._world:GetService("Config"):GetMonsterConfigData()
     local monsterRotationArray = monsterRefreshParam:GetMonsterRotationArray()
     local monsterIDArray = monsterRefreshParam:GetMonsterIDArray()
-    for index,id in ipairs(monsterIDArray) do
+    for index, id in ipairs(monsterIDArray) do
       local cfgMonsterClass = monsterConfigData:GetMonsterClass(id)
       local area = cfgMonsterClass.Area
       local explainedArea = monsterConfigData:ExplainMonsterArea(area)
-      if cfgMonsterClass.RaceType ~= MonsterRaceType.Fly or not BlockFlag.MonsterFly then
-        local blockFlag = BlockFlag.MonsterLand
-      end
+      local blockFlag = cfgMonsterClass.RaceType == MonsterRaceType.Fly and BlockFlag.MonsterFly or BlockFlag.MonsterLand
       local v2SummonPos = computer:GetPosByBlockFlag(blockFlag, preferRadius, explainedArea)
       if v2SummonPos then
         local genParam = MonsterTransformParam:New(id)
         self:_FillMonsterTransformParam(monsterRotationArray, index, v2SummonPos, id, genParam)
-        ;
-        (table.insert)(tMonsterTransformParam, genParam)
+        table.insert(tMonsterTransformParam, genParam)
         computer:RemovePosFromCache(v2SummonPos, explainedArea)
-        for _,v2Area in ipairs(explainedArea) do
+        for _, v2Area in ipairs(explainedArea) do
           local v2AbsBody = v2SummonPos + v2Area
-          ;
-          (table.insert)(tv2Possessed, v2AbsBody)
+          table.insert(tv2Possessed, v2AbsBody)
         end
       end
     end
@@ -587,10 +437,7 @@ CreateMonsterPosService._MonsterCentered = function(self, monsterRefreshParam)
   return tMonsterTransformParam
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService.CheckPositionCanPlaceMonster = function(self, posList, extendMonsterAreaPosList, monsterRaceType)
-  -- function num : 0_19
+function CreateMonsterPosService:CheckPositionCanPlaceMonster(posList, extendMonsterAreaPosList, monsterRaceType)
   local containPlayerPos = self:IsPosListContainPlayerPos(posList)
   if containPlayerPos then
     return false
@@ -606,50 +453,38 @@ CreateMonsterPosService.CheckPositionCanPlaceMonster = function(self, posList, e
   if self:IsPosListBlockMonsterRace(posList, monsterRaceType) then
     return false
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   if utilData:IsPosListBlockWithTrapWall(posList, monsterRaceType) then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService.IsPosListContainPlayerPos = function(self, posList)
-  -- function num : 0_20 , upvalues : _ENV
-  local playerPosition = (Vector2(0, 0))
-  -- DECOMPILER ERROR at PC4: Overwrote pending register: R3 in 'AssignReg'
-
-  local teamEntity = .end
-  if (self._world):GetRunningPosition() ~= WorldRunPostion.Performance then
-    teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+function CreateMonsterPosService:IsPosListContainPlayerPos(posList)
+  local playerPosition = Vector2(0, 0)
+  local teamEntity
+  if self._world:GetRunningPosition() ~= WorldRunPostion.Performance then
+    teamEntity = self._world:Player():GetLocalTeamEntity()
   end
   if teamEntity then
     local playerGridLocation = teamEntity:GridLocation()
     playerPosition = playerGridLocation.Position
   else
-    do
-      do
-        local levelConfigData = (self._configService):GetLevelConfigData()
-        playerPosition = levelConfigData:GetPlayerBornPos()
-        for _,pos in ipairs(posList) do
-          if playerPosition.x == pos.x and playerPosition.y == pos.y then
-            self:PrintCreateMonsterPosSvcLog("Player In MonsterArea")
-            return true
-          end
-        end
-        return false
-      end
+    local levelConfigData = self._configService:GetLevelConfigData()
+    playerPosition = levelConfigData:GetPlayerBornPos()
+  end
+  for _, pos in ipairs(posList) do
+    if playerPosition.x == pos.x and playerPosition.y == pos.y then
+      self:PrintCreateMonsterPosSvcLog("Player In MonsterArea")
+      return true
     end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService.IsPosListAllHaveValidPieceType = function(self, posList)
-  -- function num : 0_21 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
-  for _,pos in ipairs(posList) do
+function CreateMonsterPosService:IsPosListAllHaveValidPieceType(posList)
+  local utilData = self._world:GetService("UtilData")
+  for _, pos in ipairs(posList) do
     if not utilData:IsValidPiecePos(pos) then
       return false
     end
@@ -657,16 +492,13 @@ CreateMonsterPosService.IsPosListAllHaveValidPieceType = function(self, posList)
   return true
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService.IsPosListBlockMonsterRace = function(self, posList, monsterRaceType)
-  -- function num : 0_22 , upvalues : _ENV
+function CreateMonsterPosService:IsPosListBlockMonsterRace(posList, monsterRaceType)
   if not monsterRaceType then
-    (Log.fatal)("function Param monsterRaceType is Nil ")
+    Log.fatal("function Param monsterRaceType is Nil ")
     return true
   end
-  local boardLogicSvc = (self._world):GetService("BoardLogic")
-  for _,pos in ipairs(posList) do
+  local boardLogicSvc = self._world:GetService("BoardLogic")
+  for _, pos in ipairs(posList) do
     if monsterRaceType == MonsterRaceType.Land and boardLogicSvc:IsPosBlock(pos, BlockFlag.MonsterLand) then
       return true
     end
@@ -677,13 +509,10 @@ CreateMonsterPosService.IsPosListBlockMonsterRace = function(self, posList, mons
   return false
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService.IsPosListContainExtendMonsterList = function(self, posList, extendMonsterAreaPosList)
-  -- function num : 0_23 , upvalues : _ENV
-  for _,pos in ipairs(posList) do
+function CreateMonsterPosService:IsPosListContainExtendMonsterList(posList, extendMonsterAreaPosList)
+  for _, pos in ipairs(posList) do
     if extendMonsterAreaPosList then
-      for k,v in ipairs(extendMonsterAreaPosList) do
+      for k, v in ipairs(extendMonsterAreaPosList) do
         if v == pos then
           self:PrintCreateMonsterPosSvcLog("NewMonsterIn pos：", tostring(v))
           return true
@@ -694,22 +523,16 @@ CreateMonsterPosService.IsPosListContainExtendMonsterList = function(self, posLi
   return false
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService.PrintCreateMonsterPosSvcLog = function(self, ...)
-  -- function num : 0_24 , upvalues : _ENV
-  if self._world and (self._world):IsDevelopEnv() then
-    (Log.debug)(...)
+function CreateMonsterPosService:PrintCreateMonsterPosSvcLog(...)
+  if self._world and self._world:IsDevelopEnv() then
+    Log.debug(...)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._PositionAndOffSetMultiBoard = function(self, monsterRefreshParam)
-  -- function num : 0_25 , upvalues : _ENV
+function CreateMonsterPosService:_PositionAndOffSetMultiBoard(monsterRefreshParam)
   local cfgService = self._configService
   local monsterConfigData = cfgService:GetMonsterConfigData()
-  local boardService = (self._world):GetService("BoardLogic")
+  local boardService = self._world:GetService("BoardLogic")
   local monsterArray = {}
   local monsterIDArray = monsterRefreshParam:GetMonsterIDArray()
   local monsterPosAndOffSetArray = monsterRefreshParam:GetMonsterPosAndOffSetArray()
@@ -717,24 +540,24 @@ CreateMonsterPosService._PositionAndOffSetMultiBoard = function(self, monsterRef
   local exceptionData = monsterRefreshParam:GetExceptionData()
   local boardIndex = monsterRefreshParam:GetBoardIndex()
   local createMonsterAreaList = {}
-  for i,monsterID in ipairs(monsterIDArray) do
+  for i, monsterID in ipairs(monsterIDArray) do
     self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] MonsterID:", monsterID)
     local monsterRaceType = monsterConfigData:GetMonsterRaceType(monsterID)
     local bodyAreaPosition = {}
     local monsterTransformParam = MonsterTransformParam:New(monsterID)
     local monsterPosition = Vector2(0, 0)
-    local monsterPosType = (monsterPosAndOffSetArray[i])[1]
+    local monsterPosType = monsterPosAndOffSetArray[i][1]
     if monsterPosType == MonsterPosType.Position then
-      monsterPosition = (monsterPosAndOffSetArray[i])[2]
+      monsterPosition = monsterPosAndOffSetArray[i][2]
     end
     local areaArray = monsterConfigData:GetMonsterArea(monsterID)
-    for _,p in ipairs(areaArray) do
-      (table.insert)(bodyAreaPosition, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
+    for _, p in ipairs(areaArray) do
+      table.insert(bodyAreaPosition, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
     end
     if self:CheckPositionCanPlaceMonsterMultiBoard(boardIndex, bodyAreaPosition, createMonsterAreaList, monsterRaceType) then
       monsterTransformParam:SetBoardIndex(boardIndex)
-      for k,areaPos in ipairs(bodyAreaPosition) do
-        (table.insert)(createMonsterAreaList, areaPos)
+      for k, areaPos in ipairs(bodyAreaPosition) do
+        table.insert(createMonsterAreaList, areaPos)
       end
       monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
       self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
@@ -743,29 +566,23 @@ CreateMonsterPosService._PositionAndOffSetMultiBoard = function(self, monsterRef
         monsterPosition = self:_DoException(monsterRefreshParam:GetExceptionType(), areaArray, createMonsterAreaList, monsterRaceType, i, monsterPosition, exceptionData)
         if monsterPosition then
           monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
-          for k,p in ipairs(areaArray) do
-            (table.insert)(createMonsterAreaList, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
+          for k, p in ipairs(areaArray) do
+            table.insert(createMonsterAreaList, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
           end
           self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] UseDoException Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
         else
-          ;
-          (Log.fatal)("No Valid PiecePos in board After DoException")
+          Log.fatal("No Valid PiecePos in board After DoException")
         end
       else
-        ;
-        (Log.fatal)("No Valid PiecePos in board No DoException")
+        Log.fatal("No Valid PiecePos in board No DoException")
       end
-      ;
-      (Log.fatal)("[[CreateMonsterPos] MonsterID:", monsterID, "Pos Invalid")
+      Log.fatal("[[CreateMonsterPos] MonsterID:", monsterID, "Pos Invalid")
     end
   end
   return monsterArray
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService.CheckPositionCanPlaceMonsterMultiBoard = function(self, boardIndex, posList, extendMonsterAreaPosList, monsterRaceType)
-  -- function num : 0_26
+function CreateMonsterPosService:CheckPositionCanPlaceMonsterMultiBoard(boardIndex, posList, extendMonsterAreaPosList, monsterRaceType)
   local containExtendPos = self:IsPosListContainExtendMonsterList(posList, extendMonsterAreaPosList)
   if containExtendPos then
     return false
@@ -780,12 +597,9 @@ CreateMonsterPosService.CheckPositionCanPlaceMonsterMultiBoard = function(self, 
   return true
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService.IsPosListAllHaveValidPieceTypeMultiBoard = function(self, boardIndex, posList)
-  -- function num : 0_27 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
-  for _,pos in ipairs(posList) do
+function CreateMonsterPosService:IsPosListAllHaveValidPieceTypeMultiBoard(boardIndex, posList)
+  local utilData = self._world:GetService("UtilData")
+  for _, pos in ipairs(posList) do
     if not utilData:IsValidPiecePosMultiBoard(boardIndex, pos) then
       return false
     end
@@ -793,16 +607,13 @@ CreateMonsterPosService.IsPosListAllHaveValidPieceTypeMultiBoard = function(self
   return true
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService.IsPosListBlockMonsterRaceMultiBoard = function(self, boardIndex, posList, monsterRaceType)
-  -- function num : 0_28 , upvalues : _ENV
+function CreateMonsterPosService:IsPosListBlockMonsterRaceMultiBoard(boardIndex, posList, monsterRaceType)
   if not monsterRaceType then
-    (Log.fatal)("function Param monsterRaceType is Nil ")
+    Log.fatal("function Param monsterRaceType is Nil ")
     return true
   end
-  local boardMultiServiceLogic = (self._world):GetService("BoardMultiLogic")
-  for _,pos in ipairs(posList) do
+  local boardMultiServiceLogic = self._world:GetService("BoardMultiLogic")
+  for _, pos in ipairs(posList) do
     if monsterRaceType == MonsterRaceType.Land and boardMultiServiceLogic:IsPosBlockMultiBoard(boardIndex, pos, BlockFlag.MonsterLand) then
       return true
     end
@@ -813,74 +624,58 @@ CreateMonsterPosService.IsPosListBlockMonsterRaceMultiBoard = function(self, boa
   return false
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService._PositionOnExtraBoard = function(self, monsterRefreshParam)
-  -- function num : 0_29 , upvalues : _ENV
+function CreateMonsterPosService:_PositionOnExtraBoard(monsterRefreshParam)
   local cfgService = self._configService
   local monsterConfigData = cfgService:GetMonsterConfigData()
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local monsterArray = {}
   local monsterIDArray = monsterRefreshParam:GetMonsterIDArray()
   local monsterPosArray = monsterRefreshParam:GetMonsterPosArray()
   local monsterRotationArray = monsterRefreshParam:GetMonsterRotationArray()
   local createMonsterAreaList = {}
-  for i,monsterID in ipairs(monsterIDArray) do
+  for i, monsterID in ipairs(monsterIDArray) do
     self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] MonsterID:", monsterID)
     local bodyAreaPosition = {}
     local monsterTransformParam = MonsterTransformParam:New(monsterID)
     local monsterRaceType = monsterConfigData:GetMonsterRaceType(monsterID)
-    if #monsterPosArray >= i then
-      local monsterPosition = monsterPosArray[i]
-      do
-        local areaArray = monsterConfigData:GetMonsterArea(monsterID)
-        for _,p in ipairs(areaArray) do
-          (table.insert)(bodyAreaPosition, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
-        end
-        if self:CheckPositionCanPlaceMonsterOnExtraBoard(bodyAreaPosition, createMonsterAreaList, monsterRaceType) then
-          for k,areaPos in ipairs(bodyAreaPosition) do
-            (table.insert)(createMonsterAreaList, areaPos)
-          end
-          monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
-          self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
-        else
-          if self:CheckPositionCanPlaceMonster(bodyAreaPosition, createMonsterAreaList, monsterRaceType) then
-            for k,areaPos in ipairs(bodyAreaPosition) do
-              (table.insert)(createMonsterAreaList, areaPos)
-            end
-            monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
-            self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
-          else
-            ;
-            (Log.fatal)("[[CreateMonsterPos] MonsterID:", monsterID, "Pos Invalid")
-          end
-        end
-        -- DECOMPILER ERROR at PC136: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC136: LeaveBlock: unexpected jumping out IF_STMT
-
+    if i > #monsterPosArray then
+      break
+    end
+    local monsterPosition = monsterPosArray[i]
+    local areaArray = monsterConfigData:GetMonsterArea(monsterID)
+    for _, p in ipairs(areaArray) do
+      table.insert(bodyAreaPosition, Vector2(monsterPosition.x + p.x, monsterPosition.y + p.y))
+    end
+    if self:CheckPositionCanPlaceMonsterOnExtraBoard(bodyAreaPosition, createMonsterAreaList, monsterRaceType) then
+      for k, areaPos in ipairs(bodyAreaPosition) do
+        table.insert(createMonsterAreaList, areaPos)
       end
+      monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
+      self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
+    elseif self:CheckPositionCanPlaceMonster(bodyAreaPosition, createMonsterAreaList, monsterRaceType) then
+      for k, areaPos in ipairs(bodyAreaPosition) do
+        table.insert(createMonsterAreaList, areaPos)
+      end
+      monsterArray[#monsterArray + 1] = self:_FillMonsterTransformParam(monsterRotationArray, i, monsterPosition, monsterID, monsterTransformParam)
+      self:PrintCreateMonsterPosSvcLog("[[CreateMonsterPos] Create MonsterID:", monsterID, "Pos:", tostring(monsterPosition))
+    else
+      Log.fatal("[[CreateMonsterPos] MonsterID:", monsterID, "Pos Invalid")
     end
   end
   return monsterArray
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-CreateMonsterPosService.CheckPositionCanPlaceMonsterOnExtraBoard = function(self, posList, extendMonsterAreaPosList, monsterRaceType)
-  -- function num : 0_30 , upvalues : _ENV
+function CreateMonsterPosService:CheckPositionCanPlaceMonsterOnExtraBoard(posList, extendMonsterAreaPosList, monsterRaceType)
   local containExtendPos = self:IsPosListContainExtendMonsterList(posList, extendMonsterAreaPosList)
   if containExtendPos then
     return false
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local extraBoardPosRange = utilData:GetExtraBoardPosList()
-  for _,pos in ipairs(posList) do
-    if not (table.intable)(extraBoardPosRange, pos) then
+  for _, pos in ipairs(posList) do
+    if not table.intable(extraBoardPosRange, pos) then
       return false
     end
   end
   return true
 end
-
-

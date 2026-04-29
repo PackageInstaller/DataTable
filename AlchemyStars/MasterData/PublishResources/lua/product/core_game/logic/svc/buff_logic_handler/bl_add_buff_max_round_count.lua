@@ -1,37 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_add_buff_max_round_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddBuffMaxRoundCount", BuffLogicBase)
 BuffLogicAddBuffMaxRoundCount = BuffLogicAddBuffMaxRoundCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddBuffMaxRoundCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicAddBuffMaxRoundCount:Constructor(buffInstance, logicParam)
   self._addVal = tonumber(logicParam.addVal)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddBuffMaxRoundCount.DoLogic = function(self, notify)
-  -- function num : 0_1
+function BuffLogicAddBuffMaxRoundCount:DoLogic(notify)
   local entity = notify:GetDefenderEntity()
   local buffID = notify:GetBuffID()
   local seqID = notify:GetBuffSeqID()
   if not buffID or not seqID then
-    return 
+    return
   end
   local cBuff = entity:BuffComponent()
   local instance = cBuff:GetBuffBySeq(seqID)
   if not instance then
-    return 
+    return
   end
   local before = instance:GetMaxRoundCount()
   instance:AddMaxRoundCount(self._addVal)
   local after = instance:GetMaxRoundCount()
-  return {entityID = entity:GetID(), buffID = buffID, seqID = seqID, beforeRound = before, afterRound = after}
+  return {
+    entityID = entity:GetID(),
+    buffID = buffID,
+    seqID = seqID,
+    beforeRound = before,
+    afterRound = after
+  }
 end
-
-

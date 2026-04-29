@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_move_secne_effect_to_pick_pos_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayMoveSceneEffectToPickPosInstruction", BaseInstruction)
 PlayMoveSceneEffectToPickPosInstruction = PlayMoveSceneEffectToPickPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayMoveSceneEffectToPickPosInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayMoveSceneEffectToPickPosInstruction:Constructor(paramList)
   self._sceneEffID = tonumber(paramList.sceneEffID)
   self._sceneEffX = tonumber(paramList.sceneEffX) or 0
   self._sceneEffY = tonumber(paramList.sceneEffY) or 0
@@ -17,33 +10,28 @@ PlayMoveSceneEffectToPickPosInstruction.Constructor = function(self, paramList)
   self._moveTime = tonumber(paramList.moveTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMoveSceneEffectToPickPosInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayMoveSceneEffectToPickPosInstruction:GetCacheResource()
   local t = {}
   if self._sceneEffID and self._sceneEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._sceneEffID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._sceneEffID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMoveSceneEffectToPickPosInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayMoveSceneEffectToPickPosInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local castPos = Vector3(self._sceneEffX, self._sceneEffY, self._sceneEffZ)
   local targetPosV2 = phaseContext:GetCurGridPos()
   local boardServiceRender = world:GetService("BoardRender")
   local targetPos = boardServiceRender:GridPos2RenderPos(targetPosV2)
-  local effectEntity = (world:GetService("Effect")):CreatePositionEffect(self._sceneEffID, castPos)
+  local effectEntity = world:GetService("Effect"):CreatePositionEffect(self._sceneEffID, castPos)
   YIELD(TT)
-  local go = (effectEntity:View()):GetGameObject()
-  local doTween = (go.transform):DOMove(targetPos, self._moveTime / 1000, false)
+  local go = effectEntity:View():GetGameObject()
+  local doTween = go.transform:DOMove(targetPos, self._moveTime / 1000.0, false)
   if doTween then
-    doTween:SetEase(((DG.Tweening).Ease).InOutSine)
+    doTween:SetEase(DG.Tweening.Ease.InOutSine)
   end
 end
-
-

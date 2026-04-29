@@ -1,135 +1,94 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_resource_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIResourceManager", Singleton)
 local TABLE_CLEAR = table.clear
--- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
 
-UIResourceManager.GetViewAsync = function(TT, uiName, uiPrefab)
-  -- function num : 0_0 , upvalues : _ENV
-  local resRequest = ((GameGlobal.DonotDestroyRes)()):GetUIRes(uiPrefab)
-  if not resRequest then
-    resRequest = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, uiPrefab, LoadType.GameObject)
-  end
+function UIResourceManager.GetViewAsync(TT, uiName, uiPrefab)
+  local resRequest = GameGlobal.DonotDestroyRes():GetUIRes(uiPrefab)
+  resRequest = resRequest or ResourceManager:GetInstance():AsyncLoadAsset(TT, uiPrefab, LoadType.GameObject)
   local uiGo = resRequest.Obj
   if not uiGo then
-    (Log.fatal)("[UI] UIResourceManager.GetViewAsync, Load View error: ", uiPrefab)
+    Log.fatal("[UI] UIResourceManager.GetViewAsync, Load View error: ", uiPrefab)
     return nil
   end
-  ;
-  (Log.debug)("[UI] UIResourceManager.GetViewAsync, end Load View, ", uiPrefab)
+  Log.debug("[UI] UIResourceManager.GetViewAsync, end Load View, ", uiPrefab)
   uiGo.name = uiName
   return uiGo:GetComponent("UIView"), resRequest
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResourceManager.GetView = function(uiName, uiPrefab)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.debug)("[UI] UIResourceManager.GetView, begin Load View, ", uiPrefab)
-  local resRequest = (ResourceManager:GetInstance()):SyncLoadAsset(uiPrefab, LoadType.GameObject)
+function UIResourceManager.GetView(uiName, uiPrefab)
+  Log.debug("[UI] UIResourceManager.GetView, begin Load View, ", uiPrefab)
+  local resRequest = ResourceManager:GetInstance():SyncLoadAsset(uiPrefab, LoadType.GameObject)
   local uiGo = resRequest.Obj
   if not uiGo then
-    (Log.fatal)("[UI] UIResourceManager.GetView, Load View error: ", uiPrefab)
+    Log.fatal("[UI] UIResourceManager.GetView, Load View error: ", uiPrefab)
     return nil
   end
-  ;
-  (Log.debug)("[UI] UIResourceManager.GetView, end Load View, ", uiPrefab)
+  Log.debug("[UI] UIResourceManager.GetView, end Load View, ", uiPrefab)
   uiGo.name = uiName
   return uiGo:GetComponent("UIView"), resRequest
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResourceManager.DisposeView = function(resRequest)
-  -- function num : 0_2
+function UIResourceManager.DisposeView(resRequest)
   resRequest:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResourceManager.GetAsset = function(name, loadType, name2Assets)
-  -- function num : 0_3 , upvalues : _ENV
+function UIResourceManager.GetAsset(name, loadType, name2Assets)
   local asset = name2Assets[name]
   if asset then
     return asset.Obj
   end
-  local resRequest = (ResourceManager:GetInstance()):SyncLoadAsset(name, loadType)
+  local resRequest = ResourceManager:GetInstance():SyncLoadAsset(name, loadType)
   name2Assets[name] = resRequest
   return resRequest.Obj
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResourceManager.AsyncGetAsset = function(TT, name, loadType, name2Assets)
-  -- function num : 0_4 , upvalues : _ENV
+function UIResourceManager.AsyncGetAsset(TT, name, loadType, name2Assets)
   local asset = name2Assets[name]
   if asset then
     return asset.Obj
   end
-  local resRequest = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, name, loadType)
+  local resRequest = ResourceManager:GetInstance():AsyncLoadAsset(TT, name, loadType)
   name2Assets[name] = resRequest
   return resRequest.Obj
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResourceManager.DisposeAsset = function(name, uiName, name2Assets)
-  -- function num : 0_5 , upvalues : _ENV
+function UIResourceManager.DisposeAsset(name, uiName, name2Assets)
   local asset = name2Assets[name]
   if asset then
     asset:Dispose()
   else
-    ;
-    (Log.fatal)("[UI] UIResourceManager.DisposeAsset Error, no asset name ", name, " in ui ", uiName)
+    Log.fatal("[UI] UIResourceManager.DisposeAsset Error, no asset name ", name, " in ui ", uiName)
   end
   name2Assets[name] = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResourceManager.DisposeAllAssets = function(name2Assets)
-  -- function num : 0_6 , upvalues : _ENV, TABLE_CLEAR
-  for k,v in pairs(name2Assets) do
+function UIResourceManager.DisposeAllAssets(name2Assets)
+  for k, v in pairs(name2Assets) do
     v:Dispose()
   end
   TABLE_CLEAR(name2Assets)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResourceManager.SyncGetGameObject = function(name, go2ResRequest)
-  -- function num : 0_7 , upvalues : _ENV
-  local resRequest = (ResourceManager:GetInstance()):SyncLoadAsset(name, LoadType.GameObject)
+function UIResourceManager.SyncGetGameObject(name, go2ResRequest)
+  local resRequest = ResourceManager:GetInstance():SyncLoadAsset(name, LoadType.GameObject)
   local go = resRequest.Obj
-  ;
-  (UIHelper.SetActive)(go, true)
+  UIHelper.SetActive(go, true)
   go2ResRequest[go] = resRequest
   return go
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResourceManager.AsyncGetGameObject = function(TT, name, go2ResRequest)
-  -- function num : 0_8 , upvalues : _ENV
-  local resRequest = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, name, LoadType.GameObject)
+function UIResourceManager.AsyncGetGameObject(TT, name, go2ResRequest)
+  local resRequest = ResourceManager:GetInstance():AsyncLoadAsset(TT, name, LoadType.GameObject)
   local go = resRequest.Obj
   if not go then
-    (Log.fatal)("[UI] UIResourceManager.AsyncGetGameObject error: ", name)
+    Log.fatal("[UI] UIResourceManager.AsyncGetGameObject error: ", name)
     return nil
   end
-  ;
-  (UIHelper.SetActive)(go, true)
+  UIHelper.SetActive(go, true)
   go2ResRequest[go] = resRequest
   return go
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResourceManager.DisposeGameObject = function(go, go2ResRequest)
-  -- function num : 0_9
+function UIResourceManager.DisposeGameObject(go, go2ResRequest)
   local resRequest = go2ResRequest[go]
   if resRequest then
     go2ResRequest[go] = nil
@@ -137,14 +96,9 @@ UIResourceManager.DisposeGameObject = function(go, go2ResRequest)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResourceManager.DisposeAllGameObjects = function(go2ResRequest)
-  -- function num : 0_10 , upvalues : _ENV, TABLE_CLEAR
-  for k,v in pairs(go2ResRequest) do
+function UIResourceManager.DisposeAllGameObjects(go2ResRequest)
+  for k, v in pairs(go2ResRequest) do
     v:Dispose()
   end
   TABLE_CLEAR(go2ResRequest)
 end
-
-

@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n10/shop/ui_n10_shop_tips_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN10ShopTipsController", UIController)
 UIN10ShopTipsController = UIN10ShopTipsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN10ShopTipsController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN10ShopTipsController:Constructor()
   self._outAnimName = "uieff_UISakuraDrawShopTipsController_out"
   self._outAnimTime = 433
   self._atlas = self:GetAsset("UIN10.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopTipsController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN10ShopTipsController:OnShow(uiParams)
   self._data = uiParams[1]
   self:_GetComponent()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopTipsController._GetComponent = function(self)
-  -- function num : 0_2
+function UIN10ShopTipsController:_GetComponent()
   self._descripution = self:GetUIComponent("UILocalizationText", "Descripution")
   self._contentAnim = self:GetUIComponent("Animation", "Content")
   self._itemInfoName = self:GetUIComponent("UILocalizationText", "Name")
@@ -42,87 +29,54 @@ UIN10ShopTipsController._GetComponent = function(self)
   self._itemNumBgImg = self:GetUIComponent("Image", "ItemNumBg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopTipsController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN10ShopTipsController:_OnValue()
   if self._data ~= nil then
-    local itemId = (self._data):GetItemId()
-    local config = (Cfg.cfg_item)[itemId]
+    local itemId = self._data:GetItemId()
+    local config = Cfg.cfg_item[itemId]
     if config ~= nil then
-      (self._itemInfoName):SetText((StringTable.Get)(config.Name))
-      ;
-      (self._descripution):SetText((StringTable.Get)(config.Intro))
-      self._itemCount = (self._data):GetTotalNum()
-      self._itemRestCount = (self._data):GetRestNum()
-      local itemCount = (self._data):GetItemCount()
-      ;
-      (self.itemIcon):LoadImage(config.Icon)
-      ;
-      (self.itemNumText):SetText(itemCount)
-      ;
-      (self.itemNumArea):SetActive(itemCount > 1)
-      ;
-      (self.bigAwardFlag):SetActive((self._data):IsBigReward())
-      ;
-      (self.normalBg):SetActive(not (self._data):IsBigReward())
-      ;
-      (self.specialBg):SetActive((self._data):IsBigReward())
-      ;
-      (self.restNumText):SetText("<color=#875832>" .. self._itemRestCount .. "</color>" .. "/" .. self._itemCount)
-      -- DECOMPILER ERROR at PC93: Confused about usage of register: R4 in 'UnsetPending'
-
-      if not (self._data):IsBigReward() then
-        (self._normalBgImg).sprite = (self._atlas):GetSprite((ShopTheme.JackPotCellBg)[ShopTheme.Theme])
-        -- DECOMPILER ERROR at PC100: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._itemNumBgImg).color = (ShopTheme.JackPotCellNumberColor)[ShopTheme.Theme]
+      self._itemInfoName:SetText(StringTable.Get(config.Name))
+      self._descripution:SetText(StringTable.Get(config.Intro))
+      self._itemCount = self._data:GetTotalNum()
+      self._itemRestCount = self._data:GetRestNum()
+      local itemCount = self._data:GetItemCount()
+      self.itemIcon:LoadImage(config.Icon)
+      self.itemNumText:SetText(itemCount)
+      self.itemNumArea:SetActive(1 < itemCount)
+      self.bigAwardFlag:SetActive(self._data:IsBigReward())
+      self.normalBg:SetActive(not self._data:IsBigReward())
+      self.specialBg:SetActive(self._data:IsBigReward())
+      self.restNumText:SetText("<color=#875832>" .. self._itemRestCount .. "</color>" .. "/" .. self._itemCount)
+      if not self._data:IsBigReward() then
+        self._normalBgImg.sprite = self._atlas:GetSprite(ShopTheme.JackPotCellBg[ShopTheme.Theme])
+        self._itemNumBgImg.color = ShopTheme.JackPotCellNumberColor[ShopTheme.Theme]
       else
-        -- DECOMPILER ERROR at PC108: Confused about usage of register: R4 in 'UnsetPending'
-
-        (self._itemNumBgImg).color = Color(0.90588235294118, 0.54117647058824, 0.18823529411765)
+        self._itemNumBgImg.color = Color(0.9058823529411765, 0.5411764705882353, 0.18823529411764706)
       end
     end
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
+    local roleModule = GameGlobal.GetModule(RoleModule)
     local c = roleModule:GetAssetCount(itemId)
-    ;
-    (self._itemInfoCount):SetText((StringTable.Get)("str_item_public_owned") .. self:_FormatItemCount(c))
+    self._itemInfoCount:SetText(StringTable.Get("str_item_public_owned") .. self:_FormatItemCount(c))
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopTipsController.bgOnClick = function(self)
-  -- function num : 0_4
+function UIN10ShopTipsController:bgOnClick()
   self:CloseDialogWithAnim()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopTipsController.CloseDialogWithAnim = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN10ShopTipsController:CloseDialogWithAnim()
   if self._contentAnim then
     self:Lock("UIN10ShopTipsController:CloseDialogWithAnim")
     if self._contentAnim then
-      (self._contentAnim):Play(self._outAnimName)
+      self._contentAnim:Play(self._outAnimName)
     end
     self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self
-    YIELD(TT, self._outAnimTime)
-    self:UnLock("UIN10ShopTipsController:CloseDialogWithAnim")
-    self:CloseDialog()
-  end
-, self)
+      YIELD(TT, self._outAnimTime)
+      self:UnLock("UIN10ShopTipsController:CloseDialogWithAnim")
+      self:CloseDialog()
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopTipsController._FormatItemCount = function(self, itemCount)
-  -- function num : 0_6 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):FormatItemCount(itemCount)
+function UIN10ShopTipsController:_FormatItemCount(itemCount)
+  return HelperProxy:GetInstance():FormatItemCount(itemCount)
 end
-
-

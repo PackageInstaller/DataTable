@@ -1,106 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/detail/ui_activity_n4_cc_level_detail_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN4CCLevelDetailTab", UICustomWidget)
 UIActivityN4CCLevelDetailTab = UIActivityN4CCLevelDetailTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN4CCLevelDetailTab.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN4CCLevelDetailTab:OnShow(uiParams)
   self:InitWidget()
   self._atlas = self:GetAsset("UIN4CC.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailTab.InitWidget = function(self)
-  -- function num : 0_1
+function UIActivityN4CCLevelDetailTab:InitWidget()
   self.txtDiffculty = self:GetUIComponent("UILocalizationText", "txtDiffculty")
   self.bg = self:GetUIComponent("Image", "bg")
   self.pass = self:GetGameObject("pass")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailTab.SetData = function(self, cfg, context, clickCb)
-  -- function num : 0_2
+function UIActivityN4CCLevelDetailTab:SetData(cfg, context, clickCb)
   self._cfg = cfg
   self._context = context
   self._clickCb = clickCb
   self:RefreshState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailTab.RefreshState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local state = (self._context):GetMissionState(self._cfg)
-  self._isLock = state == (UIActivityN4CCHelper.DiffultyState).Lock
-  ;
-  (self.pass):SetActive(state == (UIActivityN4CCHelper.DiffultyState).Pass)
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIActivityN4CCLevelDetailTab:RefreshState()
+  local state = self._context:GetMissionState(self._cfg)
+  self._isLock = state == UIActivityN4CCHelper.DiffultyState.Lock
+  self.pass:SetActive(state == UIActivityN4CCHelper.DiffultyState.Pass)
   if self._isLock then
-    (self.bg).sprite = (self._atlas):GetSprite("activity_wjyz_gk_btn06")
+    self.bg.sprite = self._atlas:GetSprite("activity_wjyz_gk_btn06")
   end
   if self._isLock then
-    (self.txtDiffculty):SetText("<color=#000000>" .. self:GetDiffcultyName((self._cfg).HardID) .. "</color>")
+    self.txtDiffculty:SetText("<color=#000000>" .. self:GetDiffcultyName(self._cfg.HardID) .. "</color>")
   else
-    (self.txtDiffculty):SetText(self:GetDiffcultyName((self._cfg).HardID))
+    self.txtDiffculty:SetText(self:GetDiffcultyName(self._cfg.HardID))
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailTab.SetSelect = function(self, bSelect)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIActivityN4CCLevelDetailTab:SetSelect(bSelect)
   if bSelect then
-    (self.bg).sprite = (self._atlas):GetSprite("activity_wjyz_gk_btn05")
+    self.bg.sprite = self._atlas:GetSprite("activity_wjyz_gk_btn05")
   else
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.bg).sprite = (self._atlas):GetSprite("activity_wjyz_gk_btn04")
+    self.bg.sprite = self._atlas:GetSprite("activity_wjyz_gk_btn04")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailTab.BtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN4CCLevelDetailTab:BtnOnClick(go)
   if self._isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_crisis_contract_lock_diffculty"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_crisis_contract_lock_diffculty"))
+    return
   end
   if self._clickCb then
-    (self._clickCb)(self)
+    self._clickCb(self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailTab.GetCfg = function(self)
-  -- function num : 0_6
+function UIActivityN4CCLevelDetailTab:GetCfg()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailTab.IsLock = function(self)
-  -- function num : 0_7
+function UIActivityN4CCLevelDetailTab:IsLock()
   return self._isLock
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailTab.GetDiffcultyName = function(self, diff)
-  -- function num : 0_8 , upvalues : _ENV
-  return (StringTable.Get)("str_crisis_contract_hard_title" .. diff)
+function UIActivityN4CCLevelDetailTab:GetDiffcultyName(diff)
+  return StringTable.Get("str_crisis_contract_hard_title" .. diff)
 end
-
-

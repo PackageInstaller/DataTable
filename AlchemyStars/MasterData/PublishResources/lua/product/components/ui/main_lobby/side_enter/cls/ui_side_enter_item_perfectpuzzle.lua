@@ -1,37 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/side_enter/cls/ui_side_enter_item_perfectpuzzle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_base")
 _class("UISideEnterItem_PerfectPuzzle", UISideEnterItem_Base)
 UISideEnterItem_PerfectPuzzle = UISideEnterItem_PerfectPuzzle
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterItem_PerfectPuzzle.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISideEnterItem_PerfectPuzzle:OnShow(uiParams)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle.OnHide = function(self)
-  -- function num : 0_1
+function UISideEnterItem_PerfectPuzzle:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle._LoadCampaign = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  local campaignType, campaignId = (self._btnCfg).CampaignType, (self._btnCfg).CampaignId
-  local customFunc = (UIActivityHelper.CheckCampaignSampleRedPoint_CustomFunc)(campaignType)
+function UISideEnterItem_PerfectPuzzle:_LoadCampaign(TT)
+  local campaignType, campaignId = self._btnCfg.CampaignType, self._btnCfg.CampaignId
+  local customFunc = UIActivityHelper.CheckCampaignSampleRedPoint_CustomFunc(campaignType)
   self._campaign = nil
   local res = AsyncRequestRes:New()
-  self._campaign = (UIActivityHelper.LoadCampaign)(TT, res, campaignType, campaignId)
-  local localProcess = (self._campaign):GetLocalProcess()
+  self._campaign = UIActivityHelper.LoadCampaign(TT, res, campaignType, campaignId)
+  local localProcess = self._campaign:GetLocalProcess()
   if localProcess == nil then
-    return 
+    return
   end
   self._component = localProcess:GetComponent(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE)
   self._componentInfo = localProcess:GetComponentInfo(ECampaignN13CenterComponentID.ECAMPAIGN_N13_CENTER_PERFECT_PUZZLE)
@@ -43,197 +30,136 @@ UISideEnterItem_PerfectPuzzle._LoadCampaign = function(self, TT)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle._CheckOpen = function(self, TT)
-  -- function num : 0_3
+function UISideEnterItem_PerfectPuzzle:_CheckOpen(TT)
   self:_LoadCampaign(TT)
-  return (self._campaign):CheckCampaignOpen()
+  return self._campaign:CheckCampaignOpen()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle.GetSideEnterRawImage = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign)[(self._campaign)._id]
-  if cfg then
-    return cfg.SideEnterIcon
-  end
+function UISideEnterItem_PerfectPuzzle:GetSideEnterRawImage()
+  local cfg = Cfg.cfg_campaign[self._campaign._id]
+  return cfg and cfg.SideEnterIcon
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle.DoShow = function(self)
-  -- function num : 0_5
+function UISideEnterItem_PerfectPuzzle:DoShow()
   self:_SetTitle()
   self:_SetBg()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle._CalcNew = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  return (UIActivityHelper.CheckCampaignSampleNewPoint)(self._campaign) and 1 or 0
+function UISideEnterItem_PerfectPuzzle:_CalcNew()
+  return UIActivityHelper.CheckCampaignSampleNewPoint(self._campaign) and 1 or 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle._CalcRed = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISideEnterItem_PerfectPuzzle:_CalcRed()
   self._lineDatas = {}
-  local questList = (self._questComponent):GetQuestInfo()
+  local questList = self._questComponent:GetQuestInfo()
   local questRed = false
-  if (self._questComponent):HasQuestCanClaim(questList) then
+  if self._questComponent:HasQuestCanClaim(questList) then
     return true
   end
-  local planRed = (self.personProcess):HasCanGetReward()
+  local planRed = self.personProcess:HasCanGetReward()
   if planRed then
     return true
   end
-  local cfgs = (Cfg.cfg_component_perfect_puzzle)({ComponentID = (self._component):GetComponentCfgId()})
+  local cfgs = Cfg.cfg_component_perfect_puzzle({
+    ComponentID = self._component:GetComponentCfgId()
+  })
   if cfgs then
-    for _,cfg in pairs(cfgs) do
-      (table.insert)(self._lineDatas, cfg)
+    for _, cfg in pairs(cfgs) do
+      table.insert(self._lineDatas, cfg)
     end
   end
-  do
-    ;
-    (table.sort)(self._lineDatas, function(a, b)
-    -- function num : 0_7_0
-    do return a.MissionID < b.MissionID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-    if (self._componentInfo).m_pass_mission_info ~= nil and (table.count)((self._componentInfo).m_pass_mission_info) < 5 then
-      local count = (table.count)((self._componentInfo).m_pass_mission_info) + 1
-      local curMissionCfg = (self._lineDatas)[count]
-      local curTime = (self._svrTimeModule):GetServerTime() * 0.001
-      local time = ((GameGlobal.GetModule)(LoginModule)):GetTimeStampByTimeStr(curMissionCfg.UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-      local endTime = time
-      if curTime < endTime then
+  table.sort(self._lineDatas, function(a, b)
+    return a.MissionID < b.MissionID
+  end)
+  if self._componentInfo.m_pass_mission_info ~= nil and table.count(self._componentInfo.m_pass_mission_info) < 5 then
+    local count = table.count(self._componentInfo.m_pass_mission_info) + 1
+    local curMissionCfg = self._lineDatas[count]
+    local curTime = self._svrTimeModule:GetServerTime() * 0.001
+    local time = GameGlobal.GetModule(LoginModule):GetTimeStampByTimeStr(curMissionCfg.UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+    local endTime = time
+    if curTime < endTime then
+      return false
+    else
+      local day, hour, min, second = UIActivityHelper.Time2Str(curTime)
+      local timeStr = "PerfectPuzzle_RedCheck" .. day .. curMissionCfg.MissionID
+      if UIActivityHelper.HasLocalDB(timeStr) then
         return false
-      else
-        local day, hour, min, second = (UIActivityHelper.Time2Str)(curTime)
-        local timeStr = "PerfectPuzzle_RedCheck" .. day .. curMissionCfg.MissionID
-        if (UIActivityHelper.HasLocalDB)(timeStr) then
-          return false
-        end
-      end
-      do
-        do
-          do return true end
-          return false
-        end
       end
     end
+    return true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle.IsUnlock = function(self, cfg)
-  -- function num : 0_8
+function UISideEnterItem_PerfectPuzzle:IsUnlock(cfg)
   local preMissionUnlock = false
   local timeUnlock = false
-  if cfg.NeedMissionId > 0 and ((self._componentInfo).m_pass_mission_info)[cfg.NeedMissionId] == nil then
-    preMissionUnlock = not cfg
+  if cfg then
+    preMissionUnlock = cfg.NeedMissionId <= 0 or self._componentInfo.m_pass_mission_info[cfg.NeedMissionId] ~= nil
     timeUnlock = self:_IsUnlock(cfg.UnlockTime)
-    do return not preMissionUnlock or timeUnlock end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
   end
+  return preMissionUnlock and timeUnlock
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle._IsUnlock = function(self, UnlockTime)
-  -- function num : 0_9 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UISideEnterItem_PerfectPuzzle:_IsUnlock(UnlockTime)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   local unlockTime = loginModule:GetTimeStampByTimeStr(UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
   local curTime = svrTimeModule:GetServerTime() * 0.001
-  do return unlockTime <= curTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return unlockTime <= curTime
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle._SetTitle = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local widgetName = (self._btnCfg).AutoUITitle
-  local cfg = (Cfg.cfg_campaign)[(self._campaign)._id]
-  if cfg then
-    local strId = cfg.CampaignName
-  end
+function UISideEnterItem_PerfectPuzzle:_SetTitle()
+  local widgetName = self._btnCfg.AutoUITitle
+  local cfg = Cfg.cfg_campaign[self._campaign._id]
+  local strId = cfg and cfg.CampaignName
   if widgetName and strId then
-    (UIWidgetHelper.SetLocalizationText)(self, widgetName, (StringTable.Get)(strId))
+    UIWidgetHelper.SetLocalizationText(self, widgetName, StringTable.Get(strId))
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle._SetBg = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local widgetName = (self._btnCfg).AutoUIBg
+function UISideEnterItem_PerfectPuzzle:_SetBg()
+  local widgetName = self._btnCfg.AutoUIBg
   local sideEnterIcon = self:GetSideEnterRawImage()
   if widgetName and sideEnterIcon then
-    (UIWidgetHelper.SetRawImage)(self, widgetName, sideEnterIcon)
+    UIWidgetHelper.SetRawImage(self, widgetName, sideEnterIcon)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle._AttachEvents = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UISideEnterItem_PerfectPuzzle:_AttachEvents()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._OnAfterUILayerChanged)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._OnCampaignClose)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:AttachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle._DetachEvents = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UISideEnterItem_PerfectPuzzle:_DetachEvents()
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._OnAfterUILayerChanged)
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._OnCampaignClose)
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:DetachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_14
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UISideEnterItem_PerfectPuzzle:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle._OnQuestUpdate = function(self)
-  -- function num : 0_15
+function UISideEnterItem_PerfectPuzzle:_OnQuestUpdate()
   if self._campaign then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle._OnAfterUILayerChanged = function(self)
-  -- function num : 0_16
+function UISideEnterItem_PerfectPuzzle:_OnAfterUILayerChanged()
   if self._campaign then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_PerfectPuzzle._OnCampaignClose = function(self, id)
-  -- function num : 0_17
-  if self._campaign and (self._campaign)._id == id then
-    (self._setShowCallback)(false)
+function UISideEnterItem_PerfectPuzzle:_OnCampaignClose(id)
+  if self._campaign and self._campaign._id == id then
+    self._setShowCallback(false)
   end
 end
-
-

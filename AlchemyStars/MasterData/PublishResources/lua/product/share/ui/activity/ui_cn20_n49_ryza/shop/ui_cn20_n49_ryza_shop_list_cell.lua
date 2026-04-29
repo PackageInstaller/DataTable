@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/shop/ui_cn20_n49_ryza_shop_list_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49Ryza_ShopListCell", UICustomWidget)
 UICN20N49Ryza_ShopListCell = UICN20N49Ryza_ShopListCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49Ryza_ShopListCell.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._pressTime = ((Cfg.cfg_global).sale_and_use_press_long_deltaTime).IntValue
+function UICN20N49Ryza_ShopListCell:OnShow()
+  self._pressTime = Cfg.cfg_global.sale_and_use_press_long_deltaTime.IntValue
   self._updateTime = 0
   self._isAddMouseDown = false
   self._isSubMouseDown = false
   self:InitWidgets()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopListCell.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_1
+function UICN20N49Ryza_ShopListCell:OnUpdate(deltaTimeMS)
   if self._isAddMouseDown then
     self._updateTime = self._updateTime + deltaTimeMS
-    if self._pressTime < self._updateTime then
+    if self._updateTime > self._pressTime then
       self._updateTime = self._updateTime - self._pressTime
       local succ = self:AddBtnOnClick()
       if not succ then
@@ -31,153 +21,124 @@ UICN20N49Ryza_ShopListCell.OnUpdate = function(self, deltaTimeMS)
       end
     end
   end
-  do
-    if self._isSubMouseDown then
-      self._updateTime = self._updateTime + deltaTimeMS
-      if self._pressTime < self._updateTime then
-        self._updateTime = self._updateTime - self._pressTime
-        local succ = self:SubBtnOnClick()
-        if not succ then
-          self._isSubMouseDown = false
-          self._updateTime = 0
-        end
+  if self._isSubMouseDown then
+    self._updateTime = self._updateTime + deltaTimeMS
+    if self._updateTime > self._pressTime then
+      self._updateTime = self._updateTime - self._pressTime
+      local succ = self:SubBtnOnClick()
+      if not succ then
+        self._isSubMouseDown = false
+        self._updateTime = 0
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopListCell.InitWidgets = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN20N49Ryza_ShopListCell:InitWidgets()
   self._countTex = self:GetUIComponent("UILocalizationText", "countTex")
   self._inventoryTex = self:GetUIComponent("UILocalizationText", "inventoryTex")
   self._SubBtn = self:GetGameObject("SubBtn")
   self._AddBtn = self:GetGameObject("AddBtn")
   self._item = self:GetUIComponent("UISelectObjectPath", "item")
-  local etlAdd = (UILongPressTriggerListener.Get)(self._AddBtn)
-  etlAdd.onLongPress = function(go)
-    -- function num : 0_2_0 , upvalues : self
+  local etlAdd = UILongPressTriggerListener.Get(self._AddBtn)
+  
+  function etlAdd.onLongPress(go)
     if self._isAddMouseDown == false then
       self._isAddMouseDown = true
       self._updateTime = 0
     end
   end
-
-  etlAdd.onLongPressEnd = function(go)
-    -- function num : 0_2_1 , upvalues : self
+  
+  function etlAdd.onLongPressEnd(go)
     if self._isAddMouseDown == true then
       self._isAddMouseDown = false
       self._updateTime = 0
     end
   end
-
-  etlAdd.onClick = function(go)
-    -- function num : 0_2_2 , upvalues : self
+  
+  function etlAdd.onClick(go)
     self:AddBtnOnClick()
   end
-
-  local etlSub = (UILongPressTriggerListener.Get)(self._SubBtn)
-  etlSub.onLongPress = function(go)
-    -- function num : 0_2_3 , upvalues : self
+  
+  local etlSub = UILongPressTriggerListener.Get(self._SubBtn)
+  
+  function etlSub.onLongPress(go)
     if self._isSubMouseDown == false then
       self._isSubMouseDown = true
     end
   end
-
-  etlSub.onLongPressEnd = function(go)
-    -- function num : 0_2_4 , upvalues : self
+  
+  function etlSub.onLongPressEnd(go)
     if self._isSubMouseDown == true then
       self._isSubMouseDown = false
     end
   end
-
-  etlSub.onClick = function(go)
-    -- function num : 0_2_5 , upvalues : self
+  
+  function etlSub.onClick(go)
     self:SubBtnOnClick()
   end
-
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopListCell.MaxBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN20N49Ryza_ShopListCell:MaxBtnOnClick(go)
   if self._count == self._inventory then
-    return 
+    return
   end
-  local maxCount = (self._maxCb)(self._itemid, self._count)
-  local count = (math.min)(maxCount, self._inventory)
+  local maxCount = self._maxCb(self._itemid, self._count)
+  local count = math.min(maxCount, self._inventory)
   if self._callback then
     if count == 0 then
-      (Log.debug)("all max , count==0")
-      return 
+      Log.debug("all max , count==0")
+      return
     end
-    local succ = (self._callback)(self._itemid, count)
+    local succ = self._callback(self._itemid, count)
     if succ then
       self._count = count
       self:RefreshUI()
     else
-      ;
-      (Log.debug)("all max , fail")
+      Log.debug("all max , fail")
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopListCell.AddBtnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN20N49Ryza_ShopListCell:AddBtnOnClick()
   if self._count == self._inventory then
-    (ToastManager.ShowToast)((StringTable.Get)("str_cn20_n49_shop_list_add_inv_max"))
+    ToastManager.ShowToast(StringTable.Get("str_cn20_n49_shop_list_add_inv_max"))
     return false
   end
   local count = self._count + 1
-  do
-    if self._callback then
-      local succ = (self._callback)(self._itemid, count)
-      if succ then
-        self._count = count
-        self:RefreshUI()
-      else
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_cn20_n49_shop_list_add_count_max"))
-        return false
-      end
+  if self._callback then
+    local succ = self._callback(self._itemid, count)
+    if succ then
+      self._count = count
+      self:RefreshUI()
+    else
+      ToastManager.ShowToast(StringTable.Get("str_cn20_n49_shop_list_add_count_max"))
+      return false
     end
-    return true
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopListCell.SubBtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN20N49Ryza_ShopListCell:SubBtnOnClick()
   if self._count == 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_cn20_n49_shop_list_sub_0"))
+    ToastManager.ShowToast(StringTable.Get("str_cn20_n49_shop_list_sub_0"))
     return false
   end
   local count = self._count - 1
-  do
-    if self._callback then
-      local succ = (self._callback)(self._itemid, count)
-      if succ then
-        self._count = count
-        self:RefreshUI()
-      else
-        ;
-        (ToastManager.ShowToast)("sub fail")
-        return false
-      end
+  if self._callback then
+    local succ = self._callback(self._itemid, count)
+    if succ then
+      self._count = count
+      self:RefreshUI()
+    else
+      ToastManager.ShowToast("sub fail")
+      return false
     end
-    return true
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopListCell.SetData = function(self, idx, itemid, price, color, inventory, count, callback, maxCb)
-  -- function num : 0_6
+function UICN20N49Ryza_ShopListCell:SetData(idx, itemid, price, color, inventory, count, callback, maxCb)
   self._idx = idx
   self._itemid = itemid
   self._price = price
@@ -190,27 +151,18 @@ UICN20N49Ryza_ShopListCell.SetData = function(self, idx, itemid, price, color, i
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopListCell.RefreshItem = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UICN20N49Ryza_ShopListCell:RefreshItem()
   local data = UICN20N49RyzaItemData:New()
   data.id = self._itemid
-  local price, color = (UICN20N49Ryza_Shop.GetItemPriceColor)(self._itemid)
+  local price, color = UICN20N49Ryza_Shop.GetItemPriceColor(self._itemid)
   data.color = color
   data.price = self._price
   data.count = nil
-  local item = (self._item):SpawnObject("UICN20N49Ryza_ShopCell")
+  local item = self._item:SpawnObject("UICN20N49Ryza_ShopCell")
   item:SetData(1, data)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopListCell.RefreshUI = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._countTex):SetText(self._count)
-  ;
-  (self._inventoryTex):SetText((StringTable.Get)("str_cn20_n49_shop_list_inv_tex", self._inventory))
+function UICN20N49Ryza_ShopListCell:RefreshUI()
+  self._countTex:SetText(self._count)
+  self._inventoryTex:SetText(StringTable.Get("str_cn20_n49_shop_list_inv_tex", self._inventory))
 end
-
-

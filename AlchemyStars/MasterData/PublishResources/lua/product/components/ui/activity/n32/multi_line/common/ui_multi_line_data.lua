@@ -1,137 +1,84 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/multi_line/common/ui_multi_line_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMultiLineData", Object)
 UIMultiLineData = UIMultiLineData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMultiLineData.LoadData = function(self, TT, res, eCampaignType, eCampaignComponentID, forceUpdate)
-  -- function num : 0_0 , upvalues : _ENV
-  self._campaign = (UIActivityCampaign.New)()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, eCampaignType, eCampaignComponentID)
+function UIMultiLineData:LoadData(TT, res, eCampaignType, eCampaignComponentID, forceUpdate)
+  self._campaign = UIActivityCampaign.New()
+  self._campaign:LoadCampaignInfo(TT, res, eCampaignType, eCampaignComponentID)
   if res and not res:GetSucc() then
-    return 
+    return
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
   if forceUpdate then
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
   end
-  self._multiLineComponent = (self._localProcess):GetComponent(eCampaignComponentID)
-  self._multiLineComponentInfo = (self._localProcess):GetComponentInfo(eCampaignComponentID)
-  self._componentId = (self._multiLineComponentInfo).m_campaign_id * 100000 + (self._multiLineComponentInfo).m_component_type * 100 + (self._multiLineComponentInfo).m_component_id
+  self._multiLineComponent = self._localProcess:GetComponent(eCampaignComponentID)
+  self._multiLineComponentInfo = self._localProcess:GetComponentInfo(eCampaignComponentID)
+  self._componentId = self._multiLineComponentInfo.m_campaign_id * 100000 + self._multiLineComponentInfo.m_component_type * 100 + self._multiLineComponentInfo.m_component_id
   return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.GetCampaignId = function(self)
-  -- function num : 0_1
-  return (self._campaign)._id
+function UIMultiLineData:GetCampaignId()
+  return self._campaign._id
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.GetComponent = function(self)
-  -- function num : 0_2
+function UIMultiLineData:GetComponent()
   return self._multiLineComponent, self._multiLineComponentInfo
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.GetComponentID = function(self)
-  -- function num : 0_3
+function UIMultiLineData:GetComponentID()
   return self._componentId
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.IsComponentTimeEnd = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local closeTime = (self._multiLineComponentInfo).m_close_time
-  local now = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() / 1000
-  do return closeTime <= now end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIMultiLineData:IsComponentTimeEnd()
+  local closeTime = self._multiLineComponentInfo.m_close_time
+  local now = GameGlobal.GetModule(SvrTimeModule):GetServerTime() / 1000
+  return closeTime <= now
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.GetMultiLineFolderCfgs = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMultiLineData:GetMultiLineFolderCfgs()
   local componentId = self._componentId
-  local cfgs = (Cfg.cfg_component_multiline_mission_main)({ComponentID = componentId})
+  local cfgs = Cfg.cfg_component_multiline_mission_main({ComponentID = componentId})
   return cfgs
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.GetMultiLineFolderCfgByIndex = function(self, index)
-  -- function num : 0_6
+function UIMultiLineData:GetMultiLineFolderCfgByIndex(index)
   local cfgs = self:GetMultiLineFolderCfgs()
   return cfgs[index]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.IsMultiLineFolderUnlock = function(self, cfg)
-  -- function num : 0_7
+function UIMultiLineData:IsMultiLineFolderUnlock(cfg)
   local missionId = cfg.NeedMissionId
-  if self:GetPassMissionInfo(missionId) == nil then
-    do return not missionId or missionId <= 0 end
-    do return true end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  if missionId and 0 < missionId then
+    return self:GetPassMissionInfo(missionId) ~= nil
+  else
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.GetPassMissionInfo = function(self, missionId)
-  -- function num : 0_8
-  return ((self._multiLineComponentInfo).m_pass_mission_info)[missionId]
+function UIMultiLineData:GetPassMissionInfo(missionId)
+  return self._multiLineComponentInfo.m_pass_mission_info[missionId]
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.SnapFolderContexBeforeEnterMap = function(self, lastPassFolerNum)
-  -- function num : 0_9 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIMultiLineData:SnapFolderContexBeforeEnterMap(lastPassFolerNum)
   UIMultiLineData.lastPassFolderNum = lastPassFolerNum
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.SnapMultilineContextBeforeFight = function(self, folderId, levelId)
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
+function UIMultiLineData:SnapMultilineContextBeforeFight(folderId, levelId)
   UIMultiLineData.LastFightLevelId = levelId
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
   UIMultiLineData.LastFightForderIndex = folderId
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
   UIMultiLineData.LastFightLevelIsPass = nil
-  local cfgLevel = (Cfg.cfg_component_multiline_mission)[levelId]
+  local cfgLevel = Cfg.cfg_component_multiline_mission[levelId]
   local passInfo = self:GetPassMissionInfo(cfgLevel.MissionID)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
   UIMultiLineData.LastFightLevelIsPass = passInfo ~= nil
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.CheckFolderState = function(self, index)
-  -- function num : 0_11 , upvalues : _ENV
+function UIMultiLineData:CheckFolderState(index)
   local unPassNumM = 0
   local unPssNumB = 0
   local unLockAllB = true
@@ -141,23 +88,23 @@ UIMultiLineData.CheckFolderState = function(self, index)
     return unPassNumM, unPssNumB, unLockAllB, unLockZeroB
   end
   local mainLevels = cfg.MainMission
-  for k,levelId in pairs(mainLevels) do
-    local cfg = (Cfg.cfg_component_multiline_mission)[levelId]
+  for k, levelId in pairs(mainLevels) do
+    local cfg = Cfg.cfg_component_multiline_mission[levelId]
     local passInfo = self:GetPassMissionInfo(cfg.MissionID)
     if not passInfo then
       unPassNumM = unPassNumM + 1
     end
   end
   local branchLevels = cfg.BranchMission
-  for k,levelId in pairs(branchLevels) do
-    local cfg = (Cfg.cfg_component_multiline_mission)[levelId]
+  for k, levelId in pairs(branchLevels) do
+    local cfg = Cfg.cfg_component_multiline_mission[levelId]
     local passInfo = self:GetPassMissionInfo(cfg.MissionID)
     if not passInfo then
       unPssNumB = unPssNumB + 1
     end
     if unLockAllB then
       local needMissionId = cfg.NeedMissionId
-      if needMissionId and needMissionId > 0 then
+      if needMissionId and 0 < needMissionId then
         local needPassInfo = self:GetPassMissionInfo(needMissionId)
         if not needPassInfo then
           unLockAllB = false
@@ -165,130 +112,76 @@ UIMultiLineData.CheckFolderState = function(self, index)
           unLockZeroB = false
         end
       else
-        do
-          do
-            unLockZeroB = false
-            -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        unLockZeroB = false
       end
     end
   end
   return unPassNumM, unPssNumB, unLockAllB, unLockZeroB
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.IsForlderBranchUnReadHasTipsed = function(self, index)
-  -- function num : 0_12 , upvalues : _ENV
+function UIMultiLineData:IsForlderBranchUnReadHasTipsed(index)
   local key = self:GetForlderBranchUnReadTipsKey(index)
-  return (UIMultiLineData.HasPrefs)(key)
+  return UIMultiLineData.HasPrefs(key)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.SetFolderBranchUnReadTips = function(self, index)
-  -- function num : 0_13 , upvalues : _ENV
+function UIMultiLineData:SetFolderBranchUnReadTips(index)
   local key = self:GetForlderBranchUnReadTipsKey(index)
-  ;
-  (UIMultiLineData.SetPrefsKey)(key)
+  UIMultiLineData.SetPrefsKey(key)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.GetForlderBranchUnReadTipsKey = function(self, index)
-  -- function num : 0_14 , upvalues : _ENV
+function UIMultiLineData:GetForlderBranchUnReadTipsKey(index)
   local key = "multi_forlder_branch_tips_" .. self._componentId .. "_" .. index
-  key = (UIMultiLineData.GetPrefsKey)(key)
+  key = UIMultiLineData.GetPrefsKey(key)
   return key
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.IsForlderHasRead = function(self, folrderId)
-  -- function num : 0_15
-  return (self._multiLineComponent):GetMark(folrderId)
+function UIMultiLineData:IsForlderHasRead(folrderId)
+  return self._multiLineComponent:GetMark(folrderId)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.SetFoolderAsRead = function(self, TT, folrderId)
-  -- function num : 0_16 , upvalues : _ENV
+function UIMultiLineData:SetFoolderAsRead(TT, folrderId)
   local asyncRes = AsyncRequestRes:New()
-  return (self._multiLineComponent):ECCH_HandleMultiLineSetMark(TT, asyncRes, folrderId)
+  return self._multiLineComponent:ECCH_HandleMultiLineSetMark(TT, asyncRes, folrderId)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.GetPstId = function()
-  -- function num : 0_17 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function UIMultiLineData.GetPstId()
+  local mRole = GameGlobal.GetModule(RoleModule)
   return mRole:GetPstId()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.GetPrefsKey = function(str)
-  -- function num : 0_18 , upvalues : _ENV
-  local playerPrefsKey = (UIMultiLineData.GetPstId)() .. str
+function UIMultiLineData.GetPrefsKey(str)
+  local playerPrefsKey = UIMultiLineData.GetPstId() .. str
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.HasPrefs = function(key)
-  -- function num : 0_19 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)(key)
+function UIMultiLineData.HasPrefs(key)
+  return UnityEngine.PlayerPrefs.HasKey(key)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.SetPrefsKey = function(key)
-  -- function num : 0_20 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+function UIMultiLineData.SetPrefsKey(key)
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.MultiLinePetFilesCfg = function(self, componentID, Id)
-  -- function num : 0_21 , upvalues : _ENV
-  return (Cfg.cfg_component_multiline_mission_petfiles)({ComponentID = componentID, ID = Id})
+function UIMultiLineData:MultiLinePetFilesCfg(componentID, Id)
+  return Cfg.cfg_component_multiline_mission_petfiles({ComponentID = componentID, ID = Id})
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.MultiLinePetCfg = function(self, componentID, petId)
-  -- function num : 0_22 , upvalues : _ENV
+function UIMultiLineData:MultiLinePetCfg(componentID, petId)
   if not petId then
-    return (Cfg.cfg_component_multiline_mission_pet)({ComponentID = componentID})
+    return Cfg.cfg_component_multiline_mission_pet({ComponentID = componentID})
   end
-  return (Cfg.cfg_component_multiline_mission_pet)({ComponentID = componentID, PetID = petId})
+  return Cfg.cfg_component_multiline_mission_pet({ComponentID = componentID, PetID = petId})
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.GetPetFiles = function(self)
-  -- function num : 0_23
-  return (self._multiLineComponentInfo).m_pet_files
+function UIMultiLineData:GetPetFiles()
+  return self._multiLineComponentInfo.m_pet_files
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.CheckPetFileReceived = function(self, fileId)
-  -- function num : 0_24 , upvalues : _ENV
-  if not (self._multiLineComponentInfo).m_pet_files then
+function UIMultiLineData:CheckPetFileReceived(fileId)
+  if not self._multiLineComponentInfo.m_pet_files then
     return false
   end
-  for key,value in pairs((self._multiLineComponentInfo).m_pet_files) do
+  for key, value in pairs(self._multiLineComponentInfo.m_pet_files) do
     if value == fileId then
       return true
     end
@@ -296,14 +189,11 @@ UIMultiLineData.CheckPetFileReceived = function(self, fileId)
   return false
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.CheckPetRewardReceived = function(self, petId)
-  -- function num : 0_25 , upvalues : _ENV
-  if not (self._multiLineComponentInfo).m_files_received then
+function UIMultiLineData:CheckPetRewardReceived(petId)
+  if not self._multiLineComponentInfo.m_files_received then
     return false
   end
-  for key,value in pairs((self._multiLineComponentInfo).m_files_received) do
+  for key, value in pairs(self._multiLineComponentInfo.m_files_received) do
     if value == petId then
       return true
     end
@@ -311,51 +201,34 @@ UIMultiLineData.CheckPetRewardReceived = function(self, petId)
   return false
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.CheckMultilineMissionPassed = function(self, componentId, fileId)
-  -- function num : 0_26 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_multiline_mission)({ComponentID = componentId, FilesId = fileId})
+function UIMultiLineData:CheckMultilineMissionPassed(componentId, fileId)
+  local cfg = Cfg.cfg_component_multiline_mission({ComponentID = componentId, FilesId = fileId})
   if not cfg then
-    (Log.debug)("UIMultiLineData:CheckMultilineMissionPassed" .. fileId .. "no cfg")
+    Log.debug("UIMultiLineData:CheckMultilineMissionPassed" .. fileId .. "no cfg")
     return false
   end
-  do return self:GetPassMissionInfo((cfg[1]).NeedMissionId) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return self:GetPassMissionInfo(cfg[1].NeedMissionId) ~= nil
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.GetPetFileReaded = function(self, fileId)
-  -- function num : 0_27 , upvalues : _ENV
+function UIMultiLineData:GetPetFileReaded(fileId)
   local key = self:GettPetFileKey(fileId)
-  return (UIMultiLineData.HasPrefs)(key)
+  return UIMultiLineData.HasPrefs(key)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.SetPetFileReaded = function(self, fileId)
-  -- function num : 0_28 , upvalues : _ENV
+function UIMultiLineData:SetPetFileReaded(fileId)
   local key = self:GettPetFileKey(fileId)
-  ;
-  (UIMultiLineData.SetPrefsKey)(key)
+  UIMultiLineData.SetPrefsKey(key)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.GettPetFileKey = function(self, fileId)
-  -- function num : 0_29 , upvalues : _ENV
+function UIMultiLineData:GettPetFileKey(fileId)
   local key = "multi_petfile_read_" .. self._componentId .. "_" .. fileId
-  key = (UIMultiLineData.GetPrefsKey)(key)
+  key = UIMultiLineData.GetPrefsKey(key)
   return key
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.CheckDocRedPoint = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIMultiLineData:CheckDocRedPoint()
   self._petInfos = self:MultiLinePetCfg(self:GetComponentID())
-  for i,v in ipairs(self._petInfos) do
+  for i, v in ipairs(self._petInfos) do
     if self:CheckBtnRedPoint(v) then
       return true
     end
@@ -363,14 +236,11 @@ UIMultiLineData.CheckDocRedPoint = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMultiLineData.CheckBtnRedPoint = function(self, petInfo)
-  -- function num : 0_31 , upvalues : _ENV
+function UIMultiLineData:CheckBtnRedPoint(petInfo)
   if not petInfo then
     return false
   end
-  for index,value in ipairs(petInfo.FilesID) do
+  for index, value in ipairs(petInfo.FilesID) do
     if self:CheckPetFileReceived(value) then
       local readed = self:GetPetFileReaded(value)
       if not readed then
@@ -380,5 +250,3 @@ UIMultiLineData.CheckBtnRedPoint = function(self, petInfo)
   end
   return false
 end
-
-

@@ -1,48 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_group_is_in_skill_range.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_skill_target_in_skill_range")
 _class("ActionMoveGroupSkillTargetInSkillRange", ActionSkillTargetInSkillRange)
 ActionMoveGroupSkillTargetInSkillRange = ActionMoveGroupSkillTargetInSkillRange
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveGroupSkillTargetInSkillRange.Constructor = function(self)
-  -- function num : 0_0
+function ActionMoveGroupSkillTargetInSkillRange:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveGroupSkillTargetInSkillRange.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionMoveGroupSkillTargetInSkillRange.super).Reset)(self)
+function ActionMoveGroupSkillTargetInSkillRange:Reset()
+  ActionMoveGroupSkillTargetInSkillRange.super.Reset(self)
   self:GetAllGroupMonster()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveGroupSkillTargetInSkillRange.GetFakeBodyArea = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local bodyArea = {Vector2(0, 0)}
-  local posSelf = ((self.m_entityOwn):GridLocation()).Position
-  for i,monster in ipairs(self._sameGroupMonsterList) do
-    if monster:GetID() ~= (self.m_entityOwn):GetID() then
+function ActionMoveGroupSkillTargetInSkillRange:GetFakeBodyArea()
+  local bodyArea = {
+    Vector2(0, 0)
+  }
+  local posSelf = self.m_entityOwn:GridLocation().Position
+  for i, monster in ipairs(self._sameGroupMonsterList) do
+    if monster:GetID() ~= self.m_entityOwn:GetID() then
       local offset = monster:GetGridPosition() - posSelf
-      ;
-      (table.insert)(bodyArea, offset)
+      table.insert(bodyArea, offset)
     end
   end
   return bodyArea
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveGroupSkillTargetInSkillRange.OnUpdate = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ActionMoveGroupSkillTargetInSkillRange:OnUpdate()
   local entityCaster = self.m_entityOwn
   local aiComponent = entityCaster:AI()
-  if aiComponent == nil then
+  if nil == aiComponent then
     return AINewNodeStatus.Failure
   end
   local nSkillID = self:GetLogicData(1)
@@ -51,14 +36,11 @@ ActionMoveGroupSkillTargetInSkillRange.OnUpdate = function(self)
     nSkillID = configSkillID
   end
   local id = entityCaster:GetID()
-  local bSuccess = (nSkillID > 0 and self:IsSkillTargetInSkillRange(nSkillID))
+  local bSuccess = 0 < nSkillID and self:IsSkillTargetInSkillRange(nSkillID)
   if bSuccess then
     self:PrintLog("判断技能目标在技能范围内成功")
     return AINewNodeStatus.Success
   end
   self:PrintLog("判断技能目标在技能范围内失败")
-  do return AINewNodeStatus.Failure end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return AINewNodeStatus.Failure
 end
-
-

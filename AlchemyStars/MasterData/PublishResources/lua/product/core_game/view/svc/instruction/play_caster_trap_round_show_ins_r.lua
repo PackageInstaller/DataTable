@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_trap_round_show_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterTrapRoundShowInstruction", BaseInstruction)
 PlayCasterTrapRoundShowInstruction = PlayCasterTrapRoundShowInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterTrapRoundShowInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterTrapRoundShowInstruction:Constructor(paramList)
   local param = tonumber(paramList.visible)
   if param == 1 then
     self._visible = true
@@ -19,38 +12,31 @@ PlayCasterTrapRoundShowInstruction.Constructor = function(self, paramList)
   self._text = paramList.text
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterTrapRoundShowInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayCasterTrapRoundShowInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local roundRender = casterEntity:TrapRoundInfoRender()
   if not roundRender then
-    return 
+    return
   end
   roundRender:SetIsShow(self._visible)
   local round_entity_id = roundRender:GetRoundInfoEntityID()
   local round_entity = world:GetEntityByID(round_entity_id)
   if not round_entity then
-    return 
+    return
   end
   round_entity:SetViewVisible(self._visible)
   if self._visible then
-    local go = ((round_entity:View()).ViewWrapper).GameObject
+    local go = round_entity:View().ViewWrapper.GameObject
     local uiview = go:GetComponent("UIView")
-    do
-      if uiview then
-        local text = uiview:GetUIComponent("UILocalizationText", "CurRoundText")
-        if self._text then
-          text:SetText(self._text)
-        else
-          text:SetText("!")
-        end
+    if uiview then
+      local text = uiview:GetUIComponent("UILocalizationText", "CurRoundText")
+      if self._text then
+        text:SetText(self._text)
+      else
+        text:SetText("!")
       end
-      local renderEntityService = world:GetService("RenderEntity")
-      renderEntityService:SetHudPosition(casterEntity, round_entity, roundRender:GetOffset())
     end
+    local renderEntityService = world:GetService("RenderEntity")
+    renderEntityService:SetHudPosition(casterEntity, round_entity, roundRender:GetOffset())
   end
 end
-
-

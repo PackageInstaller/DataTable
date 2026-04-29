@@ -1,29 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_map_for_first_chain_path.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetMapForFirstChainPath", BuffLogicBase)
 BuffLogicSetMapForFirstChainPath = BuffLogicSetMapForFirstChainPath
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetMapForFirstChainPath.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetMapForFirstChainPath:Constructor(buffInstance, logicParam)
   local isSetNum = logicParam.isSet or 0
   self._isSet = isSetNum == 1
   self._piece = logicParam.piece
   self._effectID = logicParam.effectID
   self._effectOutAnim = logicParam.effectOutAnim
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetMapForFirstChainPath.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (((self._world):GetBoardEntity()):Board())
-  local board = nil
-  local buffResult = nil
+function BuffLogicSetMapForFirstChainPath:DoLogic()
+  local board = self._world:GetBoardEntity():Board()
+  local buffResult
   if self._isSet then
     board:SetMapForFirstChainPath(self._piece)
     buffResult = BuffResultSetMapForFirstChainPath:New(self._piece, self._effectID, self._effectOutAnim)
@@ -33,5 +21,3 @@ BuffLogicSetMapForFirstChainPath.DoLogic = function(self)
   end
   return buffResult
 end
-
-

@@ -1,45 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sailing_mission/reward/ui_sailing_progress_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISailingProgressRewardItem", UICustomWidget)
 UISailingProgressRewardItem = UISailingProgressRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISailingProgressRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISailingProgressRewardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISailingProgressRewardItem:InitWidget()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._iconRect = self:GetUIComponent("RectTransform", "Icon")
-  self._iconRectDefaultSize = Vector2(((self._iconRect).sizeDelta).x, ((self._iconRect).sizeDelta).y)
+  self._iconRectDefaultSize = Vector2(self._iconRect.sizeDelta.x, self._iconRect.sizeDelta.y)
   self._iconImg = self:GetUIComponent("RawImage", "Icon")
   self._countArea = self:GetUIComponent("Image", "CountArea")
   self._countText = self:GetUIComponent("UILocalizationText", "CountText")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardItem.SetData = function(self, data, itemInfoCallback, state)
-  -- function num : 0_2 , upvalues : _ENV
+function UISailingProgressRewardItem:SetData(data, itemInfoCallback, state)
   self._itemId = data.assetid
   self._itemCount = data.count
   self._itemInfoCallback = itemInfoCallback
-  local cfg_item = (Cfg.cfg_item)[self._itemId]
+  local cfg_item = Cfg.cfg_item[self._itemId]
   if not cfg_item then
-    return 
+    return
   end
   local icon = cfg_item.Icon
-  ;
-  (self._icon):LoadImage(icon)
-  ;
-  (self._countText):SetText("x" .. self._itemCount)
+  self._icon:LoadImage(icon)
+  self._countText:SetText("x" .. self._itemCount)
   local isHead = false
   if self._itemId >= 3750000 and self._itemId <= 3759999 then
     isHead = true
@@ -47,94 +32,45 @@ UISailingProgressRewardItem.SetData = function(self, data, itemInfoCallback, sta
   if isHead then
     local whRate = 1
     if self._itemId >= 3751000 and self._itemId <= 3751999 then
-      whRate = 0.84210526315789
-    else
-      if self._itemId >= 3752000 and self._itemId <= 3752999 then
-        whRate = 0.63888888888889
-      else
-        if self._itemId >= 3753000 and self._itemId <= 3753999 then
-          whRate = 0.63888888888889
-        end
-      end
+      whRate = 0.8421052631578947
+    elseif self._itemId >= 3752000 and self._itemId <= 3752999 then
+      whRate = 0.6388888888888888
+    elseif self._itemId >= 3753000 and self._itemId <= 3753999 then
+      whRate = 0.6388888888888888
     end
-    -- DECOMPILER ERROR at PC67: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._iconRect).sizeDelta = Vector2(((self._iconRect).sizeDelta).x, ((self._iconRect).sizeDelta).x * whRate)
+    self._iconRect.sizeDelta = Vector2(self._iconRect.sizeDelta.x, self._iconRect.sizeDelta.x * whRate)
   else
-    do
-      -- DECOMPILER ERROR at PC71: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._iconRect).sizeDelta = self._iconRectDefaultSize
-      self:SetState(state)
-    end
+    self._iconRect.sizeDelta = self._iconRectDefaultSize
   end
+  self:SetState(state)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardItem._SetAlpha = function(self, alpha)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._iconImg).color = Color(((self._iconImg).color).r, ((self._iconImg).color).g, ((self._iconImg).color).b, alpha)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._countArea).color = Color(((self._countArea).color).r, ((self._countArea).color).g, ((self._countArea).color).b, alpha)
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._countText).color = Color(((self._countText).color).r, ((self._countText).color).g, ((self._countText).color).b, alpha)
+function UISailingProgressRewardItem:_SetAlpha(alpha)
+  self._iconImg.color = Color(self._iconImg.color.r, self._iconImg.color.g, self._iconImg.color.b, alpha)
+  self._countArea.color = Color(self._countArea.color.r, self._countArea.color.g, self._countArea.color.b, alpha)
+  self._countText.color = Color(self._countText.color.r, self._countText.color.g, self._countText.color.b, alpha)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardItem.IconOnClick = function(self, go)
-  -- function num : 0_4
+function UISailingProgressRewardItem:IconOnClick(go)
   if self._itemInfoCallback then
     local tr = go.transform
     local pos = tr.position
-    ;
-    (self._itemInfoCallback)(self._itemId, pos)
+    self._itemInfoCallback(self._itemId, pos)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingProgressRewardItem.SetState = function(self, state)
-  -- function num : 0_5 , upvalues : _ENV
+function UISailingProgressRewardItem:SetState(state)
   self._cellState = state
   if self._cellState == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_Expired or self._cellState == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_UNKNOW then
     self._cellState = ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK
   end
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._cellState == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED then
-    (self._iconImg).color = Color(0.52941176470588, 0.52941176470588, 0.52941176470588, 0.3843137254902)
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._countArea).color = Color(((self._countArea).color).r, ((self._countArea).color).g, ((self._countArea).color).b, 0.3843137254902)
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._countText).color = Color(((self._countText).color).r, ((self._countText).color).g, ((self._countText).color).b, 0.3843137254902)
+    self._iconImg.color = Color(0.5294117647058824, 0.5294117647058824, 0.5294117647058824, 0.3843137254901961)
+    self._countArea.color = Color(self._countArea.color.r, self._countArea.color.g, self._countArea.color.b, 0.3843137254901961)
+    self._countText.color = Color(self._countText.color.r, self._countText.color.g, self._countText.color.b, 0.3843137254901961)
   else
-    -- DECOMPILER ERROR at PC63: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._iconImg).color = Color(1, 1, 1, 1)
-    -- DECOMPILER ERROR at PC71: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._countArea).color = Color(1, 1, 1, 1)
-    -- DECOMPILER ERROR at PC79: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._countText).color = Color(1, 1, 1, 1)
+    self._iconImg.color = Color(1, 1, 1, 1)
+    self._countArea.color = Color(1, 1, 1, 1)
+    self._countText.color = Color(1, 1, 1, 1)
   end
 end
-
-

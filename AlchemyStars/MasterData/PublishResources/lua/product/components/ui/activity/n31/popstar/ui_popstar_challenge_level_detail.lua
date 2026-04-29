@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/popstar/ui_popstar_challenge_level_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPopStarChallengeLevelDetail", UIController)
 UIPopStarChallengeLevelDetail = UIPopStarChallengeLevelDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPopStarChallengeLevelDetail.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPopStarChallengeLevelDetail:OnShow(uiParams)
   self._levelData = uiParams[1]
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._scoreLabel = self:GetUIComponent("UILocalizationText", "Score")
@@ -19,53 +12,33 @@ UIPopStarChallengeLevelDetail.OnShow = function(self, uiParams)
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarChallengeLevelDetail.Refresh = function(self)
-  -- function num : 0_1
-  (self._iconLoader):LoadImage((self._levelData):GetlevelDetailIcon())
-  ;
-  (self._scoreLabel):SetText((self._levelData):GetBestScore())
-  local tasks = (self._levelData):GetTasks()
-  ;
-  (self._taskLoader):SpawnObjects("UIPopStarTaskItem", #tasks)
-  local list = (self._taskLoader):GetAllSpawnList()
+function UIPopStarChallengeLevelDetail:Refresh()
+  self._iconLoader:LoadImage(self._levelData:GetlevelDetailIcon())
+  self._scoreLabel:SetText(self._levelData:GetBestScore())
+  local tasks = self._levelData:GetTasks()
+  self._taskLoader:SpawnObjects("UIPopStarTaskItem", #tasks)
+  local list = self._taskLoader:GetAllSpawnList()
   for i = 1, #list do
     local item = list[i]
     item:SetData(tasks[i], function(id, pos)
-    -- function num : 0_1_0 , upvalues : self
-    self:ShowTips(id, pos)
-  end
-)
+      self:ShowTips(id, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarChallengeLevelDetail.ShowTips = function(self, itemId, pos)
-  -- function num : 0_2
-  (self._tips):SetData(itemId, pos)
+function UIPopStarChallengeLevelDetail:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarChallengeLevelDetail.BtnCloseOnClick = function(self)
-  -- function num : 0_3
+function UIPopStarChallengeLevelDetail:BtnCloseOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarChallengeLevelDetail.BtnStartBattleOnClick = function(self)
-  -- function num : 0_4
-  if not (self._levelData):IsActivityOpen() then
-    return 
+function UIPopStarChallengeLevelDetail:BtnStartBattleOnClick()
+  if not self._levelData:IsActivityOpen() then
+    return
   end
   self:ShowDialog("UIPopStarTeam", self._levelData, function()
-    -- function num : 0_4_0 , upvalues : self
-    (self._anim):Play("uieff_UIPopStarChallengeLevelDetail_in_02")
-  end
-)
+    self._anim:Play("uieff_UIPopStarChallengeLevelDetail_in_02")
+  end)
 end
-
-

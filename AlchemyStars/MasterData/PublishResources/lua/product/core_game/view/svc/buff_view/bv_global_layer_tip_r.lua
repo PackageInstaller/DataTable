@@ -1,46 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_global_layer_tip_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewGlobalLayerTipShow", BuffViewBase)
 BuffViewGlobalLayerTipShow = BuffViewGlobalLayerTipShow
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewGlobalLayerTipShow.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.UIInitGlobalLayerTipInfo, self._buffResult)
+function BuffViewGlobalLayerTipShow:PlayView(TT)
+  self._world:EventDispatcher():Dispatch(GameEventType.UIInitGlobalLayerTipInfo, self._buffResult)
 end
 
 _class("BuffViewGlobalLayerTipHide", BuffViewBase)
 BuffViewGlobalLayerTipHide = BuffViewGlobalLayerTipHide
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewGlobalLayerTipHide.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.UIHideGlobalLayerTipInfo)
+function BuffViewGlobalLayerTipHide:PlayView(TT)
+  self._world:EventDispatcher():Dispatch(GameEventType.UIHideGlobalLayerTipInfo)
 end
 
 _class("BuffViewGlobalLayerTipUpdate", BuffViewBase)
 BuffViewGlobalLayerTipUpdate = BuffViewGlobalLayerTipUpdate
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewGlobalLayerTipUpdate.PlayView = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.UIUpdateGlobalLayerTipInfo, self._buffResult)
+function BuffViewGlobalLayerTipUpdate:PlayView(TT)
+  self._world:EventDispatcher():Dispatch(GameEventType.UIUpdateGlobalLayerTipInfo, self._buffResult)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewGlobalLayerTipUpdate.IsNotifyMatch = function(self, notify)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffViewGlobalLayerTipUpdate:IsNotifyMatch(notify)
   if notify:GetNotifyType() == NotifyType.NotifyLayerChange then
-    if notify:GetLayerName() ~= (self._buffResult).layerName then
+    if notify:GetLayerName() ~= self._buffResult.layerName then
       return false
     end
-    return notify:GetLayer() == (self._buffResult).count and (self._buffResult).total == notify:GetTotalCount()
+    return notify:GetLayer() == self._buffResult.count and self._buffResult.total == notify:GetTotalCount()
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
-
-

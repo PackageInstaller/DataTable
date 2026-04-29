@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/pop_star/pop_star_wave_result_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("PopStarWaveResultSystem", MainStateSystem)
 PopStarWaveResultSystem = PopStarWaveResultSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarWaveResultSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PopStarWaveResultSystem:_GetMainStateID()
   return GameStateID.PopStarWaveResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveResultSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function PopStarWaveResultSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   self:_DoLogicCalc3StarProgress()
   self:_DoLogicCalcBonusObjective()
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local waveNum = battleStatCmpt:GetCurWaveIndex()
   self:_DoLogicNotifyWaveEnd(waveNum)
   self:_DoRenderNotifyWaveEnd(TT, waveNum)
@@ -33,35 +23,23 @@ PopStarWaveResultSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicSwitchState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveResultSystem._DoLogicCalc3StarProgress = function(self)
-  -- function num : 0_2
-  local popStarSvc = (self._world):GetService("PopStarLogic")
+function PopStarWaveResultSystem:_DoLogicCalc3StarProgress()
+  local popStarSvc = self._world:GetService("PopStarLogic")
   popStarSvc:Calculate3StarProgress()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveResultSystem._DoLogicCalcBonusObjective = function(self)
-  -- function num : 0_3
-  local bonusService = (self._world):GetService("BonusCalc")
+function PopStarWaveResultSystem:_DoLogicCalcBonusObjective()
+  local bonusService = self._world:GetService("BonusCalc")
   bonusService:CalcBonusObjective()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveResultSystem._DoLogicNotifyWaveEnd = function(self, waveNum)
-  -- function num : 0_4 , upvalues : _ENV
-  ((self._world):GetService("Trigger")):Notify(NTWaveTurnEnd:New(waveNum))
+function PopStarWaveResultSystem:_DoLogicNotifyWaveEnd(waveNum)
+  self._world:GetService("Trigger"):Notify(NTWaveTurnEnd:New(waveNum))
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveResultSystem._DoLogicCheckBattleResult = function(self)
-  -- function num : 0_5
+function PopStarWaveResultSystem:_DoLogicCheckBattleResult()
   local victory = false
-  local battleService = (self._world):GetService("Battle")
+  local battleService = self._world:GetService("Battle")
   local popStarNumNotEnough = battleService:HandlePopStarNumber()
   if popStarNumNotEnough then
     victory = false
@@ -71,31 +49,17 @@ PopStarWaveResultSystem._DoLogicCheckBattleResult = function(self)
   return victory
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveResultSystem._DoLogicHandleTurnBattleResult = function(self, victory)
-  -- function num : 0_6
-  local battleStatCmpt = (self._world):BattleStat()
+function PopStarWaveResultSystem:_DoLogicHandleTurnBattleResult(victory)
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:SetBattleLevelResult(victory)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveResultSystem._DoLogicSwitchState = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.PopStarWaveResultFinish, 1)
+function PopStarWaveResultSystem:_DoLogicSwitchState()
+  self._world:EventDispatcher():Dispatch(GameEventType.PopStarWaveResultFinish, 1)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveResultSystem._DoRenderNotifyWaveEnd = function(self, TT, waveNum)
-  -- function num : 0_8
+function PopStarWaveResultSystem:_DoRenderNotifyWaveEnd(TT, waveNum)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveResultSystem._DoRenderHandleTurnBattleResult = function(self, TT, victory)
-  -- function num : 0_9
+function PopStarWaveResultSystem:_DoRenderHandleTurnBattleResult(TT, victory)
 end
-
-

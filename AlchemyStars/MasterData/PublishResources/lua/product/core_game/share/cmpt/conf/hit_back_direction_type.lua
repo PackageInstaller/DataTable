@@ -1,122 +1,106 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/hit_back_direction_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-HitBackDirectionType = {None = 0, Up = 1, Right = 2, Down = 3, Left = 4, UpDown = 5, LeftRight = 6, EightDir = 7, RightUp = 8, RightDown = 9, LeftDown = 10, LeftUp = 11, Cross = 12, SelectCanUseDir = 13, FaceFront = 14, SelectSquareRingFarest = 15, SpecifyXCoordinate = 16, SelectCanUse8Dir = 17, SelectNearestOutOfRange = 18, AntiEightDir = 19, SelectCanUseDirAndDis = 20, CoffinMusume = 21, CasterDir2Edge = 22, Front3Dir = 23, AttackFront2Edge = 24, EightDirAndCasterAround = 25, Butterfly = 26, BossCarrot = 27, Scorpion = 28, END = 9999}
+HitBackDirectionType = {
+  None = 0,
+  Up = 1,
+  Right = 2,
+  Down = 3,
+  Left = 4,
+  UpDown = 5,
+  LeftRight = 6,
+  EightDir = 7,
+  RightUp = 8,
+  RightDown = 9,
+  LeftDown = 10,
+  LeftUp = 11,
+  Cross = 12,
+  SelectCanUseDir = 13,
+  FaceFront = 14,
+  SelectSquareRingFarest = 15,
+  SpecifyXCoordinate = 16,
+  SelectCanUse8Dir = 17,
+  SelectNearestOutOfRange = 18,
+  AntiEightDir = 19,
+  SelectCanUseDirAndDis = 20,
+  CoffinMusume = 21,
+  CasterDir2Edge = 22,
+  Front3Dir = 23,
+  AttackFront2Edge = 24,
+  EightDirAndCasterAround = 25,
+  Butterfly = 26,
+  BossCarrot = 27,
+  Scorpion = 28,
+  END = 9999
+}
 _enum("HitBackDirectionType", HitBackDirectionType)
 HitBackDirectionTypeHelper = {}
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
 
-HitBackDirectionTypeHelper.ConvertDirTypeToVector = function(dirType)
-  -- function num : 0_0 , upvalues : _ENV
+function HitBackDirectionTypeHelper.ConvertDirTypeToVector(dirType)
   local vectorRes = Vector2(0, 0)
   if dirType == HitBackDirectionType.Up then
     vectorRes = Vector2(0, 1)
-  else
-    if dirType == HitBackDirectionType.Right then
-      vectorRes = Vector2(1, 0)
-    else
-      if dirType == HitBackDirectionType.Down then
-        vectorRes = Vector2(0, -1)
-      else
-        if dirType == HitBackDirectionType.Left then
-          vectorRes = Vector2(-1, 0)
-        end
-      end
-    end
+  elseif dirType == HitBackDirectionType.Right then
+    vectorRes = Vector2(1, 0)
+  elseif dirType == HitBackDirectionType.Down then
+    vectorRes = Vector2(0, -1)
+  elseif dirType == HitBackDirectionType.Left then
+    vectorRes = Vector2(-1, 0)
   end
   return vectorRes
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-HitBackDirectionTypeHelper.ConvertDirTypeToVectorEight = function(dirType)
-  -- function num : 0_1 , upvalues : _ENV
+function HitBackDirectionTypeHelper.ConvertDirTypeToVectorEight(dirType)
   local vectorRes = Vector2(0, 0)
   if dirType == HitBackDirectionType.Up then
     vectorRes = Vector2(0, 1)
-  else
-    if dirType == HitBackDirectionType.Right then
-      vectorRes = Vector2(1, 0)
-    else
-      if dirType == HitBackDirectionType.Down then
-        vectorRes = Vector2(0, -1)
-      else
-        if dirType == HitBackDirectionType.Left then
-          vectorRes = Vector2(-1, 0)
-        else
-          if dirType == HitBackDirectionType.RightUp then
-            vectorRes = Vector2(1, 1)
-          else
-            if dirType == HitBackDirectionType.RightDown then
-              vectorRes = Vector2(1, -1)
-            else
-              if dirType == HitBackDirectionType.LeftUp then
-                vectorRes = Vector2(-1, 1)
-              else
-                if dirType == HitBackDirectionType.LeftDown then
-                  vectorRes = Vector2(-1, -1)
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif dirType == HitBackDirectionType.Right then
+    vectorRes = Vector2(1, 0)
+  elseif dirType == HitBackDirectionType.Down then
+    vectorRes = Vector2(0, -1)
+  elseif dirType == HitBackDirectionType.Left then
+    vectorRes = Vector2(-1, 0)
+  elseif dirType == HitBackDirectionType.RightUp then
+    vectorRes = Vector2(1, 1)
+  elseif dirType == HitBackDirectionType.RightDown then
+    vectorRes = Vector2(1, -1)
+  elseif dirType == HitBackDirectionType.LeftUp then
+    vectorRes = Vector2(-1, 1)
+  elseif dirType == HitBackDirectionType.LeftDown then
+    vectorRes = Vector2(-1, -1)
   end
   return vectorRes
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
-
-HitBackDirectionTypeHelper.OverlapHitbackDir = function(firstDirType, secondDirType)
-  -- function num : 0_2 , upvalues : _ENV
-  local firstVector = (HitBackDirectionTypeHelper.ConvertDirTypeToVector)(firstDirType)
-  local secondVector = (HitBackDirectionTypeHelper.ConvertDirTypeToVector)(secondDirType)
+function HitBackDirectionTypeHelper.OverlapHitbackDir(firstDirType, secondDirType)
+  local firstVector = HitBackDirectionTypeHelper.ConvertDirTypeToVector(firstDirType)
+  local secondVector = HitBackDirectionTypeHelper.ConvertDirTypeToVector(secondDirType)
   local vectorResult = firstVector + secondVector
   if vectorResult.x > 0 then
-    if vectorResult.y > 0 then
+    if 0 < vectorResult.y then
       return HitBackDirectionType.RightUp
     else
       return HitBackDirectionType.RightDown
     end
-  else
-    if vectorResult.x < 0 then
-      if vectorResult.y > 0 then
-        return HitBackDirectionType.LeftUp
-      else
-        return HitBackDirectionType.LeftDown
-      end
+  elseif vectorResult.x < 0 then
+    if 0 < vectorResult.y then
+      return HitBackDirectionType.LeftUp
     else
-      if vectorResult.x == 0 and vectorResult.y == 0 then
-        return HitBackDirectionType.None
-      end
+      return HitBackDirectionType.LeftDown
     end
+  elseif vectorResult.x == 0 and vectorResult.y == 0 then
+    return HitBackDirectionType.None
   end
-  ;
-  (Log.fatal)("OverlapHitbackDir is nil")
+  Log.fatal("OverlapHitbackDir is nil")
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R0 in 'UnsetPending'
-
-HitBackDirectionTypeHelper.NormalizeDirType = function(attackDir)
-  -- function num : 0_3 , upvalues : _ENV
+function HitBackDirectionTypeHelper.NormalizeDirType(attackDir)
   local tempDir = Vector2(attackDir.x, attackDir.y)
-  tempDir = (GameHelper.ComputeLogicDir)(tempDir)
-  do
-    if tempDir.x ~= 0 then
-      local sign = tempDir.x / (math.abs)(tempDir.x)
-      tempDir.x = (math.floor)((math.abs)(tempDir.x) + 0.5) * sign
-    end
-    do
-      if tempDir.y ~= 0 then
-        local sign = tempDir.y / (math.abs)(tempDir.y)
-        tempDir.y = (math.floor)((math.abs)(tempDir.y) + 0.5) * sign
-      end
-      return tempDir
-    end
+  tempDir = GameHelper.ComputeLogicDir(tempDir)
+  if tempDir.x ~= 0 then
+    local sign = tempDir.x / math.abs(tempDir.x)
+    tempDir.x = math.floor(math.abs(tempDir.x) + 0.5) * sign
   end
+  if tempDir.y ~= 0 then
+    local sign = tempDir.y / math.abs(tempDir.y)
+    tempDir.y = math.floor(math.abs(tempDir.y) + 0.5) * sign
+  end
+  return tempDir
 end
-
-

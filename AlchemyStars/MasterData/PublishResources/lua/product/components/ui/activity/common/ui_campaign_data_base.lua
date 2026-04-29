@@ -1,80 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common/ui_campaign_data_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CampaignDataBase", Object)
 CampaignDataBase = CampaignDataBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CampaignDataBase.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CampaignDataBase:Constructor()
   self.activityCampaign = UIActivityCampaign:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignDataBase.RequestCampaign = function(self, TT, campaignType, res)
-  -- function num : 0_1 , upvalues : _ENV
-  if not res or not res then
-    res = AsyncRequestRes:New()
-  end
-  if (self.activityCampaign)._type == -1 or (self.activityCampaign)._id == -1 then
-    (self.activityCampaign):LoadCampaignInfo(TT, res, campaignType)
+function CampaignDataBase:RequestCampaign(TT, campaignType, res)
+  res = res and res or AsyncRequestRes:New()
+  if self.activityCampaign._type == -1 or self.activityCampaign._id == -1 then
+    self.activityCampaign:LoadCampaignInfo(TT, res, campaignType)
   else
-    ;
-    (self.activityCampaign):ReLoadCampaignInfo_Force(TT, res)
+    self.activityCampaign:ReLoadCampaignInfo_Force(TT, res)
   end
   if res and res:GetSucc() then
-    (Log.fatal)("### [RequestCampaign]CampaignComProtoLoadInfo failed.")
-    return res
+  else
+    Log.fatal("### [RequestCampaign]CampaignComProtoLoadInfo failed.")
   end
+  return res
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignDataBase.GetLocalProcess = function(self)
-  -- function num : 0_2
-  return (self.activityCampaign):GetLocalProcess()
+function CampaignDataBase:GetLocalProcess()
+  return self.activityCampaign:GetLocalProcess()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignDataBase.GetCampaignTypeId = function(self)
-  -- function num : 0_3
-  return (self.activityCampaign)._type, (self.activityCampaign)._id
+function CampaignDataBase:GetCampaignTypeId()
+  return self.activityCampaign._type, self.activityCampaign._id
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignDataBase.GetCampaignSample = function(self)
-  -- function num : 0_4
-  return (self.activityCampaign):GetSample()
+function CampaignDataBase:GetCampaignSample()
+  return self.activityCampaign:GetSample()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignDataBase.GetCampaignModule = function(self)
-  -- function num : 0_5
-  return (self.activityCampaign)._campaign_module
+function CampaignDataBase:GetCampaignModule()
+  return self.activityCampaign._campaign_module
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignDataBase.GetActivityCampaign = function(self)
-  -- function num : 0_6
+function CampaignDataBase:GetActivityCampaign()
   return self.activityCampaign
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignDataBase.GetCurrencyId = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg = (Cfg.cfg_activity_shop_common_client)[(self.activityCampaign)._id]
+function CampaignDataBase:GetCurrencyId()
+  local cfg = Cfg.cfg_activity_shop_common_client[self.activityCampaign._id]
   if cfg then
     return cfg.CurrencyId
   end
   return 3000271
 end
-
-

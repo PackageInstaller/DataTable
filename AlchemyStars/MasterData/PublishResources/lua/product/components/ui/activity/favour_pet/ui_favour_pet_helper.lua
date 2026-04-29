@@ -1,142 +1,110 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/favour_pet/ui_favour_pet_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFavourPetHelper", Object)
 UIFavourPetHelper = UIFavourPetHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFavourPetHelper.ComponentId_Quest = function(idx)
-  -- function num : 0_0 , upvalues : _ENV
-  local tb = {ECampaignVoteComponentID.ECAMPAIGN_QUEST1, ECampaignVoteComponentID.ECAMPAIGN_QUEST2}
+function UIFavourPetHelper.ComponentId_Quest(idx)
+  local tb = {
+    ECampaignVoteComponentID.ECAMPAIGN_QUEST1,
+    ECampaignVoteComponentID.ECAMPAIGN_QUEST2
+  }
   return tb[idx]
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetHelper.Component_Quest = function(campaign, idx)
-  -- function num : 0_1 , upvalues : _ENV
-  local cmptId = (UIFavourPetHelper.ComponentId_Quest)(idx)
+function UIFavourPetHelper.Component_Quest(campaign, idx)
+  local cmptId = UIFavourPetHelper.ComponentId_Quest(idx)
   local component = campaign:GetComponent(cmptId)
   local componentInfo = campaign:GetComponentInfo(cmptId)
   return cmptId, component, componentInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetHelper.PetSort = function(tb)
-  -- function num : 0_2 , upvalues : _ENV
-  (table.sort)(tb, function(a, b)
-    -- function num : 0_2_0 , upvalues : _ENV
-    local star_a = (UIFavourPetHelper.GetPetStar)(a)
-    local star_b = (UIFavourPetHelper.GetPetStar)(b)
-    if star_b >= star_a then
-      do return star_a == star_b end
-      do return a < b end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function UIFavourPetHelper.PetSort(tb)
+  table.sort(tb, function(a, b)
+    local star_a = UIFavourPetHelper.GetPetStar(a)
+    local star_b = UIFavourPetHelper.GetPetStar(b)
+    if star_a ~= star_b then
+      return star_a > star_b
     end
-  end
-)
+    return a < b
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetHelper.GetFilterType = function()
-  -- function num : 0_3 , upvalues : _ENV
-  local tb = {PetFilterType.None, PetFilterType.BaiYeCheng, PetFilterType.BaiYeXiaCheng, PetFilterType.QiGuang, PetFilterType.BeiJing, PetFilterType.HongYouBanShou, PetFilterType.TaiYangJiaoTuan, PetFilterType.YouMin, PetFilterType.LongZhou}
+function UIFavourPetHelper.GetFilterType()
+  local tb = {
+    PetFilterType.None,
+    PetFilterType.BaiYeCheng,
+    PetFilterType.BaiYeXiaCheng,
+    PetFilterType.QiGuang,
+    PetFilterType.BeiJing,
+    PetFilterType.HongYouBanShou,
+    PetFilterType.TaiYangJiaoTuan,
+    PetFilterType.YouMin,
+    PetFilterType.LongZhou
+  }
   return tb
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetHelper.GetFilterTitle = function(type)
-  -- function num : 0_4 , upvalues : _ENV
+function UIFavourPetHelper.GetFilterTitle(type)
   if not type or type == PetFilterType.None then
-    return (StringTable.Get)("str_common_backpack_all")
+    return StringTable.Get("str_common_backpack_all")
   end
-  local cfg = (Cfg.cfg_pet_tags)[type]
-  if not cfg then
-    local strId = ({}).Name
-    return (StringTable.Get)(strId)
-  end
+  local cfg = Cfg.cfg_pet_tags[type]
+  local strId = (cfg or {}).Name
+  return StringTable.Get(strId)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetHelper.GetFilterPet = function(tb, type)
-  -- function num : 0_5 , upvalues : _ENV
+function UIFavourPetHelper.GetFilterPet(tb, type)
   if not type or type == PetFilterType.None then
     return tb
   end
   local tb_out = {}
-  for _,v in ipairs(tb) do
-    local haveTag = (UIFavourPetHelper.CheckPetTags)(v, type)
+  for _, v in ipairs(tb) do
+    local haveTag = UIFavourPetHelper.CheckPetTags(v, type)
     if haveTag then
-      (table.insert)(tb_out, v)
+      table.insert(tb_out, v)
     end
   end
   return tb_out
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetHelper.GetPetCgInfo = function(component, petId)
-  -- function num : 0_6 , upvalues : _ENV
+function UIFavourPetHelper.GetPetCgInfo(component, petId)
   local componentCfgId = component:GetComponentCfgId()
-  if not (Cfg.cfg_favour_pet_cg_offset)({ComponentID = componentCfgId, ItemId = petId}) then
-    local cfgs = {}
-  end
+  local cfgs = Cfg.cfg_favour_pet_cg_offset({ComponentID = componentCfgId, ItemId = petId}) or {}
   local cfg = cfgs[1]
   if not cfg then
-    (Log.exception)("UIFavourPetHelper.GetPetCgInfo() cfg_favour_pet_cg_offset = nil, ComponentID = ", componentCfgId, ", petId = ", petId)
-    return 
+    Log.exception("UIFavourPetHelper.GetPetCgInfo() cfg_favour_pet_cg_offset = nil, ComponentID = ", componentCfgId, ", petId = ", petId)
+    return
   end
   local tb_out = {}
   tb_out.rawImageName = cfg.CgName
-  local width = (cfg.Size)[1] or 100
-  local height = (cfg.Size)[2] or 100
+  local width = cfg.Size[1] or 100
+  local height = cfg.Size[2] or 100
   tb_out.size = Vector2(width, height)
-  local s1 = (cfg.Scale)[1] or 100
-  local s2 = (cfg.Scale)[2] or 100
+  local s1 = cfg.Scale[1] or 100
+  local s2 = cfg.Scale[2] or 100
   tb_out.scale = Vector3(s1 / 100, s2 / 100, 1)
-  local p1 = (cfg.Pos)[1] or 0
-  local p2 = (cfg.Pos)[2] or 0
+  local p1 = cfg.Pos[1] or 0
+  local p2 = cfg.Pos[2] or 0
   tb_out.pos = Vector3(p1, p2, 0)
   return tb_out
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetHelper.GetPetCfg = function(petId)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet)[petId]
+function UIFavourPetHelper.GetPetCfg(petId)
+  local cfg = Cfg.cfg_pet[petId]
   if not cfg then
-    (Log.exception)("UIFavourPetHelper.GetPetCfg() cfg_pet = nil, petId = ", petId)
+    Log.exception("UIFavourPetHelper.GetPetCfg() cfg_pet = nil, petId = ", petId)
   end
-  if not cfg then
-    return {}
-  end
+  return cfg or {}
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetHelper.GetPetName = function(petId)
-  -- function num : 0_8 , upvalues : _ENV
-  local cfgPet = (UIFavourPetHelper.GetPetCfg)(petId)
+function UIFavourPetHelper.GetPetName(petId)
+  local cfgPet = UIFavourPetHelper.GetPetCfg(petId)
   local name = cfgPet.Name
-  return (StringTable.Get)(name)
+  return StringTable.Get(name)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetHelper.CheckPetTags = function(petId, tag)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfgPet = (UIFavourPetHelper.GetPetCfg)(petId)
-  if not cfgPet.Tags then
-    local tags = {}
-  end
-  for _,v in pairs(tags) do
+function UIFavourPetHelper.CheckPetTags(petId, tag)
+  local cfgPet = UIFavourPetHelper.GetPetCfg(petId)
+  local tags = cfgPet.Tags or {}
+  for _, v in pairs(tags) do
     if v == tag then
       return true
     end
@@ -144,98 +112,77 @@ UIFavourPetHelper.CheckPetTags = function(petId, tag)
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetHelper.GetPetFirstElement = function(petId)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfgPet = (UIFavourPetHelper.GetPetCfg)(petId)
+function UIFavourPetHelper.GetPetFirstElement(petId)
+  local cfgPet = UIFavourPetHelper.GetPetCfg(petId)
   local element = cfgPet.FirstElement
   if not element then
-    (Log.error)("UIFavourPetHelper.GetPetFirstElement() element = nil, petId = ", petId)
-    return 
+    Log.error("UIFavourPetHelper.GetPetFirstElement() element = nil, petId = ", petId)
+    return
   end
-  local boxName = {"obtain_huodong_bing", "obtain_huodong_huo", "obtain_huodong_sen", "obtain_huodong_lei"}
+  local boxName = {
+    "obtain_huodong_bing",
+    "obtain_huodong_huo",
+    "obtain_huodong_sen",
+    "obtain_huodong_lei"
+  }
   local atlas1 = "UIDrawCard.spriteatlas"
   local sprite1 = boxName[element]
-  local cfgPetElement = (Cfg.cfg_pet_element)({})
+  local cfgPetElement = Cfg.cfg_pet_element({})
   local atlas2 = "Property.spriteatlas"
-  local sprite2 = (cfgPetElement[element]).IconWhite
-  sprite2 = (UIPropertyHelper:GetInstance()):GetColorBlindSprite(sprite2)
+  local sprite2 = cfgPetElement[element].IconWhite
+  sprite2 = UIPropertyHelper:GetInstance():GetColorBlindSprite(sprite2)
   return atlas1, sprite1, atlas2, sprite2
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetHelper.GetPetStar = function(petId)
-  -- function num : 0_11 , upvalues : _ENV
-  local cfgPet = (UIFavourPetHelper.GetPetCfg)(petId)
+function UIFavourPetHelper.GetPetStar(petId)
+  local cfgPet = UIFavourPetHelper.GetPetCfg(petId)
   return cfgPet.Star
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetHelper.GetSkinInfo = function(component, voteId)
-  -- function num : 0_12 , upvalues : _ENV
+function UIFavourPetHelper.GetSkinInfo(component, voteId)
   local componentCfgId = component:GetComponentCfgId()
-  if not (Cfg.cfg_favour_pet_cg_offset)({ComponentID = componentCfgId, ItemId = voteId}) then
-    local cfgs = {}
-  end
+  local cfgs = Cfg.cfg_favour_pet_cg_offset({ComponentID = componentCfgId, ItemId = voteId}) or {}
   local cfg = cfgs[1]
   if not cfg then
-    (Log.exception)("UIFavourPetHelper.GetPetCgInfo() cfg_favour_pet_cg_offset = nil, ComponentID = ", componentCfgId, ", voteId = ", voteId)
-    return 
+    Log.exception("UIFavourPetHelper.GetPetCgInfo() cfg_favour_pet_cg_offset = nil, ComponentID = ", componentCfgId, ", voteId = ", voteId)
+    return
   end
   return cfg
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetHelper.NotEnoughVoteItem = function(component)
-  -- function num : 0_13 , upvalues : _ENV
+function UIFavourPetHelper.NotEnoughVoteItem(component)
   local costItemId = component:GetVoteCostItemId()
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local count = itemModule:GetItemCount(costItemId)
-  ;
-  (Log.debug)("UIFavourPetHelper.NotEnoughVoteItem() costItemId =", costItemId, " count = ", count)
-  do return count == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  Log.debug("UIFavourPetHelper.NotEnoughVoteItem() costItemId =", costItemId, " count = ", count)
+  return count == 0
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetHelper.GetSexFilterPet = function(tb, sex)
-  -- function num : 0_14 , upvalues : _ENV
+function UIFavourPetHelper.GetSexFilterPet(tb, sex)
   if not sex or sex == 0 then
     return tb
   end
   local tb_out = {}
-  for _,v in ipairs(tb) do
-    local haveTag = (UIFavourPetHelper.CheckPetSex)(v, sex)
+  for _, v in ipairs(tb) do
+    local haveTag = UIFavourPetHelper.CheckPetSex(v, sex)
     if haveTag then
-      (table.insert)(tb_out, v)
+      table.insert(tb_out, v)
     end
   end
   return tb_out
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetHelper.CheckPetSex = function(petId, sex)
-  -- function num : 0_15 , upvalues : _ENV
-  local cfgPet = (UIFavourPetHelper.GetPetCfg)(petId)
+function UIFavourPetHelper.CheckPetSex(petId, sex)
+  local cfgPet = UIFavourPetHelper.GetPetCfg(petId)
   local petSex = cfgPet.PetProperty
   if petSex == nil then
     petSex = 0
   end
   if sex == 0 or sex == 3 then
     return true
+  elseif petSex == sex then
+    return true
   else
-    if petSex == sex then
-      return true
-    else
-      return false
-    end
+    return false
   end
 end
-
-

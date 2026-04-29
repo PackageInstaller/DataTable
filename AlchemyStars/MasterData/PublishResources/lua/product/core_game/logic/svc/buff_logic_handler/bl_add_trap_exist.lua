@@ -1,58 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_add_trap_exist.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddTrapExist", BuffLogicBase)
 BuffLogicAddTrapExist = BuffLogicAddTrapExist
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddTrapExist.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddTrapExist:Constructor(buffInstance, logicParam)
   self._addValue = logicParam.addValue or 0
   self._forceFull = logicParam.forceFull and true or false
   self._ignoreNextEffectUpdate = logicParam.ignoreNextEffectUpdate and true or false
   self._additionalOnZeroCurrentRound = logicParam.additionalOnZeroCurrentRound or false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddTrapExist.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicAddTrapExist:DoLogic(notify)
+  local e = self._buffInstance:Entity()
   local trapCmpt = e:Trap()
   local trapDestroyType = trapCmpt:GetTrapDestroyType()
   local trapDestroyParam = trapCmpt:GetTrapDestroyParam()
   if not trapDestroyParam then
-    return 
+    return
   end
   local addValue = self._addValue
-  local totalRound = (e:Attributes()):GetAttribute("TotalRound")
-  local currentRound = (e:Attributes()):GetAttribute("CurrentRound")
+  local totalRound = e:Attributes():GetAttribute("TotalRound")
+  local currentRound = e:Attributes():GetAttribute("CurrentRound")
   if self._additionalOnZeroCurrentRound and currentRound == 0 and self._addValue < 0 then
     addValue = addValue - 1
   end
-  if currentRound - (addValue) < 0 then
+  if currentRound - addValue < 0 then
     addValue = currentRound
   end
   local changeValue = currentRound - addValue
-  ;
-  (e:Attributes()):Modify("CurrentRound", changeValue)
+  e:Attributes():Modify("CurrentRound", changeValue)
   trapDestroyParam:AddNum(addValue)
   local isDestroy = false
-  if totalRound < (e:Attributes()):GetAttribute("CurrentRound") then
-    (e:Attributes()):Modify("HP", 0)
-    local trapServiceLogic = (self._world):GetService("TrapLogic")
+  if totalRound < e:Attributes():GetAttribute("CurrentRound") then
+    e:Attributes():Modify("HP", 0)
+    local trapServiceLogic = self._world:GetService("TrapLogic")
     trapServiceLogic:AddTrapDeadMark(e)
     isDestroy = true
   end
-  do
-    local result = BuffResultAddTrapExist:New(changeValue, self._forceFull, self._ignoreNextEffectUpdate, isDestroy)
-    local res = DataAttributeResult:New(e:GetID(), "CurrentRound", changeValue)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, res)
-    return result
-  end
+  local result = BuffResultAddTrapExist:New(changeValue, self._forceFull, self._ignoreNextEffectUpdate, isDestroy)
+  local res = DataAttributeResult:New(e:GetID(), "CurrentRound", changeValue)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
+  return result
 end
-
-

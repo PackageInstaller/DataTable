@@ -1,47 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_widget/ui_activity_common_remaining_time.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityCommonRemainingTime", UICustomWidget)
 UIActivityCommonRemainingTime = UIActivityCommonRemainingTime
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCommonRemainingTime._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityCommonRemainingTime:_GetComponents()
   self._txtTime = self:GetUIComponent("UILocalizationText", "txtTime")
   if self._useLocalizedTMP then
     self._txtTime = self:GetUIComponent("UILocalizedTMP", "txtTime")
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime.OnShow = function(self)
-  -- function num : 0_1
+function UIActivityCommonRemainingTime:OnShow()
   self._isOpen = true
   self:SetCustomTimeStr_Common_1()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityCommonRemainingTime:OnHide()
   self._isOpen = false
-  self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+  self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime.Destroy = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._matReq = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._matReq)
+function UIActivityCommonRemainingTime:Destroy()
+  self._matReq = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._matReq)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime.SetData = function(self, endTime, tickCallback, stopCallback)
-  -- function num : 0_4
+function UIActivityCommonRemainingTime:SetData(endTime, tickCallback, stopCallback)
   self:_GetComponents()
   self._endTime = endTime
   self._tickCallback = tickCallback
@@ -49,176 +30,125 @@ UIActivityCommonRemainingTime.SetData = function(self, endTime, tickCallback, st
   self:_SetTimer()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime.SetTimeColor = function(self, timeColor)
-  -- function num : 0_5
+function UIActivityCommonRemainingTime:SetTimeColor(timeColor)
   self._timeColor = timeColor
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime.SetAdvanceText = function(self, descId)
-  -- function num : 0_6
+function UIActivityCommonRemainingTime:SetAdvanceText(descId)
   self._descId = descId
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime.SetExtraText = function(self, widgetName, textColor, textId)
-  -- function num : 0_7 , upvalues : _ENV
-  if not widgetName then
-    widgetName = "txtDesc"
-  end
+function UIActivityCommonRemainingTime:SetExtraText(widgetName, textColor, textId)
+  widgetName = widgetName or "txtDesc"
   local txtExtra = self:GetUIComponent("UILocalizationText", widgetName)
-  if not (string.isnullorempty)(textId) then
-    self:_SetColorText(txtExtra, textColor, (StringTable.Get)(textId))
+  if not string.isnullorempty(textId) then
+    self:_SetColorText(txtExtra, textColor, StringTable.Get(textId))
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime.SetExtraRollingText = function(self, widgetName)
-  -- function num : 0_8
-  if not widgetName then
-    widgetName = "txtTime"
-  end
+function UIActivityCommonRemainingTime:SetExtraRollingText(widgetName)
+  widgetName = widgetName or "txtTime"
   self._rollingText = self:GetUIComponent("RollingText", widgetName)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime.SetExtraSprite = function(self, widgetName, sprite)
-  -- function num : 0_9
-  if not widgetName then
-    widgetName = "icon"
-  end
+function UIActivityCommonRemainingTime:SetExtraSprite(widgetName, sprite)
+  widgetName = widgetName or "icon"
   local icon = self:GetUIComponent("Image", widgetName)
   icon.sprite = sprite
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime.SetIcon = function(self, widgetName, icon)
-  -- function num : 0_10
-  if not widgetName then
-    widgetName = "icon"
-  end
+function UIActivityCommonRemainingTime:SetIcon(widgetName, icon)
+  widgetName = widgetName or "icon"
   local obj = self:GetUIComponent("RawImageLoader", widgetName)
   obj:LoadImage(icon)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime.SetText = function(self, widgetName, str)
-  -- function num : 0_11
-  if not widgetName then
-    widgetName = "text"
-  end
+function UIActivityCommonRemainingTime:SetText(widgetName, str)
+  widgetName = widgetName or "text"
   local obj = self:GetUIComponent("UILocalizationText", widgetName)
   obj:SetText(str)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime.SetLocalizedTMPMaterial = function(self, matName)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityCommonRemainingTime:SetLocalizedTMPMaterial(matName)
   self._useLocalizedTMP = true
-  self._matReq = (UIWidgetHelper.SetLocalizedTMPMaterial)(self, "txtTime", matName, self._matReq)
+  self._matReq = UIWidgetHelper.SetLocalizedTMPMaterial(self, "txtTime", matName, self._matReq)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime.SetCustomTimeStr = function(self, customStr)
-  -- function num : 0_13
+function UIActivityCommonRemainingTime:SetCustomTimeStr(customStr)
   self._customStr = customStr
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime.SetCustomTimeStr_Common_1 = function(self)
-  -- function num : 0_14
-  self:SetCustomTimeStr({day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_error_107"})
+function UIActivityCommonRemainingTime:SetCustomTimeStr_Common_1()
+  self:SetCustomTimeStr({
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_error_107"
+  })
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime.SetCustomTimeStr_Common_2 = function(self)
-  -- function num : 0_15
-  self:SetCustomTimeStr({day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_common_less_minute"})
+function UIActivityCommonRemainingTime:SetCustomTimeStr_Common_2()
+  self:SetCustomTimeStr({
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_common_less_minute"
+  })
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime._SetTimer = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityCommonRemainingTime:_SetTimer()
   self._first = true
-  self._timeEvent = (UIActivityHelper.StartTimerEvent)(self._timeEvent, function()
-    -- function num : 0_16_0 , upvalues : self
+  self._timeEvent = UIActivityHelper.StartTimerEvent(self._timeEvent, function()
     return self:_SetRemainingTimer()
-  end
-)
+  end)
   if self._rollingText then
-    (self._rollingText):RefreshText(nil)
+    self._rollingText:RefreshText(nil)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime._SetRemainingTimer = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIActivityCommonRemainingTime:_SetRemainingTimer()
   if not self._isOpen then
-    return 
+    return
   end
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local endTime = self._endTime
   local stamp = 0
   if endTime ~= nil then
     stamp = endTime - curTime
-    local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp, self._customStr)
+    local timeStr = UIActivityHelper.GetFormatTimerStr(stamp, self._customStr)
     self:_SetTimeText(timeStr)
   end
-  do
-    if self._tickCallback then
-      (self._tickCallback)()
-    end
-    if stamp <= 0 then
-      self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
-      if self._stopCallback then
-        (self._stopCallback)(self._first)
-      end
-      self:_SetTimeText((StringTable.Get)((self._customStr).over))
-      return true
-    end
-    self._first = false
+  if self._tickCallback then
+    self._tickCallback()
   end
+  if stamp <= 0 then
+    self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
+    if self._stopCallback then
+      self._stopCallback(self._first)
+    end
+    self:_SetTimeText(StringTable.Get(self._customStr.over))
+    return true
+  end
+  self._first = false
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime._SetTimeText = function(self, content)
-  -- function num : 0_18 , upvalues : _ENV
-  if not (string.isnullorempty)(self._descId) then
-    content = (StringTable.Get)(self._descId, content)
+function UIActivityCommonRemainingTime:_SetTimeText(content)
+  if not string.isnullorempty(self._descId) then
+    content = StringTable.Get(self._descId, content)
   end
   self:_SetColorText(self._txtTime, self._timeColor, content)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRemainingTime._SetColorText = function(self, uiText, colorStr, content)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityCommonRemainingTime:_SetColorText(uiText, colorStr, content)
   local showStr = content
-  do
-    if not (string.isnullorempty)(colorStr) then
-      local formatStr = "<color=#%s>%s</color>"
-      showStr = (string.format)(formatStr, colorStr, content)
-    end
-    if uiText then
-      uiText:SetText(showStr)
-    end
+  if not string.isnullorempty(colorStr) then
+    local formatStr = "<color=#%s>%s</color>"
+    showStr = string.format(formatStr, colorStr, content)
+  end
+  if uiText then
+    uiText:SetText(showStr)
   end
 end
-
-

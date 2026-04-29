@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpressEffect", SeasonMapExpressBase)
 SeasonMapExpressEffect = SeasonMapExpressEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressEffect.Constructor = function(self, cfg, eventPoint)
-  -- function num : 0_0 , upvalues : _ENV
-  self._content = (self._cfg).Effect
+function SeasonMapExpressEffect:Constructor(cfg, eventPoint)
+  self._content = self._cfg.Effect
   self._time = 0
   self._effectReqs = {}
-  self._player = ((((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()):SeasonPlayerManager()):GetPlayer()
+  self._player = GameGlobal.GetUIModule(SeasonModule):SeasonManager():SeasonPlayerManager():GetPlayer()
   self._executing = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressEffect.Update = function(self, deltaTime)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonMapExpressEffect:Update(deltaTime)
   if self._state == SeasonExpressState.Playing and self._executing then
     self._time = self._time - deltaTime
     if self._time <= 0 then
@@ -29,79 +19,46 @@ SeasonMapExpressEffect.Update = function(self, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressEffect.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((self.super).Dispose)(self)
-  for _,_req in pairs(self._effectReqs) do
+function SeasonMapExpressEffect:Dispose()
+  self.super.Dispose(self)
+  for _, _req in pairs(self._effectReqs) do
     _req:Dispose()
   end
-  ;
-  (table.clear)(self._effectReqs)
+  table.clear(self._effectReqs)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressEffect.OnPlay = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonMapExpressEffect:OnPlay()
   self._executing = false
-  if (self._content).length then
-    self._time = (self._content).length * 1000
+  if self._content.length then
+    self._time = self._content.length * 1000
   end
-  local eventEffect = (self._content).eventeffect
-  local eventHolder = (self._content).eventholder
-  local playerEffect = (self._content).playereffect
-  local playerHolder = (self._content).playerholder
+  local eventEffect = self._content.eventeffect
+  local eventHolder = self._content.eventholder
+  local playerEffect = self._content.playereffect
+  local playerHolder = self._content.playerholder
   if eventEffect then
-    local eventReq = (ResourceManager:GetInstance()):SyncLoadAsset(eventEffect .. ".prefab", LoadType.GameObject)
+    local eventReq = ResourceManager:GetInstance():SyncLoadAsset(eventEffect .. ".prefab", LoadType.GameObject)
     if eventReq and eventReq.Obj then
-      local bone = (self._eventPoint):GetBoneNode(eventHolder)
+      local bone = self._eventPoint:GetBoneNode(eventHolder)
       local effect = eventReq.Obj
       effect:SetActive(true)
-      ;
-      (effect.transform):SetParent(bone)
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (effect.transform).localPosition = Vector3.zero
-      -- DECOMPILER ERROR at PC57: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (effect.transform).localRotation = (Quaternion.Euler)(0, 0, 0)
-      -- DECOMPILER ERROR at PC59: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._effectReqs)[eventReq] = eventReq
+      effect.transform:SetParent(bone)
+      effect.transform.localPosition = Vector3.zero
+      effect.transform.localRotation = Quaternion.Euler(0, 0, 0)
+      self._effectReqs[eventReq] = eventReq
     end
   end
-  do
-    if playerEffect then
-      local playerReq = (ResourceManager:GetInstance()):SyncLoadAsset(playerEffect .. ".prefab", LoadType.GameObject)
-      if playerReq and playerReq.Obj then
-        local bone = (self._player):GetBoneNode(playerHolder)
-        local effect = playerReq.Obj
-        effect:SetActive(true)
-        ;
-        (effect.transform):SetParent(bone)
-        -- DECOMPILER ERROR at PC92: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (effect.transform).localPosition = Vector3.zero
-        -- DECOMPILER ERROR at PC100: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (effect.transform).localRotation = (Quaternion.Euler)(0, 0, 0)
-        -- DECOMPILER ERROR at PC102: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._effectReqs)[playerReq] = playerReq
-      end
-    end
-    do
-      self._state = SeasonExpressState.Playing
+  if playerEffect then
+    local playerReq = ResourceManager:GetInstance():SyncLoadAsset(playerEffect .. ".prefab", LoadType.GameObject)
+    if playerReq and playerReq.Obj then
+      local bone = self._player:GetBoneNode(playerHolder)
+      local effect = playerReq.Obj
+      effect:SetActive(true)
+      effect.transform:SetParent(bone)
+      effect.transform.localPosition = Vector3.zero
+      effect.transform.localRotation = Quaternion.Euler(0, 0, 0)
+      self._effectReqs[playerReq] = playerReq
     end
   end
+  self._state = SeasonExpressState.Playing
 end
-
-

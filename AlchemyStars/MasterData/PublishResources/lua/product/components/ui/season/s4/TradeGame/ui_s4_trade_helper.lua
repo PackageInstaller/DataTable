@@ -1,35 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/ui_s4_trade_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeHelper", Object)
 UIS4TradeHelper = UIS4TradeHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeHelper.ChooseOption = function(optionDataTb)
-  -- function num : 0_0 , upvalues : _ENV
-  for _,optionData in pairs(optionDataTb) do
-    local randomNum = (math.random)(0, 100)
+function UIS4TradeHelper.ChooseOption(optionDataTb)
+  for _, optionData in pairs(optionDataTb) do
+    local randomNum = math.random(0, 100)
     local success = randomNum < optionData.percent
     optionData.isSuccess = success
   end
-  do return optionDataTb end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return optionDataTb
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeHelper.GetTradeOptionData = function(optionID, index)
-  -- function num : 0_1 , upvalues : _ENV
-  local optionCfg = (Cfg.cfg_component_business_option)[optionID]
+function UIS4TradeHelper.GetTradeOptionData(optionID, index)
+  local optionCfg = Cfg.cfg_component_business_option[optionID]
   local valueType, value, percent = 0, 0, 0
   if optionCfg.Boatload ~= 0 then
     valueType = 1
     value = optionCfg.Boatload
     percent = optionCfg.Odds
   else
-    for i,v in pairs(optionCfg.ProValue) do
+    for i, v in pairs(optionCfg.ProValue) do
       if v ~= 0 then
         valueType = i + 1
         value = v
@@ -38,35 +27,24 @@ UIS4TradeHelper.GetTradeOptionData = function(optionID, index)
       end
     end
   end
-  do
-    local optionData = TradeOptionData:New(optionID, valueType, value, percent, index)
-    return optionData
-  end
+  local optionData = TradeOptionData:New(optionID, valueType, value, percent, index)
+  return optionData
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeHelper.GetRemainTime = function(time)
-  -- function num : 0_2 , upvalues : _ENV
-  local day, hour, minute = nil, nil, nil
-  day = (math.floor)(time / 86400)
-  hour = (math.floor)(time / 3600) % 24
-  minute = (math.floor)(time / 60) % 60
+function UIS4TradeHelper.GetRemainTime(time)
+  local day, hour, minute
+  day = math.floor(time / 86400)
+  hour = math.floor(time / 3600) % 24
+  minute = math.floor(time / 60) % 60
   local timestring = ""
-  if day > 0 then
-    timestring = day .. (StringTable.Get)("str_activity_common_day") .. hour .. (StringTable.Get)("str_activity_common_hour")
+  if 0 < day then
+    timestring = day .. StringTable.Get("str_activity_common_day") .. hour .. StringTable.Get("str_activity_common_hour")
+  elseif 0 < hour then
+    timestring = hour .. StringTable.Get("str_activity_common_hour") .. minute .. StringTable.Get("str_activity_common_minute")
+  elseif 0 < minute then
+    timestring = minute .. StringTable.Get("str_activity_common_minute")
   else
-    if hour > 0 then
-      timestring = hour .. (StringTable.Get)("str_activity_common_hour") .. minute .. (StringTable.Get)("str_activity_common_minute")
-    else
-      if minute > 0 then
-        timestring = minute .. (StringTable.Get)("str_activity_common_minute")
-      else
-        timestring = (StringTable.Get)("str_activity_common_less_minute")
-      end
-    end
+    timestring = StringTable.Get("str_activity_common_less_minute")
   end
-  return (string.format)((StringTable.Get)("str_activity_common_over"), timestring)
+  return string.format(StringTable.Get("str_activity_common_over"), timestring)
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/common_build/ui_homeland_minimap_detail_common_build.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapDetailCommonBuild", UIHomelandMinimapDetailBase)
 UIHomelandMinimapDetailCommonBuild = UIHomelandMinimapDetailCommonBuild
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapDetailCommonBuild.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandMinimapDetailCommonBuild:OnShow(uiParams)
   self._museumIcon = self:GetGameObject("MuseumIcon")
   self._wishingPoolIcon = self:GetGameObject("WishingPoolIcon")
   self._storageBoxIcon = self:GetGameObject("StorageBoxIcon")
@@ -19,84 +12,52 @@ UIHomelandMinimapDetailCommonBuild.OnShow = function(self, uiParams)
   self._skinRawImageLoader = self:GetUIComponent("RawImageLoader", "Skin")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailCommonBuild.OnInitDone = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local building = (self:GetIconData()):GetParam()
+function UIHomelandMinimapDetailCommonBuild:OnInitDone()
+  local building = self:GetIconData():GetParam()
   local skinID = building:SkinID()
-  local cfgSkin = (Cfg.cfg_item_architecture_skin)[skinID]
+  local cfgSkin = Cfg.cfg_item_architecture_skin[skinID]
   if cfgSkin then
-    (self._nameTxt):SetText((StringTable.Get)(cfgSkin.SkinName))
-    ;
-    (self._commonContentTxt):SetText((StringTable.Get)(cfgSkin.Des))
-    ;
-    (self._skinRawImageLoader):LoadImage(cfgSkin.SkinIcon)
+    self._nameTxt:SetText(StringTable.Get(cfgSkin.SkinName))
+    self._commonContentTxt:SetText(StringTable.Get(cfgSkin.Des))
+    self._skinRawImageLoader:LoadImage(cfgSkin.SkinIcon)
   else
     local itemID = building:GetBuildId()
-    local cfg = (Cfg.cfg_item)[itemID]
-    ;
-    (self._nameTxt):SetText((StringTable.Get)(cfg.Name))
-    ;
-    (self._commonContentTxt):SetText((StringTable.Get)(cfg.Intro))
-    ;
-    (self._skinRawImageLoader):LoadImage(cfg.Icon)
+    local cfg = Cfg.cfg_item[itemID]
+    self._nameTxt:SetText(StringTable.Get(cfg.Name))
+    self._commonContentTxt:SetText(StringTable.Get(cfg.Intro))
+    self._skinRawImageLoader:LoadImage(cfg.Icon)
   end
-  do
-    if building:GetBuildType() == ArchitectureSubType.Museum then
-      (self._museumIcon):SetActive(true)
-    else
-      if building:GetBuildType() == ArchitectureSubType.Wishing_Pool then
-        (self._wishingPoolIcon):SetActive(true)
-      else
-        if building:GetBuildType() == ArchitectureSubType.Storage_Box then
-          (self._storageBoxIcon):SetActive(true)
-        else
-          if building:GetBuildType() == ArchitectureSubType.Album then
-            (self._albumIcon):SetActive(true)
-          else
-            if building:GetBuildType() == ArchitectureSubType.Medal_Wall then
-              (self._medalWallIcon):SetActive(true)
-            end
-          end
-        end
-      end
+  if building:GetBuildType() == ArchitectureSubType.Museum then
+    self._museumIcon:SetActive(true)
+  elseif building:GetBuildType() == ArchitectureSubType.Wishing_Pool then
+    self._wishingPoolIcon:SetActive(true)
+  elseif building:GetBuildType() == ArchitectureSubType.Storage_Box then
+    self._storageBoxIcon:SetActive(true)
+  elseif building:GetBuildType() == ArchitectureSubType.Album then
+    self._albumIcon:SetActive(true)
+  elseif building:GetBuildType() == ArchitectureSubType.Medal_Wall then
+    self._medalWallIcon:SetActive(true)
+  end
+  self._titleRect = self:GetUIComponent("RectTransform", "Title")
+  if self._titleRect then
+    local titleWidth = self._nameTxt.preferredWidth
+    if 350 < titleWidth then
+      titleWidth = 350
     end
-    self._titleRect = self:GetUIComponent("RectTransform", "Title")
-    if self._titleRect then
-      local titleWidth = (self._nameTxt).preferredWidth
-      if titleWidth > 350 then
-        titleWidth = 350
-      end
-      -- DECOMPILER ERROR at PC127: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._titleRect).sizeDelta = Vector2(titleWidth, ((self._titleRect).sizeDelta).y)
-    end
+    self._titleRect.sizeDelta = Vector2(titleWidth, self._titleRect.sizeDelta.y)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailCommonBuild.ExitOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailCommonBuild:ExitOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailCommonBuild.BtnBGOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailCommonBuild:BtnBGOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailCommonBuild.GetCloseAnimtionName = function(self)
-  -- function num : 0_4
+function UIHomelandMinimapDetailCommonBuild:GetCloseAnimtionName()
   return "UIHomelandMinimapDetailCommonBuild_out"
 end
-
-

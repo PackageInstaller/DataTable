@@ -1,57 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/ui_medal_main/ui_medal_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalMainController", UIController)
 UIMedalMainController = UIMedalMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalMainController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.medalModule = (GameGlobal.GetModule)(MedalModule)
-  self.uiMedalModuel = (self.medalModule):GetUIModule()
-  self._canShare = (self:GetModule(ShareModule)):CanShare()
+function UIMedalMainController:Constructor()
+  self.medalModule = GameGlobal.GetModule(MedalModule)
+  self.uiMedalModuel = self.medalModule:GetUIModule()
+  self._canShare = self:GetModule(ShareModule):CanShare()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalMainController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMedalMainController:OnShow(uiParams)
   self:InitWidget()
   self:Refresh()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalMainController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMedalMainController:OnHide()
   self:DetachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalMainController.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMedalMainController:InitWidget()
   local topButton = self:GetUIComponent("UISelectObjectPath", "topbtn")
   self.topButtonWidget = topButton:SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
+  self.topButtonWidget:SetData(function()
     self:StartTask(function(TT)
-      -- function num : 0_3_0_0 , upvalues : self, _ENV
       local lockName = "UIMedalMainController_PlayAnimOut()"
       self:Lock(lockName)
-      ;
-      (self._ani):Play("uieff_UIMedalMainController_out")
+      self._ani:Play("uieff_UIMedalMainController_out")
       YIELD(TT, 450)
       self:UnLock(lockName)
       self:CloseDialog()
-    end
-, self)
-  end
-, nil, nil, nil, nil)
+    end, self)
+  end, nil, nil, nil, nil)
   self.medalBtn = self:GetGameObject("medalBtn")
   self.medalRed = self:GetGameObject("medalRed")
   self.medalBgBtn = self:GetGameObject("medalBgBtn")
@@ -64,105 +42,60 @@ UIMedalMainController.InitWidget = function(self)
   self._bottomGo = self:GetGameObject("Bottom")
   self._boardMedalRect = self:GetUIComponent("RectTransform", "boardMedal")
   self._shareBtnGO = self:GetGameObject("ShareBtn")
-  ;
-  (self._shareBtnGO):SetActive(self._canShare)
+  self._shareBtnGO:SetActive(self._canShare)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalMainController.Refresh = function(self)
-  -- function num : 0_4
-  local placeData = (self.medalModule):GetPlacementInfo()
-  ;
-  (self.boardMedal):SetData(1820, placeData)
+function UIMedalMainController:Refresh()
+  local placeData = self.medalModule:GetPlacementInfo()
+  self.boardMedal:SetData(1820, placeData)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalMainController.AfterUILayerChanged = function(self)
-  -- function num : 0_5
+function UIMedalMainController:AfterUILayerChanged()
   self:_CheckRed()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalMainController._CheckRed = function(self)
-  -- function num : 0_6
-  (self.medalRed):SetActive((self.uiMedalModuel):IsMedalNew())
-  ;
-  (self.medalBgRed):SetActive((self.uiMedalModuel):IsMedalBoardNew())
+function UIMedalMainController:_CheckRed()
+  self.medalRed:SetActive(self.uiMedalModuel:IsMedalNew())
+  self.medalBgRed:SetActive(self.uiMedalModuel:IsMedalBoardNew())
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalMainController.MedalBtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIMedalListController")
+function UIMedalMainController:MedalBtnOnClick(go)
+  GameGlobal.UIStateManager():ShowDialog("UIMedalListController")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalMainController.MedalBgBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UIMedalMainController:MedalBgBtnOnClick(go)
   self:ShowDialog("UIMedalBgListController")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalMainController.MedalGroupBtnOnClick = function(self, go)
-  -- function num : 0_9
+function UIMedalMainController:MedalGroupBtnOnClick(go)
   self:ShowDialog("UIMedalGroupListController")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalMainController.EditButtonOnClick = function(self, go)
-  -- function num : 0_10
+function UIMedalMainController:EditButtonOnClick(go)
   self:ShowDialog("UIN22MedalEdit")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalMainController.ShareBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UIMedalMainController:ShareBtnOnClick(go)
   self:Lock("UIMedalMainControllerShare")
   self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self, _ENV
     self:_SetShareUI(false)
     YIELD(TT)
-    self:ShowDialog("UIShare", (self:GetName()), nil, function()
-      -- function num : 0_11_0_0 , upvalues : self
+    self:ShowDialog("UIShare", self:GetName(), nil, function()
       self:_SetShareUI(true)
-    end
-, nil, nil, nil, ShareSceneType.Medal)
+    end, nil, nil, nil, ShareSceneType.Medal)
     self:UnLock("UIMedalMainControllerShare")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalMainController._SetShareUI = function(self, show)
-  -- function num : 0_12 , upvalues : _ENV
-  (((self.topButtonWidget).view).gameObject):SetActive(show)
-  ;
-  (self._backgroundGo):SetActive(show)
-  ;
-  (self._editBtnGo):SetActive(show)
-  ;
-  (self._bottomGo):SetActive(show)
-  ;
-  (self._shareBtnGO):SetActive(show)
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIMedalMainController:_SetShareUI(show)
+  self.topButtonWidget.view.gameObject:SetActive(show)
+  self._backgroundGo:SetActive(show)
+  self._editBtnGo:SetActive(show)
+  self._bottomGo:SetActive(show)
+  self._shareBtnGO:SetActive(show)
   if show then
-    (self._boardMedalRect).anchoredPosition = Vector2(((self._boardMedalRect).anchoredPosition).x, 72)
+    self._boardMedalRect.anchoredPosition = Vector2(self._boardMedalRect.anchoredPosition.x, 72)
   else
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._boardMedalRect).anchoredPosition = Vector2(((self._boardMedalRect).anchoredPosition).x, 0)
+    self._boardMedalRect.anchoredPosition = Vector2(self._boardMedalRect.anchoredPosition.x, 0)
   end
 end
-
-

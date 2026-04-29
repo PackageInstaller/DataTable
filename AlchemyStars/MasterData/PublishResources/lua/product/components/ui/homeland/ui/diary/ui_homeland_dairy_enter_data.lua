@@ -1,76 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/diary/ui_homeland_dairy_enter_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandDairyEnterData", CampaignDataBase)
 UIHomelandDairyEnterData = UIHomelandDairyEnterData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandDairyEnterData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
+function UIHomelandDairyEnterData:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
   self.storyTaskLocalData = UIHomelandStoryTaskLocalData:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDairyEnterData.CheckNew = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if not ((self.storyTaskLocalData).HasPrefsStoryTaskGroupNew)() then
-    ((self.storyTaskLocalData).SetPrefsStoryTaskGroupNew)(0)
+function UIHomelandDairyEnterData:CheckNew()
+  if not self.storyTaskLocalData.HasPrefsStoryTaskGroupNew() then
+    self.storyTaskLocalData.SetPrefsStoryTaskGroupNew(0)
   end
-  local num = ((self.storyTaskLocalData).GetPrefsStoryTaskGroupNew)()
-  local taskNew = (self.storyTaskLocalData):CheckHaveNewStoryTask()
-  self._globalCfgTime = ((Cfg.cfg_homeland_global).StoryTaskMenuTime).StrValue
+  local num = self.storyTaskLocalData.GetPrefsStoryTaskGroupNew()
+  local taskNew = self.storyTaskLocalData:CheckHaveNewStoryTask()
+  self._globalCfgTime = Cfg.cfg_homeland_global.StoryTaskMenuTime.StrValue
   if not self:CheckOpen(self._globalCfgTime) then
     return false
   end
-  local unlock = ((GameGlobal.GetModule)(HomelandModule)):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_STORY_TASK)
+  local unlock = GameGlobal.GetModule(HomelandModule):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_STORY_TASK)
   if not unlock then
     return false
   end
-  unlock = (self.GetUnLockPrefs)()
-  do return num > 0 or taskNew or unlock == 0 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  unlock = self.GetUnLockPrefs()
+  return 0 < num or taskNew or unlock == 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDairyEnterData.CheckOpen = function(self, beginTime, timetype)
-  -- function num : 0_2 , upvalues : _ENV
-  local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  if not timetype then
-    timetype = 0
-  end
-  if timetype ~= 0 or not Enum_DateTimeZoneType.E_ZoneType_GMT then
-    local type = Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
-  end
+function UIHomelandDairyEnterData:CheckOpen(beginTime, timetype)
+  local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  timetype = timetype or 0
+  local type = timetype == 0 and Enum_DateTimeZoneType.E_ZoneType_GMT or Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
   local beginTime = loginModule:GetTimeStampByTimeStr(beginTime, type)
-  if beginTime <= curTime then
+  if curTime >= beginTime then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDairyEnterData.GetDairyEventCount = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandDairyEnterData:GetDairyEventCount()
   self.dairyData = {}
-  self.dairyData = ((self.mHomeland):GetHomeLandEventInfo()).finish_event_list
+  self.dairyData = self.mHomeland:GetHomeLandEventInfo().finish_event_list
   local finishDairys = {}
-  self._homelandDiaryCfg = (Cfg.cfg_homeland_dairy_item)({})
-  for i,v in pairs(self.dairyData) do
-    for index,item in pairs(self._homelandDiaryCfg) do
+  self._homelandDiaryCfg = Cfg.cfg_homeland_dairy_item({})
+  for i, v in pairs(self.dairyData) do
+    for index, item in pairs(self._homelandDiaryCfg) do
       if item.EventId == i then
-        (table.insert)(finishDairys, i)
+        table.insert(finishDairys, i)
       end
     end
   end
-  local readedList = ((self.mHomeland):GetHomelandDairyInfo()).is_readed_dairy
+  local readedList = self.mHomeland:GetHomelandDairyInfo().is_readed_dairy
   local count = 0
   if #self.dairyData then
     count = #finishDairys - #readedList
@@ -78,69 +57,40 @@ UIHomelandDairyEnterData.GetDairyEventCount = function(self)
   return count, finishDairys
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDairyEnterData.GetPstId = function()
-  -- function num : 0_4 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function UIHomelandDairyEnterData.GetPstId()
+  local mRole = GameGlobal.GetModule(RoleModule)
   return mRole:GetPstId()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDairyEnterData.GetPrefsKeyStr = function(str)
-  -- function num : 0_5 , upvalues : _ENV
-  local playerPrefsKey = (UIHomelandDairyEnterData.GetPstId)() .. str
+function UIHomelandDairyEnterData.GetPrefsKeyStr(str)
+  local playerPrefsKey = UIHomelandDairyEnterData.GetPstId() .. str
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDairyEnterData.GetPrefsKey = function(key)
-  -- function num : 0_6 , upvalues : _ENV
-  return (UIHomelandDairyEnterData.GetPrefsKeyStr)("UIHomeLandDiaryEnterPrefsKey" .. key)
+function UIHomelandDairyEnterData.GetPrefsKey(key)
+  return UIHomelandDairyEnterData.GetPrefsKeyStr("UIHomeLandDiaryEnterPrefsKey" .. key)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDairyEnterData.HasPrefs = function(key)
-  -- function num : 0_7 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((UIHomelandDairyEnterData.GetPrefsKey)(key))
+function UIHomelandDairyEnterData.HasPrefs(key)
+  return UnityEngine.PlayerPrefs.HasKey(UIHomelandDairyEnterData.GetPrefsKey(key))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDairyEnterData.GetPrefs = function(key)
-  -- function num : 0_8 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).GetInt)((UIHomelandDairyEnterData.GetPrefsKey)(key), 1)
+function UIHomelandDairyEnterData.GetPrefs(key)
+  return UnityEngine.PlayerPrefs.GetInt(UIHomelandDairyEnterData.GetPrefsKey(key), 1)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDairyEnterData.SetPrefs = function(key, count)
-  -- function num : 0_9 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((UIHomelandDairyEnterData.GetPrefsKey)(key), count)
+function UIHomelandDairyEnterData.SetPrefs(key, count)
+  UnityEngine.PlayerPrefs.SetInt(UIHomelandDairyEnterData.GetPrefsKey(key), count)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDairyEnterData.HasUnLockPrefs = function()
-  -- function num : 0_10 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((UIHomelandDairyEnterData.GetPrefsKey)("unlock"))
+function UIHomelandDairyEnterData.HasUnLockPrefs()
+  return UnityEngine.PlayerPrefs.HasKey(UIHomelandDairyEnterData.GetPrefsKey("unlock"))
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDairyEnterData.GetUnLockPrefs = function()
-  -- function num : 0_11 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).GetInt)((UIHomelandDairyEnterData.GetPrefsKey)("unlock"), 0)
+function UIHomelandDairyEnterData.GetUnLockPrefs()
+  return UnityEngine.PlayerPrefs.GetInt(UIHomelandDairyEnterData.GetPrefsKey("unlock"), 0)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDairyEnterData.SetUnLockPrefs = function()
-  -- function num : 0_12 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((UIHomelandDairyEnterData.GetPrefsKey)("unlock"), 1)
+function UIHomelandDairyEnterData.SetUnLockPrefs()
+  UnityEngine.PlayerPrefs.SetInt(UIHomelandDairyEnterData.GetPrefsKey("unlock"), 1)
 end
-
-

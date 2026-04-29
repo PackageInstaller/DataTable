@@ -1,50 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_create_trap_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewCreateTrap", BuffViewBase)
 BuffViewCreateTrap = BuffViewCreateTrap
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewCreateTrap.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local trapEntityIDs = (self._buffResult):GetEntityIds()
+function BuffViewCreateTrap:PlayView(TT)
+  local trapEntityIDs = self._buffResult:GetEntityIds()
   if trapEntityIDs then
     local t = {}
-    for _,eid in ipairs(trapEntityIDs) do
-      local e = (self._world):GetEntityByID(eid)
+    for _, eid in ipairs(trapEntityIDs) do
+      local e = self._world:GetEntityByID(eid)
       if e:HasTrapID() then
-        (table.insert)(t, e)
+        table.insert(t, e)
       end
     end
-    local trapServiceRender = (self._world):GetService("TrapRender")
+    local trapServiceRender = self._world:GetService("TrapRender")
     trapServiceRender:ShowTraps(TT, t, true)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewCreateTrap.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local pos = (self._buffResult):GetPos()
+function BuffViewCreateTrap:IsNotifyMatch(notify)
+  local pos = self._buffResult:GetPos()
   if pos then
     local viewGrids = notify:GetCreateTrapGrids()
     local matchCount = 0
-    for _,logicGrid in pairs(pos) do
-      for _,viewGrid in pairs(viewGrids) do
+    for _, logicGrid in pairs(pos) do
+      for _, viewGrid in pairs(viewGrids) do
         if logicGrid.x == viewGrid.x and logicGrid.y == viewGrid.y then
           matchCount = matchCount + 1
         end
       end
     end
-    if matchCount ~= (table.count)(viewGrids) then
+    if matchCount ~= table.count(viewGrids) then
       return false
     end
   end
-  do
-    return true
-  end
+  return true
 end
-
-

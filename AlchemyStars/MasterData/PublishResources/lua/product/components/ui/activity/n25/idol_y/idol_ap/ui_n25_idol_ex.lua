@@ -1,58 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/idol_ap/ui_n25_idol_ex.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolEx", UICustomWidget)
 UIN25IdolEx = UIN25IdolEx
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolEx.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolEx:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEx.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25IdolEx:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEx.SetData = function(self, callback)
-  -- function num : 0_2
+function UIN25IdolEx:SetData(callback)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEx.OnHide = function(self)
-  -- function num : 0_3
+function UIN25IdolEx:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEx.GetComponents = function(self)
-  -- function num : 0_4
+function UIN25IdolEx:GetComponents()
   self.pool = self:GetUIComponent("UISelectObjectPath", "pool")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEx.OnValue = function(self)
-  -- function num : 0_5
+function UIN25IdolEx:OnValue()
   self.datas = self:GetApDataWeek()
   self:ApEvent()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEx.GetApDataWeek = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local finishAps = (self.info).agree_events
-  local currentTurn = (self.info).round_index
+function UIN25IdolEx:GetApDataWeek()
+  local finishAps = self.info.agree_events
+  local currentTurn = self.info.round_index
   local currentWeek = currentTurn // 7
   local rets = {}
-  local cfgs = (Cfg.cfg_component_idol_round)({})
+  local cfgs = Cfg.cfg_component_idol_round({})
   for i = 1, #cfgs do
     local cfg = cfgs[i]
     local round = cfg.Round
@@ -64,12 +39,11 @@ UIN25IdolEx.GetApDataWeek = function(self)
           local data = events[j]
           local type = data[1]
           local id = data[2]
-          if not (table.icontains)(finishAps, id) then
+          if not table.icontains(finishAps, id) then
             local roomType = type
             local eventID = id
             local e = {type = roomType, id = eventID}
-            ;
-            (table.insert)(rets, e)
+            table.insert(rets, e)
           end
         end
       end
@@ -78,23 +52,15 @@ UIN25IdolEx.GetApDataWeek = function(self)
   return rets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEx.ApEvent = function(self)
-  -- function num : 0_7
-  (self.eventPool):SpwanObjects("UIN25IdolExItem", #self.datas)
-  self.eventItems = (self.eventPool):GetAllSpawnList()
+function UIN25IdolEx:ApEvent()
+  self.eventPool:SpwanObjects("UIN25IdolExItem", #self.datas)
+  self.eventItems = self.eventPool:GetAllSpawnList()
   for i = 1, #self.datas do
-    local data = (self.datas)[i]
-    local item = (self.items)[i]
+    local data = self.datas[i]
+    local item = self.items[i]
     item:SetData(data)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolEx.BtnOnClick = function(self, go)
-  -- function num : 0_8
+function UIN25IdolEx:BtnOnClick(go)
 end
-
-

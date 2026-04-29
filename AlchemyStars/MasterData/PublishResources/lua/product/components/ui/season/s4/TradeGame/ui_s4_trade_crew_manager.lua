@@ -1,53 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/ui_s4_trade_crew_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeCrewManager", UICustomWidget)
 UIS4TradeCrewManager = UIS4TradeCrewManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeCrewManager.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIS4TradeCrewManager:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewManager.InitWidget = function(self)
-  -- function num : 0_1
+function UIS4TradeCrewManager:InitWidget()
   self._headList = self:GetUIComponent("UISelectObjectPath", "headList")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewManager.SetData = function(self, tradeData, selectID)
-  -- function num : 0_2
+function UIS4TradeCrewManager:SetData(tradeData, selectID)
   self._tradeData = tradeData
   self._selectID = selectID
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewManager.Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._crews = (self._tradeData):GetCrewsByHarbourID(self._selectID)
-  self._crewItemTb = (self._headList):SpawnObjects("UIS4TradeCrewManagerItem", 3)
-  for i,item in pairs(self._crewItemTb) do
-    local crew = nil
-    if i <= (table.count)(self._crews) then
-      crew = (self._crews)[i]
+function UIS4TradeCrewManager:Refresh()
+  self._crews = self._tradeData:GetCrewsByHarbourID(self._selectID)
+  self._crewItemTb = self._headList:SpawnObjects("UIS4TradeCrewManagerItem", 3)
+  for i, item in pairs(self._crewItemTb) do
+    local crew
+    if i <= table.count(self._crews) then
+      crew = self._crews[i]
     end
     item:SetData(crew)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewManager.BgOnClick = function(self)
-  -- function num : 0_4
+function UIS4TradeCrewManager:BgOnClick()
   self:ShowDialog("UIS4TradeCrewController", self._tradeData, self._selectID)
 end
-
-

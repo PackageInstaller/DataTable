@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_forecast/ui_pet_forecast_new/ui_pet_forecast_award_item_new.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetForecastAwardItemNew", UICustomWidget)
 UIPetForecastAwardItemNew = UIPetForecastAwardItemNew
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetForecastAwardItemNew.OnShow = function(self)
-  -- function num : 0_0
+function UIPetForecastAwardItemNew:OnShow()
   self._trans = self:GetGameObject()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
@@ -20,80 +13,57 @@ UIPetForecastAwardItemNew.OnShow = function(self)
   self.eff = self:GetGameObject("eff")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastAwardItemNew.Flush = function(self, day, tplId, count, IsCurDay, state, callback)
-  -- function num : 0_1 , upvalues : _ENV
-  local tb = {[1] = "main_general_di08", [2] = "main_general_di10", [3] = "main_general_di08"}
-  local animTb = {[1] = "uieff_UIPetForecastAwardItemNew_Start_out", [2] = "uieff_UIPetForecastAwardItemNew_Start_in", [3] = "uieff_UIPetForecastAwardItemNew_in"}
+function UIPetForecastAwardItemNew:Flush(day, tplId, count, IsCurDay, state, callback)
+  local tb = {
+    [1] = "main_general_di08",
+    [2] = "main_general_di10",
+    [3] = "main_general_di08"
+  }
+  local animTb = {
+    [1] = "uieff_UIPetForecastAwardItemNew_Start_out",
+    [2] = "uieff_UIPetForecastAwardItemNew_Start_in",
+    [3] = "uieff_UIPetForecastAwardItemNew_in"
+  }
   self.tplId = tplId
-  local cfgv = (Cfg.cfg_item)[tplId]
-  ;
-  (self.icon):LoadImage(cfgv.Icon)
-  ;
-  (self.txtCount):SetText(count)
+  local cfgv = Cfg.cfg_item[tplId]
+  self.icon:LoadImage(cfgv.Icon)
+  self.txtCount:SetText(count)
   self.callback = callback
-  ;
-  (UIWidgetHelper.SetImageSprite)(self, "bg", "UINewPetForecast.spriteatlas", tb[state])
-  ;
-  (self.unlock):SetActive((state == PredictionStatus.PRES_UnReach and not IsCurDay))
+  UIWidgetHelper.SetImageSprite(self, "bg", "UINewPetForecast.spriteatlas", tb[state])
+  self.unlock:SetActive(state == PredictionStatus.PRES_UnReach and not IsCurDay)
   if IsCurDay then
-    (UIWidgetHelper.SetImageSprite)(self, "dayIcon", "UINewPetForecast.spriteatlas", "main_general_di05")
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.txtDay).fontSize = 80
-    ;
-    (self.txtDay):SetText("<color=#24252c>" .. day .. "</color>")
+    UIWidgetHelper.SetImageSprite(self, "dayIcon", "UINewPetForecast.spriteatlas", "main_general_di05")
+    self.txtDay.fontSize = 80
+    self.txtDay:SetText("<color=#24252c>" .. day .. "</color>")
   else
-    (UIWidgetHelper.SetImageSprite)(self, "dayIcon", "UINewPetForecast.spriteatlas", "main_general_di06")
-    -- DECOMPILER ERROR at PC66: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.txtDay).fontSize = 64
-    ;
-    (self.txtDay):SetText(tostring(day))
+    UIWidgetHelper.SetImageSprite(self, "dayIcon", "UINewPetForecast.spriteatlas", "main_general_di06")
+    self.txtDay.fontSize = 64
+    self.txtDay:SetText(tostring(day))
   end
-  local isNewGet = not (self.getMask).activeSelf
-  ;
-  (self.getMask):SetActive(state == PredictionStatus.PRES_Accepted)
-  ;
-  (self.eff):SetActive(state == PredictionStatus.PRES_UnAccept)
+  local isNewGet = not self.getMask.activeSelf
+  self.getMask:SetActive(state == PredictionStatus.PRES_Accepted)
+  self.eff:SetActive(state == PredictionStatus.PRES_UnAccept)
   if day % 2 == 0 then
-    ((self.awardGO):GetComponent("RectTransform")).localPosition = Vector3(0, -40, 0)
+    self.awardGO:GetComponent("RectTransform").localPosition = Vector3(0, -40, 0)
   end
   if isNewGet then
     self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self, animTb, state, _ENV
-    self:PlayAnim(animTb[state])
-    YIELD(TT, ((self.anim):GetClip(animTb[state])).length * 1000)
+      self:PlayAnim(animTb[state])
+      YIELD(TT, self.anim:GetClip(animTb[state]).length * 1000)
+    end)
   end
-)
-  end
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastAwardItemNew.Trans = function(self)
-  -- function num : 0_2
+function UIPetForecastAwardItemNew:Trans()
   return self._trans
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastAwardItemNew.PlayAnim = function(self, anim)
-  -- function num : 0_3
-  (self.anim):Play(anim)
+function UIPetForecastAwardItemNew:PlayAnim(anim)
+  self.anim:Play(anim)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastAwardItemNew.bgOnClick = function(self, go)
-  -- function num : 0_4
+function UIPetForecastAwardItemNew:bgOnClick(go)
   if self.callback then
-    (self.callback)()
+    self.callback()
   end
 end
-
-

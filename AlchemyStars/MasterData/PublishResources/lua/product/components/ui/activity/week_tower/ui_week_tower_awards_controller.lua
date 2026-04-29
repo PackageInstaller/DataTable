@@ -1,72 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/week_tower/ui_week_tower_awards_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWeekTowerAwardsController", UIController)
 UIWeekTowerAwardsController = UIWeekTowerAwardsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWeekTowerAwardsController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWeekTowerAwardsController:OnShow(uiParams)
   self._questCmpt = uiParams[1]
   self._questsUIPool = self:GetUIComponent("UISelectObjectPath", "Content")
   self._itemTipsPool = self:GetUIComponent("UISelectObjectPath", "assetTips")
   self:RefreshUI(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerAwardsController.RefreshUI = function(self, playEnterAnim)
-  -- function num : 0_1 , upvalues : _ENV
-  local questList = (self._questCmpt):GetQuestInfo()
-  ;
-  (table.sort)(questList, function(a, b)
-    -- function num : 0_1_0 , upvalues : _ENV
+function UIWeekTowerAwardsController:RefreshUI(playEnterAnim)
+  local questList = self._questCmpt:GetQuestInfo()
+  table.sort(questList, function(a, b)
     local aStatus = a:Status()
     local bStatus = b:Status()
     if aStatus ~= bStatus then
       if aStatus == QuestStatus.QUEST_Taken then
         return false
-      else
-        if bStatus == QuestStatus.QUEST_Taken then
-          return true
-        end
+      elseif bStatus == QuestStatus.QUEST_Taken then
+        return true
       end
     end
-    do return a:ID() < b:ID() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  local questUIList = (self._questsUIPool):SpawnObjects("UIWeekTowerAwardsItem", #questList)
+    return a:ID() < b:ID()
+  end)
+  local questUIList = self._questsUIPool:SpawnObjects("UIWeekTowerAwardsItem", #questList)
   for i = 1, #questUIList do
-    (questUIList[i]):SetData(self._questCmpt, questList[i], playEnterAnim, i)
+    questUIList[i]:SetData(self._questCmpt, questList[i], playEnterAnim, i)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerAwardsController.CloseBtnOnClick = function(self)
-  -- function num : 0_2
+function UIWeekTowerAwardsController:CloseBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerAwardsController.BGOnClick = function(self)
-  -- function num : 0_3
+function UIWeekTowerAwardsController:BGOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeekTowerAwardsController.ShowAssetTips = function(self, id, pos)
-  -- function num : 0_4
+function UIWeekTowerAwardsController:ShowAssetTips(id, pos)
   if not self._assetTips then
-    self._assetTips = (self._itemTipsPool):SpawnObject("UISelectInfo")
+    self._assetTips = self._itemTipsPool:SpawnObject("UISelectInfo")
   end
-  ;
-  (self._assetTips):SetData(id, pos)
+  self._assetTips:SetData(id, pos)
 end
-
-

@@ -1,51 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/board_outline_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("reactive_system")
 _class("BoardOutlineSystem_Render", ReactiveSystem)
 BoardOutlineSystem_Render = BoardOutlineSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BoardOutlineSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function BoardOutlineSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardOutlineSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).BoardOutline)
+function BoardOutlineSystem_Render:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.BoardOutline)
   local c = Collector:New({group}, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardOutlineSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
+function BoardOutlineSystem_Render:Filter(entity)
   return entity:HasView()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardOutlineSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3 , upvalues : _ENV
+function BoardOutlineSystem_Render:ExecuteEntities(entities)
   local e = entities[1]
-  local go = ((e:View()).ViewWrapper).GameObject
+  local go = e:View().ViewWrapper.GameObject
   if not go then
-    (Log.error)("board out line not have gameobject")
-    return 
+    Log.error("board out line not have gameobject")
+    return
   end
   local animation = go:GetComponent(typeof(UnityEngine.Animation))
   local clip = "eff_hhqh_bq_2"
-  local turn = (e:BoardOutline()):IsPlayerTurn()
+  local turn = e:BoardOutline():IsPlayerTurn()
   if not turn then
     clip = "eff_hhqh_bq_1"
   end
-  animation:Play(clip, (UnityEngine.PlayMode).StopAll)
+  animation:Play(clip, UnityEngine.PlayMode.StopAll)
 end
-
-

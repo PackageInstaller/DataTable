@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sailing_mission/ui_sailing_chapter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISailingChapter", UIController)
 UISailingChapter = UISailingChapter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISailingChapter.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISailingChapter:Constructor()
   self._module = self:GetModule(SailingMissionModule)
   self._chapterLuaIndex = 1
   self._chapterCfg = nil
@@ -17,17 +10,14 @@ UISailingChapter.Constructor = function(self)
   self._atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  if uiParams ~= nil and #uiParams >= 2 then
+function UISailingChapter:OnShow(uiParams)
+  if uiParams ~= nil and 2 <= #uiParams then
     self._chapterLuaIndex = uiParams[1]
     self._chapterCfg = uiParams[2]
   else
-    local chapterID = (self._module):GetChallengeLayerID()
-    local allChapter = (Cfg.cfg_sailing_layer)({})
-    for k,v in pairs(allChapter) do
+    local chapterID = self._module:GetChallengeLayerID()
+    local allChapter = Cfg.cfg_sailing_layer({})
+    for k, v in pairs(allChapter) do
       if v.ID == chapterID then
         self._chapterLuaIndex = k
         self._chapterCfg = v
@@ -35,331 +25,222 @@ UISailingChapter.OnShow = function(self, uiParams)
       end
     end
   end
-  do
-    self._ltBtn = self:GetUIComponent("UISelectObjectPath", "ltBtn")
-    self._curChapterValue = self:GetUIComponent("UILocalizationText", "curChapterValue")
-    self._realtimeMissionMaxValue = UISailingImageNumber:New(self, "N22_dhh_xzlb_0%d")
-    ;
-    (self._realtimeMissionMaxValue):AddDigitImage(self:GetUIComponent("Image", "realtimeMissionMaxValue0"))
-    ;
-    (self._realtimeMissionMaxValue):AddDigitImage(self:GetUIComponent("Image", "realtimeMissionMaxValue1"))
-    ;
-    (self._realtimeMissionMaxValue):AddDigitImage(self:GetUIComponent("Image", "realtimeMissionMaxValue2"))
-    self._curChapterProgressValue1 = self:GetUIComponent("UILocalizationText", "curChapterProgressValue1")
-    self._curChapterProgressValue2 = self:GetUIComponent("UILocalizationText", "curChapterProgressValue2")
-    self._curChapterProgressValueC = self:GetUIComponent("UILocalizationText", "curChapterProgressValueC")
-    self._redReward = self:GetUIComponent("RectTransform", "redReward")
-    self._historyMissionMaxValueBg = self:GetUIComponent("UILocalizationText", "historyMissionMaxValueBg")
-    self._historyMissionMaxValue = self:GetUIComponent("UILocalizedTMP", "historyMissionMaxValue")
-    self._missionContent = self:GetUIComponent("UISelectObjectPath", "missionContent")
-    self._missionContentLayout = self:GetUIComponent("GridLayoutGroup", "missionContent")
-    self._missionScrollRect = self:GetUIComponent("ScrollRect", "missionScrollRect")
-    self._missionScrollBar = self:GetUIComponent("Slider", "missionScrollbar")
-    self._missionSelectedImage = self:GetUIComponent("Transform", "selectedImage")
-    self._missionSelectedImageAnim = self:GetUIComponent("Animation", "selectedImageAnim")
-    ;
-    ((self._missionSelectedImage).gameObject):SetActive(false)
-    self._selectedUIMissionItem = nil
-    ;
-    ((self._missionScrollRect).onValueChanged):AddListener(function(value)
-    -- function num : 0_1_0 , upvalues : self
+  self._ltBtn = self:GetUIComponent("UISelectObjectPath", "ltBtn")
+  self._curChapterValue = self:GetUIComponent("UILocalizationText", "curChapterValue")
+  self._realtimeMissionMaxValue = UISailingImageNumber:New(self, "N22_dhh_xzlb_0%d")
+  self._realtimeMissionMaxValue:AddDigitImage(self:GetUIComponent("Image", "realtimeMissionMaxValue0"))
+  self._realtimeMissionMaxValue:AddDigitImage(self:GetUIComponent("Image", "realtimeMissionMaxValue1"))
+  self._realtimeMissionMaxValue:AddDigitImage(self:GetUIComponent("Image", "realtimeMissionMaxValue2"))
+  self._curChapterProgressValue1 = self:GetUIComponent("UILocalizationText", "curChapterProgressValue1")
+  self._curChapterProgressValue2 = self:GetUIComponent("UILocalizationText", "curChapterProgressValue2")
+  self._curChapterProgressValueC = self:GetUIComponent("UILocalizationText", "curChapterProgressValueC")
+  self._redReward = self:GetUIComponent("RectTransform", "redReward")
+  self._historyMissionMaxValueBg = self:GetUIComponent("UILocalizationText", "historyMissionMaxValueBg")
+  self._historyMissionMaxValue = self:GetUIComponent("UILocalizedTMP", "historyMissionMaxValue")
+  self._missionContent = self:GetUIComponent("UISelectObjectPath", "missionContent")
+  self._missionContentLayout = self:GetUIComponent("GridLayoutGroup", "missionContent")
+  self._missionScrollRect = self:GetUIComponent("ScrollRect", "missionScrollRect")
+  self._missionScrollBar = self:GetUIComponent("Slider", "missionScrollbar")
+  self._missionSelectedImage = self:GetUIComponent("Transform", "selectedImage")
+  self._missionSelectedImageAnim = self:GetUIComponent("Animation", "selectedImageAnim")
+  self._missionSelectedImage.gameObject:SetActive(false)
+  self._selectedUIMissionItem = nil
+  self._missionScrollRect.onValueChanged:AddListener(function(value)
     self:OnScrollRectMoved(value)
-  end
-)
-    ;
-    ((self._missionScrollBar).onValueChanged):AddListener(function(value)
-    -- function num : 0_1_1 , upvalues : self
+  end)
+  self._missionScrollBar.onValueChanged:AddListener(function(value)
     self:OnScrollBarMoved(value)
-  end
-)
-    self:AttachEvent(GameEventType.SailingMissionLayerInfoChanged, self.OnLayerInfoChanged)
-    self:AttachEvent(GameEventType.SailingGetProgressReward, self.OnSailingGetProgressReward)
-    self:UpdateChapterValue()
-    self:UpdateRewardRedPoint()
-    self:UpdateMissionContent()
-    self:UpdateMissionDefaultPosition()
-    self:InitCommonTopButton()
-  end
+  end)
+  self:AttachEvent(GameEventType.SailingMissionLayerInfoChanged, self.OnLayerInfoChanged)
+  self:AttachEvent(GameEventType.SailingGetProgressReward, self.OnSailingGetProgressReward)
+  self:UpdateChapterValue()
+  self:UpdateRewardRedPoint()
+  self:UpdateMissionContent()
+  self:UpdateMissionDefaultPosition()
+  self:InitCommonTopButton()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.OnHide = function(self)
-  -- function num : 0_2
+function UISailingChapter:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.BtnRewardOnClick = function(self, go)
-  -- function num : 0_3
+function UISailingChapter:BtnRewardOnClick(go)
   self:ShowDialog("UISailingRewardsController")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.OnScrollRectMoved = function(self, value)
-  -- function num : 0_4
-  local content = (self._missionScrollRect).content
-  local contentSize = (content.rect).width
-  local viewport = (self._missionScrollRect).viewport
-  local viewportSize = (viewport.rect).width
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R6 in 'UnsetPending'
-
-  if viewportSize < contentSize then
-    (self._missionScrollBar).value = value.x
+function UISailingChapter:OnScrollRectMoved(value)
+  local content = self._missionScrollRect.content
+  local contentSize = content.rect.width
+  local viewport = self._missionScrollRect.viewport
+  local viewportSize = viewport.rect.width
+  if contentSize > viewportSize then
+    self._missionScrollBar.value = value.x
   end
   if self._selectedUIMissionItem ~= nil then
-    local selectedTr = (self._missionSelectedImage).transform
-    selectedTr.position = (((self._selectedUIMissionItem):View()).transform).position
+    local selectedTr = self._missionSelectedImage.transform
+    selectedTr.position = self._selectedUIMissionItem:View().transform.position
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.OnScrollBarMoved = function(self, value)
-  -- function num : 0_5
-  local content = (self._missionScrollRect).content
-  local contentSize = (content.rect).width
-  local viewport = (self._missionScrollRect).viewport
-  local viewportSize = (viewport.rect).width
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R6 in 'UnsetPending'
-
-  if viewportSize < contentSize then
-    (self._missionScrollRect).horizontalNormalizedPosition = value
+function UISailingChapter:OnScrollBarMoved(value)
+  local content = self._missionScrollRect.content
+  local contentSize = content.rect.width
+  local viewport = self._missionScrollRect.viewport
+  local viewportSize = viewport.rect.width
+  if contentSize > viewportSize then
+    self._missionScrollRect.horizontalNormalizedPosition = value
   else
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._missionScrollBar).value = 0
+    self._missionScrollBar.value = 0
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.OnLayerInfoChanged = function(self, chapterID)
-  -- function num : 0_6
+function UISailingChapter:OnLayerInfoChanged(chapterID)
   self:UpdateChapterValue()
   self:UpdateRewardRedPoint()
-  if (self._chapterCfg).ID == chapterID then
+  if self._chapterCfg.ID == chapterID then
     self:UpdateMissionContent()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.UpdateChapterValue = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfgMissionList = (self._chapterCfg).SailingMissionList
+function UISailingChapter:UpdateChapterValue()
+  local cfgMissionList = self._chapterCfg.SailingMissionList
   local countMission = #cfgMissionList
   local completeMission = 0
-  local progressInfo = (self._module):GetLayerInfo((self._chapterCfg).ID)
+  local progressInfo = self._module:GetLayerInfo(self._chapterCfg.ID)
   if progressInfo == nil then
     completeMission = 0
+  elseif progressInfo.status == 1 then
+    completeMission = countMission
   else
-    if progressInfo.status == 1 then
-      completeMission = countMission
-    else
-      completeMission = #progressInfo.mission_infos
-    end
+    completeMission = #progressInfo.mission_infos
   end
   self._missionDone = completeMission == countMission
-  ;
-  ((self._curChapterProgressValue1).gameObject):SetActive(not self._missionDone)
-  ;
-  ((self._curChapterProgressValue2).gameObject):SetActive(not self._missionDone)
-  ;
-  ((self._curChapterProgressValueC).gameObject):SetActive(self._missionDone)
+  self._curChapterProgressValue1.gameObject:SetActive(not self._missionDone)
+  self._curChapterProgressValue2.gameObject:SetActive(not self._missionDone)
+  self._curChapterProgressValueC.gameObject:SetActive(self._missionDone)
   if self._missionDone then
-    local doneValue = (StringTable.Get)("str_sailing_mission_curlayer_done")
-    ;
-    (self._curChapterProgressValueC):SetText(doneValue)
+    local doneValue = StringTable.Get("str_sailing_mission_curlayer_done")
+    self._curChapterProgressValueC:SetText(doneValue)
   else
-    local progressValue = (string.format)("/%d", countMission)
-    ;
-    (self._curChapterProgressValue1):SetText(tostring(completeMission))
-    ;
-    (self._curChapterProgressValue2):SetText(progressValue)
+    local progressValue = string.format("/%d", countMission)
+    self._curChapterProgressValue1:SetText(tostring(completeMission))
+    self._curChapterProgressValue2:SetText(progressValue)
   end
-  local chapterValue = (StringTable.Get)("str_sailing_mission_arg_layer", self._chapterLuaIndex)
-  ;
-  (self._curChapterValue):SetText(chapterValue)
-  local currentProgress = (self._module):GetCurrentProgress()
-  local historyProgress = (self._module):GetHistoryProgress()
-  ;
-  (self._realtimeMissionMaxValue):SetValue(currentProgress)
+  local chapterValue = StringTable.Get("str_sailing_mission_arg_layer", self._chapterLuaIndex)
+  self._curChapterValue:SetText(chapterValue)
+  local currentProgress = self._module:GetCurrentProgress()
+  local historyProgress = self._module:GetHistoryProgress()
+  self._realtimeMissionMaxValue:SetValue(currentProgress)
   local historyProgressStr = tostring(historyProgress)
-  ;
-  (self._historyMissionMaxValueBg):SetText(historyProgressStr)
-  ;
-  (self._historyMissionMaxValue):SetText(historyProgressStr)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self._historyMissionMaxValueBg:SetText(historyProgressStr)
+  self._historyMissionMaxValue:SetText(historyProgressStr)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.UpdateRewardRedPoint = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UISailingChapter:UpdateRewardRedPoint()
   local fnUpdateRewardRedPoint = UISailing.UpdateRewardRedPoint
   fnUpdateRewardRedPoint(self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.UpdateMissionContent = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfgMissionList = (self._chapterCfg).SailingMissionList
+function UISailingChapter:UpdateMissionContent()
+  local cfgMissionList = self._chapterCfg.SailingMissionList
   local countMission = #cfgMissionList
-  self._missionPool = (self._missionContent):SpawnObjects("UISailingMissionItem", countMission)
+  self._missionPool = self._missionContent:SpawnObjects("UISailingMissionItem", countMission)
   local dicMission = {}
-  local progressInfo = (self._module):GetLayerInfo((self._chapterCfg).ID)
+  local progressInfo = self._module:GetLayerInfo(self._chapterCfg.ID)
   if progressInfo ~= nil then
-    for _,v in pairs(progressInfo.mission_infos) do
+    for _, v in pairs(progressInfo.mission_infos) do
       dicMission[v.mission_id] = v
     end
   end
-  do
-    for i = 1, countMission do
-      local uiItem = (self._missionPool)[i]
-      local missionId = cfgMissionList[i]
-      local cfgMission = (Cfg.cfg_sailing_mission)({ID = missionId})
-      uiItem:Init(i, cfgMission[1], dicMission[missionId])
-    end
+  for i = 1, countMission do
+    local uiItem = self._missionPool[i]
+    local missionId = cfgMissionList[i]
+    local cfgMission = Cfg.cfg_sailing_mission({ID = missionId})
+    uiItem:Init(i, cfgMission[1], dicMission[missionId])
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.UpdateMissionDefaultPosition = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UISailingChapter:UpdateMissionDefaultPosition()
   local scrollValue = 0
   if self._missionDone then
     scrollValue = 0
   else
-    local layoutCellSize = (self._missionContentLayout).cellSize
-    local layoutSpacing = (self._missionContentLayout).spacing
+    local layoutCellSize = self._missionContentLayout.cellSize
+    local layoutSpacing = self._missionContentLayout.spacing
     local itemWidth = layoutCellSize.x + layoutSpacing.x
-    local viewport = (self._missionScrollRect).viewport
-    local viewportWidth = (viewport.rect).width
-    local content = (self._missionScrollRect).content
-    local contentWidth = (content.rect).width
+    local viewport = self._missionScrollRect.viewport
+    local viewportWidth = viewport.rect.width
+    local content = self._missionScrollRect.content
+    local contentWidth = content.rect.width
     local countMission = #self._missionPool
     contentWidth = itemWidth * countMission - layoutSpacing.x
     local totalScrollWidth = contentWidth - viewportWidth
     local luaIndex = 1
-    local lastID = (LocalDB.GetInt)(UISailing:ChallengeMissionKey(), 0)
+    local lastID = LocalDB.GetInt(UISailing:ChallengeMissionKey(), 0)
     for i = 1, countMission do
-      local uiItem = (self._missionPool)[i]
-      if (uiItem:GetMissionCfg()).ID == lastID then
+      local uiItem = self._missionPool[i]
+      if uiItem:GetMissionCfg().ID == lastID then
         luaIndex = i
         break
       end
     end
-    do
-      local targetPosition = viewportWidth * 0.5
-      local currentPosition = (luaIndex - 1) * itemWidth + layoutCellSize.x * 0.5
-      do
-        local needScrollWidth = currentPosition - targetPosition
-        if totalScrollWidth <= 0 or needScrollWidth <= 0 then
-          scrollValue = 0
-        else
-          scrollValue = needScrollWidth / totalScrollWidth
-          scrollValue = (math.min)(scrollValue, 1)
-          scrollValue = (math.max)(scrollValue, 0)
-        end
-        -- DECOMPILER ERROR at PC76: Confused about usage of register: R2 in 'UnsetPending'
-
-        ;
-        (self._missionScrollRect).horizontalNormalizedPosition = scrollValue
-        -- DECOMPILER ERROR at PC78: Confused about usage of register: R2 in 'UnsetPending'
-
-        ;
-        (self._missionScrollBar).value = scrollValue
-      end
+    local targetPosition = viewportWidth * 0.5
+    local currentPosition = (luaIndex - 1) * itemWidth + layoutCellSize.x * 0.5
+    local needScrollWidth = currentPosition - targetPosition
+    if totalScrollWidth <= 0 or needScrollWidth <= 0 then
+      scrollValue = 0
+    else
+      scrollValue = needScrollWidth / totalScrollWidth
+      scrollValue = math.min(scrollValue, 1)
+      scrollValue = math.max(scrollValue, 0)
     end
   end
+  self._missionScrollRect.horizontalNormalizedPosition = scrollValue
+  self._missionScrollBar.value = scrollValue
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.InitCommonTopButton = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  self._backBtns = (self._ltBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_11_0 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UISailingMain, (self._chapterCfg).ID)
-  end
-, function()
-    -- function num : 0_11_1 , upvalues : self
+function UISailingChapter:InitCommonTopButton()
+  self._backBtns = self._ltBtn:SpawnObject("UICommonTopButton")
+  self._backBtns:SetData(function()
+    self:SwitchState(UIStateType.UISailingMain, self._chapterCfg.ID)
+  end, function()
     self:ShowDialog("UIHelpController", "UISailingChapter")
-  end
-, function()
-    -- function num : 0_11_2 , upvalues : self, _ENV
+  end, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.OnSailingGetProgressReward = function(self, cfgIDList)
-  -- function num : 0_12
+function UISailingChapter:OnSailingGetProgressReward(cfgIDList)
   self:UpdateRewardRedPoint()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.MissionItemOnPress = function(self, uiMissionItem, eventData)
-  -- function num : 0_13
+function UISailingChapter:MissionItemOnPress(uiMissionItem, eventData)
   self._selectedUIMissionItem = uiMissionItem
-  local selectedTr = (self._missionSelectedImage).transform
-  ;
-  (selectedTr.gameObject):SetActive(true)
-  selectedTr.position = ((uiMissionItem:View()).transform).position
-  ;
-  (self._missionSelectedImageAnim):Play("uieff_UISailingChapter_kuang")
+  local selectedTr = self._missionSelectedImage.transform
+  selectedTr.gameObject:SetActive(true)
+  selectedTr.position = uiMissionItem:View().transform.position
+  self._missionSelectedImageAnim:Play("uieff_UISailingChapter_kuang")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.MissionItemOnBeginDrag = function(self, uiMissionItem, eventData)
-  -- function num : 0_14
-  (self._missionScrollRect):OnBeginDrag(eventData)
+function UISailingChapter:MissionItemOnBeginDrag(uiMissionItem, eventData)
+  self._missionScrollRect:OnBeginDrag(eventData)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.MissionItemOnDrag = function(self, uiMissionItem, eventData)
-  -- function num : 0_15
-  (self._missionScrollRect):OnDrag(eventData)
+function UISailingChapter:MissionItemOnDrag(uiMissionItem, eventData)
+  self._missionScrollRect:OnDrag(eventData)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.MissionItemOnEndDrag = function(self, uiMissionItem, eventData)
-  -- function num : 0_16
-  (self._missionScrollRect):OnEndDrag(eventData)
+function UISailingChapter:MissionItemOnEndDrag(uiMissionItem, eventData)
+  self._missionScrollRect:OnEndDrag(eventData)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.GetAtlasProperty = function(self)
-  -- function num : 0_17
+function UISailingChapter:GetAtlasProperty()
   return self._atlasProperty
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.GetChapterCfg = function(self)
-  -- function num : 0_18
+function UISailingChapter:GetChapterCfg()
   return self._chapterCfg
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingChapter.GetGuideArea = function(self)
-  -- function num : 0_19
-  return ((self._missionPool)[1]):GetGuideArea()
+function UISailingChapter:GetGuideArea()
+  return self._missionPool[1]:GetGuideArea()
 end
-
-

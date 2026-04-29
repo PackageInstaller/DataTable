@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_turn_tetris_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewTurnTetrisInstruction", SkillPreviewBaseInstruction)
 SkillPreviewTurnTetrisInstruction = SkillPreviewTurnTetrisInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewTurnTetrisInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewTurnTetrisInstruction:Constructor(params)
   self._time = tonumber(params.Time)
   self._anim = params.Anim
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewTurnTetrisInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewTurnTetrisInstruction:DoInstruction(TT, casterEntity, previewContext)
   self._world = previewContext:GetWorld()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local tetrisDir, angle = utilDataSvc:GetFeatureTetrisDir()
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
-  local effectEntityID = (previewPickUpComponent:GetPickUpEffectEntityIDArray())[1]
-  local effectEntity = (self._world):GetEntityByID(effectEntityID)
-  local effectGO = (effectEntity:View()):GetGameObject()
-  local anim = (effectGO.gameObject):GetComponent("Animation")
+  local effectEntityID = previewPickUpComponent:GetPickUpEffectEntityIDArray()[1]
+  local effectEntity = self._world:GetEntityByID(effectEntityID)
+  local effectGO = effectEntity:View():GetGameObject()
+  local anim = effectGO.gameObject:GetComponent("Animation")
   anim:Play(self._anim)
-  ;
-  (effectGO.transform):DORotate(Vector3(0, angle, 0), self._time / 1000)
+  effectGO.transform:DORotate(Vector3(0, angle, 0), self._time / 1000)
   YIELD(TT, self._time)
 end
-
-

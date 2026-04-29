@@ -1,8 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/str_education.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_education_stage_name = "{1}단계", str_education_coin_cost = "소모", str_education_main_blue_name = "물의 모듈", str_education_main_red_name = "불의 모듈", str_education_main_green_name = "숲의 모듈", str_education_main_yellow_name = "번개의 모듈", str_education_main_singlebound_btn = "간편 레벨업", str_education_up_level_btn = "레벨업", str_education_up_stage_btn = "승급", str_education_up_full_level_btn = "최고레벨", str_education_up_pet_upgrade_title = "{1} 속성 오로리안 강화", str_education_up_attack = "공격력", str_education_up_defence = "방어력", str_education_up_health = "생명력", str_education_up_restrain = "{1} 속성 상성 피해 {2}", str_education_up_positive_skill = "{1} 속성 오로리안 액티브 스킬 피해 {2}", str_education_up_cell_rate = "{1} 속성 오로리안만 출전 시 {1} 속성 칸의 생성 확률 소폭 증가", str_education_up_level_not_meet = "재료 부족", str_education_upstage_preview_btn = "단계 미리보기", str_education_upstage_title = "승급 미리보기", str_education_upstage_upgrade = "승급", str_education_upstage_condition = "승급 조건", str_education_upstage_condition_tower = "4속성 오벨리스크 {1}층 ({2})", str_education_upstage_condition_tower2 = "{1} 속성 오벨리스크 {2}층 ({3})", str_education_upstage_condition_anytower = "임의", str_education_upstage_condition_awaken = "{2} 각성 오로리안 {1}명 ({3})", str_education_upstage_condition_grade = "{2}각성 {3} 속성 오로리안 {1}명 ({4})", str_education_upstage_not_meet = "승급 조건 미충족", str_education_preview_restrain = "{1} 속성 상성 피해", str_education_preview_positive_skill = "{1} 속성 오로리안 액티브 스킬 피해 증가", str_education_preview_cell_rate = "{1} 속성 오로리안만 출전 시 {1} 속성 칸의 생성 확률 소폭 증가", str_education_one_title = "간편 레벨업 정보", str_education_one_detail = "간편 레벨업 시 먼저 4개의 모듈을 같은 레벨까지 강화하며, 이후 물, 불, 숲, 번개 순서로 강화됩니다.\n간편 레벨업 시 각 모듈 레벨업의 필수 재료 아이템을 소모합니다.", str_education_one_confirm_btn = "간편 레벨업", str_education_one_notenough = "간편 레벨업 재료 부족", str_education_one_fulllevel = "간편 레벨업 최고레벨 도달", str_education_one_nolevel_toast = "더는 레벨업할 수 없음", str_education_property_add_tips = "계몽 시스템의 강화 효과는 오로리안 정보에 표시되지 않으며,\n전투 진입 시 수치가 적용됩니다."}
+local config = {
+  str_education_stage_name = "{1}단계",
+  str_education_coin_cost = "소모",
+  str_education_main_blue_name = "물의 모듈",
+  str_education_main_red_name = "불의 모듈",
+  str_education_main_green_name = "숲의 모듈",
+  str_education_main_yellow_name = "번개의 모듈",
+  str_education_main_singlebound_btn = "간편 레벨업",
+  str_education_up_level_btn = "레벨업",
+  str_education_up_stage_btn = "승급",
+  str_education_up_full_level_btn = "최고레벨",
+  str_education_up_pet_upgrade_title = "{1} 속성 오로리안 강화",
+  str_education_up_attack = "공격력",
+  str_education_up_defence = "방어력",
+  str_education_up_health = "생명력",
+  str_education_up_restrain = "{1} 속성 상성 피해 {2}",
+  str_education_up_positive_skill = "{1} 속성 오로리안 액티브 스킬 피해 {2}",
+  str_education_up_cell_rate = "{1} 속성 오로리안만 출전 시 {1} 속성 칸의 생성 확률 소폭 증가",
+  str_education_up_level_not_meet = "재료 부족",
+  str_education_upstage_preview_btn = "단계 미리보기",
+  str_education_upstage_title = "승급 미리보기",
+  str_education_upstage_upgrade = "승급",
+  str_education_upstage_condition = "승급 조건",
+  str_education_upstage_condition_tower = "4속성 오벨리스크 {1}층 ({2})",
+  str_education_upstage_condition_tower2 = "{1} 속성 오벨리스크 {2}층 ({3})",
+  str_education_upstage_condition_anytower = "임의",
+  str_education_upstage_condition_awaken = "{2} 각성 오로리안 {1}명 ({3})",
+  str_education_upstage_condition_grade = "{2}각성 {3} 속성 오로리안 {1}명 ({4})",
+  str_education_upstage_not_meet = "승급 조건 미충족",
+  str_education_preview_restrain = "{1} 속성 상성 피해",
+  str_education_preview_positive_skill = "{1} 속성 오로리안 액티브 스킬 피해 증가",
+  str_education_preview_cell_rate = "{1} 속성 오로리안만 출전 시 {1} 속성 칸의 생성 확률 소폭 증가",
+  str_education_one_title = "간편 레벨업 정보",
+  str_education_one_detail = "간편 레벨업 시 먼저 4개의 모듈을 같은 레벨까지 강화하며, 이후 물, 불, 숲, 번개 순서로 강화됩니다.\n간편 레벨업 시 각 모듈 레벨업의 필수 재료 아이템을 소모합니다.",
+  str_education_one_confirm_btn = "간편 레벨업",
+  str_education_one_notenough = "간편 레벨업 재료 부족",
+  str_education_one_fulllevel = "간편 레벨업 최고레벨 도달",
+  str_education_one_nolevel_toast = "더는 레벨업할 수 없음",
+  str_education_property_add_tips = "계몽 시스템의 강화 효과는 오로리안 정보에 표시되지 않으며,\n전투 진입 시 수치가 적용됩니다."
+}
 return config
-

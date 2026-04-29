@@ -1,144 +1,84 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/core/smoke_test_state_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SmokeTestStateNode", Object)
 SmokeTestStateNode = SmokeTestStateNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SmokeTestStateNode.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._manager = (GameGlobal.GetModule)(TestRobotModule)
+function SmokeTestStateNode:Constructor()
+  self._manager = GameGlobal.GetModule(TestRobotModule)
   self._state = SmokeTestStateNodeStatus.Create
   self._result = 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateNode.RegisterOwnerMachine = function(self, machine)
-  -- function num : 0_1
+function SmokeTestStateNode:RegisterOwnerMachine(machine)
   self._machine = machine
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateNode.Setup = function(self)
-  -- function num : 0_2
+function SmokeTestStateNode:Setup()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateNode.Teardown = function(self)
-  -- function num : 0_3
+function SmokeTestStateNode:Teardown()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateNode.Update = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  do
-    if SmokeTestStateNodeStatus.Enter == self._state then
-      local isFinished = self:Enter()
-      if isFinished then
-        self._state = SmokeTestStateNodeStatus.Execute
-      end
-    end
-    do
-      if SmokeTestStateNodeStatus.Execute == self._state then
-        local isFinished = self:Execute()
-        if isFinished then
-          self._state = SmokeTestStateNodeStatus.Exit
-        end
-      end
-      do
-        if SmokeTestStateNodeStatus.Exit == self._state then
-          local isFinished = self:Execute()
-          if isFinished then
-            self._state = SmokeTestStateNodeStatus.Done
-          end
-        end
-        return self._state
-      end
+function SmokeTestStateNode:Update()
+  if SmokeTestStateNodeStatus.Enter == self._state then
+    local isFinished = self:Enter()
+    if isFinished then
+      self._state = SmokeTestStateNodeStatus.Execute
     end
   end
-end
-
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateNode.GetStatus = function(self)
-  -- function num : 0_5
+  if SmokeTestStateNodeStatus.Execute == self._state then
+    local isFinished = self:Execute()
+    if isFinished then
+      self._state = SmokeTestStateNodeStatus.Exit
+    end
+  end
+  if SmokeTestStateNodeStatus.Exit == self._state then
+    local isFinished = self:Execute()
+    if isFinished then
+      self._state = SmokeTestStateNodeStatus.Done
+    end
+  end
   return self._state
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
+function SmokeTestStateNode:GetStatus()
+  return self._state
+end
 
-SmokeTestStateNode.GetResult = function(self)
-  -- function num : 0_6
+function SmokeTestStateNode:GetResult()
   return self._result
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateNode.Enter = function(self)
-  -- function num : 0_7
-  (self._manager):WriteProgressLog()
+function SmokeTestStateNode:Enter()
+  self._manager:WriteProgressLog()
   return self:OnBegin()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateNode.Execute = function(self)
-  -- function num : 0_8
+function SmokeTestStateNode:Execute()
   return self:OnWorking()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateNode.Exit = function(self)
-  -- function num : 0_9
-  (self._manager):WriteProgressLog()
+function SmokeTestStateNode:Exit()
+  self._manager:WriteProgressLog()
   return self:OnEnd()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateNode.OnSetup = function(self)
-  -- function num : 0_10
+function SmokeTestStateNode:OnSetup()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateNode.OnTeardown = function(self)
-  -- function num : 0_11
+function SmokeTestStateNode:OnTeardown()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateNode.OnBegin = function(self)
-  -- function num : 0_12
+function SmokeTestStateNode:OnBegin()
   return true
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateNode.OnWorking = function(self)
-  -- function num : 0_13
+function SmokeTestStateNode:OnWorking()
   return true
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateNode.OnEnd = function(self)
-  -- function num : 0_14
+function SmokeTestStateNode:OnEnd()
   return true
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateNode.__tostring = function(self)
-  -- function num : 0_15
+function SmokeTestStateNode:__tostring()
   return self._className
 end
-
-

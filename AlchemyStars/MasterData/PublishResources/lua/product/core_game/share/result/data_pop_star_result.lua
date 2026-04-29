@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_pop_star_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataPopStarResult", Object)
 DataPopStarResult = DataPopStarResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataPopStarResult.Constructor = function(self)
-  -- function num : 0_0
+function DataPopStarResult:Constructor()
   self._popNum = 0
   self._indexChange = false
   self._delSet = nil
@@ -22,158 +15,94 @@ DataPopStarResult.Constructor = function(self)
   self._totalPopNum = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.GetPopNum = function(self)
-  -- function num : 0_1
+function DataPopStarResult:GetPopNum()
   return self._popNum
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.SetPopNum = function(self, num)
-  -- function num : 0_2
+function DataPopStarResult:SetPopNum(num)
   self._popNum = num
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.IsIndexChange = function(self)
-  -- function num : 0_3
+function DataPopStarResult:IsIndexChange()
   return self._indexChange
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.SetIndexChange = function(self)
-  -- function num : 0_4
+function DataPopStarResult:SetIndexChange()
   self._indexChange = true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.GetDelSet = function(self)
-  -- function num : 0_5
+function DataPopStarResult:GetDelSet()
   return self._delSet
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.SetDelSet = function(self, del)
-  -- function num : 0_6
+function DataPopStarResult:SetDelSet(del)
   self._delSet = del
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.GetMoveSet = function(self)
-  -- function num : 0_7
+function DataPopStarResult:GetMoveSet()
   return self._moveSet
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.SetMoveSet = function(self, move)
-  -- function num : 0_8
+function DataPopStarResult:SetMoveSet(move)
   self._moveSet = move
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.GetNewSet = function(self)
-  -- function num : 0_9
+function DataPopStarResult:GetNewSet()
   return self._newSet
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.SetNewSet = function(self, new)
-  -- function num : 0_10
+function DataPopStarResult:SetNewSet(new)
   self._newSet = new
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.GetDelTrapList = function(self)
-  -- function num : 0_11
+function DataPopStarResult:GetDelTrapList()
   return self._delTrapList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.SetDelTrapList = function(self, del)
-  -- function num : 0_12
+function DataPopStarResult:SetDelTrapList(del)
   self._delTrapList = del
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.GetMoveTrapList = function(self)
-  -- function num : 0_13
+function DataPopStarResult:GetMoveTrapList()
   return self._moveTrapList
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.SetMoveTrapList = function(self, move)
-  -- function num : 0_14
+function DataPopStarResult:SetMoveTrapList(move)
   self._moveTrapList = move
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.GetNewTrapList = function(self)
-  -- function num : 0_15
+function DataPopStarResult:GetNewTrapList()
   return self._newTrapList
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.SetNewTrapList = function(self, new)
-  -- function num : 0_16
+function DataPopStarResult:SetNewTrapList(new)
   self._newTrapList = new
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.GetPopConnectPieces = function(self)
-  -- function num : 0_17
+function DataPopStarResult:GetPopConnectPieces()
   return self._popConnectPieces
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.SetPopConnectPieces = function(self, popConnectPieces)
-  -- function num : 0_18
+function DataPopStarResult:SetPopConnectPieces(popConnectPieces)
   self._popConnectPieces = popConnectPieces
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.AddTrapSkillResult = function(self, entityID, skillResult, triggerEntityID)
-  -- function num : 0_19 , upvalues : _ENV
-  (table.insert)(self._trapSkillResults, {entityID, skillResult, triggerEntityID})
+function DataPopStarResult:AddTrapSkillResult(entityID, skillResult, triggerEntityID)
+  table.insert(self._trapSkillResults, {
+    entityID,
+    skillResult,
+    triggerEntityID
+  })
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.GetTrapSkillResults = function(self)
-  -- function num : 0_20
+function DataPopStarResult:GetTrapSkillResults()
   return self._trapSkillResults
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.GetTotalPopNum = function(self)
-  -- function num : 0_21
+function DataPopStarResult:GetTotalPopNum()
   return self._totalPopNum
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPopStarResult.SetTotalPopNum = function(self, num)
-  -- function num : 0_22
+function DataPopStarResult:SetTotalPopNum(num)
   self._totalPopNum = num
 end
-
-

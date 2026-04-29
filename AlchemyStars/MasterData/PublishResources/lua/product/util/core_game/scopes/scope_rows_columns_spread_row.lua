@@ -1,24 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_rows_columns_spread_row.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_NRowsMColumnsSpreadAlongRow", SkillScopeCalculator_Base)
 SkillScopeCalculator_NRowsMColumnsSpreadAlongRow = SkillScopeCalculator_NRowsMColumnsSpreadAlongRow
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_NRowsMColumnsSpreadAlongRow.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_NRowsMColumnsSpreadAlongRow:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local casterPos = centerPos
   local skillNRowsMColumnsScopeParam = scopeParam
   local columns = skillNRowsMColumnsScopeParam:GetSkillScopeColumns()
   local rows = skillNRowsMColumnsScopeParam:GetSkillScopeRows()
   local targetArea = {}
   local wholeArea = {}
-  local yMoveCount = (math.floor)((rows - 1) / 2 + 0.5)
-  local xMoveCount = (math.floor)((columns - 1) / 2 + 0.5)
-  local blockGridTrapPosList = (self._gridFilter):GetBlockGridTrapPosList()
+  local yMoveCount = math.floor((rows - 1) / 2 + 0.5)
+  local xMoveCount = math.floor((columns - 1) / 2 + 0.5)
+  local blockGridTrapPosList = self._gridFilter:GetBlockGridTrapPosList()
   for yMoveIndex = 0, yMoveCount do
     local topY = casterPos.y + yMoveIndex
     local bottomY = casterPos.y - yMoveIndex
@@ -31,7 +24,7 @@ SkillScopeCalculator_NRowsMColumnsSpreadAlongRow.CalcRange = function(self, scop
       local leftX = casterPos.x - xMoveIndex
       local leftXTopY = Vector2(leftX, topY)
       if not leftUpBlocked then
-        if xMoveIndex == 0 or not (table.icontains)(blockGridTrapPosList, leftXTopY) then
+        if xMoveIndex == 0 or not table.icontains(blockGridTrapPosList, leftXTopY) then
           self:_InsertTargetGrid(targetArea, leftXTopY, wholeArea)
         else
           leftUpBlocked = true
@@ -42,7 +35,7 @@ SkillScopeCalculator_NRowsMColumnsSpreadAlongRow.CalcRange = function(self, scop
       end
       local leftXBottomY = Vector2(leftX, bottomY)
       if not leftDownBlocked then
-        if xMoveIndex == 0 or not (table.icontains)(blockGridTrapPosList, leftXBottomY) then
+        if xMoveIndex == 0 or not table.icontains(blockGridTrapPosList, leftXBottomY) then
           self:_InsertTargetGrid(targetArea, leftXBottomY, wholeArea)
         else
           leftDownBlocked = true
@@ -53,7 +46,7 @@ SkillScopeCalculator_NRowsMColumnsSpreadAlongRow.CalcRange = function(self, scop
       end
       local rightXTopY = Vector2(rightX, topY)
       if not rightUpBlocked then
-        if xMoveIndex == 0 or not (table.icontains)(blockGridTrapPosList, rightXTopY) then
+        if xMoveIndex == 0 or not table.icontains(blockGridTrapPosList, rightXTopY) then
           self:_InsertTargetGrid(targetArea, rightXTopY, wholeArea)
         else
           rightUpBlocked = true
@@ -64,7 +57,7 @@ SkillScopeCalculator_NRowsMColumnsSpreadAlongRow.CalcRange = function(self, scop
       end
       local rightXBottomY = Vector2(rightX, bottomY)
       if not rightDownBlocked then
-        if xMoveIndex == 0 or not (table.icontains)(blockGridTrapPosList, rightXBottomY) then
+        if xMoveIndex == 0 or not table.icontains(blockGridTrapPosList, rightXBottomY) then
           self:_InsertTargetGrid(targetArea, rightXBottomY, wholeArea)
         else
           rightDownBlocked = true
@@ -78,5 +71,3 @@ SkillScopeCalculator_NRowsMColumnsSpreadAlongRow.CalcRange = function(self, scop
   local result = SkillScopeResult:New(SkillScopeType.NRowsMColumns, casterPos, targetArea, wholeArea)
   return result
 end
-
-

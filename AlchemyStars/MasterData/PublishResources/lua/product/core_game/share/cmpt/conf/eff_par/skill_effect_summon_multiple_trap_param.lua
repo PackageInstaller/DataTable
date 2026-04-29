@@ -1,287 +1,179 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_summon_multiple_trap_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectSummonMultipleTrapParam", SkillEffectParamBase)
 SkillEffectSummonMultipleTrapParam = SkillEffectSummonMultipleTrapParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectSummonMultipleTrapParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectSummonMultipleTrapParam:Constructor(t)
   local metaSrc = t.src
   local colorDic = {}
   if not metaSrc then
     colorDic = self:_GenerateFullColorTable()
+  elseif "number" == type(metaSrc) then
+    colorDic = {
+      [tonumber(metaSrc)] = true
+    }
+  elseif #metaSrc == 0 then
+    colorDic = self:_GenerateFullColorTable()
   else
-    if type(metaSrc) == "number" then
-      colorDic = {[tonumber(metaSrc)] = true}
-    else
-      if #metaSrc == 0 then
-        colorDic = self:_GenerateFullColorTable()
-      else
-        colorDic = {}
-        for i = 1, #metaSrc do
-          colorDic[tonumber(metaSrc[i])] = true
-        end
-      end
+    colorDic = {}
+    for i = 1, #metaSrc do
+      colorDic[tonumber(metaSrc[i])] = true
     end
   end
-  do
-    self._colorDic = colorDic
-    self._trapID = t.trapID
-    self._maxCount = t.maxCount
-    self._isRandom = t.random == 1
-    if not t.absPos then
-      self._absPosArray = {}
-      self._emptyPieceOnly = t.emptyPieceOnly == 1
-      self._ignoreBlock = t.ignoreBlock or false
-      self._ignoreAbyss = t.ignoreAbyss or false
-      self._maxRandCount = t.maxRandCount
-      self._minRandCount = t.minRandCount
-      self:CheckMinMaxRoundCount()
-      self._additionalCountScopeType = t.additionalCountScopeType
-      self._additionalCountScopeParam = t.additionalCountScopeParam
-      if not t.additionalCountElementType then
-        self._additionalCountElementType = {}
-        self._additionalCountParam = t.additionalCountParam
-        self._maxAdditionalCount = t.maxAdditionalCount
-        self._transferDisabled = t.transferDisabled == 1
-        self._isEmptyOrTrap = t.emptyOrTrap
-        self._findPosTrapId = t.findPosTrapId
-        self._useBoardRandom = t.useBoardRandom or 0
-        self._blockSummonTrapType = t.blockSummonTrapType
-        self._excludeTraps = t.excludeTraps
-        self._isFindRandEmptyPosIfNoValid = t.isFindRandEmptyPosIfNoValid or false
-        self._sortValidPosType = t.sortValidPosType
-        self._teamLeaderElement = t.TeamLeaderElement
-        self._colorPriorityDic = t.colorPriorityDic
-        self._useTetrisFeatureCount = t.useTetrisFeatureCount
-        -- DECOMPILER ERROR: 9 unprocessed JMP targets
-      end
-    end
-  end
+  self._colorDic = colorDic
+  self._trapID = t.trapID
+  self._maxCount = t.maxCount
+  self._isRandom = t.random == 1
+  self._absPosArray = t.absPos or {}
+  self._emptyPieceOnly = t.emptyPieceOnly == 1
+  self._ignoreBlock = t.ignoreBlock or false
+  self._ignoreAbyss = t.ignoreAbyss or false
+  self._maxRandCount = t.maxRandCount
+  self._minRandCount = t.minRandCount
+  self:CheckMinMaxRoundCount()
+  self._additionalCountScopeType = t.additionalCountScopeType
+  self._additionalCountScopeParam = t.additionalCountScopeParam
+  self._additionalCountElementType = t.additionalCountElementType or {}
+  self._additionalCountParam = t.additionalCountParam
+  self._maxAdditionalCount = t.maxAdditionalCount
+  self._transferDisabled = t.transferDisabled == 1
+  self._isEmptyOrTrap = t.emptyOrTrap
+  self._findPosTrapId = t.findPosTrapId
+  self._useBoardRandom = t.useBoardRandom or 0
+  self._blockSummonTrapType = t.blockSummonTrapType
+  self._excludeTraps = t.excludeTraps
+  self._isFindRandEmptyPosIfNoValid = t.isFindRandEmptyPosIfNoValid or false
+  self._sortValidPosType = t.sortValidPosType
+  self._teamLeaderElement = t.TeamLeaderElement
+  self._colorPriorityDic = t.colorPriorityDic
+  self._useTetrisFeatureCount = t.useTetrisFeatureCount
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.IsUseTetrisFeatureCount = function(self)
-  -- function num : 0_1
+function SkillEffectSummonMultipleTrapParam:IsUseTetrisFeatureCount()
   return self._useTetrisFeatureCount
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam._GenerateFullColorTable = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectSummonMultipleTrapParam:_GenerateFullColorTable()
   local t = {}
-  for key,value in pairs(PieceType) do
+  for key, value in pairs(PieceType) do
     t[value] = true
   end
   return t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetEffectType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectSummonMultipleTrapParam:GetEffectType()
   return SkillEffectType.SummonMultipleTrap
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetSelectedColorTable = function(self)
-  -- function num : 0_4
+function SkillEffectSummonMultipleTrapParam:GetSelectedColorTable()
   return self._colorDic
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetTrapID = function(self)
-  -- function num : 0_5
+function SkillEffectSummonMultipleTrapParam:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetMaxCount = function(self)
-  -- function num : 0_6
+function SkillEffectSummonMultipleTrapParam:GetMaxCount()
   return self._maxCount
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.IsRandom = function(self)
-  -- function num : 0_7
+function SkillEffectSummonMultipleTrapParam:IsRandom()
   return self._isRandom
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetAbsPosArray = function(self)
-  -- function num : 0_8
+function SkillEffectSummonMultipleTrapParam:GetAbsPosArray()
   return self._absPosArray
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.IsEmptyPosOnly = function(self)
-  -- function num : 0_9
+function SkillEffectSummonMultipleTrapParam:IsEmptyPosOnly()
   return self._emptyPieceOnly
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.IgnoreBlock = function(self)
-  -- function num : 0_10
+function SkillEffectSummonMultipleTrapParam:IgnoreBlock()
   return self._ignoreBlock
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.CheckMinMaxRoundCount = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function SkillEffectSummonMultipleTrapParam:CheckMinMaxRoundCount()
   if self._minRandCount or self._maxRandCount then
     if not self._minRandCount or not self._maxRandCount then
-      (Log.fatal)("Config Failed ,minRoundCount:", self._minRandCount, "maxRound", self._maxRandCount)
-    else
-      if self._maxRandCount < self._minRandCount then
-        (Log.fatal)("Config Failed ,minRoundCount:", self._minRandCount, "maxRound", self._maxRandCount)
-      end
+      Log.fatal("Config Failed ,minRoundCount:", self._minRandCount, "maxRound", self._maxRandCount)
+    elseif self._minRandCount > self._maxRandCount then
+      Log.fatal("Config Failed ,minRoundCount:", self._minRandCount, "maxRound", self._maxRandCount)
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetRandCount = function(self)
-  -- function num : 0_12
+function SkillEffectSummonMultipleTrapParam:GetRandCount()
   return self._minRandCount, self._maxRandCount
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetIgnoreAbyss = function(self)
-  -- function num : 0_13
+function SkillEffectSummonMultipleTrapParam:GetIgnoreAbyss()
   return self._ignoreAbyss
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetAdditionalCountScopeType = function(self)
-  -- function num : 0_14
+function SkillEffectSummonMultipleTrapParam:GetAdditionalCountScopeType()
   return self._additionalCountScopeType
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetAdditionalCountScopeParam = function(self)
-  -- function num : 0_15
+function SkillEffectSummonMultipleTrapParam:GetAdditionalCountScopeParam()
   return self._additionalCountScopeParam
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetAdditionalCountElementType = function(self)
-  -- function num : 0_16
+function SkillEffectSummonMultipleTrapParam:GetAdditionalCountElementType()
   return self._additionalCountElementType
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetAdditionalCountElementDic = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function SkillEffectSummonMultipleTrapParam:GetAdditionalCountElementDic()
   local d = {}
-  for _,element in ipairs(self._additionalCountElementType) do
+  for _, element in ipairs(self._additionalCountElementType) do
     d[element] = true
   end
   return d
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetAdditionalCountParam = function(self)
-  -- function num : 0_18
+function SkillEffectSummonMultipleTrapParam:GetAdditionalCountParam()
   return self._additionalCountParam
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetMaxAdditionalCount = function(self)
-  -- function num : 0_19
+function SkillEffectSummonMultipleTrapParam:GetMaxAdditionalCount()
   return self._maxAdditionalCount
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.IsTransferDisabled = function(self)
-  -- function num : 0_20
+function SkillEffectSummonMultipleTrapParam:IsTransferDisabled()
   return self._transferDisabled
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.IsEmptyOrTrap = function(self)
-  -- function num : 0_21
+function SkillEffectSummonMultipleTrapParam:IsEmptyOrTrap()
   return self._isEmptyOrTrap
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetFindPosTrapId = function(self)
-  -- function num : 0_22
+function SkillEffectSummonMultipleTrapParam:GetFindPosTrapId()
   return self._findPosTrapId
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.IsUseBoardRandom = function(self)
-  -- function num : 0_23
-  do return self._useBoardRandom == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillEffectSummonMultipleTrapParam:IsUseBoardRandom()
+  return self._useBoardRandom == 1
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetBlockSummonTrapType = function(self)
-  -- function num : 0_24
+function SkillEffectSummonMultipleTrapParam:GetBlockSummonTrapType()
   return self._blockSummonTrapType
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetExcludeTraps = function(self)
-  -- function num : 0_25
+function SkillEffectSummonMultipleTrapParam:GetExcludeTraps()
   return self._excludeTraps
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.IsFindRandEmptyPosIfNoValid = function(self)
-  -- function num : 0_26
+function SkillEffectSummonMultipleTrapParam:IsFindRandEmptyPosIfNoValid()
   return self._isFindRandEmptyPosIfNoValid
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetSortValidPosType = function(self)
-  -- function num : 0_27
+function SkillEffectSummonMultipleTrapParam:GetSortValidPosType()
   return self._sortValidPosType
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetTeamLeaderElement = function(self)
-  -- function num : 0_28
+function SkillEffectSummonMultipleTrapParam:GetTeamLeaderElement()
   return self._teamLeaderElement
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonMultipleTrapParam.GetColorPriorityDic = function(self)
-  -- function num : 0_29
+function SkillEffectSummonMultipleTrapParam:GetColorPriorityDic()
   return self._colorPriorityDic
 end
-
-

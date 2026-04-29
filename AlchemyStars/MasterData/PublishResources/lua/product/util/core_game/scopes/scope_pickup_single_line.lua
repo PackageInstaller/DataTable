@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_pickup_single_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_PickUpSingleLine", SkillScopeCalculator_Base)
 SkillScopeCalculator_PickUpSingleLine = SkillScopeCalculator_PickUpSingleLine
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_PickUpSingleLine.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = (self._gridFilter)._world
+function SkillScopeCalculator_PickUpSingleLine:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  local world = self._gridFilter._world
   local dirType = self:GetDirection(centerPos, casterPos)
   local utilScopeSvc = world:GetService("UtilScopeCalc")
   local pickUpPos, pickUpNEGPos = utilScopeSvc:CalcPickUpSingleLine(dirType, casterPos)
-  ;
-  (table.Vector2Append)(pickUpPos, pickUpNEGPos)
+  table.Vector2Append(pickUpPos, pickUpNEGPos)
   local result = SkillScopeResult:New(SkillScopeType.PickUpSingleLine, centerPos, pickUpPos, pickUpPos)
   return result
 end
-
-

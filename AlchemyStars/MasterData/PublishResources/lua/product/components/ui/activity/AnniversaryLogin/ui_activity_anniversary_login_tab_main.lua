@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/AnniversaryLogin/ui_activity_anniversary_login_tab_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityAnniversaryLoginTabMain", UICustomWidget)
 UIActivityAnniversaryLoginTabMain = UIActivityAnniversaryLoginTabMain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityAnniversaryLoginTabMain.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityAnniversaryLoginTabMain:OnShow(uiParams)
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabMain.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityAnniversaryLoginTabMain:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabMain.SetData = function(self, campaign, component, refreshCallback, closeCallback, tipsCallback, btnCallback)
-  -- function num : 0_2
+function UIActivityAnniversaryLoginTabMain:SetData(campaign, component, refreshCallback, closeCallback, tipsCallback, btnCallback)
   self._campaign = campaign
   self._component = component
   self._refreshCallback = refreshCallback
@@ -31,59 +18,36 @@ UIActivityAnniversaryLoginTabMain.SetData = function(self, campaign, component, 
   self._btnCallback = btnCallback
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabMain.Refresh = function(self)
-  -- function num : 0_3
+function UIActivityAnniversaryLoginTabMain:Refresh()
   self:_SetDynamicListData()
   self:_SetDynamicList()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabMain._SetDynamicListData = function(self)
-  -- function num : 0_4
-  self._infos = (self._component):GetTimeRewardsList()
+function UIActivityAnniversaryLoginTabMain:_SetDynamicListData()
+  self._infos = self._component:GetTimeRewardsList()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabMain._SetDynamicList = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityAnniversaryLoginTabMain:_SetDynamicList()
   if not self._dynamicListHelper then
     self._dynamicListHelper = UIActivityDynamicListHelper:New(self, self:GetUIComponent("UIDynamicScrollView", "_dynamicList"), "UIActivityAnniversaryLoginTabMainListItem", function(listItem, itemIndex)
-    -- function num : 0_5_0 , upvalues : self
-    local info = (self._infos)[itemIndex]
-    listItem:SetData(self._component, info.reward_id, info, self._refreshCallback, self._tipsCallback, self._btnCallback)
-  end
-)
+      local info = self._infos[itemIndex]
+      listItem:SetData(self._component, info.reward_id, info, self._refreshCallback, self._tipsCallback, self._btnCallback)
+    end)
   end
   local itemCount = #self._infos
   local itemCountPerRow = 1
-  ;
-  (self._dynamicListHelper):Refresh(itemCount, itemCountPerRow)
+  self._dynamicListHelper:Refresh(itemCount, itemCountPerRow)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabMain.LookBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._refreshCallback)(UIActivityAnniversaryLoginState.TabPre)
+function UIActivityAnniversaryLoginTabMain:LookBtnOnClick(go)
+  self._refreshCallback(UIActivityAnniversaryLoginState.TabPre)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabMain.PreviewBtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  local story_id = (UIActivityHelper.GetCampaignFirstEnterStoryID)(self._campaign, 1)
+function UIActivityAnniversaryLoginTabMain:PreviewBtnOnClick(go)
+  local story_id = UIActivityHelper.GetCampaignFirstEnterStoryID(self._campaign, 1)
   self:ShowDialog("UIStoryController", story_id)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabMain.CloseBtnOnClick = function(self, go)
-  -- function num : 0_8
-  (self._closeCallback)()
+function UIActivityAnniversaryLoginTabMain:CloseBtnOnClick(go)
+  self._closeCallback()
 end
-
-

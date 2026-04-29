@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_player_info/ui_emblazonry_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEmblazonryItem", UICustomWidget)
 UIEmblazonryItem = UIEmblazonryItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEmblazonryItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIEmblazonryItem:OnShow(uiParams)
   self:AttachEvent(GameEventType.OnEmblazonryItemSelect, self.Select)
   self:AttachEvent(GameEventType.OnPlayerEmblazonryChange, self.EmblazonryChange)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEmblazonryItem.SetData = function(self, data)
-  -- function num : 0_1
+function UIEmblazonryItem:SetData(data)
   self._itemid = data.itemid
   self._icon = data.icon
   self._lock = data.lock
@@ -27,10 +17,7 @@ UIEmblazonryItem.SetData = function(self, data)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEmblazonryItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIEmblazonryItem:_GetComponents()
   self._iconImage = self:GetUIComponent("RawImageLoader", "iconImage")
   self._emptyObj = self:GetGameObject("emptyObj")
   self._iconObj = self:GetGameObject("iconImage")
@@ -40,116 +27,73 @@ UIEmblazonryItem._GetComponents = function(self)
   self._newObj = self:GetGameObject("newObj")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEmblazonryItem._RevertState = function(self)
-  -- function num : 0_3
-  (self._emptyObj):SetActive(false)
-  ;
-  (self._iconObj):SetActive(false)
-  ;
-  (self._usingObj):SetActive(false)
-  ;
-  (self._selectObj):SetActive(false)
-  ;
-  (self._lockObj):SetActive(false)
+function UIEmblazonryItem:_RevertState()
+  self._emptyObj:SetActive(false)
+  self._iconObj:SetActive(false)
+  self._usingObj:SetActive(false)
+  self._selectObj:SetActive(false)
+  self._lockObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEmblazonryItem._OnValue = function(self)
-  -- function num : 0_4
+function UIEmblazonryItem:_OnValue()
   if self._itemid < 0 then
-    (self._emptyObj):SetActive(true)
+    self._emptyObj:SetActive(true)
   else
-    ;
-    (self._iconObj):SetActive(true)
-    ;
-    (self._iconImage):LoadImage(self._icon)
-    ;
-    (self._usingObj):SetActive(self._using)
-    ;
-    (self._selectObj):SetActive(self._using)
-    ;
-    (self._lockObj):SetActive(self._lock)
+    self._iconObj:SetActive(true)
+    self._iconImage:LoadImage(self._icon)
+    self._usingObj:SetActive(self._using)
+    self._selectObj:SetActive(self._using)
+    self._lockObj:SetActive(self._lock)
     self:_SetRed()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEmblazonryItem._SetRed = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIEmblazonryItem:_SetRed()
   self._redState = false
   if self._itemid then
-    ((GameGlobal.GetModule)(ItemModule))
-    local itemModule = nil
-    local item_data = nil
+    local itemModule = GameGlobal.GetModule(ItemModule)
+    local item_data
     local items = itemModule:GetItemByTempId(self._itemid)
-    if items and (table.count)(items) > 0 then
-      for key,value in pairs(items) do
+    if items and table.count(items) > 0 then
+      for key, value in pairs(items) do
         item_data = value
-        do break end
+        break
       end
     end
-    do
-      do
-        if item_data then
-          local cfg_item = (Cfg.cfg_item)[(item_data:GetTemplate()).ID]
-          if cfg_item.ShowNew and cfg_item.ShowNew == 1 then
-            self._redState = item_data:IsNewOverlay()
-            self._pstid = item_data:GetID()
-          end
-        end
-        ;
-        (self._newObj):SetActive(self._redState)
+    if item_data then
+      local cfg_item = Cfg.cfg_item[item_data:GetTemplate().ID]
+      if cfg_item.ShowNew and cfg_item.ShowNew == 1 then
+        self._redState = item_data:IsNewOverlay()
+        self._pstid = item_data:GetID()
       end
     end
   end
+  self._newObj:SetActive(self._redState)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEmblazonryItem.iconOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIEmblazonryItem:iconOnClick()
   if self._callback then
-    (self._callback)(self._itemid)
+    self._callback(self._itemid)
   end
   if self._redState then
     self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    if self._itemid and self._pstid then
-      local itemModule = (GameGlobal.GetModule)(ItemModule)
-      itemModule:SetItemUnnewOverlay(TT, self._pstid)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshPlayerInfoRedPoint)
-    end
-  end
-)
+      if self._itemid and self._pstid then
+        local itemModule = GameGlobal.GetModule(ItemModule)
+        itemModule:SetItemUnnewOverlay(TT, self._pstid)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshPlayerInfoRedPoint)
+      end
+    end)
     self._redState = false
-    ;
-    (self._newObj):SetActive(self._redState)
+    self._newObj:SetActive(self._redState)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEmblazonryItem.Select = function(self, itemid)
-  -- function num : 0_7
+function UIEmblazonryItem:Select(itemid)
   local select = self._itemid == itemid
-  ;
-  (self._selectObj):SetActive(select)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._selectObj:SetActive(select)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEmblazonryItem.EmblazonryChange = function(self, itemid)
-  -- function num : 0_8
+function UIEmblazonryItem:EmblazonryChange(itemid)
   local using = self._itemid == itemid
-  ;
-  (self._usingObj):SetActive(using)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._usingObj:SetActive(using)
 end
-
-

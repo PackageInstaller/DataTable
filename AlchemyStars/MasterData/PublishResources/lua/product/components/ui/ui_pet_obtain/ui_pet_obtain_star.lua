@@ -1,92 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_obtain/ui_pet_obtain_star.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetObtainStar", UICustomWidget)
 UIPetObtainStar = UIPetObtainStar
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetObtainStar.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetObtainStar:OnShow()
   self._go = self:GetGameObject()
-  self._eff = (self:GetGameObject("eff")).transform
+  self._eff = self:GetGameObject("eff").transform
   self._tweener = nil
-  local eff = (UIHelper.GetGameObject)("uieff_uipetobtain_xingxing01.prefab")
-  ;
-  (eff.transform):SetParent(self._eff, false)
+  local eff = UIHelper.GetGameObject("uieff_uipetobtain_xingxing01.prefab")
+  eff.transform:SetParent(self._eff, false)
   self:HideStar()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetObtainStar.OnHide = function(self)
-  -- function num : 0_1
+function UIPetObtainStar:OnHide()
   self._go = nil
   self._eff = nil
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetObtainStar.ShowStar = function(self, idx, count)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetObtainStar:ShowStar(idx, count)
   if not self._go then
-    return 
+    return
   end
-  local go = nil
-  self._tweener = (((((self._go).transform):DOScale(1, 1)):SetDelay(2.35 + (idx - 1) * 0.1)):OnStart(function()
-    -- function num : 0_2_0 , upvalues : self, idx, count, go, _ENV
+  local go
+  self._tweener = self._go.transform:DOScale(1, 1):SetDelay(2.35 + (idx - 1) * 0.1):OnStart(function()
     if not self._go then
-      return 
+      return
     end
-    ;
-    (self._go):SetActive(true)
-    ;
-    ((self._eff).gameObject):SetActive(true)
+    self._go:SetActive(true)
+    self._eff.gameObject:SetActive(true)
     if idx == count then
       if not self._eff then
-        return 
+        return
       end
-      go = (UIHelper.GetGameObject)("uieff_uipetobtain_xingxing02.prefab")
-      ;
-      (go.transform):SetParent(self._eff, false)
+      go = UIHelper.GetGameObject("uieff_uipetobtain_xingxing02.prefab")
+      go.transform:SetParent(self._eff, false)
     end
-  end
-)):OnComplete(function()
-    -- function num : 0_2_1 , upvalues : idx, count, go
+  end):OnComplete(function()
     if idx == count then
       if not go then
-        return 
+        return
       end
       go:SetActive(false)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetObtainStar.HideStar = function(self)
-  -- function num : 0_3
+function UIPetObtainStar:HideStar()
   if self._go then
-    (self._go):SetActive(false)
+    self._go:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetObtainStar.CompleteTween = function(self)
-  -- function num : 0_4
+function UIPetObtainStar:CompleteTween()
   if self._tweener then
-    (self._tweener):Complete(true)
+    self._tweener:Complete(true)
   end
-  ;
-  (self._go):SetActive(true)
-  ;
-  ((self._eff).gameObject):SetActive(false)
+  self._go:SetActive(true)
+  self._eff.gameObject:SetActive(false)
 end
-
-

@@ -1,27 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_air_nav_menu/ui_air_nav_menu_pet_story_circle_eff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAirNavMenuPetStoryCircleEff", UICustomWidget)
 UIAirNavMenuPetStoryCircleEff = UIAirNavMenuPetStoryCircleEff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAirNavMenuPetStoryCircleEff.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAirNavMenuPetStoryCircleEff:OnShow(uiParams)
   self._offset = Vector2(0, 20)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuPetStoryCircleEff.OnHide = function(self)
-  -- function num : 0_1
+function UIAirNavMenuPetStoryCircleEff:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuPetStoryCircleEff.SetData = function(self, pos, size, data)
-  -- function num : 0_2
+function UIAirNavMenuPetStoryCircleEff:SetData(pos, size, data)
   self:GetComponents()
   self._size = size
   self._data = data
@@ -29,35 +16,16 @@ UIAirNavMenuPetStoryCircleEff.SetData = function(self, pos, size, data)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuPetStoryCircleEff.FlushPos = function(self, pos)
-  -- function num : 0_3
+function UIAirNavMenuPetStoryCircleEff:FlushPos(pos)
   self._pos = pos
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = self._pos + self._offset
+  self._rect.anchoredPosition = self._pos + self._offset
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuPetStoryCircleEff.OnValue = function(self)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._rect).anchoredPosition = self._pos + self._offset
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = self._size
+function UIAirNavMenuPetStoryCircleEff:OnValue()
+  self._rect.anchoredPosition = self._pos + self._offset
+  self._rect.sizeDelta = self._size
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuPetStoryCircleEff.GetComponents = function(self)
-  -- function num : 0_5
+function UIAirNavMenuPetStoryCircleEff:GetComponents()
   self._rect = self:GetUIComponent("RectTransform", "pos")
 end
-
-

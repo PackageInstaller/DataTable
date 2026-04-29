@@ -1,169 +1,100 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/guide_listener_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("guide_svc_r")
 _class("GuideServiceListenerRender", GameEventListener)
 GuideServiceListenerRender = GuideServiceListenerRender
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GuideServiceListenerRender.Constructor = function(self, guide_service)
-  -- function num : 0_0
+function GuideServiceListenerRender:Constructor(guide_service)
   self._guide_service = guide_service
   self._eventDispatcher = guide_service._eventDispatcher
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideServiceListenerRender.RegEvents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._eventDispatcher):AddListener(GameEventType.ShowGuideStep, self)
-  ;
-  (self._eventDispatcher):AddListener(GameEventType.PauseGuideWeakLine, self)
-  ;
-  (self._eventDispatcher):AddListener(GameEventType.FinishGuideWeakLine, self)
-  ;
-  (self._eventDispatcher):AddListener(GameEventType.FinishGuideStep, self)
-  ;
-  (self._eventDispatcher):AddListener(GameEventType.GuideYield, self)
-  ;
-  (self._eventDispatcher):AddListener(GameEventType.GuideActiveSkill, self)
-  ;
-  (self._eventDispatcher):AddListener(GameEventType.GuideChangeGhostLayer, self)
-  ;
-  (self._eventDispatcher):AddListener(GameEventType.GuideYieldBreak, self)
+function GuideServiceListenerRender:RegEvents()
+  self._eventDispatcher:AddListener(GameEventType.ShowGuideStep, self)
+  self._eventDispatcher:AddListener(GameEventType.PauseGuideWeakLine, self)
+  self._eventDispatcher:AddListener(GameEventType.FinishGuideWeakLine, self)
+  self._eventDispatcher:AddListener(GameEventType.FinishGuideStep, self)
+  self._eventDispatcher:AddListener(GameEventType.GuideYield, self)
+  self._eventDispatcher:AddListener(GameEventType.GuideActiveSkill, self)
+  self._eventDispatcher:AddListener(GameEventType.GuideChangeGhostLayer, self)
+  self._eventDispatcher:AddListener(GameEventType.GuideYieldBreak, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideServiceListenerRender.UnregEvents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._eventDispatcher):RemoveListener(GameEventType.ShowGuideStep, self.listenerID)
-  ;
-  (self._eventDispatcher):RemoveListener(GameEventType.PauseGuideWeakLine, self.listenerID)
-  ;
-  (self._eventDispatcher):RemoveListener(GameEventType.FinishGuideWeakLine, self.listenerID)
-  ;
-  (self._eventDispatcher):RemoveListener(GameEventType.FinishGuideStep, self.listenerID)
-  ;
-  (self._eventDispatcher):RemoveListener(GameEventType.GuideYield, self.listenerID)
-  ;
-  (self._eventDispatcher):RemoveListener(GameEventType.GuideActiveSkill, self.listenerID)
-  ;
-  (self._eventDispatcher):RemoveListener(GameEventType.GuideChangeGhostLayer, self.listenerID)
-  ;
-  (self._eventDispatcher):RemoveListener(GameEventType.GuideYieldBreak, self.listenerID)
+function GuideServiceListenerRender:UnregEvents()
+  self._eventDispatcher:RemoveListener(GameEventType.ShowGuideStep, self.listenerID)
+  self._eventDispatcher:RemoveListener(GameEventType.PauseGuideWeakLine, self.listenerID)
+  self._eventDispatcher:RemoveListener(GameEventType.FinishGuideWeakLine, self.listenerID)
+  self._eventDispatcher:RemoveListener(GameEventType.FinishGuideStep, self.listenerID)
+  self._eventDispatcher:RemoveListener(GameEventType.GuideYield, self.listenerID)
+  self._eventDispatcher:RemoveListener(GameEventType.GuideActiveSkill, self.listenerID)
+  self._eventDispatcher:RemoveListener(GameEventType.GuideChangeGhostLayer, self.listenerID)
+  self._eventDispatcher:RemoveListener(GameEventType.GuideYieldBreak, self.listenerID)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideServiceListenerRender.OnGameEvent = function(self, gameEventType, param)
-  -- function num : 0_3 , upvalues : _ENV
+function GuideServiceListenerRender:OnGameEvent(gameEventType, param)
   if gameEventType == GameEventType.ShowGuideStep then
     local guideStep = param
-    if guideStep then
-      local guideType = (guideStep.data).guideType
-    end
-    if guideStep then
-      local guideParam = guideStep.guideParam
-    end
+    local guideType = guideStep and guideStep.data.guideType
+    local guideParam = guideStep and guideStep.guideParam
     if guideType == GuideType.Line then
-      (self._guide_service):ShowGuideLine(guideParam)
+      self._guide_service:ShowGuideLine(guideParam)
+    elseif guideType == GuideType.Piece then
+      self._guide_service:ShowGuidePiece(guideParam)
+    elseif guideType == GuideType.StoryBanner then
+    elseif guideType == GuideType.Warn then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowGuideWarn, guideParam)
+    elseif guideType == GuideType.Pop then
+    elseif guideType == GuideType.Circle then
+      self._guide_service:ShowCircle(guideParam)
+    elseif guideType == GuideType.Buff then
+      self._guide_service:ShowBuff(guideParam)
+    elseif guideType == GuideType.Entity then
+      self._guide_service:ShowEntity(guideParam)
+    elseif guideType == GuideType.PreviewLinkLine then
+      self._guide_service:ShowPLLGuideLine(guideParam)
+    elseif guideType == GuideType.PuzzleCountdown then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.GuidePuzzleCountdown, guideParam)
+    end
+    self._guide_service:SetNeedYield(guideStep:NeedYield())
+  elseif gameEventType == GameEventType.PauseGuideWeakLine then
+    self._guide_service:PauseGuideWeakLine()
+  elseif gameEventType == GameEventType.FinishGuideWeakLine then
+    self._guide_service:FinishGuideWeakLine()
+  elseif gameEventType == GameEventType.FinishGuideStep then
+    local guideType = param
+    if guideType == GuideType.Piece then
+      self._guide_service:DestroyGuidePieceEntity()
+    end
+    if guideType == GuideType.Entity then
+      self._guide_service:FinishGuideShadowEntity()
+    end
+  elseif gameEventType == GameEventType.GuideYield then
+    local guideStep = param
+    local yieldFlag = guideStep:Yield()
+    if yieldFlag then
+      self._guide_service:SetNeedYield(yieldFlag == 1)
     else
-      if guideType == GuideType.Piece then
-        (self._guide_service):ShowGuidePiece(guideParam)
-      else
-      end
+      self._guide_service:SetNeedYield(false)
     end
-    if guideType ~= GuideType.StoryBanner or guideType == GuideType.Warn then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowGuideWarn, guideParam)
-    else
-    end
-    if guideType ~= GuideType.Pop or guideType == GuideType.Circle then
-      (self._guide_service):ShowCircle(guideParam)
-    else
-      if guideType == GuideType.Buff then
-        (self._guide_service):ShowBuff(guideParam)
-      else
-        if guideType == GuideType.Entity then
-          (self._guide_service):ShowEntity(guideParam)
-        else
-          if guideType == GuideType.PreviewLinkLine then
-            (self._guide_service):ShowPLLGuideLine(guideParam)
-          else
-            if guideType == GuideType.PuzzleCountdown then
-              ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuidePuzzleCountdown, guideParam)
-            end
-          end
-        end
-      end
-    end
-    ;
-    (self._guide_service):SetNeedYield(guideStep:NeedYield())
-  else
-    do
-      if gameEventType == GameEventType.PauseGuideWeakLine then
-        (self._guide_service):PauseGuideWeakLine()
-      else
-        if gameEventType == GameEventType.FinishGuideWeakLine then
-          (self._guide_service):FinishGuideWeakLine()
-        else
-          if gameEventType == GameEventType.FinishGuideStep then
-            local guideType = param
-            if guideType == GuideType.Piece then
-              (self._guide_service):DestroyGuidePieceEntity()
-            end
-            if guideType == GuideType.Entity then
-              (self._guide_service):FinishGuideShadowEntity()
-            end
-          else
-            do
-              if gameEventType == GameEventType.GuideYield then
-                local guideStep = param
-                local yieldFlag = guideStep:Yield()
-                if yieldFlag ~= 1 then
-                  do
-                    (self._guide_service):SetNeedYield(not yieldFlag)
-                    ;
-                    (self._guide_service):SetNeedYield(false)
-                    if gameEventType == GameEventType.GuideYieldBreak then
-                      (self._guide_service):SetNeedYield(false)
-                    elseif gameEventType == GameEventType.GuideActiveSkill then
-                      local petTempID = param.petTempID
-                      local guideStepID = param.guideStepID
-                      local playerEntity = (((self._guide_service)._world):Player()):GetLocalTeamEntity()
-                      local cmd = GuideCommand:New()
-                      cmd:SetPetPstId(self:GetPetPstIdByTempId(petTempID))
-                      cmd:SetGuideStepID(guideStepID)
-                      ;
-                      (((self._guide_service)._world):Player()):SendCommand(cmd)
-                    elseif gameEventType == GameEventType.GuideChangeGhostLayer then
-                      (self._guide_service):ChangeGuideGhostLayer()
-                    end
-                    -- DECOMPILER ERROR: 6 unprocessed JMP targets
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif gameEventType == GameEventType.GuideYieldBreak then
+    self._guide_service:SetNeedYield(false)
+  elseif gameEventType == GameEventType.GuideActiveSkill then
+    local petTempID = param.petTempID
+    local guideStepID = param.guideStepID
+    local playerEntity = self._guide_service._world:Player():GetLocalTeamEntity()
+    local cmd = GuideCommand:New()
+    cmd:SetPetPstId(self:GetPetPstIdByTempId(petTempID))
+    cmd:SetGuideStepID(guideStepID)
+    self._guide_service._world:Player():SendCommand(cmd)
+  elseif gameEventType == GameEventType.GuideChangeGhostLayer then
+    self._guide_service:ChangeGuideGhostLayer()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideServiceListenerRender.GetPetPstIdByTempId = function(self, petTempId)
-  -- function num : 0_4 , upvalues : _ENV
-  local pets = ((self._guide_service)._world):GetLocalMatchPetList()
-  for _,pet in ipairs(pets) do
+function GuideServiceListenerRender:GetPetPstIdByTempId(petTempId)
+  local pets = self._guide_service._world:GetLocalMatchPetList()
+  for _, pet in ipairs(pets) do
     if pet:GetTemplateID() == petTempId then
       return pet:GetPstID()
     end
   end
   return nil
 end
-
-

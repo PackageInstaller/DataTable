@@ -1,37 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/dispatch/ui_n34_dispatch_terminal_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local UIN34DispatchType = {OpenDialogue = 1}
 _enum("UIN34DispatchType", UIN34DispatchType)
 _class("UIN34DispatchTerminalMainControlller", UIController)
 UIN34DispatchTerminalMainControlller = UIN34DispatchTerminalMainControlller
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN34DispatchTerminalMainControlller.Constructor = function(self)
-  -- function num : 0_0
+function UIN34DispatchTerminalMainControlller:Constructor()
   self._inDialogue = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV, UIN34DispatchType
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIN34DispatchTerminalMainControlller:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N34)
-  self._dispatchComponent = (self._localProcess):GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_DISPATCH)
-  self._dispatchComponentInfo = (self._dispatchComponent):GetComponentInfo()
+  self._dispatchComponent = self._localProcess:GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_DISPATCH)
+  self._dispatchComponentInfo = self._dispatchComponent:GetComponentInfo()
   self._openType = uiParams[1]
   if self._openType == UIN34DispatchType.OpenDialogue then
     self._odArchId = uiParams[2]
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : UIN34DispatchType, _ENV
+function UIN34DispatchTerminalMainControlller:OnShow(uiParams)
   self:InitWidget()
   if self._openType == UIN34DispatchType.OpenDialogue then
     self:BtnChangeColor(false)
@@ -39,25 +26,20 @@ UIN34DispatchTerminalMainControlller.OnShow = function(self, uiParams)
     self:AutoOpenDialogue(self._odArchId)
   else
     self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    self:Lock("UIN34DispatchTerminalMainControlller_Open")
-    self:LoadMainContent()
-    local Pools = (self.mainContent):GetAllSpawnList()
-    for i = 1, #Pools do
-      local item = Pools[i]
-      item:PlayAnimIn(i)
-    end
-    YIELD(TT, 400)
-    self:UnLock("UIN34DispatchTerminalMainControlller_Open")
-  end
-)
+      self:Lock("UIN34DispatchTerminalMainControlller_Open")
+      self:LoadMainContent()
+      local Pools = self.mainContent:GetAllSpawnList()
+      for i = 1, #Pools do
+        local item = Pools[i]
+        item:PlayAnimIn(i)
+      end
+      YIELD(TT, 400)
+      self:UnLock("UIN34DispatchTerminalMainControlller_Open")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN34DispatchTerminalMainControlller:InitWidget()
   self.mainContent = self:GetUIComponent("UISelectObjectPath", "MainContent")
   self.logContent = self:GetUIComponent("UISelectObjectPath", "LogContent")
   self.dialogueLoader = self:GetUIComponent("UISelectObjectPath", "Dialogue")
@@ -81,143 +63,107 @@ UIN34DispatchTerminalMainControlller.InitWidget = function(self)
   self._mainAnim = self:GetUIComponent("Animation", "MainAnim")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.LoadMainContent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local componentID = (self._dispatchComponent):GetComponentCfgId()
-  local ArchCfg = (Cfg.cfg_component_dispatch_arch)({ComponentID = componentID})
-  local dispatchInfo = (self._dispatchComponentInfo).dispatch_infos
+function UIN34DispatchTerminalMainControlller:LoadMainContent()
+  local componentID = self._dispatchComponent:GetComponentCfgId()
+  local ArchCfg = Cfg.cfg_component_dispatch_arch({ComponentID = componentID})
+  local dispatchInfo = self._dispatchComponentInfo.dispatch_infos
   local LastDispatchEnd = false
-  if #dispatchInfo == 0 or (dispatchInfo[#dispatchInfo]).status == N34TerminalItemStatus.End then
+  if #dispatchInfo == 0 or dispatchInfo[#dispatchInfo].status == N34TerminalItemStatus.End then
     LastDispatchEnd = true
   end
-  local unlock = nil
-  self._mainItems = (self.mainContent):SpawnObjects("UIN34DispatchTerminalMainItem", #ArchCfg)
-  for i,v in pairs(self._mainItems) do
+  local unlock
+  self._mainItems = self.mainContent:SpawnObjects("UIN34DispatchTerminalMainItem", #ArchCfg)
+  for i, v in pairs(self._mainItems) do
     if i == #dispatchInfo + 1 and LastDispatchEnd then
       unlock = true
     else
       unlock = false
     end
-    v:SetData(dispatchInfo[i], i, (ArchCfg[i]).DispatchLogName, function(id, transform)
-    -- function num : 0_4_0 , upvalues : self
-    self:OnAwardClick(id, transform)
-  end
-, function(item)
-    -- function num : 0_4_1 , upvalues : self
-    self:OnItemSelect(item)
-  end
-, unlock)
+    v:SetData(dispatchInfo[i], i, ArchCfg[i].DispatchLogName, function(id, transform)
+      self:OnAwardClick(id, transform)
+    end, function(item)
+      self:OnItemSelect(item)
+    end, unlock)
     if i == 1 then
-      self:OnItemSelect((self._mainItems)[i])
+      self:OnItemSelect(self._mainItems[i])
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.OnAwardClick = function(self, id, transform)
-  -- function num : 0_5 , upvalues : _ENV
-  local ArchCfg = (Cfg.cfg_component_dispatch_arch)[id]
+function UIN34DispatchTerminalMainControlller:OnAwardClick(id, transform)
+  local ArchCfg = Cfg.cfg_component_dispatch_arch[id]
   if not ArchCfg then
-    return 
+    return
   end
   local Award = ArchCfg.Rewards
-  ;
-  (self.toastBGObj):SetActive(true)
-  ;
-  (self.toastObj):SetActive(true)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.toast).position = transform
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.toast).anchoredPosition = Vector2(((self.toast).anchoredPosition).x + 273, ((self.toast).anchoredPosition).y - 163)
-  self._mainItems = (self.awardsContent):SpawnObjects("UIN34DispatchAwardItem", #Award)
-  for i,v in ipairs(self._mainItems) do
+  self.toastBGObj:SetActive(true)
+  self.toastObj:SetActive(true)
+  self.toast.position = transform
+  self.toast.anchoredPosition = Vector2(self.toast.anchoredPosition.x + 273, self.toast.anchoredPosition.y - 163)
+  self._mainItems = self.awardsContent:SpawnObjects("UIN34DispatchAwardItem", #Award)
+  for i, v in ipairs(self._mainItems) do
     v:SetData(Award[i])
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.OnItemSelect = function(self, item)
-  -- function num : 0_6
+function UIN34DispatchTerminalMainControlller:OnItemSelect(item)
   local ID = item:GetDispatchID()
   local status = item:GetStatus()
   if self._lastID == ID then
-    return 
+    return
   end
   self._lastID = ID
   self._status = status
   if self.selectItem then
-    (self.selectItem):SetSelected(false)
+    self.selectItem:SetSelected(false)
   end
   self.selectItem = item
-  ;
-  (self.selectItem):SetSelected(true)
+  self.selectItem:SetSelected(true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.CheckLog = function(self, cfg, BuildingId)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN34DispatchTerminalMainControlller:CheckLog(cfg, BuildingId)
   local log = {}
-  local dispatchInfo = (self._dispatchComponentInfo).dispatch_infos
+  local dispatchInfo = self._dispatchComponentInfo.dispatch_infos
   local Info = dispatchInfo[BuildingId]
   if not Info then
     return log
   end
-  local DispatchTime = ((Cfg.cfg_component_dispatch_arch)[BuildingId]).DispatchTime
+  local DispatchTime = Cfg.cfg_component_dispatch_arch[BuildingId].DispatchTime
   local startTime = Info.end_time - DispatchTime
   local svrTimeModule = self:GetModule(SvrTimeModule)
   local curTime = svrTimeModule:GetServerTime()
   curTime = curTime / 1000
-  for i,v in ipairs(cfg) do
-    if startTime + v.DispatchTime < curTime then
-      (table.insert)(log, cfg[i])
+  for i, v in ipairs(cfg) do
+    if curTime > startTime + v.DispatchTime then
+      table.insert(log, cfg[i])
     end
   end
   return log
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.ShowLog = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN34DispatchTerminalMainControlller:ShowLog()
   local SelectBuildingID = self._lastID
   if not SelectBuildingID and self._odArchId then
     SelectBuildingID = self._odArchId
   end
-  local cfg = (Cfg.cfg_mission_dispatch_log)({BuildingId = SelectBuildingID})
+  local cfg = Cfg.cfg_mission_dispatch_log({BuildingId = SelectBuildingID})
   local LogData = self:CheckLog(cfg, SelectBuildingID)
-  ;
-  (self.main):SetActive(false)
-  ;
-  (self.logAndDialogue):SetActive(true)
-  ;
-  (self.logContent):ClearWidgets()
-  ;
-  (self.logContent):SpawnObjects("UIN34DispatchTerminalLogItem", #LogData)
-  self.logItems = (self.logContent):GetAllSpawnList()
-  for i,v in ipairs(self.logItems) do
+  self.main:SetActive(false)
+  self.logAndDialogue:SetActive(true)
+  self.logContent:ClearWidgets()
+  self.logContent:SpawnObjects("UIN34DispatchTerminalLogItem", #LogData)
+  self.logItems = self.logContent:GetAllSpawnList()
+  for i, v in ipairs(self.logItems) do
     v:SetData(LogData[i])
   end
   if self._status == N34TerminalItemStatus.Going then
-    (self.tipsObj):SetActive(true)
-    return 
+    self.tipsObj:SetActive(true)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.BtnChange = function(self, ChangeLog)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN34DispatchTerminalMainControlller:BtnChange(ChangeLog)
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, ChangeLog, _ENV
     self:Lock("UIN34DispatchTerminalMainControlller_Change")
     if ChangeLog then
       self:BtnChangeColor(true)
@@ -225,196 +171,134 @@ UIN34DispatchTerminalMainControlller.BtnChange = function(self, ChangeLog)
     else
       if self._status ~= N34TerminalItemStatus.End then
         self:ShowDialog("UIN34DispatchTerminalToast", self._status)
-        return 
+        return
       end
       self:BtnChangeColor(false)
       self:ToDialogueBtn()
     end
     YIELD(TT, 400)
     self:UnLock("UIN34DispatchTerminalMainControlller_Change")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.BtnChangeColor = function(self, ChangeLog)
-  -- function num : 0_10 , upvalues : _ENV
-  local SelectColor = Color(0.2156862745098, 0.16470588235294, 0.12156862745098, 1)
-  local UnSelectColor = Color(0.46666666666667, 0.65490196078431, 0.73725490196078, 1)
-  local SelectImageLog = (self._atlas):GetSprite("n34_pqtc_btn03")
-  local UnSelectImageLog = (self._atlas):GetSprite("n34_pqtc_btn05")
-  local SelectImageDialogue = (self._atlas):GetSprite("n34_pqtc_btn06")
-  local UnSelectImageDialogue = (self._atlas):GetSprite("n34_pqtc_btn04")
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R8 in 'UnsetPending'
-
+function UIN34DispatchTerminalMainControlller:BtnChangeColor(ChangeLog)
+  local SelectColor = Color(0.21568627450980393, 0.16470588235294117, 0.12156862745098039, 1.0)
+  local UnSelectColor = Color(0.4666666666666667, 0.6549019607843137, 0.7372549019607844, 1.0)
+  local SelectImageLog = self._atlas:GetSprite("n34_pqtc_btn03")
+  local UnSelectImageLog = self._atlas:GetSprite("n34_pqtc_btn05")
+  local SelectImageDialogue = self._atlas:GetSprite("n34_pqtc_btn06")
+  local UnSelectImageDialogue = self._atlas:GetSprite("n34_pqtc_btn04")
   if ChangeLog then
-    (self._logTitle).color = SelectColor
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._dialogueTitle).color = UnSelectColor
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._toLogBtn).sprite = SelectImageLog
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._toDialogueBtn).sprite = UnSelectImageDialogue
+    self._logTitle.color = SelectColor
+    self._dialogueTitle.color = UnSelectColor
+    self._toLogBtn.sprite = SelectImageLog
+    self._toDialogueBtn.sprite = UnSelectImageDialogue
   else
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._logTitle).color = UnSelectColor
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._dialogueTitle).color = SelectColor
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._toLogBtn).sprite = UnSelectImageLog
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._toDialogueBtn).sprite = SelectImageDialogue
+    self._logTitle.color = UnSelectColor
+    self._dialogueTitle.color = SelectColor
+    self._toLogBtn.sprite = UnSelectImageLog
+    self._toDialogueBtn.sprite = SelectImageDialogue
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.OpenBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN34DispatchTerminalMainControlller:OpenBtnOnClick(go)
   if self._inDialogue then
-    return 
+    return
   end
   if self._status == N34TerminalItemStatus.NotStart or self._status == N34TerminalItemStatus.Unlock then
     self:ShowDialog("UIN34DispatchTerminalToast", self._status)
-    return 
-  else
-    if self._status == N34TerminalItemStatus.Going then
-      self:BtnChange(true)
-      ;
-      (self._switchAnim):Play("uieff_UIN34DispatchTerminalMainControlller_switchLog")
-      local Pools = (self.mainContent):GetAllSpawnList()
-      for i = 1, #Pools do
-        local item = Pools[i]
-        item:SetCanvasGroup()
-      end
-    else
-      do
-        if self._status == N34TerminalItemStatus.End then
-          local SelectBuildingID = self._lastID
-          if not SelectBuildingID then
-            return 
-          end
-          self:BtnChange(false)
-          ;
-          (self._switchAnim):Play("uieff_UIN34DispatchTerminalMainControlller_switchLog1")
-          local Pools = (self.mainContent):GetAllSpawnList()
-          for i = 1, #Pools do
-            local item = Pools[i]
-            item:SetCanvasGroup()
-          end
-          self.changeLog = true
-        end
-      end
+    return
+  elseif self._status == N34TerminalItemStatus.Going then
+    self:BtnChange(true)
+    self._switchAnim:Play("uieff_UIN34DispatchTerminalMainControlller_switchLog")
+    local Pools = self.mainContent:GetAllSpawnList()
+    for i = 1, #Pools do
+      local item = Pools[i]
+      item:SetCanvasGroup()
     end
+  elseif self._status == N34TerminalItemStatus.End then
+    local SelectBuildingID = self._lastID
+    if not SelectBuildingID then
+      return
+    end
+    self:BtnChange(false)
+    self._switchAnim:Play("uieff_UIN34DispatchTerminalMainControlller_switchLog1")
+    local Pools = self.mainContent:GetAllSpawnList()
+    for i = 1, #Pools do
+      local item = Pools[i]
+      item:SetCanvasGroup()
+    end
+    self.changeLog = true
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.ReturnBtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN34DispatchTerminalMainControlller:ReturnBtnOnClick(go)
   if self._inDialogue then
-    return 
+    return
   end
   self:InitWidget()
   self:LoadMainContent()
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, _ENV
     self:Lock("UIN34DispatchTerminalMainControlller_Return")
-    ;
-    (self._switchAnim):Play("uieff_UIN34DispatchTerminalMainControlller_switchMain")
+    self._switchAnim:Play("uieff_UIN34DispatchTerminalMainControlller_switchMain")
     YIELD(TT, 100)
-    local Pools = (self.mainContent):GetAllSpawnList()
+    local Pools = self.mainContent:GetAllSpawnList()
     for i = 1, #Pools do
       local item = Pools[i]
       item:PlayAnimIn(i)
     end
     YIELD(TT, 300)
     self:UnLock("UIN34DispatchTerminalMainControlller_Return")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.ToLogBtn = function(self, go)
-  -- function num : 0_13
+function UIN34DispatchTerminalMainControlller:ToLogBtn(go)
   if self._inDialogue then
-    return 
+    return
   end
-  ;
-  (self.log):SetActive(true)
+  self.log:SetActive(true)
   self:ShowLog()
-  ;
-  (self.dialogueObj):SetActive(false)
+  self.dialogueObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.ToDialogueBtn = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN34DispatchTerminalMainControlller:ToDialogueBtn()
   if self._inDialogue then
-    return 
+    return
   end
   local SelectBuildingID = self._lastID
   if self._status ~= N34TerminalItemStatus.End then
     self:ShowDialog("UIN34DispatchTerminalToast", self._status)
-    return 
+    return
   end
   self:AutoOpenDialogue(SelectBuildingID)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.BGOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN34DispatchTerminalMainControlller:BGOnClick(go)
   if self._inDialogue then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : self, _ENV
     self:Lock("UIN34DispatchTerminalMainControlller_Close")
     YIELD(TT, 200)
-    ;
-    (self._mainAnim):Play("uieff_UIN34DispatchTerminalMainControlller_out")
+    self._mainAnim:Play("uieff_UIN34DispatchTerminalMainControlller_out")
     YIELD(TT, 250)
     self:UnLock("UIN34DispatchTerminalMainControlller_Close")
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.ChangeBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN34DispatchTerminalMainControlller:ChangeBtnOnClick(go)
   if self._inDialogue then
-    return 
+    return
   end
   if not self.changeLog and self._status ~= N34TerminalItemStatus.End then
     self:ShowDialog("UIN34DispatchTerminalToast", self._status)
-    return 
+    return
   end
   if not self.changeLog then
-    (self._changeAnim):Play("uieff_UIN34DispatchTerminalMainControlller_switchLog_01")
+    self._changeAnim:Play("uieff_UIN34DispatchTerminalMainControlller_switchLog_01")
   else
-    ;
-    (self._changeAnim):Play("uieff_UIN34DispatchTerminalMainControlller_switchLog_02")
+    self._changeAnim:Play("uieff_UIN34DispatchTerminalMainControlller_switchLog_02")
   end
   self:BtnChange(self.changeLog)
   if not self.changeLog then
@@ -424,41 +308,23 @@ UIN34DispatchTerminalMainControlller.ChangeBtnOnClick = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.AutoOpenDialogue = function(self, archId)
-  -- function num : 0_17
-  (self.main):SetActive(false)
-  ;
-  (self.logAndDialogue):SetActive(true)
-  ;
-  (self.log):SetActive(false)
-  ;
-  (self.dialogueObj):SetActive(true)
-  self.dialogue = (self.dialogueLoader):SpawnObject("UIN34DispatchDialogue")
-  ;
-  (self.dialogue):Chat(archId, function(inDialogue)
-    -- function num : 0_17_0 , upvalues : self
+function UIN34DispatchTerminalMainControlller:AutoOpenDialogue(archId)
+  self.main:SetActive(false)
+  self.logAndDialogue:SetActive(true)
+  self.log:SetActive(false)
+  self.dialogueObj:SetActive(true)
+  self.dialogue = self.dialogueLoader:SpawnObject("UIN34DispatchDialogue")
+  self.dialogue:Chat(archId, function(inDialogue)
     self._inDialogue = inDialogue
     self:OnInDialogueChanged()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.OnInDialogueChanged = function(self)
-  -- function num : 0_18
-  ((self.returnBtn).gameObject):SetActive(not self._inDialogue)
+function UIN34DispatchTerminalMainControlller:OnInDialogueChanged()
+  self.returnBtn.gameObject:SetActive(not self._inDialogue)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN34DispatchTerminalMainControlller.ToastBGOnClick = function(self, go)
-  -- function num : 0_19
-  (self.toastBGObj):SetActive(false)
-  ;
-  (self.toastObj):SetActive(false)
+function UIN34DispatchTerminalMainControlller:ToastBGOnClick(go)
+  self.toastBGObj:SetActive(false)
+  self.toastObj:SetActive(false)
 end
-
-

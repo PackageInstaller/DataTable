@@ -1,57 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_no_defence_by_target_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetNoDefenceByTargetLayer", BuffLogicBase)
 BuffLogicSetNoDefenceByTargetLayer = BuffLogicSetNoDefenceByTargetLayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetNoDefenceByTargetLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._oneLayerAddMulValue = logicParam.oneLayerAddMulValue or 0
-    self._oneLayerAddValue = logicParam.oneLayerAddValue or 0
-    self._minMulValue = logicParam.minMulValue
-    self._maxMulValue = logicParam.maxMulValue
-  end
+function BuffLogicSetNoDefenceByTargetLayer:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._oneLayerAddMulValue = logicParam.oneLayerAddMulValue or 0
+  self._oneLayerAddValue = logicParam.oneLayerAddValue or 0
+  self._minMulValue = logicParam.minMulValue
+  self._maxMulValue = logicParam.maxMulValue
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetNoDefenceByTargetLayer.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicSetNoDefenceByTargetLayer:DoLogic(notify)
   local defenderEntity = notify:GetDefenderEntity()
-  if not defenderEntity or not defenderEntity:Attributes() or defenderEntity:HasDeadMark() then
+  if not (defenderEntity and defenderEntity:Attributes()) or defenderEntity:HasDeadMark() then
     return false
   end
-  local buffOwner = (self._buffInstance):Entity()
+  local buffOwner = self._buffInstance:Entity()
   local attributeCmpt = buffOwner:Attributes()
-  local targetMarkLayer = (self._buffLogicService):GetBuffLayer(defenderEntity, self._layerType) or 0
+  local targetMarkLayer = self._buffLogicService:GetBuffLayer(defenderEntity, self._layerType) or 0
   if targetMarkLayer == 0 then
     return false
   end
-  do
-    if self._oneLayerAddMulValue ~= 0 then
-      local change = self._oneLayerAddMulValue * targetMarkLayer
-      change = self:_CalcValueLimit(change)
-      attributeCmpt:SetSimpleAttribute("NoDefence", change)
-    end
-    if self._oneLayerAddValue ~= 0 then
-      local change = (math.floor)(self._oneLayerAddValue * targetMarkLayer)
-      change = self:_CalcValueLimit(change)
-      attributeCmpt:SetSimpleAttribute("NoDefence", change)
-    end
+  if self._oneLayerAddMulValue ~= 0 then
+    local change = self._oneLayerAddMulValue * targetMarkLayer
+    change = self:_CalcValueLimit(change)
+    attributeCmpt:SetSimpleAttribute("NoDefence", change)
+  end
+  if self._oneLayerAddValue ~= 0 then
+    local change = math.floor(self._oneLayerAddValue * targetMarkLayer)
+    change = self:_CalcValueLimit(change)
+    attributeCmpt:SetSimpleAttribute("NoDefence", change)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetNoDefenceByTargetLayer._CalcValueLimit = function(self, value)
-  -- function num : 0_2
-  if self._maxMulValue and self._maxMulValue < value then
+function BuffLogicSetNoDefenceByTargetLayer:_CalcValueLimit(value)
+  if self._maxMulValue and value > self._maxMulValue then
     value = self._maxMulValue
   end
   if self._minMulValue and value < self._minMulValue then
@@ -59,5 +42,3 @@ BuffLogicSetNoDefenceByTargetLayer._CalcValueLimit = function(self, value)
   end
   return value
 end
-
-

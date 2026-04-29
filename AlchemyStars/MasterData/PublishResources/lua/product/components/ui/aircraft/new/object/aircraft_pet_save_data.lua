@@ -1,9 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_pet_save_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local AircraftSaveData = {pets = nil, queue = nil, playerID = nil, time = nil}
+local AircraftSaveData = {
+  pets = nil,
+  queue = nil,
+  playerID = nil,
+  time = nil
+}
 local AircraftSavePet = {pet = nil, data = nil}
-local AircraftPetSaveData = {floor = nil, state = nil, belongArea = nil, remainTime = nil, actionIndex = nil, area = nil, furnID = nil, point = nil, airSocialActionType = nil, socialRound = nil, socialFurnitureId = nil, socialPointHolderIndex = nil, socialLocationIndex = nil, socialAreaType = nil, socialPetCount = nil, NONE = nil}
-
+local AircraftPetSaveData = {
+  floor = nil,
+  state = nil,
+  belongArea = nil,
+  remainTime = nil,
+  actionIndex = nil,
+  area = nil,
+  furnID = nil,
+  point = nil,
+  airSocialActionType = nil,
+  socialRound = nil,
+  socialFurnitureId = nil,
+  socialPointHolderIndex = nil,
+  socialLocationIndex = nil,
+  socialAreaType = nil,
+  socialPetCount = nil,
+  NONE = nil
+}

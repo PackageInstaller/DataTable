@@ -1,55 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/aircraft/aircraft_room/aircraft_tactic_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("aircraft_room_base")
 _class("AircraftTacticRoom", AircraftRoomBase)
 AircraftTacticRoom = AircraftTacticRoom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftTacticRoom.Constructor = function(self)
-  -- function num : 0_0
+function AircraftTacticRoom:Constructor()
   self._room_ext_data = nil
   self._cartridge_cd = 0
   self._pet_cd = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.SetClientData = function(self, client_data)
-  -- function num : 0_1
+function AircraftTacticRoom:SetClientData(client_data)
   self._cartridge_cd = client_data[1]
   self._pet_cd = client_data[2]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.SetExtData = function(self, data)
-  -- function num : 0_2 , upvalues : _ENV
+function AircraftTacticRoom:SetExtData(data)
   if data then
     self._room_ext_data = TacticRoomExtData:New()
-    local ret, msg = (lua_dc.LoadStream)((self._room_ext_data)._className, data, self._room_ext_data)
+    local ret, msg = lua_dc.LoadStream(self._room_ext_data._className, data, self._room_ext_data)
     if ret == nil then
-      (Log.fatal)("AircraftTacticRoom:SetExtData lua_dc.LoadStream fail! ", msg)
+      Log.fatal("AircraftTacticRoom:SetExtData lua_dc.LoadStream fail! ", msg)
+    else
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetRoomConfig = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_tactic_room)[self._roomid]
+function AircraftTacticRoom:GetRoomConfig()
+  local cfg = Cfg.cfg_aircraft_tactic_room[self._roomid]
   return cfg
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetPetRemainFightNum = function(self, petTPSID)
-  -- function num : 0_4 , upvalues : _ENV
-  local numLimit = ((Cfg.cfg_aircraft_values)[AirValueID.WeekPetFightNumLimit]).IntValue
-  for key,value in pairs((self._room_ext_data).pet_fight_list) do
+function AircraftTacticRoom:GetPetRemainFightNum(petTPSID)
+  local numLimit = Cfg.cfg_aircraft_values[AirValueID.WeekPetFightNumLimit].IntValue
+  for key, value in pairs(self._room_ext_data.pet_fight_list) do
     if key == petTPSID then
       local remainNum = numLimit - value
       if remainNum < 0 then
@@ -61,39 +43,27 @@ AircraftTacticRoom.GetPetRemainFightNum = function(self, petTPSID)
   return numLimit
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetCartridgeLimit = function(self)
-  -- function num : 0_5
+function AircraftTacticRoom:GetCartridgeLimit()
   local cfgTacticRoom = self:GetRoomConfig()
   local numLimit = cfgTacticRoom.CartridgeLimit
   return numLimit
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetNextResetTime = function(self)
-  -- function num : 0_6
+function AircraftTacticRoom:GetNextResetTime()
   if self._room_ext_data then
-    return (self._room_ext_data).next_reset_time
+    return self._room_ext_data.next_reset_time
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.CanOpenCartridgeGiftBox = function(self)
-  -- function num : 0_7
+function AircraftTacticRoom:CanOpenCartridgeGiftBox()
   if self:GetCartridgeGiftCount() > 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.IsCartridgeLimit = function(self)
-  -- function num : 0_8
+function AircraftTacticRoom:IsCartridgeLimit()
   local maxCount = self:GetCartridgeLimit()
   local cartridgeList = self:GetCartridgeList()
   local count = #cartridgeList + self:GetCartridgeGiftCount()
@@ -103,30 +73,21 @@ AircraftTacticRoom.IsCartridgeLimit = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetCartridgeList = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function AircraftTacticRoom:GetCartridgeList()
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local list = itemModule:GetItemListBySubType(ItemSubType.ItemSubType_Cartridge)
   return list
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetCartridgeGiftCount = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local giftID = ((Cfg.cfg_aircraft_values)[AirValueID.CartridgeGiftID]).IntValue
+function AircraftTacticRoom:GetCartridgeGiftCount()
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local giftID = Cfg.cfg_aircraft_values[AirValueID.CartridgeGiftID].IntValue
   local count = itemModule:GetItemCount(giftID)
   return count
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.IsReceived = function(self, num)
-  -- function num : 0_11
-  local receiveList = (self._room_ext_data).received_week_award_list
+function AircraftTacticRoom:IsReceived(num)
+  local receiveList = self._room_ext_data.received_week_award_list
   for i = 1, #receiveList do
     if num == receiveList[i] then
       return true
@@ -135,191 +96,157 @@ AircraftTacticRoom.IsReceived = function(self, num)
   return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.CanReceiveWeeklyReward = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function AircraftTacticRoom:CanReceiveWeeklyReward()
   do return false end
   local awardItems = {}
-  local weeklyAward = ((Cfg.cfg_aircraft_values)[AirValueID.WeekPassAward]).StringValue
-  local a = (string.split)(weeklyAward, "|")
+  local weeklyAward = Cfg.cfg_aircraft_values[AirValueID.WeekPassAward].StringValue
+  local a = string.split(weeklyAward, "|")
   for i = 1, #a do
-    local b = (string.split)(a[i], ";")
+    local b = string.split(a[i], ";")
     awardItems[i] = tonumber(b[1])
   end
-  local passNum = (self._room_ext_data).week_pass_num
+  local passNum = self._room_ext_data.week_pass_num
   for i = 1, #awardItems do
-    if awardItems[i] <= passNum and not self:IsReceived(awardItems[i]) then
+    if passNum >= awardItems[i] and not self:IsReceived(awardItems[i]) then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.NavMenuCanCollect = function(self)
-  -- function num : 0_13
+function AircraftTacticRoom:NavMenuCanCollect()
   local cartridgeList = self:GetCartridgeList()
   local cardCount = #cartridgeList + self:GetCartridgeGiftCount()
-  do return cardCount <= 0 and self:CanReceiveWeeklyReward() end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return 0 < cardCount or self:CanReceiveWeeklyReward()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.CanCollect = function(self)
-  -- function num : 0_14
-  if not self:CanOpenCartridgeGiftBox() then
-    return self:CanReceiveWeeklyReward()
-  end
+function AircraftTacticRoom:CanCollect()
+  return self:CanOpenCartridgeGiftBox() or self:CanReceiveWeeklyReward()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetCartridgeCountDown = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  if (self._room_ext_data).cartridge_cd_time == 0 then
+function AircraftTacticRoom:GetCartridgeCountDown()
+  if self._room_ext_data.cartridge_cd_time == 0 then
     return 0
   end
-  local countdownTime = (self._room_ext_data).cartridge_cd_time + self._cartridge_cd
-  return (math.ceil)(countdownTime)
+  local countdownTime = self._room_ext_data.cartridge_cd_time + self._cartridge_cd
+  return math.ceil(countdownTime)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetCartridgeDeltaTime = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function AircraftTacticRoom:GetCartridgeDeltaTime()
   if self:IsCartridgeLimit() then
     return -1
   end
   local time = self:GetCartridgeCountDown()
-  local now = (math.floor)(((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() / 1000)
+  local now = math.floor(GameGlobal.GetModule(SvrTimeModule):GetServerTime() / 1000)
   return time - now
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetWeeklyPassTimes = function(self)
-  -- function num : 0_17
+function AircraftTacticRoom:GetWeeklyPassTimes()
   if self._room_ext_data then
-    return (self._room_ext_data).week_pass_num
+    return self._room_ext_data.week_pass_num
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetWeeklyFreeMakeCount = function(self)
-  -- function num : 0_18
+function AircraftTacticRoom:GetWeeklyFreeMakeCount()
   if self._room_ext_data then
-    return (self._room_ext_data).remain_free_prod_times
+    return self._room_ext_data.remain_free_prod_times
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetWeeklyFreeMakeLimit = function(self)
-  -- function num : 0_19
+function AircraftTacticRoom:GetWeeklyFreeMakeLimit()
   local cfgTacticRoom = self:GetRoomConfig()
   return cfgTacticRoom.FreeCount
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetRoomResCD = function(self)
-  -- function num : 0_20
+function AircraftTacticRoom:GetRoomResCD()
   local cfgTacticRoom = self:GetRoomConfig()
   return cfgTacticRoom.CD, self._pet_cd
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetOneCartridgeSpeed = function(self)
-  -- function num : 0_21
+function AircraftTacticRoom:GetOneCartridgeSpeed()
   return self._cartridge_cd
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetDegradeInfo = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function AircraftTacticRoom:GetDegradeInfo()
   local room_cfg = self:GetConfig()
-  local cur_cfg = (Cfg.cfg_aircraft_tactic_room)[room_cfg.ID]
-  local next_cfg = (Cfg.cfg_aircraft_tactic_room)[room_cfg.PrevLevelID]
+  local cur_cfg = Cfg.cfg_aircraft_tactic_room[room_cfg.ID]
+  local next_cfg = Cfg.cfg_aircraft_tactic_room[room_cfg.PrevLevelID]
   if next_cfg == nil then
     return nil
   end
   return {
-{AirLevelInfoTitle.TacticTapeStorageCount, AirRoomChangeLevelDataType.NumberInt, cur_cfg.CartridgeLimit, next_cfg.CartridgeLimit}
-, 
-{AirLevelInfoTitle.TacticTapeMakeTime, AirRoomChangeLevelDataType.Time, cur_cfg.CD, next_cfg.CD}
-, 
-{AirLevelInfoTitle.TacticTapeWeeklyFreeTimes, AirRoomChangeLevelDataType.NumberInt, cur_cfg.FreeCount, next_cfg.FreeCount}
-}
+    {
+      AirLevelInfoTitle.TacticTapeStorageCount,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_cfg.CartridgeLimit,
+      next_cfg.CartridgeLimit
+    },
+    {
+      AirLevelInfoTitle.TacticTapeMakeTime,
+      AirRoomChangeLevelDataType.Time,
+      cur_cfg.CD,
+      next_cfg.CD
+    },
+    {
+      AirLevelInfoTitle.TacticTapeWeeklyFreeTimes,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_cfg.FreeCount,
+      next_cfg.FreeCount
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetUpgradeInfo = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function AircraftTacticRoom:GetUpgradeInfo()
   local room_cfg = self:GetConfig()
-  local cur_cfg = (Cfg.cfg_aircraft_tactic_room)[room_cfg.ID]
-  local next_cfg = (Cfg.cfg_aircraft_tactic_room)[room_cfg.NextLevelID]
+  local cur_cfg = Cfg.cfg_aircraft_tactic_room[room_cfg.ID]
+  local next_cfg = Cfg.cfg_aircraft_tactic_room[room_cfg.NextLevelID]
   if next_cfg == nil then
     return nil
   end
   return {
-{AirLevelInfoTitle.TacticTapeStorageCount, AirRoomChangeLevelDataType.NumberInt, cur_cfg.CartridgeLimit, next_cfg.CartridgeLimit}
-, 
-{AirLevelInfoTitle.TacticTapeMakeTime, AirRoomChangeLevelDataType.Time, cur_cfg.CD, next_cfg.CD}
-, 
-{AirLevelInfoTitle.TacticTapeWeeklyFreeTimes, AirRoomChangeLevelDataType.NumberInt, cur_cfg.FreeCount, next_cfg.FreeCount}
-}
+    {
+      AirLevelInfoTitle.TacticTapeStorageCount,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_cfg.CartridgeLimit,
+      next_cfg.CartridgeLimit
+    },
+    {
+      AirLevelInfoTitle.TacticTapeMakeTime,
+      AirRoomChangeLevelDataType.Time,
+      cur_cfg.CD,
+      next_cfg.CD
+    },
+    {
+      AirLevelInfoTitle.TacticTapeWeeklyFreeTimes,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_cfg.FreeCount,
+      next_cfg.FreeCount
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.TacticPeakRewardedList = function(self)
-  -- function num : 0_24
-  return (self._room_ext_data).received_peak_lv_list
+function AircraftTacticRoom:TacticPeakRewardedList()
+  return self._room_ext_data.received_peak_lv_list
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.SetPeakRewardedList = function(self, lv_list)
-  -- function num : 0_25
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._room_ext_data).received_peak_lv_list = lv_list
+function AircraftTacticRoom:SetPeakRewardedList(lv_list)
+  self._room_ext_data.received_peak_lv_list = lv_list
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetThemeList = function(self)
-  -- function num : 0_26
-  return (self._room_ext_data).theme_list
+function AircraftTacticRoom:GetThemeList()
+  return self._room_ext_data.theme_list
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.SetThemeList = function(self, theme_list)
-  -- function num : 0_27
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._room_ext_data).theme_list = theme_list
+function AircraftTacticRoom:SetThemeList(theme_list)
+  self._room_ext_data.theme_list = theme_list
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTacticRoom.GetCartridgeExtraAwards = function(self, cartridge_pstid)
-  -- function num : 0_28
-  local awards = ((self._room_ext_data).cartridge_extra_award_list)[cartridge_pstid]
+function AircraftTacticRoom:GetCartridgeExtraAwards(cartridge_pstid)
+  local awards = self._room_ext_data.cartridge_extra_award_list[cartridge_pstid]
   if awards then
     return awards
   end
   return nil
 end
-
-

@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/component/homelandpet_component_face.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_component_base")
 _class("HomelandPetComponentFace", HomelandPetComponentBase)
 HomelandPetComponentFace = HomelandPetComponentFace
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetComponentFace.Constructor = function(self, componentType, pet, behavior)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomelandPetComponentFace.super).Constructor)(self, componentType, pet, behavior)
+function HomelandPetComponentFace:Constructor(componentType, pet, behavior)
+  HomelandPetComponentFace.super.Constructor(self, componentType, pet, behavior)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentFace.OnExcute = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandPetComponentFace:OnExcute()
   self.state = HomelandPetComponentState.Success
 end
-
-

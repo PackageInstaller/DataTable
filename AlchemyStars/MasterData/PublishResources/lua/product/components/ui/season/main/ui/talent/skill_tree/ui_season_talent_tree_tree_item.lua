@@ -1,46 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/talent/skill_tree/ui_season_talent_tree_tree_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTalentTreeTreeItem", UICustomWidget)
 UISeasonTalentTreeTreeItem = UISeasonTalentTreeTreeItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTalentTreeTreeItem.OnShow = function(self)
-  -- function num : 0_0
+function UISeasonTalentTreeTreeItem:OnShow()
   self._passivePool = self:GetUIComponent("UISelectObjectPath", "passivePool")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeTreeItem.SetData = function(self, com, skillData, callback)
-  -- function num : 0_1
+function UISeasonTalentTreeTreeItem:SetData(com, skillData, callback)
   self.talentTreeCom = com
   self._skillData = skillData
   self.callback = callback
   self:ShowPassiveList()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeTreeItem.Get_1P_2N_Icon = function(self)
-  -- function num : 0_2
-  local pools = (self._passivePool):GetAllSpawnList()
+function UISeasonTalentTreeTreeItem:Get_1P_2N_Icon()
+  local pools = self._passivePool:GetAllSpawnList()
   local t_1p = pools[1]
   return t_1p:Get_1P_2N_Icon()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeTreeItem.ShowPassiveList = function(self)
-  -- function num : 0_3
-  local passiveList = (self._skillData):PassiveCfgList()
-  local rootIDMap = (self._skillData):RootIDMap()
-  local comCfgID = (self._skillData):ComCfgID()
-  ;
-  (self._passivePool):SpawnObjects("UISeasonTalentTreeSkillParent", #passiveList)
-  local pools = (self._passivePool):GetAllSpawnList()
+function UISeasonTalentTreeTreeItem:ShowPassiveList()
+  local passiveList = self._skillData:PassiveCfgList()
+  local rootIDMap = self._skillData:RootIDMap()
+  local comCfgID = self._skillData:ComCfgID()
+  self._passivePool:SpawnObjects("UISeasonTalentTreeSkillParent", #passiveList)
+  local pools = self._passivePool:GetAllSpawnList()
   for i = 1, #passiveList do
     local item = pools[i]
     local cfg = passiveList[i]
@@ -49,15 +32,12 @@ UISeasonTalentTreeTreeItem.ShowPassiveList = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeTreeItem.RefreshCls = function(self, com, skillData)
-  -- function num : 0_4
+function UISeasonTalentTreeTreeItem:RefreshCls(com, skillData)
   self.talentTreeCom = com
   self._skillData = skillData
-  local passiveList = (self._skillData):PassiveCfgList()
-  local rootIDMap = (self._skillData):RootIDMap()
-  local pools = (self._passivePool):GetAllSpawnList()
+  local passiveList = self._skillData:PassiveCfgList()
+  local rootIDMap = self._skillData:RootIDMap()
+  local pools = self._passivePool:GetAllSpawnList()
   for i = 1, #passiveList do
     local item = pools[i]
     local cfg = passiveList[i]
@@ -66,5 +46,3 @@ UISeasonTalentTreeTreeItem.RefreshCls = function(self, com, skillData)
     item:RefreshCls(cls, rootIDMap)
   end
 end
-
-

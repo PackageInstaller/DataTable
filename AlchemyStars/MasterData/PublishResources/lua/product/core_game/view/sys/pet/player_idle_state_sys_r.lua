@@ -1,29 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/pet/player_idle_state_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayerIdleStateSystem_Render", ReactiveSystem)
 PlayerIdleStateSystem_Render = PlayerIdleStateSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayerIdleStateSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function PlayerIdleStateSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerIdleStateSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).MoveFSM)}, {"Added"})
+function PlayerIdleStateSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.MoveFSM)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerIdleStateSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayerIdleStateSystem_Render:Filter(entity)
   if not entity:HasMoveFSM() then
     return false
   end
@@ -35,24 +24,17 @@ PlayerIdleStateSystem_Render.Filter = function(self, entity)
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerIdleStateSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function PlayerIdleStateSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     local handle_res = self:HandleIdle(entities[i])
-  end
-  do
-    if not handle_res then
+    if handle_res then
+      break
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerIdleStateSystem_Render.HandleIdle = function(self, entity)
-  -- function num : 0_4 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PlayerIdleStateSystem_Render:HandleIdle(entity)
+  local utilDataSvc = self._world:GetService("UtilData")
   local curMainStateID = utilDataSvc:GetCurMainStateID()
   if curMainStateID == GameStateID.ChainAttack or curMainStateID == GameStateID.RunTest then
     return self:_HandleChainSkillEnd(entity)
@@ -60,63 +42,43 @@ PlayerIdleStateSystem_Render.HandleIdle = function(self, entity)
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerIdleStateSystem_Render._HandleChainSkillEnd = function(self, entity)
-  -- function num : 0_5 , upvalues : _ENV
+function PlayerIdleStateSystem_Render:_HandleChainSkillEnd(entity)
   if entity:HasChainSkillFlag() then
     entity:RemoveChainSkillFlag()
-    local teamEntity = (entity:Pet()):GetOwnerTeamEntity()
+    local teamEntity = entity:Pet():GetOwnerTeamEntity()
     local teamLeaderEntity = teamEntity:GetTeamLeaderPetEntity()
-    local petEntities = (teamEntity:Team()):GetTeamPetEntities()
+    local petEntities = teamEntity:Team():GetTeamPetEntities()
     local chain_skill_sequence_cmpt = teamEntity:ChainSkillSequence()
     local chain_skill_sequence_table = chain_skill_sequence_cmpt.ChainSkillSeqTable
-    ;
-    (table.removev)(chain_skill_sequence_table, entity:GetID())
-    if #chain_skill_sequence_table > 0 then
+    table.removev(chain_skill_sequence_table, entity:GetID())
+    if 0 < #chain_skill_sequence_table then
       if entity:HasViewExtension() then
         entity:SetViewVisible(false)
       end
       local pet_entity_id = self:GetFirstChainSkillActorID(chain_skill_sequence_table)
-      ;
-      (TaskManager:GetInstance()):CoreGameStartTask(self._StartNextPetChainAttack, self, (teamEntity:GridLocation()).Position, pet_entity_id)
+      TaskManager:GetInstance():CoreGameStartTask(self._StartNextPetChainAttack, self, teamEntity:GridLocation().Position, pet_entity_id)
     else
-      do
-        teamLeaderEntity:SetViewVisible(true)
-        for i,e in ipairs(petEntities) do
-          if e:HasViewExtension() and teamLeaderEntity:GetID() ~= e:GetID() then
-            e:SetViewVisible(false)
-          end
-        end
-        do
-          do return true end
+      teamLeaderEntity:SetViewVisible(true)
+      for i, e in ipairs(petEntities) do
+        if e:HasViewExtension() and teamLeaderEntity:GetID() ~= e:GetID() then
+          e:SetViewVisible(false)
         end
       end
     end
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerIdleStateSystem_Render.GetFirstChainSkillActorID = function(self, chain_skill_sequence_table)
-  -- function num : 0_6
+function PlayerIdleStateSystem_Render:GetFirstChainSkillActorID(chain_skill_sequence_table)
   local pet_entity_id = chain_skill_sequence_table[1]
-  if not pet_entity_id then
-    pet_entity_id = -1
-  end
+  pet_entity_id = pet_entity_id or -1
   return pet_entity_id
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerIdleStateSystem_Render._StartNextPetChainAttack = function(self, TT, castPos, nextPetEntityID)
-  -- function num : 0_7 , upvalues : _ENV
-  local pet_entity = (self._world):GetEntityByID(nextPetEntityID)
+function PlayerIdleStateSystem_Render:_StartNextPetChainAttack(TT, castPos, nextPetEntityID)
+  local pet_entity = self._world:GetEntityByID(nextPetEntityID)
   pet_entity:SetViewVisible(true)
   YIELD(TT, 100)
   pet_entity:AddChainSkillFlag()
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.IdleEnd, 2, nextPetEntityID)
+  self._world:EventDispatcher():Dispatch(GameEventType.IdleEnd, 2, nextPetEntityID)
 end
-
-

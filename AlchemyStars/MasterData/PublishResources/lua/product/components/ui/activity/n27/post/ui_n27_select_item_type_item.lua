@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/post/ui_n27_select_item_type_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27SelectItemTypeItem", UICustomWidget)
 UIN27SelectItemTypeItem = UIN27SelectItemTypeItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27SelectItemTypeItem.InitWidget = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN27SelectItemTypeItem:InitWidget()
   self._allObj = self:GetGameObject("AllObj")
   self._otherObj = self:GetGameObject("OtherObj")
   if self._typeID == 99 then
@@ -23,10 +16,7 @@ UIN27SelectItemTypeItem.InitWidget = function(self)
   self._atlas = self:GetAsset("PostInGame.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27SelectItemTypeItem.SetData = function(self, typeID, bgImg, selectImg)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN27SelectItemTypeItem:SetData(typeID, bgImg, selectImg)
   self._typeID = typeID
   self._bgImg = bgImg
   self._selectImg = selectImg
@@ -35,48 +25,25 @@ UIN27SelectItemTypeItem.SetData = function(self, typeID, bgImg, selectImg)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27SelectItemTypeItem.OnValue = function(self)
-  -- function num : 0_2
+function UIN27SelectItemTypeItem:OnValue()
   if self._typeID == 99 then
-    (self._allObj):SetActive(true)
+    self._allObj:SetActive(true)
   else
-    ;
-    (self._otherObj):SetActive(true)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._unSelectImage).sprite = (self._atlas):GetSprite(self._bgImg)
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._selectImage).sprite = (self._atlas):GetSprite(self._selectImg)
+    self._otherObj:SetActive(true)
+    self._unSelectImage.sprite = self._atlas:GetSprite(self._bgImg)
+    self._selectImage.sprite = self._atlas:GetSprite(self._selectImg)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27SelectItemTypeItem.BgOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN27PostGameItemTypeChange, self._typeID)
+function UIN27SelectItemTypeItem:BgOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN27PostGameItemTypeChange, self._typeID)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27SelectItemTypeItem.OnSelect = function(self, typeID)
-  -- function num : 0_4
-  (self._select):SetActive(typeID == self._typeID)
-  ;
-  (self._unSelect):SetActive(typeID ~= self._typeID)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIN27SelectItemTypeItem:OnSelect(typeID)
+  self._select:SetActive(typeID == self._typeID)
+  self._unSelect:SetActive(typeID ~= self._typeID)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27SelectItemTypeItem.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN27SelectItemTypeItem:OnHide()
   self:DetachEvent(GameEventType.OnN27PostGameItemTypeChange, self.OnSelect)
 end
-
-

@@ -1,86 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_snake_tail_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SnakeTailMove", Object)
 SkillEffectCalc_SnakeTailMove = SkillEffectCalc_SnakeTailMove
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SnakeTailMove.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SnakeTailMove:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
-  self._monsterShowLogic = (self._world):GetService("MonsterShowLogic")
+  self._configService = self._world:GetService("Config")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
+  self._monsterShowLogic = self._world:GetService("MonsterShowLogic")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SnakeTailMove.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_SnakeTailMove:DoSkillEffectCalculator(skillEffectCalcParam)
   local casterID = skillEffectCalcParam.casterEntityID
-  local casterEntity = (self._world):GetEntityByID(casterID)
+  local casterEntity = self._world:GetEntityByID(casterID)
   local casterPos = casterEntity:GetGridPosition()
   local effectParam = skillEffectCalcParam.skillEffectParam
   local snakeMoveType = effectParam:GetMoveType()
   local bodyMonsterID = effectParam:GetBodyMonsterID()
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
-  local boardEntity = (self._world):GetBoardEntity()
+  local utilDataSvc = self._world:GetService("UtilData")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  local boardEntity = self._world:GetBoardEntity()
   local shareResultCmpt = boardEntity:ShareSkillResult()
   local bodyEntityList = utilDataSvc:FindMonsterByMonsterID(bodyMonsterID)
   local bodyEntity = bodyEntityList[1]
   if bodyEntity:HasDeadMark() then
-    (casterEntity:Attributes()):Modify("HP", 0)
-    ;
-    (self._monsterShowLogic):AddMonsterDeadMark(casterEntity)
-    ;
-    (Log.debug)("SnakeTailDead ModifyHP =0 defender=", casterEntity:GetID())
+    casterEntity:Attributes():Modify("HP", 0)
+    self._monsterShowLogic:AddMonsterDeadMark(casterEntity)
+    Log.debug("SnakeTailDead ModifyHP =0 defender=", casterEntity:GetID())
     local result = SkillEffectSnakeTailMoveResult:New(nil, true)
     return result
   end
-  do
-    local resultContainer = shareResultCmpt:GetResultContainerByEntityID(bodyEntity:GetID())
-    local resultArray = resultContainer:GetEffectResultsAsArray(SkillEffectType.SnakeBodyMoveAndGrowth)
-    ;
-    (Log.info)("SnakeBodyMoveResultCount:", #resultArray)
-    local bodyMoveAndGrowthResult = resultArray[#resultArray]
-    if bodyMoveAndGrowthResult:IsCasterDead() then
-      (casterEntity:Attributes()):Modify("HP", 0)
-      ;
-      (self._monsterShowLogic):AddMonsterDeadMark(casterEntity)
-      ;
-      (Log.debug)("SnakeTailDead ModifyHP =0 defender=", casterEntity:GetID())
-      local result = SkillEffectSnakeTailMoveResult:New(nil, bodyMoveAndGrowthResult:IsCasterDead())
-      return result
-    end
-    do
-      local newBodyPos = (bodyMoveAndGrowthResult:GetNewBodyPos())
-      local result = nil
-      if not newBodyPos then
-        local oldBodyArea = bodyMoveAndGrowthResult:GetOldBodyArea()
-        local newBodyArea = bodyMoveAndGrowthResult:GetNewBodyArea()
-        local oldBodyPos = bodyMoveAndGrowthResult:GetBodyOldPos()
-        local bodyNewPos = bodyMoveAndGrowthResult:GetBodyNewPos()
-        local tailPos = oldBodyArea[#oldBodyArea] + oldBodyPos
-        ;
-        (Log.info)("SnakeNewTailPos:", tailPos)
-        local lastBodyPos = newBodyArea[#newBodyArea] + bodyNewPos
-        ;
-        (Log.info)("SnakeBodyLastPos:", lastBodyPos)
-        result = SkillEffectSnakeTailMoveResult:New(tailPos, bodyMoveAndGrowthResult:IsCasterDead())
-        result:SetLastBodyPos(lastBodyPos)
-      else
-        do
-          ;
-          (Log.info)("SnakeNewTailPos:Nil", "newBodyPos:", newBodyPos)
-          result = SkillEffectSnakeTailMoveResult:New(nil, bodyMoveAndGrowthResult:IsCasterDead())
-          return result
-        end
-      end
-    end
+  local resultContainer = shareResultCmpt:GetResultContainerByEntityID(bodyEntity:GetID())
+  local resultArray = resultContainer:GetEffectResultsAsArray(SkillEffectType.SnakeBodyMoveAndGrowth)
+  Log.info("SnakeBodyMoveResultCount:", #resultArray)
+  local bodyMoveAndGrowthResult = resultArray[#resultArray]
+  if bodyMoveAndGrowthResult:IsCasterDead() then
+    casterEntity:Attributes():Modify("HP", 0)
+    self._monsterShowLogic:AddMonsterDeadMark(casterEntity)
+    Log.debug("SnakeTailDead ModifyHP =0 defender=", casterEntity:GetID())
+    local result = SkillEffectSnakeTailMoveResult:New(nil, bodyMoveAndGrowthResult:IsCasterDead())
+    return result
   end
+  local newBodyPos = bodyMoveAndGrowthResult:GetNewBodyPos()
+  local result
+  if not newBodyPos then
+    local oldBodyArea = bodyMoveAndGrowthResult:GetOldBodyArea()
+    local newBodyArea = bodyMoveAndGrowthResult:GetNewBodyArea()
+    local oldBodyPos = bodyMoveAndGrowthResult:GetBodyOldPos()
+    local bodyNewPos = bodyMoveAndGrowthResult:GetBodyNewPos()
+    local tailPos = oldBodyArea[#oldBodyArea] + oldBodyPos
+    Log.info("SnakeNewTailPos:", tailPos)
+    local lastBodyPos = newBodyArea[#newBodyArea] + bodyNewPos
+    Log.info("SnakeBodyLastPos:", lastBodyPos)
+    result = SkillEffectSnakeTailMoveResult:New(tailPos, bodyMoveAndGrowthResult:IsCasterDead())
+    result:SetLastBodyPos(lastBodyPos)
+  else
+    Log.info("SnakeNewTailPos:Nil", "newBodyPos:", newBodyPos)
+    result = SkillEffectSnakeTailMoveResult:New(nil, bodyMoveAndGrowthResult:IsCasterDead())
+  end
+  return result
 end
-
-

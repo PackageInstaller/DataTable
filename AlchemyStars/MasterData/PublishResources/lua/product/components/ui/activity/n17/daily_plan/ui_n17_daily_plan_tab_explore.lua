@@ -1,46 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n17/daily_plan/ui_n17_daily_plan_tab_explore.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN17DailyPlanTabExplore", UICustomWidget)
 UIN17DailyPlanTabExplore = UIN17DailyPlanTabExplore
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN17DailyPlanTabExplore.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN17DailyPlanTabExplore:OnShow(uiParams)
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanTabExplore.OnHide = function(self)
-  -- function num : 0_1
+function UIN17DailyPlanTabExplore:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanTabExplore.SetData = function(self, component, inHome, closeCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN17DailyPlanTabExplore:SetData(component, inHome, closeCallback)
   self._inHome = inHome
   self._closeCallback = closeCallback
   local component_cfg_id = component:GetComponentCfgId()
-  local cfg = (Cfg.cfg_component_power2item)[component_cfg_id]
+  local cfg = Cfg.cfg_component_power2item[component_cfg_id]
   if cfg then
-    (UIWidgetHelper.SetItemIcon)(self, cfg.ItemID, "_icon2")
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "_txt2", cfg.Ratio)
+    UIWidgetHelper.SetItemIcon(self, cfg.ItemID, "_icon2")
+    UIWidgetHelper.SetLocalizationText(self, "_txt2", cfg.Ratio)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanTabExplore.BtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN17DailyPlanTabExplore:BtnOnClick()
   if self._inHome then
+  else
     self:SwitchState(UIStateType.UIDiscovery)
   end
 end
-
-

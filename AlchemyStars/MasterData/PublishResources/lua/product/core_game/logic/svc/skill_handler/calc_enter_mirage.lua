@@ -1,85 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_enter_mirage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_EnterMirage", Object)
 SkillEffectCalc_EnterMirage = SkillEffectCalc_EnterMirage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_EnterMirage.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_EnterMirage:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_EnterMirage.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_EnterMirage:DoSkillEffectCalculator(skillEffectCalcParam)
   local casterEntityID = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterEntityID)
-  local mirageSvc = (self._world):GetService("MirageLogic")
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
+  local mirageSvc = self._world:GetService("MirageLogic")
   mirageSvc:SetMirageOpen()
   local param = skillEffectCalcParam:GetSkillEffectParam()
   local trapRefreshID = param:GetTrapRefreshID()
   mirageSvc:SetTrapRefreshID(trapRefreshID)
   mirageSvc:SetMirageBossEntityID(casterEntityID)
-  local monsterCreationSvc = (self._world):GetService("MonsterCreationLogic")
+  local monsterCreationSvc = self._world:GetService("MonsterCreationLogic")
   local initAttributes = {}
   local inheritAttributeList = param:GetInheritAttribute()
   local isUseAttribute = param:GetUseAttribute()
-  if inheritAttributeList ~= nil or not -1 then
-    local inheritCount = (table.count)(inheritAttributeList)
-  end
+  local inheritCount = inheritAttributeList == nil and -1 or table.count(inheritAttributeList)
   local attributeCmpt = casterEntity:Attributes()
   local bHasMonsterId = casterEntity:HasMonsterID()
-  if inheritCount > 0 and (bHasMonsterId or attributeCmpt ~= nil) then
-    local nAttack, nDefense, nMaxHP = nil, nil, nil
+  if 0 < inheritCount and (bHasMonsterId or attributeCmpt ~= nil) then
+    local nAttack, nDefense, nMaxHP
     if bHasMonsterId and isUseAttribute == 0 then
-      local nCasterMonsterId = (casterEntity:MonsterID()):GetMonsterID()
-      nAttack = monsterCreationSvc:GetCreateADH(nCasterMonsterId)
+      local nCasterMonsterId = casterEntity:MonsterID():GetMonsterID()
+      nAttack, nDefense, nMaxHP = monsterCreationSvc:GetCreateADH(nCasterMonsterId)
     else
-      do
-        do
-          nAttack = attributeCmpt:GetAttribute("Attack")
-          -- DECOMPILER ERROR at PC73: Overwrote pending register: R15 in 'AssignReg'
-
-          -- DECOMPILER ERROR at PC76: Overwrote pending register: R16 in 'AssignReg'
-
-          if inheritAttributeList.Attack and nAttack ~= nil then
-            initAttributes.Attack = nAttack * inheritAttributeList.Attack
-          end
-          if inheritAttributeList.Defense and nDefense ~= nil then
-            initAttributes.Defense = nDefense * inheritAttributeList.Defense
-          end
-          if inheritAttributeList.MaxHP and nMaxHP ~= nil then
-            initAttributes.MaxHP = nMaxHP * inheritAttributeList.MaxHP
-            initAttributes.HP = nMaxHP * inheritAttributeList.MaxHP
-          end
-          -- DECOMPILER ERROR at PC104: Overwrote pending register: R15 in 'AssignReg'
-
-          local inheritElement = param:GetInheritElement()
-          if inheritElement then
-            local oriEntity = casterEntity
-            -- DECOMPILER ERROR at PC109: Overwrote pending register: R16 in 'AssignReg'
-
-            if nMaxHP(casterEntity) then
-              oriEntity = casterEntity:GetSuperEntity()
-            end
-            if oriEntity:HasAttributes() then
-              local attrCmpt = oriEntity:Attributes()
-              initAttributes.Element = attrCmpt:GetAttribute("Element")
-            end
-          end
-          do
-            mirageSvc:SetMirageTrapInheritAttributes(initAttributes)
-            local result = SkillEffectEnterMirageResult:New()
-            return result
-          end
-        end
-      end
+      nAttack = attributeCmpt:GetAttribute("Attack")
+      nDefense = attributeCmpt:GetAttribute("Defense")
+      nMaxHP = attributeCmpt:CalcMaxHp()
+    end
+    if inheritAttributeList.Attack and nAttack ~= nil then
+      initAttributes.Attack = nAttack * inheritAttributeList.Attack
+    end
+    if inheritAttributeList.Defense and nDefense ~= nil then
+      initAttributes.Defense = nDefense * inheritAttributeList.Defense
+    end
+    if inheritAttributeList.MaxHP and nMaxHP ~= nil then
+      initAttributes.MaxHP = nMaxHP * inheritAttributeList.MaxHP
+      initAttributes.HP = nMaxHP * inheritAttributeList.MaxHP
     end
   end
+  local inheritElement = param:GetInheritElement()
+  if inheritElement then
+    local oriEntity = casterEntity
+    if casterEntity:HasSuperEntity() then
+      oriEntity = casterEntity:GetSuperEntity()
+    end
+    if oriEntity:HasAttributes() then
+      local attrCmpt = oriEntity:Attributes()
+      initAttributes.Element = attrCmpt:GetAttribute("Element")
+    end
+  end
+  mirageSvc:SetMirageTrapInheritAttributes(initAttributes)
+  local result = SkillEffectEnterMirageResult:New()
+  return result
 end
-
-

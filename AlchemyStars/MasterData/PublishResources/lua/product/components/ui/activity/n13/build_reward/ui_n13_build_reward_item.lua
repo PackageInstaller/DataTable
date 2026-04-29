@@ -1,183 +1,114 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n13/build_reward/ui_n13_build_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN13BuildRewardItem", UICustomWidget)
 UIN13BuildRewardItem = UIN13BuildRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN13BuildRewardItem._SetRawImage = function(self, widgetName, url)
-  -- function num : 0_0
+function UIN13BuildRewardItem:_SetRawImage(widgetName, url)
   local obj = self:GetUIComponent("RawImageLoader", widgetName)
   obj:LoadImage(url)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardItem._SetText = function(self, widgetName, txt)
-  -- function num : 0_1
+function UIN13BuildRewardItem:_SetText(widgetName, txt)
   local obj = self:GetUIComponent("UILocalizationText", widgetName)
   obj:SetText(txt)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardItem._GetItemCfg = function(self, itemId)
-  -- function num : 0_2 , upvalues : _ENV
-  self._cfg_item = (Cfg.cfg_item)[itemId]
+function UIN13BuildRewardItem:_GetItemCfg(itemId)
+  self._cfg_item = Cfg.cfg_item[itemId]
   if self._cfg_item == nil then
-    (Log.fatal)("UIN13BuildRewardItem:_GetIconUrl() cfg_item is nil ! id --> ", itemId)
-    return 
+    Log.fatal("UIN13BuildRewardItem:_GetIconUrl() cfg_item is nil ! id --> ", itemId)
+    return
   end
   return self._cfg_item
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardItem._GetComponents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN13BuildRewardItem:_GetComponents()
   self._iconRect = self:GetUIComponent("RectTransform", "icon")
   self._iconObj = self:GetGameObject("icon")
   self._countBgObj = self:GetGameObject("count")
   self._countText = self:GetUIComponent("UILocalizationText", "countText")
-  self._bgGroup = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"bg1"}
-, 
-{"bg2"}
-, 
-{"bg3"}
-, 
-{"bg4"}
-, 
-{"bg5"}
-, 
-{"bg6"}
-})
+  self._bgGroup = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {"bg1"},
+    {"bg2"},
+    {"bg3"},
+    {"bg4"},
+    {"bg5"},
+    {"bg6"}
+  })
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_4
+function UIN13BuildRewardItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardItem.OnHide = function(self)
-  -- function num : 0_5
+function UIN13BuildRewardItem:OnHide()
   self._tipsCallback = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardItem.SetData = function(self, index, roleAsset, tipsCallback, gray)
-  -- function num : 0_6
+function UIN13BuildRewardItem:SetData(index, roleAsset, tipsCallback, gray)
   self:_GetComponents()
   self._index = index
   self._roleAsset = roleAsset
   self._tipsCallback = tipsCallback
   self._gray = gray
-  local count = (self._roleAsset).count
-  local itemId = (self._roleAsset).assetid
+  local count = self._roleAsset.count
+  local itemId = self._roleAsset.assetid
   self:_SetIcon(itemId)
   self:_SetCount("", count, true)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardItem.iconOnClick = function(self, go)
-  -- function num : 0_7
+function UIN13BuildRewardItem:iconOnClick(go)
   if self._tipsCallback then
-    (self._tipsCallback)((self._roleAsset).assetid, (go.transform).position)
+    self._tipsCallback(self._roleAsset.assetid, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardItem._SetIcon = function(self, itemId)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN13BuildRewardItem:_SetIcon(itemId)
   local cfg = self:_GetItemCfg(itemId)
   local url = cfg.Icon
   local color = cfg.Color
-  if not (string.isnullorempty)(url) then
+  if not string.isnullorempty(url) then
     self:_ShowIcon(true, itemId)
     self:_SetRawImage("icon", url)
-    ;
-    (UIWidgetHelper.SetObjGroupShow)(self._bgGroup, color)
+    UIWidgetHelper.SetObjGroupShow(self._bgGroup, color)
   else
     self:_ShowIcon(false)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardItem._ShowIcon = function(self, show, itemId)
-  -- function num : 0_9
-  (self._iconObj):SetActive(show)
+function UIN13BuildRewardItem:_ShowIcon(show, itemId)
+  self._iconObj:SetActive(show)
   self:_SetIconOffset(itemId)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardItem._SetIconOffset = function(self, itemId)
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIN13BuildRewardItem:_SetIconOffset(itemId)
   if self:_IsPet(itemId) then
-    (self._iconRect).anchoredPosition = Vector2(0, 0)
+    self._iconRect.anchoredPosition = Vector2(0, 0)
   else
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._iconRect).anchoredPosition = Vector2(0, 5)
+    self._iconRect.anchoredPosition = Vector2(0, 5)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardItem._IsPet = function(self, id)
-  -- function num : 0_11 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet)({ID = id})
+function UIN13BuildRewardItem:_IsPet(id)
+  local cfg = Cfg.cfg_pet({ID = id})
   return cfg and true or false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardItem._SetCount = function(self, prefix, text, showZeroFlag)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN13BuildRewardItem:_SetCount(prefix, text, showZeroFlag)
   if text ~= nil then
     local show = false
     if type(text) == "number" then
       local num = text
-      if num <= 0 then
-        show = showZeroFlag
-        show = show
-        do
-          do
-            local str = prefix .. (HelperProxy:GetInstance()):FormatItemCount(num)
-            ;
-            (self._countText):SetText(str)
-            if type(text) == "string" then
-              show = not (string.isnullorempty)(text)
-              ;
-              (self._countText):SetText(text)
-            end
-            self:_ShowCountGroup(show)
-            self:_ShowCountGroup(false)
-            -- DECOMPILER ERROR: 6 unprocessed JMP targets
-          end
-        end
-      end
+      show = 0 < num or showZeroFlag
+      local str = prefix .. HelperProxy:GetInstance():FormatItemCount(num)
+      self._countText:SetText(str)
+    elseif type(text) == "string" then
+      show = not string.isnullorempty(text)
+      self._countText:SetText(text)
     end
+    self:_ShowCountGroup(show)
+  else
+    self:_ShowCountGroup(false)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildRewardItem._ShowCountGroup = function(self, show)
-  -- function num : 0_13
-  (self._countBgObj):SetActive(show)
+function UIN13BuildRewardItem:_ShowCountGroup(show)
+  self._countBgObj:SetActive(show)
 end
-
-

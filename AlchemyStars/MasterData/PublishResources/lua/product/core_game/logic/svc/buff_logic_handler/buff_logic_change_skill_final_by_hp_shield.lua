@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_skill_final_by_hp_shield.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillFinalByHPShield", BuffLogicBase)
 BuffLogicChangeSkillFinalByHPShield = BuffLogicChangeSkillFinalByHPShield
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillFinalByHPShield.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeSkillFinalByHPShield:Constructor(buffInstance, logicParam)
   self._baseValue = logicParam.baseValue
   self._shieldParamMax = logicParam.shieldParamMax
   self._shieldPercentMax = logicParam.shieldPercentMax
@@ -17,64 +10,52 @@ BuffLogicChangeSkillFinalByHPShield.Constructor = function(self, buffInstance, l
   self._entity = buffInstance._entity
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalByHPShield.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeSkillFinalByHPShield:DoLogic(notify)
   local sourceEntity = self:GetEntity()
-  do
-    if sourceEntity:HasPet() then
-      local matchType = (self._world):MatchType()
-      if matchType ~= MatchType.MT_Maze and (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze then
-        sourceEntity = (sourceEntity:Pet()):GetOwnerTeamEntity()
-      end
+  if sourceEntity:HasPet() then
+    local matchType = self._world:MatchType()
+    if matchType ~= MatchType.MT_Maze and self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze then
+      sourceEntity = sourceEntity:Pet():GetOwnerTeamEntity()
     end
-    local cAttributes = sourceEntity:Attributes()
-    local maxHP = cAttributes:CalcMaxHp()
-    local curHP = cAttributes:GetCurrentHP()
-    local buffLogicService = (self._world):GetService("BuffLogic")
-    local curShieldValue = buffLogicService:GetHPShield(sourceEntity)
-    if curShieldValue == 0 then
-      return 
-    end
-    if maxHP == 0 then
-      return 
-    end
-    local shieldParam = 0
-    local curShieldPercent = curShieldValue / maxHP
-    if self._shieldPercentMax <= curShieldPercent then
-      shieldParam = self._shieldParamMax
-    else
-      shieldParam = curShieldPercent / self._shieldPercentMax * self._shieldParamMax
-    end
-    local hpParam = (1 - curHP / maxHP) * self._curHpParamMax
-    local promoteRate = self._baseValue + shieldParam + hpParam
-    if promoteRate == 0 then
-      return 
-    end
-    for _,paramType in ipairs(self._effectList) do
-      (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, promoteRate)
-    end
+  end
+  local cAttributes = sourceEntity:Attributes()
+  local maxHP = cAttributes:CalcMaxHp()
+  local curHP = cAttributes:GetCurrentHP()
+  local buffLogicService = self._world:GetService("BuffLogic")
+  local curShieldValue = buffLogicService:GetHPShield(sourceEntity)
+  if curShieldValue == 0 then
+    return
+  end
+  if maxHP == 0 then
+    return
+  end
+  local shieldParam = 0
+  local curShieldPercent = curShieldValue / maxHP
+  if curShieldPercent >= self._shieldPercentMax then
+    shieldParam = self._shieldParamMax
+  else
+    shieldParam = curShieldPercent / self._shieldPercentMax * self._shieldParamMax
+  end
+  local hpParam = (1 - curHP / maxHP) * self._curHpParamMax
+  local promoteRate = self._baseValue + shieldParam + hpParam
+  if promoteRate == 0 then
+    return
+  end
+  for _, paramType in ipairs(self._effectList) do
+    self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, promoteRate)
   end
 end
 
 _class("BuffLogicRemoveSkillFinalByHPShield", BuffLogicBase)
 BuffLogicRemoveSkillFinalByHPShield = BuffLogicRemoveSkillFinalByHPShield
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSkillFinalByHPShield.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveSkillFinalByHPShield:Constructor(buffInstance, logicParam)
   self._entity = buffInstance._entity
   self._effectList = logicParam.effectList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSkillFinalByHPShield.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,paramType in ipairs(self._effectList) do
-    (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicRemoveSkillFinalByHPShield:DoLogic()
+  for _, paramType in ipairs(self._effectList) do
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

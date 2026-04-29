@@ -1,38 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_palsy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetPalsy", BuffLogicBase)
 BuffLogicSetPalsy = BuffLogicSetPalsy
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetPalsy.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetPalsy:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetPalsy.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetPalsy:DoLogic()
+  local e = self._buffInstance:Entity()
   return true
 end
 
 _class("BuffLogicResetPalsy", BuffLogicBase)
 BuffLogicResetPalsy = BuffLogicResetPalsy
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetPalsy.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetPalsy:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetPalsy.DoLogic = function(self)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
+function BuffLogicResetPalsy:DoLogic()
+  local e = self._buffInstance:Entity()
   return true
 end
-
-

@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_addhp_by_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddHPByLayer", BuffViewBase)
 BuffViewAddHPByLayer = BuffViewAddHPByLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddHPByLayer.Constructor = function(self)
-  -- function num : 0_0
+function BuffViewAddHPByLayer:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddHPByLayer.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewAddHPByLayer:IsNotifyMatch(notify)
   local result = self._buffResult
   local n = notify
   if notify:GetLayerName() ~= result:GetLayerName() then
@@ -26,65 +16,50 @@ BuffViewAddHPByLayer.IsNotifyMatch = function(self, notify)
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddHPByLayer.PlayView = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffViewAddHPByLayer:PlayView(TT)
   local res = self._buffResult
   local damageInfo = res:GetDamageInfo()
-  local entity = (self._world):GetEntityByID(res:GetEntityID())
+  local entity = self._world:GetEntityByID(res:GetEntityID())
   local curLayer = res:GetLayer()
   local buffseq = res:GetBuffSeq()
-  local buffView = (self._entity):BuffView()
+  local buffView = self._entity:BuffView()
   local viewInstance = buffView:GetBuffViewInstance(buffseq)
   if not viewInstance then
-    (Log.error)("BuffViewAddHPByLayer not find viewInstance! entity=", (self._entity):GetID(), " layer=", curLayer)
-    return 
+    Log.error("BuffViewAddHPByLayer not find viewInstance! entity=", self._entity:GetID(), " layer=", curLayer)
+    return
   end
-  ;
-  (Log.debug)("BuffViewAddHPByLayer entity=", (self._entity):GetID(), " layer=", curLayer)
-  local casterEntity = (self:BuffViewInstance()):GetBuffViewContext() and ((self:BuffViewInstance()):GetBuffViewContext()).casterEntity or nil
+  Log.debug("BuffViewAddHPByLayer entity=", self._entity:GetID(), " layer=", curLayer)
+  local casterEntity = self:BuffViewInstance():GetBuffViewContext() and self:BuffViewInstance():GetBuffViewContext().casterEntity or nil
   viewInstance:SetLayerCount(TT, curLayer, res.totalLayerCount, casterEntity)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
-  if (self._entity):HasPetPstID() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAccumulateNum, ((self._entity):PetPstID()):GetPstID(), curLayer)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
+  if self._entity:HasPetPstID() then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAccumulateNum, self._entity:PetPstID():GetPstID(), curLayer)
   end
   local buffEffectEntityID = viewInstance:GetBuffEffectEntityID()
   local effectAnimList = viewInstance:GetBuffEffectLayerAnimList()
-  local buffEffectEntity = (self._world):GetEntityByID(buffEffectEntityID)
+  local buffEffectEntity = self._world:GetEntityByID(buffEffectEntityID)
   if effectAnimList and buffEffectEntity then
-    local effectGameObj = ((buffEffectEntity:View()).ViewWrapper).GameObject
+    local effectGameObj = buffEffectEntity:View().ViewWrapper.GameObject
     local anim = effectGameObj:GetComponentInChildren(typeof(UnityEngine.Animation))
     if anim then
-      (Log.info)("CurLayer ", curLayer, " totalLayer ", res.totalLayerCount)
+      Log.info("CurLayer ", curLayer, " totalLayer ", res.totalLayerCount)
       local animName = effectAnimList[curLayer]
-      ;
-      (Log.info)(" CurAnim ", animName)
+      Log.info(" CurAnim ", animName)
       anim:Play(animName)
     else
-      do
-        do
-          ;
-          (Log.fatal)("Can not find view layer animation cmpt")
-          local buffConfigData = viewInstance:BuffConfigData()
-          if not buffConfigData:GetViewParams() then
-            local viewParams = {}
-          end
-          if viewParams.IsHPEnergy then
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateHPEnergy, (self._entity):GetID(), curLayer)
-          end
-          YIELD(TT)
-          local materialAnimationComponent = entity:MaterialAnimationComponent()
-          if materialAnimationComponent then
-            materialAnimationComponent:PlayCure()
-          end
-          local playDamageService = (self._world):GetService("PlayDamage")
-          playDamageService:AsyncUpdateHPAndDisplayDamage(entity, damageInfo)
-        end
-      end
+      Log.fatal("Can not find view layer animation cmpt")
     end
   end
+  local buffConfigData = viewInstance:BuffConfigData()
+  local viewParams = buffConfigData:GetViewParams() or {}
+  if viewParams.IsHPEnergy then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateHPEnergy, self._entity:GetID(), curLayer)
+  end
+  YIELD(TT)
+  local materialAnimationComponent = entity:MaterialAnimationComponent()
+  if materialAnimationComponent then
+    materialAnimationComponent:PlayCure()
+  end
+  local playDamageService = self._world:GetService("PlayDamage")
+  playDamageService:AsyncUpdateHPAndDisplayDamage(entity, damageInfo)
 end
-
-

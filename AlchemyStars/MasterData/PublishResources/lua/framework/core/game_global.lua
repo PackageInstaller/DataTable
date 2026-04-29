@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/game_global.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GameGlobal", Singleton)
 GameGlobal = GameGlobal
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GameGlobal.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function GameGlobal:Constructor()
   self.isDisposing = false
   self.timeMS = 0
   self.unscaledTimeMS = 0
@@ -37,117 +30,81 @@ GameGlobal.Constructor = function(self)
   self._isOfflineMatch = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function GameGlobal:Dispose()
   self.isDisposing = true
-  ;
-  (self.taskManager):KillAllTasks()
+  self.taskManager:KillAllTasks()
   if self.gameLogic then
-    (self.gameLogic):Dispose()
+    self.gameLogic:Dispose()
   end
-  ;
-  (AchievementManager:GetInstance()):Dispose()
-  ;
-  (HomeUIBubbleManager:GetInstance()):Dispose()
-  ;
-  (ToastManager:GetInstance()):Dispose()
-  ;
-  (CutsceneManager:GetInstance()):Dispose()
+  AchievementManager:GetInstance():Dispose()
+  HomeUIBubbleManager:GetInstance():Dispose()
+  ToastManager:GetInstance():Dispose()
+  CutsceneManager:GetInstance():Dispose()
   if self.uiStateManager then
-    (self.uiStateManager):Dispose()
+    self.uiStateManager:Dispose()
   end
   if self.h3dTimer then
-    (self.h3dTimer):Clear()
+    self.h3dTimer:Clear()
   end
   if self.h3dRealTimer then
-    (self.h3dRealTimer):Clear()
+    self.h3dRealTimer:Clear()
   end
   if self.gameEventDispatcher then
-    (self.gameEventDispatcher):RemoveAllListeners()
+    self.gameEventDispatcher:RemoveAllListeners()
   end
-  ;
-  (self.stringTable):Dispose()
-  ;
-  (AudioHelperController.StopBGM)()
-  ;
-  (self.donotDestroyRes):Dispose()
+  self.stringTable:Dispose()
+  AudioHelperController.StopBGM()
+  self.donotDestroyRes:Dispose()
   self._collectors = {}
-  ;
-  (self.gameRecorder):Dispose()
+  self.gameRecorder:Dispose()
   if self.poolManager then
-    (self.poolManager):Dispose()
+    self.poolManager:Dispose()
   end
   if self.guideMessageBoxMng then
-    (self.guideMessageBoxMng):Dispose()
+    self.guideMessageBoxMng:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.IsDisposing = function(self)
-  -- function num : 0_2
+function GameGlobal:IsDisposing()
   return self.isDisposing
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
 GameGlobal.Version = "0.0.0.0"
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
 GameGlobal.MagicToken = "MAGICTOKEN_51433213c2e72a6304fb805b10a2201d" .. "jkh3kx95kkfp3lsjflxlvjkf3lfj4"
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
 
-GameGlobal.OnApplicationPause = function(self, pauseStatus)
-  -- function num : 0_3 , upvalues : _ENV
+function GameGlobal:OnApplicationPause(pauseStatus)
   if self.appPaused ~= pauseStatus then
     self.appPaused = pauseStatus
     if self.appPaused then
-      (self.gameEventDispatcher):Dispatch(GameEventType.AppHome)
+      self.gameEventDispatcher:Dispatch(GameEventType.AppHome)
     else
-      ;
-      (self.gameEventDispatcher):Dispatch(GameEventType.AppResume)
+      self.gameEventDispatcher:Dispatch(GameEventType.AppResume)
     end
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.OnApplicationFocus = function(self, hasFocus)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ApplicationFocus, hasFocus)
+function GameGlobal:OnApplicationFocus(hasFocus)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ApplicationFocus, hasFocus)
   if self.appFocused ~= hasFocus then
     self.appFocused = hasFocus
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.OnApplicationQuit = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.sys)("GameGlobal:OnApplicationQuit")
+function GameGlobal:OnApplicationQuit()
+  Log.sys("GameGlobal:OnApplicationQuit")
   if self.appQuit then
-    return 
+    return
   end
   self.appQuit = true
-  ;
-  (TSSSDKProxy:GetInstance()):OnQuit()
-  ;
-  ((GameGlobal.GameRecorder)()):StopRecord()
-  ;
-  (GameGlobal:GetInstance()):Dispose()
-  ;
-  (ResourceManager:GetInstance()):Dispose()
+  TSSSDKProxy:GetInstance():OnQuit()
+  GameGlobal.GameRecorder():StopRecord()
+  GameGlobal:GetInstance():Dispose()
+  ResourceManager:GetInstance():Dispose()
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.Init = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.init)()
-  ;
-  (Log.prof)("[loading] Init Start")
+function GameGlobal:Init()
+  Log.init()
+  Log.prof("[loading] Init Start")
   self.gameEventListenerIDGenerator = IDGenerator:New(IDGeneratorType.GAME_EVENT_LISTENER_FIRST_ID)
   self.gameEventDispatcher = GameEventDispatcher:New()
   self.h3dTimer = H3DTimer:New()
@@ -158,283 +115,177 @@ GameGlobal.Init = function(self)
   self:AddCollector("LoginLoading")
   self:AddCollector("CoreGameLoading")
   self.gameRecorder = GameRecorder:New()
-  ;
-  (self.taskManager):StartTask(GameGlobal.InitUI, self)
-  ;
-  (TSSSDKProxy:GetInstance()):Init()
+  self.taskManager:StartTask(GameGlobal.InitUI, self)
+  TSSSDKProxy:GetInstance():Init()
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.InitUI = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.debug)("GameGlobal InitUI started")
+function GameGlobal:InitUI(TT)
+  Log.debug("GameGlobal InitUI started")
   self.resolutionManager = ResolutionManager:New()
-  ;
-  (self.resolutionManager):Init()
-  ;
-  (ResourceManager:GetInstance()):UnloadAllABs()
-  ;
-  (GameHelper.AddShaderNames)()
-  local request = (ResourceManager:GetInstance()):SyncLoadAsset("GlobalUIRoot.prefab", LoadType.GameObject)
+  self.resolutionManager:Init()
+  ResourceManager:GetInstance():UnloadAllABs()
+  GameHelper.AddShaderNames()
+  local request = ResourceManager:GetInstance():SyncLoadAsset("GlobalUIRoot.prefab", LoadType.GameObject)
   self.uiStateManager = UIStateManager:New(request)
-  ;
-  (self.resolutionManager):InitAfterUI(request.Obj)
-  ;
-  (ToastManager:GetInstance()):Init(request.Obj)
-  ;
-  (CutsceneManager:GetInstance()):Init(request.Obj)
-  ;
-  (UISwitchImgManager:GetInstance()):Init(request.Obj)
+  self.resolutionManager:InitAfterUI(request.Obj)
+  ToastManager:GetInstance():Init(request.Obj)
+  CutsceneManager:GetInstance():Init(request.Obj)
+  UISwitchImgManager:GetInstance():Init(request.Obj)
   self:InitAfterUI(TT)
-  ;
-  (AchievementManager:GetInstance()):Init(request.Obj)
-  ;
-  (HomeUIBubbleManager:GetInstance()):Init(request.Obj)
-  ;
-  (Log.debug)("GameGlobal InitUI ended")
+  AchievementManager:GetInstance():Init(request.Obj)
+  HomeUIBubbleManager:GetInstance():Init(request.Obj)
+  Log.debug("GameGlobal InitUI ended")
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.InitAfterUI = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
-  (self.stringTable):ClearTable()
-  ;
-  (self.stringTable):Init()
-  ;
-  (AudioHelperController.Initialize)()
-  local bgmOn = (LocalDB.GetInt)("MusicVolumeOnKey", 1) > 0
-  local soundOn = (LocalDB.GetInt)("SoundVolumeOnKey", 1) > 0
-  local voiceOn = (LocalDB.GetInt)("VoiceVolumeOnKey", 1) > 0
-  local bgmGlobal = ((Cfg.cfg_global).bgm_volume).FloatValue
-  local voiceGlobal = ((Cfg.cfg_global).voice_volume).FloatValue
-  local soundGlobal = ((Cfg.cfg_global).sound_volume).FloatValue
-  local bgm_value = bgmOn and (LocalDB.GetInt)("MusicVolumeKey", 100) / 100 * bgmGlobal or 0
-  ;
-  (AudioHelperController.SetBgmVolume)(bgm_value)
-  local voice_value = voiceOn and (LocalDB.GetInt)("VoiceVolumeKey", 100) / 100 * voiceGlobal or 0
-  ;
-  (AudioHelperController.SetVoiceVolume)(voice_value)
-  local sound_value = soundOn and (LocalDB.GetInt)("SoundVolumeKey", 100) / 100 * soundGlobal or 0
-  ;
-  (AudioHelperController.SetSoundVolume)(sound_value)
+function GameGlobal:InitAfterUI(TT)
+  self.stringTable:ClearTable()
+  self.stringTable:Init()
+  AudioHelperController.Initialize()
+  local bgmOn = LocalDB.GetInt("MusicVolumeOnKey", 1) > 0
+  local soundOn = 0 < LocalDB.GetInt("SoundVolumeOnKey", 1)
+  local voiceOn = 0 < LocalDB.GetInt("VoiceVolumeOnKey", 1)
+  local bgmGlobal = Cfg.cfg_global.bgm_volume.FloatValue
+  local voiceGlobal = Cfg.cfg_global.voice_volume.FloatValue
+  local soundGlobal = Cfg.cfg_global.sound_volume.FloatValue
+  local bgm_value = bgmOn and LocalDB.GetInt("MusicVolumeKey", 100) / 100 * bgmGlobal or 0
+  AudioHelperController.SetBgmVolume(bgm_value)
+  local voice_value = voiceOn and LocalDB.GetInt("VoiceVolumeKey", 100) / 100 * voiceGlobal or 0
+  AudioHelperController.SetVoiceVolume(voice_value)
+  local sound_value = soundOn and LocalDB.GetInt("SoundVolumeKey", 100) / 100 * soundGlobal or 0
+  AudioHelperController.SetSoundVolume(sound_value)
   self.gameLogic = GameLogic:New()
-  ;
-  (self.gameLogic):Init()
-  ;
-  (self.poolManager):Init()
-  local gameStartType = (UIHelper.GameStartType)()
-  ;
-  (Log.prof)("[prof] GameGlobal:InitAfterUI", gameStartType)
-  ;
-  (GameGlobal.SetTargetFrameRate)()
-  ;
-  (GameGlobal.SetAntialiasing)()
-  ;
-  (GameGlobal.SetQualityByLodLevel)()
-  ;
-  (GameGlobal.SetHighFrameStatus)((GameGlobal.GetHighFrameStatus)())
+  self.gameLogic:Init()
+  self.poolManager:Init()
+  local gameStartType = UIHelper.GameStartType()
+  Log.prof("[prof] GameGlobal:InitAfterUI", gameStartType)
+  GameGlobal.SetTargetFrameRate()
+  GameGlobal.SetAntialiasing()
+  GameGlobal.SetQualityByLodLevel()
+  GameGlobal.SetHighFrameStatus(GameGlobal.GetHighFrameStatus())
   if gameStartType == EGameStartType.Normal then
-    if (HelperProxy:GetInstance()):GetConfig("TMPLoginSwitch", "false") == "false" then
-      (self.uiStateManager):PushAndSwitchState(UIStateType.Login)
+    if HelperProxy:GetInstance():GetConfig("TMPLoginSwitch", "false") == "false" then
+      self.uiStateManager:PushAndSwitchState(UIStateType.Login)
     else
-      ((GameGlobal.UIStateManager)()):SetBlackSideVisible(false)
-      ;
-      (self.uiStateManager):PushAndSwitchState(UIStateType.LoginEmpty)
+      GameGlobal.UIStateManager():SetBlackSideVisible(false)
+      self.uiStateManager:PushAndSwitchState(UIStateType.LoginEmpty)
     end
   elseif gameStartType == EGameStartType.UITest then
-    ((self.UIStateManager)()):PushAndSwitchState(UIStateType.DemoMain)
+    self.UIStateManager():PushAndSwitchState(UIStateType.DemoMain)
   elseif gameStartType == EGameStartType.StoryViewer then
-    ((self.UIStateManager)()):PushAndSwitchState(UIStateType.UIStoryViewer)
+    self.UIStateManager():PushAndSwitchState(UIStateType.UIStoryViewer)
   elseif gameStartType == EGameStartType.StoryViewer3D then
-    ((self.UIStateManager)()):PushAndSwitchState(UIStateType.UIStoryViewer3D)
+    self.UIStateManager():PushAndSwitchState(UIStateType.UIStoryViewer3D)
   elseif gameStartType == EGameStartType.SkillEditor then
-    ((self.UIStateManager)()):PushAndSwitchState(UIStateType.UISKillEditor)
+    self.UIStateManager():PushAndSwitchState(UIStateType.UISKillEditor)
   end
   self:Cache()
-  ;
-  (Log.prof)("[loading] Init end")
-  -- DECOMPILER ERROR: 15 unprocessed JMP targets
+  Log.prof("[loading] Init end")
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.Cache = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (Cfg.cfg_level)()
-  ;
-  (Cfg.cfg_refresh)()
-  ;
-  (Cfg.cfg_refresh_monster)()
-  ;
-  (Cfg.cfg_monster_class)()
-  ;
-  (Cfg.cfg_monster)()
-  ;
-  (Cfg.cfg_monster_wave)()
+function GameGlobal:Cache()
+  Cfg.cfg_level()
+  Cfg.cfg_refresh()
+  Cfg.cfg_refresh_monster()
+  Cfg.cfg_monster_class()
+  Cfg.cfg_monster()
+  Cfg.cfg_monster_wave()
   self._cacheReqList = {}
-  ;
-  (self.taskManager):StartTask(GameGlobal.CacheRes, self, "UIDiscovery.prefab", LoadType.GameObject)
-  ;
-  (self.taskManager):StartTask(GameGlobal.CacheRes, self, "UIStage.prefab", LoadType.GameObject)
-  ;
-  (self.taskManager):StartTask(GameGlobal.CacheRes, self, "map_bantou18_frame.mat", LoadType.Mat)
-  ;
-  (self.taskManager):StartTask(GameGlobal.CacheRes, self, "UIEnemyItem.prefab", LoadType.GameObject)
-  ;
-  (self.taskManager):StartTask(GameGlobal.CacheRes, self, "UICommonTopButton.prefab", LoadType.GameObject)
+  self.taskManager:StartTask(GameGlobal.CacheRes, self, "UIDiscovery.prefab", LoadType.GameObject)
+  self.taskManager:StartTask(GameGlobal.CacheRes, self, "UIStage.prefab", LoadType.GameObject)
+  self.taskManager:StartTask(GameGlobal.CacheRes, self, "map_bantou18_frame.mat", LoadType.Mat)
+  self.taskManager:StartTask(GameGlobal.CacheRes, self, "UIEnemyItem.prefab", LoadType.GameObject)
+  self.taskManager:StartTask(GameGlobal.CacheRes, self, "UICommonTopButton.prefab", LoadType.GameObject)
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.CacheRes = function(self, TT, resName, resType)
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-  (self._cacheReqList)[resName] = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, resName, resType)
+function GameGlobal:CacheRes(TT, resName, resType)
+  self._cacheReqList[resName] = ResourceManager:GetInstance():AsyncLoadAsset(TT, resName, resType)
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetHighFrameKey = function()
-  -- function num : 0_11 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function GameGlobal.GetHighFrameKey()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = "HIGH_FRAME_STATUS"
   return key
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetHighFrameStatus = function()
-  -- function num : 0_12 , upvalues : _ENV
-  (Log.error)((LocalDB.GetInt)((GameGlobal.GetHighFrameKey)(), 0))
-  local highFrameStatus = (LocalDB.GetInt)((GameGlobal.GetHighFrameKey)(), 0) ~= 0
-  do return highFrameStatus end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function GameGlobal.GetHighFrameStatus()
+  Log.error(LocalDB.GetInt(GameGlobal.GetHighFrameKey(), 0))
+  local highFrameStatus = LocalDB.GetInt(GameGlobal.GetHighFrameKey(), 0) ~= 0
+  return highFrameStatus
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.SetHighFrameStatus = function(status)
-  -- function num : 0_13 , upvalues : _ENV
+function GameGlobal.SetHighFrameStatus(status)
   if status then
-    (LocalDB.SetInt)((GameGlobal.GetHighFrameKey)(), 1)
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (UnityEngine.Application).targetFrameRate = 60
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (UnityEngine.QualitySettings).vSyncCount = 0
+    LocalDB.SetInt(GameGlobal.GetHighFrameKey(), 1)
+    UnityEngine.Application.targetFrameRate = 60
+    UnityEngine.QualitySettings.vSyncCount = 0
   else
-    ;
-    (LocalDB.SetInt)((GameGlobal.GetHighFrameKey)(), 0)
-    ;
-    (GameGlobal.SetTargetFrameRate)()
+    LocalDB.SetInt(GameGlobal.GetHighFrameKey(), 0)
+    GameGlobal.SetTargetFrameRate()
   end
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.SetTargetFrameRate = function()
-  -- function num : 0_14 , upvalues : _ENV
-  if (GameGlobal.GetHighFrameStatus)() then
-    (GameGlobal.SetHighFrameStatus)(true)
-    return 
+function GameGlobal.SetTargetFrameRate()
+  if GameGlobal.GetHighFrameStatus() then
+    GameGlobal.SetHighFrameStatus(true)
+    return
   end
-  local lodlevel = (LODManager.Instance):GetLODLevel()
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
+  local lodlevel = LODManager.Instance:GetLODLevel()
   if GetPlatformOS() == ClientRuntimeOS.CRO_PC then
-    (UnityEngine.Application).targetFrameRate = 60
+    UnityEngine.Application.targetFrameRate = 60
+  elseif lodlevel == 0 then
+    UnityEngine.Application.targetFrameRate = 30
+  elseif lodlevel == 1 then
+    UnityEngine.Application.targetFrameRate = 30
   else
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-    if lodlevel == 0 then
-      (UnityEngine.Application).targetFrameRate = 30
-    else
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-      if lodlevel == 1 then
-        (UnityEngine.Application).targetFrameRate = 30
-      else
-        -- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (UnityEngine.Application).targetFrameRate = 30
-      end
-    end
+    UnityEngine.Application.targetFrameRate = 30
   end
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.SetQualityByLodLevel = function()
-  -- function num : 0_15 , upvalues : _ENV
-  local lodlevel = (LODManager.Instance):GetLODLevel()
+function GameGlobal.SetQualityByLodLevel()
+  local lodlevel = LODManager.Instance:GetLODLevel()
   if lodlevel == 0 then
-    ((UnityEngine.QualitySettings).SetQualityLevel)(2)
-    ;
-    (Log.debug)(" GameGlobal.SetQuality level 2")
+    UnityEngine.QualitySettings.SetQualityLevel(2)
+    Log.debug(" GameGlobal.SetQuality level 2")
+  elseif lodlevel == 1 then
+    UnityEngine.QualitySettings.SetQualityLevel(1)
+    Log.debug(" GameGlobal.SetQuality level 1")
   else
-    if lodlevel == 1 then
-      ((UnityEngine.QualitySettings).SetQualityLevel)(1)
-      ;
-      (Log.debug)(" GameGlobal.SetQuality level 1")
-    else
-      ;
-      ((UnityEngine.QualitySettings).SetQualityLevel)(0)
-      ;
-      (Log.debug)(" GameGlobal.SetQuality level 0")
-    end
+    UnityEngine.QualitySettings.SetQualityLevel(0)
+    Log.debug(" GameGlobal.SetQuality level 0")
   end
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.SetAntialiasing = function()
-  -- function num : 0_16 , upvalues : _ENV
+function GameGlobal.SetAntialiasing()
   if APPVER130 then
-    local currLevel = (LODManager.Instance):GetLODLevel()
-    ;
-    (Log.debug)("###[GameGlobal] SetAnti currLevel --> ", currLevel)
+    local currLevel = LODManager.Instance:GetLODLevel()
+    Log.debug("###[GameGlobal] SetAnti currLevel --> ", currLevel)
     local openAntialiasing = false
-    local value = (LocalDB.GetString)("CloseAntialiasing", "null")
+    local value = LocalDB.GetString("CloseAntialiasing", "null")
     if value == "close" then
       openAntialiasing = false
+    elseif value == "open" then
+      openAntialiasing = true
     else
-      if value == "open" then
+      openAntialiasing = false
+      value = "close"
+      if currLevel == 0 then
         openAntialiasing = true
-      else
-        openAntialiasing = false
-        value = "close"
-        if currLevel == 0 then
-          openAntialiasing = true
-          value = "open"
-        end
+        value = "open"
       end
     end
-    local setting = (LODManager.Instance).setting
+    local setting = LODManager.Instance.setting
     setting.IsOpenAntialiasing = openAntialiasing
     if currLevel == 2 then
       setting.isOpenImageProcess = openAntialiasing
     end
-    ;
-    (Log.debug)("###[GameGlobal] SetAnti IsOpenAntialiasing --> ", tostring(setting.IsOpenAntialiasing))
-    ;
-    (Log.debug)("###[GameGlobal] SetAnti isOpenImageProcess --> ", tostring(setting.isOpenImageProcess))
-    ;
-    (LocalDB.SetString)("CloseAntialiasing", value)
+    Log.debug("###[GameGlobal] SetAnti IsOpenAntialiasing --> ", tostring(setting.IsOpenAntialiasing))
+    Log.debug("###[GameGlobal] SetAnti isOpenImageProcess --> ", tostring(setting.isOpenImageProcess))
+    LocalDB.SetString("CloseAntialiasing", value)
   end
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.Update = function(self, deltaMS, unscaledDeltaMS, timeMS, unscaledTimeMS)
-  -- function num : 0_17 , upvalues : _ENV
+function GameGlobal:Update(deltaMS, unscaledDeltaMS, timeMS, unscaledTimeMS)
   self.engineInput = UnityEngine.Input
   if timeMS - self.last_time >= 1000 then
     self.last_time = timeMS
@@ -444,256 +295,172 @@ GameGlobal.Update = function(self, deltaMS, unscaledDeltaMS, timeMS, unscaledTim
   self.unscaledTimeMS = unscaledTimeMS
   self.deltaMS = deltaMS
   self.unscaledDeltaMS = unscaledDeltaMS
-  ;
-  (self.taskManager):Update()
+  self.taskManager:Update()
   if self.gameLogic then
-    (self.gameLogic):Update(self.timeMS)
+    self.gameLogic:Update(self.timeMS)
   end
   if self.uiStateManager then
-    (self.uiStateManager):Update(deltaMS)
+    self.uiStateManager:Update(deltaMS)
   end
   if self.h3dTimer then
-    (self.h3dTimer):Update(deltaMS)
+    self.h3dTimer:Update(deltaMS)
   end
   if self.h3dRealTimer then
-    (self.h3dRealTimer):Update(deltaMS)
+    self.h3dRealTimer:Update(deltaMS)
   end
   if self.loadingManager then
-    (self.loadingManager):Update(deltaMS)
+    self.loadingManager:Update(deltaMS)
   end
-  if ((self.engineInput).GetKeyDown)((UnityEngine.KeyCode).Escape) then
-    (self.gameEventDispatcher):Dispatch(GameEventType.AppReturn)
+  if self.engineInput.GetKeyDown(UnityEngine.KeyCode.Escape) then
+    self.gameEventDispatcher:Dispatch(GameEventType.AppReturn)
   end
-  if self.coreGame and (self.coreGame):Running() then
-    (self.coreGame):Update(self.timeMS, deltaMS)
+  if self.coreGame and self.coreGame:Running() then
+    self.coreGame:Update(self.timeMS, deltaMS)
   end
-  ;
-  (self.luaProfiler):StoreSamepleData()
-  if self.cutsceneGame and (self.cutsceneGame):Running() then
-    (self.cutsceneGame):Update(self.timeMS, deltaMS)
+  self.luaProfiler:StoreSamepleData()
+  if self.cutsceneGame and self.cutsceneGame:Running() then
+    self.cutsceneGame:Update(self.timeMS, deltaMS)
   end
-  if self.performanceTestGame and (self.performanceTestGame):Running() then
-    (self.performanceTestGame):Update(self.timeMS, deltaMS)
+  if self.performanceTestGame and self.performanceTestGame:Running() then
+    self.performanceTestGame:Update(self.timeMS, deltaMS)
   end
   collectgarbage("step", 256)
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.LateUpdate = function(self)
-  -- function num : 0_18
+function GameGlobal:LateUpdate()
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.FixedUpdate = function(self, fixedDeltaMS)
-  -- function num : 0_19
+function GameGlobal:FixedUpdate(fixedDeltaMS)
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetCurrentTime = function(self)
-  -- function num : 0_20
+function GameGlobal:GetCurrentTime()
   return self.timeMS
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetCurrentUnscaledTime = function(self)
-  -- function num : 0_21
+function GameGlobal:GetCurrentUnscaledTime()
   return self.unscaledTimeMS
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetDeltaTime = function(self)
-  -- function num : 0_22
+function GameGlobal:GetDeltaTime()
   return self.deltaMS
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetUnscaledDeltaTime = function(self)
-  -- function num : 0_23
+function GameGlobal:GetUnscaledDeltaTime()
   return self.unscaledDeltaMS
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetCurrentRealTime = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function GameGlobal:GetCurrentRealTime()
   if self.engineTime == nil then
     self.engineTime = UnityEngine.Time
   end
-  return (self.engineTime).realtimeSinceStartup * 1000
+  return self.engineTime.realtimeSinceStartup * 1000
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetCurrentFrameCount = function(self)
-  -- function num : 0_25
+function GameGlobal:GetCurrentFrameCount()
   return self.frameCount
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetLastTimeMS = function(self)
-  -- function num : 0_26
+function GameGlobal:GetLastTimeMS()
   return self.last_time
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GameLogic = function()
-  -- function num : 0_27 , upvalues : _ENV
-  return (GameGlobal:GetInstance()).gameLogic
+function GameGlobal.GameLogic()
+  return GameGlobal:GetInstance().gameLogic
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.TaskManager = function()
-  -- function num : 0_28 , upvalues : _ENV
-  return (GameGlobal:GetInstance()).taskManager
+function GameGlobal.TaskManager()
+  return GameGlobal:GetInstance().taskManager
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.UIStateManager = function()
-  -- function num : 0_29 , upvalues : _ENV
-  return (GameGlobal:GetInstance()).uiStateManager
+function GameGlobal.UIStateManager()
+  return GameGlobal:GetInstance().uiStateManager
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.ResolutionManager = function()
-  -- function num : 0_30 , upvalues : _ENV
-  return (GameGlobal:GetInstance()).resolutionManager
+function GameGlobal.ResolutionManager()
+  return GameGlobal:GetInstance().resolutionManager
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.LoadingManager = function()
-  -- function num : 0_31 , upvalues : _ENV
-  return (GameGlobal:GetInstance()).loadingManager
+function GameGlobal.LoadingManager()
+  return GameGlobal:GetInstance().loadingManager
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.Timer = function()
-  -- function num : 0_32 , upvalues : _ENV
-  return (GameGlobal:GetInstance()).h3dTimer
+function GameGlobal.Timer()
+  return GameGlobal:GetInstance().h3dTimer
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.RealTimer = function()
-  -- function num : 0_33 , upvalues : _ENV
-  return (GameGlobal:GetInstance()).h3dRealTimer
+function GameGlobal.RealTimer()
+  return GameGlobal:GetInstance().h3dRealTimer
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.StringTable = function()
-  -- function num : 0_34 , upvalues : _ENV
-  return (GameGlobal:GetInstance()).stringTable
+function GameGlobal.StringTable()
+  return GameGlobal:GetInstance().stringTable
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.PoolManager = function()
-  -- function num : 0_35 , upvalues : _ENV
-  return (GameGlobal:GetInstance()).poolManager
+function GameGlobal.PoolManager()
+  return GameGlobal:GetInstance().poolManager
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GuideMessageBoxMng = function()
-  -- function num : 0_36 , upvalues : _ENV
-  return (GameGlobal:GetInstance()).guideMessageBoxMng
+function GameGlobal.GuideMessageBoxMng()
+  return GameGlobal:GetInstance().guideMessageBoxMng
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetModule = function(type)
-  -- function num : 0_37 , upvalues : _ENV
-  local module = ((GameGlobal:GetInstance()).gameLogic):GetModule(type)
+function GameGlobal.GetModule(type)
+  local module = GameGlobal:GetInstance().gameLogic:GetModule(type)
   if module == nil then
-    (Log.error)("GameGlobal.GetModule nil ", (Log.traceback)())
+    Log.error("GameGlobal.GetModule nil ", Log.traceback())
   end
   return module
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetZoneCfgTable = function(cfg_table_name, index)
-  -- function num : 0_38 , upvalues : _ENV
+function GameGlobal.GetZoneCfgTable(cfg_table_name, index)
   if not cfg_table_name then
     return nil
   end
-  local l_role_module = (GameGlobal.GetModule)(RoleModule)
+  local l_role_module = GameGlobal.GetModule(RoleModule)
   local l_zone_id = l_role_module:GetZoneIdType()
   local l_strZoneTableName = cfg_table_name .. "_" .. l_zone_id
-  local retTable = nil
-  if (ResourceManager:GetInstance()):HasLua(l_strZoneTableName) then
-    retTable = (GameGlobal.GetCfgTable)(l_strZoneTableName, index)
+  local retTable
+  if ResourceManager:GetInstance():HasLua(l_strZoneTableName) then
+    retTable = GameGlobal.GetCfgTable(l_strZoneTableName, index)
   end
   if retTable ~= nil then
     return retTable
   end
-  retTable = (GameGlobal.GetCfgTable)(cfg_table_name, index)
+  retTable = GameGlobal.GetCfgTable(cfg_table_name, index)
   return retTable
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetCfgTable = function(cfg_table_name, index)
-  -- function num : 0_39 , upvalues : _ENV
+function GameGlobal.GetCfgTable(cfg_table_name, index)
   if not index or type(index) == "table" and not next(index) then
-    return (Cfg[cfg_table_name])({})
+    return Cfg[cfg_table_name]({})
   end
-  return (Cfg[cfg_table_name])[index]
+  return Cfg[cfg_table_name][index]
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GameEventListenerIDGenerator = function()
-  -- function num : 0_40 , upvalues : _ENV
-  return (GameGlobal:GetInstance()).gameEventListenerIDGenerator
+function GameGlobal.GameEventListenerIDGenerator()
+  return GameGlobal:GetInstance().gameEventListenerIDGenerator
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.EventDispatcher = function()
-  -- function num : 0_41 , upvalues : _ENV
-  return (GameGlobal:GetInstance()).gameEventDispatcher
+function GameGlobal.EventDispatcher()
+  return GameGlobal:GetInstance().gameEventDispatcher
 end
 
--- DECOMPILER ERROR at PC141: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.AddUIModule = function(self, gameModuleType, uiModuleType)
-  -- function num : 0_42 , upvalues : _ENV
+function GameGlobal:AddUIModule(gameModuleType, uiModuleType)
   local uiModule = uiModuleType:New()
-  local gameModule = (GameGlobal.GetModule)(gameModuleType)
+  local gameModule = GameGlobal.GetModule(gameModuleType)
   if gameModule then
     gameModule.uiModule = uiModule
   else
-    ;
-    (Log.fatal)("GameGlobal:AddUIModule Fail, no game module ", gameModuleType._className)
+    Log.fatal("GameGlobal:AddUIModule Fail, no game module ", gameModuleType._className)
   end
 end
 
--- DECOMPILER ERROR at PC144: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetUIModule = function(gameModuleType)
-  -- function num : 0_43 , upvalues : _ENV
-  return ((GameGlobal.GetModule)(gameModuleType)).uiModule
+function GameGlobal.GetUIModule(gameModuleType)
+  return GameGlobal.GetModule(gameModuleType).uiModule
 end
 
--- DECOMPILER ERROR at PC147: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.IsInHomeLand = function()
-  -- function num : 0_44 , upvalues : _ENV
-  local homeModule = (GameGlobal.GetUIModule)(HomelandModule)
+function GameGlobal.IsInHomeLand()
+  local homeModule = GameGlobal.GetUIModule(HomelandModule)
   if homeModule == nil then
     return false
   end
@@ -705,465 +472,313 @@ GameGlobal.IsInHomeLand = function()
   end
 end
 
--- DECOMPILER ERROR at PC150: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.EngineInput = function()
-  -- function num : 0_45 , upvalues : _ENV
-  return (GameGlobal:GetInstance()).engineInput
+function GameGlobal.EngineInput()
+  return GameGlobal:GetInstance().engineInput
 end
 
--- DECOMPILER ERROR at PC153: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.StopCoreGame = function(self)
-  -- function num : 0_46
+function GameGlobal:StopCoreGame()
   if self.coreGame then
-    (self.coreGame):Stop()
+    self.coreGame:Stop()
   end
 end
 
--- DECOMPILER ERROR at PC156: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.IsCoreGameRunning = function(self)
-  -- function num : 0_47
+function GameGlobal:IsCoreGameRunning()
   if self.coreGame == nil then
     return false
   else
-    return (self.coreGame):Running()
+    return self.coreGame:Running()
   end
 end
 
--- DECOMPILER ERROR at PC159: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.ExitCutsceneGame = function(self)
-  -- function num : 0_48 , upvalues : _ENV
+function GameGlobal:ExitCutsceneGame()
   if self.cutsceneGame then
-    (self.taskManager):KillCoreGameTasks()
-    ;
-    (self.cutsceneGame):Stop()
-    ;
-    (self.cutsceneGame):Dispose()
+    self.taskManager:KillCoreGameTasks()
+    self.cutsceneGame:Stop()
+    self.cutsceneGame:Dispose()
     self.cutsceneGame = nil
-    ;
-    (HelperProxy:GetInstance()):GCCollect()
+    HelperProxy:GetInstance():GCCollect()
     collectgarbage("collect")
-    ;
-    (HelperProxy:GetInstance()):GCCollect()
+    HelperProxy:GetInstance():GCCollect()
     collectgarbage("collect")
   end
 end
 
--- DECOMPILER ERROR at PC162: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.ExitPerformanceGame = function(self)
-  -- function num : 0_49 , upvalues : _ENV
+function GameGlobal:ExitPerformanceGame()
   if self.performanceTestGame then
-    (self.taskManager):KillCoreGameTasks()
-    ;
-    (self.performanceTestGame):Stop()
-    ;
-    (self.performanceTestGame):Dispose()
+    self.taskManager:KillCoreGameTasks()
+    self.performanceTestGame:Stop()
+    self.performanceTestGame:Dispose()
     self.performanceTestGame = nil
-    ;
-    (HelperProxy:GetInstance()):GCCollect()
+    HelperProxy:GetInstance():GCCollect()
     collectgarbage("collect")
-    ;
-    (HelperProxy:GetInstance()):GCCollect()
+    HelperProxy:GetInstance():GCCollect()
     collectgarbage("collect")
   end
 end
 
--- DECOMPILER ERROR at PC165: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.ExitCoreGame = function(self)
-  -- function num : 0_50 , upvalues : _ENV
-  (self.taskManager):KillCoreGameTasks()
-  ;
-  (Log.debug)("GameGlobal:ExitCoreGame", (Log.traceback)())
+function GameGlobal:ExitCoreGame()
+  self.taskManager:KillCoreGameTasks()
+  Log.debug("GameGlobal:ExitCoreGame", Log.traceback())
   if self.coreGame then
-    (self.coreGame):Stop()
-    ;
-    (self.coreGame):CloseCoreGameCamera()
-    ;
-    (self.coreGame):Dispose()
+    self.coreGame:Stop()
+    self.coreGame:CloseCoreGameCamera()
+    self.coreGame:Dispose()
     self.coreGame = nil
-    ;
-    (AudioHelperController.ClearInnerGameAudio)()
+    AudioHelperController.ClearInnerGameAudio()
     self:StartChangeCacheLevelTask(CacheResLevel.Empty)
-    ;
-    (HelperProxy:GetInstance()):GCCollect()
+    HelperProxy:GetInstance():GCCollect()
     collectgarbage("collect")
-    ;
-    (HelperProxy:GetInstance()):GCCollect()
+    HelperProxy:GetInstance():GCCollect()
     collectgarbage("collect")
     if not USEADX2AUDIO then
-      (AudioHelper.CacheCommonUISound)()
+      AudioHelper.CacheCommonUISound()
     end
     if EDITOR then
-      ((self.GetModule)(AutoTestModule)):ExitCoreGame()
-      ;
-      ((self.GetModule)(FakeMatchModule)):ExitCoreGame()
-      ;
-      ((self.GetModule)(AIDebugModule)):ClearAIDebugInfo()
+      self.GetModule(AutoTestModule):ExitCoreGame()
+      self.GetModule(FakeMatchModule):ExitCoreGame()
+      self.GetModule(AIDebugModule):ClearAIDebugInfo()
     end
   else
-    ;
-    (Log.notice)("GameGlobal:ExitCoreGame coreGame nil")
+    Log.notice("GameGlobal:ExitCoreGame coreGame nil")
   end
 end
 
--- DECOMPILER ERROR at PC168: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.EnterCoreGame = function(self, enterData, enterPreferenceData)
-  -- function num : 0_51 , upvalues : _ENV
-  (Log.debug)("EnterCoreGame() traceback:", (debug.traceback)())
+function GameGlobal:EnterCoreGame(enterData, enterPreferenceData)
+  Log.debug("EnterCoreGame() traceback:", debug.traceback())
   if self.coreGame ~= nil then
-    (Log.debug)("duplicate coregame")
+    Log.debug("duplicate coregame")
     self:ExitCoreGame()
   end
   if not USEADX2AUDIO then
-    (AudioHelper.UnloadCommonUISound)()
+    AudioHelper.UnloadCommonUISound()
   end
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = false
+  UnityEngine.Input.multiTouchEnabled = false
   self.coreGame = MatchCoreGameEntry:New(enterData, enterPreferenceData)
-  ;
-  (self.coreGame):InitalizeCoreGame()
-  ;
-  (self:GetCollector("CoreGameLoading")):Sample("EnterCoreGame()")
+  self.coreGame:InitalizeCoreGame()
+  self:GetCollector("CoreGameLoading"):Sample("EnterCoreGame()")
 end
 
--- DECOMPILER ERROR at PC171: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.EnterCutscene = function(self, levelID)
-  -- function num : 0_52 , upvalues : _ENV
+function GameGlobal:EnterCutscene(levelID)
   if self.cutsceneGame ~= nil then
-    (Log.debug)("duplicate cutscene")
-    return 
+    Log.debug("duplicate cutscene")
+    return
   end
   if not USEADX2AUDIO then
-    (AudioHelper.UnloadCommonUISound)()
+    AudioHelper.UnloadCommonUISound()
   end
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = false
+  UnityEngine.Input.multiTouchEnabled = false
   self.cutsceneGame = CutsceneGameEntry:New(levelID)
-  ;
-  (self.cutsceneGame):InitalizeCoreGame()
-  ;
-  (self:GetCollector("CutsceneGameLoading")):Sample("EnterCutsceneGame()")
+  self.cutsceneGame:InitalizeCoreGame()
+  self:GetCollector("CutsceneGameLoading"):Sample("EnterCutsceneGame()")
 end
 
--- DECOMPILER ERROR at PC174: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.EnterPerformanceTest = function(self, levelID)
-  -- function num : 0_53 , upvalues : _ENV
+function GameGlobal:EnterPerformanceTest(levelID)
   if self.performanceTestGame ~= nil then
-    (Log.debug)("duplicate cutscene")
-    return 
+    Log.debug("duplicate cutscene")
+    return
   end
   if not USEADX2AUDIO then
-    (AudioHelper.UnloadCommonUISound)()
+    AudioHelper.UnloadCommonUISound()
   end
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = false
+  UnityEngine.Input.multiTouchEnabled = false
   self.performanceTestGame = PerformanceTestGameEntry:New(levelID)
-  ;
-  (self.performanceTestGame):InitalizeCoreGame()
-  ;
-  (self:GetCollector("PerformanceTestGame")):Sample("EnterPerformanceTestGame()")
+  self.performanceTestGame:InitalizeCoreGame()
+  self:GetCollector("PerformanceTestGame"):Sample("EnterPerformanceTestGame()")
 end
 
--- DECOMPILER ERROR at PC177: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.CoreGameStateID = function(self)
-  -- function num : 0_54 , upvalues : _ENV
-  if self.coreGame == nil or (self.coreGame):Running() == false then
+function GameGlobal:CoreGameStateID()
+  if self.coreGame == nil or self.coreGame:Running() == false then
     return GameStateID.Invalid
   end
-  if (self.coreGame).GetCurWorldStateID then
-    return (self.coreGame):GetCurWorldStateID()
+  if self.coreGame.GetCurWorldStateID then
+    return self.coreGame:GetCurWorldStateID()
   end
   return GameStateID.Invalid
 end
 
--- DECOMPILER ERROR at PC180: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.IsInputEnable = function(self)
-  -- function num : 0_55
-  if self.coreGame == nil or (self.coreGame):Running() == false then
+function GameGlobal:IsInputEnable()
+  if self.coreGame == nil or self.coreGame:Running() == false then
     return false
   end
-  if (self.coreGame).GetCurWorldStateID then
-    return (self.coreGame):InputEnalbe()
+  if self.coreGame.GetCurWorldStateID then
+    return self.coreGame:InputEnalbe()
   end
   return false
 end
 
--- DECOMPILER ERROR at PC183: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.IsLinkLineState = function(self)
-  -- function num : 0_56
-  if self.coreGame == nil or (self.coreGame):Running() == false then
+function GameGlobal:IsLinkLineState()
+  if self.coreGame == nil or self.coreGame:Running() == false then
     return false
   end
-  if (self.coreGame).GetCurWorldStateID then
-    return (self.coreGame):IsLinkLineState()
+  if self.coreGame.GetCurWorldStateID then
+    return self.coreGame:IsLinkLineState()
   end
   return false
 end
 
--- DECOMPILER ERROR at PC186: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetMainWorld = function(self)
-  -- function num : 0_57 , upvalues : _ENV
+function GameGlobal:GetMainWorld()
   if self.coreGame then
-    local filename = ((debug.getinfo)(2, "S")).short_src
-    if (string.find)(filename, "ui_.*%.lua") then
-      local splitFilename = (string.split)(filename, "/")
+    local filename = debug.getinfo(2, "S").short_src
+    if string.find(filename, "ui_.*%.lua") then
+      local splitFilename = string.split(filename, "/")
       local lastFilename = splitFilename[#splitFilename]
-      if not (string.find)(filename, "ui_battle_cheat") then
-        (Log.error)("battle ui get world!!")
+      if not string.find(filename, "ui_battle_cheat") then
+        Log.error("battle ui get world!!")
         return nil
       end
     end
-    do
-      do return (self.coreGame).clientWorld end
-    end
+    return self.coreGame.clientWorld
   end
 end
 
--- DECOMPILER ERROR at PC189: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.StartProfiler = function()
-  -- function num : 0_58 , upvalues : _ENV
-  return ((GameGlobal:GetInstance()).luaProfiler):Start()
+function GameGlobal.StartProfiler()
+  return GameGlobal:GetInstance().luaProfiler:Start()
 end
 
--- DECOMPILER ERROR at PC192: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.StopProfiler = function()
-  -- function num : 0_59 , upvalues : _ENV
-  return ((GameGlobal:GetInstance()).luaProfiler):Stop()
+function GameGlobal.StopProfiler()
+  return GameGlobal:GetInstance().luaProfiler:Stop()
 end
 
--- DECOMPILER ERROR at PC195: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.AddCollector = function(self, title)
-  -- function num : 0_60 , upvalues : _ENV
+function GameGlobal:AddCollector(title)
   local collector = ProfileCollector:New(title)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._collectors)[title] = collector
+  self._collectors[title] = collector
   return collector
 end
 
--- DECOMPILER ERROR at PC198: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetCollector = function(self, title)
-  -- function num : 0_61
-  local ret = (self._collectors)[title]
-  if not ret then
-    ret = self:AddCollector(title)
-  end
+function GameGlobal:GetCollector(title)
+  local ret = self._collectors[title]
+  ret = ret or self:AddCollector(title)
   return ret
 end
 
--- DECOMPILER ERROR at PC201: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.StartChangeCacheLevelTask = function(self, level)
-  -- function num : 0_62
-  (self.taskManager):StartTask((self.donotDestroyRes).ChangeCacheLevel, self.donotDestroyRes, level)
+function GameGlobal:StartChangeCacheLevelTask(level)
+  self.taskManager:StartTask(self.donotDestroyRes.ChangeCacheLevel, self.donotDestroyRes, level)
 end
 
--- DECOMPILER ERROR at PC204: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.DonotDestroyRes = function()
-  -- function num : 0_63 , upvalues : _ENV
-  return (GameGlobal:GetInstance()).donotDestroyRes
+function GameGlobal.DonotDestroyRes()
+  return GameGlobal:GetInstance().donotDestroyRes
 end
 
--- DECOMPILER ERROR at PC207: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GameRecorder = function()
-  -- function num : 0_64 , upvalues : _ENV
-  return (GameGlobal:GetInstance()).gameRecorder
+function GameGlobal.GameRecorder()
+  return GameGlobal:GetInstance().gameRecorder
 end
 
--- DECOMPILER ERROR at PC210: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.UAReportChannelEvent = function(uaEventName, paramsDic, extraJson, isRealTime)
-  -- function num : 0_65 , upvalues : _ENV
+function GameGlobal.UAReportChannelEvent(uaEventName, paramsDic, extraJson, isRealTime)
   if isRealTime == nil then
     isRealTime = true
   end
-  local l_paramDic = (UAReportHelper.GetParamsDic)()
+  local l_paramDic = UAReportHelper.GetParamsDic()
   l_paramDic:Clear()
   if paramsDic ~= nil then
-    for key,value in pairs(paramsDic) do
+    for key, value in pairs(paramsDic) do
       l_paramDic:Add(key, value)
     end
   end
-  do
-    ;
-    (UAReportHelper.UAReportChannelEvent)(uaEventName, l_paramDic, extraJson or "", isRealTime)
-  end
+  UAReportHelper.UAReportChannelEvent(uaEventName, l_paramDic, extraJson or "", isRealTime)
 end
 
--- DECOMPILER ERROR at PC213: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.UAReportEvent = function(uaEventName, paramsDic, extraJson, isRealTime)
-  -- function num : 0_66 , upvalues : _ENV
+function GameGlobal.UAReportEvent(uaEventName, paramsDic, extraJson, isRealTime)
   if isRealTime == nil then
     isRealTime = true
   end
-  local l_paramDic = (UAReportHelper.GetParamsDic)()
+  local l_paramDic = UAReportHelper.GetParamsDic()
   l_paramDic:Clear()
   if paramsDic ~= nil then
-    for key,value in pairs(paramsDic) do
+    for key, value in pairs(paramsDic) do
       l_paramDic:Add(key, value)
     end
   end
-  do
-    ;
-    (UAReportHelper.UAReportEvent)(uaEventName, l_paramDic, extraJson or "", isRealTime)
-  end
+  UAReportHelper.UAReportEvent(uaEventName, l_paramDic, extraJson or "", isRealTime)
 end
 
--- DECOMPILER ERROR at PC216: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.IsUAReportCompleteTutorialMission = function(mission_id)
-  -- function num : 0_67 , upvalues : _ENV
+function GameGlobal.IsUAReportCompleteTutorialMission(mission_id)
   if mission_id == EFirstPassCanIgnorPowerMission.EFirstPassCanIgnorPowerMission_1_3 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC219: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.ReportCustomEvent = function(strEventName, strCustomEventName, paramsList, extraJson)
-  -- function num : 0_68 , upvalues : _ENV
-  local l_paramList = (UAReportHelper.GetParamsList)()
+function GameGlobal.ReportCustomEvent(strEventName, strCustomEventName, paramsList, extraJson)
+  local l_paramList = UAReportHelper.GetParamsList()
   l_paramList:Clear()
   if paramsList ~= nil then
-    for index,value in ipairs(paramsList) do
+    for index, value in ipairs(paramsList) do
       l_paramList:Add(value)
     end
   end
-  do
-    ;
-    (UAReportHelper.ReportCustomEvent)(strEventName, strCustomEventName, l_paramList, extraJson or "")
-  end
+  UAReportHelper.ReportCustomEvent(strEventName, strCustomEventName, l_paramList, extraJson or "")
 end
 
--- DECOMPILER ERROR at PC222: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.UAReportForceGuideEvent = function(uaEventName, paramsList, bAddMissionId, bAddMatchMissionId)
-  -- function num : 0_69 , upvalues : _ENV
-  local l_role_module = (GameGlobal.GetModule)(RoleModule)
+function GameGlobal.UAReportForceGuideEvent(uaEventName, paramsList, bAddMissionId, bAddMatchMissionId)
+  local l_role_module = GameGlobal.GetModule(RoleModule)
   if not l_role_module or l_role_module:CheckModuleUnlock(GameModuleID.MD_ForceGuideEnd) then
-    return 
+    return
   end
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
   if time_mod == nil then
-    (Log.error)("UAReportForceGuideEvent time_mod == nil")
-    return 
+    Log.error("UAReportForceGuideEvent time_mod == nil")
+    return
   end
-  local l_paramList = (UAReportHelper.GetParamsList)()
+  local l_paramList = UAReportHelper.GetParamsList()
   l_paramList:Clear()
-  local tmSecond = (math.floor)(time_mod:GetServerTime() / 1000)
+  local tmSecond = math.floor(time_mod:GetServerTime() / 1000)
   l_paramList:Add(tmSecond)
   if bAddMatchMissionId then
-    local match = (GameGlobal.GetModule)(MatchModule)
+    local match = GameGlobal.GetModule(MatchModule)
     if match then
       local enterData = match:GetMatchEnterData()
       if enterData and enterData._match_type == MatchType.MT_Mission then
-        local missionID = (enterData:GetMissionCreateInfo()).mission_id
+        local missionID = enterData:GetMissionCreateInfo().mission_id
         l_paramList:Add(missionID)
       end
     end
   end
-  do
-    do
-      if bAddMissionId then
-        local mission_module = (GameGlobal.GetModule)(MissionModule)
-        if mission_module then
-          l_paramList:Add(mission_module:GetCurMissionID())
-        end
-      end
-      if paramsList ~= nil then
-        for index,value in ipairs(paramsList) do
-          l_paramList:Add(R15_PC83)
-        end
-      end
-      do
-        ;
-        (UAReportHelper.ReportCustomEvent)("ForceGuide", uaEventName, l_paramList, "")
-      end
+  if bAddMissionId then
+    local mission_module = GameGlobal.GetModule(MissionModule)
+    if mission_module then
+      l_paramList:Add(mission_module:GetCurMissionID())
     end
   end
+  if paramsList ~= nil then
+    for index, value in ipairs(paramsList) do
+      l_paramList:Add(value)
+    end
+  end
+  UAReportHelper.ReportCustomEvent("ForceGuide", uaEventName, l_paramList, "")
 end
 
--- DECOMPILER ERROR at PC225: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetFrameCount = function(self)
-  -- function num : 0_70
+function GameGlobal:GetFrameCount()
   return 0
 end
 
--- DECOMPILER ERROR at PC228: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.IsOfflineMatch = function(self)
-  -- function num : 0_71
+function GameGlobal:IsOfflineMatch()
   return self._isOfflineMatch
 end
 
--- DECOMPILER ERROR at PC231: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.SetOfflineMatch = function(self, v)
-  -- function num : 0_72
+function GameGlobal:SetOfflineMatch(v)
   self._isOfflineMatch = v
 end
 
--- DECOMPILER ERROR at PC234: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.EnterLuckLandGame = function(self, missionID)
-  -- function num : 0_73 , upvalues : _ENV
+function GameGlobal:EnterLuckLandGame(missionID)
   if self._luckLandGame ~= nil then
-    (Log.debug)("duplicate luck land game")
+    Log.debug("duplicate luck land game")
     self:ExitLuckLandGame()
   end
   self._luckLandGame = LuckLandGame:New()
-  ;
-  (self._luckLandGame):EnterLuckLandGame(missionID)
+  self._luckLandGame:EnterLuckLandGame(missionID)
 end
 
--- DECOMPILER ERROR at PC237: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.ExitLuckLandGame = function(self)
-  -- function num : 0_74 , upvalues : _ENV
+function GameGlobal:ExitLuckLandGame()
   if self._luckLandGame then
-    (self._luckLandGame):Dispose()
+    self._luckLandGame:Dispose()
     self._luckLandGame = nil
   else
-    ;
-    (Log.notice)("GameGlobal:ExitLuckLandGame luck land game nil")
+    Log.notice("GameGlobal:ExitLuckLandGame luck land game nil")
   end
 end
 
--- DECOMPILER ERROR at PC240: Confused about usage of register: R0 in 'UnsetPending'
-
-GameGlobal.GetLuckLandModule = function(self)
-  -- function num : 0_75
+function GameGlobal:GetLuckLandModule()
   if self._luckLandGame then
-    return (self._luckLandGame):GetLuckLandModule()
+    return self._luckLandGame:GetLuckLandModule()
   end
 end
-
-

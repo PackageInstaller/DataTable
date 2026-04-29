@@ -1,38 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/login_authority/auth_inland/login_authority_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LoginAuthorityModule", GameModule)
 LoginAuthorityModule = LoginAuthorityModule
 local INVALID_VALUE = -1
-local MSDKLogin, MSDKTools, MSDKMethodNameID, MSDKChannel, MSDKError = nil, nil, nil, nil, nil
+local MSDKLogin, MSDKTools, MSDKMethodNameID, MSDKChannel, MSDKError
 if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-  MSDKLogin = (GCloud.MSDK).MSDKLogin
-  MSDKTools = (GCloud.MSDK).MSDKTools
-  MSDKMethodNameID = (GCloud.MSDK).MSDKMethodNameID
-  MSDKChannel = (GCloud.MSDK).MSDKChannel
-  MSDKError = (GCloud.MSDK).MSDKError
+  MSDKLogin = GCloud.MSDK.MSDKLogin
+  MSDKTools = GCloud.MSDK.MSDKTools
+  MSDKMethodNameID = GCloud.MSDK.MSDKMethodNameID
+  MSDKChannel = GCloud.MSDK.MSDKChannel
+  MSDKError = GCloud.MSDK.MSDKError
 end
--- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
 
-LoginAuthorityModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : INVALID_VALUE, _ENV
+function LoginAuthorityModule:Constructor()
   self.authorityTaskID = INVALID_VALUE
   self.cacheAuthorityResult = LoginAuthorityResult:New()
   if H3DGCloudLuaHelper.MsdkStatus ~= MSDKStatus.MS_Inland then
-    return 
+    return
   end
   self.wakeupResult = LoginWakeUpResult:New()
   self:RegisterLoginObserver()
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV, INVALID_VALUE
+function LoginAuthorityModule:Dispose()
   if H3DGCloudLuaHelper.MsdkStatus ~= MSDKStatus.MS_Inland then
-    return 
+    return
   end
   self:UnregisterLoginObserver()
   if self.authorityTaskID ~= INVALID_VALUE then
@@ -42,249 +32,162 @@ LoginAuthorityModule.Dispose = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.InitLoginAuthorityInfo = function(self)
-  -- function num : 0_2 , upvalues : _ENV, MSDKTools
+function LoginAuthorityModule:InitLoginAuthorityInfo()
   if H3DGCloudLuaHelper.MsdkStatus ~= MSDKStatus.MS_Inland then
-    return 
+    return
   end
-  local clientInfo = ((GameGlobal.GameLogic)()).ClientInfo
+  local clientInfo = GameGlobal.GameLogic().ClientInfo
   clientInfo.m_runtime_os = GetPlatformOS()
-  clientInfo.m_login_source = (self.cacheAuthorityResult).loginChannelID
+  clientInfo.m_login_source = self.cacheAuthorityResult.loginChannelID
   if not IsUnityEditor() then
-    clientInfo.m_reg_channel = (MSDKTools.GetConfigChannel)()
-    ;
-    (Log.debug)("[MSDK]LoginAuthorityModule:InitLoginAuthorityInfo, set clientInfo.m_reg_channel=", clientInfo.m_reg_channel)
+    clientInfo.m_reg_channel = MSDKTools.GetConfigChannel()
+    Log.debug("[MSDK]LoginAuthorityModule:InitLoginAuthorityInfo, set clientInfo.m_reg_channel=", clientInfo.m_reg_channel)
   end
-  local msdkAuthorityInfo = ((GameGlobal.GameLogic)()).msdkAuthorityInfo
-  local openId = (self.cacheAuthorityResult).openId
+  local msdkAuthorityInfo = GameGlobal.GameLogic().msdkAuthorityInfo
+  local openId = self.cacheAuthorityResult.openId
   msdkAuthorityInfo.open_id = openId
-  msdkAuthorityInfo.m_token = (self.cacheAuthorityResult).token
+  msdkAuthorityInfo.m_token = self.cacheAuthorityResult.token
   msdkAuthorityInfo.m_pay_token = self:GetPayToken()
-  msdkAuthorityInfo.pf = self:GetPfInfo()
+  msdkAuthorityInfo.pf, msdkAuthorityInfo.pf_key = self:GetPfInfo()
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.AutoLogin = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function LoginAuthorityModule:AutoLogin(TT)
   local _, wakeupChannel, wakeupOpenid = self:NeedSelectAccount()
-  do
-    if wakeupChannel then
-      local clientChannel = self:GetClientLoginChannel(wakeupChannel)
-      ;
-      (Log.info)("[MSDK] LoginAuthorityModule:AutoLogin wakeup login")
-      return self:Login(TT, clientChannel)
-    end
-    local res, authRet = self:MSDKLogin(TT, MobileClientLoginChannel.MCLC_AUTO)
-    if authRet.retCode == AuthorityRetCode.ARC_SUCCESS then
-      self:CheckGuest(res, authRet, authRet.loginChannelID)
-    end
-    return res, authRet
+  if wakeupChannel then
+    local clientChannel = self:GetClientLoginChannel(wakeupChannel)
+    Log.info("[MSDK] LoginAuthorityModule:AutoLogin wakeup login")
+    return self:Login(TT, clientChannel)
   end
+  local res, authRet = self:MSDKLogin(TT, MobileClientLoginChannel.MCLC_AUTO)
+  if authRet.retCode == AuthorityRetCode.ARC_SUCCESS then
+    self:CheckGuest(res, authRet, authRet.loginChannelID)
+  end
+  return res, authRet
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.Login = function(self, TT, loginChannel)
-  -- function num : 0_4 , upvalues : _ENV
+function LoginAuthorityModule:Login(TT, loginChannel)
   local res = AsyncRequestRes:New()
   local authRet = LoginAuthorityResult:New()
   if not self:CheckGuest(res, authRet, loginChannel) then
     return res, authRet
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.cacheAuthorityResult).loginChannelID = loginChannel
-  if (self:GetLoginAuthorityStatus()).retCode ~= AuthorityRetCode.ARC_SUCCESS then
-    res = self:MSDKLogin(TT, loginChannel)
-    ;
-    (Log.debug)("[MSDK]LoginAuthorityModule:Login MSDKLogin Return, authRet.retCode=", authRet.retCode)
+  self.cacheAuthorityResult.loginChannelID = loginChannel
+  if self:GetLoginAuthorityStatus().retCode ~= AuthorityRetCode.ARC_SUCCESS then
+    res, authRet = self:MSDKLogin(TT, loginChannel)
+    Log.debug("[MSDK]LoginAuthorityModule:Login MSDKLogin Return, authRet.retCode=", authRet.retCode)
   else
     authRet:Copy(self:GetLoginAuthorityStatus())
     res:SetSucc(true)
   end
-  -- DECOMPILER ERROR at PC56: Overwrote pending register: R4 in 'AssignReg'
-
-  if (self:GetLoginAuthorityStatus()).retCode == AuthorityRetCode.ARC_FAILED_WX_NOT_INSTALL then
-    res = self:MSDKLogin(TT, MobileClientLoginChannel.MCLC_QRCODE)
-    ;
-    (Log.debug)("[MSDK]LoginAuthorityModule:Login MSDKLogin MCLC_QRCODE Return,authRet.retCode=", authRet.retCode)
+  if self:GetLoginAuthorityStatus().retCode == AuthorityRetCode.ARC_FAILED_WX_NOT_INSTALL then
+    res, authRet = self:MSDKLogin(TT, MobileClientLoginChannel.MCLC_QRCODE)
+    Log.debug("[MSDK]LoginAuthorityModule:Login MSDKLogin MCLC_QRCODE Return,authRet.retCode=", authRet.retCode)
   end
   return res, authRet
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.Logout = function(self)
-  -- function num : 0_5 , upvalues : _ENV, MSDKLogin
-  (Log.debug)("[MSDK]LoginAuthorityModule:Logout")
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.cacheAuthorityResult).retCode = AuthorityRetCode.ARC_UNKNOWN
-  ;
-  (MSDKLogin.Logout)()
+function LoginAuthorityModule:Logout()
+  Log.debug("[MSDK]LoginAuthorityModule:Logout")
+  self.cacheAuthorityResult.retCode = AuthorityRetCode.ARC_UNKNOWN
+  MSDKLogin.Logout()
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.ClearWakeup = function(self)
-  -- function num : 0_6
-  (self.wakeupResult):Reset()
+function LoginAuthorityModule:ClearWakeup()
+  self.wakeupResult:Reset()
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.GetPayToken = function(self)
-  -- function num : 0_7
+function LoginAuthorityModule:GetPayToken()
   return self.payToken
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.GetPfInfo = function(self)
-  -- function num : 0_8
+function LoginAuthorityModule:GetPfInfo()
   return self.pf, self.pfKey
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.SetPayInfo = function(self, loginRet)
-  -- function num : 0_9 , upvalues : _ENV
+function LoginAuthorityModule:SetPayInfo(loginRet)
   self.pf = loginRet.Pf
   self.pfKey = loginRet.PfKey
-  if loginRet.Channel == ((GCloud.MSDK).MSDKChannel).WeChat then
+  if loginRet.Channel == GCloud.MSDK.MSDKChannel.WeChat then
     self.payToken = loginRet.Token
-  else
-    if loginRet.Channel == ((GCloud.MSDK).MSDKChannel).QQ then
-      local channelInfo = loginRet.ChannelInfo
-      self.payToken = (H3DGCloudLuaHelper.GetPayToken)(channelInfo)
-    end
+  elseif loginRet.Channel == GCloud.MSDK.MSDKChannel.QQ then
+    local channelInfo = loginRet.ChannelInfo
+    self.payToken = H3DGCloudLuaHelper.GetPayToken(channelInfo)
   end
-  do
-    ;
-    (Log.debug)("[MSDK]LoginAuthorityModule:SetPayInfo, self.payToken=", self.payToken, ",channel=", loginRet.Channel)
-  end
+  Log.debug("[MSDK]LoginAuthorityModule:SetPayInfo, self.payToken=", self.payToken, ",channel=", loginRet.Channel)
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.OnLoginRet = function(self, loginRet)
-  -- function num : 0_10 , upvalues : MSDKMethodNameID, _ENV
-  local methodTag = nil
-  if loginRet.MethodNameId == (MSDKMethodNameID.MSDK_LOGIN_LOGIN):ToInt() then
+function LoginAuthorityModule:OnLoginRet(loginRet)
+  local methodTag
+  if loginRet.MethodNameId == MSDKMethodNameID.MSDK_LOGIN_LOGIN:ToInt() then
     methodTag = "Login"
     self:HandleLogin(loginRet, methodTag)
-  else
-    if loginRet.MethodNameId == (MSDKMethodNameID.MSDK_LOGIN_AUTOLOGIN):ToInt() then
-      methodTag = "AutoLogin"
-      self:HandleLogin(loginRet, methodTag)
-    else
-      if loginRet.MethodNameId == (MSDKMethodNameID.MSDK_LOGIN_QUERYUSERINFO):ToInt() then
-        methodTag = "QueryUserInfo"
-      else
-        if loginRet.MethodNameId == (MSDKMethodNameID.MSDK_LOGIN_LOGINWITHCONFIRMCODE):ToInt() then
-          methodTag = "LoginWithConfirmCode"
-          self:HandleLogin(loginRet, methodTag)
-        else
-          if loginRet.MethodNameId == (MSDKMethodNameID.MSDK_LOGIN_SWITCHUSER):ToInt() then
-            methodTag = "SwitchUser"
-            self.isSwitchUser = false
-          end
-        end
-      end
-    end
+  elseif loginRet.MethodNameId == MSDKMethodNameID.MSDK_LOGIN_AUTOLOGIN:ToInt() then
+    methodTag = "AutoLogin"
+    self:HandleLogin(loginRet, methodTag)
+  elseif loginRet.MethodNameId == MSDKMethodNameID.MSDK_LOGIN_QUERYUSERINFO:ToInt() then
+    methodTag = "QueryUserInfo"
+  elseif loginRet.MethodNameId == MSDKMethodNameID.MSDK_LOGIN_LOGINWITHCONFIRMCODE:ToInt() then
+    methodTag = "LoginWithConfirmCode"
+    self:HandleLogin(loginRet, methodTag)
+  elseif loginRet.MethodNameId == MSDKMethodNameID.MSDK_LOGIN_SWITCHUSER:ToInt() then
+    methodTag = "SwitchUser"
+    self.isSwitchUser = false
   end
-  ;
-  (Log.info)("[MSDK]LoginAuthorityModule:OnLoginRet, ", methodTag, ",loginRet=", loginRet:ToString())
+  Log.info("[MSDK]LoginAuthorityModule:OnLoginRet, ", methodTag, ",loginRet=", loginRet:ToString())
   self:SetPayInfo(loginRet)
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.OnLoginBaseRet = function(self, baseRet)
-  -- function num : 0_11 , upvalues : MSDKMethodNameID, _ENV
-  if baseRet.MethodNameId == (MSDKMethodNameID.MSDK_LOGIN_WAKEUP):ToInt() then
+function LoginAuthorityModule:OnLoginBaseRet(baseRet)
+  if baseRet.MethodNameId == MSDKMethodNameID.MSDK_LOGIN_WAKEUP:ToInt() then
     self:HandleDiffAccount(baseRet)
-  else
-    if baseRet.MethodNameId == (MSDKMethodNameID.MSDK_LOGIN_LOGOUT):ToInt() then
-      (Log.error)("[MSDK] LoginAuthorityModule:OnLoginBaseRet Logout, ", baseRet:ToString())
-    end
+  elseif baseRet.MethodNameId == MSDKMethodNameID.MSDK_LOGIN_LOGOUT:ToInt() then
+    Log.error("[MSDK] LoginAuthorityModule:OnLoginBaseRet Logout, ", baseRet:ToString())
   end
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.MSDKLogin = function(self, TT, loginChannel)
-  -- function num : 0_12 , upvalues : _ENV, MSDKLogin, MSDKChannel
-  (Log.debug)("[MSDK]LoginAuthorityModule:MSDKLogin, loginChannel=", loginChannel)
+function LoginAuthorityModule:MSDKLogin(TT, loginChannel)
+  Log.debug("[MSDK]LoginAuthorityModule:MSDKLogin, loginChannel=", loginChannel)
   local res = AsyncRequestRes:New()
   local authRet = LoginAuthorityResult:New()
   self.authorityTaskID = GetCurTaskId()
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.cacheAuthorityResult).retCode = AuthorityRetCode.ARC_FAILED
+  self.cacheAuthorityResult.retCode = AuthorityRetCode.ARC_FAILED
   if loginChannel == MobileClientLoginChannel.MCLC_QQ then
-    (MSDKLogin.Login)(MSDKChannel.QQ)
+    MSDKLogin.Login(MSDKChannel.QQ)
+  elseif loginChannel == MobileClientLoginChannel.MCLC_WX then
+    MSDKLogin.Login(MSDKChannel.WeChat)
+  elseif loginChannel == MobileClientLoginChannel.MCLC_GUEST then
+    MSDKLogin.Login(MSDKChannel.Guest)
+  elseif loginChannel == MobileClientLoginChannel.MCLC_AUTO then
+    MSDKLogin.AutoLogin()
+  elseif loginChannel == MobileClientLoginChannel.MCLC_QRCODE then
+    MSDKLogin.Login(MSDKChannel.WeChat, "", "", "{\"QRCode\":true}")
   else
-    if loginChannel == MobileClientLoginChannel.MCLC_WX then
-      (MSDKLogin.Login)(MSDKChannel.WeChat)
-    else
-      if loginChannel == MobileClientLoginChannel.MCLC_GUEST then
-        (MSDKLogin.Login)(MSDKChannel.Guest)
-      else
-        if loginChannel == MobileClientLoginChannel.MCLC_AUTO then
-          (MSDKLogin.AutoLogin)()
-        else
-          if loginChannel == MobileClientLoginChannel.MCLC_QRCODE then
-            (MSDKLogin.Login)(MSDKChannel.WeChat, "", "", "{\"QRCode\":true}")
-          else
-            ;
-            (Log.fatal)("[MSDK]LoginAuthorityModule:MSDKLogin loginChannel Error,", loginChannel)
-            return res, authRet
-          end
-        end
-      end
-    end
+    Log.fatal("[MSDK]LoginAuthorityModule:MSDKLogin loginChannel Error,", loginChannel)
+    return res, authRet
   end
-  ;
-  (Log.debug)("[MSDK]LoginAuthorityModule:MSDKLogin,Suspend Task ", self.authorityTaskID)
+  Log.debug("[MSDK]LoginAuthorityModule:MSDKLogin,Suspend Task ", self.authorityTaskID)
   SUSPEND(TT)
   authRet:Copy(self.cacheAuthorityResult)
   res:SetSucc(authRet.retCode == AuthorityRetCode.ARC_SUCCESS)
-  do return res, authRet end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return res, authRet
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.HandleLogin = function(self, loginRet, strFrom)
-  -- function num : 0_13 , upvalues : _ENV, INVALID_VALUE
-  (Log.debug)("[MSDK] LoginAuthorityModule:HandleLogin,", strFrom)
-  ;
-  (self.cacheAuthorityResult):SetRetCode(loginRet)
-  do
-    if (self.cacheAuthorityResult):IsAuth() then
-      local thirdPartyModule = self:GetModule(ThirdPartyModule)
-      thirdPartyModule:SyncOpenID((self.cacheAuthorityResult).openId)
-    end
-    local id = self.authorityTaskID
-    self.authorityTaskID = INVALID_VALUE
-    self:ResumeTask(id, "LoginAuthorityModule:HandleLogin")
+function LoginAuthorityModule:HandleLogin(loginRet, strFrom)
+  Log.debug("[MSDK] LoginAuthorityModule:HandleLogin,", strFrom)
+  self.cacheAuthorityResult:SetRetCode(loginRet)
+  if self.cacheAuthorityResult:IsAuth() then
+    local thirdPartyModule = self:GetModule(ThirdPartyModule)
+    thirdPartyModule:SyncOpenID(self.cacheAuthorityResult.openId)
   end
+  local id = self.authorityTaskID
+  self.authorityTaskID = INVALID_VALUE
+  self:ResumeTask(id, "LoginAuthorityModule:HandleLogin")
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.CheckGuest = function(self, res, authRet, channelID)
-  -- function num : 0_14 , upvalues : _ENV
+function LoginAuthorityModule:CheckGuest(res, authRet, channelID)
   local os = GetPlatformOS()
   if os ~= ClientRuntimeOS.CRO_IOS and channelID == MobileClientLoginChannel.MCLC_GUEST then
-    (Log.debug)("[MSDK]LoginAuthorityModule:CheckGuest Error, os=", os, ",channelID=", channelID)
+    Log.debug("[MSDK]LoginAuthorityModule:CheckGuest Error, os=", os, ",channelID=", channelID)
     authRet.retCode = AuthorityRetCode.ARC_FAILED_GUEST_PLATFORM_NOT_IOS
     res:SetSucc(false)
     return false
@@ -292,156 +195,102 @@ LoginAuthorityModule.CheckGuest = function(self, res, authRet, channelID)
   return true
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.GetLoginAuthorityStatus = function(self)
-  -- function num : 0_15
+function LoginAuthorityModule:GetLoginAuthorityStatus()
   return self.cacheAuthorityResult
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.HandleDiffAccount = function(self, wakeupRet)
-  -- function num : 0_16 , upvalues : MSDKLogin, _ENV, MSDKError
-  local wakeupLoginRet = (MSDKLogin.GetWakeUpLoginRet)()
+function LoginAuthorityModule:HandleDiffAccount(wakeupRet)
+  local wakeupLoginRet = MSDKLogin.GetWakeUpLoginRet()
   local retCode = wakeupRet.RetCode
-  ;
-  (Log.debug)("[MSDK]LoginAuthorityModule:HandleDiffAccount,retCode=", retCode, ",channel=", wakeupLoginRet.Channel, ",ThirdMsg=", wakeupRet.ThirdMsg)
-  ;
-  (self.wakeupResult):CopyFromMsdk(wakeupLoginRet)
-  if (self.cacheAuthorityResult):IsAuth() then
+  Log.debug("[MSDK]LoginAuthorityModule:HandleDiffAccount,retCode=", retCode, ",channel=", wakeupLoginRet.Channel, ",ThirdMsg=", wakeupRet.ThirdMsg)
+  self.wakeupResult:CopyFromMsdk(wakeupLoginRet)
+  if self.cacheAuthorityResult:IsAuth() then
     self:WakeupAfterAuth(wakeupLoginRet)
-    return 
+    return
   end
-  if ((retCode ~= MSDKError.SUCCESS or retCode == MSDKError.LOGIN_ACCOUNT_REFRESH) and retCode ~= MSDKError.LOGIN_URL_USER_LOGIN) or retCode == MSDKError.LOGIN_NEED_SELECT_ACCOUNT then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MSDKAutoAuthority)
+  if retCode == MSDKError.SUCCESS then
+  elseif retCode == MSDKError.LOGIN_ACCOUNT_REFRESH then
+  elseif retCode == MSDKError.LOGIN_URL_USER_LOGIN then
+  elseif retCode == MSDKError.LOGIN_NEED_SELECT_ACCOUNT then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.MSDKAutoAuthority)
+  elseif retCode == MSDKError.LOGIN_NEED_LOGIN then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.MSDKAutoAuthority)
   else
-    if retCode == MSDKError.LOGIN_NEED_LOGIN then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MSDKAutoAuthority)
-    else
-      ;
-      (MSDKLogin.Logout)()
-    end
+    MSDKLogin.Logout()
   end
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.WakeupAfterAuth = function(self, wakeupRet)
-  -- function num : 0_17 , upvalues : _ENV, MSDKError
-  local authedChannelId = (self.cacheAuthorityResult).loginChannelID
-  local authedOpenId = (((GameGlobal.GameLogic)()).msdkAuthorityInfo).open_id
-  ;
-  (Log.debug)("[MSDK]HandleDiffAccount After Authority, wakeupOpenid=", wakeupRet.OpenId, ",authedOpenid=", (self.cacheAuthorityResult).openId, ",wakeupChannelId=", wakeupRet.ChannelId, ",authedChannelId=", authedChannelId, ",retCode=", wakeupRet.RetCode, ",NeedSelectAccountType=", MSDKError.LOGIN_NEED_SELECT_ACCOUNT)
+function LoginAuthorityModule:WakeupAfterAuth(wakeupRet)
+  local authedChannelId = self.cacheAuthorityResult.loginChannelID
+  local authedOpenId = GameGlobal.GameLogic().msdkAuthorityInfo.open_id
+  Log.debug("[MSDK]HandleDiffAccount After Authority, wakeupOpenid=", wakeupRet.OpenId, ",authedOpenid=", self.cacheAuthorityResult.openId, ",wakeupChannelId=", wakeupRet.ChannelId, ",authedChannelId=", authedChannelId, ",retCode=", wakeupRet.RetCode, ",NeedSelectAccountType=", MSDKError.LOGIN_NEED_SELECT_ACCOUNT)
   if wakeupRet.OpenId ~= authedOpenId and wakeupRet.ChannelId ~= authedChannelId then
-    (Log.info)("[MSDK]LoginAuthorityModule:WakeupAfterAuth diff channel")
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, (StringTable.Get)("str_login_msdk_tip"), (StringTable.Get)("str_login_msdk_diff_channel"), function(param)
-    -- function num : 0_17_0 , upvalues : self
-    self:OnWakeupSelectAccount()
-  end
-, "", function(param)
-    -- function num : 0_17_1 , upvalues : self
-    self:OnWakeupCancelSelectAccount()
-  end
-)
-    return 
+    Log.info("[MSDK]LoginAuthorityModule:WakeupAfterAuth diff channel")
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, StringTable.Get("str_login_msdk_tip"), StringTable.Get("str_login_msdk_diff_channel"), function(param)
+      self:OnWakeupSelectAccount()
+    end, "", function(param)
+      self:OnWakeupCancelSelectAccount()
+    end)
+    return
   end
   if wakeupRet.RetCode == MSDKError.LOGIN_NEED_SELECT_ACCOUNT and wakeupRet.OpenId ~= authedOpenId then
-    (Log.info)("[MSDK]LoginAuthorityModule:WakeupAfterAuth diff user")
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, (StringTable.Get)("str_login_msdk_tip"), (StringTable.Get)("str_login_msdk_diff_user"), function(param)
-    -- function num : 0_17_2 , upvalues : self
-    self:OnWakeupSelectAccount()
-  end
-, "", function(param)
-    -- function num : 0_17_3 , upvalues : self
-    self:OnWakeupCancelSelectAccount()
-  end
-)
+    Log.info("[MSDK]LoginAuthorityModule:WakeupAfterAuth diff user")
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, StringTable.Get("str_login_msdk_tip"), StringTable.Get("str_login_msdk_diff_user"), function(param)
+      self:OnWakeupSelectAccount()
+    end, "", function(param)
+      self:OnWakeupCancelSelectAccount()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.OnWakeupSelectAccount = function(self)
-  -- function num : 0_18 , upvalues : MSDKLogin, MSDKChannel, _ENV
+function LoginAuthorityModule:OnWakeupSelectAccount()
   self.isSwitchUser = true
-  if not (MSDKLogin.SwitchUser)(true) then
-    if (self.wakeupResult).wakeupChannel == MSDKChannel.WeChat then
-      (Log.info)("[MSDK]LoginAuthorityModule:OnWakeupSelectAccount wakeupChannel wechat failed")
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(LoginAuthorityModule.SwitchUserAndLogin, self)
-      ;
-      (MSDKLogin.Login)(MSDKChannel.WeChat)
+  if not MSDKLogin.SwitchUser(true) then
+    if self.wakeupResult.wakeupChannel == MSDKChannel.WeChat then
+      Log.info("[MSDK]LoginAuthorityModule:OnWakeupSelectAccount wakeupChannel wechat failed")
+      GameGlobal.TaskManager():StartTask(LoginAuthorityModule.SwitchUserAndLogin, self)
+      MSDKLogin.Login(MSDKChannel.WeChat)
     else
-      ;
-      (Log.info)("[MSDK]LoginAuthorityModule:OnWakeupSelectAccount failed")
-      ;
-      (MSDKLogin.Logout)()
-      ;
-      ((GameGlobal.GameLogic)()):BackToLogin(false)
+      Log.info("[MSDK]LoginAuthorityModule:OnWakeupSelectAccount failed")
+      MSDKLogin.Logout()
+      GameGlobal.GameLogic():BackToLogin(false)
     end
   else
-    ;
-    (Log.info)("[MSDK]LoginAuthorityModule:OnWakeupSelectAccount success")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(LoginAuthorityModule.SwitchUserAndLogin, self)
+    Log.info("[MSDK]LoginAuthorityModule:OnWakeupSelectAccount success")
+    GameGlobal.TaskManager():StartTask(LoginAuthorityModule.SwitchUserAndLogin, self)
   end
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.SwitchUserAndLogin = function(self, TT)
-  -- function num : 0_19 , upvalues : _ENV
-  (self.cacheAuthorityResult):Reset()
+function LoginAuthorityModule:SwitchUserAndLogin(TT)
+  self.cacheAuthorityResult:Reset()
   while self.isSwitchUser do
     YIELD(TT)
   end
-  ;
-  ((GameGlobal.GameLogic)()):BackToLogin(true)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MSDKAutoAuthority)
+  GameGlobal.GameLogic():BackToLogin(true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MSDKAutoAuthority)
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.OnWakeupCancelSelectAccount = function(self)
-  -- function num : 0_20 , upvalues : MSDKLogin, _ENV
-  if not (MSDKLogin.SwitchUser)(false) then
-    (Log.info)("[MSDK]LoginAuthorityModule:OnWakeupCancelSelectAccount failed")
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, (StringTable.Get)("str_login_msdk_login_fail_title"), (StringTable.Get)("str_login_msdk_token_expired"))
-    ;
-    (MSDKLogin.Logout)()
-    ;
-    ((GameGlobal.GameLogic)()):BackToLogin(false)
-    return 
+function LoginAuthorityModule:OnWakeupCancelSelectAccount()
+  if not MSDKLogin.SwitchUser(false) then
+    Log.info("[MSDK]LoginAuthorityModule:OnWakeupCancelSelectAccount failed")
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, StringTable.Get("str_login_msdk_login_fail_title"), StringTable.Get("str_login_msdk_token_expired"))
+    MSDKLogin.Logout()
+    GameGlobal.GameLogic():BackToLogin(false)
+    return
   end
-  ;
-  (Log.info)("[MSDK]LoginAuthorityModule:OnWakeupCancelSelectAccount success")
+  Log.info("[MSDK]LoginAuthorityModule:OnWakeupCancelSelectAccount success")
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.NeedSelectAccount = function(self)
-  -- function num : 0_21 , upvalues : MSDKError
+function LoginAuthorityModule:NeedSelectAccount()
   local needSelect = false
-  needSelect = (self.wakeupResult).retCode == MSDKError.LOGIN_NEED_SELECT_ACCOUNT
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.wakeupResult).retCode = MSDKError.LOGIN_ACCOUNT_REFRESH
-  local channel = (self.wakeupResult).wakeupChannel
-  local openid = (self.wakeupResult).openid
-  do return needSelect, channel, openid end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  needSelect = self.wakeupResult.retCode == MSDKError.LOGIN_NEED_SELECT_ACCOUNT
+  self.wakeupResult.retCode = MSDKError.LOGIN_ACCOUNT_REFRESH
+  local channel = self.wakeupResult.wakeupChannel
+  local openid = self.wakeupResult.openid
+  return needSelect, channel, openid
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.GetClientLoginChannel = function(self, channel)
-  -- function num : 0_22 , upvalues : MSDKChannel, _ENV
+function LoginAuthorityModule:GetClientLoginChannel(channel)
   if channel == MSDKChannel.QQ then
     return MobileClientLoginChannel.MCLC_QQ
   else
@@ -449,47 +298,34 @@ LoginAuthorityModule.GetClientLoginChannel = function(self, channel)
   end
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.RegisterLoginObserver = function(self)
-  -- function num : 0_23 , upvalues : MSDKLogin
-  self.onLoginRetEvent = function(loginRet)
-    -- function num : 0_23_0 , upvalues : self
+function LoginAuthorityModule:RegisterLoginObserver()
+  function self.onLoginRetEvent(loginRet)
     self:OnLoginRet(loginRet)
   end
-
+  
   MSDKLogin.LoginRetEvent = MSDKLogin.LoginRetEvent + self.onLoginRetEvent
-  self.onLoginBaseRetEvent = function(baseRet)
-    -- function num : 0_23_1 , upvalues : self
+  
+  function self.onLoginBaseRetEvent(baseRet)
     self:OnLoginBaseRet(baseRet)
   end
-
+  
   MSDKLogin.LoginBaseRetEvent = MSDKLogin.LoginBaseRetEvent + self.onLoginBaseRetEvent
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.UnregisterLoginObserver = function(self)
-  -- function num : 0_24 , upvalues : MSDKLogin
+function LoginAuthorityModule:UnregisterLoginObserver()
   MSDKLogin.LoginRetEvent = MSDKLogin.LoginRetEvent - self.onLoginRetEvent
   MSDKLogin.LoginBaseRetEvent = MSDKLogin.LoginBaseRetEvent - self.onLoginBaseRetEvent
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R6 in 'UnsetPending'
-
-LoginAuthorityModule.ResumeTask = function(self, id, infoFrom)
-  -- function num : 0_25 , upvalues : _ENV
+function LoginAuthorityModule:ResumeTask(id, infoFrom)
   if not id then
-    (Log.fatal)("[MSDK]LoginAuthorityModule:ResumeTask id is nil,", infoFrom)
-    return 
+    Log.fatal("[MSDK]LoginAuthorityModule:ResumeTask id is nil,", infoFrom)
+    return
   end
-  if (TaskManager:GetInstance()):FindTask(id) == nil then
-    (Log.error)("[MSDK] LoginAuthorityModule:ResumeTask FindTask nil,taskid=", id, ",", infoFrom)
+  if TaskManager:GetInstance():FindTask(id) == nil then
+    Log.error("[MSDK] LoginAuthorityModule:ResumeTask FindTask nil,taskid=", id, ",", infoFrom)
   else
-    ;
-    (Log.debug)("[MSDK] LoginAuthorityModule:ResumeTask, taskid=", id, ",", infoFrom)
+    Log.debug("[MSDK] LoginAuthorityModule:ResumeTask, taskid=", id, ",", infoFrom)
     RESUME(TT, id)
   end
 end
-
-

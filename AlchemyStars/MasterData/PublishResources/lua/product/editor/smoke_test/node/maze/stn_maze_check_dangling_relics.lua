@@ -1,25 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/maze/stn_maze_check_dangling_relics.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Maze_CheckDanglingRelics", CTestRobot_Base)
 Maze_CheckDanglingRelics = Maze_CheckDanglingRelics
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Maze_CheckDanglingRelics.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function Maze_CheckDanglingRelics:OnWorking()
   local mazeModule = self:GetModule(MazeModule)
   local mazeInfo = mazeModule:GetMazeInfo()
-  local nRelicCount = (table.count)(mazeInfo.dangling_relics)
-  if nRelicCount > 0 then
+  local nRelicCount = table.count(mazeInfo.dangling_relics)
+  if 0 < nRelicCount then
     self.m_nLogicResult = 1
     self.m_pReturnData = mazeInfo.dangling_relics
   else
     self.m_nLogicResult = 0
   end
-  return ((Maze_CheckDanglingRelics.super).OnWorking)(self)
+  return Maze_CheckDanglingRelics.super.OnWorking(self)
 end
-
-

@@ -1,260 +1,150 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/player/season_player_model.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonPlayerModel", Object)
 SeasonPlayerModel = SeasonPlayerModel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonPlayerModel.Constructor = function(self, player, cfg, clientInfo)
-  -- function num : 0_0
+function SeasonPlayerModel:Constructor(player, cfg, clientInfo)
   self._player = player
   self._cfg = cfg
   self._clientInfo = clientInfo
   self:_LoadModel()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.Update = function(self, deltaTime)
-  -- function num : 0_1
+function SeasonPlayerModel:Update(deltaTime)
   if self._shadow then
-    (self._shadow):Update(deltaTime)
+    self._shadow:Update(deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.Dispose = function(self)
-  -- function num : 0_2
+function SeasonPlayerModel:Dispose()
   if self._resRequest then
-    (self._resRequest):Dispose()
+    self._resRequest:Dispose()
     self._resRequest = nil
   end
-  ;
-  (self._footEffect):Dispose()
+  self._footEffect:Dispose()
   self._footEffect = nil
-  ;
-  (self._shadow):Dispose()
+  self._shadow:Dispose()
   self._shadow = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel._LoadModel = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._resRequest = (ResourceManager:GetInstance()):SyncLoadAsset((self._cfg).PlayerRes, LoadType.GameObject)
+function SeasonPlayerModel:_LoadModel()
+  self._resRequest = ResourceManager:GetInstance():SyncLoadAsset(self._cfg.PlayerRes, LoadType.GameObject)
   if not self._resRequest then
-    (Log.error)("SeasonPlayerModel load modle res fail.", (self._cfg).PlayerRes)
+    Log.error("SeasonPlayerModel load modle res fail.", self._cfg.PlayerRes)
   end
-  self._gameObject = (self._resRequest).Obj
-  self._transform = (self._gameObject).transform
-  ;
-  (self._transform):SetParent((self._player):PlayerTansform())
-  local position = Vector3(((self._cfg).Position)[1], ((self._cfg).Position)[2], ((self._cfg).Position)[3])
-  local uiSeasonModule = (GameGlobal.GetUIModule)(SeasonModule)
+  self._gameObject = self._resRequest.Obj
+  self._transform = self._gameObject.transform
+  self._transform:SetParent(self._player:PlayerTansform())
+  local position = Vector3(self._cfg.Position[1], self._cfg.Position[2], self._cfg.Position[3])
+  local uiSeasonModule = GameGlobal.GetUIModule(SeasonModule)
   if uiSeasonModule:IsBackTrack() then
     local seasonId = uiSeasonModule:BackTrackID()
-    local cfgs = (Cfg.cfg_season_map_player)({SeasonID = seasonId})
+    local cfgs = Cfg.cfg_season_map_player({SeasonID = seasonId})
     if cfgs and cfgs[1] then
-      position = Vector3(((cfgs[1]).Position)[1], ((cfgs[1]).Position)[2], ((cfgs[1]).Position)[3])
+      position = Vector3(cfgs[1].Position[1], cfgs[1].Position[2], cfgs[1].Position[3])
     end
-  else
-    do
-      if (self._clientInfo).m_x ~= 0 or (self._clientInfo).m_z ~= 0 then
-        position.x = (self._clientInfo).m_x
-        position.z = (self._clientInfo).m_z
-      end
-      -- DECOMPILER ERROR at PC90: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._transform).position = position
-      -- DECOMPILER ERROR at PC104: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._transform).rotation = (Quaternion.Euler)(((self._cfg).Rotation)[1], ((self._cfg).Rotation)[2], ((self._cfg).Rotation)[3])
-      -- DECOMPILER ERROR at PC111: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._transform).localScale = Vector3.one * (self._cfg).Scale
-      self._rootTransform = (self._transform):Find("Root")
-      self._animation = (self._gameObject):GetComponentInChildren(typeof(UnityEngine.Animation))
-      self._capsuleCollider = (self._gameObject):AddComponent(typeof(UnityEngine.CapsuleCollider))
-      -- DECOMPILER ERROR at PC145: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._capsuleCollider).center = Vector3(((self._cfg).Center)[1], ((self._cfg).Center)[2], ((self._cfg).Center)[3])
-      -- DECOMPILER ERROR at PC149: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._capsuleCollider).height = (self._cfg).Height
-      -- DECOMPILER ERROR at PC153: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._capsuleCollider).radius = (self._cfg).Radius
-      ;
-      (self._gameObject):SetActive(false)
-      self._shadow = SeasonPlayerShadow:New(self)
-      self._footEffect = SeasonPlayerFootEffect:New(self._cfg, self._rootTransform)
-    end
+  elseif self._clientInfo.m_x ~= 0 or self._clientInfo.m_z ~= 0 then
+    position.x = self._clientInfo.m_x
+    position.z = self._clientInfo.m_z
   end
+  self._transform.position = position
+  self._transform.rotation = Quaternion.Euler(self._cfg.Rotation[1], self._cfg.Rotation[2], self._cfg.Rotation[3])
+  self._transform.localScale = Vector3.one * self._cfg.Scale
+  self._rootTransform = self._transform:Find("Root")
+  self._animation = self._gameObject:GetComponentInChildren(typeof(UnityEngine.Animation))
+  self._capsuleCollider = self._gameObject:AddComponent(typeof(UnityEngine.CapsuleCollider))
+  self._capsuleCollider.center = Vector3(self._cfg.Center[1], self._cfg.Center[2], self._cfg.Center[3])
+  self._capsuleCollider.height = self._cfg.Height
+  self._capsuleCollider.radius = self._cfg.Radius
+  self._gameObject:SetActive(false)
+  self._shadow = SeasonPlayerShadow:New(self)
+  self._footEffect = SeasonPlayerFootEffect:New(self._cfg, self._rootTransform)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.Cfg = function(self)
-  -- function num : 0_4
+function SeasonPlayerModel:Cfg()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.MapMode = function(self)
-  -- function num : 0_5
-  return (self._cfg).MapMode
+function SeasonPlayerModel:MapMode()
+  return self._cfg.MapMode
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.Speed = function(self)
-  -- function num : 0_6
-  return (self._cfg).Speed
+function SeasonPlayerModel:Speed()
+  return self._cfg.Speed
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.IsDefault = function(self)
-  -- function num : 0_7
-  return (self._cfg).Default
+function SeasonPlayerModel:IsDefault()
+  return self._cfg.Default
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.GameObject = function(self)
-  -- function num : 0_8
+function SeasonPlayerModel:GameObject()
   return self._gameObject
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.Transform = function(self)
-  -- function num : 0_9
+function SeasonPlayerModel:Transform()
   return self._transform
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.Position = function(self)
-  -- function num : 0_10
-  return (self._transform).position
+function SeasonPlayerModel:Position()
+  return self._transform.position
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.Rotation = function(self)
-  -- function num : 0_11
-  return (self._transform).rotation
+function SeasonPlayerModel:Rotation()
+  return self._transform.rotation
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.RootTransform = function(self)
-  -- function num : 0_12
+function SeasonPlayerModel:RootTransform()
   return self._rootTransform
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.SetActive = function(self, active)
-  -- function num : 0_13
-  (self._gameObject):SetActive(active)
+function SeasonPlayerModel:SetActive(active)
+  self._gameObject:SetActive(active)
   if active then
-    (self._shadow):UpdateMaterialProperty()
+    self._shadow:UpdateMaterialProperty()
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.SetPR = function(self, position, rotation)
-  -- function num : 0_14
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._transform).position = position
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._transform).rotation = rotation
+function SeasonPlayerModel:SetPR(position, rotation)
+  self._transform.position = position
+  self._transform.rotation = rotation
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.Animation = function(self)
-  -- function num : 0_15
+function SeasonPlayerModel:Animation()
   return self._animation
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.Rotate = function(self, up, deltaAngle, space)
-  -- function num : 0_16
-  (self._transform):Rotate(up, deltaAngle, space)
+function SeasonPlayerModel:Rotate(up, deltaAngle, space)
+  self._transform:Rotate(up, deltaAngle, space)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.SetPosition = function(self, x, y, z)
-  -- function num : 0_17 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
-  (self._transform).position = Vector3(x, ((self._transform).position).y, z)
+function SeasonPlayerModel:SetPosition(x, y, z)
+  self._transform.position = Vector3(x, self._transform.position.y, z)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.ResetPosition = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._transform).position = Vector3(((self._cfg).Position)[1], ((self._cfg).Position)[2], ((self._cfg).Position)[3])
+function SeasonPlayerModel:ResetPosition()
+  self._transform.position = Vector3(self._cfg.Position[1], self._cfg.Position[2], self._cfg.Position[3])
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.OnCheckCondition = function(self, model, map)
-  -- function num : 0_19
-  if (self._cfg).Condition then
-    return model:CheckCondition((self._cfg).Condition, map)
+function SeasonPlayerModel:OnCheckCondition(model, map)
+  if self._cfg.Condition then
+    return model:CheckCondition(self._cfg.Condition, map)
   else
     return true
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.CheckNavAreaModel = function(self, areaName)
-  -- function num : 0_20 , upvalues : _ENV
-  if not areaName or not (self._cfg).NavName then
+function SeasonPlayerModel:CheckNavAreaModel(areaName)
+  if not areaName or not self._cfg.NavName then
     return false
   end
-  if (string.find)(areaName, (self._cfg).NavName) then
+  if string.find(areaName, self._cfg.NavName) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.StopFootEffect = function(self)
-  -- function num : 0_21
-  (self._footEffect):Stop()
+function SeasonPlayerModel:StopFootEffect()
+  self._footEffect:Stop()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerModel.PlayFootEffect = function(self)
-  -- function num : 0_22
-  (self._footEffect):Play()
+function SeasonPlayerModel:PlayFootEffect()
+  self._footEffect:Play()
 end
-
-

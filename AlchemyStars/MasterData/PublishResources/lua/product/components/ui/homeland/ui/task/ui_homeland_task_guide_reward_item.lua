@@ -1,41 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/task/ui_homeland_task_guide_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandTaskGuideRewardItem", UICustomWidget)
 UIHomelandTaskGuideRewardItem = UIHomelandTaskGuideRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandTaskGuideRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandTaskGuideRewardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskGuideRewardItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomelandTaskGuideRewardItem:InitWidget()
   self.item = self:GetUIComponent("UISelectObjectPath", "Item")
   self.done = self:GetGameObject("Done")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskGuideRewardItem.SetData = function(self, roleAsset, done)
-  -- function num : 0_2
-  self.itemWidget = (self.item):SpawnObject("UIItemHomeland")
-  ;
-  (self.itemWidget):Flush(roleAsset)
-  ;
-  (self.done):SetActive(done)
+function UIHomelandTaskGuideRewardItem:SetData(roleAsset, done)
+  self.itemWidget = self.item:SpawnObject("UIItemHomeland")
+  self.itemWidget:Flush(roleAsset)
+  self.done:SetActive(done)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskGuideRewardItem.ClearTextCount = function(self)
-  -- function num : 0_3
-  (self.itemWidget):ClearTextCount()
+function UIHomelandTaskGuideRewardItem:ClearTextCount()
+  self.itemWidget:ClearTextCount()
 end
-
-

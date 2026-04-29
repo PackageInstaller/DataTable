@@ -1,67 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_puzzle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectPuzzleResult", SkillEffectResultBase)
 SkillEffectPuzzleResult = SkillEffectPuzzleResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectPuzzleResult.Constructor = function(self)
-  -- function num : 0_0
+function SkillEffectPuzzleResult:Constructor()
   self._convertInfo = nil
   self._exchangePieceTypeList = {}
   self._notifyConvertArray = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPuzzleResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectPuzzleResult:GetEffectType()
   return SkillEffectType.Puzzle
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPuzzleResult.AddExchangePieceType = function(self, oldPos, oldPieceType, newPos, newPieceType)
-  -- function num : 0_2 , upvalues : _ENV
-  (table.insert)(self._exchangePieceTypeList, {oldPos, oldPieceType, newPos, newPieceType})
+function SkillEffectPuzzleResult:AddExchangePieceType(oldPos, oldPieceType, newPos, newPieceType)
+  table.insert(self._exchangePieceTypeList, {
+    oldPos,
+    oldPieceType,
+    newPos,
+    newPieceType
+  })
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPuzzleResult.GetExchangePieceTypeList = function(self)
-  -- function num : 0_3
+function SkillEffectPuzzleResult:GetExchangePieceTypeList()
   return self._exchangePieceTypeList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPuzzleResult.AddConvertInfo = function(self, convertPos, beforePieceType, convertPieceType)
-  -- function num : 0_4
-  self._convertInfo = {convertPos, beforePieceType, convertPieceType}
+function SkillEffectPuzzleResult:AddConvertInfo(convertPos, beforePieceType, convertPieceType)
+  self._convertInfo = {
+    convertPos,
+    beforePieceType,
+    convertPieceType
+  }
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPuzzleResult.GetConvertInfo = function(self)
-  -- function num : 0_5
+function SkillEffectPuzzleResult:GetConvertInfo()
   return self._convertInfo
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPuzzleResult.SetNotifyConvertArray = function(self, convertArray)
-  -- function num : 0_6
+function SkillEffectPuzzleResult:SetNotifyConvertArray(convertArray)
   self._notifyConvertArray = convertArray
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPuzzleResult.GetNotifyConvertArray = function(self)
-  -- function num : 0_7
+function SkillEffectPuzzleResult:GetNotifyConvertArray()
   return self._notifyConvertArray
 end
-
-

@@ -1,43 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cutscene_mode_config.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 CutsceneModeConfig = {
-Systems = {
-{Name = "HitbackSystem_Render", Type = "HitbackSystem_Render"}
-, 
-{Name = "GridMoveSystem_Render", Type = "GridMoveSystem_Render"}
-, 
-{Name = "AnimatorControllerSystem_Render", Type = "AnimatorControllerSystem_Render"}
+  Systems = {
+    {
+      Name = "HitbackSystem_Render",
+      Type = "HitbackSystem_Render"
+    },
+    {
+      Name = "GridMoveSystem_Render",
+      Type = "GridMoveSystem_Render"
+    },
+    {
+      Name = "AnimatorControllerSystem_Render",
+      Type = "AnimatorControllerSystem_Render"
+    }
+  },
+  UniqueComponents = {},
+  Services = {
+    {
+      Name = "Config",
+      Type = "ConfigService"
+    },
+    {
+      Name = "BoardRender",
+      Type = "BoardServiceRender"
+    },
+    {
+      Name = "Piece",
+      Type = "PieceServiceRender"
+    },
+    {
+      Name = "TransformRenderer",
+      Type = "TransformServiceRenderer"
+    },
+    {
+      Name = "Cutscene",
+      Type = "CutsceneServiceRender"
+    },
+    {
+      Name = "Time",
+      Type = "ClientTimeService"
+    },
+    {
+      Name = "ResourcesPool",
+      Type = "ResourcesPoolService"
+    },
+    {
+      Name = "Resource",
+      Type = "UnityResourceService"
+    },
+    {
+      Name = "RenderEntity",
+      Type = "RenderEntityService"
+    },
+    {
+      Name = "Loading",
+      Type = "LoadingServiceRender"
+    },
+    {
+      Name = "Effect",
+      Type = "EffectService"
+    },
+    {
+      Name = "TrapRender",
+      Type = "TrapServiceRender"
+    }
+  }
 }
-, 
-UniqueComponents = {}
-, 
-Services = {
-{Name = "Config", Type = "ConfigService"}
-, 
-{Name = "BoardRender", Type = "BoardServiceRender"}
-, 
-{Name = "Piece", Type = "PieceServiceRender"}
-, 
-{Name = "TransformRenderer", Type = "TransformServiceRenderer"}
-, 
-{Name = "Cutscene", Type = "CutsceneServiceRender"}
-, 
-{Name = "Time", Type = "ClientTimeService"}
-, 
-{Name = "ResourcesPool", Type = "ResourcesPoolService"}
-, 
-{Name = "Resource", Type = "UnityResourceService"}
-, 
-{Name = "RenderEntity", Type = "RenderEntityService"}
-, 
-{Name = "Loading", Type = "LoadingServiceRender"}
-, 
-{Name = "Effect", Type = "EffectService"}
-, 
-{Name = "TrapRender", Type = "TrapServiceRender"}
-}
-}
-

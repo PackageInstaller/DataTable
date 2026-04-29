@@ -1,544 +1,354 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftRoom", Object)
 AircraftRoom = AircraftRoom
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftRoom.Constructor = function(self, roomGameObject, roomLogicData, floor)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftRoom:Constructor(roomGameObject, roomLogicData, floor)
   self._roomGO = roomGameObject
   self._roomLogicData = roomLogicData
   self._floor = floor
-  self.collider = (self._roomGO):GetComponent(typeof(UnityEngine.BoxCollider))
-  self._boxCenter = ((self._roomGO).transform).position + (self.collider).center
+  self.collider = self._roomGO:GetComponent(typeof(UnityEngine.BoxCollider))
+  self._boxCenter = self._roomGO.transform.position + self.collider.center
   self._visible = true
   self:_initArea()
   self:_Init()
   self:_initClickObject()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom._initArea = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AircraftRoom:_initArea()
   local type = self:LogicRoomType()
   self._area = nil
   if type == AirRoomType.CentralRoom then
     self._area = AirRestAreaType.CenterRoom
-  else
-    if type == AirRoomType.RestRoom then
-      self._area = AirRestAreaType.RestRoom
-    else
-      if type == AirRoomType.CoffeeRoom then
-        self._area = AirRestAreaType.CoffeeHouse
-      else
-        if type == AirRoomType.WaterBarRoom then
-          self._area = AirRestAreaType.Bar
-        else
-          if type == AirRoomType.GameRoom then
-            self._area = AirRestAreaType.EntertainmentRoom
-          end
-        end
-      end
-    end
+  elseif type == AirRoomType.RestRoom then
+    self._area = AirRestAreaType.RestRoom
+  elseif type == AirRoomType.CoffeeRoom then
+    self._area = AirRestAreaType.CoffeeHouse
+  elseif type == AirRoomType.WaterBarRoom then
+    self._area = AirRestAreaType.Bar
+  elseif type == AirRoomType.GameRoom then
+    self._area = AirRestAreaType.EntertainmentRoom
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom._Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((self._roomLogicData):GetConfig())
-  local cfg = nil
-  local modleParam = nil
+function AircraftRoom:_Init()
+  local cfg = self._roomLogicData:GetConfig()
+  local modleParam
   if cfg then
     modleParam = cfg.Prefab
   end
   if modleParam == nil then
-    (Log.fatal)("### aircraft -- modle param is nil !")
-    return 
+    Log.fatal("### aircraft -- modle param is nil !")
+    return
   end
-  local modleNameArr = (string.split)(modleParam, "|")
+  local modleNameArr = string.split(modleParam, "|")
   if #modleNameArr <= 0 then
-    (Log.fatal)("### aircraft -- modle param is error !")
-    return 
+    Log.fatal("### aircraft -- modle param is error !")
+    return
   end
-  local modleName = nil
+  local modleName
   for i = 1, #modleNameArr do
-    local PerfabAndSpace = (string.split)(modleNameArr[i], ",")
+    local PerfabAndSpace = string.split(modleNameArr[i], ",")
     modleName = PerfabAndSpace[1]
+    if PerfabAndSpace[2] ~= nil and tonumber(PerfabAndSpace[2]) == self:SpaceID() then
+      break
+    end
   end
-  do
-    if (PerfabAndSpace[2] ~= nil and tonumber(PerfabAndSpace[2]) == self:SpaceID()) or modleName == nil then
-      (Log.fatal)("### aircraft -- modle name is nil !")
-      return 
-    end
-    ;
-    (Log.notice)("加载房间模型--", modleName)
-    self._roomModleRequest = (ResourceManager:GetInstance()):SyncLoadAsset(modleName .. ".prefab", LoadType.GameObject)
-    local module = (self._roomModleRequest).Obj
-    module:SetActive(true)
-    ;
-    (module.transform):SetParent((self._roomGO).transform, true)
-    -- DECOMPILER ERROR at PC89: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (module.transform).localPosition = Vector3(0, 0, 0)
-    -- DECOMPILER ERROR at PC96: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (module.transform).localScale = Vector3(1, 1, 1)
-    self._roomPrefab = module
-    local rootTrans = (self._roomGO).transform
-    self._naviRoot = (rootTrans:GetChild(0)):Find("naviRoot")
-    if self._naviRoot == nil then
-      (Log.exception)("找不到房间内naviRoot，房间模型名称：", (self._roomGO).name)
-      return 
-    end
-    local nodeName = "Points"
-    self._pointHolder = AircraftPointHolder:New((self._naviRoot):Find(nodeName), self._floor, "空间" .. self:SpaceID() .. "漫游点")
-    nodeName = "GatherPoints"
-    self._gatherPointHolder = AircraftPointHolder:New((self._naviRoot):Find(nodeName), self._floor, "空间" .. self:SpaceID() .. "社交聚集点")
-    local randomPointRoot = (self._naviRoot):Find("RandomStoryPoints")
-    if randomPointRoot then
-      self._randomStoryPointHolder = AircraftStoryPointHolder:New(randomPointRoot, self._floor)
-    end
-    if (self._roomLogicData):GetRoomType() < AirRoomType.EmptySpace then
-      self:InitNavi(module)
-      if (self._roomLogicData):GetRoomType() == AirRoomType.CentralRoom then
-        self:InitRestRoom()
-      end
-    else
+  if modleName == nil then
+    Log.fatal("### aircraft -- modle name is nil !")
+    return
+  end
+  Log.notice("加载房间模型--", modleName)
+  self._roomModleRequest = ResourceManager:GetInstance():SyncLoadAsset(modleName .. ".prefab", LoadType.GameObject)
+  local module = self._roomModleRequest.Obj
+  module:SetActive(true)
+  module.transform:SetParent(self._roomGO.transform, true)
+  module.transform.localPosition = Vector3(0, 0, 0)
+  module.transform.localScale = Vector3(1, 1, 1)
+  self._roomPrefab = module
+  local rootTrans = self._roomGO.transform
+  self._naviRoot = rootTrans:GetChild(0):Find("naviRoot")
+  if self._naviRoot == nil then
+    Log.exception("找不到房间内naviRoot，房间模型名称：", self._roomGO.name)
+    return
+  end
+  local nodeName = "Points"
+  self._pointHolder = AircraftPointHolder:New(self._naviRoot:Find(nodeName), self._floor, "空间" .. self:SpaceID() .. "漫游点")
+  nodeName = "GatherPoints"
+  self._gatherPointHolder = AircraftPointHolder:New(self._naviRoot:Find(nodeName), self._floor, "空间" .. self:SpaceID() .. "社交聚集点")
+  local randomPointRoot = self._naviRoot:Find("RandomStoryPoints")
+  if randomPointRoot then
+    self._randomStoryPointHolder = AircraftStoryPointHolder:New(randomPointRoot, self._floor)
+  end
+  if self._roomLogicData:GetRoomType() < AirRoomType.EmptySpace then
+    self:InitNavi(module)
+    if self._roomLogicData:GetRoomType() == AirRoomType.CentralRoom then
       self:InitRestRoom()
     end
+  else
+    self:InitRestRoom()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.InitNavi = function(self, module)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._roomLogicData):GetSpaceStatus() == SpaceState.SpaceStateFull then
-    self:SetColliderEnable((self._roomLogicData):GetRoomType() ~= AirRoomType.AisleRoom)
-    local model = ((module.transform):Find("model")):GetChild(0)
-    do
-      local navmeshObj = (model:Find("NavMeshRoot")).gameObject
-      if navmeshObj then
-        navmeshObj:SetActive(false)
-      end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function AircraftRoom:InitNavi(module)
+  if self._roomLogicData:GetRoomType() == AirRoomType.AisleRoom then
+    self:SetColliderEnable(self._roomLogicData:GetSpaceStatus() ~= SpaceState.SpaceStateFull)
+  else
+    local model = module.transform:Find("model"):GetChild(0)
+    local navmeshObj = model:Find("NavMeshRoot").gameObject
+    if navmeshObj then
+      navmeshObj:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.InitRestRoom = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local roomType = (self._roomLogicData):GetRoomType()
+function AircraftRoom:InitRestRoom()
+  local roomType = self._roomLogicData:GetRoomType()
   self._wanderingPetList = {}
   self._belongPetList = {}
   if roomType == AirRoomType.RestRoom then
-    self._walkCeiling = ((Cfg.cfg_aircraft_rest_room)[1001]).WalkCeiling
-    self._petCeiling = ((Cfg.cfg_aircraft_rest_room)[1001]).PetCeiling
+    self._walkCeiling = Cfg.cfg_aircraft_rest_room[1001].WalkCeiling
+    self._petCeiling = Cfg.cfg_aircraft_rest_room[1001].PetCeiling
     self._roomTag = AircraftRoomTag.RestRoom
+  elseif roomType == AirRoomType.CoffeeRoom then
+    self._walkCeiling = Cfg.cfg_aircraft_rest_room[2001].WalkCeiling
+    self._petCeiling = Cfg.cfg_aircraft_rest_room[2001].PetCeiling
+    self._roomTag = AircraftRoomTag.CoffeeHouse
+  elseif roomType == AirRoomType.WaterBarRoom then
+    self._walkCeiling = Cfg.cfg_aircraft_rest_room[3001].WalkCeiling
+    self._petCeiling = Cfg.cfg_aircraft_rest_room[3001].PetCeiling
+    self._roomTag = AircraftRoomTag.Bar
+  elseif roomType == AirRoomType.GameRoom then
+    self._walkCeiling = Cfg.cfg_aircraft_rest_room[4001].WalkCeiling
+    self._petCeiling = Cfg.cfg_aircraft_rest_room[4001].PetCeiling
+    self._roomTag = AircraftRoomTag.Game
+  elseif roomType == AirRoomType.CentralRoom then
+    self._walkCeiling = Cfg.cfg_aircraft_rest_room[9999].WalkCeiling
+    self._petCeiling = Cfg.cfg_aircraft_rest_room[9999].PetCeiling
   else
-    if roomType == AirRoomType.CoffeeRoom then
-      self._walkCeiling = ((Cfg.cfg_aircraft_rest_room)[2001]).WalkCeiling
-      self._petCeiling = ((Cfg.cfg_aircraft_rest_room)[2001]).PetCeiling
-      self._roomTag = AircraftRoomTag.CoffeeHouse
-    else
-      if roomType == AirRoomType.WaterBarRoom then
-        self._walkCeiling = ((Cfg.cfg_aircraft_rest_room)[3001]).WalkCeiling
-        self._petCeiling = ((Cfg.cfg_aircraft_rest_room)[3001]).PetCeiling
-        self._roomTag = AircraftRoomTag.Bar
-      else
-        if roomType == AirRoomType.GameRoom then
-          self._walkCeiling = ((Cfg.cfg_aircraft_rest_room)[4001]).WalkCeiling
-          self._petCeiling = ((Cfg.cfg_aircraft_rest_room)[4001]).PetCeiling
-          self._roomTag = AircraftRoomTag.Game
-        else
-          if roomType == AirRoomType.CentralRoom then
-            self._walkCeiling = ((Cfg.cfg_aircraft_rest_room)[9999]).WalkCeiling
-            self._petCeiling = ((Cfg.cfg_aircraft_rest_room)[9999]).PetCeiling
-          else
-            ;
-            (Log.fatal)("[AircaftPet] 休息区房间类型错误：", roomType, "，空间ID：", self:SpaceID())
-          end
-        end
-      end
-    end
+    Log.fatal("[AircaftPet] 休息区房间类型错误：", roomType, "，空间ID：", self:SpaceID())
   end
   self:InitDefaultFurniture()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.InitDefaultFurniture = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local furnitureRoot = ((self._roomPrefab).transform):Find("furnitureRoot")
+function AircraftRoom:InitDefaultFurniture()
+  local furnitureRoot = self._roomPrefab.transform:Find("furnitureRoot")
   if furnitureRoot == nil or furnitureRoot.childCount == 0 then
-    return 
+    return
   end
   self._defaultFurnitures = {}
   for i = 0, furnitureRoot.childCount - 1 do
-    local fGo = (furnitureRoot:GetChild(i)).gameObject
+    local fGo = furnitureRoot:GetChild(i).gameObject
     local furniture = AircraftFurniture:New(nil, fGo, self._floor, self._area)
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._defaultFurnitures)[i + 1] = furniture
+    self._defaultFurnitures[i + 1] = furniture
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.GetDefaultFurniture = function(self)
-  -- function num : 0_6
+function AircraftRoom:GetDefaultFurniture()
   return self._defaultFurnitures
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom._initClickObject = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function AircraftRoom:_initClickObject()
   self._clickObject = nil
-  local roomType = (self._roomLogicData):GetRoomType()
+  local roomType = self._roomLogicData:GetRoomType()
   if roomType == AirRoomType.CoffeeRoom then
-    local bookShelf = ((self._roomPrefab).transform):Find("UIAircraftBookTip")
+    local bookShelf = self._roomPrefab.transform:Find("UIAircraftBookTip")
     if bookShelf then
       self._clickObject = bookShelf.gameObject
     end
-  else
-    do
-      if roomType == AirRoomType.SmeltRoom then
-        local smeltTip = ((self._roomPrefab).transform):Find("UIAircraftSmeltTip")
-        if smeltTip then
-          self._clickObject = smeltTip.gameObject
-        end
-      else
-        do
-          if roomType == AirRoomType.DispatchRoom then
-            local dispatchTip = ((self._roomPrefab).transform):Find("UIAircraftDispatchTip")
-            if dispatchTip then
-              self._clickObject = dispatchTip.gameObject
-            end
-          else
-            do
-              if roomType == AirRoomType.PrismRoom then
-                local award = ((self._roomPrefab).transform):Find("award")
-                if award then
-                  self._clickObject = award.gameObject
-                end
-              else
-                do
-                  if roomType == AirRoomType.MazeRoom then
-                    local award = ((self._roomPrefab).transform):Find("award")
-                    if award then
-                      self._clickObject = award.gameObject
-                    end
-                  else
-                    do
-                      if roomType == AirRoomType.TowerRoom then
-                        local award = ((self._roomPrefab).transform):Find("award")
-                        if award then
-                          self._clickObject = award.gameObject
-                        end
-                      else
-                        do
-                          if roomType == AirRoomType.TacticRoom then
-                            local tip = ((self._roomPrefab).transform):Find("UIAircrafTacticTip")
-                            if tip then
-                              self._clickObject = tip.gameObject
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+  elseif roomType == AirRoomType.SmeltRoom then
+    local smeltTip = self._roomPrefab.transform:Find("UIAircraftSmeltTip")
+    if smeltTip then
+      self._clickObject = smeltTip.gameObject
+    end
+  elseif roomType == AirRoomType.DispatchRoom then
+    local dispatchTip = self._roomPrefab.transform:Find("UIAircraftDispatchTip")
+    if dispatchTip then
+      self._clickObject = dispatchTip.gameObject
+    end
+  elseif roomType == AirRoomType.PrismRoom then
+    local award = self._roomPrefab.transform:Find("award")
+    if award then
+      self._clickObject = award.gameObject
+    end
+  elseif roomType == AirRoomType.MazeRoom then
+    local award = self._roomPrefab.transform:Find("award")
+    if award then
+      self._clickObject = award.gameObject
+    end
+  elseif roomType == AirRoomType.TowerRoom then
+    local award = self._roomPrefab.transform:Find("award")
+    if award then
+      self._clickObject = award.gameObject
+    end
+  elseif roomType == AirRoomType.TacticRoom then
+    local tip = self._roomPrefab.transform:Find("UIAircrafTacticTip")
+    if tip then
+      self._clickObject = tip.gameObject
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.Dispose = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function AircraftRoom:Dispose()
   if self._awardTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._awardTimer)
+    GameGlobal.Timer():CancelEvent(self._awardTimer)
   end
-  ;
-  (self._roomModleRequest):Dispose()
+  self._roomModleRequest:Dispose()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.CheckGround = function(self, trans)
-  -- function num : 0_9
-  do return self._naviRoot == trans end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftRoom:CheckGround(trans)
+  return self._naviRoot == trans
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.GetRoomGameObject = function(self)
-  -- function num : 0_10
+function AircraftRoom:GetRoomGameObject()
   return self._roomGO
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.GetRoomLogicData = function(self)
-  -- function num : 0_11
+function AircraftRoom:GetRoomLogicData()
   return self._roomLogicData
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.LogicRoomType = function(self)
-  -- function num : 0_12
-  return (self._roomLogicData):GetRoomType()
+function AircraftRoom:LogicRoomType()
+  return self._roomLogicData:GetRoomType()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.Status = function(self)
-  -- function num : 0_13
-  return (self._roomLogicData):Status()
+function AircraftRoom:Status()
+  return self._roomLogicData:Status()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.GetPointHolder = function(self)
-  -- function num : 0_14
+function AircraftRoom:GetPointHolder()
   return self._pointHolder
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.GetGatherPointHolder = function(self)
-  -- function num : 0_15
+function AircraftRoom:GetGatherPointHolder()
   return self._gatherPointHolder
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.GetRandomStoryPointHolder = function(self)
-  -- function num : 0_16
+function AircraftRoom:GetRandomStoryPointHolder()
   return self._randomStoryPointHolder
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.SpaceID = function(self)
-  -- function num : 0_17
-  return (self._roomLogicData):SpaceId()
+function AircraftRoom:SpaceID()
+  return self._roomLogicData:SpaceId()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.Level = function(self)
-  -- function num : 0_18
-  return (self._roomLogicData):Level()
+function AircraftRoom:Level()
+  return self._roomLogicData:Level()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.GetRoomTag = function(self)
-  -- function num : 0_19
+function AircraftRoom:GetRoomTag()
   return self._roomTag
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.Area = function(self)
-  -- function num : 0_20
+function AircraftRoom:Area()
   return self._area
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.Floor = function(self)
-  -- function num : 0_21
+function AircraftRoom:Floor()
   return self._floor
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.CenterPosition = function(self)
-  -- function num : 0_22
+function AircraftRoom:CenterPosition()
   return self._boxCenter
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.PetEnterWandering = function(self, id)
-  -- function num : 0_23 , upvalues : _ENV
+function AircraftRoom:PetEnterWandering(id)
   if self:IsWanderingPetFull() then
-    (Log.fatal)("[AircaftPet] 当前房间已满，不能进入！")
-    return 
+    Log.fatal("[AircaftPet] 当前房间已满，不能进入！")
+    return
   end
-  ;
-  (table.insert)(self._wanderingPetList, id)
+  table.insert(self._wanderingPetList, id)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.PetLeaveWandering = function(self, id)
-  -- function num : 0_24 , upvalues : _ENV
+function AircraftRoom:PetLeaveWandering(id)
   if #self._wanderingPetList <= 0 then
-    (Log.fatal)("[AircaftPet] 当前房间星灵为空")
-    return 
+    Log.fatal("[AircaftPet] 当前房间星灵为空")
+    return
   end
-  ;
-  (table.removev)(self._wanderingPetList, id)
+  table.removev(self._wanderingPetList, id)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.IsWanderingPetFull = function(self)
-  -- function num : 0_25
-  do return self._walkCeiling <= #self._wanderingPetList end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftRoom:IsWanderingPetFull()
+  return #self._wanderingPetList >= self._walkCeiling
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.PetIn = function(self, id)
-  -- function num : 0_26 , upvalues : _ENV
+function AircraftRoom:PetIn(id)
   if self:IsBelongPetFull() then
-    (Log.fatal)("[AircaftPet] 房间已满")
+    Log.fatal("[AircaftPet] 房间已满")
   end
-  ;
-  (table.insert)(self._belongPetList, id)
+  table.insert(self._belongPetList, id)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.PetOut = function(self, id)
-  -- function num : 0_27 , upvalues : _ENV
+function AircraftRoom:PetOut(id)
   if #self._belongPetList <= 0 then
-    (Log.fatal)("[AircaftPet] 房间人数为0")
+    Log.fatal("[AircaftPet] 房间人数为0")
   end
-  ;
-  (table.removev)(self._belongPetList, id)
+  table.removev(self._belongPetList, id)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.IsBelongPetFull = function(self)
-  -- function num : 0_28
-  do return self._petCeiling <= #self._belongPetList end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftRoom:IsBelongPetFull()
+  return #self._belongPetList >= self._petCeiling
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.ClearPets = function(self)
-  -- function num : 0_29
+function AircraftRoom:ClearPets()
   self._belongPetList = {}
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.SetColliderEnable = function(self, enable)
-  -- function num : 0_30
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
+function AircraftRoom:SetColliderEnable(enable)
   if self.collider then
-    (self.collider).enabled = enable
+    self.collider.enabled = enable
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.OnFocus = function(self)
-  -- function num : 0_31
+function AircraftRoom:OnFocus()
   self._visible = true
   self:SetColliderEnable(false)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.OnExit = function(self)
-  -- function num : 0_32
+function AircraftRoom:OnExit()
   self._visible = false
   self:SetColliderEnable(true)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.GetFurniture = function(self, type)
-  -- function num : 0_33 , upvalues : _ENV
-  (Log.exception)("AircraftRoom的获取家具接口已删除。", (debug.traceback)())
+function AircraftRoom:GetFurniture(type)
+  Log.exception("AircraftRoom的获取家具接口已删除。", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.GetFurnitureByID = function(self, id)
-  -- function num : 0_34 , upvalues : _ENV
-  (Log.exception)("AircraftRoom的通过id获取家具接口已删除。", (debug.traceback)())
+function AircraftRoom:GetFurnitureByID(id)
+  Log.exception("AircraftRoom的通过id获取家具接口已删除。", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom._GetFurniture = function(self, type)
-  -- function num : 0_35 , upvalues : _ENV
+function AircraftRoom:_GetFurniture(type)
   local t = {}
   if self._furnitureTab then
-    local furs = (self._furnitureTab)[type]
-    if furs and #furs > 0 then
-      for _,fur in ipairs(furs) do
-        if fur:AvailableCount() > 0 then
+    local furs = self._furnitureTab[type]
+    if furs and 0 < #furs then
+      for _, fur in ipairs(furs) do
+        if 0 < fur:AvailableCount() then
           t[#t + 1] = fur
         end
       end
     end
   end
-  do
-    return t
-  end
+  return t
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.GetFurnitures = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  (Log.exception)("AircraftRoom的GetFurnitures接口已删除。", (debug.traceback)())
+function AircraftRoom:GetFurnitures()
+  Log.exception("AircraftRoom的GetFurnitures接口已删除。", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.GetAllFurniture = function(self)
-  -- function num : 0_37 , upvalues : _ENV
-  (Log.exception)("AircraftRoom的GetAllFurniture接口已删除。", (debug.traceback)())
+function AircraftRoom:GetAllFurniture()
+  Log.exception("AircraftRoom的GetAllFurniture接口已删除。", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.RoomName = function(self)
-  -- function num : 0_38 , upvalues : _ENV
-  return (StringTable.Get)((self._roomLogicData):GetRoomName())
+function AircraftRoom:RoomName()
+  return StringTable.Get(self._roomLogicData:GetRoomName())
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.GetFirflys = function(self, test)
-  -- function num : 0_39 , upvalues : _ENV
-  local firRoot = nil
+function AircraftRoom:GetFirflys(test)
+  local firRoot
   if test then
-    firRoot = (((self._lastReq).Obj).transform):Find("Firefly")
+    firRoot = self._lastReq.Obj.transform:Find("Firefly")
   else
-    firRoot = ((self._roomPrefab).transform):Find("Firefly")
+    firRoot = self._roomPrefab.transform:Find("Firefly")
   end
   if firRoot then
     local fireflys = {}
@@ -548,86 +358,50 @@ AircraftRoom.GetFirflys = function(self, test)
     end
     return fireflys
   else
-    do
-      ;
-      (Log.error)("找不到Firefly节点")
-    end
+    Log.error("找不到Firefly节点")
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.GetWindow = function(self, test)
-  -- function num : 0_40
+function AircraftRoom:GetWindow(test)
   if test then
-    return (((self._lastReq).Obj).transform):Find("Window")
+    return self._lastReq.Obj.transform:Find("Window")
   else
-    return ((self._roomPrefab).transform):Find("Window")
+    return self._roomPrefab.transform:Find("Window")
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.LoadLastGameObject = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  local lastID = ((self._roomLogicData):GetConfig()).PrevLevelID
-  local name = ((Cfg.cfg_aircraft_room)[lastID]).Prefab
-  self._lastReq = (ResourceManager:GetInstance()):SyncLoadAsset(name .. ".prefab", LoadType.GameObject)
-  local go = (self._lastReq).Obj
-  ;
-  (go.transform):SetParent((self._roomGO).transform)
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (go.transform).localPosition = Vector3.zero
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (go.transform).localRotation = Quaternion.identity
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (go.transform).localScale = Vector3.one
+function AircraftRoom:LoadLastGameObject()
+  local lastID = self._roomLogicData:GetConfig().PrevLevelID
+  local name = Cfg.cfg_aircraft_room[lastID].Prefab
+  self._lastReq = ResourceManager:GetInstance():SyncLoadAsset(name .. ".prefab", LoadType.GameObject)
+  local go = self._lastReq.Obj
+  go.transform:SetParent(self._roomGO.transform)
+  go.transform.localPosition = Vector3.zero
+  go.transform.localRotation = Quaternion.identity
+  go.transform.localScale = Vector3.one
   go:SetActive(true)
   self._lastGo = go
-  ;
-  ((self._roomModleRequest).Obj):SetActive(false)
+  self._roomModleRequest.Obj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.SwitchToNow = function(self)
-  -- function num : 0_42
-  (self._lastGo):SetActive(false)
-  ;
-  ((self._roomModleRequest).Obj):SetActive(true)
+function AircraftRoom:SwitchToNow()
+  self._lastGo:SetActive(false)
+  self._roomModleRequest.Obj:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.ReleaseAllPoints = function(self)
-  -- function num : 0_43
-  (self._pointHolder):ReleaseAll()
-  ;
-  (self._gatherPointHolder):ReleaseAll()
+function AircraftRoom:ReleaseAllPoints()
+  self._pointHolder:ReleaseAll()
+  self._gatherPointHolder:ReleaseAll()
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.OnStartDecorate = function(self)
-  -- function num : 0_44
+function AircraftRoom:OnStartDecorate()
   if self._clickObject then
-    (self._clickObject):SetActive(false)
+    self._clickObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRoom.OnStopDecorate = function(self)
-  -- function num : 0_45
+function AircraftRoom:OnStopDecorate()
   if self._clickObject then
-    (self._clickObject):SetActive(true)
+    self._clickObject:SetActive(true)
   end
 end
-
-

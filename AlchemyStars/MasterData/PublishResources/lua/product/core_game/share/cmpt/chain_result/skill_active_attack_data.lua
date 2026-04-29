@@ -1,47 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/chain_result/skill_active_attack_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillActiveAttackData", Object)
 SkillActiveAttackData = SkillActiveAttackData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillActiveAttackData.Constructor = function(self)
-  -- function num : 0_0
+function SkillActiveAttackData:Constructor()
   self._attackGridRange = {}
   self._entityDamageValue = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillActiveAttackData.ClearActiveAttackData = function(self)
-  -- function num : 0_1
+function SkillActiveAttackData:ClearActiveAttackData()
   self._attackGridRange = {}
   self._entityDamageValue = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillActiveAttackData.GetActiveAttackGridRange = function(self)
-  -- function num : 0_2
+function SkillActiveAttackData:GetActiveAttackGridRange()
   return self._attackGridRange
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillActiveAttackData.SetActiveAttackGridRange = function(self, attackData)
-  -- function num : 0_3
+function SkillActiveAttackData:SetActiveAttackGridRange(attackData)
   self._attackGridRange = attackData
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillActiveAttackData.AddDamageData = function(self, entityid, fdamagevalue)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._entityDamageValue)[entityid] = fdamagevalue
+function SkillActiveAttackData:AddDamageData(entityid, fdamagevalue)
+  self._entityDamageValue[entityid] = fdamagevalue
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_mover.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftMover", Object)
 AircraftMover = AircraftMover
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftMover.Constructor = function(self, transform, target, speed)
-  -- function num : 0_0
+function AircraftMover:Constructor(transform, target, speed)
   self._speed = speed
   self._transform = transform
   self._target = target
@@ -16,119 +9,75 @@ AircraftMover.Constructor = function(self, transform, target, speed)
   self._running = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMover.Begin = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._from = ((self._transform).position):Clone()
-  local distance = (Vector3.Distance)(self._from, self._target)
+function AircraftMover:Begin()
+  self._from = self._transform.position:Clone()
+  local distance = Vector3.Distance(self._from, self._target)
   self._duration = distance / self._speed * 1000
   self._timer = 0
   self._running = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMover.Finish = function(self)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._transform).position = self._target
+function AircraftMover:Finish()
+  self._transform.position = self._target
   self._running = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMover.Update = function(self, deltaTimeMS)
-  -- function num : 0_3 , upvalues : _ENV
+function AircraftMover:Update(deltaTimeMS)
   if self._running then
     self._timer = self._timer + deltaTimeMS
-    if self._duration < self._timer then
+    if self._timer > self._duration then
       self:Finish()
     else
-      -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._transform).position = (Vector3.Lerp)(self._from, self._target, self._timer / self._duration)
+      self._transform.position = Vector3.Lerp(self._from, self._target, self._timer / self._duration)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMover.ResetTarget = function(self, target)
-  -- function num : 0_4 , upvalues : _ENV
-  self._from = ((self._transform).position):Clone()
+function AircraftMover:ResetTarget(target)
+  self._from = self._transform.position:Clone()
   self._target = target
-  local distance = (Vector3.Distance)(self._from, self._target)
+  local distance = Vector3.Distance(self._from, self._target)
   self._duration = distance / self._speed * 1000
   self._timer = 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftMover.IsArrive = function(self)
-  -- function num : 0_5
+function AircraftMover:IsArrive()
   return not self._running
 end
 
 _class("AircraftPetMover", Object)
 AircraftPetMover = AircraftPetMover
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPetMover.Constructor = function(self, pet, target, speed)
-  -- function num : 0_6 , upvalues : _ENV
+function AircraftPetMover:Constructor(pet, target, speed)
   self._pet = pet
   self._target = target
-  self._mover = AircraftMover:New((self._pet):Transform(), target, speed)
+  self._mover = AircraftMover:New(self._pet:Transform(), target, speed)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetMover.Begin = function(self)
-  -- function num : 0_7
-  ((self._pet):Transform()).forward = self._target - (((self._pet):Transform()).position):Clone()
-  ;
-  (self._pet):Anim_Walk()
-  ;
-  (self._mover):Begin()
+function AircraftPetMover:Begin()
+  self._pet:Transform().forward = self._target - self._pet:Transform().position:Clone()
+  self._pet:Anim_Walk()
+  self._mover:Begin()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetMover.Finish = function(self)
-  -- function num : 0_8
-  (self._mover):Finish()
+function AircraftPetMover:Finish()
+  self._mover:Finish()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetMover.Update = function(self, deltaTimeMS)
-  -- function num : 0_9
-  if not (self._mover):IsArrive() then
-    (self._mover):Update(deltaTimeMS)
+function AircraftPetMover:Update(deltaTimeMS)
+  if not self._mover:IsArrive() then
+    self._mover:Update(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetMover.ResetTarget = function(self, target)
-  -- function num : 0_10
-  (self._mover):ResetTarget(target)
+function AircraftPetMover:ResetTarget(target)
+  self._mover:ResetTarget(target)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetMover.IsArrive = function(self)
-  -- function num : 0_11
-  return (self._mover):IsArrive()
+function AircraftPetMover:IsArrive()
+  return self._mover:IsArrive()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetMover.Pet = function(self)
-  -- function num : 0_12
+function AircraftPetMover:Pet()
   return self._pet
 end
-
-

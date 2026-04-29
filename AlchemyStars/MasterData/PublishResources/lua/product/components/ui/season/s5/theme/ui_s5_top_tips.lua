@@ -1,71 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s5/theme/ui_s5_top_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS5TopTips", UICustomWidget)
 UIS5TopTips = UIS5TopTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS5TopTips.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIS5TopTips:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5TopTips.OnHide = function(self)
-  -- function num : 0_1
+function UIS5TopTips:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5TopTips.SetData = function(self, itemId)
-  -- function num : 0_2
+function UIS5TopTips:SetData(itemId)
   self._itemId = itemId
   self:_Refresh()
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5TopTips._Refresh = function(self)
-  -- function num : 0_3
+function UIS5TopTips:_Refresh()
   self:_SetIconText(self._itemId, "_icon", "_text")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5TopTips._SetIconText = function(self, itemId, widgetIcon, widgetText)
-  -- function num : 0_4 , upvalues : _ENV
+function UIS5TopTips:_SetIconText(itemId, widgetIcon, widgetText)
   local atlasName = "UICommon.spriteatlas"
   local spriteName = "toptoon_" .. itemId
-  ;
-  (UIWidgetHelper.SetImageSprite)(self, widgetIcon, atlasName, spriteName)
-  ;
-  (UIWidgetHelper.SetItemCount)(self, itemId, widgetText)
+  UIWidgetHelper.SetImageSprite(self, widgetIcon, atlasName, spriteName)
+  UIWidgetHelper.SetItemCount(self, itemId, widgetText)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5TopTips.BtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.info)("UIS5TopTips:BtnOnClick")
+function UIS5TopTips:BtnOnClick()
+  Log.info("UIS5TopTips:BtnOnClick")
   self:ShowDialog("UIItemGetPathController", self._itemId)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5TopTips._AttachEvents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIS5TopTips:_AttachEvents()
   self:AttachEvent(GameEventType.ItemCountChanged, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS5TopTips._DetachEvents = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIS5TopTips:_DetachEvents()
   self:DetachEvent(GameEventType.ItemCountChanged, self._Refresh)
 end
-
-

@@ -1,26 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/book/cfg_multi_spine_cg_ani.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {id = 1, Spine = 2, ClickAni = 3}
+local key = {
+  id = 1,
+  Spine = 2,
+  ClickAni = 3
+}
 local common = {
-{"click", "click2"}
+  {"click", "click2"}
 }
 local config = {
-{1, "1600381_2_super_spine_idle", common[1]}
-, 
-{2, "1600064_4_cg_spine_idle", common[1]}
-, 
-{3, "1600254_5_cg_spine_idle", 
-{"click", "click1"}
-}
-, 
-{4, "1600773_5_cg_spine_idle", common[1]}
-, 
-{5, "1601484_5_cg_spine_idle", 
-{"click1", "click2"}
-}
+  {
+    1,
+    "1600381_2_super_spine_idle",
+    common[1]
+  },
+  {
+    2,
+    "1600064_4_cg_spine_idle",
+    common[1]
+  },
+  {
+    3,
+    "1600254_5_cg_spine_idle",
+    {"click", "click1"}
+  },
+  {
+    4,
+    "1600773_5_cg_spine_idle",
+    common[1]
+  },
+  {
+    5,
+    "1601484_5_cg_spine_idle",
+    {"click1", "click2"}
+  }
 }
 return config, "id", key
-

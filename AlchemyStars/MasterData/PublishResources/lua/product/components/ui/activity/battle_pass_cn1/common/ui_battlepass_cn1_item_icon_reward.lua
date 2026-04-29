@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_cn1/common/ui_battlepass_cn1_item_icon_reward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattlePassCN1ItemIconReward", UICustomWidget)
 UIBattlePassCN1ItemIconReward = UIBattlePassCN1ItemIconReward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattlePassCN1ItemIconReward.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattlePassCN1ItemIconReward:OnShow(uiParams)
   local iconRect = self:GetUIComponent("RectTransform", "_icon")
-  self._defaultSizeDelta = Vector2((iconRect.sizeDelta).x, (iconRect.sizeDelta).y)
+  self._defaultSizeDelta = Vector2(iconRect.sizeDelta.x, iconRect.sizeDelta.y)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1ItemIconReward.SetData = function(self, index, adv, campaign, component, clickCallback, tipsCallback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBattlePassCN1ItemIconReward:SetData(index, adv, campaign, component, clickCallback, tipsCallback)
   self._index = index
   self._adv = adv
   self._campaign = campaign
@@ -24,48 +14,43 @@ UIBattlePassCN1ItemIconReward.SetData = function(self, index, adv, campaign, com
   self._componentInfo = component:ComponentInfo()
   self._clickCallback = clickCallback
   self._tipsCallback = tipsCallback
-  ;
-  (UIBattlePassStyleHelper.FitStyle_Widget)(self._campaign, self)
+  UIBattlePassStyleHelper.FitStyle_Widget(self._campaign, self)
   self._state = self:_CheckState(adv)
   self:_SetState(self._state)
   self:_SetBg(adv)
   local rewards = {}
   if not adv then
-    rewards = (self._component):GetNormalRewards()
+    rewards = self._component:GetNormalRewards()
   else
-    rewards = (self._component):GetAdvancedRewards()
+    rewards = self._component:GetAdvancedRewards()
   end
   self._roleAsset = rewards[self._index]
-  local goldReward = (self._component):IsPreviewLvFromConfig(self._index)
+  local goldReward = self._component:IsPreviewLvFromConfig(self._index)
   self:_SetIcon(goldReward, self._roleAsset)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1ItemIconReward.PlayAnimTaken = function(self, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBattlePassCN1ItemIconReward:PlayAnimTaken(callback)
   self:_SetState(UIBattlePassCN1ItemIconRewardState.EState_Received)
   local animName, duration = "UIeff_UIBattlePassCN1_ItemIcon_Reward_Taken", 367
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", animName, duration, callback)
+  UIWidgetHelper.PlayAnimation(self, "_anim", animName, duration, callback)
 end
 
-local UIBattlePassCN1ItemIconRewardState = {EState_Lock = 1, EState_Claim = 2, EState_Received = 3}
+local UIBattlePassCN1ItemIconRewardState = {
+  EState_Lock = 1,
+  EState_Claim = 2,
+  EState_Received = 3
+}
 _enum("UIBattlePassCN1ItemIconRewardState", UIBattlePassCN1ItemIconRewardState)
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
 
-UIBattlePassCN1ItemIconReward._CheckState = function(self, adv)
-  -- function num : 0_3 , upvalues : UIBattlePassCN1ItemIconRewardState, _ENV
-  if adv and not (self._componentInfo).m_unlock_advanced_reward then
+function UIBattlePassCN1ItemIconReward:_CheckState(adv)
+  if adv and not self._componentInfo.m_unlock_advanced_reward then
     return UIBattlePassCN1ItemIconRewardState.EState_Lock
   end
-  if (self._componentInfo).m_current_level < self._index then
+  if self._index > self._componentInfo.m_current_level then
     return UIBattlePassCN1ItemIconRewardState.EState_Lock
   end
-  if not adv or not (self._componentInfo).m_received_advanced_lv then
-    local received = (self._componentInfo).m_received_normal_lv
-  end
-  for _,v in ipairs(received) do
+  local received = adv and self._componentInfo.m_received_advanced_lv or self._componentInfo.m_received_normal_lv
+  for _, v in ipairs(received) do
     if v == self._index then
       return UIBattlePassCN1ItemIconRewardState.EState_Received
     end
@@ -73,65 +58,46 @@ UIBattlePassCN1ItemIconReward._CheckState = function(self, adv)
   return UIBattlePassCN1ItemIconRewardState.EState_Claim
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1ItemIconReward._SetState = function(self, state)
-  -- function num : 0_4 , upvalues : _ENV
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"state_Lock"}
-, 
-{"state_Completed"}
-, 
-{"state_Taken"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, state)
+function UIBattlePassCN1ItemIconReward:_SetState(state)
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {"state_Lock"},
+    {
+      "state_Completed"
+    },
+    {
+      "state_Taken"
+    }
+  })
+  UIWidgetHelper.SetObjGroupShow(objs, state)
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1ItemIconReward._SetBg = function(self, adv)
-  -- function num : 0_5 , upvalues : _ENV
+function UIBattlePassCN1ItemIconReward:_SetBg(adv)
   local idx = adv and 2 or 1
-  local tb_iconBg = (UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName)(self._campaign, self, "_iconBg")
-  local tb_txtBg = (UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName)(self._campaign, self, "_txtBg")
-  local tb_txt = (UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName)(self._campaign, self, "_txt")
+  local tb_iconBg = UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName(self._campaign, self, "_iconBg")
+  local tb_txtBg = UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName(self._campaign, self, "_txtBg")
+  local tb_txt = UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName(self._campaign, self, "_txt")
   local convert = {"_standard", "_elite"}
-  ;
-  (UIStyleHelper.FitStyle_Widget)(tb_iconBg[convert[idx]], self, "_iconBg")
-  ;
-  (UIStyleHelper.FitStyle_Widget)(tb_txtBg[convert[idx]], self, "_txtBg")
-  ;
-  (UIStyleHelper.FitStyle_Widget)(tb_txt[convert[idx]], self, "_txt")
+  UIStyleHelper.FitStyle_Widget(tb_iconBg[convert[idx]], self, "_iconBg")
+  UIStyleHelper.FitStyle_Widget(tb_txtBg[convert[idx]], self, "_txtBg")
+  UIStyleHelper.FitStyle_Widget(tb_txt[convert[idx]], self, "_txt")
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1ItemIconReward._SetIcon = function(self, goldReward, roleAsset)
-  -- function num : 0_6 , upvalues : _ENV
+function UIBattlePassCN1ItemIconReward:_SetIcon(goldReward, roleAsset)
   local itemId, itemText = roleAsset.assetid, roleAsset.count
-  ;
-  (UIWidgetHelper.SetItemIcon)(self, itemId, "_icon")
-  ;
-  (UIWidgetHelper.SetItemIcon_AdjHead)(self, itemId, "_icon", self._defaultSizeDelta)
+  UIWidgetHelper.SetItemIcon(self, itemId, "_icon")
+  UIWidgetHelper.SetItemIcon_AdjHead(self, itemId, "_icon", self._defaultSizeDelta)
   local atlasName = "UICommon.spriteatlas"
   local spriteName = "spirit_shengji_se"
-  ;
-  (UIWidgetHelper.SetItemIconColor)(self, itemId, "_quality", atlasName, spriteName)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txt", itemText)
+  UIWidgetHelper.SetItemIconColor(self, itemId, "_quality", atlasName, spriteName)
+  UIWidgetHelper.SetLocalizationText(self, "_txt", itemText)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1ItemIconReward.BtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : UIBattlePassCN1ItemIconRewardState
-  if self._state == UIBattlePassCN1ItemIconRewardState.EState_Claim and self._clickCallback then
-    (self._clickCallback)(self._index, self._adv)
-  end
-  if self._tipsCallback then
-    (self._tipsCallback)((self._roleAsset).assetid, (go.transform).position)
+function UIBattlePassCN1ItemIconReward:BtnOnClick(go)
+  if self._state == UIBattlePassCN1ItemIconRewardState.EState_Claim then
+    if self._clickCallback then
+      self._clickCallback(self._index, self._adv)
+    end
+  elseif self._tipsCallback then
+    self._tipsCallback(self._roleAsset.assetid, go.transform.position)
   end
 end
-
-

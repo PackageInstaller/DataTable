@@ -1,116 +1,87 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/chain/connect_area_render_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ConnectAreaRenderSystem_Render", ReactiveSystem)
 ConnectAreaRenderSystem_Render = ConnectAreaRenderSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ConnectAreaRenderSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function ConnectAreaRenderSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectAreaRenderSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).ConnectPieces)}, {"Added"})
+function ConnectAreaRenderSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.ConnectPieces)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectAreaRenderSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
+function ConnectAreaRenderSystem_Render:Filter(entity)
   return entity:HasConnectPieces()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectAreaRenderSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function ConnectAreaRenderSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     self:HandleConnectArea(entities[i])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectAreaRenderSystem_Render.HandleConnectArea = function(self, e)
-  -- function num : 0_4 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function ConnectAreaRenderSystem_Render:HandleConnectArea(e)
+  local utilDataSvc = self._world:GetService("UtilData")
   if utilDataSvc:GetCurMainStateID() ~= GameStateID.WaitInput and not utilDataSvc:IsPreviewNeedShowLinkageNumForCostStep() then
-    return 
+    return
   end
-  local previewEntity = (self._world):GetPreviewEntity()
+  local previewEntity = self._world:GetPreviewEntity()
   local previewChainPathCmpt = previewEntity:PreviewChainPath()
   local chain_grid_list = previewChainPathCmpt:GetPreviewChainPath()
-  local pieceService = (self._world):GetService("Piece")
-  local connect_piece_grid_list = (e:ConnectPieces()):GetConnectPieces()
+  local pieceService = self._world:GetService("Piece")
+  local connect_piece_grid_list = e:ConnectPieces():GetConnectPieces()
   local count = #connect_piece_grid_list
-  if count > 0 then
+  if 0 < count then
     self:HandleNoneConnectAreaDark(chain_grid_list, connect_piece_grid_list)
-  else
-    if count == 0 then
-      if (self._world):LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
-        self:HandleNoChainPointForCostStep(chain_grid_list)
-      else
-        self:HandleNoChainPoint(chain_grid_list)
-      end
+  elseif count == 0 then
+    if self._world:LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
+      self:HandleNoChainPointForCostStep(chain_grid_list)
+    else
+      self:HandleNoChainPoint(chain_grid_list)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectAreaRenderSystem_Render.HandleNoneConnectAreaDark = function(self, chain_grid_list, connectGridList)
-  -- function num : 0_5 , upvalues : _ENV
-  local pieceService = (self._world):GetService("Piece")
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local pieceGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Piece)
-  for _,pieceEntity in ipairs(pieceGroup:GetEntities()) do
+function ConnectAreaRenderSystem_Render:HandleNoneConnectAreaDark(chain_grid_list, connectGridList)
+  local pieceService = self._world:GetService("Piece")
+  local utilDataSvc = self._world:GetService("UtilData")
+  local pieceGroup = self._world:GetGroup(self._world.BW_WEMatchers.Piece)
+  for _, pieceEntity in ipairs(pieceGroup:GetEntities()) do
     if not pieceEntity:HasOutsideRegion() then
       local gridLocationCmpt = pieceEntity:GridLocation()
       local gridPos = gridLocationCmpt.Position
-      local inConnectArea = (table.icontains)(connectGridList, gridPos)
+      local inConnectArea = table.icontains(connectGridList, gridPos)
       if utilDataSvc:IsNeedShowLinkageNumForCostStep() then
         if utilDataSvc:IsEnoughStepToLinkMore(chain_grid_list) then
           inConnectArea = true
+        elseif not table.icontains(chain_grid_list, gridPos) then
+          inConnectArea = false
         else
-          if not (table.icontains)(chain_grid_list, gridPos) then
-            inConnectArea = false
-          else
-            inConnectArea = true
-          end
+          inConnectArea = true
         end
       end
       if inConnectArea == false then
         pieceService:SetPieceAnimDark(gridPos)
-      else
-        if not (table.icontains)(chain_grid_list, gridPos) then
-          local animName = pieceService:GetPieceAnimation(gridPos)
-          if animName ~= "Normal" then
-            pieceService:SetPieceEntityAnimNormal(pieceEntity)
-          end
+      elseif not table.icontains(chain_grid_list, gridPos) then
+        local animName = pieceService:GetPieceAnimation(gridPos)
+        if animName ~= "Normal" then
+          pieceService:SetPieceEntityAnimNormal(pieceEntity)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectAreaRenderSystem_Render.HandleNoChainPoint = function(self, chain_grid_list)
-  -- function num : 0_6 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function ConnectAreaRenderSystem_Render:HandleNoChainPoint(chain_grid_list)
+  local utilDataSvc = self._world:GetService("UtilData")
   local curStateID = utilDataSvc:GetCurMainStateID()
-  local pieceGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Piece)
-  for _,pieceEntity in ipairs(pieceGroup:GetEntities()) do
+  local pieceGroup = self._world:GetGroup(self._world.BW_WEMatchers.Piece)
+  for _, pieceEntity in ipairs(pieceGroup:GetEntities()) do
     if not pieceEntity:HasOutsideRegion() then
       local gridPos = pieceEntity:GetGridPosition()
-      if not (table.icontains)(chain_grid_list, gridPos) then
+      if not table.icontains(chain_grid_list, gridPos) then
         if curStateID == GameStateID.PieceRefresh then
           self:HandlePieceAnimForPieceRefresh(pieceEntity)
         else
@@ -119,80 +90,64 @@ ConnectAreaRenderSystem_Render.HandleNoChainPoint = function(self, chain_grid_li
       end
     end
   end
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderChainPathComponent = renderBoardEntity:RenderChainPath()
   renderChainPathComponent:SetConnectAreaRenderCantRefresh(false)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectAreaRenderSystem_Render.HandleNoChainPointForCostStep = function(self, chain_grid_list)
-  -- function num : 0_7 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function ConnectAreaRenderSystem_Render:HandleNoChainPointForCostStep(chain_grid_list)
+  local utilDataSvc = self._world:GetService("UtilData")
   local curStateID = utilDataSvc:GetCurMainStateID()
   local isLinkLineState = false
-  local previewEntity = (self._world):GetPreviewEntity()
-  do
-    if previewEntity then
-      local previewChainPathCmpt = previewEntity:PreviewChainPath()
-      if previewChainPathCmpt and previewChainPathCmpt:IsLinkLine() then
-        isLinkLineState = true
-      end
+  local previewEntity = self._world:GetPreviewEntity()
+  if previewEntity then
+    local previewChainPathCmpt = previewEntity:PreviewChainPath()
+    if previewChainPathCmpt and previewChainPathCmpt:IsLinkLine() then
+      isLinkLineState = true
     end
-    if isLinkLineState then
-      local pieceService = (self._world):GetService("Piece")
-      local utilDataSvc = (self._world):GetService("UtilData")
-      local pieceGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Piece)
-      for _,pieceEntity in ipairs(pieceGroup:GetEntities()) do
-        if not pieceEntity:HasOutsideRegion() then
-          local gridLocationCmpt = pieceEntity:GridLocation()
-          local gridPos = gridLocationCmpt.Position
-          local inConnectArea = false
-          if utilDataSvc:IsEnoughStepToLinkMore(chain_grid_list) then
-            inConnectArea = true
-          else
-            if not (table.icontains)(chain_grid_list, gridPos) then
-              inConnectArea = false
-            else
-              inConnectArea = true
-            end
-          end
-          if inConnectArea == false then
-            pieceService:SetPieceAnimDark(gridPos)
-          else
-            if not (table.icontains)(chain_grid_list, gridPos) then
-              local animName = pieceService:GetPieceAnimation(gridPos)
-              if animName ~= "Normal" then
-                pieceService:SetPieceEntityAnimNormal(pieceEntity)
-              end
-            end
+  end
+  if isLinkLineState then
+    local pieceService = self._world:GetService("Piece")
+    local utilDataSvc = self._world:GetService("UtilData")
+    local pieceGroup = self._world:GetGroup(self._world.BW_WEMatchers.Piece)
+    for _, pieceEntity in ipairs(pieceGroup:GetEntities()) do
+      if not pieceEntity:HasOutsideRegion() then
+        local gridLocationCmpt = pieceEntity:GridLocation()
+        local gridPos = gridLocationCmpt.Position
+        local inConnectArea = false
+        if utilDataSvc:IsEnoughStepToLinkMore(chain_grid_list) then
+          inConnectArea = true
+        elseif not table.icontains(chain_grid_list, gridPos) then
+          inConnectArea = false
+        else
+          inConnectArea = true
+        end
+        if inConnectArea == false then
+          pieceService:SetPieceAnimDark(gridPos)
+        elseif not table.icontains(chain_grid_list, gridPos) then
+          local animName = pieceService:GetPieceAnimation(gridPos)
+          if animName ~= "Normal" then
+            pieceService:SetPieceEntityAnimNormal(pieceEntity)
           end
         end
       end
-    else
-      do
-        self:HandleNoChainPoint(chain_grid_list)
-      end
     end
+  else
+    self:HandleNoChainPoint(chain_grid_list)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectAreaRenderSystem_Render.HandlePieceAnimForOther = function(self, pieceEntity)
-  -- function num : 0_8
+function ConnectAreaRenderSystem_Render:HandlePieceAnimForOther(pieceEntity)
   local gridLocationCmpt = pieceEntity:GridLocation()
   local gridPos = gridLocationCmpt.Position
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local pieceService = (self._world):GetService("Piece")
+  local utilDataSvc = self._world:GetService("UtilData")
+  local pieceService = self._world:GetService("Piece")
   local is_blocked = utilDataSvc:IsPosListHaveMonster({gridPos})
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderChainPathComponent = renderBoardEntity:RenderChainPath()
   local chainAcrossMonster = renderChainPathComponent:GetChainAcrossMonster()
   local cantRefresh = renderChainPathComponent:GetConnectAreaRenderCantRefresh()
-  if chainAcrossMonster then
-    local refresh = not cantRefresh
-  end
+  local refresh = chainAcrossMonster and not cantRefresh
   if not is_blocked or refresh then
     local animName = pieceService:GetPieceAnimation(gridPos)
     if animName ~= "Normal" then
@@ -201,15 +156,12 @@ ConnectAreaRenderSystem_Render.HandlePieceAnimForOther = function(self, pieceEnt
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ConnectAreaRenderSystem_Render.HandlePieceAnimForPieceRefresh = function(self, pieceEntity)
-  -- function num : 0_9
-  local playerEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function ConnectAreaRenderSystem_Render:HandlePieceAnimForPieceRefresh(pieceEntity)
+  local playerEntity = self._world:Player():GetCurrentTeamEntity()
   local playerLocCmpt = playerEntity:GridLocation()
   local playerPos = playerLocCmpt:GetGridPos()
-  local pieceService = (self._world):GetService("Piece")
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local pieceService = self._world:GetService("Piece")
+  local utilDataSvc = self._world:GetService("UtilData")
   local gridLocationCmpt = pieceEntity:GridLocation()
   local gridPos = gridLocationCmpt.Position
   local is_blocked = utilDataSvc:IsPosListHaveMonster({gridPos})
@@ -220,7 +172,4 @@ ConnectAreaRenderSystem_Render.HandlePieceAnimForPieceRefresh = function(self, p
   elseif isPlayerPos then
     pieceService:SetPieceEntityAnimNormal(pieceEntity)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
-
-

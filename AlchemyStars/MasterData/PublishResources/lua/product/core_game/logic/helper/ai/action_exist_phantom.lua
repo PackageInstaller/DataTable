@@ -1,31 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_exist_phantom.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ActionExistPhantom", AINewNode)
 ActionExistPhantom = ActionExistPhantom
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionExistPhantom.Constructor = function(self)
-  -- function num : 0_0
+function ActionExistPhantom:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionExistPhantom.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local phantoms = ((self._world):GetGroup(((self._world).BW_WEMatchers).Phantom)):GetEntities()
-  if phantoms and #phantoms > 0 then
-    for _,phantom in ipairs(phantoms) do
-      if (phantom:PhantomComponent()):GetOwnerEntityID() == (self.m_entityOwn):GetID() and not phantom:HasDeadMark() then
+function ActionExistPhantom:OnUpdate()
+  local phantoms = self._world:GetGroup(self._world.BW_WEMatchers.Phantom):GetEntities()
+  if phantoms and 0 < #phantoms then
+    for _, phantom in ipairs(phantoms) do
+      if phantom:PhantomComponent():GetOwnerEntityID() == self.m_entityOwn:GetID() and not phantom:HasDeadMark() then
         return AINewNodeStatus.Success
       end
     end
   end
-  do
-    return AINewNodeStatus.Failure
-  end
+  return AINewNodeStatus.Failure
 end
-
-

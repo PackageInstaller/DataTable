@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_attack_animation_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseAttackEffectAnimationParam", SkillPhaseParamBase)
 SkillPhaseAttackEffectAnimationParam = SkillPhaseAttackEffectAnimationParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseAttackEffectAnimationParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseAttackEffectAnimationParam:Constructor(t)
   self._castEffectID = t.castEffectID
   self._castAnimation = t.castAnimation
   self._hitPointDelay = t.hitPointDelay
@@ -19,75 +12,52 @@ SkillPhaseAttackEffectAnimationParam.Constructor = function(self, t)
   self._hpDelayTime = t.hpDelayTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackEffectAnimationParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseAttackEffectAnimationParam:GetPhaseType()
   return SkillViewPhaseType.EffectRangeAttack
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackEffectAnimationParam.GetCastEffectID = function(self)
-  -- function num : 0_2
+function SkillPhaseAttackEffectAnimationParam:GetCastEffectID()
   return self._castEffectID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackEffectAnimationParam.GetAnimationName = function(self)
-  -- function num : 0_3
+function SkillPhaseAttackEffectAnimationParam:GetAnimationName()
   return self._castAnimation
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackEffectAnimationParam.GetHitPointDelay = function(self)
-  -- function num : 0_4
+function SkillPhaseAttackEffectAnimationParam:GetHitPointDelay()
   return self._hitPointDelay
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackEffectAnimationParam.GetHitAnimation = function(self)
-  -- function num : 0_5
+function SkillPhaseAttackEffectAnimationParam:GetHitAnimation()
   return self._hitAnimation
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackEffectAnimationParam.GetHitEffectID = function(self)
-  -- function num : 0_6
+function SkillPhaseAttackEffectAnimationParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackEffectAnimationParam.GetCastTotalTime = function(self)
-  -- function num : 0_7
+function SkillPhaseAttackEffectAnimationParam:GetCastTotalTime()
   return self._castTotalTime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackEffectAnimationParam.GetCacheTable = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillPhaseAttackEffectAnimationParam:GetCacheTable()
   local cacheNum = 4
   local t = {}
   if self._castEffectID and self._castEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._castEffectID]).ResPath, cacheNum})
+    table.insert(t, {
+      Cfg.cfg_effect[self._castEffectID].ResPath,
+      cacheNum
+    })
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, cacheNum})
+  if self._hitEffectID and 0 < self._hitEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      cacheNum
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackEffectAnimationParam.GetHPDelay = function(self)
-  -- function num : 0_9
+function SkillPhaseAttackEffectAnimationParam:GetHPDelay()
   return self._hpDelayTime
 end
-
-

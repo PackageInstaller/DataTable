@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_pickup_angle_free_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_PickupAngleFreeLine", SkillScopeCalculator_Base)
 SkillScopeCalculator_PickupAngleFreeLine = SkillScopeCalculator_PickupAngleFreeLine
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_PickupAngleFreeLine.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  self._world = (self._gridFilter)._world
+function SkillScopeCalculator_PickupAngleFreeLine:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  self._world = self._gridFilter._world
   local bNoExtend = scopeParam.noExtend == 1
   local widthThreshold = BattleConst.ScopeAngleFreeLineThreshold
   if scopeParam.widthThreshold then
@@ -44,12 +37,9 @@ SkillScopeCalculator_PickupAngleFreeLine.CalcRange = function(self, scopeType, s
     self:_InsertTargetGrid(a, pickupInitPos, w)
     return SkillScopeResult:New(SkillScopeType.PickupAngleFreeLine, centerPos, a, w)
   end
-  local utilScope = (self._world):GetService("UtilScopeCalc")
+  local utilScope = self._world:GetService("UtilScopeCalc")
   local attackRange = {}
   local wholeRange = {}
   utilScope:P2PAngleFreeLineRange(pickupInitPos, pickupDestPos, attackRange, wholeRange, bNoExtend, widthThreshold)
-  do return SkillScopeResult:New(SkillScopeType.PickupAngleFreeLine, centerPos, attackRange, wholeRange) end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
+  return SkillScopeResult:New(SkillScopeType.PickupAngleFreeLine, centerPos, attackRange, wholeRange)
 end
-
-

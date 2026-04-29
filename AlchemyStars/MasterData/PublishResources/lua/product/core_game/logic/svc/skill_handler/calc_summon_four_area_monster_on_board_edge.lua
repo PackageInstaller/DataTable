@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_summon_four_area_monster_on_board_edge.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_SummonFourAreaMonsterOnBoardEdge", SkillEffectCalc_Base)
 SkillEffectCalc_SummonFourAreaMonsterOnBoardEdge = SkillEffectCalc_SummonFourAreaMonsterOnBoardEdge
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SummonFourAreaMonsterOnBoardEdge.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SummonFourAreaMonsterOnBoardEdge:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonFourAreaMonsterOnBoardEdge.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectService = (self._world):GetService("SkillEffectCalc")
-  local randomSvc = (self._world):GetService("RandomLogic")
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+function SkillEffectCalc_SummonFourAreaMonsterOnBoardEdge:DoSkillEffectCalculator(skillEffectCalcParam)
+  local skillEffectService = self._world:GetService("SkillEffectCalc")
+  local randomSvc = self._world:GetService("RandomLogic")
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local posCaster = casterEntity:GetGridPosition()
   local skillEffectParam = skillEffectCalcParam.skillEffectParam
   local summonList = skillEffectParam:GetSummonList()
@@ -27,8 +17,7 @@ SkillEffectCalc_SummonFourAreaMonsterOnBoardEdge.DoSkillEffectCalculator = funct
   local summonType = SkillEffectEnum_SummonType.Monster
   local hadSelectPosList = {}
   local boardEdgePosList = self:_OnCalcBoardEdgePosList(hadSelectPosList)
-  ;
-  (table.appendArray)(hadSelectPosList, boardEdgePosList)
+  table.appendArray(hadSelectPosList, boardEdgePosList)
   local results = {}
   for i = 1, summonCount do
     local curRandomIndex = randomSvc:LogicRand(1, #summonList)
@@ -38,161 +27,114 @@ SkillEffectCalc_SummonFourAreaMonsterOnBoardEdge.DoSkillEffectCalculator = funct
       boardEdgePosList = self:_OnCalcBoardEdgePosList(hadSelectPosList)
     end
     if posSummon then
-      (table.insert)(hadSelectPosList, posSummon)
+      table.insert(hadSelectPosList, posSummon)
       local skillResultSummon = SkillEffectResult_SummonEverything:New(summonType, curSummonID, posCaster, posSummon)
-      ;
-      (table.insert)(results, skillResultSummon)
+      table.insert(results, skillResultSummon)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonFourAreaMonsterOnBoardEdge._OnCalcBoardEdgePosList = function(self, hadSelectPosList)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_SummonFourAreaMonsterOnBoardEdge:_OnCalcBoardEdgePosList(hadSelectPosList)
   local boardEdgePosList = {}
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local boardMaxX = boardServiceLogic:GetCurBoardMaxX()
   local boardMaxY = boardServiceLogic:GetCurBoardMaxY()
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   for x = 1, boardMaxX do
     local xPosList = {}
     for y = 1, boardMaxY do
       local pos = Vector2(x, y)
-      if not (table.icontains)(hadSelectPosList, pos) and utilData:IsValidPiecePos(pos) then
-        (table.insert)(xPosList, pos)
+      if not table.icontains(hadSelectPosList, pos) and utilData:IsValidPiecePos(pos) then
+        table.insert(xPosList, pos)
         break
       end
     end
-    do
-      for y = boardMaxY, 1, -1 do
-        local pos = Vector2(x, y)
-        if not (table.icontains)(hadSelectPosList, pos) and utilData:IsValidPiecePos(pos) then
-          (table.insert)(xPosList, pos)
-          break
-        end
+    for y = boardMaxY, 1, -1 do
+      local pos = Vector2(x, y)
+      if not table.icontains(hadSelectPosList, pos) and utilData:IsValidPiecePos(pos) then
+        table.insert(xPosList, pos)
+        break
       end
-      do
-        do
-          ;
-          (table.sort)(xPosList, function(a, b)
-    -- function num : 0_2_0
-    do return a.y < b.y end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-          ;
-          (table.insert)(boardEdgePosList, xPosList[1])
-          if not (table.icontains)(boardEdgePosList, xPosList[#xPosList]) then
-            (table.insert)(boardEdgePosList, xPosList[#xPosList])
-          end
-          -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
+    end
+    table.sort(xPosList, function(a, b)
+      return a.y < b.y
+    end)
+    table.insert(boardEdgePosList, xPosList[1])
+    if not table.icontains(boardEdgePosList, xPosList[#xPosList]) then
+      table.insert(boardEdgePosList, xPosList[#xPosList])
     end
   end
   for y = 1, boardMaxY do
     local yPosList = {}
     for x = 1, boardMaxX do
       local pos = Vector2(x, y)
-      if not (table.icontains)(hadSelectPosList, pos) and utilData:IsValidPiecePos(pos) then
-        (table.insert)(yPosList, pos)
+      if not table.icontains(hadSelectPosList, pos) and utilData:IsValidPiecePos(pos) then
+        table.insert(yPosList, pos)
         break
       end
     end
-    do
-      for x = boardMaxX, 1, -1 do
-        local pos = Vector2(x, y)
-        if not (table.icontains)(hadSelectPosList, pos) and utilData:IsValidPiecePos(pos) then
-          (table.insert)(yPosList, pos)
-          break
-        end
-      end
-      do
-        do
-          ;
-          (table.sort)(yPosList, function(a, b)
-    -- function num : 0_2_1
-    do return a.x < b.x end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-          if not (table.icontains)(boardEdgePosList, yPosList[1]) then
-            (table.insert)(boardEdgePosList, yPosList[1])
-          end
-          if not (table.icontains)(boardEdgePosList, yPosList[#yPosList]) then
-            (table.insert)(boardEdgePosList, yPosList[#yPosList])
-          end
-          -- DECOMPILER ERROR at PC187: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC187: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+    for x = boardMaxX, 1, -1 do
+      local pos = Vector2(x, y)
+      if not table.icontains(hadSelectPosList, pos) and utilData:IsValidPiecePos(pos) then
+        table.insert(yPosList, pos)
+        break
       end
     end
+    table.sort(yPosList, function(a, b)
+      return a.x < b.x
+    end)
+    if not table.icontains(boardEdgePosList, yPosList[1]) then
+      table.insert(boardEdgePosList, yPosList[1])
+    end
+    if not table.icontains(boardEdgePosList, yPosList[#yPosList]) then
+      table.insert(boardEdgePosList, yPosList[#yPosList])
+    end
   end
-  local teamLeader = ((self._world):Player()):GetLocalTeamEntity()
+  local teamLeader = self._world:Player():GetLocalTeamEntity()
   local teamPos = teamLeader:GetGridPosition()
-  ;
-  (table.sort)(boardEdgePosList, function(a, b)
-    -- function num : 0_2_2 , upvalues : _ENV, teamPos
-    local disA = (Vector2.Distance)(teamPos, a)
-    local disB = (Vector2.Distance)(teamPos, b)
-    do return disA < disB end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(boardEdgePosList, function(a, b)
+    local disA = Vector2.Distance(teamPos, a)
+    local disB = Vector2.Distance(teamPos, b)
+    return disA < disB
+  end)
   return boardEdgePosList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonFourAreaMonsterOnBoardEdge._OnCalcSummonPos = function(self, boardEdgePosList, summonID)
-  -- function num : 0_3 , upvalues : _ENV
-  local posSummon = nil
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  local cfgService = (self._world):GetService("Config")
+function SkillEffectCalc_SummonFourAreaMonsterOnBoardEdge:_OnCalcSummonPos(boardEdgePosList, summonID)
+  local posSummon
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local cfgService = self._world:GetService("Config")
   local monsterConfigData = cfgService:GetMonsterConfigData()
   local areaArray = monsterConfigData:GetMonsterArea(summonID)
   local raceType = monsterConfigData:GetMonsterRaceType(summonID)
-  local blockRaceType = (self._skillEffectService):_TransBlockByRaceType(raceType)
-  for _,pos in ipairs(boardEdgePosList) do
-    if #areaArray == 1 and not boardServiceLogic:IsPosBlock(pos, blockRaceType) then
-      posSummon = pos
-      break
-    end
-    if #areaArray == 4 then
-      for _,area in ipairs(areaArray) do
+  local blockRaceType = self._skillEffectService:_TransBlockByRaceType(raceType)
+  for _, pos in ipairs(boardEdgePosList) do
+    if #areaArray == 1 then
+      if not boardServiceLogic:IsPosBlock(pos, blockRaceType) then
+        posSummon = pos
+        break
+      end
+    elseif #areaArray == 4 then
+      for _, area in ipairs(areaArray) do
         local blockCount = 0
         local posNewCenter = pos - area
-        for _,newArea in ipairs(areaArray) do
+        for _, newArea in ipairs(areaArray) do
           local posWork = posNewCenter + newArea
-          if not boardServiceLogic:IsPosBlock(posWork, blockRaceType) then
-            do
-              blockCount = blockCount + 1
-              -- DECOMPILER ERROR at PC58: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC58: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
+          if boardServiceLogic:IsPosBlock(posWork, blockRaceType) then
+            break
           end
+          blockCount = blockCount + 1
         end
         if blockCount == #areaArray then
           posSummon = posNewCenter
           break
         end
       end
+      if posSummon then
+        break
+      end
     end
   end
-  do
-    if not posSummon then
-      return posSummon
-    end
-  end
+  return posSummon
 end
-
-

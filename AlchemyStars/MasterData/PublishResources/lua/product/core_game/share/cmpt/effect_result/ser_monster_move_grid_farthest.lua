@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_monster_move_grid_farthest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_MonsterMoveGridFarthest", SkillEffectResultBase)
 SkillEffectResult_MonsterMoveGridFarthest = SkillEffectResult_MonsterMoveGridFarthest
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_MonsterMoveGridFarthest.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectResult_MonsterMoveGridFarthest:GetEffectType()
   return SkillEffectType.MonsterMoveGridFarthest
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_MonsterMoveGridFarthest.Constructor = function(self, walkResultList, isDead)
-  -- function num : 0_1
+function SkillEffectResult_MonsterMoveGridFarthest:Constructor(walkResultList, isDead)
   self._walkResultList = walkResultList
   self._isDead = isDead
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_MonsterMoveGridFarthest.GetWalkResultList = function(self)
-  -- function num : 0_2
+function SkillEffectResult_MonsterMoveGridFarthest:GetWalkResultList()
   return self._walkResultList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_MonsterMoveGridFarthest.IsCasterDead = function(self)
-  -- function num : 0_3
+function SkillEffectResult_MonsterMoveGridFarthest:IsCasterDead()
   return self._isDead
 end
-
-

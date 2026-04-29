@@ -1,52 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_modify_buff_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ModifyBuffValue", Object)
 SkillEffectCalc_ModifyBuffValue = SkillEffectCalc_ModifyBuffValue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ModifyBuffValue.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ModifyBuffValue:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ModifyBuffValue.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_ModifyBuffValue:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.insert)(results, result)
+      table.insert(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ModifyBuffValue._CalculateSingleTarget = function(self, skillEffectCalcParam, targetID)
-  -- function num : 0_2 , upvalues : _ENV
-  if (skillEffectCalcParam.skillEffectParam):NeedKill() then
-    local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-    local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+function SkillEffectCalc_ModifyBuffValue:_CalculateSingleTarget(skillEffectCalcParam, targetID)
+  if skillEffectCalcParam.skillEffectParam:NeedKill() then
+    local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+    local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
     local skillResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
     local haveDeath = false
     local listTargetHp = {}
     if skillResultArray then
-      for k,res in ipairs(skillResultArray) do
+      for k, res in ipairs(skillResultArray) do
         local targetEntityID = res:GetTargetID()
-        if targetEntityID > 0 then
+        if 0 < targetEntityID then
           local nCurHp = listTargetHp[targetEntityID]
-          if nCurHp == nil then
-            local targetEntity = (self._world):GetEntityByID(targetEntityID)
+          if nil == nCurHp then
+            local targetEntity = self._world:GetEntityByID(targetEntityID)
             if targetEntity:HasMonsterID() then
-              local nCurHp = (targetEntity:Attributes()):GetCurrentHP()
+              local nCurHp = targetEntity:Attributes():GetCurrentHP()
               listTargetHp[targetEntityID] = nCurHp
               if nCurHp <= 0 then
                 haveDeath = true
@@ -57,56 +44,46 @@ SkillEffectCalc_ModifyBuffValue._CalculateSingleTarget = function(self, skillEff
         end
       end
     end
-    do
-      do
-        if haveDeath then
-          return self:_ModifyBuffValue(skillEffectCalcParam, targetID)
-        end
-        do return self:_ModifyBuffValue(skillEffectCalcParam, targetID) end
-      end
+    if haveDeath then
+      return self:_ModifyBuffValue(skillEffectCalcParam, targetID)
     end
+  else
+    return self:_ModifyBuffValue(skillEffectCalcParam, targetID)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ModifyBuffValue._ModifyBuffValue = function(self, skillEffectCalcParam, targetID)
-  -- function num : 0_3 , upvalues : _ENV
-  local buffID = (skillEffectCalcParam.skillEffectParam):GetBuffID()
+function SkillEffectCalc_ModifyBuffValue:_ModifyBuffValue(skillEffectCalcParam, targetID)
+  local buffID = skillEffectCalcParam.skillEffectParam:GetBuffID()
   if type(buffID) ~= "number" then
-    return 
+    return
   end
-  local addValue = (skillEffectCalcParam.skillEffectParam):GetAddValue()
-  local certainValue = (skillEffectCalcParam.skillEffectParam):GetCertainValue()
+  local addValue = skillEffectCalcParam.skillEffectParam:GetAddValue()
+  local certainValue = skillEffectCalcParam.skillEffectParam:GetCertainValue()
   if type(addValue) == "number" then
-    local valueName = (skillEffectCalcParam.skillEffectParam):GetValueName()
-    local entityTarget = (self._world):GetEntityByID(targetID)
+    local valueName = skillEffectCalcParam.skillEffectParam:GetValueName()
+    local entityTarget = self._world:GetEntityByID(targetID)
     if entityTarget == nil then
-      return 
+      return
     end
     local buffCmp = entityTarget:BuffComponent()
     local buffInstance = buffCmp:GetBuffById(buffID)
     if buffInstance == nil then
-      return 
+      return
     end
     buffInstance:AddLayerCount(addValue)
     local layer = buffInstance:GetLayerCount()
     return SkillModifyBuffValueResult:New(targetID, buffInstance:BuffSeq(), layer)
   end
-  do
-    if type(certainValue) == "number" then
-      local valueName = (skillEffectCalcParam.skillEffectParam):GetValueName()
-      local entityTarget = (self._world):GetEntityByID(targetID)
-      local buffCmp = entityTarget:BuffComponent()
-      local buffInstance = buffCmp:GetBuffById(buffID)
-      if not buffInstance then
-        return 
-      end
-      buffInstance:SetLayerCount(certainValue)
-      local layer = buffInstance:GetLayerCount()
-      return SkillModifyBuffValueResult:New(targetID, buffInstance:BuffSeq(), layer)
+  if type(certainValue) == "number" then
+    local valueName = skillEffectCalcParam.skillEffectParam:GetValueName()
+    local entityTarget = self._world:GetEntityByID(targetID)
+    local buffCmp = entityTarget:BuffComponent()
+    local buffInstance = buffCmp:GetBuffById(buffID)
+    if not buffInstance then
+      return
     end
+    buffInstance:SetLayerCount(certainValue)
+    local layer = buffInstance:GetLayerCount()
+    return SkillModifyBuffValueResult:New(targetID, buffInstance:BuffSeq(), layer)
   end
 end
-
-

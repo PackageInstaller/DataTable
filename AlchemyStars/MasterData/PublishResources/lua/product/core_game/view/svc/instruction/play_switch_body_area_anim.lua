@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_switch_body_area_anim.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("switch_body_area_dir_type")
 require("base_ins_r")
 _class("PlaySwitchBodyAreaInstruction", BaseInstruction)
 PlaySwitchBodyAreaInstruction = PlaySwitchBodyAreaInstruction
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySwitchBodyAreaInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySwitchBodyAreaInstruction:Constructor(paramList)
   self._leftAnim = paramList.leftAnim
   self._rightAnim = paramList.rightAnim
   self._turnAnim = paramList.turnAnim
@@ -19,33 +12,26 @@ PlaySwitchBodyAreaInstruction.Constructor = function(self, paramList)
   self._turnAnimLen = tonumber(paramList.turnAnimLen)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySwitchBodyAreaInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySwitchBodyAreaInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local switchBodyAreaResult = routineComponent:GetEffectResultByArray(SkillEffectType.SwitchBodyAreaByTargetPos)
   if not switchBodyAreaResult then
-    return 
+    return
   end
   local dirType = switchBodyAreaResult:GetSwitchDirType()
   local oldBodyAreaPos = switchBodyAreaResult:GetOldBodyAreaPos()
   local newDir = switchBodyAreaResult:GetNewDir()
-  local newBodyArea = (switchBodyAreaResult:GetNewBodyArea())
-  local playAnim, animLen = nil, nil
+  local newBodyArea = switchBodyAreaResult:GetNewBodyArea()
+  local playAnim, animLen
   if dirType == SwitchBodyAreaDirType.Right then
     playAnim = self._rightAnim
     animLen = self._rightAnimLen
-  else
-    if dirType == SwitchBodyAreaDirType.Left then
-      playAnim = self._leftAnim
-      animLen = self._leftAnimLen
-    else
-      if dirType == SwitchBodyAreaDirType.Turn then
-        playAnim = self._turnAnim
-        animLen = self._turnAnimLen
-      end
-    end
+  elseif dirType == SwitchBodyAreaDirType.Left then
+    playAnim = self._leftAnim
+    animLen = self._leftAnimLen
+  elseif dirType == SwitchBodyAreaDirType.Turn then
+    playAnim = self._turnAnim
+    animLen = self._turnAnimLen
   end
   self._world = casterEntity:GetOwnerWorld()
   if playAnim then
@@ -56,16 +42,14 @@ PlaySwitchBodyAreaInstruction.DoInstruction = function(self, TT, casterEntity, p
     YIELD(TT, animLen)
   end
   casterEntity:SetAnimatorControllerTriggers({"Idle"})
-  local renderEntityService = (self._world):GetService("RenderEntity")
+  local renderEntityService = self._world:GetService("RenderEntity")
   renderEntityService:DestroyMonsterAreaOutLineEntity(casterEntity)
   local casterPos = casterEntity:GetRenderGridPosition()
   local newBodyAreaPos = casterPos + newBodyArea[1]
-  local pieceService = (self._world):GetService("Piece")
+  local pieceService = self._world:GetService("Piece")
   casterEntity:SetDirection(newDir)
   pieceService:SetPieceAnimUp(oldBodyAreaPos)
   pieceService:SetPieceAnimDown(newBodyAreaPos)
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayBuffView(TT, NTBodyAreaChange:New(casterEntity))
 end
-
-

@@ -1,28 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/ui_s4_trade_game_ship.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeGameShip", UICustomWidget)
 UIS4TradeGameShip = UIS4TradeGameShip
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeGameShip.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._pos = {[1] = Vector2(0, 159), [2] = Vector2(0, -131), [3] = Vector2(0, -335)}
+function UIS4TradeGameShip:Constructor()
+  self._pos = {
+    [1] = Vector2(0, 159),
+    [2] = Vector2(0, -131),
+    [3] = Vector2(0, -335)
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameShip.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIS4TradeGameShip:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameShip.InitWidget = function(self)
-  -- function num : 0_2
+function UIS4TradeGameShip:InitWidget()
   self.nomal = self:GetUIComponent("Image", "Nomal")
   self.onChose = self:GetGameObject("OnChose")
   self.lock = self:GetGameObject("Lock")
@@ -32,67 +23,38 @@ UIS4TradeGameShip.InitWidget = function(self)
   self.eff2 = self:GetGameObject("eff2")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameShip.SetData = function(self, id, harborId, unlock, btnCallback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIS4TradeGameShip:SetData(id, harborId, unlock, btnCallback)
   self.harborId = harborId
   self.unlock = unlock
   self.btnCallback = btnCallback
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMax = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMin = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._rect).transform).anchoredPosition = (self._pos)[id]
-  if (self.lock).activeSelf and self.unlock then
-    (self.eff):SetActive(true)
-    ;
-    (self.eff2):SetActive(true)
-    ;
-    (self._anim):Play("uianim_UIS4TradeGameShip_unlock")
+  self._rect.anchorMax = Vector2(0.5, 0.5)
+  self._rect.anchorMin = Vector2(0.5, 0.5)
+  self._rect.transform.anchoredPosition = self._pos[id]
+  if self.lock.activeSelf and self.unlock then
+    self.eff:SetActive(true)
+    self.eff2:SetActive(true)
+    self._anim:Play("uianim_UIS4TradeGameShip_unlock")
   end
-  ;
-  (self.lock):SetActive(not self.unlock)
+  self.lock:SetActive(not self.unlock)
   self.lockTips = "str_season_s4_trade_harbor_lock_tip_" .. id
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameShip.OnChose = function(self, chose)
-  -- function num : 0_4
-  (self.onChose):SetActive(chose)
+function UIS4TradeGameShip:OnChose(chose)
+  self.onChose:SetActive(chose)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameShip.NomalOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIS4TradeGameShip:NomalOnClick(go)
   if not self.unlock then
-    (ToastManager.ShowToast)((StringTable.Get)(self.lockTips))
-    return 
+    ToastManager.ShowToast(StringTable.Get(self.lockTips))
+    return
   end
   if self.btnCallback then
-    (self.btnCallback)(self.harborId)
+    self.btnCallback(self.harborId)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameShip.OnChoseOnClick = function(self, go)
-  -- function num : 0_6
+function UIS4TradeGameShip:OnChoseOnClick(go)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameShip.LockOnClick = function(self, go)
-  -- function num : 0_7
+function UIS4TradeGameShip:LockOnClick(go)
 end
-
-

@@ -1,173 +1,122 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/errand/ui_n28_errand_side_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28ErrandSideEnter", UICustomWidget)
 UIN28ErrandSideEnter = UIN28ErrandSideEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28ErrandSideEnter.Constructor = function(self)
-  -- function num : 0_0
+function UIN28ErrandSideEnter:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandSideEnter.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN28ErrandSideEnter:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandSideEnter._GetComponents = function(self)
-  -- function num : 0_2
+function UIN28ErrandSideEnter:_GetComponents()
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self._bg = self:GetUIComponent("RawImageLoader", "bg")
   self._red = self:GetGameObject("red")
   self._new = self:GetGameObject("new")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandSideEnter.SetData = function(self)
-  -- function num : 0_3
+function UIN28ErrandSideEnter:SetData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandSideEnter.BtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  local open = (self._campaign):CheckCampaignOpen()
+function UIN28ErrandSideEnter:BtnOnClick(go)
+  local open = self._campaign:CheckCampaignOpen()
   if not open then
-    (self.root):SetActive(open)
-    ;
-    (self._setShowCallback)(open)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
-    return 
+    self.root:SetActive(open)
+    self._setShowCallback(open)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
+    return
   end
   self:SwitchState(UIStateType.UIN28Errand)
   self:SetNewValue()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandSideEnter.OnSideEnterLoad = function(self, TT, setShowCallback, setNewRedCallback)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN28ErrandSideEnter:OnSideEnterLoad(TT, setShowCallback, setNewRedCallback)
   self._setShowCallback = setShowCallback
   self._setNewRedCallback = setNewRedCallback
   self.root = self:GetGameObject()
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   self:Lock("UIN28ErrandSideEnter")
   local res = AsyncRequestRes:New()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_LINE_MISSION, ECampaignLineMissionComponentID.ECAMPAIGN_LINE_MISSION)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  self._line_component = (self._campaign):GetComponent(ECampaignLineMissionComponentID.ECAMPAIGN_LINE_MISSION)
-  self._lineMissionComponentInfo = (self._campaign):GetComponentInfo(ECampaignLineMissionComponentID.ECAMPAIGN_LINE_MISSION)
-  self._pass_mission_list = (self._lineMissionComponentInfo).m_pass_mission_info
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_LINE_MISSION, ECampaignLineMissionComponentID.ECAMPAIGN_LINE_MISSION)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  self._line_component = self._campaign:GetComponent(ECampaignLineMissionComponentID.ECAMPAIGN_LINE_MISSION)
+  self._lineMissionComponentInfo = self._campaign:GetComponentInfo(ECampaignLineMissionComponentID.ECAMPAIGN_LINE_MISSION)
+  self._pass_mission_list = self._lineMissionComponentInfo.m_pass_mission_info
   self:UnLock("UIN28ErrandSideEnter")
   if res and not res:GetSucc() then
-    (self.root):SetActive(false)
-    ;
-    (self._setShowCallback)(false)
-    return 
+    self.root:SetActive(false)
+    self._setShowCallback(false)
+    return
   end
-  ;
-  (self.root):SetActive(true)
-  ;
-  (self._setShowCallback)(true)
+  self.root:SetActive(true)
+  self._setShowCallback(true)
   self.localdbKey = "UIN28ErrandSideEnter"
   local new, red = self:CheckNewAndRed()
-  ;
-  (self._red):SetActive(red)
-  ;
-  (self._new):SetActive(new)
-  ;
-  (self._setNewRedCallback)(new, red)
+  self._red:SetActive(red)
+  self._new:SetActive(new)
+  self._setNewRedCallback(new, red)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandSideEnter.SetNewValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIN28ErrandSideEnter:SetNewValue()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   local key = self.localdbKey .. openID
-  ;
-  (LocalDB.SetInt)(key, 1)
-  ;
-  (self._new):SetActive(false)
+  LocalDB.SetInt(key, 1)
+  self._new:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandSideEnter.GetNewValue = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIN28ErrandSideEnter:GetNewValue()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   local key = self.localdbKey .. openID
-  local val = (LocalDB.GetInt)(key, 0)
-  do return val == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local val = LocalDB.GetInt(key, 0)
+  return val == 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandSideEnter.GetRedValue = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN28ErrandSideEnter:GetRedValue()
   local dayRed = false
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   local missionRed = false
   local allUnLockMissionList = {}
-  local cmpID = (self._line_component):GetComponentCfgId()
-  local missionCfgs_temp = (Cfg.cfg_component_line_mission)({ComponentID = cmpID})
+  local cmpID = self._line_component:GetComponentCfgId()
+  local missionCfgs_temp = Cfg.cfg_component_line_mission({ComponentID = cmpID})
   self._allMissionCfgs = {}
-  for _,cfg in pairs(missionCfgs_temp) do
+  for _, cfg in pairs(missionCfgs_temp) do
     local needMissoinID = cfg.NeedMissionId
     local missionID = cfg.CampaignMissionId
     local unlock = false
-    if needMissoinID and needMissoinID > 0 and (self._pass_mission_list)[needMissoinID] then
+    if needMissoinID and 0 < needMissoinID then
+      if self._pass_mission_list[needMissoinID] then
+        unlock = true
+      end
+    else
       unlock = true
     end
-    unlock = true
     if unlock then
-      (table.insert)(allUnLockMissionList, missionID)
+      table.insert(allUnLockMissionList, missionID)
     end
   end
   local localdbMissionKey = "UIN28ErrandSideEnter_Mission"
   for i = 1, #allUnLockMissionList do
     local id = allUnLockMissionList[i]
     local mission_key = localdbMissionKey .. id .. openID
-    local mission_val = (LocalDB.GetInt)(mission_key, 0)
+    local mission_val = LocalDB.GetInt(mission_key, 0)
     if mission_val == 0 then
       missionRed = true
       break
     end
   end
-  do
-    return dayRed or missionRed
-  end
+  return dayRed or missionRed
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandSideEnter.CheckNewAndRed = function(self)
-  -- function num : 0_9
+function UIN28ErrandSideEnter:CheckNewAndRed()
   local new = self:GetNewValue()
   local red = self:GetRedValue()
   return new, red
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandSideEnter.GetSideEnterRawImage = function(self)
-  -- function num : 0_10
+function UIN28ErrandSideEnter:GetSideEnterRawImage()
   return "dbg_zjm_ent"
 end
-
-

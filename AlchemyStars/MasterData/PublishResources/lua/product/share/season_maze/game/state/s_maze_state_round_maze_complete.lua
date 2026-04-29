@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/state/s_maze_state_round_maze_complete.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("s_maze_state_base")
 _class("SMazeState_MazeComplete", SMazeStateBase)
 SMazeState_MazeComplete = SMazeState_MazeComplete
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeState_MazeComplete.OnEnter = function(self)
-  -- function num : 0_0
+function SMazeState_MazeComplete:OnEnter()
   self:StartTask(self._ReqComplete, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeState_MazeComplete._ReqComplete = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UISeasonMazeCompleteResult", nil, true)
+function SMazeState_MazeComplete:_ReqComplete(TT)
+  GameGlobal.UIStateManager():ShowDialog("UISeasonMazeCompleteResult", nil, true)
 end
-
-

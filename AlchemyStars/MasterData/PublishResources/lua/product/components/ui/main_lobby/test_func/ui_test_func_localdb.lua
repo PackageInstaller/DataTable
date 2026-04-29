@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/test_func/ui_test_func_localdb.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITestFuncLocalDB", UICustomWidget)
 UITestFuncLocalDB = UITestFuncLocalDB
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITestFuncLocalDB.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UITestFuncLocalDB:OnShow(uiParams)
   self._root = self:GetGameObject("_root")
   self._localDBIdText = self:GetUIComponent("UILocalizationText", "_localDBIdText")
   self._checkText = self:GetUIComponent("UILocalizationText", "_checkText")
@@ -17,16 +10,10 @@ UITestFuncLocalDB.OnShow = function(self, uiParams)
   self:_SetGroupBtn()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncLocalDB.OnHide = function(self)
-  -- function num : 0_1
+function UITestFuncLocalDB:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncLocalDB._FillGroupData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UITestFuncLocalDB:_FillGroupData()
   self._btnsTitle = {}
   self._btnsCallback = {}
   self._btnsDeleteCallback = {}
@@ -47,42 +34,33 @@ UITestFuncLocalDB._FillGroupData = function(self)
   self:_AddFunc("UIN19Main_FirstPlot", key, 1, 1)
   local key = self:_GetCampaignFirstPlotKeyStr(1068)
   self:_AddFunc("UIN21_FirstPlot", key, 1, 1)
-  local key = (UIActivityHelper.GetLocalDBKeyWithPstId)("QuestModule_GrowthNewPoint_")
+  local key = UIActivityHelper.GetLocalDBKeyWithPstId("QuestModule_GrowthNewPoint_")
   self:_AddFunc("QuestGrowthNew", key, 1, 1)
-  local key = (UIActivityHelper.GetLocalDBKeyWithPstId)("QuestSeasonKey") .. 8001
+  local key = UIActivityHelper.GetLocalDBKeyWithPstId("QuestSeasonKey") .. 8001
   self:_AddFunc("QuestSeasonNew", key, 1, 1)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncLocalDB._GetCampaignFirstPlotKeyStr = function(self, campaignId, componentId)
-  -- function num : 0_3 , upvalues : _ENV
-  local tb = {"PlayFirstPlot_Campaign_", "PlayFirstPlot_Component_"}
-  if not componentId or not tb[2] then
-    local keyStr = tb[1]
-  end
+function UITestFuncLocalDB:_GetCampaignFirstPlotKeyStr(campaignId, componentId)
+  local tb = {
+    "PlayFirstPlot_Campaign_",
+    "PlayFirstPlot_Component_"
+  }
+  local keyStr = componentId and tb[2] or tb[1]
   keyStr = keyStr .. campaignId
-  if not componentId or not keyStr .. "_" .. componentId then
-    return (UIActivityHelper.GetLocalDBKeyWithPstId)(keyStr .. "_")
-  end
+  keyStr = componentId and keyStr .. "_" .. componentId or keyStr
+  return UIActivityHelper.GetLocalDBKeyWithPstId(keyStr .. "_")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncLocalDB._SetGroupBtn = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UITestFuncLocalDB:_SetGroupBtn()
   local sop = self:GetUIComponent("UISelectObjectPath", "_btnPool")
-  sop:SpawnObjects("UIMainLobbyTestFuncBtn", (table.count)(self._btnsTitle))
+  sop:SpawnObjects("UIMainLobbyTestFuncBtn", table.count(self._btnsTitle))
   local list = sop:GetAllSpawnList()
   for i = 1, #self._btnsTitle do
-    (list[i]):SetData((self._btnsTitle)[i], (self._btnsCallback)[i])
+    list[i]:SetData(self._btnsTitle[i], self._btnsCallback[i])
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncLocalDB._AddFunc = function(self, title, text, classType, dataType)
-  -- function num : 0_5
+function UITestFuncLocalDB:_AddFunc(title, text, classType, dataType)
   self:_AddFunc_Title(title, text)
   self:_AddFunc_Delete(classType)
   self:_AddFunc_Check(classType)
@@ -90,164 +68,132 @@ UITestFuncLocalDB._AddFunc = function(self, title, text, classType, dataType)
   self:_AddFunc_Write(classType, dataType)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncLocalDB._AddFunc_Title = function(self, title, text)
-  -- function num : 0_6 , upvalues : _ENV
-  (table.insert)(self._btnsTitle, title)
+function UITestFuncLocalDB:_AddFunc_Title(title, text)
+  table.insert(self._btnsTitle, title)
   local idx = #self._btnsCallback
   local params = {}
   params[1] = function()
-    -- function num : 0_6_0 , upvalues : self, text, idx
-    (self._localDBIdText):SetText(text)
+    self._localDBIdText:SetText(text)
     self._btnIndex = idx + 1
   end
-
-  ;
-  (table.insert)(self._btnsCallback, params)
+  table.insert(self._btnsCallback, params)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncLocalDB._AddFunc_Delete = function(self, classType)
-  -- function num : 0_7 , upvalues : _ENV
-  local deleteFunc = {LocalDB.Delete, (UnityEngine.PlayerPrefs).DeleteKey}
-  ;
-  (table.insert)(self._btnsDeleteCallback, function()
-    -- function num : 0_7_0 , upvalues : self, _ENV, deleteFunc, classType
-    local str = (self._localDBIdText).text
-    if (string.isnullorempty)(str) then
-      return 
+function UITestFuncLocalDB:_AddFunc_Delete(classType)
+  local deleteFunc = {
+    LocalDB.Delete,
+    UnityEngine.PlayerPrefs.DeleteKey
+  }
+  table.insert(self._btnsDeleteCallback, function()
+    local str = self._localDBIdText.text
+    if string.isnullorempty(str) then
+      return
     end
     local func = deleteFunc[classType]
     if func then
       func(str)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncLocalDB._AddFunc_Check = function(self, classType)
-  -- function num : 0_8 , upvalues : _ENV
-  local checkFunc = {LocalDB.HasKey, (UnityEngine.PlayerPrefs).HasKey}
-  ;
-  (table.insert)(self._btnsCheckCallback, function()
-    -- function num : 0_8_0 , upvalues : self, _ENV, checkFunc, classType
-    local str = (self._localDBIdText).text
-    if (string.isnullorempty)(str) then
-      return 
+function UITestFuncLocalDB:_AddFunc_Check(classType)
+  local checkFunc = {
+    LocalDB.HasKey,
+    UnityEngine.PlayerPrefs.HasKey
+  }
+  table.insert(self._btnsCheckCallback, function()
+    local str = self._localDBIdText.text
+    if string.isnullorempty(str) then
+      return
     end
     local func = checkFunc[classType]
-    local val = nil
+    local val
     if func then
       val = func(str)
     end
     if val then
-      (ToastManager.ShowToast)("True!")
+      ToastManager.ShowToast("True!")
     else
-      ;
-      (ToastManager.ShowToast)("False")
+      ToastManager.ShowToast("False")
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncLocalDB._AddFunc_Read = function(self, classType, dataType)
-  -- function num : 0_9 , upvalues : _ENV
+function UITestFuncLocalDB:_AddFunc_Read(classType, dataType)
   local readFunc = {
-{[1] = LocalDB.GetInt, [2] = LocalDB.GetFloat, [3] = LocalDB.GetString}
-, 
-{[1] = (UnityEngine.PlayerPrefs).GetInt, [2] = (UnityEngine.PlayerPrefs).GetFloat, [3] = (UnityEngine.PlayerPrefs).GetString}
-}
-  ;
-  (table.insert)(self._btnsReadCallback, function()
-    -- function num : 0_9_0 , upvalues : self, _ENV, readFunc, classType, dataType
-    local str = (self._localDBIdText).text
-    if (string.isnullorempty)(str) then
-      return 
+    {
+      [1] = LocalDB.GetInt,
+      [2] = LocalDB.GetFloat,
+      [3] = LocalDB.GetString
+    },
+    {
+      [1] = UnityEngine.PlayerPrefs.GetInt,
+      [2] = UnityEngine.PlayerPrefs.GetFloat,
+      [3] = UnityEngine.PlayerPrefs.GetString
+    }
+  }
+  table.insert(self._btnsReadCallback, function()
+    local str = self._localDBIdText.text
+    if string.isnullorempty(str) then
+      return
     end
-    local val = nil
-    local func = (readFunc[classType])[dataType]
+    local val
+    local func = readFunc[classType][dataType]
     if func then
       val = func(str)
     end
-    ;
-    (self._checkText):SetText(val)
-  end
-)
+    self._checkText:SetText(val)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncLocalDB._AddFunc_Write = function(self, classType, dataType)
-  -- function num : 0_10 , upvalues : _ENV
+function UITestFuncLocalDB:_AddFunc_Write(classType, dataType)
   local writeFunc = {
-{[1] = LocalDB.SetInt, [2] = LocalDB.SetFloat, [3] = LocalDB.SetString}
-, 
-{[1] = (UnityEngine.PlayerPrefs).SetInt, [2] = (UnityEngine.PlayerPrefs).SetFloat, [3] = (UnityEngine.PlayerPrefs).SetString}
-}
-  ;
-  (table.insert)(self._btnsWriteCallback, function()
-    -- function num : 0_10_0 , upvalues : self, _ENV, writeFunc, classType, dataType
-    local str = (self._localDBIdText).text
-    if (string.isnullorempty)(str) then
-      return 
+    {
+      [1] = LocalDB.SetInt,
+      [2] = LocalDB.SetFloat,
+      [3] = LocalDB.SetString
+    },
+    {
+      [1] = UnityEngine.PlayerPrefs.SetInt,
+      [2] = UnityEngine.PlayerPrefs.SetFloat,
+      [3] = UnityEngine.PlayerPrefs.SetString
+    }
+  }
+  table.insert(self._btnsWriteCallback, function()
+    local str = self._localDBIdText.text
+    if string.isnullorempty(str) then
+      return
     end
-    local val = (self._editText).text
-    local func = (writeFunc[classType])[dataType]
+    local val = self._editText.text
+    local func = writeFunc[classType][dataType]
     if func then
       func(str, val)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncLocalDB.ExitBtnOnClick = function(self)
-  -- function num : 0_11
-  (self._root):SetActive(false)
+function UITestFuncLocalDB:ExitBtnOnClick()
+  self._root:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncLocalDB.DeleteBtnOnClick = function(self)
-  -- function num : 0_12
+function UITestFuncLocalDB:DeleteBtnOnClick()
   self:SafeCallback(self._btnsDeleteCallback)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncLocalDB.CheckBtnOnClick = function(self)
-  -- function num : 0_13
+function UITestFuncLocalDB:CheckBtnOnClick()
   self:SafeCallback(self._btnsCheckCallback)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncLocalDB.ReadBtnOnClick = function(self)
-  -- function num : 0_14
+function UITestFuncLocalDB:ReadBtnOnClick()
   self:SafeCallback(self._btnsReadCallback)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncLocalDB.WriteBtnOnClick = function(self)
-  -- function num : 0_15
+function UITestFuncLocalDB:WriteBtnOnClick()
   self:SafeCallback(self._btnsWriteCallback)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncLocalDB.SafeCallback = function(self, callback)
-  -- function num : 0_16 , upvalues : _ENV
-  if self._btnIndex and self._btnIndex > 0 and self._btnIndex <= (table.count)(callback) and callback[self._btnIndex] then
-    (callback[self._btnIndex])()
+function UITestFuncLocalDB:SafeCallback(callback)
+  if self._btnIndex and self._btnIndex > 0 and self._btnIndex <= table.count(callback) and callback[self._btnIndex] then
+    callback[self._btnIndex]()
   end
 end
-
-

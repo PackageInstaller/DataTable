@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_stop_target_material_anim_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewStopTargetMaterialAnimInstruction", SkillPreviewBaseInstruction)
 SkillPreviewStopTargetMaterialAnimInstruction = SkillPreviewStopTargetMaterialAnimInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewStopTargetMaterialAnimInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewStopTargetMaterialAnimInstruction:Constructor(params)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewStopTargetMaterialAnimInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewStopTargetMaterialAnimInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
   local targetIDList = previewContext:GetTargetEntityIDList()
-  targetIDList = (table.unique)(targetIDList)
-  for _,id in pairs(targetIDList) do
+  targetIDList = table.unique(targetIDList)
+  for _, id in pairs(targetIDList) do
     local entity = world:GetEntityByID(id)
     if entity then
       if entity:HasTeam() then
@@ -32,5 +22,3 @@ SkillPreviewStopTargetMaterialAnimInstruction.DoInstruction = function(self, TT,
     end
   end
 end
-
-

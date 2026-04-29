@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_refresh_all_hp_pos_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayRefreshAllHPPosInstruction", BaseInstruction)
 PlayRefreshAllHPPosInstruction = PlayRefreshAllHPPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayRefreshAllHPPosInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayRefreshAllHPPosInstruction:Constructor(paramList)
   self._forceRefreshHPPercent = tonumber(paramList.forceRefreshHPPercent) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayRefreshAllHPPosInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayRefreshAllHPPosInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local hpGroup = world:GetGroup((world.BW_WEMatchers).HP)
+  local hpGroup = world:GetGroup(world.BW_WEMatchers.HP)
   if hpGroup then
     local targetEntitys = hpGroup:GetEntities()
     if targetEntitys then
-      for i,e in ipairs(targetEntitys) do
+      for i, e in ipairs(targetEntitys) do
         local hpCmpt = e:HP()
         if hpCmpt then
           hpCmpt:SetHPPosDirty(true)
@@ -34,5 +24,3 @@ PlayRefreshAllHPPosInstruction.DoInstruction = function(self, TT, casterEntity, 
     end
   end
 end
-
-

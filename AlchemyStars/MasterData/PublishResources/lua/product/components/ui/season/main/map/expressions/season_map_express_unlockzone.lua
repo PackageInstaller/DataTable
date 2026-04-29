@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_unlockzone.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpressUnlockZone", SeasonMapExpressBase)
 SeasonMapExpressUnlockZone = SeasonMapExpressUnlockZone
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressUnlockZone.Constructor = function(self, cfg, eventPoint)
-  -- function num : 0_0 , upvalues : _ENV
-  self._content = (self._cfg).UnlockZone
-  self._seasonManager = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
-  self._seasonMapManger = (self._seasonManager):SeasonMapManager()
-  self._sceneManager = (self._seasonManager):SeasonSceneManager()
-  self._cameraManager = (self._seasonManager):SeasonCameraManager()
+function SeasonMapExpressUnlockZone:Constructor(cfg, eventPoint)
+  self._content = self._cfg.UnlockZone
+  self._seasonManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
+  self._seasonMapManger = self._seasonManager:SeasonMapManager()
+  self._sceneManager = self._seasonManager:SeasonSceneManager()
+  self._cameraManager = self._seasonManager:SeasonCameraManager()
   self._time = 0
   self._executing = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressUnlockZone.Update = function(self, deltaTime)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonMapExpressUnlockZone:Update(deltaTime)
   if self._state == SeasonExpressState.Playing and not self._executing then
     self._time = self._time - deltaTime
     if self._time <= 0 then
@@ -31,34 +21,27 @@ SeasonMapExpressUnlockZone.Update = function(self, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressUnlockZone.OnPlay = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonMapExpressUnlockZone:OnPlay()
   if self._content then
     self._executing = false
-    local zoneID = (self._content).zoneID
-    self._time = ((self._content).time or 0) * 1000
-    local unlockZoneIDs = (self._seasonMapManger):UnlockZoneIDs()
-    if (table.icontains)(unlockZoneIDs, zoneID) then
-      (Log.error)("SeasonMapExpressUnlockZone Play this zone is unlocked.", zoneID)
+    local zoneID = self._content.zoneID
+    self._time = (self._content.time or 0) * 1000
+    local unlockZoneIDs = self._seasonMapManger:UnlockZoneIDs()
+    if table.icontains(unlockZoneIDs, zoneID) then
+      Log.error("SeasonMapExpressUnlockZone Play this zone is unlocked.", zoneID)
       self:Next()
     else
       local tempUnlockZoneIDs = {zoneID}
-      for _,zoneID in pairs(unlockZoneIDs) do
-        (table.insert)(tempUnlockZoneIDs, zoneID)
+      for _, zoneID in pairs(unlockZoneIDs) do
+        table.insert(tempUnlockZoneIDs, zoneID)
       end
       local zoneMask = 0
-      for _,zoneID in pairs(tempUnlockZoneIDs) do
+      for _, zoneID in pairs(tempUnlockZoneIDs) do
         zoneMask = zoneMask | 1 << zoneID - 1
       end
-      ;
-      (self._sceneManager):UnLockZone(zoneMask, zoneID)
-      ;
-      (self._cameraManager):UnLock(zoneMask, zoneID)
+      self._sceneManager:UnLockZone(zoneMask, zoneID)
+      self._cameraManager:UnLock(zoneMask, zoneID)
       self._state = SeasonExpressState.Playing
     end
   end
 end
-
-

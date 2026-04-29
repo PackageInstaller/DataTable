@@ -1,8 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/talent_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-TalentType = {None = 0, Buff = 1, MasterSkill = 2, AddRoundCount = 3, AddChangeTeamLeaderCount = 4, ChooseRelic = 5, MAX = 99}
+TalentType = {
+  None = 0,
+  Buff = 1,
+  MasterSkill = 2,
+  AddRoundCount = 3,
+  AddChangeTeamLeaderCount = 4,
+  ChooseRelic = 5,
+  MAX = 99
+}
 _enum("TalentType", TalentType)
-

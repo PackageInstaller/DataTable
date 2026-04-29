@@ -1,47 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_sacrifice_traps_and_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SacrificeTrapsAndDamage", Object)
 SkillEffectCalc_SacrificeTrapsAndDamage = SkillEffectCalc_SacrificeTrapsAndDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SacrificeTrapsAndDamage.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SacrificeTrapsAndDamage:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SacrificeTrapsAndDamage.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_SacrificeTrapsAndDamage:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.insert)(results, result)
+      table.insert(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SacrificeTrapsAndDamage._CalculateSingleTarget = function(self, skillEffectCalcParam, targetID)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_SacrificeTrapsAndDamage:_CalculateSingleTarget(skillEffectCalcParam, targetID)
   local param = skillEffectCalcParam.skillEffectParam
   local trapID = param:GetTrapID()
-  local utilSvc = (self._world):GetService("UtilData")
+  local utilSvc = self._world:GetService("UtilData")
   local traps = {}
-  for _,pos in ipairs(skillEffectCalcParam.skillRange) do
+  for _, pos in ipairs(skillEffectCalcParam.skillRange) do
     local entities = utilSvc:GetTrapsAtPos(pos)
-    for _,entity in ipairs(entities) do
+    for _, entity in ipairs(entities) do
       local trapComponent = entity:Trap()
       if trapID[trapComponent:GetTrapID()] then
-        (table.insert)(traps, entity:GetID())
+        table.insert(traps, entity:GetID())
       end
     end
   end
@@ -49,46 +36,42 @@ SkillEffectCalc_SacrificeTrapsAndDamage._CalculateSingleTarget = function(self, 
   local basePercent = param:GetBasePercent()
   local addVal = param:GetAddValue()
   local addPercent = addVal * trapCount
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local svcCalcDamage = (self._world):GetService("CalcDamage")
-  local defenderEntity = (self._world):GetEntityByID(targetID)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local svcCalcDamage = self._world:GetService("CalcDamage")
+  local defenderEntity = self._world:GetEntityByID(targetID)
   local curFormulaID = param:GetSacrificeFormulaID()
   if curFormulaID == nil then
     curFormulaID = 100
   end
   local skillDamageParam = SkillDamageEffectParam:New({
-percent = {basePercent}
-, addPercent = addPercent, formulaID = curFormulaID, damageStageIndex = 1})
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+    percent = {basePercent},
+    addPercent = addPercent,
+    formulaID = curFormulaID,
+    damageStageIndex = 1
+  })
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
-  local targetType = (skillEffectCalcParam.skillEffectParam):GetDamageTargetType()
-  local damageScopeResult = scopeCalculator:ComputeScopeRange((skillEffectCalcParam.skillEffectParam):GetDamageScopeType(), (skillEffectCalcParam.skillEffectParam):GetDamageScopeParam(), casterEntity:GetGridPosition(), (casterEntity:BodyArea()):GetArea(), (casterEntity:GridLocation()):GetGridDir(), targetType)
+  local targetType = skillEffectCalcParam.skillEffectParam:GetDamageTargetType()
+  local damageScopeResult = scopeCalculator:ComputeScopeRange(skillEffectCalcParam.skillEffectParam:GetDamageScopeType(), skillEffectCalcParam.skillEffectParam:GetDamageScopeParam(), casterEntity:GetGridPosition(), casterEntity:BodyArea():GetArea(), casterEntity:GridLocation():GetGridDir(), targetType)
   local targetArray = utilScopeSvc:SelectSkillTarget(casterEntity, targetType, damageScopeResult, skillEffectCalcParam.skillID)
   local target = self:_TransTargetData(targetArray)
-  local damageTarget = (self._world):GetEntityByID(target)
+  local damageTarget = self._world:GetEntityByID(target)
   if not damageTarget then
-    return 
+    return
   end
-  local nTotalDamage, listDamageInfo = (self._skillEffectService):ComputeSkillDamage(casterEntity, casterEntity:GetGridPosition(), damageTarget, damageTarget:GetGridPosition(), skillEffectCalcParam.skillID, skillDamageParam, SkillEffectType.SacrificeTrapsAndDamage, 1)
+  local nTotalDamage, listDamageInfo = self._skillEffectService:ComputeSkillDamage(casterEntity, casterEntity:GetGridPosition(), damageTarget, damageTarget:GetGridPosition(), skillEffectCalcParam.skillID, skillDamageParam, SkillEffectType.SacrificeTrapsAndDamage, 1)
   local damageInfo = listDamageInfo[1]
   local damageInfoArray = {damageInfo}
-  local serDamage = (self._skillEffectService):NewSkillDamageEffectResult(skillEffectCalcParam.gridPos, target, damageInfo:GetDamageValue(), damageInfoArray)
+  local serDamage = self._skillEffectService:NewSkillDamageEffectResult(skillEffectCalcParam.gridPos, target, damageInfo:GetDamageValue(), damageInfoArray)
   return SkillEffectSacrificeTrapsAndDamageResult:New(traps, {serDamage})
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SacrificeTrapsAndDamage._TransTargetData = function(self, targetData)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalc_SacrificeTrapsAndDamage:_TransTargetData(targetData)
   local nReturn = 0
   if type(targetData) == "number" then
     nReturn = targetData
-  else
-    if type(targetData) == "table" then
-      nReturn = targetData[1]
-    end
+  elseif type(targetData) == "table" then
+    nReturn = targetData[1]
   end
   return nReturn
 end
-
-

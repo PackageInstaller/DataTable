@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_skill_single.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionSkillSingle", AINewNode)
 ActionSkillSingle = ActionSkillSingle
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSkillSingle.Constructor = function(self)
-  -- function num : 0_0
+function ActionSkillSingle:Constructor()
   self.m_nWorkIndexX = 1
   self.m_nWorkIndexY = 1
   self.m_nWorkSkillID = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSingle.InitializeNode = function(self, cfg, context, parentNode, configData)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionSkillSingle.super).InitializeNode)(self, cfg, context, parentNode, configData)
+function ActionSkillSingle:InitializeNode(cfg, context, parentNode, configData)
+  ActionSkillSingle.super.InitializeNode(self, cfg, context, parentNode, configData)
   if configData then
     if type(configData) == "table" then
       self.m_nWorkIndexX = configData[1]
@@ -31,27 +21,16 @@ ActionSkillSingle.InitializeNode = function(self, cfg, context, parentNode, conf
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSingle.Update = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionSkillSingle:Update()
   self.m_nWorkSkillID = self:GetConfigSkillID(self.m_nWorkIndexY)
   return AINewNodeStatus.Success
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSingle.GetActionSkillID = function(self)
-  -- function num : 0_3
+function ActionSkillSingle:GetActionSkillID()
   return self.m_nWorkSkillID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSingle.GetConfigSkillID = function(self, nIndex)
-  -- function num : 0_4
+function ActionSkillSingle:GetConfigSkillID(nIndex)
   local vecSkillList = self:GetConfigSkillList()
-  return (vecSkillList[self.m_nWorkIndexX])[nIndex]
+  return vecSkillList[self.m_nWorkIndexX][nIndex]
 end
-
-

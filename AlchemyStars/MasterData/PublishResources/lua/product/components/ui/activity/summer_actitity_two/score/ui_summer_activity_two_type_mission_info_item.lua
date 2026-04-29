@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/score/ui_summer_activity_two_type_mission_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoTypeMissionInfoItem", UICustomWidget)
 UISummerActivityTwoTypeMissionInfoItem = UISummerActivityTwoTypeMissionInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoTypeMissionInfoItem.OnShow = function(self)
-  -- function num : 0_0
+function UISummerActivityTwoTypeMissionInfoItem:OnShow()
   self._yieldGapTime = 30
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._scoreLabel = self:GetUIComponent("UILocalizationText", "Score")
@@ -17,45 +10,29 @@ UISummerActivityTwoTypeMissionInfoItem.OnShow = function(self)
   self._anim = self:GetUIComponent("Animation", "UISummerActivityTwoTypeMisisonInfoItem")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoTypeMissionInfoItem.Refresh = function(self, idx, typeMissionData, itemIcon)
-  -- function num : 0_1 , upvalues : _ENV
+function UISummerActivityTwoTypeMissionInfoItem:Refresh(idx, typeMissionData, itemIcon)
   local score = typeMissionData:GetMaxScore()
   local name = typeMissionData:GetName()
-  ;
-  (self._nameLabel):SetText(name)
-  ;
-  (self._scoreLabel):SetText(score)
-  ;
-  (self._icon):LoadImage(itemIcon)
+  self._nameLabel:SetText(name)
+  self._scoreLabel:SetText(score)
+  self._icon:LoadImage(itemIcon)
   local yieldTime = (idx - 1) * self._yieldGapTime
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
-  self._event = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_1_0 , upvalues : self
-    (self._anim):Play("uieff_Summer2_Score_InfoItem_In")
-  end
-)
+  self._event = GameGlobal.Timer():AddEvent(yieldTime, function()
+    self._anim:Play("uieff_Summer2_Score_InfoItem_In")
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoTypeMissionInfoItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISummerActivityTwoTypeMissionInfoItem:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoTypeMissionInfoItem.SetVisible = function(self, isVisible)
-  -- function num : 0_3
-  (self._go):SetActive(isVisible)
+function UISummerActivityTwoTypeMissionInfoItem:SetVisible(isVisible)
+  self._go:SetActive(isVisible)
 end
-
-

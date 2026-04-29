@@ -1,134 +1,81 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeAttack", BuffLogicBase)
 BuffLogicChangeAttack = BuffLogicChangeAttack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAttack.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeAttack:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue or 0
   self._mulValueLimit = logicParam.mulValueLimit
   self._addValue = logicParam.addValue or 0
   self._addValueLimit = logicParam.addValueLimit
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance).BuffLogicChangeAttack_RunCount = 0
+  self._buffInstance.BuffLogicChangeAttack_RunCount = 0
   self._light = logicParam.light == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttack.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicChangeAttack:DoLogic()
+  local e = self._buffInstance:Entity()
   if not e:Attributes() then
     return false
   end
-  local context = (self._buffInstance):Context()
+  local context = self._buffInstance:Context()
   local casterEntity = context and context.casterEntity or nil
   local casterId = casterEntity and casterEntity:GetID() or 0
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._buffInstance).BuffLogicChangeAttack_RunCount = (self._buffInstance).BuffLogicChangeAttack_RunCount + 1
+  self._buffInstance.BuffLogicChangeAttack_RunCount = self._buffInstance.BuffLogicChangeAttack_RunCount + 1
   if self._mulValue ~= 0 then
-    local val = self._mulValue * (self._buffInstance).BuffLogicChangeAttack_RunCount
-    do
-      if not (self._buffComponent):GetBuffValue("ChangeAttackPercentage") then
-        local curMul = not self._mulValueLimit or 0
-      end
-      if (math.abs)(self._mulValueLimit) < (math.abs)(curMul + val) then
+    local val = self._mulValue * self._buffInstance.BuffLogicChangeAttack_RunCount
+    if self._mulValueLimit then
+      local curMul = self._buffComponent:GetBuffValue("ChangeAttackPercentage") or 0
+      if math.abs(curMul + val) > math.abs(self._mulValueLimit) then
         val = self._mulValueLimit - curMul
       end
-      ;
-      (self._buffComponent):AddBuffValue("ChangeAttackPercentage", val)
-      ;
-      (self._buffLogicService):ChangeBaseAttack(e, self:GetBuffSeq(), ModifyBaseAttackType.AttackPercentage, val)
-      -- DECOMPILER ERROR at PC76: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._buffInstance)._ChangeAttackType = ModifyBaseAttackType.AttackPercentage
-      do
-        local result = BuffResultChangeAttack:New(casterId, val, self._light)
-        do return result end
-        if self._addValue ~= 0 then
-          local val = self._addValue * (self._buffInstance).BuffLogicChangeAttack_RunCount
-          do
-            if not (self._buffComponent):GetBuffValue("ChangeAttackConstantFix") then
-              local curAdd = not self._addValueLimit or 0
-            end
-            if (math.abs)(self._addValueLimit) < (math.abs)(curAdd + val) then
-              val = self._addValueLimit - curAdd
-            end
-            ;
-            (self._buffComponent):AddBuffValue("ChangeAttackConstantFix", val)
-            ;
-            (self._buffLogicService):ChangeBaseAttack(e, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, val)
-            -- DECOMPILER ERROR at PC131: Confused about usage of register: R6 in 'UnsetPending'
-
-            ;
-            (self._buffInstance)._ChangeAttackType = ModifyBaseAttackType.AttackConstantFix
-            local result = BuffResultChangeAttack:New(casterId, val, self._light)
-            do return result end
-          end
-        end
-      end
+      self._buffComponent:AddBuffValue("ChangeAttackPercentage", val)
     end
+    self._buffLogicService:ChangeBaseAttack(e, self:GetBuffSeq(), ModifyBaseAttackType.AttackPercentage, val)
+    self._buffInstance._ChangeAttackType = ModifyBaseAttackType.AttackPercentage
+    local result = BuffResultChangeAttack:New(casterId, val, self._light)
+    return result
+  elseif self._addValue ~= 0 then
+    local val = self._addValue * self._buffInstance.BuffLogicChangeAttack_RunCount
+    if self._addValueLimit then
+      local curAdd = self._buffComponent:GetBuffValue("ChangeAttackConstantFix") or 0
+      if math.abs(curAdd + val) > math.abs(self._addValueLimit) then
+        val = self._addValueLimit - curAdd
+      end
+      self._buffComponent:AddBuffValue("ChangeAttackConstantFix", val)
+    end
+    self._buffLogicService:ChangeBaseAttack(e, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, val)
+    self._buffInstance._ChangeAttackType = ModifyBaseAttackType.AttackConstantFix
+    local result = BuffResultChangeAttack:New(casterId, val, self._light)
+    return result
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttack.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicChangeAttack:DoOverlap(logicParam)
   return self:DoLogic()
 end
 
 _class("BuffLogicChangeAttackUndo", BuffLogicBase)
 BuffLogicChangeAttackUndo = BuffLogicChangeAttackUndo
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAttackUndo.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicChangeAttackUndo:Constructor(buffInstance, logicParam)
   self._black = logicParam.black == 1
   self._casterBlack = logicParam.casterBlack == 1
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttackUndo.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._buffInstance).BuffLogicChangeAttack_RunCount = 0
-  local e = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):RemoveBaseAttack(e, self:GetBuffSeq(), (self._buffInstance)._ChangeAttackType)
-  if (self._buffInstance)._ChangeAttackType == ModifyBaseAttackType.AttackPercentage then
-    (self._buffComponent):SetBuffValue("ChangeAttackPercentage", 0)
-  else
-    if (self._buffInstance)._ChangeAttackType == ModifyBaseAttackType.AttackConstantFix then
-      (self._buffComponent):SetBuffValue("ChangeAttackConstantFix", 0)
-    end
+function BuffLogicChangeAttackUndo:DoLogic()
+  self._buffInstance.BuffLogicChangeAttack_RunCount = 0
+  local e = self._buffInstance:Entity()
+  self._buffLogicService:RemoveBaseAttack(e, self:GetBuffSeq(), self._buffInstance._ChangeAttackType)
+  if self._buffInstance._ChangeAttackType == ModifyBaseAttackType.AttackPercentage then
+    self._buffComponent:SetBuffValue("ChangeAttackPercentage", 0)
+  elseif self._buffInstance._ChangeAttackType == ModifyBaseAttackType.AttackConstantFix then
+    self._buffComponent:SetBuffValue("ChangeAttackConstantFix", 0)
   end
-  local context = (self._buffInstance):Context()
+  local context = self._buffInstance:Context()
   local casterEntity = context and context.casterEntity or nil
   local casterID = casterEntity and casterEntity:GetID() or 0
   local result = BuffResultChangeAttackUndo:New(casterID, self._casterBlack, self._black)
   return result
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttackUndo.DoOverlap = function(self, logicParam)
-  -- function num : 0_5
+function BuffLogicChangeAttackUndo:DoOverlap(logicParam)
   return self:DoLogic()
 end
-
-

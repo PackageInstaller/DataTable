@@ -1,33 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_shop/ui_campaign_shop_confirm_normal_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICampaignShopConfirmNormalController", UIController)
 UICampaignShopConfirmNormalController = UICampaignShopConfirmNormalController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICampaignShopConfirmNormalController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICampaignShopConfirmNormalController:Constructor()
   self.uiCommonAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopConfirmNormalController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UICampaignShopConfirmNormalController:OnShow(uiParams)
   self:InitWidget(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopConfirmNormalController.InitWidget = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UICampaignShopConfirmNormalController:InitWidget(uiParams)
   self.goodsData = uiParams[1]
-  local cmptInfo = ((self.goodsData).exchangeCmpt):GetComponentInfo()
+  local cmptInfo = self.goodsData.exchangeCmpt:GetComponentInfo()
   self._campaignId = cmptInfo.m_campaign_id
   self._componentId = cmptInfo.m_component_id
-  self._componentFullId = ((self.goodsData).exchangeCmpt):GetComponetCfgId(cmptInfo.m_campaign_id, cmptInfo.m_component_id)
+  self._componentFullId = self.goodsData.exchangeCmpt:GetComponetCfgId(cmptInfo.m_campaign_id, cmptInfo.m_component_id)
   self.subTabType = uiParams[2]
   self.uiItem = self:GetUIComponent("RawImageLoader", "uiitem")
   self.nameTxt = self:GetUIComponent("UILocalizationText", "name")
@@ -40,284 +27,186 @@ UICampaignShopConfirmNormalController.InitWidget = function(self, uiParams)
   self.moneyIcon = self:GetUIComponent("Image", "moneyicon")
   self.priceTxt = self:GetUIComponent("UILocalizationText", "price")
   local btnBuyGO = self:GetGameObject("btnbuy")
-  local etl = (UICustomUIEventListener.Get)(btnBuyGO)
+  local etl = UICustomUIEventListener.Get(btnBuyGO)
   self:AddUICustomEventListener(etl, UIEvent.Press, function(go)
-    -- function num : 0_2_0
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Unhovered, function(go)
-    -- function num : 0_2_1 , upvalues : self
     self:SetTextColor()
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Release, function(go)
-    -- function num : 0_2_2 , upvalues : self
     self:SetTextColor()
-  end
-)
+  end)
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopConfirmNormalController.SetTextColor = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local ownMoney = (ClientCampaignShop.GetMoney)(self.saleType)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self.goodsData).costCount <= ownMoney then
-    (self.priceTxt).color = Color.white
+function UICampaignShopConfirmNormalController:SetTextColor()
+  local ownMoney = ClientCampaignShop.GetMoney(self.saleType)
+  if ownMoney >= self.goodsData.costCount then
+    self.priceTxt.color = Color.white
   else
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.priceTxt).color = Color(1, 0.4, 0.32156862745098, 1)
+    self.priceTxt.color = Color(1.0, 0.4, 0.3215686274509804, 1)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopConfirmNormalController.Refresh = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UICampaignShopConfirmNormalController:Refresh()
   if not self.goodsData then
-    return 
+    return
   end
-  local cfgItem = (Cfg.cfg_item)[(self.goodsData):GetItemId()]
+  local cfgItem = Cfg.cfg_item[self.goodsData:GetItemId()]
   if not cfgItem then
-    return 
+    return
   end
-  self.isPet = (self.goodsData):IsPet()
-  self.saleType = (self.goodsData):GetSaleType()
-  self.price = (self.goodsData):GetSalePrice()
+  self.isPet = self.goodsData:IsPet()
+  self.saleType = self.goodsData:GetSaleType()
+  self.price = self.goodsData:GetSalePrice()
   local itemId = cfgItem.ID
   local icon = cfgItem.Icon
   local quality = cfgItem.Color
-  local count = (self.goodsData):GetItemCount()
-  if count > 1 or not "" then
-    local text1 = (StringTable.Get)("str_shop_good_count") .. count
-  end
-  ;
-  (self.uiItem):LoadImage(icon)
-  ;
-  (self.nameTxt):SetText("「" .. (StringTable.Get)(cfgItem.Name) .. "」")
-  ;
-  (self.descTxt):SetText((StringTable.Get)(cfgItem.Intro))
-  ;
-  (self.priceTxt):SetText((self.goodsData).costCount)
+  local count = self.goodsData:GetItemCount()
+  local text1 = count <= 1 and "" or StringTable.Get("str_shop_good_count") .. count
+  self.uiItem:LoadImage(icon)
+  self.nameTxt:SetText("「" .. StringTable.Get(cfgItem.Name) .. "」")
+  self.descTxt:SetText(StringTable.Get(cfgItem.Intro))
+  self.priceTxt:SetText(self.goodsData.costCount)
   self:SetTextColor()
   local itemCount = 0
-  -- DECOMPILER ERROR at PC82: Unhandled construct in 'MakeBoolean' P1
-
-  if self.isPet and (self:GetModule(PetModule)):GetPetByTemplateId(itemId) ~= nil then
-    itemCount = 1
-  end
-  itemCount = (self:GetModule(ItemModule)):GetItemCount(itemId)
-  ;
-  (self._currentCount):SetText((StringTable.Get)("str_shop_current_item_count", itemCount))
-  -- DECOMPILER ERROR at PC107: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.moneyIcon).sprite = (self.uiCommonAtlas):GetSprite((ClientShop.GetCurrencyImageName)(self.saleType))
   if self.isPet then
-    (self.btnGO):SetActive(true)
+    if self:GetModule(PetModule):GetPetByTemplateId(itemId) ~= nil then
+      itemCount = 1
+    end
   else
-    ;
-    (self.btnGO):SetActive(false)
+    itemCount = self:GetModule(ItemModule):GetItemCount(itemId)
+  end
+  self._currentCount:SetText(StringTable.Get("str_shop_current_item_count", itemCount))
+  self.moneyIcon.sprite = self.uiCommonAtlas:GetSprite(ClientShop.GetCurrencyImageName(self.saleType))
+  if self.isPet then
+    self.btnGO:SetActive(true)
+  else
+    self.btnGO:SetActive(false)
   end
   self:DoAnimation()
   self:SetScroll()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopConfirmNormalController.SetScroll = function(self)
-  -- function num : 0_5
-  local perferredH = (self.descTxt).preferredHeight
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
+function UICampaignShopConfirmNormalController:SetScroll()
+  local perferredH = self.descTxt.preferredHeight
   if perferredH < 135 then
-    (self.descScroll).vertical = false
+    self.descScroll.vertical = false
   else
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.descScroll).vertical = true
+    self.descScroll.vertical = true
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopConfirmNormalController.DoAnimation = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UICampaignShopConfirmNormalController:DoAnimation()
   self._cg = self:GetUIComponent("CanvasGroup", "UICanvas")
   self._panel = self:GetUIComponent("RectTransform", "panel")
   self._infoTrans = self:GetUIComponent("Transform", "info")
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._cg).alpha = 0
+  self._cg.alpha = 0
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
     YIELD(TT)
     YIELD(TT)
-    ;
-    (self._cg):DOFade(1, 0.3)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._panel).localScale = Vector3(0.5, 0.5, 0.5)
-    local y = ((self._infoTrans).localPosition).y
-    ;
-    ((self._panel):DOScale(Vector3(1, 1, 1), 0.3)):OnComplete(function()
-      -- function num : 0_6_0_0
-    end
-)
-    ;
-    ((self._infoTrans):DOLocalMoveY(y + 3, 0.2)):OnComplete(function()
-      -- function num : 0_6_0_1 , upvalues : self, y
-      (self._infoTrans):DOLocalMoveY(y - 3, 0.2)
-    end
-)
-  end
-, self)
+    self._cg:DOFade(1, 0.3)
+    self._panel.localScale = Vector3(0.5, 0.5, 0.5)
+    local y = self._infoTrans.localPosition.y
+    self._panel:DOScale(Vector3(1, 1, 1), 0.3):OnComplete(function()
+    end)
+    self._infoTrans:DOLocalMoveY(y + 3, 0.2):OnComplete(function()
+      self._infoTrans:DOLocalMoveY(y - 3, 0.2)
+    end)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopConfirmNormalController.OnHide = function(self)
-  -- function num : 0_7
+function UICampaignShopConfirmNormalController:OnHide()
   if self._spine then
-    (self._spine):DestroyCurrentSpine()
+    self._spine:DestroyCurrentSpine()
     self._spine = nil
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopConfirmNormalController.BtnstarOnClick = function(self, go)
-  -- function num : 0_8
-  self:ShowDialog("UIShopPetDetailController", (self.goodsData):GetItemId())
+function UICampaignShopConfirmNormalController:BtnstarOnClick(go)
+  self:ShowDialog("UIShopPetDetailController", self.goodsData:GetItemId())
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopConfirmNormalController.BtnbuyOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  if not (ClientCampaignShop.CheckBuy)(self.saleType, (self.goodsData).costCount) then
+function UICampaignShopConfirmNormalController:BtnbuyOnClick(go)
+  if not ClientCampaignShop.CheckBuy(self.saleType, self.goodsData.costCount) then
     if self.saleType == RoleAssetID.RoleAssetGlow then
       self:CloseDialog()
     end
-    local tips = (StringTable.Get)("str_pay_item_not_enough")
-    ;
-    (ToastManager.ShowToast)(tips)
-    return 
+    local tips = StringTable.Get("str_pay_item_not_enough")
+    ToastManager.ShowToast(tips)
+    return
   end
-  do
-    local exchangeCmpt = (self.goodsData).exchangeCmpt
-    if exchangeCmpt then
-      self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV, exchangeCmpt
-    self:Lock("UICampaignShopConfirmNormalController:btnbuyOnClick")
-    local res = AsyncRequestRes:New()
-    local rewards = exchangeCmpt:HandleExchangeItem(TT, res, (self.goodsData):GetGoodsId(), 1)
-    self:UnLock("UICampaignShopConfirmNormalController:btnbuyOnClick")
-    if res:GetSucc() then
-      if rewards and #rewards > 0 then
-        local roleAsset = rewards[1]
-        do
-          do
-            local assetList = rewards
-            if (self:GetModule(PetModule)):IsPetID(roleAsset.assetid) then
-              self:ShowDialog("UIPetObtain", assetList, function()
-      -- function num : 0_9_0_0 , upvalues : _ENV, self, assetList
-      ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-      self:ShowDialog("UIGetItemController", assetList, function()
-        -- function num : 0_9_0_0_0 , upvalues : _ENV, self
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityShopBuySuccess, (self.goodsData):GetGoodsId())
-      end
-)
-      self:CloseDialog()
-    end
-)
-            else
-              if RoleAssetID.RoleAssetPetSkinBegin < roleAsset.assetid and roleAsset.assetid < RoleAssetID.RoleAssetPetSkinEnd then
-                local skinID = roleAsset.assetid - RoleAssetID.RoleAssetPetSkinBegin
-                local skin = RoleAsset:New()
-                skin.assetid = skinID
-                local unlockCgId = nil
-                local skinCfg = (Cfg.cfg_pet_skin)[skinID]
-                if skinCfg then
-                  unlockCgId = skinCfg.ImmediateCgId
-                end
-                self:ShowDialog("UIPetSkinObtainController", skin, function()
-      -- function num : 0_9_0_1 , upvalues : _ENV, self, rewards, unlockCgId, skinID
-      ((GameGlobal.UIStateManager)()):CloseDialog("UIPetSkinObtainController")
-      self:ShowDialog("UIGetItemController", rewards, function()
-        -- function num : 0_9_0_1_0 , upvalues : unlockCgId, _ENV, self, skinID
-        do
-          if unlockCgId then
-            local cfg_cg = (Cfg.cfg_cg_book)[unlockCgId]
-            if cfg_cg then
-              self:ShowDialog("UIPetSkinsGetCgController", cfg_cg.StaticPic, false, skinID, 1)
+  local exchangeCmpt = self.goodsData.exchangeCmpt
+  if exchangeCmpt then
+    self:StartTask(function(TT)
+      self:Lock("UICampaignShopConfirmNormalController:btnbuyOnClick")
+      local res = AsyncRequestRes:New()
+      local rewards = exchangeCmpt:HandleExchangeItem(TT, res, self.goodsData:GetGoodsId(), 1)
+      self:UnLock("UICampaignShopConfirmNormalController:btnbuyOnClick")
+      if res:GetSucc() then
+        if rewards and 0 < #rewards then
+          local roleAsset = rewards[1]
+          local assetList = rewards
+          if self:GetModule(PetModule):IsPetID(roleAsset.assetid) then
+            self:ShowDialog("UIPetObtain", assetList, function()
+              GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+              self:ShowDialog("UIGetItemController", assetList, function()
+                GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityShopBuySuccess, self.goodsData:GetGoodsId())
+              end)
+              self:CloseDialog()
+            end)
+          elseif roleAsset.assetid > RoleAssetID.RoleAssetPetSkinBegin and roleAsset.assetid < RoleAssetID.RoleAssetPetSkinEnd then
+            local skinID = roleAsset.assetid - RoleAssetID.RoleAssetPetSkinBegin
+            local skin = RoleAsset:New()
+            skin.assetid = skinID
+            local unlockCgId
+            local skinCfg = Cfg.cfg_pet_skin[skinID]
+            if skinCfg then
+              unlockCgId = skinCfg.ImmediateCgId
             end
-            ;
-            (ToastManager.ShowToast)((StringTable.Get)("str_senior_skin_draw_new_cg_tips"))
-          end
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityShopBuySuccess, (self.goodsData):GetGoodsId())
-        end
-      end
-, true)
-    end
-)
-                self:CloseDialog()
-              else
-                do
-                  self:ShowDialog("UIGetItemController", assetList, function()
-      -- function num : 0_9_0_2 , upvalues : _ENV, self
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityShopBuySuccess, (self.goodsData):GetGoodsId())
-    end
-)
-                  self:CloseDialog()
+            self:ShowDialog("UIPetSkinObtainController", skin, function()
+              GameGlobal.UIStateManager():CloseDialog("UIPetSkinObtainController")
+              self:ShowDialog("UIGetItemController", rewards, function()
+                if unlockCgId then
+                  local cfg_cg = Cfg.cfg_cg_book[unlockCgId]
+                  if cfg_cg then
+                    self:ShowDialog("UIPetSkinsGetCgController", cfg_cg.StaticPic, false, skinID, 1)
+                  end
+                  ToastManager.ShowToast(StringTable.Get("str_senior_skin_draw_new_cg_tips"))
                 end
-              end
-            end
+                GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityShopBuySuccess, self.goodsData:GetGoodsId())
+              end, true)
+            end)
             self:CloseDialog()
-            if res:GetResult() == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_CLOSE then
-              ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityComponentCloseEvent, self._componentFullId)
-            end
-            local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-            campaignModule:CheckErrorCode(res:GetResult(), self._campaignId, function()
-      -- function num : 0_9_0_3 , upvalues : _ENV, self
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityShopNeedRefresh, self._campaignId)
-    end
-, nil)
+          else
+            self:ShowDialog("UIGetItemController", assetList, function()
+              GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityShopBuySuccess, self.goodsData:GetGoodsId())
+            end)
             self:CloseDialog()
           end
+        else
+          self:CloseDialog()
         end
+      else
+        if res:GetResult() == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_CLOSE then
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityComponentCloseEvent, self._componentFullId)
+        end
+        local campaignModule = GameGlobal.GetModule(CampaignModule)
+        campaignModule:CheckErrorCode(res:GetResult(), self._campaignId, function()
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityShopNeedRefresh, self._campaignId)
+        end, nil)
+        self:CloseDialog()
       end
-    end
-  end
-, self)
-    end
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopConfirmNormalController.BtnbgOnClick = function(self, go)
-  -- function num : 0_10
+function UICampaignShopConfirmNormalController:BtnbgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopConfirmNormalController.InitPlayerSpine = function(self)
-  -- function num : 0_11
+function UICampaignShopConfirmNormalController:InitPlayerSpine()
   self._spine = self:GetUIComponent("SpineLoader", "spine")
   self._spineGo = self:GetGameObject("spine")
-  ;
-  (self._spine):LoadSpine("duya_spine_idle")
+  self._spine:LoadSpine("duya_spine_idle")
 end
-
-

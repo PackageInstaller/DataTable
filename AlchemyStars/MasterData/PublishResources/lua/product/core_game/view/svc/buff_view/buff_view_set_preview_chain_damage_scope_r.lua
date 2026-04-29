@@ -1,30 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_set_preview_chain_damage_scope_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSetPreviewChainDamageScope", BuffViewBase)
 BuffViewSetPreviewChainDamageScope = BuffViewSetPreviewChainDamageScope
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSetPreviewChainDamageScope.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewSetPreviewChainDamageScope:PlayView(TT)
   local result = self._buffResult
   local entityID = result:GetEntityID()
   local skillID = result:GetSkillID()
-  local reBoard = (self._world):GetRenderBoardEntity()
+  local reBoard = self._world:GetRenderBoardEntity()
   local chainPreviewMonsterBehaviorCmpt = reBoard:ChainPreviewMonsterBehavior()
   if chainPreviewMonsterBehaviorCmpt then
     chainPreviewMonsterBehaviorCmpt:SetPreviewMonsterRange(entityID, skillID)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewSetPreviewChainDamageScope.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewSetPreviewChainDamageScope:IsNotifyMatch(notify)
   local result = self._buffResult
   return true
 end
-
-

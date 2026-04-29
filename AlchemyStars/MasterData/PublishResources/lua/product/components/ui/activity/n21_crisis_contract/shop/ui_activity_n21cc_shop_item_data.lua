@@ -1,75 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/shop/ui_activity_n21cc_shop_item_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIActivityN21CCShopRewardStatus = {UnComplete = 1, HasGet = 2, UnGet = 3}
+local UIActivityN21CCShopRewardStatus = {
+  UnComplete = 1,
+  HasGet = 2,
+  UnGet = 3
+}
 _enum("UIActivityN21CCShopRewardStatus", UIActivityN21CCShopRewardStatus)
 _class("UIActivityN21CCShopItemData", Object)
 UIActivityN21CCShopItemData = UIActivityN21CCShopItemData
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityN21CCShopItemData.Constructor = function(self, progress, status, rewards, progressComponent)
-  -- function num : 0_0
+function UIActivityN21CCShopItemData:Constructor(progress, status, rewards, progressComponent)
   self._progressComponent = progressComponent
   self._progress = progress
   self._status = status
   self._rewards = rewards
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCShopItemData.GetProgressComponent = function(self)
-  -- function num : 0_1
+function UIActivityN21CCShopItemData:GetProgressComponent()
   return self._progressComponent
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCShopItemData.GetProgress = function(self)
-  -- function num : 0_2
+function UIActivityN21CCShopItemData:GetProgress()
   return self._progress
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCShopItemData.GetStatus = function(self)
-  -- function num : 0_3
+function UIActivityN21CCShopItemData:GetStatus()
   return self._status
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCShopItemData.SetStatus = function(self, status)
-  -- function num : 0_4
+function UIActivityN21CCShopItemData:SetStatus(status)
   self._status = status
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCShopItemData.GetRewards = function(self)
-  -- function num : 0_5
+function UIActivityN21CCShopItemData:GetRewards()
   return self._rewards
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN21CCShopItemData.GetPriority = function(self)
-  -- function num : 0_6 , upvalues : UIActivityN21CCShopRewardStatus
+function UIActivityN21CCShopItemData:GetPriority()
   local priority = self._progress
   local weight = 1000000
   if self._status == UIActivityN21CCShopRewardStatus.UnComplete then
     priority = priority + 2 * weight
-  else
-    if self._status == UIActivityN21CCShopRewardStatus.HasGet then
-      priority = priority + 3 * weight
-    else
-      if self._status == UIActivityN21CCShopRewardStatus.UnGet then
-        priority = priority + weight
-      end
-    end
+  elseif self._status == UIActivityN21CCShopRewardStatus.HasGet then
+    priority = priority + 3 * weight
+  elseif self._status == UIActivityN21CCShopRewardStatus.UnGet then
+    priority = priority + weight
   end
   return priority
 end
-
-

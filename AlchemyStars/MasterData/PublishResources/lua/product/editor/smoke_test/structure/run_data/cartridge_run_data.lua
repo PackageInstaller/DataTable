@@ -1,111 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/cartridge_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("elemental_run_data")
 _class("TestRobotElementalCartridgeRunData", TestRobotElementalRunData)
 TestRobotElementalCartridgeRunData = TestRobotElementalCartridgeRunData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotElementalCartridgeRunData.Constructor = function(self)
-  -- function num : 0_0
+function TestRobotElementalCartridgeRunData:Constructor()
   self._cartridgeStageIndex = 1
   self._cartridgeID = 0
   self._expv = 1
   self._n8componentID = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalCartridgeRunData.SetCartridgeID = function(self, id)
-  -- function num : 0_1
+function TestRobotElementalCartridgeRunData:SetCartridgeID(id)
   self._cartridgeID = id
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalCartridgeRunData.GetCartridgeID = function(self)
-  -- function num : 0_2
+function TestRobotElementalCartridgeRunData:GetCartridgeID()
   return self._cartridgeID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalCartridgeRunData.TickCartridgeStageIndex = function(self)
-  -- function num : 0_3
+function TestRobotElementalCartridgeRunData:TickCartridgeStageIndex()
   self._cartridgeStageIndex = self._cartridgeStageIndex + 1
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalCartridgeRunData.SetCartridgeStageIndex = function(self, idx)
-  -- function num : 0_4
+function TestRobotElementalCartridgeRunData:SetCartridgeStageIndex(idx)
   self._cartridgeStageIndex = idx
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalCartridgeRunData.GetCartridgeStageIndex = function(self)
-  -- function num : 0_5
+function TestRobotElementalCartridgeRunData:GetCartridgeStageIndex()
   return self._cartridgeStageIndex
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalCartridgeRunData.SetN8ComponentID = function(self, id)
-  -- function num : 0_6
+function TestRobotElementalCartridgeRunData:SetN8ComponentID(id)
   self._n8componentID = id
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalCartridgeRunData.GetN8ComponentID = function(self)
-  -- function num : 0_7
+function TestRobotElementalCartridgeRunData:GetN8ComponentID()
   return self._n8componentID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalCartridgeRunData.SetExperienceVersion = function(self, v)
-  -- function num : 0_8
+function TestRobotElementalCartridgeRunData:SetExperienceVersion(v)
   self._expv = v
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalCartridgeRunData.GetExperienceVersion = function(self)
-  -- function num : 0_9
+function TestRobotElementalCartridgeRunData:GetExperienceVersion()
   return self._expv
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalCartridgeRunData.GetMissionID = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local config = (Cfg.cfg_item_cartridge)[self._cartridgeID]
+function TestRobotElementalCartridgeRunData:GetMissionID()
+  local config = Cfg.cfg_item_cartridge[self._cartridgeID]
   if not config then
-    (Log.exception)(self._className, "Invalid cartridge id: ", tostring(self._cartridgeID))
+    Log.exception(self._className, "Invalid cartridge id: ", tostring(self._cartridgeID))
   end
   if #config.MissionID < self._cartridgeStageIndex then
-    return 
+    return
   end
-  return (config.MissionID)[self._cartridgeStageIndex]
+  return config.MissionID[self._cartridgeStageIndex]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotElementalCartridgeRunData.ParseLevelData = function(self, rawarg)
-  -- function num : 0_11 , upvalues : _ENV
-  local sargs = (string.split)(rawarg, ",")
+function TestRobotElementalCartridgeRunData:ParseLevelData(rawarg)
+  local sargs = string.split(rawarg, ",")
   local args = {}
-  for _,s in ipairs(sargs) do
-    (table.insert)(args, tonumber(s))
+  for _, s in ipairs(sargs) do
+    table.insert(args, tonumber(s))
   end
   self:SetCartridgeID(args[1])
   self:SetCartridgeStageIndex(args[2] or 1)
   self:SetExperienceVersion(args[3] or 1)
   self:SetN8ComponentID(args[4] or 0)
 end
-
-

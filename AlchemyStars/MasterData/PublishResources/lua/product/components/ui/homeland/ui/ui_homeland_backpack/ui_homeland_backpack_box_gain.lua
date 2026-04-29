@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_backpack/ui_homeland_backpack_box_gain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBackPackBoxGain", UIController)
 UIHomelandBackPackBoxGain = UIHomelandBackPackBoxGain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBackPackBoxGain.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandBackPackBoxGain:OnShow(uiParams)
   local itemPool = self:GetUIComponent("UISelectObjectPath", "itemPool")
   self.uiItem = itemPool:SpawnObject("UIItemHomeland")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
@@ -18,50 +11,32 @@ UIHomelandBackPackBoxGain.OnShow = function(self, uiParams)
   self._count = uiParams[2]
   self._item = uiParams[3]
   self._index = uiParams[4]
-  local tplId = (self._item).assetid
-  local cfg = (Cfg.cfg_item)[tplId]
-  ;
-  (self.uiItem):Flush(self._item)
-  ;
-  (self.txtName):SetText((StringTable.Get)(cfg.Name))
-  local count = (self:GetModule(ItemModule)):GetItemCount(tplId)
-  ;
-  (self.txtCount):SetText((StringTable.Get)("str_item_public_owned") .. (HelperProxy:GetInstance()):FormatItemCount(count))
-  ;
-  (self.txtDesc):SetText((StringTable.Get)(cfg.Intro))
+  local tplId = self._item.assetid
+  local cfg = Cfg.cfg_item[tplId]
+  self.uiItem:Flush(self._item)
+  self.txtName:SetText(StringTable.Get(cfg.Name))
+  local count = self:GetModule(ItemModule):GetItemCount(tplId)
+  self.txtCount:SetText(StringTable.Get("str_item_public_owned") .. HelperProxy:GetInstance():FormatItemCount(count))
+  self.txtDesc:SetText(StringTable.Get(cfg.Intro))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackPackBoxGain.OnHide = function(self)
-  -- function num : 0_1
+function UIHomelandBackPackBoxGain:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackPackBoxGain.bgOnClick = function(self)
-  -- function num : 0_2
+function UIHomelandBackPackBoxGain:bgOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackPackBoxGain.btnGainOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandBackPackBoxGain:btnGainOnClick()
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    local res, msg = (self:GetModule(ItemModule)):RequestChooseGift(TT, self._giftId, self._index, self._count)
-    if (UIForgeData.CheckCode)(res:GetResult()) then
+    local res, msg = self:GetModule(ItemModule):RequestChooseGift(TT, self._giftId, self._index, self._count)
+    if UIForgeData.CheckCode(res:GetResult()) then
       local ra = RoleAsset:New()
-      ra.assetid = (self._item).assetid
-      ra.count = (self._item).count * self._count
+      ra.assetid = self._item.assetid
+      ra.count = self._item.count * self._count
       self:ShowDialog("UIHomeShowAwards", {ra})
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CloseUIBackPackBox)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.CloseUIBackPackBox)
       self:CloseDialog()
     end
-  end
-, self)
+  end, self)
 end
-
-

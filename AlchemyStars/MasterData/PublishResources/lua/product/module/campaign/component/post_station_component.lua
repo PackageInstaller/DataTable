@@ -1,117 +1,78 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/post_station_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("PostStationComponent", ICampaignComponent)
 PostStationComponent = PostStationComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PostStationComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PostStationComponent:Constructor()
   self.m_component_info = PostStationComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PostStationComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PostStationComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = PostStationComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PostStationComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function PostStationComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PostStationComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PostStationComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_POST_STATION_GAME
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PostStationComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function PostStationComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PostStationComponent.HandleSubmitMissionInfo = function(self, TT, asyncRes, mission_id, order_list)
-  -- function num : 0_5 , upvalues : _ENV
+function PostStationComponent:HandleSubmitMissionInfo(TT, asyncRes, mission_id, order_list)
   local request = SubmitMissionInfoReq:New()
   request.mission_id = mission_id
   request.order_list = order_list
   local response = SubmitMissionInfoRes:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][PostStationComponent] HandleSubmitMissionInfo ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][PostStationComponent] HandleSubmitMissionInfo ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R8 in 'UnsetPending'
-
   if response.ret == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    ((self.m_component_info).mission_infos)[mission_id] = response.info
+    self.m_component_info.mission_infos[mission_id] = response.info
   end
   return response.ret, response.suc
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PostStationComponent.HandleStory = function(self, TT, asyncRes, mission_id, story_type)
-  -- function num : 0_6 , upvalues : _ENV
+function PostStationComponent:HandleStory(TT, asyncRes, mission_id, story_type)
   local request = PostStationMissionStoryReq:New()
   request.mission_id = mission_id
   request.story_type = story_type
   local response = PostStationMissionStoryRes:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][PostStationComponent] HandleStory ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][PostStationComponent] HandleStory ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R8 in 'UnsetPending'
-
   if response.ret == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    ((self.m_component_info).mission_infos)[mission_id] = response.info
+    self.m_component_info.mission_infos[mission_id] = response.info
   end
   return response.ret
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PostStationComponent.HandleGetTargetReward = function(self, TT, asyncRes, mission_id, target_id)
-  -- function num : 0_7 , upvalues : _ENV
+function PostStationComponent:HandleGetTargetReward(TT, asyncRes, mission_id, target_id)
   local request = PostStationGetTargetRewardReq:New()
   request.mission_id = mission_id
   request.target_id = target_id
   local response = PostStationGetTargetRewardRes:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][PostStationComponent] HandleGetTargetReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][PostStationComponent] HandleGetTargetReward ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R8 in 'UnsetPending'
-
   if response.ret == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    ((self.m_component_info).mission_infos)[mission_id] = response.info
+    self.m_component_info.mission_infos[mission_id] = response.info
   end
   return response.ret, response.reward
 end
-
-

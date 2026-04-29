@@ -1,35 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_attack_by_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeAttackByLayer", BuffLogicBase)
 BuffLogicChangeAttackByLayer = BuffLogicChangeAttackByLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAttackByLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._oneLayerAddMulValue = logicParam.oneLayerAddMulValue or 0
-    self._maxAddMulValue = logicParam.maxAddMulValue
-    self._oneLayerAddValue = logicParam.oneLayerAddValue or 0
-    self._useCasterAttack = logicParam.useCasterAttack or 0
-    self._useNotifyLayer = logicParam.useNotifyLayer or 0
-    self._useTeamLayer = logicParam.useTeamLayer or 0
-    self._usePetLayerPetID = logicParam.usePetLayerPetID
-    self._overrideModifierIDByLayerType = logicParam.overrideModifierIDByLayerType
-  end
+function BuffLogicChangeAttackByLayer:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._oneLayerAddMulValue = logicParam.oneLayerAddMulValue or 0
+  self._maxAddMulValue = logicParam.maxAddMulValue
+  self._oneLayerAddValue = logicParam.oneLayerAddValue or 0
+  self._useCasterAttack = logicParam.useCasterAttack or 0
+  self._useNotifyLayer = logicParam.useNotifyLayer or 0
+  self._useTeamLayer = logicParam.useTeamLayer or 0
+  self._usePetLayerPetID = logicParam.usePetLayerPetID
+  self._overrideModifierIDByLayerType = logicParam.overrideModifierIDByLayerType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttackByLayer.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  if not self._overrideModifierIDByLayerType or not self._layerType then
-    local modifierID = self:GetBuffSeq()
-  end
-  local context = (self._buffInstance):Context()
+function BuffLogicChangeAttackByLayer:DoLogic(notify)
+  local modifierID = self._overrideModifierIDByLayerType and self._layerType or self:GetBuffSeq()
+  local context = self._buffInstance:Context()
   local casterEntity = context and context.casterEntity or nil
   local curMarkLayer = 0
   if self._useNotifyLayer == 1 then
@@ -37,97 +23,63 @@ BuffLogicChangeAttackByLayer.DoLogic = function(self, notify)
   else
     local layerEntity = self._entity
     if self._useTeamLayer == 1 then
-      layerEntity = ((self._world):Player()):GetCurrentTeamEntity()
-    else
-      if self._usePetLayerPetID then
-        local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-        local pets = (teamEntity:Team()):GetTeamPetEntities()
-        for i,e in ipairs(pets) do
-          local cPetPstID = e:PetPstID()
-          if self._usePetLayerPetID == cPetPstID:GetTemplateID() then
-            layerEntity = e
-            break
-          end
+      layerEntity = self._world:Player():GetCurrentTeamEntity()
+    elseif self._usePetLayerPetID then
+      local teamEntity = self._world:Player():GetCurrentTeamEntity()
+      local pets = teamEntity:Team():GetTeamPetEntities()
+      for i, e in ipairs(pets) do
+        local cPetPstID = e:PetPstID()
+        if self._usePetLayerPetID == cPetPstID:GetTemplateID() then
+          layerEntity = e
+          break
         end
       end
     end
-    do
-      do
-        curMarkLayer = (self._buffLogicService):GetBuffLayer(layerEntity, self._layerType)
-        self:PrintBuffLogicLog("BuffLogicChangeAttackByLayer layer=", curMarkLayer, "layerType=", self._layerType, " entity=", (self._entity):GetID())
-        if curMarkLayer then
-          if self._oneLayerAddMulValue ~= 0 then
-            local change = self._oneLayerAddMulValue * curMarkLayer
-            if self._maxAddMulValue and self._maxAddMulValue < change then
-              change = self._maxAddMulValue
-            end
-            if self._useCasterAttack == 1 and casterEntity then
-              local attack = (casterEntity:Attributes()):GetAttribute("Attack")
-              change = change * attack
-              ;
-              (self._buffLogicService):ChangeBaseAttack(self._entity, modifierID, ModifyBaseAttackType.AttackConstantFix, change)
-            else
-              do
-                do
-                  ;
-                  (self._buffLogicService):ChangeBaseAttack(self._entity, modifierID, ModifyBaseAttackType.AttackPercentage, change)
-                  do
-                    if self._oneLayerAddValue ~= 0 then
-                      local change = (math.floor)(self._oneLayerAddValue * curMarkLayer)
-                      ;
-                      (self._buffLogicService):ChangeBaseAttack(self._entity, modifierID, ModifyBaseAttackType.AttackConstantFix, change)
-                    end
-                    do return true end
-                  end
-                end
-              end
-            end
-          end
-        end
+    curMarkLayer = self._buffLogicService:GetBuffLayer(layerEntity, self._layerType)
+  end
+  self:PrintBuffLogicLog("BuffLogicChangeAttackByLayer layer=", curMarkLayer, "layerType=", self._layerType, " entity=", self._entity:GetID())
+  if curMarkLayer then
+    if self._oneLayerAddMulValue ~= 0 then
+      local change = self._oneLayerAddMulValue * curMarkLayer
+      if self._maxAddMulValue and change > self._maxAddMulValue then
+        change = self._maxAddMulValue
+      end
+      if self._useCasterAttack == 1 and casterEntity then
+        local attack = casterEntity:Attributes():GetAttribute("Attack")
+        change = change * attack
+        self._buffLogicService:ChangeBaseAttack(self._entity, modifierID, ModifyBaseAttackType.AttackConstantFix, change)
+      else
+        self._buffLogicService:ChangeBaseAttack(self._entity, modifierID, ModifyBaseAttackType.AttackPercentage, change)
       end
     end
+    if self._oneLayerAddValue ~= 0 then
+      local change = math.floor(self._oneLayerAddValue * curMarkLayer)
+      self._buffLogicService:ChangeBaseAttack(self._entity, modifierID, ModifyBaseAttackType.AttackConstantFix, change)
+    end
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttackByLayer.DoOverlap = function(self, notify)
-  -- function num : 0_2
+function BuffLogicChangeAttackByLayer:DoOverlap(notify)
   self:DoLogic(notify)
 end
 
 _class("BuffLogicRemoveChangeAttackByLayer", BuffLogicBase)
 BuffLogicRemoveChangeAttackByLayer = BuffLogicRemoveChangeAttackByLayer
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveChangeAttackByLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._overrideModifierIDByLayerType = logicParam.overrideModifierIDByLayerType
-  end
+function BuffLogicRemoveChangeAttackByLayer:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._overrideModifierIDByLayerType = logicParam.overrideModifierIDByLayerType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveChangeAttackByLayer.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self:PrintBuffLogicLog("BuffLogicRemoveChangeAttackByLayer entity=", (self._entity):GetID())
-  if not self._overrideModifierIDByLayerType or not self._layerType then
-    local modifierID = self:GetBuffSeq()
-  end
-  ;
-  (self._buffLogicService):RemoveBaseAttack(self._entity, modifierID, ModifyBaseAttackType.AttackPercentage)
-  ;
-  (self._buffLogicService):RemoveBaseAttack(self._entity, modifierID, ModifyBaseAttackType.AttackConstantFix)
+function BuffLogicRemoveChangeAttackByLayer:DoLogic()
+  self:PrintBuffLogicLog("BuffLogicRemoveChangeAttackByLayer entity=", self._entity:GetID())
+  local modifierID = self._overrideModifierIDByLayerType and self._layerType or self:GetBuffSeq()
+  self._buffLogicService:RemoveBaseAttack(self._entity, modifierID, ModifyBaseAttackType.AttackPercentage)
+  self._buffLogicService:RemoveBaseAttack(self._entity, modifierID, ModifyBaseAttackType.AttackConstantFix)
   return true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveChangeAttackByLayer.DoOverlap = function(self)
-  -- function num : 0_5
+function BuffLogicRemoveChangeAttackByLayer:DoOverlap()
   return self:DoLogic()
 end
-
-

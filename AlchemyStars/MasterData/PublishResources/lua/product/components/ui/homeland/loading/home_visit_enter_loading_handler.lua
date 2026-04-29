@@ -1,49 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/loading/home_visit_enter_loading_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeVisitEnterLoadingHandler", LoadingHandler)
 HomeVisitEnterLoadingHandler = HomeVisitEnterLoadingHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeVisitEnterLoadingHandler.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.notice)("[Homeland] 开始拜访家园Loading")
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(self._className)
+function HomeVisitEnterLoadingHandler:Constructor()
+  Log.notice("[Homeland] 开始拜访家园Loading")
+  GameGlobal.UIStateManager():Lock(self._className)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeVisitEnterLoadingHandler.PreLoadBeforeLoadLevel = function(self)
-  -- function num : 0_1
+function HomeVisitEnterLoadingHandler:PreLoadBeforeLoadLevel()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeVisitEnterLoadingHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_2 , upvalues : _ENV
+function HomeVisitEnterLoadingHandler:PreLoadAfterLoadLevel(TT, ...)
   self._canEnter = false
-  ;
-  (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
-  local _module = (GameGlobal.GetModule)(HomelandModule)
-  local _uimodule = (GameGlobal.GetUIModule)(HomelandModule)
+  LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
+  local _module = GameGlobal.GetModule(HomelandModule)
+  local _uimodule = GameGlobal.GetUIModule(HomelandModule)
   if _uimodule:IsRunning() then
-    (Log.exception)("严重错误，当前家园正在运行！")
-    return 
+    Log.exception("严重错误，当前家园正在运行！")
+    return
   end
   local ack1 = _module:EnterHomeLand(TT)
   if not ack1:GetSucc() then
-    (Log.fatal)("请求家园数据失败:", ack1:GetResult())
-    return 
+    Log.fatal("请求家园数据失败:", ack1:GetResult())
+    return
   end
   _module:ClearNormalData()
-  local params = {...}
+  local params = {
+    ...
+  }
   local ack, data = _module:HomelandVisitFriendReq(TT, params[1])
   if not ack:GetSucc() then
-    (ToastManager.ShowHomeToast)(_module:GetVisitErrorMsg(ack:GetResult()))
-    return 
+    ToastManager.ShowHomeToast(_module:GetVisitErrorMsg(ack:GetResult()))
+    return
   end
   _uimodule:SetVisitInfo(data.infos)
   YIELD(TT)
@@ -51,22 +38,14 @@ HomeVisitEnterLoadingHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
   self._canEnter = true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeVisitEnterLoadingHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_3 , upvalues : _ENV
+function HomeVisitEnterLoadingHandler:OnLoadingFinish(...)
   if self._canEnter then
-    local loadingParams = {...}
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIHomeland, self.sceneResReq, (table.unpack)(loadingParams))
+    local loadingParams = {
+      ...
+    }
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIHomeland, self.sceneResReq, table.unpack(loadingParams))
   else
-    do
-      ;
-      ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
-      ;
-      ((GameGlobal.UIStateManager)()):UnLock(self._className)
-    end
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
   end
+  GameGlobal.UIStateManager():UnLock(self._className)
 end
-
-

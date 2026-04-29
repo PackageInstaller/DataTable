@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_summon_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SummonTrap", Object)
 SkillEffectCalc_SummonTrap = SkillEffectCalc_SummonTrap
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SummonTrap.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SummonTrap:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
+  self._configService = self._world:GetService("Config")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrap.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_SummonTrap:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillRange = skillEffectCalcParam.skillRange
-  if not skillRange or (table.count)(skillRange) == 0 then
-    return 
+  if not skillRange or table.count(skillRange) == 0 then
+    return
   end
   local skillSummonTrapEffectParam = skillEffectCalcParam.skillEffectParam
   if skillSummonTrapEffectParam:GetSummonType() == SummonTrapType.ByTargetUnderGrid then
@@ -35,255 +25,214 @@ SkillEffectCalc_SummonTrap.DoSkillEffectCalculator = function(self, skillEffectC
     return self:SummonTrapByRandomRangeWithBlock(skillEffectCalcParam)
   end
   if not self:CheckCanSummon(skillEffectCalcParam) then
-    return 
+    return
   end
   if not self:CheckCanSummonByCountLimit(skillEffectCalcParam) then
-    return 
+    return
   end
-  local centerPos = (skillEffectCalcParam.skillRange)[1]
+  local centerPos = skillEffectCalcParam.skillRange[1]
   local trapIdList = skillSummonTrapEffectParam:GetTrapID()
   local block = skillSummonTrapEffectParam:GetBlock()
   if type(trapIdList) == "number" then
     trapIdList = {trapIdList}
   end
-  local len = (table.count)(trapIdList)
+  local len = table.count(trapIdList)
   local index = 1
-  do
-    if len > 1 then
-      local randomSvc = (self._world):GetService("RandomLogic")
-      index = randomSvc:LogicRand(1, len)
+  if 1 < len then
+    local randomSvc = self._world:GetService("RandomLogic")
+    index = randomSvc:LogicRand(1, len)
+  end
+  local trapId = trapIdList[index]
+  local moveTrap = skillSummonTrapEffectParam:GetMoveTrap()
+  if moveTrap then
+    local result = self:MoveTrap(trapId, centerPos, skillEffectCalcParam:GetCasterEntityID())
+    if result then
+      return result
     end
-    local trapId = trapIdList[index]
-    local moveTrap = skillSummonTrapEffectParam:GetMoveTrap()
-    do
-      if moveTrap then
-        local result = self:MoveTrap(trapId, centerPos, skillEffectCalcParam:GetCasterEntityID())
-        if result then
-          return result
+  end
+  local dir
+  local isUsePickUpDir = skillSummonTrapEffectParam:IsUsePickUpDir()
+  if isUsePickUpDir then
+    local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+    local activeSkillPickUpCmpt = casterEntity:ActiveSkillPickUpComponent()
+    if activeSkillPickUpCmpt then
+      local firstPos = activeSkillPickUpCmpt:GetFirstValidPickUpGridPos()
+      local secondPos = activeSkillPickUpCmpt:GetLastPickUpGridPos()
+      dir = secondPos - firstPos
+    end
+  end
+  local aiOrder = self:GetTrapAIOrder(skillEffectCalcParam)
+  if trapId then
+    if not self:CheckCanSummonByOverlapFlag(skillEffectCalcParam, centerPos, trapId) then
+      return
+    end
+    if skillSummonTrapEffectParam:IsBlockByMonster() then
+      local sUtilData = self._world:GetService("UtilData")
+      local entity = sUtilData:GetMonsterAtPos(centerPos)
+      if entity then
+        local buffComponent = entity:BuffComponent()
+        if buffComponent and buffComponent:HasBuffEffect(BuffEffectType.NotBeSelectedAsSkillTarget) then
+        else
+          return
         end
       end
-      local dir = nil
-      local isUsePickUpDir = skillSummonTrapEffectParam:IsUsePickUpDir()
-      if isUsePickUpDir then
-        local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
-        local activeSkillPickUpCmpt = casterEntity:ActiveSkillPickUpComponent()
-        if activeSkillPickUpCmpt then
-          local firstPos = activeSkillPickUpCmpt:GetFirstValidPickUpGridPos()
-          local secondPos = activeSkillPickUpCmpt:GetLastPickUpGridPos()
-          dir = secondPos - firstPos
-        end
-      end
-      do
-        local aiOrder = self:GetTrapAIOrder(skillEffectCalcParam)
-        if trapId then
-          if not self:CheckCanSummonByOverlapFlag(skillEffectCalcParam, centerPos, trapId) then
-            return 
-          end
-          if skillSummonTrapEffectParam:IsBlockByMonster() then
-            local sUtilData = (self._world):GetService("UtilData")
-            local entity = sUtilData:GetMonsterAtPos(centerPos)
-            if entity then
-              local buffComponent = entity:BuffComponent()
-            end
-          end
-          if buffComponent and buffComponent:HasBuffEffect(BuffEffectType.NotBeSelectedAsSkillTarget) then
-            do
-              do return  end
-              local trapSvc = (self._world):GetService("TrapLogic")
-              if block == 0 or trapSvc:CanSummonTrapOnPos(centerPos, trapId) then
-                return SkillSummonTrapEffectResult:New(trapId, centerPos, skillSummonTrapEffectParam:IsTransferDisabled(), skillSummonTrapEffectParam:GetSkillEffectDamageStageIndex(), dir, aiOrder)
-              end
-            end
-          end
-        end
-      end
+    end
+    local trapSvc = self._world:GetService("TrapLogic")
+    if block == 0 or trapSvc:CanSummonTrapOnPos(centerPos, trapId) then
+      return SkillSummonTrapEffectResult:New(trapId, centerPos, skillSummonTrapEffectParam:IsTransferDisabled(), skillSummonTrapEffectParam:GetSkillEffectDamageStageIndex(), dir, aiOrder)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrap.CheckCanSummon = function(self, skillEffectCalcParam)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_SummonTrap:CheckCanSummon(skillEffectCalcParam)
   local summonTrapParam = skillEffectCalcParam.skillEffectParam
   local absorbNum = summonTrapParam:GetAbsorbTrapNum()
   if absorbNum == 0 then
     return true
   end
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local result = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.AbsorbTrapsAndDamageByPickupTarget)
-  do
-    if result then
-      local trapEntityIDs = result:GetTrapEntityIDs()
-      if absorbNum <= #trapEntityIDs then
-        return true
-      end
+  if result then
+    local trapEntityIDs = result:GetTrapEntityIDs()
+    if absorbNum <= #trapEntityIDs then
+      return true
     end
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrap.CheckCanSummonByOverlapFlag = function(self, skillEffectCalcParam, centerPos, trapId)
-  -- function num : 0_3
+function SkillEffectCalc_SummonTrap:CheckCanSummonByOverlapFlag(skillEffectCalcParam, centerPos, trapId)
   local summonTrapParam = skillEffectCalcParam:GetSkillEffectParam()
   if summonTrapParam:IsTrapOverlap() then
     return true
   end
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+  local boardCmpt = self._world:GetBoardEntity():Board()
   local repeatTraps = boardCmpt:GetPieceEntities(centerPos, function(e)
-    -- function num : 0_3_0 , upvalues : skillEffectCalcParam, summonTrapParam, trapId
     local isOwner = false
     if e:HasSummoner() then
       local summoner = e:Summoner()
       if summoner:GetSummonerEntityID() == skillEffectCalcParam.casterEntityID then
         isOwner = true
-      else
-        if summonTrapParam:IsTrapOverlapCheckSuper() then
-          local summonEntity = e:GetSummonerEntity()
-          if summonEntity and summonEntity:HasSuperEntity() and summonEntity:GetSuperEntity() then
-            local summonEntityID = (summonEntity:GetSuperEntity()):GetID()
-            if summonEntityID == skillEffectCalcParam.casterEntityID then
-              isOwner = true
-            end
+      elseif summonTrapParam:IsTrapOverlapCheckSuper() then
+        local summonEntity = e:GetSummonerEntity()
+        if summonEntity and summonEntity:HasSuperEntity() and summonEntity:GetSuperEntity() then
+          local summonEntityID = summonEntity:GetSuperEntity():GetID()
+          if summonEntityID == skillEffectCalcParam.casterEntityID then
+            isOwner = true
           end
         end
       end
     else
-      do
-        isOwner = true
-        do return isOwner and (((e:Trap()):GetTrapID() == trapId and not e:HasDeadMark())) end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
+      isOwner = true
     end
-  end
-)
-  if #repeatTraps > 0 then
+    return isOwner and e:HasTrap() and e:Trap():GetTrapID() == trapId and not e:HasDeadMark()
+  end)
+  if 0 < #repeatTraps then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrap.CheckCanSummonByCountLimit = function(self, skillEffectCalcParam)
-  -- function num : 0_4
+function SkillEffectCalc_SummonTrap:CheckCanSummonByCountLimit(skillEffectCalcParam)
   local casterID = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterID)
-  local trapSvc = (self._world):GetService("TrapLogic")
+  local casterEntity = self._world:GetEntityByID(casterID)
+  local trapSvc = self._world:GetService("TrapLogic")
   if trapSvc:IsSummonCountLimit(casterEntity) then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrap.GetTrapAIOrder = function(self, skillEffectCalcParam)
-  -- function num : 0_5
+function SkillEffectCalc_SummonTrap:GetTrapAIOrder(skillEffectCalcParam)
   local skillParam = skillEffectCalcParam:GetSkillEffectParam()
   local aiOrder = skillParam:GetTrapAIOrder()
   if not aiOrder then
-    return 
+    return
   end
   local casterID = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterID)
-  local trapSvc = (self._world):GetService("TrapLogic")
+  local casterEntity = self._world:GetEntityByID(casterID)
+  local trapSvc = self._world:GetService("TrapLogic")
   local curCount = trapSvc:GetSummonTrapCount(casterEntity)
   return aiOrder + curCount
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrap.MoveTrap = function(self, trapID, movePos, casterEntityID)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillEffectCalc_SummonTrap:MoveTrap(trapID, movePos, casterEntityID)
   local trapEntityList = {}
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for i,e in ipairs(trapGroup:GetEntities()) do
-    if not e:HasDeadMark() and (e:TrapID()):GetTrapID() == trapID and e:HasSummoner() and (e:Summoner()):GetSummonerEntityID() == casterEntityID then
-      (table.insert)(trapEntityList, e)
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for i, e in ipairs(trapGroup:GetEntities()) do
+    if not e:HasDeadMark() and e:TrapID():GetTrapID() == trapID and e:HasSummoner() and e:Summoner():GetSummonerEntityID() == casterEntityID then
+      table.insert(trapEntityList, e)
     end
   end
   if #trapEntityList == 0 then
-    return 
+    return
   end
   local trapEntity = trapEntityList[1]
   local entityID = trapEntity:GetID()
-  local posOld = (trapEntity:GetGridPosition())
-  local replaceTrapEntityID = nil
+  local posOld = trapEntity:GetGridPosition()
+  local replaceTrapEntityID
   local needMove = true
   if posOld ~= movePos then
-    needMove = self:_GetReplaceTrapEntityID(trapID, movePos)
+    needMove, replaceTrapEntityID = self:_GetReplaceTrapEntityID(trapID, movePos)
   end
   if not needMove then
-    return 
+    return
   end
   local resultArray = {}
-  ;
-  (table.insert)(resultArray, SkillEffectResultMoveTrap:New(entityID, posOld, movePos, replaceTrapEntityID))
+  table.insert(resultArray, SkillEffectResultMoveTrap:New(entityID, posOld, movePos, replaceTrapEntityID))
   return resultArray
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrap._GetReplaceTrapEntityID = function(self, trapID, movePos)
-  -- function num : 0_7 , upvalues : _ENV
-  local configSvc = (self._world):GetService("Config")
+function SkillEffectCalc_SummonTrap:_GetReplaceTrapEntityID(trapID, movePos)
+  local configSvc = self._world:GetService("Config")
   local trapConfigData = configSvc:GetTrapConfigData()
   local trapData = trapConfigData:GetTrapData(trapID)
-  local utilSvc = (self._world):GetService("UtilData")
+  local utilSvc = self._world:GetService("UtilData")
   local samePosTraps = utilSvc:GetTrapsAtPos(movePos)
-  local trapSvc = (self._world):GetService("TrapLogic")
+  local trapSvc = self._world:GetService("TrapLogic")
   if #samePosTraps == 0 then
     return true, nil
   end
   local onlyViewTrap = trapSvc:IsViewTrapLevel(trapData.TrapLevel)
-  for _,e in ipairs(samePosTraps) do
+  for _, e in ipairs(samePosTraps) do
     local trapCmpt = e:Trap()
-    -- DECOMPILER ERROR at PC56: Unhandled construct in 'MakeBoolean' P1
-
-    if trapCmpt:GetTrapLevel() == trapData.TrapLevel and not onlyViewTrap and trapCmpt:GetReplaceLevel() <= trapData.ReplaceLevel and not e:HasDeadMark() then
-      (e:Attributes()):Modify("HP", 0)
-      trapSvc:AddTrapDeadMark(e)
-      return true, e:GetID()
+    if trapCmpt:GetTrapLevel() == trapData.TrapLevel and not onlyViewTrap then
+      if trapCmpt:GetReplaceLevel() <= trapData.ReplaceLevel then
+        if not e:HasDeadMark() then
+          e:Attributes():Modify("HP", 0)
+          trapSvc:AddTrapDeadMark(e)
+          return true, e:GetID()
+        end
+      else
+        return false, nil
+      end
     end
-    do return false, nil end
   end
   return true, nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrap._RangeCanSummonTrap = function(self, trapID, range, stopSummonTrapType)
-  -- function num : 0_8 , upvalues : _ENV
-  local trapConfigData = (self._configService):GetTrapConfigData()
+function SkillEffectCalc_SummonTrap:_RangeCanSummonTrap(trapID, range, stopSummonTrapType)
+  local trapConfigData = self._configService:GetTrapConfigData()
   local trapData = trapConfigData:GetTrapData(trapID)
   local find = false
-  local utilSvc = (self._world):GetService("UtilData")
-  local trapSvc = (self._world):GetService("TrapLogic")
-  local randomSvc = (self._world):GetService("RandomLogic")
-  while #range > 0 do
+  local utilSvc = self._world:GetService("UtilData")
+  local trapSvc = self._world:GetService("TrapLogic")
+  local randomSvc = self._world:GetService("RandomLogic")
+  while 0 < #range do
     local index = randomSvc:LogicRand(1, #range)
     local pos = range[index]
-    ;
-    (table.remove)(range, index)
+    table.remove(range, index)
     local bFind = self:IsPosCanSummonTrap(pos, trapID, stopSummonTrapType)
     if bFind then
       return pos
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrap.IsPosCanSummonTrap = function(self, pos, trapID, stopSummonTrapType)
-  -- function num : 0_9 , upvalues : _ENV
-  local utilSvc = (self._world):GetService("UtilData")
+function SkillEffectCalc_SummonTrap:IsPosCanSummonTrap(pos, trapID, stopSummonTrapType)
+  local utilSvc = self._world:GetService("UtilData")
   local samePosTraps = utilSvc:GetTrapsAtPos(pos)
   local isValidPos = utilSvc:IsValidPiecePos(pos)
   if not isValidPos then
@@ -292,73 +241,54 @@ SkillEffectCalc_SummonTrap.IsPosCanSummonTrap = function(self, pos, trapID, stop
   if #samePosTraps == 0 then
     return true
   end
-  for _,e in ipairs(samePosTraps) do
+  for _, e in ipairs(samePosTraps) do
     local trapCmpt = e:Trap()
     local type = trapCmpt:GetTrapType()
     local _trapID = trapCmpt:GetTrapID()
-    if (table.icontains)(stopSummonTrapType, type) or _trapID == trapID then
+    if table.icontains(stopSummonTrapType, type) or _trapID == trapID then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrap.SummonTrapByTargetUnderGrid = function(self, skillEffectCalcParam)
-  -- function num : 0_10 , upvalues : _ENV
+function SkillEffectCalc_SummonTrap:SummonTrapByTargetUnderGrid(skillEffectCalcParam)
   local targetIDs = skillEffectCalcParam:GetTargetEntityIDs()
   local param = skillEffectCalcParam:GetSkillEffectParam()
   local stopSummonTrapType = param:GetStopSummonTrapType()
   local trapID = param:GetTrapID()
   local gridList = {}
   if not targetIDs or targetIDs[1] == -1 then
-    return 
+    return
   end
-  for i,id in ipairs(targetIDs) do
-    local entity = (self._world):GetEntityByID(id)
+  for i, id in ipairs(targetIDs) do
+    local entity = self._world:GetEntityByID(id)
     local localPos = entity:GetGridPosition()
     local bodyAreaCpt = entity:BodyArea()
     local bodyArea = bodyAreaCpt:GetArea()
     local range = {}
-    if #bodyArea > 0 then
-      for i,v in ipairs(bodyArea) do
+    if 0 < #bodyArea then
+      for i, v in ipairs(bodyArea) do
         local pos = Vector2(v.x + localPos.x, v.y + localPos.y)
-        ;
-        (table.insert)(range, pos)
+        table.insert(range, pos)
       end
     else
-      do
-        ;
-        (table.insert)(range, localPos)
-        do
-          local canSummonPos = self:_RangeCanSummonTrap(trapID, range, stopSummonTrapType)
-          if canSummonPos then
-            (table.insert)(gridList, canSummonPos)
-          end
-          -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      table.insert(range, localPos)
+    end
+    local canSummonPos = self:_RangeCanSummonTrap(trapID, range, stopSummonTrapType)
+    if canSummonPos then
+      table.insert(gridList, canSummonPos)
     end
   end
   local retList = {}
-  for i,pos in ipairs(gridList) do
+  for i, pos in ipairs(gridList) do
     local result = SkillSummonTrapEffectResult:New(trapID, pos, param:IsTransferDisabled(), param:GetSkillEffectDamageStageIndex())
-    ;
-    (table.insert)(retList, result)
+    table.insert(retList, result)
   end
   return retList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrap.SummonTrapByRange = function(self, skillEffectCalcParam)
-  -- function num : 0_11 , upvalues : _ENV
+function SkillEffectCalc_SummonTrap:SummonTrapByRange(skillEffectCalcParam)
   local targetIDs = skillEffectCalcParam:GetTargetEntityIDs()
   local param = skillEffectCalcParam:GetSkillEffectParam()
   local range = skillEffectCalcParam:GetSkillRange()
@@ -366,109 +296,92 @@ SkillEffectCalc_SummonTrap.SummonTrapByRange = function(self, skillEffectCalcPar
   local trapID = param:GetTrapID()
   local gridList = {}
   if not targetIDs or targetIDs[1] == -1 then
-    return 
+    return
   end
-  for _,pos in ipairs(range) do
+  for _, pos in ipairs(range) do
     local canSummon = self:IsPosCanSummonTrap(pos, trapID, stopSummonTrapType)
     if canSummon then
-      (table.insert)(gridList, pos)
+      table.insert(gridList, pos)
     end
   end
   local retList = {}
-  for _,pos in ipairs(gridList) do
+  for _, pos in ipairs(gridList) do
     local result = SkillSummonTrapEffectResult:New(trapID, pos, param:IsTransferDisabled(), param:GetSkillEffectDamageStageIndex())
-    ;
-    (table.insert)(retList, result)
+    table.insert(retList, result)
   end
   return retList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrap.SummonTrapByRandomRangeWithBlock = function(self, skillEffectCalcParam)
-  -- function num : 0_12 , upvalues : _ENV
+function SkillEffectCalc_SummonTrap:SummonTrapByRandomRangeWithBlock(skillEffectCalcParam)
   local targetIDs = skillEffectCalcParam:GetTargetEntityIDs()
   local param = skillEffectCalcParam:GetSkillEffectParam()
   local range = skillEffectCalcParam:GetSkillRange()
   local randomCount = param:GetRandomCount()
   if param:GetRangeM() then
-    randomCount = (math.floor)(#range / param:GetRangeM())
+    randomCount = math.floor(#range / param:GetRangeM())
   end
   local trapID = param:GetTrapID()
   local gridList = {}
   if not targetIDs or targetIDs[1] == -1 then
-    return 
+    return
   end
   local tmpRange = {}
-  for index,pos in ipairs(range) do
+  for index, pos in ipairs(range) do
     tmpRange[index] = pos
   end
   local block = param:GetBlock()
-  local randomSvc = (self._world):GetService("RandomLogic")
-  while #tmpRange > 0 and randomCount ~= 0 do
+  local randomSvc = self._world:GetService("RandomLogic")
+  while 0 < #tmpRange and randomCount ~= 0 do
     local index = randomSvc:LogicRand(1, #tmpRange)
     local pos = tmpRange[index]
-    ;
-    (table.remove)(tmpRange, index)
-    local trapSvc = (self._world):GetService("TrapLogic")
+    table.remove(tmpRange, index)
+    local trapSvc = self._world:GetService("TrapLogic")
     if block == 0 or trapSvc:CanSummonTrapOnPos(pos, trapID) then
-      (table.insert)(gridList, pos)
+      table.insert(gridList, pos)
       randomCount = randomCount - 1
     end
   end
-  do
-    local retList = {}
-    for _,pos in ipairs(gridList) do
-      local result = SkillSummonTrapEffectResult:New(trapID, pos, param:IsTransferDisabled(), param:GetSkillEffectDamageStageIndex())
-      ;
-      (table.insert)(retList, result)
-    end
-    return retList
+  local retList = {}
+  for _, pos in ipairs(gridList) do
+    local result = SkillSummonTrapEffectResult:New(trapID, pos, param:IsTransferDisabled(), param:GetSkillEffectDamageStageIndex())
+    table.insert(retList, result)
   end
+  return retList
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrap.SummonTrapByRandomRange = function(self, skillEffectCalcParam)
-  -- function num : 0_13 , upvalues : _ENV
+function SkillEffectCalc_SummonTrap:SummonTrapByRandomRange(skillEffectCalcParam)
   local targetIDs = skillEffectCalcParam:GetTargetEntityIDs()
   local param = skillEffectCalcParam:GetSkillEffectParam()
   local range = skillEffectCalcParam:GetSkillRange()
   local stopSummonTrapType = param:GetStopSummonTrapType()
   local randomCount = param:GetRandomCount()
   if param:GetRangeM() then
-    randomCount = (math.floor)(#range / param:GetRangeM())
+    randomCount = math.floor(#range / param:GetRangeM())
   end
   local trapID = param:GetTrapID()
   local gridList = {}
   if not targetIDs or targetIDs[1] == -1 then
-    return 
+    return
   end
   local tmpRange = {}
-  for index,pos in ipairs(range) do
+  for index, pos in ipairs(range) do
     tmpRange[index] = pos
   end
-  local randomSvc = (self._world):GetService("RandomLogic")
-  while #tmpRange > 0 and randomCount ~= 0 do
+  local randomSvc = self._world:GetService("RandomLogic")
+  while 0 < #tmpRange and randomCount ~= 0 do
     local index = randomSvc:LogicRand(1, #tmpRange)
     local pos = tmpRange[index]
-    ;
-    (table.remove)(tmpRange, index)
+    table.remove(tmpRange, index)
     local bCan = self:IsPosCanSummonTrap(pos, trapID, stopSummonTrapType)
     if bCan then
-      (table.insert)(gridList, pos)
+      table.insert(gridList, pos)
       randomCount = randomCount - 1
     end
   end
-  do
-    local retList = {}
-    for _,pos in ipairs(gridList) do
-      local result = SkillSummonTrapEffectResult:New(trapID, pos, param:IsTransferDisabled(), param:GetSkillEffectDamageStageIndex())
-      ;
-      (table.insert)(retList, result)
-    end
-    return retList
+  local retList = {}
+  for _, pos in ipairs(gridList) do
+    local result = SkillSummonTrapEffectResult:New(trapID, pos, param:IsTransferDisabled(), param:GetSkillEffectDamageStageIndex())
+    table.insert(retList, result)
   end
+  return retList
 end
-
-

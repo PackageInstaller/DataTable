@@ -1,29 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/edit/ui_n22_medal_edit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22MedalEdit", UIController)
 UIN22MedalEdit = UIN22MedalEdit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22MedalEdit.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mMedal = (GameGlobal.GetModule)(MedalModule)
-  self.data = (self.mMedal):GetN22MedalEditData()
-  ;
-  (self.data):Init()
+function UIN22MedalEdit:Constructor()
+  self.mMedal = GameGlobal.GetModule(MedalModule)
+  self.data = self.mMedal:GetN22MedalEditData()
+  self.data:Init()
   self.filter = 0
   self.curDragPosition = Vector2.zero
   self.whBoard = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN22MedalEdit:OnShow(uiParams)
   self:AttachEvent(GameEventType.OnMedalGroupApply, self.SetBoardAndMedalList)
-  self.camera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIN22MedalEdit")
+  self.camera = GameGlobal.UIStateManager():GetControllerCamera("UIN22MedalEdit")
   local isOpenInHomeland = false
   if uiParams[1] then
     isOpenInHomeland = uiParams[1]
@@ -34,190 +23,126 @@ UIN22MedalEdit.OnShow = function(self, uiParams)
   self.anim = self:GetUIComponent("Animation", "SafeArea")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
-    if (self.data):IsDirty() then
-      (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_medal_edit_close_hint"), function()
-      -- function num : 0_1_0_0 , upvalues : self
-      self:CloseDialog()
-    end
-, nil, function()
-      -- function num : 0_1_0_1
-    end
-, nil)
+  self._backBtns:SetData(function()
+    if self.data:IsDirty() then
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_medal_edit_close_hint"), function()
+        self:CloseDialog()
+      end, nil, function()
+      end, nil)
     else
       self:CloseDialog()
     end
-  end
-, nil, nil, isOpenInHomeland)
+  end, nil, nil, isOpenInHomeland)
   self.ImgRotate = self:GetGameObject("ImgRotate")
   self.ImgTakeIn = self:GetGameObject("ImgTakeIn")
   self.ImgClear = self:GetGameObject("ImgClear")
   self.ImgSave = self:GetGameObject("ImgSave")
   self.imgBoard = self:GetUIComponent("RawImageLoader", "imgBoard")
   self.rtBoard = self:GetUIComponent("RectTransform", "imgBoard")
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.whBoard).x = ((self.rtBoard).rect).width
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.whBoard).y = ((self.rtBoard).rect).height
+  self.whBoard.x = self.rtBoard.rect.width
+  self.whBoard.y = self.rtBoard.rect.height
   self.poolBoard = self:GetUIComponent("UISelectObjectPath", "poolBoard")
   self.txtFilter = self:GetUIComponent("UILocalizationText", "txtFilter")
   self._sr = self:GetUIComponent("ScrollRect", "sv")
   self._svHelper = H3DScrollViewHelper:New(self, "sv", "UIN22MedalEditItem", function(index, ui)
-    -- function num : 0_1_1 , upvalues : self
-    local item = (self.list)[index]
+    local item = self.list[index]
     ui:Flush(item)
     return ui
-  end
-, nil, nil)
-  ;
-  (self._svHelper):SetCalcScale(false)
-  ;
-  (self._svHelper):SetEndSnappingCallback(nil)
-  ;
-  (self._svHelper):SetItemPassSnapPosCallback(nil)
+  end, nil, nil)
+  self._svHelper:SetCalcScale(false)
+  self._svHelper:SetEndSnappingCallback(nil)
+  self._svHelper:SetItemPassSnapPosCallback(nil)
   self.goList = self:GetGameObject("goList")
   self:SetCurBoardMedalId(0)
   self:FlushBoard()
   self:FlushList()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgBoard):DestoryLastImage()
+function UIN22MedalEdit:OnHide()
+  self.imgBoard:DestoryLastImage()
   if self._closeCallback then
-    (self._closeCallback)()
+    self._closeCallback()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.FlushBoard = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if not self._groupSaveBoard then
-    local curBoardId = (self.data):GetBoardId()
-  end
-  local boardIconHD = (UIN22MedalEdit.GetMedalBoardBgHd)(curBoardId)
-  ;
-  (self.imgBoard):LoadImage(boardIconHD)
-  local len = (table.count)((self.data).boardMedals)
-  ;
-  (self.poolBoard):SpawnObjects("UIN22MedalEditBoardItem", len)
-  local uis = (self.poolBoard):GetAllSpawnList()
-  for i,boardMedal in ipairs((self.data).boardMedals) do
+function UIN22MedalEdit:FlushBoard()
+  local curBoardId = self._groupSaveBoard or self.data:GetBoardId()
+  local boardIconHD = UIN22MedalEdit.GetMedalBoardBgHd(curBoardId)
+  self.imgBoard:LoadImage(boardIconHD)
+  local len = table.count(self.data.boardMedals)
+  self.poolBoard:SpawnObjects("UIN22MedalEditBoardItem", len)
+  local uis = self.poolBoard:GetAllSpawnList()
+  for i, boardMedal in ipairs(self.data.boardMedals) do
     local ui = uis[i]
     ui:Flush(boardMedal.id, self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.FlushList = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN22MedalEdit:FlushList()
   self.listData = UIMedalListData:New()
-  local client_medal_info = (self.mMedal):GetMedalVec()
-  ;
-  (self.listData):Init(client_medal_info)
-  local filterData = (self.listData):GetFilterInfoById(self.filter)
+  local client_medal_info = self.mMedal:GetMedalVec()
+  self.listData:Init(client_medal_info)
+  local filterData = self.listData:GetFilterInfoById(self.filter)
   local name = filterData.Name
-  ;
-  (self.txtFilter):SetText((StringTable.Get)(name))
-  local listAll = (self.listData):GetItemsByFilter(self.filter)
+  self.txtFilter:SetText(StringTable.Get(name))
+  local listAll = self.listData:GetItemsByFilter(self.filter)
   self.list = {}
-  for _,item in ipairs(listAll) do
+  for _, item in ipairs(listAll) do
     if item:IsReceive() then
       local id = item:GetID()
-      local boardMedal = (self.data):GetBoardMedalById(id)
-    end
-    if boardMedal then
-      do
-        (table.insert)(self.list, item)
-        -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_STMT
-
+      local boardMedal = self.data:GetBoardMedalById(id)
+      if boardMedal then
+      else
+        table.insert(self.list, item)
       end
     end
   end
-  ;
-  (self._svHelper):Dispose()
-  ;
-  (self._svHelper):SetItemName("UIN22MedalEditItem")
-  ;
-  (self._svHelper):SetShowFunction(function(index, ui)
-    -- function num : 0_4_0 , upvalues : self
-    local item = (self.list)[index]
+  self._svHelper:Dispose()
+  self._svHelper:SetItemName("UIN22MedalEditItem")
+  self._svHelper:SetShowFunction(function(index, ui)
+    local item = self.list[index]
     local id = item:GetID()
     ui:Init(self.rtBoard, self)
     ui:Flush(item)
     return ui
-  end
-)
-  local len = (table.count)(self.list)
-  ;
-  (self._svHelper):Init(len, 0, Vector2(0, 0))
-  -- DECOMPILER ERROR at PC78: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._sr).horizontalNormalizedPosition = 0
+  end)
+  local len = table.count(self.list)
+  self._svHelper:Init(len, 0, Vector2(0, 0))
+  self._sr.horizontalNormalizedPosition = 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.FlushSelectBoarMedal = function(self, id)
-  -- function num : 0_5 , upvalues : _ENV
-  local uis = (self.poolBoard):GetAllSpawnList()
-  for j,ui2 in ipairs(uis) do
+function UIN22MedalEdit:FlushSelectBoarMedal(id)
+  local uis = self.poolBoard:GetAllSpawnList()
+  for j, ui2 in ipairs(uis) do
     ui2:FlushSelect(id)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.FlushSelectBoarMedalWithoutAnim = function(self, id)
-  -- function num : 0_6 , upvalues : _ENV
-  local uis = (self.poolBoard):GetAllSpawnList()
-  for j,ui2 in ipairs(uis) do
+function UIN22MedalEdit:FlushSelectBoarMedalWithoutAnim(id)
+  local uis = self.poolBoard:GetAllSpawnList()
+  for j, ui2 in ipairs(uis) do
     ui2:FlushSelectWithoutAnim(id)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.FlushRotateTakeInButton = function(self, isShow)
-  -- function num : 0_7
-  (self.ImgRotate):SetActive(isShow)
-  ;
-  (self.ImgTakeIn):SetActive(isShow)
+function UIN22MedalEdit:FlushRotateTakeInButton(isShow)
+  self.ImgRotate:SetActive(isShow)
+  self.ImgTakeIn:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.InsertMedal = function(self, id)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN22MedalEdit:InsertMedal(id)
   local bm = BoardMedal:New(id)
-  bm.index = (table.count)((self.data).boardMedals) + 1
+  bm.index = table.count(self.data.boardMedals) + 1
   bm.pos = Vector2.zero
   bm.quat = Quaternion.identity
   bm.wh = Vector2.one
-  ;
-  (table.insert)((self.data).boardMedals, bm)
+  table.insert(self.data.boardMedals, bm)
   self:FlushBoard()
   self:SetCurBoardMedalId(id)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.SetBoardAndMedalList = function(self, groupid, medallist, boardid)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.debug)("###[UIN22MedalEdit] SetBoardAndMedalList groupid:", groupid, "|boardid:", boardid)
+function UIN22MedalEdit:SetBoardAndMedalList(groupid, medallist, boardid)
+  Log.debug("###[UIN22MedalEdit] SetBoardAndMedalList groupid:", groupid, "|boardid:", boardid)
   if boardid then
     self._groupSaveBoard = boardid
   else
@@ -226,80 +151,61 @@ UIN22MedalEdit.SetBoardAndMedalList = function(self, groupid, medallist, boardid
   self:ChangeMedalList(medallist)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.ChangeMedalList = function(self, list)
-  -- function num : 0_10 , upvalues : _ENV
-  (table.clear)((self.data).boardMedals)
+function UIN22MedalEdit:ChangeMedalList(list)
+  table.clear(self.data.boardMedals)
   self:SetCurBoardMedalId(0)
-  for index,cfg in ipairs(list) do
+  for index, cfg in ipairs(list) do
     local id = cfg[1]
     local posx = cfg[2]
     local posy = cfg[3]
     local rot = cfg[4]
     local bm = BoardMedal:New(id)
-    bm.index = (table.count)((self.data).boardMedals) + 1
+    bm.index = table.count(self.data.boardMedals) + 1
     bm.pos = Vector2(posx, posy)
-    bm.quat = (Quaternion.Euler)(0, 0, rot)
+    bm.quat = Quaternion.Euler(0, 0, rot)
     bm.wh = Vector2.one
-    ;
-    (table.insert)((self.data).boardMedals, bm)
-    ;
-    (Log.debug)("###[UIN22MedalEdit] SetBoardAndMedalList medalid:", id)
+    table.insert(self.data.boardMedals, bm)
+    Log.debug("###[UIN22MedalEdit] SetBoardAndMedalList medalid:", id)
   end
-  ;
-  (self.data):FormatBoardMedalIndex()
+  self.data:FormatBoardMedalIndex()
   self:FlushBoard()
   self:FlushList()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.BoardItem2List = function(self, idList)
-  -- function num : 0_11 , upvalues : _ENV
-  if not idList or (table.count)(idList) <= 0 then
-    return 
+function UIN22MedalEdit:BoardItem2List(idList)
+  if not idList or table.count(idList) <= 0 then
+    return
   end
-  for _,id in ipairs(idList) do
-    local boardMedal = (self.data):GetBoardMedalById(id)
-    ;
-    (table.removev)((self.data).boardMedals, boardMedal)
+  for _, id in ipairs(idList) do
+    local boardMedal = self.data:GetBoardMedalById(id)
+    table.removev(self.data.boardMedals, boardMedal)
     if id == self.curBoardMedalId then
       self:SetCurBoardMedalId(0)
     end
   end
-  ;
-  (self.data):FormatBoardMedalIndex()
+  self.data:FormatBoardMedalIndex()
   self:FlushBoard()
   self:FlushList()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.ClampBoardMedalUI = function(self, id)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN22MedalEdit:ClampBoardMedalUI(id)
   if self:IsBoardMedalOutOfBoard(id) then
     self:BoardItem2List({id})
+  elseif self:IsBoardInvolveBoardMedal(id) then
   else
-  end
-  if self:IsBoardInvolveBoardMedal(id) then
-    local aabbBoard = (UIN22MedalEdit.GetAABBOfRectTransform)(self.rtBoard)
+    local aabbBoard = UIN22MedalEdit.GetAABBOfRectTransform(self.rtBoard)
     local uiBoardMedal = self:GetBoardMedalById(id)
     local aabbBoardMedal = uiBoardMedal:AABB()
     local v2Offset = Vector2.zero
-    if (aabbBoardMedal.min).x < (aabbBoard.min).x then
-      v2Offset.x = (aabbBoard.min).x - (aabbBoardMedal.min).x
-    else
-      if (aabbBoard.max).x < (aabbBoardMedal.max).x then
-        v2Offset.x = (aabbBoard.max).x - (aabbBoardMedal.max).x
-      end
+    if aabbBoardMedal.min.x < aabbBoard.min.x then
+      v2Offset.x = aabbBoard.min.x - aabbBoardMedal.min.x
+    elseif aabbBoardMedal.max.x > aabbBoard.max.x then
+      v2Offset.x = aabbBoard.max.x - aabbBoardMedal.max.x
     end
-    if (aabbBoardMedal.min).y < (aabbBoard.min).y then
-      v2Offset.y = (aabbBoard.min).y - (aabbBoardMedal.min).y
-    else
-      if (aabbBoard.max).y < (aabbBoardMedal.max).y then
-        v2Offset.y = (aabbBoard.max).y - (aabbBoardMedal.max).y
-      end
+    if aabbBoardMedal.min.y < aabbBoard.min.y then
+      v2Offset.y = aabbBoard.min.y - aabbBoardMedal.min.y
+    elseif aabbBoardMedal.max.y > aabbBoard.max.y then
+      v2Offset.y = aabbBoard.max.y - aabbBoardMedal.max.y
     end
     local uiBoardMedal = self:GetBoardMedalById(id)
     local vector2TargetPos = uiBoardMedal:AnchoredPosition() + v2Offset
@@ -307,62 +213,51 @@ UIN22MedalEdit.ClampBoardMedalUI = function(self, id)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.GetAABBOfRectTransform = function(rt)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN22MedalEdit.GetAABBOfRectTransform(rt)
   local aabb = MedalAABB:New()
-  local halfW = (rt.rect).width * 0.5
-  local halfH = (rt.rect).height * 0.5
-  local verts = {rt.localRotation * Vector2(-halfW, -halfH) + rt.anchoredPosition, rt.localRotation * Vector2(-halfW, halfH) + rt.anchoredPosition, rt.localRotation * Vector2(halfW, halfH) + rt.anchoredPosition, rt.localRotation * Vector2(halfW, -halfH) + rt.anchoredPosition}
+  local halfW = rt.rect.width * 0.5
+  local halfH = rt.rect.height * 0.5
+  local verts = {
+    rt.localRotation * Vector2(-halfW, -halfH) + rt.anchoredPosition,
+    rt.localRotation * Vector2(-halfW, halfH) + rt.anchoredPosition,
+    rt.localRotation * Vector2(halfW, halfH) + rt.anchoredPosition,
+    rt.localRotation * Vector2(halfW, -halfH) + rt.anchoredPosition
+  }
   aabb:InitByPoints(verts)
   return aabb
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.IsBoardMedalOutOfBoard = function(self, id)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN22MedalEdit:IsBoardMedalOutOfBoard(id)
   local uiBoardMedal = self:GetBoardMedalById(id)
   local center = uiBoardMedal:AnchoredPosition()
-  local aabb = (UIN22MedalEdit.GetAABBOfRectTransform)(self.rtBoard)
+  local aabb = UIN22MedalEdit.GetAABBOfRectTransform(self.rtBoard)
   if aabb:ContainsPoint(center) then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.IsBoardInvolveBoardMedal = function(self, id)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN22MedalEdit:IsBoardInvolveBoardMedal(id)
   local uiBoardMedal = self:GetBoardMedalById(id)
-  local aabb = (UIN22MedalEdit.GetAABBOfRectTransform)(self.rtBoard)
+  local aabb = UIN22MedalEdit.GetAABBOfRectTransform(self.rtBoard)
   if aabb:InvolveAABB(uiBoardMedal:AABB()) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN22MedalEdit:OnUpdate(deltaTimeMS)
   if not self.isDraggingMedal then
-    return 
+    return
   end
   if not self.curBoardMedalUI then
-    (Log.warn)("### curBoardMedalUI nil. ")
-    return 
+    Log.warn("### curBoardMedalUI nil. ")
+    return
   end
-  ;
-  (self.curBoardMedalUI):FlushPos(self.curDragPosition)
+  self.curBoardMedalUI:FlushPos(self.curDragPosition)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.SetCurBoardMedalId = function(self, curBoardMedalId, curBoardMedalUI)
-  -- function num : 0_17
+function UIN22MedalEdit:SetCurBoardMedalId(curBoardMedalId, curBoardMedalUI)
   self.curBoardMedalId = curBoardMedalId
   if curBoardMedalUI then
     self.curBoardMedalUI = curBoardMedalUI
@@ -370,252 +265,171 @@ UIN22MedalEdit.SetCurBoardMedalId = function(self, curBoardMedalId, curBoardMeda
     self.curBoardMedalUI = self:GetBoardMedalById(curBoardMedalId)
   end
   self:FlushSelectBoarMedal(curBoardMedalId)
-  if curBoardMedalId and curBoardMedalId > 0 then
+  if curBoardMedalId and 0 < curBoardMedalId then
     self:FlushRotateTakeInButton(true)
   else
     self:FlushRotateTakeInButton(false)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.GetIsDraggingMedal = function(self)
-  -- function num : 0_18
+function UIN22MedalEdit:GetIsDraggingMedal()
   return self.isDraggingMedal
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.SetIsDraggingMedal = function(self, isDraggingMedal)
-  -- function num : 0_19
+function UIN22MedalEdit:SetIsDraggingMedal(isDraggingMedal)
   self.isDraggingMedal = isDraggingMedal
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._sr).enabled = not isDraggingMedal
+  self._sr.enabled = not isDraggingMedal
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.SetCurDragPosition = function(self, curDragPosition)
-  -- function num : 0_20
+function UIN22MedalEdit:SetCurDragPosition(curDragPosition)
   self.curDragPosition = curDragPosition
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.SetCurDragScreenPosition = function(self, posScreen)
-  -- function num : 0_21
+function UIN22MedalEdit:SetCurDragScreenPosition(posScreen)
   local posWorld = self:GetWorldPositionByScreenPosition(posScreen)
   local posLocal = self:GetLocalPositionByWorldPosition(posWorld)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.curDragPosition).x = posLocal.x
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.curDragPosition).y = posLocal.y
+  self.curDragPosition.x = posLocal.x
+  self.curDragPosition.y = posLocal.y
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.ImgRotateOnClick = function(self, go)
-  -- function num : 0_22
+function UIN22MedalEdit:ImgRotateOnClick(go)
   local ui = self:GetSelectBoardMedal()
   if ui then
     self:ShowDialog("UIN22MedalEditRotate", ui, self)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.ImgTakeInOnClick = function(self, go)
-  -- function num : 0_23
-  self:BoardItem2List({self.curBoardMedalId})
+function UIN22MedalEdit:ImgTakeInOnClick(go)
+  self:BoardItem2List({
+    self.curBoardMedalId
+  })
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.ImgClearOnClick = function(self, go)
-  -- function num : 0_24 , upvalues : _ENV
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_medal_clear_board_medal"), function()
-    -- function num : 0_24_0 , upvalues : _ENV, self
+function UIN22MedalEdit:ImgClearOnClick(go)
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_medal_clear_board_medal"), function()
     local t = {}
-    for index,boardMedal in ipairs((self.data).boardMedals) do
-      (table.insert)(t, boardMedal.id)
+    for index, boardMedal in ipairs(self.data.boardMedals) do
+      table.insert(t, boardMedal.id)
     end
     self:BoardItem2List(t)
-  end
-, nil, function()
-    -- function num : 0_24_1
-  end
-, nil)
+  end, nil, function()
+  end, nil)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.BoardExchange = function(self)
-  -- function num : 0_25
-  local placement_infoSer = (self.mMedal):GetPlacementInfo()
+function UIN22MedalEdit:BoardExchange()
+  local placement_infoSer = self.mMedal:GetPlacementInfo()
   if self._groupSaveBoard and placement_infoSer.board_back_id ~= self._groupSaveBoard then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.ImgSaveOnClick = function(self, go)
-  -- function num : 0_26 , upvalues : _ENV
-  if not (self.data):IsDirty() and not self:BoardExchange() then
-    return 
+function UIN22MedalEdit:ImgSaveOnClick(go)
+  if not self.data:IsDirty() and not self:BoardExchange() then
+    return
   end
-  local len = (table.count)((self.data).boardMedals)
-  local limit = (self.data):GetBoardMedalLimit()
-  if limit < len then
-    (ToastManager.ShowToast)((StringTable.Get)("str_medal_board_medal_limit_hint", limit))
-    return 
+  local len = table.count(self.data.boardMedals)
+  local limit = self.data:GetBoardMedalLimit()
+  if len > limit then
+    ToastManager.ShowToast(StringTable.Get("str_medal_board_medal_limit_hint", limit))
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_26_0 , upvalues : self, _ENV
     local key = "UIN22MedalEditImgSaveOnClick"
     self:Lock(key)
-    ;
-    (self.data):FormatBoardMedalIndex()
-    local placement_infoSer = (self.mMedal):GetPlacementInfo()
+    self.data:FormatBoardMedalIndex()
+    local placement_infoSer = self.mMedal:GetPlacementInfo()
     local placement_info = medal_placement_info:New()
-    if not self._groupSaveBoard then
-      placement_info.board_back_id = placement_infoSer.board_back_id
-      placement_info.medal_on_board = {}
-      for _,boardMedal in pairs((self.data).boardMedals) do
-        local medalUIData = medal_position:New()
-        medalUIData.x = (boardMedal.pos).x
-        medalUIData.y = (boardMedal.pos).y
-        medalUIData.z = boardMedal.index
-        medalUIData.w = (boardMedal.wh).x
-        medalUIData.h = (boardMedal.wh).y
-        medalUIData.quatx = (boardMedal.quat).x
-        medalUIData.quaty = (boardMedal.quat).y
-        medalUIData.quatz = (boardMedal.quat).z
-        medalUIData.quatw = (boardMedal.quat).w
-        -- DECOMPILER ERROR at PC57: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (placement_info.medal_on_board)[boardMedal.id] = medalUIData
-      end
-      local res = (self.mMedal):ReqSaveMedal(TT, placement_info)
-      if (N22MedalEditData.CheckCode)(res) then
-        (ToastManager.ShowToast)((StringTable.Get)("str_medal_save_board_medal"))
-        ;
-        (self.data):Init()
-        self:SetCurBoardMedalId(0)
-        self:FlushSelectBoarMedalWithoutAnim(0)
-        self:FlushBoard()
-        self:FlushList()
-      end
-      self:UnLock(key)
+    placement_info.board_back_id = self._groupSaveBoard or placement_infoSer.board_back_id
+    placement_info.medal_on_board = {}
+    for _, boardMedal in pairs(self.data.boardMedals) do
+      local medalUIData = medal_position:New()
+      medalUIData.x = boardMedal.pos.x
+      medalUIData.y = boardMedal.pos.y
+      medalUIData.z = boardMedal.index
+      medalUIData.w = boardMedal.wh.x
+      medalUIData.h = boardMedal.wh.y
+      medalUIData.quatx = boardMedal.quat.x
+      medalUIData.quaty = boardMedal.quat.y
+      medalUIData.quatz = boardMedal.quat.z
+      medalUIData.quatw = boardMedal.quat.w
+      placement_info.medal_on_board[boardMedal.id] = medalUIData
     end
-  end
-)
+    local res = self.mMedal:ReqSaveMedal(TT, placement_info)
+    if N22MedalEditData.CheckCode(res) then
+      ToastManager.ShowToast(StringTable.Get("str_medal_save_board_medal"))
+      self.data:Init()
+      self:SetCurBoardMedalId(0)
+      self:FlushSelectBoarMedalWithoutAnim(0)
+      self:FlushBoard()
+      self:FlushList()
+    end
+    self:UnLock(key)
+  end)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.ImgChangeOnClick = function(self, go)
-  -- function num : 0_27
-  local curBoardId = (self.data):GetBoardId()
+function UIN22MedalEdit:ImgChangeOnClick(go)
+  local curBoardId = self.data:GetBoardId()
   self:ShowDialog("UIN22MedalChangeBoard", curBoardId, function()
-    -- function num : 0_27_0 , upvalues : self
     self._groupSaveBoard = nil
     self:FlushBoard()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.ImgFilterOnClick = function(self, go)
-  -- function num : 0_28
-  (self.anim):Play("uieff_UIN22MedalEdit_in")
+function UIN22MedalEdit:ImgFilterOnClick(go)
+  self.anim:Play("uieff_UIN22MedalEdit_in")
   self:ShowDialog("UIN22MedalFilter", self.listData, self.filter, function(filter)
-    -- function num : 0_28_0 , upvalues : self
     self.filter = filter
     self:FlushList()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.GetSelectBoardMedal = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local uis = (self.poolBoard):GetAllSpawnList()
-  for index,ui in ipairs(uis) do
+function UIN22MedalEdit:GetSelectBoardMedal()
+  local uis = self.poolBoard:GetAllSpawnList()
+  for index, ui in ipairs(uis) do
     if ui:IsSelect() then
       return ui
     end
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.GetBoardMedalById = function(self, id)
-  -- function num : 0_30 , upvalues : _ENV
-  local uis = (self.poolBoard):GetAllSpawnList()
-  for index,ui in ipairs(uis) do
+function UIN22MedalEdit:GetBoardMedalById(id)
+  local uis = self.poolBoard:GetAllSpawnList()
+  for index, ui in ipairs(uis) do
     if ui:Id() == id then
       return ui
     end
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.GetWorldPositionByScreenPosition = function(self, posScreen)
-  -- function num : 0_31 , upvalues : _ENV
-  local posWorld = (UIHelper.ScreenPointToWorldPointInRectangle)(self.rtBoard, posScreen, self.camera)
+function UIN22MedalEdit:GetWorldPositionByScreenPosition(posScreen)
+  local posWorld = UIHelper.ScreenPointToWorldPointInRectangle(self.rtBoard, posScreen, self.camera)
   return posWorld
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.GetLocalPositionByWorldPosition = function(self, posWorld)
-  -- function num : 0_32
-  local posLocal = (self.rtBoard):InverseTransformPoint(posWorld)
+function UIN22MedalEdit:GetLocalPositionByWorldPosition(posWorld)
+  local posLocal = self.rtBoard:InverseTransformPoint(posWorld)
   return posLocal
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.GetBoardWidthHeight = function(self)
-  -- function num : 0_33
+function UIN22MedalEdit:GetBoardWidthHeight()
   return self.whBoard
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.GetMedalBoardBgHd = function(boardId)
-  -- function num : 0_34 , upvalues : _ENV
-  local cfgv = (Cfg.cfg_item_medal_board)[boardId]
+function UIN22MedalEdit.GetMedalBoardBgHd(boardId)
+  local cfgv = Cfg.cfg_item_medal_board[boardId]
   if cfgv then
     return cfgv.IconHD
   end
   return ""
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22MedalEdit.ApplyBtnOnClick = function(self, go)
-  -- function num : 0_35 , upvalues : _ENV
-  local all = (UIMedalGroupApply.GetAllCollectAnyGroup)()
+function UIN22MedalEdit:ApplyBtnOnClick(go)
+  local all = UIMedalGroupApply.GetAllCollectAnyGroup()
   if all and next(all) then
     self:ShowDialog("UIMedalGroupApply")
   else
-    local tips = (StringTable.Get)("str_medal_group_open_apply_fail")
-    ;
-    (ToastManager.ShowToast)(tips)
+    local tips = StringTable.Get("str_medal_group_open_apply_fail")
+    ToastManager.ShowToast(tips)
   end
 end
-
-

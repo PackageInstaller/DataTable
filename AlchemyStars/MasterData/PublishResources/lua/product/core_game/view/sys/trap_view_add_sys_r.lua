@@ -1,36 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/trap_view_add_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TrapViewAddSystem_Render", ReactiveSystem)
 TrapViewAddSystem_Render = TrapViewAddSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TrapViewAddSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function TrapViewAddSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapViewAddSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).View)
+function TrapViewAddSystem_Render:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.View)
   local c = Collector:New({group}, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapViewAddSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
+function TrapViewAddSystem_Render:Filter(entity)
   if not entity:HasTrapID() then
     return false
   end
   local trapIDCmpt = entity:TrapID()
   local trapID = trapIDCmpt:GetTrapID()
-  local cfg_trap = (Cfg.cfg_trap)[trapID]
+  local cfg_trap = Cfg.cfg_trap[trapID]
   local shaderEffect = cfg_trap.ShaderEffect
   if shaderEffect then
     return true
@@ -38,40 +25,30 @@ TrapViewAddSystem_Render.Filter = function(self, entity)
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapViewAddSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function TrapViewAddSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     self:OnTrapViewAdded(entities[i])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapViewAddSystem_Render.OnTrapViewAdded = function(self, trapEntity)
-  -- function num : 0_4 , upvalues : _ENV
-  local viewWrapper = (trapEntity:View()).ViewWrapper
-  local matAnimMonoCmpt = (viewWrapper.GameObject):GetComponent(typeof(MaterialAnimation))
+function TrapViewAddSystem_Render:OnTrapViewAdded(trapEntity)
+  local viewWrapper = trapEntity:View().ViewWrapper
+  local matAnimMonoCmpt = viewWrapper.GameObject:GetComponent(typeof(MaterialAnimation))
   if matAnimMonoCmpt then
-    ((UnityEngine.Object).Destroy)(matAnimMonoCmpt)
+    UnityEngine.Object.Destroy(matAnimMonoCmpt)
   end
-  matAnimMonoCmpt = (viewWrapper.GameObject):AddComponent(typeof(MaterialAnimation))
+  matAnimMonoCmpt = viewWrapper.GameObject:AddComponent(typeof(MaterialAnimation))
   trapEntity:RemoveMaterialAnimationComponent()
-  local resServ = ((self._world).BW_Services).ResourcesPool
-  local cfg_trap = (Cfg.cfg_trap)[(trapEntity:TrapRender()):GetTrapID()]
+  local resServ = self._world.BW_Services.ResourcesPool
+  local cfg_trap = Cfg.cfg_trap[trapEntity:TrapRender():GetTrapID()]
   local shaderEffect = cfg_trap.ShaderEffect
   if shaderEffect then
     local containerShaderEffect = resServ:LoadAsset(shaderEffect)
-    do
-      if not containerShaderEffect then
-        local respool = ((self._world).BW_Services).ResourcesPool
-        respool:CacheAsset(shaderEffect, 1)
-        containerShaderEffect = resServ:LoadAsset(shaderEffect)
-      end
-      trapEntity:AddMaterialAnimationComponent(containerShaderEffect, matAnimMonoCmpt)
+    if not containerShaderEffect then
+      local respool = self._world.BW_Services.ResourcesPool
+      respool:CacheAsset(shaderEffect, 1)
+      containerShaderEffect = resServ:LoadAsset(shaderEffect)
     end
+    trapEntity:AddMaterialAnimationComponent(containerShaderEffect, matAnimMonoCmpt)
   end
 end
-
-

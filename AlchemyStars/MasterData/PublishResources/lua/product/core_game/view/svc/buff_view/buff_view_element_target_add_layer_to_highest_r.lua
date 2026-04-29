@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_element_target_add_layer_to_highest_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewElementTargetAddLayerToHighest", BuffViewBase)
 BuffViewElementTargetAddLayerToHighest = BuffViewElementTargetAddLayerToHighest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewElementTargetAddLayerToHighest.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewElementTargetAddLayerToHighest:PlayView(TT)
   local result = self:GetBuffResult()
   local BuffResultAddLayerList = result:GetBuffResultAddLayerList()
-  for _,result in ipairs(BuffResultAddLayerList) do
+  for _, result in ipairs(BuffResultAddLayerList) do
     local result = result
     local curMarkLayer = result:GetLayer()
     local buffSeq = result:GetBuffSeq()
     local entityID = result:GetEntityID()
-    local entity = (self._world):GetEntityByID(entityID)
+    local entity = self._world:GetEntityByID(entityID)
     if entity then
       local buffView = entity:BuffView()
       local viewInstance = buffView:GetBuffViewInstance(buffSeq)
@@ -25,8 +18,5 @@ BuffViewElementTargetAddLayerToHighest.PlayView = function(self, TT)
       end
     end
   end
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
 end
-
-

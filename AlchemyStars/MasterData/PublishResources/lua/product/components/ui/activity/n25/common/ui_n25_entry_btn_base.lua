@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/common/ui_n25_entry_btn_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25EntryBtnBase", UICustomWidget)
 UIN25EntryBtnBase = UIN25EntryBtnBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25EntryBtnBase.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN25EntryBtnBase:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnBase.InitWidget = function(self)
-  -- function num : 0_1
+function UIN25EntryBtnBase:InitWidget()
   self.lockNode = self:GetGameObject("lockNode")
   self.txtLeftTime = self:GetUIComponent("RollingText", "txtLeftTime")
   self.red = self:GetGameObject("red")
@@ -23,58 +13,33 @@ UIN25EntryBtnBase.InitWidget = function(self)
   self.leftTime = self:GetGameObject("leftTime")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnBase.SetData = function(self, clickCall)
-  -- function num : 0_2
+function UIN25EntryBtnBase:SetData(clickCall)
   self.clickCallback = clickCall
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnBase.GetLeftTimeWiget = function(self)
-  -- function num : 0_3
+function UIN25EntryBtnBase:GetLeftTimeWiget()
   return self.txtLeftTime
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnBase.SetLeftTime = function(self, strTime)
-  -- function num : 0_4
-  (self.txtLeftTime):RefreshText(strTime)
+function UIN25EntryBtnBase:SetLeftTime(strTime)
+  self.txtLeftTime:RefreshText(strTime)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnBase.SetLeftTimeShow = function(self, show)
-  -- function num : 0_5
-  (self.leftTime):SetActive(show)
+function UIN25EntryBtnBase:SetLeftTimeShow(show)
+  self.leftTime:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnBase.SetLock = function(self, lock)
-  -- function num : 0_6
-  (self.lockNode):SetActive(lock)
+function UIN25EntryBtnBase:SetLock(lock)
+  self.lockNode:SetActive(lock)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnBase.SetNewAndRed = function(self, new, red)
-  -- function num : 0_7
-  (self.new):SetActive(new)
-  ;
-  (self.red):SetActive((not new and red))
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIN25EntryBtnBase:SetNewAndRed(new, red)
+  self.new:SetActive(new)
+  self.red:SetActive(not new and red)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnBase.ItemBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UIN25EntryBtnBase:ItemBtnOnClick(go)
   if self.clickCallback then
-    (self.clickCallback)()
+    self.clickCallback()
   end
 end
-
-

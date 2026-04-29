@@ -1,44 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_enter_build/aircraft_enter_sort_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircrafEnterSortData", Object)
 AircrafEnterSortData = AircrafEnterSortData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircrafEnterSortData.Constructor = function(self)
-  -- function num : 0_0
+function AircrafEnterSortData:Constructor()
   self._sortType = 0
   self._sortOrder = 0
   self._chooseType = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircrafEnterSortData.Init = function(self, sortType, sortOrder, chooseType)
-  -- function num : 0_1
+function AircrafEnterSortData:Init(sortType, sortOrder, chooseType)
   self._sortType = sortType
   self._sortOrder = sortOrder
   self:ChangeChooseType(chooseType, true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircrafEnterSortData.ChangeChooseType = function(self, chooseType)
-  -- function num : 0_2 , upvalues : _ENV
-  if (table.icontains)(self._chooseType, chooseType) then
-    (table.removev)(self._chooseType, chooseType)
-    if (table.count)(self._chooseType) == 0 then
-      (table.insert)(self._chooseType, AircraftEnterChooseType.None)
+function AircrafEnterSortData:ChangeChooseType(chooseType)
+  if table.icontains(self._chooseType, chooseType) then
+    table.removev(self._chooseType, chooseType)
+    if table.count(self._chooseType) == 0 then
+      table.insert(self._chooseType, AircraftEnterChooseType.None)
     end
   else
-    if (table.icontains)(self._chooseType, AircraftEnterChooseType.None) then
-      (table.removev)(self._chooseType, AircraftEnterChooseType.None)
+    if table.icontains(self._chooseType, AircraftEnterChooseType.None) then
+      table.removev(self._chooseType, AircraftEnterChooseType.None)
     end
-    ;
-    (table.insert)(self._chooseType, chooseType)
+    table.insert(self._chooseType, chooseType)
   end
 end
-
-

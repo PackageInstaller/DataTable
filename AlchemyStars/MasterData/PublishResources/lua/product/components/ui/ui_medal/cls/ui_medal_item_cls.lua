@@ -1,154 +1,105 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/cls/ui_medal_item_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalItemData", Object)
 UIMedalItemData = UIMedalItemData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalItemData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMedalItemData:Constructor()
   self._template = nil
   self._tplItem = nil
   self.data = nil
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
+  self.itemModule = GameGlobal.GetModule(ItemModule)
   self._itemPstId = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalItemData.Init = function(self, medal)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMedalItemData:Init(medal)
   self.data = medal
-  self._template = (Cfg.cfg_item_medal)[(self.data).medal_id]
-  self._tplItem = (Cfg.cfg_item)[(self.data).medal_id]
+  self._template = Cfg.cfg_item_medal[self.data.medal_id]
+  self._tplItem = Cfg.cfg_item[self.data.medal_id]
   if not self._template then
-    (Log.error)("[UIMedalItemData] can\'t find cfg_item_medal with id = " .. (self.data).medal_id)
+    Log.error("[UIMedalItemData] can't find cfg_item_medal with id = " .. self.data.medal_id)
   end
   if self:IsReceive() then
     if GameSingle then
-      self._itemPstId = (self.data).medal_id
+      self._itemPstId = self.data.medal_id
     end
-    local items = (self.itemModule):GetItemByTempId((self.data).medal_id)
-    if items and (table.count)(items) > 0 then
-      for key,value in pairs(items) do
+    local items = self.itemModule:GetItemByTempId(self.data.medal_id)
+    if items and table.count(items) > 0 then
+      for key, value in pairs(items) do
         self._itemPstId = key
-        do break end
+        break
       end
     end
   else
-    do
-      self._itemPstId = nil
-    end
+    self._itemPstId = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalItemData.GetPstId = function(self)
-  -- function num : 0_2
+function UIMedalItemData:GetPstId()
   return self._itemPstId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalItemData.GetID = function(self)
-  -- function num : 0_3
+function UIMedalItemData:GetID()
   if self.data then
-    return (self.data).medal_id
+    return self.data.medal_id
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalItemData.GetTemplID = function(self)
-  -- function num : 0_4
+function UIMedalItemData:GetTemplID()
   if self._template then
-    return (self._template).ID
+    return self._template.ID
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalItemData.GetTempl = function(self)
-  -- function num : 0_5
+function UIMedalItemData:GetTempl()
   return self._template
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalItemData.GetTemplateItem = function(self)
-  -- function num : 0_6
+function UIMedalItemData:GetTemplateItem()
   return self._tplItem
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalItemData.GetIconItem = function(self)
-  -- function num : 0_7
+function UIMedalItemData:GetIconItem()
   local cfgv = self:GetTemplateItem()
   return cfgv.Icon
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalItemData.IsNew = function(self)
-  -- function num : 0_8
+function UIMedalItemData:IsNew()
   if not self:IsReceive() then
     return false
   end
-  if not (self._tplItem).ShowNew or (self._tplItem).ShowNew ~= 1 then
+  if not self._tplItem.ShowNew or self._tplItem.ShowNew ~= 1 then
     return false
   end
-  local item = (self.itemModule):FindItem(self._itemPstId)
+  local item = self.itemModule:FindItem(self._itemPstId)
   if not item then
     return false
   end
   return item:IsNew()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalItemData.IsReceive = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  do return (self.data).status == RewardStatus.E_MEDAL_REWARD_RECVED end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIMedalItemData:IsReceive()
+  return self.data.status == RewardStatus.E_MEDAL_REWARD_RECVED
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalItemData.IsFunctionLock = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  do return (self.data).status == RewardStatus.E_MEDAL_REWARD_FUNCTION_LOCK end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIMedalItemData:IsFunctionLock()
+  return self.data.status == RewardStatus.E_MEDAL_REWARD_FUNCTION_LOCK
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalItemData.GetStatus = function(self)
-  -- function num : 0_11
-  return (self.data).status
+function UIMedalItemData:GetStatus()
+  return self.data.status
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalItemData.GetProgress = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIMedalItemData:GetProgress()
   local progress = 0
   local curInfo = ""
   local totalInfo = ""
   local molecule = 0
   local denominator = 0
-  molecule = (self.data).cur_progress
-  denominator = (self.data).total_progress
-  curInfo = (self.data).cur_progress
-  totalInfo = (self.data).total_progress
-  if denominator > 0 then
-    progress = (math.min)(1, molecule / denominator)
+  molecule = self.data.cur_progress
+  denominator = self.data.total_progress
+  curInfo = self.data.cur_progress
+  totalInfo = self.data.total_progress
+  if 0 < denominator then
+    progress = math.min(1, molecule / denominator)
   end
   return progress, curInfo, totalInfo
 end
-
-

@@ -1,62 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/activity/ui_cn7_n36_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN7N36MainController", UIController)
 UICN7N36MainController = UICN7N36MainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN7N36MainController.Constructor = function(self)
-  -- function num : 0_0
+function UICN7N36MainController:Constructor()
   self._componentState = {}
   self._button = {}
   self._showSpine = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN7N36MainController:LoadDataOnEnter(TT, res, uiParams)
   self._loginModule = self:GetModule(LoginModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_INLAND_N7, ECampaignCN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN, ECampaignCN7ComponentID.ECAMPAIGN_N7_POWER2ITEM, ECampaignCN7ComponentID.ECAMPAIGN_N7_LINE_MISSION, ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY, ECampaignCN7ComponentID.ECAMPAIGN_N7_SHARED, ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST, ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_INLAND_N7, ECampaignCN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN, ECampaignCN7ComponentID.ECAMPAIGN_N7_POWER2ITEM, ECampaignCN7ComponentID.ECAMPAIGN_N7_LINE_MISSION, ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY, ECampaignCN7ComponentID.ECAMPAIGN_N7_SHARED, ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST, ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  self._cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
-  self._line_componentInfo = (self._campaign):GetComponentInfo(ECampaignCN7ComponentID.ECAMPAIGN_N7_LINE_MISSION)
-  self._game_componentInfo = (self._campaign):GetComponentInfo(ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST)
-  self._game_component = (self._campaign):GetComponent(ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST)
+  self._cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
+  self._line_componentInfo = self._campaign:GetComponentInfo(ECampaignCN7ComponentID.ECAMPAIGN_N7_LINE_MISSION)
+  self._game_componentInfo = self._campaign:GetComponentInfo(ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST)
+  self._game_component = self._campaign:GetComponent(ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST)
   self._battlePassCampaign = UIActivityCampaign:New()
-  ;
-  (self._battlePassCampaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+  self._battlePassCampaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._battlePassCampaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._battlePassCampaign._id, nil, nil)
+    return
   end
-  self._localProcess = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_INLAND_N7)
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  self._localProcess = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_INLAND_N7)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   self.pstid = roleModule:GetPstId()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._GetComponentState = function(self, componentid)
-  -- function num : 0_2
-  return (self._campaign):CheckComponentOpen(componentid)
+function UICN7N36MainController:_GetComponentState(componentid)
+  return self._campaign:CheckComponentOpen(componentid)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN7N36MainController:OnShow(uiParams)
   self._isOpen = true
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
   self:AttachEvent(GameEventType.ItemCountChanged, self._OnItemCountChanged)
@@ -67,38 +48,26 @@ UICN7N36MainController.OnShow = function(self, uiParams)
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN7N36MainController:OnHide()
   self._isOpen = false
-  self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+  self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
   if self._clearNewTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._clearNewTask)
+    GameGlobal.TaskManager():KillTask(self._clearNewTask)
     self._clearNewTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.AfterUILayerChanged = function(self)
-  -- function num : 0_5
+function UICN7N36MainController:AfterUILayerChanged()
   self:_RefreshComponentState()
   self:_RefreshButtonState()
   self:_CheckRedPointAll()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._CheckCampaignClose = function(self)
-  -- function num : 0_6
-  return not (self._campaign):CheckCampaignOpen()
+function UICN7N36MainController:_CheckCampaignClose()
+  return not self._campaign:CheckCampaignOpen()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._GetComponents = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UICN7N36MainController:_GetComponents()
   self:InitTopButton()
   self._remainTime = self:GetUIComponent("UILocalizationText", "RemainTime")
   self._moneyValue = self:GetUIComponent("UILocalizationText", "MoneyValue")
@@ -107,14 +76,8 @@ UICN7N36MainController._GetComponents = function(self)
   self._battlePassBtnRedPoint = self:GetGameObject("BattlePassBtnRedPoint")
   self._gameRedPoint = self:GetGameObject("GameRedPoint")
   self._activityIntroBtn = self:GetGameObject("ActivityIntroBtn")
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._button)[ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY] = self:GetUIComponent("Button", "ShopBtn")
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._button)[ECampaignCN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN] = self:GetUIComponent("Button", "LoginAwardBtn")
+  self._button[ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY] = self:GetUIComponent("Button", "ShopBtn")
+  self._button[ECampaignCN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN] = self:GetUIComponent("Button", "LoginAwardBtn")
   self._atlas = self:GetAsset("XiaoLinJia.spriteatlas", LoadType.SpriteAtlas)
   self._animation = self:GetUIComponent("Animation", "Animation")
   self._lineNew = self:GetGameObject("LineNew")
@@ -132,255 +95,156 @@ UICN7N36MainController._GetComponents = function(self)
   self._visitTxt = self:GetUIComponent("UILocalizationText", "VisitTxt")
   self._visitIcon = self:GetUIComponent("Image", "VisitIcon")
   self.StateObj = {}
-  -- DECOMPILER ERROR at PC123: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.StateObj).endObj = self._endObj
-  -- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.StateObj).unlockObj = self._unlockObj
-  -- DECOMPILER ERROR at PC129: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.StateObj).comingObj = self._comingObj
-  -- DECOMPILER ERROR at PC132: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.StateObj).lockObj = self._lockObj
-  -- DECOMPILER ERROR at PC135: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.StateObj).photoObj = self._photoObj
-  -- DECOMPILER ERROR at PC138: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.StateObj).visitObj = self._visitObj
+  self.StateObj.endObj = self._endObj
+  self.StateObj.unlockObj = self._unlockObj
+  self.StateObj.comingObj = self._comingObj
+  self.StateObj.lockObj = self._lockObj
+  self.StateObj.photoObj = self._photoObj
+  self.StateObj.visitObj = self._visitObj
   self:CheckNew()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.CheckNew = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UICN7N36MainController:CheckNew()
   local save_key1 = self.pstid .. "UICN7N36MainLobbyEntry_LineNew"
   local save_key2 = self.pstid .. "UICN7N36MainLobbyEntry_ShopNew"
   local save_key3 = self.pstid .. "UICN7N36MainLobbyEntry_GamesNew"
   local lineOpen = self:_GetComponentState(ECampaignCN7ComponentID.ECAMPAIGN_N7_LINE_MISSION)
   local gameOpen = self:_GetComponentState(ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST)
-  if (LocalDB.HasKey)(save_key1) then
-    (self._lineNew):SetActive(false)
-  else
-    if lineOpen then
-      (self._lineNew):SetActive(true)
-    end
+  if LocalDB.HasKey(save_key1) then
+    self._lineNew:SetActive(false)
+  elseif lineOpen then
+    self._lineNew:SetActive(true)
   end
-  if (LocalDB.HasKey)(save_key2) then
-    (self._shopNew):SetActive(false)
+  if LocalDB.HasKey(save_key2) then
+    self._shopNew:SetActive(false)
   else
-    ;
-    (self._shopNew):SetActive(true)
+    self._shopNew:SetActive(true)
   end
-  if (LocalDB.HasKey)(save_key3) then
-    (self._gameNew):SetActive(false)
-  else
-    if gameOpen then
-      (self._gameNew):SetActive(true)
-    end
+  if LocalDB.HasKey(save_key3) then
+    self._gameNew:SetActive(false)
+  elseif gameOpen then
+    self._gameNew:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.InitTopButton = function(self)
-  -- function num : 0_9
+function UICN7N36MainController:InitTopButton()
   self._SafeArea = self:GetGameObject("SafeArea")
   local btns = self:GetUIComponent("UISelectObjectPath", "BackBtn")
   self._backBtn = btns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_9_0 , upvalues : self
+  self._backBtn:SetData(function()
     self:_Close()
-  end
-, nil, nil, false, function()
-    -- function num : 0_9_1 , upvalues : self
+  end, nil, nil, false, function()
     self:HideBtnOnClick()
-  end
-, nil, nil)
+  end, nil, nil)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.HideBtnOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UICN7N36MainController:HideBtnOnClick()
   local lockName = "UICN7N36MainController:AnimHide"
   self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UICN7N36MainController_hide")
+    self._animation:Play("uieff_UICN7N36MainController_hide")
     YIELD(TT, 600)
     self:UnLock(lockName)
     self.hide = true
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._OnValue = function(self)
-  -- function num : 0_11
+function UICN7N36MainController:_OnValue()
   self:_RefreshMoney()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._OnItemCountChanged = function(self)
-  -- function num : 0_12
+function UICN7N36MainController:_OnItemCountChanged()
   self:_RefreshMoney()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._RefreshMoney = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UICN7N36MainController:_RefreshMoney()
   if self._campaign then
-    local lotteryComponentInfo = (self._campaign):GetComponentInfo(ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY)
+    local lotteryComponentInfo = self._campaign:GetComponentInfo(ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY)
     if lotteryComponentInfo then
-      local curCount = (ClientCampaignDrawShop.GetMoney)(lotteryComponentInfo.m_cost_item_id)
-      ;
-      (self._moneyValue):SetText(curCount)
+      local curCount = ClientCampaignDrawShop.GetMoney(lotteryComponentInfo.m_cost_item_id)
+      self._moneyValue:SetText(curCount)
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._RefreshComponentState = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._componentState)[ECampaignCN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN] = self:_GetComponentState(ECampaignCN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._componentState)[ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY] = self:_GetComponentState(ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._componentState)[ECampaignCN7ComponentID.ECAMPAIGN_N7_LINE_MISSION] = self:_GetComponentState(ECampaignCN7ComponentID.ECAMPAIGN_N7_LINE_MISSION)
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._componentState)[ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST] = self:_GetComponentState(ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST)
+function UICN7N36MainController:_RefreshComponentState()
+  self._componentState[ECampaignCN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN] = self:_GetComponentState(ECampaignCN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN)
+  self._componentState[ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY] = self:_GetComponentState(ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY)
+  self._componentState[ECampaignCN7ComponentID.ECAMPAIGN_N7_LINE_MISSION] = self:_GetComponentState(ECampaignCN7ComponentID.ECAMPAIGN_N7_LINE_MISSION)
+  self._componentState[ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST] = self:_GetComponentState(ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._RefreshButtonState = function(self)
-  -- function num : 0_15
+function UICN7N36MainController:_RefreshButtonState()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._CheckRedPointAll = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  (self._shopRedPoint):SetActive((self._localProcess):ShopRedPoint())
-  ;
-  (self._loginAwardRedPoint):SetActive((self._localProcess):AccumulateLoginReddot())
-  ;
-  (self._battlePassBtnRedPoint):SetActive((self._localProcess):BattlePassRedPoint(self._battlePassCampaign))
-  local questHasRed = (self._campaign):CheckComponentRed(ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST)
-  ;
-  (self._gameRedPoint):SetActive(questHasRed)
+function UICN7N36MainController:_CheckRedPointAll()
+  self._shopRedPoint:SetActive(self._localProcess:ShopRedPoint())
+  self._loginAwardRedPoint:SetActive(self._localProcess:AccumulateLoginReddot())
+  self._battlePassBtnRedPoint:SetActive(self._localProcess:BattlePassRedPoint(self._battlePassCampaign))
+  local questHasRed = self._campaign:CheckComponentRed(ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST)
+  self._gameRedPoint:SetActive(questHasRed)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._Close = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UICN7N36MainController:_Close()
   self:SwitchState(UIStateType.UIMain)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._ShowActivityIntro = function(self, show)
-  -- function num : 0_18
-  (self._activityIntroBtn):SetActive(show)
+function UICN7N36MainController:_ShowActivityIntro(show)
+  self._activityIntroBtn:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._SetRemainTime = function(self, pre_remaining, remaintime)
-  -- function num : 0_19
-  (self._remainTime):SetText(pre_remaining .. self:_GetRemainTime(remaintime))
+function UICN7N36MainController:_SetRemainTime(pre_remaining, remaintime)
+  self._remainTime:SetText(pre_remaining .. self:_GetRemainTime(remaintime))
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._SetTimer = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  self._timeEvent = (UIActivityHelper.StartTimerEvent)(self._timeEvent, function()
-    -- function num : 0_20_0 , upvalues : self
+function UICN7N36MainController:_SetTimer()
+  self._timeEvent = UIActivityHelper.StartTimerEvent(self._timeEvent, function()
     return self:_SetRemainingTimer()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._SetRemainingTimer = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UICN7N36MainController:_SetRemainingTimer()
   if not self._isOpen then
-    return 
+    return
   end
   local remaintime = 0
-  local curtime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  local sample = (self._campaign):GetSample()
+  local curtime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  local sample = self._campaign:GetSample()
   if not sample then
-    (self._endObj):SetActive(true)
-    ;
-    (self._lIneEndMaskObj):SetActive(true)
-    ;
-    (self._remainTime):SetText((StringTable.Get)("str_activity_finished"))
-    self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+    self._endObj:SetActive(true)
+    self._lIneEndMaskObj:SetActive(true)
+    self._remainTime:SetText(StringTable.Get("str_activity_finished"))
+    self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
     return true
   end
   local endtime = sample.end_time
   if self._line_componentInfo then
-    remaintime = (self._line_componentInfo).m_close_time - curtime
+    remaintime = self._line_componentInfo.m_close_time - curtime
   end
-  self:_ShowActivityIntro(endtime - curtime > 0)
+  self:_ShowActivityIntro(0 < endtime - curtime)
   local pre_remaining = ""
-  if remaintime > 0 then
-    pre_remaining = (StringTable.Get)("str_activity_drop_time")
+  if 0 < remaintime then
+    pre_remaining = StringTable.Get("str_activity_drop_time")
   else
-    local sample = (self._campaign):GetSample()
+    local sample = self._campaign:GetSample()
     remaintime = sample and sample.end_time - curtime or 0
-    pre_remaining = (StringTable.Get)("str_activity_remaining_time")
+    pre_remaining = StringTable.Get("str_activity_remaining_time")
   end
   self:_SetRemainTime(pre_remaining, remaintime)
   self:RefreshGameState(curtime)
   self:SetLineState()
   if remaintime <= 0 then
-    (self._remainTime):SetText((StringTable.Get)("str_activity_finished"))
-    self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+    self._remainTime:SetText(StringTable.Get("str_activity_finished"))
+    self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
     return true
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._GetRemainTime = function(self, time)
-  -- function num : 0_22
+function UICN7N36MainController:_GetRemainTime(time)
   return self:_GetTime(time)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._GetTime = function(self, seconds)
-  -- function num : 0_23 , upvalues : _ENV
+function UICN7N36MainController:_GetTime(seconds)
   if seconds < 0 then
     seconds = 0
   end
@@ -389,349 +253,251 @@ UICN7N36MainController._GetTime = function(self, seconds)
   local minusStr = "str_activity_minus"
   local lessOneMinusStr = "str_activity_less_one_minus"
   local timeStr = ""
-  local day = (math.floor)(seconds / 3600 / 24)
-  if day > 0 then
+  local day = math.floor(seconds / 3600 / 24)
+  if 0 < day then
     seconds = seconds - day * 3600 * 24
-    local hour = (math.floor)((seconds) / 3600)
-    timeStr = (StringTable.Get)(dayStr, day)
-    if hour > 0 then
-      timeStr = timeStr .. (StringTable.Get)(hourStr, hour)
+    local hour = math.floor(seconds / 3600)
+    timeStr = StringTable.Get(dayStr, day)
+    if 0 < hour then
+      timeStr = timeStr .. StringTable.Get(hourStr, hour)
+    end
+  elseif 60 <= seconds then
+    local hour = math.floor(seconds / 3600)
+    seconds = seconds - hour * 3600
+    if 0 < hour then
+      timeStr = StringTable.Get(hourStr, hour)
+    end
+    local minus = math.floor(seconds / 60)
+    if 0 < minus then
+      timeStr = timeStr .. StringTable.Get(minusStr, minus)
     end
   else
-    do
-      if seconds >= 60 then
-        local hour = (math.floor)((seconds) / 3600)
-        seconds = seconds - hour * 3600
-        if hour > 0 then
-          timeStr = (StringTable.Get)(hourStr, hour)
-        end
-        local minus = (math.floor)((seconds) / 60)
-        if minus > 0 then
-          timeStr = timeStr .. (StringTable.Get)(minusStr, minus)
-        end
-      else
-        do
-          timeStr = (StringTable.Get)(lessOneMinusStr)
-          return timeStr
-        end
-      end
-    end
+    timeStr = StringTable.Get(lessOneMinusStr)
   end
+  return timeStr
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.ActivityIntroBtnOnClick = function(self, go)
-  -- function num : 0_24 , upvalues : _ENV
+function UICN7N36MainController:ActivityIntroBtnOnClick(go)
   local End = self:CheckActivityEnd()
   if End then
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
   self:ShowDialog("UICN7N36IntroController", "UICN7N36MainController")
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.ShopBtnOnClick = function(self, go)
-  -- function num : 0_25 , upvalues : _ENV
+function UICN7N36MainController:ShopBtnOnClick(go)
   local End = self:CheckActivityEnd()
   if End then
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
   local open = self:_GetComponentState(ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY)
   if not open then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+    return
   end
   self:ShowDialog("UICN7N36ShopController")
   local key = self.pstid .. "UICN7N36MainLobbyEntry_ShopNew"
-  ;
-  (LocalDB.SetString)(key, "new")
+  LocalDB.SetString(key, "new")
   self:CheckNew()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.BattlePassBtnOnClick = function(self, go)
-  -- function num : 0_26 , upvalues : _ENV
+function UICN7N36MainController:BattlePassBtnOnClick(go)
   local End = self:CheckActivityEnd()
   if End then
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
-  ;
-  (UIActivityBattlePassHelper.OpenMainController)()
+  UIActivityBattlePassHelper.OpenMainController()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.LoginAwardBtnOnClick = function(self, go)
-  -- function num : 0_27 , upvalues : _ENV
+function UICN7N36MainController:LoginAwardBtnOnClick(go)
   local End = self:CheckActivityEnd()
   if End then
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
-  if not (self._componentState)[ECampaignCN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN] then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-    return 
+  if not self._componentState[ECampaignCN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN] then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+    return
   end
   self:ShowDialog("UICN7N36TotalLoginAwardController", true, ECampaignType.CAMPAIGN_TYPE_INLAND_N7, ECampaignCN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.BgOnClick = function(self, go)
-  -- function num : 0_28 , upvalues : _ENV
+function UICN7N36MainController:BgOnClick(go)
   if self.hide then
     local lockName = "UICN7N36MainController:AnimShow"
-    do
-      self:StartTask(function(TT)
-    -- function num : 0_28_0 , upvalues : self, lockName, _ENV
-    self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UICN7N36MainController_show")
-    YIELD(TT, 300)
-    self:UnLock(lockName)
-  end
-)
-      self.hide = false
-    end
+    self:StartTask(function(TT)
+      self:Lock(lockName)
+      self._animation:Play("uieff_UICN7N36MainController_show")
+      YIELD(TT, 300)
+      self:UnLock(lockName)
+    end)
+    self.hide = false
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.LineBtnOnClick = function(self, go)
-  -- function num : 0_29 , upvalues : _ENV
+function UICN7N36MainController:LineBtnOnClick(go)
   local End = self:CheckActivityEnd()
   if End then
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
-  if not (self._componentState)[ECampaignCN7ComponentID.ECAMPAIGN_N7_LINE_MISSION] then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-    return 
+  if not self._componentState[ECampaignCN7ComponentID.ECAMPAIGN_N7_LINE_MISSION] then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+    return
   end
   self:ShowDialog("UICN7N36Line", 1, true)
   local key = self.pstid .. "UICN7N36MainLobbyEntry_LineNew"
-  ;
-  (LocalDB.SetString)(key, "new")
+  LocalDB.SetString(key, "new")
   self:CheckNew()
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.GameBtnOnClick = function(self, go)
-  -- function num : 0_30 , upvalues : _ENV
+function UICN7N36MainController:GameBtnOnClick(go)
   local End = self:CheckActivityEnd()
   if End then
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
   self:_ForceRefresh()
   local remaintime = 0
   local opentime = 0
-  local curtime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  local open = (self._game_component):ComponentIsOpen()
-  local endtime = ((self._campaign):GetSample()).end_time
+  local curtime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  local open = self._game_component:ComponentIsOpen()
+  local endtime = self._campaign:GetSample().end_time
   if self._game_componentInfo then
-    remaintime = (self._game_componentInfo).m_close_time - curtime
-    opentime = curtime - (self._game_componentInfo).m_unlock_time
+    remaintime = self._game_componentInfo.m_close_time - curtime
+    opentime = curtime - self._game_componentInfo.m_unlock_time
   end
   if remaintime < 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-    return 
-  else
-    if opentime < 0 then
-      local time = (math.abs)(opentime)
-      local timeStr = self:_GetTime(time)
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_lock_time_tips", timeStr))
-      return 
-    else
-      do
-        if not open and opentime >= 0 then
-          (ToastManager.ShowToast)((StringTable.Get)("str_xiaolinjia_entry_6"))
-          return 
-        end
-        self:ShowDialog("UIXiaoLinJiaMainController")
-        local key = self.pstid .. "UICN7N36MainLobbyEntry_GamesNew"
-        ;
-        (LocalDB.SetString)(key, "new")
-        self:CheckNew()
-      end
-    end
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+    return
+  elseif opentime < 0 then
+    local time = math.abs(opentime)
+    local timeStr = self:_GetTime(time)
+    ToastManager.ShowToast(StringTable.Get("str_activity_lock_time_tips", timeStr))
+    return
+  elseif not open and 0 <= opentime then
+    ToastManager.ShowToast(StringTable.Get("str_xiaolinjia_entry_6"))
+    return
   end
+  self:ShowDialog("UIXiaoLinJiaMainController")
+  local key = self.pstid .. "UICN7N36MainLobbyEntry_GamesNew"
+  LocalDB.SetString(key, "new")
+  self:CheckNew()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._PlayAnimIN = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function UICN7N36MainController:_PlayAnimIN()
   local lockName = "UICN7N36MainController:AnimIN"
   self:StartTask(function(TT)
-    -- function num : 0_31_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UICN7N36MainController_in")
+    self._animation:Play("uieff_UICN7N36MainController_in")
     YIELD(TT, 1000)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._CheckGuide = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UICN7N36MainController)
+function UICN7N36MainController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UICN7N36MainController)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.RefreshGameState = function(self, curtime)
-  -- function num : 0_33 , upvalues : _ENV
+function UICN7N36MainController:RefreshGameState(curtime)
   local open = self:_GetComponentState(ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST)
-  local sample = (self._campaign):GetSample()
+  local sample = self._campaign:GetSample()
   local ActivityTime = sample and sample.end_time - curtime or 0
   local gameRemainTime, openTime = 0, 0
   if self._game_componentInfo then
-    gameRemainTime = (self._game_componentInfo).m_close_time - curtime
-    openTime = curtime - (self._game_componentInfo).m_unlock_time
+    gameRemainTime = self._game_componentInfo.m_close_time - curtime
+    openTime = curtime - self._game_componentInfo.m_unlock_time
   end
   if ActivityTime <= 0 or gameRemainTime <= 0 then
-    (self._endObj):SetActive(true)
-    return 
+    self._endObj:SetActive(true)
+    return
   end
   if openTime <= 0 then
-    local time = (math.abs)(openTime)
+    local time = math.abs(openTime)
     local timeStr = self:_GetTime(time)
-    ;
-    (self._lockObj):SetActive(true)
+    self._lockObj:SetActive(true)
     self:SetOtherFalse("lockObj")
-    ;
-    (self._lockTxt):SetText((StringTable.Get)("str_xiaolinjia_entry_13", timeStr))
+    self._lockTxt:SetText(StringTable.Get("str_xiaolinjia_entry_13", timeStr))
     self:_ForceRefresh()
-    return 
-  else
-    do
-      if not open then
-        self:_ForceRefresh()
-        ;
-        (self._lockObj):SetActive(true)
-        ;
-        (self._lockTxt):SetText((StringTable.Get)("str_xiaolinjia_entry_6"))
-        return 
-      end
-      self:OtherState()
-    end
+    return
+  elseif not open then
+    self:_ForceRefresh()
+    self._lockObj:SetActive(true)
+    self._lockTxt:SetText(StringTable.Get("str_xiaolinjia_entry_6"))
+    return
   end
+  self:OtherState()
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.OtherState = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  local passAll, passHide, passCurrent, diffTime, curUnlockMissionId, curNextUnlockMissionId = (UIXiaoLinJiaMainController.GetMainActivityEntryState)(self._game_component)
-  local componentID = (self._game_component):GetComponentCfgId()
-  local cfg = (Cfg.cfg_xiaolinjia_mission)({ComponentID = componentID})
+function UICN7N36MainController:OtherState()
+  local passAll, passHide, passCurrent, diffTime, curUnlockMissionId, curNextUnlockMissionId = UIXiaoLinJiaMainController.GetMainActivityEntryState(self._game_component)
+  local componentID = self._game_component:GetComponentCfgId()
+  local cfg = Cfg.cfg_xiaolinjia_mission({ComponentID = componentID})
   if passHide then
     self:SetOtherFalse()
+  elseif passAll then
+    self._photoObj:SetActive(true)
+    self:SetOtherFalse("photoObj")
+  elseif 5 < curUnlockMissionId then
+    self._unlockObj:SetActive(true)
+    self:SetOtherFalse("unlockObj")
+  elseif passCurrent then
+    self._comingObj:SetActive(true)
+    self:SetOtherFalse("comingObj")
+    local timeStr = self:_GetTime(diffTime)
+    self._comingTxt:SetText(StringTable.Get("str_xiaolinjia_entry_10", timeStr))
   else
-    if passAll then
-      (self._photoObj):SetActive(true)
-      self:SetOtherFalse("photoObj")
-    else
-      if curUnlockMissionId > 5 then
-        (self._unlockObj):SetActive(true)
-        self:SetOtherFalse("unlockObj")
-      else
-        if passCurrent then
-          (self._comingObj):SetActive(true)
-          self:SetOtherFalse("comingObj")
-          local timeStr = self:_GetTime(diffTime)
-          ;
-          (self._comingTxt):SetText((StringTable.Get)("str_xiaolinjia_entry_10", timeStr))
-        else
-          do
-            ;
-            (self._visitObj):SetActive(true)
-            self:SetOtherFalse("visitObj")
-            local visitStr = "str_xiaolinjia_entry_" .. curUnlockMissionId
-            local Head = nil
-            for _,v in ipairs(cfg) do
-              if v.ID == curUnlockMissionId then
-                Head = v.ClosingHeadIcon
-              end
-            end
-            -- DECOMPILER ERROR at PC84: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            (self._visitIcon).sprite = (self._atlas):GetSprite(Head)
-            ;
-            (self._visitTxt):SetText((StringTable.Get)(visitStr))
-          end
-        end
+    self._visitObj:SetActive(true)
+    self:SetOtherFalse("visitObj")
+    local visitStr = "str_xiaolinjia_entry_" .. curUnlockMissionId
+    local Head
+    for _, v in ipairs(cfg) do
+      if v.ID == curUnlockMissionId then
+        Head = v.ClosingHeadIcon
       end
     end
+    self._visitIcon.sprite = self._atlas:GetSprite(Head)
+    self._visitTxt:SetText(StringTable.Get(visitStr))
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.SetOtherFalse = function(self, GameObject)
-  -- function num : 0_35 , upvalues : _ENV
-  for key,value in pairs(self.StateObj) do
+function UICN7N36MainController:SetOtherFalse(GameObject)
+  for key, value in pairs(self.StateObj) do
     if key ~= GameObject then
       value:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.CheckActivityEnd = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  local curtime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  local sample = (self._campaign):GetSample()
+function UICN7N36MainController:CheckActivityEnd()
+  local curtime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  local sample = self._campaign:GetSample()
   if not sample then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     return true
   end
   local endtime = sample.end_time
   local remaintime = sample and endtime - curtime or 0
   if remaintime <= 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController.SetLineState = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function UICN7N36MainController:SetLineState()
   local open = self:_GetComponentState(ECampaignCN7ComponentID.ECAMPAIGN_N7_LINE_MISSION)
-  ;
-  (self._lIneEndMaskObj):SetActive(not open)
+  self._lIneEndMaskObj:SetActive(not open)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36MainController._ForceRefresh = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function UICN7N36MainController:_ForceRefresh()
   self:StartTask(function(TT)
-    -- function num : 0_38_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    ;
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  end
-, self)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  end, self)
 end
-
-

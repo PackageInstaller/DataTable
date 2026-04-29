@@ -1,53 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_schummer_battle_failed_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySchummerBattleFailedInstruction", BaseInstruction)
 PlaySchummerBattleFailedInstruction = PlaySchummerBattleFailedInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySchummerBattleFailedInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySchummerBattleFailedInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySchummerBattleFailedInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySchummerBattleFailedInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local cMainCamera = world:MainCamera()
   local csTex2d = cMainCamera:GetScreenCameraScreenshot()
   if not csTex2d or tostring(csTex2d) == "null" then
-    return 
+    return
   end
   local effectService = world:GetService("Effect")
   local efx = effectService:CreateScreenEffPointEffect(self._effectID)
-  local csGoFx = (efx:View()):GetGameObject()
-  local csTransform = (GameObjectHelper.FindChild)(csGoFx.transform, "Staticframe")
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (csTransform.gameObject).name = "__Staticframe"
-  local csMeshRenderer = (csTransform.gameObject):GetComponent("MeshRenderer")
+  local csGoFx = efx:View():GetGameObject()
+  local csTransform = GameObjectHelper.FindChild(csGoFx.transform, "Staticframe")
+  csTransform.gameObject.name = "__Staticframe"
+  local csMeshRenderer = csTransform.gameObject:GetComponent("MeshRenderer")
   local csMaterial = csMeshRenderer.material
   csMaterial:SetTexture("_MainTex", csTex2d)
   csMeshRenderer.material = csMaterial
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySchummerBattleFailedInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySchummerBattleFailedInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
-  ;
-  (table.insert)(t, {"eff_2000571_zz.mat", 1})
+  table.insert(t, {
+    "eff_2000571_zz.mat",
+    1
+  })
   return t
 end
-
-

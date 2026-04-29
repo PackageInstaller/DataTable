@@ -1,305 +1,316 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/mission/mission_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local missionMessageDef = {CLSID_CEventMobileCompleteStoryMission = 14000, CLSID_CEventMobileCompleteStoryMissionResult = 14001, CLSID_CEventMobileReceiveChapterAward = 14002, CLSID_CEventMobileReceiveChapterAwardResult = 14003, CLSID_CEventMobilePushMissionInfoChange = 14004, CLSID_CEventPushOneMissionInfoChange = 14005, CLSID_CEventMobileGetMainAllFormationInfo = 14006, CLSID_CEventMobileGetMainAllFormationInfoResult = 14007, CLSID_CEventMobileChangeMainFormationInfo = 14008, CLSID_CEventMobileChangeMainFormationInfoResult = 14009, CLSID_CEventMobilePushAlreadyReturnPowerMissionInfoChange = 14010, CLSID_CEventMobilePushAlreadyReturnPowerCamMissionInfoChange = 14011, CLSID_CEventMobileSaveActiveStoryInfo = 14012, CLSID_CEventMobileSaveActiveStoryInfoResult = 14013, CLSID_CEventMobilePushMissionActiveStoryData = 14014, CLSID_CEventMobileCompleteAllMission = 14015, CLSID_CEventMobileCompleteAssignMission = 14016, CLSID_CEventApplyMissionPassDataReq = 14017, CLSID_CEventApplyMissionPassDataRes = 14018}
-;
-(table.append)(MessageDef, missionMessageDef)
-local MISSION_RESULT_CODE = {MISSION_SUCCEED = 0, MISSION_FAILED = 1, MISSION_INVALID_LEVEL = 2, MISSION_INVALID_POWER = 3, MISSION_NOT_EXIST = 4, MISSION_IS_LOCK = 5, MISSION_STORY_ALREADY_ACTIVE = 6, MISSION_INVALID_ID = 7, MISSION_STORY_INVALID_TYPE = 8, MISSION_INVALID_CHAPTER_AWARD = 9, MISSION_INVALID_CHAPTER_AWARD_INVALID_STAR = 10, MISSION_INVALID_CHAPTER_AWARD_RECEIVE = 11, MISSION_INVALID_CHAPTER_AWARD_CONFIG = 12}
+local missionMessageDef = {
+  CLSID_CEventMobileCompleteStoryMission = 14000,
+  CLSID_CEventMobileCompleteStoryMissionResult = 14001,
+  CLSID_CEventMobileReceiveChapterAward = 14002,
+  CLSID_CEventMobileReceiveChapterAwardResult = 14003,
+  CLSID_CEventMobilePushMissionInfoChange = 14004,
+  CLSID_CEventPushOneMissionInfoChange = 14005,
+  CLSID_CEventMobileGetMainAllFormationInfo = 14006,
+  CLSID_CEventMobileGetMainAllFormationInfoResult = 14007,
+  CLSID_CEventMobileChangeMainFormationInfo = 14008,
+  CLSID_CEventMobileChangeMainFormationInfoResult = 14009,
+  CLSID_CEventMobilePushAlreadyReturnPowerMissionInfoChange = 14010,
+  CLSID_CEventMobilePushAlreadyReturnPowerCamMissionInfoChange = 14011,
+  CLSID_CEventMobileSaveActiveStoryInfo = 14012,
+  CLSID_CEventMobileSaveActiveStoryInfoResult = 14013,
+  CLSID_CEventMobilePushMissionActiveStoryData = 14014,
+  CLSID_CEventMobileCompleteAllMission = 14015,
+  CLSID_CEventMobileCompleteAssignMission = 14016,
+  CLSID_CEventApplyMissionPassDataReq = 14017,
+  CLSID_CEventApplyMissionPassDataRes = 14018
+}
+table.append(MessageDef, missionMessageDef)
+local MISSION_RESULT_CODE = {
+  MISSION_SUCCEED = 0,
+  MISSION_FAILED = 1,
+  MISSION_INVALID_LEVEL = 2,
+  MISSION_INVALID_POWER = 3,
+  MISSION_NOT_EXIST = 4,
+  MISSION_IS_LOCK = 5,
+  MISSION_STORY_ALREADY_ACTIVE = 6,
+  MISSION_INVALID_ID = 7,
+  MISSION_STORY_INVALID_TYPE = 8,
+  MISSION_INVALID_CHAPTER_AWARD = 9,
+  MISSION_INVALID_CHAPTER_AWARD_INVALID_STAR = 10,
+  MISSION_INVALID_CHAPTER_AWARD_RECEIVE = 11,
+  MISSION_INVALID_CHAPTER_AWARD_CONFIG = 12
+}
 _enum("MISSION_RESULT_CODE", MISSION_RESULT_CODE)
-local FORMATION_RESUTL_CODE = {FORMATION_SUCCEED = 0, FORMATION_INVALID_ID = 1001, FORMATION_INVALID_NAME = 1002, FORMATION_INVALID_PET = 1003, FORMATION_INVALID_PETCOUNT = 1004, FORMATION_DIRTY_NAME = 1005, FORMATION_DATA_INVALID = 1006, MAZE_FORMATION_PET_DEADED = 1007, FORMATION_NAME_BAN = 1008, FORMATION_TACTIC_FIGHT_LIMIT = 1009, FORMATION_SAME_BINDER = 1010}
+local FORMATION_RESUTL_CODE = {
+  FORMATION_SUCCEED = 0,
+  FORMATION_INVALID_ID = 1001,
+  FORMATION_INVALID_NAME = 1002,
+  FORMATION_INVALID_PET = 1003,
+  FORMATION_INVALID_PETCOUNT = 1004,
+  FORMATION_DIRTY_NAME = 1005,
+  FORMATION_DATA_INVALID = 1006,
+  MAZE_FORMATION_PET_DEADED = 1007,
+  FORMATION_NAME_BAN = 1008,
+  FORMATION_TACTIC_FIGHT_LIMIT = 1009,
+  FORMATION_SAME_BINDER = 1010
+}
 _enum("FORMATION_RESUTL_CODE", FORMATION_RESUTL_CODE)
 _class("CEventMobileCompleteStoryMission", CCallRequestEvent)
 CEventMobileCompleteStoryMission = CEventMobileCompleteStoryMission
--- DECOMPILER ERROR at PC70: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventMobileCompleteStoryMission.Constructor = function(self)
-  -- function num : 0_0
+function CEventMobileCompleteStoryMission:Constructor()
   self.m_mission_id = 0
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventMobileCompleteStoryMission._proto = {
-[1] = {"m_mission_id", "int"}
+  [1] = {
+    "m_mission_id",
+    "int"
+  }
 }
 _class("CEventMobileCompleteStoryMissionResult", CCallReplyEvent)
 CEventMobileCompleteStoryMissionResult = CEventMobileCompleteStoryMissionResult
--- DECOMPILER ERROR at PC87: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventMobileCompleteStoryMissionResult.Constructor = function(self)
-  -- function num : 0_1
+function CEventMobileCompleteStoryMissionResult:Constructor()
   self.m_result = 0
   self.reward = {}
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventMobileCompleteStoryMissionResult._proto = {
-[1] = {"m_result", "int"}
-, 
-[2] = {"reward", "list<RoleAsset>"}
+  [1] = {"m_result", "int"},
+  [2] = {
+    "reward",
+    "list<RoleAsset>"
+  }
 }
 _class("CEventMobileReceiveChapterAward", CCallRequestEvent)
 CEventMobileReceiveChapterAward = CEventMobileReceiveChapterAward
--- DECOMPILER ERROR at PC109: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventMobileReceiveChapterAward.Constructor = function(self)
-  -- function num : 0_2
+function CEventMobileReceiveChapterAward:Constructor()
   self.m_chapter_id = 0
   self.star_count = 0
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventMobileReceiveChapterAward._proto = {
-[1] = {"m_chapter_id", "int"}
-, 
-[2] = {"star_count", "int"}
+  [1] = {
+    "m_chapter_id",
+    "int"
+  },
+  [2] = {"star_count", "int"}
 }
 _class("CEventMobileReceiveChapterAwardResult", CCallReplyEvent)
 CEventMobileReceiveChapterAwardResult = CEventMobileReceiveChapterAwardResult
--- DECOMPILER ERROR at PC131: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventMobileReceiveChapterAwardResult.Constructor = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CEventMobileReceiveChapterAwardResult:Constructor()
   self.m_result = 0
   self.reward = {}
   self.already_receive_chapter_award = mission_chapter_award_data:New()
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventMobileReceiveChapterAwardResult._proto = {
-[1] = {"m_result", "int"}
-, 
-[2] = {"reward", "list<RoleAsset>"}
-, 
-[3] = {"already_receive_chapter_award", "mission_chapter_award_data"}
+  [1] = {"m_result", "int"},
+  [2] = {
+    "reward",
+    "list<RoleAsset>"
+  },
+  [3] = {
+    "already_receive_chapter_award",
+    "mission_chapter_award_data"
+  }
 }
 _class("CEventMobilePushMissionInfoChange", CSvrPushEvent)
 CEventMobilePushMissionInfoChange = CEventMobilePushMissionInfoChange
--- DECOMPILER ERROR at PC158: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventMobilePushMissionInfoChange.Constructor = function(self)
-  -- function num : 0_4
+function CEventMobilePushMissionInfoChange:Constructor()
   self.m_cur_mission_id = 0
   self.m_change_pass_mission_list = {}
 end
 
--- DECOMPILER ERROR at PC171: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventMobilePushMissionInfoChange._proto = {
-[1] = {"m_cur_mission_id", "int"}
-, 
-[2] = {"m_change_pass_mission_list", "list<mission_info>"}
+  [1] = {
+    "m_cur_mission_id",
+    "int"
+  },
+  [2] = {
+    "m_change_pass_mission_list",
+    "list<mission_info>"
+  }
 }
 _class("CEventPushOneMissionInfoChange", CSvrPushEvent)
 CEventPushOneMissionInfoChange = CEventPushOneMissionInfoChange
--- DECOMPILER ERROR at PC180: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventPushOneMissionInfoChange.Constructor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function CEventPushOneMissionInfoChange:Constructor()
   self.m_change_mission_info = mission_info:New()
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventPushOneMissionInfoChange._proto = {
-[1] = {"m_change_mission_info", "mission_info"}
+  [1] = {
+    "m_change_mission_info",
+    "mission_info"
+  }
 }
 _class("CEventMobileGetMainAllFormationInfo", CCallRequestEvent)
 CEventMobileGetMainAllFormationInfo = CEventMobileGetMainAllFormationInfo
--- DECOMPILER ERROR at PC197: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventMobileGetMainAllFormationInfo.Constructor = function(self)
-  -- function num : 0_6
+function CEventMobileGetMainAllFormationInfo:Constructor()
   self.m_id = 0
 end
-
--- DECOMPILER ERROR at PC200: Confused about usage of register: R3 in 'UnsetPending'
 
 CEventMobileGetMainAllFormationInfo._proto = {}
 _class("CEventMobileGetMainAllFormationInfoResult", CCallReplyEvent)
 CEventMobileGetMainAllFormationInfoResult = CEventMobileGetMainAllFormationInfoResult
--- DECOMPILER ERROR at PC209: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventMobileGetMainAllFormationInfoResult.Constructor = function(self)
-  -- function num : 0_7
+function CEventMobileGetMainAllFormationInfoResult:Constructor()
   self.m_formation_info = {}
 end
 
--- DECOMPILER ERROR at PC217: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventMobileGetMainAllFormationInfoResult._proto = {
-[1] = {"m_formation_info", "list<formation_info>"}
+  [1] = {
+    "m_formation_info",
+    "list<formation_info>"
+  }
 }
 _class("CEventMobileChangeMainFormationInfo", CCallRequestEvent)
 CEventMobileChangeMainFormationInfo = CEventMobileChangeMainFormationInfo
--- DECOMPILER ERROR at PC226: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventMobileChangeMainFormationInfo.Constructor = function(self)
-  -- function num : 0_8
+function CEventMobileChangeMainFormationInfo:Constructor()
   self.m_formation_id = 0
   self.m_formation_name = ""
   self.m_formation_pet_list = {}
 end
 
--- DECOMPILER ERROR at PC244: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventMobileChangeMainFormationInfo._proto = {
-[1] = {"m_formation_id", "int"}
-, 
-[2] = {"m_formation_name", "string"}
-, 
-[3] = {"m_formation_pet_list", "list<int64>"}
+  [1] = {
+    "m_formation_id",
+    "int"
+  },
+  [2] = {
+    "m_formation_name",
+    "string"
+  },
+  [3] = {
+    "m_formation_pet_list",
+    "list<int64>"
+  }
 }
 _class("CEventMobileChangeMainFormationInfoResult", CCallReplyEvent)
 CEventMobileChangeMainFormationInfoResult = CEventMobileChangeMainFormationInfoResult
--- DECOMPILER ERROR at PC253: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventMobileChangeMainFormationInfoResult.Constructor = function(self)
-  -- function num : 0_9
+function CEventMobileChangeMainFormationInfoResult:Constructor()
   self.m_result = 0
   self.m_formation_info = {}
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventMobileChangeMainFormationInfoResult._proto = {
-[1] = {"m_result", "int"}
-, 
-[2] = {"m_formation_info", "list<formation_info>"}
+  [1] = {"m_result", "int"},
+  [2] = {
+    "m_formation_info",
+    "list<formation_info>"
+  }
 }
 _class("CEventMobilePushAlreadyReturnPowerMissionInfoChange", CSvrPushEvent)
 CEventMobilePushAlreadyReturnPowerMissionInfoChange = CEventMobilePushAlreadyReturnPowerMissionInfoChange
--- DECOMPILER ERROR at PC275: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventMobilePushAlreadyReturnPowerMissionInfoChange.Constructor = function(self)
-  -- function num : 0_10
+function CEventMobilePushAlreadyReturnPowerMissionInfoChange:Constructor()
   self.m_already_return_power_mission_list = {}
 end
 
--- DECOMPILER ERROR at PC283: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventMobilePushAlreadyReturnPowerMissionInfoChange._proto = {
-[1] = {"m_already_return_power_mission_list", "list<int>"}
+  [1] = {
+    "m_already_return_power_mission_list",
+    "list<int>"
+  }
 }
 _class("CEventMobilePushAlreadyReturnPowerCamMissionInfoChange", CSvrPushEvent)
 CEventMobilePushAlreadyReturnPowerCamMissionInfoChange = CEventMobilePushAlreadyReturnPowerCamMissionInfoChange
--- DECOMPILER ERROR at PC292: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventMobilePushAlreadyReturnPowerCamMissionInfoChange.Constructor = function(self)
-  -- function num : 0_11
+function CEventMobilePushAlreadyReturnPowerCamMissionInfoChange:Constructor()
   self.m_already_return_power_cam_mission_list = {}
 end
 
--- DECOMPILER ERROR at PC300: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventMobilePushAlreadyReturnPowerCamMissionInfoChange._proto = {
-[1] = {"m_already_return_power_cam_mission_list", "list<int>"}
+  [1] = {
+    "m_already_return_power_cam_mission_list",
+    "list<int>"
+  }
 }
 _class("CEventMobileSaveActiveStoryInfo", CCallRequestEvent)
 CEventMobileSaveActiveStoryInfo = CEventMobileSaveActiveStoryInfo
--- DECOMPILER ERROR at PC309: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventMobileSaveActiveStoryInfo.Constructor = function(self)
-  -- function num : 0_12
+function CEventMobileSaveActiveStoryInfo:Constructor()
   self.m_mission_id = 0
   self.m_story_type = 0
 end
 
--- DECOMPILER ERROR at PC322: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventMobileSaveActiveStoryInfo._proto = {
-[1] = {"m_mission_id", "int"}
-, 
-[2] = {"m_story_type", "int"}
+  [1] = {
+    "m_mission_id",
+    "int"
+  },
+  [2] = {
+    "m_story_type",
+    "int"
+  }
 }
 _class("CEventMobileSaveActiveStoryInfoResult", CCallReplyEvent)
 CEventMobileSaveActiveStoryInfoResult = CEventMobileSaveActiveStoryInfoResult
--- DECOMPILER ERROR at PC331: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventMobileSaveActiveStoryInfoResult.Constructor = function(self)
-  -- function num : 0_13
+function CEventMobileSaveActiveStoryInfoResult:Constructor()
   self.m_result = 0
 end
 
--- DECOMPILER ERROR at PC339: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventMobileSaveActiveStoryInfoResult._proto = {
-[1] = {"m_result", "int"}
+  [1] = {"m_result", "int"}
 }
 _class("CEventMobilePushMissionActiveStoryData", CSvrPushEvent)
 CEventMobilePushMissionActiveStoryData = CEventMobilePushMissionActiveStoryData
--- DECOMPILER ERROR at PC348: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventMobilePushMissionActiveStoryData.Constructor = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function CEventMobilePushMissionActiveStoryData:Constructor()
   self.active_story_data = mission_story_data:New()
 end
 
--- DECOMPILER ERROR at PC356: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventMobilePushMissionActiveStoryData._proto = {
-[1] = {"active_story_data", "mission_story_data"}
+  [1] = {
+    "active_story_data",
+    "mission_story_data"
+  }
 }
 _class("CEventMobileCompleteAllMission", CCliPushEvent)
 CEventMobileCompleteAllMission = CEventMobileCompleteAllMission
--- DECOMPILER ERROR at PC365: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventMobileCompleteAllMission.Constructor = function(self)
-  -- function num : 0_15
+function CEventMobileCompleteAllMission:Constructor()
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC373: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventMobileCompleteAllMission._proto = {
-[1] = {"id", "int"}
+  [1] = {"id", "int"}
 }
 _class("CEventMobileCompleteAssignMission", CCliPushEvent)
 CEventMobileCompleteAssignMission = CEventMobileCompleteAssignMission
--- DECOMPILER ERROR at PC382: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventMobileCompleteAssignMission.Constructor = function(self)
-  -- function num : 0_16
+function CEventMobileCompleteAssignMission:Constructor()
   self.mission_id = 0
 end
 
--- DECOMPILER ERROR at PC390: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventMobileCompleteAssignMission._proto = {
-[1] = {"mission_id", "int"}
+  [1] = {"mission_id", "int"}
 }
 _class("CEventApplyMissionPassDataReq", CCallRequestEvent)
 CEventApplyMissionPassDataReq = CEventApplyMissionPassDataReq
--- DECOMPILER ERROR at PC399: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventApplyMissionPassDataReq.Constructor = function(self)
-  -- function num : 0_17
+function CEventApplyMissionPassDataReq:Constructor()
   self.nMissionId = 0
 end
 
--- DECOMPILER ERROR at PC407: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventApplyMissionPassDataReq._proto = {
-[1] = {"nMissionId", "int"}
+  [1] = {"nMissionId", "int"}
 }
 _class("CEventApplyMissionPassDataRes", CCallReplyEvent)
 CEventApplyMissionPassDataRes = CEventApplyMissionPassDataRes
--- DECOMPILER ERROR at PC416: Confused about usage of register: R3 in 'UnsetPending'
 
-CEventApplyMissionPassDataRes.Constructor = function(self)
-  -- function num : 0_18
+function CEventApplyMissionPassDataRes:Constructor()
   self.info = {}
 end
 
--- DECOMPILER ERROR at PC424: Confused about usage of register: R3 in 'UnsetPending'
-
 CEventApplyMissionPassDataRes._proto = {
-[1] = {"info", "list<mission_pass_info>"}
+  [1] = {
+    "info",
+    "list<mission_pass_info>"
+  }
 }
-

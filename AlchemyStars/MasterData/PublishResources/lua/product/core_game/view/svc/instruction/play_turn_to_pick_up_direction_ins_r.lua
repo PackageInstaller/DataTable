@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_turn_to_pick_up_direction_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTurnToPickUpDirectionInstruction", BaseInstruction)
 PlayTurnToPickUpDirectionInstruction = PlayTurnToPickUpDirectionInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTurnToPickUpDirectionInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayTurnToPickUpDirectionInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTurnToPickUpDirectionInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
-  local lastPickUpGridPos = nil
+function PlayTurnToPickUpDirectionInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local lastPickUpGridPos
   local selectComponent = casterEntity:RenderPickUpComponent()
   if selectComponent ~= nil then
     lastPickUpGridPos = selectComponent:GetLastPickUpGridPos()
   end
   if lastPickUpGridPos == nil then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local boardServiceRender = world:GetService("BoardRender")
@@ -30,5 +20,3 @@ PlayTurnToPickUpDirectionInstruction.DoInstruction = function(self, TT, casterEn
   local dir = lastPickUpGridPos - casterPos
   casterEntity:SetDirection(dir)
 end
-
-

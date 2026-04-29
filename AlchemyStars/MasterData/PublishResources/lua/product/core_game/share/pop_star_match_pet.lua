@@ -1,55 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/pop_star_match_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PopStarMatchPet", MatchPet)
 PopStarMatchPet = PopStarMatchPet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarMatchPet.GetNormalSkill = function(self)
-  -- function num : 0_0
+function PopStarMatchPet:GetNormalSkill()
   return nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarMatchPet.GetPetActiveSkill = function(self, grade, awakening)
-  -- function num : 0_1 , upvalues : _ENV
+function PopStarMatchPet:GetPetActiveSkill(grade, awakening)
   local tmpID = self:GetTemplateID()
-  local petCfg = (Cfg.cfg_popstar_pet_list)[tmpID]
+  local petCfg = Cfg.cfg_popstar_pet_list[tmpID]
   if not petCfg then
-    (Log.error)("PopStarPet cfg_popstar_pet_list err: pet template id = ", tmpID)
+    Log.error("PopStarPet cfg_popstar_pet_list err: pet template id = ", tmpID)
   end
   return petCfg.SkillId
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarMatchPet.GetPetExtraActiveSkill = function(self, grade, awakening)
-  -- function num : 0_2
+function PopStarMatchPet:GetPetExtraActiveSkill(grade, awakening)
   return nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarMatchPet.GetPetPassiveSkill = function(self, grade, awakening)
-  -- function num : 0_3
+function PopStarMatchPet:GetPetPassiveSkill(grade, awakening)
   return nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarMatchPet.GetPetChainSkills = function(self, grade, awakening)
-  -- function num : 0_4
+function PopStarMatchPet:GetPetChainSkills(grade, awakening)
   return nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarMatchPet.GetChainSkillInfo = function(self, grade, awakening)
-  -- function num : 0_5
+function PopStarMatchPet:GetChainSkillInfo(grade, awakening)
   return {}
 end
-
-

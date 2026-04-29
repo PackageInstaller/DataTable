@@ -1,16 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/helper/random.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local math_floor = math.floor
-local normalize = function(n)
-  -- function num : 0_0
+
+local function normalize(n)
   return n % 2147483648
 end
 
-local bit_and = function(a, b)
-  -- function num : 0_1 , upvalues : normalize
+local function bit_and(a, b)
   local r = 0
   local m = 0
   for m = 0, 31 do
@@ -23,14 +17,13 @@ local bit_and = function(a, b)
     if b % 2 ~= 0 then
       b = b - 1
     end
-    a = (a) / 2
-    b = (b) / 2
+    a = a / 2
+    b = b / 2
   end
   return normalize(r)
 end
 
-local bit_or = function(a, b)
-  -- function num : 0_2 , upvalues : normalize
+local function bit_or(a, b)
   local r = 0
   local m = 0
   for m = 0, 31 do
@@ -43,14 +36,13 @@ local bit_or = function(a, b)
     if b % 2 ~= 0 then
       b = b - 1
     end
-    a = (a) / 2
-    b = (b) / 2
+    a = a / 2
+    b = b / 2
   end
   return normalize(r)
 end
 
-local bit_xor = function(a, b)
-  -- function num : 0_3 , upvalues : normalize
+local function bit_xor(a, b)
   local r = 0
   local m = 0
   for m = 0, 31 do
@@ -63,113 +55,80 @@ local bit_xor = function(a, b)
     if b % 2 ~= 0 then
       b = b - 1
     end
-    a = (a) / 2
-    b = (b) / 2
+    a = a / 2
+    b = b / 2
   end
   return normalize(r)
 end
 
-local seed = function()
-  -- function num : 0_4 , upvalues : normalize, _ENV
-  return normalize((os.time)())
+local function seed()
+  return normalize(os.time())
 end
 
 mersenne_twister = {}
--- DECOMPILER ERROR at PC11: Confused about usage of register: R6 in 'UnsetPending'
-
 mersenne_twister.__index = mersenne_twister
--- DECOMPILER ERROR at PC14: Confused about usage of register: R6 in 'UnsetPending'
 
-mersenne_twister.randomseed = function(self, s)
-  -- function num : 0_5 , upvalues : seed, _ENV, normalize, bit_xor, math_floor
-  if not s then
-    s = seed()
-  end
-  s = (math.ceil)(s)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.mt)[0] = normalize(s)
+function mersenne_twister:randomseed(s)
+  s = s or seed()
+  s = math.ceil(s)
+  self.mt[0] = normalize(s)
   for i = 1, 623 do
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self.mt)[i] = normalize(1812433253 * bit_xor((self.mt)[i - 1], math_floor((self.mt)[i - 1] / 1073741824)) + i)
+    self.mt[i] = normalize(1812433253 * bit_xor(self.mt[i - 1], math_floor(self.mt[i - 1] / 1073741824)) + i)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R6 in 'UnsetPending'
-
-mersenne_twister.random = function(self, a, b)
-  -- function num : 0_6 , upvalues : bit_xor, math_floor, bit_and, normalize
-  local y = nil
+function mersenne_twister:random(a, b)
+  local y
   if self.index == 0 then
     for i = 0, 623 do
-      y = (self.mt)[(i + 1) % 624] % 2147483648
-      -- DECOMPILER ERROR at PC23: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self.mt)[i] = bit_xor((self.mt)[(i + 397) % 624], math_floor(y / 2))
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
+      y = self.mt[(i + 1) % 624] % 2147483648
+      self.mt[i] = bit_xor(self.mt[(i + 397) % 624], math_floor(y / 2))
       if y % 2 ~= 0 then
-        (self.mt)[i] = bit_xor((self.mt)[i], 2567483615)
+        self.mt[i] = bit_xor(self.mt[i], 2567483615)
       end
     end
   end
-  do
-    y = (self.mt)[self.index]
-    y = bit_xor(y, math_floor(y / 2048))
-    y = bit_xor(y, bit_and(normalize(y * 128), 2636928640))
-    y = bit_xor(y, bit_and(normalize(y * 32768), 4022730752))
-    y = bit_xor(y, math_floor(y / 262144))
-    self.index = (self.index + 1) % 624
-    if not a then
-      return y / 4294967295
+  y = self.mt[self.index]
+  y = bit_xor(y, math_floor(y / 2048))
+  y = bit_xor(y, bit_and(normalize(y * 128), 2636928640))
+  y = bit_xor(y, bit_and(normalize(y * 32768), 4022730752))
+  y = bit_xor(y, math_floor(y / 262144))
+  self.index = (self.index + 1) % 624
+  if not a then
+    return y / 4294967295
+  elseif not b then
+    if a == 0 then
+      return y
     else
-      if not b then
-        if a == 0 then
-          return y
-        else
-          return 1 + y % a
-        end
-      else
-        return a + y % (b - a + 1)
-      end
+      return 1 + y % a
     end
+  else
+    return a + y % (b - a + 1)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R6 in 'UnsetPending'
-
-mersenne_twister.randomfloat = function(self)
-  -- function num : 0_7
+function mersenne_twister:randomfloat()
   local randomNum = self:random(0, 100)
   local num = randomNum / 100
   return num
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
-
-mersenne_twister.GetPreciseDecimal = function(self, nNum, n)
-  -- function num : 0_8 , upvalues : _ENV
+function mersenne_twister:GetPreciseDecimal(nNum, n)
   if type(nNum) ~= "number" then
     return nNum
   end
-  if not n then
-    n = 0
-  end
-  n = (math.floor)(n)
+  n = n or 0
+  n = math.floor(n)
   if n < 0 then
     n = 0
   end
   local nDecimal = 10 ^ n
-  local nTemp = (math.floor)(nNum * nDecimal)
+  local nTemp = math.floor(nNum * nDecimal)
   local nRet = nTemp / nDecimal
   return nRet
 end
 
-twister = function(s)
-  -- function num : 0_9 , upvalues : _ENV
+function twister(s)
   local temp = {}
   setmetatable(temp, mersenne_twister)
   temp.mt = {}
@@ -179,52 +138,38 @@ twister = function(s)
 end
 
 linear_congruential_generator = {}
--- DECOMPILER ERROR at PC30: Confused about usage of register: R6 in 'UnsetPending'
-
 linear_congruential_generator.__index = linear_congruential_generator
--- DECOMPILER ERROR at PC33: Confused about usage of register: R6 in 'UnsetPending'
 
-linear_congruential_generator.random = function(self, a, b)
-  -- function num : 0_10
+function linear_congruential_generator:random(a, b)
   local y = (self.a * self.x + self.c) % self.m
   self.x = y
   if not a then
     return y / 65535
-  else
-    if not b then
-      if a == 0 then
-        return y
-      else
-        return 1 + y % a
-      end
+  elseif not b then
+    if a == 0 then
+      return y
     else
-      return a + y % (b - a + 1)
+      return 1 + y % a
     end
+  else
+    return a + y % (b - a + 1)
   end
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R6 in 'UnsetPending'
-
-linear_congruential_generator.randomseed = function(self, s)
-  -- function num : 0_11 , upvalues : seed, normalize
-  if not s then
-    s = seed()
-  end
+function linear_congruential_generator:randomseed(s)
+  s = s or seed()
   self.x = normalize(s)
 end
 
-lcg = function(s, r)
-  -- function num : 0_12 , upvalues : _ENV
+function lcg(s, r)
   local temp = {}
   setmetatable(temp, linear_congruential_generator)
-  temp.a = 1103515245
+  temp.a, temp.c, temp.m = 1103515245, 12345, 65536
   if r then
     if r == "nr" then
-      temp.a = 1664525
-    else
-      if r == "mvc" then
-        temp.a = 214013
-      end
+      temp.a, temp.c, temp.m = 1664525, 1013904223, 65536
+    elseif r == "mvc" then
+      temp.a, temp.c, temp.m = 214013, 2531011, 65536
     end
   end
   temp:randomseed(s)
@@ -232,13 +177,9 @@ lcg = function(s, r)
 end
 
 multiply_with_carry = {}
--- DECOMPILER ERROR at PC43: Confused about usage of register: R6 in 'UnsetPending'
-
 multiply_with_carry.__index = multiply_with_carry
--- DECOMPILER ERROR at PC46: Confused about usage of register: R6 in 'UnsetPending'
 
-multiply_with_carry.random = function(self, a, b)
-  -- function num : 0_13 , upvalues : math_floor
+function multiply_with_carry:random(a, b)
   local m = self.m
   local t = self.a * self.x + self.c
   local y = t % m
@@ -246,47 +187,35 @@ multiply_with_carry.random = function(self, a, b)
   self.c = math_floor(t / m)
   if not a then
     return y / 65535
-  else
-    if not b then
-      if a == 0 then
-        return y
-      else
-        return 1 + y % a
-      end
+  elseif not b then
+    if a == 0 then
+      return y
     else
-      return a + y % (b - a + 1)
+      return 1 + y % a
     end
+  else
+    return a + y % (b - a + 1)
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R6 in 'UnsetPending'
-
-multiply_with_carry.randomseed = function(self, s)
-  -- function num : 0_14 , upvalues : seed, normalize
-  if not s then
-    s = seed()
-  end
+function multiply_with_carry:randomseed(s)
+  s = s or seed()
   self.c = self.ic
   self.x = normalize(s)
 end
 
-mwc = function(s, r)
-  -- function num : 0_15 , upvalues : _ENV
+function mwc(s, r)
   local temp = {}
   setmetatable(temp, multiply_with_carry)
-  temp.a = 1103515245
+  temp.a, temp.c, temp.m = 1103515245, 12345, 65536
   if r then
     if r == "nr" then
-      temp.a = 1664525
-    else
-      if r == "mvc" then
-        temp.a = 214013
-      end
+      temp.a, temp.c, temp.m = 1664525, 1013904223, 65536
+    elseif r == "mvc" then
+      temp.a, temp.c, temp.m = 214013, 2531011, 65536
     end
   end
   temp.ic = temp.c
   temp:randomseed(s)
   return temp
 end
-
-

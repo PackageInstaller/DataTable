@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/render_chain_path_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RenderChainPathComponent", Object)
 RenderChainPathComponent = RenderChainPathComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderChainPathComponent.Constructor = function(self, chainPath, elementType, cutChainPath, pathChainRate)
-  -- function num : 0_0
+function RenderChainPathComponent:Constructor(chainPath, elementType, cutChainPath, pathChainRate)
   self._chainPath = chainPath
   self._elementType = elementType
   self._cutChainPath = cutChainPath
@@ -18,38 +11,23 @@ RenderChainPathComponent.Constructor = function(self, chainPath, elementType, cu
   self._chainMonsterIDList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.GetRenderChainPath = function(self)
-  -- function num : 0_1
+function RenderChainPathComponent:GetRenderChainPath()
   return self._chainPath
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.GetRenderPieceType = function(self)
-  -- function num : 0_2
+function RenderChainPathComponent:GetRenderPieceType()
   return self._elementType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.GetRenderCutChainPath = function(self)
-  -- function num : 0_3
+function RenderChainPathComponent:GetRenderCutChainPath()
   return self._cutChainPath
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.GetRenderPathChainRateAtIndex = function(self, index)
-  -- function num : 0_4
-  return (self._pathChainRate)[index]
+function RenderChainPathComponent:GetRenderPathChainRateAtIndex(index)
+  return self._pathChainRate[index]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.ClearRenderChainPath = function(self)
-  -- function num : 0_5
+function RenderChainPathComponent:ClearRenderChainPath()
   self._chainPath = nil
   self._elementType = nil
   self._cutChainPath = nil
@@ -59,135 +37,80 @@ RenderChainPathComponent.ClearRenderChainPath = function(self)
   self._chainMonsterIDList = {}
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.SetChainAcrossMonster = function(self, chainAcrossMonster)
-  -- function num : 0_6
+function RenderChainPathComponent:SetChainAcrossMonster(chainAcrossMonster)
   self._chainAcrossMonster = chainAcrossMonster
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.GetChainAcrossMonster = function(self)
-  -- function num : 0_7
+function RenderChainPathComponent:GetChainAcrossMonster()
   return self._chainAcrossMonster
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.SetChainMonsterShadowPosList = function(self, monsterShadowPosList)
-  -- function num : 0_8
+function RenderChainPathComponent:SetChainMonsterShadowPosList(monsterShadowPosList)
   self._monsterShadowPosList = monsterShadowPosList
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.GetChainMonsterShadowPosList = function(self)
-  -- function num : 0_9
+function RenderChainPathComponent:GetChainMonsterShadowPosList()
   return self._monsterShadowPosList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.SetChainAcrossMonsterMoveEffect = function(self, moveEffect)
-  -- function num : 0_10
+function RenderChainPathComponent:SetChainAcrossMonsterMoveEffect(moveEffect)
   self._moveEffect = moveEffect
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.GetChainAcrossMonsterMoveEffect = function(self)
-  -- function num : 0_11
+function RenderChainPathComponent:GetChainAcrossMonsterMoveEffect()
   return self._moveEffect
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.SetConnectAreaRenderCantRefresh = function(self, cantRefresh)
-  -- function num : 0_12
+function RenderChainPathComponent:SetConnectAreaRenderCantRefresh(cantRefresh)
   self._cantRefresh = cantRefresh
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.GetConnectAreaRenderCantRefresh = function(self)
-  -- function num : 0_13
+function RenderChainPathComponent:GetConnectAreaRenderCantRefresh()
   return self._cantRefresh
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.SetChainAcrossSelectMonster = function(self, remove, entityID)
-  -- function num : 0_14 , upvalues : _ENV
+function RenderChainPathComponent:SetChainAcrossSelectMonster(remove, entityID)
   if remove then
-    (table.removev)(self._chainMonsterIDList, entityID)
-  else
-    if not (table.icontains)(self._chainMonsterIDList, entityID) then
-      (table.insert)(self._chainMonsterIDList, entityID)
-    end
+    table.removev(self._chainMonsterIDList, entityID)
+  elseif not table.icontains(self._chainMonsterIDList, entityID) then
+    table.insert(self._chainMonsterIDList, entityID)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.GetChainAcrossMonsterIDList = function(self)
-  -- function num : 0_15
+function RenderChainPathComponent:GetChainAcrossMonsterIDList()
   return self._chainMonsterIDList
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.SetChainSelectMonsterShadowPosList = function(self, monsterShadowPosList)
-  -- function num : 0_16
+function RenderChainPathComponent:SetChainSelectMonsterShadowPosList(monsterShadowPosList)
   self._selectMonsterShadowPosList = monsterShadowPosList
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderChainPathComponent.GetChainSelectMonsterShadowPosList = function(self)
-  -- function num : 0_17
+function RenderChainPathComponent:GetChainSelectMonsterShadowPosList()
   return self._selectMonsterShadowPosList
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RenderChainPath = function(self)
-  -- function num : 0_18
-  return self:GetComponent((self.WEComponentsEnum).RenderChainPath)
+function Entity:RenderChainPath()
+  return self:GetComponent(self.WEComponentsEnum.RenderChainPath)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasRenderChainPath = function(self)
-  -- function num : 0_19
-  return self:HasComponent((self.WEComponentsEnum).RenderChainPath)
+function Entity:HasRenderChainPath()
+  return self:HasComponent(self.WEComponentsEnum.RenderChainPath)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddRenderChainPath = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderChainPath
+function Entity:AddRenderChainPath()
+  local index = self.WEComponentsEnum.RenderChainPath
   local component = RenderChainPathComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRenderChainPath = function(self, chainPath, elementType, cutChainPath, pathChainRate)
-  -- function num : 0_21 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderChainPath
+function Entity:ReplaceRenderChainPath(chainPath, elementType, cutChainPath, pathChainRate)
+  local index = self.WEComponentsEnum.RenderChainPath
   local component = RenderChainPathComponent:New(chainPath, elementType, cutChainPath, pathChainRate)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveRenderChainPath = function(self)
-  -- function num : 0_22
+function Entity:RemoveRenderChainPath()
   if self:HasRenderChainPath() then
-    self:RemoveComponent((self.WEComponentsEnum).RenderChainPath)
+    self:RemoveComponent(self.WEComponentsEnum.RenderChainPath)
   end
 end
-
-

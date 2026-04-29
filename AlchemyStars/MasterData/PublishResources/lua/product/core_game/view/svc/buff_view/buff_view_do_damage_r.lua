@@ -1,41 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_do_damage_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewDoDamage", BuffViewBase)
 BuffViewDoDamage = BuffViewDoDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewDoDamage.PlayView = function(self, TT)
-  -- function num : 0_0
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function BuffViewDoDamage:PlayView(TT)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayDamageBuff(TT, self)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewDoDamage.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewDoDamage:IsNotifyMatch(notify)
   local result = self._buffResult
   local entity = self._entity
-  if entity:GetID() ~= (notify:GetNotifyEntity()):GetID() or result:GetWalkPos() ~= notify:GetWalkPos() then
-    do return notify:GetNotifyType() ~= NotifyType.MonsterMoveOneFinish end
-    if entity:GetID() ~= notify:GetDefenderId() or result:GetEndPos() ~= notify:GetPosEnd() then
-      do
-        local bPass = notify:GetNotifyType() ~= NotifyType.HitBackEnd
-        do return bPass end
-        do
-          if notify:GetNotifyType() == NotifyType.PlayerBeHit then
-            local attackEntity = notify:GetAttackerEntity()
-            return not attackEntity or result:GetAttackID() == attackEntity:GetID()
-          end
-          do return true end
-          -- DECOMPILER ERROR: 8 unprocessed JMP targets
-        end
-      end
-    end
+  if notify:GetNotifyType() == NotifyType.MonsterMoveOneFinish then
+    return entity:GetID() == notify:GetNotifyEntity():GetID() and result:GetWalkPos() == notify:GetWalkPos()
+  elseif notify:GetNotifyType() == NotifyType.HitBackEnd then
+    local bPass = entity:GetID() == notify:GetDefenderId() and result:GetEndPos() == notify:GetPosEnd()
+    return bPass
+  elseif notify:GetNotifyType() == NotifyType.PlayerBeHit then
+    local attackEntity = notify:GetAttackerEntity()
+    return attackEntity and result:GetAttackID() == attackEntity:GetID()
   end
+  return true
 end
-
-

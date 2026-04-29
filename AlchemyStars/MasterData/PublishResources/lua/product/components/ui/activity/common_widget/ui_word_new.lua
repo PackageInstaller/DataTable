@@ -1,25 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_widget/ui_word_new.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWordNew", UICustomWidget)
 UIWordNew = UIWordNew
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWordNew.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWordNew:OnShow(uiParams)
   self._text = self:GetUIComponent("RollingText", "text")
   self._tittle = self:GetUIComponent("RollingText", "tittle")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWordNew.SetData = function(self, tittle, content)
-  -- function num : 0_1
-  (self._text):RefreshText(content)
-  ;
-  (self._tittle):RefreshText(tittle)
+function UIWordNew:SetData(tittle, content)
+  self._text:RefreshText(content)
+  self._tittle:RefreshText(tittle)
 end
-
-

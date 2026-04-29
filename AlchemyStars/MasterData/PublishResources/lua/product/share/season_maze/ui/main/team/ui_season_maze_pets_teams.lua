@@ -1,40 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/team/ui_season_maze_pets_teams.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazePetsTeams", UIController)
 UISeasonMazePetsTeams = UISeasonMazePetsTeams
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazePetsTeams.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazePetsTeams:Constructor()
   self._widgetCount = 8
   self._layoutWidth = 0
   self._isLongPressing = false
   self._lastClickTime = 0
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._uiSeasonMazeModule = (self._seasonMazeModule).uiModule
-  self._dialLine2Hp = ((Cfg.cfg_global).UIWidgetBattlePet_dialLine2Hp).IntValue or 200
-  self._bigDiaLine = ((Cfg.cfg_global).UIWidgetBattlePet_bigDiaLine).IntValue or 5
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self._uiSeasonMazeModule = self._seasonMazeModule.uiModule
+  self._dialLine2Hp = Cfg.cfg_global.UIWidgetBattlePet_dialLine2Hp.IntValue or 200
+  self._bigDiaLine = Cfg.cfg_global.UIWidgetBattlePet_bigDiaLine.IntValue or 5
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazePetsTeams:LoadDataOnEnter(TT, res, uiParams)
   self._module = self:GetModule(MissionModule)
-  self._ctx = (self._module):TeamCtx()
-  self._teams = (self._ctx):Teams()
+  self._ctx = self._module:TeamCtx()
+  self._teams = self._ctx:Teams()
   self.ctid = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UISeasonMazePetsTeams:OnShow(uiParams)
   self:UnLock("DoEnterEightPetsTeam")
-  local teamId = (self._ctx):GetCurrTeamId()
+  local teamId = self._ctx:GetCurrTeamId()
   self:UIWidget()
   self:DefaultVisible()
   self:AddEvents()
@@ -44,191 +31,145 @@ UISeasonMazePetsTeams.OnShow = function(self, uiParams)
   self:InAnimation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._ctx):GetFightAgain() then
-    (self._ctx):SetFightAgain(false)
+function UISeasonMazePetsTeams:OnHide()
+  if self._ctx:GetFightAgain() then
+    self._ctx:SetFightAgain(false)
   end
-  if (self._ctx):IsFastSelect() then
-    (self._ctx):ClearFastSelect()
+  if self._ctx:IsFastSelect() then
+    self._ctx:ClearFastSelect()
   end
   local hpm = self:GetModule(HelpPetModule)
   hpm:UI_ClearHelpPet()
-  ;
-  (self:GetModule(PetModule)):ClearAllPetSortInfo()
+  self:GetModule(PetModule):ClearAllPetSortInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_4
+function UISeasonMazePetsTeams:OnUpdate(deltaTimeMS)
   self:OnLayoutChanged(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.BtnChangeNameOnClick = function(self, go)
-  -- function num : 0_5
+function UISeasonMazePetsTeams:BtnChangeNameOnClick(go)
   if self.ctid then
     self:ShowDialog("UITeamsNameModify", self.ctid)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.BtnClearOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  local teamid = (self._ctx):GetCurrTeamId()
-  local team = (self._teams):Get(teamid)
+function UISeasonMazePetsTeams:BtnClearOnClick(go)
+  local teamid = self._ctx:GetCurrTeamId()
+  local team = self._teams:Get(teamid)
   if not team:HasPet() then
-    return 
+    return
   end
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_discovery_clear_all_pet_or_not"), function(param)
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    local teamid = (self._ctx):GetCurrTeamId()
-    local team = (self._teams):Get(teamid)
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_discovery_clear_all_pet_or_not"), function(param)
+    local teamid = self._ctx:GetCurrTeamId()
+    local team = self._teams:Get(teamid)
     local tmpTeam = team:Clone()
     local pets = tmpTeam:GetPets()
-    for k,v in pairs(pets) do
+    for k, v in pairs(pets) do
       pets[k] = 0
     end
     self:UpdateFormationInfo(tmpTeam)
-  end
-, nil, function(param)
-    -- function num : 0_6_1
-  end
-, nil)
+  end, nil, function(param)
+  end, nil)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.BtnFastTeamOnClick = function(self, go)
-  -- function num : 0_7
-  (self._ctx):InitTeamFastSelect()
+function UISeasonMazePetsTeams:BtnFastTeamOnClick(go)
+  self._ctx:InitTeamFastSelect()
   self:ShowDialog("UISeasonMazeTeamChangeController")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.BtnFightOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  local l_curTime = (os.time)()
+function UISeasonMazePetsTeams:BtnFightOnClick(go)
+  local l_curTime = os.time()
   if l_curTime - self._lastClickTime < 1 then
-    (Log.debug)("btnFightOnClick repeat")
-    return 
+    Log.debug("btnFightOnClick repeat")
+    return
   else
     self._lastClickTime = l_curTime
   end
-  local pc = (GameGlobal:GetInstance()):GetCollector("CoreGameLoading")
+  local pc = GameGlobal:GetInstance():GetCollector("CoreGameLoading")
   pc:ResetCollector()
   pc:Sample("UISeasonMazePetsTeams:BtnFightOnClick()")
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundUIBattleStart)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundUIBattleStart)
   local bCheckTeamValid, team = self:CheckTeamValid()
   if not bCheckTeamValid then
-    (ToastManager.ShowToast)((StringTable.Get)("str_discovery_no_leader_no_fight"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_discovery_no_leader_no_fight"))
+    return
   end
   if not self:CheckTeamMemberDuplicate() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_tower_error_8"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_tower_error_8"))
+    return
   end
   if self:SMazeCheckEmptySlot() then
-    (UISeasonMazeModule.PopMsgBox)("", (StringTable.Get)("str_season_maze_team_check_empty"), SeasonMazeMsgBoxType.OkCancel, function()
-    -- function num : 0_8_0 , upvalues : self
-    self:BtnFightEvent()
-  end
-)
-    return 
+    UISeasonMazeModule.PopMsgBox("", StringTable.Get("str_season_maze_team_check_empty"), SeasonMazeMsgBoxType.OkCancel, function()
+      self:BtnFightEvent()
+    end)
+    return
   end
   self:BtnFightEvent()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.BtnFightEvent = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonMazePetsTeams:BtnFightEvent(go)
   local petModule = self:GetModule(PetModule)
   petModule:ClearAllPetSortInfo()
   self:Lock("DoEnterMatch")
-  local game = (GameGlobal.GetModule)(GameMatchModule)
-  local role = (GameGlobal.GetModule)(RoleModule)
-  local curTeamId = (self._ctx):GetCurrTeamId()
+  local game = GameGlobal.GetModule(GameMatchModule)
+  local role = GameGlobal.GetModule(RoleModule)
+  local curTeamId = self._ctx:GetCurrTeamId()
   local matchType = MatchType.MT_SeasonMaze
-  local param = (self._ctx):GetParam()
+  local param = self._ctx:GetParam()
   local createInfo = game:GetMatchCreateInfo(matchType, param)
   self:StartTask(self._MatchStart, self, matchType, curTeamId, createInfo)
-  local teamid = (self._ctx):GetCurrTeamId()
-  local team = (self._teams):Get(teamid)
+  local teamid = self._ctx:GetCurrTeamId()
+  local team = self._teams:Get(teamid)
   local petsList = team.pets
   role:UpdateMatchPetsList(petsList)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.SMazeCheckEmptySlot = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local teamid = (self._ctx):GetCurrTeamId()
-  local team = (self._teams):Get(teamid)
+function UISeasonMazePetsTeams:SMazeCheckEmptySlot()
+  local teamid = self._ctx:GetCurrTeamId()
+  local team = self._teams:Get(teamid)
   local empty = false
   if team and team.pets and next(team.pets) then
-    for k,v in pairs(team.pets) do
+    for k, v in pairs(team.pets) do
       if not v or v == 0 then
         empty = true
         break
       end
     end
   end
-  do
-    do
-      if empty then
-        local allPets = (self._uiSeasonMazeModule):GetSeasonMazePets(function(petInfo)
-    -- function num : 0_10_0 , upvalues : self, _ENV
-    local id = petInfo.petID
-    local checkPet = (self._uiSeasonMazeModule):CreateMatchPet(petInfo)
-    local teamid = (self._ctx):GetCurrTeamId()
-    local team = (self._teams):Get(teamid)
-    local empty = false
-    if team and team.pets and next(team.pets) then
-      for k,v in pairs(team.pets) do
-        if v and v == id then
-          return false
-        else
-          if v and v > 0 and checkPet:IsBinderPet(v) then
+  if empty then
+    local allPets = self._uiSeasonMazeModule:GetSeasonMazePets(function(petInfo)
+      local id = petInfo.petID
+      local checkPet = self._uiSeasonMazeModule:CreateMatchPet(petInfo)
+      local teamid = self._ctx:GetCurrTeamId()
+      local team = self._teams:Get(teamid)
+      local empty = false
+      if team and team.pets and next(team.pets) then
+        for k, v in pairs(team.pets) do
+          if v and v == id then
+            return false
+          elseif v and 0 < v and checkPet:IsBinderPet(v) then
             return false
           end
         end
       end
-    end
-    do
-      local isWorking = (self._uiSeasonMazeModule):GetPetState(id, ESeasonMazePetStateType.ESeasonMazePetStateType_Dispatch)
+      local isWorking = self._uiSeasonMazeModule:GetPetState(id, ESeasonMazePetStateType.ESeasonMazePetStateType_Dispatch)
       if isWorking then
         return false
       end
-      local isDie = (self._uiSeasonMazeModule):GetPetState(id, ESeasonMazePetStateType.ESeasonMazePetStateType_Dead)
+      local isDie = self._uiSeasonMazeModule:GetPetState(id, ESeasonMazePetStateType.ESeasonMazePetStateType_Dead)
       if isDie then
         return false
       end
       return true
+    end)
+    if allPets and table.count(allPets) > 0 then
+      return true
     end
   end
-)
-        if allPets and (table.count)(allPets) > 0 then
-          return true
-        end
-      end
-      return false
-    end
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.UIWidget = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonMazePetsTeams:UIWidget()
   self._btns = self:GetUIComponent("UISelectObjectPath", "btns")
   self._hlgLayout = self:GetUIComponent("GridLayoutGroup", "hlg")
   self._hlgPath = self:GetUIComponent("UISelectObjectPath", "hlg")
@@ -244,158 +185,107 @@ UISeasonMazePetsTeams.UIWidget = function(self)
   self._atlasProf = self:GetAsset("UIPetJobIcon.spriteatlas", LoadType.SpriteAtlas)
   self._uiSeasonMazeAtlas = self:GetAsset("SeasonMaze.spriteatlas", LoadType.SpriteAtlas)
   self._primaryTips = self:GetGameObject("primaryTips")
-  ;
-  (self._primaryTips):SetActive(false)
+  self._primaryTips:SetActive(false)
   self._primaryRollingTipsGo = self:GetGameObject("primaryRollingTips")
   self._primaryRollingTipsText = self:GetUIComponent("UILocalizationText", "primaryRollingTipsText")
   if self._primaryRollingTipsGo then
-    (self._primaryRollingTipsGo):SetActive(false)
+    self._primaryRollingTipsGo:SetActive(false)
   end
-  self._diaSp1 = (self._uiSeasonMazeAtlas):GetSprite("cn14_sjmj_zdf_di017")
-  self._diaSp2 = (self._uiSeasonMazeAtlas):GetSprite("cn14_sjmj_zdf_di016")
+  self._diaSp1 = self._uiSeasonMazeAtlas:GetSprite("cn14_sjmj_zdf_di017")
+  self._diaSp2 = self._uiSeasonMazeAtlas:GetSprite("cn14_sjmj_zdf_di016")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.GetHpCfg = function(self)
-  -- function num : 0_12
+function UISeasonMazePetsTeams:GetHpCfg()
   return self._dialLine2Hp, self._bigDiaLine, self._diaSp1, self._diaSp2
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.DefaultVisible = function(self)
-  -- function num : 0_13
-  ((self._replaceTran).gameObject):SetActive(false)
+function UISeasonMazePetsTeams:DefaultVisible()
+  self._replaceTran.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.AddEvents = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UISeasonMazePetsTeams:AddEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
   self:AttachEvent(GameEventType.DiscoveryChangeTeamData, self.FlushTeam)
   self:AttachEvent(GameEventType.TeamItemLongPress, self.TeamItemLongPress)
   self:AttachEvent(GameEventType.TeamUpdateReplaceCardPos, self.UpdateReplaceCardPos)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.InitCommonTopButton = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  self._backBtns = (self._btns):SpawnObject("UISMazeCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_15_0 , upvalues : self
+function UISeasonMazePetsTeams:InitCommonTopButton()
+  self._backBtns = self._btns:SpawnObject("UISMazeCommonTopButton")
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, nil, function()
-    -- function num : 0_15_1 , upvalues : _ENV
-    (UICommonHelper:GetInstance()):SwitchToUIMain()
-  end
-, false, nil)
+  end, nil, function()
+    UICommonHelper:GetInstance():SwitchToUIMain()
+  end, false, nil)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.InitTeams = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  self._hlgSpawns = (self._hlgPath):SpawnObjects("UISeasonMazePetsTeamsItem", self._widgetCount)
-  for k,v in pairs(self._hlgSpawns) do
-    (v:GetGameObject()).name = k - 1
+function UISeasonMazePetsTeams:InitTeams()
+  self._hlgSpawns = self._hlgPath:SpawnObjects("UISeasonMazePetsTeamsItem", self._widgetCount)
+  for k, v in pairs(self._hlgSpawns) do
+    v:GetGameObject().name = k - 1
   end
   self:OnLayoutChanged(0)
-  for k,v in pairs(self._hlgSpawns) do
+  for k, v in pairs(self._hlgSpawns) do
     v:InitData(self._atlasProperty, self._atlasAwake, self._atlasProf, function(slot)
-    -- function num : 0_16_0 , upvalues : self
-    self:OpenTeamMemberSelect(slot)
+      self:OpenTeamMemberSelect(slot)
+    end, function()
+      local petList = {}
+      local allPets = self._uiSeasonMazeModule:GetSeasonMazePets()
+      local teamid = self._ctx:GetCurrTeamId()
+      local team = self._teams:Get(teamid)
+      if team.pets and next(team.pets) then
+        for key, value in pairs(team.pets) do
+          local pet = allPets[value]
+          if pet then
+            table.insert(petList, pet)
+          end
+        end
+      end
+      return petList
+    end, function()
+      return self:GetHpCfg()
+    end)
   end
-, function()
-    -- function num : 0_16_1 , upvalues : self, _ENV
+  self._replaceCard = self._replaceCardPath:SpawnObject("UISeasonMazePetsTeamsItem")
+  self._replaceCard:InitData(self._atlasProperty, self._atlasAwake, self._atlasProf, function(slot)
+    self:OpenTeamMemberSelect(slot)
+  end, function()
     local petList = {}
-    local allPets = (self._uiSeasonMazeModule):GetSeasonMazePets()
-    local teamid = (self._ctx):GetCurrTeamId()
-    local team = (self._teams):Get(teamid)
+    local allPets = self._uiSeasonMazeModule:GetSeasonMazePets()
+    local teamid = self._ctx:GetCurrTeamId()
+    local team = self._teams:Get(teamid)
     if team.pets and next(team.pets) then
-      for key,value in pairs(team.pets) do
+      for key, value in pairs(team.pets) do
         local pet = allPets[value]
         if pet then
-          (table.insert)(petList, pet)
+          table.insert(petList, pet)
         end
       end
     end
-    do
-      return petList
-    end
-  end
-, function()
-    -- function num : 0_16_2 , upvalues : self
+    return petList
+  end, function()
     return self:GetHpCfg()
-  end
-)
-  end
-  self._replaceCard = (self._replaceCardPath):SpawnObject("UISeasonMazePetsTeamsItem")
-  ;
-  (self._replaceCard):InitData(self._atlasProperty, self._atlasAwake, self._atlasProf, function(slot)
-    -- function num : 0_16_3 , upvalues : self
-    self:OpenTeamMemberSelect(slot)
-  end
-, function()
-    -- function num : 0_16_4 , upvalues : self, _ENV
-    local petList = {}
-    local allPets = (self._uiSeasonMazeModule):GetSeasonMazePets()
-    local teamid = (self._ctx):GetCurrTeamId()
-    local team = (self._teams):Get(teamid)
-    if team.pets and next(team.pets) then
-      for key,value in pairs(team.pets) do
-        local pet = allPets[value]
-        if pet then
-          (table.insert)(petList, pet)
-        end
-      end
-    end
-    do
-      return petList
-    end
-  end
-, function()
-    -- function num : 0_16_5 , upvalues : self
-    return self:GetHpCfg()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.OnLayoutChanged = function(self, deltaTimeMS)
-  -- function num : 0_17 , upvalues : _ENV
-  local newLayoutWidth = (((self._hlgLayout).transform).rect).width
+function UISeasonMazePetsTeams:OnLayoutChanged(deltaTimeMS)
+  local newLayoutWidth = self._hlgLayout.transform.rect.width
   if self._layoutWidth ~= newLayoutWidth then
     self._layoutWidth = newLayoutWidth
-    local padding = (self._hlgLayout).padding
+    local padding = self._hlgLayout.padding
     local itemWidth = (newLayoutWidth - padding.right) * 0.5
-    local cellSize = (self._hlgLayout).cellSize
+    local cellSize = self._hlgLayout.cellSize
     cellSize = Vector2(itemWidth, cellSize.y)
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._hlgLayout).cellSize = cellSize
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._replaceTran).sizeDelta = cellSize
-    ;
-    (((UnityEngine.UI).LayoutRebuilder).MarkLayoutForRebuild)((self._hlgLayout).transform)
+    self._hlgLayout.cellSize = cellSize
+    self._replaceTran.sizeDelta = cellSize
+    UnityEngine.UI.LayoutRebuilder.MarkLayoutForRebuild(self._hlgLayout.transform)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.FlushTeam = function(self, teamId)
-  -- function num : 0_18 , upvalues : _ENV
-  local allPets = (self._uiSeasonMazeModule):GetSeasonMazePets()
-  for k,v in ipairs(self._hlgSpawns) do
-    local petList = (((self._ctx):Teams()):Get(teamId)).pets
+function UISeasonMazePetsTeams:FlushTeam(teamId)
+  local allPets = self._uiSeasonMazeModule:GetSeasonMazePets()
+  for k, v in ipairs(self._hlgSpawns) do
+    local petList = self._ctx:Teams():Get(teamId).pets
     local pstid = petList[k]
     local pet = allPets[pstid]
     v:FlushPet(k, pet)
@@ -403,89 +293,64 @@ UISeasonMazePetsTeams.FlushTeam = function(self, teamId)
   self.ctid = teamId
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.InAnimation = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UISeasonMazePetsTeams:InAnimation()
   local lockName = "UISeasonMazePetsTeams:InAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_19_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self._animation):Play("effanim_UISeasonMazePetsTeams_in")
+    self._animation:Play("effanim_UISeasonMazePetsTeams_in")
     YIELD(TT, 500)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.OnActivityCloseEvent = function(self, id)
-  -- function num : 0_20
+function UISeasonMazePetsTeams:OnActivityCloseEvent(id)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.OpenTeamMemberSelect = function(self, slot)
-  -- function num : 0_21 , upvalues : _ENV
-  (self._ctx):InitTeamMemberSelect(slot)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function UISeasonMazePetsTeams:OpenTeamMemberSelect(slot)
+  self._ctx:InitTeamMemberSelect(slot)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   self:ShowDialog("UISeasonMazeTeamChangeController")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.UpdateFormationInfo = function(self, newTeam)
-  -- function num : 0_22 , upvalues : _ENV
+function UISeasonMazePetsTeams:UpdateFormationInfo(newTeam)
   local lockName = "UISeasonMazePetsTeams:UpdateFormationInfo"
   self:StartTask(function(TT)
-    -- function num : 0_22_0 , upvalues : self, lockName, newTeam, _ENV
     self:Lock(lockName)
     local teamId = newTeam:GetID()
     local teamName = newTeam:GetName()
     local pets = newTeam:GetPets()
-    local res = (self._seasonMazeModule):ReqSeasonMazeChangeFormationInfo(TT, teamId, teamName, pets)
+    local res = self._seasonMazeModule:ReqSeasonMazeChangeFormationInfo(TT, teamId, teamName, pets)
     if res:GetSucc() then
-      ((self._ctx).seasonMazeTeam):UpdateTeam(newTeam)
+      self._ctx.seasonMazeTeam:UpdateTeam(newTeam)
       self:FlushTeam(teamId)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TeamMemberChanged)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.TeamMemberChanged)
     else
-      ;
-      (Log.fatal)("### 更新编队失败 ")
+      Log.fatal("### 更新编队失败 ")
     end
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.TeamItemLongPress = function(self, isBegin, slot, pet)
-  -- function num : 0_23 , upvalues : _ENV
-  local teamId = (self._ctx):GetCurrTeamId()
+function UISeasonMazePetsTeams:TeamItemLongPress(isBegin, slot, pet)
+  local teamId = self._ctx:GetCurrTeamId()
   if isBegin then
     self._isLongPressing = true
-    ;
-    (self._replaceCard):FlushPet(slot, pet, false)
-    ;
-    (self._replaceCard):HideGuideWarn()
+    self._replaceCard:FlushPet(slot, pet, false)
+    self._replaceCard:HideGuideWarn()
   else
     self._isLongPressing = false
-    local WorldToScreenPoint = (UnityEngine.RectTransformUtility).WorldToScreenPoint
-    local RectangleContainsScreenPoint = (UnityEngine.RectTransformUtility).RectangleContainsScreenPoint
-    local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-    for i,v in pairs(self._hlgSpawns) do
-      local tran = (v:GetGameObject()).transform
-      local screenPos = WorldToScreenPoint(camera, (self._replaceTran).position)
+    local WorldToScreenPoint = UnityEngine.RectTransformUtility.WorldToScreenPoint
+    local RectangleContainsScreenPoint = UnityEngine.RectTransformUtility.RectangleContainsScreenPoint
+    local camera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+    for i, v in pairs(self._hlgSpawns) do
+      local tran = v:GetGameObject().transform
+      local screenPos = WorldToScreenPoint(camera, self._replaceTran.position)
       local inSlot = RectangleContainsScreenPoint(tran, screenPos, camera)
-      local localPos = tran:InverseTransformPoint((self._replaceTran).position)
-      if (tran.rect):Contains(localPos) and not v:IsLocked() then
-        local teamid = (self._ctx):GetCurrTeamId()
-        local team = (self._teams):Get(teamid)
+      local localPos = tran:InverseTransformPoint(self._replaceTran.position)
+      if tran.rect:Contains(localPos) and not v:IsLocked() then
+        local teamid = self._ctx:GetCurrTeamId()
+        local team = self._teams:Get(teamid)
         local tmpTeam = team:Clone()
         tmpTeam:Swap(slot, i)
         self:UpdateFormationInfo(tmpTeam)
@@ -493,39 +358,27 @@ UISeasonMazePetsTeams.TeamItemLongPress = function(self, isBegin, slot, pet)
       end
     end
   end
-  do
-    ;
-    ((self._replaceTran).gameObject):SetActive(self._isLongPressing)
-  end
+  self._replaceTran.gameObject:SetActive(self._isLongPressing)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.UpdateReplaceCardPos = function(self, screenPos)
-  -- function num : 0_24 , upvalues : _ENV
+function UISeasonMazePetsTeams:UpdateReplaceCardPos(screenPos)
   if self._replaceTran ~= nil then
-    local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-    local pos = (UIHelper.ScreenPointToWorldPointInRectangle)((self._replaceTran).parent, screenPos, camera)
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._replaceTran).position = pos
+    local camera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+    local pos = UIHelper.ScreenPointToWorldPointInRectangle(self._replaceTran.parent, screenPos, camera)
+    self._replaceTran.position = pos
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.CheckTeamValid = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  local teamid = (self._ctx):GetCurrTeamId()
-  local team = (self._teams):Get(teamid)
+function UISeasonMazePetsTeams:CheckTeamValid()
+  local teamid = self._ctx:GetCurrTeamId()
+  local team = self._teams:Get(teamid)
   if not team or not team.pets then
     return false
   end
-  if (table.count)(team.pets) <= 0 then
+  if table.count(team.pets) <= 0 then
     return false
   end
-  local leaderId = (team.pets)[1]
+  local leaderId = team.pets[1]
   if not leaderId then
     return false
   end
@@ -535,19 +388,16 @@ UISeasonMazePetsTeams.CheckTeamValid = function(self)
   return true, team
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.CheckTeamMemberDuplicate = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local teamid = (self._ctx):GetCurrTeamId()
-  local team = (self._teams):Get(teamid)
+function UISeasonMazePetsTeams:CheckTeamMemberDuplicate()
+  local teamid = self._ctx:GetCurrTeamId()
+  local team = self._teams:Get(teamid)
   if not team or not team.pets then
     return false
   end
   local petModule = self:GetModule(PetModule)
   local dic = {}
-  for index,pstId in pairs(team.pets) do
-    if pstId > 0 then
+  for index, pstId in pairs(team.pets) do
+    if 0 < pstId then
       local petData = petModule:GetPet(pstId)
       if petData then
         local tmpId = petData:GetTemplateID()
@@ -558,86 +408,58 @@ UISeasonMazePetsTeams.CheckTeamMemberDuplicate = function(self)
       end
     end
   end
-  for k,v in pairs(dic) do
-    if v > 1 then
+  for k, v in pairs(dic) do
+    if 1 < v then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams._MatchStart = function(self, TT, nMatchType, teamId, createInfo)
-  -- function num : 0_27
+function UISeasonMazePetsTeams:_MatchStart(TT, nMatchType, teamId, createInfo)
   self._matchType = nMatchType
   self._matchTeamId = teamId
   self._matchCreateInfo = createInfo
   self:_OnMatchStart()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams._OnMatchStart = function(self)
-  -- function num : 0_28
+function UISeasonMazePetsTeams:_OnMatchStart()
   self:StartTask(self.StartMatchTask, self, self._matchType, self._matchTeamId, self._matchCreateInfo)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeams.StartMatchTask = function(self, TT, nMatchType, teamId, createInfo)
-  -- function num : 0_29 , upvalues : _ENV
-  local game = (GameGlobal.GetModule)(GameMatchModule)
+function UISeasonMazePetsTeams:StartMatchTask(TT, nMatchType, teamId, createInfo)
+  local game = GameGlobal.GetModule(GameMatchModule)
   local res = game:StartMatchTask(TT, nMatchType, teamId, createInfo)
   self:UnLock("DoEnterMatch")
   if not res:GetSucc() then
-    if ((GameGlobal.UIStateManager)()):IsShow("UIAircraftTacticSwitch") then
-      ((GameGlobal.UIStateManager)()):CloseDialog("UIAircraftTacticSwitch")
+    if GameGlobal.UIStateManager():IsShow("UIAircraftTacticSwitch") then
+      GameGlobal.UIStateManager():CloseDialog("UIAircraftTacticSwitch")
     end
     local result = res:GetResult()
     if result == MatchOpResCode.MATCH_NOT_ENOUGH_PHY_POWER then
       self:ShowDialog("UIGetPhyPointController")
-    else
-      if result == MatchOpResCode.MATCH_CAMPAIGN_MISSIOHN_CROSS_DAY then
-        (ToastManager.ShowToast)(game:GetErrorMsg(result))
-        if nMatchType == MatchType.MT_BlackFist then
-          self:SwitchState(UIStateType.UIBlackFightMain)
-        else
-          self:SwitchState(UIStateType.UIActivityN5BattleField)
-        end
+    elseif result == MatchOpResCode.MATCH_CAMPAIGN_MISSIOHN_CROSS_DAY then
+      ToastManager.ShowToast(game:GetErrorMsg(result))
+      if nMatchType == MatchType.MT_BlackFist then
+        self:SwitchState(UIStateType.UIBlackFightMain)
       else
-        if result == MatchOpResCode.MATCH_WORLD_BOSS_MISSION_INVALID then
-          (ToastManager.ShowToast)(game:GetErrorMsg(result))
-          self:SwitchState(UIStateType.UIWorldBoss)
-        else
-          if result == MatchOpResCode.MATCH_DM_FORMATION_INVALID then
-            local tips = (StringTable.Get)("str_diff_mission_MATCH_DM_FORMATION_INVALID")
-            ;
-            (ToastManager.ShowToast)(tips)
-          else
-            do
-              if result == MatchOpResCode.MATCH_CAMPAIGN_CamNotOpen or result == MatchOpResCode.MATCH_CAMPAIGN_ComNotOpen then
-                local res = AsyncRequestRes:New()
-                res:SetResult(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
-                ;
-                (self._seasonMazeModule):CheckSeasonMazeClose(res)
-              else
-                do
-                  do
-                    ;
-                    (ToastManager.ShowToast)(game:GetErrorMsg(result))
-                    do return  end
-                    local serial = (GameGlobal.GetModule)(SerialAutoFightModule)
-                    serial:StartSerialFight()
-                  end
-                end
-              end
-            end
-          end
-        end
+        self:SwitchState(UIStateType.UIActivityN5BattleField)
       end
+    elseif result == MatchOpResCode.MATCH_WORLD_BOSS_MISSION_INVALID then
+      ToastManager.ShowToast(game:GetErrorMsg(result))
+      self:SwitchState(UIStateType.UIWorldBoss)
+    elseif result == MatchOpResCode.MATCH_DM_FORMATION_INVALID then
+      local tips = StringTable.Get("str_diff_mission_MATCH_DM_FORMATION_INVALID")
+      ToastManager.ShowToast(tips)
+    elseif result == MatchOpResCode.MATCH_CAMPAIGN_CamNotOpen or result == MatchOpResCode.MATCH_CAMPAIGN_ComNotOpen then
+      local res = AsyncRequestRes:New()
+      res:SetResult(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
+      self._seasonMazeModule:CheckSeasonMazeClose(res)
+    else
+      ToastManager.ShowToast(game:GetErrorMsg(result))
     end
+    return
   end
+  local serial = GameGlobal.GetModule(SerialAutoFightModule)
+  serial:StartSerialFight()
 end
-
-

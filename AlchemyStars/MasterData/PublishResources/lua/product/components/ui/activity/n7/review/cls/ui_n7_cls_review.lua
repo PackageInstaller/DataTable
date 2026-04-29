@@ -1,238 +1,164 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/review/cls/ui_n7_cls_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N7DataReview", CampaignDataBase)
 N7DataReview = N7DataReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N7DataReview.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.mMission = (GameGlobal.GetModule)(MissionModule)
+function N7DataReview:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.mMission = GameGlobal.GetModule(MissionModule)
   self.componentIdLine = ECampaignReviewN7ComponentID.ECAMPAIGN_REVIEW_ReviewN7_LINE_MISSION
   self.componentIdProgress = ECampaignReviewN7ComponentID.ECAMPAIGN_REVIEW_ReviewN7_POINT_PROGRESS
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.Init = function(self)
-  -- function num : 0_1
+function N7DataReview:Init()
   self:InitProgress()
   self:InitPapers()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.InitProgress = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function N7DataReview:InitProgress()
   local cInfo = self:GetComponentInfoProgress()
   local m_progress_rewards = cInfo.m_progress_rewards
   self.progresses = {}
-  for p,rewards in pairs(m_progress_rewards) do
+  for p, rewards in pairs(m_progress_rewards) do
     local progress = N7DataReviewProgress:New()
     progress.progress = p
     progress.awards = rewards
-    ;
-    (table.insert)(self.progresses, progress)
+    table.insert(self.progresses, progress)
   end
-  ;
-  (table.sort)(self.progresses, function(a, b)
-    -- function num : 0_2_0
-    do return a.progress < b.progress end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self.progresses, function(a, b)
+    return a.progress < b.progress
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.InitPapers = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function N7DataReview:InitPapers()
   self.papers = {}
-  local cfgPaper = (Cfg.cfg_n7_black_fight_paper_review)()
-  for k,cfgv in pairs(cfgPaper) do
-    do
-      local paper = BlackFightPaperData:New()
-      paper.Init = function(paper, idx)
-    -- function num : 0_3_0 , upvalues : cfgv
-    paper.idx = idx
-    paper.unlockReputation = nil
-    paper.missionId = cfgv.Condition
-    paper.elementsL = paper:GetElements(cfgv, "PartsDetails")
-    return cfgv
-  end
-
-      paper.IsUnlock = function(paper)
-    -- function num : 0_3_1 , upvalues : self
-    if paper.missionId == 0 then
-      return true
+  local cfgPaper = Cfg.cfg_n7_black_fight_paper_review()
+  for k, cfgv in pairs(cfgPaper) do
+    local paper = BlackFightPaperData:New()
+    
+    function paper.Init(paper, idx)
+      paper.idx = idx
+      paper.unlockReputation = nil
+      paper.missionId = cfgv.Condition
+      paper.elementsL, paper.elementsR = paper:GetElements(cfgv, "PartsDetails")
+      return cfgv
     end
-    local info = self:GetComponentInfoNormal()
-    if info and info.m_pass_mission_info and (info.m_pass_mission_info)[paper.missionId] then
-      return true
+    
+    function paper.IsUnlock(paper)
+      if paper.missionId == 0 then
+        return true
+      end
+      local info = self:GetComponentInfoNormal()
+      if info and info.m_pass_mission_info and info.m_pass_mission_info[paper.missionId] then
+        return true
+      end
+      return false
     end
-    return false
-  end
-
-      paper.GetPrefsKeyPaperUnlock = function(idx)
-    -- function num : 0_3_2 , upvalues : _ENV
-    return (Summer1Data.GetPrefsKey)("BlackFightPaperUnlockRview") .. idx
-  end
-
-      paper:Init(k)
-      ;
-      (table.insert)(self.papers, paper)
+    
+    function paper.GetPrefsKeyPaperUnlock(idx)
+      return Summer1Data.GetPrefsKey("BlackFightPaperUnlockRview") .. idx
     end
+    
+    paper:Init(k)
+    table.insert(self.papers, paper)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.CheckCode = function(res)
-  -- function num : 0_4 , upvalues : _ENV
+function N7DataReview.CheckCode(res)
   local result = res:GetResult()
   if result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
     return true
   end
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_" .. result))
+  ToastManager.ShowToast(StringTable.Get("str_activity_error_" .. result))
   if result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED or result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN then
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
   end
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.CheckRedNormal = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function N7DataReview:CheckRedNormal()
   local state = self:GetStateNormal()
   if state == UISummerOneEnterBtnState.Normal then
     local lp = self:GetLocalProcess()
-    local red = (self.mCampaign):CheckComponentRed(lp, self.componentIdLine)
+    local red = self.mCampaign:CheckComponentRed(lp, self.componentIdLine)
     return red
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.CheckRedProgress = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function N7DataReview:CheckRedProgress()
   local state = self:GetStateProgress()
   if state == UISummerOneEnterBtnState.Normal then
     local lp = self:GetLocalProcess()
-    local red = (self.mCampaign):CheckComponentRed(lp, self.componentIdProgress)
+    local red = self.mCampaign:CheckComponentRed(lp, self.componentIdProgress)
     return red
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.GetComponentNormal = function(self)
-  -- function num : 0_7
-  local c = (self.activityCampaign):GetComponent(self.componentIdLine)
+function N7DataReview:GetComponentNormal()
+  local c = self.activityCampaign:GetComponent(self.componentIdLine)
   return c
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.GetComponentInfoNormal = function(self)
-  -- function num : 0_8
-  local cInfo = (self.activityCampaign):GetComponentInfo(self.componentIdLine)
+function N7DataReview:GetComponentInfoNormal()
+  local cInfo = self.activityCampaign:GetComponentInfo(self.componentIdLine)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.GetComponentProgress = function(self)
-  -- function num : 0_9
-  local c = (self.activityCampaign):GetComponent(self.componentIdProgress)
+function N7DataReview:GetComponentProgress()
+  local c = self.activityCampaign:GetComponent(self.componentIdProgress)
   return c
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.GetComponentInfoProgress = function(self)
-  -- function num : 0_10
-  local cInfo = (self.activityCampaign):GetComponentInfo(self.componentIdProgress)
+function N7DataReview:GetComponentInfoProgress()
+  local cInfo = self.activityCampaign:GetComponentInfo(self.componentIdProgress)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.GetState = function(self, cInfo)
-  -- function num : 0_11 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+function N7DataReview:GetState(cInfo)
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if nowTimestamp < cInfo.m_unlock_time then
     return UISummerOneEnterBtnState.NotOpen
+  elseif nowTimestamp > cInfo.m_close_time then
+    return UISummerOneEnterBtnState.Closed
+  elseif cInfo.m_b_unlock then
+    return UISummerOneEnterBtnState.Normal
   else
-    if cInfo.m_close_time < nowTimestamp then
-      return UISummerOneEnterBtnState.Closed
+    local cfgv = Cfg.cfg_campaign_mission[cInfo.m_need_mission_id]
+    if cfgv then
+      return UISummerOneEnterBtnState.Locked
     else
-      if cInfo.m_b_unlock then
-        return UISummerOneEnterBtnState.Normal
-      else
-        local cfgv = (Cfg.cfg_campaign_mission)[cInfo.m_need_mission_id]
-        if cfgv then
-          return UISummerOneEnterBtnState.Locked
-        else
-          return UISummerOneEnterBtnState.Normal
-        end
-      end
+      return UISummerOneEnterBtnState.Normal
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.GetStateNormal = function(self)
-  -- function num : 0_12
+function N7DataReview:GetStateNormal()
   local cInfo = self:GetComponentInfoNormal()
   return self:GetState(cInfo)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.GetStateProgress = function(self)
-  -- function num : 0_13
-  local c = (self.activityCampaign):GetComponentInfo(self.componentIdProgress)
+function N7DataReview:GetStateProgress()
+  local c = self.activityCampaign:GetComponentInfo(self.componentIdProgress)
   if c then
     return self:GetState(c)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.CheckNewLine = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  if not (N7DataReview.HasPrefsLine)() and self:GetStateNormal() == UISummerOneEnterBtnState.Normal then
+function N7DataReview:CheckNewLine()
+  if not N7DataReview.HasPrefsLine() and self:GetStateNormal() == UISummerOneEnterBtnState.Normal then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.CheckNewProgress = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  if not (N7DataReview.HasPrefsShop)() and self:GetStateProgress() == UISummerOneEnterBtnState.Normal then
+function N7DataReview:CheckNewProgress()
+  if not N7DataReview.HasPrefsShop() and self:GetStateProgress() == UISummerOneEnterBtnState.Normal then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.GetCurProgressPercent = function(self)
-  -- function num : 0_16
+function N7DataReview:GetCurProgressPercent()
   local cInfo = self:GetComponentInfoProgress()
   local currentProgress = cInfo.m_current_progress
   local totalProgress = cInfo.m_total_progress
@@ -240,78 +166,56 @@ N7DataReview.GetCurProgressPercent = function(self)
   return process
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.GetProgressCanGet = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function N7DataReview:GetProgressCanGet()
   local cInfo = self:GetComponentInfoProgress()
-  for index,progress in ipairs(self.progresses) do
+  for index, progress in ipairs(self.progresses) do
     if progress:State() == CampaignPointProgressStatus.CPPS_Completed then
       return progress
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.GetProgressNext = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function N7DataReview:GetProgressNext()
   local cInfo = self:GetComponentInfoProgress()
-  for index,progress in ipairs(self.progresses) do
+  for index, progress in ipairs(self.progresses) do
     if progress:State() == CampaignPointProgressStatus.CPPS_Accepted then
       return progress
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.IsProgressPercentFull = function(self)
-  -- function num : 0_19
+function N7DataReview:IsProgressPercentFull()
   local percent = self:GetCurProgressPercent()
-  local isFull = percent >= 1
-  do return isFull end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local isFull = 1 <= percent
+  return isFull
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.ExistNotReadPaper = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function N7DataReview:ExistNotReadPaper()
   if self.papers then
-    for index,paper in ipairs(self.papers) do
+    for index, paper in ipairs(self.papers) do
       if not paper:HasRead() then
         return true, paper
       end
     end
   end
-  do
-    return false, nil
-  end
+  return false, nil
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.ReadPaper = function(self, idx)
-  -- function num : 0_21 , upvalues : _ENV
+function N7DataReview:ReadPaper(idx)
   if self.papers then
-    for index,paper in ipairs(self.papers) do
+    for index, paper in ipairs(self.papers) do
       if paper.idx == idx then
         paper:Read()
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BlackFistUpdatePaperRed)
-        return 
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.BlackFistUpdatePaperRed)
+        return
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReview.CheckGot = function(self, progress)
-  -- function num : 0_22 , upvalues : _ENV
+function N7DataReview:CheckGot(progress)
   local cInfo = self:GetComponentInfoProgress()
-  if (table.icontains)(cInfo.m_received_progress, progress) then
+  if table.icontains(cInfo.m_received_progress, progress) then
     return true
   end
   return false
@@ -319,66 +223,46 @@ end
 
 _class("N7DataReviewProgress", Object)
 N7DataReviewProgress = N7DataReviewProgress
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
 
-N7DataReviewProgress.Constructor = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN7DataReview()
+function N7DataReviewProgress:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN7DataReview()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReviewProgress.GetProgressPercentString = function(self)
-  -- function num : 0_24
+function N7DataReviewProgress:GetProgressPercentString()
   return self.progress .. "%"
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReviewProgress.Get1stAward = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  do
-    if self.awards then
-      local ra = (self.awards)[1]
-      if ra then
-        return ra
-      end
+function N7DataReviewProgress:Get1stAward()
+  if self.awards then
+    local ra = self.awards[1]
+    if ra then
+      return ra
     end
-    ;
-    (Log.fatal)("### no award in this progress.", self.progress)
   end
+  Log.fatal("### no award in this progress.", self.progress)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReviewProgress.GetItemCfg = function(self, tplId)
-  -- function num : 0_26 , upvalues : _ENV
-  local cfgv = (Cfg.cfg_item)[tplId]
+function N7DataReviewProgress:GetItemCfg(tplId)
+  local cfgv = Cfg.cfg_item[tplId]
   if not cfgv then
-    (Log.fatal)("### no data in cfg_item", tplId)
-    return 
+    Log.fatal("### no data in cfg_item", tplId)
+    return
   end
   return cfgv
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReviewProgress.IconNameDesc = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function N7DataReviewProgress:IconNameDesc()
   local ra = self:Get1stAward()
   local cfg = self:GetItemCfg(ra.assetid)
   if cfg then
-    return cfg.Icon, (StringTable.Get)(cfg.Name), (StringTable.Get)(cfg.Intro)
+    return cfg.Icon, StringTable.Get(cfg.Name), StringTable.Get(cfg.Intro)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReviewProgress.State = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  local curProgressPercent = (self.data):GetCurProgressPercent()
-  if self.progress <= curProgressPercent * 100 then
+function N7DataReviewProgress:State()
+  local curProgressPercent = self.data:GetCurProgressPercent()
+  if curProgressPercent * 100 >= self.progress then
     if self:HasGot() then
       return CampaignPointProgressStatus.CPPS_Taken
     else
@@ -389,15 +273,10 @@ N7DataReviewProgress.State = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-N7DataReviewProgress.HasGot = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local cInfo = (self.data):GetComponentInfoProgress()
-  if (table.icontains)(cInfo.m_received_progress, self.progress) then
+function N7DataReviewProgress:HasGot()
+  local cInfo = self.data:GetComponentInfoProgress()
+  if table.icontains(cInfo.m_received_progress, self.progress) then
     return true
   end
   return false
 end
-
-

@@ -1,66 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/data/ui_haute_couture_data_kl.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureKL", UIHauteCoutureDataBase)
 UIHauteCoutureKL = UIHauteCoutureKL
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureKL.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureKL:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureKL.CostItemID = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCoutureKL:CostItemID()
   return RoleAssetID.RoleAssetDrawCardSeniorSkin
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureKL.ShopGoodsOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIHauteCoutureDrawController")
+function UIHauteCoutureKL:ShopGoodsOnClick()
+  GameGlobal.UIStateManager():ShowDialog("UIHauteCoutureDrawController")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureKL.BuyItem = function(self)
-  -- function num : 0_3
+function UIHauteCoutureKL:BuyItem()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureKL.IsReview = function(self)
-  -- function num : 0_4
+function UIHauteCoutureKL:IsReview()
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureKL.HC_Type = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHauteCoutureKL:HC_Type()
   return HauteCoutureType.HC_KL
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureKL.GetMainUIInfo = function(self)
-  -- function num : 0_6
+function UIHauteCoutureKL:GetMainUIInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureKL.GetMainUIBgInfo = function(self)
-  -- function num : 0_7
+function UIHauteCoutureKL:GetMainUIBgInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureKL.SideEnterText = function(self)
-  -- function num : 0_8
+function UIHauteCoutureKL:SideEnterText()
 end
-
-

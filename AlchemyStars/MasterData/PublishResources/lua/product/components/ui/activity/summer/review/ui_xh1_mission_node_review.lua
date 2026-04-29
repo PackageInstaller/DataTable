@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/review/ui_xh1_mission_node_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXH1MissionNodeReview", UICustomWidget)
 UIXH1MissionNodeReview = UIXH1MissionNodeReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXH1MissionNodeReview.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIXH1MissionNodeReview:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1MissionNodeReview.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIXH1MissionNodeReview:InitWidget()
   self.bg = self:GetUIComponent("Image", "bg")
   self.name = self:GetUIComponent("UILocalizationText", "name")
   self.star = self:GetGameObject("star")
@@ -24,133 +14,96 @@ UIXH1MissionNodeReview.InitWidget = function(self)
   self.star1 = self:GetUIComponent("Image", "Star1")
   self.star2 = self:GetUIComponent("Image", "Star2")
   self.star3 = self:GetUIComponent("Image", "Star3")
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
-  self._stars = {self.star1, self.star2, self.star3}
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
+  self._stars = {
+    self.star1,
+    self.star2,
+    self.star3
+  }
   self._atlas = self:GetAsset("UIXH1SimpleLevel.spriteatlas", LoadType.SpriteAtlas)
   self.shadow = self:GetUIComponent("Shadow", "name")
   self.root = self:GetGameObject()
   self._anim = self:GetUIComponent("Animation", "UIXH1MissionNode")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1MissionNodeReview.SetData = function(self, node, cb)
-  -- function num : 0_2 , upvalues : _ENV
+function UIXH1MissionNodeReview:SetData(node, cb)
   self._nodeInfo = node
   self._onClick = cb
   self._canEnter = false
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = (self._nodeInfo).pos
-  ;
-  (self.name):SetText((StringTable.Get)((self._nodeInfo).name))
-  local viewCfg = nil
-  local lineCfg = ((Cfg.cfg_component_line_mission)({CampaignMissionId = (self._nodeInfo).campaignMissionId}))[1]
+  self._rectTransform.anchoredPosition = self._nodeInfo.pos
+  self.name:SetText(StringTable.Get(self._nodeInfo.name))
+  local viewCfg
+  local lineCfg = Cfg.cfg_component_line_mission({
+    CampaignMissionId = self._nodeInfo.campaignMissionId
+  })[1]
   if not lineCfg.CustomParams then
     AirError("夏活1普通关找不到自定义参数：", lineCfg.ID)
   end
-  local hardParam = ((lineCfg.CustomParams)[1])[1]
-  local typeCfg = nil
-  if (self._nodeInfo).isSLevel then
-    typeCfg = (UIXH1SimpleLevelReview.NodeCfg)[UIXH1SimpleLevelReview.SLeval]
+  local hardParam = lineCfg.CustomParams[1][1]
+  local typeCfg
+  if self._nodeInfo.isSLevel then
+    typeCfg = UIXH1SimpleLevelReview.NodeCfg[UIXH1SimpleLevelReview.SLeval]
   else
-    typeCfg = (UIXH1SimpleLevelReview.NodeCfg)[(self._nodeInfo).type]
+    typeCfg = UIXH1SimpleLevelReview.NodeCfg[self._nodeInfo.type]
   end
-  local bg = nil
-  local mask = (typeCfg[hardParam]).press
-  local lock = (typeCfg[hardParam]).lock
-  local textColor, shadowColor = nil, nil
-  if (self._nodeInfo).state == DiscoveryStageState.Nomal then
-    textColor = (typeCfg[hardParam]).textColor
-    shadowColor = (typeCfg[hardParam]).textShadow
-    bg = (typeCfg[hardParam]).normal
+  local bg
+  local mask = typeCfg[hardParam].press
+  local lock = typeCfg[hardParam].lock
+  local textColor, shadowColor
+  if self._nodeInfo.state == DiscoveryStageState.Nomal then
+    textColor = typeCfg[hardParam].textColor
+    shadowColor = typeCfg[hardParam].textShadow
+    bg = typeCfg[hardParam].normal
     for i = 1, 3 do
-      local pass = i <= (self._nodeInfo).starCount
-      -- DECOMPILER ERROR at PC87: Confused about usage of register: R17 in 'UnsetPending'
-
+      local pass = i <= self._nodeInfo.starCount
       if pass then
-        ((self._stars)[i]).sprite = (self._atlas):GetSprite((typeCfg[hardParam]).passStar)
+        self._stars[i].sprite = self._atlas:GetSprite(typeCfg[hardParam].passStar)
       else
-        -- DECOMPILER ERROR at PC96: Confused about usage of register: R17 in 'UnsetPending'
-
-        ((self._stars)[i]).sprite = (self._atlas):GetSprite((typeCfg[hardParam]).normalStar)
+        self._stars[i].sprite = self._atlas:GetSprite(typeCfg[hardParam].normalStar)
       end
     end
-    ;
-    (self.star):SetActive((self._nodeInfo).type ~= DiscoveryStageType.Plot)
-    ;
-    ((self.lock).gameObject):SetActive(false)
+    self.star:SetActive(self._nodeInfo.type ~= DiscoveryStageType.Plot)
+    self.lock.gameObject:SetActive(false)
     self._canEnter = true
-  elseif (self._nodeInfo).state == DiscoveryStageState.CanPlay then
-    textColor = (typeCfg[hardParam]).textColor
-    shadowColor = (typeCfg[hardParam]).textShadow
-    bg = (typeCfg[hardParam]).normal
+  elseif self._nodeInfo.state == DiscoveryStageState.CanPlay then
+    textColor = typeCfg[hardParam].textColor
+    shadowColor = typeCfg[hardParam].textShadow
+    bg = typeCfg[hardParam].normal
     for i = 1, 3 do
-      local pass = i <= (self._nodeInfo).starCount
-      -- DECOMPILER ERROR at PC147: Confused about usage of register: R17 in 'UnsetPending'
-
+      local pass = i <= self._nodeInfo.starCount
       if pass then
-        ((self._stars)[i]).sprite = (self._atlas):GetSprite((typeCfg[hardParam]).passStar)
+        self._stars[i].sprite = self._atlas:GetSprite(typeCfg[hardParam].passStar)
       else
-        -- DECOMPILER ERROR at PC156: Confused about usage of register: R17 in 'UnsetPending'
-
-        ((self._stars)[i]).sprite = (self._atlas):GetSprite((typeCfg[hardParam]).normalStar)
+        self._stars[i].sprite = self._atlas:GetSprite(typeCfg[hardParam].normalStar)
       end
     end
-    ;
-    (self.star):SetActive((self._nodeInfo).type ~= DiscoveryStageType.Plot)
-    ;
-    ((self.lock).gameObject):SetActive(false)
+    self.star:SetActive(self._nodeInfo.type ~= DiscoveryStageType.Plot)
+    self.lock.gameObject:SetActive(false)
     self._canEnter = true
-  elseif (self._nodeInfo).state == nil then
-    textColor = (typeCfg[hardParam]).textColor
-    shadowColor = (typeCfg[hardParam]).textShadow
-    bg = (typeCfg[hardParam]).normal
-    ;
-    ((self.lock).gameObject):SetActive(true)
-    ;
-    (self.star):SetActive(false)
-    ;
-    (self.root):SetActive(false)
+  elseif self._nodeInfo.state == nil then
+    textColor = typeCfg[hardParam].textColor
+    shadowColor = typeCfg[hardParam].textShadow
+    bg = typeCfg[hardParam].normal
+    self.lock.gameObject:SetActive(true)
+    self.star:SetActive(false)
+    self.root:SetActive(false)
   end
-  -- DECOMPILER ERROR at PC204: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self.bg).sprite = (self._atlas):GetSprite(bg)
-  -- DECOMPILER ERROR at PC210: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self.mask).sprite = (self._atlas):GetSprite(mask)
-  -- DECOMPILER ERROR at PC216: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self.lock).sprite = (self._atlas):GetSprite(lock)
-  -- DECOMPILER ERROR at PC218: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self.name).color = textColor
-  -- DECOMPILER ERROR at PC220: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self.shadow).effectColor = shadowColor
-  self._needScrollOnClick = (self._nodeInfo).type ~= DiscoveryStageType.Plot
-  if ((self._nodeInfo).pos).y >= 0 then
-    (self._anim):Play("uieff_UIXH1MissionNode_belowin")
+  self.bg.sprite = self._atlas:GetSprite(bg)
+  self.mask.sprite = self._atlas:GetSprite(mask)
+  self.lock.sprite = self._atlas:GetSprite(lock)
+  self.name.color = textColor
+  self.shadow.effectColor = shadowColor
+  self._needScrollOnClick = self._nodeInfo.type ~= DiscoveryStageType.Plot
+  if self._nodeInfo.pos.y >= 0 then
+    self._anim:Play("uieff_UIXH1MissionNode_belowin")
   else
-    (self._anim):Play("uieff_UIXH1MissionNode_topin")
+    self._anim:Play("uieff_UIXH1MissionNode_topin")
   end
-  -- DECOMPILER ERROR: 14 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1MissionNodeReview.btnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1ClickNormal)
+function UIXH1MissionNodeReview:btnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1ClickNormal)
   if self._canEnter then
-    (self._onClick)((self._nodeInfo).campaignMissionId, self._needScrollOnClick, self._rectTransform)
+    self._onClick(self._nodeInfo.campaignMissionId, self._needScrollOnClick, self._rectTransform)
   end
 end
-
-

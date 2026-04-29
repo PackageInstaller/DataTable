@@ -1,57 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/idol_concert/ui_n25_idol_concert_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolConcertItem", UICustomWidget)
 UIN25IdolConcertItem = UIN25IdolConcertItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolConcertItem.Constructor = function(self)
-  -- function num : 0_0
-  self.weekIdx2Tex = {[1] = "str_n25_idol_y_concert_week_1", [2] = "str_n25_idol_y_concert_week_2", [3] = "str_n25_idol_y_concert_week_3", [4] = "str_n25_idol_y_concert_week_4", [5] = "str_n25_idol_y_concert_week_5", [6] = "str_n25_idol_y_concert_week_6"}
-  self.weekDay2Tex = {[1] = "str_n25_idol_y_concert_Monday", [2] = "str_n25_idol_y_concert_Tuesday", [3] = "str_n25_idol_y_concert_Wednesday", [4] = "str_n25_idol_y_concert_Thursday", [5] = "str_n25_idol_y_concert_Friday", [6] = "str_n25_idol_y_concert_Saturday", [7] = "str_n25_idol_y_concert_Sunday"}
+function UIN25IdolConcertItem:Constructor()
+  self.weekIdx2Tex = {
+    [1] = "str_n25_idol_y_concert_week_1",
+    [2] = "str_n25_idol_y_concert_week_2",
+    [3] = "str_n25_idol_y_concert_week_3",
+    [4] = "str_n25_idol_y_concert_week_4",
+    [5] = "str_n25_idol_y_concert_week_5",
+    [6] = "str_n25_idol_y_concert_week_6"
+  }
+  self.weekDay2Tex = {
+    [1] = "str_n25_idol_y_concert_Monday",
+    [2] = "str_n25_idol_y_concert_Tuesday",
+    [3] = "str_n25_idol_y_concert_Wednesday",
+    [4] = "str_n25_idol_y_concert_Thursday",
+    [5] = "str_n25_idol_y_concert_Friday",
+    [6] = "str_n25_idol_y_concert_Saturday",
+    [7] = "str_n25_idol_y_concert_Sunday"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25IdolConcertItem:OnShow(uiParams)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertItem.SetData = function(self, component, tipsCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN25IdolConcertItem:SetData(component, tipsCallback)
   self.component = component
   self._tipsCallback = tipsCallback
   self:OnValue()
   self:AttachEvent(GameEventType.OnN25FansChange, self.OnN25FansChange)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertItem.OnN25FansChange = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local info = (self.component):GetComponentInfo()
+function UIN25IdolConcertItem:OnN25FansChange()
+  local info = self.component:GetComponentInfo()
   local breakInfo = info.break_info
   local fansTex = breakInfo.funs_num
-  local fansTexStr = (HelperProxy:GetInstance()):GetItemCountStr(fansTex, 6, "#cccccc", "#737373")
-  ;
-  (self.fansTex):SetText(fansTexStr)
+  local fansTexStr = HelperProxy:GetInstance():GetItemCountStr(fansTex, 6, "#cccccc", "#737373")
+  self.fansTex:SetText(fansTexStr)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertItem.OnHide = function(self)
-  -- function num : 0_4
+function UIN25IdolConcertItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertItem.GetComponents = function(self)
-  -- function num : 0_5
+function UIN25IdolConcertItem:GetComponents()
   self.notGo = self:GetGameObject("not")
   self.todayGo = self:GetGameObject("today")
   self.fansTex = self:GetUIComponent("UILocalizationText", "fansTex")
@@ -63,66 +55,47 @@ UIN25IdolConcertItem.GetComponents = function(self)
   self.currentfans = self:GetGameObject("currentfans")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertItem.OnValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local info = (self.component):GetComponentInfo()
+function UIN25IdolConcertItem:OnValue()
+  local info = self.component:GetComponentInfo()
   local breakInfo = info.break_info
   local currentTurn = breakInfo.round_index
-  local concertCfg = (self.component):UI_GetNextConcertInfo()
+  local concertCfg = self.component:UI_GetNextConcertInfo()
   local round_state = breakInfo.round_state
   local concertTurn = concertCfg.Turn
   local isToDay = concertTurn == currentTurn
-  ;
-  (self.notGo):SetActive(not isToDay)
-  ;
-  (self.todayGo):SetActive(isToDay)
+  self.notGo:SetActive(not isToDay)
+  self.todayGo:SetActive(isToDay)
   if isToDay then
     local title = concertCfg.ConcertTitle
-    ;
-    (self.concertTypeTex):SetText((StringTable.Get)(title))
+    self.concertTypeTex:SetText(StringTable.Get(title))
   else
     self.lessDay = self:GetUIComponent("UILocalizationText", "lessDay")
     local concertTurn = concertCfg.Turn
     local lessDay = concertTurn - currentTurn
-    ;
-    (self.lessDay):SetText(lessDay)
+    self.lessDay:SetText(lessDay)
   end
   local targetFans = concertCfg.Fans
   if not targetFans or targetFans <= 0 then
-    (self.target):SetActive(false)
-    ;
-    (self.currentfans):SetActive(true)
+    self.target:SetActive(false)
+    self.currentfans:SetActive(true)
   else
-    (self.target):SetActive(true)
-    ;
-    (self.currentfans):SetActive(false)
-    ;
-    (self.targetFansValue):SetText(targetFans)
+    self.target:SetActive(true)
+    self.currentfans:SetActive(false)
+    self.targetFansValue:SetText(targetFans)
   end
   local fansTex = breakInfo.funs_num
-  local fansTexStr = (HelperProxy:GetInstance()):GetItemCountStr(fansTex, 6, "#cccccc", "#737373")
-  ;
-  (self.fansTex):SetText(fansTexStr)
-  local weekIdx, weekDay = (self.component):UI_Calc_WeekDay(currentTurn)
-  local weekIdxTex = (self.weekIdx2Tex)[weekIdx]
-  local weekDayTex = (self.weekDay2Tex)[weekDay]
-  ;
-  (self.weekDay):SetText((StringTable.Get)(weekIdxTex) .. " " .. (StringTable.Get)(weekDayTex))
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  local fansTexStr = HelperProxy:GetInstance():GetItemCountStr(fansTex, 6, "#cccccc", "#737373")
+  self.fansTex:SetText(fansTexStr)
+  local weekIdx, weekDay = self.component:UI_Calc_WeekDay(currentTurn)
+  local weekIdxTex = self.weekIdx2Tex[weekIdx]
+  local weekDayTex = self.weekDay2Tex[weekDay]
+  self.weekDay:SetText(StringTable.Get(weekIdxTex) .. " " .. StringTable.Get(weekDayTex))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertItem.BtnOnClick = function(self, go)
-  -- function num : 0_7
+function UIN25IdolConcertItem:BtnOnClick(go)
   if self._tipsCallback then
-    local pos = (go.transform).position
+    local pos = go.transform.position
     local type = 4
-    ;
-    (self._tipsCallback)(pos, {type})
+    self._tipsCallback(pos, {type})
   end
 end
-
-

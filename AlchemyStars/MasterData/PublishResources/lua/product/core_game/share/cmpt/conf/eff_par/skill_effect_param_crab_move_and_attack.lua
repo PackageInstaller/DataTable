@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_crab_move_and_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamCrabMoveAndAttack", SkillEffectParamBase)
 SkillEffectParamCrabMoveAndAttack = SkillEffectParamCrabMoveAndAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamCrabMoveAndAttack.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamCrabMoveAndAttack:Constructor(t)
   self._percent = t.percent
   self._formulaID = t.formulaID
   self._attackDis = t.attackDis
@@ -17,46 +10,26 @@ SkillEffectParamCrabMoveAndAttack.Constructor = function(self, t)
   self._moveDis = t.moveDis
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamCrabMoveAndAttack.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamCrabMoveAndAttack:GetEffectType()
   return SkillEffectType.CrabMoveAndAttack
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamCrabMoveAndAttack.GetDamageFormulaID = function(self)
-  -- function num : 0_2
+function SkillEffectParamCrabMoveAndAttack:GetDamageFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamCrabMoveAndAttack.GetDamagePercent = function(self)
-  -- function num : 0_3
+function SkillEffectParamCrabMoveAndAttack:GetDamagePercent()
   return self._percent
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamCrabMoveAndAttack.GetAttackDis = function(self)
-  -- function num : 0_4
+function SkillEffectParamCrabMoveAndAttack:GetAttackDis()
   return self._attackDis
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamCrabMoveAndAttack.GetMoveDir = function(self)
-  -- function num : 0_5
+function SkillEffectParamCrabMoveAndAttack:GetMoveDir()
   return self._moveDir
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamCrabMoveAndAttack.GetMoveDis = function(self)
-  -- function num : 0_6
+function SkillEffectParamCrabMoveAndAttack:GetMoveDis()
   return self._moveDis
 end
-
-

@@ -1,101 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/breed/ui_homeland_minimap_icon_breedland.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapIconBreedLand", UIHomelandMinimapIconBase)
 UIHomelandMinimapIconBreedLand = UIHomelandMinimapIconBreedLand
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapIconBreedLand.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMinimapIconBreedLand:OnShow(uiParams)
   self:_GetComponents()
   self:AttachEvent(GameEventType.HomelandBreedPhasesChange, self.OnHomelandBreedPhasesChange)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBreedLand._GetComponents = function(self)
-  -- function num : 0_1
+function UIHomelandMinimapIconBreedLand:_GetComponents()
   self._selected = self:GetGameObject("Selected")
   self._state = self:GetGameObject("State")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBreedLand.OnInitDone = function(self)
-  -- function num : 0_2
-  local breedLand = (self._iconData):GetParam()
+function UIHomelandMinimapIconBreedLand:OnInitDone()
+  local breedLand = self._iconData:GetParam()
   local curPhases = breedLand:GetCurPhases()
-  if curPhases and curPhases > 0 then
+  if curPhases and 0 < curPhases then
     local remainTime = breedLand:GetRemainTime()
-    ;
-    (self._state):SetActive(remainTime <= 0)
+    self._state:SetActive(remainTime <= 0)
   else
-    (self._state):SetActive(false)
+    self._state:SetActive(false)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBreedLand.OnSelected = function(self)
-  -- function num : 0_3
-  (self._selected):SetActive(true)
+function UIHomelandMinimapIconBreedLand:OnSelected()
+  self._selected:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBreedLand.OnUnSelected = function(self)
-  -- function num : 0_4
-  (self._selected):SetActive(false)
+function UIHomelandMinimapIconBreedLand:OnUnSelected()
+  self._selected:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBreedLand.GetShowName = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local breedLand = (self._iconData):GetParam()
+function UIHomelandMinimapIconBreedLand:GetShowName()
+  local breedLand = self._iconData:GetParam()
   local itemID = breedLand:GetBuildId()
-  local cfg = (Cfg.cfg_item)[itemID]
-  return (StringTable.Get)(cfg.Name)
+  local cfg = Cfg.cfg_item[itemID]
+  return StringTable.Get(cfg.Name)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBreedLand.GetAnimationName = function(self, animType)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandMinimapIconBreedLand:GetAnimationName(animType)
   if not self._animationNames then
     self._animationNames = {}
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.IN] = "UIHomelandMinimapIconBreedLand_in"
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.OUT] = "UIHomelandMinimapIconBreedLand_out"
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.SELECT] = "UIHomelandMinimapIconBreedLand_Selected_in"
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.UNSELECT] = "UIHomelandMinimapIconBreedLand_Selected_out"
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.EXPANSION] = "UIHomelandMinimapIconBreedLand_expansion"
+    self._animationNames[MinimapIconAnimationType.IN] = "UIHomelandMinimapIconBreedLand_in"
+    self._animationNames[MinimapIconAnimationType.OUT] = "UIHomelandMinimapIconBreedLand_out"
+    self._animationNames[MinimapIconAnimationType.SELECT] = "UIHomelandMinimapIconBreedLand_Selected_in"
+    self._animationNames[MinimapIconAnimationType.UNSELECT] = "UIHomelandMinimapIconBreedLand_Selected_out"
+    self._animationNames[MinimapIconAnimationType.EXPANSION] = "UIHomelandMinimapIconBreedLand_expansion"
   end
-  return (self._animationNames)[animType]
+  return self._animationNames[animType]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBreedLand.OnHomelandBreedPhasesChange = function(self)
-  -- function num : 0_7
+function UIHomelandMinimapIconBreedLand:OnHomelandBreedPhasesChange()
   self:OnInitDone()
 end
-
-

@@ -1,153 +1,107 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/render_feature_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RenderFeatureComponent", Object)
 RenderFeatureComponent = RenderFeatureComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderFeatureComponent.Constructor = function(self)
-  -- function num : 0_0
+function RenderFeatureComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderFeatureComponent.SetCurRoundDecreaseSanValue = function(self, round, modifyValue, curVal, oldVal, debtVal, modifyTimes)
-  -- function num : 0_1
+function RenderFeatureComponent:SetCurRoundDecreaseSanValue(round, modifyValue, curVal, oldVal, debtVal, modifyTimes)
   if not self._decreaseSan then
     self._decreaseSan = {}
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._decreaseSan)[round] = {modify = modifyValue, cur = curVal, old = oldVal, debt = debtVal, _modifyTimes = modifyTimes}
+  self._decreaseSan[round] = {
+    modify = modifyValue,
+    cur = curVal,
+    old = oldVal,
+    debt = debtVal,
+    _modifyTimes = modifyTimes
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderFeatureComponent.GetCurRoundDecreaseSanValue = function(self, round)
-  -- function num : 0_2
+function RenderFeatureComponent:GetCurRoundDecreaseSanValue(round)
   if self._decreaseSan then
-    return (self._decreaseSan)[round]
+    return self._decreaseSan[round]
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderFeatureComponent.SetCurRoundDayNightRouncChangeValue = function(self, round, curState, oldState, restRound)
-  -- function num : 0_3
+function RenderFeatureComponent:SetCurRoundDayNightRouncChangeValue(round, curState, oldState, restRound)
   if not self._roundChangeDayNight then
     self._roundChangeDayNight = {}
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._roundChangeDayNight)[round] = {_curState = curState, _oldState = oldState, _restRound = restRound}
+  self._roundChangeDayNight[round] = {
+    _curState = curState,
+    _oldState = oldState,
+    _restRound = restRound
+  }
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderFeatureComponent.GetCurRoundDayNightRouncChangeValue = function(self, round)
-  -- function num : 0_4
+function RenderFeatureComponent:GetCurRoundDayNightRouncChangeValue(round)
   if self._roundChangeDayNight then
-    return (self._roundChangeDayNight)[round]
+    return self._roundChangeDayNight[round]
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderFeatureComponent.SetCurRoundChangeStepPoint = function(self, round, curVal, oldVal)
-  -- function num : 0_5
+function RenderFeatureComponent:SetCurRoundChangeStepPoint(round, curVal, oldVal)
   if not self._changeStepPoint then
     self._changeStepPoint = {}
   end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._changeStepPoint)[round] = {cur = curVal, old = oldVal}
+  self._changeStepPoint[round] = {cur = curVal, old = oldVal}
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderFeatureComponent.GetCurRoundChangeStepPoint = function(self, round)
-  -- function num : 0_6
+function RenderFeatureComponent:GetCurRoundChangeStepPoint(round)
   if self._changeStepPoint then
-    return (self._changeStepPoint)[round]
+    return self._changeStepPoint[round]
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderFeatureComponent.SetMoveCostStepPoint = function(self, round, curVal, oldVal)
-  -- function num : 0_7
+function RenderFeatureComponent:SetMoveCostStepPoint(round, curVal, oldVal)
   if not self._moveCostStepPoint then
     self._moveCostStepPoint = {}
   end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._moveCostStepPoint)[round] = {cur = curVal, old = oldVal}
+  self._moveCostStepPoint[round] = {cur = curVal, old = oldVal}
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderFeatureComponent.ClearMoveCostStepPoint = function(self)
-  -- function num : 0_8
+function RenderFeatureComponent:ClearMoveCostStepPoint()
   self._moveCostStepPoint = {}
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderFeatureComponent.GetMoveCostStepPoint = function(self, round)
-  -- function num : 0_9
+function RenderFeatureComponent:GetMoveCostStepPoint(round)
   if self._moveCostStepPoint then
-    return (self._moveCostStepPoint)[round]
+    return self._moveCostStepPoint[round]
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderFeatureComponent.AddExtraRecoverStepPointForLinkUI = function(self, flagID, stepMin, stepMax, modifyValue)
-  -- function num : 0_10 , upvalues : _ENV
+function RenderFeatureComponent:AddExtraRecoverStepPointForLinkUI(flagID, stepMin, stepMax, modifyValue)
   if not self._extraRecoverStepPointInfo then
     self._extraRecoverStepPointInfo = {}
   end
-  ;
-  (table.insert)(self._extraRecoverStepPointInfo, {flagID = flagID, stepMin = stepMin, stepMax = stepMax, modifyValue = modifyValue})
+  table.insert(self._extraRecoverStepPointInfo, {
+    flagID = flagID,
+    stepMin = stepMin,
+    stepMax = stepMax,
+    modifyValue = modifyValue
+  })
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderFeatureComponent.RemoveExtraRecoverStepPointForLinkUI = function(self, flagID)
-  -- function num : 0_11 , upvalues : _ENV
+function RenderFeatureComponent:RemoveExtraRecoverStepPointForLinkUI(flagID)
   if self._extraRecoverStepPointInfo then
     local waitRemoveIndex = -1
-    for index,info in ipairs(self._extraRecoverStepPointInfo) do
+    for index, info in ipairs(self._extraRecoverStepPointInfo) do
       if flagID == info.flagID then
         waitRemoveIndex = index
         break
       end
     end
-    do
-      if waitRemoveIndex >= 0 then
-        (table.remove)(self._extraRecoverStepPointInfo, waitRemoveIndex)
-      end
+    if 0 <= waitRemoveIndex then
+      table.remove(self._extraRecoverStepPointInfo, waitRemoveIndex)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderFeatureComponent.ClearExtraRecoverStepPointForLinkUI = function(self)
-  -- function num : 0_12
+function RenderFeatureComponent:ClearExtraRecoverStepPointForLinkUI()
   self._extraRecoverStepPointInfo = {}
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderFeatureComponent.CalcExtraRecoverStepPointForLinkUI = function(self, chainPath)
-  -- function num : 0_13 , upvalues : _ENV
+function RenderFeatureComponent:CalcExtraRecoverStepPointForLinkUI(chainPath)
   local curStep = -1
   if chainPath then
     curStep = #chainPath - 1
@@ -155,71 +109,46 @@ RenderFeatureComponent.CalcExtraRecoverStepPointForLinkUI = function(self, chain
   if curStep < 0 then
     return 0
   end
-  do
-    if self._extraRecoverStepPointInfo then
-      local extraVal = 0
-      for index,info in ipairs(self._extraRecoverStepPointInfo) do
-        if info.stepMin <= curStep and curStep <= info.stepMax then
-          extraVal = extraVal + info.modifyValue
-        end
+  if self._extraRecoverStepPointInfo then
+    local extraVal = 0
+    for index, info in ipairs(self._extraRecoverStepPointInfo) do
+      if curStep >= info.stepMin and curStep <= info.stepMax then
+        extraVal = extraVal + info.modifyValue
       end
-      return extraVal
     end
-    return 0
+    return extraVal
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderFeatureComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_14
+function RenderFeatureComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderFeatureComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_15
+function RenderFeatureComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RenderFeature = function(self)
-  -- function num : 0_16
-  return self:GetComponent((self.WEComponentsEnum).RenderFeature)
+function Entity:RenderFeature()
+  return self:GetComponent(self.WEComponentsEnum.RenderFeature)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasRenderFeature = function(self)
-  -- function num : 0_17
-  return self:HasComponent((self.WEComponentsEnum).RenderFeature)
+function Entity:HasRenderFeature()
+  return self:HasComponent(self.WEComponentsEnum.RenderFeature)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddRenderFeature = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderFeature
+function Entity:AddRenderFeature()
+  local index = self.WEComponentsEnum.RenderFeature
   local component = RenderFeatureComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRenderFeature = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderFeature
+function Entity:ReplaceRenderFeature()
+  local index = self.WEComponentsEnum.RenderFeature
   local component = RenderFeatureComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveRenderFeature = function(self)
-  -- function num : 0_20
+function Entity:RemoveRenderFeature()
   if self:HasRenderFeature() then
-    self:RemoveComponent((self.WEComponentsEnum).RenderFeature)
+    self:RemoveComponent(self.WEComponentsEnum.RenderFeature)
   end
 end
-
-

@@ -1,29 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/login/ui_login_empty.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILoginEmpty", UIController)
 UILoginEmpty = UILoginEmpty
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILoginEmpty.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UILoginEmpty:OnShow(uiParams)
   if not _G.APPVER1220 then
-    ((GameGlobal.UIStateManager)()):SetForceCloseBlackSideVisible(false)
+    GameGlobal.UIStateManager():SetForceCloseBlackSideVisible(false)
   end
-  if (LoginLuaHelper.GetUIState)() == LoginUIState.Close then
+  if LoginLuaHelper.GetUIState() == LoginUIState.Close then
     LogoutGameNew()
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILoginEmpty.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UILoginEmpty:OnHide()
   if not _G.APPVER1220 then
-    ((GameGlobal.UIStateManager)()):SetForceCloseBlackSideVisible(true)
+    GameGlobal.UIStateManager():SetForceCloseBlackSideVisible(true)
   end
 end
-
-

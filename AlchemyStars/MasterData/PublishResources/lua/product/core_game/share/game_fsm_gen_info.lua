@@ -1,17 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/game_fsm_gen_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GameFSMGenInfo", CustomLogicGenInfo)
 GameFSMGenInfo = GameFSMGenInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GameFSMGenInfo.Constructor = function(self)
-  -- function num : 0_0
+function GameFSMGenInfo:Constructor()
   self.CustomLogicConfigTable = nil
   self.CustomLogicConfigID = 1
   self.EntityID = 0
 end
-
-

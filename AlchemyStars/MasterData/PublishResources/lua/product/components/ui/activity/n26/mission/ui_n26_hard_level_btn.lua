@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n26/mission/ui_n26_hard_level_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN26HardLevelBtn", UICustomWidget)
 UIN26HardLevelBtn = UIN26HardLevelBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN26HardLevelBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN26HardLevelBtn:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevelBtn.InitWidget = function(self)
-  -- function num : 0_1
+function UIN26HardLevelBtn:InitWidget()
   self.select = self:GetUIComponent("Image", "select")
   self.unSelect = self:GetUIComponent("Image", "unSelect")
   self.locker = self:GetUIComponent("Image", "locker")
@@ -24,13 +14,10 @@ UIN26HardLevelBtn.InitWidget = function(self)
   self.levelBtn = self:GetUIComponent("Button", "rootRt")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevelBtn.SetData = function(self, atlas, logName, clickCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN26HardLevelBtn:SetData(atlas, logName, clickCallback)
   self.atlas = atlas
   self.clickCallback = clickCallback
-  local btnSpriteName, maskSpriteName, lockSpriteName, multiLangaugeName = nil, nil, nil, nil
+  local btnSpriteName, maskSpriteName, lockSpriteName, multiLangaugeName
   if logName == 1 then
     btnSpriteName = "n26_kng_btn01"
     maskSpriteName = "n26_kng_mask01"
@@ -42,56 +29,30 @@ UIN26HardLevelBtn.SetData = function(self, atlas, logName, clickCallback)
     lockSpriteName = "n26_kng_lock02"
     multiLangaugeName = "str_n26_hard_level_btn02"
   end
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.select).sprite = atlas:GetSprite(btnSpriteName)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.unSelect).sprite = atlas:GetSprite(maskSpriteName)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.locker).sprite = atlas:GetSprite(lockSpriteName)
-  ;
-  (self.logName):SetText((StringTable.Get)(multiLangaugeName))
+  self.select.sprite = atlas:GetSprite(btnSpriteName)
+  self.unSelect.sprite = atlas:GetSprite(maskSpriteName)
+  self.locker.sprite = atlas:GetSprite(lockSpriteName)
+  self.logName:SetText(StringTable.Get(multiLangaugeName))
   self:SetLockVisible(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevelBtn.SetLockVisible = function(self, bVisible)
-  -- function num : 0_3
+function UIN26HardLevelBtn:SetLockVisible(bVisible)
   if self.locker then
-    ((self.locker).gameObject):SetActive(bVisible)
+    self.locker.gameObject:SetActive(bVisible)
   end
   self.isLock = bVisible
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevelBtn.SetSelect = function(self, bSelect, localPosition)
-  -- function num : 0_4
-  ((self.unSelect).gameObject):SetActive(not bSelect)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
+function UIN26HardLevelBtn:SetSelect(bSelect, localPosition)
+  self.unSelect.gameObject:SetActive(not bSelect)
   if localPosition then
-    (self.rootRt).localPosition = localPosition
+    self.rootRt.localPosition = localPosition
   end
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.levelBtn).interactable = not bSelect
+  self.levelBtn.interactable = not bSelect
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevelBtn.LevelBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIN26HardLevelBtn:LevelBtnOnClick(go)
   if self.clickCallback then
-    (self.clickCallback)()
+    self.clickCallback()
   end
 end
-
-

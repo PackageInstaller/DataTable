@@ -1,7 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/attributes_modify_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-AttrModifyType = {Default = 1, ActiveSkill = 2, ChainSkill = 3, Buff = 4, MonsterSkill = 5, Cheat = 7, NormalSkill = 8, TrapSkill = 9}
-
+AttrModifyType = {
+  Default = 1,
+  ActiveSkill = 2,
+  ChainSkill = 3,
+  Buff = 4,
+  MonsterSkill = 5,
+  Cheat = 7,
+  NormalSkill = 8,
+  TrapSkill = 9
+}

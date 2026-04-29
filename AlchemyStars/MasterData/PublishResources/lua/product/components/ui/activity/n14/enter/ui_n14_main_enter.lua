@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n14/enter/ui_n14_main_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN14MainEnter", UICustomWidget)
 UIN14MainEnter = UIN14MainEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN14MainEnter.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN14MainEnter:OnShow(uiParams)
   self.new = self:GetGameObject("new")
   self.red = self:GetGameObject("red")
   self.second = self:GetGameObject("second")
@@ -19,117 +12,77 @@ UIN14MainEnter.OnShow = function(self, uiParams)
   self:RequestCampaign()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14MainEnter.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN14MainEnter:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14MainEnter._AttachEvents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN14MainEnter:_AttachEvents()
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:AttachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14MainEnter._DetachEvents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN14MainEnter:_DetachEvents()
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:DetachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14MainEnter.SetData_uiMainLobbyController = function(self, controller)
-  -- function num : 0_4
+function UIN14MainEnter:SetData_uiMainLobbyController(controller)
   self._uiMainLobbyController = controller
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14MainEnter.RequestCampaign = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN14MainEnter:RequestCampaign()
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
     local lockName = "UIN14MainEnterRequestCampaign"
     self:Lock(lockName)
-    ;
-    (self.data):RequestCampaign(TT, ECampaignType.CAMPAIGN_TYPE_N14)
+    self.data:RequestCampaign(TT, ECampaignType.CAMPAIGN_TYPE_N14)
     self:Flush()
     self:FlushNewRed()
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14MainEnter.btnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN14MainEnter:btnOnClick(go)
   self:SwitchState(UIStateType.UIN14Main)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14MainEnter._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_7
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIN14MainEnter:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:FlushNewRed()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14MainEnter._OnQuestUpdate = function(self)
-  -- function num : 0_8
+function UIN14MainEnter:_OnQuestUpdate()
   self:FlushNewRed()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14MainEnter.Flush = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local state = (self.data):GetStateHard()
-  ;
-  (self.second):SetActive(false)
+function UIN14MainEnter:Flush()
+  local state = self.data:GetStateHard()
+  self.second:SetActive(false)
   if state == UISummerOneEnterBtnState.Locked or state == UISummerOneEnterBtnState.Normal then
-    (self.second):SetActive(true)
-    ;
-    (self.rlt2nd):RefreshText((StringTable.Get)("str_n14_2nd_stage_open"))
+    self.second:SetActive(true)
+    self.rlt2nd:RefreshText(StringTable.Get("str_n14_2nd_stage_open"))
   end
-  state = (self.data):GetStateMiniGame()
+  state = self.data:GetStateMiniGame()
   if state == UISummerOneEnterBtnState.Locked or state == UISummerOneEnterBtnState.Normal then
-    (self.second):SetActive(true)
-    ;
-    (self.rlt2nd):RefreshText((StringTable.Get)("str_n14_minigame_stage_open"))
+    self.second:SetActive(true)
+    self.rlt2nd:RefreshText(StringTable.Get("str_n14_minigame_stage_open"))
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN14MainEnter.FlushNewRed = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local notEnterMain = not (N14Data.HasPrefsMain)()
-  local notEnterHard = not (N14Data.HasPrefsHard)()
-  local notEnterMinigame = not (N14Data.HasPrefsMiniGame)()
-  local hasHardOpen = (self.data):GetStateHard() == UISummerOneEnterBtnState.Normal
-  local hasMinigameOpen = (self.data):GetStateMiniGame() == UISummerOneEnterBtnState.Normal
-  local new = notEnterMain or (hasHardOpen and notEnterHard) or not hasMinigameOpen or notEnterMinigame
+function UIN14MainEnter:FlushNewRed()
+  local notEnterMain = not N14Data.HasPrefsMain()
+  local notEnterHard = not N14Data.HasPrefsHard()
+  local notEnterMinigame = not N14Data.HasPrefsMiniGame()
+  local hasHardOpen = self.data:GetStateHard() == UISummerOneEnterBtnState.Normal
+  local hasMinigameOpen = self.data:GetStateMiniGame() == UISummerOneEnterBtnState.Normal
+  local new = notEnterMain or hasHardOpen and notEnterHard or hasMinigameOpen and notEnterMinigame
   local red = false
-  if not new and not (self.data):CheckRedAward() and not (self.data):CheckRedNormal() then
-    red = (self.data):CheckNewMiniGame()
+  if not new then
+    red = self.data:CheckRedAward() or self.data:CheckRedNormal() or self.data:CheckNewMiniGame()
   end
-  ;
-  (UIActivityHelper.SetWidgetNewAndRed)(self.new, new, self.red, red)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  UIActivityHelper.SetWidgetNewAndRed(self.new, new, self.red, red)
 end
-
-

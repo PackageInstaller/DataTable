@@ -1,41 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/command_handler/switch_pet_equip_refine_ui_command_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("command_base_handler")
 _class("SwitchPetEquipRefineUICommandHandler", CommandBaseHandler)
 SwitchPetEquipRefineUICommandHandler = SwitchPetEquipRefineUICommandHandler
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SwitchPetEquipRefineUICommandHandler.DoHandleCommand = function(self, cmd)
-  -- function num : 0_0 , upvalues : _ENV
+function SwitchPetEquipRefineUICommandHandler:DoHandleCommand(cmd)
   local uiState = cmd:GetCmdRefineUIState()
   local petPstID = cmd:GetCmdCasterPstID()
   local entityID = self:GetEntityIDByPstID(petPstID)
-  local petEntity = (self._world):GetEntityByID(entityID)
+  local petEntity = self._world:GetEntityByID(entityID)
   if not petEntity then
-    return 
+    return
   end
   if not self:CheckCanSwitchState(petEntity, uiState) then
-    return 
+    return
   end
   local buffCmpt = petEntity:BuffComponent()
   buffCmpt:SetBuffValue("EquipRefineUIState", uiState)
-  local triggerSvc = (self._world):GetService("Trigger")
+  local triggerSvc = self._world:GetService("Trigger")
   local nt = NTEquipRefineUIStateChange:New(petEntity, uiState)
   triggerSvc:Notify(nt)
-  if (self._world):RunAtClient() then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.DataBuffValue, entityID, "EquipRefineUIState", uiState)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.BattleUIRefreshRefineSwitchBtnState, uiState)
+  if self._world:RunAtClient() then
+    self._world:EventDispatcher():Dispatch(GameEventType.DataBuffValue, entityID, "EquipRefineUIState", uiState)
+    self._world:EventDispatcher():Dispatch(GameEventType.BattleUIRefreshRefineSwitchBtnState, uiState)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SwitchPetEquipRefineUICommandHandler.CheckCanSwitchState = function(self, petEntity, uiState)
-  -- function num : 0_1 , upvalues : _ENV
+function SwitchPetEquipRefineUICommandHandler:CheckCanSwitchState(petEntity, uiState)
   local buffCmpt = petEntity:BuffComponent()
   if not buffCmpt then
     return false
@@ -48,5 +37,3 @@ SwitchPetEquipRefineUICommandHandler.CheckCanSwitchState = function(self, petEnt
   end
   return true
 end
-
-

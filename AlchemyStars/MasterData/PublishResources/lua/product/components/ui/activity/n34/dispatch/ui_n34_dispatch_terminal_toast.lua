@@ -1,62 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/dispatch/ui_n34_dispatch_terminal_toast.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN34DispatchTerminalToast", UIController)
 UIN34DispatchTerminalToast = UIN34DispatchTerminalToast
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN34DispatchTerminalToast.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIN34DispatchTerminalToast:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchTerminalToast.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN34DispatchTerminalToast:OnShow(uiParams)
   self.status = uiParams[1]
   self:InitWidget()
   self:SetTipsText()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchTerminalToast.InitWidget = function(self)
-  -- function num : 0_2
+function UIN34DispatchTerminalToast:InitWidget()
   self.tip = self:GetUIComponent("UILocalizationText", "Tip")
   self.tip2 = self:GetUIComponent("UILocalizationText", "Tip2")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchTerminalToast.SetTipsText = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN34DispatchTerminalToast:SetTipsText()
   if self.status == N34TerminalItemStatus.NotStart then
-    (self.tip):SetText((StringTable.Get)("str_n34_dispatch_toast_tips"))
-    ;
-    (self.tip2):SetText((StringTable.Get)("str_n34_dispatch_toast_tips_2"))
-  else
-    if self.status == N34TerminalItemStatus.Unlock then
-      (self.tip):SetText((StringTable.Get)("str_n34_dispatch_toast_tips_3"))
-      ;
-      (self.tip2):SetText((StringTable.Get)("str_n34_dispatch_toast_tips_4"))
-    else
-      if self.status == N34TerminalItemStatus.Going then
-        (self.tip):SetText((StringTable.Get)("str_n34_dispatch_toast_tips_5"))
-        ;
-        (self.tip2):SetText((StringTable.Get)("str_n34_dispatch_toast_tips_6"))
-      end
-    end
+    self.tip:SetText(StringTable.Get("str_n34_dispatch_toast_tips"))
+    self.tip2:SetText(StringTable.Get("str_n34_dispatch_toast_tips_2"))
+  elseif self.status == N34TerminalItemStatus.Unlock then
+    self.tip:SetText(StringTable.Get("str_n34_dispatch_toast_tips_3"))
+    self.tip2:SetText(StringTable.Get("str_n34_dispatch_toast_tips_4"))
+  elseif self.status == N34TerminalItemStatus.Going then
+    self.tip:SetText(StringTable.Get("str_n34_dispatch_toast_tips_5"))
+    self.tip2:SetText(StringTable.Get("str_n34_dispatch_toast_tips_6"))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchTerminalToast.BGOnClick = function(self, go)
-  -- function num : 0_4
+function UIN34DispatchTerminalToast:BGOnClick(go)
   self:CloseDialog()
 end
-
-

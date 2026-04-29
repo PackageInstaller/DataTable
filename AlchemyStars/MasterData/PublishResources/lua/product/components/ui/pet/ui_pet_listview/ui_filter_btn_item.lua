@@ -1,34 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_listview/ui_filter_btn_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFilterBtnItem", UICustomWidget)
 UIFilterBtnItem = UIFilterBtnItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFilterBtnItem.Constructor = function(self)
-  -- function num : 0_0
+function UIFilterBtnItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFilterBtnItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIFilterBtnItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFilterBtnItem.GetComponents = function(self)
-  -- function num : 0_2
+function UIFilterBtnItem:GetComponents()
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._selectGo = self:GetGameObject("select")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFilterBtnItem.SetData = function(self, cfg, currentFilterParams, Callback)
-  -- function num : 0_3
+function UIFilterBtnItem:SetData(cfg, currentFilterParams, Callback)
   self:GetComponents()
   self._cfg = cfg
   self._currentFilterParams = currentFilterParams
@@ -36,47 +20,34 @@ UIFilterBtnItem.SetData = function(self, cfg, currentFilterParams, Callback)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFilterBtnItem.OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._name):SetText((StringTable.Get)((self._cfg).Name))
-  ;
-  (self._selectGo):SetActive(false)
-  local c = (table.count)(self._currentFilterParams)
+function UIFilterBtnItem:OnValue()
+  self._name:SetText(StringTable.Get(self._cfg.Name))
+  self._selectGo:SetActive(false)
+  local c = table.count(self._currentFilterParams)
   if c <= 0 then
-    return 
+    return
   else
     for i = 1, c do
-      if (self._cfg).Type == ((self._currentFilterParams)[i])._filter_type then
-        (self._selectGo):SetActive(true)
+      if self._cfg.Type == self._currentFilterParams[i]._filter_type then
+        self._selectGo:SetActive(true)
         break
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFilterBtnItem.Flush = function(self, currFilterParams)
-  -- function num : 0_5 , upvalues : _ENV
-  for i = 1, (table.count)(currFilterParams) do
-    if (currFilterParams[i])._filter_type == (self._cfg).Type then
-      (self._selectGo):SetActive(true)
-      return 
+function UIFilterBtnItem:Flush(currFilterParams)
+  for i = 1, table.count(currFilterParams) do
+    if currFilterParams[i]._filter_type == self._cfg.Type then
+      self._selectGo:SetActive(true)
+      return
     end
   end
-  ;
-  (self._selectGo):SetActive(false)
+  self._selectGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFilterBtnItem.bgOnClick = function(self)
-  -- function num : 0_6
+function UIFilterBtnItem:bgOnClick()
   if self._callback then
-    (self._callback)((self._cfg).Type, (self._cfg).Tag)
+    self._callback(self._cfg.Type, self._cfg.Tag)
   end
 end
-
-

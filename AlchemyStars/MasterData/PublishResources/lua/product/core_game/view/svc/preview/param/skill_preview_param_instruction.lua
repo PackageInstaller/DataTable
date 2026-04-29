@@ -1,56 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/param/skill_preview_param_instruction.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPreviewParamInstruction", SkillPreviewParamBase)
 SkillPreviewParamInstruction = SkillPreviewParamInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewParamInstruction.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPreviewParamInstruction:Constructor(t)
   self._previewType = t.PreviewType
   self._param = t.Param
   self._previewList = self:ParseParam()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewParamInstruction.GetPreviewType = function(self)
-  -- function num : 0_1
+function SkillPreviewParamInstruction:GetPreviewType()
   return self._previewType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewParamInstruction.GetPreviewParam = function(self)
-  -- function num : 0_2
+function SkillPreviewParamInstruction:GetPreviewParam()
   return self._param
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewParamInstruction.ParseParam = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local idList = (string.split)(self._param, ",")
+function SkillPreviewParamInstruction:ParseParam()
+  local idList = string.split(self._param, ",")
   local previewContextList = {}
-  for _,strID in pairs(idList) do
+  for _, strID in pairs(idList) do
     local id = tonumber(strID)
     local skillPreviewContext = self:ParsePreviewID(id)
-    ;
-    (table.insert)(previewContextList, skillPreviewContext)
+    table.insert(previewContextList, skillPreviewContext)
   end
   return previewContextList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewParamInstruction.ParsePreviewID = function(self, id)
-  -- function num : 0_4 , upvalues : _ENV
-  local config = (Cfg.cfg_active_skill_preview)[id]
+function SkillPreviewParamInstruction:ParsePreviewID(id)
+  local config = Cfg.cfg_active_skill_preview[id]
   if not config then
-    (Log.fatal)("GetPreviewConfig Failed PreviewID:", id)
-    return 
+    Log.fatal("GetPreviewConfig Failed PreviewID:", id)
+    return
   end
   local scopeParamParser = SkillScopeParamParser:New()
   local previewConfigData = SkillPreviewConfigData:New()
@@ -87,75 +67,63 @@ SkillPreviewParamInstruction.ParsePreviewID = function(self, id)
   return previewConfigData
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewParamInstruction.GetCacheTable = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillPreviewParamInstruction:GetCacheTable()
   local t = {}
-  for _,v in ipairs(self._instructionSet) do
+  for _, v in ipairs(self._instructionSet) do
     local insObj = v
     local resourceTable = insObj:GetCacheResource()
     if resourceTable then
-      for _,res in ipairs(resourceTable) do
-        (table.insert)(t, res)
+      for _, res in ipairs(resourceTable) do
+        table.insert(t, res)
       end
     end
   end
   return t
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewParamInstruction.GetSoundCacheTable = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillPreviewParamInstruction:GetSoundCacheTable()
   local t = {}
-  for _,v in ipairs(self._instructionSet) do
+  for _, v in ipairs(self._instructionSet) do
     local insObj = v
     local resourceTable = insObj:GetCacheAudio()
     if resourceTable then
-      for _,res in ipairs(resourceTable) do
-        (table.insert)(t, res)
+      for _, res in ipairs(resourceTable) do
+        table.insert(t, res)
       end
     end
   end
   return t
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewParamInstruction.GetVoiceCacheTable = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillPreviewParamInstruction:GetVoiceCacheTable()
   local t = {}
-  for _,v in ipairs(self._instructionSet) do
+  for _, v in ipairs(self._instructionSet) do
     local insObj = v
     local resourceTable = insObj:GetCacheVoice()
     if resourceTable then
-      for _,res in ipairs(resourceTable) do
-        (table.insert)(t, res)
+      for _, res in ipairs(resourceTable) do
+        table.insert(t, res)
       end
     end
   end
   return t
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewParamInstruction._ParseInstructionSet = function(self, id)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillPreviewParamInstruction:_ParseInstructionSet(id)
   local instructionSet = {}
   if id then
-    local config = (Cfg.cfg_preview_instruction_set)[id]
+    local config = Cfg.cfg_preview_instruction_set[id]
     if not config then
-      (Log.fatal)("Can\'t find previewInstructionSet ID:", id)
+      Log.fatal("Can't find previewInstructionSet ID:", id)
       return nil
     end
     local t = config.InstructionSet
     local paramString = t[1]
-    local phaseInsArray = (string.split)(paramString, ";")
-    for k,v in ipairs(phaseInsArray) do
-      if (string.len)(v) > 1 then
-        local instruction = (string.split)(v, ",")
-        if (table.count)(instruction) > 0 then
+    local phaseInsArray = string.split(paramString, ";")
+    for k, v in ipairs(phaseInsArray) do
+      if 1 < string.len(v) then
+        local instruction = string.split(v, ",")
+        if table.count(instruction) > 0 then
           local instructionType, paramList = self:_ParseInstructionParam(instruction)
           local instructionObj = self:_CreateInstruction(instructionType, paramList)
           instructionSet[#instructionSet + 1] = instructionObj
@@ -163,24 +131,18 @@ SkillPreviewParamInstruction._ParseInstructionSet = function(self, id)
       end
     end
   end
-  do
-    return instructionSet
-  end
+  return instructionSet
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewParamInstruction._CreateInstruction = function(self, instructionType, paramList)
-  -- function num : 0_9 , upvalues : _ENV
-  local insObject = nil
+function SkillPreviewParamInstruction:_CreateInstruction(instructionType, paramList)
+  local insObject
   local insClassName = "SkillPreview" .. instructionType .. "Instruction"
   local insClass = Classes[insClassName]
   if insClass == nil then
     if EDITOR then
-      (Log.exception)("Can not create instruction:", insClassName)
+      Log.exception("Can not create instruction:", insClassName)
     else
-      ;
-      (Log.fatal)("Can not create instruction:", insClassName)
+      Log.fatal("Can not create instruction:", insClassName)
     end
   else
     insObject = insClass:New(paramList)
@@ -188,23 +150,18 @@ SkillPreviewParamInstruction._CreateInstruction = function(self, instructionType
   return insObject
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewParamInstruction._ParseInstructionParam = function(self, insArray)
-  -- function num : 0_10 , upvalues : _ENV
-  local instructionType = nil
+function SkillPreviewParamInstruction:_ParseInstructionParam(insArray)
+  local instructionType
   local paramList = {}
-  for k,v in ipairs(insArray) do
+  for k, v in ipairs(insArray) do
     if k == 1 then
-      instructionType = (string.gsub)(v, "^%s*(.-)%s*$", "%1")
+      instructionType = string.gsub(v, "^%s*(.-)%s*$", "%1")
     else
-      local paramArray = (string.split)(v, "=")
-      local paramName = (string.gsub)(paramArray[1], "^%s*(.-)%s*$", "%1")
-      local paramValue = (string.gsub)(paramArray[2], "^%s*(.-)%s*$", "%1")
+      local paramArray = string.split(v, "=")
+      local paramName = string.gsub(paramArray[1], "^%s*(.-)%s*$", "%1")
+      local paramValue = string.gsub(paramArray[2], "^%s*(.-)%s*$", "%1")
       paramList[paramName] = paramValue
     end
   end
   return instructionType, paramList
 end
-
-

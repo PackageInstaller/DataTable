@@ -1,33 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/ui_star_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStarItem", UICustomWidget)
 UIStarItem = UIStarItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIStarItem.OnShow = function(self)
-  -- function num : 0_0
+function UIStarItem:OnShow()
   self._imgStarGray = self:GetGameObject("imgStarGray")
   self._imgStar = self:GetGameObject("imgStar")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStarItem.OnHide = function(self)
-  -- function num : 0_1
+function UIStarItem:OnHide()
   self._imgStarGray = nil
   self._imgStar = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStarItem.Flush = function(self, active)
-  -- function num : 0_2
-  (self._imgStarGray):SetActive(not active)
-  ;
-  (self._imgStar):SetActive(active)
+function UIStarItem:Flush(active)
+  self._imgStarGray:SetActive(not active)
+  self._imgStar:SetActive(active)
 end
-
-

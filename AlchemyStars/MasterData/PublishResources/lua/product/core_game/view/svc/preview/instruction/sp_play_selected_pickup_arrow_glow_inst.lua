@@ -1,21 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_selected_pickup_arrow_glow_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlaySelectedPickupArrowGlowInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlaySelectedPickupArrowGlowInstruction = SkillPreviewPlaySelectedPickupArrowGlowInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlaySelectedPickupArrowGlowInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlaySelectedPickupArrowGlowInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
   local pickUpPos = previewContext:GetPickUpPos()
   local boardServiceRender = world:GetService("BoardRender")
-  local arrowEntities = (world:GetGroup((world.BW_WEMatchers).PickUpArrow)):GetEntities()
-  for _,e in ipairs(arrowEntities) do
-    local v3Pos = (e:Location()):GetPosition()
+  local arrowEntities = world:GetGroup(world.BW_WEMatchers.PickUpArrow):GetEntities()
+  for _, e in ipairs(arrowEntities) do
+    local v3Pos = e:Location():GetPosition()
     local v2Pos = boardServiceRender:BoardRenderPos2GridPos(v3Pos)
     local statTable = {select = false, idle = true}
     if v2Pos == pickUpPos then
@@ -24,5 +17,3 @@ SkillPreviewPlaySelectedPickupArrowGlowInstruction.DoInstruction = function(self
     e:SetAnimatorControllerBools(statTable)
   end
 end
-
-

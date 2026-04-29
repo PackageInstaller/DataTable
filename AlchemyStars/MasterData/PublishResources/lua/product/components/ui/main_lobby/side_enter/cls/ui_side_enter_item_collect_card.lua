@@ -1,39 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/side_enter/cls/ui_side_enter_item_collect_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_campaign")
 _class("UISideEnterItem_Collect_Card", UISideEnterItem_Campaign)
 UISideEnterItem_Collect_Card = UISideEnterItem_Collect_Card
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterItem_Collect_Card._LoadCampaign = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local campaignType, campaignId = (self._btnCfg).CampaignType, (self._btnCfg).CampaignId
+function UISideEnterItem_Collect_Card:_LoadCampaign(TT)
+  local campaignType, campaignId = self._btnCfg.CampaignType, self._btnCfg.CampaignId
   local res = AsyncRequestRes:New()
-  self._campaign = (UIActivityHelper.LoadCampaign)(TT, res, campaignType, campaignId)
-  local localProcess = (self._campaign):GetLocalProcess()
+  self._campaign = UIActivityHelper.LoadCampaign(TT, res, campaignType, campaignId)
+  local localProcess = self._campaign:GetLocalProcess()
   self._cardCom = localProcess:GetComponent(ECampaignCollectCardComponentID.COLLECT_CARD)
   self._cardComInfo = localProcess:GetComponentInfo(ECampaignCollectCardComponentID.COLLECT_CARD)
   if self._cardCom then
-    self._cardCfgID = (self._cardCom):GetComponentCfgId()
+    self._cardCfgID = self._cardCom:GetComponentCfgId()
   end
   self._questCom = localProcess:GetComponent(ECampaignCollectCardComponentID.QUEST)
   self._questComInfo = localProcess:GetComponentInfo(ECampaignCollectCardComponentID.QUEST)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Collect_Card._CalcRed = function(self)
-  -- function num : 0_1
+function UISideEnterItem_Collect_Card:_CalcRed()
   local questRed = false
   if self._questCom then
-    questRed = (self._questCom):HaveRedPoint()
+    questRed = self._questCom:HaveRedPoint()
   end
   local cardRed = false
   if self._cardCom then
-    cardRed = (self._cardCom):HaveRedPoint()
+    cardRed = self._cardCom:HaveRedPoint()
   end
   local normalRed = questRed or cardRed
   local specialRed = self:CollectCardRed()
@@ -43,11 +33,8 @@ UISideEnterItem_Collect_Card._CalcRed = function(self)
   return 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Collect_Card.CollectCardRed = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (UICollectCardContent.CheckLocalDB_Enter_WebView)() then
+function UISideEnterItem_Collect_Card:CollectCardRed()
+  if UICollectCardContent.CheckLocalDB_Enter_WebView() then
     return false
   end
   if self:CheckComIsOpen() then
@@ -59,59 +46,47 @@ UISideEnterItem_Collect_Card.CollectCardRed = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Collect_Card.CheckCardsAllCollected = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISideEnterItem_Collect_Card:CheckCardsAllCollected()
   if not self._cardCom then
     return false
   end
-  local cards = (self._cardComInfo).card
-  local cfgs = (Cfg.cfg_component_collect_card_reward)({ComponentID = self._cardCfgID, RewardType = 2})
+  local cards = self._cardComInfo.card
+  local cfgs = Cfg.cfg_component_collect_card_reward({
+    ComponentID = self._cardCfgID,
+    RewardType = 2
+  })
   local cfg = cfgs[1]
   local cardList = cfg.CardList
   local isAllCollected = true
-  for key,value in pairs(cardList) do
+  for key, value in pairs(cardList) do
     if cards[value] then
-      do
-        isAllCollected = false
-        do break end
-        -- DECOMPILER ERROR at PC27: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC27: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    else
+      isAllCollected = false
+      break
     end
   end
   return isAllCollected
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Collect_Card.CheckComIsOpen = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISideEnterItem_Collect_Card:CheckComIsOpen()
   local questComOpen = false
-  do
-    if self._questCom then
-      local sampleInfo = self:GetSampleInfo()
-      questComOpen = not sampleInfo or sampleInfo.m_is_component_open >> ECampaignCollectCardComponentID.QUEST & 1 == 1
+  if self._questCom then
+    local sampleInfo = self:GetSampleInfo()
+    if sampleInfo then
+      questComOpen = sampleInfo.m_is_component_open >> ECampaignCollectCardComponentID.QUEST & 1 == 1
     end
-    if questComOpen then
-      return true
-    end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
   end
+  if questComOpen then
+    return true
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Collect_Card.GetSampleInfo = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local campType = (self._campaign)._type
-  local campID = (self._campaign)._id
-  local campModule = ((GameGlobal.GetModule)(CampaignModule))
-  local sampleInfo = nil
+function UISideEnterItem_Collect_Card:GetSampleInfo()
+  local campType = self._campaign._type
+  local campID = self._campaign._id
+  local campModule = GameGlobal.GetModule(CampaignModule)
+  local sampleInfo
   if campID then
     sampleInfo = campModule:GetReviewCampaignSampleByCampaignId(campID)
   else
@@ -119,5 +94,3 @@ UISideEnterItem_Collect_Card.GetSampleInfo = function(self)
   end
   return sampleInfo
 end
-
-

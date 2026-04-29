@@ -1,94 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sign_in/ui_sign_in_share.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISignInShare", UIController)
 UISignInShare = UISignInShare
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISignInShare.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISignInShare:Constructor()
   self._scale = 2.0526
-  self._canShare = (self:GetModule(ShareModule)):CanShare()
+  self._canShare = self:GetModule(ShareModule):CanShare()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInShare.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISignInShare:OnShow(uiParams)
   self._day = uiParams[1]
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInShare._GetComponents = function(self)
-  -- function num : 0_2
+function UISignInShare:_GetComponents()
   self._text = self:GetUIComponent("UILocalizationText", "Text")
   self._shareText = self:GetUIComponent("UILocalizationText", "ShareText")
   self._shareBtnGo = self:GetGameObject("ShareBtn")
   self._centerGo = self:GetGameObject("Center")
   self._centerShareGo = self:GetGameObject("CenterShare")
   self._shareImageRect = self:GetUIComponent("RectTransform", "ShareImage")
-  ;
-  (self._shareBtnGo):SetActive(self._canShare)
+  self._shareBtnGo:SetActive(self._canShare)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInShare._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local str = (StringTable.Get)("str_share_congratulation2", self._day)
-  ;
-  (self._text):SetText(str)
-  ;
-  (self._shareText):SetText(str)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._shareImageRect).sizeDelta = Vector2(((self._shareImageRect).sizeDelta).y * self._scale, ((self._shareImageRect).sizeDelta).y)
+function UISignInShare:_OnValue()
+  local str = StringTable.Get("str_share_congratulation2", self._day)
+  self._text:SetText(str)
+  self._shareText:SetText(str)
+  self._shareImageRect.sizeDelta = Vector2(self._shareImageRect.sizeDelta.y * self._scale, self._shareImageRect.sizeDelta.y)
   self:_SetShareInfo(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInShare.ShareBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UISignInShare:ShareBtnOnClick(go)
   self:Lock("UISignInShare")
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
     self:_SetShareInfo(false)
     YIELD(TT)
     self:ShowDialog("UIShare", self:GetName(), ShareAnchorType.BottomRight, function()
-      -- function num : 0_4_0_0 , upvalues : self
       self:_SetShareInfo(true)
-    end
-, nil, nil, nil, ShareSceneType.SignIn)
+    end, nil, nil, nil, ShareSceneType.SignIn)
     self:UnLock("UISignInShare")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInShare.CloseBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UISignInShare:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInShare._SetShareInfo = function(self, show)
-  -- function num : 0_6
-  if show then
-    (self._shareBtnGo):SetActive(self._canShare)
-    ;
-    (self._centerGo):SetActive(show)
-    ;
-    (self._centerShareGo):SetActive(not show)
-  end
+function UISignInShare:_SetShareInfo(show)
+  self._shareBtnGo:SetActive(show and self._canShare)
+  self._centerGo:SetActive(show)
+  self._centerShareGo:SetActive(not show)
 end
-
-

@@ -1,8 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/idn/activity/n38/str_cn9_n38.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_cn9_n38_nading_skin_title = "Kilauan di Lautan Gelap", str_cn9_n38_nading_skin_desc = "Lenteraku akan mengusir kegelapan!", str_cn9_n38_nading_skin_rewards_preview = "Pratinjau Reward", str_cn9_n38_nading_skin_time = "Sisa Waktu Event: {1}", str_cn9_n38_nading_skin_claim = "Klaim", str_cn9_n38_nading_skin_claimed = "Diklaim", str_cn9_n38_nading_skin_preview_name = "Nadine: The Lightkeeper (Outfit)", str_cn9_n38_nading_skin_preview_btn = "Pengaturan"}
+local config = {
+  str_cn9_n38_nading_skin_title = "Kilauan di Lautan Gelap",
+  str_cn9_n38_nading_skin_desc = "Lenteraku akan mengusir kegelapan!",
+  str_cn9_n38_nading_skin_rewards_preview = "Pratinjau Reward",
+  str_cn9_n38_nading_skin_time = "Sisa Waktu Event: {1}",
+  str_cn9_n38_nading_skin_claim = "Klaim",
+  str_cn9_n38_nading_skin_claimed = "Diklaim",
+  str_cn9_n38_nading_skin_preview_name = "Nadine: The Lightkeeper (Outfit)",
+  str_cn9_n38_nading_skin_preview_btn = "Pengaturan"
+}
 return config
-

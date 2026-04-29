@@ -1,38 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/pet/pet_chain_skill_replace_attack_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pet_chain_skill_attack_r")
 _class("PetChainSkillReplaceAttack", PetChainSkillAttack)
 PetChainSkillReplaceAttack = PetChainSkillReplaceAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PetChainSkillReplaceAttack.DoPlayPetReplaceChainAttack = function(self, TT, casterEntity, skillID)
-  -- function num : 0_0 , upvalues : _ENV
+function PetChainSkillReplaceAttack:DoPlayPetReplaceChainAttack(TT, casterEntity, skillID)
   local buffViewCmpt = casterEntity:BuffView()
   local replaceChainEntityID = buffViewCmpt:GetBuffValue("ReplaceEntityID")
-  local replaceChainEntity = (self._world):GetEntityByID(replaceChainEntityID)
+  local replaceChainEntity = self._world:GetEntityByID(replaceChainEntityID)
   if not replaceChainEntity then
-    return 
+    return
   end
-  ;
-  (replaceChainEntity:SkillRoutine()):ClearSkillRoutine()
+  replaceChainEntity:SkillRoutine():ClearSkillRoutine()
   local replaceDataList = self:GetReplaceChainAttackDataByEntityID(casterEntity:GetID())
   local chainAttackCount = #replaceDataList
   if chainAttackCount <= 0 then
-    return 
+    return
   end
-  local configService = (self._world):GetService("Config")
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  local playSkillService = (self._world):GetService("PlaySkill")
-  local utilData = (self._world):GetService("UtilData")
+  local configService = self._world:GetService("Config")
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  local playSkillService = self._world:GetService("PlaySkill")
+  local utilData = self._world:GetService("UtilData")
   local chainTimes, extraTimes = utilData:OnGetPetChainTimesForRender(casterEntity)
   for chainIndex = 1, chainAttackCount do
     self:_OnResultDeadEntityAddDeadFlag(casterEntity:GetID(), chainIndex)
     local replaceData = replaceDataList[chainIndex]
-    local replacePos = (replaceChainEntity:GridLocation()):GetGridPos()
-    local replaceDir = (casterEntity:GridLocation()):GetGridDir()
+    local replacePos = replaceChainEntity:GridLocation():GetGridPos()
+    local replaceDir = casterEntity:GridLocation():GetGridDir()
     replaceChainEntity:SetLocation(replacePos, replaceDir)
     local results = replaceData:GetEffectResultDict()
     local resContainer = SkillEffectResultContainer:New()
@@ -42,11 +34,10 @@ PetChainSkillReplaceAttack.DoPlayPetReplaceChainAttack = function(self, TT, cast
     if chainAttackCount == chainIndex and isFinalAttack then
       self:_CheckFinalAttack(resContainer, casterEntity)
     end
-    ;
-    (replaceChainEntity:SkillRoutine()):SetResultContainer(resContainer)
+    replaceChainEntity:SkillRoutine():SetResultContainer(resContainer)
     local skillPhaseArray = self:_GetChainSkillPhaseArray(replaceChainEntity, replaceData:GetSkillID())
     local taskid = playSkillService:StartSkillRoutine(replaceChainEntity, skillPhaseArray, replaceData:GetSkillID())
-    while not (TaskHelper:GetInstance()):IsTaskFinished(taskid, true) do
+    while not TaskHelper:GetInstance():IsTaskFinished(taskid, true) do
       YIELD(TT)
     end
     playBuffSvc:PlayBuffView(TT, NTSingleChainSkillAttackFinish:New(casterEntity, chainIndex, 1))
@@ -57,14 +48,9 @@ PetChainSkillReplaceAttack.DoPlayPetReplaceChainAttack = function(self, TT, cast
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PetChainSkillReplaceAttack.GetReplaceChainAttackDataByEntityID = function(self, casterEntityID)
-  -- function num : 0_1 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local chainAtkResCmpt = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.ChainAttack)
+function PetChainSkillReplaceAttack:GetReplaceChainAttackDataByEntityID(casterEntityID)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local chainAtkResCmpt = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.ChainAttack)
   local chainAttackData = chainAtkResCmpt:GetPetReplaceChainSkillDataList(casterEntityID)
   return chainAttackData
 end
-
-

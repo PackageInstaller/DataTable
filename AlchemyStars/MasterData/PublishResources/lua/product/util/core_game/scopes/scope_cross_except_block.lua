@@ -1,43 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_cross_except_block.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_CrossExceptBlock", SkillScopeCalculator_Base)
 SkillScopeCalculator_CrossExceptBlock = SkillScopeCalculator_CrossExceptBlock
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_CrossExceptBlock.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_CrossExceptBlock:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local bReverse = false
-  if not scopeParam[4] then
-    local bPickToReverse = not casterEntity or 0
-  end
-  if bPickToReverse == 1 then
-    local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
-    if activeSkillPickUpComponent then
-      local pickCount = activeSkillPickUpComponent:GetAllValidPickUpGridPosCount()
-      if pickCount > 0 then
-        bReverse = true
-      end
-    else
-      do
+  if casterEntity then
+    local bPickToReverse = scopeParam[4] or 0
+    if bPickToReverse == 1 then
+      local activeSkillPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
+      if activeSkillPickUpComponent then
+        local pickCount = activeSkillPickUpComponent:GetAllValidPickUpGridPosCount()
+        if 0 < pickCount then
+          bReverse = true
+        end
+      else
         local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
-        do
-          if previewPickUpComponent then
-            local pickCount = previewPickUpComponent:GetAllValidPickUpGridPosCount()
-            if pickCount > 0 then
-              bReverse = true
-            end
+        if previewPickUpComponent then
+          local pickCount = previewPickUpComponent:GetAllValidPickUpGridPosCount()
+          if 0 < pickCount then
+            bReverse = true
           end
-          local cross_area, wholeArea = self:_CalcCrossExceptBlock(scopeParam, centerPos, bodyArea, bReverse)
-          local result = SkillScopeResult:New(SkillScopeType.CrossExceptBlock, casterPos, cross_area, wholeArea)
-          return result
         end
       end
     end
   end
+  local cross_area, wholeArea = self:_CalcCrossExceptBlock(scopeParam, centerPos, bodyArea, bReverse)
+  local result = SkillScopeResult:New(SkillScopeType.CrossExceptBlock, casterPos, cross_area, wholeArea)
+  return result
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_coffin_musume_candle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParam_CoffinMusumeCandle", SkillEffectParamBase)
 SkillEffectParam_CoffinMusumeCandle = SkillEffectParam_CoffinMusumeCandle
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_CoffinMusumeCandle.Constructor = function(self, t, petId, effectIndex, skillType, grade, awaking)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_CoffinMusumeCandle:Constructor(t, petId, effectIndex, skillType, grade, awaking)
   self._trapID = t.trapID
   self._stage1Count = t.stage1Count
   self._stage1Param = t.stage1Param
@@ -27,74 +20,42 @@ SkillEffectParam_CoffinMusumeCandle.Constructor = function(self, t, petId, effec
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_CoffinMusumeCandle.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_CoffinMusumeCandle:GetEffectType()
   return SkillEffectType.CoffinMusumeCandle
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_CoffinMusumeCandle.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectParam_CoffinMusumeCandle:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_CoffinMusumeCandle.GetStage1Count = function(self)
-  -- function num : 0_3
+function SkillEffectParam_CoffinMusumeCandle:GetStage1Count()
   return self._stage1Count
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_CoffinMusumeCandle.GetStage1Param = function(self)
-  -- function num : 0_4
+function SkillEffectParam_CoffinMusumeCandle:GetStage1Param()
   return self._stage1Param
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_CoffinMusumeCandle.GetStage2Count = function(self)
-  -- function num : 0_5
+function SkillEffectParam_CoffinMusumeCandle:GetStage2Count()
   return self._stage2Count
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_CoffinMusumeCandle.GetStage2Param = function(self)
-  -- function num : 0_6
+function SkillEffectParam_CoffinMusumeCandle:GetStage2Param()
   return self._stage2Param
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_CoffinMusumeCandle.GetStage3Param = function(self)
-  -- function num : 0_7
+function SkillEffectParam_CoffinMusumeCandle:GetStage3Param()
   return self._stage3Param
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_CoffinMusumeCandle.GetStage1DamageParam = function(self)
-  -- function num : 0_8
+function SkillEffectParam_CoffinMusumeCandle:GetStage1DamageParam()
   return self._stage1DamageParam
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_CoffinMusumeCandle.GetStage2DamageParam = function(self)
-  -- function num : 0_9
+function SkillEffectParam_CoffinMusumeCandle:GetStage2DamageParam()
   return self._stage2DamageParam
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_CoffinMusumeCandle.GetStage3DamageParam = function(self)
-  -- function num : 0_10
+function SkillEffectParam_CoffinMusumeCandle:GetStage3DamageParam()
   return self._stage3DamageParam
 end
-
-

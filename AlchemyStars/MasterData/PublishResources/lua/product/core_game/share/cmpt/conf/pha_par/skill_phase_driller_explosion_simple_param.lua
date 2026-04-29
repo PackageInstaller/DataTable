@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_driller_explosion_simple_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseDrillerExplosionSimpleParam", SkillPhaseParamBase)
 SkillPhaseDrillerExplosionSimpleParam = SkillPhaseDrillerExplosionSimpleParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseDrillerExplosionSimpleParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseDrillerExplosionSimpleParam:Constructor(t)
   self.monsterClassID = t.monsterClassID
   self.startAction = t.startAction
   self.startEffectID = t.startEffectID
@@ -21,94 +14,59 @@ SkillPhaseDrillerExplosionSimpleParam.Constructor = function(self, t)
   self.finalDelayMs = t.finalDelayMs
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerExplosionSimpleParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseDrillerExplosionSimpleParam:GetPhaseType()
   return SkillViewPhaseType.DrillerExplosionSimple
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerExplosionSimpleParam._CacheEff = function(self, t, effID, count)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseDrillerExplosionSimpleParam:_CacheEff(t, effID, count)
   local cacheCount = count or 1
   if effID and effID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[effID]).ResPath, cacheCount})
+    table.insert(t, {
+      Cfg.cfg_effect[effID].ResPath,
+      cacheCount
+    })
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerExplosionSimpleParam.GetCacheTable = function(self)
-  -- function num : 0_3
+function SkillPhaseDrillerExplosionSimpleParam:GetCacheTable()
   local t = {}
   self:_CacheEff(t, self.startEffectID)
   self:_CacheEff(t, self.bossShowEffectID)
   return t
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerExplosionSimpleParam.GetStartAction = function(self)
-  -- function num : 0_4
+function SkillPhaseDrillerExplosionSimpleParam:GetStartAction()
   return self.startAction
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerExplosionSimpleParam.GetStartEffectID = function(self)
-  -- function num : 0_5
+function SkillPhaseDrillerExplosionSimpleParam:GetStartEffectID()
   return self.startEffectID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerExplosionSimpleParam.GetMainEffectID = function(self)
-  -- function num : 0_6
+function SkillPhaseDrillerExplosionSimpleParam:GetMainEffectID()
   return self.mainEffectID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerExplosionSimpleParam.GetStartMatAnim = function(self)
-  -- function num : 0_7
+function SkillPhaseDrillerExplosionSimpleParam:GetStartMatAnim()
   return self.startMatAnim
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerExplosionSimpleParam.GetMonsterClassID = function(self)
-  -- function num : 0_8
+function SkillPhaseDrillerExplosionSimpleParam:GetMonsterClassID()
   return self.monsterClassID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerExplosionSimpleParam.GetBossShowDelayMs = function(self)
-  -- function num : 0_9
+function SkillPhaseDrillerExplosionSimpleParam:GetBossShowDelayMs()
   return self.bossShowDelayMs
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerExplosionSimpleParam.GetBossShowAction = function(self)
-  -- function num : 0_10
+function SkillPhaseDrillerExplosionSimpleParam:GetBossShowAction()
   return self.bossShowAction
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerExplosionSimpleParam.GetBossShowEffectID = function(self)
-  -- function num : 0_11
+function SkillPhaseDrillerExplosionSimpleParam:GetBossShowEffectID()
   return self.bossShowEffectID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerExplosionSimpleParam.GetFinalDelayMs = function(self)
-  -- function num : 0_12
+function SkillPhaseDrillerExplosionSimpleParam:GetFinalDelayMs()
   return self.finalDelayMs
 end
-
-

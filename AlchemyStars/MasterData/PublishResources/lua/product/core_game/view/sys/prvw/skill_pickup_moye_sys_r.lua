@@ -1,31 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/skill_pickup_moye_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPickUpMoyeSystem_Render", ReactiveSystem)
 SkillPickUpMoyeSystem_Render = SkillPickUpMoyeSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPickUpMoyeSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillPickUpMoyeSystem_Render:Constructor(world)
   self._world = world
   self._pickUpType = nil
   self._pickUpNum = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpMoyeSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).PickUpTarget)}, {"Added"})
+function SkillPickUpMoyeSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.PickUpTarget)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpMoyeSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPickUpMoyeSystem_Render:Filter(entity)
   local pickUpTargetCmpt = entity:PickUpTarget()
   local skillHandleType = pickUpTargetCmpt:GetPickUpTargetType()
   if skillHandleType == SkillPickUpType.Moye then
@@ -34,11 +23,8 @@ SkillPickUpMoyeSystem_Render.Filter = function(self, entity)
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpMoyeSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
-  local inputCmpt = (self._world):Input()
+function SkillPickUpMoyeSystem_Render:ExecuteEntities(entities)
+  local inputCmpt = self._world:Input()
   local isStartPreview = inputCmpt:IsPreviewActiveSkill()
   for i = 1, #entities do
     if isStartPreview then
@@ -49,13 +35,10 @@ SkillPickUpMoyeSystem_Render.ExecuteEntities = function(self, entities)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpMoyeSystem_Render.DoLinkLine = function(self, entity)
-  -- function num : 0_4 , upvalues : _ENV
-  local previewEntity = (self._world):GetPreviewEntity()
+function SkillPickUpMoyeSystem_Render:DoLinkLine(entity)
+  local previewEntity = self._world:GetPreviewEntity()
   if not previewEntity then
-    return 
+    return
   end
   local previewLinkLineCmpt = previewEntity:PreviewLinkLine()
   local chainPath = previewLinkLineCmpt:GetPreviewChainPath()
@@ -63,173 +46,130 @@ SkillPickUpMoyeSystem_Render.DoLinkLine = function(self, entity)
   local pickUpGridPos = pickUpTargetCmpt:GetCurPickUpGridPos()
   self._pickUpType = pickUpTargetCmpt:GetPickUpTargetType()
   local activeSkillID = pickUpTargetCmpt:GetCurActiveSkillID()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local petPstID = pickUpTargetCmpt:GetPetPstid()
   local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
-  local petEntity = (self._world):GetEntityByID(petEntityId)
-  do
-    if not petEntity then
-      local entityID = pickUpTargetCmpt:GetEntityID()
-      petEntity = (self._world):GetEntityByID(entityID)
-    end
-    if not petEntity:HasPreviewPickUpComponent() then
-      petEntity:AddPreviewPickUpComponent()
-    end
-    local configService = (self._world):GetService("Config")
-    local skillConfigData = configService:GetSkillConfigData(activeSkillID, petEntity)
-    local pickUpParam = skillConfigData:GetSkillPickParam()
-    self._pickUpNum = pickUpParam[1]
-    self._pieceType = pickUpParam[2]
-    local previewPickUpComponent = petEntity:PreviewPickUpComponent()
-    previewPickUpComponent:ClearGridPos()
-    previewPickUpComponent:AddGridPosList(chainPath)
-    if chainPath then
-      ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Empty, skillConfigData, petEntity, pickUpGridPos, chainPath)
-    end
-    self:UpdateUI(previewPickUpComponent)
+  local petEntity = self._world:GetEntityByID(petEntityId)
+  if not petEntity then
+    local entityID = pickUpTargetCmpt:GetEntityID()
+    petEntity = self._world:GetEntityByID(entityID)
   end
+  if not petEntity:HasPreviewPickUpComponent() then
+    petEntity:AddPreviewPickUpComponent()
+  end
+  local configService = self._world:GetService("Config")
+  local skillConfigData = configService:GetSkillConfigData(activeSkillID, petEntity)
+  local pickUpParam = skillConfigData:GetSkillPickParam()
+  self._pickUpNum = pickUpParam[1]
+  self._pieceType = pickUpParam[2]
+  local previewPickUpComponent = petEntity:PreviewPickUpComponent()
+  previewPickUpComponent:ClearGridPos()
+  previewPickUpComponent:AddGridPosList(chainPath)
+  if chainPath then
+    GameGlobal.TaskManager():CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Empty, skillConfigData, petEntity, pickUpGridPos, chainPath)
+  end
+  self:UpdateUI(previewPickUpComponent)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpMoyeSystem_Render.UpdateUI = function(self, previewPickUpComponent)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillPickUpMoyeSystem_Render:UpdateUI(previewPickUpComponent)
   local gridCount = previewPickUpComponent:GetAllValidPickUpGridPosCount()
   gridCount = gridCount - 1
   local canCast = false
   local leftNum = self._pickUpNum
-  if gridCount > 0 then
+  if 0 < gridCount then
     canCast = true
-    leftNum = leftNum - (gridCount)
+    leftNum = leftNum - gridCount
   end
   if leftNum < 0 then
     leftNum = 0
   end
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.RefreshPickUpNum, leftNum)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.EnablePickUpSkillCast, canCast)
+  self._world:EventDispatcher():Dispatch(GameEventType.RefreshPickUpNum, leftNum)
+  self._world:EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, canCast)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpMoyeSystem_Render._ParseScopeList = function(self, list)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillPickUpMoyeSystem_Render:_ParseScopeList(list)
   local parser = SkillScopeParamParser:New()
   local t = {}
-  for _,v in ipairs(list) do
+  for _, v in ipairs(list) do
     local param = SkillPreviewScopeParam:New(v)
     local data = parser:ParseScopeParam(v.ScopeType, v.ScopeParam)
     param:SetScopeParamData(data)
-    ;
-    (table.insert)(t, param)
+    table.insert(t, param)
   end
   return t
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpMoyeSystem_Render.DoPickUp = function(self, entity)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillPickUpMoyeSystem_Render:DoPickUp(entity)
   local pickUpTargetCmpt = entity:PickUpTarget()
   local pickUpGridPos = pickUpTargetCmpt:GetCurPickUpGridPos()
   self._pickUpType = pickUpTargetCmpt:GetPickUpTargetType()
   local activeSkillID = pickUpTargetCmpt:GetCurActiveSkillID()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local petPstID = pickUpTargetCmpt:GetPetPstid()
   local petEntityId = utilDataSvc:GetEntityIDByPstID(petPstID)
-  local petEntity = (self._world):GetEntityByID(petEntityId)
-  do
-    if not petEntity then
-      local entityID = pickUpTargetCmpt:GetEntityID()
-      petEntity = (self._world):GetEntityByID(entityID)
-    end
-    if not petEntity:HasPreviewPickUpComponent() then
-      petEntity:AddPreviewPickUpComponent()
-    end
-    local configService = (self._world):GetService("Config")
-    local skillConfigData = configService:GetSkillConfigData(activeSkillID, petEntity)
-    local pickUpNum = tonumber((skillConfigData._pickUpParam)[1]) or 0
-    self._pickUpNum = pickUpNum
-    local previewPickUpComponent = petEntity:PreviewPickUpComponent()
-    previewPickUpComponent:ClearGridPos()
-    self:UpdateUI(previewPickUpComponent, false)
-    local casterPos = petEntity:GetGridPosition()
-    local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-    utilScopeSvc:ChangeGameFSMState2PickUp()
-    local inputCmpt = (self._world):Input()
-    inputCmpt:SetPreviewActiveSkill(true)
+  local petEntity = self._world:GetEntityByID(petEntityId)
+  if not petEntity then
+    local entityID = pickUpTargetCmpt:GetEntityID()
+    petEntity = self._world:GetEntityByID(entityID)
   end
+  if not petEntity:HasPreviewPickUpComponent() then
+    petEntity:AddPreviewPickUpComponent()
+  end
+  local configService = self._world:GetService("Config")
+  local skillConfigData = configService:GetSkillConfigData(activeSkillID, petEntity)
+  local pickUpNum = tonumber(skillConfigData._pickUpParam[1]) or 0
+  self._pickUpNum = pickUpNum
+  local previewPickUpComponent = petEntity:PreviewPickUpComponent()
+  previewPickUpComponent:ClearGridPos()
+  self:UpdateUI(previewPickUpComponent, false)
+  local casterPos = petEntity:GetGridPosition()
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  utilScopeSvc:ChangeGameFSMState2PickUp()
+  local inputCmpt = self._world:Input()
+  inputCmpt:SetPreviewActiveSkill(true)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpMoyeSystem_Render._DoPickUpInstruction = function(self, TT, type, skillConfigData, casterEntity, pickUpGirdPos, chainPath)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillPickUpMoyeSystem_Render:_DoPickUpInstruction(TT, type, skillConfigData, casterEntity, pickUpGirdPos, chainPath)
   local taskIDList = {}
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
-  for i,v in ipairs(skillConfigData._previewParamList) do
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
+  for i, v in ipairs(skillConfigData._previewParamList) do
     if v:GetPreviewType() == SkillPreviewType.Instruction then
       local instructionParam = v
-      for _,skillPreviewConfigData in ipairs(instructionParam._previewList) do
+      for _, skillPreviewConfigData in ipairs(instructionParam._previewList) do
         local instructionSet = self:_GetInstructSet(type, skillPreviewConfigData)
         if instructionSet then
           local previewContext = self:_GetPreviewContext(type, skillPreviewConfigData, casterEntity, skillPreviewConfigData:GetID(), pickUpGirdPos)
-          if #chainPath > 0 then
-            local boardServiceRender = (self._world):GetService("BoardRender")
+          if 0 < #chainPath then
+            local boardServiceRender = self._world:GetService("BoardRender")
             local connect_pieces = boardServiceRender:CalcConnectPiecesMoye(chainPath, self._pieceType, skillConfigData)
             previewContext:SetScopeResult(connect_pieces)
           else
-            do
-              local board = (self._world):GetRenderBoardEntity()
-              local linkRendererDataCmpt = board:LinkRendererData()
-              local allEntities = linkRendererDataCmpt:GetLinkLineEntityList()
-              local removeList = {}
-              for _,linkLineEntity in ipairs(allEntities) do
-                (table.insert)(removeList, linkLineEntity)
-              end
-              local linkageRenderService = (self._world):GetService("LinkageRender")
-              for _,e in ipairs(removeList) do
-                linkageRenderService:DestroyLinkLine(e)
-              end
-              do
-                local scopeResult = previewActiveSkillService:CalcScopeResult(skillPreviewConfigData:GetPreviewScopeParam(), casterEntity)
-                previewContext:SetScopeResult(scopeResult:GetAttackRange())
-                do
-                  local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, casterEntity, previewContext)
-                  ;
-                  (table.insert)(taskIDList, taskID)
-                  -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
+            local board = self._world:GetRenderBoardEntity()
+            local linkRendererDataCmpt = board:LinkRendererData()
+            local allEntities = linkRendererDataCmpt:GetLinkLineEntityList()
+            local removeList = {}
+            for _, linkLineEntity in ipairs(allEntities) do
+              table.insert(removeList, linkLineEntity)
             end
+            local linkageRenderService = self._world:GetService("LinkageRender")
+            for _, e in ipairs(removeList) do
+              linkageRenderService:DestroyLinkLine(e)
+            end
+            local scopeResult = previewActiveSkillService:CalcScopeResult(skillPreviewConfigData:GetPreviewScopeParam(), casterEntity)
+            previewContext:SetScopeResult(scopeResult:GetAttackRange())
           end
+          local taskID = GameGlobal.TaskManager():CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, casterEntity, previewContext)
+          table.insert(taskIDList, taskID)
         end
       end
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpMoyeSystem_Render._GetInstructSet = function(self, type, skillPreviewConfigData)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillPickUpMoyeSystem_Render:_GetInstructSet(type, skillPreviewConfigData)
   if type == PickUpInstructionType.Repeat then
     return skillPreviewConfigData:GetOnSelectCancelInstructionSet()
   end
@@ -245,11 +185,8 @@ SkillPickUpMoyeSystem_Render._GetInstructSet = function(self, type, skillPreview
   return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpMoyeSystem_Render._GetPreviewContext = function(self, type, skillPreviewConfigData, casterEntity, id, pickUpGridPos)
-  -- function num : 0_10 , upvalues : _ENV
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+function SkillPickUpMoyeSystem_Render:_GetPreviewContext(type, skillPreviewConfigData, casterEntity, id, pickUpGridPos)
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
   local context = previewPickUpComponent:GetPreviewContext(id)
   if not context then
@@ -261,5 +198,3 @@ SkillPickUpMoyeSystem_Render._GetPreviewContext = function(self, type, skillPrev
   end
   return context
 end
-
-

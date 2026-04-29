@@ -1,72 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/level/ui_activity_n33_level_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33LevelListItem", UICustomWidget)
 UIActivityN33LevelListItem = UIActivityN33LevelListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN33LevelListItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN33LevelListItem:OnShow(uiParams)
   self._plot = self:GetGameObject("Plot")
   self._plotName = self:GetUIComponent("UILocalizationText", "PlotName")
   self._normal = self:GetGameObject("Normal")
   self._normalName = self:GetUIComponent("UILocalizationText", "NormalName")
   self._normalStarLock = {}
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._normalStarLock)[#self._normalStarLock + 1] = self:GetGameObject("NormalStarLock1")
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._normalStarLock)[#self._normalStarLock + 1] = self:GetGameObject("NormalStarLock2")
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._normalStarLock)[#self._normalStarLock + 1] = self:GetGameObject("NormalStarLock3")
+  self._normalStarLock[#self._normalStarLock + 1] = self:GetGameObject("NormalStarLock1")
+  self._normalStarLock[#self._normalStarLock + 1] = self:GetGameObject("NormalStarLock2")
+  self._normalStarLock[#self._normalStarLock + 1] = self:GetGameObject("NormalStarLock3")
   self._normalStar = {}
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._normalStar)[#self._normalStar + 1] = self:GetGameObject("NormalStar1")
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._normalStar)[#self._normalStar + 1] = self:GetGameObject("NormalStar2")
-  -- DECOMPILER ERROR at PC69: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._normalStar)[#self._normalStar + 1] = self:GetGameObject("NormalStar3")
+  self._normalStar[#self._normalStar + 1] = self:GetGameObject("NormalStar1")
+  self._normalStar[#self._normalStar + 1] = self:GetGameObject("NormalStar2")
+  self._normalStar[#self._normalStar + 1] = self:GetGameObject("NormalStar3")
   self._boss = self:GetGameObject("Boss")
   self._bossName = self:GetUIComponent("UILocalizationText", "BossName")
   self._bossStarLock = {}
-  -- DECOMPILER ERROR at PC88: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bossStarLock)[#self._bossStarLock + 1] = self:GetGameObject("BossStarLock1")
-  -- DECOMPILER ERROR at PC96: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bossStarLock)[#self._bossStarLock + 1] = self:GetGameObject("BossStarLock2")
-  -- DECOMPILER ERROR at PC104: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bossStarLock)[#self._bossStarLock + 1] = self:GetGameObject("BossStarLock3")
+  self._bossStarLock[#self._bossStarLock + 1] = self:GetGameObject("BossStarLock1")
+  self._bossStarLock[#self._bossStarLock + 1] = self:GetGameObject("BossStarLock2")
+  self._bossStarLock[#self._bossStarLock + 1] = self:GetGameObject("BossStarLock3")
   self._bossStar = {}
-  -- DECOMPILER ERROR at PC114: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bossStar)[#self._bossStar + 1] = self:GetGameObject("BossStar1")
-  -- DECOMPILER ERROR at PC122: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bossStar)[#self._bossStar + 1] = self:GetGameObject("BossStar2")
-  -- DECOMPILER ERROR at PC130: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bossStar)[#self._bossStar + 1] = self:GetGameObject("BossStar3")
+  self._bossStar[#self._bossStar + 1] = self:GetGameObject("BossStar1")
+  self._bossStar[#self._bossStar + 1] = self:GetGameObject("BossStar2")
+  self._bossStar[#self._bossStar + 1] = self:GetGameObject("BossStar3")
   self._position = self:GetGameObject("Position")
   self._lock = self:GetGameObject("Lock")
   self._normalStarPanel = self:GetGameObject("NormalStar")
@@ -75,82 +32,57 @@ UIActivityN33LevelListItem.OnShow = function(self, uiParams)
   self._hardBossStarPanel = self:GetGameObject("HardBossStar")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelListItem.SetData = function(self, currentLevel, data, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN33LevelListItem:SetData(currentLevel, data, callback)
   self._data = data
   self._callback = callback
-  ;
-  (self._lock):SetActive(not (self._data):IsOpen())
-  ;
-  (self._position):SetActive(self._data == currentLevel)
-  local levelType = (self._data):GetLevelType()
-  ;
-  (self._plot):SetActive(false)
-  ;
-  (self._normal):SetActive(false)
-  ;
-  (self._boss):SetActive(false)
+  self._lock:SetActive(not self._data:IsOpen())
+  self._position:SetActive(self._data == currentLevel)
+  local levelType = self._data:GetLevelType()
+  self._plot:SetActive(false)
+  self._normal:SetActive(false)
+  self._boss:SetActive(false)
   if levelType == DiscoveryStageType.Plot then
-    (self._plot):SetActive(true)
-    ;
-    (self._plotName):SetText(data:GetName())
+    self._plot:SetActive(true)
+    self._plotName:SetText(data:GetName())
   elseif levelType == DiscoveryStageType.FightBoss then
-    (self._boss):SetActive(true)
-    ;
-    (self._bossName):SetText(data:GetName())
-    if (self._data):IsHard() then
-      (self._bossStarPanel):SetActive(false)
-      ;
-      (self._hardBossStarPanel):SetActive(data:IsComplete())
+    self._boss:SetActive(true)
+    self._bossName:SetText(data:GetName())
+    if self._data:IsHard() then
+      self._bossStarPanel:SetActive(false)
+      self._hardBossStarPanel:SetActive(data:IsComplete())
     else
-      local star = (self._data):GetStar()
+      local star = self._data:GetStar()
       for i = 1, #self._bossStar do
-        ((self._bossStar)[i]):SetActive(i <= star)
-        ;
-        ((self._bossStarLock)[i]):SetActive(star < i)
+        self._bossStar[i]:SetActive(i <= star)
+        self._bossStarLock[i]:SetActive(i > star)
       end
-      ;
-      (self._bossStarPanel):SetActive(true)
-      ;
-      (self._hardBossStarPanel):SetActive(false)
+      self._bossStarPanel:SetActive(true)
+      self._hardBossStarPanel:SetActive(false)
     end
   else
-    (self._normal):SetActive(true)
-    ;
-    (self._normalName):SetText(data:GetName())
-    if (self._data):IsHard() then
-      (self._normalStarPanel):SetActive(false)
-      ;
-      (self._hardNormalStarPanel):SetActive(data:IsComplete())
+    self._normal:SetActive(true)
+    self._normalName:SetText(data:GetName())
+    if self._data:IsHard() then
+      self._normalStarPanel:SetActive(false)
+      self._hardNormalStarPanel:SetActive(data:IsComplete())
     else
-      local star = (self._data):GetStar()
+      local star = self._data:GetStar()
       for i = 1, #self._normalStar do
-        ((self._normalStar)[i]):SetActive(i <= star)
-        ;
-        ((self._normalStarLock)[i]):SetActive(star < i)
+        self._normalStar[i]:SetActive(i <= star)
+        self._normalStarLock[i]:SetActive(i > star)
       end
-      ;
-      (self._normalStarPanel):SetActive(true)
-      ;
-      (self._hardNormalStarPanel):SetActive(false)
+      self._normalStarPanel:SetActive(true)
+      self._hardNormalStarPanel:SetActive(false)
     end
   end
-  -- DECOMPILER ERROR: 10 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelListItem.RootOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._data):IsOpen() == false then
-    (ToastManager.ShowToast)((self._data):GetTips())
-    return 
+function UIActivityN33LevelListItem:RootOnClick()
+  if self._data:IsOpen() == false then
+    ToastManager.ShowToast(self._data:GetTips())
+    return
   end
   if self._callback then
-    (self._callback)(self._data)
+    self._callback(self._data)
   end
 end
-
-

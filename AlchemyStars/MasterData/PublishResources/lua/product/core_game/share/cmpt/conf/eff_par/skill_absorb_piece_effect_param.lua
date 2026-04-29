@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_absorb_piece_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillAbsorbPieceEffectParam", SkillEffectParamBase)
 SkillAbsorbPieceEffectParam = SkillAbsorbPieceEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillAbsorbPieceEffectParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillAbsorbPieceEffectParam:Constructor(t)
   self._pieceType = t.pieceType
   self._pieceCount = t.pieceCount
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAbsorbPieceEffectParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillAbsorbPieceEffectParam:GetEffectType()
   return SkillEffectType.AbsorbPiece
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAbsorbPieceEffectParam.GetPieceType = function(self)
-  -- function num : 0_2
+function SkillAbsorbPieceEffectParam:GetPieceType()
   return self._pieceType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAbsorbPieceEffectParam.GetPieceCount = function(self)
-  -- function num : 0_3
+function SkillAbsorbPieceEffectParam:GetPieceCount()
   return self._pieceCount
 end
-
-

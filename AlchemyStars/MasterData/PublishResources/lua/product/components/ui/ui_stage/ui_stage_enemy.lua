@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/ui_stage_enemy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStageEnemy", UICustomWidget)
 UIStageEnemy = UIStageEnemy
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIStageEnemy.OnShow = function(self)
-  -- function num : 0_0
+function UIStageEnemy:OnShow()
   self._enemyMsg = self:GetUIComponent("UISelectObjectPath", "enemyMsg")
   self._enemyTitleTex = self:GetUIComponent("UILocalizationText", "enemyTitleTex")
   self._enemyTitleBg = self:GetUIComponent("Image", "btnEnemy")
@@ -20,64 +13,43 @@ UIStageEnemy.OnShow = function(self)
   self._recommend = self:GetGameObject("GameObject")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageEnemy.Flush = function(self, recommendAwaken, recommendLV, levelId, color, titleBgSprite, titleBg2Sprite, isChess, noLv, noTitle)
-  -- function num : 0_1 , upvalues : _ENV
+function UIStageEnemy:Flush(recommendAwaken, recommendLV, levelId, color, titleBgSprite, titleBg2Sprite, isChess, noLv, noTitle)
   if isChess then
-    (self._recommend):SetActive(false)
+    self._recommend:SetActive(false)
   else
-    ;
-    (self._recommend):SetActive(false)
+    self._recommend:SetActive(false)
   end
-  local enemy = (self._enemyMsg):SpawnObject("UIEnemyMsg")
+  local enemy = self._enemyMsg:SpawnObject("UIEnemyMsg")
   enemy:SetData(levelId, nil, isChess, noLv)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._enemyTitleTex).color = color
+  self._enemyTitleTex.color = color
   if titleBgSprite == nil and titleBgSprite == nil then
     if not noLv then
-      ((self._enemyTitleBg1go).gameObject):SetActive(false)
-      ;
-      ((self._enemyTitleBg2go).gameObject):SetActive(false)
+      self._enemyTitleBg1go.gameObject:SetActive(false)
+      self._enemyTitleBg2go.gameObject:SetActive(false)
     else
-      ;
-      ((self._enemyTitleBg2go).gameObject):SetActive(true)
+      self._enemyTitleBg2go.gameObject:SetActive(true)
     end
   else
     if not noLv then
-      ((self._enemyTitleBg1go).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC54: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self._enemyTitleBg).sprite = titleBgSprite
+      self._enemyTitleBg1go.gameObject:SetActive(true)
+      self._enemyTitleBg.sprite = titleBgSprite
     end
-    ;
-    ((self._enemyTitleBg2go).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC61: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._enemyTitleBg2).sprite = titleBg2Sprite
+    self._enemyTitleBg2go.gameObject:SetActive(true)
+    self._enemyTitleBg2.sprite = titleBg2Sprite
   end
   if noTitle then
-    ((self._enemyTitleBg1go).gameObject):SetActive(false)
-    ;
-    ((self._enemyTitleBg2go).gameObject):SetActive(false)
+    self._enemyTitleBg1go.gameObject:SetActive(false)
+    self._enemyTitleBg2go.gameObject:SetActive(false)
   end
   if not noLv then
     if recommendAwaken == 0 then
-      ((self._recommendLV).gameObject):SetActive(false)
+      self._recommendLV.gameObject:SetActive(false)
     else
-      ;
-      ((self._recommendLV).gameObject):SetActive(true)
-      ;
-      (self._recommendLV):SetText((StringTable.Get)("str_pet_config_common_advance") .. "<size=29>" .. recommendAwaken .. "</size>")
+      self._recommendLV.gameObject:SetActive(true)
+      self._recommendLV:SetText(StringTable.Get("str_pet_config_common_advance") .. "<size=29>" .. recommendAwaken .. "</size>")
     end
     if recommendLV then
-      (self._recommendLV2):SetText("LV." .. recommendLV)
+      self._recommendLV2:SetText("LV." .. recommendLV)
     end
   end
 end
-
-

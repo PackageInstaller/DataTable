@@ -1,62 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_attack_by_caster_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeAttackByCasterLayer", BuffLogicBase)
 BuffLogicChangeAttackByCasterLayer = BuffLogicChangeAttackByCasterLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAttackByCasterLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeAttackByCasterLayer:Constructor(buffInstance, logicParam)
   self._layerType = logicParam.layerType
   self._mulPerLayer = logicParam.mulPerLayer or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttackByCasterLayer.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeAttackByCasterLayer:DoLogic()
   if not self._layerType then
-    (Log.fatal)("### layerType is nil")
-    return 
+    Log.fatal("### layerType is nil")
+    return
   end
-  local context = (self._buffInstance):Context()
+  local context = self._buffInstance:Context()
   if not context then
-    return 
+    return
   end
   local eCaster = context.casterEntity
   local cAttrCaster = eCaster:Attributes()
   local base = cAttrCaster:GetAttribute("Attack")
   if not base then
-    return 
+    return
   end
-  local eBeneficiary = (self._buffInstance):Entity()
-  local layerCount = (self._buffLogicService):GetBuffLayer(eCaster, self._layerType) or 0
+  local eBeneficiary = self._buffInstance:Entity()
+  local layerCount = self._buffLogicService:GetBuffLayer(eCaster, self._layerType) or 0
   local val = base * self._mulPerLayer * layerCount
-  ;
-  (self._buffLogicService):ChangeBaseAttack(eBeneficiary, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, val)
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._buffInstance).BuffLogicChangeAttackByCasterLayer_ChangeAttackType = ModifyBaseAttackType.AttackConstantFix
+  self._buffLogicService:ChangeBaseAttack(eBeneficiary, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, val)
+  self._buffInstance.BuffLogicChangeAttackByCasterLayer_ChangeAttackType = ModifyBaseAttackType.AttackConstantFix
 end
 
 _class("BuffLogicUndoChangeAttackByCasterLayer", BuffLogicBase)
 BuffLogicUndoChangeAttackByCasterLayer = BuffLogicUndoChangeAttackByCasterLayer
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoChangeAttackByCasterLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicUndoChangeAttackByCasterLayer:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUndoChangeAttackByCasterLayer.DoLogic = function(self)
-  -- function num : 0_3
-  local eBeneficiary = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):RemoveBaseAttack(eBeneficiary, self:GetBuffSeq(), (self._buffInstance).BuffLogicChangeAttackByCasterLayer_ChangeAttackType)
+function BuffLogicUndoChangeAttackByCasterLayer:DoLogic()
+  local eBeneficiary = self._buffInstance:Entity()
+  self._buffLogicService:RemoveBaseAttack(eBeneficiary, self:GetBuffSeq(), self._buffInstance.BuffLogicChangeAttackByCasterLayer_ChangeAttackType)
 end
-
-

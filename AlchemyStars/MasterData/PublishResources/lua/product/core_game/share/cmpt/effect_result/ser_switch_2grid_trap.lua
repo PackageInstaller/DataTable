@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_switch_2grid_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_Switch2GridTrap", SkillEffectResultBase)
 SkillEffectResult_Switch2GridTrap = SkillEffectResult_Switch2GridTrap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_Switch2GridTrap.Constructor = function(self, data, scopeRange)
-  -- function num : 0_0
+function SkillEffectResult_Switch2GridTrap:Constructor(data, scopeRange)
   self._data = data
   self._scopeRange = scopeRange
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Switch2GridTrap.GetData = function(self)
-  -- function num : 0_1
+function SkillEffectResult_Switch2GridTrap:GetData()
   return self._data
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Switch2GridTrap.GetScopeRange = function(self)
-  -- function num : 0_2
+function SkillEffectResult_Switch2GridTrap:GetScopeRange()
   return self._scopeRange
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_Switch2GridTrap.GetEffectType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectResult_Switch2GridTrap:GetEffectType()
   return SkillEffectType.Switch2GridTrap
 end
-
-

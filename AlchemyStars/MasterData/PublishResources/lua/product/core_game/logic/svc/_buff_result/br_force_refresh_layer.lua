@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_force_refresh_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultForceRefreshLayer", BuffResultBase)
 BuffResultForceRefreshLayer = BuffResultForceRefreshLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultForceRefreshLayer.Constructor = function(self, layer, seq, buffLayerName)
-  -- function num : 0_0
+function BuffResultForceRefreshLayer:Constructor(layer, seq, buffLayerName)
   self._layer = layer
   self._seq = seq
   self._buffLayerName = buffLayerName
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultForceRefreshLayer.GetBuffLayer = function(self)
-  -- function num : 0_1
+function BuffResultForceRefreshLayer:GetBuffLayer()
   return self._layer
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultForceRefreshLayer.GetBuffSeq = function(self)
-  -- function num : 0_2
+function BuffResultForceRefreshLayer:GetBuffSeq()
   return self._seq
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultForceRefreshLayer.GetBuffLayerName = function(self)
-  -- function num : 0_3
+function BuffResultForceRefreshLayer:GetBuffLayerName()
   return self._buffLayerName
 end
-
-

@@ -1,54 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_damage_on_target_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 require("skill_damage_effect_param")
 _class("SkillEffectDamageOnTargetCountParam", SkillEffectParamBase)
 SkillEffectDamageOnTargetCountParam = SkillEffectDamageOnTargetCountParam
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectDamageOnTargetCountParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectDamageOnTargetCountParam:Constructor(t)
   assert(type(t.damageOnCount) == "table", "DamageOnTargetCount需要table参数damageOnCount")
   assert(type(t.defaultDamageParam) == "table", "DamageOnTargetCount需要table参数defaultDamageParam")
   self._damageParamsByCount = {}
-  for count,damageParam in pairs(t.damageOnCount) do
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._damageParamsByCount)[count] = SkillDamageEffectParam:New(damageParam)
+  for count, damageParam in pairs(t.damageOnCount) do
+    self._damageParamsByCount[count] = SkillDamageEffectParam:New(damageParam)
   end
   self._defaultDamageParam = SkillDamageEffectParam:New(t.defaultDamageParam)
   self._noRepeat = t.countNoRepeat or false
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageOnTargetCountParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectDamageOnTargetCountParam:GetEffectType()
   return SkillEffectType.DamageOnTargetCount
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageOnTargetCountParam.GetDamageParamByCount = function(self, count)
-  -- function num : 0_2 , upvalues : _ENV
-  local damageParam = (self._damageParamsByCount)[count]
-  ;
-  (Log.notice)("SkillEffectType.DamageOnTargetCount", "count = ", count, " damageParamByCount = ", damageParam ~= nil)
-  if not damageParam then
-    do return self._defaultDamageParam end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
+function SkillEffectDamageOnTargetCountParam:GetDamageParamByCount(count)
+  local damageParam = self._damageParamsByCount[count]
+  Log.notice("SkillEffectType.DamageOnTargetCount", "count = ", count, " damageParamByCount = ", damageParam ~= nil)
+  return damageParam or self._defaultDamageParam
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageOnTargetCountParam.IsCountNoRepeat = function(self)
-  -- function num : 0_3
+function SkillEffectDamageOnTargetCountParam:IsCountNoRepeat()
   return self._noRepeat
 end
-
-

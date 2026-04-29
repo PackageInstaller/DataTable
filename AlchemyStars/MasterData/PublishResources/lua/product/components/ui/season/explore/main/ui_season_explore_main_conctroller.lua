@@ -1,56 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/explore/main/ui_season_explore_main_conctroller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonExploreMainController", UIController)
 UISeasonExploreMainController = UISeasonExploreMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonExploreMainController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonExploreMainController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self.seasonModule = (GameGlobal.GetModule)(SeasonModule)
+function UISeasonExploreMainController:OnShow(uiParams)
+  self.seasonModule = GameGlobal.GetModule(SeasonModule)
   self:InitWidget()
   self._timerHolder = UITimerHolder:New()
   self:_OnValue()
   self:AttachEvent(GameEventType.ItemCountChanged, self.OnItemCountChange)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._timerHolder):Dispose()
+function UISeasonExploreMainController:OnHide()
+  self._timerHolder:Dispose()
   self:DetachEvent(GameEventType.ItemCountChanged, self.OnItemCountChange)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonExploreMainController:InitWidget()
   local topBtns = self:GetUIComponent("UISelectObjectPath", "TopBtns")
   self._backBtns = topBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, function()
-    -- function num : 0_3_1 , upvalues : _ENV
-    (UISeasonHelper.ShowSeasonHelperBook)(2)
-  end
-, nil, false, function()
-    -- function num : 0_3_2 , upvalues : self
+  end, function()
+    UISeasonHelper.ShowSeasonHelperBook(2)
+  end, nil, false, function()
     self:FocusSeasonBg()
-  end
-)
+  end)
   self.previewName = self:GetUIComponent("UILocalizationText", "previewName")
   self.previewPet = self:GetUIComponent("RawImageLoader", "preViewPet")
   self.previewCountDown = self:GetUIComponent("UILocalizationText", "previewCountDown")
@@ -72,242 +49,158 @@ UISeasonExploreMainController.InitWidget = function(self)
   self.curCountDownTxt = self:GetUIComponent("UILocalizationText", "curCountDownTxt")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController._OnValue = function(self)
-  -- function num : 0_4
+function UISeasonExploreMainController:_OnValue()
   self:RefreshPreview()
   self:RefrshCurSeason()
   self:RefreshNews()
   self:RefreshExchangeInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.FocusSeasonBg = function(self)
-  -- function num : 0_5
-  (self.showBtnGo):SetActive(true)
-  ;
-  (self.contentGo):SetActive(false)
+function UISeasonExploreMainController:FocusSeasonBg()
+  self.showBtnGo:SetActive(true)
+  self.contentGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.RefrshCurSeason = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonExploreMainController:RefrshCurSeason()
   self.seasonId = nil
-  local curSample = (self.seasonModule):GetCurSeasonSample()
+  local curSample = self.seasonModule:GetCurSeasonSample()
   self.seasonId = curSample.id
-  local svrTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
-  if curSample.begin_time < svrTime and svrTime < curSample.end_time then
-    (self.curSeasonImageGo):SetActive(true)
-    local cfg = (Cfg.cfg_season_campaign_client)[self.seasonId]
-    do
-      if cfg then
-        (self.curSeasonImage):LoadImage(cfg.Theme)
-      else
-        ;
-        (Log.error)("can\'t find cfg_season_campaign_client with id = " .. self.seasonId)
-        ;
-        (self.curSeasonImageGo):SetActive(false)
+  local svrTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
+  if svrTime > curSample.begin_time and svrTime < curSample.end_time then
+    self.curSeasonImageGo:SetActive(true)
+    local cfg = Cfg.cfg_season_campaign_client[self.seasonId]
+    if cfg then
+      self.curSeasonImage:LoadImage(cfg.Theme)
+    else
+      Log.error("can't find cfg_season_campaign_client with id = " .. self.seasonId)
+      self.curSeasonImageGo:SetActive(false)
+    end
+    local closeTime = curSample.end_time
+    local timerName = "SeasonCountDown"
+    
+    local function countDown()
+      local now = self:GetModule(SvrTimeModule):GetServerTime() / 1000
+      local time = math.ceil(closeTime - now)
+      local timeStr = UIActivityHelper.GetFormatTimerStr(time)
+      if self._curSeasontimeString ~= timeStr then
+        self.curCountDownTxt:SetText(StringTable.Get("str_season_clsoe_countdown", timeStr))
+        self._curSeasontimeString = timeStr
       end
-      local closeTime = curSample.end_time
-      local timerName = "SeasonCountDown"
-      local countDown = function()
-    -- function num : 0_6_0 , upvalues : self, _ENV, closeTime, timerName
-    local now = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
-    local time = (math.ceil)(closeTime - now)
-    local timeStr = (UIActivityHelper.GetFormatTimerStr)(time)
-    if self._curSeasontimeString ~= timeStr then
-      (self.curCountDownTxt):SetText((StringTable.Get)("str_season_clsoe_countdown", timeStr))
-      self._curSeasontimeString = timeStr
+      if time < 0 then
+        self._timerHolder:StopTimer(timerName)
+        self.curCountDownTxt:SetText("")
+        self.curSeasonImageGo:SetActive(false)
+      end
     end
-    if time < 0 then
-      (self._timerHolder):StopTimer(timerName)
-      ;
-      (self.curCountDownTxt):SetText("")
-      ;
-      (self.curSeasonImageGo):SetActive(false)
-    end
-  end
-
-      countDown()
-      ;
-      (self._timerHolder):StartTimerInfinite(timerName, 1000, countDown)
-    end
+    
+    countDown()
+    self._timerHolder:StartTimerInfinite(timerName, 1000, countDown)
   else
-    do
-      ;
-      (self.curSeasonImageGo):SetActive(false)
-    end
+    self.curSeasonImageGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.RefreshPreview = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg, openTime = (UISeasonExploreHelper.GetPreviewCfg)()
+function UISeasonExploreMainController:RefreshPreview()
+  local cfg, openTime = UISeasonExploreHelper.GetPreviewCfg()
   self.preViewCfg = cfg
-  ;
-  (self.previewBtnGo):SetActive(self.preViewCfg ~= nil)
+  self.previewBtnGo:SetActive(self.preViewCfg ~= nil)
   if not self.preViewCfg then
-    return 
+    return
   end
-  ;
-  (self.previewPet):LoadImage((self.preViewCfg).PetIcon)
-  ;
-  (self.previewName):SetText((self.preViewCfg).Title)
+  self.previewPet:LoadImage(self.preViewCfg.PetIcon)
+  self.previewName:SetText(self.preViewCfg.Title)
   local timerName = "PreviewCountDown"
-  local countDown = function()
-    -- function num : 0_7_0 , upvalues : self, _ENV, openTime, timerName
-    local now = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
-    local time = (math.ceil)(openTime - now)
-    local timeStr = (UIActivityHelper.GetFormatTimerStr)(time)
+  
+  local function countDown()
+    local now = self:GetModule(SvrTimeModule):GetServerTime() / 1000
+    local time = math.ceil(openTime - now)
+    local timeStr = UIActivityHelper.GetFormatTimerStr(time)
     if self._timeString ~= timeStr then
-      (self.previewCountDown):SetText((StringTable.Get)("str_season_preview_countdown", timeStr))
+      self.previewCountDown:SetText(StringTable.Get("str_season_preview_countdown", timeStr))
       self._timeString = timeStr
     end
     if time < 0 then
-      (self._timerHolder):StopTimer(timerName)
+      self._timerHolder:StopTimer(timerName)
     end
   end
-
+  
   countDown()
-  ;
-  (self._timerHolder):StartTimerInfinite(timerName, 1000, countDown)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._timerHolder:StartTimerInfinite(timerName, 1000, countDown)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.RefreshNews = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonExploreMainController:RefreshNews()
   local previewNew = false
   if self.preViewCfg then
-    previewNew = not (UISeasonExploreHelper.IsPreviewHasClicked)((self.preViewCfg).ID)
+    previewNew = not UISeasonExploreHelper.IsPreviewHasClicked(self.preViewCfg.ID)
   end
-  ;
-  (self.newPreviewGo):SetActive(previewNew)
-  if not (UISeasonExploreHelper.IsSeasonCgHasNew)() and not (UISeasonExploreHelper.IsSeasonMusicHasNew)() then
-    local collectionNew = (UISeasonExploreHelper.IsSeasonRareItemHasNew)()
-  end
-  ;
-  (self.newCollectionGo):SetActive(collectionNew)
+  self.newPreviewGo:SetActive(previewNew)
+  local collectionNew = UISeasonExploreHelper.IsSeasonCgHasNew() or UISeasonExploreHelper.IsSeasonMusicHasNew() or UISeasonExploreHelper.IsSeasonRareItemHasNew()
+  self.newCollectionGo:SetActive(collectionNew)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.RefreshExchangeInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonExploreMainController:RefreshExchangeInfo()
   local coinType = RoleAssetID.RoleAssetHistory
-  local cfg = (Cfg.cfg_top_tips)[coinType]
-  do
-    if cfg then
-      local atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
-      -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self.imgCoin).sprite = atlas:GetSprite(cfg.Icon)
-    end
-    local itemModule = self:GetModule(ItemModule)
-    local countStr = (HelperProxy:GetInstance()):Format9999W(itemModule:GetItemCount(coinType))
-    ;
-    (self.coinNum):SetText(countStr)
-    ;
-    (self.coinNumTop):SetText(countStr)
+  local cfg = Cfg.cfg_top_tips[coinType]
+  if cfg then
+    local atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
+    self.imgCoin.sprite = atlas:GetSprite(cfg.Icon)
   end
+  local itemModule = self:GetModule(ItemModule)
+  local countStr = HelperProxy:GetInstance():Format9999W(itemModule:GetItemCount(coinType))
+  self.coinNum:SetText(countStr)
+  self.coinNumTop:SetText(countStr)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.OnItemCountChange = function(self)
-  -- function num : 0_10
+function UISeasonExploreMainController:OnItemCountChange()
   self:RefreshExchangeInfo()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.CollectionBtnOnClick = function(self, go)
-  -- function num : 0_11
+function UISeasonExploreMainController:CollectionBtnOnClick(go)
   self:ShowDialog("UISeasonCollectionController", function()
-    -- function num : 0_11_0 , upvalues : self
     self:RefreshNews()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.MedalBtnOnClick = function(self, go)
-  -- function num : 0_12
+function UISeasonExploreMainController:MedalBtnOnClick(go)
   self:ShowDialog("UIMedalGroupListController")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.PreviewBtnOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonExploreMainController:PreviewBtnOnClick(go)
   if self.preViewCfg then
-    (UISeasonExploreHelper.SetPreviewAsClicked)((self.preViewCfg).ID)
-    ;
-    (self.newPreviewGo):SetActive(false)
-    self:ShowDialog("UISeasonPreviewController", (self.preViewCfg).ID)
+    UISeasonExploreHelper.SetPreviewAsClicked(self.preViewCfg.ID)
+    self.newPreviewGo:SetActive(false)
+    self:ShowDialog("UISeasonPreviewController", self.preViewCfg.ID)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.ExChangeBtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
-  ((GameGlobal.GetUIModule)(SeasonModule)):EnterExchangeShopSeasonTab()
+function UISeasonExploreMainController:ExChangeBtnOnClick(go)
+  GameGlobal.GetUIModule(SeasonModule):EnterExchangeShopSeasonTab()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.ReviewBtnOnClick = function(self, go)
-  -- function num : 0_15
+function UISeasonExploreMainController:ReviewBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.StartBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
-  local curSample = (self.seasonModule):GetCurSeasonSample()
-  local svrTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
-  if curSample.begin_time < svrTime and svrTime < curSample.end_time then
-    ((GameGlobal.GetUIModule)(SeasonModule)):OpenSeasonThemeUI()
+function UISeasonExploreMainController:StartBtnOnClick(go)
+  local curSample = self.seasonModule:GetCurSeasonSample()
+  local svrTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
+  if svrTime > curSample.begin_time and svrTime < curSample.end_time then
+    GameGlobal.GetUIModule(SeasonModule):OpenSeasonThemeUI()
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_no_tips"))
+    ToastManager.ShowToast(StringTable.Get("str_season_no_tips"))
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.ShowBtnOnClick = function(self, go)
-  -- function num : 0_17
-  (self.showBtnGo):SetActive(false)
-  ;
-  (self.contentGo):SetActive(true)
+function UISeasonExploreMainController:ShowBtnOnClick(go)
+  self.showBtnGo:SetActive(false)
+  self.contentGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.PlotBtnOnClick = function(self, go)
-  -- function num : 0_18 , upvalues : _ENV
-  local plotId = ((Cfg.cfg_global).season_system_first_plot).IntValue
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryController", plotId)
+function UISeasonExploreMainController:PlotBtnOnClick(go)
+  local plotId = Cfg.cfg_global.season_system_first_plot.IntValue
+  GameGlobal.UIStateManager():ShowDialog("UIStoryController", plotId)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExploreMainController.ImgCoinOnClick = function(self, go)
-  -- function num : 0_19 , upvalues : _ENV
+function UISeasonExploreMainController:ImgCoinOnClick(go)
   local coinType = RoleAssetID.RoleAssetHistory
-  ;
-  (self._topTipsInfo):SetData(coinType, self.tipsPos)
+  self._topTipsInfo:SetData(coinType, self.tipsPos)
 end
-
-

@@ -1,28 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_summon_multiple_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SummonMultipleTrap", Object)
 SkillEffectCalc_SummonMultipleTrap = SkillEffectCalc_SummonMultipleTrap
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SummonMultipleTrap.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SummonMultipleTrap:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonMultipleTrap.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_SummonMultipleTrap:DoSkillEffectCalculator(skillEffectCalcParam)
   local summonMultipleTrapParam = skillEffectCalcParam.skillEffectParam
   local colorDic = summonMultipleTrapParam:GetSelectedColorTable()
   local trapID = summonMultipleTrapParam:GetTrapID()
-  if not summonMultipleTrapParam:GetMaxCount() then
-    local maxCount = #skillEffectCalcParam.skillRange
-  end
+  local maxCount = summonMultipleTrapParam:GetMaxCount() or #skillEffectCalcParam.skillRange
   local randomSummon = summonMultipleTrapParam:IsRandom()
   local absPosArray = summonMultipleTrapParam:GetAbsPosArray()
   local isEmptyPosOnly = summonMultipleTrapParam:IsEmptyPosOnly()
@@ -39,194 +27,166 @@ SkillEffectCalc_SummonMultipleTrap.DoSkillEffectCalculator = function(self, skil
   if ignoreBlock or ignoreAbyss then
     blockFlag = 0
   end
-  do
-    if summonMultipleTrapParam:IsUseTetrisFeatureCount() then
-      local featureSvcL = (self._world):GetService("FeatureLogic")
-      maxCount = featureSvcL:GetTetrisMainColorCount()
-      featureSvcL:ClearTetrisMainColorCount()
+  if summonMultipleTrapParam:IsUseTetrisFeatureCount() then
+    local featureSvcL = self._world:GetService("FeatureLogic")
+    maxCount = featureSvcL:GetTetrisMainColorCount()
+    featureSvcL:ClearTetrisMainColorCount()
+  end
+  local randomSvc = self._world:GetService("RandomLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local trapServiceLogic = self._world:GetService("TrapLogic")
+  local utilData = self._world:GetService("UtilData")
+  local boardCmpt = self._world:GetBoardEntity():Board()
+  local teamLeaderElement = summonMultipleTrapParam:GetTeamLeaderElement()
+  if teamLeaderElement ~= nil then
+    local teamEntity = self._world:Player():GetCurrentTeamEntity()
+    local teamLeader = teamEntity:Team():GetTeamLeaderEntity()
+    local element = teamLeader:Element():GetPrimaryType()
+    if teamLeaderElement == true then
+      colorDic = {}
+      colorDic[element] = true
+    else
+      colorDic[element] = nil
     end
-    local randomSvc = (self._world):GetService("RandomLogic")
-    local boardServiceLogic = (self._world):GetService("BoardLogic")
-    local trapServiceLogic = (self._world):GetService("TrapLogic")
-    local utilData = (self._world):GetService("UtilData")
-    local boardCmpt = ((self._world):GetBoardEntity()):Board()
-    local teamLeaderElement = summonMultipleTrapParam:GetTeamLeaderElement()
-    if teamLeaderElement ~= nil then
-      local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-      local teamLeader = (teamEntity:Team()):GetTeamLeaderEntity()
-      local element = (teamLeader:Element()):GetPrimaryType()
-      if teamLeaderElement == true then
-        colorDic = {}
-        colorDic[element] = true
-      else
-        colorDic[element] = nil
+  end
+  local validPosArray = {}
+  if 0 < #absPosArray then
+    validPosArray = absPosArray
+  else
+    for _, gridPos in ipairs(skillEffectCalcParam.skillRange) do
+      local checkPosType = utilData:FindPieceElement(gridPos)
+      if colorDic[checkPosType] then
+        table.insert(validPosArray, gridPos)
       end
     end
-    do
-      local validPosArray = {}
-      if #absPosArray > 0 then
-        validPosArray = absPosArray
-      else
-        for _,gridPos in ipairs(skillEffectCalcParam.skillRange) do
-          local checkPosType = utilData:FindPieceElement(gridPos)
-          if colorDic[checkPosType] then
-            (table.insert)(validPosArray, gridPos)
-          end
-        end
-        if validPosArray then
-          local _validPosArray = {}
-          for _,gridPos in ipairs(validPosArray) do
-            if trapServiceLogic:CanSummonTrapOnPos(gridPos, trapID, blockFlag, ignoreAbyss) and not self:IsPosHasBlockTrap(gridPos, blockSummonTrapType) then
-              (table.insert)(_validPosArray, gridPos)
-            end
-          end
-          validPosArray = _validPosArray
+    if validPosArray then
+      local _validPosArray = {}
+      for _, gridPos in ipairs(validPosArray) do
+        if trapServiceLogic:CanSummonTrapOnPos(gridPos, trapID, blockFlag, ignoreAbyss) and not self:IsPosHasBlockTrap(gridPos, blockSummonTrapType) then
+          table.insert(_validPosArray, gridPos)
         end
       end
-      do
-        if isEmptyPosOnly then
-          local boardsvc = (self._world):GetService("BoardLogic")
-          local t = {}
-          for _,gridPos in ipairs(validPosArray) do
-            if boardsvc:IsPosEmptyExceptConveyorNoDeadMark(gridPos) then
-              (table.insert)(t, gridPos)
-            end
-          end
-          if #t > 0 then
-            validPosArray = t
-          end
-        end
-        do
-          local excludePosList = {}
-          local trapSvc = (self._world):GetService("TrapLogic")
-          if excludeTraps then
-            for _,excludeTrapID in ipairs(excludeTraps) do
-              local trapPosList = trapSvc:FindTrapPosByTrapID(excludeTrapID)
-              if #trapPosList > 0 then
-                (table.appendArray)(excludePosList, trapPosList)
-              end
-            end
-          end
-          do
-            local oriValidPosArray = {}
-            local tmpPosList = {}
-            for _,pos in ipairs(validPosArray) do
-              if not (table.icontains)(excludePosList, pos) then
-                (table.insert)(tmpPosList, pos)
-              end
-              ;
-              (table.insert)(oriValidPosArray, pos)
-            end
-            validPosArray = tmpPosList
-            if bFindRandEmptyPosIfNoValid and #validPosArray == 0 and #oriValidPosArray > 0 then
-              local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-              local pieces = utilScopeSvc:GetEmptyPieces()
-              local r = randomSvc:LogicRand(1, #pieces)
-              local dropPos = pieces[r]
-              local centerPos = oriValidPosArray[1]
-              local listArea = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
-              listArea:AllowDuplicate()
-              for i = 1, #pieces do
-                (AINewNode.InsertSortedArray)(listArea, centerPos, pieces[i], i)
-              end
-              local posSize = listArea:Size()
-              for i = 1, posSize do
-                local nearestPos = (listArea:GetAt(i)):GetPosData()
-                if trapServiceLogic:CanSummonTrapOnPos(nearestPos, trapID) then
-                  (table.insert)(validPosArray, nearestPos)
-                  break
-                end
-              end
-            end
-            do
-              if findPosEmptyOrTrap then
-                local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-                local pieces = utilScopeSvc:GetEmptyPieces(validPosArray)
-                if #pieces == 0 then
-                  pieces = utilScopeSvc:GetTrapPiecesExceptTrapID(trapID, validPosArray)
-                end
-                validPosArray = pieces
-              end
-              do
-                local additionalCount = 0
-                local scopeType = summonMultipleTrapParam:GetAdditionalCountScopeType()
-                local rawScopeParam = summonMultipleTrapParam:GetAdditionalCountScopeParam()
-                if scopeType then
-                  local parser = SkillScopeParamParser:New()
-                  local scopeParam = parser:ParseScopeParam(scopeType, rawScopeParam)
-                  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-                  local calcScope = utilScopeSvc:GetSkillScopeCalc()
-                  local additionalCountScopeResult = calcScope:ComputeScopeRange(scopeType, scopeParam, skillEffectCalcParam.centerPos, {Vector2.zero}, Vector2.up, SkillTargetType.Team, skillEffectCalcParam.centerPos)
-                  local elementDic = summonMultipleTrapParam:GetAdditionalCountElementDic()
-                  local blsvc = (self._world):GetService("BoardLogic")
-                  for _,v2GridPos in ipairs(additionalCountScopeResult) do
-                    local pieceType = blsvc:GetPieceType(v2GridPos)
-                    if elementDic[pieceType] then
-                      additionalCount = additionalCount + 1
-                    end
-                  end
-                  local maxAdditionalCount = summonMultipleTrapParam:GetMaxAdditionalCount() or additionalCount
-                  additionalCount = (math.min)(additionalCount, maxAdditionalCount)
-                end
-                do
-                  local summonTrapResultArray = {}
-                  if randomSummon then
-                    local randomFunc = nil
-                    if useBoardRandom then
-                      randomFunc = randomSvc.BoardLogicRand
-                    else
-                      randomFunc = randomSvc.LogicRand
-                    end
-                    local randCount = maxCount
-                    local minRandCount, maxRandCount = summonMultipleTrapParam:GetRandCount()
-                    if minRandCount and maxRandCount then
-                      randCount = randomFunc(randomSvc, minRandCount, maxRandCount)
-                    end
-                    randCount = randCount + additionalCount
-                    while #summonTrapResultArray < randCount and #validPosArray > 0 do
-                      local randIdx = randomFunc(randomSvc, 1, #validPosArray)
-                      local gridPos = (table.remove)(validPosArray, randIdx)
-                      ;
-                      (table.insert)(summonTrapResultArray, SkillSummonTrapEffectResult:New(trapID, gridPos, summonMultipleTrapParam:IsTransferDisabled()))
-                    end
-                  else
-                    do
-                      maxCount = maxCount + additionalCount
-                      do
-                        local sortedValidPosArray = self:SortValidPiecePos(sortValidPosType, validPosArray, skillEffectCalcParam.centerPos, summonMultipleTrapParam)
-                        for _,gridPos in ipairs(sortedValidPosArray) do
-                          if maxCount > #summonTrapResultArray then
-                            do
-                              (table.insert)(summonTrapResultArray, SkillSummonTrapEffectResult:New(trapID, gridPos, summonMultipleTrapParam:IsTransferDisabled()))
-                              -- DECOMPILER ERROR at PC453: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                              -- DECOMPILER ERROR at PC453: LeaveBlock: unexpected jumping out IF_STMT
-
-                            end
-                          end
-                        end
-                        return summonTrapResultArray
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+      validPosArray = _validPosArray
+    end
+  end
+  if isEmptyPosOnly then
+    local boardsvc = self._world:GetService("BoardLogic")
+    local t = {}
+    for _, gridPos in ipairs(validPosArray) do
+      if boardsvc:IsPosEmptyExceptConveyorNoDeadMark(gridPos) then
+        table.insert(t, gridPos)
+      end
+    end
+    if 0 < #t then
+      validPosArray = t
+    end
+  end
+  local excludePosList = {}
+  local trapSvc = self._world:GetService("TrapLogic")
+  if excludeTraps then
+    for _, excludeTrapID in ipairs(excludeTraps) do
+      local trapPosList = trapSvc:FindTrapPosByTrapID(excludeTrapID)
+      if 0 < #trapPosList then
+        table.appendArray(excludePosList, trapPosList)
       end
     end
   end
+  local oriValidPosArray = {}
+  local tmpPosList = {}
+  for _, pos in ipairs(validPosArray) do
+    if not table.icontains(excludePosList, pos) then
+      table.insert(tmpPosList, pos)
+    end
+    table.insert(oriValidPosArray, pos)
+  end
+  validPosArray = tmpPosList
+  if bFindRandEmptyPosIfNoValid and #validPosArray == 0 and 0 < #oriValidPosArray then
+    local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+    local pieces = utilScopeSvc:GetEmptyPieces()
+    local r = randomSvc:LogicRand(1, #pieces)
+    local dropPos = pieces[r]
+    local centerPos = oriValidPosArray[1]
+    local listArea = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
+    listArea:AllowDuplicate()
+    for i = 1, #pieces do
+      AINewNode.InsertSortedArray(listArea, centerPos, pieces[i], i)
+    end
+    local posSize = listArea:Size()
+    for i = 1, posSize do
+      local nearestPos = listArea:GetAt(i):GetPosData()
+      if trapServiceLogic:CanSummonTrapOnPos(nearestPos, trapID) then
+        table.insert(validPosArray, nearestPos)
+        break
+      end
+    end
+  end
+  if findPosEmptyOrTrap then
+    local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+    local pieces = utilScopeSvc:GetEmptyPieces(validPosArray)
+    if #pieces == 0 then
+      pieces = utilScopeSvc:GetTrapPiecesExceptTrapID(trapID, validPosArray)
+    end
+    validPosArray = pieces
+  end
+  local additionalCount = 0
+  local scopeType = summonMultipleTrapParam:GetAdditionalCountScopeType()
+  local rawScopeParam = summonMultipleTrapParam:GetAdditionalCountScopeParam()
+  if scopeType then
+    local parser = SkillScopeParamParser:New()
+    local scopeParam = parser:ParseScopeParam(scopeType, rawScopeParam)
+    local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+    local calcScope = utilScopeSvc:GetSkillScopeCalc()
+    local additionalCountScopeResult = calcScope:ComputeScopeRange(scopeType, scopeParam, skillEffectCalcParam.centerPos, {
+      Vector2.zero
+    }, Vector2.up, SkillTargetType.Team, skillEffectCalcParam.centerPos)
+    local elementDic = summonMultipleTrapParam:GetAdditionalCountElementDic()
+    local blsvc = self._world:GetService("BoardLogic")
+    for _, v2GridPos in ipairs(additionalCountScopeResult) do
+      local pieceType = blsvc:GetPieceType(v2GridPos)
+      if elementDic[pieceType] then
+        additionalCount = additionalCount + 1
+      end
+    end
+    local maxAdditionalCount = summonMultipleTrapParam:GetMaxAdditionalCount() or additionalCount
+    additionalCount = math.min(additionalCount, maxAdditionalCount)
+  end
+  local summonTrapResultArray = {}
+  if randomSummon then
+    local randomFunc
+    if useBoardRandom then
+      randomFunc = randomSvc.BoardLogicRand
+    else
+      randomFunc = randomSvc.LogicRand
+    end
+    local randCount = maxCount
+    local minRandCount, maxRandCount = summonMultipleTrapParam:GetRandCount()
+    if minRandCount and maxRandCount then
+      randCount = randomFunc(randomSvc, minRandCount, maxRandCount)
+    end
+    randCount = randCount + additionalCount
+    while randCount > #summonTrapResultArray and 0 < #validPosArray do
+      local randIdx = randomFunc(randomSvc, 1, #validPosArray)
+      local gridPos = table.remove(validPosArray, randIdx)
+      table.insert(summonTrapResultArray, SkillSummonTrapEffectResult:New(trapID, gridPos, summonMultipleTrapParam:IsTransferDisabled()))
+    end
+  else
+    maxCount = maxCount + additionalCount
+    local sortedValidPosArray = self:SortValidPiecePos(sortValidPosType, validPosArray, skillEffectCalcParam.centerPos, summonMultipleTrapParam)
+    for _, gridPos in ipairs(sortedValidPosArray) do
+      if maxCount <= #summonTrapResultArray then
+        break
+      end
+      table.insert(summonTrapResultArray, SkillSummonTrapEffectResult:New(trapID, gridPos, summonMultipleTrapParam:IsTransferDisabled()))
+    end
+  end
+  return summonTrapResultArray
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonMultipleTrap.IsPosHasBlockTrap = function(self, pos, blockSummonTrapType)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_SummonMultipleTrap:IsPosHasBlockTrap(pos, blockSummonTrapType)
   if not blockSummonTrapType then
     return false
   end
-  local utilSvc = (self._world):GetService("UtilData")
+  local utilSvc = self._world:GetService("UtilData")
   local isValidPos = utilSvc:IsValidPiecePos(pos)
   if not isValidPos then
     return false
@@ -235,148 +195,102 @@ SkillEffectCalc_SummonMultipleTrap.IsPosHasBlockTrap = function(self, pos, block
   if #samePosTraps == 0 then
     return false
   end
-  for _,e in ipairs(samePosTraps) do
+  for _, e in ipairs(samePosTraps) do
     local trapCmpt = e:Trap()
     local type = trapCmpt:GetTrapType()
-    if (table.icontains)(blockSummonTrapType, type) and trapCmpt:IsBlockSummon() then
+    if table.icontains(blockSummonTrapType, type) and trapCmpt:IsBlockSummon() then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonMultipleTrap.SortValidPiecePos = function(self, type, array, centerPos, summonMultipleTrapParam)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalc_SummonMultipleTrap:SortValidPiecePos(type, array, centerPos, summonMultipleTrapParam)
   if type == SummonMultipleTrapSortType.RingFarToNear then
     local t = self:_SortValidPiecePosByRingFarToNear(array, centerPos, summonMultipleTrapParam)
     return t
-  else
-    do
-      do
-        if type == SummonMultipleTrapSortType.ByColorPriority then
-          local t = self:_SortValidPiecePosByColorPriority(array, centerPos, summonMultipleTrapParam)
-          return t
-        end
-        return array
-      end
-    end
+  elseif type == SummonMultipleTrapSortType.ByColorPriority then
+    local t = self:_SortValidPiecePosByColorPriority(array, centerPos, summonMultipleTrapParam)
+    return t
   end
+  return array
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonMultipleTrap._SortValidPiecePosByRingFarToNear = function(self, array, centerPos, summonMultipleTrapParam)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillEffectCalc_SummonMultipleTrap:_SortValidPiecePosByRingFarToNear(array, centerPos, summonMultipleTrapParam)
   local dicPosByRing = {}
   local tablePosByRing = {}
-  for _,candidate in ipairs(array) do
-    local disX = (math.abs)(centerPos.x - candidate.x)
-    local disY = (math.abs)(centerPos.y - candidate.y)
-    local disRingCount = (math.max)(disX, disY) - 1
-    do
-      do
-        if not dicPosByRing[disRingCount] then
-          local t = {
-array = {}
-, ring = disRingCount}
-          dicPosByRing[disRingCount] = t
-          ;
-          (table.insert)(tablePosByRing, t)
-        end
-        ;
-        (table.insert)((dicPosByRing[disRingCount]).array, candidate)
-        -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+  for _, candidate in ipairs(array) do
+    local disX = math.abs(centerPos.x - candidate.x)
+    local disY = math.abs(centerPos.y - candidate.y)
+    local disRingCount = math.max(disX, disY) - 1
+    if not dicPosByRing[disRingCount] then
+      local t = {
+        array = {},
+        ring = disRingCount
+      }
+      dicPosByRing[disRingCount] = t
+      table.insert(tablePosByRing, t)
     end
+    table.insert(dicPosByRing[disRingCount].array, candidate)
   end
-  ;
-  (table.sort)(tablePosByRing, function(a, b)
-    -- function num : 0_4_0
-    do return b.ring < a.ring end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(tablePosByRing, function(a, b)
+    return a.ring > b.ring
+  end)
   local t = {}
-  local randomSvc = (self._world):GetService("RandomLogic")
-  for _,data in ipairs(tablePosByRing) do
-    local shuffled = (table.cloneconf)(data.array)
+  local randomSvc = self._world:GetService("RandomLogic")
+  for _, data in ipairs(tablePosByRing) do
+    local shuffled = table.cloneconf(data.array)
     local maxn = #data.array
     for i = 1, maxn do
       local rand = randomSvc:LogicRand(1, maxn)
-      shuffled[i] = shuffled[rand]
+      shuffled[i], shuffled[rand] = shuffled[rand], shuffled[i]
     end
     data.shuffled = shuffled
-    ;
-    (table.appendArray)(t, shuffled)
+    table.appendArray(t, shuffled)
   end
   return t
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonMultipleTrap._SortValidPiecePosByColorPriority = function(self, array, centerPos, summonMultipleTrapParam)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillEffectCalc_SummonMultipleTrap:_SortValidPiecePosByColorPriority(array, centerPos, summonMultipleTrapParam)
   local colorPriorityDic = summonMultipleTrapParam:GetColorPriorityDic()
   if colorPriorityDic then
-    local utilData = (self._world):GetService("UtilData")
+    local utilData = self._world:GetService("UtilData")
     local dicPosByPriority = {}
     local tablePosByPriority = {}
-    for _,gridPos in ipairs(array) do
+    for _, gridPos in ipairs(array) do
       local posPieceType = utilData:FindPieceElement(gridPos)
       local piecePriority = colorPriorityDic[posPieceType]
       if piecePriority then
-        do
-          do
-            if not dicPosByPriority[piecePriority] then
-              local t = {
-array = {}
-, priority = piecePriority}
-              dicPosByPriority[piecePriority] = t
-              ;
-              (table.insert)(tablePosByPriority, t)
-            end
-            ;
-            (table.insert)((dicPosByPriority[piecePriority]).array, gridPos)
-            -- DECOMPILER ERROR at PC39: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC39: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC39: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        if not dicPosByPriority[piecePriority] then
+          local t = {
+            array = {},
+            priority = piecePriority
+          }
+          dicPosByPriority[piecePriority] = t
+          table.insert(tablePosByPriority, t)
         end
+        table.insert(dicPosByPriority[piecePriority].array, gridPos)
       end
     end
-    ;
-    (table.sort)(tablePosByPriority, function(a, b)
-    -- function num : 0_5_0
-    do return b.priority < a.priority end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    table.sort(tablePosByPriority, function(a, b)
+      return a.priority > b.priority
+    end)
     local t = {}
-    local randomSvc = (self._world):GetService("RandomLogic")
-    for _,data in ipairs(tablePosByPriority) do
-      local shuffled = (table.cloneconf)(data.array)
+    local randomSvc = self._world:GetService("RandomLogic")
+    for _, data in ipairs(tablePosByPriority) do
+      local shuffled = table.cloneconf(data.array)
       local maxn = #data.array
       for i = 1, maxn do
         local rand = randomSvc:LogicRand(1, maxn)
-        shuffled[i] = shuffled[rand]
+        shuffled[i], shuffled[rand] = shuffled[rand], shuffled[i]
       end
       data.shuffled = shuffled
-      ;
-      (table.appendArray)(t, shuffled)
+      table.appendArray(t, shuffled)
     end
     return t
   end
-  do
-    return array
-  end
+  return array
 end
 
 SummonMultipleTrapSortType = {RingFarToNear = 1, ByColorPriority = 2}
 _enum("SummonMultipleTrapSortType", SummonMultipleTrapSortType)
-

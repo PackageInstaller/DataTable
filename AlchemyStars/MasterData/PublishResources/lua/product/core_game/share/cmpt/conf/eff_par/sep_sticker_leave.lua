@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_sticker_leave.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParam_StickerLeave", SkillEffectParamBase)
 SkillEffectParam_StickerLeave = SkillEffectParam_StickerLeave
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_StickerLeave.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_StickerLeave:Constructor(t)
   self._convertColor = t.convertColor
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_StickerLeave.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_StickerLeave:GetEffectType()
   return SkillEffectType.StickerLeave
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_StickerLeave.GetConvertColor = function(self)
-  -- function num : 0_2
+function SkillEffectParam_StickerLeave:GetConvertColor()
   return self._convertColor
 end
-
-

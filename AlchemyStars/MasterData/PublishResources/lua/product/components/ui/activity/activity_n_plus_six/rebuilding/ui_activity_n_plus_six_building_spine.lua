@@ -1,39 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/rebuilding/ui_activity_n_plus_six_building_spine.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityNPlusSixBuildingSpine", UICustomWidget)
 UIActivityNPlusSixBuildingSpine = UIActivityNPlusSixBuildingSpine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNPlusSixBuildingSpine.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityNPlusSixBuildingSpine:OnShow()
   self._tran = self:GetUIComponent("RectTransform", "Go")
   self._spineLoader = self:GetUIComponent("SpineLoader", "Spine")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingSpine.Refresh = function(self, parent, cfg)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._tran).parent = parent
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._tran).anchoredPosition = Vector2((cfg.Position)[1], (cfg.Position)[2])
-  ;
-  (self._spineLoader):LoadSpine(cfg.SpineName)
+function UIActivityNPlusSixBuildingSpine:Refresh(parent, cfg)
+  self._tran.parent = parent
+  self._tran.anchoredPosition = Vector2(cfg.Position[1], cfg.Position[2])
+  self._spineLoader:LoadSpine(cfg.SpineName)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingSpine.SetVisible = function(self, isVisible)
-  -- function num : 0_2
+function UIActivityNPlusSixBuildingSpine:SetVisible(isVisible)
   local go = self:GetGameObject("Go")
   go:SetActive(isVisible)
 end
-
-

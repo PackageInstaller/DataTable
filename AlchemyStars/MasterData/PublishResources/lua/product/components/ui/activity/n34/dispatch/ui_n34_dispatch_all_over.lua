@@ -1,87 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/dispatch/ui_n34_dispatch_all_over.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN34DispatchAllOver", UIController)
 UIN34DispatchAllOver = UIN34DispatchAllOver
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN34DispatchAllOver.Constructor = function(self)
-  -- function num : 0_0
+function UIN34DispatchAllOver:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchAllOver.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIN34DispatchAllOver:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchAllOver.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN34DispatchAllOver:OnShow(uiParams)
   self:UIWidget()
   self:InAnimation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchAllOver.OnHide = function(self)
-  -- function num : 0_3
+function UIN34DispatchAllOver:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchAllOver.BtnCloseOnClick = function(self, go)
-  -- function num : 0_4
+function UIN34DispatchAllOver:BtnCloseOnClick(go)
   self:OutAnimation(function()
-    -- function num : 0_4_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchAllOver.UIWidget = function(self)
-  -- function num : 0_5
+function UIN34DispatchAllOver:UIWidget()
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchAllOver.InAnimation = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN34DispatchAllOver:InAnimation()
   local lockName = "UIN34DispatchAllOver:InAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UIN34DispatchAllOver_in")
+    self._animation:Play("uieff_UIN34DispatchAllOver_in")
     YIELD(TT, 667)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchAllOver.OutAnimation = function(self, endCb)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN34DispatchAllOver:OutAnimation(endCb)
   local lockName = "UIN34DispatchAllOver:OutAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, lockName, _ENV, endCb
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UIN34DispatchAllOver_out")
+    self._animation:Play("uieff_UIN34DispatchAllOver_out")
     YIELD(TT, 200)
     if endCb ~= nil then
       endCb()
     end
     self:UnLock(lockName)
-  end
-)
+  end)
 end
-
-

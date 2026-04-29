@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_splice_board.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultSpliceBoard", SkillEffectResultBase)
 SkillEffectResultSpliceBoard = SkillEffectResultSpliceBoard
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultSpliceBoard.Constructor = function(self)
-  -- function num : 0_0
+function SkillEffectResultSpliceBoard:Constructor()
   self._moveEntities = {}
   self._spliceBoardPrism = {}
   self._convertColors = {}
@@ -18,152 +11,108 @@ SkillEffectResultSpliceBoard.Constructor = function(self)
   self._spliceBoardOnlyPlayDark = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultSpliceBoard:GetEffectType()
   return SkillEffectType.SpliceBoard
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.AddMoveEntity = function(self, eid, oldPos, newPos)
-  -- function num : 0_2 , upvalues : _ENV
-  (table.insert)(self._moveEntities, {eid, oldPos, newPos})
+function SkillEffectResultSpliceBoard:AddMoveEntity(eid, oldPos, newPos)
+  table.insert(self._moveEntities, {
+    eid,
+    oldPos,
+    newPos
+  })
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.GetMoveEntities = function(self)
-  -- function num : 0_3
+function SkillEffectResultSpliceBoard:GetMoveEntities()
   return self._moveEntities
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.AddSpliceBoardPrism = function(self, oldPos, newPos, pieceEffectType)
-  -- function num : 0_4 , upvalues : _ENV
-  (table.insert)(self._spliceBoardPrism, {oldPos, newPos, pieceEffectType})
+function SkillEffectResultSpliceBoard:AddSpliceBoardPrism(oldPos, newPos, pieceEffectType)
+  table.insert(self._spliceBoardPrism, {
+    oldPos,
+    newPos,
+    pieceEffectType
+  })
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.GetSpliceBoardPrisms = function(self)
-  -- function num : 0_5
+function SkillEffectResultSpliceBoard:GetSpliceBoardPrisms()
   return self._spliceBoardPrism
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.AddConvertColor = function(self, oldPos, newPos, newPieceType, isAddGrid, isRemoveGrid)
-  -- function num : 0_6 , upvalues : _ENV
-  (table.insert)(self._convertColors, {oldPos, newPos, newPieceType, isAddGrid, isRemoveGrid})
+function SkillEffectResultSpliceBoard:AddConvertColor(oldPos, newPos, newPieceType, isAddGrid, isRemoveGrid)
+  table.insert(self._convertColors, {
+    oldPos,
+    newPos,
+    newPieceType,
+    isAddGrid,
+    isRemoveGrid
+  })
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.GetConvertColors = function(self)
-  -- function num : 0_7
+function SkillEffectResultSpliceBoard:GetConvertColors()
   return self._convertColors
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.SetPieceTable = function(self, pieceTable)
-  -- function num : 0_8
+function SkillEffectResultSpliceBoard:SetPieceTable(pieceTable)
   self._pieceTable = pieceTable
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.GetPieceTable = function(self)
-  -- function num : 0_9
+function SkillEffectResultSpliceBoard:GetPieceTable()
   return self._pieceTable
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.SetMoveParam = function(self, distance, direction)
-  -- function num : 0_10
+function SkillEffectResultSpliceBoard:SetMoveParam(distance, direction)
   self._distance = distance
   self._direction = direction
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.GetMoveParam = function(self)
-  -- function num : 0_11
+function SkillEffectResultSpliceBoard:GetMoveParam()
   return self._distance, self._direction
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.AddSpliceBoardGrid = function(self, pos, isAddGrid, isRemoveGrid, pieceType, isPrism, pieceEffectType)
-  -- function num : 0_12 , upvalues : _ENV
-  (table.insert)(self._spliceBoardGrid, {pos, isAddGrid, isRemoveGrid, pieceType, isPrism, pieceEffectType})
+function SkillEffectResultSpliceBoard:AddSpliceBoardGrid(pos, isAddGrid, isRemoveGrid, pieceType, isPrism, pieceEffectType)
+  table.insert(self._spliceBoardGrid, {
+    pos,
+    isAddGrid,
+    isRemoveGrid,
+    pieceType,
+    isPrism,
+    pieceEffectType
+  })
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.GetSpliceBoardGrid = function(self)
-  -- function num : 0_13
+function SkillEffectResultSpliceBoard:GetSpliceBoardGrid()
   return self._spliceBoardGrid
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.SetDestroyTrapList = function(self, destroyTrapList)
-  -- function num : 0_14
+function SkillEffectResultSpliceBoard:SetDestroyTrapList(destroyTrapList)
   self._destroyTrapList = destroyTrapList
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.GetDestroyTrapList = function(self)
-  -- function num : 0_15
+function SkillEffectResultSpliceBoard:GetDestroyTrapList()
   return self._destroyTrapList
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.SetNotifyStartTrapEntityID = function(self, trapEntityID)
-  -- function num : 0_16
+function SkillEffectResultSpliceBoard:SetNotifyStartTrapEntityID(trapEntityID)
   self._notifyStartTrapEntityID = trapEntityID
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.GetNotifyStartTrapEntityID = function(self)
-  -- function num : 0_17
+function SkillEffectResultSpliceBoard:GetNotifyStartTrapEntityID()
   return self._notifyStartTrapEntityID
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.SetNotifyEndTrapEntityID = function(self, trapEntityID)
-  -- function num : 0_18
+function SkillEffectResultSpliceBoard:SetNotifyEndTrapEntityID(trapEntityID)
   self._notifyEndTrapEntityID = trapEntityID
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.GetNotifyEndTrapEntityID = function(self)
-  -- function num : 0_19
+function SkillEffectResultSpliceBoard:GetNotifyEndTrapEntityID()
   return self._notifyEndTrapEntityID
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.AddSpliceBoardOnlyPlayDark = function(self, pos)
-  -- function num : 0_20 , upvalues : _ENV
-  (table.insert)(self._spliceBoardOnlyPlayDark, pos)
+function SkillEffectResultSpliceBoard:AddSpliceBoardOnlyPlayDark(pos)
+  table.insert(self._spliceBoardOnlyPlayDark, pos)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSpliceBoard.GetSpliceBoardOnlyPlayDark = function(self)
-  -- function num : 0_21
+function SkillEffectResultSpliceBoard:GetSpliceBoardOnlyPlayDark()
   return self._spliceBoardOnlyPlayDark
 end
-
-

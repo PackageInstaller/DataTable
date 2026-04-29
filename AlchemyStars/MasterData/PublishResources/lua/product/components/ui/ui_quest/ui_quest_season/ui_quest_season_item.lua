@@ -1,92 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_season/ui_quest_season_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestSeasonItem", UICustomWidget)
 UIQuestSeasonItem = UIQuestSeasonItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestSeasonItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIQuestSeasonItem:OnShow(uiParams)
   self._transition = self:GetUIComponent("ATransitionComponent", "UIQuestSeasonItem")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "UIQuestSeasonItem")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = false
+  self._canvasGroup.blocksRaycasts = false
   self._rect = self:GetUIComponent("UISelectObjectPath", "rect")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSeasonItem.RefrenshList = function(self)
-  -- function num : 0_1
+function UIQuestSeasonItem:RefrenshList()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSeasonItem.AnimatedListIntro = function(self)
-  -- function num : 0_2
+function UIQuestSeasonItem:AnimatedListIntro()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSeasonItem.OnClose = function(self)
-  -- function num : 0_3
-  (self._transition):PlayLeaveAnimation(true)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = false
+function UIQuestSeasonItem:OnClose()
+  self._transition:PlayLeaveAnimation(true)
+  self._canvasGroup.blocksRaycasts = false
   if self._seasonQuest then
-    (self._seasonQuest):SetResponseEvent(false)
+    self._seasonQuest:SetResponseEvent(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSeasonItem.SetData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._transition):PlayEnterAnimation(true)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = true
+function UIQuestSeasonItem:SetData()
+  self._transition:PlayEnterAnimation(true)
+  self._canvasGroup.blocksRaycasts = true
   self:_GetComponents()
-  do
-    if not self._seasonQuest then
-      local className, prefabName = (UISeasonHelper.GetCurSeasonQuestContent)()
-      if not (string.isnullorempty)(className) then
-        self._seasonQuest = (UIWidgetHelper.SpawnObject)(self, "rect", className, prefabName)
-      end
+  if not self._seasonQuest then
+    local className, prefabName = UISeasonHelper.GetCurSeasonQuestContent()
+    if not string.isnullorempty(className) then
+      self._seasonQuest = UIWidgetHelper.SpawnObject(self, "rect", className, prefabName)
     end
-    if self._seasonQuest then
-      local params = {}
-      params.ownerName = "UIQuestSeasonItem"
-      params.closeCallback = function()
-    -- function num : 0_4_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SeasonQuestCloseCB)
   end
-
-      ;
-      (self._seasonQuest):SetData(params)
-      ;
-      (self._seasonQuest):SetResponseEvent(true)
+  if self._seasonQuest then
+    local params = {}
+    params.ownerName = "UIQuestSeasonItem"
+    
+    function params.closeCallback()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.SeasonQuestCloseCB)
     end
+    
+    self._seasonQuest:SetData(params)
+    self._seasonQuest:SetResponseEvent(true)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSeasonItem.OnHide = function(self)
-  -- function num : 0_5
+function UIQuestSeasonItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestSeasonItem._GetComponents = function(self)
-  -- function num : 0_6
+function UIQuestSeasonItem:_GetComponents()
 end
-
-

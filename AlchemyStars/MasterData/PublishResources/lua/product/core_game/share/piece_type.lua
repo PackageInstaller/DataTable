@@ -1,61 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/piece_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local PieceType = {None = 0, Blue = 1, Red = 2, Green = 3, Yellow = 4, Any = 5, AnyNone = 6}
+local PieceType = {
+  None = 0,
+  Blue = 1,
+  Red = 2,
+  Green = 3,
+  Yellow = 4,
+  Any = 5,
+  AnyNone = 6
+}
 _enum("PieceType", PieceType)
-local PieceEffectType = {Normal = 0, Prism = 1, CrossPrism = 2, Deep = 3, MAX = 9}
+local PieceEffectType = {
+  Normal = 0,
+  Prism = 1,
+  CrossPrism = 2,
+  Deep = 3,
+  MAX = 9
+}
 _enum("PieceEffectType", PieceEffectType)
-CanMatchPieceType = function(t1, t2)
-  -- function num : 0_0 , upvalues : PieceType
+
+function CanMatchPieceType(t1, t2)
   if t1 == PieceType.None or t2 == PieceType.None then
     return false
   end
-  if (t1 == PieceType.AnyNone and t2 == PieceType.Any) or t2 == PieceType.AnyNone and t1 == PieceType.Any then
+  if t1 == PieceType.AnyNone and t2 == PieceType.Any or t2 == PieceType.AnyNone and t1 == PieceType.Any then
     return true
   end
   if t1 == PieceType.Any or t2 == PieceType.Any then
     return true
   end
-  do return t1 == t2 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return t1 == t2
 end
 
-CanMatchPieceTypeList = function(type, typeList)
-  -- function num : 0_1 , upvalues : PieceType, _ENV
+function CanMatchPieceTypeList(type, typeList)
   if type == PieceType.None then
     return false
   end
   if type == PieceType.Any then
     return true
   end
-  return (table.icontains)(typeList, type)
+  return table.icontains(typeList, type)
 end
 
-PopStarCanMatchPieceType = function(t1, t2, tOri)
-  -- function num : 0_2 , upvalues : PieceType
+function PopStarCanMatchPieceType(t1, t2, tOri)
   if t1 == PieceType.None or t2 == PieceType.None then
     return false
   end
   if t2 == PieceType.Any then
     return true
   end
-  do return t1 == t2 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return t1 == t2
 end
 
 ElementRelation = {
-[PieceType.Blue] = {lt = PieceType.Yellow, bt = PieceType.Red}
-, 
-[PieceType.Red] = {lt = PieceType.Blue, bt = PieceType.Green}
-, 
-[PieceType.Green] = {lt = PieceType.Red, bt = PieceType.Yellow}
-, 
-[PieceType.Yellow] = {lt = PieceType.Green, bt = PieceType.Blue}
-, 
-[PieceType.AnyNone] = {}
+  [PieceType.Blue] = {
+    lt = PieceType.Yellow,
+    bt = PieceType.Red
+  },
+  [PieceType.Red] = {
+    lt = PieceType.Blue,
+    bt = PieceType.Green
+  },
+  [PieceType.Green] = {
+    lt = PieceType.Red,
+    bt = PieceType.Yellow
+  },
+  [PieceType.Yellow] = {
+    lt = PieceType.Green,
+    bt = PieceType.Blue
+  },
+  [PieceType.AnyNone] = {}
 }
-local ElementRelationFlag = {Counter = 0, BeCountered = 1, Normal = 2}
+local ElementRelationFlag = {
+  Counter = 0,
+  BeCountered = 1,
+  Normal = 2
+}
 _enum("ElementRelationFlag", ElementRelationFlag)
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_bleed_plus.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddBleedPlus", BuffLogicBase)
 BuffLogicAddBleedPlus = BuffLogicAddBleedPlus
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddBleedPlus.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddBleedPlus:Constructor(buffInstance, logicParam)
   self._formulaID = logicParam.formulaID
   self._bleedRatio = logicParam.bleedRatio
   self._layerIncRatio = logicParam.layerIncRatio
@@ -18,44 +11,45 @@ BuffLogicAddBleedPlus.Constructor = function(self, buffInstance, logicParam)
   self._triggerBuffEffect = logicParam.triggerBuffEffect
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddBleedPlus.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicAddBleedPlus:DoLogic()
   local ownerEntity = self:GetEntity()
   local buffComp = ownerEntity:BuffComponent()
   if not buffComp then
-    return 
+    return
   end
   local turn = buffComp:GetBuffValue("BleedTurn")
-  local round = ((self._world):BattleStat()):GetLevelTotalRoundCount()
+  local round = self._world:BattleStat():GetLevelTotalRoundCount()
   if turn == round and self._triggerBuffEffect == nil then
-    return 
+    return
   end
   buffComp:SetBuffValue("BleedTurn", round)
-  local layer = (self._buffInstance):GetLayerCount()
+  local layer = self._buffInstance:GetLayerCount()
   if self._triggerBuffEffect then
-    layer = (self._buffLogicService):GetBuffLayer(ownerEntity, self._triggerBuffEffect)
+    layer = self._buffLogicService:GetBuffLayer(ownerEntity, self._triggerBuffEffect)
   end
   if layer == 0 then
-    return 
+    return
   end
   local layerIncrease = layer * self._layerIncRatio
-  if self._layerIncMax < layerIncrease then
+  if layerIncrease > self._layerIncMax then
     layerIncrease = self._layerIncMax
   end
-  local damageParam = {bleedRatio = self._bleedRatio, layerIncrease = layerIncrease, baseHPPercent = self._baseHPPercent, hpDamageRatio = self._hpDamageRatio, formulaID = self._formulaID}
-  local buffSvc = (self._world):GetService("BuffLogic")
+  local damageParam = {
+    bleedRatio = self._bleedRatio,
+    layerIncrease = layerIncrease,
+    baseHPPercent = self._baseHPPercent,
+    hpDamageRatio = self._hpDamageRatio,
+    formulaID = self._formulaID
+  }
+  local buffSvc = self._world:GetService("BuffLogic")
   local casterEntity = self:GetCasterEntity()
   if casterEntity:EntityType() == nil then
     casterEntity = ownerEntity
   end
-  local damageInfo = buffSvc:DoBuffDamage((self._buffInstance):BuffID(), casterEntity, ownerEntity, damageParam)
+  local damageInfo = buffSvc:DoBuffDamage(self._buffInstance:BuffID(), casterEntity, ownerEntity, damageParam)
   if damageInfo:GetDamageType() == DamageType.Real then
     damageInfo:SetDamageType(DamageType.Bleed)
   end
   local buffResult = BuffResultDamage:New(damageInfo)
   return buffResult
 end
-
-

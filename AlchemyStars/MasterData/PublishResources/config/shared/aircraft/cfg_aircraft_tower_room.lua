@@ -1,19 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/aircraft/cfg_aircraft_tower_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ResourceLimit = 2, RecoverCD = 3, RandomRuleId = 4}
+local key = {
+  ID = 1,
+  ResourceLimit = 2,
+  RecoverCD = 3,
+  RandomRuleId = 4
+}
 local config = {
-[7106001] = {7106001, 100, 2160, 100000}
-, 
-[7106002] = {7106002, 120, 1728, 100000}
-, 
-[7106003] = {7106003, 140, 1728, 100000}
-, 
-[7106004] = {7106004, 160, 1440, 100000}
-, 
-[7106005] = {7106005, 180, 1440, 637001}
+  [7106001] = {
+    7106001,
+    100,
+    2160,
+    100000
+  },
+  [7106002] = {
+    7106002,
+    120,
+    1728,
+    100000
+  },
+  [7106003] = {
+    7106003,
+    140,
+    1728,
+    100000
+  },
+  [7106004] = {
+    7106004,
+    160,
+    1440,
+    100000
+  },
+  [7106005] = {
+    7106005,
+    180,
+    1440,
+    637001
+  }
 }
 return config, "ID", key
-

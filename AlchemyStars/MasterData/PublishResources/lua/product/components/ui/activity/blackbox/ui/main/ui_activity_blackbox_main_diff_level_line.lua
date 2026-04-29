@@ -1,42 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/blackbox/ui/main/ui_activity_blackbox_main_diff_level_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBlackBoxMainDiffLevelLine", UICustomWidget)
 UIActivityBlackBoxMainDiffLevelLine = UIActivityBlackBoxMainDiffLevelLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBlackBoxMainDiffLevelLine.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityBlackBoxMainDiffLevelLine:OnShow()
   self._shape = self:GetUIComponent("RectTransform", "shape")
   self._line = self:GetUIComponent("RawImageLoader", "line")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainDiffLevelLine.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityBlackBoxMainDiffLevelLine:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainDiffLevelLine.Flush = function(self, cfg)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityBlackBoxMainDiffLevelLine:Flush(cfg)
   self._cfg = cfg
-  local pos = Vector2((cfg.Position)[1], (cfg.Position)[2])
+  local pos = Vector2(cfg.Position[1], cfg.Position[2])
   local rot = cfg.Rotation
   local pic = cfg.Pic
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._line).transform).localEulerAngles = Vector3(0, 0, rot)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._shape).anchoredPosition = pos
-  ;
-  (self._line):LoadImage(pic)
+  self._line.transform.localEulerAngles = Vector3(0, 0, rot)
+  self._shape.anchoredPosition = pos
+  self._line:LoadImage(pic)
 end
-
-

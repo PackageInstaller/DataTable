@@ -1,46 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_trap_state_anim_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTrapStateAnimationInstruction", BaseInstruction)
 PlayTrapStateAnimationInstruction = PlayTrapStateAnimationInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTrapStateAnimationInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTrapStateAnimationInstruction:Constructor(paramList)
   self._openAnimName = paramList.openAnimName
   self._closeAnimName = paramList.closeAnimName
   self._hasSummonMonster = tonumber(paramList.hasSummonMonster) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrapStateAnimationInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayTrapStateAnimationInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.TrapSummonMonster)
   if not resultArray or not resultArray[1] then
-    return 
+    return
   end
   local result = resultArray[1]
   if not result:GetTrapOpenStateChange() then
-    return 
+    return
   end
   local e = casterEntity
-  do
-    if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-      local cSuperEntity = casterEntity:SuperEntityComponent()
-      e = cSuperEntity:GetSuperEntity()
-    end
-    local renderAttrCmpt = e:RenderAttributes()
-    if renderAttrCmpt:GetAttribute("OpenState") and renderAttrCmpt:GetAttribute("OpenState") == 1 then
-      e:SetAnimatorControllerTriggers({self._openAnimName})
-    else
-      e:SetAnimatorControllerTriggers({self._closeAnimName})
-    end
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    local cSuperEntity = casterEntity:SuperEntityComponent()
+    e = cSuperEntity:GetSuperEntity()
+  end
+  local renderAttrCmpt = e:RenderAttributes()
+  if renderAttrCmpt:GetAttribute("OpenState") and renderAttrCmpt:GetAttribute("OpenState") == 1 then
+    e:SetAnimatorControllerTriggers({
+      self._openAnimName
+    })
+  else
+    e:SetAnimatorControllerTriggers({
+      self._closeAnimName
+    })
   end
 end
-
-

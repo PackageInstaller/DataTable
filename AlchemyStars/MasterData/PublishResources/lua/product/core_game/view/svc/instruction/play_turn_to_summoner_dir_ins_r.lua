@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_turn_to_summoner_dir_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTurnToSummonerDirInstruction", BaseInstruction)
 PlayTurnToSummonerDirInstruction = PlayTurnToSummonerDirInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTurnToSummonerDirInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayTurnToSummonerDirInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTurnToSummonerDirInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayTurnToSummonerDirInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local ownerSummonerEntity = casterEntity:GetSummonerEntity()
   if not ownerSummonerEntity then
-    return 
+    return
   end
-  local dir = (ownerSummonerEntity:GetGridDirection()):Clone()
+  local dir = ownerSummonerEntity:GetGridDirection():Clone()
   casterEntity:SetDirection(dir)
 end
-
-

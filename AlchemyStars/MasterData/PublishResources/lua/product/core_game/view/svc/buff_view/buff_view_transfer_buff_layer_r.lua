@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_transfer_buff_layer_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewTransferBuffLayer", BuffViewBase)
 BuffViewTransferBuffLayer = BuffViewTransferBuffLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewTransferBuffLayer.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewTransferBuffLayer:PlayView(TT)
   local res = self._buffResult
   local curLayer = res:GetLayer()
   local buffseq = res:GetBuffSeq()
   local addLayer = res:GetAddLayer()
   local entityID = res:GetEntityID()
-  local entity = (self._world):GetEntityByID(entityID)
+  local entity = self._world:GetEntityByID(entityID)
   if entity then
     local buffView = entity:BuffView()
     local viewInstance = buffView:GetBuffViewInstance(buffseq)
@@ -22,10 +15,5 @@ BuffViewTransferBuffLayer.PlayView = function(self, TT)
       viewInstance:SetLayerCount(TT, curLayer)
     end
   end
-  do
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
-  end
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
 end
-
-

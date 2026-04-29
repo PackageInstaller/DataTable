@@ -1,153 +1,99 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/team/ui_season_maze_choose_max_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeChooseMaxPet", UIController)
 UISeasonMazeChooseMaxPet = UISeasonMazeChooseMaxPet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeChooseMaxPet.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._uiSeasonMazeModule = (self._seasonMazeModule).uiModule
+function UISeasonMazeChooseMaxPet:Constructor()
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self._uiSeasonMazeModule = self._seasonMazeModule.uiModule
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeChooseMaxPet.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeChooseMaxPet:OnShow(uiParams)
   self._selectPet = nil
-  self._allPets = (self._uiSeasonMazeModule):GetSeasonMazeCfgPets()
+  self._allPets = self._uiSeasonMazeModule:GetSeasonMazeCfgPets()
   self:UIWidget()
   self:FlushTeam()
   self:AttachEvent(GameEventType.OnSeasonMazeShowRewardsFinish, self.OnSeasonMazeShowRewardsFinish)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeChooseMaxPet.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonMazeChooseMaxPet:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeChooseMaxPet.UIWidget = function(self)
-  -- function num : 0_3
+function UISeasonMazeChooseMaxPet:UIWidget()
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   self._poolGo = self:GetGameObject("pool")
-  self._poolItem = (self._pool):SpawnObject("UIPetMemberItem")
+  self._poolItem = self._pool:SpawnObject("UIPetMemberItem")
   self._btn = self:GetGameObject("BtnGo")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeChooseMaxPet.FlushTeam = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._poolGo):SetActive(self._selectPet ~= nil)
-  ;
-  (self._btn):SetActive(self._selectPet == nil)
+function UISeasonMazeChooseMaxPet:FlushTeam()
+  self._poolGo:SetActive(self._selectPet ~= nil)
+  self._btn:SetActive(self._selectPet == nil)
   if self._selectPet then
-    (self._poolItem):SMazeSetData(self._selectPet, function()
-    -- function num : 0_4_0 , upvalues : self, _ENV
-    local petModule = self:GetModule(PetModule)
-    ;
-    (petModule.uiModule):SetTeamCustomPets({self._selectPet})
-    local petid = (self._selectPet):GetTemplateID()
-    self:ShowDialog("UISpiritDetailGroupController", petid, false, nil, nil, true)
+    self._poolItem:SMazeSetData(self._selectPet, function()
+      local petModule = self:GetModule(PetModule)
+      petModule.uiModule:SetTeamCustomPets({
+        self._selectPet
+      })
+      local petid = self._selectPet:GetTemplateID()
+      self:ShowDialog("UISpiritDetailGroupController", petid, false, nil, nil, true)
+    end)
   end
-)
-  end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeChooseMaxPet.BtnOnClick = function(self, go)
-  -- function num : 0_5
+function UISeasonMazeChooseMaxPet:BtnOnClick(go)
   self:OpenChange()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeChooseMaxPet.SureBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonMazeChooseMaxPet:SureBtnOnClick(go)
   if self._selectPet then
     self:Lock("UISeasonMazeChooseMaxPet:SureBtnOnClick")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.OnSureBtnOnClick, self)
+    GameGlobal.TaskManager():StartTask(self.OnSureBtnOnClick, self)
   else
-    ;
-    (Log.debug)("###[UISeasonMazeChooseMaxPet] self._selectPet is nil !")
+    Log.debug("###[UISeasonMazeChooseMaxPet] self._selectPet is nil !")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeChooseMaxPet.OnSureBtnOnClick = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMazeChooseMaxPet:OnSureBtnOnClick(TT)
   local res = AsyncRequestRes:New()
-  local obj = (self._seasonMazeModule):CurSeasonObj()
+  local obj = self._seasonMazeModule:CurSeasonObj()
   local com = obj:GetMazeComponent()
-  local pstid = (self._selectPet):GetPstID()
+  local pstid = self._selectPet:GetPstID()
   com:HandleSeasonMazeSelectFullBreakPet(TT, res, pstid)
   self:UnLock("UISeasonMazeChooseMaxPet:SureBtnOnClick")
   if res:GetSucc() then
-    (Log.debug)("###[UISeasonMazeChooseMaxPet] OnSureBtnOnClick succ ! pstid:", pstid)
-    ;
-    (SMazeAdaptor.ChooseFullPetFinish)(pstid)
+    Log.debug("###[UISeasonMazeChooseMaxPet] OnSureBtnOnClick succ ! pstid:", pstid)
+    SMazeAdaptor.ChooseFullPetFinish(pstid)
     local showRewards = {}
     local data = SeasonMazeEffect:New()
     data.type = SeasonMazeEffectType.SMET_Pet
     data.id = pstid
     data.value_min = 1
     data.value_max = 1
-    ;
-    (table.insert)(showRewards, data)
-    ;
-    (SeasonMazeTool:GetInstance()):ShowUIGetRewards(showRewards)
+    table.insert(showRewards, data)
+    SeasonMazeTool:GetInstance():ShowUIGetRewards(showRewards)
   else
-    do
-      ;
-      (Log.error)("###[UISeasonMazeChooseMaxPet] OnSureBtnOnClick fail , result:", res:GetResult())
-      if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-        return 
-      end
+    Log.error("###[UISeasonMazeChooseMaxPet] OnSureBtnOnClick fail , result:", res:GetResult())
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeChooseMaxPet.OpenChange = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local havePets = (self._uiSeasonMazeModule):GetSeasonMazePets()
-  local allPets = (self._uiSeasonMazeModule):GetSeasonMazeCfgPets(true, true)
+function UISeasonMazeChooseMaxPet:OpenChange()
+  local havePets = self._uiSeasonMazeModule:GetSeasonMazePets()
+  local allPets = self._uiSeasonMazeModule:GetSeasonMazeCfgPets(true, true)
   local filterPets = {}
-  for k,v in pairs(allPets) do
-    if not havePets[k] and self._selectPet and (self._selectPet):GetPstID() == k then
-      do
-        filterPets[k] = v
-        -- DECOMPILER ERROR at PC26: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC26: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  for k, v in pairs(allPets) do
+    if havePets[k] or self._selectPet and self._selectPet:GetPstID() == k then
+    else
+      filterPets[k] = v
     end
   end
   self:ShowDialog("UISeasonMazeTeamChangeControllerPrimary", filterPets, function(pstid)
-    -- function num : 0_8_0 , upvalues : self, filterPets
     self._selectPet = filterPets[pstid]
     self:FlushTeam()
-  end
-, nil, nil, nil, self._allPets)
+  end, nil, nil, nil, self._allPets)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeChooseMaxPet.OnSeasonMazeShowRewardsFinish = function(self, flag)
-  -- function num : 0_9
+function UISeasonMazeChooseMaxPet:OnSeasonMazeShowRewardsFinish(flag)
   self:CloseDialog()
 end
-
-

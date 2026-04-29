@@ -1,15 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/homeland/cfg_homeland_rarity_ext.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, FirstRefreshTime = 2, RefreshInterval = 3, RewardInfo = 4}
+local key = {
+  ID = 1,
+  FirstRefreshTime = 2,
+  RefreshInterval = 3,
+  RewardInfo = 4
+}
 local config = {
-{1, "2022-08-11 09:00:00", 7, 
-{
-{3000022, 100}
-}
-}
+  {
+    1,
+    "2022-08-11 09:00:00",
+    7,
+    {
+      {3000022, 100}
+    }
+  }
 }
 return config, "ID", key
-

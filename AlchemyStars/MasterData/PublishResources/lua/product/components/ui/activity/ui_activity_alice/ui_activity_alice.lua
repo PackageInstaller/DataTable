@@ -1,149 +1,95 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_activity_alice/ui_activity_alice.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UIActivityAlice", UISideEnterCenterContentBase)
 UIActivityAlice = UIActivityAlice
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityAlice.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityAlice:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAlice.DoInit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityAlice:DoInit()
   self._campaign = self._data
-  self._LocalProcess = (self._campaign):GetLocalProcess()
-  self._questInfo = (self._LocalProcess):GetComponentInfo(ECCampaignInlandPetWSComponentID.QUEST)
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._LocalProcess = self._campaign:GetLocalProcess()
+  self._questInfo = self._LocalProcess:GetComponentInfo(ECCampaignInlandPetWSComponentID.QUEST)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   self:SetQuestList()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAlice.SetQuestList = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityAlice:SetQuestList()
   self._quests = {}
-  local list = (self._questInfo).m_accept_cam_quest_list
-  for index,value in ipairs(list) do
-    local quest = (self._questModule):GetQuest(value)
-    ;
-    (table.insert)(self._quests, quest)
+  local list = self._questInfo.m_accept_cam_quest_list
+  for index, value in ipairs(list) do
+    local quest = self._questModule:GetQuest(value)
+    table.insert(self._quests, quest)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAlice.DoShow = function(self, uiParams)
-  -- function num : 0_3
+function UIActivityAlice:DoShow(uiParams)
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
+    self._campaign:ClearCampaignNew(TT)
+  end)
   self:GetComponents()
   self:OnValue()
-  ;
-  (self._tips):closeOnClick()
+  self._tips:closeOnClick()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAlice.GetComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityAlice:GetComponents()
   local s = self:GetUIComponent("UISelectObjectPath", "itemTips")
   self._tips = s:SpawnObject("UISelectInfo")
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
-  self.matReq = (UIWidgetHelper.SetLocalizedTMPMaterial)(self, "tittle", "AliceFontMat.mat")
+  self.matReq = UIWidgetHelper.SetLocalizedTMPMaterial(self, "tittle", "AliceFontMat.mat")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAlice.OnValue = function(self)
-  -- function num : 0_5
-  (self._pool):SpawnObjects("UIActivityAliceQuest", 3)
-  local pools = (self._pool):GetAllSpawnList()
+function UIActivityAlice:OnValue()
+  self._pool:SpawnObjects("UIActivityAliceQuest", 3)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, 3 do
     local item = pools[i]
-    local quest = (self._quests)[i]
+    local quest = self._quests[i]
     item:SetData(i, quest, function(id, pos)
-    -- function num : 0_5_0 , upvalues : self
-    self:ItemInfo(id, pos)
-  end
-, function(id)
-    -- function num : 0_5_1 , upvalues : self
-    self:FinishQuest(id)
-  end
-)
+      self:ItemInfo(id, pos)
+    end, function(id)
+      self:FinishQuest(id)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAlice.ItemInfo = function(self, id, pos)
-  -- function num : 0_6
+function UIActivityAlice:ItemInfo(id, pos)
   if self._tips then
-    (self._tips):SetData(id, pos)
+    self._tips:SetData(id, pos)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAlice.FinishQuest = function(self, id)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityAlice:FinishQuest(id)
   self:Lock("UIActivityAlice:OnFinishQuest")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnFinishQuest, self, false, id)
+  GameGlobal.TaskManager():StartTask(self.OnFinishQuest, self, false, id)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAlice.OnFinishQuest = function(self, TT, all, questid)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityAlice:OnFinishQuest(TT, all, questid)
   local res = AsyncRequestRes:New()
-  local questCom = ((self._LocalProcess):GetComponent(ECCampaignInlandPetWSComponentID.QUEST))
-  local ret, rewards = nil, nil
+  local questCom = self._LocalProcess:GetComponent(ECCampaignInlandPetWSComponentID.QUEST)
+  local ret, rewards
   if all then
-    ret = questCom:HandleOneKeyTakeQuest(TT, res)
+    ret, rewards = questCom:HandleOneKeyTakeQuest(TT, res)
   else
-    -- DECOMPILER ERROR at PC23: Overwrote pending register: R7 in 'AssignReg'
-
-    ret = questCom:HandleQuestTake(TT, res, questid)
+    ret, rewards = questCom:HandleQuestTake(TT, res, questid)
   end
   self:UnLock("UIActivityAlice:OnFinishQuest")
   if res:GetSucc() then
     if self.view == nil then
-      return 
+      return
     end
     self:ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_8_0 , upvalues : self
-    self:SetQuestList()
-    self:OnValue()
-  end
-)
+      self:SetQuestList()
+      self:OnValue()
+    end)
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
-    ;
-    (Log.error)("###[UIActivityAlice] OnFinishQuest fail,type:", all, " result:", res:GetResult(), " questid:", questid)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
+    Log.error("###[UIActivityAlice] OnFinishQuest fail,type:", all, " result:", res:GetResult(), " questid:", questid)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAlice.DoHide = function(self)
-  -- function num : 0_9
+function UIActivityAlice:DoHide()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAlice.DoDestroy = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self.matReq)
+function UIActivityAlice:DoDestroy()
+  UIWidgetHelper.DisposeLocalizedTMPMaterial(self.matReq)
 end
-
-

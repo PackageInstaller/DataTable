@@ -1,45 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_yisitawan.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_YiSiTaWan", PickUpPolicy_Base)
 PickUpPolicy_YiSiTaWan = PickUpPolicy_YiSiTaWan
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_YiSiTaWan.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0
+function PickUpPolicy_YiSiTaWan:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
-  local casterPos = (petEntity:GridLocation()).Position
+  local casterPos = petEntity:GridLocation().Position
   local pickPosList, atkPosList, targetIds, extraParam, canCastTrap = self:_CalPickPosPolicy_PetYiSiTaWan(petEntity, activeSkillID)
-  do
-    if canCastTrap then
-      local autoFightSvc = (self._world):GetService("AutoFight")
-      autoFightSvc:SetCastPetTrapSkillPetEntity(petEntity)
-    end
-    return pickPosList, atkPosList, targetIds, extraParam
+  if canCastTrap then
+    local autoFightSvc = self._world:GetService("AutoFight")
+    autoFightSvc:SetCastPetTrapSkillPetEntity(petEntity)
   end
+  return pickPosList, atkPosList, targetIds, extraParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_YiSiTaWan._CalPickPosPolicy_PetYiSiTaWan = function(self, casterEntity, activeSkillID)
-  -- function num : 0_1 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local buffLogicSvc = (self._world):GetService("BuffLogic")
+function PickUpPolicy_YiSiTaWan:_CalPickPosPolicy_PetYiSiTaWan(casterEntity, activeSkillID)
+  local configService = self._world:GetService("Config")
+  local utilDataSvc = self._world:GetService("UtilData")
+  local buffLogicSvc = self._world:GetService("BuffLogic")
   local skillConfigData = configService:GetSkillConfigData(activeSkillID)
   local canPickTrap = false
   local pickPosPolicyParam = skillConfigData:GetAutoFightSkillScopeTypeAndTargetType()
   if pickPosPolicyParam then
     canPickTrap = pickPosPolicyParam.canPickTrap
   end
-  local teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-  local teamMembers = (teamEntity:Team()):GetTeamPetEntities()
-  for _,petEntity in ipairs(teamMembers) do
+  local teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
+  local teamMembers = teamEntity:Team():GetTeamPetEntities()
+  for _, petEntity in ipairs(teamMembers) do
     if petEntity:GetID() ~= casterEntity:GetID() then
       local cPstId = petEntity:PetPstID()
       local pstId = cPstId:GetPstID()
@@ -48,27 +36,23 @@ PickUpPolicy_YiSiTaWan._CalPickPosPolicy_PetYiSiTaWan = function(self, casterEnt
       end
     end
   end
-  local petPstID, teamIndex = nil, nil
-  local pets = (teamEntity:Team()):GetTeamPetEntities()
+  local petPstID, teamIndex
+  local pets = teamEntity:Team():GetTeamPetEntities()
   local atkNum = 0
-  for _,petEntity in ipairs(pets) do
-    if atkNum < (petEntity:Attributes()):GetAttack() and petEntity:GetID() ~= casterEntity:GetID() then
-      atkNum = (petEntity:Attributes()):GetAttack()
-      petPstID = (petEntity:PetPstID()):GetPstID()
-      teamIndex = (teamEntity:Team()):GetTeamIndexByPetPstID(petPstID)
+  for _, petEntity in ipairs(pets) do
+    if atkNum < petEntity:Attributes():GetAttack() and petEntity:GetID() ~= casterEntity:GetID() then
+      atkNum = petEntity:Attributes():GetAttack()
+      petPstID = petEntity:PetPstID():GetPstID()
+      teamIndex = teamEntity:Team():GetTeamIndexByPetPstID(petPstID)
     end
   end
-  do
-    if not petPstID or not teamIndex then
-      return nil, nil, nil, nil, canPickTrap
-    end
-    local utilDataSvc = (self._world):GetService("UtilData")
-    if utilDataSvc:CheckPetCanCastSkill(casterEntity, activeSkillID, petPstID) then
-      return {teamIndex}, {teamIndex}, {teamIndex}, {petPstID, teamIndex}, canPickTrap
-    else
-      return nil, nil, nil, nil, canPickTrap
-    end
+  if not petPstID or not teamIndex then
+    return nil, nil, nil, nil, canPickTrap
+  end
+  local utilDataSvc = self._world:GetService("UtilData")
+  if utilDataSvc:CheckPetCanCastSkill(casterEntity, activeSkillID, petPstID) then
+    return {teamIndex}, {teamIndex}, {teamIndex}, {petPstID, teamIndex}, canPickTrap
+  else
+    return nil, nil, nil, nil, canPickTrap
   end
 end
-
-

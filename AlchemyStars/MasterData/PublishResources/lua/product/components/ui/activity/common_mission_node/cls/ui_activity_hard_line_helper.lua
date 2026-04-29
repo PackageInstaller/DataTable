@@ -1,61 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_mission_node/cls/ui_activity_hard_line_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityHardLineHelper", Object)
 UIActivityHardLineHelper = UIActivityHardLineHelper
-local UIActivityHardLineNodeState = {Lock = 1, Open = 2, Pass = 3}
+local UIActivityHardLineNodeState = {
+  Lock = 1,
+  Open = 2,
+  Pass = 3
+}
 _enum("UIActivityHardLineNodeState", UIActivityHardLineNodeState)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityHardLineHelper.GetLineMissionCfgs = function(component)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityHardLineHelper.GetLineMissionCfgs(component)
   local componentCfgId = component:GetComponentCfgId()
-  local missionCfgs = (Cfg.cfg_component_line_mission)({ComponentID = componentCfgId})
+  local missionCfgs = Cfg.cfg_component_line_mission({ComponentID = componentCfgId})
   return missionCfgs
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityHardLineHelper.GetMissionCfg = function(missionId)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign_mission)[missionId]
+function UIActivityHardLineHelper.GetMissionCfg(missionId)
+  local cfg = Cfg.cfg_campaign_mission[missionId]
   if not cfg then
-    (Log.exception)("cfg_campaign_mission 中找不到配置:", missionId)
-    return 
+    Log.exception("cfg_campaign_mission 中找不到配置:", missionId)
+    return
   end
   return cfg
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityHardLineHelper.GetClientCfgs = function(missionId)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_line_mission_client)[missionId]
+function UIActivityHardLineHelper.GetClientCfgs(missionId)
+  local cfg = Cfg.cfg_component_line_mission_client[missionId]
   if not cfg then
-    (Log.exception)("cfg_component_line_mission_client 中找不到配置:", missionId)
-    return 
+    Log.exception("cfg_component_line_mission_client 中找不到配置:", missionId)
+    return
   end
   return cfg
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityHardLineHelper.GetMissionName = function(missionId)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityHardLineHelper.GetMissionName(missionId)
   if not missionId or missionId == 0 then
     return ""
   end
-  local cfg = (UIActivityHardLineHelper.GetMissionCfg)(missionId)
-  local name = (StringTable.Get)(cfg.Name)
+  local cfg = UIActivityHardLineHelper.GetMissionCfg(missionId)
+  local name = StringTable.Get(cfg.Name)
   return name
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityHardLineHelper.CheckNodeState = function(cfg, passInfo)
-  -- function num : 0_4 , upvalues : UIActivityHardLineNodeState
+function UIActivityHardLineHelper.CheckNodeState(cfg, passInfo)
   local needId = cfg.NeedMissionId or 0
   local isOpen = needId == 0 or passInfo[needId] ~= nil
   local hasPass = passInfo[cfg.CampaignMissionId] ~= nil
@@ -66,16 +51,14 @@ UIActivityHardLineHelper.CheckNodeState = function(cfg, passInfo)
   else
     return UIActivityHardLineNodeState.Pass
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityHardLineHelper.GetIconByState = function(missionId, state)
-  -- function num : 0_5 , upvalues : _ENV, UIActivityHardLineNodeState
-  local clientCfg = (UIActivityHardLineHelper.GetClientCfgs)(missionId)
-  local tb = {[UIActivityHardLineNodeState.Lock] = clientCfg.CloseIcon, [UIActivityHardLineNodeState.Open] = clientCfg.Icon, [UIActivityHardLineNodeState.Pass] = clientCfg.CompleteIcon}
+function UIActivityHardLineHelper.GetIconByState(missionId, state)
+  local clientCfg = UIActivityHardLineHelper.GetClientCfgs(missionId)
+  local tb = {
+    [UIActivityHardLineNodeState.Lock] = clientCfg.CloseIcon,
+    [UIActivityHardLineNodeState.Open] = clientCfg.Icon,
+    [UIActivityHardLineNodeState.Pass] = clientCfg.CompleteIcon
+  }
   return tb[state]
 end
-
-

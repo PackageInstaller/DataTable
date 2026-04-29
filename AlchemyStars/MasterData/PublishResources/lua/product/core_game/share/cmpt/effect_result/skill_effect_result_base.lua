@@ -1,88 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResultBase", Object)
 SkillEffectResultBase = SkillEffectResultBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultBase.Constructor = function(self)
-  -- function num : 0_0
+function SkillEffectResultBase:Constructor()
   self._scopeResult = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultBase.GetEffectType = function(self)
-  -- function num : 0_1
+function SkillEffectResultBase:GetEffectType()
   return self.__EFFECT_TYPE
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultBase.GetResultType = function(self)
-  -- function num : 0_2
+function SkillEffectResultBase:GetResultType()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultBase.GetTargetID = function(self)
-  -- function num : 0_3
+function SkillEffectResultBase:GetTargetID()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultBase.GetGridPos = function(self)
-  -- function num : 0_4
+function SkillEffectResultBase:GetGridPos()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultBase.IsSame = function(self, otherResult)
-  -- function num : 0_5
+function SkillEffectResultBase:IsSame(otherResult)
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultBase.GetNewGridNumByType = function(self, pieceType)
-  -- function num : 0_6
+function SkillEffectResultBase:GetNewGridNumByType(pieceType)
   return 0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultBase.SetSkillEffectScopeResult = function(self, scopeResult)
-  -- function num : 0_7
+function SkillEffectResultBase:SetSkillEffectScopeResult(scopeResult)
   self._scopeResult = scopeResult
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultBase.GetSkillEffectScopeResult = function(self)
-  -- function num : 0_8
+function SkillEffectResultBase:GetSkillEffectScopeResult()
   return self._scopeResult
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultBase._AddDataToList = function(self, listArray, nID)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillEffectResultBase:_AddDataToList(listArray, nID)
   if type(nID) == "number" then
-    (table.insert)(listArray, nID)
-  else
-    if type(nID) == "table" then
-      listArray = nID
-    end
+    table.insert(listArray, nID)
+  elseif type(nID) == "table" then
+    listArray = nID
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultBase.Clone = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.exception)("EffectType:", self:GetEffectType(), " Need Realize Clone()")
+function SkillEffectResultBase:Clone()
+  Log.exception("EffectType:", self:GetEffectType(), " Need Realize Clone()")
 end
-
-

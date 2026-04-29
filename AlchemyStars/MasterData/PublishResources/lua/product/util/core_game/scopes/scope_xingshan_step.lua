@@ -1,52 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_xingshan_step.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_XingshanStep", SkillScopeCalculator_Base)
 SkillScopeCalculator_XingshanStep = SkillScopeCalculator_XingshanStep
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_XingshanStep.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_XingshanStep:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local v2Dir = centerPos - casterPos
   local attackRange = {}
-  ;
-  (table.insert)(attackRange, casterPos)
-  if (math.abs)(v2Dir.x) <= 1 and (math.abs)(v2Dir.y) <= 1 then
+  table.insert(attackRange, casterPos)
+  if math.abs(v2Dir.x) <= 1 and 1 >= math.abs(v2Dir.y) then
     return SkillScopeResult:New(SkillScopeType.XingshanStep, casterPos, attackRange, attackRange)
   end
   local v2NormalizedGridDir = v2Dir:Clone()
   if v2NormalizedGridDir.x > 0 then
     v2NormalizedGridDir.x = 1
-  else
-    if v2NormalizedGridDir.x < 0 then
-      v2NormalizedGridDir.x = -1
-    end
+  elseif v2NormalizedGridDir.x < 0 then
+    v2NormalizedGridDir.x = -1
   end
   if v2NormalizedGridDir.y > 0 then
     v2NormalizedGridDir.y = 1
-  else
-    if v2NormalizedGridDir.y < 0 then
-      v2NormalizedGridDir.y = -1
-    end
+  elseif v2NormalizedGridDir.y < 0 then
+    v2NormalizedGridDir.y = -1
   end
   local oneStepPos = casterPos + v2NormalizedGridDir
-  if (self._gridFilter)._world and ((self._gridFilter)._world):MatchType() == MatchType.MT_BlackFist then
-    local world = (self._gridFilter)._world
-    local eLocalTeam = (world:Player()):GetLocalTeamEntity()
-    local eRemoteTeam = (world:Player()):GetRemoteTeamEntity()
+  if self._gridFilter._world and self._gridFilter._world:MatchType() == MatchType.MT_BlackFist then
+    local world = self._gridFilter._world
+    local eLocalTeam = world:Player():GetLocalTeamEntity()
+    local eRemoteTeam = world:Player():GetRemoteTeamEntity()
     if oneStepPos == eLocalTeam:GetGridPosition() or oneStepPos == eRemoteTeam:GetGridPosition() then
       oneStepPos = nil
     end
   end
-  do
-    if oneStepPos then
-      (table.insert)(attackRange, oneStepPos)
-    end
-    return SkillScopeResult:New(SkillScopeType.XingshanStep, casterPos, attackRange, attackRange)
+  if oneStepPos then
+    table.insert(attackRange, oneStepPos)
   end
+  return SkillScopeResult:New(SkillScopeType.XingshanStep, casterPos, attackRange, attackRange)
 end
-
-

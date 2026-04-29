@@ -1,17 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2900411/cfg_skill_view_501083.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 38, 1, 0, 0, 
-{effectIDList = "PARAM.RemoveEffect"}
-}
-, 
-{2, 2, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName = Atk; PlayAudio,audioID = 6013,audioType=1; PlayCasterBindEffect,effectID=PARAM.AtkEffectId; Wait,waitTime=1000; DataSelectDamage,damageIndex = 1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; PlayTargetAddBuff,buffID=50001; PlayTargetAddBuff,buffID=50002; PlayCasterBindEffect,effectID=PARAM.Idle1EffectId; PlayCasterBindEffect,effectID=PARAM.Idle2EffectId; Wait,waitTime=1000; "}
-}
+  {
+    1,
+    1,
+    38,
+    1,
+    0,
+    0,
+    {
+      effectIDList = "PARAM.RemoveEffect"
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName = Atk; PlayAudio,audioID = 6013,audioType=1; PlayCasterBindEffect,effectID=PARAM.AtkEffectId; Wait,waitTime=1000; DataSelectDamage,damageIndex = 1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; PlayTargetAddBuff,buffID=50001; PlayTargetAddBuff,buffID=50002; PlayCasterBindEffect,effectID=PARAM.Idle1EffectId; PlayCasterBindEffect,effectID=PARAM.Idle2EffectId; Wait,waitTime=1000; "
+    }
+  }
 }
 return config, "ID", key
-

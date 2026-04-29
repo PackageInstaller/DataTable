@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/component_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ICampaignComponent", Object)
 ICampaignComponent = ICampaignComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ICampaignComponent.Constructor = function(self)
-  -- function num : 0_0
+function ICampaignComponent:Constructor()
   self.m_campaign_com_module = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.Init = function(self, a_module, a_load_info)
-  -- function num : 0_1 , upvalues : _ENV
+function ICampaignComponent:Init(a_module, a_load_info)
   self.m_campaign_com_module = a_module
   if self:GetComponentType() ~= a_load_info.m_com_type then
-    (Log.error)("[Campaign][ICampaignComponent] LoadComponentInfo type error! m_com_type:", a_load_info.m_com_type, ", GetComponentType:", self:GetComponentType())
+    Log.error("[Campaign][ICampaignComponent] LoadComponentInfo type error! m_com_type:", a_load_info.m_com_type, ", GetComponentType:", self:GetComponentType())
     return false
   end
   local info = self:GetComponentInfo()
@@ -37,10 +27,7 @@ ICampaignComponent.Init = function(self, a_module, a_load_info)
   return self:InitComponentInfo(a_load_info)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.ResetUnLockInfo = function(self, is_unlock, unlock_time, unlock_items, unlock_need_mission_type, unlock_need_mission_id)
-  -- function num : 0_2
+function ICampaignComponent:ResetUnLockInfo(is_unlock, unlock_time, unlock_items, unlock_need_mission_type, unlock_need_mission_id)
   local info = self:GetComponentInfo()
   info.m_b_unlock = is_unlock
   info.m_unlock_time = unlock_time
@@ -49,208 +36,145 @@ ICampaignComponent.ResetUnLockInfo = function(self, is_unlock, unlock_time, unlo
   info.m_need_mission_id = unlock_need_mission_id
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.ResetCommonInfo = function(self, open_time, close_time, first_story_id)
-  -- function num : 0_3
+function ICampaignComponent:ResetCommonInfo(open_time, close_time, first_story_id)
   local info = self:GetComponentInfo()
   info.m_open_time = open_time
   info.m_close_time = close_time
   info.m_first_story_id = first_story_id
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.ComponentIsOpen = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+function ICampaignComponent:ComponentIsOpen()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local info = self:GetComponentInfo()
   if not info then
-    (Log.error)("[Campaign][ICampaignComponent] ComponentIsOpen GetComponentInfo is nil! ComponentType:", self:GetComponentType())
+    Log.error("[Campaign][ICampaignComponent] ComponentIsOpen GetComponentInfo is nil! ComponentType:", self:GetComponentType())
     return false
   end
-  local isOpen = info.m_open_time <= curTime and curTime <= info.m_close_time
-  if isOpen then
-    do return info.m_b_unlock end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
+  local isOpen = curTime >= info.m_open_time and curTime <= info.m_close_time
+  return isOpen and info.m_b_unlock
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.ComponentIsClose = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+function ICampaignComponent:ComponentIsClose()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local info = self:GetComponentInfo()
   if not info then
-    (Log.error)("[Campaign][ICampaignComponent] ComponentIsClose GetComponentInfo is nil! ComponentType:", self:GetComponentType())
+    Log.error("[Campaign][ICampaignComponent] ComponentIsClose GetComponentInfo is nil! ComponentType:", self:GetComponentType())
     return false
   end
-  do return info.m_close_time < curTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return curTime > info.m_close_time
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.ComponentIsUnLock = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function ICampaignComponent:ComponentIsUnLock()
   local info = self:GetComponentInfo()
   if not info then
-    (Log.error)("[Campaign][ICampaignComponent] ComponentIsUnLock GetComponentInfo is nil! ComponentType:", self:GetComponentType())
+    Log.error("[Campaign][ICampaignComponent] ComponentIsUnLock GetComponentInfo is nil! ComponentType:", self:GetComponentType())
     return false
   end
   return info.m_b_unlock
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.ComponentUnLockTime = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function ICampaignComponent:ComponentUnLockTime()
   local info = self:GetComponentInfo()
   if not info then
-    (Log.error)("[Campaign][ICampaignComponent] ComponentUnLockTime GetComponentInfo is nil! ComponentType:", self:GetComponentType())
+    Log.error("[Campaign][ICampaignComponent] ComponentUnLockTime GetComponentInfo is nil! ComponentType:", self:GetComponentType())
     return -1
   end
   return info.m_unlock_time
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.ComponentNeedMission = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function ICampaignComponent:ComponentNeedMission()
   local info = self:GetComponentInfo()
   if not info then
-    (Log.error)("[Campaign][ICampaignComponent] ComponentNeedMission GetComponentInfo is nil! ComponentType:", self:GetComponentType())
+    Log.error("[Campaign][ICampaignComponent] ComponentNeedMission GetComponentInfo is nil! ComponentType:", self:GetComponentType())
     return 0, 0
   end
   return info.m_need_mission_type, info.m_need_mission_id
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.ComponentUnlockItems = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function ICampaignComponent:ComponentUnlockItems()
   local info = self:GetComponentInfo()
   if not info then
-    (Log.error)("[Campaign][ICampaignComponent] ComponentUnlockItems GetComponentInfo is nil! ComponentType:", self:GetComponentType())
+    Log.error("[Campaign][ICampaignComponent] ComponentUnlockItems GetComponentInfo is nil! ComponentType:", self:GetComponentType())
     return nil
   end
   return info.m_unlock_items
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.GetComponentStep = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function ICampaignComponent:GetComponentStep()
   local info = self:GetComponentInfo()
   if not info then
-    (Log.error)("[Campaign][ICampaignComponent] GetComponentStep GetComponentInfo is nil! ComponentType:", self:GetComponentType())
+    Log.error("[Campaign][ICampaignComponent] GetComponentStep GetComponentInfo is nil! ComponentType:", self:GetComponentType())
     return ECampaignStep.CAMPAIGN_STEP_INVALID
   end
   return info.m_component_step
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.UpdateComponentStep = function(self, a_step)
-  -- function num : 0_11 , upvalues : _ENV
+function ICampaignComponent:UpdateComponentStep(a_step)
   local info = self:GetComponentInfo()
   if not info then
-    (Log.error)("[Campaign][ICampaignComponent] UpdateComponentStep GetComponentInfo is nil! ComponentType:", self:GetComponentType())
-    return 
+    Log.error("[Campaign][ICampaignComponent] UpdateComponentStep GetComponentInfo is nil! ComponentType:", self:GetComponentType())
+    return
   end
   if a_step ~= info.m_component_step then
     info.m_component_step = a_step
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CampaignComponentStepChange, info.m_campaign_id, info.m_component_id, info.m_component_step)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CampaignComponentStepChange, info.m_campaign_id, info.m_component_id, info.m_component_step)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_12 , upvalues : _ENV
-  (Log.error)("[Campaign][ICampaignComponent] InitComponentInfo not found! ComponentType:", self:GetComponentType())
+function ICampaignComponent:InitComponentInfo(a_load_info)
+  Log.error("[Campaign][ICampaignComponent] InitComponentInfo not found! ComponentType:", self:GetComponentType())
   return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.GetComponentInfo = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (Log.error)("[Campaign][ICampaignComponent] GetComponentInfo not found! ComponentType:", self:GetComponentType())
+function ICampaignComponent:GetComponentInfo()
+  Log.error("[Campaign][ICampaignComponent] GetComponentInfo not found! ComponentType:", self:GetComponentType())
   return nil
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.HaveRedPoint = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function ICampaignComponent:HaveRedPoint()
   if not self:ComponentIsOpen() then
     return false
   end
   local component_step = self:GetComponentStep()
-  do return component_step & ECampaignStep.CAMPAIGN_STEP_REWARD > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return component_step & ECampaignStep.CAMPAIGN_STEP_REWARD > 0
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.GetCampaignMissionComponentId = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  (Log.error)("[Campaign][ICampaignComponent] GetCampaignMissionComponentId not found! ComponentType:", self:GetComponentType())
+function ICampaignComponent:GetCampaignMissionComponentId()
+  Log.error("[Campaign][ICampaignComponent] GetCampaignMissionComponentId not found! ComponentType:", self:GetComponentType())
   return nil
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.GetCampaignMissionParamKeyMap = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  (Log.error)("[Campaign][ICampaignComponent] GetCampaignMissionParamKeyMap not found! ComponentType:", self:GetComponentType())
+function ICampaignComponent:GetCampaignMissionParamKeyMap()
+  Log.error("[Campaign][ICampaignComponent] GetCampaignMissionParamKeyMap not found! ComponentType:", self:GetComponentType())
   return nil
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.GetComponentCfgId = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function ICampaignComponent:GetComponentCfgId()
   local info = self:GetComponentInfo()
   if not info then
-    (Log.error)("[Campaign][ICampaignComponent] GetComponentCfgId GetComponentInfo is nil! ComponentType:", self:GetComponentType())
-    return 
+    Log.error("[Campaign][ICampaignComponent] GetComponentCfgId GetComponentInfo is nil! ComponentType:", self:GetComponentType())
+    return
   end
   return self:GetComponetCfgId(info.m_campaign_id, info.m_component_id)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.GetComponetCfgId = function(self, nCampaignId, nComponentID)
-  -- function num : 0_18 , upvalues : _ENV
+function ICampaignComponent:GetComponetCfgId(nCampaignId, nComponentID)
   local nCfgId = nCampaignId * CampaignConfigDefine.CONFIG_CAMPAIGN_ID_MOD + self:GetComponentType() * CampaignConfigDefine.CONFIG_COMPONENT_TYPE_MOD + nComponentID
   return nCfgId
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.GetComponentType = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function ICampaignComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_TYPE_BEGIN
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ICampaignComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_20 , upvalues : _ENV
+function ICampaignComponent:CampaignComponentPushNotify(notify_data)
   local info = self:GetComponentInfo()
   if not info then
-    (Log.error)("[Campaign][ICampaignComponent] CampaignComponentPushNotify GetComponentInfo is nil! ComponentType:", self:GetComponentType())
-    return 
+    Log.error("[Campaign][ICampaignComponent] CampaignComponentPushNotify GetComponentInfo is nil! ComponentType:", self:GetComponentType())
+    return
   end
-  ;
-  (Log.error)("[Campaign][ICampaignComponent] CampaignComponentPushNotify not found! notify_type:", notify_data.m_notify_type, ", campaign_id:", info.m_campaign_id, ", ComponentType:", self:GetComponentType())
-  return 
+  Log.error("[Campaign][ICampaignComponent] CampaignComponentPushNotify not found! notify_type:", notify_data.m_notify_type, ", campaign_id:", info.m_campaign_id, ", ComponentType:", self:GetComponentType())
+  return
 end
-
-

@@ -1,74 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/ghost_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GhostComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-GhostComponent.Constructor = function(self, ownerID)
-  -- function num : 0_0
+function GhostComponent:Constructor(ownerID)
   self._ownerID = ownerID
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-GhostComponent.GetOwnerID = function(self)
-  -- function num : 0_1
+function GhostComponent:GetOwnerID()
   return self._ownerID
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-GhostComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_2
+function GhostComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-GhostComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_3
+function GhostComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Ghost = function(self)
-  -- function num : 0_4
-  return self:GetComponent((self.WEComponentsEnum).Ghost)
+function Entity:Ghost()
+  return self:GetComponent(self.WEComponentsEnum.Ghost)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasGhost = function(self)
-  -- function num : 0_5
-  return self:HasComponent((self.WEComponentsEnum).Ghost)
+function Entity:HasGhost()
+  return self:HasComponent(self.WEComponentsEnum.Ghost)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddGhost = function(self, ownerID)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Ghost
+function Entity:AddGhost(ownerID)
+  local index = self.WEComponentsEnum.Ghost
   local component = GhostComponent:New(ownerID)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceGhost = function(self, ownerID)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Ghost
+function Entity:ReplaceGhost(ownerID)
+  local index = self.WEComponentsEnum.Ghost
   local component = GhostComponent:New(ownerID)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveGhost = function(self)
-  -- function num : 0_8
+function Entity:RemoveGhost()
   if self:HasGhost() then
-    self:RemoveComponent((self.WEComponentsEnum).Ghost)
+    self:RemoveComponent(self.WEComponentsEnum.Ghost)
   end
 end
-
-

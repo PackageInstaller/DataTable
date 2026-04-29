@@ -1,55 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_n5/common/ui_activity_battlepass_n5_board.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBattlePassN5Board", UICustomWidget)
 UIActivityBattlePassN5Board = UIActivityBattlePassN5Board
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBattlePassN5Board._GetBuyGiftComponent = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityBattlePassN5Board:_GetBuyGiftComponent()
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT
-  return (self._campaign):GetComponent(cmptId)
+  return self._campaign:GetComponent(cmptId)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board._GetBuyGiftComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityBattlePassN5Board:_GetBuyGiftComponentInfo()
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT
-  return (self._campaign):GetComponentInfo(cmptId)
+  return self._campaign:GetComponentInfo(cmptId)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board._GetComponents = function(self)
-  -- function num : 0_2
+function UIActivityBattlePassN5Board:_GetComponents()
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "dynamicList")
   self._buyBtn = self:GetUIComponent("Button", "buyBtn")
   self._txtBuyBtn = self:GetUIComponent("UILocalizationText", "txtBuyBtn")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board.OnShow = function(self)
-  -- function num : 0_3
+function UIActivityBattlePassN5Board:OnShow()
   self._isOpen = true
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board.OnHide = function(self)
-  -- function num : 0_4
+function UIActivityBattlePassN5Board:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board.SetData = function(self, campaign, type, price, callback)
-  -- function num : 0_5
+function UIActivityBattlePassN5Board:SetData(campaign, type, price, callback)
   self._campaign = campaign
   self._type = type
   self._price = price
@@ -69,38 +47,39 @@ UIActivityBattlePassN5Board.SetData = function(self, campaign, type, price, call
   self:_PlayAnimIn()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board.RefreshBuyStatus = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityBattlePassN5Board:RefreshBuyStatus()
   local componentInfo = self:_GetBuyGiftComponentInfo()
   local buyState = componentInfo.m_buy_state
   if self._type == CampaignGiftType.ECGT_ADVANCED then
-    local state2show = {[BuyGiftStateType.EBGST_INIT] = 0, [BuyGiftStateType.EBGST_ADVANCED] = 1, [BuyGiftStateType.EBGST_LUXURY] = 2}
+    local state2show = {
+      [BuyGiftStateType.EBGST_INIT] = 0,
+      [BuyGiftStateType.EBGST_ADVANCED] = 1,
+      [BuyGiftStateType.EBGST_LUXURY] = 2
+    }
     local flag = state2show[buyState]
     local isShow = flag ~= 0
     local showType = flag == 1 and true or false
     self:ShowBuyTips(isShow, showType)
   else
-    local state2show = {[BuyGiftStateType.EBGST_INIT] = 0, [BuyGiftStateType.EBGST_ADVANCED] = 0, [BuyGiftStateType.EBGST_LUXURY] = 1}
+    local state2show = {
+      [BuyGiftStateType.EBGST_INIT] = 0,
+      [BuyGiftStateType.EBGST_ADVANCED] = 0,
+      [BuyGiftStateType.EBGST_LUXURY] = 1
+    }
     local flag = state2show[buyState]
     local isShow = flag == 1
     local showType = flag == 1 and true or false
     self:ShowBuyTips(isShow, showType)
   end
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board.ShowBuyTips = function(self, isShow, showNormal)
-  -- function num : 0_7
+function UIActivityBattlePassN5Board:ShowBuyTips(isShow, showNormal)
   local hasBuy = self:GetGameObject("HasBuy")
   if hasBuy then
     hasBuy:SetActive(isShow)
   end
   if not isShow then
-    return 
+    return
   end
   local normal = self:GetGameObject("Normal")
   if normal then
@@ -112,157 +91,115 @@ UIActivityBattlePassN5Board.ShowBuyTips = function(self, isShow, showNormal)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board._SetTitle = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local type2id = {[CampaignGiftType.ECGT_ADVANCED] = "str_activity_battlepass_elite", [CampaignGiftType.ECGT_LUXURY] = "str_activity_battlepass_deluxe", [CampaignGiftType.ECGT_ADDITIONALBUY] = "str_activity_battlepass_deluxe"}
-  ;
-  (self._txtTitle):SetText((StringTable.Get)(type2id[self._type]))
+function UIActivityBattlePassN5Board:_SetTitle()
+  local type2id = {
+    [CampaignGiftType.ECGT_ADVANCED] = "str_activity_battlepass_elite",
+    [CampaignGiftType.ECGT_LUXURY] = "str_activity_battlepass_deluxe",
+    [CampaignGiftType.ECGT_ADDITIONALBUY] = "str_activity_battlepass_deluxe"
+  }
+  self._txtTitle:SetText(StringTable.Get(type2id[self._type]))
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board._SetDesc = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityBattlePassN5Board:_SetDesc()
   if self._type == CampaignGiftType.ECGT_LUXURY or self._type == CampaignGiftType.ECGT_ADDITIONALBUY then
     local id = "str_activity_battlepass_buy_deluxe_desc_n5"
     self._txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
-    ;
-    (self._txtDesc):SetText((StringTable.Get)(id))
+    self._txtDesc:SetText(StringTable.Get(id))
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board._SetDiscount = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityBattlePassN5Board:_SetDiscount()
   if self._type == CampaignGiftType.ECGT_LUXURY then
     local component = self:_GetBuyGiftComponent()
     local obj = self:GetGameObject("discount")
     local giftId = component:GetFirstGiftIDByType(self._type)
     local gift = component:GetGiftPriceForShowById(giftId)
     local id = gift and gift.ShowPrice or ""
-    if not (string.isnullorempty)(id) then
+    if not string.isnullorempty(id) then
       self._txtTitleDiscount = self:GetUIComponent("UILocalizationText", "txtTitleDiscount")
-      ;
-      (self._txtTitleDiscount):SetText((StringTable.Get)(id))
+      self._txtTitleDiscount:SetText(StringTable.Get(id))
       obj:SetActive(true)
     else
       obj:SetActive(false)
     end
-  else
-    do
-      if self._type == CampaignGiftType.ECGT_ADDITIONALBUY then
-        local obj = self:GetGameObject("discount")
-        obj:SetActive(false)
-      end
-    end
+  elseif self._type == CampaignGiftType.ECGT_ADDITIONALBUY then
+    local obj = self:GetGameObject("discount")
+    obj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board._SetBuyBtn = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityBattlePassN5Board:_SetBuyBtn()
   local componentInfo = self:_GetBuyGiftComponentInfo()
-  local type2buy = {[CampaignGiftType.ECGT_ADVANCED] = componentInfo.m_buy_state ~= BuyGiftStateType.EBGST_INIT, [CampaignGiftType.ECGT_LUXURY] = componentInfo.m_buy_state == BuyGiftStateType.EBGST_LUXURY, [CampaignGiftType.ECGT_ADDITIONALBUY] = componentInfo.m_buy_state == BuyGiftStateType.EBGST_LUXURY}
+  local type2buy = {
+    [CampaignGiftType.ECGT_ADVANCED] = componentInfo.m_buy_state ~= BuyGiftStateType.EBGST_INIT,
+    [CampaignGiftType.ECGT_LUXURY] = componentInfo.m_buy_state == BuyGiftStateType.EBGST_LUXURY,
+    [CampaignGiftType.ECGT_ADDITIONALBUY] = componentInfo.m_buy_state == BuyGiftStateType.EBGST_LUXURY
+  }
   local allreadyBuy = type2buy[self._type]
   if allreadyBuy then
-    (self._txtBuyBtn):SetText((StringTable.Get)("str_activity_battlepass_buy_deluxe_allready_buy_btn"))
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._buyBtn).interactable = false
+    self._txtBuyBtn:SetText(StringTable.Get("str_activity_battlepass_buy_deluxe_allready_buy_btn"))
+    self._buyBtn.interactable = false
   else
-    (self._txtBuyBtn):SetText(tostring(self._price))
+    self._txtBuyBtn:SetText(tostring(self._price))
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board._Refresh = function(self)
-  -- function num : 0_12
+function UIActivityBattlePassN5Board:_Refresh()
   if self._isOpen then
     self:_FillUIData()
     self:_RefreshList(self._dynamicListInfo, self._dynamicList)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board._RefreshList = function(self, info, list)
-  -- function num : 0_13
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIActivityBattlePassN5Board:_RefreshList(info, list)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(self._dynamicListSize)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((list.ScrollRect).content).localPosition = contentPos
+  list.ScrollRect.content.localPosition = contentPos
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board._FillUIData = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityBattlePassN5Board:_FillUIData()
   local component = self:_GetBuyGiftComponent()
   local giftId = component:GetFirstGiftIDByType(self._type)
   self._dynamicListInfo = component:GetGiftCfgShowAwardById(giftId)
   self._itemCountPerRow = 2
-  self._dynamicListSize = (math.floor)(((table.count)(self._dynamicListInfo) - 1) / self._itemCountPerRow + 1)
+  self._dynamicListSize = math.floor((table.count(self._dynamicListInfo) - 1) / self._itemCountPerRow + 1)
   if self._type == CampaignGiftType.ECGT_ADVANCED then
     if self._dynamicListInfo and #self._dynamicListInfo > 0 then
-      local cfg = (self._dynamicListInfo)[1]
+      local cfg = self._dynamicListInfo[1]
       local iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
       if iconLoader then
         iconLoader:LoadImage(cfg.ShowIcon)
       end
       local iconTitle1 = self:GetUIComponent("UILocalizationText", "iconTitle1")
-      local strId = (UIActivityBattlePassHelper.GetStrIdInCampaign)(self._campaign, "str_activity_battlepass_n5_cg_name_1")
-      iconTitle1:SetText((StringTable.Get)(strId))
+      local strId = UIActivityBattlePassHelper.GetStrIdInCampaign(self._campaign, "str_activity_battlepass_n5_cg_name_1")
+      iconTitle1:SetText(StringTable.Get(strId))
     else
-      do
-        do
-          local iconGo = self:GetGameObject("Icon")
-          iconGo:SetActive(false)
-          self._dynamicListInfo = self:_RemoveFirstData(self._dynamicListInfo)
-          self._dynamicListSize = (math.floor)(((table.count)(self._dynamicListInfo) - 1) / self._itemCountPerRow + 1)
-        end
-      end
+      local iconGo = self:GetGameObject("Icon")
+      iconGo:SetActive(false)
     end
   end
+  self._dynamicListInfo = self:_RemoveFirstData(self._dynamicListInfo)
+  self._dynamicListSize = math.floor((table.count(self._dynamicListInfo) - 1) / self._itemCountPerRow + 1)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board._RemoveFirstData = function(self, tb)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityBattlePassN5Board:_RemoveFirstData(tb)
   local newTb = {}
-  for i,v in ipairs(tb) do
+  for i, v in ipairs(tb) do
     if i ~= 1 then
-      (table.insert)(newTb, v)
+      table.insert(newTb, v)
     end
   end
   return newTb
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board._InitDynamicList = function(self)
-  -- function num : 0_16
-  (self._dynamicList):InitListView(self._dynamicListSize, function(scrollView, index)
-    -- function num : 0_16_0 , upvalues : self
+function UIActivityBattlePassN5Board:_InitDynamicList()
+  self._dynamicList:InitListView(self._dynamicListSize, function(scrollView, index)
     return self:_SpawnListItem(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_17
+function UIActivityBattlePassN5Board:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -276,62 +213,50 @@ UIActivityBattlePassN5Board._SpawnListItem = function(self, scrollView, index)
   for i = 1, self._itemCountPerRow do
     local listItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if #self._dynamicListInfo < itemIndex then
-      (listItem:GetGameObject()):SetActive(false)
+    if itemIndex > #self._dynamicListInfo then
+      listItem:GetGameObject():SetActive(false)
     else
-      ;
-      (listItem:GetGameObject()):SetActive(true)
+      listItem:GetGameObject():SetActive(true)
       self:_SetListItemData(listItem, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board._SetListItemData = function(self, listItem, index)
-  -- function num : 0_18
-  local info = (self._dynamicListInfo)[index]
-  ;
-  (listItem:GetGameObject()):SetActive(true)
+function UIActivityBattlePassN5Board:_SetListItemData(listItem, index)
+  local info = self._dynamicListInfo[index]
+  listItem:GetGameObject():SetActive(true)
   if info ~= nil then
     listItem:SetData(index, info.ShowIcon, info.ShowDesc)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board.BuyBtnOnClick = function(self, go)
-  -- function num : 0_19 , upvalues : _ENV
-  if (self._buyBtn).interactable then
-    (Log.info)("UIActivityBattlePassN5Board:BuyBtnOnClick")
+function UIActivityBattlePassN5Board:BuyBtnOnClick(go)
+  if self._buyBtn.interactable then
+    Log.info("UIActivityBattlePassN5Board:BuyBtnOnClick")
     if self._callback then
-      (self._callback)(self._type)
+      self._callback(self._type)
     end
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5Board._PlayAnimIn = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIActivityBattlePassN5Board:_PlayAnimIn()
   self.anim = self:GetUIComponent("Animation", "animation")
-  local type2animName = {[0] = "UIeff_UIActivityBattlePassN5Board_in", [1] = "UIeff_UIActivityBattlePassN5Board_Deluxe_in", [2] = "UIeff_UIActivityBattlePassN5Board_Deluxe_in"}
+  local type2animName = {
+    [0] = "UIeff_UIActivityBattlePassN5Board_in",
+    [1] = "UIeff_UIActivityBattlePassN5Board_Deluxe_in",
+    [2] = "UIeff_UIActivityBattlePassN5Board_Deluxe_in"
+  }
   local animName = type2animName[self._type]
   local lockName = "UIActivityBattlePassN5Board:_PlayAnimIn()" .. "type=" .. self._type
   self:Lock(lockName)
   self:StartTask(function(TT)
-    -- function num : 0_20_0 , upvalues : _ENV, self, animName, lockName
     YIELD(TT, 400)
     if self.view then
       self:RefreshBuyStatus()
-      ;
-      (self.anim):Play(animName)
+      self.anim:Play(animName)
       YIELD(TT, 600)
     end
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
-
-

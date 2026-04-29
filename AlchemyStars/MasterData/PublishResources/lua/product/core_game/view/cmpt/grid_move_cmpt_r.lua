@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/grid_move_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GridMoveComponent", Object)
 GridMoveComponent = GridMoveComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GridMoveComponent.Constructor = function(self, speed, targetPos, originPos)
-  -- function num : 0_0 , upvalues : _ENV
+function GridMoveComponent:Constructor(speed, targetPos, originPos)
   self.speed = speed
   self.targetPos = Vector2(targetPos.x, targetPos.y)
   self.originPos = Vector2(originPos.x, originPos.y)
@@ -17,115 +10,71 @@ GridMoveComponent.Constructor = function(self, speed, targetPos, originPos)
   self.movingHeight = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GridMoveComponent.GetTargetPos = function(self)
-  -- function num : 0_1
-  return (self.targetPos):Clone()
+function GridMoveComponent:GetTargetPos()
+  return self.targetPos:Clone()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GridMoveComponent.GetOriginPos = function(self)
-  -- function num : 0_2
-  return (self.originPos):Clone()
+function GridMoveComponent:GetOriginPos()
+  return self.originPos:Clone()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GridMoveComponent.SetMovingHeight = function(self, height)
-  -- function num : 0_3
+function GridMoveComponent:SetMovingHeight(height)
   self.movingHeight = height
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GridMoveComponent.GetMovingHeight = function(self)
-  -- function num : 0_4
+function GridMoveComponent:GetMovingHeight()
   return self.movingHeight
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GridMoveComponent.GetSpeed = function(self)
-  -- function num : 0_5
+function GridMoveComponent:GetSpeed()
   return self.speed
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GridMoveComponent.HasUpdateBlockInfo = function(self)
-  -- function num : 0_6
+function GridMoveComponent:HasUpdateBlockInfo()
   return self.isUpdateBlockInfo
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GridMoveComponent.SetUpdateBlockInfoState = function(self, state)
-  -- function num : 0_7
+function GridMoveComponent:SetUpdateBlockInfoState(state)
   self.isUpdateBlockInfo = state
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-GridMoveComponent.SetIsRefreshPiece = function(self, isRefreshPiece)
-  -- function num : 0_8
+function GridMoveComponent:SetIsRefreshPiece(isRefreshPiece)
   self.isRefreshPiece = isRefreshPiece
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-GridMoveComponent.IsRefreshPiece = function(self)
-  -- function num : 0_9
+function GridMoveComponent:IsRefreshPiece()
   return self.isRefreshPiece
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GridMove = function(self)
-  -- function num : 0_10
-  return self:GetComponent((self.WEComponentsEnum).GridMove)
+function Entity:GridMove()
+  return self:GetComponent(self.WEComponentsEnum.GridMove)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasGridMove = function(self)
-  -- function num : 0_11
-  return self:HasComponent((self.WEComponentsEnum).GridMove)
+function Entity:HasGridMove()
+  return self:HasComponent(self.WEComponentsEnum.GridMove)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddGridMove = function(self, speed, targetPos, originPos)
-  -- function num : 0_12 , upvalues : _ENV
+function Entity:AddGridMove(speed, targetPos, originPos)
   if self:GetGridOffset() then
     targetPos = targetPos + self:GetGridOffset()
   end
-  local index = (self.WEComponentsEnum).GridMove
+  local index = self.WEComponentsEnum.GridMove
   local component = GridMoveComponent:New(speed, targetPos, originPos)
   self:AddComponent(index, component)
   return component
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceGridMove = function(self, speed, targetPos, originPos)
-  -- function num : 0_13 , upvalues : _ENV
+function Entity:ReplaceGridMove(speed, targetPos, originPos)
   if self:GetGridOffset() then
     targetPos = targetPos + self:GetGridOffset()
   end
-  local index = (self.WEComponentsEnum).GridMove
+  local index = self.WEComponentsEnum.GridMove
   local component = GridMoveComponent:New(speed, targetPos, originPos)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveGridMove = function(self)
-  -- function num : 0_14
+function Entity:RemoveGridMove()
   if self:HasGridMove() then
-    self:RemoveComponent((self.WEComponentsEnum).GridMove)
+    self:RemoveComponent(self.WEComponentsEnum.GridMove)
   end
 end
-
-

@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_change_auto_bead_need_energy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultChangeAutoBeadNeedEnergy", BuffResultBase)
 BuffResultChangeAutoBeadNeedEnergy = BuffResultChangeAutoBeadNeedEnergy
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeAutoBeadNeedEnergy.Constructor = function(self, curTotalNeed, oldTotalNeed)
-  -- function num : 0_0
+function BuffResultChangeAutoBeadNeedEnergy:Constructor(curTotalNeed, oldTotalNeed)
   self._curTotalNeed = curTotalNeed
   self._oldTotalNeed = oldTotalNeed
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAutoBeadNeedEnergy.GetCurAutoBeadPointToPower = function(self)
-  -- function num : 0_1
+function BuffResultChangeAutoBeadNeedEnergy:GetCurAutoBeadPointToPower()
   return self._curTotalNeed
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAutoBeadNeedEnergy.GetOldAutoBeadPointToPower = function(self)
-  -- function num : 0_2
+function BuffResultChangeAutoBeadNeedEnergy:GetOldAutoBeadPointToPower()
   return self._oldTotalNeed
 end
-
-

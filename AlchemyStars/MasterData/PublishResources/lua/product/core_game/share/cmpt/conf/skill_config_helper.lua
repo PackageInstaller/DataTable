@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/skill_config_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillConfigHelper", Object)
 SkillConfigHelper = SkillConfigHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillConfigHelper.Constructor = function(self, hasViewParser)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillConfigHelper:Constructor(hasViewParser)
   self._skillConfigDic = {}
   self._scopeParamParser = SkillScopeParamParser:New()
   self._skillEffectParamParser = SkillEffectParamParser:New()
@@ -20,34 +13,24 @@ SkillConfigHelper.Constructor = function(self, hasViewParser)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigHelper.ClearSkillData = function(self)
-  -- function num : 0_1
+function SkillConfigHelper:ClearSkillData()
   self._skillConfigDic = {}
   if self._skillViewParamParser ~= nil then
-    (self._skillViewParamParser):ClearSkillView()
+    self._skillViewParamParser:ClearSkillView()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillConfigHelper.GetSkillData = function(self, skillID, forceFetchNew)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillConfigHelper:GetSkillData(skillID, forceFetchNew)
   if skillID == nil then
-    return 
+    return
   end
-  if not forceFetchNew and (self._skillConfigDic)[skillID] ~= nil then
-    return (self._skillConfigDic)[skillID]
+  if not forceFetchNew and self._skillConfigDic[skillID] ~= nil then
+    return self._skillConfigDic[skillID]
   end
   local skillConfigData = SkillConfigData:New(self._scopeParamParser, self._skillEffectParamParser, self._skillViewParamParser, self._skillPreviewParamParser)
   skillConfigData:ParseSkillConfig(skillID)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
   if not forceFetchNew then
-    (self._skillConfigDic)[skillID] = skillConfigData
+    self._skillConfigDic[skillID] = skillConfigData
   end
   return skillConfigData
 end
-
-

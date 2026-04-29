@@ -1,287 +1,207 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/fishing/logic/homeland_fishting_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandFishingManager", Object)
 HomelandFishingManager = HomelandFishingManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandFishingManager.Init = function(self, homelandClient)
-  -- function num : 0_0 , upvalues : _ENV
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  local cfgs = (Cfg.cfg_item_tool_upgrade)({ToolType = 2})
+function HomelandFishingManager:Init(homelandClient)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
+  local cfgs = Cfg.cfg_item_tool_upgrade({ToolType = 2})
   self._fishRodCfgs = {}
   self._needRefreshfishrod = true
   self._haveFishRod = false
-  for _,v in pairs(cfgs) do
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self._fishRodCfgs)[#self._fishRodCfgs + 1] = v
+  for _, v in pairs(cfgs) do
+    self._fishRodCfgs[#self._fishRodCfgs + 1] = v
   end
-  ;
-  (table.sort)(self._fishRodCfgs, function(a, b)
-    -- function num : 0_0_0
-    do return b.Level < a.Level end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._fishRodCfgs, function(a, b)
+    return a.Level > b.Level
+  end)
   self._homelandClient = homelandClient
-  self._buildManager = (self._homelandClient):BuildManager()
-  local area = ((self._buildManager):GetHomeArea()):GetArea()
+  self._buildManager = self._homelandClient:BuildManager()
+  local area = self._buildManager:GetHomeArea():GetArea()
   local points = {}
-  for i = 1, (area.FishingPoints).Count do
-    local p = (area.FishingPoints)[i - 1]
+  for i = 1, area.FishingPoints.Count do
+    local p = area.FishingPoints[i - 1]
     points[i] = Vector2(p.x, p.z)
   end
   points[#points + 1] = points[1]
   self._buildPoly = BuildPoly:New(points)
-  local wishBuilding = nil
-  local buildings = (self._buildManager):GetBuildings()
-  for k,v in pairs(buildings) do
+  local wishBuilding
+  local buildings = self._buildManager:GetBuildings()
+  for k, v in pairs(buildings) do
     if v:GetBuildType() == ArchitectureSubType.Wishing_Pool then
       wishBuilding = v
       break
     end
   end
-  do
-    if wishBuilding then
-      local triggerRoot = (wishBuilding._transform):Find("TriggerFishingArea")
-      if triggerRoot then
-        local points = {}
-        for i = 0, triggerRoot.childCount - 1 do
-          local p = (triggerRoot:GetChild(i)).position
-          points[i + 1] = Vector2(p.x, p.z)
-        end
-        points[#points + 1] = points[1]
-        self._wishBuildingPoly = BuildPoly:New(points)
+  if wishBuilding then
+    local triggerRoot = wishBuilding._transform:Find("TriggerFishingArea")
+    if triggerRoot then
+      local points = {}
+      for i = 0, triggerRoot.childCount - 1 do
+        local p = triggerRoot:GetChild(i).position
+        points[i + 1] = Vector2(p.x, p.z)
       end
+      points[#points + 1] = points[1]
+      self._wishBuildingPoly = BuildPoly:New(points)
     end
-    do
-      if self._fishMatchStartCallback == nil then
-        self._fishMatchStartCallback = (GameHelper:GetInstance()):CreateCallback(self.StartFishMatch, self)
-        ;
-        ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.FishMatchStart, self._fishMatchStartCallback)
-      end
-      if self._characterStartMoveCallback == nil then
-        self._characterStartMoveCallback = (GameHelper:GetInstance()):CreateCallback(self.CharacterStartMove, self)
-        ;
-        ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnMainCharacterStartMove, self._characterStartMoveCallback)
-      end
-      if self._exitHomelandCallback == nil then
-        self._exitHomelandCallback = (GameHelper:GetInstance()):CreateCallback(self.ExitHomeland, self)
-        ;
-        ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.ExitHomeland, self._exitHomelandCallback)
-      end
-      self._homelandFishing = HomelandFishing:New()
-      ;
-      (self._homelandFishing):Init()
-      if self._itemCountChangedCallBack == nil then
-        self._itemCountChangedCallBack = (GameHelper:GetInstance()):CreateCallback(self._OnItemCountChanged, self)
-        ;
-        ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.ItemCountChanged, self._itemCountChangedCallBack)
-      end
-    end
+  end
+  if self._fishMatchStartCallback == nil then
+    self._fishMatchStartCallback = GameHelper:GetInstance():CreateCallback(self.StartFishMatch, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.FishMatchStart, self._fishMatchStartCallback)
+  end
+  if self._characterStartMoveCallback == nil then
+    self._characterStartMoveCallback = GameHelper:GetInstance():CreateCallback(self.CharacterStartMove, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnMainCharacterStartMove, self._characterStartMoveCallback)
+  end
+  if self._exitHomelandCallback == nil then
+    self._exitHomelandCallback = GameHelper:GetInstance():CreateCallback(self.ExitHomeland, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.ExitHomeland, self._exitHomelandCallback)
+  end
+  self._homelandFishing = HomelandFishing:New()
+  self._homelandFishing:Init()
+  if self._itemCountChangedCallBack == nil then
+    self._itemCountChangedCallBack = GameHelper:GetInstance():CreateCallback(self._OnItemCountChanged, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.ItemCountChanged, self._itemCountChangedCallBack)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingManager._OnItemCountChanged = function(self)
-  -- function num : 0_1
+function HomelandFishingManager:_OnItemCountChanged()
   self._needRefreshfishrod = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_2 , upvalues : _ENV
-  if not self._homelandFishing or not (self._homelandModule):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_FISHING_UI) then
-    return 
+function HomelandFishingManager:Update(deltaTimeMS)
+  if not self._homelandFishing or not self._homelandModule:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_FISHING_UI) then
+    return
   end
-  local characterManager = (self._homelandClient):CharacterManager()
+  local characterManager = self._homelandClient:CharacterManager()
   if not characterManager then
-    return 
+    return
   end
   local transform = characterManager:GetCharacterTransform()
   if not transform then
-    return 
+    return
   end
-  local findTreasureManager = (self._homelandClient):FindTreasureManager()
+  local findTreasureManager = self._homelandClient:FindTreasureManager()
   if findTreasureManager and findTreasureManager:IsFindingTreasure() then
-    return 
+    return
   end
   if self:HasFishRod() then
-    local pos = Vector2((transform.position).x, (transform.position).z)
-    if (self._buildPoly):Contains(pos) then
+    local pos = Vector2(transform.position.x, transform.position.z)
+    if self._buildPoly:Contains(pos) then
       self:EnterFishing(true)
-    else
-      if self._wishBuildingPoly and (self._wishBuildingPoly):Contains(pos) then
-        local wishBuilding = nil
-        local buildings = (self._buildManager):GetBuildings()
-        for k,v in pairs(buildings) do
-          if v:GetBuildType() == ArchitectureSubType.Wishing_Pool then
-            wishBuilding = v
-            break
-          end
-        end
-        do
-          do
-            do
-              if wishBuilding then
-                if not wishBuilding:IsShabby() then
-                  self:EnterFishing(false)
-                else
-                  ;
-                  (self._homelandFishing):ExistFishing()
-                end
-              else
-                ;
-                (self._homelandFishing):ExistFishing()
-              end
-              ;
-              (self._homelandFishing):ExistFishing()
-              ;
-              (self._homelandFishing):ExistFishing()
-            end
-          end
+    elseif self._wishBuildingPoly and self._wishBuildingPoly:Contains(pos) then
+      local wishBuilding
+      local buildings = self._buildManager:GetBuildings()
+      for k, v in pairs(buildings) do
+        if v:GetBuildType() == ArchitectureSubType.Wishing_Pool then
+          wishBuilding = v
+          break
         end
       end
+      if wishBuilding then
+        if not wishBuilding:IsShabby() then
+          self:EnterFishing(false)
+        else
+          self._homelandFishing:ExistFishing()
+        end
+      else
+        self._homelandFishing:ExistFishing()
+      end
+    else
+      self._homelandFishing:ExistFishing()
     end
+  else
+    self._homelandFishing:ExistFishing()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingManager.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandFishingManager:Dispose()
   if self._homelandFishing then
-    (self._homelandFishing):Destroy()
+    self._homelandFishing:Destroy()
   end
   self._homelandFishing = nil
   if self._characterStartMoveCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnMainCharacterStartMove, self._characterStartMoveCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnMainCharacterStartMove, self._characterStartMoveCallback)
     self._characterStartMoveCallback = nil
   end
   self._fishRodCfgs = nil
   if self._itemCountChangedCallBack then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.ItemCountChanged, self._itemCountChangedCallBack)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.ItemCountChanged, self._itemCountChangedCallBack)
     self._itemCountChangedCallBack = nil
   end
   if self._exitHomelandCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.ExitHomeland, self._exitHomelandCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.ExitHomeland, self._exitHomelandCallback)
     self._exitHomelandCallback = nil
   end
   if self._fishMatchStartCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.FishMatchStart, self._fishMatchStartCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.FishMatchStart, self._fishMatchStartCallback)
     self._fishMatchStartCallback = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingManager.CharacterStartMove = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandFishingManager:CharacterStartMove()
   if self._homelandFishing then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FishingCancelFish, true)
-    ;
-    (self._homelandFishing):ExistFishing()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FishingCancelFish, true)
+    self._homelandFishing:ExistFishing()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingManager.ExitHomeland = function(self)
-  -- function num : 0_5
+function HomelandFishingManager:ExitHomeland()
   if self._homelandFishing then
-    (self._homelandFishing):ExitHomeland()
+    self._homelandFishing:ExitHomeland()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingManager.StartFishMatch = function(self)
-  -- function num : 0_6
+function HomelandFishingManager:StartFishMatch()
   self:EnterFishing(true)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingManager.HasFishRod = function(self)
-  -- function num : 0_7
+function HomelandFishingManager:HasFishRod()
   if self._needRefreshfishrod == true then
     self._needRefreshfishrod = false
     self._haveFishRod = false
     for i = 1, #self._fishRodCfgs do
-      local count = (self._itemModule):GetItemCount(((self._fishRodCfgs)[i]).ID)
-      if count > 0 then
+      local count = self._itemModule:GetItemCount(self._fishRodCfgs[i].ID)
+      if 0 < count then
         self._haveFishRod = true
         break
       end
     end
   end
-  do
-    return self._haveFishRod
-  end
+  return self._haveFishRod
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingManager.ExistFishing = function(self)
-  -- function num : 0_8
+function HomelandFishingManager:ExistFishing()
   if self._homelandFishing then
-    (self._homelandFishing):ExistFishing()
+    self._homelandFishing:ExistFishing()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingManager.EnterFishing = function(self, isRiverFishing)
-  -- function num : 0_9
+function HomelandFishingManager:EnterFishing(isRiverFishing)
   self._isRiverFishing = isRiverFishing
   if self._homelandFishing then
-    (self._homelandFishing):EnterFishing(isRiverFishing)
+    self._homelandFishing:EnterFishing(isRiverFishing)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingManager.IsRiverFishing = function(self)
-  -- function num : 0_10
+function HomelandFishingManager:IsRiverFishing()
   return self._isRiverFishing
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingManager.GetRareFishing = function(self, rareId)
-  -- function num : 0_11
-  return (self._homelandFishing):GetRareFishing(rareId)
+function HomelandFishingManager:GetRareFishing(rareId)
+  return self._homelandFishing:GetRareFishing(rareId)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingManager.StartFishTools = function(self, pet, fishLine, fishLineFirstPointTran)
-  -- function num : 0_12
-  (self._homelandFishing):StartFishTools(pet, fishLine, fishLineFirstPointTran)
+function HomelandFishingManager:StartFishTools(pet, fishLine, fishLineFirstPointTran)
+  self._homelandFishing:StartFishTools(pet, fishLine, fishLineFirstPointTran)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingManager.StopFishTools = function(self)
-  -- function num : 0_13
-  (self._homelandFishing):StopFishTools()
+function HomelandFishingManager:StopFishTools()
+  self._homelandFishing:StopFishTools()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFishingManager.DestroyFishTools = function(self)
-  -- function num : 0_14
+function HomelandFishingManager:DestroyFishTools()
   if not self._homelandFishing then
-    return 
+    return
   end
-  ;
-  (self._homelandFishing):DestroyFishTools()
+  self._homelandFishing:DestroyFishTools()
 end
-
-

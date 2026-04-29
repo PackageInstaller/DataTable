@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_moye_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamMoyeMove", SkillEffectParamBase)
 SkillEffectParamMoyeMove = SkillEffectParamMoyeMove
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamMoyeMove.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamMoyeMove:Constructor(t)
   self._convertType = t.convertType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamMoyeMove.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamMoyeMove:GetEffectType()
   return SkillEffectType.MoyeMove
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamMoyeMove.GetConvertType = function(self)
-  -- function num : 0_2
+function SkillEffectParamMoyeMove:GetConvertType()
   return self._convertType
 end
-
-

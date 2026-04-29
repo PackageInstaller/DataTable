@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/story/ui_n28_avg_review_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGReviewItem", UICustomWidget)
 UIN28AVGReviewItem = UIN28AVGReviewItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGReviewItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN28AVGData()
+function UIN28AVGReviewItem:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN28AVGData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGReviewItem.OnShow = function(self)
-  -- function num : 0_1
+function UIN28AVGReviewItem:OnShow()
   self.txtActor = self:GetUIComponent("UILocalizationText", "txtActor")
   self.txtActor1 = self:GetUIComponent("UILocalizationText", "txtActor1")
   self.txtActor2 = self:GetUIComponent("UILocalizationText", "txtActor2")
@@ -26,40 +16,22 @@ UIN28AVGReviewItem.OnShow = function(self)
   self.img2 = self:GetGameObject("img2")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGReviewItem.OnHide = function(self)
-  -- function num : 0_2
+function UIN28AVGReviewItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGReviewItem.Flush = function(self, speakerName, content, isPlayer, callback)
-  -- function num : 0_3
+function UIN28AVGReviewItem:Flush(speakerName, content, isPlayer, callback)
   self.callback = callback
-  ;
-  (self.txtActor):SetText(speakerName)
-  ;
-  (self.txtActor1):SetText(speakerName)
-  ;
-  (self.txtActor2):SetText(speakerName)
-  ;
-  (self.txtActor3):SetText(speakerName)
-  ;
-  (self.txtContent):SetText(content)
-  ;
-  (self.img1):SetActive(isPlayer)
-  ;
-  (self.img2):SetActive(not isPlayer)
+  self.txtActor:SetText(speakerName)
+  self.txtActor1:SetText(speakerName)
+  self.txtActor2:SetText(speakerName)
+  self.txtActor3:SetText(speakerName)
+  self.txtContent:SetText(content)
+  self.img1:SetActive(isPlayer)
+  self.img2:SetActive(not isPlayer)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGReviewItem.BgOnClick = function(self, go)
-  -- function num : 0_4
+function UIN28AVGReviewItem:BgOnClick(go)
   if self.callback then
-    (self.callback)()
+    self.callback()
   end
 end
-
-

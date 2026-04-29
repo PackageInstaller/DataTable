@@ -1,47 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/entry/ui_summer_activity_two_entry_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoEntryController", UIController)
 UISummerActivityTwoEntryController = UISummerActivityTwoEntryController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoEntryController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISummerActivityTwoEntryController:LoadDataOnEnter(TT, res, uiParams)
   self._entryDatas = {}
   local matchModule = self:GetModule(MatchModule)
   local enterData = matchModule:GetMatchEnterData()
   if not enterData then
-    return 
+    return
   end
   local affixList = enterData:GetAffixList()
   if not affixList then
-    return 
+    return
   end
   local missionInfo = enterData:GetMissionCreateInfo()
   local missionId = missionInfo.nCampaignMissionId
   local componentId = missionInfo.CampaignMissionParams
   if not componentId then
-    return 
+    return
   end
-  local cfgs = (Cfg.cfg_component_summer_ii_mission)({CampaignMissionId = missionId, ComponentID = componentId[1]})
+  local cfgs = Cfg.cfg_component_summer_ii_mission({
+    CampaignMissionId = missionId,
+    ComponentID = componentId[1]
+  })
   if cfgs == nil or #cfgs <= 0 then
-    return 
+    return
   end
   self._isSingles = {}
   local cfg = cfgs[1]
   local affixAndScore = cfg.AffixAndRatioScore
   for i = 1, #affixList do
     for k = 1, #affixAndScore do
-      -- DECOMPILER ERROR at PC62: Confused about usage of register: R21 in 'UnsetPending'
-
-      if (affixAndScore[k])[1] == affixList[i] then
-        (self._entryDatas)[#self._entryDatas + 1] = UISummerActivityTwoEntryData:New(affixList[i], (affixAndScore[k])[2])
-        -- DECOMPILER ERROR at PC71: Confused about usage of register: R21 in 'UnsetPending'
-
-        ;
-        (self._isSingles)[#self._isSingles + 1] = self:IsEntrySingle(affixAndScore, affixList[i])
+      if affixAndScore[k][1] == affixList[i] then
+        self._entryDatas[#self._entryDatas + 1] = UISummerActivityTwoEntryData:New(affixList[i], affixAndScore[k][2])
+        self._isSingles[#self._isSingles + 1] = self:IsEntrySingle(affixAndScore, affixList[i])
         break
       end
     end
@@ -50,29 +41,28 @@ UISummerActivityTwoEntryController.LoadDataOnEnter = function(self, TT, res, uiP
   local hardId = enterData:GetHardIndex()
   local baseScore = cfg.BaseScore
   for i = 1, #baseScore do
-    if (baseScore[i])[1] == hardId then
+    if baseScore[i][1] == hardId then
       self._entryLevelData = UISummerActivityTwoEntryLevelData:New(baseScore[i])
     end
   end
-  self._titleName = (StringTable.Get)(cfg.AffixTitle)
+  self._titleName = StringTable.Get(cfg.AffixTitle)
   self._titleIcon = cfg.AffixTitleIcon
   self:SortData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoEntryController.IsEntrySingle = function(self, affixAndScore, entryId)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_affix)({ID = entryId})
+function UISummerActivityTwoEntryController:IsEntrySingle(affixAndScore, entryId)
+  local cfgs = Cfg.cfg_affix({ID = entryId})
   if cfgs == nil or #cfgs <= 0 then
     return false
   end
   local cfg = cfgs[1]
   local type = cfg.Type
   local count = 0
-  for k,v in pairs(affixAndScore) do
-    local tmpCfgs = (Cfg.cfg_affix)({ID = v[1]})
-    if tmpCfgs and #tmpCfgs > 0 then
+  for k, v in pairs(affixAndScore) do
+    local tmpCfgs = Cfg.cfg_affix({
+      ID = v[1]
+    })
+    if tmpCfgs and 0 < #tmpCfgs then
       local tmpCfg = tmpCfgs[1]
       local tmpType = tmpCfg.Type
       if tmpType == type then
@@ -80,26 +70,16 @@ UISummerActivityTwoEntryController.IsEntrySingle = function(self, affixAndScore,
       end
     end
   end
-  do return count <= 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return count <= 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoEntryController.SortData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (table.sort)(self._entryDatas, function(a, b)
-    -- function num : 0_2_0
-    do return a:GetType() < b:GetType() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function UISummerActivityTwoEntryController:SortData()
+  table.sort(self._entryDatas, function(a, b)
+    return a:GetType() < b:GetType()
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoEntryController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UISummerActivityTwoEntryController:OnShow(uiParams)
   self._titleLabel = self:GetUIComponent("UILocalizationText", "Title")
   self._titleIconImg = self:GetUIComponent("RawImageLoader", "TitleIcon")
   self._selectedEntryCountLabel = self:GetUIComponent("UILocalizationText", "SelectedEntryCount")
@@ -107,23 +87,15 @@ UISummerActivityTwoEntryController.OnShow = function(self, uiParams)
   self._baseScoreLabel = self:GetUIComponent("UILocalizationText", "BaseScore")
   self._selectedScoreLabel = self:GetUIComponent("UILocalizationText", "SelectedScore")
   self._ratioScoreLabel = self:GetUIComponent("UILocalizationText", "RatioScore")
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._titleLabel).text = self._titleName
-  ;
-  (self._titleIconImg):LoadImage(self._titleIcon)
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectedEntryCountLabel).text = #self._entryDatas
-  ;
-  (self._iconImg):LoadImage(UISummerActivityTwoConst.EntryIcon)
+  self._titleLabel.text = self._titleName
+  self._titleIconImg:LoadImage(self._titleIcon)
+  self._selectedEntryCountLabel.text = #self._entryDatas
+  self._iconImg:LoadImage(UISummerActivityTwoConst.EntryIcon)
   local loader = self:GetUIComponent("UISelectObjectPath", "EntryGroup")
   loader:SpawnObjects("UISummerActivityTwoEntryItem", #self._entryDatas)
   self._list = loader:GetAllSpawnList()
   for i = 1, #self._list do
-    ((self._list)[i]):Refresh((self._entryDatas)[i], false, nil, (self._isSingles)[i])
+    self._list[i]:Refresh(self._entryDatas[i], false, nil, self._isSingles[i])
   end
   local loader = self:GetUIComponent("UISelectObjectPath", "LevelEntry")
   local entryLevelItem = loader:SpawnObject("UISummerActivityTwoEntryLevelItem")
@@ -132,41 +104,25 @@ UISummerActivityTwoEntryController.OnShow = function(self, uiParams)
   self:RefreshEntryScoreInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoEntryController.RefreshEntryScoreInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local baseScore = (self._entryLevelData):GetLevelScore()
-  ;
-  (self._baseScoreLabel):SetText((StringTable.Get)("str_summer_activity_two_base_score_title", baseScore))
-  local ratio, totalScore = (UISummerActivityTwoLevelDatas.CalcScore)(self._entryLevelData, self._entryDatas)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._selectedScoreLabel).text = totalScore
-  local a, b = (math.modf)(ratio / 10)
+function UISummerActivityTwoEntryController:RefreshEntryScoreInfo()
+  local baseScore = self._entryLevelData:GetLevelScore()
+  self._baseScoreLabel:SetText(StringTable.Get("str_summer_activity_two_base_score_title", baseScore))
+  local ratio, totalScore = UISummerActivityTwoLevelDatas.CalcScore(self._entryLevelData, self._entryDatas)
+  self._selectedScoreLabel.text = totalScore
+  local a, b = math.modf(ratio / 10)
   local text = ""
   if b == 0 then
-    text = (StringTable.Get)("str_summer_activity_two_ratio_score_title", 100 + a)
+    text = StringTable.Get("str_summer_activity_two_ratio_score_title", 100 + a)
   else
-    text = (StringTable.Get)("str_summer_activity_two_ratio_score_title", 100 + ratio / 10)
+    text = StringTable.Get("str_summer_activity_two_ratio_score_title", 100 + ratio / 10)
   end
-  ;
-  (self._ratioScoreLabel):SetText(text)
+  self._ratioScoreLabel:SetText(text)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoEntryController.MaskOnClick = function(self)
-  -- function num : 0_5
+function UISummerActivityTwoEntryController:MaskOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoEntryController.BtnCloseOnClick = function(self)
-  -- function num : 0_6
+function UISummerActivityTwoEntryController:BtnCloseOnClick()
   self:CloseDialog()
 end
-
-

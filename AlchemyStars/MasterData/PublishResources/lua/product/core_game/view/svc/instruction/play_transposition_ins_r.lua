@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_transposition_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTranspositionInstruction", BaseInstruction)
 PlayTranspositionInstruction = PlayTranspositionInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTranspositionInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTranspositionInstruction:Constructor(paramList)
   self._anim1 = paramList.anim1
   self._anim2 = paramList.anim2
   self._materialAnim1 = paramList.materialAnim1
@@ -22,41 +15,42 @@ PlayTranspositionInstruction.Constructor = function(self, paramList)
   self._boardEffectID = tonumber(paramList.boardEffectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTranspositionInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTranspositionInstruction:GetCacheResource()
   local t = {}
   if self._boardEffectID and self._boardEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._boardEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._boardEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTranspositionInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayTranspositionInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   self._world = world
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local teleportEffectResultAll = skillEffectResultContainer:GetEffectResultByArrayAll(SkillEffectType.Teleport)
   if not teleportEffectResultAll then
-    return 
+    return
   end
   local casterResult = teleportEffectResultAll[1]
   local targetResult = teleportEffectResultAll[2]
   if not casterResult or not targetResult then
-    return 
+    return
   end
   local targetEntityID = targetResult:GetTargetID()
-  local targetEntity = (self._world):GetEntityByID(targetEntityID)
+  local targetEntity = self._world:GetEntityByID(targetEntityID)
   local effectPos = Vector2(5, 5)
   local effectDir = targetEntity:GetGridPosition() - effectPos
   local sEffect = world:GetService("Effect")
   local effectEntity = sEffect:CreateWorldPositionDirectionEffect(self._boardEffectID, effectPos, effectDir)
-  casterEntity:SetAnimatorControllerTriggers({self._anim1})
-  targetEntity:SetAnimatorControllerTriggers({self._anim1})
+  casterEntity:SetAnimatorControllerTriggers({
+    self._anim1
+  })
+  targetEntity:SetAnimatorControllerTriggers({
+    self._anim1
+  })
   if self._materialAnim1 then
     casterEntity:PlayMaterialAnim(self._materialAnim1)
     targetEntity:PlayMaterialAnim(self._materialAnim1)
@@ -68,7 +62,7 @@ PlayTranspositionInstruction.DoInstruction = function(self, TT, casterEntity, ph
     targetEntity:PlayMaterialAnim(self._otherMaterialAnim)
   end
   YIELD(TT, self._fadeTime)
-  local playSkillInstructionService = (self._world):GetService("PlaySkillInstruction")
+  local playSkillInstructionService = self._world:GetService("PlaySkillInstruction")
   playSkillInstructionService:Teleport(TT, casterEntity, RoleShowType.TeleportHide2Sky, false, casterResult)
   playSkillInstructionService:Teleport(TT, targetEntity, RoleShowType.TeleportHide2Sky, false, targetResult)
   YIELD(TT, self._hideTime)
@@ -76,20 +70,22 @@ PlayTranspositionInstruction.DoInstruction = function(self, TT, casterEntity, ph
   playSkillInstructionService:Teleport(TT, targetEntity, RoleShowType.TeleportMove, false, targetResult)
   playSkillInstructionService:Teleport(TT, casterEntity, RoleShowType.TeleportShow, false, casterResult)
   playSkillInstructionService:Teleport(TT, targetEntity, RoleShowType.TeleportShow, false, targetResult)
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local teamLeaderEntity = teamEntity:GetTeamLeaderPetEntity()
-  local resvc = (self._world):GetService("RenderEntity")
+  local resvc = self._world:GetService("RenderEntity")
   resvc:TurnToTarget(casterEntity, teamLeaderEntity)
   resvc:TurnToTarget(targetEntity, teamLeaderEntity)
   playSkillInstructionService:Teleport(TT, casterEntity, RoleShowType.BuffNotify, false, casterResult)
   playSkillInstructionService:Teleport(TT, targetEntity, RoleShowType.BuffNotify, false, targetResult)
-  casterEntity:SetAnimatorControllerTriggers({self._anim2})
-  targetEntity:SetAnimatorControllerTriggers({self._anim2})
+  casterEntity:SetAnimatorControllerTriggers({
+    self._anim2
+  })
+  targetEntity:SetAnimatorControllerTriggers({
+    self._anim2
+  })
   if self._materialAnim2 then
     casterEntity:PlayMaterialAnim(self._materialAnim2)
     targetEntity:PlayMaterialAnim(self._materialAnim2)
   end
   YIELD(TT, self._finishWaitTime)
 end
-
-
